@@ -1,0 +1,142 @@
+name: KFB Production Desk Registry
+
+# Same-repo auto-sync for the KFB Production Desk (pattern donor: asset-registry.yml /
+# resource-registry.yml). Differences on purpose:
+#  - schedule + workflow_dispatch: the Desk mirrors PR/branch state that mostly lives on
+#    unmerged draft branches, so a main-only push trigger would go stale.
+#  - Cross-repo lanes (Travel, Racer) are never read with GITHUB_TOKEN; they stay LAST_KNOWN.
+# NOTE: GitHub only runs `schedule` from the default branch, so this file must be on main
+# before the Desk updates itself.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "tools/production_desk/**"
+      - "skills/chat/**"
+      - "tools/KFB-ToolBox/_handover/**"
+      - ".github/workflows/production-desk.yml"
+      - "!registry/production/v1/**"
+  pull_request:
+    paths:
+      - "tools/production_desk/**"
+      - ".github/workflows/production-desk.yml"
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: kfb-production-desk
+  cancel-in-progress: false
+
+jobs:
+  desk:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Builder tests
+        run: python3 -m unittest discover -s tools/production_desk/tests -v
+
+      - name: Build production registry from live same-repo GitHub state
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/production_desk/build.py --online --out registry/production/v1
+
+      - name: Validate production registry
+        run: python3 tools/production_desk/build.py --validate registry/production/v1
+
+      - name: Render Desk with embedded fallback snapshot
+        run: python3 tools/production_desk/render_desk.py
+
+      - name: Desk behaviour test (jsdom)
+        run: |
+          mkdir -p /tmp/jsd && (cd /tmp/jsd && npm install --no-save --no-audit --no-fund jsdom@24 >/dev/null)
+          NODE_PATH=/tmp/jsd/node_modules node tools/production_desk/tests/desk_dom_test.mjs \
+            tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html registry/production/v1
+
+      - name: Upload review evidence
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v6
+        with:
+          name: kfb-production-desk
+          path: |
+            registry/production/v1/
+            tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html
+
+      - name: Decide whether to publish
+        id: decide
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          BOT_BRANCH: bot/production-desk-update
+        run: |
+          set -euo pipefail
+          old=""
+          if git fetch --depth 1 origin "$BOT_BRANCH" 2>/dev/null; then
+            old="$(git show FETCH_HEAD:registry/production/v1/manifest.json 2>/dev/null || true)"
+          fi
+          OLD="$old" python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt, json, os
+          new = json.load(open("registry/production/v1/manifest.json", encoding="utf-8"))
+          cfg = json.load(open("tools/production_desk/config.json", encoding="utf-8"))
+          raw = os.environ.get("OLD", "").strip()
+          if not raw:
+              print("publish=true"); print("reason=first-publish"); raise SystemExit
+          old = json.loads(raw)
+          if old.get("contentHash") != new["contentHash"]:
+              print("publish=true"); print("reason=content-changed"); raise SystemExit
+          checked = dt.datetime.fromisoformat(old["checkedAt"].replace("Z", "+00:00"))
+          age_h = (dt.datetime.now(dt.timezone.utc) - checked).total_seconds() / 3600
+          if age_h >= cfg.get("heartbeatHours", 6):
+              print("publish=true"); print("reason=heartbeat")
+          else:
+              print("publish=false"); print("reason=unchanged")
+          PY
+
+      - name: Publish to bot branch
+        if: steps.decide.outputs.publish == 'true'
+        shell: bash
+        env:
+          BOT_BRANCH: bot/production-desk-update
+          REASON: ${{ steps.decide.outputs.reason }}
+        run: |
+          set -euo pipefail
+          tmpdir="$(mktemp -d)"
+          mkdir -p "$tmpdir/registry/production" "$tmpdir/desk"
+          cp -a registry/production/v1 "$tmpdir/registry/production/v1"
+          cp tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html "$tmpdir/desk/"
+
+          git reset --hard HEAD
+          git clean -fd -- registry/production/v1
+          git switch -C "$BOT_BRANCH"
+
+          rm -rf registry/production/v1
+          mkdir -p registry/production
+          cp -a "$tmpdir/registry/production/v1" registry/production/v1
+          cp "$tmpdir/desk/KFB_PRODUCTION_DESK_V0.html" tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/production/v1 tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html
+          git commit -m "chore: refresh KFB Production Desk ($REASON)"
+          git push --force origin "HEAD:$BOT_BRANCH"
+          echo "Published Production Desk registry to $BOT_BRANCH ($REASON)."
