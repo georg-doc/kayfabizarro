@@ -668,3 +668,36 @@ This recovers current ToolBox Stage-First, WorldBuilder Terrain-First and Orc Ba
 Normal visual loop is:
 `GitHub checkpoint → zero-install REVIEW.html → Georg feedback`.
 Cloudflare and Work are not part of ordinary iteration.
+
+
+## 2026-09-23 · Verified Review Artifact Pool · Racer R1 accepted / R2 next
+
+Web-First HTML review now has a shared verified donor pool:
+
+- `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/REVIEW_TEMPLATE_POOL.md`
+- `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/review-templates/REGISTRY.json`
+
+Admission rule: only human-accepted review harnesses enter the pool.
+
+Current first verified donor:
+`threejs-focus-review-v1`
+
+Origin:
+Racer TARCH-0 R1, Race Draft PR #33.
+
+R1 status:
+**GEORG ACCEPTED**.
+
+Current Race branch:
+`chat/racer-tarch0-sp13ktra-2026-09-23@2ab130f871fc0340401145c8713a64c97789b80b`
+
+Runtime geometry remains:
+`b37cbad1038e669a0c9929d25789d54d0283b0fc`
+
+R2 integrated Chat HTML is prepared and recoverable via:
+`_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/review/R2_PREPARED.md`
+
+Exactly one current Racer gate:
+**TARCH-0 R2 · integrated Racer Chat HTML human review**.
+
+Cloudflare / Pages remain deferred until after human visual acceptance.
