@@ -309,13 +309,25 @@ def resolve_tools(cfg: dict, fetch, problems: list) -> dict:
             archive.append({**a, "url": url, "available": bool(info)})
         else:
             archive.append({**a, "available": True})
-    return {"publication": {"repo": repo, "ref": ref, "base": base}, "tools": tools, "archive": archive}
+    return {"publication": {"repo": repo, "ref": ref, "base": base}, "tools": tools, "archive": archive,
+            "_route": route}
 
 
 def build(cfg: dict, fetch, source: dict) -> dict:
     problems: list = []
     lanes = [resolve_lane(l, cfg, fetch, problems) for l in cfg["lanes"]]
     tools = resolve_tools(cfg, fetch, problems)
+    route = tools.pop("_route")
+    for l, raw in zip(lanes, cfg["lanes"]):
+        rv = raw.get("review")
+        if not rv:
+            continue
+        url, info = route(rv["path"])
+        if not info:
+            problems.append({"lane": l["id"], "kind": "review-route-missing",
+                             "detail": f"{rv['path']} ist nicht veröffentlicht"})
+        l["review"] = {"label": rv.get("label", "Öffnen"), "url": url, "available": bool(info),
+                       "sourceRef": rv.get("sourceRef", "")}
     active = [l for l in lanes if l["freshness"] != "CLOSED"]
 
     briefings = [{

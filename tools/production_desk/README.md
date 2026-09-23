@@ -11,8 +11,8 @@ GitHub stays the truth; the Desk renders a generated registry.
 | `build.py` | Deterministic registry builder. `--online` (Actions, `GITHUB_TOKEN`) or `--fixture` (offline/coworker snapshot/tests). |
 | `render_desk.py` | Renders `desk/KFB_PRODUCTION_DESK_V0.html` with the registry embedded as fallback. |
 | `desk/desk.template.html` | Desk UI (no dependencies). |
-| `tests/test_build.py` | 13 builder tests. |
-| `tests/desk_dom_test.mjs` | 28 behavioural jsdom assertions on the rendered Desk. |
+| `tests/test_build.py` | 14 builder tests. |
+| `tests/desk_dom_test.mjs` | 30 behavioural jsdom assertions on the rendered Desk. |
 | `snapshots/coworker-*.json` | Connector-refreshed fixture used for the committed canonical registry. |
 | `../../.github/workflows/production-desk.yml` | Auto-sync workflow. |
 
@@ -42,6 +42,13 @@ the Desk updates itself. Until then the Desk shows the embedded snapshot, labell
 Either edit `config.json` (bucket, texts, `expectedHead` = head the status refers to) or give the lane a
 `statusFile` (JSON on the lane's branch with `bucket/what/yourAction/waitingFor/questions/recordedHead`);
 the builder picks it up on the next run. Keep Georg-facing texts in plain German; PR/SHA stay in the drawer.
+
+## Prüfseiten (rule for every chat)
+
+Every human-review HTML is published unchanged under `cloudflare-live:kfb-hub/pruefen/<slug>/index.html`
+and referenced in `config.json` → lane `review: {path, sourceRef}`. The builder checks the route exists;
+the card shows an „Öffnen“ button only then, otherwise „Noch keine Prüfseite veröffentlicht“.
+Chat-only HTML is no longer a valid Georg gate.
 
 ## Cross-repo (PD3, not built)
 

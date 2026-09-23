@@ -12,9 +12,9 @@ Executor: Claude Coworker (Opus 5.5), STEP 2 of `COWORKER_OPUS55_SEQUENCE.md`.
 
 ## Evidence (local, sandbox)
 
-- builder unit tests: **13/13 PASS**
+- builder unit tests: **14/14 PASS**
 - registry validate: **VALID**, problems 0
-- desk behaviour (jsdom, runs the page script): **28/28 PASS** — embedded/Live/Hauptstand source selection,
+- desk behaviour (jsdom, runs the page script): **30/30 PASS** — embedded/Live/Hauptstand source selection,
   poll switch without reload, real brief copy, link fallback, blocked-clipboard manual copy, stale banner,
   launcher rules, "Kein Stand" on no data, no PR/SHA on card faces, external lanes marked LAST_KNOWN.
 - publish decision logic: first-publish / unchanged / content-changed / heartbeat — PASS.
