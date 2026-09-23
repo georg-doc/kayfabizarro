@@ -1,6 +1,6 @@
 # WB1-TERRAIN-SCENE-01 · Test report · 2026-09-23
 
-Status: **R1 FUNCTIONAL FOUNDATION HUMAN PASS · R2 SHARED INLINE EDITOR LOCAL REVIEW CANDIDATE · NOT PUBLIC**
+Status: **R1 FUNCTIONAL FOUNDATION HUMAN PASS · R2 SHARED EDITOR HUMAN PASS · R3 UNIFORM-SCALE LOCAL REVIEW CANDIDATE · NOT PUBLIC**
 
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23`  
@@ -10,10 +10,11 @@ Draft PR: **#186**
 
 - canonical source: `WB1_TERRAIN_SCENE_01_SOURCE.html`
 - zero-install review copy: `WB1_TERRAIN_SCENE_01_REVIEW.html`
-- verified source blob: `0114d186759866f42bdc99a6d4bc662494701c50`
-- shared edit-layer blob: `c97b3537f71e939176f3ae5ce7ae83feabb7918f`
-- review-sync commit: `c256bb8eaffee472c2e1f6b63fc25019decba5c8`
-- review blob: `099de70c7c57bfe17fc77ef80af7f4b5941aa452`
+- verified source blob: `d550d5bf8ce93dbcc17b4687dbda1afcb4f3a223`
+- accepted R2 edit-layer base blob: `c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+- R3 uniform-scale edit-layer blob: `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
+- review-sync commit: `a66732de83bbf4f2c704de9eaccc0475d53c3e96`
+- review blob: `f07fc23dcbd3525be7dd6d8c2e0b1b93799a313a`
 
 ## Reused owners / donors
 
@@ -30,8 +31,11 @@ The candidate reuses the deterministic value-noise / FBM / bounded seed-domain m
 Current selected-object edit owner:
 `tools/KFB-ToolBox/lib/edit-layer.js`
 
-Exact blob:
+Accepted R2 base blob:
 `c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+
+Current R3 candidate blob:
+`c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
 
 Lineage:
 `Dungeon Room Study S21/S22 → Resident Atlas S7 / Rig-Werkstatt extraction → ToolBox third-host promotion`
@@ -272,6 +276,62 @@ Follow-up requested by Georg:
 - add a simpler uniform prop scale gesture for quick size variants such as Boulder → small rock / pebble;
 - preserve the accepted free Scale gizmo;
 - propose the capability as a global shared ToolBox edit-layer feature, then expose it in WorldBuilder.
+## Uniform Size R3 candidate
+
+Proposal:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`
+
+Georg requested a simpler global prop-size gesture after accepting R2: quickly turn a source prop such as the Boulder into a smaller rock/pebble or a larger variant without losing the accepted free Scale gizmo.
+
+Shared edit-layer extension:
+- public `scaleBy(factor)` gesture;
+- `scale-down` default `×0.8`;
+- `scale-up` default `×1.25`;
+- inverse defaults (`0.8 × 1.25 = 1.0`);
+- uniform multiplication preserves existing proportions;
+- default clamp `0.05 … 20`;
+- accepted free TransformControls Scale mode remains available.
+
+WorldBuilder R3 menu keeps six top-level fields:
+1. Move;
+2. Rotate;
+3. grouped `− / +` uniform-size field;
+4. Drop;
+5. World / Local;
+6. Close.
+
+Keyboard `S` remains the free Scale gizmo.
+
+### R3 static / integration evidence
+**26/26 PASS**
+
+Checks include:
+- Source syntax;
+- standalone Review syntax;
+- Review normalization to canonical Source;
+- current Source/edit-layer blob markers;
+- shared `scaleBy()` API;
+- smaller/larger menu actions;
+- inverse default factors;
+- min/max clamp;
+- free scale mode preserved;
+- compact paired WorldBuilder field;
+- accepted R2 base donor recorded separately from R3 module blob;
+- smaller and inverse-larger self-test assertions;
+- scale Save/Reload retained;
+- Move / Rotate / Drop / World-Local / Close retained;
+- embedded self-test expanded.
+
+### Exact pinned runtime source paths
+**4/4 PASS**
+
+### Shared edit-layer syntax
+**1/1 PASS**
+
+### Embedded browser self-test
+**22 assertions prepared / 0 executed**.
+
+No R3 browser PASS or human uniform-scale PASS is claimed yet.
 ## Publication
 
 Cloudflare: **HOLD · NOT PUBLISHED**.  
@@ -279,6 +339,6 @@ No Stage or Live route is claimed by this report.
 
 ## Next gate
 
-**Georg human HTML review of WB1-TERRAIN-SCENE-01.**
+**Georg human HTML review of the R3 uniform-size gesture.**
 
-Do not start Claude Design, Orc Band integration, Sphere/Torus macro terrain, a second Resident Atlas, or Animation-Lab promotion before this human gate.
+Select the Boulder and verify `−` / `+`, repeated size changes, free `S` Scale, and Save/Reload of the resulting scale. Do not roll the new uniform-size gesture into other ToolBox hosts before that human gate.
