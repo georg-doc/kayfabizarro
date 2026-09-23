@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **RSTAB-1 HUMAN FAIL · WEDGE PASS 2 RECHECK · PUBLIC VERIFY PENDING · NO RSTAB-2**  
+Status: **TARCH-0 TECHNICAL PASS · R1 CHAT-HTML HUMAN GATE · CLOUDFLARE DEFERRED**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -41,6 +41,40 @@ If they are a separate optional prop family, classify proportionally after sourc
 ID to carry in the showstopper/evidence matrix:
 
 `RSTAB-CYLINDER-GROUND-01`
+
+## Current checkpoint · TARCH-0 · 2026-09-23
+
+Old RSTAB-1 tunnel/ground foundation is **ARCHIVED_FAILED_CANDIDATE** after two failed human repair passes. Do not resume WEDGE pass 3.
+
+Current Race owner:
+- repo: `georg-doc/KFB-Stunt-Car-Race`
+- Draft PR: **#33**
+- branch: `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current handoff head: `6c72e66678599d303c16c825255d2cd04bac9c7e`
+- runtime-tested TARCH integration: `b37cbad1038e669a0c9929d25789d54d0283b0fc`
+- CI: `35817990559 / 107043574054 · SUCCESS`
+- architecture tests: **7 active · 0 skipped**
+
+Donor principle:
+`KilledByAPixel/SP13KTRA@166ad838b9a067f85100eaff7876522f7cfe9feb`
+
+License is All Rights Reserved. No donor source/assets are copied. Independently reimplemented architecture:
+- one continuous C-3 road/causeway;
+- world ground outside/below the complete banked road/wall envelope;
+- dense arch scenery over that same road;
+- no tunnel shell / ground-cut wall / invert ownership inside the tunnel.
+
+Human visual workflow is now **Chat artifact first**:
+1. R1 isolated TARCH HTML artifact in ChatGPT;
+2. after R1 ACCEPT: R2 integrated Racer HTML artifact in ChatGPT;
+3. optional R3 one local integration correction.
+
+Cloudflare / Pages are deferred until after human visual acceptance and are not part of active iterative QA.
+
+Review protocol lives in Race PR #33:
+`_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/CHAT_ARTIFACT_REVIEW_PROTOCOL.md`
+
+Exactly one next gate: **TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
 
