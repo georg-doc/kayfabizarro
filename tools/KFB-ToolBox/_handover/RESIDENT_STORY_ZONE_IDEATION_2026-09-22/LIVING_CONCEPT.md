@@ -4973,20 +4973,21 @@ The central object is a scenic/focal prop, not a gameplay owner.
 
 Use the small Legacy Orc with the **black ponytail / dark topknot**.
 
-Current text/source evidence proves two Legacy Orc source files:
+Georg has now source-pinned the exact black-ponytail / dark-topknot bandleader as:
 
-- `character_orcA.gltf`
-- `character_orcB.gltf`
+`media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf`
 
-and current Atlas history describes two visual variants including a topknot.
+Pinned source commit:
 
-The text evidence does **not** reliably identify which filename is the exact black-ponytail variant.
+`e0037d79af9f0546c73cee02e361f78f7d662df2`
 
-Therefore:
+Blob SHA:
 
-**exact A/B identity remains a SOURCE-ISOLATION VISUAL GATE.**
+`2dfd0bf6661bb207516053758a26baf5cb6407f1`
 
-Do not guess.
+Status:
+
+**USER-CONFIRMED SOURCE · no longer an A/B ambiguity.**
 
 ## PROPOSAL · Legacy Bounce / Squash performance
 
@@ -5174,3 +5175,157 @@ This sibling should work both:
 - and as a free-roam RoadTrip Radio track.
 
 It should **not** sound like Racer final-lap music.
+
+
+---
+
+# 42 · The KayfaBizarros · band identity + tourbus
+
+## USER DECISION · 2026-09-23
+
+The Orc trio now has a working band name:
+
+# **The KayfaBizarros**
+
+This name applies to the recurring World-Life / street-jam / RoadTrip band fixture.
+
+## Bandleader · exact donor resolved
+
+The bouncing Legacy frontman with black ponytail / dark topknot is:
+
+`media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf`
+
+Pinned source:
+
+`e0037d79af9f0546c73cee02e361f78f7d662df2`
+
+Blob:
+
+`2dfd0bf6661bb207516053758a26baf5cb6407f1`
+
+This supersedes the earlier open A/B identification gate.
+
+Role remains:
+
+- bandleader / hype Orc;
+- microphone held in one hand;
+- beat-synced bounce;
+- squash/stretch;
+- seeded lateral/high-hop variations;
+- optional future player-facing demo-tape gift.
+
+## Signature track · exact source pinned
+
+Current signature candidate:
+
+**Permitless Funk**
+
+Exact repository source:
+
+`media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3`
+
+Current source blob:
+
+`368eb5ae8fafcfba1cce3ba3f80488378fe056b0`
+
+Current size:
+
+`3,034,265 bytes`
+
+Status:
+
+**SOURCE PRESENT + HUMAN SELECTED SIGNATURE CANDIDATE**
+
+Still needs:
+
+- BPM/downbeat authoring;
+- loop window;
+- first performance sync proof;
+- later canonical Jukebox promotion if accepted.
+
+## The KayfaBizarros Tourbus
+
+Exact donor:
+
+`media/3D_Assets/Frankensteining/Truck Armored by Quaternius - VvX8nmoCN5.glb`
+
+User-pinned source commit:
+
+`e0037d79af9f0546c73cee02e361f78f7d662df2`
+
+Blob:
+
+`1e25be955339b6e6c46b51ae337a51da2f1f62c5`
+
+Registry facts:
+
+- model-3d;
+- GLB;
+- embedded dependencies;
+- 754,248 bytes;
+- exact repo identity.
+
+## Existing vehicle donor reuse
+
+This exact Truck Armored already exists in the current KFB Vehicle / Cartoon Vehicle Deformer donor lane as:
+
+`truck-armored`
+
+Therefore:
+
+> do not create a special one-off Tourbus renderer or deformation stack.
+
+First use:
+
+- scenic parked tourbus;
+- recurring recognizable band landmark;
+- arrival/departure story cue later;
+- optional RoadTrip scene anchor.
+
+Later, if desired, the existing vehicle owner may provide:
+
+- cartoon squash/deformation;
+- skew/taper;
+- presentation tuning;
+- eventual vehicle rig/motion integration.
+
+## Tourbus visual direction · proposal
+
+Possible later band-specific presentation, non-destructive:
+
+- The KayfaBizarros signage;
+- cassette / demo-tape motifs;
+- roof luggage / amps / cases;
+- small awning or portable stage kit;
+- stickers / tour marks;
+- weird RoadTrip clutter.
+
+These remain presentation candidates.
+
+Do not bake them into the source GLB.
+
+## First Tourbus scope guard
+
+The first Orc Band World-Life proof does **not** require a driveable bus.
+
+For v0:
+
+**parked donor + band scene is enough.**
+
+Vehicle physics, wheels, suspension, driving and deformation remain later Vehicle-owner gates.
+
+## Scene combination
+
+The first recognizable KayfaBizarros roadside/world-life tableau can now be:
+
+```
+parked armored Tourbus
++ surreal stone/campfire focal point
++ Large Brute War Drum
++ Medium Orc electric guitar
++ character_orcB bouncing bandleader + microphone
++ Permitless Funk
++ optional Offica patrol interruption
+```
+
+This is a portable World-Life fixture, not a fixed Town-only scene.
