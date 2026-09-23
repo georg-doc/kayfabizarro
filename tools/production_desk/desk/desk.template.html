@@ -245,7 +245,7 @@ function card(l){
   var t = tagsFor(l); if(t.childNodes.length) c.appendChild(t);
   var acts = el('div','actions');
   if(l.review && l.review.available){
-    var op = el('a','btn primary', l.review.label || 'Öffnen'); op.href=l.review.url; op.target='_blank'; op.rel='noopener';
+    var op = el('a', l.bucket==='LOOK_AT' ? 'btn primary' : 'btn', l.review.label || 'Öffnen'); op.href=l.review.url; op.target='_blank'; op.rel='noopener';
     op.addEventListener('click',function(ev){ ev.stopPropagation(); });
     acts.appendChild(op);
   } else if(l.bucket==='LOOK_AT'){
