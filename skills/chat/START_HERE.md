@@ -562,36 +562,37 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-1D complete · TMB-1E next
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E HTML review ready
 
 Coordination brief:
 
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
-Prepared next review:
+Current review brief:
 
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
 
 Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-Completed source-first sequence:
+Completed source-first baseline:
 - A · exact animated CardCarrier alone → public 18/18 PASS;
 - B · exact ActionFigure Rig_Medium alone → public 22/22 PASS;
 - C · neutral measured mount → public 41/41 PASS;
-- D · exact S33 Surf candidate → public 52/52 PASS;
-- current Travel Surf Draft PR #36 head `88382c111acf32f6b934c15ce7b6b1f6d4d15283`.
+- D · exact S33 Surf candidate → public 52/52 PASS.
 
-Georg human finding:
-- card/contact good;
-- rider too small;
-- test roughly 1.8×–2.0× rider presentation;
-- keep Surf/Ride pose;
-- compare Legacy Warband Orc + Orc Brute/Large + one XL/Large-class character on the same card;
-- card-thickness change deferred.
+TMB-1E is now implemented on Travel Draft PR #37:
+- branch `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
+- handoff head `5110f3617246d05278e0435b3b1e0a99c33e62e5`;
+- technical test head `33b4a5bf9904d3e9e86c99f6efd5cbdde8448641`;
+- CI `35823280576 / 107059518887`: **99/99 PASS · build PASS · verify PASS**;
+- Review A: CURRENT vs 1.8× vs 2.0× exact Surf rider on unchanged CardCarrier;
+- Review B: source-object-first `Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B` capacity comparison;
+- “Large Rick” resolved as **Large Rig**; no substitute XL actor;
+- Cloudflare deferred; HTML review is the current human surface.
 
-Exactly one next gate: **TMB-1E · HTML-first Surf scale + three-character capacity comparison.**
+Exactly one next gate: **GEORG HUMAN HTML REVIEW · choose Surf scale and judge three-Orc card capacity.**
 
-TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD** until TMB-1E human scale/capacity review is resolved.
+TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD** until that human scale/capacity gate is resolved.
 
 Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
 
