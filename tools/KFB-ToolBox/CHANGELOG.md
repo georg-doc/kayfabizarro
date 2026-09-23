@@ -3,6 +3,54 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-23 · WB1-TERRAIN-SCENE-01 · R1 HUMAN PASS → shared inline editor R2
+
+### HUMAN PASS
+Georg accepted the repaired R1 functional foundation in the ChatGPT review:
+- Caveman texture: PASS;
+- Character green Y transform: PASS;
+- Character Y save/reload: PASS;
+- palette/FOV layout: PASS.
+
+### DONOR RESOLUTION
+The requested newer editor already existed as a mature shared donor:
+- Dungeon Room Study S21/S22 defined the object-attached mini-menu contract;
+- Resident Atlas S7 / Rig-Werkstatt was the second real integration and extracted `lib/edit-layer.js`;
+- its Housekeeping explicitly marked that file as a ToolBox candidate for the third integration.
+
+WorldBuilder is that third host.
+
+### PROMOTION
+Promoted the existing S7 module byte-identically to:
+`tools/KFB-ToolBox/lib/edit-layer.js`
+
+Promoted blob = donor blob:
+`c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+
+No duplicate TransformControls/picking owner was created.
+
+### WORLDBUILDER ADAPTER
+WorldBuilder now consumes the shared layer and exposes the S7 object menu:
+- ✥ move;
+- ⟳ rotate;
+- ⤢ scale;
+- ⬓ drop to visible surface below;
+- ⊹ world/local axes;
+- ✕ close;
+- snap 0.05 / 15°.
+
+Scale is now part of the WorldBuilder scene transform and survives Save/Reload. The previous local TransformControls owner, local ray picker and side Move/Rotate/Drop controls were removed.
+
+### EVIDENCE
+- shared editor Source/Review/static integration: **32/32 PASS**;
+- exact pinned actor/prop/animation/texture paths: **4/4 PASS**;
+- promoted shared module identity: **1/1 PASS**;
+- embedded browser self-test: **20 assertions prepared / 0 executed**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+### NEXT
+Georg reviews the new shared-editor Chat HTML: select object → mini-menu → Move / Rotate / Scale / Drop / World-Local / Close → Save/Reload. Cloudflare, Live, merge, Claude Design and Orc Band integration remain HOLD until this mini-menu gate.
 ## 2026-09-23 · WB1-TERRAIN-SCENE-01 · R1 human feedback repair
 
 ### HUMAN FINDINGS
