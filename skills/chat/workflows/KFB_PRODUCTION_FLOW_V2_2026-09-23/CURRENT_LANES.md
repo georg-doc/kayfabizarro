@@ -8,7 +8,7 @@ Aktuell sind die wichtigsten Spuren so:
 
 - **WorldBuilder:** funktionale Basis + neuer Editor sind akzeptiert. Als Nächstes Terrain modellieren (anheben/absenken), nicht noch mehr Editor-Microtests.
 - **ToolBox:** noch nicht bereit für einen neuen großen Claude-Design-Lauf; echte Resident-Sets/Quellen müssen sauber konsolidiert werden.
-- **Travel:** die Figuren-/Kartenrelation ist akzeptiert. Jetzt geht es nur noch um die Bedienung „einmal Space = Sprung, zweimal schnell = Flug“.
+- **Travel:** TMB-2 ist jetzt akzeptiert: einmal Space = Sprung, zweites frisches Space innerhalb von **400 ms** = Flight. Kein aktueller Human-Gate; TMB-3 Landing bleibt HOLD.
 - **Racer:** technisch bei R3c; neuer geschlossener Track-Körper und runde Rahmen sind fertig, Sichtprüfung offen.
 - **Curtain:** Claude-2D/SVG-Versuch verworfen. Erst den echten funktionierenden Vorhang unverändert wiederherstellen.
 
@@ -100,35 +100,47 @@ Do not continue production from old PR #187 status text without refreshing proje
 Repo:
 `georg-doc/KFB-Travel-Globe`
 
-Current PR:
+PR:
 `#38`
 
 Branch:
 `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`
 
-Head:
-`1976c6c813161013b7c97bf5de55f71575a175ef`
+Current branch head after acceptance docs:
+`08147fb4a6726f4c0248ff79ade67eec24afdbca`
 
-Technical state:
-- **119 PASS**
-- build PASS
-- verify PASS
+Accepted runtime default commit:
+`bf0f94362ec8724cc80a4695830622837242ced9`
+
+Accepted review/test head:
+`73f6cad995278dd71d961ac8542c1f812c37cfbc`
+
+Human state:
+**TMB-2 ACCEPTED · 400 ms**
+
+Behavior:
+- first Space = immediate Ground jump;
+- second fresh Space within 400 ms = `REQUEST_FLIGHT`;
+- same second Space does not leak into Flight action;
+- later Flight-owned Space remains unchanged.
+
+Post-decision CI:
+- run `35893561660`;
+- **119/119 PASS**;
+- build PASS;
+- verify PASS;
+- artifact `10766056654`.
 
 Already accepted from TMB-1E:
-- ActionFigure / Rig_Medium;
-- Orc Brute / Rig_Large;
-- Warband Orc B / Rig_Legacy;
 - 2.0× rider candidate;
+- native rig-class proportions;
 - CardCarrier unchanged.
 
-Current human question:
-choose smallest comfortable double-Space window:
-- 240 ms;
-- 320 ms;
-- 400 ms.
+Current product state:
+**no open Travel human gate.**
 
-Do not reopen accepted TMB-1E visuals.
-TMB-3 landing remains later.
+TMB-3 intentional landing:
+**HOLD until Georg explicitly opens it.**
 
 ## Racer
 
@@ -205,7 +217,7 @@ Use three tracks:
 WorldBuilder WB2 via Coworker/Web as a bounded functional slice.
 
 ### B · Human preference
-Travel TMB-2 timing and Racer R3c visual review.
+Racer visual review only. Travel TMB-2 timing is closed at 400 ms.
 
 ### C · Source recovery
 Curtain D0 and ToolBox source/Resident consolidation.
