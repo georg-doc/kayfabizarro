@@ -5,6 +5,21 @@ Date: 2026-09-23
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**
 Receiving consumers remain Race / Travel / WorldBuilder. No new movement, collision, terrain or asset owner.
 
+## LEAD ROUTING OVERRIDE · 2026-09-24
+
+For Hürth / KFB 3D form-language continuation, read:
+`LEAD_OVERRIDE_2026-09-24.md`
+
+**PR #194 V2 is the current bounded slice.** Main and older City-Lab/Grotesque documents may lag this unmerged work.
+
+Anti-regression:
+- old City-Lab `GROTESQUE` = comparison evidence only;
+- Hürth 01 V1 = superseded continuation basis;
+- ELASTIC `ELASTIC_GROUP_WARP_V2` = current candidate;
+- do not revert to box extrusion, stacked cubist offsets, generic low-poly, Gothic dressing, or random independent building distortion.
+
+Human chat review packaging must be **single-file/self-contained**: no iframe, CDN, runtime fetch, or cross-origin module chain.
+
 ## Goal
 
 Prove one reusable KFB 3D form language on a real Hürth OSM block:
