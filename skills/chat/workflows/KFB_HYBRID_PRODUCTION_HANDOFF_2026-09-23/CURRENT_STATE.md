@@ -218,3 +218,59 @@ PR #191 contains useful Production Flow v2 provenance but is now dirty against c
 
 Use this fresh handoff branch as the short operational recovery point.
 Do not extend #191 indefinitely.
+
+
+## Production Desk
+
+Prepared current operations artifact:
+
+- `PRODUCTION_DESK_V0_BRIEF.md`
+- `PRODUCTION_DESK_STATE.json`
+- `COWORKER_PRODUCTION_DESK_START.md`
+
+Purpose:
+current operational mirror beside the KFB Hub.
+
+Coworker builds PD0 after Opus 5.5 recovery checkpoint, then resumes ToolBox.
+
+It does not become a project SSOT.
+
+## Review Scene Base
+
+Prepared:
+`REVIEW_SCENE_BASE_V1.md`
+
+It extends the accepted `threejs-focus-review-v1` review harness with:
+- source isolate;
+- exact owner environment or neutral calibration;
+- fail-closed asset loading;
+- real 3D scene shadow where relevant;
+- direct chat delivery;
+- durable artifact persistence.
+
+No second review framework.
+
+## VFX / SFX
+
+Prepared Web slice:
+`VFX_SFX_CONSOLIDATION_01.md`
+
+Paste-ready start:
+`VFX_SFX_WEBCHAT_START.md`
+
+Current source-backed VFX donors include:
+- KFB Cartoon Combat VFX v10.1;
+- Brackeys masks/flipbooks;
+- FreeHitVfx SOP/source;
+- 74-item 2D Cartoon Smoke pack;
+- Tiny Swords 2D effect assets;
+- Boxel feedback POC;
+- Lorekeeper/Sedan VFX event-map owner pattern.
+
+Current SFX donor:
+- KFB Pinball Audio v1;
+- combat cue/layer lineage must be source-pinned before promotion.
+
+Next gate:
+**VFX-01 Review Bank first.**
+SFX implementation waits for VFX donor-family selection.
