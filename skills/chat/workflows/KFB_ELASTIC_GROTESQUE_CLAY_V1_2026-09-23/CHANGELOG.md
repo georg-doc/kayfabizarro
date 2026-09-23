@@ -83,3 +83,24 @@ Georg visual review of the **actual v2 3D translation**. Blender-MCP generalizat
 
 ### NEXT GATE
 **Georg human visual review of the Hürth 01 V2 actual form language.**
+
+
+## 2026-09-24 · HÜRTH 01 · CHAT MIRROR REGRESSION REJECTED
+
+### USER DECISION
+- simplified self-contained Canvas mirror rejected as visual authority;
+- it visibly regressed building rendering / facade-detail placement / proportions versus the good V2 direction;
+- do not tune or generalize from that mirror.
+
+### ROUTING
+- `CHAT_RECOVERY_CURRENT.md` added as the short current recovery cursor;
+- Registry points this slice to that recovery file;
+- Lead Override and START_HERE explicitly route to actual V2 truth.
+
+### CURRENT
+- canonical V2 Three.js runtime remains PR #194 / tested head `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`;
+- 21/21 browser PASS · 3/3 WebGL2 · 0 page/console errors remain the last tested runtime evidence;
+- no runtime/deformer parameter changed in this recovery update.
+
+### NEXT GATE
+Recover/show the actual tested V2 output for Georg review. No new substitute renderer.
