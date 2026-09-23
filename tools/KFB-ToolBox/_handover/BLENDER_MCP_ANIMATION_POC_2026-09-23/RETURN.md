@@ -69,9 +69,9 @@ Folder: `Dropbox/CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDi
 - **JUG-P2** (one gate): load `clown_juggle_cascade3.glb` in an existing three.js consumer, play all 4 clips in sync, human HTML review.
 - **Next Blender lane candidate (PROPOSAL):** *The KayfaBizarros* Orc band — existing handoff `tools/KFB-ToolBox/_handover/KAYFABIZARROS_ORC_BAND_POC_2026-09-23/START_HERE.md` (gate ORB-P1). Georg describes the trio as Legacy Orc · Rig_Medium Orc · Orc Brute; the handoff names Orc B (Legacy) + Orc Brute (Rig_Large) drummer. The Rig_Medium member is **UNRESOLVED** (candidate: Orc Raider, July 2023, whose props the Brute already borrows) until Georg's briefing.
 
-## 8. Router writeback (PENDING — to be appended by a git-capable chat on merge)
+## 8. Router writeback (applied in the same PR)
 
-The authoring session (Claude/Cowork) had read-only GitHub access. Append the blocks below to the shared router files with the commit that lands this folder.
+The blocks below were appended to the shared router files on the same branch, for traceability.
 
 ### → `skills/chat/CHANGELOG.md`
 
