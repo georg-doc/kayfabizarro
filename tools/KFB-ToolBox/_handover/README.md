@@ -54,3 +54,17 @@ WorldBuilder integration remains HOLD until its Surface Adapter gate is ready fo
 - `WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md` — current WorldBuilder terrain-first reset.
 - `WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` — Claude Design handoff after the functional Web terrain editor passes its HTML human gate.
 - `KAYFABIZARROS_ORC_BAND_POC_2026-09-23/START_HERE.md` — fresh-chat handoff for the source-backed Orc band beat POC.
+
+
+## 2026-09-23 · Authoring recovery after timeout
+
+Current recovery/onboarding entry:
+
+`KFB_AUTHORING_RECOVERY_2026-09-23/START_HERE.md`
+
+It reconciles the current routing for:
+- ToolBox Stage-First Default;
+- WorldBuilder Terrain-First Scene Editor;
+- The KayfaBizarros Orc Band POC.
+
+The recovery chat performs sanity/onboarding only, then executes exactly one selected lane.
