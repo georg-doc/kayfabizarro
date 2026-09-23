@@ -522,24 +522,71 @@ Cloudflare source commit: `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`. Hub source
 Public verification is **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`. Local HTTP is only a developer fallback; do not present it as the human acceptance link. RSTAB-2 remains blocked until human ACCEPT.
 
 
-## 2026-09-23 · Travel Mode Bridge v1
 
-Prepared bounded Web-first mobility prework:
+## 2026-09-23 · Racer RSTAB-1 human FAIL → WEDGE pass 2
+
+Current Racer owner remains `georg-doc/KFB-Stunt-Car-Race`.
+
+The first zero-install RSTAB-1 human gate failed:
+- at least two brown wedges remain in the first tunnel;
+- first hard curve remains extremely jerky/unstable;
+- Tail/Speedline ribbons overlap and break into rectangular pieces in that phase;
+- vehicle floats above the track at rest, including visible front-wheel lift, and can jump/land above or inside the track.
+
+Current WEDGE pass 2:
+- exact brown cut transitions localized to **99→100** and **133→134**;
+- both are inside TUNNEL and have rendered shell geometry;
+- shell now owns those two transition segments; brown cut wall/invert is not emitted there;
+- historical mouth **90→91** remains ground-owned;
+- Race runtime/test candidate `a9dd49995d32423e101a67f2e591c2b069583252`;
+- GitHub runs `35814096388` + `35814091421`: SUCCESS;
+- current test file: **6 active / 0 skipped**;
+- current Race PR #32 branch handoff head: `841d0cbd2f55561dd63897036ae3890ce6a246fa`.
+
+This is the second and final WEDGE repair pass on this foundation. Same-gate failure again => STOP + full failure-recovery export; no pass 3.
+
+Zero-install Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`
+
+Stage source:
+- kayfabizarro Draft PR #178 head `df82e1fa31213d21c13af1f39f369608078633a3`;
+- Cloudflare route source `ad0036c465e7c5a87c3cfcc0d49cfb2cf3378de0`;
+- Hub metadata `cloudflare-live@f904c318172848078b9d7f58e2b186c5fda03e7d` / `main@db3a651698d4f829ebc1f7be543ab1b51dc20494`.
+
+Public verification remains **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`.
+
+After WEDGE ACCEPT, sequence is locked:
+1. vehicle support/orientation/landing;
+2. hard-curve stability with global v0.8 FLOW/FEEL preserved;
+3. trail/speedline continuity recheck after stable motion.
+
+Do not start curve/trail tuning before the WEDGE human recheck.
+
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-0 complete
+
+Coordination brief:
 
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
-Owner remains private `georg-doc/KFB-Travel-Globe`.
+Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-Source-backed direction:
-- preserve `carpet.js` as the Flight movement owner;
-- preserve WB0 Ground as the Ground movement owner;
-- reuse the existing `runtime-mode.js` Ground↔Flight bridge;
-- reuse the exact animated `card-carrier.js` as the first flight vehicle;
-- Studio/Frankenstein `cardrider.v1.js` is measurement/pose evidence only, not the vehicle;
-- prepare a KayKit Rig_Medium passenger seam, then double-Space mount and intentional landing in later gates.
+TMB-0 is complete on Draft PR #32:
 
-TMB-0 is source/seam mapping only. No runtime implementation, WorldBuilder integration, Racer integration, Work/WSA or Cloudflare debugging.
+- branch `chatgpt-web/travel-mode-bridge-v1-2026-09-23`;
+- head `048499315581d2b9916a4d3fcbaba5f3adef719c`;
+- source/boundary audit **12/12 PASS · 0 FAIL**;
+- **0 runtime files changed**;
+- source matrix, minimal mobility transition contract, additive changelog and Return are under `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/`.
 
-WorldBuilder consumption remains HOLD until its Surface Adapter gate is ready.
+Locked direction remains:
+- `carpet.js` owns Flight movement;
+- WB0 Ground owns Ground movement;
+- existing `runtime-mode.js` is the handoff foundation;
+- exact animated `card-carrier.js` is the first Flight vehicle;
+- Studio/Frankenstein `cardrider.v1.js` is measurement/pose donor only, never the vehicle.
+
+Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger**, source-object-first: card alone → actor alone → neutral measured mount → Surf presentation candidate.
+
+TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption, Racer/Drive integration and Cloudflare runtime publication remain **NOT STARTED / HOLD**.
 
 Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.

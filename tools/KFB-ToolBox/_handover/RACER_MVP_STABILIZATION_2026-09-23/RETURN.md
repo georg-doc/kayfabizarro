@@ -181,3 +181,77 @@ Therefore no `PUBLIC_VERIFIED` or live claim is made.
 Exactly one next gate remains:
 
 **RSTAB-1 HUMAN GEOMETRY GATE** on the Stage route once its public `BUILD.json` visibly reports Race runtime source `8dd3cd15147fe403090e00495bb632bd1cf1a203`.
+
+
+## Human gate fail + WEDGE pass 2 · 2026-09-23
+
+The first zero-install RSTAB-1 human gate failed.
+
+Georg reports:
+- at least two brown ground wedges still visible in the first tunnel section;
+- extreme jerk/instability at the first ~45° curve;
+- Tail/Speedline ribbons overlap and break into rectangular pieces in the same phase;
+- vehicle floats above the track at zero speed, with front wheels visibly raised;
+- jump/bounce/landing can occur above the track or leave the vehicle inside it.
+
+### Current WEDGE repair
+
+The two remaining brown cut ownership transitions are statically localized to:
+
+- **99 → 100**
+- **133 → 134**
+
+Both are inside TUNNEL and have rendered shell geometry at both endpoints.
+
+Pass 2 changes ownership only:
+- tunnel shell owns those two transition segments;
+- brown ground-cut wall/invert is not emitted across them;
+- 90→91 remains ground-owned.
+
+Race runtime/test candidate:
+
+`a9dd49995d32423e101a67f2e591c2b069583252`
+
+Current Race PR #32 handoff head after metadata:
+`47fc451f2b03d5418d6ad281213f139b66223269`
+
+GitHub:
+- run `35814096388`: SUCCESS
+- run `35814091421`: SUCCESS
+- 6 active test blocks
+- 0 skipped
+
+This is WEDGE repair pass **2**. If the same visible WEDGE gate fails again, stop and create the full failure-recovery export; no pass 3.
+
+### Zero-install Stage pass-2 mirror
+
+- kayfabizarro Draft PR #178
+- source branch head `df82e1fa31213d21c13af1f39f369608078633a3`
+- mirrored Race world blob `42aa0aa74a1fa0c55da6bc55677948527b3a87c2`
+- Cloudflare source commit `ad0036c465e7c5a87c3cfcc0d49cfb2cf3378de0`
+- Cloudflare Hub metadata commit `f904c318172848078b9d7f58e2b186c5fda03e7d`
+- main Hub metadata commit `db3a651698d4f829ebc1f7be543ab1b51dc20494`
+
+Intended review route:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`
+
+Public verification remains **UNKNOWN / PENDING** because both Web fetch and container DNS cannot currently access `pages.dev`.
+
+### Downstream gates now fixed in order
+
+After WEDGE ACCEPT:
+
+1. **vehicle support/orientation/landing**
+   - current source already explains stationary float: start bank ≈14.1° plus `vehicleLift()` creates ≈0.306 m lift at rest;
+   - support/contact must be measured rather than tuned by another heuristic.
+
+2. **hard-curve stability**
+   - preserve global v0.8 FLOW/FEEL;
+   - repair/localize the ~35.3 m-radius bend / edge-clamp interaction.
+
+3. **trail/speedline continuity**
+   - re-test after stable curve motion;
+   - rectangle breakup may be downstream of frame-to-frame hard-clamp emitter jumps.
+
+No RSTAB-2 implementation has started yet.

@@ -54,3 +54,23 @@ Exactly one next gate:
 - no RSTAB-2 implementation started.
 
 Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**.
+
+
+## 2026-09-23 · Human WEDGE fail → repair pass 2
+
+- First zero-install RSTAB-1 human gate failed: at least two brown wedges remained in the first tunnel;
+- new human findings recorded for later gates: stationary vehicle float/front-wheel lift, extreme first hard-curve jerk, Tail/Speedline rectangle breakup;
+- remaining brown cut transitions localized exactly to route **99→100** and **133→134**;
+- both are inside TUNNEL with rendered shell at both endpoints;
+- Pass 2 gives those transition segments to the tunnel shell and stops brown cut wall/invert emission there;
+- historical mouth **90→91** remains ground-owned;
+- Race runtime/test candidate `a9dd49995d32423e101a67f2e591c2b069583252`;
+- GitHub runs `35814096388` and `35814091421`: SUCCESS;
+- current test file: **6 active / 0 skipped**;
+- WEDGE pass 2 is the final repair attempt on this foundation; same-gate failure again => failure-recovery export, no pass 3;
+- Stage source PR #178 head `df82e1fa31213d21c13af1f39f369608078633a3`;
+- Cloudflare route source `ad0036c465e7c5a87c3cfcc0d49cfb2cf3378de0`;
+- Hub metadata `cloudflare-live@f904c318172848078b9d7f58e2b186c5fda03e7d`, main `db3a651698d4f829ebc1f7be543ab1b51dc20494`;
+- intended review URL unchanged: `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`;
+- public verification remains UNKNOWN/PENDING due pages.dev access/DNS failure in this environment;
+- downstream order after WEDGE ACCEPT: vehicle support/orientation/landing → hard-curve stability → trail continuity recheck.
