@@ -96,6 +96,35 @@ Work is **not** the routine project lead.
 
 ---
 
+## 1.5 · Donor Lock before visual implementation
+
+When the requested change starts from an existing working donor, apply:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+before Claude Design, Web implementation or WSA/Work integration.
+
+Mandatory sequence:
+
+`D0 donor unchanged → D1 measurement replay → D2 fork/seam → D3 one delta → D4 side-by-side proof → D5 human gate`
+
+This is especially binding when Georg says:
+
+- use the existing one;
+- one-to-one as template;
+- use what works;
+- copy the working version;
+- don't rebuild it.
+
+Zero-install HTML review does not permit a source-class substitution.
+If the donor is a real Three.js/cloth/skinned/runtime module, the review artifact must contain that donor or an explicit adapter around it, not a flat SVG/CSS/Canvas reconstruction.
+
+Measurement evidence belongs in:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+Do not spend Claude/Work tokens rediscovering known axes, scale, pivots, grips, anchors, timing or texture paths.
+
 ## 2 · Mandatory Work escalation test
 
 Before opening Work, create a short escalation record answering:
