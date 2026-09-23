@@ -3,6 +3,58 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-23 · Shared Inline Editor · R2 HUMAN PASS → R3 Uniform Scale Proposal
+
+### HUMAN PASS
+Georg accepted the WorldBuilder shared-editor R2 integration as working well:
+- object-attached mini-menu;
+- Move / Rotate;
+- free Scale gizmo;
+- Drop / Absetzen;
+- World / Local;
+- Close;
+- Save/Reload transform roundtrip.
+
+Result: **WB1 SHARED INLINE EDITOR R2 ACCEPTED**.
+
+### REQUESTED GLOBAL EXTENSION
+Georg requested a simple uniform-size gesture so a source prop can quickly become a size variant, e.g. Boulder → small rock / pebble, without losing the existing free Scale gizmo.
+
+### SHARED-LAYER R3
+`tools/KFB-ToolBox/lib/edit-layer.js` now adds:
+- `scaleBy(factor)`;
+- smaller default `×0.8`;
+- larger default `×1.25`;
+- inverse default factors;
+- default clamp `0.05 … 20`;
+- existing non-uniform proportions preserved;
+- accepted free Scale TransformControls mode unchanged.
+
+Accepted R2 base blob:
+`c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+
+R3 candidate blob:
+`c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
+
+### WORLDBUILDER R3
+The object menu keeps six top-level fields by grouping `−/+` as one Scale field:
+`Move · Rotate · −/+ Size · Drop · World/Local · Close`
+
+`S` remains the free Scale gizmo. Scale persistence is unchanged.
+
+Proposal:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`
+
+### EVIDENCE
+- R3 static/integration: **26/26 PASS**;
+- pinned runtime sources: **4/4 PASS**;
+- shared edit-layer syntax: **1/1 PASS**;
+- embedded browser self-test: **22 assertions prepared / 0 executed**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+### NEXT
+Georg reviews the WorldBuilder R3 Chat HTML specifically for `−/+` uniform size, repeated scaling, retained free `S` Scale and Save/Reload. General rollout to other ToolBox hosts remains proposal-only until that result.
 ## 2026-09-23 · WB1-TERRAIN-SCENE-01 · R1 HUMAN PASS → shared inline editor R2
 
 ### HUMAN PASS
