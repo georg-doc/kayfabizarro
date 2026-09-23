@@ -112,3 +112,26 @@ Decision:
 `ACCEPT / TUNE ONCE / REJECT`
 
 Only after acceptance should the exact grammar be generalized into the Blender-MCP / Geometry-Nodes production recipe.
+
+
+## CURRENT CHAT RECOVERY POINTER
+
+Read first on any continuation or recovery:
+`CHAT_RECOVERY_CURRENT.md`
+
+### Review artifact correction · 2026-09-24
+
+The simplified self-contained Canvas review mirror is **REJECTED AS VISUAL AUTHORITY**.
+
+Reason:
+- it was created only to avoid repeated permission / iframe / cross-origin prompts in the chat viewer;
+- it substituted a reduced custom renderer for the canonical V2 Three.js runtime;
+- Georg observed visibly wrong building rendering, facade-detail placement and proportions;
+- therefore it is not valid evidence for tuning, acceptance or generalization.
+
+Rule:
+- **do not tune the substitute mirror**;
+- **do not reconstruct V2 in another lightweight renderer**;
+- show/recover the actual tested V2 browser evidence or exact canonical runtime output instead.
+
+Canonical V2 truth remains PR #194 / tested runtime head `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`.
