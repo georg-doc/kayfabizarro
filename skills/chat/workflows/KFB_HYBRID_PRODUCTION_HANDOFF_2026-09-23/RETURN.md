@@ -104,3 +104,40 @@ It adds task mechanics for instrument/prop actions and keeps runtime triggers se
 ### WSA
 WSA remains prepared but inactive.
 No workshop should start until Coworker returns a CLOSED packet with a concrete WSA-only capability.
+
+
+## Production Desk / Review Scene / VFX-SFX preparation
+
+### Für Georg
+Neben dem KFB Hub ist jetzt ein aktuelleres Arbeitsartefakt vorbereitet:
+
+**KFB Production Desk v0**
+
+Es soll von Coworker aus dem aktuellen GitHub-Snapshot erzeugt werden und laufende Builds, Human-Gates, Briefings, Reviews, Standards und WSA-Status an einem Ort zeigen.
+
+Nach dem Opus-5.5-Recovery:
+1. Production Desk v0 bauen;
+2. danach ToolBox Source-Safe Integration fortsetzen.
+
+### Files
+- `PRODUCTION_DESK_V0_BRIEF.md`
+- `PRODUCTION_DESK_STATE.json`
+- `COWORKER_PRODUCTION_DESK_START.md`
+- `REVIEW_SCENE_BASE_V1.md`
+- `VFX_SFX_CONSOLIDATION_01.md`
+- `VFX_SFX_WEBCHAT_START.md`
+
+### VFX
+A separate VFX-first Webchat is prepared and may run in parallel.
+
+It does not block ToolBox.
+
+First human artifact:
+one interactive donor Review Bank, not a new FX engine.
+
+### SFX
+SFX is intentionally second.
+The existing Pinball Audio owner is reused; Combat cue/layer sources must be pinned before consolidation.
+
+### Publication
+No Cloudflare needed for these preparation files.
