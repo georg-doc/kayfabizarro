@@ -1666,3 +1666,35 @@ Current gate:
 **GEORG HUMAN TIMING REVIEW** — single Space, then natural double Space at 240 / 320 / 400 ms.
 
 TMB-3 landing remains HOLD. No Cloudflare, merge or Live promotion.
+
+
+## 2026-09-23 · TMB-2 timeout recovery · timing review preserved
+
+A chat timeout occurred after the TMB-2 timing-review work. Branch state was treated as UNKNOWN until re-read.
+
+Verified Travel Draft PR #38:
+- branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
+- current Recovery / handoff head `1976c6c813161013b7c97bf5de55f71575a175ef`;
+- verified runtime/review head before Recovery docs `f7d65faff02cfe21bf82ee06150efc94068d150a`;
+- review implementation head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
+- PR open, Draft, mergeable;
+- exactly 8 changed files;
+- timeout sanity proved that commits after the green review implementation changed only `TMB2_RETURN.md`.
+
+Latest verified runtime/review CI:
+- run `35874165486`;
+- job `107225646882`;
+- **119 PASS · 0 FAIL · 0 skipped**;
+- build PASS;
+- verify PASS;
+- build id `travel-b0-6955e04b36c7b0bb`;
+- artifact `10756131259`;
+- digest `sha256:0c00158e6673e6e5a2157d13a0f5dc4d9d522cde83959d10739734cf1d63b43f`.
+
+Prepared human artifact:
+`site/travel-mode-bridge/tmb2/TMB2_DOUBLE_SPACE_TIMING_REVIEW.html`
+
+Exactly one gate remains:
+**GEORG HUMAN TIMING REVIEW · 240 / 320 / 400 ms or an in-between value.**
+
+Single Space remains immediate Ground jump. The same second Ground-owned Space must not also fire the Flight Space action. TMB-3 landing remains HOLD.
