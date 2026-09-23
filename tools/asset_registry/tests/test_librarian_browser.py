@@ -78,6 +78,17 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         self.assertIn("visibleMeshBounds", gallery)
         self.assertIn("framePerspectiveCamera", gallery)
 
+    def test_preview_repairs_known_nearby_missing_texture_maps(self):
+        js = (LIB / "preview3d.js").read_text(encoding="utf-8")
+        self.assertIn("textureFallbackUrls", js)
+        self.assertIn("repairMissingTextureMaps", js)
+        self.assertIn("../textures/", js)
+        self.assertIn("../../textures/", js)
+        self.assertIn("THREE.SRGBColorSpace", js)
+        self.assertIn("THREE.NearestFilter", js)
+        self.assertIn("mat.map=tex", js)
+        self.assertIn("texture fallback", js)
+
     def test_permanent_url_redirect_exists(self):
         redirect = ROOT / "asset-librarian/index.html"
         self.assertTrue(redirect.is_file())
