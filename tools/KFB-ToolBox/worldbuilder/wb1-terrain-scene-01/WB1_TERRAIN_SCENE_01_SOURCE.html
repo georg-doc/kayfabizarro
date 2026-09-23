@@ -41,6 +41,12 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 .badge.ok{border-color:#587a55;color:var(--ok)}
 #doc{white-space:pre-wrap;max-height:170px;overflow:auto;background:#13110d;border:1px solid var(--line);border-radius:8px;padding:8px;font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfc2aa}
 #selftest{display:none}
+/* Shared ToolBox inline 3D edit layer · exact S7 object-menu grammar. */
+#objmenu{position:absolute;z-index:10;display:flex;gap:3px;padding:3px;border-radius:7px;
+  background:#14130fee;border:1px solid #4a4433;box-shadow:0 6px 18px #05030a80;transform:translate(-50%,0)}
+#objmenu button{width:28px;height:28px;padding:0;font-size:13px;line-height:1;border-radius:5px}
+#objmenu button.active{border-color:var(--accent);color:#ffe2a7}
+#objmenu[hidden]{display:none}
 @media(max-width:900px){
   #app{grid-template-columns:minmax(240px,280px) 1fr}
 }
@@ -79,13 +85,11 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
     </div>
 
     <div id="editPanel" class="section" hidden>
-      <h2>Scene editing · S21/S22 seam</h2>
+      <h2>Inline 3D editor · shared ToolBox layer</h2>
       <div class="row">
-        <button id="move" class="active">Move</button>
-        <button id="rotate">Rotate</button>
-        <button id="snap" class="active">Snap</button>
-        <button id="drop">Drop to terrain</button>
+        <button id="snap" class="active">Snap 0.05 / 15°</button>
       </div>
+      <div class="source">Object menu: ✥ move · ⟳ rotate · ⤢ scale · ⬓ drop · ⊹ world/local · ✕ close</div>
       <div class="row" style="margin-top:6px">
         <button id="addActor" disabled>Add Caveman</button>
         <button id="addProp" disabled>Add Boulder</button>
@@ -113,7 +117,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
       <h2>Owner boundaries</h2>
       <div class="source">
         <b>Terrain donor:</b> ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070 · MIT<br>
-        <b>Scene edit donor:</b> KFB S21/S22 TransformControls + local patch storage<br>
+        <b>Scene edit owner:</b> ToolBox <code>lib/edit-layer.js</code> · exact S7 donor blob c97b3537… · S21/S22 lineage<br>
         <b>Resident donor:</b> Resident Atlas Caveman · Rig_Medium · Melee_Unarmed_Idle<br>
         <b>WorldBuilder owns:</b> terrain settings + source references + transforms only
       </div>
@@ -123,6 +127,14 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
   <main id="stage">
     <div id="status">loading engine…</div>
     <div id="hint"><span>Source isolation must be reviewed before the composed scene unlocks.</span></div>
+    <div id="objmenu" hidden>
+      <button data-m="translate" title="Move (g)">✥</button>
+      <button data-m="rotate" title="Rotate (r)">⟳</button>
+      <button data-m="scale" title="Scale (s)">⤢</button>
+      <button data-m="floor" title="Drop onto the visible surface below">⬓</button>
+      <button data-m="space" title="World / local axes">⊹</button>
+      <button data-m="close" title="Clear selection (Esc)">✕</button>
+    </div>
   </main>
 </div>
 
@@ -137,7 +149,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
   WB1-TERRAIN-SCENE-01
   Reuse seams:
   - ZyFou/ProceduralTerrains cpuNoise.js + seedDomain.js subset, pinned f58a8d... (MIT).
-  - KFB S21/S22 editor interaction: TransformControls, click select, snap, drop, localStorage.
+  - Shared ToolBox lib/edit-layer.js, exact donor from Resident Atlas S7, itself extracted from S21/S22.
   - KFB Resident Atlas Caveman scene contract: exact actor, Rig_Medium, Melee_Unarmed_Idle,
     fit height 2.2, evaluate pose before ground contact.
   No model or animation bytes are embedded in the scene document.
@@ -171,8 +183,8 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
  */
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { makeEditLayer } from '../../lib/edit-layer.js';
 
 const ASSET_COMMIT='891eadf01e218f5fc21387e64cea1fec8332c5b6';
 const ANIM_COMMIT='aa16a777a970f23d3f11fb3c23dc40718b04fa88';
@@ -212,7 +224,7 @@ const DEFAULT_DOC={
   terrain:{seed:43129,height:2.6,macroScale:3.2,detail:0.55},
   sources:{
     terrain:{repo:'ZyFou/ProceduralTerrains',commit:ZYFOU_COMMIT,license:'MIT',files:['src/engine/terrain/noise/cpuNoise.js','src/engine/terrain/noise/seedDomain.js']},
-    sceneEdit:{owner:'KFB S21/S22',interaction:['TransformControls','click-select','snap','drop','localStorage']},
+    sceneEdit:{owner:'KFB ToolBox',module:'tools/KFB-ToolBox/lib/edit-layer.js',donorBlob:'c97b3537f71e939176f3ae5ce7ae83feabb7918f',lineage:['Dungeon Room Study S21/S22','Resident Atlas S7'],interaction:['object-menu','pointerup-select','translate','rotate','scale','drop','world-local','snap']},
     resident:{owner:'KFB Resident Atlas',residentId:'caveman',donorPath:'tools/resident_atlas/scenes/caveman-cave-camp.json'}
   },
   objects:[
@@ -220,12 +232,12 @@ const DEFAULT_DOC={
       id:ACTOR.id,kind:ACTOR.kind,name:ACTOR.name,
       source:{path:ACTOR.path,commit:ACTOR.commit},
       resident:{id:ACTOR.residentId,rigFamily:ACTOR.rigFamily,texture:{path:ACTOR.texture.path,commit:ACTOR.texture.commit},clip:{name:ACTOR.clip.name,path:ACTOR.clip.path,commit:ACTOR.clip.commit}},
-      transform:{position:[-2.2,null,0.2],rotation:[0,0.35,0]}
+      transform:{position:[-2.2,null,0.2],rotation:[0,0.35,0],scale:[1,1,1]}
     },
     {
       id:PROP.id,kind:PROP.kind,name:PROP.name,
       source:{path:PROP.path,commit:PROP.commit},
-      transform:{position:[2.2,null,-0.6],rotation:[0,-0.45,0]}
+      transform:{position:[2.2,null,-0.6],rotation:[0,-0.45,0],scale:[1,1,1]}
     }
   ]
 };
