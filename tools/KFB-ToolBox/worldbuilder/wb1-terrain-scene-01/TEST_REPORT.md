@@ -253,6 +253,25 @@ Open the new shared-editor review and verify:
 6. ⊹ toggles world/local axes;
 7. ✕ clears selection;
 8. Save → change transform → Reload restores position / rotation / scale.
+## Human R2 shared-editor review · PASS
+
+Georg accepted the shared inline-editor R2 Chat HTML:
+
+- object-attached mini-menu: **PASS**;
+- Move: **PASS**;
+- Rotate: **PASS**;
+- Scale gizmo: **PASS**;
+- Drop / Absetzen: **PASS**;
+- World / Local axes: **PASS**;
+- Close selection: **PASS**;
+- Save / Reload transform roundtrip: **PASS**.
+
+Human result: **WB1 SHARED INLINE EDITOR R2 ACCEPTED**.
+
+Follow-up requested by Georg:
+- add a simpler uniform prop scale gesture for quick size variants such as Boulder → small rock / pebble;
+- preserve the accepted free Scale gizmo;
+- propose the capability as a global shared ToolBox edit-layer feature, then expose it in WorldBuilder.
 ## Publication
 
 Cloudflare: **HOLD · NOT PUBLISHED**.  
