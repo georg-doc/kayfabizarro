@@ -68,7 +68,7 @@ export function addStrokePoint(stroke, x, z, minSpacing = 0) {
 }
 
 export function dabDeltaAt(x, z, mode, cx, cz, radius, strength) {
-  const d = Math.hypot(finite(x), finite(z), -finite(cx), -finite(cz));
+  const d = Math.hypot(finite(x) - finite(cx), finite(z) - finite(cz));
   const w = brushWeight(d, radius);
   if (!w) return 0;
   const sign = mode === 'lower' ? -1 : 1;
