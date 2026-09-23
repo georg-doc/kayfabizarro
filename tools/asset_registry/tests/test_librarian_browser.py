@@ -10,7 +10,7 @@ class LibrarianBrowserContractTests(unittest.TestCase):
     def test_required_browser_files_exist(self):
         for name in (
             "index.html", "styles.css", "resources.css", "animation-sources.css", "app.js", "state.js", "registry.js",
-            "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "framing3d.js",
+            "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "texture-fallback.js", "framing3d.js",
             "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "README.md",
         ):
             self.assertTrue((LIB / name).is_file(), name)
@@ -79,15 +79,19 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         self.assertIn("framePerspectiveCamera", gallery)
 
     def test_preview_repairs_known_nearby_missing_texture_maps(self):
-        js = (LIB / "preview3d.js").read_text(encoding="utf-8")
-        self.assertIn("textureFallbackUrls", js)
-        self.assertIn("repairMissingTextureMaps", js)
-        self.assertIn("../textures/", js)
-        self.assertIn("../../textures/", js)
-        self.assertIn("THREE.SRGBColorSpace", js)
-        self.assertIn("THREE.NearestFilter", js)
-        self.assertIn("mat.map=tex", js)
-        self.assertIn("texture fallback", js)
+        helper = (LIB / "texture-fallback.js").read_text(encoding="utf-8")
+        detail = (LIB / "preview3d.js").read_text(encoding="utf-8")
+        gallery = (LIB / "thumb3d.js").read_text(encoding="utf-8")
+        self.assertIn("textureFallbackUrls", helper)
+        self.assertIn("repairMissingTextureMaps", helper)
+        self.assertIn("../textures/", helper)
+        self.assertIn("../../textures/", helper)
+        self.assertIn("THREE.SRGBColorSpace", helper)
+        self.assertIn("THREE.NearestFilter", helper)
+        self.assertIn("mat.map = tex", helper)
+        self.assertIn("repairMissingTextureMaps(THREE,record,root)", detail)
+        self.assertIn("texture fallback", detail)
+        self.assertIn("repairMissingTextureMaps(THREE, record, root)", gallery)
 
     def test_permanent_url_redirect_exists(self):
         redirect = ROOT / "asset-librarian/index.html"
