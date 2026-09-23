@@ -226,3 +226,44 @@ Status:
 ### WSA
 No capability gap identified.
 Coworker first.
+
+
+## Blender MCP hybrid production lane
+
+### Für Georg
+Blender ist jetzt als echte Produktionsspur vorbereitet.
+
+Der Clown hat gezeigt, dass sich Figuren/Props/Animation dort reproduzierbar und mit brauchbarer Qualität herstellen lassen.
+
+Der laufende Warband-Job wird nicht neu gestartet. Das neue Onboarding wird nur als Zusatzkontext gegeben.
+
+### Onboarding
+`BLENDER_MCP_PRODUCTION_ONBOARDING.md`
+
+### Current Warband continuation
+`BLENDER_MCP_WARBAND_CONTINUE_PROMPT.md`
+
+### Proven precedent
+PR #192
+Head:
+`b49fb6e1adde070d658e1cc21dadb3294164cb29`
+
+Human:
+**PASS ~80 %**
+
+### Required Blender deliverables
+- editable .blend;
+- reproducible Python/MCP script where practical;
+- GLB/GLTF;
+- GIF/MP4 preview;
+- source/measurement record;
+- short Return.
+
+### Runtime handoff
+Coworker/Web remains responsible for integrating accepted Blender output into the existing KFB runtime.
+
+### Current lane refresh
+- WorldBuilder WB2: PR #190 / head `8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e`;
+- Racer PR #33 latest checked head: `382047219b394de61074031d6968e3fabe86ed7c`; R3d architecture cleanup is present, but current R3d review evidence must be refreshed before asking Georg.
+
+No product runtime code changed by this onboarding.
