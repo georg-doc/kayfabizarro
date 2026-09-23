@@ -141,3 +141,34 @@ The existing Pinball Audio owner is reused; Combat cue/layer sources must be pin
 
 ### Publication
 No Cloudflare needed for these preparation files.
+
+
+## Auto-sync / God Mode / master Coworker sequence
+
+### Für Georg
+Der Asset-Librarian-Effekt ist echte GitHub-Automatisierung und kann als technisches Muster für das Production Desk wiederverwendet werden.
+
+Production Desk soll deshalb nicht dauerhaft ein manuell erzeugter Snapshot bleiben.
+
+Prepared:
+- `PRODUCTION_DESK_AUTOSYNC_V1.md`
+- `WORLDBUILDER_GOD_MODE_V0.md`
+- `COWORKER_OPUS55_SEQUENCE.md`
+
+### Auto-sync
+Same-repo:
+GitHub Action + bot branch + live manifest polling.
+
+Private cross-repo:
+requires explicit GitHub App/token or status-dispatch setup.
+No credential was invented or added by this slice.
+
+### WorldBuilder
+Prepared direction:
+TinySkies/Travel Globe Overview → smooth approach → local WB2 terrain/editor → OSM/Assets/Residents/Race/Card Zones → Save/Reload → pull back to Globe.
+
+Not yet the active implementation gate.
+
+### Coworker
+The exact paste-ready sequence now lives in:
+`COWORKER_OPUS55_SEQUENCE.md`
