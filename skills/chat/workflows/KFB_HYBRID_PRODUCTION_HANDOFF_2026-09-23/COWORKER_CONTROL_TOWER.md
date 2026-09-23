@@ -76,9 +76,12 @@ Read:
 - Travel #38;
 - Racer #33;
 - Blender #192 / latest Warband return if available;
+- Hürth form-language PR #194;
 - Curtain #189;
 - Billboard #188;
 - current cartoon-form-language note.
+
+If the newest Warband work exists only in Dropbox, report it as **candidate-only / GitHub Return pending** rather than promoting Dropbox state into implementation truth.
 
 Then return exactly:
 
