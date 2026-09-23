@@ -128,6 +128,15 @@ Clown JUG-P1:
 Current live Blender work:
 **Orc Warband / KayfaBizarros performance**.
 
+Read-only Dropbox recon now shows a newer authoring checkpoint than the GitHub Blender proof:
+- `module.json` = `orb-kayfabizarros-band` / ORB-P1 / **v4** / `candidate-only`;
+- current authored files include `orb_band_module_v4.blend`, `orb_band_module_v4.glb`, `orb_band_module_v4.gltf.json`, `orb_preview_v4.gif` and `orb_contact_sheet_v4.png`;
+- Dropbox `module.json` modified 2026-09-23 19:03Z;
+- the retained `KAYFABIZARROS_BAND_POC_REVIEW.html` still identifies the older v2 review surface.
+
+Therefore: **Warband v4 is an active authoring candidate, not yet a GitHub-returned or human-accepted milestone.**
+PR #192 remains the durable GitHub proof until the Warband owner persists its own Return/evidence.
+
 Do not restart the current Blender scene.
 Next meaningful checkpoint should return:
 - .blend;
@@ -148,11 +157,26 @@ Verified existing sources:
 - archived Town design direction contains Georg's references to Rocko's Modern Life + Wallace & Gromit as staging/material references, not literal assets/styles:
   blob `2f8c80f7d00452e4e0dd85f7a428994d7a7c5d2f`.
 
-A distinct new check-in from the currently running Rocko/Wallace form-language chat was **not found as a separate current GitHub source** at this check.
+The parallel form-language lane has now persisted a source-backed current candidate:
 
-This handoff therefore records the direction in:
-`CARTOON_FORM_LANGUAGE_CURRENT.md`
-without pretending the missing other-chat export was recovered.
+`georg-doc/kayfabizarro#194`
+branch `chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23`
+current head `2db8f327e2580c745aa2d14ee9866a15925eb64d`.
+
+Hürth 01 proves:
+- 22 real Hürth OSM buildings;
+- CLEAN vs exact current City-Lab GROTESQUE vs new ELASTIC GROTESQUE CLAY;
+- explicit source-object isolation before composition;
+- OSM/S2/collision ownership unchanged;
+- tested implementation head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`;
+- browser evidence **16/16 PASS**, **3/3 WebGL2**, 0 page/console errors;
+- Cloudflare Stage **NOT PUBLISHED**;
+- human visual acceptance **PENDING**.
+
+Current human gate:
+**Hürth 01 visual decision — continue / tune / reject the Elastic grammar.**
+
+`CARTOON_FORM_LANGUAGE_CURRENT.md` remains the control-plane synthesis, but PR #194 is now the richer implementation/source lane.
 
 ## Curtain
 
