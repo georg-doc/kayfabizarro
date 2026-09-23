@@ -24,7 +24,7 @@ Draft PR:
 `#186`
 
 Verified pre-Return branch head after implementation, evidence, changelog, routers, Hub and PR metadata:
-`478d71cc57fd0745922f3c4af8f4be595852f175`
+`68c65c37a6d621adc6c0f999b3be6e43986d1c5a`
 
 The exact final head after this Return write is read back and reported in chat.
 
