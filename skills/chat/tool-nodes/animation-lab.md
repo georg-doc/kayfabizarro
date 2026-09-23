@@ -21,3 +21,11 @@ This skill currently declares version 2.0 and `canonical-draft`; it provides the
 ## Promotion gate
 
 Pin current implementation repository/path, current standalone/live site if any, current handover/return, and tested clip source revision.
+
+## 2026-09-23 · Candidate authoring input · Blender MCP (POC)
+
+A Blender-side authoring lane produced a checked, looping KayKit animation (Clown · Rig_Medium · 3-club cascade, 48 f @ 24 fps, props by the identity rule at `handslot.*`). Georg visual PASS ~80 % on the viewport preview; GLB exported, **browser playback not yet tested**.
+
+This does not promote this node or change its owner. It is an input the Lab may accept after JUG-P2.
+
+Handover: `tools/KFB-ToolBox/_handover/BLENDER_MCP_ANIMATION_POC_2026-09-23/START_HERE.md`
