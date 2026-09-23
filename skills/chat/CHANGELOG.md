@@ -1618,3 +1618,51 @@ Binding contract:
 - TMB-3 landing remains HOLD.
 
 No merge or Live promotion authorized.
+
+
+## 2026-09-23 · TMB-2 technical pass · human timing review
+
+TMB-2 is implemented on Travel Draft PR #38, stacked on the HUMAN_ACCEPTED TMB-1E commit.
+
+Implementation:
+- branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
+- pure adapter `site/world-builder/mode-intent.js`;
+- Ground queues the existing jump before reporting a fresh Space tap upward;
+- Ground still capture-claims/stops that same event;
+- a valid second fresh Space emits `REQUEST_FLIGHT`;
+- WB0 routes the request only through existing `setLocomotion('FLIGHT') → runtime-mode.js`;
+- no new keyboard, movement or camera owner;
+- no Ground jump-physics retune.
+
+Human timing candidates are **240 / 320 / 400 ms**. The initial 320 ms value is not canonical before review.
+
+First CI attempt `35873441293` found one test-only false positive because an ownership regex matched the word “camera” in a source comment. Runtime code did not change for that repair.
+
+Corrected technical head:
+`ea84e74059f63d9c669a3029bad94b7d7f8f0e15`
+→ **113/113 PASS**, build/verify PASS.
+
+Final HTML-review head:
+`ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`
+
+Final CI:
+- run `35873967992`;
+- job `107224966389`;
+- **119 PASS · 0 FAIL · 0 skipped**;
+- build PASS;
+- verify PASS;
+- artifact `10756465783`;
+- digest `sha256:083b53e95488ddedd4daea2fa4b2ec15749973d14db6d2c32ed318dd40f953bd`.
+
+Travel Return:
+`_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB2_RETURN.md`
+at `f7d65faff02cfe21bf82ee06150efc94068d150a`.
+
+Review artifact:
+`site/travel-mode-bridge/tmb2/TMB2_DOUBLE_SPACE_TIMING_REVIEW.html`
+blob `da89cd187388ea429ab73a853eb7ae5d56f5914d`.
+
+Current gate:
+**GEORG HUMAN TIMING REVIEW** — single Space, then natural double Space at 240 / 320 / 400 ms.
+
+TMB-3 landing remains HOLD. No Cloudflare, merge or Live promotion.
