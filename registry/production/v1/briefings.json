@@ -1,0 +1,103 @@
+{
+  "schema": "kfb.production-registry/1",
+  "briefings": [
+    {
+      "lane": "toolbox-source-safe",
+      "title": "ToolBox: echte Figuren, Szenen und Editor",
+      "provider": "Claude Coworker",
+      "status": "CURRENT",
+      "label": "Produktionspaket",
+      "path": "skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01.md",
+      "ref": "chatgpt-web/production-flow-v2-consolidation-2026-09-23",
+      "exists": true,
+      "blob": "ca509a5944638353ece19e3a37a49a65dcba22f6",
+      "pasteReady": false,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-flow-v2-consolidation-2026-09-23/skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/production-flow-v2-consolidation-2026-09-23/skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01.md"
+    },
+    {
+      "lane": "production-desk",
+      "title": "Production Desk (diese Übersicht)",
+      "provider": "Claude Coworker",
+      "status": "CURRENT",
+      "label": "Auto-Sync-Plan",
+      "path": "skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/PRODUCTION_DESK_AUTOSYNC_V1.md",
+      "ref": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
+      "exists": true,
+      "blob": "e555b061cbfa562970d850b2f64f29b9edc3c91c",
+      "pasteReady": false,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/PRODUCTION_DESK_AUTOSYNC_V1.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/PRODUCTION_DESK_AUTOSYNC_V1.md"
+    },
+    {
+      "lane": "vfx-sfx",
+      "title": "Effekte sichten (Rauch, Treffer, Funken)",
+      "provider": "Neuer Web-Chat",
+      "status": "CURRENT",
+      "label": "Startnachricht",
+      "path": "skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/VFX_SFX_WEBCHAT_START.md",
+      "ref": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
+      "exists": true,
+      "blob": "95a08fdcd77917c56bfbba811bd82b9a6627f206",
+      "pasteReady": true,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/VFX_SFX_WEBCHAT_START.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/VFX_SFX_WEBCHAT_START.md"
+    },
+    {
+      "lane": "curtain",
+      "title": "Theatervorhang: Neustart",
+      "provider": "Claude Design",
+      "status": "CURRENT",
+      "label": "Startnachricht",
+      "path": "tools/KFB-ToolBox/_handover/CLAUDE_CURTAIN_VISUAL_REFINEMENT_2026-09-23/CLAUDE_RECOVERY_PROMPT.md",
+      "ref": "chatgpt-web/claude-curtain-visual-refinement-2026-09-23",
+      "exists": true,
+      "blob": "994ec680b700b015c28ae328111a9b115b63b1b7",
+      "pasteReady": true,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/claude-curtain-visual-refinement-2026-09-23/tools/KFB-ToolBox/_handover/CLAUDE_CURTAIN_VISUAL_REFINEMENT_2026-09-23/CLAUDE_RECOVERY_PROMPT.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/claude-curtain-visual-refinement-2026-09-23/tools/KFB-ToolBox/_handover/CLAUDE_CURTAIN_VISUAL_REFINEMENT_2026-09-23/CLAUDE_RECOVERY_PROMPT.md"
+    },
+    {
+      "lane": "billboard",
+      "title": "Werbetafel mit echter KFB-Karte: Neustart",
+      "provider": "Claude Design",
+      "status": "CURRENT",
+      "label": "Startnachricht",
+      "path": "tools/KFB-ToolBox/_handover/CLAUDE_BILLBOARD_MEDIA_DESIGN_2026-09-23/CLAUDE_RECOVERY_PROMPT.md",
+      "ref": "chatgpt-web/claude-billboard-media-design-2026-09-23",
+      "exists": true,
+      "blob": "a53285be0797692df7bddaae27373cf092c93723",
+      "pasteReady": true,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/claude-billboard-media-design-2026-09-23/tools/KFB-ToolBox/_handover/CLAUDE_BILLBOARD_MEDIA_DESIGN_2026-09-23/CLAUDE_RECOVERY_PROMPT.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/claude-billboard-media-design-2026-09-23/tools/KFB-ToolBox/_handover/CLAUDE_BILLBOARD_MEDIA_DESIGN_2026-09-23/CLAUDE_RECOVERY_PROMPT.md"
+    },
+    {
+      "lane": "dance-d1",
+      "title": "Erster Tanz für Residents",
+      "provider": "Blender-Chat",
+      "status": "CURRENT",
+      "label": "Plan",
+      "path": "skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/RESIDENT_PERFORMANCE_NEXT_2026-09-23.md",
+      "ref": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
+      "exists": true,
+      "blob": "f22ed3a5f0577b93b5619cab08f0d36f97503c1b",
+      "pasteReady": false,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/RESIDENT_PERFORMANCE_NEXT_2026-09-23.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/RESIDENT_PERFORMANCE_NEXT_2026-09-23.md"
+    },
+    {
+      "lane": "world-god",
+      "title": "Vom Globus ins Gelände (God Mode)",
+      "provider": "Coworker + Claude Design + Blender",
+      "status": "HOLD",
+      "label": "Zielbild",
+      "path": "skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WORLDBUILDER_GOD_MODE_V0.md",
+      "ref": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
+      "exists": true,
+      "blob": "aef481ba391134ee6b8c7bc3ed63d65209ec7229",
+      "pasteReady": false,
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WORLDBUILDER_GOD_MODE_V0.md",
+      "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WORLDBUILDER_GOD_MODE_V0.md"
+    }
+  ]
+}

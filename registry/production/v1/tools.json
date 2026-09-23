@@ -1,0 +1,183 @@
+{
+  "schema": "kfb.production-registry/1",
+  "publication": {
+    "repo": "georg-doc/kayfabizarro",
+    "ref": "cloudflare-live",
+    "base": "https://kayfabizarro.pages.dev/"
+  },
+  "tools": [
+    {
+      "group": "Figuren und Gesichter",
+      "id": "eyerig-batch",
+      "title": "EyeRig-Werkbank",
+      "what": "Augen für Rig_Medium- und Rig_Large-Figuren einstellen und prüfen.",
+      "status": "Zum Prüfen",
+      "path": "kfb-hub/stage/toolbox/eye-rig-batch/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+      "available": true,
+      "blob": "4991cf82404903f4b5aa752c5ab2ce092e73f957"
+    },
+    {
+      "group": "Figuren und Gesichter",
+      "id": "eyerig-legacy",
+      "title": "Legacy-Augen 17/17",
+      "what": "Die 17 Legacy-Köpfe von vorne und schräg ansehen und Augen freigeben.",
+      "status": "Zum Prüfen",
+      "path": "kfb-hub/stage/toolbox/eye-rig-batch/legacy/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Figuren und Gesichter",
+      "id": "motion-lab",
+      "title": "KayKit Motion Lab",
+      "what": "Bewegungen für KayKit-Figuren ansehen und abstimmen.",
+      "status": "Zum Prüfen",
+      "path": "kfb-hub/stage/toolbox/kaykit-motion-lab-v1/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Figuren und Gesichter",
+      "id": "ranged-calibration",
+      "title": "Fernkampf-Kalibrierung",
+      "what": "Angenommene Grundeinstellung für Schusswaffen an KayKit-Figuren.",
+      "status": "Fertig",
+      "path": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Welt und Gelände",
+      "id": "world-atlas",
+      "title": "World / Environment Atlas",
+      "what": "Umgebungen, Dungeon und Hex-Welten an einem Ort.",
+      "status": "Fertig",
+      "path": "world-atlas/index.html",
+      "url": "https://kayfabizarro.pages.dev/world-atlas/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Welt und Gelände",
+      "id": "world-builder-p1",
+      "title": "WorldBuilder · Umgebung (P1)",
+      "what": "Von dir angenommene Umgebungs-Grundlage.",
+      "status": "Fertig",
+      "path": "kfb-hub/stage/toolbox/world-builder-p1-review/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-builder-p1-review/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Welt und Gelände",
+      "id": "world-builder-p2",
+      "title": "WorldBuilder · flach, Kugel, Ring (P2)",
+      "what": "Dieselbe Mini-Szene auf drei Weltformen.",
+      "status": "Zum Prüfen",
+      "path": "kfb-hub/stage/toolbox/world-building-preflight/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/",
+      "available": true,
+      "blob": "87b85fb96a9a63918ff8a917eb9cb9e0718f397e"
+    },
+    {
+      "group": "Welt und Gelände",
+      "id": "tileable-seam",
+      "title": "Nahtlose Wandtextur",
+      "what": "Alte wiederholte Textur gegen nahtlose Variante an der Wandnaht vergleichen.",
+      "status": "Zum Prüfen",
+      "path": "kfb-hub/stage/toolbox/tileable-macro-seam-lab/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Assets und Bausteine",
+      "id": "asset-librarian",
+      "title": "Asset Librarian",
+      "what": "Alle Assets finden, mit Herkunft. Aktualisiert sich von selbst.",
+      "status": "Fertig",
+      "path": "tools/asset_registry/librarian/index.html",
+      "url": "https://kayfabizarro.pages.dev/tools/asset_registry/librarian/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Assets und Bausteine",
+      "id": "card-zone-lab",
+      "title": "Card Zone Lab",
+      "what": "Karten-Effekte: Flüssigkeit, Kartenstapel, Himmelsstrahlen, Kartenwürfel.",
+      "status": "Zum Prüfen",
+      "path": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Assets und Bausteine",
+      "id": "vehicle-deformer",
+      "title": "Fahrzeug-Verformer",
+      "what": "Cartoon-Verformung für Fahrzeuge als Vorlage.",
+      "status": "Vorlage",
+      "path": "kfb-hub/stage/vehicle-deformer-v2/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/vehicle-deformer-v2/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    },
+    {
+      "group": "Assets und Bausteine",
+      "id": "theatre-curtain",
+      "title": "Theatervorhang v1",
+      "what": "Der funktionierende Stoff-Vorhang. Vorlage für den Neustart.",
+      "status": "Vorlage",
+      "path": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
+      "available": true,
+      "blob": "937369a4aabb3c192f278dcd802f2b34b6029cfb"
+    },
+    {
+      "group": "Spielen",
+      "id": "combat",
+      "title": "Combat MVP",
+      "what": "FrizzleBob gegen einen Skelett-Krieger. Spielbar.",
+      "status": "Fertig",
+      "path": "kfb-hub/stage/combat/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/",
+      "available": true,
+      "blob": "e1c37a2b50f1b1741c96fe3a67c1367fbd3d834b"
+    },
+    {
+      "group": "Spielen",
+      "id": "stage",
+      "title": "Alle Bühnen",
+      "what": "Übersicht aller veröffentlichten Bühnen und Proben.",
+      "status": "Übersicht",
+      "path": "kfb-hub/stage/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/",
+      "available": true,
+      "blob": "route-audit-2026-09-22"
+    }
+  ],
+  "archive": [
+    {
+      "label": "Alter Hub (mit deinen lokalen Notizen)",
+      "path": "kfb-hub/archiv/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/archiv/",
+      "available": true
+    },
+    {
+      "label": "Alte ToolBox-Übersicht",
+      "path": "kfb-hub/stage/toolbox/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+      "available": true
+    },
+    {
+      "label": "Alle Briefings auf GitHub",
+      "url": "https://github.com/georg-doc/kayfabizarro/tree/main/skills/chat",
+      "available": true
+    }
+  ]
+}

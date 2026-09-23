@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.production-registry/1",
+  "reviews": [
+    {
+      "lane": "worldbuilder-wb2",
+      "title": "WorldBuilder: Gelände formen",
+      "questions": [
+        "Lässt sich das Gelände so formen, wie du es dir vorstellst?",
+        "Funktionieren Rückgängig und Speichern/Laden zuverlässig?"
+      ],
+      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/190",
+      "head": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+      "result": "PENDING"
+    },
+    {
+      "lane": "huerth-form-language",
+      "title": "Hürth: neuer Cartoon-Look für Gebäude",
+      "questions": [
+        "Fühlt sich der neue Knete-Look nach KFB an?",
+        "Weitermachen, nachbessern oder verwerfen?"
+      ],
+      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/194",
+      "head": "00fe0ecc1ce5312ef02a8129f1cf0d324cca3eb1",
+      "result": "PENDING"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "kfb.production-registry/1",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceCommit": "c40d6b694f5ab6b9ba2f45b412f7a0283fa19513",
+  "sourceRef": "coworker-connector-refresh",
+  "mode": "coworker-snapshot",
+  "generatedAt": "2026-09-23T21:42:39Z",
+  "checkedAt": "2026-09-23T21:42:39Z",
+  "contentHash": "222b48a113a5e34fe96a1dcb7768e5f6a2c2c0774c493aa0d1950d0efc902370",
+  "staleAfterHours": 8,
+  "counts": {
+    "LOOK_AT": 2,
+    "RUNNING": 3,
+    "CAN_START": 4,
+    "WAITING": 3,
+    "lanes": 12,
+    "closed": 0,
+    "external": 2,
+    "moved": 0,
+    "problems": 0,
+    "tools": 14
+  },
+  "files": [
+    "lanes.json",
+    "briefings.json",
+    "reviews.json",
+    "standards.json",
+    "wsa.json",
+    "tools.json",
+    "problems.json"
+  ]
+}
