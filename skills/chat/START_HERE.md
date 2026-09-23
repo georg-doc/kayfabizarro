@@ -520,3 +520,16 @@ Zero-install human gate is now packaged as kayfabizarro Draft PR #178 with **20/
 Cloudflare source commit: `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`. Hub source: `a075934bb5f8628535b673459b0b9ddcc0af5312`; main Hub metadata: `fd7680034171f9a327936e9ee7fa2a3cc1f6b4dc`.
 
 Public verification is **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`. Local HTTP is only a developer fallback; do not present it as the human acceptance link. RSTAB-2 remains blocked until human ACCEPT.
+
+
+## 2026-09-23 · Asset Librarian v1.7 Orc Raider texture hotfix
+
+Dedicated pending fix:
+
+`tools/asset_registry/librarian/_handover/ORCRAIDER_TEXTURE_FALLBACK_2026-09-23/RETURN.md`
+
+Cause is source-proven: Orc Raider geometry/skin load correctly, but its material `orc_texture_A` has no `map`; the real pinned PNG lives one directory level higher in the pack's `textures/` folder. Existing FrizzleBob/Graft source had already measured this exact anomaly.
+
+Candidate fix keeps Registry/assets read-only and adds one shared nearby-texture fallback to Librarian detail + Gallery previews. Browser regression now opens the exact Orc Raider asset and requires the fallback before passing.
+
+Status: **PENDING DRAFT HOTFIX · NOT PUBLIC VERIFIED**. Permanent Asset Librarian URL remains unchanged; do not claim the fix live until CI passes, merge occurs, and the Cloudflare route is visibly rechecked.

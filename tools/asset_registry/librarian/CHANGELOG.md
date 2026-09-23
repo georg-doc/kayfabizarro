@@ -1,5 +1,31 @@
 # Changelog · KFB Asset Librarian
 
+## v1.7 hotfix candidate · Orc Raider texture fallback · 2026-09-23
+
+### Cause
+- `OrcRaider.glb` loads its geometry/skin correctly but its material `orc_texture_A` has no texture map.
+- the real source image exists beside the pack at `../textures/orc_texture_A.png`;
+- the existing FrizzleBob/Graft owner had already measured and repaired this exact KayKit packaging anomaly;
+- Librarian v1.7 detail/gallery previews used direct `GLTFLoader` only, so the model rendered white.
+
+### Fix
+- add one shared read-only `texture-fallback.js` preview helper;
+- only inspect mesh materials that have no `map` and whose material name looks texture-backed;
+- try nearby source-relative `textures/` / `texture/` locations using the existing pinned/raw source URL;
+- apply sRGB + KayKit-friendly nearest magnification;
+- use the same helper for detail preview and Gallery thumbnail;
+- do not mutate Registry facts, source assets or consumer handoffs.
+
+### Regression evidence prepared
+- static browser-contract test covers the helper and both preview consumers;
+- v1.7 browser smoke opens the real Orc Raider and requires a reported texture fallback;
+- browser smoke captures a dedicated Orc Raider evidence screenshot;
+- workflow syntax-checks the new helper.
+
+### Status
+Implementation candidate on dedicated branch. No public-site promotion claimed until CI/browser evidence passes and the exact Cloudflare route is re-opened.
+
+
 ## v1.6 Town Workbench · 2026-09-15
 
 ### Decision

@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { visibleMeshBounds, framePerspectiveCamera } from './framing3d.js';
+import { repairMissingTextureMaps } from './texture-fallback.js';
 
 const cache = new Map();
 const queue = [];
@@ -37,6 +38,7 @@ async function renderThumb(record) {
   try {
     const gltf = await new GLTFLoader().loadAsync(record.source?.rawPinned || record.source?.rawLatest);
     root = gltf.scene;
+    await repairMissingTextureMaps(THREE, record, root);
     scene.add(root);
     const bounds = visibleMeshBounds(root);
     framePerspectiveCamera(camera, bounds, {

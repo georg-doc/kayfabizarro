@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { $ } from './state.js';
 import { visibleMeshBounds, framePerspectiveCamera, projectedBounds } from './framing3d.js';
+import { repairMissingTextureMaps } from './texture-fallback.js';
 let renderer,scene,camera,controls,clock,root,mixer,bounds,token=0,motionToken=0,clips=[];
 let externalState=null;
 function init() {
@@ -58,5 +59,5 @@ export async function playExternalClip(sourceRecord,clipName,clipIndex=0){
 export function externalMotionState(){return externalState?{...externalState}:null;}
 export function animationState(){return{mixer,loadedAnimations:clips,externalMotion:externalState};}
 export async function render3D(record){$('previewCanvas').hidden=false;$('threeControls').hidden=false;init();const t=++token;++motionToken;externalState=null;$('previewTitle').textContent='3D preview';$('previewStatus').textContent='Loading…';
-  try{const gltf=await new GLTFLoader().loadAsync(record.source?.rawPinned||record.source?.rawLatest);if(t!==token)return;root=gltf.scene;clips=gltf.animations||[];scene.add(root);fitCamera();$('clipSelect').replaceChildren(new Option(clips.length?`${clips.length} embedded clips`:'No embedded clips',''),...clips.map((c,i)=>new Option(c.name||`Clip ${i+1}`,String(i))));if(clips.length&&$('autoplayToggle').checked){$('clipSelect').value='0';playClip(0);requestAnimationFrame(()=>fitCamera());}else $('previewStatus').textContent=clips.length?`${clips.length} clip(s) · paused`:'Loaded · no embedded clips';}
+  try{const gltf=await new GLTFLoader().loadAsync(record.source?.rawPinned||record.source?.rawLatest);if(t!==token)return;root=gltf.scene;const repaired=await repairMissingTextureMaps(THREE,record,root);if(t!==token){disposeTree(root);root=null;return;}clips=gltf.animations||[];scene.add(root);fitCamera();$('clipSelect').replaceChildren(new Option(clips.length?`${clips.length} embedded clips`:'No embedded clips',''),...clips.map((c,i)=>new Option(c.name||`Clip ${i+1}`,String(i))));if(clips.length&&$('autoplayToggle').checked){$('clipSelect').value='0';playClip(0);requestAnimationFrame(()=>fitCamera());}else $('previewStatus').textContent=(clips.length?`${clips.length} clip(s) · paused`:'Loaded · no embedded clips')+(repaired?` · ${repaired} texture fallback${repaired===1?'':'s'}`:'');}
   catch(e){if(t===token)$('previewStatus').textContent=`Preview failed: ${e.message}`;}}
