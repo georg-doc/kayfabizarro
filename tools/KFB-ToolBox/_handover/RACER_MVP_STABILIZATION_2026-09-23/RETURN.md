@@ -372,3 +372,44 @@ Exactly one next gate:
 **R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**
 
 Cloudflare remains deferred. Grounding, jitter, trails and jump/landing remain later.
+
+
+## R3 review-harness fail → R3b prepared
+
+R3 human review failed at the **review harness**, not at runtime.
+
+Visible:
+- arch frames visible;
+- track largely missing in CHASE.
+
+Sanity:
+- runtime road still exists;
+- runtime Ground remains `ShapeGeometry`;
+- corrected banking remains `bank = clamp(curv * 26)`;
+- runtime/test head remains `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`;
+- CI remains **11/11 PASS**.
+
+Review root cause:
+- R3 road/shoulder/wall context used one long projected polygon;
+- renderer discards the whole polygon when any vertex is behind camera.
+
+R3b review-only repair:
+- road/shoulder/walls restored to short segment quads;
+- continuous city-ground review edge retained;
+- banking visualization retained;
+- no runtime file changed.
+
+Race Draft PR #33 current docs head:
+`308ed3b7e464f573b85d004f13fbf9e0642c818c`
+
+R3b artifact:
+`KFB_Racer_TARCH0_R3b_track_edge_banking_review.html`
+
+Prepared marker:
+`review/R3b_PREPARED.md`
+
+SHA-256:
+`100310fbc4794f317ce572d403142ee464e6b2a57a4e32a5a84382294b03fd3b`
+
+Exactly one next gate:
+**R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**
