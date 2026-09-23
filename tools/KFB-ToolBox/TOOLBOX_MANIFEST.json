@@ -1,7 +1,7 @@
 {
   "schema": "kfb.toolbox-onboarding/1",
   "version": "1.0.0",
-  "updated": "2026-09-18",
+  "updated": "2026-09-23",
   "status": "ONBOARDING_IMPLEMENTED_RUNTIME_NOT_TESTED",
   "repository": "georg-doc/kayfabizarro",
   "path": "tools/KFB-ToolBox",
@@ -187,5 +187,29 @@
       "neutral"
     ],
     "phaseB": "Repeat with first generic Rig_Medium EyeProfile after Batch approval"
+  },
+  "sharedModules": {
+    "inline3dEditLayer": {
+      "status": "PROMOTED_SHARED_MODULE_CANDIDATE",
+      "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "blob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f",
+      "lineage": [
+        "Dungeon Room Study S21/S22",
+        "Resident Atlas S7 Rig-Werkstatt"
+      ],
+      "thirdHost": "WorldBuilder WB1-TERRAIN-SCENE-01",
+      "ownerBoundary": "selected-object authoring only; no terrain, movement, collision-runtime or asset ownership",
+      "capabilities": [
+        "pointerup-visible-picking",
+        "translate",
+        "rotate",
+        "scale",
+        "drop-to-visible-surface",
+        "world-local-gizmo-space",
+        "snap",
+        "single-shared-transform-controls",
+        "object-attached-mini-menu"
+      ]
+    }
   }
 }
