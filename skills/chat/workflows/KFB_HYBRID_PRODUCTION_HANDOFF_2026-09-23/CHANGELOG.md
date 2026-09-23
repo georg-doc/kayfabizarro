@@ -266,3 +266,47 @@ Order:
 6. select exactly one next MVP.
 
 VFX Webchat and Blender Warband may continue in parallel.
+
+
+## 2026-09-23 · ORB-P1 postmortem + resident dance route
+
+### PR #195
+Leader and guitarist are Georg-accepted.
+Drummer v1–v4 are rejected.
+v5 restores v0 exactly as a baseline only.
+
+### ANIMATION LIVING DOCUMENT AUDIT
+Added:
+`ANIMATION_LIVING_V13_AUDIT_2026-09-23.md`
+
+The supplied v1.3 document is MIXED / NOT CANONICAL.
+
+Rejected as source truth:
+- incorrect Rig_Medium bone list (`neck` added to a 23-bone contract);
+- generic 120 BPM as current ORB truth;
+- universal joint limits;
+- fixed hand-axis contact thresholds;
+- timeline-marker-as-runtime-event assumption.
+
+### PERFORMANCE PILOT
+Updated with PR #195 lessons:
+- same-rig donor motion before IK;
+- clip first, placement second;
+- action-family joint profiles;
+- contact measured at prop tip/target geometry;
+- two-pass stop rule.
+
+### NEXT ROUTE
+Added:
+`RESIDENT_PERFORMANCE_NEXT_2026-09-23.md`
+
+ORB-D1:
+same-rig Rig_Large melee reference review before new drummer animation.
+
+DANCE-D1:
+may run in parallel:
+- Rig_Medium only;
+- GothGirl + Orc Raider;
+- source audition + one clean authored groove.
+
+No automatic Medium → Large retarget.
