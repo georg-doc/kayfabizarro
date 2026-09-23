@@ -57,6 +57,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `meta/KFB_META_COMPENDIUM_v1.md` — cross-module meta index; routing/reference only
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
+- `workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md` — **GLOBAL SOURCE-REUSE PRECHECK**: when a working donor exists, first restore/show it unchanged, replay stored measurements/source outputs, name the fork/seam, then change one delta only; mandatory for Claude Design/Web/WSA when Georg says use/copy the working version.
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
@@ -814,3 +815,28 @@ Exactly one next gate:
 **restore/show the exact Theatre Curtain v1 donor unchanged from PR #114 / `game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs`.**
 
 No SVG, CSS, Canvas-2D, flat-plane or alternate curtain design is allowed before Georg confirms the donor is visibly back.
+
+
+## 2026-09-23 · Global Design Donor Lock / WSA intake guard
+
+Recurring design regressions now use one cross-project precheck:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+Measurement/source packet:
+
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+WSA Lead handoff:
+
+`skills/chat/masterplan/WSA_LEAD_HANDOFF_DESIGN_DONOR_LOCK_2026-09-23.md`
+
+Trigger automatically when Georg says to use/copy/reuse an existing working donor.
+
+Required order:
+
+`D0 donor unchanged → D1 measurement replay → D2 fork/seam → D3 one delta → D4 side-by-side proof → D5 human gate`
+
+No SVG/CSS/Canvas/parallel-runtime substitute for a working 3D/runtime donor without explicit product decision.
+
+Measurements are durable project assets, not chat scratchwork.
