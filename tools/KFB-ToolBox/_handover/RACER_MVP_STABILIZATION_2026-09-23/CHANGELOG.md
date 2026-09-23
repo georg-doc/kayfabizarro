@@ -94,3 +94,26 @@ Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**.
 
 Exactly one next gate:
 **TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
+
+
+## 2026-09-23 · TARCH R1 accepted · verified review donor · R2 prepared
+
+- Georg accepted the isolated TARCH R1 Chat HTML review;
+- exact accepted artifact archived on Race PR #33:
+  `TARCH-0/review/KFB_Racer_TARCH0_R1_review.html`;
+- acceptance evidence:
+  `TARCH-0/review/R1_ACCEPTED.md`;
+- accepted harness registered centrally as `threejs-focus-review-v1`;
+- shared pool:
+  `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/REVIEW_TEMPLATE_POOL.md`;
+- registry:
+  `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/review-templates/REGISTRY.json`;
+- review-pool ownership follows the Resident Scene principle: review presentation may own camera/toggles/debug, never product movement/collision/runtime ownership;
+- R2 integrated review generated from runtime head `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
+- R2 artifact SHA-256 `bc5a97f5239c66f54e8cb53bfd21fef0326a7c3f40f524419ddce60cce3b5fc4`;
+- R2 recovery marker on Race PR #33 head `6e37fa689441946a1e063af939b16cf0cbb54ce1`;
+- Cloudflare/Pages remain deferred;
+- no grounding, curve or trail repair started.
+
+Exactly one next gate:
+**TARCH-0 R2 · integrated Racer Chat HTML human review**.
