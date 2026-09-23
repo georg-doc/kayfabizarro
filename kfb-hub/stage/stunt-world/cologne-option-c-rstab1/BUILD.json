@@ -1,24 +1,32 @@
 {
   "schema": "kfb.racer-rstab1-stage/1",
-  "status": "HUMAN_GEOMETRY_GATE",
+  "status": "HUMAN_GEOMETRY_RECHECK_PASS2",
   "sourceRepo": "georg-doc/KFB-Stunt-Car-Race",
   "sourceBranch": "chat/racer-rstab1-geometry-2026-09-23",
-  "sourceHead": "8dd3cd15147fe403090e00495bb632bd1cf1a203",
-  "runtimeTestedHead": "e9c72a404aff63d46762d9101a727a9e7f94a6b0",
+  "sourceHead": "47fc451f2b03d5418d6ad281213f139b66223269",
+  "runtimeTestedHead": "a9dd49995d32423e101a67f2e591c2b069583252",
   "racePR": 32,
   "stackedOnPR": 31,
+  "wedgeRepairPass": 2,
+  "wedgeTransitions": [
+    [
+      99,
+      100
+    ],
+    [
+      133,
+      134
+    ]
+  ],
   "route": "/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/",
   "gate": [
-    "ground-cut/tunnel-shell CHASE review",
-    "support endpoints around prior 166/179/187"
+    "recheck first tunnel for brown wedges",
+    "support endpoints remain visually clean"
   ],
-  "notInScope": [
-    "RSTAB-2 hard curve",
-    "grounding",
-    "audio",
-    "trails",
-    "HUD",
-    "billboards",
-    "vehicles"
-  ]
+  "nextIfAccepted": [
+    "vehicle support/orientation/landing",
+    "hard-curve stability",
+    "trail continuity recheck"
+  ],
+  "stopRule": "same WEDGE gate fails again => failure-recovery export; no pass 3"
 }
