@@ -835,3 +835,50 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Production Flow v2 · coherent artifact first
+
+**CURRENT CONTROL-PLANE OVERRIDE**
+
+Use:
+`skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/START_HERE.md`
+
+Core change:
+- preserve working donors and measurements;
+- assemble one closed Production Packet;
+- use Coworker for bounded code/integration;
+- use Claude Design for coherent visual authoring;
+- use WSA only for a named missing capability;
+- prefer one coherent Georg milestone over chains of technical micro-approvals.
+
+When a working donor exists, also apply:
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+Georg-facing review requests must contain a direct clickable artifact in the same chat and explain the decision in plain language first.
+
+Current lane snapshot:
+`skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/CURRENT_LANES.md`
+
+Recovery:
+`skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/RECOVERY.md`
+
+
+## 2026-09-23 · Blender MCP hybrid production lane
+
+Current onboarding:
+`skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/BLENDER_MCP_PRODUCTION_ONBOARDING.md`
+
+Current proof:
+PR #192 · Clown JUG-P1 · Georg visual PASS ~80 % · reproducible Blender script + GLB + GIF + measurements.
+
+Use Blender MCP for:
+- pose/animation;
+- prop/instrument rigging;
+- source-backed batch authoring;
+- precision volumetric mesh work where browser geometry repeatedly fails.
+
+Blender is an authoring lane, not a gameplay/runtime/physics owner.
+
+Current running experiment:
+Orc Warband performance. Do not restart it merely to apply onboarding; use the continuation prompt in Production Flow v2.

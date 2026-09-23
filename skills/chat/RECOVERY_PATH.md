@@ -165,3 +165,17 @@ Place this in the project's Return/Handover, not only in chat prose. For intake-
 ## Recovery success criterion
 
 A fresh authorized chat should be able to continue correctly from GitHub without receiving a transcript dump from Georg.
+
+
+## 2026-09-23 · Production Flow v2 recovery
+
+For current cross-provider production recovery, read before older lead snapshots:
+
+1. `skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/RECOVERY.md`
+2. `skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/CURRENT_LANES.md`
+3. exactly one current project PR/Return.
+
+If a working donor is involved:
+`skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+
+Do not reconstruct a long chat or restart a Claude design from screenshots. Recover the exact donor, measurements and current Production Packet from GitHub.
