@@ -1,0 +1,244 @@
+{
+  "schema": "kfb.music-collectible-jukebox.v0",
+  "status": "PROPOSAL_ONLY_NOT_RUNTIME",
+  "date": "2026-09-23",
+  "purpose": "Collectible music / demo-tape / always-available radio layer that reuses the existing KFB Jukebox + Music Bus and the existing Backpack/Almanac concept without making songs consume physical inventory slots.",
+  "sourceTruth": {
+    "canonicalJukeboxCatalog": {
+      "path": "media/3D_Assets/Sounds/jukebox.json",
+      "blob": "28cd833831f07a1d5fc103e90bf60bb0720d047f",
+      "status": "EXISTING_10_TRACK_CATALOG"
+    },
+    "playbackDonor": {
+      "path": "travel/KFB Travel Combat v25/terrain-v25/travel-audio.js",
+      "blob": "c10600ddae1007b9c930a9c01f376727d47458ab",
+      "capabilities": [
+        "loadJukebox",
+        "setTrack",
+        "music bus",
+        "duck",
+        "beat",
+        "level",
+        "pulse",
+        "bpm",
+        "track metadata",
+        "clean track switching"
+      ],
+      "status": "EXISTING_AUDIO_OWNER_DONOR"
+    },
+    "newCandidateFolder": {
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/",
+      "currentInventoryCount": 26,
+      "status": "SOURCE_PRESENT_NOT_ALL_PROMOTED_TO_CANONICAL_JUKEBOX"
+    },
+    "candidateOrcTracks": [
+      "Lazy Pocket Groove.mp3",
+      "War Busker Groove.mp3",
+      "Rubbish Groove 2min A extend 01.mp3",
+      "The_Street_Orcs_Groove_2026-09-23T020844.mp3",
+      "Orcish_Municipal_Hustle_2026-09-23T021219.mp3",
+      "Orcish_Street_Corner_Jam_2026-09-23T021322.mp3"
+    ],
+    "tapeProps": [
+      "media/3D_Assets/KFB/Car Radio - with tape player by Jakers_H - ddkK1h2S4__.glb",
+      "media/3D_Assets/KFB/Cassete Tape by Poly by Google - 5GeV4CitAdY.glb",
+      "media/3D_Assets/KFB/Cassette by Poly by Google - 4uUIxYk-p4e.glb",
+      "media/3D_Assets/KFB/Cassette tape by Poly by Google - aR5ot8Z7_-v.glb",
+      "media/3D_Assets/KFB/Tape by Michael Fuchs - 8FDCZPgfO5L.glb",
+      "media/3D_Assets/KFB/Tape by Poly by Google - fu49rGO7Ukc.glb"
+    ],
+    "exactDuplicateNote": "Tape by Michael Fuchs - 8FDCZPgfO5L(1).glb and the non-(1) file share exact blob SHA 2cbb267a2386c7f0acea6cb8915054c267b30fcc; treat as one donor identity."
+  },
+  "playerModel": {
+    "backpack": {
+      "capacity": 20,
+      "role": "physical transferable social/access objects only",
+      "musicConsumesSlot": false,
+      "ui": "compact backpack icon opens 4x5 overlay grid",
+      "itemActions": [
+        "inspect",
+        "use-if-supported",
+        "give",
+        "drop-if-allowed"
+      ],
+      "note": "Currencies/counters should not consume item slots."
+    },
+    "musicCollection": {
+      "role": "persistent track unlock collection in Session/Journey/Fractal Almanac",
+      "consumesBackpackSlot": false,
+      "playbackOwner": "existing Jukebox/Music Bus",
+      "physicalMetaphor": "cassette / demo tape / radio",
+      "homeDisplayCandidate": "cassette shelf / tape recorder / car-radio-tape-player donor",
+      "fields": [
+        "trackId",
+        "sourceRef",
+        "unlocked",
+        "discoveredAt",
+        "acquiredBy",
+        "sourceEventRef",
+        "favorite",
+        "rotationWeight",
+        "provenanceTags"
+      ]
+    }
+  },
+  "acquisitionModes": [
+    {
+      "id": "band-appreciation",
+      "flow": [
+        "hear live Orc Band",
+        "remain/engage for one bounded phrase",
+        "optional player dance/appreciation action",
+        "Legacy frontman approaches",
+        "short Bubble exchange",
+        "demo tape offered",
+        "TRACK_UNLOCK_COMMIT",
+        "Almanac receipt"
+      ],
+      "note": "First preferred social unlock proof."
+    },
+    {
+      "id": "gift",
+      "flow": [
+        "Resident offers demo tape",
+        "short Bubble exchange",
+        "accept",
+        "TRACK_UNLOCK_COMMIT"
+      ],
+      "note": "Physical cassette may be shown/handed off but need not stay in Backpack."
+    },
+    {
+      "id": "loot",
+      "flow": [
+        "find cassette/demo tape in chest/lootbox/world POI",
+        "inspect/pick up",
+        "TRACK_UNLOCK_COMMIT"
+      ],
+      "note": "Track becomes playable globally after discovery."
+    },
+    {
+      "id": "trade",
+      "flow": [
+        "band/vendor offers tape for currency or another object",
+        "player accepts trade",
+        "TRACK_UNLOCK_COMMIT"
+      ],
+      "status": "PRODUCT_OPTION",
+      "note": "User mentions Pop/Popcorn/Westing terminology; exact currency owner/name was not proven in current repository search and must be pinned before runtime."
+    }
+  ],
+  "radio": {
+    "invariant": "one music core / one audio lifecycle; no second universal radio engine",
+    "contexts": [
+      "on-foot",
+      "dungeon",
+      "landscape",
+      "flight",
+      "vehicle",
+      "race"
+    ],
+    "presentationAdapters": {
+      "onFoot": "compact HUD radio / now-playing overlay",
+      "vehicle": "existing compact kinetic radio presentation may be reused",
+      "race": "same Jukebox/Music Bus behind Race presentation",
+      "home": "physical cassette/tape-player display may control same catalog"
+    },
+    "libraryModes": [
+      "all unlocked",
+      "favorites",
+      "heavy rotation",
+      "manual track"
+    ],
+    "rotation": {
+      "favorite": "boolean",
+      "rotationWeight": "0..N relative weight",
+      "heavyRotation": "user-curated high-weight subset",
+      "randomPolicy": "seeded/random playlist policy belongs to Jukebox presentation, not track asset"
+    }
+  },
+  "liveVsRadio": {
+    "liveBand": "diegetic spatial music source in world zone",
+    "radio": "non-diegetic/global music presentation",
+    "rule": "never let full radio and live band play at full level simultaneously",
+    "firstPolicy": "duck/fade global radio when entering a live performance zone; restore on exit",
+    "laterOption": "phase/sync crossfade between global and spatial version of same track if proven useful"
+  },
+  "trackLoopMeta": {
+    "status": "NEEDS_AUTHORING_PER_SELECTED_TRACK",
+    "fields": [
+      "bpm",
+      "beatOffsetSec",
+      "barBeats",
+      "loopStartSec",
+      "loopEndSec",
+      "fadeInSec",
+      "fadeOutSec",
+      "crossfadeSec"
+    ],
+    "rule": "Do not spend Suno stem credits just to establish loopability; author loop metadata/crossfade around full mix first."
+  },
+  "orcBandVisualizer": {
+    "firstVersionRequiresStems": false,
+    "donorSignals": [
+      "audio.beat",
+      "audio.level",
+      "audio.pulse",
+      "audio.bpm"
+    ],
+    "mappings": {
+      "largeOrcDrums": {
+        "rhythm": "quarter-note / beat grid with alternating L/R hands",
+        "accent": "pulse can increase strike amplitude or add double-hit/shoulder recoil",
+        "motionOwner": "procedural Rig_Large percussion adapter already identified in Orc Band concept"
+      },
+      "mediumOrcGuitar": {
+        "rhythm": "eighth-note or selected subdivision from bpm",
+        "accent": "pulse/level modulates strum amplitude and body groove",
+        "motionOwner": "measured Animatronic guitar-hold + procedural-strum donor adapted to Orc Raider"
+      },
+      "legacyFrontman": {
+        "rhythm": "body bounce / sway from beat and level",
+        "variation": "seeded gesture/hype beat every N bars",
+        "prop": "microphone may remain held in one hand; no singing animation required for instrumental track"
+      }
+    },
+    "firstGate": "visual plausibility to full mix beat/pulse; instrument-specific stem following is deferred"
+  },
+  "stemsPolicy": {
+    "default": "NO_STEMS_FOR_V0",
+    "buyDownloadCreditsOnlyIf": [
+      "full-mix beat/pulse cannot make drum strikes believable",
+      "guitar and drums need independently timed accents for the selected final track",
+      "a selected track is promoted as a recurring signature band performance"
+    ],
+    "preferredStemTargets": [
+      "drums",
+      "guitar",
+      "optional rest/hype"
+    ],
+    "note": "Do not download stems for all six candidates."
+  },
+  "firstProof": {
+    "trackSelection": "choose 1 of six Orc candidates after human listening",
+    "steps": [
+      "register candidate track with bpm/loop metadata sidecar",
+      "play live spatial band version",
+      "drive three animation adapters from beat/level/pulse",
+      "player remains near / dances",
+      "Legacy frontman offers demo tape",
+      "track unlock commits to Almanac music collection",
+      "same track becomes selectable on global Radio/Jukebox",
+      "cassette visual is optional/display-oriented and does not consume a Backpack slot"
+    ]
+  },
+  "explicitNonGoals": [
+    "new audio engine",
+    "stems for every candidate",
+    "perfect automatic source separation",
+    "songs occupying 20-slot Backpack",
+    "full Spotify-like UI",
+    "currency system redesign",
+    "music NFT/ownership mechanics",
+    "blocking WorldBuilder P1/P2 on this music lane"
+  ]
+}
