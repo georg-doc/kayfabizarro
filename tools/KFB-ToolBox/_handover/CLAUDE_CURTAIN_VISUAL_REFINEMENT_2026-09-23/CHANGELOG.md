@@ -26,3 +26,34 @@ Claude returns:
 
 ### STATUS
 Docs/design brief only. No runtime, consumer adapter or public Stage update.
+
+
+## 2026-09-23 · Claude 2D/SVG reconstruction rejected
+
+### HUMAN VERDICT
+- current Claude curtain output is **REJECTED · HARD FAIL**;
+- it is not donor-identical Theatre Curtain v1;
+- visible result uses a flat/2D striped curtain language and an "invisible cord" mock instead of the real physical cloth donor.
+
+### RULE
+Loaded:
+`skills/session-entry-use-what-works_v1.md`
+
+Relevant rule:
+**If a working template exists, copy it. Do not rebuild it.**
+
+### RECOVERY
+Added:
+- `DONOR_LOCK_USE_WHAT_WORKS.md`
+- `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+- `CLAUDE_RECOVERY_PROMPT.md`
+- `CLAUDE_FAILURE_RECOVERY_EXPORT_REQUEST.md`
+
+### NEXT GATE
+Exactly one gate:
+**show the exact Theatre Curtain v1 donor unchanged.**
+
+No visual refinement, SVG, CSS, Canvas-2D or alternate curtain implementation before Georg confirms the donor.
+
+### STATUS
+Current Claude output classified as `ARCHIVED_FAILED_CANDIDATE`.
