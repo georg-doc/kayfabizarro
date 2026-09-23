@@ -1,25 +1,39 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **RSTAB-0 MAPPED · RSTAB-1 NEXT · LOCAL-FIRST · NO WORK BY DEFAULT**  
+Status: **RSTAB-1 TECHNICAL PASS · HUMAN GEOMETRY GATE · LOCAL-FIRST · NO WORK BY DEFAULT**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
 
-## Current checkpoint · RSTAB-0 · 2026-09-23
+## Current checkpoint · RSTAB-1 · 2026-09-23
 
-Race Draft PR: **#31** · branch `chat/racer-rstab0-audit-2026-09-23` · verified head at handoff `58d837a5b858bdf7af178bcf0bb578d6ab018ff4`.
+Race Draft PR: **#32** · branch `chat/racer-rstab1-geometry-2026-09-23`, stacked on RSTAB-0 PR #31.
 
-RSTAB-0 source/evidence packet:
-`_handover/RACER_MVP_STABILIZATION_2026-09-23/RSTAB-0/` in the Race repository.
+Exact runtime + bounded-CI candidate head:
 
-Deterministic P0 map:
-- WEDGE: ground-cut ↔ tunnel-shell seam, exact current visible mesh still requires reproduced frame/raycast;
-- CURVE: peak index 176 / 29.4% / s≈589 m / radius ≈35.3 m vs ≈61.6 m v0.8 full-steer radius at 41 m/s;
-- PIER: 54/54 supports scanned, deterministic road penetrations at indices 166 / 179 / 187; normal `auditRoute()` excludes `structure-*` and cannot close this gate.
+`e9c72a404aff63d46762d9101a727a9e7f94a6b0`
 
-No runtime repair happened in RSTAB-0.
+RSTAB-1 packet:
 
-**Exactly one current next gate: RSTAB-1 · static geometry intrusions — ground wedges + support pillars.**
+`_handover/RACER_MVP_STABILIZATION_2026-09-23/RSTAB-1/` in the Race repository.
+
+Technical result:
+
+- WEDGE seam now follows the actual banked 14-facet tunnel shell, with independent left/right cut edges and one 10-point transition owner;
+- PIER supports retain all 54 instances and now terminate at their actual local banked soffit;
+- old support math reproduces penetrations 166 / 179 / 187; repaired math yields 0;
+- GitHub Actions run 35807766171: **5/5 PASS · 0 FAIL**;
+- route and v0.8 FLOW/FEEL remain unchanged;
+- RSTAB-2 has not started.
+
+**Exactly one current next gate: RSTAB-1 HUMAN GEOMETRY GATE — visible tunnel/ground-cut + support review. Only ACCEPT advances to RSTAB-2.**
+
+### Preserved RSTAB-0 map
+
+RSTAB-0 source/evidence remains under `RSTAB-0/`.
+
+- CURVE remains deferred: peak index 176 / 29.4% / s≈589 m / radius ≈35.3 m vs ≈61.6 m v0.8 full-steer radius at 41 m/s.
+- Tunnel sightline, grounding, audio and trails remain later acceptance gates.
 
 
 ## Why this exists
