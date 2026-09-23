@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **TARCH-0 R1 ACCEPTED · R2/R3/R3b TUNE · R3c TRACK-BODY/ROUNDED-FRAMES CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
+Status: **TARCH-0 R1 ACCEPTED · R2/R3/R3b/R3c TUNE · R3d TRACK/BARRIER/GROUND CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -239,6 +239,61 @@ SHA-256:
 
 Exactly one current gate:
 **R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**
+
+Still later:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+
+### R3d · volumetric barrier + clean ground layer
+
+R3c human review remained **TUNE**.
+
+Human findings:
+- stepped orange/brown barrier edge;
+- rectangular strip artifacts in track/underside views;
+- brown boundary still too thin/band-like;
+- frames visually bisected by the boundary;
+- multiple terrain/underside planes;
+- rounded frame grammar good, but frames must be at least 2× thicker.
+
+Source diagnosis:
+- closed `track-body` still coexisted with legacy `track-wall-*` + separate cap ribbons;
+- flat lane-band ribbons remained;
+- deep ground was still rectangular bbox PlaneGeometry;
+- TARCH frame radius remained 0.48 m.
+
+Final runtime/test head:
+`dad35bdf0f3e19fdc2c5902e154140353db590f9`
+
+R3d runtime:
+- one 12-point closed body owns road + shoulder + inner barrier + cap + outer barrier + lower side body + underside;
+- body presentation sampled 4× denser than route/physics;
+- `track-wall-left/right` removed;
+- separate cap ribbons removed;
+- flat lane-band ribbons removed;
+- TARCH radius 0.96 m, radial segments 14;
+- TARCH base at barrier-cap midpoint `u=1.39 / lift=1.265`;
+- deep ground is void-contour `ShapeGeometry`, not rectangle.
+
+CI:
+- `35891959912 / 107286346494`: SUCCESS
+- `35891969220 / 107286379829`: SUCCESS
+- **24/24 PASS · 0 fail · 0 skipped**
+
+Race PR #33 current docs head:
+`05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+
+R3d artifact:
+`KFB_Racer_TARCH0_R3d_track_barrier_ground_review.html`
+
+SHA-256:
+`d2e147d3abcd005769867bf523bcac1a49cc3eff9491511875c80b37c287a018`
+
+Dropbox owner/donor evidence was read only:
+`/CLAUDE/KFB Stunt Car Race/KFB Cologne Race Option C-3/docs/MODULES_AND_DONORS.md`
+
+Exactly one current gate:
+**R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**
 
 Still later:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
