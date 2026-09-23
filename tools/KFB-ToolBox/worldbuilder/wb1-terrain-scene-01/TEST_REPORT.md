@@ -1,6 +1,6 @@
 # WB1-TERRAIN-SCENE-01 · Test report · 2026-09-23
 
-Status: **R1 HUMAN FEEDBACK REPAIR · LOCAL REVIEW CANDIDATE · NOT PUBLIC**
+Status: **R1 FUNCTIONAL FOUNDATION HUMAN PASS · R2 SHARED INLINE EDITOR LOCAL REVIEW CANDIDATE · NOT PUBLIC**
 
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23`  
@@ -10,9 +10,10 @@ Draft PR: **#186**
 
 - canonical source: `WB1_TERRAIN_SCENE_01_SOURCE.html`
 - zero-install review copy: `WB1_TERRAIN_SCENE_01_REVIEW.html`
-- verified source blob: `a0ae15e822ef8283abafcf84483498814b1be3b8`
-- review-sync commit before this report update: `f3dfe50f4832ef7c2f36833cf983a699f6811fc0`
-- review blob: `dd6379815295adf07bdf0132210e1f7e6c9a3b49`
+- verified source blob: `0114d186759866f42bdc99a6d4bc662494701c50`
+- shared edit-layer blob: `c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+- review-sync commit: `c256bb8eaffee472c2e1f6b63fc25019decba5c8`
+- review blob: `099de70c7c57bfe17fc77ef80af7f4b5941aa452`
 
 ## Reused owners / donors
 
@@ -26,16 +27,26 @@ Bounded reuse from:
 The candidate reuses the deterministic value-noise / FBM / bounded seed-domain mechanism. It does not import the donor's whole product runtime or UI.
 
 ### Scene editing
-Existing KFB S21/S22 interaction donor:
-`tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/KayKit_Room_Study_S21.html`
+Current selected-object edit owner:
+`tools/KFB-ToolBox/lib/edit-layer.js`
 
-Reused seam:
-- Three.js `TransformControls`;
-- click selection;
-- translation / rotation;
+Exact blob:
+`c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+
+Lineage:
+`Dungeon Room Study S21/S22 → Resident Atlas S7 / Rig-Werkstatt extraction → ToolBox third-host promotion`
+
+WorldBuilder reuses:
+- one shared Three.js `TransformControls` owner;
+- pointerup visible-only picking;
+- object-attached mini-menu;
+- translation / rotation / scale;
+- drop to visible surface below;
+- world/local axes;
 - snap;
-- drop to ground/terrain;
-- localStorage save/reload.
+- shared-gizmo borrow/release seam.
+
+Scene Save/Reload remains WorldBuilder-owned; the shared edit layer is not a second persistence owner.
 
 ### Resident / animation
 Resident Atlas fixture:
