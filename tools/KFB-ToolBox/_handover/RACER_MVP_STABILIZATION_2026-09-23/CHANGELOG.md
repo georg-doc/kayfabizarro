@@ -18,3 +18,22 @@
 Exactly one next gate:
 
 **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.**
+
+
+## 2026-09-23 · RSTAB-1 technical PASS
+
+- Race Draft PR #32 / `chat/racer-rstab1-geometry-2026-09-23`, stacked on RSTAB-0 PR #31;
+- exact runtime + bounded-CI candidate head `e9c72a404aff63d46762d9101a727a9e7f94a6b0`;
+- ground-cut seam now follows the actual banked 14-facet tunnel shell with separate left/right edges, 10-point transition and 0.03 m seam clearance;
+- old post-`SLEW_M` seam owner removed;
+- support pillars now terminate at actual banked soffit endpoints; existing **54** support instances retained;
+- old placement reproduces penetrations 166 / 179 / 187; repaired rule yields **0** road penetrations;
+- GitHub Actions run `35807766171` / job `107012285119`: **5/5 PASS · 0 FAIL**;
+- route remains 598 points / 2063.844351 m;
+- route, v0.8 FLOW/FEEL, camera, grounding, HUD, billboards, audio, trails and roster unchanged;
+- no RSTAB-2 work started;
+- no current C-3 browser/Cloudflare PASS claimed.
+
+Exactly one next gate:
+
+**RSTAB-1 HUMAN GEOMETRY GATE** — tunnel/ground-cut + support endpoints. Human ACCEPT is required before RSTAB-2.
