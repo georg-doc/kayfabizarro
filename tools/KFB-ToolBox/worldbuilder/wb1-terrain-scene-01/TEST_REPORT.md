@@ -1,6 +1,6 @@
 # WB1-TERRAIN-SCENE-01 · Test report · 2026-09-23
 
-Status: **LOCAL REVIEW CANDIDATE · NOT PUBLIC**
+Status: **R1 HUMAN FEEDBACK REPAIR · LOCAL REVIEW CANDIDATE · NOT PUBLIC**
 
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23`  
@@ -10,9 +10,9 @@ Draft PR: **#186**
 
 - canonical source: `WB1_TERRAIN_SCENE_01_SOURCE.html`
 - zero-install review copy: `WB1_TERRAIN_SCENE_01_REVIEW.html`
-- verified source blob: `60a8ca090b92fd8ff0d1ed77a70aea23f3d3e031`
-- review-sync commit before this report update: `d4715f6fa3082d1c12d60e67cb82ed828a2b467e`
-- review blob: `b7b0648b16134ad5570f3f6329f84f4e926f0932`
+- verified source blob: `a0ae15e822ef8283abafcf84483498814b1be3b8`
+- review-sync commit before this report update: `f3dfe50f4832ef7c2f36833cf983a699f6811fc0`
+- review blob: `dd6379815295adf07bdf0132210e1f7e6c9a3b49`
 
 ## Reused owners / donors
 
@@ -45,6 +45,10 @@ Exact actor:
 `media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb`
 @ `891eadf01e218f5fc21387e64cea1fec8332c5b6`
 
+Exact source texture declared by the Resident Atlas:
+`media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png`
+@ `891eadf01e218f5fc21387e64cea1fec8332c5b6`
+
 Exact clip:
 `Melee_Unarmed_Idle` from
 `media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb`
@@ -54,52 +58,66 @@ Exact prop:
 `media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf`
 @ `891eadf01e218f5fc21387e64cea1fec8332c5b6`
 
-## Tests actually run
+## Human review findings and R1 repair
 
-### Source static + deterministic logic
-**21/21 PASS**
+Georg's first visual pass found three concrete issues:
+
+1. Caveman geometry loaded but the character texture was missing. Georg also identified this as a recurring ChatGPT-attached HTML preview problem.
+2. The Character's green Y-axis handle did not move the actor vertically, while other transform handles/objects worked.
+3. The control palette/sidebar overlaid the 3D field of view in the narrow ChatGPT preview.
+
+Repairs in the canonical source:
+
+- explicit source texture binding now consumes the existing Resident Atlas `caveman_texture.png`; the review tries `fetch → Blob → createImageBitmap → THREE.Texture` first and falls back to `TextureLoader`; no replacement material or new texture was invented;
+- actor/prop roots use one-shot ground-on-spawn only; the TransformControls change handler and animation loop no longer force the Character root back to terrain Y; `Drop to terrain` remains the explicit grounding action;
+- saved numeric Y is respected on reload; the embedded self-test now checks Character Y edit + Character Y reload;
+- the narrow responsive layout now reserves a separate grid row for the palette instead of positioning it absolutely over the canvas.
+
+Global review-host note:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+
+## Tests actually run after R1 repair
+
+### Source static + repair contract
+**26/26 PASS**
 
 Checks include:
-- exact repaired branch head/blob;
-- module parse;
-- source-actor/source-prop isolation gates;
-- composed scene locked behind successful source loads;
-- posed grounding targets the resident parent / terrain Y, not world Y=0;
-- TransformControls seam;
-- drop-to-terrain;
-- local save + reload hooks;
-- reference-only scene-document policy;
-- exact actor/animation/terrain pins;
-- self-test harness presence;
-- deterministic seed-domain and FBM behavior;
-- adjacent-seed decorrelation;
-- spatial terrain variation.
+- source and review module syntax;
+- source/review runtime parity and current source-blob marker;
+- exact Caveman texture path + persisted resident texture reference;
+- fetch/ImageBitmap lane + TextureLoader fallback;
+- sRGB + glTF `flipY = false` texture setup;
+- one-shot initial terrain grounding;
+- no Character auto-drop in Gizmo changes;
+- no Character auto-drop in the animation loop;
+- explicit `Drop to terrain` retained;
+- terrain regenerate still deliberately snaps scene objects to regenerated terrain;
+- Character Y edit and Character Y reload assertions present;
+- narrow layout reserves space for controls and removes the old absolute sidebar overlay;
+- exact donor pins, MIT notice and reference-only scene document retained.
 
-### Exact binary donor path checks
-**3/3 PASS**
+### Exact pinned donor/source path checks
+**4/4 PASS**
 
 - Caveman actor exists at the pinned asset commit.
 - Boulder prop exists at the pinned asset commit.
 - Rig_Medium CombatMelee animation file exists at the pinned animation commit.
+- `caveman_texture.png` exists at the pinned asset commit (10,870 bytes).
 
 ### Review-copy integrity
 **5/5 PASS**
 
-- branch head advanced to the review commit;
-- review blob exists;
+- source module parses;
 - review module parses;
-- review runtime logic is byte-equivalent to the canonical source after removing only the review title/comment;
-- embedded self-test harness remains present and the file is explicitly marked local/not-public;
-- the exact pinned ZyFou MIT notice is present in both source and review.
+- review runtime is byte-equivalent to Source after removing only the review title/comment;
+- review marker points to current Source blob `a0ae15e822ef8283abafcf84483498814b1be3b8`;
+- review remains explicitly local/not-public.
 
-## Repair pass
+### Embedded browser self-test
 
-One bounded repair pass was used before producing the review copy:
-1. posed-grounding changed from implicit world-Y grounding to parent/terrain-Y grounding;
-2. composed Scene Editor unlock now requires successful isolated actor and prop loads, not merely visiting the tabs.
+The repaired HTML contains **15 assertions** including explicit texture binding, Character Y authoring and Character Y save/reload.
 
-No second repair pass was required.
-
+Executed in this connector-only session: **0/15**.
 ## Browser / visual evidence
 
 Automated browser runtime tests: **0**.  
@@ -112,15 +130,16 @@ No browser PASS, visual PASS, or live/public claim is made.
 ## Human review order
 
 1. Open `WB1_TERRAIN_SCENE_01_REVIEW.html`.
-2. Confirm **Source actor** shows the real Caveman and existing `Melee_Unarmed_Idle`.
+2. Confirm **Source actor** shows the real textured Caveman and existing `Melee_Unarmed_Idle`.
 3. Confirm **Source prop** shows the real Boulder source object.
 4. Enter **Scene editor** only after both isolated sources loaded.
 5. Regenerate terrain.
-6. Select actor or prop; move / rotate / snap / drop to terrain.
-7. Save.
-8. Change a placement.
-9. Reload saved.
-10. Continue editing.
+6. Select the Character and confirm the green Y handle moves it vertically without snapping back; test prop transforms as well.
+7. Confirm the palette/control area does not cover the 3D field of view.
+8. Use `Drop to terrain`, then Save.
+9. Change X/Y/Z or rotation.
+10. Reload saved and confirm the edited Character Y is restored.
+11. Continue editing.
 
 ## Publication
 
