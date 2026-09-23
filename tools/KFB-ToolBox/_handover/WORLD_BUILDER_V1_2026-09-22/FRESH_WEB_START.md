@@ -16,12 +16,20 @@ Read current GitHub versions of:
 
 GitHub state overrides chat memory.
 
-Do **WB1-P0 only**.
+WB1-P0 is already complete on Draft PR #175. **Do not rerun P0.**
+
+Do **WB1-P1 only**.
+
+Before implementation:
+- fetch current `main`;
+- fetch PR #175 / branch `chatgpt-web/world-building-preflight-2026-09-22`;
+- confirm its P0 head `17fd31a907b4346fddef7501490f738c251c2a37` or re-read if advanced;
+- reconcile that completed P0 branch additively with current main without discarding P0 evidence.
 
 Goal:
-produce the exact Source / Reuse / License matrix for WorldBuilder v1 and stop.
+build only the small reusable Environment Profile proof and stop.
 
-Do not implement P1/P2 in the same cycle.
+Do not implement P2 in the same cycle.
 Do not build WorldBuilder UI.
 Do not rebuild Cologne/OSM.
 Do not build infinite terrain, Möbius, caves or voxel engine.
@@ -41,4 +49,21 @@ Persist:
 
 After every GitHub write fetch exact branch head and intended files.
 
-STOP after P0.
+P1 donor priority:
+- original WhackMan lighting sources remain source truth;
+- verify and adapt `WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js` rather than rebuilding another light implementation;
+- document intentional deltas;
+- keep WhackMan gameplay/MazeGraph absent.
+
+Architecture rule:
+**Material and light remain orthogonal.**
+
+Environment Profile: dusk/world light, fog, torch pool/range/flicker, local visibility, exposure, optional environmental glow.
+Material/look: separate `MaterialProfileRef`; reversible `WHACKMAN_MATTE_CANDIDATE` allowed for testing only.
+
+Do NOT pull into P1:
+Derek/Macro, Ink, Cel, Voxel, Story Palette, day/night cycle, full WorldDesign UI, standalone product build.
+
+Return a Portable Preview Pack.
+
+STOP after P1.
