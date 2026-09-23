@@ -101,3 +101,37 @@ Then resume from the single gate below. Do **not** reconstruct from chat memory.
 **GEORG HUMAN VISUAL REVIEW · ACTUAL HÜRTH 01 V2 THREE.JS RESULT**
 
 The next useful evidence is the real tested V2 output, not another substitute preview.
+
+## PORTABLE EXACT-V2 FIX · CURRENT
+
+The correct chat-preview repair is now implemented as:
+`tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/HUERTH01_V2_PORTABLE.html`
+
+Implementation commit:
+`51960375b1ba474720de7128502bfd8c9d66f64b`
+
+This is **not** the rejected Canvas substitute renderer.
+It bundles the actual tested V2 application from runtime/source head
+`0c59e92d9d8688f5a88cd309ae8891dcd174c2fc` into one HTML:
+- exact V2 viewer logic;
+- exact Elastic V2 geometry helpers;
+- exact current Grotesque donor helpers;
+- exact Hürth normalized JSON;
+- exact KFB City style JSON;
+- Three.js r160;
+- OrbitControls.
+
+Transport checks already PASS:
+- no iframe;
+- no external script tag;
+- no import map;
+- no module script;
+- no viewer fetch();
+- no remaining module import seam.
+
+**Browser parity / portable WebGL QA is PENDING.**
+Do not claim portable PASS until that workflow is green.
+
+Correct next action:
+run/confirm the portable browser QA, then give Georg this exact bundled V2 HTML for in-chat review.
+No screenshots and no renderer rewrite are required for the human review path.
