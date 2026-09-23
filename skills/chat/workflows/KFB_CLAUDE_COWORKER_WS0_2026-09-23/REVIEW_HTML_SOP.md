@@ -101,6 +101,21 @@ Show only:
 
 No dashboard ballast.
 
+## Delivery to Georg
+
+A human gate is not ready merely because a Review HTML exists in GitHub.
+
+When asking Georg to review:
+1. generate/materialize the exact review artifact from the current source head;
+2. attach it in the same ChatGPT conversation;
+3. give Georg one direct clickable link;
+4. state the 1–3 things to check in plain language;
+5. add GitHub PR/source only as secondary evidence.
+
+Never make Georg search the Hub, a PR file tree or a handover folder to find the current review.
+
+The Hub is navigation/history. The **chat message is the delivery surface for the current zero-install human gate**.
+
 ## Review artifact status
 
 Before human review:
