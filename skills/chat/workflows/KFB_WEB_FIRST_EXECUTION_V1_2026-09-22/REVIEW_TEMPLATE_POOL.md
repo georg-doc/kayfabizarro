@@ -111,6 +111,19 @@ Keep unless the review target explicitly requires a change:
 
 Do not add generic dashboards, fake product chrome, decorative metrics or unrelated controls.
 
+## Known ChatGPT attachment-host texture limitation
+
+For zero-install HTML files opened directly from ChatGPT, a recurring human-observed failure is: geometry loads, but an external or separately declared texture does not render.
+
+Binding note:
+`CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+
+Rules:
+- do not treat a missing ChatGPT-preview texture as proof that the source asset is untextured;
+- inspect and reuse the exact donor texture/skin/atlas binding;
+- where the donor already declares a sidecar texture, a review-host adapter may fetch and bind that exact source explicitly;
+- keep source object, Registry, Resident Atlas and game runtime unchanged;
+- if the texture still fails only in the attachment host, mark `HOST_TEXTURE_LIMITATION` rather than inventing replacement material.
 ## Focus profiles
 
 The same verified donor can be adapted into bounded focus profiles.
