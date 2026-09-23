@@ -3,6 +3,30 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-23 · WB1-TERRAIN-SCENE-01 · R1 human feedback repair
+
+### HUMAN FINDINGS
+- Caveman geometry rendered without its expected texture in the ChatGPT HTML preview; Georg identified this as a recurring cross-preview symptom.
+- the Character green Y-axis transform was ineffective because terrain grounding rewrote root Y during gizmo changes / animation frames;
+- the responsive palette/sidebar overlaid the 3D field of view in the narrow ChatGPT preview.
+
+### REPAIR
+- reused the Resident Atlas explicit Caveman texture source `assets/gltf/caveman_texture.png`; no replacement texture/material;
+- added a review-host texture loader using fetch/Blob/ImageBitmap first, TextureLoader fallback, sRGB and glTF `flipY=false`;
+- changed scene roots to one-shot ground-on-spawn and removed automatic Character root re-drop from TransformControls + render loop; `Drop to terrain` remains explicit;
+- saved numeric Character Y is now respected on reload;
+- replaced the narrow absolute overlay with a two-row responsive grid so controls reserve layout space instead of covering the canvas;
+- documented the recurring ChatGPT attachment-host texture limitation at `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md` and linked it from the shared review pool.
+
+### EVIDENCE
+- repaired Source static/contract checks: **26/26 PASS**;
+- pinned actor/prop/animation/texture source paths: **4/4 PASS**;
+- Source/Review integrity: **5/5 PASS**;
+- embedded browser self-test: **15 assertions prepared / 0 executed**;
+- automated browser runtime: **0**; screenshots: **0**.
+
+### NEXT
+Georg re-reviews the same local `WB1_TERRAIN_SCENE_01_REVIEW.html`, specifically texture, Character Y movement/save-reload and unobstructed field of view. Claude Design, Orc Band, Cloudflare and Live remain HOLD.
 ## 2026-09-23 · WB1-TERRAIN-SCENE-01 local review candidate
 
 ### IMPLEMENTATION
