@@ -6,7 +6,7 @@ Owner: Georg / KFB
 
 This workflow supersedes the idea that routine KFB lead/control-plane work should happen in Work/WSA.
 
-**Default rule: Web/GitHub + Claude Design + local preview first. Work is escalation-only.**
+**Default rule: Web/GitHub + Claude Design + zero-install HTML review first. Work is escalation-only.**
 
 The goal is to protect scarce Work quota while keeping KFB production fast, crash-safe, additive and visibly testable.
 
@@ -51,36 +51,37 @@ Claude Design receives source-locked technical inputs from Web.
 
 It should not spend its long context on repository archaeology, repeated axis tuning or deployment.
 
-### C · Local Preview — HUMAN DEV LOOP
+### C · Zero-install HTML Review — HUMAN DEV LOOP
 
-Every browser/game/3D slice should be locally previewable before Cloudflare and before Work.
+Every browser/game/3D slice should first return a **zero-install review artifact** that Georg can open from the chat without cloning a repository, installing a CLI or waiting for Cloudflare.
 
-Target workflow:
+Preferred workflow:
 
-`Web/Claude branch → GitHub Desktop pull → one local preview command → browser → Georg feedback`
+`Web/Claude branch → implementation checkpoint on GitHub → generated REVIEW.html artifact in chat → Georg feedback → Web/Claude repair → repeat`
 
-Local preview is a **development/human-review surface**, not public acceptance.
+The review artifact is a **development/human-review surface**, not public acceptance.
 
-It may use:
+Preferred review form:
 
-- `npm run preview`;
-- a repo-local HTTP server;
-- a generated `LOCAL_PREVIEW.md`;
-- a one-command launcher.
+- one self-contained HTML file where practical;
+- JS/CSS bundled or inlined;
+- exact remote assets pinned to immutable GitHub/jsDelivr revisions where needed;
+- no localhost server requirement;
+- no Python/Terminal requirement;
+- no Cloudflare deployment requirement.
 
-Do not use `file://` for module-based Three.js apps.
+If a single HTML file is technically impossible because of browser/CORS/asset constraints, use the smallest zero-install fallback that still does not require Georg to set up tooling. Localhost is a fallback, not the default.
 
 Every visual slice should return:
 
 - exact branch/head;
-- exact local preview command;
-- exact localhost URL;
-- expected visible marker;
-- how to stop the local server.
+- one generated `REVIEW.html` artifact or equivalent zero-install review file;
+- expected visible revision marker;
+- known limitations.
 
 ### D · Work / WSA — ESCALATION ONLY
 
-Use Work only when a capability is unavailable or impractical in Web + Claude + local preview.
+Use Work only when a capability is unavailable or impractical in Web + Claude + zero-install HTML review.
 
 Legitimate examples:
 
@@ -100,10 +101,10 @@ Work is **not** the routine project lead.
 Before opening Work, create a short escalation record answering:
 
 1. What exact outcome requires Work?
-2. Which capability is missing from Web/Claude/local preview?
+2. Which capability is missing from Web/Claude/HTML review?
 3. What exact source head is already prepared?
 4. Has the candidate already passed CI?
-5. Has Georg already locally previewed it when applicable?
+5. Has Georg already reviewed the zero-install HTML artifact when applicable?
 6. What is Work explicitly forbidden to change?
 7. What is the one success check?
 8. What is the immediate stop condition?
@@ -147,7 +148,7 @@ Then:
 
 **Web diagnoses and repairs.**
 
-A new Work escalation happens only after a new Web/Claude/local-preview candidate is ready.
+A new Work escalation happens only after a new Web/Claude/HTML-reviewed candidate is ready.
 
 ---
 
@@ -178,13 +179,13 @@ Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`.
 
 ---
 
-## 5 · Local-preview-first contract
+## 5 · HTML-review-first contract
 
 A productive visual/runtime slice is not complete merely because CI passes.
 
 Before Work or Cloudflare, prefer:
 
-`CODE → CI → LOCAL HTTP PREVIEW → GEORG LOOK/PLAY → FIX IN WEB/CLAUDE → repeat`
+`CODE → GITHUB CHECKPOINT → REVIEW.html → GEORG LOOK/PLAY → FIX IN WEB/CLAUDE → repeat`
 
 Only after the candidate is locally useful should it become a publication candidate.
 
@@ -196,18 +197,18 @@ This removes the expensive cycle:
 
 and replaces it with:
 
-`commit → localhost → immediate human feedback`.
+`commit → generated HTML artifact → immediate human feedback`.
 
-### Required local-preview artifact
+### Required review artifact
 
 For new browser slices, add or maintain:
 
-- `LOCAL_PREVIEW.md`;
-- an existing repo preview command where possible;
-- a fixed or clearly reported localhost route;
-- a source/revision marker visible in the page or console.
+- a generated `REVIEW.html` or equivalent one-click artifact;
+- a visible source/revision marker;
+- exact source pins inside the artifact or adjacent `REVISION.json`;
+- only the runtime/assets required for that review.
 
-The preview setup itself must not become a new framework.
+Do not create a deployment, local-server or build framework merely to make the review visible.
 
 ---
 
@@ -224,7 +225,7 @@ Use it for:
 
 Do not republish every debugging turn.
 
-A locally reviewed candidate may stay branch-only until it is worth sharing.
+An HTML-reviewed candidate may stay branch-only until it is worth sharing.
 
 ### Publication batching
 
@@ -353,7 +354,7 @@ If the public Combat MVP needs a new feature:
 
 **Claude Design is the visual-authoring specialist.**
 
-**Localhost is the normal rapid human-review loop.**
+**A zero-install HTML artifact is the normal rapid human-review loop.**
 
 **Work is a scarce integration escalator, not a development environment.**
 
@@ -365,4 +366,4 @@ If the public Combat MVP needs a new feature:
 
 For the next browser/game slice, prove this workflow in practice:
 
-**Web implements one small change and supplies a stable local HTTP preview. Georg reviews it locally. No Work and no Cloudflare until the slice is locally accepted.**
+**Web implements one small change and supplies one zero-install REVIEW.html artifact in chat. Georg reviews it directly. No Work and no Cloudflare until the slice is accepted enough to justify publication.**
