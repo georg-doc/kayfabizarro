@@ -208,3 +208,26 @@ At the next meaningful checkpoint require:
 - Return.
 
 Blender remains authoring, not gameplay/runtime ownership.
+
+
+## Racer recovery override · R3d
+
+Current Racer truth:
+
+- PR #33
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- docs/recovery head `05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+- runtime/test head `dad35bdf0f3e19fdc2c5902e154140353db590f9`
+- **24/24 PASS**
+- Cloudflare deferred
+
+Current gate:
+**R3d visual review only.**
+
+If Georg accepts R3d:
+next slice is **Vehicle Grounding / Contact**.
+
+Do not restart track/barrier architecture unless R3d visual review finds a concrete remaining architecture defect.
+
+Recovery caveat:
+the R3d review HTML is referenced by filename/hash in GitHub but is not itself persisted in the tree or CI artifact. Regenerate from the pinned runtime head if the old chat attachment is unavailable.
