@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#17150f">
-<title>KFB ToolBox · WB1 Terrain Scene 01 · Review</title>
+<title>KFB ToolBox · WB1 Terrain Scene 01 · Shared Editor Review</title>
 <style>
 :root{
   --bg:#17150f;--panel:rgba(26,23,17,.95);--panel2:#211e17;--line:#554d3d;
@@ -41,6 +41,12 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 .badge.ok{border-color:#587a55;color:var(--ok)}
 #doc{white-space:pre-wrap;max-height:170px;overflow:auto;background:#13110d;border:1px solid var(--line);border-radius:8px;padding:8px;font:10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfc2aa}
 #selftest{display:none}
+/* Shared ToolBox inline 3D edit layer · exact S7 object-menu grammar. */
+#objmenu{position:absolute;z-index:10;display:flex;gap:3px;padding:3px;border-radius:7px;
+  background:#14130fee;border:1px solid #4a4433;box-shadow:0 6px 18px #05030a80;transform:translate(-50%,0)}
+#objmenu button{width:28px;height:28px;padding:0;font-size:13px;line-height:1;border-radius:5px}
+#objmenu button.active{border-color:var(--accent);color:#ffe2a7}
+#objmenu[hidden]{display:none}
 @media(max-width:900px){
   #app{grid-template-columns:minmax(240px,280px) 1fr}
 }
@@ -54,7 +60,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 </style>
 </head>
 <body>
-<!-- REVIEW COPY · source blob a0ae15e822ef8283abafcf84483498814b1be3b8 · local review only · not public -->
+<!-- REVIEW COPY · source blob 0114d186759866f42bdc99a6d4bc662494701c50 · edit-layer blob c97b3537f71e939176f3ae5ce7ae83feabb7918f · local review only · not public -->
 <div id="app">
   <aside id="side">
     <h1>KFB TOOLBOX · WORLDBUILDER</h1>
@@ -80,13 +86,11 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
     </div>
 
     <div id="editPanel" class="section" hidden>
-      <h2>Scene editing · S21/S22 seam</h2>
+      <h2>Inline 3D editor · shared ToolBox layer</h2>
       <div class="row">
-        <button id="move" class="active">Move</button>
-        <button id="rotate">Rotate</button>
-        <button id="snap" class="active">Snap</button>
-        <button id="drop">Drop to terrain</button>
+        <button id="snap" class="active">Snap 0.05 / 15°</button>
       </div>
+      <div class="source">Object menu: ✥ move · ⟳ rotate · ⤢ scale · ⬓ drop · ⊹ world/local · ✕ close</div>
       <div class="row" style="margin-top:6px">
         <button id="addActor" disabled>Add Caveman</button>
         <button id="addProp" disabled>Add Boulder</button>
@@ -114,7 +118,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
       <h2>Owner boundaries</h2>
       <div class="source">
         <b>Terrain donor:</b> ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070 · MIT<br>
-        <b>Scene edit donor:</b> KFB S21/S22 TransformControls + local patch storage<br>
+        <b>Scene edit owner:</b> ToolBox <code>lib/edit-layer.js</code> · exact S7 donor blob c97b3537… · S21/S22 lineage<br>
         <b>Resident donor:</b> Resident Atlas Caveman · Rig_Medium · Melee_Unarmed_Idle<br>
         <b>WorldBuilder owns:</b> terrain settings + source references + transforms only
       </div>
@@ -124,6 +128,14 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
   <main id="stage">
     <div id="status">loading engine…</div>
     <div id="hint"><span>Source isolation must be reviewed before the composed scene unlocks.</span></div>
+    <div id="objmenu" hidden>
+      <button data-m="translate" title="Move (g)">✥</button>
+      <button data-m="rotate" title="Rotate (r)">⟳</button>
+      <button data-m="scale" title="Scale (s)">⤢</button>
+      <button data-m="floor" title="Drop onto the visible surface below">⬓</button>
+      <button data-m="space" title="World / local axes">⊹</button>
+      <button data-m="close" title="Clear selection (Esc)">✕</button>
+    </div>
   </main>
 </div>
 
@@ -138,7 +150,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
   WB1-TERRAIN-SCENE-01
   Reuse seams:
   - ZyFou/ProceduralTerrains cpuNoise.js + seedDomain.js subset, pinned f58a8d... (MIT).
-  - KFB S21/S22 editor interaction: TransformControls, click select, snap, drop, localStorage.
+  - Shared ToolBox lib/edit-layer.js, exact donor from Resident Atlas S7, itself extracted from S21/S22.
   - KFB Resident Atlas Caveman scene contract: exact actor, Rig_Medium, Melee_Unarmed_Idle,
     fit height 2.2, evaluate pose before ground contact.
   No model or animation bytes are embedded in the scene document.
@@ -172,8 +184,248 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
  */
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+/* BEGIN BUNDLED TOOLBOX EDIT LAYER · blob c97b3537f71e939176f3ae5ce7ae83feabb7918f */
+/* KFB · Editor-Schicht
+   Zweiter Einbau des Mini-Editors aus `KayKit_Room_Study_S21.html`. Genau dafür sieht
+   docs/EDITOR_LAYER.md vor, dass aus dem Block eine Bibliothek wird — „nicht vorher: eine
+   Bibliothek aus einem einzigen Anwendungsfall ist geraten, nicht abgeleitet."
+
+   Übernommen und nicht neu erfunden:
+   · Auswahl auf `pointerup` mit 4-px-Schwelle. Auf `pointerdown` klaut der Raycast die ersten
+     Frames jedes Orbit-Drags — und, hier teurer: ein Anfasser-Pfeil steht neben dem Objekt in
+     der LUFT, der Strahl trifft dort nichts, und „nichts getroffen" löste die Auswahl. Der
+     Anfasser verschwand im Moment des Zugreifens.
+   · Picking nur auf SICHTBARES. three.js raycastet auch unsichtbare Objekte.
+   · Ein Werkzeugmenü AM OBJEKT, höchstens sechs Felder, jedes eine Geste.
+   · Raster beim Verschieben und Drehen.
+   · Zwei Reichweiten, nie mehr: Einzelteil und Bedeutungsgruppe.
+
+   Bewusst abweichend vom Raum-Standard: Rasterschritt 0,05 statt 0,1. Dort ist die Bezugsgröße
+   ein Raummodul von 4 Einheiten, hier eine Figur von rund 2,3 — 0,1 wären 4 % der Figurenhöhe
+   und damit für ein Mikrofon in der Hand zu grob. Die Winkelrasterung bleibt bei 15°.
+
+   EIN Anfasser für alles. Wer ihn braucht (Puppe, Bone-Posing), LEIHT ihn sich über `borrow`.
+   Zwei TransformControls auf demselben Canvas erzeugen genau die Klasse von Fehlern, die diese
+   Datei beseitigen soll. */
+
+const _b = new THREE.Box3();
+const _v = new THREE.Vector3();
+
+function makeEditLayer(viewer, canvas, opts = {}) {
+  const getRoot = opts.getRoot || (() => null);
+  const recordOf = opts.recordOf || ((n) => n.userData.entry);
+  const groupOf = opts.groupOf || (() => null);
+  const menu = opts.menu || null;
+
+  const gizmo = new TransformControls(viewer.camera, canvas);
+  const helper = gizmo.getHelper ? gizmo.getHelper() : gizmo;
+  helper.visible = false;
+  viewer.scene.add(helper);
+  const pivot = new THREE.Object3D();
+  pivot.name = 'edit-pivot';
+  viewer.scene.add(pivot);
+  gizmo.addEventListener('dragging-changed', (e) => { viewer.controls.enabled = !e.value; });
+
+  const listeners = new Set();
+  const claims = [];
+  const ray = new THREE.Raycaster();
+  const ndc = new THREE.Vector2();
+  let on = false, snap = true, scope = 'teil', mode = 'translate';
+  let sel = [], borrowed = null, lastM = new THREE.Matrix4(), downAt = null;
+
+  const notify = () => listeners.forEach((f) => f());
+  const applySnap = () => {
+    gizmo.setTranslationSnap(snap ? (opts.gridStep ?? 0.05) : null);
+    gizmo.setRotationSnap(snap ? THREE.MathUtils.degToRad(opts.angleStep ?? 15) : null);
+  };
+  applySnap();
+
+  function collectVisible(o, out) {
+    if (!o.visible) return out;
+    if (o.isMesh || o.isSkinnedMesh) out.push(o);
+    for (const c of o.children) collectVisible(c, out);
+    return out;
+  }
+  function nodeOf(obj) {
+    let o = obj;
+    while (o && !recordOf(o)) o = o.parent;
+    return o || null;
+  }
+
+  const E = {
+    gizmo, helper,
+    get on() { return on; },
+    get mode() { return mode; },
+    get scope() { return scope; },
+    get snap() { return snap; },
+    get selection() { return sel.slice(); },
+    get node() { return sel.length === 1 ? sel[0] : null; },
+    onChange(f) { listeners.add(f); },
+    /* Ein Mitbewerber um denselben Klick meldet sich hier an statt einen eigenen Listener in der
+       Capture-Phase aufzumachen. Erste Funktion, die `true` liefert, hat den Klick. */
+    addClaim(f) { claims.push(f); },
+    busy() { return !!(gizmo.dragging || gizmo.axis); },
+
+    setOn(v) {
+      on = v;
+      if (!on) E.clear();
+      helper.visible = on && (sel.length > 0 || !!borrowed);
+      notify();
+    },
+    setMode(m) {
+      mode = m;
+      gizmo.setMode(m);
+      notify();
+    },
+    setScope(s) { scope = s; E.clear(); notify(); },
+    setSnap(v) { snap = v; applySnap(); notify(); },
+
+    /* ---- Leihgabe: Puppe und Bone-Posing hängen an DEMSELBEN Anfasser ---- */
+    borrow(obj, m, onDrag, label) {
+      E.clear(true);
+      borrowed = { obj, onDrag, label: label || obj.name };
+      mode = m;
+      gizmo.setMode(m);
+      gizmo.attach(obj);
+      helper.visible = true;
+      notify();
+      return borrowed;
+    },
+    release() {
+      borrowed = null;
+      gizmo.detach();
+      helper.visible = false;
+      notify();
+    },
+    get borrowed() { return borrowed; },
+
+    select(node) {
+      borrowed = null;
+      const rec = node && recordOf(node);
+      const root = getRoot();
+      sel = !rec ? []
+        : (scope === 'gruppe' && groupOf(rec) && root)
+          ? root.children.filter((x) => x.visible && recordOf(x) && groupOf(recordOf(x)) === groupOf(rec))
+          : [node];
+      if (!sel.length) { gizmo.detach(); helper.visible = false; notify(); return null; }
+      if (sel.length === 1) gizmo.attach(sel[0]);
+      else {
+        _b.makeEmpty();
+        for (const x of sel) _b.expandByObject(x);
+        pivot.position.copy(_b.getCenter(_v));
+        pivot.rotation.set(0, 0, 0);
+        pivot.updateMatrixWorld(true);
+        lastM.copy(pivot.matrixWorld).invert();
+        gizmo.attach(pivot);
+      }
+      gizmo.setMode(mode);
+      helper.visible = true;
+      E.follow();
+      notify();
+      return sel[0];
+    },
+    clear(keepMenu) {
+      sel = [];
+      borrowed = null;
+      gizmo.detach();
+      helper.visible = false;
+      if (menu && !keepMenu) menu.hidden = true;
+      notify();
+    },
+
+    /* Absetzen: senkrecht nach unten gegen alles Sichtbare, das NICHT zur Auswahl gehört. Ohne
+       Treffer ist der Boden die Fläche — das ist eine Aussage, keine Notlösung. */
+    drop() {
+      const root = getRoot();
+      const out = [];
+      for (const x of sel) {
+        if (x.userData.attachedTo) { out.push({ id: recordOf(x)?.id, refused: `hängt an ${x.userData.attachedTo}` }); continue; }
+        _b.setFromObject(x);
+        const c = _b.getCenter(new THREE.Vector3());
+        let y = 0, onWhat = 'Boden y=0';
+        if (root) {
+          const targets = collectVisible(root, []).filter((m) => { let p = m; while (p) { if (p === x) return false; p = p.parent; } return true; });
+          const r = new THREE.Raycaster(new THREE.Vector3(c.x, _b.min.y - 0.001, c.z), new THREE.Vector3(0, -1, 0), 0, 400);
+          const hit = r.intersectObjects(targets, false)[0];
+          if (hit) { y = hit.point.y; onWhat = hit.object.name || 'unbenannte Fläche'; }
+        }
+        const moved = y - _b.min.y;
+        x.position.y += moved;
+        x.updateMatrixWorld(true);
+        out.push({ id: recordOf(x)?.id, moved: +moved.toFixed(4), to: +y.toFixed(4), on: onWhat });
+      }
+      if (sel.length) { opts.onChange?.(sel); E.follow(); notify(); }
+      return out;
+    },
+
+    /* Das Menü folgt der Auswahl beim Drehen der Kamera — deshalb pro Frame, nicht pro Klick. */
+    follow() {
+      if (!menu) return;
+      const target = borrowed ? [borrowed.obj] : sel;
+      if (!on || !target.length) { menu.hidden = true; return; }
+      _b.makeEmpty();
+      for (const x of target) _b.expandByObject(x);
+      if (_b.isEmpty()) { menu.hidden = true; return; }
+      const c = _b.getCenter(_v).clone();
+      const p = new THREE.Vector3(c.x, _b.max.y, c.z).project(viewer.camera);
+      const r = canvas.getBoundingClientRect();
+      const host = menu.offsetParent ? menu.offsetParent.getBoundingClientRect() : r;
+      menu.hidden = false;
+      menu.style.left = (r.left - host.left + (p.x * 0.5 + 0.5) * r.width) + 'px';
+      menu.style.top = Math.max(4, r.top - host.top + (-p.y * 0.5 + 0.5) * r.height - 42) + 'px';
+    }
+  };
+
+  gizmo.addEventListener('objectChange', () => {
+    if (borrowed) { borrowed.onDrag?.(); E.follow(); notify(); return; }
+    if (sel.length > 1) {
+      pivot.updateMatrixWorld(true);
+      const delta = new THREE.Matrix4().multiplyMatrices(pivot.matrixWorld, lastM);
+      for (const x of sel) { x.applyMatrix4(delta); x.updateMatrixWorld(true); }
+      lastM.copy(pivot.matrixWorld).invert();
+    }
+    opts.onChange?.(sel);
+    E.follow();
+    notify();
+  });
+
+  canvas.addEventListener('pointerdown', (e) => { downAt = [e.clientX, e.clientY]; });
+  canvas.addEventListener('pointerup', (e) => {
+    const d = downAt;
+    downAt = null;
+    if (!d) return;
+    if (Math.hypot(e.clientX - d[0], e.clientY - d[1]) > 4) return; // Orbit-Drag ist keine Auswahl
+    if (gizmo.dragging || gizmo.axis) return;                       // Griff an der eigenen Achse auch nicht
+    const r = canvas.getBoundingClientRect();
+    ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(ndc, viewer.camera);
+    for (const c of claims) if (c(ray, e)) return;
+    const root = getRoot();
+    const hit = root ? ray.intersectObjects(collectVisible(root, []), false)[0] : null;
+    const node = hit ? nodeOf(hit.object) : null;
+    /* Auch bei AUSGESCHALTETEM Editor wird gemeldet, was getroffen wurde — die Auskunftskarte
+       (Pfad, Rolle, Maße) ist kein Editierwerkzeug und darf nicht am Editor hängen. */
+    if (!on) { opts.onPick?.(node, node ? recordOf(node) : null); return; }
+    if (!node) { E.clear(); opts.onPick?.(null, null); return; }
+    E.select(node);
+    opts.onPick?.(node, recordOf(node));
+  });
+
+  if (menu) menu.addEventListener('click', (e) => {
+    const m = e.target.closest('button')?.dataset.m;
+    if (!m) return;
+    if (m === 'translate' || m === 'rotate' || m === 'scale') E.setMode(m);
+    else if (m === 'floor') opts.onMenu?.('floor');
+    else if (m === 'scope') E.setScope(scope === 'teil' ? 'gruppe' : 'teil');
+    else if (m === 'close') E.clear();
+    else opts.onMenu?.(m);
+  });
+
+  return E;
+}
+/* END BUNDLED TOOLBOX EDIT LAYER */
 
 const ASSET_COMMIT='891eadf01e218f5fc21387e64cea1fec8332c5b6';
 const ANIM_COMMIT='aa16a777a970f23d3f11fb3c23dc40718b04fa88';
@@ -213,7 +465,7 @@ const DEFAULT_DOC={
   terrain:{seed:43129,height:2.6,macroScale:3.2,detail:0.55},
   sources:{
     terrain:{repo:'ZyFou/ProceduralTerrains',commit:ZYFOU_COMMIT,license:'MIT',files:['src/engine/terrain/noise/cpuNoise.js','src/engine/terrain/noise/seedDomain.js']},
-    sceneEdit:{owner:'KFB S21/S22',interaction:['TransformControls','click-select','snap','drop','localStorage']},
+    sceneEdit:{owner:'KFB ToolBox',module:'tools/KFB-ToolBox/lib/edit-layer.js',donorBlob:'c97b3537f71e939176f3ae5ce7ae83feabb7918f',lineage:['Dungeon Room Study S21/S22','Resident Atlas S7'],interaction:['object-menu','pointerup-select','translate','rotate','scale','drop','world-local','snap']},
     resident:{owner:'KFB Resident Atlas',residentId:'caveman',donorPath:'tools/resident_atlas/scenes/caveman-cave-camp.json'}
   },
   objects:[
@@ -221,12 +473,12 @@ const DEFAULT_DOC={
       id:ACTOR.id,kind:ACTOR.kind,name:ACTOR.name,
       source:{path:ACTOR.path,commit:ACTOR.commit},
       resident:{id:ACTOR.residentId,rigFamily:ACTOR.rigFamily,texture:{path:ACTOR.texture.path,commit:ACTOR.texture.commit},clip:{name:ACTOR.clip.name,path:ACTOR.clip.path,commit:ACTOR.clip.commit}},
-      transform:{position:[-2.2,null,0.2],rotation:[0,0.35,0]}
+      transform:{position:[-2.2,null,0.2],rotation:[0,0.35,0],scale:[1,1,1]}
     },
     {
       id:PROP.id,kind:PROP.kind,name:PROP.name,
       source:{path:PROP.path,commit:PROP.commit},
-      transform:{position:[2.2,null,-0.6],rotation:[0,-0.45,0]}
+      transform:{position:[2.2,null,-0.6],rotation:[0,-0.45,0],scale:[1,1,1]}
     }
   ]
 };
@@ -300,16 +552,65 @@ grid.position.y=.01;scene.add(grid);
 const worldRoot=new THREE.Group();scene.add(worldRoot);
 const previewRoot=new THREE.Group();scene.add(previewRoot);
 const loader=new GLTFLoader();
-let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),actorSourceReady=false,propSourceReady=false,sceneLoadToken=0;
+let terrain=null,mode='actor',selected=null,currentMixer=null,clock=new THREE.Clock(),actorSourceReady=false,propSourceReady=false,sceneLoadToken=0,gizmoSpace='world';
 const sceneObjects=new Map();
+const viewer={camera,scene,controls};
 
-const gizmo=new TransformControls(camera,renderer.domElement);
-const gizmoHelper=gizmo.getHelper?gizmo.getHelper():gizmo;
-scene.add(gizmoHelper);
-gizmoHelper.visible=false;
-gizmo.addEventListener('dragging-changed',e=>{controls.enabled=!e.value});
-gizmo.setTranslationSnap(.1);
-gizmo.setRotationSnap(THREE.MathUtils.degToRad(15));
+function recordForNode(node){
+  const id=node&&node.userData&&node.userData.sceneObjectId;
+  return id?sceneDoc.objects.find(o=>o.id===id)||null:null;
+}
+function setSelectionUi(node,rec){
+  selected=node||null;
+  const r=rec||recordForNode(node);
+  if(!selected)E('pick').textContent='Click actor or landmark to select.';
+  else E('pick').innerHTML='<b>'+r.name+'</b> · '+r.kind+' · '+EDIT.mode+' · '+gizmoSpace+' axes';
+  refreshAddButtons();
+}
+function syncEditorUi(){
+  if(!E('objmenu'))return;
+  const active=EDIT.selection;
+  if(!active.length&&selected)setSelectionUi(null);
+  else if(active.length===1&&selected!==active[0])setSelectionUi(active[0],recordForNode(active[0]));
+  E('objmenu').querySelectorAll('button').forEach(btn=>{
+    const m=btn.dataset.m;
+    btn.classList.toggle('active',m===EDIT.mode||(m==='space'&&gizmoSpace==='local'));
+  });
+  E('snap').classList.toggle('active',EDIT.snap);
+  if(selected)setSelectionUi(selected);
+}
+function onEditorPick(node,rec){setSelectionUi(node,rec);syncEditorUi()}
+function onEditorChange(nodes){
+  for(const node of nodes)updateRecordFromRoot(node);
+  if(nodes.length===1)selected=nodes[0];
+  refreshDoc();
+  syncEditorUi();
+}
+function onEditorMenu(action){
+  if(action==='floor'){
+    const result=EDIT.drop();
+    const msg=result.length?result.map(r=>r.refused?(r.id+': '+r.refused):(r.id+': dropped '+r.moved+' to '+r.on)).join(' · '):'nothing selected';
+    status(msg,result.length?'ok':'');
+  }
+  if(action==='space'){
+    gizmoSpace=gizmoSpace==='world'?'local':'world';
+    EDIT.gizmo.setSpace(gizmoSpace);
+    syncEditorUi();
+    status('gizmo axes · '+gizmoSpace,'ok');
+  }
+}
+const EDIT=makeEditLayer(viewer,renderer.domElement,{
+  getRoot:()=>worldRoot,
+  recordOf:recordForNode,
+  menu:E('objmenu'),
+  gridStep:.05,
+  angleStep:15,
+  onPick:onEditorPick,
+  onChange:onEditorChange,
+  onMenu:onEditorMenu
+});
+EDIT.onChange(syncEditorUi);
+EDIT.setOn(false);
 
 function bounds(o,precise=true){o.updateWorldMatrix(true,true);return new THREE.Box3().setFromObject(o,precise)}
 function fitObject(o,fit){
@@ -464,12 +765,13 @@ function makeRoot(record){
   root.position.set(Number(p[0])||0,p[1]==null?0:(Number(p[1])||0),Number(p[2])||0);
   root.userData.needsInitialGround=p[1]==null;
   root.rotation.fromArray((record.transform.rotation||[0,0,0]).concat(['XYZ']).slice(0,4));
+  root.scale.fromArray(record.transform.scale||[1,1,1]);
   worldRoot.add(root);sceneObjects.set(record.id,root);return root;
 }
 async function buildSceneObjects(token){
   resetMixer();
   for(const root of sceneObjects.values())worldRoot.remove(root);
-  sceneObjects.clear();selected=null;gizmo.detach();gizmoHelper.visible=false;
+  sceneObjects.clear();selected=null;EDIT.clear();
   for(const rec of sceneDoc.objects){
     if(token!==sceneLoadToken)return;
     const root=makeRoot(rec);
@@ -495,6 +797,7 @@ function updateRecordFromRoot(root){
   if(!rec)return;
   rec.transform.position=root.position.toArray().map(v=>+v.toFixed(4));
   rec.transform.rotation=[root.rotation.x,root.rotation.y,root.rotation.z].map(v=>+v.toFixed(5));
+  rec.transform.scale=root.scale.toArray().map(v=>+v.toFixed(4));
 }
 function updateAllRecords(){for(const root of sceneObjects.values())updateRecordFromRoot(root)}
 function refreshDoc(){
@@ -507,35 +810,13 @@ function refreshAddButtons(){
   E('remove').disabled=!selected;
 }
 function selectRoot(root){
-  selected=root||null;
-  if(!selected){gizmo.detach();gizmoHelper.visible=false;E('pick').textContent='Click actor or landmark to select.'}
-  else{
-    gizmo.attach(selected);gizmoHelper.visible=true;
-    E('pick').innerHTML='<b>'+selected.name+'</b> · '+selected.userData.kind+' · '+(gizmo.mode==='rotate'?'rotate':'move');
-  }
-  refreshAddButtons();
+  if(!root){EDIT.clear();setSelectionUi(null);return null}
+  EDIT.setOn(true);
+  EDIT.select(root);
+  setSelectionUi(root,recordForNode(root));
+  syncEditorUi();
+  return root;
 }
-gizmo.addEventListener('objectChange',()=>{
-  if(!selected)return;
-  updateRecordFromRoot(selected);refreshDoc();
-});
-
-const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();
-let downAt=null;
-renderer.domElement.addEventListener('pointerdown',e=>{downAt=[e.clientX,e.clientY]});
-renderer.domElement.addEventListener('pointerup',e=>{
-  if(mode!=='scene'||!downAt||Math.hypot(e.clientX-downAt[0],e.clientY-downAt[1])>4)return;
-  const r=renderer.domElement.getBoundingClientRect();
-  mouse.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);
-  ray.setFromCamera(mouse,camera);
-  const targets=[];
-  for(const root of sceneObjects.values())targets.push(root);
-  const hits=ray.intersectObjects(targets,true);
-  if(!hits.length){selectRoot(null);return}
-  let o=hits[0].object;
-  while(o&&o.parent&&!o.userData.sceneObjectId)o=o.parent;
-  if(o&&o.userData.sceneObjectId)selectRoot(o);
-});
 
 function sourceFacts(kind){
   if(kind==='actor'){
@@ -548,7 +829,7 @@ function setPanels(sceneMode){
   E('hint').style.display=sceneMode?'none':'block';
 }
 async function showActor(){
-  mode='actor';actorSourceReady=false;updateReviewUnlock();resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  mode='actor';actorSourceReady=false;updateReviewUnlock();resetMixer();EDIT.setOn(false);selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
   E('viewActor').classList.add('active');E('viewProp').classList.remove('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('actor');
   status('loading exact Caveman source…');
@@ -558,7 +839,7 @@ async function showActor(){
   updateReviewUnlock();
 }
 async function showProp(){
-  mode='prop';propSourceReady=false;updateReviewUnlock();resetMixer();selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
+  mode='prop';propSourceReady=false;updateReviewUnlock();resetMixer();EDIT.setOn(false);selectRoot(null);clearGroup(previewRoot);worldRoot.visible=false;previewRoot.visible=true;grid.visible=true;setPanels(false);
   E('viewActor').classList.remove('active');E('viewProp').classList.add('active');E('viewScene').classList.remove('active');
   E('sourceFacts').innerHTML=sourceFacts('prop');
   status('loading exact Boulder source…');
@@ -567,14 +848,14 @@ async function showProp(){
 }
 async function showScene(){
   if(!actorSourceReady||!propSourceReady)return;
-  mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);
+  mode='scene';resetMixer();clearGroup(previewRoot);previewRoot.visible=false;worldRoot.visible=true;grid.visible=false;setPanels(true);EDIT.setOn(true);syncEditorUi();
   E('viewActor').classList.remove('active');E('viewProp').classList.remove('active');E('viewScene').classList.add('active');
   E('sourceFacts').innerHTML='<b>Composed scene</b><br>Only source references + transforms are stored. No asset bytes or animation libraries are copied.';
   status('building terrain + source objects…');
   applyTerrainUI(sceneDoc.terrain);buildTerrain();
   sceneLoadToken++;await buildSceneObjects(sceneLoadToken);
   camera.position.set(10,7.2,11.5);controls.target.set(0,.5,0);controls.update();
-  status('scene ready · select / move / rotate / drop / save / reload','ok');
+  status('scene ready · object menu: move / rotate / scale / drop / world-local / close · save / reload','ok');
 }
 function updateReviewUnlock(){E('viewScene').disabled=!(actorSourceReady&&propSourceReady)}
 
@@ -625,13 +906,11 @@ async function importDoc(){
 E('viewActor').onclick=()=>showActor().catch(fail);
 E('viewProp').onclick=()=>showProp().catch(fail);
 E('viewScene').onclick=()=>showScene().catch(fail);
-E('move').onclick=()=>{gizmo.setMode('translate');E('move').classList.add('active');E('rotate').classList.remove('active');if(selected)selectRoot(selected)};
-E('rotate').onclick=()=>{gizmo.setMode('rotate');E('rotate').classList.add('active');E('move').classList.remove('active');if(selected)selectRoot(selected)};
-E('snap').onclick=e=>{
-  const on=!e.currentTarget.classList.contains('active');e.currentTarget.classList.toggle('active',on);
-  gizmo.setTranslationSnap(on?.1:null);gizmo.setRotationSnap(on?THREE.MathUtils.degToRad(15):null);
+E('snap').onclick=()=>{
+  EDIT.setSnap(!EDIT.snap);
+  syncEditorUi();
+  status(EDIT.snap?'snap on · 0.05 / 15°':'snap off · continuous','ok');
 };
-E('drop').onclick=()=>{if(selected){dropRoot(selected);updateRecordFromRoot(selected);refreshDoc();status('selected object dropped to terrain','ok')}};
 E('addActor').onclick=()=>addActor().catch(fail);
 E('addProp').onclick=()=>addProp().catch(fail);
 E('remove').onclick=()=>removeSelected().catch(fail);
@@ -643,9 +922,11 @@ E('exportDoc').onclick=()=>exportDoc().catch(fail);
 E('importDoc').onclick=()=>importDoc().catch(fail);
 addEventListener('keydown',e=>{
   if(mode!=='scene')return;
-  if(e.key==='g')E('move').click();
-  if(e.key==='r')E('rotate').click();
+  if(e.key==='g')EDIT.setMode('translate');
+  if(e.key==='r')EDIT.setMode('rotate');
+  if(e.key==='s')EDIT.setMode('scale');
   if(e.key==='Escape')selectRoot(null);
+  syncEditorUi();
 });
 
 function resize(){
@@ -662,7 +943,7 @@ renderer.setAnimationLoop(()=>{
       groundModelLocal(actorRoot.userData.model);
     }
   }
-  controls.update();renderer.render(scene,camera);
+  EDIT.follow();controls.update();renderer.render(scene,camera);
 });
 
 function fail(err){
@@ -679,6 +960,7 @@ async function runSelfTest(){
   await showProp();ok('exact prop source visible',previewRoot.children.length===1&&mode==='prop');
   ok('scene gate unlocked',!E('viewScene').disabled);
   await showScene();ok('continuous terrain mesh exists',terrain&&terrain.geometry.attributes.position.count>1000);
+  ok('shared ToolBox edit layer is active',EDIT.on&&EDIT.gizmo&&E('objmenu'));
   ok('resident loaded',sceneObjects.has(ACTOR.id));
   ok('prop loaded',sceneObjects.has(PROP.id));
   const actor=sceneObjects.get(ACTOR.id),actorY=actor.position.y+1.1;
@@ -686,7 +968,10 @@ async function runSelfTest(){
   ok('resident Y transform is editable',near(sceneDoc.objects.find(o=>o.id===ACTOR.id).transform.position[1],actorY));
   const a=terrainHeightAt(-4,-4),b=terrainHeightAt(4,4);ok('terrain varies',!near(a,b,1e-4),a+' / '+b);
   const prop=sceneObjects.get(PROP.id);selectRoot(prop);
-  prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);dropRoot(prop);updateRecordFromRoot(prop);
+  ok('object-attached mini menu opens',EDIT.node===prop&&!E('objmenu').hidden);
+  EDIT.setMode('scale');prop.scale.setScalar(1.15);prop.position.x+=1.2;prop.position.z-=.7;prop.rotation.y+=THREE.MathUtils.degToRad(15);updateRecordFromRoot(prop);
+  const dropReport=EDIT.drop();ok('shared drop reports a surface',dropReport.length===1&&!dropReport[0].refused);
+  onEditorMenu('space');ok('world/local toggle reaches gizmo',gizmoSpace==='local');onEditorMenu('space');
   const before=deepClone(sceneDoc.objects.find(o=>o.id===PROP.id).transform);saveDoc();
   prop.position.set(99,99,99);prop.rotation.y=0;updateRecordFromRoot(prop);
   await reloadDoc();
@@ -694,6 +979,7 @@ async function runSelfTest(){
   ok('save/reload restores x',near(before.position[0],after.position[0]));
   ok('save/reload restores z',near(before.position[2],after.position[2]));
   ok('save/reload restores rotation',near(before.rotation[1],after.rotation[1]));
+  ok('save/reload restores scale',near(before.scale[0],after.scale[0])&&near(sceneObjects.get(PROP.id).scale.x,before.scale[0]));
   ok('save/reload restores resident Y',near(sceneObjects.get(ACTOR.id).position.y,actorY));
   ok('scene document stores references not bytes',JSON.stringify(sceneDoc).length<12000&&sceneDoc.objects.every(o=>o.source&&o.source.path&&o.source.commit));
   document.body.dataset.selftest='PASS';
