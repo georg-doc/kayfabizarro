@@ -1381,3 +1381,26 @@ Current repair gate:
 **WB1-P2R1 · Surface Conformance Repair**.
 
 The repair preserves recipe identity and owner math while changing only the visible surface-attachment seam.
+
+
+## ToolBox / WorldBuilder / Orc Band handoff reset · 2026-09-23
+
+Three current lanes were normalized around the HTML-first workflow.
+
+### ToolBox
+Prepared `TOOLBOX_STAGE_FIRST_DEFAULT_V1_2026-09-23`.
+The exact Dropbox `KFB ToolBox Stage-First Concept.dc.html` is the visual source and candidate default UI.
+The brief consumes existing EyeRig v6, Medium/Large batch PR #104, Legacy 17/17 PR #162, Eye Actor Studio PR #159, S21 edit donor PR #120, KCC PR #147 and the existing FrizzleBob graft.
+The 19 MB v0.5 ZIP remains intake/provenance pending a lean delta; it is not wholesale-promoted.
+
+### WorldBuilder
+Terrain-first Web implementation remains first.
+A separate Claude Design handoff is now prepared but HOLD until the functional terrain editor passes Georg's HTML review.
+
+### The KayfaBizarros
+Recovered the prior Orc-band ideation into a fresh-chat handoff.
+First POC uses exact `character_orcB.gltf`, source-backed Orc drum/drumstick, existing Orc-Warband scenery and exact `Rubbish Groove 2min A extend 01.mp3` (blob `368eb5ae8fafcfba1cce3ba3f80488378fe056b0`).
+The current Tourbus model decision remains WaterBowser; the historical Armored Truck does not block the band POC.
+
+No Work/WSA is required for any of these first gates.
+Cloudflare is not the normal iteration surface.
