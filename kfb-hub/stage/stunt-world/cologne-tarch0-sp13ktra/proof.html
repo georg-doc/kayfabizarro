@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Racer · TARCH-0 isolated proof</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#1b1530;color:#f6f4fa;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+canvas{display:block;width:100%;height:100%}
+#note{position:fixed;left:14px;top:14px;max-width:540px;padding:10px 12px;background:rgba(20,16,30,.78);border:1px solid rgba(255,255,255,.16);border-radius:10px;pointer-events:none;white-space:pre-line}
+#note b{color:#ffc36f}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<div id="note"><b>TARCH-0 · ISOLATED ARCHITECTURE PROOF</b>
+C-3 road owner unchanged
+world-ground cut walls: 0
+ground invert: 0
+tunnel shell: 0
+dense arches: route-owned scenery
+donor architecture: SP13KTRA (code not copied)</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { buildRoute } from './lab-v9/cologne-route.v1.js';
+import { C } from './lab-v9/option-c-style.v1.js';
+import {
+  TARCH, tarchPlan, tarchPoint, buildTarchArches
+} from './lab-v9/cologne-tunnel-architecture.v1.js';
+
+const route=buildRoute();
+const plan=tarchPlan(route,-2.6);
+const run=plan.runs[0];
+if(!run) throw new Error('TARCH-0: no tunnel run');
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x6c2bbd);
+scene.fog=new THREE.Fog(0x6c2bbd,90,360);
+
+const camera=new THREE.PerspectiveCamera(58,innerWidth/innerHeight,.1,1200);
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+document.body.appendChild(renderer.domElement);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+
+scene.add(new THREE.HemisphereLight(0xffd7ad,0x2a2440,2.2));
+const sun=new THREE.DirectionalLight(0xffc58d,2.6);
+sun.position.set(-70,120,40); scene.add(sun);
+
+const pts=route.points.slice(run.voidFrom,run.voidTo+1);
+
+function strip(points,aFn,bFn,material,name){
+  const pos=[],idx=[];
+  for(const p of points){
+    const a=aFn(p),b=bFn(p);
+    pos.push(a.x,a.y,a.z,b.x,b.y,b.z);
+  }
+  for(let i=0;i<points.length-1;i++){
+    const a=i*2,b=a+1,c=a+2,d=a+3;
+    idx.push(a,c,b,b,c,d);
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  g.setIndex(idx); g.computeVertexNormals();
+  const m=new THREE.Mesh(g,material); m.name=name; scene.add(m); return m;
+}
+
+const roadMat=new THREE.MeshStandardMaterial({color:C.bed,roughness:.82,emissive:C.bedDark,emissiveIntensity:.35});
+const shoulderMat=new THREE.MeshStandardMaterial({color:C.shoulder,roughness:.95});
+const wallMat=new THREE.MeshStandardMaterial({color:C.shoulderLo,roughness:.95,side:THREE.DoubleSide});
+
+strip(pts,p=>tarchPoint(p,-1,0),p=>tarchPoint(p,1,0),roadMat,'proof-road');
+for(const side of [-1,1]){
+  strip(pts,p=>tarchPoint(p,side*1.0,0),p=>tarchPoint(p,side*1.30,-.9),shoulderMat,'proof-shoulder');
+  strip(pts,p=>tarchPoint(p,side*1.30,-.9),p=>tarchPoint(p,side*1.30,1.9),wallMat,'proof-wall');
+}
+
+const all=run.voidPoints.flatMap(q=>[q.left,q.right]);
+const minX=Math.min(...all.map(p=>p.x))-45,maxX=Math.max(...all.map(p=>p.x))+45;
+const minZ=Math.min(...all.map(p=>p.z))-45,maxZ=Math.max(...all.map(p=>p.z))+45;
+const outer=new THREE.Shape();
+outer.moveTo(minX,-minZ); outer.lineTo(maxX,-minZ); outer.lineTo(maxX,-maxZ); outer.lineTo(minX,-maxZ); outer.closePath();
+const hole=new THREE.Path();
+hole.moveTo(run.voidPoints[0].left.x,-run.voidPoints[0].left.z);
+for(let i=1;i<run.voidPoints.length;i++)hole.lineTo(run.voidPoints[i].left.x,-run.voidPoints[i].left.z);
+for(let i=run.voidPoints.length-1;i>=0;i--)hole.lineTo(run.voidPoints[i].right.x,-run.voidPoints[i].right.z);
+hole.closePath(); outer.holes.push(hole);
+const groundGeo=new THREE.ShapeGeometry(outer); groundGeo.rotateX(-Math.PI/2);
+const ground=new THREE.Mesh(groundGeo,new THREE.MeshStandardMaterial({color:0x422d1d,roughness:1}));
+ground.position.y=-2.6; ground.name='proof-city-ground'; scene.add(ground);
+
+const deepGeo=new THREE.PlaneGeometry(maxX-minX,maxZ-minZ); deepGeo.rotateX(-Math.PI/2);
+const deep=new THREE.Mesh(deepGeo,new THREE.MeshStandardMaterial({color:0x241a15,roughness:1}));
+deep.position.set((minX+maxX)/2,run.deepGroundY,(minZ+maxZ)/2); deep.name='proof-deep-ground'; scene.add(deep);
+
+const arches=buildTarchArches(THREE,route,C.bedLight); scene.add(arches);
+
+const entry=route.points[Math.max(run.voidFrom,run.tunnelFrom-8)];
+const look=route.points[Math.floor((run.tunnelFrom+run.tunnelTo)/2)];
+camera.position.set(entry.x-entry.tx*24+entry.nx*8,entry.y+8,entry.z-entry.tz*24+entry.nz*8);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.target.set(look.x,look.y+3,look.z); controls.enableDamping=true; controls.update();
+
+document.getElementById('note').textContent=
+  'TARCH-0 · ISOLATED ARCHITECTURE PROOF\n'+
+  'C-3 road owner unchanged\n'+
+  'void: '+run.voidFrom+' → '+run.voidTo+' · arches: '+run.archIndices.length+'\n'+
+  'deep ground: '+run.deepGroundY.toFixed(2)+' m\n'+
+  'ground cut walls: 0 · invert: 0 · shell: 0\n'+
+  'arch bases: existing wall base u='+TARCH.archSideU.toFixed(2)+'\n'+
+  'donor architecture: SP13KTRA · donor code copied: NO';
+
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight);
+});
+(function frame(){requestAnimationFrame(frame);controls.update();renderer.render(scene,camera);})();
+</script>
+</body>
+</html>

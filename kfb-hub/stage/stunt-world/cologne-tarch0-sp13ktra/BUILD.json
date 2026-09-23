@@ -1,0 +1,26 @@
+{
+  "schema": "kfb.racer-tarch0-stage/1",
+  "status": "HUMAN_ARCHITECTURE_GATE",
+  "sourceRepo": "georg-doc/KFB-Stunt-Car-Race",
+  "sourceBranch": "chat/racer-tarch0-sp13ktra-2026-09-23",
+  "sourceHead": "8bb0f8859a233ca57ebe3da3edaa318a45ecda8e",
+  "runtimeTestedHead": "b37cbad1038e669a0c9929d25789d54d0283b0fc",
+  "racePR": 33,
+  "donor": "KilledByAPixel/SP13KTRA@166ad838b9a067f85100eaff7876522f7cfe9feb",
+  "donorLicense": "All Rights Reserved — architecture observed; code/assets not copied",
+  "route": "/kfb-hub/stage/stunt-world/cologne-tarch0-sp13ktra/",
+  "proof": "/kfb-hub/stage/stunt-world/cologne-tarch0-sp13ktra/proof.html",
+  "gate": [
+    "proof: road causeway + ground void + dense arches",
+    "integrated: no brown wedges/ground plane/tunnel shell",
+    "arch bases meet road-side wall"
+  ],
+  "notInScope": [
+    "vehicle grounding",
+    "hard-curve stability",
+    "trails",
+    "audio",
+    "HUD",
+    "billboards"
+  ]
+}
