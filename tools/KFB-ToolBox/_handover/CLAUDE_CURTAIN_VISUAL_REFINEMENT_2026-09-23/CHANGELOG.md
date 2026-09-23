@@ -57,3 +57,41 @@ No visual refinement, SVG, CSS, Canvas-2D or alternate curtain implementation be
 
 ### STATUS
 Current Claude output classified as `ARCHIVED_FAILED_CANDIDATE`.
+
+
+## 2026-09-23 · Global Design Donor Lock / WSA handoff
+
+### SANITY
+- no lost/unknown GitHub write found at the reported interruption point;
+- branch and PR heads matched;
+- interruption occurred after successful recovery writes and before the global WSA/template handoff was finished.
+
+### GLOBAL WORKFLOW
+Added:
+- `skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/START_HERE.md`
+- `skills/chat/workflows/KFB_DESIGN_DONOR_LOCK_V1_2026-09-23/MEASUREMENT_EVIDENCE_TEMPLATE.md`
+
+Required order:
+`D0 donor unchanged → D1 measurements/source outputs → D2 fork/seam → D3 one delta → D4 side-by-side proof → D5 human gate`.
+
+### WSA LEAD
+Added:
+`skills/chat/masterplan/WSA_LEAD_HANDOFF_DESIGN_DONOR_LOCK_2026-09-23.md`
+
+WSA intake must require donor identity, donor proof, measurement packet, fork/seam, accepted human delta, forbidden rebuild list, success check and stop condition.
+
+Incomplete packets return:
+`DESIGN_DONOR_PACKET_INCOMPLETE`.
+
+### ROUTING
+Global rule routed from:
+- `skills/chat/START_HERE.md`
+- Web-first workflow
+- `skills/chat/RECOVERY_PATH.md`
+- `skills/chat/LIVING_MASTERPLAN.md`
+
+### CURTAIN
+Added:
+`SANITY_RECOVERY_WSA_HANDOFF_2026-09-23.md`
+
+Curtain next gate remains D0 exact donor restore only.
