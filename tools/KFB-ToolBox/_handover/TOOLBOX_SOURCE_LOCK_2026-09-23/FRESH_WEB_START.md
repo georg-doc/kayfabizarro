@@ -1,4 +1,4 @@
-# Paste-ready · KFB ToolBox Source Review · Fresh Web Chat · 2026-09-23
+# Paste-ready · KFB ToolBox Resident Set Portability · Fresh Web Chat · 2026-09-23
 
 @GitHub @Dropbox
 
@@ -9,9 +9,13 @@ Read current versions of:
 1. `skills/chat/START_HERE.md`
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
-4. `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
-5. `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/SOURCE_EVIDENCE.md`
-6. `tools/KFB-ToolBox/_handover/UI_CRITIQUE_REWORK_WS0_2026-09-15/RUN_NEXT_CORRECTED_2026-09-15.md`
+4. `skills/design-3d_combined_for-design_v1.md`
+5. `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
+6. `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/RESIDENT_SET_PORTABILITY_GATE.md`
+7. `tools/resident_atlas_s6/data/cast.js`
+8. `tools/resident_atlas_s6/lib/atlas.js`
+9. `tools/resident_atlas_s6/docs/ASSET_MANIFEST.json`
+10. `tools/resident_atlas_s6/docs/ATLAS_RETURN.md`
 
 GitHub state wins.
 
@@ -19,150 +23,114 @@ GitHub state wins.
 
 Do **not** continue or repair the rejected Claude Round-1 ToolBox.
 
-Its UI direction was acceptable, but the actor sources were wrong.
+Do **not** start with isolated actors.
 
-Do not rebuild the ToolBox yet.
+The repeated ChatGPT/HTML failures are now treated as one transport problem:
+model + textures + pose + prop attachment + multi-actor state must survive the review/export boundary together.
 
-## One task only · TB-SOURCE-LOCK-01
+## One task only · TB-RESIDENT-PORTABILITY-01
 
-Build one zero-install HTML source review:
+Build one zero-install review:
 
-`TOOLBOX_SOURCE_REVIEW.html`
+`TOOLBOX_RESIDENT_SET_PORTABILITY_REVIEW.html`
 
-The review must show the actual source actors **separately**, before any combined ToolBox UI.
+Use three existing Resident Atlas combinations as complete donor fixtures.
 
-### A · Current FrizzleBob
+### A · Goth Girl
 
-Label exactly:
+Resident:
+`goth-girl`
 
-**FrizzleBob · Driver Graft**
+Prove:
+- correct actor/model;
+- expected material/texture;
+- existing pose/animation;
+- stool;
+- seated relation;
+- ground/contact behavior.
 
-Use the current ToolBox source:
+### B · Orc Warband
 
-- `tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js`
-- `tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json`
+Resident:
+`orc-warband`
 
-This is the current default FrizzleBob.
+Prove:
+- both intended characters;
+- Legacy assembly;
+- expected textures;
+- weapons/props;
+- attachment relations;
+- animation/motion on the intended actors.
 
-It must visibly use the current head/face configuration, including the current red Carl/pill-style nose.
+### C · Animatronic
 
-Do not substitute the Cube-Pet rabbit or the old Combat rabbit.
+Resident:
+`animatronic`
 
-### B · Legacy Cube-Pet FrizzleBob
+Prove:
+- both intended characters;
+- expected texture/texture variant;
+- guitars/props;
+- pose/attachment relations;
+- existing compatible motion.
 
-Label exactly:
+## Three views per set
 
-**FrizzleBob · Cube-Pet**
+For each set show:
 
-Use the later user-saved Pet state from Dropbox:
+1. **Resident Atlas donor**
+2. **ToolBox/review import**
+3. **Export → reload**
 
-`/Mac/Downloads/kfb-pets (7).json`
+The goal is visual parity, not a redesigned scene.
 
-This is `kfb.pets/1.2.9`, saved 2026-09-12.
+## Asset transport rule
 
-Do not use the older Stage-First bundled 1.2.7 state as the review truth.
+Use canonical pinned GitHub RAW URLs.
 
-Show the Cube Bunny with its saved appearance/settings.
+Never rely on relative `./assets/...` paths in the standalone review.
 
-### C · Legacy Combat FrizzleBob
+Do not embed replacement models or silently flatten missing textures.
 
-Label exactly:
+If a source fails, show the failure and exact missing source. Do not insert a sign, primitive or generic substitute as if it were the asset.
 
-**FrizzleBob · Combat Platformer**
+## Pass / fail
 
-Source repository:
+Each resident set must visibly preserve:
 
-`georg-doc/KFB-Combat-Arena`
+- actor count;
+- correct model identity;
+- textures/materials;
+- pose;
+- ground contact;
+- prop count;
+- prop placement/attachment;
+- selected animation/clip;
+- state after export/reload.
 
-Use:
+A single silent replacement or lost texture is FAIL.
 
-`combat-arena-v1/frizzlebob.v1.js`
+## No extra scope
 
-That source uses the Kenney Platformer character body:
+No FrizzleBob lineage integration yet.
+No complete Studio roster yet.
+No Stage-First ToolBox rebuild.
+No Claude Design.
+No Cloudflare.
+No Work.
 
-`Platformer Game Kit - Dec 2021/Character/glTF/Character.gltf`
+Those come only after the resident-set transport passes.
 
-with the older Pet-Studio face path.
-
-This is the squatter Combat-v3-era rabbit.
-
-It is a valid legacy actor, but not the current FrizzleBob.
-
-### D · Saved Cube-Pet examples
-
-From the same user-saved `kfb.pets/1.2.9` state, show at least:
-
-- Penguin;
-- two other Cube-Pets with their saved settings.
-
-Do not approximate from generic GLB defaults.
-
-### E · Actual Studio actor roster
-
-Recover the actor list from the real current FrankenStein/FrankenSteining Studio sources.
-
-Primary Dropbox source:
-
-`/CLAUDE/KFB ToolBox v0.5/KFB-ToolBox/stage-first/src/KFB FrankenStein Studio v18.dc.html`
-
-Also respect the existing full-roster rule:
-
-`RUN_NEXT_CORRECTED_2026-09-15.md`
-
-Do not invent a small curated list.
-
-Show the actual categories/actors available from source.
-
-## Review layout
-
-Keep it simple.
-
-The HTML should let Georg:
-
-- switch between the three FrizzleBob lineages;
-- inspect the saved Cube-Pets;
-- orbit/zoom each actor;
-- see the exact source label;
-- see the actual Studio roster;
-- compare without any new ToolBox chrome.
-
-No editing controls are required in this gate.
-
-## Hard rules
-
-- no substitute actors;
-- no generic fallback model;
-- no source guessed from a filename;
-- no new EyeRig;
-- no new animation system;
-- no new roster;
-- no Stage-First integration yet;
-- no Claude Design;
-- no Cloudflare;
-- no Work.
-
-If a source cannot be reproduced faithfully, show:
-
-`SOURCE REQUIRED`
-
-rather than a replacement.
-
-## Done when
-
-Georg can answer only these questions:
-
-1. Is this the correct current Driver-Graft FrizzleBob?
-2. Is this the correct saved Cube-Pet FrizzleBob?
-3. Is this the correct old Combat Platformer FrizzleBob?
-4. Do the saved Cube-Pets look like the versions he actually saved?
-5. Is the Studio roster complete/correct?
+## Return
 
 Return:
 
 - exact GitHub branch/head;
-- `TOOLBOX_SOURCE_REVIEW.html`;
-- source list;
-- any unresolved source;
-- then STOP.
+- `TOOLBOX_RESIDENT_SET_PORTABILITY_REVIEW.html`;
+- pass/fail matrix for the three sets;
+- exact missing URLs/dependencies if any;
+- export/reload result;
+- then STOP for Georg.
 
-Only after Georg approves this source review may the existing Stage-First ToolBox UI be connected to these actors.
+Exactly one next gate:
+**Georg reviews the three resident sets.**
