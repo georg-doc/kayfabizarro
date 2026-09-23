@@ -303,3 +303,19 @@ issue the first productive Coworker Slice Card for ToolBox consuming the accepte
 
 If not:
 repair WorldBuilder first; do not spread the editor into ToolBox.
+
+
+## Direct review-link rule
+
+### Für Georg
+Wenn du etwas anschauen oder abnehmen sollst, bekommst du den klickbaren HTML-Link direkt im selben Chat. Du sollst nicht erst im Hub, in einem PR oder in einem GitHub-Ordner nach der richtigen Datei suchen müssen.
+
+### Rule
+Every human visual/browser gate must be delivered with a direct clickable review artifact in the same chat message.
+
+GitHub/Hub links are supporting evidence only.
+
+Persisted in:
+- `skills/chat/HUMAN_READABLE_STATUS.md`
+- `REVIEW_HTML_SOP.md`
+- `HUB_HYGIENE.md`
