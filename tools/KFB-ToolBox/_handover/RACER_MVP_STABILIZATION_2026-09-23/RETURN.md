@@ -1,137 +1,151 @@
-# RETURN · KFB Racer MVP Stabilization · RSTAB-0 · 2026-09-23
+# RETURN · KFB Racer MVP Stabilization · RSTAB-1 · 2026-09-23
 
-Status: **RSTAB-0 MAPPED · RACE DRAFT PR #31 · NO RUNTIME REPAIR**
+Status: **RSTAB-1 TECHNICAL PASS · HUMAN GEOMETRY GATE NEXT · NO RSTAB-2 YET**
 
-## Runtime owner
+## Runtime owner / candidate
+
+Repository:
 
 `georg-doc/KFB-Stunt-Car-Race`
 
-Locked Claude export:
+Source lineage:
 
 `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`
 → `KFB Cologne Race Option C-3/`
 
-RSTAB-0 branch / PR:
+RSTAB-0:
 
-- branch: `chat/racer-rstab0-audit-2026-09-23`
-- Draft PR: `georg-doc/KFB-Stunt-Car-Race#31`
-- exact verified Race branch head at this coordination update: `58d837a5b858bdf7af178bcf0bb578d6ab018ff4`
+- Draft PR #31
+- `chat/racer-rstab0-audit-2026-09-23@58d837a5b858bdf7af178bcf0bb578d6ab018ff4`
 
-No merge or Live promotion is authorized.
+RSTAB-1:
 
-## Source lock
+- Draft PR **#32**
+- branch `chat/racer-rstab1-geometry-2026-09-23`
+- exact runtime + bounded-CI candidate head `e9c72a404aff63d46762d9101a727a9e7f94a6b0`
+- current branch additionally carries only RSTAB-1 Return/Recovery metadata after that runtime head.
 
-C-3 GitHub ↔ Dropbox unpacked roster:
+No merge, Stage promotion or Live promotion is authorized.
 
-- **38/38 files**
-- **1,118,828 B** on each side
-- **0** path/size differences
+## RSTAB-1 outcome
 
-Dropbox ZIP:
+Two static geometry owners were repaired without changing route or accepted driving feel.
 
-- revision `65c1befc3cb9b4602da6f`
-- size `285032 B`
-- content hash `a90393e9625a513a2450b131f5fd446f5025c77b6ab297e2216e6e3e24276075`
+### Ground wedge / tunnel-cut seam
 
-## RSTAB-0 result
+Root mismatch:
 
-Three P0 owners are separated:
+- visible shell is banked and rendered as a 14-facet cross-section;
+- old ground-cut seam used one symmetric smooth-shell approximation.
 
-### RSTAB-WEDGE-01 · CORE_BLOCKER
+On banked tunnel points the real left/right ground intersections are different, so one common half-width could place ground inside the visible shell on one side and leave a gap on the other.
 
-Current human ground-wedge report remains open. Source owner is localized to the C-3 ground-cut ↔ tunnel-shell seam around route indices ~75–140. Existing `auditRoute()` excludes ground geometry, so historical zero-intrusion results do not close this gate.
+Repair:
 
-### RSTAB-CURVE-01 · CORE_BLOCKER
+- `tunnelShellGroundSpan()` consumes the same banked 14 shell vertices used by the renderer;
+- independent left/right ground-cut edges;
+- 10-point smooth transition;
+- 0.03 m hole-side seam clearance;
+- no later `SLEW_M` mutation after a point is marked covered.
 
-First major hard bend:
+### Support pillars
 
-- peak route index 176
-- 29.4%
-- s≈589.1 m
-- radius ≈35.3 m
-- bank ≈24.0°
+Old code calculated the banked local support point but ignored its `y` and sized pillars from centerline height.
 
-Unchanged v0.8 full-steer radius at 41 m/s is ≈61.6 m. The route is source-smooth but locally outside the ordinary v0.8 steering envelope at normal maximum race speed. Do not globally retune driving feel to mask it.
+Repair:
 
-### RSTAB-PIER-01 · CORE_BLOCKER
+- `structurePillarSpan()` uses each real local banked soffit endpoint;
+- existing support cadence remains unchanged;
+- support count remains **54**;
+- no global shortening or deletion.
 
-**54/54** generated `structure-pillar` placements were source-audited.
+## Actual evidence
 
-Three deterministic downhill supports extend above the banked local road surface:
+GitHub Actions:
 
-- index 166: +0.38 m
-- index 179: +1.89 m
-- index 187: +0.61 m
+- workflow `Racer RSTAB-1 geometry`
+- run **35807766171**
+- job **107012285119**
+- Node **22.23.2**
+- result **SUCCESS**
 
-The existing `auditRoute()` excludes `structure-*`, so its old zero count never tested this support-clearance case.
+TAP result:
 
-## Carried later gates
+**5 tests · 5 PASS · 0 FAIL**
 
-- tunnel dark/brown sightline;
-- vehicle grounding / ride-height presentation;
-- engine/audio chain;
-- trail/speedline folding.
+The bounded regression proves:
 
-They remain recorded but do not delay the first static-geometry repair.
+- route remains **598 points / 2063.844351 m**;
+- support roster remains **54**;
+- old support rule reproduces exactly the three RSTAB-0 penetrations **166 / 179 / 187**;
+- repaired support rule yields **0** road penetrations;
+- both rendered-shell side intersections resolve at all **44** tested tunnel-cut points;
+- every fully covered cut edge matches its actual rendered shell seam + 0.03 m;
+- transition edge step remains **< 1.1 m**;
+- old symmetric-shell / `SLEW_M` runtime fallback is absent.
 
-## Evidence packet
+## Race evidence packet
 
-Race PR #31:
+On Draft PR #32:
 
-`_handover/RACER_MVP_STABILIZATION_2026-09-23/RSTAB-0/`
+`_handover/RACER_MVP_STABILIZATION_2026-09-23/RSTAB-1/`
 
 contains:
 
-- `SOURCE_LOCK.md`
-- `LOCAL_PREVIEW.md`
-- `RACER_SHOWSTOPPER_MATRIX.md`
 - `TEST_REPORT.md`
+- `LOCAL_PREVIEW.md`
 - `CHANGELOG.md`
 - `RETURN.md`
 
 Race `RECOVERY.md` is updated on the same branch.
 
-## Actual checks
+## Preserved boundaries
 
-- source roster: **38/38**
-- route: **598/598**
-- supports: **54/54**
-- deterministic support penetrations: **3**
-- required showstopper entries: **7/7**
-- runtime files changed: **0**
-- new browser runs claimed: **0**
-- new screenshots claimed: **0**
-- public deployment claims: **0**
+Unchanged:
 
-`game-dev` unavailable once; repository-native fallback used. No sealed Game Development Studio claim.
+- `cologne-route.v1.js`;
+- all route control points;
+- v0.8 FLOW / FEEL;
+- camera;
+- vehicle grounding;
+- HUD / billboards;
+- audio;
+- trails;
+- roster.
 
-## Local preview
+RSTAB-2 hard-curve work is **not started**.
 
-From a local Race checkout:
+## Browser / human status
 
-```bash
-cd "KFB Cologne Race Option C-3"
-python3 -m http.server 8787 --bind 127.0.0.1
-```
+This Web environment cannot execute the private C-3 WebGL surface.
 
-Open:
+Therefore:
 
-`http://127.0.0.1:8787/KFB%20Cologne%20Race%20Option%20C.dc.html`
+- technical RSTAB-1 = **PASS**;
+- human-visible WEDGE/PIER acceptance = **PENDING**;
+- no screenshot/full-lap browser PASS is claimed.
 
-## Stage
+The local development review procedure lives in the Race RSTAB-1 packet. Local HTTP is an edit-review surface, not the public acceptance surface.
 
-Historical intended route:
+## Public Stage
+
+Historical route:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c/`
 
-Status for C-3 / RSTAB-0:
+Current classification:
 
-**NOT PUBLISHED · NOT PUBLIC_VERIFIED**
+**HISTORICAL SNAPSHOT · NOT C-3 / NOT RSTAB-1 PROOF.**
 
-The existing Stage must not be used as proof of the C-3 candidate.
+No Cloudflare publication happened in RSTAB-1.
 
 ## Exactly one next gate
 
-**RSTAB-1 · static geometry intrusions — ground wedges + support pillars.**
+**RSTAB-1 HUMAN GEOMETRY GATE**
 
-No curve tuning until those static geometry ambiguities are removed.
+Review only:
+
+1. tunnel/ground-cut approach in normal CHASE;
+2. support endpoints around the previous 166 / 179 / 187 region.
+
+Only a human **ACCEPT** advances the project to **RSTAB-2 hard-curve stability**.
