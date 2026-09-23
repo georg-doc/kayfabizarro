@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **TARCH-0 R1 ACCEPTED · R2 TUNE · R3 TRACK-EDGE/BANKING CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
+Status: **TARCH-0 R1 ACCEPTED · R2 TUNE · R3 REVIEW-HARNESS FAIL · R3b HUMAN RECHECK PENDING · CLOUDFLARE DEFERRED**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -149,6 +149,39 @@ Still later:
 2. hard-clamp/jitter;
 3. trails/speedlines;
 4. jump/landing.
+
+
+### R3 review fail → R3b harness repair
+
+R3 human review showed arch frames but the track largely disappeared in CHASE.
+
+Sanity:
+- runtime road owner still exists;
+- runtime Ground remains one `THREE.ShapeGeometry`;
+- corrected banking remains active;
+- runtime/test head stays `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`;
+- CI remains **11/11 PASS**.
+
+Proven cause:
+- review-only long road/shoulder/wall polygons were discarded when any vertex moved behind the review camera.
+
+R3b:
+- restores road/shoulder/walls to short per-segment review quads;
+- keeps the continuous city-ground review edge from the R2 saw-tooth cleanup;
+- keeps corrected banking and bank guide;
+- changes **no runtime file**.
+
+R3b artifact:
+`KFB_Racer_TARCH0_R3b_track_edge_banking_review.html`
+
+Expected SHA-256:
+`100310fbc4794f317ce572d403142ee464e6b2a57a4e32a5a84382294b03fd3b`
+
+Race PR #33 current docs head:
+`308ed3b7e464f573b85d004f13fbf9e0642c818c`
+
+Exactly one current gate:
+**R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
 
