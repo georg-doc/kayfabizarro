@@ -9,8 +9,10 @@
 > Fresh-chat execution:
 > `TOOLBOX_SCENE_AUTHORING_FRESH_WEB_START_2026-09-23.md`
 >
-> Current gate: **WB1-TERRAIN-SCENE-01 · R1 FEEDBACK REPAIRED · HUMAN RE-REVIEW** — continuous terrain + real Resident Atlas Caveman/texture + existing clip + prop placement + free Character Y + save/reload + non-overlay review layout.
-> Current evidence: **26/26 + 4/4 + 5/5 PASS**; embedded browser self-test **15 prepared / 0 executed**. Cloudflare remains HOLD.
+> R1 functional foundation: **GEORG HUMAN PASS** — texture, Character Y, Character-Y save/reload and palette/FOV.
+> Current gate: **WB1-TERRAIN-SCENE-01 · SHARED INLINE EDITOR R2 HUMAN REVIEW**.
+> Shared editor owner: `tools/KFB-ToolBox/lib/edit-layer.js` · exact donor blob `c97b3537f71e939176f3ae5ce7ae83feabb7918f` · Dungeon S21/S22 → Resident S7 → ToolBox promotion.
+> Current evidence: **32/32 + 4/4 + 1/1 PASS**; embedded browser self-test **20 prepared / 0 executed**. Cloudflare remains HOLD.
 > The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
 
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
@@ -28,12 +30,12 @@ Read:
 `TERRAIN_FIRST_RESET_2026-09-23.md`
 
 Next gate:
-**WB1-TERRAIN-SCENE-01 · repaired local HTML human re-review**
+**WB1-TERRAIN-SCENE-01 · shared inline-editor mini-menu human review**
 
 Primary external terrain/editor donor:
 `ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` · MIT.
 
-Use existing KFB S21/S22 / Scene Patch interaction donors for object editing.
+Use the promoted ToolBox `lib/edit-layer.js` as the selected-object edit owner. It is the exact Resident S7 extraction of the Dungeon S21/S22 editor; do not rebuild a local TransformControls/picking layer.
 
 Hex remains optional local/semantic content. It is not the macro ground.
 
