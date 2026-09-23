@@ -705,3 +705,13 @@ Exactly one current Racer gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
 
 Cloudflare / Pages remain deferred until after human visual acceptance.
+
+
+## 2026-09-23 · ToolBox source-lock correction
+
+The first Claude Design Stage-First build is **REJECTED FOUNDATION** after Georg's visual review: it showed the old Cube Bunny as FrizzleBob, did not preserve the later saved Cube-Pet state, and did not expose the full current Studio actor source.
+
+Current ToolBox recovery:
+`tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
+
+Do not continue or repair Claude Round 1. Current FrizzleBob remains the Driver Graft via `mountGraft()`; legacy Cube-Pets remain separate actors. Exactly one next gate: **TB-SOURCE-LOCK-01 · isolated source review**.
