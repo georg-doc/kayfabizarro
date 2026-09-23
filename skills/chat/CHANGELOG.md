@@ -1218,3 +1218,17 @@ Derek/Macro look, Ink, Cel, Voxel, Story Palette, day/night cycle, full WorldDes
 Draft PR #176 remains a separate post-WB1-P2 ToolBox Fractal Authoring planning lane. Its current checked head is `44cd0a25372925409e335f5a216a5d77cac5181a`. At the latest recheck it is also non-mergeable because main advanced; this is a reconciliation issue, not a P1 blocker.
 
 WorldBuilder START/Fresh Web prompt and KFB Hub were advanced to P1. Cloudflare-live Hub source was mirrored, but no new public-browser verification claim is made for this metadata-only update.
+
+
+## 2026-09-23 · Racer MVP Stabilization RSTAB-0
+
+- pinned newest Racer Claude export to `georg-doc/KFB-Stunt-Car-Race@cc80f4a1c6c509db9668df79fd53b13cee093a9d` / `KFB Cologne Race Option C-3/`;
+- Race Draft PR #31 / `chat/racer-rstab0-audit-2026-09-23`, verified handoff head `58d837a5b858bdf7af178bcf0bb578d6ab018ff4`;
+- C-3 GitHub ↔ Dropbox source roster: 38/38 files, 1,118,828 B each, zero path/size differences;
+- route scan 598/598; first major hard-bend peak index 176 / radius ≈35.3 m vs ≈61.6 m preserved v0.8 full-steer radius at 41 m/s;
+- support scan 54/54; three deterministic `structure-pillar` road penetrations at indices 166 / 179 / 187;
+- current ground-wedge owner localized to ground-cut ↔ tunnel-shell seam; exact visible current mesh remains a reproduced-frame/raycast gate;
+- no Racer runtime repair, no global FLOW/FEEL change, no new browser/public PASS;
+- Hub now routes current Racer work to RSTAB-1 and marks the older Cologne Stage as historical / not C-3 proof.
+
+Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.**
