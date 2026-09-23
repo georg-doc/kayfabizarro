@@ -1,13 +1,13 @@
 # KFB Portable Preview Pack · zero-clone local review
 
-Status: **CURRENT LOCAL REVIEW OPTION**
+Status: **FALLBACK REVIEW OPTION · HTML REVIEW IS DEFAULT**
 Date: 2026-09-22
 
 Purpose: let Georg test browser/game/3D slices locally **without cloning the full KFB repository**.
 
 ## Default rule
 
-For visual/runtime slices, prefer a tiny disposable preview bundle over a full local checkout.
+For visual/runtime slices, first prefer a single zero-install `REVIEW.html`. Use a tiny disposable preview bundle only when one HTML file is not technically reliable.
 
 A preview pack contains only:
 
@@ -22,14 +22,11 @@ No repository history. No unrelated assets. No node_modules unless absolutely re
 
 ## User loop
 
-1. Web/Claude produces a GitHub branch and a portable preview artifact.
-2. Georg downloads/unzips the pack to a temporary folder, e.g. `~/Downloads/KFB-Preview/<slice>/`.
-3. Double-click `START_PREVIEW.command` or run the documented one-liner.
-4. Browser opens `http://127.0.0.1:<port>/...`.
-5. Georg reviews the visible/interactable result.
-6. Web/Claude repairs the GitHub branch.
-7. Replace/delete the old preview folder and test the next pack.
-8. Delete the folder after acceptance.
+1. Web/Claude first attempts a single chat-generated `REVIEW.html`.
+2. Only if that cannot reliably represent the slice, produce a tiny preview bundle.
+3. Georg opens the review/bundle directly; no CLI setup is assumed.
+4. Web/Claude repairs the GitHub branch from Georg's feedback.
+5. Replace/delete the old review bundle after acceptance.
 
 ## Disk discipline
 
@@ -46,34 +43,21 @@ Do not copy:
 
 Record approximate pack size in `REVISION.json`.
 
-## Server
+## Runtime packaging
 
-Never rely on `file://` for ES-module/Three.js applications.
+Do not require Georg to run a server.
 
-Prefer the smallest available local HTTP server.
+If ES modules would make `file://` unreliable, bundle the module graph for the review artifact rather than shifting that setup burden to Georg.
 
-Example macOS launcher:
-
-```bash
-#!/bin/bash
-cd "$(dirname "$0")"
-PORT=4176
-python3 -m http.server "$PORT" &
-PID=$!
-echo "$PID" > .preview.pid
-open "http://127.0.0.1:$PORT/"
-wait "$PID"
-```
-
-If Python is unavailable, document one existing project-local alternative. Do not install a development stack merely to preview a slice.
+If a server is genuinely unavoidable, treat it as an exception and use an already-existing capability only; do not introduce Python/Node/CLI setup as part of the feature slice.
 
 ## Artifact creation
 
 Preferred sources, in order:
 
-1. Web/Chat generated ZIP artifact;
-2. GitHub Actions artifact from the exact branch/head;
-3. small release/preview folder downloaded from GitHub;
+1. Web/Chat generated single `REVIEW.html`;
+2. Web/Chat generated tiny review bundle;
+3. GitHub Actions artifact from the exact branch/head;
 4. sparse/local checkout only when the preview cannot be packaged independently.
 
 ## Acceptance language
