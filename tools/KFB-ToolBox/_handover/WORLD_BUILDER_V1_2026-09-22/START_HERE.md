@@ -1,12 +1,12 @@
 # KFB WorldBuilder v1 · Web-first execution · 2026-09-22
 
-## WB1-P1 CURRENT RECOVERY OVERRIDE · 2026-09-23
+## WB1-P1 ACCEPTANCE OVERRIDE · 2026-09-23
 
-WB1-P1 implementation is **already preserved on Draft PR #177**. Static tests are 8/8 PASS, but required browser/visible proof was blocked twice before page load by `ERR_BLOCKED_BY_ADMINISTRATOR`.
+WB1-P1 is **COMPLETE / HUMAN SCOPE PASS** on Draft PR #177. The exact zero-install Stage passed automated public-browser proof and Georg accepted the bounded Environment Profile behavior.
 
-**Do not rerun WB1-P0. Do not rebuild WB1-P1 from memory. Do not start WB1-P2.**
+**Do not rerun P0 or P1. Do not treat the review scene's key-light placement or torch spacing as production lighting canon.**
 
-Resume only from [WB1_P1_FAILURE_RECOVERY_2026-09-23.md](WB1_P1_FAILURE_RECOVERY_2026-09-23.md). Exactly one next gate is **WB1-P1 Browser Verify** using the persisted Portable Preview.
+Exactly one next gate is **WB1-P2 · the same tiny logical recipe across FLAT / SPHERE / TORUS**. P2 is prepared as next, but was not started in the P1 acceptance handoff.
 
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
 Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime owner.
