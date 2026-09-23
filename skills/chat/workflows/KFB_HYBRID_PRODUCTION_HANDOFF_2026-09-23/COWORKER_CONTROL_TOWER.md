@@ -195,3 +195,31 @@ Use:
 Coworker remains the current-state writer.
 WSA writes execution Returns only.
 Web Lead reconciles after a meaningful milestone.
+
+
+## Immediate order after Opus 5.5 recovery
+
+After the model-switch checkpoint is recovered:
+
+### PD0 · Production Desk v0
+Build:
+`KFB_PRODUCTION_DESK_V0.html`
+
+using:
+- `PRODUCTION_DESK_V0_BRIEF.md`
+- `PRODUCTION_DESK_STATE.json`
+- `COWORKER_PRODUCTION_DESK_START.md`
+
+This is a small control-plane build, not a new architecture.
+
+Persist:
+- HTML;
+- refreshed state JSON;
+- short Return.
+
+No separate Georg design gate is required unless the artifact is unusable.
+
+### Then resume ToolBox
+Continue the existing Source-Safe Integration 01 from the recovered local workspace.
+
+Do not restart source archaeology.
