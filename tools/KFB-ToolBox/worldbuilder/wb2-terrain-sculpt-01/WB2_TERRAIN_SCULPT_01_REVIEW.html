@@ -63,7 +63,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 </style>
 </head>
 <body>
-<!-- REVIEW COPY · source blob ea8f8ccfe21ed919321e9ed6d8aea2970972cf81 · edit-layer blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 · sculpt blob 1083e8b77b9943ae8e2dce707329eef03398e948 · local review only · not public -->
+<!-- REVIEW COPY · source blob 188d5b46e34407c3800edeb2b896d3cf0cf93925 · edit-layer blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 · sculpt blob 1083e8b77b9943ae8e2dce707329eef03398e948 · local review only · not public -->
 <div id="app">
   <aside id="side">
     <h1>KFB TOOLBOX · WORLDBUILDER</h1>
@@ -849,7 +849,7 @@ function applyCurrentSculptPoint(hit){
 function beginSculpt(e){
   if(sculptMode==='off'||mode!=='scene')return;
   const hit=terrainHitFromEvent(e);if(!hit)return;
-  e.preventDefault();e.stopPropagation();
+  e.preventDefault();e.stopImmediatePropagation();
   sculptPointerId=e.pointerId;
   try{renderer.domElement.setPointerCapture(e.pointerId)}catch{}
   controls.enabled=false;
@@ -860,12 +860,12 @@ function moveSculpt(e){
   if(sculptMode==='off'||mode!=='scene')return;
   const hit=terrainHitFromEvent(e);showBrushAt(hit);
   if(sculptPointerId===e.pointerId&&sculptStroke&&hit){
-    e.preventDefault();e.stopPropagation();applyCurrentSculptPoint(hit);
+    e.preventDefault();e.stopImmediatePropagation();applyCurrentSculptPoint(hit);
   }
 }
 function finishSculpt(e,cancel=false){
   if(sculptPointerId!==e.pointerId)return;
-  e.preventDefault();e.stopPropagation();
+  e.preventDefault();e.stopImmediatePropagation();
   try{renderer.domElement.releasePointerCapture(e.pointerId)}catch{}
   controls.enabled=true;
   if(cancel){buildTerrain()}
