@@ -1,0 +1,128 @@
+name: Travel TMB-1 Cloudflare QA
+
+on:
+  push:
+    branches: ['chatgpt-web/travel-tmb1-stage-2026-09-23']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Open exact Cloudflare TMB-1 route
+        run: |
+          mkdir -p tmb1-card-public-proof
+          cat > tmb1-card-public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/';
+          const sourceUrl=url+'SOURCE.json';
+          const expectedRevision='TMB1-CARD-ONLY-01';
+          const expectedTravelHead='62a669d9e69f5489221f7f2dca98108d2378ba2a';
+          const expectedCarrier='2eef4db5aa38fffc8e9c23457815e3be12fc3bd8';
+          const expectedArt='36da589c1227dc796097d71bd0fd30a539905b1f';
+
+          const report={url,sourceUrl,checks:[],errors:[],httpErrors:[]};
+          const check=(name,pass,detail=null)=>{
+            report.checks.push({name,pass:!!pass,detail});
+            if(!pass) process.exitCode=1;
+          };
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+          const browser=await chromium.launch({
+            headless:true,
+            args:['--use-angle=swiftshader','--enable-unsafe-swiftshader','--enable-webgl','--ignore-gpu-blocklist']
+          });
+          const page=await browser.newPage({viewport:{width:1440,height:920},deviceScaleFactor:1});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))report.errors.push('console: '+m.text())});
+          page.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))report.httpErrors.push({status:r.status(),url:r.url()})});
+          page.on('requestfailed',r=>report.httpErrors.push({status:0,url:r.url(),error:r.failure()?.errorText}));
+
+          try{
+            let marker=null,last=null;
+            for(let i=0;i<120;i++){
+              try{
+                const r=await page.request.get(sourceUrl+'?proof='+Date.now(),{timeout:15000});
+                const text=await r.text();
+                let j=null;try{j=JSON.parse(text)}catch{}
+                last={status:r.status(),revision:j?.revision||null,travelHead:j?.travel?.head||null,preview:text.slice(0,80)};
+                if(r.ok() && j?.revision===expectedRevision && j?.travel?.head===expectedTravelHead){marker=j;break;}
+              }catch(e){last={error:String(e)}}
+              await sleep(3000);
+            }
+            check('deployed SOURCE marker',!!marker,last);
+            if(!marker) throw Error('Stage marker timeout '+JSON.stringify(last));
+            report.marker=marker;
+            check('marker carrier blob',marker.sourceObjects?.cardCarrierBlob===expectedCarrier,marker.sourceObjects?.cardCarrierBlob);
+            check('marker art blob',marker.sourceObjects?.cardArtwork?.blob===expectedArt,marker.sourceObjects?.cardArtwork?.blob);
+            check('marker passenger null',marker.passenger===null,marker.passenger);
+
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Stage HTTP response',!!response&&response.ok(),response?.status());
+            check('Stage title',await page.title()==='KFB Travel Mode Bridge · TMB-1 · CardCarrier Source Proof',await page.title());
+
+            await page.waitForFunction(()=>window.__TMB1_PROOF__?.sourceObjectVisible===true || (window.__TMB1_PROOF__?.runtimeErrors||[]).length>0,null,{timeout:120000});
+            await page.waitForTimeout(1200);
+            const snap=await page.evaluate(()=>({
+              proof:window.__TMB1_PROOF__,
+              stateText:document.querySelector('#proof-state')?.textContent||'',
+              canvas:{
+                width:document.querySelector('#view')?.width||0,
+                height:document.querySelector('#view')?.height||0,
+                cssWidth:document.querySelector('#view')?.clientWidth||0,
+                cssHeight:document.querySelector('#view')?.clientHeight||0
+              }
+            }));
+            report.snap=snap;
+            check('source object visible',snap.proof?.sourceObjectVisible===true,snap.proof);
+            check('phase CARD_ONLY',snap.proof?.phase==='CARD_ONLY',snap.proof?.phase);
+            check('exact carrier blob in runtime report',snap.proof?.donor?.blob===expectedCarrier,snap.proof?.donor);
+            check('exact art blob in runtime report',snap.proof?.artwork?.blob===expectedArt,snap.proof?.artwork);
+            check('carrier runtime name',snap.proof?.runtime?.carrierName==='card-carrier',snap.proof?.runtime);
+            check('native scale retained',JSON.stringify(snap.proof?.runtime?.nativeScale)==='[1,1,1]',snap.proof?.runtime?.nativeScale);
+            check('no passenger',snap.proof?.runtime?.passengerCount===0,snap.proof?.runtime?.passengerCount);
+            check('visible source marker text',/SOURCE OBJECT/.test(snap.stateText),snap.stateText);
+            check('canvas sized',snap.canvas.width>0&&snap.canvas.height>0&&snap.canvas.cssWidth>0&&snap.canvas.cssHeight>0,snap.canvas);
+            check('no runtime report errors',(snap.proof?.runtimeErrors||[]).length===0,snap.proof?.runtimeErrors);
+            check('no page/script errors',report.errors.length===0,report.errors);
+            check('no failed HTTP assets',report.httpErrors.length===0,report.httpErrors);
+
+            await page.screenshot({path:'tmb1-card-public-proof/01-cardcarrier-alone.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            fs.writeFileSync('tmb1-card-public-proof/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.checks.filter(x=>x.pass).length+'/'+report.checks.length,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node tmb1-card-public-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: travel-tmb1-card-cloudflare-proof
+          path: tmb1-card-public-proof
+          retention-days: 90
