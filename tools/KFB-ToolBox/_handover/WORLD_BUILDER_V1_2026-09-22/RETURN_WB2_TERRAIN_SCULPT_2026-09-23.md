@@ -95,6 +95,12 @@ Sculpt module blob:
 Evidence:
 `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/TEST_REPORT.md`
 
+Source manifest:
+`tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/SOURCE.json`
+
+Source manifest blob:
+`291c4775c793df5a788c363074b5203994ae6b78`
+
 ## Architecture
 
 Procedural base remains reversible:
