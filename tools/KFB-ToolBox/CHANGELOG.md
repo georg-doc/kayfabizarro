@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-23 · WorldBuilder → ToolBox Scene Authoring correction
+
+### USER DIRECTION
+WorldBuilder is part of the ToolBox: continuous terrain plus scene composition from real Resident Atlas actors/props, with existing animation/motion sources available for preview. The Orc Band is a later integration scene, not a separate one-off world.
+
+### SOURCE VERIFIED
+Legacy Combat-v3 FrizzleBob is a Kenney Platformer character with Pet-Studio face and is distinct from both the Cube-Pet rabbit and the current Driver Graft. Resident Atlas ownership and the current Motion Lab seam were rechecked. Animation Lab v3 exists as donor source but remains unpromoted.
+
+### ROUTING
+Added `FRIZZLEBOB_IDENTITY_MAP_2026-09-23.md` and corrected WorldBuilder through `TOOLBOX_SCENE_AUTHORING_CORRECTION_2026-09-23.md`. Current first runtime gate is `WB1-TERRAIN-SCENE-01`: terrain + one real Resident Atlas actor + one existing compatible clip + prop placement + save/reload.
+
+### BOUNDARY
+WorldBuilder does not become a second Resident Atlas, Animation Lab or game runtime. No runtime files, Cloudflare publication or Live state changed in this documentation slice.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
