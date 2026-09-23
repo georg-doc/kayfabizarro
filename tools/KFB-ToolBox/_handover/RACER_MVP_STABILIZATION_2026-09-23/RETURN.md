@@ -464,3 +464,49 @@ Exactly one next gate:
 **R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**
 
 Cloudflare remains deferred. Vehicle grounding/contact, clamp/jitter, trails and jump/landing remain later.
+
+
+## R3d · volumetric barrier + clean ground layer
+
+R3c human review remained **TUNE**.
+
+Runtime/test head:
+`dad35bdf0f3e19fdc2c5902e154140353db590f9`
+
+R3d source cleanup:
+- one 12-point closed track/barrier profile;
+- road + shoulder + inner barrier + thick cap + outer barrier + lower side + full underside;
+- body presentation 4× denser than route/physics;
+- legacy `track-wall-left/right` removed;
+- separate wall-cap ribbons removed;
+- flat lane-band ribbons removed;
+- TARCH frames 0.96 m radius, 14 radial segments;
+- frame bases moved to barrier-cap midpoint;
+- deep ground follows actual void contour with `ShapeGeometry`;
+- rectangular deep-ground bbox slab removed.
+
+CI:
+- `35891959912 / 107286346494`: SUCCESS
+- `35891969220 / 107286379829`: SUCCESS
+- **24/24 PASS · 0 fail · 0 skipped**
+
+Race Draft PR #33 current docs head:
+`05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+
+R3d review:
+`KFB_Racer_TARCH0_R3d_track_barrier_ground_review.html`
+
+Prepared marker:
+`review/R3d_PREPARED.md`
+
+SHA-256:
+`d2e147d3abcd005769867bf523bcac1a49cc3eff9491511875c80b37c287a018`
+
+Dropbox:
+- owner/donor document re-read only;
+- no Dropbox mutation.
+
+Exactly one next gate:
+**R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**
+
+Cloudflare remains deferred. Grounding/contact, clamp/jitter, trails and jump/landing remain later.
