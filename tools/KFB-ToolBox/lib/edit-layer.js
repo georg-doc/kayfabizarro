@@ -95,6 +95,39 @@ export function makeEditLayer(viewer, canvas, opts = {}) {
     setScope(s) { scope = s; E.clear(); notify(); },
     setSnap(v) { snap = v; applySnap(); notify(); },
 
+    /* Uniforme Größenänderung als schnelle Autoren-Geste. Der freie Scale-Gizmo bleibt separat
+       erhalten. Standard 1.25 / 0.8 sind inverse Faktoren: kleiner → größer kehrt exakt zur
+       Ausgangsgröße zurück. Nicht-uniforme Proportionen bleiben erhalten, weil alle Achsen mit
+       demselben Faktor multipliziert werden. */
+    scaleBy(factor) {
+      const requested = Number(factor);
+      if (!Number.isFinite(requested) || requested <= 0 || !sel.length) return [];
+      const minScale = Math.max(1e-4, Number(opts.minScale ?? 0.05));
+      const maxScale = Math.max(minScale, Number(opts.maxScale ?? 20));
+      const out = [];
+      for (const x of sel) {
+        const before = x.scale.clone();
+        const abs = [Math.abs(before.x), Math.abs(before.y), Math.abs(before.z)];
+        const lo = Math.max(1e-6, Math.min(...abs));
+        const hi = Math.max(...abs);
+        let applied = requested;
+        if (requested < 1 && lo * requested < minScale) applied = minScale / lo;
+        if (requested > 1 && hi * requested > maxScale) applied = maxScale / hi;
+        x.scale.multiplyScalar(applied);
+        x.updateMatrixWorld(true);
+        out.push({
+          id: recordOf(x)?.id,
+          factor: +applied.toFixed(6),
+          before: before.toArray().map((v) => +v.toFixed(4)),
+          after: x.scale.toArray().map((v) => +v.toFixed(4))
+        });
+      }
+      opts.onChange?.(sel);
+      E.follow();
+      notify();
+      return out;
+    },
+
     /* ---- Leihgabe: Puppe und Bone-Posing hängen an DEMSELBEN Anfasser ---- */
     borrow(obj, m, onDrag, label) {
       E.clear(true);
@@ -230,6 +263,8 @@ export function makeEditLayer(viewer, canvas, opts = {}) {
     const m = e.target.closest('button')?.dataset.m;
     if (!m) return;
     if (m === 'translate' || m === 'rotate' || m === 'scale') E.setMode(m);
+    else if (m === 'scale-down') E.scaleBy(1 / (opts.scaleFactor ?? 1.25));
+    else if (m === 'scale-up') E.scaleBy(opts.scaleFactor ?? 1.25);
     else if (m === 'floor') opts.onMenu?.('floor');
     else if (m === 'scope') E.setScope(scope === 'teil' ? 'gruppe' : 'teil');
     else if (m === 'close') E.clear();
