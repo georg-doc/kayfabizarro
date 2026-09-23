@@ -1752,3 +1752,26 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · Hybrid production handoff · Coworker control tower
+
+Current handoff:
+`skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/START_HERE.md`
+
+Decision:
+- Coworker becomes the day-to-day Web/integration coordinator;
+- Blender MCP is the 3D authoring lane;
+- Claude Design is downstream donor-locked visual integration;
+- Web Lead returns for periodic reconciliation;
+- WSA is capability escalation only.
+
+Current project updates:
+- ToolBox Source-Safe Integration continues internally to one coherent Georg milestone;
+- Travel TMB-2 accepted at 400 ms;
+- Racer R3d TUNE, exact review HTML persisted, Anatomy Foundation next, Vehicle Grounding HOLD;
+- Blender Warband continues;
+- current cartoon-form direction captured with source gap explicit;
+- Curtain/Billboard recovery prompts ready.
+
+No merge / Cloudflare / Live promotion from this coordination slice.
