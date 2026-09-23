@@ -1,0 +1,224 @@
+{
+  "schema": "kfb.media-residency-billboard.v0",
+  "status": "PROPOSAL_ONLY_NOT_RUNTIME",
+  "date": "2026-09-23",
+  "purpose": "Reusable world-life media scene built from a real 3D billboard/sign donor, scenic dressing, dynamic canvas content, optional ChatterBox/Triplet generation, layered reveal and Almanac memory.",
+  "lineage": {
+    "priorConcept": "Dropbox living handoff §39 · Satirical Roadside Media Layer · Billboards / Ad-Busting / Broadcast",
+    "motto": "Die Straße selbst sendet.",
+    "racerAddendum": "tools/KFB-ToolBox/_handover/CLAUDE_DESIGN_WORLD_RACER_2026-09-22/RACER_CLAUDE_HUD_BILLBOARDS_ADDENDUM_2026-09-23.md",
+    "existingRenderer": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-props.v1.js",
+    "existingFunctions": [
+      "buildBillboard",
+      "renderCardQuarter"
+    ]
+  },
+  "verifiedPhysicalDonors": [
+    {
+      "id": "kenney.billboard",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.billboardDouble",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardDouble_exclusive.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.billboardLow",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardLow.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.billboardLower",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboardLower.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.overhead",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/overhead.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.overheadLights",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/overheadLights.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.bannerTowerRed",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/bannerTowerRed.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kenney.bannerTowerGreen",
+      "ref": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/bannerTowerGreen.glb",
+      "dependencyStatus": "embedded"
+    },
+    {
+      "id": "kfb.polyBillboard",
+      "ref": "media/3D_Assets/KFB/Billboard by Poly by Google - 3ALIEkWNbgR.glb",
+      "dependencyStatus": "embedded"
+    }
+  ],
+  "sceneRecipe": {
+    "root": "media-scene.billboard",
+    "baseEnvironment": [
+      "small procedural terrain patch",
+      "2-3 rocks",
+      "optional weeds/grass",
+      "optional lamp/CCTV",
+      "optional local light"
+    ],
+    "terrainRule": "No black debug base. Terrain edge must end cleanly or use a thin matching-color skirt.",
+    "physicalCarrier": "one real billboard/sign donor",
+    "contentSurface": "measured front/screen plane with CanvasTexture or VideoTexture",
+    "optionalAudio": "distance-based Jingle / broadcast smear / interactive cue"
+  },
+  "contentModes": [
+    {
+      "id": "CARD_PDF",
+      "owner": "existing PDF/Card renderer",
+      "donor": "renderCardQuarter()",
+      "modes": [
+        "FIT_CARD",
+        "COVER_CROP",
+        "DETAIL_CROP"
+      ],
+      "rule": "Crop, never distort."
+    },
+    {
+      "id": "TRIPLET",
+      "owner": "ChatterBox content / signature-deck source",
+      "content": "Billboard-specific signature Triplet or slogan cluster",
+      "grammar": "Billboard persona / POV → SHOW IT → SPIN IT → SELL IT",
+      "display": "sequential lines, typographic panels or short animated transitions",
+      "seedPolicy": "deterministic per billboard/session; no frame-random text spam",
+      "priority": "Card/local context may override generic sponsor pool when explicitly bound."
+    },
+    {
+      "id": "COLLAGE_LOOP",
+      "owner": "media presentation adapter",
+      "ingredients": [
+        "KFB stills",
+        "poster/card fragments",
+        "type cards",
+        "short video fragments",
+        "graphic masks",
+        "optional public-domain/external media with provenance"
+      ],
+      "style": "HyperNormalisation/Gilliam-like cut-up collage, layered crossfades, ripped edges, occasional parallax",
+      "firstProof": "2-4 still layers + type + one short crossfade loop; video optional later",
+      "provenanceRule": "External media must carry source/provenance."
+    },
+    {
+      "id": "HERO_INTERACTIVE",
+      "owner": "host interaction + ChatterBox + Almanac",
+      "states": [
+        "DEFAULT",
+        "INSPECT",
+        "REVEAL",
+        "CHAT",
+        "ALMANAC"
+      ],
+      "actions": [
+        "short Bubble interaction",
+        "Card/Quest open",
+        "Social Call",
+        "FrizzleBob comment",
+        "hidden layer reveal",
+        "optional video/broadcast"
+      ],
+      "rule": "Use sparingly; most boards stay ambient."
+    }
+  ],
+  "semanticStates": {
+    "default": "visible advert / propaganda / claim",
+    "reveal": "alternative reading / underlayer / system message / fact layer",
+    "almanac": "stored Card / interpretation / encounter receipt"
+  },
+  "chatterbox": {
+    "actorModel": "Billboard may have a sponsor/media persona or campaign identity, not a full NPC body.",
+    "signatureDeck": "Each hero billboard may bind a small signature triplet/slogan pool.",
+    "contentPriority": [
+      "bound Card/context",
+      "immediate local situation",
+      "billboard/media persona",
+      "local history/callback",
+      "broader content"
+    ],
+    "outputBoundary": "Text/content only. ChatterBox never moves billboard geometry, grants rewards or writes world state.",
+    "timing": "Ambient boards rotate slowly; interactive response only after explicit trigger.",
+    "antiSpam": "Do not change slogans every few seconds while player is nearby. Prefer 1 stable triplet per encounter/visit, with occasional scheduled variation."
+  },
+  "initialPool": {
+    "count": 12,
+    "categories": [
+      "3 absurd product/lifestyle ads",
+      "3 conspiracy/surveillance claims",
+      "2 cheerful government/corporate slogans",
+      "2 KFB-internal ads",
+      "1 collage/video board",
+      "1 hero interactive board"
+    ]
+  },
+  "firstSceneProof": {
+    "id": "BBS-01",
+    "goal": "Static scenic billboard module with one dynamic content surface",
+    "include": [
+      "one verified Kenney billboard shown in isolation first",
+      "small clean procedural terrain patch without black underside",
+      "2-3 scenic rocks",
+      "one CanvasTexture surface",
+      "toggle CARD_PDF / TRIPLET / COLLAGE_LOOP",
+      "optional subtle local light"
+    ],
+    "defer": [
+      "video",
+      "ChatterBox async generation",
+      "Almanac write",
+      "CCTV personality",
+      "world placement system",
+      "audio broadcast",
+      "multiple billboard variants"
+    ]
+  },
+  "secondProof": {
+    "id": "BBS-02",
+    "goal": "Triplet + layered reveal",
+    "include": [
+      "one billboard-specific signature pool",
+      "stable seeded triplet",
+      "SHOW/SPIN/SELL transition",
+      "Inspect reveals hidden layer",
+      "optional Almanac receipt"
+    ]
+  },
+  "thirdProof": {
+    "id": "BBS-03",
+    "goal": "Collage loop / broadcast",
+    "include": [
+      "ripped-edge masks",
+      "2-4 images/poster fragments",
+      "type cards",
+      "slow crossfades",
+      "optional short video source"
+    ]
+  },
+  "reuseRules": [
+    "Reuse real 3D billboard donors; do not draw fake generic sign chrome when a donor exists.",
+    "Reuse renderCardQuarter()/PDF.js path; no second PDF renderer.",
+    "Reuse ChatterBox/Triplet owner for text; no second slogan AI runtime.",
+    "Scene host owns placement, terrain, navigation and persistence destination.",
+    "Billboard adapter owns measured content plane, texture/video binding and presentation transitions.",
+    "Keep most billboards ambient; reserve chat/interactivity for hero objects."
+  ],
+  "explicitNonGoals": [
+    "global ad network",
+    "billboard economy",
+    "random meme generator",
+    "every sign becoming an NPC",
+    "replacing Card Viewer",
+    "replacing ChatterBox",
+    "blocking central model/texture repair work"
+  ]
+}
