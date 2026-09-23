@@ -1356,3 +1356,28 @@ Confirmed owner boundaries:
 No Cloudflare publication or browser/runtime gate applies to TMB-0 because the slice explicitly forbade runtime implementation and Stage publication.
 
 Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger, source-object-first.**
+
+
+## WorldBuilder P2 human surface-conformance fail · 2026-09-23
+
+Georg reviewed the exact WB1-P2 Stage and rejected the visible surface integration.
+
+Technical evidence remains valid:
+- same immutable recipe/data on FLAT / SPHERE / TORUS;
+- finite normalized orthogonal right-handed frames;
+- repository/browser checks green.
+
+Human failure:
+- rigid center-frame Hex placement overlaps/intersects on curved surfaces;
+- route reads as a separate debug TubeGeometry strip instead of an integrated surface road;
+- prop support/contact requires recheck;
+- current ripple is only debug LineLoop presentation.
+
+Classification:
+**WB1-P2 = TECHNICAL PASS · HUMAN FAIL · P3 HOLD**
+
+PR #180 and its branch now carry the human-review evidence.
+Current repair gate:
+**WB1-P2R1 · Surface Conformance Repair**.
+
+The repair preserves recipe identity and owner math while changing only the visible surface-attachment seam.
