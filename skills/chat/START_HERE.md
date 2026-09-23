@@ -705,3 +705,22 @@ Exactly one current Racer gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
 
 Cloudflare / Pages remain deferred until after human visual acceptance.
+
+
+## 2026-09-23 · WorldBuilder becomes ToolBox scene authoring
+
+Current corrected WorldBuilder route:
+
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TOOLBOX_SCENE_AUTHORING_CORRECTION_2026-09-23.md`
+
+Fresh Web start:
+
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TOOLBOX_SCENE_AUTHORING_FRESH_WEB_START_2026-09-23.md`
+
+WorldBuilder remains Terrain-First, but its first useful gate now includes one real Resident Atlas actor and one existing compatible animation clip. It is a ToolBox scene-building surface, not a second Resident Atlas, Animation Lab or game runtime.
+
+FrizzleBob source identity is separately pinned at:
+
+`tools/KFB-ToolBox/_handover/FRIZZLEBOB_IDENTITY_MAP_2026-09-23.md`
+
+Current first gate: **WB1-TERRAIN-SCENE-01**.
