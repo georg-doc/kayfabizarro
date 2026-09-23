@@ -179,6 +179,22 @@ Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`.
 
 ---
 
+## Verified review donor pool
+
+Before creating a new review UI, read:
+
+- `REVIEW_TEMPLATE_POOL.md`
+- `review-templates/REGISTRY.json`
+
+Default:
+- reuse a human-accepted harness when its focus profile fits;
+- adapt only the documented subject seam;
+- preserve product/runtime ownership;
+- archive the exact accepted artifact back in the project repo.
+
+Current first verified donor:
+`threejs-focus-review-v1` from Racer TARCH-0 R1.
+
 ## 5 · HTML-review-first contract
 
 A productive visual/runtime slice is not complete merely because CI passes.
