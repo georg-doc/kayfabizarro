@@ -1187,3 +1187,34 @@ KFB Hub current TODOs/briefings now include:
 The stale active `KFB Lead Work · CURRENT LEAD` card was removed from the active briefing list; routine lead work is Web-first and Work/WSA remains escalation-only.
 
 Hub source was written to both current `main` and `cloudflare-live`. Public browser verification from this chat was unavailable because the external fetch surface rejected the Pages URL; no unsupported PUBLIC_VERIFIED claim is made for this documentation-only update.
+
+
+## WorldBuilder P0 → P1 coordination · 2026-09-23
+
+GitHub recheck after the WhackMan-origin WorldDesign Lab export:
+
+- current WorldBuilder P0 is complete/revalidated on Draft PR #175;
+- PR #175 branch: `chatgpt-web/world-building-preflight-2026-09-22`;
+- P0 head: `17fd31a907b4346fddef7501490f738c251c2a37`;
+- P0 evidence: 22/22 bounded source/provenance/license checks; no runtime/browser/gameplay test by design;
+- current main had advanced beyond the P0 base, therefore PR #175 requires additive reconciliation before merge;
+- P0 must not be rerun.
+
+WB1-P1 is now the current WorldBuilder gate.
+
+P1 direction:
+- original WhackMan source remains source truth;
+- `WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js` is the strongest already-isolated implementation donor;
+- verify wd-light against pinned WhackMan source and document intentional deltas;
+- derive only the minimal reusable Environment Profile;
+- keep WhackMan gameplay/MazeGraph absent;
+- preserve the Lab rule **Material and light remain orthogonal**;
+- keep Material/Shader presentation behind a separate `MaterialProfileRef`;
+- reversible `WHACKMAN_MATTE_CANDIDATE` may be tested but is not a global Environment Profile policy.
+
+Explicitly excluded from P1:
+Derek/Macro look, Ink, Cel, Voxel, Story Palette, day/night cycle, full WorldDesign UI and standalone productization.
+
+Draft PR #176 remains a separate post-WB1-P2 ToolBox Fractal Authoring planning lane. Its current checked head is `44cd0a25372925409e335f5a216a5d77cac5181a`. At the latest recheck it is also non-mergeable because main advanced; this is a reconciliation issue, not a P1 blocker.
+
+WorldBuilder START/Fresh Web prompt and KFB Hub were advanced to P1. Cloudflare-live Hub source was mirrored, but no new public-browser verification claim is made for this metadata-only update.
