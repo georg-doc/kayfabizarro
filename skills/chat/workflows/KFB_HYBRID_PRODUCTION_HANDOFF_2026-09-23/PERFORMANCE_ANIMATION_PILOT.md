@@ -397,3 +397,72 @@ Useful abstractions retained:
 - natural rebound after contact.
 
 These are mechanics references, not mandates to reproduce a realistic human drummer literally on a stylized Orc.
+
+
+## PR #195 postmortem corrections
+
+PR #195 provides direct negative evidence from Orc Brute drummer v1–v4.
+
+### Donor motion before IK
+
+New hard rule:
+
+`same-rig source clip → contact frame → prop/target placement → small additive correction → audit`
+
+Do not begin with:
+`fixed target → IK/search solves whole body`.
+
+The latter produced:
+- wrist overbend;
+- forearm twist;
+- stabbing motion;
+- prop orientation errors.
+
+### Target may move
+
+A good natural source motion outranks an arbitrarily pre-positioned drum.
+
+If the natural strike misses:
+first move/scale/orient drum + actor.
+
+Do not deform the actor to preserve the old target.
+
+### Joint budgets are action-family-specific
+
+No universal wrist/twist budget.
+
+Current Drum Strike candidate:
+- elbow ≥ 35°;
+- wrist ≤ 35°;
+- forearm twist ≤ 70°.
+
+This profile is candidate-only.
+
+Accepted Guitar Hold already exhibits much larger forearm supination (~117°), so guitar requires a different profile.
+
+### Contact metric
+
+Use evaluated:
+- stick tip;
+- target surface;
+- deformed mesh/prop relation.
+
+Do not infer impact solely from hand local-axis F-curves.
+
+### Two-pass stop
+
+After two failed repairs on the same movement problem:
+STOP and return to reference/donor choice.
+
+PR #195 went to four failed drummer methods and demonstrates why this rule is binding.
+
+### Related current route
+
+Read:
+`RESIDENT_PERFORMANCE_NEXT_2026-09-23.md`
+
+ORB-D1:
+same-rig combat reference review first.
+
+DANCE-D1:
+Rig_Medium source-audition + one clean authored groove may run in parallel.
