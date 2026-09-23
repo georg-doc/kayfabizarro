@@ -1,6 +1,6 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **TARCH-0 R1 HUMAN ACCEPTED · R2 INTEGRATED CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
+Status: **TARCH-0 R1 ACCEPTED · R2 TUNE · R3 TRACK-EDGE/BANKING CHAT-HTML PENDING · CLOUDFLARE DEFERRED**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
@@ -107,6 +107,48 @@ Expected R2 artifact:
 
 Exactly one current gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
+
+
+### R2 TUNE · R3 track-edge / banking
+
+R2 human review retained the TARCH architecture direction but returned **TUNE**.
+
+Proven split:
+- saw-tooth edge = review-renderer artifact from separately painter-sorted projected polygons;
+- runtime TARCH Ground Void remains one continuous `THREE.ShapeGeometry`;
+- banking direction = real runtime sign defect.
+
+R3 runtime/test head:
+`5f1ec224a96af7444f0c86ebbcf178dc70d35b72`
+
+Banking:
+- old `bank = clamp(-curv * 26)`;
+- new `bank = clamp(curv * 26)`;
+- gain, cap, smoothing, route points and widths unchanged;
+- intended geometry: inside lower / outside higher.
+
+CI:
+- `35859446787 / 107175757847`: SUCCESS
+- `35859451138 / 107175774059`: SUCCESS
+- **11/11 PASS · 0 fail · 0 skipped**
+
+R3 review:
+`KFB_Racer_TARCH0_R3_track_edge_banking_review.html`
+
+Expected SHA-256:
+`980b245478a28f9e39dcf284ece6caaf9e013a65a766f9c0fb51121e48e2d88b`
+
+Race PR #33 current docs head:
+`59fa2a4235e7705a495bbd724d92a315befe1628`
+
+Exactly one current gate:
+**R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**
+
+Still later:
+1. vehicle grounding/contact;
+2. hard-clamp/jitter;
+3. trails/speedlines;
+4. jump/landing.
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
 
