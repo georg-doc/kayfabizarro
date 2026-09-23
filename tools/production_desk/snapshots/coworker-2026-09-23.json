@@ -2,7 +2,7 @@
   "mode": "coworker-snapshot",
   "sourceRef": "coworker-connector-refresh",
   "sourceCommit": "c40d6b694f5ab6b9ba2f45b412f7a0283fa19513",
-  "note": "Heads per GitHub connector list_branches/list_commits, 2026-09-23 ~20:30Z. Travel/Racer not readable by connector (404) -> LAST_KNOWN from CURRENT_STATE.md. Refreshed 2026-09-23 ~21:10Z after Web-Lead end (handoff head c40d6b69, ORB PR #195, Dance-D1). Tool routes: 4 blob-verified via connector, rest from ROUTE_AUDIT.json (2026-09-22) and cloudflare-live dir listings; first Actions run re-verifies every path.",
+  "note": "Heads per GitHub connector list_branches/list_commits, 2026-09-23 ~20:30Z. Travel/Racer not readable by connector (404) -> LAST_KNOWN from CURRENT_STATE.md. Refreshed 2026-09-23 ~21:10Z after Web-Lead end (handoff head c40d6b69, ORB PR #195, Dance-D1). Tool routes: 4 blob-verified via connector, rest from ROUTE_AUDIT.json (2026-09-22) and cloudflare-live dir listings; first Actions run re-verifies every path. 24.09: Georg ACCEPT WB2 (#190 @5a98e674), TUNE Huerth 01 (#194 @7ad083b0).",
   "responses": {
     "pr:georg-doc/kayfabizarro#185": {
       "number": 185,
@@ -44,8 +44,8 @@
       "draft": true,
       "merged": false,
       "headRef": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-      "headSha": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
-      "updatedAt": null,
+      "headSha": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf",
+      "updatedAt": "2026-09-23T22:22:10Z",
       "url": "https://github.com/georg-doc/kayfabizarro/pull/190"
     },
     "pr:georg-doc/kayfabizarro#194": {
@@ -55,8 +55,8 @@
       "draft": true,
       "merged": false,
       "headRef": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
-      "headSha": "00fe0ecc1ce5312ef02a8129f1cf0d324cca3eb1",
-      "updatedAt": "2026-09-23T20:11:21Z",
+      "headSha": "7ad083b0c4b2855308d4e9987fa7f2bdd009eebd",
+      "updatedAt": "2026-09-23T22:22:41Z",
       "url": "https://github.com/georg-doc/kayfabizarro/pull/194"
     },
     "pr:georg-doc/kayfabizarro#189": {
@@ -166,6 +166,12 @@
     },
     "content:georg-doc/kayfabizarro@cloudflare-live:kfb-hub/pruefen/huerth-look/index.html": {
       "sha": "published-2026-09-24"
+    },
+    "content:georg-doc/kayfabizarro@chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23:tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/HUMAN_RESULT_WB2_2026-09-24.md": {
+      "sha": "1a33c18a21462a8a64cad0af1a80cd4152ab8954"
+    },
+    "content:georg-doc/kayfabizarro@chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23:skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_2026-09-24.md": {
+      "sha": "80a82c32ee6e6c90d4d942b264269fd183f758b1"
     }
   }
 }
