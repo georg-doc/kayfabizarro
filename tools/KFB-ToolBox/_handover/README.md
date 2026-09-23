@@ -28,3 +28,18 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 - [Stage-First Asset Librarian Integration](UI_RESET_MINIMAL_STAGE_FIRST_2026-09-15/ASSET_LIBRARIAN_INTEGRATION_2026-09-15.md) — Resource-Picker-/Owner-Grenzen.
 
 Der geprüfte WS0-Quellstand unter `_inbox/WS0_2026-09-15/` bleibt der Vergleichs- und Recovery-Pin, bis ein neuer Stand gezielt geprüft und promotet wurde.
+
+
+## Travel Mode Bridge v1 · 2026-09-23
+
+Current preparation handoff:
+
+`TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
+
+Purpose:
+reuse the existing Travel/TinySkies Flight owner, existing Ground↔Flight runtime bridge and exact animated Travel CardCarrier; prepare one KayKit Rig_Medium passenger seam plus later double-Space mount / intentional landing transition.
+
+Status:
+**PREPARED · TMB-0 SOURCE/SEAM MAP NEXT · NO RUNTIME IMPLEMENTATION YET**
+
+WorldBuilder integration remains HOLD until its Surface Adapter gate is ready for consumption. The rigid Frankenstein/Studio reference card is measurement evidence only and is not the flight vehicle.
