@@ -267,3 +267,35 @@ Coworker/Web remains responsible for integrating accepted Blender output into th
 - Racer PR #33 latest checked head: `382047219b394de61074031d6968e3fabe86ed7c`; R3d architecture cleanup is present, but current R3d review evidence must be refreshed before asking Georg.
 
 No product runtime code changed by this onboarding.
+
+
+## Travel check-in · TMB-2 accepted at 400 ms
+
+### Für Georg
+Travel hat aktuell keinen offenen Abnahme-Punkt mehr.
+
+Double-Space ist entschieden:
+**400 ms**.
+
+Einmal Space springt sofort.
+Ein zweites frisches Space innerhalb von 400 ms schaltet auf Flight.
+Landing wird noch nicht automatisch weitergebaut.
+
+### Travel evidence
+PR #38
+
+Accepted runtime commit:
+`bf0f94362ec8724cc80a4695830622837242ced9`
+
+Accepted review/test head:
+`73f6cad995278dd71d961ac8542c1f812c37cfbc`
+
+Post-decision CI:
+- **119/119 PASS**
+- build PASS
+- verify PASS
+- run `35893561660`
+- artifact `10766056654`
+
+### Next
+TMB-3 intentional landing remains HOLD until Georg explicitly opens it.
