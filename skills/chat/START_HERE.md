@@ -576,15 +576,17 @@ TMB-1E remains **HUMAN_ACCEPTED**:
 
 TMB-2 is technically green on Draft PR #38:
 - branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
-- Return head `f7d65faff02cfe21bf82ee06150efc94068d150a`;
-- final review head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
+- current Recovery / handoff head `1976c6c813161013b7c97bf5de55f71575a175ef`;
+- verified runtime/review head before Recovery docs `f7d65faff02cfe21bf82ee06150efc94068d150a`;
+- review implementation head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
 - pure mode-intent adapter `site/world-builder/mode-intent.js`;
 - Ground event order: existing jump queue → fresh-tap observer → capture-phase event claim;
 - second fresh Space inside the active window emits `REQUEST_FLIGHT`;
 - request routes only through existing `setLocomotion('FLIGHT') → runtime-mode.js`;
 - no new keyboard, movement or camera owner;
-- CI `35873967992 / 107224966389`: **119/119 PASS · build PASS · verify PASS**;
-- artifact `10756465783`, digest `sha256:083b53e95488ddedd4daea2fa4b2ec15749973d14db6d2c32ed318dd40f953bd`.
+- latest verified runtime/review CI `35874165486 / 107225646882`: **119/119 PASS · build PASS · verify PASS**;
+- artifact `10756131259`, digest `sha256:0c00158e6673e6e5a2157d13a0f5dc4d9d522cde83959d10739734cf1d63b43f`;
+- timeout recovery confirmed that later commits touched only `TMB2_RETURN.md`, not runtime/review code.
 
 Current human gate:
 **TMB-2 DOUBLE-SPACE TIMING REVIEW**
