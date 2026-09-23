@@ -26,7 +26,7 @@ jobs:
         run: |
           for i in $(seq 1 180); do
             BODY="$(curl -fsS "$URL" || true)"
-            if printf '%s' "$BODY" | grep -q 'WB1-P2 · STAGE 49CC790'; then
+            if printf '%s' "$BODY" | grep -q 'WB1-P2 · STAGE 0599CC0'; then
               echo "DEPLOYED_MARKER_OK attempt=$i"
               exit 0
             fi
