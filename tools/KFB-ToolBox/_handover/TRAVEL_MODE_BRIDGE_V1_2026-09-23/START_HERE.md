@@ -42,25 +42,28 @@ Current human finding:
 - first capacity download also hit a real GLTFLoader embedded-buffer failure;
 - card thickness remains DEFERRED.
 
-TMB-1E Repair Pass 1:
+TMB-1E Repair Pass 2:
 - Travel Draft PR #37;
 - branch `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
-- current handoff head `658e95af4963b25c7d3224d4b1d7fb2e43880896`;
-- repair implementation `360836ce494f76ea4c1b3133d566bd3b39e14970`;
-- repair evidence head `bb8541267723ba9d980650735c5dcc437e36736d`;
-- CI run `35860054421` / job `107177777296`: **102/102 PASS · build PASS · verify PASS**;
-- repaired capacity uses real Medium + Large + Legacy source objects at the 2.0× rider candidate;
-- ActionFigure + Orc Brute embedded textures are runtime-audited;
-- Legacy Orc B reuses the Resident-Atlas six-bone assembly and source named materials;
-- Legacy embedded data is packed in-memory as GLB before parse, bypassing the failed nested data-URI loader path;
-- Travel Return: `TMB1E_RETURN.md`;
-- no Cloudflare publication for this repair iteration.
+- current handoff head `a30fddd0cc629d90413c73afaf6755bfe1eb2005`;
+- Repair 2 implementation `d6e147e3a753babc935f94743a62097dd61bcc3a`;
+- technical head `3bfba40c5168fdf288944497b87885e50555d010`;
+- CI run `35863095347` / job `107187870055`: **103/103 PASS · build PASS · verify PASS**;
+- capacity trio remains **ActionFigure / Rig_Medium + Orc Brute / Rig_Large + Warband Orc B / Rig_Legacy** at the 2.0× rider candidate;
+- Repair Pass 1 direct Chat review failed with `ActionFigure embedded texture missing` and blanked the review;
+- Repair Pass 2 reuses the already human-verified WB1 Chat texture adapter: `fetch → Blob → createImageBitmap → THREE.Texture`, TextureLoader fallback, sRGB, `flipY=false`;
+- exact ActionFigure body/face maps and Orc Brute A-map are pinned and bound only in review-cloned materials;
+- Legacy Orc B keeps source named materials and the existing six-bone Resident-Atlas assembly;
+- texture-host failure is non-fatal and reports `HOST_TEXTURE_LIMITATION` instead of blanking the scene;
+- shared fix note: `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md` on `chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23`, blob `384588a322fad83f7549d5d55969b7513e5b7dda`;
+- no Cloudflare publication for this repair iteration;
+- this is repair pass 2; if the same human gate fails again, STOP and create failure-recovery export — no Repair Pass 3.
 
 Review brief:
 `TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
 
 Exactly one next gate:
-**GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML.**
+**GEORG HUMAN RE-REVIEW · Repair Pass 2 three-rig Capacity HTML.**
 
 TMB-2 Double-Space remains HOLD until Georg resolves the repaired TMB-1E capacity gate.
 
