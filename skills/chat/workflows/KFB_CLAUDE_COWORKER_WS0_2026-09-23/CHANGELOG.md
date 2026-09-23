@@ -119,3 +119,26 @@ Hub working source and Coworker sprint matrix were refreshed accordingly.
 ### PUBLICATION
 No Cloudflare.
 No merge.
+
+
+## 2026-09-23 · Direct clickable human review links
+
+### USER DIRECTION
+Georg should never have to search a PR, Hub or ToolBox preview catalogue to find the HTML he is being asked to review.
+
+### RULE
+Every visual/browser human gate must provide the direct clickable review artifact in the same chat reply.
+
+GitHub/Hub links are secondary evidence/navigation only.
+
+Persisted in:
+- `skills/chat/HUMAN_READABLE_STATUS.md`;
+- `REVIEW_HTML_SOP.md`;
+- `HUB_HYGIENE.md`;
+- WS0 Return.
+
+### CURRENT EXAMPLE
+WorldBuilder PR #186 R2 review is being delivered directly in chat from the exact pinned review source at head:
+`37b7498181dc4c83b9e7a40962922c003bd20cfd`.
+
+No Cloudflare required.
