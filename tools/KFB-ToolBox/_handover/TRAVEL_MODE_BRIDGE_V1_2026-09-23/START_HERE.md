@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · Ground ↔ Animated Card Flight · 2026-09-23
 
-Status: **TMB-0 COMPLETE · SOURCE/SEAM MAP ONLY · TRAVEL DRAFT PR #32 · NO RUNTIME IMPLEMENTATION**
+Status: **TMB-1 SOURCE-FIRST SEQUENCE COMPLETE · TECHNICAL/PUBLIC PASS · GEORG SURF HUMAN REVIEW PENDING · TMB-2 HOLD**
 
 Implementation owner:
 `georg-doc/KFB-Travel-Globe`
@@ -23,8 +23,20 @@ TMB-0 result:
 - source matrix: `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/SOURCE_REUSE_MATRIX.md`;
 - transition contract: `_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/MOBILITY_TRANSITION_CONTRACT_v0.md`.
 
+TMB-1 result:
+- A · exact CardCarrier alone → public 18/18 PASS;
+- B · exact ActionFigure Rig_Medium alone → public 22/22 PASS;
+- C · neutral measured mount → public 41/41 PASS;
+- D · exact S33 Surf candidate → public 52/52 PASS;
+- current Travel D branch: `chatgpt-web/travel-mode-bridge-tmb1-surf-2026-09-23`;
+- current Travel Draft PR #36 head: `88382c111acf32f6b934c15ce7b6b1f6d4d15283`;
+- direct human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/surf.html`;
+- HUMAN_ACCEPTED: **PENDING**.
+
 Exactly one next gate:
-**TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger.**
+**GEORG HUMAN GATE · ACCEPT or REJECT the current Surf presentation candidate.**
+
+TMB-2 Double-Space remains HOLD until that human gate is resolved.
 
 Goal:
 
