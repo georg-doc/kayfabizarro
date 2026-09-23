@@ -790,3 +790,22 @@ Still blocked until after R3b:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Claude Billboard / Media Residency Design
+
+Prepared design-only slice:
+
+`tools/KFB-ToolBox/_handover/CLAUDE_BILLBOARD_MEDIA_DESIGN_2026-09-23/START_HERE.md`
+
+Draft PR #188.
+
+Outcome:
+- one compact source-backed Billboard / Media Residency mini-diorama;
+- reuse real Kenney/KFB billboard donors;
+- reuse Racer `buildBillboard()` + `renderCardQuarter()` / PDF.js;
+- visual content modes: CARD/PDF · TRIPLET · COLLAGE LOOP;
+- optional DEFAULT → INSPECT → REVEAL concept.
+
+No runtime, no WorldBuilder changes, no public Stage claim.
+Human visual review is the only next gate.
