@@ -27,8 +27,21 @@ try{
   page.on('pageerror',e=>errors.push('pageerror: '+String(e)));
   page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text());});
   const url='http://127.0.0.1:4174/tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/';
-  await page.goto(url,{waitUntil:'networkidle',timeout:120000});
-  await page.waitForFunction(()=>window.__KFB_ELASTIC_HUERTH01__?.report,{},{timeout:120000});
+  await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
+  try{
+    await page.waitForFunction(()=>window.__KFB_ELASTIC_HUERTH01__?.report,{},{timeout:12000});
+  }catch(err){
+    const debug={
+      url:page.url(),
+      title:await page.title(),
+      errors,
+      body:(await page.locator('body').innerText()).slice(0,4000)
+    };
+    fs.writeFileSync(OUT+'/failure-debug.json',JSON.stringify(debug,null,2)+'\n');
+    await page.screenshot({path:OUT+'/failure.png',fullPage:true});
+    console.error(JSON.stringify(debug,null,2));
+    throw err;
+  }
 
   let report=await page.evaluate(()=>window.__KFB_ELASTIC_HUERTH01__.report());
   assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.1-candidate');
