@@ -3,6 +3,14 @@
 **Date:** 2026-09-23  
 **Status:** PREPARED BRIEFING SLICE · DOCS / SOURCE RECOVERY ONLY
 
+## GitHub handoff
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/toolbox-fractal-authoring-brief-2026-09-23`
+- Draft PR: **#176** · https://github.com/georg-doc/kayfabizarro/pull/176
+- Base at branch creation: `main@8f9810e1a2c5ec1cf0e2c5d8a5947b9150f1a4a2`
+- No merge / no Live promotion requested.
+
 ## Outcome
 
 Prepared a bounded post-WorldBuilder-P2 consolidation plan for the KFB ToolBox.
