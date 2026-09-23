@@ -30,7 +30,7 @@ Current `main` has advanced beyond the P0 base, so PR #175 currently needs recon
 
 **Do not rerun P0.**
 
-The next implementation gate is WB1-P1 after additive reconciliation of the P0 branch with current main.
+WB1-P1 implementation is now preserved on Draft PR #177; the only current gate is **WB1-P1 Browser Verify**. WB1-P2 remains HOLD.
 
 PR #176 is a separate post-WB1-P2 ToolBox Fractal Authoring planning lane. It does not block P1.
 

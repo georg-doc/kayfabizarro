@@ -24,7 +24,7 @@ GitHub state overrides chat memory.
 
 WB1-P0 is already complete on Draft PR #175. **Do not rerun P0.**
 
-Do **WB1-P1 only**.
+Do **WB1-P1 Browser Verify only**; do not rebuild the preserved P1 candidate.
 
 Before implementation:
 - fetch current `main`;
