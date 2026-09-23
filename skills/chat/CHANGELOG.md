@@ -1498,3 +1498,35 @@ Review A compares the exact Surf rider at current, 1.8× and 2.0× presentation 
 Review B is source-object-first for `Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B`, then places the same three source families together on the unchanged card using one shared review-space scale. The earlier “Large Rick” wording is superseded as speech-to-text for **Large Rig**; no substitute fourth/XL actor is introduced.
 
 Cloudflare remains deferred for this iteration. Current gate is **GEORG HUMAN HTML REVIEW**. TMB-2 remains HOLD.
+
+
+## 2026-09-23 · TMB-1E Repair Pass 1 · real Medium / Large / Legacy
+
+Georg rejected the first TMB-1E capacity HTML after direct review.
+
+Observed:
+- the intended comparison was misread;
+- correct trio is **ActionFigure / Rig_Medium + Orc Brute / Rig_Large + Warband Orc B / Rig_Legacy**;
+- first capacity download hit `THREE.GLTFLoader: Failed to load buffer "data:application/octet-stream;base64,..."`;
+- visible texture/material presentation was not acceptable.
+
+Travel Draft PR #37 Repair Pass 1:
+- implementation `360836ce494f76ea4c1b3133d566bd3b39e14970`;
+- hardened tests `fd3b665174184d6ee4f6e0db23a2568f4cd9c366`;
+- evidence head `bb8541267723ba9d980650735c5dcc437e36736d`;
+- Return handoff head `658e95af4963b25c7d3224d4b1d7fb2e43880896`;
+- CI `35860054421 / 107177777296`: **102 PASS · 0 FAIL · 0 skipped**;
+- build PASS; verify PASS;
+- artifact `10750096111` · digest `sha256:0065f59d330a31d11c15d4a66019d6ad6200744e4c653f0f48e099d28dff273f`.
+
+Repair rules:
+- Orc A removed from the capacity gate;
+- exact Medium ActionFigure and Large Orc Brute use their embedded source textures;
+- Legacy Orc B reuses the Resident-Atlas six-bone assembly rule and its source-authored named materials;
+- Legacy embedded JSON+BIN is packed in-memory as GLB before `GLTFLoader.parseAsync()`, avoiding the failed nested data-URI loader path without rewriting geometry/material values;
+- capacity is shown at the 2.0× rider-size candidate while preserving source class proportions;
+- CardCarrier geometry/thickness remains unchanged.
+
+Current gate: **GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML**.
+
+TMB-2 remains HOLD.
