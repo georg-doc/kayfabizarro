@@ -3,6 +3,56 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-23 · WorldBuilder WB2 Terrain Sculpt · local review candidate
+
+### IMPLEMENTATION
+Started a new stacked WorldBuilder slice on Draft PR #190 without modifying the accepted WB1 files.
+
+New files:
+- `worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js`;
+- `WB2_TERRAIN_SCULPT_01_SOURCE.html`;
+- `WB2_TERRAIN_SCULPT_01_REVIEW.html`;
+- `TEST_REPORT.md`;
+- dedicated WB2 Return.
+
+WB2 adds non-destructive continuous-heightfield authoring:
+- Raise / Lower;
+- Radius / Strength;
+- visible brush footprint;
+- drag strokes;
+- true C2 falloff;
+- Undo / Clear;
+- sculpt-stroke Save/Reload;
+- normal recompute.
+
+### OWNERS
+The seeded procedural terrain remains the base. Sculpting is an additive WorldBuilder terrain layer.
+
+Selected-object editing remains owned by:
+`tools/KFB-ToolBox/lib/edit-layer.js`
+
+No voxel/hex/CSG/marching-cubes terrain and no second object picker were introduced.
+
+### PRE-REVIEW CORRECTIONS
+- corrected brush-center distance;
+- isolated sculpt pointer ownership with `stopImmediatePropagation()`;
+- upgraded falloff to a true quintic C2 boundary.
+
+### EVIDENCE
+- sculpt math + geometry: **24/24 PASS**;
+- Source + Review contract: **33/33 PASS**;
+- exact pinned runtime sources: **4/4 PASS**;
+- embedded browser self-test: **28 prepared / 0 executed**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+### PUBLICATION
+Cloudflare remains **HOLD · NOT PUBLISHED**.
+
+### NEXT
+Georg reviews the exact WB2 Chat HTML for hill/depression shape, Radius/Strength, artifact-free edges, Undo/Clear, Save/Reload and return to Object edit.
+
+
 ## 2026-09-23 · WorldBuilder accepted foundation → WB2 Terrain Sculpt planning
 
 ### REPRIORITIZATION
