@@ -628,7 +628,7 @@ All three lanes use HTML-first review. Cloudflare is milestone-only.
 
 Current Racer tunnel architecture lane is Race Draft PR **#33**:
 - branch `chat/racer-tarch0-sp13ktra-2026-09-23`;
-- current handoff head `6c72e66678599d303c16c825255d2cd04bac9c7e`;
+- current handoff head `45fa80d0449efecf6a9ecfb69386c6cb4f9ba1fd`;
 - runtime-tested architecture head `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
 - CI `35817990559 / 107043574054 · SUCCESS`;
 - **7 active architecture tests · 0 skipped**.
