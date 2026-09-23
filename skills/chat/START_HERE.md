@@ -792,22 +792,25 @@ vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/l
 Cloudflare remains deferred.
 
 
-## 2026-09-23 · Claude Theatre Curtain visual refinement
+## 2026-09-23 · Claude Theatre Curtain recovery · USE WHAT WORKS
 
-Prepared design-only slice:
+Draft PR #189 is now **RECOVERY ONLY**.
 
+The current Claude result is rejected as a 2D/SVG-style reconstruction and is classified `ARCHIVED_FAILED_CANDIDATE`.
+
+Mandatory rule:
+`skills/session-entry-use-what-works_v1.md`
+
+Recovery home:
 `tools/KFB-ToolBox/_handover/CLAUDE_CURTAIN_VISUAL_REFINEMENT_2026-09-23/START_HERE.md`
 
-Draft PR #189.
+Read first:
+- `DONOR_LOCK_USE_WHAT_WORKS.md`
+- `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+- `CLAUDE_RECOVERY_PROMPT.md`
 
-Mandatory donor remains Theatre Curtain v1/Core v2.
+Exactly one next gate:
 
-Claude visual focus only:
-- cartoonier rod/rail/end caps/brackets;
-- larger simplified rings/hooks;
-- readable side-pull choreography;
-- lower-third tieback/swag;
-- cleanup of strong-gather crease/line artifacts.
+**restore/show the exact Theatre Curtain v1 donor unchanged from PR #114 / `game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs`.**
 
-No new cloth engine, no consumer integration, no public Stage claim.
-Human visual review is the next gate.
+No SVG, CSS, Canvas-2D, flat-plane or alternate curtain design is allowed before Georg confirms the donor is visibly back.
