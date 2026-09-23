@@ -79,6 +79,19 @@ Every visual slice should return:
 - expected visible revision marker;
 - known limitations.
 
+#### ChatGPT attached-HTML texture rule
+
+For 3D review files opened directly from ChatGPT, read:
+
+`CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+
+A missing texture in the ChatGPT attachment host is not proof that the GLB/GLTF or Resident source is untextured. The WB1 Caveman case proves that an embedded GLB PNG can fail in the attachment host while the source asset remains valid.
+
+Human-verified review-host fallback:
+`fetch → Blob → createImageBitmap → THREE.Texture`, with `THREE.TextureLoader` fallback, exact donor texture pin, sRGB color space and glTF `flipY = false`.
+
+This adapter is review-only. Do not mutate source assets, Registry, Resident Atlas or consumer runtime merely to make the ChatGPT attachment render a texture.
+
 ### D · Work / WSA — ESCALATION ONLY
 
 Use Work only when a capability is unavailable or impractical in Web + Claude + zero-install HTML review.
