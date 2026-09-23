@@ -33,10 +33,21 @@ TMB-1 result:
 - direct human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/surf.html`;
 - HUMAN_ACCEPTED: **PENDING**.
 
-Exactly one next gate:
-**GEORG HUMAN GATE · ACCEPT or REJECT the current Surf presentation candidate.**
+Current human finding:
+- CardCarrier direction/contact accepted as good;
+- current rider reads too small relative to the card;
+- test rider at roughly 1.8×–2.0× current presentation scale;
+- keep a clear Surf / Ride pose;
+- compare one Legacy Warband Orc + one Orc Brute / Large-class + one XL / Large-class character on the same card;
+- card thickness may read heavy but is DEFERRED for this comparison.
 
-TMB-2 Double-Space remains HOLD until that human gate is resolved.
+Prepared review brief:
+`TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
+
+Exactly one next gate:
+**TMB-1E · HTML-first Surf scale + three-character capacity comparison.**
+
+TMB-2 Double-Space remains HOLD until Georg resolves the TMB-1E visual scale/capacity gate.
 
 Goal:
 
