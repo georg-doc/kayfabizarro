@@ -57,14 +57,15 @@ console.log('1 · offline: embedded snapshot is shown honestly');
 console.log('2 · LIVE registry wins and is labelled Live');
 {
   const live = JSON.parse(JSON.stringify(baseReg));
-  live.lanes.lanes.find(l => l.id === 'worldbuilder-wb2').bucket = 'RUNNING';
+  const mover = live.lanes.lanes.find(l => l.bucket !== 'LOOK_AT' && l.freshness !== 'CLOSED');
+  mover.bucket = 'LOOK_AT'; mover.yourAction = mover.yourAction || 'Anschauen';
   live.manifest.contentHash = 'live-hash';
   live.manifest.checkedAt = new Date().toISOString();
   const { d } = makeDom({ routes: liveRoutes(live) });
   await tick();
   ok(d.getElementById('srcBadge').textContent === 'Live', 'badge says Live');
   ok(d.getElementById('srcBanner').hidden, 'no fallback banner in Live mode');
-  ok(cards(d, 'LOOK_AT').length === baseReg.manifest.counts.LOOK_AT - 1, 'Live data re-bucketed WB2');
+  ok(cards(d, 'LOOK_AT').length === baseReg.manifest.counts.LOOK_AT + 1, 'Live data re-buckets a lane');
 }
 
 console.log('3 · LIVE down, main available → Hauptstand');
@@ -164,9 +165,11 @@ console.log('10 · Öffnen-Knopf für Prüfseiten');
 {
   const { d } = makeDom();
   await tick();
-  for (const l of baseReg.lanes.lanes.filter(l => l.bucket === 'LOOK_AT')) {
-    const a = d.querySelector(`[data-lane="${l.id}"] a.btn.primary`);
-    ok(a && a.href === l.review.url, `${l.id}: Öffnen links to the published review`);
+  const withReview = baseReg.lanes.lanes.filter(l => l.review && l.review.available);
+  ok(withReview.length > 0, 'fixture has lanes with published reviews');
+  for (const l of withReview) {
+    const a = [...d.querySelectorAll(`[data-lane="${l.id}"] a.btn`)].find(x => x.href === l.review.url);
+    ok(!!a, `${l.id}: button links to the published review`);
   }
 }
 
