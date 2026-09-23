@@ -792,20 +792,22 @@ vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/l
 Cloudflare remains deferred.
 
 
-## 2026-09-23 · Claude Billboard / Media Residency Design
+## 2026-09-23 · Claude Billboard / Media Residency RECOVERY
 
-Prepared design-only slice:
+Draft PR #188 is now **RECOVERY ONLY**.
 
+The first Claude Billboard output is rejected as `ARCHIVED_FAILED_CANDIDATE`:
+generic UI/debug chrome dominates the viewport, the real Card is missing, and the physical 3D donor is not proven from useful angles.
+
+Recovery home:
 `tools/KFB-ToolBox/_handover/CLAUDE_BILLBOARD_MEDIA_DESIGN_2026-09-23/START_HERE.md`
 
-Draft PR #188.
+Read first:
+- `DONOR_LOCK_USE_WHAT_WORKS.md`
+- `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+- `CLAUDE_RECOVERY_PROMPT.md`
 
-Outcome:
-- one compact source-backed Billboard / Media Residency mini-diorama;
-- reuse real Kenney/KFB billboard donors;
-- reuse Racer `buildBillboard()` + `renderCardQuarter()` / PDF.js;
-- visual content modes: CARD/PDF · TRIPLET · COLLAGE LOOP;
-- optional DEFAULT → INSPECT → REVEAL concept.
+Exactly one next gate:
+**B0 = real Kenney billboard + real KFB Card through existing Racer source, minimal UI, front + both 3/4 views.**
 
-No runtime, no WorldBuilder changes, no public Stage claim.
-Human visual review is the only next gate.
+No Triplet, Collage, Reveal, inspector, measurement dashboard or placeholder Card before Georg accepts B0.
