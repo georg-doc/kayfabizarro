@@ -413,4 +413,4 @@ Key constraints:
 - no second canvas-wide picker;
 - first proof is Raise/Lower + radius/strength + smooth falloff + Undo/Clear + Save/Reload.
 
-Current WB1 R3 uniform-size review remains a separate small human gate.
+R3 uniform-size remains a separate optional/non-blocking shared-editor review. Georg reprioritized WB2 terrain sculpting as the current next functional WorldBuilder gate.
