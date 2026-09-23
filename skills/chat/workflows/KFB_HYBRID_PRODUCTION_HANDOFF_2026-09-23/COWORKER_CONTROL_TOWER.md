@@ -223,3 +223,19 @@ No separate Georg design gate is required unless the artifact is unusable.
 Continue the existing Source-Safe Integration 01 from the recovered local workspace.
 
 Do not restart source archaeology.
+
+
+## Master operating sequence
+
+For Georg's exact step-by-step use, follow:
+`COWORKER_OPUS55_SEQUENCE.md`
+
+That file is the current paste-ready sequence:
+- 4.8 checkpoint;
+- same-chat Opus 5.5 recovery;
+- Production Desk + same-repo auto-sync;
+- ToolBox coherent milestone;
+- current-lane check-in;
+- exactly one next MVP;
+- VFX and Blender parallel lanes;
+- WSA only by explicit capability gap.
