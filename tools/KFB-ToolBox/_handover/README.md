@@ -8,7 +8,7 @@ Bei Ablösung neuen Auftrag anlegen und alten mit einem additiven Nachfolgerhinw
 
 ## Aktuelle ergänzende Übergaben
 
-- [World Building Preflight · Web/GitHub · 2026-09-22](WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md) — **PRE-FLOW/CLAUDE TECHNICAL PREFLIGHT**. Streng kleine Gates: P0 Source/License/Reuse-Matrix, P1 WhackMan Environment Profile isolieren, P2 dieselbe Mini-Recipe auf FLAT/SPHERE/TORUS. Ein Gate pro Arbeitszyklus, GitHub-Readback nach jedem Write; kein großer World-Builder-Slice.
+- [World Building Preflight · Web/GitHub · 2026-09-22](WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md) — **WB1-P1 COMPLETE · HUMAN SCOPE PASS · P2 NEXT**. PR #177 Environment Profile ist statisch und auf der echten Cloudflare-Stage technisch grün; Georg hat den P1-Scope akzeptiert. Review-Lichtquelle und Fackelstaffelung sind ausdrücklich **kein Production-Lighting-Canon**. Nächster Gate: WB1-P2 FLAT/SPHERE/TORUS; noch nicht gestartet.
 
 
 - [Claude Design · World + Racer · 2026-09-22](CLAUDE_DESIGN_WORLD_RACER_2026-09-22/START_HERE.md) — **CURRENT CLAUDE AUTHORING HANDOFF**. Ein Einstieg für den laufenden Cologne-Racer-Strang und den World/Environment-Strang. Enthält Option-C-2-Rehome, Hex/WhackMan/S22-Donor- und Failure-Matrix, Source-Object-Inspector-Regel sowie das konsolidierte World-Authoring-Briefing. Dokumentation/Authoring only; keine Runtime-/Stage-/Live-Promotion.

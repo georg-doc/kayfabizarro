@@ -1247,3 +1247,15 @@ Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges
 - current C-3 browser/Cloudflare visual acceptance remains pending.
 
 Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE**.
+
+
+## 2026-09-23 · WorldBuilder WB1-P1 human scope PASS
+
+- Draft PR #177 retained the frozen Environment Profile runtime `a48729460c28edc2ae95abbfcdef66fe52a84f50`.
+- Exact Cloudflare Stage passed automated browser run `35807858806`: source isolation, `consoleErrors=0`, pool 6/6, FogExp2 .019, Local Visibility, reversible SOURCE/MATTE and zero page/HTTP failures.
+- Georg accepted WB1-P1 for its intended current scope.
+- Explicit non-canon caveat: review light placement and torch staging/spacing are not the future production lighting composition.
+- Human review transport for the next WorldBuilder gate should be zero-install/clickable by default; Terminal/Python/localhost is not a required acceptance surface.
+- No P2 implementation was started in this acceptance handoff.
+
+Exactly one next gate: **WB1-P2 · FLAT / SPHERE / TORUS.**

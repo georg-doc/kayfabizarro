@@ -1,0 +1,29 @@
+{
+  "slice": "WB1-P1 Browser Verify",
+  "status": "HUMAN_SCOPE_PASS_ACCEPTED_EVIDENCE",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-builder-p1-review/",
+  "sourcePR": 177,
+  "sourceBranch": "chatgpt-web/world-builder-p1-environment-profile-2026-09-23",
+  "frozenRuntimeHead": "a48729460c28edc2ae95abbfcdef66fe52a84f50",
+  "transportRule": "Stage wrapper only; no P1 runtime module changes.",
+  "reviewOrder": [
+    "SOURCE TORCH",
+    "SOURCE OBJECT RENDERED · ENVIRONMENT PROOF UNLOCKED",
+    "ENVIRONMENT",
+    "DAY/DUSK",
+    "Torch on/off + visible asynchronous flicker",
+    "Local Visibility 0→1",
+    "SOURCE → MATTE CANDIDATE → SOURCE",
+    "consoleErrors=0 and activePool<=6"
+  ],
+  "nextGate": "WB1-P2 · same tiny logical recipe on FLAT / SPHERE / TORUS",
+  "publicBrowserRun": 35807858806,
+  "publicBrowserStatus": "PASS",
+  "humanReview": {
+    "reviewer": "Georg",
+    "date": "2026-09-23",
+    "status": "PASS_FOR_WB1_P1_SCOPE",
+    "caveat": "Review-scene primary light placement and torch staging/spacing are not production lighting canon."
+  },
+  "p2Started": false
+}

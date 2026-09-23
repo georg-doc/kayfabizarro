@@ -1,5 +1,13 @@
 # KFB WorldBuilder v1 · Web-first execution · 2026-09-22
 
+## WB1-P1 ACCEPTANCE OVERRIDE · 2026-09-23
+
+WB1-P1 is **COMPLETE / HUMAN SCOPE PASS** on Draft PR #177. The exact zero-install Stage passed automated public-browser proof and Georg accepted the bounded Environment Profile behavior.
+
+**Do not rerun P0 or P1. Do not treat the review scene's key-light placement or torch spacing as production lighting canon.**
+
+Exactly one next gate is **WB1-P2 · the same tiny logical recipe across FLAT / SPHERE / TORUS**. P2 is prepared as next, but was not started in the P1 acceptance handoff.
+
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
 Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime owner.
 
@@ -22,7 +30,7 @@ Current `main` has advanced beyond the P0 base, so PR #175 currently needs recon
 
 **Do not rerun P0.**
 
-The next implementation gate is WB1-P1 after additive reconciliation of the P0 branch with current main.
+WB1-P1 is now **COMPLETE / HUMAN SCOPE PASS** on Draft PR #177. The current WorldBuilder gate is **WB1-P2 · FLAT / SPHERE / TORUS**; P2 has not yet been started.
 
 PR #176 is a separate post-WB1-P2 ToolBox Fractal Authoring planning lane. It does not block P1.
 
