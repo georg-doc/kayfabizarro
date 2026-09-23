@@ -36,12 +36,14 @@ Draft PR:
 Fresh Web briefing:
 `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/FRESH_WEB_START.md`
 
-Evidence / Hub checkpoint before this Return:
-`9747c64a8bc7a48a16312b53a860b44c04651bfe`
+Current documentation checkpoint before this Return update:
+`b970d7f9afca9f32a11786aa506982d4aab9959a`
 
 ## Changed files
 
 - `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
+- `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/FRESH_WEB_START.md`
+- `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/RESIDENT_SET_PORTABILITY_GATE.md`
 - `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/SOURCE_EVIDENCE.md`
 - `tools/KFB-ToolBox/_handover/TOOLBOX_STAGE_FIRST_DEFAULT_V1_2026-09-23/CLAUDE_DESIGN_BRIEF.md`
 - `tools/KFB-ToolBox/CHANGELOG.md`
