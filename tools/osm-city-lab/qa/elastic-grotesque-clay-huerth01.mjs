@@ -44,13 +44,18 @@ try{
   }
 
   let report=await page.evaluate(()=>window.__KFB_ELASTIC_HUERTH01__.report());
-  assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.1-candidate');
+  assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.2-candidate');
   assert.equal(report.sourceCity,'huerth-v0');
   assert.equal(report.sourceBuildings,22);
   assert.ok(report.sourceRoadParts>0);
   assert.deepEqual(report.modes,['clean','grotesque','elastic']);
   assert.equal(report.currentGrotesqueDonor,'src/style/cartoon-city.js');
   assert.equal(report.elasticCollisionMutation,false);
+  assert.equal(report.elasticStyleVersion,'ELASTIC_GROUP_WARP_V2');
+  assert.equal(report.elasticGroupWarp,'COHERENT_LOW_FREQUENCY_FIELD');
+  assert.equal(report.elasticDetails,'IRREGULAR_2_3_WINDOWS_NO_FRAME_PLUS_ONE_DOOR');
+  assert.equal(report.elasticRoadSurface,'CONTINUOUS_CATMULL_ROM_RIBBON');
+  assert.equal(report.elasticPalette,'KFB_WONKY_90S_CLAY_V1');
   assert.equal(report.humanAcceptance,'PENDING');
   assert.deepEqual(report.visibleCounts,{clean:22,grotesque:22,elastic:22});
   assert.ok(Object.values(report.webgl2).every(Boolean),'all three canvases must boot WebGL2');
@@ -74,7 +79,7 @@ try{
   assert.equal(report.isolated,false);
   assert.deepEqual(report.visibleCounts,{clean:22,grotesque:22,elastic:22});
 
-  const result={status:'PASS',checks:16,url,report,errors,isolatedSource:first};
+  const result={status:'PASS',checks:21,url,report,errors,isolatedSource:first};
   fs.writeFileSync(OUT+'/report.json',JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result,null,2));
 }finally{
