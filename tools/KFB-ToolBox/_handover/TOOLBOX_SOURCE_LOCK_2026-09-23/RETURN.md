@@ -18,6 +18,12 @@ Repository:
 Branch:
 `chatgpt-web/toolbox-source-lock-2026-09-23`
 
+Draft PR:
+`#185`
+
+Fresh Web briefing:
+`tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/FRESH_WEB_START.md`
+
 Evidence / Hub checkpoint before this Return:
 `9747c64a8bc7a48a16312b53a860b44c04651bfe`
 
@@ -60,7 +66,8 @@ The exact full Studio actor roster still needs one source-review artifact.
 Show separately:
 1. current FrizzleBob Driver Graft;
 2. later saved Cube Bunny;
-3. several later saved Cube-Pets;
-4. actual Studio actor roster.
+3. legacy Combat Platformer FrizzleBob;
+4. several later saved Cube-Pets;
+5. actual Studio actor roster.
 
 Stop for Georg approval before another combined ToolBox build.
