@@ -141,3 +141,69 @@ Web Lead reconciles after meaningful milestones.
 
 Current recommendation:
 **WSA NOT YET NEEDED**.
+
+
+## 2026-09-23 · Production Desk + shared review + VFX/SFX lane
+
+### PRODUCTION DESK
+Prepared:
+- `PRODUCTION_DESK_V0_BRIEF.md`
+- `PRODUCTION_DESK_STATE.json`
+- `COWORKER_PRODUCTION_DESK_START.md`
+
+Role:
+current operational mirror beside the long-lived KFB Hub.
+
+Coworker refreshes the checked-in snapshot through GitHub connector.
+Standalone HTML does not claim authenticated live private-GitHub access.
+
+### REVIEW SCENE BASE
+Prepared:
+`REVIEW_SCENE_BASE_V1.md`
+
+Reuses accepted:
+`threejs-focus-review-v1`
+
+Adds:
+- source isolate;
+- owner environment vs neutral calibration rule;
+- fail-closed asset/texture policy;
+- real 3D scene shadow by default where relevant;
+- direct clickable review;
+- durable acceptance-artifact persistence.
+
+### VFX/SFX
+Prepared:
+- `VFX_SFX_CONSOLIDATION_01.md`
+- `VFX_SFX_WEBCHAT_START.md`
+
+Verified current VFX donors include:
+- KFB Combat VFX v10.1;
+- Brackeys masks/flipbooks;
+- FreeHitVfx;
+- 2D Cartoon Smoke pack;
+- Tiny Swords 2D effects;
+- Boxel feedback POC;
+- existing VFX event-map seam.
+
+Verified SFX donor:
+- KFB Pinball Audio v1.
+
+Shared Combat FX/SFX lineage must be source-pinned before promotion.
+
+First gate:
+**VFX-01 interactive Review Bank.**
+SFX follows after donor-family selection.
+
+### HUB
+Hub current views now include:
+- Production Desk;
+- Review Scene Base;
+- VFX/SFX brief;
+- current ToolBox/WB2/Racer/Warband/Hürth lanes;
+- Curtain/Billboard recovery.
+
+Older briefings remain reference-only in default current views.
+
+Hub JavaScript syntax:
+**PASS**
