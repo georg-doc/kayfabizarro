@@ -346,3 +346,35 @@ The 23-file `KFB ToolBox Bench v1 - KFB Voxel Card Zone Lab 2 - Hex Assets World
 The existing public Theatre Curtain v1 is registered as the mandatory donor for a reusable cutscene/loading/instance-transition core. It owns cloth and transition state only; Race, Travel, Combat, Dungeon and Story hosts retain renderer, camera, gameplay, loading, audio, routing and persistence.
 
 The next cross-repo target is one playable Stage loop rather than simultaneous lane merging: coherent world → walk/drive → sound → one Resident/Card interaction → one portal activity → preserved return. Cheap source census and isolated proofs precede one WSA/Astra integration lock.
+
+
+## 2026-09-23 · Production orchestration decision
+
+KFB production moves from micro-slice/human-gate chains toward **coherent artifact milestones**.
+
+Current production control:
+`skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/START_HERE.md`
+
+Provider roles:
+- Web Lead = current truth, source recovery, packet assembly, reconciliation;
+- Claude Coworker = review + bounded productive integration;
+- Claude Design = coherent visual authoring from closed packets;
+- WSA/Work = capability escalation only.
+
+Working donors are protected by:
+`KFB_DESIGN_DONOR_LOCK_V1_2026-09-23`.
+
+Measurements and source facts are durable project assets and are not re-estimated from screenshots.
+
+Human gates are concentrated on:
+- disputed identity;
+- visible product decisions;
+- coherent milestone artifacts;
+- feel/timing choices.
+
+Current short lane truth:
+- WorldBuilder shared editor accepted; WB2 terrain sculpting next;
+- Travel TMB-2 timing choice open;
+- Racer R3c visual gate open;
+- ToolBox source/Resident consolidation before a new broad Claude session;
+- Theatre Curtain returns to exact v1 donor D0 before any refinement.
