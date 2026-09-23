@@ -1,0 +1,134 @@
+name: Travel TMB-1 ActionFigure Cloudflare QA
+
+on:
+  push:
+    branches: ['cloudflare-live']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Verify exact TMB-1 ActionFigure Stage
+        run: |
+          mkdir -p tmb1-actor-public-proof
+          cat > tmb1-actor-public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/actor.html';
+          const sourceUrl='https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/ACTOR_SOURCE.json';
+          const expectedRevision='TMB1-ACTOR-ONLY-01';
+          const expectedTravelHead='77ab93f31b00a93c668143d9cb916ed70cf0da3a';
+          const expectedActor='4785276defdb929cb397954eb74b76aecb84486b';
+          const report={url,sourceUrl,checks:[],errors:[],httpErrors:[]};
+          const check=(name,pass,detail=null)=>{
+            report.checks.push({name,pass:!!pass,detail});
+            if(!pass) process.exitCode=1;
+          };
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+          const browser=await chromium.launch({
+            headless:true,
+            args:['--use-angle=swiftshader','--enable-unsafe-swiftshader','--enable-webgl','--ignore-gpu-blocklist']
+          });
+          const page=await browser.newPage({viewport:{width:1440,height:920},deviceScaleFactor:1});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))report.errors.push('console: '+m.text())});
+          page.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))report.httpErrors.push({status:r.status(),url:r.url()})});
+          page.on('requestfailed',r=>report.httpErrors.push({status:0,url:r.url(),error:r.failure()?.errorText}));
+
+          try{
+            let marker=null,last=null;
+            for(let i=0;i<80;i++){
+              try{
+                const r=await page.request.get(sourceUrl+'?proof='+Date.now(),{timeout:15000});
+                const text=await r.text();
+                let j=null;try{j=JSON.parse(text)}catch{}
+                last={status:r.status(),revision:j?.revision||null,travelHead:j?.travel?.head||null,actor:j?.sourceObject?.blob||null};
+                if(r.ok() && j?.revision===expectedRevision && j?.travel?.head===expectedTravelHead && j?.sourceObject?.blob===expectedActor){marker=j;break;}
+              }catch(e){last={error:String(e)}}
+              await sleep(3000);
+            }
+            check('deployed ACTOR_SOURCE marker',!!marker,last);
+            if(!marker) throw Error('Actor Stage marker timeout '+JSON.stringify(last));
+            report.marker=marker;
+            check('marker phase ACTOR_ONLY',marker.phase==='ACTOR_ONLY',marker.phase);
+            check('marker Rig_Medium',marker.sourceObject?.rigFamily==='Rig_Medium',marker.sourceObject?.rigFamily);
+            check('marker no CardCarrier',marker.cardCarrierPresent===false,marker.cardCarrierPresent);
+            check('marker no mount',marker.passengerMounted===false,marker.passengerMounted);
+
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Stage HTTP',!!response&&response.ok(),response?.status());
+            check('Stage title',await page.title()==='KFB Travel Mode Bridge · TMB-1 · ActionFigure Source Proof',await page.title());
+
+            await page.waitForFunction(
+              ()=>window.__TMB1_ACTOR_PROOF__?.sourceObjectVisible===true || (window.__TMB1_ACTOR_PROOF__?.runtimeErrors||[]).length>0,
+              null,{timeout:120000}
+            );
+            await page.waitForTimeout(900);
+            const snap=await page.evaluate(()=>({
+              proof:window.__TMB1_ACTOR_PROOF__,
+              stateText:document.querySelector('#proof-state')?.textContent||'',
+              canvas:{
+                width:document.querySelector('#view')?.width||0,
+                height:document.querySelector('#view')?.height||0
+              }
+            }));
+            report.snap=snap;
+            check('source object visible',snap.proof?.sourceObjectVisible===true,snap.proof);
+            check('runtime phase ACTOR_ONLY',snap.proof?.phase==='ACTOR_ONLY',snap.proof?.phase);
+            check('exact actor blob',snap.proof?.source?.blob===expectedActor,snap.proof?.source);
+            check('runtime Rig_Medium',snap.proof?.source?.rigFamily==='Rig_Medium',snap.proof?.source?.rigFamily);
+            check('skinned mesh present',Number(snap.proof?.runtime?.skinnedMeshes)>0,snap.proof?.runtime?.skinnedMeshes);
+            check('bones present',Number(snap.proof?.runtime?.bones)>0,snap.proof?.runtime?.bones);
+            check('no AnimationMixer',snap.proof?.runtime?.animationMixerCreated===false,snap.proof?.runtime?.animationMixerCreated);
+            check('no root motion',snap.proof?.runtime?.rootMotionApplied===false,snap.proof?.runtime?.rootMotionApplied);
+            check('no CardCarrier',snap.proof?.runtime?.cardCarrierPresent===false,snap.proof?.runtime?.cardCarrierPresent);
+            check('not mounted',snap.proof?.runtime?.passengerMounted===false,snap.proof?.runtime?.passengerMounted);
+            check('visible SOURCE OBJECT marker',/SOURCE OBJECT/.test(snap.stateText),snap.stateText);
+            check('canvas sized',snap.canvas.width>0&&snap.canvas.height>0,snap.canvas);
+            check('no runtime errors',(snap.proof?.runtimeErrors||[]).length===0,snap.proof?.runtimeErrors);
+            check('no page errors',report.errors.length===0,report.errors);
+            check('no failed HTTP assets',report.httpErrors.length===0,report.httpErrors);
+
+            await page.screenshot({path:'tmb1-actor-public-proof/01-actionfigure-alone.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            fs.writeFileSync('tmb1-actor-public-proof/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              pass:report.checks.filter(x=>x.pass).length,
+              total:report.checks.length,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              bones:report.snap?.proof?.runtime?.bones ?? null,
+              skinnedMeshes:report.snap?.proof?.runtime?.skinnedMeshes ?? null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node tmb1-actor-public-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: travel-tmb1-actionfigure-cloudflare-proof
+          path: tmb1-actor-public-proof
+          retention-days: 90
