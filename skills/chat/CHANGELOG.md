@@ -1550,3 +1550,41 @@ TMB-2 remains HOLD.
 
 Exactly one next gate:
 **R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**.
+
+
+## 2026-09-23 · TMB-1E Repair Pass 2 · verified Chat texture host adapter
+
+Repair Pass 1 was human-rejected after the direct Chat attachment showed:
+`FAILED: ActionFigure embedded texture missing`
+and no scene.
+
+The fix does not invent another texture system. TMB-1E now reuses the already human-verified WorldBuilder review-host adapter documented on branch
+`chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23` in:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
+(blob `384588a322fad83f7549d5d55969b7513e5b7dda`).
+
+Verified donor behavior:
+`fetch → Blob → createImageBitmap → THREE.Texture`;
+TextureLoader fallback; sRGB; `flipY=false`; exact pinned donor maps on review-only cloned materials.
+
+Travel PR #37 Repair Pass 2:
+- implementation `d6e147e3a753babc935f94743a62097dd61bcc3a`;
+- technical head `3bfba40c5168fdf288944497b87885e50555d010`;
+- Return handoff `a30fddd0cc629d90413c73afaf6755bfe1eb2005`;
+- CI `35863095347 / 107187870055`: **103 PASS · 0 FAIL · 0 skipped**;
+- build PASS; verify PASS;
+- artifact `10750629040`;
+- digest `sha256:72a7047c570df23667d2da20f1f8ec836d33328e208008f6196a709117626b04`.
+
+Pinned review maps:
+- ActionFigure body `2ca1cc9ef3c2621fb15ef44febc3e9805938a287`;
+- ActionFigure face atlas `625f0b01e4c0431bfcc38f118b9d629ecfb4e1a4`;
+- Orc Brute A `cb5ff752ffa2f0f538d04c5c45e96925ff7f2b6b`.
+
+Legacy Orc B remains source-material based; no fake texture is added.
+
+Missing Chat-host texture decode is non-fatal and reports `HOST_TEXTURE_LIMITATION` instead of blanking the review.
+
+Current gate: **GEORG HUMAN RE-REVIEW · Repair Pass 2 Capacity HTML**.
+
+This is the second repair pass on this gate. Same-gate failure again => STOP and failure-recovery export. No Repair Pass 3. TMB-2 remains HOLD.
