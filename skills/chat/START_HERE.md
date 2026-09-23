@@ -835,3 +835,47 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Racer R3d · Track / Barrier / Ground Layer Chat HTML
+
+Current Racer owner:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current Race docs head `05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+- runtime/test head `dad35bdf0f3e19fdc2c5902e154140353db590f9`
+
+R3c result:
+**TUNE**
+
+R3d source cleanup:
+- one 12-point closed track/barrier body;
+- road + shoulder + barrier + cap + lower side + underside owned by one mesh;
+- presentation sampling 4× denser than route/physics;
+- legacy track-wall/cap ribbons removed;
+- flat lane-band ribbons removed;
+- TARCH radius 0.96 m;
+- TARCH radial segments 14;
+- frame bases on barrier-cap midpoint;
+- deep ground follows actual void contour instead of rectangular bbox.
+
+CI:
+- `35891959912 / 107286346494`: SUCCESS
+- `35891969220 / 107286379829`: SUCCESS
+- **24/24 PASS · 0 fail · 0 skipped**
+
+Review:
+`KFB_Racer_TARCH0_R3d_track_barrier_ground_review.html`
+
+SHA-256:
+`d2e147d3abcd005769867bf523bcac1a49cc3eff9491511875c80b37c287a018`
+
+Dropbox owner/donor evidence was read only; no Dropbox mutation.
+
+Exactly one next gate:
+**R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**
+
+Still blocked:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+Cloudflare remains deferred.
