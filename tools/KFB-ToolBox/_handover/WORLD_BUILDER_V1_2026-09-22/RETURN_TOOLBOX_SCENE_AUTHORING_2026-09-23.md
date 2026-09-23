@@ -1,6 +1,6 @@
 # RETURN · WB1-TERRAIN-SCENE-01 · uniform scale R3 · 2026-09-23
 
-Status: **R1 FUNCTIONAL FOUNDATION HUMAN PASS · R2 SHARED EDITOR HUMAN PASS · R3 UNIFORM-SCALE HUMAN REVIEW PENDING**
+Status: **R1/R2 HUMAN ACCEPTED FOUNDATION · WB2 TERRAIN SCULPT CURRENT NEXT GATE · R3 OPTIONAL/NON-BLOCKING**
 
 ## Accepted state
 
@@ -37,7 +37,7 @@ Prepared planning SSOT:
 
 WB2 runtime is **not started** in this Return. It keeps the procedural base reversible and proposes a persisted additive sculpt-stroke layer.
 
-## Current R3 request
+## Current editor follow-up · optional R3 uniform-size candidate
 
 Add a simple global uniform-size gesture so a source prop can become a quick size variant, e.g. Boulder → small rock / pebble or larger rock, without removing the accepted free Scale gizmo.
 
@@ -185,8 +185,19 @@ Merge:
 
 ## Exactly one next gate
 
-**Georg human review of WorldBuilder R3 uniform size:**
+**WB2-TERRAIN-SCULPT-01 · isolated Raise/Lower terrain brush proof.**
 
-select Boulder → press `−` repeatedly to make a small rock/pebble → press `+` to enlarge → confirm `S` free Scale still works → Save → change size → Reload → verify saved size returns.
+Build on a new bounded WorldBuilder branch:
+- terrain ray hit;
+- visible brush radius;
+- Raise / Lower;
+- strength;
+- smooth radial falloff;
+- Undo / Clear;
+- sculpt-stroke Save/Reload;
+- vertex-normal recompute;
+- coexistence with shared `edit-layer.js`.
 
-After PASS, the uniform smaller/larger gesture may be promoted as a normal shared ToolBox mini-editor capability. Until then, rollout to other hosts remains proposal-only.
+Then return one Chat HTML for Georg's terrain-shape review.
+
+R3 `−/+` uniform size remains an optional shared-editor convenience candidate and does not block WB2.
