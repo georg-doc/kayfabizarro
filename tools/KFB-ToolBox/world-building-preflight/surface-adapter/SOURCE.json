@@ -1,0 +1,57 @@
+{
+  "slice": "WB1-P2",
+  "schema": "kfb.surface-adapter/0.1-candidate",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/world-builder-p2-surface-adapter-2026-09-23",
+  "coordinationMain": "ce47fba26fbf0997d01b66466eb2ee3d2120cad3",
+  "validatedAssetPin": "64b06628402c14d52a3bf976473214b7e86d697e",
+  "acceptedP1": {
+    "runtime": "a48729460c28edc2ae95abbfcdef66fe52a84f50",
+    "schema": "kfb.environment-profile/1",
+    "profile": "WHACKMAN_DUSK_CANDIDATE",
+    "profileCoreBlob": "5469bf1249b891e3810245118f575f969c38c57a",
+    "caveat": "P1 review light placement and torch staging are not production lighting canon."
+  },
+  "travelSphereDonor": {
+    "repository": "georg-doc/KFB-Travel-Globe",
+    "head": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+    "sphericalMath": {"path":"travel/globe-v13/spherical-math.js","blob":"a7032fb83822eb14e0052e921f7f9f9eaf1cfa44"},
+    "worldRecipe": {"path":"site/world-builder/world-recipe.js","blob":"080263866129a85d42d26ceee88fdbf2f4614c2e"},
+    "supportSurface": {"path":"site/world-builder/support-surface.js","blob":"49a095a5b9be2ce867f4b05165587a3e38598465"},
+    "reuse": "Surface-normal/tangent and anchor semantics only. Travel remains terrain/world/movement/camera owner."
+  },
+  "hexOwner": {
+    "validatedPin": "64b06628402c14d52a3bf976473214b7e86d697e",
+    "corpusGrid": {"path":"tools/KFB-ToolBox/_inbox/KFB Hex Assets Worldbuilding (WIP Exporte WS1)/kfb-hex-worldbuilder-corpus_2026-09-22/modules/hexrealm/lib/hex-grid.js","blob":"06e3c217cca5ff806ae9aeb84f858c5118f31232"},
+    "worldAtlasGrid": {"path":"tools/world_atlas/source/lib/hex-grid.js","blob":"c6bb12c28d32ea6f51ea2c63db9475eaecc5754f"},
+    "measuredSize": [2.0,2.309],
+    "solverContract": "buildNetwork + solveHexTile; P2 creates no solver"
+  },
+  "realSources": {
+    "grass": {"path":"media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/base/hex_grass.gltf","blob":"b2a4608f8935afbbc3261dd71af015900d8ec925"},
+    "roadA": {"path":"media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/roads/hex_road_A.gltf","blob":"1de60d28b32742161229764d00d969dc6284d2d3"},
+    "roadM": {"path":"media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/roads/hex_road_M.gltf","blob":"d0860b498f3101a4ccbbd930dd38b6b0c6dda976"},
+    "prop": {"identity":"kaykit-medieval-hexagon-pack-1-0-free|target","path":"media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/decoration/props/target.gltf","blob":"67a0cf5fbd549ce9a528571c73e4c2437dc28b43","license":"CC0 · Kay Lousberg"}
+  },
+  "surfaceFxDonor": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB StoryMap v1/sma1-map-animator.js",
+    "blob": "043baa12b6186f2128ebd1e32d6940d8fbb03165",
+    "validatedPin": "64b06628402c14d52a3bf976473214b7e86d697e",
+    "semantics": "Travel carpet-waver donor converted by StoryMap to radial distance: life 2.2, phase rate 2.6, radial K 0.55. P2 uses the same event semantics as a presentation-only expanding ring."
+  },
+  "dropboxProvenance": [
+    {"id":"id:KeQLaY5-IIAAAAAAAAdAog","path":"/CLAUDE/KFB Hex Assets Worldbuilding (WIP Exporte WS1)","folderSize":4472456},
+    {"id":"id:KeQLaY5-IIAAAAAAAAdAUg","path":"/CLAUDE/KFB StoryMap v1","folderSize":422578}
+  ],
+  "fixture": {
+    "recipeId": "wb1-p2-seven-hex-route-target-ripple-v1",
+    "cells": ["hex_road_M@180","hex_road_A@0","hex_road_M@0","hex_grass@0","hex_grass@0","hex_grass@0","hex_grass@0"],
+    "route": [[-2,0],[-1,0],[0,0],[1,0],[2,0]],
+    "prop": "target.gltf",
+    "environmentProfileRef": "kfb.environment-profile/1@a48729460c28edc2ae95abbfcdef66fe52a84f50:WHACKMAN_DUSK_CANDIDATE",
+    "surfaceFx": "KFB_RADIAL_RIPPLE"
+  },
+  "sourceObjectFirst": "Review boots on the real target.gltf alone. Surface selection remains locked until the source prop has rendered for multiple frames.",
+  "protectedOwners": ["Travel/TinySkies terrain and world truth","Hex grid/edge/rotation/solver truth","Race movement/contact/route/camera","OSM semantic/geographic truth","P1 Environment Profile contract"],
+  "deferred": ["Möbius","Klein bottle","hollow sphere","full OSM conversion","infinite chunks","caves/voxel integration","World Editor","Racer integration","WB1-P3 Claude Design"]
+}
