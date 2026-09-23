@@ -16,6 +16,7 @@ Use the existing bounded preflight:
 `tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md`
 
 Do P0 only first:
+- read `WHACKMAN_WORLDDESIGN_LAB_DONOR_2026-09-23.md`;
 - source/reuse/license matrix;
 - exact internal donors;
 - protected owners;
@@ -28,6 +29,8 @@ Commit and stop.
 Fresh Web continuation or fresh replacement chat.
 
 Isolate the WhackMan-derived dusk/torch/fog/local-visibility/matte profile.
+
+Reuse the original WhackMan source as truth and the already isolated `WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js` as implementation evidence. Do not rebuild the lighting comparison from prose.
 
 No World Editor yet.
 
@@ -57,6 +60,8 @@ Only after P0-P2 are green, Web creates:
 
 It contains only proven facts:
 - accepted/rejected donors;
+- accepted WorldDesign Lab look/light comparison facts;
+- explicit WhackMan-origin ownership for that Lab;
 - exact owner seams;
 - Environment Profile;
 - Surface Adapter;
@@ -72,6 +77,7 @@ Sharpen the existing Claude World brief; do not create a second mega-brief.
 Claude Design builds the first coherent WorldBuilder v1 authoring experience.
 
 Initial candidate scope:
+- reuse/adapt the WhackMan-origin WorldDesign Lab comparison grammar instead of building another look dashboard;
 - one Source Object Inspector;
 - compact in-scene selection/transform controls from the proven S21/S22 donor;
 - one authored 12–24-cell real Hex area or equally small World Recipe fixture;
