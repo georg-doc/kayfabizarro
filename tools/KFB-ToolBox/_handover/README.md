@@ -46,3 +46,11 @@ Current next gate:
 **TMB-1 · exact animated Travel CardCarrier + one real ActionFigure Rig_Medium passenger, isolated source-object-first proof.**
 
 WorldBuilder integration remains HOLD until its Surface Adapter gate is ready for consumption. The rigid Frankenstein/Studio reference card is measurement evidence only and is not the flight vehicle.
+
+
+## 2026-09-23 · current authoring / ideation handoffs
+
+- `TOOLBOX_STAGE_FIRST_DEFAULT_V1_2026-09-23/START_HERE.md` — current ToolBox consolidation: Stage-First Concept as candidate default UI, Claude Design first, existing EyeRig/Graft/S21 modules only, HTML-first review.
+- `WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md` — current WorldBuilder terrain-first reset.
+- `WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` — Claude Design handoff after the functional Web terrain editor passes its HTML human gate.
+- `KAYFABIZARROS_ORC_BAND_POC_2026-09-23/START_HERE.md` — fresh-chat handoff for the source-backed Orc band beat POC.
