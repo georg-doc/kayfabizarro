@@ -488,20 +488,27 @@ Current router:
 Exactly one next gate: **RSTAB-1 · static geometry intrusions — ground wedges + support pillars.** No global FLOW/FEEL or curve tuning before that gate is clear.
 
 
-## 2026-09-23 · WorldBuilder v1 · WB1-P1 candidate preserved
+## 2026-09-23 · Racer MVP Stabilization · RSTAB-1 technical PASS
 
-Current WorldBuilder branch is `chatgpt-web/world-builder-p1-environment-profile-2026-09-23`, Draft PR #177.
+Current Racer remains owned by `georg-doc/KFB-Stunt-Car-Race`.
 
-WB1-P1 implementation/static evidence is preserved:
-- `kfb.environment-profile/1`;
-- real KayKit mounted-torch source-object-first contract;
-- 8/8 repository-native tests PASS;
-- 4/4 module syntax checks PASS;
-- material profile remains orthogonal/reversible.
+RSTAB-1 is on Draft PR #32 / `chat/racer-rstab1-geometry-2026-09-23`, stacked on RSTAB-0 PR #31.
 
-Browser/visible evidence is **BLOCKED**, not PASS: two Chromium navigation attempts stopped before page load with `ERR_BLOCKED_BY_ADMINISTRATOR`. Screenshots = 0; browser console result = UNKNOWN.
+Exact runtime + bounded-CI candidate head:
 
-Current recovery:
-`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB1_P1_FAILURE_RECOVERY_2026-09-23.md`
+`e9c72a404aff63d46762d9101a727a9e7f94a6b0`
 
-Exactly one next gate: **WB1-P1 Browser Verify**. WB1-P2 remains HOLD.
+Technical result:
+
+- ground cut now follows the actual banked 14-facet tunnel-shell seam with separate left/right cut edges;
+- old post-SLEW split ownership is removed;
+- all 54 structure supports remain, each ending at its real banked soffit;
+- old support placement reproduces route penetrations 166 / 179 / 187; repaired placement yields 0;
+- GitHub Actions run `35807766171`: **5/5 PASS · 0 FAIL**;
+- route and v0.8 FLOW/FEEL unchanged;
+- RSTAB-2 not started.
+
+Current router:
+`tools/KFB-ToolBox/_handover/RACER_MVP_STABILIZATION_2026-09-23/START_HERE.md`.
+
+Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE** — visible tunnel/ground-cut + support review. Only human ACCEPT advances to RSTAB-2.
