@@ -146,3 +146,48 @@ Coworker returns one coherent clickable ToolBox review artifact.
 
 ### WSA
 No WSA-only capability identified.
+
+
+## 2026-09-23 · Blender MCP hybrid authoring onboarding
+
+### VERIFIED POC
+PR #192 proves a productive Blender MCP animation lane:
+- Clown JUG-P1;
+- reproducible Blender Python;
+- GLB export;
+- viewport GIF;
+- deformed-mesh clearance checks;
+- Georg visual PASS ~80 %.
+
+### DECISION
+Blender MCP is now a candidate production authoring lane, not only a fallback.
+
+Use it for:
+- pose/animation;
+- prop/instrument rigging;
+- batch authoring after one source-backed fixture passes;
+- precision volumetric mesh work.
+
+It does not own gameplay/runtime/physics.
+
+### CURRENT CONTINUATION
+Orc Warband is actively being authored in Blender.
+
+Added:
+- `BLENDER_MCP_PRODUCTION_ONBOARDING.md`
+- `BLENDER_MCP_WARBAND_CONTINUE_PROMPT.md`
+
+Do not restart the running session.
+
+### DELIVERABLE CONTRACT
+Productive Blender slices return:
+- editable .blend;
+- reproducible script where practical;
+- GLB/GLTF;
+- preview GIF/MP4;
+- source/measurement record;
+- Return.
+
+### CURRENT LANE REFRESH
+WorldBuilder WB2 now lives on PR #190.
+Racer PR #33 has advanced beyond R3c into R3d architecture-cleanup code; current PR body/Return may lag and must be refreshed before human review.
