@@ -862,3 +862,23 @@ Current lane snapshot:
 
 Recovery:
 `skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/RECOVERY.md`
+
+
+## 2026-09-23 · Blender MCP hybrid production lane
+
+Current onboarding:
+`skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/BLENDER_MCP_PRODUCTION_ONBOARDING.md`
+
+Current proof:
+PR #192 · Clown JUG-P1 · Georg visual PASS ~80 % · reproducible Blender script + GLB + GIF + measurements.
+
+Use Blender MCP for:
+- pose/animation;
+- prop/instrument rigging;
+- source-backed batch authoring;
+- precision volumetric mesh work where browser geometry repeatedly fails.
+
+Blender is an authoring lane, not a gameplay/runtime/physics owner.
+
+Current running experiment:
+Orc Warband performance. Do not restart it merely to apply onboarding; use the continuation prompt in Production Flow v2.
