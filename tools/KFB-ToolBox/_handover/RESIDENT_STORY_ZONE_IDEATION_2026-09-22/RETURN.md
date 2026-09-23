@@ -110,6 +110,9 @@ This checkpoint is documentation/ideation only.
 - trumpet-to-mouth play clip: **NOT PROVEN / DEFERRED**
 - Orc Band runtime/browser/Stage: **NOT BUILT / NOT RUN**
 - Music Collectible / Backpack HUD / visualizer runtime: **NOT BUILT / NOT RUN**
+- Tourbus source identity: **VERIFIED / PINNED**
+- Tourbus band-specific presentation/branding: **DEFERRED**
+- Tourbus driving/vehicle integration: **DEFERRED TO VEHICLE OWNER**
 - MP3 audible review in this chat: **NOT AVAILABLE THROUGH GITHUB CONNECTOR**
 - branch creation: PASS
 - first concept commit: PASS and exact branch head verified
@@ -170,7 +173,7 @@ No implementation or public result is claimed.
 - Music Collectible / Jukebox lane now separates track unlocks from physical cassette artifacts;
 - **Permitless Funk** is now the human-selected Orc Band signature-style candidate, using `Rubbish Groove 2min A extend 01.mp3`;
 - Legacy frontman direction is now black-ponytail/dark-topknot Orc with beat-synced root bounce + squash/stretch + seeded hype variation;
-- exact `character_orcA` vs `character_orcB` mapping for the requested black-ponytail look remains a visual source-isolation gate;
+- exact black-ponytail bandleader mapping is resolved: `character_orcB.gltf`;
 - first visualizer remains full-mix beat/level/pulse driven; no stems required for v0;
 - a RoadTrip sibling track is desired in the same Permitless-Funk family, with more open-road/cruising atmosphere and no Race/final-lap urgency;
 - unlocked tracks persist in Session/Journey/Fractal Almanac and do not consume the 20 physical Backpack slots;
