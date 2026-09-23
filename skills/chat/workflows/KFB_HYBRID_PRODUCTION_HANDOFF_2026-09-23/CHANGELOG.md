@@ -60,3 +60,39 @@ Hub JavaScript syntax:
 Cloudflare: 0
 Live promotion: 0
 Merge: 0
+
+
+## 2026-09-23 · Web Lead reconciliation #1
+
+### FORM LANGUAGE
+The previously missing parallel-chat source now exists as Draft PR #194:
+`KFB Elastic Grotesque Clay v1 · Hürth 01`.
+
+- tested implementation head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`;
+- current PR head `2db8f327e2580c745aa2d14ee9866a15925eb64d`;
+- **16/16 browser PASS · 3/3 WebGL2 · 0 page/console errors**;
+- source isolation is explicit;
+- OSM/S2/collision ownership stays fixed;
+- Georg human visual decision remains pending;
+- Cloudflare Stage remains NOT PUBLISHED.
+
+### BLENDER / WARBAND
+Read-only Dropbox recon found ORB-P1 **v4 candidate-only** authoring output:
+`orb_band_module_v4.blend`, `.glb`, `.gltf.json`, preview/contact-sheet and `module.json`.
+
+This is not promoted into GitHub truth:
+- PR #192 remains the durable Blender proof;
+- the Warband owner still owes its GitHub Return/evidence checkpoint;
+- retained review HTML currently identifies the older v2 surface.
+
+### GAME DEVELOPMENT STUDIO
+`game-dev` is unavailable in this chat runtime.
+
+Recorded once:
+`GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`.
+
+No current coordination gate requires sealed Game Development Studio evidence, so repository-native/GitHub evidence remains the baseline.
+
+### NEXT GATE
+Unchanged:
+**Coworker finishes complete ToolBox Source-Safe Integration 01 and returns one coherent review artifact.**
