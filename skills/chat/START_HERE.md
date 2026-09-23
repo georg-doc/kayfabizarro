@@ -706,3 +706,42 @@ Exactly one current Racer gate:
 **TARCH-0 R2 · integrated Racer Chat HTML human review**.
 
 Cloudflare / Pages remain deferred until after human visual acceptance.
+
+
+## 2026-09-23 · Racer R3 · Track Edge + Banking Chat HTML
+
+Current Racer lane:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current docs head `59fa2a4235e7705a495bbd724d92a315befe1628`
+- runtime/test head `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`
+
+R2 result:
+**TUNE**
+
+Proven split:
+- saw-tooth edge = chat-review renderer artifact from separately painter-sorted polygons;
+- runtime TARCH Ground Void remains continuous;
+- banking direction = real runtime sign defect.
+
+R3:
+- banking now follows curvature sign: inside lower / outside higher;
+- gain/cap/smoothing unchanged;
+- review-only edge rendering uses continuous polygons;
+- hard-bend + bank-side presets and inside/outside guide added.
+
+CI:
+- `35859446787 / 107175757847`: SUCCESS
+- `35859451138 / 107175774059`: SUCCESS
+- **11/11 PASS · 0 fail · 0 skipped**
+
+Review artifact:
+`KFB_Racer_TARCH0_R3_track_edge_banking_review.html`
+
+Expected SHA-256:
+`980b245478a28f9e39dcf284ece6caaf9e013a65a766f9c0fb51121e48e2d88b`
+
+Exactly one next gate:
+**R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**
+
+Do not start vehicle grounding/contact, clamp/jitter, trails or jump/landing before R3 acceptance. Cloudflare remains deferred.
