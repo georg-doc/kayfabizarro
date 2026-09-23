@@ -40,6 +40,19 @@ Coworker may prepare exact source/measurement packets for Claude Design and reho
 ### WSA PREP
 Coworker prepares WSA only when a specific missing capability is proven.
 
+## Closed packet gate
+
+Before productive integration, Coworker checks:
+`CLOSED_PACKET_CRITERIA.md`
+
+Productive work starts only from:
+- `CLOSED`;
+- or `CLOSED_WITH_HUMAN_GATE`.
+
+If source, measurement or owner truth is missing:
+return that missing field.
+Do not turn the task into archaeology.
+
 ## 2 · Mandatory Donor Lock
 
 Before integrating a donor-based feature:
@@ -174,3 +187,17 @@ ToolBox shared-editor / source-safe Stage-First integration after current WorldB
 
 Do not start it from stale PR #187 assumptions.
 Refresh current heads and create a new Production Packet first.
+
+
+## Scale contract correction
+
+For the shared 3D editor read:
+`EDITOR_SCALE_CONTRACT_NOTE.md`
+
+Important:
+- `kfb.scene-patch.v1` already persists Scale;
+- old S21 `EDITOR_LAYER.md` lacked Scale only in its visible interaction grammar;
+- WorldBuilder R2 free Scale is already human accepted;
+- R3 uniform smaller/larger is convenience only.
+
+Do not propose a new patch schema merely to add Scale.
