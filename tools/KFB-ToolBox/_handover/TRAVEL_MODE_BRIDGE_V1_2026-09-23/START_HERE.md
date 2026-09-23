@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · Ground ↔ Animated Card Flight · 2026-09-23
 
-Status: **TMB-1E HTML REVIEW READY · TECHNICAL / CI PASS · GEORG SCALE/CAPACITY REVIEW PENDING · TMB-2 HOLD**
+Status: **TMB-1E HUMAN_ACCEPTED · TMB-2 TECHNICAL / CI PASS · GEORG TIMING REVIEW PENDING · TMB-3 HOLD**
 
 Implementation owner:
 `georg-doc/KFB-Travel-Globe`
@@ -53,23 +53,30 @@ TMB-1E final:
 - stronger Studio v17 Surf pose and card-thickness redesign remain DEFERRED;
 - PR #37 remains Draft / not merged / not public.
 
-TMB-2 next:
-- Ground → Flight Double-Space intent / ownership handoff proof;
-- first fresh Space must still jump immediately;
-- second fresh Space inside a bounded review window emits `REQUEST_FLIGHT`;
-- do not delay the first jump;
-- reuse `site/world-builder/runtime-mode.js`;
-- never let Ground and Flight movement/input owners be active simultaneously;
-- double-tap window is a TMB-2 human-review parameter;
+TMB-2 current:
+- Travel Draft PR #38;
+- branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
+- Return head `f7d65faff02cfe21bf82ee06150efc94068d150a`;
+- final review head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
+- pure timing adapter: `site/world-builder/mode-intent.js`, blob `d9d50463decf16f53ac339e160e7de693d6497d4`;
+- first fresh Space still queues the existing Ground jump immediately;
+- Ground then reports the fresh tap upward and still capture-claims/stops the event;
+- second fresh Space inside the candidate window emits `REQUEST_FLIGHT`;
+- WB0 routes that request only through existing `setLocomotion('FLIGHT') → runtime-mode.js`;
+- no new movement, camera or global keyboard owner;
+- human timing candidates: **240 / 320 / 400 ms**; initial candidate 320 ms is not canonical;
+- CI `35873967992 / 107224966389`: **119/119 PASS · build PASS · verify PASS**;
+- CI artifact `10756465783` · digest `sha256:083b53e95488ddedd4daea2fa4b2ec15749973d14db6d2c32ed318dd40f953bd`;
+- human review: `site/travel-mode-bridge/tmb2/TMB2_DOUBLE_SPACE_TIMING_REVIEW.html`, blob `da89cd187388ea429ab73a853eb7ae5d56f5914d`;
 - TMB-3 landing remains HOLD.
 
 Review brief:
 `TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
 
 Exactly one next gate:
-**TMB-2 · Ground → Flight Double-Space intent / ownership handoff proof.**
+**GEORG HUMAN TIMING REVIEW · TMB2_DOUBLE_SPACE_TIMING_REVIEW.html.**
 
-TMB-2 is now the active gate. TMB-3 landing remains HOLD.
+Choose 240 / 320 / 400 ms or an in-between value. TMB-3 landing remains HOLD.
 
 Goal:
 
