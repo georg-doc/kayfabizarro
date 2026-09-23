@@ -458,7 +458,7 @@ function applyCurrentSculptPoint(hit){
 function beginSculpt(e){
   if(sculptMode==='off'||mode!=='scene')return;
   const hit=terrainHitFromEvent(e);if(!hit)return;
-  e.preventDefault();e.stopPropagation();
+  e.preventDefault();e.stopImmediatePropagation();
   sculptPointerId=e.pointerId;
   try{renderer.domElement.setPointerCapture(e.pointerId)}catch{}
   controls.enabled=false;
@@ -469,12 +469,12 @@ function moveSculpt(e){
   if(sculptMode==='off'||mode!=='scene')return;
   const hit=terrainHitFromEvent(e);showBrushAt(hit);
   if(sculptPointerId===e.pointerId&&sculptStroke&&hit){
-    e.preventDefault();e.stopPropagation();applyCurrentSculptPoint(hit);
+    e.preventDefault();e.stopImmediatePropagation();applyCurrentSculptPoint(hit);
   }
 }
 function finishSculpt(e,cancel=false){
   if(sculptPointerId!==e.pointerId)return;
-  e.preventDefault();e.stopPropagation();
+  e.preventDefault();e.stopImmediatePropagation();
   try{renderer.domElement.releasePointerCapture(e.pointerId)}catch{}
   controls.enabled=true;
   if(cancel){buildTerrain()}
