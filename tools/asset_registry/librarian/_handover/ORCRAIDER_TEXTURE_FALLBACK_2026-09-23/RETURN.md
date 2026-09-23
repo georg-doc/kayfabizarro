@@ -3,6 +3,14 @@
 **Date:** 2026-09-23  
 **Status:** IMPLEMENTATION + REGRESSION PREP · NO PUBLIC PROMOTION CLAIM
 
+## GitHub handoff
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/asset-librarian-orcraider-texture-2026-09-23`
+- Draft PR: **#179** · https://github.com/georg-doc/kayfabizarro/pull/179
+- Base at PR open: `main@64b06628402c14d52a3bf976473214b7e86d697e`
+- No merge / no public promotion requested.
+
 ## Outcome
 
 Diagnosed and patched the white Orc Raider preview in Asset Librarian v1.7.
