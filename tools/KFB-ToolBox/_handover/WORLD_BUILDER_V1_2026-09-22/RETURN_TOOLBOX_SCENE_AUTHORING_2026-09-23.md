@@ -1,16 +1,28 @@
-# RETURN · WB1-TERRAIN-SCENE-01 · shared inline editor R2 · 2026-09-23
+# RETURN · WB1-TERRAIN-SCENE-01 · uniform scale R3 · 2026-09-23
 
-Status: **R1 FUNCTIONAL FOUNDATION · GEORG HUMAN PASS · R2 SHARED EDITOR HUMAN REVIEW PENDING**
+Status: **R1 FUNCTIONAL FOUNDATION HUMAN PASS · R2 SHARED EDITOR HUMAN PASS · R3 UNIFORM-SCALE HUMAN REVIEW PENDING**
 
-## Result
+## Accepted state
 
-R1 is accepted by Georg:
-- Caveman texture: PASS;
-- Character green Y transform: PASS;
-- Character Y save/reload: PASS;
-- palette/FOV layout: PASS.
+Georg has accepted:
+- Caveman source texture in Chat HTML;
+- Character Y editing;
+- Character Y Save/Reload;
+- non-overlay palette/FOV;
+- shared object-attached inline editor;
+- Move;
+- Rotate;
+- free Scale gizmo;
+- Drop / Absetzen;
+- World / Local axes;
+- Close;
+- position / rotation / scale Save/Reload roundtrip.
 
-WorldBuilder has now advanced to the requested newer inline editor without replacing terrain, Resident Atlas, animation or scene-document ownership.
+Human result: **WB1 SHARED INLINE EDITOR R2 ACCEPTED**.
+
+## Current R3 request
+
+Add a simple global uniform-size gesture so a source prop can become a quick size variant, e.g. Boulder → small rock / pebble or larger rock, without removing the accepted free Scale gizmo.
 
 ## Repository
 
@@ -23,120 +35,122 @@ Branch:
 Draft PR:
 `#186`
 
-Verified pre-Return branch head after implementation, evidence, changelog, routers, Hub and PR metadata:
-`68c65c37a6d621adc6c0f999b3be6e43986d1c5a`
+Verified pre-Return branch head after implementation, evidence, proposal, changelog, routers, Hub and PR metadata:
+`033a4a8aea6bcf580862dd51af12f7469aa97dba`
 
 The exact final head after this Return write is read back and reported in chat.
 
 PR state:
 - draft: yes;
 - merged: no;
-- auto-merge: not enabled;
-- changed files before this Return refresh: 20.
+- auto-merge: not enabled.
 
-## Shared inline editor owner
+## Shared edit-layer owner
 
-Promoted ToolBox module:
+Module:
 `tools/KFB-ToolBox/lib/edit-layer.js`
 
-Exact promoted Git blob:
+Accepted R2 base blob:
 `c97b3537f71e939176f3ae5ce7ae83feabb7918f`
 
-That blob is byte-identical to the existing Resident Atlas S7 / Rig-Werkstatt donor. Its lineage is:
+Current R3 candidate blob:
+`c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
 
-`Dungeon Room Study S21/S22 → Resident Atlas S7 second integration/extraction → ToolBox third-host promotion → WorldBuilder`
+Lineage:
+`Dungeon Room Study S21/S22 → Resident Atlas S7 → ToolBox shared module → WorldBuilder`
 
-The donor Housekeeping explicitly marked `lib/edit-layer.js` as the ToolBox candidate for the third integration. No second local TransformControls/picking owner was created.
+R3 shared extension:
+- `scaleBy(factor)`;
+- smaller `×0.8`;
+- larger `×1.25`;
+- inverse defaults;
+- clamp `0.05 … 20`;
+- existing proportions preserved;
+- free TransformControls Scale mode preserved.
 
-Current mini-menu:
-- ✥ move;
-- ⟳ rotate;
-- ⤢ scale;
-- ⬓ drop to the visible surface below;
-- ⊹ world/local axes;
-- ✕ clear selection;
-- snap: 0.05 units / 15°.
+Owner boundary remains unchanged: the shared layer owns selected-object authoring gestures only. It does not own terrain, assets, movement, runtime collision or host persistence.
 
-One shared TransformControls instance remains the editor owner.
+## WorldBuilder R3 presentation
 
-## WorldBuilder adapter
+Six top-level mini-menu fields remain:
+1. ✥ Move
+2. ⟳ Rotate
+3. grouped `− / +` uniform size
+4. ⬓ Drop
+5. ⊹ World / Local
+6. ✕ Close
+
+Keyboard `S` keeps the accepted free Scale gizmo.
+
+WorldBuilder already persisted `transform.scale` in R2, so R3 adds no new scene schema.
+
+## Proposal
+
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`
+
+Proposal intent:
+- validate the simple size gesture first in accepted WorldBuilder;
+- after Georg PASS, treat smaller/larger as a normal shared ToolBox edit-layer capability;
+- do not fork separate scale math per host;
+- hosts may override factor/clamp only for measured reasons.
+
+## Current candidate files / blobs
 
 Canonical Source:
 `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`
 
 Source blob:
-`0114d186759866f42bdc99a6d4bc662494701c50`
+`d550d5bf8ce93dbcc17b4687dbda1afcb4f3a223`
 
-Standalone Chat review:
+Standalone Chat Review:
 `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`
 
 Review blob:
-`099de70c7c57bfe17fc77ef80af7f4b5941aa452`
+`f07fc23dcbd3525be7dd6d8c2e0b1b93799a313a`
 
-The canonical Source imports the promoted ToolBox module. The zero-install Review embeds that exact module blob and normalizes back to the canonical Source.
+Shared edit layer:
+`c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
 
-WorldBuilder still owns only:
-- terrain settings;
-- source references;
-- authored object transforms;
-- scene Save/Reload document.
+## Evidence actually recorded
 
-Scale is now persisted alongside position and rotation.
-
-## Preserved exact runtime sources
-
-Terrain:
-`ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` · MIT
-
-Resident:
-`Caveman.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6` · Rig_Medium
-
-Texture:
-`caveman_texture.png@891eadf01e218f5fc21387e64cea1fec8332c5b6`
-
-Animation:
-`Rig_Medium_CombatMelee.glb@aa16a777a970f23d3f11fb3c23dc40718b04fa88 · Melee_Unarmed_Idle`
-
-Prop:
-`Rock_3_E_Color1.gltf@891eadf01e218f5fc21387e64cea1fec8332c5b6`
-
-## Tests / evidence actually recorded
-
-R1 human review:
-**4/4 requested human findings PASS**.
-
-R2 shared-editor static/integration contract:
-**32/32 PASS**.
-
-Exact pinned actor/prop/animation/texture paths:
+R1 human functional findings:
 **4/4 PASS**.
 
-Promoted shared-module identity:
-**1/1 PASS** — ToolBox module blob equals donor blob `c97b3537…`.
+R2 shared inline editor:
+**GEORG HUMAN PASS**.
+
+R3 static / integration:
+**26/26 PASS**.
+
+Exact pinned actor / prop / animation / texture paths:
+**4/4 PASS**.
+
+Shared edit-layer syntax:
+**1/1 PASS**.
 
 Embedded browser self-test:
-**20 assertions prepared / 0 executed**.
+**22 assertions prepared / 0 executed**.
 
-Automated browser runtime tests:
+Automated browser runtime:
 **0**.
 
 Screenshots:
 **0**.
 
-No browser PASS and no R2 mini-menu human PASS are claimed.
+No R3 browser PASS or human uniform-scale PASS is claimed.
 
-Canonical evidence:
+Canonical test report:
 `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/TEST_REPORT.md`
 
-## Metadata updated in the same handoff
+## Metadata updated
 
-- `tools/KFB-ToolBox/TOOLBOX_MANIFEST.json` — shared module registered;
-- `tools/KFB-ToolBox/START_HERE.md` — shared layer routed;
-- `tools/KFB-ToolBox/CHANGELOG.md` — additive R1 PASS → R2 entry;
-- `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_HERE.md` — R2 current gate;
-- `skills/chat/START_HERE.md` — central router;
-- `kfb-hub/index.html` — R2 review + Claude HOLD cards;
-- Draft PR #186 body — R2 status/evidence.
+- `tools/KFB-ToolBox/TOOLBOX_MANIFEST.json` — accepted R2 base and R3 candidate separated;
+- `tools/KFB-ToolBox/START_HERE.md` — shared editor R3 routed;
+- `tools/KFB-ToolBox/CHANGELOG.md` — additive R2 PASS → R3 entry;
+- WorldBuilder `START_HERE.md` — R3 current gate;
+- central `skills/chat/START_HERE.md` — R3 route;
+- `kfb-hub/index.html` — R2 accepted / R3 size gate / Claude HOLD;
+- Draft PR #186 body — R3 proposal/evidence.
 
 ## Publication
 
@@ -149,20 +163,13 @@ Direct Stage URL:
 Live:
 **not promoted**
 
-Human acceptance surface:
-the chat-delivered standalone `WB1_TERRAIN_SCENE_01_REVIEW.html`.
-
-## Unresolved
-
-- R2 mini-menu has not yet been human-reviewed;
-- embedded 20-assertion browser self-test has not been executed in this connector-only session;
-- broader WorldBuilder asset palette / environment / Claude Design work remains outside this gate;
-- Orc Band integration remains later.
+Merge:
+**not requested**
 
 ## Exactly one next gate
 
-**Georg human review of the shared inline-editor R2 Chat HTML:**
+**Georg human review of WorldBuilder R3 uniform size:**
 
-select Caveman and Boulder → verify object-attached menu → Move / Rotate / Scale / Drop / World-Local / Close → Save → change transform → Reload → verify position / rotation / scale restored.
+select Boulder → press `−` repeatedly to make a small rock/pebble → press `+` to enlarge → confirm `S` free Scale still works → Save → change size → Reload → verify saved size returns.
 
-STOP there. No merge, Cloudflare promotion, Live promotion, Claude Design or Orc Band integration before this human result.
+After PASS, the uniform smaller/larger gesture may be promoted as a normal shared ToolBox mini-editor capability. Until then, rollout to other hosts remains proposal-only.
