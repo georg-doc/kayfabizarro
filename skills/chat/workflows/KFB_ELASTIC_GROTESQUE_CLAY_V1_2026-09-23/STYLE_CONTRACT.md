@@ -129,3 +129,50 @@ The acceptance target remains **form language first**.
 3. Real building type remains readable at game distance.
 4. Silhouette feels rounded, chunky and drawn/modelled.
 5. CLEAN mode reveals the same geographic/source world.
+
+
+## Accepted benchmark + v2 translation
+
+Georg accepted the benchmark shape language and requested a more explicit cartoon palette while preserving the handmade-clay substrate.
+
+### Group deformation rule
+The block warp is a low-frequency field shared by neighbouring buildings. Local seeded variation is secondary.
+
+Desired hierarchy:
+```text
+BLOCK FIELD
+  → neighbouring lean / bend / roof slope
+  → building-local belly / taper / small twist
+  → semantic roof
+  → protected irregular facade details
+```
+
+A building may be odd; a street must still feel like one authored drawing.
+
+### Facade-detail rule
+Default generated facade:
+- exactly one readable door;
+- 2–3 visible windows;
+- windows tall/narrow rather than square;
+- irregular spacing;
+- no floor-grid assumption;
+- safe distance from door and facade edges;
+- no bright window frame in the default recipe;
+- window/door colour comes from the palette family.
+
+### Road / curb rule
+Road and path presentation must be continuous curve/ribbon geometry. Do not expose segment rectangles, corner wedges or coplanar layer competition.
+
+### Cartoon clay palette
+Current candidate family: `KFB_WONKY_90S_CLAY_V1`.
+
+The palette is global/systemic:
+`walls · roofs · doors · windows · ground · curb · road · path · sky`.
+
+Per-building variation selects within the family; it does not invent unrelated colours.
+
+### Future enterable-building seam · deferred
+Selected buildings may later mount exact source-backed KayKit doors and route to interior instances. Do not add a generic replacement door.
+
+Required later order:
+`exact AssetRef → isolated donor proof → verify real open/close animation if present → selected-building mount → portal/instance seam`.
