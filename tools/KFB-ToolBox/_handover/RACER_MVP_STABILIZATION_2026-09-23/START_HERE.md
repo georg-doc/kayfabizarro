@@ -1,11 +1,29 @@
 # KFB Racer MVP Stabilization · 2026-09-23
 
-Status: **RSTAB-1 TECHNICAL PASS · HUMAN GEOMETRY GATE · LOCAL-FIRST · NO WORK BY DEFAULT**  
+Status: **RSTAB-1 TECHNICAL PASS · ZERO-INSTALL HUMAN GEOMETRY GATE · PUBLIC VERIFY PENDING · NO RSTAB-2**  
 Runtime owner: `georg-doc/KFB-Stunt-Car-Race`  
 Visual authoring source: `KFB Cologne Race Option C-3/` pinned at Race `main@cc80f4a1c6c509db9668df79fd53b13cee093a9d`.  
 Goal: **one actually playable full-lap Racer MVP before further visual/feature expansion.**
 
 ## Current checkpoint · RSTAB-1 · 2026-09-23
+
+
+### Zero-install review route
+
+Intended human review surface:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`
+
+Build marker:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/BUILD.json`
+
+Packaging is source-complete: kayfabizarro Draft PR #178, 20/20 `lab-v9` blob parity, Cloudflare source commit `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`.
+
+Public verification is **UNKNOWN / PENDING** from this environment due `pages.dev` access/DNS failure. Do not call the route live until the public Build marker visibly reports Race source `8dd3cd15147fe403090e00495bb632bd1cf1a203`.
+
+Local HTTP is developer fallback only, not the human acceptance surface.
+
 
 Race Draft PR: **#32** · branch `chat/racer-rstab1-geometry-2026-09-23`, stacked on RSTAB-0 PR #31.
 
