@@ -590,3 +590,24 @@ Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real
 TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption, Racer/Drive integration and Cloudflare runtime publication remain **NOT STARTED / HOLD**.
 
 Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
+
+
+## 2026-09-23 · WorldBuilder v1 · WB1-P2 TECHNICAL PASS · HUMAN REVIEW NEXT
+
+Current WorldBuilder gate is **human review only**.
+
+- P0: complete on Draft PR #175.
+- P1: complete / human scope pass on Draft PR #177.
+- P2: technical + exact public browser PASS on Draft PR #180.
+- accepted P2 review runtime: `0599cc04d2db72ed33c49fb98a30898290a00a68`.
+- static repair CI: `35815116764` PASS.
+- public Stage browser proof: `35815317560` PASS.
+- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`.
+- P3 / Claude Design: HOLD / not started.
+
+P2 proves the same immutable recipe across FLAT / SPHERE / TORUS with the same seven real Hex identities, route, real `target.gltf`, accepted P1 Environment Profile reference and radial Surface-FX event. Local frames are finite, normalized, orthogonal and right-handed; application `consoleErrors=0`, page errors 0 and failed HTTP requests 0.
+
+Exactly one next gate:
+**Georg Human Review of WB1-P2.**
+
+Do not rerun P0/P1/P2 implementation. Do not start P3 in the same gate.

@@ -1356,3 +1356,22 @@ Confirmed owner boundaries:
 No Cloudflare publication or browser/runtime gate applies to TMB-0 because the slice explicitly forbade runtime implementation and Stage publication.
 
 Exactly one next gate: **TMB-1 · isolated exact animated CardCarrier + one real ActionFigure Rig_Medium passenger, source-object-first.**
+
+
+## 2026-09-23 · WorldBuilder WB1-P2 technical/browser PASS · human review gate
+
+- Draft PR #180 implements `kfb.surface-adapter/0.1-candidate` for FLAT / SPHERE / TORUS.
+- Same immutable fixture on all three: seven real KayKit Hex identities, one route, real `target.gltf`, accepted WB1-P1 Environment Profile reference and radial StoryMap/Travel-derived Surface-FX event.
+- Existing Hex owner reused through `buildNetwork()` + `solveHexTile()`; no new solver or World/movement/camera/terrain/OSM owner.
+- Initial public browser boot exposed a harness-only contract error: `buildNetwork()` expects `{id,cells}`; repaired without changing owner code.
+- Accepted repaired runtime: `0599cc04d2db72ed33c49fb98a30898290a00a68`.
+- Static repair CI `35815116764`: **PASS**.
+- Exact Cloudflare browser proof `35815317560`: **PASS**.
+- Source-object-first real `target.gltf`: PASS.
+- FLAT / SPHERE / TORUS: PASS; unchanged recipe fingerprint / cell identities / route / prop / Environment ref / FX.
+- Application `consoleErrors=0`; page errors 0; failed HTTP requests 0.
+- Screenshot artifact `10731296741`: 5 files.
+- Human review: **PENDING**.
+- WB1-P3 / Claude Design: **HOLD / not started**.
+
+Exactly one next gate: **Georg Human Review of WB1-P2 on the exact Stage.**

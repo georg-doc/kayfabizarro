@@ -1,69 +1,66 @@
-# Paste-ready · KFB WorldBuilder v1 · Fresh Web Chat
+# Paste-ready · KFB WorldBuilder v1 · WB1-P2 Human Review
 
 @GitHub
-
-We start KFB WorldBuilder v1 with **Web-first / no-Work-by-default** execution.
 
 Read current GitHub versions of:
 
 1. `skills/chat/START_HERE.md`
 2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
 3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
-4. `skills/chat/GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`
-5. `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`
-6. `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_HERE.md`
-7. `tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md`
+4. `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_HERE.md`
+5. `tools/KFB-ToolBox/world-building-preflight/surface-adapter/RETURN.md`
+6. `tools/KFB-ToolBox/world-building-preflight/surface-adapter/REVISION.json`
+7. `tools/KFB-ToolBox/world-building-preflight/surface-adapter/TEST_REPORT.md`
 
 GitHub state overrides chat memory.
 
-WB1-P0 is already complete on Draft PR #175. **Do not rerun P0.**
+Current state:
 
-Do **WB1-P1 only**.
+- WB1-P0: COMPLETE on Draft PR #175.
+- WB1-P1: COMPLETE / HUMAN SCOPE PASS on Draft PR #177.
+- WB1-P2: TECHNICAL PASS / HUMAN REVIEW PENDING on Draft PR #180.
+- accepted P2 review runtime: `0599cc04d2db72ed33c49fb98a30898290a00a68`.
+- static repair CI `35815116764`: PASS.
+- exact public browser proof `35815317560`: PASS.
+- WB1-P3 / Claude Design: HOLD / NOT STARTED.
 
-Before implementation:
-- fetch current `main`;
-- fetch PR #175 / branch `chatgpt-web/world-building-preflight-2026-09-22`;
-- confirm its P0 head `17fd31a907b4346fddef7501490f738c251c2a37` or re-read if advanced;
-- reconcile that completed P0 branch additively with current main without discarding P0 evidence.
+Do **not** rerun P0, P1 or P2 implementation.
 
-Goal:
-build only the small reusable Environment Profile proof and stop.
+Exact Human Review URL:
 
-Do not implement P2 in the same cycle.
-Do not build WorldBuilder UI.
-Do not rebuild Cologne/OSM.
-Do not build infinite terrain, Möbius, caves or voxel engine.
-Do not use Work/WSA.
-Do not publish to Cloudflare.
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`
 
-Apply gate proportionality:
-minor optional donor problems are HOLD/DEFER, not blockers.
+Review only:
 
-Persist:
-- exact source pins;
-- reuse classification;
-- licenses;
-- protected owners;
-- additive changelog/Return;
-- exactly one next gate.
+1. real KayKit `target.gltf` appears alone first;
+2. marker `SOURCE OBJECT RENDERED · SURFACE PROOF UNLOCKED`;
+3. FLAT;
+4. SPHERE;
+5. TORUS;
+6. FX ripple on each surface;
+7. verify visually that the same seven-cell recipe / route / prop sits coherently on all three;
+8. look specifically for floating objects, wrong local-up orientation, flipped cells or obvious seams caused by global-Y leakage.
 
-After every GitHub write fetch exact branch head and intended files.
+Technical truth already proven:
+- same immutable recipe fingerprint on all three;
+- same seven real Hex identities;
+- same route data;
+- same real prop;
+- same accepted P1 Environment Profile reference;
+- same Surface-FX event;
+- finite normalized orthogonal right-handed local frames;
+- `consoleErrors=0`;
+- page errors = 0;
+- failed HTTP requests = 0.
 
-P1 donor priority:
-- original WhackMan lighting sources remain source truth;
-- verify and adapt `WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js` rather than rebuilding another light implementation;
-- document intentional deltas;
-- keep WhackMan gameplay/MazeGraph absent.
+If Georg says PASS:
+- update P2 evidence / Return / changelog only;
+- mark P2 HUMAN PASS;
+- STOP.
 
-Architecture rule:
-**Material and light remain orthogonal.**
+If Georg reports a concrete visual defect:
+- repair only that defect inside the P2 Surface Adapter candidate;
+- do not redesign architecture;
+- after two failed repair passes, preserve candidate and export failure recovery.
 
-Environment Profile: dusk/world light, fog, torch pool/range/flicker, local visibility, exposure, optional environmental glow.
-Material/look: separate `MaterialProfileRef`; reversible `WHACKMAN_MATTE_CANDIDATE` allowed for testing only.
-
-Do NOT pull into P1:
-Derek/Macro, Ink, Cel, Voxel, Story Palette, day/night cycle, full WorldDesign UI, standalone product build.
-
-Return a Portable Preview Pack.
-
-STOP after P1.
+Do not start WB1-P3 / Claude Design in the same gate.

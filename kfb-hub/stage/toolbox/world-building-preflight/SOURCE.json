@@ -1,0 +1,44 @@
+{
+  "slice": "WB1-P2",
+  "status": "TECHNICAL_BROWSER_PASS_HUMAN_PENDING",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/",
+  "sourcePR": 180,
+  "sourceBranch": "chatgpt-web/world-builder-p2-surface-adapter-2026-09-23",
+  "frozenRuntimeHead": "0599cc04d2db72ed33c49fb98a30898290a00a68",
+  "recipeId": "wb1-p2-seven-hex-route-target-ripple-v1",
+  "schema": "kfb.surface-adapter/0.1-candidate",
+  "sourceObjectFirst": {
+    "identity": "kaykit-medieval-hexagon-pack-1-0-free|target",
+    "marker": "SOURCE OBJECT RENDERED · SURFACE PROOF UNLOCKED"
+  },
+  "surfaces": [
+    "FLAT",
+    "SPHERE",
+    "TORUS"
+  ],
+  "reviewOrder": [
+    "SOURCE PROP — real target.gltf alone",
+    "SOURCE OBJECT RENDERED · SURFACE PROOF UNLOCKED",
+    "FLAT — same seven cells / route / target",
+    "SPHERE — same recipe, local surface-normal up",
+    "TORUS — same recipe, local surface-normal up",
+    "FX ripple on each surface",
+    "consoleErrors=0 and recipe fingerprint unchanged"
+  ],
+  "p3Started": false,
+  "nextGate": "Georg Human Review on exact Stage; after PASS update evidence/Return only and STOP. WB1-P3 remains HOLD.",
+  "repair": {
+    "reason": "Existing Hex buildNetwork owner expects chain objects with {id,cells}; initial P2 harness passed a naked cells array.",
+    "fix": "verifyHexOwner now calls buildNetwork([{id:'wb1-p2-road',cells:chain}]).",
+    "staticRun": 35815116764,
+    "staticStatus": "PASS"
+  },
+  "publicBrowserRun": 35815317560,
+  "publicBrowserStatus": "PASS",
+  "screenshotArtifact": {
+    "name": "wb1-p2-stage-evidence",
+    "id": 10731296741,
+    "fileCount": 5
+  },
+  "humanReview": "PENDING"
+}

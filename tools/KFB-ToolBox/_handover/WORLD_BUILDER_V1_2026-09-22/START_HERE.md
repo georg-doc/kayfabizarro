@@ -9,22 +9,29 @@ Create the first coherent KFB WorldBuilder v1 authoring candidate that is visual
 
 ## Current gate status
 
-### WB1-P0 status · COMPLETE on PR #175
+### WB1-P0 · COMPLETE
+Draft PR #175. Source/reuse/license evidence remains accepted. Do not rerun.
 
-P0 is complete/revalidated on Draft PR #175:
+### WB1-P1 · COMPLETE · HUMAN SCOPE PASS
+Draft PR #177.
+Accepted Environment Profile runtime: `a48729460c28edc2ae95abbfcdef66fe52a84f50`.
+The P1 review light placement / torch staging is explicitly **not production lighting canon**.
 
-- branch: `chatgpt-web/world-building-preflight-2026-09-22`
-- exact head: `17fd31a907b4346fddef7501490f738c251c2a37`
-- evidence: 22/22 bounded source/provenance/license checks
-- runtime/browser/gameplay tests: 0 by design
+### WB1-P2 · TECHNICAL PASS · HUMAN REVIEW OPEN
+Draft PR #180.
+Accepted review runtime: `0599cc04d2db72ed33c49fb98a30898290a00a68`.
+Static repair CI `35815116764`: PASS.
+Exact public browser proof `35815317560`: PASS.
 
-Current `main` has advanced beyond the P0 base, so PR #175 currently needs reconciliation before any merge.
+Human review URL:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`
 
-**Do not rerun P0.**
+The same immutable recipe is proven technically on FLAT / SPHERE / TORUS with the same seven real Hex identities, route, real `target.gltf`, accepted P1 Environment Profile reference and radial Surface-FX event.
 
-The next implementation gate is WB1-P1 after additive reconciliation of the P0 branch with current main.
+**Exactly one current gate: Georg Human Review of WB1-P2.**
 
-PR #176 is a separate post-WB1-P2 ToolBox Fractal Authoring planning lane. It does not block P1.
+### WB1-P3 · HOLD
+Do not start Claude Design input or authoring until Georg accepts the P2 visual/surface comparison.
 
 ## Execution order
 
@@ -43,47 +50,42 @@ P0 is already complete on PR #175. Keep its results; do not execute these bullet
 
 Commit and stop.
 
-### WB1-P1 · Environment Profile proof
+### WB1-P1 · Environment Profile proof · COMPLETE / DO NOT RERUN
 
-Fresh Web continuation or fresh replacement chat.
+P1 is accepted on Draft PR #177.
 
-Before implementation:
-1. re-read current main;
-2. reconcile the completed P0 branch additively against current main;
-3. preserve P0 evidence/history;
-4. then implement P1 only.
+Keep as proven input:
+- standalone `kfb.environment-profile/1`;
+- source-object-first real mounted torch proof;
+- dusk/fog/torch/local-visibility/exposure behavior;
+- Material Profile remains orthogonal and reversible.
 
-Isolate the WhackMan-derived dusk/torch/fog/local-visibility/matte profile.
+Human caveat:
+the P1 proof scene's key-light placement and torch staging/spacing are not production lighting canon.
 
-Reuse the original WhackMan source as truth and the already isolated `WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js` as implementation evidence. Do not rebuild the lighting comparison from prose.
+### WB1-P2 · Surface Adapter proof · TECHNICAL PASS / HUMAN REVIEW ONLY
 
-Binding P1 architecture rule from the WorldDesign Lab:
+Implementation and public browser proof are complete on Draft PR #180.
 
-**Material and light remain orthogonal.**
-
-Environment Profile owns light/fog/torch/local-visibility/exposure behavior.
-Material/shader style remains a separate `MaterialProfileRef`.
-A reversible `WHACKMAN_MATTE_CANDIDATE` may be tested, but must not become a hardwired global material policy inside the Environment Profile schema.
-
-No World Editor yet.
-
-Return a **Portable Preview Pack**.
-
-### WB1-P2 · Surface Adapter proof
-
-Same tiny logical recipe on:
-- FLAT
-- SPHERE
-- TORUS
-
-Use:
-- seven real Hex cells;
+Technical result:
+- one immutable recipe;
+- seven real KayKit Hex cells;
 - one route;
-- one real prop;
-- Environment Profile ref;
-- one Surface FX event.
+- real `target.gltf` prop;
+- accepted Environment Profile reference;
+- one radial Surface-FX event;
+- unchanged on FLAT / SPHERE / TORUS;
+- correct local frame / surface-normal up;
+- no new World, terrain, movement, camera, OSM or Hex-solver owner.
 
-Return a **Portable Preview Pack**.
+Exact Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/`
+
+Current action:
+**visual human review only**. Do not redesign or repair unless Georg reports a concrete visual defect.
+
+After Human PASS:
+update P2 evidence/Return and STOP. Do not begin P3 in the same gate.
 
 ### WB1-P3 · Claude Design input
 
