@@ -1,0 +1,11 @@
+{
+  "schema": "kfb.scene-patch-stage/1",
+  "marker": "KFB_SCENE_PATCH_V1_2026_09_20",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "toolbox/scene-patch-adapter-v1-2026-09-20",
+  "testedHead": "f3cb12d119a0e565b1d8b09a9eb2d667c6e8b218",
+  "testRun": 35538997214,
+  "residentAssertions": "20/20 PASS",
+  "dungeonAssertions": "22/22 PASS",
+  "rule": "Stage mirror only; canonical source remains in tools/ and skills/chat workflow evidence."
+}
