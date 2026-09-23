@@ -33,10 +33,10 @@ Racer:
 PR #33 R3d TUNE; exact HTML recovered/persisted; Anatomy Foundation next; Vehicle Grounding HOLD.
 
 Blender:
-PR #192 Clown proof; Warband currently being authored.
+PR #192 remains the durable Clown proof. Read-only Dropbox recon shows ORB-P1 Warband **v4 candidate-only** authoring output, but its GitHub Return/evidence checkpoint is still pending.
 
 Cartoon language:
-existing style skill/backlog verified; separate new Rocko/Wallace chat export not yet found.
+Draft PR #194 now carries the source-backed Hürth 01 Elastic Grotesque Clay POC. Browser evidence is 16/16 PASS, 3/3 WebGL2, 0 page/console errors; Georg visual review remains pending and no public Stage is claimed.
 
 Curtain / Billboard:
 both failed candidates preserved; donor-first Claude recovery prompts ready.
@@ -45,6 +45,9 @@ both failed candidates preserved; donor-first Claude recovery prompts ready.
 
 Cloudflare:
 none from this coordination slice.
+
+Game Development Studio:
+`GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`; no current gate depends on sealed GDS evidence.
 
 Merge:
 none.
