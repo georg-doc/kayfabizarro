@@ -1,6 +1,6 @@
 # KFB Elastic Grotesque Clay v1 · Hürth 01
 
-Status: **CURRENT BOUNDED FORM-LANGUAGE POC · CHAT HTML REVIEW FIRST · NO LIVE PROMOTION**
+Status: **V2 IMPLEMENTED · 21/21 BROWSER PASS · ACCEPTED BENCHMARK PINNED · V2 HUMAN 3D REVIEW PENDING · NO LIVE PROMOTION**
 Date: 2026-09-23
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**
 Receiving consumers remain Race / Travel / WorldBuilder. No new movement, collision, terrain or asset owner.
@@ -120,3 +120,37 @@ This slice is done for first review when:
 - Georg gives a visual direction: **continue / tune / reject**.
 
 No Cloudflare or Live claim in this first chat-review checkpoint.
+
+
+## CURRENT V2 OVERRIDE · 2026-09-23
+
+Georg accepted the generated clay-neighbourhood frame as the **shape/detail benchmark** and asked for a real 3D translation, with a more explicitly cartoon-like palette.
+
+Accepted benchmark:
+- `STYLE_BENCHMARK.md`
+- `benchmark/KFB_EGC_STYLE_BENCHMARK_2026-09-23.jpg`
+- Git blob `d6dcb90770d83513204a6ea96fd56a60c7c3a296`
+- repository review derivative: **640 × 360 JPEG**
+- source derivative SHA-256: `cb6de7beca127a84eb47722eb6229a4348f6a1e9ed66a6cb3af80664ff744621`
+
+Hürth 01 v2 now implements:
+- coherent low-frequency **group warp** across neighbouring buildings;
+- stronger bowed / leaning / non-parallel silhouettes;
+- warped roof plane + semantic roof cap;
+- one varied door + 2–3 irregular tall narrow windows, no bright frame;
+- continuous Catmull-Rom road/curb ribbons instead of visible rectangular segments;
+- systemic `KFB_WONKY_90S_CLAY_V1` palette across wall / roof / door / window / ground / curb / road;
+- separate vertical/depth layers + polygon-offset road materials to reduce overlap/z-fighting artifacts.
+
+Current browser proof:
+- tested source/runtime head: `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+- run `35909757979`
+- **21/21 PASS**
+- 3/3 WebGL2
+- 0 page/console errors
+- artifact `10772592799`
+- digest `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`
+
+Protected boundaries remain unchanged: OSM/source/collision truth, movement owners, landmark owners and vehicle-deformer ownership.
+
+**Exactly one next gate:** Georg reviews the actual v2 3D HTML/render. If the geometry reads like the accepted benchmark, then create the Blender-MCP / Geometry-Nodes production recipe. KayKit animated/enterable doors remain a separate later source-first gate.
