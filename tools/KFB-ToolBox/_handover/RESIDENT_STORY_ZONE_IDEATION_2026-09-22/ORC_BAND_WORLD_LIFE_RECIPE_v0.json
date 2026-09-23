@@ -38,7 +38,31 @@
           "status": "SOURCE_VERIFIED_PLAY_POSE_NOT_PROVEN"
         }
       ],
-      "firstProofFallback": "body-bounce / hype / simple gesture without mouth-instrument dependency"
+      "firstProofFallback": "body-bounce / hype / simple gesture without mouth-instrument dependency",
+      "visualChoice": {
+        "direction": "Legacy Orc with black ponytail / dark topknot",
+        "exactSourceId": "PENDING_VISUAL_SOURCE_ISOLATION",
+        "note": "Current text-source evidence proves character_orcA and character_orcB plus two visual variants described as scar/topknot, but does not reliably map the requested black-ponytail look to A or B. Select by isolated visual proof before integration."
+      },
+      "performanceAdapter": {
+        "id": "legacy-bounce-squash-v0",
+        "principle": "Beat-timed cartoon bounce using root/group motion and squash/stretch rather than leg animation.",
+        "timingSource": [
+          "audio.beat",
+          "audio.pulse",
+          "audio.level",
+          "audio.bpm"
+        ],
+        "mapping": {
+          "beat": "bounce launch/landing cadence",
+          "pulse": "jump-height/accent multiplier",
+          "level": "body groove / squash amplitude",
+          "phraseVariation": "seeded extra hop / lateral hop / head nod every N bars"
+        },
+        "pitchPolicy": "Do not drive jump height directly from raw full-mix pitch. Pitch/spectral features may later bias rare accents only after a stable analysis proof.",
+        "micProp": "Microphone may remain simply held in hand for v0; no lip-sync or mouth-to-mic animation required.",
+        "legs": "No dedicated leg animation required for first proof."
+      }
     },
     {
       "id": "band.medium",
@@ -357,5 +381,17 @@
     "Band can be interrupted and resume without resetting the world.",
     "Combat handoff, if enabled, is requested from Combat owner rather than implemented inside WorldBuilder.",
     "No Fishing or unrelated VFX/Keys scope is pulled into this proof."
-  ]
+  ],
+  "musicSelection": {
+    "status": "HUMAN_SELECTED_SIGNATURE_CANDIDATE",
+    "selectedFile": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+    "userLabel": "Permitless Funk",
+    "role": "first signature-style Orc Band candidate",
+    "note": "Human listening decision. Candidate still needs loop/BPM/downbeat metadata before runtime promotion."
+  },
+  "sceneMood": {
+    "arrangement": "open-field street-corner jam around a surreal stone formation / campfire-like focal object",
+    "environmentRule": "Crazy-cat/open-landscape staging first; no architecture dependency.",
+    "spatialMotion": "Legacy frontman may hop within a small authored local performance radius while Medium/Large remain anchored to instrument stations."
+  }
 }
