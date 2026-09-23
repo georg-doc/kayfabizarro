@@ -1,6 +1,25 @@
 # START HERE · Claude Theatre Curtain Visual Refinement · 2026-09-23
 
-**Status:** PREPARED CLAUDE DESIGN SLICE · V1 PHYSICS DONOR MUST BE PRESERVED  
+**Status:** RECOVERY ONLY · CURRENT CLAUDE OUTPUT REJECTED · EXACT V1 DONOR MUST BE RESTORED FIRST
+
+## CURRENT STATUS · REJECTED CLAUDE OUTPUT
+
+The current Claude result is a 2D/SVG-style reconstruction and is **REJECTED**.
+
+Do not refine or repair it.
+
+Read first:
+
+1. `DONOR_LOCK_USE_WHAT_WORKS.md`
+2. `REJECTED_OUTPUT_RECOVERY_2026-09-23.md`
+3. `CLAUDE_RECOVERY_PROMPT.md`
+4. `skills/session-entry-use-what-works_v1.md`
+
+The next Claude gate is **not visual refinement**.
+
+The next gate is:
+
+> restore/show the exact working Theatre Curtain v1 donor unchanged.  
 **Owner:** KFB Game Dev Studio curtain presentation / simulation owner  
 **Branch:** `chatgpt-web/claude-curtain-visual-refinement-2026-09-23`  
 **Base:** `main@8b2b8ec901f27307a8cf0f4097e030020cdf196c`
