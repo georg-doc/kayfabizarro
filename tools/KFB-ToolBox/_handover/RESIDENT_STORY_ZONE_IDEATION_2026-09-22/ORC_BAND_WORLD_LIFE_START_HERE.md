@@ -14,6 +14,29 @@
 
 ## What is already decided
 
+## Band identity + Tourbus
+
+Band name:
+
+**The KayfaBizarros**
+
+Exact Legacy bandleader:
+
+`media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf`
+
+Exact Tourbus donor:
+
+`media/3D_Assets/Frankensteining/Truck Armored by Quaternius - VvX8nmoCN5.glb`
+
+The truck is already represented in the Vehicle / Cartoon Vehicle Deformer donor lane as `truck-armored`.
+
+First Orc-Band use is **parked scenic landmark only**. Driving/rigging/deformation stay later Vehicle-owner gates.
+
+Signature candidate remains:
+
+`Rubbish Groove 2min A extend 01.mp3` · **Permitless Funk**
+
+
 ### First trio
 
 - Legacy small Orc → front/hype fallback;
@@ -68,6 +91,7 @@ Navigation remains host-owned.
 ## What is NOT decided/proven yet
 
 - exact guitar A vs B visual acceptance;
+- final Tourbus band-specific presentation/branding; 
 - exact electric-guitar grip profile on Orc Raider;
 - exact Rig_Large drum-strike adapter;
 - Legacy microphone/trumpet mouth pose;
