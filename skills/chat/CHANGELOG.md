@@ -1752,3 +1752,13 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · Elastic Grotesque Clay · Hürth 01
+
+- Added bounded workflow `KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23` and OSM City Lab experiment `elastic-grotesque-clay-huerth01`.
+- Reused the exact current `cartoon-city.js` Grotesque path as the comparison donor rather than rebuilding it from prose.
+- Added one new continuous rounded elastic presentation shell with semantic roof/detail protection; OSM/S2/collision remain unchanged.
+- GitHub browser proof on tested head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`: **16/16 PASS**, 3/3 WebGL2, zero page/console errors; run `35904415847`, artifact `10769948842`.
+- One syntax seam introduced during evidence instrumentation was diagnosed and repaired without retuning the form candidate.
+- Draft PR #194; human visual review pending; no Stage/Live promotion.
