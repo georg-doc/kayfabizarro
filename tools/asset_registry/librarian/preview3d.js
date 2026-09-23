@@ -14,6 +14,39 @@ function init() {
   const loop=()=>{requestAnimationFrame(loop); if(mixer)mixer.update(clock.getDelta()); controls.update(); renderer.render(scene,camera);}; loop();
 }
 function disposeTree(node){node?.traverse((o)=>{o.geometry?.dispose?.();for(const m of (Array.isArray(o.material)?o.material:[o.material]).filter(Boolean)){for(const v of Object.values(m))if(v?.isTexture)v.dispose?.();m.dispose?.();}});}
+export function textureFallbackUrls(record,materialName){
+  const src=record?.source?.rawPinned||record?.source?.rawLatest;
+  if(!src||!materialName)return[];
+  const file=encodeURIComponent(String(materialName)+'.png');
+  const rels=[`../textures/${file}`,`../../textures/${file}`,`./textures/${file}`,`../texture/${file}`,`../../texture/${file}`];
+  const out=[];
+  for(const rel of rels){try{const url=new URL(rel,src).href;if(!out.includes(url))out.push(url);}catch{/* invalid source URL */}}
+  return out;
+}
+async function repairMissingTextureMaps(record,node){
+  const need=new Map();
+  node?.traverse((o)=>{
+    if(!(o.isMesh||o.isSkinnedMesh))return;
+    for(const mat of (Array.isArray(o.material)?o.material:[o.material]).filter(Boolean)){
+      if(mat.map||!mat.name||!/texture|_A$|_B$/i.test(mat.name))continue;
+      if(!need.has(mat.name))need.set(mat.name,[]);
+      need.get(mat.name).push(mat);
+    }
+  });
+  if(!need.size)return 0;
+  const loader=new THREE.TextureLoader(); let repaired=0;
+  for(const [name,mats] of need){
+    let tex=null;
+    for(const url of textureFallbackUrls(record,name)){
+      try{tex=await loader.loadAsync(url);break;}catch{/* try next nearby texture path */}
+    }
+    if(!tex)continue;
+    tex.colorSpace=THREE.SRGBColorSpace;tex.flipY=false;tex.magFilter=THREE.NearestFilter;tex.minFilter=THREE.LinearMipmapLinearFilter;
+    for(const mat of mats){mat.map=tex;mat.needsUpdate=true;}
+    repaired+=1;
+  }
+  return repaired;
+}
 export function clear3D() {
   motionToken+=1; mixer=null; clips=[]; bounds=null; externalState=null;
   if(root&&scene){scene.remove(root);disposeTree(root);} root=null;
@@ -58,5 +91,5 @@ export async function playExternalClip(sourceRecord,clipName,clipIndex=0){
 export function externalMotionState(){return externalState?{...externalState}:null;}
 export function animationState(){return{mixer,loadedAnimations:clips,externalMotion:externalState};}
 export async function render3D(record){$('previewCanvas').hidden=false;$('threeControls').hidden=false;init();const t=++token;++motionToken;externalState=null;$('previewTitle').textContent='3D preview';$('previewStatus').textContent='Loading…';
-  try{const gltf=await new GLTFLoader().loadAsync(record.source?.rawPinned||record.source?.rawLatest);if(t!==token)return;root=gltf.scene;clips=gltf.animations||[];scene.add(root);fitCamera();$('clipSelect').replaceChildren(new Option(clips.length?`${clips.length} embedded clips`:'No embedded clips',''),...clips.map((c,i)=>new Option(c.name||`Clip ${i+1}`,String(i))));if(clips.length&&$('autoplayToggle').checked){$('clipSelect').value='0';playClip(0);requestAnimationFrame(()=>fitCamera());}else $('previewStatus').textContent=clips.length?`${clips.length} clip(s) · paused`:'Loaded · no embedded clips';}
+  try{const gltf=await new GLTFLoader().loadAsync(record.source?.rawPinned||record.source?.rawLatest);if(t!==token)return;root=gltf.scene;const repaired=await repairMissingTextureMaps(record,root);if(t!==token){disposeTree(root);root=null;return;}clips=gltf.animations||[];scene.add(root);fitCamera();$('clipSelect').replaceChildren(new Option(clips.length?`${clips.length} embedded clips`:'No embedded clips',''),...clips.map((c,i)=>new Option(c.name||`Clip ${i+1}`,String(i))));if(clips.length&&$('autoplayToggle').checked){$('clipSelect').value='0';playClip(0);requestAnimationFrame(()=>fitCamera());}else $('previewStatus').textContent=(clips.length?`${clips.length} clip(s) · paused`:'Loaded · no embedded clips')+(repaired?` · ${repaired} texture fallback${repaired===1?'':'s'}`:'');}
   catch(e){if(t===token)$('previewStatus').textContent=`Preview failed: ${e.message}`;}}
