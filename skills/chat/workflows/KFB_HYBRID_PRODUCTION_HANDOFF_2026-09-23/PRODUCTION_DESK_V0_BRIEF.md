@@ -226,3 +226,23 @@ v0 passes when Georg can answer from one surface:
 - How do I launch the next Web slice with the standard review setup?
 
 No Cloudflare required for v0.
+
+
+## Auto-Sync direction
+
+Use:
+`PRODUCTION_DESK_AUTOSYNC_V1.md`
+
+v0 should no longer be treated as a permanently manual snapshot.
+
+Preferred architecture:
+- deterministic production registry;
+- generated bot branch;
+- LIVE/CANONICAL mode;
+- sourceCommit visible;
+- 60–90 s best-effort polling;
+- no browser credentials.
+
+Same-repo automation may be built immediately.
+
+Cross-private-repo Travel/Racer state must remain LAST_KNOWN / VERIFY_CURRENT until a GitHub App/token or repo-status dispatch mechanism is explicitly configured.
