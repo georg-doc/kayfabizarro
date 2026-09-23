@@ -622,3 +622,32 @@ First gate:
 exact Orc B bandleader + source-backed drummer/wardrum + existing camp/scenery + `Rubbish Groove 2min A extend 01.mp3`, one shared beat clock, one HTML review.
 
 All three lanes use HTML-first review. Cloudflare is milestone-only.
+
+
+## 2026-09-23 · Racer TARCH-0 · Chat-artifact visual QA
+
+Current Racer tunnel architecture lane is Race Draft PR **#33**:
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`;
+- current handoff head `6c72e66678599d303c16c825255d2cd04bac9c7e`;
+- runtime-tested architecture head `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
+- CI `35817990559 / 107043574054 · SUCCESS`;
+- **7 active architecture tests · 0 skipped**.
+
+The previous RSTAB-1 tunnel/ground foundation is archived after two failed human repair passes; do not resume WEDGE pass 3.
+
+TARCH donor principle:
+`KilledByAPixel/SP13KTRA@166ad838b9a067f85100eaff7876522f7cfe9feb`.
+SP13KTRA is All Rights Reserved; no source/assets copied.
+
+Visual acceptance workflow:
+1. R1 isolated HTML artifact attached directly in ChatGPT;
+2. after R1 ACCEPT: R2 integrated Racer HTML artifact;
+3. optional R3 one local integration correction.
+
+**Cloudflare / Pages are deferred until after human visual acceptance and are not part of iterative QA.**
+
+Current project router:
+`tools/KFB-ToolBox/_handover/RACER_MVP_STABILIZATION_2026-09-23/START_HERE.md`.
+
+Exactly one next gate:
+**TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
