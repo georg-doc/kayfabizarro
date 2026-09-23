@@ -189,3 +189,31 @@ Decision:
 **accept the v2 3D translation / tune it once / reject the translation.**
 
 If accepted, the next production slice is the **Blender-MCP / Geometry-Nodes compiler recipe** for this exact accepted grammar.
+
+
+## 2026-09-24 · Lead routing + chat review transport
+
+A review-transport problem was reproduced in ChatGPT: the previous chat wrapper depended on an iframe / external source chain and repeatedly triggered an allow/cancel dialog instead of reliably showing the candidate.
+
+Decision:
+- canonical V2 Three.js runtime remains unchanged on PR #194;
+- the in-chat human review artifact must be a **single self-contained HTML**;
+- no iframe;
+- no CDN;
+- no runtime fetch;
+- no cross-origin module chain.
+
+This is a packaging fix, not a style/runtime regression.
+
+Lead anti-regression routing was also strengthened:
+- `LEAD_OVERRIDE_2026-09-24.md` added;
+- `skills/chat/REGISTRY.json` now has a dedicated `elastic-grotesque-clay-huerth01` CURRENT_REFERENCE entry;
+- old City-Lab GROTESQUE and Hürth 01 V1 are explicitly comparison/history, not the continuation basis;
+- current candidate remains `ELASTIC_GROUP_WARP_V2` with `KFB_WONKY_90S_CLAY_V1`.
+
+Browser-tested V2 runtime/source checkpoint remains:
+`0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+with **21/21 PASS · 3/3 WebGL2 · 0 page/console errors**.
+
+Exactly one gate remains unchanged:
+**Georg human visual review of Hürth 01 V2 actual form language.**
