@@ -790,3 +790,28 @@ Still blocked until after R3b:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-23 · Claude Coworker WS0
+
+Claude Coworker now has a bounded KFB onboarding lane at:
+
+`skills/chat/workflows/KFB_CLAUDE_COWORKER_WS0_2026-09-23/START_HERE.md`
+
+Role:
+- code review;
+- Web-aligned integration proposals;
+- preparation of WSA/Work slices;
+- explicitly authorized bounded GitHub implementation;
+- zero-install Review HTML using the existing verified review pool.
+
+It is **not** a new universal owner or deployment lead.
+
+Default mode is `REVIEW_ONLY`.
+Productive writes require a filled Slice Card.
+WSA proposals remain `PROPOSAL` until Web Lead / Georg marks them `WEB_ALIGNED`.
+
+Normal human loop remains:
+`GitHub checkpoint → Review HTML in chat → Georg feedback`.
+
+No Cloudflare is required for routine Coworker review/iteration.
