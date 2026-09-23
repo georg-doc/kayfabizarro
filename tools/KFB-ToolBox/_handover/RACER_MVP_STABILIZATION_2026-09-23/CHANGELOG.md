@@ -80,7 +80,7 @@ Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**.
 
 - old RSTAB-1 tunnel/ground foundation archived after two failed human repair passes; no WEDGE pass 3;
 - new Race Draft PR #33: `chat/racer-tarch0-sp13ktra-2026-09-23`;
-- current handoff head `6c72e66678599d303c16c825255d2cd04bac9c7e`;
+- current handoff head `45fa80d0449efecf6a9ecfb69386c6cb4f9ba1fd`;
 - runtime-tested TARCH integration `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
 - GitHub Actions `35817990559 / 107043574054`: SUCCESS;
 - architecture regression: **7 active / 0 skipped**;
