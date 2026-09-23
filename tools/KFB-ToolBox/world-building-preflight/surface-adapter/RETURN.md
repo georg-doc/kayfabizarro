@@ -7,7 +7,7 @@ Status: **TECHNICAL PASS · PUBLIC BROWSER PASS · HUMAN REVIEW PENDING · P3 HO
 - Repository: `georg-doc/kayfabizarro`
 - Branch: `chatgpt-web/world-builder-p2-surface-adapter-2026-09-23`
 - Draft PR: **#180 · WorldBuilder v1 · WB1-P2 Surface Adapter candidate**
-- Current reconciled main for the repair gate: `852f9d2cd1be228898316b205063855c95308c9a`
+- Current reconciled main for the repair gate: `bbad5dabc00107936e35f55c71896d8a751ce02e`
 - Initial P2 implementation checkpoint: `49cc790f60029066bdbcfa9ac8328aa9de7e26e1`
 - Accepted repaired review runtime: `0599cc04d2db72ed33c49fb98a30898290a00a68`
 - Static repair CI: `35815116764` → PASS
