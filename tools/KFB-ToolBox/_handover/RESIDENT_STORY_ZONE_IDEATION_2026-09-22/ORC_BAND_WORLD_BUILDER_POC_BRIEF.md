@@ -32,7 +32,7 @@ Prove one compact **World-Life Scene** that feels as if KFB keeps living without
 
 Scene:
 
-**Orc Band · Funky War Jam**
+**The KayfaBizarros · Permitless Funk Jam**
 
 Three Orc generations perform an impro/funk/jazz-flavoured street-band loop.
 
@@ -105,7 +105,7 @@ Do not use the acoustic-guitar measurements blindly.
 
 Actor:
 
-`media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf`
+`media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf`
 
 Assembly:
 
@@ -113,9 +113,12 @@ current Resident Atlas Rig_Legacy donor.
 
 First-proof role:
 
-- hype/front Orc;
-- groove/body bounce;
-- simple gestural performance.
+- exact black-ponytail / dark-topknot bandleader;
+- microphone held as prop;
+- beat-synced root bounce;
+- squash/stretch;
+- seeded lateral/high-hop variation;
+- no lip-sync dependency.
 
 Optional later props:
 
@@ -131,7 +134,31 @@ Trumpet:
 
 No dedicated trumpet-playing clip is currently proven.
 
-## 3 · Donor-first visual proof order
+## 2.5 · Tourbus donor
+
+Exact source:
+
+`media/3D_Assets/Frankensteining/Truck Armored by Quaternius - VvX8nmoCN5.glb`
+
+User-pinned source:
+
+`e0037d79af9f0546c73cee02e361f78f7d662df2`
+
+This same truck already exists in the Vehicle / Cartoon Vehicle Deformer donor lane as `truck-armored`.
+
+For the first World-Life proof:
+
+- show it in isolation first;
+- then use it parked as a recognizable KayfaBizarros tour landmark;
+- no driving/physics/rigging requirement;
+- no custom WorldBuilder vehicle code;
+- any later cartoon deformation must reuse the existing Vehicle owner.
+
+Suggested scenic composition:
+
+`parked Tourbus + surreal stone/campfire focal point + trio performance zone`.
+
+
 
 Claude / any implementer must not begin with the full scene.
 
@@ -139,7 +166,7 @@ Claude / any implementer must not begin with the full scene.
 
 Show individually:
 
-1. Legacy Orc A;
+1. exact Legacy `character_orcB` bandleader;
 2. Orc Raider;
 3. Orc Brute;
 4. war drum;
@@ -148,10 +175,11 @@ Show individually:
 7. guitar B;
 8. optional microphone;
 9. Toy Soldier;
-10. closed present;
-11. unwrapped present;
-12. rifle;
-13. trumpet.
+10. Truck Armored Tourbus;
+11. closed present;
+12. unwrapped present;
+13. rifle;
+14. trumpet.
 
 Acceptance:
 
