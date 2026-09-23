@@ -4460,3 +4460,466 @@ Treat the new source proof as an additive correction.
 8. optional Combat handoff.
 
 Fishing remains separate and will receive its own fixture later.
+
+
+---
+
+# 37 · Music Collectibles / Demo Tapes / Global Jukebox
+
+## USER DIRECTION · 2026-09-23
+
+Music discovered in KFB should become part of the player's journey history and remain playable later.
+
+Orc Band tracks are a first concrete use case.
+
+A song may be acquired by:
+
+- hearing the band in the world;
+- showing appreciation / dancing;
+- receiving a demo tape as a gift from the Legacy frontman;
+- finding a tape in a chest / lootbox / dungeon;
+- later trading for a tape;
+- other future music-discovery encounters.
+
+The collection should work across:
+
+- walking;
+- dungeons;
+- free-roam landscape;
+- flight;
+- vehicles;
+- Stunt Race.
+
+The player should therefore build a personal **RoadTrip / Journey music collection** over time.
+
+## Existing audio owner
+
+Do not create a second universal music engine.
+
+Current KFB already has:
+
+- canonical `media/3D_Assets/Sounds/jukebox.json`;
+- a reusable Jukebox / Music Bus implementation in `travel-audio.js`;
+- track switching;
+- common audio lifecycle;
+- BPM;
+- `beat`;
+- `level`;
+- `pulse`;
+- ducking;
+- clean source replacement;
+- existing compact Radio direction in Race.
+
+This becomes the audio foundation.
+
+The new concept adds:
+
+- unlock state;
+- provenance;
+- collection UI;
+- physical tape metaphor;
+- world-performance integration.
+
+## New Orc Band candidate pool
+
+Current source-backed candidate files in:
+
+`media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/`
+
+include six plausible Orc Band versions:
+
+- `Lazy Pocket Groove.mp3`
+- `War Busker Groove.mp3`
+- `Rubbish Groove 2min A extend 01.mp3`
+- `The_Street_Orcs_Groove_2026-09-23T020844.mp3`
+- `Orcish_Municipal_Hustle_2026-09-23T021219.mp3`
+- `Orcish_Street_Corner_Jam_2026-09-23T021322.mp3`
+
+These are **candidate tracks**, not yet canonical Jukebox entries.
+
+The current connector can prove file identity/size but cannot audition the binary MP3s in-chat.
+
+Human listening remains the selection authority.
+
+## Physical tape donors
+
+Current KFB source pool includes real tape/radio props:
+
+- Car Radio with tape player;
+- multiple Cassette / Tape models.
+
+One Michael-Fuchs tape exists twice under two filenames with the exact same blob SHA.
+
+Treat those two files as one donor identity.
+
+## PROPOSAL · Track Unlock vs physical cassette
+
+Do not make every unlocked song consume a Backpack slot.
+
+Separate:
+
+### Track Unlock
+
+Persistent music-library state.
+
+Stored in:
+
+**Session / Journey / Fractal Almanac**
+
+Carries:
+
+- track ID;
+- source;
+- discovery method;
+- event/provenance ref;
+- favourite;
+- rotation weight;
+- discovery date/session.
+
+### Cassette Artifact
+
+Optional physical/world representation.
+
+Can be:
+
+- handed to player;
+- found in chest;
+- shown during a gift interaction;
+- placed/displayed later in a personal cassette collection.
+
+It does not have to remain in Backpack after the music has been registered.
+
+This prevents music collection from filling the player's limited physical inventory.
+
+## First social music unlock
+
+Preferred first sequence:
+
+```
+player approaches Orc Band
+→ hears live spatial performance
+→ remains / reacts / dances
+→ performance-appreciation threshold reached
+→ Legacy frontman approaches
+→ one short Bubble exchange
+→ demo tape offered
+→ player accepts
+→ TRACK_UNLOCK_COMMIT
+→ Almanac / Journey music receipt
+→ same track becomes available in global Radio
+```
+
+The physical cassette may appear during the gift.
+
+It need not remain a permanent Backpack item.
+
+## Alternative acquisition
+
+### Loot
+
+```
+open chest / lootbox
+→ find cassette
+→ inspect / collect
+→ TRACK_UNLOCK_COMMIT
+```
+
+### Trade
+
+Possible later branch:
+
+```
+Band / vendor offers tape
+→ player offers currency or item
+→ trade resolves
+→ TRACK_UNLOCK_COMMIT
+```
+
+Georg mentions **Pop / Popcorn / Westing** as currency language.
+
+Current repository search did not prove a canonical currency owner/name in this check.
+
+Do not freeze the currency contract here.
+
+---
+
+# 38 · Backpack HUD · 20 physical slots
+
+## USER DIRECTION
+
+The player's Backpack should be a small readable physical inventory rather than an unlimited collection database.
+
+Working first cap:
+
+**20 slots**
+
+Recommended presentation:
+
+- one compact Backpack icon in normal HUD;
+- click/tap opens inventory overlay;
+- **4 × 5 grid**;
+- selected item gets a small contextual action area.
+
+Typical actions:
+
+- Inspect;
+- Use where supported;
+- Give;
+- Drop where allowed.
+
+Do not put music-track unlocks into these 20 slots.
+
+Do not make currency consume slots.
+
+## Visual Backpack profile
+
+The icon / avatar presentation should follow the currently equipped Backpack skin/profile.
+
+Candidate visual donors already documented include:
+
+- Protagonist A/B backpacks;
+- Hoarder;
+- Hiker;
+- Orc Backpack.
+
+Inventory truth remains separate from Backpack mesh.
+
+## UI discipline
+
+Closed state:
+
+- small Backpack access only;
+- no permanent inventory wall.
+
+Open state:
+
+- 20 slots;
+- item image/thumbnail;
+- compact details;
+- no developer/provenance paragraphs in default view.
+
+Detailed origin can live behind Info / Almanac link.
+
+---
+
+# 39 · Always-available Radio / Music Collection
+
+## USER DIRECTION
+
+Unlocked songs should remain playable anywhere.
+
+Contexts include:
+
+- on foot;
+- dungeon;
+- open landscape;
+- flight;
+- car;
+- Stunt Race.
+
+## One music core
+
+Do not implement one radio per game.
+
+Use the existing Jukebox / Music Bus owner.
+
+Different hosts provide only presentation adapters.
+
+Possible presentations:
+
+### On foot
+
+Compact Radio / Now Playing HUD.
+
+### Vehicle / Race
+
+Existing compact kinetic car-radio presentation.
+
+### Home / personal place
+
+Physical tape player / cassette shelf.
+
+All point to the same unlocked-track state.
+
+## Library modes
+
+Useful first user choices:
+
+- All unlocked;
+- Favorites;
+- Heavy Rotation;
+- Manual track.
+
+Track state may include:
+
+- `favorite: true/false`;
+- `rotationWeight`;
+- optional user-curated Heavy Rotation subset.
+
+## Live music vs Radio
+
+Live Orc Band performance and personal radio are not the same source mode.
+
+### Live band
+
+- world-local;
+- spatial/diegetic;
+- falls off with distance.
+
+### Radio
+
+- global/non-diegetic music presentation.
+
+First rule:
+
+**do not play both at full volume simultaneously.**
+
+Recommended v0:
+
+- approaching a live music zone ducks/fades the global radio;
+- leaving the zone restores it.
+
+Later, if useful:
+
+- same-track synchronized crossfade from global radio to spatial live source.
+
+Do not require this for the first Band proof.
+
+---
+
+# 40 · Orc Band Music Visualizer / Performance Sync
+
+## USER DIRECTION
+
+The band should visibly respond to the currently playing track.
+
+Desired read:
+
+- Orc Brute drums in time;
+- Medium Orc guitar rhythm tracks the groove;
+- Legacy frontman moves/dances/hypes while holding the microphone;
+- small variation and humorous beats prevent a robotic repeated loop.
+
+## Existing audio signals
+
+Current `travel-audio.js` already exposes:
+
+- `beat`;
+- `level`;
+- `pulse`;
+- `bpm`;
+- current track metadata.
+
+That is enough for a first visualizer proof.
+
+## No stems required for v0
+
+Do **not** spend limited Suno stem-download credits on all candidate tracks.
+
+First use full-mix analysis/signals.
+
+### Large Orc · drums
+
+Drive procedural percussion from the beat grid.
+
+Candidate rule:
+
+- quarter-note beat;
+- alternating left/right hands;
+- `pulse` may accent strike depth, body recoil or occasional double-hit.
+
+This extends the already identified procedural Rig_Large War Drum adapter.
+
+### Medium Orc · guitar
+
+Use:
+
+- measured Animatronic guitar-hold donor;
+- procedural strum.
+
+Candidate rule:
+
+- eighth-note/subdivision strum;
+- `pulse` controls stronger accents;
+- `level` controls body groove amplitude.
+
+### Legacy frontman
+
+Microphone can simply remain held in one hand.
+
+No singing animation is required for instrumental tracks.
+
+Use:
+
+- body bounce;
+- sway;
+- head gesture;
+- occasional seeded hype gesture every N bars.
+
+## Avoid robotic synchronization
+
+Actors share one musical clock but should not mirror perfectly.
+
+Use:
+
+- small phase offsets;
+- actor-specific motion amplitude;
+- seeded variation per bar;
+- rare special gesture beats.
+
+The scene should read as three musicians listening to each other, not three synchronized machines.
+
+## Stem escalation rule
+
+Download stems only for a selected final/signature track if full-mix sync is not convincing.
+
+Useful stems:
+
+- drums;
+- guitar;
+- optional rest/hype.
+
+Stem credits should be spent **after** one track has earned promotion.
+
+## Loop authoring
+
+Current two-minute candidates may not have clean loop boundaries.
+
+Do not reject them for that alone.
+
+Add per-track authoring metadata:
+
+- BPM;
+- beat offset;
+- beats per bar;
+- loop start;
+- loop end;
+- fade in;
+- fade out;
+- crossfade duration.
+
+First goal:
+
+**musically acceptable repeating background performance**, not perfect sample-loop purity.
+
+A selected candidate can later receive a trimmed/remastered loop.
+
+## First music-performance proof
+
+Exactly one selected Orc track:
+
+```
+full mix
+→ known BPM / loop metadata
+→ live spatial playback
+→ beat / pulse / level
+→ Brute drum adapter
+→ Medium guitar strum
+→ Legacy groove
+→ player dances/listens
+→ demo tape gift
+→ track unlock
+→ global Jukebox availability
+```
+
+Do not pull all six candidate tracks into the animation proof.
