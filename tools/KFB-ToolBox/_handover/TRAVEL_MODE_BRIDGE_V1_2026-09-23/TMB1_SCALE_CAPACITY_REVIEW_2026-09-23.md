@@ -1,6 +1,6 @@
 # KFB Travel Mode Bridge v1 · TMB-1E Scale / Capacity Review · 2026-09-23
 
-**Status:** PREPARED REVIEW SLICE · NO RUNTIME IMPLEMENTATION YET  
+**Status:** IMPLEMENTED HTML REVIEW CANDIDATE · TECHNICAL / CI PASS · GEORG HUMAN REVIEW PENDING · NOT PUBLIC  
 **Owner:** `georg-doc/KFB-Travel-Globe`  
 **Coordination / Review owner:** `georg-doc/kayfabizarro`  
 **Base Travel candidate:** Draft PR #36 · `chatgpt-web/travel-mode-bridge-tmb1-surf-2026-09-23@88382c111acf32f6b934c15ce7b6b1f6d4d15283`  
@@ -201,12 +201,37 @@ Current TMB-1 human finding from Georg:
 
 ---
 
+# Implementation result · 2026-09-23
+
+Travel Draft PR #37:
+- branch: `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
+- current handoff head after Return: `5110f3617246d05278e0435b3b1e0a99c33e62e5`;
+- technical test head: `33b4a5bf9904d3e9e86c99f6efd5cbdde8448641`;
+- CI run `35823280576` / job `107059518887`: **SUCCESS**;
+- repository tests: **99 PASS · 0 FAIL · 0 skipped**;
+- build: PASS;
+- verify: PASS.
+
+HTML-first review artifacts:
+- `site/travel-mode-bridge/tmb1e/TMB1E_SURF_SCALE_REVIEW.html`;
+- `site/travel-mode-bridge/tmb1e/TMB1E_THREE_RIDER_CAPACITY_REVIEW.html`.
+
+The capacity trio is now source-locked as:
+`Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B`.
+
+The earlier spoken “Large Rick” wording is resolved as **Large Rig**. No separate XL / substitute actor is introduced.
+
+Travel Return:
+`_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB1E_RETURN.md`
+
+Cloudflare / KFB Stage remains intentionally deferred during this HTML visual-review gate.
+
 # Exactly one next gate
 
-**TMB-1E · build the two isolated HTML comparison reviews from the verified TMB-1D baseline.**
+**GEORG HUMAN HTML REVIEW · open both TMB-1E artifacts.**
 
-Stop after Georg can choose:
-- preferred single-rider scale; and
-- whether the current card size is sufficient for the three-character class comparison.
+Decide only:
+- preferred single-rider scale: CURRENT / 1.8× / 2.0× / between; and
+- whether the unchanged card reads large enough for Legacy Orc A + Rig_Large Brute + Legacy Orc B.
 
 Do not start TMB-2 from this slice.
