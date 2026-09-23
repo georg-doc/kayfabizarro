@@ -71,6 +71,7 @@ The initial concept captures:
 - `ORC_BAND_WORLD_LIFE_RECIPE_v0.json`
 - `ORC_BAND_WORLD_BUILDER_POC_BRIEF.md`
 - `MUSIC_COLLECTIBLE_JUKEBOX_v0.json`
+- `BILLBOARD_MEDIA_SCENE_v0.json`
 - this `RETURN.md`
 
 ## Sources actually reviewed
@@ -112,6 +113,8 @@ This checkpoint is documentation/ideation only.
 - Music Collectible / Backpack HUD / visualizer runtime: **NOT BUILT / NOT RUN**
 - Tourbus source identity: **VERIFIED / PINNED**
 - Tourbus band-specific presentation/branding: **DEFERRED**
+- Billboard BBS-01 runtime: **NOT BUILT / PLANNED AFTER WARBAND**
+- Billboard video/collage provenance/runtime: **DEFERRED**
 - Tourbus driving/vehicle integration: **DEFERRED TO VEHICLE OWNER**
 - MP3 audible review in this chat: **NOT AVAILABLE THROUGH GITHUB CONNECTOR**
 - branch creation: PASS
@@ -174,6 +177,13 @@ No implementation or public result is claimed.
 - exact bouncing bandleader is pinned to `character_orcB.gltf` at user-pinned commit `e0037d79...`;
 - exact Tourbus donor is pinned to `Truck Armored by Quaternius - VvX8nmoCN5.glb`;
 - Tourbus first use is parked scenic landmark only; later driving/deformation stays with the existing Vehicle / Cartoon Vehicle Deformer owner;
+- Billboard / Media Residency lane recovered and modularized from prior Roadside Media work;
+- current Racer donor already proves real Kenney billboard + PDF.js/Card CanvasTexture through `buildBillboard()` / `renderCardQuarter()`;
+- current handoff proves nine billboard/sign donors across Kenney and KFB/Poly;
+- Billboard content modes now proposed as CARD_PDF / TRIPLET / COLLAGE_LOOP / HERO_INTERACTIVE;
+- signature billboard Triplets may reuse ChatterBox media-persona pools with SHOW IT → SPIN IT → SELL IT and stable seeded encounter messages;
+- older Dropbox §39 Roadside Media concept is explicitly recovered: layered reveal, conversational hero billboards, broadcasts, distance audio and Almanac memory;
+- current black/debug terrain base is rejected for future scene templates; use no visible underside or a thin matching skirt;
 - Music Collectible / Jukebox lane now separates track unlocks from physical cassette artifacts;
 - **Permitless Funk** is now the human-selected Orc Band signature-style candidate, using `Rubbish Groove 2min A extend 01.mp3`;
 - Legacy frontman direction is now black-ponytail/dark-topknot Orc with beat-synced root bounce + squash/stretch + seeded hype variation;
