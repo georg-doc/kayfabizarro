@@ -726,14 +726,15 @@ FrizzleBob source identity is separately pinned at:
 Current first gate: **WB1-TERRAIN-SCENE-01**.
 
 Current implementation state on Draft PR #186:
+- R1 functional foundation is **GEORG HUMAN PASS**: Caveman texture, Character Y, Character-Y save/reload and palette/FOV;
 - canonical source: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`;
 - local review artifact: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`;
-- R1 human feedback repaired: explicit Resident Atlas Caveman texture binding, Character Y authoring/save-reload, non-overlay narrow layout;
-- evidence: **26/26** repaired source/static contract + **4/4** exact actor/prop/animation/texture paths + **5/5** review parity;
-- embedded browser self-test: **15 assertions prepared / 0 executed**;
-- recurring ChatGPT attachment-host texture issue + human-verified fallback are documented at `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`;
-- R1 ChatGPT attachment human result: **TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**;
-- remaining browser/visual acceptance: **Character Y + palette/FOV + save/reload PENDING HUMAN RE-REVIEW**; no automated browser PASS claimed;
+- shared edit owner promoted to `tools/KFB-ToolBox/lib/edit-layer.js`, exact donor blob `c97b3537f71e939176f3ae5ce7ae83feabb7918f` from Resident Atlas S7, itself derived from Dungeon Room Study S21/S22;
+- WorldBuilder now uses the object-attached mini-menu: Move / Rotate / Scale / Drop / World-Local / Close + shared snap;
+- scale is part of the scene transform and Save/Reload contract;
+- R2 shared-editor evidence: **32/32** static/integration + **4/4** exact runtime source paths + **1/1** exact module identity;
+- embedded browser self-test: **20 assertions prepared / 0 executed**;
+- no automated browser PASS or mini-menu human PASS claimed yet;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: Georg re-reviews the repaired local HTML candidate for Character Y, unobstructed FOV and save/reload. Texture is already HUMAN PASS. Claude Design and Orc Band integration remain HOLD until that gate.
+Exactly one next WorldBuilder gate: Georg reviews the new shared-editor Chat HTML mini-menu and transform roundtrip. Claude Design, Orc Band integration, Cloudflare and Live remain HOLD until that gate.
