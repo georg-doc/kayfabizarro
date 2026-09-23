@@ -731,8 +731,9 @@ Current implementation state on Draft PR #186:
 - R1 human feedback repaired: explicit Resident Atlas Caveman texture binding, Character Y authoring/save-reload, non-overlay narrow layout;
 - evidence: **26/26** repaired source/static contract + **4/4** exact actor/prop/animation/texture paths + **5/5** review parity;
 - embedded browser self-test: **15 assertions prepared / 0 executed**;
-- recurring ChatGPT attachment-host texture issue is documented at `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`;
-- browser/visual acceptance: **PENDING HUMAN RE-REVIEW**; no automated browser PASS claimed;
+- recurring ChatGPT attachment-host texture issue + human-verified fallback are documented at `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`;
+- R1 ChatGPT attachment human result: **TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**;
+- remaining browser/visual acceptance: **Character Y + palette/FOV + save/reload PENDING HUMAN RE-REVIEW**; no automated browser PASS claimed;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: Georg re-reviews the repaired local HTML candidate for texture, Character Y, unobstructed FOV and save/reload. Claude Design and Orc Band integration remain HOLD until that gate.
+Exactly one next WorldBuilder gate: Georg re-reviews the repaired local HTML candidate for Character Y, unobstructed FOV and save/reload. Texture is already HUMAN PASS. Claude Design and Orc Band integration remain HOLD until that gate.
