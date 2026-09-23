@@ -50,3 +50,17 @@ Do not start WB1-P2 in the same work cycle.
 Exactly one next gate:
 
 **WB1-P1 Browser Verify · run the persisted Portable Preview outside the restricted browser container, prove the real source torch in isolation first, then integrated Environment Profile, console errors = 0, and capture visible evidence.**
+
+
+## 2026-09-23 · WB1-P1 human scope acceptance
+
+- Reconciled PR #177 with current coordination `main@e0037d79af9f0546c73cee02e361f78f7d662df2` without dropping concurrent Racer RSTAB-1 routing.
+- Zero-install Stage review remained pinned to frozen P1 runtime `a48729460c28edc2ae95abbfcdef66fe52a84f50`.
+- Public automated browser proof run `35807858806`: PASS; source isolation rendered, `consoleErrors=0`, integrated `activePool=6/6`, `FogExp2 0.019`, Local Visibility 1.00, SOURCE→MATTE→SOURCE restored, zero page/HTTP failures.
+- Georg human review: **PASS for WB1-P1 scope**.
+- Human caveat preserved: review-scene primary light placement and torch staging/spacing are **not production lighting canon**; final scene lighting composition remains future authoring work.
+- P1 runtime changed after review: **0 files**.
+- Live promotion / merge: **not performed**.
+- WB1-P2: **not started**.
+
+Exactly one next gate: **WB1-P2 · same tiny logical recipe on FLAT / SPHERE / TORUS.**
