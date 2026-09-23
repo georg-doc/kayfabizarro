@@ -40,12 +40,18 @@ Purpose:
 reuse the existing Travel/TinySkies Flight owner, existing Ground↔Flight runtime bridge and exact animated Travel CardCarrier; prepare one KayKit Rig_Medium passenger seam plus later double-Space mount / intentional landing transition.
 
 Status:
-**TMB-0 COMPLETE · Travel Draft PR #32 @ `048499315581d2b9916a4d3fcbaba5f3adef719c` · 12/12 PASS · 0 runtime files changed**
+**TMB-1 SOURCE-FIRST COMPLETE · Travel Draft PR #36 @ `88382c111acf32f6b934c15ce7b6b1f6d4d15283` · public Surf proof 52/52 PASS · HUMAN REVIEW PENDING**
+
+Completed sequence:
+**CardCarrier alone → ActionFigure Rig_Medium alone → neutral measured mount → exact S33 Surf candidate.**
+
+Direct human gate:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/surf.html`
 
 Current next gate:
-**TMB-1 · exact animated Travel CardCarrier + one real ActionFigure Rig_Medium passenger, isolated source-object-first proof.**
+**GEORG HUMAN GATE · ACCEPT or REJECT the Surf presentation. TMB-2 Double-Space remains HOLD.**
 
-WorldBuilder integration remains HOLD until its Surface Adapter gate is ready for consumption. The rigid Frankenstein/Studio reference card is measurement evidence only and is not the flight vehicle.
+WorldBuilder integration remains HOLD until its receiving gate is explicitly opened. The rigid Frankenstein/Studio reference card remains measurement evidence only and is not the flight vehicle.
 
 
 ## 2026-09-23 · current authoring / ideation handoffs
