@@ -97,3 +97,24 @@ Briefs:
 - `../../skills/chat/workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md`
 - `../../skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md`
+
+## CURRENT ADDITIVE · Shared Inline 3D Edit Layer · 2026-09-23
+
+The Dungeon Room Study S21/S22 object editor was already extracted on its second host, Resident Atlas S7 / Rig-Werkstatt. WorldBuilder is now its third real host, so that existing module is promoted byte-identically into ToolBox:
+
+`lib/edit-layer.js`
+
+Exact promoted/donor Git blob:
+`c97b3537f71e939176f3ae5ce7ae83feabb7918f`
+
+Current capabilities:
+- object-attached mini-menu;
+- pointerup visible-only picking;
+- one shared TransformControls owner;
+- move / rotate / scale;
+- drop to visible surface below;
+- world/local axes;
+- snap;
+- shared-gizmo borrow/release seam.
+
+WorldBuilder Draft PR #186 is the current third-host candidate. R1 terrain/Resident foundation is HUMAN PASS; the next gate is the shared mini-menu HTML review. This shared layer owns selected-object authoring only; terrain, movement, runtime collision, assets and game persistence remain with their existing owners.
