@@ -1698,3 +1698,29 @@ Exactly one gate remains:
 **GEORG HUMAN TIMING REVIEW · 240 / 320 / 400 ms or an in-between value.**
 
 Single Space remains immediate Ground jump. The same second Ground-owned Space must not also fire the Flight Space action. TMB-3 landing remains HOLD.
+
+
+## 2026-09-23 · Racer R3c closed track body + rounded frames
+
+- R3b human review remained TUNE: ground/track visual overlap, ambiguous flat-band curves, unfinished underside, boxy/gapped TARCH frames;
+- Dropbox C-3 owner/donor documentation re-read; no Dropbox mutation;
+- project-owned `cologne-landmarks.v1.js` reused as rounded structural implementation donor;
+- track presentation now uses one cyclic closed `track-body`;
+- road + shoulders + side skirts + complete underside share one cross-section;
+- old primary flat road/shoulder ribbons removed;
+- old partial structure soffit/skirts removed;
+- tested RSTAB-1 `structurePillarSpan()` salvaged;
+- former support hotspots 166/179/187 remain covered;
+- support cylinder radial segments 14;
+- TARCH frames now one continuous rounded CurvePath / TubeGeometry mesh each;
+- old BoxGeometry post/post/lintel composition removed;
+- final runtime/test head `b48ba46bb23e656cad968cb347bde7aa4bd445c4`;
+- CI runs `35874800062` and `35874807681`: SUCCESS;
+- **17/17 PASS · 0 fail · 0 skipped**;
+- Race Draft PR #33 current docs head `f8f29f7b742e0b18fd9887398cd6bb4b7c320a32`;
+- R3c artifact `KFB_Racer_TARCH0_R3c_track_body_rounded_frames_review.html`;
+- SHA-256 `36a363efd5412b41f9b8bea26998e32a16a1965b9335000ed8b82d6f795ff0f0`;
+- Cloudflare remains deferred.
+
+Exactly one next gate:
+**R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**.
