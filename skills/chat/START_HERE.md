@@ -562,7 +562,7 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E HTML review ready
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E Repair Pass 1
 
 Coordination brief:
 
@@ -580,22 +580,32 @@ Completed source-first baseline:
 - C · neutral measured mount → public 41/41 PASS;
 - D · exact S33 Surf candidate → public 52/52 PASS.
 
-TMB-1E is now implemented on Travel Draft PR #37:
+TMB-1E first capacity candidate is **HUMAN_REJECTED**.
+
+Georg correction:
+- Surf scale review intentionally shows the same Rig_Medium ActionFigure at 1.0× / 1.8× / 2.0×;
+- capacity comparison must instead show three real rig classes:
+  `ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`;
+- first downloaded capacity HTML also hit a GLTFLoader embedded-buffer failure;
+- source textures/materials must be visibly preserved.
+
+Repair Pass 1 on Travel Draft PR #37:
 - branch `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
-- handoff head `5110f3617246d05278e0435b3b1e0a99c33e62e5`;
-- technical test head `33b4a5bf9904d3e9e86c99f6efd5cbdde8448641`;
-- CI `35823280576 / 107059518887`: **99/99 PASS · build PASS · verify PASS**;
-- Review A: CURRENT vs 1.8× vs 2.0× exact Surf rider on unchanged CardCarrier;
-- Review B: source-object-first `Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B` capacity comparison;
-- “Large Rick” resolved as **Large Rig**; no substitute XL actor;
-- Cloudflare deferred; HTML review is the current human surface.
+- handoff head `658e95af4963b25c7d3224d4b1d7fb2e43880896`;
+- implementation `360836ce494f76ea4c1b3133d566bd3b39e14970`;
+- evidence head `bb8541267723ba9d980650735c5dcc437e36736d`;
+- CI `35860054421 / 107177777296`: **102/102 PASS · build PASS · verify PASS**;
+- Medium/Large embedded textures audited;
+- Legacy Orc B assembled via existing Resident-Atlas six-bone rule and source named materials;
+- Legacy embedded buffer bypasses the failed nested FileLoader path via exact in-memory GLB packing;
+- capacity uses the 2.0× rider candidate without equal-height normalization;
+- Cloudflare remains deferred.
 
-Exactly one next gate: **GEORG HUMAN HTML REVIEW · choose Surf scale and judge three-Orc card capacity.**
+Exactly one next gate: **GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML.**
 
-TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD** until that human scale/capacity gate is resolved.
+TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD**.
 
-Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
-
+Racer stabilization remains a separate lane.
 
 ## 2026-09-23 · ToolBox / WorldBuilder / Orc Band current routing
 
