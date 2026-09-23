@@ -1425,3 +1425,26 @@ Cloudflare is not the normal iteration surface.
 
 Exactly one next gate:
 **TARCH-0 HUMAN ARCHITECTURE GATE · R1 CHAT HTML**.
+
+
+## 2026-09-23 · Verified Review Artifact Pool · Racer TARCH R1 accepted
+
+- introduced shared verified review donor pool under `KFB_WEB_FIRST_EXECUTION_V1_2026-09-22`;
+- pool admits only review harnesses that Georg has actually used and accepted;
+- Resident Scene ownership rule carried over: review presentation may own camera/toggles/debug, never product movement/collision/runtime ownership;
+- first verified donor registered: `threejs-focus-review-v1`;
+- donor origin: Racer TARCH-0 R1 on Race Draft PR #33;
+- accepted R1 artifact archived at:
+  `_handover/RACER_MVP_STABILIZATION_2026-09-23/TARCH-0/review/KFB_Racer_TARCH0_R1_review.html`;
+- R1 acceptance evidence:
+  `review/R1_ACCEPTED.md`;
+- Race branch current head:
+  `2ab130f871fc0340401145c8713a64c97789b80b`;
+- runtime geometry remains:
+  `b37cbad1038e669a0c9929d25789d54d0283b0fc`;
+- R2 integrated Chat HTML prepared, SHA-256:
+  `bc5a97f5239c66f54e8cb53bfd21fef0326a7c3f40f524419ddce60cce3b5fc4`;
+- Cloudflare / Pages remain deferred during visual iteration.
+
+Exactly one current Racer gate:
+**TARCH-0 R2 · integrated Racer Chat HTML human review**.
