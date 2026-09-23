@@ -562,50 +562,44 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E Repair Pass 1
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-1E Repair Pass 2
 
-Coordination brief:
-
+Coordination:
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
 
-Current review brief:
+Travel Draft PR #37 remains the owner.
 
-`tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
+Correct capacity trio:
+`ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`
 
-Travel owner remains private `georg-doc/KFB-Travel-Globe`.
+Repair Pass 1 human result:
+- direct Chat attachment stopped with `ActionFigure embedded texture missing`;
+- review was blank;
+- this contradicted the already documented ChatGPT HTML texture-host limitation.
 
-Completed source-first baseline:
-- A · exact animated CardCarrier alone → public 18/18 PASS;
-- B · exact ActionFigure Rig_Medium alone → public 22/22 PASS;
-- C · neutral measured mount → public 41/41 PASS;
-- D · exact S33 Surf candidate → public 52/52 PASS.
+Repair Pass 2:
+- implementation `d6e147e3a753babc935f94743a62097dd61bcc3a`;
+- technical head `3bfba40c5168fdf288944497b87885e50555d010`;
+- Return handoff `a30fddd0cc629d90413c73afaf6755bfe1eb2005`;
+- CI `35863095347 / 107187870055`: **103/103 PASS · build PASS · verify PASS**;
+- artifact `10750629040`.
 
-TMB-1E first capacity candidate is **HUMAN_REJECTED**.
+It reuses the HUMAN-PASSED WorldBuilder Chat texture adapter:
+`fetch → Blob → createImageBitmap → THREE.Texture` → `TextureLoader` fallback, sRGB, `flipY=false`.
 
-Georg correction:
-- Surf scale review intentionally shows the same Rig_Medium ActionFigure at 1.0× / 1.8× / 2.0×;
-- capacity comparison must instead show three real rig classes:
-  `ActionFigure / Rig_Medium · Orc Brute / Rig_Large · Warband Orc B / Rig_Legacy`;
-- first downloaded capacity HTML also hit a GLTFLoader embedded-buffer failure;
-- source textures/materials must be visibly preserved.
+Exact maps are pinned for:
+- ActionFigure body + face atlas;
+- Orc Brute A texture.
+Legacy Orc B remains on source named materials.
 
-Repair Pass 1 on Travel Draft PR #37:
-- branch `chatgpt-web/travel-mode-bridge-tmb1e-scale-capacity-2026-09-23`;
-- handoff head `658e95af4963b25c7d3224d4b1d7fb2e43880896`;
-- implementation `360836ce494f76ea4c1b3133d566bd3b39e14970`;
-- evidence head `bb8541267723ba9d980650735c5dcc437e36736d`;
-- CI `35860054421 / 107177777296`: **102/102 PASS · build PASS · verify PASS**;
-- Medium/Large embedded textures audited;
-- Legacy Orc B assembled via existing Resident-Atlas six-bone rule and source named materials;
-- Legacy embedded buffer bypasses the failed nested FileLoader path via exact in-memory GLB packing;
-- capacity uses the 2.0× rider candidate without equal-height normalization;
-- Cloudflare remains deferred.
+Missing Chat-host texture decode is now non-fatal; the scene stays visible and reports `HOST_TEXTURE_LIMITATION`.
 
-Exactly one next gate: **GEORG HUMAN RE-REVIEW · repaired three-rig Capacity HTML.**
+Exactly one next gate:
+**GEORG HUMAN RE-REVIEW · Repair Pass 2 three-rig Capacity HTML.**
 
-TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD**.
+This is the second repair pass. Same-gate failure again => STOP + failure-recovery export; no Repair Pass 3.
 
-Racer stabilization remains a separate lane.
+TMB-2 remains HOLD.
 
 ## 2026-09-23 · ToolBox / WorldBuilder / Orc Band current routing
 
