@@ -10,6 +10,12 @@ Repository:
 Branch:
 `chatgpt-web/claude-coworker-ws0-onboarding-2026-09-23`
 
+Draft PR:
+`#187`
+
+Metadata checkpoint before final Return update:
+`df3ae2ebe10972a85c8a3c9b389b42ed843e5624`
+
 Owner folder:
 `skills/chat/workflows/KFB_CLAUDE_COWORKER_WS0_2026-09-23/`
 
@@ -58,14 +64,22 @@ R2: shared inline editor review pending.
 
 These are snapshot pointers only. Coworker must refresh them before acting.
 
-## Files added
+## Changed files
 
+Central routing:
+- `skills/chat/START_HERE.md`
+- `skills/chat/CHANGELOG.md`
+- `kfb-hub/index.html`
+
+WS0:
 - `START_HERE.md`
 - `OPERATING_CONTRACT.md`
 - `WORKSPACE_STRUCTURE.md`
 - `WORKFLOWS.md`
 - `REVIEW_HTML_SOP.md`
 - `CURRENT_SPRINTS.md`
+- `CHANGELOG.md`
+- this `RETURN.md`
 - `templates/CODE_REVIEW.md`
 - `templates/INTEGRATION_PROPOSAL.md`
 - `templates/SLICE_CARD.md`
@@ -73,8 +87,8 @@ These are snapshot pointers only. Coworker must refresh them before acting.
 - `reviews/README.md`
 - `integration/README.md`
 - `returns/README.md`
-- `CHANGELOG.md`
-- this `RETURN.md`
+
+Total PR file count before this final Return update: **18**.
 
 ## Evidence
 
