@@ -63,7 +63,7 @@ h1{font-size:15px;letter-spacing:.06em;margin:0 0 2px}
 </style>
 </head>
 <body>
-<!-- REVIEW COPY · source blob 188d5b46e34407c3800edeb2b896d3cf0cf93925 · edit-layer blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 · sculpt blob 1083e8b77b9943ae8e2dce707329eef03398e948 · local review only · not public -->
+<!-- REVIEW COPY · source blob 188d5b46e34407c3800edeb2b896d3cf0cf93925 · edit-layer blob c15a200ba8615d55f9d3ae26616e0a8ceba8dc01 · sculpt blob 182f7c42b709a00547a16cfe0040d5d636bdb680 · local review only · not public -->
 <div id="app">
   <aside id="side">
     <h1>KFB TOOLBOX · WORLDBUILDER</h1>
@@ -478,7 +478,7 @@ function makeEditLayer(viewer, canvas, opts = {}) {
 }
 
 /* END BUNDLED TOOLBOX EDIT LAYER */
-/* BEGIN BUNDLED WORLDBUILDER TERRAIN SCULPT · blob 1083e8b77b9943ae8e2dce707329eef03398e948 */
+/* BEGIN BUNDLED WORLDBUILDER TERRAIN SCULPT · blob 182f7c42b709a00547a16cfe0040d5d636bdb680 */
 /* KFB WorldBuilder · WB2 continuous terrain sculpt layer
    Owner: WorldBuilder terrain authoring.
    Scope: deterministic additive heightfield strokes only.
@@ -506,8 +506,9 @@ function brushWeight(distance, radius) {
   const d = Math.max(0, finite(distance, 0));
   if (d >= r) return 0;
   const t = clamp(d / r, 0, 1);
-  const q = 1 - t * t;
-  return q * q;
+  // 1 - quintic smoothstep: value, first derivative and second derivative
+  // all meet the zero outside-kernel continuously at t=1 (C2 boundary).
+  return 1 - t * t * t * (t * (t * 6 - 15) + 10);
 }
 
 function makeStroke(mode, radius, strength) {
