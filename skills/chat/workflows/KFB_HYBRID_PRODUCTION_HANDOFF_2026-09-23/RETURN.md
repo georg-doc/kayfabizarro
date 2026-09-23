@@ -79,3 +79,28 @@ Current handoff head before this metadata write:
 
 Base:
 `main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
+
+
+## Opus 5.5 / animation / WSA preparation
+
+### Für Georg
+Der bestehende load-bearing Coworker-Chat soll erhalten bleiben.
+
+Empfohlene Migration:
+1. aktueller Opus 4.8 schreibt/committet einen kleinen MODEL_SWITCH_CHECKPOINT;
+2. im selben Chat auf Opus 5.5 wechseln;
+3. den vorbereiteten Recovery-Prompt einfügen;
+4. Opus 5.5 liest GitHub + aktuellen lokalen Workspace und setzt den laufenden ToolBox-Build fort.
+
+### Files
+- `COWORKER_OPUS55_MODEL_SWITCH.md`
+- `PERFORMANCE_ANIMATION_PILOT.md`
+- `COWORKER_WSA_SYNC_BRIDGE.md`
+
+### Animation
+The new performance pilot does not replace the existing animation skills.
+It adds task mechanics for instrument/prop actions and keeps runtime triggers separate from authored Blender clips.
+
+### WSA
+WSA remains prepared but inactive.
+No workshop should start until Coworker returns a CLOSED packet with a concrete WSA-only capability.
