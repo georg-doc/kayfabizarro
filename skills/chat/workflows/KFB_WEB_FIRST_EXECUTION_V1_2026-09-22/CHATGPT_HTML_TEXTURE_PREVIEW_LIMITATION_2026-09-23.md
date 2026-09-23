@@ -1,6 +1,6 @@
 # ChatGPT attached HTML previews · WebGL texture preview limitation
 
-Status: **OBSERVED HOST-SURFACE LIMITATION · SOURCE ASSET NOT INVALIDATED**  
+Status: **OBSERVED HOST-SURFACE LIMITATION · SOURCE ASSET NOT INVALIDATED · WORKAROUND HUMAN-VERIFIED**  
 Date: 2026-09-23  
 Scope: KFB zero-install HTML review artifacts opened directly from ChatGPT attachments.
 
@@ -42,6 +42,29 @@ For an explicitly known source texture:
 - preserve the original source path and commit in visible review diagnostics.
 
 This is a review-host adapter. It must not mutate the Registry, source asset, Resident Atlas or game runtime.
+
+## Human-verified workaround · WB1 R1
+
+Georg reopened the repaired WorldBuilder R1 HTML directly from ChatGPT and confirmed: **the Caveman texture is visible**.
+
+The successful review-host adapter is therefore a verified fallback for future KFB ChatGPT HTML/3D reviews when the source texture is known:
+
+1. keep the original GLB/GLTF and its material ownership unchanged;
+2. pin the exact donor texture path + immutable commit;
+3. try `fetch(url) → Blob → createImageBitmap() → THREE.Texture`;
+4. fall back to `THREE.TextureLoader`;
+5. for glTF-style color maps use `THREE.SRGBColorSpace` and `flipY = false`;
+6. clone review-only materials and bind the exact donor map there;
+7. show the texture source path in the review diagnostics;
+8. never promote this adapter into Resident Atlas, Registry or consumer runtime unless a separate runtime gate proves that the product needs it.
+
+Verified WB1 review blob:
+`dd6379815295adf07bdf0132210e1f7e6c9a3b49`
+
+Human result:
+**TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**
+
+This validates the adapter, not a universal root-cause theory about ChatGPT's renderer.
 
 ## Current concrete examples
 
