@@ -100,21 +100,39 @@ Briefs:
 
 ## CURRENT ADDITIVE · Shared Inline 3D Edit Layer · 2026-09-23
 
-The Dungeon Room Study S21/S22 object editor was already extracted on its second host, Resident Atlas S7 / Rig-Werkstatt. WorldBuilder is now its third real host, so that existing module is promoted byte-identically into ToolBox:
+The Dungeon Room Study S21/S22 object editor was extracted on its second host, Resident Atlas S7 / Rig-Werkstatt, then promoted into ToolBox for WorldBuilder as the third host.
 
 `lib/edit-layer.js`
 
-Exact promoted/donor Git blob:
+**R2 human result: ACCEPTED.**
+
+Accepted R2 base blob:
 `c97b3537f71e939176f3ae5ce7ae83feabb7918f`
 
-Current capabilities:
+Current R3 uniform-scale candidate blob:
+`c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
+
+Accepted capabilities:
 - object-attached mini-menu;
 - pointerup visible-only picking;
 - one shared TransformControls owner;
-- move / rotate / scale;
+- move / rotate / free Scale gizmo;
 - drop to visible surface below;
 - world/local axes;
 - snap;
 - shared-gizmo borrow/release seam.
 
-WorldBuilder Draft PR #186 is the current third-host candidate. R1 terrain/Resident foundation is HUMAN PASS; the next gate is the shared mini-menu HTML review. This shared layer owns selected-object authoring only; terrain, movement, runtime collision, assets and game persistence remain with their existing owners.
+R3 proposal adds a simple uniform size gesture:
+- smaller `×0.8`;
+- larger `×1.25`;
+- inverse defaults;
+- clamp `0.05 … 20`;
+- existing proportions preserved;
+- free Scale remains available.
+
+Proposal:
+`_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`
+
+WorldBuilder Draft PR #186 contains the first R3 host candidate. Its six-field mini-menu groups `−/+` as one Scale field and keeps `S` for free Scale. The shared layer still owns selected-object authoring only; terrain, movement, runtime collision, assets and host persistence remain with their existing owners.
+
+Current gate: Georg reviews uniform smaller/larger in the WorldBuilder Chat HTML before general rollout to other ToolBox hosts.
