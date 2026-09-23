@@ -512,3 +512,11 @@ Current router:
 `tools/KFB-ToolBox/_handover/RACER_MVP_STABILIZATION_2026-09-23/START_HERE.md`.
 
 Exactly one next gate: **RSTAB-1 HUMAN GEOMETRY GATE** — visible tunnel/ground-cut + support review. Only human ACCEPT advances to RSTAB-2.
+
+
+Zero-install human gate is now packaged as kayfabizarro Draft PR #178 with **20/20 C-3 `lab-v9` blob parity**. Intended review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`.
+
+Cloudflare source commit: `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`. Hub source: `a075934bb5f8628535b673459b0b9ddcc0af5312`; main Hub metadata: `fd7680034171f9a327936e9ee7fa2a3cc1f6b4dc`.
+
+Public verification is **UNKNOWN / PENDING** because this execution environment cannot resolve/access `pages.dev`. Local HTTP is only a developer fallback; do not present it as the human acceptance link. RSTAB-2 remains blocked until human ACCEPT.
