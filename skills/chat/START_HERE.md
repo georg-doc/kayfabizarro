@@ -822,3 +822,16 @@ Normal human loop remains:
 `GitHub checkpoint → Review HTML in chat → Georg feedback`.
 
 No Cloudflare is required for routine Coworker review/iteration.
+
+
+## 2026-09-23 · Coworker / integration recovery
+
+For the current long-running ToolBox / WorldBuilder / Racer / Travel coordination chat, recover from:
+
+`skills/chat/workflows/KFB_CLAUDE_COWORKER_WS0_2026-09-23/RECOVERY.md`
+
+Future WSA/Work integration sessions use:
+
+`skills/chat/workflows/KFB_CLAUDE_COWORKER_WS0_2026-09-23/WSA_INTEGRATION_WORKSHOP_SETUP.md`
+
+Coworker/Web handle ordinary review and bounded integration first. WSA is reserved for an explicitly named missing local/cross-repo capability.
