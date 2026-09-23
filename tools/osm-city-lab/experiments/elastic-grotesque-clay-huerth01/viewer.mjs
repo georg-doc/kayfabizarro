@@ -63,11 +63,11 @@ function makeViewer(canvas,mode){
   function frame(target=defaultTarget,dist=215,pitch=.55,yaw=.72){controls.target.copy(target);camera.position.set(target.x+Math.sin(yaw)*Math.cos(pitch)*dist,target.y+Math.sin(pitch)*dist,target.z+Math.cos(yaw)*Math.cos(pitch)*dist);camera.lookAt(target);controls.update();}
   function focus(b){const c=centroid(b.footprint);frame(new THREE.Vector3(c.x,b.heightM*.42,c.z),58+Math.max(0,b.heightM-10)*2,.42,.72);}
   function reset(){frame(defaultTarget,215,.55,.72);}
-  function isolate(id,on){for(const [bid,g] of buildingRoots)g.visible=!on||bid===id;}
+  function isolate(id,on){for(const [bid,g] of buildingRoots)g.visible=!on||bid===id;}\n  function visibleCount(){let n=0;for(const g of buildingRoots.values())if(g.visible)n++;return n;}
   function resize(){const r=canvas.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(1,r.width)/Math.max(1,r.height);camera.updateProjectionMatrix();}
   new ResizeObserver(resize).observe(canvas);resize();reset();
   (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
-  return {mode,focus,reset,isolate};
+  return {mode,focus,reset,isolate,visibleCount,isWebGL2:renderer.capabilities.isWebGL2};
 }
 const viewers=MODES.map(m=>makeViewer($('#'+m),m));
 const select=$('#building'),isolate=$('#isolate'),meta=$('#meta');let isolated=false;
@@ -81,4 +81,4 @@ function update(){
 select.onchange=update;
 isolate.onclick=()=>{const b=byId.get(select.value);if(!b)return;isolated=!isolated;isolate.classList.toggle('active',isolated);isolate.textContent=isolated?'SHOW BLOCK':'ISOLATE SOURCE';viewers.forEach(v=>v.isolate(b.id,isolated));};
 $('#reset').onclick=()=>{select.value='';update();};update();
-window.__KFB_ELASTIC_HUERTH01__=Object.freeze({report:()=>({schema:'kfb.elastic-grotesque-clay.huerth01/0.1-candidate',sourceCity:city.id,sourceBuildings:buildings.length,sourceRoadParts:roads.length,modes:[...MODES],currentGrotesqueDonor:'src/style/cartoon-city.js',elasticCollisionMutation:false,humanAcceptance:'PENDING'})});
+window.__KFB_ELASTIC_HUERTH01__=Object.freeze({report:()=>({schema:'kfb.elastic-grotesque-clay.huerth01/0.1-candidate',sourceCity:city.id,sourceBuildings:buildings.length,sourceRoadParts:roads.length,modes:[...MODES],currentGrotesqueDonor:'src/style/cartoon-city.js',elasticCollisionMutation:false,selectedId:select.value||null,isolated,visibleCounts:Object.fromEntries(viewers.map(v=>[v.mode,v.visibleCount()])),webgl2:Object.fromEntries(viewers.map(v=>[v.mode,v.isWebGL2])),humanAcceptance:'PENDING'})});
