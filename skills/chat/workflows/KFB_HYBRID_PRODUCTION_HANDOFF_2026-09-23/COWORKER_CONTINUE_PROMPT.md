@@ -52,14 +52,14 @@ Do not ask Georg to approve the internal Goth-Girl checkpoint unless a real bloc
 
 ## After ToolBox
 
-Do one current-lane check-in using the new Hybrid Production Handoff.
+Do one current-lane check-in using the new Hybrid Production Handoff and include Hürth PR #194.
 
 Important current facts:
 - Travel TMB-2 = accepted at 400 ms; TMB-3 HOLD;
 - Racer R3d = TUNE; exact R3d HTML now persisted; Vehicle Grounding HOLD; Anatomy Foundation next;
-- Blender Clown proof exists; Warband authoring is active;
+- Blender Clown proof exists; Warband authoring is active. Read-only Dropbox recon shows an ORB-P1 **v4 candidate-only** package, but treat it as GitHub Return pending until the Blender owner persists it;
 - Curtain #189 and Billboard #188 recovery prompts are ready;
-- current cartoon-form-language snapshot records the verified KFB sources and the Rocko/Aardman direction, while the parallel-chat export remains pending.
+- Hürth form-language Draft PR #194 is now the source-backed current POC: 16/16 browser PASS, 3/3 WebGL2, human visual review pending, no public Stage.
 
 Then propose exactly **one next MVP**.
 
