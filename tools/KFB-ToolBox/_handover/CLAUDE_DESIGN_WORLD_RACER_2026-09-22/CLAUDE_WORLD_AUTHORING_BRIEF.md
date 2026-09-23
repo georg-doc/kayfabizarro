@@ -964,3 +964,43 @@ Ask Georg only:
 **Can I now build and correct a small world directly in the 3D scene without falling back into coordinate-guessing or rebuilding source objects?**
 
 If the answer is no, fix the authoring workflow before expanding the world.
+
+
+## WhackMan-origin WorldDesign Lab · current visual donor
+
+New current intake:
+
+`tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/`
+
+Ownership:
+
+**WHACKMAN-ORIGIN DONOR · NOT A NEW TOOLBOX PROJECT · NOT A WORLD OWNER**
+
+Read its:
+- `docs/WORLDDESIGN_LAB_HANDOVER.md`
+- `deliverables/wd-light.js`
+- `deliverables/wd-look.js`
+- `deliverables/wd-view.js`
+- `deliverables/wd-terrain.js`
+- `deliverables/wd-voxel.js`
+
+before building another look/material/environment dashboard.
+
+Useful existing grammar:
+- BANK: SOURCE vs Derek vs Normalen-Look vs Rauheits-Look;
+- WELT: foreground / midground / background / terrain layers;
+- WhackMan light profile kept orthogonal to material/look;
+- layer-specific Look presets;
+- story palette;
+- day/evening/night cycle;
+- natural vs Voxel-Zone-S2 terrain comparison;
+- existing sky donor switching.
+
+Do not treat WELT mode as a World Recipe.
+
+Do not promote one visual preset to canon without Georg.
+
+WorldBuilder should reuse/adapt this comparison grammar while structural authoring remains owned by World Recipe / Scene Patch / source-object workflows.
+
+Detailed classification:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WHACKMAN_WORLDDESIGN_LAB_DONOR_2026-09-23.md`
