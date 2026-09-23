@@ -9,7 +9,8 @@
 > Fresh-chat execution:
 > `TOOLBOX_SCENE_AUTHORING_FRESH_WEB_START_2026-09-23.md`
 >
-> Current gate: **WB1-TERRAIN-SCENE-01** — continuous terrain + one real Resident Atlas actor + one existing compatible clip + prop placement + save/reload.
+> Current gate: **WB1-TERRAIN-SCENE-01 · R1 FEEDBACK REPAIRED · HUMAN RE-REVIEW** — continuous terrain + real Resident Atlas Caveman/texture + existing clip + prop placement + free Character Y + save/reload + non-overlay review layout.
+> Current evidence: **26/26 + 4/4 + 5/5 PASS**; embedded browser self-test **15 prepared / 0 executed**. Cloudflare remains HOLD.
 > The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
 
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
@@ -27,7 +28,7 @@ Read:
 `TERRAIN_FIRST_RESET_2026-09-23.md`
 
 Next gate:
-**WB1-TERRAIN-EDITOR-01**
+**WB1-TERRAIN-SCENE-01 · repaired local HTML human re-review**
 
 Primary external terrain/editor donor:
 `ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` · MIT.
