@@ -394,3 +394,23 @@ If a Work slice becomes source research or visual tweaking, split it back out to
 **W0 only: reconcile current World / Racer / Combat / Curtain / Story-Tactical lanes from GitHub and issue one integration lock.**
 
 Do not implement Combat, World or MVP in the same W0 check-in.
+
+## WorldBuilder WB2 terrain-sculpt follow-up · 2026-09-23
+
+Georg accepted the current WB1 scene-authoring foundation and requested a later continuous-terrain modelling layer: low hills / rises / depressions authored directly into the procedural heightfield, without voxel/hex/tile terrain.
+
+Current proposal:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`
+
+WSA should treat this as future-sprint intake, not as permission to replace current owners.
+
+Key constraints:
+- procedural base remains reversible;
+- sculpting is an additive Raise/Lower stroke layer;
+- reuse the shared `tools/KFB-ToolBox/lib/edit-layer.js` for object editing;
+- terrain sculpt mode owns only terrain ray/brush/strokes;
+- no voxel/hex terrain substitution;
+- no second canvas-wide picker;
+- first proof is Raise/Lower + radius/strength + smooth falloff + Undo/Clear + Save/Reload.
+
+Current WB1 R3 uniform-size review remains a separate small human gate.
