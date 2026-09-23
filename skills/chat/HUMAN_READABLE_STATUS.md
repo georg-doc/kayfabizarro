@@ -88,3 +88,21 @@ Do not hide:
 - conflicts.
 
 Translate them rather than omitting them.
+
+
+## Direct clickable review link
+
+Whenever Georg is asked to inspect or approve a visual/browser result, the same chat reply must contain a **direct clickable review artifact link**.
+
+Do not say only:
+- "open PR #186";
+- "go to the Hub";
+- "R2 Human Pass needed";
+- "find the review file under this path".
+
+Say:
+- what Georg should check;
+- provide the directly clickable `REVIEW.html` attachment/link in that same reply;
+- then optionally add the PR/source link underneath.
+
+If the review artifact cannot be attached directly, state that clearly and create the smallest zero-install chat artifact first. Do not make Georg hunt through GitHub or the Hub for the file.
