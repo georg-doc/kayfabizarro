@@ -156,3 +156,26 @@ GitHub is the synchronization bus.
 There is no assumed hidden chat-to-chat shared state.
 
 Do not start WSA yet unless Coworker returns a CLOSED packet with a named WSA-only capability.
+
+
+## Current operations surfaces
+
+### KFB Hub
+Long-lived navigator/history.
+
+### KFB Production Desk
+Current operational mirror:
+`PRODUCTION_DESK_V0_BRIEF.md`
+
+Coworker refreshes its snapshot from GitHub.
+
+### Shared 3D review scene
+`REVIEW_SCENE_BASE_V1.md`
+
+Use this to keep Webchat review conditions repeatable.
+
+### VFX/SFX lane
+`VFX_SFX_CONSOLIDATION_01.md`
+
+VFX first.
+SFX follows after donor-family review.
