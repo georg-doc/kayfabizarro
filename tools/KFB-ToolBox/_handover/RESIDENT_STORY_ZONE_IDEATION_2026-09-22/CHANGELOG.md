@@ -478,3 +478,35 @@ A second Permitless-Funk-family track may add open-road/cruising atmosphere for 
 
 ### IMPLEMENTATION STATUS
 Concept only. No BPM/loop metadata, visualizer runtime, audio trim/crossfade edit, Legacy visual source proof or stems were produced.
+
+
+## 2026-09-23 · The KayfaBizarros identity + Tourbus donor
+
+### USER DECISION
+- Orc Band working name is now **The KayfaBizarros**.
+- Exact bouncing Legacy bandleader is source-pinned:
+  `character_orcB.gltf`.
+- Exact Tourbus donor is source-pinned:
+  `Truck Armored by Quaternius - VvX8nmoCN5.glb`.
+- Signature candidate remains:
+  `Rubbish Groove 2min A extend 01.mp3` / **Permitless Funk**.
+
+### SOURCE EVIDENCE
+- `character_orcB.gltf` at user-pinned commit `e0037d79...`, blob `2dfd0bf...`.
+- Truck Armored at user-pinned commit `e0037d79...`, blob `1e25be95...`.
+- current Asset Registry also records Truck Armored as exact repo GLB with embedded dependencies.
+- same truck already exists in Vehicle / Cartoon Vehicle Deformer donor code as `truck-armored`.
+- selected Permitless Funk MP3 exists on current main with blob `368eb5ae...`, size 3,034,265 bytes.
+- Dropbox read-only search confirms local mirrors of the RoadTrip JukeBox v2 folder, selected MP3 and Truck Armored source; no Dropbox mutation was performed.
+
+### FIRST TOURBUS SCOPE
+- parked scenic landmark only;
+- may visually anchor the roadside/open-field band tableau;
+- no driving, vehicle physics or custom WorldBuilder vehicle implementation in v0;
+- later deformation/rigging must reuse the current Vehicle owner.
+
+### UPDATED POC COMPOSITION
+`parked Tourbus + surreal stone/campfire focal point + Large Brute drums + Medium Orc guitar + character_orcB bouncing bandleader + Permitless Funk`.
+
+### STATUS
+Concept/donor pinning only. No Tourbus runtime, band branding/deformation, driving, loop metadata or public Stage built in this checkpoint.
