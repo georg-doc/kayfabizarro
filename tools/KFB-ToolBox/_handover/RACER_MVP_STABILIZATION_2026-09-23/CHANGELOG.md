@@ -158,3 +158,29 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**.
+
+
+## 2026-09-23 · R3c closed track body + rounded frames
+
+- R3b remained TUNE: visual ground/track overlap, ambiguous flat-band curve anatomy, unfinished underside, boxy/gapped TARCH frames;
+- Dropbox C-3 owner/donor documentation re-read; no Dropbox mutation;
+- project-owned `cologne-landmarks.v1.js` reused as visual implementation donor for continuous smooth TubeGeometry;
+- track presentation changed to one cyclic closed `track-body`;
+- road + shoulders + side skirts + complete underside now share one cross-section;
+- old primary `track-bed` and primary shoulder ribbons removed;
+- old partial `structure-soffit` / underside skirts removed;
+- tested RSTAB-1 `structurePillarSpan()` salvaged into current branch;
+- supports terminate at local banked soffit endpoints; former hotspots 166/179/187 covered;
+- support cylinder radial segments 10→14;
+- TARCH frames changed from BoxGeometry post/post/lintel to one rounded CurvePath / TubeGeometry frame;
+- tube radius 0.48 m; corner radius 1.15 m; 10 radial segments; bases remain `u=1.30`;
+- final runtime/test head `b48ba46bb23e656cad968cb347bde7aa4bd445c4`;
+- final CI runs `35874800062` and `35874807681`: SUCCESS;
+- aggregate **17/17 PASS · 0 fail · 0 skipped**;
+- Race PR #33 current docs head `f8f29f7b742e0b18fd9887398cd6bb4b7c320a32`;
+- R3c review artifact `KFB_Racer_TARCH0_R3c_track_body_rounded_frames_review.html`;
+- SHA-256 `36a363efd5412b41f9b8bea26998e32a16a1965b9335000ed8b82d6f795ff0f0`;
+- Cloudflare remains deferred.
+
+Exactly one next gate:
+**R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**.
