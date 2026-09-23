@@ -408,3 +408,42 @@ The Orc Band packet is therefore **PREPARED FUTURE FIXTURE**, not a current Clau
 Documentation / donor recovery / recipe / future implementation brief only.
 
 No Orc Band runtime, Offica patrol runtime, spatial-audio integration, Combat handoff, browser test or public Stage was built.
+
+
+## 2026-09-23 · Music collectibles + Backpack HUD + band visualizer
+
+### USER DIRECTION
+- Orc Band songs can be earned/discovered as demo tapes through listening/dancing, gifts, loot/chests or later trade.
+- Unlocked tracks should become part of Session/Journey/Fractal Almanac and remain playable on foot, in dungeons, flight, cars and Race.
+- Player Backpack should expose a bounded **20-slot** physical inventory overlay.
+- Songs should not consume those 20 physical slots.
+- Personal Radio should support favorites / heavy rotation / random or manual playback.
+- Orc Band should visually sync drums/guitar/body-groove to the current music.
+- Stems are optional later, not required for the first visualizer proof.
+
+### SOURCE ALIGNMENT
+- Existing canonical `jukebox.json` has 10 tracks.
+- Existing `travel-audio.js` already exposes shared Jukebox/Music Bus lifecycle plus `beat`, `level`, `pulse`, `bpm`, `setTrack` and ducking.
+- Current RoadTrip JukeBox v2 folder contains 26 entries and six plausible Orc Band candidates.
+- Current KFB asset pool contains a real Car Radio with tape player and multiple cassette/tape models.
+- Two Michael-Fuchs tape filenames are exact duplicate blobs and should be treated as one donor identity.
+
+### PROPOSAL
+- Separate `Track Unlock` from optional physical `Cassette Artifact`.
+- Track Unlock persists in Almanac/Journey and never consumes Backpack capacity.
+- Backpack stays 20 physical transferable/access-object slots, suggested as a 4×5 overlay grid.
+- Live Band audio is spatial/diegetic; Radio audio is global. Never run both at full volume simultaneously.
+- First policy: duck/fade global Radio inside live music zones and restore on exit.
+- First visualizer uses full-mix beat/level/pulse rather than stems.
+- Brute: alternating beat-synced procedural drum strikes.
+- Medium Orc: procedural guitar strum from shared musical clock.
+- Legacy frontman: microphone held + beat/body groove + seeded hype gestures.
+- Add per-track loop metadata rather than rejecting imperfect two-minute renders.
+- Spend Suno stem-download credits only after one signature track is selected and full-mix sync proves insufficient.
+
+### MACHINE-READABLE
+Added:
+`MUSIC_COLLECTIBLE_JUKEBOX_v0.json`
+
+### IMPLEMENTATION STATUS
+Concept/source alignment only. No new Jukebox catalog promotion, Backpack HUD runtime, track-unlock persistence, loop editing, audio listening analysis, stems, visualizer runtime or public Stage was built.
