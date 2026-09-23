@@ -76,6 +76,19 @@ Repairs in the canonical source:
 Global review-host note:
 `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/CHATGPT_HTML_TEXTURE_PREVIEW_LIMITATION_2026-09-23.md`
 
+## Human R1 re-review · texture result
+
+Georg opened the repaired ChatGPT-attached R1 HTML and confirmed:
+
+**TEXTURE_VISIBLE_IN_CHAT_ATTACHMENT · PASS**
+
+This human result validates the review-host texture adapter for this WB1 artifact. It does **not** prove a universal ChatGPT renderer root cause and does not change the Resident Atlas/source asset.
+
+Remaining R1 human checks:
+1. Character green Y handle moves vertically without snapping back;
+2. palette/control area does not cover the 3D field of view;
+3. save/reload preserves the authored Character Y after those checks.
+
 ## Tests actually run after R1 repair
 
 ### Source static + repair contract
