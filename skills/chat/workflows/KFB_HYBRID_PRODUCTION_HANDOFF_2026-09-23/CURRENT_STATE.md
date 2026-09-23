@@ -274,3 +274,56 @@ Current SFX donor:
 Next gate:
 **VFX-01 Review Bank first.**
 SFX implementation waits for VFX donor-family selection.
+
+
+## Resident performance / ORB-P1
+
+Current authoring PR:
+`#195`
+
+Head:
+`39b7781f96a962dfd9ddd8777c5951f37d36ffe0`
+
+Human:
+- leader = accepted;
+- guitarist = accepted;
+- drummer v1–v4 = rejected;
+- v5 = exact v0 restoration baseline only.
+
+Current ORB decision:
+**ORB-D1 reference-first.**
+
+Before another drummer build:
+render same-rig KayKit Rig_Large combat candidates unchanged on Orc Brute and let Georg choose the stroke.
+
+Use:
+`RESIDENT_PERFORMANCE_NEXT_2026-09-23.md`
+
+External motion libraries remain fallback research, not first step.
+
+### Dance
+
+Existing Resident Atlas / Performance Suite dance route is now explicit.
+
+DANCE-D1 may run in parallel:
+- Rig_Medium only;
+- GothGirl + Orc Raider QA;
+- source audition first;
+- one clean authored reusable groove;
+- no automatic Rig_Medium → Rig_Large retarget.
+
+Known KayKit P1 candidate:
+`Skeletons_Taunt_Longer`
+is binding-proven but not visually accepted as dance.
+
+A separate Quaternius Mech has a literal `Dance` clip, but it is a different rig and is not a KayKit dance donor.
+
+### Living Document v1.3
+
+The supplied modular-animation Living Document has been audited:
+`ANIMATION_LIVING_V13_AUDIT_2026-09-23.md`
+
+Status:
+**MIXED / NOT CANONICAL**
+
+Useful modular ideas are retained; wrong bone list, generic BPM, universal joint limits and unmeasured contact thresholds are rejected.
