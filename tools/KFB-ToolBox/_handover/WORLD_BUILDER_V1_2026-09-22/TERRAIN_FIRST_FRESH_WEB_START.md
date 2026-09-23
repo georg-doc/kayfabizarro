@@ -1,5 +1,12 @@
 # Paste-ready · WorldBuilder Terrain-First Scene Editor · Fresh Web Chat
 
+> **SUPERSEDED FOR EXECUTION · 2026-09-23**
+>
+> Use instead:
+> `TOOLBOX_SCENE_AUTHORING_FRESH_WEB_START_2026-09-23.md`
+>
+> Terrain-First remains valid, but the first useful gate must also prove the Resident Atlas + existing-animation scene seam.
+
 @GitHub
 
 Read current GitHub versions of:
