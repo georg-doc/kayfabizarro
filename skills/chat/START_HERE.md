@@ -727,14 +727,18 @@ Current first gate: **WB1-TERRAIN-SCENE-01**.
 
 Current implementation state on Draft PR #186:
 - R1 functional foundation is **GEORG HUMAN PASS**: Caveman texture, Character Y, Character-Y save/reload and palette/FOV;
+- R2 shared inline editor is **GEORG HUMAN PASS**: object mini-menu, Move / Rotate / free Scale / Drop / World-Local / Close and Save/Reload transform roundtrip;
 - canonical source: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`;
 - local review artifact: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`;
-- shared edit owner promoted to `tools/KFB-ToolBox/lib/edit-layer.js`, exact donor blob `c97b3537f71e939176f3ae5ce7ae83feabb7918f` from Resident Atlas S7, itself derived from Dungeon Room Study S21/S22;
-- WorldBuilder now uses the object-attached mini-menu: Move / Rotate / Scale / Drop / World-Local / Close + shared snap;
-- scale is part of the scene transform and Save/Reload contract;
-- R2 shared-editor evidence: **32/32** static/integration + **4/4** exact runtime source paths + **1/1** exact module identity;
-- embedded browser self-test: **20 assertions prepared / 0 executed**;
-- no automated browser PASS or mini-menu human PASS claimed yet;
+- shared edit owner: `tools/KFB-ToolBox/lib/edit-layer.js`;
+- accepted R2 base blob: `c97b3537f71e939176f3ae5ce7ae83feabb7918f`;
+- R3 uniform-scale candidate blob: `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`;
+- R3 proposal: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`;
+- WorldBuilder R3 menu keeps Move / Rotate / Drop / World-Local / Close and groups **−/+ uniform size** into one Scale field; keyboard `S` keeps the accepted free Scale gizmo;
+- defaults: smaller ×0.8, larger ×1.25, clamp 0.05…20;
+- R3 evidence: **26/26** static/integration + **4/4** exact runtime source paths + **1/1** shared-module syntax;
+- embedded browser self-test: **22 assertions prepared / 0 executed**;
+- no automated browser PASS or R3 uniform-scale human PASS claimed yet;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: Georg reviews the new shared-editor Chat HTML mini-menu and transform roundtrip. Claude Design, Orc Band integration, Cloudflare and Live remain HOLD until that gate.
+Exactly one next WorldBuilder gate: Georg reviews uniform smaller/larger on the R3 Chat HTML, including repeated size changes, retained free `S` Scale and Save/Reload. General rollout of the new size gesture to other ToolBox hosts remains HOLD until that gate.
