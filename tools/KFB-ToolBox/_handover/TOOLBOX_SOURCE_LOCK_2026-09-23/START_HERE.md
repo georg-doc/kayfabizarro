@@ -89,3 +89,17 @@ Only after that source gate passes may the Stage-First shell be connected to tho
 ## One next gate
 
 **TB-SOURCE-LOCK-01 · isolated source review before any further consolidation.**
+
+
+## Fresh Web execution
+
+Use:
+`FRESH_WEB_START.md`
+
+The source review now distinguishes three FrizzleBob lineages explicitly:
+
+- `FrizzleBob · Driver Graft` — current default;
+- `FrizzleBob · Cube-Pet` — legacy Pet/Patch Studio actor with its own saved config;
+- `FrizzleBob · Combat Platformer` — legacy Combat-v3-era Kenney Platformer actor.
+
+Do not substitute one for another.
