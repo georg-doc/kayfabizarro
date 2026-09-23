@@ -2,6 +2,14 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-23 · ToolBox source review brief finalized
+
+### SOURCE CORRECTION
+The source-review gate now distinguishes three FrizzleBob lineages: current Driver Graft, legacy Cube-Pet, and legacy Combat Platformer (Kenney Platformer body + Pet-Studio face).
+
+### ROUTING
+Added `TOOLBOX_SOURCE_LOCK_2026-09-23/FRESH_WEB_START.md`. The next Web chat builds only `TOOLBOX_SOURCE_REVIEW.html`; no combined ToolBox UI resumes until Georg confirms the real actor sources and Studio roster.
+
 ## 2026-09-23 · ToolBox source-lock correction after Claude Round 1
 
 ### HUMAN REVIEW FAIL
