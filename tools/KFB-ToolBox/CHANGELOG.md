@@ -2,6 +2,23 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-23 · Texture workaround consumed · no new ToolBox chat
+
+### VERIFIED UPSTREAM FIX
+PR #186 / head `e0a9327bcc6406ec3e093f57b14ec81569988406` documents and human-verifies the ChatGPT attachment texture adapter:
+`fetch → Blob → createImageBitmap → THREE.Texture` with `TextureLoader` fallback.
+
+Georg confirmed the repaired Caveman texture is visible in the ChatGPT HTML attachment.
+
+### CORRECTION
+ToolBox must consume this review-host adapter where needed instead of opening another texture-debug chat or re-investigating the same limitation.
+
+### CURRENT USE OF RESIDENT SETS
+Goth Girl, Orc Warband and Animatronic remain useful fixtures, but primarily to expose the remaining import/export issues: source resolution, multi-part assembly, pose, grounding, attachments, animation and export/reload fidelity.
+
+### EXECUTION
+Continue in the current ToolBox chat. `FRESH_WEB_START.md` is recovery-only.
+
 ## 2026-09-23 · Cross-chat 3D preview portability failure
 
 ### HUMAN OBSERVATION
