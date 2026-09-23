@@ -413,3 +413,54 @@ SHA-256:
 
 Exactly one next gate:
 **R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**
+
+
+## R3c · closed track body + rounded frames
+
+R3b human review remained **TUNE**.
+
+Human findings:
+- groundbase/track still visually interpenetrated in some review angles;
+- flat bands obscured curve anatomy;
+- underside looked unfinished;
+- TARCH frames showed overlap/gap seams;
+- supports should read rounder/cartoonier.
+
+Use What Works evidence:
+- Dropbox C-3 module/donor owner doc:
+  `/CLAUDE/KFB Stunt Car Race/KFB Cologne Race Option C-3/docs/MODULES_AND_DONORS.md`;
+- project-owned visual donor:
+  `cologne-landmarks.v1.js`;
+- donor strategy: replace hard segmented box chains with continuous smooth TubeGeometry.
+
+Runtime/test head:
+`b48ba46bb23e656cad968cb347bde7aa4bd445c4`
+
+R3c runtime:
+- one cyclic closed `track-body`;
+- road + shoulders + side skirts + full underside;
+- old primary road/shoulder ribbons removed;
+- partial structure soffit/skirts removed;
+- tested RSTAB-1 banked support endpoint helper restored;
+- support pillar radial segments 14;
+- TARCH frames now one continuous rounded TubeGeometry mesh per portal;
+- old BoxGeometry post/post/lintel frame composition removed.
+
+CI:
+- `35874800062 / 107227822852`: SUCCESS
+- `35874807681 / 107227851828`: SUCCESS
+- **17/17 PASS · 0 fail · 0 skipped**
+
+Race Draft PR #33 current docs head:
+`f8f29f7b742e0b18fd9887398cd6bb4b7c320a32`
+
+R3c review:
+`KFB_Racer_TARCH0_R3c_track_body_rounded_frames_review.html`
+
+SHA-256:
+`36a363efd5412b41f9b8bea26998e32a16a1965b9335000ed8b82d6f795ff0f0`
+
+Exactly one next gate:
+**R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**
+
+Cloudflare remains deferred. Vehicle grounding/contact, clamp/jitter, trails and jump/landing remain later.
