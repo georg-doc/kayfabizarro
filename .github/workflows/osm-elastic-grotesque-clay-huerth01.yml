@@ -1,0 +1,42 @@
+name: OSM Elastic Grotesque Clay · Hürth 01
+
+on:
+  push:
+    branches:
+      - chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23
+    paths:
+      - 'tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/**'
+      - 'tools/osm-city-lab/qa/elastic-grotesque-clay-huerth01.mjs'
+      - '.github/workflows/osm-elastic-grotesque-clay-huerth01.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: osm-elastic-grotesque-clay-huerth01-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Hürth 01 · source/block/isolation browser proof
+        run: node tools/osm-city-lab/qa/elastic-grotesque-clay-huerth01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: osm-elastic-grotesque-clay-huerth01-evidence
+          path: osm-elastic-grotesque-clay-huerth01-evidence
+          retention-days: 30
