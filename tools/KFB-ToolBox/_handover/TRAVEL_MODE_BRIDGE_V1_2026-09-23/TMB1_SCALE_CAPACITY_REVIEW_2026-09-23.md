@@ -18,10 +18,11 @@ Current human feedback:
 - test the rider at roughly `1.8×–2.0×` the current rider size;
 - keep / refine a clear Surf / Ride pose rather than returning to a neutral standing pose;
 - a later Studio v17 Surf pose may be a stronger pose donor, but Studio v17 is **reference only here** unless an exact source is verified;
-- compare flight-mobile capacity with three real character scale classes on one card:
-  - one Legacy Warband Orc;
-  - one Orc Brute / Large-class character in the center;
-  - one additional XL / Large Rick-class character on the other side;
+- compare flight-mobile capacity with the three already source-backed Orc figures on one card:
+  - Legacy Warband Orc A on one side;
+  - Orc Brute / Rig_Large in the center;
+  - Legacy Warband Orc B on the other side;
+- the earlier “Large Rick” wording is resolved as **Large Rig**, not as a separate fourth/XL character source;
 - the goal is to judge **character ↔ card proportion and plausible passenger capacity**, not to build party-flight gameplay.
 
 This is still TMB-1 visual/product calibration. It does not authorize TMB-2 Ground↔Flight transition work.
@@ -72,11 +73,11 @@ The review must make this answerable by sight.
 
 # Review B · three-character capacity study
 
-Use one exact animated CardCarrier and three real character sources at their current class proportions.
+Use one exact animated CardCarrier and the three already verified Orc-family sources at their current source proportions.
 
 Target arrangement:
 
-`Legacy Warband Orc · Orc Brute / Large-class · XL / Large Rick-class`
+`Legacy Orc A · Orc Brute / Rig_Large · Legacy Orc B`
 
 Placement:
 
@@ -100,7 +101,7 @@ Before integrating the three together, each source used in this comparison must 
 
 A loaded URL alone is not donor proof.
 
-If the exact “Large Rick” / intended XL source name is ambiguous, use the nearest already-pinned Large/XL KFB character for the first comparison and mark the name resolution as `DEFERRED`; do not block the scale study.
+“Large Rick” is treated as the speech-to-text form of **Large Rig** here. The center actor is therefore the already measured Orc Brute / `Rig_Large`; no substitute XL actor is introduced.
 
 ## Acceptance question
 
