@@ -1,73 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- KFB Hub Pruefseite: unveraenderte V2-App (PR #194, getesteter Stand 0c59e92d). Module und Daten kommen ueber jsDelivr genau von diesem Commit. -->
+<base href="https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@0c59e92d9d8688f5a88cd309ae8891dcd174c2fc/tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KFB Elastic Grotesque Clay · Hürth 01</title>
 <style>
-:root{--paper:#f1e2c9;--panel:#302720;--edge:#5c493d}
-*{box-sizing:border-box}html,body{margin:0;height:100%;background:#241d19;color:var(--paper);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-body{display:flex;flex-direction:column;overflow:hidden}
-header{display:flex;align-items:center;gap:14px;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--edge);min-height:62px}
-h1{margin:0;font-size:16px}.sub{font-size:11px;opacity:.72;max-width:730px}.controls{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-select,button{font:inherit;font-size:12px;color:#f4e9d6;background:#473a31;border:1px solid #6f5b4b;border-radius:10px;padding:7px 10px}
-button{cursor:pointer}main{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px;flex:1;min-height:0}
-.panel{position:relative;min-width:0;border:1px solid #594a3f;border-radius:16px;overflow:hidden;background:#c7c5b6}.panel canvas{width:100%;height:100%;display:block}
-.label{position:absolute;left:12px;top:12px;z-index:2;background:rgba(38,31,27,.84);padding:8px 10px;border-radius:12px;backdrop-filter:blur(8px);pointer-events:none}
-.label b{display:block;font-size:13px}.label span{display:block;font-size:10px;opacity:.7;max-width:250px;margin-top:2px}
-#meta{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:5;background:rgba(42,34,29,.91);border:1px solid #766153;padding:8px 12px;border-radius:12px;font-size:11px;white-space:nowrap;pointer-events:none}
-.badge{font-size:10px;border:1px solid #866f5e;padding:3px 6px;border-radius:99px;color:#eedbc0}
-#error{display:none;position:fixed;inset:80px 20px auto;background:#6c3027;padding:16px;border-radius:12px;z-index:20}
-@media(max-width:900px){body{overflow:auto}main{grid-template-columns:1fr;min-height:1600px}.panel{min-height:520px}.sub{display:none}.controls{margin-left:0}}
+:root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#f0e1c9;background:#241d19}
+*{box-sizing:border-box}html,body{margin:0;height:100%}body{overflow:hidden}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto}.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;background:#302720;border-bottom:1px solid #604e40}
+.brand{font-weight:900;letter-spacing:.02em}.note{font-size:11px;opacity:.72}.spacer{flex:1}
+select,button{font:inherit;font-size:12px;color:#f3e6d2;background:#473a31;border:1px solid #735e4d;border-radius:10px;padding:7px 10px}button{cursor:pointer}button.active{background:#a4684d;border-color:#c98a68}
+.compare{min-height:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px}.view{position:relative;min-width:0;overflow:hidden;border:1px solid #59493d;border-radius:16px;background:#c8c6b8}.view canvas{display:block;width:100%;height:100%}
+.tag{position:absolute;left:12px;top:12px;z-index:3;background:#2e2621dc;border:1px solid #665346;border-radius:11px;padding:8px 10px;pointer-events:none;backdrop-filter:blur(8px)}.tag strong{display:block;font-size:13px}.tag span{display:block;font-size:10px;opacity:.7;max-width:260px;margin-top:2px}
+.foot{display:flex;gap:12px;align-items:center;padding:8px 14px;background:#302720;border-top:1px solid #604e40;font-size:11px}.foot #meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.status{margin-left:auto;color:#d9bd91}
+@media(max-width:900px){body{overflow:auto}.app{height:auto;min-height:100%}.compare{grid-template-columns:1fr}.view{height:540px}.spacer{display:none}.note{display:none}}
 </style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
-<body>
-<header>
-  <div><h1>KFB Elastic Grotesque Clay · Hürth 01</h1><div class="sub">Same real Hürth OSM footprints + heights in all panels. Only the presentation shell changes. Form first; no Cel/outline dependency.</div></div>
-  <div class="controls"><span class="badge">BRANCH REVIEW · NOT PUBLIC</span><select id="buildingSelect"><option value="">Block view</option></select><button id="reset">Reset cameras</button></div>
+<body><main class="app">
+<header class="bar">
+  <span class="brand">KFB ELASTIC GROTESQUE CLAY · HÜRTH 01</span>
+  <span class="note">same OSM truth · stronger group deformation · smooth roads · cartoon clay palette</span><span class="spacer"></span>
+  <select id="building"><option value="">BLOCK VIEW</option></select>
+  <button id="isolate" disabled>ISOLATE SOURCE</button>
+  <button id="reset">RESET CAMERAS</button>
 </header>
-<div id="error"></div>
-<main>
-  <section class="panel"><div class="label"><b>CLEAN OSM</b><span>geographic massing reference</span></div><canvas id="c0"></canvas></section>
-  <section class="panel"><div class="label"><b>CURRENT GROTESQUE</b><span>stacked / angular comparison target</span></div><canvas id="c1"></canvas></section>
-  <section class="panel"><div class="label"><b>ELASTIC GROTESQUE CLAY</b><span>continuous wonky volume + protected details + handmade model finish</span></div><canvas id="c2"></canvas></section>
+<section class="compare">
+  <div class="view"><div class="tag"><strong>CLEAN OSM</strong><span>source footprint + source height · isolation reference</span></div><canvas id="clean"></canvas></div>
+  <div class="view"><div class="tag"><strong>CURRENT GROTESQUE</strong><span>exact current City-Lab deformer math · neutral camera</span></div><canvas id="grotesque"></canvas></div>
+  <div class="view"><div class="tag"><strong>ELASTIC GROTESQUE CLAY</strong><span>coherent block warp · rounded clay volume · irregular protected details · cartoon palette</span></div><canvas id="elastic"></canvas></div>
+</section>
+<footer class="foot"><span id="meta">Loading pinned Hürth source…</span><span class="status">CHAT REVIEW / BRANCH CANDIDATE · NOT LIVE</span></footer>
 </main>
-<div id="meta">Loading pinned Hürth source…</div>
-<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-<script>
-(async()=>{
-const BASE='dca52479dad9c176acde6e7c7167dc133bf50bdd';
-const LOCAL='/tools/osm-city-lab/data/huerth-v0/normalized.json';
-const PINNED='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+BASE+'/tools/osm-city-lab/data/huerth-v0/normalized.json';
-const COLORS={pale:0xd8c7a9,warm:0xc7835e,roof:0x7d5b4c,roof2:0x9a684f,glass:0x31515a,frame:0xe4cda9,door:0x714538,ground:0x8b9d72,road:0x675c55,path:0xa79d84};
-const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)), smooth=t=>t*t*(3-2*t);
-const hash=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0)/4294967295};
-const strip=p=>(p.length>2&&p[0].x===p.at(-1).x&&p[0].z===p.at(-1).z)?p.slice(0,-1):p.slice();
-const centroid=p=>{const q=strip(p);return q.reduce((a,v)=>({x:a.x+v.x/q.length,z:a.z+v.z/q.length}),{x:0,z:0})};
-async function source(){for(const u of [LOCAL,PINNED])try{const r=await fetch(u);if(r.ok)return await r.json()}catch{}throw Error('Pinned Hürth normalized source could not be loaded')}
-const raw=await source();
-const bs=raw.features.buildings.map(b=>({...b,c:centroid(b.footprint)}))
- .filter(b=>Math.abs(b.c.x)<105&&Math.abs(b.c.z)<130)
- .sort((a,b)=>(a.osm.tags.building==='garage')-(b.osm.tags.building==='garage')||Math.hypot(a.c.x,a.c.z)-Math.hypot(b.c.x,b.c.z)).slice(0,22)
- .map(b=>({id:b.id,p:b.footprint,h:b.heightM,m:b.materialClass,r:b.roof?.type||'flat',rh:b.roof?.heightM||.35,kind:b.osm.tags.building||'yes'}));
-const roads=raw.features.roads.filter(r=>r.centerline.some(p=>Math.abs(p.x)<150&&Math.abs(p.z)<180))
- .map(r=>({id:r.id,n:r.osm.tags.name||'',c:r.class,w:r.widthM,p:r.centerline.filter(p=>Math.abs(p.x)<150&&Math.abs(p.z)<180)})).filter(r=>r.p.length>1);
-const DATA={buildings:bs,roads};
-function longestEdge(p){const q=strip(p);let best={i:0,len:0};for(let i=0;i<q.length;i++){const a=q[i],b=q[(i+1)%q.length],l=Math.hypot(b.x-a.x,b.z-a.z);if(l>best.len)best={i,len:l}}return best}
-function roundRing(points,r,seg=4){const p=strip(points),out=[];if(r<=.001)return p;for(let i=0;i<p.length;i++){const c=p[i],a=p[(i-1+p.length)%p.length],b=p[(i+1)%p.length],l1=Math.hypot(c.x-a.x,c.z-a.z),l2=Math.hypot(b.x-c.x,b.z-c.z),rr=Math.min(r,l1*.42,l2*.42);if(l1<.01||l2<.01){out.push({...c});continue}const ax=c.x+(a.x-c.x)/l1*rr,az=c.z+(a.z-c.z)/l1*rr,bx=c.x+(b.x-c.x)/l2*rr,bz=c.z+(b.z-c.z)/l2*rr;for(let k=0;k<seg;k++){const t=k/seg,u=1-t;out.push({x:u*u*ax+2*u*t*c.x+t*t*bx,z:u*u*az+2*u*t*c.z+t*t*bz})}}return out}
-function params(b){const c=centroid(b.p),q=strip(b.p);let me=99;for(let i=0;i<q.length;i++){const a=q[i],d=q[(i+1)%q.length];me=Math.min(me,Math.hypot(d.x-a.x,d.z-a.z))}const seed=hash(b.id),sign=seed>.5?1:-1;return{c,seed,sign,r:clamp(Math.min(me,b.h)*.13,.35,1.8),lean:(.8+1.4*seed)*sign,bend:(.45+1.1*((seed*7)%1))*-sign,belly:.055+.045*((seed*11)%1),taper:.035+.035*((seed*13)%1),twist:(.025+.055*((seed*17)%1))*sign}}
-function xf(mode,b,p,t){const P=params(b),c=P.c,dx=p.x-c.x,dz=p.z-c.z;if(mode==='clean')return{x:p.x,z:p.z};if(mode==='grotesque'){const band=Math.round(t*4)/4,s=1+(P.seed-.5)*.11*band,a=P.twist*3.5*band,ca=Math.cos(a),sa=Math.sin(a);return{x:c.x+(dx*ca-dz*sa)*s+P.sign*band*2.3+Math.sin((band*7+P.seed)*3)*.65,z:c.z+(dx*sa+dz*ca)*s-P.sign*band*1.5+Math.cos((band*5+P.seed)*3)*.55}}const e=smooth(t),belly=Math.sin(Math.PI*t),scale=1+P.belly*belly-P.taper*e,a=P.twist*e,ca=Math.cos(a),sa=Math.sin(a);let x=c.x+(dx*ca-dz*sa)*scale,z=c.z+(dx*sa+dz*ca)*scale,bx=(18-c.x)*.018,bz=(18-c.z)*.018,bl=Math.hypot(bx,bz);if(bl>2.2){bx*=2.2/bl;bz*=2.2/bl}x+=bx*e+P.lean*e+P.bend*belly;z+=bz*e+P.sign*.6*e-P.bend*.32*belly;return{x,z}}
-function shell(mode,b){const P=params(b),base=mode==='elastic'?roundRing(b.p,P.r):strip(b.p),levels=mode==='clean'?2:mode==='grotesque'?6:9,pos=[],col=[],rows=[],bc=new THREE.Color(b.m==='building-warm'?COLORS.warm:COLORS.pale);for(let L=0;L<levels;L++){const t=L/(levels-1),y=b.h*t,row=[];for(const p of base){const q=xf(mode,b,p,t);row.push(pos.length/3);pos.push(q.x,y,q.z);const n=(hash(b.id+':'+L+':'+row.length)-.5)*(mode==='elastic'?.075:.025),cc=bc.clone().offsetHSL(0,n*.25,n);col.push(cc.r,cc.g,cc.b)}rows.push(row)}const idx=[];for(let L=0;L<rows.length-1;L++)for(let i=0;i<base.length;i++){const j=(i+1)%base.length,a=rows[L][i],bb=rows[L][j],c=rows[L+1][i],d=rows[L+1][j];idx.push(a,c,bb,bb,c,d)}const top=base.map(p=>{const q=xf(mode,b,p,1);return new THREE.Vector2(q.x,q.z)});for(const f of THREE.ShapeUtils.triangulateShape(top,[]))idx.push(rows.at(-1)[f[0]],rows.at(-1)[f[1]],rows.at(-1)[f[2]]);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));g.setIndex(idx);g.computeVertexNormals();return{g,base,P}}
-function roof(mode,b,base,P){const layers=mode==='elastic'?5:3,c=P.c,e=longestEdge(b.p),q=strip(b.p),aa=q[e.i],bb=q[(e.i+1)%q.length],ux=(bb.x-aa.x)/e.len,uz=(bb.z-aa.z)/e.len,vx=-uz,vz=ux,topBase=base.map(p=>xf(mode,b,p,1)),pos=[],rows=[],idx=[],rh=Math.max(.28,b.rh||.4);for(let L=0;L<layers;L++){const s=L/(layers-1),row=[];let su=1,sv=1;if(b.r==='gabled-hint'){su=1-.16*s;sv=1-.92*s}else if(b.r==='hipped-hint'){su=sv=1-.77*s}else{su=sv=1-.08*s}for(const p of topBase){const dx=p.x-c.x,dz=p.z-c.z,du=dx*ux+dz*uz,dv=dx*vx+dz*vz;let x=c.x+ux*du*su+vx*dv*sv,z=c.z+uz*du*su+vz*dv*sv;if(mode==='elastic'){const puff=Math.sin(Math.PI*s)*.18;x+=vx*puff*P.sign;z+=vz*puff*P.sign}row.push(pos.length/3);pos.push(x,b.h+rh*s,z)}rows.push(row)}for(let L=0;L<rows.length-1;L++)for(let i=0;i<base.length;i++){const j=(i+1)%base.length,A=rows[L][i],B=rows[L][j],C=rows[L+1][i],D=rows[L+1][j];idx.push(A,C,B,B,C,D)}const top=rows.at(-1),pts=top.map(i=>new THREE.Vector2(pos[i*3],pos[i*3+2]));for(const f of THREE.ShapeUtils.triangulateShape(pts,[]))idx.push(top[f[0]],top[f[1]],top[f[2]]);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g}
-function details(root,mode,b,m){const q=strip(b.p),e=longestEdge(b.p),a=q[e.i],bb=q[(e.i+1)%q.length],P=params(b),c=P.c;let nx=-(bb.z-a.z)/e.len,nz=(bb.x-a.x)/e.len,mx=(a.x+bb.x)/2,mz=(a.z+bb.z)/2;if(Math.hypot(mx+nx-c.x,mz+nz-c.z)<Math.hypot(mx-nx-c.x,mz-nz-c.z)){nx=-nx;nz=-nz}const rows=b.h>9?[.29,.62]:[.5],count=clamp(Math.floor(e.len/4.5),2,4);for(const ty of rows)for(let k=0;k<count;k++){const u=(k+1)/(count+1),p0={x:a.x+(bb.x-a.x)*u,z:a.z+(bb.z-a.z)*u},p=xf(mode,b,p0,ty),fr=new THREE.Mesh(new THREE.BoxGeometry(1.75,1.65,.20),m.frame),gl=new THREE.Mesh(new THREE.BoxGeometry(1.4,1.3,.12),m.glass),yaw=Math.atan2(nx,nz);fr.position.set(p.x+nx*.14,b.h*ty,p.z+nz*.14);gl.position.set(p.x+nx*.26,b.h*ty,p.z+nz*.26);fr.rotation.y=gl.rotation.y=yaw;fr.castShadow=gl.castShadow=true;root.add(fr,gl)}const p0={x:a.x+(bb.x-a.x)*.16,z:a.z+(bb.z-a.z)*.16},p=xf(mode,b,p0,.12),door=new THREE.Mesh(new THREE.BoxGeometry(1.8,2.7,.22),m.door);door.position.set(p.x+nx*.18,1.35,p.z+nz*.18);door.rotation.y=Math.atan2(nx,nz);door.castShadow=true;root.add(door)}
-function roadGroup(){const g=new THREE.Group(),rm=new THREE.MeshStandardMaterial({color:COLORS.road,roughness:.98}),pm=new THREE.MeshStandardMaterial({color:COLORS.path,roughness:.95});for(const r of DATA.roads){const mat=['path','track','footway','steps'].includes(r.c)?pm:rm;for(let i=0;i<r.p.length-1;i++){const a=r.p[i],b=r.p[i+1],dx=b.x-a.x,dz=b.z-a.z,len=Math.hypot(dx,dz);if(!len)continue;const m=new THREE.Mesh(new THREE.BoxGeometry(r.w,.10,len),mat);m.position.set((a.x+b.x)/2,.04,(a.z+b.z)/2);m.rotation.y=Math.atan2(dx,dz);m.receiveShadow=true;g.add(m)}}return g}
-function viewer(canvas,mode){const r=new THREE.WebGLRenderer({canvas,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,1.75));r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.02;const s=new THREE.Scene();s.background=new THREE.Color(mode==='elastic'?0xbfc8b8:0xc8c7b9);s.fog=new THREE.Fog(s.background,180,420);const cam=new THREE.PerspectiveCamera(48,1,.1,700),target=new THREE.Vector3(20,3,15);s.add(new THREE.HemisphereLight(0xfff4df,0x4c5b51,2));const sun=new THREE.DirectionalLight(0xffead0,3);sun.position.set(-80,120,70);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=sun.shadow.camera.bottom=-180;sun.shadow.camera.right=sun.shadow.camera.top=180;s.add(sun);const gr=new THREE.Mesh(new THREE.PlaneGeometry(360,390),new THREE.MeshStandardMaterial({color:COLORS.ground,roughness:1}));gr.rotation.x=-Math.PI/2;gr.position.y=-.03;gr.receiveShadow=true;s.add(gr,roadGroup());const m={wall:new THREE.MeshStandardMaterial({vertexColors:true,roughness:mode==='elastic'?.97:.88,metalness:0,side:THREE.DoubleSide}),roof:new THREE.MeshStandardMaterial({color:mode==='elastic'?COLORS.roof2:COLORS.roof,roughness:.97,side:THREE.DoubleSide}),glass:new THREE.MeshStandardMaterial({color:COLORS.glass,roughness:.68}),frame:new THREE.MeshStandardMaterial({color:COLORS.frame,roughness:.96}),door:new THREE.MeshStandardMaterial({color:COLORS.door,roughness:.96})};for(const b of DATA.buildings){const root=new THREE.Group(),built=shell(mode,b),sh=new THREE.Mesh(built.g,m.wall),rf=new THREE.Mesh(roof(mode,b,built.base,built.P),m.roof);sh.castShadow=sh.receiveShadow=rf.castShadow=rf.receiveShadow=true;root.add(sh,rf);details(root,mode,b,m);s.add(root)}let yaw=.72,pitch=.56,dist=225,drag=false,lx=0,ly=0;function update(){cam.position.set(target.x+Math.sin(yaw)*Math.cos(pitch)*dist,target.y+Math.sin(pitch)*dist,target.z+Math.cos(yaw)*Math.cos(pitch)*dist);cam.lookAt(target)}function reset(){target.set(20,3,15);yaw=.72;pitch=.56;dist=225;update()}function focus(b){const c=centroid(b.p);target.set(c.x,b.h*.42,c.z);yaw=.72;pitch=.42;dist=62+Math.max(0,b.h-10)*2;update()}canvas.onpointerdown=e=>{drag=true;lx=e.clientX;ly=e.clientY;canvas.setPointerCapture(e.pointerId)};canvas.onpointerup=()=>drag=false;canvas.onpointermove=e=>{if(!drag)return;const dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;yaw-=dx*.006;pitch=clamp(pitch+dy*.005,.12,1.2);update()};canvas.onwheel=e=>{e.preventDefault();dist=clamp(dist*(1+e.deltaY*.0012),22,330);update()};function tick(){const w=canvas.clientWidth,h=canvas.clientHeight;if(canvas.width!==Math.floor(w*r.getPixelRatio())||canvas.height!==Math.floor(h*r.getPixelRatio()))r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();r.render(s,cam);requestAnimationFrame(tick)}reset();tick();return{focus,reset}}
-const V=[viewer(document.querySelector('#c0'),'clean'),viewer(document.querySelector('#c1'),'grotesque'),viewer(document.querySelector('#c2'),'elastic')],sel=document.querySelector('#buildingSelect'),meta=document.querySelector('#meta');
-for(const b of DATA.buildings){const o=document.createElement('option');o.value=b.id;o.textContent=b.id.replace('way/','')+' · '+b.h.toFixed(1)+'m · '+b.r.replace('-hint','');sel.appendChild(o)}
-sel.onchange=()=>{const b=DATA.buildings.find(x=>x.id===sel.value);if(!b){V.forEach(v=>v.reset());meta.textContent='Block view · 22 pinned Hürth OSM buildings';return}V.forEach(v=>v.focus(b));meta.textContent=b.id+' · height '+b.h.toFixed(2)+' m · roof '+b.r+' · source footprint identical in all panels'};
-document.querySelector('#reset').onclick=()=>{sel.value='';V.forEach(v=>v.reset());meta.textContent='Block view · 22 pinned Hürth OSM buildings'};
-meta.textContent='Block view · 22 pinned Hürth OSM buildings · source '+BASE.slice(0,8)+'…';
-})().catch(e=>{const n=document.querySelector('#error');n.style.display='block';n.textContent='Preview error: '+e.message;console.error(e)});
-</script>
-</body>
-</html>
+<script type="module" src="./viewer.mjs"></script>
+</body></html>
