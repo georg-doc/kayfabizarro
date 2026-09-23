@@ -723,7 +723,7 @@ FrizzleBob source identity is separately pinned at:
 
 `tools/KFB-ToolBox/_handover/FRIZZLEBOB_IDENTITY_MAP_2026-09-23.md`
 
-Current first gate: **WB1-TERRAIN-SCENE-01**.
+Current first gate: **WB2-TERRAIN-SCULPT-01**.
 
 Current implementation state on Draft PR #186:
 - R1 functional foundation is **GEORG HUMAN PASS**: Caveman texture, Character Y, Character-Y save/reload and palette/FOV;
@@ -734,14 +734,14 @@ Current implementation state on Draft PR #186:
 - accepted R2 base blob: `c97b3537f71e939176f3ae5ce7ae83feabb7918f`;
 - R3 uniform-scale candidate blob: `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`;
 - R3 proposal: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`;
-- WB2 planning ready: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md` — continuous Raise/Lower heightfield brush, no voxel/hex terrain; runtime waits for R3 PASS or explicit reprioritization;
+- WB2 current brief: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md` — Georg reprioritized continuous Raise/Lower heightfield sculpting as the next functional gate; no voxel/hex terrain;
 - WorldBuilder R3 menu keeps Move / Rotate / Drop / World-Local / Close and groups **−/+ uniform size** into one Scale field; keyboard `S` keeps the accepted free Scale gizmo;
 - defaults: smaller ×0.8, larger ×1.25, clamp 0.05…20;
 - R3 evidence: **26/26** static/integration + **4/4** exact runtime source paths + **1/1** shared-module syntax;
 - embedded browser self-test: **22 assertions prepared / 0 executed**;
-- no automated browser PASS or R3 uniform-scale human PASS claimed yet;
+- no automated browser PASS or R3 uniform-scale human PASS claimed; R3 is optional/non-blocking;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: Georg reviews uniform smaller/larger on the R3 Chat HTML, including repeated size changes, retained free `S` Scale and Save/Reload. General rollout of the new size gesture to other ToolBox hosts remains HOLD until that gate.
+Exactly one next WorldBuilder gate: **WB2-TERRAIN-SCULPT-01** — isolated non-destructive Raise/Lower terrain brush with radius/strength, smooth falloff, Undo/Clear and Save/Reload on the continuous procedural heightfield.
 
-After R3 PASS, the prepared next functional WorldBuilder slice is **WB2-TERRAIN-SCULPT-01**: non-destructive Raise/Lower terrain brush with radius/strength, smooth falloff, Undo/Clear and Save/Reload on the continuous procedural heightfield.
+R3 uniform smaller/larger remains an optional shared-editor convenience review and does not block WB2.
