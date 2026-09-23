@@ -160,5 +160,15 @@ console.log('9 · Werkzeuge + Suche');
   ok(d.title === 'KFB Hub' && d.getElementById('jetzt') && d.getElementById('werkzeuge') && d.getElementById('archiv'), 'one page: Jetzt · Werkzeuge · Archiv');
 }
 
+console.log('10 · Öffnen-Knopf für Prüfseiten');
+{
+  const { d } = makeDom();
+  await tick();
+  for (const l of baseReg.lanes.lanes.filter(l => l.bucket === 'LOOK_AT')) {
+    const a = d.querySelector(`[data-lane="${l.id}"] a.btn.primary`);
+    ok(a && a.href === l.review.url, `${l.id}: Öffnen links to the published review`);
+  }
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

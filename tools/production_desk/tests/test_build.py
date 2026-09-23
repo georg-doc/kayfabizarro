@@ -170,6 +170,21 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(files["manifest.json"]["counts"]["tools"], 1)
         self.assertTrue(all(a["available"] for a in files["tools.json"]["archive"]))
 
+    def test_review_link_only_when_published(self):
+        cfg = base_cfg()
+        cfg["publication"] = {"repo": REPO, "ref": "live", "base": "https://x.dev/"}
+        cfg["lanes"][1]["review"] = {"path": "kfb-hub/pruefen/b/index.html", "sourceRef": "PR #2"}
+        fx = base_fixture()
+        fx[f"content:{REPO}@live:kfb-hub/pruefen/b/index.html"] = {"sha": "r"}
+        files, _ = run(cfg=cfg, fx=fx)
+        rv = lane(files, "b")["review"]
+        self.assertTrue(rv["available"])
+        self.assertEqual(rv["url"], "https://x.dev/kfb-hub/pruefen/b/")
+        fx[f"content:{REPO}@live:kfb-hub/pruefen/b/index.html"] = None
+        files, _ = run(cfg=cfg, fx=fx)
+        self.assertFalse(lane(files, "b")["review"]["available"])
+        self.assertIn("review-route-missing", [p["kind"] for p in files["problems.json"]["problems"]])
+
     def test_repo_config_is_valid(self):
         cfg = json.loads((HERE.parent / "config.json").read_text(encoding="utf-8"))
         self.assertEqual(build.validate_config(cfg), [])
