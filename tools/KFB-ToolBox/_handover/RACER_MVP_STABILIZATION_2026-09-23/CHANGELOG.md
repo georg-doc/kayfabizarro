@@ -37,3 +37,20 @@ Exactly one next gate:
 Exactly one next gate:
 
 **RSTAB-1 HUMAN GEOMETRY GATE** — tunnel/ground-cut + support endpoints. Human ACCEPT is required before RSTAB-2.
+
+
+## 2026-09-23 · RSTAB-1 zero-install Stage prepared
+
+- Race PR #32 remains the runtime owner; current handoff head `d712a17904f532c2eca9f120d24924073eae0f3c`, runtime-tested head `e9c72a404aff63d46762d9101a727a9e7f94a6b0`;
+- kayfabizarro Draft PR #178 packages the additive review route `kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`;
+- Stage source branch `stage/racer-rstab1-review-2026-09-23@13191b0f600878f96b06db8142d8d7393411a67d`;
+- Stage `lab-v9` mirror: **20/20 filenames + blob SHAs identical** to Race RSTAB-1;
+- Cloudflare source commit `77e4bd44aac0d0ce720c5b0149eedb3eef62ac36`;
+- Cloudflare Hub metadata commit `a075934bb5f8628535b673459b0b9ddcc0af5312`;
+- main Hub metadata commit `fd7680034171f9a327936e9ee7fa2a3cc1f6b4dc`;
+- intended human URL `https://kayfabizarro.pages.dev/kfb-hub/stage/stunt-world/cologne-option-c-rstab1/`;
+- public verification remains **UNKNOWN / PENDING** because the current environment cannot resolve/access `pages.dev`;
+- local Git/Python preview is retained only as developer fallback, not the human acceptance surface;
+- no RSTAB-2 implementation started.
+
+Exactly one next gate remains **RSTAB-1 HUMAN GEOMETRY GATE**.
