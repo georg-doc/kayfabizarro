@@ -1,6 +1,6 @@
 # AN-PROFILE-02 · ToolBox Animation Studio consumption
 
-Status: **IMPLEMENTED ON CURRENT TOOLBOX OWNER · RUNTIME CI IN PROGRESS**  
+Status: **IMPLEMENTED · STATIC + CHROMIUM PASS · HUMAN REVIEW OPEN**  
 Date: 2026-09-24  
 Owner: **KFB ToolBox / Stage-First integration**  
 Existing integration PR: **#185**  
@@ -79,14 +79,15 @@ Direct GitHub source sanity:
 **32/32 PASS**
 
 GitHub Actions:
-run `36032905791` · existing ToolBox coherent smoke · **IN PROGRESS** at this checkpoint.
+run `36032905791` · job `107745811232` · **SUCCESS**.
 
-Already completed in that run:
-- existing static owner/contract checks: SUCCESS;
-- AN-PROFILE-02 static integration checks: SUCCESS;
-- browser runner/server setup: SUCCESS.
-
-Browser result is not claimed until its steps finish.
+Exact results:
+- existing static owner/contract checks: **22/22 PASS**;
+- AN-PROFILE-02 static integration checks: **34/34 PASS**;
+- existing coherent-flow Chromium checks: **20/20 PASS**;
+- AN-PROFILE-02 Animation Studio Chromium checks: **25/25 PASS**;
+- KFB Motion/profile network failures: **0**;
+- page errors in the Animation Studio proof: **0**.
 
 ## Review / Stage
 
@@ -102,6 +103,6 @@ Do not wait on Cloudflare for this slice.
 
 ## One next gate
 
-If the exact runtime CI is green, provide the current Animation Studio as the direct human review artifact and ask Georg to judge only the usefulness/readability of the 33-clip Library + measured Data surface.
+Provide the current Animation Studio as the direct human review artifact and ask Georg to judge only the usefulness/readability of the 33-clip Library + measured Data surface.
 
 Do not start WorldBuilder integration before that first consumer gate.
