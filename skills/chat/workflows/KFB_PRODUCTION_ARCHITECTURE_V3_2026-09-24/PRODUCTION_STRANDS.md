@@ -634,6 +634,696 @@ This is the construction-site view Georg wants for God Mode.
 
 ---
 
+# STRAND C · Combat, Duel Choreography and World Encounters
+
+## Target product
+
+Combat is not only a player mini-game. KFB needs a reusable **combat performance and encounter layer** that can stage:
+
+- NPC-vs-NPC melee duels;
+- ranged duels;
+- mixed rig families;
+- autonomous wrestling-like match loops;
+- short Hero Shot combat performances;
+- the existing player Arena;
+- later world/dungeon/tower encounters.
+
+Combat Arena remains the owner of combat truth: target, hit, damage, defeat, rewards and encounter lifecycle. ToolBox Animation Studio may audition/choreograph actions but does not become the damage engine.
+
+## Existing donors that must survive
+
+- private Combat PR #5 current actor/runtime seam;
+- Combat PR #7 current real Skeleton Blade + `Melee_1H_Attack_Chop` + swept-contact/AttackLedger work;
+- Combat PR #10 Legacy readiness;
+- PR #6 Melee Choreography brief;
+- MotionProfiles / Motion Library;
+- Resident Atlas attachment and pose work;
+- shared Spindle/Skydome donor;
+- existing Combat VFX/SFX event grammar;
+- Card body/A2 sources.
+
+## C1 · Combat Actor Family Matrix · READY
+
+Maintain explicit actor families/capabilities, not one assumed skeleton:
+
+```
+Rig_Medium
+Rig_Large
+Rig_Legacy
+CubePet / node-animated
+procedural / zero-bone
+later three2p5d / Block actor adapters
+```
+
+Shared contract is semantic capability, e.g.:
+`idle · move · guard/aim · attack · hit · defeat · recover · block · taunt`.
+
+Missing capability = HOLD/null, never silent fallback.
+
+The first matrix must preserve:
+- Driver Graft;
+- Goth Girl;
+- Skeleton Warrior;
+- Black Knight / Large candidate;
+- Legacy Knight/Rogue;
+- CubePet Bunny or another exact CubePet as procedural/node-animated proof.
+
+## C2 · Duel Choreography Studio · READY AFTER TB-ANIM BASE
+
+Add a **two-fighter Stage** to ToolBox Animation Studio.
+
+Purpose:
+- audition attacks and reactions;
+- adjust distance/facing;
+- inspect weapon grip/path/contact;
+- chain semantic actions;
+- create deterministic looping duel scripts;
+- preview Melee / Ranged / Block / Hit / Recover;
+- save choreography recipes.
+
+The stage should feel like a small wrestling/versus set:
+- side-on or readable 3/4 camera;
+- two actual source actors;
+- actual props/weapons;
+- optional Spindle environment;
+- no generic fighting-game HUD.
+
+A choreography recipe drives presentation:
+```
+fighter A action
+→ marker/contact window
+→ fighter B reaction
+→ spacing/facing beat
+→ recovery / counter
+→ loop or finish
+```
+
+For Hero Shots it may run autonomously.
+
+**Important:** preview contact may use the current measured weapon/contact profile. HP/reward/gameplay stays Combat-owned.
+
+## C3 · Melee + Ranged Contact Library · READY
+
+Use the existing PR #7 contract:
+- weapon hilt/root + tip;
+- active window;
+- swept segment/capsule;
+- one AttackLedger consumption;
+- confirmed contact event.
+
+One event drives:
+```
+damage decision (Arena)
++ reaction marker
++ impact VFX
++ impact SFX
+```
+
+A miss must remain a miss.
+
+Extend family by family:
+1. proven Rig_Medium 1H;
+2. Legacy 1H + Crossbow after visual profile gates;
+3. Rig_Large / 2H;
+4. body-contact / procedural attacks for CubePets/props where appropriate.
+
+Do not force Medium clips onto Legacy/Large/CubePets.
+
+## C4 · Autonomous Match Director
+
+Build a small deterministic encounter/choreography scheduler on top of semantic actions.
+
+Modes:
+- exhibition / endless sparring;
+- fixed 10–30 second Hero Shot;
+- best-of-N Arena match;
+- ambient NPC scuffle;
+- scripted encounter beat.
+
+It chooses already-admitted actions; it does not synthesize skeleton poses from nothing.
+
+Useful output:
+- reproducible seed/recipe;
+- camera beat hints;
+- event markers for FX/SFX;
+- clean loop point.
+
+## C5 · Combat Arena Product Expansion
+
+Apply admitted actor/contact profiles to the existing Arena:
+- preserve three-enemy/current reward/card-clear lifecycle;
+- add real melee and ranged actor capabilities;
+- keep player mode available;
+- add spectator/demo/autonomous match mode;
+- allow actor-vs-actor roster selection.
+
+Spindle and Curtain are consumed presentation modules, not rebuilt inside Arena.
+
+## C6 · Combat Card Tower / Encounter Module
+
+A card surface can become an **encounter platform module**.
+
+Candidate progression:
+```
+enter card platform
+→ encounter
+→ clear
+→ reveal / unlock next card platform
+→ ascend
+```
+
+This generalizes the existing card-level concept without making Combat own world topology.
+
+Chill mode:
+- no fatal fall;
+- forgiving recovery to last cleared platform;
+- player can watch autonomous fights or participate.
+
+The same encounter module can later mount into:
+- a Card Tower;
+- Babel/Hex vertical structures;
+- Dungeon rooms;
+- open world encounter zones.
+
+## C7 · Open-World Combat Adapter
+
+WorldBuilder supplies:
+- terrain/support frame;
+- spawn/return anchors;
+- encounter volume;
+- world persistence reference.
+
+Combat supplies:
+- combatants;
+- targeting;
+- attacks;
+- damage/defeat/reward;
+- combat event stream.
+
+No duplicate open-world combat engine.
+
+---
+
+# STRAND P · Cube Pets and Actor Identity
+
+## Why this is a separate strand
+
+The 24 Cube Pets are a canonical actor family, not decorative leftovers. They already have:
+- a canonical `kfb.pets/1` stack;
+- 24 exact IDs;
+- EyeRig data;
+- PetMouth data for supported pets;
+- node/procedural motion vocabulary;
+- existing Travel consumer use.
+
+They must remain available in ToolBox, Resident scenes, Town, Travel, WorldBuilder and compatible Combat contexts.
+
+## P0 · FrizzleBob identity lock · READY
+
+Never use the word “FrizzleBob” as a technical identifier by itself.
+
+Current distinct identities:
+
+1. **`cube-frizzlebob`**
+   - CubePet `bunny`;
+   - `animal-bunny.glb`;
+   - 24-Pet contract;
+   - CubePet EyeRig / PetMouth / PetMotion.
+
+2. **`legacy-arena-frizzlebob`**
+   - Combat historical/current Legacy option;
+   - `frizzlebob.v1.js` + `FrizzleBob_Yellow_Gun.gltf`;
+   - separate Arena lineage.
+
+3. **`frizzlebob-driver-graft`**
+   - current modern Rig_Medium host/graft;
+   - `kfb-pet-graft-driver.v4.json`;
+   - ToolBox / modern consumer line.
+
+The `FrizzleBob_Yellow.gltf` donor used by the graft is a donor asset, not a fourth interchangeable gameplay identity.
+
+Every roster/scene/brief must use one explicit ID.
+
+## P1 · 24-Pet ToolBox roster · READY
+
+Bring all 24 canonical CubePets into the real ToolBox roster using `kfb-pets.js` / `kfb-pets.json`.
+
+Preserve:
+- per-pet colors/skins;
+- EyeRig settings;
+- mouths where configured;
+- node/procedural clip vocabulary;
+- material/surface settings.
+
+Do not convert them into Rig_Medium actors just for uniformity.
+
+## P2 · CubePet Face + Motion Studio
+
+ToolBox Face/Animation surfaces consume the CubePet owner:
+- EyeRig;
+- PetMouth/visemes;
+- idle/walk/run/eat/dance/gesture family where real;
+- procedural bundles/states where real.
+
+Animation Studio shows semantic compatibility even though the motion mechanism differs from skeletal KayKit.
+
+## P3 · CubePet Resident Module
+
+Any CubePet can be wrapped as a Resident Scene actor:
+- root transform;
+- pet config ref;
+- face state;
+- motion state;
+- props/relationships where admitted.
+
+This makes CubePets first-class WorldBuilder/Town residents.
+
+## P4 · CubePet Combat adapter
+
+Do not attach humanoid CombatMelee clips.
+
+Use semantic combat states translated to CubePet motion:
+- hop/lunge;
+- squash/lean;
+- hit recoil;
+- spin/tip;
+- EyeRig reaction.
+
+Admit only capabilities that look intentional.
+
+---
+
+# STRAND V · Travel Modes and World Surfaces
+
+## Architectural correction
+
+**World topology and travel mode are orthogonal.**
+
+A WorldBuilder scene is not intrinsically a globe.
+A travel mode is not intrinsically tied to TinySkies sphere code.
+
+First supported surface archetypes:
+- FLAT;
+- SPHERE;
+- TORUS.
+
+Later topologies can be added through the same adapter if real product use demands them.
+
+First travel modes:
+- GROUND;
+- FLIGHT;
+- DRIVE;
+- WATER/BOAT;
+- later PLANE / FREEFALL / PARACHUTE.
+
+Exactly one movement writer is active at a time.
+
+## V1 · Surface Adapter · READY
+
+Reuse the existing preflight direction:
+same tiny semantic world recipe on FLAT / SPHERE / TORUS.
+
+The adapter provides only what consumers need:
+- world↔surface mapping;
+- local tangent/right/up frame;
+- support/height query;
+- normal;
+- optional wrap/topology semantics;
+- region/navigation mapping.
+
+Race, Combat, OSM, Hex and WorldBuilder keep their owners.
+
+A flat-world edge may wrap, portal or expose a designed transition; that behavior is topology data, not hardcoded into movement logic.
+
+## V2 · Travel Mode Router · READY
+
+Build one explicit mode contract over current Travel/WB0 lessons.
+
+Candidate facts:
+```
+mode id
+movement owner adapter
+camera preset/adapter
+support type
+vehicle/actor presentation
+allowed FX
+enter/exit contract
+persistence payload
+```
+
+The router switches writers atomically.
+
+Current proven input:
+- Ground↔Flight bridge;
+- Ground→Flight double-Space 400 ms accepted on Travel PR #38.
+
+Do not drag all old Travel presentation into every mode.
+
+## V3 · Free Drive in World
+
+Reuse Racer/vehicle movement knowledge without turning WorldBuilder into Race.
+
+Goal:
+- ordinary vehicle movement on world support surface;
+- no track required;
+- vehicle/cockpit presentation from ToolBox;
+- terrain/world contact owned by the active Drive adapter.
+
+Race Track mode remains a specialized route/contact context.
+
+## V4 · Boat / Water mode · SOURCE RECOVERY READY
+
+TinySkies source inventory proves:
+- `Boat.ts`;
+- `BoatMesh.ts`;
+- geometric foam waterline;
+- vehicle feature-table architecture.
+
+First job is source recovery/audit against upstream `2659a5cc987d`, not recreation from prose.
+
+Then build KFB WATER mode:
+- water support truth;
+- boat motion adapter;
+- wake/foam presentation;
+- transition Ground/Drive ↔ Boat where appropriate.
+
+Do not claim the TinySkies Boat movement model is already ported.
+
+## V5 · Plane / Air mode
+
+Same pattern:
+- recover exact Plane/Biplane donor behavior;
+- define KFB capability profile;
+- keep flight presentation/movement owner separate from carpet mode where necessary.
+
+## V6 · Freefall / Parachute / Skydiving
+
+This is a later explicit mode, useful for:
+- leaving vertical towers;
+- falling from Cheese Moon/Babel;
+- aerial world transitions.
+
+Needs:
+- fall/landing truth;
+- actor animation states;
+- parachute/glider source if used;
+- recover/ground transition.
+
+Do not fake it as camera-only falling.
+
+---
+
+# STRAND B · Vertical Worlds, Babel, Hex/Voxel and Card Towers
+
+## Goal
+
+Vertical construction becomes a first-class **world-content grammar**, not a separate world runtime.
+
+Structures may be built on FLAT, SPHERE or TORUS surfaces and can rise far beyond the local terrain.
+
+## B0 · Failed-source recovery · READY
+
+Recover exact source for:
+- useful failed Platformer movement/camera/contact work;
+- any auto-jump-line logic Georg remembers;
+- full S2b Babel export.
+
+Until pinned:
+`AUTO_JUMP_SOURCE_REQUIRED`.
+
+Do not reconstruct missing code from screenshots or prose.
+
+## B1 · Measured Hex/Voxel platform grammar
+
+Reuse:
+- KayKit Medieval Hexagon;
+- Medieval Builder;
+- current `hex-grid.js / TILE_EDGES`;
+- Card Zone v2 semantics where relevant;
+- BlockBits/Voxel only as a deliberate local building grammar.
+
+Measure:
+- support surfaces;
+- connector edges;
+- step height;
+- jump classes;
+- footprints;
+- legal adjacency.
+
+## B2 · Babel Recipe Generator
+
+Use the existing brief but move it into the new production model:
+- small reachable authored/seeded vertical path;
+- no giant random island;
+- debug only as secondary evidence.
+
+The initial 8–14-band recipe is a product seed, not the final height limit.
+
+## B3 · Assisted Platformer traversal
+
+After exact donor recovery:
+- normal grounded movement;
+- explicit auto-jump / assisted jump corridors only where intended;
+- no-fall Chill mode;
+- recovery to last valid support;
+- free/manual mode remains possible where supported.
+
+The assist is a traversal mode, not geometry ownership.
+
+## B4 · Infinite/extended vertical construction
+
+WorldBuilder may append bands/modules as needed:
+- Hex;
+- Voxel;
+- Card platforms;
+- structural/scenery modules.
+
+Streaming/LOD only after the finite tower is useful.
+
+The Cheese Moon can be a narrative/world target without becoming an engine assumption.
+
+## B5 · Combat bands
+
+Mount Combat Encounter Modules on selected levels:
+- clear encounter;
+- unlock/reveal next band;
+- autonomous exhibition or player combat.
+
+Combat owns fight state; Tower owns level/order/support.
+
+## B6 · Vertical Travel
+
+Combine with STRAND V:
+- climb/jump;
+- fall;
+- free flight;
+- parachute/glider;
+- vehicle/portal transitions.
+
+---
+
+# STRAND N · Town, ChatterBox and Living NPC Worlds
+
+## Target
+
+WorldBuilder should create **inhabited places**, not static dioramas.
+
+A Resident can carry:
+- visual scene recipe;
+- idle/activity animation;
+- encounter-beat behavior;
+- ChatterBox voice/text source;
+- memory view;
+- gift/card offer;
+- optional combat capability.
+
+## N1 · Encounter Beat Bus · READY
+
+Reuse the Town grammar:
+
+```
+approach
+→ greet
+→ offer
+→ react
+→ decline/accept
+→ leave
+```
+
+The encounter system emits semantic beats.
+
+Animation chooses performance.
+ChatterBox chooses text.
+Gift/card system chooses offer.
+None writes the other's internal state.
+
+## N2 · ChatterBox adapter · READY
+
+Reuse existing ChatterBox/NIE/bubble donors rather than building dialogue trees.
+
+Preferred architecture:
+```
+host encounter/context
+→ ChatterBox content selection
+→ bubble/voice presentation
+→ optional actor performance beat
+```
+
+The host owns:
+- relationship;
+- nearby situation;
+- whether an NPC is currently speaking;
+- interaction/combat legality.
+
+ChatterBox owns neither movement nor combat.
+
+## N3 · NPC memory
+
+Reuse existing Journey/event+context+card records as the memory source.
+
+NPC memory is a filtered view:
+- seen player before;
+- cards encountered/played/discovered;
+- prior gift/incident;
+- missing/interesting card hint.
+
+Do not create a second global memory database.
+
+## N4 · Gift / collectible encounter
+
+Residents may offer:
+- card;
+- skin;
+- scene/item;
+- satirical upgrade;
+- collectible line/retort.
+
+This preserves Georg's “attraction with legs” direction.
+
+A gift is a typed reward/event, not an arbitrary dialog side effect.
+
+## N5 · Living Resident Scene Module
+
+Package:
+- scene/actors/props;
+- default activity loop;
+- encounter beats;
+- ChatterBox profile;
+- memory adapter;
+- gift hooks;
+- optional combat capability.
+
+WorldBuilder can search/place this module exactly like a static Resident Scene.
+
+## N6 · Town / Open World Life
+
+Town becomes a curated WorldBuilder composition using the same Living Resident modules.
+
+Friendly default does not mean incapable of combat:
+- social context can remain calm;
+- a Combat Encounter adapter may temporarily own fight state when provoked or staged.
+
+---
+
+# STRAND S · Shared Stage, Transitions and Presentation Modules
+
+These modules are reusable presentation layers. They never become game owners.
+
+## S1 · Spindle Sky · READY
+
+Reuse Combat planning donor:
+- `himmel.v4.js`;
+- `spindel.v4.js`;
+- `skydome-shader.v4.js`;
+- Travel skydome/world-context donor where appropriate.
+
+Candidate shared API:
+`mount / setPreset / setPalette / update / probe / dispose`.
+
+Uses:
+- Combat versus stage;
+- Card Tower;
+- Babel/vertical worlds;
+- Story/instance scenes;
+- selected WorldBuilder environments.
+
+## S2 · Theatre Curtain Core v2 · READY
+
+Preserve the v1 cloth runtime.
+
+Complete Georg-requested refinement:
+- lower-third tieback/swag;
+- physical cord/tieback if feasible;
+- remove unnatural crease artifacts;
+- retain exact source-backed fabric foundation.
+
+Then host adapters:
+- Combat raid/match intro;
+- Race reveal/countdown;
+- Travel/portal;
+- Dungeon/minigame;
+- staged Hero Shots.
+
+## S3 · Encounter/Instance Stage Recipe
+
+A stage recipe references, rather than copies:
+- support/surface module;
+- environment/Spindle preset;
+- Resident/combatants;
+- choreography/encounter recipe;
+- Curtain transition;
+- VFX/SFX semantic maps;
+- camera preset;
+- return anchor.
+
+This is the common seam between Arena, WorldBuilder and staged Hero Shots.
+
+## S4 · Shared semantic FX/SFX
+
+Reuse current Combat/Travel/Pinball/VFX donor work.
+
+Games emit semantic events.
+FX/SFX maps choose presentation.
+No game should create another global FX/audio engine solely to use a cue.
+
+---
+
+# Cross-strand additions
+
+The full KFB architecture now treats these as first-class relationships:
+
+```
+CubePet / KayKit / Legacy / procedural actor families
+        │
+        ├→ ToolBox Face / Pose / Animation
+        ├→ Resident Scene / Living NPC
+        ├→ Duel Choreography
+        └→ Combat Arena / World encounters
+
+Motion Profiles ──→ Animation Studio ──→ Duel Studio
+                                   └──→ WorldBuilder locomotion
+
+Surface Adapter (FLAT/SPHERE/TORUS/…)
+        │
+        ├→ Ground
+        ├→ Drive
+        ├→ Flight
+        ├→ Boat
+        └→ Vertical traversal
+
+Hex/Voxel/Card vertical structures
+        ├→ Platformer traversal
+        ├→ Combat encounter bands
+        └→ flight/freefall return
+
+Spindle + Curtain + semantic FX/SFX
+        └→ shared Stage/Instance presentation
+
+ChatterBox + Memory + Gift hooks
+        └→ Living Resident Module
+              └→ Town / any WorldBuilder world
+```
+
 # Cross-strand dependency map
 
 ```
