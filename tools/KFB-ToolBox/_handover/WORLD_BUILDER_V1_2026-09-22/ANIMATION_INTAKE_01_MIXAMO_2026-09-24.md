@@ -40,8 +40,10 @@ Georg: before the animation work, every character gets its default eye rig.
 - **Legacy page exists but is not reviewable yet** (`kfb-hub/stage/toolbox/eye-rig-batch/legacy/`, checked 24.09 in Chrome): it opens head-only with the painted source eyes, shows `0/17 mounted`, toolbar labels are unreadable (dark on dark); eyes appear only after pressing "Measure + mount EyeRig v6". Only the 17 Dungeon-Pack heads are in it.
 - **Legacy completion slice (browser, not Blender)** before Georg reviews:
   1. eyes mounted automatically on load; readable toolbar;
-  2. full figures, not heads: assemble via the existing `legacyAssemble()` (`tools/resident_atlas_s6/lib/atlas.js`, Body/Head/armLeft/armRight on `LEGACY_RIG`);
-  3. all Legacy kits in the roster: `media/3D_Assets/KayKit Legacy/` → Dungeon Pack 1.0 characters, **Legacy Character Pack – Skeletons 1.0**, **Orc Warband – legacy**, Spooktober characters (intake list `KAYKIT_LEGACY_INTAKE_2026-09-18.json`); heads/bodies stay swappable (kit logic);
+  2. full figures, not heads (Dungeon kit via the existing `legacyAssemble()` in `tools/resident_atlas_s6/lib/atlas.js`, Body/Head/armLeft/armRight on `LEGACY_RIG`);
+  3. all Legacy characters in the roster (`media/3D_Assets/KayKit Legacy/`, intake `KAYKIT_LEGACY_INTAKE_2026-09-18.json`):
+     - **Dungeon Pack 1.0 = the only modular kit** (heads/bodies/arms swappable; mini versions of current characters) → assemble via `legacyAssemble()`;
+     - **complete characters, not kits**: Legacy Character Pack – Skeletons 1.0, Spooktober 1.1 (Jack, Witch), Orc Warband – legacy → load as whole figures, no part swapping;
   4. **head-based scale**: calibrate each Legacy figure so its head matches the Rig_Medium head size (the Warband orcs currently read too big because the head is not the scale basis); store the factor per figure, never edit the source GLTF;
   5. then Georg reviews once and sets the Legacy default.
 - Animation Lab v2 and WorldBuilder mount each actor with its approved profile by default (eyes on); a toggle may switch them off. No second eye implementation.
