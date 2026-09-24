@@ -124,25 +124,34 @@
     },
     {
       "id": "worldbuilder-w0",
-      "bucket": "RUNNING",
+      "bucket": "LOOK_AT",
       "title": "WorldBuilder WB-W0 · Maßstab und Begehbarkeit",
-      "what": "Aktueller lokaler Kandidat: echter Figuren-, Haus- und Streckenmaßstab, begehbare Route und reproduzierbare Traversability-Gates. 10/10 lokale Preview-Prüfungen sind dokumentiert; GitHub-Quellen-Lock und öffentliche Prüfseite folgen.",
+      "what": "Der gemessene Welt-Kandidat ist als vollständiger Source-Lock gesichert und öffentlich spielbar. 10/10 Welt-Prüfungen bestehen; die bekannte schwarze Baumtextur, harte Laufblende und fragliche Kopf-Tusche bleiben offen sichtbar, blockieren aber nicht die Prüfung der Weltgrundlage.",
       "provider": "Claude Design → WSA",
-      "yourAction": "",
-      "waitingFor": "",
-      "questions": [],
+      "yourAction": "Die Welt kurz vom Globus bis zum Boden ansehen, WALK testen und dann PASS, TUNE oder REJECT für Maßstab und Begehbarkeit geben.",
+      "waitingFor": "Georgs Sicht- und Spielprüfung der Weltgrundlage.",
+      "questions": [
+        "Fühlt sich der Übergang vom Globus in eine messbare Region richtig an?",
+        "Tragen Maßstab, Route und freie Flächen als Grundlage für OSM und Racer?"
+      ],
       "repo": "georg-doc/kayfabizarro",
-      "pr": null,
-      "branch": null,
+      "pr": 203,
+      "branch": "work/worldbuilder-w0-source-lock-2026-09-24",
       "external": false,
-      "freshness": "UNVERIFIED",
+      "freshness": "CURRENT",
       "freshnessNote": "",
-      "head": null,
-      "headDate": null,
-      "expectedHead": null,
-      "prUrl": null,
-      "prState": null,
-      "brief": null
+      "head": "148f22e776a0bd26c74123652471249f39dd47aa",
+      "headDate": "2026-09-24T09:41:16Z",
+      "expectedHead": "148f22e776a0bd26c74123652471249f39dd47aa",
+      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/203",
+      "prState": "open",
+      "brief": null,
+      "review": {
+        "label": "WB-W0 spielen",
+        "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/",
+        "available": true,
+        "sourceRef": "PR #203 · PUBLIC_VERIFIED · 10/10 Welt-Gates PASS · human pending"
+      }
     },
     {
       "id": "huerth-form-language",
