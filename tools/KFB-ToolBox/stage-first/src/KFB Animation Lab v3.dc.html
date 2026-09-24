@@ -1491,17 +1491,36 @@ class Component extends DCLogic {
       onGPrev: () => this.setState((p) => ({ gPage: Math.max(0, Math.min(p.gPage, gp.pages - 1) - 1) })),
       onGNext: () => this.setState((p) => ({ gPage: Math.min(gp.pages - 1, p.gPage + 1) })),
       galleryEmpty: s.gallery && !gp.vis.length,
-      galleryCells: s.gallery ? gp.items.map((k) => { const kc = (this.GM && this.GM.clipClass) ? this.GM.clipClass(k.clip.name) : null; const dr = wSide ? this.driftOf(k.clip, wSide) : null; return {
-        key: k.key, label: k.clip.name, on: () => this.selectClip(k.key),
-        title: k.pack + ' \u00b7 ' + (k.clip.duration * 1000).toFixed(0) + ' ms' + (kc ? ' \u00b7 Klasse ' + kc : '') + (k.foreign ? ' \u00b7 cross-rig Rig ' + k.rig : ''),
-        sub: (k.pack === 'embedded' ? 'eigen' : k.pack) + ' \u00b7 ' + (k.clip.duration * 1000).toFixed(0) + ' ms' + (dr != null ? ' \u00b7 Slot ' + wSide.toUpperCase() + ' ' + dr + '\u00b0' : ''),
-        dotStyle: (wClass && kc === wClass) ? 'width:6px;height:6px;border-radius:50%;background:' + accent + ';flex:0 0 auto;' : (k.foreign ? 'width:6px;height:6px;border-radius:50%;border:1px solid ' + accent + ';flex:0 0 auto;' : 'display:none;'),
-        style: 'display:flex;flex-direction:column;gap:4px;padding:5px;background:' + (k.key === s.clipKey ? '#26292c' : '#1d1f21') + ';border:1px solid ' + (k.key === s.clipKey ? accent : '#2a2d30') + ';border-radius:4px;cursor:pointer;text-align:left;min-width:0;font-family:inherit;' }; }) : [],
+      galleryCells: s.gallery ? gp.items.map((k) => {
+        const kc = (this.GM && this.GM.clipClass) ? this.GM.clipClass(k.clip.name) : null;
+        const dr = wSide ? this.driftOf(k.clip, wSide) : null;
+        const mp = this.motionProfile(k);
+        const ms = k.library && this.ML ? this.ML.referenceSpeed(this.motion, k.clip.name, k.rig) : null;
+        return {
+          key: k.key, label: k.clip.name, on: () => this.selectClip(k.key),
+          title: k.pack + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms'
+            + (mp ? ' · ' + mp.semantics.stateFamily + ' · ' + mp.rootTravel.mode : '')
+            + (kc ? ' · Klasse ' + kc : '') + (k.foreign ? ' · cross-rig Rig ' + k.rig : ''),
+          sub: k.library
+            ? ['KFB Motion', mp && mp.semantics.stateFamily, mp && mp.semantics.direction, Number.isFinite(ms) ? ms.toFixed(2) + ' m/s' : 'speed unknown'].filter(Boolean).join(' · ')
+            : (k.pack === 'embedded' ? 'eigen' : k.pack) + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms' + (dr != null ? ' · Slot ' + wSide.toUpperCase() + ' ' + dr + '°' : ''),
+          dotStyle: (wClass && kc === wClass) ? 'width:6px;height:6px;border-radius:50%;background:' + accent + ';flex:0 0 auto;' : (k.foreign ? 'width:6px;height:6px;border-radius:50%;border:1px solid ' + accent + ';flex:0 0 auto;' : 'display:none;'),
+          style: 'display:flex;flex-direction:column;gap:4px;padding:5px;background:' + (k.key === s.clipKey ? '#26292c' : '#1d1f21') + ';border:1px solid ' + (k.key === s.clipKey ? accent : '#2a2d30') + ';border-radius:4px;cursor:pointer;text-align:left;min-width:0;font-family:inherit;'
+        };
+      }) : [],
       filterRowStyle: 'display:' + (stage ? 'none' : 'flex') + ';align-items:center;gap:6px;min-width:0;',
-      clipChips: vis.map((k) => ({ label: k.clip.name,
-        title: k.pack + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms · ' + k.clip.tracks.length + ' tracks' + (k.foreign ? ' · cross-rig: Rig ' + k.rig + ' clip on a ' + s.rig + ' character' : ''),
-        dotStyle: k.foreign ? 'width:4px;height:4px;border-radius:50%;background:' + accent + ';flex:0 0 auto;' : 'display:none;',
-        style: clipChip(k.key === s.clipKey), on: () => this.selectClip(k.key) })),
+      clipChips: vis.map((k) => {
+        const mp = this.motionProfile(k);
+        return {
+          label: k.clip.name,
+          title: k.pack + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms · ' + k.clip.tracks.length + ' tracks'
+            + (mp ? ' · ' + mp.semantics.stateFamily + ' · ' + mp.rootTravel.mode : '')
+            + (k.foreign ? ' · cross-rig: Rig ' + k.rig + ' clip on a ' + s.rig + ' character' : ''),
+          dotStyle: k.library ? 'width:4px;height:4px;border-radius:50%;background:#8fbf6a;flex:0 0 auto;' : (k.foreign ? 'width:4px;height:4px;border-radius:50%;background:' + accent + ';flex:0 0 auto;' : 'display:none;'),
+          style: clipChip(k.key === s.clipKey),
+          on: () => this.selectClip(k.key)
+        };
+      }),
       onXrig: () => this.toggleXrig(),
       xrigTitle: 'Cross-rig · offer clips from both rig families and mark the foreign ones with a dot. Tests whether a Medium jump carries a Large character. Native clips always win; foreign clips only fill gaps.',
       xrigStyle: 'height:26px;padding:0 7px;background:' + (s.xrig ? '#26292c' : 'transparent') + ';border:1px solid ' + (s.xrig ? accent : '#2a2d30') + ';border-radius:3px;color:' + (s.xrig ? '#e7e7e5' : '#83868a') + ';font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1;cursor:pointer;',
