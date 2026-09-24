@@ -11,6 +11,8 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
 
+The current v3 candidate now covers **11 primary strands / 45 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life and Shared Stage/Transitions. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
+
 Current architecture candidate:
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
 
