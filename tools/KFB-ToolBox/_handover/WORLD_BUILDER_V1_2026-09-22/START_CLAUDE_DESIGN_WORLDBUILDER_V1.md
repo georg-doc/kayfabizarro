@@ -53,6 +53,13 @@ Load at runtime from jsDelivr, pinned. Print one line on screen per donor provin
 - Every "fixed" names what is different in the picture.
 - Stop after the Done-when list. No extra features.
 
-## Delivery
+## Delivery — Claude Design cannot push to GitHub
 
-Export the project (all files, unchanged multi-file). Coworker publishes it as a review page under `kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-v1/` and links it in the KFB Hub. No single-file bundling.
+You have no GitHub write access and no browser. Do not try to commit, push or open PRs. At the end of **every** slice, without being asked, produce:
+
+1. a **full codebase export** of the project (all files, unchanged multi-file; no single-file bundle, no simplified mirror);
+2. `CHANGELOG.md`, additive, newest on top (new / unchanged / removed);
+3. `RETURN.md`: first line = file tree; then what is different in the picture, open points;
+4. `SOURCE.json`: every donor with exact repo path + commit.
+
+Georg downloads the export; Coworker uploads it to GitHub and publishes it as a review page under `kayfabizarro.pages.dev/kfb-hub/pruefen/<name>/`.

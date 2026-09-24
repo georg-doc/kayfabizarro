@@ -88,6 +88,8 @@ Add:
 
 Done when Georg can open the lab, find "Climbing To Top", watch it on FrizzleBob and on the Orc Brute, and copy its id.
 
+Delivery (Claude Design cannot push): at the end of the slice, unasked, a full codebase export + additive `CHANGELOG.md` + `RETURN.md` (file tree first) + `SOURCE.json`. Georg downloads; Coworker uploads to GitHub and publishes the review page.
+
 ## 5 · Order
 
 1. Legacy completion slice (§2b), then Georg's one review; Medium/Large eye defaults already exist. Eyes need no Blender batch.
