@@ -164,7 +164,7 @@ async function ensureActor(){
     actorCache[rk]=loadGlb(url);
   }
   const g=await actorCache[rk];
-  if(actor)scene.remove(actor); actor=g.scene.clone(true); scene.add(actor); frameActor();
+  if(actor)scene.remove(actor); actor=g.scene; scene.add(actor); frameActor();
 }
 async function ensureLibrary(){
   const rk=rigKey(); if(!libraryCache[rk]){
