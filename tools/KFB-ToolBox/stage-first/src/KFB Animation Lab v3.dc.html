@@ -309,6 +309,8 @@ class Component extends DCLogic {
     /* v3 · Inventar: der sichtbare Pool (gleiche Suche/Filter wie die Clip-Leiste) als animierter
        Kontaktbogen, seitenweise (G_PER Zellen), jede Zelle ein Klon der Bühnenfigur mit eigenem Mixer. */
     gallery: false, gPage: 0, fx: true,
+    /* AN-PROFILE-02 · source-backed KFB Motion Library + measured profile state. */
+    motionStatus: 'idle', motionError: '',
     /* v3 · Gesicht aus dem Studio: Sprechen, Zeigerblick, Miene — dieselben Module (EyeRig v6, PetMouth v1),
        nur bedient. Der Vertrag liefert die Mienen (face.emotes), sonst die sechs Vorgaben. */
     talk: false, gaze: false, emote: 'neutral',
@@ -318,6 +320,7 @@ class Component extends DCLogic {
   charScene = null; charBones = null; embedded = []; mixer = null; action = null; clip = null;
   clipsCache = {}; loader = null; rigSpan = {}; stripUrl = ''; stripName = ''; packFail = {}; charAudit = {};
   graftHandle = null; PETS = null; petFileRef = React.createRef(); GM = null;
+  ML = null; motion = null; motionClips = {}; motionPackStatus = {};
 
   /* ---------- boot ---------- */
   componentDidMount() {
@@ -327,6 +330,18 @@ class Component extends DCLogic {
     const go = () => { this.T = window.__KFB3D; this.boot(); };
     if (window.__KFB3D) go(); else window.addEventListener('kfb3dready', go, { once: true });
     this.loadModule('loco', './lab/locomotion.js').then((M) => { this.LOCO = M; }).catch((e) => this.setState({ err: 'lab/locomotion.js failed: ' + e.message }));
+    this.setState({ motionStatus: 'loading', motionError: '' });
+    this.loadModule('motionLib', './lab/motion-library.v1.js').then(async (M) => {
+      this.ML = M;
+      try {
+        this.motion = await M.loadMotionLibrary();
+        this.setState((s) => ({ motionStatus: 'ready', motionError: '', tick: s.tick + 1 }));
+        if (this.loader && this.state.rig) await this.loadMotionPack(this.state.rig);
+      } catch (e) {
+        this.setState({ motionStatus: 'fail', motionError: e.message });
+        console.error('[AN-PROFILE-02] shared motion source unavailable', e);
+      }
+    }).catch((e) => this.setState({ motionStatus: 'fail', motionError: 'motion-library.v1.js failed: ' + e.message }));
     /* v2 · der Vertrags-Übersetzer (neu) und Studios EIGENES Sitzungsmodul (WS0-Eigentum, unangetastet
        geladen — dieselbe Datei, dieselbe Regel, kein zweiter Session-Weg). Fällt einer aus, fehlt
        nur der Contract-Reiter, nicht der Rest des Labs. */
@@ -495,6 +510,7 @@ class Component extends DCLogic {
     const wasLoco = this.state.loco;
     this.selectClip(keep ? keep.key : (list[0] ? list[0].key : ''));
     this.loadAllPacks(rig);
+    this.loadMotionPack(rig);
     if (wasLoco) this.enableLoco();
   }
 
@@ -641,6 +657,31 @@ class Component extends DCLogic {
     } catch (e) { this.clipsCache[id] = []; this.packFail[id] = e.message; this.setState((s) => ({ packStatus: { ...s.packStatus, [id]: 'fail' }, tick: s.tick + 1 })); return []; }
   }
   async loadAllPacks(rig) { for (const p of this.A.PACKS) { if (!p.rigs.includes(rig)) continue; await this.loadPack(rig, p.key); if (!this.state.clipKey) { const l = this.visibleClips(rig); if (l[0]) this.selectClip(l[0].key); } } }
+  async loadMotionPack(rig) {
+    if (!rig || !this.ML || !this.motion || !this.loader) return [];
+    if (this.motionClips[rig]) return this.motionClips[rig];
+    if (this.motionPackStatus[rig] === 'loading') return [];
+    this.motionPackStatus[rig] = 'loading';
+    this.setState((s) => ({ motionStatus: 'loading ' + rig, tick: s.tick + 1 }));
+    try {
+      const url = this.ML.libraryUrl(this.motion, rig);
+      const g = await new Promise((res, rej) => this.loader.load(url, res, undefined, (e) => rej(new Error('KFB Motion ' + rig + ' not loadable' + (e && e.message ? ': ' + e.message : '')))));
+      const clips = g.animations || [];
+      if (clips.length !== 33) throw new Error('KFB Motion ' + rig + ' expected 33 clips, got ' + clips.length);
+      const known = new Set((this.motion.catalogue.clips || []).map((x) => x.id));
+      const missing = clips.filter((x) => !known.has(x.name)).map((x) => x.name);
+      if (missing.length) throw new Error('KFB Motion ' + rig + ' has clip(s) without catalogue profile: ' + missing.join(', '));
+      this.motionClips[rig] = clips;
+      this.motionPackStatus[rig] = 'ok';
+      this.setState((s) => ({ motionStatus: 'ready', motionError: '', tick: s.tick + 1 }));
+      return clips;
+    } catch (e) {
+      this.motionPackStatus[rig] = 'fail';
+      this.setState((s) => ({ motionStatus: 'fail', motionError: e.message, tick: s.tick + 1 }));
+      console.error('[AN-PROFILE-02] ' + e.message);
+      return [];
+    }
+  }
   async loadChar(id) {
     if (String(id).startsWith('carl:') || (String(id).startsWith('draft:') && (this.petEntry(id) || {}).kind === 'capsule')) return this.loadCarl(id);
     if (/^(pet|draft):/.test(String(id))) return this.loadPet(id);
@@ -674,19 +715,34 @@ class Component extends DCLogic {
   /* ---------- clips ---------- */
   allClips(rig) {
     rig = rig || this.state.rig; const out = [];
-    for (const cl of this.embedded) out.push({ key: 'embedded/' + cl.name, pack: 'embedded', clip: cl, rig, foreign: false });
-    /* native rig first, so a foreign clip only ever fills a gap — never shadows a clip the rig owns */
+    for (const cl of this.embedded) out.push({ key: 'embedded/' + cl.name, pack: 'embedded', clip: cl, rig, foreign: false, library: false });
+    /* native rig first, so a foreign stock clip only ever fills a gap — never shadows a clip the rig owns */
     const rigs = this.state.xrig ? [rig].concat(this.A.RIGS.filter((r) => r !== rig)) : [rig];
     for (const r of rigs) for (const p of this.A.PACKS) {
       if (!p.rigs.includes(r)) continue;
       for (const cl of (this.clipsCache[this.packId(r, p.key)] || []))
-        out.push({ key: (r === rig ? '' : r[0] + ':') + p.key + '/' + cl.name, pack: p.key, clip: cl, rig: r, foreign: r !== rig });
+        out.push({ key: (r === rig ? '' : r[0] + ':') + p.key + '/' + cl.name, pack: p.key, clip: cl, rig: r, foreign: r !== rig, library: false });
     }
+    /* AN-PROFILE-02: the current rig's source-backed KFB library uses this same selection/mixer path.
+       We never offer the other rig as a "cross-rig" substitute because both proper rig libraries exist. */
+    for (const cl of (this.motionClips[rig] || []))
+      out.push({ key: 'KFBMotion/' + cl.name, pack: 'KFB Motion Library', clip: cl, rig, foreign: false, library: true });
     return out;
+  }
+  motionProfile(item) {
+    return item && item.library && this.ML && this.motion ? this.ML.profileOf(this.motion, item.clip.name) : null;
+  }
+  itemFamily(item) {
+    return item && item.library && this.ML && this.motion ? this.ML.filterFamily(this.motion, item.clip.name) : this.A.familyOf(item.pack);
+  }
+  motionSearchText(item) {
+    const p = this.motionProfile(item); if (!p) return '';
+    const s = p.semantics || {}, r = p.rootTravel || {};
+    return [s.stateFamily, s.gait, s.direction, s.stance, r.mode].filter(Boolean).join(' ').toLowerCase();
   }
   visibleClips(rig) {
     const s = this.state, q = s.q.trim().toLowerCase();
-    return this.allClips(rig).filter((x) => (!s.family || this.A.familyOf(x.pack) === s.family) && (!q || x.clip.name.toLowerCase().includes(q) || x.pack.toLowerCase().includes(q)));
+    return this.allClips(rig).filter((x) => (!s.family || this.itemFamily(x) === s.family) && (!q || x.clip.name.toLowerCase().includes(q) || x.pack.toLowerCase().includes(q) || this.motionSearchText(x).includes(q)));
   }
   selectClip(key) {
     const { THREE } = this.T;
@@ -713,7 +769,7 @@ class Component extends DCLogic {
   async setRig(r) {
     const manual = r === this.state.rigMeasured ? '' : r;
     this.setState({ rigManual: manual, rig: r });
-    await this.loadPack(r, 'MovementBasic');
+    await Promise.all([this.loadPack(r, 'MovementBasic'), this.loadMotionPack(r)]);
     const l = this.visibleClips(r); const keep = l.find((x) => x.key === this.state.clipKey);
     this.selectClip(keep ? keep.key : (l[0] ? l[0].key : ''));
     this.loadAllPacks(r);
@@ -1280,13 +1336,15 @@ class Component extends DCLogic {
     const all = (A && this.charScene) ? this.allClips() : [];
     const vis = (A && this.charScene) ? this.visibleClips() : [];
     const cur = all.find((x) => x.key === s.clipKey);
-    const famCount = {}; for (const x of all) { const f = A.familyOf(x.pack); famCount[f] = (famCount[f] || 0) + 1; }
+    const famCount = {}; for (const x of all) { const f = this.itemFamily(x); famCount[f] = (famCount[f] || 0) + 1; }
+    const motionFamilies = (this.ML && this.motion) ? this.ML.semanticFamilies(this.motion) : [];
+    const familyDefs = A ? A.FAMILIES.concat(motionFamilies) : motionFamilies;
     const families = A ? [{ label: 'All', style: chip(!s.family), on: () => this.setState({ family: '' }) }].concat(
-      A.FAMILIES.filter((f) => famCount[f.id]).map((f) => ({ label: f.label, style: chip(s.family === f.id), on: () => this.setState({ family: f.id }) }))) : [];
+      familyDefs.filter((f) => famCount[f.id]).map((f) => ({ label: f.label, style: chip(s.family === f.id), on: () => this.setState({ family: f.id }) }))) : [];
 
     const loading = Object.values(s.packStatus).filter((v) => v === 'loading').length;
     const failed = Object.entries(s.packStatus).filter(([, v]) => v === 'fail').map(([k]) => k.split('/')[1]);
-    const status = s.err ? '' : s.batching ? (s.batchMsg || 'batch') + ' …' : s.auditing ? (s.auditMsg || 'audit') + ' …' : !s.ready ? 'starting' : loading ? 'loading ' + loading : failed.length ? failed.length + ' pack' + (failed.length > 1 ? 's' : '') + ' unavailable' : '';
+    const status = s.err ? '' : s.batching ? (s.batchMsg || 'batch') + ' …' : s.auditing ? (s.auditMsg || 'audit') + ' …' : !s.ready ? 'starting' : loading ? 'loading ' + loading : s.motionStatus === 'fail' ? 'KFB Motion unavailable · ' + s.motionError : String(s.motionStatus).startsWith('loading') ? 'KFB Motion ' + s.motionStatus : failed.length ? failed.length + ' pack' + (failed.length > 1 ? 's' : '') + ' unavailable' : '';
 
     const b = cur ? this.binding(cur.clip) : null, rm = cur ? this.rootMotion(cur.clip) : null;
     const pet0 = this.petEntry(s.charId);
@@ -1325,6 +1383,22 @@ class Component extends DCLogic {
       dataRows.push({ k: 'Duration', v: (cur.clip.duration * 1000).toFixed(0) + ' ms' });
       dataRows.push({ k: 'Tracks', v: cur.clip.tracks.length + ' · bound ' + b.bound + '/' + b.total + (b.total - b.bound ? ' · unbound ' + (b.total - b.bound) : '') });
       dataRows.push({ k: 'Root motion', v: rm.tracks ? rm.tracks + ' position tracks · max ΔXZ ' + rm.maxXZ.toFixed(3) + ' u' : 'no position tracks' });
+      if (cur.library) {
+        const mp = this.motionProfile(cur), rk = 'Rig_' + cur.rig;
+        const sem = (mp && mp.semantics) || {}, root = (mp && mp.rootTravel) || {};
+        const dist = root.travelMetersPerCycle && root.travelMetersPerCycle[rk];
+        const speed = this.ML.referenceSpeed(this.motion, cur.clip.name, cur.rig);
+        const marks = this.ML.actionMarkers(this.motion, cur.clip.name);
+        dataRows.push({ k: 'Motion · State', v: [sem.stateFamily || 'unknown', sem.gait || 'unknown'].join(' · ') });
+        dataRows.push({ k: 'Motion · Direction', v: (sem.direction || 'unknown') + ' · stance ' + (sem.stance || 'unknown') });
+        dataRows.push({ k: 'Motion · Travel', v: (root.mode || 'unknown') + (Number.isFinite(dist) ? ' · ' + dist.toFixed(3) + ' m/cycle' : '') });
+        dataRows.push({ k: 'Motion · Ref speed', v: Number.isFinite(speed) ? speed.toFixed(3) + ' m/s · measured-derived' : 'unknown · not measured/applicable' });
+        dataRows.push({ k: 'Motion · Feet', v: this.ML.plantedSummary(this.motion, cur.clip.name, cur.rig) });
+        dataRows.push({ k: 'Motion · Hands', v: mp && mp.contacts && mp.contacts.hands ? mp.contacts.hands.status : 'unknown' });
+        dataRows.push({ k: 'Motion · Rate window', v: mp && mp.acceptableRateWindow ? mp.acceptableRateWindow.status : 'unknown' });
+        dataRows.push({ k: 'Motion · Markers', v: marks.length ? marks.map((m) => m.name + (m.phase != null ? ' @ ' + m.phase : '')).join(' · ') : 'unknown · no measured action marker' });
+        dataRows.push({ k: 'Motion · Evidence', v: 'AN-PROFILE-01 · ' + this.ML.SOURCE_REVISION.slice(0, 8) + ' · source clip ' + cur.clip.name });
+      }
       if (cur.foreign) dataRows.push({ k: 'Cross-rig', v: 'Rig ' + cur.rig + ' clip on a ' + (s.rigMeasured || '?') + ' character · ' + (this.fitInfo ? 'FIT · ' + this.fitInfo.dropped + ' position tracks dropped, ' + this.fitInfo.kept + ' kept' : 'RAW · all tracks as authored') });
     }
     if (c0) dataRows.push({ k: 'Character', v: c0.label + ' · ' + c0.month });
@@ -1333,7 +1407,7 @@ class Component extends DCLogic {
     if (this.charHeight) dataRows.push({ k: 'Height', v: this.charHeight.toFixed(2) + ' u' });
     if (failed.length) dataRows.push({ k: 'Load fails', v: failed.join(', ') + ' (Rig ' + s.rig + ')' });
     dataRows.push({ k: 'Runtime', v: 'three r' + (this.T ? this.T.version : '?') + ' · one mixer · one RAF' });
-    dataRows.push({ k: 'Source', v: 'kayfabizarro@' + (A && A.REVISION ? A.REVISION.slice(0, 8) + ' (pinned)' : 'main (unpinned)') + ' · KayKit Animations 1.1' });
+    dataRows.push({ k: 'Source', v: cur && cur.library && this.ML ? 'KFB Motion Library · PR #' + this.ML.MOTION_LIBRARY_PR + ' + AN-PROFILE #' + this.ML.SOURCE_PR + ' @ ' + this.ML.SOURCE_REVISION.slice(0, 8) : 'kayfabizarro@' + (A && A.REVISION ? A.REVISION.slice(0, 8) + ' (pinned)' : 'main (unpinned)') + ' · KayKit Animations 1.1' });
     if (s.audit) dataRows.push({ k: 'Audit', v: 'M ' + s.audit.Medium + ' · L ' + s.audit.Large + ' clips · ' + s.audit.chars + ' characters' + (s.audit.fails.length ? ' · fails ' + s.audit.fails.join(', ') : ' · no load failures') + ' · ' + s.audit.when.slice(0, 16).replace('T', ' ') });
 
     const trials = Object.values(this.trialStore());
