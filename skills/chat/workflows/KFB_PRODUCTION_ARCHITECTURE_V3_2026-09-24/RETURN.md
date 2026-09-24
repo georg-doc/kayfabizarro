@@ -1,197 +1,237 @@
-# RETURN · KFB Production Architecture v3 · complete world/gameplay production map · 2026-09-24
+# RETURN · KFB Production Architecture v3 · Race/World/Look/Audio decisions · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 11 STRANDS / 45 JOBS · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 11 STRANDS / 53 JOBS · 73/73 PASS · UNMERGED · NO LIVE PROMOTION**
 
-## Exact state
+## Exact state before this Return write
 
 - Repo: `georg-doc/kayfabizarro`
 - Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 - Draft PR: **#204**
 - Base: `main@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
-- Validated architecture/source checkpoint before this Return: `a21b2c4a4e99eadbe285426f218e840a857c6c25`
-- Public Stage created by this architecture slice: **no**
+- validated architecture/source checkpoint: `b9e5f0c8d7faeb78105aa368f029ca486012c83e`
+- public Stage created by this architecture slice: **no**
 - Cloudflare Live promotion: **not authorized**
-- Existing public Hub remains: `https://kayfabizarro.pages.dev/kfb-hub/`
+- existing public Hub remains: `https://kayfabizarro.pages.dev/kfb-hub/`
 
-## Primary production strands
+## Production architecture
 
-### 1 · ToolBox Authoring Platform
-Stage-First → EyeRig → Fractal/Pose → Animation → Vehicle/Driver → Resident Scene + Live Search → coherent production ToolBox.
+The current self-service model remains:
+**11 primary strands · 53 copy-ready jobs · 26 READY · 27 dependency-gated HOLD**.
 
-### 2 · Animation & Residents
-Motion Library/Profiles → Pose-before-Blender → productive Blender performance batches → shared ToolBox/WorldBuilder consumers.
+The full strand map still covers:
+ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions.
 
-### 3 · WorldBuilder / God Mode
-WB-W0 → Authorable Place → Live Search/Fractal Edit → real locomotion → OSM district → Race module → God Mode.
+The Hub must remain strand-first with jobs collapsed by default.
 
-### 4 · Racer → World
-Current Race PR #33 R3d TUNE → Anatomy Foundation → route-driven visual module → real vehicle contact → WorldBuilder bridge.
+## New binding Race / RKIT decisions
 
-### 5 · Quick 3D Review
-Real-source visual questions directly in Chat HTML; measurement only as support.
+Source:
+`RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md`
 
-### 6 · Combat / Duel Choreography
-Actor capability matrix → real melee/ranged contact → ToolBox Duel Studio → autonomous NPC Match Director → Arena expansion → Card Tower encounters → Open-World Combat adapter.
+### D1 · Physics
+**Rapier is the canonical stunt-dimensioning / airborne-contact basis.**
 
-Key ownership:
-- Animation Studio choreographs/visualizes;
-- Combat Arena owns targeting, hit, damage, defeat, rewards and encounter lifecycle.
+Current design basis:
+- speed: 27 m/s;
+- gravity magnitude: 15 m/s² downward;
+- proven physical ramp around 16°.
 
-### 7 · Cube Pets / Actor Identity
-All 24 canonical CubePets remain first-class actors across ToolBox, Residents, Combat and World/Town.
+Reason:
+current C-3 route-relative movement does not physically launch from ramps; only its explicit jump path creates air time. Stunt geometry should not be dimensioned against an airborne/contact system that still has to be invented.
 
-Locked FrizzleBob identities:
-- `cube-frizzlebob` = canonical CubePet bunny / `animal-bunny.glb`;
-- `legacy-arena-frizzlebob` = Combat Arena Yellow/Gun lineage;
-- `frizzlebob-driver-graft` = current Rig_Medium ToolBox/modern actor line.
+The human-positive Track-Lab v0.8 steering/drift/grip feel remains a handling target/donor, **not** a second physics owner.
 
-No bare “FrizzleBob” is a valid technical actor id.
+### D2 · Widths
+Canonical:
+- NARROW 10.8 m
+- STANDARD 14.4 m
+- WIDE 18.0 m
+- HERO 21.6 m
 
-### 8 · Travel Modes / World Surfaces
-World topology and movement mode are independent.
+28.8 m may remain only as an explicit special/XL module/profile.
+18 m remains **WIDE**.
 
-First surfaces:
-`FLAT · SPHERE · TORUS`
+### D3 · Jumps
+Keep both:
+- `JUMP_BASE` around 12 m;
+- `JUMP_HERO_30` around 30 m as a step-down spectacle jump.
 
-First modes:
-`GROUND · FLIGHT · DRIVE · WATER/BOAT · later PLANE/FREEFALL/PARACHUTE`
+Ballistic design aid:
+at 27 m/s, 15 m/s² and ~16.3°, same-height ideal range is about 26 m; at 30 m horizontal distance the ideal trajectory is about 1.3 m below the lip. Therefore roughly 1.5–3 m step-down is a useful geometry study range before real Race runtime verification.
 
-Exactly one movement writer is active.
+### D4 · Launch
+Blender/RKIT owns geometry + lip/landing frames + stunt metadata.
+Race/Rapier owns takeoff/contact, airborne state, landing and recovery.
 
-TinySkies remains a donor:
-- Carpet;
-- Boat + BoatMesh with geometric foam waterline;
-- Plane/Biplane;
-- atmosphere/world presentation.
+### D5 · Moving flap
+RKIT may produce the thin-deck flap-down with hinge/axis/angle/collision metadata.
+Race owns trigger and the collider/support transform that follows the hinge.
+An animated visual flap without matching contact is not playable acceptance.
 
-Boat/Plane are source-proven upstream features, **not yet claimed as KFB-ported modes**.
+## Track product simplification
 
-### 9 · Vertical Worlds · Babel / Hex / Card Towers
-Recover failed-source mechanics → measured Hex/Voxel grammar → Babel recipe → assisted/chill platforming → extendable vertical construction → Combat bands → fall/flight return.
+A general track editor is explicitly **deferred**.
 
-The remembered old auto-jump-line implementation is **SOURCE_REQUIRED** until its exact code is found. No reconstruction from memory.
+Fast path:
+1. `TRACK_A_STUNT_8` — figure-eight / over-under + Base Jump + Hero Jump + one bridge/tunnel/flap feature.
+2. `TRACK_B_OVAL_EXIT` — broad oval/zero-like loop + one exit/branch.
+3. `TRACK_C_FLOW_LOOP` — handling/freeplay course.
 
-### 10 · Town / ChatterBox / Living NPCs
-Living Resident scenes use:
-- encounter beats;
-- ChatterBox/NIE/bubble presentation;
-- existing Journey/card-event memory as filtered NPC memory;
-- typed gifts/cards/collectible retorts;
-- optional Combat encounter capability.
+Pipeline:
+```
+small authored Route Recipe
+→ deterministic route compiler
+→ RKIT rounded profile + stunt modules
+→ baked Track Module
+→ WorldBuilder placement
+```
 
-Town becomes a curated composition of the same living modules rather than a separate NPC engine.
+The baked module keeps compact recipe/route/stunt data plus cached visual GLB/anchors/material roles/provenance. Race retains contact/physics truth.
 
-### 11 · Shared Stage / Transitions / FX
-- reusable Spindle/Skydome environment;
-- Theatre Curtain Core v2;
-- shared Stage/Instance recipes;
-- semantic VFX/SFX maps.
+Current RKIT sources:
+- PR #34 `f368dd0c71eb2798bcd057d30196cb8da4d967b6`
+- PR #35 `37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9`
 
-These remain presentation modules; hosts keep gameplay/rendering ownership.
+Prepared READY jobs:
+- `RACE-TRACK-RECIPE-01`
+- `RACE-RKIT-03`
 
-## Adjacent open lanes integrated as modules
+## OSM / World Zone bake
 
-Not promoted to new universal owners:
+The current Cologne `dom-zentrum-v0` normalized source/cache/anchors are the first production proof.
 
-- **2D / 2.5D Animation Studio** → Actor capability adapters / Residents / World / later Combat.
-- **Storytelling Maps / Responsive CardRig / Billboards** → placeable media/stage modules.
-- **Dungeon / Environment Atlas** → instance/layout owner; Combat/Resident/Curtain adapters compose around it.
-- **Card Zone / Project Islands** → Card systems feed Vertical/World/Combat support.
-- **VFX/SFX consolidation** → Shared Stage semantic event maps.
-- **Tourbus / WaterBowser** → later Living Vehicle Scene using Drive + Residents + ChatterBox + billboard/cards/gifts.
-- **Graveyard / Boxel / other mini-games** → instance owners with World/Town entrances and shared transition/return.
+Pipeline:
+```
+source extract/query
+→ normalize to semantic metre frame
+→ deterministic city/world compile
+→ versioned baked World Zone
+→ WorldBuilder ref + transform
+```
 
-## Current self-service catalog
+No live Overpass dependency during normal WorldBuilder/game use.
 
-Machine-readable Hub catalog:
-`HUB_BRIEFING_CATALOG.json` schema v3.
+The package keeps source/hash/provenance/compiler/look revision and baked visual/support data.
 
-Metrics:
-- **11 strands**
-- **45 copy-ready jobs**
-- **20 READY**
-- **25 HOLD with explicit dependency**
-- Hub default = strand-first
-- individual job cards collapsed by default
-- Today view should show only current READY/REVIEW work, not the full wall
+Decision:
+- **Cologne first**
+- **Barcelona second-city portability proof**
 
-New copy-ready job groups include:
+WorldBuilder composition is deliberately freer than OSM geography:
+Barcelona Zone + authored Cologne Cathedral + Track A + Resident Scene is valid, provided the Cathedral is recorded as an authored landmark instance rather than Barcelona OSM truth.
 
-Combat:
-`COMBAT-ID-01 · COMBAT-MELEE-01 · COMBAT-DUEL-01 · COMBAT-MATCH-01 · COMBAT-TOWER-01 · COMBAT-WORLD-01`
+Prepared:
+- `WORLD-ZONE-BAKE-01` READY
+- `WORLD-ZONE-BAKE-02` HOLD until the compiler/package contract passes.
 
-CubePets:
-`PET-ID-01 · PET-TOOLBOX-01 · PET-RESIDENT-01 · PET-COMBAT-01`
+## Elastic / Landmark torsion
 
-Travel/surfaces:
-`SURFACE-01 · TRAVEL-MODES-01 · TRAVEL-DRIVE-01 · TRAVEL-BOAT-01 · TRAVEL-AIR-01`
+Hürth R2 remains frozen after two failed repair passes on PR #194:
+`b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea`.
 
-Vertical:
-`VERT-SOURCE-01 · BABEL-01 · VERT-WORLD-01`
+No third city-block patch.
 
-NPC life:
-`NPC-LIFE-01 · NPC-MEMORY-01 · NPC-GIFT-01 · NPC-WORLD-01`
+New READY job:
+`LOOK-TORSION-01`.
 
-Shared Stage:
-`SPINDLE-01 · CURTAIN-02 · STAGE-INSTANCE-01 · FX-SEMANTIC-01`
+It reuses existing GROTESQUE / BuildingElastic / LandmarkElastic evidence and adds an isolated height-dependent TORSION/TWIST proof:
+- anchored base;
+- bend/lean/taper/twist share one coherent height field;
+- stronger deformation on tall/hero landmarks;
+- roof/body boundary follows final silhouette;
+- camera skew may amplify but never substitute for geometric deformation.
 
-All existing ToolBox / Animation / WorldBuilder / Racer briefs remain in the same catalog.
+Existing City GROTESQUE twist around 11° is a donor/reference upper range, not a global constant.
 
-## Validated current source state
+## Audio / music / VFX production
 
-**52/52 architecture/source checks PASS.**
+### Sound
+New READY:
+`AUDIO-AUDITION-01`.
 
-Relevant current heads:
-- EyeRig #104: `e277c3456651d314a01adea046e0105d2a12cdd1`
-- Creator/KCL #107: `fc49a336af57adb6317b74211b3318d004d96de5`
-- Curtain #114: `cd9c04cbf009b1211b9b6b008162b9d322d6e152`
-- Motion Lab #127: `7c8cc218ec46dabb20409c9e0b5368afcf5845c6`
-- Card Zone #156: `ee0f9bb6d738c538e042f799e5fb6f9b20893a01`
-- ToolBox #185: `2833674b36be707fa4d14c8b532faee78ef3ba28`
-- Shared Editor #186: `7267185cdbdc60e576b946ee589f0b2e932c8c8b`
-- WB2 #190: `5a98e674184ea4694a5ad7d696d8cc84c1618bdf`
-- Blender proof #192: `b49fb6e1adde070d658e1cc21dadb3294164cb29`
-- Warband #195: `9dda7957a33e69926265c1e3a69028a4b35b26f0`
-- Motion Library #197: `bf0eace2332a48f0b220318ad7567c68cc6dfbad`
-- WB-W0 #203: `40fe2c10959a2022694a2342482e04dd34cbe7be`
-- Combat main: `f6a59ad15b9ffcf3164b0ab013f223962b63f61f`
-- Combat #5: `d6cf532e64d45fd3117775ec61cfc87b9e948ac0`
-- Combat #6: `735b5449bf09fb1a069d4a81db44608a58166677`
-- Combat #7: `f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06`
-- Combat #10: `663f0610eb960f322d67b078f1302d0c6178d1c2`
-- Travel main: `8614282aab2ced43bb5dda9fcf7abadf9768100a`
-- Travel #38: `08147fb4a6726f4c0248ff79ade67eec24afdbca`
-- Racer #33: `71e7051b2eea1ad731912b634f44ce5ba0218736`
+Goal:
+Georg chooses by **human label + listening + A/B**, not OGG/WAV filenames.
 
-## Important current human/product gates
+Existing source-backed banks/manifests are inventoried into semantic categories:
+Vehicle · Combat · UI/Card · World/Ambience · Transition · Performance/Crowd.
 
-- **WB-W0** still waits for Georg `PASS / TUNE / REJECT` on scale/traversability before `WB-AUTHOR-01`.
-- **Racer** current product foundation remains R3d TUNE → `RACE-ANATOMY-01`.
-- **Combat PR #7** product work can resume through direct Chat review; the historical child-route Cloudflare failure is not a reason to spend the edit loop debugging publication.
-- **Legacy Combat** still needs accepted visual EyeRig/profile state before full runtime rollout.
-- **Curtain** foundation stays; tieback/swag + crease cleanup remains the visual refinement.
-- **TinySkies Boat/Plane** require exact upstream source recovery before KFB adaptation.
-- **old Platformer auto-jump** requires exact source recovery.
+Games emit semantic ids such as:
+`vehicle.jump`, `vehicle.land`, `melee.hit`.
+
+The game keeps its AudioContext/master.
+
+### Music performance
+Prepared:
+`MUSIC-PERF-01`.
+
+Resident performance recipes reference:
+- songRef;
+- BPM;
+- bar/beat offset;
+- performers;
+- choreography/action refs;
+- start/loop/finish markers;
+- Stage/Camera recipe.
+
+Animation Studio gets a beat/bar ruler when music is present.
+Audio is not baked into clips.
+
+### VFX
+New READY:
+`VFX-AUDITION-01`.
+
+Start from actual current donors:
+Combat Ink/recipe stack · Kenney smoke particles · indexed Brackeys VFX sources · Race/vehicle effects.
+
+Production rule:
+```
+inventory
+→ moving audition board
+→ select donor
+→ small semantic adaptation recipe
+→ shared Review Scene
+→ promote
+```
+
+A continuous-fire donor may be adapted to a single-shot burst through emission/lifetime when the source supports it. Do not author a fresh effect merely because its current preset loops.
+
+## New jobs added in this decision
+
+- `RACE-TRACK-RECIPE-01` — READY
+- `RACE-RKIT-03` — READY
+- `WORLD-ZONE-BAKE-01` — READY
+- `WORLD-ZONE-BAKE-02` — HOLD
+- `LOOK-TORSION-01` — READY
+- `AUDIO-AUDITION-01` — READY
+- `MUSIC-PERF-01` — HOLD
+- `VFX-AUDITION-01` — READY
+
+## Evidence
+
+**73/73 architecture/source checks PASS.**
+
+New exact sources revalidated:
+- RKIT #34: `f368dd0c71eb2798bcd057d30196cb8da4d967b6`
+- RKIT #35: `37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9`
+- Hürth/Elastic #194: `b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea`
+- OSM context-builder blob: `92ac7dd9a48f7bf9c9b0471d57a6b9a647fb7a96`
+- City GROTESQUE donor blob: `d08c19fc45d98546b7ef2803f2ddbcb73b7f6782`
+- VFX review bank blob: `b208eb36d869078242c93c617de92cf10d873e36`
 
 ## Public Hub boundary
 
-The expanded 11-strand catalog is **prepared but not yet mounted** into the current public Hub owner.
+The expanded catalog is still prepared for **HUB-CTRL PR #202** and is not publicly mounted by this branch.
 
-Current public Hub owner remains:
-- HUB-CTRL PR #202;
-- `cloudflare-live`.
+This architecture slice does not:
+- fork the Hub owner;
+- publish Live;
+- merge product runtimes;
+- claim a public Stage for the new jobs.
 
-This branch intentionally does not create a second Hub implementation and does not claim the public Hub already displays these 45 jobs.
-
-## One next architecture gate
+## Exactly one architecture gate
 
 **HUB-V3-MOUNT**
 
-The existing HUB-CTRL owner consumes `HUB_BRIEFING_CATALOG.json` and renders:
+Existing HUB-CTRL consumes the v3 catalog and renders the current 11 strand cards, with READY/REVIEW in Today and the full 53-job roadmap only on expansion.
 
-- strand cards on the default view;
-- current READY/REVIEW work in Today;
-- full 45-job dependency roadmap only on expansion;
-- copy-ready prompts from `STRAND_BRIEFINGS.md`.
-
-After that, ordinary product work starts directly from READY cards. Architecture is not revisited merely to obtain the next prompt.
+Normal product work does not need to wait for that public mount: the copy-ready READY briefs are already in `STRAND_BRIEFINGS.md`.
