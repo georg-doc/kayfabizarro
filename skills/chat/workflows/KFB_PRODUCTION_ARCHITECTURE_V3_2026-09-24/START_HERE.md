@@ -8,7 +8,7 @@ Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 
 ## Complete production strands
 
-The current architecture contains **13 primary strands / 78 copy-ready jobs**:
+The current architecture contains **13 primary strands / 79 copy-ready jobs**:
 ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions · Card Zones/Card Objects · Player Meta/Fractal Almanac/Adaptive Interface.
 
 Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
@@ -21,6 +21,10 @@ For the full self-service production route, read:
 - `RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md` — binding RKIT physics/width/jump/city decisions plus Track/OSM bake, Elastic torsion and Audio/VFX production flow.
 - `SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md` — P2 current/legacy Skill census, Actor/PDF/Card/Ink/Talk/Material runtime-owner routing and compatibility-first archive plan.
 - `CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md` — browser-first Resident/pose/scene authoring, Pose→Blender handoff, custom actor-family and missing-motion rules.
+- `IK_CCD_PARITY_DECISION_2026-09-24.md` — upstream Three.js CCDIKSolver vs current KFB reachChain A/B gate.
+- `EXECUTION_DISPATCH_POLICY_2026-09-24.md` — executor/model/reasoning/budget profiles for every briefing.
+- `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` — low-cost mount into existing HUB-CTRL #202; no Work review loop.
+- `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — fresh-chat recovery for this architecture/planning role.
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
 
