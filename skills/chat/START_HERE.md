@@ -26,6 +26,8 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md`
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INPUT_LOCKS.json`
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/PRODUCTION_STRANDS.md` — complete ToolBox / Animation+Residents / WorldBuilder / Racer→World roadmaps
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md` — copy-ready brief for every prepared milestone, including future dependency-gated jobs
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
 
