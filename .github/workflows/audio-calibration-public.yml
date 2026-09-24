@@ -1,0 +1,53 @@
+name: AUDIO-CAL-01 public Stage proof
+
+on:
+  push:
+    branches:
+      - 'web/kfb-audio-soundscape-baseline-2026-09-24'
+    paths:
+      - '.github/workflows/audio-calibration-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Exercise exact Cloudflare Stage
+        env:
+          AUDIO_CAL_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/
+          AUDIO_CAL_PROOF: audio-cal-public-proof
+        run: |
+          ok=0
+          for attempt in 1 2 3 4; do
+            echo "Public Stage attempt $attempt"
+            rm -rf "$AUDIO_CAL_PROOF"
+            if node kfb-hub/stage/audio-calibration/qa.mjs; then
+              ok=1
+              break
+            fi
+            if [ "$attempt" -lt 4 ]; then sleep 30; fi
+          done
+          test "$ok" = 1
+
+      - name: Upload public Stage proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-cal-01-public-proof
+          path: audio-cal-public-proof/
+          retention-days: 14
