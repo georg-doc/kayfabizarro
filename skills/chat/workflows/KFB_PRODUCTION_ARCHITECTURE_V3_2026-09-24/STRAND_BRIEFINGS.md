@@ -1568,3 +1568,33 @@ A waiting card is valuable because Georg can already see the complete production
 > Blender is allowed only if the requested visible identity requires a new graft/mesh/weight derivative or a selected external motion cannot be represented by current Rig_Legacy clips.
 >
 > Export one source-backed derivative and return it to ToolBox/Resident Atlas for EyeRig, pose, prop fit and scene authoring.
+
+
+---
+
+## IK-CCDIK-PARITY-01 · Three.js CCD IK parity
+
+**Executor:** ChatGPT Web
+
+**Outcome:** prove whether the upstream Three.js CCD IK approach is materially more stable than the current Resident Atlas `reachChain()` before changing the Puppet solver.
+
+> @GitHub
+> Read KFB Production Architecture v3, `IK_CCD_PARITY_DECISION_2026-09-24.md`, current Resident Atlas S7 `lib/rigwork.js` / `lib/atlas.js`, and the Three.js r184/current `webgl_animation_skinning_ik.html` + `CCDIKSolver.js`.
+>
+> Build one direct same-source A/B/C review:
+> A = current KFB `reachChain()`;
+> B = upstream Three.js `CCDIKSolver` with equivalent chain and no added anatomical tuning;
+> C = upstream CCD with explicit distal→proximal links plus conservative per-link rotation limits / per-step max angle where justified.
+>
+> Use the same KFB actor, start pose, target presets and camera.
+>
+> Required fixtures:
+> - one Rig_Medium arm;
+> - Orc Brute / Rig_Large hand-to-Wardrum contact;
+> - one reachable and one deliberately unreachable target.
+>
+> Show target marker and chain/helper visualization. Record residual distance, per-bone local rotation deltas and sudden flip/twist events between adjacent target samples. Human visual quality outranks smallest residual.
+>
+> The current Resident Puppet UI, shared TransformControls and Studio Patch persistence remain owners. The Three.js example is a solver donor only.
+>
+> Do not replace current IK until the comparison passes. Do not use Cloudflare or Work for this gate.
