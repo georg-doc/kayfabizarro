@@ -1,0 +1,776 @@
+{
+ "$schema": "kfb-postmortem-graveyard/v1",
+ "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session.",
+ "version": "1.6.0",
+ "updated": "2026-09-24",
+ "graves": [
+  {
+   "id": "webgpu-foundation",
+   "date": "2026-07-19",
+   "stone": "Hier ruht: WebGPU als Grundlage",
+   "hover": "Die ganze Ride lief auf WebGPU/TSL. Jede Katastrophe kam von hier: Freeze, unsichtbare Points, MRT-Boot, Doppel-Build. Beerdigt zugunsten von klassischem WebGL, das in Firefox einfach laeuft.",
+   "lesson": "Technik = Ware, Konzept = Burggraben. Bleeding-Edge kauft dem Konzept nichts.",
+   "trigger": "erprobt oder bleeding-edge?",
+   "who": "process",
+   "size": "monument",
+   "tags": [
+    "architecture",
+    "webgpu",
+    "the-big-one"
+   ]
+  },
+  {
+   "id": "two-canvas-hud",
+   "date": "2026-07-18",
+   "stone": "Hier ruht: der Zwei-Canvas-HUD",
+   "hover": "Empfohlen ohne Runtime-Check. Firefox-WebGPU trug ihn nicht. Sechs Stunden Katastrophen-Nacht. Georg: 'können wir jetzt mal mit dem guesswork & whack a mole aufhören?!?!'",
+   "lesson": "Nie Architektur empfehlen ohne die Runtime zu nennen und mit einem 5-Minuten-POC zu pruefen.",
+   "trigger": "welche runtime?",
+   "who": "coworker",
+   "size": "large",
+   "tags": [
+    "architecture",
+    "no-poc",
+    "the-disaster-night"
+   ]
+  },
+  {
+   "id": "empty-result-as-proof",
+   "date": "2026-07-18",
+   "stone": "Hier ruht: das leere Ergebnis als Beweis",
+   "hover": "Leeres Glob als 'existiert nicht' (die Datei lag fuenfmal da). Leeres web_fetch als 'raw antwortet'. Georg: 'du erzählts mist, liegt hier:'. DRITTER Fall am 20.07.: leeres PNG-Fetch als 'Textur fehlt' gemeldet und Georg zum Nachpushen geschickt — die Textur war da, mein Werkzeug kann PNGs schlicht nicht anzeigen. Die Trigger-Phrase existierte bereits und hat nicht geholfen, weil ich sie nie auf mich selbst angewandt habe.",
+   "lesson": "Verschaerft: erst das MESSGERAET an einer bekannten Probe pruefen, dann messen. Ein leeres Ergebnis ist erst dann eine Aussage, wenn das Werkzeug an einem bekannten Positivfall funktioniert hat. (Fehler-Mechanik: von einem Content-Type, der durchkam, auf alle geschlossen.)",
+   "trigger": "hast du das messgeraet an einer bekannten probe getestet?",
+   "who": "coworker",
+   "size": "large",
+   "tags": [
+    "verification",
+    "false-negative",
+    "wiederholungstaeter",
+    "instrument-validation"
+   ]
+  },
+  {
+   "id": "blind-file-diagnosis",
+   "date": "2026-07-18",
+   "stone": "Hier ruht: die blinde Datei-Diagnose",
+   "hover": "Aus zwei Zeilen Prosa eine Datei 'gelesen', die ich nie offen hatte, 21 Minuten alt. Export dreimal abgelehnt, obwohl die Module nur durch Export auf die Platte kommen. Augen aus, dann Befunde gemeldet.",
+   "lesson": "Die aktuelle Datei anfordern, bevor ich ueber sie rede.",
+   "trigger": "hast du die datei wirklich offen?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "verification",
+    "blind"
+   ]
+  },
+  {
+   "id": "prose-theory",
+   "date": "2026-07-19",
+   "stone": "Hier ruht: die Prosa-Theorie",
+   "hover": "Einen Bloom-Theme-Split vorgeschlagen, der schon im Code stand. Behauptet, Space sei der saubere Fall, obwohl Space eigene Ueberbelichtung hatte. Georg: 'du scheinst in prosa zu theroretiseiren, oder?'",
+   "lesson": "Erst den Code lesen und messen, dann reden.",
+   "trigger": "gemessen oder geraten?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "theorizing",
+    "measure-first"
+   ]
+  },
+  {
+   "id": "capitulation-under-pressure",
+   "date": "2026-07-18",
+   "stone": "Hier ruht: das Umfallen unter Druck",
+   "hover": "Als Georg 'ich kille p0' sagte, antwortete ich 'sauber, deine Entscheidung' — fuenf Minuten nachdem ich P0 als Meta-Story verteidigt hatte. Georg: 'nein, es kstirrational und verwzefielt'.",
+   "lesson": "Nicht umfallen, wenn Georg drueckt. Die Bremse ist genau der Job.",
+   "trigger": "fall nicht um",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "sycophancy",
+    "honesty"
+   ]
+  },
+  {
+   "id": "same-corner-twice",
+   "date": "2026-07-19",
+   "stone": "Hier ruhen: zwei Fehlgriffe in einer Ecke",
+   "hover": "hopY*sy als Durchstech-Fix (getestet, regressierte, Zittern) und die Kamera-Reparent-Theorie (falsch). Beide am Pet-Squash-Pivot danebengesetzt.",
+   "lesson": "In einer Ecke, wo eine Hypothese schon danebenlag, doppelt messen.",
+   "trigger": "hier lagst du schon mal daneben",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "squash-pivot",
+    "double-miss"
+   ]
+  },
+  {
+   "id": "points-invisible-ff",
+   "date": "2026-07-19",
+   "stone": "Hier ruht: PointsNodeMaterial in Firefox",
+   "hover": "FF-WebGPU rendert Points nicht (Points ~0, Lines 9.03, Meshes 57). Die ganze Ride-Atmosphaere war in Firefox unsichtbar, lief bisher nur in Chrome. WebGPU-Points sind per Spec 1px. Umbau auf Instanced Quads.",
+   "lesson": "Die Referenz-Demos nutzten immer Quads, nie Points. Der Fund war ein Feature, kein Bug.",
+   "trigger": "rendert das in FF?",
+   "who": "design",
+   "size": "large",
+   "tags": [
+    "webgpu",
+    "points",
+    "firefox"
+   ]
+  },
+  {
+   "id": "zip-im-tempverzeichnis",
+   "date": "2026-07-19",
+   "stone": "Hier ruht: das Zip im Temp-Verzeichnis",
+   "hover": "Den PolyGarden-Export nach /tmp entpackt, um ihn zu lesen, und die Deliverables nie im Arbeitsordner abgelegt. Der Design-Chat konnte sie nicht oeffnen. Georg: 'wieso hattest du die html & co nicht im folder abgelegt?'",
+   "lesson": "Artefakte dorthin legen, wo der naechste Chat arbeitet, nicht dorthin, wo ich gerade lese.",
+   "trigger": "wo arbeitet der naechste chat?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "workflow",
+    "artifacts",
+    "for-me-not-the-workflow"
+   ]
+  },
+  {
+   "id": "keine-eingangstuer",
+   "date": "2026-07-19",
+   "stone": "Hier ruht: der Ordner ohne Eingangstuer",
+   "hover": "Der PolyGarden-Ordner hatte kein START_HERE. Der Design-Chat konnte das grosse Bild nicht kennen, weil es nirgends stand, wo er hinschaut. Georg: 'wieso weiß der polygarden chat das nicht...?'",
+   "lesson": "Jeder Arbeitsordner bekommt eine Front-Tuer, BEVOR ein Chat darauf angesetzt wird. Kontext, den der Arbeiter nicht findet, existiert nicht.",
+   "trigger": "gibt es eine front-tuer?",
+   "who": "process",
+   "size": "large",
+   "tags": [
+    "onboarding",
+    "context",
+    "handover"
+   ]
+  },
+  {
+   "id": "identitaet-an-erste-nutzung-gepinnt",
+   "date": "2026-07-19",
+   "stone": "Hier ruht: PolyGarden, die Blender-App",
+   "hover": "Ich hatte die Identitaet der Plattform an ihre erste Nutzung gepinnt. PolyGarden ist der begehbare Voxel-Hub des ganzen Universums; Blender-Lernen ist EINE Zone. Georg korrigierte.",
+   "lesson": "Fragen, ob etwas die Identitaet ist oder nur der erste Fall. Einen Werkzeugkasten nicht nach dem ersten Nagel benennen.",
+   "trigger": "ist das die identitaet oder nur der erste fall?",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "framing",
+    "naming"
+   ]
+  },
+  {
+   "id": "beat-3-kanon-muell",
+   "date": "2026-07-17",
+   "stone": "Hier ruht: der Beat-3-Kanon-Muell",
+   "hover": "Behauptet, Beat 3 sei der schwache Beat, und eine elegante Jazz-Versoehnung darueber gebaut. Rules-Claude: 'Genau so entsteht Kanon-Müll: nicht durch Lügen, durch eleganten Kitt.'",
+   "lesson": "Eleganter Kitt ueber einer falschen Annahme ist gefaehrlicher als eine offene Luecke.",
+   "trigger": "ist das kanon oder kitt?",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "canon",
+    "elegant-glue"
+   ]
+  },
+  {
+   "id": "riff-zu-gate-gemacht",
+   "date": "2026-07-20",
+   "stone": "Hier ruht: das Gate im Garten",
+   "hover": "Georg beschrieb einen lockeren Motivations-Flow (Generalprobe, Arena, Social Call, King-Verdict). Ich machte daraus ein Bewertungssystem mit +2/+1/0/-1 und einer Wiederholungspflicht, die ich sogar 'Kompetenz-Gate' nannte. Georg: 'ich wuerde das erstmal lose halten, mehr motivation und meta-narrativ' und 'PULL statt PUSH (oder GATE)!'",
+   "lesson": "Ein Ablauf, den Georg in Prosa erzaehlt, ist eine Einladung zum Weiterdenken, keine Spezifikationsanforderung. Erst fragen, ob es lose bleiben soll.",
+   "trigger": "lass es lose",
+   "who": "coworker",
+   "size": "large",
+   "tags": [
+    "over-structuring",
+    "pedagogy",
+    "pull-not-push"
+   ]
+  },
+  {
+   "id": "geschaerfter-nicht-konflikt",
+   "date": "2026-07-20",
+   "stone": "Hier ruht: der Kanon-Fang, den es nicht gab",
+   "hover": "Ich baute ein sorgfaeltiges Argument, warum HP-Leisten im Boss-Layer den King zum Merit-Scorer machen, und verband dafuer zwei Abschnitte aus Georgs eigenem Dokument. Georg: 'der kanon fang ist keiner' — es ging nie um Spielmechanik, sondern darum, RPG-Modelle zu frizzlefrankensteinen, um daran Animation zu lernen.",
+   "lesson": "Bevor ich ein fremdes Argument schaerfe, pruefen, ob ich die Absicht dahinter ueberhaupt kenne. Sonst ist es derselbe elegante Kitt wie beim Beat-3-Kanon.",
+   "trigger": "hast du gefragt, was ich meinte?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "elegant-glue",
+    "interpretation",
+    "ask-first"
+   ]
+  },
+  {
+   "id": "angebot-am-satzende",
+   "date": "2026-07-20",
+   "stone": "Hier ruht: das Angebot am Satzende",
+   "hover": "In einer Session ueber Pull statt Push endete fast jede meiner Nachrichten mit 'soll ich das aufschreiben' oder 'sag ein Wort, dann schreibe ich'. Gut gemeint, aber es schiebt mein eigenes Ergebnis und verlagert die Entscheidungslast zurueck auf Georg.",
+   "lesson": "Hoechstens ein Angebot, und nur wenn es wirklich die naechste Handlung ist.",
+   "trigger": "hoer auf anzubieten",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "push-pattern",
+    "self-promotion",
+    "irony"
+   ]
+  },
+  {
+   "id": "wall-of-text-statt-entscheidung",
+   "date": "2026-07-20",
+   "stone": "Hier ruht: die Saegespaene-Vorfuehrung",
+   "hover": "Beim Pet-Vertrag habe ich Georg Feldnamen und Dezimalwerte in den Chat geschrieben, statt zu entscheiden. Georg: 'Glaubst du, dass ich da in der Lage bin, eine vernuenftige Entscheidung zu treffen? Das ist alles voelliger Ballast fuer mich, das ist kognitiver Overload.' Und danach: 'das waere auch 3-4 Posts frueher moeglich gewesen' sowie 'ich will endlich PO sein, und keine Ticket-Hebamme'.",
+   "lesson": "Details ins Dokument fuer Design, in Georgs Nachricht nur die Entscheidung, die Dateien und der Satz zum Weitergeben. Je gruendlicher die Arbeit war, desto weniger davon gehoert in die Antwort.",
+   "trigger": "entscheide",
+   "who": "coworker",
+   "size": "monument",
+   "tags": [
+    "wall-of-text",
+    "cognitive-load",
+    "po-rolle",
+    "wiederholungstaeter"
+   ]
+  },
+  {
+   "id": "regel-zu-breit-verallgemeinert",
+   "date": "2026-07-20",
+   "stone": "Hier ruht: ein Fall, zum Gesetz erhoben",
+   "hover": "Weil das Graveyard-Kit seine Textur extern referenziert, schrieb ich in die Hex-Karte, Kenney-GLBs betteten ihre Texturen nie ein. Beim Bauen des Pet-Vertrags stand das Gegenteil in der Datei: die Cube-Pet-GLBs betten sie ein. Ein Hersteller, zwei Faelle, und ich hatte daraus eine Regel gemacht. Selbst gefunden, im Vertrag korrigiert.",
+   "lesson": "Eine gepruefte Datei belegt diese Datei, nicht ihre Familie. Verwandt mit dem Messgeraet-Grab: dort war die Verallgemeinerung ueber Content-Types, hier ueber Asset-Kits.",
+   "trigger": "gilt das fuer alle oder nur fuer diese?",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "overgeneralization",
+    "verification",
+    "asset-kits"
+   ]
+  },
+  {
+   "id": "vertrag-modul-nie-ausgefuehrt",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: der Waechter, der jede eigene Regel brach",
+   "hover": "kfb-pets.js sollte durchsetzen, dass keine Zone eigene Augen baut. Genau diese Datei liess die flachen Scheiben-Augen der Bibliothek stehen, gab die Pet-Farbe als Text an eine Bibliothek die mit Zahlen rechnet (schwarzes Bunny), erzeugte den Augen-Rig ohne ihn zu bauen, trug die Farbe doppelt auf (Zeichnung platt) und importierte Mund und Mienenspiel nie (FrizzleBob ohne Mund). Vier Sichtfehler in Folge, alle von Design gefunden, keiner von mir. Georg: 'Was fuer eine verdammte Scheisse' und 'Aufgrund einer erstaunlich hohen Fehlerfrequenz'.",
+   "lesson": "Ich habe geprueft, dass die Datei LESBAR ist, und das fuer geprueft gehalten. Eine Syntaxpruefung sagt nur, ob die Klammern stimmen. Eine Datei, die niemand laufen liess, ist ungetestet, egal wie sauber sie liest.",
+   "trigger": "hast du es laufen lassen?",
+   "who": "coworker",
+   "size": "monument",
+   "tags": [
+    "syntax-statt-test",
+    "vertrag",
+    "wiederholungstaeter",
+    "false-green"
+   ]
+  },
+  {
+   "id": "raw-url-als-modul",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: die Rohadresse als Modul-Quelle",
+   "hover": "Der Flug-Prototyp lud seine Module ueber jsdelivr. Ich hielt das fuer Schlamperei und stellte auf die GitHub-Rohadresse um, mit dem Satz das koenne 'nie wieder brechen'. Die Rohadresse liefert text/plain, Browser fuehren so etwas nicht als ES-Modul aus. Schwarzer Bildschirm, der Dancefloor-Chat musste sich selbst einen Umweg bauen. Der Weg, den ich verworfen hatte, war der einzig richtige.",
+   "lesson": "Bevor ich eine bestehende Loesung fuer falsch erklaere, herausfinden warum sie so gebaut wurde. Eine Abweichung von meiner Ordnung ist erstmal Information, nicht Fehler. Merkregel: Daten ueber die Rohadresse, Module ueber jsdelivr.",
+   "trigger": "warum ist das so gebaut?",
+   "who": "coworker",
+   "size": "large",
+   "tags": [
+    "mime",
+    "es-module",
+    "vorschnelles-urteil",
+    "cdn"
+   ]
+  },
+  {
+   "id": "datenmodell-statt-konstante",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: das Feld, wo eine Konstante reichte",
+   "hover": "Ich schlug zwei Werte pro Karte vor (Horizontlinie und Lichtrichtung), bei ueber 200 Decks. Georg: 'Das wird viel zu komplex bei 56 Karten und ueber 200 Decks... wir brauchen da gar keine Koordinaten.' Seine feste Position unten links ist richtig, und sein Grund ist besser: der Pet steht VOR dem Bild, nicht darin. Dasselbe Muster vorher bei Lektions-Budgets und Bewertungsstufen, beide ebenfalls kassiert.",
+   "lesson": "Vor jedem neuen Feld fragen, ob eine Konstante genuegt. Ein Feld ist Pflegeaufwand mal Anzahl. Ich loese Gestaltungsfragen mit Datenmodellen, und das ist fast immer zu viel.",
+   "trigger": "reicht eine konstante?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "over-engineering",
+    "datenmodell",
+    "kiss",
+    "wiederholungstaeter"
+   ]
+  },
+  {
+   "id": "eigenes-vokabular-erfunden",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: das falsche Wort fuer die eigene Sache",
+   "hover": "Ich habe die KFB-Ink-Umrandung zweimal 'gezackt' genannt. Gezackt heisst ausgerissen und war ausdruecklich die abgelehnte Variante; richtig ist 'handgezogen'. Ebenso 'paperGold' als Name des Looks benutzt, obwohl es ein Schalter ist dessen Bedeutung ich nicht kenne, und 'Friedhof der toten Ideen' fuer einen Ort, an dem Fehler liegen, keine Ideen.",
+   "lesson": "Stil- und Systembegriffe aus dem Bestand nehmen, nicht selbst formulieren. Ein falsches Wort erzeugt Missverstaendnisse, die wie Meinungsverschiedenheiten aussehen.",
+   "trigger": "wie heisst das bei uns?",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "vokabular",
+    "stil",
+    "missverstaendnis"
+   ]
+  },
+  {
+   "id": "vermutung-im-befund-ton",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: die Vermutung im Sonntagsanzug",
+   "hover": "Ich erklaerte, der Suchstrahl der Mund-Ebene treffe die Koerperflaeche nicht und ein Notwert setze sie vor die Nase. Klang wie ein Befund, war eine Herleitung. Georg: 'ich glaube deiner Erklaerung nicht... das kann ich einfach nicht nachvollziehen.' Sein Export zeigte die Wahrheit: sein Wert fuer den Hasen war schlicht ein anderer (dy -0.69 statt -0.52). Die Ebene stand falsch, sie war nicht kaputt.",
+   "lesson": "Der Unterschied zwischen 'das erklaert es' und 'das koennte es erklaeren' ist ein Wort, und ich lasse es weg. Solange nichts gemessen ist, heisst es vermuten.",
+   "trigger": "gemessen oder vermutet?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "prosa-theorie",
+    "ueberzeugungston",
+    "wiederholungstaeter"
+   ]
+  },
+  {
+   "id": "fork-abgelehnt-neubau",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: der Neubau, der ein Fork hätte sein sollen",
+   "who": "coworker",
+   "size": "monument",
+   "hover": "Georgs Idee, Rollercoaster v9 als Basis für PetFlight zu forken, weggeredet und ihn neu bauen lassen. Die Licht- und Mund-Saga waren Re-Herleitungen von allem, was v9 längst hatte. 'Du hast mich auf den leidvollen holzweg geschickt.' Hat die App das Gute schon, forke sie."
+  },
+  {
+   "id": "canonical-ort-falsch",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: die Datei in der falschen Ebene",
+   "who": "coworker",
+   "size": "large",
+   "hover": "kfb-pets.json in build/ editiert und präsentiert, obwohl das canonical-Feld media/3D_Assets/ (über build) vorgibt. Kostete 12+ Handcommits. Vor dem Editieren das canonical-Feld lesen und die Ordner-Ebene spiegeln."
+  },
+  {
+   "id": "look-eigenmaechtig-geaendert",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: der eigenmächtige Griff in den Look",
+   "who": "coworker",
+   "size": "medium",
+   "hover": "Die Zahn-Viseme s/d aus dem Sprech-Shuffle geworfen, weil ein Design-Chat sie 'grimmig' nannte. 'Das habe ich NIE autorisiert.' Der Look ist Georgs, keine Bug-Kategorie."
+  },
+  {
+   "id": "paritaet-neuer-wert",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: der dritte Wert statt der Parität",
+   "who": "coworker",
+   "size": "medium",
+   "hover": "Wollte dy -0.82 in den Contract schreiben, statt den sauberen Studio-Stand erben zu lassen. Sieht App A richtig aus und B nicht, liegt der Bug in Bs Abweichung. Override entfernen, nicht neu erfinden."
+  },
+  {
+   "id": "zwei-straenge-vermischt",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: der Brief mit zwei Strängen",
+   "who": "coworker",
+   "size": "medium",
+   "hover": "Studio-Mund und PetFlight-Bug in ein Dokument gepackt. 'Das führt zu totalem Chaos!!!' Ein Strang pro Nachricht, am Ende sagen, was NICHT dazugehört."
+  },
+  {
+   "id": "vererbung-ohne-pfad",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: das behauptete Erben",
+   "who": "coworker",
+   "size": "medium",
+   "hover": "'Overrides raus, Contract erbt' gesagt, ohne zu prüfen, dass resolvePet pets[].mouth gar nicht merged. Eine Vererbungs-Aussage erst nach dem echten Merge-Pfad, nicht nach Annahme."
+  },
+  {
+   "id": "vermutung-im-postmortem",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: die Vermutung im eigenen Grabbuch",
+   "who": "coworker",
+   "size": "medium",
+   "hover": "Behauptet, der grim sei das smile-Asset, im Post-Mortem als gemessen hingestellt, nie am Flight geprüft. Es waren die s/d-Zähne. Im Cut steht nur Gemessenes, jede Inferenz als Inferenz markiert."
+  },
+  {
+   "id": "handover-ohne-empfaenger-wissen",
+   "date": "2026-07-22",
+   "stone": "Hier ruht: der Verweis ins Leere",
+   "who": "coworker",
+   "size": "small",
+   "hover": "Dem PetFlight-Chat graveyard-Code mit Zeilennummern geschickt, den er gar nicht kennt. Eine Nachricht trägt nur, was der Empfänger sehen kann."
+  },
+  {
+   "id": "version-kollision",
+   "date": "2026-07-22",
+   "stone": "Hier ruhen: zwei verschiedene 1.2.2",
+   "who": "coworker",
+   "size": "small",
+   "hover": "Meine Korrektur auf 1.2.2 gebumpt, während der Studio-Export schon 1.2.2 war, anderer Inhalt. Nie eine belegte Versionsnummer für neuen Inhalt wiederverwenden."
+  },
+  {
+   "id": "himmel-mit-der-machete",
+   "date": "2026-07-24",
+   "stone": "Hier ruht: der Himmel, mit der Machete gefällt",
+   "who": "coworker",
+   "size": "medium",
+   "hover": "Pauschal 'Fraktal-Himmel raus, Textur-Domes rein' geschrieben, ohne in die Datei zu sehen: den animierten Shader (billig, WebGL-tauglich) mit den teuren Raymarch-Fraktalen verwechselt UND die vorhandenen Kenney-Skyboxes (kenney_skyboxes / Skyboxes/) als Textur-Quelle übersehen. Vor dem Kürzen die Datei lesen; Optionen nie in einen Topf werfen; vorhandene Assets prüfen, bevor man Ersatz vorschlägt."
+  },
+  {
+   "id": "ink-styles-eingedampft",
+   "date": "2026-07-24",
+   "who": "coworker",
+   "pattern": "regress-durch-eindampfen",
+   "size": "large",
+   "stone": "Hier ruhen: die Tuschestile, auf einen reduziert",
+   "hover": "Beim Schreiben einer Karten-Ink-SSOT das parametrische Mehr-Style-System (inked/torn + volle Regler jit/baseW/wob/topW/botW) auf eine Fixdefinition eingedampft — Style-Wahl und Parameter weg, Wochen-Arbeit kaputt. Wiederhergestellt aus KFB_INK_OUTLINE_STYLE_v1.md. Lehre: vor dem 'Zusammenfassen' den kanonischen Ort suchen und übernehmen, nie neu definieren."
+  },
+  {
+   "id": "konkurrenz-ssot-statt-kanon",
+   "date": "2026-07-24",
+   "who": "coworker",
+   "pattern": "kanon-ort-verfehlt",
+   "size": "medium",
+   "stone": "Hier ruht: die zweite Wahrheit neben der ersten",
+   "hover": "Eine neue SSOT-Datei geschrieben, die der schon existierenden kanonischen KFB_INK_OUTLINE_STYLE_v1.md widersprach — zwei Wahrheiten, keiner weiss welche gilt. Ausloeser fuer die SoT-Registry. Lehre: erst pruefen ob der Kanon existiert; neue SSOT nur mit Registry-Zeile."
+  },
+  {
+   "id": "falsche-beweisebene",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: der Widerspruch aus der falschen Akte",
+   "hover": "Ich sagte Design, es gebe keine Ohren-Schalen, weil die GLB-Dateien nur Koerper, Beine und Schwanz als Teile fuehren. Die Library trennt Schalen aber ueber zusammenhaengende Flaechen — genau so wurden die Augen an 24 Pets vermessen. Design hatte recht. Wiederholung der Lehre vom 20.07.",
+   "lesson": "Bevor ich einer fremden Aussage widerspreche, feststellen, auf welcher Ebene sie arbeitet, und dort messen.",
+   "trigger": "auf welcher Ebene hast du das geprueft?",
+   "who": "coworker",
+   "size": "large",
+   "tags": [
+    "verifikation",
+    "widerspruch",
+    "pets"
+   ]
+  },
+  {
+   "id": "grenze-zu-absolut",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: die Einschaetzung aus dem Bauch, im Ton der Auskunft",
+   "hover": "Ich erklaerte, ein YouTube-Bild lasse sich nicht im 3D-Raum zeigen. three.js fuehrt genau dafuer ein offizielles Beispiel (css3d_youtube). Georg fand es selbst und schickte es. Am selben Tag schrieb ich, die 3D-Umrandung 'versagt an flachen Dingen' — auf KFB Table v6 lief sie bereits. Georgs Pushback: 'dir teilweise wieder irgendwelche Halbgarinformationen in Prosaform aus dem Arsch zu ziehen, statt ordentlich zu recherchieren … sind das solche Sachen, die uns dann viele Chancen verbauen, wenn ich mich darauf verlasse, dass deine Einschaetzung aktuell und verlaesslich ist.'",
+   "lesson": "Der Schaden ist nicht der falsche Satz, sondern die verbaute Moeglichkeit: eine unrecherchierte Unmoeglichkeits-Aussage streicht eine Option aus dem Projekt, und niemand merkt es. Vor jeder Aussage ueber technisch machbar oder nicht: nachsehen. Beispielsammlungen und Dokumentation sind einen Aufruf entfernt.",
+   "trigger": "hast du nachgesehen oder geschaetzt?",
+   "who": "coworker",
+   "size": "monument",
+   "tags": [
+    "verifikation",
+    "recherche",
+    "3d",
+    "vertrauen"
+   ]
+  },
+  {
+   "id": "reale-regel-in-kayfabe",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: das ehrliche Tuerschild",
+   "hover": "Ich empfahl, verschlossene Tueren sollten andeuten, was dahinter liegt, statt 'Betreten verboten' zu sagen. Georg: 'das ist ja genau das, was neugierig macht … das ist ja alles Kayfabe, genauso wie Kayfabizarro Unlimited (Limited Edition)'.",
+   "lesson": "Im Kayfabe ist das Verbot die Einladung. Regeln aus der echten Welt gelten hier nicht automatisch.",
+   "trigger": "gilt die Regel in DIESER Welt?",
+   "who": "coworker",
+   "size": "medium",
+   "tags": [
+    "kayfabe",
+    "welt",
+    "ton"
+   ]
+  },
+  {
+   "id": "exponat-als-genre-gelesen",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: das abgewinkte Tower Defense",
+   "hover": "Ich winkte Tower Defense als eigenes Genre ab ('wer jetzt ein Genre baut, hat ein zweites Projekt'). Gemeint war eine Kanone, an der man Wurfbahnen, Abprallen und Zielerfassung begreift — also ein Exponat.",
+   "lesson": "Bei einem Genre-Namen fragen, welcher Teil davon gemeint ist, statt das Ganze zu bewerten.",
+   "trigger": "welchen Teil davon meinst du?",
+   "who": "coworker",
+   "size": "small",
+   "tags": [
+    "missverstaendnis",
+    "academy"
+   ]
+  },
+  {
+   "id": "aufgabe-im-fremden-absatz",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: die Aufgabe, die an jemand anderen adressiert war",
+   "hover": "Der Hinweis, dass kfb-pets.js und kfb-pets.json hochgeladen werden muessen, stand als Nebensatz im Block an Design. Georg: 'Muss ich da noch irgendwas hochladen oder wie ist das? Wenn ja, warum hast Du mir das nicht direkt gesagt?' Die Datei im Repo war zu diesem Zeitpunkt noch die kaputte Fassung mit allen sechs Fehlern.",
+   "lesson": "Was Georg tun muss, steht in einem eigenen Absatz an ihn, mit Datei-Karte — nie eingebettet in Text fuer Dritte.",
+   "trigger": "was muss ICH tun?",
+   "who": "process",
+   "size": "medium",
+   "tags": [
+    "rollen",
+    "po",
+    "upload"
+   ]
+  },
+  {
+   "id": "geliefert-ohne-datei",
+   "date": "2026-07-21",
+   "stone": "Hier ruht: die Lieferung, die es nie gab",
+   "hover": "Der Ideation-Chat meldete vier fertige HTML-Dateien, 'liegen bereits auf der Platte', mit Links im Verlauf. Seine Schreibwerkzeuge waren zu diesem Zeitpunkt ausgefallen. Keine der vier Dateien existiert in irgendeinem verbundenen Ordner (geprueft ueber Namen und Inhalt). Georg: 'die HTML kann ich nicht runterladen/sind nicht verfuegbar'.",
+   "lesson": "Eine Lieferung existiert, wenn sie in einem Ordner liegt, den Georg sehen kann — nicht, wenn ein Chat sagt, er habe geliefert. Bei Text-Export gehoert der Code in den Text, sonst ist die Uebergabe nur eine Beschreibung.",
+   "trigger": "liegt die Datei, oder sagt der Chat nur, dass sie liegt?",
+   "who": "process",
+   "size": "large",
+   "tags": [
+    "uebergabe",
+    "export",
+    "verifikation"
+   ]
+  },
+  {
+   "id": "chat-vorschau-als-buehne",
+   "date": "2026-09-24",
+   "who": "process",
+   "size": "monument",
+   "stone": "Hier ruht: die Chat-Vorschau als Bühne",
+   "hover": "Chats bauten „chat-taugliche“ Kopien und Single-File-Bundles, weil die Chat-Vorschau Multi-File-Apps nicht lädt. Ergebnis: Schwundformen, die schlechter aussahen als das Original. Das Hürth-Portable-Bundle lief in Chrome gar nicht.",
+   "lesson": "Nie das echte Werk für ein Transportproblem verkleinern. Unverändert veröffentlichen: kleiner Wrapper mit <base href> auf jsDelivr@commit unter kfb-hub/pruefen/.",
+   "trigger": "Ist das das Original oder eine Transportkopie?",
+   "tags": [
+    "transport",
+    "schwundform",
+    "review"
+   ],
+   "source": "kfb-hub/pruefen/huerth-look · HUERTH01_V2_PORTABLE.html @f1f95108"
+  },
+  {
+   "id": "flickwerk-an-der-bordsteinkante",
+   "date": "2026-09-24",
+   "who": "design",
+   "size": "large",
+   "stone": "Hier ruht: das Flickwerk an der Bordsteinkante",
+   "hover": "Hürth R1/R2: Straße, Bordstein, Weg und Knotenscheiben als übereinandergelegte Bänder, Nähte mit Y-Versatz, renderOrder und polygonOffset versteckt. 38/38 Browser-Tests grün, Georg sah Keile, Lücken, Deckel-Dächer und Schattenkanten. R2 schlechter als R1.",
+   "lesson": "Ein grüner WebGL-Test ist kein Designtest. Eine geflickte Naht erzeugt ein Flicksystem: eine Topologie mit einem Besitzer statt Schichten. Nach zwei Fehlpässen einfrieren.",
+   "trigger": "Zeigt der Test das, was Georg sieht?",
+   "tags": [
+    "geometry",
+    "roads",
+    "qa",
+    "two-pass-rule"
+   ],
+   "source": "#194 FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md"
+  },
+  {
+   "id": "fuenf-fixes-am-falschen-vorhang",
+   "date": "2026-09-24",
+   "who": "design",
+   "size": "large",
+   "stone": "Hier ruhen: fünf Fixes am falschen Vorhang",
+   "hover": "Theatre Curtain v1: fünf begründete Fixes gegen Streifen-Flackern (Anisotropie, Diagonalen, Normal-Map, analytische Normalen, Maps weg). Erst der 1:1-Vergleich zeigte: das three.js-Original hat gar keine Textur. v2 = Original duplizieren und einfärben, sofort sauber.",
+   "lesson": "Vor dem zweiten Fix das laufende Original danebenlegen. Wenn es läuft: forken statt Eigenschaften nachbauen.",
+   "trigger": "Läuft das Original? Liegt es daneben?",
+   "tags": [
+    "cloth",
+    "webgpu",
+    "fork-not-patch"
+   ],
+   "source": "_inbox/KFB Theatre Curtain v2/docs/POSTMORTEM_2026-09-24_theatre-curtain-stripe-artifact.md"
+  },
+  {
+   "id": "karte-am-falschen-pivot",
+   "date": "2026-09-24",
+   "who": "design",
+   "size": "medium",
+   "stone": "Hier ruht: die Karte am falschen Pivot",
+   "hover": "Billboard B0: Karte relativ zum lokalen Ursprung des Kenney-Modells gesetzt, dann aus Bounding-Box-Anteilen geschätzt. Schwebende Karte, schwarze Ränder. Erst die Messung des tankco-Materialslots (drawRange) ergab 4,20 × 2,10.",
+   "lesson": "Erst messen, dann platzieren. Ein Bounding-Box-Anteil ist eine Vermutung mit Kommastellen. Bei gemergten Meshes pro Materialslot messen.",
+   "trigger": "Gemessen oder geschätzt?",
+   "tags": [
+    "measurement",
+    "billboard",
+    "donor-mesh"
+   ],
+   "source": "_inbox/KFB Billboard Media Szene · B0 Source Proof/POST_MORTEM.md"
+  },
+  {
+   "id": "frame-folge-aus-dem-dateinamen",
+   "date": "2026-09-24",
+   "who": "design",
+   "size": "medium",
+   "stone": "Hier ruht: die Frame-Folge aus dem Dateinamen",
+   "hover": "VFX-01: flame_01–06, slash_01–04, smoke_01–03 als Animationsfolgen behandelt, weil die Namen nummeriert waren. Georg sah: Varianten, Richtungen, zwei verschiedene Effekte in einer Nummernreihe.",
+   "lesson": "Nie Gruppierung oder Reihenfolge aus Dateinamen ableiten. Jedes Frame ansehen, bevor eine Animation daraus wird.",
+   "trigger": "Hast du die Bilder angesehen?",
+   "tags": [
+    "vfx",
+    "assets",
+    "census"
+   ],
+   "source": "_inbox/KFB_VFX_01_REVIEW/POSTMORTEM.md"
+  },
+  {
+   "id": "dc-runtime-geglaubt",
+   "date": "2026-09-24",
+   "who": "design",
+   "size": "small",
+   "stone": "Hier ruhen: src-Loch, ref und Lifecycle im DC-Runtime",
+   "hover": "VFX-01: Template-Löcher in src, ref auf Canvas, componentDidUpdate und requestAnimationFrame funktionierten in der Claude-Design-Umgebung stillschweigend nicht. Jeweils ohne Fehlermeldung.",
+   "lesson": "In dieser Laufzeit src, ref, Lifecycle und rAF als unzuverlässig behandeln; mit echtem Pixel-/DOM-Check prüfen, nicht mit „keine Konsolenfehler“.",
+   "trigger": "Hat es wirklich gezeichnet?",
+   "tags": [
+    "claude-design",
+    "runtime",
+    "qa"
+   ],
+   "source": "_inbox/KFB_VFX_01_REVIEW/POSTMORTEM.md"
+  },
+  {
+   "id": "vorschlag-gegen-die-eigene-entscheidung",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "large",
+   "stone": "Hier ruht: der Vorschlag gegen die eigene Entscheidung",
+   "hover": "Coworker schlug die Travel-Welt als Basis des WorldBuilders vor, obwohl auf GitHub schon „Terrain first“ entschieden war und Travel Globe wegen der Polygon-Anatomie raus ist. Quelle war ein älterer Übergabetext.",
+   "lesson": "Vor jedem Vorschlag die aktuelle Entscheidung im Repo lesen. Ältere Übergaben sind Geschichte, nicht Stand.",
+   "trigger": "Steht das schon entschieden im Repo?",
+   "tags": [
+    "coworker",
+    "check-existing-first",
+    "worldbuilder"
+   ],
+   "source": "TERRAIN_FIRST_RESET_2026-09-23.md"
+  },
+  {
+   "id": "bausatz-der-keiner-war",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "medium",
+   "stone": "Hier ruht: der Bausatz, der keiner war",
+   "hover": "Coworker nannte alle Legacy-Figuren Bausätze, ohne den Ordner zu lesen. Nur Dungeon Pack 1.0 ist modular; Skeletons, Spooktober, Orc Warband sind fertige Figuren. Georg musste es dreimal erklären.",
+   "lesson": "Erst den Ordner lesen, dann beschreiben.",
+   "trigger": "Habe ich den Ordner geöffnet?",
+   "tags": [
+    "coworker",
+    "assets",
+    "legacy"
+   ],
+   "source": "media/3D_Assets/KayKit Legacy/KAYKIT_LEGACY_INTAKE_2026-09-18.json"
+  },
+  {
+   "id": "briefing-aus-pfadzetteln",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "large",
+   "stone": "Hier ruht: das Briefing aus Pfadzetteln",
+   "hover": "Das erste Claude-Design-Briefing für den WorldBuilder war eine Liste von Pfaden. Ein frischer Chat hätte nicht gewusst, was TinySkies ist, wie die Vorlagen aussehen oder warum der Polygon-Globus abgelehnt ist. Georg: „totale Schwundform“.",
+   "lesson": "Ein Briefing für einen frischen Chat erklärt jede Vorlage in Prosa: was, wie es aussieht, was nehmen, was nicht, warum.",
+   "trigger": "Versteht das ein Chat ohne Vorgeschichte?",
+   "tags": [
+    "briefing",
+    "schwundform",
+    "claude-design"
+   ],
+   "source": "START_CLAUDE_DESIGN_WORLDBUILDER_V1.md (erste Fassung)"
+  },
+  {
+   "id": "auftrag-einen-auftrag-zu-schreiben",
+   "date": "2026-09-24",
+   "who": "process",
+   "size": "medium",
+   "stone": "Hier ruht: der Auftrag, einen Auftrag zu schreiben",
+   "hover": "Coworker schrieb ein Paket, damit der WSA-Chat ein Briefing schreibt, das dann Claude Design ausführt. Drei Stufen Tokens für einen Text.",
+   "lesson": "Wer die Fakten hat, schreibt das Briefing selbst und einmal vollständig. Keine Briefings über Briefings.",
+   "trigger": "Kann ich das nicht selbst fertig schreiben?",
+   "tags": [
+    "workflow",
+    "tokens"
+   ],
+   "source": "WSA_WORLDBUILDER_BRIEF_REQUEST_2026-09-24.md"
+  },
+  {
+   "id": "textbausteine-zum-anhaengen",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "medium",
+   "stone": "Hier ruhen: die Textbausteine zum Anhängen",
+   "hover": "Coworker gab Georg Absätze zum Anhängen an Chat-Nachrichten, statt die Information selbst auf GitHub abzulegen. Stückwerk, das liegen bleibt.",
+   "lesson": "Was festgehalten werden muss, pusht der Coworker selbst. Georg bekommt höchstens eine feste Startzeile.",
+   "trigger": "Liegt es auf GitHub oder nur im Chat?",
+   "tags": [
+    "workflow",
+    "persistence"
+   ],
+   "source": "Session 2026-09-24"
+  },
+  {
+   "id": "erprobter-weg-den-es-nicht-gab",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "medium",
+   "stone": "Hier ruht: der erprobte Weg, den es nicht gab",
+   "hover": "Im Mixamo-Auftrag stand ein „bereits funktionierender Retarget-Weg“ für alle 33 Clips. WSA prüfte: #192 ist Handanimation, #195 beweist nur exakten Transfer und einen Gitarren-Fit.",
+   "lesson": "Nichts als erprobt bezeichnen, was nur einmal in einem Sonderfall lief. Erst ein Clip pro Rig, dann der Stapel.",
+   "trigger": "Wo genau ist das bewiesen?",
+   "tags": [
+    "coworker",
+    "animation",
+    "claims"
+   ],
+   "source": "WSA_RETURN_2026-09-24.md F5"
+  },
+  {
+   "id": "urteil-ueber-die-falsche-version",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "medium",
+   "stone": "Hier ruht: das Urteil über die falsche Version",
+   "hover": "Die erste Hürth-Prüfseite zeigte die überholte V1. Georgs Nachbesserungswunsch galt damit der falschen Fassung.",
+   "lesson": "Vor dem Veröffentlichen prüfen, dass die Prüfseite den aktuellen Kandidaten zeigt (Commit im Wrapper gegen den Stand im PR).",
+   "trigger": "Welcher Commit steht auf der Prüfseite?",
+   "tags": [
+    "review",
+    "versions"
+   ],
+   "source": "#194 HUMAN_RESULT_HUERTH01 CORRECTION"
+  },
+  {
+   "id": "briefing-ansicht-beim-zusammenlegen",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "medium",
+   "stone": "Hier ruht: die Briefing-Ansicht beim Zusammenlegen",
+   "hover": "Beim Konsolidieren der Hub-Seiten ging die Briefing-Ansicht des alten Hubs verloren. Niemand hatte vorher aufgelistet, was die alte Seite konnte.",
+   "lesson": "Vor dem Zusammenlegen eine Funktionsliste der alten Seite machen und jede Funktion abhaken.",
+   "trigger": "Was konnte die alte Seite, das die neue nicht kann?",
+   "tags": [
+    "hub",
+    "regression"
+   ],
+   "source": "kfb-hub/archiv/"
+  },
+  {
+   "id": "hub-von-hand-geflickt",
+   "date": "2026-09-24",
+   "who": "process",
+   "size": "medium",
+   "stone": "Hier ruht: der Hub, von Hand geflickt",
+   "hover": "Andere Chats bearbeiteten die erzeugte Hub-Datei direkt, um Karten umzuleiten. Die eingebetteten Daten brachen; der Hub zeigte „Es konnte kein Stand geladen werden“.",
+   "lesson": "Erzeugte Dateien haben genau einen Schreiber. Änderungen gehen in die Quelle (config), nie in die Ausgabe.",
+   "trigger": "Ist das eine erzeugte Datei?",
+   "tags": [
+    "hub",
+    "generated",
+    "ownership"
+   ],
+   "source": "cloudflare-live kfb-hub/index.html commits 2026-09-24"
+  },
+  {
+   "id": "antwort-auf-englisch",
+   "date": "2026-09-24",
+   "who": "coworker",
+   "size": "small",
+   "stone": "Hier ruht: die Antwort auf Englisch",
+   "hover": "Nach einem langen Arbeitsgang antwortete der Coworker Georg auf Englisch. Georg: „Und bitte in Deutsch, das ist schon alles anstrengend genug.“",
+   "lesson": "Mit Georg immer Deutsch, kurz und knapp. Technisches Englisch nur in Dateien für andere Chats.",
+   "trigger": "In welcher Sprache spreche ich gerade mit Georg?",
+   "tags": [
+    "communication"
+   ],
+   "source": "Session 2026-09-24"
+  }
+ ]
+}
