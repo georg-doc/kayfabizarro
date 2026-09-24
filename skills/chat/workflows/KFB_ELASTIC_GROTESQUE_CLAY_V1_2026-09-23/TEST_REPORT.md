@@ -127,3 +127,102 @@ Cloudflare wrapper publication:
 
 Exactly one next gate:
 **Georg opens the direct Hürth review route and ACCEPTS or REJECTS the tuned V2.**
+
+## R2 FINAL BROWSER EVIDENCE · 2026-09-24
+
+Human gate:
+`HUMAN_RESULT_HUERTH01_V2_R2_2026-09-24.md`
+
+Final R2 runtime head:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+
+Workflow:
+- run `35947303053`
+- result: **SUCCESS**
+- browser assertions: **38/38 PASS**
+- **3/3 WebGL2**
+- page/console errors: **0**
+- artifact: `10787192998`
+- digest: `sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0`
+
+Runtime report:
+- schema = `kfb.elastic-grotesque-clay.huerth01/0.4-r2-candidate`;
+- 22 real Hürth buildings / 49 real road parts;
+- Elastic detail count = **193**;
+- details = `ORGANIC_ALL_VISIBLE_FACADES_FINAL_SURFACE_FRAME`;
+- shadow = `4096_TIGHT_FIT_BIAS_0_0002_NORMAL_0_055_ROOF_NO_RECEIVE`;
+- road = `CATMULL_RIBBON_OSM_NODE_ASPHALT_PATCH_PLUS_PATH_CONNECTOR`;
+- real asphalt shared-node patches = **23**;
+- path→road connectors = **10**;
+- roof = `FINAL_TOP_OUTLINE_EAVE_OVERHANG_R2`;
+- palette = `RACER_COLOGNE_HARMONIC_R2`;
+- selected harmony scheme = `komplementaer`;
+- deterministic palette seed = `2821914198`;
+- isolation = 22 → 1 → 22;
+- legacy City Lab CLEAN / CARTOON / GROTESQUE each boot unchanged.
+
+### Exact Racer Cologne palette donor
+
+Source repository:
+`georg-doc/KFB-Stunt-Car-Race`
+
+Source commit:
+`cc80f4a1c6c509db9668df79fd53b13cee093a9d`
+
+Executed source file:
+`KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
+
+Source blob:
+`38246785ec2c9089737b2a195673a3ad4c07bdf8`
+
+The file is copied byte-for-byte into:
+`tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/cologne-palette.v1.js`
+
+Companion style donor:
+- `option-c-style.v1.js`
+- source blob `c39c163019ab16c602b32c70202880680f9173c7`
+- same Race commit `cc80f4a1…`
+- exact byte copy.
+
+The R2 candidate executes Racer Cologne's existing OKLCH harmonic `makePalette()` logic.  
+Story-mode/card-semantic ownership remains the existing `world-context.js` lane; R2 does not invent a substitute story/card system because no concrete story mode or card triplet was specified by the R2 gate.
+
+### Shadow before / after
+
+BEFORE:
+- V2 runtime `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+- run `35909757979`
+- artifact `10772592799`
+- digest `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`
+
+AFTER:
+- R2 runtime `4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+- run `35947303053`
+- artifact `10787192998`
+
+Final R2 screenshots:
+- `01-block-comparison.png`
+- `01b-elastic-r2-after.png`
+- `02-isolated-source-comparison.png`
+- `report.json`
+
+The final screenshot was visually inspected before publication. It shows the R2 roof eave, multi-side facade details, Racer Cologne palette, and no open pale curb wedge at the reviewed T-junction.
+
+### Publication
+
+Review route:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+`cloudflare-live` wrapper base pin:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+
+Wrapper commit:
+`e4d25a6f7454dd6b86503a168cb9a0795c211b7b`
+
+Hub update:
+`f23f9b2cf2e427420366601efbda053079d38ce0`
+
+The current chat web-fetch path returns a cache miss for Pages, therefore **PUBLIC_VERIFIED is not claimed by this agent**. Georg's real-Chrome open is the current public/human gate.
+
+Exactly one next gate:
+**GEORG ACCEPT / REJECT R2.**
