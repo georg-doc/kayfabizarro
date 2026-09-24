@@ -1,12 +1,12 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **154/154 ARCHITECTURE / SOURCE CHECKS PASS**
+Status: **158/158 ARCHITECTURE / SOURCE CHECKS PASS**
 
 Scope: architecture, complete self-service production strands, source locks, adjacent-owner routing and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
 ## Catalog / self-service contract · 23/23
 
-1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/7`.
+1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/8`.
 2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/7`.
 3. Thirteen production strands exist.
 4. Seventy-nine copy-ready jobs exist.
@@ -249,3 +249,11 @@ Current primary profile distribution:
 - BLENDER_DEEP: 2
 
 Work/Cowork/Claude Design appear only as capability-specific secondary/escalation profiles where needed.
+
+
+## Dispatch / WSA / recovery routing final checks · 4/4
+
+155. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/8`.
+156. `EXECUTION_DISPATCH_POLICY_2026-09-24.md` exists and is pinned on the architecture branch.
+157. `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` exists and routes the mount to existing HUB-CTRL #202 with `WEB_STANDARD`, not Work.
+158. `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` exists as the fresh-chat continuation/recovery entry for the architecture/planning role.
