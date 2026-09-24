@@ -888,3 +888,11 @@ Cloudflare remains deferred.
 SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
 
 This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
+
+## 2026-09-24 · NPC-LIFE-01 active review candidate
+
+For the bounded Town/Resident social-life proof, use Draft PR **#210** on `chatgpt-web/npc-life-01-2026-09-24`.
+
+Owner: `tools/resident_atlas/` life adapter. The host owns encounter legality, movement, busy state and relationship context; Motion, ChatterBox text and source-backed offers remain independent consumers. No second dialogue/memory/reward system was created.
+
+Current technical evidence: **21/21 deterministic contract assertions PASS**. Human route after verified publication: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident/npc-life-01/`.
