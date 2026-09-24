@@ -6,6 +6,7 @@
 **Executor:** Fresh Web + GitHub  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
+**Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205  
 **Base:** `9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
 
 ## SOURCE
@@ -180,3 +181,22 @@ This audit did not produce a new screenshot or listening result and does not cla
 **Build AUDIO-CAL-01 only.**
 
 Do not spread directly into Racer + Combat + Town simultaneously. First establish one audible cross-KFB mix/voice/ducking calibration surface, get Georg's human listening gate, then let each runtime owner consume the accepted calibration through its existing adapter.
+
+
+## HANDOFF FILE SET
+
+Changed paths in Draft PR #205:
+
+- `kfb-hub/index.html`
+- `skills/chat/START_HERE.md`
+- `skills/chat/REGISTRY.json`
+- `skills/chat/CHANGELOG.md`
+- `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md`
+- `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/INVENTORY_AND_ARCHITECTURE.md`
+- `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RECOVERY.md`
+- `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md`
+- `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/CHANGELOG.md`
+
+No screenshots were produced because this slice changed documentation/routing only and did not create a new audible/browser Stage.
+
+No merge, Live promotion or runtime deployment is authorized by this Return.
