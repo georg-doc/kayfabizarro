@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/6",
+  "schema": "kfb.production-architecture.v3-input-locks/7",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -542,6 +542,59 @@
         ],
         "rule": "No move/delete until consumer/import scan + Asset Librarian reconciliation."
       }
+    },
+    "characterResidentWorkflow": {
+      "repo": "georg-doc/kayfabizarro",
+      "workflowDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md",
+      "residentAtlasS7": {
+        "path": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/KFB_Resident_Atlas_S7.html",
+        "blob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3",
+        "capabilities": [
+          "object transform",
+          "Drop",
+          "bone rotation",
+          "puppet/IK handles",
+          "foot pinning",
+          "Studio patches",
+          "Resident bundle import/export"
+        ]
+      },
+      "blenderAnimationProof": {
+        "pr": 192,
+        "head": "b49fb6e1adde070d658e1cc21dadb3294164cb29"
+      },
+      "orcBand": {
+        "pr": 195,
+        "head": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+        "status": "leader+guitarist accepted; drummer unresolved/browser-reference-pose preferred"
+      },
+      "motionLibrary": {
+        "pr": 197,
+        "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+        "clips": 33,
+        "rigs": [
+          "Rig_Medium",
+          "Rig_Large"
+        ]
+      },
+      "mixamoIntake": {
+        "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md",
+        "blob": "5b3e28a5cb16ae945959b311273cdaa13886808d",
+        "rule": "raw FBX stays in Dropbox; runtime GLB/catalogue in KFB repo; exact transfer when skeleton preserved; retarget measured exceptions only"
+      },
+      "legacy": {
+        "combatPr": 10,
+        "combatHead": "663f0610eb960f322d67b078f1302d0c6178d1c2",
+        "existingRig": "Rig_Legacy",
+        "existingFacts": "6-bone / 30-clip rig + modular Dungeon kit + complete Legacy packs",
+        "rule": "do not generically rerig Legacy; Blender only for custom derivative, missing external motion, geometry/weight repair"
+      },
+      "unresolvedUserSources": {
+        "frizzleOrc3RigWarp": "SOURCE_REQUIRED / USER_HAS_SOURCE",
+        "musknacker": "SOURCE_REQUIRED / exact actor name/source not pinned",
+        "blankLegacyHeadAccessories": "SOURCE_REQUIRED / exact template/accessory paths not pinned"
+      },
+      "rule": "Browser is default for pose/prop/scene tuning; Blender only for new time-based motion, retarget, weights, topology, rig or bake. Browser pose patches may become Blender key-pose references."
     }
   },
   "strands": {
@@ -555,7 +608,8 @@
         "residentPoseStudio",
         "sharedSceneEditor",
         "assetLibrarianPicker",
-        "vehicleAuthoring"
+        "vehicleAuthoring",
+        "characterResidentWorkflow"
       ],
       "target": "ToolBox Production Milestone"
     },
@@ -566,7 +620,8 @@
         "creatorMotionResearch",
         "residentAtlas",
         "residentPoseStudio",
-        "audioFxAudition"
+        "audioFxAudition",
+        "characterResidentWorkflow"
       ],
       "target": "shared motion profiles + Resident performance pipeline"
     },
@@ -605,7 +660,8 @@
         "residentAtlas",
         "cubePets",
         "spindleSky",
-        "theatreCurtain"
+        "theatreCurtain",
+        "characterResidentWorkflow"
       ],
       "target": "NPC duel choreography + Combat Arena melee/ranged + reusable World encounter adapter"
     },
