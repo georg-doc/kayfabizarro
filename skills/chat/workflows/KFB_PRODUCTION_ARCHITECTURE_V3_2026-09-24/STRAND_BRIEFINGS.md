@@ -1752,3 +1752,67 @@ A waiting card is valuable because Georg can already see the complete production
 > The current Resident Puppet UI, shared TransformControls and Studio Patch persistence remain owners. The Three.js example is a solver donor only.
 >
 > Do not replace current IK until the comparison passes. Do not use Cloudflare or Work for this gate.
+
+
+---
+
+## WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell
+
+**Executor:** Claude Design
+
+**Execution profile:** `CLAUDE_DESIGN_STANDARD` · Claude Design · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD** · secondary only if needed: `WEB_STANDARD` for source/integration checks.
+
+**Outcome:** move the visible WorldBuilder / World-Zone presentation forward in parallel while `WORLD-ZONE-BAKE-01` is still compiling source data.
+
+> @GitHub
+> Read KFB Production Architecture v3, current WorldBuilder/WB-W0 sources, current Cologne/OSM donors and the current Cartoon/Elastic/Grotesque form-language sources.
+>
+> This job runs **in parallel with WORLD-ZONE-BAKE-01**.
+>
+> Do NOT:
+> - fetch new OSM;
+> - invent street/building geography;
+> - define the final World Zone schema;
+> - create a second WorldBuilder runtime;
+> - replace current terrain/editor owners;
+> - depend on unfinished compiler output.
+>
+> Use only already-available real source fixtures/donors, especially:
+> - `tools/osm-city-lab/data/dom-zentrum-v0/`;
+> - existing Cologne Option C / lab-v9 real-source city fixture;
+> - current WB-W0 measured world/region donor;
+> - current shared scene editor;
+> - current City GROTESQUE / BuildingElastic / LandmarkElastic donors;
+> - current KFB palette owners.
+>
+> First show the chosen real source fixture / landmark donor in isolation before integration.
+>
+> Build one **visual/authoring shell candidate** proving how a baked World Zone should feel once it arrives:
+>
+> 1. readable local-region view;
+> 2. continuous terrain/ground relationship;
+> 3. road/building/landmark visual hierarchy;
+> 4. current KFB cartoon material/palette language;
+> 5. stronger Elastic/Grotesque height-dependent bend/torsion on one tall landmark/building;
+> 6. one authored external landmark-placement example;
+> 7. one current editor interaction state showing select / Move / Rotate / Scale / Drop without creating a new editor;
+> 8. clean seam where a future baked Track Module could be placed as a referenced module, without actually compiling/owning the Race track.
+>
+> Use a **frozen small real Cologne fixture**, not a fake city and not placeholder geometry.
+>
+> Treat the future compiler result as data that will later replace the frozen fixture behind the same presentation seam.
+>
+> The artifact should answer visual/product questions only:
+> - does the world read as one coherent KFB world?
+> - does the landmark torsion/bend direction work?
+> - are roads/buildings/landmarks visually hierarchical?
+> - can the editor affordances stay legible without dominating the screen?
+>
+> Do not block on the OSM compiler chat.
+>
+> Return:
+> - exact source refs used;
+> - one directly reviewable visual artifact;
+> - what is purely visual and therefore safe to keep;
+> - what must still wait for WORLD-ZONE-BAKE-01;
+> - exactly one next integration gate.
