@@ -1,0 +1,3997 @@
+{
+ "schema": "kfb.motion-catalog.v1",
+ "id": "KFB_Motion_Library",
+ "version": "2026-09-24",
+ "libraries": {
+  "Rig_Medium": {
+   "file": "KFB_Motion_Library_Rig_Medium.glb",
+   "sha256": "08b76780fcb64b7b2c58808981139552ec8cad5fcb596c0a82f9f6333f23c9cb"
+  },
+  "Rig_Large": {
+   "file": "KFB_Motion_Library_Rig_Large.glb",
+   "sha256": "337b96e0c8a009f43edc3f5774a85128591cfd57f2faa2cfe39d071e9cce9abf"
+  }
+ },
+ "glbContents": "armature + 33 actions per rig, no mesh (24 nodes); action name = clip id",
+ "measuredBy": "Blender MCP chat, ml_bake.py (Dropbox BLENDER MCP/MOTION_LIB), log ml_log.json",
+ "license": "Mixamo-derived motion, retargeted for Kayfabizarro; runtime part of the game; see NOTICE.md",
+ "clipCount": 33,
+ "clips": [
+  {
+   "id": "kfb_action_fireball_a",
+   "label_de": "Feuerball",
+   "group": "action",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 3.4,
+   "fps": 30.0,
+   "frames": 102,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       102
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       102
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       31
+      ],
+      [
+       40,
+       102
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       102
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Fireball.fbx",
+   "contactSheet": "sheets/kfb_action_fireball_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_climb_to_top_a",
+   "label_de": "Hochklettern über die Kante",
+   "group": "climb",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.033,
+   "fps": 30.0,
+   "frames": 121,
+   "loop": false,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.846,
+    "Rig_Large": 2.173
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       15
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       15
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Climbing To Top.fbx",
+   "contactSheet": "sheets/kfb_climb_to_top_a.png",
+   "notes": "",
+   "ledgeHeightM": {
+    "Rig_Medium": 1.051,
+    "Rig_Large": 2.697
+   },
+   "endsOnTop": true
+  },
+  {
+   "id": "kfb_climb_up_a",
+   "label_de": "Klettern",
+   "group": "climb",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 3.0,
+   "fps": 30.0,
+   "frames": 90,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.292,
+    "Rig_Large": 0.75
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       42
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       10
+      ],
+      [
+       22,
+       26
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Climbing.fbx",
+   "contactSheet": "sheets/kfb_climb_up_a.png",
+   "notes": "",
+   "ledgeHeightM": {
+    "Rig_Medium": 0.793,
+    "Rig_Large": 2.035
+   },
+   "endsOnTop": false
+  },
+  {
+   "id": "kfb_climb_up_b",
+   "label_de": "Klettern · Variante B",
+   "group": "climb",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 1.6,
+   "fps": 30.0,
+   "frames": 48,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.151,
+    "Rig_Large": 0.389
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       18
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       17
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Climbing (1).fbx",
+   "contactSheet": "sheets/kfb_climb_up_b.png",
+   "notes": "",
+   "ledgeHeightM": {
+    "Rig_Medium": 0.402,
+    "Rig_Large": 1.032
+   },
+   "endsOnTop": false
+  },
+  {
+   "id": "kfb_dance_chicken_a",
+   "label_de": "Ententanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.8,
+   "fps": 30.0,
+   "frames": 144,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       144
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       144
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       84
+      ],
+      [
+       87,
+       144
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       75
+      ],
+      [
+       78,
+       144
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Chicken Dance.fbx",
+   "contactSheet": "sheets/kfb_dance_chicken_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_hip_hop_a",
+   "label_de": "Hip-Hop-Tanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 13.667,
+   "fps": 30.0,
+   "frames": 410,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       21
+      ],
+      [
+       27,
+       81
+      ],
+      [
+       86,
+       116
+      ],
+      [
+       122,
+       129
+      ],
+      [
+       131,
+       163
+      ],
+      [
+       170,
+       182
+      ],
+      [
+       184,
+       217
+      ],
+      [
+       224,
+       294
+      ],
+      [
+       298,
+       346
+      ],
+      [
+       352,
+       410
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       44
+      ],
+      [
+       51,
+       52
+      ],
+      [
+       66,
+       70
+      ],
+      [
+       75,
+       98
+      ],
+      [
+       105,
+       129
+      ],
+      [
+       139,
+       143
+      ],
+      [
+       145,
+       165
+      ],
+      [
+       170,
+       180
+      ],
+      [
+       184,
+       186
+      ],
+      [
+       195,
+       208
+      ],
+      [
+       212,
+       267
+      ],
+      [
+       270,
+       296
+      ],
+      [
+       300,
+       306
+      ],
+      [
+       311,
+       319
+      ],
+      [
+       330,
+       332
+      ],
+      [
+       341,
+       410
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       12
+      ],
+      [
+       16,
+       20
+      ],
+      [
+       28,
+       32
+      ],
+      [
+       34,
+       81
+      ],
+      [
+       89,
+       115
+      ],
+      [
+       132,
+       162
+      ],
+      [
+       171,
+       181
+      ],
+      [
+       186,
+       216
+      ],
+      [
+       225,
+       293
+      ],
+      [
+       301,
+       307
+      ],
+      [
+       310,
+       312
+      ],
+      [
+       317,
+       344
+      ],
+      [
+       353,
+       378
+      ],
+      [
+       381,
+       382
+      ],
+      [
+       386,
+       410
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       6
+      ],
+      [
+       9,
+       44
+      ],
+      [
+       67,
+       70
+      ],
+      [
+       77,
+       97
+      ],
+      [
+       106,
+       129
+      ],
+      [
+       147,
+       149
+      ],
+      [
+       153,
+       164
+      ],
+      [
+       171,
+       175
+      ],
+      [
+       196,
+       199
+      ],
+      [
+       204,
+       208
+      ],
+      [
+       212,
+       226
+      ],
+      [
+       231,
+       266
+      ],
+      [
+       271,
+       274
+      ],
+      [
+       277,
+       295
+      ],
+      [
+       301,
+       305
+      ],
+      [
+       312,
+       319
+      ],
+      [
+       342,
+       362
+      ],
+      [
+       366,
+       392
+      ],
+      [
+       397,
+       399
+      ],
+      [
+       405,
+       410
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Hip Hop Dancing.fbx",
+   "contactSheet": "sheets/kfb_dance_hip_hop_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_house_a",
+   "label_de": "House-Tanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 19.833,
+   "fps": 30.0,
+   "frames": 595,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       318,
+       327
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       8
+      ],
+      [
+       23,
+       54
+      ],
+      [
+       66,
+       99
+      ],
+      [
+       103,
+       107
+      ],
+      [
+       113,
+       210
+      ],
+      [
+       236,
+       278
+      ],
+      [
+       309,
+       330
+      ],
+      [
+       333,
+       349
+      ],
+      [
+       356,
+       367
+      ],
+      [
+       391,
+       400
+      ],
+      [
+       412,
+       435
+      ],
+      [
+       467,
+       490
+      ],
+      [
+       506,
+       522
+      ],
+      [
+       553,
+       595
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       318,
+       327
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       8
+      ],
+      [
+       22,
+       61
+      ],
+      [
+       67,
+       107
+      ],
+      [
+       113,
+       210
+      ],
+      [
+       218,
+       219
+      ],
+      [
+       232,
+       233
+      ],
+      [
+       235,
+       279
+      ],
+      [
+       308,
+       331
+      ],
+      [
+       333,
+       349
+      ],
+      [
+       358,
+       368
+      ],
+      [
+       389,
+       400
+      ],
+      [
+       412,
+       435
+      ],
+      [
+       466,
+       490
+      ],
+      [
+       503,
+       523
+      ],
+      [
+       542,
+       547
+      ],
+      [
+       550,
+       550
+      ],
+      [
+       553,
+       595
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "House Dancing.fbx",
+   "contactSheet": "sheets/kfb_dance_house_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_house_b",
+   "label_de": "House-Tanz · Variante B",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 19.833,
+   "fps": 30.0,
+   "frames": 595,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       25
+      ],
+      [
+       40,
+       42
+      ],
+      [
+       56,
+       60
+      ],
+      [
+       75,
+       88
+      ],
+      [
+       103,
+       116
+      ],
+      [
+       126,
+       190
+      ],
+      [
+       219,
+       240
+      ],
+      [
+       278,
+       311
+      ],
+      [
+       318,
+       327
+      ],
+      [
+       365,
+       369
+      ],
+      [
+       373,
+       385
+      ],
+      [
+       390,
+       390
+      ],
+      [
+       411,
+       417
+      ],
+      [
+       437,
+       475
+      ],
+      [
+       484,
+       551
+      ],
+      [
+       558,
+       569
+      ],
+      [
+       588,
+       595
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       8
+      ],
+      [
+       23,
+       55
+      ],
+      [
+       65,
+       107
+      ],
+      [
+       112,
+       211
+      ],
+      [
+       233,
+       279
+      ],
+      [
+       308,
+       350
+      ],
+      [
+       354,
+       366
+      ],
+      [
+       390,
+       401
+      ],
+      [
+       411,
+       436
+      ],
+      [
+       467,
+       491
+      ],
+      [
+       505,
+       522
+      ],
+      [
+       548,
+       595
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       60
+      ],
+      [
+       75,
+       89
+      ],
+      [
+       102,
+       191
+      ],
+      [
+       219,
+       240
+      ],
+      [
+       276,
+       311
+      ],
+      [
+       316,
+       327
+      ],
+      [
+       360,
+       369
+      ],
+      [
+       374,
+       376
+      ],
+      [
+       390,
+       390
+      ],
+      [
+       410,
+       419
+      ],
+      [
+       430,
+       476
+      ],
+      [
+       483,
+       571
+      ],
+      [
+       587,
+       595
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       9
+      ],
+      [
+       20,
+       211
+      ],
+      [
+       218,
+       220
+      ],
+      [
+       232,
+       280
+      ],
+      [
+       308,
+       350
+      ],
+      [
+       354,
+       367
+      ],
+      [
+       387,
+       404
+      ],
+      [
+       411,
+       437
+      ],
+      [
+       464,
+       491
+      ],
+      [
+       502,
+       523
+      ],
+      [
+       539,
+       595
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "House Dancing (1).fbx",
+   "contactSheet": "sheets/kfb_dance_house_b.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_locking_hip_hop_a",
+   "label_de": "Locking-Tanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 17.033,
+   "fps": 30.0,
+   "frames": 511,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.416,
+    "Rig_Large": 1.068
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       22
+      ],
+      [
+       42,
+       77
+      ],
+      [
+       91,
+       94
+      ],
+      [
+       104,
+       142
+      ],
+      [
+       226,
+       248
+      ],
+      [
+       254,
+       284
+      ],
+      [
+       294,
+       304
+      ],
+      [
+       310,
+       324
+      ],
+      [
+       337,
+       346
+      ],
+      [
+       367,
+       371
+      ],
+      [
+       378,
+       384
+      ],
+      [
+       388,
+       401
+      ],
+      [
+       412,
+       511
+      ]
+     ],
+     "foot.r": [
+      [
+       169,
+       172
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       20
+      ],
+      [
+       43,
+       59
+      ],
+      [
+       72,
+       73
+      ],
+      [
+       91,
+       94
+      ],
+      [
+       105,
+       117
+      ],
+      [
+       227,
+       239
+      ],
+      [
+       256,
+       257
+      ],
+      [
+       295,
+       300
+      ],
+      [
+       313,
+       323
+      ],
+      [
+       338,
+       341
+      ],
+      [
+       368,
+       371
+      ],
+      [
+       379,
+       379
+      ],
+      [
+       414,
+       430
+      ],
+      [
+       438,
+       449
+      ],
+      [
+       465,
+       466
+      ],
+      [
+       474,
+       484
+      ],
+      [
+       509,
+       511
+      ]
+     ],
+     "foot.r": [
+      [
+       169,
+       173
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Locking Hip Hop Dance.fbx",
+   "contactSheet": "sheets/kfb_dance_locking_hip_hop_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_samba_a",
+   "label_de": "Samba",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 23.9,
+   "fps": 30.0,
+   "frames": 717,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.001
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       24
+      ],
+      [
+       27,
+       28
+      ],
+      [
+       35,
+       64
+      ],
+      [
+       66,
+       88
+      ],
+      [
+       91,
+       106
+      ],
+      [
+       110,
+       114
+      ],
+      [
+       122,
+       161
+      ],
+      [
+       166,
+       180
+      ],
+      [
+       189,
+       209
+      ],
+      [
+       214,
+       218
+      ],
+      [
+       229,
+       229
+      ],
+      [
+       236,
+       240
+      ],
+      [
+       243,
+       251
+      ],
+      [
+       258,
+       259
+      ],
+      [
+       266,
+       270
+      ],
+      [
+       274,
+       281
+      ],
+      [
+       287,
+       290
+      ],
+      [
+       293,
+       299
+      ],
+      [
+       301,
+       309
+      ],
+      [
+       315,
+       318
+      ],
+      [
+       324,
+       328
+      ],
+      [
+       333,
+       336
+      ],
+      [
+       358,
+       364
+      ],
+      [
+       373,
+       377
+      ],
+      [
+       380,
+       385
+      ],
+      [
+       392,
+       401
+      ],
+      [
+       408,
+       410
+      ],
+      [
+       416,
+       420
+      ],
+      [
+       424,
+       432
+      ],
+      [
+       437,
+       462
+      ],
+      [
+       472,
+       476
+      ],
+      [
+       496,
+       502
+      ],
+      [
+       511,
+       515
+      ],
+      [
+       524,
+       531
+      ],
+      [
+       538,
+       543
+      ],
+      [
+       551,
+       556
+      ],
+      [
+       565,
+       569
+      ],
+      [
+       579,
+       614
+      ],
+      [
+       619,
+       635
+      ],
+      [
+       639,
+       667
+      ],
+      [
+       669,
+       717
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       9
+      ],
+      [
+       11,
+       11
+      ],
+      [
+       16,
+       20
+      ],
+      [
+       26,
+       38
+      ],
+      [
+       49,
+       65
+      ],
+      [
+       71,
+       75
+      ],
+      [
+       81,
+       91
+      ],
+      [
+       104,
+       119
+      ],
+      [
+       125,
+       129
+      ],
+      [
+       137,
+       147
+      ],
+      [
+       159,
+       160
+      ],
+      [
+       163,
+       169
+      ],
+      [
+       186,
+       199
+      ],
+      [
+       203,
+       205
+      ],
+      [
+       211,
+       226
+      ],
+      [
+       228,
+       237
+      ],
+      [
+       242,
+       267
+      ],
+      [
+       271,
+       275
+      ],
+      [
+       278,
+       285
+      ],
+      [
+       287,
+       296
+      ],
+      [
+       300,
+       326
+      ],
+      [
+       329,
+       334
+      ],
+      [
+       337,
+       342
+      ],
+      [
+       344,
+       350
+      ],
+      [
+       355,
+       365
+      ],
+      [
+       368,
+       372
+      ],
+      [
+       376,
+       385
+      ],
+      [
+       391,
+       403
+      ],
+      [
+       407,
+       417
+      ],
+      [
+       420,
+       426
+      ],
+      [
+       430,
+       436
+      ],
+      [
+       440,
+       448
+      ],
+      [
+       452,
+       456
+      ],
+      [
+       459,
+       465
+      ],
+      [
+       470,
+       476
+      ],
+      [
+       483,
+       490
+      ],
+      [
+       495,
+       517
+      ],
+      [
+       525,
+       533
+      ],
+      [
+       537,
+       543
+      ],
+      [
+       550,
+       558
+      ],
+      [
+       565,
+       574
+      ],
+      [
+       578,
+       583
+      ],
+      [
+       593,
+       596
+      ],
+      [
+       605,
+       619
+      ],
+      [
+       622,
+       645
+      ],
+      [
+       656,
+       671
+      ],
+      [
+       676,
+       679
+      ],
+      [
+       686,
+       699
+      ],
+      [
+       710,
+       717
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       24
+      ],
+      [
+       36,
+       52
+      ],
+      [
+       56,
+       62
+      ],
+      [
+       67,
+       82
+      ],
+      [
+       93,
+       105
+      ],
+      [
+       111,
+       113
+      ],
+      [
+       123,
+       160
+      ],
+      [
+       167,
+       180
+      ],
+      [
+       190,
+       209
+      ],
+      [
+       215,
+       218
+      ],
+      [
+       236,
+       240
+      ],
+      [
+       243,
+       251
+      ],
+      [
+       259,
+       259
+      ],
+      [
+       266,
+       271
+      ],
+      [
+       274,
+       281
+      ],
+      [
+       287,
+       290
+      ],
+      [
+       293,
+       299
+      ],
+      [
+       301,
+       308
+      ],
+      [
+       315,
+       318
+      ],
+      [
+       325,
+       328
+      ],
+      [
+       334,
+       336
+      ],
+      [
+       358,
+       364
+      ],
+      [
+       374,
+       377
+      ],
+      [
+       380,
+       386
+      ],
+      [
+       392,
+       401
+      ],
+      [
+       408,
+       410
+      ],
+      [
+       415,
+       420
+      ],
+      [
+       424,
+       432
+      ],
+      [
+       437,
+       452
+      ],
+      [
+       454,
+       462
+      ],
+      [
+       472,
+       476
+      ],
+      [
+       497,
+       501
+      ],
+      [
+       511,
+       515
+      ],
+      [
+       524,
+       531
+      ],
+      [
+       538,
+       542
+      ],
+      [
+       551,
+       556
+      ],
+      [
+       565,
+       569
+      ],
+      [
+       579,
+       613
+      ],
+      [
+       619,
+       633
+      ],
+      [
+       643,
+       655
+      ],
+      [
+       659,
+       666
+      ],
+      [
+       670,
+       688
+      ],
+      [
+       691,
+       717
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       9
+      ],
+      [
+       26,
+       38
+      ],
+      [
+       53,
+       65
+      ],
+      [
+       82,
+       91
+      ],
+      [
+       108,
+       119
+      ],
+      [
+       126,
+       128
+      ],
+      [
+       137,
+       147
+      ],
+      [
+       164,
+       169
+      ],
+      [
+       186,
+       199
+      ],
+      [
+       211,
+       225
+      ],
+      [
+       228,
+       236
+      ],
+      [
+       243,
+       245
+      ],
+      [
+       248,
+       255
+      ],
+      [
+       258,
+       267
+      ],
+      [
+       272,
+       275
+      ],
+      [
+       279,
+       284
+      ],
+      [
+       288,
+       295
+      ],
+      [
+       300,
+       313
+      ],
+      [
+       316,
+       325
+      ],
+      [
+       330,
+       333
+      ],
+      [
+       337,
+       341
+      ],
+      [
+       345,
+       350
+      ],
+      [
+       356,
+       365
+      ],
+      [
+       369,
+       372
+      ],
+      [
+       377,
+       380
+      ],
+      [
+       384,
+       385
+      ],
+      [
+       393,
+       402
+      ],
+      [
+       408,
+       416
+      ],
+      [
+       421,
+       425
+      ],
+      [
+       431,
+       436
+      ],
+      [
+       440,
+       447
+      ],
+      [
+       453,
+       456
+      ],
+      [
+       460,
+       465
+      ],
+      [
+       471,
+       475
+      ],
+      [
+       483,
+       489
+      ],
+      [
+       496,
+       506
+      ],
+      [
+       509,
+       517
+      ],
+      [
+       528,
+       529
+      ],
+      [
+       538,
+       543
+      ],
+      [
+       551,
+       557
+      ],
+      [
+       565,
+       573
+      ],
+      [
+       578,
+       583
+      ],
+      [
+       606,
+       616
+      ],
+      [
+       625,
+       626
+      ],
+      [
+       631,
+       644
+      ],
+      [
+       658,
+       670
+      ],
+      [
+       677,
+       678
+      ],
+      [
+       686,
+       698
+      ],
+      [
+       711,
+       717
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Samba Dancing.fbx",
+   "contactSheet": "sheets/kfb_dance_samba_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_slide_hip_hop_a",
+   "label_de": "Slide-Tanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 17.333,
+   "fps": 30.0,
+   "frames": 520,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       28
+      ],
+      [
+       34,
+       38
+      ],
+      [
+       50,
+       61
+      ],
+      [
+       71,
+       72
+      ],
+      [
+       80,
+       126
+      ],
+      [
+       137,
+       193
+      ],
+      [
+       204,
+       223
+      ],
+      [
+       232,
+       248
+      ],
+      [
+       257,
+       282
+      ],
+      [
+       292,
+       315
+      ],
+      [
+       326,
+       368
+      ],
+      [
+       380,
+       397
+      ],
+      [
+       412,
+       439
+      ],
+      [
+       445,
+       520
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       60
+      ],
+      [
+       66,
+       92
+      ],
+      [
+       104,
+       176
+      ],
+      [
+       189,
+       203
+      ],
+      [
+       214,
+       231
+      ],
+      [
+       241,
+       257
+      ],
+      [
+       267,
+       283
+      ],
+      [
+       297,
+       352
+      ],
+      [
+       361,
+       381
+      ],
+      [
+       397,
+       412
+      ],
+      [
+       425,
+       445
+      ],
+      [
+       455,
+       502
+      ],
+      [
+       506,
+       520
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       27
+      ],
+      [
+       34,
+       38
+      ],
+      [
+       51,
+       61
+      ],
+      [
+       80,
+       126
+      ],
+      [
+       137,
+       193
+      ],
+      [
+       204,
+       222
+      ],
+      [
+       232,
+       248
+      ],
+      [
+       257,
+       275
+      ],
+      [
+       279,
+       282
+      ],
+      [
+       293,
+       314
+      ],
+      [
+       326,
+       368
+      ],
+      [
+       380,
+       396
+      ],
+      [
+       412,
+       439
+      ],
+      [
+       446,
+       520
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       60
+      ],
+      [
+       66,
+       92
+      ],
+      [
+       104,
+       176
+      ],
+      [
+       189,
+       203
+      ],
+      [
+       214,
+       231
+      ],
+      [
+       242,
+       256
+      ],
+      [
+       267,
+       283
+      ],
+      [
+       297,
+       352
+      ],
+      [
+       361,
+       379
+      ],
+      [
+       397,
+       412
+      ],
+      [
+       425,
+       444
+      ],
+      [
+       455,
+       501
+      ],
+      [
+       506,
+       520
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Slide Hip Hop Dance.fbx",
+   "contactSheet": "sheets/kfb_dance_slide_hip_hop_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_step_hip_hop_a",
+   "label_de": "Step-Tanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 7.833,
+   "fps": 30.0,
+   "frames": 235,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.851,
+    "Rig_Large": 4.753
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       4
+      ],
+      [
+       24,
+       39
+      ],
+      [
+       53,
+       79
+      ],
+      [
+       98,
+       116
+      ],
+      [
+       127,
+       155
+      ],
+      [
+       174,
+       191
+      ],
+      [
+       204,
+       235
+      ]
+     ],
+     "foot.r": [
+      [
+       6,
+       21
+      ],
+      [
+       43,
+       50
+      ],
+      [
+       82,
+       96
+      ],
+      [
+       118,
+       125
+      ],
+      [
+       157,
+       172
+      ],
+      [
+       194,
+       200
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       3
+      ],
+      [
+       24,
+       39
+      ],
+      [
+       53,
+       78
+      ],
+      [
+       99,
+       115
+      ],
+      [
+       128,
+       155
+      ],
+      [
+       174,
+       191
+      ],
+      [
+       204,
+       235
+      ]
+     ],
+     "foot.r": [
+      [
+       7,
+       20
+      ],
+      [
+       43,
+       50
+      ],
+      [
+       82,
+       96
+      ],
+      [
+       119,
+       125
+      ],
+      [
+       157,
+       171
+      ],
+      [
+       194,
+       200
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Step Hip Hop Dance.fbx",
+   "contactSheet": "sheets/kfb_dance_step_hip_hop_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_thriller_part3_a",
+   "label_de": "Thriller-Tanz Teil 3",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 25.6,
+   "fps": 30.0,
+   "frames": 768,
+   "loop": false,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.63,
+    "Rig_Large": 6.751
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       7
+      ],
+      [
+       22,
+       63
+      ],
+      [
+       66,
+       70
+      ],
+      [
+       82,
+       86
+      ],
+      [
+       96,
+       126
+      ],
+      [
+       130,
+       158
+      ],
+      [
+       166,
+       188
+      ],
+      [
+       196,
+       319
+      ],
+      [
+       332,
+       359
+      ],
+      [
+       436,
+       439
+      ],
+      [
+       445,
+       453
+      ],
+      [
+       459,
+       470
+      ],
+      [
+       474,
+       474
+      ],
+      [
+       476,
+       486
+      ],
+      [
+       490,
+       500
+      ],
+      [
+       507,
+       515
+      ],
+      [
+       523,
+       573
+      ],
+      [
+       582,
+       604
+      ],
+      [
+       612,
+       636
+      ],
+      [
+       644,
+       652
+      ],
+      [
+       655,
+       665
+      ],
+      [
+       678,
+       697
+      ],
+      [
+       708,
+       727
+      ],
+      [
+       752,
+       768
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       8
+      ],
+      [
+       21,
+       71
+      ],
+      [
+       82,
+       128
+      ],
+      [
+       158,
+       168
+      ],
+      [
+       180,
+       202
+      ],
+      [
+       208,
+       217
+      ],
+      [
+       224,
+       232
+      ],
+      [
+       238,
+       263
+      ],
+      [
+       269,
+       279
+      ],
+      [
+       283,
+       449
+      ],
+      [
+       451,
+       558
+      ],
+      [
+       568,
+       589
+      ],
+      [
+       599,
+       619
+      ],
+      [
+       629,
+       650
+      ],
+      [
+       659,
+       681
+      ],
+      [
+       692,
+       712
+      ],
+      [
+       723,
+       741
+      ],
+      [
+       748,
+       768
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       8
+      ],
+      [
+       20,
+       71
+      ],
+      [
+       81,
+       321
+      ],
+      [
+       330,
+       501
+      ],
+      [
+       505,
+       517
+      ],
+      [
+       522,
+       574
+      ],
+      [
+       580,
+       605
+      ],
+      [
+       611,
+       637
+      ],
+      [
+       642,
+       667
+      ],
+      [
+       674,
+       699
+      ],
+      [
+       706,
+       729
+      ],
+      [
+       736,
+       768
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       8
+      ],
+      [
+       20,
+       73
+      ],
+      [
+       81,
+       128
+      ],
+      [
+       131,
+       131
+      ],
+      [
+       144,
+       145
+      ],
+      [
+       156,
+       559
+      ],
+      [
+       563,
+       590
+      ],
+      [
+       595,
+       620
+      ],
+      [
+       626,
+       651
+      ],
+      [
+       657,
+       683
+      ],
+      [
+       690,
+       714
+      ],
+      [
+       722,
+       742
+      ],
+      [
+       747,
+       768
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "ORC BRUTE - MIXAMO - Thriller Part 3.fbx",
+   "contactSheet": "sheets/kfb_dance_thriller_part3_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_wave_hip_hop_a",
+   "label_de": "Wave-Tanz",
+   "group": "dance",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 16.867,
+   "fps": 30.0,
+   "frames": 506,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.001,
+    "Rig_Large": 0.002
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       107
+      ],
+      [
+       110,
+       114
+      ],
+      [
+       122,
+       205
+      ],
+      [
+       215,
+       244
+      ],
+      [
+       286,
+       288
+      ],
+      [
+       290,
+       300
+      ],
+      [
+       318,
+       320
+      ],
+      [
+       334,
+       341
+      ],
+      [
+       355,
+       379
+      ],
+      [
+       388,
+       419
+      ],
+      [
+       427,
+       428
+      ],
+      [
+       437,
+       449
+      ],
+      [
+       451,
+       456
+      ],
+      [
+       474,
+       506
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       55
+      ],
+      [
+       64,
+       190
+      ],
+      [
+       196,
+       206
+      ],
+      [
+       216,
+       240
+      ],
+      [
+       245,
+       270
+      ],
+      [
+       278,
+       301
+      ],
+      [
+       315,
+       344
+      ],
+      [
+       356,
+       468
+      ],
+      [
+       470,
+       506
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       206
+      ],
+      [
+       212,
+       251
+      ],
+      [
+       276,
+       287
+      ],
+      [
+       295,
+       297
+      ],
+      [
+       311,
+       322
+      ],
+      [
+       332,
+       342
+      ],
+      [
+       355,
+       378
+      ],
+      [
+       388,
+       420
+      ],
+      [
+       436,
+       457
+      ],
+      [
+       474,
+       506
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       34
+      ],
+      [
+       38,
+       49
+      ],
+      [
+       66,
+       113
+      ],
+      [
+       123,
+       138
+      ],
+      [
+       150,
+       187
+      ],
+      [
+       197,
+       206
+      ],
+      [
+       220,
+       239
+      ],
+      [
+       253,
+       269
+      ],
+      [
+       285,
+       300
+      ],
+      [
+       317,
+       327
+      ],
+      [
+       330,
+       343
+      ],
+      [
+       356,
+       415
+      ],
+      [
+       422,
+       434
+      ],
+      [
+       445,
+       448
+      ],
+      [
+       451,
+       465
+      ],
+      [
+       473,
+       506
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Wave Hip Hop Dance.fbx",
+   "contactSheet": "sheets/kfb_dance_wave_hip_hop_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_breathing_a",
+   "label_de": "Atmen (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 9.967,
+   "fps": 30.0,
+   "frames": 299,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       299
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       299
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       299
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       299
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Breathing Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_breathing_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_breathing_b",
+   "label_de": "Atmen (Stand) · Variante B",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 9.967,
+   "fps": 30.0,
+   "frames": 299,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       299
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       299
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       299
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       299
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Breathing Idle (1).fbx",
+   "contactSheet": "sheets/kfb_idle_breathing_b.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_defeat_a",
+   "label_de": "Niederlage (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 1.767,
+   "fps": 30.0,
+   "frames": 53,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       30
+      ],
+      [
+       37,
+       53
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       53
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       30
+      ],
+      [
+       37,
+       53
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       53
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Defeat Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_defeat_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_happy_a",
+   "label_de": "Fröhlich (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 2.967,
+   "fps": 30.0,
+   "frames": 89,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       89
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       89
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       89
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       89
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Happy Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_happy_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_injured_a",
+   "label_de": "Verletzt (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 9.367,
+   "fps": 30.0,
+   "frames": 281,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       73,
+       97
+      ],
+      [
+       136,
+       196
+      ],
+      [
+       202,
+       274
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       281
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       80,
+       96
+      ],
+      [
+       139,
+       274
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       281
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Injured Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_injured_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_kneeling_a",
+   "label_de": "Knien",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.3,
+   "fps": 30.0,
+   "frames": 129,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       129
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       129
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       129
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       129
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Kneeling Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_kneeling_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_laughing_a",
+   "label_de": "Lachen",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 10.4,
+   "fps": 30.0,
+   "frames": 312,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       312
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       312
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       312
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       312
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Laughing.fbx",
+   "contactSheet": "sheets/kfb_idle_laughing_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_ninja_a",
+   "label_de": "Ninja (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 3.367,
+   "fps": 30.0,
+   "frames": 101,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       101
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       101
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       101
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       101
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Ninja Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_ninja_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_orc_a",
+   "label_de": "Ork (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 5.367,
+   "fps": 30.0,
+   "frames": 161,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       161
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       161
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       161
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       161
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Orc Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_orc_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_rejected_a",
+   "label_de": "Abgewiesen",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.833,
+   "fps": 30.0,
+   "frames": 145,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       145
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       145
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       145
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       145
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Rejected.fbx",
+   "contactSheet": "sheets/kfb_idle_rejected_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_sad_a",
+   "label_de": "Traurig (Stand)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 2.833,
+   "fps": 30.0,
+   "frames": 85,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       85
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       17
+      ],
+      [
+       40,
+       44
+      ],
+      [
+       61,
+       85
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       85
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       18
+      ],
+      [
+       40,
+       44
+      ],
+      [
+       61,
+       85
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Sad Idle.fbx",
+   "contactSheet": "sheets/kfb_idle_sad_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_run_backward_a",
+   "label_de": "Rückwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 0.633,
+   "fps": 30.0,
+   "frames": 19,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.8,
+    "Rig_Large": 2.054
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       5
+      ],
+      [
+       17,
+       19
+      ]
+     ],
+     "foot.r": [
+      [
+       8,
+       16
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       4
+      ],
+      [
+       17,
+       19
+      ]
+     ],
+     "foot.r": [
+      [
+       8,
+       16
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Run Backward.fbx",
+   "contactSheet": "sheets/kfb_locomotion_run_backward_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_run_forward_a",
+   "label_de": "Vorwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 0.767,
+   "fps": 30.0,
+   "frames": 23,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.564,
+    "Rig_Large": 4.014
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       5,
+       13
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ],
+      [
+       16,
+       23
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       5,
+       12
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       1
+      ],
+      [
+       16,
+       23
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Run Forward.fbx",
+   "contactSheet": "sheets/kfb_locomotion_run_forward_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_sad_walk_a",
+   "label_de": "Traurig gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 1.5,
+   "fps": 30.0,
+   "frames": 45,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.805,
+    "Rig_Large": 2.066
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       3,
+       35
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       12
+      ],
+      [
+       24,
+       45
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       3,
+       34
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       11
+      ],
+      [
+       24,
+       28
+      ],
+      [
+       30,
+       45
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Sad Walk.fbx",
+   "contactSheet": "sheets/kfb_locomotion_sad_walk_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_walk_backward_a",
+   "label_de": "Rückwärts gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 1.267,
+   "fps": 30.0,
+   "frames": 38,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.687,
+    "Rig_Large": 1.764
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       17
+      ],
+      [
+       27,
+       38
+      ]
+     ],
+     "foot.r": [
+      [
+       8,
+       35
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       17
+      ],
+      [
+       27,
+       38
+      ]
+     ],
+     "foot.r": [
+      [
+       8,
+       35
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walk Backward.fbx",
+   "contactSheet": "sheets/kfb_locomotion_walk_backward_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_music_drums_a",
+   "label_de": "Schlagzeug spielen",
+   "group": "music",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.733,
+   "fps": 30.0,
+   "frames": 142,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       142
+      ]
+     ],
+     "foot.r": [
+      [
+       4,
+       32
+      ],
+      [
+       38,
+       42
+      ],
+      [
+       47,
+       69
+      ],
+      [
+       74,
+       103
+      ],
+      [
+       109,
+       113
+      ],
+      [
+       118,
+       140
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       142
+      ]
+     ],
+     "foot.r": [
+      [
+       4,
+       32
+      ],
+      [
+       38,
+       42
+      ],
+      [
+       47,
+       69
+      ],
+      [
+       74,
+       103
+      ],
+      [
+       109,
+       113
+      ],
+      [
+       118,
+       140
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Playing Drums.fbx",
+   "contactSheet": "sheets/kfb_music_drums_a.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_music_guitar_a",
+   "label_de": "Gitarre spielen",
+   "group": "music",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.8,
+   "fps": 30.0,
+   "frames": 144,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       144
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       144
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       144
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       144
+      ]
+     ]
+    }
+   },
+   "bestVariant": true,
+   "sourceFbx": "Guitar Playing.fbx",
+   "contactSheet": "sheets/kfb_music_guitar_a.png",
+   "notes": "Georg accepted Guitar A on the Orc Raider (2026-09-24)."
+  },
+  {
+   "id": "kfb_music_guitar_b",
+   "label_de": "Gitarre spielen · Variante B",
+   "group": "music",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 4.8,
+   "fps": 30.0,
+   "frames": 144,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       144
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       144
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       144
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       144
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Guitar Playing (1).fbx",
+   "contactSheet": "sheets/kfb_music_guitar_b.png",
+   "notes": ""
+  },
+  {
+   "id": "kfb_music_guitar_c",
+   "label_de": "Gitarre spielen · Variante C",
+   "group": "music",
+   "rigs": [
+    "Rig_Large",
+    "Rig_Medium"
+   ],
+   "durationSec": 8.333,
+   "fps": 30.0,
+   "frames": 250,
+   "loop": true,
+   "rootMotion": "in-place",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "foot.l": [
+      [
+       1,
+       250
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       24
+      ],
+      [
+       28,
+       39
+      ],
+      [
+       43,
+       146
+      ],
+      [
+       154,
+       162
+      ],
+      [
+       172,
+       250
+      ]
+     ]
+    },
+    "Rig_Large": {
+     "foot.l": [
+      [
+       1,
+       250
+      ]
+     ],
+     "foot.r": [
+      [
+       1,
+       25
+      ],
+      [
+       27,
+       40
+      ],
+      [
+       42,
+       146
+      ],
+      [
+       153,
+       163
+      ],
+      [
+       171,
+       250
+      ]
+     ]
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Guitar Playing (2).fbx",
+   "contactSheet": "sheets/kfb_music_guitar_c.png",
+   "notes": ""
+  }
+ ],
+ "bestVariantRule": "true = accepted by Georg; null = not reviewed yet"
+}
