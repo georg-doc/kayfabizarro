@@ -246,3 +246,50 @@ A Hub briefing card should copy:
 Georg should not need an architecture chat between selecting a READY job and starting production.
 
 The architecture lane updates these templates when the production model changes; individual product chats update product truth, not the architecture contract.
+
+
+---
+
+## RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble
+
+**Use when:** building the first reusable outdoor party/dance Resident scene with six to seven KayKit actors across Rig_Legacy, Rig_Medium and Rig_Large.
+
+**Executor:** ChatGPT Web for source proof, actor/motion audition and Animation Studio choreography. Blender MCP only for a named missing/retargeted motion.
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only when needed: `BLENDER_STANDARD`.
+
+**Detailed briefing:**  
+`RESIDENT_DISCO_01_2026-09-24.md`
+
+**Protected owners:**
+- Resident Atlas / Resident Scene;
+- ToolBox Animation Studio / Motion Library;
+- MUSIC-PERF-01 `kfb.resident-performance.v1`;
+- existing Audio transport;
+- existing World/Presentation lighting and host-surface owners.
+
+**Outcome:** a baseplate-free six/seven-Resident outdoor disco performance using real source actors, existing dance actions, one beat/bar clock, bar-aware action changes, source-backed radio/speaker/disco-ball donors and an optional existing ORB band variant.
+
+**First gate:** `RES-DISCO-A · Source Cast + Motion Audition`. Show the real actors in isolation first, then audition only already-owned motions plus one Legacy-native party gesture. Do not import new Mixamo clips or compose the final disco before the actor/motion pairings are visually selected.
+
+### Paste-ready start prompt
+
+> @GitHub  
+> Read the current KFB Production Architecture v3 plus:
+> `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md`.
+>
+> Execute **RES-DISCO-A · Source Cast + Motion Audition**.
+>
+> Reuse the current Resident Atlas actors, Motion Library and MUSIC-PERF timing owner. Do not create a second Resident database, animation catalogue, audio clock or performance schema.
+>
+> Start with the proposed cast: Prototype Pete (Legacy), Action Figure, Toy Soldier, Witch (Medium), Black Knight and Demon Lord (Large), with Ultra Turbo Hero Man as optional seventh actor. If an exact source is unavailable, fail closed rather than substituting another character.
+>
+> First show every actual source actor in isolation and prove its rig family. Then audition the current owned dance library on compatible Medium/Large actors. For Legacy use only a proven Legacy-native party motion; do not map the Medium/Large footwork clips directly onto the six-bone rig.
+>
+> Also isolate the exact Tiny Treats radio, Goth Girl speaker and the already-existing disco-ball implementation/donor before any integrated scene. A loaded URL is not donor proof.
+>
+> Return one compact browser review where I can compare actor/motion pairings. Do not import the new Mixamo shortlist yet. Exactly one human decision: which six/seven actor-motion pairings should advance to the choreographed 32-bar performance.
+>
+> Planned milestone Stage after coherent review only:
+> `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`
+> Do not claim that route live until it has actually been published and opened.
