@@ -27,13 +27,14 @@
       "id": "animation-residents",
       "title": "Animation & Residents",
       "target": "Reusable MotionProfiles plus productive Blender performance batches shared by ToolBox and WorldBuilder",
-      "capabilitiesTotal": 5,
+      "capabilitiesTotal": 6,
       "currentReady": [
         "an-perf-01",
         "an-profile-01",
         "resident-band-module-01",
         "pose-to-blender-01",
-        "ik-ccdik-parity-01"
+        "ik-ccdik-parity-01",
+        "res-disco-01"
       ]
     },
     {
@@ -1895,6 +1896,31 @@
         "reuse current GothGirl mouth/head cleanup owner",
         "use current real Card renderer"
       ]
+    },
+    {
+      "id": "res-disco-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "executor": "ChatGPT Web",
+      "title": "Residents · Outdoor Disco Ensemble",
+      "what": "Sechs bis sieben echte KayKit-Residents aus Legacy/Medium/Large mit vorhandenen Dance-Actions, barbewussten Wechseln, Party-Hits und source-backed Radio/Speaker/Disco-Ball als eine Performance auditionieren und choreografieren.",
+      "result": "Erst Source-Cast + Motion-Audition; danach ein baseplate-freies 32-Bar Resident-Performance-Modul auf einem Music-Clock.",
+      "promptSection": "RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble",
+      "sourceSet": "animationResidents",
+      "detailedBriefing": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "plannedStageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/",
+      "humanResult": "NOT_STARTED",
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     }
   ],
   "presentation": {
