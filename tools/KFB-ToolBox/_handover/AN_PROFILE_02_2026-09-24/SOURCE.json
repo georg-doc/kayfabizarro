@@ -43,9 +43,9 @@
   },
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/",
-    "status": "HOLD_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED"
+    "status": "HOLD_HUMAN_FAIL_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED"
   },
-  "humanReview": "OPEN",
+  "humanReview": "FAIL",
   "reviewTransport": {
     "dcAttempts": [
       {
@@ -69,6 +69,13 @@
     "fullOwnerRun": "114/114 PASS",
     "pageErrors": 0,
     "failedSourceModuleRequests": 0,
-    "humanResult": "OPEN"
-  }
+    "humanResult": "FAIL",
+    "humanFailure": {
+      "sourceLoad": "source failed / GLB failed: Mannequin_Medium...",
+      "composition": "measurement/data palettes obscure the stage; animation not meaningfully reviewable even if source loads",
+      "evidence": "user-supplied Chat screenshot, 2026-09-24",
+      "disposition": "FROZEN_FAILED_CANDIDATE"
+    }
+  },
+  "nextGate": "HOLD_UNTIL_NEW_BOUNDED_REVIEW_SURFACE_BRIEF"
 }
