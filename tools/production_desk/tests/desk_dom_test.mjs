@@ -134,13 +134,26 @@ console.log('7 · Web-Chat launcher');
   ok(/Racer-Anatomie/.test(t) && /GitHub gewinnt/.test(t) && /Zwei erfolglose/.test(t) && /Cloudflare/.test(t), 'launcher text carries the standard rules');
 }
 
-console.log('8 · no data at all fails visibly');
+console.log('8 · no data at all stays visibly useful');
 {
   const empty = HTML.replace(/<script id="embedded-registry" type="application\/json">[\s\S]*?<\/script>/,
                              '<script id="embedded-registry" type="application/json"></script>');
   const { d } = makeDom({ html: empty });
   await tick();
-  ok(d.getElementById('srcBadge').textContent === 'Kein Stand', 'shows "Kein Stand" instead of pretending');
+  ok(d.getElementById('srcBadge').textContent === 'Notfall-Stand', 'shows the honest recovery badge');
+  ok(cards(d, 'RUNNING').length === 1, 'keeps a recovery card visible');
+  ok(d.querySelectorAll('#tools .tool').length === 2, 'keeps direct Stage and ToolBox links visible');
+  ok(!/Es konnte kein Stand geladen werden/.test(d.body.textContent), 'never renders the old blank-state failure');
+}
+
+console.log('8b · malformed embedded JSON also falls back safely');
+{
+  const bad = HTML.replace(/<script id="embedded-registry" type="application\/json">[\s\S]*?<\/script>/,
+                           '<script id="embedded-registry" type="application/json">{"broken":</script>');
+  const { d } = makeDom({ html: bad });
+  await tick();
+  ok(d.getElementById('srcBadge').textContent === 'Notfall-Stand', 'malformed embedded JSON activates recovery');
+  ok(cards(d, 'RUNNING').length === 1, 'malformed snapshot cannot blank the Hub');
 }
 
 console.log('9 · Werkzeuge + Suche');

@@ -9,6 +9,16 @@ FILES = ("manifest", "lanes", "briefings", "reviews", "standards", "wsa", "tools
 MARK = "/*__EMBEDDED_REGISTRY__*/"
 
 
+def embedded_payload(html: str) -> dict:
+    """Re-parse exactly what the browser receives; catches broken manual assembly."""
+    start = '<script id="embedded-registry" type="application/json">'
+    end = "</script>"
+    if start not in html:
+        raise ValueError("embedded registry script missing")
+    raw = html.split(start, 1)[1].split(end, 1)[0]
+    return json.loads(raw)
+
+
 def render(registry_dir: Path, template: Path, out: Path) -> None:
     reg = {f: json.loads((registry_dir / f"{f}.json").read_text(encoding="utf-8")) for f in FILES}
     payload = json.dumps(reg, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
@@ -16,7 +26,11 @@ def render(registry_dir: Path, template: Path, out: Path) -> None:
     if MARK not in html:
         raise SystemExit("template marker missing")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html.replace(MARK, payload), encoding="utf-8")
+    rendered = html.replace(MARK, payload)
+    parsed = embedded_payload(rendered)
+    if parsed != reg:
+        raise ValueError("embedded registry changed during rendering")
+    out.write_text(rendered, encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -162,7 +162,8 @@ var BUCKETS = ['LOOK_AT','RUNNING','CAN_START','WAITING'];
 var FRESH = {
   MOVED:{t:'Neue Arbeit seit letztem Eintrag',c:'warn'},
   LAST_KNOWN:{t:'Zuletzt bekannt · nicht automatisch geprüft',c:'warn'},
-  UNVERIFIED:{t:'Nicht geprüft',c:'bad'}
+  UNVERIFIED:{t:'Nicht geprüft',c:'bad'},
+  RECOVERY:{t:'Notfall-Stand · Live-Daten gerade nicht lesbar',c:'warn'}
 };
 var state = {reg:null, source:null, byId:{}};
 
@@ -187,6 +188,39 @@ function embedded(){
   }catch(e){ return null; }
 }
 
+/*
+ * Last-resort view.  This deliberately lives outside the generated JSON so a
+ * damaged live registry or an accidentally malformed embedded snapshot can
+ * never turn the Hub into an empty page again.
+ */
+function emergencyRegistry(){
+  return {
+    manifest:{
+      generatedAt:'2026-09-24T00:00:00Z', checkedAt:'2026-09-24T00:00:00Z',
+      sourceCommit:'HUB-CTRL-01', staleAfterHours:876000,
+      counts:{LOOK_AT:0,RUNNING:1,CAN_START:0,WAITING:0,lanes:1,closed:0,external:0,moved:0,problems:1,tools:2}
+    },
+    lanes:{lanes:[{
+      id:'hub-recovery', bucket:'RUNNING', title:'KFB Hub · Wiederherstellung',
+      what:'Die aktuelle Live-Liste konnte nicht gelesen werden. Dieser sichere Grundstand bleibt sichtbar, während der Hub erneut lädt.',
+      provider:'HUB-CTRL-01', yourAction:'Die Seite später mit „Neu laden“ aktualisieren.', waitingFor:'', questions:[],
+      repo:REPO, pr:null, branch:'main', external:false, freshness:'RECOVERY', freshnessNote:'Live- und eingebauter Stand waren nicht lesbar.',
+      head:null, headDate:null, expectedHead:null, prUrl:null, prState:null, brief:null
+    }]},
+    briefings:{briefings:[]}, reviews:{reviews:[]},
+    standards:{standards:[
+      {label:'GitHub-Hauptstand',url:'https://github.com/'+REPO},
+      {label:'Alle Briefings',url:'https://github.com/'+REPO+'/tree/main/skills/chat'}
+    ]},
+    wsa:{state:'UNKNOWN',text:'Der sichere Grundstand ist aktiv. Laufende Projekte bleiben in GitHub erhalten.'},
+    tools:{tools:[
+      {group:'Sicherer Einstieg',id:'stage',title:'Alle Bühnen',what:'Direkte Übersicht der veröffentlichten Proben.',status:'Übersicht',available:true,url:'https://kayfabizarro.pages.dev/kfb-hub/stage/'},
+      {group:'Sicherer Einstieg',id:'toolbox',title:'KFB ToolBox',what:'Direkter Einstieg in die veröffentlichten Werkzeuge.',status:'Übersicht',available:true,url:'https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/'}
+    ],archive:[]},
+    problems:{problems:[{lane:'hub-recovery',kind:'registry-unreadable',detail:'Live-Daten und eingebauter Stand konnten nicht gelesen werden. Notfall-Stand aktiv.'}]}
+  };
+}
+
 function fetchJSON(url){
   return fetch(url,{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error(r.status+' '+url); return r.json(); });
 }
@@ -203,7 +237,8 @@ function loadBest(i){
   i = i||0;
   if(i >= SOURCES.length){
     var e = embedded();
-    return Promise.resolve(e ? {reg:e, source:{id:'embedded', label:'Eingebauter Stand', badge:'embedded'}} : null);
+    return Promise.resolve(e ? {reg:e, source:{id:'embedded', label:'Eingebauter Stand', badge:'embedded'}}
+                             : {reg:emergencyRegistry(), source:{id:'recovery', label:'Notfall-Stand', badge:'embedded'}});
   }
   return loadFrom(SOURCES[i]).then(function(reg){ return {reg:reg, source:SOURCES[i]}; })
     .catch(function(){ return loadBest(i+1); });
@@ -223,6 +258,8 @@ function renderHeader(){
   if(s.id==='embedded'){
     srcb.hidden=false;
     srcb.textContent='Du siehst den eingebauten Stand. Die automatische Aktualisierung läuft erst, wenn sie einmal freigegeben ist. Die Übersicht schaut trotzdem regelmäßig nach.';
+  } else if(s.id==='recovery'){
+    srcb.hidden=false; srcb.textContent='Der Live-Stand ist gerade nicht lesbar. Deshalb bleibt ein sicherer Grundstand sichtbar; nichts wurde gelöscht.';
   } else if(s.id==='canon'){
     srcb.hidden=false; srcb.textContent='Du siehst den Hauptstand. Der Live-Abgleich ist gerade nicht erreichbar.';
   } else srcb.hidden=true;
@@ -431,9 +468,7 @@ function render(){ renderHeader(); renderBuckets(); renderTools(); renderLower()
 
 function apply(res){
   if(!res){
-    $('srcBadge').className='src embedded'; $('srcBadge').textContent='Kein Stand';
-    var b=$('srcBanner'); b.hidden=false; b.textContent='Es konnte kein Stand geladen werden.';
-    return;
+    res={reg:emergencyRegistry(), source:{id:'recovery', label:'Notfall-Stand', badge:'embedded'}};
   }
   state.reg = res.reg; state.source = res.source; render();
 }
@@ -456,7 +491,8 @@ $('drawerClose').addEventListener('click', closeDrawer);
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
 wireLauncher();
 var first = embedded();
-if(first) apply({reg:first, source:{id:'embedded', label:'Eingebauter Stand', badge:'embedded'}});
+apply(first ? {reg:first, source:{id:'embedded', label:'Eingebauter Stand', badge:'embedded'}}
+            : {reg:emergencyRegistry(), source:{id:'recovery', label:'Notfall-Stand', badge:'embedded'}});
 poll();
 setInterval(poll, POLL_MS);
 window.KFBProductionDesk = {poll:poll, state:state, sources:SOURCES, launcherText:launcherText};

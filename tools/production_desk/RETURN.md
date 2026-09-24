@@ -1,4 +1,47 @@
-# RETURN · KFB Production Desk v0 (PD1 + PD2) · 2026-09-23
+# RETURN · HUB-CTRL-01 · never-empty KFB Hub · 2026-09-24
+
+Owner: KFB Production Desk / public route `https://kayfabizarro.pages.dev/kfb-hub/`.
+
+## Root cause
+
+The published `cloudflare-live:kfb-hub/index.html` contained one extra closing brace inside
+`#embedded-registry`. The page script itself was valid, but the embedded JSON was not. Live raw registry
+sources were unavailable at the same time, so all three data attempts returned nothing and the old UI
+displayed “Es konnte kein Stand geladen werden.” The underlying GitHub work was not lost.
+
+## Fix
+
+- The public Hub is again generated from `render_desk.py`; no hand-edited JSON assembly.
+- `render_desk.py` reparses the exact embedded payload before it writes the output.
+- A separate minimal recovery registry is compiled into the page script. Even malformed live and embedded
+  data now leave a visible recovery card plus direct Stage, ToolBox and GitHub links.
+- The current embedded snapshot has 14 lanes and includes WB-W0, current Hürth A/B/C proofs, Billboard B2a
+  and the Graveyard review route. WB2 is retained as donor and no longer presented as the current world plan.
+- Gate proportionality and the current World/Racer/Hub masterplan are visible under working rules.
+
+## Evidence before publication
+
+- Python builder/render tests: **16/16 PASS**.
+- Registry validator: **VALID**, **0 problems**.
+- Generated embedded JSON: **PASS**, 14 lanes; page-script syntax: **PASS**.
+- Real Chrome at local HTTP route: full embedded Hub renders with 3 LOOK_AT, 6 RUNNING, 1 CAN_START,
+  4 WAITING and all configured tools.
+- Real Chrome with deliberately malformed embedded JSON: `Notfall-Stand`, one recovery card and two direct
+  tool links render; the old blank-state message does not appear.
+
+## Publication state
+
+Pending until the exact Cloudflare route has been opened after publication. The candidate must not be called
+`PUBLIC_VERIFIED` before that proof.
+
+## One next gate
+
+Publish the generated Hub and verify the exact Cloudflare route. Then stop HUB-CTRL-01 and start the separate
+WB-W0 source-lock gate.
+
+---
+
+# Earlier return · KFB Production Desk v0 (PD1 + PD2) · 2026-09-23
 
 Executor: Claude Coworker (Opus 5.5), STEP 2 of `COWORKER_OPUS55_SEQUENCE.md`.
 
