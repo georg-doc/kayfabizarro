@@ -8,7 +8,7 @@ Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 
 ## Complete production strands
 
-The current architecture contains **13 primary strands / 82 copy-ready jobs**:
+The current architecture contains **13 primary strands / 88 copy-ready jobs**:
 ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions · Card Zones/Card Objects · Player Meta/Fractal Almanac/Adaptive Interface.
 
 Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
@@ -22,6 +22,9 @@ For the full self-service production route, read:
 - `SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md` — P2 current/legacy Skill census, Actor/PDF/Card/Ink/Talk/Material runtime-owner routing and compatibility-first archive plan.
 - `CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md` — browser-first Resident/pose/scene authoring, Pose→Blender handoff, custom actor-family and missing-motion rules.
 - `RESIDENT_DISCO_01_2026-09-24.md` — researched six/seven-Resident outdoor disco, current dance-library matrix, Mixamo gap shortlist, props and 32-bar choreography route.
+- `MVP_FOCUS_PLAN_2026-09-24.md` — current five-product MVP ladder.
+- `AI_TOWN_KFB_EVALUATION_2026-09-24.md` — AI Town mechanics-donor decision for Residents/emergent life.
+- `KAYKIT_ANIMATION_RESEARCH_UPDATE_2026-09-24.md` — current KayKit State/Action taxonomy + direct FBX intake decision.
 - `IK_CCD_PARITY_DECISION_2026-09-24.md` — upstream Three.js CCDIKSolver vs current KFB reachChain A/B gate.
 - `EXECUTION_DISPATCH_POLICY_2026-09-24.md` — executor/model/reasoning/budget profiles for every briefing.
 - `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` — low-cost mount into existing HUB-CTRL #202; no Work review loop.
@@ -30,6 +33,20 @@ For the full self-service production route, read:
 - `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — minimal WSA/Work routing note; currently no Work-only execution is justified.
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
+
+## Current MVP focus · 2026-09-24
+
+Five product targets now organize the active queue:
+1. WorldBuilder Mobility Playground;
+2. Hürth → Cologne OSM streets → Race Track;
+3. ToolBox Production + direct Motion Intake + State/Action Animation Lab;
+4. FrizzleBob alternative KayKit body family → Resident House Scene;
+5. Living Residents KISS from AI Town mechanics donors.
+
+Parallel READY performance fixture: RES-DISCO-01.
+
+READY new jobs: ACTOR-FB-BODY-FAMILY-01 · MOTION-INTAKE-DIRECT-01 · TB-V17-INTEGRATION-01 · RES-DISCO-01.
+Dependency-gated: WB-MOBILITY-MVP-01 · WB-HUERTH-COLOGNE-RACE-MVP-01 · NPC-AITOWN-KISS-01.
 
 ## Current recovery focus · 2026-09-24 late evening
 
