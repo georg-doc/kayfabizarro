@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-19
+Date: 2026-09-24
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -9,13 +9,32 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 ## CURRENT TOOLBOX SLICE · 2026-09-24
 
-ToolBox coherent integration is now the current ToolBox execution result on Draft PR **#185**:
+Current owner: **KFB ToolBox / Stage-First integration** on Draft PR **#185**, branch `chatgpt-web/toolbox-source-lock-2026-09-23`.
 
-`tools/KFB-ToolBox/_handover/TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/START_HERE.md`
+Read:
+- `tools/KFB-ToolBox/_handover/TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/RETURN.md`;
+- `tools/KFB-ToolBox/_handover/AN_PROFILE_02_2026-09-24/START_HERE.md`.
 
-Runtime-tested head `1f59903bfae25e959e106cf4fd1d06dd2cf62588`: **22/22 static + 20/20 Chromium PASS**. The candidate preserves the accepted Stage-First donor and composes the real roster, current Driver Graft, real Resident Atlas, shared edit layer and `kfb.scene-patch.v1`. It is **CHAT REVIEW READY**, deliberately **not Cloudflare-published**, and not yet a human acceptance or Live claim. The older 2026-09-23 ToolBox source-lock notes remain history/recovery context, not the active next gate.
+The coherent Stage-First flow remains human-open and technically green (**22/22 static + 20/20 Chromium**). Georg explicitly authorized the Production Architecture v3 T4 Animation Studio continuation before TB-EYE.
 
-Exactly one next ToolBox capability after Georg's coherent-milestone gate: **TB-EYE-01 · EyeRig Production Studio**.
+AN-PROFILE-02 runtime-tested head:
+`93d9dd6f763c064313fe5d3bef690496487145a9`
+
+Evidence:
+- AN-PROFILE-02 static **34/34 PASS**;
+- AN-PROFILE-02 Chromium **25/25 PASS**;
+- Rig_Medium: 33/33 real KFB Motion clips;
+- Rig_Large: 33/33 real KFB Motion clips;
+- Large foot contacts remain unknown instead of inheriting Medium facts;
+- 0 KFB Motion/profile network failures;
+- 0 Animation Studio page errors.
+
+AN-PROFILE-02 reuses the current `stage-first/src/KFB Animation Lab v3.dc.html` as the ToolBox Animation Studio surface. It does **not** promote the older standalone Animation Lab node and creates no second mixer/runtime/movement owner.
+
+Current gate:
+**direct Chat HTML human review of the 33-clip Library + measured Data surface**.
+
+WorldBuilder Motion consumption remains HOLD until that first consumer review. TB-EYE-01 remains later. No Cloudflare publication is claimed; future Stage route `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
 
 ## Start order
 
@@ -69,6 +88,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
+- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
@@ -97,6 +117,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - FrankenStein Studio v16
 - Travel Globe
 - Combat Arena
+- KFB Audio & Soundscape Baseline — `CURRENT_REFERENCE`; AUDIO-CAL-01 calibration + recovery, not a replacement runtime owner
 - KFB Town — current living concept/reference, not a runtime project
 - Wissens-Pilli / DocCheck Interactive Microlearning — `UNVERIFIED` intake until implementation SSOT/runtime is explicitly pinned
 - **SimBlood / DocCheck — `CURRENT_PROJECT_SSOT` at `georg-doc/doccheck/sim-blood/`; recovery in `RECOVERY.md`, current WIPs in `WIP_STATUS.json`**
@@ -572,39 +593,43 @@ After WEDGE ACCEPT, sequence is locked:
 
 Do not start curve/trail tuning before the WEDGE human recheck.
 
-## 2026-09-23 · Travel Mode Bridge v1 · TMB-1D complete · TMB-1E next
+## 2026-09-23 · Travel Mode Bridge v1 · TMB-2 human timing review
 
-Coordination brief:
-
+Coordination:
 `tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/START_HERE.md`
-
-Prepared next review:
-
-`tools/KFB-ToolBox/_handover/TRAVEL_MODE_BRIDGE_V1_2026-09-23/TMB1_SCALE_CAPACITY_REVIEW_2026-09-23.md`
 
 Travel owner remains private `georg-doc/KFB-Travel-Globe`.
 
-Completed source-first sequence:
-- A · exact animated CardCarrier alone → public 18/18 PASS;
-- B · exact ActionFigure Rig_Medium alone → public 22/22 PASS;
-- C · neutral measured mount → public 41/41 PASS;
-- D · exact S33 Surf candidate → public 52/52 PASS;
-- current Travel Surf Draft PR #36 head `88382c111acf32f6b934c15ce7b6b1f6d4d15283`.
+TMB-1E remains **HUMAN_ACCEPTED**:
+- accepted Travel commit `603f2a9e8fb2c8efd1008ed67607cf7a712de0bd`;
+- accepted rider/capacity relation: **2.0× candidate**;
+- CardCarrier geometry/thickness unchanged.
 
-Georg human finding:
-- card/contact good;
-- rider too small;
-- test roughly 1.8×–2.0× rider presentation;
-- keep Surf/Ride pose;
-- compare Legacy Warband Orc + Orc Brute/Large + one XL/Large-class character on the same card;
-- card-thickness change deferred.
+TMB-2 is technically green on Draft PR #38:
+- branch `chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23`;
+- current Recovery / handoff head `1976c6c813161013b7c97bf5de55f71575a175ef`;
+- verified runtime/review head before Recovery docs `f7d65faff02cfe21bf82ee06150efc94068d150a`;
+- review implementation head `ff148d317d1b2a1cbc4f16fb1841d948ac9187c7`;
+- pure mode-intent adapter `site/world-builder/mode-intent.js`;
+- Ground event order: existing jump queue → fresh-tap observer → capture-phase event claim;
+- second fresh Space inside the active window emits `REQUEST_FLIGHT`;
+- request routes only through existing `setLocomotion('FLIGHT') → runtime-mode.js`;
+- no new keyboard, movement or camera owner;
+- latest verified runtime/review CI `35874165486 / 107225646882`: **119/119 PASS · build PASS · verify PASS**;
+- artifact `10756131259`, digest `sha256:0c00158e6673e6e5a2157d13a0f5dc4d9d522cde83959d10739734cf1d63b43f`;
+- timeout recovery confirmed that later commits touched only `TMB2_RETURN.md`, not runtime/review code.
 
-Exactly one next gate: **TMB-1E · HTML-first Surf scale + three-character capacity comparison.**
+Current human gate:
+**TMB-2 DOUBLE-SPACE TIMING REVIEW**
 
-TMB-2 Double-Space, TMB-3 landing, WorldBuilder consumption and Drive integration remain **HOLD** until TMB-1E human scale/capacity review is resolved.
+Review candidates:
+- 240 ms;
+- 320 ms;
+- 400 ms.
 
-Racer stabilization separately carries `RSTAB-CYLINDER-GROUND-01` for track/support cylinders that appear above or below their intended support surface.
+Single Space must remain immediate Ground jump. The same second Ground Space must not also fire the Flight Space action.
 
+TMB-3 landing remains HOLD. No merge or Live promotion is authorized.
 
 ## 2026-09-23 · ToolBox / WorldBuilder / Orc Band current routing
 
@@ -717,25 +742,178 @@ Exactly one current Racer gate:
 Cloudflare / Pages remain deferred until after human visual acceptance.
 
 
-## 2026-09-23 · ToolBox source-lock correction
+## 2026-09-23 · Racer R3 · Track Edge + Banking Chat HTML
 
-The first Claude Design Stage-First build is **REJECTED FOUNDATION** after Georg's visual review: it showed the old Cube Bunny as FrizzleBob, did not preserve the later saved Cube-Pet state, and did not expose the full current Studio actor source.
+Current Racer lane:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current docs head `59fa2a4235e7705a495bbd724d92a315befe1628`
+- runtime/test head `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`
 
-Current ToolBox recovery:
-`tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/START_HERE.md`
+R2 result:
+**TUNE**
 
-Do not continue or repair Claude Round 1. Current FrizzleBob remains the Driver Graft via `mountGraft()`; legacy Cube-Pets remain separate actors. Exactly one next gate: **TB-SOURCE-LOCK-01 · isolated source review**.
+Proven split:
+- saw-tooth edge = chat-review renderer artifact from separately painter-sorted polygons;
+- runtime TARCH Ground Void remains continuous;
+- banking direction = real runtime sign defect.
+
+R3:
+- banking now follows curvature sign: inside lower / outside higher;
+- gain/cap/smoothing unchanged;
+- review-only edge rendering uses continuous polygons;
+- hard-bend + bank-side presets and inside/outside guide added.
+
+CI:
+- `35859446787 / 107175757847`: SUCCESS
+- `35859451138 / 107175774059`: SUCCESS
+- **11/11 PASS · 0 fail · 0 skipped**
+
+Review artifact:
+`KFB_Racer_TARCH0_R3_track_edge_banking_review.html`
+
+Expected SHA-256:
+`980b245478a28f9e39dcf284ece6caaf9e013a65a766f9c0fb51121e48e2d88b`
+
+Exactly one next gate:
+**R3 · TRACK EDGE + BANKING CHAT HTML HUMAN REVIEW**
+
+Do not start vehicle grounding/contact, clamp/jitter, trails or jump/landing before R3 acceptance. Cloudflare remains deferred.
 
 
-## 2026-09-23 · Browser 3D preview portability
+## 2026-09-23 · Racer R3b · Review-Harness Recheck
 
-Repeated current ChatGPT HTML-review failures show that loading an individual model URL is not enough proof for a compound KFB scene.
+Current Racer owner:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current docs head `308ed3b7e464f573b85d004f13fbf9e0642c818c`
+- runtime/test head `5f1ec224a96af7444f0c86ebbcf178dc70d35b72`
 
-For ToolBox/Resident/WorldBuilder 3D review work:
-- use canonical RAW asset URLs, never relative `./assets/...` transport;
-- when a known-good Resident Atlas combination exists, use the complete Resident set as donor;
-- prove model identity, textures, pose, grounding, prop placement/attachment, actor count and animation across donor → review import → export/reload;
-- never replace a missing model with a primitive/sign and still call the review valid.
+R3 runtime state:
+- TARCH architecture remains accepted in principle;
+- corrected banking remains active;
+- CI remains **11/11 PASS · 0 fail · 0 skipped**.
 
-Current ToolBox gate:
-`tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/RESIDENT_SET_PORTABILITY_GATE.md`
+R3 human review failed only at the **review harness**:
+- arch frames visible;
+- track largely missing in CHASE.
+
+Proven cause:
+- one long road/shoulder/wall review polygon was discarded when any vertex went behind camera.
+
+R3b review repair:
+- road/shoulder/walls restored to short segment quads;
+- continuous city-ground review edge retained;
+- banking visualization unchanged;
+- **no runtime file changed**.
+
+Artifact:
+`KFB_Racer_TARCH0_R3b_track_edge_banking_review.html`
+
+Expected SHA-256:
+`100310fbc4794f317ce572d403142ee464e6b2a57a4e32a5a84382294b03fd3b`
+
+Exactly one next gate:
+**R3b · TRACK EDGE + BANKING CHAT HTML HUMAN RECHECK**
+
+Still blocked until after R3b:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+Cloudflare remains deferred.
+
+
+## 2026-09-23 · Racer R3c · Closed Track Body + Rounded Frames
+
+Current Racer lane:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current Race docs head `f8f29f7b742e0b18fd9887398cd6bb4b7c320a32`
+- runtime/test head `b48ba46bb23e656cad968cb347bde7aa4bd445c4`
+
+R3b result:
+**TUNE**
+
+Use What Works:
+- Dropbox C-3 owner/donor evidence re-read;
+- project-owned `cologne-landmarks.v1.js` reused as the rounded structural geometry donor;
+- proven strategy: continuous smooth TubeGeometry instead of hard BoxGeometry chains.
+
+R3c runtime:
+- one cyclic closed `track-body`;
+- road + shoulders + side skirts + complete underside;
+- old primary flat road/shoulder ribbons removed;
+- old partial structure soffit/skirts removed;
+- tested RSTAB-1 banked support endpoint helper restored;
+- structure support cylinders use 14 radial segments;
+- TARCH portals are one continuous rounded CurvePath/TubeGeometry mesh each;
+- BoxGeometry post/post/lintel frames removed.
+
+CI:
+- `35874800062 / 107227822852`: SUCCESS
+- `35874807681 / 107227851828`: SUCCESS
+- **17/17 PASS · 0 fail · 0 skipped**
+
+Review:
+`KFB_Racer_TARCH0_R3c_track_body_rounded_frames_review.html`
+
+SHA-256:
+`36a363efd5412b41f9b8bea26998e32a16a1965b9335000ed8b82d6f795ff0f0`
+
+Exactly one next gate:
+**R3c · TRACK BODY + ROUNDED FRAMES CHAT HTML HUMAN REVIEW**
+
+Still blocked:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+Cloudflare remains deferred.
+
+
+## 2026-09-23 · Racer R3d · Track / Barrier / Ground Layer Chat HTML
+
+Current Racer owner:
+- Race Draft PR **#33**
+- branch `chat/racer-tarch0-sp13ktra-2026-09-23`
+- current Race docs head `05b3cf357b022d75ff4f7433f5ee51ed474f9b49`
+- runtime/test head `dad35bdf0f3e19fdc2c5902e154140353db590f9`
+
+R3c result:
+**TUNE**
+
+R3d source cleanup:
+- one 12-point closed track/barrier body;
+- road + shoulder + barrier + cap + lower side + underside owned by one mesh;
+- presentation sampling 4× denser than route/physics;
+- legacy track-wall/cap ribbons removed;
+- flat lane-band ribbons removed;
+- TARCH radius 0.96 m;
+- TARCH radial segments 14;
+- frame bases on barrier-cap midpoint;
+- deep ground follows actual void contour instead of rectangular bbox.
+
+CI:
+- `35891959912 / 107286346494`: SUCCESS
+- `35891969220 / 107286379829`: SUCCESS
+- **24/24 PASS · 0 fail · 0 skipped**
+
+Review:
+`KFB_Racer_TARCH0_R3d_track_barrier_ground_review.html`
+
+SHA-256:
+`d2e147d3abcd005769867bf523bcac1a49cc3eff9491511875c80b37c287a018`
+
+Dropbox owner/donor evidence was read only; no Dropbox mutation.
+
+Exactly one next gate:
+**R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**
+
+Still blocked:
+vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
+
+Cloudflare remains deferred.
+
+
+## 2026-09-24 · SimBlood SVG morphology parallel lane
+
+SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
+
+This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
