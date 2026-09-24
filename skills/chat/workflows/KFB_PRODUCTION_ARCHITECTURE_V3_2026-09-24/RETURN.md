@@ -2,6 +2,17 @@
 
 Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 88 JOBS · 42 READY / 46 HOLD · UNMERGED · NO LIVE PROMOTION**
 
+## LATEST USER CORRECTION · RES-DISCO-01
+
+- Prototype Pete is **OUT**: template/proof actor, not a disco Resident.
+- Action Figure is replaced by **Avian Swordsman**; **Protagonist_A** joins as the teenager role.
+- Legacy slot becomes **Skeleton Minion** using the proven Orc-band beat-driven bounce presentation concept first.
+- Revised intended seven: Skeleton Minion · Avian Swordsman · Protagonist_A · Toy Soldier · Witch · Black Knight · Demon Lord.
+- User-pinned Legacy minion source at `e0037d79…` is repository-readable. Canonical Skeleton_Minion / Avian / Protagonist assets are independently evidenced in current manifests/cast, but the literal user raw paths at that revision need exact Source Cast resolution before runtime use.
+- Disco ball is no longer just a scene prop: **DISCO-BALL-CORE-01** is a reusable freely spinning event/world module with bounded disco/beam/spot effects, beat response, existing lighting/VFX owner integration and a reserved later EyeRig seam.
+- No runtime, Stage or public Hub publication was changed by this correction.
+- Next gate: **RES-DISCO-A · Source Cast + Motion Audition**.
+
 ## LATEST ADDITIVE UPDATE · RES-DISCO-01
 
 - Prepared `RESIDENT_DISCO_01_2026-09-24.md` as the recovery/implementation brief for a six/seven-character outdoor KayKit disco scene.
