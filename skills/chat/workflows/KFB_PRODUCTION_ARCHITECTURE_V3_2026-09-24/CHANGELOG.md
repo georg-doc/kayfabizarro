@@ -1,3 +1,16 @@
+## 2026-09-24 · RES-DISCO-01 cast correction + Disco Ball Core direction
+
+- Georg removed Prototype Pete from the disco cast because it is a template/proof actor; Action Figure is also replaced.
+- revised seven-character direction: Legacy Skeleton Minion + Avian Swordsman + Protagonist_A as teenager + Toy Soldier + Witch + Black Knight + Demon Lord;
+- exact Legacy minion source supplied and verified at user revision `e0037d79…`: `KayKit Legacy Character Pack - Skeletons 1.0/.../character_skeleton_minion.gltf`;
+- Skeleton Minion starts with the proven Resident Orc-band **beat-driven bounce** presentation pattern instead of fake Medium/Large skeletal dance compatibility;
+- ORB donor evidence: Legacy Orc B uses `bounce` over 8 beats; band runtime consumes body-transform bounce from the shared beat clock without becoming a new movement owner;
+- user also supplied Skeleton_Minion / AvianSwordsman / Protagonist_A raw references; repository manifests confirm the canonical assets, while the literal three raw paths at `e0037d79…` did not resolve through GitHub file fetch and must be resolved/pinned in Source Cast rather than silently rewritten;
+- new product direction: **DISCO-BALL-CORE-01** as a reusable in-game module analogous in product role to Theatre Curtain Core — freely placeable/spinning, bounded disco/spot/beam effects, beat impulses, existing light/VFX budget integration, deterministic fallback and reserved future EyeRig host seam;
+- Resident Disco consumes/references the Disco Ball Core; it does not own the module;
+- catalogue remains **13 strands / 88 jobs / 42 READY / 46 HOLD**;
+- next gate remains **RES-DISCO-A · Source Cast + Motion Audition**, now including separate Disco Ball Core source/donor review.
+
 ## 2026-09-24 · MVP focus · mobility / v17 ToolBox / direct FBX / AI Town KISS
 
 - current work grouped into five coherent MVPs plus READY Resident Disco;
