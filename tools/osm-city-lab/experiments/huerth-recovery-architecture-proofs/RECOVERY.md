@@ -83,3 +83,48 @@ Publication:
 
 Only if all three pass:
 open a fresh Hürth implementation candidate.
+
+## Timeout recovery check · 2026-09-24
+
+A chat/tool timeout occurred after the A/B/C proof slice had already advanced.
+
+GitHub was re-read before any retry. Result:
+
+- no implementation write was lost;
+- no duplicate retry is needed;
+- branch head observed before this recovery write:
+  `a29010a28d613bcdf7389907de4a63817f3f3ffc`;
+- Draft PR **#200** exists and is current for this slice;
+- tested implementation head remains:
+  `c36f97be48a6b5da5617aa000c921e4a51329f7f`;
+- final proof browser run remains:
+  `35952588495` → **34/34 PASS · A/B/C WebGL2 PASS · 0 errors**;
+- evidence artifact remains:
+  `10789206931`;
+- current proof-branch documentation workflow:
+  run `35953299737` → **SUCCESS** on `a29010a2…`;
+- Cloudflare wrapper exists and still pins the exact tested multi-file app at `c36f97be…`;
+- KFB Hub card points to PR #200 and the same direct review route;
+- current `cloudflare-live` branch had advanced beyond the original wrapper/Hub commits, but the intended wrapper blob and Hub card were re-read and remain correct;
+- `PUBLIC_VERIFIED` is still **UNKNOWN** from this chat environment; no false live claim.
+
+### Current continuation rule
+
+Do **not** resume implementation.
+
+Do **not** patch frozen R2.
+
+Do **not** open Hürth R3.
+
+Current state is:
+**A/B/C isolated proofs implemented + browser-tested + published for human review.**
+
+### Exactly one next gate
+
+**GEORG HUMAN VISUAL REVIEW · PASS / FAIL A, B, C**
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/`
+
+Only if all three pass:
+open a fresh Hürth implementation candidate.
