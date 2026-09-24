@@ -1,0 +1,259 @@
+{
+  "schema": "kfb.eye-rig-batch-source/0.1",
+  "owner": "KFB ToolBox / Rigging",
+  "repository": "georg-doc/kayfabizarro",
+  "sourceBranch": "toolbox/eye-rig-batch-2026-09-18",
+  "identityCheckpoint": "949ff8037df2da88eb91ef825984ef57870b8238",
+  "implementationCheckpoint": "480c5770ef8ef391043b0b93ec3f51b04af7dfef",
+  "mergeBase": "5650b6c54d8789b20ea80abe857688173d506d3b",
+  "stage": {
+    "route": "/kfb-hub/stage/toolbox/eye-rig-batch/",
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+    "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
+    "publicationBranch": "cloudflare-live",
+    "publicationCommit": "e9f97c594bce46607e95928dd349cf081c36783d",
+    "status": "PUBLISHED_LARGE_REVIEWED_PROFILES_AUTO_LID_COLOR",
+    "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; exact pages.dev route inaccessible from current web tool",
+    "historicalPublicProof": {
+      "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
+      "runId": 35460179569,
+      "publicationHead": "26810dbc2f5a2d1f650c485b31f08bc2f4b0f8d5",
+      "checks": "21/21 PASS",
+      "screenshots": 6,
+      "errors": 0,
+      "note": "Validated the runtime/action mechanics but exposed that the then-assumed 6+7 source components were lateral accessories; not current source-eye identity proof."
+    }
+  },
+  "actor": {
+    "id": "gothgirl",
+    "rigClass": "Rig_Medium",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "blob": "b56f67e4ddb7db95ff54fef526148a49289f3915"
+  },
+  "donors": {
+    "eyeRig": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+    },
+    "faceHost": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/facehost.v1.js",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "38ec7770f5fccf3aca93ee234f94b801d527d415"
+    },
+    "expressionContract": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+    },
+    "faceComponentUtilities": {
+      "path": "media/3D_Assets/build/pet-library.v6.js",
+      "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blob": "45d0679127740adaa83f57027e2de41e0e778c4b",
+      "reused": [
+        "faceShells",
+        "buildStripped"
+      ]
+    }
+  },
+  "sourceEyeCleanup": {
+    "headMesh": "GothGirl_Head",
+    "expectedConnectedComponents": 12,
+    "eyeComponents": [
+      2,
+      3
+    ],
+    "mode": "runtime-derived-geometry",
+    "policy": "FAIL_CLOSED_CURRENT_SOURCE_SIGNATURE",
+    "identityStatus": "RESOLVED_CURRENT_GLB",
+    "componentIdentity": {
+      "0": "head-face-shell",
+      "1": "nose",
+      "2": "eye-x-positive",
+      "3": "eye-x-negative",
+      "4": "ear-x-positive",
+      "5": "ear-x-negative",
+      "6": "side-accessory-x-negative",
+      "7": "side-accessory-x-positive-lower",
+      "8": "side-accessory-x-positive-upper",
+      "9": "hair",
+      "10": "brow-x-negative",
+      "11": "brow-x-positive"
+    },
+    "identityEvidence": "docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md",
+    "staticProjectionEvidence": "docs/source-components-0-11.html",
+    "historicalMeasuredSeed": {
+      "components": [
+        6,
+        7
+      ],
+      "status": "ARCHIVED_DIAGNOSTIC_ONLY_WRONG_SOURCE_IDENTITY",
+      "hostUnit": 0.77441,
+      "sourcePairSpanX": 1.31515,
+      "sourceVerticalAsymmetry": 0.08812,
+      "anchorCandidate": {
+        "dx": 0.84913,
+        "dy": -0.05142,
+        "ring": 0.06925
+      }
+    },
+    "correctedMeasurement": {
+      "status": "RUNTIME_RECOMPUTE_ON_2_3_STAGE_REQUIRED",
+      "applyPolicy": "EXPLICIT_ONLY_RESETTABLE_NOT_APPROVED"
+    }
+  },
+  "pullRequest": {
+    "number": 104,
+    "url": "https://github.com/georg-doc/kayfabizarro/pull/104",
+    "state": "DRAFT_OPEN",
+    "merged": false
+  },
+  "tests": {
+    "staticContract": "95/95 PASS",
+    "githubPersistence": "PASS · identity checkpoint and all five intended files fetched back",
+    "exactSourceGeometry": "PASS · 12/12 connected components measured from pinned GLB",
+    "historicalJsSyntax": "3/3 PASS on pre-identity implementation checkpoint",
+    "correctedJsSyntax": "NOT_RERUN_AS_NODE_MODULE",
+    "correctedCloudflareUrl": "PUBLIC_VERIFICATION_OPEN · exact route inaccessible to current web tool",
+    "correctedGithubActions": "NOT_RUN · connector push did not trigger workflow",
+    "focusedCalibration": "17/17 PASS",
+    "changedJsSyntax": "4/4 PASS",
+    "focusedStudioControls": "15/15 PASS",
+    "focusedActorBrowser": "14/14 PASS",
+    "focusedLargeCandidate": "15/15 PASS",
+    "loaderFocused": "8/8 PASS"
+  },
+  "visualReview": {
+    "status": "LARGE_ACCEPTED_LID_COLOR_VISUAL_CHECK",
+    "nextGate": "Reload Stage and check that the four Large actors keep Georg's accepted profiles and no longer share the pink lid fallback."
+  },
+  "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
+  "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
+  "qaEvidenceCheckpoint": "40c2f920a96ea00bf99593610a49a646b2e0873c",
+  "rigMediumDefault": {
+    "schema": "kfb.eye-class-seed/0.1-candidate",
+    "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-default.v0.json",
+    "status": "AUTHORING_DEFAULT_FROM_GEORG_VISUAL_REFERENCE",
+    "eye": {
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15,
+      "pupilSize": 0.34,
+      "gloss": 0.1,
+      "inset": 0.4,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0
+    },
+    "trackingMode": "life",
+    "oval": {
+      "w": 1,
+      "h": 1,
+      "d": 1,
+      "tilt": 0
+    },
+    "lidColorMode": "face-base-darkened",
+    "measurementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+    "inheritance": [
+      "rigClass",
+      "character",
+      "session"
+    ]
+  },
+  "studioControls": {
+    "eyeOval": {
+      "donor": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js",
+      "fields": [
+        "width",
+        "height",
+        "depth",
+        "inward tilt"
+      ],
+      "status": "INTEGRATED"
+    },
+    "pupilTracking": {
+      "modes": [
+        "life",
+        "pointer",
+        "fixed"
+      ],
+      "owner": "EyeRig v6 setGazeFollow + pointTo",
+      "status": "INTEGRATED"
+    },
+    "batchIO": {
+      "schema": "kfb.eye-profile-batch/0.2-candidate",
+      "actions": [
+        "Import",
+        "Export Character",
+        "Export Batch",
+        "Apply to Selected",
+        "Reset",
+        "Approve"
+      ],
+      "status": "INTEGRATED_27_ACTOR_ROSTER"
+    },
+    "backlog": "docs/BATCH_FEATURE_BACKLOG_2026-09-19.md"
+  },
+  "actorCatalog": {
+    "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+    "path": "tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-actors.v0.json",
+    "actorCount": 27,
+    "rigClass": "Rig_Medium",
+    "jointCount": 23,
+    "recoveredMainAtCatalogCreation": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+    "evidence": "docs/RIG_MEDIUM_ACTOR_BROWSER_2026-09-19.md",
+    "workflow": [
+      "click actor",
+      "inspect",
+      "approve / adjusted approve / unsupported / reject",
+      "Next unreviewed"
+    ],
+    "filters": [
+      "all",
+      "unreviewed",
+      "adjusted",
+      "unsupported"
+    ],
+    "profilePersistence": "per actor",
+    "nextGate": "Georg rapid review wave across real Medium actors"
+  },
+  "genericSourceEyeCleanup": {
+    "schema": "kfb.medium-source-eye-cleanup/0.1-candidate",
+    "path": "tools/KFB-ToolBox/eye-rig-batch/lib/medium-source-eye-cleanup.v1.js",
+    "gothGirl": "exact verified components 2+3",
+    "otherActors": "reuse frizzlegraft-v1/donoreyes.v1.js mirrored-front-pair detector",
+    "policy": "FAIL_CLOSED",
+    "unsupportedBehavior": "remove nothing; mark/manual review",
+    "visualApproval": "per actor required"
+  },
+  "rigLarge": {
+    "catalog": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-actors.v0.json",
+    "reviewed": "tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json",
+    "acceptedSource": "tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json",
+    "acceptedSourceMain": "52532aee17f85324a6d04ab53150216f00ac5d89",
+    "actorCount": 4,
+    "actors": [
+      "Monstrosity",
+      "Black Knight",
+      "Demon Lord",
+      "Orc Brute"
+    ],
+    "status": "ALL_4_ACCEPTED_PER_ACTOR"
+  },
+  "loaderFix": {
+    "status": "FIXED",
+    "error": "Cannot read properties of undefined (reading 'push')",
+    "cause": "single-material head geometry with zero explicit groups in donor strip path",
+    "repair": "temporary whole-mesh group around reused donor strip; restore original no-group state",
+    "staleUnsupportedRecovery": true,
+    "evidence": "docs/LOADER_SINGLE_MATERIAL_FIX_2026-09-20.md"
+  },
+  "lidColor": {
+    "status": "AUTO_SOURCE_HEAD",
+    "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
+    "behavior": "sample actor head/face texture near eye host; EyeRig v6 darkens sampled base",
+    "gothGirl": "explicit face color remains authoritative"
+  }
+}

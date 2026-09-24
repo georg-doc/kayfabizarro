@@ -1,0 +1,420 @@
+{
+  "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+  "owner": "KFB ToolBox / Rigging",
+  "rigClass": "Rig_Medium",
+  "revisionPolicy": "actor paths pinned to recovered main at catalog creation; donor modules remain independently pinned",
+  "sourceEvidence": [
+    "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-asset-handoff-animation-lab (2).json",
+    "tools/resident_atlas_s6/data/cast.js",
+    "registry/resources/v1/resources.jsonl",
+    "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-biped.v1.js"
+  ],
+  "actorCount": 27,
+  "actors": [
+    {
+      "id": "gothgirl",
+      "label": "GothGirl",
+      "initials": "GG",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas+animation-handoff",
+      "cleanup": {
+        "mode": "verified-components"
+      },
+      "faceColor": "#e6cbc3",
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "clown",
+      "label": "Clown",
+      "initials": "CL",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas+animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "toy-soldier",
+      "label": "Toy Soldier",
+      "initials": "TS",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas+animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "farmer-a",
+      "label": "Farmer A",
+      "initials": "FA",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "farmer-b",
+      "label": "Farmer B",
+      "initials": "FB",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas-signature-actor",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "caveman",
+      "label": "Caveman",
+      "initials": "CV",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "lorekeeper",
+      "label": "Lorekeeper",
+      "initials": "LK",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "witch",
+      "label": "Witch",
+      "initials": "WI",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "avian",
+      "label": "Avian Swordsman",
+      "initials": "AV",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "skeleton-warrior",
+      "label": "Skeleton Warrior",
+      "initials": "SW",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "skeleton-rogue",
+      "label": "Skeleton Rogue",
+      "initials": "SR",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "skeleton-mage",
+      "label": "Skeleton Mage",
+      "initials": "SM",
+      "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "skeleton-minion",
+      "label": "Skeleton Minion",
+      "initials": "MN",
+      "path": "media/3D_Assets/KayKit_Skeletons/Skeleton_Minion.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "ultra-turbo-hero-man",
+      "label": "Ultra Turbo Hero Man",
+      "initials": "UH",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "cleric",
+      "label": "Cleric",
+      "initials": "CE",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "animatronic-creepy",
+      "label": "Animatronic Creepy",
+      "initials": "AC",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "animatronic-normal",
+      "label": "Animatronic Normal",
+      "initials": "AN",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas-signature-actor",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "action-figure",
+      "label": "Action Figure",
+      "initials": "AF",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "magical-girl",
+      "label": "Magical Girl",
+      "initials": "MG",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/MagicalGirl.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "monster",
+      "label": "Monster Costume",
+      "initials": "MO",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/character/gltf/Monster.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "ninja",
+      "label": "Ninja",
+      "initials": "NI",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/character/Ninja.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "protagonist-a",
+      "label": "Protagonist A",
+      "initials": "PA",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "protagonist-b",
+      "label": "Protagonist B",
+      "initials": "PB",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_B.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "vampire",
+      "label": "Vampire",
+      "initials": "VA",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/characters/Vampire.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "werewolf-wolf",
+      "label": "Werewolf Wolf",
+      "initials": "WW",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/characters/gltf/Werewolf_Wolf.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "animation-handoff",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "driver",
+      "label": "Driver",
+      "initials": "DR",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "frankensteining-donor+resource-registry",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    },
+    {
+      "id": "mannequin-medium",
+      "label": "Mannequin Medium",
+      "initials": "MM",
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Medium.glb",
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "frankensteining-donor+asset-registry",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium"
+    }
+  ]
+}

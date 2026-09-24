@@ -1,0 +1,85 @@
+{
+  "schema": "kfb.eye-class-seed/0.1-candidate",
+  "rigClass": "Rig_Medium",
+  "status": "AUTHORING_DEFAULT_FROM_GEORG_VISUAL_REFERENCE",
+  "reference": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json",
+    "blob": "e87e6337a6db67096a9577335f36d60672aa389e",
+    "actorId": "gothgirl",
+    "actorEyeAnchor": {
+      "dx": 0.49,
+      "dy": -0.01,
+      "ring": 0.32,
+      "track": 0.06
+    },
+    "actorPupilSize": 0.34,
+    "actorFaceColor": "#e6cbc3",
+    "globalEyeAnchor": {
+      "dx": 0.345,
+      "dy": -0.1,
+      "ring": 0.3,
+      "track": 0.1
+    }
+  },
+  "mapping": {
+    "ringToMeasuredDxRatio": 0.653061224,
+    "formula": "ring = sourceMeasured.anchorCandidate.dx * 0.32 / 0.49",
+    "bootFallbackRing": 0.2,
+    "pupilSize": 0.34,
+    "lidColorMode": "face-base-darkened",
+    "note": "Historical measurement translation only. It no longer auto-promotes the Medium default."
+  },
+  "protected": {
+    "dx": "authoring default 0.295; character/session may override",
+    "dy": "authoring default 0.045; character/session may override",
+    "sourceAssets": "never modify GLB/GLTF",
+    "approval": "AUTHORING_DEFAULT accepted by Georg for Medium start; individual characters still require batch QA"
+  },
+  "authoringDefault": {
+    "source": "Georg screenshot / browser tuning 2026-09-19",
+    "eye": {
+      "anchor": {
+        "dx": 0.295,
+        "dy": 0.045,
+        "ring": 0.153,
+        "track": 0.15
+      },
+      "pupilStyle": "matte-cute",
+      "pupilSize": 0.34,
+      "gloss": 0.1,
+      "inset": 0.4,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0,
+      "trackingMode": "life",
+      "fixedGaze": [
+        0,
+        0
+      ],
+      "oval": {
+        "w": 1,
+        "h": 1,
+        "d": 1,
+        "tilt": 0
+      },
+      "lidColorMode": "face-base-darkened"
+    }
+  },
+  "measurementSuggestion": {
+    "policy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+    "historicalRingToMeasuredDxRatio": 0.653061224,
+    "historicalFormula": "ring = sourceMeasured.anchorCandidate.dx * 0.32 / 0.49",
+    "note": "Keep source measurement as diagnostic/suggestion. Georg's visually accepted Medium authoring seed wins as default."
+  },
+  "inheritance": {
+    "order": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "rigClass": "Rig_Medium",
+    "characterOverride": "actor profile fields override authoringDefault",
+    "sessionAdjustment": "local workbench edits win until exported/approved",
+    "applyToSelected": "copy semantic eye settings; preserve actor source identity and actor face base color"
+  }
+}

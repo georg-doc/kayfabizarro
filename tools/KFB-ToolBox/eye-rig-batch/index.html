@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KFB ToolBox · Batch EyeRig Atlas</title>
+  <meta name="description" content="KFB ToolBox Batch EyeRig Atlas — Rig_Medium and Rig_Large EyeRig authoring with existing EyeRig v6 and FaceHost.">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-kicker">KFB TOOLBOX / RIGGING</span>
+      <strong>Batch EyeRig Atlas</strong>
+      <span id="rigClassMarker" class="branch">Rig_Medium · 27 actor review · PR #104</span>
+    </div>
+    <div class="top-status">
+      <span id="bootBadge" class="badge pending">BOOTING</span>
+      <a class="text-link" href="https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md" target="_blank" rel="noopener">Brief</a>
+      <a class="text-link" href="./docs/SOURCE_AUDIT.md">Source audit</a>
+      <a class="text-link" href="./docs/source-components-0-11.html">Components 0–11</a>
+    </div>
+  </header>
+
+  <nav class="batchbar" aria-label="Batch authoring">
+    <div class="batch-context">
+      <span class="eyebrow">BATCH</span>
+      <strong id="batchSelectionStatus">1 selected · 0/0 reviewed · loading</strong>
+    </div>
+    <div class="batch-actions">
+      <button id="batchImportBtn" type="button">Import</button>
+      <button id="batchExportCharacterBtn" type="button">Export Character</button>
+      <button id="batchExportBatchBtn" type="button">Export Batch</button>
+      <button id="batchApplySelectedBtn" type="button">Apply to Selected</button>
+      <button id="nextUnreviewedBtn" type="button">Next unreviewed</button>
+      <button id="promoteClassDefaultBtn" type="button" class="approve" hidden disabled>Set as Large default</button>
+      <button id="batchResetBtn" type="button" class="quiet">Reset</button>
+      <button id="batchApproveBtn" type="button" class="approve">Approve</button>
+    </div>
+  </nav>
+
+  <main class="workbench">
+    <aside class="roster pane">
+      <div class="pane-head">
+        <div>
+          <span class="eyebrow">ROSTER</span>
+          <h1 id="rigClassTitle">Rig_Medium</h1>
+        </div>
+        <span id="rosterCount" class="count">0/0 reviewed</span>
+      </div>
+
+      <div class="segmented rig-class-switch" aria-label="Rig class">
+        <button type="button" class="seg active" data-rig-class="Rig_Medium">Medium</button>
+        <button type="button" class="seg" data-rig-class="Rig_Large">Large</button>
+      </div>
+      <div id="classStatusHint" class="micro-status">Medium default set · review and save character overrides</div>
+
+      <div class="filter-row roster-filters" aria-label="Review filters">
+        <button class="filter active" type="button" data-roster-filter="all">All</button>
+        <button class="filter" type="button" data-roster-filter="unreviewed">Unreviewed</button>
+        <button class="filter" type="button" data-roster-filter="adjusted">Adjusted</button>
+        <button class="filter" type="button" data-roster-filter="unsupported">Unsupported</button>
+      </div>
+      <div id="rosterStats" class="micro-status">Loading actor catalog…</div>
+      <div id="actorList" class="actor-list" aria-label="EyeRig actors"></div>
+
+      <section class="audit-block">
+        <span class="eyebrow">SOURCE LOCK</span>
+        <dl class="mini-dl">
+          <div><dt>Actor</dt><dd id="sourceActor">—</dd></div>
+          <div><dt>Name</dt><dd id="sourceActorName">—</dd></div>
+          <div><dt>Model</dt><dd id="sourcePath">—</dd></div>
+          <div><dt>EyeRig</dt><dd>v6 · 853bcf5</dd></div>
+          <div><dt>FaceHost</dt><dd>v1 · 38ec777</dd></div>
+          <div><dt>Cleanup</dt><dd id="sourceCleanup">—</dd></div>
+        </dl>
+        <div id="actorTechHint" class="micro-status"></div>
+      </section>
+
+      <section class="audit-block">
+        <span class="eyebrow">SOURCE COMPONENTS / CLEANUP</span>
+        <div class="filter-row">
+          <select id="componentSelect" class="filter" disabled aria-label="Source head component"></select>
+          <button id="isolateComponentBtn" class="filter" type="button" disabled>Isolate</button>
+          <button id="exitComponentBtn" class="filter" type="button" disabled>Exit</button>
+        </div>
+        <div id="componentHint" class="micro-status">Waiting for source components…</div>
+      </section>
+
+      <section class="audit-block">
+        <span class="eyebrow">RUNTIME REPORT</span>
+        <div id="sourceReport" class="report compact">Waiting for source…</div>
+      </section>
+    </aside>
+
+    <section class="stage-pane pane">
+      <div class="stage-toolbar">
+        <div class="toolbar-group camera-group" aria-label="Camera views">
+          <button type="button" data-view="front" class="tool active">Front</button>
+          <button type="button" data-view="three-left" class="tool">¾ L</button>
+          <button type="button" data-view="three-right" class="tool">¾ R</button>
+          <button type="button" data-view="side-left" class="tool">Side L</button>
+          <button type="button" data-view="side-right" class="tool">Side R</button>
+          <button type="button" data-view="face" class="tool">Face</button>
+        </div>
+        <div class="toolbar-group">
+          <button id="captureBtn" type="button" class="tool">Capture PNG</button>
+          <button id="qaCaptureBtn" type="button" class="tool">QA 4-view</button>
+        </div>
+      </div>
+
+      <div id="stage" class="stage" tabindex="0" aria-label="3D EyeRig review stage">
+        <div class="loading-card" id="loadingCard">
+          <span class="spinner"></span>
+          <strong>Loading actor…</strong>
+          <small id="loadingDetail">Pinned repository revision 5650b6c…</small>
+        </div>
+        <div class="stage-note">
+          <span id="motionBadge">Bind / T Pose</span>
+          <span id="viewBadge">Front</span>
+        </div>
+      </div>
+
+      <div class="compare-strip">
+        <label class="switchline">
+          <input id="cleanupToggle" type="checkbox" checked>
+          <span>Hide verified source eyes</span>
+        </label>
+        <label class="switchline">
+          <input id="eyeRigToggle" type="checkbox" checked>
+          <span>KFB EyeRig v6</span>
+        </label>
+        <label class="switchline">
+          <input id="hostDebugToggle" type="checkbox">
+          <span>FaceHost debug</span>
+        </label>
+      </div>
+
+      <div class="motion-strip">
+        <span class="eyebrow">MOTION REGRESSION</span>
+        <div class="motion-buttons">
+          <button type="button" data-motion="bind" class="motion active">Bind / T</button>
+          <button type="button" data-motion="Idle_A" class="motion">Idle</button>
+          <button type="button" data-motion="Walking_A" class="motion">Walk</button>
+          <button type="button" data-motion="Running_A" class="motion">Run</button>
+          <button type="button" data-motion="Jump_Full_Short" class="motion">Jump</button>
+        </div>
+        <span id="motionStatus" class="micro-status">Mixer pending</span>
+      </div>
+    </section>
+
+    <aside class="controls pane">
+      <div class="pane-head">
+        <div>
+          <span class="eyebrow">REVIEW</span>
+          <h2>Eye profile</h2>
+        </div>
+        <span id="reviewStatus" class="badge candidate">AUTO_CANDIDATE</span>
+      </div>
+
+      <details open>
+        <summary>Placement</summary>
+        <div class="control-grid">
+          <label>Spacing <output data-out="dx"></output><input data-param="dx" type="range" min="0.12" max="0.65" step="0.005"></label>
+          <label>Vertical <output data-out="dy"></output><input data-param="dy" type="range" min="-0.45" max="0.35" step="0.005"></label>
+          <label>Eye size <output data-out="ring"></output><input data-param="ring" type="range" min="0.12" max="0.5" step="0.005"></label>
+          <label>Inset <output data-out="inset"></output><input data-param="inset" type="range" min="-0.2" max="0.9" step="0.01"></label>
+          <label>Splay <output data-out="splay"></output><input data-param="splay" type="range" min="0" max="1" step="0.01"></label>
+          <label>Lid fit <output data-out="lidFit"></output><input data-param="lidFit" type="range" min="0.5" max="1" step="0.01"></label>
+        </div>
+        <button id="useMeasuredBtn" type="button" class="wide-action quiet" disabled>Use source-measured baseline</button>
+        <div id="measuredSeedHint" class="micro-status">Measured baseline appears after source / FaceHost analysis.</div>
+        <div id="mediumSeedHint" class="micro-status">Rig_Medium authoring default loaded; source measurement remains suggestion only.</div>
+      </details>
+
+      <details open>
+        <summary>Eye shape / oval</summary>
+        <div class="control-grid">
+          <label>Width <output data-out="ovalW"></output><input data-param="ovalW" type="range" min="0.55" max="1.6" step="0.01"></label>
+          <label>Height <output data-out="ovalH"></output><input data-param="ovalH" type="range" min="0.55" max="1.6" step="0.01"></label>
+          <label>Depth <output data-out="ovalD"></output><input data-param="ovalD" type="range" min="0.55" max="1.6" step="0.01"></label>
+          <label>Inward tilt <output data-out="ovalTilt"></output><input data-param="ovalTilt" type="range" min="-30" max="30" step="0.5"></label>
+        </div>
+        <div class="micro-status">Reuses Frankensteining donor <code>eyeoval.v1.js</code>. Top/bottom contour shaping remains backlog.</div>
+      </details>
+
+      <details open>
+        <summary>Pupil / gaze</summary>
+        <div class="control-grid">
+          <label>Pupil size <output data-out="pupilSize"></output><input data-param="pupilSize" type="range" min="0.1" max="1" step="0.01"></label>
+          <label>Track <output data-out="track"></output><input data-param="track" type="range" min="0.01" max="0.35" step="0.005"></label>
+          <label>Converge <output data-out="converge"></output><input data-param="converge" type="range" min="-0.5" max="0.5" step="0.01"></label>
+          <label>Gloss <output data-out="gloss"></output><input data-param="gloss" type="range" min="0" max="1" step="0.01"></label>
+        </div>
+        <span class="eyebrow mode-label">PUPIL TRACKING</span>
+        <div id="trackingModes" class="segmented tracking-modes">
+          <button type="button" class="seg active" data-tracking-mode="life">Life</button>
+          <button type="button" class="seg" data-tracking-mode="pointer">Pointer</button>
+          <button type="button" class="seg" data-tracking-mode="fixed">Fixed</button>
+        </div>
+        <div class="micro-status">Track controls travel amplitude. Life = idle wander/kinetics; Pointer = stage cursor; Fixed = buttons below.</div>
+        <div class="segmented">
+          <button id="matteBtn" type="button" class="seg active">Matte cute</button>
+          <button id="googlyBtn" type="button" class="seg">Glossy googly</button>
+        </div>
+        <div class="segmented gaze-buttons">
+          <button type="button" class="seg" data-gaze="0,0">Fixed front</button>
+          <button type="button" class="seg" data-gaze="0,-0.85">Fixed down</button>
+          <button type="button" class="seg" data-gaze="0.9,0.2">Fixed away</button>
+        </div>
+      </details>
+
+      <details open>
+        <summary>Lids / expression</summary>
+        <div id="expressionButtons" class="expression-grid">
+          <button type="button" data-expression="neutral" class="expr active">Neutral</button>
+          <button type="button" data-expression="happy" class="expr">Happy</button>
+          <button type="button" data-expression="angry" class="expr">Angry</button>
+          <button type="button" data-expression="sad" class="expr">Sad</button>
+          <button type="button" data-expression="surprised" class="expr">Surprised</button>
+          <button type="button" data-expression="thinking" class="expr">Thinking</button>
+        </div>
+        <button id="blinkBtn" type="button" class="wide-action">Blink now</button>
+      </details>
+
+      <details>
+        <summary>Life / kinetics</summary>
+        <label class="switchline block">
+          <input id="lifeToggle" type="checkbox" checked>
+          <span>Life enabled</span>
+        </label>
+        <div class="control-grid">
+          <label>Wander <output data-out="wander"></output><input data-param="wander" type="range" min="0" max="1" step="0.01"></label>
+          <label>Tremor <output data-out="tremor"></output><input data-param="tremor" type="range" min="0" max="1" step="0.01"></label>
+          <label>Accel / brake <output data-out="a"></output><input data-param="a" type="range" min="-1" max="1" step="0.01"></label>
+          <label>Curve <output data-out="c"></output><input data-param="c" type="range" min="-1" max="1" step="0.01"></label>
+          <label>Drop <output data-out="j"></output><input data-param="j" type="range" min="0" max="1" step="0.01"></label>
+        </div>
+        <label class="switchline block">
+          <input id="kineticsToggle" type="checkbox">
+          <span>Kinetics enabled</span>
+        </label>
+      </details>
+
+      <section id="importPreview" class="import-preview" hidden>
+        <span class="eyebrow">IMPORT PREVIEW</span>
+        <strong id="importPreviewTitle">Validated profile</strong>
+        <p id="importPreviewText"></p>
+        <div class="split-actions">
+          <button id="acceptImportBtn" type="button">Accept import</button>
+          <button id="cancelImportBtn" type="button" class="quiet">Cancel</button>
+        </div>
+      </section>
+
+      <section class="review-actions">
+        <div class="split-actions">
+          <button type="button" data-review="EYE_PROFILE_VISUALLY_APPROVED" class="approve">Approve</button>
+          <button type="button" data-review="ADJUSTED_APPROVED" class="approve secondary">Adjusted + approve</button>
+        </div>
+        <div class="split-actions">
+          <button type="button" data-review="REJECTED" class="danger">Reject</button>
+          <button type="button" data-review="UNSUPPORTED" class="quiet">Unsupported</button>
+        </div>
+        <div class="split-actions">
+          <button id="resetSeedBtn" type="button" class="quiet">Reset seed</button>
+          <button id="revertApprovedBtn" type="button" class="quiet">Revert approved</button>
+        </div>
+      </section>
+
+      <section class="profile-io legacy-io" aria-hidden="true">
+        <span class="eyebrow">PROFILE I/O</span>
+        <div class="split-actions">
+          <button id="exportBtn" type="button">Export profile</button>
+          <button id="exportBatchBtn" type="button" class="quiet">Export reviewed</button>
+        </div>
+        <div class="split-actions">
+          <button id="copyBtn" type="button" class="quiet">Copy profile</button>
+          <button id="importBtn" type="button" class="quiet">Import…</button>
+        </div>
+        <input id="importInput" type="file" accept="application/json,.json" hidden>
+        <button id="nextBtn" type="button" class="wide-action quiet" disabled>Legacy hidden I/O</button>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="proofbar">
+    <div>
+      <span class="eyebrow">TECHNICAL GATES</span>
+      <span id="gateSource" class="gate pending">Source</span>
+      <span id="gateCleanup" class="gate pending">Cleanup</span>
+      <span id="gateHost" class="gate pending">FaceHost</span>
+      <span id="gateEye" class="gate pending">EyeRig</span>
+      <span id="gateMotion" class="gate pending">Motion</span>
+    </div>
+    <div id="runtimeLine" class="runtime-line">Runtime not ready.</div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
