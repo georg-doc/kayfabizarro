@@ -352,17 +352,29 @@ One coherent review artifact must support:
 ```
 search
 → load actor or Resident scene
-→ FrankenStein/Face
-→ EyeRig
+→ FrankenStein / Actor Platform
+→ Face / EyeRig
+→ Mouth / Viseme / Talk
+→ Voice request / Bubble presentation
+→ Material Zones / Color / Texture Surface
 → hierarchical/fractal edit
 → pose bones
-→ assign/test animation
+→ assign/test animation + idle/performance
 → place/scale props
+→ inspect Card/PDF content where relevant
 → Save
 → Reload
 → continue editing
 → export reusable scene/actor configuration
 ```
+
+Required capability seams:
+- Actor-family dispatch rather than a CubePet-only embed assumption;
+- Speech + Thought Bubble access through the current bubble owner;
+- one mouth/viseme owner, with future phoneme/TTS timing feeding the same seam;
+- current material-zone Color Picker / Hex / Copy / Reset behavior;
+- Texture/Surface selection through the existing Asset Librarian / material owner, not fixed swatch-only UI;
+- current Card/PDF Viewer as a reusable content viewer where card content is involved.
 
 This is the real ToolBox milestone. Individual internal proofs are not separate mandatory Georg gates.
 
@@ -2087,9 +2099,87 @@ Shared Interface Grammar
   └→ ToolBox / WorldBuilder authoring controls
 ```
 
+# P2 lane · Skills / Runtime Contracts Consolidation
+
+This is repository/runtime hygiene, not a new game runtime and not a P0 blocker.
+
+Current problem:
+`skills/` mixes live contracts, stale registries, historical PetStudio/PatchStudio packages, superseded embed bundles and even binary assets.
+
+The current census/decision document is:
+`SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md`.
+
+## K1 · Skills census · READY / P2
+
+Repository-native scan only.
+
+For every top-level skill/doc/bundle:
+- classify current/legacy/historical/misplaced;
+- identify current runtime owner;
+- scan imports/links/consumers;
+- record supersession;
+- decide whether the path must remain for old consumers.
+
+Outputs:
+- `SKILLS_RUNTIME_CENSUS.json`;
+- `SKILLS_MIGRATION_MAP.md`;
+- `SKILLS_CONSUMER_IMPORT_SCAN.json`.
+
+No files are moved/deleted in K1.
+
+## K2 · Current runtime skill shelf · HOLD after K1
+
+Create/update a small set of canonical current entrypoints:
+
+1. Actor Embed / Actor Platform with family dispatch;
+2. PDF/Card Corpus + Viewer;
+3. CardBuilder;
+4. Ink Canon + 3D adapter contract;
+5. Talk / Viseme / Speech+Thought Bubble;
+6. Material Surface / zone Color+Texture;
+7. current Motion/Animation;
+8. current production/session skills.
+
+Update the stale `SOT_REGISTRY.md` into a current versioned registry or superseding registry.
+
+Legacy files that still have consumers stay at their paths with explicit compatibility/supersession headers.
+
+## K3 · Compatibility-safe archive · HOLD after K1/K2
+
+Only after consumer/import proof:
+- move/archive zero-consumer history where useful;
+- reconcile misplaced binaries against Asset Librarian/media paths;
+- retain compatibility shims/redirects where old apps need the path;
+- delete only under a separate explicit cleanup gate.
+
+Hard rule:
+**archive must never be the act that discovers a hidden consumer.**
+
+## K4 · Ink 3D adapter family · HOLD after current Ink skill lock
+
+Do not create another Ink canon.
+
+Derive reusable world-space adapters from current `kfb-ink-canon.js` semantics:
+- surface ribbon/decal for shoreline/map/road/track boundaries;
+- tube/rope extrusion for physical 3D lines such as wrestling-ring ropes;
+- card/mesh outer-silhouette adapter that never outlines every triangle or creates doubled front/back grids.
+
+The existing implementation term `family:'band'` means the continuous closed ink ring/ribbon. Author-facing terminology may say “ring/ribbon”, but implementation compatibility stays stable.
+
+## K5 · PDF/Card Viewer consumer unification · HOLD after K1
+
+Use:
+- `kfb-card-builder.js` for canonical KFB card rendering;
+- Deck Viewer v4 / `kfb-corpus.js` for performant PDF/page/cache/presentation donors.
+
+Consumers include:
+Card Zones · CardRig/Storytelling · Billboards · Fractal Almanac · Afterglow/reward · ToolBox.
+
+Do not make every consumer implement pdf.js, crop math, card ink or its own page cache.
+
 # Adjacent open lanes · integrate as modules, not new mega-strands
 
-These remain relevant but should feed the eleven primary strands rather than create another control plane.
+These remain relevant but should feed the thirteen primary strands rather than create another control plane.
 
 ## 2D / 2.5D Animation Studio
 
