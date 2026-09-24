@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/2",
+  "schema": "kfb.production-architecture.v3-input-locks/3",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -215,6 +215,132 @@
       "head": "71e7051b2eea1ad731912b634f44ce5ba0218736",
       "humanResult": "TUNE",
       "next": "Racer Anatomy Foundation"
+    },
+    "combatArena": {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "main": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+      "actorIntegration": {
+        "pr": 5,
+        "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+        "head": "d6cf532e64d45fd3117775ec61cfc87b9e948ac0"
+      },
+      "planning": {
+        "pr": 6,
+        "branch": "wsa/ca2-kaykit-prep-2026-09-20",
+        "head": "735b5449bf09fb1a069d4a81db44608a58166677"
+      },
+      "melee": {
+        "pr": 7,
+        "branch": "chatgpt-web/ca2-04-melee-vfx-sfx-2026-09-20",
+        "head": "f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06"
+      },
+      "legacy": {
+        "pr": 10,
+        "branch": "chatgpt-web/ca2-legacy-00-readiness-2026-09-22",
+        "head": "663f0610eb960f322d67b078f1302d0c6178d1c2"
+      },
+      "meleeBrief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/CA2_04_MELEE_CHOREOGRAPHY_VFX_SFX_LAB.md",
+      "spindleBrief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md",
+      "cardBrief": "_handover/A2_CARDS/BRIEFING.md"
+    },
+    "travelModes": {
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "main": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+      "modeBridge": {
+        "pr": 38,
+        "branch": "chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23",
+        "head": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
+        "human": "Ground→Flight 400 ms accepted; TMB-3 HOLD"
+      },
+      "contract": "travel/CONTRACT.md",
+      "tinyskiesInventory": {
+        "source": "Dropbox /CLAUDE/KFB Travel Globe/KFB Travel Globe v13-2/docs/QUELLE_tinyskies-Inventar.md",
+        "upstream": "cursor/globefly-multiplayer-globe-flight-game@2659a5cc987d",
+        "facts": "Carpet, Boat, Plane; BoatMesh includes geometric foam waterline; vehicle feature-table pattern"
+      }
+    },
+    "cubePets": {
+      "repo": "georg-doc/kayfabizarro",
+      "entry": "media/3D_Assets/kfb-pets.js",
+      "entryBlob": "084cd49a6ed6e2020c0066a166827c2a3d34c6e6",
+      "contract": "media/3D_Assets/kfb-pets.json",
+      "contractBlob": "cef6cca9cc69a6cb3c0b4a9d39f6b15579cbf055",
+      "count": 24,
+      "canonicalFrizzleBob": "bunny / animal-bunny.glb",
+      "note": "CubePet Uncle FrizzleBob is a separate actor identity from legacy Arena FrizzleBob and Rig_Medium Driver Graft."
+    },
+    "frizzleBobIdentities": {
+      "cubePet": {
+        "id": "cube-frizzlebob",
+        "source": "media/3D_Assets/kfb-pets.json#bunny",
+        "description": "24-CubePet stack; animal-bunny.glb; EyeRig/PetMouth/PetMotion"
+      },
+      "legacyArena": {
+        "id": "legacy-arena-frizzlebob",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "source": "combat-arena-v1/frizzlebob.v1.js + FrizzleBob_Yellow_Gun.gltf",
+        "description": "historical/current Arena Legacy option; do not confuse with Driver Graft"
+      },
+      "driverGraft": {
+        "id": "frizzlebob-driver-graft",
+        "source": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+        "description": "Rig_Medium host + current FrizzleBob graft; ToolBox/modern actor line"
+      }
+    },
+    "townNpcLife": {
+      "repo": "georg-doc/kayfabizarro",
+      "town": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "townBlob": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+      "chatter": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "chatterBlob": "9025a43f042cf055d19851c9a93a6ddd016e3c36",
+      "encounterBeats": [
+        "approach",
+        "greet",
+        "offer",
+        "react",
+        "decline",
+        "leave"
+      ],
+      "memoryRule": "reuse Journey/event+card context as filtered NPC memory; do not create a second memory system"
+    },
+    "verticalWorld": {
+      "repo": "georg-doc/kayfabizarro",
+      "babelBrief": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md",
+      "babelBlob": "c9d609b23f6940ea27ffc03a2e13bc99712e46c5",
+      "cardZone": {
+        "pr": 156,
+        "branch": "planning/toolbox-card-zone-v3-hex-project-islands-2026-09-21",
+        "head": "ee0f9bb6d738c538e042f799e5fb6f9b20893a01"
+      },
+      "autoJumpSource": "SOURCE_REQUIRED",
+      "rule": "failed Platformer/Babel compositions are donor/failure evidence only until exact source is pinned"
+    },
+    "worldSurfaceAdapter": {
+      "repo": "georg-doc/kayfabizarro",
+      "brief": "tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md",
+      "blob": "f13cfe80443075f6d2fd2b507452562481a8a63b",
+      "firstTopologies": [
+        "FLAT",
+        "SPHERE",
+        "TORUS"
+      ],
+      "rule": "same semantic world recipe through topology adapter; travel mode is orthogonal to surface topology"
+    },
+    "theatreCurtain": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 114,
+      "branch": "chat/gds-theatre-curtain-v1-2026-09-20",
+      "head": "cd9c04cbf009b1211b9b6b008162b9d322d6e152",
+      "brief": "skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md",
+      "briefBlob": "d4ecf7526000d4caf36010154f85eefa42e9b885",
+      "rule": "reuse v1 cloth runtime; refine tieback/swag/crease artifacts before broad consumer rollout"
+    },
+    "spindleSky": {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "planningPr": 6,
+      "planningHead": "735b5449bf09fb1a069d4a81db44608a58166677",
+      "brief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md",
+      "contractCandidate": "kfb.environment.spindle-sky/0.1-candidate"
     }
   },
   "strands": {
@@ -262,6 +388,64 @@
         "residentAtlas"
       ],
       "target": "Race visual module inside editable OSM/KFB world"
+    },
+    "combatChoreography": {
+      "sourceKeys": [
+        "combatArena",
+        "motionLab",
+        "motionLibrary",
+        "creatorMotionResearch",
+        "residentAtlas",
+        "cubePets",
+        "spindleSky",
+        "theatreCurtain"
+      ],
+      "target": "NPC duel choreography + Combat Arena melee/ranged + reusable World encounter adapter"
+    },
+    "cubePetsActors": {
+      "sourceKeys": [
+        "cubePets",
+        "frizzleBobIdentities",
+        "eyeRigBatch",
+        "residentAtlas"
+      ],
+      "target": "24 Cube Pets + unambiguous FrizzleBob identities across ToolBox/Resident/Combat/World/Town"
+    },
+    "travelWorldModes": {
+      "sourceKeys": [
+        "travelModes",
+        "worldSurfaceAdapter",
+        "racer",
+        "motionLab"
+      ],
+      "target": "surface-independent Ground/Drive/Flight/Water/Air travel modes with one active movement writer"
+    },
+    "verticalWorld": {
+      "sourceKeys": [
+        "verticalWorld",
+        "worldSurfaceAdapter",
+        "combatArena",
+        "travelModes",
+        "residentAtlas"
+      ],
+      "target": "Hex/Voxel/Card vertical constructions + assisted platforming + Combat bands + fall/flight traversal"
+    },
+    "townNpcLife": {
+      "sourceKeys": [
+        "townNpcLife",
+        "residentAtlas",
+        "motionLab",
+        "cubePetsActors"
+      ],
+      "target": "ChatterBox-driven living Residents with encounter beats, gifts, memory and world placement"
+    },
+    "sharedStage": {
+      "sourceKeys": [
+        "spindleSky",
+        "theatreCurtain",
+        "combatArena"
+      ],
+      "target": "shared Spindle environment + Curtain transitions + host-owned stage/instance recipes"
     }
   }
 }
