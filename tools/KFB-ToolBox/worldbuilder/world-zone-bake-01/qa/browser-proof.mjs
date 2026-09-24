@@ -2,14 +2,14 @@ import fs from 'node:fs/promises';
 import { chromium } from 'playwright';
 
 const BASE=(process.env.WZ_BASE_URL||'http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/').replace(/\/?$/,'/');
-const URL=BASE+'WORLD_ZONE_BAKE_01_REVIEW.html';
+const PAGE_URL=BASE+'WORLD_ZONE_BAKE_01_REVIEW.html';
 const OUT=process.env.WZ_PROOF_DIR||'world-zone-review-g3-evidence';
 
 await fs.mkdir(OUT,{recursive:true});
 
 const report={
   schema:'kfb.world-zone.review-g3-browser.v1',
-  url:URL,
+  url:PAGE_URL,
   checks:[],
   errors:[],
   httpErrors:[],
@@ -39,7 +39,7 @@ try{
     if(reloadWindow)report.reloadRequests.push(req.url());
   });
 
-  await page.goto(URL,{waitUntil:'domcontentloaded',timeout:30000});
+  await page.goto(PAGE_URL,{waitUntil:'domcontentloaded',timeout:30000});
   await page.waitForFunction(()=>document.getElementById('status')?.textContent?.startsWith('1 · SOURCE ISOLATION'),null,{timeout:30000});
 
   check('source isolation status',await page.locator('#status').textContent().then(t=>t.startsWith('1 · SOURCE ISOLATION')));
