@@ -276,3 +276,23 @@ Scope: documentation/catalogue preparation only; no Resident runtime, animation 
 9. Planned review route uses the required direct Cloudflare surface: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`.
 
 Existing formal architecture/source checkpoint remains the prior **158/158 PASS**. This 9/9 result is an additive planning/catalogue validation and is not misreported as a runtime/browser test.
+
+
+## RES-DISCO-01 user-correction validation · 2026-09-24
+
+Scope: source/cast/module-direction correction only; no runtime or Stage implementation.
+
+**Result: 10/10 PASS**
+
+1. Prototype Pete explicitly excluded.
+2. Action Figure explicitly excluded.
+3. Skeleton Minion selected for the Legacy/presentation slot.
+4. Avian Swordsman selected.
+5. Protagonist_A selected as teenager role.
+6. User-pinned Legacy `character_skeleton_minion.gltf` verified at `e0037d79af9f0546c73cee02e361f78f7d662df2`.
+7. Resident Orc-band donor confirms beat-driven `bounce` precedent for rigid-parts Legacy presentation.
+8. `DISCO-BALL-CORE-01` specified as reusable module, not Resident-scene-owned dressing.
+9. Disco Ball Core reserves bounded lighting/VFX integration plus future EyeRig host seam.
+10. Current architecture catalogue remains **88 jobs / 42 READY / 46 HOLD**.
+
+Note: the three other literal raw asset paths supplied at `e0037d79…` did not resolve through the GitHub file fetch. Current repository manifests/cast independently confirm canonical Skeleton Minion, Avian Swordsman and Protagonist_A assets. RES-DISCO-A must pin the exact current load paths/revisions rather than silently changing the supplied URLs.
