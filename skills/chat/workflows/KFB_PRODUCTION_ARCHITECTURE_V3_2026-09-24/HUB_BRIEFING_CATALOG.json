@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/8",
+  "schema": "kfb.hub-briefing-catalog/9",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -114,7 +114,8 @@
       "target": "Living Resident scenes with encounter beats, ChatterBox, memory, gifts and optional combat",
       "capabilitiesTotal": 6,
       "currentReady": [
-        "npc-life-01"
+        "npc-life-01",
+        "npc-card-spec-01"
       ]
     },
     {
@@ -1868,6 +1869,32 @@
       "parallelWith": [
         "world-zone-bake-01"
       ]
+    },
+    {
+      "id": "npc-card-spec-01",
+      "strand": "town-npc-life",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Claude Design",
+      "executionProfile": "CLAUDE_DESIGN_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "title": "NPC Life · Resident Card Speculation Scene",
+      "what": "Use Pet Podcast v5 as choreography donor for two current Residents discussing one real mysterious KFB Card through existing mouth/gaze/bubble/ChatterBox owners.",
+      "result": "15–30 s reusable Resident Scene recipe with real actors/Card, deterministic Triplet beats, mouth/gaze/bubbles and no proprietary runtime.",
+      "promptSection": "NPC-CARD-SPEC-01 · Resident Card Speculation Scene",
+      "sourceSet": "townNpcLife",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "sourceConditions": [
+        "resolve exact user-named FrizzleBobrick actor source before integration",
+        "reuse current GothGirl mouth/head cleanup owner",
+        "use current real Card renderer"
+      ]
     }
   ],
   "presentation": {
@@ -1879,8 +1906,8 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 80,
-    "ready": 37,
+    "jobs": 81,
+    "ready": 38,
     "hold": 43
   },
   "executionProfiles": {
