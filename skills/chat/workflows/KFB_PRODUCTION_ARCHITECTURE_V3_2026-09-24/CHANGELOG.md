@@ -1,3 +1,15 @@
+## 2026-09-24 · Pet Podcast donor → Resident Card Speculation MVP
+
+- added `NPC-CARD-SPEC-01` as READY under Town/NPC Life;
+- current Pet Podcast v5 is the preferred donor because it is the active documented fork of v4 and already separates gaze, transcript/speaker timing, ground/staging and persona/talk seams;
+- the MVP is explicitly a thin Resident Scene recipe, not Pet Podcast v6 and not a new dialogue/runtime island;
+- uses existing Card/PDF, ChatterBox/Triplet, mouth/viseme, bubble, gaze/EyeRig and Resident owners;
+- first intended cast: user-named FrizzleBobrick + GothGirl; exact FrizzleBobrick source is SOURCE_REQUIRED until pinned, no silent substitution;
+- current GothGirl profile already carries a viseme-capable FrizzelBob mouth donor and existing face/mouth cleanup direction;
+- first review is one 15–30 second two-character speculation loop around one real KFB Card;
+- execution profile: `CLAUDE_DESIGN_STANDARD · Claude Sonnet 5 · medium · STANDARD`, Web secondary for source/integration checks;
+- catalog now **13 strands / 81 jobs / 38 READY / 43 HOLD**.
+
 ## 2026-09-24 · Parallel Claude Design WorldBuilder lane
 
 - added `WB-DESIGN-PARALLEL-01` as a READY Claude Design job that can run while `WORLD-ZONE-BAKE-01` is still compiling/checking OSM;
