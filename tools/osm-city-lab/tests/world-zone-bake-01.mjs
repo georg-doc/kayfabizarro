@@ -14,7 +14,9 @@ ok('zone id/revision',ma.id==='cologne-dom-zentrum-v0'&&ma.revision==='2026-09-2
 ok('reported source hash pinned',ma.source.reportedSourceSha256==='8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c');
 ok('cached source file hash pinned',ma.source.cachedFileSha256==='5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a');
 ok('source Git blob pinned',ma.source.sourceBlobSha==='7220dc617782b4db7dfa80e3b3d58e54046eebb4');
-ok('normalized hash pinned',ma.source.normalizedSha256==='4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702');
+ok('reported normalized payload hash pinned',ma.source.reportedNormalizedSha256==='4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702');
+ok('cached normalized file hash pinned',ma.source.cachedNormalizedFileSha256==='a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e');
+ok('normalized Git blob pinned',ma.source.normalizedBlobSha==='14d3f09da6e14fb7f5dc9478f78be9f876bffab9');
 ok('metre frame',ma.frame.units==='metre'&&ma.frame.axes.x==='east'&&ma.frame.axes.z==='north');
 ok('road count',ma.counts.roads===5236&&ma.counts.driveableRoads===2523,String(ma.counts.roads));
 ok('building count',ma.counts.buildings===6351,String(ma.counts.buildings));

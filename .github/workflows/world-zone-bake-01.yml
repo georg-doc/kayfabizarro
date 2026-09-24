@@ -32,7 +32,8 @@ jobs:
           test "$(sha256sum "$RAW" | cut -d' ' -f1)" = '5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a'
           test "$(jq -r .sourceSha256 tools/osm-city-lab/data/dom-zentrum-v0/PROVENANCE.json)" = '8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c'
           node tools/osm-city-lab/scripts/build-city.mjs dom-zentrum-v0
-          test "$(sha256sum "$NORM" | cut -d' ' -f1)" = '4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702'
+          test "$(sha256sum "$NORM" | cut -d' ' -f1)" = 'a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e'
+          test "$(node -e \"const fs=require('fs'),crypto=require('crypto');const s=fs.readFileSync('$NORM','utf8').replace(/\\n$/, '');process.stdout.write(crypto.createHash('sha256').update(s).digest('hex'))\")" = '4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702'
       - name: Compile twice
         run: |
           node tools/osm-city-lab/scripts/build-world-zone.mjs dom-zentrum-v0 2026-09-24.1 --out-root /tmp/world-zone-a
