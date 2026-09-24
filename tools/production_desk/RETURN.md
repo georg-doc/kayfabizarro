@@ -1,4 +1,42 @@
-# RETURN · HUB-CTRL-01 · never-empty KFB Hub · 2026-09-24
+# RETURN · HUB-V3-MOUNT · self-service catalog beside Today · 2026-09-24
+
+Status: **IMPLEMENTED AND LOCALLY BROWSER-VERIFIED · PUBLICATION PENDING**
+
+Owner: existing KFB Production Desk / HUB-CTRL PR #202. Architecture source: Draft PR #204 at
+`531a8f4c2c26b4f5ed042cc360c49546017641c6`.
+
+## Result
+
+- The current **Today** lanes remain unchanged and answer “what is happening now?”.
+- A separate **What you can start** surface mounts the v3 architecture catalog strand-first.
+- Default view is 13 collapsed strands, not a 79-card wall.
+- Expanded strands group jobs into READY and a second collapsed HOLD list.
+- Every job shows executor, model, reasoning and budget; its start action copies the canonical prompt.
+- All prompts are extracted from their exact `## promptSection` in `STRAND_BRIEFINGS.md` or
+  `SELF_SERVICE_BRIEFINGS.md`. No prompt body is duplicated in Hub config.
+- An unreadable catalog degrades only this surface. Today, tools and the independent HUB-CTRL recovery remain visible.
+
+## Evidence before publication
+
+- Production Architecture source: **13 strands · 79 jobs · 36 READY · 43 HOLD**.
+- Prompt resolution: **79/79** exact named sections; execution-profile gaps: **0**.
+- Python builder/render/validation: **18/18 PASS · VALID · 0 problems**.
+- Real Chrome desktop: Today lanes unchanged; all 13 strand cards render collapsed; one strand expands to its
+  READY/HOLD jobs; compact execution metadata renders; copy action reports success; **0 console errors**.
+- Real Chrome mobile at 390×844: single-column strand view, all 13 areas visible without a 79-card wall.
+
+## Publication state
+
+Not yet claimed in this checkpoint. Public acceptance surface remains:
+`https://kayfabizarro.pages.dev/kfb-hub/`.
+
+## One next gate
+
+Publish through the existing HUB-CTRL owner, open the exact public Hub, and verify the new **Katalog** surface once.
+
+---
+
+# Earlier return · HUB-CTRL-01 · never-empty KFB Hub · 2026-09-24
 
 Owner: KFB Production Desk / public route `https://kayfabizarro.pages.dev/kfb-hub/`.
 

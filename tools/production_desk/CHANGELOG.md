@@ -1,5 +1,17 @@
 # KFB Production Desk · additive changelog
 
+## 2026-09-24 · HUB-V3-MOUNT
+
+- Mounted Production Architecture v3 as a second, additive self-service registry.
+- Kept operational Today lanes and their owner unchanged.
+- Added 13 collapsed strand cards with 79 nested READY/HOLD jobs.
+- Added visible executor/model/reasoning/budget metadata and source-linked copy actions.
+- Resolve all 79 prompt bodies from their canonical named Markdown sections at build time.
+- Added failure isolation so a malformed catalog cannot blank the Hub.
+- Added builder and browser-facing regression coverage for counts, prompt resolution and compact rendering.
+
+No architecture owner was replaced, no PR was merged and no Live gameplay surface was promoted.
+
 ## 2026-09-24 · HUB-CTRL-01
 
 - Confirmed the public blank Hub was caused by malformed embedded JSON, not missing project data.

@@ -9,7 +9,7 @@ const { JSDOM } = require('jsdom');
 
 const [,, htmlPath, regDir] = process.argv;
 const HTML = readFileSync(htmlPath, 'utf8');
-const FILES = ['manifest','lanes','briefings','reviews','standards','wsa','tools','problems'];
+const FILES = ['manifest','lanes','briefings','reviews','standards','wsa','tools','problems','self_service'];
 const baseReg = Object.fromEntries(FILES.map(f => [f, JSON.parse(readFileSync(join(regDir, f + '.json'), 'utf8'))]));
 const LIVE = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/bot/production-desk-update/registry/production/v1/';
 const CANON = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/registry/production/v1/';
@@ -184,6 +184,21 @@ console.log('10 · Öffnen-Knopf für Prüfseiten');
     const a = [...d.querySelectorAll(`[data-lane="${l.id}"] a.btn`)].find(x => x.href === l.review.url);
     ok(!!a, `${l.id}: button links to the published review`);
   }
+}
+
+console.log('11 · Self-service catalog stays compact and copy-ready');
+{
+  const { d, clip } = makeDom();
+  await tick();
+  const strands = [...d.querySelectorAll('details.strand')];
+  ok(strands.length === baseReg.self_service.counts.strands, 'one collapsed card per strand');
+  ok(d.querySelectorAll('.job').length === baseReg.self_service.counts.jobs, 'all jobs remain available inside strands');
+  ok(strands.every(x => !x.open), 'strand cards are collapsed by default');
+  const ready = baseReg.self_service.jobs.find(j => j.bucket === 'READY' && j.prompt);
+  const button = d.querySelector(`[data-job="${ready.id}"] button`);
+  button.click(); await tick();
+  ok(clip.text === ready.prompt, 'copy action uses the resolved canonical prompt');
+  ok(/Bereiche/.test(d.getElementById('catalogCounts').textContent), 'compact catalog counts are visible');
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

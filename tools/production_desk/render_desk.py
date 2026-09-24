@@ -5,7 +5,8 @@ import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-FILES = ("manifest", "lanes", "briefings", "reviews", "standards", "wsa", "tools", "problems")
+FILES = ("manifest", "lanes", "briefings", "reviews", "standards", "wsa", "tools", "problems",
+         "self_service")
 MARK = "/*__EMBEDDED_REGISTRY__*/"
 
 

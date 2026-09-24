@@ -191,6 +191,51 @@ class BuildTests(unittest.TestCase):
         ext = [l for l in cfg["lanes"] if l.get("external")]
         self.assertTrue(ext, "Travel/Racer must stay external")
 
+    def test_self_service_mount_resolves_exact_prompt_sections(self):
+        cfg = base_cfg()
+        cfg["selfService"] = {
+            "repo": REPO, "ref": "architecture-v3", "catalog": "catalog.json",
+            "promptSources": ["strands.md", "quick.md"],
+        }
+        catalog = {
+            "schema": "kfb.hub-briefing-catalog/7", "architecture": {"pr": 204},
+            "executionProfiles": {"WEB_STANDARD": {"executor": "Web"}},
+            "strands": [{"id": "world", "title": "World", "target": "A world"}],
+            "briefings": [
+                {"id": "ready", "strand": "world", "bucket": "READY", "title": "Ready",
+                 "promptSection": "READY-01", "executionProfile": "WEB_STANDARD"},
+                {"id": "hold", "strand": "world", "bucket": "HOLD", "title": "Hold",
+                 "promptSection": "HOLD-01", "executionProfile": "WEB_STANDARD"},
+            ],
+        }
+        fx = base_fixture()
+        fx.update({
+            f"text:{REPO}@architecture-v3:catalog.json": json.dumps(catalog),
+            f"text:{REPO}@architecture-v3:strands.md": "# Briefs\n\n## READY-01\n\nDO READY\n\n## HOLD-01\n\nDO HOLD\n",
+            f"text:{REPO}@architecture-v3:quick.md": "# Quick\n",
+            f"branch:{REPO}@architecture-v3": {"sha": "arch-head", "date": "2026-09-24T00:00:00Z"},
+        })
+        files, _ = run(cfg=cfg, fx=fx)
+        ss = files["self_service.json"]
+        self.assertTrue(ss["available"])
+        self.assertEqual(ss["source"]["head"], "arch-head")
+        self.assertEqual(ss["counts"], {"strands": 1, "jobs": 2, "READY": 1, "HOLD": 1, "prompts": 2})
+        self.assertIn("DO READY", ss["jobs"][0]["prompt"])
+
+    def test_broken_self_service_never_breaks_operational_lanes(self):
+        cfg = base_cfg()
+        cfg["selfService"] = {
+            "repo": REPO, "ref": "architecture-v3", "catalog": "catalog.json",
+            "promptSources": ["strands.md"],
+        }
+        fx = base_fixture()
+        fx[f"text:{REPO}@architecture-v3:catalog.json"] = "{broken"
+        fx[f"branch:{REPO}@architecture-v3"] = {"sha": "arch-head", "date": "2026-09-24T00:00:00Z"}
+        files, _ = run(cfg=cfg, fx=fx)
+        self.assertEqual(len(files["lanes.json"]["lanes"]), 3)
+        self.assertFalse(files["self_service.json"]["available"])
+        self.assertIn("self-service-unreadable", [p["kind"] for p in files["problems.json"]["problems"]])
+
 
 if __name__ == "__main__":
     unittest.main()

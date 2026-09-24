@@ -24,6 +24,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -39,7 +40,8 @@ SCHEMA = "kfb.production-registry/1"
 BUCKETS = ("LOOK_AT", "RUNNING", "CAN_START", "WAITING")
 FRESHNESS = ("CURRENT", "MOVED", "LAST_KNOWN", "UNVERIFIED", "CLOSED")
 OUTPUT_FILES = ("manifest.json", "lanes.json", "briefings.json", "reviews.json",
-                "standards.json", "wsa.json", "tools.json", "problems.json")
+                "standards.json", "wsa.json", "tools.json", "problems.json",
+                "self_service.json")
 
 
 # --------------------------------------------------------------------------- fetchers
@@ -102,6 +104,25 @@ class OnlineFetcher:
             return None
         return {"sha": data["sha"], "size": data.get("size", 0)}
 
+    def text_content(self, repo: str, path: str, ref: str):
+        url = (f"{self.api}/repos/{repo}/contents/{urllib.parse.quote(path)}"
+               f"?ref={urllib.parse.quote(ref, safe='')}")
+        req = urllib.request.Request(url, headers={
+            "Accept": "application/vnd.github.raw+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "kfb-production-desk",
+            **({"Authorization": f"Bearer {self.token}"} if self.token else {}),
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8")
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return None
+            raise FetchError(f"HTTP {exc.code} for text file {path}") from exc
+        except urllib.error.URLError as exc:
+            raise FetchError(f"{exc.reason} for text file {path}") from exc
+
     def status_file(self, repo: str, path: str, ref: str):
         url = (f"{self.api}/repos/{repo}/contents/{urllib.parse.quote(path)}"
                f"?ref={urllib.parse.quote(ref, safe='')}")
@@ -142,6 +163,9 @@ class FixtureFetcher:
     def content(self, repo, path, ref):
         return self._lookup(f"content:{repo}@{ref}:{path}")
 
+    def text_content(self, repo, path, ref):
+        return self._lookup(f"text:{repo}@{ref}:{path}")
+
     def status_file(self, repo, path, ref):
         return self._lookup(f"status:{repo}@{ref}:{path}")
 
@@ -161,6 +185,96 @@ def canonical_json(obj) -> str:
 
 def now_iso() -> str:
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def extract_h2_section(markdown: str, title: str) -> str | None:
+    """Return one exact H2 section, including its heading."""
+    pattern = re.compile(r"^## " + re.escape(title) + r"\s*$", re.MULTILINE)
+    matches = list(pattern.finditer(markdown))
+    if len(matches) != 1:
+        return None
+    start = matches[0].start()
+    nxt = re.search(r"^## ", markdown[matches[0].end():], re.MULTILINE)
+    end = matches[0].end() + nxt.start() if nxt else len(markdown)
+    return markdown[start:end].strip() + "\n"
+
+
+def resolve_self_service(cfg: dict, fetch, problems: list) -> dict:
+    source = cfg.get("selfService")
+    empty = {
+        "schema": "kfb.hub-self-service/1", "available": False,
+        "source": source or {}, "counts": {"strands": 0, "jobs": 0, "READY": 0, "HOLD": 0},
+        "executionProfiles": {}, "strands": [], "jobs": [],
+    }
+    if not source:
+        return empty
+
+    repo, ref, catalog_path = source["repo"], source["ref"], source["catalog"]
+    try:
+        raw_catalog = fetch.text_content(repo, catalog_path, ref)
+        catalog = json.loads(raw_catalog) if raw_catalog else None
+        head = fetch.branch_head(repo, ref)
+        if not catalog:
+            raise FetchError(f"catalog missing: {catalog_path} @ {ref}")
+        source_texts = {}
+        for path in source["promptSources"]:
+            value = fetch.text_content(repo, path, ref)
+            if value is None:
+                raise FetchError(f"prompt source missing: {path} @ {ref}")
+            source_texts[path] = value
+    except (FetchError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        problems.append({"lane": None, "kind": "self-service-unreadable", "detail": str(exc)})
+        empty["error"] = str(exc)
+        return empty
+
+    jobs = []
+    for raw in catalog.get("briefings", []):
+        section = raw.get("promptSection")
+        hits = []
+        for path, markdown in source_texts.items():
+            prompt = extract_h2_section(markdown, section) if section else None
+            if prompt:
+                hits.append((path, prompt))
+        job = dict(raw)
+        if len(hits) == 1:
+            path, prompt = hits[0]
+            job["prompt"] = prompt
+            job["promptSource"] = {
+                "path": path, "ref": ref, "section": section,
+                "url": gh_blob_url(repo, ref, path),
+            }
+        else:
+            job["prompt"] = None
+            job["promptSource"] = {"section": section, "ref": ref}
+            problems.append({
+                "lane": None, "kind": "self-service-prompt-unresolved",
+                "detail": f"{raw.get('id')}: expected one section {section!r}, found {len(hits)}",
+            })
+        jobs.append(job)
+
+    strands = []
+    for raw in catalog.get("strands", []):
+        strand = dict(raw)
+        own = [j for j in jobs if j.get("strand") == strand.get("id")]
+        strand["counts"] = {
+            "jobs": len(own),
+            "READY": sum(j.get("bucket") == "READY" for j in own),
+            "HOLD": sum(j.get("bucket") == "HOLD" for j in own),
+        }
+        strands.append(strand)
+    counts = {
+        "strands": len(strands), "jobs": len(jobs),
+        "READY": sum(j.get("bucket") == "READY" for j in jobs),
+        "HOLD": sum(j.get("bucket") == "HOLD" for j in jobs),
+        "prompts": sum(bool(j.get("prompt")) for j in jobs),
+    }
+    return {
+        "schema": "kfb.hub-self-service/1", "available": counts["prompts"] == counts["jobs"],
+        "source": {**source, "head": head.get("sha") if head else None,
+                   "catalogSchema": catalog.get("schema"), "pr": catalog.get("architecture", {}).get("pr")},
+        "counts": counts, "executionProfiles": catalog.get("executionProfiles", {}),
+        "presentation": catalog.get("presentation", {}), "strands": strands, "jobs": jobs,
+    }
 
 
 # --------------------------------------------------------------------------- resolve
@@ -317,6 +431,7 @@ def build(cfg: dict, fetch, source: dict) -> dict:
     problems: list = []
     lanes = [resolve_lane(l, cfg, fetch, problems) for l in cfg["lanes"]]
     tools = resolve_tools(cfg, fetch, problems)
+    self_service = resolve_self_service(cfg, fetch, problems)
     route = tools.pop("_route")
     for l, raw in zip(lanes, cfg["lanes"]):
         rv = raw.get("review")
@@ -349,6 +464,8 @@ def build(cfg: dict, fetch, source: dict) -> dict:
         "moved": sum(1 for l in lanes if l["freshness"] == "MOVED"),
         "problems": len(problems),
         "tools": sum(1 for t in tools["tools"] if t["available"]),
+        "selfServiceJobs": self_service["counts"]["jobs"],
+        "selfServiceReady": self_service["counts"]["READY"],
     })
 
     body = {
@@ -360,6 +477,7 @@ def build(cfg: dict, fetch, source: dict) -> dict:
         "wsa.json": {"schema": SCHEMA, **cfg.get("wsa", {"state": "UNKNOWN", "text": ""})},
         "tools.json": {"schema": SCHEMA, **tools},
         "problems.json": {"schema": SCHEMA, "problems": problems},
+        "self_service.json": self_service,
     }
     content_hash = hashlib.sha256(canonical_json(body).encode("utf-8")).hexdigest()
     ts = now_iso()

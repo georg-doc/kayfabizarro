@@ -61,6 +61,25 @@
   .btn{font:inherit;font-size:.8rem;border-radius:6px;border:1px solid #cfc6b4;background:#fff;padding:.25rem .6rem;cursor:pointer}
   .btn.primary{background:#2f5a3a;color:#fff;border-color:#2f5a3a}
   .empty{color:var(--mute);font-size:.84rem;padding:.4rem 0}
+  .catalog-head{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap;margin-bottom:.55rem}
+  .catalog-head .counts{font-size:.78rem;color:var(--mute)}
+  .strands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+  @media (max-width:1100px){.strands{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:640px){.strands{grid-template-columns:1fr}}
+  details.strand{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.55rem .65rem}
+  details.strand>summary{list-style:none;display:flex;gap:.5rem;align-items:flex-start}
+  details.strand>summary::-webkit-details-marker{display:none}
+  .strand-title{font-size:.92rem;font-weight:650;flex:1}
+  .strand-target{color:var(--mute);font-size:.78rem;margin:.25rem 0 .5rem}
+  .jobgroup{margin-top:.55rem}
+  .jobgroup h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin:.25rem 0}
+  .job{border-top:1px solid var(--line);padding:.45rem 0}
+  .job:first-of-type{border-top:0}
+  .job strong{font-size:.84rem;display:block}
+  .job p{font-size:.78rem;color:#4a443a;margin:.1rem 0 .3rem}
+  .job .profile{font-size:.74rem;color:var(--mute)}
+  .job .actions{display:flex;gap:.35rem;margin-top:.3rem}
+  details.holdjobs summary{font-size:.78rem;color:var(--mute);margin-top:.45rem}
   .lower{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
   @media (max-width:900px){.lower{grid-template-columns:1fr}}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.7rem .8rem}
@@ -86,7 +105,7 @@
 <body>
 <header>
   <h1>KFB Hub</h1>
-  <nav class="jump"><a href="#jetzt">Jetzt</a><a href="#werkzeuge">Werkzeuge</a><a href="#archiv">Archiv</a></nav>
+  <nav class="jump"><a href="#jetzt">Jetzt</a><a href="#katalog">Katalog</a><a href="#werkzeuge">Werkzeuge</a><a href="#archiv">Archiv</a></nav>
   <input id="search" type="search" placeholder="Suchen …" aria-label="Suchen">
   <span id="srcBadge" class="src">lädt …</span>
   <span id="stand" class="meta"></span>
@@ -108,6 +127,10 @@
     <section class="bucket WAITING"><h2><span class="dot"></span>Wartet <span class="n" id="n-WAITING">0</span></h2>
       <div class="hint">Geparkt oder hängt von etwas anderem ab.</div><div id="b-WAITING"></div></section>
   </div>
+
+  <h2 class="section" id="katalog">Was du starten kannst</h2>
+  <div class="catalog-head"><div class="hint">Nach Bereichen geordnet. Öffne nur, was du gerade brauchst.</div><div class="counts" id="catalogCounts"></div></div>
+  <div class="strands" id="strands"></div>
 
   <h2 class="section" id="werkzeuge">Werkzeuge</h2>
   <div class="hint">Nur was sich wirklich öffnen lässt. Die Liste prüft sich bei jedem Abgleich selbst.</div>
@@ -157,7 +180,7 @@ var SOURCES = [
   {id:'canon', label:'Hauptstand', badge:'canon', base:'https://raw.githubusercontent.com/'+REPO+'/main/registry/production/v1'}
 ];
 var POLL_MS = 75000;
-var FILES = ['lanes','briefings','reviews','standards','wsa','tools','problems'];
+var FILES = ['lanes','briefings','reviews','standards','wsa','tools','problems','self_service'];
 var BUCKETS = ['LOOK_AT','RUNNING','CAN_START','WAITING'];
 var FRESH = {
   MOVED:{t:'Neue Arbeit seit letztem Eintrag',c:'warn'},
@@ -217,7 +240,8 @@ function emergencyRegistry(){
       {group:'Sicherer Einstieg',id:'stage',title:'Alle Bühnen',what:'Direkte Übersicht der veröffentlichten Proben.',status:'Übersicht',available:true,url:'https://kayfabizarro.pages.dev/kfb-hub/stage/'},
       {group:'Sicherer Einstieg',id:'toolbox',title:'KFB ToolBox',what:'Direkter Einstieg in die veröffentlichten Werkzeuge.',status:'Übersicht',available:true,url:'https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/'}
     ],archive:[]},
-    problems:{problems:[{lane:'hub-recovery',kind:'registry-unreadable',detail:'Live-Daten und eingebauter Stand konnten nicht gelesen werden. Notfall-Stand aktiv.'}]}
+    problems:{problems:[{lane:'hub-recovery',kind:'registry-unreadable',detail:'Live-Daten und eingebauter Stand konnten nicht gelesen werden. Notfall-Stand aktiv.'}]},
+    self_service:{available:false,counts:{strands:0,jobs:0,READY:0,HOLD:0},strands:[],jobs:[]}
   };
 }
 
@@ -313,6 +337,51 @@ function renderBuckets(){
   });
 }
 
+function copyJob(job){
+  var text = job.prompt || ('Bitte lies das kanonische Briefing: '+((job.promptSource||{}).url||''));
+  writeClipboard(text).then(function(){ toast(job.prompt ? 'Startnachricht kopiert' : 'Briefing-Link kopiert'); })
+    .catch(function(){ toast('Kopieren wurde blockiert'); });
+}
+
+function jobRow(job){
+  var row=el('div','job'); row.dataset.job=job.id;
+  row.appendChild(el('strong',null,job.title));
+  if(job.what) row.appendChild(el('p',null,job.what));
+  var profile=[job.executor,job.model,job.reasoning,job.budget].filter(Boolean).join(' · ');
+  row.appendChild(el('div','profile',profile));
+  var actions=el('div','actions');
+  var cp=el('button','btn'+(job.bucket==='READY'?' primary':''),'Start kopieren'); cp.type='button';
+  cp.disabled=!job.prompt && !(job.promptSource||{}).url;
+  cp.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();copyJob(job);}); actions.appendChild(cp);
+  if(job.promptSource && job.promptSource.url){
+    var src=el('a','btn','Quelle'); src.href=job.promptSource.url; src.target='_blank'; src.rel='noopener'; actions.appendChild(src);
+  }
+  row.appendChild(actions); return row;
+}
+
+function renderCatalog(){
+  var data=state.reg.self_service||{available:false,counts:{},strands:[],jobs:[]};
+  var box=$('strands'); box.textContent='';
+  var counts=data.counts||{};
+  $('catalogCounts').textContent=(counts.strands||0)+' Bereiche · '+(counts.READY||0)+' startklar · '+(counts.HOLD||0)+' später';
+  if(!(data.strands||[]).length){ box.appendChild(el('div','empty','Der Aufgabenkatalog ist gerade nicht lesbar. „Jetzt“ und die Werkzeuge bleiben verfügbar.')); return; }
+  (data.strands||[]).forEach(function(strand){
+    var det=el('details','strand'); det.dataset.strand=strand.id;
+    var sum=el('summary'); sum.appendChild(el('span','strand-title',strand.title));
+    var sc=strand.counts||{}; sum.appendChild(el('span','tag',(sc.READY||0)+' bereit')); det.appendChild(sum);
+    det.appendChild(el('div','strand-target',strand.target||''));
+    var jobs=(data.jobs||[]).filter(function(j){return j.strand===strand.id;});
+    var ready=jobs.filter(function(j){return j.bucket==='READY';});
+    var rg=el('div','jobgroup'); rg.appendChild(el('h4',null,'Startklar'));
+    if(!ready.length) rg.appendChild(el('div','empty','Noch nichts startklar.')); else ready.forEach(function(j){rg.appendChild(jobRow(j));});
+    det.appendChild(rg);
+    var hold=jobs.filter(function(j){return j.bucket==='HOLD';});
+    if(hold.length){ var hd=el('details','holdjobs'); hd.appendChild(el('summary',null,hold.length+' spätere Aufgaben')); hold.forEach(function(j){hd.appendChild(jobRow(j));}); det.appendChild(hd); }
+    box.appendChild(det);
+  });
+  applySearch();
+}
+
 function renderTools(){
   var t = state.reg.tools || {tools:[], archive:[]};
   var box = $('tools'); box.textContent='';
@@ -342,7 +411,7 @@ function renderTools(){
 
 function applySearch(){
   var q = ($('search').value||'').trim().toLowerCase();
-  var nodes = document.querySelectorAll('.card, .tool');
+  var nodes = document.querySelectorAll('.card, .tool, details.strand');
   for(var i=0;i<nodes.length;i++){
     var n = nodes[i];
     n.classList.toggle('hidden-by-search', !!q && n.textContent.toLowerCase().indexOf(q) < 0);
@@ -464,7 +533,7 @@ function wireLauncher(){
   });
 }
 
-function render(){ renderHeader(); renderBuckets(); renderTools(); renderLower(); }
+function render(){ renderHeader(); renderBuckets(); renderCatalog(); renderTools(); renderLower(); }
 
 function apply(res){
   if(!res){
