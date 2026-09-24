@@ -415,3 +415,416 @@ Each card must make dependency/status obvious:
 - DONE.
 
 A waiting card is valuable because Georg can already see the complete production route without asking for another planning session.
+
+---
+
+# Combat / Actor / Travel / Town expansion
+
+## COMBAT-ID-01 · Combat Actor Family Matrix
+
+**Executor:** ChatGPT Web against `georg-doc/KFB-Combat-Arena`  
+**Outcome:** explicit capabilities across Medium/Large/Legacy/CubePet/procedural families.
+
+> @GitHub
+> Read KFB Production Architecture v3 → STRAND C / C1, the current Combat Arena SSOT, PR #5, PR #7, PR #10 and PR #6 actor/melee planning package.
+>
+> Build **COMBAT-ID-01 · Combat Actor Family Matrix** without changing the Arena runtime unless a tiny adapter proof is essential.
+>
+> Include exact-source rows for:
+> - FrizzleBob Driver Graft / Rig_Medium;
+> - Goth Girl / Rig_Medium;
+> - Skeleton Warrior / Rig_Medium;
+> - one Rig_Large fighter such as Black Knight only where exact source/clips are verified;
+> - Legacy Knight + Sword and Rogue + Crossbow from PR #10;
+> - CubePet Bunny / `cube-frizzlebob` as a non-humanoid/node-animated family proof.
+>
+> Use semantic capabilities rather than assumed clip parity: idle, move, guard/aim, melee, ranged, block, hit, defeat, recover, eye-rig, sockets. Missing capability = HOLD/null.
+>
+> Do not force Medium clips onto Large/Legacy/CubePet. Return one compact compatibility matrix and the smallest reusable actor-capability contract proposal.
+
+---
+
+## COMBAT-MELEE-01 · Finish real melee contact path
+
+**Executor:** Combat Web chat  
+**Outcome:** one visually accepted real weapon strike with shared contact event.
+
+> @GitHub
+> Read KFB Production Architecture v3 → C3 and current Combat PR #7. Ignore the old Cloudflare-child-route failure as a product blocker; use direct real-source Chat HTML for iterative visual review.
+>
+> Continue from the existing Skeleton Blade + real `Melee_1H_Attack_Chop` + swept-contact/AttackLedger implementation. Do not restart the contact engine.
+>
+> Give me one direct 3D review showing:
+> weapon mount → anticipation → blade path → contact/miss → hit reaction → recovery.
+>
+> A confirmed contact must remain the single source for damage decision, impact VFX and impact SFX. A miss does not damage.
+>
+> Once the Medium proof is visually accepted, prepare the same semantic profile seam for Legacy; do not implement every rig family in this job.
+
+---
+
+## COMBAT-DUEL-01 · Duel Choreography Studio
+
+**Executor:** ToolBox Animation Studio / Web  
+**Outcome:** two-fighter autonomous choreography and Hero-Shot loops.
+
+> @GitHub
+> Read KFB Production Architecture v3 → C2, current TB-ANIM-01 output, Combat melee/ranged profiles and Resident/ToolBox actor sources.
+>
+> Build **COMBAT-DUEL-01 · Duel Choreography Studio** as a ToolBox Animation Studio mode, not as a second combat game.
+>
+> Stage two actual actors on a readable side-on/3/4 versus stage. Let me choose fighters, distance/facing, semantic actions and attack/reaction chains. Support deterministic looping recipes such as:
+> guard → attack → confirmed-contact marker → hit/block → counter → recover → reset/continue.
+>
+> Include Melee and Ranged only where current admitted profiles exist. Use actual weapons/props and one mixer/face owner per actor.
+>
+> It may visualize current swept-contact/profile facts, but HP/rewards remain Combat Arena ownership.
+>
+> Export a small choreography recipe usable for autonomous NPC matches and Hero Shots.
+
+---
+
+## COMBAT-MATCH-01 · Autonomous Match Director
+
+**Executor:** ChatGPT Web / Combat+Animation adapters  
+**Outcome:** deterministic NPC-vs-NPC exhibition loops.
+
+> @GitHub
+> Read KFB Production Architecture v3 → C4 plus accepted COMBAT-DUEL-01 recipes.
+>
+> Build a small **Match Director** that schedules already-admitted semantic actions; do not generate arbitrary skeleton poses.
+>
+> Modes: short Hero Shot, endless sparring, best-of-N, ambient scuffle. Keep the loop deterministic/replayable by recipe/seed and expose camera/event hints for the host.
+>
+> The same recipe must be able to run as a non-damaging exhibition in ToolBox and as a damaging encounter only when Combat Arena owns the event consequences.
+
+---
+
+## COMBAT-TOWER-01 · Card Tower Encounter Module
+
+**Executor:** Combat + vertical-world Web integration  
+**Outcome:** card-platform combat bands that can stack vertically.
+
+> @GitHub
+> Read KFB Production Architecture v3 → C6/B5, current Combat A2 Card-body sources and accepted Combat encounter profile.
+>
+> Build one thin **Card Encounter Platform** contract:
+> support/card surface ref + encounter anchors + Combat encounter recipe + clear/reveal/next-band event + recovery anchor.
+>
+> Prove a tiny stack only: start card → encounter → clear → next card appears/unlocks → ascend. Chill mode recovers falls without losing cleared progress.
+>
+> Do not build an infinite tower in the first proof. Tower topology owns the stack; Combat owns fight state.
+
+---
+
+## COMBAT-WORLD-01 · Open World Encounter Adapter
+
+**Executor:** WorldBuilder + Combat Web  
+**Outcome:** same Combat encounter can run on authored terrain.
+
+> @GitHub
+> Read KFB Production Architecture v3 → C7 and the accepted WorldBuilder authoring surface + Combat encounter profile.
+>
+> Build one host adapter where WorldBuilder provides support frame, encounter volume, spawn/return anchors and persistence ref, while Combat Arena provides targeting, attacks, damage, defeat, rewards and event stream.
+>
+> First proof: one bounded two/three-combatant encounter placed in the authored world, then clean return to ordinary world locomotion.
+>
+> Do not implement a second open-world weapon/damage system.
+
+---
+
+## PET-ID-01 · Cube Pets + FrizzleBob identity lock
+
+**Executor:** ChatGPT Web / ToolBox roster  
+**Outcome:** no more FrizzleBob ambiguity; all 24 CubePets pinned.
+
+> @GitHub
+> Read KFB Production Architecture v3 → STRAND P and the canonical `media/3D_Assets/kfb-pets.js` + `kfb-pets.json`.
+>
+> Build a small actor-identity catalog that treats these as distinct:
+> - `cube-frizzlebob` = CubePet bunny / `animal-bunny.glb`;
+> - `legacy-arena-frizzlebob` = Combat `frizzlebob.v1.js` + Yellow_Gun lineage;
+> - `frizzlebob-driver-graft` = current Rig_Medium Driver Graft.
+>
+> Register/pin all 24 canonical CubePet IDs and their current face/mouth/motion capabilities. Do not call the donor `FrizzleBob_Yellow.gltf` a fourth gameplay actor.
+>
+> Return machine-readable identities/aliases for ToolBox, Resident Atlas, Combat and World consumers.
+
+---
+
+## PET-TOOLBOX-01 · 24 Cube Pets in ToolBox
+
+**Executor:** ChatGPT Web / ToolBox  
+**Outcome:** CubePets are first-class actors in Face/Motion/Scene workflows.
+
+> @GitHub
+> Read KFB Production Architecture v3 → P1/P2 and accepted PET-ID-01.
+>
+> Add all 24 CubePets to the real ToolBox roster through the canonical pet stack. Preserve each pet's actual EyeRig, mouth, material, skin and node/procedural motion data.
+>
+> ToolBox must expose Face/Eye/Mouth editing and compatible motion preview without converting pets into Rig_Medium skeletons.
+>
+> Use the same search/scene/Save-Reload architecture as other actors.
+
+---
+
+## PET-RESIDENT-01 · CubePet Resident Modules
+
+**Executor:** ToolBox / Resident Atlas Web  
+**Outcome:** CubePets can live in Town and WorldBuilder scenes.
+
+> @GitHub
+> Read KFB Production Architecture v3 → P3, canonical CubePet stack and Resident Scene Module contract.
+>
+> Wrap one then all compatible CubePets as thin Resident modules referencing the canonical pet config. Include root transform, face state, motion/activity state and optional props/encounter hooks.
+>
+> Do not copy GLB bytes or fork PetMotion/EyeRig/PetMouth into Resident Atlas.
+
+---
+
+## PET-COMBAT-01 · CubePet semantic combat adapter
+
+**Executor:** Combat/ToolBox Web  
+**Outcome:** selected CubePets can participate without humanoid clips.
+
+> @GitHub
+> Read KFB Production Architecture v3 → P4 / C1 and accepted PET-ID-01.
+>
+> Prove one CubePet combat-capability adapter using its real node/procedural motion language: hop/lunge, squash/lean, hit recoil, spin/tip, EyeRig reaction where appropriate.
+>
+> Share semantic combat states, not skeletal clips. Admit only visually intentional capabilities. Arena keeps hit/damage/reward ownership.
+
+---
+
+## SURFACE-01 · FLAT / SPHERE / TORUS adapter
+
+**Executor:** ChatGPT Web  
+**Outcome:** same world recipe on multiple topologies.
+
+> @GitHub
+> Read KFB Production Architecture v3 → STRAND V / V1 and the current World Building Preflight.
+>
+> Prove one tiny semantic recipe unchanged on **FLAT, SPHERE and TORUS** using a single Surface Adapter contract.
+>
+> Expose only world↔surface mapping, local tangent/right/up, support/height, normal and wrap/topology semantics. Do not build three worlds or three movement engines.
+>
+> Show the exact same placed route/props or small authored patch on all three surfaces in one direct review artifact. World look polish is secondary.
+
+---
+
+## TRAVEL-MODES-01 · Movement Mode Router
+
+**Executor:** Travel/WorldBuilder Web  
+**Outcome:** one-active-writer Ground/Flight/Drive/Water architecture.
+
+> @GitHub
+> Read KFB Production Architecture v3 → V2, current private Travel main and PR #38. Preserve the human-accepted 400 ms Ground→Flight double-Space behavior as input evidence.
+>
+> Define and prove one atomic Travel Mode Router. A mode declares movement adapter, camera adapter/preset, support type, presentation actor/vehicle, allowed FX and enter/exit payload.
+>
+> First working pair: current Ground + Flight. Prepare Drive and Water slots without implementing fake movement.
+>
+> Exactly one movement writer may update world position in any frame.
+
+---
+
+## TRAVEL-DRIVE-01 · Free Drive off-track
+
+**Executor:** WorldBuilder/Race adapter Web  
+**Outcome:** vehicles can drive through authored world without a race track.
+
+> @GitHub
+> Read KFB Production Architecture v3 → V3, accepted Travel Mode Router, WorldBuilder surface support and current vehicle/Racer owners.
+>
+> Build a **Drive mode adapter** for ordinary terrain/world support. It may reuse vehicle/contact principles and ToolBox vehicle presentation, but it must not import Race route ownership or turn free drive into a hidden race track.
+>
+> Prove enter vehicle → drive across authored local terrain → stop/exit or switch mode → world state preserved.
+
+---
+
+## TRAVEL-BOAT-01 · Recover and adapt TinySkies Boat
+
+**Executor:** Web source recovery first  
+**Outcome:** real Water/Boat travel mode, not a memory-based clone.
+
+> @GitHub @Dropbox
+> Read KFB Production Architecture v3 → V4 and the TinySkies inventory pinned at upstream `2659a5cc987d`.
+>
+> First recover/read the exact upstream `Boat.ts` and `BoatMesh.ts` behavior and pin source/license facts. The inventory already proves a boat and a geometric foam waterline; it does **not** prove the movement model has been ported.
+>
+> Only after source proof, adapt the useful mechanism into a KFB Water mode with one water support truth, boat motion owner and wake/foam presentation. Keep WorldBuilder/Travel mode switching outside the Boat module.
+>
+> Return source proof and one directly playable water-mode candidate; no reconstruction from prose.
+
+---
+
+## TRAVEL-AIR-01 · Plane / Freefall / Parachute path
+
+**Executor:** Web + Blender only for authored assets/animations  
+**Outcome:** future aerial modes are explicit instead of hidden inside Flight.
+
+> @GitHub @Dropbox
+> Read KFB Production Architecture v3 → V5/V6 and TinySkies source inventory.
+>
+> Recover exact Plane/Biplane source behavior before adapting Plane mode. Separately define Freefall/Parachute as later actor-travel states that need real fall/landing truth and source-backed parachute/glider if used.
+>
+> Do not fake skydiving by moving only the camera. Prepare the mode contract first; implement only the first source-proven mode in this job.
+
+---
+
+## VERT-SOURCE-01 · Platformer / Babel source recovery
+
+**Executor:** ChatGPT Web + Dropbox search  
+**Outcome:** pin the good failed-source mechanics without reviving failed compositions.
+
+> @GitHub @Dropbox
+> Read KFB Production Architecture v3 → STRAND B / B0 and current Babel/Hex recovery docs.
+>
+> Locate and pin the exact full S2b Babel export and the exact failed Platformer source that contained useful movement/camera/contact and any remembered auto-jump-line logic.
+>
+> If auto-jump source cannot be found, return `AUTO_JUMP_SOURCE_REQUIRED`; do not recreate it from memory/screenshots.
+>
+> Classify salvageable mechanics separately from rejected island/diorama composition.
+
+---
+
+## BABEL-01 · Measured vertical Hex recipe
+
+**Executor:** ChatGPT Web  
+**Outcome:** reachable small Babel tower grammar.
+
+> @GitHub
+> Read KFB Production Architecture v3 → B1/B2, accepted VERT-SOURCE-01, current Hex packs, `hex-grid.js/TILE_EDGES`, Babel brief and Card Zone v2 direction.
+>
+> Build measured support/connector/jump classes first, then one small 8–14-band Babel recipe. Use KayKit Hex parts and explicit reachability; no cubic placeholder platform and no giant random island.
+>
+> Keep generator recipe/data separate from traversal owner.
+
+---
+
+## VERT-WORLD-01 · Vertical WorldBuilder construction
+
+**Executor:** WorldBuilder Web  
+**Outcome:** towers/vertical paths are placeable world content.
+
+> @GitHub
+> Read KFB Production Architecture v3 → B3/B4 and accepted BABEL-01 / Surface Adapter.
+>
+> Add vertical structure modules to WorldBuilder as references/recipes: Hex, deliberate Voxel, Card bands and authored structural pieces. They sit on any supported surface but own their local vertical support stack.
+>
+> Add Chill recovery and only the source-proven assisted-jump behavior. The Cheese Moon may be a target/landmark; it is not an engine constant.
+
+---
+
+## NPC-LIFE-01 · Living Resident encounter bus
+
+**Executor:** ChatGPT Web / Resident+Town adapter  
+**Outcome:** Residents have lightweight autonomous social life.
+
+> @GitHub
+> Read KFB Production Architecture v3 → STRAND N, current Town Living, ChatterBox reuse reference, Resident Atlas and MotionProfile sources.
+>
+> Build one semantic encounter-beat bus:
+> approach → greet → offer → react → accept/decline → leave.
+>
+> Animation chooses compatible performance independently; ChatterBox chooses text independently; gift/reward chooses offer independently. Host owns movement, relationship and encounter legality.
+>
+> Prove two Residents meeting/meeting player with short behavior, not a dialog tree.
+
+---
+
+## NPC-MEMORY-01 · Memory + ChatterBox adapter
+
+**Executor:** ChatGPT Web  
+**Outcome:** NPC recognition without a second memory system.
+
+> @GitHub
+> Read KFB Production Architecture v3 → N2/N3 and current ChatterBox/Town references.
+>
+> Adapt the best current ChatterBox/bubble donor to a 3D Resident host. Feed it a filtered view of existing Journey/event+context+card records: prior encounter, relevant cards, prior gifts/incidents.
+>
+> An NPC may greet a returner or reference something it actually knows. Do not invent a new global relationship database or long dialog tree.
+
+---
+
+## NPC-GIFT-01 · Gifts / collectible lines
+
+**Executor:** ChatGPT Web  
+**Outcome:** “attractions with legs” become reusable world behavior.
+
+> @GitHub
+> Read KFB Production Architecture v3 → N4 plus current card/collection owners.
+>
+> Build a typed Resident offer/gift hook for source-backed card, skin, item/scene unlock or collectible retort/line. A gift is an explicit reward/event and can be refused/accepted; text does not silently mutate inventory.
+>
+> Prove one Resident walks/approaches, offers, reacts and leaves while the host records the actual accepted/rejected event.
+
+---
+
+## NPC-WORLD-01 · Living Resident Scene in WorldBuilder
+
+**Executor:** WorldBuilder Web  
+**Outcome:** place an inhabited scene, not a static prefab.
+
+> @GitHub
+> Read KFB Production Architecture v3 → N5/N6 and accepted NPC-LIFE/MEMORY/GIFT plus Resident Scene Studio.
+>
+> Package one Living Resident Scene Module referencing actors/props/activity, encounter beats, ChatterBox profile, memory adapter and gift hooks. WorldBuilder must search/place/save it like any other scene module.
+>
+> Keep combat optional: a Combat Encounter adapter may temporarily take fight state, while social life remains the default context.
+
+---
+
+## SPINDLE-01 · Shared Spindle Sky module
+
+**Executor:** ChatGPT Web  
+**Outcome:** reusable environment module, no Combat-only fork.
+
+> @GitHub
+> Read KFB Production Architecture v3 → S1 and Combat PR #6 `SKY_01_SPINDLE_MODULE.md` plus exact `himmel/spindel/skydome-shader` donors.
+>
+> Extract/prove the smallest shared `kfb.environment.spindle-sky/0.1-candidate`: mount, preset/palette, update, probe, dispose. Host retains scene/camera/renderer/clock/fog/gameplay.
+>
+> Prove it in isolation and one consumer shell. No second world renderer.
+
+---
+
+## CURTAIN-02 · Theatre Curtain Core v2 refinement
+
+**Executor:** Web / Game Dev Studio evidence optional  
+**Outcome:** current cloth donor becomes reusable consumer-ready transition.
+
+> @GitHub
+> Read KFB Production Architecture v3 → S2 and Theatre Curtain Core v2 brief / PR #114.
+>
+> Preserve the real v1 cloth runtime. Implement Georg's already-recorded refinement: lower-third tieback/swag, preferably physical cord, and repair strong-gather crease artifacts. Do not replace it with SVG/CSS/video/flat planes.
+>
+> Then prove deterministic cover/covered/reveal API in one neutral host plus one selected KFB consumer adapter. Consumer keeps renderer, camera, pause/loading/audio/router/persistence.
+
+---
+
+## STAGE-INSTANCE-01 · Shared encounter/stage recipe
+
+**Executor:** ChatGPT Web  
+**Outcome:** Combat, Hero Shots and minigames compose existing modules instead of rebuilding stages.
+
+> @GitHub
+> Read KFB Production Architecture v3 → S3 plus accepted Spindle/Curtain/Combat/Resident modules.
+>
+> Define one thin Stage Recipe that references: support/surface, environment preset, actors/Resident scene, choreography/encounter recipe, Curtain transition, semantic FX/SFX maps, camera preset and return anchor.
+>
+> Prove the same recipe grammar with two hosts, e.g. a non-damaging ToolBox Hero Shot and Combat Arena encounter. No renderer/gameplay ownership moves into the recipe.
+
+---
+
+## FX-SEMANTIC-01 · Shared semantic VFX/SFX maps
+
+**Executor:** ChatGPT Web  
+**Outcome:** one event vocabulary, existing effect/audio owners.
+
+> @GitHub
+> Read KFB Production Architecture v3 → S4, existing Combat VFX/SFX modules, KFB VFX review bank and existing Pinball/Travel/Race audio sources.
+>
+> Consolidate a small semantic event map such as melee.swing/hit/block, ranged.fire/hit, actor.land/hit/defeat, vehicle.drift/impact, transition.cover/reveal. Map to existing source-backed recipes/cues where they exist.
+>
+> Do not build a second global FX or audio engine. Hosts emit events; presentation owners render/play them.
