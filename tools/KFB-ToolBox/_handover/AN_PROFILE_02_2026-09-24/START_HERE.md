@@ -126,3 +126,23 @@ Validation:
 - 0 failed source/module requests
 
 Use this plain review for Georg's current human gate. Do not revive the DC wrapper transports.
+
+
+## CURRENT HUMAN STATUS · FAIL
+
+The final plain Three.js review was opened by Georg in the actual Chat visualization host and **FAILED**.
+
+Visible failure:
+`source failed` / `GLB failed: Mannequin_Medium...`.
+
+Additional human UX failure:
+the measurement/data palettes dominate/overlay the review area so strongly that Georg would not be able to judge the animation meaningfully even if the GLB loaded.
+
+Therefore:
+- do not present this slice as human review-ready;
+- do not reuse any of the three review transports from this slice;
+- do not proceed to WorldBuilder Motion consumption from this gate;
+- do not run another repair pass here.
+
+Current next gate:
+**HOLD — new bounded review-surface brief only if Georg explicitly restarts it.**
