@@ -282,3 +282,23 @@ The Stage mirror uses exact tested runtime files except two import-path-only ada
 **RECOVERY EXPORT:** [Pilot 08 failure recovery](landmarks/pilot-08/failure-recovery/START_HERE.md) preserves source, attempts, evidence, proven causes, salvage map, known issue and one next gate.
 
 **NEXT GATE ONLY:** correct the marker trailing literal `\\n`, repository-parse it, mirror that exact marker to `cloudflare-live`, verify the exact public marker revision, then rerun the existing public proof unchanged. No visual/runtime changes.
+
+
+## 2026-09-20 · 17 · Grounding + World Look + Grotesque OSM v2
+
+**USER DIRECTION:** before the Cologne city sprint, fix three foundations: direct terrain grounding, one harmonized world look, and the current OSM Grotesque card-stack impression.
+
+**IMPLEMENTATION:** [Pilot 09](landmarks/pilot-09/) on draft PR #118.
+- Cathedral presentation foundation removed and geometry rebased to terrain Y=0.
+- No round base / no plaza plate.
+- Invisible support field derives from real OSM building footprints, driveable roads and landmark footprint.
+- Pilot-08 sine/cos terrain replaced with the exact Travel/TinySkies simplex recurrence on a staggered triangular local mesh.
+- Grotesque OSM v2 keeps real footprints but uses fewer chunky semantic floor bands, one roof cap, sparse windows and one road-facing door material code per building.
+- Default Cathedral palette is city-harmonic; identity palette remains A/B.
+- Legacy card-stack Grotesque remains A/B evidence.
+
+**TESTED RESULT:** source/static **25/25 PASS**; Chromium/WebGL **15/15 PASS**; zero failed resources and zero browser/page errors. Hürth subset: 90 buildings; legacy 9,459 triangles; v2 4,936 triangles; 453 windows; 90 door codes. Tiny Surface: 10,976 vertices / 21,534 triangles. [Evidence](evidence/2026-09-20-grounding-worldlook-grotesque-v2/summary.json).
+
+**VISUAL REVIEW:** assistant-reviewed screenshot evidence shows v2 reading substantially less like thin shifted cards, Tiny Surface no longer showing the previous broad sine-strip terrain, and the Cathedral meeting terrain without a presentation pedestal. Georg acceptance remains OPEN.
+
+**NEXT SPRINT PREPARED:** [Cologne Dom / Roncalliplatz / Hbf / Rings / Rhine POC](docs/COLOGNE_DOM_CITY_SPRINT_POC_2026-09-20.md). Do not start it before the Pilot-09 human gate.
