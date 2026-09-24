@@ -1,6 +1,6 @@
 # KFB Elastic Grotesque Clay v1 · Hürth 01
 
-Status: **V2 IMPLEMENTED · 21/21 BROWSER PASS · ACCEPTED BENCHMARK PINNED · V2 HUMAN 3D REVIEW PENDING · NO LIVE PROMOTION**
+Status: **TUNE ONCE IMPLEMENTED · 29/29 BROWSER PASS · TUNED HUMAN REVIEW PENDING · NO MERGE**
 Date: 2026-09-23
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**
 Receiving consumers remain Race / Travel / WorldBuilder. No new movement, collision, terrain or asset owner.
@@ -170,3 +170,30 @@ Current browser proof:
 Protected boundaries remain unchanged: OSM/source/collision truth, movement owners, landmark owners and vehicle-deformer ownership.
 
 **Exactly one next gate:** Georg reviews the actual v2 3D HTML/render. If the geometry reads like the accepted benchmark, then create the Blender-MCP / Geometry-Nodes production recipe. KayKit animated/enterable doors remain a separate later source-first gate.
+
+## CURRENT TUNE GATE · 2026-09-24
+
+Georg reviewed the unchanged V2 and returned **TUNE ONCE**.
+
+Final tuned head:
+`75b3c460ac37aac57cb5d9e96260517c5b4cf68d`
+
+Evidence:
+`35945185715` · **29/29 PASS · 3/3 WebGL2 · 0 errors**.
+
+Elastic-only tune:
+- details follow final bowed wall surface;
+- shadow banding addressed at light/shadow setup;
+- real shared-OSM-node asphalt patches close road junction wedges;
+- roofs have a small final-outline overhang.
+
+Unchanged:
+V2 grammar · palette · OSM/collision truth · comparison panels · Clean/Cartoon/Grotesque switchability.
+
+Direct review:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+Exactly one gate:
+**Georg ACCEPT / REJECT.**
+
+LC-01 remains HOLD until ACCEPT.
