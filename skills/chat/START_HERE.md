@@ -38,10 +38,10 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` — existing HUB-CTRL #202 self-service mount handoff
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — architecture/planning recovery entry
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md` — current three-export Flow Design intake classification
-- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current minimal Work handoff; Racer runtime proof only
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current Work-budget handoff; no Work-only execution is presently required
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
-Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime is green while its separate review wrapper is a transport issue; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work execution is limited to the real TRACK_A Rapier runtime proof. See the two recovery handoffs above.
+Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime is green while its separate review wrapper is a transport issue; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
 
 
 ## Start order

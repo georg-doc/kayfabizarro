@@ -1,4 +1,4 @@
-## 2026-09-24 · Recovery triage · Flow Design intake + minimal Work route
+## 2026-09-24 · Recovery triage · Flow Design intake + Work budget protection
 
 - recovered current Audio, ToolBox, World Zone and Racer state after multiple chat interruptions;
 - confirmed AUDIO-CAL-01 is human accepted and MUSIC-PERF-01 is technically public-verified / human-review pending; neither needs Work;
@@ -11,7 +11,7 @@
 - Motion Library PR #209 now resolves the runtime-clip dependency named inside the Resident exports;
 - prepared `FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md`;
 - prepared minimal `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`;
-- current WSA/Work execution scope is exactly one task: real TRACK_A Rapier runtime/contact proof in the existing private Race owner;
+- current WSA/Work decision is **no Work execution**; real TRACK_A Rapier runtime/contact proof stays with the documented `WEB_DEEP` Race owner;
 - architecture catalog remains **13 strands / 81 jobs / 38 READY / 43 HOLD**;
 - no auto-merge or Live promotion.
 

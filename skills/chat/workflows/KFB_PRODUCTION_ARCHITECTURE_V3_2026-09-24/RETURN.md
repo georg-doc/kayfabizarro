@@ -15,11 +15,11 @@ Recovered current product truth:
 - **Flow World Shell:** classified as good presentation input. Its next gate is `WB-ZONE-SEAM-01`, not another OSM/compiler job.
 - **Flow Resident Card:** candidate thin scene. The export records Georg's source resolution “FrizzleBobrick” = current FrizzleBob Driver Graft, superseding the earlier SOURCE_REQUIRED note. Human face/mouth review remains the gate.
 - **Flow Resident Band / Atlas S8:** useful pose/edit/performance input, but `kfb.resident-band-module/1` is not promoted as a production owner. Reuse accepted content through existing Resident Scene / `kfb.resident-performance.v1`.
-- **Racer:** RKIT-06 / private Race PR #39 is the current geometry package. The only current task intentionally routed to WSA/Work is the real TRACK_A Rapier runtime/contact proof.
+- **Racer:** RKIT-06 / private Race PR #39 is the current geometry package. The real TRACK_A Rapier runtime/contact proof is a `WEB_DEEP` Race-owner task. No current focus task requires Work.
 
 New recovery docs:
 - `FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md`
-- `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`
+- `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current decision: protect Work budget; no Work-only execution.
 
 No Inbox candidate was promoted merely by upload location. No merge or Live promotion is authorized.
 

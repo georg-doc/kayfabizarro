@@ -26,7 +26,7 @@ For the full self-service production route, read:
 - `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` — low-cost mount into existing HUB-CTRL #202; no Work review loop.
 - `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — fresh-chat recovery for this architecture/planning role.
 - `FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md` — pre-sorted current Flow Design intake; three exports classified without promoting Inbox copies to owners.
-- `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — minimal Work packet; current Work execution is Racer TRACK_A Rapier proof only.
+- `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — minimal WSA/Work routing note; currently no Work-only execution is justified.
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
 
@@ -38,9 +38,9 @@ Current source recovery changes the practical queue:
 - **Residents:** the Card Speculation export remains a thin Resident Scene candidate pending Georg's face/mouth review. The Band/Atlas export is useful input, but its export-local band contract must not become a second production runtime; accepted content maps onto the existing Resident Scene / `kfb.resident-performance.v1` owners.
 - **ToolBox:** coherent ToolBox + real Motion Library consumer remain green in direct owner/browser tests. The separate AN-PROFILE review wrapper is a transport problem, not a Work escalation.
 - **Audio:** AUDIO-CAL-01 is human accepted. MUSIC-PERF-01 is public-verified and waits only for Georg's review.
-- **Racer:** current top RKIT geometry is PR #39. The one current Work-worthy task is the real TRACK_A Rapier runtime/contact proof in the existing Race host.
+- **Racer:** current top RKIT geometry is PR #39. The real TRACK_A Rapier runtime/contact proof is routed to `WEB_DEEP` in the existing Race host; Work remains unnecessary unless that executor proves a capability gap.
 
-Read `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` before assigning Work.
+Read `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` before assigning Work; its current decision is **do not start Work**.
 
 ## Purpose
 
