@@ -10,7 +10,7 @@ Recovered current product truth:
 
 - **Audio baseline:** human accepted. No Work follow-up.
 - **Music Performance:** public-verified at the existing Stage route; human review pending. No Work follow-up.
-- **ToolBox:** coherent owner runtime and 33-clip Animation Studio consumer pass their direct static/browser suites. The separate Chat review transport is the current failure surface and is not a product-runtime failure.
+- **ToolBox:** coherent owner runtime and 33-clip Animation Studio consumer are green, and the repaired plain review transport now passes too. Current owner evidence at head `ce3181bbf9114b7f00086368130fe610fd5810c7`: coherent browser 20/20, Animation Studio browser 25/25, plain review browser 13/13; run `36055391088` SUCCESS.
 - **World Zone:** the original timeout branch was correctly frozen, then G0→G3 recovered it. The canonical Cologne World Zone package now has deterministic compile/package proof plus real-browser load/place/reload proof.
 - **Flow World Shell:** classified as good presentation input. Its next gate is `WB-ZONE-SEAM-01`, not another OSM/compiler job.
 - **Flow Resident Card:** candidate thin scene. The export records Georg's source resolution “FrizzleBobrick” = current FrizzleBob Driver Graft, superseding the earlier SOURCE_REQUIRED note. Human face/mouth review remains the gate.

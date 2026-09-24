@@ -36,7 +36,7 @@ Current source recovery changes the practical queue:
 
 - **WorldBuilder:** Cologne World Zone bake is technically complete through real-browser load/place/reload. The Flow Design Cologne shell is good candidate presentation input. Next integration is the small `WB-ZONE-SEAM-01` adapter; no Work session is needed for it.
 - **Residents:** the Card Speculation export remains a thin Resident Scene candidate pending Georg's face/mouth review. The Band/Atlas export is useful input, but its export-local band contract must not become a second production runtime; accepted content maps onto the existing Resident Scene / `kfb.resident-performance.v1` owners.
-- **ToolBox:** coherent ToolBox + real Motion Library consumer remain green in direct owner/browser tests. The separate AN-PROFILE review wrapper is a transport problem, not a Work escalation.
+- **ToolBox:** coherent ToolBox + real Motion Library consumer are green, and the repaired plain review transport now passes as well (20/20 coherent + 25/25 Animation Studio + 13/13 plain review in run `36055391088`). No Work escalation.
 - **Audio:** AUDIO-CAL-01 is human accepted. MUSIC-PERF-01 is public-verified and waits only for Georg's review.
 - **Racer:** current top RKIT geometry is PR #39. The real TRACK_A Rapier runtime/contact proof is routed to `WEB_DEEP` in the existing Race host; Work remains unnecessary unless that executor proves a capability gap.
 

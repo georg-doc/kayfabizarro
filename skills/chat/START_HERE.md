@@ -41,7 +41,7 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current Work-budget handoff; no Work-only execution is presently required
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
-Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime is green while its separate review wrapper is a transport issue; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
+Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime and repaired plain review are green; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
 
 
 ## Start order

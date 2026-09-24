@@ -2,7 +2,7 @@
 
 - recovered current Audio, ToolBox, World Zone and Racer state after multiple chat interruptions;
 - confirmed AUDIO-CAL-01 is human accepted and MUSIC-PERF-01 is technically public-verified / human-review pending; neither needs Work;
-- confirmed current ToolBox coherent runtime + Motion Library consumer remain green in direct owner/browser tests; only the separate AN-PROFILE review transport is failing;
+- confirmed current ToolBox coherent runtime + Motion Library consumer remain green; after the final review-page Promise fix, the plain review transport also passes (20/20 coherent · 25/25 Animation Studio · 13/13 review; run `36055391088` SUCCESS);
 - recovered WORLD-ZONE-BAKE-01 through G0→G3: deterministic source/compile/package plus real-browser load/place/reload are proven; the Flow Cologne shell can now consume the bake instead of waiting for it;
 - classified Georg's three newest Flow Design uploads as candidate inputs, not SSOT promotion:
   - Cologne World Shell → keep, next `WB-ZONE-SEAM-01` in Web/GitHub;

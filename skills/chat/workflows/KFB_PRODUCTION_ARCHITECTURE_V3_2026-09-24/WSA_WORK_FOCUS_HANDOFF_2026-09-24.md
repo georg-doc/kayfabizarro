@@ -80,7 +80,15 @@ Next:
 
 Coherent ToolBox + the real 33-clip Motion Library consumer pass their direct owner/browser tests.
 
-A separate Chat review transport is being repaired by the ToolBox owner. That transport issue is not a Work escalation and must not trigger a broad ToolBox re-audit.
+The previously failing plain review transport is now also green at ToolBox head `ce3181bbf9114b7f00086368130fe610fd5810c7`:
+- coherent browser flow: **20/20 PASS**;
+- Animation Studio browser: **25/25 PASS**;
+- plain review browser: **13/13 PASS**;
+- GitHub Actions run `36055391088`: **SUCCESS**.
+
+The final fix closed a malformed `loadGlb()` Promise expression in the review page. This confirms the interruption was review-transport code, not a ToolBox runtime/owner failure.
+
+No Work task.
 
 ### Audio
 
