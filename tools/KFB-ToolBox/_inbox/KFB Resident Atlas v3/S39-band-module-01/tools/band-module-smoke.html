@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>band-module smoke</title>
+<script type="importmap">
+{"imports":{
+ "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
+ "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
+ "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js",
+ "three/addons/utils/SkeletonUtils.js":"https://unpkg.com/three@0.184.0/examples/jsm/utils/SkeletonUtils.js"
+}}
+</script>
+<style>html,body{margin:0;height:100%;background:#111}canvas{width:100%;height:100%;display:block}</style>
+</head><body><canvas id="c"></canvas>
+<script type="module">
+import { createBandReview } from '../lib/band-review.js';
+const log = (k, o) => { const s = JSON.stringify(o); for (let i = 0; i < s.length; i += 470) console.log(k + (i / 470), s.slice(i, i + 470)); };
+try {
+  const R = await createBandReview({ canvas: document.getElementById('c'), defUrl: '../data/resident-band-module-01.json' });
+  const s = R.snapshot();
+  log('ACT', s.actors);
+  log('FP', s.fp);
+  log('SUP', s.support);
+  log('STRIKE', s.drum.strike);
+  log('LIVE', s.drum.live);
+  const sc = R.scan();
+  log('ROWS', sc.rows.map((r) => [r.f, r.l.gap, r.l.lowest, r.l.rLowest, r.r.gap, r.r.lowest, r.r.rLowest]));
+  R.setDrumAction('orb.drum.v0');
+  log('V0STRIKE', R.snapshot().drum.strike);
+  log('V0ROWS', R.scan().rows.filter((r, i) => i % 2 === 0).map((r) => [r.f, r.l.gap, r.l.lowest, r.r.gap, r.r.lowest]));
+  R.setDrumAction('orb.drum.v5c');
+} catch (e) { console.error('SMOKE', e.message, e.stack); }
+</script></body></html>
