@@ -1,3 +1,14 @@
+## 2026-09-24 · WORLD-ZONE-BAKE-01 · Cologne baked World Zone
+
+- First reusable cached OSM World Zone compiled from existing `dom-zentrum-v0`; no runtime/editor Overpass.
+- Canonical candidate package: `tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/`.
+- **14/14 source-lock PASS · 51/51 deterministic package PASS · 22/22 Chromium Source→Baked→WorldBuilder→Reload PASS**.
+- Reload network is exactly manifest + baked GLB; no normalized/raw source recompute/fetch.
+- WorldBuilder persists Zone ref + transform only; landmarks remain separate authored/searchable modules.
+- Initial timeout/CI branch was frozen under the two-repair rule; full failure recovery is retained.
+- Cloudflare/Stage/Live not used; human acceptance open; Barcelona remains the second-city portability proof.
+- Current Return: `tools/osm-city-lab/docs/WORLD_ZONE_REVIEW_G3_RETURN_2026-09-24.md`.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY

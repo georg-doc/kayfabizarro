@@ -1,5 +1,34 @@
 # Changelog · additive
 
+## 2026-09-24 · WORLD-ZONE-BAKE-01 · Cologne reusable baked zone
+
+### IMPLEMENTATION
+- Added deterministic World Zone compiler under `src/world-zone/` plus `scripts/build-world-zone.mjs`.
+- Baked `dom-zentrum-v0` once into versioned package `world-zones/cologne-dom-zentrum-v0/2026-09-24.1/`.
+- Package carries source spec/query/provenance, normalized semantics, roads, building semantics, anchors, `visual.glb`, undeformed support/collision, compiler/look/deformer revisions, manifest, tests and checksums.
+- Added WorldBuilder consumer fixture that stores only `kind: world-zone`, manifest ref and transform.
+- Landmarks remain separate modules; raw Overpass source is excluded from the runtime package.
+
+### TESTED RESULT
+- G0 source/cache verifier: **14/14 PASS** · run `36028104923`.
+- G1 deterministic compiler/package contract: **51/51 PASS** · run `36028566910`.
+- G2 canonical package: **51/51 PASS** · run `36029199406` · package commit `1888824ef0f28670f55e21301c18cf3254d32370`.
+- G3 Chromium load/place/reload: **22/22 PASS**, 0 page/console errors, 0 HTTP errors · run `36029946915`.
+- G3 reload requested exactly `MANIFEST.json` + `visual.glb`; no normalized/raw/Overpass fetch.
+- Browser artifact `10820974194`, digest `sha256:52a97f4629b86ea2a7e18672ad2bb545524814794ccfa69782605126326655b5`, contains four screenshots + report.
+
+### RECOVERY
+The initial CI branch was frozen after two repair passes on its source-lock gate. Full recovery is preserved in `docs/WORLD_ZONE_BAKE_01_FAILURE_RECOVERY_2026-09-24.md`; the successful G0→G3 continuation reused the salvaged compiler rather than replaying or hiding that failure.
+
+### PUBLIC / HUMAN
+- Cloudflare: not used.
+- Stage/Live: not published/promoted.
+- Georg acceptance: open.
+- Barcelona: deferred second-city portability proof.
+
+---
+
+
 ## 2026-09-20 · Dom / Zentrum reusable OSM dataset
 
 ### DATA

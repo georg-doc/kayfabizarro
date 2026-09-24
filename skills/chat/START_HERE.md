@@ -888,3 +888,18 @@ Cloudflare remains deferred.
 SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
 
 This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
+
+
+## 2026-09-24 · WORLD-ZONE-BAKE-01 · Cologne reusable World Zone
+
+The first cached reusable OSM World Zone is now technically proven on the current candidate branch.
+
+Owner remains **KFB OSM City Lab → KFB ToolBox / WorldBuilder consumer seam**. The package is `tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/`. It preserves OSM geographic/semantic truth, bakes the current `kfb-city-v0/cartoon` visual mesh once, keeps support/collision undeformed and lets WorldBuilder persist only a Zone manifest ref + transform.
+
+Evidence: **14/14 source-lock · 51/51 package/determinism · 22/22 Chromium load/place/reload**, with reload fetching only `MANIFEST.json` + `visual.glb` and zero Overpass calls.
+
+Current Return:
+`tools/osm-city-lab/docs/WORLD_ZONE_REVIEW_G3_RETURN_2026-09-24.md`.
+
+No public Stage/Live or Georg acceptance is claimed. Barcelona remains the second-city portability proof after the Cologne human gate.
+
