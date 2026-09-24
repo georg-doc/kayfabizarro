@@ -1,0 +1,21 @@
+name: AN-PROFILE-01
+
+on:
+  push:
+    branches:
+      - chatgpt-web/an-profile-01-motion-profile-enrichment-2026-09-24
+  pull_request:
+    paths:
+      - 'media/3D_Assets/Animations/KFB_Motion_Library/**'
+      - '.github/workflows/an-profile-01.yml'
+
+jobs:
+  profile-catalogue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate measured motion profile catalogue
+        run: node "media/3D_Assets/Animations/KFB_Motion_Library/source/test_an_profile_01.mjs"

@@ -52,7 +52,10 @@ Georg: before the animation work, every character gets its default eye rig.
 
 ## 3 · Part A · Blender chat (local, Blender MCP)
 
-Reuse the already working retarget path (ORB guitar/dance work, PRs #192/#195; Rig_Medium has 23 bones without `neck`). Do not invent a new retarget.
+WSA check 24.09: there is **no proven generic retarget for all 33 clips**. #192 is authored Rig_Medium juggling (no retarget); #195 proves exact transfer of KayKit-skeleton Mixamo clips plus one accepted Orc Raider guitar fit. So:
+
+0. **Inventory every FBX skeleton first** (Mixamo skeleton vs KayKit-compatible). Exact-transfer the compatible ones (the #195 method); retarget only the measured exceptions.
+0b. **Prove one clip per rig before the batch** (e.g. `Climbing To Top` on Rig_Medium and on Rig_Large) and stop for Georg's look; only then run all 33.
 
 Per FBX:
 1. import, measure (frames, fps, duration, loop yes/no, root motion yes/no, in-place or travelling);
@@ -85,6 +88,8 @@ Add:
 
 Done when Georg can open the lab, find "Climbing To Top", watch it on FrizzleBob and on the Orc Brute, and copy its id.
 
+Delivery (Claude Design cannot push): at the end of the slice, unasked, a full codebase export + additive `CHANGELOG.md` + `RETURN.md` (file tree first) + `SOURCE.json`. Georg downloads; Coworker uploads to GitHub and publishes the review page.
+
 ## 5 · Order
 
 1. Legacy completion slice (§2b), then Georg's one review; Medium/Large eye defaults already exist. Eyes need no Blender batch.
@@ -95,5 +100,22 @@ Done when Georg can open the lab, find "Climbing To Top", watch it on FrizzleBob
 ## 6 · Start text for the Blender MCP chat (Part A only)
 
 ```
-Read georg-doc/kayfabizarro main: tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md. Do Part A (§3) only: the 33 Mixamo FBX in Dropbox BLENDER MCP/_inbox → measure, retarget to Rig_Medium and Rig_Large with the retarget path that already worked for the Orc band (PRs #192/#195), export the two KFB_Motion_Library GLBs + catalogue + contact sheets + NOTICE.md, commit to media/3D_Assets/Animations/KFB_Motion_Library/. Raw FBX never go to GitHub. Eyes are not your job (runtime EyeRig). Report per clip one line: name, rigs, loop, in-place/travel. Then stop.
+Read georg-doc/kayfabizarro main: tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md. Do Part A (§3) only: the 33 Mixamo FBX in Dropbox BLENDER MCP/_inbox → measure, inventory each FBX skeleton, exact-transfer what is KayKit-compatible (#195 method), retarget only measured exceptions; prove Climbing To Top on both rigs first and stop for Georg's look before the batch, export the two KFB_Motion_Library GLBs + catalogue + contact sheets + NOTICE.md, commit to media/3D_Assets/Animations/KFB_Motion_Library/. Raw FBX never go to GitHub. Eyes are not your job (runtime EyeRig). Report per clip one line: name, rigs, loop, in-place/travel. Then stop.
 ```
+
+
+## 2026-09-24 · AN-PROFILE-01 companion metadata
+
+AN-PROFILE-01 is the additive measured metadata layer for this intake. It does not replace the `kfb.motion-catalog.v1` source catalogue or either animation-library GLB.
+
+Shared files:
+- `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.profile-catalog.v1.json`;
+- `media/3D_Assets/Animations/KFB_Motion_Library/motion-profile-reader.v1.js`;
+- `media/3D_Assets/Animations/KFB_Motion_Library/AN_PROFILE_01_CONSUMER_CONTRACT.md`.
+
+ToolBox Animation Studio / Animation Lab v2 and WorldBuilder consume the **same** companion layer. ToolBox may expose measured contacts/planted intervals and reference-only KayKit profile evidence; WorldBuilder may consume root/travel, cycle-average measured-derived reference speed and explicit action markers such as `endsOnTop`.
+
+Hard rule: unknown remains unknown. Rig_Large foot contacts, hand contacts, per-clip acceptable rate windows and unmeasured contact/release/impact/recovery markers are not synthesized. Existing ToolBox mixer ownership and WorldBuilder movement/physics/gameplay ownership remain unchanged.
+
+Slice handoff:
+`tools/KFB-ToolBox/_handover/AN_PROFILE_01_2026-09-24/START_HERE.md`

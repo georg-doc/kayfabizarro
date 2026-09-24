@@ -115,3 +115,19 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-24 · AN-PROFILE-01 · measured motion profile enrichment
+
+- Added one shared companion profile catalogue for the 33-clip KFB Motion Library from PR #197; no animation GLB was duplicated or repacked.
+- Source evidence is pinned to PR #107 KCL locomotion measurements, PR #127 ToolBox Motion Lab and PR #197 Motion Library 01.
+- Preserved measured Rig_Medium foot-contact windows and derived planted phase/seconds intervals from those measurements only.
+- Added measured-derived cycle-average travel reference speed from `travelMetersPerCycle / durationSec` where travel facts exist.
+- Kept Rig_Large foot contacts, hand contacts, per-clip acceptable playback-rate windows and unmeasured contact/release/impact/recovery markers explicitly unknown.
+- Older KayKit stock playback/handoff values remain `REFERENCE_ONLY`; they are not silently inherited by the retargeted 33-clip library.
+- Added a read-only reader contract shared by ToolBox Animation Studio / Animation Lab v2 and WorldBuilder. It adds no mixer, movement, physics or gameplay owner.
+- Exact-branch deterministic validation: **1603/1603 PASS · 0 FAIL**.
+- Draft PR: **#206**, stacked on Motion Library PR #197.
+- GitHub Actions run `36030451044` started and was `in_progress` at this checkpoint; no CI_PASS claim yet.
+- Named Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/motion-profile-catalogue/` · **HOLD / NOT PUBLISHED / NOT PUBLIC_VERIFIED**. No Cloudflare wait in this slice.
+- Slice handoff: `_handover/AN_PROFILE_01_2026-09-24/START_HERE.md`.

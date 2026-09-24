@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-19
+Date: 2026-09-24
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -59,6 +59,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
+- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED on the fixed Cloudflare Stage; Georg human listening is the one next gate; Travel/Race/Combat/Boxel remain runtime owners
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
@@ -87,6 +88,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - FrankenStein Studio v16
 - Travel Globe
 - Combat Arena
+- KFB Audio & Soundscape Baseline — `CURRENT_REFERENCE`; AUDIO-CAL-01 calibration + recovery, not a replacement runtime owner
 - KFB Town — current living concept/reference, not a runtime project
 - Wissens-Pilli / DocCheck Interactive Microlearning — `UNVERIFIED` intake until implementation SSOT/runtime is explicitly pinned
 - **SimBlood / DocCheck — `CURRENT_PROJECT_SSOT` at `georg-doc/doccheck/sim-blood/`; recovery in `RECOVERY.md`, current WIPs in `WIP_STATUS.json`**
@@ -879,3 +881,31 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-24 · SimBlood SVG morphology parallel lane
+
+SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
+
+This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
+
+
+## 2026-09-24 · AN-PROFILE-01 · Motion Profile Enrichment
+
+Current additive motion-metadata slice:
+- owner: **KFB ToolBox / shared motion metadata**;
+- Draft PR **#206** on `chatgpt-web/an-profile-01-motion-profile-enrichment-2026-09-24`, stacked on Motion Library PR #197;
+- 33/33 current Motion Library clips have one companion `kfb.motion-profile-catalog/1.0` entry;
+- source evidence: PR #107 KCL creator/locomotion research + PR #127 ToolBox Motion Lab + PR #197 Motion Library 01;
+- measured Rig_Medium contact windows are retained; planted intervals and travel reference speeds are only transparent derivations of measured catalogue facts;
+- Rig_Large foot contacts, hand contacts, per-clip acceptable rate windows and unmeasured contact/release/impact/recovery markers remain unknown;
+- older KayKit stock rate/handoff profiles remain `REFERENCE_ONLY`, not defaults for the new library;
+- one read-only profile reader is shared by ToolBox Animation Studio / Animation Lab v2 and WorldBuilder; no second mixer/runtime/movement owner was added;
+- deterministic branch validation: **1603/1603 PASS**;
+- GitHub Actions run `36030451044` was `in_progress` at the initial handoff checkpoint; check exact current head before claiming CI_PASS;
+- named future Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/motion-profile-catalogue/` · **NOT PUBLISHED / NOT PUBLIC_VERIFIED**; do not wait on Cloudflare for this metadata slice.
+
+Entry:
+`tools/KFB-ToolBox/_handover/AN_PROFILE_01_2026-09-24/START_HERE.md`
+
+Exactly one next gate after CI: wire the shared reader into the current ToolBox Animation Studio / Animation Lab v2 catalogue browser first; WorldBuilder consumes the same layer afterward without changing movement/physics ownership.

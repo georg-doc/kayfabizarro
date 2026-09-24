@@ -1,0 +1,88 @@
+{
+  "schema": "kfb.slice-source/1.0",
+  "slice": "AN-PROFILE-01",
+  "date": "2026-09-24",
+  "owner": "KFB ToolBox / shared motion metadata",
+  "outcome": "Reusable measured motion profile metadata for ToolBox Animation Studio / Animation Lab v2 and WorldBuilder",
+  "branch": "chatgpt-web/an-profile-01-motion-profile-enrichment-2026-09-24",
+  "parent": {
+    "pr": 197,
+    "branch": "claude/motion-library-01-2026-09-24",
+    "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+    "role": "current 33-clip Motion Library source owner"
+  },
+  "observedMain": {
+    "head": "c19e291e78463a095e1b41802d37e4ec236cd897",
+    "observedAt": "2026-09-24T18:39+02:00",
+    "note": "Main was read before writes. This slice is intentionally stacked on PR #197 to avoid duplicating its binary motion libraries."
+  },
+  "evidence": [
+    {
+      "pr": 107,
+      "branch": "chatgpt-web/kaykit-creator-learning-2026-09-19",
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "file": "tools/game-dev-studio/research/kcl-m1-locomotion-sync/MEASURED_PROFILE_CANDIDATE.json",
+      "blobSha": "943b0cb91965d05421a826f8938aa2ada7690df9",
+      "role": "measured KayKit stock contacts, planted intervals and reference-speed candidates"
+    },
+    {
+      "pr": 127,
+      "branch": "chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20",
+      "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6",
+      "files": [
+        {
+          "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/MEASURED_ACTOR_PROFILES.json",
+          "blobSha": "f7a0675e1ed175a5895a15b7320c1fd5258a94e9"
+        },
+        {
+          "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/PROFILE_PROPOSALS.json",
+          "blobSha": "6b9253119139754b1e07002f9ada05194f9f46e3"
+        }
+      ],
+      "role": "ToolBox rig-family playback/handoff candidates and actor-specific measured review"
+    },
+    {
+      "pr": 197,
+      "branch": "claude/motion-library-01-2026-09-24",
+      "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+      "files": [
+        {
+          "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+          "blobSha": "694d797702d126e71a724eab137197bf2a8e6914"
+        },
+        {
+          "path": "media/3D_Assets/Animations/KFB_Motion_Library/RETURN.md",
+          "blobSha": "f4493dddd00071908f72a09e7e56d439156594a0"
+        }
+      ],
+      "role": "33 retargeted Rig_Medium/Rig_Large clips and measured duration/root-travel/Rig_Medium foot-window facts"
+    }
+  ],
+  "dropboxRawArchive": {
+    "mutation": false,
+    "checked": true,
+    "checkedFile": "Climbing To Top.fbx",
+    "path": "/CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D Assets/BLENDER MCP/_inbox/Climbing To Top.fbx",
+    "rule": "Raw FBX remain private in Dropbox and are not copied into GitHub."
+  },
+  "outputs": [
+    "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.profile-catalog.v1.json",
+    "media/3D_Assets/Animations/KFB_Motion_Library/motion-profile-reader.v1.js",
+    "media/3D_Assets/Animations/KFB_Motion_Library/AN_PROFILE_01_CONSUMER_CONTRACT.md",
+    "media/3D_Assets/Animations/KFB_Motion_Library/source/test_an_profile_01.mjs",
+    ".github/workflows/an-profile-01.yml"
+  ],
+  "stage": {
+    "status": "HOLD_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/motion-profile-catalogue/",
+    "note": "Named future Stage route only. Georg explicitly requested no Cloudflare wait; no public AN-PROFILE-01 result is claimed."
+  },
+  "pr": 206,
+  "currentHandoffCheckpoint": "d38da98ef7217c097201a21477f777dc24e52138",
+  "validation": {
+    "deterministicExactBranch": "1603/1603 PASS",
+    "hubInlineScriptSyntax": "1/1 PASS",
+    "githubActionsRunAtRouterCheckpoint": 36030451044,
+    "githubActionsStatusAtRouterCheckpoint": "in_progress"
+  }
+}
