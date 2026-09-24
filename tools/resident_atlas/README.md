@@ -55,3 +55,11 @@ A resident is posed **before** it is grounded. Ground contact is a property of t
 Scene selection lives in `scenes/index.json`. Each scene is declarative and may bind a resident donor, an exact animation clip and an explicit ground contract while keeping habitat/prop placement scene-local.
 
 Do not copy the whole S6 resident implementation into this viewer. Reuse the minimum proven contract and keep the source path/revision visible.
+
+## NPC-LIFE-01 · living encounter seam
+
+Draft PR #210 adds a thin social-life consumer seam under `tools/resident_atlas/life/`.
+
+The semantic vocabulary is `approach → greet → offer → react → accept/decline → leave`. The receiving host retains movement, legality, participant busy state and relationship context. Motion, ChatterBox text and offer resolution are separate consumers; the proof does not create a second Resident runtime, dialogue tree, memory database or reward database.
+
+Contract test: **21/21 PASS**. Review route after verified publication: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident/npc-life-01/`.
