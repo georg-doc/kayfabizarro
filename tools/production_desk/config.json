@@ -236,21 +236,22 @@
     },
     {
       "id": "racer",
-      "bucket": "WAITING",
-      "title": "Racer: Strecke, Bande und Stützen",
-      "what": "Letzte Runde: nachbessern. Strecke, Bande und Stützen sollen erst sauber aufgebaut werden, bevor das Auto wieder dran ist.",
-      "provider": "Web-Chat (Racer)",
+      "bucket": "RUNNING",
+      "title": "Racer / RKIT-06 · Track-Baukasten + OSM Trankgasse",
+      "what": "Blender MCP hat den Racer-Baukasten bis RKIT-06 ausgebaut: TRACK_A_STUNT_8 mit Hero-/Basis-Sprung, Pit Lane, Y-Weiche, Flap-Return/Tunnel sowie Trankgasse auf der realen OSM-Linie. Geometrie ist Review-Candidate; Race/Rapier bleibt Physik-/Kontakt-Owner.",
+      "provider": "Blender MCP / RKIT",
       "yourAction": "",
-      "waitingFor": "Wartet auf ein fertig vorbereitetes Paket „Racer-Anatomie“.",
+      "waitingFor": "Nächster technischer Gate: TRACK_A im echten Race/Rapier-Lauf testen; danach Track-Geometrie nur aus gemessenen Fahrdaten nachziehen und als WorldBuilder-Modul konsumieren.",
       "questions": [],
       "repo": "georg-doc/KFB-Stunt-Car-Race",
-      "pr": 33,
+      "pr": 39,
       "external": true,
       "lastKnown": {
-        "head": "71e7051b2eea1ad731912b634f44ce5ba0218736",
-        "recordedAt": "2026-09-23T20:05:00Z",
-        "note": "Aus CURRENT_STATE.md des Handoff-Zweigs übernommen."
-      }
+        "head": "53219c9b7ee3d1abe0ef1b0e5364863b42014ea5",
+        "recordedAt": "2026-09-24T16:06:14Z",
+        "note": "Top des gestapelten RKIT-Stacks #34→#39. RKIT-06 enthält TRACK_A_STUNT_8, Pit Lane, SWITCH_Y, Flap-Return/Tunnel und Trankgasse OSM. Externer Repo-Stand weiterhin LAST_KNOWN bis Status-Mirror/gezielter Bridge-Write existiert."
+      },
+      "branch": "chat/rkit-06-trankgasse-2026-09-24"
     },
     {
       "id": "world-god",
