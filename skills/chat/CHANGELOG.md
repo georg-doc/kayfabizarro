@@ -1,3 +1,17 @@
+## 2026-09-24 · Production Architecture v3 · gameplay/world expansion
+
+- v3 now covers **11 primary production strands / 45 copy-ready jobs** with a strand-first collapsed Hub model.
+- Added Combat/Choreography: actor-family capability matrix, real melee/ranged contact, two-fighter Duel Studio, autonomous NPC Match Director, Card Tower encounters and Open-World Combat adapter while Combat Arena remains damage/reward owner.
+- Added Cube Pets/Actor Identity: canonical 24-pet stack retained; CubePet Bunny, legacy Arena FrizzleBob and Driver Graft FrizzleBob are explicit separate identities.
+- Added Travel Modes/World Surfaces: FLAT/SPHERE/TORUS topology is independent from Ground/Flight/Drive/Boat/Air/Freefall mode; one active movement writer.
+- TinySkies Boat/Plane are retained as source-backed upstream donors; they are not falsely claimed as already ported.
+- Added Vertical/Babel/Card Tower route; remembered auto-jump Platformer source stays `SOURCE_REQUIRED` until recovered.
+- Added Town/ChatterBox/NPC Life with encounter beats, filtered existing memory, gifts and placeable Living Resident Scenes.
+- Added Shared Stage/Transitions: Spindle, Theatre Curtain, Stage Recipe and semantic VFX/SFX maps.
+- Adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames are routed as modules instead of new global owners.
+- Current architecture/source validation: **52/52 PASS**.
+- Public Hub/HUB-CTRL, product runtimes, Cloudflare Live and merge state remain unchanged.
+
 ## 2026-09-24 · Production Architecture v3 complete strands
 
 - v3 now exposes five complete production strands with 19 copy-ready jobs instead of only the next micro-slices.
