@@ -28,16 +28,7 @@ try{
   page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text())});
   page.on('response',r=>{if(r.status()>=400)report.httpErrors.push({url:r.url(),status:r.status()})});
 
-  const stageResp=await openUntil(page,stageUrl,
-    ()=>page.locator('[data-stage-id="music-perf-01"]').count().then(n=>n===1),
-    'Stage card');
-  check('stage HTTP 2xx',stageResp.status>=200&&stageResp.status<300,stageResp);
-  const link=page.locator('[data-stage-id="music-perf-01"] a.primary');
-  check('stage card visible',await link.isVisible());
-  const href=await link.getAttribute('href');
-  check('stage direct link',href==='./toolbox/music-performance/'||href===perfUrl,href);
-  await page.screenshot({path:path.join(out,'01-stage-card.png'),fullPage:true});
-
+  // Direct candidate first: do not let a stale Hub index hide whether MUSIC-PERF itself is public.
   const perfResp=await openUntil(page,perfUrl,
     ()=>page.evaluate(()=>document.documentElement.dataset.kfbBuild==='MUSIC-PERF-01-v1'),
     'MUSIC-PERF build');
@@ -65,18 +56,35 @@ try{
   check('performance drummer HOLD hidden',s.performers.drummer===false,s.performers);
 
   await page.evaluate(async()=>{await window.__MUSIC_PERF_01__.setBeat(4);});
-  const before=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  const playBefore=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
   await page.evaluate(()=>window.__MUSIC_PERF_01__.play());
   await page.waitForTimeout(900);
-  const after=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
-  check('public song advances',after.audioTime>before.audioTime+.45,{before:before.audioTime,after:after.audioTime});
-  check('public beat clock advances',after.beatPos>before.beatPos+.7,{before:before.beatPos,after:after.beatPos});
+  const playAfter=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  check('public song advances',playAfter.audioTime>playBefore.audioTime+.45,{before:playBefore.audioTime,after:playAfter.audioTime});
+  check('public beat clock advances',playAfter.beatPos>playBefore.beatPos+.7,{before:playBefore.beatPos,after:playAfter.beatPos});
   await page.evaluate(()=>window.__MUSIC_PERF_01__.pause());
-  await page.screenshot({path:path.join(out,'02-public-performance.png'),fullPage:true});
+  await page.screenshot({path:path.join(out,'01-public-performance.png'),fullPage:true});
+
+  // Hub/Stage navigation is a separate publication fact.
+  let stageResp=null,stageCard=false;
+  for(let i=0;i<8;i++){
+    const resp=await page.goto(stageUrl,{waitUntil:'networkidle',timeout:120000});
+    stageResp={status:resp?.status()||0,url:page.url()};
+    stageCard=(resp&&resp.ok()&&(await page.locator('[data-stage-id="music-perf-01"]').count())===1);
+    if(stageCard)break;
+    await page.waitForTimeout(5000);
+  }
+  check('stage HTTP 2xx',stageResp?.status>=200&&stageResp?.status<300,stageResp);
+  check('stage card propagated',stageCard,stageResp);
+  const link=page.locator('[data-stage-id="music-perf-01"] a.primary');
+  check('stage card visible',await link.isVisible());
+  const href=await link.getAttribute('href');
+  check('stage direct link',href==='./toolbox/music-performance/'||href===perfUrl,href);
+  await page.screenshot({path:path.join(out,'02-stage-card.png'),fullPage:true});
 
   check('no page errors',report.errors.length===0,report.errors);
   check('no HTTP failures',report.httpErrors.length===0,report.httpErrors);
-  report.final=after;report.status='PASS';
+  report.final=playAfter;report.status='PASS';
 }catch(e){
   report.status='FAIL';report.failure=String(e.stack||e);
   if(page)await page.screenshot({path:path.join(out,'FAIL.png'),fullPage:true}).catch(()=>{});
