@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/3",
+  "schema": "kfb.production-architecture.v3-input-locks/4",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -341,6 +341,63 @@
       "planningHead": "735b5449bf09fb1a069d4a81db44608a58166677",
       "brief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md",
       "contractCandidate": "kfb.environment.spindle-sky/0.1-candidate"
+    },
+    "racerTrackKit": {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "rkit01": {
+        "pr": 34,
+        "branch": "chat/rkit-01-track-kit-2026-09-24",
+        "head": "f368dd0c71eb2798bcd057d30196cb8da4d967b6"
+      },
+      "rkit02": {
+        "pr": 35,
+        "branch": "chat/rkit-02-stunt-modules-2026-09-24",
+        "head": "37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9"
+      },
+      "decisionDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md",
+      "physicsBasis": "Rapier g=15 m/s² downward, speed basis 27 m/s, proven physical ramp; v0.8 handling remains feel donor",
+      "widthLadder": [
+        10.8,
+        14.4,
+        18,
+        21.6
+      ],
+      "firstRecipes": [
+        "TRACK_A_STUNT_8",
+        "TRACK_B_OVAL_EXIT",
+        "TRACK_C_FLOW_LOOP"
+      ]
+    },
+    "osmBake": {
+      "repo": "georg-doc/kayfabizarro",
+      "firstZone": "tools/osm-city-lab/data/dom-zentrum-v0/",
+      "buildContextScript": "tools/osm-city-lab/scripts/build-dom-zentrum-design-context.mjs",
+      "buildContextScriptBlob": "92ac7dd9a48f7bf9c9b0471d57a6b9a647fb7a96",
+      "rule": "fetch/normalize/compile once; runtime/editor loads versioned baked World Zone package; no live Overpass dependency"
+    },
+    "elasticTorsion": {
+      "repo": "georg-doc/kayfabizarro",
+      "failedCurrent": {
+        "pr": 194,
+        "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+        "head": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea",
+        "status": "FROZEN_AFTER_TWO_FAILED_REPAIR_PASSES"
+      },
+      "grotesqueDonor": "tools/osm-city-lab/src/style/cartoon-city.js",
+      "grotesqueDonorBlob": "d08c19fc45d98546b7ef2803f2ddbcb73b7f6782",
+      "rule": "new isolated architecture proof only; restore explicit height-dependent torsion/twist, do not patch failed Hürth R2"
+    },
+    "audioFxAudition": {
+      "repo": "georg-doc/kayfabizarro",
+      "vfxReview": "tools/KFB-ToolBox/_inbox/KFB_VFX_01_REVIEW/github.md",
+      "vfxReviewBlob": "b208eb36d869078242c93c617de92cf10d873e36",
+      "semanticAudioDonors": [
+        "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/petstudio-v9/kfb-pinball-audio.js",
+        "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/petstudio-v9/kfb-pinball-sfx.json",
+        "georg-doc/KFB-Combat-Arena modules/kfb-combat-sfx.v2.json + kfb-arena-sfx.v4.json",
+        "Race telemetry SFX POC in RECOVERY.md"
+      ],
+      "rule": "human-readable audition cards and semantic event ids; games never require Georg to choose opaque filenames"
     }
   },
   "strands": {
@@ -364,7 +421,8 @@
         "motionLab",
         "creatorMotionResearch",
         "residentAtlas",
-        "residentPoseStudio"
+        "residentPoseStudio",
+        "audioFxAudition"
       ],
       "target": "shared motion profiles + Resident performance pipeline"
     },
@@ -385,7 +443,10 @@
         "racer",
         "worldFoundation",
         "assetLibrarianPicker",
-        "residentAtlas"
+        "residentAtlas",
+        "racerTrackKit",
+        "osmBake",
+        "elasticTorsion"
       ],
       "target": "Race visual module inside editable OSM/KFB world"
     },
@@ -443,7 +504,8 @@
       "sourceKeys": [
         "spindleSky",
         "theatreCurtain",
-        "combatArena"
+        "combatArena",
+        "audioFxAudition"
       ],
       "target": "shared Spindle environment + Curtain transitions + host-owned stage/instance recipes"
     }
