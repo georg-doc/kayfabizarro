@@ -1,24 +1,24 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **52/52 ARCHITECTURE / SOURCE CHECKS PASS**
+Status: **73/73 ARCHITECTURE / SOURCE CHECKS PASS**
 
 Scope: architecture, complete self-service production strands, source locks, adjacent-owner routing and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
 ## Catalog / self-service contract · 23/23
 
-1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/3`.
+1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/4`.
 2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/3`.
 3. Eleven production strands exist.
-4. Forty-five copy-ready jobs exist.
-5. Twenty jobs are READY.
-6. Twenty-five jobs are dependency-gated HOLD.
+4. Fifty-three copy-ready jobs exist.
+5. Twenty-six jobs are READY.
+6. Twenty-seven jobs are dependency-gated HOLD.
 7. Every HOLD card names its exact dependency.
 8. Hub default presentation is strand-first.
 9. Job cards are collapsed by default.
-10. Every one of the 45 jobs has a copy-ready prompt.
+10. Every one of the 53 jobs has a copy-ready prompt.
 11. Every job source set resolves to an input-lock job/strand.
-12. 45/45 normal jobs do not require Cloudflare in the edit loop.
-13. 45/45 normal jobs do not require Work/WSA.
+12. 53/53 normal jobs do not require Cloudflare in the edit loop.
+13. 53/53 normal jobs do not require Work/WSA.
 14. Canonical CubePet contract reports exactly 24 pet IDs.
 15. Three distinct FrizzleBob technical identities are locked.
 16. Town Living source blob matches current main.
@@ -92,3 +92,42 @@ Scope: architecture, complete self-service production strands, source locks, adj
 - missing failed Platformer auto-jump source.
 
 These are separate product/integration actions, not prerequisites for a correct recoverable architecture.
+
+
+## Race / OSM / Look / Audio-VFX decision extension · 21/21
+
+53. RKIT physics decision is Rapier-based for stunt dimensions: real airborne/contact owner, speed basis 27 m/s, gravity magnitude 15 m/s² downward.
+54. Accepted v0.8 handling remains a feel/tuning donor and is not promoted as a second airborne/contact owner.
+55. Canonical width ladder remains 10.8 / 14.4 / 18.0 / 21.6 m.
+56. 28.8 m is special/XL-only if retained and does not silently redefine HERO.
+57. Jump family explicitly preserves a forgiving ~12 m base module plus a ~30 m Hero step-down.
+58. Ideal 30 m Rapier geometry aid is recorded separately from runtime acceptance.
+59. Cologne is the first World Zone bake because current normalized source/cache/anchors exist.
+60. Barcelona is the second-city portability proof rather than the first implementation dependency.
+61. General spline/track editor is explicitly deferred; authored Track Recipes are the fast-path product decision.
+62. Track Module Bake separates compact recipe/route/stunt metadata from cached visual GLB and Race-owned contact truth.
+63. OSM World Zone Bake removes runtime Overpass dependency and retains source/provenance/compiler revision.
+64. Geographic OSM truth and fictional WorldBuilder landmark placement are explicitly separated.
+65. Hürth R2 remains frozen; Elastic Torsion is a new isolated proof rather than a third patch pass.
+66. Existing City GROTESQUE twist/torsion is a donor/reference, not a silently copied global constant.
+67. Sound Audition Library uses human labels + semantic events instead of opaque filenames.
+68. Music Performance stores song references + beat/bar/choreography metadata without baking songs into animation clips.
+69. VFX Audition Library starts from existing source-backed donors and creates small semantic adaptations only after visual selection.
+70. RKIT PR #34 current head = `f368dd0c71eb2798bcd057d30196cb8da4d967b6`.
+71. RKIT PR #35 current head = `37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9`.
+72. Hürth / Elastic PR #194 current head = `b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea`.
+73. Current donor blobs revalidated: OSM build-context `92ac7dd9a48f7bf9c9b0471d57a6b9a647fb7a96`; City GROTESQUE style `d08c19fc45d98546b7ef2803f2ddbcb73b7f6782`; VFX review bank `b208eb36d869078242c93c617de92cf10d873e36`.
+
+## New prepared jobs
+
+- `RACE-TRACK-RECIPE-01`
+- `RACE-RKIT-03`
+- `WORLD-ZONE-BAKE-01`
+- `WORLD-ZONE-BAKE-02`
+- `LOOK-TORSION-01`
+- `AUDIO-AUDITION-01`
+- `MUSIC-PERF-01`
+- `VFX-AUDITION-01`
+
+Current catalog metrics:
+**11 strands · 53 jobs · 26 READY · 27 HOLD**.
