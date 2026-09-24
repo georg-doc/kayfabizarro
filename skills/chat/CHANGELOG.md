@@ -1,3 +1,13 @@
+## 2026-09-24 · Production Architecture v3 · RKIT / World Bake / Look / Audio-VFX
+
+- Resolved Blender RKIT-02 decisions: Rapier is the stunt airborne/contact basis; accepted width ladder stays 10.8 / 14.4 / 18.0 / 21.6 m; preserve ~12 m Base Jump + add ~30 m Hero step-down; Race owns takeoff/landing and moving-support contact.
+- Chose the fast product path: no general track editor now. Author a few route recipes (Stunt Eight, Oval+Exit, Flow Loop) and compile/bake reusable Track Modules.
+- Formalized cached OSM World Zones: Cologne first from existing `dom-zentrum-v0`; Barcelona second portability proof; authored landmarks remain freely placeable without pretending they belong to source OSM geography.
+- Hürth R2 stays frozen; next look proof adds explicit height-dependent Elastic torsion/twist from current GROTESQUE / BuildingElastic / LandmarkElastic donors.
+- Added human-facing Sound Audition, Music Performance and VFX Audition workflows so Georg selects by meaning/hearing/moving previews rather than opaque filenames.
+- v3 catalog is now **11 strands / 53 jobs / 26 READY / 27 HOLD**; architecture/source checks **73/73 PASS**.
+- No public Hub/Cloudflare Live, runtime owner or merge state changed.
+
 ## 2026-09-24 · Production Architecture v3 · gameplay/world expansion
 
 - v3 now covers **11 primary production strands / 45 copy-ready jobs** with a strand-first collapsed Hub model.
