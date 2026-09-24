@@ -639,6 +639,25 @@ Current architecture catalog after this addition:
 **13 strands · 80 jobs · 37 READY · 43 HOLD**.
 
 
+## Resident Card Speculation MVP
+
+New READY:
+`NPC-CARD-SPEC-01 · Resident Card Speculation Scene`.
+
+It reuses the active Pet Podcast v5 line as a donor for two-presenter staging/gaze/talk choreography, while current Resident/ChatterBox/Card/Face owners remain authoritative.
+
+Execution:
+`CLAUDE_DESIGN_STANDARD · Claude Design · Claude Sonnet 5 · medium · STANDARD`.
+
+The MVP is a thin, baseplate-free Resident Scene:
+two current actors + one real KFB Card + deterministic Triplet/worldview beats + current mouth/gaze/bubble owners.
+
+Exact source under Georg's name “FrizzleBobrick” is not yet pinned and is `SOURCE_REQUIRED`; no FrizzleBob family is silently substituted.
+
+Current catalog:
+**13 strands · 81 jobs · 38 READY · 43 HOLD**.
+
+
 ## Public Hub boundary
 
 The expanded **13-strand / 79-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
