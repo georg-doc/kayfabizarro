@@ -1,24 +1,24 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **134/134 ARCHITECTURE / SOURCE CHECKS PASS**
+Status: **154/154 ARCHITECTURE / SOURCE CHECKS PASS**
 
 Scope: architecture, complete self-service production strands, source locks, adjacent-owner routing and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
 ## Catalog / self-service contract · 23/23
 
 1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/7`.
-2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/6`.
+2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/7`.
 3. Thirteen production strands exist.
-4. Seventy-eight copy-ready jobs exist.
-5. Thirty-five jobs are READY.
+4. Seventy-nine copy-ready jobs exist.
+5. Thirty-six jobs are READY.
 6. Forty-three jobs are dependency-gated HOLD.
 7. Every HOLD card names its exact dependency.
 8. Hub default presentation is strand-first.
 9. Job cards are collapsed by default.
-10. Every one of the 78 jobs has a copy-ready prompt.
+10. Every one of the 79 jobs has a copy-ready prompt.
 11. Every job source set resolves to an input-lock job/strand.
-12. 78/78 normal jobs do not require Cloudflare in the edit loop.
-13. 78/78 normal jobs do not require Work/WSA.
+12. 79/79 normal jobs do not require Cloudflare in the edit loop.
+13. 79/79 normal jobs do not require Work/WSA.
 14. Canonical CubePet contract reports exactly 24 pet IDs.
 15. Three distinct FrizzleBob technical identities are locked.
 16. Town Living source blob matches current main.
@@ -213,3 +213,39 @@ Current catalog metrics:
 
 Current catalog metrics:
 **13 strands · 78 jobs · 35 READY · 43 HOLD**.
+
+
+## IK parity + execution/model dispatch extension · 20/20
+
+135. Hub catalog advanced to schema v7.
+136. Self-service catalog now contains 79 jobs.
+137. 36 jobs are READY.
+138. 43 jobs remain dependency-gated HOLD.
+139. 79/79 jobs resolve a stable execution profile.
+140. 79/79 jobs carry explicit current model, reasoning and budget metadata.
+141. 79/79 jobs keep Work disabled as the default executor.
+142. No job uses Cowork as the default primary profile; Cowork is explicit secondary/escalation only.
+143. 79/79 catalog prompt sections exist in the copy-ready briefing sources.
+144. 79/79 catalog prompt sections visibly include an `Execution profile` line.
+145. Base Self-Service Job C explicitly carries `BLENDER_STANDARD`.
+146. Base Self-Service Job D explicitly carries `WEB_DEEP` with bounded secondary Design/Blender roles.
+147. Current Resident `chainOf()` builds the IK parent chain with `unshift`, giving the current typical proximal→distal order.
+148. Current KFB `reachChain()` has no per-link `rotationMin/rotationMax`.
+149. Current KFB `reachChain()` iterates the configured bones directly.
+150. Upstream Three.js r184 `CCDIKSolver` supports per-link `rotationMin/rotationMax`.
+151. Upstream r184 `CCDIKSolver` supports per-step `minAngle/maxAngle`.
+152. Upstream r184 `CCDIKSolver` supports blend factor / quaternion slerp.
+153. Upstream r184 `CCDIKSolver` has the small-angle early-out used to reduce vibration.
+154. `IK-CCDIK-PARITY-01` is READY with `WEB_DEEP · GPT-5.6 Sol · high`, while retaining the current Resident Puppet/Studio owner until A/B passes.
+
+Current catalog metrics:
+**13 strands · 79 jobs · 36 READY · 43 HOLD**.
+
+Current primary profile distribution:
+- WEB_FAST: 5
+- WEB_STANDARD: 40
+- WEB_DEEP: 29
+- BLENDER_STANDARD: 3
+- BLENDER_DEEP: 2
+
+Work/Cowork/Claude Design appear only as capability-specific secondary/escalation profiles where needed.
