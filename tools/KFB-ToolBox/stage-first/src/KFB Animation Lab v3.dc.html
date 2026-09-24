@@ -1390,6 +1390,7 @@ class Component extends DCLogic {
         const speed = this.ML.referenceSpeed(this.motion, cur.clip.name, cur.rig);
         const marks = this.ML.actionMarkers(this.motion, cur.clip.name);
         dataRows.push({ k: 'Motion · State', v: [sem.stateFamily || 'unknown', sem.gait || 'unknown'].join(' · ') });
+        dataRows.push({ k: 'Motion · Loop', v: mp && typeof mp.loop === 'boolean' ? (mp.loop ? 'yes' : 'no') : 'unknown' });
         dataRows.push({ k: 'Motion · Direction', v: (sem.direction || 'unknown') + ' · stance ' + (sem.stance || 'unknown') });
         dataRows.push({ k: 'Motion · Travel', v: (root.mode || 'unknown') + (Number.isFinite(dist) ? ' · ' + dist.toFixed(3) + ' m/cycle' : '') });
         dataRows.push({ k: 'Motion · Ref speed', v: Number.isFinite(speed) ? speed.toFixed(3) + ' m/s · measured-derived' : 'unknown · not measured/applicable' });
