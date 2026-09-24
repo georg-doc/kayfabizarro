@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/7",
+  "schema": "kfb.hub-briefing-catalog/8",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -43,7 +43,8 @@
       "capabilitiesTotal": 8,
       "currentReady": [
         "world-zone-bake-01",
-        "look-torsion-01"
+        "look-torsion-01",
+        "wb-design-parallel-01"
       ],
       "currentReview": "worldbuilder-w0"
     },
@@ -1843,6 +1844,30 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false
+    },
+    {
+      "id": "wb-design-parallel-01",
+      "strand": "worldbuilder",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Claude Design",
+      "executionProfile": "CLAUDE_DESIGN_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "title": "WorldBuilder · Cologne Visual / Authoring Shell",
+      "what": "Advance the visible WorldBuilder/World-Zone look on a frozen real Cologne fixture while the OSM compiler runs in parallel.",
+      "result": "One real-source visual shell proving KFB world hierarchy, landmark torsion and current editor affordances without owning OSM compilation.",
+      "promptSection": "WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell",
+      "sourceSet": "worldbuilder",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "parallelWith": [
+        "world-zone-bake-01"
+      ]
     }
   ],
   "presentation": {
@@ -1854,8 +1879,8 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 79,
-    "ready": 36,
+    "jobs": 80,
+    "ready": 37,
     "hold": 43
   },
   "executionProfiles": {
