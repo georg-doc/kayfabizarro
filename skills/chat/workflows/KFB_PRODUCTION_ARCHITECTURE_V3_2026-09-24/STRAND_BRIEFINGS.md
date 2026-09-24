@@ -1284,3 +1284,154 @@ A waiting card is valuable because Georg can already see the complete production
 > import Journey → WALK shows Almanac/POP/Backpack → collect a real Card Zone card → Almanac updates → enter vehicle → DRIVE adds Tacho + real route minimap → earn POP → enter Combat → same account persists → receive NPC gift → correct collection/inventory changes → unlock/play a Radio track → export → fresh reload/import → state restored.
 >
 > Review whether this feels like one KFB player identity across modes. Do not split this into one human gate per HUD widget.
+
+---
+
+# P2 · Skills / Runtime Contracts consolidation jobs
+
+## SKILLS-CENSUS-01 · Repository-native Skills Census
+
+**Executor:** ChatGPT Web / GitHub agent  
+**Priority:** P2 · may run in parallel  
+**Outcome:** classify the current `skills/` tree without moving or deleting anything.
+
+> @GitHub
+> Read KFB Production Architecture v3 and `SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md`.
+>
+> Run **SKILLS-CENSUS-01** against current `georg-doc/kayfabizarro@main`.
+>
+> Scope:
+> - all top-level files/folders under `skills/`;
+> - `skills/KFB PetStudio/` only to identify live donors/current consumers, not to rewrite its history;
+> - `skills/kfb-embed-bundle/` and `skills/kfb-embed-bundle v3/`;
+> - current ToolBox actor/embed/runtime owners;
+> - current Card/PDF/Ink owners;
+> - imports/links/references from active tools/apps.
+>
+> Classify every relevant entry as exactly one of:
+> `CURRENT_CANON · CURRENT_RUNTIME_ENTRY · CURRENT_COMPAT_ADAPTER · LEGACY_COMPAT_REQUIRED · SUPERSEDED_REDIRECT · HISTORICAL_REFERENCE · MISPLACED_ASSET · SOURCE_REQUIRED`.
+>
+> Produce:
+> 1. `SKILLS_RUNTIME_CENSUS.json`
+> 2. `SKILLS_MIGRATION_MAP.md`
+> 3. `SKILLS_CONSUMER_IMPORT_SCAN.json`
+>
+> Required explicit comparisons:
+> - old `EMBED_CUBE_PET_FULL_v2.2.md` vs current `kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md`;
+> - canonical 24-CubePet stack vs FrizzleBob Driver Graft vs GothGirl/native KayKit vs CapsuleCarl/Wissens-Pilli;
+> - stale `SOT_REGISTRY.md` vs current runtime owners;
+> - CardBuilder/PDF SSOT vs Deck Viewer v4 / `kfb-corpus.js`;
+> - Ink v1/v2/docs/runtime copies;
+> - bubble/voice/viseme/material-zone donors;
+> - binary GLBs currently sitting directly under `skills/`.
+>
+> For every entry record current owner, current replacement, known consumers/imports and `safeToMove/safeToDelete`. Both safety flags default false.
+>
+> **Do not edit, move, rename, archive or delete any existing skill/runtime file in this job.** This is a census only. Do not use Work or Cloudflare.
+
+---
+
+## SKILLS-CURRENT-01 · Current Runtime Skill Shelf
+
+**Executor:** ChatGPT Web / GitHub Bridge  
+**Priority:** P2  
+**Outcome:** a small current skill shelf routes new chats to live runtime owners while old apps still work.
+
+> @GitHub
+> Start only from accepted/current SKILLS-CENSUS-01 outputs.
+>
+> Build **SKILLS-CURRENT-01** as routing/contracts, not as new implementations.
+>
+> Establish/update current entrypoints for:
+> 1. KFB Actor Embed / Actor Platform with family dispatch;
+> 2. PDF/Card Corpus + Viewer;
+> 3. CardBuilder;
+> 4. Ink Canon + adapter registry;
+> 5. Talk / Viseme / Speech+Thought Bubbles;
+> 6. Material Surface / zone Color+Texture;
+> 7. Motion/Animation;
+> 8. current production/session skills.
+>
+> Actor dispatch must preserve the real owners:
+> - 24 CubePets → canonical CubePet stack;
+> - FrizzleBob Driver → current Graft mount/profile;
+> - CapsuleCarl/Wissens-Pilli → current Carl mount, texclean and red mouth set;
+> - GothGirl/native Rig_Medium/Large/Legacy → current FaceHost/EyeRig/profile adapters where admitted.
+>
+> Do not reconstruct face/eyes/mouth in the skill docs.
+>
+> Reconcile or supersede the stale `skills/SOT_REGISTRY.md` with one current versioned registry.
+>
+> Existing paths with live legacy consumers remain byte/runtime compatible; add concise compatibility/supersession routing rather than breaking imports.
+
+---
+
+## SKILLS-ARCHIVE-01 · Compatibility-safe Skills Archive
+
+**Executor:** GitHub Web / repository-native checks  
+**Priority:** P2  
+**Outcome:** reduce accidental legacy reuse without breaking old apps.
+
+> @GitHub
+> Read accepted SKILLS-CENSUS-01 and SKILLS-CURRENT-01.
+>
+> Perform **SKILLS-ARCHIVE-01** only for entries with verified consumer/import status.
+>
+> Rules:
+> - active old consumer → leave path in place and mark/reroute for new work;
+> - zero-consumer useful history → archive/move with clear replacement reference;
+> - binary/misplaced asset → reconcile with Asset Librarian/media canonical path before moving;
+> - deletion requires a separate explicit cleanup gate;
+> - never modify an old app merely so an archive operation can succeed.
+>
+> Return exact moved/untouched paths and consumer evidence. No broad tree cleanup on trust.
+
+---
+
+## CARD-VIEWER-CORE-01 · Unified PDF / Card Viewer Runtime
+
+**Executor:** ChatGPT Web  
+**Priority:** P2 after Skills Census  
+**Outcome:** one performant PDF/card content service and viewer layer for Almanac, Card Zones, Billboards and Story/CardRig consumers.
+
+> @GitHub
+> Read KFB Production Architecture v3, accepted SKILLS-CENSUS-01, current `SSOT_KFB_CardBuilder_PDF.md`, `kfb-card-builder.js`, Deck Viewer v4 and `deckviewer/kfb-corpus.js`.
+>
+> Do not build a new PDF renderer from scratch.
+>
+> Consolidate/reuse four layers:
+> - PDF Corpus/cache service from the Viewer donor;
+> - KFB card-grid resolver using registry metadata/default/auto-detection rather than per-consumer crop math;
+> - canonical CardBuilder for card surfaces/3D cards;
+> - viewer presentation modes/transitions from the productive Viewer v4 family.
+>
+> Required consumer API should cover at least:
+> page image · card canvas · deck/contact sheet · selected card/deck metadata · current Viewer mode.
+>
+> Preserve productive views such as Reader / Gallery / Stack / Coverflow / Full View / Deck where they remain useful. The Fractal Almanac may wrap these with Journey/Hero-shot/replay context; that context does not enter the PDF service.
+>
+> Important: KFB PDFs are conceptually four cards/page but blind exact-quarter crop is not a universal truth. Resolve known per-deck layout through registry metadata and make fallback/auto-detection explicit.
+>
+> Prove the same underlying card/page output in at least Almanac + Card Zone or Billboard consumers. No duplicate pdf.js workers/caches per consumer.
+
+---
+
+## INK-3D-ADAPTER-01 · Canonical Ink → World/3D adapters
+
+**Executor:** ChatGPT Web  
+**Priority:** P2 after Skills Current Ink lock  
+**Outcome:** translate one Ink canon into surface and physical 3D lines without wireframe/double-grid regressions.
+
+> @GitHub
+> Read KFB Production Architecture v3, current `SSOT_Card_Ink_Outline_v2.md`, `kfb-ink-canon.js` and accepted SKILLS-CURRENT-01 Ink entrypoint.
+>
+> Do not create another Ink family because Georg says “ring”. The current implementation family `band` already means the continuous closed ribbon/ring: one contour, variable feather/taper, one fill.
+>
+> Build thin adapters from that semantic boundary:
+> 1. surface ribbon/decal for shoreline/map/road/track boundaries;
+> 2. tube/rope extrusion for physical lines such as wrestling-ring ropes;
+> 3. flat/extruded Card outer-silhouette adapter.
+>
+> The Card proof must show black outer flat edges without outlining every triangle and without doubled front/back grids.
+>
+> No screen-space wireframe, no per-triangle outline and no stitched independent line pieces. Compare directly against the canonical 2D card contour in the same review.
