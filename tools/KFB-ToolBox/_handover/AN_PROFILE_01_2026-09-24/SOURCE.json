@@ -73,8 +73,16 @@
     ".github/workflows/an-profile-01.yml"
   ],
   "stage": {
-    "status": "HOLD_NOT_PUBLISHED",
-    "route": null,
-    "note": "Metadata-only slice; Georg explicitly requested no Cloudflare wait. No public AN-PROFILE-01 result is claimed."
+    "status": "HOLD_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/motion-profile-catalogue/",
+    "note": "Named future Stage route only. Georg explicitly requested no Cloudflare wait; no public AN-PROFILE-01 result is claimed."
+  },
+  "pr": 206,
+  "currentHandoffCheckpoint": "d38da98ef7217c097201a21477f777dc24e52138",
+  "validation": {
+    "deterministicExactBranch": "1603/1603 PASS",
+    "hubInlineScriptSyntax": "1/1 PASS",
+    "githubActionsRunAtRouterCheckpoint": 36030451044,
+    "githubActionsStatusAtRouterCheckpoint": "in_progress"
   }
 }
