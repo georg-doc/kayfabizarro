@@ -1772,3 +1772,13 @@ Exactly one next gate:
 - no C1, no main merge, no product Live promotion.
 
 Exactly one next gate: **Georg B1 picture review**.
+
+
+## 2026-09-24 · Billboard B1 accepted / B2a routed
+
+- B1 human gate: **PASS**;
+- added current Billboard Living Media plan under ToolBox handover;
+- B2a = inline YouTube/CSS3D only;
+- official Three.js r160 `css3d_youtube.html` pinned before implementation;
+- B2b Collage, B2c Talking City Lights, B3 cartoon body recorded as proposals, not hidden scope;
+- Curtain C1 remains HOLD.
