@@ -13,8 +13,9 @@ const server=http.createServer((req,res)=>{
     const u=new URL(req.url,'http://127.0.0.1'),pathname=decodeURIComponent(u.pathname.endsWith('/')?u.pathname+'index.html':u.pathname);
     const file=path.resolve(ROOT,'.'+pathname);
     if(!file.startsWith(ROOT)){res.writeHead(403);res.end('forbidden');return;}
+    if(!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end('not found');return;}
     res.writeHead(200,{'content-type':mime[path.extname(file)]||'application/octet-stream','cache-control':'no-store'});
-    fs.createReadStream(file).on('error',()=>{res.writeHead(404);res.end('not found');}).pipe(res);
+    fs.createReadStream(file).pipe(res);
   }catch{res.writeHead(404);res.end('not found');}
 });
 await new Promise(r=>server.listen(4176,'127.0.0.1',r));
