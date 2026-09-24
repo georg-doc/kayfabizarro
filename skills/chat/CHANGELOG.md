@@ -1,3 +1,14 @@
+## 2026-09-24 · Production Architecture v3 · IK parity + executor/model budget routing
+
+- Added a source-based A/B gate against Three.js `CCDIKSolver`: current Resident Atlas `reachChain()` remains owner until the same Rig_Medium/Orc-Brute comparison proves a better solver path.
+- Upstream CCD donor exposes rotation limits, step-angle limits, blend and distal-first links that the current unconstrained KFB reachChain does not; this is now `IK-CCDIK-PARITY-01` READY.
+- Every v3 briefing now carries a stable Execution Profile plus current Model / Reasoning / Budget metadata.
+- Budget-first defaults: GPT-5.6 Sol Web for normal/deep Web work; Claude Sonnet 5 for normal Design/Cowork/Blender; Cowork and Work are not primary defaults; Opus 5.5 is deep escalation only.
+- Added explicit WSA mount handoff for existing HUB-CTRL #202: operational Today lanes stay separate from the expanded self-service catalog; no second Hub and no Work review pass.
+- Added architecture-chat recovery handoff so a replacement chat can continue this planning/dispatch role from GitHub state.
+- v3 catalog now **13 strands / 79 jobs / 36 READY / 43 HOLD**; architecture/source checks **158/158 PASS**.
+- Expanded self-service catalog is still **not publicly mounted**; exact KFB Hub public proof remains pending under the existing HUB-CTRL owner.
+
 ## 2026-09-24 · Production Architecture v3 · Character / Resident workflow
 
 - Resident Atlas / ToolBox is now the default authoring surface for static pose, prop fit, scene composition and reusable Resident modules.
