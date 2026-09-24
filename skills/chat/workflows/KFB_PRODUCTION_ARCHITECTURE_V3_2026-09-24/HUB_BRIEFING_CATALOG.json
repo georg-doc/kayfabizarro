@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/6",
+  "schema": "kfb.hub-briefing-catalog/7",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -32,7 +32,8 @@
         "an-perf-01",
         "an-profile-01",
         "resident-band-module-01",
-        "pose-to-blender-01"
+        "pose-to-blender-01",
+        "ik-ccdik-parity-01"
       ]
     },
     {
@@ -163,7 +164,13 @@
       "promptSection": "JOB A · WEB-QUICK-3D-REVIEW",
       "sourceSet": "web-quick-3d-review",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_FAST",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "instant",
+      "budget": "LOW",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "toolbox-coherent-integration-01",
@@ -176,7 +183,17 @@
       "promptSection": "JOB B · TOOLBOX-COHERENT-INTEGRATION-01",
       "sourceSet": "toolbox",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "COWORK_STANDARD",
+        "GITHUB_BRIDGE"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "tb-eye-01",
@@ -189,7 +206,13 @@
       "promptSection": "TB-EYE-01 · EyeRig Production Studio",
       "sourceSet": "toolbox",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "tb-pose-01",
@@ -202,7 +225,13 @@
       "promptSection": "TB-POSE-01 · Fractal Scene + Pose Studio",
       "sourceSet": "toolbox",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "tb-anim-01",
@@ -215,7 +244,13 @@
       "promptSection": "TB-ANIM-01 · ToolBox Animation Studio",
       "sourceSet": "toolbox",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "tb-veh-01",
@@ -229,7 +264,13 @@
       "sourceSet": "toolbox",
       "waitingFor": "TB-EYE-01 + TB-POSE-01 Grundfunktionen; TB-ANIM-01 für gemeinsamen Motion-Preview",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "tb-scene-01",
@@ -243,7 +284,13 @@
       "sourceSet": "toolbox",
       "waitingFor": "TB-POSE-01 und ToolBox Stage-First Basis",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "tb-prod-01",
@@ -257,7 +304,17 @@
       "sourceSet": "toolbox",
       "waitingFor": "TB-EYE-01 + TB-POSE-01 + TB-ANIM-01 + TB-VEH-01 + TB-SCENE-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "COWORK_STANDARD",
+        "GITHUB_BRIDGE"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "an-perf-01",
@@ -270,7 +327,13 @@
       "promptSection": "AN-PERF-01 · Blender Resident Performance Batch",
       "sourceSet": "animationResidents",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "BLENDER_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "an-profile-01",
@@ -283,7 +346,13 @@
       "promptSection": "AN-PROFILE-01 · Motion Profile Enrichment",
       "sourceSet": "animationResidents",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "wb-author-01",
@@ -302,7 +371,13 @@
       "prHead": "40fe2c10959a2022694a2342482e04dd34cbe7be",
       "deployHead": "5b457ee9b1faea6a156449b92123c9eb783b5d86",
       "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/",
-      "humanResult": "PENDING"
+      "humanResult": "PENDING",
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "wb-place-01",
@@ -316,7 +391,13 @@
       "sourceSet": "worldbuilder",
       "waitingFor": "WB-AUTHOR-01 + TB-POSE-01; Resource Picker seam",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "wb-motion-01",
@@ -330,7 +411,13 @@
       "sourceSet": "worldbuilder",
       "waitingFor": "WB-AUTHOR-01 + TB-ANIM-01 + AN-PROFILE-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "wb-osm-01",
@@ -344,7 +431,16 @@
       "sourceSet": "worldbuilder",
       "waitingFor": "WB-AUTHOR-01 + akzeptierte aktuelle Form-Language-Basis",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "CLAUDE_DESIGN_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "race-anatomy-01",
@@ -360,7 +456,16 @@
       "workRequired": false,
       "sourceHead": "71e7051b2eea1ad731912b634f44ce5ba0218736",
       "pr": 33,
-      "repo": "georg-doc/KFB-Stunt-Car-Race"
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "race-visual-01",
@@ -374,7 +479,13 @@
       "sourceSet": "racerWorld",
       "waitingFor": "RACE-ANATOMY-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "race-contact-01",
@@ -388,7 +499,13 @@
       "sourceSet": "racerWorld",
       "waitingFor": "RACE-VISUAL-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "wb-race-01",
@@ -402,7 +519,13 @@
       "sourceSet": "worldbuilder",
       "waitingFor": "RACE-VISUAL-01 + WB-AUTHOR-01; ideal WB-OSM-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "wb-god-01",
@@ -416,7 +539,16 @@
       "sourceSet": "worldbuilder",
       "waitingFor": "WB-AUTHOR-01 + WB-PLACE-01 + WB-MOTION-01 + WB-OSM-01 + WB-RACE-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "CLAUDE_DESIGN_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "combat-id-01",
@@ -432,7 +564,13 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "repo": "georg-doc/KFB-Combat-Arena",
-      "sourceHead": "735b5449bf09fb1a069d4a81db44608a58166677"
+      "sourceHead": "735b5449bf09fb1a069d4a81db44608a58166677",
+      "executionProfile": "WEB_FAST",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "instant",
+      "budget": "LOW",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "combat-melee-01",
@@ -449,7 +587,13 @@
       "workRequired": false,
       "repo": "georg-doc/KFB-Combat-Arena",
       "pr": 7,
-      "sourceHead": "f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06"
+      "sourceHead": "f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06",
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "combat-duel-01",
@@ -464,7 +608,13 @@
       "sourceSet": "combatChoreography",
       "waitingFor": "TB-ANIM-01 usable base + COMBAT-MELEE-01 admitted contact profile",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "combat-match-01",
@@ -479,7 +629,13 @@
       "sourceSet": "combatChoreography",
       "waitingFor": "COMBAT-DUEL-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "combat-tower-01",
@@ -494,7 +650,13 @@
       "sourceSet": "combatChoreography",
       "waitingFor": "admitted Combat encounter + BABEL/VERT world support",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "combat-world-01",
@@ -509,7 +671,13 @@
       "sourceSet": "combatChoreography",
       "waitingFor": "WB-AUTHOR-01 + admitted Combat encounter profile",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "pet-id-01",
@@ -524,7 +692,13 @@
       "sourceSet": "cubePetsActors",
       "cloudflareRequired": false,
       "workRequired": false,
-      "sourceHead": "cef6cca9cc69a6cb3c0b4a9d39f6b15579cbf055"
+      "sourceHead": "cef6cca9cc69a6cb3c0b4a9d39f6b15579cbf055",
+      "executionProfile": "WEB_FAST",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "instant",
+      "budget": "LOW",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "pet-toolbox-01",
@@ -539,7 +713,13 @@
       "sourceSet": "cubePetsActors",
       "waitingFor": "PET-ID-01 may be completed in the same coherent milestone",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "pet-resident-01",
@@ -554,7 +734,13 @@
       "sourceSet": "cubePetsActors",
       "waitingFor": "PET-ID-01 + basic ToolBox/Resident adapter seam",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "pet-combat-01",
@@ -569,7 +755,13 @@
       "sourceSet": "cubePetsActors",
       "waitingFor": "PET-ID-01 + COMBAT-ID-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "surface-01",
@@ -583,7 +775,13 @@
       "promptSection": "SURFACE-01 · FLAT / SPHERE / TORUS adapter",
       "sourceSet": "travelWorldModes",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "travel-modes-01",
@@ -600,7 +798,13 @@
       "workRequired": false,
       "repo": "georg-doc/KFB-Travel-Globe",
       "pr": 38,
-      "sourceHead": "08147fb4a6726f4c0248ff79ade67eec24afdbca"
+      "sourceHead": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "travel-drive-01",
@@ -615,7 +819,13 @@
       "sourceSet": "travelWorldModes",
       "waitingFor": "TRAVEL-MODES-01 + WB-AUTHOR-01 + usable vehicle authoring source",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "travel-boat-01",
@@ -630,7 +840,13 @@
       "sourceSet": "travelWorldModes",
       "cloudflareRequired": false,
       "workRequired": false,
-      "upstream": "cursor/globefly-multiplayer-globe-flight-game@2659a5cc987d"
+      "upstream": "cursor/globefly-multiplayer-globe-flight-game@2659a5cc987d",
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "travel-air-01",
@@ -645,7 +861,16 @@
       "sourceSet": "travelWorldModes",
       "waitingFor": "TRAVEL-MODES-01; source recovery is part of this job but implementation priority follows Ground/Flight/Drive/Boat",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "vert-source-01",
@@ -659,7 +884,13 @@
       "promptSection": "VERT-SOURCE-01 · Platformer / Babel source recovery",
       "sourceSet": "verticalWorld",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_FAST",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "instant",
+      "budget": "LOW",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "babel-01",
@@ -674,7 +905,13 @@
       "sourceSet": "verticalWorld",
       "waitingFor": "VERT-SOURCE-01 + exact Hex sources",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "vert-world-01",
@@ -689,7 +926,13 @@
       "sourceSet": "verticalWorld",
       "waitingFor": "BABEL-01 + SURFACE-01 + WB-AUTHOR-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "npc-life-01",
@@ -703,7 +946,13 @@
       "promptSection": "NPC-LIFE-01 · Living Resident encounter bus",
       "sourceSet": "townNpcLife",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "npc-memory-01",
@@ -718,7 +967,13 @@
       "sourceSet": "townNpcLife",
       "waitingFor": "NPC-LIFE-01 host seam",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "npc-gift-01",
@@ -733,7 +988,13 @@
       "sourceSet": "townNpcLife",
       "waitingFor": "NPC-LIFE-01 + current card/reward owner seam",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "npc-world-01",
@@ -748,7 +1009,13 @@
       "sourceSet": "townNpcLife",
       "waitingFor": "NPC-LIFE-01 + NPC-MEMORY-01 + NPC-GIFT-01 + WB-PLACE-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "spindle-01",
@@ -764,7 +1031,13 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "repo": "georg-doc/KFB-Combat-Arena",
-      "sourceHead": "735b5449bf09fb1a069d4a81db44608a58166677"
+      "sourceHead": "735b5449bf09fb1a069d4a81db44608a58166677",
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "curtain-02",
@@ -781,7 +1054,13 @@
       "workRequired": false,
       "pr": 114,
       "sourceHead": "cd9c04cbf009b1211b9b6b008162b9d322d6e152",
-      "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/"
+      "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "stage-instance-01",
@@ -796,7 +1075,13 @@
       "sourceSet": "sharedStage",
       "waitingFor": "SPINDLE-01 + CURTAIN-02 + at least one admitted choreography/encounter recipe",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "fx-semantic-01",
@@ -810,7 +1095,13 @@
       "promptSection": "FX-SEMANTIC-01 · Shared semantic VFX/SFX maps",
       "sourceSet": "sharedStage",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "race-track-recipe-01",
@@ -827,7 +1118,16 @@
       "workRequired": false,
       "repo": "georg-doc/KFB-Stunt-Car-Race",
       "rkit01": "f368dd0c71eb2798bcd057d30196cb8da4d967b6",
-      "rkit02": "37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9"
+      "rkit02": "37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9",
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "race-rkit-03",
@@ -841,7 +1141,13 @@
       "promptSection": "RACE-RKIT-03 · Blender module continuation under fixed decisions",
       "sourceSet": "racerWorld",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "BLENDER_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "world-zone-bake-01",
@@ -855,7 +1161,13 @@
       "promptSection": "WORLD-ZONE-BAKE-01 · Cologne OSM World Zone compiler",
       "sourceSet": "worldbuilder",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "world-zone-bake-02",
@@ -870,7 +1182,13 @@
       "sourceSet": "worldbuilder",
       "waitingFor": "WORLD-ZONE-BAKE-01 accepted compiler/package contract",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "look-torsion-01",
@@ -886,7 +1204,16 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "lookPr": 194,
-      "lookHead": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea"
+      "lookHead": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea",
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "audio-audition-01",
@@ -900,7 +1227,13 @@
       "promptSection": "AUDIO-AUDITION-01 · Human-readable Sound Library",
       "sourceSet": "sharedStage",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "music-perf-01",
@@ -915,7 +1248,13 @@
       "sourceSet": "animationResidents",
       "waitingFor": "TB-ANIM-01 usable Animation Studio base; source-backed song selected",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "vfx-audition-01",
@@ -929,7 +1268,13 @@
       "promptSection": "VFX-AUDITION-01 · Source-backed VFX Library",
       "sourceSet": "sharedStage",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "cz-fluid-01",
@@ -944,7 +1289,13 @@
       "sourceSet": "cardZones",
       "cloudflareRequired": false,
       "workRequired": false,
-      "sourceBlob": "97e3e0813cb5693a64863482ab96a601e88f5104"
+      "sourceBlob": "97e3e0813cb5693a64863482ab96a601e88f5104",
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "cz-card-present-01",
@@ -958,7 +1309,13 @@
       "promptSection": "CZ-CARD-PRESENT-01 · Stack / Reveal / Beam module",
       "sourceSet": "cardZones",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "cz-cube-01",
@@ -972,7 +1329,13 @@
       "promptSection": "CZ-CUBE-01 · Card Cube + Face Focus",
       "sourceSet": "cardZones",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "cz-recipe-01",
@@ -987,7 +1350,13 @@
       "sourceSet": "cardZones",
       "waitingFor": "CZ-FLUID-01 + CZ-CARD-PRESENT-01 + CZ-CUBE-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "cz-world-01",
@@ -1002,7 +1371,13 @@
       "sourceSet": "cardZones",
       "waitingFor": "CZ-RECIPE-01 + usable WB authoring/resource-picker seam",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "cz-prod-01",
@@ -1017,7 +1392,16 @@
       "sourceSet": "cardZones",
       "waitingFor": "CZ-WORLD-01 + META-JOURNEY-01 + META-ALMANAC-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "secondaryProfiles": [
+        "GITHUB_BRIDGE"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-journey-01",
@@ -1032,7 +1416,13 @@
       "sourceSet": "playerMetaHud",
       "cloudflareRequired": false,
       "workRequired": false,
-      "journeyBlob": "ad58ef4239254f42a994ada3e729dd820fa1806c"
+      "journeyBlob": "ad58ef4239254f42a994ada3e729dd820fa1806c",
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-hud-01",
@@ -1048,7 +1438,16 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "raceHudBlob": "affb1ba1d175351fa5d7b30474afb4c421f4dd83",
-      "travelHudBlob": "e73aec107a9d3cf811a025ccbe6b2730e21fcfe5"
+      "travelHudBlob": "e73aec107a9d3cf811a025ccbe6b2730e21fcfe5",
+      "executionProfile": "WEB_STANDARD",
+      "secondaryProfiles": [
+        "CLAUDE_DESIGN_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-almanac-01",
@@ -1063,7 +1462,13 @@
       "sourceSet": "playerMetaHud",
       "waitingFor": "META-JOURNEY-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-inventory-01",
@@ -1079,7 +1484,13 @@
       "waitingFor": "META-JOURNEY-01",
       "cloudflareRequired": false,
       "workRequired": false,
-      "historicalSourceStatus": "SOURCE_REQUIRED; current 20-slot layout is explicit user direction"
+      "historicalSourceStatus": "SOURCE_REQUIRED; current 20-slot layout is explicit user direction",
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-pop-01",
@@ -1094,7 +1505,13 @@
       "sourceSet": "playerMetaHud",
       "waitingFor": "META-JOURNEY-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-radio-01",
@@ -1109,7 +1526,13 @@
       "sourceSet": "playerMetaHud",
       "waitingFor": "META-JOURNEY-01 + AUDIO-AUDITION-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-nav-01",
@@ -1124,7 +1547,13 @@
       "sourceSet": "playerMetaHud",
       "waitingFor": "META-HUD-01 + real Race and World navigation data providers",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "ui-grammar-01",
@@ -1140,7 +1569,16 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "currentEditLayerBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
-      "currentUiBlob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3"
+      "currentUiBlob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3",
+      "executionProfile": "WEB_STANDARD",
+      "secondaryProfiles": [
+        "CLAUDE_DESIGN_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "meta-prod-01",
@@ -1155,7 +1593,16 @@
       "sourceSet": "playerMetaHud",
       "waitingFor": "META-JOURNEY-01 + META-HUD-01 + META-ALMANAC-01 + META-INVENTORY-01 + META-POP-01 + META-RADIO-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "GITHUB_BRIDGE"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "skills-census-01",
@@ -1169,7 +1616,13 @@
       "promptSection": "SKILLS-CENSUS-01 · Repository-native Skills Census",
       "sourceSet": "skillsRuntimeContracts",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_FAST",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "instant",
+      "budget": "LOW",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "skills-current-01",
@@ -1184,7 +1637,16 @@
       "sourceSet": "skillsRuntimeContracts",
       "waitingFor": "SKILLS-CENSUS-01 accepted census/import scan",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "secondaryProfiles": [
+        "GITHUB_BRIDGE"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "skills-archive-01",
@@ -1199,7 +1661,13 @@
       "sourceSet": "skillsRuntimeContracts",
       "waitingFor": "SKILLS-CENSUS-01 + SKILLS-CURRENT-01",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "card-viewer-core-01",
@@ -1214,7 +1682,13 @@
       "sourceSet": "skillsRuntimeContracts",
       "waitingFor": "SKILLS-CENSUS-01; run as P2 consolidation rather than blocking current Card Zone product work",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "ink-3d-adapter-01",
@@ -1229,7 +1703,13 @@
       "sourceSet": "skillsRuntimeContracts",
       "waitingFor": "SKILLS-CURRENT-01 Ink entrypoint reconciled",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "resident-band-module-01",
@@ -1245,7 +1725,13 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "orcBandPr": 195,
-      "orcBandHead": "9dda7957a33e69926265c1e3a69028a4b35b26f0"
+      "orcBandHead": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "pose-to-blender-01",
@@ -1261,7 +1747,16 @@
       "cloudflareRequired": false,
       "workRequired": false,
       "blenderProofPr": 192,
-      "blenderProofHead": "b49fb6e1adde070d658e1cc21dadb3294164cb29"
+      "blenderProofHead": "b49fb6e1adde070d658e1cc21dadb3294164cb29",
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "blender-actor-family-01",
@@ -1276,7 +1771,13 @@
       "sourceSet": "characterResidentWorkflow",
       "waitingFor": "exact Frizzle-Orc 3 Rig-Warp + chosen Medium/Large/Legacy body + blank-head/accessory source pins",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "BLENDER_DEEP",
+      "model": "Claude Sonnet 5",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "blender-motion-02",
@@ -1291,7 +1792,13 @@
       "sourceSet": "characterResidentWorkflow",
       "waitingFor": "one concrete missing action + real consumer + pinned source; existing libraries checked first",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "BLENDER_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     },
     {
       "id": "legacy-custom-actor-01",
@@ -1306,7 +1813,36 @@
       "sourceSet": "characterResidentWorkflow",
       "waitingFor": "chosen custom Legacy actor/source + proof current browser assembler is insufficient",
       "cloudflareRequired": false,
-      "workRequired": false
+      "workRequired": false,
+      "executionProfile": "BLENDER_DEEP",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "model": "Claude Sonnet 5",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    {
+      "id": "ik-ccdik-parity-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "IK · Three.js CCD parity",
+      "what": "Compare current Resident Atlas reachChain against upstream Three.js CCDIKSolver on the same Rig_Medium and Orc Brute targets before changing the Puppet solver.",
+      "result": "Direct A/B/C review: current KFB vs raw upstream CCD vs constrained CCD, with residual/twist/flip evidence.",
+      "promptSection": "IK-CCDIK-PARITY-01 · Three.js CCD IK parity",
+      "sourceSet": "characterResidentWorkflow",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     }
   ],
   "presentation": {
@@ -1318,8 +1854,99 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 78,
-    "ready": 35,
+    "jobs": 79,
+    "ready": 36,
     "hold": 43
+  },
+  "executionProfiles": {
+    "WEB_FAST": {
+      "executor": "ChatGPT Web",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "instant",
+      "budget": "LOW",
+      "escalation": "WEB_STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    "WEB_STANDARD": {
+      "executor": "ChatGPT Web",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "escalation": "WEB_DEEP only for a named hard blocker",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    "WEB_DEEP": {
+      "executor": "ChatGPT Web",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "escalation": "Cowork/Work only for a proven capability gap",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    "CLAUDE_DESIGN_STANDARD": {
+      "executor": "Claude Design",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "escalation": "return to Web architecture; do not Opus-escalate visual drift first"
+    },
+    "COWORK_STANDARD": {
+      "executor": "Claude Cowork",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "HIGH",
+      "escalation": "COWORK_DEEP only when persistent workspace/long agent work is the actual need"
+    },
+    "COWORK_DEEP": {
+      "executor": "Claude Cowork",
+      "model": "Claude Sonnet 5",
+      "reasoning": "high",
+      "budget": "VERY_HIGH",
+      "escalation": "Claude Opus 5.5 high only after one focused failed pass or explicit deep-agent requirement"
+    },
+    "BLENDER_STANDARD": {
+      "executor": "Blender MCP / Claude Code",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "escalation": "BLENDER_DEEP"
+    },
+    "BLENDER_DEEP": {
+      "executor": "Blender MCP / Claude Code",
+      "model": "Claude Sonnet 5",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "escalation": "Claude Opus 5.5 high only after one focused failed repair pass"
+    },
+    "GITHUB_BRIDGE": {
+      "executor": "ChatGPT Web / GitHub Bridge",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "LOW-STANDARD",
+      "escalation": "WEB_DEEP only if integration diff exposes a hard root-cause problem"
+    },
+    "WORK_ESCALATION": {
+      "executor": "ChatGPT Work",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "VERY_HIGH",
+      "escalation": "none by default",
+      "assignment": "CAPABILITY_ESCALATION_ONLY"
+    }
+  },
+  "dispatchPolicy": {
+    "source": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXECUTION_DISPATCH_POLICY_2026-09-24.md",
+    "rule": "lowest capable profile first; Work/Opus/Cowork deep are escalation-only",
+    "hubDisplay": [
+      "executor",
+      "model",
+      "reasoning",
+      "budget",
+      "executionProfile"
+    ],
+    "copyPromptIncludesProfile": true
   }
 }
