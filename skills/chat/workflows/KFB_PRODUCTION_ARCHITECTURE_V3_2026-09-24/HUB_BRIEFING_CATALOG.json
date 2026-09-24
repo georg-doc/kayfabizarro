@@ -38,7 +38,10 @@
       "title": "WorldBuilder / God Mode",
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
       "capabilitiesTotal": 8,
-      "currentReady": [],
+      "currentReady": [
+        "world-zone-bake-01",
+        "look-torsion-01"
+      ],
       "currentReview": "worldbuilder-w0"
     },
     {
@@ -47,7 +50,9 @@
       "target": "Clean route-driven track anatomy and visual module consumable inside the editable KFB/OSM world",
       "capabilitiesTotal": 5,
       "currentReady": [
-        "race-anatomy-01"
+        "race-anatomy-01",
+        "race-track-recipe-01",
+        "race-rkit-03"
       ]
     },
     {
@@ -116,7 +121,9 @@
       "currentReady": [
         "spindle-01",
         "curtain-02",
-        "fx-semantic-01"
+        "fx-semantic-01",
+        "audio-audition-01",
+        "vfx-audition-01"
       ]
     }
   ],
@@ -780,6 +787,125 @@
       "sourceSet": "sharedStage",
       "cloudflareRequired": false,
       "workRequired": false
+    },
+    {
+      "id": "race-track-recipe-01",
+      "strand": "racer-world",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "Racer Web + Blender MCP",
+      "title": "Racer · Track A Recipe + Bake",
+      "what": "Build one authored figure-eight/over-under track from RKIT under Rapier stunt physics; no general editor.",
+      "result": "Baked reusable Track Module with base + 30m Hero jump.",
+      "promptSection": "RACE-TRACK-RECIPE-01 · Authored Track A + Bake",
+      "sourceSet": "racerWorld",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "rkit01": "f368dd0c71eb2798bcd057d30196cb8da4d967b6",
+      "rkit02": "37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9"
+    },
+    {
+      "id": "race-rkit-03",
+      "strand": "racer-world",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "Blender MCP",
+      "title": "Racer · RKIT-03 modules",
+      "what": "Continue thin flap-down, funnel, banked bowl, city profile and palette-ready material roles under resolved D1–D5 decisions.",
+      "result": "Reusable geometry modules + visual review sheet.",
+      "promptSection": "RACE-RKIT-03 · Blender module continuation under fixed decisions",
+      "sourceSet": "racerWorld",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "world-zone-bake-01",
+      "strand": "worldbuilder",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "World · Cologne OSM Zone Bake",
+      "what": "Compile the existing Cologne OSM source once into a versioned reusable World Zone.",
+      "result": "Cached zone package load/place/reload; no runtime Overpass.",
+      "promptSection": "WORLD-ZONE-BAKE-01 · Cologne OSM World Zone compiler",
+      "sourceSet": "worldbuilder",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "world-zone-bake-02",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "World · Barcelona Zone portability",
+      "what": "Run the same zone compiler on a second city and freely combine it with an external authored landmark.",
+      "result": "Barcelona zone + authored non-OSM landmark composition proof.",
+      "promptSection": "WORLD-ZONE-BAKE-02 · Barcelona portability proof",
+      "sourceSet": "worldbuilder",
+      "waitingFor": "WORLD-ZONE-BAKE-01 accepted compiler/package contract",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "look-torsion-01",
+      "strand": "worldbuilder",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web / optional Blender MCP",
+      "title": "Look · Elastic Torsion proof",
+      "what": "Restore height-dependent twist/bend on one isolated tall building/landmark without reopening failed Hürth R2.",
+      "result": "Source vs Elastic vs Elastic+Torsion direct visual A/B/C.",
+      "promptSection": "LOOK-TORSION-01 · Elastic Torsion architecture proof",
+      "sourceSet": "worldbuilder",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "lookPr": 194,
+      "lookHead": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea"
+    },
+    {
+      "id": "audio-audition-01",
+      "strand": "shared-stage",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Audio · Sound Audition Library",
+      "what": "Index existing audio banks by human concepts and semantic events instead of opaque filenames.",
+      "result": "Playable/A-B sound library with source/provenance and accepted mappings.",
+      "promptSection": "AUDIO-AUDITION-01 · Human-readable Sound Library",
+      "sourceSet": "sharedStage",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "music-perf-01",
+      "strand": "animation-residents",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ToolBox Animation Studio / Web",
+      "title": "Music · Resident Performance Timeline",
+      "what": "Sync source-backed songs to Resident/band/dance choreography through beat/bar metadata.",
+      "result": "Reusable song performance recipe with direct playback review.",
+      "promptSection": "MUSIC-PERF-01 · Song + Resident Performance timeline",
+      "sourceSet": "animationResidents",
+      "waitingFor": "TB-ANIM-01 usable Animation Studio base; source-backed song selected",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "vfx-audition-01",
+      "strand": "shared-stage",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "VFX · Source-backed Audition Library",
+      "what": "Preview existing Combat/Kenney/Brackeys/Race effect donors and adapt selected ones via semantic recipes.",
+      "result": "Moving VFX review board + promoted semantic recipe candidates.",
+      "promptSection": "VFX-AUDITION-01 · Source-backed VFX Library",
+      "sourceSet": "sharedStage",
+      "cloudflareRequired": false,
+      "workRequired": false
     }
   ],
   "presentation": {
@@ -790,8 +916,8 @@
   },
   "metrics": {
     "strands": 11,
-    "jobs": 45,
-    "ready": 20,
-    "hold": 25
+    "jobs": 53,
+    "ready": 26,
+    "hold": 27
   }
 }
