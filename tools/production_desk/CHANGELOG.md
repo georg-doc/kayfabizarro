@@ -3,7 +3,7 @@
 - linked HUB-CTRL recovery metadata to current Production Architecture PR #204 focus handoff;
 - three new Flow Design Inbox exports remain candidate inputs, not automatically promoted Hub tools;
 - current Work decision is intentionally **no execution**; Racer TRACK_A stays with the documented Web/Race owner;
-- WorldBuilder bake→Flow-shell seam, Resident Card, Resident Band and ToolBox review transport stay outside Work;
+- WorldBuilder bake→Flow-shell seam, Resident Card and Resident Band stay outside Work; ToolBox runtime + repaired review transport are now green and also require no Work;
 - MUSIC-PERF public review remains unchanged;
 - no root Production Desk republish or Live promotion claimed by this metadata checkpoint.
 

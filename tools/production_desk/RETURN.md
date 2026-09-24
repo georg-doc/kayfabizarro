@@ -3,7 +3,7 @@
 Status: **HUB SOURCE METADATA CURRENT · NO ROOT DESK REPUBLISH CLAIMED**
 
 Current architecture recovery source:
-`georg-doc/kayfabizarro#204` at `0e6661ea0bc8dee14e5fafab083c48875ebf5883`.
+`georg-doc/kayfabizarro#204` at `298378fc00f13bcca5fda35b3e1564063d88187f`.
 
 Current focus:
 World Building · Resident Scenes · ToolBox · Car Racer.
@@ -16,7 +16,7 @@ Minimal WSA/Work routing:
 - Resident Card / Resident Band wait for Georg visual/pose gates;
 - Audio calibration is accepted;
 - MUSIC-PERF remains the existing public human-review gate;
-- ToolBox direct runtime is green; its separate review-wrapper transport is not a Work task;
+- ToolBox direct runtime and repaired plain review transport are green (20/20 coherent · 25/25 Animation Studio · 13/13 plain review);
 - Racer TRACK_A real Rapier runtime/contact proof stays with the documented Web/Race owner.
 
 Handoff:
