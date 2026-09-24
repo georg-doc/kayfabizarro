@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB · WORLD-ZONE-BAKE-01 · Cologne</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color:#f2ede2;background:#171a1d}*{box-sizing:border-box}body{margin:0;display:grid;grid-template-columns:minmax(260px,340px) 1fr;height:100vh;overflow:hidden}aside{padding:18px;background:#20242a;border-right:1px solid #3b4149;overflow:auto}main{position:relative;min-width:0}.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#a8b0b9}h1{font-size:19px;line-height:1.15;margin:7px 0 14px}h2{font-size:12px;margin:18px 0 8px;color:#e2c071}.step{width:100%;text-align:left;margin:5px 0;padding:9px 10px;border:1px solid #4b535d;border-radius:7px;background:#292e35;color:#f2ede2;cursor:pointer}.step:disabled{opacity:.35;cursor:not-allowed}.step.active{border-color:#e2c071;background:#3a3425}.facts{font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;background:#171a1d;border:1px solid #353b43;border-radius:7px;padding:10px;margin-top:10px;color:#cad0d6}.ok{color:#9ed89e}.warn{color:#e2c071}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#f0d58d}canvas{display:block;width:100%;height:100%}#status{position:absolute;left:12px;top:12px;max-width:min(720px,calc(100% - 24px));padding:8px 10px;border-radius:7px;background:#171a1ddd;border:1px solid #3c434c;font:12px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace}#badge{position:absolute;right:12px;bottom:12px;padding:7px 9px;border-radius:7px;background:#171a1ddd;border:1px solid #3c434c;font-size:11px}@media(max-width:760px){body{grid-template-columns:1fr;grid-template-rows:auto minmax(320px,1fr);height:auto;min-height:100vh;overflow:auto}aside{border-right:0;border-bottom:1px solid #3b4149}main{min-height:62vh}}
+</style>
+</head>
+<body>
+<aside>
+  <div class="eyebrow">KFB ToolBox · WorldBuilder</div>
+  <h1>WORLD-ZONE-BAKE-01 · Cologne OSM Zone</h1>
+  <button class="step active" id="source">1 · Source semantics · isolated</button>
+  <button class="step" id="baked" disabled>2 · Baked visual mesh · identity</button>
+  <button class="step" id="placed" disabled>3 · WorldBuilder Zone ref + transform</button>
+  <button class="step" id="reload" disabled>4 · Save / reload baked Zone</button>
+  <div class="facts" id="facts">Loading exact baked manifest…</div>
+  <h2>Owner boundary</h2>
+  <div class="facts">OSM City Lab = geographic / semantic truth + bake
+WorldBuilder = Zone reference + transform
+Landmarks = separate searchable modules
+Runtime/editor Overpass = 0</div>
+</aside>
+<main><canvas id="view"></canvas><div id="status">Booting review…</div><div id="badge">local review · not public</div></main>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+
+const PACKAGE='../../../osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/';
+const FIXTURE='./fixture.scene.json';
+const STORAGE='kfb-world-zone-bake-01-fixture';
+const E=id=>document.getElementById(id),canvas=E('view'),renderer=new THREE.WebGLRenderer({canvas,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#c7d5d7');
+const camera=new THREE.PerspectiveCamera(45,1,.5,9000),controls=new OrbitControls(camera,canvas);controls.enableDamping=true;
+scene.add(new THREE.HemisphereLight(0xffffff,0x62686c,2.2));const sun=new THREE.DirectionalLight(0xffefd4,2.2);sun.position.set(-800,1200,600);scene.add(sun);
+const root=new THREE.Group();scene.add(root);const loader=new GLTFLoader();let manifest=null,fixture=null,mode='source';
+const network={manifest:0,normalized:0,glb:0,overpass:0};
+function clear(){while(root.children.length)root.remove(root.children[0]);}
+function mark(active){for(const id of ['source','baked','placed','reload'])E(id).classList.toggle('active',id===active)}
+async function json(url,kind){network[kind]=(network[kind]||0)+1;if(/overpass/i.test(url))network.overpass++;const r=await fetch(url);if(!r.ok)throw Error(`${url} · HTTP ${r.status}`);return r.json()}
+function loadGlb(url){network.glb++;return new Promise((resolve,reject)=>loader.load(url,g=>resolve(g),undefined,reject))}
+function frameObject(obj,top=false){const b=new THREE.Box3().setFromObject(obj),c=b.getCenter(new THREE.Vector3()),s=b.getSize(new THREE.Vector3()),span=Math.max(s.x,s.z,300);controls.target.copy(c);if(top)camera.position.set(c.x,span*1.35,c.z+.01);else camera.position.set(c.x+span*.65,c.y+span*.48,c.z+span*.65);camera.near=.5;camera.far=span*6;camera.updateProjectionMatrix();controls.update()}
+function sourceLines(n){
+ const road=[],building=[];
+ for(const r of n.features.roads||[]){const line=r.centerline||[];for(let i=1;i<line.length;i++)road.push(line[i-1].x,.08,line[i-1].z,line[i].x,.08,line[i].z)}
+ for(const b of n.features.buildings||[]){const p=b.footprint||[];for(let i=1;i<p.length;i++)building.push(p[i-1].x,.1,p[i-1].z,p[i].x,.1,p[i].z)}
+ const mk=(arr,color)=>{const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(arr,3));return new THREE.LineSegments(g,new THREE.LineBasicMaterial({color,transparent:true,opacity:.85}))};
+ const g=new THREE.Group();g.name='exact-normalized-source-isolation';g.add(mk(building,0x78685c),mk(road,0x3b3a46));return g;
+}
+function facts(extra=''){
+ E('facts').innerHTML=`<span class="ok">${manifest.id}@${manifest.revision}</span>\n${manifest.counts.buildings} buildings · ${manifest.counts.roads} roads\nframe ${manifest.frame.units} · x east · z north\nnormalized ${manifest.source.normalizedSha256.slice(0,16)}…\nraw ${manifest.source.rawSha256.slice(0,16)}…\nlook ${manifest.look.styleId} / ${manifest.look.preset}\ncompiler ${manifest.compiler.revision}\n${extra}`;
+}
+async function sourceMode(){mode='source';mark('source');clear();E('status').textContent='1 · Loading exact normalized semantic source in isolation…';const n=await json(PACKAGE+manifest.contents.normalized,'normalized');const g=sourceLines(n);root.add(g);frameObject(g,true);facts('SOURCE ISOLATION · no baked mesh yet');E('baked').disabled=false;E('status').textContent='1 · SOURCE ISOLATION · exact normalized.json copy · no WorldBuilder transform';}
+async function bakedMode(){mode='baked';mark('baked');clear();E('status').textContent='2 · Loading visual.glb baked once from source…';const gltf=await loadGlb(PACKAGE+manifest.contents.visual);root.add(gltf.scene);frameObject(gltf.scene);facts(`BAKED GLB · ${manifest.visual.glbBytes.toLocaleString()} bytes`);E('placed').disabled=false;E('status').textContent='2 · BAKED ZONE · identity transform · visual.glb only';}
+function applyTransform(obj,t){obj.position.fromArray(t.position);obj.rotation.fromArray(t.rotation);obj.scale.fromArray(t.scale);obj.updateMatrixWorld(true)}
+async function placedMode(doc=fixture,label='PLACED'){mode='placed';mark('placed');clear();const z=doc.objects.find(o=>o.kind==='world-zone');if(!z)throw Error('fixture has no world-zone object');E('status').textContent='3 · Resolving Zone manifest reference + transform…';const gltf=await loadGlb(PACKAGE+manifest.contents.visual);applyTransform(gltf.scene,z.transform);root.add(gltf.scene);frameObject(gltf.scene);facts(`${label}\nref ${z.source.path}\npos ${z.transform.position.join(', ')}\nrotY ${z.transform.rotation[1]} rad`);E('reload').disabled=false;E('status').textContent='3 · WORLDBUILDER PLACEMENT · scene stores manifest ref + transform only';}
+async function reloadMode(){mode='reload';mark('reload');localStorage.setItem(STORAGE,JSON.stringify(fixture));network.normalized=0;network.overpass=0;network.glb=0;network.manifest=0;clear();E('status').textContent='4 · Clearing scene and reloading saved WorldBuilder document…';const doc=JSON.parse(localStorage.getItem(STORAGE));manifest=await json(PACKAGE+'MANIFEST.json','manifest');await placedMode(doc,'RELOADED');mark('reload');facts(`RELOADED FROM LOCAL SCENE\nruntime fetches: manifest ${network.manifest} · glb ${network.glb}\nnormalized/raw/Overpass: ${network.normalized}/${0}/${network.overpass}`);E('status').textContent=`4 · RELOAD PASS · baked package only · source recompute 0 · Overpass ${network.overpass}`;}
+E('source').onclick=()=>sourceMode().catch(fail);E('baked').onclick=()=>bakedMode().catch(fail);E('placed').onclick=()=>placedMode().catch(fail);E('reload').onclick=()=>reloadMode().catch(fail);
+function fail(e){console.error(e);E('status').textContent='ERROR · '+(e.message||e);E('status').style.color='#ffb6aa'}
+function resize(){const r=canvas.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(.1,r.width/r.height);camera.updateProjectionMatrix()}addEventListener('resize',resize);resize();
+renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
+(async()=>{manifest=await json(PACKAGE+'MANIFEST.json','manifest');fixture=await json(FIXTURE,'fixture');facts();await sourceMode()})().catch(fail);
+</script>
+</body></html>
