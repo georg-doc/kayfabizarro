@@ -1,3 +1,14 @@
+## 2026-09-24 · KFB MVP focus · mobility / ToolBox v17+ / Motion intake / AI Town
+
+- Five coherent MVPs now organize current World/Resident/ToolBox/Racer work; Resident Disco is a parallel READY performance fixture.
+- Animation Lab direction is semantic State/Action authoring with Melee/Duel and direct compatible-FBX intake.
+- Blender remains the technical-exception path for real retarget/root/curve/contact/rig/bake work instead of a mandatory pass for every useful Mixamo clip.
+- ToolBox Production explicitly preserves useful FrankenStein/Pet Studio v17+ owner-backed capabilities behind Stage-First.
+- AI Town is a mechanics donor only; Journey, ChatterBox, NPC-LIFE and host movement remain KFB owners.
+- New READY jobs: FrizzleBob Body Family, Direct FBX Motion Intake, v17+ ToolBox Integration; Resident Disco remains READY.
+- New HOLD MVPs: WorldBuilder all-mode mobility, Hürth→Cologne→Race, AI-Town-KISS Living Residents.
+- Architecture catalog is now **88 jobs · 42 READY · 46 HOLD** with **88/88** prompt/source/profile integrity.
+
 ## 2026-09-24 · Resident Disco research + architecture mount
 
 - Prepared `RES-DISCO-01` on the existing Production Architecture v3 owner rather than creating a new Resident/Music runtime.
