@@ -1,0 +1,132 @@
+{
+  "schema": "kfb.production-architecture.v3-input-locks/1",
+  "updated": "2026-09-24",
+  "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
+  "jobs": {
+    "toolbox-coherent-integration-01": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "tools/KFB-ToolBox/",
+      "currentIntegration": {
+        "pr": 185,
+        "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+        "head": "2833674b36be707fa4d14c8b532faee78ef3ba28"
+      },
+      "acceptedFunctionalBaseline": {
+        "source": "Dropbox /CLAUDE/KFB ToolBox v0.5/KFB-ToolBox/stage-first/src/KFB ToolBox Stage-First v1.dc.html",
+        "sha256": "08f9108a6a2a556d0e1e2e34ce564842062a4fdd77a80fb1020a8e723b688fba",
+        "note": "Georg-accepted working Stage-First baseline; do not rebuild from the smaller concept mockup."
+      },
+      "requiredOwners": [
+        "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+        "tools/KFB-ToolBox/lib/edit-layer.js",
+        "kfb.scene-patch.v1 persistence",
+        "Resident Atlas recipes",
+        "EyeRig v6 existing profiles"
+      ],
+      "residentTargets": [
+        "goth-girl",
+        "orc-warband",
+        "animatronic"
+      ],
+      "success": "Actor → Resident/Stage → select → Move/Rotate/Scale/Drop → Save → Reload → continue in one coherent ToolBox artifact",
+      "forbid": [
+        "second roster",
+        "second editor",
+        "second Resident database",
+        "new EyeRig",
+        "placeholder actor on source failure",
+        "Cloudflare debug loop"
+      ]
+    },
+    "blender-resident-performance-batch-01": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "Resident / Animation authoring via Blender MCP",
+      "provenBlenderPath": {
+        "pr": 192,
+        "branch": "claude/blender-mcp-animation-poc-2026-09-23",
+        "head": "b49fb6e1adde070d658e1cc21dadb3294164cb29",
+        "result": "reproducible Blender script + GLB + preview; human visual PASS about 80 percent"
+      },
+      "motionLibrary": {
+        "pr": 197,
+        "branch": "claude/motion-library-01-2026-09-24",
+        "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+        "path": "media/3D_Assets/Animations/KFB_Motion_Library/",
+        "facts": "33 clips each for Rig_Medium and Rig_Large; three.js GLTFLoader + AnimationMixer checked"
+      },
+      "warbandCurrent": {
+        "pr": 195,
+        "branch": "claude/orb-p1-return-postmortem-2026-09-23",
+        "head": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+        "human": "leader accepted; guitarist accepted; drummer v1-v4 rejected; v5 restores v0 baseline"
+      },
+      "residentAtlasPin": "10f661a542e2553b4d3433bfc5b45dfc1401e660",
+      "success": "one or more reusable Resident performances authored/exported in a productive batch with visual previews and compact batch index",
+      "forbid": [
+        "new runtime gameplay owner",
+        "automatic Medium↔Large retarget assumption without source proof",
+        "human gate for each bone/measurement",
+        "manual GitHub heavy-file upload during every authoring turn"
+      ]
+    },
+    "worldbuilder-capability-r1": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "KFB ToolBox / WorldBuilder",
+      "measuredFoundation": {
+        "pr": 203,
+        "branch": "work/worldbuilder-w0-source-lock-2026-09-24",
+        "head": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+        "publicReview": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/",
+        "facts": "10/10 world gates PASS; human foundation decision pending"
+      },
+      "terrainAuthoringDonor": {
+        "pr": 190,
+        "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+        "head": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf",
+        "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/",
+        "role": "accepted technical donor for non-destructive Raise/Lower sculpt"
+      },
+      "sharedObjectEditor": {
+        "pr": 186,
+        "branch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+        "head": "7267185cdbdc60e576b946ee589f0b2e932c8c8b",
+        "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+        "accepted": "R2 Move/Rotate/free Scale/Drop/World-Local/Close + Save/Reload roundtrip"
+      },
+      "motionLibrary": {
+        "pr": 197,
+        "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+        "role": "later locomotion/interaction clip source; not required to complete R1"
+      },
+      "success": "walk → sculpt → place/select → move/rotate/scale/drop → save → reload → continue in the measured WB-W0 place",
+      "deferForR1": [
+        "black tree/material repair unless it blocks authoring review",
+        "animation blend polish",
+        "outline policy",
+        "OSM expansion",
+        "vehicles",
+        "weather",
+        "God Mode"
+      ],
+      "forbid": [
+        "second terrain truth",
+        "second object picker/editor",
+        "second persistence schema",
+        "restart from rejected WorldBuilder v1 foundation",
+        "measurement-only human gate",
+        "Cloudflare debug loop"
+      ]
+    },
+    "web-quick-3d-review": {
+      "ownerRepo": "variable",
+      "owner": "existing named product/tool owner",
+      "success": "one real-source directly clickable 3D review artifact answering one visual question",
+      "forbid": [
+        "proxy mesh in place of mandated donor",
+        "new runtime owner",
+        "measurement dashboard as primary human surface",
+        "Cloudflare deployment solely for the quick visual check"
+      ]
+    }
+  }
+}
