@@ -6,7 +6,7 @@
   "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
   "baseB1": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
-  "currentGate": "HUMAN_REVIEW",
+  "currentGate": "B2B_RESEARCH_NEXT",
   "threeDonor": {
     "repo": "mrdoob/three.js",
     "tag": "r160",
@@ -54,17 +54,17 @@
     "no modal player",
     "no B2b/B2c/B3/C1 implementation in B2a"
   ],
-  "humanAcceptance": "PENDING",
+  "humanAcceptance": "ACCEPTED_AFTER_REQUESTED_REAR_FIX",
   "public": {
-    "stageCommit": "be24c154889fb96c20e99ef2b86dd2ced44007be",
+    "stageCommit": "983929385c3be74a42ec88c29f601c08b90b5a05",
     "route": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
-    "proofRun": 35953227597,
-    "publicJob": 107486764345,
-    "checks": "22/22 PASS",
+    "proofRun": 36066988954,
+    "publicJob": 107860680693,
+    "checks": "24/24 PASS",
     "pageErrors": 0,
     "httpErrors": 0,
-    "artifact": 10789313140,
-    "status": "PUBLIC_VERIFIED"
+    "artifact": 10836432703,
+    "status": "PUBLIC_VERIFIED_FRONT_ONLY"
   },
   "timeoutRecovery": {
     "event": "chat/tool timeout after public-proof setup",
@@ -73,5 +73,37 @@
     "verifiedBranchHead": "bed7f74e5bca3efb51a7eb3ab12819ad4a46af09",
     "verifiedCloudflareHead": "be24c154889fb96c20e99ef2b86dd2ced44007be",
     "conclusion": "writes were present; no duplicate retry required"
+  },
+  "humanAcceptanceDate": "2026-09-25",
+  "humanAcceptanceNote": "Georg accepted B2a subject to fixing mirrored rear video, then explicitly asked ChatGPT to build/fix/check it in.",
+  "frontOnlyTune": {
+    "issue": "CSS3D YouTube remained visible/mirrored from side/rear while other media modes showed the billboard backside.",
+    "firstAttempt": {
+      "head": "ba7043d46cffc642d9a13be1b515b31e2192c86c",
+      "run": 36066418717,
+      "integrationJob": 107857553235,
+      "result": "28/29 FAIL",
+      "artifact": 10836446767,
+      "cause": "CSS backface-visibility alone did not remove the cross-origin iframe from rear hit-testing/rendering."
+    },
+    "repairedRuntimeHead": "89065825448846beb2649082fc0c1bf25df20ccb",
+    "repair": "Keep CSS backface hidden as defense-in-depth, and gate CSS3DObject.visible by billboard panel world-normal dot camera direction; rear hemisphere exposes only the Kenney/WebGL billboard body.",
+    "integration": {
+      "run": 36066988954,
+      "job": 107859397766,
+      "checks": "29/29 PASS",
+      "pageErrors": 0,
+      "firstPartyHttpErrors": 0,
+      "artifact": 10836726983
+    },
+    "public": {
+      "stageCommit": "983929385c3be74a42ec88c29f601c08b90b5a05",
+      "rerunJob": 107860680693,
+      "checks": "24/24 PASS",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "artifact": 10836432703,
+      "visualProof": "04-video-back.png shows only the normal billboard backside; no mirrored YouTube video."
+    }
   }
 }
