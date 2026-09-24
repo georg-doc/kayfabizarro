@@ -99,6 +99,8 @@ Do not stop after proving only one of these seams. Internal tests may be checkpo
 
 **Executor:** Blender MCP / Claude Code authoring session.
 
+**Execution profile:** `BLENDER_STANDARD` · Blender MCP / Claude Code · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.
+
 **Input lock:** `blender-resident-performance-batch-01`.
 
 **Outcome:** a queue of reusable Resident performances can be worked through in one productive Blender session after the fixture/pipeline is proven.
@@ -171,6 +173,8 @@ The queue may contain multiple items. It does not require a new planning chat pe
 **Use when:** continuing from WB-W0 into a genuinely useful authoring tool.
 
 **Executor:** Web + Claude Design where visual authoring is useful; Blender only for specific authored 3D assets.
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `CLAUDE_DESIGN_STANDARD`, `BLENDER_STANDARD`.
 
 **Input lock:** `worldbuilder-capability-r1`.
 
