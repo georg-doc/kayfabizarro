@@ -6,14 +6,24 @@
   "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
   "baseB1": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
-  "currentGate": "SOURCE_ISOLATION",
+  "currentGate": "INTEGRATION_PROOF",
   "threeDonor": {
     "repo": "mrdoob/three.js",
     "tag": "r160",
     "commit": "d04539a76736ff500cae883d6a38b3dd8643c548",
     "path": "examples/css3d_youtube.html",
-    "pattern": "CSS3DRenderer + CSS3DObject + iframe + blocker"
+    "pattern": "CSS3DRenderer + CSS3DObject + iframe + blocker",
+    "isolatedProofRun": 35951854457,
+    "isolatedProofChecks": "9/9 PASS",
+    "isolatedProofArtifact": 10787959850
   },
+  "b1Protected": {
+    "head": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
+    "bb1-boot.js": "1326f4117f9c605d778b2a54352ca7e8b723deba",
+    "bb-scene.js": "235b062f9d575a49a4c98d8be57d04d43acc2213",
+    "bb0-boot.js": "57392b87c0344648695e1ef6d62f6f70a9dd942b"
+  },
+  "b2aSeam": "One CSS3DObject copies the accepted B1 panel world transform and measured world dimensions; VIDEO mode loads the Travel YouTube iframe directly on that face; other modes keep B1 CanvasTexture behavior.",
   "kfbVideoOwner": {
     "videoId": "MTCSwppblk0",
     "source": "Travel VIDEO contract"
@@ -21,8 +31,9 @@
   "protected": [
     "B0 bb-scene.js unchanged",
     "B0 bb0-boot.js unchanged",
-    "accepted B1 remains frozen checkpoint",
-    "no modal replacement architecture",
+    "accepted B1 bb1-boot.js copied unchanged as reference",
+    "CARD/COVER/SLOGAN behavior unchanged",
+    "no modal player",
     "no B2b/B2c/B3/C1 implementation in B2a"
   ],
   "humanAcceptance": "PENDING"
