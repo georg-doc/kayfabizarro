@@ -237,3 +237,27 @@ Plain review: **13/13 Chromium PASS**. Full owner run: **114/114 PASS**. Medium 
 
 ### GATE
 Current gate remains one human review of the plain HTML. No Cloudflare publish.
+
+
+## 2026-09-24 · AN-PROFILE-02 HUMAN FAIL
+
+### HUMAN REVIEW
+The final plain Three.js review was opened in the real Chat visualization host and failed visibly:
+- `source failed`;
+- `GLB failed: Mannequin_Medium...`.
+
+Georg also rejected the review composition itself: the measurement/data palettes cover/dominates the review area to the point that the 3D animation would not be meaningfully visible even if source loading succeeded.
+
+### STATUS CORRECTION
+AN-PROFILE-02 is **not human accepted** and is no longer “review-ready”.
+
+Technical CI remains historical implementation evidence; it does not override the real human review failure.
+
+### STOP
+No further repair pass in this slice. All three review transports are frozen failed candidates.
+
+### NEXT
+**HOLD** until Georg explicitly starts a new bounded review-surface brief with:
+1. source transport proven in the actual human host;
+2. dominant unobstructed 3D stage;
+3. measurements available without covering the performance.
