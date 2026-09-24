@@ -13,28 +13,31 @@ Current owner: **KFB ToolBox / Stage-First integration** on Draft PR **#185**, b
 
 Read:
 - `tools/KFB-ToolBox/_handover/TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/RETURN.md`;
-- `tools/KFB-ToolBox/_handover/AN_PROFILE_02_2026-09-24/START_HERE.md`.
+- `tools/KFB-ToolBox/_handover/AN_PROFILE_02_2026-09-24/START_HERE.md`;
+- `tools/KFB-ToolBox/_handover/AN_PROFILE_02_2026-09-24/REVIEW_TRANSPORT_FAILURE_RECOVERY.md`.
 
-The coherent Stage-First flow remains human-open and technically green (**22/22 static + 20/20 Chromium**). Georg explicitly authorized the Production Architecture v3 T4 Animation Studio continuation before TB-EYE.
+The ToolBox Coherent Stage-First flow and AN-PROFILE-02 remain technically green. The current Motion Library consumer uses the existing Animation Lab v3 owner; no second mixer/runtime/movement owner was introduced.
 
-AN-PROFILE-02 runtime-tested head:
-`93d9dd6f763c064313fe5d3bef690496487145a9`
+Current human-review transport:
+`tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html`
 
-Evidence:
-- AN-PROFILE-02 static **34/34 PASS**;
-- AN-PROFILE-02 Chromium **25/25 PASS**;
-- Rig_Medium: 33/33 real KFB Motion clips;
-- Rig_Large: 33/33 real KFB Motion clips;
-- Large foot contacts remain unknown instead of inheriting Medium facts;
-- 0 KFB Motion/profile network failures;
-- 0 Animation Studio page errors.
+This is a plain Three.js review adapter over real pinned Medium/Large Mannequins, real 33-clip KFB Motion Library GLBs and real catalogue/profile data. The two earlier DC-based Chat wrappers are frozen transport failures and must not be reused.
 
-AN-PROFILE-02 reuses the current `stage-first/src/KFB Animation Lab v3.dc.html` as the ToolBox Animation Studio surface. It does **not** promote the older standalone Animation Lab node and creates no second mixer/runtime/movement owner.
+Final review validation:
+- Actions `36055391088 / 107820911138`: **SUCCESS**
+- coherent static: **22/22 PASS**
+- AN-PROFILE-02 static: **34/34 PASS**
+- coherent Chromium: **20/20 PASS**
+- Animation Studio Chromium: **25/25 PASS**
+- plain review Chromium: **13/13 PASS**
+- combined final owner run: **114/114 PASS**
+- 0 review page errors
+- 0 failed review source/module requests
 
 Current gate:
-**direct Chat HTML human review of the 33-clip Library + measured Data surface**.
+**Georg human review of the tested plain Motion Library HTML**.
 
-WorldBuilder Motion consumption remains HOLD until that first consumer review. TB-EYE-01 remains later. No Cloudflare publication is claimed; future Stage route `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/` is **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
+WorldBuilder Motion consumption remains HOLD until that review. TB-EYE remains later. No Cloudflare publication is claimed.
 
 ## Start order
 
@@ -917,3 +920,23 @@ Cloudflare remains deferred.
 SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
 
 This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
+
+
+## 2026-09-24 · MUSIC-PERF-01 public review gate
+
+ToolBox / Animation Studio MUSIC-PERF-01 is now a **PUBLIC_VERIFIED · HUMAN PENDING** review candidate.
+
+- receiving owner remains ToolBox PR #185 at `fdfe5fc26b37c1baf87804d3cb427654d54bd5a8`;
+- stacked implementation/review owner is Draft PR #207, current handoff head `aef93c2521a0818318e0810752f065727c1e5622`;
+- frozen runtime-tested implementation head is `d834f1d4819dc972e2f4aeeedee4c559cbe8afbd`;
+- public deploy head is `5658557e8d23a68ea1f5f6183d237c9a3284e29a`;
+- Hub owner PR #202 carries the LOOK_AT/tool source and Stage card at `82d9441b732f1edb32ca15b37692a6e7d5cff49e`;
+- direct review route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/`;
+- public Chromium proof: **22/22 PASS**, run `36047130373`, job `107793328531`;
+- local/source evidence remains **22/22 static + 29/29 Chromium PASS**;
+- exact ORB v5 donor, source song and one-song master-clock contract are preserved;
+- leader + guitarist retain prior PASS; drummer remains HOLD.
+
+Human result is still **PENDING**. Do not merge PR #207, reopen drummer authoring or broaden Town/Resident integration before Georg returns PASS / TUNE / REJECT on the direct Stage route.
+
+The generated root Production Desk snapshot remains a separate HUB-CTRL rebuild concern; do not infer that it was regenerated from this router note.
