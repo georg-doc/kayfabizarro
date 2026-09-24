@@ -65,3 +65,37 @@ The runtime passes the requested flow, but the accepted Stage-First donor still 
 **TB-EYE-01 · EyeRig Production Studio.**
 
 Human gate first: Georg reviews this coherent ToolBox milestone. No merge, Stage promotion or Live promotion is authorized by this Return.
+
+
+## ADDITIVE UPDATE · AN-PROFILE-02 · 2026-09-24
+
+Georg explicitly continued from AN-PROFILE-01 into the Production Architecture v3 T4 Animation Studio lane before the earlier TB-EYE follow-up. The original coherent milestone above remains its own unaccepted human gate; this update does not retroactively mark it accepted.
+
+Current ToolBox owner remains this same PR #185 / branch. No second Animation Lab tool owner was promoted.
+
+AN-PROFILE-02 extends the existing Stage-First `KFB Animation Lab v3.dc.html` with the source-backed 33-clip Motion Library and measured profile metadata from PR #206/#197. It reuses the existing clip pool, selection and mixer path.
+
+Runtime-tested head:
+`93d9dd6f763c064313fe5d3bef690496487145a9`
+
+Actions:
+`36032905791 / 107745811232 · SUCCESS`
+
+Evidence:
+- original coherent owner/static: **22/22 PASS**;
+- AN-PROFILE-02 static: **34/34 PASS**;
+- original coherent browser flow: **20/20 PASS**;
+- AN-PROFILE-02 browser: **25/25 PASS**;
+- 33/33 real KFB Motion clips load on Rig_Medium;
+- 33/33 real KFB Motion clips load on Rig_Large;
+- Large foot contacts remain unknown instead of inheriting Medium measurements;
+- 0 Motion/profile network failures;
+- 0 Animation Studio page errors.
+
+Detailed handoff:
+`../AN_PROFILE_02_2026-09-24/START_HERE.md`
+
+Current next gate for this explicitly authorized lane:
+**AN-PROFILE-02 direct Chat HTML human review · judge 33-clip Library browsing + measured Data readability/usefulness only.**
+
+TB-EYE-01 remains a later ToolBox capability; WorldBuilder Motion consumption stays HOLD until this first Animation Studio consumer review.
