@@ -12,6 +12,9 @@
 
 No architecture owner was replaced, no PR was merged and no Live gameplay surface was promoted.
 
+Publication proof: `cloudflare-live@a82c38ccbdda220b668bf71a337df38586c41f3e`; the exact public Hub rendered
+13 collapsed strands and 79 nested jobs in real Chrome, copied an original briefing, and logged no browser errors.
+
 ## 2026-09-24 · HUB-CTRL-01
 
 - Confirmed the public blank Hub was caused by malformed embedded JSON, not missing project data.

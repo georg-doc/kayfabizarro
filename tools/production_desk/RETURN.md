@@ -1,6 +1,6 @@
 # RETURN · HUB-V3-MOUNT · self-service catalog beside Today · 2026-09-24
 
-Status: **IMPLEMENTED AND LOCALLY BROWSER-VERIFIED · PUBLICATION PENDING**
+Status: **PUBLIC_VERIFIED · 13 STRANDS / 79 JOBS · EXISTING HUB OWNER PRESERVED**
 
 Owner: existing KFB Production Desk / HUB-CTRL PR #202. Architecture source: Draft PR #204 at
 `531a8f4c2c26b4f5ed042cc360c49546017641c6`.
@@ -27,12 +27,19 @@ Owner: existing KFB Production Desk / HUB-CTRL PR #202. Architecture source: Dra
 
 ## Publication state
 
-Not yet claimed in this checkpoint. Public acceptance surface remains:
-`https://kayfabizarro.pages.dev/kfb-hub/`.
+`PUBLIC_VERIFIED` at `https://kayfabizarro.pages.dev/kfb-hub/`.
+
+- HUB-CTRL implementation branch after mount checkpoint: `work/hub-ctrl-01-2026-09-24@2eee5e4fc99c9dd95f7a46fff9247bcd2adff84f`.
+- Architecture source remains unmerged Draft PR #204 at `531a8f4c2c26b4f5ed042cc360c49546017641c6`.
+- Cloudflare publication head: `a82c38ccbdda220b668bf71a337df38586c41f3e`.
+- Exact public route opened in Chrome with source marker `f89eac1`; Katalog navigation, 13 strands,
+  79 nested jobs, compact execution metadata and successful start-copy feedback were visible.
+- Public browser console: **0 errors / 0 warnings**.
 
 ## One next gate
 
-Publish through the existing HUB-CTRL owner, open the exact public Hub, and verify the new **Katalog** surface once.
+Use the new WorldBuilder strand to start exactly one bounded next job: `WORLD-ZONE-BAKE-01` (Cologne OSM
+Zone Bake) in Web. It is READY and does not require Work or Cloudflare.
 
 ---
 
