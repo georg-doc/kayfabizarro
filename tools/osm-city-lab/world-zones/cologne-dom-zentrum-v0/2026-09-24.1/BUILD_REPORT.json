@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.world-zone.build-report.v1",
+  "zoneId": "cologne-dom-zentrum-v0",
+  "revision": "2026-09-24.1",
+  "sourceReportedSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c",
+  "cachedFileSha256": "5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a",
+  "reportedNormalizedSha256": "4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702",
+  "cachedNormalizedFileSha256": "a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e",
+  "querySha256": "5ad8986f240387e70d406f3009f3f21560077b39d09b603f534fd4ba9376ab80",
+  "compilerSha256": "34d37ed13220bdb3cd704cd2b20064dd83e3037870f9292a7178b319ac583b4e",
+  "styleSha256": "0a2869622db508f2ca55dabb285a34475adf7fef712d82d0878990141284cf6a",
+  "deformerSha256": "8abb8c68db3df9c3ca87aaaa63d88b9e1498c2343b26a00c6d602415c9f6cbc0",
+  "counts": {
+    "roads": 5236,
+    "driveableRoads": 2523,
+    "buildings": 6351,
+    "landuse": 456,
+    "waterLines": 6,
+    "anchors": 5
+  },
+  "visual": {
+    "buildingVertices": 323088,
+    "buildingTriangles": 579610,
+    "roadVertices": 38098,
+    "roadTriangles": 27626,
+    "glbBytes": 11629496
+  },
+  "gates": {
+    "cachedSourceHashMatchesLock": true,
+    "reportedSourceHashMatchesLock": true,
+    "cachedNormalizedHashMatchesLock": true,
+    "normalizedMetreFrame": true,
+    "roadsPresent": true,
+    "buildingsPresent": true,
+    "bakedVisualGlb": true,
+    "supportUndeformed": true,
+    "landmarksSeparate": true,
+    "noRuntimeOverpass": true
+  }
+}

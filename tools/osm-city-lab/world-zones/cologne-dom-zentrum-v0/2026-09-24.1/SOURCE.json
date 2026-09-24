@@ -1,0 +1,51 @@
+{
+  "schema": "kfb.world-zone.source.v1",
+  "zoneId": "cologne-dom-zentrum-v0",
+  "revision": "2026-09-24.1",
+  "owner": "KFB OSM City Lab",
+  "sourceDataset": {
+    "id": "dom-zentrum-v0",
+    "path": "tools/osm-city-lab/data/dom-zentrum-v0/",
+    "rawPath": "tools/osm-city-lab/data/dom-zentrum-v0/source.overpass.json",
+    "normalizedPath": "tools/osm-city-lab/data/dom-zentrum-v0/normalized.json",
+    "sourceCommit": "4946bff61ba53a78a79daf316253c9c518f64473",
+    "reportedSourceSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c",
+    "cachedFileSha256": "5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a",
+    "reportedNormalizedSha256": "4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702",
+    "cachedNormalizedFileSha256": "a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e",
+    "querySha256": "5ad8986f240387e70d406f3009f3f21560077b39d09b603f534fd4ba9376ab80",
+    "sourceBlobSha": "7220dc617782b4db7dfa80e3b3d58e54046eebb4",
+    "normalizedBlobSha": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9",
+    "osmBaseTimestamp": "2026-09-20T03:20:04Z",
+    "retrievedAt": "2026-09-20T03:21:41.072Z",
+    "attribution": {
+      "data": "© OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "url": "https://www.openstreetmap.org/copyright"
+    }
+  },
+  "compiler": {
+    "schema": "kfb.world-zone.compiler.v1",
+    "revision": "1.0.0",
+    "files": [
+      {
+        "path": "tools/osm-city-lab/src/world-zone/compiler.js",
+        "sha256": "6707b8a1bdac1403db3821cd73186cf5f3d26ff5238abf01c59b7fd4c46a2699"
+      },
+      {
+        "path": "tools/osm-city-lab/src/world-zone/geometry.js",
+        "sha256": "1b80d405d9f76536b7dd40a19d1ab809cfe918b7b54168a93f3843fffe4a6e07"
+      }
+    ],
+    "sha256": "34d37ed13220bdb3cd704cd2b20064dd83e3037870f9292a7178b319ac583b4e"
+  },
+  "look": {
+    "stylePath": "tools/osm-city-lab/styles/kfb-city-v0.json",
+    "styleSha256": "0a2869622db508f2ca55dabb285a34475adf7fef712d82d0878990141284cf6a",
+    "deformerPath": "tools/osm-city-lab/src/style/cartoon-city.js",
+    "deformerSha256": "8abb8c68db3df9c3ca87aaaa63d88b9e1498c2343b26a00c6d602415c9f6cbc0",
+    "preset": "cartoon"
+  },
+  "runtimePolicy": "load baked package only; no runtime/editor Overpass request",
+  "compositionPolicy": "WorldBuilder stores zone manifest reference + transform. Landmark Modules stay separate searchable references."
+}

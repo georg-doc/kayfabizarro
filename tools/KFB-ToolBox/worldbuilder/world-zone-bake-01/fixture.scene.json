@@ -1,0 +1,29 @@
+{
+  "format": "kfb-worldbuilder-scene",
+  "version": 1,
+  "id": "world-zone-bake-01-fixture",
+  "terrain": null,
+  "sources": {
+    "worldZone": {
+      "owner": "KFB OSM City Lab",
+      "contract": "baked manifest reference + transform; no raw geometry in scene document"
+    }
+  },
+  "objects": [
+    {
+      "id": "zone-cologne-dom-zentrum-v0",
+      "kind": "world-zone",
+      "name": "Cologne · Dom/Zentrum World Zone",
+      "source": {
+        "type": "world-zone-manifest",
+        "path": "tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/MANIFEST.json",
+        "revision": "2026-09-24.1"
+      },
+      "transform": {
+        "position": [180, 0, -120],
+        "rotation": [0, 0.261799, 0],
+        "scale": [1, 1, 1]
+      }
+    }
+  ]
+}

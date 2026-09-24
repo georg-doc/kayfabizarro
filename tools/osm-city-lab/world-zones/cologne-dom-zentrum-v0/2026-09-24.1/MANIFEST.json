@@ -1,0 +1,138 @@
+{
+  "schema": "kfb.world-zone.manifest.v1",
+  "id": "cologne-dom-zentrum-v0",
+  "revision": "2026-09-24.1",
+  "label": "Köln Dom / Hauptbahnhof / Altstadt / Rhein",
+  "owner": "KFB OSM City Lab",
+  "frame": {
+    "kind": "local-enu-equirectangular",
+    "originWgs84": [
+      50.942,
+      6.96225,
+      0
+    ],
+    "axes": {
+      "x": "east",
+      "y": "up",
+      "z": "north"
+    },
+    "units": "metre",
+    "earthRadiusM": 6378137,
+    "clipRectM": {
+      "minX": -1139.826,
+      "maxX": 1139.826,
+      "minZ": -1057.535,
+      "maxZ": 1057.535
+    }
+  },
+  "bounds": {
+    "min": {
+      "x": -1139.826,
+      "z": -1057.535
+    },
+    "max": {
+      "x": 1139.826,
+      "z": 1057.535
+    },
+    "sizeM": {
+      "x": 2279.652,
+      "z": 2115.07
+    }
+  },
+  "source": {
+    "datasetId": "dom-zentrum-v0",
+    "reportedSourceSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c",
+    "cachedFileSha256": "5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a",
+    "reportedNormalizedSha256": "4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702",
+    "cachedNormalizedFileSha256": "a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e",
+    "querySha256": "5ad8986f240387e70d406f3009f3f21560077b39d09b603f534fd4ba9376ab80",
+    "sourceBlobSha": "7220dc617782b4db7dfa80e3b3d58e54046eebb4",
+    "normalizedBlobSha": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9",
+    "osmBaseTimestamp": "2026-09-20T03:20:04Z"
+  },
+  "compiler": {
+    "revision": "1.0.0",
+    "sha256": "34d37ed13220bdb3cd704cd2b20064dd83e3037870f9292a7178b319ac583b4e"
+  },
+  "look": {
+    "styleId": "kfb-city-v0",
+    "styleSha256": "0a2869622db508f2ca55dabb285a34475adf7fef712d82d0878990141284cf6a",
+    "deformerSha256": "8abb8c68db3df9c3ca87aaaa63d88b9e1498c2343b26a00c6d602415c9f6cbc0",
+    "preset": "cartoon"
+  },
+  "contents": {
+    "normalized": "normalized.json",
+    "roads": "roads.json",
+    "buildings": "building-semantics.json",
+    "anchors": "anchors.json",
+    "visual": "visual.glb",
+    "supportCollision": "support-collision.json",
+    "source": "SOURCE.json",
+    "provenance": "provenance.json",
+    "sourceSpec": "source-spec.json",
+    "query": "query.overpassql"
+  },
+  "counts": {
+    "roads": 5236,
+    "driveableRoads": 2523,
+    "buildings": 6351,
+    "landuse": 456,
+    "waterLines": 6,
+    "anchors": 5
+  },
+  "visual": {
+    "buildingVertices": 323088,
+    "buildingTriangles": 579610,
+    "roadVertices": 38098,
+    "roadTriangles": 27626,
+    "glbBytes": 11629496
+  },
+  "files": {
+    "source-spec.json": {
+      "sha256": "0302e5aa99929d093e9cc5863f9c4f892d5ae8f221228106b1f880222c252ef6",
+      "bytes": 1342
+    },
+    "provenance.json": {
+      "sha256": "319cb6e86d34cd72d88ba6330285d5b5078c70a9dd0e1dee32147d3be77bed24",
+      "bytes": 871
+    },
+    "query.overpassql": {
+      "sha256": "5ad8986f240387e70d406f3009f3f21560077b39d09b603f534fd4ba9376ab80",
+      "bytes": 1507
+    },
+    "normalized.json": {
+      "sha256": "a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e",
+      "bytes": 7198533
+    },
+    "roads.json": {
+      "sha256": "94787e435f13753bc5d85ec631405e774e4c3f5299f05281caad85c56cdacac6",
+      "bytes": 5148048
+    },
+    "building-semantics.json": {
+      "sha256": "f336d9d8c7eed9cc7f9027a7bd581796b161ba283508d6c1ed9915c92a811efe",
+      "bytes": 8275829
+    },
+    "anchors.json": {
+      "sha256": "f155dd6ca7cf6e87da08d3b61f67bf78f25a7ff00f4cc37e7375d3eedefd3e53",
+      "bytes": 3356
+    },
+    "support-collision.json": {
+      "sha256": "662b45fa6c351e1927f1ecad0f16846a6ae0a0077b2a98e539b9267f1eae1c01",
+      "bytes": 926
+    },
+    "SOURCE.json": {
+      "sha256": "2cbd850ea3319b2bfb3cd15504fcff614272252c93a350af407598c0efc12b15",
+      "bytes": 2431
+    },
+    "visual.glb": {
+      "sha256": "1300a22ce1151cd64afc5c309ef9dcd1d82f26256c9561a57c6524e205fa7659",
+      "bytes": 11629496
+    }
+  },
+  "runtimePolicy": "baked package only; source refresh is explicit build-time work",
+  "worldBuilderContract": {
+    "format": "kfb-worldbuilder-scene",
+    "version": 1,
+    "storage": "zone manifest reference + transform only"
+  }
+}

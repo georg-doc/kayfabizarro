@@ -1,0 +1,41 @@
+{
+  "schema": "kfb.world-zone.support-collision.v1",
+  "zoneId": "cologne-dom-zentrum-v0",
+  "revision": "2026-09-24.1",
+  "truth": "undeformed-normalized-semantics",
+  "ground": {
+    "kind": "local-y-plane",
+    "y": 0,
+    "frame": {
+      "kind": "local-enu-equirectangular",
+      "originWgs84": [
+        50.942,
+        6.96225,
+        0
+      ],
+      "axes": {
+        "x": "east",
+        "y": "up",
+        "z": "north"
+      },
+      "units": "metre",
+      "earthRadiusM": 6378137,
+      "clipRectM": {
+        "minX": -1139.826,
+        "maxX": 1139.826,
+        "minZ": -1057.535,
+        "maxZ": 1057.535
+      }
+    }
+  },
+  "roadSupports": {
+    "source": "roads.json#/roads",
+    "driveableOnly": true,
+    "count": 2523
+  },
+  "buildingObstacles": {
+    "source": "building-semantics.json#/buildings",
+    "count": 6351
+  },
+  "rule": "Visual cartoon deformation never mutates support/collision truth."
+}
