@@ -24,6 +24,12 @@ Georg: the basic direction looks good. Fix the points below, give the roofs a sm
 
 Unchanged: V2 form grammar, palette `KFB_WONKY_90S_CLAY_V1`, OSM source, comparison panels.
 
+## Views stay switchable (Georg, same review)
+
+- **Elastic Grotesque Clay is the new DEFAULT view, not the only canon.**
+- The existing views (Clean, Cartoon, Grotesque) remain available at any time through a view switch. Do not remove, deprecate or stop maintaining them; every consumer (City Lab, landmarks, look composition) keeps the switch.
+- **This tune optimizes Elastic Grotesque Clay only.** The other views are not tuned now; they just must keep working unchanged.
+
 ## Review
 
 Publish the tuned app unchanged as a wrapper under `kfb-hub/pruefen/huerth-look/` (replace the base commit) — no bundle, no substitute preview.
@@ -36,5 +42,5 @@ The tuned V2 is the form-language basis. Continue with `LOOK_COMPOSITION_01_2026
 ## Start text for the chat
 
 ```
-Read on PR #194 branch: skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_V2_2026-09-24.md and LOOK_COMPOSITION_01_2026-09-24.md. Apply skills/session-entry-use-what-works_v1.md. Start from the tested V2 @0c59e92d, change nothing else. Do the one tune (doors/windows on the curved wall, shadow banding, road junction wedges, small roof overhang), browser-test it, publish it unchanged via the wrapper at kfb-hub/pruefen/huerth-look/ on cloudflare-live, update CHAT_RECOVERY_CURRENT.md, then stop and report four picture-checkable sentences.
+Read on PR #194 branch: skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_V2_2026-09-24.md and LOOK_COMPOSITION_01_2026-09-24.md. Apply skills/session-entry-use-what-works_v1.md. Start from the tested V2 @0c59e92d, change nothing else. Elastic Grotesque Clay becomes the default view; Clean/Cartoon/Grotesque stay switchable and untouched. Do the one tune (doors/windows on the curved wall, shadow banding, road junction wedges, small roof overhang), browser-test it, publish it unchanged via the wrapper at kfb-hub/pruefen/huerth-look/ on cloudflare-live, update CHAT_RECOVERY_CURRENT.md, then stop and report four picture-checkable sentences.
 ```
