@@ -1,3 +1,13 @@
+## 2026-09-24 · Racer / RKIT source lock advanced through RKIT-06
+
+- private Racer truth revalidated after additional Blender MCP work;
+- current stacked RKIT history is PR #34→#39;
+- top candidate is RKIT-06 / PR #39 / `53219c9b7ee3d1abe0ef1b0e5364863b42014ea5`;
+- current package includes TRACK_A_STUNT_8, Base/Hero jumps, Pit Lane, SWITCH_Y, flap-return/tunnel and Trankgasse on the real OSM line;
+- RKIT remains geometry/metadata owner only; Race/Rapier remains contact/physics/AI owner; WorldBuilder remains placement owner;
+- next technical gate is a real Race/Rapier run on TRACK_A before further geometry tuning;
+- Hub staleness root cause is external/private repo status being hand-maintained as `lastKnown`; architecture recommends a same-repo status mirror rather than broad private-repo crawling.
+
 ## 2026-09-24 · Three.js IK parity + per-brief model/reasoning/budget dispatch + WSA mount handoff
 
 - added `IK_CCD_PARITY_DECISION_2026-09-24.md` after source comparison between current Resident Atlas `reachChain()` and upstream Three.js r184/current `CCDIKSolver`;
