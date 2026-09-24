@@ -120,3 +120,38 @@ Proven:
 The DC-based transports remain frozen failed candidates. They are not revived by this success.
 
 The plain Three.js review is now the current technical human-review surface. It consumes real pinned actors, real Motion Library GLBs and real profile/catalogue data and does not become a second ToolBox/Animation runtime owner.
+
+
+## FINAL HUMAN RESULT · FAIL
+
+Date: 2026-09-24
+
+Human review evidence: Georg opened the current plain Three.js review attachment and supplied a screenshot from the Chat visualization surface.
+
+Observed result:
+
+1. **Source load failure**
+   - visible status: `source failed`;
+   - visible error begins: `GLB failed: Mannequin_Medium...`;
+   - no actor/clip could be meaningfully reviewed.
+
+2. **Review composition is unusable even independent of the GLB failure**
+   - Georg explicitly reports that the measurement/data palettes occupy/overlay the review area so heavily that the 3D performance would not be meaningfully visible even if the GLBs loaded;
+   - this is a human visual-product failure, not a transport-only technical warning.
+
+Human verdict:
+**FAIL / REJECTED REVIEW SURFACE**
+
+Important distinction:
+- repository CI for the underlying Animation Studio and source contracts remains historical technical evidence;
+- the actual human-facing review surface is **not accepted** and must not be presented as usable, live, review-ready or sufficient evidence of the product UX.
+
+Stop rule:
+- do not attempt another repair pass in this slice;
+- preserve the current candidate and failure record;
+- do not start WorldBuilder Motion consumption from this human gate;
+- any future attempt needs a new bounded review-surface brief that guarantees an unobstructed dominant 3D stage and source transport proven in the actual human review host.
+
+Screenshot:
+- user-supplied Chat screenshot captured the visible `source failed` / `GLB failed: Mannequin_Medium...` state;
+- screenshot itself remains in the chat evidence and was not copied into GitHub in this update.
