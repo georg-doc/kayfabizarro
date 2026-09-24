@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.billboard-b2a-source/0.1",
+  "id": "BILLBOARD-B2A-CSS3D-2026-09-24",
+  "date": "2026-09-24",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+  "baseB1": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
+  "currentGate": "SOURCE_ISOLATION",
+  "threeDonor": {
+    "repo": "mrdoob/three.js",
+    "tag": "r160",
+    "commit": "d04539a76736ff500cae883d6a38b3dd8643c548",
+    "path": "examples/css3d_youtube.html",
+    "pattern": "CSS3DRenderer + CSS3DObject + iframe + blocker"
+  },
+  "kfbVideoOwner": {
+    "videoId": "MTCSwppblk0",
+    "source": "Travel VIDEO contract"
+  },
+  "protected": [
+    "B0 bb-scene.js unchanged",
+    "B0 bb0-boot.js unchanged",
+    "accepted B1 remains frozen checkpoint",
+    "no modal replacement architecture",
+    "no B2b/B2c/B3/C1 implementation in B2a"
+  ],
+  "humanAcceptance": "PENDING"
+}
