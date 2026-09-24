@@ -1324,6 +1324,213 @@ ChatterBox + Memory + Gift hooks
               └→ Town / any WorldBuilder world
 ```
 
+# Race / World production simplification · 2026-09-24
+
+These decisions refine existing STRAND R, STRAND W, STRAND A and STRAND S. They do not create new owners.
+
+## R6 · Authored Track Recipes + Bake
+
+Do **not** build a general spline editor for the first playable result.
+
+Use a few authored route recipes:
+
+- `TRACK_A_STUNT_8` — figure-eight / over-under, one base jump, one Hero step-down, one bridge/tunnel/flap feature;
+- `TRACK_B_OVAL_EXIT` — broad oval/zero-like loop with one branch/exit;
+- `TRACK_C_FLOW_LOOP` — handling/freeplay course preserving the human-positive v0.8 mental model.
+
+Compiler flow:
+
+```
+Route Recipe
+→ deterministic route samples/frames
+→ RKIT rounded profile sweep
+→ authored stunt modules
+→ Track Module Bake
+```
+
+Track Module package:
+- compact recipe;
+- deterministic route;
+- stunt zones;
+- baked visual GLB;
+- contact/collision metadata owned by Race;
+- anchors;
+- role-named materials;
+- provenance/source.
+
+Runtime should not rebuild heavy visual geometry every load when the recipe/profile sources have not changed.
+
+### Physics for the kit
+
+Stunt geometry is dimensioned against **Rapier**:
+- 15 m/s² downward gravity magnitude;
+- 27 m/s speed basis;
+- proven physical ramp.
+
+The accepted v0.8 Track-Lab steering/drift/grip feel is retained as a handling donor/target, not as a second airborne/contact truth.
+
+Jump family:
+- `JUMP_BASE` ≈ 12 m forgiving/base;
+- `JUMP_HERO_30` ≈ 30 m step-down headline stunt.
+
+Canonical width ladder remains:
+`10.8 / 14.4 / 18.0 / 21.6 m`.
+28.8 m, if retained, is a named special module/profile only.
+
+## W8 · Baked OSM World Zones
+
+The existing `dom-zentrum-v0` pipeline already proves the correct basic idea:
+source OSM → normalized metre frame → reusable scene data.
+
+Formal World Zone compile:
+
+```
+source query/extract
+→ normalized semantic metre-frame data
+→ deterministic world/city compiler
+→ baked visual/support package
+→ WorldBuilder placement
+```
+
+A runtime/editor World Zone does not fetch Overpass again.
+
+Each package keeps:
+- source spec/query;
+- source timestamp/hash;
+- normalized semantic data;
+- roads/buildings/anchors;
+- baked visual mesh;
+- support/collision representation;
+- provenance;
+- compiler/look profile revision.
+
+First production proof uses Cologne because the source/cache/anchors/landmarks already exist.
+Barcelona is the **second-city portability proof**.
+
+OSM remains geographic truth inside its source zone.
+WorldBuilder may freely compose fictional worlds by placing external landmarks or modules on top.
+A Cologne Cathedral placed in Barcelona is an **authored landmark instance**, not Barcelona OSM truth.
+
+## W9 · Landmark / Elastic Torsion proof
+
+Current Hürth R2 remains frozen. No patch pass.
+
+The next isolated form-language architecture proof adds an explicit height-dependent **TORSION / TWIST** channel using existing GROTESQUE / BuildingElastic / LandmarkElastic donors.
+
+Existing City GROTESQUE reference proves:
+- multi-step vertical segmentation;
+- bend;
+- lean;
+- taper;
+- twist around 11° as an existing strong donor setting.
+
+New Elastic direction:
+- ordinary buildings: low twist range;
+- tall / hero landmarks: stronger cumulative twist;
+- base stays anchored;
+- bend + lean + twist share a coherent height field;
+- roof/body union follows the same final silhouette;
+- camera skew may amplify the effect but cannot fake it alone.
+
+This is the route toward the desired wonky 90s-cartoon perspective for towers/landmarks.
+
+## A6 · Music Performance layer
+
+Songs are reusable media; performances are choreography recipes.
+
+Performance metadata:
+- `songRef`;
+- BPM;
+- bar/beat offset;
+- performer ids;
+- action/choreography refs per performer;
+- loop/start/finish markers;
+- stage/camera recipe refs.
+
+Animation Studio should expose a beat/bar ruler when music is present.
+
+Use this for Warband, Animatronic, dance scenes and later Town gigs/Hero Shots.
+
+## S5 · Sound Audition Library
+
+Georg should select sounds by **meaning and hearing**, not filenames.
+
+Build one audition surface over existing semantic manifests and sound banks.
+
+Human categories:
+- vehicle;
+- combat;
+- UI/card;
+- world/ambience;
+- transition;
+- performance/crowd.
+
+Each sound candidate shows:
+- human label;
+- play/A-B;
+- semantic event;
+- one-shot/loop;
+- duration/intensity;
+- source/license;
+- current consumers;
+- accept/hold/reject.
+
+Games emit semantic events such as `vehicle.jump`, `vehicle.land`, `melee.hit`, never opaque file ids.
+
+Existing donors:
+- Pinball semantic audio manifest;
+- Combat SFX maps;
+- Race telemetry SFX proof;
+- RoadTrip/Jukebox music/audio sources.
+
+## S6 · VFX Audition Library
+
+Start from proven source packs/modules, not hand-authored effect micro-slices.
+
+Current donor bank already contains:
+- Combat Ink Atlas / recipes / trails / flame / sprites;
+- Kenney smoke particle sources;
+- Brackeys VFX bundle sources indexed in the existing VFX review;
+- Race/vehicle presentation effects.
+
+Audition categories:
+- burst;
+- loop;
+- trail;
+- impact;
+- muzzle;
+- smoke/fire;
+- reveal;
+- transition;
+- environment.
+
+Each accepted effect becomes a small semantic recipe:
+- source donor;
+- event id;
+- anchor;
+- emission/lifetime;
+- scale/intensity;
+- cleanup;
+- optional variant.
+
+Adapt existing donors before authoring new effects.
+Example: a continuous-fire donor can become a single-shot muzzle/burst recipe by changing emission/lifetime if the donor supports that presentation.
+
+## Production rule for Sound/VFX
+
+```
+source packs/manifests
+→ automatic inventory
+→ human-readable audition board
+→ Georg selects visual/sonic direction
+→ small semantic recipe batch
+→ shared Review Scene
+→ promote selected recipes
+→ consumers use semantic ids
+```
+
+Do not make Georg inspect opaque filenames or approve one low-level effect file at a time.
+
 # Adjacent open lanes · integrate as modules, not new mega-strands
 
 These remain relevant but should feed the eleven primary strands rather than create another control plane.
