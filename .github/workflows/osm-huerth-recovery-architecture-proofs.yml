@@ -1,0 +1,43 @@
+name: OSM Hürth Recovery · Architecture Proofs A/B/C
+
+on:
+  push:
+    branches:
+      - chatgpt-web/huerth-architecture-proofs-2026-09-24
+    paths:
+      - 'tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/**'
+      - 'tools/osm-city-lab/qa/huerth-recovery-architecture-proofs.mjs'
+      - '.github/workflows/osm-huerth-recovery-architecture-proofs.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: osm-huerth-recovery-proofs-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab
+            tools/KFB-ToolBox
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: A/B/C isolated browser proof
+        run: node tools/osm-city-lab/qa/huerth-recovery-architecture-proofs.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: huerth-recovery-architecture-proofs-evidence
+          path: huerth-recovery-architecture-proofs-evidence
+          retention-days: 30
