@@ -701,7 +701,7 @@
     {
       "id": "elastic-grotesque-clay-huerth01",
       "kind": "workflow",
-      "status": "CURRENT_REFERENCE",
+      "status": "ARCHIVED_FAILED_CANDIDATE",
       "path": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md",
       "leadOverride": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/LEAD_OVERRIDE_2026-09-24.md",
       "return": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/RETURN.md",
@@ -713,7 +713,7 @@
       "tested": "38/38 browser PASS · 3/3 WebGL2 · 0 page/console errors · run 35947303053",
       "currentCandidate": "ELASTIC_GROUP_WARP_V2_R2",
       "currentPalette": "KFB_WONKY_90S_CLAY_V1",
-      "currentGate": "GEORG HUMAN REVIEW · HÜRTH 01 V2 R2 · ACCEPT / REJECT",
+      "currentGate": "RESEARCH + ISOLATED ARCHITECTURE PROOF · NO R3 PATCH PASS",
       "antiRegression": [
         "old City-Lab GROTESQUE is comparison evidence only",
         "Hürth 01 V1 is superseded by V2 for continuation",
@@ -727,7 +727,7 @@
         "landmark ownership",
         "vehicle deformer ownership"
       ],
-      "note": "R2 is current: roof eave, curb/path junction closure, shadow before/after, organic multi-facade details, exact Racer Cologne harmonic palette donor. Clean/Cartoon/Grotesque remain switchable. Next gate is Georg ACCEPT/REJECT R2; LC-01 waits.",
+      "note": "R1 and R2 failed the same human visual gate. R2 remains evidence only. Do not patch the failed road/curb/path ribbon+patch foundation again. Resume from CHAT_RECOVERY_CURRENT + FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md.",
       "recoveryCurrent": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md",
       "reviewUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/",
       "humanResult": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_V2_R2_2026-09-24.md",
@@ -737,7 +737,11 @@
         "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
         "file": "KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js",
         "blob": "38246785ec2c9089737b2a195673a3ad4c07bdf8"
-      }
+      },
+      "failedCandidateHead": "4cc496e79af80c7f8419ffb14f7f5d8daeb0b679",
+      "failedCandidateRun": "35947303053 · 38/38 browser PASS · 3/3 WebGL2 · 0 errors · HUMAN FAIL",
+      "failureRecovery": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md",
+      "reviewStatus": "FAILED_EVIDENCE_ONLY"
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
