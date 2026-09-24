@@ -1,24 +1,24 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **96/96 ARCHITECTURE / SOURCE CHECKS PASS**
+Status: **117/117 ARCHITECTURE / SOURCE CHECKS PASS**
 
 Scope: architecture, complete self-service production strands, source locks, adjacent-owner routing and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
 ## Catalog / self-service contract · 23/23
 
-1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/5`.
-2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/4`.
+1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/6`.
+2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/5`.
 3. Thirteen production strands exist.
-4. Sixty-eight copy-ready jobs exist.
-5. Thirty-two jobs are READY.
-6. Thirty-six jobs are dependency-gated HOLD.
+4. Seventy-three copy-ready jobs exist.
+5. Thirty-three jobs are READY.
+6. Forty jobs are dependency-gated HOLD.
 7. Every HOLD card names its exact dependency.
 8. Hub default presentation is strand-first.
 9. Job cards are collapsed by default.
-10. Every one of the 68 jobs has a copy-ready prompt.
+10. Every one of the 73 jobs has a copy-ready prompt.
 11. Every job source set resolves to an input-lock job/strand.
-12. 68/68 normal jobs do not require Cloudflare in the edit loop.
-13. 68/68 normal jobs do not require Work/WSA.
+12. 73/73 normal jobs do not require Cloudflare in the edit loop.
+13. 73/73 normal jobs do not require Work/WSA.
 14. Canonical CubePet contract reports exactly 24 pet IDs.
 15. Three distinct FrizzleBob technical identities are locked.
 16. Town Living source blob matches current main.
@@ -161,3 +161,31 @@ Current catalog metrics:
 
 Current catalog metrics:
 **13 strands · 68 jobs · 32 READY · 36 HOLD**.
+
+
+## Skills / Runtime Contracts consolidation extension · 21/21
+
+97. Input locks advanced to schema v6 with explicit current/legacy Skill runtime owners.
+98. Hub catalog advanced to schema v5.
+99. Primary product architecture remains 13 strands; Skills consolidation is P2 hygiene, not a fourteenth runtime.
+100. Self-service catalog now contains 73 jobs.
+101. 33 jobs are READY.
+102. 40 jobs are dependency-gated HOLD.
+103. Five new P2 prompts exist: Skills Census, Current Runtime Shelf, Compatibility Archive, Unified PDF/Card Viewer Core and Ink 3D Adapters.
+104. Hub presentation explicitly keeps P2 READY work out of the default Today priority view while P0/P1 work exists.
+105. Old `skills/EMBED_CUBE_PET_FULL_v2.2.md` exact blob remains pinned as legacy-general / current-for-24-CubePets evidence.
+106. Current `kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md` exact blob remains pinned and explicitly supersedes the old embed for KayKit/Graft/CapsuleCarl while keeping CubePets on their canonical stack.
+107. Current CapsuleCarl/Wissens-Pilli rigging still records the `red` mouth set and texture-cleanup path.
+108. Current Actor Platform brief still requires one reusable actor contract and forbids consumers from forking face/mouth/eyes.
+109. Current CardBuilder/PDF SSOT explicitly rejects blind quarter-crop as a universal rule.
+110. Deck Viewer v4 remains ACTIVE and `deckviewer/kfb-corpus.js` remains ACTIVE/SHARED in its current Housekeeping.
+111. Current `kfb-corpus.js` proves IndexedDB caching, a document LRU and bounded parallel PDF/contact-sheet rendering.
+112. Current Ink runtime remains the continuous `family:'band'` / `inkRibbon2D` one-fill implementation; no second “ring” canon was introduced.
+113. Stale `skills/SOT_REGISTRY.md` still reports 2026-07-24 and routes Pet embedding through the old Cube-Pet instruction, proving reconciliation is required.
+114. Current ToolBox UI brief already requires validated Hex/Copy/Colorpicker behavior and Texture/Surface routing through the existing material owner.
+115. PR #204 changes remain architecture/chat documents only; no runtime Skill root was moved/deleted by this planning slice.
+116. ToolBox Production milestone now explicitly retains Mouth/Viseme/Talk, Voice/Bubbles, Material Zones/Color/Texture Surface and Card/PDF viewer access.
+117. Current Skills consolidation rule is compatibility-first: census/import scan before move/archive/delete.
+
+Current catalog metrics:
+**13 strands · 73 jobs · 33 READY · 40 HOLD**.
