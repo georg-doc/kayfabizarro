@@ -917,3 +917,27 @@ Next bounded slice:
 **B2a · inline YouTube via official Three.js CSS3D pattern**, pinned to Three.js r160 / `d04539a76736ff500cae883d6a38b3dd8643c548`.
 
 Later proposals stay separate: B2b Living Mockup/Collage, B2c Talking City Lights, B3 cartoon body. Curtain C1 remains HOLD.
+
+
+## 2026-09-25 · Billboard B2a accepted · B2b research next
+
+Billboard media current state:
+- B0 source proof accepted;
+- B1 content-fit face HUMAN_ACCEPTED;
+- B2a inline YouTube HUMAN_ACCEPTED after Georg's requested rear-side correction.
+
+Final B2a:
+- Draft PR **#199**;
+- branch `chatgpt-web/billboard-b2a-css3d-2026-09-24`;
+- runtime `89065825448846beb2649082fc0c1bf25df20ccb`;
+- public Stage `cloudflare-live@983929385c3be74a42ec88c29f601c08b90b5a05`;
+- integration **29/29 PASS**;
+- public **24/24 PASS**;
+- rear view now shows only the original billboard backside; no mirrored CSS3D iframe.
+
+Current Billboard SSOT:
+`tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md`
+
+Exactly one next gate:
+**B2b Living Mockup / Collage research-options memo only.**
+B2c/B3/C1 remain separate proposals/HOLD.

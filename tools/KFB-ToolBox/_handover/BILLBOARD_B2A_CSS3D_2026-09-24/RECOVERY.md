@@ -6,8 +6,8 @@ Branch: `chatgpt-web/billboard-b2a-css3d-2026-09-24`
 Draft PR: **#199**
 Recovered public-proof head before recovery-doc checkpoint: `bed7f74e5bca3efb51a7eb3ab12819ad4a46af09`
 Base: accepted B1 `78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a`
-Tested runtime head: `147b517efdfba78302af4e5e3ff48846b1f21f92`
-Cloudflare publication commit: `be24c154889fb96c20e99ef2b86dd2ced44007be`
+Final tested runtime head: `89065825448846beb2649082fc0c1bf25df20ccb`
+Final Cloudflare publication commit: `983929385c3be74a42ec88c29f601c08b90b5a05`
 Direct review route: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/
 
 Read after context loss:

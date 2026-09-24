@@ -5,8 +5,8 @@ Repo: `georg-doc/kayfabizarro`
 Branch: `chatgpt-web/billboard-b2a-css3d-2026-09-24`
 Draft PR: **#199**
 Public-proof head before recovery-doc checkpoint: `bed7f74e5bca3efb51a7eb3ab12819ad4a46af09`
-Tested runtime head: `147b517efdfba78302af4e5e3ff48846b1f21f92`
-Cloudflare publication: `be24c154889fb96c20e99ef2b86dd2ced44007be`
+Final tested runtime head: `89065825448846beb2649082fc0c1bf25df20ccb`
+Final Cloudflare publication: `983929385c3be74a42ec88c29f601c08b90b5a05`
 
 Result: B1's YouTube poster→modal behavior is replaced in B2a by the official Three.js CSS3D YouTube pattern. The real iframe sits on the measured 3D billboard face, follows perspective, receives clicks inline, and unloads on mode exit. CARD, COVER and SLOGAN remain the accepted B1 path.
 
@@ -15,9 +15,9 @@ https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/
 
 Evidence:
 - donor isolation **9/9 PASS**;
-- integration **27/27 PASS** after one preserved failed candidate and one repair pass;
-- public Cloudflare **22/22 PASS**;
-- public artifact `10789313140`;
+- base inline-video integration **27/27 PASS**; final rear/front-only tune **29/29 PASS**;
+- final public Cloudflare **24/24 PASS**;
+- final public artifact `10836432703`;
 - 0 public page errors;
 - 0 tracked public HTTP errors.
 

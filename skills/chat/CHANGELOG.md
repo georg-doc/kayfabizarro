@@ -1782,3 +1782,18 @@ Exactly one next gate: **Georg B1 picture review**.
 - official Three.js r160 `css3d_youtube.html` pinned before implementation;
 - B2b Collage, B2c Talking City Lights, B3 cartoon body recorded as proposals, not hidden scope;
 - Curtain C1 remains HOLD.
+
+
+## 2026-09-25 · Billboard B2a HUMAN_ACCEPTED
+
+- Georg accepted inline YouTube subject to one final rear-side fix and authorized check-in;
+- first front-only attempt using CSS backface visibility alone: **28/29 FAIL**;
+- final runtime `89065825448846beb2649082fc0c1bf25df20ccb` adds panel-normal/camera hemisphere culling;
+- front inline iframe remains clickable and perspective-aligned;
+- rear now exposes only the Kenney/WebGL billboard backside;
+- integration **29/29 PASS**;
+- public Cloudflare **24/24 PASS**;
+- Stage `983929385c3be74a42ec88c29f601c08b90b5a05`;
+- public artifact `10836432703`;
+- B2a closed as HUMAN_ACCEPTED;
+- next Billboard gate is B2b research/options only.
