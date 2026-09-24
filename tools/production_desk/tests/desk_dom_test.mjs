@@ -90,11 +90,12 @@ console.log('4 · polling picks up a new LIVE state without reload');
 
 console.log('5 · drawer + copy start prompt');
 {
-  const curtain = baseReg.lanes.lanes.find(l => l.id === 'curtain');
-  const routes = { [curtain.brief.rawUrl]: 'ECHTE STARTNACHRICHT' };
+  const briefLane = baseReg.lanes.lanes.find(l => l.brief?.rawUrl);
+  ok(Boolean(briefLane), 'fixture has at least one real briefing source');
+  const routes = { [briefLane.brief.rawUrl]: 'ECHTE STARTNACHRICHT' };
   const { d, clip } = makeDom({ routes });
   await tick();
-  const card = d.querySelector('[data-lane="curtain"]');
+  const card = d.querySelector(`[data-lane="${briefLane.id}"]`);
   card.querySelector('.btn.primary').click(); await tick();
   ok(clip.text === 'ECHTE STARTNACHRICHT', 'copies the real brief text from GitHub');
   card.click(); await tick();
