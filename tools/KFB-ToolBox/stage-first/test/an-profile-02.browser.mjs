@@ -52,6 +52,7 @@ try{
     return {count:items.length,unique:new Set(ids).size,status:lab.motionPackStatus.Medium};
   });
   ok('Rig_Medium real KFB library loads 33 clips',p.count===33&&p.unique===33&&p.status==='ok');
+  await page.waitForFunction(()=>window.__kfbLab.charScene&&window.__kfbLab.state.charStatus?.[window.__kfbLab.state.charId]==='ok',null,{timeout:180000});
 
   await page.evaluate(async()=>{
     const lab=window.__kfbLab;
