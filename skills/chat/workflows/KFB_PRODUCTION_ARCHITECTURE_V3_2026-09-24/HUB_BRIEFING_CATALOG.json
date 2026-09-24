@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/9",
+  "schema": "kfb.hub-briefing-catalog/10",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -15,33 +15,36 @@
       "id": "toolbox",
       "title": "ToolBox Authoring Platform",
       "target": "FrankenStein + EyeRig + Pose + Animation + Vehicle + Resident Scene + Live Search in one Stage-First ToolBox",
-      "capabilitiesTotal": 8,
+      "capabilitiesTotal": 10,
       "currentReady": [
         "toolbox-coherent-integration-01",
         "tb-eye-01",
         "tb-pose-01",
-        "tb-anim-01"
+        "tb-anim-01",
+        "actor-fb-body-family-01",
+        "tb-v17-integration-01"
       ]
     },
     {
       "id": "animation-residents",
       "title": "Animation & Residents",
       "target": "Reusable MotionProfiles plus productive Blender performance batches shared by ToolBox and WorldBuilder",
-      "capabilitiesTotal": 6,
+      "capabilitiesTotal": 7,
       "currentReady": [
         "an-perf-01",
         "an-profile-01",
         "resident-band-module-01",
         "pose-to-blender-01",
         "ik-ccdik-parity-01",
-        "res-disco-01"
+        "res-disco-01",
+        "motion-intake-direct-01"
       ]
     },
     {
       "id": "worldbuilder",
       "title": "WorldBuilder / God Mode",
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
-      "capabilitiesTotal": 8,
+      "capabilitiesTotal": 9,
       "currentReady": [
         "world-zone-bake-01",
         "look-torsion-01",
@@ -53,7 +56,7 @@
       "id": "racer-world",
       "title": "Racer → World",
       "target": "Clean route-driven track anatomy and visual module consumable inside the editable KFB/OSM world",
-      "capabilitiesTotal": 5,
+      "capabilitiesTotal": 6,
       "currentReady": [
         "race-anatomy-01",
         "race-track-recipe-01",
@@ -113,7 +116,7 @@
       "id": "town-npc-life",
       "title": "Town / ChatterBox / Living NPCs",
       "target": "Living Resident scenes with encounter beats, ChatterBox, memory, gifts and optional combat",
-      "capabilitiesTotal": 6,
+      "capabilitiesTotal": 7,
       "currentReady": [
         "npc-life-01",
         "npc-card-spec-01"
@@ -242,8 +245,8 @@
       "bucket": "READY",
       "executor": "ChatGPT Web",
       "title": "ToolBox · Animation Studio",
-      "what": "Motion Lab, Motion Library und Creator/KCL-Forschung zu einem echten Animations-Workspace konsolidieren.",
-      "result": "Kontinuierliche Geschwindigkeit, phase-aware transitions, Hysterese und semantische States an echten Actors testen.",
+      "what": "State/action Animation Studio: locomotion continuum plus Melee/Ranged/Tool/Simulation and Duel mode.",
+      "result": "Semantic states/action overrides on real actors in the current ToolBox.",
       "promptSection": "TB-ANIM-01 · ToolBox Animation Studio",
       "sourceSet": "toolbox",
       "cloudflareRequired": false,
@@ -301,8 +304,8 @@
       "bucket": "HOLD",
       "executor": "Web/Coworker + GitHub Bridge",
       "title": "ToolBox · Production Milestone",
-      "what": "Alle akzeptierten ToolBox-Authoring-Funktionen in der Stage-First-Oberfläche zusammenführen.",
-      "result": "Search → Actor/Resident/Vehicle → Face/Eyes → Fractal Edit → Pose → Motion → Save/Reload → Export.",
+      "what": "Complete Stage-First ToolBox while preserving useful FrankenStein/Pet Studio v17+ capabilities.",
+      "result": "Actor/body/face → eyes/mouth/materials → pose → Motion/FBX → vehicle/Resident scene → Save/Reload/export.",
       "promptSection": "TB-PROD-01 · ToolBox Production Milestone",
       "sourceSet": "toolbox",
       "waitingFor": "TB-EYE-01 + TB-POSE-01 + TB-ANIM-01 + TB-VEH-01 + TB-SCENE-01",
@@ -605,7 +608,7 @@
       "priority": "P1",
       "executor": "ToolBox Animation Studio / Web",
       "title": "Combat · Duel Choreography Studio",
-      "what": "Two real fighters perform deterministic melee/ranged/block/reaction chains for testing and Hero Shots.",
+      "what": "Animation Lab two-fighter mode for source-backed Melee/Ranged/Block/Hit/Recover chains; Combat keeps damage.",
       "result": "Reusable choreography recipes on a versus stage.",
       "promptSection": "COMBAT-DUEL-01 · Duel Choreography Studio",
       "sourceSet": "combatChoreography",
@@ -1921,6 +1924,135 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false
+    },
+    {
+      "id": "wb-mobility-mvp-01",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "WorldBuilder / Travel Web",
+      "title": "MVP · WorldBuilder all-mode mobility",
+      "what": "One WorldBuilder world with Ground/Drive/Flight/Boat/Air handoff plus shared actor locomotion states.",
+      "result": "Playable multi-mode world with one movement writer and MotionProfile state graph.",
+      "promptSection": "WB-MOBILITY-MVP-01 · WorldBuilder all-mode mobility + actor state graph",
+      "sourceSet": "worldbuilder",
+      "waitingFor": "WB-ZONE-SEAM-01 + TRAVEL-MODES-01 + source-proven Drive/Boat/Air adapters + accepted Motion consumer",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    {
+      "id": "wb-huerth-cologne-race-mvp-01",
+      "strand": "racer-world",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "WorldBuilder / Racer / OSM Web",
+      "title": "MVP · Hürth → Cologne → Race Track",
+      "what": "Drive through real OSM Hürth/corridor/Cologne streets and enter TRACK_A through an authored connector.",
+      "result": "One continuous drive with explicit world→Race handoff and no invented geography.",
+      "promptSection": "WB-HUERTH-COLOGNE-RACE-MVP-01 · Hürth → Cologne OSM streets → Track A",
+      "sourceSet": "racerWorld",
+      "waitingFor": "Hürth/corridor baked World Zones + TRAVEL-DRIVE-01 + TRACK_A Rapier proof + WB-ZONE-SEAM-01",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    {
+      "id": "actor-fb-body-family-01",
+      "strand": "toolbox",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ToolBox Web / Blender only if needed",
+      "title": "Actors · FrizzleBob alternative KayKit bodies",
+      "what": "Keep one FrizzleBob identity while comparing several real modern KayKit destination bodies/rigs.",
+      "result": "2–4 explicit actor variants with provenance and motion/FaceHost compatibility.",
+      "promptSection": "ACTOR-FB-BODY-FAMILY-01 · FrizzleBob identity on alternative KayKit bodies",
+      "sourceSet": "toolbox",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    {
+      "id": "motion-intake-direct-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ToolBox Animation Studio / Web",
+      "title": "Animation · Direct FBX Motion Intake",
+      "what": "Upload compatible FBX in Animation Lab, classify DIRECT vs BLENDER_REQUIRED and promote good clips as derived GLB/catalogue assets.",
+      "result": "Browser intake + GLB/catalogue export + compact Blender exception queue.",
+      "promptSection": "MOTION-INTAKE-DIRECT-01 · Animation Lab direct FBX → GLB / Motion Library intake",
+      "sourceSet": "animationResidents",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    {
+      "id": "tb-v17-integration-01",
+      "strand": "toolbox",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ToolBox Web / GitHub Bridge",
+      "title": "ToolBox · FrankenStein/Pet Studio v17+ integration",
+      "what": "Preserve useful v17+ production capabilities behind the Stage-First front door.",
+      "result": "Daily ToolBox front door with named owner-backed v17+ feature parity.",
+      "promptSection": "TB-V17-INTEGRATION-01 · Stage-First ToolBox with Pet / FrankenStein v17+ feature parity",
+      "sourceSet": "toolbox",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
+    },
+    {
+      "id": "npc-aitown-kiss-01",
+      "strand": "town-npc-life",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Resident / Town Web",
+      "title": "NPC Life · AI Town KISS intent loop",
+      "what": "Reuse AI Town state-machine lessons on KFB NPC-LIFE/Journey/ChatterBox without importing its runtime.",
+      "result": "Three Residents combine activity, notice, approach, encounter and actual-known memory.",
+      "promptSection": "NPC-AITOWN-KISS-01 · Living Residents intent loop from AI Town donor",
+      "sourceSet": "townNpcLife",
+      "waitingFor": "NPC-LIFE-01 visible/human gate + Journey filtered-memory seam",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     }
   ],
   "presentation": {
@@ -1932,9 +2064,9 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 81,
-    "ready": 38,
-    "hold": 43
+    "jobs": 88,
+    "ready": 42,
+    "hold": 46
   },
   "executionProfiles": {
     "WEB_FAST": {
