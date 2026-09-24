@@ -1,5 +1,26 @@
 # CHAT RECOVERY CURRENT · KFB Elastic Grotesque Clay · Hürth 01
 
+## CURRENT PROOF OVERRIDE · 2026-09-24
+
+The frozen Hürth R2 remains failed and must not be patched.
+
+**Current work moved to a fresh isolated proof branch:**
+`chatgpt-web/huerth-architecture-proofs-2026-09-24`
+
+Read first:
+`tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/RECOVERY.md`
+
+Tested proof implementation:
+`c36f97be48a6b5da5617aa000c921e4a51329f7f`
+
+Run:
+`35952588495` · **34/34 PASS · 0 errors**.
+
+Exactly one next gate:
+**Georg visual PASS / FAIL on A ROAD-01, B HOUSE-01, C FACADE-01.**
+
+No Hürth block R3 until all three pass.
+
 Updated: **2026-09-24**  
 Status: **CURRENT CHAT CURSOR · KEEP THIS SHORT AND CURRENT**  
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**
