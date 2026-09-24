@@ -888,3 +888,23 @@ Cloudflare remains deferred.
 SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
 
 This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
+
+
+## 2026-09-24 · MUSIC-PERF-01 public review gate
+
+ToolBox / Animation Studio MUSIC-PERF-01 is now a **PUBLIC_VERIFIED · HUMAN PENDING** review candidate.
+
+- receiving owner remains ToolBox PR #185 at `fdfe5fc26b37c1baf87804d3cb427654d54bd5a8`;
+- stacked implementation/review owner is Draft PR #207, current handoff head `aef93c2521a0818318e0810752f065727c1e5622`;
+- frozen runtime-tested implementation head is `d834f1d4819dc972e2f4aeeedee4c559cbe8afbd`;
+- public deploy head is `5658557e8d23a68ea1f5f6183d237c9a3284e29a`;
+- Hub owner PR #202 carries the LOOK_AT/tool source and Stage card at `82d9441b732f1edb32ca15b37692a6e7d5cff49e`;
+- direct review route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/`;
+- public Chromium proof: **22/22 PASS**, run `36047130373`, job `107793328531`;
+- local/source evidence remains **22/22 static + 29/29 Chromium PASS**;
+- exact ORB v5 donor, source song and one-song master-clock contract are preserved;
+- leader + guitarist retain prior PASS; drummer remains HOLD.
+
+Human result is still **PENDING**. Do not merge PR #207, reopen drummer authoring or broaden Town/Resident integration before Georg returns PASS / TUNE / REJECT on the direct Stage route.
+
+The generated root Production Desk snapshot remains a separate HUB-CTRL rebuild concern; do not infer that it was regenerated from this router note.

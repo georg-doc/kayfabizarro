@@ -1798,3 +1798,12 @@ Exactly one next gate:
 - Remaining curation backlog: sustained crowd/venue, rain/thunder, city/traffic, tyre/friction sources and shared character voice-profile metadata.
 - PR #205 remains Draft/unmerged and still carries tested P0 implementation/test deltas including repaired `ui-sfx.json`, refreshed audio catalog and validators/workflows.
 - No automatic Race/Combat/Town integration or Live promotion performed.
+
+
+## 2026-09-24 · MUSIC-PERF-01 public review routed
+
+- Routed MUSIC-PERF-01 as PUBLIC_VERIFIED / HUMAN PENDING without changing runtime ownership.
+- Source owner: ToolBox PR #185; stacked Draft PR #207.
+- Hub owner: PR #202; public Stage link verified at `/kfb-hub/stage/toolbox/music-performance/`.
+- Public QA: 22/22 PASS; no merge or human acceptance claimed.
+- Root Production Desk regeneration remains separate/pending.
