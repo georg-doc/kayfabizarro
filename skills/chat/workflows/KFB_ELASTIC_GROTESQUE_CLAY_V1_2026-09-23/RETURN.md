@@ -239,3 +239,62 @@ Current short recovery is now:
 
 Exactly one next gate remains:
 **show/recover the ACTUAL tested Hürth 01 V2 result for Georg visual review — no substitute renderer.**
+
+## 2026-09-24 · TUNE ONCE IMPLEMENTED
+
+Human result:
+`HUMAN_RESULT_HUERTH01_V2_2026-09-24.md`
+
+Verdict received:
+**TUNE ONCE → tuned V2 becomes the form-language basis if Georg accepts this review.**
+
+Final tuned runtime head:
+`75b3c460ac37aac57cb5d9e96260517c5b4cf68d`
+
+### Four bounded visual changes
+
+1. **Facade details**
+   - doors/windows now sample position + full 3D surface frame from the final bowed shell;
+   - visible detail face is flush/inset rather than floating off a flat source facade.
+
+2. **Shadows**
+   - Elastic-only directional-shadow fit tightened around the block;
+   - `shadow.bias=0`;
+   - `shadow.normalBias=.04`;
+   - palette and V2 form geometry were not changed to hide the artifact.
+
+3. **Road junctions**
+   - retained V2 continuous Catmull-Rom ribbons;
+   - reused City Lab shared-OSM-node junction-patch donor;
+   - final candidate patches asphalt only, in road colour;
+   - no curb/path junction discs.
+
+4. **Roof overhang**
+   - roof base is derived from an outward offset of the final deformed wall-top ring;
+   - overhang remains small and bounded.
+
+### Final evidence
+
+Run `35945185715`: **29/29 PASS · 3/3 WebGL2 · 0 errors**.  
+Artifact `10786850367`, digest
+`sha256:716bfcab9dc6f4ed0180e0fd148b7a1494efca796bbe49746de762b0f8a900b0`.
+
+Legacy views:
+**CLEAN / CARTOON / GROTESQUE boot unchanged**.  
+Elastic is the new default decision, not the only available view.
+
+### Review publication
+
+Direct review route:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+`cloudflare-live` wrapper now pins the unchanged tuned multi-file app at `75b3c460…`; no bundle/substitute preview is used.
+
+This chat cannot independently retrieve the Pages domain, therefore **PUBLIC_VERIFIED remains UNKNOWN** until Georg opens the direct route in real Chrome.
+
+### Exactly one next gate
+
+**GEORG: ACCEPT / REJECT tuned Hürth 01 V2.**
+
+After ACCEPT:
+LC-01 from `LOOK_COMPOSITION_01_2026-09-24.md`.
