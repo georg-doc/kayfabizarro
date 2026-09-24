@@ -1,3 +1,13 @@
+## 2026-09-24 · Parallel Claude Design WorldBuilder lane
+
+- added `WB-DESIGN-PARALLEL-01` as a READY Claude Design job that can run while `WORLD-ZONE-BAKE-01` is still compiling/checking OSM;
+- job uses only frozen, already-available real Cologne/WB-W0/City-Grotesque/Elastic donors and must not fetch/invent geography or define the World Zone compiler/schema;
+- target is a visual/authoring shell: world hierarchy, terrain/road/building/landmark read, height-dependent landmark torsion, one authored landmark placement, and current editor affordances;
+- future baked World Zone data replaces the frozen fixture behind the same presentation seam;
+- execution profile: `CLAUDE_DESIGN_STANDARD · Claude Sonnet 5 · medium · STANDARD`; Web only as secondary source/integration check;
+- catalog advanced to **13 strands / 80 jobs / 37 READY / 43 HOLD**;
+- no Work, Cloudflare publication or runtime-owner change.
+
 ## 2026-09-24 · Racer / RKIT source lock advanced through RKIT-06
 
 - private Racer truth revalidated after additional Blender MCP work;
