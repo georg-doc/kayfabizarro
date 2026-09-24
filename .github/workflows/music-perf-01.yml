@@ -1,0 +1,52 @@
+name: MUSIC-PERF-01 QA
+
+on:
+  push:
+    branches:
+      - 'web/music-perf-01-2026-09-24'
+    paths:
+      - 'tools/KFB-ToolBox/stage-first/music-performance-01/**'
+      - 'tools/KFB-ToolBox/stage-first/coherent-integration-01.js'
+      - '.github/workflows/music-perf-01.yml'
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/stage-first/music-performance-01/**'
+      - 'tools/KFB-ToolBox/stage-first/coherent-integration-01.js'
+      - '.github/workflows/music-perf-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static source and owner checks
+        run: node tools/KFB-ToolBox/stage-first/music-performance-01/test/static.mjs
+      - name: Syntax
+        run: |
+          node --check tools/KFB-ToolBox/stage-first/music-performance-01/music-performance-01.js
+          node --check tools/KFB-ToolBox/stage-first/music-performance-01/test/browser.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve repository
+        run: |
+          python3 -m http.server 4173 > /tmp/music-perf-http.log 2>&1 &
+          sleep 2
+      - name: Browser playback QA
+        run: node tools/KFB-ToolBox/stage-first/music-performance-01/test/browser.mjs
+      - name: Upload proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: music-perf-01-proof
+          path: music-perf-proof/
+          retention-days: 14
