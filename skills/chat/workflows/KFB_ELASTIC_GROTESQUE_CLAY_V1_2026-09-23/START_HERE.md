@@ -1,6 +1,6 @@
 # KFB Elastic Grotesque Clay v1 · Hürth 01
 
-Status: **R2 IMPLEMENTED · 38/38 BROWSER PASS · HUMAN R2 REVIEW PENDING · NO MERGE**
+Status: **R2 HUMAN FAIL · ARCHIVED_FAILED_CANDIDATE · RESEARCH/ARCHITECTURE GATE ONLY**
 Date: 2026-09-23
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**
 Receiving consumers remain Race / Travel / WorldBuilder. No new movement, collision, terrain or asset owner.
@@ -229,3 +229,25 @@ Exactly one next gate:
 
 After ACCEPT only:
 LC-01.
+
+## CURRENT FAIL GATE · 2026-09-24
+
+R1 and R2 failed the same visual acceptance gate.
+
+Read first:
+`CHAT_RECOVERY_CURRENT.md`
+
+Then:
+`FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`
+
+Do not patch R2 again.
+
+Current hard requirements for any future candidate:
+- road/path/curb = one deterministic shared topology, no overlapping ribbon/patch stack;
+- roof/body = one shared eave/top-boundary design, proven in isolation;
+- shadow quality = shown in fixed before/after crops, not inferred from bias values;
+- facade details = known composition grammar, not random scattering;
+- colours = explicit hierarchy/rhythm built on existing KFB palette owners.
+
+Exactly one next gate:
+**research + isolated architecture proof**.
