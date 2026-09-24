@@ -1,3 +1,19 @@
+## 2026-09-24 · Resident Disco research + READY briefing
+
+- added `RES-DISCO-01` under the existing Animation & Residents strand; no second Resident/Motion/Music owner;
+- detailed briefing: `RESIDENT_DISCO_01_2026-09-24.md`;
+- proposed first cast spans all three rig classes: Prototype Pete (Legacy), Action Figure / Toy Soldier / Witch (Medium), Black Knight / Demon Lord (Large), Ultra Turbo Hero Man optional seventh;
+- current Motion Library source lock inspected: 10 dance actions plus Happy Idle; six in-place dance loops are preferred for fixed disco positions while travel actions require an authored in-place derivative or explicit bounded dance zone;
+- researched missing semantic party motions: Cheer, head-bang Cheer, standing Clap, Victory, Twist and optional jump/extra dance variants; candidates must be verified in logged-in Mixamo before established intake/retarget;
+- protected Legacy's six-bone / 30-clip structure from fake Medium/Large footwork compatibility;
+- pinned Tiny Treats `radio.gltf` and Goth Girl speaker as exact prop donors; existing WorldDesign disco-ball implementation is donor-required but still needs its reusable implementation path pinned before integration;
+- choreography direction: one MUSIC-PERF master clock, phase-offset individual grooves, bar-boundary crossfades and synchronized group hits over an initial 32-bar phrase;
+- planned Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/` — **not published**;
+- additive planning/catalog validation: **9/9 PASS**; existing formal architecture/source checkpoint remains **158/158 PASS**;
+- catalog now **13 strands / 82 jobs / 39 READY / 43 HOLD**;
+- exactly one next gate: **RES-DISCO-A · Source Cast + Motion Audition**;
+- no merge or Live promotion.
+
 ## 2026-09-24 · Recovery triage · Flow Design intake + Work budget protection
 
 - recovered current Audio, ToolBox, World Zone and Racer state after multiple chat interruptions;
