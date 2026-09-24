@@ -1,6 +1,6 @@
 # KFB Audio & Soundscape Baseline v1 · START HERE
 
-**Status:** AUDIT / ARCHITECTURE BASELINE · DOCUMENTATION ONLY · NO RUNTIME OWNER CHANGE  
+**Status:** CURRENT REFERENCE · AUDIO-CAL-01 PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
 **Date:** 2026-09-24  
 **Owner:** existing WSA / KFB integration lead  
 **Executing lane:** Fresh Web + GitHub, GPT-5.6 Sol, Medium/High reasoning  
@@ -10,6 +10,23 @@
 **Runtime promotion:** NONE in this slice
 
 GitHub state overrides this document whenever a named source ref advances.
+
+
+## CURRENT OVERRIDE · AUDIO-CAL-01 PUBLIC_VERIFIED
+
+The baseline audit has advanced through its bounded calibration gate.
+
+- exact human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+- publication: `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`
+- Cloudflare Pages check `107727186186`: **SUCCESS**
+- source/browser CI: **6/6 groups PASS · 31/31 PASS**
+- exact public Cloudflare proof: workflow `36025670884` attempt 3 / job `107731456493` → **31/31 PASS**
+- public proof artifact: `10819978496`
+- public proof digest: `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`
+
+Attempts 1–2 ended before the Cloudflare deployment completed; they are retained as publication-timing evidence, not candidate defects.
+
+**One next gate:** Georg human-listens to the three calibration states and judges voice intelligibility, duck amount, event readability and whether the ambience/music still feels alive. Do not integrate broadly into Race/Combat/Town before that listening decision.
 
 ## Why this slice exists
 
