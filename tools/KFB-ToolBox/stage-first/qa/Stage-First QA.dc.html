@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#efece6;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1f2022;}
+  a{color:#7a4d0d;} a:hover{color:#b8781c;}
+</style>
+</helmet>
+<div style="display:grid;grid-template-columns:minmax(320px,440px) minmax(0,1fr);grid-template-rows:100%;height:100%;">
+  <div style="display:flex;flex-direction:column;min-height:0;border-right:1px solid #c9c5bc;background:#efece6;">
+    <div style="display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #c9c5bc;">
+      <span style="font-weight:700;font-size:14px;">Stage-First QA · P0 slice</span>
+      <span style="flex:1 1 auto;"></span>
+      <button onClick="{{ onRun }}" style="{{ runStyle }}">{{ runLabel }}</button>
+      <button onClick="{{ onSave }}" style="height:28px;padding:0 10px;border-radius:6px;border:1px solid #c9c5bc;background:transparent;color:#5c6065;font-size:12.5px;font-weight:600;cursor:pointer;">Save JSON</button>
+    </div>
+    <div style="padding:8px 14px;font-size:12px;color:#5c6065;border-bottom:1px solid #d9d5cc;font-family:'IBM Plex Mono',monospace;">{{ summary }}</div>
+    <div style="flex:1 1 auto;overflow-y:auto;min-height:0;">
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
+        <div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:8px 14px;border-bottom:1px solid #e2ded6;align-items:start;">
+          <span style="{{ r.badge }}">{{ r.status }}</span>
+          <div style="min-width:0;">
+            <div style="font-size:13px;font-weight:600;">{{ r.name }}</div>
+            <div style="font-size:12px;color:#5c6065;font-family:'IBM Plex Mono',monospace;white-space:pre-wrap;word-break:break-word;line-height:1.45;">{{ r.detail }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <iframe ref="{{ frameRef }}" src="../src/KFB ToolBox Stage-First v1.dc.html" style="width:100%;height:100%;border:none;display:block;background:#dedbd4;"></iframe>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { rows: [], running: false, done: false, startedAt: null, finishedAt: null };
+  frameRef = (el) => { this._frame = el; };
+  _set(id, name, status, detail) {
+    this.setState((s) => {
+      const rows = s.rows.slice(); const i = rows.findIndex((r) => r.id === id);
+      const row = { id, name, status, detail: detail || '' };
+      if (i >= 0) rows[i] = row; else rows.push(row);
+      return { rows };
+    });
+  }
+  async _wait(fn, ms, label) {
+    const t0 = performance.now();
+    while (performance.now() - t0 < ms) { let v = null; try { v = fn(); } catch (e) {} if (v) return v; await new Promise((r) => setTimeout(r, 120)); }
+    throw new Error('timeout ' + (label || '') + ' after ' + ms + ' ms');
+  }
+  /* Profilquelle: Vorgabe = die im (7).zip mitgelieferten Exporte; window.__QA_PROFILES = 'repo-inbox/' prüft die im Repo-Eingang liegenden Dateien. */
+  _pdir() { return '../profiles/' + (window.__QA_PROFILES || ''); }
+  _T() { return this._frame && this._frame.contentWindow && this._frame.contentWindow.__TOOLBOX; }
+  _leaves(o, p, out) { out = out || {}; p = p || ''; if (o && typeof o === 'object' && !Array.isArray(o)) { for (const k of Object.keys(o)) this._leaves(o[k], p + k + '.', out); } else out[p.slice(0, -1)] = Array.isArray(o) ? JSON.stringify(o) : o; return out; }
+  _diff(a, b) { const A = this._leaves(a), B = this._leaves(b), out = []; for (const k of new Set([...Object.keys(A), ...Object.keys(B)])) { if (!(k in A)) out.push('+ ' + k); else if (!(k in B)) out.push('- ' + k); else if (A[k] !== B[k]) out.push('≠ ' + k + ' (' + A[k] + ' → ' + B[k] + ')'); } return out; }
+  async _selectAndWait(T, id, isBiped) {
+    const idx = T.roster.findIndex((p) => p.id === id); if (idx < 0) throw new Error(id + ' not in roster');
+    await T.loadPet(idx);
+    await this._wait(() => T.state.petIdx === idx && (isBiped ? (T.biped && T.biped.built) : (T.ch && T.ch.group)), 40000, 'load ' + id);
+    await new Promise((r) => setTimeout(r, 400));
+    return idx;
+  }
+  async _roundtrip(T, id, profileUrl, edit) {
+    const prof = await (await fetch(profileUrl)).json();
+    const pet0 = prof.pets.find((p) => p.id === id);
+    pet0.qaUnknown = { keep: 'yes', f: false, z: 0, n: null, arr: [1, 2] };
+    const ids = await T._sfImportDoc(prof);
+    if (!ids.includes(id)) throw new Error('import did not take ' + id + ' (' + ids.join(',') + ')');
+    await this._selectAndWait(T, id, pet0.kind === 'biped');
+    const d0 = T._sfExportDoc([id], 'single');
+    const e0 = d0.pets.find((p) => p.id === id);
+    const changed = edit(T, e0);
+    await new Promise((r) => setTimeout(r, 700));
+    const d1 = T._sfExportDoc([id], 'single');
+    const e1 = d1.pets.find((p) => p.id === id);
+    const diff01 = this._diff(e0, e1);
+    await T._sfImportDoc(d1);
+    await this._selectAndWait(T, id, pet0.kind === 'biped');
+    const d2 = T._sfExportDoc([id], 'single');
+    const e2 = d2.pets.find((p) => p.id === id);
+    const diffAll = this._diff(e1, e2);
+    /* Meßfelder (ground.*, body.*) schreibt das Studio bei JEDEM Laden aus der Geometrie neu (_measureNow(true), ground-contract.v1) —
+       sie sind kein Autorenzustand und schwanken mit der Animationsphase (~1e-3); dasselbe gilt für pad.anchors/pad.measured (pad-contract.v1, gemessen beim Laden). Getrennt ausweisen, nicht als Verlust zählen. */
+    const measured = diffAll.filter((d) => /^≠ (ground|body|pad\.(anchors|measured))\./.test(d));
+    const diff12 = diffAll.filter((d) => !/^≠ (ground|body|pad\.(anchors|measured))\./.test(d));
+    const unknownOk = e2.qaUnknown && e2.qaUnknown.keep === 'yes' && e2.qaUnknown.f === false && e2.qaUnknown.z === 0 && e2.qaUnknown.n === null;
+    const leaves0 = Object.keys(this._leaves(pet0)).length, leaves2 = Object.keys(this._leaves(e2)).length;
+    const loss = this._diff(pet0, e2).filter((d) => d[0] !== '+');   // Felder der Profildatei, die im Export fehlen oder anders sind
+    const grown = this._diff(pet0, e2).filter((d) => d[0] === '+').length;
+    return { changed, diff01, diff12, measured, unknownOk, leaves0, leaves2, loss, grown, meta: d2.meta, e2 };
+  }
+  async run() {
+    if (this.state.running) return;
+    this.setState({ rows: [], running: true, done: false, startedAt: new Date().toISOString(), finishedAt: null });
+    const step = async (id, name, fn) => { this._set(id, name, 'RUN', ''); try { const d = await fn(); this._set(id, name, 'PASS', d || ''); } catch (e) { this._set(id, name, 'FAIL', String(e && e.message || e)); } };
+    let T = null;
+    await step('cold', '1 · Cold load', async () => {
+      T = await this._wait(() => this._T() && this._T().state.ready && this._T().roster && this._T().roster.length ? this._T() : null, 60000, 'ready');
+      const figs = T.roster.filter((p) => p.kind || p.module || p.modelId).length;
+      if (T.state.loadErr) throw new Error('loadErr: ' + T.state.loadErr);
+      return 'ready · roster ' + T.roster.length + ' (' + figs + ' figures, ' + (T.roster.length - figs) + ' cube-pets) · library ' + (T.state.libMissing ? 'MISSING (known gap, 404)' : 'loaded') + ' · shell nav ' + T.state.sfNav;
+    });
+    if (!T) { this.setState({ running: false, done: true, finishedAt: new Date().toISOString() }); return; }
+    /* v18 F10: wer über Bedien-Handler mißt, räumt am ENDE und prüft nach. Sitzung VOR dem Lauf sichern. */
+    const sesKey = T._SES && T._SES.KEY;
+    const snap = { raw: Object.fromEntries(['kfb-pet-studio-v5', 'kfb-pet-library-v9'].map((k) => [k, this._frame.contentWindow.localStorage.getItem(k)])) };
+    snap.drafts = Object.keys((JSON.parse(snap.raw['kfb-pet-studio-v5'] || '{}').drafts) || {}).sort();
+    const restore = () => {
+      try {
+        const ls = this._frame.contentWindow.localStorage;
+        for (const k of Object.keys(snap.raw)) { if (snap.raw[k] == null) ls.removeItem(k); else ls.setItem(k, snap.raw[k]); }
+        if (T._session) { const s0 = snap.raw['kfb-pet-studio-v5'] ? JSON.parse(snap.raw['kfb-pet-studio-v5']) : null; if (s0) { T._session.drafts = s0.drafts || {}; T._session.petVersions = s0.petVersions || {}; T._session.activeId = s0.activeId; } else { T._session.drafts = {}; } }
+        if (T._dirtyIds) T._dirtyIds.clear(); T._dirtyGlobal = false; clearTimeout(T._sesT);
+        T.setState({ v5drafts: Object.keys((T._session && T._session.drafts) || {}).length });
+      } catch (e) { console.warn('[qa] restore failed', e); }
+    };
+    try {
+    let goth = null;
+    await step('gothload', '2 · GothGirl profile load (kfb-pet-gothgirl.json)', async () => {
+      const prof = await (await fetch(this._pdir() + 'kfb-pet-gothgirl.json')).json();
+      const ids = await T._sfImportDoc(prof);
+      await this._selectAndWait(T, 'gothgirl', true);
+      const p = T._pet(); goth = T.biped.report().goth;
+      if (p.module !== 'GothGirl') throw new Error('module ' + p.module);
+      if (goth.zones['head:0'] !== '#130d15') throw new Error('zone head:0 = ' + goth.zones['head:0']);
+      return 'import took ' + ids.join(',') + ' · module GothGirl · zones applied: head:0 ' + goth.zones['head:0'] + ' · head:1 ' + goth.zones['head:1'] + ' · parts ' + JSON.stringify(goth.parts) + ' · face islands ' + (goth.face && goth.face.islands);
+    });
+    await step('gothface', '3 · GothGirl face controls (original ↔ overlay, mouth dx/roll, 17 zones)', async () => {
+      const th = { accent:'#000', ink:'#fff', tcol:'#000', tint:'', chip:'', line:'' };
+      const rows = T._origPartRows(T.state, th);
+      const toggles = rows.filter((r) => r.isButtons);
+      const before = { ...T.biped.parts };
+      const browRow = toggles.find((r) => /brow/i.test(r.label)); if (!browRow) throw new Error('no brow toggle row');
+      browRow.items[1].on(); await new Promise((r) => setTimeout(r, 200));
+      const afterOff = T.biped.parts.brows;
+      browRow.items[0].on(); await new Promise((r) => setTimeout(r, 200));
+      const restored = T.biped.parts.brows === before.brows;
+      if (afterOff !== false || !restored) throw new Error('brow toggle: off=' + afterOff + ' restored=' + restored);
+      const zones = T.biped.zoneList();
+      const zrows = T._gothZoneRows(T.state, th);
+      const m0 = { ...(T._pet().mouth || {}) };
+      T.h.mouthSlider('dx', { target: { value: '0.05' } }); T.h.mouthSlider('rot', { target: { value: '5' } });
+      await new Promise((r) => setTimeout(r, 200));
+      const m1 = T._pet().mouth;
+      T.h.mouthSlider('dx', { target: { value: String(m0.dx || 0) } }); T.h.mouthSlider('rot', { target: { value: String(m0.rot || 0) } });
+      if (Math.abs(m1.dx - 0.05) > 1e-6 || Math.abs(m1.rot - 5) > 1e-6) throw new Error('mouth dx/rot not applied: ' + JSON.stringify(m1));
+      return toggles.length + ' part toggles (' + toggles.map((r) => r.label.split(' ')[0]).join(', ') + ') · brows overlay→original roundtrip ok · mouth dx 0.05 / roll 5 applied and restored · zoneList ' + zones.length + ' zones · zone rows ' + zrows.length;
+    });
+    await step('gothsim', '4 · Simulation dependency (Waving/Cheering)', async () => {
+      const r = T.biped.report().goth;
+      const missing = r.requiredAnimationCategories.filter((c) => !r.loadedCategories.includes(c));
+      if (!r.requiredAnimationCategories.includes('Simulation')) throw new Error('Simulation not required');
+      if (missing.length || !r.chainReady) throw new Error('missing ' + missing.join(',') + ' chainReady ' + r.chainReady);
+      return 'required ' + r.requiredAnimationCategories.join(' · ') + ' · loaded ' + r.loadedCategories.join(' · ') + ' · chainReady true';
+    });
+    await step('gothmotion', '5 · GothGirl Idle → Wave → Cheer → Rest (bindings)', async () => {
+      const B = T.biped, out = [];
+      const findSet = (n) => Object.keys(B.categories).find((k) => B.categories[k].clips.some((c) => c.name === n));
+      for (const n of ['Idle_A', 'Waving', 'Cheering']) {
+        const set = findSet(n); if (!set) throw new Error(n + ' not found');
+        await T._audPlay(set, n);
+        for (let i = 0; i < 6; i++) { B.mixer.update(0.033); }
+        const a = B.action; if (!a) throw new Error('no action for ' + n);
+        const pb = a._propertyBindings || [];
+        const bound = pb.filter((b) => b && b.binding && (b.binding.node || b.binding.targetObject)).length;
+        const bones = new Set(a.getClip().tracks.map((t) => t.name.split('.')[0])).size;
+        out.push(n + ' ' + bound + '/' + pb.length + ' tracks bound · ' + bones + ' bones · ' + a.getClip().duration.toFixed(2) + 's');
+        if (bound !== pb.length || pb.length === 0) throw new Error(n + ' bound ' + bound + '/' + pb.length);
+      }
+      T._sfRest(); await new Promise((r) => setTimeout(r, 300));
+      const rest = T.state.v14aud && T.state.v14aud.clip;
+      if (rest !== 'Idle_A') throw new Error('rest clip ' + rest);
+      out.push('Rest → Idle_A');
+      return out.join('\n');
+    });
+    await step('mixer', '6 · One mixer, root figure', async () => {
+      const B = T.biped, root = B.mixer.getRoot();
+      const chMixer = T.ch && T.ch.mixer;
+      if (chMixer) throw new Error('cube-pet mixer still alive alongside biped mixer');
+      return 'biped.mixer root "' + root.name + '" · cube-pet mixer none · actions ' + (B.mixer._actions ? B.mixer._actions.length : '?');
+    });
+    let gothMat = null;
+    await step('gothrt', '7 · GothGirl roundtrip (load → edit mouth.size → export → reload → same)', async () => {
+      const r = await this._roundtrip(T, 'gothgirl', this._pdir() + 'kfb-pet-gothgirl.json', (T2, e0) => { const v = +((e0.mouth.size || 0.58) + 0.02).toFixed(3); T2.h.mouthSlider('size', { target: { value: String(v) } }); return 'mouth.size ' + e0.mouth.size + ' → ' + v; });
+      gothMat = T.biped._baseMat || null;
+      const bad01 = r.diff01.filter((d) => !/mouth\.size/.test(d) && d[0] !== '+');
+      const added = r.diff01.filter((d) => d[0] === '+');
+      if (bad01.length) throw new Error('edit changed/removed more than mouth.size: ' + bad01.join(', '));
+      if (r.diff12.length) throw new Error('reload differs: ' + r.diff12.join(', '));
+      if (!r.unknownOk) throw new Error('unknown field lost/altered: ' + JSON.stringify(r.e2.qaUnknown));
+      const lossG = r.loss.filter((d) => !/mouth\.size/.test(d) && !/^≠ (ground|body|pad\.(anchors|measured))\./.test(d)); if (lossG.length) throw new Error('profile fields lost/altered: ' + lossG.join(', '));
+      return 'profile → export: 0 fields lost, ' + r.grown + ' completed by import normalisation · ' + r.changed + ' · edit diff ' + r.diff01.filter((d) => d[0] !== '+').join(', ') + (added.length ? ' · owner completed ' + added.length + ' default field(s) on first edit (' + added.map((d) => d.slice(2)).join(', ') + ')' : '') + ' · reload diff (authored) none' + (r.measured.length ? ' · measured-on-load jitter: ' + r.measured.join(', ') : '') + ' · unknown fields (false/0/null/array) kept · leaves ' + r.leaves0 + ' → ' + r.leaves2 + ' · meta ' + JSON.stringify({ count: r.meta.count, ids: r.meta.ids, label: r.meta.label });
+    });
+    await step('hihiload', '8 · Hihi profile load · flatSkin · modelId', async () => {
+      const prof = await (await fetch(this._pdir() + 'kfb-pet-hihi.json')).json();
+      await T._sfImportDoc(prof);
+      await this._selectAndWait(T, 'hihi', false);
+      const p = T._pet();
+      if (p.id !== 'hihi' || p.modelId !== 'cat' || p.flatSkin !== true) throw new Error(JSON.stringify({ id: p.id, modelId: p.modelId, flatSkin: p.flatSkin }));
+      const mats = []; T.ch.group.traverse((n) => { if (n.isMesh && n.material) (Array.isArray(n.material) ? n.material : [n.material]).forEach((m) => mats.push(m)); });
+      const body = mats.find((m) => m.map) || mats[0];
+      if (!body) throw new Error('no material on Hihi');
+      const shader = mats.filter((m) => m.isShaderMaterial || (m.onBeforeCompile && m.userData && m.userData.clay)).length;
+      if (!body.isMeshStandardMaterial || !body.map) throw new Error('body material ' + body.type + ' map ' + !!body.map);
+      if (gothMat && mats.includes(gothMat)) throw new Error('GothGirl material object reused on Hihi');
+      return 'modelId cat · flatSkin true · body ' + body.type + ' + map ' + (body.map.image ? body.map.image.width + '²' : 'yes') + ' · ' + mats.length + ' materials, ' + shader + ' shader/clay · no GothGirl material shared';
+    });
+    await step('hihirt', '9 · Hihi roundtrip + modelId export case', async () => {
+      const r = await this._roundtrip(T, 'hihi', this._pdir() + 'kfb-pet-hihi.json', (T2, e0) => { const v = +((e0.mouth.dy || -0.62) + 0.02).toFixed(3); T2.h.mouthSlider('dy', { target: { value: String(v) } }); return 'mouth.dy ' + e0.mouth.dy + ' → ' + v; });
+      const bad01 = r.diff01.filter((d) => !/mouth\.dy/.test(d) && d[0] !== '+');
+      const added = r.diff01.filter((d) => d[0] === '+');
+      if (bad01.length) throw new Error('edit changed/removed more than mouth.dy: ' + bad01.join(', '));
+      if (r.diff12.length) throw new Error('reload differs: ' + r.diff12.join(', '));
+      if (!r.unknownOk) throw new Error('unknown field lost');
+      const lossH = r.loss.filter((d) => !/mouth\.dy/.test(d) && !/^≠ (ground|body|pad\.(anchors|measured))\./.test(d)); if (lossH.length) throw new Error('profile fields lost/altered: ' + lossH.join(', '));
+      if (r.meta.count !== 1 || r.meta.ids[0] !== 'hihi') throw new Error('modelId export case: meta ' + JSON.stringify(r.meta));
+      if (r.e2.modelId !== 'cat' || r.e2.flatSkin !== true) throw new Error('modelId/flatSkin lost in export');
+      return 'profile → export: 0 fields lost, ' + r.grown + ' completed by import normalisation (FINDING, no loss) · ' + r.changed + ' · edit diff ' + r.diff01.filter((d) => d[0] !== '+').join(', ') + (added.length ? ' · owner completed ' + added.length + ' default field(s) on first edit (' + added.map((d) => d.slice(2)).join(', ') + ')' : '') + ' · reload diff (authored) none' + (r.measured.length ? ' · measured-on-load jitter: ' + r.measured.join(', ') : '') + ' · unknown kept · export count 1, ids [hihi], modelId cat, flatSkin true · leaves ' + r.leaves0 + ' → ' + r.leaves2;
+    });
+    await step('contam', '10 · No cross-actor material contamination (Hihi → GothGirl → zones intact)', async () => {
+      await this._selectAndWait(T, 'gothgirl', true);
+      const z = T.biped.report().goth.zones;
+      if (z['head:0'] !== '#130d15' || z['head:1'] !== '#e6cbc3') throw new Error('zones after switch: ' + JSON.stringify(z));
+      const chVisible = !!(T.ch && T.ch.group && T.ch.group.visible);
+      if (chVisible) throw new Error('cube-pet group still visible beside the biped');
+      const gothMats = new Set(); T._bipedRoot.traverse((n) => { if (n.isMesh) (Array.isArray(n.material) ? n.material : [n.material]).forEach((m) => gothMats.add(m)); });
+      const shared = []; if (T.ch && T.ch.group) T.ch.group.traverse((n) => { if (n.isMesh) (Array.isArray(n.material) ? n.material : [n.material]).forEach((m) => { if (gothMats.has(m)) shared.push(m.type); }); });
+      if (shared.length) throw new Error('materials shared between Hihi and GothGirl: ' + shared.join(','));
+      return 'GothGirl back on stage · head:0 ' + z['head:0'] + ' · head:1 ' + z['head:1'] + ' · Hihi group hidden (Studio rule: Cube-Pet steps off, not disposed) · 0 shared materials';
+    });
+    await step('frizzle', '11 · FrizzleBob existing path', async () => {
+      await this._selectAndWait(T, 'frizzlebob', true);
+      const p = T._pet(); if (p.module !== 'FrizzleBob') throw new Error('module ' + p.module);
+      return 'FrizzleBob built · module ' + p.module + ' · own clips ' + ((T.biped.ownClips || []).length);
+    });
+    await step('shell', '12 · Shell rules (one bar, palette, roster ≥ 24 + figures)', async () => {
+      const doc = this._frame.contentDocument;
+      const bars = [...doc.querySelectorAll('div')].filter((d) => { const cs = getComputedStyle(d); return cs.position === 'absolute' && cs.top === '0px' && parseInt(cs.height, 10) === 44 && d.offsetWidth > doc.body.clientWidth * 0.9; });
+      const pal = [...doc.querySelectorAll('div')].filter((d) => d.textContent && /Show all/.test(d.textContent) && getComputedStyle(d).position === 'absolute').length;
+      T.setState({ sfRoster: true }); await new Promise((r) => setTimeout(r, 300));
+      const rosterBtns = [...doc.querySelectorAll('button')].filter((b) => b.textContent && /Cube-Pet/.test(b.textContent)).length;
+      T.setState({ sfRoster: false });
+      if (bars.length !== 1) throw new Error('persistent bars: ' + bars.length);
+      if (rosterBtns < 24) throw new Error('roster shows ' + rosterBtns + ' cube-pets');
+      return 'persistent 44px bar: 1 · palette present: ' + (pal ? 'yes' : 'no') + ' · roster cube-pet rows ' + rosterBtns + ' · nav ' + ['Actor','Face','Pose','Motion','Voice','Stage'].join(' · ');
+    });
+    } finally { restore(); }
+    await step('session', '13 · Session untouched (drafts/petVersions restored, re-measured)', async () => {
+      await new Promise((r) => setTimeout(r, 900));   // der 500-ms-Flush-Timer der Handler muß verstrichen sein
+      restore();
+      const ls = this._frame.contentWindow.localStorage;
+      const now = JSON.parse(ls.getItem('kfb-pet-studio-v5') || '{"drafts":{}}');
+      const ids = Object.keys(now.drafts || {}).sort();
+      const same = JSON.stringify(ids) === JSON.stringify(snap.drafts) && (ls.getItem('kfb-pet-studio-v5') === snap.raw['kfb-pet-studio-v5']) && (ls.getItem('kfb-pet-library-v9') === snap.raw['kfb-pet-library-v9']);
+      if (!same) throw new Error('session differs after run: drafts before ' + JSON.stringify(snap.drafts) + ' after ' + JSON.stringify(ids));
+      return 'kfb-pet-studio-v5 and kfb-pet-library-v9 byte-identical to pre-run · drafts ' + JSON.stringify(snap.drafts) + ' · handlers did write during the run (F10 class) and were rolled back';
+    });
+    this.setState({ running: false, done: true, finishedAt: new Date().toISOString() });
+  }
+  save() {
+    const doc = { schema: 'kfb.toolbox-qa/1', profiles: this._pdir(), sheet: 'stage-first/src/KFB ToolBox Stage-First v1.dc.html', startedAt: this.state.startedAt, finishedAt: this.state.finishedAt, userAgent: navigator.userAgent, viewport: [innerWidth, innerHeight], rows: this.state.rows };
+    const blob = new Blob([JSON.stringify(doc, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'stage-first-qa.json'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+  }
+  renderVals() {
+    const s = this.state;
+    const badge = (st) => 'display:inline-block;text-align:center;padding:3px 0;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.04em;font-family:"IBM Plex Mono",monospace;' + (st === 'PASS' ? 'background:#dfe9d3;color:#3f5a1e;' : st === 'FAIL' ? 'background:#f3d6cf;color:#8c2f20;' : 'background:#e2ded6;color:#5c6065;');
+    const n = s.rows.length, pass = s.rows.filter((r) => r.status === 'PASS').length, fail = s.rows.filter((r) => r.status === 'FAIL').length;
+    return {
+      frameRef: this.frameRef,
+      onRun: () => this.run(), onSave: () => this.save(),
+      runLabel: s.running ? 'running …' : (s.done ? 'Run again' : 'Run 13 checks'),
+      runStyle: 'height:28px;padding:0 12px;border-radius:6px;border:1px solid #1f2022;background:' + (s.running ? '#e2ded6' : '#1f2022') + ';color:' + (s.running ? '#5c6065' : '#efece6') + ';font-size:12.5px;font-weight:600;cursor:pointer;',
+      summary: s.done ? (pass + ' PASS · ' + fail + ' FAIL · ' + n + ' checks · ' + (s.finishedAt || '') + ' · profiles ' + this._pdir()) : (s.running ? 'running against the live sheet (iframe) …' : 'Loads ../src/KFB ToolBox Stage-First v1.dc.html and drives it via window.__TOOLBOX. Nothing is downloaded; exports are built in memory with the same builder as the Export menu. The session (localStorage) is snapshotted before and restored after the run — check 13 measures that.'),
+      rows: s.rows.map((r) => ({ ...r, badge: badge(r.status) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

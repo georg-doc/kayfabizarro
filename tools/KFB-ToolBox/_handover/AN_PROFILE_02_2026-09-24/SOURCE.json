@@ -1,0 +1,81 @@
+{
+  "schema": "kfb.slice-source/1.0",
+  "slice": "AN-PROFILE-02",
+  "date": "2026-09-24",
+  "owner": "KFB ToolBox / Stage-First integration",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+  "pr": 185,
+  "observedMainHead": "c049cae386e169c79608c835e69eaa2170838875",
+  "toolboxInput": {
+    "pr": 185,
+    "preSliceHead": "a6dff1a4e465433daea7f38618b3925db6714b90",
+    "donorPath": "tools/KFB-ToolBox/stage-first/src/KFB Animation Lab v3.dc.html",
+    "donorBlob": "2203c13c2a270da86eac27878473618f14a0118d"
+  },
+  "motionProfileInput": {
+    "pr": 206,
+    "head": "032c9d50cd5de6764fa37fec65cb203ed35fcb11",
+    "schema": "kfb.motion-profile-catalog/1.0"
+  },
+  "motionLibraryInput": {
+    "pr": 197,
+    "sourceHead": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+    "catalogueSchema": "kfb.motion-catalog.v1",
+    "clipCountPerRig": 33
+  },
+  "architectureInput": {
+    "pr": 204,
+    "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+    "role": "T4 Animation Studio inside ToolBox"
+  },
+  "implementationHead": "93d9dd6f763c064313fe5d3bef690496487145a9",
+  "ciAtCheckpoint": {
+    "run": 36032905791,
+    "job": 107745811232,
+    "status": "success",
+    "staticOwnerContract": "22/22 PASS",
+    "anProfile02Static": "34/34 PASS",
+    "browserCoherent": "20/20 PASS",
+    "browserAnProfile02": "25/25 PASS",
+    "motionProfileNetworkFailures": 0,
+    "browserPageErrors": 0
+  },
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/",
+    "status": "HOLD_HUMAN_FAIL_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED"
+  },
+  "humanReview": "FAIL",
+  "reviewTransport": {
+    "dcAttempts": [
+      {
+        "artifact": "AN_PROFILE_02_REVIEW.html",
+        "result": "HUMAN_FAIL_RAW_BINDINGS"
+      },
+      {
+        "artifact": "AN_PROFILE_02_REVIEW_v2.html",
+        "result": "HUMAN_FAIL_CHAT_VISUALIZATION_ERROR"
+      }
+    ],
+    "frozen": true,
+    "recoverySource": "tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html",
+    "technicalReviewHead": "ce3181bbf9114b7f00086368130fe610fd5810c7",
+    "actions": {
+      "run": 36055391088,
+      "job": 107820911138,
+      "status": "success"
+    },
+    "browser": "13/13 PASS",
+    "fullOwnerRun": "114/114 PASS",
+    "pageErrors": 0,
+    "failedSourceModuleRequests": 0,
+    "humanResult": "FAIL",
+    "humanFailure": {
+      "sourceLoad": "source failed / GLB failed: Mannequin_Medium...",
+      "composition": "measurement/data palettes obscure the stage; animation not meaningfully reviewable even if source loads",
+      "evidence": "user-supplied Chat screenshot, 2026-09-24",
+      "disposition": "FROZEN_FAILED_CANDIDATE"
+    }
+  },
+  "nextGate": "HOLD_UNTIL_NEW_BOUNDED_REVIEW_SURFACE_BRIEF"
+}

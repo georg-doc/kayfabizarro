@@ -1,5 +1,18 @@
 # Claude Design · KFB ToolBox Stage-First Default · 2026-09-23
 
+> **HOLD · DO NOT CONTINUE**
+>
+> The Round-1 build remains rejected.
+>
+> A newer gate now comes first:
+> `tools/KFB-ToolBox/_handover/TOOLBOX_SOURCE_LOCK_2026-09-23/RESIDENT_SET_PORTABILITY_GATE.md`
+>
+> Before any Claude Design ToolBox integration, complete **TB-RESIDENT-PORTABILITY-01**:
+> Goth Girl + Orc Warband + Animatronic must survive donor → review import → export/reload with models, textures, pose, grounding, props/attachments, actor count and animation intact.
+>
+> After that: FrizzleBob lineage + full roster review.
+> Only then may this Stage-First Claude brief resume.
+
 Use this together with:
 `START_HERE.md`
 

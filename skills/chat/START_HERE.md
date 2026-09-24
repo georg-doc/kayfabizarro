@@ -7,6 +7,36 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## CURRENT TOOLBOX SLICE · 2026-09-24 · HUMAN FAIL / HOLD
+
+Current owner: **KFB ToolBox / Stage-First integration** on Draft PR **#185**, branch `chatgpt-web/toolbox-source-lock-2026-09-23`.
+
+Read:
+- `tools/KFB-ToolBox/_handover/TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/RETURN.md`;
+- `tools/KFB-ToolBox/_handover/AN_PROFILE_02_2026-09-24/START_HERE.md`;
+- `tools/KFB-ToolBox/_handover/AN_PROFILE_02_2026-09-24/REVIEW_TRANSPORT_FAILURE_RECOVERY.md`.
+
+The underlying AN-PROFILE-02 Animation Studio consumer retains technical CI evidence, but the **actual human-facing review surface failed** in the Chat visualization host.
+
+Human evidence:
+- visible `source failed`;
+- visible `GLB failed: Mannequin_Medium...`;
+- Georg reports that the measurement/data palettes obscure the stage so heavily that the animation would not be meaningfully visible even if the GLB loaded.
+
+Human result:
+**FAIL · NOT ACCEPTED**
+
+Do not describe this slice as review-ready, usable, accepted, live or publicly verified.
+
+All review transports from this slice are frozen failed candidates. Do not run another repair pass in this slice.
+
+WorldBuilder Motion consumption remains **HOLD**.
+
+Current next gate:
+**HOLD until Georg explicitly starts a new bounded review-surface brief** that proves source transport in the actual human review host and keeps the 3D stage visually dominant and unobstructed.
+
+No Cloudflare publication is claimed.
+
 ## Start order
 
 1. Read `REGISTRY.json`.

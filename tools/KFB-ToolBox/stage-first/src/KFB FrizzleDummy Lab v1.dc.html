@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#efe6d3;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#b8361f;} a:hover{color:#8a6a16;}
+  .lab-scroll::-webkit-scrollbar{width:8px;} .lab-scroll::-webkit-scrollbar-thumb{background:#a89a78;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__DUMMYLAB = { THREE, OrbitControls, GLTFLoader, RoomEnvironment };
+  window.dispatchEvent(new Event('dummylabready'));
+</script>
+</helmet>
+<div style="height:100%;display:grid;grid-template-rows:auto 1fr;background:#efe6d3;font-family:'Space Grotesk',system-ui,sans-serif;color:#1f1a14;">
+
+  <div style="display:flex;align-items:center;gap:10px 14px;padding:9px 14px;background:#f7f0da;border-bottom:2px solid #1f1a14;flex-wrap:wrap;">
+    <span style="font-family:'Bangers',cursive;font-size:20px;letter-spacing:1.2px;white-space:nowrap;">FrizzleDummy Lab</span>
+    <select ref="{{ selRef }}" value="{{ rigValue }}" onChange="{{ onRig }}" style="flex:1 1 190px;min-width:150px;max-width:320px;height:34px;padding:0 8px;border:2px solid #1f1a14;background:#efe6d3;color:#1f1a14;font:600 12.5px 'Space Grotesk',sans-serif;cursor:pointer;">
+      <sc-for list="{{ rigList }}" as="r" hint-placeholder-count="8">
+        <option value="{{ r.key }}">{{ r.label }}</option>
+      </sc-for>
+    </select>
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+      <button onClick="{{ togglePlay }}" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 13px;border:2px solid #1f1a14;background:#1f1a14;color:#f7f0da;cursor:pointer;min-width:74px;">{{ playLabel }}</button>
+      <input type="range" min="0.1" max="2" step="0.05" value="{{ speed }}" onInput="{{ onSpeed }}" title="Tempo" style="width:88px;accent-color:#b8361f;">
+      <span style="font-size:11px;width:36px;color:#7a6f58;">{{ speedLabel }}</span>
+      <button onClick="{{ toggleLoop }}" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ loopBg }};color:{{ loopInk }};cursor:pointer;">Loop</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-left:auto;">
+      <button onClick="{{ toggleHead }}" title="Ganzer Kopf aus Studio v13 — Schädel, Ohren und Gesicht" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ headBg }};color:{{ headInk }};cursor:pointer;">Kopf v13</button>
+      <button onClick="{{ toggleFace }}" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ faceBg }};color:{{ faceInk }};cursor:pointer;">FB-Gesicht</button>
+      <button onClick="{{ toggleEars }}" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ earsBg }};color:{{ earsInk }};cursor:pointer;">FB-Ohren</button>
+      <button onClick="{{ toggleTint }}" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ tintBg }};color:{{ tintInk }};cursor:pointer;">Gelb</button>
+      <button onClick="{{ toggleSkeleton }}" title="Knochen einblenden" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ skelBg }};color:{{ skelInk }};cursor:pointer;">Knochen</button>
+      <button onClick="{{ toggleBefund }}" style="font:500 12px 'Space Grotesk',sans-serif;padding:7px 11px;border:2px solid #1f1a14;background:{{ befundBg }};color:{{ befundInk }};cursor:pointer;">Befund</button>
+    </div>
+  </div>
+
+  <div style="{{ mainGrid }}">
+
+    <div class="lab-scroll" style="{{ clipCol }}">
+      <input value="{{ filter }}" onInput="{{ onFilter }}" placeholder="Bewegung suchen …" style="width:100%;box-sizing:border-box;height:32px;padding:0 9px;border:2px solid #1f1a14;background:#efe6d3;color:#1f1a14;font:400 12px 'Space Grotesk',sans-serif;margin-bottom:10px;">
+      <div style="font-size:11px;color:#7a6f58;margin-bottom:10px;">{{ clipCountLabel }}</div>
+      <sc-for list="{{ packs }}" as="pack" hint-placeholder-count="4">
+        <div style="margin-bottom:14px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#8a6a16;border-bottom:1px solid #d9cba6;padding-bottom:4px;margin-bottom:6px;">{{ pack.title }}</div>
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <sc-for list="{{ pack.clips }}" as="clip" hint-placeholder-count="6">
+              <button onClick="{{ clip.play }}" style="text-align:left;font:500 12px 'Space Grotesk',sans-serif;padding:6px 9px;border:none;background:{{ clip.bg }};color:{{ clip.ink }};cursor:pointer;display:flex;justify-content:space-between;gap:8px;">
+                <span>{{ clip.name }}</span>
+                <span style="opacity:.6;font-size:11px;">{{ clip.dur }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="{{ stageCol }}">
+      <canvas ref="{{ canvasRef }}" style="display:block;width:100%;height:100%;"></canvas>
+      <div style="position:absolute;left:14px;top:12px;font-size:12px;color:#1f1a14;background:rgba(247,240,218,.86);border:1px solid #1f1a14;padding:5px 9px;">{{ status }}</div>
+      <div style="position:absolute;left:14px;bottom:12px;font-size:11px;color:#5c5344;background:rgba(247,240,218,.86);border:1px solid #c2b086;padding:5px 9px;max-width:60%;">{{ nowPlaying }}</div>
+    </div>
+
+    <div class="lab-scroll" style="{{ befundCol }}">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#8a6a16;margin-bottom:8px;">Befund</div>
+      <div style="font-size:12px;line-height:1.55;color:#3d3628;margin-bottom:14px;">{{ verdict }}</div>
+      <div style="font-size:12px;line-height:1.5;color:#7a3a24;margin-bottom:14px;">{{ graft }}</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#8a6a16;margin-bottom:8px;">Was unsere Rigs suchen</div>
+      <sc-for list="{{ anchors }}" as="a" hint-placeholder-count="8">
+        <div style="display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:4px 0;border-bottom:1px solid #e3d7b6;">
+          <span style="color:#3d3628;">{{ a.want }}</span>
+          <span style="color:{{ a.col }};font-weight:600;">{{ a.got }}</span>
+        </div>
+      </sc-for>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#8a6a16;margin:16px 0 8px;">Maße</div>
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="6">
+        <div style="display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:4px 0;border-bottom:1px solid #e3d7b6;">
+          <span style="color:#3d3628;">{{ f.k }}</span>
+          <span style="color:#1f1a14;font-weight:600;">{{ f.v }}</span>
+        </div>
+      </sc-for>
+      <button onClick="{{ copyReport }}" style="margin-top:16px;width:100%;font:500 12px 'Space Grotesk',sans-serif;padding:9px;border:2px solid #1f1a14;background:#efe6d3;color:#1f1a14;cursor:pointer;">Befund kopieren</button>
+      <div style="font-size:11px;color:#7a6f58;margin-top:12px;line-height:1.5;">Alle Modelle kommen direkt aus deinem Repo (Zweig main). Nichts davon wird ins Projekt kopiert.</div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:760}}">
+/* FrizzleDummy Lab v1 — Prüfstand für das KayKit-Animationsset (Georg 11.09.).
+ *
+ * Zweck: SEHEN, bevor gebaut wird. Die Frage für ein späteres v14 ist nicht »sieht das gut aus«,
+ * sondern »paßt dieser Fremdkörper auf unsere Verträge« — also: heißen seine Knochen so, wie unsere
+ * Rigs sie suchen (Augen/Mund/Braue/Nase hängen am Kopf-Anker, die Sitzpose an Hüfte/Bein/Arm)?
+ * Deshalb liefert dieses Blatt neben dem Abspieler einen BEFUND: gemessene Knochennamen gegen die
+ * Namen, die `pose-rig.v1.js` und die Gesichtsmodule erwarten.
+ *
+ * Die Animationen liegen in EIGENEN Dateien, nicht im Modell. Ein Mixer bindet Spuren über
+ * Knochennamen — wenn die Namen stimmen, laufen fremde Dateien auf unserem Skelett. Genau das wird
+ * hier gemessen und nicht behauptet: jede Spur, die keinen Knochen findet, wird gezählt.
+ */
+const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
+const A11 = 'KayKit_Character_Animations_1.1/';
+const MY6 = 'KayKit_Mystery_Series6/';
+
+/* Die Animationspakete gehören dem RIG, nicht der Figur. Medium und Large sind zwei Größen desselben
+   Skeletts; jede Figur sagt, an welchem der beiden sie hängt — und der Prüfstand MISST, ob das stimmt
+   (Anteil der Spuren, die einen Knochen finden). Eine Figur, die zu 20 % bindet, sieht man sofort. */
+const PACKS = {
+  Rig_Medium:['General','MovementBasic','MovementAdvanced','CombatMelee','CombatRanged','Simulation','Special','Tools'],
+  Rig_Large:['General','MovementBasic','MovementAdvanced','CombatMelee','Simulation','Special'],
+};
+const RIGS = {
+  medium:{ label:'Mannequin M', model:A11 + 'Mannequin Character/characters/Mannequin_Medium.glb', dir:'Rig_Medium' },
+  large:{ label:'Mannequin L', model:A11 + 'Mannequin Character/characters/Mannequin_Large.glb', dir:'Rig_Large' },
+  /* Mystery Series 6 — die zwölf Figuren, die WIRKLICH im Repo liegen (gemessen 11.09. an Georgs
+     Bestandsliste, 50 Dateien in dem Ordner). »The Driver« gehört zu Serie 4 und ist NICHT dabei. */
+  lorekeeper:{ label:'Lorekeeper', model:MY6 + '1 - July 2025 - Lorekeeper/Lorekeeper.glb', dir:'Rig_Medium' },
+  orc:{ label:'Orc Brute', model:MY6 + '2 - August 2025 - Orc Brute/OrcBrute.glb', dir:'Rig_Large' },
+  cleric:{ label:'Cleric', model:MY6 + '3 - September 2025 - Cleric/Cleric.glb', dir:'Rig_Medium' },
+  monstrosity:{ label:'Monstrosity', model:MY6 + '4 - October 2025 - Monstrosity/Monstrosity.glb', dir:'Rig_Large' },
+  plant:{ label:'Plant Warrior', model:MY6 + '5 - November 2025 - Plant Warrior/PlantWarrior.glb', dir:'Rig_Medium' },
+  toy:{ label:'Toy Soldier', model:MY6 + '6 - December 2025 - Toy Soldier/ToySoldier.glb', dir:'Rig_Medium' },
+  gtn:{ label:'4GTN', model:MY6 + '7 - January 2026 - 4GTN/4GTN.glb', dir:'Rig_Medium' },
+  hoarder:{ label:'Hoarder', model:MY6 + '8 - February 2026 - Hoarder/Hoarder.glb', dir:'Rig_Medium' },
+  avian:{ label:'Avian Swordsman', model:MY6 + '9 - March 2026 - Avian Swordsman/AvianSwordsman.glb', dir:'Rig_Medium' },
+  marksman:{ label:'Marksman', model:MY6 + '10 - April 2026 - Marksman/Marksman.glb', dir:'Rig_Medium' },
+  magical:{ label:'Magical Girl', model:MY6 + '11 - May 2026 - Magical Girl/MagicalGirl.glb', dir:'Rig_Medium' },
+  farmer:{ label:'Farmer A', model:MY6 + '12 - June 2026 - Farmers/Farmer_A.glb', dir:'Rig_Medium' },
+  farmerB:{ label:'Farmer B', model:MY6 + '12 - June 2026 - Farmers/Farmer_B.glb', dir:'Rig_Medium' },
+  /* Adventurers 2.0 (frei) und die Skelette \u2014 Georgs Gegnerschar. Beide Pakete bringen eigene
+     Animationsordner mit, brauchen sie aber nicht: sie h\u00e4ngen am selben Rig_Medium wie alles andere,
+     also spielt der Pr\u00fcfstand ihnen den GRO\u00dfEN Satz aus dem Animationspaket vor \u2014 und mi\u00dft, ob er bindet. */
+  barbarian:{ label:'Barbarian', model:'KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb', dir:'Rig_Medium' },
+  knight:{ label:'Knight', model:'KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb', dir:'Rig_Medium' },
+  mage:{ label:'Mage', model:'KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb', dir:'Rig_Medium' },
+  ranger:{ label:'Ranger', model:'KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb', dir:'Rig_Medium' },
+  rogue:{ label:'Rogue', model:'KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb', dir:'Rig_Medium' },
+  rogueHood:{ label:'Rogue (Kapuze)', model:'KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb', dir:'Rig_Medium' },
+  skWarrior:{ label:'Skelett Krieger', model:'KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb', dir:'Rig_Medium' },
+  skMage:{ label:'Skelett Magier', model:'KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb', dir:'Rig_Medium' },
+  skRogue:{ label:'Skelett Schurke', model:'KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb', dir:'Rig_Medium' },
+  skMinion:{ label:'Skelett Minion', model:'KayKit_Skeletons/characters/gltf/Skeleton_Minion.glb', dir:'Rig_Medium' },
+};
+/* Die Serien 2023/24, die Georg am 11.09. nachgeladen hat. **Ihre Dateinamen kenne ich nicht** — der
+   Verzeichnisbaum über GitHub zeigt `.glb` nicht an (0 von 1202 Treffern für `.glb` im ganzen Ordner
+   3D_Assets, gemessen), und der Katalog im Repo ist von Juli und kennt diese Ordner nicht.
+   **Also wird nicht geraten, sondern PROBIERT:** je Figur eine Liste möglicher Orte, der erste
+   Treffer gewinnt, die Fehlversuche stehen im Bericht. Ein geratener Pfad wäre eine stumme Leiche
+   in der Leiste; ein Probierer sagt, was er gefunden hat. Die Ordnernamen selbst sind gemessen. */
+const OLD = [
+  ['driver', 'Driver', '2 - August 2023 - Driver', ['Driver']],
+  ['orcRaider', 'Orc Raider', '1 - July 2023 - Orc Raider', ['Orc_Raider', 'OrcRaider', 'Orc']],
+  ['monsterCostume', 'Monster Costume', '3 - September 2023 - Monster Costume', ['MonsterCostume', 'Monster_Costume']],
+  ['werewolf', 'Werewolf', '4 - October 2023 - Werewolf', ['Werewolf']],
+  /* Georg 11.09.: den Animatronic gibt es zweimal (`characters/gltf/Animatronic_Creepy.glb` ·
+     `_Normal.glb`) \u2014 wie bei den Robotern je ein eigener Knopf. */
+  ['animatronicN', 'Animatronic', '5 - November 2023 - Animatronic', ['Animatronic_Normal']],
+  ['animatronicC', 'Animatronic (creepy)', '5 - November 2023 - Animatronic', ['Animatronic_Creepy']],
+  ['actionFigure', 'Action Figure', '6 - December 2023 - Action Figure', ['ActionFigure', 'Action_Figure']],
+  ['spaceRanger', 'Space Ranger', '7 - January 2024 - Space Ranger', ['SpaceRanger', 'Space_Ranger']],
+  ['ninja', 'Ninja', '8 - February 2024 - Ninja', ['Ninja']],
+  ['survivalist', 'Survivalist', '9 - March 2024 - Survivalist', ['Survivalist']],
+  ['paladin', 'Paladin', '10 - April 2024 - Paladin', ['Paladin']],
+  ['clown', 'Clown', '11 - May 2024 - Clown', ['Clown']],
+  /* Georg 11.09.: es sind ZWEI Roboter (`characters/Robot_One.glb` · `Robot_Two.glb`) — also zwei
+     Einträge, nicht einer mit Zufallstreffer. Wo ein Paket mehrere Figuren hat, bekommt jede ihren
+     eigenen Knopf; »der erste Treffer gewinnt« wäre hier eine stille Auswahl. */
+  ['robot1', 'Robot One', '12 - June 2024 - Robot', ['Robot_One']],
+  ['robot2', 'Robot Two', '12 - June 2024 - Robot', ['Robot_Two']],
+];
+const SUBDIRS = ['characters/gltf/', 'character/gltf/', '', 'assets/gltf/', 'gltf/', 'characters/', 'character/'];
+/* Namensvarianten: die älteren Pakete schreiben teils klein, teils mit Skin-Suffix. Gemessen ist nur
+   der Ordner — die Datei wird gesucht, und WAS gefunden wurde, steht danach in der Konsole. */
+/* Georgs Beleg 11.09.: `4 - October 2023 - Werewolf/characters/gltf/Werewolf_Wolf.glb` — die älteren
+   Pakete hängen dem Namen die VARIANTE an (`_Wolf`), die neueren nicht. Ein Muster aus einem Beispiel
+   ist eine Vermutung; deshalb probiert der Sucher die bekannten Endungen durch und SAGT, was er
+   gefunden hat, statt so zu tun, als hätte er es gewußt. */
+const SUFFIX = ['', '_A', '_B', '_One', '_Two', '_Wolf', '_Human', '_Normal', '_Creepy', '_Base', '_Alt'];
+/* Ein Name, der schon auf eine BEKANNTE Endung ausgeht (`Robot_One`), wird nicht doppelt behängt.
+   ⚠ Erste Fassung prüfte auf irgendeinen Unterstrich — damit fiel `Orc_Raider` aus dem Suchraum und
+   eine Figur, die vorher lief, war plötzlich weg. Gemessen, nicht geahnt. */
+const VARIANTS = (n) => {
+  if (SUFFIX.some((s) => s && n.endsWith(s))) return [n];
+  return SUFFIX.map((s) => n + s);   // KayKit schreibt gro\u00df (Werewolf_Wolf, Robot_One) \u2014 belegt, nicht vermutet
+};
+/* ⚠ 11.09., später am Tag: Georg hat den Ordner von seiner Platte angehängt — damit ist JEDER Pfad
+   GEMESSEN und das Raten erledigt. Die Liste unten ist ABGESCHRIEBEN (19 Dateien in Serie 4), nicht
+   erschlossen. Sie widerlegt nebenbei zwei meiner Vermutungen: der Orc Raider liegt flach in
+   `character/` (kein `gltf/`), und die Unterordner heißen mal `character`, mal `characters` — ein
+   Muster gibt es nicht, nur Fälle. Das Probierwerkzeug bleibt als Rückfall für Pakete, die noch
+   niemand aufgelistet hat; wo ein echter Pfad steht, wird er benutzt. */
+const EXACT = {
+  orcRaider: '1 - July 2023 - Orc Raider/character/OrcRaider.glb',
+  driver: '2 - August 2023 - Driver/character/gltf/Driver.glb',
+  monsterCostume: '3 - September 2023 - Monster Costume/character/gltf/MonsterCostume.glb',
+  werewolf: '4 - October 2023 - Werewolf/characters/gltf/Werewolf_Wolf.glb',
+  animatronicN: '5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb',
+  animatronicC: '5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb',
+  actionFigure: '6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb',
+  spaceRanger: '7 - January 2024 - Space Ranger/character/SpaceRanger.glb',
+  ninja: '8 - February 2024 - Ninja/character/Ninja.glb',
+  survivalist: '9 - March 2024 - Survivalist/character/Survivalist.glb',
+  paladin: '10 - April 2024 - Paladin/characters/gltf/Paladin.glb',
+  clown: '11 - May 2024 - Clown/characters/Clown.glb',
+  robot1: '12 - June 2024 - Robot/characters/Robot_One.glb',
+  robot2: '12 - June 2024 - Robot/characters/Robot_Two.glb',
+};
+/* Die zweiten Gestalten, die in denselben Paketen liegen — jede bekommt ihren eigenen Eintrag, weil
+   »der erste Treffer gewinnt« sonst still für Georg entscheidet, welche er zu sehen bekommt. */
+const EXTRA = [
+  ['werewolfMan', 'Werewolf (Mensch)', '4 - October 2023 - Werewolf/characters/gltf/Werewolf_Man.glb'],
+  ['monster', 'Monster (ohne Kostüm)', '3 - September 2023 - Monster Costume/character/gltf/Monster.glb'],
+  ['paladinHelm', 'Paladin (Helm)', '10 - April 2024 - Paladin/characters/gltf/Paladin_with_Helmet.glb'],
+  ['spaceRangerFly', 'Space Ranger (Flug)', '7 - January 2024 - Space Ranger/character/SpaceRanger_FlightMode.glb'],
+];
+for (const [key, label, folder, names] of OLD) {
+  if (EXACT[key]) { RIGS[key] = { label, model: MY6 + EXACT[key], dir:'Rig_Medium' }; continue; }
+  const cand = [], seen = new Set();
+  for (const d of SUBDIRS) for (const base of names) for (const n of VARIANTS(base)) {
+    const p = MY6 + folder + '/' + d + n + '.glb';
+    if (!seen.has(p)) { seen.add(p); cand.push(p); }
+  }
+  RIGS[key] = { label, candidates:cand, dir:'Rig_Medium' };
+}
+for (const [key, label, rel] of EXTRA) RIGS[key] = { label, model: MY6 + rel, dir:'Rig_Medium' };
+const RIGKEYS = Object.keys(RIGS);
+const PACKTITLE = { General:'Allgemein', MovementBasic:'Gehen & Laufen', MovementAdvanced:'Springen & Klettern',
+  CombatMelee:'Nahkampf', CombatRanged:'Fernkampf', Simulation:'Alltag & Arbeit', Special:'Besonderes', Tools:'Werkzeug' };
+
+/* Was unsere eigenen Bauteile am Skelett suchen. Links der Vertrag, rechts wird gemessen. */
+const WANTED = [
+  ['Head', 'Gesicht: Augen · Mund · Braue · Nase hängen hier'],
+  ['Neck', 'Kopfneigung'],
+  ['Hips', 'Sitzpose: Wurzel'],
+  ['Torso', 'Sitzpose: Rumpfneigung'],
+  ['UpperLeg.L', 'Sitzpose: Hüfte'],
+  ['LowerLeg.L', 'Sitzpose: Knie'],
+  ['Foot.L', 'Sitzpose: Sohle'],
+  ['UpperArm.L', 'Arme: Schulter'],
+  ['LowerArm.L', 'Arme: Ellbogen'],
+  ['Fist.L', 'Arme: Faust am Joystick'],
+];
+const norm = (s) => String(s || '').replace(/[.\s_-]/g, '').toLowerCase();
+
+class Component extends DCLogic {
+  state = { ready:false, rig:'medium', status:'lädt …', packs:[], clip:null, playing:true, speed:1,
+    loop:true, skeleton:false, filter:'', size:'weit', befund:false, earsOn:false, headOn:false, anchors:[], facts:[], verdict:'Das Modell wird geladen — der Befund steht, sobald sein Skelett gelesen ist.', nowPlaying:'—' };
+
+  componentDidMount() {
+    window.__LAB = this;   // Messgriff
+    this._canvas = null;
+    const go = () => { this.H = window.__DUMMYLAB; this._boot(); };
+    if (window.__DUMMYLAB) go(); else window.addEventListener('dummylabready', go, { once:true });
+  }
+  /* Die Einträge des Auswahlfeldes werden bei jedem Bild neu gebaut; ein Feld, dessen Einträge
+     ausgetauscht werden, verliert dabei seinen Stand und zeigt wieder den ersten an — im Bild stand
+     »Mannequin M«, während der Driver auf der Bühne war. Nach jedem Bild wird der Stand nachgezogen. */
+  componentDidUpdate() {
+    if (this._sel && this._sel.value !== this.state.rig) this._sel.value = this.state.rig;
+  }
+  /* ⚠ Die Auswahlliste zeigte weiter »Mannequin M«, während der Driver auf der Bühne stand: ihre
+     Einträge entstehen erst nach dem ersten Zeichnen (sc-for), der Wert wurde davor gesetzt und
+     fiel auf den ersten Eintrag zurück. Also wird er nach JEDEM Zeichnen nachgeführt — die Liste
+     ist eine Anzeige des Zustands, nicht seine zweite Quelle. */
+  componentDidUpdate() { if (this._sel && this._sel.value !== this.state.rig) this._sel.value = this.state.rig; }
+  componentWillUnmount() {
+    this._dead = true;
+    if (this._ro) this._ro.disconnect();
+    if (this.renderer) this.renderer.dispose();
+  }
+
+  _boot() {
+    const H = this.H, THREE = this.THREE = H.THREE, cv = this._canvas;
+    if (!cv) { setTimeout(() => this._boot(), 60); return; }
+    const renderer = this.renderer = new THREE.WebGLRenderer({ canvas:cv, antialias:true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 0.95;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    const scene = this.scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xe6dcc4);
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new H.RoomEnvironment(), 0.04).texture;
+    const key = new THREE.DirectionalLight(0xfff6e2, 2.1);
+    key.position.set(2.6, 4.2, 2.4); key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024); key.shadow.bias = -0.0012;
+    const s = key.shadow.camera; s.left = -3; s.right = 3; s.top = 3; s.bottom = -3; s.near = 0.1; s.far = 14;
+    scene.add(key, new THREE.DirectionalLight(0xdfeaff, 0.7));
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 24), new THREE.ShadowMaterial({ opacity:0.26 }));
+    floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.05, 100);
+    cam.position.set(2.0, 1.7, 3.4);
+    const ctr = this.controls = new H.OrbitControls(cam, cv);
+    ctr.enableDamping = true; ctr.dampingFactor = 0.08; ctr.target.set(0, 0.85, 0);
+    ctr.minDistance = 0.8; ctr.maxDistance = 14;
+    this.loader = new H.GLTFLoader();
+    this.clock = new THREE.Clock();
+    /* Die Breite entscheidet das Layout, und gemessen wird die des BLATTES, nicht die des Fensters —
+       im geteilten Bildschirm ist das ein Unterschied von mehreren hundert Bildpunkten. */
+    this._ro = new ResizeObserver(() => { this._resize(); this._measureWidth(); });
+    this._ro.observe(cv.parentElement);
+    if (cv.closest('div[style]') && cv.ownerDocument.body) this._ro.observe(cv.ownerDocument.body);
+    this._measureWidth();
+    this._resize();
+    this._tick();
+    this._load('medium');
+  }
+  _measureWidth() {
+    const w = (this._canvas && this._canvas.ownerDocument.body.clientWidth) || 1200;
+    const size = w < 760 ? 'eng' : (w < 1100 ? 'mittel' : 'weit');
+    if (size !== this.state.size) this.setState({ size }, () => this._resize());
+  }
+  _resize() {
+    const cv = this._canvas; if (!cv || !this.renderer) return;
+    const w = cv.parentElement.clientWidth || 640, h = cv.parentElement.clientHeight || 480;
+    this.renderer.setSize(w, h, false);
+    this.cam.aspect = w / h; this.cam.updateProjectionMatrix();
+  }
+  _tick = () => {
+    if (this._dead) return;
+    requestAnimationFrame(this._tick);
+    const dt = this.clock.getDelta();
+    if (this.mixer && this.state.playing) this.mixer.update(dt);
+    if (this._face) { const f = this._face; f.rig.update(dt); f.mouth.update(dt, this.cam); f.brow.sync(); f.nose.sync(); }
+    if (this._ears) this._ears.update(dt);
+    this.controls.update();
+    this.renderer.render(this.scene, this.cam);
+  };
+
+  _get(path) { return new Promise((res, rej) => this.loader.load(RAW + enc(path), res, undefined, rej)); }
+
+  /* ── Das Transplantat ────────────────────────────────────────────────────────────────────
+   * Unser Gesicht auf einen fremden Kopf. Der Wirt baut es SELBST aus den Studio-Modulen — genau
+   * wie der Fahrer-Adapter im Rennen (»Modul liefert Körper, der Wirt baut das Gesicht«). Neu ist
+   * allein der Kopf-Host: `frizzlegraft-v1/facehost.v1.js` misst ihn an einer fremden Figur.
+   * Nichts davon wird ins Modell geschrieben — abschalten stellt den Zustand davor her. */
+  /* Der Kopf-Host ist EIN Bauteil für zwei Aufsätze (Gesicht und Ohren) — zweimal messen hieße zwei
+     Wahrheiten über denselben Kopf. Er entsteht beim ersten Bedarf und geht mit der Figur. */
+  async _ensureHost() {
+    if (this._host) return this._host;
+    const FH = await import('./frizzlegraft-v1/facehost.v1.js?v1');
+    const h = FH.buildFaceHost({ THREE:this.THREE, figure:this.figure, log:(t) => console.info('[graft] ' + t) });
+    if (h.status !== 'OK') return h;
+    this._host = h;
+    const r = h.report;
+    this.setState({ graft:'Kopf »' + r.head + '« · ' + r.headSize.join(' × ') + ' · Blick über ' + r.facing
+      + ' (' + r.yaw + '°) · ' + r.headVerts + ' von ' + r.totalVerts + ' Punkten · Material am Kopf: ' + r.materials.join(', ') });
+    return h;
+  }
+
+  async _toggleEars() {
+    if (this._ears) { try { this._ears.dispose(); } catch (e) {} this._ears = null; this.setState({ earsOn:false, status:'Ohren ab' }); return; }
+    if (!this.figure) return;
+    this.setState({ status:'Ohren werden aufgesetzt …' });
+    try {
+      const host = await this._ensureHost();
+      if (host.status !== 'OK') { this.setState({ status:'Kopf nicht gefunden: ' + host.reason }); return; }
+      /* v2: EIN Netz je Ohr, Lage und Größe am WIRTSKOPF gemessen. v1 liegt als Rückweg daneben. */
+      const EA = await import('./frizzlegraft-v1/ears.v2.js?a2');
+      const e = await EA.buildEars({ THREE:this.THREE, loader:this.loader, host, headSize:host.size,
+        log:(t) => console.info('[graft] ' + t) });
+      if (e.status !== 'OK') { this.setState({ status:'Ohren: ' + e.reason }); return; }
+      this._ears = e;
+      /* Gemeldet wird, was GEBAUT wurde (Glieder mit Geometrie), nicht was gewünscht war: »6
+         Wackelknochen« stand auch dann da, als zwei davon leer waren. */
+      const r0 = e.report.sides && e.report.sides[0];
+      this.setState({ earsOn:true, status:'Ohren sitzen · ' + e.report.links + ' Stück · Länge '
+        + (r0 ? r0.len : '?') + ' auf Kopfhöhe ' + e.report.head[1] });
+    } catch (err) { console.warn('[ears]', err); this.setState({ status:'Ohren gescheitert: ' + (err && err.message) }); }
+  }
+
+  /* ── Der ganze Kopf (Georgs Wahl 11.09.) ──────────────────────────────────────────────────
+   * Schädel + Ohren + Gesicht aus dem Studio, der Wirtskopf wird ausgeblendet. Größe bestimmt der
+   * WIRT: der Spenderkopf wird auf die gemessene Kopfbox gelegt. Die Ohren-Scheibe wird dabei
+   * abgeräumt — FrizzleBobs eigene Ohren kommen mit dem Kopf, zwei Ohrenpaare wären ein Fehler.
+   * Das Gesicht hängt danach am NEUEN Kopf, nicht mehr am Kopf des Wirts. */
+  async _toggleHead() {
+    if (this._head) {
+      const hadFace = !!this._face;
+      this._dropFace();
+      try { this._head.dispose(); } catch (e) {}
+      this._head = null;
+      /* ⚠ Der Befund beschrieb nach dem Abschalten weiter einen Kopf, den es nicht mehr gab. In
+         einem Messgerät ist eine stehengebliebene Zahl schlimmer als gar keine — also trägt die
+         Spalte wieder das, was jetzt WIRKLICH auf der Bühne steht: die Messung des Wirtskopfs. */
+      const h = this._host && this._host.report;
+      this.setState({ headOn:false, faceOn:false, status:'Kopf ab',
+        graft: h ? 'Kopf »' + h.head + '« · ' + h.headSize.join(' × ') + ' · Blick über ' + h.facing
+          + ' (' + h.yaw + '°) · ' + h.headVerts + ' von ' + h.totalVerts + ' Punkten · Material am Kopf: '
+          + h.materials.join(', ') : '' });
+      if (hadFace) await this._toggleFace();
+      return;
+    }
+    if (!this.figure) return;
+    this.setState({ status:'Kopf wird aufgesetzt …' });
+    try {
+      const host = await this._ensureHost();
+      if (host.status !== 'OK') { this.setState({ status:'Kopf nicht gefunden: ' + host.reason }); return; }
+      if (this._ears) { try { this._ears.dispose(); } catch (e) {} this._ears = null; this.setState({ earsOn:false }); }
+      const hadFace = !!this._face;
+      this._dropFace();
+      const HG = await import('./frizzlegraft-v1/headgraft.v1.js?h1');
+      const g = await HG.buildHeadGraft({ THREE:this.THREE, loader:this.loader, figure:this.figure, host,
+        log:(t) => console.info('[graft] ' + t) });
+      if (g.status !== 'OK') { this.setState({ status:'Kopf: ' + g.reason }); if (hadFace) await this._toggleFace(); return; }
+      this._head = g;
+      const r = g.report;
+      this.setState({ headOn:true, faceOn:false,
+        status:'Kopf sitzt · Maßstab ' + r.scale + ' · ' + r.graftSize.join(' × ') + ' auf Wirtskopf ' + r.hostSize.join(' × '),
+        graft:'Kopf v13 · ' + r.tris + ' Dreiecke aus [' + r.donorBones + '] · Schädel ' + r.donorSize.join(' × ')
+          + ' (mit Ohren ' + r.donorFull.join(' × ') + ') · offene Kanten am Rand: ' + r.open.edges
+          + (r.open.edges ? ' (bis ' + r.open.belowSkull + ' unter der Schädelunterkante)' : '')
+          + ' → Maßstab ' + r.scale + ' → ' + r.graftSize.join(' × ') + ' · Blick über ' + r.facing
+          + ' (' + r.donorYaw + '°) · Wirtskopf ausgeblendet: ' + r.hiddenTris + ' Dreiecke + '
+          + r.hiddenExtras + ' eigene Netze (' + r.hide + '; any ' + r.hideCounts.any
+          + ' · most ' + r.hideCounts.most + ' · all ' + r.hideCounts.all + ')' });
+      await this._toggleFace();
+    } catch (err) { console.warn('[head]', err); this.setState({ status:'Kopf gescheitert: ' + (err && err.message) }); }
+  }
+  /* EIN Eigentümer der Frage »worauf sitzt das Gesicht«. Liegt der neue Kopf auf, ist er der
+     Rahmen; sonst der gemessene Wirtskopf. Zwei Stellen, die das selbst entscheiden, wären zwei
+     Wahrheiten über denselben Kopf. */
+  _faceHostFor() { return this._head || this._host; }
+
+  async _toggleFace() {
+    if (this._face) { this._dropFace(); this.setState({ faceOn:false, status:'Gesicht ab' }); return; }
+    if (!this.figure) return;
+    this.setState({ status:'Gesicht wird aufgesetzt …' });
+    try {
+      const [ER, PM, BR, NR] = await Promise.all([
+        import('./petstudio-v9/studio-v12/pet-eye-rig.v6.js'),
+        import('./petstudio-v9/studio-v3/pet-mouth.v1.js'),
+        import('./petstudio-v9/studio-v12/brow-rig.v2.js'),
+        import('./petstudio-v9/studio-v12/pet-nose.v2.js'),
+      ]);
+      const base = await this._ensureHost();
+      if (base.status !== 'OK') { this.setState({ status:'Kopf nicht gefunden: ' + base.reason }); return; }
+      const host = this._faceHostFor();
+      const ctx = host.faceCtx(), Y = 0xf2c93c;
+      /* ⚠ Georgs Bild 20:17: das Gesicht saß falsch auf dem neuen Kopf. Grund gemessen: die Werte
+         unten sind an KAYKIT-Köpfen abgenommen. Liegt FrizzleBobs Kopf auf, gelten SEINE Zahlen —
+         Georgs Abnahme vom 05.09., die im Spendermodul stehen. Ein Anker, der für einen anderen
+         Kopf abgenommen wurde, ist auf diesem Kopf eine Vermutung. */
+      const FB = this._head ? (await import('./frizzlegraft-v1/headgraft.v1.js?h1')).FB_FACE : null;
+      const eyeP = FB ? Object.assign({ baseColor:Y }, FB.eyes) : { baseColor:Y, anchor:{ dx:0.345, dy:-0.10, ring:0.30, track:0.10 } };
+      const mouthP = FB ? Object.assign({}, FB.mouth) : { size:0.44, dy:-0.52, sx:1, set:'male' };
+      const rig = new ER.EyeRig(ctx, eyeP);
+      rig.build(); rig.setGazeFollow(true);
+      const mouth = new PM.PetMouth(ctx, { params:mouthP });
+      mouth.build(); mouth.enabled = true; mouth.setRest('neutral');
+      const brow = new BR.BrowRig({ THREE:this.THREE, getEyeFrame:() => rig.eyeFrame(), baseColor:Y,
+        params:{ points:BR.pointsFor('neutral') } });
+      const nose = new NR.NoseRig({ THREE:this.THREE, getEyeFrame:() => rig.eyeFrame(), params:{ enabled:true } });
+      this._face = { host, rig, mouth, brow, nose };
+      for (let i = 0; i < 30; i++) { rig.update(1 / 60); mouth.update(1 / 60, this.cam); brow.sync(); nose.sync(); }
+      this.setState({ faceOn:true, status:'Gesicht sitzt' });
+    } catch (e) {
+      console.warn('[graft]', e);
+      this.setState({ status:'Gesicht gescheitert: ' + (e && e.message ? e.message : 'unbekannt') });
+    }
+  }
+  _dropFace() {
+    const f = this._face;
+    if (f) { for (const k of ['nose', 'brow', 'rig', 'mouth']) { try { f[k].dispose(); } catch (e) {} } this._face = null; }
+  }
+  /* Beim Figurenwechsel geht ALLES mit: Aufsätze, Ohren und der Host, der sie trägt. Ein Host, der
+     eine Figur überlebt, mißt danach einen Kopf, den es nicht mehr gibt. */
+  _dropGraft() {
+    this._dropFace();
+    if (this._ears) { try { this._ears.dispose(); } catch (e) {} this._ears = null; }
+    if (this._head) { try { this._head.dispose(); } catch (e) {} this._head = null; }
+    if (this._host) { try { this._host.dispose(); } catch (e) {} this._host = null; }
+    this.setState({ graft:'', faceOn:false, earsOn:false, headOn:false });
+  }
+  /* Gelb ist eine ANSICHT, kein Eingriff: die Grundfarbe jedes Materials wird getauscht und der alte
+     Wert liegt daneben. Texturen bleiben, deshalb wird es gelb getönt, nicht gelb übermalt. */
+  _toggleTint() {
+    const on = !this.state.tint, Y = new this.THREE.Color(0xf2c93c);
+    /* ⚠ Georgs Befund 11.09.: »Gelb« hat AUCH das aufgesetzte Gesicht gelb gefärbt — Augen, Braue und
+       Nase wurden unsichtbar, weil sie in derselben Farbe verschwanden. Sie hängen als Kinder am
+       Kopf-Host und damit UNTER der Figur; ein `traverse` von der Figur aus erwischt sie also
+       zwangsläufig. Die Einfärbung ist eine Ansicht des WIRTSKÖRPERS, nicht des Gesichts: alles unter
+       dem Host bleibt außen vor, ebenso alles, was die Rigs als Überlagerung markiert haben. */
+    const face = this._host ? this._host.inner : null;   // deckt Gesicht UND Ohren ab, beide hängen darunter
+    const isFace = (o) => { let p = o; while (p) { if (p === face || p.userData.petOverlay) return true; p = p.parent; } return false; };
+    this.figure.traverse((m) => {
+      if (!m.isMesh || !m.material) return;
+      if (isFace(m)) return;
+      for (const mat of (Array.isArray(m.material) ? m.material : [m.material])) {
+        if (!mat.color) continue;
+        if (on) { if (!mat.userData._kfbOld) mat.userData._kfbOld = mat.color.clone(); mat.color.copy(Y); }
+        else if (mat.userData._kfbOld) { mat.color.copy(mat.userData._kfbOld); delete mat.userData._kfbOld; }
+      }
+    });
+    this.setState({ tint:on });
+  }
+
+  async _load(rigKey) {
+    const THREE = this.THREE, R = RIGS[rigKey];
+    this.setState({ rig:rigKey, status:'Modell lädt …', packs:[], clip:null, nowPlaying:'—', tint:false });
+    this._dropGraft();
+    if (this.figure) { this.scene.remove(this.figure); this.figure = null; this.mixer = null; }
+    if (this.helper) { this.scene.remove(this.helper); this.helper = null; }
+    let g, tried = 0;
+    if (R.model) {
+      try { g = await this._get(R.model); }
+      catch (e) { this.setState({ status:'Modell nicht geladen: ' + (e && e.message ? e.message : 'Netzfehler'),
+        verdict:'Das Modell kam nicht an. Prüfe, ob die Datei im Zweig main liegt — der Pfad steht im Kopf dieser Datei.' }); return; }
+    } else {
+      /* Nacheinander war der Fehler: über hundert Adressen einzeln abzuklopfen dauert länger, als ein
+         Mensch wartet — die Figur galt als »nicht gefunden«, obwohl die Suche noch lief. Jetzt zehn
+         auf einmal, und innerhalb einer Zehnergruppe gewinnt der ERSTE in der Reihenfolge, nicht der
+         schnellste (sonst entschiede die Netzlaune, welche Datei man sieht). */
+      const C = R.candidates, B = 10;
+      for (let i = 0; i < C.length && !g; i += B) {
+        const slice = C.slice(i, i + B);
+        tried += slice.length;
+        this.setState({ status:'suche Datei … (' + Math.min(tried, C.length) + '/' + C.length + ')' });
+        const res = await Promise.all(slice.map((p) => this._get(p).then((x) => x, () => null)));
+        if (this._dead || this.state.rig !== rigKey) return;
+        const k = res.findIndex((x) => x);
+        if (k >= 0) { g = res[k]; R.model = slice[k]; }
+      }
+      if (!g) { this.setState({ status:'nicht gefunden',
+        verdict:'Unter keinem der ' + R.candidates.length + ' geprüften Orte liegt eine .glb — der Ordner heißt richtig, die Datei heißt anders. Schreib mir den Dateinamen, dann steht sie mit einer Zeile in der Leiste.' }); return; }
+      console.info('[lab] gefunden nach ' + tried + ' Versuchen: ' + R.model);
+      this._found = R.model.split('/').slice(-3).join('/');
+    }
+    await this._repairTextures(g.scene, R.model);
+    const fig = this.figure = g.scene;
+    fig.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
+    this.scene.add(fig);
+
+    /* Auf Fußhöhe setzen und die Kamera auf die gemessene Größe stellen — keine geratene Zahl. */
+    fig.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(fig), size = box.getSize(new THREE.Vector3());
+    fig.position.y -= box.min.y;
+    fig.updateMatrixWorld(true);
+    const h = size.y;
+    this.controls.target.set(0, h * 0.55, 0);
+    this.cam.position.set(h * 1.15, h * 0.95, h * 1.9);
+    this.controls.update();
+
+    this.helper = new THREE.SkeletonHelper(fig);
+    this.helper.visible = this.state.skeleton; this.scene.add(this.helper);
+    this.mixer = new THREE.AnimationMixer(fig);
+
+    /* Der BEFUND: welche unserer Anker gibt es wirklich? Gemessen am Skelett, nicht geraten. */
+    const bones = {}; let boneCount = 0;
+    fig.traverse((n) => { if (n.isBone) { boneCount++; const k = norm(n.name); if (!bones[k]) bones[k] = n.name; } });
+    this._bones = bones;
+    /* Fehlt ein Anker, wird NICHT »fehlt« behauptet und Schluß — es wird nach dem nächsten
+       Verwandten gesucht. Ein anderer Name ist kein fehlendes Gelenk, sondern eine Übersetzung. */
+    const NEAR = { head:/head|skull/i, neck:/neck|upperchest|spine.?2/i, hips:/hips|pelvis|root/i,
+      torso:/torso|chest|spine|abdomen/i, 'upperlegl':/(upper|thigh).*(leg)?.*l$|l.*thigh/i,
+      'lowerlegl':/(lower|shin|calf|knee).*l$/i, footl:/foot.*l$|l.*foot|ankle.*l$/i,
+      'upperarml':/(upper).*arm.*l$|shoulder.*l$/i, 'lowerarml':/(lower|fore).*arm.*l$|elbow.*l$/i,
+      fistl:/fist.*l$|hand.*l$|palm.*l$/i };
+    const allNames = Object.values(bones);
+    const anchors = WANTED.map(([want, why]) => {
+      const hit = bones[norm(want)];
+      if (hit) return { want: want + ' · ' + why, got: hit, col:'#3f8478' };
+      const re = NEAR[norm(want)];
+      const alt = re ? allNames.find((n) => re.test(n)) : null;
+      return { want: want + ' · ' + why, got: alt ? ('heißt ' + alt) : 'fehlt wirklich', col: alt ? '#8a6a16' : '#b8361f' };
+    });
+    const nHit = anchors.filter((a) => a.col === '#3f8478').length;
+    const nAlt = anchors.filter((a) => a.col === '#8a6a16').length;
+    const head = bones[norm('Head')];
+    let headTop = null;
+    if (head) { const hb = new THREE.Object3D(); void hb;
+      let hn = null; fig.traverse((n) => { if (n.isBone && n.name === head) hn = n; });
+      if (hn) { const p = hn.getWorldPosition(new THREE.Vector3()); headTop = +(p.y).toFixed(3); } }
+
+    const facts = [
+      { k:'Höhe (Welt)', v:h.toFixed(3) },
+      { k:'Breite × Tiefe', v:size.x.toFixed(2) + ' × ' + size.z.toFixed(2) },
+      { k:'Knochen', v:String(boneCount) },
+      { k:'Kopf-Anker Höhe', v: headTop == null ? 'kein Kopf-Knochen' : String(headTop) },
+      { k:'Netze', v:String(fig.children.length ? this._countMeshes(fig) : 0) },
+      { k:'Eigene Clips im Modell', v:String((g.animations || []).length) },
+    ];
+    this.setState({ anchors, facts, status:'Bewegungen laden …' });
+
+    /* Die Animationspakete. Jedes ist eine eigene Datei; ein Mixer bindet über Knochennamen. Wieviele
+       Spuren KEINEN Knochen finden, wird gezählt — das ist der Unterschied zwischen »paßt« und
+       »sieht auf den ersten Blick so aus«. */
+    const packs = [];
+    let total = 0, unbound = 0, tracks = 0;
+    /* WELCHE Knochen fehlen, nicht nur WIEVIELE Spuren danebengreifen. Eine nackte Prozentzahl macht
+       aus zwei fehlenden Requisiten-Sockeln einen halb kaputten Rig — der Name entscheidet, ob die
+       Lücke die Körperbewegung betrifft oder nur einen Haken für Gegenstände. */
+    const miss = {};
+    const bind = (t) => { tracks++; const bn = t.name.split('.')[0];
+      if (!bones[norm(bn)]) { unbound++; miss[bn] = (miss[bn] || 0) + 1; } };
+    /* Zuerst das, was die Figur SELBST mitbringt — bei den Mystery-Figuren ist das ihr eigener Satz. */
+    if ((g.animations || []).length) {
+      const own = [];
+      for (const c of g.animations) {
+        total++;
+        for (const t of c.tracks) bind(t);
+        own.push({ id:'own/' + c.name, name:c.name.replace(/_/g, ' '), dur:c.duration.toFixed(2) + 's', clip:c });
+      }
+      packs.push({ id:'own', title:'Eigene Bewegungen', clips:own });
+    }
+    for (const name of (PACKS[R.dir] || [])) {
+      let pg;
+      try { pg = await this._get(A11 + 'Animations/gltf/' + R.dir + '/' + R.dir + '_' + name + '.glb'); }
+      catch (e) { packs.push({ id:name, title:(PACKTITLE[name] || name) + ' · nicht geladen', clips:[] }); continue; }
+      const clips = [];
+      for (const c of (pg.animations || [])) {
+        total++;
+        for (const t of c.tracks) bind(t);
+        clips.push({ id:name + '/' + c.name, name:c.name.replace(/_/g, ' '), dur:c.duration.toFixed(2) + 's', clip:c });
+      }
+      packs.push({ id:name, title:PACKTITLE[name] || name, clips });
+      this._allPacks = packs.slice();
+      this.setState({ packs: this._shape(packs), status:'Bewegungen laden … ' + total });
+      if (this._dead) return;
+    }
+    this._allPacks = packs;
+    const share = tracks ? Math.round((1 - unbound / tracks) * 100) : 0;
+    const missList = Object.entries(miss).sort((a, b) => b[1] - a[1]);
+    const missTxt = missList.length
+      ? ' Die Lücke sind ' + missList.map(([n, c]) => n + ' (' + c + ' Spuren)').join(' und ')
+        + (missList.every(([n]) => /slot|prop|item|weapon/i.test(n))
+          ? ' — Haken für Gegenstände, keine Körperbewegung.'
+          : ' — diese Knochen gibt es an dieser Figur nicht.')
+      : '';
+    const verdict = nHit + ' von ' + WANTED.length + ' Ankern heißen genau wie bei uns'
+      + (nAlt ? ', ' + nAlt + ' weitere gibt es unter anderem Namen' : '')
+      + ' · ' + total + ' Bewegungen in ' + packs.filter((p) => p.clips.length).length + ' Paketen · '
+      + share + ' % aller Spuren finden ihren Knochen.' + missTxt
+      + (nHit + nAlt === WANTED.length
+        ? ' Alle Gelenke sind da — unsere Rigs brauchen nur eine Namensliste, keinen Umbau.'
+        : ' Ein Anker fehlt wirklich; dafür müßte ein Ersatz bestimmt werden.');
+    this.setState({ status:'bereit · ' + total + ' Bewegungen', packs:this._shape(packs),
+      verdict: (R.model && this._found ? 'Gefunden: ' + this._found + ' · ' : '') + verdict });
+    this._found = null;
+    /* Der erste Eindruck ist das ganze Werkzeug. `clips[0]` ist alphabetisch »Death A« — wer das
+       Blatt öffnet, sähe jede Figur zuerst tot am Boden. Also: Ruhehaltung, sonst das Erste. */
+    const all = packs.reduce((a, p) => a.concat(p.clips), []);
+    const start = all.find((c) => /^idle/i.test(c.name)) || all[0];
+    if (start) this._play(start);
+  }
+  _countMeshes(root) { let n = 0; root.traverse((o) => { if (o.isMesh) n++; }); return n; }
+
+  /* Georgs Einwand 11.09.: »Texturen sind doch alle da?!« — richtig, und die Messung sagt auch, warum
+     man sie trotzdem nicht sieht: beim Orc Raider heißt das Material `orc_texture_A`, hat aber
+     `map KEINE`. Die Datei liegt in `…/character/`, ihre Bildtafel in `…/textures/` — die .glb zeigt
+     also ins Leere, während das Bild danebenliegt. (Robot One hat seine Tafel eingebacken: 1024×1024,
+     und der ist bunt.) KayKit benennt Material und Bild GLEICH — daraus wird hier die Reparatur:
+     fehlt die Tafel, wird sie unter dem Materialnamen an den üblichen drei Orten gesucht.
+     Kein Raten: was nicht gefunden wird, bleibt weiß, und die Fehlversuche stehen in der Konsole. */
+  async _repairTextures(root, modelPath) {
+    /* ⚠ Erste Fassung schnitt den Pfad auf drei Stufen ab und suchte damit in `…/character/textures/`
+       statt in `…/Orc Raider/textures/` — die Reparatur lief ins Leere und sah aus wie ein Modell
+       ohne Tafel. Jetzt werden Ordner des Modells, sein Elternteil und sein Großelternteil probiert;
+       welcher Ort getroffen hat, steht in der Konsole. */
+    const T = this.THREE, seg = modelPath.split('/');
+    const bases = [seg.slice(0, -1), seg.slice(0, -2), seg.slice(0, -3)]
+      .filter((a) => a.length).map((a) => a.join('/') + '/');
+    const need = new Map();
+    root.traverse((m) => {
+      if (!m.isMesh) return;
+      for (const mat of (Array.isArray(m.material) ? m.material : [m.material])) {
+        if (mat && !mat.map && mat.name && /texture|_A$|_B$/i.test(mat.name)) {
+          if (!need.has(mat.name)) need.set(mat.name, []);
+          need.get(mat.name).push(mat);
+        }
+      }
+    });
+    if (!need.size) return;
+    if (!this._tex) this._tex = new T.TextureLoader();
+    const grab = (url) => new Promise((res) => this._tex.load(url, res, undefined, () => res(null)));
+    for (const [name, mats] of need) {
+      let tex = null;
+      outer: for (const pack of bases) {
+        for (const d of ['textures/', '', 'texture/', 'gltf/', 'assets/gltf/']) {
+          tex = await grab(RAW + enc(pack + d + name + '.png'));
+          if (tex) { console.info('[lab] Textur nachgereicht: ' + pack + d + name + '.png'); break outer; }
+        }
+      }
+      if (!tex) { console.warn('[lab] keine Textur für Material ' + name); continue; }
+      tex.colorSpace = T.SRGBColorSpace; tex.flipY = false;
+      tex.magFilter = T.NearestFilter; tex.minFilter = T.LinearMipmapLinearFilter;
+      for (const mat of mats) { mat.map = tex; mat.needsUpdate = true; }
+    }
+  }
+
+  _shape(packs) {
+    const THREE = this.THREE, f = (this.state.filter || '').trim().toLowerCase(), sel = this.state.clip;
+    return packs.map((p) => ({
+      title: p.title + ' (' + p.clips.filter((c) => !f || c.name.toLowerCase().includes(f)).length + ')',
+      clips: p.clips.filter((c) => !f || c.name.toLowerCase().includes(f)).map((c) => ({
+        name:c.name, dur:c.dur,
+        bg: sel === c.id ? '#b8361f' : '#efe6d3',
+        ink: sel === c.id ? '#f7f0da' : '#3d3628',
+        play: () => this._play(c),
+      })),
+    })).filter((p) => p.clips.length);
+  }
+  _refresh() { if (this._allPacks) this.setState({ packs:this._shape(this._allPacks) }); }
+
+  _play(entry) {
+    const THREE = this.THREE;
+    if (!this.mixer || !entry) return;
+    if (this._action) this._action.fadeOut(0.18);
+    const a = this._action = this.mixer.clipAction(entry.clip);
+    a.reset();
+    a.setLoop(this.state.loop ? THREE.LoopRepeat : THREE.LoopOnce, Infinity);
+    a.clampWhenFinished = !this.state.loop;
+    a.timeScale = this.state.speed;
+    a.fadeIn(0.18).play();
+    this.setState({ clip:entry.id, playing:true, nowPlaying: entry.name + ' · ' + entry.dur + ' · ' + entry.clip.tracks.length + ' Spuren' }, () => this._refresh());
+  }
+
+  renderVals() {
+    const s = this.state, on = '#1f1a14', off = '#efe6d3';
+    /* Drei Breiten, eine Regel: die BÜHNE behält immer den größten Platz, alles andere weicht.
+       eng — Bühne oben, Bewegungen darunter, Befund nur auf Knopfdruck als Überlagerung.
+       mittel — Bewegungen links schmal, Bühne rechts, Befund überlagert.
+       weit — Bewegungen links, Bühne mitte, Befund rechts fest. */
+    const eng = s.size === 'eng', weit = s.size === 'weit';
+    const bOpen = s.befund && !weit;
+    const mainGrid = eng
+      ? 'display:grid;grid-template-rows:minmax(300px,58vh) minmax(0,1fr);min-height:0;position:relative;'
+      : 'display:grid;grid-template-columns:' + (weit && s.befund ? '250px minmax(0,1fr) 300px' : (weit ? '250px minmax(0,1fr)' : '210px minmax(0,1fr)')) + ';min-height:0;position:relative;';
+    const pane = 'overflow-y:auto;background:#f7f0da;padding:11px 11px 40px;min-width:0;';
+    return {
+      mainGrid,
+      clipCol: pane + (eng ? 'order:2;border-top:2px solid #1f1a14;' : 'border-right:2px solid #1f1a14;'),
+      befundCol: (weit && s.befund)
+        ? pane + 'border-left:2px solid #1f1a14;'
+        : (bOpen
+          ? pane + 'position:absolute;right:0;top:0;bottom:0;width:min(330px,86%);z-index:6;border-left:2px solid #1f1a14;box-shadow:-8px 0 20px rgba(31,26,20,.18);'
+          : 'display:none;'),
+      stageCol: 'position:relative;min-width:0;min-height:0;background:#e6dcc4;' + (eng ? 'order:1;' : ''),
+      canvasRef: (el) => { this._canvas = el; },
+      status: s.status, verdict: s.verdict, nowPlaying: s.nowPlaying,
+      packs: s.packs, anchors: s.anchors, facts: s.facts, filter: s.filter,
+      clipCountLabel: s.packs.length ? s.packs.reduce((n, p) => n + p.clips.length, 0) + ' Bewegungen' : 'noch nichts geladen',
+      playLabel: s.playing ? 'Pause' : 'Abspielen',
+      speed: s.speed, speedLabel: s.speed.toFixed(2) + '×',
+      rigList: RIGKEYS.map((k) => ({ key:k, label:RIGS[k].label })),
+      rigValue: s.rig,
+      selRef: (el) => { this._sel = el; if (el && el.value !== s.rig) el.value = s.rig; },
+      onRig: (e) => { const k = e.target.value; if (k !== s.rig) this._load(k); },
+      earsBg: s.earsOn ? '#b8361f' : off, earsInk: s.earsOn ? '#f7f0da' : '#1f1a14',
+      befundBg: s.befund ? on : off, befundInk: s.befund ? '#f7f0da' : '#1f1a14',
+      toggleEars: () => this._toggleEars(),
+      toggleBefund: () => this.setState({ befund: !s.befund }, () => this._resize()),
+      loopBg: s.loop ? on : off, loopInk: s.loop ? '#f7f0da' : '#1f1a14',
+      skelBg: s.skeleton ? on : off, skelInk: s.skeleton ? '#f7f0da' : '#1f1a14',
+      togglePlay: () => this.setState({ playing: !s.playing }),
+      toggleLoop: () => this.setState({ loop: !s.loop }, () => {
+        if (this._action) { this._action.setLoop(this.state.loop ? this.THREE.LoopRepeat : this.THREE.LoopOnce, Infinity); this._action.reset().play(); }
+      }),
+      toggleSkeleton: () => this.setState({ skeleton: !s.skeleton }, () => { if (this.helper) this.helper.visible = this.state.skeleton; }),
+      faceBg: s.faceOn ? '#b8361f' : off, faceInk: s.faceOn ? '#f7f0da' : '#1f1a14',
+      headBg: s.headOn ? '#1f1a14' : off, headInk: s.headOn ? '#f2c93c' : '#1f1a14',
+      toggleHead: () => this._toggleHead(),
+      tintBg: s.tint ? '#e0ac10' : off, tintInk: '#1f1a14',
+      toggleFace: () => this._toggleFace(),
+      toggleTint: () => this._toggleTint(),
+      graft: s.graft || '',
+      onSpeed: (e) => { const v = parseFloat(e.target.value); this.setState({ speed:v }); if (this._action) this._action.timeScale = v; },
+      onFilter: (e) => this.setState({ filter:e.target.value }, () => this._refresh()),
+      copyReport: () => {
+        const r = { rig:s.rig, verdict:s.verdict, anchors:s.anchors.map((a) => a.want.split(' · ')[0] + ': ' + a.got),
+          facts:s.facts.map((f) => f.k + ': ' + f.v), packs:s.packs.map((p) => p.title) };
+        const t = JSON.stringify(r, null, 2);
+        console.log('[FrizzleDummy Lab]\n' + t);
+        try { navigator.clipboard.writeText(t); } catch (e) {}
+        this.setState({ status:'✓ Befund kopiert · steht auch in der Konsole' });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

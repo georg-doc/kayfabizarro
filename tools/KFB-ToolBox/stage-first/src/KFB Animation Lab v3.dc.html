@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  html,body{margin:0;height:100%;background:#17181a;color:#e7e7e5;font-family:"IBM Plex Sans",-apple-system,Segoe UI,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#e7e7e5;text-decoration:underline;text-underline-offset:2px;} a:hover{color:#fff;}
+  button{font-family:inherit;-webkit-tap-highlight-color:transparent;}
+  ::selection{background:#3a3d41;}
+  .lab-sc{scrollbar-width:thin;scrollbar-color:#32363a transparent;}
+  .lab-sc::-webkit-scrollbar{width:7px;height:7px;}
+  .lab-sc::-webkit-scrollbar-thumb{background:#32363a;border-radius:4px;}
+  .lab-sc::-webkit-scrollbar-track{background:transparent;}
+  input.lab-q{font-family:inherit;height:26px;box-sizing:border-box;padding:0 8px;background:#17181a;border:1px solid #2a2d30;border-radius:3px;color:#e7e7e5;font-size:12px;outline:none;}
+  input.lab-q:focus{border-color:#4a4f54;}
+  input.lab-q::placeholder{color:#6d7075;}
+  input[type=range].lab-scrub{-webkit-appearance:none;appearance:none;width:100%;height:18px;background:transparent;margin:0;cursor:pointer;display:block;}
+  input[type=range].lab-scrub::-webkit-slider-runnable-track{height:3px;background:#2a2d30;border-radius:2px;}
+  input[type=range].lab-scrub::-webkit-slider-thumb{-webkit-appearance:none;width:3px;height:18px;margin-top:-8px;background:#e7e7e5;border:0;border-radius:1px;}
+  input[type=range].lab-scrub::-moz-range-track{height:3px;background:#2a2d30;border-radius:2px;}
+  input[type=range].lab-scrub::-moz-range-thumb{width:3px;height:18px;background:#e7e7e5;border:0;border-radius:1px;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
+  window.__KFB3D = window.__KFB3D || { THREE, OrbitControls, GLTFLoader, SkeletonUtils, version: THREE.REVISION };
+  window.dispatchEvent(new Event('kfb3dready'));
+</script>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#17181a"/><circle cx="200" cy="180" r="52" fill="#e7e7e5"/><rect x="120" y="268" width="160" height="6" rx="3" fill="#e6a13c"/></svg></template>
+
+<div ref="{{ rootRef }}" data-screen-label="Animation Lab" style="position:absolute;inset:0;display:flex;flex-direction:column;background:#17181a;min-width:0;min-height:0;">
+
+  <div style="flex:0 0 40px;display:flex;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid #2a2d30;min-width:0;">
+    <button onClick="{{ onToggleChars }}" style="{{ charBtnStyle }}" style-hover="background:#26292c;">
+      <span style="width:5px;height:5px;border-radius:50%;background:{{ charDot }};flex:0 0 auto;"></span>
+      <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ charName }}</span>
+    </button>
+    <div style="display:flex;gap:2px;flex:0 0 auto;">
+      <sc-for list="{{ rigButtons }}" as="r" hint-placeholder-count="2">
+        <button onClick="{{ r.on }}" title="{{ r.title }}" style="{{ r.style }}">{{ r.label }}</button>
+      </sc-for>
+      <button onClick="{{ onXrig }}" title="{{ xrigTitle }}" style="{{ xrigStyle }}">M+L</button>
+      <button onClick="{{ onXfit }}" title="{{ xfitTitle }}" style="{{ xfitStyle }}">FIT</button>
+      <sc-for list="{{ weaponBtns }}" as="w" hint-placeholder-count="0">
+        <button onClick="{{ w.on }}" title="{{ w.title }}" style="{{ w.style }}">{{ w.label }}</button>
+      </sc-for>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.2;color:#83868a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;">{{ status }}</div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:2px;flex:0 0 auto;">
+      <button onClick="{{ onToggleLoco }}" title="{{ locoTitle }}" style="{{ locoBtnStyle }}" style-hover="background:#26292c;">Move</button>
+      <span style="width:9px;"></span>
+      <sc-for list="{{ modes }}" as="m" hint-placeholder-count="2">
+        <button onClick="{{ m.on }}" title="{{ m.title }}" style="{{ m.style }}">{{ m.label }}</button>
+      </sc-for>
+      <span style="width:9px;"></span>
+      <button onClick="{{ onStrip }}" title="8-frame proof strip at explicit mixer times" style="{{ stripBtnStyle }}" style-hover="background:#26292c;">Strip</button>
+      <button onClick="{{ onBatch }}" title="{{ batchTitle }}" style="{{ batchBtnStyle }}" style-hover="background:#26292c;">Batch</button>
+      <button onClick="{{ onAudit }}" title="{{ auditTitle }}" style="{{ auditBtnStyle }}" style-hover="background:#26292c;">Audit</button>
+      <button onClick="{{ onTalk }}" title="Sprechen · Visem-Shuffle des Mundes (pet-mouth.v1, dasselbe Modul wie im Studio; kein Lip-Sync)" style="{{ talkBtnStyle }}" style-hover="background:#26292c;">Talk</button>
+      <button onClick="{{ onGaze }}" title="Blick · die Pupillen folgen dem Zeiger über der Bühne (EyeRig v6 pointTo, wie im Studio)" style="{{ gazeBtnStyle }}" style-hover="background:#26292c;">Blick</button>
+      <sc-for list="{{ emoteBtns }}" as="e" hint-placeholder-count="0">
+        <button onClick="{{ e.on }}" title="{{ e.title }}" style="{{ e.style }}" style-hover="background:#26292c;">{{ e.label }}</button>
+      </sc-for>
+      <span style="width:9px;"></span>
+      <button onClick="{{ onToggleFx }}" title="Effekte · Mündungsblitz, Leuchtspur, Treffer am Anker »KFB muzzle« — Auslösezeitpunkte aus der Rotationsspur der Waffenhand gemessen (siehe Data)" style="{{ fxBtnStyle }}" style-hover="background:#26292c;">FX</button>
+      <button onClick="{{ onToggleGallery }}" title="Inventar · der ganze Clip-Pool als animierter Kontaktbogen — gleiche Suche und Filter wie die Clip-Leiste (Esc schließt)" style="{{ galleryBtnStyle }}" style-hover="background:#26292c;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" style="display:block;"><rect x="0" y="0" width="5" height="5" rx="1"></rect><rect x="7" y="0" width="5" height="5" rx="1"></rect><rect x="0" y="7" width="5" height="5" rx="1"></rect><rect x="7" y="7" width="5" height="5" rx="1"></rect></svg>
+      </button>
+      <button onClick="{{ onToggleData }}" title="Measurements, binding, source" style="{{ dataBtnStyle }}" style-hover="background:#26292c;">Data</button>
+    </div>
+  </div>
+
+  <div style="flex:1 1 auto;position:relative;display:flex;min-height:0;min-width:0;">
+
+    <div class="lab-sc" style="{{ charsPaneStyle }}">
+      <div style="display:flex;align-items:center;gap:6px;padding:8px 10px 6px;">
+        <span style="font-size:10px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:#6d7075;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ petsLabel }}</span>
+        <button onClick="{{ onPetsClick }}" title="kfb.pets/1 JSON aus dem Studio laden — derselbe Vertrag, derselbe Leser" style="{{ petsBtnStyle }}" style-hover="background:#26292c;">JSON…</button>
+        <input type="file" accept="application/json,.json" ref="{{ petFileRef }}" onChange="{{ onPetsFile }}" style="display:none;">
+      </div>
+      <sc-for list="{{ charGroups }}" as="g" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;">
+          <div style="padding:9px 10px 4px;font-size:10px;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:#6d7075;border-top:1px solid #23262a;">{{ g.label }}</div>
+          <sc-for list="{{ g.chars }}" as="c" hint-placeholder-count="6">
+            <button onClick="{{ c.on }}" style="{{ c.style }}" style-hover="background:#26292c;">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ c.label }}</span>
+              <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;color:{{ c.tagColor }};flex:0 0 auto;">{{ c.tag }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+
+    <div ref="{{ stageRef }}" style="position:relative;flex:1 1 auto;min-width:0;min-height:0;overflow:hidden;background:#dedbd4;">
+      <div style="position:absolute;left:12px;bottom:10px;display:flex;flex-direction:column;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.3;color:#5f6266;pointer-events:none;max-width:64%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">
+        <span ref="{{ locoRef }}"></span>
+        <span>{{ stageLabel }}</span>
+      </div>
+      <div style="position:absolute;right:10px;bottom:10px;display:flex;gap:2px;align-items:center;opacity:.62;" style-hover="opacity:1;">
+        <sc-for list="{{ views }}" as="v" hint-placeholder-count="5">
+          <button onClick="{{ v.on }}" title="{{ v.title }}" style="{{ v.style }}">{{ v.label }}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:12px;top:10px;max-width:72%;padding:6px 10px;background:#17181a;border-left:2px solid #e6a13c;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.5;color:#e7e7e5;">{{ errorText }}</div>
+      </sc-if>
+      <div data-screen-label="Inventar" style="{{ galleryStyle }}">
+        <div style="flex:0 0 34px;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid #2a2d30;min-width:0;">
+          <span style="font-size:12px;line-height:1.2;font-weight:500;">Inventar</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.2;color:#83868a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;">{{ galleryInfo }}</span>
+          <div style="margin-left:auto;display:flex;gap:2px;flex:0 0 auto;">
+            <button onClick="{{ onGPrev }}" title="Seite zurück" style="{{ gNavStyle }}">‹</button>
+            <button onClick="{{ onGNext }}" title="Seite vor" style="{{ gNavStyle }}">›</button>
+          </div>
+        </div>
+        <div class="lab-sc" style="flex:1 1 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));grid-auto-rows:max-content;gap:8px;padding:10px;overflow-y:auto;min-height:0;">
+          <sc-for list="{{ galleryCells }}" as="c" hint-placeholder-count="0">
+            <button onClick="{{ c.on }}" title="{{ c.title }}" style="{{ c.style }}" style-hover="background:#26292c;">
+              <canvas data-gkey="{{ c.key }}" width="300" height="360" style="width:100%;aspect-ratio:5/6;display:block;background:#dedbd4;border-radius:2px;"></canvas>
+              <span style="display:flex;align-items:center;gap:5px;min-width:0;">
+                <span style="{{ c.dotStyle }}"></span>
+                <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;line-height:1.3;color:#e7e7e5;">{{ c.label }}</span>
+              </span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;line-height:1.3;color:#83868a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ c.sub }}</span>
+            </button>
+          </sc-for>
+          <sc-if value="{{ galleryEmpty }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:11px;line-height:1.4;color:#6d7075;">{{ noClipsText }}</span>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <div class="lab-sc" style="{{ dataPaneStyle }}">
+      <div style="display:flex;gap:3px;padding-bottom:8px;">
+        <sc-for list="{{ dataTabs }}" as="t" hint-placeholder-count="2">
+          <button onClick="{{ t.on }}" style="{{ t.style }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ isInfoTab }}" hint-placeholder-val="{{ true }}">
+      <sc-for list="{{ dataRows }}" as="d" hint-placeholder-count="8">
+        <div style="display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid #23262a;font-size:11px;line-height:1.4;">
+          <span style="flex:0 0 82px;color:#83868a;">{{ d.k }}</span>
+          <span style="flex:1 1 auto;min-width:0;font-family:'IBM Plex Mono',monospace;color:#e7e7e5;word-break:break-word;">{{ d.v }}</span>
+        </div>
+      </sc-for>
+      <sc-if value="{{ hasTrial }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:4px;padding:8px 0 2px;">
+          <span style="flex:0 0 82px;font-size:11px;line-height:1.4;color:#83868a;">Verdict</span>
+          <sc-for list="{{ verdicts }}" as="v" hint-placeholder-count="3">
+            <button onClick="{{ v.on }}" title="{{ v.title }}" style="{{ v.style }}">{{ v.label }}</button>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ hasTrials }}" hint-placeholder-val="{{ false }}">
+        <a href="{{ trialsHref }}" download="{{ trialsName }}" style="display:block;padding-top:8px;font-size:11px;line-height:1.3;color:#83868a;">Download cross-rig trials</a>
+      </sc-if>
+      <sc-if value="{{ hasStrip }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:6px;padding-top:10px;">
+          <div>{{ stripImg }}</div>
+          <a href="{{ stripUrl }}" download="{{ stripName }}" style="font-size:11px;line-height:1.3;color:#83868a;">Download strip</a>
+        </div>
+      </sc-if>
+      </sc-if>
+      <sc-if value="{{ isContractTab }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <span style="font-size:10px;line-height:1.3;color:#6d7075;">Studio pet id — explicit choice, not guessed</span>
+            <input class="lab-q" list="animPetIds" value="{{ contractPetId }}" onChange="{{ onPetIdChange }}" placeholder="e.g. graft-driver" style="width:100%;box-sizing:border-box;">
+            <datalist id="animPetIds"><sc-for list="{{ sessionPetIds }}" as="id" hint-placeholder-count="3"><option value="{{ id }}"></option></sc-for></datalist>
+          </div>
+          <div style="display:flex;gap:4px;">
+            <sc-for list="{{ animRigBtns }}" as="r" hint-placeholder-count="2"><button onClick="{{ r.on }}" style="{{ r.style }}">{{ r.label }}</button></sc-for>
+            <sc-for list="{{ animModeBtns }}" as="m" hint-placeholder-count="2"><button onClick="{{ m.on }}" style="{{ m.style }}">{{ m.label }}</button></sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:10px;line-height:1.3;color:#6d7075;">Clip overrides — blank = lab default candidate list</span>
+            <sc-for list="{{ clipMapRows }}" as="c" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span style="flex:0 0 64px;font-size:11px;color:#9b9ea2;">{{ c.state }}</span>
+                <input class="lab-q" value="{{ c.value }}" onChange="{{ c.on }}" placeholder="{{ c.placeholder }}" style="flex:1 1 auto;min-width:0;">
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <span style="font-size:10px;line-height:1.3;color:#6d7075;">Locomotion params — blank = lab default</span>
+            <sc-for list="{{ paramRows }}" as="p" hint-placeholder-count="4">
+              <div style="display:flex;flex-direction:column;gap:1px;">
+                <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:#9b9ea2;">{{ p.label }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#e7e7e5;">{{ p.val }}</span></div>
+                <input class="lab-scrub" type="range" min="{{ p.min }}" max="{{ p.max }}" step="{{ p.step }}" value="{{ p.value }}" onChange="{{ p.on }}">
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap;">
+            <button onClick="{{ onSync }}" style="{{ ctlBtnStyle }}">Sync → Studio</button>
+            <button onClick="{{ onExportContract }}" style="{{ ctlBtnStyle }}">Export</button>
+            <button onClick="{{ onImportClick }}" style="{{ ctlBtnStyle }}">Import…</button>
+            <button onClick="{{ onRunTest }}" style="{{ ctlBtnStyle }}">Test</button>
+            <input type="file" accept="application/json,.json" ref="{{ importFileRef }}" onChange="{{ onImportFile }}" style="display:none;">
+          </div>
+          <sc-if value="{{ hasSyncMsg }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:11px;line-height:1.4;color:#9b9ea2;">{{ syncMsg }}</div>
+          </sc-if>
+          <sc-if value="{{ hasTestRows }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:4px;padding-top:4px;border-top:1px solid #23262a;">
+              <sc-for list="{{ testRowsView }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;gap:6px;align-items:baseline;font-size:11px;line-height:1.4;">
+                  <span style="flex:0 0 16px;color:{{ r.color }};">{{ r.mark }}</span>
+                  <span style="color:#9b9ea2;flex:1 1 auto;">{{ r.t }}</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;color:#e7e7e5;">{{ r.got }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:6px;padding:8px 10px 9px;border-top:1px solid #2a2d30;min-width:0;">
+
+    <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+      <span style="font-size:12px;line-height:1.2;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;">{{ clipName }}</span>
+      <span ref="{{ timeRef }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.2;color:#83868a;flex:0 0 auto;">0.00</span>
+      <input class="lab-q" type="text" placeholder="Find clip" value="{{ q }}" onInput="{{ onSearch }}" title="Filters the clip row. Enter jumps to the first hit." onKeyDown="{{ onSearchKey }}" style="flex:0 1 160px;min-width:88px;">
+      <div style="margin-left:auto;display:flex;align-items:center;gap:2px;flex:0 0 auto;">
+        <sc-for list="{{ transport }}" as="t" hint-placeholder-count="7">
+          <button onClick="{{ t.on }}" title="{{ t.title }}" style="{{ t.style }}" style-hover="background:#26292c;">{{ t.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="position:relative;height:18px;">
+      <div style="position:absolute;left:0;right:0;top:8px;height:3px;border-radius:2px;background:#2a2d30;"></div>
+      <div ref="{{ fillRef }}" style="position:absolute;left:0;top:8px;width:0;height:3px;border-radius:2px;background:{{ accent }};"></div>
+      <input class="lab-scrub" type="range" min="0" max="1" step="0.001" ref="{{ scrubRef }}" onInput="{{ onScrub }}" style="position:absolute;inset:0;">
+    </div>
+
+    <div style="{{ filterRowStyle }}">
+      <div class="lab-sc" style="display:flex;gap:3px;overflow-x:auto;min-width:0;padding-bottom:1px;">
+        <sc-for list="{{ families }}" as="f" hint-placeholder-count="6">
+          <button onClick="{{ f.on }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="{{ locoRowStyle }}">
+      <sc-for list="{{ locoChips }}" as="b" hint-placeholder-count="5">
+        <button onClick="{{ b.on }}" title="{{ b.title }}" style="{{ b.style }}">{{ b.label }}</button>
+      </sc-for>
+      <span style="font-size:11px;line-height:1.3;color:#6d7075;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ locoHint }}</span>
+    </div>
+
+    <div class="lab-sc" style="display:flex;gap:3px;overflow-x:auto;min-width:0;padding-bottom:2px;min-height:28px;">
+      <sc-for list="{{ clipChips }}" as="k" hint-placeholder-count="10">
+        <button onClick="{{ k.on }}" title="{{ k.title }}" style="{{ k.style }}" style-hover="background:#26292c;">
+          <span style="{{ k.dotStyle }}"></span>
+          <span>{{ k.label }}</span>
+        </button>
+      </sc-for>
+      <sc-if value="{{ noClips }}" hint-placeholder-val="{{ false }}">
+        <span style="font-size:11px;line-height:28px;color:#6d7075;">{{ noClipsText }}</span>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#e6a13c&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#e6a13c&quot;,&quot;#7fb3d5&quot;,&quot;#8fbf6a&quot;,&quot;#e7e7e5&quot;],&quot;section&quot;:&quot;Look&quot;},&quot;stageTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;neutral&quot;,&quot;options&quot;:[&quot;neutral&quot;,&quot;paper&quot;,&quot;graphite&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;},&quot;startMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;work&quot;,&quot;options&quot;:[&quot;work&quot;,&quot;stage&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lab&quot;}}">
+class Component extends DCLogic {
+  state = {
+    ready: false, err: '', tick: 0,
+    charId: 'pet:graft-driver', charStatus: {}, rig: '', rigManual: '', rigMeasured: '', spans: null,
+    packStatus: {}, clipKey: '', q: '', family: '',
+    playing: true, speed: 1, loop: true, grid: true,
+    loco: false, jumpMode: 'chain', trail: true, follow: false, locoMissing: [], locoMsg: '', locoXrig: [],
+    xrig: false, xfit: false, batching: false, batchMsg: '',
+    mode: 'work', showChars: true, showData: false, narrow: false, w: 1200,
+    /* 14.09. \u00b7 der Vertrag (kfb.pets/1) als Figurenquelle: 'petsLabel' sagt, welche Datei geladen
+       ist; die Eintr\u00e4ge erscheinen als eigene Gruppe in der Figurenliste ('pet:<id>'). */
+    petsLabel: 'kein Vertrag geladen', petIds: [],
+    /* 14.09. \u00b7 Waffen-Anker als MESSVARIANTE (null = wie im Eintrag). Wird nie in den Eintrag geschrieben. */
+    weaponAnchor: null,
+    /* v2 · der `anim`-Block (Georgs Entscheidung 13.09. Abend: EIN neuer Block in kfb.pets/1,
+       kein zweiter Vertrag). `contractPetId` ist eine EXPLIZITE Wahl, keine geratene Zuordnung —
+       das Lab testet an der ROHEN Spender-Datei (z. B. `ms4_driver`), der Vertrag gehört aber
+       einer GEKLEIDETEN Studio-Figur (`graft-driver`), und die beiden Namen sind nicht gleich. */
+    contractPetId: '', animRig: 'Medium', animMode: 'chain', animClipMap: {}, animParams: {},
+    dataTab: 'info', testRows: null, syncMsg: '',
+    /* v3 · Inventar: der sichtbare Pool (gleiche Suche/Filter wie die Clip-Leiste) als animierter
+       Kontaktbogen, seitenweise (G_PER Zellen), jede Zelle ein Klon der Bühnenfigur mit eigenem Mixer. */
+    gallery: false, gPage: 0, fx: true,
+    /* AN-PROFILE-02 · source-backed KFB Motion Library + measured profile state. */
+    motionStatus: 'idle', motionError: '',
+    /* v3 · Gesicht aus dem Studio: Sprechen, Zeigerblick, Miene — dieselben Module (EyeRig v6, PetMouth v1),
+       nur bedient. Der Vertrag liefert die Mienen (face.emotes), sonst die sechs Vorgaben. */
+    talk: false, gaze: false, emote: 'neutral',
+  };
+  rootRef = React.createRef(); stageRef = React.createRef(); scrubRef = React.createRef(); fillRef = React.createRef(); timeRef = React.createRef(); locoRef = React.createRef(); importFileRef = React.createRef();
+  A = null; T = null; gl = null;
+  charScene = null; charBones = null; embedded = []; mixer = null; action = null; clip = null;
+  clipsCache = {}; loader = null; rigSpan = {}; stripUrl = ''; stripName = ''; packFail = {}; charAudit = {};
+  graftHandle = null; PETS = null; petFileRef = React.createRef(); GM = null;
+  ML = null; motion = null; motionClips = {}; motionPackStatus = {};
+
+  /* ---------- boot ---------- */
+  componentDidMount() {
+    window.__kfbLab = this;   // v3 · Messzugang (Konsole/Prüfer): Kamera, Figur, Graft-Bericht — schreibt nichts
+    try { const ui = JSON.parse(localStorage.getItem('kfb-lab-v2:ui') || '{}'); if (ui && typeof ui === 'object') this.setState({ mode: ui.mode || 'work', showChars: ui.showChars !== false, showData: !!ui.showData, grid: ui.grid !== false, charId: ui.charId || 'pet:graft-driver' }); } catch (e) {}
+    this.loadModule('assets', './lab/assets.js').then((A) => { this.A = A; this.setState((s) => ({ tick: s.tick + 1 })); this.boot(); }).catch((e) => this.setState({ err: 'lab/assets.js failed: ' + e.message }));
+    const go = () => { this.T = window.__KFB3D; this.boot(); };
+    if (window.__KFB3D) go(); else window.addEventListener('kfb3dready', go, { once: true });
+    this.loadModule('loco', './lab/locomotion.js').then((M) => { this.LOCO = M; }).catch((e) => this.setState({ err: 'lab/locomotion.js failed: ' + e.message }));
+    this.setState({ motionStatus: 'loading', motionError: '' });
+    this.loadModule('motionLib', './lab/motion-library.v1.js').then(async (M) => {
+      this.ML = M;
+      try {
+        this.motion = await M.loadMotionLibrary();
+        this.setState((s) => ({ motionStatus: 'ready', motionError: '', tick: s.tick + 1 }));
+        if (this.loader && this.state.rig) await this.loadMotionPack(this.state.rig);
+      } catch (e) {
+        this.setState({ motionStatus: 'fail', motionError: e.message });
+        console.error('[AN-PROFILE-02] shared motion source unavailable', e);
+      }
+    }).catch((e) => this.setState({ motionStatus: 'fail', motionError: 'motion-library.v1.js failed: ' + e.message }));
+    /* v2 · der Vertrags-Übersetzer (neu) und Studios EIGENES Sitzungsmodul (WS0-Eigentum, unangetastet
+       geladen — dieselbe Datei, dieselbe Regel, kein zweiter Session-Weg). Fällt einer aus, fehlt
+       nur der Contract-Reiter, nicht der Rest des Labs. */
+    this.loadModule('animC', './frizzlegraft-v1/anim-contract.v1.js').then((M) => { this.AC = M; this.setState((s) => ({ tick: s.tick + 1 })); }).catch((e) => console.warn('[anim-contract] fehlt:', e && e.message));
+    this.loadModule('ses', './petstudio-v9/studio-v7/pet-session.v1.js').then((M) => { this.SES = M; this.contractBoot(); }).catch((e) => console.warn('[pet-session] fehlt:', e && e.message));
+    this.keys = {};
+    this.onKeyUp = (e) => { const k = this.keyName(e); if (k) this.keys[k] = false; };
+    window.addEventListener('keyup', this.onKeyUp);
+    this.onKey = (e) => {
+      const t = e.target;
+      if (t && (/INPUT|TEXTAREA|SELECT/.test(t.tagName) || t.isContentEditable)) return;
+      if (this.state.loco) {
+        const k = this.keyName(e);
+        if (k) { e.preventDefault(); this.keys[k] = true; if (k === 'space' && !e.repeat && this.locoCtl) this.locoCtl.jump(); return; }
+      }
+      if (e.key === 'Escape' && this.state.gallery) { this.toggleGallery(); return; }
+      if (e.code === 'Space') { e.preventDefault(); this.togglePlay(); return; }
+      if (e.key === ',') { this.step(-1); return; }
+      if (e.key === '.') { this.step(1); return; }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); this.cycleClip(-1); return; }
+      if (e.key === 'ArrowRight') { e.preventDefault(); this.cycleClip(1); return; }
+    };
+    window.addEventListener('keydown', this.onKey);
+    this.onPointer = (e) => { if (!this.state.gaze) return; const F = this.faceOf(); if (!F.rig || !this.gl) return; const r = this.gl.renderer.domElement.getBoundingClientRect(); if (!r.width) return; F.rig.pointTo(((e.clientX - r.left) / r.width) * 2 - 1, -(((e.clientY - r.top) / r.height) * 2 - 1)); };
+    window.addEventListener('pointermove', this.onPointer);
+    this.ro = new ResizeObserver((es) => { const w = es[0].contentRect.width; const narrow = w < 860; if (narrow !== this.state.narrow || Math.abs(w - this.state.w) > 48) this.setState({ narrow, w }); });
+    if (this.rootRef.current) this.ro.observe(this.rootRef.current);
+  }
+  /* modules load from the sibling file in the workspace, from inlined source in the standalone handoff */
+  loadModule(name, rel) {
+    const b64 = window.__KFB_LAB_SRC64 && window.__KFB_LAB_SRC64[name];
+    const src = b64 ? new TextDecoder().decode(Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))) : (window.__KFB_LAB_SRC && window.__KFB_LAB_SRC[name]);
+    const url = src ? URL.createObjectURL(new Blob([src], { type: 'text/javascript' })) : new URL(rel, location.href).href;
+    return import(url);
+  }
+  keyName(e) { const m = { KeyW: 'w', KeyA: 'a', KeyS: 's', KeyD: 'd', KeyQ: 'q', KeyE: 'e', Space: 'space' }; if (m[e.code]) return m[e.code]; if (e.key === 'Shift') return 'shift'; return null; }
+  componentWillUnmount() { window.removeEventListener('pointermove', this.onPointer); window.removeEventListener('keydown', this.onKey); window.removeEventListener('keyup', this.onKeyUp); if (this.ro) this.ro.disconnect(); if (this.graftHandle) { try { this.graftHandle.dispose(); } catch (e) {} } if (this.stageFx) this.stageFx.dispose(); if (this.gr) { this.galleryClear(); this.gr.renderer.dispose(); } if (this.gl) { cancelAnimationFrame(this.gl.raf); this.gl.ro.disconnect(); this.gl.renderer.dispose(); } }
+  persistUI() { const s = this.state; try { localStorage.setItem('kfb-lab-v2:ui', JSON.stringify({ mode: s.mode, showChars: s.showChars, showData: s.showData, grid: s.grid, charId: s.charId })); } catch (e) {} }
+
+  /* ---------- 14.09. \u00b7 DER VERTRAG ALS FIGURENQUELLE ----------
+     Georg: \u00abjson MUSS das alles sauber enthalten und in allen Tools funktionieren.\u00bb Ein Leser,
+     frizzlegraft-v1/graft-mount.v1.js, baut den Eintrag genau wie das Studio (dieselben Module,
+     dieselbe Reihenfolge). Das Lab bringt nur mit, was es ohnehin hat: Szene, Lader, Clips.
+     Vorgabe ist Georgs Export fixtures/kfb-pet-graft-driver.v4.json; \u00bbJSON\u2026\u00ab l\u00e4dt jeden anderen.
+     Der fr\u00fchere Umweg (Kopf-Host + Kopf direkt, feste Gesichtszahlen) ist weg \u2014 zweite Pipeline. */
+  async loadContractDefault() {
+    try {
+      const rc = await fetch(new URL('./petstudio-v9/kfb-pet-capsule-carl.json', location.href).href);
+      if (rc.ok) { const c = await rc.json(); this.CARL_PET = (c.pets || []).find((p) => p.kind === 'capsule') || null; }
+    } catch (e) { console.warn('[carl] kanonischer Eintrag nicht ladbar:', e && e.message); }
+    try {
+      const r = await fetch(new URL('./fixtures/kfb-pet-graft-driver.v4.json', location.href).href);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      this.setContract(await r.json(), 'kfb-pet-graft-driver.v4.json');
+    } catch (e) { this.setState({ petsLabel: 'Vertrag nicht ladbar: ' + e.message }); }
+  }
+  setContract(c, label) {
+    if (!c || !Array.isArray(c.pets)) { this.setState({ petsLabel: label + ': kein kfb.pets/1 (pets[] fehlt)' }); return; }
+    this.PETS = c;
+    const ids = c.pets.filter((p) => p.kind === 'biped' && p.module === 'Graft').map((p) => p.id);
+    this.setState((s) => ({ petsLabel: label + ' \u00b7 v' + (c.version || '?') + ' \u00b7 ' + ids.length + ' Graft', petIds: ids, tick: s.tick + 1 }));
+  }
+  loadPetsFile(file) {
+    const rd = new FileReader();
+    rd.onload = () => {
+      let c; try { c = JSON.parse(rd.result); } catch (e) { this.setState({ petsLabel: file.name + ': kein JSON' }); return; }
+      this.setContract(c, file.name);
+      const first = (c.pets || []).find((p) => p.kind === 'biped' && p.module === 'Graft');
+      if (first) this.loadChar('pet:' + first.id);
+    };
+    rd.readAsText(file);
+  }
+  /** Eintrag zu einer Figuren-ID: `pet:<id>` aus der geladenen Datei, `draft:<id>` aus der Studio-
+      Sitzung (kfb-pet-studio-v5 \u2014 derselbe Speicher, den das Studio schreibt; kein Export n\u00f6tig). */
+  petEntry(id) {
+    id = String(id || '');
+    if (id.startsWith('draft:')) { const ses = this.studioSession(); const d = ses && ses.drafts && ses.drafts[id.slice(6)]; return d && d.pet ? d.pet : null; }
+    if (id === 'carl:canon') return this.CARL_PET || null;
+    return this.PETS && (this.PETS.pets || []).find((p) => 'pet:' + p.id === id) || null;
+  }
+  /** Carl ist eine andere KLASSE (statisches Netz, 0 Knochen) \u2014 KayKit-Clips binden dort nichts. Das wird
+      GEMESSEN und im Data-Feld gesagt, statt einen leeren Mixer laufen zu lassen. */
+  async loadCarl(id) {
+    const pet = this.petEntry(id); if (!pet) return;
+    this.setState((s) => ({ charId: id, charStatus: { ...s.charStatus, [id]: 'loading' }, err: '' }), () => this.persistUI());
+    let carl;
+    try {
+      if (!this.CM) this.CM = await this.loadModule('carlmount', './lab-v6/carlrig-mount.v1.js');
+      if (!this.GM) this.GM = await this.loadModule('graftmount', './frizzlegraft-v1/graft-mount.v1.js');
+      const mods = await this.GM.faceMods();
+      const stash = new this.T.THREE.Group();
+      carl = await this.CM.mountCarl({ THREE: this.T.THREE, loader: this.loader, scene: stash, mods, pet });
+    } catch (e) { this.setState((s) => ({ charStatus: { ...s.charStatus, [id]: 'fail' }, err: 'Carl: ' + e.message })); return; }
+    if (this.state.charId !== id) { try { carl.dispose(); } catch (e) {} return; }
+    if (this.mixer) { this.mixer.stopAllAction(); this.mixer = null; this.action = null; this.clip = null; }
+    this._disposePet();
+    if (this.charScene) this.gl.scene.remove(this.charScene);
+    this.carlHandle = carl;
+    this.charScene = carl.group; this.gl.scene.add(carl.group);
+    const names = new Set(); carl.group.traverse((o) => { if (o.name) names.add(o.name); }); this.charBones = names;
+    this.embedded = [];
+    let bones = 0; carl.group.traverse((o) => { if (o.isBone) bones++; });
+    this.carlMeasure = { bones, islands: carl.parts.length, hidden: carl.parts.filter((p) => p.mesh.visible === false).length, height: +new this.T.THREE.Box3().setFromObject(carl.group).getSize(new this.T.THREE.Vector3()).y.toFixed(3) };
+    this.afterCharLoaded(id, 0);
+  }
+  sessionGraftDrafts() {
+    const ses = this.studioSession(); if (!ses || !ses.drafts) return [];
+    return Object.entries(ses.drafts).filter(([, d]) => d && d.pet && ((d.pet.kind === 'biped' && d.pet.module === 'Graft') || d.pet.kind === 'capsule')).map(([k, d]) => ({ id: 'draft:' + k, label: (d.pet.name || k) + (d.dirty ? ' \u00b7 ungespeichert' : '') }));
+  }
+  _disposePet() {
+    if (this.graftHandle) { try { this.graftHandle.dispose(); } catch (e) {} this.graftHandle = null; }
+    if (this.carlHandle) { try { this.carlHandle.dispose(); } catch (e) {} this.carlHandle = null; this.carlMeasure = null; }
+  }
+  /** Der Eintrag als Figur \u2014 ein Aufruf; das Skelett geh\u00f6rt danach dem Lab (animation:'host'). */
+  async loadPet(id) {
+    const pet = this.petEntry(id); if (!pet) return;
+    this.setState((s) => ({ charId: id, charStatus: { ...s.charStatus, [id]: 'loading' }, err: '' }), () => this.persistUI());
+    let handle;
+    try {
+      if (!this.GM) this.GM = await this.loadModule('graftmount', './frizzlegraft-v1/graft-mount.v1.js');
+      if (!this.FX) this.FX = await this.loadModule('fx', './frizzlegraft-v1/fx.v1.js');
+      const stash = new this.T.THREE.Group();   // erst bauen, dann zeigen \u2014 ein Fehler l\u00e4sst die alte Figur stehen
+      const override = this.state.weaponAnchor ? { graft: { weapon: { anchor: this.state.weaponAnchor } } } : null;
+      handle = await this.GM.mountGraft({ THREE: this.T.THREE, loader: this.loader, parent: stash, pet, lib: this.PETS || {}, camera: this.gl.camera, animation: 'host', override, log: (t) => console.info('[graft-mount] ' + t) });
+    } catch (e) { this.setState((s) => ({ charStatus: { ...s.charStatus, [id]: 'fail' }, err: 'Vertrag \u2192 Figur: ' + e.message })); return; }
+    if (this.state.charId !== id) { try { handle.dispose(); } catch (e) {} return; }
+    if (this.mixer) { this.mixer.stopAllAction(); this.mixer = null; this.action = null; this.clip = null; }
+    this._disposePet();
+    if (this.charScene) this.gl.scene.remove(this.charScene);
+    this.graftHandle = handle;
+    this.charScene = handle.root; this.gl.scene.add(handle.root);
+    const names = new Set(); handle.figure.traverse((o) => { if (o.name) names.add(o.name); }); this.charBones = names;
+    this.embedded = (handle.biped.ownClips || []).map((x) => x.clip);
+    this.afterCharLoaded(id, this.boneSpan(handle.figure));
+  }
+  /** Wie weit dreht KayKit den Slot-Knochen in DIESEM Clip gegen die Hand? Erster Schl\u00fcssel = Bezug. */
+  slotDrift(clip, side) {
+    if (!clip) return null; const T = this.T.THREE;
+    const tr = clip.tracks.find((t) => t.name === 'handslot' + (side || 'r') + '.quaternion'); if (!tr) return null;
+    const q0 = new T.Quaternion().fromArray(tr.values, 0), q = new T.Quaternion(); let mx = 0;
+    for (let i = 4; i < tr.values.length; i += 4) { q.fromArray(tr.values, i); mx = Math.max(mx, q0.angleTo(q)); }
+    return +(mx * 180 / Math.PI).toFixed(1);
+  }
+  setWeaponAnchor(mode) { this.setState({ weaponAnchor: mode }, () => { if (/^(pet|draft):/.test(String(this.state.charId))) this.loadChar(this.state.charId); }); }
+  /** Augen und Mund der Bühnenfigur — Graft (handle.rig/.mouth) oder Carl (face.eyeRig/.mouth); sonst leer. */
+  faceOf() { const g = this.graftHandle, c = this.carlHandle; if (g) return { rig: g.rig || null, mouth: g.mouth || null, who: 'graft' }; if (c && c.face) return { rig: c.face.eyeRig || null, mouth: c.face.mouth || null, who: 'carl' }; return { rig: null, mouth: null, who: null }; }
+  EMOTE_DEF = { neutral: { lidUpper: -0.4, lidLower: 0, slant: 0 }, happy: { lidUpper: 0, lidLower: 0.3, slant: 0 }, angry: { lidUpper: 0.25, lidLower: 0.1, slant: -0.4 }, sad: { lidUpper: 0.15, lidLower: 0.05, slant: 0.35, gaze: [0, -0.85] }, surprised: { lidUpper: -0.2, lidLower: -0.1, slant: 0, pupil: 'wide' }, thinking: { lidUpper: 0.4, lidLower: 0, slant: 0.05, gaze: [0.9, 0.2] } };
+  emotes() { const E = this.PETS && this.PETS.face && this.PETS.face.emotes; return (E && typeof E === 'object' && !Array.isArray(E) && Object.keys(E).length) ? E : this.EMOTE_DEF; }
+  /** Zustand → Module. Idempotent, läuft nach jedem Figurwechsel und nach jedem Knopf. */
+  applyFace() {
+    const F = this.faceOf(), s = this.state; if (!F.rig && !F.mouth) return;
+    const em = this.emotes()[s.emote] || this.EMOTE_DEF.neutral;
+    if (F.rig) { F.rig.applyEmote({ ...em, pupil: em.pupil || 'normal', gaze: em.gaze ? (Array.isArray(em.gaze) ? 'front' : em.gaze) : 'front' }); F.rig.setGazeFollow(s.gaze); }
+    if (F.mouth) { if (F.mouth.setRest) F.mouth.setRest(s.emote); F.mouth.talk(s.talk); }
+  }
+  afterCharLoaded(id, charSpan) {
+    this.applyFace();
+    const hM = this.rigSpan.Medium || 0, hL = this.rigSpan.Large || 0;
+    const measured = (hM && hL) ? (Math.abs(charSpan - hL) < Math.abs(charSpan - hM) ? 'Large' : 'Medium') : 'Medium';
+    const rig = this.state.rigManual || measured;
+    this.setState((s) => ({ charStatus: { ...s.charStatus, [id]: 'ok' }, rig, rigMeasured: measured, spans: { char: charSpan, Medium: hM, Large: hL }, tick: s.tick + 1 }));
+    this.reframe();
+    requestAnimationFrame(() => this.reframe());
+    const list = this.visibleClips(rig);
+    const keep = list.find((x) => x.key === this.state.clipKey);
+    const wasLoco = this.state.loco;
+    this.selectClip(keep ? keep.key : (list[0] ? list[0].key : ''));
+    this.loadAllPacks(rig);
+    this.loadMotionPack(rig);
+    if (wasLoco) this.enableLoco();
+  }
+
+  /* ---------- v2 · der anim-Vertrag: lesen, synchronisieren, exportieren, pr\u00fcfen ---------- */
+  /** Beim Start: die zuletzt gew\u00e4hlte Pet-ID aus der eigenen UI-Ablage, dann ihren `anim`-Block
+      aus DERSELBEN Sitzung lesen, die Studio benutzt (`kfb-pet-studio-v5`) \u2014 kein zweiter
+      Speicherort, keine Kopie, die auseinanderlaufen kann. */
+  contractBoot() {
+    let petId = ''; try { petId = JSON.parse(localStorage.getItem('kfb-lab-v2:contract') || '{}').petId || ''; } catch (e) {}
+    if (petId) this.loadContractFor(petId);
+  }
+  studioSession() { return this.SES ? this.SES.readSession() : null; }
+  /** Die Sitzungs-Pets: Entw\u00fcrfe zuerst (sie sind der neueste Stand), dann nichts erfunden \u2014 ohne
+      Sitzung ist die Liste leer, und die Pet-ID bleibt ein Textfeld statt einer Auswahl. */
+  sessionPetIds() {
+    const ses = this.studioSession(); if (!ses) return [];
+    return Object.keys(ses.drafts || {});
+  }
+  loadContractFor(petId) {
+    const ses = this.studioSession();
+    const draft = ses && ses.drafts && ses.drafts[petId];
+    const block = draft && draft.pet && draft.pet.anim;
+    const n = this.AC ? this.AC.normalize(block) : { rig: 'Medium', mode: 'chain', clipMap: {}, params: {} };
+    this.setState({ contractPetId: petId, animRig: n.rig, animMode: n.mode, animClipMap: n.clipMap, animParams: n.params, testRows: null, syncMsg: '' },
+      () => { try { localStorage.setItem('kfb-lab-v2:contract', JSON.stringify({ petId })); } catch (e) {} });
+  }
+  animBlock() { const s = this.state; return { rig: s.animRig, mode: s.animMode, clipMap: s.animClipMap, params: s.animParams }; }
+  /** Schreiben in DIESELBE Sitzung, die Studio liest \u2014 auf derselben Origin ist das echte
+      \u00dcbergabe, kein Knopfdruck-Theater: das n\u00e4chste Laden in Studio sieht den Block, ohne Datei,
+      ohne Neuladen der Seite dort. Ein Pet, das die Sitzung noch nicht kennt, wird NICHT erfunden \u2014
+      dann meldet der Knopf das, statt einen leeren Entwurf anzulegen. */
+  syncToStudio() {
+    if (!this.SES || !this.state.contractPetId) return;
+    const ses = this.studioSession();
+    const draft = ses.drafts[this.state.contractPetId];
+    if (!draft) { this.setState({ syncMsg: '\u201c' + this.state.contractPetId + '\u201d hat noch keinen Entwurf in der Studio-Sitzung \u2014 dort erst einmal antippen, dann synchronisieren.' }); return; }
+    draft.pet.anim = this.animBlock();
+    draft.dirty = true; draft.touched = new Date().toISOString();
+    this.SES.writeSession(ses);
+    this.setState({ syncMsg: '\u2713 in die Studio-Sitzung geschrieben \u00b7 ' + new Date().toLocaleTimeString() });
+  }
+  exportContract() {
+    const payload = { $schema: 'kfb.pets/1', version: '1.0.0', updated: new Date().toISOString().slice(0, 10),
+      note: 'Nur der anim-Block, aus KFB Animation Lab v2 \u2014 Import vereinigt ihn mit dem Bestand, ersetzt nichts.',
+      pets: [{ id: this.state.contractPetId || 'unbekannt', anim: this.animBlock() }],
+      meta: { contract: '1.3.0', source: 'KFB Animation Lab v2', label: 'single', count: 1, ids: [this.state.contractPetId || 'unbekannt'] } };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    this.dlBlob('kfb-anim-' + (this.state.contractPetId || 'unbekannt') + '.json', blob);
+  }
+  importContractFile(file) {
+    const rd = new FileReader();
+    rd.onload = () => {
+      let doc; try { doc = JSON.parse(rd.result); } catch (e) { this.setState({ syncMsg: 'Not valid JSON: ' + e.message }); return; }
+      const pet = (doc.pets || [])[0];
+      if (!pet || !pet.anim) { this.setState({ syncMsg: 'File has no pets[0].anim \u2014 refused, not guessed' }); return; }
+      const n = this.AC.normalize(pet.anim);
+      this.setState({ contractPetId: pet.id || this.state.contractPetId, animRig: n.rig, animMode: n.mode, animClipMap: n.clipMap, animParams: n.params, syncMsg: '\u2713 geladen aus ' + file.name });
+    };
+    rd.readAsText(file);
+  }
+  setAnimParam(k, v) { this.setState((s) => ({ animParams: { ...s.animParams, [k]: v } })); }
+  setAnimClip(state, name) { this.setState((s) => ({ animClipMap: { ...s.animClipMap, [state]: name || undefined } })); }
+  /** Drei Proben in einem Knopf (Georgs Wahl: alle drei). Abnahme + Rundweg sind synchron und
+      brauchen kein geladenes Paket; die dritte (Bildbeleg) ist der vorhandene Strip-Knopf \u2014 hier
+      nur BENANNT, damit die Abnahme-Zeile darauf verweist, statt ihn zu verdoppeln. */
+  runContractTest() {
+    if (!this.AC) return;
+    const block = this.animBlock();
+    const pool = this.charScene ? this.allClips().map((x) => x.clip.name) : [];
+    const rows = this.AC.selfTest({ block, pool, CANDIDATES: (this.LOCO && this.LOCO.CANDIDATES) || {} });
+    const rt = this.AC.roundtrip(block);
+    rows.push({ t: 'Rundweg (laden \u2192 exportieren \u2192 Diff)', ok: rt.ok, got: rt.ok ? 'leer' : 'Diff gefunden' });
+    rows.push({ t: 'Bildbeleg', ok: null, got: '\u201cStrip\u201d oben nimmt acht Bilder bei diesen Reglern auf \u2014 kein zweiter Knopf hier' });
+    this.setState({ testRows: rows });
+  }
+
+
+  boot() {
+    if (!this.A || !this.T || this.gl) return;
+    const { THREE, OrbitControls, GLTFLoader } = this.T;
+    const host = this.stageRef.current; if (!host) return;
+    const tone = this.props.stageTone === 'graphite' ? 0x2b2e31 : this.props.stageTone === 'paper' ? 0xefece6 : 0xdedbd4;
+    const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;';
+    host.insertBefore(renderer.domElement, host.firstChild);
+    const scene = new THREE.Scene(); scene.background = new THREE.Color(tone);
+    const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 120); camera.position.set(2.6, 1.7, 3.4);
+    const controls = new OrbitControls(camera, renderer.domElement); controls.target.set(0, 0.9, 0); controls.enableDamping = true; controls.dampingFactor = 0.12; controls.update();
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8a8a, 1.05));
+    const key = new THREE.DirectionalLight(0xffffff, 1.55); key.position.set(3.2, 6, 4.2); scene.add(key);
+    const rim = new THREE.DirectionalLight(0xffffff, 0.45); rim.position.set(-3, 2.5, -3.5); scene.add(rim);
+    const ground = new THREE.Mesh(new THREE.CircleGeometry(5, 64), new THREE.MeshStandardMaterial({ color: tone, roughness: 1 })); ground.rotation.x = -Math.PI / 2; ground.position.y = -0.001; scene.add(ground);
+    const gc = new THREE.Color(tone).offsetHSL(0, 0, this.props.stageTone === 'graphite' ? 0.08 : -0.09);
+    const grid = new THREE.GridHelper(10, 20, gc, gc); grid.position.y = 0.002; scene.add(grid);
+    const clock = new THREE.Clock();
+    this.gl = { renderer, scene, camera, controls, grid, clock, raf: 0 };
+    const fit = () => { const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+    this.gl.ro = new ResizeObserver(fit); this.gl.ro.observe(host); fit();
+    this.loader = new GLTFLoader();
+    const loop = () => {
+      this.gl.raf = requestAnimationFrame(loop);
+      const dt = clock.getDelta();
+      if (this.locoCtl && this.state.playing) {
+        const info = this.locoCtl.update(dt * this.state.speed, this.keys);
+        this.mixer.update(dt * this.state.speed);
+        this.trailPush(info.pos, dt);
+        this.followCam(info.pos);
+        this.showLoco(info);
+      } else if (this.mixer && this.action && this.state.playing) this.mixer.update(dt * this.state.speed);
+      if (this.graftHandle) this.graftHandle.update(dt, camera);
+      if (this.graftHandle && this.graftHandle.weapon && this.FX) {
+        if (!this.stageFx) this.stageFx = this.FX.makeFx(THREE, scene);
+        this.stageFx.root.visible = this.state.fx;
+        if (this.state.fx && this.action && this.state.playing) this.fxTick(this.stageFx, this.action, this.clip, this.graftHandle.weapon.muzzle, '_stagePrev');
+        this.stageFx.update(dt * this.state.speed);
+      }   // Gesicht, Pose NACH dem Clip, Wobble \u2014 kein zweiter Mixer
+      if (this.carlHandle) this.carlHandle.update(dt);
+      this.syncHead();
+      grid.visible = this.state.grid;
+      controls.update(); renderer.render(scene, camera);
+      if (this.state.gallery) { try { this.galleryFrame(dt); } catch (e) { if (!this._gErr) { this._gErr = 1; console.error('[inventar]', e); this.setState({ err: 'Inventar: ' + e.message }); } } }
+    };
+    loop();
+    this.setState({ ready: true });
+    Promise.all(this.A.RIGS.map((r) => this.loadPack(r, 'MovementBasic')).concat([this.loadContractDefault()])).then(() => this.loadChar(this.state.charId));
+  }
+
+  /* ---------- loading ---------- */
+  loadGLB(path) { return new Promise((res, rej) => this.loader.load(this.A.url(path), res, undefined, () => rej(new Error('not loadable: ' + path.split('/').pop())))); }
+  packId(rig, key) { return rig + '/' + key; }
+  boneSpan(root) { root.updateMatrixWorld(true); const { THREE } = this.T; const v = new THREE.Vector3(); let lo = Infinity, hi = -Infinity, n = 0; root.traverse((o) => { if (!o.isBone) return; o.getWorldPosition(v); lo = Math.min(lo, v.y); hi = Math.max(hi, v.y); n++; }); return n ? hi - lo : 0; }
+  async loadPack(rig, key) {
+    const id = this.packId(rig, key);
+    if (this.clipsCache[id]) return this.clipsCache[id];
+    this.setState((s) => ({ packStatus: { ...s.packStatus, [id]: 'loading' } }));
+    try {
+      const g = await this.loadGLB(this.A.packPath(rig, key));
+      this.clipsCache[id] = g.animations || [];
+      if (key === 'MovementBasic') this.rigSpan[rig] = this.boneSpan(g.scene);
+      this.setState((s) => ({ packStatus: { ...s.packStatus, [id]: 'ok' }, tick: s.tick + 1 }));
+      return this.clipsCache[id];
+    } catch (e) { this.clipsCache[id] = []; this.packFail[id] = e.message; this.setState((s) => ({ packStatus: { ...s.packStatus, [id]: 'fail' }, tick: s.tick + 1 })); return []; }
+  }
+  async loadAllPacks(rig) { for (const p of this.A.PACKS) { if (!p.rigs.includes(rig)) continue; await this.loadPack(rig, p.key); if (!this.state.clipKey) { const l = this.visibleClips(rig); if (l[0]) this.selectClip(l[0].key); } } }
+  async loadMotionPack(rig) {
+    if (!rig || !this.ML || !this.motion || !this.loader) return [];
+    if (this.motionClips[rig]) return this.motionClips[rig];
+    if (this.motionPackStatus[rig] === 'loading') return [];
+    this.motionPackStatus[rig] = 'loading';
+    this.setState((s) => ({ motionStatus: 'loading ' + rig, tick: s.tick + 1 }));
+    try {
+      const url = this.ML.libraryUrl(this.motion, rig);
+      const g = await new Promise((res, rej) => this.loader.load(url, res, undefined, (e) => rej(new Error('KFB Motion ' + rig + ' not loadable' + (e && e.message ? ': ' + e.message : '')))));
+      const clips = g.animations || [];
+      if (clips.length !== 33) throw new Error('KFB Motion ' + rig + ' expected 33 clips, got ' + clips.length);
+      const known = new Set((this.motion.catalogue.clips || []).map((x) => x.id));
+      const missing = clips.filter((x) => !known.has(x.name)).map((x) => x.name);
+      if (missing.length) throw new Error('KFB Motion ' + rig + ' has clip(s) without catalogue profile: ' + missing.join(', '));
+      this.motionClips[rig] = clips;
+      this.motionPackStatus[rig] = 'ok';
+      this.setState((s) => ({ motionStatus: 'ready', motionError: '', tick: s.tick + 1 }));
+      return clips;
+    } catch (e) {
+      this.motionPackStatus[rig] = 'fail';
+      this.setState((s) => ({ motionStatus: 'fail', motionError: e.message, tick: s.tick + 1 }));
+      console.error('[AN-PROFILE-02] ' + e.message);
+      return [];
+    }
+  }
+  async loadChar(id) {
+    if (String(id).startsWith('carl:') || (String(id).startsWith('draft:') && (this.petEntry(id) || {}).kind === 'capsule')) return this.loadCarl(id);
+    if (/^(pet|draft):/.test(String(id))) return this.loadPet(id);
+    const c = this.A.CHARACTERS.find((x) => x.id === id); if (!c) return;
+    this.setState((s) => ({ charId: id, charStatus: { ...s.charStatus, [id]: 'loading' }, err: '' }), () => this.persistUI());
+    let g; try { g = await this.loadGLB(c.path); } catch (e) { this.setState((s) => ({ charStatus: { ...s.charStatus, [id]: 'fail' }, err: e.message })); return; }
+    if (this.state.charId !== id) return;
+    if (this.mixer) { this.mixer.stopAllAction(); this.mixer = null; this.action = null; this.clip = null; }
+    this._disposePet();
+    if (this.charScene) this.gl.scene.remove(this.charScene);
+    this.charScene = g.scene; this.gl.scene.add(g.scene);
+    if (c.tex && c.tex.length) this.applyTexture(g.scene, c.tex[0]);
+    const names = new Set(); g.scene.traverse((o) => { if (o.name) names.add(o.name); }); this.charBones = names;
+    this.embedded = g.animations || [];
+    this.afterCharLoaded(id, this.boneSpan(g.scene));
+  }
+
+  /* some packs keep the colour atlas beside the model — those meshes arrive without a map */
+  applyTexture(scene, path) {
+    const { THREE } = this.T;
+    this.texLoader = this.texLoader || new THREE.TextureLoader();
+    this.texCache = this.texCache || {};
+    const use = (t) => { scene.traverse((o) => { if (!o.isMesh) return; const ms = Array.isArray(o.material) ? o.material : [o.material]; for (const m of ms) { if (!m || m.map) continue; m.map = t; m.needsUpdate = true; } }); };
+    if (this.texCache[path]) { use(this.texCache[path]); return; }
+    this.texLoader.load(this.A.url(path), (t) => {
+      t.flipY = false; t.colorSpace = THREE.SRGBColorSpace; t.magFilter = THREE.NearestFilter; t.needsUpdate = true;
+      this.texCache[path] = t; use(t);
+    }, undefined, () => this.setState({ err: 'texture not loadable: ' + path.split('/').pop() }));
+  }
+
+  /* ---------- clips ---------- */
+  allClips(rig) {
+    rig = rig || this.state.rig; const out = [];
+    for (const cl of this.embedded) out.push({ key: 'embedded/' + cl.name, pack: 'embedded', clip: cl, rig, foreign: false, library: false });
+    /* native rig first, so a foreign stock clip only ever fills a gap — never shadows a clip the rig owns */
+    const rigs = this.state.xrig ? [rig].concat(this.A.RIGS.filter((r) => r !== rig)) : [rig];
+    for (const r of rigs) for (const p of this.A.PACKS) {
+      if (!p.rigs.includes(r)) continue;
+      for (const cl of (this.clipsCache[this.packId(r, p.key)] || []))
+        out.push({ key: (r === rig ? '' : r[0] + ':') + p.key + '/' + cl.name, pack: p.key, clip: cl, rig: r, foreign: r !== rig, library: false });
+    }
+    /* AN-PROFILE-02: the current rig's source-backed KFB library uses this same selection/mixer path.
+       We never offer the other rig as a "cross-rig" substitute because both proper rig libraries exist. */
+    for (const cl of (this.motionClips[rig] || []))
+      out.push({ key: 'KFBMotion/' + cl.name, pack: 'KFB Motion Library', clip: cl, rig, foreign: false, library: true });
+    return out;
+  }
+  motionProfile(item) {
+    return item && item.library && this.ML && this.motion ? this.ML.profileOf(this.motion, item.clip.name) : null;
+  }
+  itemFamily(item) {
+    return item && item.library && this.ML && this.motion ? this.ML.filterFamily(this.motion, item.clip.name) : this.A.familyOf(item.pack);
+  }
+  motionSearchText(item) {
+    const p = this.motionProfile(item); if (!p) return '';
+    const s = p.semantics || {}, r = p.rootTravel || {};
+    return [s.stateFamily, s.gait, s.direction, s.stance, r.mode].filter(Boolean).join(' ').toLowerCase();
+  }
+  visibleClips(rig) {
+    const s = this.state, q = s.q.trim().toLowerCase();
+    return this.allClips(rig).filter((x) => (!s.family || this.itemFamily(x) === s.family) && (!q || x.clip.name.toLowerCase().includes(q) || x.pack.toLowerCase().includes(q) || this.motionSearchText(x).includes(q)));
+  }
+  selectClip(key) {
+    const { THREE } = this.T;
+    if (this.locoCtl) { this.locoCtl.dispose(); this.locoCtl.reset(); this.locoCtl = null; this.keys = {}; this.trailClear(); if (this.state.loco) this.setState({ loco: false }); }
+    const item = this.allClips().find((x) => x.key === key);
+    if (this.mixer) this.mixer.stopAllAction();
+    this.mixer = null; this.action = null; this.clip = null;
+    if (!item || !this.charScene) { this.setState({ clipKey: '' }); return; }
+    if (this.carlHandle) { this.clip = item.clip; this.setState({ clipKey: key }); return; }   // Klasse ohne Skelett: nichts zu binden, siehe Data
+    this.mixer = new THREE.AnimationMixer(this.charScene);
+    this.fitInfo = null;
+    let play = item.clip;
+    if (item.foreign && this.state.xfit) { const f = this.fitClip(item); play = f.clip; this.fitInfo = f; }
+    this.clip = play;
+    this.action = this.mixer.clipAction(play);
+    this.action.loop = this.state.loop ? THREE.LoopRepeat : THREE.LoopOnce;
+    this.action.clampWhenFinished = true;
+    this.action.play();
+    this.stripUrl = ''; this.stripName = '';
+    if (item.foreign) this.recordTrial(item);
+    this.setState((s) => ({ clipKey: key, tick: s.tick + 1 }));
+  }
+  cycleClip(dir) { const l = this.visibleClips(); if (!l.length) return; const i = l.findIndex((x) => x.key === this.state.clipKey); this.selectClip(l[(i + dir + l.length) % l.length].key); }
+  async setRig(r) {
+    const manual = r === this.state.rigMeasured ? '' : r;
+    this.setState({ rigManual: manual, rig: r });
+    await Promise.all([this.loadPack(r, 'MovementBasic'), this.loadMotionPack(r)]);
+    const l = this.visibleClips(r); const keep = l.find((x) => x.key === this.state.clipKey);
+    this.selectClip(keep ? keep.key : (l[0] ? l[0].key : ''));
+    this.loadAllPacks(r);
+  }
+
+  /* ---------- cross-rig: the Large gap test. A Medium clip on a Large character, marked, measured, judged ---------- */
+  async toggleXrig() {
+    const on = !this.state.xrig;
+    this.setState({ xrig: on });
+    if (on) { for (const r of this.A.RIGS) if (r !== this.state.rig) await this.loadAllPacks(r); }
+    const cur = this.allClips().find((x) => x.key === this.state.clipKey);
+    if (!cur) { const l = this.visibleClips(); this.selectClip(l[0] ? l[0].key : ''); }
+    if (this.state.loco) this.enableLoco();
+  }
+  /* the bone NAMES bind across both rigs, but position tracks carry rig-specific bone offsets.
+     FIT drops them and keeps rotations — stated, never silent. */
+  fitClip(item) {
+    const { THREE } = this.T;
+    this.fitCache = this.fitCache || {};
+    const id = item.rig + '|' + item.key;
+    if (this.fitCache[id]) return this.fitCache[id];
+    const src = item.clip, tracks = src.tracks.filter((t) => !/\.position$/.test(t.name));
+    this.fitCache[id] = { clip: new THREE.AnimationClip(src.name, src.duration, tracks), dropped: src.tracks.length - tracks.length, kept: tracks.length };
+    return this.fitCache[id];
+  }
+  setXfit() {
+    this.setState((s) => ({ xfit: !s.xfit }), () => {
+      const k = this.state.clipKey;
+      if (this.state.loco) this.enableLoco(); else if (k) this.selectClip(k);
+    });
+  }
+  /* a judgement that dies on reload is not evidence — the trials outlive the session */
+  trialStore() {
+    if (!this.xTrials) { try { const v = JSON.parse(localStorage.getItem('kfb-lab-v1:xtrials') || '{}'); this.xTrials = (v && typeof v === 'object') ? v : {}; } catch (e) { this.xTrials = {}; } }
+    return this.xTrials;
+  }
+  persistTrials() { try { localStorage.setItem('kfb-lab-v1:xtrials', JSON.stringify(this.xTrials || {})); } catch (e) {} }
+  recordTrial(item) {
+    const s = this.state, c = this.A.CHARACTERS.find((x) => x.id === s.charId);
+    const b = this.binding(item.clip), rm = this.rootMotion(item.clip);
+    const fit = (item.foreign && s.xfit) ? this.fitClip(item) : null;
+    this.trialStore();
+    const id = s.charId + '|' + item.key + '|' + (fit ? 'fit' : 'raw'), prev = this.xTrials[id];
+    this.xTrials[id] = {
+      character: c ? c.label : s.charId, characterId: s.charId, characterRigMeasured: s.rigMeasured, activeRig: s.rig,
+      clipRig: item.rig, pack: item.pack, clipName: item.clip.name, durationSec: +item.clip.duration.toFixed(4),
+      boundTrackCount: b.bound, distinctTargets: b.total, unboundTargets: b.total - b.bound,
+      rootMotionXZ: +rm.maxXZ.toFixed(4),
+      retarget: fit ? 'rotations-only' : 'raw', positionTracksDropped: fit ? fit.dropped : 0,
+      boneSpan: s.spans ? +s.spans.char.toFixed(3) : null,
+      rigBoneSpan: s.spans ? { Medium: +s.spans.Medium.toFixed(3), Large: +s.spans.Large.toFixed(3) } : null,
+      verdict: prev ? prev.verdict : null, firstSeen: prev ? prev.firstSeen : new Date().toISOString(),
+      evidenceStatus: 'MEASURED_FROM_GLTF',
+    };
+    this.persistTrials();
+  }
+  trialId(item) { return this.state.charId + '|' + item.key + '|' + ((item.foreign && this.state.xfit) ? 'fit' : 'raw'); }
+  setVerdict(v) {
+    const cur = this.allClips().find((x) => x.key === this.state.clipKey);
+    if (!cur || !cur.foreign || !this.xTrials) return;
+    const t = this.xTrials[this.trialId(cur)]; if (!t) return;
+    t.verdict = t.verdict === v ? null : v;
+    t.judgedAt = t.verdict ? new Date().toISOString() : null;
+    this.persistTrials();
+    this.setState((s) => ({ tick: s.tick + 1 }));
+  }
+  trialsDoc() {
+    const t = Object.values(this.xTrials || {});
+    return { schema: 'kfb.cross-rig-trials/1', generatedAt: new Date().toISOString(),
+      source: this.A ? this.A.RAW : null, revision: this.A ? (this.A.REVISION || null) : null, three: 'r' + (this.T ? this.T.version : '?'),
+      method: 'a clip from one rig family played on a character measured as the other family. Binding is measured against the character skeleton; visible deformation is judged by eye from the frame strip and recorded as the verdict. retarget=raw plays every track as authored; retarget=rotations-only drops the position tracks, which carry rig-specific bone offsets.',
+      verdictLegend: { holds: 'usable as is', limited: 'usable with rework', fails: 'not usable', null: 'not judged yet' },
+      trialCount: t.length, judgedCount: t.filter((x) => x.verdict).length, trials: t };
+  }
+
+  /* ---------- measurement (kept out of the way, shown only in Data) ---------- */
+  binding(clip, bones) { bones = bones || this.charBones; let bound = 0, total = 0; const seen = new Set(); for (const t of clip.tracks) { const n = t.name.split('.')[0].replace(/\[.*$/, ''); if (seen.has(n)) continue; seen.add(n); total++; if (bones && bones.has(n)) bound++; } return { bound, total }; }
+  bindingSet(clips, bones) { let bound = 0, total = 0; const seen = new Set(); for (const cl of clips) for (const t of cl.tracks) { const n = t.name.split('.')[0].replace(/\[.*$/, ''); if (seen.has(n)) continue; seen.add(n); total++; if (bones && bones.has(n)) bound++; } return { bound, total }; }
+  rootMotion(clip) {
+    let n = 0, max = 0;
+    for (const t of clip.tracks) {
+      if (!/\.position$/.test(t.name)) continue;
+      n++; const v = t.values; let lo = [Infinity, Infinity, Infinity], hi = [-Infinity, -Infinity, -Infinity];
+      for (let i = 0; i < v.length; i += 3) for (let a = 0; a < 3; a++) { lo[a] = Math.min(lo[a], v[i + a]); hi[a] = Math.max(hi[a], v[i + a]); }
+      max = Math.max(max, Math.hypot(hi[0] - lo[0], hi[2] - lo[2]));
+    }
+    return { tracks: n, maxXZ: max };
+  }
+
+  /* ---------- Sprint 3 locomotion: the lab owns the CharacterRoot, clips only dress it ---------- */
+  async enableLoco() {
+    if (!this.LOCO || !this.charScene || !this.A) return;
+    const { THREE } = this.T, rig = this.state.rig;
+    this.setState({ locoMsg: 'loading movement packs' });
+    for (const k of ['MovementBasic', 'MovementAdvanced', 'General']) { const p = this.A.PACKS.find((x) => x.key === k); if (p && p.rigs.includes(rig)) await this.loadPack(rig, k); }
+    if (this.mixer) this.mixer.stopAllAction();
+    this.mixer = new THREE.AnimationMixer(this.charScene); this.action = null; this.clip = null;
+    const pool = this.allClips(rig);
+    const pick = (names) => { for (const n of names) { const hit = pool.find((x) => x.clip.name === n); if (hit) return hit; } return null; };
+    const clips = {}, missing = [], xr = [];
+    for (const key of Object.keys(this.LOCO.CANDIDATES)) {
+      const hit = pick(this.LOCO.CANDIDATES[key]);
+      if (!hit) { missing.push(key); continue; }
+      clips[key] = (hit.foreign && this.state.xfit) ? this.fitClip(hit).clip : hit.clip;
+      if (hit.foreign) { xr.push(key); this.recordTrial(hit); }
+    }
+    this.locoCtl = new this.LOCO.Locomotion({ THREE, root: this.charScene, mixer: this.mixer, clips, mode: this.state.jumpMode });
+    this.trailClear();
+    this.setState({ loco: true, clipKey: '', locoMissing: missing, locoXrig: xr, locoMsg: '' });
+  }
+  disableLoco() {
+    if (this.locoCtl) { this.locoCtl.dispose(); this.locoCtl.reset(); this.locoCtl = null; }
+    this.keys = {}; this.trailClear();
+    this.setState({ loco: false }, () => { const l = this.visibleClips(); if (l[0]) this.selectClip(l[0].key); });
+  }
+  followCam(pos) {
+    if (!this.state.follow) { this.lastFollow = null; return; }
+    const { THREE } = this.T, c = this.gl.controls, cam = this.gl.camera;
+    if (!this.lastFollow) { this.lastFollow = pos.clone(); return; }
+    const d = new THREE.Vector3().subVectors(pos, this.lastFollow); d.y = 0;
+    c.target.add(d); cam.position.add(d); this.lastFollow.copy(pos);
+  }
+  trailPush(pos, dt) {
+    if (!this.state.trail) return;
+    this.trailT = (this.trailT || 0) + dt; if (this.trailT < 0.06) return; this.trailT = 0;
+    const { THREE } = this.T;
+    if (!this.trailLine) {
+      const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(2400 * 3), 3));
+      this.trailLine = new THREE.Line(geo, new THREE.LineBasicMaterial({ color: new THREE.Color(this.props.accent || '#e6a13c') }));
+      this.trailLine.frustumCulled = false; this.trailN = 0; this.gl.scene.add(this.trailLine);
+    }
+    const a = this.trailLine.geometry.attributes.position;
+    if (this.trailN >= 2400) { a.array.copyWithin(0, 3); this.trailN = 2399; }
+    a.setXYZ(this.trailN, pos.x, 0.01, pos.z); this.trailN++;
+    a.needsUpdate = true; this.trailLine.geometry.setDrawRange(0, this.trailN);
+  }
+  trailClear() { if (!this.trailLine) return; this.trailN = 0; this.trailLine.geometry.setDrawRange(0, 0); }
+  showLoco(info) {
+    if (!this.locoRef.current) return;
+    const p = this.LOCO.PARAMS;
+    this.locoRef.current.textContent = info.state + (info.clip ? ' · ' + info.clip : ' · no clip') + ' · ' + info.speed.toFixed(2) + ' u/s'
+      + (info.airborne ? ' · air ' + (info.hold > 0 ? 'hold ' + Math.min(info.hold / p.holdMax, 1).toFixed(2) : 'fall') : '');
+  }
+
+  /* ---------- Sprint 1 audit: every pack of both rigs, measured from the GLB, nothing inferred ---------- */
+  dl(name, text) { const a = document.createElement('a'); const u = URL.createObjectURL(new Blob([text], { type: 'application/octet-stream' })); a.href = u; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(u), 8000); }
+  async auditAll() {
+    if (this.state.auditing || !this.A) return;
+    const A = this.A, when = new Date().toISOString();
+    this.setState({ auditing: true, err: '', auditMsg: 'audit' });
+    const charCtx = A.CHARACTERS.find((x) => x.id === this.state.charId);
+    const inv = {}, failRows = [];
+    for (const rig of A.RIGS) {
+      const clips = [];
+      for (const p of A.PACKS) {
+        if (!p.rigs.includes(rig)) continue;
+        const id = this.packId(rig, p.key), path = A.packPath(rig, p.key);
+        this.setState({ auditMsg: 'audit ' + rig + ' ' + p.key });
+        const list = await this.loadPack(rig, p.key);
+        if (this.packFail[id]) { failRows.push({ rigFamily: rig, pack: p.key, sourcePath: path, error: this.packFail[id] }); clips.push({ rigFamily: rig, pack: p.key, sourcePath: path, clipName: null, evidenceStatus: 'LOAD_FAILED', error: this.packFail[id] }); continue; }
+        for (const cl of list) {
+          const b = this.binding(cl), rm = this.rootMotion(cl);
+          clips.push({ rigFamily: rig, pack: p.key, sourcePath: path, clipName: cl.name, durationSec: +cl.duration.toFixed(4),
+            trackCount: cl.tracks.length, distinctTargets: b.total, boundTrackCount: b.bound,
+            boundAgainstCharacter: charCtx ? charCtx.label : null,
+            rootMotion: { observed: rm.maxXZ > 0.001, positionTracks: rm.tracks, translationRangeXZ: +rm.maxXZ.toFixed(4) },
+            loopHint: null, evidenceStatus: 'MEASURED_FROM_GLTF' });
+        }
+      }
+      inv[rig] = { schema: 'kfb.animation-inventory/1', generatedAt: when, rigFamily: rig, source: A.RAW, revision: A.REVISION || null, three: 'r' + this.T.version,
+        boundAgainstCharacter: charCtx ? { id: charCtx.id, label: charCtx.label, sourcePath: charCtx.path } : null,
+        packsRequested: A.PACKS.filter((p) => p.rigs.includes(rig)).map((p) => p.key),
+        clipCount: clips.filter((c) => c.clipName).length, loadFailures: failRows.filter((f) => f.rigFamily === rig), clips };
+    }
+    /* duplicate pack copies shipped inside the character packs — measured, reported, kept out of the clip bar */
+    for (const v of (A.VARIANT_PACKS || [])) {
+      this.setState({ auditMsg: 'audit ' + v.key });
+      const doc = inv[v.rig]; if (!doc) continue;
+      doc.variantPackCopies = doc.variantPackCopies || [];
+      try { const g = await this.loadGLB(v.path); doc.variantPackCopies.push({ key: v.key, sourcePath: v.path, clipCount: (g.animations || []).length, clips: (g.animations || []).map((cl) => ({ clipName: cl.name, durationSec: +cl.duration.toFixed(4), trackCount: cl.tracks.length })), evidenceStatus: 'MEASURED_FROM_GLTF' }); }
+      catch (e) { doc.variantPackCopies.push({ key: v.key, sourcePath: v.path, evidenceStatus: 'LOAD_FAILED', error: e.message }); failRows.push({ rigFamily: v.rig, pack: v.key, sourcePath: v.path, error: e.message }); }
+    }
+    /* rig compatibility: bone span + real track binding per character, both rigs */
+    const compat = [];
+    for (const c of A.CHARACTERS) {
+      this.setState({ auditMsg: 'audit ' + c.label });
+      if (!this.charAudit[c.id]) {
+        try { const g = await this.loadGLB(c.path); const bones = new Set(); g.scene.traverse((o) => { if (o.name) bones.add(o.name); }); this.charAudit[c.id] = { bones, span: this.boneSpan(g.scene), embedded: (g.animations || []).map((x) => x.name) }; }
+        catch (e) { compat.push({ character: c.label, sourcePath: c.path, evidenceStatus: 'LOAD_FAILED', error: e.message }); continue; }
+      }
+      const a = this.charAudit[c.id], bind = {};
+      for (const rig of A.RIGS) bind[rig] = this.bindingSet(this.clipsCache[this.packId(rig, 'MovementBasic')] || [], a.bones);
+      const hM = this.rigSpan.Medium || 0, hL = this.rigSpan.Large || 0;
+      compat.push({ character: c.label, id: c.id, month: c.month, sourcePath: c.path,
+        boneSpan: +a.span.toFixed(3), rigBoneSpan: { Medium: +hM.toFixed(3), Large: +hL.toFixed(3) },
+        measuredRig: (hM && hL) ? (Math.abs(a.span - hL) < Math.abs(a.span - hM) ? 'Large' : 'Medium') : null,
+        trackBinding: bind, embeddedClips: a.embedded, evidenceStatus: 'MEASURED_FROM_GLTF',
+        note: 'Both rigs can bind the same bone names; the span decides. Heuristic, not a runtime rig decision.' });
+    }
+    const compatDoc = { schema: 'kfb.rig-compatibility/1', generatedAt: when, source: A.RAW, revision: A.REVISION || null, three: 'r' + this.T.version, method: 'rest-pose bone span vs Rig_*_MovementBasic, plus distinct-target binding against each character skeleton', crossRigTrials: this.trialsDoc(), characters: compat };
+    const md = this.inventoryMd(inv, compatDoc, when, charCtx);
+    this.dl('AnimationInventory_Medium.json', JSON.stringify(inv.Medium, null, 2));
+    await new Promise((r) => setTimeout(r, 350));
+    this.dl('AnimationInventory_Large.json', JSON.stringify(inv.Large, null, 2));
+    await new Promise((r) => setTimeout(r, 350));
+    this.dl('RigCompatibility.json', JSON.stringify(compatDoc, null, 2));
+    await new Promise((r) => setTimeout(r, 350));
+    this.dl('AnimationInventory.md', md);
+    this.setState({ auditing: false, auditMsg: '', audit: { when, Medium: inv.Medium.clipCount, Large: inv.Large.clipCount, fails: failRows.map((f) => f.rigFamily + '/' + f.pack), chars: compat.length } });
+  }
+  inventoryMd(inv, compat, when, charCtx) {
+    const A = this.A, L = [];
+    L.push('# AnimationInventory — KFB Animation Lab v1', '', 'Generated ' + when + ' · three r' + this.T.version + ' · source `' + A.RAW + '`' + (A.REVISION ? ' · pinned revision `' + A.REVISION + '`' : ' · **unpinned**'));
+    L.push('', 'Every clip name and duration is read from the GLB at load. `boundTrackCount` is measured against the character loaded at audit time' + (charCtx ? ' (' + charCtx.label + ')' : '') + ', not against the pack skeleton. Root motion is measured as the XZ range of position tracks — detected and reported, never applied.', '');
+    for (const rig of A.RIGS) {
+      const d = inv[rig];
+      L.push('## Rig ' + rig, '', d.clipCount + ' clips · packs ' + d.packsRequested.join(', ') + (d.loadFailures.length ? ' · load failures: ' + d.loadFailures.map((f) => f.pack).join(', ') : ' · no load failures'), '');
+      L.push('| Pack | Clip | ms | Tracks | Bound | Root ΔXZ |', '|---|---|---:|---:|---:|---:|');
+      for (const c of d.clips) L.push('| ' + c.pack + ' | ' + (c.clipName || '_LOAD FAILED_') + ' | ' + (c.durationSec == null ? '—' : (c.durationSec * 1000).toFixed(0)) + ' | ' + (c.trackCount == null ? '—' : c.trackCount) + ' | ' + (c.clipName ? c.boundTrackCount + '/' + c.distinctTargets : '—') + ' | ' + (c.clipName ? c.rootMotion.translationRangeXZ.toFixed(3) : '—') + ' |');
+      L.push('');
+    }
+    L.push('## Rig compatibility', '', '| Character | Bone span | Measured rig | Bound Medium | Bound Large | Embedded |', '|---|---:|---|---:|---:|---:|');
+    for (const c of compat.characters) L.push('| ' + c.character + ' | ' + (c.boneSpan == null ? '—' : c.boneSpan) + ' | ' + (c.measuredRig || '_load failed_') + ' | ' + (c.trackBinding ? c.trackBinding.Medium.bound + '/' + c.trackBinding.Medium.total : '—') + ' | ' + (c.trackBinding ? c.trackBinding.Large.bound + '/' + c.trackBinding.Large.total : '—') + ' | ' + (c.embeddedClips ? c.embeddedClips.length : '—') + ' |');
+    const vp = [].concat(...A.RIGS.map((r) => (inv[r].variantPackCopies || []).map((v) => Object.assign({ rig: r }, v))));
+    if (vp.length) {
+      L.push('', '## Duplicate pack copies', '', 'Separate files inside the character packs. Measured for comparison, deliberately absent from the Lab clip bar.', '', '| Copy | Rig | Clips | Status |', '|---|---|---:|---|');
+      for (const v of vp) L.push('| ' + v.key + ' | ' + v.rig + ' | ' + (v.clipCount == null ? '—' : v.clipCount) + ' | ' + v.evidenceStatus + ' |');
+    }
+    const tr = Object.values(this.xTrials || {});
+    if (tr.length) {
+      L.push('', '## Cross-rig trials', '', 'A clip from one rig family played on a character measured as the other. Binding is measured against the character skeleton; the verdict is the operator judgement from the frame strip, not an inference.', '',
+        '| Character | Character rig | Clip | Clip rig | Mode | Bound | Dropped | Verdict |', '|---|---|---|---|---|---:|---:|---|');
+      for (const t of tr) L.push('| ' + t.character + ' | ' + (t.characterRigMeasured || '—') + ' | ' + t.clipName + ' | ' + t.clipRig + ' | ' + t.retarget + ' | ' + t.boundTrackCount + '/' + t.distinctTargets + ' | ' + t.positionTracksDropped + ' | ' + (t.verdict || '_not judged_') + ' |');
+    }
+    L.push('', 'Rig assignment is evidence, not a runtime decision: Medium and Large share bone names, so the rest-pose bone span decides and the manual switch in the Lab overrides it.', '');
+    return L.join('\n');
+  }
+
+  /* ---------- v3 · Inventar: der ganze Pool als animierter Kontaktbogen ----------
+     Eine zweite kleine Zeichenfläche (300×360) rendert je Bild jede Zelle der Seite nacheinander und kopiert
+     sie in das 2D-Canvas der Zelle. Die Klone teilen Geometrie und Material mit der Bühnenfigur
+     (SkeletonUtils.clone), also kein zweiter Ladeweg und nichts zu entsorgen außer den Mixern. Carls Klasse
+     (0 Knochen) bekommt keine Mixer — die Zellen zeigen ihn stehend, wie die Bühne. */
+  G_PER = 24;
+  galleryPage() { const vis = (this.A && this.charScene) ? this.visibleClips() : []; const pages = Math.max(1, Math.ceil(vis.length / this.G_PER)); const page = Math.min(this.state.gPage, pages - 1); return { vis, pages, page, items: vis.slice(page * this.G_PER, (page + 1) * this.G_PER) }; }
+  toggleGallery() { this.setState((s) => ({ gallery: !s.gallery }), () => { if (!this.state.gallery) this.galleryClear(); }); }
+  galleryClear() { if (!this.gr) return; for (const c of this.gr.cells) { this.gr.scene.remove(c.obj); if (c.mixer) c.mixer.stopAllAction(); if (c.fx) c.fx.dispose(); } this.gr.cells = []; this.gr.sig = ''; }
+  /** Auslösezeiten je Clip, einmal gemessen (fx.v1 fireTimes), Seite = Slot der Figur. */
+  fireOf(clip) { this._fire = this._fire || {}; const W = this.graftHandle && this.graftHandle.report && this.graftHandle.report.weapon; const side = (W && W.status === 'OK' && /l$/i.test(W.bone)) ? 'l' : 'r'; const k = clip.name + '|' + side; if (!(k in this._fire)) this._fire[k] = this.FX.fireTimes(this.T.THREE, clip, side); return this._fire[k]; }
+  /** Feuert jeden gemessenen Zeitpunkt, den die Aktion seit dem letzten Bild überschritten hat (Schleifenübergang inklusive). */
+  fxTick(fx, action, clip, muzzle, slot) {
+    if (!action || !clip || !muzzle) return;
+    const W = this.graftHandle.report.weapon; if (!W || W.status !== 'OK') return;
+    const F = this.fireOf(clip); if (!F.times.length) { fx[slot] = action.time; return; }
+    const prev = fx[slot], cur = action.time; fx[slot] = cur; if (prev == null) return;
+    const L = W.forearm || 0.25, kind = W.fx || 'muzzle';
+    const hit = (t) => (prev <= cur ? (t > prev && t <= cur) : (t > prev || t <= cur));
+    for (const t of F.times) if (hit(t)) { fx.fire(muzzle, kind, L); }
+  }
+  galleryEnsure() {
+    if (this.gr) return this.gr; const { THREE } = this.T;
+    const renderer = new THREE.WebGLRenderer({ antialias: true }); renderer.setPixelRatio(1); renderer.setSize(300, 360, false); renderer.outputColorSpace = THREE.SRGBColorSpace;
+    const scene = new THREE.Scene(); scene.background = this.gl.scene.background;
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8a8a, 1.05));
+    const key = new THREE.DirectionalLight(0xffffff, 1.55); key.position.set(3.2, 6, 4.2); scene.add(key);
+    const camera = new THREE.PerspectiveCamera(30, 300 / 360, 0.05, 60);
+    this.gr = { renderer, scene, camera, cells: [], sig: '' }; return this.gr;
+  }
+  galleryFrame(dt) {
+    if (!this.charScene || !this.T.SkeletonUtils) return;
+    const G = this.galleryEnsure(), { THREE, SkeletonUtils } = this.T;
+    const { items } = this.galleryPage();
+    const sig = this.state.charId + '|' + this.state.xfit + '|' + items.map((x) => x.key).join(',');
+    if (sig !== G.sig) {
+      this.galleryClear(); G.sig = sig;
+      /* Kamera aus der Bühnenfigur, einmal je Seite; der Klon steht im Ursprung */
+      this.charScene.updateMatrixWorld(true);
+      const box = new THREE.Box3().setFromObject(this.charScene), c = box.getCenter(new THREE.Vector3()), h = Math.max(box.getSize(new THREE.Vector3()).y, 0.5);
+      c.sub(this.charScene.position);
+      G.camera.position.set(c.x + h * 0.95, c.y + h * 0.3, c.z + h * 1.8); G.camera.lookAt(c);
+      const skinned = !this.carlHandle;
+      for (const it of items) {
+        const obj = SkeletonUtils.clone(this.charScene); obj.position.set(0, 0, 0); obj.rotation.set(0, 0, 0); obj.visible = false; G.scene.add(obj);
+        let mixer = null;
+        let clip = null, fx = null;
+        if (skinned) { mixer = new THREE.AnimationMixer(obj); clip = (it.foreign && this.state.xfit) ? this.fitClip(it).clip : it.clip; mixer.clipAction(clip).play(); }
+        const muzzle = obj.getObjectByName('KFB muzzle');
+        if (muzzle && this.FX) { fx = this.FX.makeFx(THREE, G.scene); fx.root.visible = false; }
+        G.cells.push({ key: it.key, obj, mixer, clip, muzzle, fx, action: mixer ? mixer.existingAction(clip) : null });
+      }
+    }
+    const host = this.rootRef.current; if (!host) return;
+    const byKey = {}; host.querySelectorAll('canvas[data-gkey]').forEach((cv) => { byKey[cv.getAttribute('data-gkey')] = cv; });
+    const step = this.state.playing ? dt * this.state.speed : 0;
+    for (const cell of G.cells) {
+      if (cell.mixer) cell.mixer.update(step);
+      if (cell.fx) { if (this.state.fx && step > 0) this.fxTick(cell.fx, cell.action, cell.clip, cell.muzzle, '_prev'); cell.fx.update(step); }
+      const cv = byKey[cell.key]; if (!cv) continue;
+      cell.obj.visible = true; if (cell.fx) cell.fx.root.visible = this.state.fx; G.renderer.render(G.scene, G.camera); cell.obj.visible = false; if (cell.fx) cell.fx.root.visible = false;
+      cv.getContext('2d').drawImage(G.renderer.domElement, 0, 0);
+    }
+  }
+  /** Slot-Drift je Clipname, einmal gerechnet — die Zellen fragen sie jedes Bild. */
+  driftOf(clip, side) { this._drift = this._drift || {}; const k = clip.name + '|' + side; if (!(k in this._drift)) this._drift[k] = this.slotDrift(clip, side); return this._drift[k]; }
+
+  /* ---------- transport ---------- */
+  togglePlay() { this.setState((s) => ({ playing: !s.playing })); }
+  setTime(t) { if (!this.action || !this.clip) return; const d = this.clip.duration; t = ((t % d) + d) % d; this.action.time = t; this.mixer.update(0); this.syncHead(); }
+  step(dir) { if (!this.action) return; if (this.state.playing) this.setState({ playing: false }); this.setTime(this.action.time + dir / 30); }
+  restart() { this.setTime(0); }
+  toggleLoop() { const { THREE } = this.T; this.setState((s) => { const loop = !s.loop; if (this.action) { this.action.loop = loop ? THREE.LoopRepeat : THREE.LoopOnce; this.action.reset(); this.action.play(); } return { loop }; }); }
+  cycleSpeed() { const seq = [0.25, 0.5, 1, 1.5, 2]; const i = seq.indexOf(this.state.speed); this.setState({ speed: seq[(i + 1) % seq.length] }); }
+  syncHead() {
+    if (!this.action || !this.clip) return;
+    const f = this.clip.duration ? this.action.time / this.clip.duration : 0;
+    if (this.fillRef.current) this.fillRef.current.style.width = (f * 100).toFixed(2) + '%';
+    if (this.scrubRef.current && document.activeElement !== this.scrubRef.current) this.scrubRef.current.value = f.toFixed(3);
+    if (this.timeRef.current) this.timeRef.current.textContent = this.action.time.toFixed(2) + ' / ' + this.clip.duration.toFixed(2);
+  }
+  /* pad > 1 pulls the camera back. The batch needs it: a contact-sheet cell is a portrait crop out
+     of a wide viewport, so the stage framing that looks right on screen clips feet in a cell. */
+  view(kind, pad) {
+    if (!this.charScene) return; const { THREE } = this.T;
+    this.charScene.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(this.charScene); const c = box.getCenter(new THREE.Vector3()); const h = Math.max(box.getSize(new THREE.Vector3()).y, 0.5);
+    const d = h * 2.35 * (pad || 1), a = { front: 0, side: Math.PI / 2, back: Math.PI, q34: Math.PI / 4 }[kind];
+    this.gl.controls.target.set(c.x, c.y, c.z);
+    this.gl.camera.position.set(c.x + Math.sin(a) * d, c.y + h * (kind === 'q34' ? 0.42 : 0.18), c.z + Math.cos(a) * d);
+    this.gl.controls.update();
+  }
+  reframe() {
+    if (!this.charScene) return; const { THREE } = this.T;
+    this.charScene.updateMatrixWorld(true); /* cold load has no world matrices yet — an empty box parks the camera nowhere */
+    const box = new THREE.Box3().setFromObject(this.charScene); const size = box.getSize(new THREE.Vector3()); const c = box.getCenter(new THREE.Vector3()); const h = Math.max(size.y, 0.5);
+    this.charHeight = size.y;
+    this.gl.controls.target.set(c.x, c.y, c.z);
+    this.gl.camera.position.set(c.x + h * 1.35, c.y + h * 0.5, c.z + h * 1.95);
+    this.gl.controls.update();
+  }
+
+  /* ---------- proof strip: explicit mixer times, conditions in the image ---------- */
+  /* one strip, one set of conditions. Both the single-clip button and the batch go through here,
+     so a strip in a contact sheet is the same measurement as a strip on its own. */
+  renderStrip(o) {
+    if (!this.action || !this.clip) return null;
+    const { renderer, scene, camera } = this.gl; const N = o.N, W = o.W, H = o.H, HEAD = o.HEAD;
+    const cv = document.createElement('canvas'); cv.width = N * W; cv.height = H + HEAD; const ctx = cv.getContext('2d');
+    ctx.fillStyle = '#17181a'; ctx.fillRect(0, 0, cv.width, cv.height);
+    const t0 = this.action.time, src = renderer.domElement, d = this.clip.duration;
+    for (let i = 0; i < N; i++) {
+      const t = (i / (N - 1)) * d * 0.999; this.action.time = t; this.mixer.update(0); renderer.render(scene, camera);
+      const sw = src.width, sh = src.height, s = Math.min(sw / W, sh / H), cw = W * s, ch = H * s;
+      ctx.drawImage(src, (sw - cw) / 2, (sh - ch) / 2, cw, ch, i * W, HEAD, W, H);
+      ctx.fillStyle = '#17181a'; ctx.fillRect(i * W, HEAD + H - 20, 64, 20);
+      ctx.fillStyle = '#e7e7e5'; ctx.font = '500 12px "IBM Plex Mono", monospace'; ctx.fillText((t * 1000).toFixed(0) + ' ms', i * W + 7, HEAD + H - 6);
+      ctx.strokeStyle = '#17181a'; ctx.lineWidth = 1; ctx.strokeRect(i * W + 0.5, HEAD + 0.5, W - 1, H - 1);
+    }
+    ctx.fillStyle = '#e7e7e5'; ctx.font = '600 ' + (o.titleSize || 16) + 'px "IBM Plex Sans", sans-serif';
+    ctx.fillText(o.title, 12, o.titleY || 24);
+    ctx.fillStyle = '#83868a'; ctx.font = '400 ' + (o.subSize || 11) + 'px "IBM Plex Mono", monospace';
+    ctx.fillText(o.sub, 12, o.subY || 44);
+    this.action.time = t0; this.mixer.update(0);
+    return cv;
+  }
+  /* the conditions every strip carries, single or batched */
+  stripConditions(N) {
+    const cam = this.gl.camera.position, b = this.binding(this.clip), rm = this.rootMotion(this.clip);
+    return [(this.clip.duration * 1000).toFixed(0) + ' ms', N + ' frames at explicit mixer time', 'bound ' + b.bound + '/' + b.total,
+      'root pos tracks ' + rm.tracks + ' · max ΔXZ ' + rm.maxXZ.toFixed(3) + ' u',
+      'cam ' + [cam.x, cam.y, cam.z].map((v) => v.toFixed(2)).join('/'), 'three r' + this.T.version,
+      'src ' + (this.A.REVISION ? this.A.REVISION.slice(0, 8) : 'main'), new Date().toISOString().slice(0, 16).replace('T', ' ')];
+  }
+  stripLabel() {
+    const c = this.A.CHARACTERS.find((x) => x.id === this.state.charId);
+    const item = this.allClips().find((x) => x.key === this.state.clipKey);
+    const foreign = !!(item && item.foreign);
+    return { char: c ? c.label : this.state.charId, item, foreign,
+      head: (c ? c.label : this.state.charId) + ' · Rig ' + this.state.rig
+        + (foreign ? ' · CROSS-RIG ' + (this.state.xfit ? 'FIT' : 'RAW') + ' from Rig ' + item.rig : '') + ' · ' + this.state.clipKey };
+  }
+  makeStrip() {
+    if (!this.action || !this.clip) return;
+    const N = 8, L = this.stripLabel();
+    const cv = this.renderStrip({ N, W: 240, H: 300, HEAD: 58, title: L.head, sub: this.stripConditions(N).join('  ·  ') });
+    if (!cv) return;
+    this.stripUrl = cv.toDataURL('image/png');
+    this.stripName = 'strip_' + this.state.charId + '_' + this.state.clipKey.replace(/[^\w]+/g, '-') + (L.foreign ? '_xrig-' + L.item.rig : '') + '.png';
+    this.setState((s) => ({ showData: true, tick: s.tick + 1 }));
+  }
+
+  /* ---------- evidence batch: four silhouettes × four states × three cameras, one run ---------- */
+  setStateAsync(patch) { return new Promise((res) => this.setState(patch, res)); }
+  dlBlob(name, blob) { const a = document.createElement('a'); const u = URL.createObjectURL(blob); a.href = u; a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(u), 20000); }
+
+  BATCH_FIGURES = ['ms4_robot_two', 'ms4_werewolf_wolf', 'man_medium', 'man_large'];
+  BATCH_STATES = [
+    { key: 'Idle', names: ['Idle_A'] },
+    { key: 'Walk', names: ['Walking_A'] },
+    { key: 'Run', names: ['Running_A'] },
+    { key: 'Jump', names: ['Jump_Full_Short', 'Jump_Start'] },
+  ];
+  BATCH_CAMS = [['front', 'Front'], ['side', 'Side'], ['q34', 'Three-quarter']];
+  CELL = { N: 6, W: 190, H: 240, HEAD: 34, CAP: 20 };
+
+  async runBatch() {
+    if (this.state.batching || !this.A || !this.charScene) return;
+    const Z = this.ZIP || (this.ZIP = await this.loadModule('zip', './lab/zipstore.js'));
+    const when = new Date(), C = this.CELL;
+    /* test seam: a dry run does everything except hand files to the browser, so the batch can be
+       checked without 48 downloads. Set window.__KFB_BATCH_DRY / __KFB_BATCH_FIGS before pressing. */
+    const dry = !!window.__KFB_BATCH_DRY;
+    const figures = window.__KFB_BATCH_FIGS || this.BATCH_FIGURES;
+    const before = { charId: this.state.charId, xrig: this.state.xrig, xfit: this.state.xfit, clipKey: this.state.clipKey, playing: this.state.playing };
+    await this.setStateAsync({ batching: true, batchMsg: 'batch starting', showData: true, playing: false, xrig: true, xfit: true });
+
+    const entries = [], sheets = [], manifest = [];
+    let failure = '', preview = null;
+    try {
+      for (const figId of figures) {
+        const fig = this.A.CHARACTERS.find((x) => x.id === figId);
+        if (!fig) { manifest.push({ character: figId, evidenceStatus: 'NOT_IN_ROSTER' }); continue; }
+        await this.setStateAsync({ batchMsg: 'batch · loading ' + fig.label });
+        await this.loadChar(figId);
+        if (this.state.charStatus[figId] !== 'ok') { manifest.push({ character: fig.label, id: figId, evidenceStatus: 'LOAD_FAILED' }); continue; }
+        const rig = this.state.rig;
+        for (const r of this.A.RIGS) { await this.setStateAsync({ batchMsg: 'batch · ' + fig.label + ' · packs Rig ' + r }); await this.loadAllPacks(r); }
+
+        const cells = [];
+        for (const st of this.BATCH_STATES) {
+          const pool = this.allClips(rig);
+          let item = null;
+          for (const n of st.names) { const hit = pool.find((x) => x.clip.name === n); if (hit) { item = hit; break; } }
+          if (!item) {
+            for (const [, camLabel] of this.BATCH_CAMS) cells.push({ state: st.key, cam: camLabel, canvas: null, miss: 'NOT FOUND IN AUDITED PACK: ' + st.names.join(' / ') });
+            manifest.push({ character: fig.label, id: figId, rig, state: st.key, evidenceStatus: 'NOT_FOUND_IN_AUDITED_PACK', candidatesTried: st.names });
+            continue;
+          }
+          this.selectClip(item.key);
+          if (!this.clip) continue;
+          const b = this.binding(this.clip), rm = this.rootMotion(this.clip);
+          for (const [camKind, camLabel] of this.BATCH_CAMS) {
+            await this.setStateAsync({ batchMsg: 'batch · ' + fig.label + ' · ' + st.key + ' · ' + camLabel });
+            this.view(camKind, 1.35);
+            const cv = this.renderStrip({ N: C.N, W: C.W, H: C.H, HEAD: C.HEAD, titleSize: 13, titleY: 15, subSize: 10, subY: 29,
+              title: st.key + ' · ' + item.clip.name + (item.foreign ? '  CROSS-RIG FIT from Rig ' + item.rig : '') + ' · ' + camLabel,
+              sub: [(this.clip.duration * 1000).toFixed(0) + ' ms', 'bound ' + b.bound + '/' + b.total, 'ΔXZ ' + rm.maxXZ.toFixed(3) + ' u', item.foreign ? 'position tracks dropped' : 'native to Rig ' + rig].join('  ·  ') });
+            if (!cv) continue;
+            cells.push({ state: st.key, cam: camLabel, canvas: cv, miss: '' });
+            const name = 'strips/strip_' + figId + '_' + st.key + '_' + camKind + (item.foreign ? '_xrig' : '') + '.png';
+            entries.push({ name, bytes: await Z.canvasBytes(cv) });
+            manifest.push({ character: fig.label, id: figId, characterRigMeasured: this.state.rigMeasured, rigPlayed: rig,
+              state: st.key, camera: camLabel, file: name,
+              clipName: item.clip.name, clipRig: item.rig, pack: item.pack, sourcePath: this.A.packPath(item.rig, item.pack),
+              crossRig: item.foreign, retarget: item.foreign ? 'rotations-only' : 'none',
+              durationSec: +item.clip.duration.toFixed(4), boundTrackCount: b.bound, distinctTargets: b.total,
+              rootMotionXZ: +rm.maxXZ.toFixed(4), frames: C.N, evidenceStatus: 'MEASURED_FROM_GLTF' });
+          }
+        }
+        const sheet = this.makeSheet(fig, cells, when);
+        const sname = 'sheets/sheet_' + figId + '.png';
+        entries.push({ name: sname, bytes: await Z.canvasBytes(sheet) });
+        sheets.push({ name: 'sheet_' + figId + '.png', canvas: sheet });
+      }
+
+      const expected = figures.length * this.BATCH_STATES.length * this.BATCH_CAMS.length;
+      const doc = { schema: 'kfb.evidence-batch/1', generatedAt: when.toISOString(),
+        source: this.A.RAW, revision: this.A.REVISION || null, three: 'r' + this.T.version,
+        question: 'Does the audited animation pack carry Idle, Walk, Run and Jump on these four silhouettes — and where does it not?',
+        method: 'each cell is a ' + C.N + '-frame strip rendered at explicit mixer times from the WebGL renderer, camera set from a fixed preset. Cross-rig cells play a clip of the other rig family with its position tracks dropped and say so in the cell.',
+        figures: this.BATCH_FIGURES, states: this.BATCH_STATES.map((s) => s.key), cameras: this.BATCH_CAMS.map((c) => c[1]),
+        cellsExpected: expected, cellsProduced: manifest.filter((m) => m.file).length,
+        gaps: manifest.filter((m) => !m.file), cells: manifest };
+      entries.push({ name: 'manifest.json', bytes: new TextEncoder().encode(JSON.stringify(doc, null, 2)) });
+      entries.push({ name: 'README.txt', bytes: new TextEncoder().encode(
+        'KFB Animation Lab · evidence batch ' + when.toISOString() + '\n\n'
+        + 'sheets/   one contact sheet per figure: four states down, three cameras across. This is the review copy.\n'
+        + 'strips/   the ' + expected + ' individual strips at full size. This is the archive copy.\n'
+        + 'manifest.json  what each cell shows, measured: clip, rig, duration, binding, root motion, source path, donor revision.\n\n'
+        + 'Every image carries its own conditions. A cell reading NOT FOUND IN AUDITED PACK is a gap in the pack, not a failed render.\n') });
+
+      const bundle = Z.zipStore(entries, when);
+      if (dry) { window.__KFB_BATCH_OUT = { doc, files: entries.map((e) => ({ name: e.name, bytes: e.bytes.length })), bundleBytes: bundle.size, sheets: sheets.map((s) => s.name) }; }
+      else {
+        for (const s of sheets) { this.dlBlob(s.name, await new Promise((r) => s.canvas.toBlob(r, 'image/png'))); await new Promise((r) => setTimeout(r, 420)); }
+        this.dlBlob('KFB_EvidenceBatch_' + when.toISOString().slice(0, 10) + '.zip', bundle);
+      }
+
+      if (sheets.length) preview = { url: sheets[sheets.length - 1].canvas.toDataURL('image/png'), name: sheets[sheets.length - 1].name };
+      await this.setStateAsync({ batching: false, batchMsg: '', batch: { when: when.toISOString(), produced: doc.cellsProduced, expected, gaps: doc.gaps.length } });
+    } catch (e) {
+      failure = 'batch stopped: ' + e.message;
+      await this.setStateAsync({ batching: false, batchMsg: '' });
+    }
+    /* restore AFTER the verdict is known, then re-state the failure — loadChar clears err, so a
+       message set before the restore would vanish and the run would look like it never happened */
+    await this.setStateAsync({ xrig: before.xrig, xfit: before.xfit });
+    if (this.state.charId !== before.charId) await this.loadChar(before.charId);
+    if (preview) { this.stripUrl = preview.url; this.stripName = preview.name; }
+    if (failure) { console.error(failure); await this.setStateAsync({ err: failure }); }
+    await this.setStateAsync({ showData: true, tick: this.state.tick + 1 });
+  }
+
+  /* the review copy: one figure per sheet, states down, cameras across */
+  makeSheet(fig, cells, when) {
+    const C = this.CELL, GAP = 10, LEFT = 122, TOP = 104, COLH = 24;
+    const cw = C.N * C.W, chh = C.H + C.HEAD;
+    const rows = this.BATCH_STATES.map((s) => s.key), cols = this.BATCH_CAMS.map((c) => c[1]);
+    const cv = document.createElement('canvas');
+    cv.width = LEFT + cols.length * cw + (cols.length + 1) * GAP;
+    cv.height = TOP + COLH + rows.length * (chh + C.CAP) + (rows.length + 1) * GAP;
+    const ctx = cv.getContext('2d');
+    ctx.fillStyle = '#17181a'; ctx.fillRect(0, 0, cv.width, cv.height);
+
+    ctx.fillStyle = '#e7e7e5'; ctx.font = '600 26px "IBM Plex Sans", sans-serif';
+    ctx.fillText(fig.label + ' · Rig ' + this.state.rig + (this.state.rigManual ? ' (manual)' : ' (measured)'), 14, 34);
+    ctx.fillStyle = '#83868a'; ctx.font = '400 13px "IBM Plex Mono", monospace';
+    ctx.fillText('Does the audited pack carry Idle, Walk, Run and Jump on this silhouette?', 14, 58);
+    const sp = this.state.spans;
+    ctx.fillText([fig.month, 'bone span ' + (sp ? sp.char.toFixed(2) + ' (M ' + sp.Medium.toFixed(2) + ' · L ' + sp.Large.toFixed(2) + ')' : '—'),
+      C.N + ' frames per cell at explicit mixer time', 'three r' + this.T.version,
+      'src ' + (this.A.REVISION ? this.A.REVISION.slice(0, 8) : 'main'), when.toISOString().slice(0, 16).replace('T', ' ')].join('  ·  '), 14, 78);
+    ctx.fillStyle = '#2a2d30'; ctx.fillRect(14, 90, cv.width - 28, 1);
+
+    ctx.fillStyle = '#83868a'; ctx.font = '500 13px "IBM Plex Sans", sans-serif';
+    cols.forEach((c, j) => ctx.fillText(c, LEFT + GAP + j * (cw + GAP), TOP + 16));
+
+    rows.forEach((r, i) => {
+      const y = TOP + COLH + GAP + i * (chh + C.CAP + GAP);
+      ctx.fillStyle = '#e7e7e5'; ctx.font = '600 18px "IBM Plex Sans", sans-serif';
+      ctx.fillText(r, 14, y + 24);
+      cols.forEach((c, j) => {
+        const x = LEFT + GAP + j * (cw + GAP);
+        const cell = cells.find((k) => k.state === r && k.cam === c);
+        if (cell && cell.canvas) { ctx.drawImage(cell.canvas, x, y); return; }
+        ctx.fillStyle = '#1d1f21'; ctx.fillRect(x, y, cw, chh);
+        ctx.strokeStyle = this.props.accent || '#e6a13c'; ctx.lineWidth = 2; ctx.strokeRect(x + 1, y + 1, cw - 2, chh - 2);
+        ctx.fillStyle = this.props.accent || '#e6a13c'; ctx.font = '600 15px "IBM Plex Mono", monospace';
+        ctx.fillText(cell ? cell.miss : 'NOT RENDERED', x + 16, y + chh / 2);
+      });
+    });
+    return cv;
+  }
+
+  /* ---------- render values ---------- */
+  renderVals() {
+    const s = this.state, A = this.A;
+    const accent = this.props.accent || '#e6a13c';
+    const tool = (on) => 'height:26px;padding:0 9px;display:flex;align-items:center;gap:6px;background:' + (on ? '#26292c' : 'transparent') + ';border:1px solid ' + (on ? '#3a3e42' : '#2a2d30') + ';border-radius:3px;color:' + (on ? '#e7e7e5' : '#9b9ea2') + ';font-size:11px;line-height:1;cursor:pointer;white-space:nowrap;';
+    const mini = (on) => 'height:22px;min-width:22px;padding:0 6px;background:' + (on ? '#e7e7e5' : 'rgba(23,24,26,.55)') + ';border:0;border-radius:3px;color:' + (on ? '#17181a' : '#e7e7e5') + ';font-family:"IBM Plex Mono",monospace;font-size:10px;line-height:1;cursor:pointer;';
+    const chip = (on) => 'height:24px;padding:0 8px;background:' + (on ? '#e7e7e5' : 'transparent') + ';border:1px solid ' + (on ? '#e7e7e5' : '#2a2d30') + ';border-radius:12px;color:' + (on ? '#17181a' : '#9b9ea2') + ';font-size:11px;line-height:1;cursor:pointer;white-space:nowrap;flex:0 0 auto;';
+    const clipChip = (on) => 'height:28px;padding:0 9px;display:flex;align-items:center;gap:7px;background:' + (on ? '#26292c' : 'transparent') + ';border:1px solid ' + (on ? accent : '#2a2d30') + ';border-radius:3px;color:#e7e7e5;font-size:11px;line-height:1;cursor:pointer;white-space:nowrap;flex:0 0 auto;';
+
+    const stage = s.mode === 'stage';
+    const charRow = (c) => { const st = s.charStatus[c.id]; return {
+      label: c.label, tag: st === 'loading' ? '···' : st === 'fail' ? '✕' : (c.id === s.charId && s.rig ? s.rig[0] : ''),
+      tagColor: st === 'fail' ? accent : '#6d7075',
+      style: 'display:flex;align-items:center;gap:8px;width:100%;padding:6px 10px;background:' + (c.id === s.charId ? '#26292c' : 'transparent') + ';border:0;border-left:2px solid ' + (c.id === s.charId ? accent : 'transparent') + ';cursor:pointer;text-align:left;color:' + (st === 'loading' ? '#83868a' : '#e7e7e5') + ';font-size:12px;line-height:1.3;',
+      on: () => this.loadChar(c.id) }; };
+    const petRows = (this.PETS ? (this.PETS.pets || []).filter((p) => p.kind === 'biped' && p.module === 'Graft') : []).map((p) => charRow({ id: 'pet:' + p.id, label: p.name || p.id }));
+    const draftRows = this.sessionGraftDrafts().map((d) => charRow({ id: d.id, label: d.label }));
+    if (this.CARL_PET) petRows.push(charRow({ id: 'carl:canon', label: (this.CARL_PET.name || 'CapsuleCarl') + ' \u00b7 kanonisch' }));
+    const charGroups = (draftRows.length ? [{ label: 'Studio \u00b7 Sitzung (Entwurf, neuester Stand)', chars: draftRows }] : []).concat(petRows.length ? [{ label: 'Studio \u00b7 kfb.pets/1 (Datei)', chars: petRows }] : []).concat(A ? A.GROUPS.map((g) => ({ label: g.label, chars: A.CHARACTERS.filter((c) => c.group === g.id).map(charRow) })).filter((g) => g.chars.length) : []);
+
+    const all = (A && this.charScene) ? this.allClips() : [];
+    const vis = (A && this.charScene) ? this.visibleClips() : [];
+    const cur = all.find((x) => x.key === s.clipKey);
+    const famCount = {}; for (const x of all) { const f = this.itemFamily(x); famCount[f] = (famCount[f] || 0) + 1; }
+    const motionFamilies = (this.ML && this.motion) ? this.ML.semanticFamilies(this.motion) : [];
+    const familyDefs = A ? A.FAMILIES.concat(motionFamilies) : motionFamilies;
+    const families = A ? [{ label: 'All', style: chip(!s.family), on: () => this.setState({ family: '' }) }].concat(
+      familyDefs.filter((f) => famCount[f.id]).map((f) => ({ label: f.label, style: chip(s.family === f.id), on: () => this.setState({ family: f.id }) }))) : [];
+
+    const loading = Object.values(s.packStatus).filter((v) => v === 'loading').length;
+    const failed = Object.entries(s.packStatus).filter(([, v]) => v === 'fail').map(([k]) => k.split('/')[1]);
+    const status = s.err ? '' : s.batching ? (s.batchMsg || 'batch') + ' …' : s.auditing ? (s.auditMsg || 'audit') + ' …' : !s.ready ? 'starting' : loading ? 'loading ' + loading : s.motionStatus === 'fail' ? 'KFB Motion unavailable · ' + s.motionError : String(s.motionStatus).startsWith('loading') ? 'KFB Motion ' + s.motionStatus : failed.length ? failed.length + ' pack' + (failed.length > 1 ? 's' : '') + ' unavailable' : '';
+
+    const b = cur ? this.binding(cur.clip) : null, rm = cur ? this.rootMotion(cur.clip) : null;
+    const pet0 = this.petEntry(s.charId);
+    const c0 = pet0 ? { label: pet0.name || pet0.id, month: 'kfb.pets/1 \u00b7 ' + (pet0.module || '') + '/' + (pet0.variant || '') } : (A ? A.CHARACTERS.find((x) => x.id === s.charId) : null);
+    const dataRows = [];
+    if (this.carlHandle && this.carlMeasure && pet0) {
+      const cm = this.carlMeasure, bnd = cur ? this.binding(cur.clip) : null;
+      dataRows.push({ k: 'Carl \u00b7 Klasse', v: 'statisches Netz \u00b7 ' + cm.bones + ' Knochen \u00b7 ' + cm.islands + ' Inseln (' + cm.hidden + ' verborgen) \u00b7 H\u00f6he ' + cm.height + ' u' });
+      dataRows.push({ k: 'Carl \u00b7 KayKit-Clips', v: bnd ? bnd.bound + ' von ' + bnd.total + ' Spuren binden \u2014 ' + (bnd.bound ? 'teilweise' : 'KEINE: Skelett-Clips bewegen diese Klasse nicht') : 'kein Clip gew\u00e4hlt' });
+      dataRows.push({ k: 'Carl \u00b7 passende Bewegung', v: 'Ganzk\u00f6rper-Prozedural wie die Cube-Pets (Vertrag motion.motions: idle \u00b7 hop \u00b7 powerJump \u00b7 locomotion \u00b7 celebrate \u00b7 reactPos/Neg) \u2014 Studio-Motion-Reiter, nicht KayKit' });
+      dataRows.push({ k: 'Carl \u00b7 Gesicht', v: 'Augen ' + (this.carlHandle.face.eyeRig ? 'ja' : 'nein') + ' \u00b7 Braue ' + ((pet0.brow || {}).mod || 'drawn') + ' \u00b7 Nase ' + ((pet0.nose || {}).mod || 'drawn') + ' \u00b7 Mund ' + ((pet0.mouth || {}).set || 'male') });
+    }
+    { const F = this.faceOf(); if (F.who) dataRows.push({ k: 'Gesicht \u00b7 Bedienung', v: (F.who === 'graft' ? 'Graft' : 'Carl') + ' \u00b7 Miene ' + s.emote + ' \u00b7 Sprechen ' + (s.talk ? 'an' : 'aus') + ' \u00b7 Zeigerblick ' + (s.gaze ? 'an' : 'aus') + ' \u00b7 Mienen aus ' + (this.emotes() === this.EMOTE_DEF ? 'Vorgabe (Vertrag ohne face.emotes)' : 'Vertrag face.emotes') + (F.mouth ? ' \u00b7 Mundsatz ' + (F.mouth.setId || F.mouth._setId || '?') : ' \u00b7 kein Mund') }); }
+    if (this.graftHandle && this.graftHandle.poseWins) dataRows.push({ k: 'Graft \u00b7 Pose \u00fcber Clip', v: (this.graftHandle.poseWins() ? 'JA \u2014 die Pose schreibt nach dem Clip in die Knochen' : 'nein \u2014 der Clip besitzt die Knochen') + ' \u00b7 Regel ' + this.graftHandle.poseOverClip + ' \u00b7 Eintrag ' + (this.graftHandle.report.pose ? this.graftHandle.report.pose.preset + (this.graftHandle.report.pose.on ? ' an' : ' aus') : 'keine Pose') });
+    const GR = this.graftHandle && this.graftHandle.report;
+    if (GR && pet0) {
+      const t = GR.tint || {};
+      dataRows.push({ k: 'Graft \u00b7 Haut', v: t.mode ? t.mode + ' \u00b7 ' + (t.skinTris || 0) + ' Dreiecke Haut / ' + (t.clothTris || 0) + ' Kleidung \u00b7 ' + (t.rejected || 0) + ' Manschette zur\u00fcck \u00b7 Ton ' + (t.target || '?') : 'kein Bericht' });
+      if (GR.handTone) dataRows.push({ k: 'Graft \u00b7 Handton', v: GR.handTone + (GR.zones && GR.zones.face ? ' \u2192 Gesicht ' + GR.zones.face : '') });
+      dataRows.push({ k: 'Graft \u00b7 Auge', v: 'dx ' + GR.eye.anchor.dx + ' dy ' + GR.eye.anchor.dy + ' ring ' + GR.eye.anchor.ring + ' \u00b7 ' + GR.eye.pupilStyle + ' \u00b7 Braue ' + GR.brow + ' \u00b7 Nase ' + GR.nose });
+      if (GR.mat) { const zs = Array.isArray(GR.mat.zones) ? GR.mat.zones : []; const set = zs.filter((z) => z.hex); dataRows.push({ k: 'Graft \u00b7 Materialzonen', v: GR.mat.status === 'OK' ? zs.length + ' Zonen \u00b7 ' + set.length + ' gesetzt' + (set.length ? ': ' + set.map((z) => z.id + ' ' + z.hex).join(' \u00b7 ') : '') : String(GR.mat.status) }); }
+      if (GR.weapon && GR.weapon.status === 'OK') {
+        const W = GR.weapon, drift = cur ? this.slotDrift(cur.clip, /l$/i.test(W.bone) ? 'l' : 'r') : null;
+        dataRows.push({ k: 'Graft \u00b7 Waffe', v: 'Anker ' + W.anchor + ' \u2192 ' + W.mountedOn + (W.anchor === 'hand' ? ' (Slot ' + W.bone + ' fixiert)' : '') + ' \u00b7 Unterarm ' + W.forearm + ' \u00b7 Lauf ' + W.barrelAxis + ' ' + W.barrelLength });
+        if (W.class) dataRows.push({ k: 'Graft \u00b7 Waffenklasse', v: W.classLabel + ' (' + W.class + ') \u00b7 Slot ' + W.hand + (W.handOverride ? ' \u2014 Eintrag \u00fcberschreibt Klassenvorgabe ' + W.classHand : '') + ' \u00b7 Clips /' + W.clipFamily + '/' + (W.classMeasured ? '' : ' (geliehen, KayKit hat keine eigenen)') + ' \u00b7 FX ' + W.fx });
+        dataRows.push({ k: 'Graft \u00b7 M\u00fcndung', v: 'Halter-lokal ' + W.muzzleLocal.join(' / ') + ' \u00b7 Knoten \u201eKFB muzzle\u201c am Waffenhalter (FX-Anker)' });
+        if (this.clip && this.FX) { const F = this.fireOf(this.clip); dataRows.push({ k: 'FX \u00b7 Ausl\u00f6ser', v: (F.times.length ? F.times.length + '\u00d7 bei ' + F.times.map((t) => (t * 1000).toFixed(0)).join(' / ') + ' ms \u00b7 ' : '') + F.how + ' \u00b7 Art ' + (W.fx || 'muzzle') }); }
+        if (drift != null) dataRows.push({ k: 'Graft \u00b7 Slot-Drift', v: drift + '\u00b0 dreht ' + W.bone + ' in diesem Clip gegen die Hand (KayKit-Autoren-Bewegung; Ranged-Clips 68\u201385\u00b0 = Zielrichtung)' });
+      } else dataRows.push({ k: 'Graft \u00b7 Waffe', v: GR.weapon ? GR.weapon.reason : 'aus' });
+      if (GR.pose) dataRows.push({ k: 'Graft \u00b7 Pose', v: (pet0.pose && pet0.pose.preset) || '?' });
+      if (GR.notes && GR.notes.length) dataRows.push({ k: 'Graft \u00b7 Hinweise', v: GR.notes.join(' \u00b7 ') });
+    }
+    if (cur) {
+      dataRows.push({ k: 'Clip', v: cur.clip.name });
+      dataRows.push({ k: 'Pack', v: cur.pack === 'embedded' ? 'embedded in GLB' : 'Rig_' + cur.rig + '_' + cur.pack + '.glb' });
+      dataRows.push({ k: 'Duration', v: (cur.clip.duration * 1000).toFixed(0) + ' ms' });
+      dataRows.push({ k: 'Tracks', v: cur.clip.tracks.length + ' · bound ' + b.bound + '/' + b.total + (b.total - b.bound ? ' · unbound ' + (b.total - b.bound) : '') });
+      dataRows.push({ k: 'Root motion', v: rm.tracks ? rm.tracks + ' position tracks · max ΔXZ ' + rm.maxXZ.toFixed(3) + ' u' : 'no position tracks' });
+      if (cur.library) {
+        const mp = this.motionProfile(cur), rk = 'Rig_' + cur.rig;
+        const sem = (mp && mp.semantics) || {}, root = (mp && mp.rootTravel) || {};
+        const dist = root.travelMetersPerCycle && root.travelMetersPerCycle[rk];
+        const speed = this.ML.referenceSpeed(this.motion, cur.clip.name, cur.rig);
+        const marks = this.ML.actionMarkers(this.motion, cur.clip.name);
+        dataRows.push({ k: 'Motion · State', v: [sem.stateFamily || 'unknown', sem.gait || 'unknown'].join(' · ') });
+        dataRows.push({ k: 'Motion · Loop', v: mp && typeof mp.loop === 'boolean' ? (mp.loop ? 'yes' : 'no') : 'unknown' });
+        dataRows.push({ k: 'Motion · Direction', v: (sem.direction || 'unknown') + ' · stance ' + (sem.stance || 'unknown') });
+        dataRows.push({ k: 'Motion · Travel', v: (root.mode || 'unknown') + (Number.isFinite(dist) ? ' · ' + dist.toFixed(3) + ' m/cycle' : '') });
+        dataRows.push({ k: 'Motion · Ref speed', v: Number.isFinite(speed) ? speed.toFixed(3) + ' m/s · measured-derived' : 'unknown · not measured/applicable' });
+        dataRows.push({ k: 'Motion · Feet', v: this.ML.plantedSummary(this.motion, cur.clip.name, cur.rig) });
+        dataRows.push({ k: 'Motion · Hands', v: mp && mp.contacts && mp.contacts.hands ? mp.contacts.hands.status : 'unknown' });
+        dataRows.push({ k: 'Motion · Rate window', v: mp && mp.acceptableRateWindow ? mp.acceptableRateWindow.status : 'unknown' });
+        dataRows.push({ k: 'Motion · Markers', v: marks.length ? marks.map((m) => m.name + (m.phase != null ? ' @ ' + m.phase : '')).join(' · ') : 'unknown · no measured action marker' });
+        dataRows.push({ k: 'Motion · Evidence', v: 'AN-PROFILE-01 · ' + this.ML.SOURCE_REVISION.slice(0, 8) + ' · source clip ' + cur.clip.name });
+      }
+      if (cur.foreign) dataRows.push({ k: 'Cross-rig', v: 'Rig ' + cur.rig + ' clip on a ' + (s.rigMeasured || '?') + ' character · ' + (this.fitInfo ? 'FIT · ' + this.fitInfo.dropped + ' position tracks dropped, ' + this.fitInfo.kept + ' kept' : 'RAW · all tracks as authored') });
+    }
+    if (c0) dataRows.push({ k: 'Character', v: c0.label + ' · ' + c0.month });
+    if (s.rig) dataRows.push({ k: 'Rig', v: s.rig + (s.rigManual ? ' · manual (measured ' + s.rigMeasured + ')' : ' · measured') });
+    if (s.spans) dataRows.push({ k: 'Bone span', v: 'char ' + s.spans.char.toFixed(2) + ' · M ' + s.spans.Medium.toFixed(2) + ' · L ' + s.spans.Large.toFixed(2) });
+    if (this.charHeight) dataRows.push({ k: 'Height', v: this.charHeight.toFixed(2) + ' u' });
+    if (failed.length) dataRows.push({ k: 'Load fails', v: failed.join(', ') + ' (Rig ' + s.rig + ')' });
+    dataRows.push({ k: 'Runtime', v: 'three r' + (this.T ? this.T.version : '?') + ' · one mixer · one RAF' });
+    dataRows.push({ k: 'Source', v: cur && cur.library && this.ML ? 'KFB Motion Library · PR #' + this.ML.MOTION_LIBRARY_PR + ' + AN-PROFILE #' + this.ML.SOURCE_PR + ' @ ' + this.ML.SOURCE_REVISION.slice(0, 8) : 'kayfabizarro@' + (A && A.REVISION ? A.REVISION.slice(0, 8) + ' (pinned)' : 'main (unpinned)') + ' · KayKit Animations 1.1' });
+    if (s.audit) dataRows.push({ k: 'Audit', v: 'M ' + s.audit.Medium + ' · L ' + s.audit.Large + ' clips · ' + s.audit.chars + ' characters' + (s.audit.fails.length ? ' · fails ' + s.audit.fails.join(', ') : ' · no load failures') + ' · ' + s.audit.when.slice(0, 16).replace('T', ' ') });
+
+    const trials = Object.values(this.trialStore());
+    const curTrial = (cur && cur.foreign) ? this.xTrials[this.trialId(cur)] : null;
+    if (trials.length) dataRows.push({ k: 'Trials', v: trials.length + ' cross-rig · judged ' + trials.filter((t) => t.verdict).length });
+    if (s.batch) dataRows.push({ k: 'Batch', v: s.batch.produced + '/' + s.batch.expected + ' cells' + (s.batch.gaps ? ' · ' + s.batch.gaps + ' gap' + (s.batch.gaps > 1 ? 's' : '') : ' · no gaps') + ' · ' + s.batch.when.slice(0, 16).replace('T', ' ') });
+
+    const gp = this.galleryPage();
+    const wClass = (GR && GR.weapon && GR.weapon.status === 'OK') ? GR.weapon.class || null : null;
+    const wSide = (GR && GR.weapon && GR.weapon.status === 'OK') ? (/l$/i.test(GR.weapon.bone) ? 'l' : 'r') : null;
+    const side = (show, edge) => 'flex:0 0 190px;display:' + (show ? 'flex' : 'none') + ';flex-direction:column;background:#1d1f21;overflow-y:auto;min-height:0;'
+      + ((s.narrow || stage) ? 'position:absolute;top:0;bottom:0;' + edge + ':0;z-index:4;width:200px;box-shadow:0 8px 28px rgba(0,0,0,.45);' : 'border-' + (edge === 'left' ? 'right' : 'left') + ':1px solid #2a2d30;');
+
+    return {
+      accent, rootRef: this.rootRef, stageRef: this.stageRef, scrubRef: this.scrubRef, fillRef: this.fillRef, timeRef: this.timeRef,
+      status, charGroups, families, dataRows, q: s.q,
+      charName: c0 ? c0.label : 'Character', charDot: s.charStatus[s.charId] === 'fail' ? accent : s.charStatus[s.charId] === 'ok' ? '#7f8a5f' : '#4a4f54',
+      charBtnStyle: tool(s.showChars) + 'max-width:190px;flex:0 1 auto;min-width:0;', onToggleChars: () => this.setState((p) => ({ showChars: !p.showChars }), () => this.persistUI()),
+      dataBtnStyle: tool(s.showData), onToggleData: () => this.setState((p) => ({ showData: !p.showData }), () => this.persistUI()),
+      /* v2 · Contract-Reiter im selben Datenfeld — kein vierter Spaltenbereich, dieselbe Fläche. */
+      dataTabs: [['info', 'Data'], ['contract', 'Contract']].map(([k, l]) => ({ label: l, style: chip(s.dataTab === k), on: () => this.setState({ dataTab: k }) })),
+      isInfoTab: s.dataTab !== 'contract', isContractTab: s.dataTab === 'contract',
+      contractPetId: s.contractPetId, sessionPetIds: this.sessionPetIds(),
+      onPetIdChange: (e) => this.loadContractFor(e.target.value),
+      animRigBtns: (this.AC ? this.AC.RIGS : ['Medium', 'Large']).map((r) => ({ label: r, style: chip(s.animRig === r), on: () => this.setState({ animRig: r }) })),
+      animModeBtns: (this.AC ? this.AC.MODES : ['chain', 'full']).map((m) => ({ label: m, style: chip(s.animMode === m), on: () => this.setState({ animMode: m }) })),
+      clipMapRows: ['Idle', 'Walk', 'Run', 'Jump'].map((st) => ({ state: st, value: s.animClipMap[st] || '', placeholder: ((this.LOCO && this.LOCO.CANDIDATES[st.toLowerCase()]) || [])[0] || 'clip name', on: (e) => this.setAnimClip(st, e.target.value) })),
+      paramRows: (this.AC ? this.AC.PARAM_META : []).map(([k, label, min, max, step]) => { const v = s.animParams[k] != null ? s.animParams[k] : ((this.LOCO && this.LOCO.PARAMS[k]) || 0); return { label, min, max, step, value: v, val: (+v).toFixed(2), on: (e) => this.setAnimParam(k, parseFloat(e.target.value)) }; }),
+      ctlBtnStyle: tool(false), onSync: () => this.syncToStudio(), onExportContract: () => this.exportContract(),
+      onImportClick: () => { if (this.importFileRef.current) this.importFileRef.current.click(); },
+      onImportFile: (e) => { const f = e.target.files && e.target.files[0]; if (f) this.importContractFile(f); e.target.value = ''; },
+      onRunTest: () => this.runContractTest(),
+      hasSyncMsg: !!s.syncMsg, syncMsg: s.syncMsg,
+      hasTestRows: !!s.testRows, testRowsView: (s.testRows || []).map((r) => ({ t: r.t, got: String(r.got), mark: r.ok === null ? '–' : r.ok ? '✓' : '✗', color: r.ok === null ? '#6d7075' : r.ok ? '#8fbf6a' : accent })),
+      importFileRef: this.importFileRef,
+      stripBtnStyle: tool(false), onStrip: () => this.makeStrip(),
+      batchBtnStyle: tool(!!s.batching), onBatch: () => this.runBatch(),
+      batchTitle: 'Evidence batch · Robot Two, Werewolf Wolf, Mannequin Medium and Mannequin Large × Idle, Walk, Run, Jump × Front, Side, ¾. Downloads four contact sheets to look at and one bundle to file. Runs a few minutes; the stage is busy while it does.',
+      charsPaneStyle: side(s.showChars, 'left'), dataPaneStyle: side(s.showData, 'right').replace('flex:0 0 190px', 'flex:0 0 236px').replace('width:200px', 'width:246px') + 'padding:8px 12px 14px;gap:0;',
+      rigButtons: A ? A.RIGS.map((r) => ({ label: r[0], title: 'Rig ' + r + (s.rigMeasured === r ? ' (measured)' : ''), style: 'height:26px;width:26px;background:' + (s.rig === r ? '#26292c' : 'transparent') + ';border:1px solid ' + (s.rig === r ? '#3a3e42' : '#2a2d30') + ';border-radius:3px;color:' + (s.rig === r ? '#e7e7e5' : '#83868a') + ';font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1;cursor:pointer;', on: () => this.setRig(r) })) : [],
+      modes: [['work', 'Work'], ['stage', 'Stage']].map(([k, l]) => ({ label: l, title: k === 'stage' ? 'Stage maximal — the panels still open over it' : 'Panels beside the stage', style: tool(s.mode === k), on: () => this.setState(k === 'stage' ? { mode: k, showChars: false, showData: false } : { mode: k, showChars: true }, () => this.persistUI()) })),
+      views: [{ label: 'F', title: 'Front', on: () => this.view('front') }, { label: 'S', title: 'Side', on: () => this.view('side') }, { label: '¾', title: 'Three-quarter', on: () => this.view('q34') }, { label: 'B', title: 'Back', on: () => this.view('back') }, { label: '⤢', title: 'Reframe', on: () => this.reframe() }, { label: '#', title: 'Grid', on: () => this.setState((p) => ({ grid: !p.grid }), () => this.persistUI()) }]
+        .map((v, i) => ({ label: v.label, title: v.title, style: mini(i === 5 ? s.grid : false), on: v.on })),
+      stageLabel: cur ? cur.clip.name + '  ' + (cur.clip.duration * 1000).toFixed(0) + ' ms' : '',
+      showError: !!s.err, errorText: s.err,
+      clipName: cur ? cur.clip.name : (s.ready ? 'No clip' : ''),
+      transport: [
+        { label: '⟲', title: 'Restart', on: () => this.restart(), on2: 0 },
+        { label: '‹', title: 'Step −1/30 s  ( , )', on: () => this.step(-1) },
+        { label: s.playing ? '❙❙' : '▶', title: 'Play / pause  (Space)', on: () => this.togglePlay(), wide: 1 },
+        { label: '›', title: 'Step +1/30 s  ( . )', on: () => this.step(1) },
+        { label: s.speed + '×', title: 'Playback speed', on: () => this.cycleSpeed(), wide: 1 },
+        { label: 'Loop', title: 'Loop on / off', on: () => this.toggleLoop(), act: s.loop, wide: 1 },
+      ].map((t) => ({ label: t.label, title: t.title, on: t.on, style: 'height:26px;' + (t.wide ? 'padding:0 10px;' : 'width:26px;padding:0;') + 'display:flex;align-items:center;justify-content:center;background:' + (t.act ? '#26292c' : 'transparent') + ';border:1px solid ' + (t.act ? '#3a3e42' : '#2a2d30') + ';border-radius:3px;color:' + (t.act === false ? '#83868a' : '#e7e7e5') + ';font-size:11px;line-height:1;cursor:pointer;' })),
+      locoRef: this.locoRef,
+      locoBtnStyle: tool(!!s.loco), locoTitle: 'Locomotion test stage · W A S D move, Q E turn, Shift run, Space jump (hold for more air). Lab values, not gameplay tuning.',
+      onToggleLoco: () => (s.loco ? this.disableLoco() : this.enableLoco()),
+      locoRowStyle: 'display:' + (s.loco ? 'flex' : 'none') + ';align-items:center;gap:6px;min-width:0;',
+      locoChips: s.loco ? [
+        { label: 'Chain', title: 'Jump_Start → Jump_Idle → Jump_Land', on: () => { this.setState({ jumpMode: 'chain' }); if (this.locoCtl) this.locoCtl.setMode('chain'); }, act: s.jumpMode === 'chain' },
+        { label: 'Full', title: 'Jump_Full_Short, held Space swaps to Jump_Full_Long', on: () => { this.setState({ jumpMode: 'full' }); if (this.locoCtl) this.locoCtl.setMode('full'); }, act: s.jumpMode === 'full' },
+        { label: 'Trail', title: 'Draw the travelled path on the ground', on: () => this.setState((p) => { if (p.trail) this.trailClear(); return { trail: !p.trail }; }), act: s.trail },
+        { label: 'Follow', title: 'Camera follows the character, orbit stays free', on: () => this.setState((p) => ({ follow: !p.follow })), act: s.follow },
+        { label: 'Reset', title: 'Back to origin', on: () => { if (this.locoCtl) this.locoCtl.reset(); this.trailClear(); }, act: false },
+      ].map((b) => ({ label: b.label, title: b.title, on: b.on, style: chip(b.act) })) : [],
+      locoHint: s.loco ? (s.locoMsg ? s.locoMsg : [
+        (s.locoXrig && s.locoXrig.length) ? 'cross-rig: ' + s.locoXrig.join(', ') : '',
+        (s.locoMissing && s.locoMissing.length) ? 'not in Rig ' + s.rig + ': ' + s.locoMissing.join(', ') : '',
+      ].filter(Boolean).join(' · ') || 'W A S D · Q E · Shift · Space') : '',
+      onScrub: (e) => { if (!this.clip) return; if (s.playing) this.setState({ playing: false }); this.setTime(parseFloat(e.target.value) * this.clip.duration); },
+      onSearch: (e) => this.setState({ q: e.target.value, gPage: 0 }),
+      /* v3 · Inventar */
+      onTalk: () => this.setState((p) => ({ talk: !p.talk }), () => this.applyFace()), talkBtnStyle: tool(s.talk),
+      onGaze: () => this.setState((p) => ({ gaze: !p.gaze }), () => this.applyFace()), gazeBtnStyle: tool(s.gaze),
+      emoteBtns: Object.keys(this.emotes()).map((id) => ({ label: id === 'neutral' ? '\u00b7' : id.slice(0, 3), title: 'Miene \u201e' + id + '\u201c \u2014 Lider, Slant, Pupille (EyeRig) und Ruhe-Mund (PetMouth restMap), wie im Studio', on: () => this.setState({ emote: id }, () => this.applyFace()), style: tool(s.emote === id) + 'padding:0 7px;text-transform:lowercase;' })),
+      onToggleFx: () => this.setState((p) => ({ fx: !p.fx })), fxBtnStyle: tool(s.fx),
+      onToggleGallery: () => this.toggleGallery(), galleryBtnStyle: tool(s.gallery) + 'padding:0 7px;',
+      galleryStyle: 'position:absolute;inset:0;z-index:3;display:' + (s.gallery ? 'flex' : 'none') + ';flex-direction:column;background:#17181a;',
+      galleryInfo: gp.vis.length + ' Clip' + (gp.vis.length === 1 ? '' : 's') + (s.family ? ' \u00b7 ' + s.family : '') + (s.q ? ' \u00b7 \u201e' + s.q + '\u201c' : '') + ' \u00b7 Seite ' + (gp.page + 1) + '/' + gp.pages + (wClass ? ' \u00b7 Waffenklasse ' + wClass + ' markiert' : ''),
+      gNavStyle: mini(false).replace('rgba(23,24,26,.55)', 'transparent') + 'border:1px solid #2a2d30;height:24px;min-width:24px;',
+      onGPrev: () => this.setState((p) => ({ gPage: Math.max(0, Math.min(p.gPage, gp.pages - 1) - 1) })),
+      onGNext: () => this.setState((p) => ({ gPage: Math.min(gp.pages - 1, p.gPage + 1) })),
+      galleryEmpty: s.gallery && !gp.vis.length,
+      galleryCells: s.gallery ? gp.items.map((k) => {
+        const kc = (this.GM && this.GM.clipClass) ? this.GM.clipClass(k.clip.name) : null;
+        const dr = wSide ? this.driftOf(k.clip, wSide) : null;
+        const mp = this.motionProfile(k);
+        const ms = k.library && this.ML ? this.ML.referenceSpeed(this.motion, k.clip.name, k.rig) : null;
+        return {
+          key: k.key, label: k.clip.name, on: () => this.selectClip(k.key),
+          title: k.pack + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms'
+            + (mp ? ' · ' + mp.semantics.stateFamily + ' · ' + mp.rootTravel.mode : '')
+            + (kc ? ' · Klasse ' + kc : '') + (k.foreign ? ' · cross-rig Rig ' + k.rig : ''),
+          sub: k.library
+            ? ['KFB Motion', mp && mp.semantics.stateFamily, mp && mp.semantics.direction, Number.isFinite(ms) ? ms.toFixed(2) + ' m/s' : 'speed unknown'].filter(Boolean).join(' · ')
+            : (k.pack === 'embedded' ? 'eigen' : k.pack) + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms' + (dr != null ? ' · Slot ' + wSide.toUpperCase() + ' ' + dr + '°' : ''),
+          dotStyle: (wClass && kc === wClass) ? 'width:6px;height:6px;border-radius:50%;background:' + accent + ';flex:0 0 auto;' : (k.foreign ? 'width:6px;height:6px;border-radius:50%;border:1px solid ' + accent + ';flex:0 0 auto;' : 'display:none;'),
+          style: 'display:flex;flex-direction:column;gap:4px;padding:5px;background:' + (k.key === s.clipKey ? '#26292c' : '#1d1f21') + ';border:1px solid ' + (k.key === s.clipKey ? accent : '#2a2d30') + ';border-radius:4px;cursor:pointer;text-align:left;min-width:0;font-family:inherit;'
+        };
+      }) : [],
+      filterRowStyle: 'display:' + (stage ? 'none' : 'flex') + ';align-items:center;gap:6px;min-width:0;',
+      clipChips: vis.map((k) => {
+        const mp = this.motionProfile(k);
+        return {
+          label: k.clip.name,
+          title: k.pack + ' · ' + (k.clip.duration * 1000).toFixed(0) + ' ms · ' + k.clip.tracks.length + ' tracks'
+            + (mp ? ' · ' + mp.semantics.stateFamily + ' · ' + mp.rootTravel.mode : '')
+            + (k.foreign ? ' · cross-rig: Rig ' + k.rig + ' clip on a ' + s.rig + ' character' : ''),
+          dotStyle: k.library ? 'width:4px;height:4px;border-radius:50%;background:#8fbf6a;flex:0 0 auto;' : (k.foreign ? 'width:4px;height:4px;border-radius:50%;background:' + accent + ';flex:0 0 auto;' : 'display:none;'),
+          style: clipChip(k.key === s.clipKey),
+          on: () => this.selectClip(k.key)
+        };
+      }),
+      onXrig: () => this.toggleXrig(),
+      xrigTitle: 'Cross-rig · offer clips from both rig families and mark the foreign ones with a dot. Tests whether a Medium jump carries a Large character. Native clips always win; foreign clips only fill gaps.',
+      xrigStyle: 'height:26px;padding:0 7px;background:' + (s.xrig ? '#26292c' : 'transparent') + ';border:1px solid ' + (s.xrig ? accent : '#2a2d30') + ';border-radius:3px;color:' + (s.xrig ? '#e7e7e5' : '#83868a') + ';font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1;cursor:pointer;',
+      petsLabel: s.petsLabel, petFileRef: this.petFileRef,
+      petsBtnStyle: 'height:22px;padding:0 8px;background:transparent;border:1px solid #2a2d30;border-radius:3px;color:#e7e7e5;font-family:inherit;font-size:11px;cursor:pointer;flex:0 0 auto;',
+      onPetsClick: () => { if (this.petFileRef.current) this.petFileRef.current.click(); },
+      onPetsFile: (e) => { const f = e.target.files && e.target.files[0]; if (f) this.loadPetsFile(f); e.target.value = ''; },
+      weaponBtns: (this.graftHandle && this.graftHandle.weapon) ? [['slot', 'Slot', 'Waffe am animierten handslot (KayKit-Absicht: in Ranged-Clips ist er die Zielrichtung)'], ['hand', 'Hand', 'Waffe starr an der Faust; Slot auf Bindepose fixiert']].map(([k, l, t]) => { const eff = s.weaponAnchor || (this.graftHandle.weapon.anchor); return { label: l, title: t, style: 'height:26px;padding:0 7px;background:' + (eff === k ? '#26292c' : 'transparent') + ';border:1px solid ' + (eff === k ? accent : '#2a2d30') + ';border-radius:3px;color:' + (eff === k ? '#e7e7e5' : '#83868a') + ';font-family:inherit;font-size:11px;cursor:pointer;', on: () => this.setWeaponAnchor(k) }; }) : [],
+      onXfit: () => this.setXfit(),
+      xfitTitle: 'FIT · drop the position tracks of a foreign clip and keep its rotations. Both rigs share bone names but not bone offsets, so raw position tracks pull the skeleton into the other rig\u2019s proportions. Off = RAW, as authored.',
+      xfitStyle: 'display:' + (s.xrig ? 'block' : 'none') + ';height:26px;padding:0 7px;background:' + (s.xfit ? '#26292c' : 'transparent') + ';border:1px solid ' + (s.xfit ? accent : '#2a2d30') + ';border-radius:3px;color:' + (s.xfit ? '#e7e7e5' : '#83868a') + ';font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1;cursor:pointer;',
+      hasTrial: !!curTrial,
+      verdicts: curTrial ? [['holds', 'Holds', 'Usable as is'], ['limited', 'Limited', 'Usable with rework'], ['fails', 'Fails', 'Not usable']]
+        .map(([v, l, t]) => ({ label: l, title: t, style: chip(curTrial.verdict === v), on: () => this.setVerdict(v) })) : [],
+      hasTrials: !!trials.length, trialsName: 'CrossRigTrials.json',
+      trialsHref: trials.length ? 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.trialsDoc(), null, 2)) : '',
+      onSearchKey: (e) => { if (e.key !== 'Enter') return; const l = this.visibleClips(); if (l[0]) this.selectClip(l[0].key); e.target.blur(); },
+      auditBtnStyle: tool(!!s.auditing), onAudit: () => this.auditAll(),
+      auditTitle: 'Audit every pack of both rigs and export inventory, rig compatibility and the markdown report',
+      noClips: !vis.length, noClipsText: !s.ready ? '' : loading ? 'loading clips' : s.q ? 'nothing matches “' + s.q + '”' : 'no clips',
+      hasStrip: !!this.stripUrl, stripUrl: this.stripUrl, stripName: this.stripName,
+      stripImg: this.stripUrl ? React.createElement('img', { src: this.stripUrl, alt: 'Frame strip', style: { width: '100%', display: 'block', border: '1px solid #2a2d30' } }) : null,
+    };
+  }
+}
+</script>
+</body>
+</html>
