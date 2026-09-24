@@ -1,3 +1,27 @@
+## 2026-09-24 · Character / Resident production workflow
+
+- added `CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md`;
+- made Resident Atlas / ToolBox the default everyday authoring surface for static pose, prop fit, scene composition and reusable Resident modules;
+- restricted Blender MCP to genuine technical-boundary work: new time-based motion, retarget, multi-frame repair, skeleton/weights/topology, custom head/body derivatives and bake/export;
+- defined a browser Pose → Blender handoff so Georg can author a target/contact pose in Resident Atlas and Blender only performs the missing time-based correction;
+- confirmed Resident Atlas S7 already provides object G/R/S, Drop, bone rotation, puppet/IK handles, foot pinning, Studio patches and Resident-bundle import/export;
+- protected the current 33-action Rig_Medium/Rig_Large Motion Library from needless per-Resident retarget duplication;
+- converted the preferred KayfaBizarros product route into a baseplate-free Resident Performance Module with song/action/pose refs rather than a monolithic stage GLB;
+- drummer route is now browser reference-pose first; automatic arm-to-drum solving remains rejected;
+- generic “rerig Legacy” is rejected as a task because Rig_Legacy + native clips already exist; Blender only handles a concrete custom derivative/missing external motion/geometry repair;
+- prepared a high-value future Blender Actor Family Factory for Frizzle-Orc Medium/Large/Legacy while preserving destination rigs;
+- exact Frizzle-Orc 3 Rig-Warp, Musknacker and blank Legacy head/accessory sources remain honestly SOURCE_REQUIRED until pinned;
+- added five copy-ready jobs:
+  - `RESIDENT-BAND-MODULE-01` READY
+  - `POSE-TO-BLENDER-01` READY
+  - `BLENDER-ACTOR-FAMILY-01` HOLD
+  - `BLENDER-MOTION-02` HOLD
+  - `LEGACY-CUSTOM-ACTOR-01` HOLD
+- catalog now **13 strands / 78 jobs / 35 READY / 43 HOLD**;
+- architecture/source validation now **134/134 PASS**;
+- current RKIT/track Blender authoring is explicitly not interrupted by this workflow;
+- no runtime, public Hub, Cloudflare Live or merge state changed.
+
 ## 2026-09-24 · P2 Skills / Runtime Contracts census and consolidation route
 
 - added `SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md` as the P2 donor-first census/plan for the mixed `skills/` tree;
