@@ -135,3 +135,48 @@ Do not claim portable PASS until that workflow is green.
 Correct next action:
 run/confirm the portable browser QA, then give Georg this exact bundled V2 HTML for in-chat review.
 No screenshots and no renderer rewrite are required for the human review path.
+
+## CURRENT AFTER TUNE ONCE · 2026-09-24
+
+- Human verdict on unchanged V2: **TUNE ONCE**.
+- Final tuned runtime head:
+  `75b3c460ac37aac57cb5d9e96260517c5b4cf68d`
+- Final browser run:
+  `35945185715` · **29/29 PASS** · **3/3 WebGL2** · **0 page/console errors**
+- Artifact:
+  `10786850367`
+- Digest:
+  `sha256:716bfcab9dc6f4ed0180e0fd148b7a1494efca796bbe49746de762b0f8a900b0`
+
+Four tune points implemented, Elastic only:
+1. doors/windows use final bowed-shell surface frame and sit flush/inset;
+2. shadow setup uses tight fit + `bias=0` + `normalBias=.04`;
+3. road junctions close with same-colour asphalt patches at real shared OSM node IDs; no curb/path junction discs;
+4. roofs use a small uniform overhang from the final wall-top outline.
+
+Unchanged:
+- V2 form grammar;
+- `KFB_WONKY_90S_CLAY_V1`;
+- OSM source/collision truth;
+- comparison panels;
+- Clean / Cartoon / Grotesque remain switchable and browser-booted unchanged.
+
+Review wrapper:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+Publication source:
+- `cloudflare-live` wrapper base pin = `75b3c460…`
+- wrapper commit = `96d1e75796e051ec6aa91dc26d25c01aafbd4ea3`
+- Hub update = `de20e4cb8ddc3bf146d8e289251b145847dddc23`
+
+**PUBLIC_VERIFIED is not claimed by this chat** because the current tool cannot retrieve `kayfabizarro.pages.dev`. Georg's direct real-Chrome open is the current visual/public gate.
+
+### Exactly one next gate
+
+**GEORG HUMAN REVIEW · TUNED HÜRTH 01 V2**
+
+Decision:
+`ACCEPT / REJECT`
+
+After ACCEPT only:
+continue `LOOK_COMPOSITION_01_2026-09-24.md` (LC-01).
