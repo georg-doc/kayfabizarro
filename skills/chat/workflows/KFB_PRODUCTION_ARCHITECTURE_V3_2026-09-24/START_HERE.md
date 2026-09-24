@@ -6,6 +6,16 @@ Owner: Georg / KFB
 Architecture steward: **KFB Web Architecture lane**  
 Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 
+## Complete production strands
+
+For the full self-service production route, read:
+- `PRODUCTION_STRANDS.md` — complete ToolBox, Animation/Residents, WorldBuilder/God Mode and Racer→World capability chains;
+- `STRAND_BRIEFINGS.md` — copy-ready executor prompts for every prepared milestone, including future WAITING jobs;
+- `INPUT_LOCKS.json` — current source/head locks;
+- `HUB_BRIEFING_CATALOG.json` — machine-readable strands and READY/HOLD cards.
+
+A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
+
 ## Purpose
 
 KFB production must optimize for **usable artifacts per unit of human/agent budget**, not for maximum audit material per implementation step.
