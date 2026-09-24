@@ -104,3 +104,37 @@ Georg visual review of the **actual v2 3D translation**. Blender-MCP generalizat
 
 ### NEXT GATE
 Recover/show the actual tested V2 output for Georg review. No new substitute renderer.
+
+## 2026-09-24 · HÜRTH 01 · TUNE ONCE
+
+### HUMAN INPUT
+- unchanged V2 @`0c59e92d` reviewed in real Chrome;
+- verdict: **TUNE ONCE**;
+- four bounded targets: bowed-wall details, shadow banding, road-junction wedges, roof overhang.
+
+### IMPLEMENTED
+- facade details use final bowed-shell surface position + tangent/vertical/normal basis;
+- Elastic shadow setup uses tight fit, `bias=0`, `normalBias=.04`;
+- same-colour asphalt patches close real shared-OSM-node road seams;
+- final wall-top ring receives a small bounded roof overhang.
+
+### SELF-REVIEW REPAIR
+First junction-patch integration also created pale curb/path discs. The QA image exposed that immediately; those discs were removed. Final candidate retains only asphalt junction patches.
+
+### TESTED RESULT
+- final head: `75b3c460ac37aac57cb5d9e96260517c5b4cf68d`;
+- run: `35945185715`;
+- **29/29 PASS**;
+- **3/3 WebGL2**;
+- **0 page/console errors**;
+- artifact `10786850367`;
+- digest `sha256:716bfcab9dc6f4ed0180e0fd148b7a1494efca796bbe49746de762b0f8a900b0`;
+- CLEAN / CARTOON / GROTESQUE still boot unchanged.
+
+### PUBLICATION
+- wrapper on `cloudflare-live` pins `75b3c460…`;
+- direct review route unchanged: `https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`;
+- public retrieval unavailable from current chat tool, so no false `PUBLIC_VERIFIED` claim.
+
+### NEXT GATE
+Georg reviews tuned V2 and returns **ACCEPT / REJECT**. LC-01 waits for ACCEPT.
