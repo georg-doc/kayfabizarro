@@ -1816,3 +1816,221 @@ A waiting card is valuable because Georg can already see the complete production
 > - what is purely visual and therefore safe to keep;
 > - what must still wait for WORLD-ZONE-BAKE-01;
 > - exactly one next integration gate.
+
+
+---
+
+## NPC-CARD-SPEC-01 · Resident Card Speculation Scene
+
+**Executor:** Claude Design
+
+**Execution profile:** `CLAUDE_DESIGN_STANDARD` · Claude Design · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD** · secondary only if needed: `WEB_STANDARD` for exact source resolution / integration checks.
+
+**Outcome:** two current KFB Residents encounter one real KFB Card and speculate about it from their own worldview using existing mouth/gaze/bubble/ChatterBox owners — as a reusable Resident scene, not a new Podcast runtime.
+
+> @GitHub @Dropbox
+> Read KFB Production Architecture v3, current Town/NPC-Life strand, current Resident Scene rules, current ChatterBox/Triplet sources, and the recovered Cube Pet Podcast v5 donor.
+>
+> This is a **small MVP / Design Shop**, not “Pet Podcast v6”.
+>
+> ### Donor hierarchy
+>
+> Use the current **KFB Pet Podcast v5** as the presentation/choreography donor. It is the active documented fork of v4.
+>
+> Relevant v5 donor behavior:
+> - two-presenter composition;
+> - one clear shared Card/media object;
+> - gaze ownership through PetFace impulses rather than competing direct rig writes;
+> - speaker turns / transcript timing;
+> - voice/talk timing;
+> - existing speech-bubble donor family;
+> - role/persona seams;
+> - card/reaction/commentary seams.
+>
+> Preserve only useful mechanisms. Do not copy its whole floor/camera/game runtime into the new scene.
+>
+> Current source references include:
+> - Dropbox: `/CLAUDE/KFB Pet SpinballCast/KFB Pet Podcast v5/podcast-v5_2026-08-25/`
+> - v5 scene model: `docs/MODELL_szene_v5.md`
+> - v4 scene model remains donor history for Card / Pet-ground / Gutter relationships
+> - GitHub current donor audit: `skills/chat/backlog/LEGACY_DONOR_RECOVERY_2026-09-13.md`
+> - Town/ChatterBox sources: `skills/chat/town/LIVING_KFB_TOWN.md` and `skills/chat/workflows/KFB_WORLD_ONBOARDING_CHATTERBOX_V1_2026-09-19.md`
+>
+> ### Actors
+>
+> Use two **real current actors**.
+>
+> **Actor A · “FrizzleBobrick”**
+>
+> Georg wants the actor he currently refers to as **FrizzleBobrick**, because it already has a mouth/talk setup.
+>
+> Before integration:
+> - resolve the exact source/technical actor id;
+> - show that exact source actor in isolation;
+> - show its current mouth/talk owner in isolation.
+>
+> Do **not** silently substitute:
+> - FrizzleBob Driver Graft;
+> - legacy Arena FrizzleBob;
+> - canonical CubePet Bunny;
+> merely because the name sounds similar.
+>
+> If the exact FrizzleBobrick source cannot be resolved, stop that actor lane as `SOURCE_REQUIRED` rather than inventing it.
+>
+> **Actor B · GothGirl**
+>
+> Use the current real GothGirl source/profile.
+>
+> Current useful donor:
+> `tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json`
+>
+> It already records a current mouth source based on `FrizzelBob-Mouth_01` / viseme-compatible talk presentation.
+>
+> Reuse the current GothGirl face/head cleanup and mouth owner. Do not resurrect the original painted/source mouth underneath the KFB mouth.
+>
+> ### Card
+>
+> Use one **real current KFB Card** through the current Card/PDF/CardBuilder owner.
+>
+> Do not:
+> - use a mock rectangle;
+> - screenshot a fake card into the scene;
+> - build another card renderer.
+>
+> The Card should read as an object/event that has appeared in their environment and is initially unexplained.
+>
+> A lightweight floating/standing/placed Card presentation is sufficient for this MVP.
+>
+> ### Scene grammar
+>
+> This is the reusable encounter:
+>
+> ```
+> Card appears / is noticed
+> → both Residents orient attention toward it
+> → Resident A observes/interprets
+> → Resident B interprets the same Card differently
+> → A counters/reframes
+> → short pause / reaction
+> → scene settles back to idle while Card remains inspectable
+> ```
+>
+> The humor/meaning should come from **different worldviews applied to the same evidence**, not generic AI banter.
+>
+> ### ChatterBox / Triplet rule
+>
+> Reuse the current KFB semantic Triplet / mismatch / closure grammar.
+>
+> Each Resident gets:
+> - one persona/worldview ref;
+> - one small deterministic Triplet pool;
+> - one current Card/context input.
+>
+> For the first MVP, deterministic curated/fixture lines are enough.
+>
+> Do **not** require a live LLM call.
+> Do **not** create a new dialogue tree.
+> Do **not** create a new memory system.
+>
+> Suggested semantic beat per speaker:
+>
+> ```
+> observation
+> → worldview interpretation
+> → implication / counter
+> ```
+>
+> The final closure should remain partly with the player/viewer.
+>
+> ### Mouth / voice / bubbles / gaze
+>
+> Reuse existing owners:
+>
+> - mouth/viseme → current actor mouth owner;
+> - gaze → current EyeRig/PetFace owner;
+> - speech bubble → current KFB bubble owner;
+> - voice/media timing → existing voice/talk seam;
+> - idle/body motion → current Motion/Resident owner.
+>
+> No actor may get a second mouth, EyeRig, mixer or speech-bubble runtime inside this scene.
+>
+> Mouth animation can be a simple existing talk/viseme preview in the first MVP. Perfect phoneme alignment is not required.
+>
+> ### Resident Scene output
+>
+> The result must be a **thin reusable Resident Scene recipe**, not a proprietary app.
+>
+> Store/reference only:
+> - actor ids/profile refs;
+> - local transforms;
+> - Card ref;
+> - persona/Triplet refs;
+> - encounter beat recipe;
+> - existing mouth/voice/bubble/gaze refs;
+> - optional idle/action refs;
+> - camera/staging recipe if needed.
+>
+> The host world/Town/ToolBox supplies renderer, scene, persistence and world placement.
+>
+> The same scene recipe should later be placeable in:
+> - KFB Town;
+> - WorldBuilder;
+> - Card Zone;
+> - Tavern/street/interior;
+> - Hero-shot / Afterglow replay context.
+>
+> ### Visual direction
+>
+> Preserve the appealing **Pet Podcast “two characters + one mysterious Card” readability**, but adapt it into a world/resident vignette rather than reproducing the whole Podcast UI.
+>
+> Keep:
+> - clear triangle of attention: Resident A ↔ Card ↔ Resident B;
+> - readable faces/mouths;
+> - strong speaker turn;
+> - card always visually legible;
+> - restrained bubbles/transcript so the characters remain visible.
+>
+> Avoid:
+> - dashboard chrome;
+> - generic podcast microphones unless source/context calls for them;
+> - another transcript system if normal speech bubbles communicate the beat better;
+> - custom stage/baseplate that prevents placement in the world.
+>
+> ### First direct review
+>
+> One short loop, approximately 15–30 seconds:
+>
+> 1. both actors idle;
+> 2. Card becomes salient;
+> 3. gaze shifts;
+> 4. A speaks;
+> 5. B reacts/speaks;
+> 6. A short counter/reframe;
+> 7. both settle.
+>
+> Required review:
+> - real actors;
+> - real Card;
+> - mouths visibly react while speaking;
+> - gaze clearly points toward Card / counterpart;
+> - bubbles do not cover faces/Card;
+> - no duplicate actor/face/runtime owner;
+> - scene can be moved as one root and has no mandatory baseplate.
+>
+> ### Stop conditions
+>
+> Stop rather than invent if:
+> - FrizzleBobrick source identity is unresolved;
+> - GothGirl current face/mouth source cannot be reproduced;
+> - real Card renderer cannot be used;
+> - implementing the scene would require a second ChatterBox / mouth / EyeRig / renderer owner.
+>
+> ### Return
+>
+> Return:
+> - exact source refs for both actors and Card;
+> - which Pet Podcast v5 mechanisms were reused vs deliberately not reused;
+> - one directly reviewable scene artifact;
+> - the thin Resident Scene recipe;
+> - visible remaining TUNE items;
+> - exactly one next integration gate.
