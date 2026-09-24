@@ -1,6 +1,6 @@
 # RETURN · KFB Production Architecture v3 · Recovery / Flow intake / Work routing · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 82 JOBS · 39 READY / 43 HOLD · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 88 JOBS · 42 READY / 46 HOLD · UNMERGED · NO LIVE PROMOTION**
 
 ## LATEST ADDITIVE UPDATE · RES-DISCO-01
 
@@ -14,6 +14,14 @@ Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 82 JOBS · 39 READY / 43 
 - Planned Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/` — **NOT PUBLISHED**.
 - Exactly one next gate: **RES-DISCO-A · Source Cast + Motion Audition**.
 
+
+## CURRENT UPDATE · MVP focus / AI Town / direct Motion intake
+
+Five coherent MVPs now organize the active queue: WorldBuilder Mobility; Hürth→Cologne→Race; ToolBox Production+Motion Intake; FrizzleBob Body Family→Resident House; Living Residents KISS. Resident Disco is a parallel READY performance fixture.
+
+AI Town is mechanics-donor only. Compatible FBX gets a direct Animation Lab path; Blender remains the technical-exception path. ToolBox Production explicitly preserves useful Pet/FrankenStein v17+ donor capability.
+
+Current self-service catalog: **13 strands · 88 jobs · 42 READY · 46 HOLD**. All 88 IDs, prompt sections, source sets and execution profiles were revalidated after the new briefings were registered.
 
 ## CURRENT UPDATE · recovery + Flow intake + Work routing
 
@@ -50,7 +58,7 @@ No Inbox candidate was promoted merely by upload location. No merge or Live prom
 
 ## Current production map
 
-**13 primary strands · 82 copy-ready jobs · 39 READY · 43 dependency-gated HOLD**
+**13 primary strands · 88 copy-ready jobs · 42 READY · 46 dependency-gated HOLD**
 
 1. ToolBox Authoring Platform
 2. Animation & Residents
