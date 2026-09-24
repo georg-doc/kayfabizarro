@@ -1,0 +1,60 @@
+name: WORLD-ZONE-COMPILE-G1
+
+on:
+  push:
+    branches:
+      - chatgpt-web/world-zone-compile-g1-2026-09-24
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile-determinism:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: G0 source-lock precondition
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/osm-city-lab/tests/world-zone-source-lock-g0.mjs dom-zentrum-v0 | tee /tmp/WORLD_ZONE_SOURCE_LOCK_G0_REPORT.json
+
+      - name: Compile Cologne twice
+        shell: bash
+        env:
+          KFB_SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          node tools/osm-city-lab/scripts/build-world-zone.mjs dom-zentrum-v0 2026-09-24.1 --out-root /tmp/world-zone-a
+          node tools/osm-city-lab/scripts/build-world-zone.mjs dom-zentrum-v0 2026-09-24.1 --out-root /tmp/world-zone-b
+
+      - name: Contract and byte-determinism proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/osm-city-lab/tests/world-zone-bake-01.mjs \
+            /tmp/world-zone-a/cologne-dom-zentrum-v0/2026-09-24.1 \
+            /tmp/world-zone-b/cologne-dom-zentrum-v0/2026-09-24.1 \
+            | tee /tmp/WORLD_ZONE_COMPILE_G1_REPORT.json
+
+      - name: Package G1 evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/world-zone-g1-evidence
+          cp /tmp/WORLD_ZONE_SOURCE_LOCK_G0_REPORT.json /tmp/world-zone-g1-evidence/
+          cp /tmp/WORLD_ZONE_COMPILE_G1_REPORT.json /tmp/world-zone-g1-evidence/
+          cp -R /tmp/world-zone-a/cologne-dom-zentrum-v0/2026-09-24.1 /tmp/world-zone-g1-evidence/package-a
+          sha256sum /tmp/world-zone-g1-evidence/package-a/* > /tmp/world-zone-g1-evidence/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: world-zone-compile-g1-cologne
+          if-no-files-found: error
+          retention-days: 14
+          path: /tmp/world-zone-g1-evidence/
