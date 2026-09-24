@@ -1,0 +1,49 @@
+name: ToolBox KayKit Motion Lab branch proof
+on:
+  push:
+    branches:
+      - chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20
+    paths:
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/**'
+      - '.github/workflows/toolbox-kaykit-motion-lab-branch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check tools/KFB-ToolBox/kaykit-motion-lab-v1/lab.mjs
+          node --check tools/KFB-ToolBox/kaykit-motion-lab-v1/proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start branch HTTP server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-motion-http.log 2>&1 &
+          echo $! > /tmp/kfb-motion-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/tools/KFB-ToolBox/kaykit-motion-lab-v1/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-motion-http.log
+          exit 1
+      - name: Three-actor browser proof
+        run: |
+          KML_PROOF_DIR=toolbox-motion-lab-evidence           node tools/KFB-ToolBox/kaykit-motion-lab-v1/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-kaykit-motion-lab-branch-evidence
+          path: toolbox-motion-lab-evidence
+          retention-days: 14

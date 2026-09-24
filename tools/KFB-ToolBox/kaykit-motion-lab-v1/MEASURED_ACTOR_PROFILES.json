@@ -1,0 +1,207 @@
+{
+  "schema": "kfb.toolbox-measured-motion-profiles/0.1",
+  "date": "2026-09-20",
+  "status": "PUBLIC_BROWSER_87_87_PASS_HUMAN_OPEN",
+  "evidence": {
+    "workflowRun": 35480849313,
+    "job": 105998255165,
+    "checks": "87/87 PASS",
+    "artifactId": 10595139102,
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3",
+    "artifactFiles": [
+      "frizzlebob.png",
+      "gothgirl.png",
+      "blackknight.png",
+      "browser.json"
+    ],
+    "failedResources": 0,
+    "pageConsoleErrors": 0,
+    "sourceHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8"
+  },
+  "architectureFinding": {
+    "proposal": "RigMotionProfile + ActorMotionReview",
+    "evidence": [
+      "FrizzleBob Driver Graft and GothGirl bind the same 25 General+MovementBasic Rig_Medium clips.",
+      "Their Walking_A and Running_A durations/reference-speed candidates are equal because the same Rig_Medium motion library drives the same skeleton family.",
+      "Actor-normalized slip differs with actor dimensions, so visual QA/approval remains actor-specific.",
+      "Black Knight exposes a distinct Rig_Large clip inventory and kinematics; Medium timing/profile values are not reused."
+    ],
+    "promotion": "PROPOSAL_ONLY"
+  },
+  "actors": {
+    "frizzlebob": {
+      "rigFamily": "Rig_Medium",
+      "adapter": "graft",
+      "availableCount": 25,
+      "available": [
+        "Death_A",
+        "Death_A_Pose",
+        "Death_B",
+        "Death_B_Pose",
+        "Hit_A",
+        "Hit_B",
+        "Idle_A",
+        "Idle_B",
+        "Interact",
+        "PickUp",
+        "Spawn_Air",
+        "Spawn_Ground",
+        "T-Pose",
+        "Throw",
+        "Use_Item",
+        "Jump_Full_Long",
+        "Jump_Full_Short",
+        "Jump_Idle",
+        "Jump_Land",
+        "Jump_Start",
+        "Running_A",
+        "Running_B",
+        "Walking_A",
+        "Walking_B",
+        "Walking_C"
+      ],
+      "Walking_A": {
+        "duration": 1.0666667222976685,
+        "referenceSpeed": 0.610950956910957,
+        "slipBody": 0.013229703955890515,
+        "leftPrimaryContact": 0.5,
+        "rightPrimaryContact": 0.3
+      },
+      "Running_A": {
+        "duration": 0.800000011920929,
+        "referenceSpeed": 2.480274167012876,
+        "slipBody": 0.06360108910820435,
+        "leftPrimaryContact": 0.5958333333333333,
+        "rightPrimaryContact": 0.09583333333333334
+      },
+      "Running_B": "HOLD",
+      "notes": [
+        "Existing graft reader remains face/weapon owner.",
+        "No forced weapon in locomotion proof."
+      ]
+    },
+    "gothgirl": {
+      "rigFamily": "Rig_Medium",
+      "adapter": "direct",
+      "availableCount": 25,
+      "available": [
+        "Death_A",
+        "Death_A_Pose",
+        "Death_B",
+        "Death_B_Pose",
+        "Hit_A",
+        "Hit_B",
+        "Idle_A",
+        "Idle_B",
+        "Interact",
+        "PickUp",
+        "Spawn_Air",
+        "Spawn_Ground",
+        "T-Pose",
+        "Throw",
+        "Use_Item",
+        "Jump_Full_Long",
+        "Jump_Full_Short",
+        "Jump_Idle",
+        "Jump_Land",
+        "Jump_Start",
+        "Running_A",
+        "Running_B",
+        "Walking_A",
+        "Walking_B",
+        "Walking_C"
+      ],
+      "Walking_A": {
+        "duration": 1.0666667222976685,
+        "referenceSpeed": 0.610950956910957,
+        "slipBody": 0.014480536936187335,
+        "leftPrimaryContact": 0.5,
+        "rightPrimaryContact": 0.3
+      },
+      "Running_A": {
+        "duration": 0.800000011920929,
+        "referenceSpeed": 2.4802741670129302,
+        "slipBody": 0.06961440128091803,
+        "leftPrimaryContact": 0.5958333333333333,
+        "rightPrimaryContact": 0.09583333333333334
+      },
+      "Running_B": "HOLD",
+      "notes": [
+        "Motion Lab does not mount a second face owner.",
+        "Microphone remains source-pinned attachment proposal."
+      ]
+    },
+    "blackknight": {
+      "rigFamily": "Rig_Large",
+      "adapter": "direct",
+      "availableCount": 8,
+      "available": [
+        "Death_A",
+        "Death_A_Pose",
+        "Hit_A",
+        "Idle_A",
+        "Idle_B",
+        "T-Pose",
+        "Running_A",
+        "Walking_A"
+      ],
+      "unavailableConfirmed": [
+        "Walking_B",
+        "Walking_C",
+        "Running_B",
+        "Jump_Start",
+        "Jump_Idle",
+        "Jump_Land",
+        "Jump_Full_Short",
+        "Jump_Full_Long"
+      ],
+      "Walking_A": {
+        "duration": 1.0666667222976685,
+        "referenceSpeed": 1.7722505608669725,
+        "slipBody": 0.029322539764201204,
+        "leftPrimaryContact": 0.5,
+        "rightPrimaryContact": 0.3333333333333333
+      },
+      "Running_A": {
+        "duration": 1.0666667222976685,
+        "referenceSpeed": 1.8496479967365194,
+        "slipBody": 0.15269965757474385,
+        "leftPrimaryContact": 0.3125,
+        "rightPrimaryContact": 0
+      },
+      "status": "MEASURED_LARGE_CANDIDATE_HIGH_RUN_SLIP_VISUAL_REVIEW_REQUIRED",
+      "notes": [
+        "Running_A exists and binds, but automatic compensated-slip candidate is high (~15.27% actor height).",
+        "No Medium timing, jump or Running_B role is inherited.",
+        "Sword_Large and Shield_Large remain attachment proposals."
+      ]
+    }
+  },
+  "humanAcceptance": false,
+  "handoffCandidates": {
+    "Rig_Medium": {
+      "speed": 1.108,
+      "rateWindowOverlap": false,
+      "gap": 0.016,
+      "Walking_A_rate": 1.8,
+      "Running_A_rate": 0.45,
+      "status": "MEASURED_TECHNICAL_CANDIDATE_HUMAN_OPEN"
+    },
+    "Rig_Large": {
+      "speed": 1.811,
+      "rateWindowOverlap": true,
+      "Walking_A_rate": 1.02,
+      "Running_A_rate": 0.97,
+      "status": "MEASURED_TECHNICAL_CANDIDATE_HIGH_RUN_SLIP_HUMAN_OPEN"
+    }
+  },
+  "publicEvidence": {
+    "workflowRun": 35484127790,
+    "job": 106007210838,
+    "checks": "87/87 PASS",
+    "artifactId": 10596912462,
+    "artifactDigest": "sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4",
+    "failedResources": 0,
+    "pageConsoleErrors": 0
+  }
+}

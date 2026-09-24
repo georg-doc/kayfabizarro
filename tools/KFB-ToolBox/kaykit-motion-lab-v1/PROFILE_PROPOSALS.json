@@ -1,0 +1,255 @@
+{
+  "schema": "kfb.toolbox-motion-profile-proposals/0.1",
+  "date": "2026-09-20",
+  "status": "PUBLIC_VERIFIED_PROPOSAL_NOT_CONSUMER_PROMOTED",
+  "shared": {
+    "semanticStates": [
+      "Idle",
+      "Walk",
+      "Run"
+    ],
+    "transition": {
+      "locomotionPhaseSync": true,
+      "preferredFoot": "left",
+      "crossfadeSeconds": 0.12,
+      "warpDuringCrossfade": true,
+      "note": "Candidate defaults derived from KCL-M1; actor-specific visual approval required."
+    },
+    "playback": {
+      "mapping": "desiredSpeed / measuredReferenceSpeed",
+      "clamp": [
+        0.45,
+        1.8
+      ],
+      "note": "Technical candidate only. Approved ranges must be actor/clip-specific."
+    },
+    "hysteresis": {
+      "enabled": true,
+      "note": "ToolBox may author/export threshold candidates; consumers still own actual state changes."
+    },
+    "eventMarkers": {
+      "phaseRelative": true,
+      "candidateNames": [
+        "footContactLeft",
+        "footContactRight",
+        "anticipation",
+        "contact",
+        "release",
+        "impact",
+        "recoveryStart"
+      ]
+    },
+    "ownerBoundary": {
+      "toolbox": [
+        "clip fit",
+        "markers",
+        "phase profile",
+        "crossfade",
+        "playback-rate candidate",
+        "attachment profile"
+      ],
+      "consumer": [
+        "world position",
+        "velocity",
+        "physics",
+        "gameplay state",
+        "damage",
+        "ammo",
+        "jump trajectory",
+        "interaction progress"
+      ]
+    }
+  },
+  "actors": {
+    "frizzlebob": {
+      "label": "FrizzleBob · Driver Graft",
+      "rigFamily": "Rig_Medium",
+      "adapter": "mountGraft(animation:'host')",
+      "mixerRoot": "graft.figure",
+      "frameOrder": [
+        "mixer.update(dt)",
+        "graft.update(dt,camera)",
+        "render"
+      ],
+      "locomotion": {
+        "idle": "Idle_A",
+        "walkPrimary": "Walking_A",
+        "walkAlternates": [
+          "Walking_B",
+          "Walking_C"
+        ],
+        "runPrimary": "Running_A",
+        "hold": [
+          "Running_B"
+        ],
+        "notes": [
+          "Browser-proven on Driver Graft with one host mixer.",
+          "Uses measured Rig_Medium handoff candidate; actor-specific visual approval remains open.",
+          "poseOverClip=false for locomotion proof."
+        ],
+        "rigProfile": "Rig_Medium"
+      },
+      "attachment": {
+        "defaultVisible": false,
+        "owner": "existing graft reader",
+        "notes": [
+          "Do not reconstruct weapon attachment in Motion Lab.",
+          "Ranged profile is a later named slice."
+        ]
+      }
+    },
+    "gothgirl": {
+      "label": "GothGirl",
+      "rigFamily": "Rig_Medium",
+      "adapter": "direct GLB",
+      "locomotion": {
+        "idle": "Idle_A",
+        "walkPrimary": "Walking_A",
+        "walkAlternates": [
+          "Walking_B",
+          "Walking_C"
+        ],
+        "runPrimary": "Running_A",
+        "hold": [
+          "Running_B"
+        ],
+        "notes": [
+          "Browser-proven on GothGirl.",
+          "Uses measured Rig_Medium handoff candidate; actor-specific visual approval remains open."
+        ],
+        "rigProfile": "Rig_Medium"
+      },
+      "attachment": {
+        "proposal": "GothGirl_Microphone",
+        "bone": "handslot.r",
+        "status": "SOURCE_PINNED_VISUAL_TEST_REQUIRED"
+      },
+      "faceOwner": "existing ToolBox EyeRig slice; Motion Lab does not mount a second face owner"
+    },
+    "blackKnight": {
+      "label": "Black Knight",
+      "rigFamily": "Rig_Large",
+      "adapter": "direct GLB",
+      "locomotion": {
+        "idleCandidate": "Idle_A",
+        "walkCandidate": "Walking_A",
+        "runCandidate": "Running_A",
+        "runtimeRule": "Enumerate exact Rig_Large clip names first; only enable clips that exist and bind.",
+        "mediumProfileReuse": false,
+        "jump": "UNAVAILABLE_IN_TESTED_GENERAL_MOVEMENTBASIC",
+        "rigProfile": "Rig_Large",
+        "exactAvailable": [
+          "Idle_A",
+          "Idle_B",
+          "Walking_A",
+          "Running_A"
+        ],
+        "handoffSpeed": 1.811
+      },
+      "attachments": [
+        {
+          "id": "BlackKnight_Sword_Large",
+          "bone": "handslot.r",
+          "transform": "identity candidate",
+          "status": "SOURCE_PINNED_VISUAL_TEST_REQUIRED"
+        },
+        {
+          "id": "BlackKnight_Shield_Large",
+          "bone": "handslot.l",
+          "localPush": 0.55,
+          "status": "MEASURED_DONOR_VISUAL_TEST_REQUIRED"
+        }
+      ]
+    }
+  },
+  "promotionRule": "No profile becomes a consumer default until exact actor browser proof + Georg visual acceptance.",
+  "evidence": {
+    "status": "LOCAL_BROWSER_87_87_PASS",
+    "implementationHead": "3ab2a439b013b816e843ea303e7015a26ee2aff8",
+    "workflowRun": 35480849313,
+    "job": 105998255165,
+    "artifactId": 10595139102,
+    "artifactDigest": "sha256:4065242e4a5be9c2a451dfc24a24a1ef409099f3dce00f02ec31bd277ff6aaf3",
+    "publicStatus": "PUBLIC_VERIFIED",
+    "publicWorkflowRun": 35484127790,
+    "publicJob": 106007210838,
+    "publicArtifactId": 10596912462,
+    "publicArtifactDigest": "sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4"
+  },
+  "rigProfiles": {
+    "Rig_Medium": {
+      "status": "MEASURED_PROPOSAL_HUMAN_OPEN",
+      "bindableGeneralMovementCount": 25,
+      "locomotion": {
+        "Walking_A": {
+          "duration": 1.0666667222976685,
+          "referenceSpeed": 0.610950956910957
+        },
+        "Running_A": {
+          "duration": 0.800000011920929,
+          "referenceSpeed": 2.4802741670129
+        },
+        "Walking_B_C": "available alternatives",
+        "Running_B": "HOLD"
+      },
+      "handoff": {
+        "speed": 1.108,
+        "playbackClamp": [
+          0.45,
+          1.8
+        ],
+        "rateWindowOverlap": false,
+        "gap": 0.016,
+        "walkingRate": 1.8,
+        "runningRate": 0.45,
+        "note": "The allowed speed windows nearly touch but do not overlap at the current technical clamp. Phase sync/warp can bridge the handoff, but human visual approval is required."
+      }
+    },
+    "Rig_Large": {
+      "status": "MEASURED_PROPOSAL_HIGH_RUN_SLIP_HUMAN_OPEN",
+      "bindableGeneralMovementCount": 8,
+      "exactAvailable": [
+        "Death_A",
+        "Death_A_Pose",
+        "Hit_A",
+        "Idle_A",
+        "Idle_B",
+        "T-Pose",
+        "Running_A",
+        "Walking_A"
+      ],
+      "exactUnavailable": [
+        "Walking_B",
+        "Walking_C",
+        "Running_B",
+        "Jump_Start",
+        "Jump_Idle",
+        "Jump_Land",
+        "Jump_Full_Short",
+        "Jump_Full_Long"
+      ],
+      "locomotion": {
+        "Walking_A": {
+          "duration": 1.0666667222976685,
+          "referenceSpeed": 1.7722505608669725
+        },
+        "Running_A": {
+          "duration": 1.0666667222976685,
+          "referenceSpeed": 1.8496479967365194,
+          "slipBody": 0.15269965757474385
+        }
+      },
+      "handoff": {
+        "speed": 1.811,
+        "playbackClamp": [
+          0.45,
+          1.8
+        ],
+        "rateWindowOverlap": true,
+        "walkingRate": 1.02,
+        "runningRate": 0.97,
+        "note": "Large Walk/Run can hand off close to native playback speed. Running_A still has a high automatic slip candidate and must be visually reviewed."
+      }
+    }
+  }
+}
