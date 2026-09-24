@@ -57,3 +57,20 @@ No githack/raw-CDN fallback is part of the active handoff.
 
 ### OPEN
 Visual Clown S33 acceptance first; Platformer consumer proof second. The module seam does not own Platformer support/collision/movement/camera.
+
+## 2026-09-24 · NPC-LIFE-01 · Living Resident encounter bus
+
+### DECISION
+Resident social life is expressed as semantic encounter beats, not as a second dialogue tree or movement AI. The receiving host owns legality, participant busy state, relationship context and movement progress.
+
+### IMPLEMENTATION
+- `life/encounter-bus.js`: `approach → greet → offer → react → accept/decline → leave`;
+- `life/npc-life-01.adapters.js`: independent Motion / ChatterBox / source-backed offer consumers;
+- exact Resident Atlas Goth Girl + Toy Soldier review surface under `kfb-hub/stage/resident/npc-life-01/`;
+- Toy Soldier's existing Present prop is the offer proof; no reward/inventory write occurs.
+
+### TESTED RESULT
+`node tools/resident_atlas/life/tests/npc-life-01.test.mjs` → **21/21 PASS**.
+
+### OPEN
+Cloudflare browser verification and Georg visual pacing/behavior review. No public PASS or Town-wide promotion is claimed at this checkpoint.
