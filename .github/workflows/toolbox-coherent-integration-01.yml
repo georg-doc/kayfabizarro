@@ -40,4 +40,5 @@ jobs:
       - name: Browser AN-PROFILE-02 Animation Studio smoke
         run: node tools/KFB-ToolBox/stage-first/test/an-profile-02.browser.mjs
       - name: Browser AN-PROFILE-02 plain review smoke
+        if: always()
         run: node tools/KFB-ToolBox/stage-first/test/an-profile-02-review.browser.mjs
