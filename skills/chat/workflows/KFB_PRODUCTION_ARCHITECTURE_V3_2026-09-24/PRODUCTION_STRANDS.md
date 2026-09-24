@@ -445,6 +445,75 @@ A clip/profile is authored once, not rediscovered per game.
 
 ---
 
+## A7 · Character / Resident production boundary · CURRENT WORKFLOW
+
+Current detailed workflow:
+`CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md`.
+
+Default authoring boundary:
+
+- Resident Atlas / ToolBox owns static pose, prop fit, scene composition and reusable Resident-module authoring.
+- Animation Studio owns clip audition, speed, loop, crossfade, beat/song phase and choreography from existing actions.
+- Blender MCP owns new time-based motion, retarget, clip repair across frames, skeleton/weights/topology, head/body graft derivatives and bake/export.
+
+A browser pose/Studio Patch may be promoted into a Blender key-pose reference. This lets Georg visually author the pose in Resident Atlas while Blender handles only the missing time-based interpolation/bake.
+
+### KayfaBizarros Resident Performance Module
+
+Preferred next ORB product form is a **baseplate-free Resident scene module**, not one monolithic stage GLB.
+
+It references:
+- Orc B bandleader;
+- Orc Raider guitarist;
+- Orc Brute drummer;
+- Wardrum/sticks;
+- optional local props;
+- songRef;
+- BPM/phase;
+- accepted actions;
+- pose patches;
+- local transforms.
+
+The host world supplies the floor/support.
+
+For the drummer:
+- make the desired strike/contact pose in Resident Atlas first;
+- if one constant correction works through the clip, keep the Studio patch;
+- if correction must change over time, Blender consumes the accepted pose as reference and authors only the time-varying correction;
+- never restart automatic arm-to-drum target solving.
+
+### Custom actor-family derivatives
+
+Do not generically rerig Legacy; it already owns Rig_Legacy and native clips.
+
+Blender is appropriate for a concrete custom family derivative such as the requested Frizzle-Orc identity across Medium / Large / Legacy, but only after exact sources are pinned.
+
+Preserve destination rig families whenever possible:
+- Medium remains Rig_Medium;
+- Large remains Rig_Large;
+- Legacy remains Rig_Legacy.
+
+Prefer head/identity grafts onto existing destination rigs over whole-skeleton warps.
+
+EyeRig/face remains a ToolBox/runtime owner.
+
+### Missing source locks
+
+Current exact sources are still required for:
+- Frizzle-Orc 3 Rig-Warp;
+- the named Musknacker actor;
+- blank Legacy/template head and requested accessories.
+
+Do not reconstruct these from prose.
+
+### Prepared jobs
+
+- `RESIDENT-BAND-MODULE-01` · READY
+- `POSE-TO-BLENDER-01` · READY
+- `BLENDER-ACTOR-FAMILY-01` · HOLD on exact sources
+- `BLENDER-MOTION-02` · HOLD until one named missing motion is identified
+- `LEGACY-CUSTOM-ACTOR-01` · HOLD on chosen custom actor/source
+
 # STRAND W · WorldBuilder / God Mode
 
 ## Target product
