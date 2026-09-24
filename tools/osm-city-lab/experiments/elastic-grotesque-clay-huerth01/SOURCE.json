@@ -1,6 +1,6 @@
 {
-  "schema": "kfb.elastic-grotesque-clay.huerth01.source/0.2",
-  "status": "BRANCH_CANDIDATE_V2_CHAT_REVIEW_NOT_PUBLIC",
+  "schema": "kfb.elastic-grotesque-clay.huerth01.source/0.4",
+  "status": "R2_CANDIDATE_BROWSER_PASS_HUMAN_REVIEW_PENDING",
   "baseCommit": "dca52479dad9c176acde6e7c7167dc133bf50bdd",
   "osm": {
     "dataset": "tools/osm-city-lab/data/huerth-v0/normalized.json",
@@ -53,6 +53,29 @@
       "path": "KFB Cologne Race Option C-3/lab-v9/kfb-round.v1.js",
       "blob": "74d3217872bb7fe98b7ad238b615f34962d0b9c3",
       "reuse": "CONCEPT_DONOR_ROUNDNESS_RULE"
+    },
+    "racerColognePalette": {
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
+      "path": "KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js",
+      "blob": "38246785ec2c9089737b2a195673a3ad4c07bdf8",
+      "localMirror": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/cologne-palette.v1.js",
+      "reuse": "EXACT_BYTE_COPY_IMPORTED_AND_EXECUTED",
+      "capability": "OKLCH harmonic schemes + deterministic/random seed palette"
+    },
+    "racerCologneStyle": {
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
+      "path": "KFB Cologne Race Option C-3/lab-v9/option-c-style.v1.js",
+      "blob": "c39c163019ab16c602b32c70202880680f9173c7",
+      "localMirror": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/option-c-style.v1.js",
+      "reuse": "EXACT_BYTE_COPY_SUPPORT_MODULE"
+    },
+    "storyPaletteOwner": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/terrain/world-context.js",
+      "blob": "478e8cb4a53ea15e5c51833fa30554224e581815",
+      "reuse": "REFERENCE_OWNER_NOT_ACTIVATED_IN_R2",
+      "note": "Story modes/card semantic vector remain owned here. R2 uses the exact Racer Cologne harmonic generator with deterministic seed because no concrete story mode/card triplet was named in the R2 gate."
     }
   },
   "boundaries": {
@@ -73,5 +96,24 @@
     "roadSurface": "CONTINUOUS_CATMULL_ROM_RIBBON",
     "palette": "KFB_WONKY_90S_CLAY_V1",
     "futureEnterableDoors": "DEFERRED_ASSETREF_REQUIRED"
+  },
+  "r2": {
+    "humanResult": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_V2_R2_2026-09-24.md",
+    "runtimeHead": "4cc496e79af80c7f8419ffb14f7f5d8daeb0b679",
+    "browserRun": 35947303053,
+    "browserChecks": "38/38 PASS · 3/3 WebGL2 · 0 page/console errors",
+    "artifact": 10787192998,
+    "artifactDigest": "sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0",
+    "roof": "FINAL_TOP_OUTLINE_EAVE_OVERHANG_R2",
+    "facades": "ORGANIC_ALL_VISIBLE_FACADES_FINAL_SURFACE_FRAME",
+    "detailCount": 193,
+    "shadow": "4096_TIGHT_FIT_BIAS_0_0002_NORMAL_0_055_ROOF_NO_RECEIVE",
+    "road": "CATMULL_RIBBON_OSM_NODE_ASPHALT_PATCH_PLUS_PATH_CONNECTOR",
+    "roadJunctionPatches": 23,
+    "pathRoadConnectors": 10,
+    "palette": "RACER_COLOGNE_HARMONIC_R2",
+    "paletteScheme": "komplementaer",
+    "paletteSeed": 2821914198,
+    "reviewUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/"
   }
 }
