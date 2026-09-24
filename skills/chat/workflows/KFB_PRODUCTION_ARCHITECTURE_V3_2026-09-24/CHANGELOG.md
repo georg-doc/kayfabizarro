@@ -1,3 +1,23 @@
+## 2026-09-24 · P2 Skills / Runtime Contracts census and consolidation route
+
+- added `SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md` as the P2 donor-first census/plan for the mixed `skills/` tree;
+- confirmed old `EMBED_CUBE_PET_FULL_v2.2.md` is no longer the universal actor-embed entrypoint; it remains valid for canonical 24-CubePet consumers;
+- pinned `tools/KFB-ToolBox/kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md` as current non-CubePet embedding donor for FrizzleBob Graft and CapsuleCarl/Wissens-Pilli; native KayKit/GothGirl remain routed through their FaceHost/EyeRig owners;
+- preserved current Wissens-Pilli/Carl requirements: source mouth cleanup, current red mouth set, one face owner and material-zone config;
+- separated the Card/PDF stack into reusable layers: Deck Viewer v4/`kfb-corpus.js` for performant PDF/cache/presentation, `kfb-card-builder.js` for canonical KFB card rendering/crop/ink, Almanac metadata above them;
+- recorded that blind page-quarter cropping is not a universal KFB deck rule; registry/default/auto-resolver owns card-grid layout;
+- clarified Ink terminology: current implementation `family:'band'` already is the continuous closed ring/ribbon with one fill + taper; no second “RING” canon is to be invented;
+- prepared future 3D Ink adapters for surface ribbons, physical ropes and outer card silhouettes without per-triangle wireframe/double grids;
+- recovered active legacy donors for Talk/Viseme/Bubbles and retained them as inputs to a current skill rather than declaring all PetStudio history dead;
+- made ToolBox Production milestone explicitly include Mouth/Viseme/Talk, Voice/Bubbles, Material Zone Color/Texture Surface and Card/PDF viewing;
+- confirmed current ToolBox UI brief already requires Hex Copy, validated Colorpicker and Material/Surface owner routing; universal per-zone texture assignment remains a real missing capability;
+- flagged stale `skills/SOT_REGISTRY.md`, historical embed bundles and binary GLBs directly under `skills/` for census/import-scan before any move;
+- added P2 jobs `SKILLS-CENSUS-01`, `SKILLS-CURRENT-01`, `SKILLS-ARCHIVE-01`, `CARD-VIEWER-CORE-01`, `INK-3D-ADAPTER-01`;
+- only `SKILLS-CENSUS-01` is READY; P2 is hidden from Today/default priority while P0/P1 work exists;
+- catalog now **13 strands / 73 jobs / 33 READY / 40 HOLD**;
+- architecture/source validation now **117/117 PASS**;
+- no runtime Skill file, old app, public Hub, Cloudflare Live or merge state was changed.
+
 ## 2026-09-24 · Card Zones + Player Meta / Almanac / Adaptive Interface
 
 - promoted **Card Zones / Card Objects** to a first-class primary strand instead of leaving Card Zone only as an adjacent Vertical/World module;
