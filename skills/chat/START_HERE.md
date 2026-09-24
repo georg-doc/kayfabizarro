@@ -911,3 +911,26 @@ Next gate:
 **research known facade rhythm / asymmetric balance / repetition-with-variation / colour hierarchy + isolated proof of one shared road topology and one roof/body union.**
 
 The direct Hürth route remains evidence only, not an acceptance candidate.
+
+## 2026-09-24 · Hürth Recovery Architecture Proofs A/B/C
+
+Current recovery work moved off the frozen R2 implementation and onto a fresh isolated proof branch:
+
+- branch: `chatgpt-web/huerth-architecture-proofs-2026-09-24`
+- entry: `tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/START_HERE.md`
+- recovery: `tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/RECOVERY.md`
+- tested implementation: `c36f97be48a6b5da5617aa000c921e4a51329f7f`
+- browser run: `35952588495` · **34/34 PASS · 0 errors**
+
+Proofs:
+- **A ROAD-01:** one planar topology owner, zero surface overlap / zero patch discs;
+- **B HOUSE-01:** exact V2 donor shown separately, one-mesh shared-eave candidate, neutral material, shadows OFF;
+- **C FACADE-01:** six deterministic rhythm families, no independent random placement, existing KFB palette owners reused.
+
+Frozen R2 remains evidence only. Do not patch it.
+
+Exactly one next gate:
+**Georg visual PASS / FAIL of A / B / C.**
+
+No Hürth block R3 and no LC-01 until all three pass.
+
