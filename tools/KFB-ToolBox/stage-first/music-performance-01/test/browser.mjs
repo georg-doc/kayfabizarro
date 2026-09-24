@@ -30,9 +30,11 @@ try{
   check('source guitarist visible',s.performers.guitarist===true,s.performers);
   check('source drummer visible',s.performers.drummer===true,s.performers);
   check('32 beat cells',(await page.locator('.beat-cell').count())===32,await page.locator('.beat-cell').count());
-  await page.evaluate(()=>window.__MUSIC_PERF_01__.setBeat(3.5));
+  await page.evaluate(async()=>{await window.__MUSIC_PERF_01__.setBeat(3.5);});
   await page.waitForTimeout(150);
   s=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  check('song duration loaded',Number(s.audioDuration)>30,s.audioDuration);
+  check('song transport seekable',s.seekableRanges>=1,{seekableRanges:s.seekableRanges,audioDuration:s.audioDuration});
   check('seek beat 3.5',near(s.beatPos,3.5,.03),s.beatPos);
   check('bounce phase from songclock',near(s.actions.bounce.time,3.5,.04),s.actions.bounce);
   check('strum phase from songclock',near(s.actions.strum.time,.5,.04),s.actions.strum);
@@ -45,7 +47,7 @@ try{
   check('leader stays visible',s.performers.leader===true,s.performers);
   check('guitar stays visible',s.performers.guitarist===true,s.performers);
   check('drummer HOLD hidden',s.performers.drummer===false,s.performers);
-  await page.evaluate(()=>window.__MUSIC_PERF_01__.setBeat(4));
+  await page.evaluate(async()=>{await window.__MUSIC_PERF_01__.setBeat(4);});
   const before=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
   await page.evaluate(()=>window.__MUSIC_PERF_01__.play());
   await page.waitForTimeout(900);
