@@ -6,6 +6,8 @@ on:
       - chatgpt-web/world-zone-review-g3-2026-09-24
     paths:
       - '.github/workflows/world-zone-review-g3.yml'
+      - 'tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/WORLD_ZONE_BAKE_01_REVIEW.html'
+      - 'tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/qa/browser-proof.mjs'
   workflow_dispatch:
 
 permissions:
