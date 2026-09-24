@@ -1752,3 +1752,33 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-24 · Billboard B1 · public human gate
+
+- applied `skills/session-entry-use-what-works_v1.md` to accepted Billboard B0;
+- exact B0 `bb-scene.js` and `bb0-boot.js` copied unchanged;
+- Draft PR #198 / `chatgpt-web/billboard-b1-2026-09-24`;
+- tested runtime `58a8b92d55548c6436ac60b15b521d8eff269afd`;
+- content-fit B1 face follows measured quarter/cover/video aspect while frame/posts stay one structure;
+- SHOW IT → SPIN IT → SELL IT keeps original 2:1 face;
+- initial technical 20/20 candidate rejected after screenshots showed black media;
+- one B1-only texture repair used resolved owner canvases directly;
+- local **20/20 PASS**;
+- public Cloudflare **21/21 PASS**;
+- 0 page/console errors; 0 failed public assets;
+- public screenshot artifact **10788012554**;
+- direct review: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/;
+- no C1, no main merge, no product Live promotion.
+
+Exactly one next gate: **Georg B1 picture review**.
+
+
+## 2026-09-24 · Billboard B1 accepted / B2a routed
+
+- B1 human gate: **PASS**;
+- added current Billboard Living Media plan under ToolBox handover;
+- B2a = inline YouTube/CSS3D only;
+- official Three.js r160 `css3d_youtube.html` pinned before implementation;
+- B2b Collage, B2c Talking City Lights, B3 cartoon body recorded as proposals, not hidden scope;
+- Curtain C1 remains HOLD.

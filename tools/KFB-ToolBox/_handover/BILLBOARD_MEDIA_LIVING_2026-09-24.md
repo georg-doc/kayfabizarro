@@ -1,0 +1,177 @@
+# BILLBOARD MEDIA · Living Plan
+
+Status: **CURRENT LIVING DOCUMENT · ADDITIVE**
+Date started: 2026-09-24
+Owner: **KFB ToolBox / Billboard Media Residency**
+Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a NEXT**
+Current B1 PR: **#198**
+Current accepted B1 branch/head: `chatgpt-web/billboard-b1-2026-09-24@d54273d30f5465df36b33ee13c896a0ee6f95ca7`
+
+This document is the recovery/planning SSOT for the Billboard media line. Older decisions remain below in the additive changelog; new work appends rather than rewriting history.
+
+## Product idea
+
+One reusable KFB billboard body, with a single media-surface contract and multiple presentation adapters:
+
+`CARD · COVER · VIDEO_CSS3D · SLOGAN · COLLAGE · KFB_FACE`
+
+The billboard is not a second card/video/face owner. It consumes existing owners and presents them on the accepted media face.
+
+## Protected foundation
+
+### B0 · source proof · accepted
+- exact Kenney donor: `media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb`;
+- donor pin: `378b209355b13304e3cff656ec0806ca5b89df28`;
+- measured ad face: **4.20 × 2.10**;
+- epsilon seam retained;
+- B0 files protected byte-for-byte:
+  - `bb-scene.js` blob `235b062f9d575a49a4c98d8be57d04d43acc2213`;
+  - `bb0-boot.js` blob `57392b87c0344648695e1ef6d62f6f70a9dd942b`.
+
+### B1 · content-fit face · HUMAN_ACCEPTED
+- real card quarter;
+- real cover;
+- Travel-owned YouTube poster + player behavior;
+- large ChatterBox slogans;
+- content aspect drives billboard-holder X-scale so face + posts/frame remain one object;
+- accepted public route: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/
+- accepted runtime: `58a8b92d55548c6436ac60b15b521d8eff269afd`;
+- Georg acceptance: **2026-09-24 · “Okay, das passt gut.”**
+
+B1 stays a recoverable checkpoint. B2 work forks it; B1 is not rewritten into B2.
+
+## CURRENT · B2a · inline YouTube / CSS3D surface
+
+### Goal
+YouTube plays **directly on the billboard face**, not in a modal or detached viewer.
+
+### Verified donor
+Official Three.js example:
+`mrdoob/three.js/examples/css3d_youtube.html`
+
+Runtime-compatible pin:
+- Three.js tag: **r160**
+- commit: `d04539a76736ff500cae883d6a38b3dd8643c548`
+- pattern: `CSS3DRenderer + CSS3DObject + iframe`
+- donor interaction rule: iframe input is blocked while camera drag is active.
+
+### B2a seam
+- keep B1 WebGL billboard/body/camera;
+- add one CSS3D scene/renderer;
+- one YouTube iframe is spatially aligned to the measured B1 ad face;
+- the CSS3D face copies the real panel world transform, including B1 content-fit X scaling;
+- only `VIDEO` mode shows/enables the iframe;
+- other modes remain the existing B1 CanvasTexture path;
+- no modal overlay;
+- mode exit unloads/stops the iframe;
+- no new media-owner abstraction beyond this adapter.
+
+### Source-first gate
+Before integration, the official r160 CSS3D YouTube plane must run in isolation and be screenshot/browser-proved.
+
+### Done when
+On the direct Cloudflare B2a route:
+1. card/cover/slogan still match B1;
+2. VIDEO shows the real YouTube iframe on the 3D billboard face;
+3. iframe follows orbit/perspective and B1 aspect;
+4. player is clickable inline;
+5. no detached modal opens;
+6. switching away from VIDEO unloads/hides the player.
+
+## PLANNED · B2b · Living Mockup / Collage surface
+
+Status: **RESEARCH / PROPOSAL · NOT STARTED**.
+
+Direction reference:
+- WithSeismic “Living mockups / LED walls”;
+- Reddit description: lighting maps + reflections + masks + shaders for believable browser display surfaces.
+
+Do not copy its editor. KFB only needs a small presentation module.
+
+Proposed layers:
+1. **Content** — image/video/card/text/collage source.
+2. **Surface treatment** — subtle LED/pixel structure, vignette/falloff, controlled glow.
+3. **Believability** — reflection/light overlays, masks, environment tint.
+4. **Motion** — slow pan/zoom/tint/exposure and bounded cut/blend changes.
+
+First implementation should use a **small curated asset pool + deterministic seeded compositions**, not a large generative editor.
+
+Potential later pools:
+- KFB cards/covers;
+- public-domain historical drawings/photos;
+- headlines/typographic fragments where licensing/provenance is explicit;
+- local short video loops where rights are clear;
+- authored cartoon motifs.
+
+Research still required before implementation:
+- public-domain / open-license source pools suitable for automatic use;
+- exact asset/provenance manifest;
+- non-repetitive loop strategy and cache/performance budget;
+- whether video fragments stay local `VideoTexture` assets while YouTube remains CSS3D.
+
+## PLANNED · B2c · KFB Talking City Lights
+
+Status: **PROPOSAL · NOT STARTED**.
+
+A billboard can become a KFB face rather than only a screen:
+- KFB/Irex eyes;
+- brows;
+- large mouth;
+- optional nose;
+- blink/gaze/emote;
+- simple talking mouth states;
+- ChatterBox text/ads around or behind the face;
+- authored cartoon overlays/motifs.
+
+Reuse the existing KFB semantic EyeRig/face/mouth owners where technically compatible. Do not invent a second eye vocabulary.
+
+First target should be visually simple: `idle · talking · surprised · angry · smug`, before audio/viseme sophistication.
+
+## PLANNED · B3 · cartoon billboard body
+
+Status: **DEFERRED UNTIL MEDIA SURFACE IS STABLE**.
+
+Goal: reduce the current rectangular/hard-edged Kenney silhouette and bring the support/body toward the KFB Elastic Toon language.
+
+Decision rule:
+- shader/material/very light deformation → Web slice first;
+- real silhouette/topology/rounded-cap/post redesign → Blender MCP candidate.
+
+The accepted Kenney body remains the source. No replacement generic billboard is permitted.
+
+## RELATED · Curtain C1
+
+Still HOLD while the Billboard media line is active.
+Curtain v2 remains the accepted donor base; no restart.
+
+## Recovery order
+
+Fresh chat:
+1. `skills/chat/START_HERE.md`
+2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
+3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
+4. `skills/session-entry-use-what-works_v1.md`
+5. this document
+6. current slice `RECOVERY.md` + `RETURN.md`
+7. exact GitHub branch/PR/head
+
+GitHub state overrides Dropbox/chat copies.
+
+## Additive changelog
+
+### 2026-09-24 · B0
+- Kenney billboard source proof accepted.
+
+### 2026-09-24 · B1
+- content-fit face, card quarter, cover, video poster/player and slogan implemented;
+- one black-surface visual failure repaired without touching B0;
+- public 21/21 browser PASS;
+- **HUMAN_ACCEPTED by Georg**.
+
+### 2026-09-24 · B2 planning
+- CSS3D inline YouTube made the next bounded slice;
+- official Three.js r160 donor pinned before implementation;
+- Living Mockup/Collage retained as B2b research/implementation lane;
+- KFB Talking City Lights retained as B2c;
+- cartoon body retained as B3;
+- Curtain C1 remains HOLD.

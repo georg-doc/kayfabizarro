@@ -115,3 +115,29 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-24 · Billboard B1 · content-fit face
+
+### SOURCE
+Accepted Billboard B0 was forked literally; `bb-scene.js` and `bb0-boot.js` remain byte-identical.
+
+### IMPLEMENTATION
+Draft PR #198 / `chatgpt-web/billboard-b1-2026-09-24`.
+One B1 boot seam lets the accepted billboard frame/posts and content plane change width together from the real source aspect.
+Modes: real KFB card quarter, cover, Travel YouTube poster/player and SHOW IT → SPIN IT → SELL IT.
+
+### EVIDENCE
+- first automated 20/20 candidate screenshot-rejected for black media surfaces;
+- one repair pass only;
+- tested runtime `58a8b92d55548c6436ac60b15b521d8eff269afd`;
+- local **20/20 PASS**;
+- public **21/21 PASS**;
+- public 4-mode artifact **10788012554**;
+- 0 page/console errors; 0 failed public assets.
+
+### STAGE
+https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/
+
+### NEXT
+**Georg B1 picture review.** C1 remains HOLD.
