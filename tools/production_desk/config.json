@@ -16,20 +16,21 @@
     {
       "id": "toolbox-source-safe",
       "bucket": "RUNNING",
-      "title": "ToolBox: echte Figuren, Szenen und Editor",
-      "what": "Eine zusammenhängende ToolBox mit allen echten Figuren, drei Resident-Szenen, dem gemeinsamen Editor und Speichern/Laden.",
-      "provider": "Claude Coworker",
+      "title": "ToolBox · Production / Animation / v17+",
+      "what": "Die zusammenhängende ToolBox ist technisch grün. Nächster Produktfokus: Stage-First um die nützlichen Pet-/FrankenStein-v17+-Funktionen ergänzen, Animation Lab als State/Action-Studio ausbauen und gute FBX direkt aufnehmen.",
+      "provider": "ChatGPT Web / ToolBox",
       "yourAction": "",
       "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 185,
       "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
-      "expectedHead": "2833674b36be707fa4d14c8b532faee78ef3ba28",
+      "expectedHead": "13cb668c205c4233b2486deee5f181855d915335",
       "brief": {
-        "label": "Produktionspaket",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_FLOW_V2_2026-09-23/packets/TOOLBOX_SOURCE_SAFE_INTEGRATION_01.md",
-        "ref": "chatgpt-web/production-flow-v2-consolidation-2026-09-23"
+        "label": "Aktueller MVP-Plan",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "pasteReady": false
       }
     },
     {
@@ -222,21 +223,22 @@
     },
     {
       "id": "dance-d1",
-      "bucket": "CAN_START",
-      "title": "Erster Tanz für Residents",
-      "what": "GothGirl und Orc Raider bekommen einen ersten sauberen Tanz-Groove: erst vorhandene Bewegung prüfen, dann einen eigenen Groove bauen.",
+      "bucket": "WAITING",
+      "title": "Resident Dance D1 · ersetzt durch RES-DISCO",
+      "what": "Die alte Einzel-Tanzplanung bleibt als Historie. Aktuelle Fortsetzung ist RES-DISCO-01: mehrere echte Residents, aktuelle Dance-Clips, ein Music-Clock und erst danach gezielte neue Mixamo-Lücken.",
       "provider": "Blender-Chat",
-      "yourAction": "Kann parallel im Blender-Chat starten. Den Plan dort hineingeben.",
-      "waitingFor": "",
+      "yourAction": "",
+      "waitingFor": "RES-DISCO-A Source Cast + Motion Audition ist der aktuelle Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 193,
       "branch": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
       "expectedHead": "c40d6b694f5ab6b9ba2f45b412f7a0283fa19513",
       "brief": {
-        "label": "Plan",
-        "path": "skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/RESIDENT_PERFORMANCE_NEXT_2026-09-23.md",
-        "ref": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23"
+        "label": "Aktueller Disco-Brief",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "pasteReady": false
       }
     },
     {
@@ -264,7 +266,7 @@
       "what": "Blender MCP hat den Racer-Baukasten bis RKIT-06 ausgebaut: TRACK_A_STUNT_8 mit Hero-/Basis-Sprung, Pit Lane, Y-Weiche, Flap-Return/Tunnel sowie Trankgasse auf der realen OSM-Linie. Geometrie ist Review-Candidate; Race/Rapier bleibt Physik-/Kontakt-Owner.",
       "provider": "Blender MCP / RKIT",
       "yourAction": "",
-      "waitingFor": "Nächster technischer Gate: TRACK_A im echten Race/Rapier-Lauf testen; danach Track-Geometrie nur aus gemessenen Fahrdaten nachziehen und als WorldBuilder-Modul konsumieren.",
+      "waitingFor": "Nächster technischer Gate: TRACK_A im bestehenden Race/Rapier-Lauf testen. Danach Geometrie nur aus echten Fahr-/Kontaktbefunden nachziehen; anschließend als WorldBuilder-Modul konsumieren.",
       "questions": [],
       "repo": "georg-doc/KFB-Stunt-Car-Race",
       "pr": 39,
@@ -294,11 +296,50 @@
         "path": "skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WORLDBUILDER_GOD_MODE_V0.md",
         "ref": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23"
       }
+    },
+    {
+      "id": "worldbuilder-mobility-mvp",
+      "bucket": "CAN_START",
+      "title": "WorldBuilder · neue Mobility-Welt",
+      "what": "Köln-World-Zone und Flow-Shell zusammenführen und danach Ground/Drive/Flight/Boat/Air plus gemeinsame Walk/Run/Jump-State-Animation in derselben Welt anschließen.",
+      "provider": "ChatGPT Web / WorldBuilder",
+      "yourAction": "",
+      "waitingFor": "",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+      "expectedHead": "01ba3e594cdea1c32841114ced6beddb1b8fba34",
+      "brief": {
+        "label": "MVP-Plan",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "pasteReady": false
+      }
+    },
+    {
+      "id": "npc-life-01",
+      "bucket": "RUNNING",
+      "title": "Residents · Living encounter bus",
+      "what": "Drei kleine soziale Bausteine bleiben getrennt: Host bewegt und entscheidet Legalität, Animation performt, ChatterBox spricht. 21/21 Vertragstests sind grün; Stage/Browser/Human-Gate fehlt noch.",
+      "provider": "ChatGPT Web / Resident+Town",
+      "yourAction": "",
+      "waitingFor": "Stage veröffentlichen und im echten Browser prüfen; danach Georg-Pacing-Review.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 210,
+      "branch": "chatgpt-web/npc-life-01-2026-09-24",
+      "expectedHead": "ea157c52dd6cadbae1b0fe40f6cacede65ec9792",
+      "brief": {
+        "label": "Return",
+        "path": "tools/resident_atlas/life/RETURN.md",
+        "ref": "chatgpt-web/npc-life-01-2026-09-24",
+        "pasteReady": false
+      }
     }
   ],
   "wsa": {
     "state": "NOT_NEEDED",
-    "text": "Gerade nicht nötig. Kein Projekt braucht im Moment etwas, das nur WSA kann."
+    "text": "Gerade nicht nötig. WorldBuilder, ToolBox, Racer und Residents haben normale Web-/GitHub-/Blender-Wege; Work erst bei einer konkreten Capability-Lücke."
   },
   "standards": [
     {
@@ -419,6 +460,14 @@
       "what": "Übersicht aller veröffentlichten Bühnen und Proben.",
       "status": "Übersicht",
       "path": "kfb-hub/stage/index.html"
+    },
+    {
+      "group": "Figuren und Animation",
+      "id": "toolbox-home",
+      "title": "KFB ToolBox",
+      "what": "Aktuelle öffentliche ToolBox-Frontpage mit echten Routen, Source-Gates und Produktions-Briefings.",
+      "status": "Übersicht",
+      "path": "kfb-hub/stage/toolbox/index.html"
     }
   ],
   "archive": [
