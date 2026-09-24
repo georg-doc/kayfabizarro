@@ -13,6 +13,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## TB-EYE-01 · EyeRig Production Studio
 
 **Executor:** ChatGPT Web / ToolBox owner  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** one useful EyeRig authoring surface spanning current character families plus one vehicle proof.
 
 > @GitHub
@@ -42,6 +44,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## TB-POSE-01 · Fractal Scene + Pose Studio
 
 **Executor:** ChatGPT Web / Claude Design for compact UI only  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** hierarchical scene editing + bone posing inside ToolBox.
 
 > @GitHub
@@ -71,6 +75,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## TB-ANIM-01 · ToolBox Animation Studio
 
 **Executor:** ChatGPT Web / Coworker + optional Claude Design presentation  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** one actual animation authoring/test workspace.
 
 > @GitHub
@@ -109,6 +115,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## TB-VEH-01 · Vehicle Motion + Driver Studio
 
 **Executor:** ChatGPT Web / ToolBox authoring  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** one nested authoring scene for vehicle + eyes + cockpit + driver + presentation motion.
 
 > @GitHub
@@ -132,6 +140,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## TB-SCENE-01 · Resident Scene Studio + Live Resource Picker
 
 **Executor:** ChatGPT Web / ToolBox  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** live-search, load and author reusable scenes.
 
 > @GitHub
@@ -163,6 +173,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## TB-PROD-01 · ToolBox Production Milestone
 
 **Executor:** Web/Coworker + GitHub Bridge  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `COWORK_STANDARD`, `GITHUB_BRIDGE`.
 **Outcome:** complete usable authoring chain.
 
 > @GitHub @Dropbox
@@ -182,6 +194,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## AN-PERF-01 · Blender Resident Performance Batch
 
 **Executor:** Blender MCP / Claude Code  
+
+**Execution profile:** `BLENDER_STANDARD` · Blender MCP / Claude Code · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.
 **Outcome:** a queue of reusable dance/acting/interaction clips.
 
 > @GitHub @Dropbox @Blender
@@ -206,6 +220,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## AN-PROFILE-01 · Motion Profile Enrichment
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** reusable measured motion metadata for ToolBox and WorldBuilder.
 
 > @GitHub
@@ -225,6 +241,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## WB-AUTHOR-01 · Authorable Place
 
 **Executor:** ChatGPT Web + Claude Design only where useful  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** WALK + terrain sculpt + object edit + Save/Reload in current WB-W0 place.
 
 > @GitHub @Dropbox
@@ -242,6 +260,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## WB-PLACE-01 · Live Search + Fractal Scene Authoring
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** place real KFB content from live source registries and edit it deeply where supported.
 
 > @GitHub
@@ -263,6 +283,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## WB-MOTION-01 · World Locomotion + Animation Playground
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** the game's intended motion logic visible in the WorldBuilder.
 
 > @GitHub
@@ -288,6 +310,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## WB-OSM-01 · Editable Cartoon District
 
 **Executor:** ChatGPT Web / Claude Design visual composition  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `CLAUDE_DESIGN_STANDARD`.
 **Outcome:** one real OSM/KFB district as editable world content.
 
 > @GitHub
@@ -306,6 +330,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## RACE-ANATOMY-01 · Racer Anatomy Foundation
 
 **Executor:** Racer Web chat + optional Blender MCP A/B  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
 **Owner repo:** `georg-doc/KFB-Stunt-Car-Race`  
 **Outcome:** clean reproducible track/barrier/support anatomy.
 
@@ -330,6 +356,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## RACE-VISUAL-01 · Route-driven Track Visual Module
 
 **Executor:** Racer Web / optional Blender-authored source pieces  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** accepted track anatomy driven along the calculated route.
 
 > @GitHub
@@ -349,6 +377,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## RACE-CONTACT-01 · Vehicle Grounding / Contact
 
 **Executor:** Racer runtime owner  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** vehicle support follows actual accepted track truth.
 
 > @GitHub
@@ -365,6 +395,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## WB-RACE-01 · Race / OSM / WorldBuilder Bridge
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** calculated Racer track becomes a placeable WorldBuilder world module.
 
 > @GitHub
@@ -388,6 +420,8 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 ## WB-GOD-01 · God Mode Construction Site
 
 **Executor:** ChatGPT Web + Claude Design presentation  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `CLAUDE_DESIGN_STANDARD`.
 **Outcome:** the complete authoring loop as one world-building surface.
 
 > @GitHub
@@ -423,6 +457,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## COMBAT-ID-01 · Combat Actor Family Matrix
 
 **Executor:** ChatGPT Web against `georg-doc/KFB-Combat-Arena`  
+
+**Execution profile:** `WEB_FAST` · ChatGPT Web · GPT-5.6 Sol · reasoning **instant** · budget **LOW**.
 **Outcome:** explicit capabilities across Medium/Large/Legacy/CubePet/procedural families.
 
 > @GitHub
@@ -447,6 +483,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## COMBAT-MELEE-01 · Finish real melee contact path
 
 **Executor:** Combat Web chat  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** one visually accepted real weapon strike with shared contact event.
 
 > @GitHub
@@ -466,6 +504,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## COMBAT-DUEL-01 · Duel Choreography Studio
 
 **Executor:** ToolBox Animation Studio / Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** two-fighter autonomous choreography and Hero-Shot loops.
 
 > @GitHub
@@ -487,6 +527,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## COMBAT-MATCH-01 · Autonomous Match Director
 
 **Executor:** ChatGPT Web / Combat+Animation adapters  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** deterministic NPC-vs-NPC exhibition loops.
 
 > @GitHub
@@ -503,6 +545,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## COMBAT-TOWER-01 · Card Tower Encounter Module
 
 **Executor:** Combat + vertical-world Web integration  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** card-platform combat bands that can stack vertically.
 
 > @GitHub
@@ -520,6 +564,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## COMBAT-WORLD-01 · Open World Encounter Adapter
 
 **Executor:** WorldBuilder + Combat Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** same Combat encounter can run on authored terrain.
 
 > @GitHub
@@ -536,6 +582,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## PET-ID-01 · Cube Pets + FrizzleBob identity lock
 
 **Executor:** ChatGPT Web / ToolBox roster  
+
+**Execution profile:** `WEB_FAST` · ChatGPT Web · GPT-5.6 Sol · reasoning **instant** · budget **LOW**.
 **Outcome:** no more FrizzleBob ambiguity; all 24 CubePets pinned.
 
 > @GitHub
@@ -555,6 +603,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## PET-TOOLBOX-01 · 24 Cube Pets in ToolBox
 
 **Executor:** ChatGPT Web / ToolBox  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** CubePets are first-class actors in Face/Motion/Scene workflows.
 
 > @GitHub
@@ -571,6 +621,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## PET-RESIDENT-01 · CubePet Resident Modules
 
 **Executor:** ToolBox / Resident Atlas Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** CubePets can live in Town and WorldBuilder scenes.
 
 > @GitHub
@@ -585,6 +637,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## PET-COMBAT-01 · CubePet semantic combat adapter
 
 **Executor:** Combat/ToolBox Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** selected CubePets can participate without humanoid clips.
 
 > @GitHub
@@ -599,6 +653,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## SURFACE-01 · FLAT / SPHERE / TORUS adapter
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** same world recipe on multiple topologies.
 
 > @GitHub
@@ -615,6 +671,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## TRAVEL-MODES-01 · Movement Mode Router
 
 **Executor:** Travel/WorldBuilder Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** one-active-writer Ground/Flight/Drive/Water architecture.
 
 > @GitHub
@@ -631,6 +689,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## TRAVEL-DRIVE-01 · Free Drive off-track
 
 **Executor:** WorldBuilder/Race adapter Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** vehicles can drive through authored world without a race track.
 
 > @GitHub
@@ -645,6 +705,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## TRAVEL-BOAT-01 · Recover and adapt TinySkies Boat
 
 **Executor:** Web source recovery first  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** real Water/Boat travel mode, not a memory-based clone.
 
 > @GitHub @Dropbox
@@ -661,6 +723,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## TRAVEL-AIR-01 · Plane / Freefall / Parachute path
 
 **Executor:** Web + Blender only for authored assets/animations  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD** · secondary only if needed: `BLENDER_STANDARD`.
 **Outcome:** future aerial modes are explicit instead of hidden inside Flight.
 
 > @GitHub @Dropbox
@@ -675,6 +739,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## VERT-SOURCE-01 · Platformer / Babel source recovery
 
 **Executor:** ChatGPT Web + Dropbox search  
+
+**Execution profile:** `WEB_FAST` · ChatGPT Web · GPT-5.6 Sol · reasoning **instant** · budget **LOW**.
 **Outcome:** pin the good failed-source mechanics without reviving failed compositions.
 
 > @GitHub @Dropbox
@@ -691,6 +757,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## BABEL-01 · Measured vertical Hex recipe
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** reachable small Babel tower grammar.
 
 > @GitHub
@@ -705,6 +773,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## VERT-WORLD-01 · Vertical WorldBuilder construction
 
 **Executor:** WorldBuilder Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** towers/vertical paths are placeable world content.
 
 > @GitHub
@@ -719,6 +789,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## NPC-LIFE-01 · Living Resident encounter bus
 
 **Executor:** ChatGPT Web / Resident+Town adapter  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** Residents have lightweight autonomous social life.
 
 > @GitHub
@@ -736,6 +808,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## NPC-MEMORY-01 · Memory + ChatterBox adapter
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** NPC recognition without a second memory system.
 
 > @GitHub
@@ -750,6 +824,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## NPC-GIFT-01 · Gifts / collectible lines
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** “attractions with legs” become reusable world behavior.
 
 > @GitHub
@@ -764,6 +840,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## NPC-WORLD-01 · Living Resident Scene in WorldBuilder
 
 **Executor:** WorldBuilder Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** place an inhabited scene, not a static prefab.
 
 > @GitHub
@@ -778,6 +856,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## SPINDLE-01 · Shared Spindle Sky module
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** reusable environment module, no Combat-only fork.
 
 > @GitHub
@@ -792,6 +872,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CURTAIN-02 · Theatre Curtain Core v2 refinement
 
 **Executor:** Web / Game Dev Studio evidence optional  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** current cloth donor becomes reusable consumer-ready transition.
 
 > @GitHub
@@ -806,6 +888,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## STAGE-INSTANCE-01 · Shared encounter/stage recipe
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** Combat, Hero Shots and minigames compose existing modules instead of rebuilding stages.
 
 > @GitHub
@@ -820,6 +904,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## FX-SEMANTIC-01 · Shared semantic VFX/SFX maps
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** one event vocabulary, existing effect/audio owners.
 
 > @GitHub
@@ -836,6 +922,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## RACE-TRACK-RECIPE-01 · Authored Track A + Bake
 
 **Executor:** Racer Web + Blender MCP for RKIT authored geometry  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
 **Outcome:** first complete reusable baked Track Module, no general track editor.
 
 > @GitHub @Dropbox @Blender
@@ -862,6 +950,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## RACE-RKIT-03 · Blender module continuation under fixed decisions
 
 **Executor:** Blender MCP  
+
+**Execution profile:** `BLENDER_STANDARD` · Blender MCP / Claude Code · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.
 **Outcome:** finish the useful RKIT-03 geometry without waiting for another WSA decision round.
 
 > @GitHub @Dropbox @Blender
@@ -888,6 +978,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## WORLD-ZONE-BAKE-01 · Cologne OSM World Zone compiler
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** fetch/normalize/build once, then reuse Cologne as a cached editable World Zone.
 
 > @GitHub
@@ -906,6 +998,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## WORLD-ZONE-BAKE-02 · Barcelona portability proof
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** prove the same World Zone compiler on a second city.
 
 > @GitHub
@@ -920,6 +1014,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## LOOK-TORSION-01 · Elastic Torsion architecture proof
 
 **Executor:** ChatGPT Web / Blender MCP only if Geometry Nodes materially helps  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
 **Outcome:** restore the missing bent/twisted 90s-cartoon read without patching failed Hürth R2.
 
 > @GitHub
@@ -946,6 +1042,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## AUDIO-AUDITION-01 · Human-readable Sound Library
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** Georg chooses sounds by meaning/listening, not filenames.
 
 > @GitHub @Dropbox
@@ -966,6 +1064,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## MUSIC-PERF-01 · Song + Resident Performance timeline
 
 **Executor:** ToolBox Animation Studio / Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** songs and dance/band performances become reusable synchronized Resident scenes.
 
 > @GitHub @Dropbox
@@ -982,6 +1082,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## VFX-AUDITION-01 · Source-backed VFX Library
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** choose/adapt proven effects before authoring new ones.
 
 > @GitHub
@@ -1002,6 +1104,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CZ-FLUID-01 · Exact Card Zone Fluid Surface
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** one reusable source-faithful KFB fluid surface, proven in Card Zone and one World host.
 
 > @GitHub
@@ -1027,6 +1131,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CZ-CARD-PRESENT-01 · Stack / Reveal / Beam module
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** recover the real Card Zone presentation beat as reusable modules.
 
 > @GitHub
@@ -1046,6 +1152,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CZ-CUBE-01 · Card Cube + Face Focus
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** reusable six-face Card Cube viewer from the actual v2 source.
 
 > @GitHub
@@ -1064,6 +1172,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CZ-RECIPE-01 · Card Zone authored recipe
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** compact reusable Card Zone prefab data.
 
 > @GitHub
@@ -1081,6 +1191,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CZ-WORLD-01 · Placeable WorldBuilder Card Zone
 
 **Executor:** WorldBuilder Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** Card Zone becomes searchable/placeable world content.
 
 > @GitHub
@@ -1099,6 +1211,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CZ-PROD-01 · Card Zone collection milestone
 
 **Executor:** Web integration + GitHub Bridge  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD** · secondary only if needed: `GITHUB_BRIDGE`.
 **Outcome:** complete world-to-card-to-Almanac loop.
 
 > @GitHub
@@ -1114,6 +1228,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-JOURNEY-01 · Cross-mode Player Journey contract
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Outcome:** one versioned durable player-meta state across Race/Walk/Combat/Travel/Town/Card Zones.
 
 > @GitHub
@@ -1134,6 +1250,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-HUD-01 · Adaptive cross-mode HUD shell
 
 **Executor:** ChatGPT Web + Claude Design only for bounded layout refinement  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD** · secondary only if needed: `CLAUDE_DESIGN_STANDARD`.
 **Outcome:** one coherent HUD mental model with mode-specific instruments and shared player meta.
 
 > @GitHub
@@ -1163,6 +1281,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-ALMANAC-01 · Fractal Almanac overlay + Journey import/export
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** portable collection/Journey interface, not merely a card counter.
 
 > @GitHub
@@ -1181,6 +1301,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-INVENTORY-01 · 20-slot Backpack
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** compact cross-mode carry inventory tied to Player Journey.
 
 > @GitHub
@@ -1199,6 +1321,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-POP-01 · Universal POP account
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** one cross-mode POP balance instead of local counters.
 
 > @GitHub
@@ -1215,6 +1339,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-RADIO-01 · Collected songs + cross-mode Radio
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** one collected music library/media state reused across modes.
 
 > @GitHub
@@ -1231,6 +1357,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-NAV-01 · Context navigation providers
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** real minimaps/navigation only where a real provider exists.
 
 > @GitHub
@@ -1249,6 +1377,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## UI-GRAMMAR-01 · Authoring icon/interaction legibility
 
 **Executor:** ChatGPT Web + bounded Claude Design visual pass  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD** · secondary only if needed: `CLAUDE_DESIGN_STANDARD`.
 **Outcome:** current ToolBox/WorldBuilder editor becomes recognizable without moving its functionality.
 
 > @GitHub
@@ -1275,6 +1405,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## META-PROD-01 · Cross-mode Player Meta milestone
 
 **Executor:** Web integration + GitHub Bridge  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `GITHUB_BRIDGE`.
 **Outcome:** one player identity survives real mode changes.
 
 > @GitHub
@@ -1292,6 +1424,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## SKILLS-CENSUS-01 · Repository-native Skills Census
 
 **Executor:** ChatGPT Web / GitHub agent  
+
+**Execution profile:** `WEB_FAST` · ChatGPT Web · GPT-5.6 Sol · reasoning **instant** · budget **LOW**.
 **Priority:** P2 · may run in parallel  
 **Outcome:** classify the current `skills/` tree without moving or deleting anything.
 
@@ -1334,6 +1468,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## SKILLS-CURRENT-01 · Current Runtime Skill Shelf
 
 **Executor:** ChatGPT Web / GitHub Bridge  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD** · secondary only if needed: `GITHUB_BRIDGE`.
 **Priority:** P2  
 **Outcome:** a small current skill shelf routes new chats to live runtime owners while old apps still work.
 
@@ -1369,6 +1505,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## SKILLS-ARCHIVE-01 · Compatibility-safe Skills Archive
 
 **Executor:** GitHub Web / repository-native checks  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Priority:** P2  
 **Outcome:** reduce accidental legacy reuse without breaking old apps.
 
@@ -1391,6 +1529,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## CARD-VIEWER-CORE-01 · Unified PDF / Card Viewer Runtime
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Priority:** P2 after Skills Census  
 **Outcome:** one performant PDF/card content service and viewer layer for Almanac, Card Zones, Billboards and Story/CardRig consumers.
 
@@ -1419,6 +1559,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## INK-3D-ADAPTER-01 · Canonical Ink → World/3D adapters
 
 **Executor:** ChatGPT Web  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 **Priority:** P2 after Skills Current Ink lock  
 **Outcome:** translate one Ink canon into surface and physical 3D lines without wireframe/double-grid regressions.
 
@@ -1444,6 +1586,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## RESIDENT-BAND-MODULE-01 · Baseplate-free KayfaBizarros Resident Scene
 
 **Executor:** ChatGPT Web / Resident Atlas / ToolBox  
+
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
 **Outcome:** one reusable Orc-band scene that can be dropped into Tavern, Town, street or WorldBuilder without a mandatory platform.
 
 > @GitHub
@@ -1474,6 +1618,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## POSE-TO-BLENDER-01 · Browser Pose → Blender Action handoff
 
 **Executor:** Resident Atlas / ToolBox + Blender MCP  
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
 **Outcome:** Georg authors the desired pose in browser; Blender uses it only as a target for time-based animation work.
 
 > @GitHub @Blender
@@ -1499,6 +1645,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## BLENDER-ACTOR-FAMILY-01 · Frizzle-Orc Medium / Large / Legacy derivatives
 
 **Executor:** Blender MCP  
+
+**Execution profile:** `BLENDER_DEEP` · Blender MCP / Claude Code · Claude Sonnet 5 · reasoning **high** · budget **HIGH**.
 **Outcome:** one visible identity proven across three existing KFB rig families without replacing their skeletons.
 
 > @GitHub @Dropbox @Blender
@@ -1530,6 +1678,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## BLENDER-MOTION-02 · One named missing high-value motion
 
 **Executor:** Blender MCP  
+
+**Execution profile:** `BLENDER_STANDARD` · Blender MCP / Claude Code · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.
 **Outcome:** one actually missing march/combat/performance action enters the shared Motion Library.
 
 > @GitHub @Dropbox @Blender
@@ -1554,6 +1704,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## LEGACY-CUSTOM-ACTOR-01 · One custom Legacy derivative
 
 **Executor:** Blender MCP + ToolBox  
+
+**Execution profile:** `BLENDER_DEEP` · Blender MCP / Claude Code · Claude Sonnet 5 · reasoning **high** · budget **HIGH** · secondary only if needed: `WEB_STANDARD`.
 **Outcome:** extend Legacy only where current modular assembly cannot represent the requested actor.
 
 > @GitHub @Blender
@@ -1575,6 +1727,8 @@ A waiting card is valuable because Georg can already see the complete production
 ## IK-CCDIK-PARITY-01 · Three.js CCD IK parity
 
 **Executor:** ChatGPT Web
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
 
 **Outcome:** prove whether the upstream Three.js CCD IK approach is materially more stable than the current Resident Atlas `reachChain()` before changing the Puppet solver.
 
