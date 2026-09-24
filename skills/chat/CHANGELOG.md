@@ -1752,3 +1752,27 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · Elastic Grotesque Clay · Hürth 01
+
+- Added bounded workflow `KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23` and OSM City Lab experiment `elastic-grotesque-clay-huerth01`.
+- Reused the exact current `cartoon-city.js` Grotesque path as the comparison donor rather than rebuilding it from prose.
+- Added one new continuous rounded elastic presentation shell with semantic roof/detail protection; OSM/S2/collision remain unchanged.
+- GitHub browser proof on tested head `1db61b9c882e178000cf700a7d5f4d18ec03eba0`: **16/16 PASS**, 3/3 WebGL2, zero page/console errors; run `35904415847`, artifact `10769948842`.
+- One syntax seam introduced during evidence instrumentation was diagnosed and repaired without retuning the form candidate.
+- Draft PR #194; human visual review pending; no Stage/Live promotion.
+
+
+## 2026-09-23 · Elastic Grotesque Clay · Hürth 01 V2
+
+- Georg accepted the generated clay-neighbourhood frame as the shape/detail/handmade-model benchmark.
+- Pinned the accepted benchmark JPEG in GitHub: blob `d6dcb90770d83513204a6ea96fd56a60c7c3a296`, derivative SHA-256 `cb6de7beca127a84eb47722eb6229a4348f6a1e9ed66a6cb3af80664ff744621`.
+- Upgraded the actual Three.js Hürth proof with neighbour-correlated group warp, warped roof plane, stronger continuous rounded volumes, irregular 2–3 tall windows without bright frames and varied door sizes.
+- Replaced segmented visual road pieces in this proof with continuous Catmull-Rom road / curb / path ribbons and explicit presentation depth separation.
+- Added systemic `KFB_WONKY_90S_CLAY_V1` wall/roof/door/window/ground/curb/road/path/sky palette.
+- V2 browser run `35909757979`: **21/21 PASS**, 3/3 WebGL2, 0 page/console errors; artifact `10772592799`, digest `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`.
+- Selected future enterable houses with exact KayKit door donors are recorded as deferred; no generic door or second interior runtime was introduced.
+- Draft PR #194 remains unmerged; no Cloudflare/public Stage claim.
+
+Exactly one next gate: **Georg reviews the actual v2 3D translation; Blender-MCP generalization waits for acceptance.**

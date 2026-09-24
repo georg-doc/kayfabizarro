@@ -1,0 +1,119 @@
+{
+  "schema": "kfb.elastic-grotesque-clay.huerth01.source/0.4",
+  "status": "R2_CANDIDATE_BROWSER_PASS_HUMAN_REVIEW_PENDING",
+  "baseCommit": "dca52479dad9c176acde6e7c7167dc133bf50bdd",
+  "osm": {
+    "dataset": "tools/osm-city-lab/data/huerth-v0/normalized.json",
+    "blob": "936a5d990d2f394ae2bccbb4607d0821ca67a191",
+    "sourceSpec": "tools/osm-city-lab/data/huerth-v0/SOURCE_SPEC.json",
+    "sourceSpecBlob": "9ec4c53f07b78113def073f649a8b4a014ada38e",
+    "buildingIds": [
+      "way/371401492",
+      "way/371401494",
+      "way/371401485",
+      "way/371401566",
+      "way/371401483",
+      "way/371401495",
+      "way/371401482",
+      "way/371401475",
+      "way/371401481",
+      "way/371401529",
+      "way/371401497",
+      "way/371401491",
+      "way/371401471",
+      "way/371401493",
+      "way/371401480",
+      "way/371401490",
+      "way/371401488",
+      "way/371401477",
+      "way/371401469",
+      "way/371401496",
+      "way/371401465",
+      "way/371401499"
+    ]
+  },
+  "donors": {
+    "currentGrotesque": {
+      "path": "tools/osm-city-lab/src/style/cartoon-city.js",
+      "blob": "d08c19fc45d98546b7ef2803f2ddbcb73b7f6782",
+      "reuse": "IMPORTED_AND_EXECUTED"
+    },
+    "currentStyle": {
+      "path": "tools/osm-city-lab/styles/kfb-city-v0.json",
+      "blob": "f129cca3041b55b84de26048dad7aef8fac8b292",
+      "reuse": "LOADED_AND_EXECUTED"
+    },
+    "viewerLighting": {
+      "path": "tools/osm-city-lab/src/viewer/app.js",
+      "blob": "181edccab50c2b127b95370cc67da55e138b7a78",
+      "reuse": "REFERENCE_VALUES_ONLY"
+    },
+    "raceRound": {
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "path": "KFB Cologne Race Option C-3/lab-v9/kfb-round.v1.js",
+      "blob": "74d3217872bb7fe98b7ad238b615f34962d0b9c3",
+      "reuse": "CONCEPT_DONOR_ROUNDNESS_RULE"
+    },
+    "racerColognePalette": {
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
+      "path": "KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js",
+      "blob": "38246785ec2c9089737b2a195673a3ad4c07bdf8",
+      "localMirror": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/cologne-palette.v1.js",
+      "reuse": "EXACT_BYTE_COPY_IMPORTED_AND_EXECUTED",
+      "capability": "OKLCH harmonic schemes + deterministic/random seed palette"
+    },
+    "racerCologneStyle": {
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
+      "path": "KFB Cologne Race Option C-3/lab-v9/option-c-style.v1.js",
+      "blob": "c39c163019ab16c602b32c70202880680f9173c7",
+      "localMirror": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/option-c-style.v1.js",
+      "reuse": "EXACT_BYTE_COPY_SUPPORT_MODULE"
+    },
+    "storyPaletteOwner": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/terrain/world-context.js",
+      "blob": "478e8cb4a53ea15e5c51833fa30554224e581815",
+      "reuse": "REFERENCE_OWNER_NOT_ACTIVATED_IN_R2",
+      "note": "Story modes/card semantic vector remain owned here. R2 uses the exact Racer Cologne harmonic generator with deterministic seed because no concrete story mode/card triplet was named in the R2 gate."
+    }
+  },
+  "boundaries": {
+    "osmTruthMutated": false,
+    "s2CollisionMutated": false,
+    "movementOwnerCreated": false,
+    "terrainOwnerCreated": false,
+    "celShadingRequired": false
+  },
+  "acceptedStyleBenchmark": {
+    "decision": "GEORG_ACCEPTED_SHAPE_DIRECTION_COLOR_EXPANSION_REQUESTED",
+    "image": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/benchmark/KFB_EGC_STYLE_BENCHMARK_2026-09-23.jpg",
+    "contract": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/STYLE_BENCHMARK.md"
+  },
+  "elasticV2": {
+    "groupWarp": "COHERENT_LOW_FREQUENCY_FIELD",
+    "facadeDetails": "IRREGULAR_2_3_WINDOWS_NO_FRAME_PLUS_ONE_DOOR",
+    "roadSurface": "CONTINUOUS_CATMULL_ROM_RIBBON",
+    "palette": "KFB_WONKY_90S_CLAY_V1",
+    "futureEnterableDoors": "DEFERRED_ASSETREF_REQUIRED"
+  },
+  "r2": {
+    "humanResult": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_V2_R2_2026-09-24.md",
+    "runtimeHead": "4cc496e79af80c7f8419ffb14f7f5d8daeb0b679",
+    "browserRun": 35947303053,
+    "browserChecks": "38/38 PASS · 3/3 WebGL2 · 0 page/console errors",
+    "artifact": 10787192998,
+    "artifactDigest": "sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0",
+    "roof": "FINAL_TOP_OUTLINE_EAVE_OVERHANG_R2",
+    "facades": "ORGANIC_ALL_VISIBLE_FACADES_FINAL_SURFACE_FRAME",
+    "detailCount": 193,
+    "shadow": "4096_TIGHT_FIT_BIAS_0_0002_NORMAL_0_055_ROOF_NO_RECEIVE",
+    "road": "CATMULL_RIBBON_OSM_NODE_ASPHALT_PATCH_PLUS_PATH_CONNECTOR",
+    "roadJunctionPatches": 23,
+    "pathRoadConnectors": 10,
+    "palette": "RACER_COLOGNE_HARMONIC_R2",
+    "paletteScheme": "komplementaer",
+    "paletteSeed": 2821914198,
+    "reviewUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/"
+  }
+}

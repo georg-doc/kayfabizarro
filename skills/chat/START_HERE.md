@@ -879,3 +879,35 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-24 · KFB Elastic Grotesque Clay · Hürth 01 · R2 FAIL / FREEZE
+
+Current bounded slice is **ARCHIVED_FAILED_CANDIDATE** after two failed human-visible repair passes on the same gate.
+
+Read:
+- `workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md`
+- `workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`
+
+Failed R2 runtime:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+
+Technical evidence:
+`35947303053` · **38/38 PASS · 3/3 WebGL2 · 0 errors**.
+
+Human result:
+**FAIL**.
+
+Observed unresolved issues:
+- persistent light/shadow hard boundaries;
+- road/path/curb still reads as layered patchwork and produces junction artefacts;
+- roof/body still reads as separate lid + block;
+- facade colour/detail distribution remains seeded randomness rather than designed rhythm.
+
+Hard rule:
+**NO R3 PATCH PASS ON THIS FOUNDATION.**
+
+Next gate:
+**research known facade rhythm / asymmetric balance / repetition-with-variation / colour hierarchy + isolated proof of one shared road topology and one roof/body union.**
+
+The direct Hürth route remains evidence only, not an acceptance candidate.

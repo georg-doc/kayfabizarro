@@ -1,0 +1,72 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "KFB Elastic Grotesque Clay · Hürth 01",
+  "exportRevision": "2026-09-24-r2-fail",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+  "pr": 194,
+  "failedRuntimeHead": "4cc496e79af80c7f8419ffb14f7f5d8daeb0b679",
+  "currentDocumentationHead": "READ_BRANCH_HEAD",
+  "entrypoints": [
+    "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/index.html",
+    "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md",
+    "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md"
+  ],
+  "sourceFiles": [
+    "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/viewer.mjs",
+    "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs",
+    "tools/osm-city-lab/src/style/cartoon-city.js",
+    "tools/osm-city-lab/src/viewer/street-surface.js",
+    "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/cologne-palette.v1.js",
+    "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/option-c-style.v1.js"
+  ],
+  "dataFiles": [
+    "tools/osm-city-lab/data/huerth-v0/normalized.json",
+    "tools/osm-city-lab/styles/kfb-city-v0.json"
+  ],
+  "donorRefs": [
+    {
+      "role": "Racer Cologne harmonic palette",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
+      "file": "KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js",
+      "blob": "38246785ec2c9089737b2a195673a3ad4c07bdf8"
+    },
+    {
+      "role": "Story mode / card semantic palette owner",
+      "repository": "georg-doc/kayfabizarro",
+      "file": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/terrain/world-context.js",
+      "note": "STORY_PALETTES + deterministic card/world seed logic; not fully integrated into failed R2."
+    }
+  ],
+  "tests": [
+    {
+      "run": 35947303053,
+      "head": "4cc496e79af80c7f8419ffb14f7f5d8daeb0b679",
+      "result": "38/38 PASS",
+      "webgl2": "3/3",
+      "pageConsoleErrors": 0,
+      "artifact": 10787192998,
+      "digest": "sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0",
+      "humanAcceptance": "FAIL"
+    }
+  ],
+  "evidence": [
+    "GitHub Actions artifact 10787192998",
+    "User screenshot: Bildschirmfoto 2026-09-24 um 04.37.11.png",
+    "User screenshot: Bildschirmfoto 2026-09-24 um 04.35.57.png",
+    "User screenshot: Bildschirmfoto 2026-09-24 um 04.35.43.png"
+  ],
+  "publicEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/",
+  "missing": [
+    "User-uploaded screenshots are referenced by filename but not copied into the repository by this chat connector.",
+    "No separate ZIP export was created because the Git branch already contains the full editable source/data/vendor state."
+  ],
+  "start": {
+    "command": "Serve repository root over HTTP; open tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/",
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/",
+    "notes": "Evidence only. Do not continue implementation from R2 without passing the new research + isolated architecture gate."
+  },
+  "nextGate": "RESEARCH + ISOLATED ARCHITECTURE PROOF · no R3 patch pass"
+}
