@@ -2,6 +2,14 @@
 
 Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 88 JOBS · 42 READY / 46 HOLD · UNMERGED · NO LIVE PROMOTION**
 
+## CLAUDE DESIGN EXECUTOR HANDOFF · RES-DISCO-CD-01
+
+- Added direct Claude Design start brief: `CLAUDE_DESIGN_RESIDENT_DISCO_01_2026-09-24.md`.
+- Executor route deliberately reuses current Resident Atlas S8 / fresh Orc-band authoring lineage instead of creating a new disco runtime.
+- First Claude artifact: Source Cast → Motion Audition → 8/16-bar ensemble + separate reusable `DISCO-BALL-CORE-01` candidate.
+- Claude does not publish Stage or merge; Web/GitHub Bridge rehomes accepted candidate and runs browser/publication gates.
+- Human Stage remains target-only: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`.
+
 ## LATEST USER CORRECTION · RES-DISCO-01
 
 - Prototype Pete is **OUT**: template/proof actor, not a disco Resident.
