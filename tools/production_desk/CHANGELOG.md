@@ -74,3 +74,15 @@ No PR was merged and no Live project was promoted by this change.
 
 Publication proof: `cloudflare-live@620c26350d3ecb2ea48b70da42fd92f689911584`; the exact public Hub route
 rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
+
+
+## 2026-09-24 · MUSIC-PERF-01 review mount
+
+- added `music-perf-01` as one HUB-CTRL `LOOK_AT` lane;
+- added `music-performance` as one Tool entry;
+- added a Stage navigator Human Gate card through the existing Hub owner;
+- preserved MUSIC-PERF donor/runtime ownership in Draft PR #207;
+- published only the Stage navigator delta to `cloudflare-live@5658557e...`;
+- verified public direct route + navigator with **22/22 Chromium PASS** in run `36047130373`;
+- human result remains PENDING;
+- root Production Desk regeneration remains a separate pending HUB-CTRL task and is not claimed complete.

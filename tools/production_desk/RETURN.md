@@ -1,3 +1,40 @@
+# CURRENT UPDATE · MUSIC-PERF-01 PUBLIC REVIEW MOUNT · 2026-09-24
+
+Status: **STAGE NAVIGATOR + DIRECT REVIEW PUBLIC_VERIFIED · ROOT DESK REBUILD STILL SEPARATE**
+
+HUB-CTRL remains the only Hub/registry/render owner.
+
+MUSIC-PERF source additions on this owner:
+- `tools/production_desk/config.json` now contains one `LOOK_AT` lane `music-perf-01`;
+- the same config contains one Tool entry `music-performance`;
+- `kfb-hub/stage/index.html` contains one Human Gate card linked to the exact Stage route;
+- HUB-CTRL source head carrying those additions before this note: `79309a28f90b1b65643ac3ecf13363ae82a01619`.
+
+Public publication:
+- exact MUSIC-PERF stage files were mirrored without rebuilding the donor at `cloudflare-live@a29b2cdb140238d2d1056dbffaad7065d87f9fe3`;
+- the Stage navigator link was published additively at `cloudflare-live@5658557e8d23a68ea1f5f6183d237c9a3284e29a`;
+- direct review: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/`;
+- Stage navigator: `https://kayfabizarro.pages.dev/kfb-hub/stage/`.
+
+Public proof:
+- MUSIC-PERF public QA run `36047130373` / job `107793328531`;
+- **22/22 PASS**;
+- artifact `10829491166`;
+- digest `sha256:d9461a8b85e30b2e53d32b8d26db3af7fbd365147e65b048c465e10c657c2b56`;
+- direct route marker, exact ORB/song pins, public scrub/playback, Stage card/link, 0 page errors and 0 HTTP failures all verified.
+
+Important boundary:
+- this does **not** claim the generated root `kfb-hub/index.html` Production Desk snapshot has been rebuilt from the newest HUB-CTRL config;
+- the existing Production Desk workflow still needs its separate regeneration gate;
+- the public Stage navigator is current and reachable through the existing Hub → Stage path;
+- MUSIC-PERF human result remains **PENDING**;
+- no PR #207 merge or ToolBox owner promotion occurred.
+
+Exactly one next MUSIC-PERF gate:
+Georg reviews the direct Stage route and returns PASS / TUNE / REJECT.
+
+---
+
 # CURRENT UPDATE · Recovery test status · 2026-09-24
 
 Status: **TEST FIX COMMITTED · HUB REBUILD NOT YET VERIFIED · PUBLIC REFRESH PENDING**
