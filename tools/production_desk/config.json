@@ -33,6 +33,29 @@
       }
     },
     {
+      "id": "music-perf-01",
+      "bucket": "LOOK_AT",
+      "title": "Music Performance · KayfaBizarros im Takt",
+      "what": "Der echte ORB-P1-v5-Band-Donor läuft mit Rubbish Groove über einen gemeinsamen Songclock. Source Object zeigt den unveränderten Donor; Performance blendet nur den noch nicht akzeptierten Drummer aus.",
+      "provider": "ChatGPT Web / ToolBox Animation Studio",
+      "yourAction": "Source Object kurz mit dem ORB-Donor vergleichen, dann Performance starten/scrubben und PASS, TUNE oder REJECT für Timing und Timeline geben.",
+      "waitingFor": "Georgs direkte Playback-Prüfung.",
+      "questions": [
+        "Entspricht Source Object sichtbar dem ursprünglichen ORB-P1-v5-Donor?",
+        "Wirken Leader und Gitarrist beim Play/Scrub sauber an den Song gekoppelt?",
+        "Ist der Beat/Bar-Ruler nützlich, ohne wie eine unnötige DAW zu wirken?"
+      ],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 207,
+      "branch": "web/music-perf-01-2026-09-24",
+      "expectedHead": "7098b801a1f50012c1972f248fe304326461d3f6",
+      "review": {
+        "label": "Band-Performance prüfen",
+        "path": "kfb-hub/stage/toolbox/music-performance/index.html",
+        "sourceRef": "PR #207 · runtime d834f1d4 · 22/22 source + 29/29 Chromium PASS · cloudflare-live a29b2cdb · human pending"
+      }
+    },
+    {
       "id": "production-desk",
       "bucket": "RUNNING",
       "title": "Production Desk (diese Übersicht)",
@@ -380,6 +403,14 @@
       "what": "FrizzleBob gegen einen Skelett-Krieger. Spielbar.",
       "status": "Fertig",
       "path": "kfb-hub/stage/combat/index.html"
+    },
+    {
+      "group": "Figuren und Animation",
+      "id": "music-performance",
+      "title": "Music Performance · KayfaBizarros",
+      "what": "Rubbish Groove + exakter ORB-P1-v5-Band-Donor mit Beat/Bar-Timeline, Play, Scrub und Performance-Rezept.",
+      "status": "Human Gate",
+      "path": "kfb-hub/stage/toolbox/music-performance/index.html"
     },
     {
       "group": "Spielen",
