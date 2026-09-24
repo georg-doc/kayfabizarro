@@ -169,17 +169,17 @@ jobs:
             check('B0 protected markers',quarter.b0Fork?.bbScene==='UNCHANGED'&&quarter.b0Fork?.bb0Boot==='UNCHANGED',quarter.b0Fork);
             check('B1 protected marker',quarter.b1Fork?.bb1Boot==='UNCHANGED_REFERENCE',quarter.b1Fork);
             check('quarter content nonblack',Number(quarter.sourceStats?.mean)>20,quarter.sourceStats);
-            check('CSS3D hidden outside video',quarter.css3d?.visible===false,quarter.css3d);
+            check('CSS3D hidden outside video',quarter.css3d?.visible===false&&quarter.dom?.objectVisible===false,{css3d:quarter.css3d,objectVisible:quarter.dom?.objectVisible});
             check('no modal exists',quarter.dom?.modalElementExists===false,quarter.dom);
             await page.screenshot({path:'artifacts/billboard-b2a-integration/01-quarter.png',fullPage:true});
 
             const cover=await waitMode('cover');
             check('cover owner still works',/cover page 1/.test(cover.content||''),cover.content);
-            check('cover CSS3D hidden',cover.css3d?.visible===false,cover.css3d);
+            check('cover CSS3D hidden',cover.css3d?.visible===false&&cover.dom?.objectVisible===false,{css3d:cover.css3d,objectVisible:cover.dom?.objectVisible});
 
             const video=await waitMode('video');
             check('video source is Travel',/Travel VIDEO MTCSwppblk0/.test(video.content||''),video.content);
-            check('CSS3D video visible',video.css3d?.visible===true,video.css3d);
+            check('CSS3D video visible',video.css3d?.visible===true&&video.dom?.objectVisible===true,{css3d:video.css3d,objectVisible:video.dom?.objectVisible});
             check('inline iframe source',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(video.dom?.iframeSrc||''),video.dom?.iframeSrc);
             check('no detached modal',video.dom?.modalElementExists===false,video.dom);
             check('world width exact',Math.abs(video.css3d.objectWorldWidth-video.css3d.panelWorldWidth)<1e-6,video.css3d);
@@ -196,25 +196,31 @@ jobs:
             report.hit=hit;
             check('video surface receives pointer',hit.tag==='IFRAME'||hit.id==='b2a-inline-video-surface',hit);
 
-            const frontTransform=video.dom.cssTransform;
+            const frontRect=video.dom.surfaceRect;
             await page.screenshot({path:'artifacts/billboard-b2a-integration/02-video-front.png',fullPage:true});
 
             await page.evaluate(()=>window.__b2a.setView('LEFT34'));
             await page.waitForTimeout(350);
             const left=await page.evaluate(()=>window.__b2a.snapshot());
             report.left34=left;
-            check('CSS3D persists at 3/4 view',left.css3d?.visible===true,left.css3d);
-            check('CSS3D camera transform changes',left.dom?.cssTransform!==frontTransform,{front:frontTransform,left:left.dom?.cssTransform});
+            check('CSS3D persists at 3/4 view',left.css3d?.visible===true&&left.dom?.objectVisible===true,{css3d:left.css3d,objectVisible:left.dom?.objectVisible});
+            const leftRect=left.dom?.surfaceRect;
+            const rectMoved=!!frontRect&&!!leftRect&&(
+              Math.abs(leftRect.x-frontRect.x)>5 ||
+              Math.abs(leftRect.y-frontRect.y)>5 ||
+              Math.abs(leftRect.w-frontRect.w)>5 ||
+              Math.abs(leftRect.h-frontRect.h)>5
+            );
+            check('CSS3D perspective changes with camera',rectMoved,{front:frontRect,left:leftRect});
             await page.screenshot({path:'artifacts/billboard-b2a-integration/03-video-left34.png',fullPage:true});
 
             const quarterExit=await waitMode('quarter');
-            check('video hides on mode exit',quarterExit.css3d?.visible===false,quarterExit.css3d);
+            check('video hides on mode exit',quarterExit.css3d?.visible===false&&quarterExit.dom?.objectVisible===false,{css3d:quarterExit.css3d,objectVisible:quarterExit.dom?.objectVisible});
             check('iframe unloads on mode exit',/about:blank$/.test(quarterExit.dom?.iframeSrc||''),quarterExit.dom?.iframeSrc);
-            check('surface display none',quarterExit.dom?.inlineDisplay==='none',quarterExit.dom?.inlineDisplay);
 
             const slogan=await waitMode('slogan');
             check('slogan preserved',slogan.content==='CHATTERBOX SHOW IT',slogan.content);
-            check('slogan CSS3D hidden',slogan.css3d?.visible===false,slogan.css3d);
+            check('slogan CSS3D hidden',slogan.css3d?.visible===false&&slogan.dom?.objectVisible===false,{css3d:slogan.css3d,objectVisible:slogan.dom?.objectVisible});
             await page.screenshot({path:'artifacts/billboard-b2a-integration/04-slogan.png',fullPage:true});
 
             check('no page errors',report.errors.length===0,report.errors);
