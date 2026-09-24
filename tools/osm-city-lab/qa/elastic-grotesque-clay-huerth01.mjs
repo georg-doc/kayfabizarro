@@ -44,7 +44,7 @@ try{
   }
 
   let report=await page.evaluate(()=>window.__KFB_ELASTIC_HUERTH01__.report());
-  assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.3-tuned-candidate');
+  assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.4-r2-candidate');
   assert.equal(report.sourceCity,'huerth-v0');
   assert.equal(report.sourceBuildings,22);
   assert.ok(report.sourceRoadParts>0);
@@ -55,17 +55,27 @@ try{
   assert.equal(report.elasticGroupWarp,'COHERENT_LOW_FREQUENCY_FIELD');
   assert.equal(report.defaultView,'elastic');
   assert.deepEqual(report.retainedSwitchViews,['clean','cartoon','grotesque','elastic']);
-  assert.equal(report.elasticDetails,'FINAL_BOWED_SURFACE_FRAME_FLUSH');
-  assert.equal(report.elasticShadow,'BIAS_0_NORMAL_BIAS_0_04_TIGHT_FIT');
-  assert.equal(report.elasticRoadSurface,'CONTINUOUS_CATMULL_ROM_RIBBON_PLUS_OSM_NODE_PATCHES');
+  assert.equal(report.elasticDetails,'ORGANIC_ALL_VISIBLE_FACADES_FINAL_SURFACE_FRAME');
+  assert.ok(report.elasticDetailCount>22,'R2 must place details across multiple facades');
+  assert.equal(report.elasticShadow,'4096_TIGHT_FIT_BIAS_0_0002_NORMAL_0_055_ROOF_NO_RECEIVE');
+  assert.equal(report.elasticRoadSurface,'CATMULL_RIBBON_OSM_NODE_ASPHALT_PATCH_PLUS_PATH_CONNECTOR');
   assert.ok(report.elasticRoadJunctionPatches>0,'elastic road junction patches must exist');
-  assert.equal(report.elasticRoof,'FINAL_TOP_OUTLINE_SMALL_OVERHANG');
-  assert.equal(report.elasticPalette,'KFB_WONKY_90S_CLAY_V1');
-  assert.equal(report.humanAcceptance,'TUNE_ONCE_PENDING_REVIEW');
+  assert.ok(report.elasticPathRoadConnectors>0,'path-road connectors must exist at shared OSM nodes');
+  assert.equal(report.elasticRoof,'FINAL_TOP_OUTLINE_EAVE_OVERHANG_R2');
+  assert.equal(report.elasticPalette,'RACER_COLOGNE_HARMONIC_R2');
+  assert.ok(['analog','komplementaer','triade','split','tetrade'].includes(report.elasticPaletteScheme),'Racer Cologne harmony scheme must be used');
+  assert.equal(typeof report.elasticPaletteSeed,'number');
+  assert.equal(report.elasticPaletteDonor?.repository,'georg-doc/KFB-Stunt-Car-Race');
+  assert.equal(report.elasticPaletteDonor?.commit,'cc80f4a1c6c509db9668df79fd53b13cee093a9d');
+  assert.equal(report.elasticPaletteDonor?.file,'KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js');
+  assert.equal(report.elasticPaletteDonor?.blob,'38246785ec2c9089737b2a195673a3ad4c07bdf8');
+  assert.equal(report.humanAcceptance,'R2_PENDING_REVIEW');
   assert.deepEqual(report.visibleCounts,{clean:22,grotesque:22,elastic:22});
   assert.ok(Object.values(report.webgl2).every(Boolean),'all three canvases must boot WebGL2');
   assert.deepEqual(errors,[]);
   await page.screenshot({path:OUT+'/01-block-comparison.png',fullPage:true});
+  const elasticBox=await page.locator('#elastic').boundingBox();
+  if(elasticBox)await page.screenshot({path:OUT+'/01b-elastic-r2-after.png',clip:elasticBox});
 
   const first=await page.locator('#building option').nth(1).getAttribute('value');
   assert.ok(first?.startsWith('way/'));
@@ -101,7 +111,7 @@ try{
     assert.equal(legacy?.look,look,'legacy '+look+' view must still boot unchanged');
   }
 
-  const result={status:'PASS',checks:29,url,report,errors,isolatedSource:first};
+  const result={status:'PASS',checks:38,url,report,errors,isolatedSource:first};
   fs.writeFileSync(OUT+'/report.json',JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result,null,2));
 }finally{
