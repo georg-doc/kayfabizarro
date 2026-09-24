@@ -24,4 +24,11 @@ Must contain, in prose, not just paths:
 5. Technical traps you found (TinySkies needs global THREE and relative sky-presets; jsDelivr pins; WebGPU vs WebGL; etc.).
 6. Done-when list Georg can check by looking (incl. planet seen from outside without facets; one continuous camera move globe → ground).
 
+7. **Claude Design delivery (Georg 24.09, binding for every Claude Design brief):** Claude Design **cannot push to GitHub** and has no browser detour. Georg exports by hand. So the brief must require, without being asked, at the end of every slice:
+   - a **full codebase export** (all files, unchanged multi-file, no bundle, no mirror);
+   - an **additive `CHANGELOG.md`** (new / unchanged / removed, newest on top);
+   - `RETURN.md` (what was built, what is different in the picture, open points) and `SOURCE.json` (every donor with exact repo path + commit);
+   - a one-line file tree at the top of RETURN.md.
+   Coworker/Web then commits the export to GitHub and publishes it as a wrapper review page under `kfb-hub/pruefen/<name>/`. Never ask Georg to request the export separately.
+
 Read `CURRENT_STATE_2026-09-24_WSA.md` and the private Travel/Racer repos for facts. No implementation. Commit, report the URL, stop.
