@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  html,body{margin:0;min-height:100%;background:#17181a;color:#e7e7e5;font-family:"IBM Plex Sans",-apple-system,Segoe UI,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  a{color:#e7e7e5;text-decoration:underline;text-underline-offset:2px;} a:hover{color:#fff;}
+  button{font-family:inherit;-webkit-tap-highlight-color:transparent;}
+  ::selection{background:#3a3d41;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  window.__KFB3D = window.__KFB3D || { THREE, GLTFLoader, version: THREE.REVISION };
+  window.dispatchEvent(new Event('kfb3dready'));
+</script>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#17181a"/><circle cx="140" cy="170" r="44" fill="#e7e7e5"/><rect x="236" y="126" width="88" height="88" rx="30" fill="#e6a13c"/><rect x="90" y="286" width="220" height="6" rx="3" fill="#4a4f54"/></svg></template>
+
+<div style="max-width:1180px;margin:0 auto;padding:20px 22px 44px;display:flex;flex-direction:column;gap:16px;">
+
+  <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+    <h1 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-0.01em;">Zwei Figuren, ein Blick</h1>
+    <span style="font-size:12.5px;color:#9a9da1;">Graft und CapsuleCarl aus demselben Vertragsleser — Front und Seite, dieselben Zustände.</span>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#83868a;">Bewegung</span>
+      <div style="display:flex;gap:5px;">
+        <sc-for list="{{ motionBtns }}" as="b" hint-placeholder-count="2">
+          <button onClick="{{ b.on }}" style="{{ b.style }}" style-hover="border-color:#5a6067;">{{ b.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#83868a;">Gesicht</span>
+      <button onClick="{{ onTalk }}" title="Visem-Shuffle des Mundes (pet-mouth.v1) — kein Lippenabgleich" style="{{ talkStyle }}" style-hover="border-color:#5a6067;">Talk</button>
+      <div style="display:flex;gap:5px;">
+        <sc-for list="{{ emoteBtns }}" as="b" hint-placeholder-count="4">
+          <button onClick="{{ b.on }}" style="{{ b.style }}" style-hover="border-color:#5a6067;">{{ b.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <button onClick="{{ onPlay }}" style="{{ playStyle }}" style-hover="border-color:#5a6067;">{{ playLabel }}</button>
+    <span style="font-size:12px;color:#83868a;font-family:'IBM Plex Mono',monospace;">{{ busy }}</span>
+  </div>
+
+  <div ref="{{ stageRef }}" style="position:relative;width:100%;height:520px;border:1px solid #2a2d30;border-radius:4px;overflow:hidden;background:#1c1d1f;">
+    <div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;pointer-events:none;">
+      <div style="position:relative;border-right:1px solid rgba(0,0,0,0.18);border-bottom:1px solid rgba(0,0,0,0.18);">
+        <span style="position:absolute;top:9px;left:11px;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#4b4d50;">Graft · Front</span>
+      </div>
+      <div style="position:relative;border-bottom:1px solid rgba(0,0,0,0.18);">
+        <span style="position:absolute;top:9px;left:11px;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#4b4d50;">Carl · Front</span>
+      </div>
+      <div style="position:relative;border-right:1px solid rgba(0,0,0,0.18);">
+        <span style="position:absolute;top:9px;left:11px;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#4b4d50;">Graft · Seite</span>
+      </div>
+      <div style="position:relative;">
+        <span style="position:absolute;top:9px;left:11px;font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#4b4d50;">Carl · Seite</span>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ err }}" hint-placeholder-val="{{ false }}">
+    <div style="padding:10px 12px;border:1px solid #5a3a34;border-radius:4px;background:#241c1a;font-size:12.5px;font-family:'IBM Plex Mono',monospace;color:#e0a79c;">{{ err }}</div>
+  </sc-if>
+
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <h2 style="margin:8px 0 0;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#9a9da1;">Bericht</h2>
+    <div style="display:grid;grid-template-columns:minmax(150px,210px) minmax(0,1fr) minmax(0,1fr);gap:1px;background:#26292c;border:1px solid #26292c;border-radius:4px;overflow:hidden;font-size:12.5px;">
+      <div style="background:#1c1d1f;padding:8px 11px;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#83868a;">Gemessen</div>
+      <div style="background:#1c1d1f;padding:8px 11px;font-weight:500;">Graft</div>
+      <div style="background:#1c1d1f;padding:8px 11px;font-weight:500;">CapsuleCarl</div>
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+        <div style="background:#17181a;padding:8px 11px;color:#9a9da1;">{{ r.k }}</div>
+        <div style="background:#17181a;padding:8px 11px;font-family:'IBM Plex Mono',monospace;">{{ r.g }}</div>
+        <div style="background:#17181a;padding:8px 11px;font-family:'IBM Plex Mono',monospace;">{{ r.c }}</div>
+      </sc-for>
+    </div>
+    <p style="margin:6px 0 0;max-width:74ch;font-size:13px;line-height:1.55;color:#c3c5c8;text-wrap:pretty;">{{ note }}</p>
+    <p style="margin:0;max-width:74ch;font-size:12px;line-height:1.5;color:#83868a;text-wrap:pretty;">Verfahren: beide Figuren kommen aus <span style="font-family:'IBM Plex Mono',monospace;">graft-mount.v1</span> beziehungsweise <span style="font-family:'IBM Plex Mono',monospace;">carlrig-mount.v1</span> mit denselben Gesichtsmodulen; Bindung heißt, die Spur eines Clips findet ihren Knoten in der Figur (gezählt, nicht geschätzt). Nicht gemessen: ob die gebundene Bewegung gut aussieht, und ob Carls prozedurale Bewegung zu den Clip-Zeiten passt. Diese Seite schreibt nichts in die Sitzung.</p>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stageTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;graphite&quot;,&quot;paper&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;grid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;startState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Ruhe&quot;,&quot;Walk&quot;],&quot;default&quot;:&quot;Ruhe&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { motion: 'Ruhe', talk: false, emote: 'neutral', playing: true, rows: [], note: '', err: '', busy: 'lädt …' };
+  stageRef = React.createRef();
+
+  EMOTE_DEF = { neutral: { lidUpper: -0.4, lidLower: 0, slant: 0 }, happy: { lidUpper: 0, lidLower: 0.3, slant: 0 },
+    angry: { lidUpper: 0.25, lidLower: 0.1, slant: -0.4 }, sad: { lidUpper: 0.15, lidLower: 0, slant: 0.35 } };
+
+  componentDidMount() {
+    const go = () => { this.T = window.__KFB3D; this.boot(); };
+    if (window.__KFB3D) go(); else window.addEventListener('kfb3dready', go, { once: true });
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    if (this.ro) this.ro.disconnect();
+    try { if (this.graft) this.graft.dispose(); } catch (e) {}
+    try { if (this.carl) this.carl.dispose(); } catch (e) {}
+    if (this.renderer) this.renderer.dispose();
+  }
+
+  tone() { return this.props.stageTone === 'graphite' ? 0x2b2e31 : this.props.stageTone === 'paper' ? 0xefece6 : 0xdedbd4; }
+
+  makeScene(THREE) {
+    const tone = this.tone();
+    const s = new THREE.Scene(); s.background = new THREE.Color(tone);
+    s.add(new THREE.HemisphereLight(0xffffff, 0x8a8a8a, 1.05));
+    const key = new THREE.DirectionalLight(0xffffff, 1.55); key.position.set(3.2, 6, 4.2); s.add(key);
+    const rim = new THREE.DirectionalLight(0xffffff, 0.45); rim.position.set(-3, 2.5, -3.5); s.add(rim);
+    const g = new THREE.Mesh(new THREE.CircleGeometry(5, 64), new THREE.MeshStandardMaterial({ color: tone, roughness: 1 }));
+    g.rotation.x = -Math.PI / 2; g.position.y = -0.001; s.add(g);
+    const gc = new THREE.Color(tone).offsetHSL(0, 0, this.props.stageTone === 'graphite' ? 0.08 : -0.09);
+    const grid = new THREE.GridHelper(6, 12, gc, gc); grid.position.y = 0.002; grid.visible = this.props.grid !== false; s.add(grid);
+    return { scene: s, grid };
+  }
+
+  async boot() {
+    if (!this.T || this.renderer) return;
+    const { THREE, GLTFLoader } = this.T;
+    const host = this.stageRef.current; if (!host) return;
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.autoClear = false;
+    renderer.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;';
+    host.insertBefore(renderer.domElement, host.firstChild);
+    this.renderer = renderer;
+    this.G = this.makeScene(THREE); this.C = this.makeScene(THREE);
+    const cam = () => { const c = new THREE.PerspectiveCamera(32, 1, 0.05, 120); c.position.set(0, 1, 3.2); return c; };
+    this.cams = { gf: cam(), gs: cam(), cf: cam(), cs: cam() };
+    this.clock = new THREE.Clock();
+    const fit = () => { const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); for (const k in this.cams) { this.cams[k].aspect = (w / 2) / (h / 2); this.cams[k].updateProjectionMatrix(); } };
+    this.ro = new ResizeObserver(fit); this.ro.observe(host); fit();
+    this.loader = new GLTFLoader();
+    this.loop();
+    try { await this.build(); } catch (e) { console.error('[vergleich]', e); this.setState({ err: String(e && e.message || e), busy: '' }); }
+  }
+
+  loop = () => {
+    this.raf = requestAnimationFrame(this.loop);
+    const dt = this.clock.getDelta();
+    if (this.state.playing && this.mixer) this.mixer.update(dt);
+    try { if (this.graft) this.graft.update(dt, this.cams.gf); } catch (e) {}
+    try { if (this.carl) this.carl.update(dt); } catch (e) {}
+    const r = this.renderer, host = this.stageRef.current; if (!host) return;
+    const w = Math.floor(host.clientWidth / 2), h = Math.floor(host.clientHeight / 2);
+    r.setScissorTest(false); r.clear();
+    r.setScissorTest(true);
+    const draw = (x, y, scene, camera) => { r.setViewport(x, y, w, h); r.setScissor(x, y, w, h); r.clearDepth(); r.render(scene, camera); };
+    if (this.G) { draw(0, h, this.G.scene, this.cams.gf); draw(0, 0, this.G.scene, this.cams.gs); }
+    if (this.C) { draw(w, h, this.C.scene, this.cams.cf); draw(w, 0, this.C.scene, this.cams.cs); }
+  };
+
+  frame(obj, front, side) {
+    const THREE = this.T.THREE;
+    const box = new THREE.Box3().setFromObject(obj); const size = box.getSize(new THREE.Vector3());
+    const c = box.getCenter(new THREE.Vector3());
+    const span = Math.max(size.y, 0.4) * 1.45;
+    const d = (span / 2) / Math.tan((front.fov / 2) * Math.PI / 180);
+    front.position.set(c.x, c.y, c.z + d); front.lookAt(c);
+    side.position.set(c.x + d, c.y, c.z); side.lookAt(c);
+    return { height: +size.y.toFixed(3) };
+  }
+
+  bindCount(root, clip) {
+    const THREE = this.T.THREE; let bound = 0;
+    for (const t of clip.tracks) {
+      const p = THREE.PropertyBinding.parseTrackName(t.name);
+      if (THREE.PropertyBinding.findNode(root, p.nodeName)) bound++;
+    }
+    return { bound, total: clip.tracks.length };
+  }
+  bones(root) { let n = 0; root.traverse((o) => { if (o.isBone) n++; }); return n; }
+  meshes(root) { let n = 0; root.traverse((o) => { if (o.isMesh) n++; }); return n; }
+
+  async build() {
+    const THREE = this.T.THREE;
+    const A = await import(new URL('./lab/assets.js', location.href).href);
+    const GM = await import(new URL('./frizzlegraft-v1/graft-mount.v1.js', location.href).href);
+    const CM = await import(new URL('./lab-v6/carlrig-mount.v1.js', location.href).href);
+    const load = (path) => new Promise((res, rej) => this.loader.load(A.url(path), res, undefined, () => rej(new Error('nicht ladbar: ' + path.split('/').pop()))));
+    const json = async (p) => { const r = await fetch(new URL(p, location.href).href); if (!r.ok) throw new Error(p + ': HTTP ' + r.status); return r.json(); };
+
+    this.setState({ busy: 'Verträge …' });
+    const contract = await json('./fixtures/kfb-pet-graft-driver.v4.json');
+    const carlDoc = await json('./petstudio-v9/kfb-pet-capsule-carl.json');
+    const graftPet = GM.pickGraftPet(contract);
+    const carlPet = (carlDoc.pets || []).find((p) => p.kind === 'capsule');
+    if (!graftPet) throw new Error('kein Graft-Eintrag im Vertrag');
+    if (!carlPet) throw new Error('kein Capsule-Eintrag in kfb-pet-capsule-carl.json');
+
+    this.setState({ busy: 'Graft …' });
+    this.graft = await GM.mountGraft({ THREE, loader: this.loader, parent: this.G.scene, pet: graftPet,
+      lib: contract, camera: this.cams.gf, animation: 'host', log: () => {} });
+
+    this.setState({ busy: 'Carl …' });
+    const mods = await GM.faceMods();
+    this.carl = await CM.mountCarl({ THREE, loader: this.loader, scene: this.C.scene, mods, pet: carlPet });
+
+    this.setState({ busy: 'Bewegungen …' });
+    /* Walking_A steht in MovementBasic, Idle_A NICHT — gemessen: dort fehlt es, General hat es.
+       Beide Pakete in einen Pool, sonst bleibt die Figur in der T-Pose stehen. */
+    const packs = await Promise.all(['MovementBasic', 'General'].map((k) => load(A.packPath('Medium', k)).catch(() => null)));
+    const clips = packs.filter(Boolean).reduce((a, p) => a.concat(p.animations || []), []);
+    const pick = (names) => { for (const n of names) { const hit = clips.find((c) => c.name === n); if (hit) return hit; } return null; };
+    this.clips = { Ruhe: pick(['Idle_A', 'Idle_B']), Walk: pick(['Walking_A', 'Walking_B']) };
+
+    const gRoot = this.graft.root, cRoot = this.carl.group;
+    const gFit = this.frame(gRoot, this.cams.gf, this.cams.gs);
+    const cFit = this.frame(cRoot, this.cams.cf, this.cams.cs);
+
+    this.mixer = new THREE.AnimationMixer(gRoot);
+    this.actions = {};
+    for (const k in this.clips) if (this.clips[k]) { const a = this.mixer.clipAction(this.clips[k]); a.loop = THREE.LoopRepeat; this.actions[k] = a; }
+    this.playMotion(this.props.startState === 'Walk' ? 'Walk' : 'Ruhe');
+
+    const gFace = { rig: this.graft.rig || null, mouth: this.graft.mouth || null };
+    const cFace = { rig: (this.carl.face || {}).eyeRig || null, mouth: (this.carl.face || {}).mouth || null };
+    this.faces = [gFace, cFace];
+    this.applyFace();
+
+    const walk = this.clips.Walk, idle = this.clips.Ruhe;
+    const gW = walk ? this.bindCount(gRoot, walk) : null, cW = walk ? this.bindCount(cRoot, walk) : null;
+    const yn = (x) => (x ? 'ja' : 'nein');
+    const rows = [
+      { k: 'Klasse', g: 'Biped, gerigt (Graft)', c: 'statisches Netz (Capsule)' },
+      { k: 'Knochen', g: String(this.bones(gRoot)), c: String(this.bones(cRoot)) },
+      { k: 'Höhe', g: gFit.height + ' u', c: cFit.height + ' u' },
+      { k: 'Clip-Spuren binden · ' + (walk ? walk.name : 'Walk fehlt'), g: gW ? gW.bound + ' von ' + gW.total : '—', c: cW ? cW.bound + ' von ' + cW.total : '—' },
+      { k: 'Walk', g: gW && gW.bound ? 'läuft' : 'steht', c: cW && cW.bound ? 'läuft' : 'steht — keine Bindung' },
+      { k: 'Ruhe', g: idle ? idle.name : 'Clip fehlt', c: 'Ruhepose des Netzes' },
+      { k: 'Talk · Mund', g: yn(gFace.mouth), c: yn(cFace.mouth) },
+      { k: 'Miene · Augen', g: yn(gFace.rig), c: yn(cFace.rig) },
+      { k: 'Netze im Baum', g: String(this.meshes(gRoot)), c: String(this.meshes(cRoot)) + ' · ' + (this.carl.parts || []).length + ' Zonen' },
+      { k: 'Quelle', g: 'kfb-pet-graft-driver.v4.json · ' + (graftPet.id || '—'), c: 'kfb-pet-capsule-carl.json · ' + (carlPet.id || '—') },
+    ];
+    const note = 'Die beiden Figuren teilen Gesicht und Vertragsleser, nicht die Bewegungsklasse. ' +
+      'Der Graft nimmt die KayKit-Spuren an (' + (gW ? gW.bound + ' von ' + gW.total : '—') + '), Carl nimmt ' + (cW ? cW.bound : 0) + ' davon an — ' +
+      'für ihn ist Walk keine Animation, sondern eine Aufgabe für Ganzkörper-Prozedurales. ' +
+      'Talk und Miene laufen auf beiden, weil sie aus denselben Modulen kommen und keine Knochen brauchen.';
+    this.setState({ rows, note, busy: '' });
+  }
+
+  playMotion(k) {
+    this.setState({ motion: k });
+    if (!this.mixer) return;
+    for (const key in this.actions) { const a = this.actions[key]; if (key === k) { a.reset().fadeIn(0.2).play(); } else a.fadeOut(0.2); }
+  }
+  emotes() { return this.EMOTE_DEF; }
+  applyFace() {
+    const s = this.state, em = this.emotes()[s.emote] || this.EMOTE_DEF.neutral;
+    for (const F of (this.faces || [])) {
+      if (!F) continue;
+      if (F.rig) { try { F.rig.applyEmote({ ...em, pupil: em.pupil || 'normal', gaze: 'front' }); F.rig.setGazeFollow(false); } catch (e) {} }
+      if (F.mouth) { try { if (F.mouth.setRest) F.mouth.setRest(s.emote); F.mouth.talk(s.talk); } catch (e) {} }
+    }
+  }
+
+  chip(on) {
+    return 'height:27px;padding:0 11px;border-radius:3px;font-size:12px;cursor:pointer;transition:border-color .12s;' +
+      'background:' + (on ? '#26292c' : 'transparent') + ';color:' + (on ? '#fff' : '#b6b9bc') + ';border:1px solid ' + (on ? '#4a4f54' : '#2a2d30') + ';';
+  }
+
+  renderVals() {
+    const s = this.state;
+    return {
+      stageRef: this.stageRef, rows: s.rows, note: s.note, err: s.err, busy: s.busy,
+      motionBtns: ['Ruhe', 'Walk'].map((k) => ({ label: k, style: this.chip(s.motion === k), on: () => this.playMotion(k) })),
+      emoteBtns: Object.keys(this.EMOTE_DEF).map((k) => ({ label: k, style: this.chip(s.emote === k), on: () => this.setState({ emote: k }, () => this.applyFace()) })),
+      talkStyle: this.chip(s.talk), onTalk: () => this.setState((p) => ({ talk: !p.talk }), () => this.applyFace()),
+      playStyle: this.chip(!s.playing), playLabel: s.playing ? 'Pause' : 'Weiter', onPlay: () => this.setState((p) => ({ playing: !p.playing })),
+    };
+  }
+}
+</script>
+</body>
+</html>

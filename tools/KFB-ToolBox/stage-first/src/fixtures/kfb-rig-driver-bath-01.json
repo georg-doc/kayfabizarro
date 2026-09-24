@@ -1,0 +1,140 @@
+{
+  "kind": "kfb-mech-vehicle-rig",
+  "version": 2,
+  "saved": "2026-09-12 15:29",
+  "fig": "driver",
+  "cut": false,
+  "base": false,
+  "cock": false,
+  "panel": "flat",
+  "tab": "tub",
+  "fahrzeug": {
+    "path": "SciFI_Ultimate Space Kit_Quaternius/Vehicles/GLTF/Rover_Round.gltf",
+    "on": true,
+    "s": 1,
+    "ant": false
+  },
+  "wannenrig": {
+    "tub": "Bubbly_Bathroom_Tiny_Treats_1-1/Assets/gltf/bath.gltf",
+    "jet": "Frankensteining/Space engine by Poly by Google - 4w-3qcynW5d.glb",
+    "wheel": "dark",
+    "wOn": true,
+    "wSize": 0.42,
+    "wTrack": 1.06,
+    "wBase": 0.62,
+    "wY": 0.02,
+    "jOn": true,
+    "jSize": 0.96,
+    "jX": 0,
+    "jY": 0.29,
+    "jZ": -1.12
+  },
+  "aufsetzen": {
+    "s": 1.07,
+    "x": 0,
+    "y": 0.07,
+    "z": 0.02,
+    "rot": 0
+  },
+  "material": {
+    "col": {
+      "rover": "#ffffff",
+      "platte": "#ffffff",
+      "hardware": "#ffffff",
+      "stiel": "#2b3440",
+      "kugel": "#b8361f",
+      "wanne": "#ffffff",
+      "reifen": "#ffffff",
+      "duese": "#ffffff"
+    },
+    "tex": "aus",
+    "eigen": "",
+    "texOn": {
+      "rover": false,
+      "platte": false,
+      "hardware": false,
+      "wanne": false,
+      "duese": false
+    },
+    "rep": 2,
+    "boxuv": true
+  },
+  "schnitt": {
+    "dy": 0.05,
+    "bury": 1.15
+  },
+  "basis": {
+    "bw": 1.6,
+    "kx": 1.2,
+    "ky": 1,
+    "kz": 1,
+    "sink": 0
+  },
+  "einpassen": {
+    "ox": 0,
+    "oy": 0,
+    "oz": 0
+  },
+  "parts": {
+    "stick": {
+      "on": true,
+      "x": -0.81,
+      "z": 0.74,
+      "y": -0.48,
+      "s": 0.9
+    },
+    "round": {
+      "on": true,
+      "x": 0.52,
+      "z": 0.8,
+      "y": -0.33,
+      "s": 0.3
+    },
+    "square": {
+      "on": true,
+      "x": 0.81,
+      "z": 0.58,
+      "y": -0.35,
+      "s": 0.3
+    },
+    "panel": {
+      "on": true,
+      "x": 0,
+      "z": 1.04,
+      "y": -0.58,
+      "s": 0.9
+    }
+  },
+  "arms": {
+    "r": {
+      "lift": -38,
+      "fwd": 38,
+      "elbow": 6
+    },
+    "l": {
+      "lift": -28,
+      "fwd": 22,
+      "elbow": 0
+    }
+  },
+  "gemessen": [
+    "Hüftlinie 0.518 · 2 Beinknochen (upperlegr, upperlegl)",
+    "Figur 2.419 hoch",
+    "Schnitt aus — ganze Figur",
+    "Basis aus",
+    "Look aus: Sitzung (Entwurf)",
+    "· Kopfzonen #f6c19d / #f7cb00",
+    "· Rollen Kleidung — · Akzent —",
+    "· Augen #f2c93c",
+    "Wanne 2.000 × 1.608 × 3.000 (B × H × T)",
+    "Räder ×1.125 · Durchmesser 0.675 · Spur 2.120 · Radstand 1.860",
+    "Düse · Länge 0.960 · Heck z -1.680",
+    "Wasserlinie gemessen 1.316 · Rand 1.978",
+    "Innenboden 1.116 · innen 1.839 × 1.333 · Tiefe 0.270",
+    "Bodenfreiheit 0.370 · Wannenoberkante 1.978",
+    "Hüftlinie 0.961 · 0.355 UNTER der Wasserlinie",
+    "Kopfoberkante 2.975 · Wannenrand 1.978 · Figur : Wanne = 1.29",
+    "Figurenpunkte unter dem Innenboden: 5 % (171/3398)",
+    "Rezept aus dem Rennen: Fahrer 1.55 · Wanne 2.1 · Hüfte -0.28 darunter — kein Beinlöser"
+  ]
+}

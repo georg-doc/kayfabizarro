@@ -1,0 +1,262 @@
+{
+  "$schema": "kfb.pets/1",
+  "version": "1.0.0",
+  "updated": "2026-09-13",
+  "note": "Übersetzt aus kfb.carl.rig/6 (Rigging-Werkbank). Ein Export-Pfad, keine zweite Form: die Index-Zonen sind zu benannten Feldern aufgelöst, die Karte der Felder steht in lab-v6/carl-contract.v1.js (FIELD_MAP).",
+  "pets": [
+    {
+      "id": "capsule-carl",
+      "name": "CapsuleCarl",
+      "kind": "capsule",
+      "module": "CarlRig",
+      "variant": "player",
+      "color": "#d99a4e",
+      "skin": "native",
+      "source": "KayKit_Mystery_Series6/CapsuleCarl/gltf/player.gltf",
+      "notes": "CapsuleCarl, geriggt in der Rigging-Werkbank (KFB Rigging Lab v1). Statischer Körper ohne Knochen: 1 Netz, 21 Inseln, 0 Morphs. Die Mundmulde ist eingeebnet (0,1865 u), das PetStudio-Gesicht sitzt auf abgelesenen Ankern, die Quelldatei bleibt unberührt. ACHTUNG: das Studio hat den Bauweg »CarlRig« noch nicht — dieser Eintrag ist die Einstellung, nicht der Bau.",
+      "eye": {
+        "dx": 0.226,
+        "dy": 0.308,
+        "ring": 0.14,
+        "track": 0.04,
+        "pupilSize": 0.4,
+        "lidFit": 0.92,
+        "gloss": 0.9,
+        "lashes": {
+          "length": 0.45,
+          "density": 7,
+          "width": 1
+        },
+        "colors": {
+          "ball": null,
+          "lid": null,
+          "lash": null,
+          "pupil": null
+        }
+      },
+      "mouth": {
+        "size": 0.56,
+        "dy": -0.01,
+        "sx": 1,
+        "lift": 0.03,
+        "wrap": 1,
+        "rate": 1,
+        "set": "red"
+      },
+      "moustache": {
+        "enabled": false,
+        "form": "tube",
+        "color": null
+      },
+      "brow": {
+        "mod": "block",
+        "original": {
+          "islands": [
+            {
+              "island": 7,
+              "size": [
+                0.3,
+                0.166,
+                0.235
+              ],
+              "centre": [
+                0.222,
+                1.519,
+                0.406
+              ]
+            },
+            {
+              "island": 8,
+              "size": [
+                0.3,
+                0.166,
+                0.235
+              ],
+              "centre": [
+                -0.222,
+                1.519,
+                0.406
+              ]
+            }
+          ],
+          "enabled": false,
+          "scale": 1,
+          "spread": 0,
+          "lift": 0,
+          "depth": 0,
+          "tilt": 0
+        }
+      },
+      "nose": {
+        "mod": "original",
+        "original": {
+          "islands": [
+            {
+              "island": 6,
+              "size": [
+                0.131,
+                0.151,
+                0.334
+              ],
+              "centre": [
+                0,
+                1.3,
+                0.622
+              ]
+            }
+          ],
+          "enabled": false,
+          "scale": 1.34,
+          "spread": 0,
+          "lift": -0.02,
+          "depth": -0.066,
+          "tilt": 0
+        }
+      },
+      "zones": [
+        {
+          "island": 1,
+          "name": null,
+          "hidden": false,
+          "color": "#c03"
+        },
+        {
+          "island": 2,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 3,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 4,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 5,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 6,
+          "name": null,
+          "hidden": false,
+          "color": "#c03"
+        },
+        {
+          "island": 7,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 8,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 9,
+          "name": null,
+          "hidden": true,
+          "color": null
+        },
+        {
+          "island": 10,
+          "name": null,
+          "hidden": true,
+          "color": null
+        },
+        {
+          "island": 11,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 12,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 13,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 14,
+          "name": null,
+          "hidden": true,
+          "color": null
+        },
+        {
+          "island": 15,
+          "name": null,
+          "hidden": true,
+          "color": null
+        },
+        {
+          "island": 16,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 17,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 18,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 19,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 20,
+          "name": null,
+          "hidden": false,
+          "color": null
+        },
+        {
+          "island": 21,
+          "name": null,
+          "hidden": true,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "contract": "1.3.0",
+    "source": "KFB Rigging Lab v1",
+    "translatedFrom": "kfb.carl.rig/6",
+    "label": "single",
+    "count": 1,
+    "ids": [
+      "capsule-carl"
+    ],
+    "measured": null,
+    "zones": {
+      "total": 21,
+      "hidden": 5,
+      "named": 0
+    }
+  }
+}

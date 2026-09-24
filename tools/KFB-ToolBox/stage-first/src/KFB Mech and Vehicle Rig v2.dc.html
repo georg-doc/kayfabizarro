@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#17181a;}
+  #dc-root,.sc-host{height:100%;}
+  a{color:#e6a13c;} a:hover{color:#f0bd74;}
+  .mv-scroll::-webkit-scrollbar{width:8px;} .mv-scroll::-webkit-scrollbar-thumb{background:#2a2d30;}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  window.__MVRIG = { THREE, OrbitControls, GLTFLoader, RoomEnvironment };
+  window.dispatchEvent(new Event('mvrigready'));
+</script>
+</helmet>
+
+<div style="height:100%;display:grid;grid-template-rows:auto 1fr;background:#17181a;font-family:'IBM Plex Sans',system-ui,sans-serif;color:#e7e7e5;">
+
+  <div style="display:flex;align-items:center;gap:8px 12px;padding:9px 14px;background:#1d1f21;border-bottom:1px solid #2a2d30;flex-wrap:wrap;">
+    <span style="font-weight:600;font-size:14px;letter-spacing:.3px;white-space:nowrap;">Mech &amp; Vehicle Rig <span style="color:#e6a13c;">v2</span></span>
+    <div style="display:flex;gap:5px;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+        <button onClick="{{ t.on }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+    <span style="font-size:11px;color:#9a9a96;">{{ status }}</span>
+    <span style="font-size:11px;color:#8fbf6a;font-family:'IBM Plex Mono',monospace;">{{ flash }}</span>
+    <input type="file" accept="application/json,.json" ref="{{ fileRef }}" onChange="{{ onFile }}" style="display:none;">
+    <div style="display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;">
+      <button onClick="{{ onCut }}" style="{{ cutStyle }}">{{ cutLabel }}</button>
+      <button onClick="{{ onBase }}" style="{{ baseStyle }}">{{ baseLabel }}</button>
+      <button onClick="{{ onCock }}" style="{{ cockStyle }}">{{ cockLabel }}</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 312px;min-height:0;overflow:hidden;">
+    <div ref="{{ hostRef }}" style="position:relative;min-width:0;min-height:0;overflow:hidden;background:#1d1f21;"></div>
+
+    <div class="mv-scroll" style="min-width:0;min-height:0;overflow:auto;border-left:1px solid #2a2d30;padding:0 0 24px;display:flex;flex-direction:column;">
+      <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid #2a2d30;">
+          <button onClick="{{ sec.toggle }}" style="{{ sec.headStyle }}">
+            <span>{{ sec.title }}</span>
+            <span style="color:#e6a13c;font-family:'IBM Plex Mono',monospace;font-size:11px;">{{ sec.badge }}</span>
+          </button>
+          <sc-if value="{{ sec.open }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:2px 14px 14px;display:flex;flex-direction:column;gap:7px;">
+              <sc-for list="{{ sec.rows }}" as="r" hint-placeholder-count="4">
+                <sc-if value="{{ r.isSlider }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;flex-direction:column;gap:3px;">
+                    <label style="font-size:11.5px;color:#c9c9c5;display:flex;justify-content:space-between;gap:8px;">
+                      <span>{{ r.label }}</span>
+                      <span style="font-family:'IBM Plex Mono',monospace;color:#e6a13c;">{{ r.val }}</span>
+                    </label>
+                    <input type="range" min="{{ r.min }}" max="{{ r.max }}" step="{{ r.step }}" value="{{ r.value }}" onInput="{{ r.on }}" style="width:100%;accent-color:#e6a13c;">
+                  </div>
+                </sc-if>
+                <sc-if value="{{ r.isButtons }}" hint-placeholder-val="{{ true }}">
+                  <div style="{{ r.grid }}">
+                    <sc-for list="{{ r.items }}" as="it" hint-placeholder-count="3">
+                      <button onClick="{{ it.on }}" style="{{ it.style }}">{{ it.label }}</button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ r.isPaste }}" hint-placeholder-val="{{ true }}">
+                  <textarea ref="{{ r.ref }}" placeholder="{{ r.placeholder }}" style="width:100%;box-sizing:border-box;height:74px;resize:vertical;background:#141517;border:1px solid #2a2d30;color:#c9c9c5;font:400 10.5px 'IBM Plex Mono',monospace;padding:7px;border-radius:2px;"></textarea>
+                </sc-if>
+                <sc-if value="{{ r.isColor }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;flex-direction:column;gap:4px;">
+                    <label style="font-size:11.5px;color:#c9c9c5;display:flex;justify-content:space-between;gap:8px;">
+                      <span>{{ r.label }}</span>
+                      <span style="font-family:'IBM Plex Mono',monospace;color:#e6a13c;">{{ r.val }}</span>
+                    </label>
+                    <div style="display:flex;gap:5px;align-items:center;">
+                      <input type="color" value="{{ r.value }}" onInput="{{ r.on }}" style="width:40px;height:26px;padding:0;border:1px solid #2a2d30;background:#141517;border-radius:2px;cursor:pointer;">
+                      <div style="display:flex;gap:4px;flex:1;">
+                        <sc-for list="{{ r.swatches }}" as="sw" hint-placeholder-count="6">
+                          <button onClick="{{ sw.on }}" title="{{ sw.hex }}" style="{{ sw.style }}"> </button>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ r.isNote }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-size:11px;color:#9a9a96;line-height:1.45;font-family:'IBM Plex Mono',monospace;">{{ r.text }}</span>
+                </sc-if>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+/* KFB · Mech & Vehicle Rig v1 — 12.09.2026
+ *
+ * Oberkörper ohne Hüfte, auf einer Basis, mit Cockpit — und ALLES VON HAND.
+ *
+ * ⚠ WARUM DIESER UMBAU (Georg 12.09., nach drei Fehlversuchen von mir): »sonst bau mir halt
+ * Controls für das Selberbauen … mit Klappern … und Arm-Posing.« Recht hat er. Meine gemessene
+ * Automatik hat jedes Mal eine Zahl getroffen und das Bild verfehlt: Panel im Bauch, Knopf im
+ * Ärmel, Knopf neben der Platte. Ab hier setzt er jedes Teil selbst; die MESSUNG bleibt als
+ * Rückmeldung stehen (wie viele Figurenpunkte in der Box eines Teils liegen, ob es über die Platte
+ * ragt, wie tief die Hände in der Platte stecken) — messen ja, entscheiden nein.
+ *
+ * Einheiten der Regler: X/Z sind ANTEILE der gemessenen Sockelhalbbreite bzw. -tiefe, Höhe ein
+ * Anteil der Sockeldicke, Größe ein Anteil der Halbbreite. Damit gelten dieselben Zahlen für jede
+ * Plattengröße und später für jedes Fahrzeug.
+ */
+/* Die geprüften Startwerte des Cockpits (gegen den eigenen Bericht am Driver geprüft: alle Teile
+   »frei«, alle innerhalb der Platte, flat UND wide). Jeder Figurenwechsel fängt hier wieder an. */
+/* Reiter 2 · das Fahrzeug (Georg 12.09.: »der erste Rover«). Der Pfad ist seine URL, entpackt. */
+const VEH_PATH = 'SciFI_Ultimate Space Kit_Quaternius/Vehicles/GLTF/Rover_Round.gltf';
+/* Textursammlung im Repo: »Textures/<Name>/<Name>_diffuse|normal|roughness.jpg«. Aus der Namensregel
+   läßt sich jeder Satz ableiten — deshalb vier Vorschläge plus ein Feld für jeden anderen Namen. */
+const TEX_SETS = ['rusty_metal_04', 'PaintedMetal017', 'Concrete024', 'Chainmail004'];
+/* Reiter 3 · das Wannen-Rig aus »KFB Frankenstein Race v1« (Bildschirmfoto 12.09.): Wanne, vier
+   Räder, Düse am Heck. Die Wanne ist derselbe Spender wie in der Sitzprobe (`seat-lab.v1.TUBS`). */
+const TUB_PATH = 'Bubbly_Bathroom_Tiny_Treats_1-1/Assets/gltf/bath.gltf';
+const WHEELS = [['racing', 'wheel-racing.glb'], ['default', 'wheel-default.glb'], ['dark', 'wheel-dark.glb']];
+const JET_PATH = 'Frankensteining/Space engine by Poly by Google - 4w-3qcynW5d.glb';
+/* Startwerte in ANTEILEN der gemessenen Wanne (halbe Breite · Höhe · halbe Länge) — dieselbe
+   Einheitenregel wie beim Cockpit, damit die Zahlen auch für den nächsten Rumpf gelten. */
+const TUB0 = {
+  wheel: 'racing', wOn: true, wSize: 0.42, wTrack: 1.06, wBase: 0.62, wY: 0.02,
+  jOn: true, jSize: 0.55, jX: 0, jY: 0.42, jZ: -1.12,
+};
+/* Die Palette ist die des Hauses, nicht meine: Akzentrot und Creme aus kayfabizarro.pages.dev,
+   FrizzleBob-Gelb, Stahl, Grau — und Weiß, das NICHTS ändert (Farbe wird multipliziert). */
+const PALETTE = ['#ffffff', '#b8361f', '#f6efd9', '#f7cb00', '#2b3440', '#9aa3ad'];
+const STYLE0 = {
+  col: { rover: '#ffffff', platte: '#ffffff', hardware: '#ffffff', stiel: '#2b3440', kugel: '#b8361f',
+    wanne: '#ffffff', reifen: '#ffffff', duese: '#ffffff' },
+  tex: 'aus', eigen: '', texOn: { rover: false, platte: false, hardware: false, wanne: false, duese: false },
+  rep: 2, boxuv: true,
+};
+const PARTS0 = {
+  stick:  { on: true, x: -0.81, z: 0.74, y: -0.48, s: 0.90 },
+  round:  { on: true, x: 0.52, z: 0.80, y: -0.33, s: 0.30 },
+  square: { on: true, x: 0.81, z: 0.58, y: -0.35, s: 0.30 },
+  panel:  { on: true, x: 0, z: 1.04, y: -0.58, s: 0.90 },
+};
+/* ⚠ Diese Zahlen sind GEORGS, von Hand am 12.09. eingestellt (drei Bildschirmfotos) — meine
+   gerechneten Startwerte waren dagegen brav und langweilig. Das überstehende Panel ist Absicht: ein
+   Pult ragt über die Kante. Deshalb rückt der Einpaßlauf beim Wirtswechsel nur noch bei echter
+   DURCHDRINGUNG aus (Figurenpunkte in der Box), nicht mehr beim Überstand. */
+
+class Component extends DCLogic {
+  state = {
+    ready: false, cut: true, base: true, cock: true,
+    fig: 'driver', panel: 'flat',
+    /* Reiter 2: das FERTIGE Rig aus Reiter 1 wird als EIN Stück auf den Rover gesetzt.
+       `rig.x/y/z` sind Versatz gegen den gemessenen Nullpunkt »Rig-Unterkante auf Rover-Oberkante,
+       Mitte über Mitte« — ein Nullpunkt, der etwas bedeutet, statt der Weltmitte. */
+    tab: 'sockel', veh: { on: true, s: 1, ant: false }, rig: { s: 1, x: 0, y: 0, z: 0, rot: 0 },
+    tub: JSON.parse(JSON.stringify(TUB0)), tubRows: [],
+    style: JSON.parse(JSON.stringify(STYLE0)),
+    styleRows: [],
+    vehRows: [],
+    dy: 0.05, bw: 1.6, sink: 0, kx: 1.2, ky: 1, kz: 1, bury: 1.15,
+    ox: 0, oy: 0, oz: 0,
+    parts: JSON.parse(JSON.stringify(PARTS0)),
+    /* GEORGS WERTE, aus seinen Bildschirmfotos vom 12.09. — nicht meine gelösten. Sie gelten gegen
+       den Nullpunkt »Clip bei t = 0« (siehe `_grabArms`), unter dem er sie eingestellt hat. */
+    arms: { r: { lift: -38, fwd: 38, elbow: 6 }, l: { lift: -28, fwd: 22, elbow: 0 } },
+    open: { figur: true, cockpit: true, arme: true, schnitt: false, basis: false, einpassen: false, config: false, messen: false,
+      fahrzeug: true, aufsetzen: true, messenv: true, material: false, wanne: true },
+    flash: '',
+    rows: [], cockRows: [], status: 'Lade three.js …',
+  };
+
+  componentDidMount() {
+    window.__MVRIG1 = this;
+    const go = () => this._boot().catch((e) => this.setState({ status: 'Aufbau gescheitert: ' + (e && e.message) }));
+    if (window.__MVRIG) go(); else window.addEventListener('mvrigready', go, { once: true });
+  }
+  componentWillUnmount() { this._stop = true; if (this._ro) this._ro.disconnect(); }
+
+  async _boot() {
+    const { THREE, OrbitControls, GLTFLoader, RoomEnvironment } = window.__MVRIG;
+    this.THREE = THREE;
+    const abs = (p) => new URL(p, location.href).href;
+    this._TB = await import(abs('./frizzlegraft-v1/torsobase.v1.js') + '?v2');
+    this._LK = await import(abs('./frizzlegraft-v1/look.v1.js') + '?v2');
+    this._SL = await import(abs('./frizzlegraft-v1/seat-lab.v1.js') + '?v2');
+    const host = this._host; if (!host) return;
+    const ren = this.ren = new THREE.WebGLRenderer({ antialias: true });
+    ren.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+    ren.shadowMap.enabled = true; ren.shadowMap.type = THREE.PCFSoftShadowMap;
+    ren.toneMapping = THREE.ACESFilmicToneMapping; ren.toneMappingExposure = 0.9;
+    ren.outputColorSpace = THREE.SRGBColorSpace;
+    host.appendChild(ren.domElement);
+    /* Leinwand AUS DEM FLUSS: als Block-Kind bestimmte sie die Höhe ihres Feldes, der
+       ResizeObserver sah eine neue Höhe, `setSize` schrieb zurück — gemessen bis 16 Mio px. */
+    ren.domElement.style.cssText = 'position:absolute;inset:0;display:block;width:100%;height:100%;';
+    const sc = this.scene = new THREE.Scene();
+    sc.background = new THREE.Color(0x1d1f21);
+    sc.environment = new THREE.PMREMGenerator(ren).fromScene(new RoomEnvironment(), 0.04).texture;
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.05, 100);
+    const key = new THREE.DirectionalLight(0xfff3dd, 2.1);
+    key.position.set(2.2, 3.4, 2.0); key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024); key.shadow.camera.near = 0.5; key.shadow.camera.far = 14;
+    sc.add(key, new THREE.HemisphereLight(0xdfe7f2, 0x2a2620, 0.4));
+    const floor = new THREE.Mesh(new THREE.CircleGeometry(6, 48), new THREE.ShadowMaterial({ opacity: 0.26 }));
+    floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; floor.userData.noMeasure = true;
+    sc.add(floor);
+    /* ⚠ EIN Behälter für alles, was das Rig IST (Sockel · Cockpit · Figur). Reiter 2 verschiebt und
+       skaliert nur diesen Behälter; GEBAUT wird das Rig weiter bei Identität. Andernfalls rechnet
+       die Cockpit-Setzung in Weltmaßen gegen eine skalierte Elterngruppe — dieselbe Falle wie die
+       Wanne, die die Skalierung des Figurenknotens geerbt hat und fünfmal zu klein war. */
+    this._rig = new THREE.Group(); this._rig.name = 'kfb-rig'; sc.add(this._rig);
+    const ctl = this.ctl = new OrbitControls(cam, ren.domElement);
+    ctl.enableDamping = true; ctl.dampingFactor = 0.08;
+    this.loader = new GLTFLoader();
+    const fit = () => {
+      const r = host.getBoundingClientRect();
+      const w = Math.max(200, Math.min(4000, Math.round(r.width) || 600));
+      const h = Math.max(200, Math.min(4000, Math.round(r.height) || 400));
+      if (this._last && this._last[0] === w && this._last[1] === h) return;
+      this._last = [w, h];
+      ren.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+    };
+    fit(); this._ro = new ResizeObserver(fit); this._ro.observe(host);
+    let last = performance.now();
+    const tick = () => {
+      if (this._stop) return;
+      const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (this.biped && this.biped.built) { try { this.biped.update(dt, cam); } catch (e) {} }
+      this._holdArms();
+      ctl.update(); ren.render(sc, cam); requestAnimationFrame(tick);
+    };
+    tick();
+    await this._load('driver');
+  }
+
+  _hosts() { return [['driver', 'Driver'], ['medium', 'Mannequin M'], ['orcRaider', 'Orc Raider'], ['clown', 'Clown']]; }
+
+  async _load(fig) {
+    const THREE = this.THREE;
+    this.setState({ status: 'Baue Graft (' + fig + ') …', fig });
+    if (this._cutRes) { this._cutRes.undo(); this._cutRes = null; }
+    if (this._baseRes) { this._baseRes.dispose(); this._baseRes = null; }
+    if (this.biped) { try { this.biped.dispose(); } catch (e) {} this.biped = null; }
+    if (this._root && this._root.parent) this._root.parent.remove(this._root);
+    this.figure = null; this._armBones = null;
+    const abs = (p) => new URL(p, location.href).href;
+    const GB = this._GB || (this._GB = await import(abs('./frizzlegraft-v1/graft-biped.v1.js') + '?mv2'));
+    const [ER, MO, HG] = await Promise.all([
+      import(abs('./petstudio-v9/studio-v12/pet-eye-rig.v6.js')).catch(() => null),
+      import(abs('./petstudio-v9/studio-v3/pet-mouth.v1.js')).catch(() => null),
+      import(abs('./frizzlegraft-v1/headgraft.v1.js')).catch(() => null),
+    ]);
+    const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+    const enc = (q) => q.split('/').map(encodeURIComponent).join('/');
+    let seed = 20260912;
+    const rng = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
+    const root = this._root = new THREE.Group(); root.name = 'graft-root';
+    this._rig.add(root);
+    const b = this.biped = new GB.default();
+    try {
+      await b.init({ three: THREE, rng, clock: { now: () => performance.now() / 1000 },
+        gltfLoader: this.loader, assets: { raw: (p) => RAW + enc(p) }, camera: this.cam,
+        eyeRigModule: ER, mouthModule: MO,
+        /* `pointer` ist ein ABONNEMENT, kein Punkt: das Modul ruft `on(cb)` und will eine
+           Abmeldefunktion zurück (gemessen: »this.pointer.on is not a function«). */
+        pointer: { on: (cb) => {
+          const el = this.ren.domElement;
+          const h = (ev) => { const r = el.getBoundingClientRect();
+            cb({ x: ((ev.clientX - r.left) / r.width) * 2 - 1, y: -(((ev.clientY - r.top) / r.height) * 2 - 1) }); };
+          el.addEventListener('pointermove', h);
+          return () => el.removeEventListener('pointermove', h);
+        } },
+        log: (t) => console.info('[mvrig] ' + t) });
+      if (HG && HG.FB_FACE) {
+        if (HG.FB_FACE.eyes) b.eyeOpts = JSON.parse(JSON.stringify(HG.FB_FACE.eyes));
+        if (HG.FB_FACE.mouth) b.mouthOpts = Object.assign({}, HG.FB_FACE.mouth);
+      }
+      b.variant = fig;
+      b.mount(root);
+      await b.ready;
+    } catch (e) {
+      this._hip = null;
+      this.setState({ rows: ['— keine Figur geladen, keine Messung gültig —', String(e && e.message || e)],
+        cockRows: [], status: 'Graft nicht baubar: ' + (e && e.message) });
+      return;
+    }
+    if (!b.built || !b.figure) {
+      this._hip = null;
+      this.setState({ rows: ['— keine Figur geladen, keine Messung gültig —'], cockRows: [],
+        status: 'Graft unvollständig (Wirt oder Kopf fehlt) — Konsole' });
+      return;
+    }
+    /* ⚠ Der Look kommt aus der KONFIGURATION, nicht aus einem Nachbau: `look.v1` liest den Eintrag
+       (Repo-Vertrag, darüber der Studio-Entwurf im selben Browser) und legt ihn auf. */
+    try {
+      const petId = 'graft-' + (fig === 'orcRaider' ? 'orc' : fig);
+      this._look = await this._LK.loadPet(petId);
+      this._lookRep = this._look.pet ? this._LK.applyLook({ B: b, rig: b.rig, pet: this._look.pet }) : null;
+    } catch (e) { this._lookRep = { rows: [String(e && e.message || e)] }; }
+    const f = this.figure = b.figure;
+    f.traverse((o) => { if (o.isMesh || o.isSkinnedMesh) { o.castShadow = true; o.receiveShadow = true; } });
+    root.updateMatrixWorld(true);
+    this._grabArms();
+    /* ⚠ NUR BEIM WIRTSWECHSEL zurück auf die geprüften Startwerte. Erst hieß die Regel »jeder Wirt
+       fängt bei PARTS0 an« — und dann hat ein Neuaufbau DESSELBEN Wirts (Hot-Reload, Neuladen des
+       Blattes) Georgs von Hand gesetztes Cockpit weggeworfen; gemessen: Panel stand wieder auf 0,70
+       statt auf seinen 1,04. Ein Wechsel setzt zurück, ein Neuaufbau nicht. */
+    if (this._lastFig !== fig) {
+      this.state.parts = JSON.parse(JSON.stringify(PARTS0));
+      this._needNudge = true;   // einmal einpassen, gleich nach dem Laden
+    }
+    this._lastFig = fig;
+    this._hip = this._TB.measureHipLine({ THREE, figure: f });
+    const b2 = new THREE.Box3().setFromObject(f);
+    const size = b2.getSize(new THREE.Vector3()), mid = b2.getCenter(new THREE.Vector3());
+    const reach = Math.max(size.x, size.y, size.z);
+    const dist = (reach * 0.62) / Math.tan((this.cam.fov * Math.PI / 180) / 2);
+    this.cam.position.set(mid.x + dist * 0.55, mid.y + reach * 0.22, mid.z + dist * 0.85);
+    this.cam.near = Math.max(0.01, dist / 80); this.cam.far = dist * 12; this.cam.updateProjectionMatrix();
+    this.ctl.target.copy(mid); this.ctl.update();
+    await this._apply();
+  }
+
+  /* ── ARM-POSING ─────────────────────────────────────────────────────────────────────────────
+     Georgs Wunsch: die Hände selbst an Knüppel und Knöpfe legen. Gedreht werden die KNOCHEN um
+     ihre eigenen Achsen, ausgehend von der BINDELAGE (die wird hier gemerkt) — und weil der Kopf
+     jedes Bild vom Clip überschrieben wird, legt `_holdArms()` die Haltung im Takt wieder auf.
+     ⚠ Benannt statt versteckt: welche Achse »heben« ist, hängt am Rig des Wirts. Die Regler heißen
+     nach ihrer WIRKUNG beim Driver; bei einem anderen Wirt kann eine Achse anders herauskommen. */
+  _grabArms() {
+    const T = this.THREE, A = { l: {}, r: {} };
+    this.figure.traverse((o) => {
+      if (!o.isBone) return;
+      const n = (o.name || '').toLowerCase();
+      const side = /l$/.test(n) ? 'l' : /r$/.test(n) ? 'r' : null;
+      if (!side) return;
+      if (/^upperarm/.test(n)) A[side].U = o;
+      else if (/^lowerarm/.test(n)) A[side].L = o;
+      else if (/^hand/.test(n) && !/slot/.test(n)) A[side].F = o;
+    });
+    /* ⚠ DER BEZUG — zweimal falsch, jetzt gemessen richtig.
+       1) Erst habe ich `bone.quaternion` beim Laden gegriffen. Da läuft der Clip schon: dreimal
+          geladen, dreimal ein anderes »Bind«, dieselbe JSON jedes Mal eine andere Haltung.
+       2) Dann die Ruhelage aus dem SKELETT (inverse Bindmatrizen). Reproduzierbar — aber ein ANDERER
+          Nullpunkt als der, unter dem Georg seine Winkel eingestellt hat. Ich habe daraufhin seine
+          Zahlen durch gelöste ersetzt. Das war der eigentliche Fehler: seine Einstellung war nicht
+          falsch, mein Nullpunkt war es. (Georg: »die Arme sind nicht mein Setting!«)
+       3) Richtig ist der Clip bei t = 0: derselbe Nullpunkt, unter dem er eingestellt hat, UND
+          reproduzierbar, weil t = 0 kein zufälliger Frame ist. Gemessen: mit seinen Werten liegt die
+          rechte Hand 0,139 an der Kugel und die linke auf der Platte — genau sein Bildschirmfoto. */
+    /* ⚠ NICHT JETZT GREIFEN: beim Laden hat der Clip noch keinen Frame geschrieben, die Knochen
+       stehen in der Skelett-Bindelage — zweimal gemessen, zweimal dieselbe falsche Zahl. Der Bezug
+       wird deshalb NACHGEHOLT, sobald der Clip wirklich läuft (`_holdArms`), und dann bei t = 0. */
+    for (const s of ['l', 'r']) for (const k of ['U', 'L', 'F']) {
+      const b = A[s][k]; if (b) b.userData.mvBind = b.quaternion.clone();
+    }
+    this._bindPending = true;
+    this._armBones = A;
+    this._axis = { side: new T.Vector3(1, 0, 0), up: new T.Vector3(0, 1, 0), fwd: new T.Vector3(0, 0, 1) };
+  }
+  /** Der Nullpunkt kommt DIREKT AUS DER CLIPSPUR (erster Schlüsselwert), nicht aus dem Mixer.
+      ⚠ VIERTER ANLAUF — und diesmal mit dem Beweis, warum die dritte Fassung Georgs Haltung verloren
+      hat (sein Bild vom 12.09.: beide Arme waagerecht nach außen). GEMESSEN: die Aktion `Idle_A`
+      LÄUFT (`isRunning() === true`), aber mit **Gewicht 0** und `mixer.time = 0` — sie schreibt
+      keinen einzigen Knochen. Der Nachhol-Griff hat daraufhin die SKELETT-Bindelage als »Clip bei
+      t = 0« gemerkt (Hände bei x ±0,787 · y 1,107 · z 0 = T-Haltung), und Georgs −38°/38° darauf
+      ergaben die ausgestreckten Arme; rechte Hand 0,546 von der Knüppelkugel (Radius 0,098).
+      »Läuft« ist kein Beweis, daß etwas SCHREIBT — genau wie `mx.time > 0` es nicht war (S29b).
+      Deshalb wird die Spur jetzt selbst gelesen: `<knochen>.quaternion`, erster Schlüsselwert. Kein
+      Mixer, keine Zeit, kein Gewicht — dieselbe Zahl bei jedem Laden, auch im verborgenen Fenster. */
+  _catchBind() {
+    const A = this._armBones, mx = this.biped && this.biped.mixer;
+    if (!A || !mx) return;
+    const act = (mx._actions || []).find((a) => a && a._clip);
+    const clip = act && act._clip;
+    if (!clip) return;                      // noch kein Clip gebunden — im nächsten Bild nochmal
+    let n = 0;
+    for (const s of ['l', 'r']) for (const k of ['U', 'L', 'F']) {
+      const b = A[s][k]; if (!b) continue;
+      const tr = clip.tracks.find((t) => t.name === b.name + '.quaternion');
+      if (!tr || tr.values.length < 4) continue;
+      b.quaternion.set(tr.values[0], tr.values[1], tr.values[2], tr.values[3]);
+      b.userData.mvBind = b.quaternion.clone();
+      b.userData.mvFromClip0 = true;
+      n++;
+    }
+    if (!n) return;
+    this.figure.updateMatrixWorld(true);
+    this._bindPending = false;
+  }
+  _holdArms() {
+    const A = this._armBones; if (!A) return;
+    if (this._bindPending) this._catchBind();
+    const T = this.THREE, a = this.state.arms, DEG = Math.PI / 180;
+    const q = new T.Quaternion();
+    for (const s of ['l', 'r']) {
+      const set = A[s], v = a[s], sgn = s === 'l' ? 1 : -1;
+      if (!set || !v) continue;
+      if (set.U && set.U.userData.mvBind) {
+        set.U.quaternion.copy(set.U.userData.mvBind)
+          .multiply(q.setFromAxisAngle(this._axis.fwd, sgn * v.lift * DEG))
+          .multiply(q.setFromAxisAngle(this._axis.side, v.fwd * DEG));
+      }
+      if (set.L && set.L.userData.mvBind) {
+        set.L.quaternion.copy(set.L.userData.mvBind)
+          .multiply(q.setFromAxisAngle(this._axis.side, v.elbow * DEG));
+      }
+    }
+  }
+
+  /** Die Kugel des Knüppels — Ziel für die greifende Hand. */
+  _stickBall() {
+    const T = this.THREE; let ball = null;
+    if (this._cock) this._cock.traverse((o) => { if (o.isMesh && o.geometry && o.geometry.type === 'SphereGeometry') ball = o; });
+    if (!ball) return null;
+    const b = new T.Box3().setFromObject(ball);
+    return { p: ball.getWorldPosition(new T.Vector3()), r: (b.max.y - b.min.y) / 2 };
+  }
+  /* ⚠ GEMESSEN STATT GERATEN (Prüfer: »die Hand schwebt einen halben Meter über der Kugel«).
+     Statt Winkel abzuschreiben, die unter einem anderen Bezug entstanden sind, werden sie hier
+     GESUCHT: grobes Raster, dann zweimal verfeinern, Gütemaß ist der Abstand Hand↔Kugel. Kein
+     Speichern, kein Rendern nebenbei — nur Knochen setzen und messen. */
+  _solveHand(side, target) {
+    const T = this.THREE, A = this._armBones; if (!A || !A[side] || !A[side].F || !target) return null;
+    const hand = A[side].F, keep = JSON.parse(JSON.stringify(this.state.arms));
+    const probe = (lift, fwd, elbow) => {
+      this.state.arms[side] = { lift, fwd, elbow };
+      this._holdArms(); this.figure.updateMatrixWorld(true);
+      return hand.getWorldPosition(new T.Vector3()).distanceTo(target.p);
+    };
+    let best = { lift: 0, fwd: 0, elbow: 0, d: Infinity };
+    let range = { lift: [-90, 90, 10], fwd: [-90, 90, 10], elbow: [-120, 120, 15] };
+    for (let pass = 0; pass < 3; pass++) {
+      for (let li = range.lift[0]; li <= range.lift[1]; li += range.lift[2])
+        for (let fw = range.fwd[0]; fw <= range.fwd[1]; fw += range.fwd[2])
+          for (let el = range.elbow[0]; el <= range.elbow[1]; el += range.elbow[2]) {
+            const d = probe(li, fw, el);
+            if (d < best.d) best = { lift: li, fwd: fw, elbow: el, d };
+          }
+      const nb = (v, st, lo, hi) => [Math.max(lo, v - st), Math.min(hi, v + st), st / 4];
+      range = { lift: nb(best.lift, range.lift[2], -90, 90), fwd: nb(best.fwd, range.fwd[2], -90, 90), elbow: nb(best.elbow, range.elbow[2], -120, 120) };
+    }
+    this.state.arms = keep; this._holdArms(); this.figure.updateMatrixWorld(true);
+    return { lift: +best.lift.toFixed(1), fwd: +best.fwd.toFixed(1), elbow: +best.elbow.toFixed(1), d: +best.d.toFixed(4) };
+  }
+  /** Der runde Knopf als Ziel der zweiten Hand — Oberseite, nicht Mittelpunkt. */
+  _buttonTop() {
+    const T = this.THREE; if (!this._cock) return null;
+    let best = null;
+    for (const o of this._cock.children) {
+      const b = new T.Box3().setFromObject(o);
+      const w = b.max.x - b.min.x, h = b.max.y - b.min.y;
+      if (h > w * 0.8) continue;                       // flach = Knopf, hoch = Knüppel
+      const d = Math.abs((b.max.x + b.min.x) / 2);
+      if (!best || d < best.d) best = { d, p: new T.Vector3((b.max.x + b.min.x) / 2, b.max.y + 0.02, (b.max.z + b.min.z) / 2), r: Math.max(w, b.max.z - b.min.z) / 2 };
+    }
+    return best;
+  }
+  _gripStick() {
+    const t = this._stickBall();
+    if (!t) { this._flash('✗ kein Knüppel im Bild'); return; }
+    const r = this._solveHand('r', t);
+    if (!r) { this._flash('✗ keine Armknochen'); return; }
+    const bt = this._buttonTop();
+    const l = bt ? this._solveHand('l', bt) : null;
+    const arms = Object.assign({}, this.state.arms, { r: { lift: r.lift, fwd: r.fwd, elbow: r.elbow } });
+    if (l && l.d <= bt.r * 1.6) arms.l = { lift: l.lift, fwd: l.fwd, elbow: l.elbow };
+    this.setState({ arms }, () => { this._holdArms(); if (this.figure) this.figure.updateMatrixWorld(true); if (this.ren) this.ren.render(this.scene, this.cam); });
+    this._flash(r.d <= t.r ? ('✓ Hand an der Kugel · ' + r.d.toFixed(3) + ' ≤ ' + t.r.toFixed(3))
+      : ('⚠ näher geht nicht · ' + r.d.toFixed(3) + ' gegen Radius ' + t.r.toFixed(3)));
+  }
+
+  async _apply() {
+    if (this._busy) { this._again = true; return; }
+    this._busy = true;
+    try { await this._applyOnce(); } finally {
+      this._busy = false;
+      if (this._again) { this._again = false; this._apply(); }
+    }
+  }
+  _sweep(name) {
+    const kill = [];
+    this.scene.traverse((o) => { if (o.name === name) kill.push(o); });
+    kill.forEach((o) => { if (o.parent) o.parent.remove(o); });
+    return kill.length;
+  }
+
+  async _applyOnce() {
+    const THREE = this.THREE, s = this.state;
+    if (!this.figure || !this._hip) return;
+    if (this._cutRes) { this._cutRes.undo(); this._cutRes = null; }
+    if (this._baseRes) { this._baseRes.dispose(); this._baseRes = null; }
+    this._sweep('kfb-base');
+    /* Schnitt und Sockel werden bei Versatz NULL gerechnet, ERST DANACH wandert die Figur hinein —
+       andernfalls folgt der Sockel der Figur und die drei Einpaß-Regler tun nichts (gemessen). */
+    /* Erst das Rig bei Identität — jede Messung in diesem Lauf ist Rig-eigen, nicht Rover-relativ. */
+    if (this._rig) { this._rig.position.set(0, 0, 0); this._rig.scale.setScalar(1); this._rig.rotation.set(0, 0, 0); this._rig.updateMatrixWorld(true); }
+    if (this._root) { this._root.position.set(0, 0, 0); this._root.updateMatrixWorld(true); }
+    const cutY = this._hip.y + s.dy * this._hip.height;
+    const rows = ['Hüftlinie ' + this._hip.y.toFixed(3) + ' · ' + this._hip.from,
+      'Figur ' + this._hip.height.toFixed(3) + ' hoch'];
+    if (s.cut) {
+      this._cutRes = this._TB.cutBelow({ THREE, figure: this.figure, cutY, log: (t) => console.info('[mvrig] ' + t) });
+      rows.push('Schnitt y ' + this._cutRes.cutY + ' · ' + this._cutRes.hiddenTris + ' Dreiecke weg, ' + this._cutRes.meshes + ' Netze geteilt');
+      rows.push('Zackentiefe gemessen ' + this._cutRes.jag + ' · vergraben ×' + s.bury.toFixed(2) + ' = ' + (this._cutRes.jag * s.bury).toFixed(3));
+    } else rows.push('Schnitt aus — ganze Figur');
+    if (s.base) {
+      try {
+        const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+        const enc = (q) => q.split('/').map(encodeURIComponent).join('/');
+        if (!this._baseRaw) {
+          const g0 = await this.loader.loadAsync(RAW + enc(this._TB.BASE_PATH));
+          this._baseRaw = g0.scene;
+        }
+        const loader = { loadAsync: async () => ({ scene: this._baseRaw.clone(true) }) };
+        this._baseRes = await this._TB.buildBase({ THREE, loader, url: RAW + enc(this._TB.BASE_PATH),
+          figure: this.figure, cutY, widthK: s.bw, sink: s.sink,
+          axis: { x: s.kx, y: s.ky, z: s.kz },
+          bury: (this._cutRes ? this._cutRes.jag : 0) * s.bury,
+          log: (t) => console.info('[mvrig] ' + t) });
+        this._rig.add(this._baseRes.group);
+        const r = this._baseRes.report;
+        rows.push('Basis ×' + r.scale + ' → ' + r.baseSize.join(' × ') + ' · Oberkante ' + r.topY);
+      } catch (e) { rows.push('Basis nicht ladbar: ' + e.message); }
+    } else rows.push('Basis aus');
+    if (this._root) { this._root.position.set(s.ox, s.oy, s.oz); this._root.updateMatrixWorld(true); }
+    if (this._baseRes) {
+      const gap = +(cutY + s.oy - this._baseRes.report.topY).toFixed(4);
+      rows.push('Saum ' + (gap <= 0 ? Math.abs(gap) + ' unter' : gap + ' über') + ' der Sockeloberkante');
+    }
+    if (this._look) rows.push('Look aus: ' + (this._look.from.join(' → ') || 'nichts gefunden'));
+    if (this._lookRep && this._lookRep.rows) rows.push(...this._lookRep.rows.map((t) => '· ' + t));
+    if (this._bindPending) this._catchBind();   // hier läuft der Clip sicher
+    let cockRows = await this._cockpit(cutY);
+    /* ⚠ EINMAL BEIM FIGURENWECHSEL, NIE BEIM SCHIEBEN (Prüfer: »die Vorgabe darf nicht der
+       Fehlerzustand sein« — Georg: »ich setze selbst«). Beides gilt: die Startwerte sind an den
+       Driver geprüft, aber ein breiterer Wirt (Clown) kollidiert damit. Also rückt NUR direkt nach
+       dem Laden jedes kollidierende Teil so weit, bis der eigene Bericht »frei« sagt — und was
+       gerückt wurde, steht daneben. Danach bleibt alles stehen, wo Georg es hinschiebt. */
+    if (this._needNudge) {
+      this._needNudge = false;
+      const moved = [];
+      for (let round = 0; round < 26; round++) {   // 12 reichten beim Orc nicht (1 Punkt blieb stehen)
+        const h = this._cockHits || {};
+        const bad = ['panel', 'stick', 'round', 'square'].find((k) => h[k] && h[k].n > 0);
+        if (!bad) break;
+        const parts = Object.assign({}, this.state.parts);
+        const p = Object.assign({}, parts[bad]);
+        /* Erst nach vorn, dann zur Seite (geklemmt), erst zuletzt kleiner — und NIE über den
+           Plattenrand hinaus: gemessen hat mein erstes Ausrücken den Knüppel beim Orc und beim
+           Mannequin von der Platte geschoben. */
+        if (bad === 'panel') { if (h.panel.n > 0 && p.z < 1.0) p.z = +(p.z + 0.06).toFixed(3); else p.s = +(p.s * 0.9).toFixed(3); }
+        else if (p.z < 0.8) p.z = +(p.z + 0.06).toFixed(3);
+        else if (Math.abs(p.x) < 0.85) p.x = +(p.x + Math.sign(p.x || 1) * 0.05).toFixed(3);
+        else p.s = +(p.s * 0.88).toFixed(3);
+        parts[bad] = p;
+        this.state.parts = parts;   // direkt, ohne Neu-Render: dieser Lauf ist eine Einpassung
+        moved.push(bad);
+        cockRows = await this._cockpit(cutY);
+      }
+      if (moved.length) cockRows = (cockRows || []).concat(['Startwerte an den Wirt gerückt: ' + [...new Set(moved)].join(', ')]);
+      this.setState({ parts: this.state.parts });
+    }
+    const vehBase = await this._vehicle();
+    const tubBase = await this._tubRig();
+    this._vehBase = (vehBase || []).concat(tubBase || []);
+    this._placeRig();
+    const styleRows = await this._style();
+    this.setState({ ready: true, rows, cockRows: cockRows || [],
+      vehRows: this._vehBase.concat(this._fitRows()),
+      status: (s.tab === 'veh' ? 'Rover · ' : s.tab === 'tub' ? 'Wanne · ' : 'Sockel · ')
+        + ((this._hosts().find(([k]) => k === s.fig) || [null, s.fig])[1])
+        + (s.cut ? ' · ohne Hüfte' : ' · ganze Figur') });
+  }
+
+  /* ── REITER 2 · DAS RIG AUFS FAHRZEUG ───────────────────────────────────────────────────────
+     Nichts am Rig wird hier neu gebaut: Reiter 1 baut, Reiter 2 setzt. Deshalb ist das, was auf dem
+     Rover landet, per Bauweise 1:1 dasselbe Stück — inklusive Georgs Cockpit-Werten und Armwinkeln.
+     Gemessen wird erst NACH dem Aufsetzen, und zwar gegen den Rover, nicht gegen die Welt. */
+  async _vehicle() {
+    const THREE = this.THREE, s = this.state;
+    this._sweep('kfb-veh'); this._veh = null;
+    if (s.tab !== 'veh') return [];
+    if (!s.veh.on) return ['Fahrzeug aus'];
+    const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+    const enc = (q) => q.split('/').map(encodeURIComponent).join('/');
+    if (!this._vehRaw) {
+      try { const g0 = await this.loader.loadAsync(RAW + enc(VEH_PATH)); this._vehRaw = g0.scene; }
+      catch (e) { return ['Rover nicht ladbar: ' + (e && e.message)]; }
+    }
+    const v = this._veh = this._vehRaw.clone(true);
+    v.name = 'kfb-veh';
+    /* `noMeasure`, damit der Rover nicht in der Figuren-/Cockpit-Messung von Reiter 1 auftaucht. */
+    v.traverse((o) => { o.userData.noMeasure = true; if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
+    v.scale.setScalar(s.veh.s); v.position.set(0, 0, 0); v.updateMatrixWorld(true);
+    const ant = s.veh.ant ? 0 : this._stripAntenna(v);
+    const b0 = new THREE.Box3().setFromObject(v);
+    v.position.y = -b0.min.y;              // auf den Boden, nicht durch ihn
+    v.updateMatrixWorld(true);
+    this.scene.add(v);
+    const b = new THREE.Box3().setFromObject(v);
+    return ['Rover ×' + s.veh.s.toFixed(2) + ' · ' + (b.max.x - b.min.x).toFixed(3) + ' × '
+      + (b.max.y - b.min.y).toFixed(3) + ' × ' + (b.max.z - b.min.z).toFixed(3) + ' (B × H × T)',
+      s.veh.ant ? ('Antenne dran · Spitze ' + b.max.y.toFixed(3))
+        : ('Antenne weg · ' + ant + ' Dreiecke geschnitten · Deckel r ' + (this._capR || 0)
+          + ' · neue Oberkante ' + b.max.y.toFixed(3)),
+      'Wanne 3,95 × 3,46 bei ×1 · Räder 1,35 hoch'];
+  }
+
+  /* ⚠ SCHÜSSEL UND MAST SIND KEIN EIGENES TEIL. Gemessen: der Rover besteht aus vier Rädern und
+     EINEM Netz »Rover_Round« (3196 Dreiecke, lokal y 0,13–5,019). Ausschalten läßt sich da nichts —
+     es muß geschnitten werden. Der Aufbau, in 0,1-Bändern gemessen (xz-Radius je Band):
+       3,3 → 0,86–0,92 Kuppel · 3,4 → 0,35–0,70 KAPPE · 3,5–3,9 → 0,22–0,45 Türmchen
+       4,0–4,1 → 0,10–0,17 MAST · 4,2–4,9 → bis 0,55 SCHÜSSEL
+     ⚠ PRÜFERBEFUND, behoben: mein erster Schnitt (über 3,40, Radius < 0,70) nahm mit dem Mast die
+     KAPPE mit — 49 Strahlen von oben, 7 fielen durch bis zum Innenboden (0,46). Das Loch lag genau
+     dort, wo das Rig steht, und konnte den Sitz-Median ins Innere kippen lassen.
+     Jetzt: derselbe Schnitt (das Bild mit glatter Kuppel war Georgs) und danach eine **Deckelscheibe**
+     am Schnittrand, dessen Radius aus den ENTFERNTEN Punkten gemessen wird. */
+  _stripAntenna(root) {
+    const THREE = this.THREE;
+    const CUT = 3.40, RMAX = 0.70;
+    let cut = 0;
+    root.traverse((m) => {
+      if (!m.isMesh || !m.geometry) return;
+      const src = m.geometry;
+      const pos = src.attributes.position; if (!pos) return;
+      const idx = src.index;
+      const tri = idx ? idx.count / 3 : pos.count / 3;
+      const keep = [];
+      let hit = 0, rim = 0;
+      const a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3();
+      for (let t = 0; t < tri; t++) {
+        const i0 = idx ? idx.getX(t * 3) : t * 3, i1 = idx ? idx.getX(t * 3 + 1) : t * 3 + 1, i2 = idx ? idx.getX(t * 3 + 2) : t * 3 + 2;
+        a.fromBufferAttribute(pos, i0); b.fromBufferAttribute(pos, i1); c.fromBufferAttribute(pos, i2);
+        const rmax = Math.max(Math.hypot(a.x, a.z), Math.hypot(b.x, b.z), Math.hypot(c.x, c.z));
+        if (Math.min(a.y, b.y, c.y) > CUT && rmax < RMAX) {
+          hit++;
+          /* Der Lochrand: die tiefsten Punkte der entfernten Dreiecke, direkt über dem Schnitt. */
+          for (const p of [a, b, c]) if (p.y < CUT + 0.12) rim = Math.max(rim, Math.hypot(p.x, p.z));
+          continue;
+        }
+        keep.push(i0, i1, i2);
+      }
+      if (!hit) return;
+      cut += hit;
+      /* ⚠ `clone(true)` teilt die GEOMETRIE mit dem Spender — ein Index-Tausch träfe jede künftige
+         Kopie. Deshalb hier eine eigene Geometrie, bevor geschnitten wird. */
+      const geo = src.clone();
+      geo.setIndex(keep);
+      geo.userData = Object.assign({}, src.userData, { kfbGeo: true });
+      /* ⚠ PRÜFERBEFUND, behoben: `computeBoundingBox()` rechnet über das POSITION-Attribut — die
+         Punkte der Antenne stehen dort weiter drin, die Box blieb bei 5,019 (Welt 5,168). Damit log
+         der Bericht, `hy` des Y-Reglers war 40 % zu groß und der Rückfall hätte das Rig in die Luft
+         gesetzt. Die Box kommt jetzt aus den BEHALTENEN Indizes. */
+      const bb = new THREE.Box3();
+      const v = new THREE.Vector3();
+      for (let i = 0; i < keep.length; i++) bb.expandByPoint(v.fromBufferAttribute(pos, keep[i]));
+      geo.boundingBox = bb;
+      geo.boundingSphere = new THREE.Sphere();
+      bb.getBoundingSphere(geo.boundingSphere);
+      m.geometry = geo;
+      if (rim > 0.02) {
+        const mat = Array.isArray(m.material) ? m.material[0] : m.material;
+        const cap = new THREE.Mesh(new THREE.CircleGeometry(rim * 1.04, 28), mat);
+        cap.name = 'kfb-roof-cap';
+        cap.rotation.x = -Math.PI / 2;
+        cap.position.set(0, CUT + 0.005, 0);
+        cap.castShadow = true; cap.receiveShadow = true;
+        cap.userData.noMeasure = true;
+        m.add(cap);            // im Netz-eigenen Raum, damit die Zahlen oben direkt gelten
+        this._capR = +rim.toFixed(3);
+      }
+    });
+    return cut;
+  }
+
+  /** Die Dachfläche, nicht die Spitze. Abtastung mit 25 Strahlen über dem mittleren Drittel, MEDIAN.
+      ⚠ GEMESSEN, warum: die Bounding-Box des Rover_Round endet bei 5,168 — das ist die ANTENNE.
+      Das Dach liegt bei 3,563 (25 Strahlen: 3,367 bis 3,669, drei Ausreißer 4,8–5,0 am Mast).
+      Ein Nullpunkt auf der Box hätte das Rig 1,6 Einheiten über dem Dach schweben lassen.
+      ⚠ PRÜFERBEFUND: Durchschüsse (Treffer auf dem Innenboden) dürfen NICHT in den Median — sonst
+      zieht ein Loch im Dach die Sitzhöhe in den Rover. Alles unter 60 % der Rover-Höhe wird
+      verworfen und gezählt; die Zahl steht im Bericht. */
+  _seatY() {
+    const THREE = this.THREE;
+    if (!this._veh) return null;
+    const vb = new THREE.Box3().setFromObject(this._veh);
+    const hx = (vb.max.x - vb.min.x) / 2, hz = (vb.max.z - vb.min.z) / 2;
+    const floorLimit = vb.min.y + (vb.max.y - vb.min.y) * 0.6;
+    const rc = new THREE.Raycaster(), down = new THREE.Vector3(0, -1, 0), ys = [];
+    let through = 0;
+    for (let i = 0; i < 5; i++) for (let j = 0; j < 5; j++) {
+      const x = (i / 4 - 0.5) * 2 * hx * 0.3, z = (j / 4 - 0.5) * 2 * hz * 0.3;
+      rc.set(new THREE.Vector3(x, vb.max.y + 2, z), down);
+      const h = rc.intersectObject(this._veh, true);
+      if (!h.length) { through++; continue; }
+      if (h[0].point.y < floorLimit) { through++; continue; }
+      ys.push(h[0].point.y);
+    }
+    if (!ys.length) return null;
+    ys.sort((a, b) => a - b);
+    return { y: ys[Math.floor(ys.length / 2)], lo: ys[0], hi: ys[ys.length - 1], n: ys.length, through, boxTop: vb.max.y };
+  }
+
+  /* ── REITER 3 · DAS WANNEN-RIG ──────────────────────────────────────────────────────────
+     Wanne · vier Räder · Düse am Heck, nach Georgs Bildschirmfoto aus »KFB Frankenstein Race v1«.
+     ⚠ DIE SITZHALTUNG KOMMT AUS DEM RENNEN, NICHT AUS MEINEM LÖSER. In `seat-lab.v1` steht die
+     Stelle wörtlich: »seat mode: NO leg solve — the analytic two-bone solve bent the legs visibly;
+     the host puts the hips under the waterline.« Also: keine Beinlösung, die HÜFTE wandert unter die
+     gemessene Wasserlinie, die Wanne verdeckt den Rest. `RACE` liefert das Verhältnis
+     (Fahrer 1,55 · Wanne 2,1 · Hüfte 0,28 darunter) — umgerechnet auf die gemessene Figurenhöhe. */
+  async _tubRig() {
+    const THREE = this.THREE, s = this.state, t = s.tub;
+    this._sweep('kfb-tub'); this._tubObj = null; this._tubM = null; this._tubBox = null;
+    if (s.tab !== 'tub') return [];
+    const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+    const enc = (q) => q.split('/').map(encodeURIComponent).join('/');
+    this._parts = this._parts || {};
+    const load = async (p) => {
+      if (!this._parts[p]) { const g0 = await this.loader.loadAsync(RAW + enc(p)); this._parts[p] = g0.scene; }
+      const o = this._parts[p].clone(true);
+      o.traverse((q) => { q.userData.noMeasure = true; if (q.isMesh) { q.castShadow = true; q.receiveShadow = true; } });
+      return o;
+    };
+    const g = new THREE.Group(); g.name = 'kfb-tub'; g.userData.noMeasure = true;
+    let tub = null;
+    try { tub = await load(TUB_PATH); } catch (e) { return ['Wanne nicht ladbar: ' + (e && e.message)]; }
+    tub.traverse((o) => { o.userData.kfbZone = 'wanne'; });
+    g.add(tub); this.scene.add(g); g.updateMatrixWorld(true);
+    const tb = new THREE.Box3().setFromObject(tub);
+    const hx = (tb.max.x - tb.min.x) / 2, hz = (tb.max.z - tb.min.z) / 2, th = tb.max.y - tb.min.y;
+    let tm = null;
+    try { tm = this._tubM = this._SL.measureTub(THREE, tub, 'bath', 'bath_water'); } catch (e) { tm = null; }
+    const rows = ['Wanne ' + (hx * 2).toFixed(3) + ' × ' + th.toFixed(3) + ' × ' + (hz * 2).toFixed(3) + ' (B × H × T)'];
+    let lift = 0, dia = 0;
+    if (t.wOn) {
+      const path = 'kenney_car-kit/Models/GLB format/' + ((WHEELS.find(([k]) => k === t.wheel) || WHEELS[0])[1]);
+      try {
+        const probe = await load(path);
+        probe.updateMatrixWorld(true);
+        const pb = new THREE.Box3().setFromObject(probe);
+        const raw = Math.max(1e-4, pb.max.y - pb.min.y);
+        dia = th * t.wSize;
+        const k = dia / raw;
+        lift = dia / 2 + th * t.wY;
+        for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+          const w = (sx === -1 && sz === -1) ? probe : await load(path);
+          w.scale.setScalar(k); w.updateMatrixWorld(true);
+          const wb = new THREE.Box3().setFromObject(w);
+          w.position.set(hx * t.wTrack * sx - (wb.max.x + wb.min.x) / 2,
+            dia / 2 - (wb.max.y + wb.min.y) / 2,
+            hz * t.wBase * sz - (wb.max.z + wb.min.z) / 2);
+          w.traverse((o) => { o.userData.kfbZone = 'reifen'; });
+          g.add(w);
+        }
+        rows.push('Räder ×' + k.toFixed(3) + ' · Durchmesser ' + dia.toFixed(3)
+          + ' · Spur ' + (hx * t.wTrack * 2).toFixed(3) + ' · Radstand ' + (hz * t.wBase * 2).toFixed(3));
+      } catch (e) { rows.push('Räder nicht ladbar: ' + (e && e.message)); }
+    } else rows.push('Räder aus');
+    tub.position.y = lift - tb.min.y; tub.updateMatrixWorld(true);
+    if (t.jOn) {
+      try {
+        const j = await load(JET_PATH);
+        j.updateMatrixWorld(true);
+        const jb0 = new THREE.Box3().setFromObject(j);
+        /* ⚠ Nach der LÄNGSTEN Kante skalieren, nicht nach der Breite: die »Space engine« ist ein
+           langes Rohr — mit max(x,z) kam bei verlangten 0,55 Breite gemessen 0,27 heraus. */
+        const w0 = Math.max(1e-4, jb0.max.x - jb0.min.x, jb0.max.y - jb0.min.y, jb0.max.z - jb0.min.z);
+        j.scale.setScalar((hx * t.jSize) / w0); j.updateMatrixWorld(true);
+        const jb = new THREE.Box3().setFromObject(j);
+        j.position.set(hx * t.jX - (jb.max.x + jb.min.x) / 2,
+          lift + th * t.jY - (jb.max.y + jb.min.y) / 2,
+          hz * t.jZ - (jb.max.z + jb.min.z) / 2);
+        j.traverse((o) => { o.userData.kfbZone = 'duese'; });
+        g.add(j);
+        rows.push('Düse · Länge ' + (hx * t.jSize).toFixed(3) + ' · Heck z ' + (hz * t.jZ).toFixed(3));
+      } catch (e) { rows.push('Düse nicht ladbar: ' + (e && e.message)); }
+    } else rows.push('Düse aus');
+    g.updateMatrixWorld(true);
+    this._tubObj = tub;
+    this._tubBox = new THREE.Box3().setFromObject(tub);
+    /* Die Wasserlinie ist GEMESSEN, nicht geschätzt: `measureTub` tastet Innenboden, Rand und
+       Wasserfläche mit Strahlen von oben ab. Fehlt das Wassernetz, steht das im Bericht. */
+    /* ⚠ GEMESSEN, ABER NICHT ANGESCHLOSSEN — die häufigste Fehlerklasse dieses Projekts, hier wieder
+       zugeschlagen: `measureTub` liefert `floorY`, `rimY` und `water` als OBJEKT `{topY, centerZ}`.
+       Ich hatte `tm.floor` und `tm.water` gelesen: beide undefined, Bericht sagte »kein Wassernetz«,
+       obwohl das Netz `bath_water` da war und topY 0,940 gemessen wurde. */
+    const waterY = (tm && tm.water && isFinite(tm.water.topY)) ? tm.water.topY + tub.position.y : null;
+    this._tubWater = waterY;
+    this._tubFloor = (tm && isFinite(tm.floorY)) ? tm.floorY + tub.position.y : null;
+    rows.push(waterY != null ? ('Wasserlinie gemessen ' + waterY.toFixed(3) + ' · Rand ' + this._tubBox.max.y.toFixed(3))
+      : '⚠ kein Wassernetz gefunden — der Sitz bezieht sich auf den Wannenrand');
+    if (this._tubFloor != null) rows.push('Innenboden ' + this._tubFloor.toFixed(3)
+      + ' · innen ' + (tm.innerL || 0).toFixed(3) + ' × ' + (tm.innerW || 0).toFixed(3)
+      + ' · Tiefe ' + (tm.depth || 0).toFixed(3));
+    rows.push('Bodenfreiheit ' + this._tubBox.min.y.toFixed(3) + ' · Wannenoberkante ' + this._tubBox.max.y.toFixed(3));
+    return rows;
+  }
+
+  /** Sitz-Abnahme in der Wanne — Hüfte gegen Wasserlinie, Durchdringung des Innenbodens. */
+  _seatRows() {
+    const THREE = this.THREE;
+    if (this.state.tab !== 'tub') return [];
+    if (!this._tubObj || !this._hip) return ['keine Wanne oder keine Hüftlinie — keine Sitzmessung gültig'];
+    const R = this._rig, r = this.state.rig;
+    const rows = [];
+    const hipW = r.s * this._hip.y + R.position.y;
+    const ref = this._tubWater != null ? this._tubWater : this._tubBox.max.y;
+    rows.push('Hüftlinie ' + hipW.toFixed(3) + ' · '
+      + (hipW < ref ? (ref - hipW).toFixed(3) + ' UNTER' : (hipW - ref).toFixed(3) + ' über')
+      + ' der ' + (this._tubWater != null ? 'Wasserlinie' : 'Randhöhe'));
+    const rb = new THREE.Box3().setFromObject(R);
+    rows.push('Kopfoberkante ' + rb.max.y.toFixed(3) + ' · Wannenrand ' + this._tubBox.max.y.toFixed(3)
+      + ' · Figur : Wanne = ' + ((rb.max.y - rb.min.y) / Math.max(1e-4, this._tubBox.max.x - this._tubBox.min.x)).toFixed(2));
+    /* ⚠ Gezählt wird als VERHÄLTNIS, damit die Zahl bei anderem Maßstab noch gilt. */
+    const floorY = this._tubFloor != null ? this._tubFloor : this._tubBox.min.y;
+    let tot = 0, out = 0; const v = new THREE.Vector3();
+    R.traverse((m) => {
+      if (!(m.isMesh || m.isSkinnedMesh)) return;
+      const pos = m.geometry && m.geometry.attributes.position; if (!pos) return;
+      m.updateWorldMatrix(true, false);
+      for (let i = 0; i < pos.count; i += 4) {
+        v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld); tot++;
+        if (v.y < floorY) out++;
+      }
+    });
+    rows.push('Figurenpunkte unter dem Innenboden: ' + (tot ? Math.round(out / tot * 1000) / 10 : 0) + ' % (' + out + '/' + tot + ')');
+    const race = this._SL && this._SL.RACE;
+    if (race) rows.push('Rezept aus dem Rennen: Fahrer ' + race.driverHeight + ' · Wanne ' + race.tubWidth
+      + ' · Hüfte ' + race.lift + ' darunter — kein Beinlöser');
+    return rows;
+  }
+
+  /** Maßstab nach dem Rennen: Figurenhöhe : Wannenbreite = 1,55 : 2,1. `k` schrumpft den Vorschlag. */
+  _proposeTub(k2) {
+    const race = this._SL && this._SL.RACE;
+    if (!this._tubBox || !this._hip || !race) { this._flash('✗ Wanne oder Hüftlinie fehlt'); return; }
+    const want = (this._tubBox.max.x - this._tubBox.min.x) * (race.driverHeight / race.tubWidth) * (k2 || 1);
+    const k = +(want / Math.max(1e-4, this._hip.height)).toFixed(3);
+    this.setState({ rig: Object.assign({}, this.state.rig, { s: k, x: 0, y: 0, z: 0 }) },
+      () => { this._placeRig(); this._draw(); this._refitRows(); });
+    this._flash('✓ Maßstab ×' + k.toFixed(2) + ' — Figur ' + want.toFixed(2) + ' hoch'
+      + (k2 ? (' (' + Math.round(k2 * 100) + ' % vom Rennen)') : ''));
+  }
+  _setTub(field, v) { this._set({ tub: Object.assign({}, this.state.tub, { [field]: v }) }); }
+
+  /** Setzt den Rig-Behälter. Nullpunkt = Unterkante auf der gemessenen Dachfläche, Mitte über Mitte. */
+  _placeRig() {
+    const THREE = this.THREE, s = this.state, R = this._rig;
+    if (!R) return;
+    if (s.tab === 'sockel') { R.position.set(0, 0, 0); R.scale.setScalar(1); R.rotation.set(0, 0, 0); R.updateMatrixWorld(true); return; }
+    const r = s.rig;
+    R.position.set(0, 0, 0); R.scale.setScalar(r.s); R.rotation.set(0, r.rot * Math.PI / 180, 0);
+    R.updateMatrixWorld(true);
+    const rb = new THREE.Box3().setFromObject(R);
+    let ax = 0, ay = 0, az = 0, hx = 1, hy = 1, hz = 1;
+    if (s.tab === 'tub' && this._tubObj && isFinite(rb.min.y)) {
+      const vb = this._tubBox;
+      const ref = this._tubWater != null ? this._tubWater : vb.max.y;
+      const race = this._SL && this._SL.RACE;
+      /* ⚠ Das Rennen gibt einen ABSOLUTEN Versatz für einen 1,55 hohen Fahrer (−0,28). Hier steht
+         eine andere Figur — also wird das VERHÄLTNIS übernommen (−0,181 der Figurenhöhe), nicht die
+         Zahl. Eine geliehene Absolutzahl wäre Äpfel gegen Birnen (Hausregel, zweimal bezahlt). */
+      const frac = race ? race.lift / race.driverHeight : -0.18;
+      ax = (vb.max.x + vb.min.x) / 2 - (rb.max.x + rb.min.x) / 2;
+      az = (vb.max.z + vb.min.z) / 2 - (rb.max.z + rb.min.z) / 2;
+      ay = ref + frac * (this._hip.height * r.s) - r.s * this._hip.y;
+      hx = Math.max(1e-4, (vb.max.x - vb.min.x) / 2);
+      hz = Math.max(1e-4, (vb.max.z - vb.min.z) / 2);
+      hy = Math.max(1e-4, vb.max.y - vb.min.y);
+    } else if (this._veh && isFinite(rb.min.y)) {
+      const vb = new THREE.Box3().setFromObject(this._veh);
+      const seat = this._seat = this._seatY();
+      ax = (vb.max.x + vb.min.x) / 2 - (rb.max.x + rb.min.x) / 2;
+      az = (vb.max.z + vb.min.z) / 2 - (rb.max.z + rb.min.z) / 2;
+      ay = (seat ? seat.y : vb.max.y) - rb.min.y;
+      /* ⚠ Der Versatz zählt in ANTEILEN des Rovers (halbe Breite · Höhe · halbe Tiefe) — wie in
+         Reiter 1 die Cockpitteile in Anteilen der Platte. Sonst gelten die Zahlen nur für genau
+         dieses Fahrzeug und der nächste Rover fängt bei Null wieder an. */
+      hx = Math.max(1e-4, (vb.max.x - vb.min.x) / 2);
+      hz = Math.max(1e-4, (vb.max.z - vb.min.z) / 2);
+      hy = Math.max(1e-4, vb.max.y - vb.min.y);
+    }
+    this._anchor = [ax, ay, az];
+    this._vehK = [hx, hy, hz];
+    R.position.set(ax + r.x * hx, ay + r.y * hy, az + r.z * hz);
+    R.updateMatrixWorld(true);
+  }
+
+  /* ⚠ KEIN Maßstab-Vorschlag beim ersten Laden. Mein erster Anlauf setzte die Platte auf 70 % der
+     Roverbreite: gemessen ×2,99, Kopfoberkante 12,39 bei einem 5,17 hohen Rover — ein Riese auf
+     einem Spielzeug. Der Reiter fängt deshalb bei ×1 an, dem ECHTEN 1:1 aus Reiter 1; die Knöpfe
+     unten schlagen Maßstäbe vor, entschieden wird von Hand.
+     Gemessen am Rover_Round: Wanne 3,95 × 3,46 (y 0,28 bis 5,17) · Räder 1,35 hoch · mit Rädern
+     5,79 breit. Rig bei ×1: 2,42 hoch, Platte 1,36 breit — also 34 % der Wannenbreite. */
+  _scaleFor(frac) {
+    const THREE = this.THREE;
+    if (!this._veh || !this._baseRes) return null;
+    const keep = this._rig.scale.x;
+    this._rig.scale.setScalar(1); this._rig.updateMatrixWorld(true);
+    const pb = new THREE.Box3().setFromObject(this._baseRes.group);
+    const vb = new THREE.Box3().setFromObject(this._veh);
+    this._rig.scale.setScalar(keep); this._rig.updateMatrixWorld(true);
+    const w = pb.max.x - pb.min.x;
+    if (!(w > 1e-4)) return null;
+    return +(((vb.max.x - vb.min.x) * frac) / w).toFixed(3);
+  }
+  _propose(frac) {
+    const k = this._scaleFor(frac);
+    if (!k) { this._flash('✗ Rover oder Sockel fehlt'); return; }
+    const rig = Object.assign({}, this.state.rig, { s: k });
+    this.setState({ rig }, () => { this._placeRig(); this._draw(); this._refitRows(); });
+    this._flash('✓ Maßstab ×' + k.toFixed(2) + ' — Platte auf ' + Math.round(frac * 100) + ' % der Roverbreite');
+  }
+
+  /** Abnahme nach dem Aufsetzen. Alles, was vom Maßstab abhängt, steht als VERHÄLTNIS da. */
+  _fitRows() {
+    const THREE = this.THREE;
+    if (this.state.tab === 'tub') return this._seatRows();
+    if (this.state.tab !== 'veh') return [];
+    if (!this._veh) return ['kein Fahrzeug im Bild — keine Aufsetz-Messung gültig'];
+    const vb = new THREE.Box3().setFromObject(this._veh);
+    const rb = new THREE.Box3().setFromObject(this._rig);
+    if (!isFinite(rb.min.y)) return ['kein Rig im Bild'];
+    const rows = [];
+    const seat = this._seat || this._seatY();
+    if (seat) rows.push('Dachfläche gemessen ' + seat.y.toFixed(3) + ' (' + seat.n + ' Strahlen, '
+      + seat.lo.toFixed(3) + '–' + seat.hi.toFixed(3) + ')'
+      + (seat.through ? ' · ⚠ ' + seat.through + ' Durchschüsse verworfen' : '')
+      + ' · Box-Spitze ' + seat.boxTop.toFixed(3));
+    const ref = seat ? seat.y : vb.max.y;
+    const gap = +(rb.min.y - ref).toFixed(3);
+    rows.push('Saum: Rig-Unterkante ' + (gap < 0 ? Math.abs(gap) + ' UNTER' : gap + ' über') + ' der Dachfläche');
+    let tot = 0, under = 0; const v = new THREE.Vector3();
+    this._rig.traverse((m) => {
+      if (!(m.isMesh || m.isSkinnedMesh)) return;
+      const pos = m.geometry && m.geometry.attributes.position; if (!pos) return;
+      m.updateWorldMatrix(true, false);
+      for (let i = 0; i < pos.count; i += 4) {
+        v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld); tot++;
+        if (v.y < ref && v.x > vb.min.x && v.x < vb.max.x && v.z > vb.min.z && v.z < vb.max.z) under++;
+      }
+    });
+    rows.push('Rig-Punkte unter der Dachfläche: ' + (tot ? Math.round(under / tot * 1000) / 10 : 0) + ' % (' + under + '/' + tot + ')');
+    if (this._baseRes) {
+      const pb = new THREE.Box3().setFromObject(this._baseRes.group);
+      rows.push('Breitenverhältnis Platte : Rover = ' + ((pb.max.x - pb.min.x) / Math.max(1e-4, vb.max.x - vb.min.x)).toFixed(2));
+    }
+    rows.push('Kopfoberkante ' + rb.max.y.toFixed(3) + ' über Boden · Rover hoch ' + (vb.max.y - vb.min.y).toFixed(3));
+    const over = rb.min.x < vb.min.x - 0.01 || rb.max.x > vb.max.x + 0.01 || rb.min.z < vb.min.z - 0.01 || rb.max.z > vb.max.z + 0.01;
+    rows.push(over ? '⚠ Rig ragt über den Rover-Umriß' : 'Rig innerhalb des Rover-Umrisses');
+    rows.push('Nullpunkt der drei Regler: x ' + (this._anchor || [0, 0, 0])[0].toFixed(3)
+      + ' · y ' + (this._anchor || [0, 0, 0])[1].toFixed(3) + ' · z ' + (this._anchor || [0, 0, 0])[2].toFixed(3));
+    return rows;
+  }
+  _refitRows() { this.setState({ vehRows: (this._vehBase || []).concat(this._fitRows()) }); }
+  /* ⚠ Selbst rendern: im verborgenen Vorschaufenster parkt die Bildschleife (Hausregel). */
+  _draw() { if (this.ren && this.scene && this.cam) this.ren.render(this.scene, this.cam); }
+  _frame(obj) {
+    const THREE = this.THREE;
+    if (!obj) return;
+    const b = new THREE.Box3().setFromObject(obj);
+    if (!isFinite(b.min.y)) return;
+    const size = b.getSize(new THREE.Vector3()), mid = b.getCenter(new THREE.Vector3());
+    const reach = Math.max(size.x, size.y, size.z);
+    const dist = (reach * 0.62) / Math.tan((this.cam.fov * Math.PI / 180) / 2);
+    this.cam.position.set(mid.x + dist * 0.55, mid.y + reach * 0.22, mid.z + dist * 0.85);
+    this.cam.near = Math.max(0.01, dist / 80); this.cam.far = dist * 12; this.cam.updateProjectionMatrix();
+    this.ctl.target.copy(mid); this.ctl.update(); this._draw();
+  }
+  _setVeh(field, v) {
+    const veh = Object.assign({}, this.state.veh, { [field]: v });
+    this._set({ veh });
+  }
+  _setRig(field, v) {
+    /* Kein Neubau beim Schieben: das Rig steht, nur der Behälter wandert. Der Bericht kommt nach. */
+    const rig = Object.assign({}, this.state.rig, { [field]: v });
+    this.setState({ rig }, () => { this._placeRig(); this._draw(); });
+    clearTimeout(this._tr); this._tr = setTimeout(() => this._refitRows(), 140);
+  }
+  _tab(k) {
+    if (k === this.state.tab) return;
+    /* Reiter 3 zeigt die GANZE Figur ohne Cockpit — Georgs Wort: »der aktuelle FB (ohne cockpit)«.
+       ⚠ PRÜFERBEFUND: die drei Schalter fest zurückzusetzen hat den Rover-Reiter ausgeräumt — nach
+       Wanne → Rover stand dort gemessen die ungeschnittene Figur OHNE Platte und OHNE Cockpit, und
+       die Abnahmezahlen (»Saum 0«, »0 %«) galten für ein Rig, das es nicht gab. Jetzt wird der
+       Zustand VOR dem Ausschalten gemerkt und beim Verlassen der Wanne wiederhergestellt. */
+    const patch = { tab: k };
+    if (k === 'tub' && this.state.tab !== 'tub') {
+      this._beforeTub = { cut: this.state.cut, base: this.state.base, cock: this.state.cock };
+      patch.cut = false; patch.base = false; patch.cock = false;
+    } else if (this.state.tab === 'tub' && this._beforeTub) {
+      Object.assign(patch, this._beforeTub);
+      this._beforeTub = null;
+    }
+    this.setState(patch, () => this._apply().then(() => {
+      this._frame(k === 'veh' && this._veh ? this._veh : (k === 'tub' && this._tubObj ? this._tubObj : this._rig));
+    }));
+  }
+
+  /* ── COCKPIT, VON HAND GESETZT ───────────────────────────────────────────────────────────── */
+  async _cockpit(cutY) {
+    const THREE = this.THREE, s = this.state;
+    this._sweep('kfb-cockpit'); this._cock = null;
+    if (!s.cock || !this._baseRes) return null;
+    const bb = new THREE.Box3().setFromObject(this._baseRes.group);
+    const top = bb.max.y, cx = (bb.max.x + bb.min.x) / 2, cz = (bb.max.z + bb.min.z) / 2;
+    const hx = (bb.max.x - bb.min.x) / 2, hz = (bb.max.z - bb.min.z) / 2;
+    const plateH = Math.max(0.01, top - bb.min.y);
+    const g = this._cock = new THREE.Group(); g.name = 'kfb-cockpit'; g.userData.noMeasure = true;
+    const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+    const enc = (q) => q.split('/').map(encodeURIComponent).join('/');
+    /* Umriß der Figur — nur noch BERICHT, keine Automatik mehr. */
+    const silo = [];
+    { const v = new THREE.Vector3();
+      this.figure.traverse((m) => {
+        if (!(m.isMesh || m.isSkinnedMesh) || m.userData.noMeasure) return;
+        const pos = m.geometry && m.geometry.attributes.position; if (!pos) return;
+        m.updateWorldMatrix(true, false);
+        for (let i = 0; i < pos.count; i += 2) {
+          v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld);
+          if (v.y >= cutY - plateH) silo.push([v.x, v.y, v.z]);
+        }
+      }); }
+    const hitsIn = (b) => { let n = 0; for (const p of silo) if (p[0] >= b.min.x && p[0] <= b.max.x && p[1] >= b.min.y && p[1] <= b.max.y && p[2] >= b.min.z && p[2] <= b.max.z) n++; return n; };
+    this._parts = this._parts || {};
+    const load = async (path) => {
+      if (!this._parts[path]) { const g0 = await this.loader.loadAsync(RAW + enc(path)); this._parts[path] = g0.scene; }
+      const o = this._parts[path].clone(true);
+      o.traverse((q) => { q.userData.noMeasure = true; if (q.isMesh) { q.castShadow = true; q.receiveShadow = true; } });
+      return o;
+    };
+    this._cockHits = {};
+    const rep = ['Platte: Halbbreite ' + hx.toFixed(3) + ' · Halbtiefe ' + hz.toFixed(3) + ' · Dicke ' + plateH.toFixed(3)];
+    const place = async (key, path, label) => {
+      const p = s.parts[key];
+      if (!p || !p.on) { rep.push(label + ': aus'); return; }
+      let o = null;
+      if (path) { try { o = await load(path); } catch (e) { rep.push(label + ': ✗ nicht ladbar'); return; } }
+      else {
+        o = new THREE.Group();
+        const sh = hx * p.s * 0.42, bR = hx * p.s * 0.16;
+        const mat = (hex, r) => new THREE.MeshStandardMaterial({ color: hex, roughness: r, metalness: 0.1 });
+        const st = new THREE.Mesh(new THREE.CylinderGeometry(hx * p.s * 0.055, hx * p.s * 0.075, sh, 12), mat(0x2b3440, 0.6));
+        st.position.y = sh / 2; st.castShadow = true;
+        const ba = new THREE.Mesh(new THREE.SphereGeometry(bR, 20, 14), mat(0xb8361f, 0.3));
+        ba.position.y = sh + bR * 0.7; ba.castShadow = true;
+        /* Zonen-Etikett für die Farbwähler: Schaft und Kugel sind eigene Zonen, alles Geladene ist
+           »hardware«. Am Objekt, nicht am Material — Materialien werden beim Stylen ersetzt. */
+        st.userData.kfbZone = 'stiel'; ba.userData.kfbZone = 'kugel';
+        o.add(st, ba);
+      }
+      o.position.set(0, 0, 0); o.updateMatrixWorld(true);
+      const b0 = new THREE.Box3().setFromObject(o);
+      if (path) {
+        const w0 = Math.max(1e-4, Math.max(b0.max.x - b0.min.x, b0.max.z - b0.min.z));
+        o.scale.setScalar((hx * p.s) / w0); o.updateMatrixWorld(true);
+      }
+      const b1 = new THREE.Box3().setFromObject(o);
+      o.position.set(cx + hx * p.x - (b1.max.x + b1.min.x) / 2,
+        top + plateH * p.y - b1.min.y,
+        cz + hz * p.z - (b1.max.z + b1.min.z) / 2);
+      o.updateMatrixWorld(true);
+      g.add(o);
+      const b2 = new THREE.Box3().setFromObject(o);
+      const n = hitsIn(b2);
+      const drin = b2.min.x >= bb.min.x - 0.01 && b2.max.x <= bb.max.x + 0.01 && b2.min.z >= bb.min.z - 0.01 && b2.max.z <= bb.max.z + 0.01;
+      this._cockHits[key] = { n, drin };
+      rep.push(label + ': ' + (n ? '⚠ ' + n + ' Figurenpunkte in der Box' : 'frei') + (drin ? '' : ' · ⚠ ragt über die Platte'));
+    };
+    await place('stick', null, 'Knüppel');
+    await place('round', 'kenney_platformer-kit/Models/GLB format/button-round.glb', 'Knopf rund');
+    await place('square', 'kenney_platformer-kit/Models/GLB format/button-square.glb', 'Knopf viereckig');
+    if (s.panel !== 'off') {
+      await place('panel', 'kenney_factory-kit_3.0/Models/GLB format/'
+        + (s.panel === 'wide' ? 'screen-panel-wide.glb' : 'screen-panel-flat.glb'), 'Panel (' + s.panel + ')');
+    } else rep.push('Panel: aus');
+    this._rig.add(g);
+    const hands = [];
+    this.figure.traverse((o) => { if (o.isBone && /^(hand|fist|wrist)[lr]?$/i.test(o.name || '')) hands.push(o); });
+    const deep = [];
+    for (const h of hands) {
+      const v = h.getWorldPosition(new THREE.Vector3());
+      if (v.x > bb.min.x && v.x < bb.max.x && v.z > bb.min.z && v.z < bb.max.z && v.y < top) deep.push(h.name + ' ' + (top - v.y).toFixed(3));
+    }
+    rep.push(deep.length ? ('⚠ Hände in der Platte: ' + deep.join(' · ')) : 'Hände frei über der Platte');
+    return rep;
+  }
+
+  /* ── MATERIAL · FARBZONEN UND TEXTUREN ────────────────────────────────────────────────
+     GEMESSEN, welche Zonen es überhaupt gibt (nicht geraten): Rover = EIN Material »Atlas« (weiß
+     mit Atlas-Textur, Räder und Wanne zusammen) · Platte = Kenney »colormap« · Knöpfe und Panel =
+     dasselbe »colormap« · Knüppelschaft #2b3440 und Kugel #b8361f sind meine eigenen. Die Figur
+     bleibt ausgespart — ihre Farben gehören `look.v1` (ein Gesicht, ein Besitzer).
+     Die Farbe wird MULTIPLIZIERT: Weiß ändert nichts, deshalb ist Weiß die Vorgabe. */
+  _ownMat(mesh) {
+    const ms = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+    /* ⚠ `clone(true)` TEILT MATERIALIEN mit dem Spender im Cache. Wer da hineinfärbt, färbt jede
+       künftige Kopie mit — und beim nächsten Wirtswechsel steht die Farbe plötzlich woanders.
+       Deshalb bekommt jedes Netz beim ersten Stylen sein EIGENES Material, mit dem Original daneben. */
+    const fresh = ms.map((m) => {
+      if (!m) return m;
+      if (m.userData && m.userData.kfbOwn) return m;
+      const c = m.clone();
+      c.userData = Object.assign({}, m.userData, { kfbOwn: true, kfbBase: m });
+      return c;
+    });
+    mesh.material = Array.isArray(mesh.material) ? fresh : fresh[0];
+    return fresh.filter(Boolean);
+  }
+
+  /** Lädt einen Textursatz (diffuse · normal · roughness) und hält ihn im Cache.
+      ⚠ PRÜFERBEFUND: der Cache hing vorher an »Name|Wiederholung« — jeder Schritt des Reglers
+      (0,25 bis 12) hat drei neue JPGs geladen. Die Wiederholung sitzt jetzt am Texturobjekt und
+      wird bei jedem Stylen gesetzt; geladen wird einmal je Satz. */
+  async _texSet(name) {
+    const THREE = this.THREE;
+    if (!name) return null;
+    this._texCache = this._texCache || {};
+    if (this._texCache[name] !== undefined) return this._texCache[name];
+    const RAW = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/';
+    const enc = (q) => q.split('/').map(encodeURIComponent).join('/');
+    const TL = this._TL || (this._TL = new THREE.TextureLoader());
+    const one = (suf, srgb) => new Promise((res) => TL.load(
+      RAW + enc('Textures/' + name + '/' + name + '_' + suf + '.jpg'),
+      (t) => { t.wrapS = t.wrapT = THREE.RepeatWrapping;
+        if (srgb) t.colorSpace = THREE.SRGBColorSpace; res(t); },
+      undefined, () => res(null)));
+    const [map, normal, rough] = await Promise.all([one('diffuse', true), one('normal', false), one('roughness', false)]);
+    const set = map ? { map, normal, rough, name } : null;
+    this._texCache[name] = set;
+    return set;
+  }
+
+  /** Box-Projektion als UV-Ersatz — mit Rückweg auf die Original-UV. */
+  _uvFor(mesh, box) {
+    const THREE = this.THREE;
+    let g = mesh.geometry; if (!g || !g.attributes.position) return;
+    if (!g.userData.kfbGeo) {
+      g = g.clone(); g.userData = Object.assign({}, mesh.geometry.userData, { kfbGeo: true });
+      mesh.geometry = g;
+    }
+    const uv = g.attributes.uv;
+    if (uv && !g.userData.kfbUV0) g.userData.kfbUV0 = uv.clone();
+    if (!box) { if (g.userData.kfbUV0) g.setAttribute('uv', g.userData.kfbUV0.clone()); return; }
+    if (g.userData.kfbBoxUV) { g.setAttribute('uv', g.userData.kfbBoxUV); return; }
+    /* ⚠ WARUM ÜBERHAUPT: Kenney- und Quaternius-Netze haben ATLAS-UV — jede Fläche zeigt auf ein
+       winziges Feld einer Farbkarte. Eine Kacheltextur darauf ergibt pro Fläche EINEN Farbwert,
+       also keinen Rost, sondern Flecken. Die Box-Projektion nimmt statt der UV die Lage im Raum:
+       je Punkt die beiden Achsen, die NICHT die Hauptrichtung der Normalen sind. */
+    const pos = g.attributes.position, nor = g.attributes.normal;
+    const arr = new Float32Array(pos.count * 2);
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+      const nx = nor ? Math.abs(nor.getX(i)) : 0, ny = nor ? Math.abs(nor.getY(i)) : 1, nz = nor ? Math.abs(nor.getZ(i)) : 0;
+      let u, v;
+      if (ny >= nx && ny >= nz) { u = x; v = z; }
+      else if (nx >= nz) { u = z; v = y; }
+      else { u = x; v = y; }
+      arr[i * 2] = u; arr[i * 2 + 1] = v;
+    }
+    const at = new THREE.BufferAttribute(arr, 2);
+    g.userData.kfbBoxUV = at;
+    g.setAttribute('uv', at);
+  }
+
+  async _style() {
+    const st = this.state.style;
+    const name = st.tex === 'aus' ? null : (st.tex === 'eigen' ? (st.eigen || '').trim() : st.tex);
+    const tex = name ? await this._texSet(name) : null;
+    if (name && !tex) this._flash('✗ Textursatz »' + name + '« nicht gefunden');
+    /* Wiederholung am Texturobjekt, nicht am Cache-Schlüssel. */
+    if (tex) for (const t of [tex.map, tex.normal, tex.rough]) if (t) { t.repeat.set(st.rep, st.rep); t.needsUpdate = true; }
+    const groups = [['rover', this._veh], ['platte', this._baseRes && this._baseRes.group], ['cockpit', this._cock],
+      ['wanne', this._tubObj && this._tubObj.parent]];
+    const counted = {};
+    for (const [grp, root] of groups) {
+      if (!root) continue;
+      root.traverse((o) => {
+        if (!o.isMesh && !o.isSkinnedMesh) return;
+        const z = grp === 'cockpit' ? (o.userData.kfbZone || 'hardware')
+          : grp === 'wanne' ? (o.userData.kfbZone || 'wanne') : grp;
+        const texZone = (z === 'stiel' || z === 'kugel') ? 'hardware' : (z === 'reifen' ? 'wanne' : z);
+        /* ⚠ REIFEN WERDEN NICHT MITGEFÄRBT (Georgs Befund fürs Garage Lab): eigene Zone, eigener
+           Wert — und eine Textur landet nie auf ihnen. */
+        const useTex = !!(tex && st.texOn[texZone] && z !== 'reifen');
+        const mats = this._ownMat(o);
+        counted[z] = (counted[z] || 0) + 1;
+        if (useTex) this._uvFor(o, !!st.boxuv);
+        else if (o.geometry && o.geometry.userData.kfbUV0) this._uvFor(o, false);
+        for (const m of mats) {
+          if (m.color) m.color.set(st.col[z] || '#ffffff');
+          const base = m.userData.kfbBase;
+          if (useTex) {
+            m.map = tex.map; m.normalMap = tex.normal || null; m.roughnessMap = tex.rough || null;
+            if (m.roughness !== undefined) m.roughness = 1;
+            m.userData.kfbTexed = true;
+          } else if (m.userData.kfbTexed) {
+            m.map = base ? base.map : null;
+            m.normalMap = base ? base.normalMap : null;
+            m.roughnessMap = base ? base.roughnessMap : null;
+            if (base && base.roughness !== undefined) m.roughness = base.roughness;
+            m.userData.kfbTexed = false;
+          }
+          m.needsUpdate = true;
+        }
+      });
+    }
+    const rows = ['Zonen gestylt: ' + (Object.entries(counted).map(([k, n]) => k + ' ' + n).join(' · ') || 'keine')];
+    if (name) rows.push(tex ? ('Textur ' + name + ' · Wiederholung ×' + st.rep + ' · '
+      + (st.boxuv ? 'Box-Projektion' : 'Original-UV') + ' · auf ' + (Object.keys(st.texOn).filter((k) => st.texOn[k]).join(', ') || '— nichts ausgewählt'))
+      : ('⚠ Textur ' + name + ' nicht ladbar'));
+    /* Der Bericht gehört in DEN Abschnitt, in dem man die Regler bedient — vorher landete er nur
+       unter »Messen · aufgesetzt«, und im Reiter »Sockel« gab es gar keine Rückmeldung (Prüfer). */
+    this.setState({ styleRows: rows });
+    return rows;
+  }
+  _setStyle(patch) {
+    const style = Object.assign({}, this.state.style, patch);
+    this.setState({ style }, () => this._style().then(() => {
+      this._draw();
+      this.setState({ vehRows: (this._vehBase || []).concat(this._fitRows()) });
+    }));
+  }
+  _setCol(zone, hex) {
+    const col = Object.assign({}, this.state.style.col, { [zone]: hex });
+    this._setStyle({ col });
+  }
+  _setTexOn(zone, v) {
+    const texOn = Object.assign({}, this.state.style.texOn, { [zone]: v });
+    this._setStyle({ texOn });
+  }
+
+  _set(patch) { this.setState(patch); clearTimeout(this._t); this._t = setTimeout(() => this._apply(), 90); }
+  _setPart(key, field, v) {
+    const parts = Object.assign({}, this.state.parts);
+    parts[key] = Object.assign({}, parts[key], { [field]: v });
+    this._set({ parts });
+  }
+  _setArm(side, field, v) {
+    const arms = Object.assign({}, this.state.arms);
+    arms[side] = Object.assign({}, arms[side], { [field]: v });
+    /* ⚠ NICHT NUR IM TAKT: ein verborgenes Vorschaufenster parkt die Bildschleife (Hausregel), dann
+       käme die Haltung nie an. Also sofort auflegen und selbst rendern — der Takt wiederholt es nur. */
+    this.setState({ arms }, () => {
+      this._holdArms();
+      if (this.figure) this.figure.updateMatrixWorld(true);
+      if (this.ren && this.scene && this.cam) this.ren.render(this.scene, this.cam);
+    });
+    clearTimeout(this._ta); this._ta = setTimeout(() => this._apply(), 160);   // nur für den Kollisionsbericht
+  }
+  _toggle(k) { const open = Object.assign({}, this.state.open); open[k] = !open[k]; this.setState({ open }); }
+
+  /* ── KONFIGURATION RAUS UND REIN ─────────────────────────────────────────────────────────────
+     Georg 12.09.: »leider gibt's keine (funktionierende!) copy config bzw. import/export — analog
+     zu Studio.« Genau die Falle ist im Studio schon bezahlt worden und steht dort im Kommentar:
+     ⚠ im Vorschaufenster ist die ZWISCHENABLAGE GESPERRT — `navigator.clipboard` wirft oder liefert
+     ein abgelehntes Versprechen, und wer den Fehler schluckt, hat einen Knopf, der nichts tut.
+     Deshalb hier: erst die Ablage versuchen, und wenn die nicht will, fällt eine DATEI heraus —
+     und die Meldung sagt, was von beidem passiert ist. */
+  _cfg() {
+    const s = this.state;
+    return {
+      kind: 'kfb-mech-vehicle-rig', version: 2, saved: new Date().toISOString().slice(0, 16).replace('T', ' '),
+      fig: s.fig, cut: s.cut, base: s.base, cock: s.cock, panel: s.panel,
+      tab: s.tab,
+      /* Reiter 2 — Fahrzeug und Aufsetzen. `rig` ist Versatz gegen den gemessenen Nullpunkt. */
+      fahrzeug: { path: VEH_PATH, on: s.veh.on, s: s.veh.s, ant: s.veh.ant },
+      wannenrig: Object.assign({ tub: TUB_PATH, jet: JET_PATH }, JSON.parse(JSON.stringify(s.tub))),
+      aufsetzen: JSON.parse(JSON.stringify(s.rig)),
+      material: JSON.parse(JSON.stringify(s.style)),
+      schnitt: { dy: s.dy, bury: s.bury },
+      basis: { bw: s.bw, kx: s.kx, ky: s.ky, kz: s.kz, sink: s.sink },
+      einpassen: { ox: s.ox, oy: s.oy, oz: s.oz },
+      parts: JSON.parse(JSON.stringify(s.parts)),
+      arms: JSON.parse(JSON.stringify(s.arms)),
+      /* Die Messung fährt MIT — sonst steht eine Zahl ohne den Bau, aus dem sie stammt. */
+      gemessen: (s.cockRows || []).concat(s.rows || [], s.vehRows || []),
+    };
+  }
+  _flash(t) { this.setState({ flash: t }); clearTimeout(this._tf); this._tf = setTimeout(() => this.setState({ flash: '' }), 4000); }
+  _file(text, name) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+    a.download = name; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+  }
+  _copyCfg() {
+    const j = JSON.stringify(this._cfg(), null, 2);
+    const name = 'kfb-rig-' + this.state.fig + '.json';
+    console.log('[mvrig] config\n' + j);
+    const dl = () => { this._file(j, name); this._flash('✓ ' + name + ' geladen (Ablage gesperrt)'); };
+    let p = null;
+    try { p = navigator.clipboard && navigator.clipboard.writeText(j); } catch (e) { p = null; }
+    if (p && p.then) p.then(() => this._flash('✓ in der Ablage · ' + Math.round(j.length / 1024 * 10) / 10 + ' KB')).catch(dl);
+    else dl();
+  }
+  /** Einlesen — aus Datei oder aus dem eingefügten Text. Fehlende Felder bleiben, wie sie sind. */
+  _applyCfg(text, from) {
+    let c = null;
+    try { c = JSON.parse(text); } catch (e) { this._flash('✗ kein lesbares JSON'); return; }
+    if (!c || c.kind !== 'kfb-mech-vehicle-rig') { this._flash('✗ das ist keine Rig-Konfiguration'); return; }
+    const patch = {};
+    for (const k of ['cut', 'base', 'cock', 'panel', 'tab']) if (c[k] !== undefined) patch[k] = c[k];
+    /* Eine v1-Konfiguration hat weder Fahrzeug noch Aufsetzen — dann bleibt hier stehen, was steht. */
+    if (c.fahrzeug) patch.veh = Object.assign({}, this.state.veh, { on: c.fahrzeug.on, s: c.fahrzeug.s, ant: !!c.fahrzeug.ant });
+    if (c.aufsetzen) patch.rig = Object.assign({}, this.state.rig, c.aufsetzen);
+    if (c.wannenrig) { const t = JSON.parse(JSON.stringify(this.state.tub));
+      for (const k of Object.keys(t)) if (c.wannenrig[k] !== undefined) t[k] = c.wannenrig[k];
+      patch.tub = t; }
+    if (c.material) {
+      const st = JSON.parse(JSON.stringify(this.state.style));
+      Object.assign(st, c.material);
+      st.col = Object.assign({}, this.state.style.col, c.material.col || {});
+      st.texOn = Object.assign({}, this.state.style.texOn, c.material.texOn || {});
+      patch.style = st;
+    }
+    for (const [grp, keys] of [['schnitt', ['dy', 'bury']], ['basis', ['bw', 'kx', 'ky', 'kz', 'sink']], ['einpassen', ['ox', 'oy', 'oz']]])
+      if (c[grp]) for (const k of keys) if (c[grp][k] !== undefined) patch[k] = c[grp][k];
+    if (c.parts) { const p = JSON.parse(JSON.stringify(this.state.parts)); for (const k of Object.keys(p)) if (c.parts[k]) Object.assign(p[k], c.parts[k]); patch.parts = p; }
+    if (c.arms) { const a = JSON.parse(JSON.stringify(this.state.arms)); for (const k of ['l', 'r']) if (c.arms[k]) Object.assign(a[k], c.arms[k]); patch.arms = a; }
+    const done = () => {
+      /* ⚠ Nach dem Einlesen NICHT nachrücken: die Werte sind Georgs, nicht meine Einpassung. */
+      this._needNudge = false;
+      if (c.aufsetzen) this._rigProposed = true;   // sein Maßstab, nicht mein Vorschlag
+      this.setState(patch, () => { this._holdArms(); this._apply(); });
+      this._flash('✓ übernommen aus ' + from + (c.saved ? ' · ' + c.saved : ''));
+    };
+    if (c.fig && c.fig !== this.state.fig) this._load(c.fig).then(done); else done();
+  }
+  _onFile(ev) {
+    const f = ev.target && ev.target.files && ev.target.files[0];
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => { this._applyCfg(String(r.result || ''), f.name); if (this._fileEl) this._fileEl.value = ''; };
+    r.readAsText(f);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const btn = (on) => 'font:500 11.5px "IBM Plex Sans",sans-serif;padding:7px 11px;border:1px solid '
+      + (on ? '#e6a13c' : '#2a2d30') + ';background:' + (on ? '#e6a13c' : 'transparent')
+      + ';color:' + (on ? '#17181a' : '#c9c9c5') + ';cursor:pointer;border-radius:2px;';
+    const seg = (on) => 'font:500 11.5px "IBM Plex Sans",sans-serif;padding:7px 4px;border:1px solid '
+      + (on ? '#e6a13c' : '#2a2d30') + ';background:' + (on ? '#e6a13c' : 'transparent')
+      + ';color:' + (on ? '#17181a' : '#c9c9c5') + ';cursor:pointer;border-radius:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;';
+    const head = (open) => 'width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;'
+      + 'font:600 11px "IBM Plex Sans",sans-serif;letter-spacing:.7px;text-transform:uppercase;'
+      + 'padding:11px 14px;border:none;background:' + (open ? '#1d1f21' : 'transparent') + ';color:#c9c9c5;cursor:pointer;text-align:left;';
+    const sl = (label, value, min, max, step, on, fmt) => ({ isSlider: true, label, value, min, max, step,
+      val: fmt ? fmt(value) : value.toFixed(2), on });
+    const grid = (n) => 'display:grid;grid-template-columns:repeat(' + n + ',1fr);gap:5px;';
+    const swStyle = (hex, on) => 'flex:1;height:26px;min-width:0;padding:0;border:1px solid ' + (on ? '#e6a13c' : '#2a2d30')
+      + ';background:' + hex + ';cursor:pointer;border-radius:2px;font-size:0;';
+    const cl = (label, zone) => ({ isColor: true, label, value: s.style.col[zone], val: s.style.col[zone],
+      on: (e) => this._setCol(zone, e.target.value),
+      swatches: PALETTE.map((hex) => ({ hex, style: swStyle(hex, s.style.col[zone].toLowerCase() === hex), on: () => this._setCol(zone, hex) })) });
+
+    const partRows = (key, label) => {
+      const p = s.parts[key];
+      return [
+        { isButtons: true, grid: grid(2), items: [
+          { label: label + (p.on ? ' · an' : ' · aus'), style: seg(p.on), on: () => this._setPart(key, 'on', !p.on) },
+          { label: 'mittig', style: seg(false), on: () => { this._setPart(key, 'x', 0); } },
+        ] },
+        sl(label + ' · X seitlich', p.x, -1.1, 1.1, 0.01, (e) => this._setPart(key, 'x', parseFloat(e.target.value))),
+        sl(label + ' · Z vor/zurück', p.z, -1.1, 1.1, 0.01, (e) => this._setPart(key, 'z', parseFloat(e.target.value))),
+        sl(label + ' · Höhe', p.y, -1.2, 1.5, 0.01, (e) => this._setPart(key, 'y', parseFloat(e.target.value))),
+        sl(label + ' · Größe', p.s, 0.1, 2.5, 0.01, (e) => this._setPart(key, 's', parseFloat(e.target.value))),
+      ];
+    };
+    const armRows = (side, label) => {
+      const a = s.arms[side];
+      return [
+        sl(label + ' · Schulter heben', a.lift, -90, 90, 1, (e) => this._setArm(side, 'lift', parseFloat(e.target.value)), (v) => v.toFixed(0) + '°'),
+        sl(label + ' · Schulter vor', a.fwd, -90, 90, 1, (e) => this._setArm(side, 'fwd', parseFloat(e.target.value)), (v) => v.toFixed(0) + '°'),
+        sl(label + ' · Ellbogen', a.elbow, -120, 120, 1, (e) => this._setArm(side, 'elbow', parseFloat(e.target.value)), (v) => v.toFixed(0) + '°'),
+      ];
+    };
+
+    const sections = [
+      { key: 'fahrzeug', ord: 20, tab: 'veh', title: 'Fahrzeug · Rover', badge: s.veh.on ? '×' + s.veh.s.toFixed(2) : 'aus',
+        rows: [
+          { isButtons: true, grid: grid(2), items: [
+            { label: s.veh.on ? 'Rover · an' : 'Rover · aus', style: seg(s.veh.on), on: () => this._setVeh('on', !s.veh.on) },
+            { label: s.veh.ant ? 'Antenne · dran' : 'Antenne · weg', style: seg(s.veh.ant), on: () => this._setVeh('ant', !s.veh.ant) },
+          ] },
+          { isButtons: true, grid: grid(1), items: [
+            { label: 'Bild auf den Rover', style: seg(false), on: () => this._frame(this._veh || this._rig) },
+          ] },
+          sl('Rover · Größe', s.veh.s, 0.2, 4, 0.02, (e) => this._setVeh('s', parseFloat(e.target.value)), (v) => '×' + v.toFixed(2)),
+          { isNote: true, text: 'Rover_Round.gltf · Quaternius Space Kit · steht auf dem Boden (Unterkante 0)' },
+        ] },
+      { key: 'wanne', ord: 20, tab: 'tub', title: 'Wannen-Rig · Räder & Düse', badge: s.tub.wOn ? '4 Räder' : 'ohne',
+        rows: [
+          { isButtons: true, grid: grid(3), items: WHEELS.map(([k, f]) => ({ label: k, style: seg(s.tub.wheel === k), on: () => this._setTub('wheel', k) })) },
+          { isButtons: true, grid: grid(2), items: [
+            { label: s.tub.wOn ? 'Räder · an' : 'Räder · aus', style: seg(s.tub.wOn), on: () => this._setTub('wOn', !s.tub.wOn) },
+            { label: s.tub.jOn ? 'Düse · an' : 'Düse · aus', style: seg(s.tub.jOn), on: () => this._setTub('jOn', !s.tub.jOn) },
+          ] },
+          sl('Rad · Durchmesser', s.tub.wSize, 0.1, 1.2, 0.01, (e) => this._setTub('wSize', parseFloat(e.target.value))),
+          sl('Spurweite', s.tub.wTrack, 0.4, 1.8, 0.01, (e) => this._setTub('wTrack', parseFloat(e.target.value))),
+          sl('Radstand', s.tub.wBase, 0.2, 1.4, 0.01, (e) => this._setTub('wBase', parseFloat(e.target.value))),
+          sl('Wanne · höher legen', s.tub.wY, -0.3, 0.6, 0.01, (e) => this._setTub('wY', parseFloat(e.target.value))),
+          sl('Düse · Größe', s.tub.jSize, 0.1, 1.6, 0.01, (e) => this._setTub('jSize', parseFloat(e.target.value))),
+          sl('Düse · X seitlich', s.tub.jX, -1.2, 1.2, 0.01, (e) => this._setTub('jX', parseFloat(e.target.value))),
+          sl('Düse · Höhe', s.tub.jY, -0.4, 1.4, 0.01, (e) => this._setTub('jY', parseFloat(e.target.value))),
+          sl('Düse · Z vor/zurück', s.tub.jZ, -1.8, 1.8, 0.01, (e) => this._setTub('jZ', parseFloat(e.target.value))),
+          { isNote: true, text: 'Rad in Wannenhöhen · Spur/Radstand in halben Wannenmaßen · Düse wie das Cockpit in Anteilen. Die Wanne steht auf den Rädern, nicht auf dem Boden.' },
+          { isNote: true, text: 'Spender: bath.gltf · kenney_car-kit wheels · »Space engine« (Poly by Google) — dieselben Teile wie im Rennen.' },
+        ] },
+      { key: 'aufsetzen', ord: 40, tab: ['veh', 'tub'], title: 'Rig aufsetzen', badge: '×' + s.rig.s.toFixed(2),
+        rows: [
+          sl('Rig · Größe', s.rig.s, 0.05, 4, 0.01, (e) => this._setRig('s', parseFloat(e.target.value)), (v) => '×' + v.toFixed(2)),
+          sl('X · seitlich', s.rig.x, -1.2, 1.2, 0.01, (e) => this._setRig('x', parseFloat(e.target.value))),
+          sl('Y · tiefer / höher', s.rig.y, -0.8, 1.2, 0.01, (e) => this._setRig('y', parseFloat(e.target.value))),
+          sl('Z · vor / zurück', s.rig.z, -1.2, 1.2, 0.01, (e) => this._setRig('z', parseFloat(e.target.value))),
+          sl('Drehung', s.rig.rot, -180, 180, 1, (e) => this._setRig('rot', parseFloat(e.target.value)), (v) => v.toFixed(0) + '°'),
+          { isButtons: true, grid: grid(3), items: [
+            { label: s.tab === 'tub' ? 'Maßstab nach Rennen' : 'Platte 30 %', style: seg(false), on: () => (s.tab === 'tub' ? this._proposeTub() : this._propose(0.3)) },
+            { label: s.tab === 'tub' ? 'eine Nummer kleiner' : '50 %', style: seg(false), on: () => (s.tab === 'tub' ? this._proposeTub(0.9) : this._propose(0.5)) },
+            { label: '×1 · Versatz null', style: seg(false), on: () => { this.setState({ rig: { s: 1, x: 0, y: 0, z: 0, rot: 0 } }, () => { this._placeRig(); this._draw(); this._refitRows(); }); } },
+          ] },
+          { isNote: true, text: s.tab === 'tub'
+            ? 'Null bedeutet in der Wanne: Hüftlinie 0,181 der Figurenhöhe UNTER der gemessenen Wasserlinie, Mitte über Mitte — das Verhältnis aus dem Rennen (1,55 : 2,1 : −0,28), kein Beinlöser.'
+            : 'Null bedeutet: Rig-Unterkante auf der gemessenen Dachfläche (3,563 — nicht die Antennenspitze 5,168), Mitte über Mitte. X/Z in halben Roverbreiten · Y in Roverhöhen.' },
+          { isNote: true, text: 'Gemessen: Rover-Wanne 3,95 × 3,46 (y 0,28–5,17) · Räder 1,35 hoch. Rig bei ×1: 2,42 hoch, Platte 1,36 breit = 34 % der Wanne.' },
+          { isNote: true, text: 'Das Rig selbst wird in Reiter »Sockel« gebaut — hier wandert es nur als ein Stück. Cockpit und Armwinkel bleiben unangetastet.' },
+        ] },
+      { key: 'material', ord: 90, title: 'Material · Farbzonen & Textur', badge: s.style.tex === 'aus' ? 'Farbe' : s.style.tex.slice(0, 12),
+        rows: [
+          cl('Rover', 'rover'),
+          cl('Platte', 'platte'),
+          cl('Knöpfe & Panel', 'hardware'),
+          cl('Knüppel · Schaft', 'stiel'),
+          cl('Knüppel · Kugel', 'kugel'),
+          cl('Wanne', 'wanne'),
+          cl('Reifen', 'reifen'),
+          cl('Düse', 'duese'),
+          { isButtons: true, grid: grid(2), items: [
+            { label: 'Rover + Platte + Knöpfe gleich', style: seg(false), on: () => this._setStyle({ col: Object.assign({}, s.style.col, { platte: s.style.col.rover, hardware: s.style.col.rover }) }) },
+            { label: 'Farben zurücksetzen', style: seg(false), on: () => this._setStyle({ col: JSON.parse(JSON.stringify(STYLE0.col)) }) },
+          ] },
+          { isNote: true, text: 'Die Farbe wird mit der Modelltextur MULTIPLIZIERT — Weiß ändert nichts. Die Figur bleibt ausgespart, ihre Farben gehören dem Look.' },
+          { isButtons: true, grid: grid(3), items: [
+            { label: 'Textur aus', style: seg(s.style.tex === 'aus'), on: () => this._setStyle({ tex: 'aus' }) },
+            ...TEX_SETS.slice(0, 2).map((t) => ({ label: t.replace('rusty_metal_04', 'rusty metal'), style: seg(s.style.tex === t), on: () => this._setStyle({ tex: t }) })),
+          ] },
+          { isButtons: true, grid: grid(3), items: [
+            ...TEX_SETS.slice(2).map((t) => ({ label: t, style: seg(s.style.tex === t), on: () => this._setStyle({ tex: t }) })),
+            { label: 'eigener Satz', style: seg(s.style.tex === 'eigen'), on: () => { const el = this._texEl; this._setStyle({ tex: 'eigen', eigen: el && el.value.trim() ? el.value.trim() : s.style.eigen }); } },
+          ] },
+          { isPaste: true, ref: (el) => { if (el) this._texEl = el; }, placeholder: 'Ordnername aus Textures/ … z. B. PaintedWood005' },
+          { isButtons: true, grid: grid(3), items: [
+            ...['rover', 'platte', 'hardware'].map((z) => ({ label: (z === 'hardware' ? 'Knöpfe' : z === 'platte' ? 'Platte' : 'Rover') + (s.style.texOn[z] ? ' · an' : ''), style: seg(s.style.texOn[z]), on: () => this._setTexOn(z, !s.style.texOn[z]) })),
+          ] },
+          { isButtons: true, grid: grid(3), items: [
+            ...['wanne', 'duese'].map((z) => ({ label: (z === 'wanne' ? 'Wanne' : 'Düse') + (s.style.texOn[z] ? ' · an' : ''), style: seg(s.style.texOn[z]), on: () => this._setTexOn(z, !s.style.texOn[z]) })),
+            { label: 'Reifen bleiben frei', style: seg(false), on: () => this._flash('Reifen sind eine eigene Zone — keine Textur, kein Sammelton') },
+          ] },
+          sl('Textur · Wiederholung', s.style.rep, 0.25, 12, 0.25, (e) => this._setStyle({ rep: parseFloat(e.target.value) }), (v) => '×' + v.toFixed(2)),
+          { isButtons: true, grid: grid(2), items: [
+            { label: s.style.boxuv ? 'Box-Projektion' : 'Original-UV', style: seg(s.style.boxuv), on: () => this._setStyle({ boxuv: !s.style.boxuv }) },
+            { label: 'Textur neu laden', style: seg(false), on: () => { this._texCache = {}; this._setStyle({}); } },
+          ] },
+          { isNote: true, text: 'Kenney- und Quaternius-Netze haben ATLAS-UV: eine Kacheltextur darauf gibt pro Fläche nur einen Farbwert. Die Box-Projektion nimmt dafür die Lage im Raum — deshalb ist sie die Vorgabe.' },
+          ...(s.styleRows || []).map((t) => ({ isNote: true, text: t })),
+        ] },
+      { key: 'messenv', ord: 45, tab: ['veh', 'tub'], title: 'Messen · aufgesetzt', badge: (s.vehRows || []).some((t) => /⚠/.test(t)) ? '⚠' : 'ok',
+        rows: (s.vehRows || []).map((t) => ({ isNote: true, text: t })) },
+      { key: 'figur', title: 'Figur', badge: (this._hosts().find(([k]) => k === s.fig) || [null, s.fig])[1],
+        rows: [{ isButtons: true, grid: grid(2), items: this._hosts().map(([k, l]) => ({ label: l, style: seg(s.fig === k), on: () => this._load(k) })) }] },
+      { key: 'schnitt', tab: 'sockel', title: 'Schnitt', badge: this._cutRes ? this._cutRes.hiddenTris + ' weg' : '—',
+        rows: [
+          sl('Schnitthöhe ab Beinansatz', s.dy, -0.1, 0.35, 0.005, (e) => this._set({ dy: parseFloat(e.target.value) }), (v) => (v >= 0 ? '+' : '') + Math.round(v * 100) + ' %'),
+          sl('Kante vergraben (Zacken)', s.bury, 0, 2.5, 0.05, (e) => this._set({ bury: parseFloat(e.target.value) }), (v) => '×' + v.toFixed(2)),
+          { isNote: true, text: this._cutRes ? (this._cutRes.hiddenTris + ' Dreiecke unsichtbar · nichts gelöscht') : 'Schnitt aus' },
+        ] },
+      { key: 'basis', tab: 'sockel', title: 'Basis', badge: this._baseRes ? this._baseRes.report.baseSize[0].toFixed(2) : '—',
+        rows: [
+          sl('Sitz × Querschnitt', s.bw, 0.6, 4, 0.05, (e) => this._set({ bw: parseFloat(e.target.value) })),
+          sl('Breite ×', s.kx, 0.3, 3, 0.05, (e) => this._set({ kx: parseFloat(e.target.value) })),
+          sl('Höhe ×', s.ky, 0.3, 4, 0.05, (e) => this._set({ ky: parseFloat(e.target.value) })),
+          sl('Länge ×', s.kz, 0.3, 3, 0.05, (e) => this._set({ kz: parseFloat(e.target.value) })),
+          sl('Versenkung', s.sink, -0.5, 1, 0.02, (e) => this._set({ sink: parseFloat(e.target.value) })),
+        ] },
+      { key: 'einpassen', tab: 'sockel', title: 'Oberkörper einpassen', badge: s.oy.toFixed(2),
+        rows: [
+          sl('X · seitlich', s.ox, -1, 1, 0.01, (e) => this._set({ ox: parseFloat(e.target.value) })),
+          sl('Y · tiefer / höher', s.oy, -1, 1, 0.01, (e) => this._set({ oy: parseFloat(e.target.value) })),
+          sl('Z · vor / zurück', s.oz, -1, 1, 0.01, (e) => this._set({ oz: parseFloat(e.target.value) })),
+          { isNote: true, text: 'Sockel steht, Figur wandert — der Saum steckt im Sockel.' },
+        ] },
+      { key: 'cockpit', title: 'Cockpit · von Hand', badge: s.cock ? 'an' : 'aus',
+        rows: [
+          { isButtons: true, grid: grid(3), items: [
+            { label: 'Panel flat', style: seg(s.panel === 'flat'), on: () => this._set({ panel: 'flat' }) },
+            { label: 'wide', style: seg(s.panel === 'wide'), on: () => this._set({ panel: 'wide' }) },
+            { label: 'aus', style: seg(s.panel === 'off'), on: () => this._set({ panel: 'off' }) },
+          ] },
+          ...partRows('stick', 'Knüppel'),
+          ...partRows('round', 'Knopf rund'),
+          ...partRows('square', 'Knopf eckig'),
+          ...partRows('panel', 'Panel'),
+          { isNote: true, text: 'X/Z in Anteilen der Plattenhalbbreite · Höhe in Plattendicken · Größe in Halbbreiten' },
+        ] },
+      { key: 'arme', title: 'Arme · Hände an die Controls', badge: s.arms.r.lift.toFixed(0) + '° / ' + s.arms.l.lift.toFixed(0) + '°',
+        rows: [
+          ...armRows('r', 'Rechts'),
+          ...armRows('l', 'Links'),
+          { isButtons: true, grid: grid(2), items: [
+            { label: 'Arme zurücksetzen', style: seg(false), on: () => { this.setState({ arms: { l: { lift: 0, fwd: 0, elbow: 0 }, r: { lift: 0, fwd: 0, elbow: 0 } } }); this._apply(); } },
+            { label: 'Hand an den Knüppel', style: seg(false), on: () => this._gripStick() },
+          ] },
+          { isNote: true, text: 'Gedreht wird ab der Ruhelage AUS DEM SKELETT (nicht aus dem laufenden Clip) — dieselbe Konfiguration ergibt jedes Mal dieselbe Haltung.' },
+          { isNote: true, text: '»Hand an den Knüppel« sucht die Winkel, statt sie zu raten: die Meldung nennt den erreichten Abstand gegen den Kugelradius.' },
+        ] },
+      { key: 'config', ord: 92, title: 'Konfiguration', badge: s.fig,
+        rows: [
+          { isButtons: true, grid: grid(2), items: [
+            { label: 'Copy config', style: seg(false), on: () => this._copyCfg() },
+            { label: 'Datei ↓', style: seg(false), on: () => { this._file(JSON.stringify(this._cfg(), null, 2), 'kfb-rig-' + s.fig + '.json'); this._flash('✓ kfb-rig-' + s.fig + '.json geladen'); } },
+          ] },
+          { isButtons: true, grid: grid(2), items: [
+            { label: 'Datei ↑ laden', style: seg(false), on: () => this._fileEl && this._fileEl.click() },
+            { label: 'Text übernehmen', style: seg(false), on: () => { const el = this._pasteEl; if (!el || !el.value.trim()) { this._flash('✗ Feld ist leer'); return; } this._applyCfg(el.value, 'eingefügtem Text'); } },
+          ] },
+          { isPaste: true, ref: (el) => { if (el) this._pasteEl = el; }, placeholder: 'JSON hier einfügen …' },
+          { isNote: true, text: 'Ablage gesperrt? Dann fällt eine Datei heraus — die Meldung oben sagt, was passiert ist. Die Messung fährt im JSON mit.' },
+        ] },
+      { key: 'messen', tab: 'sockel', title: 'Messen', badge: (s.cockRows || []).some((t) => /⚠/.test(t)) ? '⚠' : 'ok',
+        rows: [
+          ...(s.cockRows || []).map((t) => ({ isNote: true, text: t })),
+          ...(s.rows || []).map((t) => ({ isNote: true, text: t })),
+        ] },
+    ].filter((sec) => !sec.tab || sec.tab === s.tab || (Array.isArray(sec.tab) && sec.tab.indexOf(s.tab) >= 0))
+      /* Reihenfolge: erst der TRÄGER (ord 20), dann das Aufsetzen (40) und die Abnahme (45), zuletzt
+         Material und Konfiguration (90/92). Stabile Sortierung — alles ohne `ord` behält seine
+         Stelle. ⚠ Prüferbefund: vorher stand »Rig aufsetzen« ÜBER dem Träger, obwohl der Träger
+         zuerst gebaut und dann bestückt wird. */
+      .sort((a, b) => (a.ord || 50) - (b.ord || 50))
+      .map((sec) => ({ ...sec, open: !!s.open[sec.key], toggle: () => this._toggle(sec.key), headStyle: head(!!s.open[sec.key]) }));
+
+    return {
+      hostRef: (el) => { if (el) this._host = el; },
+      tabs: [['sockel', 'Sockel'], ['veh', 'Rover'], ['tub', 'Wanne']].map(([k, l]) => ({ label: l, style: seg(s.tab === k), on: () => this._tab(k) })),
+      fileRef: (el) => { if (el) this._fileEl = el; },
+      onFile: (ev) => this._onFile(ev),
+      flash: s.flash || '',
+      status: s.status, sections,
+      cutLabel: s.cut ? 'Schnitt an' : 'Schnitt aus', cutStyle: btn(s.cut), onCut: () => this._set({ cut: !s.cut }),
+      baseLabel: s.base ? 'Basis an' : 'Basis aus', baseStyle: btn(s.base), onBase: () => this._set({ base: !s.base }),
+      cockLabel: s.cock ? 'Cockpit an' : 'Cockpit aus', cockStyle: btn(s.cock), onCock: () => this._set({ cock: !s.cock }),
+    };
+  }
+}
+</script>
+</body>
+</html>

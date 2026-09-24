@@ -1,0 +1,165 @@
+{
+  "$schema": "kfb.bubbleShapes/1",
+  "canonical": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/bubble-shapes.json",
+  "version": "1.0.0",
+  "updated": "2026-08-25",
+  "note": "Von Georg im Shaper von Hand gezogen und abgenommen (25.8.). pts = [x, y, corner] auf die Einheitsbox normiert (-1..1), aspect = Breite/Hoehe der Grundform. corner 1 = Ecke (Tangente bricht), 0 = Kurvenpunkt (zentripetale Catmull-Rom). Der Zipfel steckt IN der Punktliste, er ist kein eigenes Objekt.",
+  "offen": {
+    "cloud": "VERWORFEN als eine Kontur. Georgs Befund: eine Wolke ist eine KOMPOSITION aus kleinen und grossen Kreisen, die sich NICHT sichtbar ueberlappen — Wolken-Logik, nicht Girlanden-Kontur. Neu zu bauen als Kreis-Satz, nicht als Punktzug.",
+    "burst": "VERWORFEN: flache Geometrie. Der Stern braucht ein anderes Modell (Strahlen aus dem Textzentrum in echter Tiefe), nicht eine Kontur auf einer Ellipse.",
+    "fan": "GESTRICHEN: kein Unterschied zu rect/round."
+  },
+  "shapes": [
+    {
+      "name": "rect",
+      "label": "Rechteck — Standard",
+      "aspect": 2.523,
+      "pts": [
+        [
+          -0.9704,
+          -1,
+          0
+        ],
+        [
+          0.9704,
+          -1,
+          0
+        ],
+        [
+          1,
+          -0.9254,
+          0
+        ],
+        [
+          1,
+          0.4179,
+          0
+        ],
+        [
+          0.9704,
+          0.4925,
+          0
+        ],
+        [
+          -0.2477,
+          0.4925,
+          1
+        ],
+        [
+          -0.4459,
+          1,
+          1
+        ],
+        [
+          -0.4877,
+          0.4925,
+          1
+        ],
+        [
+          -0.9704,
+          0.4925,
+          0
+        ],
+        [
+          -1,
+          0.4179,
+          0
+        ],
+        [
+          -1,
+          -0.9254,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "round",
+      "label": "Rund — weiche Ecken",
+      "aspect": 2.506,
+      "pts": [
+        [
+          -0.8876,
+          -1,
+          0
+        ],
+        [
+          0.8876,
+          -1,
+          0
+        ],
+        [
+          1,
+          -0.7183,
+          0
+        ],
+        [
+          1,
+          0.201,
+          0
+        ],
+        [
+          0.8876,
+          0.4828,
+          0
+        ],
+        [
+          -0.2481,
+          0.5444,
+          1
+        ],
+        [
+          -0.339,
+          1,
+          1
+        ],
+        [
+          -0.4077,
+          0.5506,
+          1
+        ],
+        [
+          -0.8876,
+          0.4828,
+          0
+        ],
+        [
+          -1,
+          0.201,
+          0
+        ],
+        [
+          -1,
+          -0.7183,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "free",
+      "label": "Frei — Erzähler / Info-Box, ohne Zipfel",
+      "aspect": 3.979,
+      "pts": [
+        [
+          -0.993,
+          -1,
+          1
+        ],
+        [
+          1,
+          -0.9583,
+          1
+        ],
+        [
+          0.9965,
+          1,
+          1
+        ],
+        [
+          -1,
+          0.9444,
+          1
+        ]
+      ]
+    }
+  ]
+}

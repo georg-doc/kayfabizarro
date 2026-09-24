@@ -1,0 +1,52 @@
+{
+  "$schema": "kfb.pets/1",
+  "_stand": "2026-09-14",
+  "_quelle": "uploads/Recherchi v4-2/recherchi_2026-09-04/contracts/recherchi.pet.json — Feld für Feld übernommen, nicht neu erfunden. Was hier ABWEICHT, steht in _entscheidungen; die offenen Fragen des Entwurfs sind damit beantwortet, nicht übergangen.",
+  "pets": [
+    {
+      "id": "recherchi",
+      "name": "Recherchi",
+      "kind": "htmlcube",
+      "module": "Recherchi",
+      "glb": null,
+      "body": "html-cube",
+      "skin": "html-faces",
+      "color": "#FFFFFF",
+      "role": "recherche-guide",
+      "archetype": "deadpan",
+      "defaultEmote": "neutral",
+      "eye": {
+        "design": { "size": 0.26, "gap": 0.55, "topPct": 27 },
+        "_design": "Die DREI gemessenen Entwurfszahlen des Recherchi-Gesichts (Anteile der 470-px-Kante: Augenbreite 26 %, Abstand 55 % einer Augenbreite, Mitte auf 27 % Höhe). Der Wirt rechnet daraus den Anker seines EyeRigs. Der Entwurf trug hier `anchor {dx 0.275, dy -0.23, ring 0.26}` — das sind dieselben drei Zahlen in Recherchis eigener Rechnung, NICHT in Rig-Einheiten; eingesetzt saßen die Augen 34 Prozentpunkte zu tief und 0,07 u zu eng (gemessen 14.09.). Wer Rig-Einheiten schreiben will, muss `anchorUnits: \"rig\"` dazusetzen.",
+        "pupilStyle": "matte-cute",
+        "lids": { "upper": true, "lower": true },
+        "inset": 0.04,
+        "pupilSize": 0.3
+      },
+      "mouth": { "set": "red" },
+      "nose": {
+        "type": "ball-button",
+        "shape": "hemisphere",
+        "anchorFace": "scan",
+        "cx": 0.5,
+        "cy": 0.45,
+        "radius": 0.105,
+        "color": "#99CC33",
+        "press": { "depth": 0.55, "inMs": 70, "spring": "sd-critical", "bodyImpulse": "nudge" },
+        "act": "nose",
+        "means": "mic/send — leeres Feld diktiert, gefülltes schickt"
+      },
+      "faces": ["scan", "board", "quellen", "filter", "material", "brief"],
+      "tuning": { "claySurface": 0, "jitter": 0 },
+      "notes": "Requisite auf dem Pad, keine Beine und keine Knochen. Flächen, Eingabe und Nasenknopf bringt das Modul mit; Licht, Kamera, Boden, Augen, Brauen, Bart und Mund gehören dem Wirt."
+    }
+  ],
+  "_entscheidungen": {
+    "beine": "KEINE (Georg, 14.09.). Der Entwurf ließ drei Wege offen (Spender-GLB · eigenes GLB · prozedural); gewählt ist ein vierter, den die Spec nicht hatte: Recherchi ist eine REQUISITE auf dem Pad wie CapsuleCarl — er dreht, hüpft und schaut, er geht nicht. Damit entfällt die ganze Bein-Frage statt beantwortet zu werden, und es entsteht kein zweites Bewegungssystem (der Fehler, an dem Fassung 1 der Spec gescheitert ist).",
+    "nase": "mic/send-Schalter der Eingabe (Georg, 14.09.). Damit ist `_offen.5` entschieden: der Druck bedeutet »schicke, was im Feld steht« und, bei leerem Feld, »diktiere«. EIN Knopf, an der Gesichtsfläche verankert, dreht mit. Kein Ton — die Hausregel für Klang ist »standardmäßig aus, Einschaltgeste beim Wirt«, und ein Wirt hat hier noch keine.",
+    "mund": "`_offen.2` bleibt so entschieden, wie der Entwurf vorschlägt: der Visem-Mund gehört `PetMouth`, das Eingabefeld heißt `face.input` und liegt auf der Fläche. Zwei Namen, zwei Besitzer.",
+    "gesicht": "Beides umschaltbar (Georg, 14.09.): die Studio-Module vor der Fläche ODER Recherchis gemaltes HTML-Gesicht in der Fläche. Nie beide sichtbar — sonst stehen vier Augen auf einem Würfel.",
+    "stripEyes": "`_offen.4`: bei `body: html-cube` gibt es keine gebackenen Kenney-Augen, das Feld ist wirkungslos. Steht hier, damit niemand danach sucht.",
+    "texturweg": "GEMESSEN 14.09.: `THREE.HTMLTexture` (Recherchis eigener Weg) braucht three ≥ 0.185 im WebGPU-Bau; die Bühne läuft r160 mit WebGL. Der Texturweg ist deshalb eine foreignObject-Rasterung derselben Fläche, die matrix3d-Ausrichtung und der Trefferweg kommen unverändert aus `recherchi-cube.js`."
+  }
+}

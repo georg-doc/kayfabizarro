@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KFB ToolBox v2 · Casting Probe · FrizzleBob + GothGirl + Hihi + KayKit Car</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;height:100%;background:#1b1a17;color:#e9e4d8;font:13px/1.45 ui-monospace,Menlo,Consolas,monospace}
+  #stage{position:fixed;inset:0 0 0 0;width:100%;height:100%;display:block}
+  #hud{position:fixed;left:10px;top:10px;right:282px;background:rgba(20,19,16,.86);border:1px solid #3a372f;padding:6px 10px;border-radius:6px;font-size:11.5px}
+  #hud b{color:#f2c93c}
+  #logbox{position:fixed;left:10px;bottom:10px;right:10px;background:rgba(20,19,16,.9);border:1px solid #3a372f;border-radius:6px;font-size:11px}
+  #logbox summary{padding:5px 10px;cursor:pointer;color:#c9c2b2}
+  #log{margin:0;max-height:26vh;overflow:auto;padding:4px 10px 8px;white-space:pre-wrap}
+  #bar{position:fixed;right:10px;top:10px;width:260px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;align-items:stretch}
+  #bar hr{border:0;border-top:1px solid #3a372f;margin:2px 0}
+  button{font:inherit;font-size:11.5px;background:#2a2823;color:#e9e4d8;border:1px solid #514c40;border-radius:4px;padding:4px 8px;cursor:pointer;text-align:left}
+  button:hover{border-color:#f2c93c}
+  button.active{border-color:#8fd3b6;color:#8fd3b6}
+  #vehicleClips{display:none;flex-direction:column;gap:4px}
+  #vehicleClips .lbl{color:#9a9da1;font-size:11px;padding:2px 2px 0}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/","three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.160.0/examples/jsm/controls/TransformControls.js"}}
+</script>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="hud"><b>Casting Probe v2</b> · <span id="who">boot…</span> · <span id="state"></span></div>
+<div id="bar">
+  <button data-actor="goth">GothGirl / Novacyy</button>
+  <button data-actor="fb">FrizzleBob · Graft</button>
+  <button data-actor="hihi">Hihi · Cube-Pet cat (EyeRig + Mund)</button>
+  <button data-actor="speaker">GothGirl_Speaker (Prop)</button>
+  <button data-actor="car">KayKit Car · Driver (Vehicle-EyeRig)</button>
+  <hr>
+  <button data-state="idle">Idle</button>
+  <button data-state="focus">Focus / Hover</button>
+  <button data-state="select">Select / Celebrate</button>
+  <button data-state="rest">Rest (Boden · sitzt sich hin)</button>
+  <button data-state="dance">Dance · ERSATZ (Taunt_Longer)</button>
+  <hr>
+  <button data-test="talk">Mund · Talk 1,8 s (Beleg)</button>
+  <div class="lbl">Vehicle-Animationen (eingebettet)</div>
+  <div id="vehicleClips"></div>
+  <hr>
+  <button id="editorToggle">Editor (Augen platzieren)</button>
+  <div id="editorPatch" style="display:none;flex-direction:column;gap:4px">
+    <div class="lbl">Ausgewählt: <span id="editorSel">—</span></div>
+    <div class="mono" id="editorOut" style="font-size:10.5px;background:#17181a;border:1px solid #3a372f;border-radius:4px;padding:5px 7px;white-space:pre-wrap;max-height:120px;overflow:auto">—</div>
+    <button id="editorCopy">Patch kopieren</button>
+    <button id="editorReset">Zurücksetzen</button>
+  </div>
+</div>
+<div id="objmenu" style="display:none;position:fixed;z-index:6;gap:3px;padding:3px;border-radius:6px;background:#120e18e8;border:1px solid #4a3a63;transform:translate(-50%,0)">
+  <button data-m="translate" title="Verschieben (g)">✥</button>
+  <button data-m="close" title="Auswahl aufheben (Esc)">✕</button>
+</div>
+<details id="logbox"><summary>Messprotokoll</summary><pre id="log"></pre></details>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+
+/* v2 · KFB ToolBox Promotion 2026-09-23. Nachfolger von
+   _handover/BIRTHDAY_STARTSCREEN_2026-09-15/qa/casting-probe.html — auf `main` verlegt (nicht mehr
+   in einem archivierten Handover-Ordner), Quelle jetzt der PROMOVIERTE Stage-First-Baum
+   (stage-first/src/), nicht mehr der alte WS0-Quellstand. Der lokale Spenderkopf
+   `petstudio-v9/assets/models/FrizzleBob_Yellow.gltf` ist mit Georgs Freigabe (23.09.) gelöscht —
+   FB_URL zeigt auf den gepinnten Commit im Repo (Blob e0a757ec…, wie headgraft.v1.js/ears.v2.js).
+
+   NEU in v2: Actor »KayKit Car · Driver« (KayKit Mystery Series 6, Fahrzeug 2 — August 2023).
+   1) Vehicle-EyeRig CANDIDATE: kein Fork von pet-eye-rig.v6.js (das Modul ist an die Character-Klasse
+      gebunden — Face-Shells, Raycast auf ein Cube-Pet-Body-Mesh). Eigenständig, gleiche BILDSPRACHE:
+      Iris/Sklera + ein aus der Karosseriefarbe abgedunkelter Lidring (0.72×, Faktor aus
+      pet-eye-rig.v6.js#_lidColor übernommen), montiert auf den vorderen runden Scheinwerfern.
+   2) Vehicle-Animationen: eingebettete Clips aus car.glb (Türen, Räder, Federung — was das Spenderpaket
+      liefert) laufen NEBEN den Charakter-Zuständen, nicht an ihrer Stelle — eigene Knopfleiste
+      unten in #bar, weil ein Fahrzeug keine Idle/Focus/Rest-Haltung hat. */
+
+const RAW_MAIN = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/';
+const RAW_REG  = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/11d7df978c63b9e375707bd8d9431b4c8358cda8/';
+const SRC = new URL('../src/', location.href).href;   // stage-first/src — der promovierte Quellbaum
+const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
+const FB_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/eabc87255ee3da6283f9d438390454d70e9d2e55/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf';
+
+const ASSETS = {
+  goth:    RAW_MAIN + enc('media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb'),
+  gothLocal: {
+    General:       RAW_MAIN + enc('media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/gltf/Rig_Medium/Rig_Medium_General.glb'),
+    MovementBasic: RAW_MAIN + enc('media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb'),
+  },
+  shared: (cat) => RAW_REG + enc(`media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_${cat}.glb`),
+  hihi:    RAW_MAIN + enc('media/3D_Assets/GLB_cube-pets/animal-cat.glb'),
+  speaker: RAW_MAIN + enc('media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.gltf'),
+  fbOwn:   FB_URL,
+  contract: SRC + enc('petstudio-v9/kfb-pet-graft-driver-default.json'),
+  graftMount: SRC + 'frizzlegraft-v1/graft-mount.v1.js',
+  petLib:   SRC + enc('petstudio-v9/studio-v3/pet-library.v6.js'),
+  eyeRig:   SRC + enc('petstudio-v9/studio-v12/pet-eye-rig.v6.js'),
+  petMouth: SRC + enc('petstudio-v9/studio-v3/pet-mouth.v1.js'),
+  eyeGuard: SRC + enc('petstudio-v9/studio-v3/eye-source-guard.v1.js'),
+  /* Georgs Link (23.09.): KayKit Mystery Series 6, Fahrzeug-Serie »2 - August 2023 - Driver«. */
+  car: 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/fd52a9c4d571b7d918aac9f826adbfb56ef1d028/media/3D_Assets/KayKit_Mystery_Series6/2%20-%20August%202023%20-%20Driver/assets/gltf/car.glb',
+};
+let _libP = null;
+const libContract = () => (_libP = _libP || fetch(ASSETS.contract).then((r) => r.json()));
+const contractLabel = (c) => `${c.$schema || '?'} v${c.version || '?'} · meta ${c.meta?.contract || '?'} · petVersion ${c.meta?.petVersions?.['graft-driver'] ?? '?'}`;
+
+const CASTING = {
+  idle:   { label: 'Idle',             pick: [['General', /^Idle_A$/]], loop: true },
+  focus:  { label: 'Focus / Hover',    pick: [['Simulation', /^Waving$/]], loop: false, then: 'idle' },
+  select: { label: 'Select / Celebrate', pick: [['Simulation', /^Cheering$/]], loop: false, then: 'idle' },
+  rest:   { label: 'Rest (Boden)', loop: true,
+            enter: [['Simulation', /^Sit_Floor_Down$/]],
+            pick:  [['Simulation', /^Sit_Floor_Idle$/]],
+            exit:  [['Simulation', /^Sit_Floor_StandUp$/]],
+            fallbackPick: [['General', /^Idle_B$/], ['General', /^Idle_A$/]],
+            composite: 'Sit_Floor_Down (1,0 s) → Sit_Floor_Idle (4,0 s, loop) → beim Verlassen Sit_Floor_StandUp (1,133 s)' },
+  dance:  { label: 'Dance · ERSATZ', pick: [['Special', /^Skeletons_Taunt_Longer$/], ['Special', /dance|groove/i], ['General', /dance/i], ['Simulation', /dance/i]], loop: true, timeScale: 1.15, p1: true,
+            substitute: 'kein Tanzclip im Spenderpaket — dies ist Skeletons_Taunt_Longer (Special), Tempo ×1,15.' },
+};
+
+const $ = (id) => document.getElementById(id);
+const logEl = $('log');
+const log = (s) => { logEl.textContent += s + '\n'; logEl.scrollTop = 1e9; console.info('[probe] ' + s); };
+const report = { schema: 'kfb.casting-probe/2', date: new Date().toISOString(), three: THREE.REVISION, actors: {}, clips: {}, casting: {}, runs: [] };
+window.__probe = { report, THREE };
+
+const canvas = $('stage');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); renderer.outputColorSpace = THREE.SRGBColorSpace;
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x2a2620);
+const camera = new THREE.PerspectiveCamera(38, 1, 0.01, 200); camera.position.set(2.6, 1.8, 3.4);
+const controls = new OrbitControls(camera, canvas); controls.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xfff4e0, 0x5a4a3a, 2.2));
+const key = new THREE.DirectionalLight(0xffffff, 2.2); key.position.set(4, 7, 4); scene.add(key);
+const grid = new THREE.GridHelper(6, 12, 0x6b6250, 0x3d372d); scene.add(grid);
+const root = new THREE.Group(); scene.add(root);
+const loader = new GLTFLoader();
+const resize = () => { renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); };
+addEventListener('resize', resize); resize();
+
+const clock = new THREE.Clock();
+let cur = null;
+(function loop() { requestAnimationFrame(loop); const dt = Math.min(clock.getDelta(), 0.05); if (cur) { cur.mixer && cur.mixer.update(dt); cur.handle && cur.handle.update(dt, camera); } controls.update(); renderer.render(scene, camera); })();
+
+function fit(obj) {
+  obj.updateMatrixWorld(true); const box = new THREE.Box3().setFromObject(obj); if (box.isEmpty()) return;
+  const s = box.getBoundingSphere(new THREE.Sphere()); const d = Math.max(s.radius, 0.3) / Math.sin(THREE.MathUtils.degToRad(camera.fov / 2)) * 1.15;
+  camera.position.copy(s.center).add(new THREE.Vector3(0.9, 0.5, 1.15).normalize().multiplyScalar(d)); controls.target.copy(s.center).setY(s.center.y - s.radius * 0.12); controls.update();
+}
+function dispose(o) { o?.traverse?.((n) => { n.geometry?.dispose?.(); [].concat(n.material || []).forEach((m) => { if (!m) return; Object.values(m).forEach((v) => v?.isTexture && v.dispose?.()); m.dispose?.(); }); }); }
+function clearVehicleUI() { $('vehicleClips').style.display = 'none'; $('vehicleClips').innerHTML = ''; }
+function clear() { if (!cur) return; try { cur.mixer?.stopAllAction(); cur.handle?.dispose?.(); } catch (e) {} if (window.__editorDeselect) window.__editorDeselect(); if (cur.object) { root.remove(cur.object); dispose(cur.object); } clearVehicleUI(); cur = null; }
+
+function bindingCoverage(targetRoot, clip) {
+  let matched = 0;
+  for (const t of clip.tracks || []) { try { const p = THREE.PropertyBinding.parseTrackName(t.name); if (THREE.PropertyBinding.findNode(targetRoot, p.nodeName)) matched += 1; } catch (e) {} }
+  return { matchedTracks: matched, totalTracks: (clip.tracks || []).length };
+}
+function rigFacts(obj) {
+  const skins = [], bones = new Set(); let skinned = 0;
+  obj.traverse((n) => { if (n.isSkinnedMesh) { skinned++; skins.push(n.name); n.skeleton?.bones?.forEach((b) => bones.add(b.name)); } });
+  obj.updateMatrixWorld(true); const box = new THREE.Box3().setFromObject(obj); const size = box.getSize(new THREE.Vector3());
+  return { skinnedMeshes: skinned, skins, jointCount: bones.size, height: +size.y.toFixed(3), rigFamily: skins.map((s) => (s.match(/Rig_(Small|Medium|Large)/i) || [])[0]).find(Boolean) || (bones.size ? 'unnamed' : null) };
+}
+const packCache = new Map();
+async function pack(url) { if (!packCache.has(url)) packCache.set(url, loader.loadAsync(url).then((g) => ({ clips: g.animations || [], scene: g.scene }))); return packCache.get(url); }
+async function coverageTable(figure, sources) {
+  const out = {};
+  for (const [label, url] of Object.entries(sources)) {
+    try {
+      const p = await pack(url);
+      out[label] = { url, clipCount: p.clips.length, clips: p.clips.map((c) => { const cov = bindingCoverage(figure, c); return { name: c.name, duration: +c.duration.toFixed(3), ...cov }; }) };
+    } catch (e) { out[label] = { url, error: e.message }; }
+  }
+  return out;
+}
+function findClip(cov, cat, re) { const p = cov[cat]; if (!p?.clips) return null; const row = p.clips.find((c) => re.test(c.name)); return row ? { ...row, cat } : null; }
+async function clipObj(cat, name, sources) { const p = await pack(sources[cat]); return p.clips.find((c) => c.name === name); }
+
+async function loadGoth() {
+  clear(); $('who').textContent = 'GothGirl / Novacyy · lädt…';
+  const g = await loader.loadAsync(ASSETS.goth); const fig = g.scene; root.add(fig);
+  const facts = rigFacts(fig);
+  const sources = { General: ASSETS.gothLocal.General, MovementBasic: ASSETS.gothLocal.MovementBasic, Simulation: ASSETS.shared('Simulation'), Special: ASSETS.shared('Special'), 'General(shared)': ASSETS.shared('General') };
+  const cov = await coverageTable(fig, sources);
+  report.actors.goth = { asset: 'GothGirl.glb', embeddedClips: (g.animations || []).length, ...facts };
+  report.clips.goth = cov;
+  cur = { kind: 'goth', object: fig, figure: fig, mixer: new THREE.AnimationMixer(fig), sources, cov, state: null };
+  fit(fig); $('who').textContent = `GothGirl · ${facts.rigFamily} · ${facts.jointCount} joints · h ${facts.height}`;
+  log(`GothGirl geladen · rig ${facts.rigFamily} · ${facts.jointCount} Knochen`);
+  await setState('idle');
+}
+async function loadFB() {
+  clear(); $('who').textContent = 'FrizzleBob · Graft · lädt (mountGraft)…';
+  const contract = await libContract();
+  log('FB-Vertrag: ' + contractLabel(contract));
+  const GM = await import(ASSETS.graftMount);
+  const pet = GM.pickGraftPet(contract, 'graft-driver');
+  const notes = [];
+  const handle = await GM.mountGraft({ THREE, loader, parent: root, pet, lib: contract, camera, animation: 'host', log: (t) => notes.push(t) });
+  const fig = handle.figure; const facts = rigFacts(fig);
+  const EG = await import(ASSETS.eyeGuard);
+  const eyeAudit = EG.auditGraftEyes(handle);
+  if (!eyeAudit.ok) log(`  ACHTUNG Augenquellen (FB): ${eyeAudit.sources.join('+') || 'keine'}`);
+  const sources = { General: ASSETS.shared('General'), MovementBasic: ASSETS.shared('MovementBasic'), Simulation: ASSETS.shared('Simulation'), Special: ASSETS.shared('Special') };
+  const cov = await coverageTable(fig, sources);
+  let own = null; try { const o = await pack(ASSETS.fbOwn); own = { file: 'FB_URL (gepinnt, Commit eabc8725)', clipCount: o.clips.length, clips: o.clips.map((c) => c.name) }; } catch (e) { own = { error: e.message }; }
+  report.actors.fb = { reader: 'graft-mount.v1.js#mountGraft', contract: contract.version, ...facts, report: { brow: handle.report.brow, weapon: handle.report.weapon?.status }, ownClips: own };
+  report.clips.fb = cov;
+  cur = { kind: 'fb', object: handle.root, figure: fig, mixer: new THREE.AnimationMixer(fig), handle, sources, cov, state: null };
+  fit(handle.root); $('who').textContent = `FrizzleBob · Graft·Driver · ${facts.rigFamily} · ${facts.jointCount} joints`;
+  log(`FrizzleBob gebaut über mountGraft · ${facts.jointCount} Knochen`);
+  if (own?.clips) log(`  eigene Clips (FB_URL gepinnt): ${own.clipCount} · ${own.clips.join(', ')}`);
+  await setState('idle');
+}
+function lidSamplerFor(ch) {
+  const body = ch._body;
+  const tex = body && (body.userData._glbMap || (body.material && body.material.map));
+  const img = tex && tex.image;
+  if (!img || !img.width) return null;
+  const w = img.width, h = img.height;
+  const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+  const g2 = cv.getContext('2d', { willReadFrequently: true }); g2.drawImage(img, 0, 0, w, h);
+  let px; try { px = g2.getImageData(0, 0, w, h); } catch (e) { return null; }
+  const d = px.data;
+  return (u, v) => {
+    const uu = ((u % 1) + 1) % 1, vv = ((v % 1) + 1) % 1;
+    const x = Math.min(w - 1, Math.max(0, Math.floor(uu * w))), y = Math.min(h - 1, Math.max(0, Math.floor(vv * h)));
+    const i = (y * w + x) * 4;
+    return new THREE.Color().setStyle(`rgb(${d[i]},${d[i + 1]},${d[i + 2]})`);
+  };
+}
+async function loadHihi() {
+  clear(); $('who').textContent = 'Hihi · Cube-Pet cat · lädt (Studio-Bauweg)…';
+  const lib = await libContract();
+  const [CharMod, RigMod, MouthMod, EG] = await Promise.all([import(ASSETS.petLib), import(ASSETS.eyeRig), import(ASSETS.petMouth), import(ASSETS.eyeGuard)]);
+  const face = lib.face || {};
+  const ch = new CharMod.Character({
+    THREE, loadGltf: (u) => loader.loadAsync(u), receiveShadow: false,
+    makeMat: (o) => new THREE.MeshStandardMaterial({ map: o.map || null, color: o.color != null ? o.color : 0xffffff, roughness: o.roughness != null ? o.roughness : 0.85 }),
+  });
+  await ch.load('animals', 'cat', EG.loadOpts(face));
+  ch.group.scale.setScalar(1.6);
+  root.add(ch.group);
+
+  const shells = ch.getFaceShells ? ch.getFaceShells() : [];
+  const eyeIdx = CharMod.selectEyeShells(shells, face) || [];
+  const er = lib.eyeRig || {}, fe = face.eye || {};
+  const gloss = (er.gloss && er.gloss['glossy-googly'] != null) ? er.gloss['glossy-googly'] : 0.85;
+  const rig = new RigMod.EyeRig(ch, {
+    anchor: er.anchorDefault || { dx: fe.dx, dy: fe.dy, ring: fe.ring, track: fe.track },
+    pupilStyle: 'glossy-googly',
+    pupilSize: er.pupilSize != null ? er.pupilSize : 0.4,
+    gloss, inset: er.inset || 0,
+    lidFit: er.lidFit != null ? er.lidFit : 0.9,
+    converge: er.converge || 0,
+    blink: er.blink || fe.blink,
+    lidSampler: lidSamplerFor(ch),
+    baseColor: 0xf2c93c,
+    lashes: fe.lashes || null,
+  });
+  rig.build();
+
+  const mp = { ...(face.mouth || {}), ...(lib.mouth || {}) };
+  const mouth = new MouthMod.PetMouth(ch, { params: mp });
+  mouth.build(); mouth.setRest('neutral');
+
+  let audit;
+  try { audit = EG.assertSingleEyeSource(ch, { rig, expected: 'eyerig' }); }
+  catch (e) {
+    report.actors.hihi = { error: e.message };
+    $('who').textContent = 'Hihi · ABBRUCH: Augenquellen gemischt'; $('state').textContent = e.message;
+    log('HIHI ABBRUCH · ' + e.message); root.remove(ch.group); dispose(ch.group); throw e;
+  }
+
+  const clips = Object.entries(ch.clips || {}).map(([n, c]) => ({ name: n, duration: +c.duration.toFixed(3) }));
+  report.actors.hihi = { asset: 'animal-cat.glb', embeddedClips: clips, ...rigFacts(ch.inner), eyeSourceAudit: audit };
+  const handle = {
+    update: (dt, cam) => { ch.update(dt); rig.update(dt); mouth.update(dt, cam); },
+    dispose: () => { try { rig.dispose(); } catch (e) {} try { mouth.dispose(); } catch (e) {} },
+  };
+  cur = { kind: 'hihi', object: ch.group, figure: ch.inner, mixer: null, handle, face: { ch, rig, mouth }, state: 'idle' };
+  fit(ch.group);
+  $('who').textContent = `Hihi · animal-cat.glb · ${clips.length} Clips · EyeRig v6 + PetMouth v1 montiert`;
+  $('state').textContent = `idle · Augenquelle ${audit.sources.join('+')} · Zustandsknöpfe → Character-Trigger-API (Fix 23.09.)`;
+  log(`Hihi-Slot · Clips: ${clips.map((c) => c.name).join(', ')}`);
+  log(`  Augenquellen-Wächter: ${audit.sources.join('+')} · Kenney-Schalen ${audit.detail.kenney.active ? 'STEHEN NOCH (Fehler)' : 'gelöscht'}`);
+}
+async function loadSpeaker() {
+  clear(); $('who').textContent = 'GothGirl_Speaker · lädt…';
+  const g = await loader.loadAsync(ASSETS.speaker); const fig = g.scene; root.add(fig);
+  let meshes = 0; fig.traverse((n) => { if (n.isMesh) meshes++; });
+  report.actors.speaker = { asset: 'GothGirl_Speaker.gltf', meshes, ...rigFacts(fig) };
+  cur = { kind: 'speaker', object: fig, figure: fig };
+  fit(fig); $('who').textContent = `GothGirl_Speaker · ${meshes} Meshes`; $('state').textContent = 'Prop geladen';
+  log(`Speaker-Prop geladen · ${meshes} Meshes`);
+}
+
+/* ── Vehicle-EyeRig CANDIDATE ──────────────────────────────────────────────
+   Gemessen (23.09., car.glb): es gibt KEIN eigenes Scheinwerfer-Mesh — die Front ist eine
+   Karosserieschale (Cube063/Cube063_1), Scheinwerfer sind nur ins Textur/Vertex-Farbbild
+   gemalt (jedes Mesh meldet material.color #ffffff). Die vorige Fassung suchte helle runde
+   Meshes und fand nichts Brauchbares (bzw. traf die Räder). Jetzt: die Frontkappe wird über
+   Geometrie gefunden (das schmalste vordere Schalenteil, nicht die volle Karosseriebreite),
+   die Augen sitzen darauf, zur Hälfte VOR der Fläche (über der Stoßstange) und schauen nach
+   vorn (+Z) statt seitlich auseinander — vorher zeigten sie nach außen wie Fischaugen.
+   Editor-Schicht (S21/S22-Vorlage, Georg 23.09.): die Werte hier sind ein Startwert, kein
+   Endwert — der Mini-Editor unten erlaubt das Nachziehen per Maus, ohne diese Datei zu ändern. */
+function findFrontCap(fig) {
+  const skip = /wheel|bumper|licenseplate|racenumber|roofrack/i;
+  const cands = [];
+  fig.traverse((n) => { if (n.isMesh && !skip.test(n.name)) { const b = new THREE.Box3().setFromObject(n); cands.push({ n, b, size: b.getSize(new THREE.Vector3()) }); } });
+  if (!cands.length) return null;
+  const bodyWidth = Math.max(...cands.map((c) => c.size.x));
+  const caps = cands.filter((c) => c.size.x < bodyWidth * 0.95);   // die volle Karosserieschale ausschließen
+  const pool = caps.length ? caps : cands;
+  pool.sort((a, b) => b.b.max.z - a.b.max.z);   // am weitesten vorn (+Z)
+  return pool[0];
+}
+function buildCarEyeRig(fig, savedOffsets) {
+  const cap = findFrontCap(fig);
+  if (!cap) { log('  Vehicle-EyeRig: keine Frontkappe gefunden — nicht montiert'); return { group: null, eyes: [] }; }
+  const cx = (cap.b.min.x + cap.b.max.x) / 2, cy = (cap.b.min.y + cap.b.max.y) / 2;
+  const halfW = cap.size.x / 2, r = Math.max(cap.size.y * 0.62, 0.08);
+  const group = new THREE.Group(); group.name = 'kfb-vehicle-eyerig'; fig.add(group);
+  const eyes = [];
+  const sides = [{ id: 'L', sx: -1 }, { id: 'R', sx: 1 }];
+  for (const side of sides) {
+    const o = (savedOffsets && savedOffsets[side.id]) || { x: 0, y: 0, z: 0 };
+    const baseX = cx + side.sx * halfW * 0.62, baseY = cy, baseZ = cap.b.max.z + r * 0.5;   // zur Hälfte vor die Fläche
+    const eyeGrp = new THREE.Group(); eyeGrp.name = 'kfb-eye-' + side.id;
+    eyeGrp.position.set(baseX + o.x, baseY + o.y, baseZ + o.z);
+    eyeGrp.userData.editable = true; eyeGrp.userData.editId = side.id; eyeGrp.userData.base = { x: baseX, y: baseY, z: baseZ };
+    // Augen schauen nach vorn (+Z, lokal) — nicht seitlich auseinander.
+    const socket = new THREE.Mesh(new THREE.CircleGeometry(r, 24), new THREE.MeshStandardMaterial({ color: 0x2a2622, roughness: 0.6 }));
+    // VOLLE Kugel statt Kugelkappe — die Kappe (thetaLength 0.55π) zeigte ihren Schnittrand als
+    // sichtbaren Halbkreis, sobald der Blickwinkel von der Kamera abwich. Keine Bastellösung mit
+    // Rand mehr: der Sockel (Disc) hinter der Kugel deckt den Rücken, die Kugel selbst ist ganz.
+    const sclera = new THREE.Mesh(new THREE.SphereGeometry(r * 0.82, 24, 18), new THREE.MeshStandardMaterial({ color: 0xf4efe2, roughness: 0.3 }));
+    sclera.position.z = r * 0.05;
+    const pupil = new THREE.Mesh(new THREE.SphereGeometry(r * 0.34, 16, 12), new THREE.MeshStandardMaterial({ color: 0x1c1a17, roughness: 0.25, metalness: 0.1 }));
+    pupil.position.z = r * 0.62;
+    const highlight = new THREE.Mesh(new THREE.SphereGeometry(r * 0.09, 10, 8), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.1, emissive: 0x222222 }));
+    highlight.position.set(side.sx * -r * 0.14, r * 0.16, r * 0.72);
+    eyeGrp.add(socket, sclera, pupil, highlight);
+    group.add(eyeGrp); eyes.push(eyeGrp);
+  }
+  log(`  Vehicle-EyeRig: montiert auf Frontkappe (Breite ${cap.size.x.toFixed(2)} · Höhe ${cap.size.y.toFixed(2)}) · Radius ${r.toFixed(3)} · schauen nach vorn (+Z)`);
+  return { group, eyes };
+}
+async function loadCar() {
+  clear(); $('who').textContent = 'KayKit Car · Driver · lädt…';
+  const g = await loader.loadAsync(ASSETS.car); const fig = g.scene; root.add(fig);
+  const facts = rigFacts(fig);
+  const eyeRig = buildCarEyeRig(fig, editorAblageLesen());
+  const clips = g.animations || [];
+  const mixer = new THREE.AnimationMixer(fig);
+  report.actors.car = { asset: 'KayKit_Mystery_Series6/2 - August 2023 - Driver/car.glb', embeddedVehicleClips: clips.map((c) => ({ name: c.name, duration: +c.duration.toFixed(3) })), eyeRig: { built: !!eyeRig.group }, ...facts };
+  cur = { kind: 'car', object: fig, figure: fig, mixer, vehicleClips: clips, eyeGroup: eyeRig.group, eyes: eyeRig.eyes, state: null };
+  fit(fig);
+  $('who').textContent = `KayKit Car · Driver · ${clips.length} Vehicle-Clips · EyeRig ${eyeRig.group ? 'montiert' : 'FEHLT'}`;
+  $('state').textContent = clips.length ? 'Vehicle-Animationen unten in der Leiste' : 'keine eingebetteten Vehicle-Clips im Spenderpaket';
+  log(`Car geladen · ${clips.length} eingebettete Clips: ${clips.map((c) => c.name).join(', ') || '(keine)'}`);
+  renderVehicleButtons(clips, mixer, fig);
+  editorRefreshPatch();
+  await setState('idle');
+}
+function renderVehicleButtons(clips, mixer, fig) {
+  const box = $('vehicleClips'); box.innerHTML = '';
+  if (!clips.length) { box.style.display = 'none'; return; }
+  box.style.display = 'flex';
+  const actions = new Map();
+  clips.forEach((clip) => {
+    const btn = document.createElement('button');
+    btn.textContent = `${clip.name} (${clip.duration.toFixed(2)}s)`;
+    btn.onclick = () => {
+      let action = actions.get(clip.name);
+      if (!action) { action = mixer.clipAction(clip, fig); action.setLoop(THREE.LoopOnce, Infinity); action.clampWhenFinished = true; actions.set(clip.name, action); }
+      if (action.isRunning() && !action.paused) { action.paused = true; btn.classList.remove('active'); log(`Vehicle-Clip pausiert: ${clip.name}`); }
+      else { action.paused = false; action.reset(); action.play(); btn.classList.add('active'); log(`Vehicle-Clip abgespielt: ${clip.name}`); }
+    };
+    box.appendChild(btn);
+  });
+}
+
+const HIHI_TRIGGER = { idle: 'idle', focus: 'react-positive', select: 'celebrate', rest: 'idle', dance: 'celebrate' };
+let stateToken = 0;
+const pickHit = (pairs) => { for (const [cat, re] of pairs || []) { const h = findClip(cur.cov, cat, re); if (h && h.matchedTracks) return h; } return null; };
+async function play(hit, { loop, clamp = false, fade = 0.25, timeScale = 1 }) {
+  const clip = await clipObj(hit.cat, hit.name, cur.sources);
+  const prev = cur.action;
+  const action = cur.mixer.clipAction(clip, cur.figure);
+  action.reset(); action.setLoop(loop ? THREE.LoopRepeat : THREE.LoopOnce, Infinity);
+  action.clampWhenFinished = clamp; action.enabled = true; action.setEffectiveWeight(1); action.timeScale = timeScale;
+  if (prev && prev !== action) { prev.crossFadeTo(action, fade, false); action.play(); } else action.play();
+  cur.action = action; return action;
+}
+const whenFinished = (action, seconds) => new Promise((res) => {
+  let done = false;
+  const end = (via) => { if (done) return; done = true; cur.mixer.removeEventListener('finished', h); res(via); };
+  const h = (e) => { if (e.action === action) end('event'); };
+  cur.mixer.addEventListener('finished', h);
+  setTimeout(() => end('clock'), Math.max(0.2, (seconds || 1) + 0.35) * 1000);
+});
+async function setState(key) {
+  if (!cur) return;
+  if (cur.kind === 'hihi' && cur.face) {
+    const ch = cur.face.ch;
+    const trig = HIHI_TRIGGER[key] || 'idle';
+    ch.play(trig);
+    const playedName = ch._action ? ch._action.getClip().name : null;
+    const label = (CASTING[key] || CASTING.idle).label;
+    const note = key === 'rest' ? ' · kein Bodensitz im Cube-Pet-Vertrag — Rückfall auf idle' : '';
+    cur.state = key;
+    $('state').textContent = `${label}: ${playedName || 'idle'} (Cube-Pet-Trigger '${trig}')${note}`;
+    log(`hihi · ${label}: Trigger '${trig}' → Clip ${playedName || '(idle-Rückfall)'}${note}`);
+    return;
+  }
+  if (!cur.cov) {
+    $('state').textContent = `${cur.kind}: Zustände nicht angebunden — inaktiver Slot`;
+    log(`${cur.kind} · Zustandsleiste nicht angebunden`); return;
+  }
+  const c = CASTING[key]; if (!c) return;
+  const token = ++stateToken;
+  const run = { actor: cur.kind, state: key, t: new Date().toISOString() };
+  const prevDef = CASTING[cur.state];
+  if (prevDef && prevDef.exit && cur.state !== key) {
+    const ex = pickHit(prevDef.exit);
+    if (ex) {
+      cur.state = null;
+      $('state').textContent = `${prevDef.label} → ${c.label}: ${ex.name} · Ausstieg`;
+      const a = await play(ex, { loop: false, clamp: true }); if (token !== stateToken) return;
+      run.exitVia = await whenFinished(a, ex.duration); if (token !== stateToken) return;
+      log(`${cur.kind} · Ausstieg ${prevDef.label}: ${ex.name}`);
+    }
+  }
+  if (c.enter) {
+    const en = pickHit(c.enter);
+    if (en) {
+      $('state').textContent = `${c.label}: ${en.name} · Einstieg`;
+      const a = await play(en, { loop: false, clamp: true }); if (token !== stateToken) return;
+      run.enterVia = await whenFinished(a, en.duration); if (token !== stateToken) return;
+      log(`${cur.kind} · Einstieg ${c.label}: ${en.name} · ${en.duration}s`);
+    }
+  }
+  let hit = pickHit(c.pick), viaFallback = false;
+  if (!hit && c.fallbackPick) { hit = pickHit(c.fallbackPick); viaFallback = !!hit; }
+  if (!hit) {
+    run.status = 'MISSING'; report.runs.push(run);
+    $('state').textContent = `${c.label}: FEHLT`; log(`${cur.kind} · ${c.label}: FEHLT`); return run;
+  }
+  const action = await play(hit, { loop: c.loop, timeScale: c.timeScale || 1 }); if (token !== stateToken) return;
+  cur.state = key;
+  Object.assign(run, { status: 'PLAYING', clip: hit.name, source: hit.cat, duration: hit.duration, loop: c.loop, viaFallback, substitute: c.substitute || null });
+  const mark = c.substitute ? ' · ERSATZ: ' + c.substitute : (viaFallback ? ' · Zweitbesetzung' : '');
+  $('state').textContent = `${c.label}: ${hit.name} (${hit.cat}) · ${hit.matchedTracks}/${hit.totalTracks} Tracks${mark}`;
+  log(`${cur.kind} · ${c.label}: ${hit.name} (${hit.cat}) · ${hit.matchedTracks}/${hit.totalTracks}${mark}`);
+  if (!c.loop && c.then) whenFinished(action, hit.duration / (c.timeScale || 1)).then(() => { if (token !== stateToken) return; setState(c.then); });
+  report.runs.push(run); return run;
+}
+
+/* ── Mini-Editor (Vorlage: docs/EDITOR_LAYER.md, KayKit_Room_Study_S21 „Mini-Editor").
+   Reichweite hier: Einzelteil (die zwei Augen-Gruppen des Vehicle-EyeRig). Schreibt keine Datei —
+   liefert einen Patch-Ausschnitt zum Übernehmen in buildCarEyeRig()/savedOffsets, und legt die
+   Handkorrektur in localStorage ab (Regel 1+2 der Editor-Schicht). Wird ein zweiter 3D-Editor in
+   der ToolBox gebraucht, wandert dieser Block nach lib/edit-layer.js — nicht vorher (Regel: eine
+   Bibliothek aus einem Anwendungsfall ist geraten, nicht abgeleitet). */
+const EDITOR_KEY = 'kfb-casting-probe-editor';
+function editorAblageLesen() { try { return JSON.parse(localStorage.getItem(EDITOR_KEY) || '{}')[ASSETS.car] || {}; } catch (e) { return {}; } }
+function editorAblageSchreiben() {
+  if (!cur || cur.kind !== 'car' || !cur.eyes) return;
+  const alle = (() => { try { return JSON.parse(localStorage.getItem(EDITOR_KEY) || '{}'); } catch (e) { return {}; } })();
+  const eintrag = {};
+  for (const eye of cur.eyes) {
+    const b = eye.userData.base;
+    eintrag[eye.userData.editId] = { x: +(eye.position.x - b.x).toFixed(4), y: +(eye.position.y - b.y).toFixed(4), z: +(eye.position.z - b.z).toFixed(4) };
+  }
+  alle[ASSETS.car] = eintrag;
+  localStorage.setItem(EDITOR_KEY, JSON.stringify(alle));
+}
+function editorRefreshPatch() {
+  const out = $('editorOut');
+  if (!cur || cur.kind !== 'car' || !cur.eyes) { out.textContent = '— kein Fahrzeug-Actor geladen'; return; }
+  out.textContent = cur.eyes.map((eye) => {
+    const b = eye.userData.base;
+    return `${eye.userData.editId}: offset { x: ${(eye.position.x - b.x).toFixed(3)}, y: ${(eye.position.y - b.y).toFixed(3)}, z: ${(eye.position.z - b.z).toFixed(3)} }  // Welt-Position ${eye.position.x.toFixed(3)}, ${eye.position.y.toFixed(3)}, ${eye.position.z.toFixed(3)}`;
+  }).join('\n');
+}
+const gizmo = new TransformControls(camera, renderer.domElement);
+gizmo.setMode('translate'); gizmo.setSize(0.7);
+const gizmoHelper = gizmo.getHelper ? gizmo.getHelper() : gizmo;
+gizmo.addEventListener('dragging-changed', (e) => { controls.enabled = !e.value; });
+gizmo.addEventListener('objectChange', () => { editorAblageSchreiben(); editorRefreshPatch(); menuStellen(); });
+let editorOn = false, selected = null;
+const raycaster = new THREE.Raycaster();
+function menuStellen() {
+  const box = $('objmenu');
+  if (!selected) { box.style.display = 'none'; return; }
+  const p = new THREE.Vector3(); selected.getWorldPosition(p); p.project(camera);
+  const r = renderer.domElement.getBoundingClientRect();
+  box.style.display = 'flex';
+  box.style.left = (r.left + (p.x * 0.5 + 0.5) * r.width) + 'px';
+  box.style.top = Math.max(4, r.top + (-p.y * 0.5 + 0.5) * r.height - 40) + 'px';
+}
+function select(obj) {
+  selected = obj;
+  if (obj) { gizmo.attach(obj); if (!gizmoHelper.parent) scene.add(gizmoHelper); }
+  else { gizmo.detach(); if (gizmoHelper.parent) scene.remove(gizmoHelper); }
+  $('editorSel').textContent = obj ? ('Auge ' + obj.userData.editId) : '—';
+  menuStellen();
+}
+window.__editorDeselect = () => select(null);
+canvas.addEventListener('pointerdown', (e) => {
+  if (!editorOn || !cur || !cur.eyes || !cur.eyes.length) return;
+  if (e.target !== canvas) return;
+  const rect = canvas.getBoundingClientRect();
+  const ndc = new THREE.Vector2(((e.clientX - rect.left) / rect.width) * 2 - 1, -((e.clientY - rect.top) / rect.height) * 2 + 1);
+  raycaster.setFromCamera(ndc, camera);
+  const hits = raycaster.intersectObjects(cur.eyes, true);
+  if (hits.length) { let o = hits[0].object; while (o && !o.userData.editable) o = o.parent; if (o) select(o); }
+});
+$('objmenu').onclick = (e) => {
+  const m = e.target.closest('button')?.dataset.m;
+  if (m === 'translate') gizmo.setMode('translate');
+  if (m === 'close') select(null);
+};
+$('editorToggle').onclick = () => {
+  editorOn = !editorOn;
+  $('editorToggle').classList.toggle('active', editorOn);
+  $('editorPatch').style.display = editorOn ? 'flex' : 'none';
+  if (!editorOn) select(null);
+  editorRefreshPatch();
+};
+$('editorCopy').onclick = () => navigator.clipboard?.writeText($('editorOut').textContent);
+$('editorReset').onclick = () => {
+  const alle = (() => { try { return JSON.parse(localStorage.getItem(EDITOR_KEY) || '{}'); } catch (e) { return {}; } })();
+  delete alle[ASSETS.car];
+  localStorage.setItem(EDITOR_KEY, JSON.stringify(alle));
+  select(null); loadCar().catch((e) => log('FEHLER ' + e.message));
+};
+addEventListener('keydown', (e) => { if (e.key === 'Escape' && selected) select(null); });
+
+window.__probe.cur = () => cur; window.__probe.scene = scene;
+window.__probe.loadGoth = loadGoth; window.__probe.loadFB = loadFB; window.__probe.loadHihi = loadHihi; window.__probe.loadSpeaker = loadSpeaker; window.__probe.loadCar = loadCar; window.__probe.setState = setState;
+document.querySelectorAll('[data-actor]').forEach((b) => b.onclick = () => ({ goth: loadGoth, fb: loadFB, hihi: loadHihi, speaker: loadSpeaker, car: loadCar })[b.dataset.actor]().catch((e) => log('FEHLER ' + e.message)));
+document.querySelectorAll('[data-state]').forEach((b) => b.onclick = () => setState(b.dataset.state));
+document.querySelector('[data-test="talk"]').onclick = () => {
+  const m = cur && ((cur.face && cur.face.mouth) || (cur.handle && cur.handle.mouth));
+  if (!m || !m.mesh) { $('state').textContent = `${cur ? cur.kind : 'kein Actor'}: kein Mund montiert`; log((cur ? cur.kind : '—') + ' · Talk: kein Mund montiert'); return; }
+  m.talkBurst(1.8);
+  $('state').textContent = `${cur.kind}: Mund spricht 1,8 s`;
+  log(`${cur.kind} · Talk-Burst 1,8 s`);
+};
+loadGoth().catch((e) => log('Boot FEHLER: ' + e.message));
+</script>
+</body>
+</html>
