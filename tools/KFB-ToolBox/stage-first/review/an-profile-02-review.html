@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB ToolBox · Motion Library Review</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#e7e7e5;background:#17181a}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#17181a}
+button,input,select{font:inherit}.app{height:100%;display:grid;grid-template-rows:44px 1fr;background:#17181a}
+.top{display:flex;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid #2a2d30;background:#1d1f21;min-width:0}
+.brand{font-weight:650;font-size:13px;white-space:nowrap}.muted{color:#8b8f94}.status{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spacer{flex:1}.btn,.select,.search{height:28px;border:1px solid #34383c;background:#24272a;color:#e7e7e5;border-radius:4px}
+.btn{padding:0 9px;cursor:pointer}.btn.active{border-color:#dba04c;background:#332b20}.btn:disabled{opacity:.45;cursor:default}
+.search{padding:0 9px;width:200px;min-width:100px}.select{padding:0 8px}
+.main{min-height:0;display:grid;grid-template-columns:300px minmax(320px,1fr) 310px}
+.left,.right{min-height:0;background:#1d1f21}.left{border-right:1px solid #2a2d30;display:grid;grid-template-rows:auto 1fr}
+.right{border-left:1px solid #2a2d30;overflow:auto;padding:10px 12px}
+.filters{padding:9px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid #2a2d30}
+.list{min-height:0;overflow:auto;padding:7px}
+.clip{width:100%;border:1px solid transparent;background:transparent;color:#e7e7e5;text-align:left;padding:8px;border-radius:4px;cursor:pointer;margin-bottom:3px}
+.clip:hover{background:#24272a}.clip.active{border-color:#dba04c;background:#29251f}
+.clip .name{font-size:12px;line-height:1.25;font-weight:550}.clip .meta{font-size:10px;color:#8b8f94;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stage{position:relative;min-width:0;min-height:0;background:#d8d5ce}.stage canvas{display:block;width:100%;height:100%}
+.overlay{position:absolute;left:12px;bottom:10px;background:rgba(23,24,26,.82);color:#e7e7e5;padding:6px 8px;border-radius:4px;font-size:11px;pointer-events:none}
+.transport{position:absolute;right:12px;bottom:10px;display:flex;gap:4px;background:rgba(23,24,26,.84);padding:5px;border-radius:5px}
+.h{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#8b8f94;margin:5px 0 8px}
+.row{display:grid;grid-template-columns:104px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid #292c30;font-size:11px;line-height:1.35}
+.row .k{color:#8b8f94}.row .v{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+.good{color:#9ac777}.warn{color:#e0ad62}.bad{color:#e88a7a}
+.fail{position:absolute;inset:12px auto auto 12px;max-width:72%;padding:9px 11px;border-left:3px solid #cc5f50;background:#17181a;color:#f2d6d2;font:11px/1.45 ui-monospace,monospace;display:none;z-index:3}
+@media(max-width:950px){.main{grid-template-columns:235px 1fr}.right{position:absolute;right:0;top:44px;bottom:0;width:min(330px,86vw);z-index:5;box-shadow:-10px 0 30px rgba(0,0,0,.35)}.search{width:130px}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div class="brand">KFB Motion Library</div>
+    <button id="rigMedium" class="btn active">Medium</button>
+    <button id="rigLarge" class="btn">Large</button>
+    <input id="search" class="search" placeholder="Find clip / semantic">
+    <select id="group" class="select"><option value="">All groups</option></select>
+    <div id="status" class="status muted">loading source…</div>
+    <div class="spacer"></div>
+    <button id="toggleData" class="btn active">Data</button>
+  </div>
+  <div class="main">
+    <section class="left">
+      <div class="filters"><span id="count" class="muted" style="font-size:11px"></span></div>
+      <div id="list" class="list"></div>
+    </section>
+    <section id="stage" class="stage">
+      <div id="fail" class="fail"></div>
+      <div id="overlay" class="overlay">No clip selected</div>
+      <div class="transport">
+        <button id="restart" class="btn">↺</button>
+        <button id="play" class="btn active">Pause</button>
+        <select id="speed" class="select"><option>0.5</option><option selected>1</option><option>1.5</option></select>
+      </div>
+    </section>
+    <aside id="data" class="right"><div class="h">Measured profile</div><div id="rows"></div></aside>
+  </div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const MOTION_REV='032c9d50cd5de6764fa37fec65cb203ed35fcb11';
+const ACTOR_REV='b97b5ac55df2724fae623992433685583eece51e';
+const REPO='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@';
+const MOTION_ROOT=REPO+MOTION_REV+'/media/3D_Assets/Animations/KFB_Motion_Library/';
+const ACTOR_ROOT=REPO+ACTOR_REV+'/media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin%20Character/characters/';
+const CATALOG_URL=MOTION_ROOT+'KFB_Motion_Library.catalog.json';
+const PROFILE_URL=MOTION_ROOT+'KFB_Motion_Library.profile-catalog.v1.json';
+
+const $=(id)=>document.getElementById(id);
+const els={stage:$('stage'),list:$('list'),rows:$('rows'),status:$('status'),count:$('count'),search:$('search'),group:$('group'),
+  med:$('rigMedium'),large:$('rigLarge'),play:$('play'),restart:$('restart'),speed:$('speed'),overlay:$('overlay'),fail:$('fail'),data:$('data'),toggleData:$('toggleData')};
+
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0xd8d5ce);
+const camera=new THREE.PerspectiveCamera(34,1,.03,150); camera.position.set(2.8,1.8,4.2);
+const renderer=new THREE.WebGLRenderer({antialias:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.outputColorSpace=THREE.SRGBColorSpace;
+els.stage.insertBefore(renderer.domElement,els.stage.firstChild);
+const controls=new OrbitControls(camera,renderer.domElement); controls.target.set(0,1,0); controls.enableDamping=true; controls.dampingFactor=.1;
+scene.add(new THREE.HemisphereLight(0xffffff,0x777777,1.6));
+const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(4,7,5); scene.add(key);
+const fill=new THREE.DirectionalLight(0xffffff,.8); fill.position.set(-4,3,-2); scene.add(fill);
+const grid=new THREE.GridHelper(10,20,0x86837c,0xb4b0a8); scene.add(grid);
+
+const loader=new GLTFLoader();
+let catalogue=null,profiles=null,rig='Medium',actor=null,mixer=null,action=null,current=null,playing=true,speed=1;
+const libraryCache={}, actorCache={};
+
+function resize(){const w=els.stage.clientWidth,h=els.stage.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/Math.max(1,h); camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(els.stage); resize();
+
+function showFail(msg){els.fail.textContent=msg;els.fail.style.display='block';els.status.textContent='source failed';els.status.className='status bad';}
+function clearFail(){els.fail.style.display='none';}
+async function fetchJson(url,label){const r=await fetch(url,{cache:'no-store'}); if(!r.ok)throw new Error(label+' HTTP '+r.status); return r.json();}
+function rigKey(){return 'Rig_'+rig;}
+function clipProfile(id){return profiles?.clipProfiles?.[id]||null;}
+function catClip(id){return catalogue?.clips?.find(c=>c.id===id)||null;}
+function refSpeed(p){
+  const ref=p?.rootTravel?.referenceSpeed;
+  if(ref?.status!=='MEASURED_DERIVED')return null;
+  const n=ref?.metersPerSecond?.[rigKey()];
+  return Number.isFinite(n)?n:null;
+}
+function planted(p){
+  const x=p?.plantedIntervals?.[rigKey()];
+  if(!x||x.status==='UNKNOWN_NOT_MEASURED')return {status:x?.status||'UNKNOWN_NOT_MEASURED',l:null,r:null};
+  return {status:x.status,l:x.feet?.['foot.l']||[],r:x.feet?.['foot.r']||[]};
+}
+function markers(p){return Array.isArray(p?.actionMarkers?.markers)?p.actionMarkers.markers:[];}
+function filterText(c){
+  const p=clipProfile(c.id),s=p?.semantics||{},r=p?.rootTravel||{};
+  return [c.id,c.label_de,c.group,s.stateFamily,s.gait,s.direction,s.stance,r.mode].filter(Boolean).join(' ').toLowerCase();
+}
+function visibleClips(){
+  const q=els.search.value.trim().toLowerCase(),g=els.group.value;
+  return (catalogue?.clips||[]).filter(c=>(!g||c.group===g)&&(!q||filterText(c).includes(q)));
+}
+function renderList(){
+  const items=visibleClips(); els.count.textContent=items.length+' / '+(catalogue?.clips?.length||0)+' clips';
+  els.list.innerHTML='';
+  for(const c of items){
+    const p=clipProfile(c.id),s=p?.semantics||{},r=p?.rootTravel||{},sp=refSpeed(p);
+    const b=document.createElement('button'); b.className='clip'+(current?.id===c.id?' active':'');
+    b.innerHTML='<div class="name">'+c.id+'</div><div class="meta">'+
+      [s.stateFamily||c.group,s.gait&&s.gait!=='unknown'?s.gait:null,s.direction,r.mode,Number.isFinite(sp)?sp.toFixed(2)+' m/s':'speed unknown'].filter(Boolean).join(' · ')+'</div>';
+    b.onclick=()=>selectClip(c.id); els.list.appendChild(b);
+  }
+}
+function row(k,v,cls=''){const d=document.createElement('div');d.className='row';d.innerHTML='<div class="k">'+k+'</div><div class="v '+cls+'">'+String(v??'unknown')+'</div>';els.rows.appendChild(d);}
+function renderData(){
+  els.rows.innerHTML=''; if(!current){row('Status','Select a clip');return;}
+  const c=catClip(current.id),p=clipProfile(current.id),s=p?.semantics||{},rt=p?.rootTravel||{},pk=planted(p),mk=markers(p),rk=rigKey(),sp=refSpeed(p);
+  row('Clip',current.id); row('Rig',rk); row('Group',c?.group||'unknown'); row('State',s.stateFamily||'unknown'); row('Gait',s.gait||'unknown');
+  row('Duration',(p?.durationSec??c?.durationSec??0).toFixed(3)+' s'); row('Loop',p?.loop===true?'yes':p?.loop===false?'no':'unknown');
+  row('Direction',s.direction||'unknown'); row('Stance',s.stance||'unknown');
+  const dist=rt?.travelMetersPerCycle?.[rk]; row('Root / travel',(rt.mode||'unknown')+(Number.isFinite(dist)?' · '+dist.toFixed(3)+' m/cycle':''));
+  row('Reference speed',Number.isFinite(sp)?sp.toFixed(3)+' m/s · measured-derived':'unknown · not measured/applicable',Number.isFinite(sp)?'good':'warn');
+  row('Feet',pk.status+(pk.l?' · L '+pk.l.length+' / R '+pk.r.length+' intervals':''),pk.status.includes('UNKNOWN')?'warn':'good');
+  row('Hands',p?.contacts?.hands?.status||'unknown',(p?.contacts?.hands?.status||'').includes('UNKNOWN')?'warn':'good');
+  row('Rate window',p?.acceptableRateWindow?.status||'unknown','warn');
+  row('Markers',mk.length?mk.map(m=>m.name+(m.phase!=null?' @ '+m.phase:'')).join(' · '):'unknown · no measured action marker',mk.length?'good':'warn');
+  row('Source','AN-PROFILE-01 @ '+MOTION_REV.slice(0,8)+' · PR #206 / Motion Library PR #197');
+}
+function frameActor(){
+  if(!actor)return; const box=new THREE.Box3().setFromObject(actor); if(box.isEmpty())return;
+  const sphere=box.getBoundingSphere(new THREE.Sphere()); controls.target.copy(sphere.center);
+  const dist=Math.max(2,sphere.radius/Math.sin(THREE.MathUtils.degToRad(camera.fov)/2)*1.25);
+  const dir=new THREE.Vector3(.45,.18,1).normalize(); camera.position.copy(sphere.center).add(dir.multiplyScalar(dist)); controls.update();
+}
+async function loadGlb(url){return new Promise((res,rej)=>loader.load(url,res,undefined,e=>rej(new Error('GLB failed: '+url.split('/').pop()+(e?.message?' · '+e.message:''))))}
+async function ensureActor(){
+  const rk=rigKey();
+  if(!actorCache[rk]){
+    const url=ACTOR_ROOT+(rig==='Large'?'Mannequin_Large.glb':'Mannequin_Medium.glb');
+    actorCache[rk]=loadGlb(url);
+  }
+  const g=await actorCache[rk];
+  if(actor)scene.remove(actor); actor=g.scene.clone(true); scene.add(actor); frameActor();
+}
+async function ensureLibrary(){
+  const rk=rigKey(); if(!libraryCache[rk]){
+    const name=catalogue?.libraries?.[rk]; if(!name)throw new Error('No library entry for '+rk);
+    libraryCache[rk]=loadGlb(MOTION_ROOT+name);
+  }
+  const g=await libraryCache[rk]; if((g.animations||[]).length!==33)throw new Error(rk+' expected 33 clips, got '+(g.animations||[]).length); return g;
+}
+async function setRig(next){
+  rig=next; els.med.classList.toggle('active',rig==='Medium');els.large.classList.toggle('active',rig==='Large'); clearFail();
+  els.status.textContent='loading '+rig+'…'; await ensureActor(); await ensureLibrary(); els.status.textContent=rig+' · 33 source clips';
+  if(current)await selectClip(current.id); else await selectClip(catalogue.clips.find(c=>c.id==='kfb_locomotion_run_forward_a')?.id||catalogue.clips[0].id);
+  renderList(); renderData();
+}
+async function selectClip(id){
+  clearFail(); const lib=await ensureLibrary(),clip=(lib.animations||[]).find(a=>a.name===id); if(!clip)throw new Error('Clip not in '+rigKey()+': '+id);
+  current={id,clip}; if(mixer)mixer.stopAllAction(); mixer=new THREE.AnimationMixer(actor); action=mixer.clipAction(clip); action.clampWhenFinished=true;
+  action.loop=(clipProfile(id)?.loop===false)?THREE.LoopOnce:THREE.LoopRepeat; action.reset().play(); playing=true; els.play.textContent='Pause';els.play.classList.add('active');
+  els.overlay.textContent=id+' · '+rigKey(); renderList();renderData();
+  window.__AN_PROFILE_02_REVIEW.selected=id;
+}
+els.search.oninput=renderList; els.group.onchange=renderList; els.med.onclick=()=>setRig('Medium').catch(e=>showFail(e.message));els.large.onclick=()=>setRig('Large').catch(e=>showFail(e.message));
+els.restart.onclick=()=>{if(action)action.reset().play()}; els.play.onclick=()=>{if(!action)return;playing=!playing;action.paused=!playing;els.play.textContent=playing?'Pause':'Play';els.play.classList.toggle('active',playing)};
+els.speed.onchange=()=>{speed=parseFloat(els.speed.value)||1}; els.toggleData.onclick=()=>{const hidden=els.data.style.display==='none';els.data.style.display=hidden?'block':'none';els.toggleData.classList.toggle('active',hidden)};
+function animate(){requestAnimationFrame(animate); const dt=clock.getDelta(); if(mixer&&playing)mixer.update(dt*speed);controls.update();renderer.render(scene,camera)}
+const clock=new THREE.Clock();animate();
+
+window.__AN_PROFILE_02_REVIEW={ready:false,sourceRevision:MOTION_REV,actorRevision:ACTOR_REV,rig:null,counts:{},selected:null,error:null};
+try{
+  [catalogue,profiles]=await Promise.all([fetchJson(CATALOG_URL,'catalogue'),fetchJson(PROFILE_URL,'profiles')]);
+  if(catalogue.schema!=='kfb.motion-catalog.v1'||profiles.schema!=='kfb.motion-profile-catalog/1.0')throw new Error('Wrong source schema');
+  if(catalogue.clips.length!==33||profiles.clipCount!==33)throw new Error('Expected 33 source profiles');
+  [...new Set(catalogue.clips.map(c=>c.group))].sort().forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;els.group.appendChild(o)});
+  await setRig('Medium');
+  window.__AN_PROFILE_02_REVIEW.ready=true;window.__AN_PROFILE_02_REVIEW.rig=rig;window.__AN_PROFILE_02_REVIEW.counts={catalogue:catalogue.clips.length,medium:(await ensureLibrary()).animations.length};
+  els.status.textContent='Medium · 33 source clips · ready';
+}catch(e){window.__AN_PROFILE_02_REVIEW.error=e.message;showFail(e.message);console.error(e)}
+</script>
+</body>
+</html>
