@@ -37,7 +37,13 @@ Georg: before the animation work, every character gets its default eye rig.
 
 - Eyes are a runtime layer (EyeRig v6 + FaceHost), not baked in Blender. Owner/tool: KFB Batch EyeRig Atlas `kfb-hub/stage/toolbox/eye-rig-batch/` (PR #104).
 - Profiles to consume: `data/rig-medium-default.v0.json` (Medium class default, 27 actors), `data/rig-large-reviewed.v1.json` (4 reviewed Large), `data/rig-legacy-default.v0.json` + `rig-legacy-auto.v1.json` + `rig-legacy-heads.v0.json` (17 Legacy heads).
-- **Legacy is built but not yet reviewed by Georg**: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/` → his review sets the Legacy default.
+- **Legacy page exists but is not reviewable yet** (`kfb-hub/stage/toolbox/eye-rig-batch/legacy/`, checked 24.09 in Chrome): it opens head-only with the painted source eyes, shows `0/17 mounted`, toolbar labels are unreadable (dark on dark); eyes appear only after pressing "Measure + mount EyeRig v6". Only the 17 Dungeon-Pack heads are in it.
+- **Legacy completion slice (browser, not Blender)** before Georg reviews:
+  1. eyes mounted automatically on load; readable toolbar;
+  2. full figures, not heads: assemble via the existing `legacyAssemble()` (`tools/resident_atlas_s6/lib/atlas.js`, Body/Head/armLeft/armRight on `LEGACY_RIG`);
+  3. all Legacy kits in the roster: `media/3D_Assets/KayKit Legacy/` → Dungeon Pack 1.0 characters, **Legacy Character Pack – Skeletons 1.0**, **Orc Warband – legacy**, Spooktober characters (intake list `KAYKIT_LEGACY_INTAKE_2026-09-18.json`); heads/bodies stay swappable (kit logic);
+  4. **head-based scale**: calibrate each Legacy figure so its head matches the Rig_Medium head size (the Warband orcs currently read too big because the head is not the scale basis); store the factor per figure, never edit the source GLTF;
+  5. then Georg reviews once and sets the Legacy default.
 - Animation Lab v2 and WorldBuilder mount each actor with its approved profile by default (eyes on); a toggle may switch them off. No second eye implementation.
 - Later, separate slice: eye rigs for vehicles in the ToolBox (same EyeRig owner, vehicle FaceHost).
 - Blender contact sheets may stay eyeless; that is expected.
@@ -79,7 +85,13 @@ Done when Georg can open the lab, find "Climbing To Top", watch it on FrizzleBob
 
 ## 5 · Order
 
-1. Georg reviews the Legacy eye rigs (§2b); Medium/Large defaults already exist.
+1. Legacy completion slice (§2b), then Georg's one review; Medium/Large eye defaults already exist. Eyes need no Blender batch.
 2. Blender chat runs Part A (can start now; independent of Claude Design).
 3. Claude Design WorldBuilder v1 walks first with existing KayKit clips; as soon as the catalogue exists, it switches to catalogue ids.
 4. Animation Lab v2 (Part B) in the same Claude Design project or right after.
+
+## 6 · Start text for the Blender MCP chat (Part A only)
+
+```
+Read georg-doc/kayfabizarro main: tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md. Do Part A (§3) only: the 33 Mixamo FBX in Dropbox BLENDER MCP/_inbox → measure, retarget to Rig_Medium and Rig_Large with the retarget path that already worked for the Orc band (PRs #192/#195), export the two KFB_Motion_Library GLBs + catalogue + contact sheets + NOTICE.md, commit to media/3D_Assets/Animations/KFB_Motion_Library/. Raw FBX never go to GitHub. Eyes are not your job (runtime EyeRig). Report per clip one line: name, rigs, loop, in-place/travel. Then stop.
+```
