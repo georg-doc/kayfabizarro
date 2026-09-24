@@ -44,7 +44,7 @@ try{
   }
 
   let report=await page.evaluate(()=>window.__KFB_ELASTIC_HUERTH01__.report());
-  assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.2-candidate');
+  assert.equal(report.schema,'kfb.elastic-grotesque-clay.huerth01/0.3-tuned-candidate');
   assert.equal(report.sourceCity,'huerth-v0');
   assert.equal(report.sourceBuildings,22);
   assert.ok(report.sourceRoadParts>0);
@@ -53,10 +53,15 @@ try{
   assert.equal(report.elasticCollisionMutation,false);
   assert.equal(report.elasticStyleVersion,'ELASTIC_GROUP_WARP_V2');
   assert.equal(report.elasticGroupWarp,'COHERENT_LOW_FREQUENCY_FIELD');
-  assert.equal(report.elasticDetails,'IRREGULAR_2_3_WINDOWS_NO_FRAME_PLUS_ONE_DOOR');
-  assert.equal(report.elasticRoadSurface,'CONTINUOUS_CATMULL_ROM_RIBBON');
+  assert.equal(report.defaultView,'elastic');
+  assert.deepEqual(report.retainedSwitchViews,['clean','cartoon','grotesque','elastic']);
+  assert.equal(report.elasticDetails,'FINAL_BOWED_SURFACE_FRAME_FLUSH');
+  assert.equal(report.elasticShadow,'BIAS_0_NORMAL_BIAS_0_04_TIGHT_FIT');
+  assert.equal(report.elasticRoadSurface,'CONTINUOUS_CATMULL_ROM_RIBBON_PLUS_OSM_NODE_PATCHES');
+  assert.ok(report.elasticRoadJunctionPatches>0,'elastic road junction patches must exist');
+  assert.equal(report.elasticRoof,'FINAL_TOP_OUTLINE_SMALL_OVERHANG');
   assert.equal(report.elasticPalette,'KFB_WONKY_90S_CLAY_V1');
-  assert.equal(report.humanAcceptance,'PENDING');
+  assert.equal(report.humanAcceptance,'TUNE_ONCE_PENDING_REVIEW');
   assert.deepEqual(report.visibleCounts,{clean:22,grotesque:22,elastic:22});
   assert.ok(Object.values(report.webgl2).every(Boolean),'all three canvases must boot WebGL2');
   assert.deepEqual(errors,[]);
@@ -79,7 +84,24 @@ try{
   assert.equal(report.isolated,false);
   assert.deepEqual(report.visibleCounts,{clean:22,grotesque:22,elastic:22});
 
-  const result={status:'PASS',checks:21,url,report,errors,isolatedSource:first};
+  for(const look of ['clean','cartoon','grotesque']){
+    const legacy=await page.evaluate(async look=>{
+      const u='/tools/osm-city-lab/?city=huerth-v0&look='+look;
+      const f=document.createElement('iframe');f.style.display='none';f.src=u;document.body.appendChild(f);
+      await new Promise((resolve,reject)=>{
+        const timeout=setTimeout(()=>reject(new Error('legacy view timeout '+look)),20000);
+        f.onload=()=>{clearTimeout(timeout);resolve();};
+      });
+      const w=f.contentWindow;
+      for(let i=0;i<120&&!w.KFBCityLab?.report;i++)await new Promise(r=>setTimeout(r,100));
+      const r=w.KFBCityLab?.report?.();
+      f.remove();
+      return r;
+    },look);
+    assert.equal(legacy?.look,look,'legacy '+look+' view must still boot unchanged');
+  }
+
+  const result={status:'PASS',checks:29,url,report,errors,isolatedSource:first};
   fs.writeFileSync(OUT+'/report.json',JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result,null,2));
 }finally{
