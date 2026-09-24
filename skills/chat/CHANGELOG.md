@@ -1807,3 +1807,17 @@ Exactly one next gate:
 - Hub owner: PR #202; public Stage link verified at `/kfb-hub/stage/toolbox/music-performance/`.
 - Public QA: 22/22 PASS; no merge or human acceptance claimed.
 - Root Production Desk regeneration remains separate/pending.
+
+
+## 2026-09-25 · Billboard B2a final rear-side fix accepted
+
+- Georg accepted B2a subject to one final rear-side correction and explicitly authorized ChatGPT to build/fix/check it in.
+- CSS `backface-visibility:hidden` alone was preserved as failed evidence: **28/29 FAIL**, iframe still exposed on the rear.
+- Final runtime `89065825448846beb2649082fc0c1bf25df20ccb` adds panel-world-normal vs camera-direction culling through `CSS3DObject.visible`.
+- Front inline YouTube remains clickable and perspective-aligned; rear view is owned only by the original Kenney/WebGL billboard body.
+- Final integration: **29/29 PASS**; 0 page errors; 0 tracked first-party/CDN HTTP failures.
+- Public runtime: `cloudflare-live@983929385c3be74a42ec88c29f601c08b90b5a05`.
+- Final public proof: **24/24 PASS**; 0 page errors; 0 tracked HTTP errors; artifact `10836432703`.
+- Public acceptance metadata: `d976a99eb0a27bea304d6d5a72929eb12b8610b9`.
+- Draft PR #199 remains open/unmerged.
+- Production Desk source routes the Billboard lane to B2b research/options next; generated Hub remains owner-generated rather than hand-edited.

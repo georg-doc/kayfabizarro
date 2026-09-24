@@ -908,3 +908,27 @@ ToolBox / Animation Studio MUSIC-PERF-01 is now a **PUBLIC_VERIFIED · HUMAN PEN
 Human result is still **PENDING**. Do not merge PR #207, reopen drummer authoring or broaden Town/Resident integration before Georg returns PASS / TUNE / REJECT on the direct Stage route.
 
 The generated root Production Desk snapshot remains a separate HUB-CTRL rebuild concern; do not infer that it was regenerated from this router note.
+
+
+## 2026-09-25 · Billboard B2a HUMAN_ACCEPTED · B2b research next
+
+Billboard media current truth remains on Draft PR **#199** / branch `chatgpt-web/billboard-b2a-css3d-2026-09-24`.
+
+- final B2a runtime: `89065825448846beb2649082fc0c1bf25df20ccb`;
+- branch handoff/docs head: `db557f70b801aacf8ed38a13a47d0bebf5265bc9`;
+- public Stage runtime: `983929385c3be74a42ec88c29f601c08b90b5a05`;
+- Stage acceptance metadata: `d976a99eb0a27bea304d6d5a72929eb12b8610b9`;
+- final integration: **29/29 PASS**;
+- final public Cloudflare proof: **24/24 PASS**;
+- direct route: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/.
+
+Georg's requested final correction is closed: the CSS3D YouTube iframe is visible only from the accepted billboard front hemisphere; rear views show the existing Kenney/WebGL billboard backside, not a mirrored video.
+
+Current Billboard planning/recovery SSOT:
+`tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md` on the PR #199 branch.
+
+Status: **B2a HUMAN_ACCEPTED**.
+
+Exactly one next Billboard gate:
+**B2b Living Mockup / Collage research-options memo only.**
+Do not start B2b runtime implementation, B2c Talking City Lights, B3 cartoon body or Curtain C1 yet.
