@@ -153,3 +153,4 @@ export function buildGlb(buckets,extras){
   out.writeUInt32LE(json.length,o);o+=4;out.writeUInt32LE(0x4E4F534A,o);o+=4;json.copy(out,o);o+=json.length;
   out.writeUInt32LE(bin.length,o);o+=4;out.writeUInt32LE(0x004E4942,o);o+=4;bin.copy(out,o);
   return out;
+}
