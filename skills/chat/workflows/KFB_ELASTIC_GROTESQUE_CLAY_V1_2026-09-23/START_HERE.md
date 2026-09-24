@@ -1,6 +1,6 @@
 # KFB Elastic Grotesque Clay v1 · Hürth 01
 
-Status: **TUNE ONCE IMPLEMENTED · 29/29 BROWSER PASS · TUNED HUMAN REVIEW PENDING · NO MERGE**
+Status: **R2 IMPLEMENTED · 38/38 BROWSER PASS · HUMAN R2 REVIEW PENDING · NO MERGE**
 Date: 2026-09-23
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**
 Receiving consumers remain Race / Travel / WorldBuilder. No new movement, collision, terrain or asset owner.
@@ -197,3 +197,35 @@ Exactly one gate:
 **Georg ACCEPT / REJECT.**
 
 LC-01 remains HOLD until ACCEPT.
+
+## CURRENT R2 GATE · 2026-09-24
+
+Final R2 runtime:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+
+Evidence:
+`35947303053` · **38/38 PASS · 3/3 WebGL2 · 0 errors**.
+
+Exact Racer Cologne palette donor:
+`georg-doc/KFB-Stunt-Car-Race@cc80f4a1c6c509db9668df79fd53b13cee093a9d`
+→ `KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
+→ blob `38246785ec2c9089737b2a195673a3ad4c07bdf8`.
+
+R2 only:
+- visible roof eave over final bowed top;
+- curb/path T-junction closure;
+- shadow-banding repair + before/after evidence;
+- organic details across eligible facades;
+- Racer Cologne harmonic palette on wall/roof/door/window.
+
+Unchanged:
+V2 form grammar · OSM/S2/collision truth · Clean/Cartoon/Grotesque switchability.
+
+Direct review:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+Exactly one next gate:
+**Georg ACCEPT / REJECT R2.**
+
+After ACCEPT only:
+LC-01.
