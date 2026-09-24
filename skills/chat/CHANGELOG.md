@@ -1766,3 +1766,4 @@ Exactly one next gate:
 - Next gate: `AUDIO-CAL-01` with golden-hour-town, graveyard-night and ring-performance calibration states.
 - Planned Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`; **not created/deployed/public-verified by this audit**.
 - Optional Game Development Studio CLI unavailable in this environment; repository-native fallback used.
+- Draft PR #205 opened against `main`; router, registry and KFB Hub point to the baseline; no merge or Live promotion authorized.
