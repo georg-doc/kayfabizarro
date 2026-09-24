@@ -1,0 +1,36 @@
+name: MUSIC-PERF-01 Public Stage QA
+
+on:
+  push:
+    branches:
+      - 'web/music-perf-01-2026-09-24'
+    paths:
+      - 'tools/KFB-ToolBox/stage-first/music-performance-01/test/public.mjs'
+      - '.github/workflows/music-perf-01-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Public Cloudflare playback QA
+        run: node tools/KFB-ToolBox/stage-first/music-performance-01/test/public.mjs
+      - name: Upload public proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: music-perf-01-public-proof
+          path: music-perf-public-proof/
+          retention-days: 14
