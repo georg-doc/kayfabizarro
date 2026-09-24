@@ -7,6 +7,28 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## 2026-09-24 · Production Architecture v3 candidate
+
+Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
+
+Current architecture candidate:
+`workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
+
+On branch/PR #204, v3 overrides older process guidance where they conflict:
+- a normal unit of work is a usable capability, not a micro-gate;
+- direct real-source review HTML precedes Cloudflare for small visual decisions;
+- successful slices get minimal Returns; full recovery exports are failure/exception mode;
+- Claude Design / Blender MCP may author without GitHub write access; a GitHub Bridge integrates reviewed candidates;
+- default is one active integration PR per owner rather than one PR per measurement/proof;
+- the Hub grows a READY/RUNNING/REVIEW/HOLD self-service Briefing shelf driven by typed status fields.
+
+Prepared self-service jobs and current locks:
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md`
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INPUT_LOCKS.json`
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
+
+Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
+
 ## Start order
 
 1. Read `REGISTRY.json`.
