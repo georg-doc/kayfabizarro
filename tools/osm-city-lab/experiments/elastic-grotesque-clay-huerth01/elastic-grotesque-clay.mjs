@@ -170,28 +170,43 @@ export function surfaceFrame(shell,target,t){
   return {position,normal,tangent,vertical,source};
 }
 export function buildElasticRoof(building,shell){
-  const P=shell.params,overhang=clamp(Math.min(P.extent.w,P.extent.d)*.032,.22,.38),base=outsetRing(shell.topRing,overhang),baseY=shell.topY,kind=building.roof?.type||'flat',h=Math.max(.35,Number(building.roof?.heightM)||.5),layers=6;
+  const P=shell.params,overhang=clamp(Math.min(P.extent.w,P.extent.d)*.055,.42,.72),base=outsetRing(shell.topRing,overhang),baseY=shell.topY,kind=building.roof?.type||'flat',h=Math.max(.35,Number(building.roof?.heightM)||.5),layers=6,eaveLift=.035;
   const edge=longestEdge(building.footprint),ux=(edge.b.x-edge.a.x)/edge.len,uz=(edge.b.z-edge.a.z)/edge.len,vx=-uz,vz=ux;
   const pos=[],rows=[],rings=[],idx=[];
+  const innerEave=[],outerEave=[];
+  for(let i=0;i<base.length;i++){
+    innerEave.push(pos.length/3);pos.push(shell.topRing[i].x,baseY[i]+eaveLift,shell.topRing[i].z);
+    outerEave.push(pos.length/3);pos.push(base[i].x,baseY[i]+eaveLift,base[i].z);
+  }
+  for(let i=0;i<base.length;i++){
+    const j=(i+1)%base.length;
+    idx.push(innerEave[i],outerEave[i],innerEave[j],innerEave[j],outerEave[i],outerEave[j]);
+  }
   for(let s=0;s<layers;s++){
     const t=s/(layers-1);let su=1,sv=1;
     if(kind.includes('gabled')){su=1-.11*t;sv=1-.90*t;}
     else if(kind.includes('hipped')){su=1-.70*t;sv=1-.70*t;}
     else {su=1-.075*t;sv=1-.075*t;}
     const ring=base.map(p=>{const dx=p.x-P.c.x,dz=p.z-P.c.z,du=dx*ux+dz*uz,dv=dx*vx+dz*vz,puff=Math.sin(Math.PI*t)*.16;return{x:P.c.x+ux*du*su+vx*(dv*sv+puff),z:P.c.z+uz*du*su+vz*(dv*sv+puff)};});
-    rings.push(ring);const row=[];for(let i=0;i<ring.length;i++){row.push(pos.length/3);const softCrown=Math.sin(Math.PI*t)*.07*(P.seed>.5?1:-1);pos.push(ring[i].x,baseY[i]+h*t+softCrown,ring[i].z);}rows.push(row);
+    rings.push(ring);const row=[];for(let i=0;i<ring.length;i++){row.push(pos.length/3);const softCrown=Math.sin(Math.PI*t)*.07*(P.seed>.5?1:-1);pos.push(ring[i].x,baseY[i]+eaveLift+h*t+softCrown,ring[i].z);}rows.push(row);
   }
   for(let s=0;s<layers-1;s++)for(let i=0;i<base.length;i++){const j=(i+1)%base.length,A=rows[s][i],B=rows[s][j],C=rows[s+1][i],D=rows[s+1][j];idx.push(A,C,B,B,C,D);}
   addCap(idx,rows.at(-1),rings.at(-1),true);
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g;
 }
 export function protectedDetails(building,shell){
-  const P=shell.params,p=openFootprint(building.footprint),edge=longestEdge(p),a=edge.a,b=edge.b,dx=b.x-a.x,dz=b.z-a.z;
-  const r=mulberry32(stableHash('kfb-elastic-facade-v2:'+building.id)),out=[];
-  const pushDetail=(kind,u,t,w,h,d)=>{
-    const target={x:a.x+dx*u,z:a.z+dz*u},frame=surfaceFrame(shell,target,t);
+  const P=shell.params,p=openFootprint(building.footprint),r=mulberry32(stableHash('kfb-elastic-facade-r2:'+building.id)),out=[];
+  const edges=p.map((a,i)=>{
+    const b=p[(i+1)%p.length],dx=b.x-a.x,dz=b.z-a.z,len=Math.hypot(dx,dz);
+    return {i,a,b,dx,dz,len,rank:len*(.9+r()*.2)};
+  }).filter(e=>e.len>=3.4);
+  if(!edges.length)return out;
+  const ranked=[...edges].sort((a,b)=>b.rank-a.rank);
+  const doorEdge=ranked[Math.min(ranked.length-1,Math.floor(r()*Math.min(2,ranked.length)))];
+  const pushDetail=(edge,kind,u,t,w,h,d)=>{
+    const target={x:edge.a.x+edge.dx*u,z:edge.a.z+edge.dz*u},frame=surfaceFrame(shell,target,t);
     out.push({
-      kind,
+      kind,facadeIndex:edge.i,
       x:frame.position.x,y:frame.position.y,z:frame.position.z,
       nx:frame.normal.x,ny:frame.normal.y,nz:frame.normal.z,
       ux:frame.tangent.x,uy:frame.tangent.y,uz:frame.tangent.z,
@@ -199,15 +214,22 @@ export function protectedDetails(building,shell){
       w,h,d
     });
   };
-  const doorU=.16+r()*.68,doorW=1.45+r()*.55,doorH=2.35+r()*.55,doorT=clamp((doorH*.5)/P.h,.06,.22);
-  pushDetail('door',doorU,doorT,doorW,doorH,.12);
-  const wanted=2+(r()>.52?1:0),picked=[];
-  for(let tries=0;tries<30&&picked.length<wanted;tries++){
-    const u=.13+r()*.74,v=.25+r()*.50;
-    if(Math.abs(u-doorU)<.22)continue;
-    if(picked.some(w=>Math.hypot((u-w.u)*1.15,v-w.v)<.23))continue;
-    picked.push({u,v});
+  const doorU=.18+r()*.64,doorW=1.35+r()*.65,doorH=2.25+r()*.70,doorT=clamp((doorH*.5)/P.h,.06,.22);
+  pushDetail(doorEdge,'door',doorU,doorT,doorW,doorH,.12);
+
+  for(const edge of edges){
+    const maxByLength=edge.len>=13?3:edge.len>=7?2:1;
+    const wanted=Math.max(1,maxByLength-(r()>.7?1:0));
+    const picked=[];
+    for(let tries=0;tries<40&&picked.length<wanted;tries++){
+      const u=.14+r()*.72,v=.23+r()*.54;
+      if(edge.i===doorEdge.i&&Math.abs(u-doorU)<.20)continue;
+      if(picked.some(w=>Math.hypot((u-w.u)*1.15,v-w.v)<.21))continue;
+      picked.push({u,v});
+    }
+    for(const w of picked){
+      pushDetail(edge,'window',w.u,w.v,.76+r()*.42,1.45+r()*.78,.08);
+    }
   }
-  for(const w of picked)pushDetail('window',w.u,w.v,.82+r()*.34,1.65+r()*.55,.08);
   return out;
 }
