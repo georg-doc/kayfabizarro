@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {materialPalette,pickStable} from '../../src/style/kfb-city-materials.js';
 import {applyCartoonMassing,windowCodesForBuilding,stableHash} from '../../src/style/cartoon-city.js';
+import {addJunctionPatches} from '../../src/viewer/street-surface.js';
 import {buildElasticShell,buildElasticRoof,protectedDetails,centroid} from './elastic-grotesque-clay.mjs';
 
 const FIXTURE_IDS=["way/371401492","way/371401494","way/371401485","way/371401566","way/371401483","way/371401495","way/371401482","way/371401475","way/371401481","way/371401529","way/371401497","way/371401491","way/371401471","way/371401493","way/371401480","way/371401490","way/371401488","way/371401477","way/371401469","way/371401496","way/371401465","way/371401499"];
@@ -32,6 +33,7 @@ function shape(poly){const s=new THREE.Shape();poly.forEach((p,i)=>i?s.lineTo(p.
 function cleanGeometry(b,steps=1){const g=new THREE.ExtrudeGeometry(shape(b.footprint),{depth:b.heightM,bevelEnabled:false,steps});g.rotateX(-Math.PI/2);g.computeVertexNormals();return g;}
 function material(color,rough=.9,flat=false){return new THREE.MeshStandardMaterial({color,roughness:rough,metalness:0,flatShading:flat,side:THREE.DoubleSide});}
 function surfaceMaterial(color){const m=material(color,.99,false);m.depthWrite=false;m.polygonOffset=true;m.polygonOffsetFactor=-1;m.polygonOffsetUnits=-1;return m;}
+function detailMaterial(color,rough){const m=material(color,rough,false);m.polygonOffset=true;m.polygonOffsetFactor=-1;m.polygonOffsetUnits=-1;return m;}
 function lineLength(line){let n=0;for(let i=1;i<(line?.length||0);i++)n+=Math.hypot(line[i].x-line[i-1].x,line[i].z-line[i-1].z);return n;}
 function smoothRoadRibbon(line,width,y,mat){
   if(!line||line.length<2)return null;
@@ -61,6 +63,13 @@ function addRoads(root,palette,mode){
       const path=smoothRoadRibbon(r.centerline,Math.max(.8,r.widthM),.032,pathMat);if(path){path.renderOrder=1;root.add(path);}
     }
   }
+  if(!elastic)return {roadJunctionPatches:0,curbJunctionPatches:0,pathJunctionPatches:0};
+  const driveable=roads.filter(r=>r.driveable),paths=roads.filter(r=>!r.driveable);
+  const curbSpecs=addJunctionPatches(THREE,root,driveable,{y:.019,material:curbMat,widthExtra:.625,driveableOnly:true,segments:18});
+  const roadSpecs=addJunctionPatches(THREE,root,driveable,{y:.049,material:roadMat,widthExtra:.02,driveableOnly:true,segments:18});
+  const pathSpecs=addJunctionPatches(THREE,root,paths,{y:.033,material:pathMat,widthExtra:.04,driveableOnly:false,segments:14});
+  for(const child of root.children)if(child.userData?.role==='street-junction-patch')child.renderOrder=3;
+  return {roadJunctionPatches:roadSpecs.length,curbJunctionPatches:curbSpecs.length,pathJunctionPatches:pathSpecs.length};
 }
 function addCurrentWindows(root,b,deformation,palette){
   const cfg={...style.cartoonMassing.windows,materialCount:palette.window.length},codes=windowCodesForBuilding(b,deformation,cfg,style.seed||'kfb-city');
@@ -68,19 +77,32 @@ function addCurrentWindows(root,b,deformation,palette){
   for(const w of codes){const mesh=new THREE.Mesh(geo,material(palette.window[w.materialIndex%palette.window.length],.64));mesh.position.set(w.x,w.y,w.z);mesh.rotation.y=w.yaw;mesh.scale.set(w.width,w.height,w.depth);root.add(mesh);}
 }
 function addElasticDetails(root,b,shell){
-  const box=new THREE.BoxGeometry(1,1,1),windowMat=material(colorSlot(ELASTIC_PALETTE.windows,b.id,'window'),.86),doorMat=material(colorSlot(ELASTIC_PALETTE.doors,b.id,'door'),.96);
+  const box=new THREE.BoxGeometry(1,1,1),windowMat=detailMaterial(colorSlot(ELASTIC_PALETTE.windows,b.id,'window'),.86),doorMat=detailMaterial(colorSlot(ELASTIC_PALETTE.doors,b.id,'door'),.96);
   for(const d of protectedDetails(b,shell)){
     const mesh=new THREE.Mesh(box,d.kind==='window'?windowMat:doorMat);
-    mesh.position.set(d.x,d.y,d.z);mesh.rotation.y=d.yaw;mesh.scale.set(d.w,d.h,d.d);mesh.castShadow=true;root.add(mesh);
+    const tangent=new THREE.Vector3(d.ux,d.uy,d.uz).normalize();
+    const vertical=new THREE.Vector3(d.vx,d.vy,d.vz).normalize();
+    const normal=new THREE.Vector3(d.nx,d.ny,d.nz).normalize();
+    const basis=new THREE.Matrix4().makeBasis(tangent,vertical,normal);
+    mesh.quaternion.setFromRotationMatrix(basis);
+    mesh.position.set(d.x-normal.x*d.d*.5,d.y-normal.y*d.d*.5,d.z-normal.z*d.d*.5);
+    mesh.scale.set(d.w,d.h,d.d);
+    mesh.castShadow=false;mesh.receiveShadow=true;root.add(mesh);
   }
 }
 function makeViewer(canvas,mode){
   const renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.03;
   const scene=new THREE.Scene(),elastic=mode==='elastic';scene.background=new THREE.Color(elastic?ELASTIC_PALETTE.sky:'#c6d0c4');scene.fog=new THREE.Fog(scene.background,190,430);
   const camera=new THREE.PerspectiveCamera(48,1,.2,700),controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.dampingFactor=.12;
-  scene.add(new THREE.HemisphereLight(elastic?0xffefd5:0xfff4df,elastic?0x536653:0x4b5c50,elastic?2.25:2.0));const sun=new THREE.DirectionalLight(elastic?0xffd8b8:0xffead0,elastic?3.25:3);sun.position.set(-90,130,70);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-190;sun.shadow.camera.right=190;sun.shadow.camera.top=190;sun.shadow.camera.bottom=-190;scene.add(sun);
+  scene.add(new THREE.HemisphereLight(elastic?0xffefd5:0xfff4df,elastic?0x536653:0x4b5c50,elastic?2.25:2.0));const sun=new THREE.DirectionalLight(elastic?0xffd8b8:0xffead0,elastic?3.25:3);
+  if(elastic){
+    sun.position.set(anchor.x-90,130,anchor.z+70);sun.target.position.set(anchor.x,0,anchor.z);
+    sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-145;sun.shadow.camera.right=145;sun.shadow.camera.top=145;sun.shadow.camera.bottom=-145;sun.shadow.camera.near=20;sun.shadow.camera.far=360;sun.shadow.bias=0;sun.shadow.normalBias=.04;sun.shadow.camera.updateProjectionMatrix();scene.add(sun,sun.target);
+  }else{
+    sun.position.set(-90,130,70);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-190;sun.shadow.camera.right=190;sun.shadow.camera.top=190;sun.shadow.camera.bottom=-190;scene.add(sun);
+  }
   const root=new THREE.Group();scene.add(root);const palette=materialPalette(style);
-  const ground=new THREE.Mesh(new THREE.PlaneGeometry(380,410),material(elastic?ELASTIC_PALETTE.ground:'#879b72',1));ground.rotation.x=-Math.PI/2;ground.position.y=-.08;ground.receiveShadow=true;root.add(ground);addRoads(root,palette,mode);
+  const ground=new THREE.Mesh(new THREE.PlaneGeometry(380,410),material(elastic?ELASTIC_PALETTE.ground:'#879b72',1));ground.rotation.x=-Math.PI/2;ground.position.y=-.08;ground.receiveShadow=true;root.add(ground);const roadMetrics=addRoads(root,palette,mode);
   const buildingRoots=new Map();
   for(const b of buildings){
     const group=new THREE.Group();group.userData.sourceId=b.id;let geom,deformation=null,shell=null;
@@ -103,7 +125,7 @@ function makeViewer(canvas,mode){
   function resize(){const r=canvas.getBoundingClientRect();renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false);camera.aspect=Math.max(1,r.width)/Math.max(1,r.height);camera.updateProjectionMatrix();}
   new ResizeObserver(resize).observe(canvas);resize();reset();
   (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
-  return {mode,focus,reset,isolate,visibleCount,isWebGL2:renderer.capabilities.isWebGL2};
+  return {mode,focus,reset,isolate,visibleCount,isWebGL2:renderer.capabilities.isWebGL2,roadMetrics};
 }
 const viewers=MODES.map(m=>makeViewer($('#'+m),m));
 const select=$('#building'),isolate=$('#isolate'),meta=$('#meta');let isolated=false;
@@ -117,4 +139,4 @@ function update(){
 select.onchange=update;
 isolate.onclick=()=>{const b=byId.get(select.value);if(!b)return;isolated=!isolated;isolate.classList.toggle('active',isolated);isolate.textContent=isolated?'SHOW BLOCK':'ISOLATE SOURCE';viewers.forEach(v=>v.isolate(b.id,isolated));};
 $('#reset').onclick=()=>{select.value='';update();};update();
-window.__KFB_ELASTIC_HUERTH01__=Object.freeze({report:()=>({schema:'kfb.elastic-grotesque-clay.huerth01/0.2-candidate',sourceCity:city.id,sourceBuildings:buildings.length,sourceRoadParts:roads.length,modes:[...MODES],currentGrotesqueDonor:'src/style/cartoon-city.js',elasticCollisionMutation:false,elasticStyleVersion:'ELASTIC_GROUP_WARP_V2',elasticGroupWarp:'COHERENT_LOW_FREQUENCY_FIELD',elasticDetails:'IRREGULAR_2_3_WINDOWS_NO_FRAME_PLUS_ONE_DOOR',elasticRoadSurface:'CONTINUOUS_CATMULL_ROM_RIBBON',elasticPalette:ELASTIC_PALETTE.id,selectedId:select.value||null,isolated,visibleCounts:Object.fromEntries(viewers.map(v=>[v.mode,v.visibleCount()])),webgl2:Object.fromEntries(viewers.map(v=>[v.mode,v.isWebGL2])),humanAcceptance:'PENDING'})});
+window.__KFB_ELASTIC_HUERTH01__=Object.freeze({report:()=>({schema:'kfb.elastic-grotesque-clay.huerth01/0.3-tuned-candidate',sourceCity:city.id,sourceBuildings:buildings.length,sourceRoadParts:roads.length,modes:[...MODES],defaultView:'elastic',retainedSwitchViews:['clean','cartoon','grotesque','elastic'],currentGrotesqueDonor:'src/style/cartoon-city.js',elasticCollisionMutation:false,elasticStyleVersion:'ELASTIC_GROUP_WARP_V2',elasticGroupWarp:'COHERENT_LOW_FREQUENCY_FIELD',elasticDetails:'FINAL_BOWED_SURFACE_FRAME_FLUSH',elasticShadow:'BIAS_0_NORMAL_BIAS_0_04_TIGHT_FIT',elasticRoadSurface:'CONTINUOUS_CATMULL_ROM_RIBBON_PLUS_OSM_NODE_PATCHES',elasticRoadJunctionPatches:viewers.find(v=>v.mode==='elastic')?.roadMetrics?.roadJunctionPatches||0,elasticRoof:'FINAL_TOP_OUTLINE_SMALL_OVERHANG',elasticPalette:ELASTIC_PALETTE.id,selectedId:select.value||null,isolated,visibleCounts:Object.fromEntries(viewers.map(v=>[v.mode,v.visibleCount()])),webgl2:Object.fromEntries(viewers.map(v=>[v.mode,v.isWebGL2])),humanAcceptance:'TUNE_ONCE_PENDING_REVIEW'})});
