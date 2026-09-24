@@ -282,11 +282,11 @@ The architecture lane updates these templates when the production model changes;
 >
 > Reuse the current Resident Atlas actors, Motion Library and MUSIC-PERF timing owner. Do not create a second Resident database, animation catalogue, audio clock or performance schema.
 >
-> Start with the proposed cast: Prototype Pete (Legacy), Action Figure, Toy Soldier, Witch (Medium), Black Knight and Demon Lord (Large), with Ultra Turbo Hero Man as optional seventh actor. If an exact source is unavailable, fail closed rather than substituting another character.
+> Start with the revised cast: Skeleton Minion (Legacy rigid-parts/bounce lane), Avian Swordsman, Protagonist_A as teenager, Toy Soldier, Witch (Medium), Black Knight and Demon Lord (Large). Prototype Pete and Action Figure are explicitly out. If an exact source is unavailable, fail closed rather than substituting another character.
 >
-> First show every actual source actor in isolation and prove its rig family. Then audition the current owned dance library on compatible Medium/Large actors. For Legacy use only a proven Legacy-native party motion; do not map the Medium/Large footwork clips directly onto the six-bone rig.
+> First show every actual source actor in isolation and prove its rig family. Then audition the current owned dance library on compatible Medium/Large actors. For the Legacy Skeleton Minion reuse the proven Orc-band beat-driven bounce presentation concept first; do not map Medium/Large footwork clips onto it.
 >
-> Also isolate the exact Tiny Treats radio, Goth Girl speaker and the already-existing disco-ball implementation/donor before any integrated scene. A loaded URL is not donor proof.
+> Also isolate the exact Tiny Treats radio and Goth Girl speaker. Treat the disco ball as a new reusable **DISCO-BALL-CORE-01** module requirement: freely placeable/spinning, own bounded disco/spot/beam effects, existing light/VFX owner integration and a reserved future EyeRig host seam. Show any existing disco-ball donor/source separately before integration. A loaded URL is not donor proof.
 >
 > Return one compact browser review where I can compare actor/motion pairings. Do not import the new Mixamo shortlist yet. Exactly one human decision: which six/seven actor-motion pairings should advance to the choreographed 32-bar performance.
 >
