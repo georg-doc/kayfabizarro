@@ -42,3 +42,52 @@ with voice intelligible through ducking/focus, while music timelines continue.
 - The older Town/Travel soundscape item remains preserved as a REFERENCE donor, not a competing current audio plan.
 - AUDIO-CAL-01 remains planned only; no public Stage or runtime deployment was created by this slice.
 - No merge or Live promotion authorized.
+
+
+## 2026-09-24 · AUDIO-CAL-01 implementation + CI
+
+### IMPLEMENTATION
+
+- repaired `media/3D_Assets/Audio/ui-sfx.json` exact Kenney paths;
+- refreshed the existing shared `audio-catalog.json` in place;
+- made the catalog refresh reproducible in `build_catalog.py`;
+- added `tools/audio/validate-audio-manifests.mjs`;
+- implemented `kfb-hub/stage/audio-calibration/` with one source contract, one AudioContext, three calibration states, diegetic Orc music, shared ambience/SFX sources, browser TTS focus and non-pausing ducking;
+- procedural storm is explicitly calibration-only, not an accepted production thunder asset;
+- applause remains a sparse reaction, not a crowd-bed substitute.
+
+### TESTED RESULT
+
+Tested runtime/QA head: `7013f43a0501c824deb2c5541c1971c2b979a4e6`.
+
+GitHub Actions:
+- run `36024697531`;
+- job `107718140193`;
+- **SUCCESS**.
+
+Source checks:
+- **6/6 report groups PASS**;
+- shared SFX **13/13**;
+- UI SFX **16/16**;
+- Audio Jukebox **1/1**;
+- KFB Jukebox **10/10**;
+- AUDIO-CAL-01 assets **11/11**;
+- catalog count exact: **1732 = 1687 Audio + 45 Sounds**.
+
+Browser/WebAudio:
+- **31/31 PASS**;
+- one AudioContext;
+- real audio decode/playback;
+- music timeline advances normally and continues under voice ducking;
+- Ring/Performance, Graveyard/Night and event controls exercised;
+- desktop and mobile viewport checks PASS;
+- no page/console/HTTP failures.
+
+Proof artifact:
+- `10819176933`;
+- 3 files including desktop/mobile screenshots and `results.json`;
+- digest `sha256:05b9776cc3d501a77360e6ee6660278e1137fb793756aa3a817cb555e2c91012`.
+
+### OPEN
+
+Public Stage publication is still pending at this checkpoint. No public or human listening PASS is inferred from CI.
