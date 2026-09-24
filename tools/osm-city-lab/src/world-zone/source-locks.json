@@ -1,0 +1,13 @@
+{
+  "schema": "kfb.world-zone.source-locks.v1",
+  "datasets": {
+    "dom-zentrum-v0": {
+      "sourceBlobSha": "7220dc617782b4db7dfa80e3b3d58e54046eebb4",
+      "cachedFileSha256": "5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a",
+      "reportedSourceSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c",
+      "normalizedBlobSha": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9",
+      "normalizedSha256": "4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702",
+      "explanation": "fetch-city.mjs hashes compact JSON before write, then stores compact JSON plus one trailing LF. reportedSourceSha256 is the compact-payload hash; cachedFileSha256 is the exact committed file-byte hash."
+    }
+  }
+}

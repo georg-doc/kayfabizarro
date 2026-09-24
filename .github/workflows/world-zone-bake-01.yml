@@ -29,7 +29,8 @@ jobs:
           set -euo pipefail
           RAW='tools/osm-city-lab/data/dom-zentrum-v0/source.overpass.json'
           NORM='tools/osm-city-lab/data/dom-zentrum-v0/normalized.json'
-          test "$(sha256sum "$RAW" | cut -d' ' -f1)" = '8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c'
+          test "$(sha256sum "$RAW" | cut -d' ' -f1)" = '5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a'
+          test "$(jq -r .sourceSha256 tools/osm-city-lab/data/dom-zentrum-v0/PROVENANCE.json)" = '8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c'
           node tools/osm-city-lab/scripts/build-city.mjs dom-zentrum-v0
           test "$(sha256sum "$NORM" | cut -d' ' -f1)" = '4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702'
       - name: Compile twice
