@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/5",
+  "schema": "kfb.production-architecture.v3-input-locks/6",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -447,6 +447,101 @@
       "measuredCurrentInlineMenu": "28x28 CSS px buttons; 13px glyphs; symbols ✥ ⟳ ⤢ ⬓ ⊹ ✕",
       "userFinding": "icons are too small/ambiguous; function is learned by position rather than recognisable symbol",
       "rule": "Player HUD and authoring tools share visual tokens/icon semantics/state language, but remain separate contextual surfaces. No universal dashboard."
+    },
+    "skillsRuntimeContracts": {
+      "repo": "georg-doc/kayfabizarro",
+      "priority": "P2",
+      "consolidationDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md",
+      "staleRegistry": {
+        "path": "skills/SOT_REGISTRY.md",
+        "blob": "71cdf959cfef88b5ec280009c82160d45907516d",
+        "status": "STALE_2026-07-24__DO_NOT_USE_AS_CURRENT_WITHOUT_RECONCILIATION"
+      },
+      "actorEmbed": {
+        "oldCubePetSkill": {
+          "path": "skills/EMBED_CUBE_PET_FULL_v2.2.md",
+          "blob": "9a22e423d5ba7e1783cbe73dfcdf8939d9435a1e",
+          "status": "LEGACY_GENERAL_ENTRY__CURRENT_FOR_CANONICAL_24_CUBEPETS_ONLY"
+        },
+        "currentRigEmbed": {
+          "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md",
+          "blob": "5ac6d3ecb81cc2363b7eee8933e609266de77733",
+          "status": "CURRENT_NON_CUBEPET_EMBED_DONOR"
+        },
+        "currentRigging": {
+          "path": "tools/KFB-ToolBox/KFB ToolBox (studio v17 - rigging v1 - animation v2)/WSA_2026-09-13/LIVING_RIGGING.md",
+          "blob": "fdb4fec02ff28f561883cf8721e2ae111e36f77d"
+        },
+        "actorPlatformBrief": {
+          "path": "skills/chat/backlog/CLAUDE_DESIGN_V17_ACTOR_PLATFORM_DELIVERABLES_2026-09-13.md",
+          "blob": "7549e6694a3533b6bbccbb423e971a72a4e38035"
+        },
+        "rule": "New work uses family dispatch. CubePets keep their canonical pet stack; Graft/Carl/native KayKit/FaceHost actors use their current owners. No consumer reconstructs face/eyes/mouth."
+      },
+      "cardPdf": {
+        "ssot": {
+          "path": "skills/SSOT_KFB_CardBuilder_PDF.md",
+          "blob": "122f6923fe78a58d0f188a5a0331d9d6ed270f4d"
+        },
+        "cardBuilder": {
+          "path": "skills/kfb-card-builder.js",
+          "blob": "88e1fb33f188648495e6bd8cc6450f19eaaea0cb"
+        },
+        "viewer": {
+          "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v4.dc.html",
+          "blob": "23437e5c2085df5224efdde4100760e5639c685f",
+          "status": "ACTIVE_DONOR__HUMAN_FULLVIEW_GATE_HISTORICALLY_OPEN"
+        },
+        "corpus": {
+          "path": "KFB Comic Card Deck Viewer v4 (WS0)/deckviewer/kfb-corpus.js",
+          "blob": "d2d4257f4288a699db3a2fa48c97af07f665da15"
+        },
+        "housekeeping": {
+          "path": "KFB Comic Card Deck Viewer v4 (WS0)/HOUSEKEEPING.md",
+          "blob": "11f101bb74b518b501e6197d9db4dd0f01c31faa"
+        },
+        "rule": "PDF corpus/cache, KFB card crop/render, and viewer presentation are separate reusable layers. Blind quarter-crop is not universal; consumers do not reimplement crop logic."
+      },
+      "ink": {
+        "ssot": {
+          "path": "skills/SSOT_Card_Ink_Outline_v2.md",
+          "blob": "94d15871a28422b081bfb05c1957ffc2755e209a"
+        },
+        "runtime": {
+          "path": "skills/kfb-ink-canon.js",
+          "blob": "55ce6da2805386bd6373d81d064a37fc7e0efacb"
+        },
+        "implementationFamily": "band",
+        "authorFacingMeaning": "continuous closed ink ring/ribbon with one fill and variable taper/feather",
+        "rule": "Do not create a second RING implementation because of terminology. 3D outlines are adapters from the same semantic boundary, never wireframe/per-triangle outlines."
+      },
+      "talkBubbleMaterial": {
+        "toolboxUiBrief": {
+          "path": "tools/KFB-ToolBox/_handover/UI_CRITIQUE_REWORK_WS0_2026-09-15/START_HERE.md",
+          "blob": "86c2a1e970bbf6c324daab446936b8f475ba4454"
+        },
+        "bubbleDonors": "PetStudio podcast-v5 bubble-shaper.v2.js + bubbles.v4/v5.js + bubble-shapes.json; active legacy donor, exact promotion path to census",
+        "mouthDonor": "current rich studio-v3 pet-mouth.v1.js used by kfb-rigs-embed-v3; semantic visemes + red mouth set",
+        "materialGap": "zone color/reset exists; universal per-zone Texture/Surface assignment is not yet complete",
+        "rule": "Talk/voice/bubbles/idle and material-zone ColorPicker/Texture access are required ToolBox capabilities, but historical modules are promoted only after consumer/source census."
+      },
+      "rootHygiene": {
+        "embedBundles": [
+          "skills/kfb-embed-bundle/",
+          "skills/kfb-embed-bundle v3/"
+        ],
+        "misplacedAssetCandidates": [
+          "skills/House by Quaternius - 2kytqGs4rH.glb",
+          "skills/Palm Tree by Quaternius - A6cKJYFsIb.glb",
+          "skills/Palm Tree by Quaternius - DsrrAYmucG.glb",
+          "skills/Palm Tree by Quaternius - P0tgwyXBgr.glb",
+          "skills/Panda by Quaternius - q1uJ28Hs8T.glb",
+          "skills/Skeleton by Quaternius - yq5ATpujSt.glb",
+          "skills/Tentacle by Quaternius - BR1vpIvvvv.glb",
+          "skills/Zombie by Quaternius - VlXjG0N8Eg.glb"
+        ],
+        "rule": "No move/delete until consumer/import scan + Asset Librarian reconciliation."
+      }
     }
   },
   "strands": {
@@ -578,6 +673,18 @@
         "cardZoneModules"
       ],
       "target": "One versioned Player Journey/Meta state + Fractal Almanac + POP + backpack + songs + adaptive mode HUD + coherent authoring UI grammar"
+    },
+    "skillsRuntimeContracts": {
+      "sourceKeys": [
+        "skillsRuntimeContracts",
+        "toolboxIntegration",
+        "eyeRigBatch",
+        "cubePets",
+        "interfaceGrammar",
+        "cardZoneModules",
+        "playerJourneyMeta"
+      ],
+      "target": "Current skill/runtime entrypoints for Actor Embed, PDF/Card Viewer, Ink + 3D adapters, Talk/Bubbles and Material Surface with compatibility-safe legacy routing"
     }
   }
 }
