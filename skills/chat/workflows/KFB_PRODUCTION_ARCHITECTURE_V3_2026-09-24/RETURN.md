@@ -1,6 +1,19 @@
 # RETURN · KFB Production Architecture v3 · Recovery / Flow intake / Work routing · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 81 JOBS · 38 READY / 43 HOLD · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 82 JOBS · 39 READY / 43 HOLD · UNMERGED · NO LIVE PROMOTION**
+
+## LATEST ADDITIVE UPDATE · RES-DISCO-01
+
+- Prepared `RESIDENT_DISCO_01_2026-09-24.md` as the recovery/implementation brief for a six/seven-character outdoor KayKit disco scene.
+- Reuses Resident Atlas + current Motion Library + Animation Studio + MUSIC-PERF `kfb.resident-performance.v1`; no new Resident, Motion, Audio or performance owner.
+- Proposed cast: Prototype Pete / Action Figure / Toy Soldier / Witch / Black Knight / Demon Lord + optional Ultra Turbo Hero Man, spanning Legacy / Medium / Large.
+- Current library evidence: 10 dance actions + Happy Idle; missing party semantics are Cheer / Clap / Victory / optional jump and extra dance variety.
+- Exact current prop donors pinned where available: Tiny Treats `radio.gltf`, Goth Girl speaker, existing ORB band. Existing disco-ball implementation remains `DONOR_IMPLEMENTATION_TO_PIN` before integration.
+- First choreography target: 32 bars, individual phase offsets, beat/bar-boundary action changes and synchronized ensemble hits on one song clock.
+- Catalogue validation after mount: **9/9 PASS**; catalogue = **82 jobs / 39 READY / 43 HOLD**. Prior formal architecture/source checkpoint remains **158/158 PASS**.
+- Planned Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/` — **NOT PUBLISHED**.
+- Exactly one next gate: **RES-DISCO-A · Source Cast + Motion Audition**.
+
 
 ## CURRENT UPDATE · recovery + Flow intake + Work routing
 
@@ -37,7 +50,7 @@ No Inbox candidate was promoted merely by upload location. No merge or Live prom
 
 ## Current production map
 
-**13 primary strands · 81 copy-ready jobs · 38 READY · 43 dependency-gated HOLD**
+**13 primary strands · 82 copy-ready jobs · 39 READY · 43 dependency-gated HOLD**
 
 1. ToolBox Authoring Platform
 2. Animation & Residents
