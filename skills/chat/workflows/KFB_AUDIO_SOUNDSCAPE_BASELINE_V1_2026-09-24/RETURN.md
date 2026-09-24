@@ -1,13 +1,39 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
 **Date:** 2026-09-24  
-**Status:** BASELINE AUDIT COMPLETE · IMPLEMENTATION GATE PREPARED · NO RUNTIME/PUBLIC PROMOTION  
+**Status:** AUDIO-CAL-01 CI PASS · PUBLICATION PENDING · HUMAN LISTENING PENDING  
 **Owner:** existing WSA / KFB integration lead  
 **Executor:** Fresh Web + GitHub  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205  
 **Base:** `9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
+
+## CURRENT OVERRIDE · AUDIO-CAL-01 candidate
+
+AUDIO-CAL-01 is now implemented on this Draft PR as a calibration harness, not a replacement runtime.
+
+- Candidate/runtime head tested: `7013f43a0501c824deb2c5541c1971c2b979a4e6`
+- Workflow run: `36024697531`
+- Job: `107718140193`
+- Manifest/catalog validation: **6/6 groups PASS**
+- Browser/WebAudio QA: **31/31 PASS**
+- Proof artifact: `10819176933`
+- Artifact digest: `sha256:05b9776cc3d501a77360e6ee6660278e1137fb793756aa3a817cb555e2c91012`
+- Screenshots: desktop + mobile inside the proof artifact
+- repaired `ui-sfx.json`: **16/16** paths now valid
+- refreshed shared audio catalog: **1732 actual audio files** = 1687 Audio + 45 Sounds
+- Stage source contract: **11/11** referenced assets exist
+
+The three calibration states are implemented: `golden-hour-town`, `graveyard-night`, `ring-performance`.
+
+Automated evidence proves one AudioContext, real asset decode/playback, event wiring, voice-focus ducking and that the diegetic music timeline continues while ducked. It does not prove that the browser TTS voice or final balance sounds good.
+
+Target human route remains:
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+
+At this checkpoint it is **PUBLICATION PENDING**, not PUBLIC_VERIFIED.
 
 ## SOURCE
 
