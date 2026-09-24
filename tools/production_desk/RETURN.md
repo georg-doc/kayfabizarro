@@ -1,3 +1,24 @@
+# CURRENT UPDATE · Racer external status sync · 2026-09-24
+
+Status: **HUB SOURCE UPDATED · PUBLICATION PENDING**
+
+- HUB-CTRL branch now records Racer at private PR #39 / RKIT-06 / head `53219c9b7ee3d1abe0ef1b0e5364863b42014ea5`.
+- Previous public/registry Racer entry at PR #33 was stale because `build.py` deliberately returns early for `external:true` lanes and never queries private cross-repo state.
+- One consolidated Racer lane remains; RKIT #34→#39 are a stacked implementation history, not six Hub lanes.
+- Current RKIT-06 package contains TRACK_A_STUNT_8, Pit Lane, SWITCH_Y, flap-return/tunnel shortcut and Trankgasse OSM geometry.
+- Next gate: real Race/Rapier runtime test on TRACK_A; WorldBuilder consumes baked geometry/metadata later.
+- This checkpoint does **not** claim the public Hub has been regenerated/published yet.
+
+### Durable fix
+
+Recommended low-cost bridge:
+
+`private owner repo → owning Web/GitHub Bridge writes compact status mirror into kayfabizarro → Production Desk reads same-repo mirror`.
+
+This avoids broad private-repo crawl permissions and avoids a Work/LLM refresh just to keep Hub status current.
+
+---
+
 # RETURN · HUB-V3-MOUNT · self-service catalog beside Today · 2026-09-24
 
 Status: **PUBLIC_VERIFIED · 13 STRANDS / 79 JOBS · EXISTING HUB OWNER PRESERVED**
