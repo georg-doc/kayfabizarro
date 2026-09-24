@@ -355,3 +355,55 @@ Exactly one next gate:
 
 After ACCEPT only:
 continue LC-01 via `LOOK_COMPOSITION_01_2026-09-24.md`.
+
+## 2026-09-24 · R2 HUMAN FAIL · CANDIDATE FROZEN
+
+Georg reviewed R2 in real Chrome and rejected it.
+
+Human screenshots show:
+- persistent hard light/shadow edges;
+- road/path/curb junctions that visibly read as patched/layered geometry;
+- roof caps that still read as separate lids;
+- facade colours/details that remain too random in rhythm and hierarchy.
+
+R2 runtime:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+
+R2 automated evidence:
+`35947303053` · **38/38 PASS · 3/3 WebGL2 · 0 errors**.
+
+Human evidence overrides technical PASS for visual acceptance.
+
+Formal failure recovery:
+`FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`
+
+Status:
+**ARCHIVED_FAILED_CANDIDATE**.
+
+No R3 patch pass is allowed on the same foundation.
+
+### Rejected implementation foundation
+
+Road/path presentation as overlapping:
+- road ribbon;
+- wider curb ribbon;
+- path ribbon;
+- junction discs/patches/connectors;
+- Y-offset/renderOrder/polygonOffset seam handling.
+
+Next road candidate must have **one shared topology owner** with shared junction edges and explicit material regions.
+
+### Roof/body lesson
+
+A roof outset alone is insufficient.
+Next proof must define one shared eave/top-boundary contract and show one isolated house under neutral lighting before city integration.
+
+### Facade lesson
+
+Seeded random positions/colours are not a design grammar.
+Known composition patterns must be researched and encoded before another facade generator.
+
+### Next gate
+
+**Research + isolated architecture proof only.**
+No block repair, no Cloudflare candidate replacement, no LC-01.
