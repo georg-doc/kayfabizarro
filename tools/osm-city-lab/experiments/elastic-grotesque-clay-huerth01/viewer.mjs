@@ -107,7 +107,7 @@ function addRoads(root,palette,mode){
   }
   if(!elastic)return {roadJunctionPatches:0};
   const driveable=roads.filter(r=>r.driveable);
-  const roadSpecs=addJunctionPatches(THREE,root,driveable,{y:.049,material:roadMat,widthExtra:.02,driveableOnly:true,segments:18});
+  const roadSpecs=addJunctionPatches(THREE,root,driveable,{y:.049,material:roadMat,widthExtra:.64,driveableOnly:true,segments:18});
   const pathRoadConnectors=addPathRoadConnectors(root,pathMat);
   for(const child of root.children)if(child.userData?.role==='street-junction-patch')child.renderOrder=3;
   return {roadJunctionPatches:roadSpecs.length,pathRoadConnectors};
