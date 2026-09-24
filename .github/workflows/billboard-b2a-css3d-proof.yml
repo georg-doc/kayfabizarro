@@ -256,3 +256,159 @@ jobs:
           name: billboard-b2a-integration-proof
           path: artifacts/billboard-b2a-integration
           retention-days: 90
+
+
+  public-proof:
+    needs: integration-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Wait for exact B2a Cloudflare marker
+        run: |
+          set -euo pipefail
+          URL='https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/SOURCE.json'
+          ok=0
+          for i in $(seq 1 36); do
+            body="$(curl -fsS --max-time 20 "$URL" || true)"
+            if printf '%s' "$body" | grep -q '"id": "BILLBOARD-B2A-CSS3D-2026-09-24"'; then
+              printf '%s\n' "$body" > /tmp/b2a-source.json
+              ok=1
+              break
+            fi
+            echo "B2a marker not deployed yet · attempt $i/36"
+            sleep 10
+          done
+          test "$ok" = 1
+          cat /tmp/b2a-source.json
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof exact Cloudflare B2a route
+        run: |
+          mkdir -p artifacts/billboard-b2a-public
+          cat > artifacts/billboard-b2a-public/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/';
+          const report={url,checks:[],errors:[],httpErrors:[],modes:{}};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+
+          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('response',r=>{
+            const u=r.url();
+            if(r.status()>=400 && (
+              u.startsWith('https://kayfabizarro.pages.dev/') ||
+              /cdn\.jsdelivr\.net|raw\.githubusercontent\.com/.test(u)
+            )) report.httpErrors.push({status:r.status(),url:u});
+          });
+
+          async function waitMode(mode){
+            await page.evaluate(m=>window.__b2a.setMode(m),mode);
+            await page.waitForFunction(m=>window.__B2A_REPORT__?.mode===m&&window.__B2A_REPORT__?.ready===true,mode,{timeout:90000});
+            await page.waitForTimeout(500);
+            const snap=await page.evaluate(()=>window.__b2a.snapshot());
+            report.modes[mode]=snap;
+            return snap;
+          }
+
+          try{
+            const res=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Cloudflare HTTP',!!res&&res.ok(),res?.status());
+            check('exact B2a title',(await page.title())==='KFB Billboard · B2a Inline YouTube',await page.title());
+            await page.waitForFunction(()=>window.__b2a&&window.__B2A_REPORT__?.ready===true,{}, {timeout:90000});
+
+            const quarter=await page.evaluate(()=>window.__b2a.snapshot());
+            report.modes.quarter=quarter;
+            check('default quarter',quarter.mode==='quarter',quarter.mode);
+            check('quarter source nonblack',Number(quarter.sourceStats?.mean)>20,quarter.sourceStats);
+            check('CSS3D Object hidden on quarter',quarter.dom?.objectVisible===false,quarter.dom?.objectVisible);
+            check('no modal element',quarter.dom?.modalElementExists===false,quarter.dom);
+            await page.screenshot({path:'artifacts/billboard-b2a-public/01-quarter.png',fullPage:true});
+
+            const cover=await waitMode('cover');
+            check('cover retained',/cover page 1/.test(cover.content||''),cover.content);
+            check('CSS3D Object hidden on cover',cover.dom?.objectVisible===false,cover.dom?.objectVisible);
+
+            const video=await waitMode('video');
+            check('Travel video source',/Travel VIDEO MTCSwppblk0/.test(video.content||''),video.content);
+            check('inline CSS3D Object visible',video.dom?.objectVisible===true,video.dom?.objectVisible);
+            check('inline YouTube iframe source',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(video.dom?.iframeSrc||''),video.dom?.iframeSrc);
+            check('world dimensions exact',
+              Math.abs(video.css3d.objectWorldWidth-video.css3d.panelWorldWidth)<1e-6 &&
+              Math.abs(video.css3d.objectWorldHeight-video.css3d.panelWorldHeight)<1e-6,
+              video.css3d);
+            check('16:9 face',Math.abs(video.faceAspect-16/9)<0.001,video.faceAspect);
+            const hit=await page.evaluate(()=>{
+              const r=document.querySelector('#b2a-inline-youtube').getBoundingClientRect();
+              const x=r.left+r.width/2,y=r.top+r.height/2;
+              const el=document.elementFromPoint(x,y);
+              return {tag:el?.tagName||null,id:el?.id||null,x,y,rect:{x:r.x,y:r.y,w:r.width,h:r.height}};
+            });
+            report.hit=hit;
+            check('iframe directly receives pointer',hit.tag==='IFRAME'&&hit.id==='b2a-inline-youtube',hit);
+            const frontRect=video.dom.surfaceRect;
+            await page.screenshot({path:'artifacts/billboard-b2a-public/02-video-front.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2a.setView('LEFT34'));
+            await page.waitForTimeout(600);
+            const left=await page.evaluate(()=>window.__b2a.snapshot());
+            report.left34=left;
+            const leftRect=left.dom?.surfaceRect;
+            const moved=!!frontRect&&!!leftRect&&(
+              Math.abs(leftRect.x-frontRect.x)>5 ||
+              Math.abs(leftRect.y-frontRect.y)>5 ||
+              Math.abs(leftRect.w-frontRect.w)>5 ||
+              Math.abs(leftRect.h-frontRect.h)>5
+            );
+            check('inline video persists at 3/4',left.dom?.objectVisible===true,left.dom?.objectVisible);
+            check('inline perspective changes with camera',moved,{front:frontRect,left:leftRect});
+            await page.screenshot({path:'artifacts/billboard-b2a-public/03-video-left34.png',fullPage:true});
+
+            const q2=await waitMode('quarter');
+            check('video Object hidden after exit',q2.dom?.objectVisible===false,q2.dom?.objectVisible);
+            check('iframe unloads after exit',/about:blank$/.test(q2.dom?.iframeSrc||''),q2.dom?.iframeSrc);
+
+            const slogan=await waitMode('slogan');
+            check('slogan retained',slogan.content==='CHATTERBOX SHOW IT',slogan.content);
+            check('CSS3D hidden on slogan',slogan.dom?.objectVisible===false,slogan.dom?.objectVisible);
+            await page.screenshot({path:'artifacts/billboard-b2a-public/04-slogan.png',fullPage:true});
+
+            check('no page errors',report.errors.length===0,report.errors);
+            check('no failed Stage/CDN assets',report.httpErrors.length===0,report.httpErrors);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2a-public/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.passed+'/'+report.total,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              hit:report.hit,
+              video:report.modes.video?{faceAspect:report.modes.video.faceAspect,css3d:report.modes.video.css3d}:null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-b2a-public/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2a-cloudflare-proof
+          path: artifacts/billboard-b2a-public
+          retention-days: 90
