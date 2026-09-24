@@ -175,7 +175,8 @@ async function ensureLibrary(){
 }
 async function setRig(next){
   rig=next; els.med.classList.toggle('active',rig==='Medium');els.large.classList.toggle('active',rig==='Large'); clearFail();
-  els.status.textContent='loading '+rig+'…'; await ensureActor(); await ensureLibrary(); els.status.textContent=rig+' · 33 source clips';
+  els.status.textContent='loading '+rig+'…'; await ensureActor(); const lib=await ensureLibrary(); els.status.textContent=rig+' · 33 source clips';
+  if(window.__AN_PROFILE_02_REVIEW){window.__AN_PROFILE_02_REVIEW.rig=rig;window.__AN_PROFILE_02_REVIEW.counts[rig.toLowerCase()]=(lib.animations||[]).length;}
   if(current)await selectClip(current.id); else await selectClip(catalogue.clips.find(c=>c.id==='kfb_locomotion_run_forward_a')?.id||catalogue.clips[0].id);
   renderList(); renderData();
 }
