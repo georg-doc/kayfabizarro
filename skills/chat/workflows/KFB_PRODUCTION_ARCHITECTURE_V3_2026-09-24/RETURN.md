@@ -1,6 +1,27 @@
-# RETURN · KFB Production Architecture v3 · IK / execution dispatch / WSA mount prepared · 2026-09-24
+# RETURN · KFB Production Architecture v3 · Recovery / Flow intake / Work routing · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 79 JOBS · 158/158 PASS · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 81 JOBS · 38 READY / 43 HOLD · UNMERGED · NO LIVE PROMOTION**
+
+## CURRENT UPDATE · recovery + Flow intake + Work routing
+
+Formal architecture/source validation remains the prior **158/158 PASS** checkpoint for the 79-job core. The two later additive briefing entries and this recovery routing were source-read and catalog-checked, but are not falsely counted as new formal assertions.
+
+Recovered current product truth:
+
+- **Audio baseline:** human accepted. No Work follow-up.
+- **Music Performance:** public-verified at the existing Stage route; human review pending. No Work follow-up.
+- **ToolBox:** coherent owner runtime and 33-clip Animation Studio consumer pass their direct static/browser suites. The separate Chat review transport is the current failure surface and is not a product-runtime failure.
+- **World Zone:** the original timeout branch was correctly frozen, then G0→G3 recovered it. The canonical Cologne World Zone package now has deterministic compile/package proof plus real-browser load/place/reload proof.
+- **Flow World Shell:** classified as good presentation input. Its next gate is `WB-ZONE-SEAM-01`, not another OSM/compiler job.
+- **Flow Resident Card:** candidate thin scene. The export records Georg's source resolution “FrizzleBobrick” = current FrizzleBob Driver Graft, superseding the earlier SOURCE_REQUIRED note. Human face/mouth review remains the gate.
+- **Flow Resident Band / Atlas S8:** useful pose/edit/performance input, but `kfb.resident-band-module/1` is not promoted as a production owner. Reuse accepted content through existing Resident Scene / `kfb.resident-performance.v1`.
+- **Racer:** RKIT-06 / private Race PR #39 is the current geometry package. The only current task intentionally routed to WSA/Work is the real TRACK_A Rapier runtime/contact proof.
+
+New recovery docs:
+- `FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md`
+- `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`
+
+No Inbox candidate was promoted merely by upload location. No merge or Live promotion is authorized.
 
 ## Exact state before this Return write
 
@@ -16,7 +37,7 @@ Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 79 JOBS · 158/158 PASS �
 
 ## Current production map
 
-**13 primary strands · 79 copy-ready jobs · 36 READY · 43 dependency-gated HOLD**
+**13 primary strands · 81 copy-ready jobs · 38 READY · 43 dependency-gated HOLD**
 
 1. ToolBox Authoring Platform
 2. Animation & Residents
@@ -660,7 +681,7 @@ Current catalog:
 
 ## Public Hub boundary
 
-The expanded **13-strand / 79-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
+The current architecture source is **13 strands / 81 jobs**. The public Hub was last verified on the earlier 79-job snapshot; HUB-CTRL #202 remains the only publication owner for a later refresh.
 
 This branch does not:
 - fork Hub ownership;
@@ -680,6 +701,6 @@ This branch does not:
 
 **HUB-V3-MOUNT**
 
-Existing HUB-CTRL mounts the v3 self-service catalog additively while preserving its existing operational Today lanes. The 13 strand cards expose current READY/HOLD jobs; the full 79-job map appears only on expansion.
+Existing HUB-CTRL mounts the v3 self-service catalog additively while preserving its existing operational Today lanes. The 13 strand cards expose current READY/HOLD jobs; the full current job map appears only on expansion.
 
 Product work may already start directly from the READY briefs without waiting for that public mount.

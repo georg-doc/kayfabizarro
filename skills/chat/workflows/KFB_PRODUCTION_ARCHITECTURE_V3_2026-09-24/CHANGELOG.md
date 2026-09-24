@@ -1,3 +1,20 @@
+## 2026-09-24 · Recovery triage · Flow Design intake + minimal Work route
+
+- recovered current Audio, ToolBox, World Zone and Racer state after multiple chat interruptions;
+- confirmed AUDIO-CAL-01 is human accepted and MUSIC-PERF-01 is technically public-verified / human-review pending; neither needs Work;
+- confirmed current ToolBox coherent runtime + Motion Library consumer remain green in direct owner/browser tests; only the separate AN-PROFILE review transport is failing;
+- recovered WORLD-ZONE-BAKE-01 through G0→G3: deterministic source/compile/package plus real-browser load/place/reload are proven; the Flow Cologne shell can now consume the bake instead of waiting for it;
+- classified Georg's three newest Flow Design uploads as candidate inputs, not SSOT promotion:
+  - Cologne World Shell → keep, next `WB-ZONE-SEAM-01` in Web/GitHub;
+  - Resident Card Speculation → keep, human face/mouth gate first;
+  - Resident Atlas S39 Band → salvage pose/performance content but do not promote export-local `kfb.resident-band-module/1` as another runtime;
+- Motion Library PR #209 now resolves the runtime-clip dependency named inside the Resident exports;
+- prepared `FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md`;
+- prepared minimal `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`;
+- current WSA/Work execution scope is exactly one task: real TRACK_A Rapier runtime/contact proof in the existing private Race owner;
+- architecture catalog remains **13 strands / 81 jobs / 38 READY / 43 HOLD**;
+- no auto-merge or Live promotion.
+
 ## 2026-09-24 · Pet Podcast donor → Resident Card Speculation MVP
 
 - added `NPC-CARD-SPEC-01` as READY under Town/NPC Life;

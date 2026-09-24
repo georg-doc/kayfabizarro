@@ -1,3 +1,14 @@
+## 2026-09-24 · KFB focus recovery · Flow intake + Work triage
+
+- Recovered current focus after Audio/ToolBox/WorldBuilder chat interruptions.
+- Audio calibration is human accepted; Music Performance is public-verified and awaits Georg only.
+- ToolBox core + Animation Studio Motion Library consumer remain technically green; the separate review wrapper is not a Work task.
+- Cologne World Zone bake is technically complete through real-browser reload proof; next WorldBuilder work is the small Flow-shell-to-bake adapter.
+- Three new Flow Design inbox exports were classified without promoting Inbox copies to owners.
+- Resident Band export is explicitly prevented from becoming another proprietary runtime; accepted content routes through existing Resident Scene / Resident Performance owners.
+- Current WSA/Work packet contains one execution task only: TRACK_A in the existing Race/Rapier runtime.
+- Details: `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`.
+
 ## 2026-09-24 · Production Architecture v3 · IK parity + executor/model budget routing
 
 - Added a source-based A/B gate against Three.js `CCDIKSolver`: current Resident Atlas `reachChain()` remains owner until the same Rig_Medium/Orc-Brute comparison proves a better solver path.
