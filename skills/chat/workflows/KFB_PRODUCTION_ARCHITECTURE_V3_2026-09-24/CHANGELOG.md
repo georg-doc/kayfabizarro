@@ -1,3 +1,16 @@
+## 2026-09-24 · MVP focus · mobility / v17 ToolBox / direct FBX / AI Town KISS
+
+- current work grouped into five coherent MVPs plus READY Resident Disco;
+- new READY: `ACTOR-FB-BODY-FAMILY-01`, `MOTION-INTAKE-DIRECT-01`, `TB-V17-INTEGRATION-01`;
+- new HOLD: `WB-MOBILITY-MVP-01`, `WB-HUERTH-COLOGNE-RACE-MVP-01`, `NPC-AITOWN-KISS-01`;
+- `RES-DISCO-01` retained as READY parallel Resident-performance fixture and its duplicate prompt registration was repaired;
+- Animation Studio sharpened to semantic State/Action + existing Duel mode; ToolBox Production preserves useful v17+ donor capabilities;
+- current KayKit external research recorded: 133 humanoid Medium/Large animations across Movement/Melee/Ranged/Simulation plus 28 Tool actions;
+- compatible FBX may now be planned through direct Animation Lab intake; Blender remains the technical-exception path;
+- `georg-doc/ai-town@2693ed69` evaluated as MIT mechanics donor only; no Convex/Pixi/global memory adoption;
+- Motion Library PR #197/#209 dual provenance recorded: Medium/Large GLB blobs are identical at observation, catalogue differs/newer;
+- catalog now **13 strands / 88 jobs / 42 READY / 46 HOLD**; prompt/source/profile integrity **88/88**.
+
 ## 2026-09-24 · Resident Disco research + READY briefing
 
 - added `RES-DISCO-01` under the existing Animation & Residents strand; no second Resident/Motion/Music owner;
