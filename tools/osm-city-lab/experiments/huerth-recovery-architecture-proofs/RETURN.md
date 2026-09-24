@@ -14,6 +14,7 @@ This new slice proves the three replacement foundations in isolation before any 
 
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/huerth-architecture-proofs-2026-09-24`
+- Draft PR: **#200**, stacked on frozen PR #194
 - implementation head: `c36f97be48a6b5da5617aa000c921e4a51329f7f`
 - parent failed R2 remains frozen
 - no merge
@@ -99,6 +100,18 @@ Digest:
 - LC-01 remains HOLD;
 - no library adoption yet;
 - no city-block integration.
+
+## Human review publication
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/`
+
+Publication model:
+- exact tested multi-file app is not copied/rebuilt;
+- Cloudflare wrapper uses a `<base>` pinned to `c36f97be…`;
+- old `huerth-look` route remains failed R2 evidence.
+
+Public verification is recorded separately after the exact URL is opened.
 
 ## Exactly one next gate
 
