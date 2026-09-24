@@ -1,3 +1,24 @@
+# CURRENT UPDATE · Recovery test status · 2026-09-24
+
+Status: **TEST FIX COMMITTED · HUB REBUILD NOT YET VERIFIED · PUBLIC REFRESH PENDING**
+
+What happened:
+- the last Production Desk workflow failure was traced to a stale browser-test assumption, not to the Hub catalog;
+- the test expected the Curtain lane to own a briefing even though that lane intentionally has no briefing now;
+- the test was repaired to use any current lane that actually has a real briefing source;
+- the current architecture source still contains the two newest READY jobs and remains the regeneration source.
+
+Important evidence boundary:
+- the GitHub connector write did not launch a new `KFB Production Desk Registry` workflow run;
+- therefore the refreshed 81-job Hub build is still **UNVERIFIED**;
+- a Cloudflare preview check started separately, but that is not a substitute for the Hub registry/browser test;
+- no public refresh is claimed.
+
+Exactly one next gate:
+run the existing Production Desk workflow against the current HUB-CTRL head, confirm the regenerated catalog/browser tests, then use the existing publication path once.
+
+---
+
 # CURRENT UPDATE · Recovery sync · 2026-09-24
 
 Status: **SOURCE SYNC CHECKPOINT · PUBLIC HUB REFRESH NOT YET CLAIMED**

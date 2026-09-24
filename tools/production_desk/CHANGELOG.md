@@ -1,3 +1,10 @@
+## 2026-09-24 · Recovery test repair
+
+- Traced the existing Production Desk CI failure to `desk_dom_test.mjs`: the test hard-coded the `curtain` lane and dereferenced `curtain.brief.rawUrl`, although the current Curtain lane intentionally has no briefing.
+- Repaired the test to select an actual lane with a real `brief.rawUrl`; no product/runtime behavior changed.
+- GitHub connector writes did not automatically start a new Production Desk workflow run, so the current rebuilt Hub remains **UNVERIFIED** rather than assumed green.
+- Cloudflare preview activity is tracked separately and is not accepted as Production Desk registry/browser evidence.
+
 ## 2026-09-24 · Recovery sync · current architecture briefings
 
 - Recovered the Hub owner against the current Production Architecture source at `a7b4d9c4f6e541a50a640f42182d5ec4cf332bd7`.
