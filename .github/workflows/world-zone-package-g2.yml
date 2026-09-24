@@ -1,0 +1,78 @@
+name: WORLD-ZONE-PACKAGE-G2
+
+on:
+  push:
+    branches:
+      - chatgpt-web/world-zone-package-g2-2026-09-24
+    paths:
+      - '.github/workflows/world-zone-package-g2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  canonical-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      KFB_SOURCE_COMMIT: ${{ github.sha }}
+      PKG: tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1
+      TMP: /tmp/world-zone-g2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: G0 source-lock precondition
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/osm-city-lab/tests/world-zone-source-lock-g0.mjs dom-zentrum-v0 > /tmp/WORLD_ZONE_SOURCE_LOCK_G0_REPORT.json
+
+      - name: Compile canonical package and independent comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/osm-city-lab/scripts/build-world-zone.mjs dom-zentrum-v0 2026-09-24.1
+          node tools/osm-city-lab/scripts/build-world-zone.mjs dom-zentrum-v0 2026-09-24.1 --out-root "$TMP"
+
+      - name: Verify package contract and byte determinism
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/osm-city-lab/tests/world-zone-bake-01.mjs \
+            "$PKG" \
+            "$TMP/cologne-dom-zentrum-v0/2026-09-24.1" \
+            | tee "$PKG/TEST_REPORT.json"
+
+      - name: Record exact package checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          (
+            cd "$PKG"
+            find . -maxdepth 1 -type f ! -name SHA256SUMS.txt -printf '%f\n' \
+              | sort \
+              | xargs sha256sum > SHA256SUMS.txt
+          )
+
+      - name: Commit proven canonical package once
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$PKG"
+          git diff --cached --quiet && exit 0
+          git commit -m "WORLD-ZONE-PACKAGE-G2: commit proven Cologne zone package"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: world-zone-package-g2-cologne
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            ${{ env.PKG }}/
+            /tmp/WORLD_ZONE_SOURCE_LOCK_G0_REPORT.json
