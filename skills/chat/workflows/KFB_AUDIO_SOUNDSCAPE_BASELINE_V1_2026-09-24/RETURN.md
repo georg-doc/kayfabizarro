@@ -1,13 +1,19 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
 **Date:** 2026-09-24  
-**Status:** AUDIO-CAL-01 PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Status:** AUDIO-CAL-01 HUMAN_ACCEPTED  
 **Owner:** existing WSA / KFB integration lead  
 **Executor:** Fresh Web + GitHub  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205  
 **Base:** `9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
+
+## HUMAN RESULT · PASS
+
+Georg listening result: **PASS** — “klingt sehr gut soweit. passt.”
+
+AUDIO-CAL-01 is now an accepted calibration reference. This does not promote every individual sound to final canon and does not auto-integrate consumers.
 
 ## PUBLIC VERIFIED · 2026-09-24
 
@@ -223,7 +229,7 @@ This audit did not produce a new screenshot or listening result and does not cla
 
 ## ONE NEXT GATE
 
-**Georg human-listens to AUDIO-CAL-01 only.**
+**MUSIC-PERF-01 may proceed as the next independent audio/performance capability; consumer audio integration remains separate.**
 
 Do not spread directly into Racer + Combat + Town simultaneously. First establish one audible cross-KFB mix/voice/ducking calibration surface, get Georg's human listening gate, then let each runtime owner consume the accepted calibration through its existing adapter.
 
