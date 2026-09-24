@@ -1,6 +1,6 @@
 # KFB Animation Intake 01 · Mixamo → catalog → Animation Lab v2 · 2026-09-24
 
-Status: **PROPOSAL FOR GEORG'S DECISION** (storage rule in §2 needs his yes)
+Status: **DECIDED BY GEORG 2026-09-24** (storage rule §2 accepted)
 Georg: the Mixamo clips fit very well and are usable almost 1:1, incl. a differentiated climb (over the edge, then on top). Take them all in, catalogue them, and make them usable in the new ToolBox so they can be used directly in the Claude Design WorldBuilder project.
 
 ## 1 · Source
@@ -30,6 +30,17 @@ Mixamo terms: clips may be used royalty-free inside finished games; the **raw fi
   `media/3D_Assets/Animations/KFB_Motion_Library/` with a `NOTICE.md`: "Mixamo-derived motion, retargeted for Kayfabizarro; runtime part of the game; not licensed for reuse or redistribution."
 - No "Mixamo pack" framing, no download page, no README inviting reuse.
 - Keeps everything readable for Claude, Claude Design, ChatGPT and jsDelivr; no private-repo barrier.
+
+## 2b · Step 0 · Eyes on by default
+
+Georg: before the animation work, every character gets its default eye rig.
+
+- Eyes are a runtime layer (EyeRig v6 + FaceHost), not baked in Blender. Owner/tool: KFB Batch EyeRig Atlas `kfb-hub/stage/toolbox/eye-rig-batch/` (PR #104).
+- Profiles to consume: `data/rig-medium-default.v0.json` (Medium class default, 27 actors), `data/rig-large-reviewed.v1.json` (4 reviewed Large), `data/rig-legacy-default.v0.json` + `rig-legacy-auto.v1.json` + `rig-legacy-heads.v0.json` (17 Legacy heads).
+- **Legacy is built but not yet reviewed by Georg**: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/` → his review sets the Legacy default.
+- Animation Lab v2 and WorldBuilder mount each actor with its approved profile by default (eyes on); a toggle may switch them off. No second eye implementation.
+- Later, separate slice: eye rigs for vehicles in the ToolBox (same EyeRig owner, vehicle FaceHost).
+- Blender contact sheets may stay eyeless; that is expected.
 
 ## 3 · Part A · Blender chat (local, Blender MCP)
 
@@ -68,7 +79,7 @@ Done when Georg can open the lab, find "Climbing To Top", watch it on FrizzleBob
 
 ## 5 · Order
 
-1. Georg says yes to §2.
+1. Georg reviews the Legacy eye rigs (§2b); Medium/Large defaults already exist.
 2. Blender chat runs Part A (can start now; independent of Claude Design).
 3. Claude Design WorldBuilder v1 walks first with existing KayKit clips; as soon as the catalogue exists, it switches to catalogue ids.
 4. Animation Lab v2 (Part B) in the same Claude Design project or right after.

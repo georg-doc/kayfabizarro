@@ -13,7 +13,7 @@ One coherent browser app, **KFB WorldBuilder v1**: a small round world he can sh
 3. **Terrain editing** on that sphere: Raise / Lower brush with radius (mouse wheel) and strength, Undo, Clear, Save / Reload.
 4. **Object editing**: pick a real KFB/KayKit object, place it on the ground, move / rotate / scale / drop to terrain, Save / Reload.
 5. **Look**: KFB Elastic Grotesque Clay as the **default** view for buildings; Clean / Cartoon / Grotesque stay available through a **view switch**. Ground gets the triplanar RGB-palette material.
-6. **Walk**: one character walks over the sphere (camera follows, WASD). Existing KayKit clips first; Mixamo clips come later as a separate intake.
+6. **Walk**: one character walks over the sphere (camera follows, WASD). Existing KayKit clips first; Mixamo clips come later via `ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md` (same folder). Characters appear with their approved eye rig on by default (EyeRig Atlas profiles, see that file §2b).
 
 Done when Georg can: shape a hill, place three objects, switch sky to rain and to night, switch the view, walk a character across his hill, save, reload, keep editing.
 
