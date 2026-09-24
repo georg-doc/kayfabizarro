@@ -1,10 +1,16 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
-**Status:** AUDIO-CAL-01 PUBLIC_VERIFIED · HUMAN LISTENING PENDING · RECOVERABLE  
+**Status:** AUDIO-CAL-01 HUMAN_ACCEPTED · RECOVERABLE  
 **Date:** 2026-09-24  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205
+
+## HUMAN RESULT · PASS
+
+Georg accepted the current AUDIO-CAL-01 listening result on 2026-09-24: **“klingt sehr gut soweit. passt.”**
+
+This closes the calibration gate. Remaining audio work is curation/integration follow-up, not a blocker on MUSIC-PERF-01.
 
 ## PUBLIC VERIFIED · 2026-09-24
 
