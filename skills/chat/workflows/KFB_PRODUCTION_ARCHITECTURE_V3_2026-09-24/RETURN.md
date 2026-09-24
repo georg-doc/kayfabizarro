@@ -553,6 +553,11 @@ Budget rule:
 Prepared handoff:
 `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md`.
 
+Registered with existing HUB-CTRL PR #202 as top-level handoff comment:
+- comment id: `5816158451`;
+- architecture head cited in that comment: `d17b880bb4cebaf67e532b4e26354d63cb3cc818`;
+- comment explicitly instructs HUB-CTRL to re-fetch PR #204 before implementation.
+
 Existing Hub owner remains:
 - Draft PR #202;
 - branch `work/hub-ctrl-01-2026-09-24`;
