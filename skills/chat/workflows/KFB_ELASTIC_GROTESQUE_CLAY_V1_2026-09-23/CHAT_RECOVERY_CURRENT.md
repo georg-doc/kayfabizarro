@@ -220,3 +220,70 @@ PUBLIC_VERIFIED is not claimed by this chat because the Pages URL cannot be retr
 
 After ACCEPT only:
 `LOOK_COMPOSITION_01_2026-09-24.md`.
+
+## CURRENT AFTER HUMAN R2 FAIL · 2026-09-24
+
+Status: **ARCHIVED_FAILED_CANDIDATE · IMPLEMENTATION STOPPED**
+
+Human evidence:
+- `Bildschirmfoto 2026-09-24 um 04.37.11.png`
+- `Bildschirmfoto 2026-09-24 um 04.35.57.png`
+- `Bildschirmfoto 2026-09-24 um 04.35.43.png`
+
+Formal recovery:
+`FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`
+
+### Failed repair lineage
+
+- unchanged V2 donor/reference: `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+- R1 failed repair: `75b3c460ac37aac57cb5d9e96260517c5b4cf68d`
+- R2 failed repair runtime: `4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+- R2 browser run: `35947303053`
+- automated result: **38/38 PASS · 3/3 WebGL2 · 0 errors**
+- human result: **FAIL**
+
+This proves again that automated/browser boot PASS != Georg visual PASS.
+
+### What is visibly still wrong
+
+1. light/shadow hard boundaries remain;
+2. road/curb/path reads as patched overlapping pieces and creates new junction artefacts;
+3. roof/body still reads as separate lid + block instead of one designed object;
+4. facade colour/detail distribution is seeded but not yet compositionally designed.
+
+### Hard stop
+
+**NO R3 PATCH PASS ON THIS FOUNDATION.**
+
+Do not:
+- add another junction circle/disc/patch;
+- change renderOrder / Y-offset / polygonOffset to hide another road seam;
+- do another shadow-bias-only repair;
+- scatter more windows/doors randomly;
+- enlarge the roof again without redesigning the shared roof/body boundary.
+
+### Salvage / keep
+
+- real Hürth OSM source and fixture;
+- Elastic V2 continuous form grammar;
+- final-wall surface-frame attachment idea;
+- CLEAN / CARTOON / GROTESQUE switchability;
+- exact Racer Cologne palette donor:
+  `KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
+  @ `cc80f4a1c6c509db9668df79fd53b13cee093a9d`;
+- existing WorldContext `STORY_PALETTES` / card-seed owner.
+
+### Exactly one next gate
+
+**RESEARCH + ISOLATED ARCHITECTURE PROOF**
+
+Before any city-block implementation:
+1. research known facade rhythm / asymmetric balance / repetition-with-variation / colour-hierarchy patterns;
+2. define one single-owner road/path topology with shared intersection edges;
+3. prove one isolated roof/body union under neutral lighting;
+4. then decide whether a fresh implementation slice is warranted.
+
+Resume by reading this file, then:
+`FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`.
+
+Do not resume from R2 code as if it were a current candidate.
