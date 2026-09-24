@@ -113,6 +113,15 @@ Publication model:
 
 Public verification is recorded separately after the exact URL is opened.
 
+### Publication evidence
+
+- review route: `https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/`
+- `cloudflare-live` wrapper commit: `e16dc4abead4e33a2fffa2b31f64f506ca7d9689`
+- wrapper pins tested app: `c36f97be48a6b5da5617aa000c921e4a51329f7f`
+- KFB Hub routing commit: `e49f9dc1cf61c92093d3e1d9ba45b9f39f8558b4`
+- Hub card links the same direct review route.
+- **PUBLIC_VERIFIED: UNKNOWN** — the current web tool cannot retrieve the `pages.dev` domain, so no live claim is made from this chat.
+
 ## Exactly one next gate
 
 **GEORG HUMAN REVIEW OF A / B / C ISOLATED PROOFS.**
