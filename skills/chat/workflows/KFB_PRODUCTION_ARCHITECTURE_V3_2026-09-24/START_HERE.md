@@ -50,7 +50,7 @@ Dependency-gated: WB-MOBILITY-MVP-01 · WB-HUERTH-COLOGNE-RACE-MVP-01 · NPC-AIT
 
 ## Current recovery focus · 2026-09-24 late evening
 
-- **Resident Disco:** `RES-DISCO-01` is now READY for Source Cast + Motion Audition. It reuses Resident Atlas + Motion Library + MUSIC-PERF rather than creating another performance runtime. Proposed cast spans Legacy/Medium/Large; new Mixamo intake waits until current actor/motion pairings are visually chosen. Planned Stage route exists only as a target and is not published.
+- **Resident Disco:** `RES-DISCO-01` is READY for Source Cast + Motion Audition. Revised cast is Skeleton Minion (Legacy bounce lane), Avian Swordsman, Protagonist_A/teenager, Toy Soldier, Witch, Black Knight and Demon Lord. Prototype Pete and Action Figure are out. The disco ball is now planned as reusable `DISCO-BALL-CORE-01` with own bounded disco/beam effects and a later EyeRig seam. New Mixamo intake waits until current pairings are visually chosen. Planned Stage is not published.
 
 ## Previous recovery focus · 2026-09-24 evening
 
