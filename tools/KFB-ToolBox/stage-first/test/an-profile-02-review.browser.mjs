@@ -9,10 +9,12 @@ page.on('pageerror',e=>errors.push(e.message));
 page.on('requestfailed',r=>failures.push(r.url()+' :: '+(r.failure()?.errorText||'failed')));
 try{
   const url='http://127.0.0.1:8765/tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html';
+  page.on('console',(m)=>{ if(['error','warning'].includes(m.type())) console.log('review '+m.type()+': '+m.text()); });
   await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
-  await page.waitForFunction(()=>window.__AN_PROFILE_02_REVIEW?.ready===true,null,{timeout:180000});
+  await page.waitForFunction(()=>window.__AN_PROFILE_02_REVIEW&&(window.__AN_PROFILE_02_REVIEW.ready===true||window.__AN_PROFILE_02_REVIEW.error),null,{timeout:180000});
 
   let p=await page.evaluate(()=>window.__AN_PROFILE_02_REVIEW);
+  if(p.error) throw new Error('plain review boot failed: '+p.error);
   ok('plain review reaches ready',p.ready===true);
   ok('exact AN-PROFILE source head is pinned',p.sourceRevision==='032c9d50cd5de6764fa37fec65cb203ed35fcb11');
   ok('Medium source loads 33 clips',p.rig==='Medium'&&p.counts.medium===33);
