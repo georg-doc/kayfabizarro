@@ -879,3 +879,28 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-24 · Billboard B1 public review gate
+
+Current Billboard owner remains KFB ToolBox / Billboard Media Residency.
+
+Draft PR **#198** on `chatgpt-web/billboard-b1-2026-09-24` forks accepted B0 literally: `bb-scene.js` and `bb0-boot.js` are byte-for-byte unchanged.
+
+B1 adds only the content-fit seam: card quarter / cover / Travel video resize the accepted billboard face and its frame/posts together to the measured source aspect; ChatterBox slogan keeps the original 2:1 face.
+
+Evidence:
+- tested runtime `58a8b92d55548c6436ac60b15b521d8eff269afd`;
+- local **20/20 PASS**;
+- public Cloudflare **21/21 PASS**;
+- 0 page/console errors;
+- 0 failed public assets;
+- public screenshots 4/4 visibly populated.
+
+Human route:
+https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/
+
+Status: **PUBLIC_VERIFIED · GEORG HUMAN REVIEW PENDING**.
+
+Exactly one next gate: **Georg B1 picture review.**
+Curtain C1 remains HOLD.
