@@ -512,3 +512,23 @@ Georg beauftragt jetzt ausdrücklich die gemeinsame GitHub-Sicherung. Der öffen
 **OPEN / TOWN-S001-O16:** Ring-/Polster-/Wortmarken-Kandidaten aus der Town Workbench; genaue Travel-Terrain-/Sky-Revision und Bezug zur Schneidematte; geprüfte Bildbeschreibungen der ersten Karten; heutiger Quest-/Viewer-Consumer; kuratierte erste Zweierperformance; bewegter Bühnenboden und späterer Clip-Export. Keine neu erfundenen Koordinaten, Quests, Logo-Dateien oder Agenten-APIs.
 
 **15.09.2026 · S001 r016:** Öffentliche Projektion der S001-Richtungen bis r015 ergänzt; neue D36–D40/P22–P24 aufgenommen. Hauptänderung: gemeinsame Speakers-Corner-/Ring-/Kino-/Konzertbühne nahe dem Turm. Therefore/But als Sprachpflicht ausdrücklich zurückgenommen. Workbench- und Travel-Zusammenarbeit eingeordnet. Alter Town-Text einschließlich Tourbus-Zulauf unverändert. Dokumentation ist kein Build-/Browser-/Audio-/Rig-PASS.
+
+---
+
+## 14 · 24.09.2026 · NPC-LIFE-01 implementation candidate
+
+**Status:** IMPLEMENTATION CANDIDATE / consumer proof. This section records a result from the Resident/Town adapter owner; it does not create a second Town runtime, new J-decision, relationship-point system, memory database or reward database.
+
+The first lightweight social-life seam now exists on Draft PR #210. A Resident encounter is a short semantic sequence:
+
+`approach → greet → offer → react → accept/decline → leave`.
+
+The host owns whether an encounter is legal, who is busy, the current relationship context and actual movement. Animation chooses a compatible performance separately; ChatterBox chooses text separately; an offer consumer chooses a source-backed offer separately. The current visual proof uses the existing Resident Atlas **Toy Soldier** and **Goth Girl**. Toy Soldier's offer resolves to his existing Present prop rather than an invented gift.
+
+The proof deliberately stays below the earlier rejected dialog-tree complexity: no branching conversation graph, no animation×sentence matrix, no persistent relationship points. Accept/decline is the one encounter outcome fork.
+
+**TESTED RESULT:** deterministic contract test **21/21 PASS**. Public Cloudflare/browser and Georg visual review are still open at this checkpoint.
+
+Review target once published: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident/npc-life-01/`.
+
+Follow-ons remain separate: NPC-MEMORY-01 should reuse Journey/event+card context; NPC-GIFT-01 may own actual gift/reward mutation. NPC-LIFE-01 does neither.
