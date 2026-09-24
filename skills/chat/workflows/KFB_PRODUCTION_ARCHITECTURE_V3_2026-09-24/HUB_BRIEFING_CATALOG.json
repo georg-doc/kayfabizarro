@@ -1,0 +1,71 @@
+{
+  "schema": "kfb.hub-briefing-catalog/1",
+  "updated": "2026-09-24",
+  "architecture": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 204,
+    "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+    "briefingSource": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md",
+    "inputLocks": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INPUT_LOCKS.json"
+  },
+  "briefings": [
+    {
+      "id": "web-quick-3d-review",
+      "bucket": "READY",
+      "executor": "ChatGPT Web",
+      "title": "Schnelle echte 3D-Abnahme",
+      "what": "Ein reales Source-Objekt direkt im Chat in einer kleinen 3D-Review prüfen: Haltung, Kontakt, Maßstab, Silhouette oder Timing.",
+      "result": "Direkt klickbare Review-HTML; Messwerte nur unterstützend.",
+      "inputLock": "web-quick-3d-review",
+      "promptSection": "JOB A · WEB-QUICK-3D-REVIEW",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "toolbox-coherent-integration-01",
+      "bucket": "READY",
+      "executor": "Web/Coworker + GitHub Bridge",
+      "title": "ToolBox · zusammenhängende Arbeitsbasis",
+      "what": "Stage-First, echter Roster, aktueller FrizzleBob, echte Resident-Szene, gemeinsamer Editor und Save/Reload als ein Werkzeug zusammenführen.",
+      "result": "Eine Review-Fassung für Actor → Stage/Resident → Edit → Save → Reload.",
+      "inputLock": "toolbox-coherent-integration-01",
+      "promptSection": "JOB B · TOOLBOX-COHERENT-INTEGRATION-01",
+      "sourceHead": "2833674b36be707fa4d14c8b532faee78ef3ba28",
+      "pr": 185,
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "blender-resident-performance-batch-01",
+      "bucket": "READY",
+      "executor": "Blender MCP",
+      "title": "Residents · Dance / Acting / Prop Batch",
+      "what": "Mehrere Dance-Moves, Instrument-/Prop-Interaktionen oder Acting-Beats in einer produktiven Blender-Session abarbeiten.",
+      "result": "Reusable Actions/GLBs + kurze Vorschauen + kompakter Batch-Index.",
+      "inputLock": "blender-resident-performance-batch-01",
+      "promptSection": "JOB C · BLENDER-RESIDENT-PERFORMANCE-BATCH-01",
+      "sourceHead": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+      "relatedPrs": [192, 195, 197],
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "worldbuilder-capability-r1",
+      "bucket": "HOLD",
+      "executor": "Web + Claude Design",
+      "title": "WorldBuilder R1 · begehbarer, editierbarer Ort",
+      "what": "WB-W0-Grundlage mit WB2-Sculpt, gemeinsamem Objekteditor und Save/Reload zu einem wirklich authorbaren Ort verbinden.",
+      "result": "Walk → Sculpt → Place/Edit → Save → Reload → weiterarbeiten in einer Review-Fassung.",
+      "inputLock": "worldbuilder-capability-r1",
+      "promptSection": "JOB D · WORLDBUILDER-CAPABILITY-R1",
+      "sourceHead": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+      "prHead": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+      "deployHead": "5b457ee9b1faea6a156449b92123c9eb783b5d86",
+      "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/",
+      "humanResult": "PENDING",
+      "waitingFor": "Georg PASS/TUNE/REJECT für WB-W0 Maßstab und Begehbarkeit. R1 ist bereits vorgeplant und braucht danach keine neue Architektur-Review.",
+      "cloudflareRequired": false,
+      "workRequired": false
+    }
+  ]
+}
