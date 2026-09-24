@@ -1,3 +1,27 @@
+# CURRENT UPDATE · Recovery sync · 2026-09-24
+
+Status: **SOURCE SYNC CHECKPOINT · PUBLIC HUB REFRESH NOT YET CLAIMED**
+
+In plain language:
+- the current production plan now contains two additional startable briefings:
+  1. the Cologne WorldBuilder visual/authoring shell;
+  2. the Resident Card speculation scene based on the Pet Podcast donor.
+- the architecture source already contains both jobs;
+- this existing HUB-CTRL branch remains the only Hub owner;
+- the Hub must regenerate from the current architecture source rather than creating another registry or Hub;
+- no runtime owner changes, no merge and no Live promotion are authorized by this checkpoint.
+
+Current architecture source for regeneration:
+`a7b4d9c4f6e541a50a640f42182d5ec4cf332bd7`.
+
+Expected result of the existing builder:
+**13 strands · 81 jobs · 38 READY · 43 HOLD**.
+
+Next gate:
+the existing HUB-CTRL pull-request workflow must regenerate and validate the Hub from that source. Only after that evidence exists may the normal publication owner refresh the public Hub once.
+
+---
+
 # CURRENT UPDATE · Toolbox Stage triage · 2026-09-24
 
 Status: **HUMAN TRIAGE APPLIED IN HUB SOURCE · PUBLICATION PENDING**

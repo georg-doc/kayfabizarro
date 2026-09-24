@@ -1,3 +1,13 @@
+## 2026-09-24 · Recovery sync · current architecture briefings
+
+- Recovered the Hub owner against the current Production Architecture source at `a7b4d9c4f6e541a50a640f42182d5ec4cf332bd7`.
+- Confirmed the architecture catalog now contains the two newest READY jobs:
+  - `WB-DESIGN-PARALLEL-01`;
+  - `NPC-CARD-SPEC-01`.
+- Expected catalog after regeneration: **13 strands · 81 jobs · 38 READY · 43 HOLD**.
+- No second Hub, no second registry and no runtime owner were introduced.
+- This checkpoint intentionally does not claim the public Hub has refreshed; the existing HUB-CTRL workflow/publication path remains authoritative.
+
 ## 2026-09-24 · Human triage · broken/legacy Toolbox labs removed from current Tools
 
 Georg reported the following public Stage surfaces as broken, misleading or non-productive:
