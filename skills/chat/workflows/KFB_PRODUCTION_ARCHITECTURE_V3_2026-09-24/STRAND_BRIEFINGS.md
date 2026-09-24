@@ -1435,3 +1435,136 @@ A waiting card is valuable because Georg can already see the complete production
 > The Card proof must show black outer flat edges without outlining every triangle and without doubled front/back grids.
 >
 > No screen-space wireframe, no per-triangle outline and no stitched independent line pieces. Compare directly against the canonical 2D card contour in the same review.
+
+
+---
+
+# Character / Resident production jobs
+
+## RESIDENT-BAND-MODULE-01 · Baseplate-free KayfaBizarros Resident Scene
+
+**Executor:** ChatGPT Web / Resident Atlas / ToolBox  
+**Outcome:** one reusable Orc-band scene that can be dropped into Tavern, Town, street or WorldBuilder without a mandatory platform.
+
+> @GitHub
+> Read KFB Production Architecture v3, CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md, current Resident Atlas S7 and current Orc Band PR #195.
+>
+> Build RESIDENT-BAND-MODULE-01 in the browser authoring lane.
+>
+> Reuse:
+> - accepted Legacy Orc B leader;
+> - accepted Orc Raider guitarist;
+> - real Orc Brute;
+> - exact Wardrum and sticks;
+> - current signature song ref;
+> - existing Motion Library actions.
+>
+> Do not rebuild the characters or bake the whole vignette into one stage GLB.
+>
+> The module must be baseplate-free. Store local actors/props/attachments/action refs/pose patches/songRef/BPM/phase/anchors so a host can drop it onto any real support surface.
+>
+> For the drummer, pause the closest current action at a useful strike frame and let Georg use the existing puppet/bone/prop controls to make the desired visual contact pose. Save that as a Studio patch/reference pose.
+>
+> If one constant correction remains visually acceptable through playback, keep it as the Resident patch. If it does not, flag the exact time-varying delta for POSE-TO-BLENDER-01; do not launch another automatic arm-to-drum solver.
+>
+> Review one coherent band scene with Play/Pause/song sync and the ability to move the entire module as one root.
+
+---
+
+## POSE-TO-BLENDER-01 · Browser Pose → Blender Action handoff
+
+**Executor:** Resident Atlas / ToolBox + Blender MCP  
+**Outcome:** Georg authors the desired pose in browser; Blender uses it only as a target for time-based animation work.
+
+> @GitHub @Blender
+> Read KFB Production Architecture v3 → Character/Resident workflow, Resident Atlas S7 Studio Patch behavior and Blender animation proof PR #192.
+>
+> Prove one complete handoff:
+> 1. choose one real actor + prop;
+> 2. create a visually accepted pose/contact in Resident Atlas/ToolBox;
+> 3. export the Studio Patch / target-pose data;
+> 4. map that target onto the same actor skeleton in Blender;
+> 5. author or adjust only the necessary time-based bone curves around that target;
+> 6. bake/export one reusable GLB Action;
+> 7. load that Action back in the browser with the same prop/scene and compare it against the target.
+>
+> First preferred fixture: Orc Brute + Wardrum/sticks, unless another currently needed fixture gives a cleaner proof.
+>
+> Georg should not need to manipulate Blender bones manually. Blender MCP is the execution layer after the browser pose has communicated the design intent.
+>
+> Do not alter EyeRig/face ownership and do not turn the Resident Studio patch into a second animation format.
+
+---
+
+## BLENDER-ACTOR-FAMILY-01 · Frizzle-Orc Medium / Large / Legacy derivatives
+
+**Executor:** Blender MCP  
+**Outcome:** one visible identity proven across three existing KFB rig families without replacing their skeletons.
+
+> @GitHub @Dropbox @Blender
+> Read KFB Production Architecture v3 → Character/Resident workflow and current Actor Platform / family contracts.
+>
+> HOLD until exact sources are pinned for:
+> - Frizzle-Orc 3 / Rig-Warp source;
+> - chosen Rig_Medium body;
+> - chosen Rig_Large body;
+> - chosen Rig_Legacy/template body;
+> - blank/template head;
+> - requested head accessories.
+>
+> Once pinned, show every source object in isolation before integration.
+>
+> Build three derivatives while preserving destination rigs:
+> - Frizzle-Orc Medium stays Rig_Medium;
+> - Frizzle-Orc Large stays Rig_Large;
+> - Frizzle-Orc Legacy stays Rig_Legacy.
+>
+> Prefer a head/identity graft onto the existing destination rig over warping one whole skeleton into another. Use rigid head attachment where sufficient; skin only what actually must deform.
+>
+> Do not bake eyes. Export clean FaceHost/EyeRig anchor facts for ToolBox/runtime.
+>
+> Return one GLB per family plus provenance, rig-family declaration, material refs, head/face anchors and compatible motion-library info. Then review all three side by side in the ToolBox.
+
+---
+
+## BLENDER-MOTION-02 · One named missing high-value motion
+
+**Executor:** Blender MCP  
+**Outcome:** one actually missing march/combat/performance action enters the shared Motion Library.
+
+> @GitHub @Dropbox @Blender
+> Do not start from a generic request like “more animations”.
+>
+> First name the concrete missing action and real consumer. Examples:
+> - rifle/musket march;
+> - one missing combat attack;
+> - one band/performance action.
+>
+> Search the current 33-action Motion Library and native KayKit clips first.
+>
+> If the action already exists, stop and route to browser authoring/choreography.
+>
+> If missing, use the established Mixamo/Blender intake:
+> raw FBX stays in Dropbox; exact-transfer if the KayKit skeleton is preserved; retarget only measured exceptions; bake to the correct KFB rig; export one reusable Action/catalogue entry/contact sheet.
+>
+> No new batch unless multiple named consumers genuinely require the same new source set.
+
+---
+
+## LEGACY-CUSTOM-ACTOR-01 · One custom Legacy derivative
+
+**Executor:** Blender MCP + ToolBox  
+**Outcome:** extend Legacy only where current modular assembly cannot represent the requested actor.
+
+> @GitHub @Blender
+> Read current Legacy readiness / Resident Atlas / Character workflow.
+>
+> Do not rerig the existing Legacy roster. Rig_Legacy and its native animations remain the owner.
+>
+> Start only after a concrete custom actor is selected.
+>
+> Prove whether the actor can be assembled in browser from current Legacy body/head/arm parts. If yes, stop and use the existing assembler.
+>
+> Blender is allowed only if the requested visible identity requires a new graft/mesh/weight derivative or a selected external motion cannot be represented by current Rig_Legacy clips.
+>
+> Export one source-backed derivative and return it to ToolBox/Resident Atlas for EyeRig, pose, prop fit and scene authoring.
