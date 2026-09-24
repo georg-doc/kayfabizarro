@@ -103,7 +103,8 @@ const report = {
     panelWorldHeight: null,
     syncCount: 0,
     blockerActive: false,
-    modalPresent: false
+    modalPresent: false,
+    frontOnly: true
   },
   errors
 };
@@ -254,12 +255,15 @@ function createInlineVideo() {
   videoSurface.id = 'b2a-inline-video-surface';
   videoSurface.style.cssText =
     'width:' + CSS_VIDEO_W + 'px;height:' + CSS_VIDEO_H + 'px;background:#000;position:relative;'
-    + 'display:none;pointer-events:auto;overflow:hidden;';
+    + 'display:none;pointer-events:auto;overflow:hidden;'
+    + 'backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:preserve-3d;';
 
   videoIframe = document.createElement('iframe');
   videoIframe.id = 'b2a-inline-youtube';
   videoIframe.title = 'KFB inline YouTube';
-  videoIframe.style.cssText = 'width:100%;height:100%;border:0;display:block;background:#000;';
+  videoIframe.style.cssText =
+    'width:100%;height:100%;border:0;display:block;background:#000;'
+    + 'backface-visibility:hidden;-webkit-backface-visibility:hidden;';
   videoIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
   videoIframe.setAttribute('allowfullscreen', '');
   videoIframe.src = 'about:blank';
@@ -273,6 +277,13 @@ function createInlineVideo() {
   videoSurface.append(videoIframe, videoBlocker);
   videoObject = new CSS3DObject(videoSurface);
   videoObject.name = 'b2a-inline-youtube-css3d';
+  // B2a human-tune: CSS3D has no WebGL depth/backface culling. Make the media plane
+  // explicitly front-only so orbiting behind the billboard reveals the donor's real rear body
+  // instead of a mirrored iframe. This is the seam; the Kenney body is not remodelled.
+  videoSurface.style.backfaceVisibility = 'hidden';
+  videoSurface.style.webkitBackfaceVisibility = 'hidden';
+  videoIframe.style.backfaceVisibility = 'hidden';
+  videoIframe.style.webkitBackfaceVisibility = 'hidden';
   // CSS3DRenderer owns the DOM display state. Object3D.visible is the real visibility seam.
   // Using element.style.display here is overwritten by the renderer and left an opaque black
   // CSS plane over CARD/COVER/SLOGAN in the first integration candidate.
@@ -445,6 +456,8 @@ const CAMS = {
   FRONT: { yaw: 0.0, pitch: 0.14, dist: 6.4 },
   LEFT34: { yaw: -0.62, pitch: 0.20, dist: 7.2 },
   RIGHT34: { yaw: 0.62, pitch: 0.20, dist: 7.2 },
+  BACK34: { yaw: Math.PI - 0.62, pitch: 0.20, dist: 7.2 },
+  BACK: { yaw: Math.PI, pitch: 0.14, dist: 6.4 },
   WIDE: { yaw: 0.5, pitch: 0.42, dist: 16 }
 };
 const S = { ...CAMS.FRONT };
@@ -530,6 +543,8 @@ function snapshot() {
       iframeSrc: videoIframe?.src || null,
       inlineDisplay: videoSurface?.style.display || null,
       objectVisible: videoObject?.visible ?? null,
+      surfaceBackfaceVisibility: videoSurface ? getComputedStyle(videoSurface).backfaceVisibility : null,
+      iframeBackfaceVisibility: videoIframe ? getComputedStyle(videoIframe).backfaceVisibility : null,
       surfaceRect: surfaceRect ? { x: surfaceRect.x, y: surfaceRect.y, w: surfaceRect.width, h: surfaceRect.height } : null,
       cssTransform: videoSurface?.style.transform || '',
       modalElementExists: !!document.querySelector('#b1-video, #b2a-video-modal')
