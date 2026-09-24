@@ -881,44 +881,33 @@ vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/l
 Cloudflare remains deferred.
 
 
-## 2026-09-24 · KFB Elastic Grotesque Clay · Hürth 01 · R2
+## 2026-09-24 · KFB Elastic Grotesque Clay · Hürth 01 · R2 FAIL / FREEZE
 
-Current bounded form-language slice:
-[Hürth 01 START_HERE](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
+Current bounded slice is **ARCHIVED_FAILED_CANDIDATE** after two failed human-visible repair passes on the same gate.
 
-Current runtime:
+Read:
+- `workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md`
+- `workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`
+
+Failed R2 runtime:
 `4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
 
-R2 evidence:
-- run `35947303053`;
-- **38/38 PASS · 3/3 WebGL2 · 0 errors**;
-- artifact `10787192998`;
-- 193 organic facade details;
-- 23 asphalt OSM-node patches;
-- 10 path→road connectors.
+Technical evidence:
+`35947303053` · **38/38 PASS · 3/3 WebGL2 · 0 errors**.
 
-R2 visible changes:
-- real small eave outside final bowed wall top;
-- remaining curb/path T-junction wedge closed;
-- shadow setup retuned with before/after evidence;
-- doors/windows distributed over eligible facades;
-- wall/roof/door/window colors use exact Racer Cologne harmonic donor.
+Human result:
+**FAIL**.
 
-Exact palette donor:
-`georg-doc/KFB-Stunt-Car-Race@cc80f4a1c6c509db9668df79fd53b13cee093a9d`
-→ `KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
-→ blob `38246785ec2c9089737b2a195673a3ad4c07bdf8`.
+Observed unresolved issues:
+- persistent light/shadow hard boundaries;
+- road/path/curb still reads as layered patchwork and produces junction artefacts;
+- roof/body still reads as separate lid + block;
+- facade colour/detail distribution remains seeded randomness rather than designed rhythm.
 
-Clean / Cartoon / Grotesque remain switchable and unchanged.
+Hard rule:
+**NO R3 PATCH PASS ON THIS FOUNDATION.**
 
-Recovery:
-`workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md`
+Next gate:
+**research known facade rhythm / asymmetric balance / repetition-with-variation / colour hierarchy + isolated proof of one shared road topology and one roof/body union.**
 
-Direct review:
-`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
-
-Exactly one next gate:
-**Georg ACCEPT / REJECT R2.**
-
-After ACCEPT only:
-LC-01 via `LOOK_COMPOSITION_01_2026-09-24.md`.
+The direct Hürth route remains evidence only, not an acceptance candidate.
