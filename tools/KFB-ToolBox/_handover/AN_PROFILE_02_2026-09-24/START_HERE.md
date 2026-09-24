@@ -106,3 +106,23 @@ Do not wait on Cloudflare for this slice.
 Provide the current Animation Studio as the direct human review artifact and ask Georg to judge only the usefulness/readability of the 33-clip Library + measured Data surface.
 
 Do not start WorldBuilder integration before that first consumer gate.
+
+
+## Review transport
+
+The two DC-based Chat wrapper attempts are frozen transport failures; see:
+`REVIEW_TRANSPORT_FAILURE_RECOVERY.md`.
+
+Current review source:
+`tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html`
+
+This is a plain Three.js review adapter over the real pinned actor + Motion Library/profile sources.
+
+Validation:
+- run `36055391088` / job `107820911138`: **SUCCESS**
+- plain review: **13/13 Chromium PASS**
+- full final owner run: **114/114 PASS**
+- 0 page errors
+- 0 failed source/module requests
+
+Use this plain review for Georg's current human gate. Do not revive the DC wrapper transports.
