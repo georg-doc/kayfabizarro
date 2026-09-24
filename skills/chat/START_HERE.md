@@ -904,3 +904,16 @@ Status: **PUBLIC_VERIFIED · GEORG HUMAN REVIEW PENDING**.
 
 Exactly one next gate: **Georg B1 picture review.**
 Curtain C1 remains HOLD.
+
+
+## 2026-09-24 · Billboard media line · B1 accepted / B2a current
+
+Billboard B1 is now **HUMAN_ACCEPTED** by Georg.
+
+Current planning/recovery SSOT:
+`tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md`
+
+Next bounded slice:
+**B2a · inline YouTube via official Three.js CSS3D pattern**, pinned to Three.js r160 / `d04539a76736ff500cae883d6a38b3dd8643c548`.
+
+Later proposals stay separate: B2b Living Mockup/Collage, B2c Talking City Lights, B3 cartoon body. Curtain C1 remains HOLD.
