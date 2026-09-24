@@ -1,3 +1,21 @@
+## 2026-09-24 · Human triage · broken/legacy Toolbox labs removed from current Tools
+
+Georg reported the following public Stage surfaces as broken, misleading or non-productive:
+- EyeRig Legacy: no useful EyeRig, unusable buttons/UI;
+- EyeRig Batch: persistent loading animation in front of character/FOV;
+- KayKit Motion Lab v1: incomplete animation set and non-useful UI versus expected Animation Lab / current ToolBox direction;
+- Ranged Calibration v1: wrong target axes and muzzle VFX below the muzzle;
+- Tileable Macro Seam Lab: no current utility/learning value;
+- World-Building Preflight: one of several failed/obsolete world proofs.
+
+Action:
+- removed all six from the current `tools` shelf;
+- preserved their repo/history as evidence/donors only;
+- Card Zone Lab v2 remains visible as **Recovery Reference / Donor** because Georg reports it looks good and it is still a valid source donor for Fluid/Stack/Beam/Card Cube;
+- productive EyeRig/Pose/Animation/WorldBuilder work stays in the v3 self-service catalog, not in these old Stage labs.
+
+No source/runtime files for the old labs were deleted.
+
 ## 2026-09-24 · Racer external status advanced to RKIT-06
 
 - Root cause for stale Racer card confirmed: Production Desk intentionally never fetches `external:true` repositories with the same-repo workflow token; Racer therefore remained on hand-maintained `lastKnown` PR #33 / head `71e7051…`.
