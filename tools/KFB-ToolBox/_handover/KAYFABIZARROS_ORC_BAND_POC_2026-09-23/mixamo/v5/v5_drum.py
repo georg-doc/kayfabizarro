@@ -63,7 +63,7 @@ def v5_hit_arm(P,K):
     sc=S(); Hcs={s:Vector((V4P[s]['sx']*P['hit_x'],P['hit_y'],P['skin_z']+0.25)) for s in 'rl'}
     sc.frame_set(HIT['r']+1); McR=chest_M(HIT['r']+1)
     sc.frame_set(HIT['l']+1); McL=chest_M(HIT['l']+1)
-    Wref={'r':hit_W2('r',McR,K['r'],Hcs['r'],(-1.0,-1.0,2.1))[0],'l':hit_W2('l',McL,K['l'],Hcs['l'],(1.0,-1.0,2.1))[0]}
+    Wref={'r':hit_W5('r',McR,K['r'],Hcs['r'],(-1.0,-1.0,2.1),P)[0],'l':hit_W5('l',McL,K['l'],Hcs['l'],(1.0,-1.0,2.1),P)[0]}
     return Hcs,Wref
 def pose_v5(s,Mc,K,e,Whit,P):
     sx=V4P[s]['sx']
@@ -74,7 +74,7 @@ def pose_v5(s,Mc,K,e,Whit,P):
     pole=Vector((sx*1.0,0.3,-0.6)).lerp(Vector((sx*1.0,0.3,-0.3)),e)
     w=ease(max(0.0,min(1.0,(e-0.1)/0.5)))
     r0=solve_arm(s,Mc,W,pole,1.0,70,0,0,Vector((0,0,1)))      # Handruecken oben (Treffer-Rolle)
-    tau=r0['tau']*(1-w)+(-sx)*P['tau_raise']*w                 # beim Ausholen Daumen hoch -> Keule steht
+    tau=(r0['tau']+sx*P.get('tau_hit_extra',0))*(1-w)+(-sx)*P['tau_raise']*w   # Treffer: etwas mehr Pronation -> Keulenkopf nach unten; Ausholen: Daumen hoch
     dev=V4P[s]['dev_hit']*(1-w)+(-sx)*P['dev_raise']*w
     return solve_arm2(s,Mc,W,pole,tau,dev)
 def shoulder(s,Mc): return A().matrix_world@(Mc@rest('chest').inverted()@rest('upperarm.'+s)).translation
@@ -87,8 +87,24 @@ def key_arms(P,K,Hcs,Wref):
         f=t+1; sc.frame_set(f); Mc=chest_M(f); res={}; row={'f':f}
         for s in 'rl':
             e=lift(s,t); W=shoulder(s,Mc)+rel[s]; err=None
-            if e==0.0: W,err=hit_W2(s,Mc,K[s],Hcs[s],Wref[s])
+            if e==0.0: W,err=hit_W5(s,Mc,K[s],Hcs[s],Wref[s],P)
             r=pose_v5(s,Mc,K[s],e,W,P); hc,g,c=club(s,r,K[s]); res[s]=r
             row[s]={'e':round(e,3),'tau':round(r['tau'],1),'flex':round(r['flex'],1),'hc':[round(x,3) for x in hc],'err':err}
         apply_pose(res,Mc,key=f); log.append(row)
     return log
+
+def hit_W5(s,Mc,K,Hc,W0,P):
+    W=Vector(W0)
+    for it in range(25):
+        r=pose_v5(s,Mc,K,0.0,W,P); hc,g,c=club(s,r,K); e=Hc-hc
+        if e.length<0.004: break
+        W=W+e*0.7
+    return W,(Hc-hc).length
+def set_limits(P):
+    a=A()
+    for s in 'rl':
+        sx=V4P[s]['sx']
+        c=a.pose.bones['lowerarm.'+s].constraints['KFB_Ellbogen']
+        lo,hi=-(P['tau_raise']+10),P.get('tau_hit_max',65)
+        if s=='r': c.min_y,c.max_y=math.radians(-hi),math.radians(P['tau_raise']+10)
+        else: c.min_y,c.max_y=math.radians(-(P['tau_raise']+10)),math.radians(hi)
