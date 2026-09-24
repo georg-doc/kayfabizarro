@@ -1,6 +1,6 @@
 # RETURN · KFB Motion Library 01 (Animation Intake 01, Part A) · 2026-09-24
 
-**Status: delivered for the Animation Lab v2 / WorldBuilder. Not yet looked at by Georg clip by clip.**
+**Status: ACCEPTED by Georg (2026-09-24) as a whole, judged from the contact sheets. A clip-by-clip review happens in the Animation Lab v2.**
 
 ## What is here
 - `KFB_Motion_Library_Rig_Medium.glb` and `KFB_Motion_Library_Rig_Large.glb`: each holds one armature (23 bones, no mesh) and **33 animations**. The animation name equals the catalogue `id`.
