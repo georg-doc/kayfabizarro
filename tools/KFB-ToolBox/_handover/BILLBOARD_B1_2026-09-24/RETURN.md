@@ -1,6 +1,6 @@
 # RETURN · Billboard B1 · content-fit media face · 2026-09-24
 
-Status: **PUBLIC_VERIFIED · HUMAN REVIEW PENDING · B1 ONLY**
+Status: **HUMAN_ACCEPTED · B1 COMPLETE · B2A NEXT**
 Owner: **KFB ToolBox / Billboard Media Residency**
 Repo: `georg-doc/kayfabizarro`
 Branch: `chatgpt-web/billboard-b1-2026-09-24`
@@ -64,7 +64,7 @@ Public measured aspects:
 - slogan `2.0`.
 
 Picture check from the exact public screenshot artifact: **4/4 modes visibly contain the intended source content**.
-This is evidence review, **not Georg human acceptance**.
+This evidence was subsequently **HUMAN_ACCEPTED by Georg on 2026-09-24**: “Okay, das passt gut.”
 
 ## Publication
 
@@ -90,7 +90,11 @@ The wrapper copies the tested multi-file result by exact blob; it does not rebui
 
 B0's already-recorded later tuning remains separate: card cartoon anatomy and 3D model proportions may both come slightly down. It is not part of B1 acceptance.
 
+## Human gate result
+
+**PASS · Georg accepted B1 on 2026-09-24.**
+
 ## Exactly one next gate
 
-**Georg picture-checks B1 at the direct Cloudflare route: card quarter → cover → video → slogan.**
-C1 remains HOLD until that B1 gate is answered.
+**B2a · replace B1's poster→overlay YouTube behavior with the pinned Three.js CSS3D YouTube pattern directly on the billboard face.**
+C1 remains HOLD; B2b/B2c/B3 stay planned, not started.
