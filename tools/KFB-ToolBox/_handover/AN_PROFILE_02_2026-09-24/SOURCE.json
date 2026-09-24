@@ -45,5 +45,30 @@
     "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/",
     "status": "HOLD_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED"
   },
-  "humanReview": "OPEN"
+  "humanReview": "OPEN",
+  "reviewTransport": {
+    "dcAttempts": [
+      {
+        "artifact": "AN_PROFILE_02_REVIEW.html",
+        "result": "HUMAN_FAIL_RAW_BINDINGS"
+      },
+      {
+        "artifact": "AN_PROFILE_02_REVIEW_v2.html",
+        "result": "HUMAN_FAIL_CHAT_VISUALIZATION_ERROR"
+      }
+    ],
+    "frozen": true,
+    "recoverySource": "tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html",
+    "technicalReviewHead": "ce3181bbf9114b7f00086368130fe610fd5810c7",
+    "actions": {
+      "run": 36055391088,
+      "job": 107820911138,
+      "status": "success"
+    },
+    "browser": "13/13 PASS",
+    "fullOwnerRun": "114/114 PASS",
+    "pageErrors": 0,
+    "failedSourceModuleRequests": 0,
+    "humanResult": "OPEN"
+  }
 }
