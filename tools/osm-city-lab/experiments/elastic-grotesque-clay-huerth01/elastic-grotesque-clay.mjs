@@ -106,15 +106,71 @@ export function buildElasticShell(building,anchor,cfg={}){
   for(let s=0;s<steps;s++)for(let i=0;i<base.length;i++){const j=(i+1)%base.length,A=rows[s][i],B=rows[s][j],C=rows[s+1][i],D=rows[s+1][j];idx.push(A,C,B,B,C,D);}
   addCap(idx,rows[0],rings[0],false);addCap(idx,rows.at(-1),rings.at(-1),true);
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();
-  return {geometry:g,params:P,topRing:rings.at(-1),topY:ringYs.at(-1),baseRing:rings[0]};
+  return {geometry:g,params:P,sourceRing:base,rings,ringYs,topRing:rings.at(-1),topY:ringYs.at(-1),baseRing:rings[0]};
 }
 function longestEdge(poly){
   const p=openFootprint(poly);let best={i:0,len:0};
   for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length],len=Math.hypot(b.x-a.x,b.z-a.z);if(len>best.len)best={i,len,a,b};}
   return best;
 }
+function signedAreaXZ(poly){
+  let a=0;
+  for(let i=0;i<poly.length;i++){const p=poly[i],q=poly[(i+1)%poly.length];a+=p.x*q.z-q.x*p.z;}
+  return a*.5;
+}
+function outsetRing(poly,distance){
+  if(!poly?.length||distance<=0)return poly?.map(p=>({...p}))||[];
+  const ccw=signedAreaXZ(poly)>0;
+  const outward=(a,b)=>{
+    const dx=b.x-a.x,dz=b.z-a.z,l=Math.hypot(dx,dz)||1;
+    return ccw?{x:dz/l,z:-dx/l}:{x:-dz/l,z:dx/l};
+  };
+  return poly.map((p,i)=>{
+    const prev=poly[(i-1+poly.length)%poly.length],next=poly[(i+1)%poly.length];
+    const n0=outward(prev,p),n1=outward(p,next);
+    let mx=n0.x+n1.x,mz=n0.z+n1.z,ml=Math.hypot(mx,mz);
+    if(ml<1e-5){mx=n1.x;mz=n1.z;ml=1;}
+    mx/=ml;mz/=ml;
+    const denom=Math.max(.42,Math.abs(mx*n1.x+mz*n1.z));
+    const miter=Math.min(distance*1.65,distance/denom);
+    return {x:p.x+mx*miter,z:p.z+mz*miter};
+  });
+}
+function nearestRingPoint(ring,target){
+  let best={distance:Infinity,index:0,u:0,source:ring[0]};
+  for(let i=0;i<ring.length;i++){
+    const a=ring[i],b=ring[(i+1)%ring.length],dx=b.x-a.x,dz=b.z-a.z,l2=dx*dx+dz*dz||1;
+    const u=clamp(((target.x-a.x)*dx+(target.z-a.z)*dz)/l2,0,1);
+    const q={x:a.x+dx*u,z:a.z+dz*u},d=Math.hypot(target.x-q.x,target.z-q.z);
+    if(d<best.distance)best={distance:d,index:i,u,source:q};
+  }
+  return best;
+}
+export function surfaceFrame(shell,target,t){
+  const P=shell.params,ring=shell.sourceRing||shell.baseRing,hit=nearestRingPoint(ring,target);
+  const a=ring[hit.index],b=ring[(hit.index+1)%ring.length],u=hit.u;
+  const qa=deformElasticXZ(a,t,P),qb=deformElasticXZ(b,t,P);
+  const ya=deformElasticY(a,t,P),yb=deformElasticY(b,t,P);
+  const position=new THREE.Vector3(
+    qa.x+(qb.x-qa.x)*u,
+    ya+(yb-ya)*u,
+    qa.z+(qb.z-qa.z)*u
+  );
+  const tangent=new THREE.Vector3(qb.x-qa.x,yb-ya,qb.z-qa.z).normalize();
+  const source={x:a.x+(b.x-a.x)*u,z:a.z+(b.z-a.z)*u};
+  const eps=.012,t0=clamp(t-eps,0,1),t1=clamp(t+eps,0,1);
+  const q0=deformElasticXZ(source,t0,P),q1=deformElasticXZ(source,t1,P);
+  const y0=deformElasticY(source,t0,P),y1=deformElasticY(source,t1,P);
+  const verticalRaw=new THREE.Vector3(q1.x-q0.x,y1-y0,q1.z-q0.z).normalize();
+  const normal=new THREE.Vector3().crossVectors(tangent,verticalRaw).normalize();
+  const dc=deformElasticXZ(P.c,t,P),dy=deformElasticY(P.c,t,P);
+  const radial=new THREE.Vector3(position.x-dc.x,position.y-dy,position.z-dc.z);
+  if(normal.dot(radial)<0)normal.multiplyScalar(-1);
+  const vertical=new THREE.Vector3().crossVectors(normal,tangent).normalize();
+  return {position,normal,tangent,vertical,source};
+}
 export function buildElasticRoof(building,shell){
-  const P=shell.params,base=shell.topRing,baseY=shell.topY,kind=building.roof?.type||'flat',h=Math.max(.35,Number(building.roof?.heightM)||.5),layers=6;
+  const P=shell.params,overhang=clamp(Math.min(P.extent.w,P.extent.d)*.032,.22,.38),base=outsetRing(shell.topRing,overhang),baseY=shell.topY,kind=building.roof?.type||'flat',h=Math.max(.35,Number(building.roof?.heightM)||.5),layers=6;
   const edge=longestEdge(building.footprint),ux=(edge.b.x-edge.a.x)/edge.len,uz=(edge.b.z-edge.a.z)/edge.len,vx=-uz,vz=ux;
   const pos=[],rows=[],rings=[],idx=[];
   for(let s=0;s<layers;s++){
@@ -129,20 +185,22 @@ export function buildElasticRoof(building,shell){
   addCap(idx,rows.at(-1),rings.at(-1),true);
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g;
 }
-function facadeNormal(a,b,t,P){
-  const da=deformElasticXZ(a,t,P),db=deformElasticXZ(b,t,P),dx=db.x-da.x,dz=db.z-da.z,l=Math.hypot(dx,dz)||1;
-  let nx=-dz/l,nz=dx/l,mid={x:(da.x+db.x)/2,z:(da.z+db.z)/2},cc=deformElasticXZ(P.c,t,P);
-  if(nx*(mid.x-cc.x)+nz*(mid.z-cc.z)<0){nx=-nx;nz=-nz;}
-  return {nx,nz,yaw:Math.atan2(nx,nz)};
-}
 export function protectedDetails(building,shell){
   const P=shell.params,p=openFootprint(building.footprint),edge=longestEdge(p),a=edge.a,b=edge.b,dx=b.x-a.x,dz=b.z-a.z;
   const r=mulberry32(stableHash('kfb-elastic-facade-v2:'+building.id)),out=[];
+  const pushDetail=(kind,u,t,w,h,d)=>{
+    const target={x:a.x+dx*u,z:a.z+dz*u},frame=surfaceFrame(shell,target,t);
+    out.push({
+      kind,
+      x:frame.position.x,y:frame.position.y,z:frame.position.z,
+      nx:frame.normal.x,ny:frame.normal.y,nz:frame.normal.z,
+      ux:frame.tangent.x,uy:frame.tangent.y,uz:frame.tangent.z,
+      vx:frame.vertical.x,vy:frame.vertical.y,vz:frame.vertical.z,
+      w,h,d
+    });
+  };
   const doorU=.16+r()*.68,doorW=1.45+r()*.55,doorH=2.35+r()*.55,doorT=clamp((doorH*.5)/P.h,.06,.22);
-  {
-    const base={x:a.x+dx*doorU,z:a.z+dz*doorU},q=deformElasticXZ(base,doorT,P),n=facadeNormal(a,b,doorT,P);
-    out.push({kind:'door',x:q.x+n.nx*.13,y:deformElasticY(base,doorT,P),z:q.z+n.nz*.13,yaw:n.yaw,w:doorW,h:doorH,d:.15});
-  }
+  pushDetail('door',doorU,doorT,doorW,doorH,.12);
   const wanted=2+(r()>.52?1:0),picked=[];
   for(let tries=0;tries<30&&picked.length<wanted;tries++){
     const u=.13+r()*.74,v=.25+r()*.50;
@@ -150,9 +208,6 @@ export function protectedDetails(building,shell){
     if(picked.some(w=>Math.hypot((u-w.u)*1.15,v-w.v)<.23))continue;
     picked.push({u,v});
   }
-  for(const w of picked){
-    const base={x:a.x+dx*w.u,z:a.z+dz*w.u},q=deformElasticXZ(base,w.v,P),n=facadeNormal(a,b,w.v,P);
-    out.push({kind:'window',x:q.x+n.nx*.105,y:deformElasticY(base,w.v,P),z:q.z+n.nz*.105,yaw:n.yaw,w:.82+r()*.34,h:1.65+r()*.55,d:.10});
-  }
+  for(const w of picked)pushDetail('window',w.u,w.v,.82+r()*.34,1.65+r()*.55,.08);
   return out;
 }
