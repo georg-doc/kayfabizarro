@@ -298,3 +298,60 @@ This chat cannot independently retrieve the Pages domain, therefore **PUBLIC_VER
 
 After ACCEPT:
 LC-01 from `LOOK_COMPOSITION_01_2026-09-24.md`.
+
+## 2026-09-24 · R2 CANDIDATE READY FOR HUMAN REVIEW
+
+Human source:
+`HUMAN_RESULT_HUERTH01_V2_R2_2026-09-24.md`
+
+Final R2 runtime:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+
+### Picture-visible R2 changes
+
+1. The roof now has a real eave annulus outside the final bowed wall-top contour, so the roof visibly overhangs the body rather than reading as a lid.
+2. Shared road nodes use asphalt cover through the full curb half-width, while path endpoints extend underneath the road; the reviewed curb/path T-junction no longer leaves an open pale triangular wedge.
+3. Elastic shadows now use a 4096 map, fixture-fitted frustum, small positive bias/normal-bias, and roofs cast but do not receive their own map; the final QA frame no longer shows the reported roof/ground banding.
+4. Doors/windows remain attached to the final bowed shell and are now distributed organically across every sufficiently long visible facade; wall/roof/door/window colors come from the exact Racer Cologne harmonic palette module.
+
+### Exact palette donor
+
+Repository:
+`georg-doc/KFB-Stunt-Car-Race`
+
+Commit:
+`cc80f4a1c6c509db9668df79fd53b13cee093a9d`
+
+File:
+`KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
+
+Blob:
+`38246785ec2c9089737b2a195673a3ad4c07bdf8`
+
+R2 imports an exact byte-copy mirror of that file. The runtime uses its OKLCH `makePalette()` generator with deterministic seed `2821914198`; the resulting scheme is `komplementaer`.
+
+The related StoryMode/card-semantic owner remains:
+`tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/terrain/world-context.js`
+(blob `478e8cb4a53ea15e5c51833fa30554224e581815`).
+
+R2 does **not** invent a new story/card system and does not pretend a concrete card triplet was supplied. That seam remains available for LC-01 / later consumer binding.
+
+### Tests
+
+Run `35947303053`: **38/38 PASS · 3/3 WebGL2 · 0 page/console errors**.  
+Artifact `10787192998`; digest
+`sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0`.
+
+Clean / Cartoon / Grotesque remain browser-booted unchanged. Elastic remains the default view.
+
+### Review
+
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+Wrapper is pinned to R2 `4cc496e7…`. No bundle/substitute preview.
+
+Exactly one next gate:
+**GEORG ACCEPT / REJECT R2.**
+
+After ACCEPT only:
+continue LC-01 via `LOOK_COMPOSITION_01_2026-09-24.md`.
