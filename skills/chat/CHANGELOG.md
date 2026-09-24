@@ -1,3 +1,105 @@
+## 2026-09-24 · KFB focus recovery · Flow intake + Work budget protection
+
+- Recovered current focus after Audio/ToolBox/WorldBuilder chat interruptions.
+- Audio calibration is human accepted; Music Performance is public-verified and awaits Georg only.
+- ToolBox core + Animation Studio Motion Library consumer are technically green; the repaired plain review path is green too (20/20 + 25/25 + 13/13 browser evidence).
+- Cologne World Zone bake is technically complete through real-browser reload proof; next WorldBuilder work is the small Flow-shell-to-bake adapter.
+- Three new Flow Design inbox exports were classified without promoting Inbox copies to owners.
+- Resident Band export is explicitly prevented from becoming another proprietary runtime; accepted content routes through existing Resident Scene / Resident Performance owners.
+- Current WSA/Work packet deliberately contains **no execution task**; TRACK_A stays with the documented Web/Race executor.
+- Details: `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`.
+
+## 2026-09-24 · Production Architecture v3 · IK parity + executor/model budget routing
+
+- Added a source-based A/B gate against Three.js `CCDIKSolver`: current Resident Atlas `reachChain()` remains owner until the same Rig_Medium/Orc-Brute comparison proves a better solver path.
+- Upstream CCD donor exposes rotation limits, step-angle limits, blend and distal-first links that the current unconstrained KFB reachChain does not; this is now `IK-CCDIK-PARITY-01` READY.
+- Every v3 briefing now carries a stable Execution Profile plus current Model / Reasoning / Budget metadata.
+- Budget-first defaults: GPT-5.6 Sol Web for normal/deep Web work; Claude Sonnet 5 for normal Design/Cowork/Blender; Cowork and Work are not primary defaults; Opus 5.5 is deep escalation only.
+- Added explicit WSA mount handoff for existing HUB-CTRL #202: operational Today lanes stay separate from the expanded self-service catalog; no second Hub and no Work review pass.
+- Added architecture-chat recovery handoff so a replacement chat can continue this planning/dispatch role from GitHub state.
+- v3 catalog now **13 strands / 79 jobs / 36 READY / 43 HOLD**; architecture/source checks **158/158 PASS**.
+- Expanded self-service catalog is still **not publicly mounted**; exact KFB Hub public proof remains pending under the existing HUB-CTRL owner.
+
+## 2026-09-24 · Production Architecture v3 · Character / Resident workflow
+
+- Resident Atlas / ToolBox is now the default authoring surface for static pose, prop fit, scene composition and reusable Resident modules.
+- Blender MCP is reserved for new time-based motion, retarget, multi-frame repair, rig/weights/topology and bake/export.
+- Added browser Pose → Blender handoff: Georg authors target/contact pose in Resident Atlas; Blender executes only the required time-based correction.
+- KayfaBizarros direction is now a baseplate-free Resident Performance Module with song/action/pose refs; drummer starts from browser reference posing rather than another automatic arm solver.
+- Existing Rig_Legacy is protected; no generic Legacy rerigging job. Blender only for selected custom Legacy derivatives or missing external motion.
+- Prepared future Frizzle-Orc Medium/Large/Legacy Actor Family Factory while preserving destination rigs; exact Frizzle-Orc/Musknacker/blank-head sources remain SOURCE_REQUIRED.
+- Added READY `RESIDENT-BAND-MODULE-01` + `POSE-TO-BLENDER-01`; three source/dependency-gated Blender jobs remain HOLD.
+- v3 catalog now **13 strands / 78 jobs / 35 READY / 43 HOLD**; checks **134/134 PASS**.
+- Current RKIT/track Blender session remains uninterrupted; no public Hub/Cloudflare Live or runtime owner changed.
+
+## 2026-09-24 · Production Architecture v3 · P2 Skills/runtime consolidation
+
+- Added a compatibility-first census route for the mixed `skills/` tree; no runtime Skill/old app was moved or deleted.
+- Old CubePet embed stays valid for canonical 24 CubePets but is no longer the universal actor-embed route; current non-CubePet embedding points at `kfb-rigs-embed-v3` and current actor/FaceHost owners.
+- Card/PDF consolidation now distinguishes the performant Viewer-v4/`kfb-corpus.js` layer from canonical `kfb-card-builder.js` rendering/crop/Ink, with Almanac metadata above them.
+- Ink `family:'band'` is recorded as the existing continuous ring/ribbon implementation; future 3D shoreline/track/rope/card-edge renderers are adapters, not another Ink canon.
+- ToolBox final capability set now explicitly retains Talk/Viseme/Voice/Bubbles and Material Zone Color/Texture Surface.
+- `skills/SOT_REGISTRY.md`, old embed bundles and binaries sitting directly under `skills/` are flagged for import/consumer census before any archive/move.
+- Added P2 jobs: Skills Census → Current Runtime Shelf → Compatibility Archive, plus Unified PDF/Card Viewer Core and Ink 3D Adapters.
+- v3 catalog is now **13 strands / 73 jobs / 33 READY / 40 HOLD**; checks **117/117 PASS**. P2 stays out of Today/default priority while P0/P1 work exists.
+- No public Hub/Cloudflare Live, merge state or product runtime changed.
+
+## 2026-09-24 · Production Architecture v3 · Card Zones + Player Meta / Adaptive Interface
+
+- Promoted Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface to primary v3 production strands.
+- Exact Card Zone v2 remains behavior authority; StoryMap's source-locked `kfb-fluid-v2/card-zone-v2-fluid-source.js` is the reusable fluid donor; old `kfb-fluid-v1` is explicitly DEAD/diminished evidence, not authority.
+- Preserved Card Stack/unfold/reveal, Beam/projector, six-face Card Cube/FaceFocus and card-seeded local-zone grammar for later WorldBuilder placement.
+- Player Journey consolidates versioned import/export/migrations, card collection, Diary, POP, inventory, songs, gifts and cross-mode semantic events without reviving old Overworld runtime or mixing player state with authored World saves.
+- Universal POP moves to Player Journey; Travel's current `popScore` remains a presentation/local donor.
+- Georg's 20-visible-slot Backpack is recorded as current product direction; exact old sketch source remains unpinned rather than falsely claimed.
+- Adaptive HUD direction: upper-right real-card Almanac fan in ordinary gameplay, context-provided real minimap/instruments, immersive Almanac hides ordinary game HUD.
+- Measured authoring-UI issue: current inline object menu is 28×28 px with 13 px glyphs; new legibility brief preserves edit behavior while enlarging/clarifying context-local controls.
+- v3 catalog now **13 strands / 68 jobs / 32 READY / 36 HOLD**; architecture/source checks **96/96 PASS**.
+- Public Hub/HUB-CTRL, Cloudflare Live, merge state and product runtimes remain unchanged.
+
+## 2026-09-24 · Production Architecture v3 · RKIT / World Bake / Look / Audio-VFX
+
+- Resolved Blender RKIT-02 decisions: Rapier is the stunt airborne/contact basis; accepted width ladder stays 10.8 / 14.4 / 18.0 / 21.6 m; preserve ~12 m Base Jump + add ~30 m Hero step-down; Race owns takeoff/landing and moving-support contact.
+- Chose the fast product path: no general track editor now. Author a few route recipes (Stunt Eight, Oval+Exit, Flow Loop) and compile/bake reusable Track Modules.
+- Formalized cached OSM World Zones: Cologne first from existing `dom-zentrum-v0`; Barcelona second portability proof; authored landmarks remain freely placeable without pretending they belong to source OSM geography.
+- Hürth R2 stays frozen; next look proof adds explicit height-dependent Elastic torsion/twist from current GROTESQUE / BuildingElastic / LandmarkElastic donors.
+- Added human-facing Sound Audition, Music Performance and VFX Audition workflows so Georg selects by meaning/hearing/moving previews rather than opaque filenames.
+- v3 catalog is now **11 strands / 53 jobs / 26 READY / 27 HOLD**; architecture/source checks **73/73 PASS**.
+- No public Hub/Cloudflare Live, runtime owner or merge state changed.
+
+## 2026-09-24 · Production Architecture v3 · gameplay/world expansion
+
+- v3 now covers **11 primary production strands / 45 copy-ready jobs** with a strand-first collapsed Hub model.
+- Added Combat/Choreography: actor-family capability matrix, real melee/ranged contact, two-fighter Duel Studio, autonomous NPC Match Director, Card Tower encounters and Open-World Combat adapter while Combat Arena remains damage/reward owner.
+- Added Cube Pets/Actor Identity: canonical 24-pet stack retained; CubePet Bunny, legacy Arena FrizzleBob and Driver Graft FrizzleBob are explicit separate identities.
+- Added Travel Modes/World Surfaces: FLAT/SPHERE/TORUS topology is independent from Ground/Flight/Drive/Boat/Air/Freefall mode; one active movement writer.
+- TinySkies Boat/Plane are retained as source-backed upstream donors; they are not falsely claimed as already ported.
+- Added Vertical/Babel/Card Tower route; remembered auto-jump Platformer source stays `SOURCE_REQUIRED` until recovered.
+- Added Town/ChatterBox/NPC Life with encounter beats, filtered existing memory, gifts and placeable Living Resident Scenes.
+- Added Shared Stage/Transitions: Spindle, Theatre Curtain, Stage Recipe and semantic VFX/SFX maps.
+- Adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames are routed as modules instead of new global owners.
+- Current architecture/source validation: **52/52 PASS**.
+- Public Hub/HUB-CTRL, product runtimes, Cloudflare Live and merge state remain unchanged.
+
+## 2026-09-24 · Production Architecture v3 complete strands
+
+- v3 now exposes five complete production strands with 19 copy-ready jobs instead of only the next micro-slices.
+- ToolBox route explicitly includes EyeRig Production Studio, Fractal Scene + Pose Studio, Animation Studio, Vehicle Motion/Driver Studio, Resident Scene Studio + live Resource Picker and the coherent production milestone.
+- Animation/Resident route reuses Blender performance batching, Resident Atlas browser posing and measured MotionProfiles.
+- WorldBuilder route is preplanned through Authorable Place → Live Search/Fractal Edit → real locomotion/motion → OSM district → Race bridge → God Mode.
+- Racer route is preplanned from current PR #33 R3d TUNE through Anatomy Foundation → route-driven visual module → contact → WorldBuilder bridge.
+- Existing Resident Atlas Bone-Posing, EyeRig v6/Vehicle FaceHost, Motion Lab/KCL and Asset Librarian picker were recovered as donors rather than rebuilt.
+- `HUB_BRIEFING_CATALOG.json` v2 carries READY and dependency-gated HOLD jobs; validation **31/31 PASS**.
+- Public Hub/HUB-CTRL was not overwritten; no Live/merge action.
+
+## 2026-09-24 · Production Architecture v3 candidate
+
+- Georg approved the direction away from micro-gate/control-plane production toward self-service coherent artifacts.
+- Added `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/` with architecture contract, copy-ready Web/ToolBox/Blender/WorldBuilder jobs, current input locks, Hub briefing catalog, tests and Return.
+- Normal production now prefers direct real-source chat review; Cloudflare is milestone-only and full recovery exports are exception-only.
+- Claude Design / Blender MCP may author without GitHub write access; a GitHub Bridge owns reviewed integration.
+- PR #204 remains Draft; no runtime owner, merge or Live state changed.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY

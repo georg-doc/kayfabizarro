@@ -1,0 +1,789 @@
+{
+  "schema": "kfb.production-architecture.v3-input-locks/8",
+  "updated": "2026-09-24",
+  "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
+  "jobs": {
+    "toolbox-coherent-integration-01": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "tools/KFB-ToolBox/",
+      "currentIntegration": {
+        "pr": 185,
+        "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+        "head": "2833674b36be707fa4d14c8b532faee78ef3ba28"
+      },
+      "acceptedFunctionalBaseline": {
+        "source": "Dropbox /CLAUDE/KFB ToolBox v0.5/KFB-ToolBox/stage-first/src/KFB ToolBox Stage-First v1.dc.html",
+        "sha256": "08f9108a6a2a556d0e1e2e34ce564842062a4fdd77a80fb1020a8e723b688fba",
+        "note": "Georg-accepted working Stage-First baseline; do not rebuild from the smaller concept mockup."
+      },
+      "requiredOwners": [
+        "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+        "tools/KFB-ToolBox/lib/edit-layer.js",
+        "kfb.scene-patch.v1 persistence",
+        "Resident Atlas recipes",
+        "EyeRig v6 existing profiles"
+      ],
+      "residentTargets": [
+        "goth-girl",
+        "orc-warband",
+        "animatronic"
+      ],
+      "success": "Actor → Resident/Stage → select → Move/Rotate/Scale/Drop → Save → Reload → continue in one coherent ToolBox artifact",
+      "forbid": [
+        "second roster",
+        "second editor",
+        "second Resident database",
+        "new EyeRig",
+        "placeholder actor on source failure",
+        "Cloudflare debug loop"
+      ]
+    },
+    "blender-resident-performance-batch-01": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "Resident / Animation authoring via Blender MCP",
+      "provenBlenderPath": {
+        "pr": 192,
+        "branch": "claude/blender-mcp-animation-poc-2026-09-23",
+        "head": "b49fb6e1adde070d658e1cc21dadb3294164cb29",
+        "result": "reproducible Blender script + GLB + preview; human visual PASS about 80 percent"
+      },
+      "motionLibrary": {
+        "pr": 197,
+        "branch": "claude/motion-library-01-2026-09-24",
+        "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+        "path": "media/3D_Assets/Animations/KFB_Motion_Library/",
+        "facts": "33 clips each for Rig_Medium and Rig_Large; three.js GLTFLoader + AnimationMixer checked"
+      },
+      "warbandCurrent": {
+        "pr": 195,
+        "branch": "claude/orb-p1-return-postmortem-2026-09-23",
+        "head": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+        "human": "leader accepted; guitarist accepted; drummer v1-v4 rejected; v5 restores v0 baseline"
+      },
+      "residentAtlasPin": "10f661a542e2553b4d3433bfc5b45dfc1401e660",
+      "success": "one or more reusable Resident performances authored/exported in a productive batch with visual previews and compact batch index",
+      "forbid": [
+        "new runtime gameplay owner",
+        "automatic Medium↔Large retarget assumption without source proof",
+        "human gate for each bone/measurement",
+        "manual GitHub heavy-file upload during every authoring turn"
+      ]
+    },
+    "worldbuilder-capability-r1": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "KFB ToolBox / WorldBuilder",
+      "measuredFoundation": {
+        "pr": 203,
+        "branch": "work/worldbuilder-w0-source-lock-2026-09-24",
+        "head": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+        "publicReview": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/",
+        "facts": "10/10 world gates PASS; human foundation decision pending"
+      },
+      "terrainAuthoringDonor": {
+        "pr": 190,
+        "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+        "head": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf",
+        "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/",
+        "role": "accepted technical donor for non-destructive Raise/Lower sculpt"
+      },
+      "sharedObjectEditor": {
+        "pr": 186,
+        "branch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+        "head": "7267185cdbdc60e576b946ee589f0b2e932c8c8b",
+        "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+        "accepted": "R2 Move/Rotate/free Scale/Drop/World-Local/Close + Save/Reload roundtrip"
+      },
+      "motionLibrary": {
+        "pr": 197,
+        "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+        "role": "later locomotion/interaction clip source; not required to complete R1"
+      },
+      "success": "walk → sculpt → place/select → move/rotate/scale/drop → save → reload → continue in the measured WB-W0 place",
+      "deferForR1": [
+        "black tree/material repair unless it blocks authoring review",
+        "animation blend polish",
+        "outline policy",
+        "OSM expansion",
+        "vehicles",
+        "weather",
+        "God Mode"
+      ],
+      "forbid": [
+        "second terrain truth",
+        "second object picker/editor",
+        "second persistence schema",
+        "restart from rejected WorldBuilder v1 foundation",
+        "measurement-only human gate",
+        "Cloudflare debug loop"
+      ]
+    },
+    "web-quick-3d-review": {
+      "ownerRepo": "variable",
+      "owner": "existing named product/tool owner",
+      "success": "one real-source directly clickable 3D review artifact answering one visual question",
+      "forbid": [
+        "proxy mesh in place of mandated donor",
+        "new runtime owner",
+        "measurement dashboard as primary human surface",
+        "Cloudflare deployment solely for the quick visual check"
+      ]
+    }
+  },
+  "sharedSources": {
+    "toolboxIntegration": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 185,
+      "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+      "head": "2833674b36be707fa4d14c8b532faee78ef3ba28"
+    },
+    "eyeRigBatch": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 104,
+      "branch": "toolbox/eye-rig-batch-2026-09-18",
+      "head": "e277c3456651d314a01adea046e0105d2a12cdd1",
+      "path": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md"
+    },
+    "motionLab": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 127,
+      "branch": "chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20",
+      "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6"
+    },
+    "creatorMotionResearch": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 107,
+      "branch": "chatgpt-web/kaykit-creator-learning-2026-09-19",
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "path": "tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md"
+    },
+    "motionLibrary": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 197,
+      "branch": "claude/motion-library-01-2026-09-24",
+      "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/"
+    },
+    "residentAtlas": {
+      "repo": "georg-doc/kayfabizarro",
+      "head": "10f661a542e2553b4d3433bfc5b45dfc1401e660",
+      "path": "tools/resident_atlas_s6/"
+    },
+    "residentPoseStudio": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "path": "tools/resident_atlas_s6/lib/studio.js",
+      "contract": "object G/R/S + Bone-Posing + persistent <resident>.studio-patch.json"
+    },
+    "sharedSceneEditor": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 186,
+      "branch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+      "head": "7267185cdbdc60e576b946ee589f0b2e932c8c8b",
+      "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "contract": "kfb.scene-patch.v1"
+    },
+    "assetLibrarianPicker": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_handover/UI_RESET_MINIMAL_STAGE_FIRST_2026-09-15/ASSET_LIBRARIAN_INTEGRATION_2026-09-15.md"
+    },
+    "vehicleAuthoring": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "paths": [
+        "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/docs/LIVING_frizzlegraft.md",
+        "tools/KFB-ToolBox/_inbox/KFB Vehicle Animation Lab v4/KFB_Vehicle_Lab_v4/"
+      ]
+    },
+    "worldFoundation": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 203,
+      "branch": "work/worldbuilder-w0-source-lock-2026-09-24",
+      "head": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+      "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/"
+    },
+    "terrainAuthoring": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 190,
+      "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+      "head": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf"
+    },
+    "racer": {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "pr": 39,
+      "branch": "chat/rkit-06-trankgasse-2026-09-24",
+      "head": "53219c9b7ee3d1abe0ef1b0e5364863b42014ea5",
+      "status": "RKIT-06 review candidate; geometry only; stacked on #38→#34; not runtime-integrated",
+      "next": "Race/Rapier run on TRACK_A_STUNT_8, then tune geometry only from measured runtime results"
+    },
+    "combatArena": {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "main": "f6a59ad15b9ffcf3164b0ab013f223962b63f61f",
+      "actorIntegration": {
+        "pr": 5,
+        "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+        "head": "d6cf532e64d45fd3117775ec61cfc87b9e948ac0"
+      },
+      "planning": {
+        "pr": 6,
+        "branch": "wsa/ca2-kaykit-prep-2026-09-20",
+        "head": "735b5449bf09fb1a069d4a81db44608a58166677"
+      },
+      "melee": {
+        "pr": 7,
+        "branch": "chatgpt-web/ca2-04-melee-vfx-sfx-2026-09-20",
+        "head": "f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06"
+      },
+      "legacy": {
+        "pr": 10,
+        "branch": "chatgpt-web/ca2-legacy-00-readiness-2026-09-22",
+        "head": "663f0610eb960f322d67b078f1302d0c6178d1c2"
+      },
+      "meleeBrief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/CA2_04_MELEE_CHOREOGRAPHY_VFX_SFX_LAB.md",
+      "spindleBrief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md",
+      "cardBrief": "_handover/A2_CARDS/BRIEFING.md"
+    },
+    "travelModes": {
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "main": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+      "modeBridge": {
+        "pr": 38,
+        "branch": "chatgpt-web/travel-mode-bridge-tmb2-double-space-2026-09-23",
+        "head": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
+        "human": "Ground→Flight 400 ms accepted; TMB-3 HOLD"
+      },
+      "contract": "travel/CONTRACT.md",
+      "tinyskiesInventory": {
+        "source": "Dropbox /CLAUDE/KFB Travel Globe/KFB Travel Globe v13-2/docs/QUELLE_tinyskies-Inventar.md",
+        "upstream": "cursor/globefly-multiplayer-globe-flight-game@2659a5cc987d",
+        "facts": "Carpet, Boat, Plane; BoatMesh includes geometric foam waterline; vehicle feature-table pattern"
+      }
+    },
+    "cubePets": {
+      "repo": "georg-doc/kayfabizarro",
+      "entry": "media/3D_Assets/kfb-pets.js",
+      "entryBlob": "084cd49a6ed6e2020c0066a166827c2a3d34c6e6",
+      "contract": "media/3D_Assets/kfb-pets.json",
+      "contractBlob": "cef6cca9cc69a6cb3c0b4a9d39f6b15579cbf055",
+      "count": 24,
+      "canonicalFrizzleBob": "bunny / animal-bunny.glb",
+      "note": "CubePet Uncle FrizzleBob is a separate actor identity from legacy Arena FrizzleBob and Rig_Medium Driver Graft."
+    },
+    "frizzleBobIdentities": {
+      "cubePet": {
+        "id": "cube-frizzlebob",
+        "source": "media/3D_Assets/kfb-pets.json#bunny",
+        "description": "24-CubePet stack; animal-bunny.glb; EyeRig/PetMouth/PetMotion"
+      },
+      "legacyArena": {
+        "id": "legacy-arena-frizzlebob",
+        "repo": "georg-doc/KFB-Combat-Arena",
+        "source": "combat-arena-v1/frizzlebob.v1.js + FrizzleBob_Yellow_Gun.gltf",
+        "description": "historical/current Arena Legacy option; do not confuse with Driver Graft"
+      },
+      "driverGraft": {
+        "id": "frizzlebob-driver-graft",
+        "source": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+        "description": "Rig_Medium host + current FrizzleBob graft; ToolBox/modern actor line"
+      }
+    },
+    "townNpcLife": {
+      "repo": "georg-doc/kayfabizarro",
+      "town": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "townBlob": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+      "chatter": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "chatterBlob": "9025a43f042cf055d19851c9a93a6ddd016e3c36",
+      "encounterBeats": [
+        "approach",
+        "greet",
+        "offer",
+        "react",
+        "decline",
+        "leave"
+      ],
+      "memoryRule": "reuse Journey/event+card context as filtered NPC memory; do not create a second memory system"
+    },
+    "verticalWorld": {
+      "repo": "georg-doc/kayfabizarro",
+      "babelBrief": "skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/BABEL_HEX_PLATFORM_GENERATOR_V1_BRIEF.md",
+      "babelBlob": "c9d609b23f6940ea27ffc03a2e13bc99712e46c5",
+      "cardZone": {
+        "pr": 156,
+        "branch": "planning/toolbox-card-zone-v3-hex-project-islands-2026-09-21",
+        "head": "ee0f9bb6d738c538e042f799e5fb6f9b20893a01"
+      },
+      "autoJumpSource": "SOURCE_REQUIRED",
+      "rule": "failed Platformer/Babel compositions are donor/failure evidence only until exact source is pinned"
+    },
+    "worldSurfaceAdapter": {
+      "repo": "georg-doc/kayfabizarro",
+      "brief": "tools/KFB-ToolBox/_handover/WORLD_BUILDING_PREFLIGHT_WEBCHAT_2026-09-22/START_HERE.md",
+      "blob": "f13cfe80443075f6d2fd2b507452562481a8a63b",
+      "firstTopologies": [
+        "FLAT",
+        "SPHERE",
+        "TORUS"
+      ],
+      "rule": "same semantic world recipe through topology adapter; travel mode is orthogonal to surface topology"
+    },
+    "theatreCurtain": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 114,
+      "branch": "chat/gds-theatre-curtain-v1-2026-09-20",
+      "head": "cd9c04cbf009b1211b9b6b008162b9d322d6e152",
+      "brief": "skills/chat/workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md",
+      "briefBlob": "d4ecf7526000d4caf36010154f85eefa42e9b885",
+      "rule": "reuse v1 cloth runtime; refine tieback/swag/crease artifacts before broad consumer rollout"
+    },
+    "spindleSky": {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "planningPr": 6,
+      "planningHead": "735b5449bf09fb1a069d4a81db44608a58166677",
+      "brief": "_handover/CA2_KAYKIT_ACTORS_2026-09-20/prompts/SKY_01_SPINDLE_MODULE.md",
+      "contractCandidate": "kfb.environment.spindle-sky/0.1-candidate"
+    },
+    "racerTrackKit": {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "rkit01": {
+        "pr": 34,
+        "branch": "chat/rkit-01-track-kit-2026-09-24",
+        "head": "f368dd0c71eb2798bcd057d30196cb8da4d967b6"
+      },
+      "rkit02": {
+        "pr": 35,
+        "branch": "chat/rkit-02-stunt-modules-2026-09-24",
+        "head": "37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9"
+      },
+      "rkit03": {
+        "pr": 36,
+        "branch": "chat/rkit-03-track-recipe-2026-09-24",
+        "head": "ac4a57cf32fc8e3c26162735c30e634dad3f331c"
+      },
+      "rkit04": {
+        "pr": 37,
+        "branch": "chat/rkit-04-switch-pit-2026-09-24",
+        "head": "3c002235a297cd8bb3343d8b4a721d10fe7e549a"
+      },
+      "rkit05": {
+        "pr": 38,
+        "branch": "chat/rkit-05-flap-return-2026-09-24",
+        "head": "98bc4869f06f4551a602bf03aa7287befd66ecdc"
+      },
+      "rkit06": {
+        "pr": 39,
+        "branch": "chat/rkit-06-trankgasse-2026-09-24",
+        "head": "53219c9b7ee3d1abe0ef1b0e5364863b42014ea5"
+      },
+      "currentTop": "rkit06",
+      "currentGuide": "_handover/RKIT_TRACK_KIT_2026-09-24/RKIT_KIT_GUIDE.md",
+      "currentReturn": "KFB Cologne Race Option C-3/rkit-06/RETURN.md",
+      "physicsBasis": "Rapier g=15 m/s² downward, speed basis 27 m/s, proven physical ramp; v0.8 handling remains feel donor",
+      "widthLadder": [
+        10.8,
+        14.4,
+        18,
+        21.6
+      ],
+      "currentTrackA": "TRACK_A_STUNT_8: figure-eight, Hero/Base jumps, Pit Lane, SWITCH_Y, flap-return/tunnel shortcut",
+      "osmStreet": "Trankgasse real OSM line from dom-zentrum-v0, baked street + GLB in OSM frame",
+      "rule": "RKIT owns geometry/metadata only; Race owns contact/physics/AI/triggers; WorldBuilder owns placement"
+    },
+    "osmBake": {
+      "repo": "georg-doc/kayfabizarro",
+      "firstZone": "tools/osm-city-lab/data/dom-zentrum-v0/",
+      "buildContextScript": "tools/osm-city-lab/scripts/build-dom-zentrum-design-context.mjs",
+      "buildContextScriptBlob": "92ac7dd9a48f7bf9c9b0471d57a6b9a647fb7a96",
+      "rule": "fetch/normalize/compile once; runtime/editor loads versioned baked World Zone package; no live Overpass dependency"
+    },
+    "elasticTorsion": {
+      "repo": "georg-doc/kayfabizarro",
+      "failedCurrent": {
+        "pr": 194,
+        "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+        "head": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea",
+        "status": "FROZEN_AFTER_TWO_FAILED_REPAIR_PASSES"
+      },
+      "grotesqueDonor": "tools/osm-city-lab/src/style/cartoon-city.js",
+      "grotesqueDonorBlob": "d08c19fc45d98546b7ef2803f2ddbcb73b7f6782",
+      "rule": "new isolated architecture proof only; restore explicit height-dependent torsion/twist, do not patch failed Hürth R2"
+    },
+    "audioFxAudition": {
+      "repo": "georg-doc/kayfabizarro",
+      "vfxReview": "tools/KFB-ToolBox/_inbox/KFB_VFX_01_REVIEW/github.md",
+      "vfxReviewBlob": "b208eb36d869078242c93c617de92cf10d873e36",
+      "semanticAudioDonors": [
+        "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/petstudio-v9/kfb-pinball-audio.js",
+        "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/petstudio-v9/kfb-pinball-sfx.json",
+        "georg-doc/KFB-Combat-Arena modules/kfb-combat-sfx.v2.json + kfb-arena-sfx.v4.json",
+        "Race telemetry SFX POC in RECOVERY.md"
+      ],
+      "rule": "human-readable audition cards and semantic event ids; games never require Georg to choose opaque filenames"
+    },
+    "cardZoneModules": {
+      "repo": "georg-doc/kayfabizarro",
+      "fullSource": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+      "fullSourceBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72",
+      "codeMap": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/docs/CODE_MAP.md",
+      "codeMapBlob": "7953203a1c3be80d719db5c62136924c8c475753",
+      "exactFluidDonor": "tools/KFB-ToolBox/_inbox/KFB StoryMap v1/kfb-fluid-v2/card-zone-v2-fluid-source.js",
+      "exactFluidDonorBlob": "97e3e0813cb5693a64863482ab96a601e88f5104",
+      "storyMapHousekeepingBlob": "f2656b5cc42539ec28bb2cc6f96b524bc8d51a64",
+      "oldExtractionMap": "tools/KFB-ToolBox/_inbox/kfb-toolbox-v1.1/tools/KFB-ToolBox/MODULE_MAP.md",
+      "oldExtractionMapBlob": "c9f3c7ca4b0c72f7fb7311cccce471ca37d22952",
+      "authorityRule": "Original Card Zone Lab v2 remains behavior authority. StoryMap fluid-v2 is the source-locked exact fluid donor. Old kfb-fluid-v1 extraction is evidence only where not revalidated and must not override the source.",
+      "sourceCapabilities": [
+        "animated moat/river/pond fluid shader with waterdudv.jpg + water.jpg",
+        "Card Cube six content faces + face focus",
+        "3D card stack/deck",
+        "card unfold/reveal",
+        "projection/beam",
+        "card-seeded zone/story/palette/fluid/wear/texture/moat parameters"
+      ]
+    },
+    "playerJourneyMeta": {
+      "repo": "georg-doc/kayfabizarro",
+      "journeyDonor": "overworld/overworld/journey.js",
+      "journeyDonorBlob": "ad58ef4239254f42a994ada3e729dd820fa1806c",
+      "currentFields": "versioned import/export + cards + diary + reputation + quests + hero + zones + afterglow material",
+      "gameDesignConcept": "skills/KFB Setup Game Design/KFB Design-Bootstrap_v02/docs/gruendung/SESSION_EXPORT_Workspace_A_KFB_Game_Design_2026-09-09_v3.md",
+      "gameDesignConceptBlob": "f7528e5d9a54cfd71f68cab1223c1916a2cc97c2",
+      "fractalAlmanacHistoricalDonor": "Dropbox /CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/frizzlebob_fractal_almanac_cowork_briefing.md",
+      "fractalAlmanacHistoricalModified": "2026-07-09T17:24:58Z",
+      "popHudDonor": "travel/wip/travel_globe_wsa/globe-v13/collect-hud.js",
+      "popHudDonorBlob": "e73aec107a9d3cf811a025ccbe6b2730e21fcfe5",
+      "raceHudV3": "kfb-hub/stage/stunt-world/hud-game-v3/SOURCE.json",
+      "raceHudV3Blob": "affb1ba1d175351fa5d7b30474afb4c421f4dd83",
+      "inventory20SourceStatus": "USER_DIRECTION__HISTORICAL_SOURCE_NOT_YET_PINNED",
+      "popRule": "POP is cross-mode progression/reaction currency. Existing Travel popScore is a presentation/local donor, not the future durable account owner.",
+      "persistenceRule": "Player Journey/Meta stores semantic facts and refs. Authored WorldBuilder world state remains a separate owner."
+    },
+    "interfaceGrammar": {
+      "repo": "georg-doc/kayfabizarro",
+      "sharedEditLayer": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "sharedEditLayerBranch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+      "sharedEditLayerBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+      "currentResidentUi": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/KFB_Resident_Atlas_S7.html",
+      "currentResidentUiBlob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3",
+      "measuredCurrentInlineMenu": "28x28 CSS px buttons; 13px glyphs; symbols ✥ ⟳ ⤢ ⬓ ⊹ ✕",
+      "userFinding": "icons are too small/ambiguous; function is learned by position rather than recognisable symbol",
+      "rule": "Player HUD and authoring tools share visual tokens/icon semantics/state language, but remain separate contextual surfaces. No universal dashboard."
+    },
+    "skillsRuntimeContracts": {
+      "repo": "georg-doc/kayfabizarro",
+      "priority": "P2",
+      "consolidationDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md",
+      "staleRegistry": {
+        "path": "skills/SOT_REGISTRY.md",
+        "blob": "71cdf959cfef88b5ec280009c82160d45907516d",
+        "status": "STALE_2026-07-24__DO_NOT_USE_AS_CURRENT_WITHOUT_RECONCILIATION"
+      },
+      "actorEmbed": {
+        "oldCubePetSkill": {
+          "path": "skills/EMBED_CUBE_PET_FULL_v2.2.md",
+          "blob": "9a22e423d5ba7e1783cbe73dfcdf8939d9435a1e",
+          "status": "LEGACY_GENERAL_ENTRY__CURRENT_FOR_CANONICAL_24_CUBEPETS_ONLY"
+        },
+        "currentRigEmbed": {
+          "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md",
+          "blob": "5ac6d3ecb81cc2363b7eee8933e609266de77733",
+          "status": "CURRENT_NON_CUBEPET_EMBED_DONOR"
+        },
+        "currentRigging": {
+          "path": "tools/KFB-ToolBox/KFB ToolBox (studio v17 - rigging v1 - animation v2)/WSA_2026-09-13/LIVING_RIGGING.md",
+          "blob": "fdb4fec02ff28f561883cf8721e2ae111e36f77d"
+        },
+        "actorPlatformBrief": {
+          "path": "skills/chat/backlog/CLAUDE_DESIGN_V17_ACTOR_PLATFORM_DELIVERABLES_2026-09-13.md",
+          "blob": "7549e6694a3533b6bbccbb423e971a72a4e38035"
+        },
+        "rule": "New work uses family dispatch. CubePets keep their canonical pet stack; Graft/Carl/native KayKit/FaceHost actors use their current owners. No consumer reconstructs face/eyes/mouth."
+      },
+      "cardPdf": {
+        "ssot": {
+          "path": "skills/SSOT_KFB_CardBuilder_PDF.md",
+          "blob": "122f6923fe78a58d0f188a5a0331d9d6ed270f4d"
+        },
+        "cardBuilder": {
+          "path": "skills/kfb-card-builder.js",
+          "blob": "88e1fb33f188648495e6bd8cc6450f19eaaea0cb"
+        },
+        "viewer": {
+          "path": "KFB Comic Card Deck Viewer v4 (WS0)/KFB Deck Viewer v4.dc.html",
+          "blob": "23437e5c2085df5224efdde4100760e5639c685f",
+          "status": "ACTIVE_DONOR__HUMAN_FULLVIEW_GATE_HISTORICALLY_OPEN"
+        },
+        "corpus": {
+          "path": "KFB Comic Card Deck Viewer v4 (WS0)/deckviewer/kfb-corpus.js",
+          "blob": "d2d4257f4288a699db3a2fa48c97af07f665da15"
+        },
+        "housekeeping": {
+          "path": "KFB Comic Card Deck Viewer v4 (WS0)/HOUSEKEEPING.md",
+          "blob": "11f101bb74b518b501e6197d9db4dd0f01c31faa"
+        },
+        "rule": "PDF corpus/cache, KFB card crop/render, and viewer presentation are separate reusable layers. Blind quarter-crop is not universal; consumers do not reimplement crop logic."
+      },
+      "ink": {
+        "ssot": {
+          "path": "skills/SSOT_Card_Ink_Outline_v2.md",
+          "blob": "94d15871a28422b081bfb05c1957ffc2755e209a"
+        },
+        "runtime": {
+          "path": "skills/kfb-ink-canon.js",
+          "blob": "55ce6da2805386bd6373d81d064a37fc7e0efacb"
+        },
+        "implementationFamily": "band",
+        "authorFacingMeaning": "continuous closed ink ring/ribbon with one fill and variable taper/feather",
+        "rule": "Do not create a second RING implementation because of terminology. 3D outlines are adapters from the same semantic boundary, never wireframe/per-triangle outlines."
+      },
+      "talkBubbleMaterial": {
+        "toolboxUiBrief": {
+          "path": "tools/KFB-ToolBox/_handover/UI_CRITIQUE_REWORK_WS0_2026-09-15/START_HERE.md",
+          "blob": "86c2a1e970bbf6c324daab446936b8f475ba4454"
+        },
+        "bubbleDonors": "PetStudio podcast-v5 bubble-shaper.v2.js + bubbles.v4/v5.js + bubble-shapes.json; active legacy donor, exact promotion path to census",
+        "mouthDonor": "current rich studio-v3 pet-mouth.v1.js used by kfb-rigs-embed-v3; semantic visemes + red mouth set",
+        "materialGap": "zone color/reset exists; universal per-zone Texture/Surface assignment is not yet complete",
+        "rule": "Talk/voice/bubbles/idle and material-zone ColorPicker/Texture access are required ToolBox capabilities, but historical modules are promoted only after consumer/source census."
+      },
+      "rootHygiene": {
+        "embedBundles": [
+          "skills/kfb-embed-bundle/",
+          "skills/kfb-embed-bundle v3/"
+        ],
+        "misplacedAssetCandidates": [
+          "skills/House by Quaternius - 2kytqGs4rH.glb",
+          "skills/Palm Tree by Quaternius - A6cKJYFsIb.glb",
+          "skills/Palm Tree by Quaternius - DsrrAYmucG.glb",
+          "skills/Palm Tree by Quaternius - P0tgwyXBgr.glb",
+          "skills/Panda by Quaternius - q1uJ28Hs8T.glb",
+          "skills/Skeleton by Quaternius - yq5ATpujSt.glb",
+          "skills/Tentacle by Quaternius - BR1vpIvvvv.glb",
+          "skills/Zombie by Quaternius - VlXjG0N8Eg.glb"
+        ],
+        "rule": "No move/delete until consumer/import scan + Asset Librarian reconciliation."
+      }
+    },
+    "characterResidentWorkflow": {
+      "repo": "georg-doc/kayfabizarro",
+      "workflowDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md",
+      "residentAtlasS7": {
+        "path": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/KFB_Resident_Atlas_S7.html",
+        "blob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3",
+        "capabilities": [
+          "object transform",
+          "Drop",
+          "bone rotation",
+          "puppet/IK handles",
+          "foot pinning",
+          "Studio patches",
+          "Resident bundle import/export"
+        ]
+      },
+      "blenderAnimationProof": {
+        "pr": 192,
+        "head": "b49fb6e1adde070d658e1cc21dadb3294164cb29"
+      },
+      "orcBand": {
+        "pr": 195,
+        "head": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+        "status": "leader+guitarist accepted; drummer unresolved/browser-reference-pose preferred"
+      },
+      "motionLibrary": {
+        "pr": 197,
+        "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+        "clips": 33,
+        "rigs": [
+          "Rig_Medium",
+          "Rig_Large"
+        ]
+      },
+      "mixamoIntake": {
+        "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md",
+        "blob": "5b3e28a5cb16ae945959b311273cdaa13886808d",
+        "rule": "raw FBX stays in Dropbox; runtime GLB/catalogue in KFB repo; exact transfer when skeleton preserved; retarget measured exceptions only"
+      },
+      "legacy": {
+        "combatPr": 10,
+        "combatHead": "663f0610eb960f322d67b078f1302d0c6178d1c2",
+        "existingRig": "Rig_Legacy",
+        "existingFacts": "6-bone / 30-clip rig + modular Dungeon kit + complete Legacy packs",
+        "rule": "do not generically rerig Legacy; Blender only for custom derivative, missing external motion, geometry/weight repair"
+      },
+      "unresolvedUserSources": {
+        "frizzleOrc3RigWarp": "SOURCE_REQUIRED / USER_HAS_SOURCE",
+        "musknacker": "SOURCE_REQUIRED / exact actor name/source not pinned",
+        "blankLegacyHeadAccessories": "SOURCE_REQUIRED / exact template/accessory paths not pinned"
+      },
+      "rule": "Browser is default for pose/prop/scene tuning; Blender only for new time-based motion, retarget, weights, topology, rig or bake. Browser pose patches may become Blender key-pose references."
+    },
+    "threeIkDonor": {
+      "upstreamRepo": "mrdoob/three.js",
+      "residentThreeVersion": "0.184.0",
+      "example": "examples/webgl_animation_skinning_ik.html",
+      "solver": "examples/jsm/animation/CCDIKSolver.js",
+      "compatibleTag": "r184",
+      "currentKfbSolver": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/lib/atlas.js::reachChain",
+      "currentPuppet": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/lib/rigwork.js",
+      "decisionDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/IK_CCD_PARITY_DECISION_2026-09-24.md",
+      "rule": "A/B current reachChain vs upstream CCD raw vs constrained CCD on the same KFB actors before replacing any current Puppet behavior"
+    },
+    "executionDispatch": {
+      "policy": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXECUTION_DISPATCH_POLICY_2026-09-24.md",
+      "date": "2026-09-24",
+      "openaiDefault": "GPT-5.6 Sol",
+      "claudeDefault": "Claude Sonnet 5",
+      "claudeDeepEscalation": "Claude Opus 5.5",
+      "workRule": "capability escalation only; never default for GitHub/briefing/Hub-mount work"
+    }
+  },
+  "strands": {
+    "toolbox": {
+      "sourceKeys": [
+        "toolboxIntegration",
+        "eyeRigBatch",
+        "motionLab",
+        "motionLibrary",
+        "residentAtlas",
+        "residentPoseStudio",
+        "sharedSceneEditor",
+        "assetLibrarianPicker",
+        "vehicleAuthoring",
+        "characterResidentWorkflow",
+        "threeIkDonor",
+        "executionDispatch"
+      ],
+      "target": "ToolBox Production Milestone"
+    },
+    "animationResidents": {
+      "sourceKeys": [
+        "motionLibrary",
+        "motionLab",
+        "creatorMotionResearch",
+        "residentAtlas",
+        "residentPoseStudio",
+        "audioFxAudition",
+        "characterResidentWorkflow",
+        "threeIkDonor",
+        "executionDispatch"
+      ],
+      "target": "shared motion profiles + Resident performance pipeline"
+    },
+    "worldbuilder": {
+      "sourceKeys": [
+        "worldFoundation",
+        "terrainAuthoring",
+        "sharedSceneEditor",
+        "assetLibrarianPicker",
+        "residentAtlas",
+        "motionLab",
+        "motionLibrary",
+        "osmBake",
+        "elasticTorsion"
+      ],
+      "target": "God Mode Construction Site"
+    },
+    "racerWorld": {
+      "sourceKeys": [
+        "racer",
+        "worldFoundation",
+        "assetLibrarianPicker",
+        "residentAtlas",
+        "racerTrackKit",
+        "osmBake",
+        "elasticTorsion"
+      ],
+      "target": "Race visual module inside editable OSM/KFB world"
+    },
+    "combatChoreography": {
+      "sourceKeys": [
+        "combatArena",
+        "motionLab",
+        "motionLibrary",
+        "creatorMotionResearch",
+        "residentAtlas",
+        "cubePets",
+        "spindleSky",
+        "theatreCurtain",
+        "characterResidentWorkflow"
+      ],
+      "target": "NPC duel choreography + Combat Arena melee/ranged + reusable World encounter adapter"
+    },
+    "cubePetsActors": {
+      "sourceKeys": [
+        "cubePets",
+        "frizzleBobIdentities",
+        "eyeRigBatch",
+        "residentAtlas"
+      ],
+      "target": "24 Cube Pets + unambiguous FrizzleBob identities across ToolBox/Resident/Combat/World/Town"
+    },
+    "travelWorldModes": {
+      "sourceKeys": [
+        "travelModes",
+        "worldSurfaceAdapter",
+        "racer",
+        "motionLab"
+      ],
+      "target": "surface-independent Ground/Drive/Flight/Water/Air travel modes with one active movement writer"
+    },
+    "verticalWorld": {
+      "sourceKeys": [
+        "verticalWorld",
+        "worldSurfaceAdapter",
+        "combatArena",
+        "travelModes",
+        "residentAtlas"
+      ],
+      "target": "Hex/Voxel/Card vertical constructions + assisted platforming + Combat bands + fall/flight traversal"
+    },
+    "townNpcLife": {
+      "sourceKeys": [
+        "townNpcLife",
+        "residentAtlas",
+        "motionLab",
+        "cubePetsActors"
+      ],
+      "target": "ChatterBox-driven living Residents with encounter beats, gifts, memory and world placement"
+    },
+    "sharedStage": {
+      "sourceKeys": [
+        "spindleSky",
+        "theatreCurtain",
+        "combatArena",
+        "audioFxAudition"
+      ],
+      "target": "shared Spindle environment + Curtain transitions + host-owned stage/instance recipes"
+    },
+    "cardZones": {
+      "sourceKeys": [
+        "cardZoneModules",
+        "verticalWorld",
+        "sharedStage"
+      ],
+      "target": "Reusable Card Zone modules: exact fluid, stack/reveal, beam, Card Cube/FaceFocus and card-seeded zone recipes placeable in WorldBuilder"
+    },
+    "playerMetaHud": {
+      "sourceKeys": [
+        "playerJourneyMeta",
+        "interfaceGrammar",
+        "audioFxAudition",
+        "travelModes",
+        "townNpcLife",
+        "cardZoneModules"
+      ],
+      "target": "One versioned Player Journey/Meta state + Fractal Almanac + POP + backpack + songs + adaptive mode HUD + coherent authoring UI grammar"
+    },
+    "skillsRuntimeContracts": {
+      "sourceKeys": [
+        "skillsRuntimeContracts",
+        "toolboxIntegration",
+        "eyeRigBatch",
+        "cubePets",
+        "interfaceGrammar",
+        "cardZoneModules",
+        "playerJourneyMeta"
+      ],
+      "target": "Current skill/runtime entrypoints for Actor Embed, PDF/Card Viewer, Ink + 3D adapters, Talk/Bubbles and Material Surface with compatibility-safe legacy routing"
+    }
+  }
+}

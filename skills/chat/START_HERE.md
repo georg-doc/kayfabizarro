@@ -7,6 +7,43 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## 2026-09-24 · Production Architecture v3 candidate
+
+Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
+
+The current v3 candidate now covers **13 primary strands / 81 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
+
+Current architecture candidate:
+`workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
+
+On branch/PR #204, v3 overrides older process guidance where they conflict:
+- a normal unit of work is a usable capability, not a micro-gate;
+- direct real-source review HTML precedes Cloudflare for small visual decisions;
+- successful slices get minimal Returns; full recovery exports are failure/exception mode;
+- Claude Design / Blender MCP may author without GitHub write access; a GitHub Bridge integrates reviewed candidates;
+- default is one active integration PR per owner rather than one PR per measurement/proof;
+- the Hub grows a READY/RUNNING/REVIEW/HOLD self-service Briefing shelf driven by typed status fields.
+
+Prepared self-service jobs and current locks:
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md`
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INPUT_LOCKS.json`
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/PRODUCTION_STRANDS.md` — complete ToolBox / Animation+Residents / WorldBuilder / Racer→World roadmaps
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md` — copy-ready brief for every prepared milestone, including future dependency-gated jobs
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md` — RKIT D1–D5, authored Track/Bake, OSM World Zones, Elastic torsion, music/audio/VFX production flow
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md` — P2 skills/runtime census and compatibility-safe consolidation route
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md` — browser-first pose/scene authoring, Resident modules and Blender-only technical-boundary workflow
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/IK_CCD_PARITY_DECISION_2026-09-24.md` — Three.js CCD IK parity gate for Resident/ToolBox posing
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXECUTION_DISPATCH_POLICY_2026-09-24.md` — per-brief executor/model/reasoning/budget policy
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` — existing HUB-CTRL #202 self-service mount handoff
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — architecture/planning recovery entry
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md` — current three-export Flow Design intake classification
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current Work-budget handoff; no Work-only execution is presently required
+
+Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
+Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime and repaired plain review are green; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
+
+
 ## Start order
 
 1. Read `REGISTRY.json`.
