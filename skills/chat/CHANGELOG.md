@@ -1,3 +1,15 @@
+## 2026-09-24 · Production Architecture v3 · Character / Resident workflow
+
+- Resident Atlas / ToolBox is now the default authoring surface for static pose, prop fit, scene composition and reusable Resident modules.
+- Blender MCP is reserved for new time-based motion, retarget, multi-frame repair, rig/weights/topology and bake/export.
+- Added browser Pose → Blender handoff: Georg authors target/contact pose in Resident Atlas; Blender executes only the required time-based correction.
+- KayfaBizarros direction is now a baseplate-free Resident Performance Module with song/action/pose refs; drummer starts from browser reference posing rather than another automatic arm solver.
+- Existing Rig_Legacy is protected; no generic Legacy rerigging job. Blender only for selected custom Legacy derivatives or missing external motion.
+- Prepared future Frizzle-Orc Medium/Large/Legacy Actor Family Factory while preserving destination rigs; exact Frizzle-Orc/Musknacker/blank-head sources remain SOURCE_REQUIRED.
+- Added READY `RESIDENT-BAND-MODULE-01` + `POSE-TO-BLENDER-01`; three source/dependency-gated Blender jobs remain HOLD.
+- v3 catalog now **13 strands / 78 jobs / 35 READY / 43 HOLD**; checks **134/134 PASS**.
+- Current RKIT/track Blender session remains uninterrupted; no public Hub/Cloudflare Live or runtime owner changed.
+
 ## 2026-09-24 · Production Architecture v3 · P2 Skills/runtime consolidation
 
 - Added a compatibility-first census route for the mixed `skills/` tree; no runtime Skill/old app was moved or deleted.
