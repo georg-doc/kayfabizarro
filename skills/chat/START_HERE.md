@@ -881,43 +881,44 @@ vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/l
 Cloudflare remains deferred.
 
 
-## 2026-09-24 · KFB Elastic Grotesque Clay · Hürth 01 · TUNE ONCE
+## 2026-09-24 · KFB Elastic Grotesque Clay · Hürth 01 · R2
 
-Current bounded 3D form-language slice:
-[KFB Elastic Grotesque Clay v1 · Hürth 01](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
+Current bounded form-language slice:
+[Hürth 01 START_HERE](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
 
-Human review of unchanged V2 @`0c59e92d` returned **TUNE ONCE**. The four bounded Elastic-only fixes are now implemented at runtime head
-`75b3c460ac37aac57cb5d9e96260517c5b4cf68d`:
+Current runtime:
+`4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
 
-- doors/windows use the final bowed-shell surface frame and sit flush/inset;
-- Elastic shadows use tight fit + `bias=0` + `normalBias=.04`;
-- same-colour asphalt patches close real shared-OSM-node junction seams;
-- roofs have a small overhang derived from the final wall-top outline.
+R2 evidence:
+- run `35947303053`;
+- **38/38 PASS · 3/3 WebGL2 · 0 errors**;
+- artifact `10787192998`;
+- 193 organic facade details;
+- 23 asphalt OSM-node patches;
+- 10 path→road connectors.
 
-Final browser proof:
-- run `35945185715`;
-- **29/29 PASS**;
-- **3/3 WebGL2**;
-- **0 page/console errors**;
-- artifact `10786850367`;
-- digest `sha256:716bfcab9dc6f4ed0180e0fd148b7a1494efca796bbe49746de762b0f8a900b0`.
+R2 visible changes:
+- real small eave outside final bowed wall top;
+- remaining curb/path T-junction wedge closed;
+- shadow setup retuned with before/after evidence;
+- doors/windows distributed over eligible facades;
+- wall/roof/door/window colors use exact Racer Cologne harmonic donor.
 
-Unchanged:
-- V2 form grammar;
-- `KFB_WONKY_90S_CLAY_V1`;
-- OSM / S2 / collision truth;
-- CLEAN / CARTOON / GROTESQUE remain switchable and browser-booted unchanged.
+Exact palette donor:
+`georg-doc/KFB-Stunt-Car-Race@cc80f4a1c6c509db9668df79fd53b13cee093a9d`
+→ `KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
+→ blob `38246785ec2c9089737b2a195673a3ad4c07bdf8`.
 
-Current recovery:
+Clean / Cartoon / Grotesque remain switchable and unchanged.
+
+Recovery:
 `workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md`
 
 Direct review:
 `https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
 
-The `cloudflare-live` wrapper is pinned to `75b3c460…`, but this chat cannot independently retrieve the Pages domain; do not label `PUBLIC_VERIFIED` until the direct page is actually opened.
-
 Exactly one next gate:
-**Georg reviews the tuned V2 and returns ACCEPT / REJECT.**
+**Georg ACCEPT / REJECT R2.**
 
 After ACCEPT only:
-continue `LOOK_COMPOSITION_01_2026-09-24.md` (LC-01).
+LC-01 via `LOOK_COMPOSITION_01_2026-09-24.md`.
