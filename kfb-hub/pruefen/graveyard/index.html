@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<base href="https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@86c37174a3dc654ae9c2bf65c85dcb46f550d3f9/tools/kfb-graveyard/">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>KFB Graveyard — Modul-Host (Minigame)</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; background:#05070b; }
+  /* Der Host besitzt nur das Loch, in das das Modul rendert. */
+  #zone { position:fixed; inset:0; }
+
+  /* Minigame-Schicht des HOSTS — bewusst außerhalb des Moduls:
+     das Modul liefert die Zone, der Host die Spielregel. */
+  #quest { position:fixed; left:50%; top:62px; transform:translateX(-50%); z-index:30;
+    display:flex; align-items:center; gap:14px; padding:10px 18px; border-radius:30px;
+    background:rgba(8,12,20,.72); border:1px solid rgba(217,214,204,.18);
+    font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace; font-size:12.5px; letter-spacing:.04em;
+    color:#d9d6cc; backdrop-filter:blur(6px); pointer-events:none; transition:opacity .4s; }
+  #quest .label { opacity:.62; text-transform:uppercase; font-size:10.5px; letter-spacing:.12em; }
+  #quest .bar { position:relative; width:150px; height:4px; border-radius:3px; background:rgba(217,214,204,.16); }
+  #quest .bar i { position:absolute; inset:0 auto 0 0; width:0%; border-radius:3px;
+    background:#fbbf24; transition:width .45s cubic-bezier(.22,1,.36,1); }
+  #quest .n { font-variant-numeric:tabular-nums; opacity:.9; }
+  #quest.done { border-color:rgba(251,191,36,.55); }
+  #quest.done .label { color:#fbbf24; opacity:1; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="zone"></div>
+
+<div id="quest">
+  <span class="label">Auftrag · Lehren einsammeln</span>
+  <span class="bar"><i></i></span>
+  <span class="n">0 / 0</span>
+</div>
+
+<script type="module">
+import { createGraveyard } from './kfb-graveyard.js';
+
+const quest = document.getElementById('quest');
+const bar = quest.querySelector('.bar i');
+const num = quest.querySelector('.n');
+
+const gy = await createGraveyard({
+  mount: '#zone',
+  // Daten: erst der lokale Spiegel, dann der Repo-Kanon (siehe kfb-assets.js DATA.postmortems)
+  gravesUrl: './postmortems.json',
+  onReady: (api) => { num.textContent = '0 / ' + api.graves.length; },
+  onVisit: (i, g, p) => {
+    bar.style.width = Math.round(p.ratio * 100) + '%';
+    num.textContent = p.visited + ' / ' + p.total;
+    if (p.done) {
+      quest.classList.add('done');
+      quest.querySelector('.label').textContent = 'Zone abgeschlossen · alle Lehren gelesen';
+      gy.setLightMode('disco');           // Belohnung: Graveyard-Disco
+    }
+  },
+});
+
+// Der Host darf mitspielen: Fenster-Titel als Score-Anzeige, Zone bei Blur pausieren.
+addEventListener('blur', () => gy.pause());
+addEventListener('focus', () => gy.resume());
+</script>
+</body>
+</html>
