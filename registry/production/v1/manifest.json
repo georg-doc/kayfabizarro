@@ -1,12 +1,12 @@
 {
   "schema": "kfb.production-registry/1",
   "sourceRepo": "georg-doc/kayfabizarro",
-  "sourceCommit": "9431dcb8da0158a75d0988d52fc1e7a49aac21f1",
+  "sourceCommit": "f89eac1bc5bd406c891aa20e14cfb6ff16490164",
   "sourceRef": "work/hub-ctrl-01-2026-09-24",
-  "mode": "coworker-snapshot",
-  "generatedAt": "2026-09-24T09:51:10Z",
-  "checkedAt": "2026-09-24T09:51:10Z",
-  "contentHash": "bdbf840fb54c8cb69a395e8bfc59e8ffc195262bc52ba142d7ab8f4454b72d68",
+  "mode": "github-actions",
+  "generatedAt": "2026-09-24T15:01:31Z",
+  "checkedAt": "2026-09-24T15:01:31Z",
+  "contentHash": "32834dcb894c901ad0a050db9dc7569777ac0a98c2aecea1c50d0bb817569a0b",
   "staleAfterHours": 8,
   "counts": {
     "LOOK_AT": 4,
@@ -18,7 +18,9 @@
     "external": 2,
     "moved": 2,
     "problems": 0,
-    "tools": 14
+    "tools": 14,
+    "selfServiceJobs": 79,
+    "selfServiceReady": 36
   },
   "files": [
     "lanes.json",
@@ -27,6 +29,7 @@
     "standards.json",
     "wsa.json",
     "tools.json",
-    "problems.json"
+    "problems.json",
+    "self_service.json"
   ]
 }
