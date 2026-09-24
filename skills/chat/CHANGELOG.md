@@ -1,3 +1,11 @@
+## 2026-09-24 · Resident Disco cast correction + reusable Disco Ball Core
+
+- Prototype Pete removed from RES-DISCO because it is a template/proof actor; Action Figure also replaced.
+- Revised cast: Skeleton Minion via the proven Orc-band beat-bounce lane; Avian Swordsman; Protagonist_A as teenager; Toy Soldier; Witch; Black Knight; Demon Lord.
+- User-pinned Legacy `character_skeleton_minion.gltf` is source-verified at `e0037d79…`; the other supplied raw references are preserved as intent and must be resolved to their canonical repo paths during Source Cast.
+- Disco ball promoted from scene dressing to proposed reusable **DISCO-BALL-CORE-01**: free placement/spin, disco/spot/beam effects, beat response, existing light/VFX integration and future EyeRig host seam.
+- No runtime/Stage/Live change; next gate remains RES-DISCO-A.
+
 ## 2026-09-24 · KFB MVP focus · mobility / ToolBox v17+ / Motion intake / AI Town
 
 - Five coherent MVPs now organize current World/Resident/ToolBox/Racer work; Resident Disco is a parallel READY performance fixture.
