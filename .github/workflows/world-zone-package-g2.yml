@@ -44,7 +44,8 @@ jobs:
           node tools/osm-city-lab/tests/world-zone-bake-01.mjs \
             "$PKG" \
             "$TMP/cologne-dom-zentrum-v0/2026-09-24.1" \
-            | tee "$PKG/TEST_REPORT.json"
+            | tee /tmp/WORLD_ZONE_PACKAGE_G2_TEST_REPORT.json
+          cp /tmp/WORLD_ZONE_PACKAGE_G2_TEST_REPORT.json "$PKG/TEST_REPORT.json"
 
       - name: Record exact package checksums
         shell: bash
