@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+html,body{margin:0;padding:0;height:100%;background:#05070f;overflow:hidden}
+[hidden]{display:none !important}
+a{color:#ffd9a0}
+a:hover{color:#ffe9c6}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="./wd1-boot.js"></script>
+</helmet>
+<div data-screen-label="WB-D1 Cologne World Shell" style="position:fixed;inset:0;background:#05070f;z-index:-1"></div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;view&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;SHELL&quot;,&quot;FIXTURE&quot;,&quot;LANDMARK&quot;],&quot;default&quot;:&quot;SHELL&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;bend&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;LandmarkElastic&quot;,&quot;unit&quot;:&quot;×&quot;},&quot;torsion&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;default&quot;:1.2,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;LandmarkElastic&quot;,&quot;unit&quot;:&quot;×&quot;},&quot;chrome&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;QUIET&quot;,&quot;FULL&quot;],&quot;default&quot;:&quot;QUIET&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Authoring UI&quot;},&quot;ghosts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Track socket&quot;}}">
+class Component extends DCLogic {
+  push() {
+    const p = {
+      view: this.props.view ?? 'SHELL',
+      bend: this.props.bend ?? 1,
+      torsion: this.props.torsion ?? 1.2,
+      chrome: this.props.chrome ?? 'QUIET',
+      ghosts: this.props.ghosts ?? false
+    };
+    window.__wd1Props = p;
+    window.dispatchEvent(new CustomEvent('wd1-props', { detail: p }));
+  }
+  componentDidMount() { this.push(); }
+  componentDidUpdate() { this.push(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
