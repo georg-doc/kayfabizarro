@@ -12,3 +12,10 @@
 - Public screenshot artifact: **10788012554**.
 - Review: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/
 - C1 not started; human review pending.
+
+
+## 2026-09-24 · HUMAN ACCEPTANCE
+
+Georg accepted B1 after reviewing the direct Cloudflare result: **“Okay, das passt gut.”**
+
+B1 status becomes **HUMAN_ACCEPTED**. It remains a frozen/recoverable checkpoint. The next bounded slice is B2a inline YouTube via the official Three.js CSS3D donor; B2b Collage, B2c Talking City Lights, B3 cartoon body and Curtain C1 are not started by this acceptance.
