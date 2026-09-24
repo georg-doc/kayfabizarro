@@ -148,27 +148,27 @@
     },
     {
       "id": "billboard",
-      "bucket": "LOOK_AT",
-      "title": "Billboard B2a · YouTube direkt auf der 3D-Fläche",
-      "what": "B1 ist angenommen. B2a spielt das echte YouTube-iframe jetzt direkt auf der gemessenen 3D-Werbefläche über den offiziellen Three.js-CSS3D-Weg; kein Modal-Viewer.",
+      "bucket": "CAN_START",
+      "title": "Billboard B2b · Living Mockup / Collage recherchieren",
+      "what": "B2a ist angenommen und eingecheckt: YouTube läuft direkt auf der 3D-Werbefläche; die Rückseite zeigt wieder nur den normalen Billboard-Korpus. Als Nächstes nur Optionen für Living-Mockup/Collage-Flächen recherchieren und vergleichen.",
       "provider": "Web-Chat",
-      "yourAction": "B2a öffnen und VIDEO INLINE anklicken/bedienen. Prüfen, ob der Player wirklich als Teil der Werbetafel wirkt und beim 3D-Blick korrekt mitgeht.",
-      "waitingFor": "Georg PASS/TUNE für B2a.",
+      "yourAction": "Kann als nächster kleiner Web-Chat-Slice starten. Zunächst nur Recherche/Optionsmemo, noch keine Runtime bauen.",
+      "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
       "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
-      "expectedHead": "154edef4f220540c9079ab22d5b243baddea6909",
+      "expectedHead": "db557f70b801aacf8ed38a13a47d0bebf5265bc9",
       "brief": {
-        "label": "B2a Return / Recovery",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/RETURN.md",
+        "label": "Billboard Living Plan",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md",
         "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
         "pasteReady": false
       },
       "review": {
-        "label": "B2a ansehen",
+        "label": "Angenommenes B2a ansehen",
         "path": "kfb-hub/pruefen/billboard-b2a/index.html",
-        "sourceRef": "PR #199 · PUBLIC_VERIFIED · 22/22 PASS · human pending"
+        "sourceRef": "PR #199 · HUMAN_ACCEPTED · final public 24/24 PASS · front-only rear fix"
       }
     },
     {
