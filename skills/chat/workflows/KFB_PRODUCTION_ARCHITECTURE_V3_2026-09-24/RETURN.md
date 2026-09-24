@@ -598,6 +598,24 @@ A replacement planning chat should read GitHub state and continue this role as:
 
 It should **not** become the implementation bottleneck and should not regenerate routine briefings after every completed product job.
 
+## Racer / RKIT current source update
+
+Current private Racer top:
+- PR #39
+- branch `chat/rkit-06-trankgasse-2026-09-24`
+- head `53219c9b7ee3d1abe0ef1b0e5364863b42014ea5`
+
+Stacked build history:
+`#34 RKIT-01 → #35 RKIT-02 → #36 RKIT-03 → #37 RKIT-04 → #38 RKIT-05 → #39 RKIT-06`.
+
+Current TRACK_A has figure-eight route, Base/Hero jumps, Pit Lane, SWITCH_Y and flap-return/tunnel; RKIT-06 also adds Trankgasse on the real OSM line and fixes duplicate seam rings.
+
+Next gate is the real Race/Rapier run on TRACK_A. RKIT geometry should only be retuned from those measured runtime results.
+
+Hub note:
+the Production Desk deliberately does not fetch `external:true` private repos, so its Racer card had remained stale at PR #33. HUB-CTRL #202 has been updated to the RKIT-06 last-known status; durable fix is a compact same-repo status mirror written by the owning GitHub Bridge.
+
+
 ## Public Hub boundary
 
 The expanded **13-strand / 79-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
