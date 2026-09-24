@@ -1,0 +1,52 @@
+{
+  "schema": "kfb.huerth-recovery-architecture-proofs.source/0.1",
+  "date": "2026-09-24",
+  "owner": "OSM City Lab presentation / KFB ToolBox authoring",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/huerth-architecture-proofs-2026-09-24",
+  "implementationHead": "c36f97be48a6b5da5617aa000c921e4a51329f7f",
+  "parentFailedCandidate": {
+    "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+    "runtime": "4cc496e79af80c7f8419ffb14f7f5d8daeb0b679",
+    "recovery": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md"
+  },
+  "proofs": {
+    "road": {
+      "engine": "clipper2-ts",
+      "evaluationVersion": "2.0.1-18",
+      "adoptionStatus": "EVALUATION_ONLY_PENDING_HUMAN_PASS",
+      "topology": "buffer/union/difference → one BufferGeometry → three material groups",
+      "patchDiscs": 0,
+      "overlaySurfaceMeshes": 0
+    },
+    "house": {
+      "sourceHead": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+      "sourceFile": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs",
+      "sourceBlob": "75c3d794b9341a7074038594b467f91d153486c6",
+      "localCopy": "tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/vendor/elastic-v2-donor.mjs",
+      "seam": "one relative import path adapted only; donor body verified otherwise identical"
+    },
+    "facade": {
+      "racerPalette": {
+        "repository": "georg-doc/KFB-Stunt-Car-Race",
+        "commit": "cc80f4a1c6c509db9668df79fd53b13cee093a9d",
+        "file": "KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js",
+        "blob": "38246785ec2c9089737b2a195673a3ad4c07bdf8"
+      },
+      "storyOwner": "tools/KFB-ToolBox/_inbox/KFB Voxel Zone S2/voxel-zone-s2-full_2026-09-22/terrain/world-context.js"
+    }
+  },
+  "evidence": {
+    "run": 35952588495,
+    "result": "34/34 PASS",
+    "artifact": 10789206931,
+    "digest": "sha256:91dda6180c8d2dc152d770e2844704a837e46279c9824c061a142c3a97a14881",
+    "screenshots": [
+      "01-road-topology.png",
+      "02-house-shared-eave.png",
+      "03-facade-rhythm.png",
+      "04-facade-story-comic.png"
+    ]
+  },
+  "humanAcceptance": "PENDING"
+}
