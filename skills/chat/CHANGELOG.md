@@ -1,3 +1,12 @@
+## 2026-09-24 · Resident Disco research + architecture mount
+
+- Prepared `RES-DISCO-01` on the existing Production Architecture v3 owner rather than creating a new Resident/Music runtime.
+- Source-backed current dance inventory, three-rig cast proposal, Legacy constraint, Mixamo party-motion shortlist, prop donors and 32-bar choreography route are persisted in `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md`.
+- Exact source props already pinned: Tiny Treats radio + Goth Girl speaker; existing disco-ball implementation must still be isolated/pinned before use.
+- Catalogue now **13 strands / 82 jobs / 39 READY / 43 HOLD**; additive validation **9/9 PASS**. Existing formal v3 checkpoint remains **158/158 PASS**.
+- Planned direct Stage route is recorded but **not published**: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`.
+- Next gate: **RES-DISCO-A · Source Cast + Motion Audition**.
+
 ## 2026-09-24 · KFB focus recovery · Flow intake + Work budget protection
 
 - Recovered current focus after Audio/ToolBox/WorldBuilder chat interruptions.
