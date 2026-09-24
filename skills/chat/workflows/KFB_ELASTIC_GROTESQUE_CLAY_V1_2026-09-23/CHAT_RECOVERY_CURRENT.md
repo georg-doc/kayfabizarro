@@ -180,3 +180,43 @@ Decision:
 
 After ACCEPT only:
 continue `LOOK_COMPOSITION_01_2026-09-24.md` (LC-01).
+
+## CURRENT R2 · 2026-09-24
+
+- Human input: `HUMAN_RESULT_HUERTH01_V2_R2_2026-09-24.md`
+- Runtime head: `4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`
+- Browser run: `35947303053`
+- **38/38 PASS · 3/3 WebGL2 · 0 errors**
+- Artifact: `10787192998`
+- Digest: `sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0`
+
+R2 visual state:
+1. Roof = explicit small eave over final deformed wall top.
+2. Curb/path junction = path connector below asphalt + same-colour asphalt node patch covering full curb half-width.
+3. Shadow = 4096 fitted map, bias `.0002`, normalBias `.055`, roof no-receive; before/after evidence uses V2 run `35909757979` vs R2 run `35947303053`.
+4. Details = **193** total across eligible facades, all on final bowed wall frames.
+5. Palette = exact Racer Cologne `makePalette()` donor:
+   - repo `georg-doc/KFB-Stunt-Car-Race`
+   - commit `cc80f4a1c6c509db9668df79fd53b13cee093a9d`
+   - file `KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`
+   - blob `38246785ec2c9089737b2a195673a3ad4c07bdf8`
+   - selected deterministic R2 scheme `komplementaer`, seed `2821914198`.
+
+Story/Card truth:
+- StoryMode/card semantics remain the existing `world-context.js` owner;
+- R2 did not receive a concrete story mode or card triplet, so it does not invent one;
+- later LC-01/consumer binding may drive the same Racer generator from that existing context.
+
+Review:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+`cloudflare-live` wrapper base is pinned to `4cc496e7…`.
+
+PUBLIC_VERIFIED is not claimed by this chat because the Pages URL cannot be retrieved by the current web tool. Human real-Chrome open is the gate.
+
+### Exactly one next gate
+
+**GEORG: ACCEPT / REJECT R2.**
+
+After ACCEPT only:
+`LOOK_COMPOSITION_01_2026-09-24.md`.
