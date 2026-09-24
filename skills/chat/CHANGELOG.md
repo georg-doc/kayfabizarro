@@ -1,3 +1,15 @@
+## 2026-09-24 · Production Architecture v3 · P2 Skills/runtime consolidation
+
+- Added a compatibility-first census route for the mixed `skills/` tree; no runtime Skill/old app was moved or deleted.
+- Old CubePet embed stays valid for canonical 24 CubePets but is no longer the universal actor-embed route; current non-CubePet embedding points at `kfb-rigs-embed-v3` and current actor/FaceHost owners.
+- Card/PDF consolidation now distinguishes the performant Viewer-v4/`kfb-corpus.js` layer from canonical `kfb-card-builder.js` rendering/crop/Ink, with Almanac metadata above them.
+- Ink `family:'band'` is recorded as the existing continuous ring/ribbon implementation; future 3D shoreline/track/rope/card-edge renderers are adapters, not another Ink canon.
+- ToolBox final capability set now explicitly retains Talk/Viseme/Voice/Bubbles and Material Zone Color/Texture Surface.
+- `skills/SOT_REGISTRY.md`, old embed bundles and binaries sitting directly under `skills/` are flagged for import/consumer census before any archive/move.
+- Added P2 jobs: Skills Census → Current Runtime Shelf → Compatibility Archive, plus Unified PDF/Card Viewer Core and Ink 3D Adapters.
+- v3 catalog is now **13 strands / 73 jobs / 33 READY / 40 HOLD**; checks **117/117 PASS**. P2 stays out of Today/default priority while P0/P1 work exists.
+- No public Hub/Cloudflare Live, merge state or product runtime changed.
+
 ## 2026-09-24 · Production Architecture v3 · Card Zones + Player Meta / Adaptive Interface
 
 - Promoted Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface to primary v3 production strands.
