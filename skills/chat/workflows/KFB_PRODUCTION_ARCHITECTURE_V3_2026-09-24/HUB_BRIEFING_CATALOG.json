@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/4",
+  "schema": "kfb.hub-briefing-catalog/5",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -1154,18 +1154,93 @@
       "waitingFor": "META-JOURNEY-01 + META-HUD-01 + META-ALMANAC-01 + META-INVENTORY-01 + META-POP-01 + META-RADIO-01",
       "cloudflareRequired": false,
       "workRequired": false
+    },
+    {
+      "id": "skills-census-01",
+      "strand": "toolbox",
+      "bucket": "READY",
+      "priority": "P2",
+      "executor": "ChatGPT Web / GitHub agent",
+      "title": "Skills · Runtime Census",
+      "what": "Classify skills, bundles, live consumers and current owners without moving/deleting anything.",
+      "result": "Census + migration map + consumer/import scan.",
+      "promptSection": "SKILLS-CENSUS-01 · Repository-native Skills Census",
+      "sourceSet": "skillsRuntimeContracts",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "skills-current-01",
+      "strand": "toolbox",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "ChatGPT Web / GitHub Bridge",
+      "title": "Skills · Current Runtime Shelf",
+      "what": "Create current Actor/PDF/Card/Ink/Talk-Bubble/Material entrypoints and reconcile the stale skills registry while preserving old consumers.",
+      "result": "Small canonical skills shelf + compatibility-safe redirects.",
+      "promptSection": "SKILLS-CURRENT-01 · Current Runtime Skill Shelf",
+      "sourceSet": "skillsRuntimeContracts",
+      "waitingFor": "SKILLS-CENSUS-01 accepted census/import scan",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "skills-archive-01",
+      "strand": "toolbox",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "GitHub Web",
+      "title": "Skills · Compatibility-safe Archive",
+      "what": "Archive/move only zero-consumer history and reconcile misplaced assets after current entrypoints exist.",
+      "result": "Reduced accidental legacy reuse with old apps still booting.",
+      "promptSection": "SKILLS-ARCHIVE-01 · Compatibility-safe Skills Archive",
+      "sourceSet": "skillsRuntimeContracts",
+      "waitingFor": "SKILLS-CENSUS-01 + SKILLS-CURRENT-01",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "card-viewer-core-01",
+      "strand": "card-zones",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "ChatGPT Web",
+      "title": "Cards · Unified PDF/Card Viewer Core",
+      "what": "Reuse CardBuilder plus Viewer-v4 corpus/cache/presentation for Almanac/Card Zones/Billboards/Storytelling rather than consumer-specific PDF stacks.",
+      "result": "One shared performant PDF/card service + viewer presentation layer.",
+      "promptSection": "CARD-VIEWER-CORE-01 · Unified PDF / Card Viewer Runtime",
+      "sourceSet": "skillsRuntimeContracts",
+      "waitingFor": "SKILLS-CENSUS-01; run as P2 consolidation rather than blocking current Card Zone product work",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "ink-3d-adapter-01",
+      "strand": "shared-stage",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "ChatGPT Web",
+      "title": "Ink · 3D Adapter Family",
+      "what": "Translate the canonical continuous card ink ribbon into surface ribbons, physical ropes and clean outer card edges without wireframe/double grids.",
+      "result": "One canonical Ink semantics with thin 3D/world adapters.",
+      "promptSection": "INK-3D-ADAPTER-01 · Canonical Ink → World/3D adapters",
+      "sourceSet": "skillsRuntimeContracts",
+      "waitingFor": "SKILLS-CURRENT-01 Ink entrypoint reconciled",
+      "cloudflareRequired": false,
+      "workRequired": false
     }
   ],
   "presentation": {
     "defaultView": "strands",
     "jobCardsCollapsed": true,
     "todayShows": "current READY/REVIEW only; complete roadmap expands per strand",
-    "rule": "Do not render all jobs as one default wall."
+    "rule": "Do not render all jobs as one default wall.",
+    "priorityRule": "Today/default priority view should not surface P2 READY work while P0/P1 product work exists; P2 remains available inside its parent strand."
   },
   "metrics": {
     "strands": 13,
-    "jobs": 68,
-    "ready": 32,
-    "hold": 36
+    "jobs": 73,
+    "ready": 33,
+    "hold": 40
   }
 }
