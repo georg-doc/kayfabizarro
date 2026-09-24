@@ -1,0 +1,57 @@
+name: WORLD-ZONE-REVIEW-G3
+
+on:
+  push:
+    branches:
+      - chatgpt-web/world-zone-review-g3-2026-09-24
+    paths:
+      - '.github/workflows/world-zone-review-g3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Serve repository over local HTTP
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/world-zone-g3-http.log 2>&1 &
+          echo $! >/tmp/world-zone-g3-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/WORLD_ZONE_BAKE_01_REVIEW.html >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/world-zone-g3-http.log
+          exit 1
+
+      - name: Browser load place reload proof
+        env:
+          WZ_BASE_URL: http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/
+          WZ_PROOF_DIR: world-zone-review-g3-evidence
+        run: node tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/qa/browser-proof.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: world-zone-review-g3-browser
+          retention-days: 14
+          if-no-files-found: error
+          path: world-zone-review-g3-evidence/
