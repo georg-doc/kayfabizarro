@@ -1,10 +1,39 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
-**Status:** AUDIO-CAL-01 CI PASS · PUBLICATION PENDING · RECOVERABLE  
+**Status:** AUDIO-CAL-01 CI PASS · PUBLIC STAGE MARKER BLOCKED · RECOVERABLE  
 **Date:** 2026-09-24  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205
+
+## RECOVERY CHECKPOINT · 2026-09-24 after chat interruption
+
+GitHub sanity check after interruption:
+
+- `main@1227b738c1d69f1ef04e0382844f358bfd6db2bd`
+- `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`
+- Draft PR `#205`: open / not mergeable; do not merge
+- source candidate remains technically green: validator **6/6 groups PASS**, Chromium/WebAudio **31/31 PASS**
+- fixed human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+
+Public proof workflow `36025670884`:
+
+- attempt 1: **FAIL** at exact Stage marker before audio/browser checks; proof artifact `10818629570`
+- publication repair: exact Stage files + 11 required audio assets + Hub tool mirrored to `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`
+- attempt 2: **FAIL** again at exact Stage marker on all four retry windows; no audio/browser assertions ran
+- attempt-2 proof artifact: `10820250746`
+- attempt-2 artifact digest: `sha256:251f6b229373c533fc104b9f1a0d47bd65ceb27075d89063db7bef81990a216a`
+
+Interpretation: the current blocker is the **Cloudflare deployment/publication seam**, not AUDIO-CAL-01 runtime, WebAudio, asset decode or mix logic.
+
+Resume action:
+
+1. inspect the actual Cloudflare/GitHub deployment revision and whether `cloudflare-live@a8e2af8f…` was deployed;
+2. do not change AUDIO-CAL-01 runtime while the marker is absent;
+3. only if a concrete publication defect is found may one bounded second publication repair be attempted;
+4. if that repaired public gate fails again, STOP and preserve the candidate under the two-repair rule.
+
+`PUBLIC_VERIFIED` and human listening remain **OPEN**.
 
 ## CURRENT RECOVERY OVERRIDE · AUDIO-CAL-01
 
