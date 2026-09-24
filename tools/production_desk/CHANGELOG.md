@@ -1,3 +1,15 @@
+## 2026-09-24 · MVP focus / ToolBox router refresh
+
+- Hub Today updated for current ToolBox Production/v17+, WorldBuilder Mobility, NPC-LIFE and Racer Rapier gate;
+- old Dance D1 retained as history and routed to current RES-DISCO;
+- ToolBox router refreshed to **10 public routes / 5 missing-blocked / 14 source-integration = 29 cards**;
+- added current source/brief cards for Stage-First ToolBox owner, State/Action Animation Studio, Direct FBX Motion Intake, FrizzleBob Body Family, v17+ integration and Resident Disco;
+- added Music Performance to public ToolBox routes;
+- all ten public ToolBox publication paths verified present on `cloudflare-live@597930b8...`;
+- Stage navigator ToolBox card updated to current counts/focus;
+- architecture target is **88 jobs / 42 READY / 46 HOLD**; root generated Desk refresh remains pending and is not falsely claimed;
+- no new unpublished product route was exposed as live.
+
 ## 2026-09-24 · Focus recovery / minimal Work routing
 
 - linked HUB-CTRL recovery metadata to current Production Architecture PR #204 focus handoff;

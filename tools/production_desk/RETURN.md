@@ -1,3 +1,27 @@
+# CURRENT UPDATE · MVP FOCUS / TOOLBOX ROUTER · 2026-09-24
+
+Status: **HUB SOURCE CURRENT · TOOLBOX/STAGE SOURCE UPDATED · ROOT 88-JOB DESK REBUILD STILL PENDING**
+
+Architecture source:
+`georg-doc/kayfabizarro#204` · current self-service target **13 strands / 88 jobs / 42 READY / 46 HOLD**.
+
+Current visible Hub source changes:
+- Today: ToolBox Production/v17+, WorldBuilder Mobility, NPC-LIFE and Racer next gate are current;
+- old Dance D1 is retained as history and points to `RES-DISCO-01`;
+- ToolBox Stage page now contains **29 cards = 10 public + 5 missing/blocked + 14 source/briefs**;
+- all ten public ToolBox routes were re-read on `cloudflare-live@597930b8...`;
+- new v17+/Direct-FBX/FrizzleBob-body/Resident-Disco items are explicitly source/brief cards, not fake public previews;
+- Stage navigator ToolBox card reflects the same counts/current focus.
+
+Root Production Desk boundary:
+- the self-service builder already points at PR #204 and will ingest the 88-job catalog;
+- connector-authored commits have not yet produced a fresh Production Desk registry run on this current source;
+- therefore **the public root Hub is not yet claimed to show all 88 jobs**.
+
+Work/WSA remains unnecessary.
+
+---
+
 # CURRENT UPDATE · KFB FOCUS RECOVERY / WORK ROUTING · 2026-09-24
 
 Status: **HUB SOURCE METADATA CURRENT · NO ROOT DESK REPUBLISH CLAIMED**
