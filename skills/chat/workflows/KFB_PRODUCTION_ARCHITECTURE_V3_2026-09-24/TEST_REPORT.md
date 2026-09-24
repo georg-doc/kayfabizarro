@@ -1,24 +1,24 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **117/117 ARCHITECTURE / SOURCE CHECKS PASS**
+Status: **134/134 ARCHITECTURE / SOURCE CHECKS PASS**
 
 Scope: architecture, complete self-service production strands, source locks, adjacent-owner routing and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
 ## Catalog / self-service contract · 23/23
 
-1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/6`.
-2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/5`.
+1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/7`.
+2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/6`.
 3. Thirteen production strands exist.
-4. Seventy-three copy-ready jobs exist.
-5. Thirty-three jobs are READY.
-6. Forty jobs are dependency-gated HOLD.
+4. Seventy-eight copy-ready jobs exist.
+5. Thirty-five jobs are READY.
+6. Forty-three jobs are dependency-gated HOLD.
 7. Every HOLD card names its exact dependency.
 8. Hub default presentation is strand-first.
 9. Job cards are collapsed by default.
-10. Every one of the 73 jobs has a copy-ready prompt.
+10. Every one of the 78 jobs has a copy-ready prompt.
 11. Every job source set resolves to an input-lock job/strand.
-12. 73/73 normal jobs do not require Cloudflare in the edit loop.
-13. 73/73 normal jobs do not require Work/WSA.
+12. 78/78 normal jobs do not require Cloudflare in the edit loop.
+13. 78/78 normal jobs do not require Work/WSA.
 14. Canonical CubePet contract reports exactly 24 pet IDs.
 15. Three distinct FrizzleBob technical identities are locked.
 16. Town Living source blob matches current main.
@@ -189,3 +189,27 @@ Current catalog metrics:
 
 Current catalog metrics:
 **13 strands · 73 jobs · 33 READY · 40 HOLD**.
+
+
+## Character / Resident production workflow extension · 17/17
+
+118. Input locks advanced to schema v7 with Character/Resident workflow source pins.
+119. Hub catalog advanced to schema v6.
+120. Primary architecture remains 13 strands; this workflow extends Animation/Residents + ToolBox rather than creating another runtime.
+121. Self-service catalog now contains 78 jobs.
+122. 35 jobs are READY.
+123. 43 jobs are dependency-gated HOLD.
+124. Five new copy-ready briefs exist: Resident Band Module, Pose-to-Blender, Actor Family Factory, Named Missing Motion and Custom Legacy Actor.
+125. All three new HOLD jobs name their exact source/dependency.
+126. Resident Atlas S7 source blob is pinned at `20ef6153dcd4819fb6929a3c87e0e539aecdf4a3`.
+127. Mixamo intake source blob is pinned at `5b3e28a5cb16ae945959b311273cdaa13886808d`.
+128. Blender animation proof PR #192 current head = `b49fb6e1adde070d658e1cc21dadb3294164cb29`.
+129. Orc Band PR #195 current head = `9dda7957a33e69926265c1e3a69028a4b35b26f0`.
+130. Motion Library PR #197 current head = `bf0eace2332a48f0b220318ad7567c68cc6dfbad`.
+131. Combat Legacy PR #10 current head = `663f0610eb960f322d67b078f1302d0c6178d1c2`.
+132. Workflow explicitly sets browser-first pose/scene authoring and Blender-only technical-boundary work.
+133. Frizzle-Orc 3 Rig-Warp / Musknacker / blank Legacy head accessories remain honestly SOURCE_REQUIRED rather than guessed.
+134. Animation/Residents strand exposes `RESIDENT-BAND-MODULE-01` and `POSE-TO-BLENDER-01` as READY.
+
+Current catalog metrics:
+**13 strands · 78 jobs · 35 READY · 43 HOLD**.
