@@ -3,7 +3,7 @@
 Status: **HUB SOURCE METADATA CURRENT · NO ROOT DESK REPUBLISH CLAIMED**
 
 Current architecture recovery source:
-`georg-doc/kayfabizarro#204` at `9af634c5fa2214f56f63f76d3f29f3ff89075807`.
+`georg-doc/kayfabizarro#204` at `0e6661ea0bc8dee14e5fafab083c48875ebf5883`.
 
 Current focus:
 World Building · Resident Scenes · ToolBox · Car Racer.
@@ -11,12 +11,13 @@ World Building · Resident Scenes · ToolBox · Car Racer.
 The three newest Flow Design Inbox exports have been classified in the architecture owner and are not promoted as Hub tools merely because they were uploaded.
 
 Minimal WSA/Work routing:
-- current Work execution: **Race TRACK_A real Rapier runtime/contact proof only**;
+- current Work decision: **no Work execution**;
 - WorldBuilder Flow shell → baked Cologne seam stays Web/GitHub;
 - Resident Card / Resident Band wait for Georg visual/pose gates;
 - Audio calibration is accepted;
 - MUSIC-PERF remains the existing public human-review gate;
-- ToolBox direct runtime is green; its separate review-wrapper transport is not a Work task.
+- ToolBox direct runtime is green; its separate review-wrapper transport is not a Work task;
+- Racer TRACK_A real Rapier runtime/contact proof stays with the documented Web/Race owner.
 
 Handoff:
 `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`.
