@@ -1,3 +1,16 @@
+## 2026-09-24 · Production Architecture v3 · Card Zones + Player Meta / Adaptive Interface
+
+- Promoted Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface to primary v3 production strands.
+- Exact Card Zone v2 remains behavior authority; StoryMap's source-locked `kfb-fluid-v2/card-zone-v2-fluid-source.js` is the reusable fluid donor; old `kfb-fluid-v1` is explicitly DEAD/diminished evidence, not authority.
+- Preserved Card Stack/unfold/reveal, Beam/projector, six-face Card Cube/FaceFocus and card-seeded local-zone grammar for later WorldBuilder placement.
+- Player Journey consolidates versioned import/export/migrations, card collection, Diary, POP, inventory, songs, gifts and cross-mode semantic events without reviving old Overworld runtime or mixing player state with authored World saves.
+- Universal POP moves to Player Journey; Travel's current `popScore` remains a presentation/local donor.
+- Georg's 20-visible-slot Backpack is recorded as current product direction; exact old sketch source remains unpinned rather than falsely claimed.
+- Adaptive HUD direction: upper-right real-card Almanac fan in ordinary gameplay, context-provided real minimap/instruments, immersive Almanac hides ordinary game HUD.
+- Measured authoring-UI issue: current inline object menu is 28×28 px with 13 px glyphs; new legibility brief preserves edit behavior while enlarging/clarifying context-local controls.
+- v3 catalog now **13 strands / 68 jobs / 32 READY / 36 HOLD**; architecture/source checks **96/96 PASS**.
+- Public Hub/HUB-CTRL, Cloudflare Live, merge state and product runtimes remain unchanged.
+
 ## 2026-09-24 · Production Architecture v3 · RKIT / World Bake / Look / Audio-VFX
 
 - Resolved Blender RKIT-02 decisions: Rapier is the stunt airborne/contact basis; accepted width ladder stays 10.8 / 14.4 / 18.0 / 21.6 m; preserve ~12 m Base Jump + add ~30 m Hero step-down; Race owns takeoff/landing and moving-support contact.
