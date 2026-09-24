@@ -11,10 +11,10 @@ Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 The current architecture contains **13 primary strands / 68 copy-ready jobs**:
 ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions · Card Zones/Card Objects · Player Meta/Fractal Almanac/Adaptive Interface.
 
-Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
+Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
 
 For the full self-service production route, read:
-- `PRODUCTION_STRANDS.md` — complete ToolBox, Animation/Residents, WorldBuilder/God Mode and Racer→World capability chains;
+- `PRODUCTION_STRANDS.md` — complete 13-strand capability map, including Card Zones and Player Meta/Interface;
 - `STRAND_BRIEFINGS.md` — copy-ready executor prompts for every prepared milestone, including future WAITING jobs;
 - `INPUT_LOCKS.json` — current source/head locks;
 - `HUB_BRIEFING_CATALOG.json` — machine-readable strands and READY/HOLD cards.
