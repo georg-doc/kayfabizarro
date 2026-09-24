@@ -16,6 +16,11 @@ Tested proof implementation:
 Run:
 `35952588495` · **34/34 PASS · 0 errors**.
 
+Draft PR: **#200**.
+
+Human review route:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/`
+
 Exactly one next gate:
 **Georg visual PASS / FAIL on A ROAD-01, B HOUSE-01, C FACADE-01.**
 
