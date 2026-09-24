@@ -1,0 +1,112 @@
+{
+  "schema": "kfb.audio-calibration/1",
+  "build": "AUDIO-CAL-01-v1",
+  "date": "2026-09-24",
+  "owner": "WSA coordination / existing KFB audio owners",
+  "status": "CALIBRATION_CANDIDATE",
+  "note": "Calibration harness only. Reuses current KFB sources and semantic owner contracts; it is not a replacement runtime audio engine.",
+  "roles": [
+    "VOICE",
+    "UI",
+    "PLAYER_CRITICAL",
+    "WORLD_SFX",
+    "DIEGETIC_MUSIC",
+    "SCORE",
+    "LOCAL_AMBIENCE",
+    "GLOBAL_BED"
+  ],
+  "assets": {
+    "music": {
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Orcish_Street_Corner_Jam_2026-09-23T021322.mp3",
+      "role": "DIEGETIC_MUSIC",
+      "provenance": "KFB RoadTrip JukeBox v2 / authored KFB music source",
+      "loop": true
+    },
+    "wind": {
+      "path": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
+      "role": "GLOBAL_BED",
+      "provenance": "shared KFB Audio / Environment",
+      "loop": true
+    },
+    "localWater": {
+      "path": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
+      "role": "LOCAL_AMBIENCE",
+      "provenance": "shared KFB Audio / Environment",
+      "loop": true
+    },
+    "vehicle": {
+      "path": "media/3D_Assets/Audio/KFB Racer/KFB_V8_Load_Loop_10s_48k.wav",
+      "role": "PLAYER_CRITICAL",
+      "provenance": "KFB Racer source",
+      "loop": true
+    },
+    "impact": {
+      "path": "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg",
+      "role": "PLAYER_CRITICAL",
+      "provenance": "Kenney Impact Sounds / CC0"
+    },
+    "crowd": {
+      "path": "media/3D_Assets/Audio/Other/applause.wav",
+      "role": "WORLD_SFX",
+      "provenance": "shared KFB Audio / Other",
+      "note": "Sparse reaction only; not a sustained crowd-bed substitute."
+    },
+    "cascade": {
+      "role": "PLAYER_CRITICAL",
+      "provenance": "Boxel Blitz donor grammar / Match Three shared source",
+      "paths": [
+        "media/3D_Assets/Audio/Match Three/match_synth_1.wav",
+        "media/3D_Assets/Audio/Match Three/match_synth_3.wav",
+        "media/3D_Assets/Audio/Match Three/match_synth_5.wav",
+        "media/3D_Assets/Audio/Match Three/match_synth_7.wav",
+        "media/3D_Assets/Audio/Match Three/match_synth_10_MAX.wav"
+      ]
+    }
+  },
+  "procedural": {
+    "storm": {
+      "role": "WORLD_SFX",
+      "status": "CALIBRATION_ONLY",
+      "productionAsset": false,
+      "note": "Deterministic filtered-noise + low-rumble stress accent derived from the existing Travel procedural-audio approach. It tests mix headroom only and is not an accepted thunder asset."
+    }
+  },
+  "scenes": {
+    "golden-hour-town": {
+      "label": "Golden Hour / Town",
+      "summary": "Open world bed, a local water source and the Orc street band at conversational distance.",
+      "music": 0.34,
+      "wind": 0.17,
+      "localWater": 0.22,
+      "duck": {
+        "music": 0.4,
+        "ambience": 0.66
+      },
+      "voice": "FrizzleBob here. The band keeps playing. The town keeps breathing. I only take the front of the mix for a moment."
+    },
+    "graveyard-night": {
+      "label": "Graveyard / Night",
+      "summary": "Sparse night state. Wind and negative space do most of the work; music stays on the timeline but nearly disappears.",
+      "music": 0.035,
+      "wind": 0.28,
+      "localWater": 0,
+      "duck": {
+        "music": 0.34,
+        "ambience": 0.72
+      },
+      "voice": "Quiet is part of the soundscape. You should hear me without the graveyard turning itself off."
+    },
+    "ring-performance": {
+      "label": "Ring / Performance",
+      "summary": "Dense stress state: foreground Orc band, crowd reactions, impacts, storm accent and addressed speech.",
+      "music": 0.76,
+      "wind": 0.08,
+      "localWater": 0,
+      "duck": {
+        "music": 0.3,
+        "ambience": 0.5
+      },
+      "voice": "FrizzleBob on the mic. Keep the band running, keep the impact readable, and make this sentence intelligible without killing the room."
+    }
+  }
+}
