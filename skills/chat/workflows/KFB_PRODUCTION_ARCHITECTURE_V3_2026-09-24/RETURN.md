@@ -1,6 +1,6 @@
-# RETURN · KFB Production Architecture v3 · Character / Resident workflow added · 2026-09-24
+# RETURN · KFB Production Architecture v3 · IK / execution dispatch / WSA mount prepared · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 78 JOBS · 134/134 PASS · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 79 JOBS · 158/158 PASS · UNMERGED · NO LIVE PROMOTION**
 
 ## Exact state before this Return write
 
@@ -8,14 +8,15 @@ Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 78 JOBS · 134/134 PASS �
 - Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 - Draft PR: **#204**
 - Base: `main@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
-- validated architecture/source checkpoint: `1dbc9d3fc0c6cee7a84bc912ba228f66ab52fb3d`
+- validated architecture/source checkpoint: `aaf2c6b4972e78f737b8711e2a3ad5b1b1a7c062`
+- pre-Return architecture head: `aae947a251231d84e62999c374d30ca39cf83ad9`
 - public Stage created by this architecture slice: **no**
 - Cloudflare Live promotion: **not authorized**
 - existing public Hub remains: `https://kayfabizarro.pages.dev/kfb-hub/`
 
 ## Current production map
 
-**13 primary strands · 78 copy-ready jobs · 35 READY · 43 dependency-gated HOLD**
+**13 primary strands · 79 copy-ready jobs · 36 READY · 43 dependency-gated HOLD**
 
 1. ToolBox Authoring Platform
 2. Animation & Residents
@@ -263,7 +264,7 @@ Prepared:
 
 ## Validation
 
-**134/134 architecture/source checks PASS.**
+**158/158 architecture/source checks PASS.**
 
 New source facts revalidated:
 - Card Zone full source blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`;
@@ -483,9 +484,118 @@ HOLD:
 
 Current RKIT/track Blender work is not interrupted by these jobs.
 
+## IK parity · Three.js CCD donor
+
+User-supplied donor:
+`mrdoob/three.js/examples/webgl_animation_skinning_ik.html`.
+
+Current KFB Resident Atlas S7 runs Three.js `0.184.0`; the same upstream CCD solver exists on the matching `r184` line.
+
+Source comparison found a credible technical reason why the upstream example may feel more stable:
+
+- current KFB `reachChain()` is a custom unconstrained CCD-like solver;
+- the current hand chain is typically constructed proximal→distal;
+- current solve has no per-link `rotationMin/rotationMax`;
+- no per-step `minAngle/maxAngle`;
+- no axis limitation;
+- no blend factor;
+- upstream `CCDIKSolver` supports all of those and its example arm chain is distal→proximal;
+- upstream also contains a small-angle early-out intended to reduce vibration.
+
+This matches the known KFB failure class where contact error improves while arm anatomy/torsion becomes worse.
+
+Prepared READY job:
+`IK-CCDIK-PARITY-01`.
+
+Execution:
+`WEB_DEEP · ChatGPT Web · GPT-5.6 Sol · high reasoning · HIGH budget`.
+
+Required comparison:
+A current KFB solver · B raw upstream CCD · C constrained upstream CCD, on the same Rig_Medium and Orc Brute sources.
+
+The current Resident Puppet UI, shared edit-layer and Studio Patch persistence remain owners until the direct visual A/B proves a better solve path.
+
+## Executor / model / reasoning / budget routing
+
+Current policy:
+`EXECUTION_DISPATCH_POLICY_2026-09-24.md`.
+
+Every one of the 79 catalog jobs now carries:
+- primary executor;
+- stable execution profile;
+- current recommended model;
+- normalized reasoning level;
+- budget band;
+- optional secondary/escalation profile.
+
+Current primary profile distribution:
+- `WEB_FAST`: 5
+- `WEB_STANDARD`: 40
+- `WEB_DEEP`: 29
+- `BLENDER_STANDARD`: 3
+- `BLENDER_DEEP`: 2
+
+Budget rule:
+- start with the lowest profile that can actually execute the job;
+- normal Web implementation = GPT-5.6 Sol Medium;
+- difficult solver/physics/architecture = GPT-5.6 Sol High;
+- normal Claude Design/Cowork/Blender work = Claude Sonnet 5;
+- Cowork is not a default GitHub/briefing executor;
+- Work is capability escalation only;
+- Opus 5.5 is a named deep escalation only, not a default;
+- after two failed repair passes on the same gate, stop/recover rather than escalating indefinitely.
+
+**79/79 jobs have no Work default.**
+**No catalog job uses Cowork as its primary execution profile.**
+
+## WSA / Hub mount preparation
+
+Prepared handoff:
+`WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md`.
+
+Existing Hub owner remains:
+- Draft PR #202;
+- branch `work/hub-ctrl-01-2026-09-24`;
+- current owner of the public KFB Hub / Production Desk / never-empty recovery.
+
+Mount execution profile:
+`WEB_STANDARD · GPT-5.6 Sol · medium reasoning · STANDARD budget`.
+
+**Work is not required for the mount.**
+**Cowork is not required for the mount.**
+
+The mount must preserve two separate surfaces:
+
+1. existing operational lanes / Today:
+   LOOK_AT · RUNNING · CAN_START · WAITING · live reviews/freshness;
+2. additive v3 self-service catalog:
+   13 strand cards → READY/HOLD jobs → copy-ready prompt + executor/model/reasoning/budget.
+
+Do not replace `lanes.json` with 79 jobs.
+Do not create a second Hub.
+
+Prompt text is resolved from `promptSection` in:
+- `STRAND_BRIEFINGS.md`;
+- `SELF_SERVICE_BRIEFINGS.md`.
+
+The Hub should not manually duplicate 79 prompt bodies.
+
+## Architecture-chat recovery
+
+Prepared:
+`ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md`.
+
+A replacement planning chat should read GitHub state and continue this role as:
+- architecture/owner/dependency steward;
+- self-service briefing maintainer;
+- execution/budget dispatcher;
+- WSA/Hub handoff preparer.
+
+It should **not** become the implementation bottleneck and should not regenerate routine briefings after every completed product job.
+
 ## Public Hub boundary
 
-The expanded **13-strand / 78-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
+The expanded **13-strand / 79-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
 
 This branch does not:
 - fork Hub ownership;
@@ -505,6 +615,6 @@ This branch does not:
 
 **HUB-V3-MOUNT**
 
-Existing HUB-CTRL consumes `HUB_BRIEFING_CATALOG.json` and renders the 13 strand cards, with current READY/REVIEW items in Today and the full 68-job dependency map only on expansion.
+Existing HUB-CTRL mounts the v3 self-service catalog additively while preserving its existing operational Today lanes. The 13 strand cards expose current READY/HOLD jobs; the full 79-job map appears only on expansion.
 
 Product work may already start directly from the READY briefs without waiting for that public mount.
