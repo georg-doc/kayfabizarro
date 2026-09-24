@@ -7,6 +7,16 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## CURRENT TOOLBOX SLICE · 2026-09-24
+
+ToolBox coherent integration is now the current ToolBox execution result on Draft PR **#185**:
+
+`tools/KFB-ToolBox/_handover/TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/START_HERE.md`
+
+Runtime-tested head `1f59903bfae25e959e106cf4fd1d06dd2cf62588`: **22/22 static + 20/20 Chromium PASS**. The candidate preserves the accepted Stage-First donor and composes the real roster, current Driver Graft, real Resident Atlas, shared edit layer and `kfb.scene-patch.v1`. It is **CHAT REVIEW READY**, deliberately **not Cloudflare-published**, and not yet a human acceptance or Live claim. The older 2026-09-23 ToolBox source-lock notes remain history/recovery context, not the active next gate.
+
+Exactly one next ToolBox capability after Georg's coherent-milestone gate: **TB-EYE-01 · EyeRig Production Studio**.
+
 ## Start order
 
 1. Read `REGISTRY.json`.

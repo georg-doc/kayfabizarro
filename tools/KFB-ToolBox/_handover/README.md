@@ -1,5 +1,9 @@
 # Übergaben
 
+## 2026-09-24 · Current ToolBox coherent integration
+
+- [TOOLBOX-COHERENT-INTEGRATION-01](TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/START_HERE.md) — **CHAT REVIEW READY** on Draft PR #185. Exact accepted Stage-First donor + real roster + current Driver Graft + real Resident Atlas + shared editor + `kfb.scene-patch.v1`. Runtime evidence: **22/22 static + 20/20 Chromium PASS** at `1f59903bfae25e959e106cf4fd1d06dd2cf62588`. No Cloudflare iteration publish. Exactly one next capability after Georg's gate: **TB-EYE-01 · EyeRig Production Studio**.
+
 Ein Ordner pro benanntem Arbeitsauftrag/Release. Aktueller Implementierungsauftrag bleibt [ToolBox v1](TOOLBOX_V1_2026-09-14/START_HERE.md).
 
 Hier liegen Ausführungsauftrag, Return und Evidenzverweise. Große Eingangspakete gehören nach `_inbox/<job>/`, Originalexport bleibt an seinem historischen Pfad. `RETURN_TEMPLATE.md` ist nur eine Vorlage, kein Testbericht.

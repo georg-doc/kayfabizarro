@@ -1,5 +1,21 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-24 · TOOLBOX-COHERENT-INTEGRATION-01
+
+### IMPLEMENTATION
+Promoted the exact accepted Stage-First v1 donor into PR #185 without modifying its donor file, then added one coherent adapter that reuses the existing real roster, current Driver Graft owner, current Resident Atlas, shared `edit-layer.js` and `kfb.scene-patch.v1`.
+
+The candidate supports one flow: roster actor → current Driver Graft → real Resident → select → Move → Rotate → free Scale → Drop → Save → Reload → continue editing. Missing mandated Resident/Driver sources fail visibly; no cube/generic fallback, second renderer, second editor or second persistence schema was introduced.
+
+### EVIDENCE
+Runtime-tested head `1f59903bfae25e959e106cf4fd1d06dd2cf62588`: **22/22 static + 20/20 Chromium PASS**. Actions run `36027616075`, job `107728032734`, conclusion SUCCESS.
+
+### PUBLICATION
+No Cloudflare iteration publish. Status is **CHAT REVIEW READY**, not PUBLIC_VERIFIED/live.
+
+### NEXT
+Exactly one next capability after human acceptance: **TB-EYE-01 · EyeRig Production Studio**.
+
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 ## 2026-09-23 · Texture workaround consumed · no new ToolBox chat

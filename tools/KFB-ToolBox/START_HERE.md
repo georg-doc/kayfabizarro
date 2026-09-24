@@ -1,5 +1,7 @@
 # KFB ToolBox v1 · Start here
 
+> **CURRENT OVERRIDE · 2026-09-24 · TOOLBOX-COHERENT-INTEGRATION-01:** Read [the coherent integration Return](_handover/TOOLBOX_COHERENT_INTEGRATION_01_2026-09-24/RETURN.md) first. Draft PR #185 / branch `chatgpt-web/toolbox-source-lock-2026-09-23`; runtime-tested head `1f59903bfae25e959e106cf4fd1d06dd2cf62588`; **22/22 static + 20/20 Chromium PASS**. The accepted Stage-First donor now composes the real roster, current Driver Graft, real Resident Atlas scenes, shared edit layer and `kfb.scene-patch.v1` into one Save/Reload editing flow. **CHAT REVIEW READY · NOT CLOUDFLARE-PUBLISHED · NOT HUMAN-ACCEPTED.** Exactly one next capability after Georg's gate: **TB-EYE-01 · EyeRig Production Studio**.
+
 > **CURRENT OVERRIDE · 2026-09-18:** Lies zuerst [`_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`](_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md). Der vollständige Stage-First-v1-Export ist eingetroffen und als Intake geprüft. Die ältere A/B-/Birthday-Routinglogik unten bleibt Herkunft/History, nicht aktueller Ausführungsauftrag. **Birthday 2026 = FAIL / OUTDATED / ARCHIVED HISTORY.**
 
 Status: DECISION / EXECUTION BRIEF · 2026-09-14
