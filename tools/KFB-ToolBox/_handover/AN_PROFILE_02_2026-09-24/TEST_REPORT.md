@@ -113,3 +113,38 @@ Future milestone route:
 
 Status:
 **NOT PUBLISHED · NOT PUBLIC_VERIFIED**
+
+
+## Chat review transport recovery
+
+The first two DC-based Chat attachment transports failed at the human visualization surface and are frozen as transport failures. They do not alter the product/runtime PASS above.
+
+Current review surface:
+`tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html`
+
+Final review-validation run:
+- Actions run `36055391088`
+- job `107820911138`
+- **SUCCESS**
+
+Final successful owner-run counts:
+- coherent static: **22/22 PASS**
+- AN-PROFILE-02 static: **34/34 PASS**
+- coherent Chromium: **20/20 PASS**
+- Animation Studio Chromium: **25/25 PASS**
+- plain review Chromium: **13/13 PASS**
+
+Combined:
+**114/114 PASS**
+
+Plain review additionally proves:
+- real WebGL canvas;
+- 33 Medium + 33 Large source clips;
+- measured Data visible;
+- Large feet remain `UNKNOWN_NOT_MEASURED`;
+- `endsOnTop @ 1` visible;
+- 0 page errors;
+- 0 failed source/module requests.
+
+Full failure/recovery record:
+`REVIEW_TRANSPORT_FAILURE_RECOVERY.md`
