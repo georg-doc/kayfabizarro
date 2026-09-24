@@ -742,6 +742,34 @@
       "failedCandidateRun": "35947303053 · 38/38 browser PASS · 3/3 WebGL2 · 0 errors · HUMAN FAIL",
       "failureRecovery": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md",
       "reviewStatus": "FAILED_EVIDENCE_ONLY"
+    },
+    {
+      "id": "huerth-architecture-proofs-2026-09-24",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "path": "tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/START_HERE.md",
+      "recovery": "tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/RECOVERY.md",
+      "return": "tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/RETURN.md",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/huerth-architecture-proofs-2026-09-24",
+      "owner": "OSM City Lab presentation / KFB ToolBox authoring",
+      "parentFailedCandidate": "elastic-grotesque-clay-huerth01",
+      "testedImplementationHead": "c36f97be48a6b5da5617aa000c921e4a51329f7f",
+      "tested": "34/34 browser PASS · A/B/C WebGL2 PASS · 0 page/console errors · run 35952588495",
+      "proofs": [
+        "ROAD-01",
+        "HOUSE-01",
+        "FACADE-01"
+      ],
+      "currentGate": "GEORG HUMAN VISUAL REVIEW · PASS / FAIL A, B, C",
+      "doesNotOwn": [
+        "Hürth block implementation",
+        "OSM source truth",
+        "Clean/Cartoon/Grotesque modes",
+        "LC-01",
+        "automatic Clipper2 adoption"
+      ],
+      "note": "Fresh recovery proof slice. Frozen R2 must not be patched. All A/B/C must visually pass before a new Hürth implementation candidate is opened."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
