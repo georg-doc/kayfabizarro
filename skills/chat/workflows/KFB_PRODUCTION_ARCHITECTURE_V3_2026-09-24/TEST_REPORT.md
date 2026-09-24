@@ -257,3 +257,22 @@ Work/Cowork/Claude Design appear only as capability-specific secondary/escalatio
 156. `EXECUTION_DISPATCH_POLICY_2026-09-24.md` exists and is pinned on the architecture branch.
 157. `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` exists and routes the mount to existing HUB-CTRL #202 with `WEB_STANDARD`, not Work.
 158. `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` exists as the fresh-chat continuation/recovery entry for the architecture/planning role.
+
+
+## RES-DISCO-01 additive planning validation · 2026-09-24
+
+Scope: documentation/catalogue preparation only; no Resident runtime, animation binary or public Stage was changed in this checkpoint.
+
+**Result: 9/9 PASS**
+
+1. `HUB_BRIEFING_CATALOG.json` parses as JSON.
+2. Catalogue count = **82** jobs.
+3. READY count = **39**.
+4. HOLD count = **43**.
+5. `res-disco-01` occurs exactly once.
+6. Animation & Residents `currentReady` contains `res-disco-01`.
+7. `promptSection` resolves to the Self-Service Briefings heading.
+8. Detailed `RESIDENT_DISCO_01_2026-09-24.md` exists on the architecture branch.
+9. Planned review route uses the required direct Cloudflare surface: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`.
+
+Existing formal architecture/source checkpoint remains the prior **158/158 PASS**. This 9/9 result is an additive planning/catalogue validation and is not misreported as a runtime/browser test.
