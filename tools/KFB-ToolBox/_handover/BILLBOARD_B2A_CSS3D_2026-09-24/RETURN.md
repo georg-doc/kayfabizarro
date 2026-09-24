@@ -1,6 +1,6 @@
 # RETURN · Billboard B2a · inline CSS3D YouTube · 2026-09-24
 
-Status: **PUBLIC_VERIFIED · HUMAN REVIEW PENDING**
+Status: **HUMAN_ACCEPTED · FRONT-ONLY FIX CHECKED IN**
 Repo: `georg-doc/kayfabizarro`
 Branch: `chatgpt-web/billboard-b2a-css3d-2026-09-24`
 Draft PR: **#199**
@@ -23,7 +23,37 @@ Evidence:
 
 Timeout recovery: previous turn ended during public-stage handoff; GitHub inspection proved all intended writes and Stage publication existed, so no duplicate write was made.
 
-Unresolved: human visual/interaction acceptance only.
+Unresolved: none inside B2a. B2b/B2c/B3/C1 remain separate future lanes.
 
 Exactly one next gate:
 **Georg B2a PASS/TUNE on the direct Cloudflare route.**
+
+
+## Final B2a tune
+
+Georg's last requested correction was rear-side occlusion for the CSS3D YouTube plane.
+
+Final behavior:
+- front: real inline YouTube remains clickable;
+- front/3/4: perspective behavior preserved;
+- rear: iframe is culled by panel-normal/camera hemisphere test;
+- rear picture shows the normal Kenney billboard backside;
+- no mirrored video is visible.
+
+Final verified runtime:
+`89065825448846beb2649082fc0c1bf25df20ccb`
+
+Public Stage:
+`cloudflare-live@983929385c3be74a42ec88c29f601c08b90b5a05`
+
+Final evidence:
+- integration **29/29 PASS**;
+- public **24/24 PASS**;
+- public artifact `10836432703`;
+- public rear screenshot visually checked.
+
+Human status:
+**ACCEPTED / CHECK IN AUTHORIZED by Georg after this exact requested fix.**
+
+Exactly one next gate:
+**B2b research/options memo; no B2b implementation yet.**

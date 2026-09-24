@@ -1,6 +1,6 @@
 # RECOVERY · Billboard B2a CSS3D · 2026-09-24
 
-Status: **PUBLIC_VERIFIED · HUMAN REVIEW NEXT**
+Status: **HUMAN_ACCEPTED · FRONT-ONLY FIX VERIFIED · B2B RESEARCH NEXT**
 Owner: **KFB ToolBox / Billboard Media Residency**
 Branch: `chatgpt-web/billboard-b2a-css3d-2026-09-24`
 Draft PR: **#199**
@@ -81,3 +81,42 @@ Public proof verifies:
 ## Exactly one next gate
 
 **Georg reviews B2a on the direct Cloudflare route and decides PASS/TUNE for inline YouTube.**
+
+
+## 2026-09-25 · human rear-side tune · CLOSED
+
+Georg accepted the inline-video direction but identified one remaining visual defect: the CSS3D YouTube plane rotated through the side and was mirrored on the rear instead of revealing the normal billboard backside. He then explicitly asked ChatGPT to build/fix/check it in.
+
+### Attempt 1 · CSS backface rule only · FAIL
+- head `ba7043d46cffc642d9a13be1b515b31e2192c86c`;
+- run `36066418717`, job `107857553235`;
+- **28/29**;
+- artifact `10836446767`;
+- `backface-visibility:hidden` computed correctly, but the cross-origin iframe still won the rear hit-test and remained visibly mirrored.
+
+### Repair pass 1 · panel-normal hemisphere cull · PASS
+- runtime head `89065825448846beb2649082fc0c1bf25df20ccb`;
+- CSS backface rule retained as defense-in-depth;
+- CSS3DObject visibility is now additionally owned by the accepted panel world normal vs camera direction;
+- front hemisphere: iframe visible/clickable;
+- rear hemisphere: CSS3DObject hidden, leaving the original Kenney/WebGL billboard backside visible.
+
+Integration:
+- run `36066988954`, job `107859397766`;
+- **29/29 PASS**;
+- 0 page errors; 0 tracked first-party/CDN HTTP errors;
+- artifact `10836726983`.
+
+Public Cloudflare:
+- publication `cloudflare-live@983929385c3be74a42ec88c29f601c08b90b5a05`;
+- rerun public job `107860680693`;
+- **24/24 PASS**;
+- 0 page errors; 0 tracked HTTP errors;
+- public artifact `10836432703`;
+- screenshot `04-video-back.png`: normal tan billboard backside only; no mirrored YouTube surface.
+
+B2a is now **HUMAN_ACCEPTED** per Georg's conditional acceptance + explicit check-in instruction.
+
+## Exactly one next gate
+
+**B2b research/options memo for Living Mockup / Collage surfaces only; no runtime implementation until selected.**

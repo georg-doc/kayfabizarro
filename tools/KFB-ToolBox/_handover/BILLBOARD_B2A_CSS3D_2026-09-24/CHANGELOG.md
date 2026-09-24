@@ -54,3 +54,16 @@
 - public artifact `10789313140`;
 - no duplicate retry was performed because the intended writes were already present;
 - status advances to **PUBLIC_VERIFIED · HUMAN REVIEW NEXT**.
+
+
+## 2026-09-25 · human rear-side tune · front-only video
+- Georg accepted B2a except for one visual defect: the YouTube plane was mirrored on the rear;
+- attempt 1 `ba7043d4`: CSS `backface-visibility:hidden` alone → **28/29 FAIL**; iframe still exposed from rear;
+- repair pass 1 `89065825`: retained CSS backface rule and added explicit panel-normal/camera hemisphere culling through `CSS3DObject.visible`;
+- integration run `36066988954` / job `107859397766`: **29/29 PASS**, 0 page errors, 0 tracked first-party/CDN HTTP errors;
+- exact runtime published to `cloudflare-live@983929385c3be74a42ec88c29f601c08b90b5a05`;
+- first public attempt in the same workflow hit the pre-publication Stage and failed as stale deployment evidence; after Stage write, public job `107860680693` rerun → **24/24 PASS**;
+- public artifact `10836432703`;
+- visible rear proof: normal billboard backside only; no mirrored video;
+- B2a status: **HUMAN_ACCEPTED / CHECKED IN**;
+- B2b remains research-only next.

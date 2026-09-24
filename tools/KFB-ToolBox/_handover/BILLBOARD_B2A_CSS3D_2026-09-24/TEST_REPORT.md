@@ -1,6 +1,6 @@
 # TEST REPORT · Billboard B2a CSS3D · 2026-09-24
 
-Status: **PUBLIC_VERIFIED · HUMAN PENDING**
+Status: **FINAL B2A PASS · HUMAN_ACCEPTED**
 
 ## Source donor
 Three.js r160 `css3d_youtube.html` pinned at `d04539a76736ff500cae883d6a38b3dd8643c548`.
@@ -50,3 +50,38 @@ Public proof:
 - artifact `10789313140`.
 
 No Georg acceptance is inferred.
+
+
+## Rear-side / front-only tune · 2026-09-25
+
+User-observed defect:
+YouTube CSS3D plane visible and mirrored from the rear.
+
+Attempt 1:
+- head `ba7043d46cffc642d9a13be1b515b31e2192c86c`;
+- `backface-visibility:hidden` only;
+- integration **28/29 FAIL**;
+- rear iframe still exposed;
+- artifact `10836446767`.
+
+Repair:
+- head `89065825448846beb2649082fc0c1bf25df20ccb`;
+- panel world-normal / camera-direction hemisphere cull controls `CSS3DObject.visible`;
+- CSS backface rule retained.
+
+Final integration:
+- run `36066988954`;
+- job `107859397766`;
+- **29/29 PASS**;
+- 0 page errors;
+- 0 tracked first-party/CDN HTTP failures;
+- artifact `10836726983`.
+
+Final public Cloudflare:
+- Stage commit `983929385c3be74a42ec88c29f601c08b90b5a05`;
+- public job rerun `107860680693`;
+- **24/24 PASS**;
+- 0 page errors;
+- 0 tracked HTTP errors;
+- artifact `10836432703`;
+- `04-video-back.png` visually verified: only billboard rear body, no mirrored iframe.

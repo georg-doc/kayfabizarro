@@ -3,7 +3,7 @@
 Status: **CURRENT LIVING DOCUMENT · ADDITIVE**
 Date started: 2026-09-24
 Owner: **KFB ToolBox / Billboard Media Residency**
-Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a PUBLIC_VERIFIED → HUMAN REVIEW NEXT**
+Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a HUMAN_ACCEPTED → B2b RESEARCH NEXT**
 Current B1 PR: **#198**
 Current accepted B1 branch/head: `chatgpt-web/billboard-b1-2026-09-24@d54273d30f5465df36b33ee13c896a0ee6f95ca7`
 
@@ -40,7 +40,7 @@ The billboard is not a second card/video/face owner. It consumes existing owners
 
 B1 stays a recoverable checkpoint. B2 work forks it; B1 is not rewritten into B2.
 
-## CURRENT · B2a · inline YouTube / CSS3D surface
+## ACCEPTED · B2a · inline YouTube / CSS3D surface
 
 ### Goal
 YouTube plays **directly on the billboard face**, not in a modal or detached viewer.
@@ -189,3 +189,20 @@ GitHub state overrides Dropbox/chat copies.
 - a timeout occurred during handoff, but recovery inspection proved all intended writes existed; no duplicate retry;
 - **current gate: Georg B2a PASS/TUNE**;
 - B2b/B2c/B3/C1 remain unstarted/deferred as previously recorded.
+
+
+### 2026-09-25 · B2a rear-side correction · HUMAN_ACCEPTED
+- Georg's conditional acceptance identified one remaining issue: mirrored YouTube on the billboard rear;
+- CSS backface-only attempt failed the rear gate (**28/29**);
+- final seam uses the accepted panel world normal against camera direction to show CSS3D only on the front hemisphere;
+- original Kenney/WebGL rear body therefore owns the backside exactly as in the other media modes;
+- final runtime `89065825448846beb2649082fc0c1bf25df20ccb`;
+- final integration **29/29 PASS**;
+- final public Stage `983929385c3be74a42ec88c29f601c08b90b5a05`;
+- final public **24/24 PASS**;
+- public artifact `10836432703`;
+- rear screenshot visibly shows no mirrored iframe;
+- B2a closed as **HUMAN_ACCEPTED**.
+
+Current next gate:
+**B2b research/options memo for Living Mockup / Collage surfaces; do not implement before selection.**
