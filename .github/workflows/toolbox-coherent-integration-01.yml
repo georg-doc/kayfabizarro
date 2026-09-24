@@ -24,6 +24,8 @@ jobs:
           node-version: '22'
       - name: Static owner and contract checks
         run: node tools/KFB-ToolBox/stage-first/test/coherent-integration-01.static.mjs
+      - name: AN-PROFILE-02 static integration checks
+        run: node tools/KFB-ToolBox/stage-first/test/an-profile-02.static.mjs
       - name: Install browser runner
         run: |
           npm install --no-save --package-lock=false playwright@1.55.0
@@ -35,3 +37,5 @@ jobs:
           sleep 2
       - name: Browser coherent-flow smoke
         run: node tools/KFB-ToolBox/stage-first/test/coherent-integration-01.browser.mjs
+      - name: Browser AN-PROFILE-02 Animation Studio smoke
+        run: node tools/KFB-ToolBox/stage-first/test/an-profile-02.browser.mjs
