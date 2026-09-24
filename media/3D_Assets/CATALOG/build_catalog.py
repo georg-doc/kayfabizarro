@@ -4,6 +4,7 @@ Fast: reads only the GLB JSON chunk + accessor min/max, walks the node
 graph applying TRS, computes a world-space AABB. No vertex data loaded.
 """
 import os, json, struct, math, sys
+from datetime import date
 import numpy as np
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
@@ -247,7 +248,7 @@ if errors[:5]: print("sample errors:", errors[:5])
 
 # ---------- audio (NEU 2026-08-04) ----------
 import collections
-AUDIO_EXT = {".ogg", ".wav", ".mp3"}
+AUDIO_EXT = {".ogg", ".wav", ".mp3", ".m4a", ".flac", ".aac", ".aif", ".aiff"}
 audio_folders = {}
 for base in ("Audio", "Sounds"):
     aroot = os.path.join(ROOT, base)
@@ -260,12 +261,33 @@ for base in ("Audio", "Sounds"):
         rel = os.path.relpath(dp, ROOT)
         fmt = collections.Counter(os.path.splitext(f)[1].lower().lstrip(".") for f in auds)
         audio_folders[rel] = {"count": len(auds), "formats": dict(fmt), "files": sorted(auds)}
+audio_formats = collections.Counter()
+audio_roots = collections.Counter()
+for rel, meta in audio_folders.items():
+    top = rel.split(os.sep, 1)[0]
+    audio_roots[top] += meta["count"]
+    audio_formats.update(meta["formats"])
+
 audio_cat = {
-    "generated": "auto",
-    "root": "media/3D_Assets (GitHub) / '3D ASSETS' (local)",
+    "generated": date.today().isoformat(),
+    "root": "media/3D_Assets",
     "total_files": sum(v["count"] for v in audio_folders.values()),
     "total_folders": len(audio_folders),
-    "note": "Audio-Index. sfx.json + jukebox.json (in Audio/) sind die Engine-Manifeste fuer travel-audio.js.",
+    "roots": dict(audio_roots),
+    "formats": dict(audio_formats),
+    "note": "Current shared Audio + Sounds index. This catalog is discovery/curation metadata, not a runtime owner. Consumer manifests remain separate.",
+    "semantic_roles": ["VOICE", "UI", "PLAYER_CRITICAL", "WORLD_SFX", "DIEGETIC_MUSIC", "SCORE", "LOCAL_AMBIENCE", "GLOBAL_BED"],
+    "known_manifests": [
+        "media/3D_Assets/Audio/sfx.json",
+        "media/3D_Assets/Audio/ui-sfx.json",
+        "media/3D_Assets/Audio/jukebox.json",
+        "media/3D_Assets/Sounds/jukebox.json",
+    ],
+    "curation_notes": {
+        "source_master_vs_runtime_derivative": "Track separately when a runtime derivative exists; presence in this catalog is not approval.",
+        "licensing": "Preserve pack/file provenance; do not infer one license for all folders.",
+        "listening": "Automated path/decode checks do not equal Georg listening acceptance.",
+    },
     "folders": audio_folders,
 }
 with open(os.path.join(OUT, "audio-catalog.json"), "w") as f:
