@@ -769,7 +769,10 @@
         "LC-01",
         "automatic Clipper2 adoption"
       ],
-      "note": "Fresh recovery proof slice. Frozen R2 must not be patched. All A/B/C must visually pass before a new Hürth implementation candidate is opened."
+      "note": "Fresh recovery proof slice. Frozen R2 must not be patched. 34/34 browser PASS at c36f97be. Human route published via Cloudflare wrapper; exact public verification pending current chat open. All A/B/C must visually pass before a new Hürth implementation candidate.",
+      "draftPR": 200,
+      "reviewUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/",
+      "publicVerified": false
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
