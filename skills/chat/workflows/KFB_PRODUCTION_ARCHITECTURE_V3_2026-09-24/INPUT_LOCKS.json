@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/4",
+  "schema": "kfb.production-architecture.v3-input-locks/5",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -398,6 +398,55 @@
         "Race telemetry SFX POC in RECOVERY.md"
       ],
       "rule": "human-readable audition cards and semantic event ids; games never require Georg to choose opaque filenames"
+    },
+    "cardZoneModules": {
+      "repo": "georg-doc/kayfabizarro",
+      "fullSource": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html",
+      "fullSourceBlob": "e7bb09e49b2a885eb076e8c43c0ff561a9cebb72",
+      "codeMap": "tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/docs/CODE_MAP.md",
+      "codeMapBlob": "7953203a1c3be80d719db5c62136924c8c475753",
+      "exactFluidDonor": "tools/KFB-ToolBox/_inbox/KFB StoryMap v1/kfb-fluid-v2/card-zone-v2-fluid-source.js",
+      "exactFluidDonorBlob": "97e3e0813cb5693a64863482ab96a601e88f5104",
+      "storyMapHousekeepingBlob": "f2656b5cc42539ec28bb2cc6f96b524bc8d51a64",
+      "oldExtractionMap": "tools/KFB-ToolBox/_inbox/kfb-toolbox-v1.1/tools/KFB-ToolBox/MODULE_MAP.md",
+      "oldExtractionMapBlob": "c9f3c7ca4b0c72f7fb7311cccce471ca37d22952",
+      "authorityRule": "Original Card Zone Lab v2 remains behavior authority. StoryMap fluid-v2 is the source-locked exact fluid donor. Old kfb-fluid-v1 extraction is evidence only where not revalidated and must not override the source.",
+      "sourceCapabilities": [
+        "animated moat/river/pond fluid shader with waterdudv.jpg + water.jpg",
+        "Card Cube six content faces + face focus",
+        "3D card stack/deck",
+        "card unfold/reveal",
+        "projection/beam",
+        "card-seeded zone/story/palette/fluid/wear/texture/moat parameters"
+      ]
+    },
+    "playerJourneyMeta": {
+      "repo": "georg-doc/kayfabizarro",
+      "journeyDonor": "overworld/overworld/journey.js",
+      "journeyDonorBlob": "ad58ef4239254f42a994ada3e729dd820fa1806c",
+      "currentFields": "versioned import/export + cards + diary + reputation + quests + hero + zones + afterglow material",
+      "gameDesignConcept": "skills/KFB Setup Game Design/KFB Design-Bootstrap_v02/docs/gruendung/SESSION_EXPORT_Workspace_A_KFB_Game_Design_2026-09-09_v3.md",
+      "gameDesignConceptBlob": "f7528e5d9a54cfd71f68cab1223c1916a2cc97c2",
+      "fractalAlmanacHistoricalDonor": "Dropbox /CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/frizzlebob_fractal_almanac_cowork_briefing.md",
+      "fractalAlmanacHistoricalModified": "2026-07-09T17:24:58Z",
+      "popHudDonor": "travel/wip/travel_globe_wsa/globe-v13/collect-hud.js",
+      "popHudDonorBlob": "e73aec107a9d3cf811a025ccbe6b2730e21fcfe5",
+      "raceHudV3": "kfb-hub/stage/stunt-world/hud-game-v3/SOURCE.json",
+      "raceHudV3Blob": "affb1ba1d175351fa5d7b30474afb4c421f4dd83",
+      "inventory20SourceStatus": "USER_DIRECTION__HISTORICAL_SOURCE_NOT_YET_PINNED",
+      "popRule": "POP is cross-mode progression/reaction currency. Existing Travel popScore is a presentation/local donor, not the future durable account owner.",
+      "persistenceRule": "Player Journey/Meta stores semantic facts and refs. Authored WorldBuilder world state remains a separate owner."
+    },
+    "interfaceGrammar": {
+      "repo": "georg-doc/kayfabizarro",
+      "sharedEditLayer": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "sharedEditLayerBranch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+      "sharedEditLayerBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+      "currentResidentUi": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/KFB_Resident_Atlas_S7.html",
+      "currentResidentUiBlob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3",
+      "measuredCurrentInlineMenu": "28x28 CSS px buttons; 13px glyphs; symbols ✥ ⟳ ⤢ ⬓ ⊹ ✕",
+      "userFinding": "icons are too small/ambiguous; function is learned by position rather than recognisable symbol",
+      "rule": "Player HUD and authoring tools share visual tokens/icon semantics/state language, but remain separate contextual surfaces. No universal dashboard."
     }
   },
   "strands": {
@@ -510,6 +559,25 @@
         "audioFxAudition"
       ],
       "target": "shared Spindle environment + Curtain transitions + host-owned stage/instance recipes"
+    },
+    "cardZones": {
+      "sourceKeys": [
+        "cardZoneModules",
+        "verticalWorld",
+        "sharedStage"
+      ],
+      "target": "Reusable Card Zone modules: exact fluid, stack/reveal, beam, Card Cube/FaceFocus and card-seeded zone recipes placeable in WorldBuilder"
+    },
+    "playerMetaHud": {
+      "sourceKeys": [
+        "playerJourneyMeta",
+        "interfaceGrammar",
+        "audioFxAudition",
+        "travelModes",
+        "townNpcLife",
+        "cardZoneModules"
+      ],
+      "target": "One versioned Player Journey/Meta state + Fractal Almanac + POP + backpack + songs + adaptive mode HUD + coherent authoring UI grammar"
     }
   }
 }
