@@ -1,3 +1,14 @@
+## 2026-09-24 · Production Architecture v3 complete strands
+
+- v3 now exposes five complete production strands with 19 copy-ready jobs instead of only the next micro-slices.
+- ToolBox route explicitly includes EyeRig Production Studio, Fractal Scene + Pose Studio, Animation Studio, Vehicle Motion/Driver Studio, Resident Scene Studio + live Resource Picker and the coherent production milestone.
+- Animation/Resident route reuses Blender performance batching, Resident Atlas browser posing and measured MotionProfiles.
+- WorldBuilder route is preplanned through Authorable Place → Live Search/Fractal Edit → real locomotion/motion → OSM district → Race bridge → God Mode.
+- Racer route is preplanned from current PR #33 R3d TUNE through Anatomy Foundation → route-driven visual module → contact → WorldBuilder bridge.
+- Existing Resident Atlas Bone-Posing, EyeRig v6/Vehicle FaceHost, Motion Lab/KCL and Asset Librarian picker were recovered as donors rather than rebuilt.
+- `HUB_BRIEFING_CATALOG.json` v2 carries READY and dependency-gated HOLD jobs; validation **31/31 PASS**.
+- Public Hub/HUB-CTRL was not overwritten; no Live/merge action.
+
 ## 2026-09-24 · Production Architecture v3 candidate
 
 - Georg approved the direction away from micro-gate/control-plane production toward self-service coherent artifacts.
