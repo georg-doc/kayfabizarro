@@ -63,13 +63,11 @@ function addRoads(root,palette,mode){
       const path=smoothRoadRibbon(r.centerline,Math.max(.8,r.widthM),.032,pathMat);if(path){path.renderOrder=1;root.add(path);}
     }
   }
-  if(!elastic)return {roadJunctionPatches:0,curbJunctionPatches:0,pathJunctionPatches:0};
-  const driveable=roads.filter(r=>r.driveable),paths=roads.filter(r=>!r.driveable);
-  const curbSpecs=addJunctionPatches(THREE,root,driveable,{y:.019,material:curbMat,widthExtra:.625,driveableOnly:true,segments:18});
+  if(!elastic)return {roadJunctionPatches:0};
+  const driveable=roads.filter(r=>r.driveable);
   const roadSpecs=addJunctionPatches(THREE,root,driveable,{y:.049,material:roadMat,widthExtra:.02,driveableOnly:true,segments:18});
-  const pathSpecs=addJunctionPatches(THREE,root,paths,{y:.033,material:pathMat,widthExtra:.04,driveableOnly:false,segments:14});
   for(const child of root.children)if(child.userData?.role==='street-junction-patch')child.renderOrder=3;
-  return {roadJunctionPatches:roadSpecs.length,curbJunctionPatches:curbSpecs.length,pathJunctionPatches:pathSpecs.length};
+  return {roadJunctionPatches:roadSpecs.length};
 }
 function addCurrentWindows(root,b,deformation,palette){
   const cfg={...style.cartoonMassing.windows,materialCount:palette.window.length},codes=windowCodesForBuilding(b,deformation,cfg,style.seed||'kfb-city');
