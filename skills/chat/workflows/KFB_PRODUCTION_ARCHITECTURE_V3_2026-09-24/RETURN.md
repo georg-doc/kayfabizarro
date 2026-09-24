@@ -1,6 +1,6 @@
 # RETURN · KFB Production Architecture v3 · Card Zones + Player Meta / Adaptive Interface · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 68 JOBS · 96/96 PASS · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 73 JOBS · 117/117 PASS · UNMERGED · NO LIVE PROMOTION**
 
 ## Exact state before this Return write
 
@@ -15,7 +15,7 @@ Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 68 JOBS · 96/96 PASS · 
 
 ## Current production map
 
-**13 primary strands · 68 copy-ready jobs · 32 READY · 36 dependency-gated HOLD**
+**13 primary strands · 73 copy-ready jobs · 33 READY · 40 dependency-gated HOLD**
 
 1. ToolBox Authoring Platform
 2. Animation & Residents
@@ -263,7 +263,7 @@ Prepared:
 
 ## Validation
 
-**96/96 architecture/source checks PASS.**
+**117/117 architecture/source checks PASS.**
 
 New source facts revalidated:
 - Card Zone full source blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`;
@@ -277,9 +277,91 @@ New source facts revalidated:
 - shared edit-layer `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`;
 - current Resident UI `20ef6153dcd4819fb6929a3c87e0e539aecdf4a3`.
 
+## P2 Skills / Runtime Contracts consolidation
+
+Current planning/census source:
+`SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md`.
+
+This is a **P2 compatibility/hygiene lane**, not a fourteenth product runtime and not a blocker for current P0/P1 execution.
+
+### Confirmed current/legacy split
+
+- `skills/EMBED_CUBE_PET_FULL_v2.2.md` remains a valid compatibility/current recipe for the **24 canonical CubePets**, but must no longer be presented as the universal KFB actor embed.
+- `tools/KFB-ToolBox/kfb-rigs-embed-v3/EMBED_KFB_RIGS_v3.md` is the current non-CubePet embed donor for FrizzleBob Graft and CapsuleCarl/Wissens-Pilli; native KayKit/GothGirl actors remain with their current FaceHost/EyeRig/profile owners.
+- Current Wissens-Pilli/Carl routing preserves source-mouth cleanup, `red` mouth set, one face owner and material-zone configuration.
+- Current Actor Platform direction explicitly forbids consumer-specific face/mouth/eye forks.
+
+### Card/PDF current direction
+
+Reuse two complementary owners rather than building a third viewer:
+
+- `skills/kfb-card-builder.js` + Card/PDF SSOT = canonical KFB card crop/render/silhouette/Ink;
+- Deck Viewer v4 + `deckviewer/kfb-corpus.js` = performant PDF loading, IndexedDB/page caches, bounded rendering and editorial presentation modes.
+
+Viewer v4's useful existing presentation vocabulary includes Reader / Gallery / Stack / Coverflow / Full View / Deck.
+
+The Fractal Almanac consumes that viewer/runtime and adds Journey/Hero-shot/replay context above it.
+
+Blind exact page-quarter crop is **not** universal across KFB PDFs. Known deck metadata/default/auto-resolver owns grid offsets/gaps; consumers do not implement crop math.
+
+### Ink
+
+Current `kfb-ink-canon.js` `family:'band'` is already the desired continuous closed ink ring/ribbon:
+one shared contour + variable feather/taper + one `fill()`.
+
+No second “RING” Ink canon will be invented due to terminology.
+
+Future `INK-3D-ADAPTER-01` derives:
+- surface ribbons for shoreline/map/road/track boundaries;
+- tube/rope extrusion for physical lines such as wrestling ropes;
+- clean card outer-silhouette edges without wireframe/per-triangle/double-grid artifacts.
+
+### Talk / bubbles / materials
+
+The PetStudio history is not uniformly dead. Active donor behavior remains relevant for:
+- visemes / current rich PetMouth;
+- speech/talk timelines;
+- speech/thought bubble shapes;
+- idle/acting behavior.
+
+The ToolBox final milestone now explicitly requires:
+- Mouth / Viseme / Talk;
+- Voice request/media seam;
+- Speech + Thought Bubbles;
+- Material Zone Color/Hex/Copy/Reset;
+- Texture/Surface access through current material/Asset-Librarian owners;
+- Card/PDF viewing where the authoring context uses card content.
+
+Current ToolBox UI brief already documents the proper Colorpicker/Hex/Copy behavior.
+Universal per-zone texture assignment remains a real implementation gap, not a solved feature.
+
+### Registry/root hygiene
+
+Current `skills/SOT_REGISTRY.md` is materially stale (2026-07-24) and still points general Pet embedding toward the old CubePet instruction.
+
+Also flagged for census:
+- `skills/kfb-embed-bundle/`;
+- `skills/kfb-embed-bundle v3/`;
+- binary GLBs sitting directly in `skills/`.
+
+Nothing is moved or deleted until the consumer/import scan proves safety.
+
+### Prepared P2 jobs
+
+READY:
+- `SKILLS-CENSUS-01`
+
+HOLD:
+- `SKILLS-CURRENT-01`
+- `SKILLS-ARCHIVE-01`
+- `CARD-VIEWER-CORE-01`
+- `INK-3D-ADAPTER-01`
+
+The Hub priority rule keeps P2 READY work out of the default Today view while P0/P1 work exists.
+
 ## Public Hub boundary
 
-The expanded **13-strand / 68-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
+The expanded **13-strand / 73-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
 
 This branch does not:
 - fork Hub ownership;
