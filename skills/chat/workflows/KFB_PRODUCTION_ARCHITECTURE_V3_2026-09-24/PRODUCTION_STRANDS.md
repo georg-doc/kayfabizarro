@@ -1324,6 +1324,70 @@ ChatterBox + Memory + Gift hooks
               └→ Town / any WorldBuilder world
 ```
 
+# Adjacent open lanes · integrate as modules, not new mega-strands
+
+These remain relevant but should feed the eleven primary strands rather than create another control plane.
+
+## 2D / 2.5D Animation Studio
+
+Current owner remains `tools/2D Animation Studio/`.
+
+Integration:
+- expose accepted `three2p5d` actors through the same Actor Capability Matrix;
+- allow Resident Scene modules and WorldBuilder placement;
+- Combat support only through an explicit 2D/2.5D semantic adapter;
+- do not convert 2D rigs into KayKit skeletons.
+
+## Storytelling Maps / Responsive CardRig / Billboards
+
+Integration:
+- Resource Picker can place accepted CardRig/Billboard/media modules;
+- Shared Stage Recipe can use them as scene/media surfaces;
+- WorldBuilder can mount them as authored world content;
+- no second card renderer inside WorldBuilder.
+
+## Dungeon / Environment Atlas
+
+Integration:
+- Dungeon keeps room/layout generation ownership;
+- WorldBuilder places a Dungeon/room instance or entrance;
+- Shared Stage/Curtain handles entry/return;
+- Combat Encounter adapter supplies raid/combat when requested;
+- Resident Scene modules populate rooms.
+
+## Card Zone / Project Islands
+
+The working Card Zone v2 semantics remain the donor.
+
+Integration:
+- Vertical/Babel strand may use Card platforms/islands;
+- WorldBuilder may place Card Zones as content;
+- Combat Tower may use a card as encounter support;
+- card rendering/reveal/collection ownership remains with Card systems.
+
+## VFX / SFX Consolidation
+
+Fold into STRAND S rather than creating a universal FX mega-engine.
+Semantic events map to current source-backed Combat/Travel/Race/Pinball/VFX recipes.
+
+## Tourbus / WaterBowser
+
+Treat later as a composite Living Vehicle Scene:
+- vehicle/Drive owner;
+- Resident passengers;
+- ChatterBox/NPC encounter hooks;
+- billboard/card display;
+- gifts/collection;
+- parking/hub state.
+
+Do not invent a Tourbus-specific movement, dialogue or card engine.
+
+## Graveyard / Boxel / other mini-games
+
+Each remains an instance/minigame owner.
+WorldBuilder/Town may place an entrance/instance anchor; Curtain/Stage recipe can cover transition/return.
+No requirement to merge every mini-game runtime into the open world.
+
 # Cross-strand dependency map
 
 ```
