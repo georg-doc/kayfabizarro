@@ -3,7 +3,7 @@
 Status: **CURRENT LIVING DOCUMENT · ADDITIVE**
 Date started: 2026-09-24
 Owner: **KFB ToolBox / Billboard Media Residency**
-Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a NEXT**
+Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a PUBLIC_VERIFIED → HUMAN REVIEW NEXT**
 Current B1 PR: **#198**
 Current accepted B1 branch/head: `chatgpt-web/billboard-b1-2026-09-24@d54273d30f5465df36b33ee13c896a0ee6f95ca7`
 
