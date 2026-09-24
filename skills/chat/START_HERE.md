@@ -11,7 +11,7 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
 
-The current v3 candidate now covers **13 primary strands / 81 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
+The current v3 candidate now covers **13 primary strands / 88 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
 
 Current architecture candidate:
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
@@ -39,6 +39,8 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — architecture/planning recovery entry
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md` — current three-export Flow Design intake classification
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current Work-budget handoff; no Work-only execution is presently required
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md` — current five-product MVP ladder
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/AI_TOWN_KFB_EVALUATION_2026-09-24.md` — AI Town mechanics donor decision
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
 Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime and repaired plain review are green; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
