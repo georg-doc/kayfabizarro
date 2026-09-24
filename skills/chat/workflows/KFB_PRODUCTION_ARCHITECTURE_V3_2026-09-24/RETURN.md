@@ -1,4 +1,4 @@
-# RETURN · KFB Production Architecture v3 · Card Zones + Player Meta / Adaptive Interface · 2026-09-24
+# RETURN · KFB Production Architecture v3 · Skills runtime consolidation added · 2026-09-24
 
 Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 73 JOBS · 117/117 PASS · UNMERGED · NO LIVE PROMOTION**
 
@@ -8,7 +8,7 @@ Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 73 JOBS · 117/117 PASS �
 - Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 - Draft PR: **#204**
 - Base: `main@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
-- validated architecture/source checkpoint: `5954fba492cbe6c4d658c3e6be7ecab8d2a919f2`
+- validated architecture/source checkpoint: `c89cbd5afd31f3fe6f7fc0a9e4faad755465e8a0`
 - public Stage created by this architecture slice: **no**
 - Cloudflare Live promotion: **not authorized**
 - existing public Hub remains: `https://kayfabizarro.pages.dev/kfb-hub/`
