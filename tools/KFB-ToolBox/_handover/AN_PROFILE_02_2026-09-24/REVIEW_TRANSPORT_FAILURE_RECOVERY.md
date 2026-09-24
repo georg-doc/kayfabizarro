@@ -84,3 +84,39 @@ Browser smoke must prove:
 8. no failed source/module requests.
 
 Only after that proof should the plain review HTML be handed to Georg.
+
+
+## Recovery result · plain Three.js review
+
+Final repaired review source:
+`tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html`
+
+Final technical review head:
+`ce3181bbf9114b7f00086368130fe610fd5810c7`
+
+GitHub Actions:
+- run `36055391088`
+- job `107820911138`
+- conclusion: **SUCCESS**
+
+Plain review browser smoke:
+**13/13 PASS**
+
+Proven:
+- review reaches ready;
+- exact AN-PROFILE source head pinned;
+- Medium 33/33;
+- default real clip selected;
+- real WebGL canvas rendered;
+- all 33 source clips listed;
+- measured Data visible;
+- Large 33/33;
+- Large foot contacts visibly `UNKNOWN_NOT_MEASURED`;
+- real climb clip searchable/selectable;
+- explicit `endsOnTop @ 1` visible;
+- **0 page errors**;
+- **0 failed source/module requests**.
+
+The DC-based transports remain frozen failed candidates. They are not revived by this success.
+
+The plain Three.js review is now the current technical human-review surface. It consumes real pinned actors, real Motion Library GLBs and real profile/catalogue data and does not become a second ToolBox/Animation runtime owner.
