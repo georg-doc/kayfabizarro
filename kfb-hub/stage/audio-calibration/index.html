@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-kfb-build="AUDIO-CAL-01-v1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Audio Calibration · AUDIO-CAL-01</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-scene="golden-hour-town">
+<main class="wrap">
+<header>
+<div>
+<div class="eyebrow">KFB Soundscape · Calibration Stage</div>
+<h1>AUDIO-CAL-01</h1>
+</div>
+<div class="status">ONE AUDIO OWNER<br>VOICE DUCKS · MUSIC CONTINUES</div>
+</header>
+
+<section class="scenes" aria-label="Calibration scenes">
+<button class="scene-button active" data-scene="golden-hour-town"><b>Golden Hour / Town</b><span>world bed · local source · street band</span></button>
+<button class="scene-button" data-scene="graveyard-night"><b>Graveyard / Night</b><span>wind · negative space · near-silence</span></button>
+<button class="scene-button" data-scene="ring-performance"><b>Ring / Performance</b><span>band · reactions · impact · voice stress</span></button>
+</section>
+
+<section class="stage">
+<div class="scene-copy">
+<h2 id="sceneTitle">Golden Hour / Town</h2>
+<p id="sceneSummary"></p>
+</div>
+
+<div class="transport">
+<button id="startAudio">START AUDIO</button>
+<button id="speak">FRIZZLEBOB VOICE</button>
+<button id="musicToggle" class="secondary">BAND ON / OFF</button>
+<button id="impact" class="secondary">IMPACT</button>
+<button id="cascade" class="secondary">CASCADE</button>
+<button id="vehicle" class="secondary">VEHICLE LOAD</button>
+<button id="crowd" class="secondary">CROWD REACTION</button>
+<button id="storm" class="secondary">STORM ACCENT</button>
+</div>
+
+<div class="voice">
+<span class="tag">VOICE / ADDRESSED</span>
+<p id="voiceText">FrizzleBob here.</p>
+</div>
+
+<div class="mixer" aria-label="Calibration mixer">
+<div class="strip"><label>MASTER</label><input data-bus="master" type="range" min="0" max="1" step=".01" value=".88"><output>88%</output><div class="meter" data-meter="master"></div></div>
+<div class="strip"><label>VOICE</label><input data-bus="voice" type="range" min="0" max="1" step=".01" value=".92"><output>92%</output><div class="meter" data-meter="voice"></div></div>
+<div class="strip"><label>SFX</label><input data-bus="sfx" type="range" min="0" max="1" step=".01" value=".82"><output>82%</output><div class="meter" data-meter="sfx"></div></div>
+<div class="strip"><label>MUSIC</label><input data-bus="music" type="range" min="0" max="1" step=".01" value=".86"><output>86%</output><div class="meter" data-meter="music"></div></div>
+<div class="strip"><label>AMBIENCE</label><input data-bus="ambience" type="range" min="0" max="1" step=".01" value=".78"><output>78%</output><div class="meter" data-meter="ambience"></div></div>
+</div>
+
+<div class="readout">
+<div id="audioStatus">AUDIO STOPPED</div>
+<div id="contextStatus">Context none · 0 owner</div>
+<div id="duckStatus">WORLD MIX · OPEN</div>
+<div id="musicStatus">BAND ON</div>
+</div>
+</section>
+
+<details>
+<summary>Diagnostics / source state</summary>
+<pre id="diagnostics"></pre>
+</details>
+
+<p class="source-note">The storm button is a deterministic procedural calibration accent, not a finished thunder asset. Crowd is a sparse applause reaction, not a sustained venue bed. Human listening remains the acceptance gate.</p>
+</main>
+<script type="module" src="./audio-calibration.js"></script>
+</body>
+</html>
