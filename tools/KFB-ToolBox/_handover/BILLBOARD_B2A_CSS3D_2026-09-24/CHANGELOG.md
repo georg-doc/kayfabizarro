@@ -42,3 +42,15 @@
 - screenshot inspection: CARD visible, SLOGAN visible, VIDEO inline on billboard, LEFT34 perspective correct;
 - repair count **1/2**;
 - public Stage proof is next.
+
+
+## 2026-09-24 · timeout recovery + public proof
+- prior chat/tool turn ended during the Stage handoff; state classified **UNKNOWN** until ref/run inspection;
+- verified PR #199 head `bed7f74e5bca3efb51a7eb3ab12819ad4a46af09`;
+- verified `cloudflare-live@be24c154889fb96c20e99ef2b86dd2ced44007be` contains the exact B2a wrapper;
+- exact public `SOURCE.json` marker reached Cloudflare;
+- run `35953227597`, public job `107486764345`: **22/22 PASS**;
+- 0 page errors; 0 tracked HTTP errors;
+- public artifact `10789313140`;
+- no duplicate retry was performed because the intended writes were already present;
+- status advances to **PUBLIC_VERIFIED · HUMAN REVIEW NEXT**.

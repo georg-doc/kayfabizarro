@@ -175,3 +175,17 @@ GitHub state overrides Dropbox/chat copies.
 - KFB Talking City Lights retained as B2c;
 - cartoon body retained as B3;
 - Curtain C1 remains HOLD.
+
+
+### 2026-09-24 · B2a implementation + timeout recovery
+- official Three.js r160 CSS3D donor isolated first: **9/9 PASS**;
+- first integrated candidate preserved as visual fail (**26/28**, black hidden CSS3D plane);
+- repair pass 1 switched visibility ownership to `CSS3DObject.visible`;
+- integration: **27/27 PASS**;
+- direct inline iframe, no modal, 16:9 face, perspective follows camera, unload on exit;
+- Stage wrapper published at `cloudflare-live@be24c154889fb96c20e99ef2b86dd2ced44007be`;
+- public proof: **22/22 PASS**, 0 page errors, 0 tracked HTTP errors;
+- public route: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/;
+- a timeout occurred during handoff, but recovery inspection proved all intended writes existed; no duplicate retry;
+- **current gate: Georg B2a PASS/TUNE**;
+- B2b/B2c/B3/C1 remain unstarted/deferred as previously recorded.

@@ -6,7 +6,7 @@
   "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
   "baseB1": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
-  "currentGate": "PUBLIC_STAGE_PROOF",
+  "currentGate": "HUMAN_REVIEW",
   "threeDonor": {
     "repo": "mrdoob/three.js",
     "tag": "r160",
@@ -54,5 +54,24 @@
     "no modal player",
     "no B2b/B2c/B3/C1 implementation in B2a"
   ],
-  "humanAcceptance": "PENDING"
+  "humanAcceptance": "PENDING",
+  "public": {
+    "stageCommit": "be24c154889fb96c20e99ef2b86dd2ced44007be",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
+    "proofRun": 35953227597,
+    "publicJob": 107486764345,
+    "checks": "22/22 PASS",
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "artifact": 10789313140,
+    "status": "PUBLIC_VERIFIED"
+  },
+  "timeoutRecovery": {
+    "event": "chat/tool timeout after public-proof setup",
+    "priorState": "UNKNOWN",
+    "recoveredAt": "2026-09-24T05:56+02:00",
+    "verifiedBranchHead": "bed7f74e5bca3efb51a7eb3ab12819ad4a46af09",
+    "verifiedCloudflareHead": "be24c154889fb96c20e99ef2b86dd2ced44007be",
+    "conclusion": "writes were present; no duplicate retry required"
+  }
 }
