@@ -1788,3 +1788,13 @@ Exactly one next gate:
 - exact human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`;
 - status: **PUBLIC_VERIFIED · HUMAN LISTENING PENDING**;
 - Draft PR #205 remains unmerged; no broad Race/Combat/Town integration or Live promotion is implied.
+
+
+## 2026-09-24 · AUDIO-CAL-01 human listening PASS
+
+- Georg reviewed the public calibration and returned **PASS**: “klingt sehr gut soweit. passt.”
+- AUDIO-CAL-01 status is now `HUMAN_ACCEPTED`.
+- Accepted scope: mix/ducking direction and the calibration concept; this is not blanket approval of every raw source sound.
+- Remaining curation backlog: sustained crowd/venue, rain/thunder, city/traffic, tyre/friction sources and shared character voice-profile metadata.
+- PR #205 remains Draft/unmerged and still carries tested P0 implementation/test deltas including repaired `ui-sfx.json`, refreshed audio catalog and validators/workflows.
+- No automatic Race/Combat/Town integration or Live promotion performed.
