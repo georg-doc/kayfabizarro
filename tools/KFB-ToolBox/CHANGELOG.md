@@ -192,3 +192,31 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-24 · AN-PROFILE-02 · Animation Studio consumption
+
+### EXPLICIT CONTINUATION
+After AN-PROFILE-01, Georg explicitly authorized continuing with the next small gate: consume the shared measured Motion Library/profile layer in the current ToolBox Animation Studio. This is additive to PR #185; it does not rewrite the earlier Coherent Stage-First result or imply its human acceptance.
+
+### IMPLEMENTATION
+The current `stage-first/src/KFB Animation Lab v3.dc.html` now consumes one immutable shared source adapter pinned to AN-PROFILE-01 PR #206 / `032c9d50...` and Motion Library PR #197. Medium/Large each lazily load their proper 33-clip library into the existing `allClips() → selectClip() → AnimationMixer` path.
+
+Existing search, Inventar/Gallery and Data panel now surface semantic group, loop, direction/stance, root/travel, measured-derived reference speed, contact status, rate-window status and explicit action markers. Unknown Large foot contacts, hand contacts and unmeasured markers stay unknown.
+
+No second mixer, renderer, motion database, binary copy, movement/physics/gameplay owner or persistence schema was added.
+
+### EVIDENCE
+Runtime-tested head `93d9dd6f763c064313fe5d3bef690496487145a9` · Actions run `36032905791` / job `107745811232` · **SUCCESS**.
+
+- existing coherent static: **22/22 PASS**;
+- AN-PROFILE-02 static: **34/34 PASS**;
+- existing coherent Chromium: **20/20 PASS**;
+- AN-PROFILE-02 Chromium: **25/25 PASS**;
+- KFB Motion/profile network failures: **0**;
+- Animation Studio page errors: **0**.
+
+### PUBLICATION / GATE
+No Cloudflare publication. Planned Stage route `/kfb-hub/stage/toolbox/animation-studio/` remains **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
+
+Current next gate: direct Chat HTML human review of the 33-clip Library + measured Data surface. WorldBuilder consumption remains HOLD until that first consumer review.
