@@ -1,3 +1,30 @@
+## 2026-09-24 · RKIT / OSM bake / Elastic torsion / Audio-VFX production decisions
+
+- resolved RKIT-02 D1–D5 for the fast playable path:
+  - Rapier becomes the stunt-dimensioning / airborne-contact basis (27 m/s, gravity magnitude 15 m/s² downward, proven physical ramp);
+  - human-positive Track-Lab v0.8 remains handling-feel donor, not a second physics owner;
+  - canonical width ladder remains 10.8 / 14.4 / 18.0 / 21.6 m; 28.8 m is special XL only;
+  - keep a ~12 m base jump and add a ~30 m Hero step-down;
+  - Race owns takeoff/air/landing and moving-support contact; RKIT owns reusable geometry + hinge/zone metadata.
+- product route deliberately avoids a general track editor: first authored recipes are `TRACK_A_STUNT_8`, `TRACK_B_OVAL_EXIT`, `TRACK_C_FLOW_LOOP`, compiled/baked into reusable Track Modules.
+- formalized OSM World Zone baking: fetch/normalize/compile once, then load versioned cached zones in WorldBuilder; Cologne first, Barcelona second portability proof.
+- geographic OSM truth is separated from authored WorldBuilder composition, so e.g. Barcelona + Cologne Cathedral is a valid fictional composition without corrupting provenance.
+- current Hürth R2 remains frozen; added an isolated Elastic Torsion/Landmark proof using existing GROTESQUE / BuildingElastic / LandmarkElastic donors rather than a third repair pass.
+- added human-readable Sound Audition Library, song/Resident beat-bar Performance Timeline and source-backed VFX Audition Library.
+- audio/VFX production loop is now inventory → audition → select → small semantic recipe batch → shared review scene → promotion; games consume semantic ids, not opaque filenames.
+- added eight copy-ready jobs:
+  - `RACE-TRACK-RECIPE-01`
+  - `RACE-RKIT-03`
+  - `WORLD-ZONE-BAKE-01`
+  - `WORLD-ZONE-BAKE-02`
+  - `LOOK-TORSION-01`
+  - `AUDIO-AUDITION-01`
+  - `MUSIC-PERF-01`
+  - `VFX-AUDITION-01`
+- Hub catalog now contains **11 strands / 53 jobs / 26 READY / 27 HOLD**.
+- source/architecture contract validation increased to **73/73 PASS**.
+- no product runtime, public Hub, Cloudflare Live or merge was changed.
+
 ## 2026-09-24 · gameplay/world expansion · Combat, Pets, Travel, Vertical, Town, Stage
 
 - expanded v3 from 5 to **11 primary production strands** and from 19 to **45 copy-ready jobs**;
