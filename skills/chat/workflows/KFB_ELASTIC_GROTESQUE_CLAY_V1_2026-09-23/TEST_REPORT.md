@@ -79,3 +79,51 @@ Only one current acceptance question remains:
 **Does the v2 actual 3D result visually reproduce the accepted benchmark direction closely enough to promote this grammar into the Blender-MCP / Geometry-Nodes production recipe?**
 
 No Cloudflare/public Stage proof is claimed in this slice.
+
+
+## TUNE ONCE · FINAL BROWSER EVIDENCE · 2026-09-24
+
+Human input:
+`HUMAN_RESULT_HUERTH01_V2_2026-09-24.md`
+
+Final tuned runtime head:
+`75b3c460ac37aac57cb5d9e96260517c5b4cf68d`
+
+Final workflow:
+- run `35945185715`
+- result: **SUCCESS**
+- browser assertions: **29/29 PASS**
+- **3/3 WebGL2**
+- page/console errors: **0**
+- artifact: `10786850367`
+- artifact digest: `sha256:716bfcab9dc6f4ed0180e0fd148b7a1494efca796bbe49746de762b0f8a900b0`
+
+Tuned assertions:
+- schema = `kfb.elastic-grotesque-clay.huerth01/0.3-tuned-candidate`;
+- Elastic default decision recorded;
+- retained switch views = `clean / cartoon / grotesque / elastic`;
+- details = `FINAL_BOWED_SURFACE_FRAME_FLUSH`;
+- shadow = `BIAS_0_NORMAL_BIAS_0_04_TIGHT_FIT`;
+- road = `CONTINUOUS_CATMULL_ROM_RIBBON_PLUS_OSM_NODE_PATCHES`;
+- real shared-OSM-node asphalt junction patches = **23**;
+- roof = `FINAL_TOP_OUTLINE_SMALL_OVERHANG`;
+- palette remains `KFB_WONKY_90S_CLAY_V1`;
+- source = 22 real Hürth buildings / 49 nearby road parts;
+- isolation round-trip = 22 → 1 → 22;
+- legacy City Lab CLEAN / CARTOON / GROTESQUE each boot unchanged.
+
+Visible evidence inspected from the final artifact:
+- `01-block-comparison.png`
+- `02-isolated-source-comparison.png`
+
+The first road-junction repair temporarily exposed pale curb/path junction discs. That intermediate candidate was visually rejected before publication. Final head `75b3c460…` keeps only same-colour asphalt patches at real shared OSM nodes.
+
+Cloudflare wrapper publication:
+- route: `https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+- `cloudflare-live` wrapper base pin updated to `75b3c460…`
+- wrapper commit: `96d1e75796e051ec6aa91dc26d25c01aafbd4ea3`
+- Hub routing commit: `de20e4cb8ddc3bf146d8e289251b145847dddc23`
+- **PUBLIC_VERIFIED: UNKNOWN in this chat environment** — direct Pages retrieval is currently unavailable to the tool, so no false public-PASS claim is made.
+
+Exactly one next gate:
+**Georg opens the direct Hürth review route and ACCEPTS or REJECTS the tuned V2.**
