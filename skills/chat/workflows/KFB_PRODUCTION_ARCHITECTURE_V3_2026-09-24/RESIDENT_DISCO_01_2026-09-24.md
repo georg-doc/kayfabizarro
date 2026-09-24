@@ -65,35 +65,58 @@ Additional current party-compatible loop:
 
 The library does not currently provide a source-backed standing clap, fists-up cheer, head-bang cheer or general victory hit.
 
-## Proposed first cast
+## Proposed first cast · revised by Georg
 
-Prefer actors not already used as the current ToolBox Resident-scene examples (Goth Girl, Orc Warband, Animatronic) and not the existing Clown module.
+**Prototype Pete is excluded.** He is a template/proof actor, not a disco Resident.
 
-| slot | Resident | rig | role | first motion direction |
+Use the user-selected source-backed cast direction:
+
+| slot | Resident | rig / presentation lane | role | first motion direction |
 |---|---|---|---|---|
-| D1 | Prototype Pete | Rig_Legacy | eccentric old-school party / crowd hype | Legacy-safe bounce / cheer / arms-up gesture |
-| D2 | Action Figure | Rig_Medium | sharp / toy-like dancer | Hip-Hop Wave ↔ Hip-Hop |
-| D3 | Toy Soldier | Rig_Medium | stiff comic contrast | Chicken Dance ↔ House |
-| D4 | Witch | Rig_Medium | loose flowing dancer | Samba ↔ House |
-| D5 | Black Knight | Rig_Large | heavy groove / visual anchor | House ↔ Hip-Hop Slide |
-| D6 | Demon Lord | Rig_Large | big theatrical dancer | Hip-Hop ↔ Wave / featured Thriller break |
-| D7 optional | Ultra Turbo Hero Man | Rig_Medium | high-energy accent | Hip-Hop Slide ↔ future Cheer/Victory |
+| D1 | Skeleton Minion · Legacy character source | Legacy rigid-parts / `legacyAssemble()` lane | comic bouncy skeleton dancer | reuse the proven Orc-band `bounce` presentation pattern; no fake Medium footwork |
+| D2 | Avian Swordsman | Rig_Medium | sharp / athletic dancer | Hip-Hop Wave ↔ Hip-Hop |
+| D3 | Protagonist_A · teenager role | Rig_Medium | teenage party Resident | House ↔ Slide Hip-Hop / later Cheer |
+| D4 | Toy Soldier | Rig_Medium | stiff comic contrast | Chicken Dance ↔ House |
+| D5 | Witch | Rig_Medium | loose flowing dancer | Samba ↔ House |
+| D6 | Black Knight | Rig_Large | heavy groove / visual anchor | House ↔ Hip-Hop Slide |
+| D7 | Demon Lord | Rig_Large | big theatrical dancer | Hip-Hop ↔ Wave / featured Thriller break |
 
-Alternative Large substitution after visual audition: Monstrosity.
+Alternative after visual audition: Ultra Turbo Hero Man or Monstrosity.
 
-Do not infer compatibility merely from rig-family names. Black Knight is already named compatible in the current Motion Library catalogue; every additional actor must be auditioned on the actual source object before being accepted into the scene.
+### User-pinned source references
 
-## Legacy rule
+Legacy Skeleton Minion source supplied by Georg:
+`media/3D_Assets/KayKit Legacy/KayKit Legacy Character Pack - Skeletons 1.0/Models/characters/gltf/character_skeleton_minion.gltf`
+at user-supplied revision `e0037d79af9f0546c73cee02e361f78f7d662df2`.
 
-`Rig_Legacy` is structurally different: six bones (Body, Head, armLeft, handSlotLeft, armRight, handSlotRight) and 30 embedded Legacy clips, rather than the Medium/Large 23-bone structure.
+This exact path is repository-readable and already has KFB `legacyAssemble()` evidence.
 
-Therefore:
-- do not apply Medium/Large footwork-heavy Mixamo clips directly to Legacy;
-- do not generic-rerig Legacy;
-- Prototype Pete should initially use a Legacy-native or deliberately authored upper-body party gesture;
-- if a named Legacy party motion is missing, route exactly that motion through the established Blender/Mixamo retarget boundary and return it as a reusable Legacy Action.
+Georg also supplied these intended visual counterparts:
+- `media/3D_Assets/KayKit_Skeletons/Skeleton_Minion.glb`;
+- `media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb`;
+- `media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb`.
 
-This makes the three rig classes visible without pretending they share one skeleton.
+Current repository manifests/source code confirm canonical Avian, Protagonist_A and Skeleton Minion assets, but the literal raw URLs supplied for these three did not resolve through the GitHub file API at revision `e0037d79…`. Therefore **do not silently rewrite the user's URLs**. RES-DISCO-A must resolve/show the actual current canonical files first and record the exact revision/path it loads.
+
+Action Figure is removed from this disco cast.
+
+## Legacy / rigid-parts rule
+
+The disco Legacy slot is now **Skeleton Minion**, not Prototype Pete.
+
+The proven Resident-band precedent is the important donor:
+- Legacy Orc B is a rigid-parts character, not a Medium/Large skinned dancer;
+- the accepted band `bounce` is an 8-beat presentation action;
+- the band runtime explicitly consumes the bounce clip/body transform without creating a new movement owner;
+- the newer Resident-band slice also demonstrates beat-relative counterpoint rather than pretending every performer shares one skeletal dance.
+
+For Skeleton Minion:
+- reuse the same **bounce-performance concept** first: vertical body bounce + optional squash/stretch/lean driven by the shared beat clock;
+- keep its canonical scene/world anchor stable;
+- do not map Medium/Large footwork-heavy Mixamo tracks onto the rigid-parts Legacy source;
+- only create a new Legacy skeletal/part action later if the bounce presentation is visibly insufficient.
+
+This is a better first disco proof than using Prototype Pete as a pseudo-character.
 
 ## New Mixamo search shortlist
 
@@ -142,17 +165,38 @@ The speaker can be reused without using Goth Girl as one of the dancers.
 3. Optional live-band mode:
 reuse the current ORB / KayfaBizarros performance donor from MUSIC-PERF-01 rather than creating a second band module.
 
-### Disco ball
+### Disco Ball / Party Light Core Module
 
-A disco ball is visibly implemented in the existing WorldDesign Lab lineage and repeatedly specified in the Birthday/World Design source, but current repository search has not yet resolved a canonical reusable object/module path.
+**Product decision from Georg:** do not treat the disco ball as a one-off scene prop. Build it as a flexible reusable in-game module, analogous in product role to Theatre Curtain Core.
 
-Rule:
-- first isolate and show the actual existing disco-ball source object/implementation;
-- if it is a reusable authored object, use it;
-- if it is only a one-off procedural construction, extract/adapt that exact mechanism through the existing World/Presentation owner rather than inventing a replacement;
-- rotation is presentation choreography, not a second physics owner.
+Working module direction: **DISCO-BALL-CORE-01**.
 
-Status: **DONOR_IMPLEMENTATION_TO_PIN before integration**.
+Required capabilities:
+- freely placeable / rotatable / scalable scene object;
+- continuous configurable rotation plus optional beat/bar impulses;
+- own bounded disco-light / beam / spot effects;
+- light/effect pattern parameters such as rotation speed, beam count/spread, intensity, range, color/palette source and beat response;
+- may hang above a Resident scene but is not owned by that scene;
+- reusable in Town, WorldBuilder, Resident events, Birthday/event scenes and later venues;
+- consumes the existing world/event lighting budget and VFX semantics rather than creating a second global light owner;
+- deterministic fallback if an advanced reflection/light technique is unavailable;
+- future **EyeRig host seam** reserved so the ball may later become an eyed/characterful world object without baking eyes into v1.
+
+The Theatre Curtain precedent is architectural, not visual: a reusable core asset with a small consumer seam and explicit states/parameters, independently mountable into host scenes.
+
+Suggested consumer surface, names proposal-only until implementation:
+
+```js
+mountDiscoBall(def, { parent, anchor, lightHost, vfxHost })
+→ { root, update(beatState), setMode(mode), setSpin(value), impulse(amount), dispose() }
+```
+
+Suggested semantic modes:
+`OFF · AMBIENT · DISCO · BEAT_PULSE · SPOT_SWEEP · RESET`.
+
+Do not make the Resident Disco scene the canonical owner of the ball. The Resident performance recipe only references/mounts it.
+
+Existing WorldDesign/Birthday disco-ball experiments remain donors/reference. Before integration, show any reusable existing source/implementation in isolation; do not call a newly generated generic sphere the old donor.
 
 ## Scene composition
 
@@ -296,9 +340,9 @@ Technical gates:
 
 ## Current unresolved
 
-- exact reusable disco-ball implementation path still needs source pinning;
+- Disco Ball Core implementation is now a named reusable-module requirement; existing donor implementation still needs source isolation/pinning before reuse;
 - selected song for first disco proof is not yet locked; MUSIC-PERF `Rubbish Groove` is available as a proof clock but should not be silently made the permanent disco track;
-- Prototype Pete needs a specific Legacy party action selection/authoring decision;
+- Skeleton Minion Legacy slot starts from the proven beat-driven Orc-band bounce presentation pattern; visual audition decides whether anything beyond bounce is needed;
 - new Mixamo shortlist names are research candidates until verified in the logged-in Mixamo interface and exported through the established intake;
 - Medium/Large compatibility for Action Figure, Toy Soldier, Witch and Demon Lord must be visually auditioned, not inferred.
 
@@ -306,4 +350,4 @@ Technical gates:
 
 **RES-DISCO-A · Source Cast + Motion Audition.**
 
-Build one direct browser review using the real six/seven source actors. Show each source actor first, then audition only the already-owned dance clips plus one Legacy-native party motion. Do not import new Mixamo clips or compose the final disco until Georg can judge which character/motion pairings are worth keeping.
+Build one direct browser review using the real seven source actors. Show each source actor first. Skeleton Minion uses the proven beat-driven bounce presentation concept; Medium/Large actors audition the already-owned dance clips. Also show the Disco Ball Core donor/source direction separately before integration. Do not import new Mixamo clips or compose the final disco until Georg can judge which character/motion pairings are worth keeping.
