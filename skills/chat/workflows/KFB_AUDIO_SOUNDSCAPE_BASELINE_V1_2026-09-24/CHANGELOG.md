@@ -33,3 +33,12 @@ AUDIO-CAL-01 must prove the target dense-scene case before wider integration:
 `diegetic band/music + ambience/weather + critical SFX + addressed speech`
 
 with voice intelligible through ducking/focus, while music timelines continue.
+
+
+## 2026-09-24 · Handoff metadata
+
+- Draft PR #205 opened against `main`.
+- Router, registry, global changelog and KFB Hub now point to this baseline.
+- The older Town/Travel soundscape item remains preserved as a REFERENCE donor, not a competing current audio plan.
+- AUDIO-CAL-01 remains planned only; no public Stage or runtime deployment was created by this slice.
+- No merge or Live promotion authorized.
