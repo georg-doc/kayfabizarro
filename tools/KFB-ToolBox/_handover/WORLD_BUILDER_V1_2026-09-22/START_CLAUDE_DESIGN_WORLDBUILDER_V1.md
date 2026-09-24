@@ -15,6 +15,20 @@ One coherent browser app, **KFB WorldBuilder v1**: a small round world he can sh
 5. **Look**: KFB Elastic Grotesque Clay as the **default** view for buildings; Clean / Cartoon / Grotesque stay available through a **view switch**. Ground gets the triplanar RGB-palette material.
 6. **Walk**: one character walks over the sphere (camera follows, WASD). Existing KayKit clips first; Mixamo clips come later via `ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md` (same folder). Characters appear with their approved eye rig on by default (EyeRig Atlas profiles, see that file §2b).
 
+### Globe look — NOT the TinySkies polygon look (Georg, explicit)
+
+TinySkies was accepted only for its light mood, weather and sky. Its faceted low-poly globe is **rejected**. From outside, the planet must read as a clean cartoon world:
+
+- smooth geometry: cube-sphere (ZyFou PlanetWorld) with enough subdivision / LOD, smooth vertex normals, no flat-shaded facets, no visible triangle steps;
+- surface = our procedural cartoon stack, all already built, all used:
+  1. triplanar RGB-palette material (`wd-look.js`, "Derek" method) + seamless macro texture (`wd-macro.js`);
+  2. cel shading with the owner formula from Voxel Zone S2 (`kfb-box-material.js`) and story palettes (`terrain/world-context.js`);
+  3. KFB ink outline (`wd-ink.js`, Derek-corrected: thin in light, thick in shadow, soft wobble);
+- from TinySkies take light values, sky dome, clouds, rain, day/night and moods — **not** its terrain, flat shading or `to-phong.js` conversion;
+- camera: **one continuous move** from globe view down to the ground and back (no three-part cut, no hard switch between stages).
+
+Show the planet from outside in the done-check: Georg must not see facets.
+
 Done when Georg can: shape a hill, place three objects, switch sky to rain and to night, switch the view, walk a character across his hill, save, reload, keep editing.
 
 ## Fork these — copy, do not rebuild
