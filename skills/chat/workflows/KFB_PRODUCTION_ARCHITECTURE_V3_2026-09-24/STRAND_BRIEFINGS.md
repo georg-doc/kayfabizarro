@@ -994,3 +994,293 @@ A waiting card is valuable because Georg can already see the complete production
 > First workflow is: audition existing donor → select → create a small semantic adaptation recipe. Example: if a useful fire donor is continuous, adapt emission/lifetime for a single-shot burst only if the donor supports it; do not rebuild fire from scratch.
 >
 > Return a representative Review Scene with several effects side-by-side and promote no effect merely because a file loads.
+
+---
+
+# Card Zone / Player Meta / Adaptive Interface jobs
+
+## CZ-FLUID-01 · Exact Card Zone Fluid Surface
+
+**Executor:** ChatGPT Web  
+**Outcome:** one reusable source-faithful KFB fluid surface, proven in Card Zone and one World host.
+
+> @GitHub
+> Read KFB Production Architecture v3 → STRAND Z / Z1, the exact Card Zone Lab v2 source, StoryMap's source-locked `kfb-fluid-v2/card-zone-v2-fluid-source.js`, and the Card Zone shader post-mortem/history.
+>
+> Build **CZ-FLUID-01** by wrapping/reusing the exact v2 shader source. Do not reconstruct it from screenshots and do not promote old `kfb-fluid-v1` behavior over the source.
+>
+> Mandatory source facts:
+> - `waterdudv.jpg` and `water.jpg` are real shader dependencies;
+> - animated moving streaks/flow must remain visible;
+> - the source's dead foam path stays dead; do not introduce a grey foam rim;
+> - source-correct StoryMap integration is not by itself a visual acceptance.
+>
+> Deliver one direct review artifact with three views/hosts in the same result:
+> 1. exact Card Zone v2 water reference;
+> 2. reusable Fluid Surface wrapper under the same texture/uniform/timing contract;
+> 3. one simple WorldBuilder-hosted pond/moat consumer using the same wrapper.
+>
+> If these do not visibly match in motion, stop at the source/wrapper mismatch. No Cloudflare loop and no new water shader.
+
+---
+
+## CZ-CARD-PRESENT-01 · Stack / Reveal / Beam module
+
+**Executor:** ChatGPT Web  
+**Outcome:** recover the real Card Zone presentation beat as reusable modules.
+
+> @GitHub
+> Read KFB Production Architecture v3 → Z2 and the exact Card Zone Lab v2 methods for `buildStack`, `prepReveal`, `poseCard`, `tickReveal`, `tickCard`, `setCardSide`, `buildProjection` and `updateProjection`.
+>
+> Build **CZ-CARD-PRESENT-01** from those behaviors, not from the old unverified extracted modules.
+>
+> Reuse the current KFB Card painter/renderer. Do not make another card rendering pipeline.
+>
+> Direct review beat:
+> real 3D deck/stack → card prepares → source-backed Beam/projection → card unfolds/reveals → readable real card front → optional close/reset.
+>
+> Keep stack/reveal and Beam independently switchable as modules, while proving their combined product beat once. Return one usable presentation package plus a short source-parity note.
+
+---
+
+## CZ-CUBE-01 · Card Cube + Face Focus
+
+**Executor:** ChatGPT Web  
+**Outcome:** reusable six-face Card Cube viewer from the actual v2 source.
+
+> @GitHub
+> Read KFB Production Architecture v3 → Z3 and exact Card Zone v2 `buildCardCube`, `refreshArtFace`, `snapQuat`, `tickCube`, `faceToCamera`, `faceTexture` and Face-Focus code.
+>
+> Recover **CZ-CUBE-01** from the source because the old module extraction never safely promoted the Card Cube.
+>
+> Preserve the actual six-face viewer mental model: real card Art plus current source-backed Title/Power/Lore/Related/context-detail surfaces. Let the cube free-rotate, snap a selected face to camera and open the actual detail/PDF-card surface through Face Focus.
+>
+> Do not replace the six faces with a generic dashboard or fake card textures.
+>
+> Deliver one directly usable viewer module suitable for Card Zone, Almanac and later ToolBox/Story consumers.
+
+---
+
+## CZ-RECIPE-01 · Card Zone authored recipe
+
+**Executor:** ChatGPT Web  
+**Outcome:** compact reusable Card Zone prefab data.
+
+> @GitHub
+> Start from accepted/current CZ-FLUID-01, CZ-CARD-PRESENT-01 and CZ-CUBE-01 plus the original Card Zone v2 seed logic.
+>
+> Define one compact **Card Zone Recipe** using refs + parameters, not copied assets:
+> card/deck ref, local support/zone recipe, fluid profile, story/card seed, palette/profile refs, stack/reveal/beam/cube settings, props/Residents and optional encounter/reward hooks.
+>
+> Preserve the historical seed vocabulary where still applicable: story mode, palette, fill, wear, texture and moat width.
+>
+> Prove two visually distinct zones from the same schema without creating a new world runtime.
+
+---
+
+## CZ-WORLD-01 · Placeable WorldBuilder Card Zone
+
+**Executor:** WorldBuilder Web  
+**Outcome:** Card Zone becomes searchable/placeable world content.
+
+> @GitHub
+> Read KFB Production Architecture v3 → Z5, current WorldBuilder authoring/resource-picker outputs and accepted CZ-RECIPE-01.
+>
+> Add Card Zone recipes as a Resource Picker category. WorldBuilder places the root module and stores its source ref + transform + authored overrides.
+>
+> Prove:
+> search → place → move/rotate/scale/drop root → save/reload → walk/drive to zone → fluid runs → card presentation is interactive.
+>
+> Boundaries:
+> WorldBuilder owns placement/support; Card Zone owns local fluid/card presentation; Player Journey will own collection/reward; Combat only enters through its existing encounter adapter.
+
+---
+
+## CZ-PROD-01 · Card Zone collection milestone
+
+**Executor:** Web integration + GitHub Bridge  
+**Outcome:** complete world-to-card-to-Almanac loop.
+
+> @GitHub
+> Read accepted/current CZ-WORLD-01 and Player Journey/Almanac outputs.
+>
+> Deliver one coherent product loop:
+> approach placed Card Zone → animated moat/river → enter/cross → inspect real 3D stack → Beam/unfold reveal → inspect in Card Cube/Face Focus → collect → Player Journey records the card → Almanac fan/collection updates → save/reload preserves it.
+>
+> Do not send separate shader/stack/cube acceptance pages. One product review only.
+
+---
+
+## META-JOURNEY-01 · Cross-mode Player Journey contract
+
+**Executor:** ChatGPT Web  
+**Outcome:** one versioned durable player-meta state across Race/Walk/Combat/Travel/Town/Card Zones.
+
+> @GitHub
+> Read KFB Production Architecture v3 → STRAND M / M1, `overworld/overworld/journey.js`, the current game-design Fractal Almanac/Lean Memory concept, Travel collect HUD and current Race HUD donor.
+>
+> Build **META-JOURNEY-01** by adapting the existing Journey schema/migration approach rather than inventing unrelated save stores.
+>
+> Durable domains should cover current real needs: collected cards/decks, diary/events, quests/discoveries, reputation/NPC encounter facts, POP, inventory, songs/media unlocks, vehicle/travel unlocks, gift/reward facts and replay/cutscene refs.
+>
+> Keep authored WorldBuilder world saves completely separate from Player Journey state.
+>
+> Consumers emit typed semantic events such as `card.collect`, `pop.award`, `gift.receive`, `song.unlock`, `race.stunt.complete`, `combat.encounter.win`. The Journey owner applies versioned durable changes.
+>
+> Prove export → fresh reload/import → same state, plus two tiny real consumer adapters reading/writing the same object. Do not create a backend requirement.
+
+---
+
+## META-HUD-01 · Adaptive cross-mode HUD shell
+
+**Executor:** ChatGPT Web + Claude Design only for bounded layout refinement  
+**Outcome:** one coherent HUD mental model with mode-specific instruments and shared player meta.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M7/M8, current Travel Card/Pop HUD, Race HUD v3 and current Travel-mode contracts.
+>
+> Design/build **META-HUD-01** as semantic slots/providers, not a single fixed Racer overlay.
+>
+> Persistent ordinary-gameplay meta direction:
+> - Almanac card-fan affordance upper right using real landscape KFB cards;
+> - compact POP;
+> - Backpack affordance;
+> - compact Radio/media affordance.
+>
+> Context providers add real data only:
+> - Drive/Race: Tacho + actual-route minimap + driving Radio controls;
+> - Walk/World: optional real world/zone navigation;
+> - Combat: Combat-owned encounter status;
+> - Flight/Boat: only real implemented instrument/navigation providers;
+> - immersive Almanac: ordinary HUD hidden except minimal return.
+>
+> Do not invent a fake universal minimap, fake altimeter or generic HUD chrome to fill empty slots.
+>
+> Return one responsive interactive comparison that switches between at least WALK / DRIVE-RACE / COMBAT / ALMANAC-IMMERSIVE while reading one shared mock/adapter state contract. Use actual current visual donors where mandated.
+
+---
+
+## META-ALMANAC-01 · Fractal Almanac overlay + Journey import/export
+
+**Executor:** ChatGPT Web  
+**Outcome:** portable collection/Journey interface, not merely a card counter.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M2, accepted META-JOURNEY-01, the current game-design Almanac concept and the historical walked-chamber Almanac briefing as experience reference.
+>
+> Build two connected surfaces:
+> 1. quick Almanac overlay opened from the upper-right real-card fan;
+> 2. deeper Fractal Almanac view for collection, Diary, quests/memory, Journey path, replay/cutscene refs, discoveries and later story editing.
+>
+> Import/export uses the versioned Player Journey JSON. Do not create a second Almanac save format.
+>
+> If the immersive walked-chamber mode is included, suppress the ordinary gameplay HUD inside it; that mode intentionally is not a dashboard/minimap experience.
+
+---
+
+## META-INVENTORY-01 · 20-slot Backpack
+
+**Executor:** ChatGPT Web  
+**Outcome:** compact cross-mode carry inventory tied to Player Journey.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M3 and accepted META-JOURNEY-01.
+>
+> Georg's current product direction is **20 visible Backpack slots**. The exact historical implementation/source for the older sketch is not currently pinned; treat that as `SOURCE_REQUIRED` evidence, not as an implementation blocker or an excuse to pretend old code exists.
+>
+> Implement the new inventory contract under Player Journey: typed item refs, quantities only where the item allows stacking, explicit add/remove/use events and 20 visible carry slots.
+>
+> Cards normally belong to the Almanac collection, not one backpack slot per card. Gifts that are cards route to collection; physical/usable gifts may route to inventory.
+>
+> First UI is a Backpack affordance opening a readable 20-slot overlay; preserve the same state across Walk/Drive/Combat mode switches.
+
+---
+
+## META-POP-01 · Universal POP account
+
+**Executor:** ChatGPT Web  
+**Outcome:** one cross-mode POP balance instead of local counters.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M4, accepted META-JOURNEY-01 and Travel `collect-hud.js` Pop behavior.
+>
+> Move durable POP ownership into Player Journey. Keep existing game-specific pop animations/anchors as presentation adapters only.
+>
+> Prove at least three event sources, e.g. Travel/Card pickup, Race reward/stunt and Combat or Town reward, all emitting `pop.award` into one durable balance. Export/reload must retain the same account.
+>
+> POP remains KFB progression/reaction currency; do not reinterpret it as a truth/plausibility score.
+
+---
+
+## META-RADIO-01 · Collected songs + cross-mode Radio
+
+**Executor:** ChatGPT Web  
+**Outcome:** one collected music library/media state reused across modes.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M5, accepted META-JOURNEY-01, AUDIO-AUDITION-01 and current Race/Jukebox/Radio donors.
+>
+> Add source-backed song unlock/collection refs, active track, playback state and volume/preferences to the Player Meta/media contract. Reuse the current large-control Radio direction where it remains useful.
+>
+> Prove a track unlocked in one context remains available in Walk and Drive after a mode switch and after export/import.
+>
+> Radio owns music/media playback state only. It does not replace game SFX event/audio ownership.
+
+---
+
+## META-NAV-01 · Context navigation providers
+
+**Executor:** ChatGPT Web  
+**Outcome:** real minimaps/navigation only where a real provider exists.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M6, current Race actual-route minimap donor and current World/Travel mode data owners.
+>
+> Define a thin navigation-provider contract. Prove at least:
+> - Race provider = actual calculated route;
+> - World/OSM provider = current real zone/world data.
+>
+> HUD consumes the active provider. No provider means no minimap.
+>
+> Do not force a minimap into the immersive Fractal Almanac chamber; its historical experience intentionally uses spatial disorientation rather than a dashboard compass.
+
+---
+
+## UI-GRAMMAR-01 · Authoring icon/interaction legibility
+
+**Executor:** ChatGPT Web + bounded Claude Design visual pass  
+**Outcome:** current ToolBox/WorldBuilder editor becomes recognizable without moving its functionality.
+
+> @GitHub
+> Read KFB Production Architecture v3 → M8/M9, the accepted shared `edit-layer.js` and current Resident inline object menu.
+>
+> Preserve all editor behavior. This job changes presentation/interaction only.
+>
+> Current measured donor is too small: 28×28 px buttons, 13 px glyphs, symbols `✥ ⟳ ⤢ ⬓ ⊹ ✕`. Georg reports learning position rather than recognizing meaning.
+>
+> Build one coherent authoring icon grammar for Move / Rotate / Scale / Drop / Axis-Space / Close with:
+> - normal inline target around 40–44 px;
+> - visible icon around 20–24 px;
+> - strong active-mode state;
+> - tooltip = action + shortcut;
+> - optional labels in learning/expanded mode;
+> - same semantics in ToolBox and WorldBuilder.
+>
+> Search/reuse existing KFB icon/source conventions first. Do not introduce a generic permanent top toolbar or generic app chrome. Keep the controls local to the selected object and out of the main field of view when idle.
+>
+> Directly compare current vs revised inline editor on a real selectable scene object.
+
+---
+
+## META-PROD-01 · Cross-mode Player Meta milestone
+
+**Executor:** Web integration + GitHub Bridge  
+**Outcome:** one player identity survives real mode changes.
+
+> @GitHub
+> Start from accepted/current META-JOURNEY-01, META-HUD-01, META-ALMANAC-01, META-INVENTORY-01, META-POP-01 and META-RADIO-01 plus real mode adapters.
+>
+> Deliver one coherent loop:
+> import Journey → WALK shows Almanac/POP/Backpack → collect a real Card Zone card → Almanac updates → enter vehicle → DRIVE adds Tacho + real route minimap → earn POP → enter Combat → same account persists → receive NPC gift → correct collection/inventory changes → unlock/play a Radio track → export → fresh reload/import → state restored.
+>
+> Review whether this feels like one KFB player identity across modes. Do not split this into one human gate per HUD widget.
