@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/1",
+  "schema": "kfb.production-architecture.v3-input-locks/2",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -127,6 +127,141 @@
         "measurement dashboard as primary human surface",
         "Cloudflare deployment solely for the quick visual check"
       ]
+    }
+  },
+  "sharedSources": {
+    "toolboxIntegration": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 185,
+      "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+      "head": "2833674b36be707fa4d14c8b532faee78ef3ba28"
+    },
+    "eyeRigBatch": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 104,
+      "branch": "toolbox/eye-rig-batch-2026-09-18",
+      "head": "e277c3456651d314a01adea046e0105d2a12cdd1",
+      "path": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md"
+    },
+    "motionLab": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 127,
+      "branch": "chatgpt-web/toolbox-kaykit-motion-profiles-2026-09-20",
+      "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6"
+    },
+    "creatorMotionResearch": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 107,
+      "branch": "chatgpt-web/kaykit-creator-learning-2026-09-19",
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "path": "tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md"
+    },
+    "motionLibrary": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 197,
+      "branch": "claude/motion-library-01-2026-09-24",
+      "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/"
+    },
+    "residentAtlas": {
+      "repo": "georg-doc/kayfabizarro",
+      "head": "10f661a542e2553b4d3433bfc5b45dfc1401e660",
+      "path": "tools/resident_atlas_s6/"
+    },
+    "residentPoseStudio": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "path": "tools/resident_atlas_s6/lib/studio.js",
+      "contract": "object G/R/S + Bone-Posing + persistent <resident>.studio-patch.json"
+    },
+    "sharedSceneEditor": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 186,
+      "branch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+      "head": "7267185cdbdc60e576b946ee589f0b2e932c8c8b",
+      "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "contract": "kfb.scene-patch.v1"
+    },
+    "assetLibrarianPicker": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "path": "tools/KFB-ToolBox/_handover/UI_RESET_MINIMAL_STAGE_FIRST_2026-09-15/ASSET_LIBRARIAN_INTEGRATION_2026-09-15.md"
+    },
+    "vehicleAuthoring": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "paths": [
+        "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/docs/LIVING_frizzlegraft.md",
+        "tools/KFB-ToolBox/_inbox/KFB Vehicle Animation Lab v4/KFB_Vehicle_Lab_v4/"
+      ]
+    },
+    "worldFoundation": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 203,
+      "branch": "work/worldbuilder-w0-source-lock-2026-09-24",
+      "head": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+      "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/"
+    },
+    "terrainAuthoring": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 190,
+      "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+      "head": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf"
+    },
+    "racer": {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "pr": 33,
+      "branch": "chat/racer-tarch0-sp13ktra-2026-09-23",
+      "head": "71e7051b2eea1ad731912b634f44ce5ba0218736",
+      "humanResult": "TUNE",
+      "next": "Racer Anatomy Foundation"
+    }
+  },
+  "strands": {
+    "toolbox": {
+      "sourceKeys": [
+        "toolboxIntegration",
+        "eyeRigBatch",
+        "motionLab",
+        "motionLibrary",
+        "residentAtlas",
+        "residentPoseStudio",
+        "sharedSceneEditor",
+        "assetLibrarianPicker",
+        "vehicleAuthoring"
+      ],
+      "target": "ToolBox Production Milestone"
+    },
+    "animationResidents": {
+      "sourceKeys": [
+        "motionLibrary",
+        "motionLab",
+        "creatorMotionResearch",
+        "residentAtlas",
+        "residentPoseStudio"
+      ],
+      "target": "shared motion profiles + Resident performance pipeline"
+    },
+    "worldbuilder": {
+      "sourceKeys": [
+        "worldFoundation",
+        "terrainAuthoring",
+        "sharedSceneEditor",
+        "assetLibrarianPicker",
+        "residentAtlas",
+        "motionLab",
+        "motionLibrary"
+      ],
+      "target": "God Mode Construction Site"
+    },
+    "racerWorld": {
+      "sourceKeys": [
+        "racer",
+        "worldFoundation",
+        "assetLibrarianPicker",
+        "residentAtlas"
+      ],
+      "target": "Race visual module inside editable OSM/KFB world"
     }
   }
 }
