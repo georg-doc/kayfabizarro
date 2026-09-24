@@ -2060,21 +2060,6 @@ Expose this inside current Animation Studio/ToolBox using the same source-backed
 
 ---
 
-## RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble
-
-**Executor:** Resident Atlas / ToolBox Animation Studio Web
-
-**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
-**Outcome:** source-cast motion audition leading to one baseplate-free multi-rig outdoor party performance.
-
-> @GitHub
-> Read `RESIDENT_DISCO_01_2026-09-24.md`.
->
-> Execute only **RES-DISCO-A · Source Cast + Motion Audition** first: isolate the real six/seven actors, prove rig families, audition already-owned dance clips plus one Legacy-safe party action.
->
-> Do not import new Mixamo clips or compose the final disco until Georg selects useful actor/motion pairings.
-
-
 ---
 
 # 2026-09-24 MVP focus additions
