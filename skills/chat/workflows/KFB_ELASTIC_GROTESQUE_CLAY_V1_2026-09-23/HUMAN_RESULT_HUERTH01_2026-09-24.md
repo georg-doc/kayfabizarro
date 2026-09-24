@@ -32,3 +32,14 @@ volume only as far as those details stay intact and readable.
 > in the spirit of Rocko's Modern Life (reference only). Elastic clay volume is layered on top of that, not instead of it.
 > Same 22 real Hürth OSM buildings, same three-panel comparison, source isolation first. Republish the review under
 > `kfb-hub/pruefen/huerth-look/` and record the head. Two failed repair passes on the same point: STOP and report.
+
+
+## CORRECTION · 2026-09-24 (Coworker)
+
+The TUNE above was given on the hub review page that showed **Hürth 01 V1** (`HUERTH01_REVIEW.html` @ `00fe0ecc`), which `CHAT_RECOVERY_CURRENT.md` classifies as **superseded by V2**. Georg has **not yet reviewed the real V2** (`0c59e92d`).
+
+The hub review page `https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/` now shows the **unchanged real V2 multi-file app**: a 3.6 KB wrapper = V2 `index.html` + `<base href>` to jsDelivr pinned at `0c59e92d`. Verified in a real Chrome: renders, 0 console errors. No bundling needed.
+
+`HUERTH01_V2_PORTABLE.html` (@`f1f95108`) currently does **not** render in a real Chrome (blob, clean realm): `SyntaxError: Function statements require a function name`, `ReferenceError: THREE is not defined`, `SyntaxError: Identifier 'clamp' has already been declared`; status bar stays at “Loading pinned Hürth source…”. The jsDelivr wrapper makes the bundle unnecessary for review.
+
+Georg's three points (offset cartoon windows, different door sizes, Rocko-like palette) stay valid as the check list for the V2 re-review. Next gate: **Georg reviews real V2 → ACCEPT / TUNE ONCE / REJECT.**
