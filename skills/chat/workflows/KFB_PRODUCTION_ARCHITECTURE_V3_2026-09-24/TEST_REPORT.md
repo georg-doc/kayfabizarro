@@ -1,54 +1,85 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **31/31 CONTRACT CHECKS PASS**
+Status: **46/46 ARCHITECTURE / SOURCE CHECKS PASS**
 
-Scope: architecture, self-service production strands, source locks and Hub briefing definitions. No product runtime, Cloudflare deployment or visual product acceptance is claimed.
+Scope: architecture, complete self-service production strands, source locks and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
-## Structure / catalog
+## Catalog / self-service contract · 23/23
 
-1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/2`.
-2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/2`.
-3. Five production strands exist: ToolBox, Animation/Residents, WorldBuilder, Racer/World, Quick Review.
-4. Nineteen copy-ready job cards exist.
-5. At least eight current jobs are immediately READY.
-6. Every HOLD card names its exact dependency.
-7. 19/19 normal jobs do not require Cloudflare.
-8. 19/19 normal jobs do not require Work/WSA.
-9. Every briefing source set resolves to an input-lock job or strand.
-10. Every Hub job has a matching copy-ready prompt in `SELF_SERVICE_BRIEFINGS.md` or `STRAND_BRIEFINGS.md`.
-11. WorldBuilder status separates `sourceHead`, `prHead`, `deployHead`.
-12. WB-W0 review route is direct `https://kayfabizarro.pages.dev/…`.
+1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/3`.
+2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/3`.
+3. Eleven production strands exist.
+4. Forty-five copy-ready jobs exist.
+5. Twenty jobs are READY.
+6. Twenty-five jobs are dependency-gated HOLD.
+7. Every HOLD card names its exact dependency.
+8. Hub default presentation is strand-first.
+9. Job cards are collapsed by default.
+10. Every one of the 45 jobs has a copy-ready prompt.
+11. Every job source set resolves to an input-lock job/strand.
+12. 45/45 normal jobs do not require Cloudflare in the edit loop.
+13. 45/45 normal jobs do not require Work/WSA.
+14. Canonical CubePet contract reports exactly 24 pet IDs.
+15. Three distinct FrizzleBob technical identities are locked.
+16. Town Living source blob matches current main.
+17. ChatterBox reuse source blob matches current main.
+18. Combat/Duel strand is present.
+19. Travel/Surface strand is present.
+20. Vertical/Babel strand is present.
+21. Town/NPC-Life strand is present.
+22. Shared Stage/Transition strand is present.
+23. World topology and Travel mode are explicitly orthogonal; NPC-vs-NPC/Hero-Shot choreography is explicitly represented.
 
-## Product-intent preservation
+## Current public-repo source heads · 8/8
 
-13. Independent left/right EyeRig editing is explicitly recorded as a real missing capability rather than falsely claimed as existing.
-14. Resident Atlas Bone-Posing + `studio-patch.json` is retained as the Pose Studio donor.
-15. Motion roadmap contains phase alignment / timeScale / hysteresis rather than hard Shift Walk→Run switching.
-16. Racer→World bridge and reusable Race Visual Module are explicitly represented.
-17. Top-level Chat router still points to Production Architecture v3.
-18. Fractal editing distinguishes owner-specific operations for bones, EyeRig eyes and world props.
-19. Pose-before-Blender rule is explicit: static corrections stay in browser tools when possible.
+24. EyeRig PR #104 = `e277c3456651d314a01adea046e0105d2a12cdd1`.
+25. KayKit creator/KCL PR #107 = `fc49a336af57adb6317b74211b3318d004d96de5`.
+26. Theatre Curtain PR #114 = `cd9c04cbf009b1211b9b6b008162b9d322d6e152`.
+27. Motion Lab PR #127 = `7c8cc218ec46dabb20409c9e0b5368afcf5845c6`.
+28. Card Zone/Hex planning PR #156 = `ee0f9bb6d738c538e042f799e5fb6f9b20893a01`.
+29. ToolBox integration PR #185 = `2833674b36be707fa4d14c8b532faee78ef3ba28`.
+30. Shared editor PR #186 = `7267185cdbdc60e576b946ee589f0b2e932c8c8b`.
+31. WB2 PR #190 = `5a98e674184ea4694a5ad7d696d8cc84c1618bdf`.
 
-## Current source-head validation
+## Current animation / Combat source heads · 8/8
 
-20. EyeRig PR #104 = `e277c3456651d314a01adea046e0105d2a12cdd1`.
-21. KayKit creator/KCL PR #107 = `fc49a336af57adb6317b74211b3318d004d96de5`.
-22. Motion Lab PR #127 = `7c8cc218ec46dabb20409c9e0b5368afcf5845c6`.
-23. ToolBox integration PR #185 = `2833674b36be707fa4d14c8b532faee78ef3ba28`.
-24. Shared editor PR #186 = `7267185cdbdc60e576b946ee589f0b2e932c8c8b`.
-25. WB2 PR #190 = `5a98e674184ea4694a5ad7d696d8cc84c1618bdf`.
-26. Blender MCP proof PR #192 = `b49fb6e1adde070d658e1cc21dadb3294164cb29`.
-27. Orc Warband PR #195 = `9dda7957a33e69926265c1e3a69028a4b35b26f0`.
-28. Motion Library PR #197 = `bf0eace2332a48f0b220318ad7567c68cc6dfbad`.
-29. WB-W0 PR #203 = `40fe2c10959a2022694a2342482e04dd34cbe7be`.
-30. Private Racer PR #33 = `71e7051b2eea1ad731912b634f44ce5ba0218736`.
-31. Resident Atlas source pin remains `10f661a542e2553b4d3433bfc5b45dfc1401e660`.
+32. Blender MCP proof PR #192 = `b49fb6e1adde070d658e1cc21dadb3294164cb29`.
+33. Orc Warband PR #195 = `9dda7957a33e69926265c1e3a69028a4b35b26f0`.
+34. Motion Library PR #197 = `bf0eace2332a48f0b220318ad7567c68cc6dfbad`.
+35. WB-W0 PR #203 = `40fe2c10959a2022694a2342482e04dd34cbe7be`.
+36. Combat actor integration PR #5 = `d6cf532e64d45fd3117775ec61cfc87b9e948ac0`.
+37. Combat planning/Spindle/Choreography PR #6 = `735b5449bf09fb1a069d4a81db44608a58166677`.
+38. Combat melee PR #7 = `f773dbeb0cfa09fa7e1bd72a4323130b2c0eff06`.
+39. Combat Legacy readiness PR #10 = `663f0610eb960f322d67b078f1302d0c6178d1c2`.
+
+## Current private-repo / donor-source validation · 7/7
+
+40. Travel mode bridge PR #38 = `08147fb4a6726f4c0248ff79ade67eec24afdbca`.
+41. Racer PR #33 = `71e7051b2eea1ad731912b634f44ce5ba0218736`.
+42. Surface Adapter preflight blob = `f13cfe80443075f6d2fd2b507452562481a8a63b`.
+43. Babel Hex Platform brief blob = `c9d609b23f6940ea27ffc03a2e13bc99712e46c5`.
+44. Theatre Curtain Core v2 brief blob = `d4ecf7526000d4caf36010154f85eefa42e9b885`.
+45. Travel main = `8614282aab2ced43bb5dda9fcf7abadf9768100a`.
+46. Combat main = `f6a59ad15b9ffcf3164b0ab013f223962b63f61f`.
+
+## Important source-status distinctions preserved
+
+- TinySkies Boat/Plane are source-proven as upstream features, but not claimed as already ported KFB modes.
+- Failed Platformer auto-jump source remains `SOURCE_REQUIRED`; no code is reconstructed from memory.
+- CubePet Bunny, legacy Arena FrizzleBob and Driver Graft FrizzleBob are separate actor identities.
+- Combat choreography preview does not become the damage/reward owner.
+- WorldBuilder/Open World does not become a second Combat or Race runtime.
+- Spindle and Curtain remain presentation modules.
+- ChatterBox does not own NPC movement/combat/memory storage.
+- FLAT/SPHERE/TORUS topology is independent from Ground/Drive/Flight/Boat movement mode.
 
 ## Deliberately not tested
 
-- HUB-CTRL PR #202 consumption of the expanded v3 catalog;
+- HUB-CTRL PR #202 rendering of the expanded 11-strand / 45-job catalog;
 - public Hub publication;
-- product runtime behavior of the future jobs;
-- cleanup/closure of historical open PRs.
+- future product runtime behavior of the newly prepared jobs;
+- cleanup/closure of historical open PRs;
+- exact TinySkies Boat/Plane source implementation, which is intentionally a future source-recovery job;
+- missing failed Platformer auto-jump source.
 
-Those are separate integration/product actions and are not required to prove that the complete production strands are internally defined and recoverable.
+These are separate product/integration actions, not prerequisites for a correct recoverable architecture.
