@@ -110,6 +110,16 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 >
 > Done when I can select a real actor and visually test motion across a speed continuum and state changes in one ToolBox surface.
 
+
+### KayKit semantic State/Action extension · 2026-09-24
+Use current KayKit families as vocabulary: General, Movement, Melee, Ranged, Simulation/Tool. This is a state/action workspace, not a filename gallery.
+
+Locomotion: Idle → Walk → Run → source-backed fast-run/Sprint; backward/strafe; Jump Start/Air/Land; crouch/sneak/crawl where present.
+
+Overrides: Interact/Pickup/Use/Throw · 1H/2H/dual/unarmed Melee · Block/Hit/Defeat · Aim/Fire/Reload · Spell · Tool · Emote/Sit/Lie · Performance.
+
+Consume existing Combat Duel/contact contracts for a two-fighter Melee mode. Damage remains Combat-owned. Direct compatible FBX enters through `MOTION-INTAKE-DIRECT-01`; Blender handles real technical exceptions.
+
 ---
 
 ## TB-VEH-01 · Vehicle Motion + Driver Studio
@@ -188,6 +198,14 @@ These messages are designed to be copied from the Hub into a fresh executor chat
 > Preserve current source roster, FrizzleBob, EyeRig v6, Resident Atlas, motion catalogue, shared editor and persistence owners.
 >
 > Do not send me five separate acceptance pages. Return one ToolBox artifact and a short list of any non-blocking TUNE items.
+
+
+### FrankenStein / Pet Studio v17+ preservation gate
+Open the actual v17+ donor before changing navigation. Retain every useful production capability as a named Stage-First mode/context or explicit specialist link; do not replace proven functions with generic chrome.
+
+Reconcile at least: actor/pet roster · body/head/face graft · EyeRig · mouth/viseme/talk · material/color/texture · props/attachments · saved profiles · fractal hierarchy · pose/bones · animation · vehicle/driver · Resident Scene · Card/media · import/export/persistence.
+
+Every migrated surface names its existing owner/module.
 
 ---
 
@@ -521,6 +539,10 @@ A waiting card is valuable because Georg can already see the complete production
 > It may visualize current swept-contact/profile facts, but HP/rewards remain Combat Arena ownership.
 >
 > Export a small choreography recipe usable for autonomous NPC matches and Hero Shots.
+
+
+### Animation Lab mode · KayKit semantic families
+Expose this inside current Animation Studio/ToolBox using the same source-backed 1H/2H/dual/unarmed, Block/Hit/Defeat and Ranged families. Do not create a separate fight-animation app.
 
 ---
 
@@ -2034,3 +2056,73 @@ A waiting card is valuable because Georg can already see the complete production
 > - the thin Resident Scene recipe;
 > - visible remaining TUNE items;
 > - exactly one next integration gate.
+
+
+---
+
+## RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble
+
+**Executor:** Resident Atlas / ToolBox Animation Studio Web
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
+**Outcome:** source-cast motion audition leading to one baseplate-free multi-rig outdoor party performance.
+
+> @GitHub
+> Read `RESIDENT_DISCO_01_2026-09-24.md`.
+>
+> Execute only **RES-DISCO-A · Source Cast + Motion Audition** first: isolate the real six/seven actors, prove rig families, audition already-owned dance clips plus one Legacy-safe party action.
+>
+> Do not import new Mixamo clips or compose the final disco until Georg selects useful actor/motion pairings.
+
+
+---
+
+# 2026-09-24 MVP focus additions
+
+## WB-MOBILITY-MVP-01 · WorldBuilder all-mode mobility + actor state graph
+
+**Executor:** WorldBuilder / Travel Web  
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
+**Outcome:** one WorldBuilder world supports the complete source-proven Travel family while one real actor uses the shared semantic motion-state graph.
+
+> Read `MVP_FOCUS_PLAN_2026-09-24.md`, World Zone/Flow shell, Travel Mode Router and Motion Library/Profile. Keep one world. Mode slots: Ground · Drive · Flight · Boat/Water · Plane/Air · Freefall/Parachute; only real source-backed modes count. Ground uses shared Idle/Walk/Run/fast-run-Sprint/backward-strafe/Jump Start-Air-Land/crouch-sneak-crawl states where admitted. Exactly one movement writer owns position.
+
+## WB-HUERTH-COLOGNE-RACE-MVP-01 · Hürth → Cologne OSM streets → Track A
+
+**Executor:** WorldBuilder / Racer / OSM Web bridge  
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
+**Outcome:** one continuous drivable route from Hürth through real OSM-derived streets into Cologne and onto Track A.
+
+> Identify exact committed Hürth→Cologne corridor coverage first. Missing geometry returns to OSM City Lab; do not invent it. Compose by reference: Hürth Zone → corridor/street Zone(s) → Cologne Zone → visible service/ramp connector → TRACK_A_STUNT_8. Streets use Travel/WorldBuilder Drive; Race owns explicit Track contact/gameplay. Rigid placement only.
+
+## ACTOR-FB-BODY-FAMILY-01 · FrizzleBob identity on alternative KayKit bodies
+
+**Executor:** ToolBox Web · Blender only for proven mesh/weight work  
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
+**Outcome:** compare several real KayKit destination bodies under one explicit FrizzleBob identity.
+
+> Show identity donor and each candidate body in isolation. Choose 2–4 real modern bodies; preserve each destination rig/sockets/motion compatibility. Browser/ToolBox graft first. Blender only for selected variant if skinning/weights/topology require it. Give explicit actor ids/provenance and compare Idle/Walk/Run + one action + EyeRig/mouth compatibility.
+
+## MOTION-INTAKE-DIRECT-01 · Animation Lab direct FBX → GLB / Motion Library intake
+
+**Executor:** ToolBox Animation Studio / Web  
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.
+**Outcome:** already-good compatible FBX enters the shared Motion Library without mandatory Blender retargeting.
+
+> Read `KAYKIT_ANIMATION_RESEARCH_UPDATE_2026-09-24.md`, Animation Intake 01, Motion Library #197/#209, AN-PROFILE and current Animation Studio. Add local FBX Import: inspect skeleton/tracks/root → preview → classify DIRECT or BLENDER_REQUIRED. DIRECT keeps raw FBX private/local and exports derived GLB + catalogue/profile seed + provenance. BLENDER_REQUIRED covers mismatch/retarget/root/curve/contact/rig/bake work. No new motion DB/mixer.
+
+## TB-V17-INTEGRATION-01 · Stage-First ToolBox with Pet / FrankenStein v17+ feature parity
+
+**Executor:** ToolBox Web / GitHub Bridge  
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
+**Outcome:** Stage-First becomes the daily front door without losing useful v17+ specialist capability.
+
+> Read ToolBox PR #185 and actual FrankenStein/Pet Studio v17+ donor tree/living docs. Do not invent replacement tabs. Mount existing owner, expose module in context, or link specialist surface. Preserve roster, grafts, eyes, mouth/talk, materials, attachments, profiles, fractal hierarchy, pose, animation, vehicle, Resident Scene, Card/media and import/export/persistence.
+
+## NPC-AITOWN-KISS-01 · Living Residents intent loop from AI Town donor
+
+**Executor:** Resident / Town Web  
+**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.
+**Outcome:** tiny emergent Resident life using AI Town state-machine lessons without importing its runtime.
+
+> Read `AI_TOWN_KFB_EVALUATION_2026-09-24.md`, NPC-LIFE-01, Town Living and Journey/ChatterBox. Each Resident has one intent: activity | approach | encounter | performance | travel | combat-handoff. First proof: 3 real Residents, seeded chooser, host movement, NPC-LIFE beats, ChatterBox text, Journey filtered facts. Live LLM optional. Optional low-frequency Observer recap cannot alter truth/rewards.
