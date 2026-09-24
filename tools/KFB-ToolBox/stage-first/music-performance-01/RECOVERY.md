@@ -102,3 +102,33 @@ The timed-out operation was discovery/read-only. Continue from the current GitHu
 5. Then update RETURN / CHANGELOG / Hub metadata with deploy head, direct Stage URL, humanResult=PENDING and one next gate.
 
 No runtime retune is authorized during this recovery continuation.
+
+
+## Public publication recovery closeout · 2026-09-24
+
+The publication continuation after the timeout is now complete.
+
+Final publication facts:
+
+- exact Stage mirror first appeared on `cloudflare-live@a29b2cdb140238d2d1056dbffaad7065d87f9fe3`;
+- the KFB Stage navigator link was added additively and published at `cloudflare-live@5658557e8d23a68ea1f5f6183d237c9a3284e29a`;
+- HUB-CTRL owner PR #202 records the MUSIC-PERF LOOK_AT lane and tool entry at source head `79309a28f90b1b65643ac3ecf13363ae82a01619`;
+- the generated root Production Desk snapshot is a separate HUB-CTRL regeneration concern and was not falsely claimed refreshed by this slice;
+- the existing root Hub already routes to the Stage navigator, so the verified MUSIC-PERF review is reachable through the KFB Hub path.
+
+Public gate repair history:
+
+1. run `36046685204` failed because Cloudflare still served the prior Stage index; MUSIC-PERF runtime was not implicated;
+2. the second/final public pass separated the direct candidate route from the navigator propagation check;
+3. run `36047130373` then passed **22/22** against the real Cloudflare URLs.
+
+This used the allowed two-pass public-gate budget. No third repair was needed.
+
+Current public route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/`
+
+Current status:
+**PUBLIC_VERIFIED · HUMAN_RESULT=PENDING · NO MERGE**.
+
+Exactly one next gate:
+Georg returns PASS / TUNE / REJECT on the direct review route. Do not restart implementation before that result.

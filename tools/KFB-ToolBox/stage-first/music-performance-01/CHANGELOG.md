@@ -28,3 +28,17 @@
 ## Current gate
 
 Direct playback review / Cloudflare publication only. Runtime candidate is frozen pending Georg.
+
+
+## 2026-09-24 · Timeout recovery + public Stage
+
+- sanity-checked the timeout as read-only; no unknown mutation existed;
+- preserved PR #207 and the frozen runtime without force-push or duplicate write;
+- discovered an already-created exact Stage mirror on `cloudflare-live@a29b2cdb...` and did not duplicate it;
+- added MUSIC-PERF through existing HUB-CTRL owner PR #202 as a `LOOK_AT` lane + Tool entry;
+- added one Stage navigator card on HUB-CTRL source head `79309a28...`;
+- published only that Stage navigator delta to `cloudflare-live@5658557e...`;
+- public pass 1: FAIL — Cloudflare still served the old Stage index; runtime untouched;
+- public pass 2: **22/22 PASS** — direct route + Stage navigator + exact source pins + seek/playback + 0 page/HTTP errors;
+- public proof: run `36047130373`, job `107793328531`, artifact `10829491166`;
+- current human result remains `PENDING`; no merge or Live product promotion.

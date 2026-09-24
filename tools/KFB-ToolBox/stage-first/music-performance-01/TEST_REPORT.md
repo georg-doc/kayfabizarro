@@ -117,3 +117,27 @@ No BPM, phase, choreography or donor animation was retuned during either repair.
 Automated PASS proves source identity, one-song ownership, exact timing math, deterministic seek, action phase-lock, source isolation, integrated performer filtering, real playback progression and responsive boot.
 
 It does not prove that Georg prefers the Music Performance UI, the 8-bar working window, or this camera/stage recipe. Those are the direct playback review gate.
+
+
+## Public Cloudflare verification · 2026-09-24
+
+**Result:** 22 / 22 PASS  
+**Run:** `36047130373`  
+**Job:** `107793328531`  
+**Branch test head:** `580cf86765b82d2b9e2f9cb2b6bffab0c12b60e6`  
+**Deploy head:** `5658557e8d23a68ea1f5f6183d237c9a3284e29a`
+
+Routes:
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/`
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/`
+
+Artifact:
+- ID `10829491166`
+- digest `sha256:d9461a8b85e30b2e53d32b8d26db3af7fbd365147e65b048c465e10c657c2b56`
+- `01-public-performance.png`
+- `02-stage-card.png`
+- `results.json`
+
+The successful public run proves the exact build marker, ORB/song source pins, one-song ownership, public beat seek/phase lock, integrated performer visibility, real playback progression, navigator link, and 0 page/HTTP failures.
+
+First public attempt `36046685204` failed only because the Stage navigator had not propagated yet. No runtime change followed; the final pass changed test ordering to diagnose the direct candidate and navigator as separate publication facts.

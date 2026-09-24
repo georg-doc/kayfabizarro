@@ -1,3 +1,66 @@
+# CURRENT UPDATE · PUBLIC_VERIFIED · HUMAN REVIEW OPEN · 2026-09-24
+
+**Status:** PUBLIC_VERIFIED · HUMAN RESULT PENDING · NO MERGE  
+**Repo:** `georg-doc/kayfabizarro`  
+**Stacked Draft PR:** #207  
+**Current branch head before this handoff update:** `580cf86765b82d2b9e2f9cb2b6bffab0c12b60e6`  
+**Frozen runtime-tested head:** `d834f1d4819dc972e2f4aeeedee4c559cbe8afbd`  
+**Public deploy head:** `5658557e8d23a68ea1f5f6183d237c9a3284e29a`  
+**Hub owner source head:** `79309a28f90b1b65643ac3ecf13363ae82a01619`
+
+Direct human review:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/`
+
+KFB Stage navigator:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/`
+
+## Verified result
+
+The exact MUSIC-PERF candidate is now publicly reachable from the KFB Stage navigator and passed a real Chromium run against the production Cloudflare URLs.
+
+Evidence:
+- frozen runtime/source QA: **22/22 static/source/owner PASS**
+- frozen local Chromium playback: **29/29 PASS**
+- current branch regression QA at `580cf86765b82d2b9e2f9cb2b6bffab0c12b60e6`: **SUCCESS**
+  - push run `36047130378`
+  - PR run `36047135821`
+- public Cloudflare QA: **22/22 PASS**
+  - run `36047130373`
+  - job `107793328531`
+  - artifact `10829491166`
+  - digest `sha256:d9461a8b85e30b2e53d32b8d26db3af7fbd365147e65b048c465e10c657c2b56`
+
+Public QA proved:
+- Stage card visible and links directly to MUSIC-PERF;
+- direct route HTTP 2xx;
+- `MUSIC-PERF-01-v1` marker visible;
+- exact ORB v5 id/version and GLB pin;
+- exact Rubbish Groove song pin;
+- one audio owner;
+- Source Object first with drummer visible;
+- beat 3.5 seek and action phase-lock;
+- Performance mode keeps leader + guitarist and hides drummer HOLD only;
+- real public song and beat clock advance;
+- 0 page errors and 0 failed HTTP responses.
+
+## Evidence boundary
+
+`PUBLIC_VERIFIED` means the exact Stage route and playback are technically proven in the public browser.
+
+It does **not** mean Georg has accepted the UI/performance. Human result remains **PENDING**.
+
+## One next gate
+
+Georg opens the direct Stage route and returns exactly one result: **PASS / TUNE / REJECT**, focused on:
+
+1. Source Object fidelity to the ORB-P1 donor;
+2. Leader + guitarist song-sync during Play/Scrub;
+3. usefulness of the Beat/Bar ruler without DAW bloat.
+
+No animation retune, drummer work, owner integration or merge before that gate.
+
+---
+
 # RETURN · MUSIC-PERF-01
 
 **Date:** 2026-09-24  
