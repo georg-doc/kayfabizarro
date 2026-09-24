@@ -1,0 +1,121 @@
+{
+  "schema": "kfb.failure-recovery.world-zone-bake-01.v1",
+  "date": "2026-09-24",
+  "status": "FROZEN_CANDIDATE_TWO_REPAIR_PASSES",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/world-zone-bake-01-cologne-2026-09-24",
+  "frozenImplementationHead": "bac95a752a22097d89a11278e57d5f2e45381c04",
+  "recoveryCheckpointHead": "5a89a71f1d6d4b134e3386d16bd21f8384332275",
+  "originalBase": "2575328ba20dada6c1ad38fe4c4dcf56bfb2ded6",
+  "currentMainObserved": "1227b738c1d69f1ef04e0382844f358bfd6db2bd",
+  "runs": [
+    {
+      "run": 36025547251,
+      "job": 107721023980,
+      "head": "1814b6ef8491eec2b96db403d321d255938043c6",
+      "result": "FAIL",
+      "failure": "cached raw file SHA compared to provenance payload SHA"
+    },
+    {
+      "run": 36026426364,
+      "job": 107724010317,
+      "head": "640b22c42da526ac58493d3d516fafc93a612e43",
+      "result": "FAIL",
+      "progress": "raw lock + S0 normalization pass",
+      "failure": "cached normalized file SHA compared to normalized payload SHA"
+    },
+    {
+      "run": 36026793437,
+      "job": 107725273015,
+      "head": "bac95a752a22097d89a11278e57d5f2e45381c04",
+      "result": "FAIL",
+      "progress": "all seven S0 normalization gates pass",
+      "failure": "bash syntax error in inline node payload-hash command; compiler not reached"
+    },
+    {
+      "run": 36027619597,
+      "head": "5a89a71f1d6d4b134e3386d16bd21f8384332275",
+      "result": "IN_PROGRESS_AT_EXPORT",
+      "note": "recovery metadata push only; no code delta"
+    }
+  ],
+  "sourceLocks": {
+    "dataset": "tools/osm-city-lab/data/dom-zentrum-v0/",
+    "sourceBlobSha": "7220dc617782b4db7dfa80e3b3d58e54046eebb4",
+    "reportedSourcePayloadSha256": "8ab058da444eee7bd54c367aec770bbe10c4bef2ddda636cd95b886f5dca244c",
+    "cachedSourceFileSha256": "5a7d32efe5c83711d189c501d6d93af3b81ecfcea8770ba9592cc9a066b91e7a",
+    "normalizedBlobSha": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9",
+    "reportedNormalizedPayloadSha256": "4fced62a95499aaba0bfbd111da41db8222ef6f507a330f55e1f033b41bb8702",
+    "cachedNormalizedFileSha256": "a2c4d31c32e369d8356e0b3903677a20df9ead499cbe7d843e68eb53799a9e5e"
+  },
+  "candidateFiles": [
+    {
+      "path": ".github/workflows/world-zone-bake-01.yml",
+      "blobSha": "0f0222189796d17542f4e596afb070fdcd3afda5"
+    },
+    {
+      "path": "tools/osm-city-lab/scripts/build-world-zone.mjs",
+      "blobSha": "a32d7cf929cc5ccbc08ad7e2ddce502c4373e304"
+    },
+    {
+      "path": "tools/osm-city-lab/src/world-zone/compiler.js",
+      "blobSha": "5e4809b9a63878d4009fa600f5ef1abb89293332"
+    },
+    {
+      "path": "tools/osm-city-lab/src/world-zone/geometry.js",
+      "blobSha": "c770f5acd180d087ce20e8815df5745d9fc51c61"
+    },
+    {
+      "path": "tools/osm-city-lab/src/world-zone/source-locks.json",
+      "blobSha": "b104311ec34f2facf4b49b7cb96bf0aaf5cdf6dc"
+    },
+    {
+      "path": "tools/osm-city-lab/tests/world-zone-bake-01.mjs",
+      "blobSha": "8aff0aa3945b871ef33020ea934ce7f9e4e3df10"
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/WORLD_ZONE_BAKE_01_REVIEW.html",
+      "blobSha": "ad947d40d46c8726eeea06a4ef638bd12d40d449"
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/fixture.scene.json",
+      "blobSha": "39ad17111605456e8826f44d6939604e18c332fa"
+    },
+    {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-zone-bake-01/zone-ref.js",
+      "blobSha": "ba27a486acca6300fd14ea59240a4e2b1d526c85"
+    }
+  ],
+  "protectedBoundaries": [
+    "no runtime/editor Overpass",
+    "WorldBuilder stores Zone manifest ref + transform only",
+    "landmarks remain separate modules",
+    "support/collision uses undeformed normalized semantics",
+    "no second world/editor/persistence owner"
+  ],
+  "proven": [
+    "cached source locked",
+    "deterministic S0 normalization",
+    "S0 feature counts and gates",
+    "candidate source files preserved"
+  ],
+  "unknown": [
+    "compiler PASS",
+    "double-compile determinism",
+    "baked package",
+    "visual.glb",
+    "WorldBuilder roundtrip test",
+    "browser review"
+  ],
+  "nextGate": {
+    "id": "WORLD-ZONE-SOURCE-LOCK-G0",
+    "goal": "move source/payload/file hash assertions into one repository-native Node verifier and prove only source-lock + normalization gate",
+    "forbid": [
+      "third patch to frozen CI gate",
+      "World Zone compile before G0 PASS",
+      "live OSM fetch",
+      "Work",
+      "Cloudflare debug loop"
+    ]
+  }
+}
