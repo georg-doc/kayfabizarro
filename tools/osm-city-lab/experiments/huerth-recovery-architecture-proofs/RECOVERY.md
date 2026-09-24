@@ -6,6 +6,7 @@ Status: **CURRENT ISOLATED PROOF CANDIDATE · 34/34 BROWSER PASS · HUMAN REVIEW
 ## Current
 
 - repo: `georg-doc/kayfabizarro`
+- Draft PR: **#200** (stacked on frozen PR #194)
 - branch: `chatgpt-web/huerth-architecture-proofs-2026-09-24`
 - parent frozen R2 branch: `chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23`
 - parent R2 remains **ARCHIVED_FAILED_CANDIDATE**
@@ -63,6 +64,13 @@ Read:
 5. parent `skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`.
 
 Do not resume by patching frozen R2.
+
+## Human review route
+
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/`
+
+Cloudflare wrapper pins the browser-tested app at:
+`c36f97be48a6b5da5617aa000c921e4a51329f7f`
 
 ## Exactly one next gate
 
