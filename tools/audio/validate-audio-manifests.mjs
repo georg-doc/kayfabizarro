@@ -38,6 +38,7 @@ const reports=[
   checkRefs('ui-sfx','media/3D_Assets/Audio/ui-sfx.json'),
   checkRefs('audio-jukebox','media/3D_Assets/Audio/jukebox.json'),
   checkRefs('kfb-jukebox','media/3D_Assets/Sounds/jukebox.json'),
+  checkRefs('audio-calibration-source','kfb-hub/stage/audio-calibration/SOURCE.json'),
 ];
 
 const catalog=readJson('media/3D_Assets/CATALOG/audio-catalog.json');
