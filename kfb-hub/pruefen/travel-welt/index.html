@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- KFB Hub Pruefseite: unveraenderter Travel-WorldBuilder WB0 (Spiegel von KFB-Travel-Globe@140a1403, kayfabizarro@dca52479). Module/Daten ueber jsDelivr von genau diesem Commit. -->
+<base href="https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@dca52479dad9c176acde6e7c7167dc133bf50bdd/travel/wip/travel_globe_wsa/world-builder/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB World Builder · WB0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&amp;family=Baloo+2:wght@500;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../themes/kfb-med.css">
+<link rel="stylesheet" href="../themes/kfb-shell.css">
+<link rel="stylesheet" href="../globe-v13/hud-frame.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script>
+(function () {
+  var u = new URL(location.href), d = {
+    portale:'0', gegner:'0', muenzen:'0', mech:'0', regen:'0',
+    zeit:'day', flora:'0', tsflora:'0', contrails:'0'
+  }, changed = false;
+  Object.keys(d).forEach(function (k) {
+    if (!u.searchParams.has(k)) { u.searchParams.set(k, d[k]); changed = true; }
+  });
+  if (changed) history.replaceState(null, '', u);
+})();
+window.__bootErrors = [];
+window.addEventListener('error', function (e) {
+  var t = e && e.target;
+  if (!t || t === window) return;
+  var rec = { tag:t.tagName || String(t), src:t.src || t.href || '(empty)', msg:(e && e.message) || '(load error)' };
+  window.__bootErrors.push(rec); console.error('[wb0 boot-error]', rec);
+}, true);
+window.addEventListener('unhandledrejection', function (e) {
+  var r = e && e.reason, msg = (r && (r.message || String(r))) || String(r);
+  window.__bootErrors.push({ tag:'PROMISE', msg:msg }); console.error('[wb0 boot-error] rejection:', msg);
+});
+</script>
+<script type="module" src="../globe-v13/globe-poc.js"></script>
+<script type="module" src="./wb0.js"></script>
+<script type="module" src="./movement-lab.js"></script>
+<script type="module" src="./ground-experience-hardening.js"></script>
+<script type="module" src="./card-start-hardening.js"></script>
+<script type="module" src="./player-calibration.js"></script>
+<script type="module" src="./support-surface-bootstrap.js"></script>
+</helmet>
+<template id="__bundler_thumbnail" data-bg-color="#0a1020">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#0a1020"/><circle cx="50" cy="54" r="30" fill="#6f8f5e"/><path d="M28 61 L44 46 L53 55 L68 38" fill="none" stroke="#d8b25b" stroke-width="4"/><rect x="41" y="41" width="18" height="18" fill="#c76b42"/></svg>
+</template>
+<div id="tv-stage">
+  <div id="tv-hud"></div>
+  <div id="tv-frame">
+    <span class="kfb-slot kfb-plate" data-slot="wordmark"><div class="kfb-wordmark">Kayfa<b>Bizarro</b></div></span>
+    <div id="tv-meta"></div>
+  </div>
+  <div id="wb0-root" aria-live="polite"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>
