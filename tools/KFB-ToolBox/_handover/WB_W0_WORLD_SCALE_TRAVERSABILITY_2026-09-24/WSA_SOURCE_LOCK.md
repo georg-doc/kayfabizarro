@@ -2,6 +2,9 @@
 
 Status: **SOURCE LOCKED · HUMAN REVIEW OPEN**
 
+GitHub: `georg-doc/kayfabizarro` · PR #203 · branch `work/worldbuilder-w0-source-lock-2026-09-24` · source-lock head `148f22e776a0bd26c74123652471249f39dd47aa`  
+Public review: `https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/` · `cloudflare-live@c2c3c2a679cbc5f28b5a0bbe93878180ca52df51` · PUBLIC_VERIFIED
+
 The complete Claude Design session export is preserved in this folder. The active candidate is `WB-W0_2026-09-24`; `WORLDBUILDER_V1_2026-09-24_FROZEN` is rejected evidence and must not be patched or promoted.
 
 ## WSA review
