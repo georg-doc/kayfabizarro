@@ -8,7 +8,7 @@ Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 
 ## Complete production strands
 
-The current architecture contains **11 primary strands / 45 copy-ready jobs**:
+The current architecture contains **11 primary strands / 53 copy-ready jobs**:
 ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions.
 
 Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
@@ -18,6 +18,7 @@ For the full self-service production route, read:
 - `STRAND_BRIEFINGS.md` — copy-ready executor prompts for every prepared milestone, including future WAITING jobs;
 - `INPUT_LOCKS.json` — current source/head locks;
 - `HUB_BRIEFING_CATALOG.json` — machine-readable strands and READY/HOLD cards.
+- `RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md` — binding RKIT physics/width/jump/city decisions plus Track/OSM bake, Elastic torsion and Audio/VFX production flow.
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
 
