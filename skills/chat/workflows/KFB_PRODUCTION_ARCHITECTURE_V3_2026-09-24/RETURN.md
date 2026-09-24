@@ -1,6 +1,6 @@
-# RETURN · KFB Production Architecture v3 · Skills runtime consolidation added · 2026-09-24
+# RETURN · KFB Production Architecture v3 · Character / Resident workflow added · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 73 JOBS · 117/117 PASS · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 78 JOBS · 134/134 PASS · UNMERGED · NO LIVE PROMOTION**
 
 ## Exact state before this Return write
 
@@ -8,14 +8,14 @@ Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 73 JOBS · 117/117 PASS �
 - Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 - Draft PR: **#204**
 - Base: `main@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
-- validated architecture/source checkpoint: `c89cbd5afd31f3fe6f7fc0a9e4faad755465e8a0`
+- validated architecture/source checkpoint: `1dbc9d3fc0c6cee7a84bc912ba228f66ab52fb3d`
 - public Stage created by this architecture slice: **no**
 - Cloudflare Live promotion: **not authorized**
 - existing public Hub remains: `https://kayfabizarro.pages.dev/kfb-hub/`
 
 ## Current production map
 
-**13 primary strands · 73 copy-ready jobs · 33 READY · 40 dependency-gated HOLD**
+**13 primary strands · 78 copy-ready jobs · 35 READY · 43 dependency-gated HOLD**
 
 1. ToolBox Authoring Platform
 2. Animation & Residents
@@ -263,7 +263,7 @@ Prepared:
 
 ## Validation
 
-**117/117 architecture/source checks PASS.**
+**134/134 architecture/source checks PASS.**
 
 New source facts revalidated:
 - Card Zone full source blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`;
@@ -359,9 +359,133 @@ HOLD:
 
 The Hub priority rule keeps P2 READY work out of the default Today view while P0/P1 work exists.
 
+## Character / Resident production workflow
+
+Current workflow source:
+`CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md`.
+
+### Everyday authoring owner
+
+Resident Atlas / ToolBox is the default surface for:
+- static pose;
+- Bone adjustments;
+- IK/puppet hand/foot placement;
+- prop fit;
+- root/scene transform;
+- reusable Resident scene composition;
+- Studio patch save/import/export.
+
+Current Resident Atlas S7 already proves those capabilities.
+
+### Blender boundary
+
+Blender MCP is now explicitly reserved for:
+- genuinely new time-based motion;
+- external/Mixamo retarget;
+- multi-frame clip repair;
+- skeleton/weights/topology changes;
+- custom head/body derivatives;
+- Action/NLA bake/export.
+
+A static wrist angle, rifle fit, drum placement or scene layout is not a Blender-first job.
+
+### Pose → Blender seam
+
+A browser-authored Studio Patch may become the reference/key pose for Blender.
+
+Preferred route:
+```
+Georg poses in Resident Atlas
+→ export target/contact pose
+→ Blender MCP applies it to the same skeleton as a reference
+→ author only the time-varying correction
+→ bake reusable Action
+→ return Action to Motion Library
+→ browser reuses it
+```
+
+This avoids requiring Georg to manipulate Blender bones directly.
+
+### KayfaBizarros
+
+Current preferred form is a **baseplate-free Resident Performance Module** rather than one monolithic stage GLB.
+
+It references:
+- accepted Orc B leader;
+- accepted Orc Raider guitarist;
+- Orc Brute drummer;
+- Wardrum/sticks;
+- optional local props;
+- songRef/BPM/phase;
+- action refs;
+- pose patches;
+- local transforms.
+
+The host Tavern/Town/WorldBuilder scene supplies the support surface.
+
+For the drummer:
+- browser creates the accepted contact/reference pose first;
+- constant correction may stay as Studio patch;
+- only a genuinely time-varying correction goes back to Blender;
+- automatic arm-to-drum solving remains rejected.
+
+### Legacy
+
+Generic “rerig Legacy” is not a valid next job.
+Rig_Legacy + native clips already exist.
+
+Blender is used only for:
+- one selected custom Legacy derivative;
+- an external motion missing from Legacy;
+- geometry/weight repair.
+
+Existing Legacy assembly, EyeRig, pose, props and scene authoring stay browser-owned.
+
+### Frizzle-Orc Actor Family Factory
+
+Prepared future Blender job:
+`BLENDER-ACTOR-FAMILY-01`.
+
+Goal:
+the same visible Frizzle-Orc identity across:
+- Rig_Medium;
+- Rig_Large;
+- Rig_Legacy.
+
+Destination rigs remain their existing families.
+Prefer head/identity grafts onto destination rigs over whole-skeleton warps.
+
+Current blockers are only exact source pins:
+- Frizzle-Orc 3 Rig-Warp;
+- selected Medium/Large/Legacy bodies;
+- blank Legacy/template head;
+- requested accessories.
+
+### Named marching/rifle Resident
+
+The exact “Musknacker” actor source is not pinned under that name.
+Do not silently substitute another actor.
+
+Once pinned:
+browser owns rifle fit + pose + scene.
+Only a genuinely missing march clip goes through Blender/Mixamo and returns to the Motion Library.
+
+### New jobs
+
+READY:
+- `RESIDENT-BAND-MODULE-01`
+- `POSE-TO-BLENDER-01`
+
+HOLD:
+- `BLENDER-ACTOR-FAMILY-01`
+- `BLENDER-MOTION-02`
+- `LEGACY-CUSTOM-ACTOR-01`
+
+Current RKIT/track Blender work is not interrupted by these jobs.
+
 ## Public Hub boundary
 
-The expanded **13-strand / 73-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
+The expanded **13-strand / 78-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
 
 This branch does not:
 - fork Hub ownership;
