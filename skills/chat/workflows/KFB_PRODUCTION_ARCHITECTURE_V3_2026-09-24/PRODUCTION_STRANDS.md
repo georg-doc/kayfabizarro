@@ -1531,6 +1531,562 @@ source packs/manifests
 
 Do not make Georg inspect opaque filenames or approve one low-level effect file at a time.
 
+# STRAND Z · Card Zones and Card Objects
+
+## Target product
+
+Card Zones become a reusable KFB world/content module family rather than an old Voxel-only scene.
+
+A complete Card Zone may combine:
+
+- local zone/platform geometry;
+- animated moat / ponds / river;
+- card-seeded palette/story/fluid/material parameters;
+- 3D card deck/stack;
+- card unfold/reveal;
+- projection/beam;
+- Card Cube with six content surfaces;
+- Face Focus / real card/PDF/detail view;
+- local props / Residents / encounter hooks.
+
+WorldBuilder places the Card Zone. Card Zone owns its local card-zone presentation grammar; it does not become the global terrain owner.
+
+## Source hierarchy · binding
+
+### Authority 1 · original Card Zone Lab v2
+
+Exact current source:
+`tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html`
+
+This source contains the behaviors that matter:
+- `buildFluidSurface`;
+- `buildProjection / updateProjection`;
+- `buildCardCube / refreshArtFace / snapQuat / tickCube / faceToCamera`;
+- `buildStack / prepReveal / poseCard / tickReveal / tickCard / setCardSide`;
+- card-seeded zone logic.
+
+When a later module and this source disagree, inspect the exact source first.
+
+### Authority 2 · exact source-locked fluid donor
+
+StoryMap recovered the real shader as:
+`kfb-fluid-v2/card-zone-v2-fluid-source.js`.
+
+This is the preferred reusable **fluid shader source** because it was copied source-locked from Card Zone v2 after the previous approximate extraction failed.
+
+Important distinction:
+- source identity / shader code = recovered correctly;
+- StoryMap's visible water integration remained human-unverified/open at its last handoff.
+
+Therefore:
+**source-correct is not consumer-accepted.**
+
+### Historical extraction evidence only
+
+The older `kfb-fluid-v1` / `kfb-beam-v1` / `kfb-cardstack-v1` module map is useful to locate seams and methods.
+
+It is **not automatically authority**:
+- the full Card Zone export explicitly stopped the extraction path after repeated failures;
+- StoryMap later deleted its `kfb-fluid-v1` as a diminished form.
+
+Reuse its module boundaries only after parity with the actual source is proven.
+
+## Z1 · Fluid Surface + Card-Zone Hydrology · READY
+
+Split the reusable concern into two layers without rewriting the shader:
+
+### Fluid Surface
+Owns:
+- exact shader uniforms/material/tick behavior;
+- `waterdudv.jpg`;
+- `water.jpg`;
+- flow attribute contract;
+- visible animated surface.
+
+### Card-Zone Hydrology
+Owns the Card Zone local geometry/field:
+- moat;
+- irregular shore;
+- ponds;
+- channels;
+- river;
+- water level / flow field;
+- bubbles where enabled.
+
+A WorldBuilder lake/pond may consume **Fluid Surface** without becoming a Card Zone.
+A placed Card Zone consumes both layers.
+
+Human proof:
+one page shows:
+1. exact Card Zone v2 source water;
+2. reusable Fluid Surface wrapper under the same textures/uniform/timing;
+3. one WorldBuilder-hosted pond/moat consumer.
+
+No simplified procedural replacement is acceptable.
+
+## Z2 · Card Stack + Reveal + Beam · READY
+
+Recover/adapt the exact source behaviors as one Card Presentation family:
+
+- physical 3D stack/deck;
+- variable deck height where current source supports it;
+- flat card on deck;
+- unfold/reveal animation;
+- front/back side control;
+- Beam / projection effect;
+- source-backed real KFB card rendering.
+
+Do not create a new card renderer.
+Card art comes from the existing card owner/painter.
+
+The stack/reveal and Beam may be independently enabled, but one review should show the complete beat:
+
+```
+stack
+→ card prepares
+→ beam/reveal
+→ card unfolds
+→ readable front
+→ optional detail / cube handoff
+```
+
+## Z3 · Card Cube + Face Focus · READY
+
+The Card Cube was never safely promoted by the old module extraction and must be recovered from the actual v2 source.
+
+Preserve the source mental model:
+six content faces, including the established categories around:
+- Art;
+- Title;
+- Power;
+- Lore;
+- Related;
+- contextual detail/chat face where the current product still admits it.
+
+Interaction:
+- free rotate;
+- snap a selected face to camera;
+- refresh real card art;
+- Face Focus opens the actual detailed content surface / PDF-card view rather than a fake texture.
+
+This is a reusable Viewer module for:
+- Card Zones;
+- Almanac;
+- ToolBox/Card authoring;
+- selected Story/World scenes.
+
+It does not own card collection/progression.
+
+## Z4 · Card Zone Recipe · HOLD until Z1–Z3
+
+Define one compact authored recipe:
+
+```
+card/deck ref
+zone-local support recipe
+fluid profile
+story/card seed
+palette/profile refs
+stack/reveal settings
+cube/viewer settings
+beam settings
+Resident/prop refs
+encounter/reward hooks
+```
+
+The historical v2 seed behavior remains a donor:
+story mode / palette / filling / wear / texture / moat width.
+
+Recipe stores refs + parameters, not copied source assets.
+
+## Z5 · WorldBuilder Card Zone Module · HOLD
+
+WorldBuilder Resource Picker can search/place a configured Card Zone like any other world module.
+
+Workflow:
+```
+search Card Zone
+→ place on current world surface
+→ transform root
+→ enter local zone / interact
+→ collect/reveal/view card
+→ Save World refs/transforms
+```
+
+Boundaries:
+- WorldBuilder owns world placement/support;
+- Card Zone owns local card/water/zone presentation;
+- Player Journey owns collection/reward facts;
+- Combat may mount an encounter through its existing adapter;
+- Fluid Surface may also be used elsewhere in the world independently.
+
+## Z6 · Card Zone Production Milestone
+
+One direct review:
+```
+walk/drive to placed Card Zone
+→ animated moat/river visible
+→ cross/enter zone
+→ real 3D stack
+→ Beam + unfold reveal
+→ inspect via Card Cube / Face Focus
+→ collect
+→ card appears in Player Journey / Almanac
+```
+
+No separate human gate for every shader uniform/module seam.
+
+---
+
+# STRAND M · Player Meta, Fractal Almanac and Adaptive Interface
+
+## Target product
+
+One cross-mode **Player Journey / Meta state** connects what happens in:
+
+- Walk / WorldBuilder-play mode;
+- Race / Drive;
+- Travel / Flight / Boat;
+- Combat;
+- Town / NPC encounters;
+- Card Zones;
+- minigames / instances.
+
+The UI adapts to the current mode, while the durable player facts remain one truth.
+
+This strand is **not** a universal gameplay runtime.
+It owns cross-mode player meta/progression data and the shell that presents it.
+
+## Existing donors
+
+### Journey state
+`overworld/overworld/journey.js` already proves:
+- versioned save schema;
+- JSON export/import;
+- migrations;
+- cards;
+- diary;
+- reputation;
+- quests;
+- hero/unlocks;
+- zones;
+- semantic journey facts.
+
+This is the primary data-model donor, not an instruction to resurrect the old Overworld runtime.
+
+### Fractal Almanac
+Current concept direction already defines the Almanac as more than Card Inventory:
+- collection;
+- diary;
+- story editor;
+- quest memory;
+- replay library;
+- progress map;
+- Journey archive;
+- personal Infinite Canvas.
+
+The old walked-chamber briefing remains an experiential donor for the **immersive Almanac mode**, not a rule that every gameplay HUD must behave like that chamber.
+
+### Card Fan / Pop
+Travel `collect-hud.js` proves:
+- real-card fan;
+- card count/detail affordance;
+- local Pop score;
+- collection intake animation.
+
+But its `popScore` is local runtime state.
+It is **not** the future account owner.
+
+### Race HUD v3
+Useful visual/product donor:
+- Tacho retained;
+- Radio = three large controls + volume;
+- real landscape-card Almanac motif;
+- minimap = actual route only.
+
+Its current Stage state is not a global HUD acceptance.
+
+## M1 · Player Journey Contract · READY
+
+Consolidate a versioned cross-mode data contract from the existing Journey donor.
+
+Candidate durable domains:
+
+```
+version / migrations
+session/run refs
+cards / decks collected
+diary / semantic events
+quests / closures / discoveries
+reputation / NPC encounter facts
+POP balance / award facts
+inventory
+songs / media unlocks
+vehicles / travel unlocks
+gift/reward facts
+replay / choreography / cutscene refs
+settings / audio preferences where appropriate
+```
+
+Hard rule:
+**authored WorldBuilder world state is separate from player Journey state.**
+
+WorldBuilder saves the authored world.
+Player Journey saves what the player experienced/earned inside worlds.
+
+Consumers emit typed semantic events instead of directly owning global progression.
+
+Examples:
+- `card.collect`;
+- `pop.award`;
+- `inventory.add`;
+- `song.unlock`;
+- `gift.receive`;
+- `npc.encounter`;
+- `race.stunt.complete`;
+- `combat.encounter.win`.
+
+The Journey owner applies/migrates durable state.
+
+## M2 · Fractal Almanac · READY after M1 schema
+
+Two related surfaces:
+
+### Quick Almanac affordance
+Georg direction:
+**persistent upper-right card fan in ordinary gameplay modes.**
+
+Use real KFB landscape Card motifs.
+It opens the lightweight collection/Journey overlay.
+
+### Full Almanac
+A deeper view over:
+- cards/decks;
+- Diary;
+- Journey path;
+- quests/memory;
+- replay/cutscene refs;
+- discoveries;
+- NPC/gift history;
+- later story-editing / Infinite Canvas.
+
+Optional immersive walked-chamber mode may open from here.
+
+When the immersive Almanac chamber is active, the ordinary gameplay HUD is suppressed except for minimal exit/return affordance. This preserves the old Almanac chamber's intentional non-dashboard experience.
+
+Import/export:
+the versioned Journey JSON is the portable Diary/session object.
+
+## M3 · Backpack Inventory · HOLD after M1
+
+Georg current product direction:
+**one backpack overlay with 20 visible slots.**
+
+Historical implementation/source for this exact 20-slot sketch is currently not pinned.
+Status:
+`USER_DIRECTION · HISTORICAL_SOURCE_REQUIRED`.
+
+That does not block the new product direction; it blocks claims that an old implementation is being reused.
+
+Initial inventory contract:
+- exactly 20 visible carry slots;
+- typed item refs;
+- quantity/stack only where item type allows;
+- gifts/props/consumables/keys/modules may live here;
+- cards normally belong to the Almanac/collection, not one slot per card;
+- accepted inventory mutations go through Player Journey.
+
+HUD exposes a backpack affordance; overlay owns the 20-slot presentation.
+
+## M4 · Universal POP Account · HOLD after M1
+
+POP becomes one durable cross-mode balance.
+
+Canon protection:
+POP remains the progression/reaction currency with its existing KFB meaning.
+It is not a plausibility/truth score.
+
+Consumers do not maintain authoritative private POP totals.
+
+Instead:
+```
+Race / Combat / Travel / Card Zone / Town
+→ pop.award event
+→ Player Journey reducer
+→ durable balance
+→ HUD display / feedback animation
+```
+
+Existing Travel `addPop()` becomes a presentation/event adapter, not the ledger.
+
+The HUD may show POP compactly across ordinary gameplay modes.
+
+## M5 · Collected Music / Radio · HOLD after M1 + Audio Audition
+
+One shared music/radio state:
+- collected/unlocked tracks;
+- active track;
+- playback state;
+- volume/preferences;
+- optional playlist/favorites later.
+
+The current Race three-control Radio is a presentation donor.
+
+The Radio shell may stay compact across modes while the same music can continue through Walk/Drive/Travel when the host allows it.
+
+SFX event audio remains with game/presentation owners; Radio is music/media, not a replacement global SFX engine.
+
+## M6 · Navigation / Minimap Provider · HOLD after mode adapters
+
+Do not build one fake universal minimap.
+
+HUD asks the active context for a navigation provider.
+
+Examples:
+- Race → actual route;
+- World/OSM → current zone/world map;
+- local Card Zone / Dungeon → local map only if a real provider exists;
+- Flight/Boat → mode-specific navigation provider when implemented;
+- Almanac immersive chamber → intentionally **no minimap/compass** unless that product decision is changed.
+
+No provider = no minimap.
+
+## M7 · Adaptive HUD Shell · READY
+
+Define semantic HUD slots rather than one fixed Race layout.
+
+Persistent/meta candidates:
+- upper-right Almanac fan;
+- compact POP;
+- Backpack affordance;
+- Radio/media affordance.
+
+Context providers may add:
+- Navigation/Minimap;
+- mode instrument;
+- Combat state;
+- interaction prompt;
+- transient reward/collection feedback.
+
+Example profiles:
+
+### WALK / WORLD
+Almanac + POP + Backpack + compact Radio + optional world navigation.
+
+### DRIVE / RACE
+same meta truth plus:
+- Tacho / mode instrument;
+- actual route minimap;
+- driving Radio controls.
+
+### FLIGHT / BOAT
+same meta truth plus the current mode's real instrument/navigation providers once they exist.
+
+### COMBAT
+same meta truth in reduced form plus Combat-owned encounter status.
+
+### ALMANAC IMMERSIVE
+ordinary gameplay HUD hidden.
+
+The shell stores no game physics/combat/navigation truth itself.
+
+## M8 · Skin / Interface Grammar
+
+The HUD must be visually coherent and skinable without every mode rebuilding its controls.
+
+Share:
+- spacing scale;
+- typography roles;
+- surface/ink/shadow language;
+- icon semantic registry;
+- selected/pressed/disabled states;
+- motion timing families;
+- accessible contrast/legibility rules.
+
+A world/theme can override approved skin tokens.
+It must not move gameplay ownership or rename canonical actions.
+
+Player HUD and ToolBox authoring UI share the grammar, **not the same layout**.
+
+## M9 · Authoring UI Legibility · READY
+
+Current shared editor functionality is good; the inline toolbar presentation is not.
+
+Measured current Resident/Editor donor:
+- buttons: **28×28 CSS px**;
+- glyphs: **13 px**;
+- symbols: `✥ ⟳ ⤢ ⬓ ⊹ ✕`.
+
+Georg finding:
+the controls are learned by position rather than icon recognition.
+
+Next authoring-UI pass:
+- preserve the accepted shared `edit-layer.js` behavior;
+- redesign only presentation/interaction affordance;
+- normal authoring hit target around **40–44 px** rather than 28 px;
+- visibly legible icon artwork/glyph around **20–24 px**;
+- recognizable semantic icon family for Move / Rotate / Scale / Drop / Axis-Space / Close;
+- strong active-mode state;
+- tooltip with action + shortcut;
+- optional text label in expanded/learning mode;
+- compact mode may exist later, but not as the default if recognizability is lost.
+
+Do not replace inline editing with a giant permanent toolbar high in the field of view.
+The tool remains context-local to the selected object.
+
+The same icon semantics should be used in ToolBox and WorldBuilder authoring.
+
+## M10 · Cross-Mode Meta/HUD Milestone
+
+One Journey import is used across several real contexts:
+
+```
+import Journey
+→ WALK: Almanac/POP/Backpack visible
+→ collect Card Zone card
+→ Almanac updates
+→ enter vehicle
+→ DRIVE profile adds Tacho + real minimap
+→ earn POP
+→ switch to Combat
+→ Combat profile appears, same POP/Journey persists
+→ receive NPC gift
+→ inventory or collection updates by typed reward
+→ Radio track unlock persists
+→ export Journey JSON
+→ reload/import
+→ same meta state restored
+```
+
+The acceptance question is whether this feels like **one game identity across modes**, not whether each widget has its own test dashboard.
+
+---
+
+# New cross-strand relationships
+
+```
+Card Zone v2 source
+  ├→ exact Fluid Surface ───────────────→ WorldBuilder water consumers
+  ├→ Card Stack / Reveal / Beam
+  ├→ Card Cube / Face Focus
+  └→ Card Zone Recipe ─────────────────→ WorldBuilder placeable module
+                                            │
+                                            └→ card.collect / pop.award
+                                                   │
+Race / Travel / Combat / Town / Minigames ────────┤
+                                                   ↓
+                                           Player Journey / Meta
+                                            ├→ Fractal Almanac
+                                            ├→ POP account
+                                            ├→ 20-slot Backpack
+                                            ├→ collected Music/Radio
+                                            └→ Adaptive HUD profiles
+
+Shared Interface Grammar
+  ├→ Player HUD shell
+  └→ ToolBox / WorldBuilder authoring controls
+```
+
 # Adjacent open lanes · integrate as modules, not new mega-strands
 
 These remain relevant but should feed the eleven primary strands rather than create another control plane.
