@@ -287,3 +287,26 @@ Resume by reading this file, then:
 `FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`.
 
 Do not resume from R2 code as if it were a current candidate.
+
+## RESEARCH COMPLETE · 2026-09-24
+
+Research document:
+`DESIGN_PATTERN_RESEARCH_2026-09-24.md`
+
+Key findings now locked:
+- facade design = rhythm + repetition with meaningful variation, Gestalt grouping and asymmetrical balance; **not independent RNG**;
+- colour = one block-level harmonic palette + hierarchy, not per-building random colour picks;
+- roof/body = shared eave boundary / welded or guaranteed shared seam, proven under neutral material first;
+- roads/paths = **buffer → boolean union/difference → one planar arrangement → triangulate**, not overlapping ribbons + patches;
+- R2 `sun.shadow.radius=2` is a documented Three.js banding risk; shadow retuning must move to an isolated one-house test.
+
+No runtime/code implementation has been started after the R2 freeze.
+
+### Exactly one next gate
+
+Create only three isolated architecture proofs:
+A. one T-junction from a single unioned planar topology;
+B. one bowed house with shared/welded roof-body eave under neutral lighting;
+C. six simple facades showing deterministic rhythm families + colour hierarchy.
+
+No Hürth block R3 until A/B/C pass visually.
