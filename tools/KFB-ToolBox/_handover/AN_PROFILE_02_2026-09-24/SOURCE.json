@@ -32,14 +32,18 @@
   "implementationHead": "93d9dd6f763c064313fe5d3bef690496487145a9",
   "ciAtCheckpoint": {
     "run": 36032905791,
-    "status": "in_progress",
-    "staticOwnerContract": "success",
-    "anProfile02Static": "success",
-    "browserCoherent": "in_progress",
-    "browserAnProfile02": "pending"
+    "job": 107745811232,
+    "status": "success",
+    "staticOwnerContract": "22/22 PASS",
+    "anProfile02Static": "34/34 PASS",
+    "browserCoherent": "20/20 PASS",
+    "browserAnProfile02": "25/25 PASS",
+    "motionProfileNetworkFailures": 0,
+    "browserPageErrors": 0
   },
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/",
     "status": "HOLD_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED"
-  }
+  },
+  "humanReview": "OPEN"
 }
