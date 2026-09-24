@@ -709,11 +709,11 @@
       "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
       "draftPR": 194,
       "owner": "OSM City Lab presentation / KFB ToolBox authoring",
-      "testedRuntimeHead": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
-      "tested": "21/21 browser PASS · 3/3 WebGL2 · 0 page/console errors · run 35909757979",
-      "currentCandidate": "ELASTIC_GROUP_WARP_V2",
+      "testedRuntimeHead": "75b3c460ac37aac57cb5d9e96260517c5b4cf68d",
+      "tested": "29/29 browser PASS · 3/3 WebGL2 · 0 page/console errors · run 35945185715",
+      "currentCandidate": "ELASTIC_GROUP_WARP_V2_TUNED_ONCE",
       "currentPalette": "KFB_WONKY_90S_CLAY_V1",
-      "currentGate": "GEORG HUMAN VISUAL REVIEW · ACTUAL HÜRTH 01 V2 THREE.JS RESULT",
+      "currentGate": "GEORG HUMAN REVIEW · TUNED HÜRTH 01 V2 · ACCEPT / REJECT",
       "antiRegression": [
         "old City-Lab GROTESQUE is comparison evidence only",
         "Hürth 01 V1 is superseded by V2 for continuation",
@@ -727,8 +727,11 @@
         "landmark ownership",
         "vehicle deformer ownership"
       ],
-      "note": "For Hürth/KFB 3D form-language work, read CHAT_RECOVERY_CURRENT + Lead Override + PR #194 latest head. Old GROTESQUE/V1 and the simplified self-contained Canvas mirror are not continuation truth.",
-      "recoveryCurrent": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md"
+      "note": "Human V2 result = TUNE ONCE. The four bounded Elastic fixes are implemented/tested at 75b3c460. Clean/Cartoon/Grotesque remain switchable and unchanged. Next gate is Georg ACCEPT/REJECT on the direct review route; LC-01 waits for ACCEPT.",
+      "recoveryCurrent": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md",
+      "reviewUrl": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/",
+      "humanResult": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/HUMAN_RESULT_HUERTH01_V2_2026-09-24.md",
+      "afterAccept": "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/LOOK_COMPOSITION_01_2026-09-24.md"
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
