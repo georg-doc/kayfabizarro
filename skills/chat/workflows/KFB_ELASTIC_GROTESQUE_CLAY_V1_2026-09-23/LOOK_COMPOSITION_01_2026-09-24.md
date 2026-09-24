@@ -24,7 +24,7 @@ Decided by Georg (see `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/T
 - ground = **our continuous terrain editor** (WB1 scene editor + WB2 sculpt, PR #186/#190, ZyFou/ProceduralTerrains lineage, MIT);
 - first world shape = **sphere** (ZyFou Planet mode is the donor), later arbitrary shapes;
 - Travel Globe is **out** as world base (its polygon anatomy cannot take the racetrack);
-- from TinySkies only: **sky dome, sky effects, clouds, weather, day/night, world moods, camera-flight idea**;
+- from TinySkies only (modules need host global `THREE` + relative `sky-presets.js`; wrap explicitly): **sky dome, sky effects, clouds, weather, day/night, world moods, camera-flight idea**;
 - Hex / voxel constructs, OSM zones and landmarks are **content placed on that ground**, not the ground.
 
 ## 4 · Donors — reuse, do not rebuild
@@ -33,7 +33,7 @@ Decided by Georg (see `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/T
 |---|---|---|---|
 | Building form language | `tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/` @`0c59e92d`, `STYLE_BENCHMARK.md`, palette `KFB_WONKY_90S_CLAY_V1` | V2 geometry grammar | return to box extrusion / cubist stacking / V1 |
 | Georg's open TUNE (given on V1, re-check on V2) | `HUMAN_RESULT_HUERTH01_2026-09-24.md` on #194 | offset windows (cartoon logic), doors of different sizes, colour worlds in the spirit of 90s cartoon suburbia (mood reference only, no copied designs) | treat as new style exploration |
-| Landmarks | `tools/img2threejs/landmarks/pilot-06/`, `styles/landmark-world-style.mjs`, `styles/landmark-style-profiles.v1.json`, `docs/GENIUS_LOCI_CANDIDATES_2026-09-19.md` | Grotesque default, six identity colour zones per landmark, hue-only world coupling | a second landmark deformer |
+| Landmarks | viewer `tools/img2threejs/landmarks/pilot-06/`; style `tools/img2threejs/styles/landmark-world-style.mjs`, `tools/img2threejs/styles/landmark-style-profiles.v1.json`; catalogue `tools/img2threejs/docs/GENIUS_LOCI_CANDIDATES_2026-09-19.md` | Grotesque default, six identity colour zones per landmark, hue-only world coupling | a second landmark deformer |
 | Story/tactical map | `tools/KFB-ToolBox/_inbox/KFB StoryMap v1/`, note `_handover/CLAUDE_DESIGN_WORLD_RACER_2026-09-22/STORYTELLING_MAP_WORLD_DONOR_2026-09-22.md` | canonical-vs-presentation split, Ink/Shadow profiles, D6 terraces | StoryMap water look, StoryMap as world owner |
 | OSM zones | `tools/osm-city-lab/` datasets `ehrenfeld-v0`, `huerth-v0`, `dom-zentrum-v0` | normalized geometry as placed zones | a second city system |
 | Surface shader & texture | `tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/` — `wd-look.js` (triplanar, RGB palette "Derek", colour vs value), `wd-macro.js` (seamless macro texture), `wd-ink.js`, `wd-light.js` (BASELINE/WHACKMAN), `wd-terrain.js`, `wd-voxel.js`, `textures/` | shader injection that keeps SOURCE lossless; comparison bank grammar (SOURCE / TRIPLANAR / CLAY / COMBINED) | material replacement, per-asset hand recolouring |
