@@ -1,3 +1,20 @@
+## 2026-09-24 · gameplay/world expansion · Combat, Pets, Travel, Vertical, Town, Stage
+
+- expanded v3 from 5 to **11 primary production strands** and from 19 to **45 copy-ready jobs**;
+- added Combat / Duel Choreography as an NPC-vs-NPC + Arena + Hero-Shot + World Encounter strand, reusing Combat PR #5/#7/#10 and PR #6 choreography/spindle briefs;
+- added explicit Combat Actor Family Matrix for Rig_Medium, Rig_Large, Rig_Legacy, CubePet/procedural and later 2D/2.5D/Block adapters;
+- added autonomous Match Director, Card Tower Encounter and Open-World Combat adapter directions without moving damage/reward ownership out of Combat Arena;
+- added Cube Pet / Actor Identity strand; canonical 24-pet stack retained; `cube-frizzlebob`, `legacy-arena-frizzlebob` and `frizzlebob-driver-graft` are now distinct technical identities;
+- added Travel Modes / World Surfaces: topology and locomotion are orthogonal; FLAT/SPHERE/TORUS first, Ground/Flight/Drive/Boat/Air/Freefall modes with one active movement writer;
+- recovered TinySkies inventory evidence for Carpet, Boat and Plane; Boat/Plane are source-recovery jobs, not falsely claimed as already ported;
+- added Vertical/Babel/Card Tower strand; failed Platformer auto-jump source remains honestly `SOURCE_REQUIRED`;
+- added Town/ChatterBox/NPC-Life strand using encounter beats, filtered Journey/card memory and typed gifts rather than a second dialogue/memory engine;
+- added Shared Stage strand for Spindle, Theatre Curtain, Stage recipes and semantic VFX/SFX maps;
+- routed adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames into the primary strands as modules;
+- Hub catalog schema v3 is strand-first: **11 strands / 45 jobs / 20 READY / 25 HOLD**, job cards collapsed by default;
+- current source/architecture validation: **52/52 PASS**;
+- no product runtime, public Hub, Cloudflare Live or merge was changed.
+
 ## 2026-09-24 · complete production strands + copy-ready jobs
 
 - expanded v3 from four starter jobs to five visible strands and 19 Hub job cards;
