@@ -223,3 +223,36 @@ Open `AN_PROFILE_02_REVIEW.html` and judge only:
 5. check whether root/travel/speed/marker facts are understandable and useful.
 
 If accepted, the next technical consumer may be WorldBuilder using the same shared profile layer. Do not build a second WorldBuilder motion database.
+
+
+## ADDITIVE CORRECTION · Chat review transport
+
+The original two DC-based Chat attachment transports failed at the human visualization surface:
+1. raw DC bindings/placeholders visible;
+2. Chat visualization error after inlining the DC runtime.
+
+They are frozen as `ARCHIVED_FAILED_CANDIDATE` transport attempts. Product/runtime evidence above remains valid.
+
+Current human-review surface is now:
+`tools/KFB-ToolBox/stage-first/review/an-profile-02-review.html`
+
+It is a purpose-built **plain Three.js review adapter** using:
+- real pinned Mannequin Medium/Large source actors;
+- real 33-clip-per-rig KFB Motion Library GLBs;
+- real motion catalogue;
+- real AN-PROFILE catalogue;
+- ordinary DOM/Three.js only;
+- no DC compiler, proxy geometry or copied profile database.
+
+Final review validation:
+- technical review head: `ce3181bbf9114b7f00086368130fe610fd5810c7`;
+- Actions `36055391088 / 107820911138`: **SUCCESS**;
+- plain review: **13/13 Chromium PASS**;
+- full successful owner run: **114/114 PASS**;
+- 0 page errors;
+- 0 failed source/module requests.
+
+The current human gate is still exactly one gate:
+**open the plain review HTML and judge Library/Data usefulness.**
+
+No Cloudflare publication or Live claim was added.
