@@ -1,3 +1,9 @@
+## 2026-09-24 · Claude Design Resident Disco handoff
+
+- Prepared direct Claude Design executor brief for RES-DISCO using the fresh Resident Atlas S8 / Orc-band lineage.
+- First authoring slice is Source Cast → Motion Audition → short ensemble + reusable Disco Ball Core; no second Resident/Music runtime.
+- Claude output is candidate-only; Web/GitHub Bridge rehomes accepted deltas and owns any later Stage publication.
+
 ## 2026-09-24 · Resident Disco cast correction + reusable Disco Ball Core
 
 - Prototype Pete removed from RES-DISCO because it is a template/proof actor; Action Figure also replaced.
