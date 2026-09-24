@@ -1,0 +1,34 @@
+# Billboard B1 + Curtain C1 · next slices · 2026-09-24
+
+Georg: both Claude Design results are an OK production base now. Billboard B0 accepted; Curtain v2 usable (no classic lower-third tieback, but it works; stripe bug solved by taking the original three.js donor and only tinting it).
+
+Sources (main):
+- Billboard B0: `tools/KFB-ToolBox/_inbox/KFB Billboard Media Szene · B0 Source Proof/BILLBOARD_B0_SOURCE_PROOF_2026-09-24/` (`bb-scene.js`, `bb0-boot.js`, `RETURN.md`, `POST_MORTEM.md`). Kenney `billboard.glb`, measured ad face 4.20 × 2.10, real KFB card via `renderCardQuarter()` cover-cropped, no metadata.
+- Curtain v2: `tools/KFB-ToolBox/_inbox/KFB Theatre Curtain v2/2026-09-24-theatre-curtain/` (`KFB Theatre Curtain v2.html`, `docs/HANDOVER_WSA_THEATRE_CURTAIN_2026-09-24.md`). WebGPU compute cloth from three.js `webgpu_compute_cloth` @`7300402f`, two tinted panels, no texture.
+
+## B1 · Billboard fits its content (Web chat; Blender only if the frame must be remodelled)
+
+Goal: the ad face shows content **borderless** at its own aspect ratio.
+
+1. **Face follows content aspect**, clamped between a min and max size; posts/frame follow the face. No letterbox, no crop of important parts.
+2. **Default = one quarter of a KFB card page**: measure the aspect from `renderCardQuarter()` output; do not guess.
+3. **Content modes** on the same face: card quarter (PDF.js), card **cover**, **YouTube video**.
+   YouTube cannot be a WebGL texture (cross-origin); use a CSS3D plane aligned to the face, or poster image + click to play.
+4. **Typography for slogans**: ChatterBox triplet (SHOW IT → SPIN IT → SELL IT) set large and designed for billboard reading distance — no step labels, no "1 of 4", no metadata.
+5. Keep B0 exactly (measured face, epsilon offset, cover-crop). Check the other Kenney variants (`billboardDouble_exclusive`, `billboardLow`, `billboardLower`) with the same face measurement before using them.
+6. Still open from B0: bring card cartoon anatomy and 3D model proportions closer ("beide etwas runter").
+
+Done when Georg sees the same billboard showing a card quarter, a cover and a video, each borderless, plus one large slogan.
+
+## C1 · Card motif on the curtain (optional, after B1)
+
+- Keep v2 as it is. The stripe bug came from tiled fabric textures + normals in v1.
+- Motif test: **one** non-tiling card image as colour only (no normal/bump), mipmapped, on the closed curtain; judge in motion (several frames), not a still.
+- If stripes return: put the motif on a separate hanging banner/pelmet in front instead of the cloth.
+- Open decisions for Georg later: cartoon rings/hooks, scalloped pelmet layer (switchable), WebGL fallback (v2 is WebGPU-only).
+
+## Start text for a fresh Web chat (B1)
+
+```
+Read georg-doc/kayfabizarro main: tools/KFB-ToolBox/_handover/BILLBOARD_CURTAIN_NEXT_2026-09-24.md and the Billboard B0 folder it names. Apply skills/session-entry-use-what-works_v1.md. Do B1 only, forking B0 unchanged (bb-scene.js, bb0-boot.js). Publish the unchanged multi-file result as a wrapper under kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/ on cloudflare-live. Stop and report what is different in the picture.
+```
