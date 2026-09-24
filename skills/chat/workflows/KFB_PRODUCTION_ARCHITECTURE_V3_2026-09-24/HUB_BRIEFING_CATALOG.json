@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/5",
+  "schema": "kfb.hub-briefing-catalog/6",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -30,7 +30,9 @@
       "capabilitiesTotal": 5,
       "currentReady": [
         "an-perf-01",
-        "an-profile-01"
+        "an-profile-01",
+        "resident-band-module-01",
+        "pose-to-blender-01"
       ]
     },
     {
@@ -1228,6 +1230,83 @@
       "waitingFor": "SKILLS-CURRENT-01 Ink entrypoint reconciled",
       "cloudflareRequired": false,
       "workRequired": false
+    },
+    {
+      "id": "resident-band-module-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Resident Atlas / ToolBox Web",
+      "title": "Residents · KayfaBizarros Scene Module",
+      "what": "Compose the accepted Orc band pieces into a baseplate-free reusable performance scene and create the drummer reference pose in browser.",
+      "result": "Placeable Resident performance module with song/action/pose refs.",
+      "promptSection": "RESIDENT-BAND-MODULE-01 · Baseplate-free KayfaBizarros Resident Scene",
+      "sourceSet": "characterResidentWorkflow",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "orcBandPr": 195,
+      "orcBandHead": "9dda7957a33e69926265c1e3a69028a4b35b26f0"
+    },
+    {
+      "id": "pose-to-blender-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Resident Atlas + Blender MCP",
+      "title": "Residents · Pose-to-Blender Handoff",
+      "what": "Use a browser-authored Studio Patch/key pose as the design target for one Blender time-based correction and return the Action.",
+      "result": "Round-trip browser pose → Blender Action → browser comparison.",
+      "promptSection": "POSE-TO-BLENDER-01 · Browser Pose → Blender Action handoff",
+      "sourceSet": "characterResidentWorkflow",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "blenderProofPr": 192,
+      "blenderProofHead": "b49fb6e1adde070d658e1cc21dadb3294164cb29"
+    },
+    {
+      "id": "blender-actor-family-01",
+      "strand": "toolbox",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Blender MCP",
+      "title": "Actors · Frizzle-Orc Family Factory",
+      "what": "Build source-backed Medium/Large/Legacy identity derivatives while preserving each destination rig family.",
+      "result": "Three derivative GLBs + FaceHost/material/provenance facts for ToolBox comparison.",
+      "promptSection": "BLENDER-ACTOR-FAMILY-01 · Frizzle-Orc Medium / Large / Legacy derivatives",
+      "sourceSet": "characterResidentWorkflow",
+      "waitingFor": "exact Frizzle-Orc 3 Rig-Warp + chosen Medium/Large/Legacy body + blank-head/accessory source pins",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "blender-motion-02",
+      "strand": "animation-residents",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Blender MCP",
+      "title": "Animation · One Missing High-Value Motion",
+      "what": "Add exactly one named missing march/combat/performance action after checking native + 33-action Motion Library donors.",
+      "result": "One reusable Action/catalogue entry/contact sheet, not another speculative batch.",
+      "promptSection": "BLENDER-MOTION-02 · One named missing high-value motion",
+      "sourceSet": "characterResidentWorkflow",
+      "waitingFor": "one concrete missing action + real consumer + pinned source; existing libraries checked first",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "legacy-custom-actor-01",
+      "strand": "toolbox",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "Blender MCP + ToolBox",
+      "title": "Actors · Custom Legacy Derivative",
+      "what": "Use Blender only when current Legacy assembler cannot represent one chosen custom actor; keep Rig_Legacy owner.",
+      "result": "One custom derivative returned to ToolBox/Resident Atlas for EyeRig/pose/props.",
+      "promptSection": "LEGACY-CUSTOM-ACTOR-01 · One custom Legacy derivative",
+      "sourceSet": "characterResidentWorkflow",
+      "waitingFor": "chosen custom Legacy actor/source + proof current browser assembler is insufficient",
+      "cloudflareRequired": false,
+      "workRequired": false
     }
   ],
   "presentation": {
@@ -1239,8 +1318,8 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 73,
-    "ready": 33,
-    "hold": 40
+    "jobs": 78,
+    "ready": 35,
+    "hold": 43
   }
 }
