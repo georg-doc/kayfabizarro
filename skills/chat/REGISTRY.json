@@ -47,6 +47,39 @@
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
     },
     {
+      "id": "kfb-audio-soundscape-baseline-v1-2026-09-24",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md",
+      "recovery": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RECOVERY.md",
+      "return": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md",
+      "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/",
+      "stageStatus": "PUBLIC_VERIFY_PENDING",
+      "loadWhen": [
+        "KFB audio",
+        "soundscape",
+        "TTS or narrator ducking",
+        "shared SFX",
+        "music or Jukebox",
+        "audio calibration"
+      ],
+      "owns": [
+        "cross-project audio inventory and routing",
+        "semantic mix-role contract proposal",
+        "AUDIO-CAL-01 calibration/recovery"
+      ],
+      "doesNotOwn": [
+        "Travel audio runtime",
+        "Race physics or runtime",
+        "Combat runtime",
+        "Boxel gameplay",
+        "a replacement asset registry",
+        "automatic merge or Live promotion"
+      ],
+      "note": "AUDIO-CAL-01 is 31/31 browser/WebAudio PASS on the candidate and mirrored to main for Stage publication. Exact Cloudflare route still requires PUBLIC_VERIFIED before the human listening gate."
+    },
+    {
       "id": "claude-design-failure-recovery",
       "kind": "coordination",
       "status": "CURRENT_REFERENCE",

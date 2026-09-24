@@ -1760,3 +1760,19 @@ Exactly one next gate:
 - Current Claude Design fine-tuning brief: `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
 - KFB Hub exposes the brief as a parallel Claude Design briefing, while the P0 extraction todo remains unchanged: run `pbc-lymph-102859` through Draft PR #7's unchanged model/pipeline.
 - No SVG runtime integration, medical pass, production promotion or new public Stage is claimed.
+
+
+## 2026-09-24 · KFB Audio & Soundscape Baseline v1
+
+- Current workflow/recovery: `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/`.
+- Existing Travel/Race/Combat/Boxel owners preserved; no universal replacement audio engine.
+- Shared semantic roles: `VOICE | UI | PLAYER_CRITICAL | WORLD_SFX | DIEGETIC_MUSIC | SCORE | LOCAL_AMBIENCE | GLOBAL_BED`.
+- P0 branch repair: UI SFX **16/16 valid paths**; existing catalog refreshed to **1732 actual audio files**.
+- AUDIO-CAL-01 source contract: **11/11** asset paths valid.
+- Candidate tested head `7013f43a0501c824deb2c5541c1971c2b979a4e6`: validator **6/6 groups PASS**, Chromium/WebAudio **31/31 PASS**.
+- QA run `36024697531`, job `107718140193`, proof artifact `10819176933`, digest `sha256:05b9776cc3d501a77360e6ee6660278e1137fb793756aa3a817cb555e2c91012`.
+- Stage source mirror published to main beginning at `cee7839acadd5fa3443fcbae94678b97139f097f`.
+- Fixed route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`.
+- **PUBLIC VERIFY PENDING** until that exact Cloudflare route exposes `AUDIO-CAL-01-v1`.
+- Human listening remains pending; procedural storm is calibration-only and applause is not a sustained crowd bed.
+- Draft PR #205 remains unmerged; no Live promotion authorized.
