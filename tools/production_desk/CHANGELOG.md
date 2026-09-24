@@ -1,3 +1,13 @@
+## 2026-09-24 · Racer external status advanced to RKIT-06
+
+- Root cause for stale Racer card confirmed: Production Desk intentionally never fetches `external:true` repositories with the same-repo workflow token; Racer therefore remained on hand-maintained `lastKnown` PR #33 / head `71e7051…`.
+- Current private Racer truth verified directly in `georg-doc/KFB-Stunt-Car-Race`: stacked RKIT PRs #34→#39, top PR #39 `RKIT-06` at `53219c9b7ee3d1abe0ef1b0e5364863b42014ea5`.
+- Hub config now has one consolidated Racer lane at RKIT-06 rather than six micro-lanes.
+- Current summary includes TRACK_A_STUNT_8, Base/Hero jumps, Pit Lane, SWITCH_Y, flap-return/tunnel and Trankgasse on the real OSM line.
+- Next technical gate is the real Race/Rapier run on TRACK_A; RKIT remains geometry/metadata only.
+- Durable follow-up: replace hand-edited cross-repo `lastKnown` with a small same-repo external-status mirror written by the owning GitHub Bridge, or later a GitHub App/token with explicit cross-repo read permission.
+- No public publication claimed by this config-only checkpoint.
+
 # KFB Production Desk · additive changelog
 
 ## 2026-09-24 · HUB-V3-MOUNT
