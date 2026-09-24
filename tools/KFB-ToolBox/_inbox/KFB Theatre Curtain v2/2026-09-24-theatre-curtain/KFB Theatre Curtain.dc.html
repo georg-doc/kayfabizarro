@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html,body{margin:0;background:#16110f;color-scheme:dark}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"}}</script>
+</helmet>
+<div style="position:fixed;inset:0;background:#16110f;color:#f2ece2;font-family:system-ui,sans-serif;overflow:hidden">
+  <div ref="{{ stageRef }}" style="position:absolute;inset:0"></div>
+  <button onClick="{{ onToggleHud }}" style="position:fixed;z-index:6;right:12px;top:12px;font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px;cursor:pointer">{{ hudToggleLabel }}</button>
+  <sc-if value="{{ hudVisible }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;z-index:4;left:12px;right:70px;top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <div style="padding:7px 9px;font:700 11px/1.2 ui-monospace,monospace;border:1px solid #ffffff2a;background:#17110ed9;border-radius:6px">KFB THEATRE CURTAIN v1 · <span style="color:#efc07d">DONOR MOUNT (unmodified runtime)</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button onClick="{{ onOpen }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #a8564e;background:#74312d;color:#f2ece2;border-radius:6px;cursor:pointer">OPEN</button>
+      <button onClick="{{ onClose }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px;cursor:pointer">CLOSE</button>
+      <button onClick="{{ onImpact }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px;cursor:pointer">IMPACT</button>
+      <button onClick="{{ onReset }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px;cursor:pointer">RESET</button>
+      <button onClick="{{ onTie }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #5e8c61;background:#22301fd9;color:#f2ece2;border-radius:6px;cursor:pointer">TIE</button>
+      <button onClick="{{ onUntie }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px;cursor:pointer">UNTIE</button>
+      <select value="{{ fabric }}" onChange="{{ onFabricChange }}" style="font:700 11px system-ui;padding:7px 9px;border:1px solid #ffffff2a;background:#17110ed9;color:#f2ece2;border-radius:6px">
+        <option value="velour_velvet">Velour Velvet</option>
+        <option value="rough_linen">Rough Linen</option>
+        <option value="hessian_230">Hessian 230</option>
+        <option value="crepe_satin">Crepe Satin</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:6px;padding:5px 8px;font:10px ui-monospace,monospace;border:1px solid #ffffff2a;background:#17110ed9;border-radius:6px">WIND <input type="range" min="0" max="1.5" step="0.05" value="{{ windVal }}" onChange="{{ onWindChange }}" style="width:90px"/> <b>{{ windOut }}</b></label>
+    </div>
+    <div style="margin-left:auto;padding:7px 9px;font:10px/1.25 ui-monospace,monospace;max-width:46ch;border:1px solid #ffffff2a;background:#17110ed9;border-radius:6px">{{ status }}</div>
+  </div>
+  <div style="position:fixed;z-index:4;left:14px;bottom:12px;font:10px/1.35 ui-monospace,monospace;color:#d4c4b6;background:#17110eb8;border:1px solid #ffffff20;border-radius:5px;padding:7px 9px">Click cloth for local impulse · O open · C close · I impact · R reset<br/><span style="color:#e6b878">Exact donor runtime (game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs) — unmodified. Aging decals deferred per README.</span></div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { status: 'Loading exact KFB fabric maps...', windVal: 0.62, fabric: 'velour_velvet', hudVisible: true };
+  stageRef = React.createRef();
+
+  componentDidMount() {
+    this._mount();
+  }
+
+  async _mount() {
+    try {
+      const mod = await import('./game-ready/theatre-curtain-v1/runtime/kfb-theatre-curtain.mjs');
+      this.mod = mod;
+      this.curtain = await mod.mountKFBTheatreCurtain(this.stageRef.current, { texture: 'velour_velvet', tint: '#8c3f37', wind: 0.62 });
+      window.__kfbCurtain = this.curtain; // debug handle, wrapper-only, not part of donor runtime
+      this._refresh();
+      this._interval = setInterval(() => this._refresh(), 250);
+    } catch (e) {
+      console.error(e);
+      this.setState({ status: 'ERROR · ' + String((e && e.message) || e) });
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._interval) clearInterval(this._interval);
+    if (this.curtain) this.curtain.dispose();
+  }
+
+  _refresh() {
+    if (!this.curtain) return;
+    const s = this.curtain.snapshot();
+    const label = (this.mod && this.mod.CURTAIN_TEXTURES && this.mod.CURTAIN_TEXTURES[s.texture] && this.mod.CURTAIN_TEXTURES[s.texture].label) || s.texture;
+    this.setState({ status: s.backend + ' · ' + s.state + ' · open ' + s.openProgress.toFixed(2) + ' · ' + s.tieState + ' ' + s.tieProgress.toFixed(2) + ' · ' + label + ' · ' + s.hooks + ' visible rings' });
+  }
+
+  renderVals() {
+    return {
+      stageRef: this.stageRef,
+      status: this.state.status,
+      windVal: this.state.windVal,
+      windOut: Number(this.state.windVal).toFixed(2),
+      fabric: this.state.fabric,
+      hudVisible: this.state.hudVisible,
+      hudToggleLabel: this.state.hudVisible ? 'HIDE UI' : 'SHOW UI',
+      onToggleHud: () => this.setState({ hudVisible: !this.state.hudVisible }),
+      onOpen: () => { if (this.curtain) this.curtain.setState('open'); this._refresh(); },
+      onClose: () => { if (this.curtain) this.curtain.setState('close'); this._refresh(); },
+      onImpact: () => { if (this.curtain) this.curtain.impulse({ x: 0, y: -0.2, strength: 2.15, radius: 1.28 }); this._refresh(); },
+      onReset: () => { if (this.curtain) this.curtain.reset(); this._refresh(); },
+      onTie: () => { if (this.curtain) this.curtain.setState('tie'); this._refresh(); },
+      onUntie: () => { if (this.curtain) this.curtain.setState('untie'); this._refresh(); },
+      onFabricChange: async (e) => {
+        const v = e.target.value;
+        const label = (this.mod && this.mod.CURTAIN_TEXTURES[v] && this.mod.CURTAIN_TEXTURES[v].label) || v;
+        this.setState({ fabric: v, status: 'Loading ' + label + '...' });
+        if (this.curtain) await this.curtain.setMaterial(v);
+        this._refresh();
+      },
+      onWindChange: (e) => {
+        const v = Number(e.target.value);
+        this.setState({ windVal: v });
+        if (this.curtain) this.curtain.setWind(v);
+        this._refresh();
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "BILLBOARD_B0_SOURCE_PROOF",
+  "date": "2026-09-24",
+  "auftrag": "Recovery-Pass auf überbauten Vorgängerstand; B0 = Beweis, nicht Komposition",
+  "consumer": "WSA Lead Chat",
+  "repo": {
+    "owner": "georg-doc",
+    "name": "kayfabizarro",
+    "ref": "main",
+    "hinweis": "kein Commit-SHA aus dieser Session bekannt — vor dem Commit-Vorgang selbst festhalten"
+  },
+  "sourceFunctions": [
+    {
+      "name": "renderCardQuarter(pick)",
+      "originFile": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-props.v1.js",
+      "note": "route-los neu geschrieben in bb-scene.js (Original braucht route.sampleAt()), Algorithmus/Registry/pdf.js-Version identisch"
+    },
+    {
+      "name": "buildBillboard(THREE, GLTFLoader, route, frac)",
+      "originFile": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-props.v1.js",
+      "note": "Panel-Messtechnik (Box3 -> Zielhoehe -> Panel vor der Tafel) route-los nachgezogen als loadHero() in bb-scene.js"
+    }
+  ],
+  "donor": {
+    "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+    "pin": "registry/assets/v1/packs/kenney-racing-kit.json @378b209355b13304e3cff656ec0806ca5b89df28",
+    "measuredAdFace": {
+      "sizeWorldUnits": [4.20, 2.10, 0.00],
+      "centerWorldUnits": [0.00, 3.15, 0.993],
+      "meshStructure": "single merged mesh, 4 material slots (bark, road, tankco, grey) — no separate ad-face sub-mesh",
+      "measuredVia": "index buffer + drawRange introspection on the 'tankco' material slot, live in preview"
+    }
+  },
+  "geaenderteDateien": [
+    "KFB Billboard Media Szene · B0 Source Proof.dc.html",
+    "bb0-boot.js",
+    "bb-scene.js (loadHero() panel placement + drawCard() cover-crop, no-metadata)"
+  ],
+  "unveraendert": [
+    "bb-boot.js, KFB Billboard Media Szene.dc.html (voller GATE-1-Build, nicht Teil von B0)"
+  ],
+  "nichtErfuellt": [
+    "renderCardQuarter() page.render() bleibt SOURCE_REQUIRED im Preview-Sandbox (Timeout, ehrlich gemeldet)",
+    "Branch/PR aus dieser Umgebung nicht moeglich"
+  ]
+}

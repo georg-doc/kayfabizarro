@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB Billboard — B0 Source Proof</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+<style>
+html,body{margin:0;padding:0;height:100%;background:#e9d8ad;overflow:hidden;font-family:'JetBrains Mono',ui-monospace,monospace}
+a{color:#2c5c56}
+a:hover{color:#1e4440}
+button.b0-btn{font:600 10px/1.4 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.04em;text-transform:uppercase;color:#f2e6c9;background:#231a13;border:1px solid rgba(242,230,201,.3);padding:6px 10px;cursor:pointer;border-radius:2px}
+button.b0-btn:hover{background:#3a2a1c}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="./bb0-boot.js"></script>
+</helmet>
+
+<div style="position:fixed;inset:0;background:#e9d8ad;z-index:-1"></div>
+
+<div style="position:fixed;left:14px;bottom:14px;z-index:20;display:flex;gap:6px;align-items:center">
+  <button class="b0-btn" id="b0-reset">RESET VIEW</button>
+  <button class="b0-btn" id="b0-diag-toggle">DIAG</button>
+  <div style="font:400 10px/1.4 'JetBrains Mono',monospace;color:#3a2c1e;background:rgba(242,230,201,.7);padding:5px 9px">drag = orbit · wheel = zoom</div>
+</div>
+
+<pre id="b0-diag-body" style="display:none;position:fixed;left:14px;top:14px;z-index:20;margin:0;font:400 11px/1.5 'JetBrains Mono',monospace;color:#231a13;background:rgba(242,230,201,.92);padding:8px 10px;border:1px solid rgba(35,26,19,.25);max-width:70vw;white-space:pre-wrap">loading…</pre>
+
+</x-dc>
+</body>
+</html>
