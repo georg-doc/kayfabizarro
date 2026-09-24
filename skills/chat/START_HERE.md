@@ -11,7 +11,7 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
 
-The current v3 candidate now covers **13 primary strands / 79 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
+The current v3 candidate now covers **13 primary strands / 81 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
 
 Current architecture candidate:
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
@@ -37,8 +37,12 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXECUTION_DISPATCH_POLICY_2026-09-24.md` — per-brief executor/model/reasoning/budget policy
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md` — existing HUB-CTRL #202 self-service mount handoff
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — architecture/planning recovery entry
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/FLOW_DESIGN_INTAKE_TRIAGE_2026-09-24.md` — current three-export Flow Design intake classification
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — current minimal Work handoff; Racer runtime proof only
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
+Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime is green while its separate review wrapper is a transport issue; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work execution is limited to the real TRACK_A Rapier runtime proof. See the two recovery handoffs above.
+
 
 ## Start order
 
