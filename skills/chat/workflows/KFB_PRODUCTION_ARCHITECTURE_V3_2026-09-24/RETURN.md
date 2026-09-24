@@ -1,6 +1,6 @@
-# RETURN · KFB Production Architecture v3 · Race/World/Look/Audio decisions · 2026-09-24
+# RETURN · KFB Production Architecture v3 · Card Zones + Player Meta / Adaptive Interface · 2026-09-24
 
-Status: **ARCHITECTURE CANDIDATE READY · 11 STRANDS / 53 JOBS · 73/73 PASS · UNMERGED · NO LIVE PROMOTION**
+Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 68 JOBS · 96/96 PASS · UNMERGED · NO LIVE PROMOTION**
 
 ## Exact state before this Return write
 
@@ -8,230 +8,297 @@ Status: **ARCHITECTURE CANDIDATE READY · 11 STRANDS / 53 JOBS · 73/73 PASS · 
 - Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 - Draft PR: **#204**
 - Base: `main@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
-- validated architecture/source checkpoint: `b9e5f0c8d7faeb78105aa368f029ca486012c83e`
+- validated architecture/source checkpoint: `5954fba492cbe6c4d658c3e6be7ecab8d2a919f2`
 - public Stage created by this architecture slice: **no**
 - Cloudflare Live promotion: **not authorized**
 - existing public Hub remains: `https://kayfabizarro.pages.dev/kfb-hub/`
 
-## Production architecture
+## Current production map
 
-The current self-service model remains:
-**11 primary strands · 53 copy-ready jobs · 26 READY · 27 dependency-gated HOLD**.
+**13 primary strands · 68 copy-ready jobs · 32 READY · 36 dependency-gated HOLD**
 
-The full strand map still covers:
-ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions.
+1. ToolBox Authoring Platform
+2. Animation & Residents
+3. WorldBuilder / God Mode
+4. Racer → World
+5. Quick 3D Review
+6. Combat / Duel Choreography
+7. Cube Pets / Actor Identity
+8. Travel Modes / World Surfaces
+9. Vertical Worlds · Babel / Hex / Card Towers
+10. Town / ChatterBox / Living NPCs
+11. Shared Stage / Transitions / FX
+12. **Card Zones / Card Objects**
+13. **Player Meta / Fractal Almanac / Adaptive Interface**
 
-The Hub must remain strand-first with jobs collapsed by default.
+Hub presentation remains strand-first with job cards collapsed by default.
 
-## New binding Race / RKIT decisions
+## Card Zones / Card Objects
 
-Source:
-`RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md`
+### Binding source hierarchy
 
-### D1 · Physics
-**Rapier is the canonical stunt-dimensioning / airborne-contact basis.**
+**Behavior authority**
+`tools/KFB-ToolBox/_inbox/KFB Card Zone Lab v2/card-zone-lab-v2-full_2026-09-22/KFB Card Zone Lab v2.dc.html`
+blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`.
 
-Current design basis:
-- speed: 27 m/s;
-- gravity magnitude: 15 m/s² downward;
-- proven physical ramp around 16°.
+The actual source still contains:
+- `buildFluidSurface`;
+- `buildProjection / updateProjection`;
+- `buildCardCube / refreshArtFace / snapQuat / tickCube / faceToCamera`;
+- `buildStack / prepReveal / poseCard / tickReveal / tickCard / setCardSide`.
 
-Reason:
-current C-3 route-relative movement does not physically launch from ramps; only its explicit jump path creates air time. Stunt geometry should not be dimensioned against an airborne/contact system that still has to be invented.
+**Reusable fluid source**
+`tools/KFB-ToolBox/_inbox/KFB StoryMap v1/kfb-fluid-v2/card-zone-v2-fluid-source.js`
+blob `97e3e0813cb5693a64863482ab96a601e88f5104`.
 
-The human-positive Track-Lab v0.8 steering/drift/grip feel remains a handling target/donor, **not** a second physics owner.
+StoryMap Housekeeping explicitly marks this source **AKTIV · source-locked real Card Zone Lab v2 donor · current water shader**.
 
-### D2 · Widths
-Canonical:
-- NARROW 10.8 m
-- STANDARD 14.4 m
-- WIDE 18.0 m
-- HERO 21.6 m
+**Do not promote old extraction**
+StoryMap explicitly marks `kfb-fluid-v1/` **DEAD**, deleted as a diminished form of the real donor.
 
-28.8 m may remain only as an explicit special/XL module/profile.
-18 m remains **WIDE**.
+The older ToolBox module map remains useful seam/method evidence only.
 
-### D3 · Jumps
-Keep both:
-- `JUMP_BASE` around 12 m;
-- `JUMP_HERO_30` around 30 m as a step-down spectacle jump.
+### Preserved product modules
 
-Ballistic design aid:
-at 27 m/s, 15 m/s² and ~16.3°, same-height ideal range is about 26 m; at 30 m horizontal distance the ideal trajectory is about 1.3 m below the lip. Therefore roughly 1.5–3 m step-down is a useful geometry study range before real Race runtime verification.
+The new strand explicitly protects:
+- animated moat / ponds / river / flow;
+- mandatory real water texture path `waterdudv.jpg` + `water.jpg`;
+- 3D Card Stack / Deck;
+- unfold/reveal;
+- Beam / projector;
+- six-face Card Cube;
+- Face Focus / real card/PDF/detail surface;
+- card-seeded story/palette/fluid/wear/texture/moat parameters.
 
-### D4 · Launch
-Blender/RKIT owns geometry + lip/landing frames + stunt metadata.
-Race/Rapier owns takeoff/contact, airborne state, landing and recovery.
+### Architecture
 
-### D5 · Moving flap
-RKIT may produce the thin-deck flap-down with hinge/axis/angle/collision metadata.
-Race owns trigger and the collider/support transform that follows the hinge.
-An animated visual flap without matching contact is not playable acceptance.
+Reusable water is split conceptually into:
+- **Fluid Surface** — exact shader/material/timing/flow contract;
+- **Card-Zone Hydrology** — local moat/river/pond geometry/field.
 
-## Track product simplification
+Therefore WorldBuilder may use the Fluid Surface for other water without importing the whole Card Zone.
 
-A general track editor is explicitly **deferred**.
+WorldBuilder places Card Zone recipes as content. It does not become the Card Zone/card-progression owner.
 
-Fast path:
-1. `TRACK_A_STUNT_8` — figure-eight / over-under + Base Jump + Hero Jump + one bridge/tunnel/flap feature.
-2. `TRACK_B_OVAL_EXIT` — broad oval/zero-like loop + one exit/branch.
-3. `TRACK_C_FLOW_LOOP` — handling/freeplay course.
+### New jobs
 
-Pipeline:
-```
-small authored Route Recipe
-→ deterministic route compiler
-→ RKIT rounded profile + stunt modules
-→ baked Track Module
-→ WorldBuilder placement
-```
-
-The baked module keeps compact recipe/route/stunt data plus cached visual GLB/anchors/material roles/provenance. Race retains contact/physics truth.
-
-Current RKIT sources:
-- PR #34 `f368dd0c71eb2798bcd057d30196cb8da4d967b6`
-- PR #35 `37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9`
-
-Prepared READY jobs:
-- `RACE-TRACK-RECIPE-01`
-- `RACE-RKIT-03`
-
-## OSM / World Zone bake
-
-The current Cologne `dom-zentrum-v0` normalized source/cache/anchors are the first production proof.
-
-Pipeline:
-```
-source extract/query
-→ normalize to semantic metre frame
-→ deterministic city/world compile
-→ versioned baked World Zone
-→ WorldBuilder ref + transform
-```
-
-No live Overpass dependency during normal WorldBuilder/game use.
-
-The package keeps source/hash/provenance/compiler/look revision and baked visual/support data.
-
-Decision:
-- **Cologne first**
-- **Barcelona second-city portability proof**
-
-WorldBuilder composition is deliberately freer than OSM geography:
-Barcelona Zone + authored Cologne Cathedral + Track A + Resident Scene is valid, provided the Cathedral is recorded as an authored landmark instance rather than Barcelona OSM truth.
+READY:
+- `CZ-FLUID-01`
+- `CZ-CARD-PRESENT-01`
+- `CZ-CUBE-01`
 
 Prepared:
-- `WORLD-ZONE-BAKE-01` READY
-- `WORLD-ZONE-BAKE-02` HOLD until the compiler/package contract passes.
+- `CZ-RECIPE-01`
+- `CZ-WORLD-01`
+- `CZ-PROD-01`
 
-## Elastic / Landmark torsion
+The final milestone is:
+```
+walk/drive to Card Zone
+→ animated fluid
+→ real 3D stack
+→ Beam/unfold reveal
+→ Card Cube/Face Focus
+→ collect
+→ Player Journey records card
+→ Almanac updates
+→ reload preserves it
+```
 
-Hürth R2 remains frozen after two failed repair passes on PR #194:
-`b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea`.
+## Player Meta / Fractal Almanac / Adaptive Interface
 
-No third city-block patch.
+### Data-model donor
 
-New READY job:
-`LOOK-TORSION-01`.
+`overworld/overworld/journey.js`
+blob `ad58ef4239254f42a994ada3e729dd820fa1806c`.
 
-It reuses existing GROTESQUE / BuildingElastic / LandmarkElastic evidence and adds an isolated height-dependent TORSION/TWIST proof:
-- anchored base;
-- bend/lean/taper/twist share one coherent height field;
-- stronger deformation on tall/hero landmarks;
-- roof/body boundary follows final silhouette;
-- camera skew may amplify but never substitute for geometric deformation.
+It already proves:
+- versioned save schema;
+- migrations;
+- JSON import/export;
+- collected cards;
+- Diary;
+- reputation;
+- quests;
+- hero/unlocks;
+- zones / semantic Journey facts.
 
-Existing City GROTESQUE twist around 11° is a donor/reference upper range, not a global constant.
+It is reused as the **data-model donor**, not as a reason to resurrect old Overworld runtime.
 
-## Audio / music / VFX production
+### One durable Player Journey
 
-### Sound
-New READY:
-`AUDIO-AUDITION-01`.
+The new cross-mode meta owner will hold/reduce durable player facts such as:
+- cards/decks collected;
+- Diary/events;
+- quests/discoveries;
+- NPC encounter/reputation facts;
+- POP;
+- inventory;
+- song/media unlocks;
+- vehicles/travel unlocks;
+- gifts/rewards;
+- replay/cutscene refs.
 
-Goal:
-Georg chooses by **human label + listening + A/B**, not OGG/WAV filenames.
+Consumers emit semantic events:
+`card.collect`, `pop.award`, `inventory.add`, `gift.receive`, `song.unlock`, `race.stunt.complete`, `combat.encounter.win`.
 
-Existing source-backed banks/manifests are inventoried into semantic categories:
-Vehicle · Combat · UI/Card · World/Ambience · Transition · Performance/Crowd.
+**Authored WorldBuilder world saves remain separate from Player Journey state.**
 
-Games emit semantic ids such as:
-`vehicle.jump`, `vehicle.land`, `melee.hit`.
+### Fractal Almanac
 
-The game keeps its AudioContext/master.
+The Almanac is explicitly more than Card Inventory:
+- collection;
+- Diary;
+- Story Editor direction;
+- Quest Memory;
+- Replay Library;
+- Progress/Journey map;
+- Journey Archive;
+- personal Infinite Canvas.
 
-### Music performance
+Ordinary gameplay direction:
+**real-card Almanac fan upper-right**.
+
+The lightweight fan opens the Almanac overlay.
+
+The deeper/immersive Almanac may reuse the historical walked-chamber experience. Inside immersive Almanac, ordinary gameplay HUD is suppressed except minimal return/exit; its intentional non-dashboard/no-minimap quality is preserved.
+
+### 20-slot Backpack
+
+Georg's current product direction:
+**20 visible carry slots**.
+
+The exact old ideation source/implementation was not recovered in current GitHub/Dropbox search.
+
+Status is honestly:
+`USER_DIRECTION · HISTORICAL_SOURCE_NOT_YET_PINNED`.
+
+This does not block implementing the current decision under the new Player Journey contract.
+
+Cards normally go to Almanac/collection.
+Physical/usable gifts/items may occupy Backpack slots.
+
+### Universal POP
+
+Current Travel donor:
+`travel/wip/travel_globe_wsa/globe-v13/collect-hud.js`
+blob `e73aec107a9d3cf811a025ccbe6b2730e21fcfe5`.
+
+It already proves the visible card fan + local POP feedback, but its `popScore` is local runtime state.
+
+New rule:
+**durable POP belongs to Player Journey**.
+
+Race / Combat / Travel / Town / Card Zone emit `pop.award`; the same balance is displayed across modes.
+
+POP remains KFB progression/reaction currency, not plausibility/truth.
+
+### Radio / music
+
+Collected/unlocked songs, active track and media preferences become Player Meta refs/state.
+
+Race's current Radio is a presentation donor, not a separate music account.
+
+Game SFX ownership stays separate; Radio/media does not replace semantic SFX/audio owners.
+
+### Adaptive HUD
+
+Current Race HUD v3 donor:
+`kfb-hub/stage/stunt-world/hud-game-v3/SOURCE.json`
+blob `affb1ba1d175351fa5d7b30474afb4c421f4dd83`.
+
+Useful donor rules:
+- Tacho retained;
+- Radio = large controls + volume;
+- Almanac = real landscape Cards;
+- Minimap = actual Race route only.
+
+New shell is provider-based.
+
+Examples:
+- WALK/WORLD → Almanac + POP + Backpack + compact Radio + optional real world navigation;
+- DRIVE/RACE → same meta plus Tacho + actual-route minimap + driving Radio;
+- COMBAT → same meta reduced plus Combat-owned encounter status;
+- FLIGHT/BOAT → only real implemented mode instruments/navigation;
+- ALMANAC IMMERSIVE → ordinary gameplay HUD hidden.
+
+**No fake universal minimap or filler instrument.**
+
+### Interface grammar / authoring UI
+
+Measured current shared Resident inline menu:
+- **28×28 CSS px buttons**
+- **13 px glyphs**
+- symbols `✥ ⟳ ⤢ ⬓ ⊹ ✕`.
+
+Georg finding:
+functions are learned by position more than icon recognition.
+
+New `UI-GRAMMAR-01` keeps the accepted `edit-layer.js` behavior and changes presentation only:
+- context-local inline controls;
+- normal ~40–44 px hit target;
+- ~20–24 px recognizable icon;
+- clear active state;
+- tooltip = action + shortcut;
+- optional labels in learning/expanded mode;
+- same semantics in ToolBox + WorldBuilder;
+- no giant permanent toolbar in the field of view.
+
+Player HUD and authoring UI share visual tokens/icon semantics/state language, but remain distinct surfaces.
+
+### New jobs
+
+READY:
+- `META-JOURNEY-01`
+- `META-HUD-01`
+- `UI-GRAMMAR-01`
+
 Prepared:
-`MUSIC-PERF-01`.
+- `META-ALMANAC-01`
+- `META-INVENTORY-01`
+- `META-POP-01`
+- `META-RADIO-01`
+- `META-NAV-01`
+- `META-PROD-01`
 
-Resident performance recipes reference:
-- songRef;
-- BPM;
-- bar/beat offset;
-- performers;
-- choreography/action refs;
-- start/loop/finish markers;
-- Stage/Camera recipe.
+## Validation
 
-Animation Studio gets a beat/bar ruler when music is present.
-Audio is not baked into clips.
+**96/96 architecture/source checks PASS.**
 
-### VFX
-New READY:
-`VFX-AUDITION-01`.
-
-Start from actual current donors:
-Combat Ink/recipe stack · Kenney smoke particles · indexed Brackeys VFX sources · Race/vehicle effects.
-
-Production rule:
-```
-inventory
-→ moving audition board
-→ select donor
-→ small semantic adaptation recipe
-→ shared Review Scene
-→ promote
-```
-
-A continuous-fire donor may be adapted to a single-shot burst through emission/lifetime when the source supports it. Do not author a fresh effect merely because its current preset loops.
-
-## New jobs added in this decision
-
-- `RACE-TRACK-RECIPE-01` — READY
-- `RACE-RKIT-03` — READY
-- `WORLD-ZONE-BAKE-01` — READY
-- `WORLD-ZONE-BAKE-02` — HOLD
-- `LOOK-TORSION-01` — READY
-- `AUDIO-AUDITION-01` — READY
-- `MUSIC-PERF-01` — HOLD
-- `VFX-AUDITION-01` — READY
-
-## Evidence
-
-**73/73 architecture/source checks PASS.**
-
-New exact sources revalidated:
-- RKIT #34: `f368dd0c71eb2798bcd057d30196cb8da4d967b6`
-- RKIT #35: `37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9`
-- Hürth/Elastic #194: `b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea`
-- OSM context-builder blob: `92ac7dd9a48f7bf9c9b0471d57a6b9a647fb7a96`
-- City GROTESQUE donor blob: `d08c19fc45d98546b7ef2803f2ddbcb73b7f6782`
-- VFX review bank blob: `b208eb36d869078242c93c617de92cf10d873e36`
+New source facts revalidated:
+- Card Zone full source blob `e7bb09e49b2a885eb076e8c43c0ff561a9cebb72`;
+- Card Zone CODE_MAP blob `7953203a1c3be80d719db5c62136924c8c475753`;
+- exact fluid-v2 donor `97e3e0813cb5693a64863482ab96a601e88f5104`;
+- StoryMap Housekeeping `f2656b5cc42539ec28bb2cc6f96b524bc8d51a64`;
+- Journey donor `ad58ef4239254f42a994ada3e729dd820fa1806c`;
+- Travel Card/POP HUD `e73aec107a9d3cf811a025ccbe6b2730e21fcfe5`;
+- Race HUD v3 source `affb1ba1d175351fa5d7b30474afb4c421f4dd83`;
+- Game Design Almanac/Lean Memory concept `f7528e5d9a54cfd71f68cab1223c1916a2cc97c2`;
+- shared edit-layer `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`;
+- current Resident UI `20ef6153dcd4819fb6929a3c87e0e539aecdf4a3`.
 
 ## Public Hub boundary
 
-The expanded catalog is still prepared for **HUB-CTRL PR #202** and is not publicly mounted by this branch.
+The expanded **13-strand / 68-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
 
-This architecture slice does not:
-- fork the Hub owner;
-- publish Live;
-- merge product runtimes;
-- claim a public Stage for the new jobs.
+This branch does not:
+- fork Hub ownership;
+- publish a second Hub;
+- promote Cloudflare Live;
+- merge product runtimes.
+
+## Unresolved
+
+- exact historical source for the old 20-slot Backpack sketch remains unpinned;
+- Card Zone fluid-v2 is source-authoritative, but its reusable WorldBuilder consumer has not yet been visually accepted;
+- current Race HUD v3 remains a donor/candidate, not global HUD acceptance;
+- Player Journey consolidation is specified but not yet implemented;
+- public Hub does not yet display the new Card Zone / Player Meta strands.
 
 ## Exactly one architecture gate
 
 **HUB-V3-MOUNT**
 
-Existing HUB-CTRL consumes the v3 catalog and renders the current 11 strand cards, with READY/REVIEW in Today and the full 53-job roadmap only on expansion.
+Existing HUB-CTRL consumes `HUB_BRIEFING_CATALOG.json` and renders the 13 strand cards, with current READY/REVIEW items in Today and the full 68-job dependency map only on expansion.
 
-Normal product work does not need to wait for that public mount: the copy-ready READY briefs are already in `STRAND_BRIEFINGS.md`.
+Product work may already start directly from the READY briefs without waiting for that public mount.
