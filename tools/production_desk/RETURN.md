@@ -1,3 +1,34 @@
+# CURRENT UPDATE · Toolbox Stage triage · 2026-09-24
+
+Status: **HUMAN TRIAGE APPLIED IN HUB SOURCE · PUBLICATION PENDING**
+
+Removed from the current Hub Tools shelf:
+- EyeRig Batch
+- EyeRig Legacy
+- KayKit Motion Lab v1
+- Ranged Calibration v1
+- Tileable Macro Seam Lab
+- World-Building Preflight
+
+Reason: Georg reports these public Stage surfaces as broken, misleading, incomplete or no longer useful.
+
+Kept:
+- Card Zone Lab v2, renamed **Recovery Reference / Donor** rather than current product tool.
+
+Important:
+the old pages and source remain in the repository/history. This is a Hub visibility/status correction, not destructive cleanup.
+
+Current productive replacements live in the v3 catalog:
+- ToolBox coherent integration
+- TB-EYE-01
+- TB-POSE-01
+- TB-ANIM-01
+- WorldBuilder / World Zone / Locomotion jobs
+
+This source correction still needs one Hub regenerate/publish pass before the public page reflects it.
+
+---
+
 # CURRENT UPDATE · Racer external status sync · 2026-09-24
 
 Status: **HUB SOURCE UPDATED · PUBLICATION PENDING**
