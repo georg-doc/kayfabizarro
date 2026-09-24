@@ -1,3 +1,21 @@
+# CURRENT UPDATE · TOOLBOX HUMAN FAIL ALIGNMENT · 2026-09-24
+
+Status: **HUB SOURCE ALIGNED · AN-PROFILE-02 HUMAN FAIL/HOLD · PRODUCT OWNER PRESERVED**
+
+Parallel ToolBox recovery clarified the distinction:
+- technical owner/runtime evidence remains useful;
+- **AN-PROFILE-02 human review is FAIL/HOLD**;
+- observed human failure: source/GLB load failure plus measurement/data palettes obstructing the 3D stage;
+- failed review surfaces stay frozen;
+- WorldBuilder Motion must not be promoted from that review;
+- future State/Action / Direct-FBX work needs a new bounded review surface with real source loading and an unobstructed stage.
+
+Hub Today + ToolBox source card now say this explicitly.
+
+Root 88-job Production Desk regeneration remains pending.
+
+---
+
 # CURRENT UPDATE · MVP FOCUS / TOOLBOX ROUTER · 2026-09-24
 
 Status: **HUB SOURCE CURRENT · TOOLBOX/STAGE SOURCE UPDATED · ROOT 88-JOB DESK REBUILD STILL PENDING**

@@ -1,3 +1,11 @@
+## 2026-09-24 · ToolBox human-fail alignment
+
+- synced Georg's AN-PROFILE-02 Human FAIL into Hub Today and ToolBox source routing;
+- retained the current ToolBox owner and technical evidence without presenting the failed human review as usable;
+- recorded source/GLB loading failure and stage obstruction by measurement/data palettes;
+- froze old review surfaces; no WorldBuilder Motion promotion;
+- next Animation Studio / Direct-FBX review must use a new bounded unobstructed source-real review surface.
+
 ## 2026-09-24 · MVP focus / ToolBox router refresh
 
 - Hub Today updated for current ToolBox Production/v17+, WorldBuilder Mobility, NPC-LIFE and Racer Rapier gate;
