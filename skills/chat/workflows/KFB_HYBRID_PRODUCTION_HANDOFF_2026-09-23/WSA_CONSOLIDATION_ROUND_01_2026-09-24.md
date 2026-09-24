@@ -40,14 +40,33 @@ Design features, tune visuals, rebuild donors, reopen decisions 1–8, merge PRs
 
 ## Success check
 
-One commit on branch `chatgpt-web/kfb-hybrid-production-handoff-2026-09-23` adding `CURRENT_STATE_2026-09-24_WSA.md` + `WSA_RETURN_2026-09-24.md` covering A–E, with exact heads.
+One commit on branch `chatgpt-web/kfb-hybrid-production-handoff-2026-09-23` adding `CURRENT_STATE_2026-09-24_WSA.md` + `WSA_RETURN_2026-09-24.md` covering A–F, with exact heads.
 
 ## Stop condition
 
 First unexpected failure or missing access: record it, stop, return. If none of A–E needs Work capabilities after all, return `WSA NOT NEEDED` with the reason.
 
+## Update 24.09 late · alignment + review of Coworker blind spots (item F)
+
+New since this packet was written (all on `main`, `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/`):
+- `START_CLAUDE_DESIGN_WORLDBUILDER_V1.md` — Georg invests in Claude Design next.
+- `ANIMATION_INTAKE_01_MIXAMO_2026-09-24.md` — decided; incl. Legacy eye-rig completion slice. Legacy facts: **only Dungeon Pack 1.0 is a modular kit**; Skeletons 1.0, Spooktober 1.1, Orc Warband legacy are complete characters. Scale must be head-based vs Rig_Medium.
+- #194 branch: `HUMAN_RESULT_HUERTH01_V2_2026-09-24.md` (TUNE ONCE; views stay switchable).
+
+**F. Check these Coworker outputs; report only what is wrong, one line each, with the fix:**
+1. Coworker proposed Travel as world base once (corrected by Georg) — scan today's files for leftovers of that assumption.
+2. Coworker described all Legacy packs as kits (corrected) — scan for the same error elsewhere.
+3. `START_CLAUDE_DESIGN_WORLDBUILDER_V1.md`: does the WB2 source @`8922d4b1` actually run when loaded from jsDelivr (relative imports, three version)? Does ZyFou/ProceduralTerrains @`f58a8ddb` really have a reusable Planet mode? Are the TinySkies sky modules usable outside Travel (hidden dependencies)?
+4. `LOOK_COMPOSITION_01`: are the listed WorldDesign Lab / StoryMap / landmark paths loadable and current, or superseded?
+5. Animation intake: is the "working retarget path" from PRs #192/#195 real and reusable for 33 clips on both rigs?
+6. KFB Hub runs from a Coworker fixture snapshot (Action workflow not merged, branch `claude/production-desk-v0-2026-09-23`): what is stale on it right now?
+7. Review pages `kfb-hub/pruefen/travel-welt/` and `/free-roam/` were published before Travel was ruled out — keep or remove?
+8. Anything Georg had to explain more than once today that is still not written down in GitHub.
+
+Add F to `WSA_RETURN_2026-09-24.md`. Keep it short; no redesign.
+
 ## Start prompt for the WSA/Work chat
 
 ```
-@GitHub Read georg-doc/kayfabizarro branch chatgpt-web/kfb-hybrid-production-handoff-2026-09-23: skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WSA_CONSOLIDATION_ROUND_01_2026-09-24.md, then COWORKER_WSA_SYNC_BRIDGE.md. Refresh every repo/PR head including the private KFB-Travel-Globe and KFB-Stunt-Car-Race. Execute only items A–E, respect decisions 1–8, commit the two return files to that branch, and stop.
+@GitHub Read georg-doc/kayfabizarro branch chatgpt-web/kfb-hybrid-production-handoff-2026-09-23: skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WSA_CONSOLIDATION_ROUND_01_2026-09-24.md, then COWORKER_WSA_SYNC_BRIDGE.md. Refresh every repo/PR head including the private KFB-Travel-Globe and KFB-Stunt-Car-Race. Execute only items A–F, respect decisions 1–8, commit the two return files to that branch, and stop.
 ```
