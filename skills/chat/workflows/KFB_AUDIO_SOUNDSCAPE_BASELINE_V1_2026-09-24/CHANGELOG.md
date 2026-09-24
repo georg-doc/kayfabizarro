@@ -103,3 +103,12 @@ Public Stage publication is still pending at this checkpoint. No public or human
 - artifact `10819978496`, digest `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`;
 - direct human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`;
 - next gate is Georg human listening only; no runtime integration, PR merge or Live promotion follows automatically.
+
+
+## 2026-09-24 · AUDIO-CAL-01 human PASS
+
+- Georg listened to the public calibration and returned **PASS**: “klingt sehr gut soweit. passt.”
+- Calibration baseline status is now `HUMAN_ACCEPTED`.
+- Acceptance covers the current mix/ducking direction, not blanket approval of every raw sound asset.
+- Remaining audio backlog: crowd/weather/traffic/friction source-bank curation, character voice-profile metadata, and later owner-specific adoption.
+- No PR merge or automatic consumer integration performed.
