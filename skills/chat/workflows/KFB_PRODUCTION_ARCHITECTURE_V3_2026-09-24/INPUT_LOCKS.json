@@ -210,11 +210,11 @@
     },
     "racer": {
       "repo": "georg-doc/KFB-Stunt-Car-Race",
-      "pr": 33,
-      "branch": "chat/racer-tarch0-sp13ktra-2026-09-23",
-      "head": "71e7051b2eea1ad731912b634f44ce5ba0218736",
-      "humanResult": "TUNE",
-      "next": "Racer Anatomy Foundation"
+      "pr": 39,
+      "branch": "chat/rkit-06-trankgasse-2026-09-24",
+      "head": "53219c9b7ee3d1abe0ef1b0e5364863b42014ea5",
+      "status": "RKIT-06 review candidate; geometry only; stacked on #38→#34; not runtime-integrated",
+      "next": "Race/Rapier run on TRACK_A_STUNT_8, then tune geometry only from measured runtime results"
     },
     "combatArena": {
       "repo": "georg-doc/KFB-Combat-Arena",
@@ -354,7 +354,29 @@
         "branch": "chat/rkit-02-stunt-modules-2026-09-24",
         "head": "37047b5a14c00e8b3cb5ddb4129e76ce3f10b2d9"
       },
-      "decisionDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md",
+      "rkit03": {
+        "pr": 36,
+        "branch": "chat/rkit-03-track-recipe-2026-09-24",
+        "head": "ac4a57cf32fc8e3c26162735c30e634dad3f331c"
+      },
+      "rkit04": {
+        "pr": 37,
+        "branch": "chat/rkit-04-switch-pit-2026-09-24",
+        "head": "3c002235a297cd8bb3343d8b4a721d10fe7e549a"
+      },
+      "rkit05": {
+        "pr": 38,
+        "branch": "chat/rkit-05-flap-return-2026-09-24",
+        "head": "98bc4869f06f4551a602bf03aa7287befd66ecdc"
+      },
+      "rkit06": {
+        "pr": 39,
+        "branch": "chat/rkit-06-trankgasse-2026-09-24",
+        "head": "53219c9b7ee3d1abe0ef1b0e5364863b42014ea5"
+      },
+      "currentTop": "rkit06",
+      "currentGuide": "_handover/RKIT_TRACK_KIT_2026-09-24/RKIT_KIT_GUIDE.md",
+      "currentReturn": "KFB Cologne Race Option C-3/rkit-06/RETURN.md",
       "physicsBasis": "Rapier g=15 m/s² downward, speed basis 27 m/s, proven physical ramp; v0.8 handling remains feel donor",
       "widthLadder": [
         10.8,
@@ -362,11 +384,9 @@
         18,
         21.6
       ],
-      "firstRecipes": [
-        "TRACK_A_STUNT_8",
-        "TRACK_B_OVAL_EXIT",
-        "TRACK_C_FLOW_LOOP"
-      ]
+      "currentTrackA": "TRACK_A_STUNT_8: figure-eight, Hero/Base jumps, Pit Lane, SWITCH_Y, flap-return/tunnel shortcut",
+      "osmStreet": "Trankgasse real OSM line from dom-zentrum-v0, baked street + GLB in OSM frame",
+      "rule": "RKIT owns geometry/metadata only; Race owns contact/physics/AI/triggers; WorldBuilder owns placement"
     },
     "osmBake": {
       "repo": "georg-doc/kayfabizarro",
