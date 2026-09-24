@@ -514,6 +514,34 @@ Do not reconstruct these from prose.
 - `BLENDER-MOTION-02` · HOLD until one named missing motion is identified
 - `LEGACY-CUSTOM-ACTOR-01` · HOLD on chosen custom actor/source
 
+## A8 · IK solver parity · READY
+
+User-supplied upstream donor:
+Three.js `webgl_animation_skinning_ik.html` / `CCDIKSolver.js`.
+
+Current Resident Atlas S7 uses Three.js 0.184.0; the upstream CCD solver is available on the matching r184 line.
+
+Source comparison found meaningful differences from current KFB `reachChain()`:
+- upstream CCD uses explicit target/effector/link chains;
+- example links run distal→proximal;
+- per-link rotation min/max are supported;
+- per-step min/max angle is supported;
+- link-axis limitation and blend factor are supported;
+- the solver has a tiny-angle vibration early-out;
+- current KFB reachChain is unconstrained and currently iterates a typical parent chain proximal→distal.
+
+Because the current drummer failure class is “target gets better while arm gets anatomically worse”, this is a high-value direct A/B.
+
+Prepared:
+`IK-CCDIK-PARITY-01`.
+
+Compare on the same KFB sources:
+1. current KFB solver;
+2. raw upstream CCD;
+3. constrained upstream CCD.
+
+Do not replace the current Puppet UI or Studio Patch owner. The upstream example is a **solver donor only**.
+
 # STRAND W · WorldBuilder / God Mode
 
 ## Target product
@@ -2331,6 +2359,29 @@ Race Anatomy → Race Visual Module ──────────────�
 Parallel work is encouraged where dependencies are already satisfied.
 
 ---
+
+## Execution / budget metadata
+
+Every self-service job carries:
+- primary executor;
+- stable execution profile;
+- current recommended model;
+- reasoning level;
+- budget band;
+- optional secondary/escalation profiles.
+
+Policy:
+`EXECUTION_DISPATCH_POLICY_2026-09-24.md`.
+
+Current cost-first defaults:
+- Web / GPT-5.6 Sol Medium for normal product work;
+- Web / Sol High only for difficult solver/architecture seams;
+- Claude Sonnet 5 for normal Design/Cowork/Blender work;
+- Cowork only when persistent workspace is a real advantage;
+- Work only when a Work-only capability is required;
+- Opus 5.5 only as named deep escalation.
+
+Hub should render `Executor · Model · Reasoning · Budget` on every briefing.
 
 # Hub behavior
 
