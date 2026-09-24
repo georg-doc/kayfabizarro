@@ -11,7 +11,7 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
 
-The current v3 candidate now covers **11 primary strands / 45 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life and Shared Stage/Transitions. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
+The current v3 candidate now covers **11 primary strands / 53 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life and Shared Stage/Transitions. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, Card Zone, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
 
 Current architecture candidate:
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
@@ -30,6 +30,7 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/PRODUCTION_STRANDS.md` — complete ToolBox / Animation+Residents / WorldBuilder / Racer→World roadmaps
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md` — copy-ready brief for every prepared milestone, including future dependency-gated jobs
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md` — RKIT D1–D5, authored Track/Bake, OSM World Zones, Elastic torsion, music/audio/VFX production flow
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
 
