@@ -22,3 +22,23 @@
 - VIDEO is inline on the 3D face; the B1 modal is absent;
 - CARD/COVER/SLOGAN stay on the existing B1 canvas path;
 - integration proof pending.
+
+
+## 2026-09-24 · integration proof candidate 1 · FAIL preserved
+- candidate head `7bed45398820b6bc629b24e0580866d697642946`;
+- run `35952277294`, integration job `107483448675`: **26/28**;
+- numeric state proved exact 16:9 world dimensions and direct iframe hit target, but screenshot inspection overruled the near-pass;
+- CARD and SLOGAN were visibly black because CSS3DRenderer rewrote DOM display and left the hidden CSS plane above WebGL;
+- camera assertion compared the object's world CSS transform, which correctly stayed fixed, instead of screen-space projection;
+- classified as **VISUAL FAIL / TEST-SEAM FAIL**, not accepted.
+
+## 2026-09-24 · repair pass 1 · integration PASS
+- visibility now belongs to `CSS3DObject.visible`, matching CSS3DRenderer ownership;
+- iframe still unloads to `about:blank` on mode exit;
+- perspective proof now compares screen-space media rect between FRONT and LEFT34;
+- run `35952766940`, job `107484912203`: **27/27 PASS**;
+- 0 page errors; 0 first-party/CDN HTTP failures;
+- artifact `10788929677`;
+- screenshot inspection: CARD visible, SLOGAN visible, VIDEO inline on billboard, LEFT34 perspective correct;
+- repair count **1/2**;
+- public Stage proof is next.
