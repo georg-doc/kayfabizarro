@@ -1752,3 +1752,17 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-24 · KFB Audio & Soundscape Baseline v1
+
+- Created bounded audit/recovery workflow at `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/`.
+- Reconciled current Travel, Race, Combat and Boxel audio donors without creating a second runtime owner.
+- Fresh repository-tree audit found 1718 file records under `media/3D_Assets/Audio/` and 48 under `media/3D_Assets/Sounds/`; these counts include docs/manifests/previews and are not a unique-production-sound claim.
+- Manifest checks: **4/4 JSON parse PASS · 13/13 shared SFX paths PASS · 0/16 UI-SFX paths PASS as written · 10/10 authored Jukebox paths PASS**.
+- UI-SFX failure is systematic: Kenney interface paths omit the real `/Audio/` subdirectory.
+- Preserved current human audio history: A1 direction accepted but exact source missing; RoadTrip and Runner/Shepard positive; A2 sustained synth plus A3 generated palette/Scratch directions rejected.
+- Defined shared semantic mix roles only — `VOICE | UI | PLAYER_CRITICAL | WORLD_SFX | DIEGETIC_MUSIC | SCORE | LOCAL_AMBIENCE | GLOBAL_BED` — while existing runtimes retain ownership.
+- Next gate: `AUDIO-CAL-01` with golden-hour-town, graveyard-night and ring-performance calibration states.
+- Planned Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`; **not created/deployed/public-verified by this audit**.
+- Optional Game Development Studio CLI unavailable in this environment; repository-native fallback used.
