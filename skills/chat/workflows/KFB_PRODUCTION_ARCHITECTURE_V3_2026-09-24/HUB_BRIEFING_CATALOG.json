@@ -1906,8 +1906,8 @@
       "bucket": "READY",
       "executor": "ChatGPT Web",
       "title": "Residents · Outdoor Disco Ensemble",
-      "what": "Sechs bis sieben echte KayKit-Residents aus Legacy/Medium/Large mit vorhandenen Dance-Actions, barbewussten Wechseln, Party-Hits und source-backed Radio/Speaker/Disco-Ball als eine Performance auditionieren und choreografieren.",
-      "result": "Erst Source-Cast + Motion-Audition; danach ein baseplate-freies 32-Bar Resident-Performance-Modul auf einem Music-Clock.",
+      "what": "Sieben echte KayKit-Residents aus Legacy/Medium/Large: Skeleton Minion über den bewährten beat-getriebenen Bounce-Ansatz, Avian Swordsman + Protagonist_A/Teenager + weitere Mediums und zwei Large-Dancer; barbewusste Wechsel auf einem Music-Clock.",
+      "result": "Source-Cast + Motion-Audition; danach 32-Bar Resident-Performance. Disco Ball wird als separates wiederverwendbares Core-Modul mit Licht/Beam-Effekten und späterem EyeRig-Seam entwickelt.",
       "promptSection": "RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble",
       "sourceSet": "animationResidents",
       "detailedBriefing": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md",
@@ -1923,7 +1923,8 @@
       "reasoning": "high",
       "budget": "HIGH",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "relatedCapability": "DISCO-BALL-CORE-01"
     },
     {
       "id": "wb-mobility-mvp-01",
