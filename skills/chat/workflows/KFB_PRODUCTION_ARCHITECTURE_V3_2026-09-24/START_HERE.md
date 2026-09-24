@@ -22,6 +22,7 @@ For the full self-service production route, read:
 - `SKILLS_RUNTIME_CONSOLIDATION_2026-09-24.md` — P2 current/legacy Skill census, Actor/PDF/Card/Ink/Talk/Material runtime-owner routing and compatibility-first archive plan.
 - `CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md` — browser-first Resident/pose/scene authoring, Pose→Blender handoff, custom actor-family and missing-motion rules.
 - `RESIDENT_DISCO_01_2026-09-24.md` — researched six/seven-Resident outdoor disco, current dance-library matrix, Mixamo gap shortlist, props and 32-bar choreography route.
+- `CLAUDE_DESIGN_RESIDENT_DISCO_01_2026-09-24.md` — direct Claude Design executor brief for Source Cast → Motion Audition → short Ensemble + reusable Disco Ball Core.
 - `MVP_FOCUS_PLAN_2026-09-24.md` — current five-product MVP ladder.
 - `AI_TOWN_KFB_EVALUATION_2026-09-24.md` — AI Town mechanics-donor decision for Residents/emergent life.
 - `KAYKIT_ANIMATION_RESEARCH_UPDATE_2026-09-24.md` — current KayKit State/Action taxonomy + direct FBX intake decision.
