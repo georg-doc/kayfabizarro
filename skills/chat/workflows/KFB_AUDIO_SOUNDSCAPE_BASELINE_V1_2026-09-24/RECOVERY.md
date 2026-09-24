@@ -1,10 +1,33 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
-**Status:** RECOVERABLE AUDIT BASELINE · DOCUMENTATION BRANCH · NO RUNTIME PROMOTION  
+**Status:** AUDIO-CAL-01 CI PASS · PUBLICATION PENDING · RECOVERABLE  
 **Date:** 2026-09-24  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205
+
+## CURRENT RECOVERY OVERRIDE · AUDIO-CAL-01
+
+AUDIO-CAL-01 has been built and technically proven on the current Draft PR.
+
+- tested runtime/QA head: `7013f43a0501c824deb2c5541c1971c2b979a4e6`
+- GitHub Actions: `36024697531` / job `107718140193` → **SUCCESS**
+- static/source validator: **6/6 groups PASS**
+- browser/WebAudio: **31/31 PASS**
+- proof artifact: `10819176933`
+- artifact digest: `sha256:05b9776cc3d501a77360e6ee6660278e1137fb793756aa3a817cb555e2c91012`
+- stage files: `kfb-hub/stage/audio-calibration/`
+- exact target URL: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+
+P0 completed on the branch:
+
+- `ui-sfx.json` repaired to **16/16 valid paths**;
+- existing audio catalog refreshed reproducibly to **1732 actual audio files**;
+- AUDIO-CAL-01 `SOURCE.json` validates **11/11** source assets.
+
+Do not repeat implementation. Resume at **Stage publication / exact Cloudflare verification**. Only after PUBLIC_VERIFIED ask Georg for the listening gate.
+
+The procedural storm accent remains calibration-only; applause remains a sparse reaction, not a sustained crowd-bed replacement. Browser TTS identity and mix quality are still HUMAN UNTESTED.
 
 ## Resume order
 
