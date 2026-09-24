@@ -75,6 +75,7 @@ let videoObject = null;
 let videoSurface = null;
 let videoIframe = null;
 let videoBlocker = null;
+let videoModeActive = false;
 
 const report = {
   slice: 'BILLBOARD_B2A_CSS3D_2026-09-24',
@@ -104,7 +105,11 @@ const report = {
     syncCount: 0,
     blockerActive: false,
     modalPresent: false,
-    frontOnly: true
+    frontOnly: true,
+    modeActive: false,
+    frontFacing: null,
+    facingDot: null,
+    renderVisible: false
   },
   errors
 };
@@ -295,14 +300,14 @@ function createInlineVideo() {
 function setVideoBlock(on) {
   if (!videoBlocker) return;
   videoBlocker.style.display = on && report.css3d.visible ? 'block' : 'none';
-  report.css3d.blockerActive = !!(on && report.css3d.visible);
+  report.css3d.blockerActive = !!(on && videoObject?.visible);
 }
 
 function showInlineVideo() {
   if (!videoSurface) createInlineVideo();
   videoIframe.src = videoEmbed();
-  videoObject.visible = true;
-  report.css3d.visible = true;
+  videoModeActive = true;
+  report.css3d.modeActive = true;
   report.css3d.iframeSrc = videoIframe.src;
   syncInlineVideoTransform();
   setDiag();
@@ -312,8 +317,11 @@ function hideInlineVideo() {
   if (!videoSurface || !videoIframe) return;
   setVideoBlock(false);
   videoIframe.src = 'about:blank';
+  videoModeActive = false;
   videoObject.visible = false;
+  report.css3d.modeActive = false;
   report.css3d.visible = false;
+  report.css3d.renderVisible = false;
   report.css3d.iframeSrc = 'about:blank';
   setDiag();
 }
@@ -333,12 +341,25 @@ function syncInlineVideoTransform() {
     hero.panelH * s.y / CSS_VIDEO_H,
     1
   );
+
+  // CSS3D has no WebGL depth/back-face culling. Explicitly gate the DOM object by the
+  // accepted billboard panel's world normal: front hemisphere = visible; rear = hidden.
+  // This leaves the Kenney billboard body's real backside as the only rear-facing geometry.
+  const panelNormal = new THREE.Vector3(0, 0, 1).applyQuaternion(q).normalize();
+  const toCamera = camera.position.clone().sub(p).normalize();
+  const facingDot = panelNormal.dot(toCamera);
+  const frontFacing = facingDot > 0.01;
+  videoObject.visible = !!(videoModeActive && frontFacing);
   videoObject.updateMatrixWorld(true);
 
   report.css3d.panelWorldWidth = hero.panelW * s.x;
   report.css3d.panelWorldHeight = hero.panelH * s.y;
   report.css3d.objectWorldWidth = CSS_VIDEO_W * videoObject.scale.x;
   report.css3d.objectWorldHeight = CSS_VIDEO_H * videoObject.scale.y;
+  report.css3d.frontFacing = frontFacing;
+  report.css3d.facingDot = facingDot;
+  report.css3d.renderVisible = videoObject.visible;
+  report.css3d.visible = videoObject.visible;
   report.css3d.syncCount++;
 }
 
