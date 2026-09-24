@@ -220,3 +220,20 @@ Runtime-tested head `93d9dd6f763c064313fe5d3bef690496487145a9` · Actions run `3
 No Cloudflare publication. Planned Stage route `/kfb-hub/stage/toolbox/animation-studio/` remains **NOT PUBLISHED / NOT PUBLIC_VERIFIED**.
 
 Current next gate: direct Chat HTML human review of the 33-clip Library + measured Data surface. WorldBuilder consumption remains HOLD until that first consumer review.
+
+
+## 2026-09-24 · AN-PROFILE-02 review transport recovery
+
+### HUMAN TRANSPORT FAIL
+Two DC-based Chat attachments failed: first exposed raw template variables, second produced a Chat visualization error. Both are frozen as review-transport failures; neither changes the green Animation Studio runtime result.
+
+### RECOVERY
+Replaced only the human review surface with `stage-first/review/an-profile-02-review.html`: plain Three.js + the real pinned Medium/Large Mannequins + real Motion Library GLBs + real catalogue/profile data. No DC compiler, no proxy actor, no second Animation Studio owner.
+
+### EVIDENCE
+Final run `36055391088` / job `107820911138`: **SUCCESS**.
+
+Plain review: **13/13 Chromium PASS**. Full owner run: **114/114 PASS**. Medium 33/33, Large 33/33, real WebGL canvas, measured Data visible, Large feet unknown, `endsOnTop @ 1`, 0 page errors, 0 failed source/module requests.
+
+### GATE
+Current gate remains one human review of the plain HTML. No Cloudflare publish.
