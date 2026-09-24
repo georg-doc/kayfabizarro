@@ -1,6 +1,6 @@
 # KFB Audio & Soundscape Baseline v1 · START HERE
 
-**Status:** CURRENT REFERENCE · AUDIO-CAL-01 PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED  
 **Date:** 2026-09-24  
 **Owner:** existing WSA / KFB integration lead  
 **Executing lane:** Fresh Web + GitHub, GPT-5.6 Sol, Medium/High reasoning  
@@ -11,6 +11,16 @@
 
 GitHub state overrides this document whenever a named source ref advances.
 
+
+## HUMAN LISTENING RESULT · PASS
+
+Georg reviewed AUDIO-CAL-01 on 2026-09-24 and reported: **“klingt sehr gut soweit. passt.”**
+
+Decision:
+- `HUMAN_ACCEPTED = YES` for the calibration baseline;
+- this accepts the current mix/ducking direction as a reusable reference, not every individual source asset as final library canon;
+- broader source-bank gaps (crowd/weather/traffic/friction/voice-profile metadata) remain curation follow-ups;
+- no automatic Race/Combat/Town integration or PR merge follows from this acceptance.
 
 ## CURRENT OVERRIDE · AUDIO-CAL-01 PUBLIC_VERIFIED
 
