@@ -156,7 +156,7 @@ function frameActor(){
   const dist=Math.max(2,sphere.radius/Math.sin(THREE.MathUtils.degToRad(camera.fov)/2)*1.25);
   const dir=new THREE.Vector3(.45,.18,1).normalize(); camera.position.copy(sphere.center).add(dir.multiplyScalar(dist)); controls.update();
 }
-async function loadGlb(url){return new Promise((res,rej)=>loader.load(url,res,undefined,e=>rej(new Error('GLB failed: '+url.split('/').pop()+(e?.message?' · '+e.message:''))))}
+async function loadGlb(url){return new Promise((res,rej)=>loader.load(url,res,undefined,e=>rej(new Error('GLB failed: '+url.split('/').pop()+(e?.message?' · '+e.message:'')))))}
 async function ensureActor(){
   const rk=rigKey();
   if(!actorCache[rk]){
