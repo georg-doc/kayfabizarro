@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.npc-life-01-source/1",
+  "slice": "NPC-LIFE-01",
+  "owner": "tools/resident_atlas/",
+  "branch": "chatgpt-web/npc-life-01-2026-09-24",
+  "baseCommit": "c049cae386e169c79608c835e69eaa2170838875",
+  "architecture": {
+    "pr": 204,
+    "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+    "briefing": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+    "briefingBlob": "5b487f370943ea28a493c6dcd94d2d51f64e64e5",
+    "strand": "N · Town, ChatterBox and Living NPC Worlds"
+  },
+  "sources": {
+    "town": {
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "blob": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61"
+    },
+    "chatterReuse": {
+      "path": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "blob": "9025a43f042cf055d19851c9a93a6ddd016e3c36"
+    },
+    "chatterPhrases": {
+      "path": "overworld/overworld/chatter-phrases.js",
+      "blob": "72f0bd5333cdadc2b1dcdbb1d8b782ead1e70ac4"
+    },
+    "residentCast": {
+      "path": "tools/resident_atlas_s6/data/cast.js",
+      "blob": "5e918ae1521e63d121558fb7aff4fd1f8239baec"
+    },
+    "residentRuntime": {
+      "path": "tools/resident_atlas_s6/lib/atlas.js",
+      "blob": "34c2f201b9d0864a1d5e4b65cfab6659ad899b89",
+      "assetPin": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "animationPin": "aa16a777a970f23d3f11fb3c23dc40718b04fa88"
+    },
+    "motionProfile": {
+      "path": "kfb-hub/stage/toolbox/kaykit-motion-lab-v1/MEASURED_ACTOR_PROFILES.json",
+      "blob": "df3e3ecf3e7194d791ffda8ed3e009089db77d57"
+    }
+  },
+  "proofResidents": [
+    "goth-girl",
+    "toy-soldier"
+  ],
+  "offerSource": {
+    "residentId": "toy-soldier",
+    "propPreference": [
+      "present_side",
+      "present"
+    ]
+  },
+  "protectedBoundaries": [
+    "host owns movement, relationship context, busy state and encounter legality",
+    "ChatterBox source chooses text only after a semantic speaking beat",
+    "motion adapter chooses only from actually available clip names",
+    "offer provider returns a source-backed reference and does not mutate inventory",
+    "no new dialogue tree, movement engine, memory database or reward database"
+  ]
+}

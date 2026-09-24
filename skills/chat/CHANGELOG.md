@@ -1798,3 +1798,14 @@ Exactly one next gate:
 - Remaining curation backlog: sustained crowd/venue, rain/thunder, city/traffic, tyre/friction sources and shared character voice-profile metadata.
 - PR #205 remains Draft/unmerged and still carries tested P0 implementation/test deltas including repaired `ui-sfx.json`, refreshed audio catalog and validators/workflows.
 - No automatic Race/Combat/Town integration or Live promotion performed.
+
+## 2026-09-24 · NPC-LIFE-01 · Resident social-life bus
+
+- Draft PR #210 · branch `chatgpt-web/npc-life-01-2026-09-24`.
+- Existing Resident Atlas remains actor/rig source; Town remains living-design context; ChatterBox remains text/content donor.
+- Added semantic encounter chain `approach → greet → offer → react → accept/decline → leave`.
+- Host owns movement/legality/busy/relationship context; Motion, ChatterBox and offer selection are independent consumers.
+- Real-source proof: Goth Girl + Toy Soldier; offer resolves Toy Soldier's existing Present prop.
+- Contract test: **21/21 PASS**.
+- Stage target: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident/npc-life-01/`.
+- Public/browser verification and Georg visual review remain pending; no merge or Live promotion.
