@@ -1,24 +1,24 @@
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
-Status: **73/73 ARCHITECTURE / SOURCE CHECKS PASS**
+Status: **96/96 ARCHITECTURE / SOURCE CHECKS PASS**
 
 Scope: architecture, complete self-service production strands, source locks, adjacent-owner routing and Hub briefing definitions. No new product runtime, Cloudflare deployment or visual product acceptance is claimed.
 
 ## Catalog / self-service contract · 23/23
 
-1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/4`.
-2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/3`.
-3. Eleven production strands exist.
-4. Fifty-three copy-ready jobs exist.
-5. Twenty-six jobs are READY.
-6. Twenty-seven jobs are dependency-gated HOLD.
+1. `INPUT_LOCKS.json` parses as `kfb.production-architecture.v3-input-locks/5`.
+2. `HUB_BRIEFING_CATALOG.json` parses as `kfb.hub-briefing-catalog/4`.
+3. Thirteen production strands exist.
+4. Sixty-eight copy-ready jobs exist.
+5. Thirty-two jobs are READY.
+6. Thirty-six jobs are dependency-gated HOLD.
 7. Every HOLD card names its exact dependency.
 8. Hub default presentation is strand-first.
 9. Job cards are collapsed by default.
-10. Every one of the 53 jobs has a copy-ready prompt.
+10. Every one of the 68 jobs has a copy-ready prompt.
 11. Every job source set resolves to an input-lock job/strand.
-12. 53/53 normal jobs do not require Cloudflare in the edit loop.
-13. 53/53 normal jobs do not require Work/WSA.
+12. 68/68 normal jobs do not require Cloudflare in the edit loop.
+13. 68/68 normal jobs do not require Work/WSA.
 14. Canonical CubePet contract reports exactly 24 pet IDs.
 15. Three distinct FrizzleBob technical identities are locked.
 16. Town Living source blob matches current main.
@@ -131,3 +131,33 @@ These are separate product/integration actions, not prerequisites for a correct 
 
 Current catalog metrics:
 **11 strands · 53 jobs · 26 READY · 27 HOLD**.
+
+
+## Card Zone / Player Meta / Interface extension · 23/23
+
+74. Input locks advanced to schema v5 with explicit Card Zone, Player Journey and Interface Grammar donors.
+75. Hub catalog advanced to schema v4.
+76. Primary production map now contains 13 strands.
+77. Self-service catalog now contains 68 copy-ready jobs.
+78. 32 jobs are currently READY.
+79. 36 jobs are dependency-gated HOLD.
+80. Every new HOLD card names its dependency.
+81. All 15 new Card Zone / Player Meta / Interface jobs have copy-ready prompts.
+82. All new jobs resolve to their source-set locks.
+83. 68/68 normal jobs still avoid mandatory Cloudflare in the edit loop.
+84. 68/68 normal jobs still avoid mandatory Work/WSA.
+85. Exact Card Zone v2 source still contains `buildFluidSurface`.
+86. Exact Card Zone v2 source still contains `buildCardCube`.
+87. Exact Card Zone v2 source still contains the real card reveal path `prepReveal / tickReveal`.
+88. Exact Card Zone v2 source still contains `buildProjection / updateProjection` for Beam/projection.
+89. StoryMap Housekeeping marks `kfb-fluid-v2/card-zone-v2-fluid-source.js` **AKTIV** and source-locked to the real Card Zone v2 donor.
+90. StoryMap Housekeeping marks old `kfb-fluid-v1/` **DEAD** and explicitly a diminished form; it is not reusable authority.
+91. Existing Journey donor still has versioning, migrators, cards and Diary state.
+92. Travel Card/POP HUD still proves its current POP value is local runtime state (`popScore = 0`), supporting the need for a separate durable account owner.
+93. Race HUD v3 donor still explicitly contains Tacho, Radio, Almanac and actual-route Minimap roles.
+94. Exact historical source for the earlier “20-slot Backpack” sketch is not pinned; architecture records the 20-slot layout as current Georg product direction, not falsely as recovered implementation.
+95. Current Resident inline editor presentation is measured at 28×28 CSS-px buttons with 13-px glyphs, matching Georg's legibility complaint.
+96. Both new primary strands are present: **Card Zones / Card Objects** and **Player Meta / Fractal Almanac / Adaptive Interface**.
+
+Current catalog metrics:
+**13 strands · 68 jobs · 32 READY · 36 HOLD**.
