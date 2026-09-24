@@ -881,33 +881,43 @@ vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/l
 Cloudflare remains deferred.
 
 
-## 2026-09-23 · KFB Elastic Grotesque Clay · Hürth 01 · V2
+## 2026-09-24 · KFB Elastic Grotesque Clay · Hürth 01 · TUNE ONCE
 
 Current bounded 3D form-language slice:
 [KFB Elastic Grotesque Clay v1 · Hürth 01](workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/START_HERE.md).
 
-Georg has accepted the pinned clay-neighbourhood benchmark for **shape / facade detail / handmade-model direction**. The real 3D translation is now v2:
+Human review of unchanged V2 @`0c59e92d` returned **TUNE ONCE**. The four bounded Elastic-only fixes are now implemented at runtime head
+`75b3c460ac37aac57cb5d9e96260517c5b4cf68d`:
 
-- owner stays **OSM City Lab presentation / KFB ToolBox authoring**;
-- 22 real Hürth OSM buildings remain the source fixture;
-- exact current City-Lab GROTESQUE remains the comparison donor;
-- ELASTIC V2 adds a coherent low-frequency group warp, non-parallel roof planes, rounded/bowed continuous volumes, 2–3 irregular tall windows without bright frames, varied doors, continuous curved road/curb ribbons and the systemic `KFB_WONKY_90S_CLAY_V1` palette;
-- OSM/S2/collision truth and movement/world owners remain unchanged;
-- accepted benchmark image is pinned in the workflow folder, Git blob `d6dcb90770d83513204a6ea96fd56a60c7c3a296`;
-- v2 browser proof: run `35909757979`, **21/21 PASS**, 3/3 WebGL2, 0 page/console errors, artifact `10772592799`, digest `sha256:14033aea95c75d006d3333347809a1a147256ba31dd28bda5505570d6572aedf`;
-- Draft PR #194 remains unmerged;
-- Cloudflare/public Stage remains **NOT PUBLISHED**.
+- doors/windows use the final bowed-shell surface frame and sit flush/inset;
+- Elastic shadows use tight fit + `bias=0` + `normalBias=.04`;
+- same-colour asphalt patches close real shared-OSM-node junction seams;
+- roofs have a small overhang derived from the final wall-top outline.
 
-Future selected enterable buildings with exact source-backed KayKit door props are recorded as **DEFERRED / AssetRef required**, not part of this gate.
+Final browser proof:
+- run `35945185715`;
+- **29/29 PASS**;
+- **3/3 WebGL2**;
+- **0 page/console errors**;
+- artifact `10786850367`;
+- digest `sha256:716bfcab9dc6f4ed0180e0fd148b7a1494efca796bbe49746de762b0f8a900b0`.
 
-Current recovery cursor:
+Unchanged:
+- V2 form grammar;
+- `KFB_WONKY_90S_CLAY_V1`;
+- OSM / S2 / collision truth;
+- CLEAN / CARTOON / GROTESQUE remain switchable and browser-booted unchanged.
+
+Current recovery:
 `workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/CHAT_RECOVERY_CURRENT.md`
 
-Anti-regression update · 2026-09-24:
-- simplified self-contained Canvas mirror = **REJECTED AS VISUAL AUTHORITY**;
-- do not tune/generalize from that mirror;
-- use actual tested V2 runtime/evidence only;
-- old generic GROTESQUE and Hürth 01 V1 remain comparison/history only.
+Direct review:
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-look/`
+
+The `cloudflare-live` wrapper is pinned to `75b3c460…`, but this chat cannot independently retrieve the Pages domain; do not label `PUBLIC_VERIFIED` until the direct page is actually opened.
 
 Exactly one next gate:
-**Georg human review of the ACTUAL Hürth 01 v2 Three.js result.** If accepted, turn this exact grammar into the Blender-MCP / Geometry-Nodes production recipe.
+**Georg reviews the tuned V2 and returns ACCEPT / REJECT.**
+
+After ACCEPT only:
+continue `LOOK_COMPOSITION_01_2026-09-24.md` (LC-01).
