@@ -1,13 +1,32 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
 **Date:** 2026-09-24  
-**Status:** AUDIO-CAL-01 CI PASS · PUBLICATION PENDING · HUMAN LISTENING PENDING  
+**Status:** AUDIO-CAL-01 PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
 **Owner:** existing WSA / KFB integration lead  
 **Executor:** Fresh Web + GitHub  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205  
 **Base:** `9431dcb8da0158a75d0988d52fc1e7a49aac21f1`
+
+## PUBLIC VERIFIED · 2026-09-24
+
+AUDIO-CAL-01 is now publicly verified on the required Cloudflare Stage route.
+
+- publication branch: `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`
+- Cloudflare Pages check: `107727186186` → **SUCCESS**
+- Cloudflare deploy completed: `2026-09-24T16:26:22Z`
+- Cloudflare preview deployment: `15173f7d`
+- public proof workflow: `36025670884`, attempt **3**
+- public proof job: `107731456493` → **SUCCESS**
+- exact public route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+- public Chromium/WebAudio: **31/31 PASS**
+- public proof artifact: `10819978496`
+- artifact digest: `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`
+
+The earlier public attempts were timing/observability failures: attempts 1–2 finished before Cloudflare reported the `a8e2af8f…` deployment complete. After the confirmed Pages deploy, the unchanged candidate passed on its first public retry.
+
+Current gate: **HUMAN LISTENING ONLY**. Georg should judge intelligibility, duck amount, event readability and whether the world remains alive across the three calibration states.
 
 ## CURRENT OVERRIDE · AUDIO-CAL-01 candidate
 
@@ -33,7 +52,7 @@ Target human route remains:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
 
-At this checkpoint it is **PUBLICATION PENDING**, not PUBLIC_VERIFIED.
+Historical note: this line described the pre-deploy checkpoint. Current state is **PUBLIC_VERIFIED** per the section above.
 
 ## SOURCE
 
@@ -204,7 +223,7 @@ This audit did not produce a new screenshot or listening result and does not cla
 
 ## ONE NEXT GATE
 
-**Build AUDIO-CAL-01 only.**
+**Georg human-listens to AUDIO-CAL-01 only.**
 
 Do not spread directly into Racer + Combat + Town simultaneously. First establish one audible cross-KFB mix/voice/ducking calibration surface, get Georg's human listening gate, then let each runtime owner consume the accepted calibration through its existing adapter.
 

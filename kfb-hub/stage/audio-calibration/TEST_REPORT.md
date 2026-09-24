@@ -91,3 +91,27 @@ It does **not** prove:
 - human listening acceptance on laptop, phone or headphones.
 
 Those remain the AUDIO-CAL-01 human listening gate.
+
+
+## Public Cloudflare verification
+
+**Status: PUBLIC_VERIFIED · HUMAN LISTENING PENDING**
+
+Publication:
+- `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`
+- Cloudflare Pages check `107727186186`: **SUCCESS**
+- deploy completion: 2026-09-24T16:26:22Z
+- preview deployment id: `15173f7d`
+
+Exact-route proof:
+- URL: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+- workflow: `36025670884`, attempt 3
+- job: `107731456493`
+- result: **31/31 PASS**
+- artifact: `10819978496`
+- digest: `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`
+- proof files: `results.json` + desktop screenshot + mobile screenshot
+
+Attempts 1–2 are retained as publication timing evidence; both ended before Cloudflare reported the `a8e2af8f…` deployment successful. No runtime repair was required.
+
+Automated public PASS is not sonic acceptance. Browser TTS voice identity and the subjective mix remain Georg's human listening gate.
