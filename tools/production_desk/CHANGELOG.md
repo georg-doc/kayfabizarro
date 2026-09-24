@@ -1,3 +1,12 @@
+## 2026-09-24 · Focus recovery / minimal Work routing
+
+- linked HUB-CTRL recovery metadata to current Production Architecture PR #204 focus handoff;
+- three new Flow Design Inbox exports remain candidate inputs, not automatically promoted Hub tools;
+- current Work execution is intentionally only the Racer TRACK_A Rapier runtime/contact proof;
+- WorldBuilder bake→Flow-shell seam, Resident Card, Resident Band and ToolBox review transport stay outside Work;
+- MUSIC-PERF public review remains unchanged;
+- no root Production Desk republish or Live promotion claimed by this metadata checkpoint.
+
 ## 2026-09-24 · Recovery test repair
 
 - Traced the existing Production Desk CI failure to `desk_dom_test.mjs`: the test hard-coded the `curtain` lane and dereferenced `curtain.brief.rawUrl`, although the current Curtain lane intentionally has no briefing.

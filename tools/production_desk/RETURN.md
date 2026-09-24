@@ -1,3 +1,30 @@
+# CURRENT UPDATE · KFB FOCUS RECOVERY / WORK ROUTING · 2026-09-24
+
+Status: **HUB SOURCE METADATA CURRENT · NO ROOT DESK REPUBLISH CLAIMED**
+
+Current architecture recovery source:
+`georg-doc/kayfabizarro#204` at `9af634c5fa2214f56f63f76d3f29f3ff89075807`.
+
+Current focus:
+World Building · Resident Scenes · ToolBox · Car Racer.
+
+The three newest Flow Design Inbox exports have been classified in the architecture owner and are not promoted as Hub tools merely because they were uploaded.
+
+Minimal WSA/Work routing:
+- current Work execution: **Race TRACK_A real Rapier runtime/contact proof only**;
+- WorldBuilder Flow shell → baked Cologne seam stays Web/GitHub;
+- Resident Card / Resident Band wait for Georg visual/pose gates;
+- Audio calibration is accepted;
+- MUSIC-PERF remains the existing public human-review gate;
+- ToolBox direct runtime is green; its separate review-wrapper transport is not a Work task.
+
+Handoff:
+`skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WSA_WORK_FOCUS_HANDOFF_2026-09-24.md`.
+
+Public root Production Desk refresh remains a separate HUB-CTRL gate. This metadata update does not claim a new public root snapshot.
+
+---
+
 # CURRENT UPDATE · MUSIC-PERF-01 PUBLIC REVIEW MOUNT · 2026-09-24
 
 Status: **STAGE NAVIGATOR + DIRECT REVIEW PUBLIC_VERIFIED · ROOT DESK REBUILD STILL SEPARATE**
