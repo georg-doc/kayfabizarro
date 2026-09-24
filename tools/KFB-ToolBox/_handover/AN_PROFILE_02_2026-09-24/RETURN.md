@@ -256,3 +256,32 @@ The current human gate is still exactly one gate:
 **open the plain review HTML and judge Library/Data usefulness.**
 
 No Cloudflare publication or Live claim was added.
+
+
+## HUMAN REVIEW RESULT · FAIL
+
+Georg reviewed the final plain Three.js review surface in the actual Chat visualization host and rejected it.
+
+Observed:
+- `source failed`;
+- visible `GLB failed: Mannequin_Medium...`;
+- no actor/animation could be meaningfully inspected;
+- independently of that source failure, Georg reports the measurement/data palette layout obscures the stage so much that the actual motion would not be meaningfully visible.
+
+Human result:
+**FAIL / NOT ACCEPTED**
+
+This supersedes all earlier “human review open / review-ready” wording for AN-PROFILE-02.
+
+The repository/browser CI remains technical source/runtime evidence only. It does **not** override the human-facing failure.
+
+Current status:
+- Animation Studio consumer implementation: technically evidenced;
+- supplied human review surface: **FAILED**;
+- Cloudflare: not published;
+- WorldBuilder Motion consumption: **HOLD**;
+- no further repair pass in this slice.
+
+Exactly one next gate:
+**HOLD until a new bounded review-surface brief is explicitly started.**
+That future brief must prove the actual review host can load the source assets and must keep the 3D stage visually dominant and unobstructed by measurement palettes.
