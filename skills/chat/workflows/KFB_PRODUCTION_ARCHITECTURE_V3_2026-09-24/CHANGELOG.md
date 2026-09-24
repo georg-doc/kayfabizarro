@@ -1,3 +1,24 @@
+## 2026-09-24 · Card Zones + Player Meta / Almanac / Adaptive Interface
+
+- promoted **Card Zones / Card Objects** to a first-class primary strand instead of leaving Card Zone only as an adjacent Vertical/World module;
+- pinned exact Card Zone Lab v2 source and CODE_MAP;
+- pinned StoryMap's source-locked `kfb-fluid-v2/card-zone-v2-fluid-source.js` as the preferred reusable fluid-shader donor;
+- explicitly demoted old `kfb-fluid-v1` extraction to historical/diminished evidence where not revalidated; StoryMap itself marks it DEAD;
+- preserved Card Zone source capabilities: animated moat/river/pond water, Card Stack, unfold/reveal, Beam/projector, six-face Card Cube/FaceFocus and card-seeded zone parameters;
+- added six Card Zone jobs from exact-fluid recovery through a complete WorldBuilder→card→Almanac collection loop;
+- promoted **Player Meta / Fractal Almanac / Adaptive Interface** to a first-class primary strand;
+- reused `overworld/overworld/journey.js` as the versioned import/export/migration donor without reviving the old Overworld runtime;
+- separated authored WorldBuilder world saves from durable player Journey facts;
+- defined one universal POP account under Player Journey; existing Travel `popScore` becomes presentation/event-adapter evidence only;
+- recorded Georg's current **20 visible Backpack slots** direction honestly as user product direction; the exact historical old sketch/source remains unpinned rather than being falsely claimed;
+- Fractal Almanac now explicitly spans collection, Diary, quest/memory, replay, progress/Journey archive and optional immersive chamber; it is not just Card Inventory;
+- ordinary gameplay direction now keeps a real-card Almanac fan upper-right, while immersive Almanac suppresses ordinary HUD;
+- adaptive HUD is provider-based: real Race route minimap / real world navigation / real mode instruments only; no fake universal minimap or filler instruments;
+- current shared inline editor was measured at **28×28 px controls / 13 px glyphs**; added a bounded authoring-legibility job targeting context-local ~40–44 px hit areas, ~20–24 px recognizable icons, active states and shortcut tooltips without changing edit-layer behavior;
+- Hub catalog now contains **13 strands / 68 jobs / 32 READY / 36 HOLD**;
+- architecture/source validation increased to **96/96 PASS**;
+- public Hub/HUB-CTRL, product runtimes, Cloudflare Live and merge state remain unchanged.
+
 ## 2026-09-24 · RKIT / OSM bake / Elastic torsion / Audio-VFX production decisions
 
 - resolved RKIT-02 D1–D5 for the fast playable path:
