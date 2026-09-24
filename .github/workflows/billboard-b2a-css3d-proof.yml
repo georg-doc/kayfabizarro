@@ -1,0 +1,90 @@
+name: Billboard B2a CSS3D donor proof
+
+on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/**'
+      - '.github/workflows/billboard-b2a-css3d-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  donor-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Static donor syntax
+        run: |
+          node --check tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/donor-boot.js
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof isolated official pattern
+        run: |
+          mkdir -p artifacts/billboard-b2a-donor
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/b2a-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-b2a-donor/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/donor.html';
+          const report={url,checks:[],errors:[]};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+
+          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+          const page=await browser.newPage({viewport:{width:1280,height:800}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+
+          try{
+            const res=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('HTTP',!!res&&res.ok(),res?.status());
+            await page.waitForFunction(()=>window.__B2A_DONOR?.ready===true,{}, {timeout:90000});
+            const state=await page.evaluate(()=>structuredClone(window.__B2A_DONOR));
+            report.state=state;
+            check('pinned three donor',/d04539a76736ff500cae883d6a38b3dd8643c548/.test(state.donor),state.donor);
+            check('three r160 runtime',state.runtime==='three@0.160.0',state.runtime);
+            check('one CSS3D source object',state.objectCount===1,state.objectCount);
+            check('official donor pattern named',state.pattern==='CSS3DRenderer + CSS3DObject + iframe + drag blocker',state.pattern);
+            check('YouTube no-cookie iframe',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(state.iframeSrc),state.iframeSrc);
+            const dom=await page.locator('iframe').evaluate(el=>({
+              width:el.style.width,height:el.style.height,border:el.style.border,
+              rect:{w:el.getBoundingClientRect().width,h:el.getBoundingClientRect().height}
+            }));
+            report.dom=dom;
+            check('iframe source dimensions',dom.width==='640px'&&dom.height==='360px',dom);
+            check('iframe visible',dom.rect.w>100&&dom.rect.h>50,dom.rect);
+            check('no page errors',report.errors.length===0,report.errors);
+            await page.screenshot({path:'artifacts/billboard-b2a-donor/donor-css3d-youtube.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2a-donor/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({status:report.status,checks:report.passed+'/'+report.total,errors:report.errors.length,state:report.state,dom:report.dom},null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-b2a-donor/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2a-css3d-donor-proof
+          path: artifacts/billboard-b2a-donor
+          retention-days: 90
