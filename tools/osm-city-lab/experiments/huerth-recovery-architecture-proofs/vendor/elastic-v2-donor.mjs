@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {stableHash,mulberry32} from '../../src/style/cartoon-city.js';
+import {stableHash,mulberry32} from '../../../src/style/cartoon-city.js';
 
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const smooth=t=>t*t*(3-2*t);
