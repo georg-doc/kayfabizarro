@@ -21,6 +21,17 @@ function fail(m,e){const t=m+(e?.message?' · '+e.message:'');state.errors.push(
 function status(t){$('#status').textContent=t;$('#status').dataset.bad='0';}
 function beatPos(){if(!state.recipe)return 0;const t=state.recipe.timing;return(audio.currentTime-t.phaseOffsetSec)*t.bpm/60;}
 function timeForBeat(b){const t=state.recipe.timing;return t.phaseOffsetSec+b*60/t.bpm;}
+function mediaReady(){
+  if(audio.readyState>=1)return Promise.resolve();
+  return new Promise((resolve,reject)=>{
+    const done=()=>{cleanup();resolve();};
+    const bad=()=>{cleanup();reject(new Error('song metadata failed to load'));};
+    const cleanup=()=>{audio.removeEventListener('loadedmetadata',done);audio.removeEventListener('error',bad);};
+    audio.addEventListener('loadedmetadata',done,{once:true});
+    audio.addEventListener('error',bad,{once:true});
+    audio.load();
+  });
+}
 function barBeat(b){const t=state.recipe.timing,s=Math.max(0,b);return{bar:Math.floor(s/t.beatsPerBar)+1+t.barOffset,beat:Math.floor(mod(s,t.beatsPerBar))+1};}
 function performerForAction(n){return state.recipe?.performers.find(p=>p.choreography.actionRef===n)||null;}
 
@@ -115,7 +126,7 @@ async function boot(){
   if(state.sourceMeta.id!==state.recipe.sourceObject.residentModuleId||state.sourceMeta.version!==state.recipe.sourceObject.version)throw new Error('donor identity mismatch');
   if(state.sourceMeta.track.gitBlob!==state.recipe.songRef.blob)throw new Error('song blob mismatch');
   for(const p of state.recipe.performers)if(!state.sourceMeta.clips.find(c=>c.name===p.choreography.actionRef))throw new Error('donor clip missing: '+p.choreography.actionRef);
-  audio.src=state.recipe.songRef.previewUrl;audio.preload='auto';audio.loop=false;audio.currentTime=timeForBeat(state.recipe.markers.startBeat);
+  audio.src=state.recipe.songRef.previewUrl;audio.preload='auto';audio.loop=false;await mediaReady();audio.currentTime=timeForBeat(state.recipe.markers.startBeat);
   renderMeta();renderRuler();renderPerformers();fitCamera();
   try{window.createImageBitmap=undefined;}catch{}
   const gltf=await new GLTFLoader().loadAsync(state.recipe.sourceObject.glb);
