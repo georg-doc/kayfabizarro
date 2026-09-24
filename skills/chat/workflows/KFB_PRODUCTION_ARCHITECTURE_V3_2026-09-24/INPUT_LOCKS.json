@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/8",
+  "schema": "kfb.production-architecture.v3-input-locks/9",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -134,7 +134,8 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 185,
       "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
-      "head": "2833674b36be707fa4d14c8b532faee78ef3ba28"
+      "head": "13cb668c205c4233b2486deee5f181855d915335",
+      "note": "current PR #185 head during MVP focus pass; coherent ToolBox + plain AN-PROFILE review green"
     },
     "eyeRigBatch": {
       "repo": "georg-doc/kayfabizarro",
@@ -161,7 +162,17 @@
       "pr": 197,
       "branch": "claude/motion-library-01-2026-09-24",
       "head": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
-      "path": "media/3D_Assets/Animations/KFB_Motion_Library/"
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/",
+      "parallelBridge": {
+        "pr": 209,
+        "branch": "chat/kfb-motion-library-2026-09-24",
+        "head": "f91c4e0f7ea1f27abf51bf3a91c2773ae91f6e2f",
+        "note": "same Medium/Large GLB blobs as PR #197 at observation; catalogue differs/newer; reconcile metadata deliberately"
+      },
+      "binaryIdentity": {
+        "mediumBlob": "45e12910feffa236f368d1be5d1c9f97e371eacd",
+        "largeBlob": "ff4791a328abce39c7c4277757458caf7f9fcfc1"
+      }
     },
     "residentAtlas": {
       "repo": "georg-doc/kayfabizarro",
@@ -301,7 +312,14 @@
         "decline",
         "leave"
       ],
-      "memoryRule": "reuse Journey/event+card context as filtered NPC memory; do not create a second memory system"
+      "memoryRule": "reuse Journey/event+card context as filtered NPC memory; do not create a second memory system",
+      "npcLife01": {
+        "pr": 210,
+        "branch": "chatgpt-web/npc-life-01-2026-09-24",
+        "head": "ea157c52dd6cadbae1b0fe40f6cacede65ec9792",
+        "status": "21/21 contract PASS; public browser/human gate pending"
+      },
+      "aiTownDonor": "sharedSources.aiTownDonor"
     },
     "verticalWorld": {
       "repo": "georg-doc/kayfabizarro",
@@ -634,6 +652,22 @@
       "claudeDefault": "Claude Sonnet 5",
       "claudeDeepEscalation": "Claude Opus 5.5",
       "workRule": "capability escalation only; never default for GitHub/briefing/Hub-mount work"
+    },
+    "aiTownDonor": {
+      "repo": "georg-doc/ai-town",
+      "head": "2693ed6973e3461204385c9d11fb3aca4e8e3a7a",
+      "upstream": "a16z-infra/ai-town",
+      "upstreamHeadObserved": "8e05997f2409275669c8344b84a51692e83f3f33",
+      "license": "MIT",
+      "paths": [
+        "ARCHITECTURE.md",
+        "convex/aiTown/agent.ts",
+        "convex/aiTown/conversationMembership.ts",
+        "convex/agent/memory.ts",
+        "convex/agent/schema.ts",
+        "convex/constants.ts"
+      ],
+      "rule": "mechanics donor only; no Convex/Pixi/global memory owner"
     }
   },
   "strands": {
@@ -741,7 +775,8 @@
         "townNpcLife",
         "residentAtlas",
         "motionLab",
-        "cubePetsActors"
+        "cubePetsActors",
+        "aiTownDonor"
       ],
       "target": "ChatterBox-driven living Residents with encounter beats, gifts, memory and world placement"
     },
