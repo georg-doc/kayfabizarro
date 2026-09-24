@@ -1,0 +1,433 @@
+{
+  "schema": "kfb.resident-scene/0.1-candidate",
+  "id": "npc-card-spec-01.card-speculation",
+  "label": "Resident Card Speculation · same evidence, different worldview",
+  "status": "CANDIDATE · GEORG VISUAL REVIEW OPEN",
+  "grammar": "card salient → notice → gaze to card → A observes/interprets → B reinterprets (builds from A's material) → A counters → pause/reaction → settle, card stays inspectable",
+  "hostSupplies": [
+    "renderer",
+    "scene",
+    "camera",
+    "lights",
+    "ground",
+    "persistence",
+    "world placement",
+    "navigation",
+    "Player Journey state"
+  ],
+  "root": {
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "yaw": 0,
+    "scale": 1,
+    "baseplate": null
+  },
+  "pins": {
+    "repo": "georg-doc/kayfabizarro",
+    "rigs": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "rigsPath": "tools/KFB-ToolBox/kfb-rigs-embed-v3/",
+    "eyeRigBatchBranch": "toolbox/eye-rig-batch-2026-09-18 (PR #104, head e277c3456651)"
+  },
+  "actors": [
+    {
+      "slot": "A",
+      "actorId": "graft-driver",
+      "displayName": "Uncle FrizzleBob",
+      "note": "Georg 2026-09-24: 'FrizzleBobrick' = FrizzleBob Driver Graft.",
+      "source": {
+        "reader": "frizzlegraft-v1/graft-mount.v1.js#mountGraft",
+        "contract": "contracts/kfb-pet-graft-driver.v4.json",
+        "contractBlob": "f202a1c2f1670ab6045176af6621c94041124e76",
+        "animation": "host"
+      },
+      "override": {
+        "graft": {
+          "weapon": {
+            "on": false
+          }
+        }
+      },
+      "overrideReason": "Resident encounter, not combat. Caller variant on the reader's copy; contract untouched.",
+      "transform": {
+        "position": [
+          -1.78,
+          0,
+          0.55
+        ],
+        "yaw": 30
+      },
+      "owners": {
+        "mouth": "graft.mouth · PetMouth v1 (set male)",
+        "eyes": "graft.rig · EyeRig v6",
+        "mixer": "one AnimationMixer on graft.figure (animation:host) · KFB Motion Library",
+        "bubble": "podcast-v5 bubble-shaper.v2 paintBubble"
+      },
+      "persona": "frizzlebob.fixer-carny",
+      "voice": "mid",
+      "motion": {
+        "idle": "kfb_idle_breathing_a",
+        "talk": "kfb_idle_happy_a",
+        "reactions": {
+          "dismiss": "kfb_idle_rejected_a",
+          "laugh": "kfb_idle_laughing_a"
+        }
+      }
+    },
+    {
+      "slot": "B",
+      "actorId": "gothgirl",
+      "displayName": "GothGirl",
+      "source": {
+        "glb": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+        "clips": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+        "idle": "Idle_A",
+        "eyeProfile": "donor/eye-rig-batch/gothgirl.seed.json",
+        "eyeCleanup": "donor/eye-rig-batch/source-face-cleanup.v1.js#prepareVerifiedGothGirlCleanup (components 2+3)",
+        "eyeAdapter": "donor/eye-rig-batch/kaykit-eye-adapter.v1.js#mountKayKitEyes",
+        "profile": "donor/profiles/kfb-pet-gothgirl.json#pets[gothgirl].mouth",
+        "mouthPaint": {
+          "owner": "lab-v6/texclean.js#paintOverRegion",
+          "box": {
+            "min": [
+              -0.17,
+              1.355,
+              0.3
+            ],
+            "max": [
+              0.17,
+              1.475,
+              0.52
+            ]
+          },
+          "grow": 0.12,
+          "boxSource": "goth-biped.v1.js GOTH.mouthBoxLocal (Dropbox · KFB ToolBox Stage v1 · measured 15.09. on GothGirl.glb 323 724 B)",
+          "fill": "face-color-sampler.v1 (EYE_RIG_BATCH) · fallback seed.sourceFace.faceColor"
+        },
+        "mouthHostNote": "see mouthOverride",
+        "mouthHost": "facehost.v1 re-centred on face shell (component 0) — goth-biped Falle 2, the host the profile mouth values were tuned on",
+        "mouthRecess": "flattenMouthRecess (method of lab-v4/carlrig.js#flattenRecesses; quadratic surface fitted to the ring below the nose) on the rendered + source head geometry, in memory only"
+      },
+      "mouthOverride": {
+        "lift": 0.1,
+        "dy": -0.56
+      },
+      "mouthOverrideReason": "lift .04→.10: decal was behind the real face surface. dy −.40→−.56: Georg 24.09. \"nicht direkt unter der Nase\". Profile untouched.",
+      "transform": {
+        "position": [
+          1.78,
+          0,
+          0.55
+        ],
+        "yaw": -30
+      },
+      "owners": {
+        "mouth": "PetMouth v1 (set female)",
+        "eyes": "EyeRig v6 via mountKayKitEyes",
+        "mixer": "one AnimationMixer on gltf.scene · KFB Motion Library",
+        "bubble": "podcast-v5 bubble-shaper.v2 paintBubble"
+      },
+      "persona": "gothgirl.midnight-romantic",
+      "voice": "mid",
+      "motion": {
+        "idle": "kfb_idle_breathing_b",
+        "talk": "kfb_idle_happy_a",
+        "reactions": {
+          "laugh": "kfb_idle_laughing_a",
+          "wistful": "kfb_idle_sad_a"
+        }
+      }
+    }
+  ],
+  "card": {
+    "owner": "kfb-viewer.js v1.1.0 · KayfabizarroViewer.loadDeck().getCardCanvas",
+    "deck": "pdfs/deck_b_dystopia.pdf",
+    "deckData": "decks/deck_b_dystopia.json",
+    "cover": true,
+    "index": 0,
+    "name": "The Doomsday Clock",
+    "back": "skills/KFB PetStudio/KFB FrankenStein Studio 16/KFB-v16/frizzlegraft-v1/kfb-card-backside.png",
+    "transform": {
+      "position": [
+        0,
+        1.4,
+        -0.5
+      ],
+      "yaw": 0,
+      "height": 1.81
+    },
+    "presentation": "large, behind the residents (they may overlap its edges); rise + flip from back, slow float; click to inspect",
+    "px": 2000,
+    "presentationNote": "z 0.25 → -0.5 (ears/hair clipped into the card during idle); height 1.62 → 1.81 keeps the on-screen size (distance ratio 6.85/6.1)."
+  },
+  "personas": {
+    "frizzlebob.fixer-carny": "Every object is a booth. Asks who works the handle and who pays at the gate. Reads mechanism, not message.",
+    "gothgirl.midnight-romantic": "Endings are the honest part. Takes dread as beauty and sincerity. Picks up the other speaker's word and turns it toward the dark."
+  },
+  "triplets": {
+    "_rule": "observation → worldview interpretation → implication/counter. B builds from A's material. Final beat stays open (closure belongs to the viewer).",
+    "A": [
+      {
+        "observation": "A clock. No gears. Just hands.",
+        "interpretation": "Hands that move when somebody talks. That's no clock, kid. That's a ticket booth.",
+        "counter": "Honest hours don't need an announcer."
+      },
+      {
+        "observation": "A countdown with no zero on it.",
+        "interpretation": "No zero, no refunds. Whoever built this never plans to pay out.",
+        "counter": "Kind to whoever holds the key."
+      }
+    ],
+    "B": [
+      {
+        "observation": "A booth that only sells one show.",
+        "interpretation": "Midnight's the only honest hour. I'd queue all night.",
+        "implication": "(…still pretty, though.)"
+      },
+      {
+        "observation": "No zero means it never has to end.",
+        "interpretation": "That's the kindest thing a clock can do.",
+        "implication": "(…who holds the key?)"
+      }
+    ]
+  },
+  "beats": [
+    {
+      "at": 0,
+      "do": "settle",
+      "label": "idle"
+    },
+    {
+      "at": 1.4,
+      "do": "card",
+      "state": "reveal",
+      "label": "card appears"
+    },
+    {
+      "at": 2.1,
+      "actor": "B",
+      "do": "emote",
+      "id": "surprised"
+    },
+    {
+      "at": 2.1,
+      "actor": "B",
+      "do": "gaze",
+      "target": "card",
+      "hold": 3.2,
+      "label": "both notice"
+    },
+    {
+      "at": 2.5,
+      "actor": "A",
+      "do": "emote",
+      "id": "thinking"
+    },
+    {
+      "at": 2.5,
+      "actor": "A",
+      "do": "gaze",
+      "target": "card",
+      "hold": 3.6
+    },
+    {
+      "at": 3.6,
+      "actor": "A",
+      "do": "say",
+      "line": "observation",
+      "label": "A · show it"
+    },
+    {
+      "at": 6.3,
+      "actor": "A",
+      "do": "emote",
+      "id": "happy"
+    },
+    {
+      "at": 6.3,
+      "actor": "A",
+      "do": "say",
+      "line": "interpretation",
+      "label": "A · spin it"
+    },
+    {
+      "at": 7,
+      "actor": "B",
+      "do": "emote",
+      "id": "neutral"
+    },
+    {
+      "at": 7.4,
+      "actor": "A",
+      "do": "gaze",
+      "target": "B",
+      "hold": 1.5
+    },
+    {
+      "at": 9.2,
+      "actor": "A",
+      "do": "gaze",
+      "target": "card",
+      "hold": 1.8
+    },
+    {
+      "at": 9.7,
+      "actor": "B",
+      "do": "gaze",
+      "target": "A",
+      "hold": 0.9
+    },
+    {
+      "at": 10.4,
+      "actor": "B",
+      "do": "say",
+      "line": "observation",
+      "label": "B · takes the word"
+    },
+    {
+      "at": 10.6,
+      "actor": "B",
+      "do": "gaze",
+      "target": "card",
+      "hold": 2.4
+    },
+    {
+      "at": 13.2,
+      "actor": "B",
+      "do": "emote",
+      "id": "happy"
+    },
+    {
+      "at": 13.2,
+      "actor": "B",
+      "do": "say",
+      "line": "interpretation",
+      "label": "B · spin it"
+    },
+    {
+      "at": 14.4,
+      "actor": "B",
+      "do": "gaze",
+      "target": "A",
+      "hold": 1.6
+    },
+    {
+      "at": 15.8,
+      "actor": "A",
+      "do": "motion",
+      "clip": "laugh",
+      "hold": 0.9,
+      "label": "A · reaction"
+    },
+    {
+      "at": 16.6,
+      "actor": "A",
+      "do": "emote",
+      "id": "angry"
+    },
+    {
+      "at": 16.6,
+      "actor": "A",
+      "do": "gaze",
+      "target": "B",
+      "hold": 2.4
+    },
+    {
+      "at": 16.7,
+      "actor": "A",
+      "do": "say",
+      "line": "counter",
+      "label": "A · counter"
+    },
+    {
+      "at": 19.3,
+      "actor": "A",
+      "do": "motion",
+      "clip": "dismiss",
+      "hold": 1.2,
+      "label": "A · dismiss (after the line)"
+    },
+    {
+      "at": 19.6,
+      "actor": "B",
+      "do": "emote",
+      "id": "thinking"
+    },
+    {
+      "at": 19.6,
+      "actor": "B",
+      "do": "gaze",
+      "target": "card",
+      "hold": 3.4
+    },
+    {
+      "at": 19.9,
+      "actor": "B",
+      "do": "think",
+      "line": "implication",
+      "label": "pause · reaction",
+      "thinkMotion": "wistful"
+    },
+    {
+      "at": 20.2,
+      "actor": "A",
+      "do": "emote",
+      "id": "neutral"
+    },
+    {
+      "at": 20.2,
+      "actor": "A",
+      "do": "gaze",
+      "target": "card",
+      "hold": 1.8
+    },
+    {
+      "at": 22.3,
+      "actor": "A",
+      "do": "gaze",
+      "target": "viewer",
+      "hold": 1.4,
+      "label": "closure → viewer"
+    },
+    {
+      "at": 24,
+      "do": "settle",
+      "label": "settle · card stays"
+    },
+    {
+      "at": 26,
+      "do": "end"
+    }
+  ],
+  "timing": {
+    "talkSecondsPerWord": 0.28,
+    "talkMin": 1.4,
+    "talkMax": 3.8,
+    "bubbleTail": 0.8,
+    "clock": "text length (Voice seam: no audio in MVP)"
+  },
+  "staging": {
+    "camera": {
+      "target": [
+        0,
+        1.36,
+        0
+      ],
+      "position": [
+        0,
+        1.6,
+        6.35
+      ],
+      "fov": 32
+    },
+    "note": "optional recipe; host may ignore"
+  },
+  "motion": {
+    "library": "motion/KFB_Motion_Library_Rig_Medium.glb",
+    "source": "Dropbox BLENDER MCP/MOTION_LIB/KFB_Motion_Library_Rig_Medium.glb (33 clips, 69 tracks, Rig_Medium; catalog ml_log.json)",
+    "license": "Mixamo-derived, retargeted for Kayfabizarro; runtime part of the game (Georg: license cleared)",
+    "note": "No dedicated talk clip in the library yet — talk = kfb_idle_happy_a STAND-IN."
+  }
+}

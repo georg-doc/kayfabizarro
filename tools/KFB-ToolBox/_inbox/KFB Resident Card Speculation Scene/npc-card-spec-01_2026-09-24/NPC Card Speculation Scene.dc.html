@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Shantell+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<script src="kfb-viewer.js"></script>
+<style>
+html,body{margin:0;height:100%;background:#F4EFE6;color:#26221C;font-family:Archivo,system-ui,sans-serif;overflow:hidden}
+a{color:#A6512E}a:hover{color:#26221C}
+</style>
+</helmet>
+<div data-screen-label="NPC-CARD-SPEC-01 scene" style="position:fixed;inset:0;background:#F4EFE6;overflow:hidden">
+  <div ref="{{ mountRef }}" onPointerDown="{{ onPointer }}" style="position:absolute;inset:0;cursor:default"></div>
+  <div ref="{{ overlayRef }}" style="position:absolute;inset:0;pointer-events:none;overflow:hidden"></div>
+
+  <div style="position:absolute;left:16px;top:14px;display:flex;flex-direction:column;gap:4px;pointer-events:none;max-width:min(520px,calc(100% - 32px))">
+    <div style="font:800 13px/1.2 Archivo,sans-serif;letter-spacing:.02em;color:#26221C">NPC-CARD-SPEC-01 · Resident Card Speculation</div>
+    <div style="font:11px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:#7B7368">{{ label }}</div>
+  </div>
+
+  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:center;max-width:560px;padding:0 24px;text-align:center">
+        <div style="font:600 15px Archivo,sans-serif;color:#26221C">Mounting Uncle FrizzleBob · GothGirl · The Doomsday Clock</div>
+        <div style="font:11px/1.4 ui-monospace,Menlo,monospace;color:#7B7368;text-wrap:pretty">{{ lastLog }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:16px;right:16px;top:64px;padding:12px 14px;background:#FBF8F1;border:1px solid #A6512E;border-radius:6px;font:12px/1.45 ui-monospace,Menlo,monospace;color:#26221C;white-space:pre-wrap">STOP · {{ error }}</div>
+  </sc-if>
+
+  <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:12px;width:min(640px,calc(100% - 32px));box-sizing:border-box;padding:6px 8px;border-radius:999px;background:rgba(251,248,241,.86);border:1px solid #E3DBCD;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <button onClick="{{ onReplay }}" style="font:600 12px Archivo,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid #26221C;background:#26221C;color:#F4EFE6;cursor:pointer" style-hover="background:#A6512E;border-color:#A6512E">Replay</button>
+    <button onClick="{{ onToggle }}" style="font:600 12px Archivo,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid #26221C;background:transparent;color:#26221C;cursor:pointer" style-hover="background:#FBF8F1">{{ playLabel }}</button>
+    <button onClick="{{ onInspect }}" style="font:600 12px Archivo,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid #26221C;background:transparent;color:#26221C;cursor:pointer" style-hover="background:#FBF8F1">{{ inspectLabel }}</button>
+    <button onClick="{{ onProof }}" style="font:600 12px Archivo,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid #26221C;background:transparent;color:#26221C;cursor:pointer" style-hover="background:#FBF8F1">{{ proofLabel }}</button>
+    <div style="flex:1 1 160px;min-width:120px;height:3px;background:#E3DBCD;border-radius:2px;position:relative;overflow:hidden">
+      <div style="position:absolute;left:0;top:0;bottom:0;background:#A6512E;width:{{ progress }}"></div>
+    </div>
+    <div style="font:11px ui-monospace,Menlo,monospace;color:#7B7368;min-width:74px;text-align:right">{{ timeText }}</div>
+  </div>
+
+  <sc-if value="{{ showProof }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;right:16px;top:14px;width:min(360px,calc(100% - 32px));max-height:calc(100% - 90px);overflow:auto;background:#FBF8F1;border:1px solid #DDD4C4;border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px">
+      <div style="font:800 11px Archivo,sans-serif;letter-spacing:.08em;color:#A6512E">OWNER PROOF</div>
+      <sc-for list="{{ proofRows }}" as="row" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:78px minmax(0,1fr);gap:8px;font:10.5px/1.4 ui-monospace,Menlo,monospace">
+          <div style="color:#7B7368">{{ row.k }}</div>
+          <div style="color:#26221C;overflow-wrap:anywhere">{{ row.v }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;view&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;scene&quot;,&quot;actor-a&quot;,&quot;actor-b&quot;,&quot;mouths&quot;],&quot;default&quot;:&quot;scene&quot;,&quot;tsType&quot;:&quot;'scene'|'actor-a'|'actor-b'|'mouths'&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[0,1],&quot;default&quot;:0,&quot;tsType&quot;:&quot;0|1&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;showProof&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;hostFloor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Host&quot;},&quot;rootX&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:-2,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Scene root&quot;},&quot;rootYaw&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:-180,&quot;max&quot;:180,&quot;step&quot;:1,&quot;default&quot;:0,&quot;unit&quot;:&quot;°&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Scene root&quot;}}">
+class Component extends DCLogic {
+  state = { loading: true, error: null, lastLog: 'three.js · pdf.js · rigs@5650b6c …', label: 'loading', t: 0, dur: 26, playing: true, rows: [], inspect: false };
+  mountRef = React.createRef();
+  overlayRef = React.createRef();
+
+  componentDidMount() { this.boot().catch((e) => { console.error(e); this.setState({ loading: false, error: (e && e.message) || String(e) }); }); }
+  componentWillUnmount() {
+    this._dead = true; cancelAnimationFrame(this._raf);
+    if (window.__npcRafShim) { window.requestAnimationFrame = window.__npcRafShim.nr; window.cancelAnimationFrame = window.__npcRafShim.nc; delete window.__npcRafShim; }
+    if (this._ro) this._ro.disconnect();
+    try { this.scene && this.scene.dispose(); } catch (e) {}
+    try { this.deck && this.deck.destroy(); } catch (e) {}
+    if (this.renderer) { this.renderer.dispose(); this.renderer.domElement.remove(); }
+  }
+  componentDidUpdate(prev) {
+    const p = this.props, s = this.scene; if (!s) return;
+    if (prev.view !== p.view) { this.inspect = false; s.setReview(p.view || 'scene'); this.setState({ inspect: false }); }
+    if (prev.variant !== p.variant) s.restart(+(p.variant || 0));
+    if (prev.hostFloor !== p.hostFloor && this.floor) this.floor.visible = p.hostFloor !== false;
+    if (prev.rootX !== p.rootX || prev.rootYaw !== p.rootYaw) this.applyRoot();
+  }
+  log(s) { console.info('[npc-card-spec-01] ' + s); if (!this._dead && this.state.loading) this.setState({ lastLog: s }); }
+  applyRoot() {
+    const r = this.scene && this.scene.root; if (!r) return;
+    r.position.x = +(this.props.rootX ?? 0);
+    r.rotation.y = (+(this.props.rootYaw ?? 0)) * Math.PI / 180;
+  }
+
+  /* pdf.js (display intent) and our loop both schedule on requestAnimationFrame, which a hidden
+     preview pane parks forever. While hidden, fall back to a timer; visible = native rAF. */
+  installRafFallback() {
+    if (window.__npcRafShim) return;
+    const nr = window.requestAnimationFrame.bind(window), nc = window.cancelAnimationFrame.bind(window);
+    window.__npcRafShim = { nr, nc };
+    window.requestAnimationFrame = (cb) => (document.hidden ? setTimeout(() => cb(performance.now()), 16) : nr(cb));
+    window.cancelAnimationFrame = (id) => { clearTimeout(id); nc(id); };
+  }
+  async boot() {
+    this.installRafFallback();
+    const THREE = this.THREE = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/+esm');
+    const { GLTFLoader } = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js/+esm');
+    const base = new URL('npc-card-spec-01/', location.href).href;
+    const recipe = await (await fetch(base + 'resident-card-speculation.recipe.json')).json();
+    const { mountResidentScene } = await import(base + 'resident-scene.mjs');
+    for (let i = 0; i < 200 && !window.KayfabizarroViewer; i++) await new Promise((r) => setTimeout(r, 50));
+    if (!window.KayfabizarroViewer) throw new Error('kfb-viewer.js (Card owner) not loaded');
+    try { await Promise.all([document.fonts.load("600 22px 'Shantell Sans'"), document.fonts.load("italic 400 15px 'Shantell Sans'")]); } catch (e) {}
+    if (this._dead) return;
+
+    const host = this.mountRef.current;
+    const renderer = this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.domElement.style.cssText = 'display:block;width:100%;height:100%';
+    host.appendChild(renderer.domElement);
+    const scene = this.scene3 = new THREE.Scene();
+    scene.background = new THREE.Color('#F4EFE6');
+    scene.add(new THREE.HemisphereLight(0xfffaf0, 0xd9cfbf, 1.05));
+    const key = new THREE.DirectionalLight(0xffffff, 1.55);
+    key.position.set(2.2, 5.5, 4.2); key.castShadow = true;
+    Object.assign(key.shadow.camera, { left: -4, right: 4, top: 4, bottom: -2, near: 0.5, far: 20 });
+    key.shadow.mapSize.set(1024, 1024); key.shadow.radius = 4; key.shadow.bias = -0.0004;
+    scene.add(key);
+    const floor = this.floor = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.14 }));
+    floor.name = 'host floor (host-owned, not in recipe)'; floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true;
+    floor.visible = this.props.hostFloor !== false;
+    scene.add(floor);
+    const st = recipe.staging.camera;
+    const camera = this.camera = new THREE.PerspectiveCamera(st.fov, 1, 0.05, 100);
+    camera.position.fromArray(st.position); camera.lookAt(new THREE.Vector3().fromArray(st.target));
+    this.camTarget = new THREE.Vector3().fromArray(st.target);
+    this.goal = { pos: camera.position.clone(), target: this.camTarget.clone() };
+
+    const resize = () => {
+      const w = host.clientWidth || 1, h = host.clientHeight || 1;
+      renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); this.vw = w; this.vh = h;
+    };
+    resize(); this._ro = new ResizeObserver(resize); this._ro.observe(host);
+
+    const getCardCanvas = async (slot) => {
+      this.log('Card owner · kfb-viewer.js loadDeck · ' + slot.deck);
+      const deck = this.deck = await window.KayfabizarroViewer.loadDeck({
+        source: { url: new URL(slot.deck, location.href).href }, deckData: { url: new URL(slot.deckData, location.href).href }, cover: slot.cover });
+      return deck.getCardCanvas(slot.index, slot.px || 1100);
+    };
+    this.log('mounting actors via graft-mount + EYE_RIG_BATCH …');
+    const s = this.scene = await mountResidentScene({ THREE, GLTFLoader, parent: scene, camera, overlay: this.overlayRef.current, recipe, getCardCanvas, base, log: (m) => this.log(m) });
+    if (this._dead) { s.dispose(); return; }
+    this.applyRoot();
+    /* Host seam for agents/review tools: seek(t) replays the beat clock deterministically to t. */
+    window.NPCCardSpecScene = { scene: s, camera, renderer, THREE, world: scene,
+      seek: (t, variant) => { s.restart(variant ?? +(this.props.variant || 0)); const st = 1 / 30; for (let x = 0; x < t; x += st) { this.updateCamera(st); s.update(st, camera, this.vw, this.vh); } renderer.render(scene, camera); return s.state(); } };
+    if (this.props.variant) s.restart(+this.props.variant);
+    if (this.props.view && this.props.view !== 'scene') s.setReview(this.props.view);
+    const rep = s.report(); console.info('[npc-card-spec-01] report', rep);
+    this.setState({ loading: false, rows: this.rowsOf(rep), dur: s.state().duration });
+
+    const clock = new THREE.Clock(); let acc = 0;
+    const tick = () => {
+      if (this._dead) return;
+      this._raf = requestAnimationFrame(tick);
+      const dt = Math.min(0.05, clock.getDelta());
+      this.updateCamera(dt);
+      s.update(dt, camera, this.vw, this.vh);
+      renderer.render(scene, camera);
+      acc += dt;
+      if (acc > 0.2) { acc = 0; const q = s.state(); this.setState({ label: q.label + (q.review === 'scene' ? ' · variant ' + q.variant : ''), t: q.t, playing: q.playing && !q.ended }); }
+    };
+    tick();
+  }
+
+  updateCamera(dt) {
+    const THREE = this.THREE, s = this.scene, mode = this.inspect ? 'card' : (this.props.view || 'scene');
+    const narrow = Math.max(1, (16 / 9) / Math.max(0.4, this.camera.aspect) * 0.82);
+    if (mode === 'scene') {
+      const st = s.recipe.staging.camera, tg = new THREE.Vector3().fromArray(st.target);
+      const off = new THREE.Vector3().fromArray(st.position).sub(tg).multiplyScalar(narrow);
+      this.goal.target.copy(tg); this.goal.pos.copy(tg).add(off);
+    } else {
+      const f = s.focus(mode); if (f) {
+        const dir = new THREE.Vector3(0, 0.07, 1).applyAxisAngle(new THREE.Vector3(0, 1, 0), s.root.rotation.y);
+        this.goal.target.copy(f.target); this.goal.pos.copy(f.target).addScaledVector(dir, f.dist * narrow);
+      }
+    }
+    const k = 1 - Math.pow(0.02, dt);
+    this.camera.position.lerp(this.goal.pos, k); this.camTarget.lerp(this.goal.target, k);
+    this.camera.lookAt(this.camTarget);
+  }
+
+  rowsOf(r) {
+    const j = (o) => Object.entries(o).map(([k, v]) => k + ': ' + v).join(' · ');
+    return [
+      { k: 'root', v: r.root.name + ' · ' + r.root.children.length + ' children · baseplate ' + r.root.baseplate },
+      { k: 'A actor', v: r.A.id + ' · ' + r.A.reader + ' · anim ' + r.A.animation + ' · weapon ' + r.A.weapon },
+      { k: 'A face', v: r.A.eyes + ' · mouth PetMouth v1 (' + r.A.mouthSet + ') on ' + r.A.mouthParent },
+      { k: 'B actor', v: r.B.glb + ' · ' + r.B.mixer },
+      { k: 'B face', v: r.B.cleanup + ' · ' + r.B.eyes },
+      { k: 'B mouth', v: 'PetMouth v1 (' + r.B.mouthSet + ') on ' + r.B.mouthHost + ' · src mouth ' + r.B.mouthPaint + ' · tone ' + r.B.faceTone },
+      { k: 'card', v: r.card.name + ' · ' + r.card.deck + ' #' + r.card.index + ' · ' + r.card.px + ' · ' + r.card.owner },
+      { k: 'owners', v: j(r.owners) },
+    ];
+  }
+
+  renderVals() {
+    const s = this.scene, S = this.state;
+    const dur = S.dur || 26;
+    return {
+      mountRef: this.mountRef, overlayRef: this.overlayRef,
+      loading: S.loading, hasError: !!S.error, error: S.error, lastLog: S.lastLog,
+      label: S.label,
+      showProof: (S.proof ?? this.props.showProof === true) && !S.loading,
+      proofLabel: (S.proof ?? this.props.showProof === true) ? 'Hide owners' : 'Owners',
+      onProof: () => this.setState({ proof: !(S.proof ?? this.props.showProof === true) }),
+      proofRows: S.rows,
+      progress: Math.min(100, (S.t / dur) * 100).toFixed(1) + '%',
+      timeText: S.t.toFixed(1) + ' / ' + dur.toFixed(0) + ' s',
+      playLabel: S.playing ? 'Pause' : 'Play',
+      inspectLabel: S.inspect ? 'Back to scene' : 'Inspect card',
+      onReplay: () => { if (!s) return; this.inspect = false; this.setState({ inspect: false }); if ((this.props.view || 'scene') !== 'scene') s.setReview(this.props.view); else s.restart(+(this.props.variant || 0)); },
+      onToggle: () => { if (!s) return; const q = s.state(); if (q.playing && !q.ended) s.pause(); else s.play(); },
+      onInspect: () => { if (!s) return; this.inspect = !this.inspect; if (this.inspect) s.showCard(); this.setState({ inspect: this.inspect }); },
+      onPointer: (e) => {
+        if (!s || !this.THREE) return;
+        const r = this.mountRef.current.getBoundingClientRect(), T = this.THREE;
+        const ray = new T.Raycaster(); ray.setFromCamera(new T.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1), this.camera);
+        if (ray.intersectObject(s.card.mesh, false).length) { this.inspect = !this.inspect; this.setState({ inspect: this.inspect }); }
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
