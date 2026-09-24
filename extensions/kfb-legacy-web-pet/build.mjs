@@ -1,0 +1,11 @@
+import {build} from 'esbuild';
+import {mkdir,copyFile,rm} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const here=path.dirname(fileURLToPath(import.meta.url)),dist=path.join(here,'dist');
+await rm(dist,{recursive:true,force:true});await mkdir(dist,{recursive:true});
+await build({entryPoints:[path.join(here,'content-entry.js')],outfile:path.join(dist,'content.js'),bundle:true,format:'iife',platform:'browser',target:['chrome120'],minify:true});
+await build({entryPoints:[path.join(here,'frame-entry.js')],outfile:path.join(dist,'frame.js'),bundle:true,format:'esm',platform:'browser',target:['chrome120'],minify:true});
+await copyFile(path.join(here,'manifest.json'),path.join(dist,'manifest.json'));
+await copyFile(path.join(here,'frame.html'),path.join(dist,'frame.html'));
+console.log('KFB Legacy Web Pet extension built:',dist);
