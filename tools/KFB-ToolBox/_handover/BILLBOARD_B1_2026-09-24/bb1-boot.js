@@ -52,6 +52,36 @@ let panelMesh = null;
 let cv = null;
 let ctx = null;
 let tex = null;
+
+function canvasStats(source) {
+  try {
+    const probe = document.createElement('canvas');
+    probe.width = 32; probe.height = 32;
+    const p = probe.getContext('2d', { willReadFrequently: true });
+    p.drawImage(source, 0, 0, 32, 32);
+    const d = p.getImageData(0, 0, 32, 32).data;
+    let sum = 0, min = 255, max = 0, opaque = 0;
+    for (let i = 0; i < d.length; i += 4) {
+      const y = (d[i] + d[i + 1] + d[i + 2]) / 3;
+      sum += y; min = Math.min(min, y); max = Math.max(max, y);
+      if (d[i + 3] > 0) opaque++;
+    }
+    return { mean: +(sum / (d.length / 4)).toFixed(2), min: +min.toFixed(2), max: +max.toFixed(2), opaque };
+  } catch (e) {
+    return { error: e.message };
+  }
+}
+
+function setPanelTexture(source) {
+  report.sourceStats = canvasStats(source);
+  if (tex) tex.dispose();
+  tex = new THREE.CanvasTexture(source);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.needsUpdate = true;
+  panelMesh.material.map = tex;
+  panelMesh.material.color.set(0xffffff);
+  panelMesh.material.needsUpdate = true;
+}
 let currentMode = null;
 let modeToken = 0;
 let sloganIndex = 0;
@@ -132,11 +162,10 @@ function resizeCanvas(ar) {
 }
 
 function showCanvas(source, ar, label) {
-  const faceAR = ensureAspect(ar);
-  resizeCanvas(faceAR);
-  ctx.clearRect(0, 0, cv.width, cv.height);
-  ctx.drawImage(source, 0, 0, cv.width, cv.height);
-  tex.needsUpdate = true;
+  ensureAspect(ar);
+  // Use the resolved owner canvas directly as the billboard texture.
+  // B1 does not re-rasterize/crop/letterbox the owner's result into a second canvas.
+  setPanelTexture(source);
   report.content = label;
   report.ready = true;
   document.documentElement.dataset.b1Ready = '1';
@@ -207,7 +236,7 @@ function drawSlogan() {
   ctx.textBaseline = 'middle';
   ctx.font = "400 230px 'Anton', Impact, sans-serif";
   ctx.fillText(beat.key, cv.width / 2, cv.height / 2 + 4);
-  tex.needsUpdate = true;
+  setPanelTexture(cv);
   report.content = 'CHATTERBOX ' + beat.key;
   report.ready = true;
   document.documentElement.dataset.b1Ready = '1';
@@ -302,10 +331,8 @@ async function mountHero() {
 
   cv = document.createElement('canvas');
   resizeCanvas(report.baseAspect);
-  tex = new THREE.CanvasTexture(cv);
-  tex.colorSpace = THREE.SRGBColorSpace;
   panelMesh.material.dispose();
-  panelMesh.material = new THREE.MeshBasicMaterial({ map: tex });
+  panelMesh.material = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
   const queryMode = new URLSearchParams(location.search).get('mode') || 'quarter';
   await setMode(queryMode);
