@@ -148,22 +148,27 @@
     },
     {
       "id": "billboard",
-      "bucket": "CAN_START",
-      "title": "Werbetafel mit echter KFB-Karte: Neustart",
-      "what": "Der erste Versuch wurde verworfen. Neustart: echte Werbetafel mit echter Karte, fast ohne Bedienelemente.",
-      "provider": "Claude Design",
-      "yourAction": "Startnachricht kopieren und in Claude Design einfügen.",
-      "waitingFor": "",
+      "bucket": "LOOK_AT",
+      "title": "Billboard B2a · YouTube direkt auf der 3D-Fläche",
+      "what": "B1 ist angenommen. B2a spielt das echte YouTube-iframe jetzt direkt auf der gemessenen 3D-Werbefläche über den offiziellen Three.js-CSS3D-Weg; kein Modal-Viewer.",
+      "provider": "Web-Chat",
+      "yourAction": "B2a öffnen und VIDEO INLINE anklicken/bedienen. Prüfen, ob der Player wirklich als Teil der Werbetafel wirkt und beim 3D-Blick korrekt mitgeht.",
+      "waitingFor": "Georg PASS/TUNE für B2a.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 188,
-      "branch": "chatgpt-web/claude-billboard-media-design-2026-09-23",
-      "expectedHead": "00583a6758b09da4533cc7773a29205f5099fa8f",
+      "pr": 199,
+      "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+      "expectedHead": "154edef4f220540c9079ab22d5b243baddea6909",
       "brief": {
-        "label": "Startnachricht",
-        "path": "tools/KFB-ToolBox/_handover/CLAUDE_BILLBOARD_MEDIA_DESIGN_2026-09-23/CLAUDE_RECOVERY_PROMPT.md",
-        "ref": "chatgpt-web/claude-billboard-media-design-2026-09-23",
-        "pasteReady": true
+        "label": "B2a Return / Recovery",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/RETURN.md",
+        "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+        "pasteReady": false
+      },
+      "review": {
+        "label": "B2a ansehen",
+        "path": "kfb-hub/pruefen/billboard-b2a/index.html",
+        "sourceRef": "PR #199 · PUBLIC_VERIFIED · 22/22 PASS · human pending"
       }
     },
     {
