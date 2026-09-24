@@ -21,15 +21,30 @@ const server=http.createServer((req,res)=>{
 await new Promise(r=>server.listen(4176,'127.0.0.1',r));
 
 let browser;
-const errors=[];
+const errors=[],requestFailures=[];
 try{
   browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
   const page=await browser.newPage({viewport:{width:1536,height:900}});
   page.on('pageerror',e=>errors.push('pageerror: '+String(e)));
   page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text());});
+  page.on('requestfailed',req=>requestFailures.push({url:req.url(),error:req.failure()?.errorText||'unknown'}));
   const url='http://127.0.0.1:4176/tools/osm-city-lab/experiments/huerth-recovery-architecture-proofs/';
   await page.goto(url,{waitUntil:'networkidle',timeout:120000});
-  await page.waitForFunction(()=>window.__KFB_HUERTH_ARCH_PROOFS__?.report,{},{timeout:30000});
+  try{
+    await page.waitForFunction(()=>window.__KFB_HUERTH_ARCH_PROOFS__?.report,{},{timeout:30000});
+  }catch(err){
+    const debug={
+      url:page.url(),
+      title:await page.title(),
+      errors,
+      requestFailures,
+      body:(await page.locator('body').innerText()).slice(0,5000)
+    };
+    fs.writeFileSync(OUT+'/failure-debug.json',JSON.stringify(debug,null,2)+'\n');
+    await page.screenshot({path:OUT+'/failure.png',fullPage:true});
+    console.error(JSON.stringify(debug,null,2));
+    throw err;
+  }
 
   let report=await page.evaluate(()=>window.__KFB_HUERTH_ARCH_PROOFS__.report());
   assert.equal(report.schema,'kfb.huerth-recovery-architecture-proofs/0.1');
