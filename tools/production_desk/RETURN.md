@@ -31,13 +31,18 @@ displayed “Es konnte kein Stand geladen werden.” The underlying GitHub work 
 
 ## Publication state
 
-Pending until the exact Cloudflare route has been opened after publication. The candidate must not be called
-`PUBLIC_VERIFIED` before that proof.
+`PUBLIC_VERIFIED` at `https://kayfabizarro.pages.dev/kfb-hub/`.
+
+- `cloudflare-live` publication head: `620c26350d3ecb2ea48b70da42fd92f689911584`.
+- The exact public route was opened in real Chrome and visibly showed the current 14-lane Hub.
+- Visible counts: 3 LOOK_AT · 6 RUNNING · 1 CAN_START · 4 WAITING.
+- Hürth, Billboard and Graveyard review links plus WB-W0, VFX-01 and Curtain-v2 intake cards were present.
+- The page rendered from the valid embedded snapshot while GitHub raw propagation was still pending; this is
+  the designed fallback, not a blank state.
 
 ## One next gate
 
-Publish the generated Hub and verify the exact Cloudflare route. Then stop HUB-CTRL-01 and start the separate
-WB-W0 source-lock gate.
+HUB-CTRL-01 is complete. Start the separate WB-W0 source-lock gate; do not add more Hub architecture.
 
 ---
 

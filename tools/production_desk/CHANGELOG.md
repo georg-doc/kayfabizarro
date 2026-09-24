@@ -11,3 +11,6 @@
 - Added the gate-proportionality protocol and World/Racer/Hub masterplan to the Hub rules.
 
 No PR was merged and no Live project was promoted by this change.
+
+Publication proof: `cloudflare-live@620c26350d3ecb2ea48b70da42fd92f689911584`; the exact public Hub route
+rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
