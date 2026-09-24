@@ -2,6 +2,8 @@
 
 Paste this whole file as the first message of a fresh Claude Design project. Everything you need is in here. Do not go searching the repo beyond the URLs listed.
 
+Continues `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` (same folder): its gate is met (Web editor R2 PASS, WB2 sculpt ACCEPT, Georg 24.09). New since then, by Georg: the world is a **sphere**, sky/weather come from TinySkies, Elastic Grotesque Clay is the default building view. Its "must not rebuild" list still applies: terrain-height truth, scene persistence, TransformControls/edit seam, Resource Registry, OSM truth, movement/camera owners.
+
 ## What Georg wants to see
 
 One coherent browser app, **KFB WorldBuilder v1**: a small round world he can shape, dress and walk on.
