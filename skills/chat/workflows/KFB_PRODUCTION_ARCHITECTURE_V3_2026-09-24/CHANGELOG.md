@@ -1,3 +1,13 @@
+## 2026-09-24 · Claude Design Resident Disco executor brief
+
+- added `CLAUDE_DESIGN_RESIDENT_DISCO_01_2026-09-24.md` so the prepared Resident Disco can be started directly in Claude Design if this Web chat breaks;
+- routes Claude through current Resident Atlas S8 / fresh Orc-band donor: same Studio/editor/puppet/timeline concepts, no proprietary Resident runtime;
+- fixed cast follows Georg's correction: Skeleton Minion, Avian Swordsman, Protagonist_A teenager, Toy Soldier, Witch, Black Knight, Demon Lord;
+- Claude first uses existing Motion Library + Orc-band bounce; no new Mixamo intake in the first pass;
+- `DISCO-BALL-CORE-01` is explicitly a separate reusable world/event module with spin, beat impulse, bounded beam/spot effects and future EyeRig seam;
+- Claude returns a complete editable Session Cut and direct review artifact; Web/GitHub Bridge owns integration/tests/Stage;
+- no runtime, merge or public Stage change.
+
 ## 2026-09-24 · RES-DISCO-01 cast correction + Disco Ball Core direction
 
 - Georg removed Prototype Pete from the disco cast because it is a template/proof actor; Action Figure is also replaced.
