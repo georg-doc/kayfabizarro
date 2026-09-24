@@ -828,3 +828,169 @@ A waiting card is valuable because Georg can already see the complete production
 > Consolidate a small semantic event map such as melee.swing/hit/block, ranged.fire/hit, actor.land/hit/defeat, vehicle.drift/impact, transition.cover/reveal. Map to existing source-backed recipes/cues where they exist.
 >
 > Do not build a second global FX or audio engine. Hosts emit events; presentation owners render/play them.
+
+---
+
+# Race / OSM / Look / Audio-VFX production jobs
+
+## RACE-TRACK-RECIPE-01 · Authored Track A + Bake
+
+**Executor:** Racer Web + Blender MCP for RKIT authored geometry  
+**Outcome:** first complete reusable baked Track Module, no general track editor.
+
+> @GitHub @Dropbox @Blender
+> Read KFB Production Architecture v3, `RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md`, Race PR #34/#35 and current Race SSOT.
+>
+> Build **RACE-TRACK-RECIPE-01** around one authored recipe: `TRACK_A_STUNT_8`.
+>
+> Physics/dimensions:
+> - Rapier is the airborne/contact basis: 15 m/s² downward gravity magnitude, 27 m/s speed basis, real physical ramp;
+> - v0.8 steering/drift/grip remains the handling-feel donor, not a second physics owner;
+> - width ladder = 10.8 / 14.4 / 18.0 / 21.6 m;
+> - 28.8 m only as named special XL module if useful.
+>
+> Track A should be easy to understand: figure-eight / over-under with one ~12 m forgiving jump and one ~30 m Hero step-down, plus one bridge/tunnel/flap feature. Do not build a spline editor.
+>
+> Use RKIT's rounded profile sweep and reusable stunt modules. Blender owns visual geometry/module authoring only; Race owns route/contact/physics.
+>
+> Compile one reusable Track Module package: compact recipe + deterministic route + stunt zones + baked visual GLB + anchors/material roles + source/provenance + Race-owned contact metadata.
+>
+> Give me one directly playable/reviewable result. No Cloudflare debug loop.
+
+---
+
+## RACE-RKIT-03 · Blender module continuation under fixed decisions
+
+**Executor:** Blender MCP  
+**Outcome:** finish the useful RKIT-03 geometry without waiting for another WSA decision round.
+
+> @GitHub @Dropbox @Blender
+> Read the current RKIT-02 handover and KFB v3 Race/World decisions.
+>
+> The blocking decisions are resolved:
+> - D1 = Rapier stunt-dimensioning basis;
+> - D2 = 10.8 / 14.4 / 18.0 / 21.6 m canonical ladder;
+> - D3 = keep ~12 m Base Jump + add ~30 m step-down Hero Jump;
+> - D4 = Race/Rapier owns takeoff/air/landing;
+> - D5 = moving Flap contact belongs to Race; Blender exports hinge/collision metadata.
+>
+> Continue only reusable geometry work:
+> 1. flap-down v2 thin deck with clean swing clearance;
+> 2. smooth width transition/funnel;
+> 3. widened banked bowl;
+> 4. city-street profile;
+> 5. role-named material/palette readiness.
+>
+> Do not invent gameplay triggers, vehicle velocity or collision ownership. Return the reusable modules and one visual module sheet/review, not measurement-only output.
+
+---
+
+## WORLD-ZONE-BAKE-01 · Cologne OSM World Zone compiler
+
+**Executor:** ChatGPT Web  
+**Outcome:** fetch/normalize/build once, then reuse Cologne as a cached editable World Zone.
+
+> @GitHub
+> Read KFB Production Architecture v3 → W8, current `tools/osm-city-lab/data/dom-zentrum-v0/`, its build scripts/provenance and current WorldBuilder placement contract.
+>
+> Build **WORLD-ZONE-BAKE-01** around the already available Cologne source. Do not fetch live OSM at runtime.
+>
+> Produce one versioned World Zone package with source/query/hash/provenance, normalized metre-frame semantics, roads/buildings/anchors, baked visual mesh, support/collision representation and compiler/look revision.
+>
+> WorldBuilder stores a Zone ref + transform, not copied raw geometry. Landmarks remain separate searchable modules.
+>
+> Prove load/place/reload of the baked Cologne zone. Barcelona is explicitly the second-city portability proof, not a prerequisite for this job.
+
+---
+
+## WORLD-ZONE-BAKE-02 · Barcelona portability proof
+
+**Executor:** ChatGPT Web  
+**Outcome:** prove the same World Zone compiler on a second city.
+
+> @GitHub
+> Start only from accepted WORLD-ZONE-BAKE-01 compiler/package contract.
+>
+> Create one bounded Barcelona district extract using the same source→normalize→compile→bake pipeline. Do not change the schema because the city is different unless a real missing semantic is proven.
+>
+> Review one scene where Barcelona Zone is combined with an authored external Landmark Module (for example the Cologne Cathedral) to prove the separation between geographic source truth and fictional WorldBuilder composition.
+
+---
+
+## LOOK-TORSION-01 · Elastic Torsion architecture proof
+
+**Executor:** ChatGPT Web / Blender MCP only if Geometry Nodes materially helps  
+**Outcome:** restore the missing bent/twisted 90s-cartoon read without patching failed Hürth R2.
+
+> @GitHub
+> Read KFB Production Architecture v3 → W9, PR #194 failure recovery/research, current City GROTESQUE donor and Cologne BuildingElastic/LandmarkElastic evidence.
+>
+> Do **not** edit/fix the frozen Hürth R2 city block.
+>
+> Add a fourth isolated proof to the existing recovery research:
+> - one tall source building/landmark;
+> - enough vertical segmentation for smooth deformation;
+> - cumulative height-dependent twist/torsion plus bend/lean/taper;
+> - anchored base;
+> - shared roof/body boundary driven by the same final deformation field;
+> - neutral/simple lighting first.
+>
+> Existing City GROTESQUE twist ~11° is a donor/upper reference, not a universal default. Show at least a low building range and a stronger hero-landmark range.
+>
+> Camera skew may amplify the look but must not substitute for geometric torsion.
+>
+> Return direct A/B/C visual review: source → current Elastic idea → Elastic+Torsion.
+
+---
+
+## AUDIO-AUDITION-01 · Human-readable Sound Library
+
+**Executor:** ChatGPT Web  
+**Outcome:** Georg chooses sounds by meaning/listening, not filenames.
+
+> @GitHub @Dropbox
+> Read KFB Production Architecture v3 → S5 and current Pinball, Combat, Race telemetry, RoadTrip/Jukebox audio sources.
+>
+> Build **AUDIO-AUDITION-01** as a source-backed audition/index surface, not a new audio engine.
+>
+> Auto-inventory current banks/manifests and present human categories: Vehicle, Combat, UI/Card, World/Ambience, Transition, Performance/Crowd.
+>
+> Each card needs Play/A-B, readable label, semantic event, loop/one-shot, duration/intensity, source/license/provenance and current consumers. No opaque filename should be the primary UI.
+>
+> First semantic set should cover representative events such as vehicle engine/throttle/drift/jump/land/rail, melee swing/hit/block, ranged shot/hit, card/UI select/reveal, portal/transition and applause/crowd if source-backed.
+>
+> Games continue to own their AudioContext/master. The library maps semantic ids to source-backed candidates/recipes.
+
+---
+
+## MUSIC-PERF-01 · Song + Resident Performance timeline
+
+**Executor:** ToolBox Animation Studio / Web  
+**Outcome:** songs and dance/band performances become reusable synchronized Resident scenes.
+
+> @GitHub @Dropbox
+> Read KFB Production Architecture v3 → A6 plus current Resident Scene/Animation Studio and source-backed KFB song/music assets.
+>
+> Build a small Music Performance lane in Animation Studio. When a song is present, show a beat/bar ruler and let a Resident scene reference: songRef, BPM, bar offset, performer ids, per-performer choreography/actions, start/loop/finish markers and Stage/Camera recipe.
+>
+> Do not bake audio into animation clips and do not create a second music player per Resident.
+>
+> First proof should use one existing source-backed band/dance performance. Return one reusable performance recipe and direct playback review.
+
+---
+
+## VFX-AUDITION-01 · Source-backed VFX Library
+
+**Executor:** ChatGPT Web  
+**Outcome:** choose/adapt proven effects before authoring new ones.
+
+> @GitHub
+> Read KFB Production Architecture v3 → S6, current KFB VFX review bank, Combat Ink/VFX recipes, Kenney smoke sources and indexed Brackeys VFX sources.
+>
+> Build **VFX-AUDITION-01** as a human-facing moving preview board. Categories: burst, loop, trail, impact, muzzle, smoke/fire, reveal, transition, environment.
+>
+> Each candidate records semantic role, source/license, anchor, loop/burst, lifetime, intensity/scale and cleanup behavior.
+>
+> First workflow is: audition existing donor → select → create a small semantic adaptation recipe. Example: if a useful fire donor is continuous, adapt emission/lifetime for a single-shot burst only if the donor supports it; do not rebuild fire from scratch.
+>
+> Return a representative Review Scene with several effects side-by-side and promote no effect merely because a file loads.
