@@ -273,6 +273,10 @@ function createInlineVideo() {
   videoSurface.append(videoIframe, videoBlocker);
   videoObject = new CSS3DObject(videoSurface);
   videoObject.name = 'b2a-inline-youtube-css3d';
+  // CSS3DRenderer owns the DOM display state. Object3D.visible is the real visibility seam.
+  // Using element.style.display here is overwritten by the renderer and left an opaque black
+  // CSS plane over CARD/COVER/SLOGAN in the first integration candidate.
+  videoObject.visible = false;
   cssScene.add(videoObject);
   syncInlineVideoTransform();
 }
@@ -286,7 +290,7 @@ function setVideoBlock(on) {
 function showInlineVideo() {
   if (!videoSurface) createInlineVideo();
   videoIframe.src = videoEmbed();
-  videoSurface.style.display = 'block';
+  videoObject.visible = true;
   report.css3d.visible = true;
   report.css3d.iframeSrc = videoIframe.src;
   syncInlineVideoTransform();
@@ -297,7 +301,7 @@ function hideInlineVideo() {
   if (!videoSurface || !videoIframe) return;
   setVideoBlock(false);
   videoIframe.src = 'about:blank';
-  videoSurface.style.display = 'none';
+  videoObject.visible = false;
   report.css3d.visible = false;
   report.css3d.iframeSrc = 'about:blank';
   setDiag();
@@ -525,6 +529,7 @@ function snapshot() {
       iframeExists: !!videoIframe,
       iframeSrc: videoIframe?.src || null,
       inlineDisplay: videoSurface?.style.display || null,
+      objectVisible: videoObject?.visible ?? null,
       surfaceRect: surfaceRect ? { x: surfaceRect.x, y: surfaceRect.y, w: surfaceRect.width, h: surfaceRect.height } : null,
       cssTransform: videoSurface?.style.transform || '',
       modalElementExists: !!document.querySelector('#b1-video, #b2a-video-modal')
