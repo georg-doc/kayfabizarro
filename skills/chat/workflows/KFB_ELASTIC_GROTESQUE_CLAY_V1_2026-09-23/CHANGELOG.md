@@ -138,3 +138,45 @@ First junction-patch integration also created pale curb/path discs. The QA image
 
 ### NEXT GATE
 Georg reviews tuned V2 and returns **ACCEPT / REJECT**. LC-01 waits for ACCEPT.
+
+## 2026-09-24 · HÜRTH 01 R2
+
+### HUMAN RESULT
+- R1 wall attachment accepted;
+- still open: roof overhang, curb/path wedge, shadow banding proof;
+- new: organic windows/doors on all visible facades;
+- new: reuse existing Racer Cologne harmonic palette logic exactly.
+
+### DONOR REUSE
+- exact Race commit: `cc80f4a1c6c509db9668df79fd53b13cee093a9d`;
+- exact file: `KFB Cologne Race Option C-3/lab-v9/cologne-palette.v1.js`;
+- exact source/target blob: `38246785ec2c9089737b2a195673a3ad4c07bdf8`;
+- companion `option-c-style.v1.js` exact blob `c39c163019ab16c602b32c70202880680f9173c7`;
+- no replacement color system created.
+
+### IMPLEMENTED
+- explicit eave ring outside final wall-top outline;
+- multi-facade organic detail generation, still bound to final bowed-shell frames;
+- Racer Cologne OKLCH harmonic `makePalette()` applied to wall / roof / door / window zones;
+- 4096 fitted Elastic shadow map; roofs cast but do not receive self-shadow map;
+- path endpoints extend below asphalt at real shared OSM nodes;
+- road junction asphalt patch covers the curb half-width to remove the remaining pale wedge.
+
+### TESTED
+- runtime head: `4cc496e79af80c7f8419ffb14f7f5d8daeb0b679`;
+- run `35947303053`: **38/38 PASS**;
+- **3/3 WebGL2**;
+- **0 page/console errors**;
+- artifact `10787192998`;
+- digest `sha256:aa193dff031169bcfef73c9eb381b6d80a3b5099243818994b999a755073e0a0`;
+- 193 Elastic facade details, 23 asphalt node patches, 10 path→road connectors;
+- CLEAN / CARTOON / GROTESQUE boot unchanged.
+
+### PUBLICATION
+- same wrapper route, base pin changed only;
+- `cloudflare-live` pins `4cc496e7…`;
+- Hub card routes to R2 review;
+- no bundle/substitute renderer.
+
+### NEXT GATE
+Georg: **ACCEPT / REJECT R2**. LC-01 remains HOLD until ACCEPT.
