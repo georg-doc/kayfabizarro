@@ -72,6 +72,11 @@ Do not resume by patching frozen R2.
 Cloudflare wrapper pins the browser-tested app at:
 `c36f97be48a6b5da5617aa000c921e4a51329f7f`
 
+Publication:
+- wrapper `e16dc4abead4e33a2fffa2b31f64f506ca7d9689`
+- Hub `e49f9dc1cf61c92093d3e1d9ba45b9f39f8558b4`
+- `PUBLIC_VERIFIED = UNKNOWN` from this chat environment; Georg's direct open is the public/human gate.
+
 ## Exactly one next gate
 
 **GEORG HUMAN VISUAL REVIEW · PASS / FAIL A, B, C**
