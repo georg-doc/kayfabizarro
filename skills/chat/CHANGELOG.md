@@ -1752,3 +1752,35 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-23 · Hybrid production handoff · Coworker control tower
+
+Current handoff:
+`skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/START_HERE.md`
+
+Decision:
+- Coworker becomes the day-to-day Web/integration coordinator;
+- Blender MCP is the 3D authoring lane;
+- Claude Design is downstream donor-locked visual integration;
+- Web Lead returns for periodic reconciliation;
+- WSA is capability escalation only.
+
+Current project updates:
+- ToolBox Source-Safe Integration continues internally to one coherent Georg milestone;
+- Travel TMB-2 accepted at 400 ms;
+- Racer R3d TUNE, exact review HTML persisted, Anatomy Foundation next, Vehicle Grounding HOLD;
+- Blender Warband continues;
+- current cartoon-form direction captured with source gap explicit;
+- Curtain/Billboard recovery prompts ready.
+
+No merge / Cloudflare / Live promotion from this coordination slice.
+
+
+## 2026-09-23 · Hybrid production reconciliation · Hürth #194 + Warband v4 candidate
+
+- The Hybrid Production Handoff on Draft PR #193 now recognizes Draft PR #194 as the current source-backed form-language POC instead of reporting the parallel export as missing.
+- Hürth 01 tested implementation `1db61b9c882e178000cf700a7d5f4d18ec03eba0`: **16/16 browser PASS · 3/3 WebGL2 · 0 page/console errors**; human visual review pending; no Stage/Live promotion.
+- Read-only Dropbox recon found ORB-P1 Warband **v4 candidate-only** authoring files and module metadata. They remain non-SSOT until the Blender owner persists a GitHub Return/evidence checkpoint; PR #192 remains the durable Blender proof.
+- `game-dev` was unavailable in the current Web Lead runtime; recorded once as `GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`. No current coordination gate requires sealed Game Development Studio evidence.
+- The control-plane next gate remains the complete Coworker ToolBox Source-Safe Integration 01 milestone.

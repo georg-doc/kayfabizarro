@@ -1,0 +1,134 @@
+{
+  "schema": "kfb.production-desk/0.1-candidate",
+  "generatedAt": "2026-09-23T21:27:00+02:00",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "chatgpt-web/kfb-hybrid-production-handoff-2026-09-23",
+    "head": "704aa2f1835a74c2c154f3110a6177996853ddfc",
+    "note": "Seed snapshot; Coworker must re-fetch exact branch/pr heads before rendering."
+  },
+  "now": [
+    {
+      "id": "toolbox-source-safe",
+      "priority": "P0",
+      "owner": "Claude Coworker",
+      "state": "ACTIVE_BUILD",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 185,
+      "head": "2833674b36be707fa4d14c8b532faee78ef3ba28",
+      "summary": "Build the full coherent ToolBox Source-Safe Integration; internal vertical slice is not a Georg gate.",
+      "humanGate": "Full coherent ToolBox review only."
+    },
+    {
+      "id": "warband-blender",
+      "priority": "P0",
+      "owner": "Blender MCP",
+      "state": "PARTIAL_HUMAN",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 195,
+      "head": "39b7781f96a962dfd9ddd8777c5951f37d36ffe0",
+      "summary": "Leader + guitarist accepted; drummer v1–v4 failed; v5 restored baseline. ORB-D1 same-rig melee reference pick next.",
+      "humanGate": "Pick drummer source motion after local Rig_Large reference review."
+    },
+    {
+      "id": "worldbuilder-wb2",
+      "priority": "P1",
+      "owner": "WorldBuilder/Web",
+      "state": "HUMAN_REVIEW",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 190,
+      "head": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+      "summary": "Terrain sculpt candidate is technically green.",
+      "humanGate": "Raise/Lower + Radius/Strength + Undo/Clear + Save/Reload."
+    },
+    {
+      "id": "huerth-form-language",
+      "priority": "P1",
+      "owner": "3D Cartoon Form Language",
+      "state": "HUMAN_REVIEW",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 194,
+      "head": "66a4d1d5ad9f181ec52f8a0f75c55571b00bb713",
+      "summary": "Elastic Grotesque Clay Hürth POC is source-backed and browser-tested.",
+      "humanGate": "Continue / tune / reject visual grammar."
+    }
+  ],
+  "hold": [
+    {
+      "id": "travel-tmb3",
+      "state": "HOLD",
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "pr": 38,
+      "head": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
+      "summary": "TMB-2 accepted at 400 ms. Landing not opened."
+    },
+    {
+      "id": "racer-grounding",
+      "state": "HOLD",
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "pr": 33,
+      "head": "71e7051b2eea1ad731912b634f44ce5ba0218736",
+      "summary": "R3d TUNE. Prepare Racer Anatomy Foundation before vehicle grounding."
+    }
+  ],
+  "recovery": [
+    {
+      "id": "curtain",
+      "provider": "Claude Design",
+      "pr": 189,
+      "head": "dfd39255811e6f5b7cdde4092beb753d2b40713b",
+      "nextGate": "Restore exact Theatre Curtain v1 donor unchanged."
+    },
+    {
+      "id": "billboard",
+      "provider": "Claude Design",
+      "pr": 188,
+      "head": "00583a6758b09da4533cc7773a29205f5099fa8f",
+      "nextGate": "Exact Kenney billboard + real KFB Card donor proof."
+    }
+  ],
+  "prepared": [
+    {
+      "id": "racer-anatomy-foundation",
+      "provider": "Coworker/Web + optional Blender",
+      "state": "PREPARE_CLOSED_PACKET"
+    },
+    {
+      "id": "vfx-sfx-consolidation",
+      "provider": "Fresh Web",
+      "state": "PREPARED_BRIEF"
+    },
+    {
+      "id": "production-desk-autosync",
+      "provider": "Coworker/GitHub Actions",
+      "state": "PREPARED",
+      "brief": "PRODUCTION_DESK_AUTOSYNC_V1.md"
+    },
+    {
+      "id": "world-god-01",
+      "provider": "Coworker + Claude Design + Blender",
+      "state": "PLANNING_ONLY",
+      "brief": "WORLDBUILDER_GOD_MODE_V0.md"
+    },
+    {
+      "id": "dance-d1",
+      "provider": "Blender MCP + Coworker",
+      "state": "CAN_START_IN_PARALLEL",
+      "brief": "RESIDENT_PERFORMANCE_NEXT_2026-09-23.md"
+    }
+  ],
+  "wsa": {
+    "state": "NOT_NEEDED",
+    "reason": "No current CLOSED packet names a capability unavailable to Coworker/Web/Blender."
+  },
+  "desk": {
+    "state": "PREPARED_BUILD",
+    "brief": "PRODUCTION_DESK_V0_BRIEF.md",
+    "artifact": "KFB_PRODUCTION_DESK_V0.html"
+  },
+  "reviewBase": {
+    "id": "threejs-focus-review-v1",
+    "extension": "REVIEW_SCENE_BASE_V1.md",
+    "policy": "direct chat + durable GitHub/CI artifact"
+  }
+}

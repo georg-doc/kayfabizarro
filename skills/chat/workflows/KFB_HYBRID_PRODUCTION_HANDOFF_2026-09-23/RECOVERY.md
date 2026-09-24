@@ -1,0 +1,154 @@
+# KFB Hybrid Production Handoff · Recovery · 2026-09-23
+
+Status: **CURRENT RECOVERY ENTRY FOR THIS HANDOFF**
+
+## Start after chat loss
+
+Read:
+1. `START_HERE.md`
+2. `CURRENT_STATE.md`
+3. `COWORKER_CONTROL_TOWER.md`
+4. exactly one current owner PR/Return.
+
+Do not reconstruct this long Web Lead chat.
+
+## Handoff owner
+
+Repo:
+`georg-doc/kayfabizarro`
+
+Branch:
+`chatgpt-web/kfb-hybrid-production-handoff-2026-09-23`
+
+Base:
+`main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
+
+## Key decisions preserved
+
+- Coworker becomes day-to-day Web/integration coordinator.
+- Internal vertical slices are fine; Georg receives coherent milestones.
+- Blender MCP is a productive 3D authoring lane.
+- Claude Design is downstream visual/design integration, donor-locked.
+- WSA is later capability escalation, not current default.
+- Human review artifacts must be durable as well as directly clickable.
+- Travel TMB-2 is accepted at 400 ms.
+- Racer R3d is TUNE; Vehicle Grounding remains HOLD.
+- Racer exact R3d HTML has been recovered and persisted to Race PR #33.
+- Racer next planning target is Anatomy Foundation.
+- Curtain and Billboard recovery prompts are ready but not auto-launched.
+- the form-language lane now has a source-backed current GitHub POC on Draft PR #194 (Hürth 01); human visual review pending, no public Stage.
+- read-only Dropbox recon shows an ORB-P1 Warband v4 candidate, but it is not GitHub-returned or human-accepted yet; PR #192 remains the durable Blender proof.
+
+## Prior control-plane
+
+PR #191:
+useful provenance for Production Flow v2 / CLOSED packets / Donor Lock / Blender onboarding.
+
+It is dirty against current main and should not keep accumulating as the active control plane.
+
+This handoff supersedes it operationally after verification.
+
+## Next gate
+
+Coworker completes Source-Safe ToolBox Integration 01 to its full coherent milestone.
+
+Then Coworker returns one current-state check-in + one next MVP proposal.
+
+No WSA before that unless an explicit capability gap appears.
+
+Optional Game Development Studio CLI check in this chat: `game-dev` unavailable; recorded once as `GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED`.
+
+
+## Control-plane identity
+
+Repo:
+`georg-doc/kayfabizarro`
+
+Branch:
+`chatgpt-web/kfb-hybrid-production-handoff-2026-09-23`
+
+Draft PR:
+`#193`
+
+Current handoff head before this metadata write:
+`87016f0f5923835bd698bbce439e67bf6d063349`
+
+Base:
+`main@dca52479dad9c176acde6e7c7167dc133bf50bdd`
+
+
+## Model / animation / WSA recovery
+
+Coworker model-switch guidance:
+`COWORKER_OPUS55_MODEL_SWITCH.md`
+
+Recommendation:
+same Coworker chat → checkpoint local/worktree state → switch to Opus 5.5 → re-read GitHub handoff → continue existing build.
+
+Performance animation candidate:
+`PERFORMANCE_ANIMATION_PILOT.md`
+
+Purpose:
+task mechanics + contact frames + beat grid + Blender Action/NLA export + runtime event sidecar.
+
+First validation:
+Warband drummer.
+
+Coworker ↔ WSA:
+`COWORKER_WSA_SYNC_BRIDGE.md`
+
+No hidden cross-chat sync is assumed.
+GitHub is the shared bus.
+
+Current WSA recommendation:
+**NOT YET NEEDED** unless Coworker identifies a concrete unavailable local/multi-repo capability.
+
+
+## Production Desk / Review / FX recovery
+
+After Coworker switches to Opus 5.5:
+
+1. recover current local ToolBox work;
+2. build Production Desk v0 from the checked-in snapshot;
+3. resume ToolBox Source-Safe Integration.
+
+Production Desk files:
+- `PRODUCTION_DESK_V0_BRIEF.md`
+- `PRODUCTION_DESK_STATE.json`
+- `COWORKER_PRODUCTION_DESK_START.md`
+
+Shared 3D review setup:
+`REVIEW_SCENE_BASE_V1.md`
+
+Prepared VFX-first Web slice:
+- `VFX_SFX_CONSOLIDATION_01.md`
+- `VFX_SFX_WEBCHAT_START.md`
+
+VFX-01 is prepared but does not block ToolBox.
+It may run in a separate bounded Webchat.
+
+
+## Resident performance recovery
+
+ORB authoring:
+PR #195 @ `39b7781f96a962dfd9ddd8777c5951f37d36ffe0`
+
+Current truth:
+- leader accepted;
+- guitarist accepted;
+- drummer v1–v4 rejected;
+- v5 restored baseline only.
+
+Next:
+`RESIDENT_PERFORMANCE_NEXT_2026-09-23.md`
+
+ORB-D1:
+same-rig KayKit melee reference review before any new drummer animation.
+
+DANCE-D1:
+Rig_Medium source-audition + one authored groove may proceed in parallel.
+
+Animation prompt audit:
+`ANIMATION_LIVING_V13_AUDIT_2026-09-23.md`
+
+Do not use the supplied v1.3 document as canonical rig/script truth.
