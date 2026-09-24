@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-slice" content="BILLBOARD_B1_2026-09-24">
+<title>KFB Billboard · B1 Content-Fit Face</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#e9d8ad;font-family:'JetBrains Mono',ui-monospace,monospace}
+canvas{display:block}
+.toolbar{position:fixed;left:50%;top:14px;z-index:20;transform:translateX(-50%);display:flex;gap:6px;align-items:center;padding:6px;background:rgba(35,26,19,.82);border:1px solid rgba(242,230,201,.28);border-radius:4px;backdrop-filter:blur(5px)}
+.b1-btn{font:600 10px/1.3 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.035em;text-transform:uppercase;color:#f2e6c9;background:#231a13;border:1px solid rgba(242,230,201,.28);padding:7px 10px;cursor:pointer;border-radius:2px}
+.b1-btn:hover,.b1-btn.active{background:#2c5c56;border-color:#d9c997}
+.bottom{position:fixed;left:14px;bottom:14px;z-index:20;display:flex;gap:6px;align-items:center}
+.hint{font:400 10px/1.4 'JetBrains Mono',monospace;color:#3a2c1e;background:rgba(242,230,201,.74);padding:5px 9px}
+#b1-video-hint{display:none}
+#b1-diag{display:none;position:fixed;left:14px;top:62px;z-index:20;margin:0;font:400 11px/1.5 'JetBrains Mono',monospace;color:#231a13;background:rgba(242,230,201,.94);padding:8px 10px;border:1px solid rgba(35,26,19,.25);max-width:72vw;white-space:pre-wrap}
+#b1-video{display:none;position:fixed;inset:0;z-index:40;background:rgba(18,13,9,.72);place-items:center}
+#b1-video.open{display:grid}
+#b1-video .frame{position:relative;width:min(900px,84vw);aspect-ratio:16/9;background:#191410;border:2px solid rgba(247,240,221,.55);box-shadow:0 18px 60px rgba(0,0,0,.55)}
+#b1-video iframe{width:100%;height:100%;border:0;display:block}
+#b1-video-close{position:absolute;right:-2px;top:-38px}
+@media(max-width:720px){.toolbar{left:8px;right:8px;transform:none;overflow:auto;justify-content:flex-start}.b1-btn{white-space:nowrap}.hint{display:none}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="./bb1-boot.js"></script>
+</head>
+<body>
+<nav class="toolbar" aria-label="Billboard content">
+  <button class="b1-btn" data-mode="quarter">CARD QUARTER</button>
+  <button class="b1-btn" data-mode="cover">COVER</button>
+  <button class="b1-btn" data-mode="video">VIDEO</button>
+  <button class="b1-btn" data-mode="slogan">SLOGAN</button>
+</nav>
+<div class="bottom">
+  <button class="b1-btn" id="b1-reset">RESET VIEW</button>
+  <button class="b1-btn" id="b1-diag-toggle">DIAG</button>
+  <div class="hint" id="b1-orbit-hint">drag = orbit · wheel = zoom</div>
+  <div class="hint" id="b1-video-hint">click billboard = play</div>
+</div>
+<pre id="b1-diag">loading…</pre>
+<div id="b1-video" aria-hidden="true">
+  <div class="frame">
+    <button class="b1-btn" id="b1-video-close">CLOSE</button>
+    <iframe title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+</body>
+</html>

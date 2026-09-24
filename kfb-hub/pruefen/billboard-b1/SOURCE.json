@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.billboard-b1-source/0.1",
+  "id": "BILLBOARD-B1-2026-09-24",
+  "date": "2026-09-24",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "baseMain": "0a2b8fc8b865cf3d0d4dc6043d55a8bd172fa0f0",
+  "branch": "chatgpt-web/billboard-b1-2026-09-24",
+  "b0Source": {
+    "folder": "tools/KFB-ToolBox/_inbox/KFB Billboard Media Szene · B0 Source Proof/BILLBOARD_B0_SOURCE_PROOF_2026-09-24/",
+    "bb-scene.js": "235b062f9d575a49a4c98d8be57d04d43acc2213",
+    "bb0-boot.js": "57392b87c0344648695e1ef6d62f6f70a9dd942b",
+    "status": "ACCEPTED · COPIED BYTE-FOR-BYTE"
+  },
+  "b0Donor": {
+    "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb",
+    "pin": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "measuredFace": [4.2, 2.1],
+    "epsilon": 0.012
+  },
+  "contentOwners": {
+    "cardQuarter": "unchanged B0 renderCardQuarter()",
+    "cover": "media/kfb/index.json + pdf.js 4.7.76 page 1",
+    "youtube": "travel/travel-v16/terrain-v16/academy-deck.js VIDEO + travel-poc.js poster/click-player pattern",
+    "slogan": "unchanged B0 BEATS keys SHOW IT / SPIN IT / SELL IT"
+  },
+  "b1Seam": "Scale the accepted B0 hero holder on X to the measured content aspect; donor model, posts/frame and B0 content plane therefore change together.",
+  "protected": [
+    "bb-scene.js unchanged",
+    "bb0-boot.js unchanged",
+    "Kenney billboard donor unchanged",
+    "B0 measured face fractions unchanged",
+    "B0 epsilon unchanged",
+    "no second card runtime owner"
+  ],
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/",
+  "humanAcceptance": "PENDING"
+}
