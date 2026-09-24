@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.slice-source/1.0",
+  "slice": "AN-PROFILE-02",
+  "date": "2026-09-24",
+  "owner": "KFB ToolBox / Stage-First integration",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+  "pr": 185,
+  "observedMainHead": "c049cae386e169c79608c835e69eaa2170838875",
+  "toolboxInput": {
+    "pr": 185,
+    "preSliceHead": "a6dff1a4e465433daea7f38618b3925db6714b90",
+    "donorPath": "tools/KFB-ToolBox/stage-first/src/KFB Animation Lab v3.dc.html",
+    "donorBlob": "2203c13c2a270da86eac27878473618f14a0118d"
+  },
+  "motionProfileInput": {
+    "pr": 206,
+    "head": "032c9d50cd5de6764fa37fec65cb203ed35fcb11",
+    "schema": "kfb.motion-profile-catalog/1.0"
+  },
+  "motionLibraryInput": {
+    "pr": 197,
+    "sourceHead": "bf0eace2332a48f0b220318ad7567c68cc6dfbad",
+    "catalogueSchema": "kfb.motion-catalog.v1",
+    "clipCountPerRig": 33
+  },
+  "architectureInput": {
+    "pr": 204,
+    "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+    "role": "T4 Animation Studio inside ToolBox"
+  },
+  "implementationHead": "93d9dd6f763c064313fe5d3bef690496487145a9",
+  "ciAtCheckpoint": {
+    "run": 36032905791,
+    "status": "in_progress",
+    "staticOwnerContract": "success",
+    "anProfile02Static": "success",
+    "browserCoherent": "in_progress",
+    "browserAnProfile02": "pending"
+  },
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/animation-studio/",
+    "status": "HOLD_NOT_PUBLISHED_NOT_PUBLIC_VERIFIED"
+  }
+}
