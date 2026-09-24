@@ -1,3 +1,11 @@
+## 2026-09-24 · Production Architecture v3 candidate
+
+- Georg approved the direction away from micro-gate/control-plane production toward self-service coherent artifacts.
+- Added `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/` with architecture contract, copy-ready Web/ToolBox/Blender/WorldBuilder jobs, current input locks, Hub briefing catalog, tests and Return.
+- Normal production now prefers direct real-source chat review; Cloudflare is milestone-only and full recovery exports are exception-only.
+- Claude Design / Blender MCP may author without GitHub write access; a GitHub Bridge owns reviewed integration.
+- PR #204 remains Draft; no runtime owner, merge or Live state changed.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
