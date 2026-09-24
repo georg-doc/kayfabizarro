@@ -1752,3 +1752,11 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+
+## 2026-09-24 · SIMBLOOD SVG MORPHOLOGY PARALLEL LANE
+
+- SimBlood SSOT now records a parallel renderer-only SVG morphology R&D lane in `georg-doc/doccheck/sim-blood/`.
+- Current Claude Design fine-tuning brief: `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
+- KFB Hub exposes the brief as a parallel Claude Design briefing, while the P0 extraction todo remains unchanged: run `pbc-lymph-102859` through Draft PR #7's unchanged model/pipeline.
+- No SVG runtime integration, medical pass, production promotion or new public Stage is claimed.

@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-22",
+  "updated": "2026-09-24",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -343,9 +343,12 @@
         "field-composer-poc",
         "reference-assets",
         "cytodiff-audit",
-        "telehematology-use-cases"
+        "telehematology-use-cases",
+        "svg-morphology-renderer"
       ],
-      "note": "DocCheck SimBlood SSOT. Typed cell pools + deterministic Field Composer + Microscope Engine + Workflow Engine. Documentation/recovery updates are maintained directly on main unless a risky implementation slice explicitly needs a branch."
+      "note": "DocCheck SimBlood SSOT. Typed cell pools + deterministic Field Composer + Microscope Engine + Workflow Engine. Parallel SVG morphology renderer R&D reuses the same typed-cell/recipe/seed truth; it does not replace the true-alpha extraction lane. Documentation/recovery updates are maintained directly on main unless a risky implementation slice explicitly needs a branch.",
+      "svgMorphologyBrief": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md",
+      "svgMorphologyStatus": "PARALLEL_RND_CLAUDE_DESIGN_BRIEF_READY"
     },
     {
       "id": "2d-animation-studio",

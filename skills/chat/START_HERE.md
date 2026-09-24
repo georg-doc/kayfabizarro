@@ -879,3 +879,10 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+## 2026-09-24 · SimBlood SVG morphology parallel lane
+
+SimBlood now tracks a parallel **SVG morphology renderer R&D lane** in the authoritative `georg-doc/doccheck/sim-blood/` SSOT. It reuses the same typed-cell / recipe / seed truth and explores a direct schematic/procedural ↔ SVG-realistic presentation switch. The Claude Design fine-tuning handover is `sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md`.
+
+This is additive renderer R&D only. It does not replace or reprioritize Draft PR #7; the current extraction gate remains unchanged-pipeline processing of `pbc-lymph-102859` only.
