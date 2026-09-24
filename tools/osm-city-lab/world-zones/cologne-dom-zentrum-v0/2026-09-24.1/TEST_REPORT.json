@@ -1,0 +1,263 @@
+{
+  "schema": "kfb.world-zone.test-report.v1",
+  "pass": 51,
+  "fail": 0,
+  "status": "PASS",
+  "rows": [
+    {
+      "name": "manifest schema",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "zone id/revision",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "reported source hash pinned",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "cached source file hash pinned",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "source Git blob pinned",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "reported normalized payload hash pinned",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "cached normalized file hash pinned",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "normalized Git blob pinned",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "metre frame",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "road count",
+      "status": "PASS",
+      "detail": "5236"
+    },
+    {
+      "name": "building count",
+      "status": "PASS",
+      "detail": "6351"
+    },
+    {
+      "name": "anchor count",
+      "status": "PASS",
+      "detail": "5"
+    },
+    {
+      "name": "package file source-spec.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file provenance.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file query.overpassql",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file normalized.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file roads.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file building-semantics.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file anchors.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file visual.glb",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file support-collision.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file SOURCE.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file MANIFEST.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package file BUILD_REPORT.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "GLB magic",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "GLB version 2",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "baked visual non-trivial",
+      "status": "PASS",
+      "detail": "11629496 bytes"
+    },
+    {
+      "name": "support remains undeformed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "support references semantics",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "landmarks stay separate",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Dom source anchor preserved",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "runtime policy forbids Overpass",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "package excludes raw Overpass payload",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "deterministic file list",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "deterministic BUILD_REPORT.json",
+      "status": "PASS",
+      "detail": "d079c9760878"
+    },
+    {
+      "name": "deterministic MANIFEST.json",
+      "status": "PASS",
+      "detail": "461ba414fa1a"
+    },
+    {
+      "name": "deterministic SOURCE.json",
+      "status": "PASS",
+      "detail": "2cbd850ea331"
+    },
+    {
+      "name": "deterministic anchors.json",
+      "status": "PASS",
+      "detail": "f155dd6ca7cf"
+    },
+    {
+      "name": "deterministic building-semantics.json",
+      "status": "PASS",
+      "detail": "f336d9d8c7ee"
+    },
+    {
+      "name": "deterministic normalized.json",
+      "status": "PASS",
+      "detail": "a2c4d31c32e3"
+    },
+    {
+      "name": "deterministic provenance.json",
+      "status": "PASS",
+      "detail": "319cb6e86d34"
+    },
+    {
+      "name": "deterministic query.overpassql",
+      "status": "PASS",
+      "detail": "5ad8986f2403"
+    },
+    {
+      "name": "deterministic roads.json",
+      "status": "PASS",
+      "detail": "94787e435f13"
+    },
+    {
+      "name": "deterministic source-spec.json",
+      "status": "PASS",
+      "detail": "0302e5aa9992"
+    },
+    {
+      "name": "deterministic support-collision.json",
+      "status": "PASS",
+      "detail": "662b45fa6c35"
+    },
+    {
+      "name": "deterministic visual.glb",
+      "status": "PASS",
+      "detail": "1300a22ce115"
+    },
+    {
+      "name": "build gates all pass",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "WorldBuilder zone ref valid",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "scene stores ref+transform only",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "save/reload preserves manifest ref",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "save/reload preserves transform",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

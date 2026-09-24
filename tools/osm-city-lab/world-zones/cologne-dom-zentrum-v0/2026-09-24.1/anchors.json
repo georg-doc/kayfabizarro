@@ -1,0 +1,141 @@
+{
+  "schema": "kfb.world-zone.anchors.v1",
+  "zoneId": "cologne-dom-zentrum-v0",
+  "revision": "2026-09-24.1",
+  "frame": {
+    "kind": "local-enu-equirectangular",
+    "originWgs84": [
+      50.942,
+      6.96225,
+      0
+    ],
+    "axes": {
+      "x": "east",
+      "y": "up",
+      "z": "north"
+    },
+    "units": "metre",
+    "earthRadiusM": 6378137,
+    "clipRectM": {
+      "minX": -1139.826,
+      "maxX": 1139.826,
+      "minZ": -1057.535,
+      "maxZ": 1057.535
+    }
+  },
+  "anchors": [
+    {
+      "id": "way/4532022",
+      "role": "landmark-source-anchor",
+      "label": "Kölner Dom",
+      "source": {
+        "id": "way/4532022",
+        "name": "Kölner Dom",
+        "osm": {
+          "type": "way",
+          "id": 4532022,
+          "tags": {
+            "name": "Kölner Dom",
+            "alt_name": "Hohe Domkirche Sankt Petrus",
+            "building": "cathedral",
+            "amenity": "place_of_worship",
+            "tourism": "attraction",
+            "layer": "1",
+            "religion": "christian",
+            "denomination": "roman_catholic"
+          }
+        },
+        "local": {
+          "x": -301.298,
+          "z": -75.744
+        }
+      },
+      "status": "source-backed"
+    },
+    {
+      "id": "node/2399559029",
+      "role": "transport-source-anchor",
+      "label": "Köln Hauptbahnhof",
+      "source": {
+        "id": "node/2399559029",
+        "name": "Köln Hauptbahnhof",
+        "osm": {
+          "type": "node",
+          "id": 2399559029,
+          "tags": {
+            "name": "Köln Hauptbahnhof",
+            "railway": "station",
+            "operator": "DB InfraGO AG",
+            "public_transport": "station"
+          }
+        },
+        "local": {
+          "x": -223.02,
+          "z": 87.263
+        }
+      },
+      "status": "source-backed"
+    },
+    {
+      "id": "relation/5460390",
+      "role": "bridge-source-anchor",
+      "label": "Hohenzollernbrücke",
+      "source": {
+        "id": "relation/5460390",
+        "name": "Hohenzollernbrücke",
+        "osm": {
+          "type": "relation",
+          "id": 5460390,
+          "tags": {
+            "name": "Hohenzollernbrücke"
+          }
+        },
+        "local": {
+          "x": 211.812,
+          "z": -62.121
+        }
+      },
+      "status": "source-backed"
+    },
+    {
+      "id": "relation/3837695",
+      "role": "bridge-source-anchor",
+      "label": "Deutzer Brücke",
+      "source": {
+        "id": "relation/3837695",
+        "name": "Deutzer Brücke",
+        "osm": {
+          "type": "relation",
+          "id": 3837695,
+          "tags": {
+            "name": "Deutzer Brücke"
+          }
+        },
+        "local": {
+          "x": 266.235,
+          "z": -622.379
+        }
+      },
+      "status": "source-backed"
+    },
+    {
+      "id": "way/23559378",
+      "role": "tunnel-source-anchor",
+      "label": "Rheinufertunnel",
+      "source": {
+        "id": "way/23559378",
+        "name": "Rheinufertunnel",
+        "class": "primary",
+        "driveable": true,
+        "bridge": null,
+        "tunnel": "yes",
+        "layer": "-2"
+      },
+      "status": "source-backed"
+    }
+  ],
+  "landmarkPolicy": {
+    "externalModulesRemainSeparate": true,
+    "rule": "OSM massing/semantics remain geographic truth; authored Landmark Modules are separate references and transforms."
+  }
+}
