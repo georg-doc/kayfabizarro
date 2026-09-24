@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.hub-briefing-catalog/3",
+  "schema": "kfb.hub-briefing-catalog/4",
   "updated": "2026-09-24",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
@@ -124,6 +124,28 @@
         "fx-semantic-01",
         "audio-audition-01",
         "vfx-audition-01"
+      ]
+    },
+    {
+      "id": "card-zones",
+      "title": "Card Zones / Card Objects",
+      "target": "Exact Card Zone v2 fluid + stack/reveal/Beam + Card Cube/FaceFocus + card-seeded recipes as reusable WorldBuilder modules",
+      "capabilitiesTotal": 6,
+      "currentReady": [
+        "cz-fluid-01",
+        "cz-card-present-01",
+        "cz-cube-01"
+      ]
+    },
+    {
+      "id": "player-meta-hud",
+      "title": "Player Meta / Fractal Almanac / Adaptive Interface",
+      "target": "One versioned Journey state with Almanac, POP, Backpack, songs and mode-adaptive HUD plus a legible shared authoring UI grammar",
+      "capabilitiesTotal": 10,
+      "currentReady": [
+        "meta-journey-01",
+        "meta-hud-01",
+        "ui-grammar-01"
       ]
     }
   ],
@@ -906,6 +928,232 @@
       "sourceSet": "sharedStage",
       "cloudflareRequired": false,
       "workRequired": false
+    },
+    {
+      "id": "cz-fluid-01",
+      "strand": "card-zones",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Card Zone · Exact Fluid Surface",
+      "what": "Wrap the exact Card Zone v2 / fluid-v2 shader donor and prove source→module→World consumer visually.",
+      "result": "Source-faithful animated fluid with real dudv/map textures; no grey foam reconstruction.",
+      "promptSection": "CZ-FLUID-01 · Exact Card Zone Fluid Surface",
+      "sourceSet": "cardZones",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "sourceBlob": "97e3e0813cb5693a64863482ab96a601e88f5104"
+    },
+    {
+      "id": "cz-card-present-01",
+      "strand": "card-zones",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Card Zone · Stack / Reveal / Beam",
+      "what": "Recover the exact v2 3D stack, card unfold/reveal and projection Beam around the real KFB card renderer.",
+      "result": "Reusable Card Presentation package + one complete reveal beat.",
+      "promptSection": "CZ-CARD-PRESENT-01 · Stack / Reveal / Beam module",
+      "sourceSet": "cardZones",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "cz-cube-01",
+      "strand": "card-zones",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Card Zone · Card Cube + Face Focus",
+      "what": "Recover the source Card Cube six-face viewer and real detail/PDF focus surface.",
+      "result": "Reusable six-face Card Cube viewer for Zones/Almanac/ToolBox.",
+      "promptSection": "CZ-CUBE-01 · Card Cube + Face Focus",
+      "sourceSet": "cardZones",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "cz-recipe-01",
+      "strand": "card-zones",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "Card Zone · Authored Recipe",
+      "what": "Compose fluid, stack/reveal, cube, seed/palette and Resident/prop refs into a compact reusable zone recipe.",
+      "result": "Two distinct zones from one schema without a new world runtime.",
+      "promptSection": "CZ-RECIPE-01 · Card Zone authored recipe",
+      "sourceSet": "cardZones",
+      "waitingFor": "CZ-FLUID-01 + CZ-CARD-PRESENT-01 + CZ-CUBE-01",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "cz-world-01",
+      "strand": "card-zones",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "WorldBuilder Web",
+      "title": "Card Zone · WorldBuilder Module",
+      "what": "Search/place/edit/save a configured Card Zone as world content.",
+      "result": "Placeable interactive Card Zone preserving World/Card/Meta owner boundaries.",
+      "promptSection": "CZ-WORLD-01 · Placeable WorldBuilder Card Zone",
+      "sourceSet": "cardZones",
+      "waitingFor": "CZ-RECIPE-01 + usable WB authoring/resource-picker seam",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "cz-prod-01",
+      "strand": "card-zones",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Web integration + GitHub Bridge",
+      "title": "Card Zone · Collection Milestone",
+      "what": "Walk/drive to zone, fluid, stack, Beam/unfold, Card Cube inspection, collect and persist into Almanac.",
+      "result": "One coherent world→card→Journey review loop.",
+      "promptSection": "CZ-PROD-01 · Card Zone collection milestone",
+      "sourceSet": "cardZones",
+      "waitingFor": "CZ-WORLD-01 + META-JOURNEY-01 + META-ALMANAC-01",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "meta-journey-01",
+      "strand": "player-meta-hud",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Player Meta · Journey Contract",
+      "what": "Adapt the versioned Overworld Journey donor into one cross-mode durable player-meta state; keep authored world saves separate.",
+      "result": "Versioned JSON import/export + shared semantic event contract proven in two consumers.",
+      "promptSection": "META-JOURNEY-01 · Cross-mode Player Journey contract",
+      "sourceSet": "playerMetaHud",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "journeyBlob": "ad58ef4239254f42a994ada3e729dd820fa1806c"
+    },
+    {
+      "id": "meta-hud-01",
+      "strand": "player-meta-hud",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "Web + bounded Claude Design",
+      "title": "Player Meta · Adaptive HUD Shell",
+      "what": "Define shared meta slots plus real mode-specific providers for Walk, Drive/Race, Combat and immersive Almanac.",
+      "result": "Interactive cross-mode HUD comparison over one state contract; no fake minimaps/instruments.",
+      "promptSection": "META-HUD-01 · Adaptive cross-mode HUD shell",
+      "sourceSet": "playerMetaHud",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "raceHudBlob": "affb1ba1d175351fa5d7b30474afb4c421f4dd83",
+      "travelHudBlob": "e73aec107a9d3cf811a025ccbe6b2730e21fcfe5"
+    },
+    {
+      "id": "meta-almanac-01",
+      "strand": "player-meta-hud",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "Player Meta · Fractal Almanac",
+      "what": "Upper-right real-card fan opens collection/Journey overlay and deeper Almanac; import/export stays Player Journey JSON.",
+      "result": "Collection + Diary + quest/memory + replay/discovery interface; optional immersive chamber suppresses game HUD.",
+      "promptSection": "META-ALMANAC-01 · Fractal Almanac overlay + Journey import/export",
+      "sourceSet": "playerMetaHud",
+      "waitingFor": "META-JOURNEY-01",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "meta-inventory-01",
+      "strand": "player-meta-hud",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "Player Meta · 20-slot Backpack",
+      "what": "Implement Georg's current 20-visible-slot carry inventory under Player Journey; exact old sketch source remains unpinned.",
+      "result": "Cross-mode readable Backpack overlay + typed item state.",
+      "promptSection": "META-INVENTORY-01 · 20-slot Backpack",
+      "sourceSet": "playerMetaHud",
+      "waitingFor": "META-JOURNEY-01",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "historicalSourceStatus": "SOURCE_REQUIRED; current 20-slot layout is explicit user direction"
+    },
+    {
+      "id": "meta-pop-01",
+      "strand": "player-meta-hud",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Player Meta · Universal POP",
+      "what": "Replace mode-local authoritative POP totals with typed awards into one Journey-owned balance.",
+      "result": "Travel/Race/Combat-or-Town awards persist in one account across reload.",
+      "promptSection": "META-POP-01 · Universal POP account",
+      "sourceSet": "playerMetaHud",
+      "waitingFor": "META-JOURNEY-01",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "meta-radio-01",
+      "strand": "player-meta-hud",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "Player Meta · Collected Music / Radio",
+      "what": "Persist unlocked tracks and shared media state across Walk/Drive/etc while SFX stays game-owned.",
+      "result": "Cross-mode collected Radio + export/import persistence.",
+      "promptSection": "META-RADIO-01 · Collected songs + cross-mode Radio",
+      "sourceSet": "playerMetaHud",
+      "waitingFor": "META-JOURNEY-01 + AUDIO-AUDITION-01",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "meta-nav-01",
+      "strand": "player-meta-hud",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "Player Meta · Context Navigation",
+      "what": "HUD consumes actual route/world navigation providers; no provider means no minimap.",
+      "result": "Race actual-route + World/OSM provider under one thin HUD contract.",
+      "promptSection": "META-NAV-01 · Context navigation providers",
+      "sourceSet": "playerMetaHud",
+      "waitingFor": "META-HUD-01 + real Race and World navigation data providers",
+      "cloudflareRequired": false,
+      "workRequired": false
+    },
+    {
+      "id": "ui-grammar-01",
+      "strand": "player-meta-hud",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "Web + bounded Claude Design",
+      "title": "Interface · Authoring Icon Legibility",
+      "what": "Keep shared edit-layer behavior but replace 28×28/13px ambiguous inline affordances with recognizable context-local controls.",
+      "result": "Current-vs-revised real-object editor comparison shared by ToolBox/WorldBuilder.",
+      "promptSection": "UI-GRAMMAR-01 · Authoring icon/interaction legibility",
+      "sourceSet": "playerMetaHud",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "currentEditLayerBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+      "currentUiBlob": "20ef6153dcd4819fb6929a3c87e0e539aecdf4a3"
+    },
+    {
+      "id": "meta-prod-01",
+      "strand": "player-meta-hud",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Web integration + GitHub Bridge",
+      "title": "Player Meta · Cross-mode Milestone",
+      "what": "One imported Journey survives Walk→Card Zone→Drive→Combat→NPC gift→Radio→export/reload with adaptive HUD.",
+      "result": "One KFB player identity across real modes.",
+      "promptSection": "META-PROD-01 · Cross-mode Player Meta milestone",
+      "sourceSet": "playerMetaHud",
+      "waitingFor": "META-JOURNEY-01 + META-HUD-01 + META-ALMANAC-01 + META-INVENTORY-01 + META-POP-01 + META-RADIO-01",
+      "cloudflareRequired": false,
+      "workRequired": false
     }
   ],
   "presentation": {
@@ -915,9 +1163,9 @@
     "rule": "Do not render all jobs as one default wall."
   },
   "metrics": {
-    "strands": 11,
-    "jobs": 53,
-    "ready": 26,
-    "hold": 27
+    "strands": 13,
+    "jobs": 68,
+    "ready": 32,
+    "hold": 36
   }
 }
