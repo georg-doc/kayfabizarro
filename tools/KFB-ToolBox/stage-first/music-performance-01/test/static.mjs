@@ -37,7 +37,7 @@ ok('song exact blob',gitBlobSha(read(BASE+'/audio/rubbish_groove.mp3'))===recipe
 ok('one preview audio element',(html.match(/<audio\b/g)||[]).length===1,(html.match(/<audio\b/g)||[]).length);
 ok('no per-performer Audio constructor',!runtime.includes('new Audio('));
 ok('song is master clock',runtime.includes('function beatPos()')&&runtime.includes('audio.currentTime'));
-ok('no second motion catalogue',source.existingMotionLibrary.status==='OWNER_PRESERVED');
+ok('no second motion catalogue',source.motionLibrary.status==='OWNER_PRESERVED');
 ok('ToolBox Music entry present',coherent.includes("id:'kfb-ci-music'")&&coherent.includes("./music-performance-01/"));
 ok('build marker',html.includes('data-kfb-build="MUSIC-PERF-01-v1"'));
 
