@@ -1,3 +1,26 @@
+## 2026-09-24 · Three.js IK parity + per-brief model/reasoning/budget dispatch + WSA mount handoff
+
+- added `IK_CCD_PARITY_DECISION_2026-09-24.md` after source comparison between current Resident Atlas `reachChain()` and upstream Three.js r184/current `CCDIKSolver`;
+- identified concrete differences worth A/B testing: current KFB chain construction is typically proximal→distal and unconstrained; upstream CCD supports distal-first links, rotation min/max, step-angle bounds, axis limitation, blend and small-angle vibration suppression;
+- added `IK-CCDIK-PARITY-01` READY as a same-source A/B/C on Rig_Medium + Orc Brute; no current Puppet replacement before visual parity passes;
+- added `EXECUTION_DISPATCH_POLICY_2026-09-24.md`;
+- every self-service catalog job now carries stable execution profile + current model + reasoning + budget + optional secondary profile;
+- current cost-first profile map:
+  - Web Fast/Standard/Deep → GPT-5.6 Sol Instant/Medium/High;
+  - Claude Design normal → Sonnet 5 Medium;
+  - Cowork normal → Sonnet 5 Medium, but secondary only;
+  - Blender normal/deep → Sonnet 5 Medium/High;
+  - Opus 5.5 only explicit deep escalation;
+  - Work only capability escalation;
+- 79/79 catalog jobs have visible execution metadata in their briefing section;
+- no job defaults to Work; no job defaults to Cowork;
+- base Self-Service Jobs C/D also received explicit execution profiles;
+- added `WSA_HUB_V3_MOUNT_HANDOFF_2026-09-24.md`: existing HUB-CTRL #202 mounts v3 additively, keeps operational lanes separate from the self-service catalog, and does not run another Work/WSA review loop;
+- added `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` as the fresh-chat recovery entry for this architecture/planning role;
+- catalog now **13 strands / 79 jobs / 36 READY / 43 HOLD**;
+- architecture/source validation now **158/158 PASS**;
+- public Hub has **not** yet mounted this expanded catalog; existing HUB-CTRL remains owner and publication proof is still required.
+
 ## 2026-09-24 · Character / Resident production workflow
 
 - added `CHARACTER_RESIDENT_PRODUCTION_WORKFLOW_2026-09-24.md`;
