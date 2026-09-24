@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-kfb-slice="NPC-LIFE-01" data-kfb-build="v1" data-source-head="ea157c52dd6cadbae1b0fe40f6cacede65ec9792">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KFB · NPC-LIFE-01 · Living Resident encounter bus</title>
+<style>
+  :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#181b22;color:#f4f1e8}
+  *{box-sizing:border-box} body{margin:0;overflow:hidden} #scene{position:fixed;inset:0;width:100vw;height:100vh;display:block}
+  .top{position:fixed;left:18px;top:16px;right:18px;display:flex;gap:8px;align-items:flex-start;justify-content:space-between;pointer-events:none}
+  .panel{pointer-events:auto;background:rgba(16,18,23,.88);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px 12px;box-shadow:0 12px 40px rgba(0,0,0,.25);backdrop-filter:blur(9px)}
+  h1{font-size:14px;margin:0 0 4px;font-weight:750;letter-spacing:.02em}.muted{font-size:11px;color:#b8bdc8;max-width:720px}.status{font-size:12px;margin-top:5px}
+  .controls{display:flex;gap:6px;flex-wrap:wrap;max-width:600px}button{font:inherit;font-size:12px;color:inherit;background:#292f3a;border:1px solid #525c6b;border-radius:8px;padding:7px 9px;cursor:pointer}button:hover{background:#343c49}button:disabled{opacity:.42;cursor:default}
+  .readout{position:fixed;left:18px;bottom:16px;width:min(560px,calc(100vw - 36px));display:grid;gap:6px;pointer-events:none}.readout .panel{pointer-events:auto}.beatline{display:flex;gap:10px;align-items:baseline}.beat{font-size:20px;font-weight:800}.line{font-size:14px;line-height:1.35}.tiny{font-size:11px;color:#b8bdc8;line-height:1.35}
+  #event-log{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;line-height:1.4;max-height:110px;overflow:auto;color:#c7ccd7}.beat{color:#ffe397}.motion{color:#9ed3ff}.text{color:#f5c1ff}.offer{color:#b8f0b2}.source{color:#ffcc9d}.input{color:#d8e9ff}
+  .decision{display:flex;gap:6px;margin-top:8px}
+  @media(max-width:760px){.top{display:block}.top>.panel+ .panel{margin-top:8px}.controls{max-width:none}.readout{bottom:8px;left:8px;width:calc(100vw - 16px)}.muted{display:none}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"}}</script>
+<script src="/overworld/overworld/chatter-phrases.js"></script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div class="top">
+  <div class="panel">
+    <h1>NPC-LIFE-01 · Living Resident encounter bus</h1>
+    <div class="muted">Real Resident Atlas actors. Source isolate first; then semantic beats. Host owns movement + legality. Motion, ChatterBox text and offer selection stay independent.</div>
+    <div class="status" id="status">Loading…</div>
+    <div class="tiny" id="source-status"></div><div class="tiny">publication source head · ea157c52dd6c</div>
+  </div>
+  <div class="panel controls">
+    <button id="source-goth">Source · Goth Girl</button>
+    <button id="source-soldier">Source · Toy Soldier</button>
+    <button id="residents">Resident ↔ Resident</button>
+    <button id="player">Resident → Player</button>
+  </div>
+</div>
+<div class="readout">
+  <div class="panel">
+    <div class="beatline"><span class="tiny">semantic beat</span><span class="beat" id="beat">source</span></div>
+    <div class="line" id="chatter-line">Source isolate · exact Resident Atlas actor; no encounter running.</div>
+    <div class="tiny" id="motion-status">motion · source pose only</div>
+    <div class="tiny" id="offer-status">offer · inactive</div>
+    <div class="decision"><button id="accept" disabled>Accept</button><button id="decline" disabled>Decline</button></div>
+  </div>
+  <div class="panel" id="event-log"></div>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
