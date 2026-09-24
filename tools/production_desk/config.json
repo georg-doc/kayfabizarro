@@ -326,38 +326,6 @@
   },
   "tools": [
     {
-      "group": "Figuren und Gesichter",
-      "id": "eyerig-batch",
-      "title": "EyeRig-Werkbank",
-      "what": "Augen für Rig_Medium- und Rig_Large-Figuren einstellen und prüfen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/eye-rig-batch/index.html"
-    },
-    {
-      "group": "Figuren und Gesichter",
-      "id": "eyerig-legacy",
-      "title": "Legacy-Augen 17/17",
-      "what": "Die 17 Legacy-Köpfe von vorne und schräg ansehen und Augen freigeben.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/eye-rig-batch/legacy/index.html"
-    },
-    {
-      "group": "Figuren und Gesichter",
-      "id": "motion-lab",
-      "title": "KayKit Motion Lab",
-      "what": "Bewegungen für KayKit-Figuren ansehen und abstimmen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/kaykit-motion-lab-v1/index.html"
-    },
-    {
-      "group": "Figuren und Gesichter",
-      "id": "ranged-calibration",
-      "title": "Fernkampf-Kalibrierung",
-      "what": "Angenommene Grundeinstellung für Schusswaffen an KayKit-Figuren.",
-      "status": "Fertig",
-      "path": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/index.html"
-    },
-    {
       "group": "Welt und Gelände",
       "id": "world-atlas",
       "title": "World / Environment Atlas",
@@ -374,22 +342,6 @@
       "path": "kfb-hub/stage/toolbox/world-builder-p1-review/index.html"
     },
     {
-      "group": "Welt und Gelände",
-      "id": "world-builder-p2",
-      "title": "WorldBuilder · flach, Kugel, Ring (P2)",
-      "what": "Dieselbe Mini-Szene auf drei Weltformen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/world-building-preflight/index.html"
-    },
-    {
-      "group": "Welt und Gelände",
-      "id": "tileable-seam",
-      "title": "Nahtlose Wandtextur",
-      "what": "Alte wiederholte Textur gegen nahtlose Variante an der Wandnaht vergleichen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/tileable-macro-seam-lab/index.html"
-    },
-    {
       "group": "Assets und Bausteine",
       "id": "asset-librarian",
       "title": "Asset Librarian",
@@ -400,9 +352,9 @@
     {
       "group": "Assets und Bausteine",
       "id": "card-zone-lab",
-      "title": "Card Zone Lab",
-      "what": "Karten-Effekte: Flüssigkeit, Kartenstapel, Himmelsstrahlen, Kartenwürfel.",
-      "status": "Zum Prüfen",
+      "title": "Card Zone Lab v2 · Recovery-Referenz",
+      "what": "Alte, visuell brauchbare Card-Zone-v2-Recovery. Donor für Fluid, Stack/Reveal, Beam und Card Cube — kein aktuelles Produktionswerkzeug.",
+      "status": "Referenz / Donor",
       "path": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html"
     },
     {
