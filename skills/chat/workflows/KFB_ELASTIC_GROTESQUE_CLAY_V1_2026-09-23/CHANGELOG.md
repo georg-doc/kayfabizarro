@@ -180,3 +180,29 @@ Georg reviews tuned V2 and returns **ACCEPT / REJECT**. LC-01 waits for ACCEPT.
 
 ### NEXT GATE
 Georg: **ACCEPT / REJECT R2**. LC-01 remains HOLD until ACCEPT.
+
+## 2026-09-24 · HÜRTH 01 R2 · HUMAN FAIL / FREEZE
+
+### HUMAN RESULT
+- R2 rejected in real Chrome;
+- persistent shadow/light boundaries;
+- patched road/path/curb junction appearance with new artefacts;
+- roof/body still reads as separate lid + block;
+- facade colour/detail rhythm still reads as random rather than designed.
+
+### IMPORTANT
+R2 had **38/38 automated PASS, 3/3 WebGL2, 0 errors**.
+This is retained as technical evidence, not visual acceptance.
+
+### DECISION
+- R1 + R2 = two failed repair passes on the same visual gate;
+- stop implementation;
+- freeze current candidate;
+- create full failure recovery;
+- no R3 patch pass on the same foundation.
+
+### RECOVERY
+`FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md`
+
+### NEXT GATE
+Research known design grammar + isolated topology/object proofs before any new Hürth block implementation.
