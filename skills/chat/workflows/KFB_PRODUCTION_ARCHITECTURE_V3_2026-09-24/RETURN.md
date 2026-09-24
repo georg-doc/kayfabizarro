@@ -616,6 +616,29 @@ Hub note:
 the Production Desk deliberately does not fetch `external:true` private repos, so its Racer card had remained stale at PR #33. HUB-CTRL #202 has been updated to the RKIT-06 last-known status; durable fix is a compact same-repo status mirror written by the owning GitHub Bridge.
 
 
+## Parallel WorldBuilder progress while OSM compile runs
+
+New READY job:
+`WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell`.
+
+Execution:
+`CLAUDE_DESIGN_STANDARD · Claude Design · Claude Sonnet 5 · medium reasoning · STANDARD budget`.
+
+It is explicitly parallel to `WORLD-ZONE-BAKE-01` and may start immediately.
+
+Boundaries:
+- use only existing real Cologne/WB-W0/City Grotesque/Elastic source fixtures;
+- no live OSM fetch;
+- no invented geography;
+- no final World Zone schema/compile ownership;
+- no second WorldBuilder/editor runtime.
+
+Output is a reusable visual/authoring shell that later receives the baked Zone package behind the same seam.
+
+Current architecture catalog after this addition:
+**13 strands · 80 jobs · 37 READY · 43 HOLD**.
+
+
 ## Public Hub boundary
 
 The expanded **13-strand / 79-job** catalog is prepared for the existing **HUB-CTRL PR #202**.
