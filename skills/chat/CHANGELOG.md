@@ -1776,3 +1776,15 @@ Exactly one next gate:
 - **PUBLIC VERIFY PENDING** until that exact Cloudflare route exposes `AUDIO-CAL-01-v1`.
 - Human listening remains pending; procedural storm is calibration-only and applause is not a sustained crowd bed.
 - Draft PR #205 remains unmerged; no Live promotion authorized.
+
+
+## 2026-09-24 · AUDIO-CAL-01 public verification
+
+- exact publication branch: `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`;
+- Cloudflare Pages check `107727186186`: **SUCCESS**, deployment completed 16:26:22Z;
+- public attempts 1–2 are retained as timing evidence because they ended before that deployment completed;
+- public workflow `36025670884`, attempt 3 / job `107731456493`: **31/31 PASS** on the exact route;
+- public proof artifact `10819978496`, digest `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`;
+- exact human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`;
+- status: **PUBLIC_VERIFIED · HUMAN LISTENING PENDING**;
+- Draft PR #205 remains unmerged; no broad Race/Combat/Town integration or Live promotion is implied.

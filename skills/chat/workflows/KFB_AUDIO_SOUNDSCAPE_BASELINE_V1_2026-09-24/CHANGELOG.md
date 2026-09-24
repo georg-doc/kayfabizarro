@@ -91,3 +91,15 @@ Proof artifact:
 ### OPEN
 
 Public Stage publication is still pending at this checkpoint. No public or human listening PASS is inferred from CI.
+
+
+## 2026-09-24 · AUDIO-CAL-01 PUBLIC_VERIFIED
+
+- mirrored exact Stage package, 11 required audio assets and Hub tool to `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`;
+- Cloudflare Pages check `107727186186` completed **SUCCESS** at 16:26:22Z;
+- public attempts 1–2 failed at the Stage marker because they completed before that deploy existed;
+- unchanged attempt 3 ran after confirmed deployment and reached **31/31 PASS** on the exact Cloudflare route;
+- public workflow `36025670884`, attempt 3, job `107731456493`;
+- artifact `10819978496`, digest `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`;
+- direct human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`;
+- next gate is Georg human listening only; no runtime integration, PR merge or Live promotion follows automatically.

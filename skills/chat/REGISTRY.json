@@ -55,7 +55,7 @@
       "recovery": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RECOVERY.md",
       "return": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md",
       "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/",
-      "stageStatus": "PUBLIC_VERIFY_PENDING",
+      "stageStatus": "PUBLIC_VERIFIED",
       "loadWhen": [
         "KFB audio",
         "soundscape",
@@ -77,7 +77,7 @@
         "a replacement asset registry",
         "automatic merge or Live promotion"
       ],
-      "note": "AUDIO-CAL-01 is 31/31 browser/WebAudio PASS on the candidate and mirrored to main for Stage publication. Exact Cloudflare route still requires PUBLIC_VERIFIED before the human listening gate."
+      "note": "AUDIO-CAL-01 is source/CI green and PUBLIC_VERIFIED on the exact Cloudflare Stage (31/31 public Chromium/WebAudio PASS). Georg human listening is the one next gate before broader consumer integration."
     },
     {
       "id": "claude-design-failure-recovery",

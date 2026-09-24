@@ -1,10 +1,29 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
-**Status:** AUDIO-CAL-01 CI PASS · PUBLIC STAGE MARKER BLOCKED · RECOVERABLE  
+**Status:** AUDIO-CAL-01 PUBLIC_VERIFIED · HUMAN LISTENING PENDING · RECOVERABLE  
 **Date:** 2026-09-24  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `web/kfb-audio-soundscape-baseline-2026-09-24`  
 **Draft PR:** `#205` — https://github.com/georg-doc/kayfabizarro/pull/205
+
+## PUBLIC VERIFIED · 2026-09-24
+
+AUDIO-CAL-01 is now publicly verified on the required Cloudflare Stage route.
+
+- publication branch: `cloudflare-live@a8e2af8f79f33b51f638222f203a28f3e1c15b23`
+- Cloudflare Pages check: `107727186186` → **SUCCESS**
+- Cloudflare deploy completed: `2026-09-24T16:26:22Z`
+- Cloudflare preview deployment: `15173f7d`
+- public proof workflow: `36025670884`, attempt **3**
+- public proof job: `107731456493` → **SUCCESS**
+- exact public route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-calibration/`
+- public Chromium/WebAudio: **31/31 PASS**
+- public proof artifact: `10819978496`
+- artifact digest: `sha256:49ef9b156efadaced6d257f8768ba553a780a443a6bd13666014781e7a2fd3c2`
+
+The earlier public attempts were timing/observability failures: attempts 1–2 finished before Cloudflare reported the `a8e2af8f…` deployment complete. After the confirmed Pages deploy, the unchanged candidate passed on its first public retry.
+
+Current gate: **HUMAN LISTENING ONLY**. Georg should judge intelligibility, duck amount, event readability and whether the world remains alive across the three calibration states.
 
 ## RECOVERY CHECKPOINT · 2026-09-24 after chat interruption
 
@@ -33,7 +52,7 @@ Resume action:
 3. only if a concrete publication defect is found may one bounded second publication repair be attempted;
 4. if that repaired public gate fails again, STOP and preserve the candidate under the two-repair rule.
 
-`PUBLIC_VERIFIED` and human listening remain **OPEN**.
+Historical note: at this checkpoint `PUBLIC_VERIFIED` was still open. It is superseded by the PUBLIC VERIFIED section above; human listening remains open.
 
 ## CURRENT RECOVERY OVERRIDE · AUDIO-CAL-01
 
