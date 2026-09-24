@@ -1,18 +1,18 @@
 {
-  "schema": "kfb.toolbox-route-audit/2",
-  "audited": "2026-09-22",
+  "schema": "kfb.toolbox-route-audit/3",
+  "audited": "2026-09-24",
   "publicationBranch": {
     "repo": "georg-doc/kayfabizarro",
     "ref": "cloudflare-live",
-    "head": "120159b1d7708b5bf580af63da4c503a6821a286",
+    "head": "597930b8de9f8e00f1f10dc4d69adffe32b5e6f6",
     "treeChecked": true
   },
   "toolboxRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
   "counts": {
-    "publicPreview": 8,
+    "publicPreview": 10,
     "missingOrBlocked": 5,
-    "sourceOrIntegration": 8,
-    "totalCards": 21
+    "sourceOrIntegration": 14,
+    "totalCards": 29
   },
   "publicPreview": [
     {
@@ -24,6 +24,11 @@
       "id": "world-atlas",
       "url": "https://kayfabizarro.pages.dev/world-atlas/",
       "publicationPath": "world-atlas/index.html"
+    },
+    {
+      "id": "tileable-macro-seam-lab",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/",
+      "publicationPath": "kfb-hub/stage/toolbox/tileable-macro-seam-lab/index.html"
     },
     {
       "id": "motion-lab",
@@ -48,14 +53,18 @@
     {
       "id": "theatre-curtain-v1",
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-dev-studio/theatre-curtain-v1/",
-      "publicationPath": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html",
-      "evidence": "25/25 public browser PASS at tested head 3bdfdd2e9de648871102d91c89612a5b7ee3c4ab"
+      "publicationPath": "kfb-hub/stage/game-dev-studio/theatre-curtain-v1/index.html"
     },
     {
-      "id": "card-zone-lab-v2-source",
+      "id": "card-zone-source",
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
-      "publicationPath": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html",
-      "evidence": "32/32 local Chromium/WebGL PASS; public proof pending publication readback"
+      "publicationPath": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html"
+    },
+    {
+      "id": "music-performance",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/",
+      "publicationPath": "kfb-hub/stage/toolbox/music-performance/index.html",
+      "evidence": "public Chromium 22/22 PASS · MUSIC-PERF PR #207"
     }
   ],
   "missingOrBlocked": [
@@ -92,16 +101,22 @@
     }
   ],
   "sourceOrIntegration": [
+    "Surface Adapter Preflight",
+    "C-MVP-A-R2 · Combat MVP",
     "Legacy EyeRig 17/17",
     "Legacy Web Pet v0",
     "3D In-scene Editor",
     "Tiny Treats Rooms & Prop Groups",
     "Living Plant / Prop Lab",
-    "FrankenStein Studio v17",
+    "Pet / FrankenStein v17+ → Stage-First",
     "Rigging Lab v1",
-    "Animation Lab v2 / v3 intake"
+    "Animation Studio · Motion Library",
+    "Stage-First Coherent ToolBox",
+    "Direct FBX Motion Intake",
+    "FrizzleBob Body Family",
+    "Resident Disco · Source Cast"
   ],
-  "rule": "No preview is shown unless an exact public route is present/proven. Missing/blocked routes link to source or PR only.",
-  "auditedAt": "2026-09-22T04:00:00+02:00",
-  "note": "Card Zone F1.5 exposes the exact source only; it does not promote extracted modules. Public verification of this router revision is a separate gate."
+  "rule": "No preview is shown unless an exact public route exists on the checked publication branch. New MVPs remain source/brief cards until implemented and deliberately published.",
+  "auditedAt": "2026-09-24T23:00:00+02:00",
+  "note": "All ten public-preview paths were re-read on cloudflare-live at the recorded head. Animation Studio/v17+/Direct FBX/FrizzleBob Body Family/Resident Disco remain source or briefing surfaces; no unpublished route is presented as live."
 }
