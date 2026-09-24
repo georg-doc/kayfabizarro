@@ -1,5 +1,5 @@
 {
-  "schema": "kfb.production-architecture.v3-input-locks/7",
+  "schema": "kfb.production-architecture.v3-input-locks/8",
   "updated": "2026-09-24",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
@@ -595,6 +595,25 @@
         "blankLegacyHeadAccessories": "SOURCE_REQUIRED / exact template/accessory paths not pinned"
       },
       "rule": "Browser is default for pose/prop/scene tuning; Blender only for new time-based motion, retarget, weights, topology, rig or bake. Browser pose patches may become Blender key-pose references."
+    },
+    "threeIkDonor": {
+      "upstreamRepo": "mrdoob/three.js",
+      "residentThreeVersion": "0.184.0",
+      "example": "examples/webgl_animation_skinning_ik.html",
+      "solver": "examples/jsm/animation/CCDIKSolver.js",
+      "compatibleTag": "r184",
+      "currentKfbSolver": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/lib/atlas.js::reachChain",
+      "currentPuppet": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/lib/rigwork.js",
+      "decisionDoc": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/IK_CCD_PARITY_DECISION_2026-09-24.md",
+      "rule": "A/B current reachChain vs upstream CCD raw vs constrained CCD on the same KFB actors before replacing any current Puppet behavior"
+    },
+    "executionDispatch": {
+      "policy": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXECUTION_DISPATCH_POLICY_2026-09-24.md",
+      "date": "2026-09-24",
+      "openaiDefault": "GPT-5.6 Sol",
+      "claudeDefault": "Claude Sonnet 5",
+      "claudeDeepEscalation": "Claude Opus 5.5",
+      "workRule": "capability escalation only; never default for GitHub/briefing/Hub-mount work"
     }
   },
   "strands": {
@@ -609,7 +628,9 @@
         "sharedSceneEditor",
         "assetLibrarianPicker",
         "vehicleAuthoring",
-        "characterResidentWorkflow"
+        "characterResidentWorkflow",
+        "threeIkDonor",
+        "executionDispatch"
       ],
       "target": "ToolBox Production Milestone"
     },
@@ -621,7 +642,9 @@
         "residentAtlas",
         "residentPoseStudio",
         "audioFxAudition",
-        "characterResidentWorkflow"
+        "characterResidentWorkflow",
+        "threeIkDonor",
+        "executionDispatch"
       ],
       "target": "shared motion profiles + Resident performance pipeline"
     },
