@@ -26,6 +26,8 @@ General rule for every job:
 
 **Executor:** fresh ChatGPT Web development chat.
 
+**Execution profile:** `WEB_FAST` · ChatGPT Web · GPT-5.6 Sol · reasoning **instant** · budget **LOW**.
+
 **Outcome:** one compact review artifact that shows the **real source object/runtime** and answers the visual question without a deployment round.
 
 **Do not build:** a measurement lab, dashboard, new owner, Cloudflare route or long evidence pack unless the visual result itself requires it.
@@ -53,6 +55,8 @@ General rule for every job:
 **Use when:** continuing the ToolBox toward a usable Stage-First authoring tool.
 
 **Executor:** Web/Coworker with GitHub Bridge; Claude Design only for later coherent visual refinement.
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `COWORK_STANDARD`, `GITHUB_BRIDGE`.
 
 **Input lock:** `toolbox-coherent-integration-01`.
 
