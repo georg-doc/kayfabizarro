@@ -52,3 +52,26 @@ https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b1/
 One first-pass visual defect (black media surfaces despite automated PASS) was repaired by using the resolved owner canvases directly; B0 stayed untouched.
 
 **Exactly one next gate: Georg picture review of B1. Curtain C1 remains HOLD.**
+
+
+## 2026-09-24 · B1 accepted → Billboard media line continues
+
+Georg accepted B1: **PASS**.
+
+Current recovery/planning SSOT:
+`tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md`
+
+Next bounded slice is **B2a · inline YouTube / CSS3D surface**.
+
+Pinned donor before implementation:
+- `mrdoob/three.js/examples/css3d_youtube.html`;
+- Three.js **r160**;
+- commit `d04539a76736ff500cae883d6a38b3dd8643c548`.
+
+Planned after B2a, but not started:
+- **B2b** Living Mockup / Collage surface;
+- **B2c** KFB Talking City Lights (eyes/brows/mouth + ChatterBox);
+- **B3** cartoon/Elastic-Toon billboard body;
+- **C1** Curtain motif remains HOLD.
+
+B2a first proves the official CSS3D YouTube plane in isolation, then aligns one iframe to the accepted B1 media face. No modal overlay.
