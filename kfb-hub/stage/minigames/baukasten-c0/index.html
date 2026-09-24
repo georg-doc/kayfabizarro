@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB C0 · Modular Minigame Baukasten</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="stylesheet" href="./styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<header class="mast">
+  <div class="eyebrow">KFB MODULAR MINIGAME HUB · C0</div>
+  <h1>BAUKASTEN <span>CATALOG</span></h1>
+  <p class="lead">A compact, source-pinned visual catalog. It reads the central Asset Registry and reuses current Resident / Graft donors. No assets are copied here.</p>
+  <div class="sourcebar">
+    <span>BASE <code id="baseSha">…</code></span>
+    <span>REGISTRY <code id="registrySha">…</code></span>
+    <span id="globalStatus" class="status loading">LOADING EVIDENCE</span>
+  </div>
+</header>
+
+<nav class="roles" aria-label="Role lanes">
+  <a href="#carries"><b>01</b><span>carries</span><small>world grammar</small></a>
+  <a href="#tells"><b>02</b><span>tells</span><small>place & props</small></a>
+  <a href="#inhabits"><b>03</b><span>inhabits</span><small>resident scene</small></a>
+  <a href="#acts"><b>04</b><span>acts</span><small>driver graft</small></a>
+</nav>
+
+<main>
+<section class="scope" id="packs">
+  <div class="section-head"><div><span>INPUT SCOPE</span><h2>Registry-backed families</h2></div><p>Counts and exact roots come from <code>registry/assets/v1/packs/*.json</code> at runtime.</p></div>
+  <div id="packGrid" class="pack-grid" aria-live="polite"></div>
+</section>
+
+<section class="tiny-map" id="tells">
+  <div class="section-head"><div><span>TINY TREATS</span><h2>Modular interior ≠ loose scenery</h2></div><p>Classification is explicit. Packs may contain both; C0 does not flatten walls/floors into scatter props.</p></div>
+  <div id="tinyGrid" class="tiny-grid"></div>
+</section>
+
+<section class="proofs">
+  <div class="section-head"><div><span>MEASURED PROOFS</span><h2>Four roles, five browser witnesses</h2></div><p>Dimensions are calculated from the loaded scene. Unknown collision remains review-only.</p></div>
+
+  <article class="proof carry" id="carries" data-proof="carry">
+    <div class="proof-copy">
+      <div class="role-tag"><b>01</b> carries</div>
+      <h3>Dungeon · floor tile family</h3>
+      <p class="why">Structural support candidate: measurable footprint, authored scale, no runtime collision ownership implied.</p>
+      <div class="facts" data-facts></div>
+    </div>
+    <div class="viewer-shell"><canvas data-canvas></canvas><div class="viewer-label">orbit / drag · auto-rotates</div></div>
+  </article>
+
+  <article class="proof tell" data-proof="tell-modular">
+    <div class="proof-copy">
+      <div class="role-tag"><b>02A</b> tells · modular</div>
+      <h3>Bakery · modular doorway</h3>
+      <p class="why">A room connector, not loose scenery. Height is the scale anchor; the old ≈0.73 donor value is re-derived, not assumed.</p>
+      <div class="facts" data-facts></div>
+    </div>
+    <div class="viewer-shell"><canvas data-canvas></canvas><div class="viewer-label">modular interior witness</div></div>
+  </article>
+
+  <article class="proof tell loose" data-proof="tell-loose">
+    <div class="proof-copy">
+      <div class="role-tag"><b>02B</b> tells · loose</div>
+      <h3>Pretty Park · bench</h3>
+      <p class="why">A genuine scatter/placement prop. Kept separate from the same pack’s authored ground parts.</p>
+      <div class="facts" data-facts></div>
+    </div>
+    <div class="viewer-shell"><canvas data-canvas></canvas><div class="viewer-label">loose scenery witness</div></div>
+  </article>
+
+  <article class="proof inhabit" id="inhabits" data-proof="inhabit">
+    <div class="proof-copy">
+      <div class="role-tag"><b>03</b> inhabits</div>
+      <h3>Clown · Juggling Island module</h3>
+      <p class="why">Existing Resident Atlas S6 vignette through the thin <code>mount / update / dispose</code> seam. The consumer still owns support and collision.</p>
+      <div class="facts" data-facts></div>
+    </div>
+    <div class="viewer-shell"><canvas data-canvas></canvas><div class="viewer-label">resident module · live activity</div></div>
+  </article>
+
+  <article class="proof act" id="acts" data-proof="act">
+    <div class="proof-copy">
+      <div class="role-tag"><b>04</b> acts</div>
+      <h3>FrizzleBob · Driver Graft</h3>
+      <p class="why">The current graft contract and reader mount the real KayKit Driver host. The catalog does not copy the rig, face, animation or collision owner.</p>
+      <div class="facts" data-facts></div>
+    </div>
+    <div class="viewer-shell"><canvas data-canvas></canvas><div class="viewer-label">graft-driver · animation host seam</div></div>
+  </article>
+</section>
+
+<section class="exports">
+  <div><span>HANDOFF</span><h2>Small outputs, not a second library</h2><p>Exports contain references, measurements and ownership seams only.</p></div>
+  <div class="buttons"><button id="sceneRecipe" disabled>Download Scene Recipe</button><button id="moduleManifest" disabled>Download Module Manifest</button></div>
+</section>
+</main>
+
+<footer><span>KFB C0 · candidate-only</span><span id="footerStatus">Central registry → measured browser evidence</span></footer>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
