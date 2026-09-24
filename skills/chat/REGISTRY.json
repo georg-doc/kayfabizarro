@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-22",
+  "updated": "2026-09-24",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -45,6 +45,37 @@
         "next-day Work review"
       ],
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
+    },
+    {
+      "id": "kfb-audio-soundscape-baseline-v1-2026-09-24",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md",
+      "recovery": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RECOVERY.md",
+      "return": "skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/RETURN.md",
+      "loadWhen": [
+        "KFB audio",
+        "soundscape",
+        "TTS or narrator ducking",
+        "shared SFX",
+        "music or Jukebox",
+        "audio calibration"
+      ],
+      "owns": [
+        "cross-project audio inventory and routing",
+        "semantic mix-role contract proposal",
+        "AUDIO-CAL-01 briefing and recovery"
+      ],
+      "doesNotOwn": [
+        "Travel audio runtime",
+        "Race physics or runtime",
+        "Combat runtime",
+        "Boxel gameplay",
+        "a replacement asset registry",
+        "automatic merge or Live promotion"
+      ],
+      "note": "Current documentation baseline. Reuse Travel/Race/Combat/Boxel donors and the existing shared asset catalog; do not create a universal replacement audio engine."
     },
     {
       "id": "claude-design-failure-recovery",
