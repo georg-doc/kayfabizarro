@@ -120,6 +120,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
+- `../claude-design-session-export_v1.md` — **CURRENT CLAUDE DESIGN SESSION CUT EXPORT**: `/claude-export` creates a runnable current-code ZIP with Handover, active Changelog, Source/Donor locks, tests/evidence and NEXT_CHAT; voice-input ambiguities are marked instead of guessed
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
 - `workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md` — lean Hub UI brief for desktop, split-screen and mobile
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
