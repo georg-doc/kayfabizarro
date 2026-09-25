@@ -1,3 +1,30 @@
+# CURRENT UPDATE · WB-D2 + RESIDENT S40 HUB ROUTING · 2026-09-25
+
+Status: **HUB SOURCE UPDATED · LIVE REGISTRY REFRESH NEXT**
+
+New Inbox updates classified without promoting Inbox copies to owners:
+
+### WorldBuilder WB-D2
+- source upload `706c3f121bc3a305778306917613ea23eb772c16`;
+- current Hub lane: **WAITING**;
+- Hürth/Alstädten shell is presentation candidate only;
+- current priority remains WB2 HUMAN PASS → Claude Design;
+- after Web rehome, next integration gate is `WB-ZONE-SEAM-01`;
+- Alstädten OSM must be re-cached by OSM City Lab before source promotion.
+
+### Resident Disco S40
+- source upload `a46dbdff150362e7153c143b21fa76ffe8ffb5e4`;
+- current Hub lane: **CAN_START**;
+- use the existing S9/S40 candidate; do not rebuild Source Cast/Audition;
+- bridge owner hygiene, one performance transport and Motion Library metadata, then prepare bounded human review;
+- unresolved Graft raw@main, mic slot, HIT-2 placeholder, set-not-measured downbeats and Band second transport remain explicit.
+
+Architecture target after this intake: **90 jobs / 42 READY / 48 HOLD**.
+
+No new product Stage route or Live gameplay claim.
+
+---
+
 # CURRENT UPDATE · ROOT HUB CLOUDFLARE PUBLISH · 2026-09-25
 
 Status: **DEPLOY COMMIT WRITTEN · CLOUDLFARE/PUBLIC-PROOF RUNNING · EXACT URL VERIFY UNKNOWN**

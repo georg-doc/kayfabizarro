@@ -1,3 +1,12 @@
+## 2026-09-25 · WB-D2 + Resident S40 Hub routing
+
+- added WAITING WB-D2 shell lane pointing to current main Inbox handover;
+- converted obsolete Dance-D1 continuation into CAN_START Resident Disco S40 Bridge;
+- WorldBuilder Mobility now waits explicitly for WB2 Design/Rehome + WB-ZONE-SEAM;
+- preserved OSM City Lab source ownership for Alstädten;
+- preserved Resident/Music/Motion owners for S40;
+- no new public product route created.
+
 ## 2026-09-25 · Root Hub Cloudflare publication
 
 - published current 89-job root Hub to `cloudflare-live@8101c2c18f2210720649a3ecb6e3f388176eed23`;
