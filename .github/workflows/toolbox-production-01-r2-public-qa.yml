@@ -1,0 +1,40 @@
+name: ToolBox Production-01 r2 public Cloudflare QA
+
+on:
+  push:
+    branches:
+      - chatgpt-web/toolbox-r2-stage-review-recovery-2026-09-26
+    paths:
+      - ".github/workflows/toolbox-production-01-r2-public-qa.yml"
+      - "kfb-hub/stage/toolbox/production-01-r2/**"
+      - "tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_RECOVERY_2026-09-26/public-proof.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Verify exact Cloudflare Stage + Hub route
+        run: node "tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_RECOVERY_2026-09-26/public-proof.mjs"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-r2-public-proof
+          path: toolbox-r2-public-proof
+          retention-days: 90
