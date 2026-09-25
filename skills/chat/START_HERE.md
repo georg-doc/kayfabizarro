@@ -61,6 +61,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/START_HERE.md` — **CURRENT ROUTE/BLENDER PLANNING BRIEF**: Hürth → Dom → Rhein → Mülheimer Brücke → SAE; one route-first grammar shared by OSM, simple editor and seeded generation; RKIT-10 is the next bounded geometry gate
+- `workflows/KFB_TRACK_CORE_SLICE_2026-09-26/START_HERE.md` — **TRACK CORE DECISION (amends Route 01 / RKIT-10)**: one base track, everything else is pieces (one frame type, slot profile + parameter curves, separate marking layer, automatic checks); next gate TRACK-CORE-0 census + contract
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders

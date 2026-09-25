@@ -1,3 +1,11 @@
+## 2026-09-26 · Track Core decision (amends Cologne Route 01 / RKIT-10)
+
+- Added `workflows/KFB_TRACK_CORE_SLICE_2026-09-26/` (START_HERE, EVIDENCE, CHANGELOG, RETURN).
+- Georg's decision: the kit is ONE base track core plus pieces delivered as data; no separate bridge track or loop track, no per-case geometry fixes.
+- RKIT-10 M1–M4 are re-scoped as pieces on that core. Next gate: `TRACK-CORE-0 · Census + core contract`.
+- Companion candidate: Race branch `chat/rkit-11-rhein-run-2026-09-26` (RKIT-11 Mülheimer Brücke, Pylon-Loop, Rhein-Hüpfer, transition piece v2), frozen as the core's acceptance test.
+- No runtime, Stage or Live result is claimed.
+
 ## 2026-09-25 · Cologne Route 01 planning lane
 
 - Added `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/` as the current cross-project planning brief for the Hürth → Dom → Rhein → Mülheimer Brücke → SAE drive.
