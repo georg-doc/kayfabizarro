@@ -36,6 +36,30 @@ For the full self-service production route, read:
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
 
+## CURRENT DELTA · 2026-09-25 evening · SESSION CUTS RECEIVED
+
+The two running Claude Design exports have arrived on main in upload `8504afa9d14ad46855d0c590bc30eea0fc38d15d`.
+
+Read:
+`INTAKE_SESSION_CUTS_EAR_RIG_2026-09-25.md`.
+
+Current result:
+- **ToolBox Production-01: KEEP · functional integration candidate · Georg human review next.**
+- **World Integration-01: KEEP · correct integration direction · Web rehome/regression then Georg human review.**
+- **Ear Rig PR #214: KEEP · candidate-only. Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js`; FrankenStein Studio authors ear geometry/placement/pose/profile.**
+
+This supersedes the earlier instruction below to wait for the two exports.
+
+Do not issue replacement mega-briefs now.
+Do not start OSM corridor expansion, Race placement or Ear-Dangle consumer integration before the current ToolBox/World gates are cleared.
+
+Current sequence:
+1. Georg reviews ToolBox Production-01.
+2. Web rehomes World Integration-01 1:1 and runs its 26/26 plus WB2 34/34 regression; then Georg reviews.
+3. Repair only what those human gates expose.
+4. Shared locomotion truth consolidates in ToolBox Animation Lab and WorldBuilder consumes it.
+5. EAR-DANGLE-01 follows on the accepted ToolBox/Animation surface.
+
 ## CURRENT LEAD OVERRIDE · 2026-09-25 · PLAYABLE INTEGRATION
 
 Read first:
