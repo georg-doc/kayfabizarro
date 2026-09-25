@@ -1,3 +1,31 @@
+## 2026-09-25 · Hub UX Recovery v2 · Georg PASS_WITH_TUNE
+
+- Georg accepted the current v2 Hub candidate for now;
+- desktop / overall design direction is accepted;
+- **mobile remains a known broken surface** and is explicitly not marked solved;
+- real-device human feedback overrides the earlier automated “no horizontal overflow” mobile check as a visual/interaction acceptance signal;
+- preserved the accepted Stage candidate rather than reopening desktop architecture;
+- registered deferred bounded follow-up `HUB-MOBILE-TUNE-01`;
+- no merge and no Live promotion authorized.
+
+
+## 2026-09-25 · Hub UX Recovery v2 · PUBLIC_VERIFIED Stage
+
+- integrated the Georg-accepted Claude Design Hub shell on Draft PR #217 without creating a second Hub/status owner;
+- retained HUB-CTRL / Production Desk as registry + builder owner;
+- replaced the dated frozen fallback JS with the existing generated embedded-registry seam;
+- rehomed shared Design support + Resident overlay under `/kfb-hub/runtime/`;
+- kept the exact existing Resident/Graft donor boundary; no new actor or animation owner;
+- added direct Stage candidate + Stage navigator card;
+- builder/renderer **18/18 PASS** and Hub-v2 contract **31/31 PASS**;
+- published Stage-only files to `cloudflare-live@1125f310d7a27ece4ea97c3875088fbd04c244f1`;
+- public Chromium run `36178669464`: **20/20 PASS**, desktop/mobile/nav screenshots, 0 page/HTTP failures;
+- public proof also confirms the productive Hub root was not promoted to this candidate;
+- first public run failure was a bad QA assertion about the Claude runtime, repaired once without changing candidate code;
+- exact legacy GVW Hub v0.8.2 source analyzed as donor evidence;
+- deferred donor candidates: Voice Capture, browser TTS, selected-item→Frizzlebot context, source-derived relations and local-state export;
+- rejected as current-Hub foundations: legacy project manifest, direct API-key chat owner, always-on Crit Row/Comic floor UI and Vault-path ownership;
+- Human review remains open; no merge or Live promotion.
 
 
 ## 2026-09-25 · Current Claude continuation briefs

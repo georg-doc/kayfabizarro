@@ -133,3 +133,18 @@ Purpose: same semantic EyeRig sequence on source-exact Eumel 2D and the existing
 
 Modifier Atlas:
 `tools/2D Animation Studio/shared/eye-rig/modifier-atlas/`
+
+
+## Current design review · 2026-09-25
+
+Hub UX Recovery v2 is a **Stage-only, PUBLIC_VERIFIED, HUMAN-PENDING** presentation candidate owned by HUB-CTRL / Production Desk.
+
+- Draft PR: #217
+- direct review: `https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery-v2/`
+- public Chromium proof: **20/20 PASS**
+- Production Desk data/registry ownership is unchanged
+- the productive `/kfb-hub/` root is deliberately unchanged until Georg's human gate
+
+The historical GVW Hub v0.8.2 was also reviewed as donor evidence. Reusable interaction ideas are recorded in:
+`tools/production_desk/HUB_V082_DONOR_ANALYSIS_2026-09-25.md`.
+

@@ -1,3 +1,87 @@
+## CURRENT UPDATE · HUB UX RECOVERY v2 · Georg review · 2026-09-25
+
+Status: **GEORG HUMAN PASS_WITH_TUNE · MOBILE KNOWN BROKEN · STAGE ACCEPTED FOR NOW · NOT LIVE**
+
+Human result:
+- Georg accepts the current Hub UX Recovery v2 candidate **for now**;
+- desktop / overall Hub direction is accepted as the working candidate;
+- **mobile is explicitly still broken** and is not considered solved by the earlier automated overflow check;
+- automated mobile geometry/overflow PASS therefore does **not** override Georg's real-device visual/interaction feedback.
+
+Boundary:
+- do not reopen the accepted desktop/design integration in order to fix mobile;
+- mobile becomes a later bounded responsive repair slice;
+- preserve the current candidate and public Stage evidence;
+- no auto-merge and no Live promotion were authorized by this review message.
+
+Unresolved item:
+**HUB-MOBILE-TUNE-01** — real-device mobile layout/interaction repair against the accepted v2 shell.
+
+Exactly one next gate:
+explicit Live-promotion/merge decision, or a separately started HUB-MOBILE-TUNE-01 slice before promotion.
+
+---
+
+
+## CURRENT UPDATE · HUB UX RECOVERY v2 · Stage integration + legacy donor audit · 2026-09-25
+
+Status: **PUBLIC_VERIFIED STAGE · HUMAN REVIEW OPEN · LIVE ROOT UNCHANGED**
+
+Owner:
+**HUB-CTRL / tools/production_desk / PR #202**.
+
+Integration PR:
+**#217** · branch `chatgpt-web/hub-ux-recovery-v2-integration-2026-09-25`.
+
+Result:
+- Georg-accepted Claude Design Session Cut is integrated as a HUB-CTRL presentation consumer;
+- Production Desk registry/builder remains the single status owner;
+- runtime order remains live bot registry → main registry → generated embedded fallback;
+- the dated frozen embedded-registry JS owner was removed;
+- shared Design runtime is rehomed under `/kfb-hub/runtime/`;
+- existing FrizzleBob/GothGirl/Black Knight overlay remains a consumer of current actor/motion owners;
+- Stage navigator links the candidate;
+- production `/kfb-hub/` was **not** replaced.
+
+Technical evidence:
+- Production Desk builder/renderer: **18/18 PASS**;
+- Hub v2 contract: **31/31 PASS**;
+- exact public Cloudflare Chromium proof: **20/20 PASS**;
+- public proof run `36178669464`, job `108215402496`;
+- proof artifact `10883650417`;
+- artifact SHA-256 `3cdd0319e880e37b6576e01779db8c46c7726939b67110f7f7082f3427791068`;
+- evidence includes desktop candidate, Stage navigator and mobile screenshots;
+- exact build marker `HUB-UX-RECOVERY-V2` was visible;
+- Stage navigator card and direct link were present;
+- desktop + mobile overflow checks passed;
+- page/HTTP error checks passed;
+- public proof explicitly verified that the Live root is **not** the candidate.
+
+Publication:
+- `cloudflare-live@1125f310d7a27ece4ea97c3875088fbd04c244f1`;
+- direct human route: `https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery-v2/`;
+- Stage navigator: `https://kayfabizarro.pages.dev/kfb-hub/stage/`;
+- Live root blob remained unchanged during publication.
+
+Public-proof repair history:
+- first run `36178363947` failed on an invalid QA assumption that the Design runtime registers `x-dc` as a Custom Element;
+- source inspection proved the runtime instead boots through `window.__dcContentKeyed` / `__dcRegistry`;
+- repair pass 1 changed the test only; candidate code was not altered;
+- second run passed 20/20.
+
+Legacy GVW Hub v0.8.2:
+- exact v0.8.2 source was recovered and inspected;
+- current chat web viewer could not render the historical pages.dev URL, so no visual-public claim is made for it;
+- reusable donors are documented in `HUB_V082_DONOR_ANALYSIS_2026-09-25.md`;
+- strongest future donors: voice capture → Pocket Inbox, browser TTS, selected-card/context → character interaction, source-derived related links, local snapshot/export semantics;
+- old project manifest, direct API-key chat drawer, Crit Row/Comic floors as default UI and private Vault-path ownership are **not** adopted.
+
+Exactly one next gate:
+**GEORG HUMAN REVIEW · HUB UX RECOVERY V2** on the direct Stage route.
+
+No auto-merge and no Live promotion.
+
+---
 
 
 ## CURRENT UPDATE · WORLD / TOOLBOX CLAUDE CONTINUATION BRIEFS · 2026-09-25

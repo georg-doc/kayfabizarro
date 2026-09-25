@@ -1,0 +1,33 @@
+name: Hub UX Recovery v2 Stage
+
+on:
+  push:
+    branches:
+      - chatgpt-web/hub-ux-recovery-v2-integration-2026-09-25
+    paths:
+      - 'kfb-hub/stage/hub-ux-recovery-v2/**'
+      - 'kfb-hub/runtime/**'
+      - 'kfb-hub/stage/index.html'
+      - '.github/workflows/hub-ux-recovery-v2-stage.yml'
+  workflow_dispatch:
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Open exact KFB Cloudflare Stage
+        run: node kfb-hub/stage/hub-ux-recovery-v2/public-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hub-ux-recovery-v2-public-proof
+          path: hub-ux-recovery-v2-public-proof/
