@@ -1975,3 +1975,20 @@ PR #214 / `tools/KFB-ToolBox/ear-rig/` is an **EXPERIMENTAL candidate**.
 
 ### VALIDATION
 Architecture source/recovery routing check: **12/12 PASS**. No new runtime, public Stage or Georg acceptance is inferred.
+
+
+## 2026-09-25 late evening · Hub live registry + UX recovery
+
+### USER STATE
+ToolBox Production-01 and World Integration-01 are both **PROCEED PASS**: usable enough to continue, not exhaustive detail acceptance.
+
+### HUB DATA
+Live bot registry manually refreshed at `bot/production-desk-update@7eeb606cb318fe1ff802fbf65ba6c0ef542bc91d`.
+Manifest checkedAt `2026-09-25T17:15:29Z`, stale threshold 2 h, 19 lanes, 90 self-service jobs / 42 READY / 48 HOLD.
+
+### HUB UX
+Current v3 shell remains HUMAN TUNE. Exact accepted Hub UI v2 donor is `kfb-hub/index.html@dfaafac070747f9543b5eb5a635e2aaa74e57b83`.
+Claude Design UX recovery and separate Web status-sync briefs now live under `tools/production_desk/`.
+
+### BOUNDARY
+Ordinary status freshness should come from the bot registry without a Cloudflare rebuild. A replacement public shell waits for Georg review. Exact pages.dev verification remains UNKNOWN from this tool.
