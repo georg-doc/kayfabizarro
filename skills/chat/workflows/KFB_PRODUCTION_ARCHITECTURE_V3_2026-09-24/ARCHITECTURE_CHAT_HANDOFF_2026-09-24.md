@@ -313,3 +313,85 @@ is opened with visible new content.
 **HUB-V3-MOUNT through existing HUB-CTRL #202.**
 
 Everything else should proceed through self-service jobs without returning here for routine planning.
+
+
+## CURRENT RECOVERY DELTA · 2026-09-25 late evening · HUB LIVE-DATA + UX RECOVERY
+
+Georg reports the current ToolBox Production-01 and World Integration-01 candidates are usable enough to continue.
+
+Status for both:
+**PROCEED PASS · not exhaustive detail acceptance.**
+
+Do not reopen the old human-review gates merely because not every detail was tested.
+
+### KFB Hub current truth
+
+HUB-CTRL remains the only Hub owner:
+- PR #202
+- branch `work/hub-ctrl-01-2026-09-24`
+- current head `2bbcb7964233bc703e231e78690108f593bd075c`.
+
+The public shell is still **HUMAN TUNE / not accepted**.
+
+Useful v3 Production Desk data/catalog logic must be preserved.
+
+Exact accepted visual/UX donor recovered:
+- `kfb-hub/index.html`
+- main commit `dfaafac070747f9543b5eb5a635e2aaa74e57b83`
+- blob `0de46343ddeb70a5f423876e75dc916ae7200c5b`
+- accepted Hub UI v2 Paper/Dark + Today + Pocket Inbox.
+
+Claude Design brief:
+`tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md`.
+
+Mandatory rule:
+show the exact accepted donor in isolation before integrating current data.
+
+### Hub live data
+
+The public Desk shell already polls:
+`bot/production-desk-update/registry/production/v1`
+before falling back to main/embedded state.
+
+Manual recovery refresh completed:
+- bot branch head `7eeb606cb318fe1ff802fbf65ba6c0ef542bc91d`;
+- manifest checkedAt `2026-09-25T17:15:29Z`;
+- stale threshold 2 h;
+- 19 current lanes;
+- 90 self-service jobs / 42 READY / 48 HOLD;
+- current ToolBox/World PROCEED PASS, Ear Rig, Hub UX Recovery and Hub Status Sync lanes present;
+- obsolete WB-W0 / Hürth proof review items are no longer current operational review gates.
+
+### Why freshness was failing
+
+The Production Desk schedule exists on HUB-CTRL, but GitHub schedules run from the default branch.
+
+Therefore the bot registry can become stale while the public Cloudflare shell remains available.
+
+Prepared Web/GitHub fix:
+`tools/production_desk/HUB_STATUS_SYNC_V1_2026-09-25.md`.
+
+Target:
+normal status changes update the bot registry and become visible on the public Hub without requiring a Cloudflare rebuild.
+
+Do not introduce a second status DB / Worker / D1 unless raw-GitHub status sync proves insufficient.
+
+### Decision capture direction
+
+The UX candidate may expose:
+`PASS · TUNE · HOLD · DONE · MISSING`
+plus note.
+
+Until a real writable owner exists:
+- store locally;
+- export/copy `kfb.hub-decision/1` sync packets;
+- never imply localStorage is shared GitHub truth.
+
+### Current Hub gates
+
+1. **HUB STATUS SYNC V1** — durable live-registry freshness.
+2. **HUB UX RECOVERY** — Claude Design Session Cut from accepted v2 donor.
+3. Georg human review.
+4. Only then publish a replacement shell.
+
+No new Hub shell is accepted/live by this recovery checkpoint.
