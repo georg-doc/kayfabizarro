@@ -429,3 +429,14 @@
 - World static owner/closure gate = 20/20 PASS;
 - World browser gate is on its final allowed repair pass at `204afd6d...`; another failure triggers failure-recovery, not repair pass 3;
 - no Stage/public/human result inferred.
+
+
+## 2026-09-26 · World r2 stop-rule recovery
+
+- World r2 browser gate exhausted two repair passes and is frozen;
+- final candidate code `204afd6d...`, final run `36198999279` FAIL;
+- static 20/20 PASS; Hürth boots with 700 buildings, ToolBox profile loads, 13 semantic states bind, 0 page/network failures;
+- proven failure is stale selftest prose/variant contract, not source transport;
+- full failure-recovery package persisted under `world-integration-01/failure-recovery/`;
+- next gate is test-only `WORLD-R2-CONTRACT-RESET-01`; no repair pass 3;
+- ToolBox r2 remains technically green and proceeds separately.
