@@ -1,6 +1,6 @@
 # KFB External Demo Research Radar · 2026-09-26
 
-Status: **PASS 2 IN PROGRESS · CHECKPOINT 4 / G–I RESEARCH PERSISTED**  
+Status: **PASS 2 COMPLETE · CHECKPOINT 5 / A–L RESEARCH PERSISTED**  
 Owner: **KFB Web Architecture lane** (planning/routing only; runtime owners unchanged)  
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/production-architecture-v3-2026-09-24`  
@@ -897,3 +897,429 @@ No new Production Architecture job is justified by G–I.
 
 Next timeout-safe research block:
 **J · performance/LOD/loading · K · mobile/touch authoring/controls · L · small game loops/minigame sockets/playful UI.**
+
+
+---
+
+# CHECKPOINT 5 · Batches J–L + Pass-2 synthesis
+
+Status: **PASS 2 COMPLETE**
+
+## Batch J · Performance / LOD / streaming / large-world loading
+
+The external evidence supports a **measured escalation ladder**, not a generic “optimize the engine” project.
+
+### J1 · Repeated geometry: InstancedMesh first
+
+Current Three.js source/runtime already supports:
+- [InstancedMesh](https://threejs.org/docs/#api/en/objects/InstancedMesh);
+- glTF `EXT_mesh_gpu_instancing` in [GLTFLoader](https://github.com/mrdoob/three.js/blob/dev/examples/jsm/loaders/GLTFLoader.js) and exporter.
+
+Use when many copies share geometry/material:
+- procedural flora;
+- repeated rocks/props;
+- simple VFX markers;
+- some resident/crowd props where rigs are not involved.
+
+This directly reinforces the Pass-1 `WORLD-NATURE-01` blueprint.
+
+### J2 · Many static-ish different geometries sharing one material: BatchedMesh is the next tool
+
+Source:
+[Three.js BatchedMesh](https://threejs.org/docs/#api/en/objects/BatchedMesh) · MIT.
+
+Useful facts:
+- multiple different geometries can share a batch/material;
+- individual batched objects can be frustum-culled;
+- optional object sorting can reduce overdraw artifacts;
+- instances retain separate transforms.
+
+**KFB use:** static environment clutter / authored city dressing only after draw-call measurement shows it matters.
+
+Do not batch objects that need distinct runtime ownership, frequent material mutation, skeletal animation or independent semantic interaction merely to lower a counter.
+
+### J3 · Simple distance substitution: Three.js LOD is enough before inventing a streaming system
+
+Source:
+[Three.js LOD](https://threejs.org/docs/#api/en/objects/LOD) · MIT.
+
+Use case:
+- distant landmark simplification;
+- far trees/props;
+- expensive decorative meshes.
+
+KFB rule:
+**LOD level changes presentation, not semantic identity.**
+The same World/Resident/landmark reference remains authoritative.
+
+### J4 · NASA 3D Tiles renderer provides the right *streaming mental model* if KFB later becomes truly large
+
+Source:
+[NASA-AMMOS 3DTilesRendererJS](https://github.com/NASA-AMMOS/3DTilesRendererJS) · Apache-2.0.
+
+Current implementation patterns:
+- explicit content states: UNLOADED → QUEUED → LOADING → PARSING → LOADED / FAILED;
+- camera-frustum test;
+- distance + geometric/view-error evaluation;
+- refinement stops when error target is met;
+- active content may stay cached even while not visible;
+- LRU eviction/cache;
+- separate “used / active / visible” state.
+
+**Verdict: BLUEPRINT FOR FUTURE LARGE-WORLD STREAMING, NOT A KFB DEPENDENCY.**
+
+If KFB later needs chunk streaming, copy the concepts:
+`WorldRecipe semantic chunk ref → load state → camera/error demand → active/cache → visible`.
+
+Do not adopt 3D Tiles format or a geospatial renderer before KFB has a measured world-size/load problem.
+
+### J5 · Community performance signal agrees with the ladder
+
+Recent Three.js community discussions about multi-million-vertex GLB scenes repeatedly point first to:
+- split content;
+- instancing/batching;
+- LOD;
+- visibility/frustum management;
+- streaming only when the asset/world scale requires it.
+
+KFB should therefore add **no performance architecture job now**.
+
+### J · proposed escalation ladder
+
+1. measure: frame time / draw calls / triangles / texture memory / load time;
+2. fix obvious accidental duplication;
+3. InstancedMesh / GPU instancing for repeated assets;
+4. BatchedMesh for appropriate static groups;
+5. distance LOD;
+6. chunk activation/unload;
+7. camera/error-driven streaming only if necessary.
+
+The Quick 3D Source Inspector already proposed in Pass 1 can expose the cheap measurements needed for step 1.
+
+## Batch K · Mobile / touch authoring and game controls
+
+### K1 · Mobile must be a distinct interaction contract, not a shrunk desktop layout
+
+Recent gamedev discussion:
+[“Just port it to mobile”](https://www.reddit.com/r/gamedev/comments/1qi3buy/) · 2026.
+
+Useful consensus:
+- smaller screens and safe areas change layout;
+- visible control density must drop;
+- control design often needs to change, not merely resize.
+
+This matches the current KFB Hub/ToolBox mobile problems and the existing `UI-GRAMMAR-01` direction.
+
+### K2 · Current Three.js OrbitControls already defines a useful touch grammar
+
+Source:
+[OrbitControls](https://github.com/mrdoob/three.js/blob/dev/examples/jsm/controls/OrbitControls.js) · MIT.
+
+Current touch states include:
+- one-finger rotate;
+- two-finger pan;
+- two-finger dolly + pan / dolly + rotate.
+
+**KFB authoring default:**
+- 1 finger on empty viewport = camera orbit;
+- 2 fingers = pan/zoom;
+- direct object/brush touch owns the gesture once captured;
+- mode arbitration decides whether the same pointer stream belongs to CAMERA / OBJECT / BRUSH.
+
+This is especially important because community Three.js reports show joystick + camera multi-touch can conflict when event ownership is ambiguous:
+[Multi-Touch controls + OrbitControls](https://www.reddit.com/r/threejs/comments/1eaf0rc).
+
+### K3 · Virtual joystick can feed existing movement without becoming the movement owner
+
+Source:
+[nipplejs](https://github.com/yoannmoinet/nipplejs) · MIT.
+
+Useful options:
+- active DOM zone;
+- threshold/dead-zone concept;
+- static / dynamic / semi placement;
+- multitouch;
+- `dataOnly` mode;
+- X/Y lock;
+- dynamic-page support;
+- joystick can follow thumb.
+
+**KFB use:**
+`touch joystick data → existing Travel/Race/Combat input adapter → current movement owner`.
+
+The library itself is optional. The important donor pattern is **data-only input** separated from rendering/physics.
+
+Current mobile examples on Reddit likewise converge on:
+- movement joystick left;
+- one or very few action buttons right;
+- context-specific controls rather than exposing every desktop shortcut.
+
+### K4 · Play and authoring controls must remain separate surfaces
+
+Recommended KFB input modes:
+- `PLAY` — locomotion + current activity actions;
+- `CAMERA` — orbit/pan/zoom;
+- `OBJECT` — transform selected object;
+- `BRUSH` — terrain sculpt;
+- `UI` — drawers/buttons consume touch and do not leak to world controls.
+
+This is not a new global input engine. It is a **gesture-ownership rule** for the existing owners.
+
+For WorldBuilder/ToolBox mobile:
+- minimum comfortable hit areas instead of desktop-size tiny glyphs;
+- context-local transform controls;
+- viewport stays dominant;
+- no permanent joystick during authoring;
+- no permanent desktop toolbar squeezed into phone width;
+- test real portrait, landscape and split-screen sizes.
+
+### K5 · Touch game controls should appear only for modes that need them
+
+Good recent examples include simple Reddit browser games with:
+- joystick + one action button;
+- dual sticks only when independent aim is truly needed;
+- controls hidden outside gameplay.
+
+KFB rule:
+**controls are provider/mode-driven**, consistent with `META-HUD-01`.
+Walk, Drive, Boat, Combat and authoring do not need the same touch overlay.
+
+## Batch L · Small game loops / minigame sockets / playful UI
+
+The research strongly supports KFB's existing instance/stage architecture instead of a new “minigame engine”.
+
+### L1 · Kaplay is useful as a tiny-loop grammar donor
+
+Source:
+[kaplayjs/kaplay](https://github.com/kaplayjs/kaplay) · MIT.
+
+Current primitives/examples show a compact loop:
+- named scene registration;
+- `go(name, ...args)` scene transition;
+- local objects/components/tags;
+- sensor collision;
+- `onCollide`;
+- `loop` / `wait` / `tween`;
+- score/local state;
+- explicit win/lose scene;
+- keyboard/gamepad/mouse/touch routes.
+
+This is useful because the **game-specific rules stay local**.
+
+KFB should copy that *shape*, not the engine.
+
+### L2 · LittleJS is a strong examples/catalog source for “one mechanic, complete loop”
+
+Source:
+[KilledByAPixel/LittleJS](https://github.com/KilledByAPixel/LittleJS) · MIT.
+
+Useful donor characteristics:
+- many short/single-file examples;
+- arcade collision;
+- timers;
+- particles/audio;
+- mouse/keyboard/gamepad/touch;
+- onscreen mobile controls;
+- racing, platformer, puzzle and tiny game examples.
+
+**Verdict: INSPIRATION / BLUEPRINT POOL, NOT A KFB RUNTIME.**
+
+It is particularly useful for researching how much machinery a small activity actually needs.
+
+### L3 · KFB already has the right owner: STAGE-INSTANCE-01
+
+A bounded KFB Activity Recipe can sit inside the existing Stage/Instance contract:
+
+```
+activity id
+owner/runtime ref
+entry payload
+seed/context
+support/environment ref
+actor/prop refs
+local rules
+input actions
+local timers/counters if needed
+semantic events
+resolved result
+return payload
+cleanup/reset
+```
+
+Lifecycle:
+
+`MATERIALIZE → ENTER → READY → PLAYING → RESOLVED → RESULT → RETURN → OUTER WORLD RESUME`
+
+This is compatible with:
+- `STAGE-INSTANCE-01`;
+- Card Zone collection;
+- Combat tower encounters;
+- Vertical/Babel activities;
+- Town/NPC micro-events;
+- later Museum/portal rooms.
+
+### L4 · One activity should prove one main verb before layering meta systems
+
+Recent gamedev community threads about scope repeatedly converge on the value of small, complete, polished loops rather than large half-built system sets.
+
+For KFB this does **not** mean making unrelated throwaway games.
+It means each portal/activity slice should have:
+- one immediately legible primary action;
+- one bounded complication/reversal at most in the first proof;
+- explicit finish/result;
+- clean return to the outer world;
+- Player Journey receives only semantic result facts.
+
+Progression, cards, POP, gifts, radio and Almanac remain shared meta owners and can reward an activity **after** the local loop is fun/readable.
+
+### L5 · Playful UI should communicate state, not become the game
+
+Kaplay/LittleJS examples are intentionally simple because feedback is attached to events:
+- collision;
+- score;
+- timer;
+- win/lose;
+- pickup/action.
+
+KFB should preserve its visual identity, but the interaction contract remains:
+`player action → visible world response → semantic event → local outcome`.
+
+Do not compensate for a weak activity with a large HUD, explanation panel or reward layer.
+
+## Pass-2 synthesis · new reusable KFB blueprints
+
+### Blueprint F · Free Drive A/B
+
+Receiver: `TRAVEL-DRIVE-01`
+
+A:
+current simplest legal free-drive adapter.
+
+B:
+Rapier ray-cast vehicle donor.
+
+Same:
+- vehicle source;
+- world/support;
+- camera;
+- input intent.
+
+Compare:
+- slope stability;
+- wheel/support contact;
+- steering;
+- braking;
+- recovery;
+- seam behavior.
+
+Do not touch Race ownership.
+
+### Blueprint G · Queryable Water Motion
+
+Receiver: later extension of `TRAVEL-BOAT-01`, only after source parity.
+
+`waterHeight/normal(position,time)`
+→ sample hull points
+→ presentation lift/pitch/roll
+→ current boat translation truth.
+
+Visual water remains independently richer.
+
+### Blueprint H · Semantic Weather
+
+Receiver: `WORLD-BIOME-MOOD-01` / later World Recipe.
+
+`weatherState`
+→ World presentation preset/delta
+→ shared FX/SFX event
+→ explicit per-mode modifiers
+→ restore.
+
+One state owner, many consumers.
+
+### Blueprint I · Combat Contact Candidate
+
+Receiver: `COMBAT-MELEE-01`.
+
+`action window`
+→ swept/contact/sensor candidate
+→ collision-group filtering
+→ Combat semantic validation
+→ typed reaction
+→ Animation owner performs source-backed reaction.
+
+Physics never decides damage truth by itself.
+
+### Blueprint J · Measured Performance Ladder
+
+Receiver: current owner when/if performance gate appears.
+
+`measure → dedupe → instance → batch → LOD → chunk activate → stream`.
+
+No higher rung before the lower one proves insufficient.
+
+### Blueprint K · Touch Ownership
+
+Receiver: `UI-GRAMMAR-01`, WorldBuilder/ToolBox mobile, `META-HUD-01`.
+
+Every active pointer belongs to exactly one:
+`UI | PLAY | CAMERA | OBJECT | BRUSH`.
+
+Mode/provider decides visible controls.
+
+### Blueprint L · Activity Recipe
+
+Receiver: `STAGE-INSTANCE-01`.
+
+`enter payload → local owner/rules → semantic result → return payload`.
+
+No universal minigame runtime.
+
+## Pass-2 anti-patterns
+
+Added to Pass 1:
+
+- no optimization architecture without measured bottlenecks;
+- no 3D Tiles/geospatial streaming dependency merely because the world may grow later;
+- no batching of semantically independent dynamic objects just to reduce draw calls;
+- no desktop UI merely scaled down for mobile;
+- no overlapping joystick/camera/object touch owners;
+- no universal mobile control overlay across all KFB modes;
+- no new minigame engine when Stage/Instance + existing owners can host the loop;
+- no meta-progression used to hide an unproven local activity loop.
+
+## Pass-2 routing decision
+
+**No new Production Architecture job is added by Pass 2.**
+
+All strong findings route into existing jobs:
+- `TRAVEL-MODES-01`
+- `TRAVEL-DRIVE-01`
+- `TRAVEL-BOAT-01`
+- `TRAVEL-AIR-01`
+- `WORLD-BIOME-MOOD-01`
+- `WORLD-RECIPE-01`
+- `COMBAT-MELEE-01`
+- `COMBAT-DUEL-01`
+- `WEB-QUICK-3D-REVIEW`
+- `UI-GRAMMAR-01`
+- `META-HUD-01`
+- `STAGE-INSTANCE-01`
+- `WB-MOBILITY-MVP-01`
+
+## Research horizon after A–L
+
+Broad external recon has now covered the highest-value current product areas.
+
+Further research should become **question-triggered**, not another blanket sweep. Examples:
+- one named Race contact problem;
+- one measured mobile gesture conflict;
+- one world-streaming bottleneck;
+- one specific shader/water look;
+- one activity mechanic needing a donor.
+
+This keeps research attached to product gates rather than growing a parallel backlog.
+
+## One next research-to-production gate
+
+**Use the A–L radar as donor guidance inside the already-current KFB owner queue; first broad transfer remains `ENV-PREVIEW-01` / World environment integration. Do not create a separate research implementation branch.**
