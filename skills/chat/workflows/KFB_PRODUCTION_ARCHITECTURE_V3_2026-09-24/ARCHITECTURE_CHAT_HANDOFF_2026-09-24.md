@@ -416,3 +416,19 @@ CI:
 First CI failure was fixture setup only; repair pass 1 passed. No second repair pass.
 
 Merge remains human/owner gated. Until merge, the manually refreshed live bot registry remains the current data source.
+
+
+### Final Hub recovery pins · 2026-09-25
+
+- HUB-CTRL current recovery docs/config lineage remains PR #202; latest owner branch continues independently.
+- live bot registry: `bot/production-desk-update@cab4fcef34abfe7e438f31942db009c5ec960ca8`;
+- live manifest source pin: HUB-CTRL `74c6fa5cd623dc378dec880905c6616f6a171754`;
+- live counts: **3 LOOK_AT · 6 RUNNING · 6 CAN_START · 4 WAITING**;
+- self-service catalog remains **90 jobs / 42 READY / 48 HOLD**;
+- HUB-STATUS-SYNC-01 = Draft PR #215 @ `d45f215bce544ad1eb7e71a6aa743ca59919f08d`;
+- PR #215 CI run `36168223283`: **18/18 tests PASS · online build PASS · registry VALID**;
+- PR publish step correctly skipped during pull_request validation;
+- merge is the remaining human/owner gate for durable scheduled freshness;
+- current public Hub shell is still HUMAN TUNE; UX replacement waits for Claude Design donor-based review.
+
+Exact pages.dev visibility of the refreshed registry is still not claimed from this tool.
