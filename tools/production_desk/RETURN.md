@@ -1,5 +1,30 @@
 
 
+## CURRENT UPDATE · LIVE REGISTRY AFTER STATUS-SYNC CI · 2026-09-25
+
+Status: **LIVE BOT DATA REFRESHED · PUBLIC SHELL STILL TUNE**
+
+Current live data branch:
+`bot/production-desk-update@cab4fcef34abfe7e438f31942db009c5ec960ca8`.
+
+Manifest:
+- source = HUB-CTRL `74c6fa5cd623dc378dec880905c6616f6a171754`;
+- checkedAt = `2026-09-25T17:41:10Z`;
+- stale threshold = **2 h**;
+- **3 LOOK_AT · 6 RUNNING · 6 CAN_START · 4 WAITING**;
+- 19 lanes;
+- 90 self-service jobs / 42 READY / 48 HOLD.
+
+Current new LOOK_AT item:
+**HUB-STATUS-SYNC-01 · PR #215 · CI PASS**.
+It asks only whether the workflow-only PR may merge to main to activate scheduled 30-minute registry refreshes.
+
+The bot update contains no Hub HTML and no Cloudflare publication.
+
+Exact public pages.dev rendering of this refreshed bot data remains unverified from the current URL tool.
+
+
+
 ## CURRENT UPDATE · HUB-STATUS-SYNC-01 CI PASS · 2026-09-25
 
 Status: **DRAFT PR #215 · CI PASS · MERGE/HUMAN GATE OPEN**
