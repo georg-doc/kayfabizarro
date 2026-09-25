@@ -2,6 +2,15 @@
 
 ## CURRENT RETURN ADDENDUM · 2026-09-26
 
+### Final metadata checkpoint
+
+- central `skills/chat/START_HERE.md`: updated to the Playable Track R0 → OSM execution lane;
+- central `skills/chat/CHANGELOG.md`: additive 2026-09-26 entry added;
+- KFB Hub source: Web Prep card = READY, Claude Design card = AFTER WEB PREP, Route 01 card updated;
+- PR #216 title/body updated to the current Track R0 → OSM sequence;
+- PR remains open/unmerged; no auto-merge enabled;
+- exact final branch head is recorded in the PR handoff comment after this Return write, because a file cannot contain the hash of the commit that contains itself.
+
 **Status:** TRACK-FIRST EXECUTION BRIEFS PERSISTED · NO TRACK IMPLEMENTATION YET · NO NEW STAGE/LIVE CLAIM
 
 ### New direction persisted
@@ -27,7 +36,7 @@ Updated:
 - `CHANGELOG.md`
 - `RECOVERY.md`
 - this `RETURN.md`
-- central router/changelog/Hub metadata are updated later in this same handoff.
+- central router/changelog/Hub metadata are updated in this same handoff.
 
 ### GitHub evidence
 
