@@ -10,6 +10,10 @@ const driver=read('tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mou
 const contract=JSON.parse(read('tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json'));
 const cast=read('tools/resident_atlas_s6/data/cast.js');
 const atlas=read('tools/resident_atlas_s6/lib/atlas.js');
+const poseOwner=read('tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js');
+const poseMirror=read('tools/KFB-ToolBox/stage-first/src/petstudio-v9/studio-v13/pose-rig.v1.js');
+const locomotionProfiles=read('tools/KFB-ToolBox/stage-first/src/lab/locomotion-profiles.v1.js');
+const locomotionFixture=JSON.parse(read('tools/KFB-ToolBox/stage-first/profiles/locomotion/kfb-locomotion-profiles.Rig_Medium.frizzlebob-earrig-v5.consumer.json'));
 
 let pass=0;
 const checks=[];
@@ -40,5 +44,15 @@ ok('real Resident ids exist in current cast source',['goth-girl','orc-warband','
 ok('current Atlas exports the real vignette builder',atlas.includes('export async function buildVignette'));
 ok('Save and Reload use localStorage scene patches',adapter.includes('localStorage.setItem')&&adapter.includes('reloadResident'));
 ok('review probe exposes current owner and editor state',adapter.includes('window.__KFB_COHERENT')&&adapter.includes('actorOwnerSchema'));
+
+ok('PoseRig owner and Stage mirror are byte-identical',poseOwner===poseMirror);
+ok('PoseRig owner contains wrist/intermediate-bone chain fix',poseOwner.includes('OWNER FIX 2026-09-25')&&poseOwner.includes('getWorldPosition'));
+ok('PoseRig exposes shared IK API',['ikChain(','effector(','solveIK(','chainReport('].every((s)=>poseOwner.includes(s)));
+ok('canonical locomotion profile schema is present',locomotionProfiles.includes("export const SCHEMA = 'kfb.locomotion-profile-set/0.1'"));
+ok('locomotion profile owner is ToolBox Motion',locomotionProfiles.includes('Owner: Animation Lab / ToolBox Motion'));
+ok('locomotion module exposes consumer view without movement ownership',locomotionProfiles.includes('export function consumerView')&&locomotionProfiles.includes('NOT a movement controller'));
+ok('measured locomotion consumer fixture schema',locomotionFixture.schema==='kfb.locomotion-profile-set/0.1#consumer'&&locomotionFixture.rigFamily==='Rig_Medium');
+ok('consumer fixture carries core semantic roles',['idle','walk','walk.fast','run','sprint','backward','strafe.left','strafe.right','jump.start','jump.air','jump.land','crouch','sneak','crawl'].every((id)=>locomotionFixture.roles[id]));
+ok('sprint fixture is source-backed Running_B',locomotionFixture.roles.sprint.clip==='Running_B'&&locomotionFixture.roles.sprint.sourceBacked===true);
 
 console.log('STATIC PASS '+pass+'/'+pass);
