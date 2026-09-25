@@ -158,7 +158,7 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
       "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
-      "expectedHead": "db557f70b801aacf8ed38a13a47d0bebf5265bc9",
+      "expectedHead": "07da4adfd1de293d03682d1af90a01df2a1eba19",
       "brief": {
         "label": "Billboard Living Plan",
         "path": "tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md",
@@ -169,6 +169,31 @@
         "label": "Angenommenes B2a ansehen",
         "path": "kfb-hub/pruefen/billboard-b2a/index.html",
         "sourceRef": "PR #199 · HUMAN_ACCEPTED · final public 24/24 PASS · front-only rear fix"
+      }
+    },
+    {
+      "id": "billboard-b3-cartoon-body",
+      "bucket": "WAITING",
+      "title": "Billboard B3 · rundes Cartoon-3D-Modell",
+      "what": "Das akzeptierte Kenney-Billboard soll später als runderer, weicherer KFB-Cartoon-Prop modelliert werden, ohne die fertige B1/B2a-Medienfläche neu zu erfinden. Echte Silhouetten-/Topologiearbeit darf über Blender MCP laufen.",
+      "provider": "WSA / ToolBox 3D · ggf. Blender MCP",
+      "yourAction": "",
+      "waitingFor": "B2b Living Mockup / Collage Recherche zuerst; B3 danach oder nur auf Georgs Parallel-Start.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 199,
+      "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+      "expectedHead": "07da4adfd1de293d03682d1af90a01df2a1eba19",
+      "brief": {
+        "label": "WSA / Blender MCP Handover",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md",
+        "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+        "pasteReady": false
+      },
+      "review": {
+        "label": "Akzeptierte Medienbasis ansehen",
+        "path": "kfb-hub/pruefen/billboard-b2a/index.html",
+        "sourceRef": "B2a HUMAN_ACCEPTED · rounded body NOT STARTED"
       }
     },
     {
