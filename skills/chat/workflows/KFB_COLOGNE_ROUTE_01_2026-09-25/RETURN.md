@@ -1,5 +1,88 @@
 # RETURN · KFB Cologne Route 01 planning · 2026-09-25
 
+## CURRENT RETURN ADDENDUM · TRACK CORE / PERPLEXITY REVIEW · 2026-09-26
+
+**Status:** DOWNSTREAM ROUTE/TRACK BRIEFS RETAINED · TRACK CORE NOW PREREQUISITE · NO NEW RUNTIME/STAGE/LIVE CLAIM
+
+### Current architecture
+
+After Georg's RKIT-11 review, stacked PR #219 now amends this route plan:
+
+**one base Track Core; everything else is pieces/data.**
+
+Race PR #42 is the frozen acceptance fixture:
+
+- branch: `chat/rkit-11-rhein-run-2026-09-26`;
+- observed head: `bcc422b00fc4629ac113f086cddcea3b2b107f2a`;
+- not Race-driven;
+- no Stage;
+- no Live.
+
+### Perplexity transition research
+
+Reviewed:
+
+`tools/KFB-ToolBox/_inbox/KFB Race Track Baukasten TBD perplexity 01.md`
+
+Adopt into Track Core:
+
+- true Clothoid/Euler curvature easing;
+- connector boundary-state idea;
+- staggered transition zones;
+- graph/RouteRecipe semantics;
+- separate style/prop/FX layers.
+
+Do not adopt its example Blender Python generator as the production base.
+
+### Current execution order
+
+```text
+TRACK-CORE-0 · ChatGPT Web census + core contract
+→ Georg core-language gate
+→ TRACK-CORE-1A · Claude Coworker + Blender MCP proof
+→ TRACK-CORE-1B · ChatGPT Web authoritative core/runtime parity
+→ TRACK-CORE-2 · Claude Design transition visual grammar
+→ WEB-PREP-TRACK-R0
+→ CLAUDE DESIGN PLAYABLE-TRACK-R0
+→ WEB REHOME / FREEPLAY
+→ WEB real Köln OSM prep
+→ CLAUDE OSM composition
+```
+
+### Current executor briefs
+
+Track-Core PR #219:
+
+- Web: `WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md`;
+- Claude Coworker + Blender MCP: `BLENDER_MCP_TRACK_CORE_1A_PROOF_BRIEF.md`;
+- Web: `WEBCHAT_TRACK_CORE_1B_RUNTIME_PARITY_BRIEF.md`;
+- Claude Design: `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md`.
+
+This Cologne Route PR retains downstream Track-R0/OSM briefs only.
+
+The old `CLAUDE_BLENDER_MCP_BRIEF.md` is now superseded for execution by the Track-Core Blender proof brief; its M1–M4 semantics remain provenance.
+
+### Tests in this update
+
+- new Race runtime tests: **0**
+- new Blender tests: **0**
+- new browser tests: **0**
+- new Stage deployments: **0**
+
+Historical RKIT-11 test facts remain attributed to Race PR #42.
+
+### Hub status
+
+The current Track-Core Return identifies `kfb-hub/index.html` as generated / owner-generated rather than a safe hand-edit target. No additional direct Hub edit is made by this correction. The current briefing/route state is persisted in GitHub workflow/router/PR metadata; Hub regeneration remains an owner-boundary follow-up.
+
+### Exactly one next gate
+
+**TRACK-CORE-0 · ChatGPT Web census + core contract.**
+
+Do not start WEB-PREP-TRACK-R0 yet.
+
+---
+
 ## CURRENT RETURN ADDENDUM · 2026-09-26
 
 ### Final metadata checkpoint
