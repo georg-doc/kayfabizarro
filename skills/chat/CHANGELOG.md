@@ -1992,3 +1992,18 @@ Claude Design UX recovery and separate Web status-sync briefs now live under `to
 
 ### BOUNDARY
 Ordinary status freshness should come from the bot registry without a Cloudflare rebuild. A replacement public shell waits for Georg review. Exact pages.dev verification remains UNKNOWN from this tool.
+
+
+## 2026-09-25 · Graveyard / Music / Resident / OSM presentation correction
+
+### USER CORRECTION
+- Graveyard current prototype is dysfunctional for movement/placement and is not a current human-review product; only the spatial-postmortem concept and grave-light flicker are retained as donors.
+- MUSIC-PERF timeline/audio is useful, but current guitarist/drummer animations are not canonical; newer S39 Resident Band sources are preferred.
+- Resident modules should mount on arbitrary host terrain without mandatory baseplates.
+- Demo scenes should use current WorldBuilder-compatible sky/light/ground presentation.
+- Hürth/Alstädten facade variation and known roof/shadow fixes should propagate globally to ordinary OSM buildings, including Cologne.
+
+### PERSISTED
+`WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md`
+
+Live Hub registry was corrected accordingly and now shows only one current LOOK_AT gate.
