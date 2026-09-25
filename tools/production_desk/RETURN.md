@@ -1,5 +1,37 @@
 
 
+## CURRENT UPDATE · HUB-STATUS-SYNC-01 CI PASS · 2026-09-25
+
+Status: **DRAFT PR #215 · CI PASS · MERGE/HUMAN GATE OPEN**
+
+Separate status-sync PR:
+- PR #215;
+- branch `chatgpt-web/hub-status-sync-v1-2026-09-25`;
+- tested head `d45f215bce544ad1eb7e71a6aa743ca59919f08d`;
+- exactly one changed file: `.github/workflows/kfb-hub-status-sync.yml`.
+
+Purpose:
+make the existing `bot/production-desk-update` registry refresh durable from the default branch without merging the human-rejected Hub shell.
+
+CI run:
+- workflow run `36168223283`;
+- job `108181095987`;
+- **18/18 inherited Production Desk tests PASS**;
+- online registry build PASS;
+- built **19 lanes · 2 LOOK_AT · 5 RUNNING · 7 CAN_START · 4 WAITING · 0 problems**;
+- registry validator: **VALID**;
+- content hash `6a85be902e95…`;
+- current HUB-CTRL source resolved dynamically to `work/hub-ctrl-01-2026-09-24@2bbcb7964233bc703e231e78690108f593bd075c`;
+- publish decision = `content-changed`;
+- publish step correctly **SKIPPED on pull_request**, proving the PR cannot mutate Live registry during review.
+
+First CI attempt failed only because inherited render tests expected the existing bot-registry fixture. Repair pass 1 seeds that fixture before tests; second run passed. No second repair pass needed.
+
+Merge is not authorized automatically.
+After merge to main, schedule/dispatch becomes available and may update only the bot registry, not Hub HTML or Cloudflare.
+
+
+
 ## CURRENT UPDATE · HUB RECOVERY / LIVE REGISTRY / UX DONOR · 2026-09-25
 
 Status: **LIVE DATA REFRESHED · CURRENT SHELL STILL HUMAN-TUNE · UX RECOVERY + DURABLE SYNC PREPARED**
