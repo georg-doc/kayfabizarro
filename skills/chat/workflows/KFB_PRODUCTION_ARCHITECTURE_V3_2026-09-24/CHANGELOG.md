@@ -310,3 +310,14 @@
 - Documentation/recovery consistency validation: **10/10 PASS** at source checkpoint; no runtime/browser/public PASS inferred.
 - No Hub job ids, runtime owners, Cloudflare routes, merges or Live state changed.
 - Exactly one next architecture gate: **intake the two running exports, then prepare bounded correction/integration briefs**.
+
+
+## 2026-09-25 · Claude Design Session-Cut export skill
+
+- Added skills/claude-design-session-export_v1.md as the standard full Claude Design handoff/export skill.
+- Trigger /claude-export now means: export immediately, no second confirmation; destructive cleanup still requires explicit approval.
+- Full Session Cut includes runnable current candidate codebase, START/HANDOVER/RETURN/CURRENT_STATE, active CHANGELOG, HOUSEKEEPING, SOURCE, manifest, tests, checksums, evidence and NEXT_CHAT.
+- Added explicit voice-input ambiguity handling: resolve real source names/paths from workspace/GitHub or mark VOICE_INPUT_UNCERTAIN; never silently substitute a similar donor.
+- Linked from session-export_v1, Claude Design adapter, central registry and router.
+- Failure-recovery template remains the separate escalation after two unsuccessful repair passes on the same gate.
+- Wiring validation: **8/8 PASS**. No runtime or ZIP generation claimed.
