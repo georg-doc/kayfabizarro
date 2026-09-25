@@ -1,3 +1,15 @@
+## 2026-09-25 · Root Hub 89-job refresh
+
+- restored missing `bot/production-desk-update` branch from existing HUB-CTRL owner;
+- rebuilt self-service registry from current Production Architecture PR #204;
+- self-service now **89 jobs / 43 READY / 46 HOLD / 89 prompts**;
+- refreshed Today/To-do lanes to 18 current lanes;
+- refreshed lane briefings/reviews/WSA status/open coordination problems;
+- refreshed current Tools to **10/10 available** on `cloudflare-live`;
+- re-rendered Production Desk + `kfb-hub/index.html` with the same current embedded fallback;
+- current Hub root source includes WB2 HUMAN PASS/Claude gate, LOOP_REAL Racer gate, Direct FBX, v17+ ToolBox and NPC-LIFE;
+- no second Hub/runtime created.
+
 ## 2026-09-25 · WB2 HUMAN PASS → Claude Design current gate
 
 - Hub WorldBuilder lane corrected from old “technical donor” wording to current GEORG HUMAN PASS;

@@ -1,3 +1,39 @@
+# CURRENT UPDATE · ROOT HUB 89-JOB REFRESH · 2026-09-25
+
+Status: **SOURCE RENDERED · LIVE REGISTRY RECOVERED · CLOUDFLARE ROOT PUBLICATION NEXT**
+
+Current Hub source:
+- HUB-CTRL PR #202;
+- rendered root/desk head `51eedf5297b19cfbf6ce1faf2986a941f4942f24`;
+- `kfb-hub/index.html` and `tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html` are byte-identical.
+
+Live registry branch:
+`bot/production-desk-update` recovered from HUB-CTRL and refreshed.
+
+Current Registry:
+- **18 lanes**;
+- **4 LOOK_AT / 7 RUNNING / 2 CAN_START / 5 WAITING**;
+- **89 briefings / 43 READY / 46 HOLD / 89 prompts**;
+- **10/10 current tools available**;
+- Work/WSA = **NOT_NEEDED**.
+
+Current focus visible in Hub:
+- WB2 HUMAN PASS → Claude Design authoring/UI refinement;
+- WorldBuilder Mobility waits behind WB2 design + technical dependencies;
+- Racer RKIT-08/09 → LOOP_REAL first, no world placement yet;
+- ToolBox Production / v17+ / Direct-FBX with AN-PROFILE human FAIL kept explicit;
+- NPC-LIFE running;
+- Music Performance remains a human review item;
+- Resident Disco / FrizzleBob body family / Direct FBX / AI-Town-KISS available through the self-service catalogue.
+
+Registry recovery note:
+the scheduled bot branch was absent, so this sync restored the branch manually through the existing HUB-CTRL owner. The Hub already prefers this branch before main/fallback.
+
+Exactly one next gate:
+publish the rendered root Hub file to `cloudflare-live`, then verify deployment. Do not claim PUBLIC_VERIFIED unless the exact pages.dev route can be opened and the 89-job revision is visible.
+
+---
+
 # CURRENT UPDATE · WB2 HUMAN PASS → CLAUDE DESIGN · 2026-09-25
 
 Status: **WB2 ACCEPTED · CLAUDE DESIGN CURRENT · NO NEW CLOUDFLARE / NO MERGE**
