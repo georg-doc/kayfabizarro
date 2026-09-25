@@ -1,6 +1,6 @@
 # WB2-TERRAIN-SCULPT-01 · Test Report · 2026-09-23
 
-Status: **R1 INTERACTION ENRICHED · LOCAL CHAT REVIEW CANDIDATE · NOT PUBLIC · HUMAN REVIEW PENDING**
+Status: **GEORG HUMAN PASS · WB2 TERRAIN + INTERACTION ACCEPTED · NOT PUBLIC**
 
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23`  
@@ -192,6 +192,25 @@ Review only:
 12. make a sculpt, Save, alter/clear it, Reload and confirm the saved terrain returns;
 13. switch back to **Object edit** and confirm the accepted inline editor still works.
 
+## Georg human acceptance · 2026-09-25
+
+Georg reviewed the WB2 direct Chat HTML and accepted the current terrain-authoring interaction.
+
+**WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS**
+
+Accepted in the human review:
+- Raise / Lower terrain sculpting;
+- visible brush footprint and terrain shape;
+- Brush Radius / Strength;
+- mouse wheel / touchpad Radius adjustment;
+- hold-Space temporary Orbit and immediate return to the same Raise/Lower mode;
+- `1 / 2 / 3` quick Object/Orbit / Raise / Lower switching;
+- Undo / Clear;
+- Save / Reload;
+- return to the accepted object-edit workflow.
+
+No Smooth / Flatten / material painting / Claude Design UI cleanup is implied by this PASS.
+
 ## Publication
 
 Cloudflare: **HOLD · NOT PUBLISHED**  
@@ -201,6 +220,6 @@ Merge: **not requested**
 
 ## One next gate
 
-**Georg human Chat-HTML review of WB2-TERRAIN-SCULPT-01 terrain shape and interaction.**
+**WB2 HUMAN GATE CLOSED.**
 
-STOP before Smooth / Flatten / material painting / large-world optimization / Claude Design UI cleanup.
+Next work must be opened as a new bounded slice. Smooth / Flatten / material painting / large-world optimization and Claude Design UI cleanup remain separate follow-ups.
