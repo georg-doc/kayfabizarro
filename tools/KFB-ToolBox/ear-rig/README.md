@@ -106,7 +106,7 @@ No vehicle wind, game-runtime integration or ear-geometry redesign in this gate.
 ## Asks
 **WSA:**
 - register `tools/KFB-ToolBox/ear-rig/` as a ToolBox candidate lane (next to `eye-rig-batch`);
-- decide the owner: FrankenStein Studio (placement and acting) or Animation Lab (motion);
+- preserve the owner decision above: Animation Lab owns `ear-dangle.v1.js`; FrankenStein Studio authors placement/acting/profile;
 - keep `ear-dangle.v1.js` as the single runtime copy.
 
 **Animation Lab / Studio:**
