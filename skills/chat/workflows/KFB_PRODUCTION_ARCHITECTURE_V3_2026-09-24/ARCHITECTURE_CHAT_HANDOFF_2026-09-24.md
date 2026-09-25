@@ -32,6 +32,62 @@ Read current GitHub versions of:
 
 GitHub beats chat memory.
 
+## CURRENT RECOVERY DELTA · 2026-09-25 evening · EXPORTS INTAKED
+
+The two Claude Design exports are no longer pending.
+
+Canonical intake:
+`INTAKE_SESSION_CUTS_EAR_RIG_2026-09-25.md`.
+
+Main upload:
+`8504afa9d14ad46855d0c590bc30eea0fc38d15d`.
+
+### ToolBox
+Session Cut:
+`tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/`
+
+Status:
+**KEEP · FUNCTIONAL CANDIDATE · GEORG HUMAN REVIEW NEXT.**
+
+Do not invent a new ToolBox brief before Georg tests the current Studio → IK/Pose → Animation Lab → contact correction → Save/Return flow.
+
+### WorldBuilder
+Session Cut:
+`tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/`
+
+Status:
+**KEEP · REHOME/REGRESSION → GEORG HUMAN REVIEW NEXT.**
+
+It uses the same WB2 terrain/object/persistence state in Hürth. Preserve it 1:1 first; Web runs World 26/26 + WB2 34/34 before review.
+
+### Ear Rig
+PR #214 / `tools/KFB-ToolBox/ear-rig/`.
+
+Owner decision is final for this candidate:
+- Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js`;
+- FrankenStein Studio authors geometry/placement/acted-rest pose/profile;
+- consumers provide only wind/contact/impulse facts.
+
+EAR-DANGLE-01 waits behind ToolBox Production-01 human review.
+
+### Export skill
+Current full Claude Design trigger is:
+`/session-zip` → `skills/session_ZIP_v1.md`.
+
+The older `/claude-export` skill is superseded history.
+
+Recovery caveat:
+the GitHub entry is a short fallback; the reported full canonical body incl. `zipcheck.py` still lives in Claude project Skills at `claude/session-zip-SKILL.md`. Mirror that exact full body into GitHub when available; do not reconstruct it.
+
+### Immediate architecture action
+
+No new product brief.
+
+Current product gates:
+1. Georg reviews ToolBox Production-01.
+2. Web rehomes/tests World Integration-01; Georg reviews.
+3. Architecture reacts only to those human results.
+
 ## CURRENT RECOVERY CHECKPOINT · 2026-09-25 · PLAYABLE INTEGRATION
 
 This checkpoint supersedes older sequencing text below where it conflicts.
