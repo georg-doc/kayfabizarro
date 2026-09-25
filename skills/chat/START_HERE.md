@@ -738,12 +738,12 @@ Current WB2 implementation on stacked Draft PR #190:
 - Chat Review: `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html`;
 - sculpt module: `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js`;
 - Return: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`;
-- implemented: Object / Raise / Lower, Radius, Strength, visible brush footprint, drag strokes, C2 falloff, Undo/Clear, sculpt Save/Reload, normal recompute;
-- evidence: **24/24** sculpt math/geometry + **33/33** Source/Review contract + **4/4** exact runtime sources;
-- embedded browser self-test: **28 assertions prepared / 0 executed**;
+- implemented: Object / Raise / Lower, Radius, Strength, visible brush footprint, drag strokes, C2 falloff, Undo/Clear, sculpt Save/Reload, normal recompute, wheel/touchpad Radius, hold-Space temporary Orbit and `1/2/3` quick modes;
+- evidence: **24/24** sculpt math/geometry + **56/56** current Source/Review contract + **31/31** focused interaction contract + **4/4** exact runtime sources;
+- embedded browser self-test: **34 assertions prepared / 0 executed**;
 - automated browser runtime: **0**; screenshots: **0**;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: **Georg Chat-HTML review of WB2-TERRAIN-SCULPT-01** — hill, depression, Radius/Strength, close-up artifact inspection, Undo/Clear, Save/Reload, then return to Object edit.
+Exactly one next WorldBuilder gate: **Georg Chat-HTML review of WB2-TERRAIN-SCULPT-01** — hill/depression shape plus wheel/touchpad Radius, hold-Space temporary Orbit, `1/2/3` quick modes, close-up artifact inspection, Undo/Clear, Save/Reload, then return to Object edit.
 
 STOP before Smooth / Flatten / material painting / Claude Design UI cleanup.
