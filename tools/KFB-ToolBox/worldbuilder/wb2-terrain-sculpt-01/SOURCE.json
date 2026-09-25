@@ -80,7 +80,7 @@
     "live": "NOT_PROMOTED"
   },
   "interaction_enrichment": {
-    "status": "CANDIDATE_HUMAN_REVIEW_PENDING",
+    "status": "GEORG_HUMAN_PASS",
     "wheel_touchpad_radius": {
       "active_only_in_sculpt": true,
       "min": 0.45,
@@ -100,5 +100,27 @@
       "R": "Rotate",
       "S": "free Scale"
     }
+  },
+  "human_acceptance": {
+    "status": "GEORG_HUMAN_PASS",
+    "date": "2026-09-25",
+    "accepted": [
+      "raise_lower_terrain_sculpt",
+      "brush_radius_strength",
+      "wheel_touchpad_radius",
+      "hold_space_temporary_orbit",
+      "quick_modes_1_2_3",
+      "undo_clear",
+      "save_reload",
+      "return_to_object_edit"
+    ],
+    "does_not_promote": [
+      "cloudflare",
+      "live",
+      "merge",
+      "smooth_flatten",
+      "material_painting",
+      "claude_ui_cleanup"
+    ]
   }
 }
