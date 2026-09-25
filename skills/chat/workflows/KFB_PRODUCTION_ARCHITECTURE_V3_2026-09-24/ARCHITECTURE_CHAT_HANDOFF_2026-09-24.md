@@ -446,3 +446,18 @@ Recovery facts:
 - Future Resident scene reviews should be terrain-placeable, ground/support-aware and use WorldBuilder-compatible sky/light presentation.
 - WB-D2 `FACADE_RULE v1` should become the ordinary-building facade rule beyond Hürth, including Cologne stock.
 - Recurring OSM roof-brightening, lower-wall shadow edge and floating-contact artefacts are global presenter defects; preserve the existing `orientEG` / shadow-side / normalBias donor fix and test contact/clipping globally.
+
+
+### Current Claude Design start briefs · 2026-09-25 late
+
+Use:
+- WorldBuilder: `CLAUDE_DESIGN_WORLD_INTEGRATION_CONTINUATION_2026-09-25.md`
+- ToolBox: `CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md`
+
+Both are continuation briefs from Georg's PROCEED PASS candidates.
+
+Do not send the earlier WB2-design or ToolBox-Production-01 bootstrap briefs as current starts.
+
+Blender MCP route note is parallel input only:
+`VOICE_INPUT_UNCERTAIN: "Lüt" → Dom → "Müllheim"/Mülheim → "SAG"/SAE`.
+Exact source/export pin required before integration.
