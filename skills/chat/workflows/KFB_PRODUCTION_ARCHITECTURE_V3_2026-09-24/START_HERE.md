@@ -1,23 +1,31 @@
 ## CURRENT ADDITIVE RESEARCH · 2026-09-26
 
-External Reddit/GitHub/demo research is now routed through:
+External Reddit/GitHub/demo research is routed through:
 `EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`.
 
-Pass 1 A–F is complete:
+**Pass 2 A–L is complete**:
 - World/environment/procedural Nature;
 - WorldBuilder authoring/sculpting;
 - road/track/socket/world→Race seams;
 - lightweight Resident AI;
 - Card Zone/portal/diegetic UI;
-- ToolBox/animation/source-isolation review.
+- ToolBox/animation/source-isolation review;
+- Vehicle/Drive/Boat/Flight;
+- Water/Weather/Sky/underwater presentation;
+- Combat contact/reaction/crowd patterns;
+- performance/LOD/streaming;
+- mobile/touch interaction;
+- small Activity Recipe/minigame sockets.
 
 Use it as a **donor/reference index**, not a new runtime owner. All strongest findings map into existing jobs; the Hub catalog remains **96 jobs / 44 READY / 52 HOLD**.
 
-Research validation: **14/14 PASS**.  
-No new Stage/Cloudflare/Live candidate was created.
+Research validation: **15/15 PASS**. The living report currently contains **73 HTTPS source/demo links**.  
+No new job, runtime, Stage, Cloudflare or Live candidate was created.
+
+Broad blanket research now stops by default. Future research is **question-triggered by a named KFB product gate**.
 
 Exactly one research-to-production gate:
-**feed relevant findings into existing `ENV-PREVIEW-01` / World environment work; do not fork a separate implementation lane.**
+**feed relevant findings into existing `ENV-PREVIEW-01` / World environment work; do not fork a separate research implementation lane.**
 
 # KFB Production Architecture v3 · Self-Service First
 
