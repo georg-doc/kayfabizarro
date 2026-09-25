@@ -1,5 +1,33 @@
 # KFB Cologne Route 01 · Hürth → Dom → Rhein → Mülheimer Brücke → SAE
 
+## CURRENT EXECUTION OVERRIDE · 2026-09-26
+
+Georg reports Blender MCP is currently building the missing connector / offset track pieces. At the latest GitHub check, no new `rkit-10` branch/PR was visible yet, so that work remains **USER-REPORTED IN PROGRESS · GITHUB OUTPUT NOT YET PINNED** until Web Chat can recover its exact source.
+
+The implementation order is now:
+
+```text
+Blender MCP connector pieces
+→ WEB-PREP-TRACK-R0
+→ CLAUDE DESIGN PLAYABLE-TRACK-R0
+→ WEB REHOME / BROWSER FREEPLAY / HUMAN GATE
+→ WEB PREP real OSM Route 01
+→ CLAUDE DESIGN OSM composition
+```
+
+**Track first does not mean OSM later as a bolt-on.** The Web prep writes the OSM seam contract before Claude assembles Track R0. The first track must already use the same route schema, metre-frame rules, street↔track adapter and semantic anchors needed by the real Hürth → Dom → Rhein → Mülheimer Brücke → SAE corridor.
+
+Current execution docs:
+
+- `TRACK_TO_OSM_EXECUTION_LADDER_2026-09-26.md` — coordinated Track-first → OSM production sequence;
+- `WEBCHAT_PLAYABLE_TRACK_R0_PREP_BRIEF.md` — first fresh Web Chat task;
+- `CLAUDE_DESIGN_PLAYABLE_TRACK_R0_BRIEF.md` — Claude Design assembly brief after Web pins the MCP/runtime sources;
+- `CLAUDE_BLENDER_MCP_BRIEF.md` — geometry/module brief retained for the Blender/RKIT lane.
+
+**Exactly one next gate for this workflow:** `WEB-PREP-TRACK-R0`, after or while recovering the latest Blender MCP output. Do not start Claude composition from prose-only module names.
+
+---
+
 **Status:** PLAN DIRECTION CONFIRMED BY GEORG · IMPLEMENTATION NOT STARTED  
 **Date:** 2026-09-25  
 **Planning owner:** `georg-doc/kayfabizarro` · chat workflow layer  
