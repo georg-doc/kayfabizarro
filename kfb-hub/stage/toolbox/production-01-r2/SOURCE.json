@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.toolbox-production-r2-stage-source/1",
+  "date": "2026-09-26",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "runtimePr": 185,
+    "runtimeBranch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+    "runtimeTestedHead": "5dcf34bcdf9d87445e927c98f60d41adae72f00e"
+  },
+  "review": {
+    "pr": 221,
+    "branch": "chatgpt-web/toolbox-r2-stage-review-recovery-2026-09-26",
+    "implementationHead": "8c25f3a904e4d877cc39367d8b88eed50e202491",
+    "buildMarker": "KFB_TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_RECOVERY_2026_09_26",
+    "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/",
+    "status": "CI_PASS_PUBLICATION_PENDING"
+  },
+  "retainedPins": {
+    "earRigHead": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+    "kayKitHead": "b97b5ac55df2724fae623992433685583eece51e",
+    "actor": "FB_TEMPLATE_LOOK_v5.glb"
+  },
+  "proof": {
+    "workflowRun": 36201152882,
+    "browser": "33/33 PASS",
+    "artifactId": 10892306034,
+    "artifactSha256": "0638bd6907cc65551c9e718fefe1d2490eb1f9a2fd785e68af89d3ce2090a49f",
+    "screenshots": [
+      "source.png",
+      "state.png",
+      "pose-ik.png",
+      "mobile.png"
+    ],
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "measuredMovementM": 0.546,
+    "semanticSequence": [
+      "walk",
+      "walk.fast",
+      "run"
+    ]
+  },
+  "humanGate": "PENDING_GEORG",
+  "livePromotion": "NOT_AUTHORIZED"
+}

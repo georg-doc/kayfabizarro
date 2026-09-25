@@ -287,3 +287,23 @@ The coherent browser still emits the accepted donor/template 404/theme-icon warn
 
 ### NEXT
 One dominant/unobstructed ToolBox r2 Stage review using the re-homed owner files. Do not revive the failed AN-PROFILE review composition.
+
+
+## 2026-09-26 · ToolBox r2 Stage review recovery · CI PASS
+
+### RECOVERY
+Fresh PR #221 replaces only the failed review/test surface from frozen PR #220. Runtime owners remain PR #185 / EarRig PR #214 / pinned KayKit assets.
+
+### FIX
+- semantic proof is driven by explicit `kfb:semantic-transition` events;
+- semantic timers use real elapsed time rather than the 40 ms render cap;
+- actor framing uses precise skinned visual bounds so EarRig-v5 ear tips are included;
+- Source remains the first isolated view.
+
+### EVIDENCE
+Implementation head `8c25f3a904e4d877cc39367d8b88eed50e202491`.
+Actions `36201152882`: **33/33 browser PASS**.
+Artifact `10892306034`: Source / State / Pose-IK / Mobile inspected; complete ears visible; 0 browser/request failures.
+
+### NEXT
+`TOOLBOX-R2-STAGE-PUBLISH-01`: publish the exact review package plus direct Hub link, verify the exact pages.dev route/build marker, then Georg PASS/TUNE/REJECT. No merge or Live promotion.
