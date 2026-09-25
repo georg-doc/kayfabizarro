@@ -180,26 +180,51 @@
     {
       "id": "billboard",
       "bucket": "LOOK_AT",
-      "title": "Billboard B2a · YouTube direkt auf der 3D-Fläche",
-      "what": "B1 ist angenommen. B2a spielt das echte YouTube-iframe jetzt direkt auf der gemessenen 3D-Werbefläche über den offiziellen Three.js-CSS3D-Weg; kein Modal-Viewer.",
+      "title": "Billboard B2b · Living Mockup / Collage Optionen",
+      "what": "B2a ist HUMAN_ACCEPTED. B2b ist als Recherche abgeschlossen: empfohlen wird der vorhandene KFB-CanvasTexture-Collage-Donor als A+ mit deterministischen No-Repeat-Rezepten, provenance-getracktem Pool und leichtem Living-Screen-Look. Noch keine B2b-Runtime.",
       "provider": "Web-Chat",
-      "yourAction": "B2a öffnen und VIDEO INLINE anklicken/bedienen. Prüfen, ob der Player wirklich als Teil der Werbetafel wirkt und beim 3D-Blick korrekt mitgeht.",
-      "waitingFor": "Georg PASS/TUNE für B2a.",
+      "yourAction": "B2b-Optionsmemo entscheiden: A+ empfohlen; KFB-only vs kleiner CC0-Pool; erster Look torn-history / newspaper / carnival / mixed hypernormalisation; B2b-P1 als nächstes oder B3 parallel.",
+      "waitingFor": "Georg wählt B2b-P1 oder startet B3 explizit parallel.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 211,
+      "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
+      "expectedHead": "662611e4a28123e9e9449e2da47f57c8dbe43815",
+      "brief": {
+        "label": "B2b Optionsmemo",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/OPTIONS_MEMO.md",
+        "ref": "chatgpt-web/billboard-b2b-research-2026-09-25",
+        "pasteReady": false
+      },
+      "review": {
+        "label": "Akzeptierte B2a Medienbasis",
+        "path": "kfb-hub/pruefen/billboard-b2a/index.html",
+        "sourceRef": "B2b research-only · PR #211 · no B2b runtime/Stage"
+      }
+    },
+    {
+      "id": "billboard-b3-cartoon-body",
+      "bucket": "WAITING",
+      "title": "Billboard B3 · rundes Cartoon-3D-Modell",
+      "what": "Das akzeptierte Kenney-Billboard soll später als runderer, weicherer KFB-Cartoon-Prop modelliert werden. B1/B2a-Medienfläche und Front/Rear-Vertrag bleiben unverändert; Blender MCP ist für echte Topologiearbeit ausdrücklich erlaubt.",
+      "provider": "WSA / ToolBox 3D · ggf. Blender MCP",
+      "yourAction": "",
+      "waitingFor": "Nach B2b-Optionsentscheid oder explizitem Georg-Parallelstart.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
       "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
-      "expectedHead": "154edef4f220540c9079ab22d5b243baddea6909",
+      "expectedHead": "07da4adfd1de293d03682d1af90a01df2a1eba19",
       "brief": {
-        "label": "B2a Return / Recovery",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/RETURN.md",
+        "label": "WSA / Blender MCP Handover",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md",
         "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
         "pasteReady": false
       },
       "review": {
-        "label": "B2a ansehen",
+        "label": "Akzeptierte Medienbasis ansehen",
         "path": "kfb-hub/pruefen/billboard-b2a/index.html",
-        "sourceRef": "PR #199 · PUBLIC_VERIFIED · 22/22 PASS · human pending"
+        "sourceRef": "B2a HUMAN_ACCEPTED · B3 PREPARED / NOT STARTED"
       }
     },
     {

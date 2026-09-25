@@ -115,3 +115,16 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - verified public direct route + navigator with **22/22 Chromium PASS** in run `36047130373`;
 - human result remains PENDING;
 - root Production Desk regeneration remains a separate pending HUB-CTRL task and is not claimed complete.
+
+
+## 2026-09-25 · Billboard B2b research + B3 WSA handover
+
+- updated the Billboard Hub source lane from B2a human review to B2b research choice;
+- B2b Draft PR #211 / head `662611e4a28123e9e9449e2da47f57c8dbe43815`;
+- primary memo: `tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/OPTIONS_MEMO.md`;
+- recommendation: A+ CanvasTexture collage compositor with deterministic no-repeat recipes, small provenance-tracked pool and lightweight Living Screen treatment;
+- no B2b runtime or public Stage route exists;
+- added a separate WAITING B3 lane for rounded/cartoon 3D billboard body authoring;
+- B3 handover: `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`;
+- Blender MCP is allowed for true topology/casing/post/support work;
+- generated public root Hub was not manually edited or claimed republished by this source metadata checkpoint.
