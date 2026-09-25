@@ -91,27 +91,27 @@
     },
     {
       "id": "worldbuilder-wb2",
-      "bucket": "WAITING",
-      "title": "WorldBuilder WB2 · technische Vorlage",
-      "what": "Das Geländeformen aus WB2 bleibt als technischer Donor erhalten. Es ist nicht mehr die aktuelle Welt- oder Maßstabsrichtung.",
-      "provider": "WorldBuilder-Chat",
+      "bucket": "CAN_START",
+      "title": "WorldBuilder WB2 · HUMAN PASS → Claude Design",
+      "what": "WB2 ist die akzeptierte Terrain-/Scene-Authoring-Basis: Raise/Lower, Radius/Strength, Wheel/Touchpad-Radius, Space-Orbit, 1/2/3, Undo/Clear und Save/Reload sind von Georg angenommen. Jetzt nur UI/Authoring-Look verfeinern — keine neue Terrain-Architektur.",
+      "provider": "Claude Design → Web/GitHub Bridge",
       "yourAction": "",
-      "waitingFor": "WB-W0 wird zuerst als aktuelle, gemessene Weltgrundlage gesichert.",
+      "waitingFor": "Claude Design Session Cut; danach 1:1 Web-Rehome und direkte lokale/Chat-Review. Smooth/Flatten bleiben separate spätere Web-Slices.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 190,
       "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-      "expectedHead": "5a98e674184ea4694a5ad7d696d8cc84c1618bdf",
+      "expectedHead": "ec52eb746be8c1a0e6f3f3d62857ed4b3121b284",
       "review": {
-        "label": "Angenommene Fassung ansehen",
+        "label": "Akzeptierte WB2-Fassung",
         "path": "kfb-hub/pruefen/gelaende-formen/index.html",
-        "sourceRef": "PR #190 @8922d4b1 · tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html"
+        "sourceRef": "PR #190 · GEORG HUMAN PASS · accepted review evidence; no new Cloudflare publication in current design gate"
       },
       "brief": {
-        "label": "Startnachricht",
-        "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/HUMAN_RESULT_WB2_2026-09-24.md",
+        "label": "Claude Design Handoff",
+        "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md",
         "ref": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-        "pasteReady": true
+        "pasteReady": false
       }
     },
     {
@@ -330,16 +330,16 @@
     },
     {
       "id": "worldbuilder-mobility-mvp",
-      "bucket": "CAN_START",
-      "title": "WorldBuilder · neue Mobility-Welt",
+      "bucket": "WAITING",
+      "title": "WorldBuilder · Mobility-Welt nach WB2 Design-Gate",
       "what": "Köln-World-Zone und Flow-Shell zusammenführen und danach Ground/Drive/Flight/Boat/Air plus gemeinsame Walk/Run/Jump-State-Animation in derselben Welt anschließen.",
       "provider": "ChatGPT Web / WorldBuilder",
       "yourAction": "",
-      "waitingFor": "",
+      "waitingFor": "Zuerst WB2 Claude Design UI/WorldDesign-Refinement; außerdem WB-ZONE-SEAM, Travel-Modi und akzeptierter Motion-Consumer.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
-      "expectedHead": "01ba3e594cdea1c32841114ced6beddb1b8fba34",
+      "expectedHead": "0a1d7af1d12f0f04e8d1f895aa2e50fbb08be6a1",
       "brief": {
         "label": "MVP-Plan",
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
