@@ -44,12 +44,11 @@
       "id": "worldbuilder",
       "title": "WorldBuilder / God Mode",
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
-      "capabilitiesTotal": 10,
+      "capabilitiesTotal": 11,
       "currentReady": [
         "wb2-design-refine-01",
         "world-zone-bake-01",
-        "look-torsion-01",
-        "wb-design-parallel-01"
+        "look-torsion-01"
       ],
       "currentReview": "worldbuilder-w0",
       "currentPriority": "wb2-design-refine-01",
@@ -1860,7 +1859,7 @@
     {
       "id": "wb-design-parallel-01",
       "strand": "worldbuilder",
-      "bucket": "READY",
+      "bucket": "HOLD",
       "priority": "P1",
       "executor": "Claude Design",
       "executionProfile": "CLAUDE_DESIGN_STANDARD",
@@ -1871,15 +1870,19 @@
         "WEB_STANDARD"
       ],
       "title": "WorldBuilder · Cologne Visual / Authoring Shell",
-      "what": "Advance the visible WorldBuilder/World-Zone look on a frozen real Cologne fixture while the OSM compiler runs in parallel.",
-      "result": "One real-source visual shell proving KFB world hierarchy, landmark torsion and current editor affordances without owning OSM compilation.",
+      "what": "Latest WB-D2 candidate already proves Cologne/Hürth/Alstädten presentation, facade rule, contact shadows and street names. Do not rerun; next is docking into current WB2/editor.",
+      "result": "WB-D2 presentation candidate preserved; wait for WB2 Design/Rehome then WB-ZONE-SEAM-01.",
       "promptSection": "WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell",
       "sourceSet": "worldbuilder",
       "cloudflareRequired": false,
       "workRequired": false,
       "parallelWith": [
         "world-zone-bake-01"
-      ]
+      ],
+      "latestCandidate": "706c3f121bc3a305778306917613ea23eb772c16",
+      "latestCandidatePath": "tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2",
+      "waitingFor": "WB2-DESIGN-REFINE-01 accepted/re-homed; then WB-ZONE-SEAM-01",
+      "humanResult": "PARTIAL_POSITIVE_LOOK_SHADOW_ONLY"
     },
     {
       "id": "npc-card-spec-01",
@@ -1912,16 +1915,16 @@
       "strand": "animation-residents",
       "bucket": "READY",
       "executor": "ChatGPT Web",
-      "title": "Residents · Outdoor Disco Ensemble",
-      "what": "Sieben echte KayKit-Residents aus Legacy/Medium/Large: Skeleton Minion über den bewährten beat-getriebenen Bounce-Ansatz, Avian Swordsman + Protagonist_A/Teenager + weitere Mediums und zwei Large-Dancer; barbewusste Wechsel auf einem Music-Clock.",
-      "result": "Source-Cast + Motion-Audition; danach 32-Bar Resident-Performance. Disco Ball wird als separates wiederverwendbares Core-Modul mit Licht/Beam-Effekten und späterem EyeRig-Seam entwickelt.",
+      "title": "Residents · S40 Disco Rotation bridge",
+      "what": "Bridge the existing S9/S40 candidate: 8-song tempo-mapped rotation, multi-rig ensemble, DJ/MC graft, crowd collision and Disco Ball Core — do not rebuild it.",
+      "result": "Owner-clean S40 candidate plus bounded human review; one shared performance clock and shared Motion Library metadata.",
       "promptSection": "RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble",
       "sourceSet": "animationResidents",
       "detailedBriefing": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md",
       "cloudflareRequired": false,
       "workRequired": false,
       "plannedStageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/",
-      "humanResult": "NOT_STARTED",
+      "humanResult": "REVIEW_PENDING",
       "executionProfile": "WEB_DEEP",
       "secondaryProfiles": [
         "BLENDER_STANDARD"
@@ -1931,7 +1934,11 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false,
-      "relatedCapability": "DISCO-BALL-CORE-01"
+      "relatedCapability": "DISCO-BALL-CORE-01",
+      "priority": "P0",
+      "latestCandidate": "a46dbdff150362e7153c143b21fa76ffe8ffb5e4",
+      "latestCandidatePath": "tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation",
+      "nextGate": "Web/GitHub Bridge owner reconciliation → Georg visual review"
     },
     {
       "id": "wb-mobility-mvp-01",
@@ -2005,8 +2012,8 @@
       "priority": "P0",
       "executor": "ToolBox Animation Studio / Web",
       "title": "Animation · Direct FBX Motion Intake",
-      "what": "Upload compatible FBX in Animation Lab, classify DIRECT vs BLENDER_REQUIRED and promote good clips as derived GLB/catalogue assets.",
-      "result": "Browser intake + GLB/catalogue export + compact Blender exception queue.",
+      "what": "Upload compatible FBX in Animation Lab, classify DIRECT vs BLENDER_REQUIRED, and emit shared GLB/catalogue/profile metadata including semantic roles needed by Resident performances.",
+      "result": "Browser intake + role-aware Motion Library metadata + GLB export + compact Blender exception queue.",
       "promptSection": "MOTION-INTAKE-DIRECT-01 · Animation Lab direct FBX → GLB / Motion Library intake",
       "sourceSet": "animationResidents",
       "cloudflareRequired": false,
@@ -2087,6 +2094,27 @@
       "budget": "STANDARD",
       "workDefault": false,
       "coworkDefault": false
+    },
+    {
+      "id": "wb-zone-seam-01",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "ChatGPT Web / GitHub Bridge",
+      "title": "WorldBuilder · WB-D2 / baked-zone seam",
+      "what": "Dock the latest Cologne/Hürth/Alstädten presentation shell onto the current WB2 editor and canonical baked World Zone without moving owners.",
+      "result": "Current WorldBuilder consumes zone truth through wd1-seam; presentation stays WB-D2-owned; Alstädten remains candidate until OSM re-cache.",
+      "promptSection": "WB-ZONE-SEAM-01 · Dock WB-D2 shell onto current WorldBuilder + baked zones",
+      "sourceSet": "worldbuilder",
+      "waitingFor": "WB2-DESIGN-REFINE-01 accepted/re-homed",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false
     }
   ],
   "presentation": {
@@ -2098,9 +2126,9 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 89,
-    "ready": 43,
-    "hold": 46
+    "jobs": 90,
+    "ready": 42,
+    "hold": 48
   },
   "executionProfiles": {
     "WEB_FAST": {

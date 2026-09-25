@@ -1840,6 +1840,18 @@ Expose this inside current Animation Studio/ToolBox using the same source-backed
 > - exactly one next integration gate.
 
 
+
+### Latest WB-D2 intake · 2026-09-25
+
+Do not rebuild the shell from the original brief.
+
+Latest candidate input is main upload `706c3f121bc3a305778306917613ea23eb772c16`:
+`tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2/`.
+
+It already contains Cologne/Hürth/Alstädten on one presenter/seam, facade-rule v1, shadow fix, street names and the Alstädten homebase. Treat it as presentation candidate only. Its Alstädten OSM fetch is a documented rule deviation and must be re-cached by OSM City Lab before source promotion.
+
+Current continuation is **not another shell design pass**. Wait for the current WB2 Design/Rehome and then execute `WB-ZONE-SEAM-01`.
+
 ---
 
 ## NPC-CARD-SPEC-01 · Resident Card Speculation Scene
@@ -2113,6 +2125,22 @@ Expose this inside current Animation Studio/ToolBox using the same source-backed
 > Read `AI_TOWN_KFB_EVALUATION_2026-09-24.md`, NPC-LIFE-01, Town Living and Journey/ChatterBox. Each Resident has one intent: activity | approach | encounter | performance | travel | combat-handoff. First proof: 3 real Residents, seeded chooser, host movement, NPC-LIFE beats, ChatterBox text, Journey filtered facts. Live LLM optional. Optional low-frequency Observer recap cannot alter truth/rewards.
 
 
+
+### S40 role metadata requirement · 2026-09-25
+
+Resident S40 proves why intake must expose semantic roles in addition to clip ids. DIRECT/BLENDER_REQUIRED output should support role tags such as:
+`dance`, `idle`, `react.cheer`, `music.drums`, `mc.gesture`, `transition`.
+
+Preserve source-backed fields already consumed by S40:
+`loop`, `rootMotion`, `durationSec`, `travelMetersPerCycle`, `bestVariant`, `sourceFbx`.
+
+First useful gaps from S40:
+- Cheer / Clap / Victory for HIT 2;
+- MC microphone gesture;
+- 1–2 bar transition actions.
+
+Do not create a second role database: extend the shared Motion Library catalogue/profile layer.
+
 ---
 
 ## WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement
@@ -2143,3 +2171,35 @@ Expose this inside current Animation Studio/ToolBox using the same source-backed
 > Do not add Smooth, Flatten/Set Height, material painting, masks, erosion or large-world bake/cache in this pass.
 >
 > Return a complete editable Session Cut. Web/GitHub Bridge rehomes 1:1 and creates the next local/direct review artifact. No Cloudflare publication or merge in this gate.
+
+
+---
+
+## WB-ZONE-SEAM-01 · Dock WB-D2 shell onto current WorldBuilder + baked zones
+
+**Executor:** ChatGPT Web / GitHub Bridge
+
+**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.
+**Outcome:** current WorldBuilder/editor consumes WB-D2 presentation and canonical baked World Zone data through one thin adapter without moving owners.
+
+> @GitHub
+> Read:
+> - current accepted WB2 + completed Claude Design/Rehome result;
+> - `INTAKE_WBD2_RESIDENT_S40_2026-09-25.md`;
+> - WB-D2 `HANDOVER_WSA.md`, `START_NEXT_CHAT.md` and `wd1-seam.js`;
+> - current WORLD-ZONE-BAKE package/Return.
+>
+> Preserve:
+> - WorldBuilder owns terrain/editor/persistence;
+> - OSM City Lab / World Zone Bake owns geographic source + normalized/baked zone truth;
+> - WB-D2 owns presentation only: facade/look, names, landmark/water presentation and visual hierarchy.
+>
+> Add only the adapter needed for `wd1-seam.js` to consume the current baked zone format/current WorldBuilder host. Do not copy terrain, editor, route, persistence or OSM compiler into the shell.
+>
+> First integration fixtures: current canonical Cologne zone plus the already-exported Hürth/Alstädten presentation candidates. Alstädten remains source-candidate until OSM City Lab re-caches it with SOURCE_SPEC/provenance.
+>
+> Carry visible known defects honestly: B1 road-edge rasterization, B2 sign road-edge anchoring, live no-reload zone switch and missing Hürth landmark. Do not hide them by changing geography.
+>
+> Done when one current WorldBuilder review can switch/load real zone source through the seam while keeping WB2 editor/Save-Reload owners intact.
+>
+> No Ehrenfeld fetch/build in this gate. No Race Track placement.

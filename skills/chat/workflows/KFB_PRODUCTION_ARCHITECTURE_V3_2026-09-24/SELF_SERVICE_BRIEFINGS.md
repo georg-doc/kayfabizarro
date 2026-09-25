@@ -293,3 +293,24 @@ The architecture lane updates these templates when the production model changes;
 > Planned milestone Stage after coherent review only:
 > `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`
 > Do not claim that route live until it has actually been published and opened.
+
+
+### Latest S40 candidate · 2026-09-25
+
+Do **not** execute RES-DISCO-A from scratch.
+
+Latest candidate input is main upload `a46dbdff150362e7153c143b21fa76ffe8ffb5e4`:
+`tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation/`.
+
+It already provides Source Cast / Motion Audition / Ensemble, 8-song measured rotation with tempo maps, 16-bar phrase, root-wander correction, crowd collision, FrizzleBob DJ/MC graft and DISCO-BALL-CORE-01.
+
+Current task is **Bridge + bounded review**:
+- keep current Resident, Motion Library and MUSIC-PERF owners;
+- pin/fix the Graft reader's internal raw@main asset loads;
+- reconcile Disco vs Band Motion Library pins;
+- replace the Band's separate transport with the shared performance transport;
+- keep per-track downbeats explicitly marked as set/not measured;
+- keep HIT 2 placeholder explicit until Direct FBX supplies a source-backed cheer/react action;
+- do not retire prior Atlas generations without explicit approval.
+
+Return one direct review for Georg's actor/motion pairing, Skeleton bounce, Disco-Ball and beam/dot questions.
