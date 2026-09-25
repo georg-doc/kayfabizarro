@@ -1,5 +1,26 @@
 # KFB Track Core · one base track, pieces only · planning slice
 
+## CURRENT EXECUTION DELTA · SP13KTRA alignment + sprint plan · 2026-09-26 (Claude Coworker)
+
+Read these first; they supersede the agent ladder below for execution:
+
+- `SPRINT_PLAN_TRACK_CORE_BLENDER_2026-09-26.md`: G0 (Georg: JS) → W0 (census + contract + **runnable JS reference**) → B1–B5 (Blender = oracle + scenery atelier, never a second solver) → W1 (runtime parity + contact) → D1 → R0 → K1.
+- `SP13KTRA_DONOR_ALIGNMENT.md`: architecture of the original (`KilledByAPixel/SP13KTRA@e9b2589`, **All Rights Reserved, principles only**):
+  - skeleton → evenly spaced samples → heading + bank frames → profile as a function of x → paint over s → one baked world;
+  - scenery (tunnels, arches) over the same road;
+  - route-space contact with windowed projection.
+- `WSA_DRAFTS_TRACK_CORE_2026-09-26.md`:
+  - W0 addendum;
+  - decision memo (JS, Blender role, clothoids to be proven in B2, route-space contact proposal);
+  - housekeeping list;
+  - paste-ready W0 start prompt.
+
+`BLENDER_MCP_TRACK_CORE_1A_PROOF_BRIEF.md` stays as a reference; its content is split into sprints B1–B5.
+
+**Exactly one next gate: G0 · Georg confirms JavaScript as the authoritative core, then W0.**
+
+---
+
 ## CURRENT RESEARCH / EXECUTION DELTA · 2026-09-26
 
 The Perplexity intake at:

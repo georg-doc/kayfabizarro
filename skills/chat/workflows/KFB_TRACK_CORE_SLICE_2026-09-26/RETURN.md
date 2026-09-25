@@ -1,5 +1,20 @@
 # RETURN · KFB Track Core planning · 2026-09-26
 
+## CURRENT ADDENDUM · SP13KTRA alignment + sprint plan (Claude Coworker, 26.09 late)
+
+**Defects / open first**
+- **G0 open:** JS as the authoritative core is recommended; Georg answered "top" to the proposal; formal confirmation pending.
+- **W0 not started:** the B-sprints need at least a minimal JS reference (samples + frames).
+- **Contact still unread:** Race's current contact / collider path is unread. The route-space contact proposal (D4) is a draft for Race / WSA.
+- **Donor not run:** SP13KTRA was not run in a browser for this addendum; it is a source reading. No donor code, constants or text were transferred.
+- **Stack not mergeable:** #219 is still `mergeable:false` (stacked on the moved #216).
+
+**Added:** `SP13KTRA_DONOR_ALIGNMENT.md`, `SPRINT_PLAN_TRACK_CORE_BLENDER_2026-09-26.md`, `WSA_DRAFTS_TRACK_CORE_2026-09-26.md`.
+
+**Exactly one next gate:** G0 (Georg: JS), then W0.
+
+---
+
 ## CURRENT ADDENDUM · Perplexity transition review + agent routing
 
 **Status:** RESEARCH REVIEW + EXECUTION BRIEFS COMPLETE · IMPLEMENTATION STILL NOT STARTED · NO STAGE · NO LIVE

@@ -1,5 +1,21 @@
 # KFB Track Core · Changelog
 
+## 2026-09-26 (late) · SP13KTRA alignment + Blender-focused sprint plan (Claude Coworker)
+
+### Added
+- `SP13KTRA_DONOR_ALIGNMENT.md`: source reading of `KilledByAPixel/SP13KTRA@e9b2589` (re-pin; TARCH-0 had `166ad838`); alignment matrix; licence boundary (principles only).
+- `SPRINT_PLAN_TRACK_CORE_BLENDER_2026-09-26.md`: G0 → W0 → B1–B5 → W1 → D1 → R0 → K1.
+- `WSA_DRAFTS_TRACK_CORE_2026-09-26.md`: W0 addendum, decision memo, housekeeping list, W0 start prompt.
+
+### Changed (execution order only; no earlier file rewritten except the START_HERE / RETURN headers)
+- The language decision moves before W0 (recommendation JS; Georg answered "top" to the proposal, formal G0 pending).
+- W0 must ship a runnable pure-JS reference with Node tests, not only a contract.
+- The Blender lane becomes oracle + scenery atelier. 1A is split into B1–B5.
+- Clothoids are downgraded from prerequisite to "prove in B2": the donor drives well with fillets + smoothed curvature.
+
+### Tests
+0 runtime / Blender / browser tests (planning). Donor source read at the exact commit above.
+
 ## 2026-09-26 · Perplexity transition research integrated
 
 ### Added
