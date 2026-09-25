@@ -3,6 +3,48 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-25 · WorldBuilder WB2 HUMAN PASS
+
+### HUMAN ACCEPTANCE
+Georg accepted the current WB2 Terrain Sculpt R1 interaction:
+- Raise / Lower terrain shaping;
+- Radius / Strength;
+- wheel / touchpad Brush Radius;
+- hold-Space temporary Orbit;
+- `1 / 2 / 3` quick Object/Orbit / Raise / Lower modes;
+- Undo / Clear;
+- Save / Reload;
+- return to the accepted object-edit workflow.
+
+Result:
+**WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS**
+
+### FUNCTIONAL FOUNDATION
+Accepted functional foundation now includes:
+- WB1 terrain + Resident scene;
+- shared inline object editor R2;
+- WB2 non-destructive Terrain Sculpt;
+- wheel/Space/quick-mode authoring gestures.
+
+R3 uniform `−/+` Size remains optional/non-blocking.
+
+### NEXT
+The existing Claude Design handoff is now unblocked.
+
+Exactly one next WorldBuilder gate:
+**Claude Design authoring/UI refinement on the accepted WB2 source.**
+
+Primary UX direction:
+- reduce/collapse redundant side-panel editor copy/controls;
+- keep object transforms inline at the selected object;
+- keep Terrain Sculpt compact and scene-level;
+- maximize 3D FOV;
+- compose accepted WorldDesign look/environment controls;
+- preserve terrain/edit/persistence owners.
+
+Smooth / Flatten / material painting remain later functional slices.
+
+
 ## 2026-09-25 · WorldBuilder WB2 authoring interaction R1
 
 ### HUMAN REQUEST
