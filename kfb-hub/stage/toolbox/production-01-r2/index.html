@@ -126,7 +126,7 @@ function readout(){
 async function json(url,label){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(label+' HTTP '+r.status);state.resources[label]=url;return r.json()}
 function glb(url,label){return new Promise((resolve,reject)=>loader.load(url,g=>{state.resources[label]=url;resolve(g)},undefined,e=>reject(new Error(label+' GLB failed · '+(e?.message||url)))))}
 function frameActor(){
-  if(!figure)return;actorRoot.position.set(0,0,0);actorRoot.rotation.set(0,0,0);actorRoot.updateMatrixWorld(true);
+  if(!figure)return;actorRoot.updateMatrixWorld(true);
   const b=new THREE.Box3().setFromObject(figure);const s=b.getBoundingSphere(new THREE.Sphere());const r=Math.max(.6,s.radius);
   controls.target.copy(s.center);camera.position.copy(s.center).add(new THREE.Vector3(r*1.4,r*.45,r*2.5));controls.update();lastFollow.copy(actorRoot.position);
 }
@@ -149,7 +149,7 @@ function setMode(next){
   actorRoot.position.set(0,0,0);actorRoot.rotation.set(0,0,0);resetSkeleton();
   if(ears){ears.L.reset();ears.R.reset()}
   if(next==='source'){state.sourceIsolated=true;ring.visible=false;frameActor();els.hint.textContent='Exact source object only. No ToolBox controller is active.'}
-  if(next==='state'){ring.visible=true;startRole('idle',0);frameActor();els.hint.textContent='Automatic Idle → Walk → fast Walk → Run → Sprint loop. World speed comes from the measured ToolBox consumer profile.'}
+  if(next==='state'){ring.visible=true;actorRoot.position.set(0,0,2.7);actorRoot.rotation.y=Math.PI/2;lastFollow.copy(actorRoot.position);startRole('idle',0);frameActor();els.hint.textContent='Automatic Idle → Walk → fast Walk → Run → Sprint loop. World speed comes from the measured ToolBox consumer profile.'}
   if(next==='pose'){
     ring.visible=false;const idle=state.profile.roles.idle;const c=findClip(idle.clip);if(c){currentAction=mixer.clipAction(c);currentAction.reset().play();currentRole='idle'}
     pose.set({on:true,preset:'surf',weight:1,jig:false});pose.apply();state.chainReport=pose.chainReport();const p=pose.effector('handR');if(p){ikTarget.position.copy(p).add(new THREE.Vector3(-.14,.14,.04));ikTarget.visible=true}
