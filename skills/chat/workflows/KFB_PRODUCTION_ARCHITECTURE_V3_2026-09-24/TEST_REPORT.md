@@ -561,3 +561,19 @@ Additional content evidence:
 - runtime code changed by Pass 2: **0 files**.
 - deployment/Cloudflare changed by Pass 2: **0**.
 - human review surface created by Pass 2: **none**; research/navigation only.
+
+
+## External Demo Research Radar · Pass 2 handoff sync · 2026-09-26
+
+Result: **8/8 PASS** at pre-check head `17cbae018b19c3521836667f7c7f248ce3d4debb`.
+
+1. PASS — research radar says Pass 2 A–L complete.
+2. PASS — TEST_REPORT contains Pass-2 15/15 validation.
+3. PASS — Hub catalog metadata says `PASS_2_COMPLETE_A_L_NO_NEW_JOB`.
+4. PASS — Hub catalog remains **96 jobs**.
+5. PASS — additive CHANGELOG begins with Pass-2 entry.
+6. PASS — Production Architecture `START_HERE.md` routes to Pass 2.
+7. PASS — central `skills/chat/START_HERE.md` routes to Pass 2.
+8. PASS — Architecture recovery handoff starts with Pass-2 recovery state.
+
+This is documentation/routing integrity only. No runtime or deployment test is implied.
