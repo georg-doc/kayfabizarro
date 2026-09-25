@@ -461,3 +461,32 @@ Do not send the earlier WB2-design or ToolBox-Production-01 bootstrap briefs as 
 Blender MCP route note is parallel input only:
 `VOICE_INPUT_UNCERTAIN: "Lüt" → Dom → "Müllheim"/Mülheim → "SAG"/SAE`.
 Exact source/export pin required before integration.
+
+
+### Recovery delta · 2026-09-26 · r2 cuts received
+
+Canonical intake:
+`INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md`.
+
+Main head containing the cuts:
+`b24b129b787beecd0ca0760611ac4044d3f7189c`.
+
+Current ToolBox source candidate:
+`tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-1/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Current World source candidate:
+`tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Status:
+- ToolBox r2 = KEEP · owner rehome required · 19/19 Claude-preview selftest reported;
+- World r2 = KEEP · owner rehome/regression required · 55/55 Hürth + 55/55 Cologne Claude-preview selftests reported;
+- no Georg r2 Human PASS yet;
+- no Stage/Public review yet.
+
+Important seam:
+ToolBox owns canonical locomotion/profile truth. World consumes it. Do not independently promote World-local locomotion measurements as the shared source.
+
+The previous Claude continuation briefs are provenance/history now, not the next execution prompt.
+
+Current action:
+**Web/GitHub receiving-owner integration first.**
