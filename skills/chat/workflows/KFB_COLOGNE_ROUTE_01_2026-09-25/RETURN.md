@@ -1,5 +1,66 @@
 # RETURN · KFB Cologne Route 01 planning · 2026-09-25
 
+## CURRENT RETURN ADDENDUM · 2026-09-26
+
+**Status:** TRACK-FIRST EXECUTION BRIEFS PERSISTED · NO TRACK IMPLEMENTATION YET · NO NEW STAGE/LIVE CLAIM
+
+### New direction persisted
+
+Georg clarified that Blender MCP is already working on the missing connector/offset track pieces and requested the next production chain for a new playable track, with OSM planned jointly but integrated after the track baseline is proven.
+
+Current sequence:
+
+`Blender MCP → WEB-PREP-TRACK-R0 → CLAUDE PLAYABLE-TRACK-R0 → WEB REHOME/TEST → OSM PREP → CLAUDE OSM COMPOSITION`.
+
+This is not an architectural postponement of OSM: `OSM_SEAM_CONTRACT.md` is a required Web-prep output before Claude assembles Track R0.
+
+### New files
+
+- `TRACK_TO_OSM_EXECUTION_LADDER_2026-09-26.md`
+- `WEBCHAT_PLAYABLE_TRACK_R0_PREP_BRIEF.md`
+- `CLAUDE_DESIGN_PLAYABLE_TRACK_R0_BRIEF.md`
+
+Updated:
+
+- `START_HERE.md`
+- `EVIDENCE_AND_GAP_MATRIX.md`
+- `CHANGELOG.md`
+- `RECOVERY.md`
+- this `RETURN.md`
+- central router/changelog/Hub metadata are updated later in this same handoff.
+
+### GitHub evidence
+
+At the 2026-09-26 check:
+
+- no GitHub-visible `rkit-10` branch/PR was found;
+- Georg's Blender MCP work is therefore recorded as user-reported in progress, not as source-complete;
+- Race PR #12 is retained as the existing continuous Hürth→Ehrenfeld OSM corridor/receiver donor;
+- it is not misrepresented as the desired Hürth→Dom→Rhein→Mülheimer Brücke→SAE geography.
+
+### Tests in this update
+
+- new runtime tests: **0**
+- new Blender tests: **0**
+- new browser tests: **0**
+- new Stage/public deployments: **0**
+
+This update writes execution briefs and source-routing evidence only.
+
+### Reserved future Stage
+
+`https://kayfabizarro.pages.dev/kfb-hub/stage/race/playable-track-r0/`
+
+Status: **RESERVED · NOT LIVE · NOT PUBLIC_VERIFIED**.
+
+### Exactly one next gate
+
+`WEB-PREP-TRACK-R0`.
+
+The Web chat first recovers/pins the latest Blender MCP output, selects one exact existing Race runtime owner, creates `PLAYABLE_TRACK_R0.recipe.json` + `OSM_SEAM_CONTRACT.md`, and hands Claude Design a closed source pack.
+
+---
+
 **Status:** PLAN + IMPLEMENTATION BRIEF COMPLETE · NO RUNTIME IMPLEMENTATION · NO STAGE · NO LIVE PROMOTION
 
 ## Repository / branch
