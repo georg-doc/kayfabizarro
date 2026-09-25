@@ -4,6 +4,8 @@
 
 **Status:** DOWNSTREAM ROUTE/TRACK BRIEFS RETAINED · TRACK CORE NOW PREREQUISITE · NO NEW RUNTIME/STAGE/LIVE CLAIM
 
+This addendum **supersedes the execution status / next-gate statements in the older 2026-09-26 Track-R0 addendum below wherever they conflict**. The older text is retained as additive history.
+
 ### Current architecture
 
 After Georg's RKIT-11 review, stacked PR #219 now amends this route plan:
