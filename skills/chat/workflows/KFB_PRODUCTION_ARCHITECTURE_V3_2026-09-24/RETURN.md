@@ -1051,3 +1051,50 @@ ToolBox scope:
 Blender route note retained as VOICE_INPUT_UNCERTAIN until exact export/pin arrives.
 
 No merge or Live promotion authorized.
+
+
+## 2026-09-26 · World + ToolBox r2 Session Cuts intaked
+
+Status: **INTAKE COMPLETE · RECEIVING-OWNER INTEGRATION NEXT**
+
+Main source:
+`b24b129b787beecd0ca0760611ac4044d3f7189c`.
+
+### ToolBox r2
+Path:
+`tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-1/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Classification:
+**KEEP · OWNER REHOME REQUIRED**
+
+Reported evidence:
+- 19/19 Claude Preview selftest;
+- closure/JSON/secret checks PASS;
+- Python zipcheck NOT_RUN;
+- unpacked ZIP clean run NOT_RUN;
+- Georg r2 review NOT_RUN.
+
+### World r2
+Path:
+`tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Classification:
+**KEEP · OWNER REHOME/REGRESSION REQUIRED**
+
+Reported evidence:
+- Hürth 55/55;
+- Cologne 55/55;
+- WB2 sandbox boot PASS;
+- WB2 34/34 NOT_RUN;
+- Georg r2 review NOT_RUN.
+
+### Hub UX cut
+Additional arrival:
+`tools/KFB-ToolBox/_inbox/KFB HUB Design v2/KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/`
+
+Keep under HUB-CTRL only. No public shell promotion from this intake.
+
+### Current owner gate
+**REHOME TOOLBOX R2 → REHOME WORLD R2 WITH TOOLBOX LOCOMOTION SEAM → STAGE → GEORG REVIEW.**
+
+No merge or Live promotion authorized.
