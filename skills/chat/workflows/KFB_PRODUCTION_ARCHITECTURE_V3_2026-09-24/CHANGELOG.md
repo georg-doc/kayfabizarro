@@ -321,3 +321,14 @@
 - Linked from session-export_v1, Claude Design adapter, central registry and router.
 - Failure-recovery template remains the separate escalation after two unsuccessful repair passes on the same gate.
 - Wiring validation: **8/8 PASS**. No runtime or ZIP generation claimed.
+
+
+## 2026-09-25 evening · Session Cuts received · Ear Rig owner resolved
+
+- Current full Claude Design export trigger changed to Georg's `/session-zip` / `skills/session_ZIP_v1.md`; older `/claude-export` skill retained as superseded history.
+- The two current Session Cuts on main upload `8504afa9d14ad46855d0c590bc30eea0fc38d15d` were classified in `INTAKE_SESSION_CUTS_EAR_RIG_2026-09-25.md`.
+- ToolBox Production-01 = **KEEP · HUMAN REVIEW NEXT**; reported Claude-preview self-test 13/13, no Georg PASS inferred.
+- World Integration-01 = **KEEP · REHOME/REGRESSION + HUMAN REVIEW NEXT**; reported World self-test 26/26, WB2 34/34 and human gate still pending.
+- PR #214 Ear Rig registered as candidate lane. Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js`; FrankenStein Studio authors ear geometry/placement/rest+acted pose/profile.
+- EAR-DANGLE-01 uses KayKit base Idle/Walk/Run/Jump plus one Motion Library dance and waits behind ToolBox Production-01 review.
+- No new game runtime, Stage publication, merge or Live promotion.
