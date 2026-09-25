@@ -1,5 +1,64 @@
 
 
+## CURRENT UPDATE · GRAVEYARD / MUSIC / WORLD PRESENTATION CORRECTION · 2026-09-25
+
+Status: **HUB ROUTING CORRECTED · NO PUBLIC SHELL CHANGE**
+
+### Graveyard
+The current Graveyard review is removed from current Human Review.
+
+Correct status:
+**historical concept prototype / lighting donor only**.
+
+Not authoritative:
+- movement;
+- asset placement;
+- world/gameplay integration.
+
+Useful:
+- spatial Postmortem/Graveyard concept for a future game-version of the Hub;
+- grave-light illumination and flicker atmosphere.
+
+### Music Performance
+Current public MUSIC-PERF surface is no longer a human acceptance gate.
+
+Correct status:
+**TUNE / donor**.
+
+Keep:
+- timeline;
+- beat/bar ruler;
+- song/audio coupling.
+
+Replace as canonical performance source:
+- old visible guitarist/drummer animations.
+
+Preferred source:
+S39 Resident Band Module:
+- Guitar A / ml.guitar.a.fit;
+- drum.v5c + measured strike/contact work;
+- no baseplate.
+
+### Resident scene placement
+S39 proves the desired module contract:
+host surface + anchor, local support plane, **no mandatory baseplate**.
+
+Future Resident demos should be terrain-placeable and use WorldBuilder-compatible sky/light/ground presentation.
+
+### OSM / World presentation
+Shared architecture rule:
+`WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md`.
+
+It promotes:
+- WB-D2 FACADE_RULE v1 beyond Hürth to ordinary Cologne buildings;
+- deterministic mildly asymmetric windows/doors;
+- recurring roof/shadow fix from WB-D1 as a global OSM presenter rule;
+- contact/shadow/clipping checks to prevent floating buildings/props.
+
+No new runtime owner or public shell was introduced.
+
+
+
 ## CURRENT UPDATE · LIVE REGISTRY AFTER STATUS-SYNC CI · 2026-09-25
 
 Status: **LIVE BOT DATA REFRESHED · PUBLIC SHELL STILL TUNE**
