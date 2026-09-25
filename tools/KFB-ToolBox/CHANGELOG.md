@@ -261,3 +261,29 @@ No further repair pass in this slice. All three review transports are frozen fai
 1. source transport proven in the actual human host;
 2. dominant unobstructed 3D stage;
 3. measurements available without covering the performance.
+
+## 2026-09-26 · ToolBox r2 receiving-owner rehome
+
+### SOURCE
+Intake: `tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-1/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`.
+
+### OWNER PROMOTION
+- promoted the r2 `pose-rig.v1` intermediate-wrist/world-position chain fix into the canonical ToolBox PoseRig owner;
+- synchronized the existing Stage-First PoseRig mirror to the same blob;
+- added `stage-first/src/lab/locomotion-profiles.v1.js` as the ToolBox/Animation Motion-owned canonical KayKit semantic profile source;
+- added the measured FrizzleBob EarRig-v5 Rig_Medium consumer fixture under `stage-first/profiles/locomotion/`;
+- Ear physics remains PR #214; S39 remains Resident Band owner; no movement/gameplay owner moved.
+
+### EVIDENCE
+Tested head: `5dcf34bcdf9d87445e927c98f60d41adae72f00e`.
+Actions: `36197260540` · SUCCESS.
+- coherent static: **31/31 PASS**;
+- AN-PROFILE-02 static: **34/34 PASS**;
+- coherent browser: **20/20 PASS**;
+- AN-PROFILE-02 browser: **25/25 PASS**;
+- plain review browser: **13/13 PASS**.
+
+The coherent browser still emits the accepted donor/template 404/theme-icon warnings already visible in prior returns; assertions passed. No Georg r2 visual PASS inferred.
+
+### NEXT
+One dominant/unobstructed ToolBox r2 Stage review using the re-homed owner files. Do not revive the failed AN-PROFILE review composition.
