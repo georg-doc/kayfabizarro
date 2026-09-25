@@ -332,3 +332,13 @@
 - PR #214 Ear Rig registered as candidate lane. Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js`; FrankenStein Studio authors ear geometry/placement/rest+acted pose/profile.
 - EAR-DANGLE-01 uses KayKit base Idle/Walk/Run/Jump plus one Motion Library dance and waits behind ToolBox Production-01 review.
 - No new game runtime, Stage publication, merge or Live promotion.
+
+
+## 2026-09-25 evening · Georg proceed-pass · ToolBox + World
+
+- Georg reports both current candidates are okay and may continue; he did not exhaustively test every detail.
+- Recorded this as **PROCEED PASS**, not a fabricated full-detail Human PASS.
+- ToolBox Production-01 no longer waits on its previous human-review gate; open solver/UX/feature gaps remain.
+- World Integration-01 no longer waits on its previous human-review gate; Web rehome/regression remains required before owner-side integration.
+- Next shared direction: ToolBox canonical locomotion/profile truth → WorldBuilder consumer; EAR-DANGLE-01 may follow on the accepted ToolBox surface.
+- No merge or Live promotion authorized by this status change.
