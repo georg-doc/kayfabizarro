@@ -83,6 +83,16 @@
       "expectedPath": "kfb-hub/stage/toolbox/kaykit-character-compat-v0/index.html",
       "sourcePr": 148,
       "note": "Current KCC handoff records the Cloudflare route/marker as not accepted."
+    },
+    {
+      "id": "toolbox-production-01-r2",
+      "status": "FROZEN_REVIEW_FAIL_NOT_PUBLISHED",
+      "expectedPath": "kfb-hub/stage/toolbox/production-01-r2/index.html",
+      "sourcePr": 220,
+      "sourceBranch": "chatgpt-web/toolbox-r2-stage-review-2026-09-26",
+      "frozenImplementationHead": "cab463b6a4b9bfd9cc365694ff462b39bc493b8e",
+      "recovery": "tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026-09-26/START_HERE.md",
+      "note": "Two Chromium gate attempts ended 28/29 PASS; second fixes measured movement but still fails deterministic transition evidence. Screenshots crop the head/ears. No Cloudflare route or Hub human-test link until a fresh recovery slice passes."
     }
   ],
   "sourceOrIntegration": [
@@ -95,6 +105,6 @@
     "Fluid / Card / Beam / Seed / Voxel Lab"
   ],
   "rule": "No preview is shown unless an exact public route is present/proven. Missing/blocked routes link to source or PR only.",
-  "auditedAt": "2026-09-21T02:10:00+02:00",
-  "note": "Theatre Curtain v1 is a previously public-verified route. The new Fluid/Card/Voxel intake remains source-only until its owner and runtime gates pass. Public verification of this router revision is a separate gate."
+  "auditedAt": "2026-09-26",
+  "note": "Theatre Curtain v1 is a previously public-verified route. The new Fluid/Card/Voxel intake remains source-only until its owner and runtime gates pass. Public verification of this router revision is a separate gate. ToolBox Production-01 r2 review is explicitly frozen/not published after two failed browser-gate attempts; it is listed only under missingOrBlocked."
 }
