@@ -68,6 +68,41 @@ The ear rig never owns a mixer. It adds to the actor's single mixer (ToolBox rul
   - `wind` scales lean and flutter;
   - `elastic` sets the rubber stretch.
 
+## Owner decision · 2026-09-25
+
+**Runtime owner: Animation Lab / ToolBox Motion.**
+
+`ear-dangle.v1.js` is time-based secondary motion layered after the actor's single AnimationMixer, so Animation Lab owns this one runtime implementation and its motion/physics tuning contract.
+
+**FrankenStein Studio is the authoring consumer, not a second runtime owner.** Studio owns:
+- ear geometry/source selection;
+- head attachment / placement;
+- rest and acted pose values (`droop/fold/curl`);
+- the per-actor `kfb.ear-rig.v0` profile;
+- visual fit with the FrizzleBob head.
+
+Consumers such as World/Travel/Race may feed wind/landing/hit facts into the same module, but may not copy or fork the spring physics.
+
+The folder `tools/KFB-ToolBox/ear-rig/` is a **ToolBox candidate lane next to `eye-rig-batch/`**, not a fourth standalone studio.
+
+### First integration gate · EAR-DANGLE-01
+
+Use the current FrizzleBob actor in Animation Lab with:
+- canonical KayKit base **Idle / Walk / Run / Jump Start-Air-Land**;
+- **one accepted dance** from the KFB Motion Library as the variant/action-layer proof;
+- `ear-dangle.v1.js` active on the same actor/mixer;
+- landing impulse on the real Jump Land/contact transition.
+
+Human review by Georg:
+1. motion reads as follow-through rather than noise;
+2. no head/ear clipping;
+3. ears settle correctly at Idle;
+4. Walk/Run cadence does not destabilize the spring;
+5. Jump takeoff/landing reads clearly;
+6. dance remains expressive without excessive wobble.
+
+No vehicle wind, game-runtime integration or ear-geometry redesign in this gate.
+
 ## Asks
 **WSA:**
 - register `tools/KFB-ToolBox/ear-rig/` as a ToolBox candidate lane (next to `eye-rig-batch`);
@@ -76,7 +111,7 @@ The ear rig never owns a mixer. It adds to the actor's single mixer (ToolBox rul
 
 **Animation Lab / Studio:**
 - mount `rigEars()` on the FrizzleBob graft as described in `EAR_DANGLE_INTEGRATION.md`;
-- first gate: FB Walk/Run/Jump clips from the Motion Library with ears active, human review by Georg.
+- first gate: EAR-DANGLE-01 as specified above — KayKit base Idle/Walk/Run/Jump plus one KFB Motion Library dance, ears active, then Georg review.
 
 **Georg (open):**
 - the junction decision (gap 1);
