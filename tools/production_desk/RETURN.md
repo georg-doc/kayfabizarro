@@ -1,5 +1,48 @@
 
 
+## CURRENT UPDATE · TOOLBOX r2 GREEN / WORLD r2 STOP · 2026-09-26
+
+### ToolBox
+Receiving-owner PR #185 is technically green.
+
+Runtime-tested head:
+`5dcf34bcdf9d87445e927c98f60d41adae72f00e`
+
+Actions `36197260540` SUCCESS:
+31/31 + 34/34 static, 20/20 + 25/25 browser, 13/13 plain-review browser.
+
+A new owner-backed Stage review source now exists on PR #185; its own browser gate is separate and still pending at this checkpoint.
+
+### World
+Receiving-owner PR #190 is now in **failure recovery / WAITING**.
+
+Frozen runtime candidate:
+`204afd6dbb1285f8cd77807af0db5fdd6e75308d`.
+
+Static 20/20 PASS.
+Final browser run `36198999279` FAIL after repair budget.
+
+Final evidence shows:
+- Hürth boot;
+- 700 buildings;
+- 13 semantic states;
+- 0 page errors;
+- 0 failed requests.
+
+Failure is the stale selftest variant-label contract, not source loading.
+
+Recovery:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/`
+
+Next World gate:
+`WORLD-R2-CONTRACT-RESET-01`.
+
+Hub routing reflects:
+ToolBox = RUNNING / Stage next.
+World = WAITING / contract reset next.
+
+
+
 ## CURRENT UPDATE · WORLD / TOOLBOX R2 + HUB UX CUT · 2026-09-26
 
 Status: **SOURCE ROUTING UPDATED · LIVE REGISTRY REFRESH NEXT · NO SHELL CHANGE**
