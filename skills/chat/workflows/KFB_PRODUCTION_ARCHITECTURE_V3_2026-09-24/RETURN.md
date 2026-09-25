@@ -984,3 +984,29 @@ After rehome/regression, proceed toward shared locomotion consumption, OSM Hürt
 This decision supersedes the prior “Georg human review pending” routing for these two candidates.
 
 No automatic merge, Cloudflare Live promotion or claim of exhaustive feature acceptance is authorized by this proceed-pass alone.
+
+
+## 2026-09-25 late · Current Claude Design continuation briefs persisted
+
+Current starts:
+- `CLAUDE_DESIGN_WORLD_INTEGRATION_CONTINUATION_2026-09-25.md`
+- `CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md`
+
+World scope:
+- preserve integrated WB2-in-Hürth authoring;
+- shared KayKit locomotion consumer;
+- global OSM facade / roof / contact-shadow rules;
+- Blender MCP route pieces remain future pinned intake.
+
+ToolBox scope:
+- preserve Studio + Animation Lab single runtime;
+- fix shared pose-rig chain once;
+- canonical KayKit locomotion profiles;
+- Mixamo variant layer;
+- shared direct Pose/IK/contact workflow;
+- first Ear Rig consumer;
+- S39 band performance donor, no mandatory baseplate.
+
+Blender route note retained as VOICE_INPUT_UNCERTAIN until exact export/pin arrives.
+
+No merge or Live promotion authorized.
