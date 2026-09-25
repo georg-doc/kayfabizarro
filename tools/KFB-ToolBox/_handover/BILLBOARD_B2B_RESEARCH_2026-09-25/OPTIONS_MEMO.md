@@ -614,3 +614,20 @@ No other architecture decision is needed yet.
 ## Exactly one next gate
 
 **Georg chooses the B2b-P1 option/tone (or says B3 first).**
+
+
+## 14 · Human selection · 2026-09-25
+
+The option gate is resolved.
+
+Georg selected:
+- **A+ CanvasTexture**
+- **KFB + small curated CC0 pool**
+- **mixed hypernormalisation**
+
+Therefore B2b-P1 should start from the existing Gate-1 collage donor with the exact bounded build brief:
+`B2B_P1_BUILD_BRIEF_2026-09-25.md`
+
+The earlier “Open decisions” section remains historical research context; these three choices supersede it.
+
+B3 rounded body remains separately prepared, not started, unless Georg explicitly starts it in parallel.

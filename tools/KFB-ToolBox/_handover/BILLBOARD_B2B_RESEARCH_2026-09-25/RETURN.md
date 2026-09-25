@@ -1,6 +1,6 @@
 # RETURN · Billboard B2b · Living Mockup / Collage Research · 2026-09-25
 
-Status: **RESEARCH COMPLETE · GEORG CHOICE PENDING**
+Status: **RESEARCH COMPLETE · B2B-P1 READY**
 Repo: `georg-doc/kayfabizarro`
 Branch: `chatgpt-web/billboard-b2b-research-2026-09-25`
 Draft PR: **#211**
@@ -70,6 +70,17 @@ Georg only needs to choose:
 3. starting visual recipe: torn-history / newspaper-headline / carnival-ad / mixed hypernormalisation;
 4. B2b-P1 next, or B3 body first/in parallel.
 
+## Human choice
+
+Georg selected:
+- **KFB + small CC0 pool**
+- **mixed hypernormalisation**
+- **A+ CanvasTexture**
+
+Prepared:
+- `B2B_P1_BUILD_BRIEF_2026-09-25.md`
+- `B2B_P1_FRESH_CHAT_START_2026-09-25.md`
+
 ## Exactly one next gate
 
-**Georg chooses B2b-P1 option/tone (or B3 first).**
+**Fresh Web chat builds B2b-P1 and stops at Georg visual review.**

@@ -1,6 +1,6 @@
 # RECOVERY · Billboard B2b · Living Mockup / Collage Research · 2026-09-25
 
-Status: **RESEARCH COMPLETE · CHOICE PENDING · RUNTIME NOT STARTED**
+Status: **B2B-P1 READY · HUMAN CHOICES LOCKED · RUNTIME NOT STARTED**
 Owner: **KFB ToolBox / Billboard Media Residency**
 Branch: `chatgpt-web/billboard-b2b-research-2026-09-25`
 Draft PR: **#211**
@@ -82,3 +82,26 @@ B3 remains PREPARED / NOT STARTED while B2b choice is pending.
 ## Exactly one next gate
 
 **Georg chooses the B2b-P1 option/tone, or explicitly says B3 should run first/in parallel.**
+
+
+## 2026-09-25 · Georg choice locked
+
+Georg locked the first implementation:
+- source mix: **KFB + small curated CC0 pool**;
+- tone: **mixed hypernormalisation**;
+- architecture: **A+ CanvasTexture**.
+
+Build brief:
+`B2B_P1_BUILD_BRIEF_2026-09-25.md`
+
+Ultra-short fresh-chat start:
+`B2B_P1_FRESH_CHAT_START_2026-09-25.md`
+
+Five adjacent, explicitly non-blocking future drafts are persisted in:
+`../BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`
+
+Current execution gate is no longer a design choice.
+
+## Exactly one next gate
+
+**Fresh Web chat executes B2b-P1 only and stops at Georg visual review.**
