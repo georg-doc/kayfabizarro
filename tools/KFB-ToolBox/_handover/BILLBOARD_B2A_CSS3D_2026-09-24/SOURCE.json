@@ -1,0 +1,109 @@
+{
+  "schema": "kfb.billboard-b2a-source/0.1",
+  "id": "BILLBOARD-B2A-CSS3D-2026-09-24",
+  "date": "2026-09-24",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+  "baseB1": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
+  "currentGate": "B2B_RESEARCH_NEXT",
+  "threeDonor": {
+    "repo": "mrdoob/three.js",
+    "tag": "r160",
+    "commit": "d04539a76736ff500cae883d6a38b3dd8643c548",
+    "path": "examples/css3d_youtube.html",
+    "pattern": "CSS3DRenderer + CSS3DObject + iframe + blocker",
+    "isolatedProofRun": 35951854457,
+    "isolatedProofChecks": "9/9 PASS",
+    "isolatedProofArtifact": 10787959850
+  },
+  "b1Protected": {
+    "head": "78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a",
+    "bb1-boot.js": "1326f4117f9c605d778b2a54352ca7e8b723deba",
+    "bb-scene.js": "235b062f9d575a49a4c98d8be57d04d43acc2213",
+    "bb0-boot.js": "57392b87c0344648695e1ef6d62f6f70a9dd942b"
+  },
+  "b2aSeam": "One CSS3DObject copies the accepted B1 panel world transform and measured world dimensions; VIDEO mode loads the Travel YouTube iframe directly on that face; other modes keep B1 CanvasTexture behavior.",
+  "integration": {
+    "testedHead": "147b517efdfba78302af4e5e3ff48846b1f21f92",
+    "proofRun": 35952766940,
+    "donorJob": 107484627956,
+    "integrationJob": 107484912203,
+    "checks": "27/27 PASS",
+    "pageErrors": 0,
+    "firstPartyHttpErrors": 0,
+    "artifact": 10788929677,
+    "repairPasses": 1,
+    "supersededCandidate": {
+      "head": "7bed45398820b6bc629b24e0580866d697642946",
+      "run": 35952277294,
+      "result": "26/28 TECHNICAL FAIL + VISUAL FAIL",
+      "visualIssue": "hidden CSS3D DOM surface rendered as opaque black over CARD/COVER/SLOGAN",
+      "repair": "use CSS3DObject.visible as renderer-owned visibility seam; adjust camera proof to screen-space rect"
+    }
+  },
+  "kfbVideoOwner": {
+    "videoId": "MTCSwppblk0",
+    "source": "Travel VIDEO contract"
+  },
+  "protected": [
+    "B0 bb-scene.js unchanged",
+    "B0 bb0-boot.js unchanged",
+    "accepted B1 bb1-boot.js copied unchanged as reference",
+    "CARD/COVER/SLOGAN behavior unchanged",
+    "no modal player",
+    "no B2b/B2c/B3/C1 implementation in B2a"
+  ],
+  "humanAcceptance": "ACCEPTED_AFTER_REQUESTED_REAR_FIX",
+  "public": {
+    "stageCommit": "983929385c3be74a42ec88c29f601c08b90b5a05",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
+    "proofRun": 36066988954,
+    "publicJob": 107860680693,
+    "checks": "24/24 PASS",
+    "pageErrors": 0,
+    "httpErrors": 0,
+    "artifact": 10836432703,
+    "status": "PUBLIC_VERIFIED_FRONT_ONLY"
+  },
+  "timeoutRecovery": {
+    "event": "chat/tool timeout after public-proof setup",
+    "priorState": "UNKNOWN",
+    "recoveredAt": "2026-09-24T05:56+02:00",
+    "verifiedBranchHead": "bed7f74e5bca3efb51a7eb3ab12819ad4a46af09",
+    "verifiedCloudflareHead": "be24c154889fb96c20e99ef2b86dd2ced44007be",
+    "conclusion": "writes were present; no duplicate retry required"
+  },
+  "humanAcceptanceDate": "2026-09-25",
+  "humanAcceptanceNote": "Georg accepted B2a subject to fixing mirrored rear video, then explicitly asked ChatGPT to build/fix/check it in.",
+  "frontOnlyTune": {
+    "issue": "CSS3D YouTube remained visible/mirrored from side/rear while other media modes showed the billboard backside.",
+    "firstAttempt": {
+      "head": "ba7043d46cffc642d9a13be1b515b31e2192c86c",
+      "run": 36066418717,
+      "integrationJob": 107857553235,
+      "result": "28/29 FAIL",
+      "artifact": 10836446767,
+      "cause": "CSS backface-visibility alone did not remove the cross-origin iframe from rear hit-testing/rendering."
+    },
+    "repairedRuntimeHead": "89065825448846beb2649082fc0c1bf25df20ccb",
+    "repair": "Keep CSS backface hidden as defense-in-depth, and gate CSS3DObject.visible by billboard panel world-normal dot camera direction; rear hemisphere exposes only the Kenney/WebGL billboard body.",
+    "integration": {
+      "run": 36066988954,
+      "job": 107859397766,
+      "checks": "29/29 PASS",
+      "pageErrors": 0,
+      "firstPartyHttpErrors": 0,
+      "artifact": 10836726983
+    },
+    "public": {
+      "stageCommit": "983929385c3be74a42ec88c29f601c08b90b5a05",
+      "rerunJob": 107860680693,
+      "checks": "24/24 PASS",
+      "pageErrors": 0,
+      "httpErrors": 0,
+      "artifact": 10836432703,
+      "visualProof": "04-video-back.png shows only the normal billboard backside; no mirrored YouTube video."
+    }
+  }
+}

@@ -75,3 +75,27 @@ Planned after B2a, but not started:
 - **C1** Curtain motif remains HOLD.
 
 B2a first proves the official CSS3D YouTube plane in isolation, then aligns one iframe to the accepted B1 media face. No modal overlay.
+
+
+## 2026-09-25 · B2a HUMAN_ACCEPTED · rear-side fix closed
+
+Georg accepted the inline YouTube direction and requested one final correction before check-in:
+the CSS3D video must never appear mirrored from the rear.
+
+Implemented on PR **#199**:
+- final runtime `89065825448846beb2649082fc0c1bf25df20ccb`;
+- front remains inline/clickable;
+- front/3/4 perspective preserved;
+- CSS3D iframe is culled on the rear hemisphere by the accepted billboard panel world normal vs camera direction;
+- original Kenney/WebGL billboard body owns the rear view;
+- integration **29/29 PASS**;
+- public Cloudflare **24/24 PASS**;
+- Stage `cloudflare-live@983929385c3be74a42ec88c29f601c08b90b5a05`;
+- public proof artifact `10836432703`;
+- rear screenshot visibly shows the normal billboard backside with no mirrored iframe.
+
+B2a is now **HUMAN_ACCEPTED / CHECKED IN**.
+
+Exactly one next gate:
+**B2b research/options memo for Living Mockup / Collage surfaces only.**
+B2c Talking City Lights, B3 cartoon body and Curtain C1 remain unstarted/HOLD.

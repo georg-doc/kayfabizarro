@@ -3,7 +3,7 @@
 Status: **CURRENT LIVING DOCUMENT · ADDITIVE**
 Date started: 2026-09-24
 Owner: **KFB ToolBox / Billboard Media Residency**
-Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a NEXT**
+Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a HUMAN_ACCEPTED → B2b RESEARCH NEXT**
 Current B1 PR: **#198**
 Current accepted B1 branch/head: `chatgpt-web/billboard-b1-2026-09-24@d54273d30f5465df36b33ee13c896a0ee6f95ca7`
 
@@ -40,7 +40,7 @@ The billboard is not a second card/video/face owner. It consumes existing owners
 
 B1 stays a recoverable checkpoint. B2 work forks it; B1 is not rewritten into B2.
 
-## CURRENT · B2a · inline YouTube / CSS3D surface
+## ACCEPTED · B2a · inline YouTube / CSS3D surface
 
 ### Goal
 YouTube plays **directly on the billboard face**, not in a modal or detached viewer.
@@ -175,3 +175,46 @@ GitHub state overrides Dropbox/chat copies.
 - KFB Talking City Lights retained as B2c;
 - cartoon body retained as B3;
 - Curtain C1 remains HOLD.
+
+
+### 2026-09-24 · B2a implementation + timeout recovery
+- official Three.js r160 CSS3D donor isolated first: **9/9 PASS**;
+- first integrated candidate preserved as visual fail (**26/28**, black hidden CSS3D plane);
+- repair pass 1 switched visibility ownership to `CSS3DObject.visible`;
+- integration: **27/27 PASS**;
+- direct inline iframe, no modal, 16:9 face, perspective follows camera, unload on exit;
+- Stage wrapper published at `cloudflare-live@be24c154889fb96c20e99ef2b86dd2ced44007be`;
+- public proof: **22/22 PASS**, 0 page errors, 0 tracked HTTP errors;
+- public route: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/;
+- a timeout occurred during handoff, but recovery inspection proved all intended writes existed; no duplicate retry;
+- **current gate: Georg B2a PASS/TUNE**;
+- B2b/B2c/B3/C1 remain unstarted/deferred as previously recorded.
+
+
+### 2026-09-25 · B2a rear-side correction · HUMAN_ACCEPTED
+- Georg's conditional acceptance identified one remaining issue: mirrored YouTube on the billboard rear;
+- CSS backface-only attempt failed the rear gate (**28/29**);
+- final seam uses the accepted panel world normal against camera direction to show CSS3D only on the front hemisphere;
+- original Kenney/WebGL rear body therefore owns the backside exactly as in the other media modes;
+- final runtime `89065825448846beb2649082fc0c1bf25df20ccb`;
+- final integration **29/29 PASS**;
+- final public Stage `983929385c3be74a42ec88c29f601c08b90b5a05`;
+- final public **24/24 PASS**;
+- public artifact `10836432703`;
+- rear screenshot visibly shows no mirrored iframe;
+- B2a closed as **HUMAN_ACCEPTED**.
+
+Current next gate:
+**B2b research/options memo for Living Mockup / Collage surfaces; do not implement before selection.**
+
+
+### 2026-09-25 · B3 rounded-cartoon body handover prepared
+- WSA / ToolBox 3D handover prepared at:
+  `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`;
+- goal: rounder/chunkier cartoon 3D billboard body while preserving the accepted media face and B2a front/rear semantics;
+- exact Kenney `billboard.glb` remains the starting donor;
+- Web deformation is allowed only for a small non-destructive silhouette pass;
+- Blender MCP is explicitly allowed/preferred when real rounded topology, casing, posts/supports or authored asymmetry are needed;
+- first gate is source-object isolation + same-camera before/after front/3/4/side/rear comparison;
+- B3 is **PREPARED / NOT STARTED**;
+- Georg asked to run **B2b Living Mockup / Collage research first**.

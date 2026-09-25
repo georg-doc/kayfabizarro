@@ -1,0 +1,450 @@
+name: Billboard B2a CSS3D donor proof
+
+on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/**'
+      - '.github/workflows/billboard-b2a-css3d-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  donor-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Static donor syntax
+        run: |
+          node --check tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/donor-boot.js
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof isolated official pattern
+        run: |
+          mkdir -p artifacts/billboard-b2a-donor
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/b2a-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-b2a-donor/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/donor.html';
+          const report={url,checks:[],errors:[]};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+
+          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+          const page=await browser.newPage({viewport:{width:1280,height:800}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+
+          try{
+            const res=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('HTTP',!!res&&res.ok(),res?.status());
+            await page.waitForFunction(()=>window.__B2A_DONOR?.ready===true,{}, {timeout:90000});
+            const state=await page.evaluate(()=>structuredClone(window.__B2A_DONOR));
+            report.state=state;
+            check('pinned three donor',/d04539a76736ff500cae883d6a38b3dd8643c548/.test(state.donor),state.donor);
+            check('three r160 runtime',state.runtime==='three@0.160.0',state.runtime);
+            check('one CSS3D source object',state.objectCount===1,state.objectCount);
+            check('official donor pattern named',state.pattern==='CSS3DRenderer + CSS3DObject + iframe + drag blocker',state.pattern);
+            check('YouTube no-cookie iframe',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(state.iframeSrc),state.iframeSrc);
+            const dom=await page.locator('iframe').evaluate(el=>({
+              width:el.style.width,height:el.style.height,border:el.style.border,
+              rect:{w:el.getBoundingClientRect().width,h:el.getBoundingClientRect().height}
+            }));
+            report.dom=dom;
+            check('iframe source dimensions',dom.width==='640px'&&dom.height==='360px',dom);
+            check('iframe visible',dom.rect.w>100&&dom.rect.h>50,dom.rect);
+            check('no page errors',report.errors.length===0,report.errors);
+            await page.screenshot({path:'artifacts/billboard-b2a-donor/donor-css3d-youtube.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2a-donor/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({status:report.status,checks:report.passed+'/'+report.total,errors:report.errors.length,state:report.state,dom:report.dom},null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-b2a-donor/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2a-css3d-donor-proof
+          path: artifacts/billboard-b2a-donor
+          retention-days: 90
+
+
+  integration-proof:
+    needs: donor-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Prove protected B0/B1 fork and syntax
+        run: |
+          set -euo pipefail
+          B2='tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24'
+          B1='tools/KFB-ToolBox/_handover/BILLBOARD_B1_2026-09-24'
+          cmp "$B2/bb-scene.js" "$B1/bb-scene.js"
+          cmp "$B2/bb0-boot.js" "$B1/bb0-boot.js"
+          cmp "$B2/bb1-boot.js" "$B1/bb1-boot.js"
+          node --check "$B2/bb2a-boot.js"
+          node --check "$B2/bb-scene.js"
+          node --check "$B2/bb0-boot.js"
+          node --check "$B2/bb1-boot.js"
+          node --check "$B2/wd-donors.js"
+          node --check "$B2/wd-registry.js"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof B2a integration
+        run: |
+          mkdir -p artifacts/billboard-b2a-integration
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/b2a-int-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-b2a-integration/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/';
+          const report={url,checks:[],errors:[],httpErrors:[],modes:{}};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+
+          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('response',r=>{
+            const u=r.url();
+            if(r.status()>=400 && (u.startsWith('http://127.0.0.1:4173/') || /cdn\.jsdelivr\.net|raw\.githubusercontent\.com/.test(u))) {
+              report.httpErrors.push({status:r.status(),url:u});
+            }
+          });
+
+          async function waitMode(mode){
+            await page.evaluate(m=>window.__b2a.setMode(m),mode);
+            await page.waitForFunction(m=>{
+              const r=window.__B2A_REPORT__;
+              return r?.mode===m && r?.ready===true;
+            },mode,{timeout:90000});
+            await page.waitForTimeout(300);
+            const snap=await page.evaluate(()=>window.__b2a.snapshot());
+            report.modes[mode]=snap;
+            return snap;
+          }
+
+          try{
+            const res=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('HTTP',!!res&&res.ok(),res?.status());
+            check('B2a title',(await page.title())==='KFB Billboard · B2a Inline YouTube',await page.title());
+            await page.waitForFunction(()=>window.__b2a&&window.__B2A_REPORT__?.ready===true,{}, {timeout:90000});
+
+            const quarter=await page.evaluate(()=>window.__b2a.snapshot());
+            report.modes.quarter=quarter;
+            check('default quarter',quarter.mode==='quarter',quarter.mode);
+            check('B0 protected markers',quarter.b0Fork?.bbScene==='UNCHANGED'&&quarter.b0Fork?.bb0Boot==='UNCHANGED',quarter.b0Fork);
+            check('B1 protected marker',quarter.b1Fork?.bb1Boot==='UNCHANGED_REFERENCE',quarter.b1Fork);
+            check('quarter content nonblack',Number(quarter.sourceStats?.mean)>20,quarter.sourceStats);
+            check('CSS3D hidden outside video',quarter.css3d?.visible===false&&quarter.dom?.objectVisible===false,{css3d:quarter.css3d,objectVisible:quarter.dom?.objectVisible});
+            check('no modal exists',quarter.dom?.modalElementExists===false,quarter.dom);
+            await page.screenshot({path:'artifacts/billboard-b2a-integration/01-quarter.png',fullPage:true});
+
+            const cover=await waitMode('cover');
+            check('cover owner still works',/cover page 1/.test(cover.content||''),cover.content);
+            check('cover CSS3D hidden',cover.css3d?.visible===false&&cover.dom?.objectVisible===false,{css3d:cover.css3d,objectVisible:cover.dom?.objectVisible});
+
+            const video=await waitMode('video');
+            check('video source is Travel',/Travel VIDEO MTCSwppblk0/.test(video.content||''),video.content);
+            check('CSS3D video visible',video.css3d?.visible===true&&video.dom?.objectVisible===true,{css3d:video.css3d,objectVisible:video.dom?.objectVisible});
+            check('inline iframe source',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(video.dom?.iframeSrc||''),video.dom?.iframeSrc);
+            check('no detached modal',video.dom?.modalElementExists===false,video.dom);
+            check('world width exact',Math.abs(video.css3d.objectWorldWidth-video.css3d.panelWorldWidth)<1e-6,video.css3d);
+            check('world height exact',Math.abs(video.css3d.objectWorldHeight-video.css3d.panelWorldHeight)<1e-6,video.css3d);
+            check('16:9 face',Math.abs(video.faceAspect-16/9)<0.001,video.faceAspect);
+            check('inline surface visible',video.dom?.surfaceRect?.w>100&&video.dom?.surfaceRect?.h>50,video.dom?.surfaceRect);
+
+            const hit=await page.evaluate(()=>{
+              const r=document.querySelector('#b2a-inline-youtube').getBoundingClientRect();
+              const x=r.left+r.width/2,y=r.top+r.height/2;
+              const el=document.elementFromPoint(x,y);
+              return {tag:el?.tagName||null,id:el?.id||null,x,y};
+            });
+            report.hit=hit;
+            check('video surface receives pointer',hit.tag==='IFRAME'||hit.id==='b2a-inline-video-surface',hit);
+
+            const frontRect=video.dom.surfaceRect;
+            await page.screenshot({path:'artifacts/billboard-b2a-integration/02-video-front.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2a.setView('LEFT34'));
+            await page.waitForTimeout(350);
+            const left=await page.evaluate(()=>window.__b2a.snapshot());
+            report.left34=left;
+            check('CSS3D persists at 3/4 view',left.css3d?.visible===true&&left.dom?.objectVisible===true,{css3d:left.css3d,objectVisible:left.dom?.objectVisible});
+            const leftRect=left.dom?.surfaceRect;
+            const rectMoved=!!frontRect&&!!leftRect&&(
+              Math.abs(leftRect.x-frontRect.x)>5 ||
+              Math.abs(leftRect.y-frontRect.y)>5 ||
+              Math.abs(leftRect.w-frontRect.w)>5 ||
+              Math.abs(leftRect.h-frontRect.h)>5
+            );
+            check('CSS3D perspective changes with camera',rectMoved,{front:frontRect,left:leftRect});
+            await page.screenshot({path:'artifacts/billboard-b2a-integration/03-video-left34.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2a.setView('BACK'));
+            await page.waitForTimeout(350);
+            const back=await page.evaluate(()=>window.__b2a.snapshot());
+            report.back=back;
+            check('video surface CSS backface hidden',
+              back.dom?.surfaceBackfaceVisibility==='hidden'&&back.dom?.iframeBackfaceVisibility==='hidden',
+              {surface:back.dom?.surfaceBackfaceVisibility,iframe:back.dom?.iframeBackfaceVisibility});
+            const backHit=await page.evaluate(()=>{
+              const r=document.querySelector('#b2a-inline-youtube').getBoundingClientRect();
+              const x=Math.max(1,Math.min(innerWidth-2,r.left+r.width/2));
+              const y=Math.max(1,Math.min(innerHeight-2,r.top+r.height/2));
+              const el=document.elementFromPoint(x,y);
+              return {tag:el?.tagName||null,id:el?.id||null,x,y,rect:{x:r.x,y:r.y,w:r.width,h:r.height}};
+            });
+            report.backHit=backHit;
+            check('rear view does not expose iframe',!(backHit.tag==='IFRAME'&&backHit.id==='b2a-inline-youtube'),backHit);
+            await page.screenshot({path:'artifacts/billboard-b2a-integration/04-video-back.png',fullPage:true});
+
+            const quarterExit=await waitMode('quarter');
+            check('video hides on mode exit',quarterExit.css3d?.visible===false&&quarterExit.dom?.objectVisible===false,{css3d:quarterExit.css3d,objectVisible:quarterExit.dom?.objectVisible});
+            check('iframe unloads on mode exit',/about:blank$/.test(quarterExit.dom?.iframeSrc||''),quarterExit.dom?.iframeSrc);
+
+            const slogan=await waitMode('slogan');
+            check('slogan preserved',slogan.content==='CHATTERBOX SHOW IT',slogan.content);
+            check('slogan CSS3D hidden',slogan.css3d?.visible===false&&slogan.dom?.objectVisible===false,{css3d:slogan.css3d,objectVisible:slogan.dom?.objectVisible});
+            await page.screenshot({path:'artifacts/billboard-b2a-integration/05-slogan.png',fullPage:true});
+
+            check('no page errors',report.errors.length===0,report.errors);
+            check('no failed first-party/CDN assets',report.httpErrors.length===0,report.httpErrors);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2a-integration/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.passed+'/'+report.total,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              hit:report.hit,
+              video:report.modes.video?{
+                faceAspect:report.modes.video.faceAspect,
+                css3d:report.modes.video.css3d,
+                rect:report.modes.video.dom?.surfaceRect
+              }:null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-b2a-integration/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2a-integration-proof
+          path: artifacts/billboard-b2a-integration
+          retention-days: 90
+
+
+  public-proof:
+    needs: integration-proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Wait for exact B2a Cloudflare marker
+        run: |
+          set -euo pipefail
+          URL='https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/SOURCE.json'
+          ok=0
+          for i in $(seq 1 36); do
+            body="$(curl -fsS --max-time 20 "$URL" || true)"
+            if printf '%s' "$body" | grep -q '"id": "BILLBOARD-B2A-CSS3D-2026-09-24"'; then
+              printf '%s\n' "$body" > /tmp/b2a-source.json
+              ok=1
+              break
+            fi
+            echo "B2a marker not deployed yet · attempt $i/36"
+            sleep 10
+          done
+          test "$ok" = 1
+          cat /tmp/b2a-source.json
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof exact Cloudflare B2a route
+        run: |
+          mkdir -p artifacts/billboard-b2a-public
+          cat > artifacts/billboard-b2a-public/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url='https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/';
+          const report={url,checks:[],errors:[],httpErrors:[],modes:{}};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+
+          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('response',r=>{
+            const u=r.url();
+            if(r.status()>=400 && (
+              u.startsWith('https://kayfabizarro.pages.dev/') ||
+              /cdn\.jsdelivr\.net|raw\.githubusercontent\.com/.test(u)
+            )) report.httpErrors.push({status:r.status(),url:u});
+          });
+
+          async function waitMode(mode){
+            await page.evaluate(m=>window.__b2a.setMode(m),mode);
+            await page.waitForFunction(m=>window.__B2A_REPORT__?.mode===m&&window.__B2A_REPORT__?.ready===true,mode,{timeout:90000});
+            await page.waitForTimeout(500);
+            const snap=await page.evaluate(()=>window.__b2a.snapshot());
+            report.modes[mode]=snap;
+            return snap;
+          }
+
+          try{
+            const res=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Cloudflare HTTP',!!res&&res.ok(),res?.status());
+            check('exact B2a title',(await page.title())==='KFB Billboard · B2a Inline YouTube',await page.title());
+            await page.waitForFunction(()=>window.__b2a&&window.__B2A_REPORT__?.ready===true,{}, {timeout:90000});
+
+            const quarter=await page.evaluate(()=>window.__b2a.snapshot());
+            report.modes.quarter=quarter;
+            check('default quarter',quarter.mode==='quarter',quarter.mode);
+            check('quarter source nonblack',Number(quarter.sourceStats?.mean)>20,quarter.sourceStats);
+            check('CSS3D Object hidden on quarter',quarter.dom?.objectVisible===false,quarter.dom?.objectVisible);
+            check('no modal element',quarter.dom?.modalElementExists===false,quarter.dom);
+            await page.screenshot({path:'artifacts/billboard-b2a-public/01-quarter.png',fullPage:true});
+
+            const cover=await waitMode('cover');
+            check('cover retained',/cover page 1/.test(cover.content||''),cover.content);
+            check('CSS3D Object hidden on cover',cover.dom?.objectVisible===false,cover.dom?.objectVisible);
+
+            const video=await waitMode('video');
+            check('Travel video source',/Travel VIDEO MTCSwppblk0/.test(video.content||''),video.content);
+            check('inline CSS3D Object visible',video.dom?.objectVisible===true,video.dom?.objectVisible);
+            check('inline YouTube iframe source',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(video.dom?.iframeSrc||''),video.dom?.iframeSrc);
+            check('world dimensions exact',
+              Math.abs(video.css3d.objectWorldWidth-video.css3d.panelWorldWidth)<1e-6 &&
+              Math.abs(video.css3d.objectWorldHeight-video.css3d.panelWorldHeight)<1e-6,
+              video.css3d);
+            check('16:9 face',Math.abs(video.faceAspect-16/9)<0.001,video.faceAspect);
+            const hit=await page.evaluate(()=>{
+              const r=document.querySelector('#b2a-inline-youtube').getBoundingClientRect();
+              const x=r.left+r.width/2,y=r.top+r.height/2;
+              const el=document.elementFromPoint(x,y);
+              return {tag:el?.tagName||null,id:el?.id||null,x,y,rect:{x:r.x,y:r.y,w:r.width,h:r.height}};
+            });
+            report.hit=hit;
+            check('iframe directly receives pointer',hit.tag==='IFRAME'&&hit.id==='b2a-inline-youtube',hit);
+            const frontRect=video.dom.surfaceRect;
+            await page.screenshot({path:'artifacts/billboard-b2a-public/02-video-front.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2a.setView('LEFT34'));
+            await page.waitForTimeout(600);
+            const left=await page.evaluate(()=>window.__b2a.snapshot());
+            report.left34=left;
+            const leftRect=left.dom?.surfaceRect;
+            const moved=!!frontRect&&!!leftRect&&(
+              Math.abs(leftRect.x-frontRect.x)>5 ||
+              Math.abs(leftRect.y-frontRect.y)>5 ||
+              Math.abs(leftRect.w-frontRect.w)>5 ||
+              Math.abs(leftRect.h-frontRect.h)>5
+            );
+            check('inline video persists at 3/4',left.dom?.objectVisible===true,left.dom?.objectVisible);
+            check('inline perspective changes with camera',moved,{front:frontRect,left:leftRect});
+            await page.screenshot({path:'artifacts/billboard-b2a-public/03-video-left34.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2a.setView('BACK'));
+            await page.waitForTimeout(600);
+            const back=await page.evaluate(()=>window.__b2a.snapshot());
+            report.back=back;
+            check('front-only CSS backface rule',
+              back.dom?.surfaceBackfaceVisibility==='hidden'&&back.dom?.iframeBackfaceVisibility==='hidden',
+              {surface:back.dom?.surfaceBackfaceVisibility,iframe:back.dom?.iframeBackfaceVisibility});
+            const backHit=await page.evaluate(()=>{
+              const r=document.querySelector('#b2a-inline-youtube').getBoundingClientRect();
+              const x=Math.max(1,Math.min(innerWidth-2,r.left+r.width/2));
+              const y=Math.max(1,Math.min(innerHeight-2,r.top+r.height/2));
+              const el=document.elementFromPoint(x,y);
+              return {tag:el?.tagName||null,id:el?.id||null,x,y,rect:{x:r.x,y:r.y,w:r.width,h:r.height}};
+            });
+            report.backHit=backHit;
+            check('rear view does not expose iframe',!(backHit.tag==='IFRAME'&&backHit.id==='b2a-inline-youtube'),backHit);
+            await page.screenshot({path:'artifacts/billboard-b2a-public/04-video-back.png',fullPage:true});
+
+            const q2=await waitMode('quarter');
+            check('video Object hidden after exit',q2.dom?.objectVisible===false,q2.dom?.objectVisible);
+            check('iframe unloads after exit',/about:blank$/.test(q2.dom?.iframeSrc||''),q2.dom?.iframeSrc);
+
+            const slogan=await waitMode('slogan');
+            check('slogan retained',slogan.content==='CHATTERBOX SHOW IT',slogan.content);
+            check('CSS3D hidden on slogan',slogan.dom?.objectVisible===false,slogan.dom?.objectVisible);
+            await page.screenshot({path:'artifacts/billboard-b2a-public/05-slogan.png',fullPage:true});
+
+            check('no page errors',report.errors.length===0,report.errors);
+            check('no failed Stage/CDN assets',report.httpErrors.length===0,report.httpErrors);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2a-public/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.passed+'/'+report.total,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              hit:report.hit,
+              video:report.modes.video?{faceAspect:report.modes.video.faceAspect,css3d:report.modes.video.css3d}:null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-b2a-public/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2a-cloudflare-proof
+          path: artifacts/billboard-b2a-public
+          retention-days: 90
