@@ -1,0 +1,11 @@
+{
+ "schema": "kfb.ear-rig.v0",
+ "unit": "FB_EAR_UNIT_v5.glb",
+ "attachBone": "head",
+ "mirrored": true,
+ "note": "Position in model space (metres, glTF y-up, +z = face). R values are in mirrored space: out/back/curl mean the same thing for both ears.",
+ "ears": {
+  "L": {"px": 0.16, "py": 2.128, "pz": -0.02, "sink": 0, "out": 19, "back": 4, "twist": 0, "size": 1, "len": 1, "wid": 1, "thick": 1, "droop": 0, "fold": 0, "foldAt": 0.55, "curl": 0, "stiff": 1, "damp": 1, "elastic": 0.6, "wind": 1},
+  "R": {"px": 0.16, "py": 2.128, "pz": -0.02, "sink": 0, "out": 19, "back": 4, "twist": 0, "size": 1, "len": 1, "wid": 1, "thick": 1, "droop": 0, "fold": 0, "foldAt": 0.55, "curl": 0, "stiff": 1, "damp": 1, "elastic": 0.6, "wind": 1}
+ }
+}
