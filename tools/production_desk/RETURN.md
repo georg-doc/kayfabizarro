@@ -1,3 +1,22 @@
+# CURRENT UPDATE · ROOT HUB CLOUDFLARE PUBLISH · 2026-09-25
+
+Status: **DEPLOY COMMIT WRITTEN · CLOUDLFARE/PUBLIC-PROOF RUNNING · EXACT URL VERIFY UNKNOWN**
+
+Publication:
+- `cloudflare-live@8101c2c18f2210720649a3ecb6e3f388176eed23`;
+- root blob `ccf3a46dde16e99cdda11b13f628725e690d832b`;
+- source root/desk contains **89 jobs / 43 READY / 46 HOLD**, WB2 HUMAN PASS→Claude, LOOP_REAL gate, Direct FBX, v17+ ToolBox and NPC-LIFE markers;
+- live registry branch `bot/production-desk-update` is restored and carries the same 89-job self-service source.
+
+Current checks at handoff:
+- Cloudflare Pages: **RUNNING**;
+- four public-proof jobs: **RUNNING**;
+- exact `https://kayfabizarro.pages.dev/kfb-hub/` could not be opened by the available URL tool, so **PUBLIC_VERIFIED is not claimed yet**.
+
+No product Stage route, merge or Live product promotion was changed by this Root-Hub refresh.
+
+---
+
 # CURRENT UPDATE · ROOT HUB 89-JOB REFRESH · 2026-09-25
 
 Status: **SOURCE RENDERED · LIVE REGISTRY RECOVERED · CLOUDFLARE ROOT PUBLICATION NEXT**

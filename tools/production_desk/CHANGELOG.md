@@ -1,3 +1,11 @@
+## 2026-09-25 · Root Hub Cloudflare publication
+
+- published current 89-job root Hub to `cloudflare-live@8101c2c18f2210720649a3ecb6e3f388176eed23`;
+- root blob matches the current HUB-CTRL render;
+- embedded fallback and live bot registry both contain the current WB2/Racer/ToolBox/NPC-Life focus;
+- Cloudflare/public-proof checks were still RUNNING at handoff;
+- exact pages.dev URL verification unavailable in current URL tool, therefore no PUBLIC_VERIFIED claim.
+
 ## 2026-09-25 · Root Hub 89-job refresh
 
 - restored missing `bot/production-desk-update` branch from existing HUB-CTRL owner;
