@@ -1,6 +1,6 @@
 # KFB External Demo Research Radar · 2026-09-26
 
-Status: **PASS 1 COMPLETE · CHECKPOINT 3 / A–F RESEARCH PERSISTED**  
+Status: **PASS 2 IN PROGRESS · CHECKPOINT 4 / G–I RESEARCH PERSISTED**  
 Owner: **KFB Web Architecture lane** (planning/routing only; runtime owners unchanged)  
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/production-architecture-v3-2026-09-24`  
@@ -549,3 +549,351 @@ The research report itself becomes the living external-donor index. Any future s
 ## One next gate
 
 **Use the Pass-1 findings while executing the already-current `ENV-PREVIEW-01` / World integration queue; do not start a separate implementation branch from this research.**
+
+
+---
+
+# CHECKPOINT 4 · Batches G–I
+
+Status: **PASS 2 IN PROGRESS · VEHICLE / WATER-WEATHER / COMBAT RESEARCH PERSISTED**
+
+## Batch G · Vehicle / Drive / Boat / Flight handoffs
+
+Current KFB owner truth was re-read first:
+
+- `TRAVEL-MODES-01` already owns the atomic **one-active-writer** Ground / Flight / Drive / Water mode contract.
+- `TRAVEL-BOAT-01` explicitly says: recover exact TinySkies Boat source first; no prose reconstruction.
+- `TRAVEL-AIR-01` explicitly says: recover Plane source first.
+- `TRAVEL-DRIVE-01` is the later free-drive world adapter; Race remains its own track/contact owner.
+- `WB-MOBILITY-MVP-01` waits for those source-backed adapters; therefore this research must not invent a shared replacement controller.
+
+### G1 · TinySkies Boat is already the strongest Water-mode donor
+
+Pinned upstream:
+`dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`
+
+Source:
+- [Boat.ts](https://github.com/dannylimanseta/tinyskies/blob/2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6/client/src/game/Boat.ts)
+- [BoatMesh.ts](https://github.com/dannylimanseta/tinyskies/blob/2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6/client/src/game/BoatMesh.ts)
+- [WakeTrail.ts](https://github.com/dannylimanseta/tinyskies/blob/2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6/client/src/game/WakeTrail.ts)
+
+Observed mechanism:
+- Boat movement is spherical-surface movement, not generic rigid-body boat physics.
+- Spawn legality comes from actual world/ocean truth: `isMainOcean`, `isLand`, `surfaceAltitudeAt`.
+- Heading input is smoothed; acceleration/brake/coast are explicit.
+- Land blocks movement.
+- Vertical presentation is a bounded bob/pitch/roll layer around the real surface altitude.
+- Wake is a lightweight V-shaped ribbon technique reusing the same presentation family as contrails.
+- BoatMesh already includes a foam-waterline presentation.
+
+**Verdict: SOURCE-PIN / ADAPT FIRST.**
+
+For `TRAVEL-BOAT-01`, the first KFB proof should remain almost boring:
+1. exact upstream source behavior reproduced;
+2. current KFB world/ocean/support truth substituted explicitly;
+3. one movement writer;
+4. exact wake + waterline source presentation isolated;
+5. only then consider wave-reactive buoyancy.
+
+Do **not** start by replacing this with a full physics boat.
+
+### G2 · If KFB later needs wave-reactive buoyancy: queryable wave truth beats visual-wave colliders
+
+Community evidence:
+- [r/gamedev · dynamic ocean discussion](https://www.reddit.com/r/gamedev/comments/1rkxzr8/) — recommends sampling multiple hull points against a wave-height function rather than representing waves as physical colliders.
+- [r/gamedev · ocean-ish physics](https://www.reddit.com/r/gamedev/comments/xuyy5c/) — highlights the practical difficulty of deriving buoyancy from horizontally displaced Gerstner geometry.
+- [r/gamedev · Sea of Thieves water discussion](https://www.reddit.com/r/gamedev/comments/vlvh1t/) — community explanation emphasizes that low-resolution/queryable wave information is needed for buoyancy while visual detail can remain GPU-side.
+- [wave-simulation postmortem](https://www.reddit.com/r/gamedev/comments/5q4k2q/) — a deliberately simple CPU-queryable wave influence was more practical than a complex fluid simulation for a small game.
+
+**KFB BLUEPRINT / LATER ONLY:**
+`waveQuery(x,z,t) → sample 3–5 hull points → average lift + pitch/roll target → current Boat presentation/movement`.
+
+This preserves one water-height truth for gameplay while letting water visuals be richer.
+
+It is **not** a reason to add physical wave colliders, CFD or an FFT ocean to current P1 Boat recovery.
+
+### G3 · Rapier ray-cast vehicle is a strong Free-Drive reference, not a Race replacement
+
+Current source:
+- [Rapier TypeScript DynamicRayCastVehicleController](https://github.com/dimforge/rapier/blob/master/bindings/typescript/src.ts/control/ray_cast_vehicle_controller.ts)
+- [Rapier vehicle docs](https://rapier.rs/javascript3d/classes/DynamicRayCastVehicleController.html)
+- license: Apache-2.0.
+
+Observed capabilities:
+- dynamic chassis;
+- per-wheel suspension ray direction;
+- wheel radius;
+- suspension stiffness/compression/relaxation;
+- max suspension force;
+- brake impulse;
+- steering angle;
+- engine force;
+- side-friction tuning.
+
+**Verdict: DONOR CANDIDATE / A-B REFERENCE for `TRAVEL-DRIVE-01`.**
+
+Smallest useful KFB proof:
+- same current vehicle source;
+- same current world support;
+- A = current simple/free-drive adapter;
+- B = Rapier ray-cast-wheel adapter;
+- compare support stability, slope behavior, steering, braking and recovery;
+- Race physics/contact owner remains untouched.
+
+Do not port a new ray-cast vehicle into Race merely because it exists.
+
+### G4 · ecctrl exposes useful vehicle/flight primitives, but should not become a KFB runtime dependency by default
+
+Source:
+- [pmndrs/ecctrl](https://github.com/pmndrs/ecctrl) · MIT.
+- current README documents:
+  - ShapeCast wheels with editable longitudinal/lateral slip curves;
+  - custom gravity fields;
+  - propeller drones mixing thrust + reaction torque;
+  - runtime-cheap curve LUTs;
+  - touch joystick/buttons.
+
+**Useful mechanisms:**
+- **ShapeCast wheel** can be more robust than a single thin wheel-ray over seams/rough terrain.
+- **Slip curves** are an explicit tunable handling layer rather than arbitrary steering constants.
+- **Custom gravity field** is relevant to KFB's sphere/torus surface experiments.
+- **ThrustPropeller** is a useful physical-flight donor if KFB later needs a drone/VTOL mode.
+
+**Verdict: ALGORITHM / TUNING REFERENCE ONLY.**
+
+Do not import React/R3F/ecctrl as a second Travel/Race movement owner. Reuse the ideas only where current owner code has a named gap.
+
+### G5 · TinySkies Plane remains the first aerial donor
+
+Pinned source:
+[Plane.ts](https://github.com/dannylimanseta/tinyskies/blob/2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6/client/src/game/Plane.ts)
+
+Observed:
+- one spherical position + heading owner;
+- explicit altitude, minimum terrain clearance and climb/descend smoothing;
+- smoothed turn input;
+- bank response;
+- speed/boost ceilings;
+- visual roll/hit-wobble layers separated from translation truth;
+- propeller animation remains presentation.
+
+**Verdict: SOURCE-PIN / ADAPT FIRST for `TRAVEL-AIR-01`.**
+
+The useful design rule for KFB:
+**flight state writes translation; bank/pitch/roll presentation follows that state.**
+Do not infer flight from camera motion.
+
+## Batch H · Water / weather / sky / stylized shader recipes
+
+### H1 · Current TinySkies mood contract is already stronger than a generic sky library
+
+Pinned source:
+- [SkyPresets.ts](https://github.com/dannylimanseta/tinyskies/blob/2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6/client/src/game/SkyPresets.ts)
+- current `DayNightCycle.ts`
+- current `Globe.ts`
+- current `RainOverlay.ts`
+
+The `SkyPreset` already groups:
+- sky gradient;
+- fog near/far/color;
+- hemi + ambient + key/fill/back lights;
+- shallow/deep ocean + foam;
+- rim;
+- cloud opacity;
+- atmosphere glow;
+- flare color;
+- stars/aurora.
+
+This directly supports the current `WORLD-BIOME-MOOD-01` rule that **World/Deck Mood is one global presentation axis**, separate from spatial BiomeField.
+
+**Verdict: CURRENT OWNER / DO NOT REPLACE.**
+
+### H2 · Three.js Sky is useful as a parameter/mechanism reference, not a new owner
+
+Source:
+[Three.js Sky](https://github.com/mrdoob/three.js/blob/dev/examples/jsm/objects/Sky.js) · MIT.
+
+Current source exposes:
+- turbidity;
+- Rayleigh;
+- Mie coefficient / directional G;
+- sun position;
+- cloud scale/speed/coverage/density/elevation;
+- sun-disc visibility;
+- time.
+
+It also uses an analytic daylight model plus procedural cloud noise.
+
+**KFB use: INSPIRATION / MECHANISM DONOR ONLY.**
+
+Potential gain:
+- if current KFB needs a richer continuous mood interpolation later, these atmospheric parameters can inform the existing KFB World Mood schema.
+
+Do not add a second skydome when current Travel/TinySkies already owns sky/mood.
+
+### H3 · Three.js Water2 shows a useful visual-flow trick, but its render cost and owner shape are wrong as the KFB default
+
+Source:
+[Water2.js](https://github.com/mrdoob/three.js/blob/dev/examples/jsm/objects/Water2.js) · MIT.
+
+Mechanisms:
+- reflection + refraction render targets;
+- dual normal maps;
+- optional flow map / flow direction;
+- two offset phases wrapped over a cycle so flow loops without a visible reset.
+
+**Verdict: ALGORITHM DONOR / NOT DEFAULT WATER OWNER.**
+
+Potential KFB reuse:
+- the **two-phase flow-offset trick** is useful for convincing river/current motion if the existing exact Card Zone/World water donor needs it.
+- the full reflection/refraction stack is comparatively expensive and should not silently replace the exact current KFB water shader.
+
+### H4 · Underwater look should be a presentation profile, not a second ocean simulation
+
+Current community question:
+[r/threejs · underwater absorption/scattering/fog/caustics](https://www.reddit.com/r/threejs/comments/1vqu4d8/)
+
+Useful KFB decomposition:
+- distance fog / color absorption;
+- limited visibility;
+- optional caustic/projected light;
+- waterline transition;
+- surface reflection/distortion.
+
+This maps cleanly to a later **underwater presentation preset** on the current world/water truth.
+
+No need for volumetric fluid simulation to get the visual language.
+
+### H5 · Weather should be semantic state first, presentation second
+
+TinySkies already has `RainOverlay`; its own design notes propose coupling weather to gameplay rather than leaving it decorative.
+
+For KFB, later weather should be:
+`weather semantic state → current World Mood/FX presentation → explicit consumer modifiers`.
+
+Examples:
+- `RAIN`: visibility/fog preset + rain overlay + water/wake intensity modifier;
+- `WIND`: cloud/foliage/trail modifier;
+- `STORM`: lighting/fog/audio + mode-specific handling modifiers.
+
+**Do not let each vehicle/tool implement its own weather system.**
+
+## Batch I · Combat / hit reactions / choreography / crowd separation
+
+### I1 · Rapier sensors/groups/events support a clean “contact candidate” layer
+
+Official current docs:
+- [Rapier Colliders](https://rapier.rs/docs/user_guides/javascript/colliders/)
+- [Collision groups](https://rapier.rs/docs/user_guides/javascript/collider_collision_groups/)
+- [Active events](https://rapier.rs/docs/user_guides/javascript/collider_active_events/)
+- [Advanced collision detection](https://rapier.rs/docs/user_guides/javascript/advanced_collision_detection/)
+
+Mechanisms:
+- sensor colliders detect intersection without generating physical contact force;
+- collision groups filter pair tests early;
+- solver groups can keep contact info while suppressing solver forces;
+- active collision/contact-force events are opt-in;
+- contact force events can use thresholds;
+- contact manifolds expose contact points/normals.
+
+**KFB mapping: `COMBAT-MELEE-01` / later Combat adapters.**
+
+Useful architecture:
+`animation/action window → candidate sensor/sweep/contact query → Combat validates semantic hit → Combat applies damage/reaction`.
+
+This is compatible with the existing rule that Combat keeps damage truth.
+
+It does **not** supersede the current real swept-blade contact owner. Use only where it simplifies filtering, anticipation or trigger volumes.
+
+### I2 · Three.js additive/cross-fade tools fit KFB semantic hit/block/reaction overlays
+
+Source:
+- [AnimationAction](https://threejs.org/docs/#api/en/animation/AnimationAction)
+- [AnimationUtils](https://threejs.org/docs/#api/en/animation/AnimationUtils)
+- [additive blending example](https://threejs.org/examples/#webgl_animation_skinning_additive_blending)
+
+Mechanisms:
+- `crossFadeTo`;
+- `fadeIn/fadeOut`;
+- `warp`;
+- `AnimationUtils.makeClipAdditive`;
+- `AnimationUtils.subclip`.
+
+**KFB mapping: `TB-ANIM-01`, `COMBAT-DUEL-01`.**
+
+Strong use case:
+keep locomotion/base pose running and layer a brief upper-body hit/block/flinch additive **when the source rig/track set supports it**.
+
+Community support:
+[r/gamedev animation-blending critique](https://www.reddit.com/r/gamedev/comments/1eyu9g5/) specifically calls out partial upper/lower animation as a practical way to preserve locomotion while blocking/attacking.
+
+Do not synthesize per-rig masks blindly; actor-family capability matrix stays authoritative.
+
+### I3 · Crowd separation is a presentation/spacing primitive, not an AI owner
+
+Source:
+[Yuka SeparationBehavior](https://github.com/Mugen87/yuka/blob/master/src/steering/behaviors/SeparationBehavior.js) · MIT.
+
+Mechanism:
+neighbor repulsion scales inversely with distance.
+
+**KFB use:**
+- Resident Disco crowd collision/spacing;
+- Town street groups;
+- combat crowd presentation where Combat already chose movement targets.
+
+Potential contract:
+`owner target velocity/path + bounded local separation offset → final legal host move`.
+
+That keeps semantic intent/pathfinding with the current owner.
+
+Do not let separation steer Residents away from authored participation, formation or combat targets indefinitely.
+
+### I4 · Hit reactions need visible feedback but must remain semantically typed
+
+Community signal:
+- [r/gamedev visual critique](https://www.reddit.com/r/gamedev/comments/1g2nz7h/) notes that attacks feel weak when enemies do not visibly react.
+- Older/ongoing gamedev discussion repeatedly identifies hit reaction, recoil and clear feedback as disproportionately important.
+
+KFB should represent this as typed reaction recipes, not arbitrary animation calls:
+`hit.light`, `hit.heavy`, `block`, `stagger`, `knockdown`, `recover`.
+
+Combat owns which semantic reaction happened. Animation Studio owns the best available source-backed performance per actor family.
+
+## Checkpoint-4 synthesis
+
+### Strongest transfers
+
+1. **TRAVEL-BOAT-01:** exact TinySkies Boat first. Later wave response, if wanted, should sample one queryable water-height function at several hull points.
+2. **TRAVEL-DRIVE-01:** Rapier ray-cast vehicle is a strong A/B donor; ecctrl ShapeCast/slip-curve ideas are optional refinements, not dependencies.
+3. **TRAVEL-AIR-01:** exact TinySkies Plane first; translation state owns motion, visual bank/pitch/roll follow.
+4. **WORLD-BIOME-MOOD-01:** current TinySkies `SkyPreset` already has the right multi-parameter mood shape; generic Sky/Water libraries are mechanism donors only.
+5. **Weather:** one semantic weather state feeds World presentation + explicit consumer modifiers.
+6. **COMBAT-MELEE-01:** use Rapier sensor/groups/events only as a filtered contact-candidate seam around current Combat truth.
+7. **TB-ANIM / COMBAT-DUEL:** additive/cross-fade reactions can preserve locomotion where actor capability allows.
+8. **Resident/Combat crowds:** bounded local separation offset, never a new AI/movement owner.
+
+### Anti-patterns added
+
+- no universal physics controller for Ground/Drive/Boat/Air;
+- no full boat physics rewrite before exact TinySkies Boat parity;
+- no physical collider waves as the default water model;
+- no second KFB sky or water owner from generic Three.js examples;
+- no weather logic duplicated per vehicle;
+- no Combat damage semantics hidden inside physics events;
+- no crowd-separation system allowed to become semantic pathfinding.
+
+## Checkpoint-4 source accounting
+
+Focused new source families/surfaces:
+- current TinySkies Boat / Plane / Wake / SkyPreset / DayNight / Rain / Globe;
+- current Rapier monorepo TypeScript vehicle + collision docs;
+- pmndrs/ecctrl vehicle/gravity/drone/touch capabilities;
+- Three.js Sky / Water2 / AnimationAction / AnimationUtils;
+- Yuka SeparationBehavior;
+- current/recent Reddit threads on boat buoyancy, underwater presentation, hit feedback and animation blending.
+
+No new Production Architecture job is justified by G–I.
+
+Next timeout-safe research block:
+**J · performance/LOD/loading · K · mobile/touch authoring/controls · L · small game loops/minigame sockets/playful UI.**
