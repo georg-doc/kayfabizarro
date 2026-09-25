@@ -1,5 +1,43 @@
 # RKIT-10 · Claude + Blender MCP implementation brief
 
+## CURRENT OVERRIDE · SUPERSEDED FOR EXECUTION BY TRACK CORE PR #219
+
+Do **not** start this older RKIT-10 brief directly.
+
+Its M1–M4 requirements remain valid as **piece semantics**:
+
+- M1 CURVE_EASE / BANK_EASE;
+- M2 OFFSET_S / CHICANE / HAIRPIN_180;
+- M3 STREET_TO_TRACK;
+- M4 GRADE / CREST / DIP / BRIDGE_APPROACH.
+
+But Georg's newer decision after RKIT-11 is:
+
+**one base Track Core; everything else is pieces/data.**
+
+The current Blender executor brief is:
+
+`skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/BLENDER_MCP_TRACK_CORE_1A_PROOF_BRIEF.md`
+
+and starts only after:
+
+1. TRACK-CORE-0 Web census/contracts;
+2. Georg's core-language decision.
+
+That newer brief incorporates the useful Perplexity mechanisms:
+
+- real Clothoid/Euler curvature easing;
+- canonical connector/frame state;
+- canonical slot topology + parameter curves over `s`;
+- staggered transition zones;
+- common marking layer.
+
+The Perplexity example Python generator is not a production donor.
+
+This file is retained as Route-01 provenance/history for the M1–M4 intent.
+
+---
+
 **Executor:** Claude Code / Claude Coworker with Blender MCP  
 **Owner:** `georg-doc/KFB-Stunt-Car-Race`  
 **Outcome:** one reusable parametric connector family proving street → drift geometry → stunt socket → street on the existing RKIT route grammar  
