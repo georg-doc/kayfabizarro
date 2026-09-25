@@ -1,3 +1,12 @@
+## 2026-09-25 · WB-D2 / S40 root Hub publication
+
+- live registry refreshed to 90 jobs / 42 READY / 48 HOLD and 19 lanes;
+- WB-D2 and S40 routed to their existing owners without new runtimes;
+- root fallback re-rendered to same current registry state;
+- published root only to `cloudflare-live@2781b7ba...`;
+- B3 handover source clarified as PR #211 branch, not main;
+- public-proof/Cloudflare checks still running at checkpoint.
+
 ## 2026-09-25 · WB-D2 + Resident S40 Hub routing
 
 - added WAITING WB-D2 shell lane pointing to current main Inbox handover;

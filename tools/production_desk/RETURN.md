@@ -1,3 +1,25 @@
+# CURRENT UPDATE · WB-D2 / S40 ROOT HUB PUBLICATION · 2026-09-25
+
+Status: **DEPLOY COMMIT WRITTEN · PUBLIC PROOF RUNNING**
+
+Current Hub source:
+- HUB-CTRL root fallback = **90 jobs / 42 READY / 48 HOLD**;
+- **19 To-do lanes**;
+- WB2 HUMAN PASS → Claude Design remains CAN_START;
+- WB-D2 Hürth/Alstädten shell = WAITING behind WB2 Design/Rehome + WB-ZONE-SEAM;
+- Resident Disco S40 Bridge = CAN_START;
+- B3 Billboard handover ref remains PR #211 branch, not main.
+
+Publication:
+- `cloudflare-live@2781b7ba064a6a1bb5eedf8fe736e92fe4ccbf8e`;
+- root blob `f934ee1436ee0eb1f7473fce71a448a1dc4bdbe9`;
+- source markers verified in the published blob;
+- Cloudflare/Public-Proof checks were RUNNING at this checkpoint.
+
+No WB-D2 or S40 product Stage route was created. This publication changes the Hub root only.
+
+---
+
 # CURRENT UPDATE · WB-D2 + RESIDENT S40 HUB ROUTING · 2026-09-25
 
 Status: **HUB SOURCE UPDATED · LIVE REGISTRY REFRESH NEXT**
