@@ -148,27 +148,27 @@
     },
     {
       "id": "billboard",
-      "bucket": "CAN_START",
-      "title": "Billboard B2b · Living Mockup / Collage recherchieren",
-      "what": "B2a ist angenommen und eingecheckt: YouTube läuft direkt auf der 3D-Werbefläche; die Rückseite zeigt wieder nur den normalen Billboard-Korpus. Als Nächstes nur Optionen für Living-Mockup/Collage-Flächen recherchieren und vergleichen.",
+      "bucket": "LOOK_AT",
+      "title": "Billboard B2b · Living Mockup / Collage Optionen",
+      "what": "B2b ist als Recherche abgeschlossen. Empfehlung: vorhandenen KFB-CanvasTexture-Collage-Donor zu A+ ausbauen — deterministische No-Repeat-Rezepte, kleiner provenance-getrackter Bildpool und ein leichter Living-Screen-Look. Noch keine Runtime gebaut.",
       "provider": "Web-Chat",
-      "yourAction": "Kann als nächster kleiner Web-Chat-Slice starten. Zunächst nur Recherche/Optionsmemo, noch keine Runtime bauen.",
-      "waitingFor": "",
+      "yourAction": "Optionsmemo ansehen/entscheiden: A+ Living Screen empfohlen. Außerdem wählen: KFB-only oder kleiner CC0-Pool; erster Look torn-history / newspaper / carnival / mixed hypernormalisation; B2b-P1 als nächstes oder B3 parallel.",
+      "waitingFor": "Georgs Auswahl für den ersten B2b-P1 oder expliziter Parallel-Start von B3.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 199,
-      "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
-      "expectedHead": "07da4adfd1de293d03682d1af90a01df2a1eba19",
+      "pr": 211,
+      "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
+      "expectedHead": "662611e4a28123e9e9449e2da47f57c8dbe43815",
       "brief": {
-        "label": "Billboard Living Plan",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md",
-        "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+        "label": "B2b Optionsmemo",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/OPTIONS_MEMO.md",
+        "ref": "chatgpt-web/billboard-b2b-research-2026-09-25",
         "pasteReady": false
       },
       "review": {
-        "label": "Angenommenes B2a ansehen",
+        "label": "Akzeptierte B2a Medienbasis",
         "path": "kfb-hub/pruefen/billboard-b2a/index.html",
-        "sourceRef": "PR #199 · HUMAN_ACCEPTED · final public 24/24 PASS · front-only rear fix"
+        "sourceRef": "B2b research-only · PR #211 · no B2b runtime/Stage"
       }
     },
     {
@@ -178,7 +178,7 @@
       "what": "Das akzeptierte Kenney-Billboard soll später als runderer, weicherer KFB-Cartoon-Prop modelliert werden, ohne die fertige B1/B2a-Medienfläche neu zu erfinden. Echte Silhouetten-/Topologiearbeit darf über Blender MCP laufen.",
       "provider": "WSA / ToolBox 3D · ggf. Blender MCP",
       "yourAction": "",
-      "waitingFor": "B2b Living Mockup / Collage Recherche zuerst; B3 danach oder nur auf Georgs Parallel-Start.",
+      "waitingFor": "Georg entscheidet nach B2b-Optionsmemo, ob B3 danach oder parallel startet.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
