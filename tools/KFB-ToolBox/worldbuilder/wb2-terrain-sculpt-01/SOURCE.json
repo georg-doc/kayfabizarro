@@ -38,11 +38,11 @@
   "candidate": {
     "source": {
       "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html",
-      "blob": "188d5b46e34407c3800edeb2b896d3cf0cf93925"
+      "blob": "a250f1a36137121942f0f99d6a259146d718b162"
     },
     "review": {
       "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html",
-      "blob": "cee8dfa49c4a67d3f3a91ec75adf5866f3154c83",
+      "blob": "393e277adaef0948597ae6781b17d6ddabac1972",
       "surface": "ChatGPT attachment",
       "public": false
     }
@@ -78,5 +78,27 @@
     "no_resident_or_animation_owner_change": true,
     "cloudflare": "HOLD_NOT_PUBLISHED",
     "live": "NOT_PROMOTED"
+  },
+  "interaction_enrichment": {
+    "status": "CANDIDATE_HUMAN_REVIEW_PENDING",
+    "wheel_touchpad_radius": {
+      "active_only_in_sculpt": true,
+      "min": 0.45,
+      "max": 5,
+      "curve": "exponential"
+    },
+    "temporary_orbit": {
+      "gesture": "hold Space",
+      "preserves_sculpt_mode": true
+    },
+    "quick_modes": {
+      "1": "Object/Orbit",
+      "2": "Raise",
+      "3": "Lower"
+    },
+    "preserved_object_shortcuts": {
+      "R": "Rotate",
+      "S": "free Scale"
+    }
   }
 }
