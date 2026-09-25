@@ -302,3 +302,19 @@ Georg has now reviewed both exported candidates sufficiently to continue.
 
 This is explicitly not an exhaustive feature-by-feature acceptance.
 
+
+
+## CURRENT ADDITIVE · World / Resident presentation rules · 2026-09-25
+
+Read:
+`WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md`.
+
+Binding additions:
+- Resident modules are terrain-placeable and do **not** bring mandatory ground/base plates.
+- S39 Resident Band is the current source-backed donor: host anchor + local support plane, no ORB Ground mesh.
+- Demo scenes should use a lightweight current WorldBuilder-compatible sky/light/ground presentation instead of arbitrary lab plates.
+- Current MUSIC-PERF timeline/audio mechanics remain useful, but visible guitarist/drummer animation is TUNE; newer S39 `Guitar A / ml.guitar.a.fit` and `drum.v5c` are the preferred performance sources.
+- WB-D2 `FACADE_RULE v1` is the starting global ordinary-OSM facade grammar; successful Hürth/Alstädten variation should propagate to Cologne ordinary buildings.
+- WB-D1 roof/shadow repair (`orientEG`, FrontSide / shadowSide Back / normalBias 0.9, concavity fallback) is a shared OSM presentation rule, not a one-zone patch.
+- Global quality gate includes roof-wall seam, wall-ground contact, shadow clipping/bias and floating-object illusion.
+- Graveyard current slice is historical concept/lighting donor only; its movement and placement are not gameplay evidence.
