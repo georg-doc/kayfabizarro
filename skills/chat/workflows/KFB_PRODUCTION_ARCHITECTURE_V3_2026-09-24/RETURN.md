@@ -1,3 +1,141 @@
+## CURRENT UPDATE · EXTERNAL DEMO RESEARCH RADAR · PASS 2 A–L · 2026-09-26
+
+Status: **PASS 2 COMPLETE · PERSISTED · ROUTING/HANDOFF VERIFIED · NO RUNTIME / STAGE / LIVE CHANGE**
+
+### Exact lane
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
+- Draft PR: **#204**
+- owner: **KFB Web Architecture planning lane**
+- pre-Return handoff head: `00db9247df453cf63db2e05a13af03763a234b1e`
+- catalogue remains: **13 strands · 96 jobs · 44 READY · 52 HOLD**
+
+### Research artifact
+
+`EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+
+Broad research is now complete across **A–L**:
+A World/environment/procedural Nature ·
+B WorldBuilder authoring ·
+C roads/tracks/world→Race ·
+D Residents/NPCs ·
+E Card Zones/portals/diegetic UI ·
+F ToolBox/source inspection ·
+G Vehicle/Drive/Boat/Flight ·
+H Water/Weather/Sky ·
+I Combat/choreography/crowds ·
+J performance/LOD/streaming ·
+K mobile/touch ·
+L bounded activities/minigame sockets.
+
+The living report now contains **73 HTTPS source/demo links**.
+
+### Pass-2 strongest routed findings
+
+1. **Travel modes stay source-specific under one mode router.**
+   - exact TinySkies Boat and Plane are first donors;
+   - Rapier ray-cast vehicle is an A/B Free-Drive donor, not a Race replacement;
+   - ecctrl ShapeCast/slip/custom-gravity/drone ideas remain bounded mechanism references.
+
+2. **Water has separate gameplay/query and visual layers.**
+   - current TinySkies Boat/ocean truth first;
+   - later wave response, if needed, samples one queryable water-height/normal function at several hull points;
+   - no physical wave-collider default.
+
+3. **World Mood remains one current owner.**
+   - current TinySkies `SkyPreset` already combines sky/fog/light/ocean/rim/cloud/atmosphere;
+   - Three.js Sky/Water2 are mechanism donors only;
+   - Weather becomes one semantic World state with explicit consumer modifiers.
+
+4. **Combat physics supplies candidates; Combat owns meaning.**
+   - sensors/groups/events may filter candidate contacts;
+   - current Combat validates hit/damage/reaction;
+   - Animation owner maps typed reactions to source-backed performances.
+
+5. **Performance follows an escalation ladder.**
+   `measure → dedupe → instance → batch → LOD → chunk activate → stream`.
+   NASA 3D Tiles is a future streaming mental model only after a measured large-world gate.
+
+6. **Touch has explicit gesture ownership.**
+   Every active pointer belongs to one:
+   `UI | PLAY | CAMERA | OBJECT | BRUSH`.
+   Mobile is not a shrunk desktop toolbar; mode/provider determines visible controls.
+
+7. **Small activities use the existing Stage/Instance owner.**
+   Activity Recipe:
+   `entry payload → local owner/rules → semantic result → return payload`.
+   No new universal minigame engine.
+
+### Pass-2 checkpoints
+
+- G–I research persisted: `38d1772effd2fa9ab54af7ad0d9ab20c411b842d`
+- J–L + Pass-2 synthesis: `e71666cad3d342b6996cdc196720f91a05926be7`
+- Pass-2 research validation: `6cd23e6c231f7d2d3f5906e25dc17d543392a356`
+- Hub metadata Pass-2 status: `030170964a852e81f376cf1864aa28fa4b235274`
+- additive changelog: `66c78a1f665fcd6e669ff5b9f4d0a3b9704178c3`
+- Production Architecture router: `e0c766da02ef6755e3df2def58a04a9f57a19ccf`
+- central Chat router: `0b32a5bb706f67fb87e07dccbd0b22a514a5b9d7`
+- Architecture recovery handoff: `17cbae018b19c3521836667f7c7f248ce3d4debb`
+- final handoff-sync evidence: `00db9247df453cf63db2e05a13af03763a234b1e`
+
+### Validation actually run
+
+Pass-2 research routing/content: **15/15 PASS**.
+
+Final handoff synchronization: **8/8 PASS**.
+
+Verified:
+- G–L + Blueprints F–L present;
+- all routed receiver job IDs exist;
+- catalog remains exactly 96 jobs;
+- 96/96 job IDs unique;
+- no new Production Architecture job;
+- no new public Stage candidate;
+- report, TEST_REPORT, Hub metadata, CHANGELOG, workflow router, central router and Recovery/Handoff agree on Pass 2;
+- future research is explicitly question-triggered.
+
+Runtime tests: **N/A — research/runtime code changed = 0 files**.  
+Browser screenshot/public runtime proof: **N/A — no runtime candidate was built**.  
+Cloudflare deployment: **0 changes**.
+
+### Hub / human route
+
+Existing Hub navigation only:
+`https://kayfabizarro.pages.dev/kfb-hub/`
+
+Hub catalog metadata references the radar and reports:
+`PASS_2_COMPLETE_A_L_NO_NEW_JOB`.
+
+No public Hub refresh or new Stage route is claimed by this research slice.
+
+### Files changed by Pass 2 / final handoff
+
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/TEST_REPORT.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CHANGELOG.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
+- `skills/chat/START_HERE.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md`
+- this `RETURN.md`
+
+### Unresolved / deliberately not promoted
+
+- no external demo became a runtime donor merely by being interesting or loadable;
+- no generic physics/controller stack was introduced;
+- no performance/streaming architecture was started without a measured bottleneck;
+- no mobile universal control overlay was introduced;
+- no minigame runtime was added;
+- future broad research is stopped by default and resumes only for a named product question.
+
+Separate owner-local state remains separate:
+World r2 is still frozen under its stop rule and its next owner-local gate is `WORLD-R2-CONTRACT-RESET-01`. This research slice does not reopen or bypass that recovery gate.
+
+### Exactly one research-to-production gate
+
+**Execute the existing `ENV-PREVIEW-01` / World environment integration and use the A–L radar as donor guidance. Do not create a separate research implementation branch.**
+
 ## CURRENT UPDATE · EXTERNAL DEMO RESEARCH RADAR · PASS 1 · 2026-09-26
 
 Status: **PASS 1 COMPLETE · PERSISTED · NO RUNTIME / STAGE / LIVE CHANGE**
