@@ -528,3 +528,36 @@ No Stage/Public/Human PASS for World r2.
 
 Next gate:
 `WORLD-R2-CONTRACT-RESET-01` · test contract only first.
+
+
+## External Demo Research Radar · Pass 2 validation · 2026-09-26
+
+Research file:
+`EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+
+Result: **15/15 PASS**
+
+Checks actually executed against research head `e71666cad3d342b6996cdc196720f91a05926be7`:
+
+1. PASS — report status is Pass 2 complete.
+2. PASS — Batch G present.
+3. PASS — Batch H present.
+4. PASS — Batch I present.
+5. PASS — Batch J present.
+6. PASS — Batch K present.
+7. PASS — Batch L present.
+8. PASS — Blueprint F present.
+9. PASS — Blueprint L present.
+10. PASS — all routed Pass-2 receiver IDs exist in current catalog: `travel-modes-01`, `travel-drive-01`, `travel-boat-01`, `travel-air-01`, `world-biome-mood-01`, `world-recipe-01`, `combat-melee-01`, `combat-duel-01`, `web-quick-3d-review`, `ui-grammar-01`, `meta-hud-01`, `stage-instance-01`, `wb-mobility-mvp-01`.
+11. PASS — current catalogue remains exactly **96** briefing cards.
+12. PASS — all **96/96** briefing IDs remain unique.
+13. PASS — report explicitly adds **no new Production Architecture job**.
+14. PASS — report still explicitly claims **no new public Stage candidate**.
+15. PASS — future research horizon is explicitly **question-triggered**, not another blanket backlog.
+
+Additional content evidence:
+- **73** HTTPS source/demo links currently embedded in the A–L report.
+- catalogue metrics remain **13 strands · 96 jobs · 44 READY · 52 HOLD**.
+- runtime code changed by Pass 2: **0 files**.
+- deployment/Cloudflare changed by Pass 2: **0**.
+- human review surface created by Pass 2: **none**; research/navigation only.
