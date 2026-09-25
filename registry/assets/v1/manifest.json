@@ -2,22 +2,22 @@
   "catalog": "catalog.jsonl",
   "counts": {
     "byKind": {
-      "audio": 1703,
-      "image-2d": 6598,
-      "model-3d": 6467
+      "audio": 1738,
+      "image-2d": 6631,
+      "model-3d": 6550
     },
     "byRoot": {
       "media/2D_Assets": 5132,
-      "media/3D_Assets": 9636
+      "media/3D_Assets": 9787
     },
     "decks": 4,
     "dependencies": {
       "complete": 3834,
-      "embedded": 1900,
+      "embedded": 1983,
       "missing": 339,
       "unresolved": 394
     },
-    "packs": 115,
+    "packs": 116,
     "problems": {
       "DUPLICATE_NAME": 672,
       "MISSING_REFERENCED_FILE": 339,
@@ -25,7 +25,7 @@
       "UNRESOLVED_MODEL_DEPENDENCY": 89
     },
     "textureCandidates": 575,
-    "total": 14768
+    "total": 14919
   },
   "determinism": "same commit + same config + same override files => byte-identical output",
   "excludePrefixes": [
@@ -54,7 +54,7 @@
     "packs": "packs/index.json",
     "problems": "problems.json"
   },
-  "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
-  "sourceCommitTime": "2026-09-19T16:42:25+02:00",
+  "sourceCommit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+  "sourceCommitTime": "2026-09-25T03:28:46+02:00",
   "sourceRepo": "georg-doc/kayfabizarro"
 }

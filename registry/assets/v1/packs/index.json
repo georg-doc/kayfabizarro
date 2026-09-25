@@ -36,7 +36,32 @@
     "shard": "packs/3d-assets-loose.json"
   },
   {
-    "assetCount": 1668,
+    "assetCount": 35,
+    "collections": [
+      {
+        "assetCount": 35,
+        "path": "KFB_Motion_Library"
+      }
+    ],
+    "dependencyStatus": {
+      "embedded": 2
+    },
+    "displayName": "Animations",
+    "formats": {
+      "glb": 2,
+      "jpg": 33
+    },
+    "kinds": {
+      "image-2d": 33,
+      "model-3d": 2
+    },
+    "packId": "animations",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/Animations",
+    "shard": "packs/animations.json"
+  },
+  {
+    "assetCount": 1687,
     "collections": [
       {
         "assetCount": 24,
@@ -73,6 +98,10 @@
       {
         "assetCount": 24,
         "path": "Items"
+      },
+      {
+        "assetCount": 19,
+        "path": "KFB Racer"
       },
       {
         "assetCount": 7,
@@ -154,12 +183,12 @@
     "dependencyStatus": {},
     "displayName": "Audio",
     "formats": {
-      "mp3": 16,
+      "mp3": 30,
       "ogg": 765,
-      "wav": 887
+      "wav": 892
     },
     "kinds": {
-      "audio": 1668
+      "audio": 1687
     },
     "packId": "audio",
     "provenance": "generated-structural",
@@ -2574,20 +2603,20 @@
     "shard": "packs/kenney-ui-pack-adventure.json"
   },
   {
-    "assetCount": 94,
+    "assetCount": 175,
     "collections": [],
     "dependencyStatus": {
-      "embedded": 82
+      "embedded": 163
     },
     "displayName": "KFB",
     "formats": {
-      "glb": 82,
+      "glb": 163,
       "jpg": 9,
       "png": 3
     },
     "kinds": {
       "image-2d": 12,
-      "model-3d": 82
+      "model-3d": 163
     },
     "packId": "kfb",
     "provenance": "generated-structural",
@@ -3154,10 +3183,10 @@
     "shard": "packs/scifi-ultimate-space-kit-quaternius.json"
   },
   {
-    "assetCount": 35,
+    "assetCount": 51,
     "collections": [
       {
-        "assetCount": 14,
+        "assetCount": 30,
         "path": "KFB RoadTrip JukeBox v2"
       },
       {
@@ -3172,10 +3201,10 @@
     "dependencyStatus": {},
     "displayName": "Sounds",
     "formats": {
-      "mp3": 35
+      "mp3": 51
     },
     "kinds": {
-      "audio": 35
+      "audio": 51
     },
     "packId": "sounds",
     "provenance": "generated-structural",
