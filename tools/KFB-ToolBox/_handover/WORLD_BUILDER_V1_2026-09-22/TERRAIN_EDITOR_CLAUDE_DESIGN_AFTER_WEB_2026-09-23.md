@@ -1,6 +1,6 @@
 # KFB WorldBuilder · Terrain Editor → Claude Design handoff · 2026-09-23
 
-Status: **PREPARED · HOLD UNTIL WEB HTML HUMAN PASS**
+Status: **READY · WB1/WB2 FUNCTIONAL HUMAN PASS · CLAUDE DESIGN AUTHORING/UI GATE**
 Current product direction:
 **continuous procedural terrain + productive Scene Editor**
 
@@ -63,6 +63,26 @@ Claude may then:
 - add restrained visual feedback for selection/snap/support;
 - preserve save/reload behavior.
 
+## WB2 accepted additions to preserve
+
+The accepted Web foundation now also includes:
+- non-destructive Raise / Lower terrain sculpting;
+- Radius / Strength;
+- wheel / touchpad Radius control;
+- hold-Space temporary Orbit;
+- `1 / 2 / 3` Object/Orbit / Raise / Lower modes;
+- Undo / Clear;
+- sculpt Save / Reload.
+
+UI direction from Georg:
+- reduce/collapse redundant side-panel scene-edit controls and explanatory copy;
+- object transforms stay inline at the selected object;
+- Terrain Sculpt remains a compact scene-level tool;
+- maximize the 3D field of view;
+- do not fork the shared `tools/KFB-ToolBox/lib/edit-layer.js` owner.
+
+Smooth / Flatten / material painting are not part of this Claude pass.
+
 ## Claude must not rebuild
 
 - terrain engine;
@@ -109,5 +129,7 @@ No Cloudflare until a milestone is worth publishing.
 
 The accepted functional Web editor still works, and the Claude pass makes it visibly useful/pleasant without replacing its owners.
 
-Exactly one gate before Claude:
-**WB1-TERRAIN-EDITOR-01 Web HTML Human PASS.**
+Pre-Claude functional gate: **PASSED**.
+
+Exactly one next gate:
+**Claude Design authoring/UI refinement on the accepted WB2 source.**
