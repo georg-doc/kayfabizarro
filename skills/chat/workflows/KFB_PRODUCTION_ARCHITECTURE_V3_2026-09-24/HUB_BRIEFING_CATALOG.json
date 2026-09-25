@@ -1116,8 +1116,8 @@
       "priority": "P0",
       "executor": "Racer Web + Blender MCP",
       "title": "Racer · Track A Recipe + Bake",
-      "what": "Build one authored figure-eight/over-under track from RKIT under Rapier stunt physics; no general editor.",
-      "result": "Baked reusable Track Module with base + 30m Hero jump.",
+      "what": "Current Track/RKIT source now includes registered RKIT-08/09 stunt modules; Race must drive LOOP_REAL before any MAG/cascade/skyramp or World placement.",
+      "result": "Measured LOOP_REAL Rapier gate first; reusable stunt candidates remain registered but not accepted/placed.",
       "promptSection": "RACE-TRACK-RECIPE-01 · Authored Track A + Bake",
       "sourceSet": "racerWorld",
       "cloudflareRequired": false,
@@ -1133,7 +1133,9 @@
       "reasoning": "high",
       "budget": "HIGH",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "rkit08_09": "0bbdc539c0d26c8d1feb40a7eda53162a66e7070",
+      "currentGate": "LOOP_REAL"
     },
     {
       "id": "race-rkit-03",
@@ -1958,7 +1960,7 @@
       "result": "One continuous drive with explicit world→Race handoff and no invented geography.",
       "promptSection": "WB-HUERTH-COLOGNE-RACE-MVP-01 · Hürth → Cologne OSM streets → Track A",
       "sourceSet": "racerWorld",
-      "waitingFor": "Hürth/corridor baked World Zones + TRAVEL-DRIVE-01 + TRACK_A Rapier proof + WB-ZONE-SEAM-01",
+      "waitingFor": "Hürth/corridor baked World Zones + TRAVEL-DRIVE-01 + WB-ZONE-SEAM-01 + Race-driven LOOP_REAL gate; no RKIT-08/09 world placement before then",
       "cloudflareRequired": false,
       "workRequired": false,
       "executionProfile": "WEB_DEEP",

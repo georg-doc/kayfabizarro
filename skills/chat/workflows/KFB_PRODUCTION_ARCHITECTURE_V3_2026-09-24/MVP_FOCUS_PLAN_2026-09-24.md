@@ -15,6 +15,14 @@ One movement writer; animation follows state/speed. Prepared: `WB-MOBILITY-MVP-0
 ## MVP 2 · Hürth → Cologne Streets → Race Track
 Hürth → committed/baked OSM corridor/street zones → Cologne → visible ramp/service connector → `TRACK_A_STUNT_8`.
 
+The Track socket now knows about RKIT-08/09 **by reference only**: LOOP_REAL, LOOP_SLIM, LOOP_MAG_HERO, LOOP_MAG_CASCADE and SKYRAMP-01. Nothing is driven yet.
+
+Gate order is binding:
+1. Race drives **LOOP_REAL** first in the existing Rapier host;
+2. Race reports measured entry speed/minimum load and capture→commit→release→recover;
+3. only then may the other stunt modules proceed;
+4. **no WorldBuilder placement of RKIT-08/09 before that gate**.
+
 No invented geography. Streets use Travel/WorldBuilder Drive; explicit Track entry hands contact/gameplay to Race. Prepared: `WB-HUERTH-COLOGNE-RACE-MVP-01`.
 
 ## MVP 3 · ToolBox Production + Motion Intake
@@ -46,7 +54,7 @@ Parallel now:
 2. MOTION-INTAKE-DIRECT-01;
 3. TB-V17-INTEGRATION-01;
 4. ACTOR-FB-BODY-FAMILY-01;
-5. Race TRACK_A Rapier proof;
+5. Race drives RKIT-08 **LOOP_REAL** first in Rapier; TRACK_A/world stunt placement waits on that measured gate;
 6. RES-DISCO-A source/motion audition.
 
 Then:

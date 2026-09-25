@@ -1,0 +1,81 @@
+{
+  "schema": "kfb.track-socket-stunt-registry/0.1-candidate",
+  "date": "2026-09-25",
+  "source": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "pr": 41,
+    "branch": "chat/rkit-08-09-stunts-2026-09-25",
+    "head": "0bbdc539c0d26c8d1feb40a7eda53162a66e7070",
+    "registry": "KFB Cologne Race Option C-3/TRACK_SOCKET_STUNT_REGISTRATION_2026-09-25.json"
+  },
+  "socket": {
+    "id": "socket:cologne-dom-loop:cp0-cp2",
+    "sourcePath": "tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell/SESSION_2026-09-24_WB-D1/SOURCE.json",
+    "sourceBlob": "0193e38f1e83526b22d8ad68a379ab2cc40765dc",
+    "moduleRef": null,
+    "registrationOnly": true,
+    "worldPlacementAllowed": false
+  },
+  "gateOrder": [
+    "LOOP_REAL",
+    "LOOP_SLIM",
+    "LOOP_MAG_HERO",
+    "LOOP_MAG_CASCADE",
+    "SKYRAMP-01"
+  ],
+  "currentGate": "LOOP_REAL",
+  "modules": [
+    {
+      "id": "stunt01_loop_real",
+      "label": "LOOP_REAL",
+      "metadata": "KFB Cologne Race Option C-3/rkit-08/stunt01.stunt-module.json",
+      "glb": "KFB Cologne Race Option C-3/rkit-08/glb/stunt01_loop_real.draco.glb",
+      "state": "REGISTERED_NOT_DRIVEN",
+      "safeBypass": true
+    },
+    {
+      "id": "stunt_slim",
+      "label": "LOOP_SLIM",
+      "metadata": "KFB Cologne Race Option C-3/rkit-08/stunt_slim.stunt-module.json",
+      "glb": "KFB Cologne Race Option C-3/rkit-08/glb/stunt_slim.draco.glb",
+      "state": "HOLD_AFTER_LOOP_REAL",
+      "safeBypass": true
+    },
+    {
+      "id": "stunt_mag_hero",
+      "label": "LOOP_MAG_HERO",
+      "metadata": "KFB Cologne Race Option C-3/rkit-08/stunt_mag_hero.stunt-module.json",
+      "glb": "KFB Cologne Race Option C-3/rkit-08/glb/stunt_mag_hero.draco.glb",
+      "state": "HOLD_AFTER_LOOP_REAL",
+      "safeBypass": true
+    },
+    {
+      "id": "stunt_mag_cascade",
+      "label": "LOOP_MAG_CASCADE",
+      "metadata": "KFB Cologne Race Option C-3/rkit-08/stunt_mag_cascade.stunt-module.json",
+      "glb": "KFB Cologne Race Option C-3/rkit-08/glb/stunt_mag_cascade.draco.glb",
+      "state": "HOLD_AFTER_LOOP_REAL",
+      "safeBypass": true
+    },
+    {
+      "id": "skyramp01",
+      "label": "SKYRAMP-01",
+      "metadata": "KFB Cologne Race Option C-3/rkit-09/skyramp01.stunt-module.json",
+      "glb": "KFB Cologne Race Option C-3/rkit-09/glb/skyramp01.draco.glb",
+      "state": "HOLD_AFTER_LOOP_REAL",
+      "safeBypass": true
+    }
+  ],
+  "owners": {
+    "rkit": "geometry + guide + zones + envelope",
+    "race": "contact/capture/assist/MAG/flight/pads/landing/recovery",
+    "worldbuilder": "placement only after Race gate"
+  },
+  "rules": [
+    "registration != placement",
+    "registration != physics acceptance",
+    "all repo GLBs require DRACOLoader",
+    "guide[] is metadata only",
+    "no world placement before LOOP_REAL driven result"
+  ]
+}

@@ -184,6 +184,35 @@ A later authoring UI may manipulate route recipes if it becomes genuinely useful
 
 ---
 
+# 2A · RKIT-08/09 stunt gate update · 2026-09-25
+
+Georg lifted the stunt HOLD from masterplan #201 and accepted the RKIT-08/09 visual direction.
+
+Current delivered geometry/metadata:
+- RKIT-08 LOOP_REAL;
+- LOOP_SLIM;
+- LOOP_MAG_HERO;
+- LOOP_MAG_CASCADE;
+- RKIT-09 SKYRAMP-01.
+
+All are registered **by reference only** against the existing WorldBuilder track socket. None has been driven.
+
+Binding order:
+1. Race drives LOOP_REAL first under Rapier.
+2. Race owns capture/commit/release/recover and reports actual entry speed / minimum load.
+3. MAG adhesion/boost, cloud pads, flight/air-control and landing remain Race decisions after that gate.
+4. WorldBuilder must not place RKIT-08/09 before LOOP_REAL passes its Race gate.
+
+Every module keeps a safe ground-level bypass. Repository GLBs are Draco-compressed. Guide splines are metadata, never colliders or rails.
+
+Architecture registry:
+`TRACK_SOCKET_STUNT_REGISTRY_2026-09-25.json`.
+
+Race source:
+PR #41 · `chat/rkit-08-09-stunts-2026-09-25` · `0bbdc539c0d26c8d1feb40a7eda53162a66e7070`.
+
+---
+
 # 3 · Race Track Bake
 
 Do not regenerate expensive visual geometry every world load.

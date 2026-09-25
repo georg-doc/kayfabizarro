@@ -404,7 +404,32 @@
       ],
       "currentTrackA": "TRACK_A_STUNT_8: figure-eight, Hero/Base jumps, Pit Lane, SWITCH_Y, flap-return/tunnel shortcut",
       "osmStreet": "Trankgasse real OSM line from dom-zentrum-v0, baked street + GLB in OSM frame",
-      "rule": "RKIT owns geometry/metadata only; Race owns contact/physics/AI/triggers; WorldBuilder owns placement"
+      "rule": "RKIT owns geometry/guide/zones/envelopes; Race owns physics/capture/assist/pads/flight/landing/recovery; WorldBuilder placement remains blocked until LOOP_REAL gate",
+      "rkit07": {
+        "pr": 40,
+        "branch": "chat/rkit-07-gc-canyon-2026-09-24",
+        "head": "f70cf4866c09aefef0d120fbda78e847c0283362",
+        "note": "SWITCH_Y seam fix; GC canyon probes remain separate and do not alter Track A gate"
+      },
+      "rkit08_09": {
+        "pr": 41,
+        "branch": "chat/rkit-08-09-stunts-2026-09-25",
+        "head": "0bbdc539c0d26c8d1feb40a7eda53162a66e7070",
+        "handover": "KFB Cologne Race Option C-3/STUNT_MODULES_RKIT08_09_HANDOVER_2026-09-25.md",
+        "registration": "KFB Cologne Race Option C-3/TRACK_SOCKET_STUNT_REGISTRATION_2026-09-25.json",
+        "status": "geometry+metadata delivered; nothing driven"
+      },
+      "currentTopGeometry": "rkit09",
+      "currentStuntGate": "LOOP_REAL",
+      "worldPlacementAllowed": false,
+      "worldPlacementGate": "Race drives LOOP_REAL first and reports measured result",
+      "stuntModules": [
+        "LOOP_REAL",
+        "LOOP_SLIM",
+        "LOOP_MAG_HERO",
+        "LOOP_MAG_CASCADE",
+        "SKYRAMP-01"
+      ]
     },
     "osmBake": {
       "repo": "georg-doc/kayfabizarro",
