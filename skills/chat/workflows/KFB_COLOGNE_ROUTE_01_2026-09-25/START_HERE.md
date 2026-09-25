@@ -1,13 +1,33 @@
 # KFB Cologne Route 01 · Hürth → Dom → Rhein → Mülheimer Brücke → SAE
 
-## CURRENT EXECUTION OVERRIDE · 2026-09-26
+## CURRENT EXECUTION OVERRIDE · 2026-09-26 · TRACK CORE FIRST
 
-Georg reports Blender MCP is currently building the missing connector / offset track pieces. At the latest GitHub check, no new `rkit-10` branch/PR was visible yet, so that work remains **USER-REPORTED IN PROGRESS · GITHUB OUTPUT NOT YET PINNED** until Web Chat can recover its exact source.
+A newer Track-Core planning slice in stacked PR #219 amends this execution order after Georg's RKIT-11 review.
+
+Current product rule:
+
+**one base Track Core; everything else is pieces/data.**
+
+Race PR #42 / `chat/rkit-11-rhein-run-2026-09-26@bcc422b00fc4629ac113f086cddcea3b2b107f2a` is now the frozen acceptance fixture that proved why separate bridge/loop/host sweeps are the wrong architecture.
+
+The Perplexity track-transition research has also been reviewed. Its useful mechanisms are folded into Track Core:
+
+- real Clothoid/Euler curvature easing;
+- connector boundary-state thinking;
+- staggered transition zones;
+- graph/RouteRecipe semantics;
+- separate style/prop/FX layers.
+
+Its example Python generator is **not** a production donor.
 
 The implementation order is now:
 
 ```text
-Blender MCP connector pieces
+TRACK-CORE-0 · Web census + core contract
+→ Georg core-language gate
+→ TRACK-CORE-1A · Claude Coworker + Blender MCP geometry oracle/proof
+→ TRACK-CORE-1B · Web authoritative core + runtime parity
+→ TRACK-CORE-2 · Claude Design transition visual grammar
 → WEB-PREP-TRACK-R0
 → CLAUDE DESIGN PLAYABLE-TRACK-R0
 → WEB REHOME / BROWSER FREEPLAY / HUMAN GATE
@@ -15,16 +35,24 @@ Blender MCP connector pieces
 → CLAUDE DESIGN OSM composition
 ```
 
-**Track first does not mean OSM later as a bolt-on.** The Web prep writes the OSM seam contract before Claude assembles Track R0. The first track must already use the same route schema, metre-frame rules, street↔track adapter and semantic anchors needed by the real Hürth → Dom → Rhein → Mülheimer Brücke → SAE corridor.
+M1–M4 below remain the required **piece semantics**, but they are no longer separate geometry systems. They are built on the single Track Core.
 
-Current execution docs:
+**Track first still does not mean OSM later as a bolt-on.** The Track Core and later Web prep preserve the same RouteRecipe, metre-frame, street↔track and OSM seams from the start.
 
-- `TRACK_TO_OSM_EXECUTION_LADDER_2026-09-26.md` — coordinated Track-first → OSM production sequence;
-- `WEBCHAT_PLAYABLE_TRACK_R0_PREP_BRIEF.md` — first fresh Web Chat task;
-- `CLAUDE_DESIGN_PLAYABLE_TRACK_R0_BRIEF.md` — Claude Design assembly brief after Web pins the MCP/runtime sources;
-- `CLAUDE_BLENDER_MCP_BRIEF.md` — geometry/module brief retained for the Blender/RKIT lane.
+Current Track-Core source of truth is stacked PR #219:
 
-**Exactly one next gate for this workflow:** `WEB-PREP-TRACK-R0`, after or while recovering the latest Blender MCP output. Do not start Claude composition from prose-only module names.
+`skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/START_HERE.md`
+
+Prepared agent briefs there:
+
+- ChatGPT Web: `WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md`
+- Claude Coworker + Blender MCP: `BLENDER_MCP_TRACK_CORE_1A_PROOF_BRIEF.md`
+- ChatGPT Web: `WEBCHAT_TRACK_CORE_1B_RUNTIME_PARITY_BRIEF.md`
+- Claude Design: `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md`
+
+The Track-R0 briefs in this folder remain prepared downstream consumers.
+
+**Exactly one current next gate: TRACK-CORE-0 · ChatGPT Web census + core contract.**
 
 ---
 
