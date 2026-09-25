@@ -130,3 +130,13 @@ Node (three 0.160): pose, hop/nod/wind bounded and finite, clip-follow exact, ba
 
 ### BOUNDARY
 Candidate only. No consumer loads it, no mixer or head/eye owner changed. Georg has not accepted the ear-to-head junction (open decision: merged fillet vs. module). Handover and integration guide: `ear-rig/README.md`, `ear-rig/EAR_DANGLE_INTEGRATION.md`.
+
+
+## 2026-09-25 · Ear Rig candidate owner decision
+
+- Registered `tools/KFB-ToolBox/ear-rig/` as a candidate lane beside `eye-rig-batch/`.
+- **Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js` secondary-motion runtime.**
+- **FrankenStein Studio is the authoring consumer** for ear geometry, head placement, rest/acted pose and `kfb.ear-rig.v0` profile.
+- World/Travel/Race may provide wind/contact/impulse facts but may not copy/fork the spring physics.
+- First consumer gate `EAR-DANGLE-01`: FrizzleBob + canonical KayKit Idle/Walk/Run/Jump Start-Air-Land + one accepted Motion Library dance; Georg human review.
+- Candidate only; no game runtime changed, no Human PASS claimed.
