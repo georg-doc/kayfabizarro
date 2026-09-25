@@ -409,3 +409,27 @@ Validated:
 11. ToolBox brief uses the S39 no-baseplate Resident Band donor.
 
 No runtime/browser/public PASS is inferred.
+
+## World + ToolBox r2 intake validation · 2026-09-26
+
+Scope: source/recovery consistency only. No Web runtime, Stage or Georg acceptance was executed by this intake check.
+
+**Result: 12/12 PASS**
+
+1. ToolBox r2 SOURCE schema — PASS
+2. ToolBox locomotion profile export parses — PASS
+3. ToolBox pose owner patch exists — PASS
+4. ToolBox reported selftest preserved — PASS
+5. ToolBox no game movement ownership — PASS
+6. World r2 SOURCE schema — PASS
+7. World reported Hürth 55/55 — PASS
+8. World reported Cologne 55/55 — PASS
+9. World presenter source exists — PASS
+10. World keeps ToolBox profile ownership — PASS
+11. World Blender route remains uncertain — PASS
+12. Architecture intake exists — PASS
+
+Evidence boundary:
+- ToolBox 19/19 is reported by the Claude Session Cut; not re-run here.
+- World Hürth/Cologne 55/55 are reported by the Claude Session Cut; not re-run here.
+- r2 Human/Stage review remains pending.
