@@ -115,3 +115,18 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-25 · FrizzleBob Ear Rig candidate (`ear-rig/`)
+
+### SOURCE
+Built in the Cowork Blender session from `FB_TEMPLATE_LOOK_v1.blend` (Georg's Dropbox `FB_GRAFT/`), several review rounds with Georg on 2026-09-25. New lane `ear-rig/` next to `eye-rig-batch/`: unit ear GLB with its own mini rig, FB base without ears, combined model, Blender build script, Ear Rig Studio (template + built bundle) and the runtime module `ear-dangle.v1.js`.
+
+### CONTRACT
+`kfb.ear-rig.v0` (placement, size, acted pose, dangle per ear; R in mirrored space). Documented in `ear-rig/README.md`.
+
+### TESTED
+Node (three 0.160): pose, hop/nod/wind bounded and finite, clip-follow exact, bake writes tracks. Headless Chromium: Ear Rig Studio loads without page errors, presets/hop/drive run.
+
+### BOUNDARY
+Candidate only. No consumer loads it, no mixer or head/eye owner changed. Georg has not accepted the ear-to-head junction (open decision: merged fillet vs. module). Handover and integration guide: `ear-rig/README.md`, `ear-rig/EAR_DANGLE_INTEGRATION.md`.
