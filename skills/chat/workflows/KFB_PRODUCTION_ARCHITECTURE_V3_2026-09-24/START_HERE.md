@@ -36,6 +36,26 @@ For the full self-service production route, read:
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
 
+## CURRENT LEAD OVERRIDE · 2026-09-25 · PLAYABLE INTEGRATION
+
+Read first:
+- `MVP_FOCUS_PLAN_2026-09-24.md` → **2026-09-25 CURRENT OVERRIDE**;
+- `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` → **CURRENT RECOVERY CHECKPOINT · 2026-09-25**.
+
+Current operating decision:
+- WorldBuilder and ToolBox/Animation authoring sessions are already running from earlier briefs;
+- **wait for their complete exports / Session Cuts before issuing replacement briefs**;
+- intake those exports against current owners and preserve useful work;
+- next corrections must integrate capabilities into real consumers rather than create another standalone editor/lab.
+
+Current product priorities:
+1. WorldBuilder editing inside the real playable World/Travel scene;
+2. KayKit canonical base locomotion with shared state/speed/cadence profiles;
+3. ToolBox with two main workspaces: Studio + Animation Lab, sharing Pose/IK;
+4. Ground ↔ animated CardCarrier Flight with authored Surf Pose;
+5. real OSM Hürth → Köln/SAE continuity;
+6. Race modular runtime proof before World placement.
+
 ## Current WorldBuilder gate · 2026-09-25
 
 WB2 terrain sculpt / interaction is **GEORG HUMAN PASS** on PR #190 at `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`.
