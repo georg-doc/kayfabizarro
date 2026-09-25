@@ -285,28 +285,24 @@
     },
     {
       "id": "racer",
-      "bucket": "RUNNING",
-      "title": "Racer · RKIT-08/09 registriert · LOOP_REAL zuerst",
-      "what": "RKIT-08/09 liefern fünf neue Stuntmodule als Geometrie+Metadaten: LOOP_REAL, LOOP_SLIM, LOOP_MAG_HERO, LOOP_MAG_CASCADE und SKYRAMP-01. Sie sind am WorldBuilder-Track-Socket nur als Referenzen registriert. Noch nichts wurde in Rapier gefahren.",
-      "provider": "Blender MCP / RKIT → Race Web",
-      "yourAction": "",
-      "waitingFor": "Race fährt zuerst LOOP_REAL im bestehenden Rapier-Host und meldet reale Entry-Speed/Min-Load sowie capture→commit→release→recover. Bis dahin: keine MAG/Cascade/SKYRAMP-Fortsetzung und keine WorldBuilder-Platzierung.",
+      "bucket": "CAN_START",
+      "title": "Racer · Track Core · flexible Versatzstücke",
+      "what": "Georgs RKIT-11-Entscheidung gilt: ein Base-Track-Core, alles Weitere als Pieces/Data. Perplexity liefert nützliche Mechanismen (echte Clothoid/Euler-Krümmungsübergänge, Connector-State, gestaffelte Transition-Zonen), aber kein Produktionsskript. Aktuell zuerst Census+Core-Contract; Playable Track R0 und Köln-OSM warten dahinter.",
+      "provider": "ChatGPT Web → Claude Coworker + Blender MCP → ChatGPT Web → Claude Design",
+      "yourAction": "TRACK-CORE-0 als frischen Web-Chat starten. Erst danach Sprach-Gate und die vorbereiteten 1A/1B/2-Briefings.",
+      "waitingFor": "",
       "questions": [],
-      "repo": "georg-doc/KFB-Stunt-Car-Race",
-      "pr": 41,
-      "external": true,
-      "lastKnown": {
-        "head": "22c3b2e2ebb66f1da999116e1b9547ac93d6a91d",
-        "recordedAt": "2026-09-25T03:40:00+02:00",
-        "note": "PR #41 current head. Geometry/track-socket registration was committed at 0bbdc539; current head adds Recovery + Option-C changelog. All five stunt modules remain NOT_DRIVEN; no world placement before LOOP_REAL."
-      },
-      "branch": "chat/rkit-08-09-stunts-2026-09-25",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 219,
+      "branch": "georg-doc-patch-2",
+      "expectedHead": "c3ccd0d85a68593f5a545fd41ae0ef2112391965",
       "brief": {
-        "label": "Stunt Handover",
-        "path": "KFB Cologne Race Option C-3/STUNT_MODULES_RKIT08_09_HANDOVER_2026-09-25.md",
-        "ref": "chat/rkit-08-09-stunts-2026-09-25",
-        "pasteReady": false
-      }
+        "label": "TRACK-CORE-0 · Web Census + Core Contract",
+        "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md",
+        "ref": "georg-doc-patch-2",
+        "pasteReady": true
+      },
+      "review": null
     },
     {
       "id": "world-god",
