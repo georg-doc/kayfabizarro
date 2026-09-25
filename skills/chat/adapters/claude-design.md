@@ -18,18 +18,22 @@ Apply after `skills/chat/PRODUCTION_SOP.md`.
 
 ## Export routing
 
-For a normal full Claude Design handoff/session cut requested by Georg, load:
+For a full Claude Design handoff/session cut requested by Georg, load the current entry:
 
-skills/claude-design-session-export_v1.md
+skills/session_ZIP_v1.md
 
-Use it for:
-- /claude-export;
-- complete Session Cut ZIP;
-- handoff to a fresh chat / GitHub Bridge;
-- preserving the runnable current candidate before a chat ends.
+Current trigger:
+- /session-zip
+- "Session Cut ZIP"
 
-It complements skills/session-export_v1.md. The generic skill remains the slim session-delta export; the Claude-specific skill produces the closed runnable candidate plus Handover, active Changelog, Source/Donor locks, Test Report, Evidence and NEXT_CHAT.
+The explicit trigger is already export authorization: build the Session Cut/ZIP without a second veto prompt. Do not delete or irreversibly clean up without Georg's explicit approval.
 
-Because Georg often uses voice input, do not trust uncertain spoken proper nouns, filenames or asset names when preparing the export. Resolve them from the actual workspace/source/GitHub state or mark VOICE_INPUT_UNCERTAIN. Never substitute a similarly named donor silently.
+The current GitHub entry is intentionally short and points to the full canonical Claude Skills body at `claude/session-zip-SKILL.md` when that project source is available. If the full body is unavailable, follow the GitHub fallback exactly and mark missing canonical export logic honestly; do not reconstruct it from memory.
+
+It complements skills/session-export_v1.md. The generic skill remains the slim session-delta export; /session-zip is the current full runnable handoff/recovery export.
+
+Because Georg often uses voice input, resolve uncertain proper nouns, filenames or asset names from the actual workspace/source/GitHub state or mark VOICE_INPUT_UNCERTAIN. Never substitute a similarly named donor silently.
+
+The older skills/claude-design-session-export_v1.md is superseded history, not the current trigger.
 
 After two failed repair passes on the same gate, also apply the existing failure-recovery template instead of continuing normal repair.
