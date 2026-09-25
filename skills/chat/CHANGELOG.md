@@ -1,3 +1,13 @@
+## 2026-09-26 · Cologne Route 01 advances to Track R0 → OSM execution
+
+- Georg clarified that Blender MCP is already building the missing connector/offset pieces; latest GitHub inspection did not yet expose a new RKIT-10 branch, so that output remains user-reported in progress until pinned.
+- Added a coordinated Track-first execution ladder: Web source/runtime prep → Claude Design playable closed Track R0 → Web rehome/browser/freeplay → real Köln OSM route prep → Claude OSM composition.
+- Added dedicated Web-prep and Claude Design briefs under `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/`.
+- OSM is designed in before Track R0 composition through a required shared RouteRecipe/metre-frame/street↔track seam contract; the real Hürth → Dom → Rhein → Mülheimer Brücke → SAE corridor is still the target.
+- Race PR #12 is recorded as the existing continuous Hürth→Ehrenfeld OSM receiver/corridor donor; it is not mistaken for Route 01 geography.
+- No new Race runtime, Blender, browser or Stage result is claimed by this documentation update.
+- Exactly one next gate: `WEB-PREP-TRACK-R0`.
+
 ## 2026-09-25 · Cologne Route 01 planning lane
 
 - Added `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/` as the current cross-project planning brief for the Hürth → Dom → Rhein → Mülheimer Brücke → SAE drive.
