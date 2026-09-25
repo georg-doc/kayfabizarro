@@ -14,8 +14,8 @@ Base branch: `chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23`
 - sculpt module: `terrain-sculpt.js`
 
 Current verified blobs before this report:
-- Source: `188d5b46e34407c3800edeb2b896d3cf0cf93925`
-- Review: `cee8dfa49c4a67d3f3a91ec75adf5866f3154c83`
+- Source: `a250f1a36137121942f0f99d6a259146d718b162`
+- Review: `393e277adaef0948597ae6781b17d6ddabac1972`
 - terrain-sculpt: `182f7c42b709a00547a16cfe0040d5d636bdb680`
 - shared ToolBox edit layer: `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`
 
