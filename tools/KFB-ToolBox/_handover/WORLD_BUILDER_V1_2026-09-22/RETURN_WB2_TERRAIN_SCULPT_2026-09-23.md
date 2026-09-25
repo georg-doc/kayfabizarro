@@ -273,3 +273,34 @@ Primary goals:
 - preserve all accepted WB1/WB2 save/reload and owner seams.
 
 Do not add Smooth / Flatten / material painting in this design pass. Those remain separate functional slices.
+
+## ADDITIVE UPDATE · WORLD r2 FAILURE RECOVERY · 2026-09-26
+
+World r2 was additively re-homed into this existing PR #190 without changing the accepted WB2 terrain-sculpt or shared edit-layer owners.
+
+Frozen candidate code:
+`204afd6dbb1285f8cd77807af0db5fdd6e75308d`
+
+Recovery docs head:
+`fa29cfce9062a6fd6b5617ccb2fdaa48d0b57aaa`
+
+Evidence:
+- static owner/closure suite: **20/20 PASS**;
+- final browser run `36198999279`: FAIL;
+- Hürth boots and reaches selftest;
+- 700 buildings;
+- WB2 terrain/document assertions PASS;
+- 13 semantic locomotion states bound;
+- pageErrors = 0;
+- failed source requests = 0;
+- fail is the old `source-backed clips only (variants labelled)` assertion after the ToolBox profile ownership change.
+
+Repair budget is exhausted.
+
+Full recovery package:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/`
+
+Exactly one next gate:
+**WORLD-R2-CONTRACT-RESET-01 · test contract only first.**
+
+No Stage/Public/Human PASS.
