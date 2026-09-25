@@ -20,7 +20,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const TOOLBOX_PROFILE_PIN = '5dcf34bcdf9d87445e927c98f60d41adae72f00e';
-const TOOLBOX_PROFILE_URL = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/stage-first/profiles/locomotion/kfb-locomotion-profiles.Rig_Medium.frizzlebob-earrig-v5.consumer.json';
+const TOOLBOX_PROFILE_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/stage-first/profiles/locomotion/kfb-locomotion-profiles.Rig_Medium.frizzlebob-earrig-v5.consumer.json';
 const TOOLBOX_PROFILE = await fetch(TOOLBOX_PROFILE_URL, { cache:'no-store' }).then((r) => { if (!r.ok) throw new Error('ToolBox locomotion profile HTTP ' + r.status); return r.json(); });
 if (TOOLBOX_PROFILE.schema !== 'kfb.locomotion-profile-set/0.1#consumer') throw new Error('ToolBox locomotion profile schema mismatch: ' + TOOLBOX_PROFILE.schema);
 
