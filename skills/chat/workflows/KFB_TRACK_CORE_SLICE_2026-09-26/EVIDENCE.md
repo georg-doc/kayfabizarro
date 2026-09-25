@@ -1,5 +1,86 @@
 # Track Core · evidence · 2026-09-26
 
+## Research / source delta · 2026-09-26
+
+### Perplexity intake reviewed
+
+Source:
+
+`tools/KFB-ToolBox/_inbox/KFB Race Track Baukasten TBD perplexity 01.md`
+
+Blob at current `kayfabizarro/main` read in this review:
+
+`866ddd9f46fff6c2b9c0fc194052bb3f80256ab4`
+
+Useful mechanisms extracted:
+
+- graph/RouteRecipe semantics;
+- connector boundary state;
+- Clothoid/Euler curvature transitions;
+- width/height/barrier parameter transitions;
+- separate geometry/style/prop/FX layers;
+- multi-metre staggered transition zones.
+
+The example Python is **not** accepted as production donor:
+
+- its “Clothoid” curve is a circular arc;
+- endpoint propagation is explicitly simplified/incomplete;
+- separate road/line/barrier meshes recreate the rejected multi-track seam problem;
+- generic materials conflict with existing KFB owners;
+- destructive `clear_scene()` is not production-safe.
+
+Detailed classification:
+
+`PERPLEXITY_TRANSITION_RESEARCH_ASSESSMENT.md`.
+
+### RKIT-11 is now GitHub-visible
+
+Race PR #42:
+
+`RKIT-11 Rhein-Run candidate: Mülheimer Brücke + Pylon-Loop + Rhein-Hüpfer`
+
+Branch:
+
+`chat/rkit-11-rhein-run-2026-09-26`
+
+Exact observed head:
+
+`bcc422b00fc4629ac113f086cddcea3b2b107f2a`
+
+Status in its Return:
+
+`CANDIDATE · FROZEN AS ACCEPTANCE TEST FOR THE TRACK CORE · not Race-driven · no Stage · no Live`.
+
+Important source facts:
+
+- `rkit-11/transition_lib.py` uses smoothstep parameter timings for width/barrier/lines/stripes/slab;
+- implementation is rejected because it monkey-patches `sweep3d_lib.section_profile`, cuts host marking meshes and uses special transition frame fields;
+- those timings are retained as mechanism evidence for Track-Core parameter curves;
+- bridge/loop/hop become acceptance fixtures, not canonical track systems.
+
+RKIT-11 tests reported by its own Return:
+
+- Blender builds OK;
+- loop clearance brute-force min = 0.78 m;
+- headless Chromium viewer smoke = 0 page errors (pre-transition viewer);
+- Georg visual Blender review occurred;
+- Race drive test = 0;
+- Rapier contact test = 0;
+- Stage = 0.
+
+### Prepared execution briefs
+
+- `WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md`
+- `BLENDER_MCP_TRACK_CORE_1A_PROOF_BRIEF.md`
+- `WEBCHAT_TRACK_CORE_1B_RUNTIME_PARITY_BRIEF.md`
+- `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md`
+
+Current order:
+
+`Web census/contract → Georg language gate → Blender MCP proof → Web authoritative core/runtime parity → Claude Design visual grammar → Playable Track R0 → Köln OSM Route 01`.
+
+---
+
 Status: **PLANNING EVIDENCE · no new runtime tests in this slice**
 
 ## Read at planning time
