@@ -937,3 +937,19 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+
+### Current Hub recovery · 2026-09-25 late evening
+
+KFB Hub keeps **HUB-CTRL PR #202** as its only owner.
+
+Current operational split:
+- live data registry refreshed at `bot/production-desk-update@7eeb606cb318fe1ff802fbf65ba6c0ef542bc91d`;
+- current public v3 shell remains **HUMAN TUNE / not accepted**;
+- accepted visual/UX donor is Hub UI v2 at main commit `dfaafac070747f9543b5eb5a635e2aaa74e57b83`;
+- Claude Design brief: `tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md`;
+- Web sync brief: `tools/production_desk/HUB_STATUS_SYNC_V1_2026-09-25.md`.
+
+Current live registry contains ToolBox + World **PROCEED PASS**, EAR-DANGLE-01 and the two Hub recovery jobs.
+
+Do not start another Hub architecture. First make registry freshness durable, then review the donor-based UX candidate before replacing the public shell.
