@@ -572,3 +572,43 @@ World CI history:
 - if this run fails, STOP the gate and create failure-recovery export; do not attempt another repair.
 
 No Stage/Public/Human PASS is claimed yet for World r2.
+
+
+### World r2 failure-recovery stop · 2026-09-26
+
+Current World owner:
+- PR #190
+- branch `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23`
+- frozen candidate code `204afd6dbb1285f8cd77807af0db5fdd6e75308d`
+- current recovery/docs head is newer.
+
+Final browser run:
+`36198999279` · FAIL.
+
+Proven good before abort:
+- static 20/20 PASS;
+- Hürth boot;
+- 700 buildings;
+- WorldBuilder terrain/document assertions;
+- 13 semantic locomotion states;
+- ToolBox profile loaded;
+- 0 page errors;
+- 0 failed requests.
+
+Proven failure:
+old selftest assertion `source-backed clips only (variants labelled)` rejects the new truthful ToolBox/World variant semantics.
+
+Repair budget is exhausted:
+- initial run;
+- repair pass 1;
+- repair pass 2/final.
+
+**STOP. No repair pass 3.**
+
+Full recovery:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/`.
+
+Exactly one next World gate:
+**WORLD-R2-CONTRACT-RESET-01 · selftest contract only, no runtime change in first pass.**
+
+ToolBox remains independently green and may proceed to its Stage review.
