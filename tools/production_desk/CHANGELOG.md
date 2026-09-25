@@ -1,5 +1,16 @@
 
 
+## 2026-09-25 · Final live registry sync after PR #215 CI
+
+- advanced live bot registry to `cab4fcef34abfe7e438f31942db009c5ec960ca8`;
+- manifest source pin = HUB-CTRL `74c6fa5cd623dc378dec880905c6616f6a171754`;
+- live counts = **3 LOOK_AT / 6 RUNNING / 6 CAN_START / 4 WAITING**;
+- PR #215 is now the explicit LOOK_AT merge gate for durable 30-minute registry freshness;
+- ToolBox/World PROCEED PASS, Ear Rig, Hub UX Recovery and current v3 catalog remain present;
+- no Hub HTML or Cloudflare publication changed.
+
+
+
 ## 2026-09-25 · HUB-STATUS-SYNC-01 CI pass
 
 - opened Draft PR #215 with one workflow file only; no Hub shell or Cloudflare changes;
