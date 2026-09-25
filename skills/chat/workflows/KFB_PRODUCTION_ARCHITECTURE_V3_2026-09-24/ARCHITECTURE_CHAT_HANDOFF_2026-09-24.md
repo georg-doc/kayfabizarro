@@ -32,6 +32,122 @@ Read current GitHub versions of:
 
 GitHub beats chat memory.
 
+## CURRENT RECOVERY CHECKPOINT · 2026-09-25 · PLAYABLE INTEGRATION
+
+This checkpoint supersedes older sequencing text below where it conflicts.
+
+### User intent in plain language
+
+Georg's current main goals are:
+
+1. **WorldBuilder inside the real world** — edit terrain/objects in the same world state that is then played.
+2. **Real OSM continuity** — Hürth/Alstädten/Köln plus the missing real corridor pieces toward SAE; no invented geography.
+3. **Modular Race Track** — prove modules in the real Race/Rapier owner first, then place/handoff from the world.
+4. **One usable ToolBox** — two main workspaces: **Studio** and **Animation Lab**.
+5. **Shared character/motion production** — KayKit base locomotion first; Mixamo as variants/actions; shared Pose/IK/Vehicle-Fit profiles consumed by World/Travel/Race/Residents.
+
+### Two authoring sessions are already running
+
+- a WorldBuilder/Claude Design session based on the previous brief;
+- a ToolBox/Animation authoring session based on the previous brief.
+
+**Do not send replacement mega-briefs into those sessions while they are still running.**
+
+Recovery action:
+- request/receive the complete export or Session Cut;
+- compare it against current GitHub owner state + `MVP_FOCUS_PLAN_2026-09-24.md`;
+- preserve useful work;
+- identify duplicate-owner/rebuild drift;
+- issue one bounded correction/integration brief from the export.
+
+### WorldBuilder correction to remember
+
+The accepted WB2 terrain sculpt is already HUMAN PASS on PR #190 at
+`ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`.
+
+It is an authoring capability, not a second standalone product.
+
+After the running export returns, the next product question is:
+
+**Can Georg navigate the real World/Travel scene, switch into the accepted terrain/object editing, Save/Reload, and continue playing the same modified world?**
+
+A rebuilt local editor that looks similar does not satisfy this.
+
+### Locomotion correction to remember
+
+Do not let a WorldBuilder session reconstruct Animation Lab v1 logic as its own owner.
+
+Canonical base locomotion direction:
+- KayKit Character Animations provide the default State/Action vocabulary;
+- shared semantic profile binds state → clip → cadence/stride → playback rate → expected world speed → root/contact policy;
+- movement/physics owns world translation;
+- animation follows movement state/speed;
+- Mixamo Motion Library is a variant/action layer, not the default walk/run foundation.
+
+Core states:
+`Idle · Walk · Run · source-backed Fast Run/Sprint · Backward · Strafe · Jump Start · Air/Fall · Land · Crouch/Sneak/Crawl`.
+
+### ToolBox correction to remember
+
+Target product is one ToolBox with two main workspaces:
+
+**Studio**
+Actor/Profile · KayKit body/graft · Legacy builder · Face/Eye/Mouth/Viseme · Materials · Bubbles · Pose/IK · prop/contact fit · Vehicle/Surface Fit.
+
+**Animation Lab**
+KayKit locomotion states · Motion Library audition · direct FBX intake · semantic roles · root/stride/speed calibration · jump-state preview · scrub/key-pose/contact correction · Blender exception queue.
+
+The same Pose/IK owner must be usable from both tabs. No standalone Pose Lab / IK Lab as a new runtime.
+
+### IK / contact correction
+
+Resident Atlas IK is prototype evidence only.
+
+Keep the existing prepared parity gate:
+current KFB solver vs upstream Three.js CCDIKSolver vs constrained CCD.
+
+Goal:
+direct in-scene hand/foot targets, constrained stable posing, fewer twist/flip failures, compact context controls.
+
+Use this for cases such as Orc drummer stick/drum contact before escalating to Blender.
+
+### Ground → Flight continuation
+
+Existing Travel owners already prove the mode bridge and animated CardCarrier direction.
+
+Near-term target:
+`GROUND → mount → animated KFB CardCarrier FLIGHT → intentional landing → GROUND`.
+
+Author a proper KayKit `CARD_SURF` Pose/Vehicle-Fit profile in ToolBox Studio.
+
+Old rigid Studio CardRider remains a measurement/pose donor only; Travel's animated CardCarrier remains the Flight vehicle.
+
+### Vehicle/cockpit continuation
+
+Reuse existing Seat/Cockpit/Vehicle-Fit donors.
+
+Before the Quaternius transformer-like vehicle slice:
+- resolve and pin the exact four models Georg means;
+- do not substitute another vehicle family.
+
+### Recovery reading order after a chat break
+
+1. `skills/chat/START_HERE.md`
+2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
+3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
+4. architecture `START_HERE.md`
+5. this handoff
+6. `MVP_FOCUS_PLAN_2026-09-24.md` — read its **2026-09-25 CURRENT OVERRIDE first**
+7. current architecture `RETURN.md`
+8. fetch current PR #204 head
+9. if WorldBuilder/ToolBox exports have arrived, inspect those exports before creating any new execution brief
+
+### Immediate next gate for this architecture chat
+
+**WAIT FOR / INTAKE THE TWO RUNNING EXPORTS.**
+
+Do not restart WorldBuilder or ToolBox from prose before those candidate states are recovered.
+
 ## Current architecture state
 
 Primary product architecture:
