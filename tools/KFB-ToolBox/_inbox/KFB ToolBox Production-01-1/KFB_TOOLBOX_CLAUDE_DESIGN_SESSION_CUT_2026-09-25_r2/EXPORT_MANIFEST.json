@@ -1,0 +1,208 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "entryPoints": [
+  "KFB ToolBox Production-01.dc.html"
+ ],
+ "fileCount": 22,
+ "totalBytes": 640186,
+ "files": [
+  {
+   "exportPath": "data/kfb-locomotion-profiles.Rig_Medium.frizzlebob-earrig-v5.consumer.json",
+   "role": "data",
+   "size": 5641,
+   "sha256": "29e6de1d694ce44f83960eb2d354bf5a1c6f13706b7a39819aa4d7bd026d4a0a",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "evidence/01-lab-state-locomotion.png",
+   "role": "evidence",
+   "size": 228809,
+   "sha256": "9863d93f834e7fbd887efe9ac594691988970f3511c97b3c14851135a8903dbb",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "external/ASSET_REFS.md",
+   "role": "asset refs",
+   "size": 1290,
+   "sha256": "6faafe3e04243fb944773f1c0b21b8c434c783ea65f80ce597d32646b50bd0dd",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": false,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "external/NOT_EXPORTED.md",
+   "role": "asset refs",
+   "size": 268,
+   "sha256": "80290bd31d06545e33f4229f03c81ae259934c39a8610c7c50b2c9ffc8e02e0d",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": false,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "kfb-lib/locomotion-profiles.v1.js",
+   "role": "code",
+   "size": 11712,
+   "sha256": "a36716a3e868e700ae2259e47f39fe296556ba35b91d378da4941a8ddf65ceae",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": true
+  },
+  {
+   "exportPath": "kfb-lib/pet-library.v6.js",
+   "role": "code",
+   "size": 34954,
+   "sha256": "778534979c35b4a9ba267be5bb9ea63217c27af135897ee9054a9f80627617b7",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": false,
+   "requiredToStart": true
+  },
+  {
+   "exportPath": "kfb-lib/pose-rig.v1.js",
+   "role": "code",
+   "size": 34451,
+   "sha256": "643831c63403a5dbe7b6e47edc629963c2172a1bf7d8d2c00fd982bf3c6a8350",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": true
+  },
+  {
+   "exportPath": "patches/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js",
+   "role": "owner patch",
+   "size": 34451,
+   "sha256": "643831c63403a5dbe7b6e47edc629963c2172a1bf7d8d2c00fd982bf3c6a8350",
+   "status": "CANDIDATE",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "CHANGELOG.md",
+   "role": "doc",
+   "size": 1824,
+   "sha256": "2210cec909272a2dd150022cb77ba3bd9328b44908dc7cf02b7f4c47fe3cc516",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "CURRENT_STATE.md",
+   "role": "doc",
+   "size": 644,
+   "sha256": "fbc9d574e6cad660b0d24a5d40c7edb492e65354ba412583cceb079305d334dc",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "HANDOVER.md",
+   "role": "doc",
+   "size": 7840,
+   "sha256": "714bd4fc84a107489a64a2a39a11d0bd37bc92692a72111a681808f206b96e37",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "HOUSEKEEPING.md",
+   "role": "doc",
+   "size": 1013,
+   "sha256": "0541db13e204956dd65d08628a7e4d2da2c45ddcd8ddcf25207c97172eb473d9",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "KFB ToolBox Production-01.dc.html",
+   "role": "entry",
+   "size": 197583,
+   "sha256": "499269110ce468a69895c934886cb39c29f9c2122645b9d28676498aad7be7c5",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": true
+  },
+  {
+   "exportPath": "NEXT_CHAT.md",
+   "role": "doc",
+   "size": 566,
+   "sha256": "2740c6c515b795a252624bedc9cd473850a776dccea0c2af43a75a9a0edfd1ee",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "RETURN.md",
+   "role": "doc",
+   "size": 1224,
+   "sha256": "2c6e06fea55ea6e7d04f07d4d846c8b33d05f289c35dc89a6e05b36c9833d4b0",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "SOURCE.json",
+   "role": "doc",
+   "size": 3286,
+   "sha256": "6758bed36371c444528b4e17b296dbba0fb2582e8de4131aed56f5d8d5d96d45",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "START_HERE.md",
+   "role": "doc",
+   "size": 1230,
+   "sha256": "33abaa139694a6db656cd0bbee1e78ca22720d8a94e426eee64146e492378d1a",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "TEST_REPORT.md",
+   "role": "doc",
+   "size": 2928,
+   "sha256": "008ecef35da142cf6f21546dad864d5b948df172b751d2bd37a79670fde192d4",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": true,
+   "requiredToStart": false
+  },
+  {
+   "exportPath": "support.js",
+   "role": "code",
+   "size": 69150,
+   "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": false,
+   "requiredToStart": true
+  },
+  {
+   "exportPath": "zipcheck.py",
+   "role": "check",
+   "size": 1322,
+   "sha256": "88b6b35941222e0d9264cf0bc2e7218462e9594220da04bcb2ee6922d2923406",
+   "status": "LOCAL_INCLUDED",
+   "changedThisSession": false,
+   "requiredToStart": false
+  }
+ ],
+ "externalDependencies": "external/ASSET_REFS.md",
+ "notExported": "external/NOT_EXPORTED.md",
+ "missing": [
+  "CardCarrier model pin (SOURCE_REQUIRED)"
+ ],
+ "evidence": [
+  "evidence/01-lab-state-locomotion.png"
+ ],
+ "sourceRevision": {
+  "runtime": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+  "architecture": "9d1f25c3a30144e9409e1140db5d7081f89fdc65",
+  "earRig": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+  "main": "b64d7edca3ec0d184d97f1b3a5db0103332e3e54"
+ },
+ "activeChangelog": "CHANGELOG.md (continues r1 append-only)",
+ "checksums": "CHECKSUMS.sha256 covers all files except itself; EXPORT_MANIFEST.json included",
+ "zipcheck": "ZIPCHECK_NOT_RUN (no Python) · equivalent JS check PASS",
+ "cleanRun": "CLEAN_RUN_NOT_EXECUTED (ZIP cannot be unpacked/served here)"
+}
