@@ -399,3 +399,14 @@
 - counts: 31/31 coherent static, 34/34 AN-PROFILE static, 20/20 coherent browser, 25/25 Animation Studio browser, 13/13 review browser;
 - Ear/S39/Travel owners unchanged;
 - next ToolBox gate is a clean Stage review surface, not another internal lab/review rebuild.
+
+
+## 2026-09-26 · Receiving-owner rehome execution
+
+- ToolBox r2 reusable owner deltas promoted into PR #185 rather than copying the standalone Claude ToolBox runtime;
+- ToolBox r2 owner CI SUCCESS at `5dcf34bc...`: 31/31 + 34/34 static, 20/20 + 25/25 browser, 13/13 review-browser;
+- World r2 additively re-homed into PR #190 while preserving byte-identical WB2 terrain-sculpt and shared edit-layer owners;
+- World r2 now consumes immutable ToolBox profile pin `5dcf34bc...` and source-backed `Running_B` sprint;
+- World static owner/closure gate = 20/20 PASS;
+- World browser gate is on its final allowed repair pass at `204afd6d...`; another failure triggers failure-recovery, not repair pass 3;
+- no Stage/public/human result inferred.
