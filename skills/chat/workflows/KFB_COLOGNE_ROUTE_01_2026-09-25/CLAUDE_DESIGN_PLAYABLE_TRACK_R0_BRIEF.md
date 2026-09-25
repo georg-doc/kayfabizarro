@@ -1,5 +1,24 @@
 # CLAUDE DESIGN · PLAYABLE-TRACK-R0 · 2026-09-26
 
+## CURRENT PRECONDITION · DOWNSTREAM OF TRACK CORE
+
+Do not start this Claude Design slice until:
+
+1. TRACK-CORE-0 contracts are complete;
+2. Georg has decided the authoritative core language;
+3. TRACK-CORE-1A Blender MCP geometry proof is complete;
+4. TRACK-CORE-1B authoritative core/runtime parity is green;
+5. TRACK-CORE-2 transition visual grammar exists;
+6. WEB-PREP-TRACK-R0 has produced the exact source/input pack.
+
+This slice must compose **Track-Core pieces/data**, not independent Blender track meshes.
+
+Current project next gate is still:
+
+**TRACK-CORE-0 · ChatGPT Web census + core contract.**
+
+---
+
 **Executor:** Claude Design  
 **Input owner:** Web-prepared `PLAYABLE_TRACK_R0_CLAUDE_INPUT` package  
 **Runtime owner:** `georg-doc/KFB-Stunt-Car-Race`  
