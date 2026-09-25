@@ -16,7 +16,7 @@ async function world(zone){
   page.on('pageerror',e=>pageErrors.push(String(e)));
   page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));
   await page.goto(base+route+'?world='+zone+'&selftest=wi1',{waitUntil:'domcontentloaded',timeout:120000});
-  await page.waitForFunction(()=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=55,{timeout:180000});
+  await page.waitForFunction(()=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=55,null,{timeout:180000});
   const data=await page.evaluate(()=>({
     lines:document.querySelector('#wiTest')?.textContent?.split('\n').filter(Boolean)||[],
     fail:document.body.dataset.selftest==='FAIL',
@@ -38,7 +38,7 @@ await world('cologne');
   const page=await browser.newPage({viewport:{width:1100,height:760}});
   const errs=[]; page.on('pageerror',e=>errs.push(String(e)));
   await page.goto(base+wb2+'?selftest=1',{waitUntil:'domcontentloaded',timeout:120000});
-  await page.waitForFunction(()=>document.body.dataset.selftest==='PASS'||document.body.dataset.selftest==='FAIL',{timeout:180000});
+  await page.waitForFunction(()=>document.body.dataset.selftest==='PASS'||document.body.dataset.selftest==='FAIL',null,{timeout:180000});
   const d=await page.evaluate(()=>({state:document.body.dataset.selftest,count:document.body.dataset.selftestCount||'',text:document.querySelector('#selftest')?.textContent||''}));
   ok('accepted WB2 baseline still passes',d.state==='PASS',d.text.slice(-300));
   ok('accepted WB2 baseline remains 34/34',d.count==='34/34',d.count);
