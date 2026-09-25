@@ -32,9 +32,24 @@
   ],
   "entries": [
     {
-      "id": "claude-design-session-export-v1",
+      "id": "session-zip-v1",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/session_ZIP_v1.md",
+      "loadWhen": [
+        "/session-zip",
+        "Session Cut ZIP",
+        "Claude Design full export",
+        "complete handoff",
+        "chat recovery export"
+      ],
+      "note": "Current short GitHub entry for the full Claude Design Session Cut workflow. Explicit trigger authorizes ZIP creation without a second veto. Full canonical body including zipcheck.py is currently reported to live in Claude project Skills at claude/session-zip-SKILL.md; mirror that full body into GitHub when available for GitHub-only recovery."
+    },
+    {
+      "id": "claude-design-session-export-v1",
+      "kind": "skill",
+      "status": "SUPERSEDED",
       "version": "1.0",
       "path": "skills/claude-design-session-export_v1.md",
       "loadWhen": [
@@ -45,7 +60,8 @@
         "chat recovery export",
         "/claude-export"
       ],
-      "note": "Full runnable Claude Design Session Cut + ZIP: current codebase, Handover, active Changelog, Source/Donor locks, tests/evidence, NEXT_CHAT and voice-input ambiguity handling. Complements the slim session-export_v1; failure recovery remains a separate escalation after two failed repair passes."
+      "note": "Superseded by Georg's current /session-zip entry at skills/session_ZIP_v1.md. Retained as prior full-export design history; do not use as the current trigger.",
+      "successor": "session-zip-v1"
     },
     {
       "id": "fresh-chat-slice-protocol",
