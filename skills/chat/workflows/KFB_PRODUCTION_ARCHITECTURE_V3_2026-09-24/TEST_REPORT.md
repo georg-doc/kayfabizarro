@@ -323,3 +323,23 @@ Scope: source/cast/module-direction correction only; no runtime or Stage impleme
 10. Current architecture catalogue remains **88 jobs / 42 READY / 46 HOLD**.
 
 Note: the three other literal raw asset paths supplied at `e0037d79…` did not resolve through the GitHub file fetch. Current repository manifests/cast independently confirm canonical Skeleton Minion, Avian Swordsman and Protagonist_A assets. RES-DISCO-A must pin the exact current load paths/revisions rather than silently changing the supplied URLs.
+
+## Playable Integration masterplan / recovery validation · 2026-09-25
+
+Scope: documentation/recovery consistency only at architecture source head `595f73943160ac651ccf591fa2abdf7e8f6c47b3`; **no runtime/browser/public PASS is claimed.**
+
+**Result: 10/10 PASS**
+
+1. startup routes to 2026-09-25 override — PASS
+2. startup says wait for running exports — PASS
+3. masterplan has playable integration override — PASS
+4. masterplan preserves WorldBuilder owner split — PASS
+5. masterplan sets KayKit as base locomotion — PASS
+6. masterplan sets Studio + Animation Lab — PASS
+7. masterplan preserves movement owns translation — PASS
+8. recovery checkpoint exists — PASS
+9. recovery next gate is export intake — PASS
+10. recovery preserves Ground→Flight owner direction — PASS
+
+Current process gate after this validation:
+**wait for and intake the already-running WorldBuilder and ToolBox/Animation exports before issuing corrective briefs.**
