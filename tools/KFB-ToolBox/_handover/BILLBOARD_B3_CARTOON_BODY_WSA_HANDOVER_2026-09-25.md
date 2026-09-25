@@ -130,3 +130,145 @@ Do not merge or promote Live automatically.
 ## Scheduling note for WSA
 
 This handover is **prepared only**. Georg asked to continue first with **B2b Living Mockup / Collage research/options**. Keep B3 visible in WSA/Production Desk, but do not start modeling until the media-surface research choice is recorded or Georg explicitly starts B3 in parallel.
+
+
+## Five adjacent KFB billboard ideas · commented drafts
+
+Status for all five: **IDEA BACKLOG · NOT STARTED · NOT REQUIRED FOR B2b-P1 OR B3**.
+
+These are deliberately adjacent ideas that reuse the accepted billboard/media owner rather than creating new apps.
+
+### 1 · PALIMPSEST · Poster archaeology
+
+**Idea**
+A billboard remembers what used to be on it. New media does not always replace the old surface perfectly: torn corners, pasted-over fragments, faded words and one or two older images remain as physical residue.
+
+**Why it fits KFB**
+The world gains history without exposition. It also turns the mixed-hypernormalisation collage language into something diegetic rather than just “screen graphics”.
+
+**Commented draft**
+- current ad: clean hero layer;
+- previous 1–2 compositions: cached as low-res stills;
+- deterministic tear masks reveal small areas of the older layers;
+- location/seed decides where residue persists;
+- optional rain/night grade may darken the paper residue, but World remains the mood owner.
+
+**Small proof**
+One billboard cycles through three campaigns; after each change, the next frame visibly retains 10–20% of earlier paper/image fragments.
+
+**Boundary**
+No asset history database. Keep only a tiny bounded visual ring buffer or authored prior-frame refs.
+
+---
+
+### 2 · BILLBOARD CHORUS · Street-scale call-and-response
+
+**Idea**
+Several billboards in one street/scene can behave like a chorus instead of independent random screens.
+
+**Why it fits KFB**
+ChatterBox already has short beats/triplets. A city block answering itself is more distinctive than ten unrelated adverts and can create comedy or unease without adding NPC dialogue trees.
+
+**Commented draft**
+Board A: `SHOW IT`  
+Board B, 400 ms later: `SPIN IT`  
+Board C, after the player passes: `SELL IT`
+
+Or one board shows an image while another supplies the contradictory headline.
+
+**Small proof**
+Three boards consume one read-only cue:
+`{ cueId, beatIndex, phase, seed }`.
+They render different presentation roles but never own dialogue/game state.
+
+**Boundary**
+Do not create a second ChatterBox or timeline owner. The billboard only consumes a semantic cue bus.
+
+---
+
+### 3 · WORLD MEMORY · Recent-event replay surface
+
+**Idea**
+A billboard can briefly show a still from something that actually happened nearby: a Resident encounter, stunt, race moment, card discovery or hero-camera capture.
+
+**Why it fits KFB**
+The city appears to watch, remember and reinterpret the player's actions. It also reuses existing hero-camera / Almanac / capture ideas instead of inventing arbitrary stock imagery.
+
+**Commented draft**
+- consume an existing capture ref + metadata;
+- crop it with the B2b collage recipes;
+- combine with a short ChatterBox line;
+- expire after a bounded period;
+- fall back to ordinary collage if no recent capture exists.
+
+Example:
+recent stunt still + `LOCAL MAN DISCOVERS GRAVITY AGAIN`.
+
+**Small proof**
+Feed one already-existing capture into `HEADLINE_SHOCK` and compare it to the ordinary KFB+CC0 pool.
+
+**Boundary**
+Billboard never creates authoritative game captures or history; it only presents refs supplied by the existing capture/Almanac owner.
+
+---
+
+### 4 · NEIGHBORHOOD DIALECTS · Same content, local visual grammar
+
+**Idea**
+The same collage recipe reads differently depending on the world zone: fairground, civic Hürth, dungeon-adjacent, industrial, Academy-controlled, etc.
+
+**Why it fits KFB**
+It prevents every billboard from becoming identical branding and gives neighborhoods a visual voice without duplicating content systems.
+
+**Commented draft**
+A read-only `zonePresentationHint` may select:
+- grade family;
+- paper/screen wear;
+- type scale;
+- transition tempo;
+- reflection/emissive strength.
+
+The asset/recipe itself stays the same.
+
+**Small proof**
+Render one fixed seed/recipe in three zone hints and verify that composition identity is preserved while surface language changes.
+
+**Boundary**
+World/Zone owner supplies the hint. Billboard must not infer or rewrite world state.
+
+---
+
+### 5 · SIGNAL TAKEOVER · Authored interruption / counter-programming
+
+**Idea**
+A normal billboard sequence can be interrupted for 2–5 seconds by an authored KFB takeover: FrizzleBob, The Academy, a Resident faction, a card event, or another semantic source.
+
+**Why it fits KFB**
+It turns the billboard into a narrative pressure valve without needing a new cutscene system or LLM-generated live ads.
+
+**Commented draft**
+Normal collage → hard authored interrupt → one short 3-beat message → exact previous sequence resumes.
+
+Minimal contract:
+`{ interruptRef, priority, ttl, returnState }`
+
+Examples:
+- Academy warning interrupts a cheerful carnival ad;
+- FrizzleBob scribbles one counter-line over an official message;
+- Resident Disco temporarily hijacks all nearby displays on the downbeat.
+
+**Small proof**
+One deterministic interruption fires during a 30 s collage loop, then returns to the exact prior seed/sequence position.
+
+**Boundary**
+No new narrative owner and no free-running runtime LLM. Interruptions are semantic refs supplied by existing systems; billboard only presents them.
+
+---
+
+## Idea-backlog rule
+
+None of these ideas should delay:
+1. B2b-P1 mixed-hypernormalisation collage;
+2. B3 rounded-cartoon source-object proof.
+
+Promote at most one of them into a future bounded slice after the basic media surface and body are stable.

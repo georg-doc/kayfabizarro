@@ -232,3 +232,17 @@ Current next gate:
 - strongest first external pools: Smithsonian CC0, LOC Free to Use/Reuse + Chronicling America, Europeana PDM/CC0 allow-list, Wikimedia PD/CC0 allow-list;
 - B3 rounded-cartoon body WSA/Blender handover remains prepared separately;
 - **current gate: Georg chooses B2b-P1 option/tone or B3 first/parallel.**
+
+
+### 2026-09-25 · five adjacent Billboard idea drafts
+The WSA/B3 handover now carries five explicitly non-blocking future ideas:
+1. **Palimpsest / Poster Archaeology** — visual residue of prior campaigns;
+2. **Billboard Chorus** — several boards consume one ChatterBox/cue bus in call-and-response;
+3. **World Memory** — present existing capture/Almanac refs as recent-event media;
+4. **Neighborhood Dialects** — world zone supplies a presentation hint without changing content ownership;
+5. **Signal Takeover** — bounded authored interruption, then exact sequence resume.
+
+Full commented drafts and owner boundaries:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`
+
+All five are **IDEA BACKLOG / NOT STARTED** and must not broaden B2b-P1 or B3.
