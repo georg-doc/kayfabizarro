@@ -3,6 +3,38 @@
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 
+## 2026-09-25 · WorldBuilder WB2 authoring interaction R1
+
+### HUMAN REQUEST
+Georg requested two faster authoring gestures on the accepted WB2 terrain-sculpt candidate:
+- mouse wheel / touchpad scroll changes Brush Radius while sculpting;
+- faster switching between Orbit and Raise/Lower.
+
+### IMPLEMENTATION
+The WB2 Source/Review now add:
+- wheel/touchpad Radius adjustment only while Raise/Lower is active;
+- logarithmic radius scaling with clamp `0.45 … 5`;
+- Orbit/Object mode keeps normal OrbitControls wheel zoom;
+- hold `Space` = temporary Orbit while retaining the active Raise/Lower mode;
+- releasing `Space` resumes that sculpt mode immediately;
+- `1 / 2 / 3` = Object/Orbit / Raise / Lower;
+- existing shared-object `R` Rotate and `S` free Scale shortcuts remain unchanged.
+
+No new editor owner or second picker was introduced.
+
+### EVIDENCE
+- existing sculpt math/geometry: **24/24 PASS**;
+- current Source/Review contract: **56/56 PASS**;
+- focused interaction contract: **31/31 PASS**;
+- exact runtime sources: **4/4 PASS**;
+- embedded browser self-test: **34 prepared / 0 executed**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+### NEXT
+Georg reviews wheel/touchpad radius, hold-Space temporary Orbit and `1/2/3` mode switching in the Chat HTML together with the existing terrain-shape gate.
+
+
 ## 2026-09-23 · WorldBuilder WB2 Terrain Sculpt · local review candidate
 
 ### IMPLEMENTATION
