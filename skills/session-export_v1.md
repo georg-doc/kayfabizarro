@@ -87,17 +87,17 @@ Für einen normalen schlanken Design-Session-Delta-Export bleibt dieser Skill zu
 
 Wenn Georg dagegen einen **vollständigen, recovery-tauglichen Claude-Design Export + ZIP** mit geschlossener aktueller Codebasis, Handover, aktivem Changelog, Source-/Donor-Locks, Tests, Evidence und Next-Chat-Einstieg verlangt, zusätzlich bzw. stattdessen laden:
 
-skills/claude-design-session-export_v1.md
+skills/session_ZIP_v1.md
 
 Trigger insbesondere:
 
-- /claude-export
+- /session-zip
 - "vollständiger Claude Design Export"
 - "Session Cut ZIP"
 - "Export + Handover"
 - "zieh mir alles für den nächsten Chat"
 
-Ein explizites /claude-export gilt dort bereits als Exportfreigabe; es ist kein zweites Manifest-Veto nötig. Löschen oder irreversible Bereinigung bleibt trotzdem bestätigungspflichtig.
+Ein explizites /session-zip gilt dort bereits als Exportfreigabe; es ist kein zweites Manifest-Veto nötig. Löschen oder irreversible Bereinigung bleibt trotzdem bestätigungspflichtig.
 
 Nach zwei erfolglosen Reparaturpässen am selben Gate weiterhin zusätzlich:
 
