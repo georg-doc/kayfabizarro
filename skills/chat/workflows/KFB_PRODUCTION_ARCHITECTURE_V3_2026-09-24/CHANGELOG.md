@@ -299,3 +299,14 @@
 - top-level Chat router now points to this v3 candidate on PR #204;
 - contract validation: 20/20 PASS;
 - no product runtime, Cloudflare Live state or owner contract changed.
+
+## 2026-09-25 · Playable integration masterplan + crash-safe lead recovery
+
+- Georg reduced current lead priority to integrated playable capabilities rather than additional standalone editors/labs.
+- Added a current override to `MVP_FOCUS_PLAN_2026-09-24.md`: WorldBuilder-in-world, real OSM continuity, Race-module proof before World placement, ToolBox Studio+Animation Lab, KayKit base locomotion, Mixamo variant/action layer, shared Pose/IK and Vehicle-Fit profiles.
+- Added a current recovery checkpoint to `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md`.
+- Running WorldBuilder and ToolBox/Animation authoring sessions are protected: wait for complete exports/Session Cuts, intake them, then issue bounded correction briefs; do not restart from prose.
+- Architecture `START_HERE.md` and top-level `skills/chat/START_HERE.md` now route recovery to the 2026-09-25 checkpoint.
+- Documentation/recovery consistency validation: **10/10 PASS** at source checkpoint; no runtime/browser/public PASS inferred.
+- No Hub job ids, runtime owners, Cloudflare routes, merges or Live state changed.
+- Exactly one next architecture gate: **intake the two running exports, then prepare bounded correction/integration briefs**.
