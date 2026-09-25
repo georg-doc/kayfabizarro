@@ -1,0 +1,105 @@
+name: ToolBox Production-01 r2 Stage review
+on:
+  push:
+    branches:
+      - chatgpt-web/toolbox-r2-stage-review-2026-09-26
+    paths:
+      - 'kfb-hub/stage/toolbox/production-01-r2/**'
+      - '.github/workflows/toolbox-production-01-r2-stage-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local Stage mirror
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/toolbox-r2-http.log 2>&1 &
+          echo $! > /tmp/toolbox-r2-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/production-01-r2/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/toolbox-r2-http.log
+          exit 1
+      - name: Exact owner browser proof
+        run: |
+          mkdir -p toolbox-r2-stage-evidence
+          node --input-type=module <<'NODE'
+          import { chromium } from 'playwright';
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          const errors=[];
+          page.on('pageerror',e=>errors.push('pageerror: '+e.message));
+          page.on('requestfailed',r=>errors.push('requestfailed: '+r.url()+' · '+(r.failure()?.errorText||'')));
+          let pass=0,total=0;
+          const ok=(name,value,detail='')=>{total++;if(value){pass++;console.log('PASS · '+name+(detail?' · '+detail:''));}else{console.error('FAIL · '+name+(detail?' · '+detail:''));process.exitCode=1;}};
+          await page.goto('http://127.0.0.1:4173/kfb-hub/stage/toolbox/production-01-r2/',{waitUntil:'domcontentloaded',timeout:30000});
+          await page.waitForFunction(()=>window.__KFB_TOOLBOX_R2_REVIEW?.ready===true,{timeout:60000});
+          const s=await page.evaluate(()=>window.__KFB_TOOLBOX_R2_REVIEW);
+          ok('build marker',await page.locator('[data-build="KFB_TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026_09_26"]').count()===1);
+          ok('review ready',s.ready===true);
+          ok('source mode is first',s.mode==='source');
+          ok('exact source explicitly isolated',s.sourceIsolated===true);
+          ok('no runtime errors at boot',s.errors.length===0,s.errors.join(' | '));
+          ok('owner head pinned',s.ownerHead==='5dcf34bcdf9d87445e927c98f60d41adae72f00e');
+          ok('EarRig head pinned',s.earHead==='19088b142c6a7e7626f27fba8e80caf6ab2437c1');
+          ok('KayKit head pinned',s.kaykitHead==='b97b5ac55df2724fae623992433685583eece51e');
+          ok('PoseRig exact owner URL',s.resources.poseOwner?.includes(s.ownerHead));
+          ok('locomotion exact owner URL',s.resources.locomotionOwner?.includes(s.ownerHead));
+          ok('actor exact EarRig-v5 URL',s.resources.actorSource?.includes(s.earHead)&&s.resources.actorSource?.includes('FB_TEMPLATE_LOOK_v5.glb'));
+          ok('Ear Dangle exact owner URL',s.resources.earOwner?.includes(s.earHead));
+          ok('all three KayKit packs loaded',['General','MovementBasic','MovementAdvanced'].every(k=>(s.packCounts[k]||0)>0),JSON.stringify(s.packCounts));
+          ok('shared PoseRig built',s.poseBuilt===true);
+          ok('fixed handR lower chain is world-measured',(s.chainReport?.handR?.lenL||0)>.2,String(s.chainReport?.handR?.lenL));
+          ok('owner fix beats naive wrist child length',(s.chainReport?.handR?.lenL||0)>(s.chainReport?.handR?.naiveLenL||0)*2,JSON.stringify(s.chainReport?.handR));
+          ok('both three-bone ear chains found',s.earChains?.L?.length===3&&s.earChains?.R?.length===3);
+          const canvasBox=await page.locator('canvas').first().boundingBox();
+          ok('3D stage dominates viewport',canvasBox&&canvasBox.width>1400&&canvasBox.height>860,JSON.stringify(canvasBox));
+          await page.screenshot({path:'toolbox-r2-stage-evidence/source.png',fullPage:true});
+          await page.click('#stateMode');
+          await page.waitForTimeout(3300);
+          const st=await page.evaluate(()=>window.__KFB_TOOLBOX_R2_REVIEW);
+          ok('state loop entered',st.mode==='state');
+          ok('profile-driven actor actually moves',st.actorMoved>.15,st.actorMoved.toFixed(3)+' m');
+          ok('semantic transitions occur',st.transitionCount>=2,String(st.transitionCount));
+          ok('semantic role resolved to source clip',!!st.role&&!!st.profile?.roles?.[st.role]?.clip,st.role||'none');
+          await page.screenshot({path:'toolbox-r2-stage-evidence/state.png',fullPage:true});
+          await page.click('#jumpBtn');
+          await page.waitForTimeout(120);
+          const jump=await page.evaluate(()=>window.__KFB_TOOLBOX_R2_REVIEW.role);
+          ok('jump uses semantic jump role',String(jump).startsWith('jump.'),String(jump));
+          const ik=await page.evaluate(()=>window.__KFB_TOOLBOX_R2_REVIEW.nudgeIK());
+          ok('shared IK reaches direct target',ik&&ik.miss<.12,ik?ik.miss.toFixed(4):'no result');
+          const dist=Math.hypot(...ik.target.map((v,i)=>v-ik.before[i]));
+          ok('IK test target is meaningfully displaced',dist>.1,dist.toFixed(4));
+          await page.screenshot({path:'toolbox-r2-stage-evidence/pose-ik.png',fullPage:true});
+          const final=await page.evaluate(()=>window.__KFB_TOOLBOX_R2_REVIEW);
+          ok('no runtime errors after interactions',final.errors.length===0,final.errors.join(' | '));
+          ok('no browser page/request failures',errors.length===0,errors.join(' | '));
+          await page.setViewportSize({width:390,height:844});
+          await page.waitForTimeout(150);
+          const mobile=await page.evaluate(()=>({sw:document.documentElement.scrollWidth,cw:document.documentElement.clientWidth,h:document.querySelector('canvas')?.getBoundingClientRect().height||0}));
+          ok('mobile shell has no horizontal overflow',mobile.sw<=mobile.cw+2,JSON.stringify(mobile));
+          ok('mobile keeps full-height stage',mobile.h>820,JSON.stringify(mobile));
+          await page.screenshot({path:'toolbox-r2-stage-evidence/mobile.png',fullPage:true});
+          console.log('BROWSER PASS '+pass+'/'+total);
+          await browser.close();
+          if(pass!==total)process.exit(1);
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toolbox-production-01-r2-stage-evidence
+          path: toolbox-r2-stage-evidence
+          retention-days: 30
