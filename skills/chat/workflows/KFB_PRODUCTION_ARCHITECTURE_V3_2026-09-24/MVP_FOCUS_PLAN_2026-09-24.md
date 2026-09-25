@@ -318,3 +318,37 @@ Binding additions:
 - WB-D1 roof/shadow repair (`orientEG`, FrontSide / shadowSide Back / normalBias 0.9, concavity fallback) is a shared OSM presentation rule, not a one-zone patch.
 - Global quality gate includes roof-wall seam, wall-ground contact, shadow clipping/bias and floating-object illusion.
 - Graveyard current slice is historical concept/lighting donor only; its movement and placement are not gameplay evidence.
+
+
+## CURRENT EXECUTION STARTS · Claude Design · 2026-09-25 late
+
+The current ToolBox and World Integration candidates both have Georg **PROCEED PASS**.
+
+Use these continuation briefs now:
+
+### WorldBuilder
+`CLAUDE_DESIGN_WORLD_INTEGRATION_CONTINUATION_2026-09-25.md`
+
+Current gate:
+shared KayKit ground locomotion consumer + global OSM facade/roof/contact presentation in the real edited world.
+
+### ToolBox
+`CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md`
+
+Current gate:
+canonical KayKit locomotion profiles + shared Pose/IK owner + first Ear Rig / S39 performance consumer integration.
+
+Do not restart either product from an older brief.
+
+### Parallel Blender MCP route input
+
+Georg is separately building missing route/track pieces in Blender MCP.
+
+Spoken route note:
+`VOICE_INPUT_UNCERTAIN: "Lüt" → Dom → "Müllheim"/Mülheim → "SAG"/SAE`.
+
+Current GitHub confirms Mülheim / SAE (Carlswerkstr. 11c) had no OSM cache in the earlier World backlog. The literal `Lüt` endpoint is unresolved.
+
+Do not guess names, geography or substitute route pieces.
+Intake the exact Blender export/pin later and classify:
+OSM geographic truth vs authored connector/Track modules.
