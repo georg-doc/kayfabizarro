@@ -148,15 +148,18 @@ function projectedActorBounds(box){
   const safe={left:16,right:r.width-16,top:pads.topPad,bottom:r.height-pads.bottomPad};
   return {minX,maxX,minY,maxY,safe,insideSafe:minX>=safe.left&&maxX<=safe.right&&minY>=safe.top&&maxY<=safe.bottom};
 }
+function actorVisualBounds(){
+  actorRoot.updateMatrixWorld(true);
+  return new THREE.Box3().expandByObject(figure,true);
+}
 function frameActor(){
   if(!figure)return null;
-  actorRoot.updateMatrixWorld(true);
-  const b=new THREE.Box3().setFromObject(figure),size=b.getSize(new THREE.Vector3()),center=b.getCenter(new THREE.Vector3());
+  const b=actorVisualBounds(),size=b.getSize(new THREE.Vector3()),center=b.getCenter(new THREE.Vector3());
   const pads=framePads(),h=Math.max(1,pads.canvas.height),w=Math.max(1,pads.canvas.width);
   const vfov=THREE.MathUtils.degToRad(camera.fov),tanV=Math.tan(vfov/2),tanH=tanV*(w/h);
   const safeFrac=Math.max(.18,Math.min(1,pads.symmetric/h));
-  const distY=(size.y*.5*1.18)/(tanV*safeFrac);
-  const distX=(size.x*.5*1.18)/(tanH*.9);
+  const distY=(size.y*.5*1.34)/(tanV*safeFrac);
+  const distX=(size.x*.5*1.24)/(tanH*.9);
   const dist=Math.max(2.25,distY,distX,size.z*2.4);
   const dir=new THREE.Vector3(1.4,.45,2.5).normalize();
   controls.target.copy(center);
@@ -211,7 +214,11 @@ function advanceState(dt){
     }
     return;
   }
-  roleTimer-=dt;if(roleTimer<=0){const [r,d]=seq[seqIndex%seq.length];seqIndex++;startRole(r,.16);roleTimer=d}
+  roleTimer-=dt;
+  let guard=0;
+  while(roleTimer<=0&&guard++<4){
+    const [r,d]=seq[seqIndex%seq.length];seqIndex++;startRole(r,.16);roleTimer+=d;
+  }
 }
 function triggerJump(){if(mode!=='state'||jumpPhase)return;jumpPhase='start';startRole('jump.start',.06);jumpTimer=findClip(state.profile.roles['jump.start'].clip)?.duration||.45}
 function moveActor(dt){
@@ -222,8 +229,8 @@ function moveActor(dt){
   followPoint.copy(actorRoot.position);const delta=followPoint.clone().sub(lastFollow);camera.position.add(delta);controls.target.add(delta);lastFollow.copy(followPoint);
 }
 function animate(){
-  requestAnimationFrame(animate);const dt=Math.min(.04,clock.getDelta());
-  if(mode==='state')advanceState(dt);
+  requestAnimationFrame(animate);const elapsed=Math.min(.5,clock.getDelta()),dt=Math.min(.04,elapsed);
+  if(mode==='state')advanceState(elapsed);
   if(mixer&&currentAction)mixer.update(dt);
   if(mode==='state')moveActor(dt);
   if(mode==='pose'&&pose){pose.apply();if(ikTarget.visible)pose.solveIK('handR',ikTarget.position,1)}
