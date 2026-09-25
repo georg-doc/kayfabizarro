@@ -1,5 +1,36 @@
 
 
+## CURRENT UPDATE · WORLD / TOOLBOX CLAUDE CONTINUATION BRIEFS · 2026-09-25
+
+Current paste-ready starts now exposed in Hub:
+
+- World Integration:
+  `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_WORLD_INTEGRATION_CONTINUATION_2026-09-25.md`
+- ToolBox Production:
+  `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md`
+
+Both continue Georg PROCEED PASS candidates rather than restarting them.
+
+World brief:
+- shared KayKit locomotion consumer;
+- preserve in-world WB2 authoring;
+- global OSM facade / roof / contact-shadow presentation;
+- Blender MCP route pieces are future pinned intake only.
+
+ToolBox brief:
+- canonical KayKit locomotion profiles;
+- shared Pose/IK owner;
+- fix pose-rig wrist/intermediate-bone chain once;
+- Ear Rig first consumer;
+- S39 no-baseplate band fixture;
+- Vehicle/Flight seams prepared, not expanded into this gate.
+
+Source validation: **11/11 PASS** in Architecture TEST_REPORT.
+
+No Live shell or product runtime promoted.
+
+
+
 ## CURRENT UPDATE · FINAL GRAVEYARD / MUSIC LIVE ROUTING · 2026-09-25
 
 Live bot registry:
