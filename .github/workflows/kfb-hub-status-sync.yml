@@ -44,6 +44,12 @@ jobs:
           git fetch --depth 1 origin "$HUB_REF"
           git checkout FETCH_HEAD -- tools/production_desk
 
+      - name: Seed current registry fixture
+        run: |
+          set -euo pipefail
+          git fetch --depth 1 origin bot/production-desk-update
+          git checkout FETCH_HEAD -- registry/production/v1
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
