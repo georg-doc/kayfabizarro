@@ -285,7 +285,7 @@ export class CollageEngine {
     ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.font="700 72px 'Anton', Impact, sans-serif";
     const tw=Math.min(W*.92,ctx.measureText(phrase).width+64);
-    ctx.fillStyle=c.recipe==='ACID_FAIRGROUND'?'#d9ff48':'#f2e6c9';
+    ctx.fillStyle=c.grade==='ACID_FAIRGROUND'?'#d9ff48':'#f2e6c9';
     ctx.fillRect(-tw/2,-49,tw,98);
     ctx.fillStyle='#201711';ctx.fillText(phrase,0,4);
     ctx.restore();

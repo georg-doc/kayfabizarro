@@ -1,3 +1,5 @@
+// KFB Billboard / Media Residency · B2b-P1 COLLAGE / CanvasTexture · 2026-09-25
+// Fork: accepted B2a runtime; CARD/COVER/VIDEO INLINE/SLOGAN and rear-side cull stay on the copied B2a path.
 // KFB Billboard / Media Residency · B2a INLINE YOUTUBE / CSS3D · 2026-09-24
 // Base: accepted B1 @78f09f5e9b28b606a121bda1b43dcd8c8aff5f1a.
 // Protected B0/B1 sources are copied beside this file unchanged.
