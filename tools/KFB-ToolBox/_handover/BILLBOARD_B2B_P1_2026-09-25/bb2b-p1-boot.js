@@ -502,7 +502,7 @@ async function setMode(mode) {
   report.mode = mode;
   setActive(mode);
   clearInterval(sloganTimer);
-  if (collageEngine) collageEngine.stop();
+  if (collageEngine) { collageEngine.stop(); syncCollageReport(); }
   hideInlineVideo();
   setBusy(mode);
 
