@@ -16,7 +16,18 @@ async function world(zone){
   page.on('pageerror',e=>pageErrors.push(String(e)));
   page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));
   await page.goto(base+route+'?world='+zone+'&selftest=wi1',{waitUntil:'domcontentloaded',timeout:120000});
-  await page.waitForFunction(()=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=55,null,{timeout:180000});
+  try {
+    await page.waitForFunction(()=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=55,null,{timeout:180000});
+  } catch (err) {
+    const diag=await page.evaluate(()=>({
+      status:document.querySelector('#status')?.textContent||'',
+      wiTest:document.querySelector('#wiTest')?.textContent||'',
+      body:document.body?.innerText?.slice(0,5000)||'',
+      selftest:document.body?.dataset?.selftest||''
+    })).catch(()=>({}));
+    console.error('WORLD BOOT DIAGNOSTIC', JSON.stringify({zone,diag,pageErrors,failed},null,2));
+    throw err;
+  }
   const data=await page.evaluate(()=>({
     lines:document.querySelector('#wiTest')?.textContent?.split('\n').filter(Boolean)||[],
     fail:document.body.dataset.selftest==='FAIL',
