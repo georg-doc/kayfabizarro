@@ -1,5 +1,26 @@
 
 
+## CURRENT UPDATE · FINAL GRAVEYARD / MUSIC LIVE ROUTING · 2026-09-25
+
+Live bot registry:
+`bot/production-desk-update@ce06ab9b3f04b2c58fe165fc8efa78aa22f885e6`
+
+Manifest:
+- checkedAt `2026-09-25T18:06:00Z`;
+- **1 LOOK_AT · 6 RUNNING · 7 CAN_START · 4 WAITING**;
+- 18 current lanes;
+- 90 self-service jobs / 42 READY / 48 HOLD;
+- moved = 0.
+
+Corrections:
+- Graveyard removed from current review; archive/concept/lighting donor only.
+- Music Performance moved to CAN_START/TUNE; timeline/audio donor retained, newer S39 band animations are preferred.
+- Music tool card marked `TUNE / Donor`.
+- shared architecture rule: `WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md`.
+- no public Hub shell changed.
+
+
+
 ## CURRENT UPDATE · GRAVEYARD / MUSIC / WORLD PRESENTATION CORRECTION · 2026-09-25
 
 Status: **HUB ROUTING CORRECTED · NO PUBLIC SHELL CHANGE**
