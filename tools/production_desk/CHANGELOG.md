@@ -1,3 +1,13 @@
+## 2026-09-25 · Hub UX Recovery v2 · Georg PASS_WITH_TUNE
+
+- Georg accepted the current v2 Hub candidate for now;
+- desktop / overall design direction is accepted;
+- **mobile remains a known broken surface** and is explicitly not marked solved;
+- real-device human feedback overrides the earlier automated “no horizontal overflow” mobile check as a visual/interaction acceptance signal;
+- preserved the accepted Stage candidate rather than reopening desktop architecture;
+- registered deferred bounded follow-up `HUB-MOBILE-TUNE-01`;
+- no merge and no Live promotion authorized.
+
 
 ## 2026-09-25 · Hub UX Recovery v2 · PUBLIC_VERIFIED Stage
 

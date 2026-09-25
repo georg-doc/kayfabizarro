@@ -1,3 +1,27 @@
+## CURRENT UPDATE · HUB UX RECOVERY v2 · Georg review · 2026-09-25
+
+Status: **GEORG HUMAN PASS_WITH_TUNE · MOBILE KNOWN BROKEN · STAGE ACCEPTED FOR NOW · NOT LIVE**
+
+Human result:
+- Georg accepts the current Hub UX Recovery v2 candidate **for now**;
+- desktop / overall Hub direction is accepted as the working candidate;
+- **mobile is explicitly still broken** and is not considered solved by the earlier automated overflow check;
+- automated mobile geometry/overflow PASS therefore does **not** override Georg's real-device visual/interaction feedback.
+
+Boundary:
+- do not reopen the accepted desktop/design integration in order to fix mobile;
+- mobile becomes a later bounded responsive repair slice;
+- preserve the current candidate and public Stage evidence;
+- no auto-merge and no Live promotion were authorized by this review message.
+
+Unresolved item:
+**HUB-MOBILE-TUNE-01** — real-device mobile layout/interaction repair against the accepted v2 shell.
+
+Exactly one next gate:
+explicit Live-promotion/merge decision, or a separately started HUB-MOBILE-TUNE-01 slice before promotion.
+
+---
+
 
 ## CURRENT UPDATE · HUB UX RECOVERY v2 · Stage integration + legacy donor audit · 2026-09-25
 
