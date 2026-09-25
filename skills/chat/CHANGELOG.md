@@ -1821,3 +1821,17 @@ Exactly one next gate:
 - Public acceptance metadata: `d976a99eb0a27bea304d6d5a72929eb12b8610b9`.
 - Draft PR #199 remains open/unmerged.
 - Production Desk source routes the Billboard lane to B2b research/options next; generated Hub remains owner-generated rather than hand-edited.
+
+
+## 2026-09-25 · Billboard B2b research / B3 WSA handover
+
+- B2b research slice opened from the accepted B2a branch and persisted before research with explicit timeout=UNKNOWN recovery rules.
+- Draft PR #211 / `chatgpt-web/billboard-b2b-research-2026-09-25`.
+- Research/evidence head `662611e4a28123e9e9449e2da47f57c8dbe43815`.
+- No B2b runtime or public Stage was created.
+- Existing Billboard Gate-1 `drawCollageFace()` / `BillboardContent` identified as the primary reuse donor.
+- Recommended B2b-P1: A+ CanvasTexture compositor, deterministic no-repeat scheduler, small provenance-tracked pool and lightweight Living Screen treatment.
+- External media remains curated/registry-backed; no live scraping or runtime license decisions.
+- WSA / Blender MCP handover prepared for a later rounded/cartoon 3D billboard body:
+  `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`.
+- B3 is PREPARED / NOT STARTED and must preserve the accepted B1/B2a media face and rear semantics.

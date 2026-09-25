@@ -932,3 +932,35 @@ Status: **B2a HUMAN_ACCEPTED**.
 Exactly one next Billboard gate:
 **B2b Living Mockup / Collage research-options memo only.**
 Do not start B2b runtime implementation, B2c Talking City Lights, B3 cartoon body or Curtain C1 yet.
+
+
+## 2026-09-25 · Billboard B2b research complete · B3 handover prepared
+
+Billboard media planning has advanced without changing runtime ownership.
+
+### B2b · research/options complete
+
+Draft PR **#211** / branch `chatgpt-web/billboard-b2b-research-2026-09-25`.
+
+Research/evidence head:
+`662611e4a28123e9e9449e2da47f57c8dbe43815`
+
+Primary memo:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/OPTIONS_MEMO.md`
+
+Recommended first implementation after Georg chooses:
+**A+ · existing CanvasTexture collage donor + deterministic no-repeat recipes + small provenance-tracked still pool + lightweight Living Screen treatment.**
+
+No B2b runtime, browser build or Cloudflare route was created in this research slice.
+
+The memo explicitly prefers reuse of the existing Gate-1 `drawCollageFace()` / `BillboardContent` donor, keeps interactive YouTube on the accepted B2a CSS3D owner, and rejects a full mockup editor/CSS3D collage as B2b foundations.
+
+### B3 · rounded cartoon 3D body · WSA/Blender MCP note
+
+Prepared, not started:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`
+
+WSA / ToolBox 3D may use Blender MCP when real rounded topology/casing/posts/support work is cleaner than a small Web deformation. The exact accepted Kenney billboard remains the starting donor, and B1/B2a media-face/front/rear contracts are protected.
+
+Current Billboard gate:
+**Georg chooses B2b-P1 option/tone, or explicitly starts B3 first/in parallel.**
