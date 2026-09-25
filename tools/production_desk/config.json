@@ -15,21 +15,21 @@
   "lanes": [
     {
       "id": "hub-ux-recovery",
-      "bucket": "CAN_START",
-      "title": "KFB Hub UX Recovery · accepted v2 donor",
-      "what": "Claude Design soll nicht neu erfinden: zuerst den akzeptierten Hub UI v2 Donor dfaafac… isoliert zeigen, dann aktuelle Production-Desk-Daten, Pocket Inbox, Freshness und PASS/TUNE/HOLD/DONE/MISSING Decision Queue integrieren.",
-      "provider": "Claude Design → HUB-CTRL #202",
-      "yourAction": "Claude Design Sprint aus dem Brief starten; Ergebnis per /session-zip zurückgeben.",
-      "waitingFor": "",
+      "bucket": "RUNNING",
+      "title": "KFB Hub UX v2 · Candidate eingetroffen",
+      "what": "Claude Session Cut ist da. Akzeptierte Paper/Dark-v2-Sprache, Pocket Inbox, Frische/Reload, Decisions und Resident-Overlay-Prototyp sind im Kandidaten. Kein Live-Publish: erst HUB-CTRL-Rehome und echte Browser/Public-Reviewfläche.",
+      "provider": "HUB-CTRL #202 / Web-GitHub Bridge",
+      "yourAction": "",
+      "waitingFor": "Candidate unter HUB-CTRL reproduzieren/re-homen; danach direkte pages.dev Review und Georg finaler UX-Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
       "brief": {
-        "label": "Hub UX Recovery Sprint",
-        "path": "tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md",
-        "ref": "work/hub-ctrl-01-2026-09-24",
-        "pasteReady": true
+        "label": "Hub UX Session Cut Intake",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "pasteReady": false
       }
     },
     {
@@ -56,22 +56,22 @@
     },
     {
       "id": "toolbox-source-safe",
-      "bucket": "CAN_START",
-      "title": "ToolBox Production · Claude continuation",
-      "what": "Georg PROCEED PASS. Continue the current Studio+Animation Lab candidate: canonical KayKit locomotion profiles, shared Pose/IK owner, Ear Rig first consumer and S39 performance fixture. No second ToolBox/Animation engine.",
-      "provider": "Claude Design → ToolBox Web/GitHub Bridge",
-      "yourAction": "Claude Design mit dem aktuellen Continuation-Brief starten; Ergebnis per /session-zip zurückgeben.",
-      "waitingFor": "",
+      "bucket": "RUNNING",
+      "title": "ToolBox r2 · Owner-Rehome + Stage vorbereiten",
+      "what": "Claude r2 ist eingetroffen: 19/19 Preview-Selftest, shared pose-rig owner patch candidate, kanonische KayKit-Locomotion-Profile, EAR-DANGLE-01, S39 ohne Baseplate und CARD_SURF-Seam. Jetzt Web/GitHub-Rehome in die bestehenden Owner; keine neue ToolBox.",
+      "provider": "ChatGPT Web / ToolBox receiving owner",
+      "yourAction": "",
+      "waitingFor": "Owner-Patch/Profile rehome, repository/browser checks und direkte KFB-Stage-Reviewfläche vor Georgs r2 Review.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 185,
       "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
       "expectedHead": "0405c4addba45934f95bb15a829f08086d0a0b22",
       "brief": {
-        "label": "Claude Design · ToolBox Production Continuation",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md",
+        "label": "r2 Intake / Receiving Route",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
-        "pasteReady": true
+        "pasteReady": false
       }
     },
     {
@@ -123,10 +123,10 @@
       "id": "production-desk",
       "bucket": "RUNNING",
       "title": "KFB Hub · Daten-Refresh + UX Recovery",
-      "what": "Die v3 Daten-/Kataloglogik bleibt nützlich, die aktuelle öffentliche Shell ist UX-seitig abgelehnt. Der akzeptierte Hub UI v2 Paper/Dark-Donor wird als Oberfläche zurückgeholt und mit aktuellen Produktionsdaten, Pocket Inbox, Freshness und Decision Queue verbunden.",
+      "what": "Live Registry bleibt der aktuelle Datenowner. ToolBox/World r2 sowie Hub UX v2 sind intaked; Hub-Shell bleibt bis zur reproduzierten UX-v2-Review unter HUB-CTRL unverändert.",
       "provider": "HUB-CTRL #202 · Web + Claude Design",
       "yourAction": "",
-      "waitingFor": "Claude Design Session Cut des UX-Recovery-Sprints; kein Live-Redesign vor Georg-Review.",
+      "waitingFor": "HUB-CTRL rehome des UX-v2-Candidates; Status-Sync PR #215 bleibt separater Merge-Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
@@ -154,12 +154,12 @@
     },
     {
       "id": "worldbuilder-wb2",
-      "bucket": "CAN_START",
-      "title": "World Integration · Claude continuation",
-      "what": "Georg PROCEED PASS. Continue the current integrated Hürth/WB2 candidate: shared KayKit ground locomotion consumer, preserve in-world editing, and apply global OSM facade/roof/contact-shadow rules. Do not rebuild WorldBuilder.",
-      "provider": "Claude Design → WorldBuilder Web/GitHub Bridge",
-      "yourAction": "Claude Design mit dem aktuellen Continuation-Brief starten; Ergebnis per /session-zip zurückgeben.",
-      "waitingFor": "",
+      "bucket": "WAITING",
+      "title": "World r2 · Rehome nach ToolBox-Profil-Seam",
+      "what": "Claude r2 ist eingetroffen: 55/55 Hürth + 55/55 Köln, gleiche WB2-Engine, neue Köln-Zone, globale Fassaden/Normals/Support-Regeln und erweiterte Ground-Locomotion. Vor Promotion muss World die ToolBox-r2-Profilwahrheit konsumieren statt sie zu duplizieren.",
+      "provider": "ChatGPT Web / WorldBuilder receiving owner",
+      "yourAction": "",
+      "waitingFor": "ToolBox r2 Locomotion/Profile-Owner zuerst re-homen; danach World r2 1:1 rehome, WB2-/World-Regression und Stage.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 190,
@@ -167,10 +167,10 @@
       "expectedHead": "ec52eb746be8c1a0e6f3f3d62857ed4b3121b284",
       "review": null,
       "brief": {
-        "label": "Claude Design · World Integration Continuation",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_WORLD_INTEGRATION_CONTINUATION_2026-09-25.md",
+        "label": "r2 Intake / World Receiving Route",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
-        "pasteReady": true
+        "pasteReady": false
       }
     },
     {
@@ -334,11 +334,11 @@
       "what": "Nach dem 1:1-Rehome des akzeptierten Hürth-Kandidaten: gemeinsame KayKit-Locomotion/Profile konsumieren, Ground↔Flight sauber anschließen und die echte OSM-Lücke Hürth→Köln/SAE schließen.",
       "provider": "ChatGPT Web / WorldBuilder + Travel",
       "yourAction": "",
-      "waitingFor": "World Integration-01 Rehome/Regression und ToolBox-Locomotion-Profil.",
+      "waitingFor": "ToolBox r2 owner rehome + World r2 receiving integration. Danach Ground↔Flight und OSM-Korridor.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
-      "expectedHead": "9d1f25c3a30144e9409e1140db5d7081f89fdc65",
+      "expectedHead": "5f19bc7d43fddde56fab9029e304a19a6a4acccf",
       "brief": {
         "label": "Playable Integration Masterplan",
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
