@@ -1,3 +1,80 @@
+
+
+## CURRENT UPDATE · HUB RECOVERY / LIVE REGISTRY / UX DONOR · 2026-09-25
+
+Status: **LIVE DATA REFRESHED · CURRENT SHELL STILL HUMAN-TUNE · UX RECOVERY + DURABLE SYNC PREPARED**
+
+### User decision now recorded
+
+ToolBox Production-01 and World Integration-01 are both:
+**PROCEED PASS · not exhaustive detail acceptance**.
+
+They no longer occupy old review gates.
+
+### Live registry recovery
+
+The public Hub shell already polls:
+`bot/production-desk-update/registry/production/v1`
+before main/embedded fallback.
+
+That live registry was manually refreshed after the timeout and now carries:
+- ToolBox Production-01 → PROCEED PASS / next shared locomotion + Ear Rig;
+- World Integration-01 → PROCEED PASS / rehome then OSM+Mobility;
+- Ear Rig / EAR-DANGLE-01;
+- Hub UX Recovery;
+- Hub Status Sync v1;
+- 90 self-service jobs / 42 READY / 48 HOLD.
+
+Current bot manifest:
+- checkedAt: `2026-09-25T17:15:29Z`;
+- staleAfterHours: **2**;
+- source: HUB-CTRL;
+- old WB-W0 and Hürth proof review cards removed from current operational review queue.
+
+This refresh changes live Hub **data**, not the public shell.
+
+### Hub UX
+
+The current v3 Production Desk shell remains **HUMAN TUNE / not accepted**.
+
+Exact accepted donor recovered:
+- main commit `dfaafac070747f9543b5eb5a635e2aaa74e57b83`;
+- `kfb-hub/index.html`;
+- blob `0de46343ddeb70a5f423876e75dc916ae7200c5b`;
+- accepted Hub UI v2 Paper/Dark, Today flow and Pocket Inbox.
+
+Prepared Claude Design sprint:
+`tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md`
+
+Hard rule:
+show that exact donor in isolation first, then mount current data into it. Do not redesign from zero.
+
+Candidate UX adds an honest decision queue:
+`PASS · TUNE · HOLD · DONE · MISSING`
+with local persistence + export/copy sync packet only. It must not pretend to be shared persistence.
+
+### Durable freshness
+
+Root cause of the hours-old state:
+GitHub scheduled workflows only run from the default branch, while the Production Desk workflow/config is still on HUB-CTRL.
+
+Prepared Web/GitHub repair:
+`tools/production_desk/HUB_STATUS_SYNC_V1_2026-09-25.md`
+
+Target:
+public Hub reads fresh bot-registry state within minutes without requiring Cloudflare rebuild for ordinary status changes.
+
+No second database / Worker / D1 is authorized before the raw-GitHub status path is proven insufficient.
+
+### Current gates
+
+1. **HUB STATUS SYNC V1** — make bot-registry refresh durable.
+2. **HUB UX RECOVERY** — Claude Design Session Cut from accepted v2 donor.
+3. Georg reviews the UX candidate.
+4. Only then publish a replacement shell.
+
+No new Live shell is claimed by this checkpoint.
+
 # CURRENT UPDATE · WB-D2 / S40 ROOT HUB PUBLICATION · 2026-09-25
 
 Status: **DEPLOY COMMIT WRITTEN · PUBLIC PROOF RUNNING**
