@@ -1846,3 +1846,14 @@ Exactly one next gate:
 - WSA/B3 handover carries five non-blocking adjacent drafts: Palimpsest, Billboard Chorus, World Memory, Neighborhood Dialects, Signal Takeover.
 - HUB-CTRL source routes Billboard to CAN_START B2b-P1; B3 stays WAITING.
 - No B2b runtime or public Stage exists yet.
+
+
+## 2026-09-25 · session_ZIP v1.1 self-contained
+
+- replaced the short `skills/session_ZIP_v1.md` router with a complete self-contained Claude Design export contract;
+- removed the runtime dependency on project-local `claude/session-zip-SKILL.md`;
+- `/session-zip` remains a supported trigger but is no longer required;
+- manually pasting/linking the skill plus an export request is explicitly a valid trigger and export authorization;
+- added full closure, Voice Input ambiguity handling, dependency classes, mandatory handoff docs, manifest/checksums, embedded `zipcheck.py`, Clean Run and Failure Recovery rules;
+- registered v1.1 in `skills/chat/REGISTRY.json` and the Claude Design adapter;
+- `session-export_v1.md` remains the slim delta-export path.
