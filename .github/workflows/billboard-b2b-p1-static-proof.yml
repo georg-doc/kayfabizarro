@@ -18,6 +18,11 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25
+            tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24
+          sparse-checkout-cone-mode: false
 
       - name: Protected B2a copies remain byte-identical
         run: |
