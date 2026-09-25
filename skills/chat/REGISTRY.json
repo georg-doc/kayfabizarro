@@ -32,6 +32,22 @@
   ],
   "entries": [
     {
+      "id": "toolbox-ear-rig-candidate",
+      "kind": "tool-candidate",
+      "status": "EXPERIMENTAL",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/ear-rig/",
+      "branch": "chat/fb-ear-rig-v5-2026-09-25",
+      "draftPR": 214,
+      "currentHead": "f23418e9415e596668e1611eb504c08a2e43fdb5",
+      "runtimeOwner": "Animation Lab / ToolBox Motion",
+      "authoringConsumer": "FrankenStein Studio",
+      "runtimeSSOT": "tools/KFB-ToolBox/ear-rig/ear-dangle.v1.js",
+      "firstGate": "EAR-DANGLE-01 · FrizzleBob + KayKit Idle/Walk/Run/Jump Start-Air-Land + one Motion Library dance · Georg review",
+      "gameRuntimeChanged": false,
+      "note": "Candidate-only secondary-motion lane. Animation Lab owns the single time-based ear-dangle runtime; FrankenStein Studio authors geometry/placement/rest-acting pose/profile. World/Travel/Race may feed wind/contact/impulse facts but may not fork the spring physics."
+    },
+    {
       "id": "session-zip-v1",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
