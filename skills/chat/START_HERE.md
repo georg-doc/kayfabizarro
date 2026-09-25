@@ -1,14 +1,18 @@
 ## 2026-09-26 · External Demo Research Radar
 
-The current Production Architecture v3 branch now contains a timeout-safe living research index for external Reddit/GitHub/public-demo donors:
+The current Production Architecture v3 branch contains a timeout-safe living research index for external Reddit/GitHub/public-demo donors:
 
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
 
-Pass 1 covers World/Environment, WB authoring, modular roads/tracks, Residents, Card Zone/portal/UI and ToolBox/source-isolation. It adds **no runtime owner and no new production job**; findings are routed into the existing 96-job architecture.
+**Pass 2 A–L is complete.** It now covers World/Environment, WB authoring, modular roads/tracks, Residents, Card Zone/portal/UI, ToolBox/source-isolation, movement modes/vehicles, water/weather/sky, Combat, performance/LOD/streaming, mobile/touch and bounded Activity/minigame patterns.
 
-Current evidence: **14/14 research routing checks PASS**.  
-No Stage/Cloudflare/Live change.  
-Next gate stays `ENV-PREVIEW-01` / World environment integration.
+It adds **no runtime owner and no new production job**; findings route into the existing **96-job** architecture.
+
+Current evidence: **15/15 research routing checks PASS · 73 HTTPS source/demo links**.  
+No runtime, Stage, Cloudflare or Live change.
+
+Future broad research is question-triggered by named product gates.  
+Research-to-production next gate stays `ENV-PREVIEW-01` / World environment integration.
 
 # KFB Chat Production Router
 
