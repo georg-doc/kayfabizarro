@@ -361,3 +361,29 @@ Scope: skill/router/recovery wiring only; no Claude Design runtime or ZIP genera
 
 Current standard trigger: `/claude-export`.
 Failure path remains the separate Claude Design failure-recovery export after two unsuccessful repair passes on the same gate.
+
+## Session ZIP + current WIP intake + Ear Rig routing validation · 2026-09-25 evening
+
+Scope: **source / routing / recovery consistency only**. This check did not execute the ToolBox or World runtimes and does not convert Claude-preview evidence into Web/browser/Georg acceptance.
+
+**Result: 12/12 PASS**
+
+1. session-zip current registry entry — PASS
+2. older claude export skill superseded — PASS
+3. session-zip explicit trigger — PASS
+4. intake record routed from architecture start — PASS
+5. ToolBox cut source present — PASS
+6. World cut source present — PASS
+7. intake does not promote ToolBox human PASS — PASS
+8. intake keeps World rehome/regression gate — PASS
+9. Ear Rig central registry owner split — PASS
+10. Ear Rig README owner split — PASS
+11. Ear Rig single runtime copy — PASS
+12. Ear first gate uses KayKit base plus dance — PASS
+
+Evidence status retained:
+- ToolBox 13/13 = reported by its Session Cut / Claude preview; Georg review pending.
+- World 26/26 = reported by its Session Cut / Claude preview; Web rehome + WB2 34/34 + Georg review pending.
+- Ear Rig Node/headless-studio evidence remains candidate evidence; first real consumer/human gate pending.
+
+Current architecture action: no replacement mega-brief; preserve candidates and run the named human/rehome gates.
