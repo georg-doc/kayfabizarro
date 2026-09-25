@@ -1,3 +1,17 @@
+## 2026-09-25 · Shared Environment Preview + World consolidation route
+
+- added `ENV-PREVIEW-01` as READY P0 for WORLD_MATCH / SOURCE_ISOLATION / CONSUMER_PRESET across Resident Atlas and ToolBox/Animation;
+- preview support levels are ground / terrainPatch / worldZone; moving `world.current` must resolve to an exact saved provider/head/profile for evidence;
+- added donor-pinned World Environment consolidation roadmap using current Travel main `8614282…`;
+- locked current TerrainSurface, mixed biome, world mood, sky/light, procedural TS-flora, curated flora, scatter and natural-landmark sources;
+- broad Nature direction is asset-light procedural/faceted vegetation; KayKit/Kenney GLBs are curated accents;
+- explicitly retained the no-noise-blob scatter lesson and one-height-truth rule;
+- Card Zones remain their own content owner and later dock into the current environment instead of importing the old standalone voxel world;
+- registered six jobs: ENV-PREVIEW-01, WORLD-ENV-CONSOLIDATE-01, WORLD-BIOME-MOOD-01, WORLD-NATURE-01, WORLD-RECIPE-01, CZ-ENV-01;
+- catalogue now **96 jobs / 44 READY / 52 HOLD**;
+- validation **22/22 PASS**;
+- no runtime / Cloudflare / Live change.
+
 ## 2026-09-25 · WB-D2 + Resident S40 intake classification
 
 - pinned WB-D2 main upload `706c3f121bc3a305778306917613ea23eb772c16` as presentation candidate only;

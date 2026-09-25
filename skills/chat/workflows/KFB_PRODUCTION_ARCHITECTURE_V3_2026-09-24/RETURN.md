@@ -1,3 +1,44 @@
+## CURRENT UPDATE · ENVIRONMENT PREVIEW + WORLD ENVIRONMENT CONSOLIDATION · 2026-09-25
+
+Georg direction:
+- current KFB skydome / terrain presentation / lighting / fog / color schemes should be reusable across real 3D previews such as Resident Atlas, ToolBox and Animation Studio;
+- previews must consume current World/Travel presentation ownership rather than copy a new mini-world per tool;
+- next world work should consolidate Card Zones, mixed biomes, procedural worlds, Nature props and the older TinySkies-style asset-light/asset-less world grammar.
+
+New READY:
+- `ENV-PREVIEW-01` · P0 · shared preview adapter with **WORLD_MATCH / SOURCE_ISOLATION / CONSUMER_PRESET** and support levels `ground / terrainPatch / worldZone`;
+- `WORLD-ENV-CONSOLIDATE-01` · P1 · source-pinned World Environment Recipe over current Travel/TinySkies-derived owners.
+
+Prepared HOLD sequence:
+- `WORLD-BIOME-MOOD-01`;
+- `WORLD-NATURE-01`;
+- `WORLD-RECIPE-01`;
+- `CZ-ENV-01`.
+
+Binding donor decisions:
+- Travel/TinySkies remains macro-world truth;
+- one terrain/support height truth must serve visible terrain, support/physics and placement;
+- BiomeField and World/Deck Mood remain separate axes;
+- broad Nature uses the current TinySkies-style procedural/faceted `ts-flora.js` lane;
+- KayKit/Kenney nature assets remain curated accents/compositions rather than blanket scatter;
+- no low-frequency noise/blob scatter; keep current Fibonacci/nudge placement + terrain/biome suitability;
+- Card Zones dock into host terrain/environment truth and do not bring a hidden historical voxel world.
+
+Current source lock:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`.
+
+Architecture catalogue:
+**13 strands · 96 jobs · 44 READY · 52 HOLD**.
+
+Evidence:
+- implementation checkpoint `6aa938cf873b61e3f4074e6c1df4e87d8bf2b718`;
+- validation checkpoint `d80e8c35a6cec462eeac6766ad0bb4411353a118`;
+- architecture/catalog validation: **22/22 PASS**;
+- no runtime, Stage, Cloudflare or Live change.
+
+Exactly one next gate:
+**ENV-PREVIEW-01 · Resident Atlas + ToolBox/Animation real consumer proof.**
+
 ## CURRENT UPDATE · WB-D2 + RESIDENT S40 INTAKE · 2026-09-25
 
 - classified WB-D2 upload `706c3f12...` as latest World presentation/zone-shell candidate;

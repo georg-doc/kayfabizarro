@@ -36,6 +36,24 @@ For the full self-service production route, read:
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
 
+## CURRENT DELTA · 2026-09-25 · SHARED ENVIRONMENT PREVIEWS
+
+Georg has selected one shared presentation direction for real 3D tools/previews.
+
+Read:
+- `ENV_PREVIEW_01_2026-09-25.md`;
+- `WORLD_ENVIRONMENT_CONSOLIDATION_2026-09-25.md`;
+- `WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md`.
+
+Current execution order:
+1. `ENV-PREVIEW-01` · READY P0 — Resident Atlas + ToolBox/Animation consume current World/Travel sky/light/fog/palette/support presentation;
+2. `SPINDLE-01` remains a separate named Combat environment module and may run in parallel;
+3. `WORLD-ENV-CONSOLIDATE-01` · READY P1 — pin current TerrainSurface/Biome/Mood/Nature/Scatter/Landmark owners into a thin reference recipe;
+4. later Biome×Mood → procedural Nature + curated accents → deterministic World Recipe → Card Zone×current Environment.
+
+Travel/TinySkies remains macro-world truth. No second renderer, sky owner, terrain generator, hidden baseplate or copied preview-world stack.
+
+
 ## CURRENT DELTA · 2026-09-25 evening · SESSION CUTS RECEIVED
 
 The two running Claude Design exports have arrived on main in upload `8504afa9d14ad46855d0c590bc30eea0fc38d15d`.
