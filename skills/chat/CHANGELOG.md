@@ -1,3 +1,19 @@
+## 2026-09-26 · Track Core transition research + explicit agent ladder
+
+- Reviewed `tools/KFB-ToolBox/_inbox/KFB Race Track Baukasten TBD perplexity 01.md`.
+- Adopt/adapt into Track Core: true Clothoid/Euler curvature easing, connector boundary state, staggered transition zones, RouteRecipe graph semantics and separated visual style layers.
+- Explicitly reject the supplied Blender Python sample as production architecture; its advertised Clothoid is a circular arc, endpoint stepping is incomplete and separate road/line/barrier meshes reproduce the rejected RKIT-11 seam problem.
+- Race PR #42 / `chat/rkit-11-rhein-run-2026-09-26@bcc422b00fc4629ac113f086cddcea3b2b107f2a` is pinned as the frozen Track-Core acceptance fixture.
+- Added executing-agent briefs:
+  - TRACK-CORE-0 — ChatGPT Web + GitHub;
+  - TRACK-CORE-1A — Claude Coworker + Blender MCP;
+  - TRACK-CORE-1B — ChatGPT Web + GitHub;
+  - TRACK-CORE-2 — Claude Design.
+- Recommendation for the human language gate: authoritative JavaScript core; Blender/Python as independent oracle, not a second solver.
+- Playable Track R0 and Köln Route 01 are downstream until Track Core passes.
+- Exactly one next gate: **TRACK-CORE-0 · census + core contract**.
+- New runtime / Blender / browser / Stage tests in this documentation update: **0**.
+
 ## 2026-09-26 · Track Core decision (amends Cologne Route 01 / RKIT-10)
 
 - Added `workflows/KFB_TRACK_CORE_SLICE_2026-09-26/` (START_HERE, EVIDENCE, CHANGELOG, RETURN).
