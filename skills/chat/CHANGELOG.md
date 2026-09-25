@@ -1884,3 +1884,15 @@ Exactly one next gate:
 - source/recovery intake validation **12/12 PASS**; Claude runtime counts are preserved as reported evidence, not re-run Web proof;
 - extra Hub UX cut remains separate under HUB-CTRL;
 - no merge or Live promotion.
+
+
+## 2026-09-26 · ToolBox r2 green / World r2 stop-rule recovery
+
+- ToolBox r2 reusable owner deltas are re-homed in PR #185 and technically green: 31/31 + 34/34 static, 20/20 + 25/25 browser, 13/13 review-browser;
+- World r2 is additively re-homed in PR #190 and consumes the ToolBox locomotion profile;
+- World static owner/closure gate = 20/20 PASS;
+- browser gate exhausted two repair passes; final run `36198999279` FAIL;
+- final diagnostic shows no source/network failure: Hürth boots, 700 buildings, 13 states, 0 page errors, 0 failed requests;
+- proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
+- full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
+- no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
