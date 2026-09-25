@@ -1,3 +1,14 @@
+## 2026-09-26 · Racer routed to Track Core
+
+- Racer lane updated from RKIT-08/09 LOOP_REAL-first status to the newer Track-Core architecture gate.
+- Current source: stacked PR #219 / `georg-doc-patch-2@c3ccd0d85a68593f5a545fd41ae0ef2112391965`.
+- Current lane: `CAN_START · TRACK-CORE-0 · ChatGPT Web census + core contract`.
+- Provider sequence shown explicitly: ChatGPT Web → Claude Coworker + Blender MCP → ChatGPT Web → Claude Design.
+- Perplexity transition research is summarized as mechanism input only: true Clothoid/Euler easing, connector state and staggered transitions; supplied example Python is not a production donor.
+- Playable Track R0 and real Köln OSM route remain downstream.
+- Race PR #42 / RKIT-11 remains the frozen acceptance fixture, not a current runtime/Stage result.
+- Generated registry/root Hub was **not regenerated or republished by this metadata update**.
+
 
 
 ## 2026-09-26 · ToolBox r2 green / World r2 stopped
