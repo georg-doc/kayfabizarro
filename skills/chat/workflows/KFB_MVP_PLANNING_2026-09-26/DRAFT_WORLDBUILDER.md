@@ -13,8 +13,15 @@ Georg wants one coherent, visible world in which KFB content lives: shape terrai
 - Look donors: WorldDesign Lab (triplanar RGB palette, macro texture, cel, ink), Elastic Grotesque Clay V2 + view switch, landmark colour = KFB seed (#208), TinySkies sky/weather modules, ZyFou Planet mode (MIT).
 - Georg's decisions 24.09: Travel Globe is out as world base; TinySkies only for sky/weather/light/mood/camera-flight idea; no faceted polygon globe; one continuous camera move; Hex/voxel/OSM/landmarks are placed content.
 
+## Georg 26.09.
+- Rule: take what works and fits best, per module, until something better exists.
+- World base of 24.09. stands: Travel Globe out; TinySkies sky/weather/light, or better methods from ongoing research. #204's "macro-world truth" wording is superseded.
+- **Locomotion first**, e.g. card flight (doubles as god-mode travel); ground↔flight transition from Travel TMB-2 (accepted 400 ms), not Travel terrain.
+- **Optimised orbit camera** as one shared module (like `edit-layer.js`): zoom to cursor, clean pan/orbit, touch. Donors: WhackMan cursor-focus zoom, WB2 orbit.
+- Then integrate OSM zones and tracks into the terrain; needs a small height-ownership contract (carving roads/tracks into terrain).
+
 ## Open questions (to settle first, not to guess)
-1. Which statement is true: "Travel/TinySkies = macro-world truth" (#204) or "Travel Globe out" (Georg 24.09)? Is the globe view in v1 at all, or does M1 start as one local region?
+1. Is the globe view in v1 at all, or does M1 start as one local region?
 2. Local region first (Hürth → Cologne, WB-W0) and planet later, or both scales from day one?
 3. Who owns the terrain height truth once WB2 sculpt, OSM ground and track corridors meet?
 4. What exactly failed in World r2's contract, and does a contract reset fix it without touching accepted parts?

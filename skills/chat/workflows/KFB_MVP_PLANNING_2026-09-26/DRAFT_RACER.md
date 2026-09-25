@@ -12,6 +12,13 @@ Many track attempts (R3d, RKIT-01…RKIT-11, Blender workbenches) produced good 
 - Road widths per accepted Racer grammar: WIDE 18 m (WB-W0 road), STANDARD 14.4 m.
 - Local: Workbench v5–v9 (~89 MB each), RKIT-11 GLBs + stunt module JSON (26.09.).
 
+## Georg 26.09. · future skins on the same core (requirements now, build later)
+- Rail track and mine-cart ride: same core, on-rail vehicle mode (no steering), gravity-driven for the mine.
+- Space race / cosmic highway, slingshot race (Quaternius ships): arbitrary up vector / full roll, zero or field gravity.
+- Skin = profile + materials + set pieces; physics and RouteRecipe unchanged.
+- Blender MCP keeps producing tracks and **set pieces** (tunnels, bridges, ramps, supports, deco) with sockets; new track geometry only after TRACK-CORE-0.
+- Known seam: RKIT-01 `cross()` uses world Y as up; must become a frame parameter (also needed for the sphere world).
+
 ## Open questions
 1. Georg's language gate: JavaScript as the one authoritative core, Blender/Python only as oracle — yes?
 2. Which RKIT-11 section is the "safe representative" MVP section (length, one curve family, one elevation change, no stunts)?

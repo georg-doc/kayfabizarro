@@ -14,6 +14,10 @@ The ToolBox is the workshop for everything that moves or has a face: actors, eye
 - Jobs in #204: `TB-V17-INTEGRATION-01`, `MOTION-INTAKE-DIRECT-01` (direct FBX intake), `ACTOR-FB-BODY-FAMILY-01`, `IK-CCDIK-PARITY-01`.
 - Local: `KFB ToolBox Production-01-1` Claude Design session cut r2 (26.09.).
 
+## Georg 26.09.
+- Rigging for the new Blender-MCP FrizzleBob: complete rig + ears (EarRig v5) on any KayKit body (Legacy, Medium, Large). Must stay compatible with the Rig_Medium/Rig_Large skeletons so the 179 Motion Library clips work; head-based scale. Existing job: `ACTOR-FB-BODY-FAMILY-01`.
+- **Surf poses for the flying cards** in the Animation Lab (feeds WorldBuilder card flight).
+
 ## Open questions
 1. What is the minimum Georg must see to call the ToolBox "published"? (one Stage URL + Hub card, or also v17+ parity?)
 2. Which v17+ features are really missing? A parity checklist from the old studio, not from memory.

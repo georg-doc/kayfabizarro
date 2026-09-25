@@ -54,3 +54,26 @@ Kriterium: braucht Zugriff auf private Repos, mehrere Repos gleichzeitig, Secret
 - `DRAFT_TOOLBOX.md`
 - `DRAFT_RACER.md`
 - `AUDIT_PAKETE_WS1.md` (Design-Critique / Audit für deine WS1-Credits)
+
+## 5 · Entscheidungen Georg · 26.09.2026
+
+- **Grundregel:** Wir nehmen immer, was (a) funktioniert und (b) sich am besten einfügen lässt. Das gilt pro Modul, bis es eine bessere Lösung gibt.
+- **Weltbasis:** Es bleibt beim 24.09.: Travel Globe ist als Weltbasis raus, von TinySkies kommen nur Himmel, Wetter und Licht, oder bessere Methoden aus laufender Recherche. „Travel/TinySkies = macro-world truth“ in #204 ist damit überholt und muss dort korrigiert werden.
+- **M1 Welt zum Laufen:** Die Basis steht (WorldBuilder, OSM-Zonen, Tracks) und muss ins Gelände integriert werden. **Zuerst Fortbewegung**, z. B. Kartenflug (auch als God Mode hilfreich), dazu eine **optimierte Orbit-Kamera**: Zoom rein/raus auf den Cursor, sauberes Schwenken und Verschieben.
+- **M3 ToolBox veröffentlicht:** Rigging für den neuen Blender-MCP-FrizzleBob: komplettes Rig plus Ohren, auf beliebigem KayKit-Körper (Legacy, Medium, Large). Dazu **Surf-Posen für die Flugkarten** im Animation Lab.
+- **Blender MCP** baut weiter Strecken und **Versatzstücke**.
+- **Später auf demselben Track Core** (gleiche Physik und Baukasten, nur anderer 3D-Skin): Bahnstrecken, Lorenfahrt im Bergwerk, Space Race / Cosmic Highway, Slingshot Race (mit Quaternius-Schiffen).
+
+### Coworker-Einschätzung (zur Prüfung)
+
+- **Kamera als gemeinsames Modul.** Sie gehört wie `edit-layer.js` in die ToolBox-Bibliothek, damit WorldBuilder, ToolBox und Streckeneditor dieselbe Kamera nutzen. Vorlagen: WhackMan (Scroll/Touch-Zoom mit Cursor-Fokus) und der WB2-Orbit.
+- **Kartenflug zuerst passt**, weil der Flug die Brücke zwischen Übersicht und Boden ist. Aus Travel kommen nur Bewegung und der Übergang Boden ↔ Flug (TMB-2, 400 ms, abgenommen), nicht das Gelände.
+- **Die schwierige Stelle bei M1** ist, wer die Höhe besitzt, wo Gelände, OSM-Zone und Strecke aufeinandertreffen (Einschneiden von Straße und Strecke). Das braucht einen kleinen Vertrag, bevor Zonen und Tracks eingebaut werden.
+- **FrizzleBob-Rig:** Es muss mit den Skeletten Rig_Medium und Rig_Large kompatibel bleiben, sonst laufen die 179 Clips der Motion Library nicht. Der Maßstab richtet sich nach dem Kopf. Den Job gibt es schon: `ACTOR-FB-BODY-FAMILY-01`.
+- **Blender MCP liefert Teile, keine Generatoren.** Versatzstücke mit Andockpunkten (Tunnel, Brücken, Rampen, Stützen, Deko) können sofort entstehen. Neue Streckengeometrie erst nach dem Vertrag aus TRACK-CORE-0.
+- **Bahn, Lore und Space jetzt als Anforderung in TRACK-CORE-0 aufnehmen**, später bauen:
+  - Fahrmodi: frei lenken (Auto) oder an die Schiene gebunden (Bahn, Lore);
+  - „oben“ muss beliebig sein: volle Rolle, Loopings, Kugelwelt (oben = Kugelnormale), Space-Band ohne Schwerkraft;
+  - Schwerkraft als Parameter: Erde, Gefälle im Bergwerk, Gravitationsfelder im Weltraum;
+  - Skin getrennt vom Kern: Profil, Material, Versatzstücke.
+  RKIT-01 hat bereits notiert, dass `cross()` heute Welt-Y als oben nimmt. Genau das muss ein Parameter werden.
