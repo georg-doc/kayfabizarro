@@ -1,3 +1,13 @@
+## 2026-09-25 · WB2 human pass → Claude Design refinement
+
+- verified WB2 PR #190 exact head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284` and GEORG HUMAN PASS source/Return/Test/SOURCE state;
+- promoted no runtime/merge/Cloudflare state;
+- updated terrainAuthoring source lock to the accepted head and current Claude handoff;
+- added READY/P0 `WB2-DESIGN-REFINE-01` as a thin catalog wrapper around the already-existing Claude Design handoff;
+- current design gate is UI/sidebar cleanup + more 3D FOV + existing WorldDesign look integration while preserving all WB2 behavior/owners;
+- Smooth and Flatten/Set Height remain later separate Web slices;
+- catalog now **89 jobs / 43 READY / 46 HOLD**.
+
 ## 2026-09-25 · RKIT-08/09 Track Socket registration
 
 - recovered Racer PR #40/#41 source chain after Blender MCP update;

@@ -2111,3 +2111,35 @@ Expose this inside current Animation Studio/ToolBox using the same source-backed
 **Outcome:** tiny emergent Resident life using AI Town state-machine lessons without importing its runtime.
 
 > Read `AI_TOWN_KFB_EVALUATION_2026-09-24.md`, NPC-LIFE-01, Town Living and Journey/ChatterBox. Each Resident has one intent: activity | approach | encounter | performance | travel | combat-handoff. First proof: 3 real Residents, seeded chooser, host movement, NPC-LIFE beats, ChatterBox text, Journey filtered facts. Live LLM optional. Optional low-frequency Observer recap cannot alter truth/rewards.
+
+
+---
+
+## WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement
+
+**Executor:** Claude Design
+
+**Execution profile:** `CLAUDE_DESIGN_STANDARD` · Claude Design · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD** · secondary only if needed: `WEB_STANDARD`.
+
+**Outcome:** make the accepted WB2 terrain/scene-authoring surface visibly cleaner and more useful without changing its terrain/editor architecture.
+
+> @GitHub
+> Read the exact accepted WB2 source first:
+> - PR #190 · `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23@ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`;
+> - `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md`.
+>
+> Do not create a new WorldBuilder brief or runtime. Execute that existing handoff.
+>
+> Preserve the accepted WB2 behavior: Raise/Lower, Radius/Strength, wheel/touchpad Radius, hold-Space Orbit, `1/2/3`, Undo/Clear, Save/Reload and return to shared Object Edit.
+>
+> Design goals only:
+> - collapse/remove redundant side-panel scene-edit controls and explanatory copy;
+> - keep object transforms inline at the selected object;
+> - keep Terrain Sculpt compact and scene-level;
+> - maximize 3D field of view;
+> - integrate the already-owned WorldDesign/environment look controls coherently;
+> - preserve the shared `tools/KFB-ToolBox/lib/edit-layer.js` owner and all persistence seams.
+>
+> Do not add Smooth, Flatten/Set Height, material painting, masks, erosion or large-world bake/cache in this pass.
+>
+> Return a complete editable Session Cut. Web/GitHub Bridge rehomes 1:1 and creates the next local/direct review artifact. No Cloudflare publication or merge in this gate.

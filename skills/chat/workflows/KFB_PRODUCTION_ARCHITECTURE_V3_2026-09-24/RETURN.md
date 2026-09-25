@@ -1,3 +1,15 @@
+## CURRENT UPDATE · WB2 HUMAN PASS / CLAUDE DESIGN UNBLOCKED · 2026-09-25
+
+- WB2 PR #190 at `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284` is **GEORG HUMAN PASS**.
+- Accepted: Raise/Lower, Radius/Strength, wheel/touchpad Radius, hold-Space Orbit, `1/2/3`, Undo/Clear, Save/Reload and return to shared Object Edit.
+- Current next gate is the **existing** `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` handoff; no new mega-brief.
+- Registered self-service card: `WB2-DESIGN-REFINE-01` · READY · P0 · Claude Design.
+- Design scope: sidebar cleanup, inline transforms preserved, compact Sculpt, more 3D FOV, current WorldDesign/environment controls.
+- Smooth and Flatten/Set Height remain later separate Web slices.
+- Shared editor R3 uniform `−/+` remains optional/non-blocking.
+- PR #190 remains Draft/unmerged; Cloudflare remains HOLD.
+- Catalog now **13 strands / 89 jobs / 43 READY / 46 HOLD**.
+
 ## CURRENT UPDATE · RKIT-08/09 STUNT SOCKET REGISTRATION · 2026-09-25
 
 - Race PR #41 is current source for RKIT-08/09 stunt geometry and metadata.

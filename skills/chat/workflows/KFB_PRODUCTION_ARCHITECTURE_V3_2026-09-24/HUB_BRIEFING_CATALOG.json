@@ -44,13 +44,16 @@
       "id": "worldbuilder",
       "title": "WorldBuilder / God Mode",
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
-      "capabilitiesTotal": 9,
+      "capabilitiesTotal": 10,
       "currentReady": [
+        "wb2-design-refine-01",
         "world-zone-bake-01",
         "look-torsion-01",
         "wb-design-parallel-01"
       ],
-      "currentReview": "worldbuilder-w0"
+      "currentReview": "worldbuilder-w0",
+      "currentPriority": "wb2-design-refine-01",
+      "acceptedFoundation": "WB2-TERRAIN-SCULPT-01 · GEORG_HUMAN_PASS"
     },
     {
       "id": "racer-world",
@@ -2058,6 +2061,32 @@
       "budget": "STANDARD",
       "workDefault": false,
       "coworkDefault": false
+    },
+    {
+      "id": "wb2-design-refine-01",
+      "strand": "worldbuilder",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "Claude Design",
+      "title": "WorldBuilder · WB2 UI / Authoring refinement",
+      "what": "Polish the accepted WB2 authoring experience: less sidebar chrome, more 3D FOV, inline object transforms, compact sculpt controls and current WorldDesign look.",
+      "result": "Complete Claude Session Cut preserving all accepted WB2 terrain/editor behavior and owners.",
+      "promptSection": "WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement",
+      "sourceSet": "worldbuilder",
+      "detailedBriefing": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md",
+      "sourcePr": 190,
+      "sourceHead": "ec52eb746be8c1a0e6f3f3d62857ed4b3121b284",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "CLAUDE_DESIGN_STANDARD",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false
     }
   ],
   "presentation": {
@@ -2069,8 +2098,8 @@
   },
   "metrics": {
     "strands": 13,
-    "jobs": 88,
-    "ready": 42,
+    "jobs": 89,
+    "ready": 43,
     "hold": 46
   },
   "executionProfiles": {

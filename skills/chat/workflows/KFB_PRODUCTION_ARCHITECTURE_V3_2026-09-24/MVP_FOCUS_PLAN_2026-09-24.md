@@ -4,6 +4,20 @@ Status: **CURRENT PRODUCT FOCUS · no automatic merge/Live promotion**
 
 Focus: **World Building · Resident Scenes · ToolBox · Car Racer**
 
+### Current WorldBuilder gate · WB2 accepted → Claude Design
+
+WB2 terrain sculpting and interaction are **GEORG HUMAN PASS** at PR #190 head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`.
+
+Before expanding mobility, execute the already-prepared `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` handoff:
+- reduce/collapse redundant side-panel editor controls/copy;
+- keep object transforms inline;
+- keep Terrain Sculpt compact;
+- maximize 3D FOV;
+- integrate existing WorldDesign/environment look controls;
+- preserve Save/Reload and all owner seams.
+
+Smooth and Flatten/Set Height remain later separate Web slices.
+
 ## MVP 1 · WorldBuilder Mobility Playground
 One WorldBuilder world with source-proven Ground · Drive · Flight · Boat/Water · Plane/Air · Freefall/Parachute only where real support exists.
 
@@ -50,16 +64,17 @@ Prepared: `NPC-AITOWN-KISS-01` after NPC-LIFE visible/human gate.
 
 ## Recommended sequence
 Parallel now:
-1. WB-ZONE-SEAM + WorldBuilder/Travel modes;
-2. MOTION-INTAKE-DIRECT-01;
-3. TB-V17-INTEGRATION-01;
-4. ACTOR-FB-BODY-FAMILY-01;
-5. Race drives RKIT-08 **LOOP_REAL** first in Rapier; TRACK_A/world stunt placement waits on that measured gate;
-6. RES-DISCO-A source/motion audition.
+1. WB2-DESIGN-REFINE-01 · Claude Design UI/WorldDesign refinement on accepted WB2;
+2. WB-ZONE-SEAM + WorldBuilder/Travel modes;
+3. MOTION-INTAKE-DIRECT-01;
+4. TB-V17-INTEGRATION-01;
+5. ACTOR-FB-BODY-FAMILY-01;
+6. Race drives RKIT-08 **LOOP_REAL** first in Rapier; TRACK_A/world stunt placement waits on that measured gate;
+7. RES-DISCO-A source/motion audition.
 
 Then:
-7. Hürth→Cologne→Track;
-8. Living Residents KISS after NPC-LIFE review;
-9. Georg's FrizzleBob-house Resident Scene.
+8. Hürth→Cologne→Track;
+9. Living Residents KISS after NPC-LIFE review;
+10. Georg's FrizzleBob-house Resident Scene.
 
 Work/WSA stays idle unless an executor proves a capability gap.
