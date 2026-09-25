@@ -723,7 +723,7 @@ FrizzleBob source identity is separately pinned at:
 
 `tools/KFB-ToolBox/_handover/FRIZZLEBOB_IDENTITY_MAP_2026-09-23.md`
 
-Current first gate: **WB2-TERRAIN-SCULPT-01**.
+Current first gate: **CLAUDE DESIGN · WORLDBUILDER AUTHORING/UI REFINEMENT AFTER WB2 HUMAN PASS**.
 
 Accepted foundation on Draft PR #186:
 - R1 functional foundation is **GEORG HUMAN PASS**: Caveman texture, Character Y, Character-Y save/reload and palette/FOV;
@@ -742,8 +742,9 @@ Current WB2 implementation on stacked Draft PR #190:
 - evidence: **24/24** sculpt math/geometry + **56/56** current Source/Review contract + **31/31** focused interaction contract + **4/4** exact runtime sources;
 - embedded browser self-test: **34 assertions prepared / 0 executed**;
 - automated browser runtime: **0**; screenshots: **0**;
+- human result: **WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS**;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: **Georg Chat-HTML review of WB2-TERRAIN-SCULPT-01** — hill/depression shape plus wheel/touchpad Radius, hold-Space temporary Orbit, `1/2/3` quick modes, close-up artifact inspection, Undo/Clear, Save/Reload, then return to Object edit.
+Exactly one next WorldBuilder gate: **Claude Design authoring/UI refinement on the accepted WB2 source**, using `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md`.
 
-STOP before Smooth / Flatten / material painting / Claude Design UI cleanup.
+Primary UX direction: reduce redundant side-panel editor controls/copy, keep object transforms inline, keep Terrain Sculpt compact and scene-level, maximize 3D FOV, and compose accepted WorldDesign look/environment controls. Smooth / Flatten / material painting remain separate later functional slices.
