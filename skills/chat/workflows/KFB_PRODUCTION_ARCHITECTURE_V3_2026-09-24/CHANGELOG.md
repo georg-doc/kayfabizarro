@@ -342,3 +342,14 @@
 - World Integration-01 no longer waits on its previous human-review gate; Web rehome/regression remains required before owner-side integration.
 - Next shared direction: ToolBox canonical locomotion/profile truth → WorldBuilder consumer; EAR-DANGLE-01 may follow on the accepted ToolBox surface.
 - No merge or Live promotion authorized by this status change.
+
+
+## 2026-09-25 · Resident placement + OSM presentation corrections
+
+- reclassified Graveyard as historical concept/lighting donor only; movement/placement prototype is not a current Human Gate;
+- reclassified MUSIC-PERF visible animation as TUNE; timeline/audio remain donors, newer S39 band animations are preferred;
+- promoted S39 no-baseplate host-anchor pattern as the Resident scene placement donor;
+- added WorldBuilder-compatible sky/light/ground preview rule for Resident/demo scenes;
+- promoted WB-D2 `FACADE_RULE v1` as starting global ordinary-OSM facade grammar;
+- promoted WB-D1 roof/shadow repair and contact/clipping checks to global OSM presentation quality rules;
+- no new terrain, sky, animation, Resident or OSM runtime owner created.
