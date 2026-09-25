@@ -8,7 +8,7 @@
   "scope": "research-options-only",
   "runtimeStarted": false,
   "publicRoute": null,
-  "status": "RESEARCH_COMPLETE_CHOICE_PENDING",
+  "status": "B2B_P1_READY",
   "protected": [
     "B2a accepted runtime",
     "card/cover owners",
@@ -66,5 +66,12 @@
     "Europeana explicit PDM/CC0 allow-list",
     "Wikimedia Commons PD/CC0 allow-list"
   ],
-  "nextGate": "GEORG_CHOOSES_B2B_P1_OPTION_OR_B3_FIRST"
+  "nextGate": "B2B_P1_IMPLEMENTATION",
+  "humanChoices": {
+    "sourcePool": "KFB_PLUS_SMALL_CC0",
+    "tone": "MIXED_HYPERNORMALISATION",
+    "architecture": "A_PLUS_CANVAS_TEXTURE"
+  },
+  "buildBrief": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_BUILD_BRIEF_2026-09-25.md",
+  "freshChatStart": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_FRESH_CHAT_START_2026-09-25.md"
 }
