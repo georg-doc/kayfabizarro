@@ -1,3 +1,25 @@
+# CURRENT UPDATE · WB2 HUMAN PASS → CLAUDE DESIGN · 2026-09-25
+
+Status: **WB2 ACCEPTED · CLAUDE DESIGN CURRENT · NO NEW CLOUDFLARE / NO MERGE**
+
+WorldBuilder WB2:
+- PR #190 · `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`;
+- GEORG HUMAN PASS;
+- accepted interaction: Raise/Lower · Radius/Strength · Wheel/Touchpad Radius · Space-Orbit · `1/2/3` · Undo/Clear · Save/Reload · return to shared Object Edit.
+
+Current Hub routing:
+- WB2 Claude Design authoring/UI refinement = **CAN_START / P0**;
+- use the existing `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` handoff;
+- Mobility MVP is now WAITING behind this design gate and its existing technical dependencies;
+- Smooth and Flatten/Set Height remain later separate Web slices;
+- shared editor R3 uniform `−/+` remains optional/non-blocking.
+
+No new WB2 Cloudflare publication is claimed. PR #190 stays Draft/unmerged.
+
+Architecture self-service target is now **89 jobs / 43 READY / 46 HOLD**.
+
+---
+
 # CURRENT UPDATE · RACER RKIT-08/09 · 2026-09-25
 
 Status: **TRACK-SOCKET REGISTERED · NOTHING DRIVEN · WORLD PLACEMENT BLOCKED**

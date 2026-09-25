@@ -1,3 +1,12 @@
+## 2026-09-25 · WB2 HUMAN PASS → Claude Design current gate
+
+- Hub WorldBuilder lane corrected from old “technical donor” wording to current GEORG HUMAN PASS;
+- WB2 PR #190 pinned at `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`;
+- existing Claude Design terrain-editor handoff is now CAN_START / P0;
+- WorldBuilder Mobility moved back to WAITING behind the WB2 design milestone and its existing dependencies;
+- Smooth/Flatten remain separate later Web slices;
+- no Cloudflare publish, merge or replacement owner.
+
 ## 2026-09-25 · Racer RKIT-08/09 Hub routing
 
 - Hub Racer lane advanced from RKIT-06 to current PR #41;
