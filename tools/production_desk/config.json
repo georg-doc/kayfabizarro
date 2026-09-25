@@ -34,22 +34,25 @@
     },
     {
       "id": "hub-status-sync",
-      "bucket": "CAN_START",
-      "title": "KFB Hub · Status Sync v1",
-      "what": "Die öffentliche Seite pollt den Bot-Registry-Branch bereits direkt. Dieser Web-Slice macht genau diese Datenquelle zuverlässig frisch, ohne Cloudflare-Neubuild und ohne neues Backend.",
-      "provider": "ChatGPT Web / HUB-CTRL #202",
-      "yourAction": "",
+      "bucket": "LOOK_AT",
+      "title": "KFB Hub · Status Sync v1 · CI PASS",
+      "what": "Der Freshness-Fix ist isoliert in Draft PR #215 und technisch grün: 18/18 Production-Desk-Tests, Online-Registry-Build und Validator PASS. Der PR enthält nur einen Workflow und keine abgelehnte Hub-Shell.",
+      "provider": "ChatGPT Web / HUB-CTRL",
+      "yourAction": "Wenn der automatische 30-Minuten-Status-Sync aktiviert werden soll: PR #215 als kleinen Workflow-only Merge-Gate freigeben. Kein Hub-UI-Merge.",
       "waitingFor": "",
-      "questions": [],
+      "questions": [
+        "Soll der workflow-only PR #215 nach main, damit der Bot-Registry-Sync dauerhaft alle 30 Minuten läuft?"
+      ],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 202,
-      "branch": "work/hub-ctrl-01-2026-09-24",
+      "pr": 215,
+      "branch": "chatgpt-web/hub-status-sync-v1-2026-09-25",
       "brief": {
         "label": "Status Sync v1",
         "path": "tools/production_desk/HUB_STATUS_SYNC_V1_2026-09-25.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
-        "pasteReady": true
-      }
+        "pasteReady": false
+      },
+      "expectedHead": "d45f215bce544ad1eb7e71a6aa743ca59919f08d"
     },
     {
       "id": "toolbox-source-safe",
