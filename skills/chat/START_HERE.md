@@ -16,6 +16,17 @@ The current v3 candidate now covers **13 primary strands / 90 copy-ready jobs**:
 Current architecture candidate:
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
 
+
+### Current lead checkpoint · 2026-09-25
+
+For architecture/lead recovery, immediately read:
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md` → 2026-09-25 CURRENT OVERRIDE;
+- `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` → CURRENT RECOVERY CHECKPOINT.
+
+Current rule: **WorldBuilder and ToolBox/Animation are already running from prior briefs. Recover their exports first; do not start replacement implementations from prose.**
+
+Current product focus: playable WorldBuilder integration · KayKit base locomotion · ToolBox Studio + Animation Lab with shared Pose/IK · Ground↔Card Flight · real Hürth→Köln/SAE OSM continuity · Race modules proven in Race before World placement.
+
 On branch/PR #204, v3 overrides older process guidance where they conflict:
 - a normal unit of work is a usable capability, not a micro-gate;
 - direct real-source review HTML precedes Cloudflare for small visual decisions;
