@@ -432,3 +432,17 @@ Merge remains human/owner gated. Until merge, the manually refreshed live bot re
 - current public Hub shell is still HUMAN TUNE; UX replacement waits for Claude Design donor-based review.
 
 Exact pages.dev visibility of the refreshed registry is still not claimed from this tool.
+
+
+### World / Resident visual corrections · 2026-09-25
+
+Read:
+`WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md`.
+
+Recovery facts:
+- Graveyard prototype: remove from current Human Review; keep only spatial-postmortem concept + grave-light flicker/lighting donor.
+- MUSIC-PERF: TUNE, not Human Gate. Timeline/audio useful; current visible guitarist/drummer animations are superseded by newer S39 Resident Band sources.
+- S39 band module is explicitly **without a baseplate** and designed to mount on arbitrary host surfaces.
+- Future Resident scene reviews should be terrain-placeable, ground/support-aware and use WorldBuilder-compatible sky/light presentation.
+- WB-D2 `FACADE_RULE v1` should become the ordinary-building facade rule beyond Hürth, including Cologne stock.
+- Recurring OSM roof-brightening, lower-wall shadow edge and floating-contact artefacts are global presenter defects; preserve the existing `orientEG` / shadow-side / normalBias donor fix and test contact/clipping globally.
