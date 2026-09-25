@@ -45,6 +45,21 @@ Personal payment, birthday and individual administrative items are not published
 
 # KFB Chat Production Router · additive changelog
 
+## 2026-09-26 · ToolBox r2 Stage review frozen after two failed browser gates
+
+- PR #185 receiving-owner r2 rehome remains technically green at `5dcf34bc...`; no owner rollback.
+- bounded review consumer lives on Draft PR #220 / `chatgpt-web/toolbox-r2-stage-review-2026-09-26`;
+- preserved implementation candidate: `cab463b6a4b9bfd9cc365694ff462b39bc493b8e`;
+- run `36198735113`: **28/29 PASS · FAIL**, movement sample 0.000 m;
+- one bounded repair starts State on semantic Walk;
+- run `36198914554`: **28/29 PASS · FAIL**, movement **0.299 m PASS**, transition proof **1 observed vs ≥2 expected**;
+- exact source actor / PoseRig / locomotion / Ear Dangle / KayKit pins load with zero page or source-request failures;
+- screenshot proof exposes a separate visual blocker: head top and EarRig-v5 ears are cropped, worse on mobile;
+- stop condition reached: no third repair in this slice;
+- planned Cloudflare Stage was **not published**; Hub must not expose a human-test link for it; no merge or Live promotion;
+- recovery: `tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026-09-26/START_HERE.md`;
+- next gate is a fresh review-surface recovery for event-driven transition proof + complete actor/ear framing; World r2 remains after that ToolBox review gate.
+
 ## 2026-09-19 · World/Race P0 + Tiny Treats discovery + Babel Generator
 
 ### DECISION
