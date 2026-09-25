@@ -1,5 +1,9 @@
 /* KFB FrizzleBob Studio v13 · pose-rig.v1 — die Sitzpose.
  *
+ * OWNER FIX 2026-09-25 (ToolBox Production-01 continuation): Ketten aus Weltpositionen gemessen,
+ * Zwischenknochen (Handgelenk) berücksichtigt, Bein-Ketten + öffentliche Ziel-IK (ikChain/effector/
+ * solveIK/chainReport). Basis: @8922d4b1 dieser Datei; sonst Wort für Wort unverändert.
+ *
  * VORBILD (Schritt 0, gefunden vor der ersten Zeile): `frankenstein-v1/race/src/driver.v2.js`.
  * Von dort WÖRTLICH übernommen: die analytische Zweiknochen-Kinematik (`aim`/`solve`, Kosinussatz,
  * Ellbogen-Hinweis) und die Ellbogenrichtungen L [1,-.6,-.2] / R [-1,-.6,-.2] in Wurzelkoordinaten.
@@ -131,13 +135,21 @@ export class PoseRig {
     B.legs.forEach((l) => { prep(l.U, sideW); prep(l.L, sideW); prep(l.F, sideW); });
     B.arms.forEach((a) => { prep(a.U, sideW); prep(a.L, sideW); if (a.F) prep(a.F, sideW); });
 
-    /* Armkette wie im Rennen: Achse eines Knochens = Richtung zu seinem Kind in der Bindepose. */
-    const axisOf = (child) => child ? child.position.clone().normalize() : new T.Vector3(0, 1, 0);
-    this.chains = B.arms.map((a) => a.U && a.L ? {
-      s:a.s, U:a.U, L:a.L, F:a.F, aU:axisOf(a.L), aL:axisOf(a.F || a.L),
-      lenU:a.L.position.length(), lenL:a.F ? a.F.position.length() : a.L.position.length() * 0.8,
-      hint:new T.Vector3(a.s === 'l' ? 1 : -1, -0.6, -0.2).normalize(), target:new T.Vector3(),
-    } : null).filter(Boolean);
+    /* ⚠ OWNER FIX 25.09. (TOOLBOX-PRODUCTION-01 Befund): Achse und Länge jedes Glieds werden aus den
+       WELTPOSITIONEN der Bindepose gemessen, nicht aus `child.position`. Hängt ein Handgelenk
+       (`wrist`) zwischen Unterarm und Hand, ist `hand.position` der Versatz zum Handgelenk — am
+       Driver-Wirt las lenL 0,074 statt gemessen 0,334, die Hand verfehlte ihr Ziel um ~0,05.
+       Zwischenknochen stehen in `c.mid`; `_solve` misst die Kette vor jedem Lösen neu (ein Clip
+       beugt das Handgelenk), damit kein Verbraucher mehr selbst nachmessen muss. Beine bekommen
+       dieselbe Kette (`legChains`) für Ziel-IK an Füßen — die Gelenkwinkel-Pose bleibt unberührt. */
+    const mkChain = (s, U, L, F, hint, leg) => {
+      const c = { s, U, L, F, mid: [], hint, leg: !!leg, target: new T.Vector3() };
+      for (let p = F && F.parent; p && p !== L && p !== this.root; p = p.parent) c.mid.push(p);
+      this._measureChain(c); return c;
+    };
+    this.chains = B.arms.map((a) => a.U && a.L ? mkChain(a.s, a.U, a.L, a.F || null, new T.Vector3(a.s === 'l' ? 1 : -1, -0.6, -0.2).normalize(), false) : null).filter(Boolean);
+    const kneeHint = this.fwd.clone().add(new T.Vector3(0, -0.15, 0)).normalize();
+    this.legChains = B.legs.map((l) => l.U && l.L && l.F ? mkChain(l.s, l.U, l.L, l.F, kneeHint.clone(), true) : null).filter(Boolean);
 
     this._calibrate();
     this._anchors();
@@ -357,6 +369,7 @@ export class PoseRig {
 
   /* Zweiknochen-Löser, wörtlich aus driver.v2.js (Kosinussatz + Ellbogen-Hinweis). */
   _solve(c) {
+    this._measureChain(c);
     const T = this.T, S = new T.Vector3(), u = new T.Vector3(), v = new T.Vector3(), E = new T.Vector3();
     c.U.getWorldPosition(S); this.root.worldToLocal(S);
     u.copy(c.target).sub(S); let d = u.length(); u.divideScalar(d || 1);
@@ -371,7 +384,7 @@ export class PoseRig {
        Löser ist kaputt, die Ellbogenebene ist entartet.
        Zwei Eingriffe: eine Haltung darf ihren eigenen Hinweis mitbringen (`c.hintFor`), und die
        Schwelle für den Notausgang steigt von 1e–6 auf 0,05 — fast entartet ist auch entartet. */
-    const hint = (this.p.hands === 'surf' && _SURF_HINT) ? _SURF_HINT : c.hint;
+    const hint = (!c.leg && this.p.hands === 'surf' && _SURF_HINT) ? _SURF_HINT : c.hint;
     v.copy(hint).addScaledVector(u, -hint.dot(u));
     if (v.lengthSq() < 0.05 * 0.05) { v.set(0, -1, 0).addScaledVector(u, -u.y); if (v.lengthSq() < 1e-6) v.set(0, 0, -1).addScaledVector(u, u.z); }
     v.normalize();
@@ -381,6 +394,52 @@ export class PoseRig {
        laufende Bildschleife sie weiter. Genau das sieht man als sich drehende Faust. Sie geht auf
        ihre Bindelage zurück; die ist gemessen und liegt seit dem Bau in `userData.kfbBind`. */
     if (c.F && c.F.userData.kfbBind) { c.F.quaternion.copy(c.F.userData.kfbBind); c.F.updateWorldMatrix(false, true); }
+  }
+  /* Kette messen (Owner-Fix 25.09.): Achse im System des Knochens = Richtung zum nächsten Glied,
+     mit der eigenen Skalierung des Knochens (ein Clip darf Skalenspuren tragen); Längen im Wurzelraum. */
+  _measureChain(c) {
+    const T = this.T, R = this.root; R.updateMatrixWorld(true);
+    const wU = c.U.getWorldPosition(new T.Vector3()), wL = c.L.getWorldPosition(new T.Vector3());
+    c.aU = c.U.worldToLocal(wL.clone()).multiply(c.U.scale).normalize();
+    c.lenU = R.worldToLocal(wU.clone()).distanceTo(R.worldToLocal(wL.clone()));
+    if (c.F) {
+      const wF = c.F.getWorldPosition(new T.Vector3());
+      c.aL = c.L.worldToLocal(wF.clone()).multiply(c.L.scale).normalize();
+      c.lenL = R.worldToLocal(wL.clone()).distanceTo(R.worldToLocal(wF.clone()));
+    } else { c.aL = c.L.position.clone().normalize(); c.lenL = c.L.position.length() * 0.8; }
+    return c;
+  }
+  /* Öffentliche Ziel-IK (Studio + Animation Lab teilen sie): key = handL|handR|footL|footR,
+     target im Wurzelraum. weight < 1 mischt mit dem, was der Clip geschrieben hat. */
+  ikChain(key) {
+    const s = String(key).slice(-1).toLowerCase(), list = /^foot/i.test(key) ? this.legChains : this.chains;
+    return (list || []).find((c) => c.s === s) || null;
+  }
+  effector(key, out) {
+    const c = this.ikChain(key); if (!c) return null;
+    this.root.updateMatrixWorld(true);
+    return this.root.worldToLocal((c.F || c.L).getWorldPosition(out || new this.T.Vector3()));
+  }
+  solveIK(key, target, weight = 1) {
+    const c = this.ikChain(key); if (!c || !target) return null;
+    const q0 = [c.U.quaternion.clone(), c.L.quaternion.clone(), c.F ? c.F.quaternion.clone() : null];
+    c.target.copy(target); this._solve(c);
+    if (weight < 0.999) {
+      c.U.quaternion.slerpQuaternions(q0[0], c.U.quaternion.clone(), weight);
+      c.L.quaternion.slerpQuaternions(q0[1], c.L.quaternion.clone(), weight);
+      if (c.F && q0[2]) c.F.quaternion.slerpQuaternions(q0[2], c.F.quaternion.clone(), weight);
+      c.U.updateWorldMatrix(false, true);
+    }
+    return c;
+  }
+  chainReport() {
+    const r = {};
+    for (const c of (this.chains || []).concat(this.legChains || [])) {
+      const k = (c.leg ? 'foot' : 'hand') + c.s.toUpperCase();
+      r[k] = { U: c.U.name, L: c.L.name, F: c.F ? c.F.name : null, mid: c.mid.map((m) => m.name), lenU: +c.lenU.toFixed(4), lenL: +c.lenL.toFixed(4),
+        naiveLenL: c.F ? +c.F.position.length().toFixed(4) : null };
+    }
+    return r;
   }
   _aim(bone, axis, target) {
     const T = this.T, tW = new T.Vector3(), tP = new T.Vector3();
