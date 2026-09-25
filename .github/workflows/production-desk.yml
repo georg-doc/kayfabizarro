@@ -70,7 +70,7 @@ jobs:
       - name: Desk behaviour test (jsdom)
         run: |
           mkdir -p /tmp/jsd && (cd /tmp/jsd && npm install --no-save --no-audit --no-fund jsdom@24 >/dev/null)
-          NODE_PATH=/tmp/jsd/node_modules node tools/production_desk/tests/desk_dom_test.mjs \
+          NODE_PATH=/tmp/jsd/node_modules node tools/production_desk/tests/hub_ux_v2_contract_test.mjs \
             tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html registry/production/v1
 
       - name: Upload review evidence
