@@ -1,3 +1,22 @@
+## 2026-09-26 · External Demo Research Radar · Pass 1 A–F
+
+- Added `EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md` as the living external donor/research index for Reddit, GitHub and public demos.
+- Research owner remains the KFB Web Architecture planning lane; no runtime owner was created.
+- Timeout-safe work was split and persisted as checkpoints: plan → A–D findings → E–F synthesis → validation → handoff metadata.
+- Strong transfers:
+  - `ENV-PREVIEW-01`: source/presentation preset separation.
+  - `WORLD-NATURE-01`: seeded weighted support sampling + spacing/exclusion + instancing.
+  - accepted WB2: optional three-mesh-bvh localized sculpt optimization only if a measured performance gate appears.
+  - current Race Track Socket/Stunt Registry: cross-section/edge/socket metadata enrichment, no new generator.
+  - `NPC-AITOWN-KISS-01`: ephemeral perception memory separated from durable Journey knowledge.
+  - `WEB-QUICK-3D-REVIEW` / `MOTION-INTAKE-DIRECT-01`: source isolation + compact glTF structural/validation facts.
+  - Card Zone/Stage: portal effect only as optional preview surface; Curtain/Stage keeps enter/return ownership.
+- Anti-patterns recorded: custom renderer rewrite, OSM replacement by procedural roads, second world stack, second NPC runtime, universal new 3D editor, noise-only flora, all-diegetic UI, default portal post stack, destructive auto-optimization.
+- Validation: **14/14 PASS**; report contains **37 HTTPS source/demo links**; catalog remains **13 strands · 96 jobs · 44 READY · 52 HOLD**.
+- Runtime files changed: **0**. Stage/Cloudflare changes: **0**. New production jobs: **0**.
+- Hub metadata now references the research radar without adding a job card.
+- Next gate remains existing production work: `ENV-PREVIEW-01` / World environment integration, using the new research as donor guidance rather than a parallel implementation lane.
+
 ## 2026-09-25 · Shared Environment Preview + World consolidation route
 
 - added `ENV-PREVIEW-01` as READY P0 for WORLD_MATCH / SOURCE_ISOLATION / CONSUMER_PRESET across Resident Atlas and ToolBox/Animation;
