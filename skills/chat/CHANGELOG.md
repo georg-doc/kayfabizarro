@@ -1857,3 +1857,15 @@ Exactly one next gate:
 - added full closure, Voice Input ambiguity handling, dependency classes, mandatory handoff docs, manifest/checksums, embedded `zipcheck.py`, Clean Run and Failure Recovery rules;
 - registered v1.1 in `skills/chat/REGISTRY.json` and the Claude Design adapter;
 - `session-export_v1.md` remains the slim delta-export path.
+
+
+## 2026-09-26 · World + ToolBox r2 intake checkpoint
+
+- main `b24b129b...` contains the current ToolBox Production-01 r2 and World Integration-01 r2 Claude Session Cuts;
+- Architecture PR #204 classifies both as KEEP and routes them to receiving-owner Web/GitHub integration before Stage/Human review;
+- ToolBox r2: pose-rig owner patch candidate, canonical KayKit locomotion profiles, Ear Rig first consumer, S39 no-baseplate fixture, CARD_SURF seam;
+- World r2: same WB2 editor in-world, expanded locomotion consumer, Cologne profile, global facade/roof/support/contact fixes;
+- ToolBox remains canonical locomotion/profile owner; World remains consumer;
+- source/recovery intake validation **12/12 PASS**; Claude runtime counts are preserved as reported evidence, not re-run Web proof;
+- extra Hub UX cut remains separate under HUB-CTRL;
+- no merge or Live promotion.
