@@ -287,21 +287,27 @@
     {
       "id": "racer",
       "bucket": "RUNNING",
-      "title": "Racer / RKIT-06 · Track-Baukasten + OSM Trankgasse",
-      "what": "Blender MCP hat den Racer-Baukasten bis RKIT-06 ausgebaut: TRACK_A_STUNT_8 mit Hero-/Basis-Sprung, Pit Lane, Y-Weiche, Flap-Return/Tunnel sowie Trankgasse auf der realen OSM-Linie. Geometrie ist Review-Candidate; Race/Rapier bleibt Physik-/Kontakt-Owner.",
-      "provider": "Blender MCP / RKIT",
+      "title": "Racer · RKIT-08/09 registriert · LOOP_REAL zuerst",
+      "what": "RKIT-08/09 liefern fünf neue Stuntmodule als Geometrie+Metadaten: LOOP_REAL, LOOP_SLIM, LOOP_MAG_HERO, LOOP_MAG_CASCADE und SKYRAMP-01. Sie sind am WorldBuilder-Track-Socket nur als Referenzen registriert. Noch nichts wurde in Rapier gefahren.",
+      "provider": "Blender MCP / RKIT → Race Web",
       "yourAction": "",
-      "waitingFor": "Nächster technischer Gate: TRACK_A im bestehenden Race/Rapier-Lauf testen. Danach Geometrie nur aus echten Fahr-/Kontaktbefunden nachziehen; anschließend als WorldBuilder-Modul konsumieren.",
+      "waitingFor": "Race fährt zuerst LOOP_REAL im bestehenden Rapier-Host und meldet reale Entry-Speed/Min-Load sowie capture→commit→release→recover. Bis dahin: keine MAG/Cascade/SKYRAMP-Fortsetzung und keine WorldBuilder-Platzierung.",
       "questions": [],
       "repo": "georg-doc/KFB-Stunt-Car-Race",
-      "pr": 39,
+      "pr": 41,
       "external": true,
       "lastKnown": {
-        "head": "53219c9b7ee3d1abe0ef1b0e5364863b42014ea5",
-        "recordedAt": "2026-09-24T16:06:14Z",
-        "note": "Top des gestapelten RKIT-Stacks #34→#39. RKIT-06 enthält TRACK_A_STUNT_8, Pit Lane, SWITCH_Y, Flap-Return/Tunnel und Trankgasse OSM. Externer Repo-Stand weiterhin LAST_KNOWN bis Status-Mirror/gezielter Bridge-Write existiert."
+        "head": "0bbdc539c0d26c8d1feb40a7eda53162a66e7070",
+        "recordedAt": "2026-09-25T03:40:00+02:00",
+        "note": "RKIT-08/09 geometry+metadata delivered; five modules registered for track socket by reference only. All NOT_DRIVEN. World placement blocked until LOOP_REAL Race gate."
       },
-      "branch": "chat/rkit-06-trankgasse-2026-09-24"
+      "branch": "chat/rkit-08-09-stunts-2026-09-25",
+      "brief": {
+        "label": "Stunt Handover",
+        "path": "KFB Cologne Race Option C-3/STUNT_MODULES_RKIT08_09_HANDOVER_2026-09-25.md",
+        "ref": "chat/rkit-08-09-stunts-2026-09-25",
+        "pasteReady": false
+      }
     },
     {
       "id": "world-god",
