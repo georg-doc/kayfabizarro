@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB ToolBox · Production-01 r2 Review</title>
+<meta name="description" content="Bounded KFB ToolBox r2 owner review: exact FrizzleBob source, canonical KayKit locomotion profiles, shared PoseRig/IK and Ear Dangle consumer.">
+<style>
+:root{color-scheme:dark;--bg:#171817;--ink:#f3eee4;--muted:#aaa397;--line:#403d37;--panel:rgba(24,24,22,.88);--accent:#e5a73c;--danger:#e16f61;--ok:#8fc39c}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+button{font:inherit;color:inherit}.app{position:fixed;inset:0;background:#cfcac0}.stage{position:absolute;inset:0}.stage canvas{display:block;width:100%;height:100%}
+.top{position:absolute;z-index:8;left:10px;right:10px;top:10px;min-height:44px;display:flex;align-items:center;gap:6px;padding:6px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(12px);box-shadow:0 7px 24px rgba(0,0,0,.18)}
+.brand{font:700 12px/1.15 Georgia,serif;padding:0 8px 0 5px;white-space:nowrap}.brand small{display:block;margin-top:3px;color:var(--muted);font:700 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
+.group{display:flex;gap:4px}.spacer{flex:1}.btn{height:30px;padding:0 9px;border:1px solid #535048;background:#252521;cursor:pointer;font-size:10px;font-weight:800}.btn:hover{border-color:#8a8377}.btn.on{background:#f0e9db;color:#171817;border-color:#f0e9db}.btn.accent{border-color:#936e2c}.btn:disabled{opacity:.4;cursor:default}
+.readout{position:absolute;z-index:7;left:12px;bottom:12px;max-width:min(520px,calc(100vw - 24px));padding:8px 10px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(10px);font-size:10px;line-height:1.45;pointer-events:none}.readout b{color:var(--ink)}.readout .muted{color:var(--muted)}.readout .ok{color:var(--ok)}.readout .warn{color:#e2bb73}
+.badge{display:inline-block;margin-right:5px;padding:2px 5px;border:1px solid #6c665c;font:800 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}
+.fail{position:absolute;z-index:20;inset:70px 12px auto 12px;padding:12px 14px;background:#211a19;border:1px solid #8b453d;color:#f6d9d5;font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;display:none;white-space:pre-wrap}
+.hint{position:absolute;z-index:6;right:12px;bottom:12px;max-width:245px;padding:7px 9px;background:rgba(24,24,22,.78);border:1px solid rgba(64,61,55,.8);font-size:9px;color:#c5beb2;pointer-events:none}
+@media(max-width:760px){.top{left:6px;right:6px;top:6px;align-items:flex-start;flex-wrap:wrap}.brand{width:100%;padding:2px 5px}.spacer{display:none}.btn{height:28px;padding:0 7px;font-size:9px}.readout{left:7px;right:7px;bottom:7px;max-width:none}.hint{display:none}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<main class="app" data-build="KFB_TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026_09_26">
+  <div id="stage" class="stage"></div>
+  <header class="top">
+    <div class="brand">ToolBox · Production-01 r2<small>OWNER REVIEW · NOT LIVE</small></div>
+    <div class="group">
+      <button class="btn on" id="sourceMode">Source</button>
+      <button class="btn" id="stateMode">State loop</button>
+      <button class="btn" id="poseMode">Pose / IK</button>
+    </div>
+    <div class="spacer"></div>
+    <div class="group">
+      <button class="btn accent" id="jumpBtn" disabled>Jump</button>
+      <button class="btn on" id="earsBtn" disabled>Ears · on</button>
+      <button class="btn" id="posePreset" disabled>Pose · surf</button>
+    </div>
+  </header>
+  <section id="readout" class="readout"><span class="badge">BOOT</span> loading exact pinned owners…</section>
+  <div id="hint" class="hint">Source is deliberately first. Review the actual FrizzleBob EarRig-v5 object in isolation before switching to locomotion or PoseRig.</div>
+  <pre id="fail" class="fail"></pre>
+</main>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const OWNER_HEAD='5dcf34bcdf9d87445e927c98f60d41adae72f00e';
+const EAR_HEAD='19088b142c6a7e7626f27fba8e80caf6ab2437c1';
+const KAYKIT_HEAD='b97b5ac55df2724fae623992433685583eece51e';
+const CDN='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@';
+const POSE_URL=CDN+OWNER_HEAD+'/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js';
+const LOCO_URL=CDN+OWNER_HEAD+'/tools/KFB-ToolBox/stage-first/src/lab/locomotion-profiles.v1.js';
+const CONSUMER_URL=CDN+OWNER_HEAD+'/tools/KFB-ToolBox/stage-first/profiles/locomotion/kfb-locomotion-profiles.Rig_Medium.frizzlebob-earrig-v5.consumer.json';
+const ACTOR_URL=CDN+EAR_HEAD+'/tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5.glb';
+const EAR_MOD_URL=CDN+EAR_HEAD+'/tools/KFB-ToolBox/ear-rig/ear-dangle.v1.js';
+const EAR_CFG_URL=CDN+EAR_HEAD+'/tools/KFB-ToolBox/ear-rig/rigs/fb-default.ear-rig.json';
+const ANIM_ROOT=CDN+KAYKIT_HEAD+'/media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/';
+const PACKS={
+  General:ANIM_ROOT+'Rig_Medium_General.glb',
+  MovementBasic:ANIM_ROOT+'Rig_Medium_MovementBasic.glb',
+  MovementAdvanced:ANIM_ROOT+'Rig_Medium_MovementAdvanced.glb'
+};
+
+const state=window.__KFB_TOOLBOX_R2_REVIEW={
+  ready:false,mode:'source',role:null,sourceIsolated:false,ownerHead:OWNER_HEAD,earHead:EAR_HEAD,kaykitHead:KAYKIT_HEAD,
+  resources:{},errors:[],packCounts:{},poseBuilt:false,chainReport:null,earChains:null,actorMoved:0,transitionCount:0,
+  marker:'KFB_TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026_09_26'
+};
+window.addEventListener('error',e=>{state.errors.push(String(e.message||e.error||'window error'))});
+window.addEventListener('unhandledrejection',e=>{state.errors.push(String(e.reason?.message||e.reason||'unhandled rejection'))});
+
+const $=id=>document.getElementById(id);
+const els={stage:$('stage'),readout:$('readout'),fail:$('fail'),hint:$('hint'),source:$('sourceMode'),state:$('stateMode'),pose:$('poseMode'),jump:$('jumpBtn'),ears:$('earsBtn'),preset:$('posePreset')};
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xd8d3c9);
+scene.fog=new THREE.Fog(0xd8d3c9,13,30);
+const camera=new THREE.PerspectiveCamera(34,1,.03,100);camera.position.set(3.3,2.15,5.4);
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;
+els.stage.appendChild(renderer.domElement);
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.09;controls.target.set(0,1.15,0);controls.maxPolarAngle=Math.PI*.49;
+scene.add(new THREE.HemisphereLight(0xfffbef,0x6e736a,1.8));
+const key=new THREE.DirectionalLight(0xfff4da,2.6);key.position.set(4,8,4);key.castShadow=true;scene.add(key);
+const fill=new THREE.DirectionalLight(0xc5d4e0,.65);fill.position.set(-5,4,-3);scene.add(fill);
+const floor=new THREE.Mesh(new THREE.CircleGeometry(12,64),new THREE.MeshStandardMaterial({color:0xb9b3a7,roughness:.96,metalness:0}));
+floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
+scene.add(new THREE.GridHelper(24,48,0x7e786e,0xa9a297));
+
+const ringPts=[];for(let i=0;i<=128;i++){const a=i/128*Math.PI*2;ringPts.push(new THREE.Vector3(Math.sin(a)*2.7,.012,Math.cos(a)*2.7))}
+const ring=new THREE.Line(new THREE.BufferGeometry().setFromPoints(ringPts),new THREE.LineBasicMaterial({color:0x8a6b37,transparent:true,opacity:.62}));scene.add(ring);
+
+const loading=new THREE.LoadingManager();
+loading.onError=url=>state.errors.push('resource failed: '+url);
+const loader=new GLTFLoader(loading);
+const actorRoot=new THREE.Group();actorRoot.name='review-root';scene.add(actorRoot);
+let figure=null,mixer=null,pose=null,ears=null,earCfg=null,Loco=null,PoseMod=null,clips=new Map(),actions=new Map(),currentAction=null,currentRole=null;
+let earEnabled=true,followPoint=new THREE.Vector3(),lastFollow=new THREE.Vector3(),travelAngle=0,travelTotal=0,mode='source',roleTimer=0,seqIndex=0,jumpPhase=null,jumpTimer=0;
+const seq=[['idle',1.6],['walk',2.8],['walk.fast',2.5],['run',2.3],['sprint',2.1],['run',2.1],['walk',2.5],['idle',1.4]];
+const clock=new THREE.Clock();
+const ikTarget=new THREE.Mesh(new THREE.SphereGeometry(.055,18,12),new THREE.MeshBasicMaterial({color:0xd95843,depthTest:false}));ikTarget.name='handR-target';ikTarget.visible=false;ikTarget.renderOrder=9;actorRoot.add(ikTarget);
+
+function resize(){const w=els.stage.clientWidth,h=els.stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/Math.max(1,h);camera.updateProjectionMatrix()}
+new ResizeObserver(resize).observe(els.stage);resize();
+function showFail(e){const msg=String(e?.stack||e?.message||e);state.errors.push(msg);els.fail.textContent=msg;els.fail.style.display='block';els.readout.innerHTML='<span class="badge">FAIL</span> exact source failed · see error above';console.error(e)}
+function pin(s){return s.slice(0,8)}
+function setButtons(){
+  for(const [b,m] of [[els.source,'source'],[els.state,'state'],[els.pose,'pose']])b.classList.toggle('on',mode===m);
+  els.jump.disabled=mode!=='state';els.ears.disabled=mode==='source';els.preset.disabled=mode!=='pose';
+}
+function readout(){
+  if(mode==='source'){
+    els.readout.innerHTML='<span class="badge">SOURCE</span><b>FB_TEMPLATE_LOOK_v5.glb</b> @ '+pin(EAR_HEAD)+' · exact combined EarRig-v5 object · Rig_Medium<br><span class="muted">No state controller, pose or dangle is applied here. Inspect source first; then switch modes.</span>';
+  }else if(mode==='state'){
+    const p=state.profile?.roles?.[currentRole]||{};
+    const variant=p.variant?.type==='playback-rate'?' · calibrated rate variant':'';
+    els.readout.innerHTML='<span class="badge">STATE</span><b>'+String(currentRole||'—')+'</b> → '+String(p.clip||'—')+' · '+Number(p.rate||1).toFixed(2)+'× · '+Number(p.worldSpeed||0).toFixed(2)+' m/s'+variant+
+      '<br><span class="muted">Locomotion owner @ '+pin(OWNER_HEAD)+' · KayKit @ '+pin(KAYKIT_HEAD)+' · Ear Dangle '+(earEnabled?'on':'off')+' @ '+pin(EAR_HEAD)+'</span>';
+  }else{
+    const c=state.chainReport?.handR;
+    els.readout.innerHTML='<span class="badge">POSE / IK</span><b>shared PoseRig</b> @ '+pin(OWNER_HEAD)+' · preset '+pose?.p?.preset+
+      (c?'<br><span class="ok">handR lower-chain '+Number(c.lenL).toFixed(4)+' m</span> <span class="muted">· naive child '+Number(c.naiveLenL||0).toFixed(4)+' m · drag the red target</span>':'');
+  }
+}
+async function json(url,label){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(label+' HTTP '+r.status);state.resources[label]=url;return r.json()}
+function glb(url,label){return new Promise((resolve,reject)=>loader.load(url,g=>{state.resources[label]=url;resolve(g)},undefined,e=>reject(new Error(label+' GLB failed · '+(e?.message||url)))))}
+function frameActor(){
+  if(!figure)return;actorRoot.updateMatrixWorld(true);
+  const b=new THREE.Box3().setFromObject(figure);const s=b.getBoundingSphere(new THREE.Sphere());const r=Math.max(.6,s.radius);
+  controls.target.copy(s.center);camera.position.copy(s.center).add(new THREE.Vector3(r*1.4,r*.45,r*2.5));controls.update();lastFollow.copy(actorRoot.position);
+}
+function stopActions(){if(mixer)mixer.stopAllAction();currentAction=null;currentRole=null;actions.clear()}
+function findClip(name){return clips.get(name)||null}
+function startRole(role,fade=.16){
+  if(!mixer||!state.profile) return false;
+  const p=state.profile.roles[role];if(!p||!p.clip)return false;
+  const clip=findClip(p.clip);if(!clip){state.errors.push('missing clip '+p.clip);return false}
+  const prev=currentAction;let a=actions.get(p.clip);if(!a){a=mixer.clipAction(clip);actions.set(p.clip,a)}
+  a.enabled=true;a.setEffectiveWeight(1);a.setEffectiveTimeScale(Number(p.rate||1));a.reset();
+  a.setLoop(p.loop===false?THREE.LoopOnce:THREE.LoopRepeat,p.loop===false?1:Infinity);a.clampWhenFinished=p.loop===false;a.play();
+  if(prev&&prev!==a){prev.crossFadeTo(a,fade,true)}
+  currentAction=a;currentRole=role;state.role=role;state.transitionCount++;readout();return true;
+}
+function resetSkeleton(){if(!figure)return;const skels=new Set();figure.traverse(o=>{if(o.isSkinnedMesh&&o.skeleton)skels.add(o.skeleton)});skels.forEach(s=>{try{s.pose()}catch{}});actorRoot.updateMatrixWorld(true)}
+function setMode(next){
+  if(!state.ready&&next!=='source')return;
+  mode=next;state.mode=next;roleTimer=0;seqIndex=0;jumpPhase=null;travelAngle=0;travelTotal=0;stopActions();ikTarget.visible=false;
+  actorRoot.position.set(0,0,0);actorRoot.rotation.set(0,0,0);resetSkeleton();
+  if(ears){ears.L.reset();ears.R.reset()}
+  if(next==='source'){state.sourceIsolated=true;ring.visible=false;frameActor();els.hint.textContent='Exact source object only. No ToolBox controller is active.'}
+  if(next==='state'){ring.visible=true;actorRoot.position.set(0,0,2.7);actorRoot.rotation.y=Math.PI/2;lastFollow.copy(actorRoot.position);seqIndex=2;roleTimer=2.8;startRole('walk',0);frameActor();els.hint.textContent='Automatic Walk → fast Walk → Run → Sprint → Run → Walk → Idle loop. World speed comes from the measured ToolBox consumer profile.'}
+  if(next==='pose'){
+    ring.visible=false;const idle=state.profile.roles.idle;const c=findClip(idle.clip);if(c){currentAction=mixer.clipAction(c);currentAction.reset().play();currentRole='idle'}
+    pose.set({on:true,preset:'surf',weight:1,jig:false});pose.apply();state.chainReport=pose.chainReport();const p=pose.effector('handR');if(p){ikTarget.position.copy(p).add(new THREE.Vector3(-.14,.14,.04));ikTarget.visible=true}
+    frameActor();els.hint.textContent='Drag the red hand target directly in the stage. The owner PoseRig solves the same handR chain used by Studio/Lab.';readout();
+  }
+  setButtons();readout();return next;
+}
+function advanceState(dt){
+  if(jumpPhase){
+    jumpTimer-=dt;
+    if(jumpTimer<=0){
+      if(jumpPhase==='start'){jumpPhase='air';startRole('jump.air',.08);jumpTimer=.7}
+      else if(jumpPhase==='air'){jumpPhase='land';startRole('jump.land',.05);ears?.impulse({pitch:1.05});jumpTimer=(findClip(state.profile.roles['jump.land'].clip)?.duration||.65)}
+      else{jumpPhase=null;seqIndex=0;roleTimer=0;startRole('idle',.12)}
+    }
+    return;
+  }
+  roleTimer-=dt;if(roleTimer<=0){const [r,d]=seq[seqIndex%seq.length];seqIndex++;startRole(r,.16);roleTimer=d}
+}
+function triggerJump(){if(mode!=='state'||jumpPhase)return;jumpPhase='start';startRole('jump.start',.06);jumpTimer=findClip(state.profile.roles['jump.start'].clip)?.duration||.45}
+function moveActor(dt){
+  if(mode!=='state'||jumpPhase)return;
+  const p=state.profile.roles[currentRole];const speed=Number(p?.worldSpeed||0);if(speed<=0)return;
+  const R=2.7,da=speed/R*dt;travelAngle+=da;travelTotal+=speed*dt;
+  actorRoot.position.set(Math.sin(travelAngle)*R,0,Math.cos(travelAngle)*R);actorRoot.rotation.y=travelAngle+Math.PI/2;state.actorMoved=travelTotal;
+  followPoint.copy(actorRoot.position);const delta=followPoint.clone().sub(lastFollow);camera.position.add(delta);controls.target.add(delta);lastFollow.copy(followPoint);
+}
+function animate(){
+  requestAnimationFrame(animate);const dt=Math.min(.04,clock.getDelta());
+  if(mode==='state')advanceState(dt);
+  if(mixer&&currentAction)mixer.update(dt);
+  if(mode==='state')moveActor(dt);
+  if(mode==='pose'&&pose){pose.apply();if(ikTarget.visible)pose.solveIK('handR',ikTarget.position,1)}
+  actorRoot.updateMatrixWorld(true);
+  if(ears&&mode!=='source'&&earEnabled)ears.update(dt,{wind:new THREE.Vector3()});
+  controls.update();renderer.render(scene,camera);
+}
+animate();
+
+let dragging=false,dragPlane=new THREE.Plane(),ray=new THREE.Raycaster(),ndc=new THREE.Vector2();
+function pointerNdc(e){const r=renderer.domElement.getBoundingClientRect();ndc.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1)}
+renderer.domElement.addEventListener('pointerdown',e=>{
+  if(mode!=='pose'||!ikTarget.visible)return;pointerNdc(e);ray.setFromCamera(ndc,camera);
+  if(ray.intersectObject(ikTarget,false).length){dragging=true;controls.enabled=false;const n=camera.getWorldDirection(new THREE.Vector3()).normalize();const wp=ikTarget.getWorldPosition(new THREE.Vector3());dragPlane.setFromNormalAndCoplanarPoint(n,wp);renderer.domElement.setPointerCapture(e.pointerId)}
+});
+renderer.domElement.addEventListener('pointermove',e=>{
+  if(!dragging)return;pointerNdc(e);ray.setFromCamera(ndc,camera);const hit=new THREE.Vector3();if(ray.ray.intersectPlane(dragPlane,hit)){actorRoot.worldToLocal(hit);ikTarget.position.copy(hit)}
+});
+renderer.domElement.addEventListener('pointerup',e=>{if(dragging){dragging=false;controls.enabled=true;try{renderer.domElement.releasePointerCapture(e.pointerId)}catch{}}});
+
+els.source.onclick=()=>setMode('source');els.state.onclick=()=>setMode('state');els.pose.onclick=()=>setMode('pose');els.jump.onclick=triggerJump;
+els.ears.onclick=()=>{earEnabled=!earEnabled;ears?.setEnabled(earEnabled);els.ears.textContent='Ears · '+(earEnabled?'on':'off');els.ears.classList.toggle('on',earEnabled);readout()};
+els.preset.onclick=()=>{if(!pose)return;const next=pose.p.preset==='surf'?'armchair':'surf';pose.set({on:true,preset:next,weight:1,jig:false});state.chainReport=pose.chainReport();els.preset.textContent='Pose · '+next;readout()};
+
+try{
+  const [pm,lm,em,cfg,profile,actor,...packs]=await Promise.all([
+    import(POSE_URL),import(LOCO_URL),import(EAR_MOD_URL),json(EAR_CFG_URL,'earConfig'),json(CONSUMER_URL,'consumerProfile'),glb(ACTOR_URL,'actorSource'),
+    glb(PACKS.General,'General'),glb(PACKS.MovementBasic,'MovementBasic'),glb(PACKS.MovementAdvanced,'MovementAdvanced')
+  ]);
+  PoseMod=pm;Loco=lm;earCfg=cfg;state.profile=profile;
+  if(Loco.SCHEMA!=='kfb.locomotion-profile-set/0.1'||profile.schema!=='kfb.locomotion-profile-set/0.1#consumer')throw new Error('locomotion schema mismatch');
+  figure=actor.scene;figure.name='FB_TEMPLATE_LOOK_v5';figure.scale.setScalar(Number(profile.actorScale||1));figure.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+  actorRoot.add(figure);
+  const b0=new THREE.Box3().setFromObject(figure);figure.position.y-=b0.min.y;actorRoot.updateMatrixWorld(true);
+  mixer=new THREE.AnimationMixer(figure);
+  for(let i=0;i<packs.length;i++){state.packCounts[Object.keys(PACKS)[i]]=packs[i].animations.length;for(const c of packs[i].animations)if(!clips.has(c.name))clips.set(c.name,c)}
+  const required=[...new Set(Object.values(profile.roles).map(p=>p.clip).filter(Boolean))];const missing=required.filter(n=>!clips.has(n));if(missing.length)throw new Error('profile clips missing: '+missing.join(', '));
+  pose=new PoseMod.PoseRig({THREE,root:actorRoot,figure,log:()=>{}});const pst=pose.build();if(pst.status!=='OK')throw new Error('PoseRig unsupported: '+JSON.stringify(pst));
+  state.poseBuilt=true;state.chainReport=pose.chainReport();
+  ears=em.rigEars(figure,earCfg);state.earChains={L:ears.L.bones.map(b=>b.name),R:ears.R.bones.map(b=>b.name)};
+  if(state.earChains.L.length!==3||state.earChains.R.length!==3)throw new Error('EarRig chain discovery failed');
+  state.resources.poseOwner=POSE_URL;state.resources.locomotionOwner=LOCO_URL;state.resources.earOwner=EAR_MOD_URL;
+  state.ready=true;state.sourceIsolated=true;ring.visible=false;frameActor();setButtons();els.ears.disabled=true;readout();
+  state.setMode=setMode;state.jump=triggerJump;state.nudgeIK=()=>{
+    setMode('pose');const before=pose.effector('handR').clone();ikTarget.position.copy(before).add(new THREE.Vector3(-.18,.12,.03));pose.solveIK('handR',ikTarget.position,1);actorRoot.updateMatrixWorld(true);
+    const after=pose.effector('handR').clone();const miss=after.distanceTo(ikTarget.position);state.lastIk={before:before.toArray(),target:ikTarget.position.toArray(),after:after.toArray(),miss};readout();return state.lastIk;
+  };
+  console.info('[TOOLBOX-R2-REVIEW] ready',state);
+}catch(e){showFail(e)}
+</script>
+</body>
+</html>

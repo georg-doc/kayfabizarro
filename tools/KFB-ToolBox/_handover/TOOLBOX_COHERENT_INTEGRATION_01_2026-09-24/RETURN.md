@@ -126,3 +126,34 @@ Current next gate:
 **ToolBox r2 Stage review using the re-homed owners, with a dominant unobstructed 3D stage.**
 
 No merge or Live promotion authorized.
+
+
+## ADDITIVE UPDATE · TOOLBOX r2 STAGE REVIEW FROZEN FAIL · 2026-09-26
+
+The r2 owner rehome above remains technically green. A separate Stage-review consumer was built on Draft PR #220 without changing runtime ownership.
+
+Review branch: `chatgpt-web/toolbox-r2-stage-review-2026-09-26`  
+Frozen implementation candidate: `cab463b6a4b9bfd9cc365694ff462b39bc493b8e`
+
+The review correctly consumes:
+- ToolBox PoseRig + locomotion owner at `5dcf34bc...`;
+- EarRig-v5 / Ear Dangle PR #214 at `19088b14...`;
+- KayKit Rig_Medium source at `b97b5ac5...`;
+- exact `FB_TEMPLATE_LOOK_v5.glb` shown first in isolation.
+
+Browser gate attempt 1: run `36198735113` / job `108280429921` · **28/29 PASS · FAILURE**. The sampled State window stayed at 0.000 m movement.
+
+One bounded repair starts State on semantic Walk.
+
+Browser gate attempt 2: run `36198914554` / job `108280990960` · **28/29 PASS · FAILURE**. Movement now passes at **0.299 m**; the remaining failed assertion is deterministic transition evidence (**1 observed, ≥2 expected**).
+
+Across both runs, exact sources load, General/MovementBasic/MovementAdvanced = **15/11/13 clips**, PoseRig builds, EarRig chains = **3+3 bones**, right lower-arm chain = **0.3162 m** vs naive **0.0738 m**, direct IK miss = **0.0822 m**, and there are zero page/source-request failures.
+
+Screenshot review exposes a separate visible defect: Source/State/Pose and especially mobile are framed too tightly, cropping the top of the head and the EarRig-v5 ears.
+
+**STOP CONDITION REACHED:** no third repair in this slice. PR #220 is preserved Draft. The planned Cloudflare route was **not published**, no Hub human-test link was added, and no merge/Live promotion is authorized.
+
+Failure recovery:
+`../TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026-09-26/START_HERE.md`
+
+Exactly one next gate: a fresh review-surface recovery slice for event-driven semantic transition proof plus complete actor/ear framing. World r2 consumer reconciliation remains after this review gate.
