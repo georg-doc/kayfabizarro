@@ -128,3 +128,14 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - B3 handover: `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`;
 - Blender MCP is allowed for true topology/casing/post/support work;
 - generated public root Hub was not manually edited or claimed republished by this source metadata checkpoint.
+
+
+## 2026-09-25 · Billboard B2b-P1 locked + 5 future drafts
+
+- Georg chose **KFB + small curated CC0 pool** and **mixed hypernormalisation** for B2b-P1.
+- Billboard lane is now **CAN_START** and points to the ultra-short Fresh Chat Start on PR #211.
+- B2b branch current handoff head: `ec475c5d3ae8d975a75e85cf2c60ecae0a0e527b`.
+- B3 WSA/Blender handover now also contains five explicitly non-blocking future drafts:
+  Palimpsest, Billboard Chorus, World Memory, Neighborhood Dialects, Signal Takeover.
+- B3 remains WAITING / NOT STARTED.
+- No generated public root Hub or B2b Stage route is claimed by this metadata update.

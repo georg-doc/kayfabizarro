@@ -179,27 +179,27 @@
     },
     {
       "id": "billboard",
-      "bucket": "LOOK_AT",
-      "title": "Billboard B2b · Living Mockup / Collage Optionen",
-      "what": "B2a ist HUMAN_ACCEPTED. B2b ist als Recherche abgeschlossen: empfohlen wird der vorhandene KFB-CanvasTexture-Collage-Donor als A+ mit deterministischen No-Repeat-Rezepten, provenance-getracktem Pool und leichtem Living-Screen-Look. Noch keine B2b-Runtime.",
+      "bucket": "CAN_START",
+      "title": "Billboard B2b-P1 · Mixed Hypernormalisation bauen",
+      "what": "B2b-Recherche ist abgeschlossen und Georg hat entschieden: KFB + kleiner kuratierter CC0-Pool, mixed hypernormalisation, A+ CanvasTexture. Der nächste Slice darf genau diesen COLLAGE-Modus bauen; kein Editor und keine B2c/B3-Ausweitung.",
       "provider": "Web-Chat",
-      "yourAction": "B2b-Optionsmemo entscheiden: A+ empfohlen; KFB-only vs kleiner CC0-Pool; erster Look torn-history / newspaper / carnival / mixed hypernormalisation; B2b-P1 als nächstes oder B3 parallel.",
-      "waitingFor": "Georg wählt B2b-P1 oder startet B3 explizit parallel.",
+      "yourAction": "Fresh Chat starten und das kompakte B2b-P1-Briefing ausführen. Stop bei Georgs visueller Review.",
+      "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 211,
       "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
-      "expectedHead": "662611e4a28123e9e9449e2da47f57c8dbe43815",
+      "expectedHead": "ec475c5d3ae8d975a75e85cf2c60ecae0a0e527b",
       "brief": {
-        "label": "B2b Optionsmemo",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/OPTIONS_MEMO.md",
+        "label": "B2b-P1 Fresh Chat Start",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_FRESH_CHAT_START_2026-09-25.md",
         "ref": "chatgpt-web/billboard-b2b-research-2026-09-25",
-        "pasteReady": false
+        "pasteReady": true
       },
       "review": {
         "label": "Akzeptierte B2a Medienbasis",
         "path": "kfb-hub/pruefen/billboard-b2a/index.html",
-        "sourceRef": "B2b research-only · PR #211 · no B2b runtime/Stage"
+        "sourceRef": "B2b-P1 READY · no B2b runtime/Stage yet"
       }
     },
     {
@@ -209,16 +209,16 @@
       "what": "Das akzeptierte Kenney-Billboard soll später als runderer, weicherer KFB-Cartoon-Prop modelliert werden. B1/B2a-Medienfläche und Front/Rear-Vertrag bleiben unverändert; Blender MCP ist für echte Topologiearbeit ausdrücklich erlaubt.",
       "provider": "WSA / ToolBox 3D · ggf. Blender MCP",
       "yourAction": "",
-      "waitingFor": "Nach B2b-Optionsentscheid oder explizitem Georg-Parallelstart.",
+      "waitingFor": "B2b-P1 kann jetzt starten. B3 bleibt vorbereitet und startet nur auf Georgs ausdrücklichen Parallel-Start oder danach.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
-      "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
-      "expectedHead": "07da4adfd1de293d03682d1af90a01df2a1eba19",
+      "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
+      "expectedHead": "ec475c5d3ae8d975a75e85cf2c60ecae0a0e527b",
       "brief": {
-        "label": "WSA / Blender MCP Handover",
+        "label": "WSA / Blender MCP Handover + 5 future drafts",
         "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md",
-        "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+        "ref": "chatgpt-web/billboard-b2b-research-2026-09-25",
         "pasteReady": false
       },
       "review": {
