@@ -8,7 +8,7 @@ Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 
 ## Complete production strands
 
-The current architecture contains **13 primary strands / 88 copy-ready jobs**:
+The current architecture contains **13 primary strands / 89 copy-ready jobs**:
 ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions · Card Zones/Card Objects · Player Meta/Fractal Almanac/Adaptive Interface.
 
 Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
@@ -34,6 +34,15 @@ For the full self-service production route, read:
 - `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` — minimal WSA/Work routing note; currently no Work-only execution is justified.
 
 A fresh architecture chat should maintain these strands instead of generating a new planning layer. Individual executor chats update product truth; architecture changes only when an owner/dependency/product direction changes.
+
+## Current WorldBuilder gate · 2026-09-25
+
+WB2 terrain sculpt / interaction is **GEORG HUMAN PASS** on PR #190 at `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`.
+
+Current P0:
+`WB2-DESIGN-REFINE-01` → execute the existing `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` handoff in Claude Design.
+
+Do not add Smooth / Flatten / material painting in that design pass. Cloudflare and merge remain HOLD.
 
 ## Current MVP focus · 2026-09-24
 

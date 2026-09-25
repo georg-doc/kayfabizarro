@@ -1,3 +1,12 @@
+## 2026-09-25 · WB2 accepted → Claude Design current gate
+
+- WB2 PR #190 exact head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284` is GEORG HUMAN PASS.
+- Current P0 is the existing Claude Design terrain-editor authoring/UI handoff; no new WorldBuilder runtime or mega-brief.
+- Preserve all accepted WB2 terrain/editor behavior; simplify side UI, keep inline transforms, increase 3D FOV and integrate existing WorldDesign look controls.
+- Smooth / Flatten / Set Height remain separate later Web slices.
+- Cloudflare and merge remain HOLD.
+- Self-service catalogue now **89 jobs · 43 READY · 46 HOLD** with **89/89** id/prompt/source/profile integrity.
+
 ## 2026-09-25 · Racer RKIT-08/09 stunt registration
 
 - Blender/RKIT PR #41 is registered as current stunt-geometry source.

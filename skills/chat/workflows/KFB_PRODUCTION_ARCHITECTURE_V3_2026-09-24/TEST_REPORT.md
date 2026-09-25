@@ -1,3 +1,17 @@
+## WB2 design-refinement catalogue validation · 2026-09-25
+
+Scope: architecture/catalogue registration only; no runtime, browser or publication test.
+
+**Result: 89/89 integrity PASS**
+
+- 89/89 unique briefing ids;
+- 89/89 prompt sections resolve exactly once;
+- 89/89 source sets resolve;
+- 89/89 execution profiles resolve;
+- `WB2-DESIGN-REFINE-01` points to accepted WB2 PR #190 head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`;
+- existing Claude handoff reused; no second WorldBuilder brief/runtime introduced;
+- Cloudflare and merge remain HOLD.
+
 # TEST REPORT · KFB Production Architecture v3 · 2026-09-24
 
 Status: **158/158 ARCHITECTURE / SOURCE CHECKS PASS**

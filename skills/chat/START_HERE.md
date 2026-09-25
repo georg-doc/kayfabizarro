@@ -11,7 +11,7 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 Georg has requested a production-flow reset toward **self-service, coherent artifacts and review-in-chat first**.
 
-The current v3 candidate now covers **13 primary strands / 88 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
+The current v3 candidate now covers **13 primary strands / 89 copy-ready jobs**: ToolBox, Animation/Residents, WorldBuilder/God Mode, Racer→World, Quick 3D Review, Combat/Choreography, Cube Pets/Actor Identity, Travel Modes/World Surfaces, Vertical/Babel, Town/NPC Life, Shared Stage/Transitions, Card Zones/Card Objects and Player Meta/Fractal Almanac/Adaptive Interface. The Hub must present these strand-first, with job cards collapsed; adjacent 2D/2.5D, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these owners as modules.
 
 Current architecture candidate:
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
@@ -43,6 +43,8 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/AI_TOWN_KFB_EVALUATION_2026-09-24.md` — AI Town mechanics donor decision
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
+Current WorldBuilder gate (2026-09-25): WB2 terrain/interaction is GEORG HUMAN PASS on PR #190 @ `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`. Next is the existing Claude Design authoring/UI refinement handoff; Smooth/Flatten remain later Web slices; no new Cloudflare/merge.
+
 Current Racer gate (2026-09-25): RKIT-08/09 stunt geometry is registered by reference only. Race PR #41 must drive LOOP_REAL first; LOOP_SLIM/MAG/CASCADE/SKYRAMP and all WorldBuilder placement remain blocked until that measured Rapier result. See `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/TRACK_SOCKET_STUNT_REGISTRY_2026-09-25.json`.
 
 Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime and repaired plain review are green; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
