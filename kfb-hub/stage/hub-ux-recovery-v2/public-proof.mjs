@@ -34,7 +34,7 @@ try{
   for(const label of ['Heute','Briefings','Projekte','Entscheidungen','Archiv','Pocket Inbox']){
     check('visible surface '+label,text.includes(label));
   }
-  check('shared support loaded',await page.evaluate(()=>!!customElements.get('x-dc')));
+  check('shared support booted',await page.evaluate(()=>window.__dcContentKeyed===true && !!window.__dcRegistry));
   check('no horizontal overflow desktop',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2));
   await page.screenshot({path:path.join(out,'01-desktop.png'),fullPage:true});
 
