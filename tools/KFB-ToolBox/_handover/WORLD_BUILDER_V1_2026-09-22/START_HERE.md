@@ -18,8 +18,8 @@
 > R3 remains an optional/non-blocking shared-editor convenience candidate: **26/26 + 4/4 + 1/1 PASS**, no human R3 claim. WB2 is now reprioritized by Georg. Cloudflare remains HOLD.
 > WB2 implementation: branch `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23` · stacked Draft PR **#190**.
 > WB2 candidate: `worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html` + `WB2_TERRAIN_SCULPT_01_REVIEW.html` + `terrain-sculpt.js`.
-> WB2 evidence: **24/24** sculpt math/geometry + **33/33** Source/Review contract + **4/4** exact runtime sources; embedded browser self-test **28 prepared / 0 executed**.
-> WB2 Return: `RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`. Exactly one next gate: Georg Chat-HTML terrain-shape review.
+> WB2 evidence: **24/24** sculpt math/geometry + **56/56** current Source/Review contract + **31/31** focused interaction contract + **4/4** exact runtime sources; embedded browser self-test **34 prepared / 0 executed**.
+> WB2 interaction R1: wheel/touchpad changes Brush Radius only while sculpting; hold Space = temporary Orbit preserving Raise/Lower; `1/2/3` = Object/Orbit / Raise / Lower. WB2 Return: `RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`. Exactly one next gate: Georg Chat-HTML terrain + interaction review.
 > The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
 
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
