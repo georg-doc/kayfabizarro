@@ -1,3 +1,31 @@
+## CURRENT RESEARCH RECOVERY · 2026-09-26 · PASS 2 A–L COMPLETE
+
+External donor/research truth:
+`EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+
+Status:
+- **A–L broad recon complete**;
+- **15/15 routing/integrity PASS**;
+- **73 HTTPS source/demo links**;
+- catalog still **13 strands · 96 jobs · 44 READY · 52 HOLD**;
+- **0 new jobs · 0 runtime files · 0 Stage/Cloudflare changes** from Pass 2.
+
+Research is now **question-triggered**, not a standing blanket crawl.
+
+High-value routing:
+- Environment/Nature → `ENV-PREVIEW-01`, `WORLD-NATURE-01`, `WORLD-RECIPE-01`;
+- Vehicles → exact TinySkies Boat/Plane first, Rapier/ecctrl only as bounded donors;
+- Weather → one semantic World state, not per-vehicle copies;
+- Combat → physics supplies contact candidates, Combat owns hit/damage truth;
+- performance → measure → instance/batch → LOD → chunk → stream;
+- touch → one active pointer owner: UI / PLAY / CAMERA / OBJECT / BRUSH;
+- activities → `STAGE-INSTANCE-01` Activity Recipe, not a new minigame engine.
+
+Research-to-production next gate:
+**`ENV-PREVIEW-01` / World environment integration.**
+
+This research routing does not override the separate World-r2 recovery gate `WORLD-R2-CONTRACT-RESET-01`; that gate remains owner-local recovery work.
+
 # ARCHITECTURE CHAT HANDOFF · KFB Production Architecture v3 · 2026-09-24
 
 Status: **CURRENT RECOVERY / CONTINUATION ENTRY**
