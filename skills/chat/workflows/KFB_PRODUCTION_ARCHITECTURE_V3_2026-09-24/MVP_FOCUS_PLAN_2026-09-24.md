@@ -18,6 +18,11 @@ Before expanding mobility, execute the already-prepared `TERRAIN_EDITOR_CLAUDE_D
 
 Smooth and Flatten/Set Height remain later separate Web slices.
 
+### Intake update · WB-D2 + Resident S40 · 2026-09-25
+
+- WB-D2 now supplies the latest World presentation candidate: Cologne/Hürth/Alstädten, facade-rule v1, shadow fix, street names and homebase. It does **not** replace WB2 or World Zone truth. After WB2 Design/Rehome, next gate is `WB-ZONE-SEAM-01`.
+- Resident Disco S40 is already a candidate runtime, not a future design brief. Bridge it into current owners; do not rebuild it. Its 8-song rotation/tempo maps, Disco Ball, collision and DJ/MC are intake candidates with explicit pin/transport/downbeat gaps.
+
 ## MVP 1 · WorldBuilder Mobility Playground
 One WorldBuilder world with source-proven Ground · Drive · Flight · Boat/Water · Plane/Air · Freefall/Parachute only where real support exists.
 

@@ -1,3 +1,16 @@
+## WB-D2 / Resident S40 intake catalogue validation · 2026-09-25
+
+Scope: architecture/catalogue registration only; no runtime/browser/public PASS.
+
+**90/90 integrity PASS**
+- 90/90 unique ids;
+- 90/90 prompt sections resolve exactly once;
+- 90/90 source sets resolve;
+- 90/90 execution profiles resolve;
+- catalogue = 13 strands · 90 jobs · 42 READY · 48 HOLD.
+
+No runtime or Human PASS is inferred from Inbox presence.
+
 ## WB2 design-refinement catalogue validation · 2026-09-25
 
 Scope: architecture/catalogue registration only; no runtime, browser or publication test.

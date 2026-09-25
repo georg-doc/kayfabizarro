@@ -1,3 +1,16 @@
+## CURRENT UPDATE · WB-D2 + RESIDENT S40 INTAKE · 2026-09-25
+
+- classified WB-D2 upload `706c3f12...` as latest World presentation/zone-shell candidate;
+- positive Georg note is limited to Hürth-Alstädten look + shadow fix; B1/B2/S1.2/S1.4 remain open;
+- Alstädten OSM fetch remains intake-only until OSM City Lab re-caches it with provenance;
+- registered previously informal `WB-ZONE-SEAM-01` as HOLD behind WB2 Design/Rehome;
+- classified Resident Atlas S9/S40 upload `a46dbdff...` as candidate-only / review pending;
+- `RES-DISCO-01` now means bridge the existing S40 candidate, not rebuild Source Cast;
+- preserved S40 gaps: raw@main Graft assets, unverified left-hand mic slot, placeholder HIT 2, set-not-measured downbeats, second Band transport and differing Motion Library pins;
+- Direct FBX intake now explicitly emits shared semantic role metadata needed by Resident performances;
+- no Atlas generation is retired by this intake update;
+- catalog now **90 jobs / 42 READY / 48 HOLD**.
+
 ## CURRENT UPDATE · WB2 HUMAN PASS / CLAUDE DESIGN UNBLOCKED · 2026-09-25
 
 - WB2 PR #190 at `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284` is **GEORG HUMAN PASS**.

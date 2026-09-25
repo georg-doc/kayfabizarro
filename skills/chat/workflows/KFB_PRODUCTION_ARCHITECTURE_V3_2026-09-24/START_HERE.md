@@ -8,7 +8,7 @@ Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
 
 ## Complete production strands
 
-The current architecture contains **13 primary strands / 89 copy-ready jobs**:
+The current architecture contains **13 primary strands / 90 copy-ready jobs**:
 ToolBox · Animation/Residents · WorldBuilder/God Mode · Racer→World · Quick 3D Review · Combat/Choreography · Cube Pets/Actor Identity · Travel Modes/World Surfaces · Vertical/Babel · Town/NPC Life · Shared Stage/Transitions · Card Zones/Card Objects · Player Meta/Fractal Almanac/Adaptive Interface.
 
 Adjacent owners such as 2D/2.5D Animation, Storytelling Maps/CardRig, Dungeon, VFX/SFX, Tourbus/WaterBowser and other minigames feed these strands as modules rather than creating another universal runtime.
@@ -24,6 +24,7 @@ For the full self-service production route, read:
 - `RESIDENT_DISCO_01_2026-09-24.md` — researched six/seven-Resident outdoor disco, current dance-library matrix, Mixamo gap shortlist, props and 32-bar choreography route.
 - `CLAUDE_DESIGN_RESIDENT_DISCO_01_2026-09-24.md` — direct Claude Design executor brief for Source Cast → Motion Audition → short Ensemble + reusable Disco Ball Core.
 - `MVP_FOCUS_PLAN_2026-09-24.md` — current five-product MVP ladder.
+- `INTAKE_WBD2_RESIDENT_S40_2026-09-25.md` — current WB-D2 + Resident S40 Inbox classification and receiving-owner rules.
 - `AI_TOWN_KFB_EVALUATION_2026-09-24.md` — AI Town mechanics-donor decision for Residents/emergent life.
 - `KAYKIT_ANIMATION_RESEARCH_UPDATE_2026-09-24.md` — current KayKit State/Action taxonomy + direct FBX intake decision.
 - `IK_CCD_PARITY_DECISION_2026-09-24.md` — upstream Three.js CCDIKSolver vs current KFB reachChain A/B gate.

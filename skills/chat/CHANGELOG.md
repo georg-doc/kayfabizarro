@@ -1,3 +1,13 @@
+## 2026-09-25 · WB-D2 + Resident S40 intake
+
+- WB-D2 classified as latest presentation-shell donor, not WorldBuilder/OSM truth.
+- Alstädten OSM source must be re-cached by OSM City Lab before promotion.
+- WB-ZONE-SEAM-01 registered behind current WB2 Design/Rehome.
+- Resident S9/S40 Disco Rotation classified candidate-only/review-open; existing owners retained.
+- RES-DISCO now bridges the current 8-song candidate instead of rebuilding it.
+- Direct FBX intake gains semantic clip-role metadata requirements from S40.
+- Catalogue now **90 jobs · 42 READY · 48 HOLD**.
+
 ## 2026-09-25 · WB2 accepted → Claude Design current gate
 
 - WB2 PR #190 exact head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284` is GEORG HUMAN PASS.

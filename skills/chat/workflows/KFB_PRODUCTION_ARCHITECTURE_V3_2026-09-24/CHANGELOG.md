@@ -1,3 +1,14 @@
+## 2026-09-25 · WB-D2 + Resident S40 intake classification
+
+- pinned WB-D2 main upload `706c3f121bc3a305778306917613ea23eb772c16` as presentation candidate only;
+- registered `WB-ZONE-SEAM-01` as a real HOLD integration gate after current WB2 Design/Rehome;
+- preserved OSM City Lab ownership and required Alstädten re-cache/provenance before source promotion;
+- pinned Resident S9/S40 upload `a46dbdff150362e7153c143b21fa76ffe8ffb5e4` as candidate-only/review-open;
+- updated RES-DISCO-01 from planned audition to bridge/review of the existing S40 candidate;
+- added S40 semantic role requirements to Direct FBX Motion Intake;
+- did not promote S40 local Atlas/edit-layer/band transport copies to new owners;
+- catalog = **90 jobs / 42 READY / 48 HOLD**.
+
 ## 2026-09-25 · WB2 human pass → Claude Design refinement
 
 - verified WB2 PR #190 exact head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284` and GEORG HUMAN PASS source/Return/Test/SOURCE state;
