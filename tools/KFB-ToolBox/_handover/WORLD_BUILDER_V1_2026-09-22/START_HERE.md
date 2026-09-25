@@ -1,3 +1,5 @@
+> **CURRENT OVERRIDE · 2026-09-26 · WORLD r2 FAILURE RECOVERY:** World Integration r2 was re-homed into PR #190 and consumes the tested ToolBox locomotion profile pin `5dcf34bc...`. Static owner/closure checks are **20/20 PASS**, but the browser gate exhausted its repair budget. Final run `36198999279` proves Hürth boots, 700 buildings load, 13 semantic states bind, and page/network errors are zero; it stops on a stale selftest variant-label contract. Candidate code is frozen at `204afd6dbb1285f8cd77807af0db5fdd6e75308d`. Read `tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/START_HERE.md`. **Do not repair again in this gate.** Next: `WORLD-R2-CONTRACT-RESET-01` test-only contract reconciliation.
+
 # KFB WorldBuilder v1 · Web-first execution · 2026-09-22
 
 > **CURRENT CORRECTION · 2026-09-23**
