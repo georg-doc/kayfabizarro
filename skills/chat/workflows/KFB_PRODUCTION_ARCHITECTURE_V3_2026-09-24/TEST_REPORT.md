@@ -343,3 +343,21 @@ Scope: documentation/recovery consistency only at architecture source head `595f
 
 Current process gate after this validation:
 **wait for and intake the already-running WorldBuilder and ToolBox/Animation exports before issuing corrective briefs.**
+
+## Claude Design session-cut export skill validation · 2026-09-25
+
+Scope: skill/router/recovery wiring only; no Claude Design runtime or ZIP generation was executed by this architecture check.
+
+**Result: 8/8 PASS**
+
+1. specialized skill exists — PASS
+2. /claude-export is a trigger — PASS
+3. runnable current codebase required — PASS
+4. voice-input ambiguity rule exists — PASS
+5. generic session-export routes to specialized skill — PASS
+6. Claude Design adapter routes full exports — PASS
+7. registry entry exists — PASS
+8. router exposes current export skill — PASS
+
+Current standard trigger: `/claude-export`.
+Failure path remains the separate Claude Design failure-recovery export after two unsuccessful repair passes on the same gate.
