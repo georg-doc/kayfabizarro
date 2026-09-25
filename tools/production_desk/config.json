@@ -56,22 +56,31 @@
     },
     {
       "id": "toolbox-source-safe",
-      "bucket": "RUNNING",
-      "title": "ToolBox r2 · Owner-Rehome CI PASS → Stage",
-      "what": "r2-Owner-Deltas sind in PR #185 re-homed. Getesteter Head 5dcf34bc…: PoseRig-Owner+Mirror, kanonische KayKit-Locomotion-Profile und gemessenes FrizzleBob-Consumer-Fixture. CI SUCCESS: 31/31 + 34/34 static, 20/20 + 25/25 Browser, 13/13 Review-Browser.",
+      "bucket": "LOOK_AT",
+      "title": "ToolBox r2 · 33/33 PASS → Georg Review",
+      "what": "Die r2-Owner-Deltas bleiben in PR #185. Der frische Stage-Review PR #221 konsumiert exakt diese Owner plus EarRig-v5/KayKit-Pins. Browser-Gate auf finalem PR-Head ist grün: 33/33; Source Object, State, Pose/IK und Mobile zeigen die vollständige Figur inklusive Ohren.",
       "provider": "ChatGPT Web / ToolBox receiving owner",
-      "yourAction": "",
-      "waitingFor": "Eine dominante/unverdeckte direkte KFB-Stage-Reviewfläche aus den re-homed Ownern; danach Georg r2 Review.",
-      "questions": [],
+      "yourAction": "ToolBox r2 öffnen: zuerst Source Object mit FrizzleBob/EarRig prüfen, dann State und Pose/IK. Danach PASS, TUNE oder REJECT für diese r2-Reviewfläche geben.",
+      "waitingFor": "Georgs direkte Sichtprüfung; kein Merge und keine Live-Promotion davor.",
+      "questions": [
+        "Ist Source Object sichtbar der richtige FrizzleBob mit vollständigen Ohren?",
+        "Wirken Walk → fast Walk → Run und Jump als brauchbare semantische Bewegungsbasis?",
+        "Bleiben Figur, Ohren und Pose/IK auf Desktop und Mobile frei und gut beurteilbar?"
+      ],
       "repo": "georg-doc/kayfabizarro",
       "pr": 185,
       "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
-      "expectedHead": "aaf0ac33b1d7ed418aa49ad0ebbae9941d2d93ee",
+      "expectedHead": "10a83a63acd76d29f6867d15640f7861efc57b00",
       "brief": {
         "label": "r2 Intake / Receiving Route",
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
         "pasteReady": false
+      },
+      "review": {
+        "label": "ToolBox r2 prüfen",
+        "path": "kfb-hub/stage/toolbox/production-01-r2/index.html",
+        "sourceRef": "PR #221 · final head dc946730 · 33/33 Browser PASS · cloudflare-live 44fda28e · public marker verification pending"
       }
     },
     {

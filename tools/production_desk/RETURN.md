@@ -1,3 +1,30 @@
+# CURRENT UPDATE · TOOLBOX r2 STAGE REVIEW GREEN · 2026-09-26
+
+Status: **HUB SOURCE → LOOK_AT · PUBLIC MARKER VERIFICATION PENDING**
+
+ToolBox runtime owner remains PR #185. Runtime-tested r2 head:
+`5dcf34bcdf9d87445e927c98f60d41adae72f00e`.
+
+Fresh recovery review:
+- Draft PR #221;
+- branch `chatgpt-web/toolbox-r2-stage-review-recovery-2026-09-26`;
+- final current review head `dc9467305a190a431d07cc91ccf397fafb0e6123`;
+- final browser workflow `36201627178` SUCCESS;
+- review assertions **33/33 PASS**;
+- exact Stage package mirrored to `cloudflare-live@44fda28e65ba7fd7880660159777ba4ea71f1c38`.
+
+The Hub lane now routes to the direct review path:
+`kfb-hub/stage/toolbox/production-01-r2/index.html`.
+
+This is not yet a PUBLIC_VERIFIED claim. The exact pages.dev route must still expose the recovery marker after Cloudflare deployment, and the generated Hub must still be published/read back.
+
+Exactly one ToolBox next gate:
+**direct Stage + Hub public verification → Georg PASS / TUNE / REJECT.**
+
+No merge and no Live promotion.
+
+---
+
 # CURRENT UPDATE · RACER TRACK CORE ROUTING · 2026-09-26
 
 Status: **HUB SOURCE METADATA CURRENT · ROOT REGENERATION/PUBLICATION NOT CLAIMED**

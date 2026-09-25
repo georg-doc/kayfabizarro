@@ -1,3 +1,12 @@
+## 2026-09-26 · ToolBox r2 recovery review routed to Human Gate
+
+- ToolBox lane moved `RUNNING → LOOK_AT` after PR #221 final-head browser SUCCESS (**33/33**).
+- Direct review path: `kfb-hub/stage/toolbox/production-01-r2/index.html`.
+- Exact package mirrored to `cloudflare-live@44fda28e65ba7fd7880660159777ba4ea71f1c38`.
+- Hub config now exposes a review only through the existing route-check contract.
+- PUBLIC_VERIFIED remains pending until exact pages.dev marker + generated Hub link are opened/read back.
+- No merge or Live promotion.
+
 ## 2026-09-26 · Racer routed to Track Core
 
 - Racer lane updated from RKIT-08/09 LOOP_REAL-first status to the newer Track-Core architecture gate.
