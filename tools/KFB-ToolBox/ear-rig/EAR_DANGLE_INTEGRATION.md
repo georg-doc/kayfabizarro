@@ -1,5 +1,8 @@
 # Floppy bunny ears in the Animation Studio · integration guide + drafts
 
+> **Owner decision · 2026-09-25:** Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js` secondary-motion runtime. FrankenStein Studio owns ear geometry, placement, acted/rest pose and the per-actor ear-rig profile, and consumes this module without copying it. Game consumers may provide wind/contact/impulse facts only.
+
+
 Goal: FrizzleBob's ears move by themselves. They follow every clip (walk, dance, jump, drive), react to wind and landings, and can still be acted (droop, fold, curl). None of this needs extra animation clips. Everything below uses `ear-dangle.v1.js`.
 
 ## 1 · Frame order (the one rule that matters)
@@ -71,6 +74,6 @@ Use baked clips only where the runtime cannot run the module, such as video rend
 
 ## 8 · First gate proposal (Animation Lab)
 1. Mount the FrizzleBob graft with `FB_TEMPLATE_LOOK_v5.glb` ears, or with unit ears placed from `fb-default.ear-rig.json`.
-2. Play Idle, Walk, Run and Jump from the Motion Library, plus one dance, with the ears active. Add `impulse` on the jump's landing frame.
+2. Play canonical KayKit base Idle, Walk, Run and Jump Start/Air/Land, plus one accepted KFB Motion Library dance, with the ears active. Add `impulse` on the real Jump Land/contact transition.
 3. Georg reviews: is the wobble readable, not too much and not too little? Do the ears clip into the head?
 4. Only after that: vehicle wind in the Race/Free-Roam consumer, owned by that consumer.
