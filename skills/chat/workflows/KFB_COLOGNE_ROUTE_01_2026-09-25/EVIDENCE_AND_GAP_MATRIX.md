@@ -1,5 +1,47 @@
 # Cologne Route 01 · Evidence and gap matrix · 2026-09-25
 
+## 2026-09-26 execution-prep delta
+
+### Blender MCP status
+
+Georg reports Blender MCP is currently building the missing connector/offset track pieces.
+
+A GitHub check for current Race RKIT branches/PRs at this point found:
+
+- visible RKIT branches through `chat/rkit-08-09-stunts-2026-09-25`;
+- no GitHub-visible `rkit-10` branch/PR yet;
+- no source path for the in-progress new connector pieces can therefore be pinned honestly yet.
+
+Classification:
+
+`USER-REPORTED IN PROGRESS · GITHUB OUTPUT NOT YET VISIBLE`.
+
+The Web-prep briefing must recover and pin the MCP output before Claude Design consumes it. Missing pieces may not be reconstructed from prose.
+
+### Existing continuous OSM receiver donor
+
+Race PR #12 is an important existing donor for the later Cologne Route lane:
+
+- title: `Stage S1: continuous Hürth → Ehrenfeld OSM corridor`;
+- source corridor reported as 11,384.3 m / 510 points / 220 m half-width;
+- existing Free Roam C0 remains the position/contact/collision/recovery owner;
+- browser proof reported 17/17 corridor checks PASS;
+- public Stage proof reported 29/29 PASS for that historical slice.
+
+This does **not** provide the desired Hürth → Dom → Rhein → Mülheimer Brücke → SAE route, but it proves that the project already has a continuous real-scale OSM corridor/receiver pattern. Cologne Route 01 must reuse that architectural seam rather than create another city-drive receiver.
+
+### Execution decision
+
+Track R0 is now the first integration product, with the OSM seam specified before composition.
+
+Order:
+
+`WEB-PREP-TRACK-R0 → CLAUDE PLAYABLE-TRACK-R0 → WEB REHOME/TEST → OSM ROUTE PREP → CLAUDE OSM COMPOSITION`.
+
+No new runtime/browser tests were executed by this planning update.
+
+---
+
 Status: **PLANNING EVIDENCE · NO NEW RUNTIME TESTS IN THIS SLICE**
 
 This file records the source facts used for the Route 01 plan. It does not promote any open candidate.
