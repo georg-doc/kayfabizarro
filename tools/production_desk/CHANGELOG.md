@@ -1,5 +1,19 @@
 
 
+## 2026-09-25 · HUB-STATUS-SYNC-01 CI pass
+
+- opened Draft PR #215 with one workflow file only; no Hub shell or Cloudflare changes;
+- first CI run failed because inherited render tests expected the current bot-registry fixture;
+- repair pass 1 seeds `registry/production/v1` from `bot/production-desk-update` before tests;
+- second CI run `36168223283` PASS;
+- inherited Production Desk tests: **18/18 PASS**;
+- online registry build + validator PASS / VALID;
+- build result: **19 lanes · 2 LOOK_AT · 5 RUNNING · 7 CAN_START · 4 WAITING · 0 problems**;
+- PR-event publish step is skipped by contract;
+- merge remains a named human/owner gate.
+
+
+
 ## 2026-09-25 · Hub live-data recovery + accepted v2 UX donor
 
 - recorded ToolBox Production-01 and World Integration-01 as **PROCEED PASS** rather than exhaustive feature acceptance;
