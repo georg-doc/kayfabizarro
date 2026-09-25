@@ -352,3 +352,54 @@ Current GitHub confirms Mülheim / SAE (Carlswerkstr. 11c) had no OSM cache in t
 Do not guess names, geography or substitute route pieces.
 Intake the exact Blender export/pin later and classify:
 OSM geographic truth vs authored connector/Track modules.
+
+
+## CURRENT DELTA · 2026-09-26 · WORLD + TOOLBOX R2 RECEIVED
+
+Main intake head:
+`b24b129b787beecd0ca0760611ac4044d3f7189c`
+
+Read:
+`INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md`.
+
+The two current Claude continuation briefs have now returned as Session Cuts and are no longer the next execution start.
+
+### ToolBox r2
+**KEEP · WEB REHOME / OWNER PATCH → STAGE REVIEW**
+
+New candidate:
+`tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-1/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Key owner deltas:
+- shared pose-rig chain fix candidate;
+- canonical KayKit locomotion profile layer;
+- EAR-DANGLE-01 first consumer;
+- S39 no-baseplate performance fixture;
+- CARD_SURF fit seam.
+
+Do not ask Georg for review from the Inbox/Claude surface. First rehome into the existing owner, run repository/browser checks and publish one direct KFB Stage review.
+
+### World r2
+**KEEP · WEB REHOME / REGRESSION → STAGE REVIEW**
+
+New candidate:
+`tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Key result:
+- same WB2 editor/runtime;
+- expanded ground locomotion consumer;
+- global facade/roof/contact presentation;
+- host support follows edited terrain;
+- Cologne profile with protected Dom/Hbf.
+
+Before promotion, reconcile World locomotion consumer facts with the ToolBox r2 shared profile contract. World must not become the canonical profile owner.
+
+### Hub UX
+A separate Hub UX Session Cut also arrived in the same main delta. Keep it under HUB-CTRL; do not mix it into ToolBox/World ownership and do not promote a public shell before the Hub human gate.
+
+### Current lead order
+1. ToolBox r2 receiving-owner rehome.
+2. World r2 receiving-owner rehome + ToolBox locomotion seam.
+3. Direct Cloudflare Stage review surfaces.
+4. Georg review.
+5. Then Ground→Flight / OSM corridor / Race continuation.
