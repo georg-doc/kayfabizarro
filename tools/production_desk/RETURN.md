@@ -1,5 +1,38 @@
 
 
+## CURRENT UPDATE · WORLD / TOOLBOX R2 + HUB UX CUT · 2026-09-26
+
+Status: **SOURCE ROUTING UPDATED · LIVE REGISTRY REFRESH NEXT · NO SHELL CHANGE**
+
+Main intake head:
+`b24b129b787beecd0ca0760611ac4044d3f7189c`.
+
+Architecture intake:
+`skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md`.
+
+### ToolBox
+Current lane = **RUNNING**.
+Claude r2 arrived with reported 19/19 preview selftest and new owner/profile candidates.
+Next = Web/GitHub receiving-owner rehome + repository/browser checks + direct Stage review.
+
+### World
+Current lane = **WAITING** behind ToolBox locomotion/profile owner rehome.
+Claude r2 arrived with reported 55/55 Hürth + 55/55 Cologne.
+World must consume ToolBox shared profile truth before promotion.
+
+### Hub UX
+UX v2 Session Cut also arrived.
+Current lane = **RUNNING** under HUB-CTRL.
+Reproduce/rehome candidate first; no public shell replacement until direct pages.dev review + Georg final gate.
+
+### Boundaries
+- no Inbox candidate promoted by location alone;
+- no raw Inbox file used as a Human review URL;
+- no Cloudflare shell publication in this checkpoint;
+- Status Sync PR #215 remains a separate merge gate.
+
+
+
 ## CURRENT UPDATE · WORLD / TOOLBOX CLAUDE CONTINUATION BRIEFS · 2026-09-25
 
 Current paste-ready starts now exposed in Hub:
