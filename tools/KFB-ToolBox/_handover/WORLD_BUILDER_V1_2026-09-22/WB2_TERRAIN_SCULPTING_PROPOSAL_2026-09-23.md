@@ -307,18 +307,13 @@ The R3 uniform `−/+` size gesture remains a useful shared-editor candidate, bu
 
 Runtime owners must not change.
 
-## One next WB2 gate
+## Current result / next gate
 
-**WB2-TERRAIN-SCULPT-01 · isolated Raise/Lower heightfield brush proof.**
+**WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS.**
 
-Build only:
-- brush ray hit;
-- radius / strength;
-- smooth falloff;
-- Raise / Lower;
-- stroke persistence;
-- Undo / Clear;
-- normal recompute;
-- coexistence with shared `edit-layer.js`.
+The functional terrain-sculpt gate is closed.
 
-Then return one Chat HTML and STOP for Georg's terrain-shape review.
+Exactly one next WorldBuilder gate:
+**Claude Design authoring/UI refinement on the accepted WB2 source.**
+
+Do not extend WB2 here with Smooth / Flatten / material painting. Open those later as separate functional slices if still useful.
