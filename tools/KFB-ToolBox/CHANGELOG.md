@@ -458,3 +458,14 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+## 2026-09-26 · World r2 receiving-owner gate stopped
+
+- World r2 re-homed additively into PR #190; accepted WB2 terrain-sculpt and edit-layer owners remained byte-identical;
+- World consumes ToolBox locomotion profile pin `5dcf34bc...`; source-backed sprint = Running_B;
+- static owner/closure gate **20/20 PASS**;
+- browser attempts: `36198357755` FAIL, repair 1 `36198517698` FAIL, repair 2/final `36198999279` FAIL;
+- final diagnostic proves no page/network load failure; browser stops on stale selftest variant-label semantics;
+- candidate code frozen at `204afd6d...`;
+- full failure recovery exported under `world-integration-01/failure-recovery/`;
+- no third repair pass; next gate is test-only `WORLD-R2-CONTRACT-RESET-01`.
