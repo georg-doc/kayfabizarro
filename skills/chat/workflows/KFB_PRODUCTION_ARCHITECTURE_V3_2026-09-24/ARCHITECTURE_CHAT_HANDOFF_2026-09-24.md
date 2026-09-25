@@ -521,3 +521,54 @@ CI run `36197260540` SUCCESS:
 
 Current ToolBox gate:
 **build one dominant/unobstructed Stage review from the re-homed owners; no return to the rejected AN-PROFILE review transport.**
+
+
+### Receiving-owner execution checkpoint · 2026-09-26
+
+ToolBox r2 has moved out of Inbox-only state.
+
+**ToolBox receiving owner**
+- PR #185
+- branch `chatgpt-web/toolbox-source-lock-2026-09-23`
+- runtime-tested owner head `5dcf34bcdf9d87445e927c98f60d41adae72f00e`
+- current docs head may be newer.
+
+Promoted into existing owners:
+- PoseRig intermediate-wrist/world-position chain fix;
+- byte-identical Stage-First PoseRig mirror;
+- canonical ToolBox `locomotion-profiles.v1.js`;
+- measured FrizzleBob Rig_Medium consumer fixture.
+
+CI run `36197260540` SUCCESS:
+- 31/31 coherent static;
+- 34/34 AN-PROFILE static;
+- 20/20 coherent browser;
+- 25/25 Animation Studio browser;
+- 13/13 plain review browser.
+
+ToolBox next gate:
+**direct unobstructed KFB Stage review from the re-homed owners.**
+
+**World receiving owner**
+- PR #190
+- branch `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23`
+- current candidate head `204afd6dbb1285f8cd77807af0db5fdd6e75308d`.
+
+Re-homed additively:
+- WB2-design/world-integration files;
+- Hürth/Alstädten/Cologne fixtures;
+- World presentation modules;
+- existing WB2 terrain-sculpt and edit-layer remain byte-identical owners.
+
+Critical seam:
+World now consumes the immutable ToolBox profile at `5dcf34bc...`; source-backed sprint is `Running_B`. World retains movement/controller/hysteresis only.
+
+World CI history:
+- Static owner/closure checks: 20/20 PASS.
+- Browser gate first run timed out.
+- Repair pass 1 corrected Playwright timeout handling but still timed out before Hürth selftest.
+- Final allowed repair pass switched the ToolBox profile fetch from jsDelivr to immutable GitHub Raw and added boot diagnostics.
+- current Actions run `36198999279` is in progress.
+- if this run fails, STOP the gate and create failure-recovery export; do not attempt another repair.
+
+No Stage/Public/Human PASS is claimed yet for World r2.
