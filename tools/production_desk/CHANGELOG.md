@@ -1,3 +1,18 @@
+
+
+## 2026-09-25 · Hub live-data recovery + accepted v2 UX donor
+
+- recorded ToolBox Production-01 and World Integration-01 as **PROCEED PASS** rather than exhaustive feature acceptance;
+- refreshed the live `bot/production-desk-update` registry consumed directly by the public Hub;
+- current registry now includes Hub UX Recovery, Hub Status Sync v1, Ear Rig / EAR-DANGLE-01, current ToolBox and World continuation;
+- removed obsolete WB-W0 and Hürth architecture proof items from the current review queue;
+- changed live stale threshold from 8 h to 2 h and heartbeat target to 1 h;
+- recovered exact Georg-accepted Hub UI v2 donor from `dfaafac070747f9543b5eb5a635e2aaa74e57b83`;
+- added `HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md`: donor-first Paper/Dark + Today + Pocket Inbox + local/exportable decision queue;
+- added `HUB_STATUS_SYNC_V1_2026-09-25.md`: durable bot-registry autosync without ordinary Cloudflare redeploys;
+- current public v3 shell remains **HUMAN TUNE** and is not promoted as accepted;
+- no new public shell, merge or product runtime promotion.
+
 ## 2026-09-25 · WB-D2 / S40 root Hub publication
 
 - live registry refreshed to 90 jobs / 42 READY / 48 HOLD and 19 lanes;
