@@ -948,3 +948,39 @@ No game runtime, Stage, merge or Live promotion is claimed.
 ### Exactly one architecture gate
 
 **Do not generate another mega-brief. Preserve the current candidates and act only on the ToolBox/World human gate results.**
+
+
+## 2026-09-25 evening · Georg proceed-pass · ToolBox + World Integration
+
+Georg reviewed both current Claude Design candidates sufficiently to continue.
+
+Status vocabulary for this decision:
+**PROCEED PASS · not exhaustive detail acceptance.**
+
+### ToolBox Production-01
+
+Decision:
+**PROCEED PASS.**
+
+Meaning:
+- current Studio + Animation Lab direction is usable enough to continue;
+- no need to reopen the previous human-review gate before the next integration work;
+- detailed UX/solver/feature gaps remain valid and are not silently accepted.
+
+Next productive work may proceed through the shared ToolBox owners, especially canonical KayKit locomotion/profile consolidation and then EAR-DANGLE-01.
+
+### World Integration-01
+
+Decision:
+**PROCEED PASS.**
+
+Meaning:
+- the integrated WorldBuilder-in-Hürth direction is accepted as the current foundation;
+- Web rehome/regression still needs to preserve the candidate and prove the GitHub/runtime handoff;
+- detailed world defects remain open rather than being converted to PASS.
+
+After rehome/regression, proceed toward shared locomotion consumption, OSM Hürth→Köln/SAE continuity and later Race handoff in the existing gate order.
+
+This decision supersedes the prior “Georg human review pending” routing for these two candidates.
+
+No automatic merge, Cloudflare Live promotion or claim of exhaustive feature acceptance is authorized by this proceed-pass alone.
