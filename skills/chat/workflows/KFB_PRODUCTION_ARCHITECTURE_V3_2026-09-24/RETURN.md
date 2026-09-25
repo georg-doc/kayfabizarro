@@ -1240,3 +1240,28 @@ Repair-budget note:
 this is the final allowed repair pass for the current World r2 browser gate. A further failure triggers preservation + failure-recovery export, not another fix attempt.
 
 No merge, Stage publication or Live promotion authorized.
+
+
+## 2026-09-26 · World r2 browser gate stopped / recovery exported
+
+World r2 receiving-owner work reached the KFB stop rule.
+
+Frozen candidate code:
+`204afd6dbb1285f8cd77807af0db5fdd6e75308d`
+
+Recovery package:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/`
+
+Final run `36198999279`:
+- Static **20/20 PASS**
+- Browser **FAIL**
+- page/network load failures: 0
+- first five Hürth selftest assertions PASS
+- failing contract: stale variant-label assertion after ToolBox profile ownership.
+
+No further repair in this gate.
+
+Next:
+`WORLD-R2-CONTRACT-RESET-01` test-only contract reconciliation.
+
+ToolBox r2 remains **OWNER REHOME CI PASS · STAGE NEXT**.
