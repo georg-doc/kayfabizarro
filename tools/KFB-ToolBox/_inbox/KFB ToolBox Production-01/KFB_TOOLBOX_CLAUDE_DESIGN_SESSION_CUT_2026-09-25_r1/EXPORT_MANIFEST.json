@@ -1,0 +1,198 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "created": "2026-09-25T15:39:59.983Z",
+ "entryPoint": "KFB ToolBox Production-01.dc.html",
+ "files": [
+  {
+   "path": "ASSET_INVENTORY.md",
+   "bytes": 1745,
+   "sha256": "433b85312217090c8b195d8cda35544ad52b2c6eccb9b3babd5c77a44776bf20"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "bytes": 442,
+   "sha256": "ca6cb0344c9b57d3e124ee0cdb47e013d916c0bf7d0fbd23ca7a045bc8bc7b97"
+  },
+  {
+   "path": "CURRENT_STATE.md",
+   "bytes": 521,
+   "sha256": "472983b66f0bd1f21427848ba910fd7eb9dbde6b137945b0649bb9c42c3cd2fe"
+  },
+  {
+   "path": "HANDOVER.md",
+   "bytes": 1343,
+   "sha256": "650b7a59e5b5c5509507086a9acd9d76645b9bfcaee6158979d9a2f0bc1fb955"
+  },
+  {
+   "path": "HOUSEKEEPING.md",
+   "bytes": 456,
+   "sha256": "6f79095d8e1c88aa2c70a18b7dd5f4d905ed39341ac68ecf813885388acbda98"
+  },
+  {
+   "path": "KFB ToolBox Production-01.dc.html",
+   "bytes": 143742,
+   "sha256": "cf477e8f5a1973a03ceebb1b6f894228aa7921b63563fac4e9db9657280bf1f3"
+  },
+  {
+   "path": "NEXT_CHAT.md",
+   "bytes": 269,
+   "sha256": "44e19c3bbc782b35fe7cc8efcc840e9866fc2793b5bf12d9da52191cee81dc3d"
+  },
+  {
+   "path": "RETURN.md",
+   "bytes": 4190,
+   "sha256": "0023091c32112a2fd3ad0626e09615c258422435a55465bdadbb4a0fffa8207d"
+  },
+  {
+   "path": "SOURCE.json",
+   "bytes": 787,
+   "sha256": "65678bf55948a0d5d5b34b34435320a4525620a0397260b86b8fef71cde577e3"
+  },
+  {
+   "path": "START_HERE.md",
+   "bytes": 525,
+   "sha256": "2b71a84d0e217227f981dc3f9ecd5c546a16bd3e84c38a6bd8833e5078d9c33e"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "bytes": 1098,
+   "sha256": "f9b58cf60fbe12c9b829dc617eab0a1f5107ea8edd657f67fe100b625966c0a0"
+  },
+  {
+   "path": "evidence/01-header-780px.jpg",
+   "bytes": 33392,
+   "sha256": "f614a314cc0df636799ab690a355e75dc2190a861a33a31d1b3d0219fb2632ba"
+  },
+  {
+   "path": "evidence/02-header-1400px.jpg",
+   "bytes": 35785,
+   "sha256": "5b4ba8b01f9dd325f7b62657a29734505835171c45be929827ecf846cf254dc5"
+  },
+  {
+   "path": "evidence/03-selftest.jpg",
+   "bytes": 51959,
+   "sha256": "5674c9c0c7bcc7f1b3b8de9a6084dbc47151601914500dce8f78806bb407ca6b"
+  },
+  {
+   "path": "evidence/04-orc-brute-pose.jpg",
+   "bytes": 33785,
+   "sha256": "d543eb693cd7b3851ad338efdc0a20e212bd9826756f1a900e964c07b620603f"
+  },
+  {
+   "path": "evidence/05-legacy-builder.jpg",
+   "bytes": 36035,
+   "sha256": "106f0d33bd7bea8e316af40fd128ccddbb4a825978594c1c1353c05a65fa2b5b"
+  },
+  {
+   "path": "evidence/06-animation-lab.jpg",
+   "bytes": 37115,
+   "sha256": "983f6bf4e577ed38418de457dff64730cb72bf5cb567b4c1b853f8be570696b5"
+  },
+  {
+   "path": "kfb-lib/pet-eye-rig.v6.js",
+   "bytes": 20892,
+   "sha256": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3"
+  },
+  {
+   "path": "kfb-lib/pet-library.v6.js",
+   "bytes": 34954,
+   "sha256": "778534979c35b4a9ba267be5bb9ea63217c27af135897ee9054a9f80627617b7"
+  },
+  {
+   "path": "reference/KFB ToolBox Stage-First Coherent-01.dc.html",
+   "bytes": 68051,
+   "sha256": "6c0637594a3a2b7996aaaefc22dae089f67cbbc305eae4bb41201c492f87a033"
+  },
+  {
+   "path": "reference/RETURN_TB_COHERENT_01.md",
+   "bytes": 2395,
+   "sha256": "500bb3c0cf6ec03d07cb92436f3a42b11a3c4daa6d4cd5583d29e3ecd2727c4b"
+  },
+  {
+   "path": "reference/github.md",
+   "bytes": 30718,
+   "sha256": "21f2833bc2fd3bda39b1095a8d8c8fb361d16672ef6b848ae584ad69447ac07d"
+  },
+  {
+   "path": "support.js",
+   "bytes": 69150,
+   "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe"
+  }
+ ],
+ "limits": {
+  "maxFileBytes": 2097152,
+  "over": []
+ },
+ "inventory": [
+  {
+   "cls": "EXPORTED",
+   "asset": "KFB ToolBox Production-01.dc.html",
+   "note": "entry point"
+  },
+  {
+   "cls": "EXPORTED",
+   "asset": "support.js",
+   "note": "DC runtime (relative ./support.js)"
+  },
+  {
+   "cls": "EXPORTED",
+   "asset": "kfb-lib/pet-library.v6.js",
+   "note": "Cube-pet owner, imported relative ./kfb-lib/"
+  },
+  {
+   "cls": "EXPORTED",
+   "asset": "kfb-lib/pet-eye-rig.v6.js",
+   "note": "local mirror (pet-library sibling); runtime EyeRig comes pinned from repo"
+  },
+  {
+   "cls": "PINNED_REMOTE",
+   "asset": "georg-doc/kayfabizarro@8922d4b1 · tools/KFB-ToolBox/lib/edit-layer.js, kfb-rigs-embed-v3/** (graft chain, pose-rig.v1, pet-mouth.v1, EyeRig v6), graft profile, tools/resident_atlas/scenes/*",
+   "note": "jsDelivr / raw"
+  },
+  {
+   "cls": "PINNED_REMOTE",
+   "asset": "georg-doc/kayfabizarro@032c9d50 · media/3D_Assets/Animations/KFB_Motion_Library/{catalog, profile-catalog.v1, motion-profile-reader.v1.js, Rig_Medium/Large GLB}",
+   "note": "jsDelivr, raw fallback"
+  },
+  {
+   "cls": "PINNED_REMOTE",
+   "asset": "georg-doc/kayfabizarro@b97b5ac5 · KayKit_Character_Animations_1.1 Rig_Large_MovementBasic.glb",
+   "note": "raw"
+  },
+  {
+   "cls": "PINNED_REMOTE",
+   "asset": "georg-doc/kayfabizarro@10a7fdce · KayKit Legacy (Orc Warband parts+props, Character Animations 1.2 rig)",
+   "note": "raw"
+  },
+  {
+   "cls": "PINNED_REMOTE",
+   "asset": "georg-doc/kayfabizarro@891eadf0 · OrcBrute.glb + orcbrute_texture_A.png; Resident assets",
+   "note": "raw"
+  },
+  {
+   "cls": "UNPINNED_REMOTE",
+   "asset": "pet-library.v6 PET_BASE (main) · Cube-pet GLBs",
+   "note": "owner-defined, unchanged"
+  },
+  {
+   "cls": "UNPINNED_REMOTE",
+   "asset": "pet-mouth.v1 MOUTH_BASE (main) · mouth PNGs; graft-mount RAW (main) · host GLBs",
+   "note": "owner-defined inside pinned modules"
+  },
+  {
+   "cls": "CDN_EXTERNAL",
+   "asset": "unpkg three@0.160.0 (three, OrbitControls, GLTFLoader, TransformControls via edit-layer)",
+   "note": "importmap"
+  },
+  {
+   "cls": "CDN_EXTERNAL",
+   "asset": "fonts.googleapis.com · Space Grotesk, IBM Plex Mono",
+   "note": ""
+  },
+  {
+   "cls": "LOCAL_NOT_EXPORTED",
+   "asset": "localStorage key kfb-toolbox-production-01 (Georg's workspace save)",
+   "note": "browser-local by design"
+  }
+ ]
+}

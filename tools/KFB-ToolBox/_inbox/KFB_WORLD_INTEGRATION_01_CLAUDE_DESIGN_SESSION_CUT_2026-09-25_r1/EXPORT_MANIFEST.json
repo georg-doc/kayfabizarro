@@ -1,0 +1,368 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "name": "KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1.zip",
+ "created": "2026-09-25T15:40:00Z",
+ "entryPoint": "KFB WORLD-INTEGRATION-01 · Hürth.dc.html",
+ "files": [
+  {
+   "path": "KFB WORLD-INTEGRATION-01 · Hürth.dc.html",
+   "bytes": 2443,
+   "gitBlob": "404fc0ab259aab478a59a8fe5598a35b644e1310",
+   "sha256": "97bebbd70a3928394eb65784303ee8a18194a8f80387d9cbb6c85acbbf0be464",
+   "role": "ENTRY POINT (new)"
+  },
+  {
+   "path": "support.js",
+   "bytes": 69150,
+   "gitBlob": "cb009b69ec6b5e00f48c6287a587fe7e0c6c421b",
+   "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html",
+   "bytes": 989,
+   "gitBlob": "16de820e15e711c415e3d9d0cdc118426f47ca30",
+   "sha256": "9109b2b19d3f309a75f48becf924c741ab9be48391d19253ccf71612e59aba28",
+   "role": "NEW this session"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-world.js",
+   "bytes": 18858,
+   "gitBlob": "38f56a87b8fa641e2122ba3b60cc3a1feb4be84d",
+   "sha256": "1a426e1274aa1b233d50e744340041182f57bea75fb32441b877394e8ae5d329",
+   "role": "NEW this session"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js",
+   "bytes": 18376,
+   "gitBlob": "106bdf332a352dd920516078db9b0746309bd6f9",
+   "sha256": "d2c596bb01cab759717d8fe605f45399d820396545fd1345e5191d43c9541d3d",
+   "role": "NEW this session"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-play.js",
+   "bytes": 13884,
+   "gitBlob": "9244b6ee84754c9e8be2b6f59acf2849f43ddab0",
+   "sha256": "b0ee4638e0482656be212a414f1b48fb86e980ce1a17622771e4c6eaa37f9f1f",
+   "role": "NEW this session"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-selftest.js",
+   "bytes": 7757,
+   "gitBlob": "fd9d6972eff9d775994321a0e76b3dbe89a44285",
+   "sha256": "f53256def11472eb81275b3ea4b1adb51882c90c05efc1cca9091bad65e4ddaa",
+   "role": "NEW this session"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js",
+   "bytes": 69232,
+   "gitBlob": "50350fa09c4169b5ca1d788859388c3d08db629c",
+   "sha256": "2a576b1c8045118057f08e13d6a870ecc0a40d4602bc4388beabc71d19646eef",
+   "role": "CHANGED this session (world seams)"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-presentation.js",
+   "bytes": 5432,
+   "gitBlob": "fc236b925678644c1905528d74d0fe1f586add9b",
+   "sha256": "9d999f084ecae08f2c231ec811224127a2831f2c6228f674bfeb70c0a63cf3ee",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/wb2-design-01/WB2_DESIGN_01_SOURCE.html",
+   "bytes": 857,
+   "gitBlob": "b45e1be254da1dbc0b8edb8e15b745fd04d2ca89",
+   "sha256": "c03f16795f4dae8068117da07b33c7ebc23e98dd73f9f80ff5e296c8989e5762",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+   "bytes": 4102,
+   "gitBlob": "182f7c42b709a00547a16cfe0040d5d636bdb680",
+   "sha256": "85a5b01bb9c23b5f69c3d546941057825418aaf24e313b5099d115ef782f4d0a",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/lib/edit-layer.js",
+   "bytes": 11419,
+   "gitBlob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+   "sha256": "b3ad5875f013b90dc1bd1f7c94fc02f9c02c2630e56da8a4c80f42740962582e",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/wd-light.js",
+   "bytes": 7190,
+   "gitBlob": "dfa04d9db909a3dcda20f862b8813bd16a6d186f",
+   "sha256": "32f4f89cd3b9bf4aa015709886c9b67927d330c0a7179f1d7911460157665bcb",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/wd-look.js",
+   "bytes": 22604,
+   "gitBlob": "e8d577629b3e2c580fec92717d433fd743a046a1",
+   "sha256": "d896e4149dc0cd0d1c2d72b4e4bd0aba9c6ea1bf25b51fddc4413c1274a4ec8e",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/textures/derek-rgb-ref.png",
+   "bytes": 509130,
+   "gitBlob": "9548595806461ede898c3c9de09a6905c20cc2ff",
+   "sha256": "196262469c53ad8cb862b32679b698f8036990f3806d502fcd19f0625872c4a2",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "wd1-seam.js",
+   "bytes": 3574,
+   "gitBlob": "95c6bfa04a4dd2106039db600b1e826ef48f4490",
+   "sha256": "1c7160f56ba9902d5355d2f54bebee4c7702210055796c411dba19d022ce8158",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "wd1-city.js",
+   "bytes": 40278,
+   "gitBlob": "a5341370b836870f9a5f64b2bbf5b3b74472c0e3",
+   "sha256": "eb6430c1e572811951203c410a5621aa9b96999c481e2272f37ab9614e2d5cc4",
+   "role": "CHANGED this session (additive)"
+  },
+  {
+   "path": "wd1-names.js",
+   "bytes": 14318,
+   "gitBlob": "ba3950b18afdeb93e0c249c6d825f27599fc342f",
+   "sha256": "5e5f2b05d72081c1e179b1f4a3f0d3a183e8403b9c9df9ab29ffd072196d291b",
+   "role": "CHANGED this session (additive)"
+  },
+  {
+   "path": "w0-ink.js",
+   "bytes": 10900,
+   "gitBlob": "9ef4ac9682f04148153c0cc8687f4fe7d867e379",
+   "sha256": "16d83b7b399ab0fb5b8b1ddd424df519c3793cc488ae0745c98183a6673badcf",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "wd-sky.js",
+   "bytes": 4178,
+   "gitBlob": "52aa2533279423d8be8c20c419ab49a97ceafa8a",
+   "sha256": "88f91b9a145b3faaba78353ff778166ae99f9a18f2451d02a199d8093babae51",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "wd-donors.js",
+   "bytes": 25501,
+   "gitBlob": "067e84488658577965013b40e426561895ba276b",
+   "sha256": "34b253a8b79a86fcc634d10c79a5ade5b8c7b4e3cf684a19a9f4f79b914b0971",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "wd-registry.js",
+   "bytes": 3797,
+   "gitBlob": "7100396f0b986250f60afa477005d73b9b68047d",
+   "sha256": "0f1052a4e412759a8c5d05da390eac3313ccadf94e9d1b54bc1ec264139b9bed",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "fixtures/huerth-crop-v0.json",
+   "bytes": 247058,
+   "gitBlob": "c242f09421a72249edb9c9ba8e431532666ab321",
+   "sha256": "d3410e76a4197481b8cc3030630a89f29c816cec987fe4220b35eda5a6c66e10",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "KFB WB2 · Terrain Editor Design.dc.html",
+   "bytes": 1648,
+   "gitBlob": "82f5e957c6d1b28a5ac110901bdccfcc4d7cf927",
+   "sha256": "0d365658555e78c2225adc7016e460430ae8853c3b0b1ca7c9bcf10dee4327d2",
+   "role": "dependency, unchanged"
+  },
+  {
+   "path": "returns/WORLD-INTEGRATION-01_2026-09-25/base/wb2d-app.WB2-DESIGN-01.js",
+   "bytes": 59382,
+   "gitBlob": "8a1e725ea83b309891eae8e0cfc87c7b2c398ccd",
+   "sha256": "0fce1d70ebf87c77b4f14be05945d2fc2bb15d5332befe7ea177d2addf1bb304",
+   "role": "reference (pre-edit base, not runnable in place)"
+  },
+  {
+   "path": "evidence/georg_2026-09-25_16-45_contact-shadow-gap_BEFORE.png",
+   "bytes": 46031,
+   "gitBlob": "82be053ee9f4d6c28b96f492b116cf69d759bf78",
+   "sha256": "ccb4c632cf5564ba428c1f769b8831a627043bf3371bc6ab419fdb5d8a2ca875",
+   "role": "evidence"
+  },
+  {
+   "path": "evidence/georg_2026-09-25_17-06_street-sign-into-road_BEFORE.png",
+   "bytes": 450101,
+   "gitBlob": "df93689e2ffc3cb154c58bb32efcd369445b3688",
+   "sha256": "5e4c75abf70160d41132fbb545b6e298c8f08d9985231dd3e0c12f248c3736f6",
+   "role": "evidence"
+  },
+  {
+   "path": "START_HERE.md",
+   "bytes": 1244,
+   "sha256": "cae8af94238a5dd0e8970eae5437d8d62ac535190ccce69f6e9cba15923171fe",
+   "role": "session document"
+  },
+  {
+   "path": "HANDOVER.md",
+   "bytes": 2094,
+   "sha256": "8e2361bf038bc97a7c3627d89fd3014988f9f734bb97afca277bf7154ac9d236",
+   "role": "session document"
+  },
+  {
+   "path": "CURRENT_STATE.md",
+   "bytes": 1447,
+   "sha256": "4d43614163aae47bb76f8a5b7601efc9c4c9aa5516505e91dc6726f0ca610026",
+   "role": "session document"
+  },
+  {
+   "path": "RETURN.md",
+   "bytes": 8852,
+   "sha256": "a9be767bf15f5d5e166b407478485a28625a7034e0c34b7d938b6b6589173dbb",
+   "role": "session document"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "bytes": 1136,
+   "sha256": "6b457beeb4fabdbd4688ee9911eba272df8a108d3a6449b2ac266be928b85067",
+   "role": "session document"
+  },
+  {
+   "path": "HOUSEKEEPING.md",
+   "bytes": 7383,
+   "sha256": "4c2cf129363f7ecc32c67f7c0156402f8ce9ecee238bc268655bf8fa1eaa324c",
+   "role": "session document"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "bytes": 1463,
+   "sha256": "65e6a5408cc6dcc6c48041bd6db6f2f6079665f5adc695c93d1358c5b5a3152b",
+   "role": "session document"
+  },
+  {
+   "path": "NEXT_CHAT.md",
+   "bytes": 879,
+   "sha256": "36dac1a4e14033060af6931cc505352d978a54e96edc9e83acc64543915f20d9",
+   "role": "session document"
+  },
+  {
+   "path": "SOURCE.json",
+   "bytes": 1781,
+   "sha256": "c3f7c2b4e56d56e783e2faa5418f950e11aa27e26cad423ac7c06d851ea4dbe7",
+   "role": "session document"
+  }
+ ],
+ "inventory": {
+  "EXPORTED": 27,
+  "remotes": [
+   {
+    "class": "CDN_EXTERNAL",
+    "ref": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "from": "KFB WORLD-INTEGRATION-01 · Hürth.dc.html"
+   },
+   {
+    "class": "CDN_EXTERNAL",
+    "ref": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+    "from": "KFB WORLD-INTEGRATION-01 · Hürth.dc.html"
+   },
+   {
+    "class": "PINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@",
+    "from": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-world.js"
+   },
+   {
+    "class": "PINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@0c59e92d9d8688f5a88cd309ae8891dcd174c2fc/tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs",
+    "from": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-world.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://raw.githack.com/georg-doc/kayfabizarro/main/tools/KFB-ToolBox/kfb-rigs-embed-v3/",
+    "from": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js"
+   },
+   {
+    "class": "PINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@a46dbdff1503/tools/KFB-ToolBox/kfb-rigs-embed-v3/",
+    "from": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js"
+   },
+   {
+    "class": "PINNED_REMOTE",
+    "ref": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/",
+    "from": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/travel/KFB%20Travel%20Combat%20v25/terrain-v25/walk-controller.js",
+    "from": "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-play.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/Textures/",
+    "from": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/wd-look.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/",
+    "from": "wd-sky.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/resident_atlas_s6/lib/atlas.js",
+    "from": "wd-donors.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/world_atlas/source/lib/kit-lab.js",
+    "from": "wd-donors.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/KFB-ToolBox/kfb-rigs-embed-v3/",
+    "from": "wd-donors.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/",
+    "from": "wd-donors.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/media/3D_Assets/kfb-pets.js",
+    "from": "wd-donors.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@main/tools/KFB-ToolBox/_inbox/KFB_Plant_Prop_Lab_v1/KFB_Plant_Prop_Lab_v2_EXPORT_2026-09-19/KFB_Plant_Prop_Lab_v2/src/plant-recipe.js",
+    "from": "wd-donors.js"
+   },
+   {
+    "class": "UNPINNED_REMOTE",
+    "ref": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/registry/assets/v1",
+    "from": "wd-registry.js"
+   }
+  ],
+  "RELATIVE_PATH_RISK": [
+   {
+    "from": "returns/WORLD-INTEGRATION-01_2026-09-25/base/wb2d-app.WB2-DESIGN-01.js",
+    "ref": "../../lib/edit-layer.js",
+    "note": "frozen pre-edit reference copy — imports resolve only at its original repo path (wb2-design-01/)"
+   },
+   {
+    "from": "returns/WORLD-INTEGRATION-01_2026-09-25/base/wb2d-app.WB2-DESIGN-01.js",
+    "ref": "../wb2-terrain-sculpt-01/terrain-sculpt.js",
+    "note": "frozen pre-edit reference copy — imports resolve only at its original repo path (wb2-design-01/)"
+   },
+   {
+    "from": "returns/WORLD-INTEGRATION-01_2026-09-25/base/wb2d-app.WB2-DESIGN-01.js",
+    "ref": "./wb2d-presentation.js",
+    "note": "frozen pre-edit reference copy — imports resolve only at its original repo path (wb2-design-01/)"
+   }
+  ],
+  "LOCAL_NOT_EXPORTED": [
+   "wd-*.js other than wd-sky/wd-donors/wd-registry (not in the entry closure)",
+   "uploads/* except the two evidence screenshots"
+  ],
+  "REPLAY_DEPENDENCY_MISSING": [],
+  "CDN_EXTERNAL": [
+   "three@0.160.0 (import map)"
+  ]
+ },
+ "secretScan": "clean",
+ "maxFileBytes": 509130
+}
