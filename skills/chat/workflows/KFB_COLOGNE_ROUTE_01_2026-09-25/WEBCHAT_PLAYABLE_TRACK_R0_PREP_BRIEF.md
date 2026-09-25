@@ -1,5 +1,25 @@
 # WEB-PREP-TRACK-R0 · Fresh Web Chat briefing · 2026-09-26
 
+## CURRENT PRECONDITION · DO NOT START YET
+
+This brief is prepared for a later gate.
+
+It starts only after stacked Track-Core PR #219 has completed:
+
+1. TRACK-CORE-0 census + contracts;
+2. Georg core-language gate;
+3. TRACK-CORE-1A Blender MCP proof;
+4. TRACK-CORE-1B authoritative core/runtime parity;
+5. TRACK-CORE-2 Claude Design transition visual grammar.
+
+At that point this Web prep must consume **Track-Core pieces/data**, not raw one-off RKIT geometry experiments.
+
+Current next gate for the project is:
+
+**TRACK-CORE-0 · ChatGPT Web census + core contract.**
+
+---
+
 **Executor:** ChatGPT Web + GitHub  
 **Execution role:** source recovery, integration planning, input-pack preparation, later rehome/test  
 **Owner changed:** none  
@@ -42,7 +62,7 @@ If the MCP output is still not on GitHub:
 
 ## Five-line bounded slice
 
-**Goal:** prepare exact sources + one playable closed-loop recipe for Claude Design.  
+**Goal:** after Track Core is proven, prepare exact sources + one playable closed-loop recipe for Claude Design.  
 **Owner:** KFB-Stunt-Car-Race.  
 **Source:** current Race runtime + actual current RKIT/MCP branches.  
 **Protected boundary:** no new physics/controller/world/editor owner; no Blender modeling.  
