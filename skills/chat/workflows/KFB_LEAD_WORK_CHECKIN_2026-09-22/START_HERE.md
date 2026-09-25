@@ -413,4 +413,28 @@ Key constraints:
 - no second canvas-wide picker;
 - first proof is Raise/Lower + radius/strength + smooth falloff + Undo/Clear + Save/Reload.
 
-R3 uniform-size remains a separate optional/non-blocking shared-editor review. Georg reprioritized WB2 terrain sculpting as the current next functional WorldBuilder gate.
+R3 uniform-size remains a separate optional/non-blocking shared-editor review. WB2 Terrain Sculpting is now GEORG HUMAN PASS; current next gate is Claude Design authoring/UI refinement.
+
+
+## WorldBuilder WB2 HUMAN PASS · 2026-09-25
+
+Georg accepted the Web-first WorldBuilder functional foundation through WB2:
+
+- WB1 terrain + Resident scene: HUMAN PASS;
+- shared inline object editor R2: HUMAN PASS;
+- WB2 Terrain Sculpt R1: HUMAN PASS, including wheel/touchpad Radius, hold-Space temporary Orbit and `1/2/3` quick modes.
+
+Current next gate is **Claude Design authoring/UI refinement** on the accepted WB2 source.
+
+WSA/Work must not replace the accepted owners:
+- terrain base / sculpt owner remains WorldBuilder;
+- selected-object editing remains `tools/KFB-ToolBox/lib/edit-layer.js`;
+- persistence remains the existing scene document / sculpt-stroke layer.
+
+Later functional candidates remain separate:
+- Smooth;
+- Flatten / Set Height;
+- material painting/masks;
+- large-world sculpt cache/baking.
+
+R3 uniform `−/+` size remains optional/non-blocking.
