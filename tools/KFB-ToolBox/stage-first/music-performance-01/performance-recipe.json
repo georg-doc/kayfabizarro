@@ -1,0 +1,112 @@
+{
+  "schema": "kfb.resident-performance.v1",
+  "id": "kayfabizarros-rubbish-groove-v1",
+  "label": "The KayfaBizarros · Rubbish Groove",
+  "status": "CANDIDATE · MUSIC-PERF-01",
+  "songRef": {
+    "id": "kfb-song-rubbish-groove-2min-a-extend-01",
+    "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+    "blob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+    "previewUrl": "./audio/rubbish_groove.mp3"
+  },
+  "timing": {
+    "bpm": 100,
+    "beatsPerBar": 4,
+    "barOffset": 0,
+    "phaseOffsetSec": 0.465,
+    "rule": "beatPos = (audioTime - phaseOffsetSec) * bpm / 60"
+  },
+  "sourceObject": {
+    "residentModuleId": "orb-kayfabizarros-band",
+    "version": "v5",
+    "donorPr": 195,
+    "donorHead": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+    "glbBlob": "446b044ed7c68bf877afc0f456f0aa87cc390b46",
+    "glb": "./donor/orb_band_module_v5.glb",
+    "metadata": "./donor/orb_module_source.json",
+    "isolationRequired": true
+  },
+  "performers": [
+    {
+      "id": "leader",
+      "residentId": "orb-p1:leader",
+      "sourceNode": "character_orcBBody",
+      "choreography": {
+        "actionRef": "bounce",
+        "startBeat": 0,
+        "beatOffset": 0,
+        "cycleBeats": 8,
+        "loop": true
+      },
+      "enabled": true,
+      "humanResult": "PASS"
+    },
+    {
+      "id": "guitarist",
+      "residentId": "orb-p1:guitarist",
+      "sourceNode": "Rig_Raider",
+      "choreography": {
+        "actionRef": "strum",
+        "startBeat": 0,
+        "beatOffset": 0,
+        "cycleBeats": 1,
+        "loop": true
+      },
+      "enabled": true,
+      "humanResult": "PASS"
+    },
+    {
+      "id": "drummer",
+      "residentId": "orb-p1:drummer",
+      "sourceNode": "Rig_Brute",
+      "visibilityNodes": [
+        "Rig_Brute",
+        "Orc_Wardrum"
+      ],
+      "choreography": {
+        "actionRef": "drum",
+        "startBeat": 0,
+        "beatOffset": 0,
+        "cycleBeats": 2,
+        "loop": true
+      },
+      "enabled": false,
+      "humanResult": "HOLD",
+      "note": "v1-v4 rejected; v5 is exact v0 baseline only"
+    }
+  ],
+  "markers": {
+    "startBeat": 0,
+    "loopStartBeat": 0,
+    "loopEndBeat": 32,
+    "finishBeat": 32
+  },
+  "stageRecipe": {
+    "id": "orb-p1-minimal-camp",
+    "sourceNodes": [
+      "Ground",
+      "Orc_Banner_Large"
+    ],
+    "hostRule": "baseplate-free; host world may replace support surface later"
+  },
+  "cameraRecipe": {
+    "id": "orb-p1-review-camera",
+    "fov": 34,
+    "position": [
+      0.3,
+      6.2,
+      13.8
+    ],
+    "target": [
+      0,
+      1.9,
+      -0.3
+    ],
+    "minDistance": 5,
+    "maxDistance": 24
+  },
+  "review": {
+    "defaultMode": "source",
+    "integratedMode": "performance"
+  }
+}

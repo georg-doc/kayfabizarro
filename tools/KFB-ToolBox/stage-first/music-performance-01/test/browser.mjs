@@ -1,0 +1,83 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { chromium } from 'playwright';
+
+const url=process.env.MUSIC_PERF_URL||'http://127.0.0.1:4173/tools/KFB-ToolBox/stage-first/music-performance-01/';
+const out=process.env.MUSIC_PERF_PROOF||'music-perf-proof';
+fs.mkdirSync(out,{recursive:true});
+const report={status:'UNKNOWN',url,checks:[],errors:[],httpErrors:[]};
+const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)throw new Error(name+(detail?': '+JSON.stringify(detail):''));};
+const near=(a,b,t=.08)=>Math.abs(a-b)<=t;
+const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']});
+let page;
+try{
+  const ctx=await browser.newContext({viewport:{width:1440,height:930}});
+  page=await ctx.newPage();
+  page.on('pageerror',e=>report.errors.push(String(e)));
+  page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text())});
+  page.on('response',r=>{if(r.status()>=400)report.httpErrors.push({url:r.url(),status:r.status()})});
+  await page.goto(url,{waitUntil:'networkidle',timeout:120000});
+  check('build marker',await page.evaluate(()=>document.documentElement.dataset.kfbBuild==='MUSIC-PERF-01-v1'));
+  await page.waitForFunction(()=>window.__MUSIC_PERF_01__?.snapshot().ready===true,{timeout:120000});
+  let s=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  check('source donor id',s.source.id==='orb-kayfabizarros-band',s.source);
+  check('source donor v5',s.source.version==='v5',s.source);
+  check('exact GLB pin',s.source.glbBlob==='446b044ed7c68bf877afc0f456f0aa87cc390b46',s.source.glbBlob);
+  check('exact song pin',s.song.blob==='368eb5ae8fafcfba1cce3ba3f80488378fe056b0',s.song);
+  check('one song owner',s.audioOwnerCount===1,s.audioOwnerCount);
+  check('source mode first',s.mode==='source',s.mode);
+  check('source leader visible',s.performers.leader===true,s.performers);
+  check('source guitarist visible',s.performers.guitarist===true,s.performers);
+  check('source drummer visible',s.performers.drummer===true,s.performers);
+  check('32 beat cells',(await page.locator('.beat-cell').count())===32,await page.locator('.beat-cell').count());
+  await page.evaluate(async()=>{await window.__MUSIC_PERF_01__.setBeat(3.5);});
+  await page.waitForTimeout(150);
+  s=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  check('song duration loaded',Number(s.audioDuration)>30,s.audioDuration);
+  check('song transport seekable',s.seekableRanges>=1,{seekableRanges:s.seekableRanges,audioDuration:s.audioDuration});
+  check('seek beat 3.5',near(s.beatPos,3.5,.03),s.beatPos);
+  check('bounce phase from songclock',near(s.actions.bounce.time,3.5,.04),s.actions.bounce);
+  check('strum phase from songclock',near(s.actions.strum.time,.5,.04),s.actions.strum);
+  check('drum source phase from songclock',near(s.actions.drum.time,1.5,.04),s.actions.drum);
+  await page.screenshot({path:path.join(out,'01-source-object.png'),fullPage:true});
+  await page.evaluate(()=>window.__MUSIC_PERF_01__.setMode('performance'));
+  await page.waitForTimeout(100);
+  s=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  check('performance mode',s.mode==='performance',s.mode);
+  check('leader stays visible',s.performers.leader===true,s.performers);
+  check('guitar stays visible',s.performers.guitarist===true,s.performers);
+  check('drummer HOLD hidden',s.performers.drummer===false,s.performers);
+  await page.evaluate(async()=>{await window.__MUSIC_PERF_01__.setBeat(4);});
+  const before=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  await page.evaluate(()=>window.__MUSIC_PERF_01__.play());
+  await page.waitForTimeout(900);
+  const after=await page.evaluate(()=>window.__MUSIC_PERF_01__.snapshot());
+  check('song playback advances',after.audioTime>before.audioTime+.45,{before:before.audioTime,after:after.audioTime});
+  check('beat clock advances',after.beatPos>before.beatPos+.7,{before:before.beatPos,after:after.beatPos});
+  check('actions follow advancing beat',after.actions.bounce.time>before.actions.bounce.time+.6,{before:before.actions.bounce,after:after.actions.bounce});
+  await page.evaluate(()=>window.__MUSIC_PERF_01__.pause());
+  await page.screenshot({path:path.join(out,'02-performance.png'),fullPage:true});
+  check('no page errors',report.errors.length===0,report.errors);
+  check('no HTTP failures',report.httpErrors.length===0,report.httpErrors);
+
+  const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  const mp=await mobile.newPage();
+  const me=[];mp.on('pageerror',e=>me.push(String(e)));
+  await mp.goto(url,{waitUntil:'networkidle',timeout:120000});
+  await mp.waitForFunction(()=>window.__MUSIC_PERF_01__?.snapshot().ready===true,{timeout:120000});
+  check('mobile no horizontal overflow',await mp.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  check('mobile boots exact donor',(await mp.evaluate(()=>window.__MUSIC_PERF_01__.snapshot().source.glbBlob))==='446b044ed7c68bf877afc0f456f0aa87cc390b46');
+  check('mobile no page errors',me.length===0,me);
+  await mp.screenshot({path:path.join(out,'03-mobile.png'),fullPage:true});
+  await mobile.close();
+
+  report.final=after;report.status='PASS';
+}catch(e){
+  report.status='FAIL';report.failure=String(e.stack||e);
+  if(page)await page.screenshot({path:path.join(out,'FAIL.png'),fullPage:true}).catch(()=>{});
+  process.exitCode=1;
+}finally{
+  fs.writeFileSync(path.join(out,'results.json'),JSON.stringify(report,null,2));
+  console.log(JSON.stringify({status:report.status,checks:report.checks.length,failure:report.failure||null}));
+  await browser.close();
+}

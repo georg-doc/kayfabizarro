@@ -80,8 +80,9 @@ const sceneBtn=node('button',{id:'kfb-ci-scene'},'Resident scene');
 const editBtn=node('button',{id:'kfb-ci-edit'},'Edit');
 const saveBtn=node('button',{id:'kfb-ci-save'},'Save');
 const reloadBtn=node('button',{id:'kfb-ci-reload'},'Reload');
+const musicBtn=node('button',{id:'kfb-ci-music',title:'Animation Studio · Music Performance'},'Music');
 const status=node('span',{id:'kfb-ci-status'},'booting');
-bar.append(sceneSelect,loadBtn,node('span',{class:'sep'}),sourceBtn,sceneBtn,editBtn,node('span',{class:'sep'}),saveBtn,reloadBtn,status);
+bar.append(sceneSelect,loadBtn,node('span',{class:'sep'}),sourceBtn,sceneBtn,editBtn,musicBtn,node('span',{class:'sep'}),saveBtn,reloadBtn,status);
 document.body.append(bar);
 
 const objectMenu=node('div',{id:'kfb-ci-object',hidden:''});
@@ -271,6 +272,7 @@ editBtn.addEventListener('click',()=>{
 });
 saveBtn.addEventListener('click',()=>{try{savePatch();}catch(e){setStatus(e.message,true);}});
 reloadBtn.addEventListener('click',()=>reloadResident().catch((e)=>setStatus(e.message,true)));
+musicBtn.addEventListener('click',()=>{location.href=new URL('./music-performance-01/',import.meta.url).href;});
 
 const priorLoadPet=toolbox.loadPet.bind(toolbox);
 toolbox.loadPet=async(index)=>{

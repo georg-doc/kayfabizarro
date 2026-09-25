@@ -1,0 +1,50 @@
+{
+  "schema": "kfb.music-performance-source/1",
+  "id": "MUSIC-PERF-01",
+  "date": "2026-09-24",
+  "status": "IMPLEMENTATION_CANDIDATE",
+  "owner": {
+    "receivingOwner": "ToolBox PR #185",
+    "receivingBranch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+    "stackedBranch": "web/music-perf-01-2026-09-24",
+    "baseHead": "6224614eccfa24938394e8866aac0dea9c3db3f0"
+  },
+  "architecture": {
+    "pr": 204,
+    "head": "532844c3d2dc6f8e21fbde0467aac7a48f1125f1",
+    "brief": "MUSIC-PERF-01"
+  },
+  "motionLibrary": {
+    "adapter": "tools/KFB-ToolBox/stage-first/src/lab/motion-library.v1.js",
+    "status": "OWNER_PRESERVED",
+    "note": "ORB authored performance actions remain embedded donor actions; no duplicate catalogue."
+  },
+  "donor": {
+    "id": "orb-kayfabizarros-band",
+    "version": "v5",
+    "pr": 195,
+    "head": "9dda7957a33e69926265c1e3a69028a4b35b26f0",
+    "sourceJsonBlob": "369daf8ccf53155c500ad67914b3c31ee12e0959",
+    "moduleJsonBlob": "35de1a9d6138b0a27b61f07056f26970ac56dada",
+    "glbBlob": "446b044ed7c68bf877afc0f456f0aa87cc390b46",
+    "humanState": {
+      "leader": "PASS",
+      "guitarist": "PASS",
+      "drummer": "HOLD"
+    }
+  },
+  "song": {
+    "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+    "blob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+    "bpm": 100,
+    "phaseOffsetSec": 0.465
+  },
+  "invariants": [
+    "one song transport/master clock",
+    "audio is never baked into animation clips",
+    "no performer owns a music player",
+    "exact ORB source object is visible in isolation before recipe filtering",
+    "drummer HOLD is preserved without blocking accepted leader/guitar proof",
+    "no second Resident DB, animation catalogue, renderer or persistence owner"
+  ]
+}
