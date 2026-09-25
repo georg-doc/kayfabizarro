@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -31,6 +31,22 @@
     "EXPERIMENTAL"
   ],
   "entries": [
+    {
+      "id": "session-zip-v1",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.1",
+      "path": "skills/session_ZIP_v1.md",
+      "loadWhen": [
+        "/session-zip",
+        "Session Cut ZIP",
+        "Claude Design full export",
+        "complete handoff",
+        "chat recovery export",
+        "manual pasted session ZIP skill"
+      ],
+      "note": "Self-contained full Claude Design Session Cut + ZIP. Shortcut is optional: pasting the file/instructions with an export request is itself a trigger and export authorization. Includes closure, Handover, active Changelog, Source/Donor locks, asset inventory, voice-input ambiguity handling, manifest/checksums, embedded zipcheck.py, clean-run rules and failure-recovery escalation."
+    },
     {
       "id": "fresh-chat-slice-protocol",
       "kind": "coordination",
