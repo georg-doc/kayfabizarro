@@ -283,3 +283,22 @@ Then:
 10. Georg's FrizzleBob-house Resident Scene.
 
 Work/WSA stays idle unless an executor proves a capability gap.
+
+
+## CURRENT DELTA · 2026-09-25 evening · GEORG PROCEED PASS
+
+Georg has now reviewed both exported candidates sufficiently to continue.
+
+**ToolBox Production-01: PROCEED PASS**
+- continue from the current Studio + Animation Lab candidate;
+- preserve open solver/UX/feature gaps;
+- canonical locomotion/profile consolidation may start;
+- EAR-DANGLE-01 may follow on this accepted working surface.
+
+**World Integration-01: PROCEED PASS**
+- keep this integrated WB2-in-Hürth candidate as the current foundation;
+- Web must still rehome/regression-test the candidate before owner-side integration;
+- then continue OSM continuity / mobility / later Race handoff.
+
+This is explicitly not an exhaustive feature-by-feature acceptance.
+
