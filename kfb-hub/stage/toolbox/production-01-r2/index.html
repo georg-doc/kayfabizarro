@@ -149,7 +149,7 @@ function setMode(next){
   actorRoot.position.set(0,0,0);actorRoot.rotation.set(0,0,0);resetSkeleton();
   if(ears){ears.L.reset();ears.R.reset()}
   if(next==='source'){state.sourceIsolated=true;ring.visible=false;frameActor();els.hint.textContent='Exact source object only. No ToolBox controller is active.'}
-  if(next==='state'){ring.visible=true;actorRoot.position.set(0,0,2.7);actorRoot.rotation.y=Math.PI/2;lastFollow.copy(actorRoot.position);startRole('idle',0);frameActor();els.hint.textContent='Automatic Idle → Walk → fast Walk → Run → Sprint loop. World speed comes from the measured ToolBox consumer profile.'}
+  if(next==='state'){ring.visible=true;actorRoot.position.set(0,0,2.7);actorRoot.rotation.y=Math.PI/2;lastFollow.copy(actorRoot.position);seqIndex=2;roleTimer=2.8;startRole('walk',0);frameActor();els.hint.textContent='Automatic Walk → fast Walk → Run → Sprint → Run → Walk → Idle loop. World speed comes from the measured ToolBox consumer profile.'}
   if(next==='pose'){
     ring.visible=false;const idle=state.profile.roles.idle;const c=findClip(idle.clip);if(c){currentAction=mixer.clipAction(c);currentAction.reset().play();currentRole='idle'}
     pose.set({on:true,preset:'surf',weight:1,jig:false});pose.apply();state.chainReport=pose.chainReport();const p=pose.effector('handR');if(p){ikTarget.position.copy(p).add(new THREE.Vector3(-.14,.14,.04));ikTarget.visible=true}
