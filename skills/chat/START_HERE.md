@@ -989,3 +989,23 @@ B3 rounded-cartoon body remains prepared/not started.
 
 Exactly one current Billboard execution gate:
 **build B2b-P1 only, then Georg visual review.**
+
+
+## 2026-09-26 · Current lead recovery · World + ToolBox r2
+
+Production Architecture remains Draft PR #204:
+`chatgpt-web/production-architecture-v3-2026-09-24`.
+
+Current intake:
+`skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md`
+
+Main Inbox candidates:
+- ToolBox r2: `tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-1/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+- World r2: `tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/`
+
+Current action is **receiving-owner Web/GitHub integration**, not another Claude rebuild:
+ToolBox r2 → owner patch/profile rehome → Stage; then World r2 → reconcile ToolBox locomotion contract → regression → Stage.
+
+The extra Hub UX Session Cut remains HUB-CTRL-owned and separate.
+
+For full Claude Design exports use self-contained `skills/session_ZIP_v1.md` v1.1; slash shortcut is optional.
