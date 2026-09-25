@@ -1,3 +1,15 @@
+## CURRENT UPDATE · RKIT-08/09 STUNT SOCKET REGISTRATION · 2026-09-25
+
+- Race PR #41 is current source for RKIT-08/09 stunt geometry and metadata.
+- Registered by reference only against WorldBuilder socket `socket:cologne-dom-loop:cp0-cp2`.
+- Modules: LOOP_REAL · LOOP_SLIM · LOOP_MAG_HERO · LOOP_MAG_CASCADE · SKYRAMP-01.
+- All five remain **NOT_DRIVEN / world placement blocked**.
+- Binding gate order: Race drives **LOOP_REAL first**; only after measured Rapier result may later stunt modules proceed.
+- Owner split unchanged: RKIT geometry/guide/zones/envelopes · Race contact/capture/assist/MAG/flight/pads/landing/recovery · WorldBuilder placement only after gate.
+- Race-side registration: `georg-doc/KFB-Stunt-Car-Race#41@0bbdc539...`.
+- Architecture registry: `TRACK_SOCKET_STUNT_REGISTRY_2026-09-25.json`.
+- No Stage/public gameplay claim.
+
 # RETURN · KFB Production Architecture v3 · Recovery / Flow intake / Work routing · 2026-09-24
 
 Status: **ARCHITECTURE CANDIDATE READY · 13 STRANDS / 88 JOBS · 42 READY / 46 HOLD · UNMERGED · NO LIVE PROMOTION**

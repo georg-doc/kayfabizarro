@@ -1,3 +1,11 @@
+## 2026-09-25 · Racer RKIT-08/09 stunt registration
+
+- Blender/RKIT PR #41 is registered as current stunt-geometry source.
+- LOOP_REAL is Gate 1 and must be driven in the existing Race/Rapier owner before any MAG/cascade/skyramp progression.
+- LOOP_SLIM, LOOP_MAG_HERO, LOOP_MAG_CASCADE and SKYRAMP-01 remain registered HOLD candidates.
+- WorldBuilder track socket knows the candidates by reference only; no geometry placement is authorized yet.
+- Owner split unchanged; no public Stage/runtime claim.
+
 ## 2026-09-24 · Claude Design Resident Disco handoff
 
 - Prepared direct Claude Design executor brief for RES-DISCO using the fresh Resident Atlas S8 / Orc-band lineage.

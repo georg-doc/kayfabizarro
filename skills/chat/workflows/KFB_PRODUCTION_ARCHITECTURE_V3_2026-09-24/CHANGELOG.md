@@ -1,3 +1,14 @@
+## 2026-09-25 · RKIT-08/09 Track Socket registration
+
+- recovered Racer PR #40/#41 source chain after Blender MCP update;
+- RKIT-07 PR #40 records the SWITCH_Y seam fix; GC canyon probes stay separate;
+- RKIT-08/09 PR #41 registered five stunt modules by reference only: LOOP_REAL, LOOP_SLIM, LOOP_MAG_HERO, LOOP_MAG_CASCADE, SKYRAMP-01;
+- added `TRACK_SOCKET_STUNT_REGISTRY_2026-09-25.json`;
+- current Race gate is **LOOP_REAL first**; all modules remain NOT_DRIVEN;
+- no RKIT-08/09 WorldBuilder placement before the measured LOOP_REAL Rapier gate;
+- safe bypasses and owner split preserved;
+- no new job count, no merge and no Live promotion.
+
 ## 2026-09-24 · Claude Design Resident Disco executor brief
 
 - added `CLAUDE_DESIGN_RESIDENT_DISCO_01_2026-09-24.md` so the prepared Resident Disco can be started directly in Claude Design if this Web chat breaks;

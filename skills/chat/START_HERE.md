@@ -43,6 +43,8 @@ Prepared self-service jobs and current locks:
 - `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/AI_TOWN_KFB_EVALUATION_2026-09-24.md` — AI Town mechanics donor decision
 
 Until PR #204 is accepted/merged, existing project SSOTs and owner branches remain implementation truth. v3 changes the production method, not product ownership.
+Current Racer gate (2026-09-25): RKIT-08/09 stunt geometry is registered by reference only. Race PR #41 must drive LOOP_REAL first; LOOP_SLIM/MAG/CASCADE/SKYRAMP and all WorldBuilder placement remain blocked until that measured Rapier result. See `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/TRACK_SOCKET_STUNT_REGISTRY_2026-09-25.json`.
+
 Current recovery focus (2026-09-24 evening): Audio calibration is accepted; MUSIC-PERF waits for Georg review; ToolBox core/runtime and repaired plain review are green; Cologne World Zone bake is technically complete; three new Flow Design exports are classified as candidate inputs; current WSA/Work decision is to stay idle; the real TRACK_A Rapier runtime proof remains a `WEB_DEEP` Race-owner task. See the two recovery handoffs above.
 
 
