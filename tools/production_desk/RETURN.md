@@ -1,3 +1,26 @@
+# CURRENT UPDATE · RACER RKIT-08/09 · 2026-09-25
+
+Status: **TRACK-SOCKET REGISTERED · NOTHING DRIVEN · WORLD PLACEMENT BLOCKED**
+
+Race source:
+- PR #41 · `chat/rkit-08-09-stunts-2026-09-25`;
+- registration implementation head `0bbdc539c0d26c8d1feb40a7eda53162a66e7070`;
+- current PR head `22c3b2e2ebb66f1da999116e1b9547ac93d6a91d` (Recovery/Changelog added).
+
+Registered by reference:
+LOOP_REAL · LOOP_SLIM · LOOP_MAG_HERO · LOOP_MAG_CASCADE · SKYRAMP-01.
+
+Binding gate:
+**Race drives LOOP_REAL first.**
+
+Until that measured Rapier result:
+- later stunt modules remain HOLD;
+- MAG/cloud-pad behavior remains unimplemented Race-owned work;
+- WorldBuilder placement remains blocked;
+- no Stage/public gameplay claim.
+
+---
+
 # CURRENT UPDATE · TOOLBOX HUMAN FAIL ALIGNMENT · 2026-09-24
 
 Status: **HUB SOURCE ALIGNED · AN-PROFILE-02 HUMAN FAIL/HOLD · PRODUCT OWNER PRESERVED**

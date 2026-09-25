@@ -1,3 +1,12 @@
+## 2026-09-25 · Racer RKIT-08/09 Hub routing
+
+- Hub Racer lane advanced from RKIT-06 to current PR #41;
+- registered five stunt modules by reference only;
+- current gate = LOOP_REAL first in existing Rapier host;
+- all modules remain NOT_DRIVEN and no WorldBuilder placement is authorized;
+- recorded registration head `0bbdc539...` separately from current PR recovery head `22c3b2e2...`;
+- no new Stage route or public gameplay claim.
+
 ## 2026-09-24 · ToolBox human-fail alignment
 
 - synced Georg's AN-PROFILE-02 Human FAIL into Hub Today and ToolBox source routing;
