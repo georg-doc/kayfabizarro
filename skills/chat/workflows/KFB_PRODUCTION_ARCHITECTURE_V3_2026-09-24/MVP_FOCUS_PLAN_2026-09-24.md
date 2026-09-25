@@ -4,6 +4,170 @@ Status: **CURRENT PRODUCT FOCUS · no automatic merge/Live promotion**
 
 Focus: **World Building · Resident Scenes · ToolBox · Car Racer**
 
+
+## CURRENT OVERRIDE · 2026-09-25 · Playable Integration Masterplan
+
+Georg's current lead priority is **integration into playable products**, not another round of standalone editors or look-alike labs.
+
+### Running-work rule
+
+WorldBuilder and ToolBox/Animation are already in active external authoring sessions.
+
+**Do not inject a second competing briefing into those running sessions.**
+
+Next action for both lanes:
+1. let the current session produce a complete export / Session Cut;
+2. intake the export against the current owner and this masterplan;
+3. classify each delta as **KEEP / DONOR ONLY / REPAIR / REJECT / OWNER CONFLICT**;
+4. issue one bounded correction/integration brief only after that comparison.
+
+A successful export is candidate input, not automatic owner promotion.
+
+### P0 · WorldBuilder inside the world
+
+The accepted WB2 terrain/object authoring capability is not a standalone product. It must operate **inside the same World/Travel scene state that is subsequently played**.
+
+Target:
+`play/navigation ↔ edit terrain/object ↔ save/reload ↔ continue playing the same changed world`.
+
+Binding rules:
+- no second terrain editor;
+- no second object editor;
+- WorldBuilder owns terrain authoring/persistence;
+- OSM City Lab / World Zone owns geographic truth;
+- WB-D2 owns presentation/look only;
+- Travel/World owns movement/camera by active mode;
+- Race owns Race physics/contact after explicit handoff.
+
+After the current WorldBuilder export returns, first comparison asks:
+**did Claude consume the accepted WB2/editor owners inside the world, or rebuild them locally?**
+A reconstructed local editor is not integration PASS.
+
+### P0 · Ground locomotion foundation
+
+The default player locomotion must use the **KayKit Character Animations** as the canonical base State/Action vocabulary before Mixamo variants are layered on top.
+
+Core state target:
+`Idle · Walk · Run · source-backed Fast Run/Sprint · Backward · Strafe · Jump Start · Air/Fall · Land · Crouch/Sneak/Crawl`.
+
+The shared locomotion profile must bind:
+- semantic state;
+- source clip;
+- playback rate;
+- measured cadence/foot cycle;
+- expected world speed / stride relation;
+- root-motion policy;
+- contact facts.
+
+**Movement owns translation/physics. Animation follows state and speed.**
+WorldBuilder must not create its own competing animation-state system.
+
+### P0 · Mixamo as variant/action layer
+
+The current Motion Library and new direct FBX intake remain valuable, but they do not define the default player walk/run foundation.
+
+Use them for:
+- character/role variants such as zombie/orc/sad/panicked locomotion;
+- climb;
+- performance/dance;
+- react/cheer;
+- music/MC;
+- combat/actions;
+- missing semantic gaps.
+
+Animation Lab owns audition/classification/profile metadata; consumers request semantic roles instead of hard-coded filenames.
+
+### P0 · ToolBox = two main workspaces
+
+The desired daily ToolBox is one product with two primary tabs:
+
+**STUDIO**
+- Actor/Profile;
+- KayKit body + FrizzleBob graft;
+- Legacy Character Builder;
+- Face / EyeRig / mouth / viseme;
+- material/look;
+- speech/thought bubbles;
+- direct object/prop editing;
+- Pose / IK;
+- hand/foot/contact correction;
+- Vehicle/Cockpit/Surface Fit profiles.
+
+**ANIMATION LAB**
+- canonical KayKit locomotion states;
+- Motion Library audition;
+- direct FBX intake;
+- semantic role assignment;
+- root-motion / stride / speed calibration;
+- jump-state preview;
+- scrub to frame;
+- reuse the same Pose/IK owner for contact/key-pose correction;
+- Blender escalation only for genuinely time-varying retarget/curve/weights/topology/bake work.
+
+No separate Pose Lab or IK Lab becomes another runtime owner.
+
+### IK / posing direction
+
+The current Resident Atlas IK is prototype evidence, not the final UX or solver by assumption.
+
+Production requirement:
+- direct in-scene target selection;
+- compact contextual controls;
+- no constant switching among View / Editor / drawer palettes;
+- same Pose owner in Studio and Animation Lab.
+
+Technical gate remains:
+current KFB solver vs upstream Three.js CCDIKSolver vs constrained CCD on the same rigs.
+Promote only after direct visual/technical gain.
+
+### Vehicle / surface fitting
+
+Reuse existing Seat/Cockpit/CardRider/Vehicle-Fit donor mechanisms.
+
+Profiles should separate:
+- Actor Profile;
+- Pose Profile;
+- Vehicle/Surface Fit Profile;
+- consumer movement adapter.
+
+Near-term fixtures:
+1. **animated KFB CardCarrier** as first Flight vehicle;
+2. author a proper KayKit `CARD_SURF` pose in ToolBox Studio;
+3. Ground → mount → Flight → landing → Ground using the existing Travel mode bridge;
+4. recover/pin Georg's four exact Quaternius transformer-like vehicles before any integration; no substitutes;
+5. later prove Cockpit Driver fit and Drive/Flight handoff.
+
+The rigid old Studio card remains measurement/pose donor only; the animated Travel CardCarrier remains the Flight vehicle.
+
+### OSM / World / Race sequence
+
+After the current WorldBuilder export is reconciled:
+
+1. integrate real WorldBuilder editing into one canonical World Zone;
+2. re-cache/promote Hürth/Alstädten through the OSM owner where required;
+3. build the missing real OSM corridor pieces toward Köln/SAE;
+4. test modular Race parts in the real Race/Rapier owner first;
+5. only accepted Track modules enter the world through an explicit World → Race handoff.
+
+No invented geography and no Race physics inside WorldBuilder.
+
+### Current human-facing priority order
+
+1. **Recover and review the running WorldBuilder export.**
+2. **Recover and review the running ToolBox/Animation export.**
+3. Correct those two products against this masterplan; do not restart them from scratch.
+4. Ground locomotion: KayKit canonical state graph + cadence/speed calibration.
+5. Ground ↔ animated Card Flight with authored Surf Pose.
+6. OSM Hürth → Köln/SAE continuity.
+7. Race modular runtime proof → World placement/handoff.
+8. Continue Resident/NPC/Disco work in parallel only where it reuses these shared owners.
+
+### Success criterion
+
+Progress is measured by **playable integrated capability**, not by the number of editors, labs, PRs or demos created.
+
+A slice is successful when an existing capability is usable in the real consumer product without creating a competing owner.
+
 ### Current WorldBuilder gate · WB2 accepted → Claude Design
 
 WB2 terrain sculpting and interaction are **GEORG HUMAN PASS** at PR #190 head `ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`.
