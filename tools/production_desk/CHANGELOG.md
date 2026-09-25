@@ -1,5 +1,16 @@
 
 
+## 2026-09-26 · ToolBox/World r2 + Hub UX intake
+
+- ToolBox r2 Session Cut received on main; Hub lane advanced from Claude-start to RUNNING receiving-owner rehome;
+- World r2 Session Cut received; Hub lane moved to WAITING behind ToolBox canonical locomotion/profile rehome;
+- World r2 reported 55/55 Hürth + 55/55 Cologne; ToolBox r2 reported 19/19, preserved as Claude evidence only;
+- Hub UX v2 Session Cut also arrived and is now RUNNING under HUB-CTRL rehome/public-review preparation;
+- all three route through current Architecture intake instead of raw Inbox as SSOT;
+- no public shell, product Stage, merge or Live promotion changed by this metadata update.
+
+
+
 ## 2026-09-25 · Current Claude continuation briefs
 
 - Hub World card now points to the current World Integration Claude continuation brief;
