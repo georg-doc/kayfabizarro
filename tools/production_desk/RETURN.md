@@ -1,3 +1,46 @@
+# CURRENT UPDATE · RACER TRACK CORE ROUTING · 2026-09-26
+
+Status: **HUB SOURCE METADATA CURRENT · ROOT REGENERATION/PUBLICATION NOT CLAIMED**
+
+Racer lane now routes to the Track-Core planning source rather than the older RKIT-08/09 LOOP_REAL-first gate.
+
+Current source:
+
+- PR #219;
+- branch `georg-doc-patch-2`;
+- expected source head `c3ccd0d85a68593f5a545fd41ae0ef2112391965`;
+- current gate `TRACK-CORE-0 · ChatGPT Web census + core contract`;
+- current executor chain: Web → Claude Coworker + Blender MCP → Web → Claude Design.
+
+Perplexity transition research is represented only as reviewed mechanism input:
+
+- true Clothoid/Euler curvature easing;
+- connector boundary state;
+- staggered transition zones;
+- separate visual style layers.
+
+The supplied example Blender Python generator is not a production donor.
+
+Downstream:
+
+- Playable Track R0;
+- real Hürth → Dom → Rhein → Mülheimer Brücke → SAE OSM Route 01.
+
+Race PR #42 / RKIT-11 remains the frozen Track-Core acceptance fixture and is not presented as Race-driven or public.
+
+This update changes only HUB-CTRL source/config metadata.
+
+- new Hub builder/browser tests: **0**
+- new root Hub generation: **0**
+- new Cloudflare publication: **0**
+- PUBLIC_VERIFIED claim: **none**
+
+Exactly one Racer next gate:
+
+**TRACK-CORE-0 · ChatGPT Web census + core contract.**
+
+---
+
 
 
 ## CURRENT UPDATE · TOOLBOX r2 GREEN / WORLD r2 STOP · 2026-09-26
