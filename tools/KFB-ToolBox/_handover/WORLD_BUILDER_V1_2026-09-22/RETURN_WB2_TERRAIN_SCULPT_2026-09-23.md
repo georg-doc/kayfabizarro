@@ -1,6 +1,6 @@
 # RETURN · WorldBuilder WB2-TERRAIN-SCULPT-01 · 2026-09-23
 
-Status: **IMPLEMENTED · STATIC/EVIDENCE PASS · CHAT HTML HUMAN REVIEW PENDING**
+Status: **R1 INTERACTION ENRICHED · STATIC/EVIDENCE PASS · CHAT HTML HUMAN REVIEW PENDING**
 
 ## Outcome
 
@@ -14,6 +14,9 @@ Implemented:
 - brush Strength;
 - visible brush footprint;
 - drag strokes;
+- mouse-wheel / touchpad brush-radius adjustment while sculpting;
+- hold-Space temporary Orbit without losing the active Raise/Lower mode;
+- quick mode keys: `1` Object/Orbit · `2` Raise · `3` Lower;
 - true C2 quintic radial falloff;
 - Undo last stroke;
 - Clear sculpt layer;
@@ -78,13 +81,13 @@ Canonical Source:
 `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html`
 
 Source blob:
-`188d5b46e34407c3800edeb2b896d3cf0cf93925`
+`a250f1a36137121942f0f99d6a259146d718b162`
 
 Zero-install Review:
 `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html`
 
 Review blob:
-`cee8dfa49c4a67d3f3a91ec75adf5866f3154c83`
+`393e277adaef0948597ae6781b17d6ddabac1972`
 
 Terrain-sculpt module:
 `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js`
@@ -99,7 +102,7 @@ Source manifest:
 `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/SOURCE.json`
 
 Source manifest blob:
-`291c4775c793df5a788c363074b5203994ae6b78`
+`a9e7839bd65d321d66616d2616673fde33287d8d`
 
 ## Architecture
 
@@ -153,6 +156,19 @@ Shared ToolBox `edit-layer.js` remains the owner of:
 
 Sculpt pointer handlers use `stopImmediatePropagation()` while active so the same gesture is not also consumed by Orbit/Object-editor listeners on the canvas.
 
+## R1 authoring interaction enrichment
+
+Georg requested faster terrain-authoring gestures without changing owners:
+
+- wheel / touchpad scroll changes Brush Radius only while Raise/Lower is active;
+- Object/Orbit mode keeps normal OrbitControls wheel zoom;
+- hold Space temporarily yields the canvas to Orbit while preserving the active Raise/Lower mode;
+- releasing Space returns immediately to the same sculpt mode;
+- `1 / 2 / 3` provide fast Object/Orbit / Raise / Lower switching;
+- existing object-editor `R` Rotate and `S` free Scale shortcuts remain unchanged.
+
+Human acceptance of these new interaction gestures is still pending.
+
 ## Pre-review corrections
 
 Before human review:
@@ -169,7 +185,10 @@ No human repair pass has occurred yet.
 **24/24 PASS**
 
 ### Source + Review contract
-**33/33 PASS**
+**56/56 PASS**
+
+Focused wheel / temporary-Orbit / quick-mode contract:
+**31/31 PASS**
 
 ### Exact pinned runtime sources
 **4/4 PASS**
@@ -179,7 +198,7 @@ No human repair pass has occurred yet.
 - Rig_Medium CombatMelee animation.
 
 ### Embedded browser self-test
-**28 assertions prepared / 0 executed**
+**34 assertions prepared / 0 executed**
 
 Automated browser runtime:
 **0**
@@ -226,12 +245,15 @@ UI direction is nevertheless recorded: object transforms remain inline; later cl
 
 Check:
 1. Raise a low hill;
-2. Lower a shallow depression;
-3. vary Radius and Strength;
-4. orbit close for cracks/spikes/hard brush edges/faceting;
-5. Undo;
-6. Clear back to procedural base;
-7. sculpt → Save → change/clear → Reload;
-8. return to Object edit and confirm the accepted inline editor still works.
+2. use mouse wheel / two-finger touchpad scroll while sculpting and confirm the visible brush radius changes;
+3. hold **Space**, orbit, release Space and confirm the previous Raise/Lower mode resumes;
+4. test `1 / 2 / 3` for Object/Orbit / Raise / Lower;
+5. Lower a shallow depression;
+6. vary Radius and Strength;
+7. orbit close for cracks/spikes/hard brush edges/faceting;
+8. Undo;
+9. Clear back to procedural base;
+10. sculpt → Save → change/clear → Reload;
+11. return to Object edit and confirm the accepted inline editor still works.
 
 Then STOP and record only the human findings.
