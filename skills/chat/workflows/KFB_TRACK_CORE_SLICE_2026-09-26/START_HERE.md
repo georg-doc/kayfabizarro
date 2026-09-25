@@ -1,5 +1,44 @@
 # KFB Track Core · one base track, pieces only · planning slice
 
+## CURRENT RESEARCH / EXECUTION DELTA · 2026-09-26
+
+The Perplexity intake at:
+
+`tools/KFB-ToolBox/_inbox/KFB Race Track Baukasten TBD perplexity 01.md`
+
+has now been reviewed against the actual RKIT/Track-Core state.
+
+Decision:
+
+- **ADOPT:** real Clothoid/Euler curvature easing for M1/M2, connector boundary-state thinking, transition zones, graph/RouteRecipe semantics, separate style/prop/FX layers;
+- **ADAPT:** “universal connector faces” become the canonical Track-Core slot topology + parameter curves over `s`; Geometry Nodes is a Blender proof/authoring tool, not a second SSOT;
+- **DO NOT ADOPT:** the supplied Blender Python sample as production architecture. It uses simplified endpoint stepping, separate road/line/barrier meshes, generic materials and a circular arc labelled as Clothoid.
+
+Current detailed review:
+
+`PERPLEXITY_TRANSITION_RESEARCH_ASSESSMENT.md`
+
+Current agent ladder:
+
+1. **TRACK-CORE-0 · ChatGPT Web + GitHub** — complete census + core contracts + language decision memo.
+2. **Georg language gate** — authoritative core language; current recommendation = JavaScript, Blender/Python as oracle.
+3. **TRACK-CORE-1A · Claude Coworker + Blender MCP** — source-first Clothoid/frame/slot/transition geometry proof and RKIT-11 acceptance fixture.
+4. **TRACK-CORE-1B · ChatGPT Web + GitHub** — implement the one authoritative core + runtime/editor/collider parity.
+5. **TRACK-CORE-2 · Claude Design** — visible transition/style grammar on the proven core only.
+6. **PLAYABLE_TRACK_R0** — then assemble the first playable closed track.
+7. Real Köln OSM Route 01 follows on the same core/RouteRecipe.
+
+Prepared briefs:
+
+- `WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md`
+- `BLENDER_MCP_TRACK_CORE_1A_PROOF_BRIEF.md`
+- `WEBCHAT_TRACK_CORE_1B_RUNTIME_PARITY_BRIEF.md`
+- `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md`
+
+**Exactly one current next gate remains TRACK-CORE-0.**
+
+---
+
 **Status:** DIRECTION CONFIRMED BY GEORG (26.09.2026) · IMPLEMENTATION NOT STARTED
 **Planning owner:** `georg-doc/kayfabizarro` · chat workflow layer
 **Implementation owner:** `georg-doc/KFB-Stunt-Car-Race` (route / track / vehicle / physics)
