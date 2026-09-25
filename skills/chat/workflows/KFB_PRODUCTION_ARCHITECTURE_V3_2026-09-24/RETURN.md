@@ -1117,3 +1117,30 @@ Next:
 ToolBox r2 Stage review from the re-homed owner files.
 
 World r2 receiving integration may now consume the immutable ToolBox locomotion profile pin.
+
+
+## 2026-09-26 · Receiving-owner execution checkpoint
+
+### ToolBox r2
+Status: **OWNER REHOME CI PASS · STAGE NEXT**
+
+PR #185 owner runtime tested at `5dcf34bcdf9d87445e927c98f60d41adae72f00e`.
+CI `36197260540` SUCCESS:
+31/31 + 34/34 static, 20/20 + 25/25 browser, 13/13 plain-review browser.
+
+### World r2
+Status: **OWNER REHOME PRESENT · FINAL CI REPAIR PASS RUNNING**
+
+PR #190 current head:
+`204afd6dbb1285f8cd77807af0db5fdd6e75308d`.
+
+Accepted WB2 terrain/edit owners remain unchanged.
+World consumes ToolBox locomotion profile pin `5dcf34bc...`.
+
+Static: **20/20 PASS**.
+Browser run `36198999279`: in progress at this checkpoint.
+
+Repair-budget note:
+this is the final allowed repair pass for the current World r2 browser gate. A further failure triggers preservation + failure-recovery export, not another fix attempt.
+
+No merge, Stage publication or Live promotion authorized.
