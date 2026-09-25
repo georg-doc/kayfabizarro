@@ -1,5 +1,58 @@
 # KFB Cologne Route 01 · Changelog
 
+## 2026-09-26 · Track Core prerequisite + Perplexity transition research
+
+### Supersedes execution order only
+
+The earlier Track-R0-first execution order is preserved below as history but is no longer the current next gate.
+
+A stacked Track-Core slice in PR #219 now comes first after Georg rejected the RKIT-11 separate bridge/loop/host sweep architecture.
+
+### Current order
+
+`TRACK-CORE-0 Web → Georg language gate → Blender MCP 1A → Web core/runtime 1B → Claude Design visual grammar 2 → Web Prep Track R0 → Claude Track R0 → Web freeplay → Köln OSM Route 01`
+
+### Research input
+
+Reviewed:
+
+`tools/KFB-ToolBox/_inbox/KFB Race Track Baukasten TBD perplexity 01.md`
+
+Use:
+
+- real Clothoid/Euler curvature easing;
+- connector boundary-state concept;
+- staggered transition zones;
+- RouteRecipe graph semantics;
+- separate style/prop/FX layers.
+
+Do not use the supplied Blender Python sample as production architecture.
+
+### Current acceptance fixture
+
+Race PR #42 / `chat/rkit-11-rhein-run-2026-09-26@bcc422b00fc4629ac113f086cddcea3b2b107f2a`.
+
+RKIT-11 remains frozen, not Race-driven, no Stage, no Live.
+
+### Brief routing
+
+Current Track-Core execution briefs live under:
+
+`skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/`
+
+with explicit executors:
+
+- ChatGPT Web + GitHub — TRACK-CORE-0;
+- Claude Coworker + Blender MCP — TRACK-CORE-1A;
+- ChatGPT Web + GitHub — TRACK-CORE-1B;
+- Claude Design — TRACK-CORE-2.
+
+### Next gate
+
+`TRACK-CORE-0 · ChatGPT Web census + core contract`
+
+---
+
 ## 2026-09-26 · Playable Track R0 → OSM execution split
 
 ### Added
