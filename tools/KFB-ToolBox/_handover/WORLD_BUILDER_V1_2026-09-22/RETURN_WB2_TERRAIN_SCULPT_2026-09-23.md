@@ -1,6 +1,6 @@
 # RETURN · WorldBuilder WB2-TERRAIN-SCULPT-01 · 2026-09-23
 
-Status: **R1 INTERACTION ENRICHED · STATIC/EVIDENCE PASS · CHAT HTML HUMAN REVIEW PENDING**
+Status: **GEORG HUMAN PASS · WB2 TERRAIN + INTERACTION ACCEPTED · CLAUDE DESIGN/UI FOLLOW-UP UNBLOCKED**
 
 ## Outcome
 
@@ -167,7 +167,23 @@ Georg requested faster terrain-authoring gestures without changing owners:
 - `1 / 2 / 3` provide fast Object/Orbit / Raise / Lower switching;
 - existing object-editor `R` Rotate and `S` free Scale shortcuts remain unchanged.
 
-Human acceptance of these new interaction gestures is still pending.
+Georg has accepted these interaction gestures in the direct Chat review.
+
+## Georg final WB2 acceptance · 2026-09-25
+
+**WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS**
+
+Accepted:
+- Raise / Lower terrain shaping;
+- Radius / Strength;
+- wheel / touchpad Radius control;
+- hold-Space temporary Orbit;
+- `1 / 2 / 3` quick modes;
+- Undo / Clear;
+- Save / Reload;
+- return to the accepted object-edit workflow.
+
+This closes the WB2 functional gate and unblocks the prepared Claude Design authoring/UI pass.
 
 ## Pre-review corrections
 
@@ -241,19 +257,16 @@ UI direction is nevertheless recorded: object transforms remain inline; later cl
 
 ## Exactly one next gate
 
-**Georg reviews the exact WB2 Chat HTML.**
+**Claude Design · WorldBuilder authoring/UI refinement on the accepted WB2 functional foundation.**
 
-Check:
-1. Raise a low hill;
-2. use mouse wheel / two-finger touchpad scroll while sculpting and confirm the visible brush radius changes;
-3. hold **Space**, orbit, release Space and confirm the previous Raise/Lower mode resumes;
-4. test `1 / 2 / 3` for Object/Orbit / Raise / Lower;
-5. Lower a shallow depression;
-6. vary Radius and Strength;
-7. orbit close for cracks/spikes/hard brush edges/faceting;
-8. Undo;
-9. Clear back to procedural base;
-10. sculpt → Save → change/clear → Reload;
-11. return to Object edit and confirm the accepted inline editor still works.
+Use the existing `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` handoff.
 
-Then STOP and record only the human findings.
+Primary goals:
+- reduce/collapse redundant side-panel editor controls and explanatory copy;
+- keep Move / Rotate / Scale / Drop inline at the selected object;
+- keep Terrain Sculpt controls scene-level and compact;
+- maximize 3D field of view;
+- compose the accepted WorldDesign look/environment controls into the editor;
+- preserve all accepted WB1/WB2 save/reload and owner seams.
+
+Do not add Smooth / Flatten / material painting in this design pass. Those remain separate functional slices.
