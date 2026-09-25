@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+const read=(p)=>fs.readFileSync(p,'utf8');
+const html=read('kfb-hub/stage/toolbox/production-r2-review/index.html');
+const source=JSON.parse(read('kfb-hub/stage/toolbox/production-r2-review/SOURCE.json'));
+let n=0; const ok=(name,v)=>{if(!v) throw new Error('FAIL '+name); n++; console.log('ok '+n+' - '+name);};
+ok('Stage review source schema',source.schema==='kfb.stage-review/1');
+ok('Stage points to PR185',source.receivingOwner.pr===185);
+ok('PoseRig loads tested owner pin',html.includes('https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js'));
+ok('locomotion profiles load tested owner pin',html.includes('https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/stage-first/src/lab/locomotion-profiles.v1.js'));
+ok('no local candidate PoseRig import',!html.includes("poseRig: './kfb-lib/pose-rig.v1.js'"));
+ok('no local candidate locomotion import',!html.includes("loco: './kfb-lib/locomotion-profiles.v1.js'"));
+ok('DC support remains one local runtime',(html.match(/\.\/support\.js/g)||[]).length===1);
+ok('CubePet library remains shared mirror',html.includes("petLibrary: './kfb-lib/pet-library.v6.js'"));
+ok('Stage selftest remains 19-step source flow',html.includes("testSummary: tests.length")&&html.includes("'19 Legacy fixture via builder'"));
+console.log('TOOLBOX R2 STAGE STATIC PASS '+n+'/'+n);

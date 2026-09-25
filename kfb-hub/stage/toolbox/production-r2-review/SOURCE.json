@@ -1,0 +1,33 @@
+{
+  "schema": "kfb.stage-review/1",
+  "id": "toolbox-production-r2-review",
+  "status": "CANDIDATE_STAGE_SOURCE",
+  "sourceCut": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-1/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/",
+  "receivingOwner": {
+    "pr": 185,
+    "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+    "runtimeTestedHead": "5dcf34bcdf9d87445e927c98f60d41adae72f00e"
+  },
+  "stagePath": "kfb-hub/stage/toolbox/production-r2-review/",
+  "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-r2-review/",
+  "ownerImports": {
+    "poseRig": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js",
+    "locomotionProfiles": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/stage-first/src/lab/locomotion-profiles.v1.js",
+    "earRig": {
+      "pr": 214,
+      "head": "19088b142c6a7e7626f27fba8e80caf6ab2437c1"
+    },
+    "motionLibrary": "032c9d50cd5de6764fa37fec65cb203ed35fcb11"
+  },
+  "localMirrors": {
+    "support": {
+      "blob": "cb009b69ec6b5e00f48c6287a587fe7e0c6c421b",
+      "role": "DC browser runtime"
+    },
+    "petLibrary": {
+      "blob": "8a13b171cd892ea39ff21ad030716f91f31f77ad",
+      "role": "shared CubePet library mirror"
+    }
+  },
+  "humanGate": "GEORG REVIEW · ToolBox r2 Studio + Animation Lab"
+}

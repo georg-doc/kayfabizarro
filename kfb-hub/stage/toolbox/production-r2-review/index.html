@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;height:100%;background:#cfccc4;font-family:'Space Grotesk',system-ui,sans-serif;color:#1f2022;-webkit-font-smoothing:antialiased}
+  a{color:#7a4d0d} a:hover{color:#b8781c}
+  [hidden]{display:none!important}
+  .kfbnum{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  .kfb-pop::-webkit-scrollbar{width:8px} .kfb-pop::-webkit-scrollbar-thumb{background:#c9c5bc;border-radius:4px}
+  #kfb-objmenu button{height:28px;min-width:28px;padding:0 6px;border:0;border-radius:5px;background:transparent;font:inherit;font-size:13px;color:#1f2022;cursor:pointer}
+  #kfb-objmenu button:hover{background:#dedbd4}
+  input[type=range]{accent-color:#1f2022}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  window.__KFB3D = { THREE, OrbitControls, GLTFLoader };
+  window.dispatchEvent(new Event('kfb3dready'));
+</script>
+</helmet>
+
+<section data-screen-label="ToolBox Production-01" style="height:100vh;width:100%;display:flex;flex-direction:column;background:#dedbd4;overflow:hidden;position:relative;font-size:13px">
+
+  <div style="height:48px;flex:none;display:flex;align-items:center;gap:10px;padding:0 12px;background:#efece6;border-bottom:1px solid #c9c5bc;position:relative;z-index:20">
+    <sc-if value="{{ showBrand }}"><div style="font-weight:600;white-space:nowrap;flex:none">KFB ToolBox</div></sc-if>
+    <div style="display:flex;gap:2px;padding:3px;background:#dedbd4;border-radius:8px;flex:none">
+      <span onClick="{{ setTabStudio }}" style="height:30px;display:flex;align-items:center;padding:0 14px;border-radius:6px;cursor:pointer;font-weight:500;white-space:nowrap;background:{{ studioTabBg }};box-shadow:{{ studioTabSh }};color:{{ studioTabFg }}">Studio</span>
+      <span onClick="{{ setTabAnim }}" style="height:30px;display:flex;align-items:center;padding:0 14px;border-radius:6px;cursor:pointer;font-weight:500;white-space:nowrap;background:{{ animTabBg }};box-shadow:{{ animTabSh }};color:{{ animTabFg }}">{{ animTabLabel }}</span>
+    </div>
+    <div style="width:1px;height:22px;background:#c9c5bc;flex:none"></div>
+
+    <div style="position:relative;min-width:0;flex:0 1 auto">
+      <button onClick="{{ toggleActorPop }}" style="display:flex;align-items:center;gap:8px;height:30px;max-width:100%;min-width:0;overflow:hidden;padding:0 10px 0 6px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;font:inherit;font-size:13px;color:#1f2022;cursor:pointer;white-space:nowrap">
+        <span style="width:18px;height:18px;border-radius:4px;flex:none;background:{{ actorSwatch }}"></span>
+        <span style="min-width:0;flex:0 1 auto;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ actorLabel }}</span>
+        <sc-if value="{{ showRigTag }}"><span class="kfbnum" style="flex:none;font-size:10.5px;color:#5c6065">{{ actorRig }}</span></sc-if>
+        <span style="flex:none;color:#5c6065">▾</span>
+      </button>
+      <sc-if value="{{ actorPopOpen }}">
+        <div style="position:absolute;top:36px;left:0;width:300px;max-height:460px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 8px 28px rgba(31,32,34,.16);overflow:hidden;display:flex;flex-direction:column;z-index:30">
+          <div style="padding:8px"><input value="{{ actorSearch }}" onChange="{{ onActorSearch }}" placeholder="Search actor…" style="width:100%;box-sizing:border-box;height:30px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;padding:0 10px;font:inherit;font-size:13px;outline:none"></div>
+          <div class="kfb-pop" style="overflow-y:auto;padding:0 8px 8px;display:flex;flex-direction:column;gap:1px">
+            <sc-for list="{{ rosterRows }}" as="a" hint-placeholder-count="6">
+              <sc-if value="{{ a.isHeader }}">
+                <div style="padding:8px 6px 3px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5c6065">{{ a.label }}</div>
+              </sc-if>
+              <sc-if value="{{ a.isItem }}">
+                <div onClick="{{ a.pick }}" style="display:grid;grid-template-columns:16px 1fr;gap:8px;align-items:center;min-height:30px;padding:0 6px;border-radius:5px;cursor:pointer;background:{{ a.bg }};color:{{ a.fg }}">
+                  <span style="width:14px;height:14px;border-radius:4px;background:{{ a.swatch }}"></span>
+                  <span>{{ a.label }}</span>
+                </div>
+              </sc-if>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="position:relative;min-width:0;flex:0 1 auto">
+      <button onClick="{{ toggleStagePop }}" title="Stage" style="display:flex;align-items:center;gap:6px;height:30px;max-width:100%;min-width:0;overflow:hidden;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;background:transparent;font:inherit;font-size:13px;color:#1f2022;cursor:pointer;white-space:nowrap">
+        <span style="min-width:0;flex:0 1 auto;max-width:120px;overflow:hidden;text-overflow:ellipsis">{{ stageLabel }}</span><span style="flex:none;color:#5c6065">▾</span>
+      </button>
+      <sc-if value="{{ stagePopOpen }}">
+        <div style="position:absolute;top:36px;left:0;width:260px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 8px 28px rgba(31,32,34,.16);padding:6px;display:flex;flex-direction:column;gap:1px;z-index:30">
+          <sc-for list="{{ stageRows }}" as="st" hint-placeholder-count="2">
+            <div onClick="{{ st.pick }}" style="padding:7px 8px;border-radius:5px;cursor:pointer;background:{{ st.bg }};color:{{ st.fg }}">
+              <div>{{ st.label }}</div>
+              <div style="font-size:11px;opacity:.72">{{ st.sub }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="flex:1 1 0;min-width:4px"></div>
+    <div title="{{ statusText }}" style="display:flex;align-items:center;gap:6px;padding:0 2px;white-space:nowrap;flex:none"><span style="width:8px;height:8px;border-radius:50%;background:{{ dotColor }}"></span><sc-if value="{{ showStatusText }}"><span style="color:#5c6065;font-size:12px">{{ statusShort }}</span></sc-if></div>
+    <button onClick="{{ togglePanel }}" title="Show / hide inspector" style="height:30px;width:32px;flex:none;border:1px solid #c9c5bc;border-radius:6px;background:{{ panelBtnBg }};font:inherit;font-size:14px;cursor:pointer;color:#1f2022">▥</button>
+    <button onClick="{{ toggleDiag }}" title="Sources · reload · self-test" style="height:30px;width:32px;border:1px solid #c9c5bc;border-radius:6px;background:{{ diagBtnBg }};font:inherit;font-size:14px;cursor:pointer;color:#1f2022">…</button>
+    <button onClick="{{ save }}" title="Save workspace (⌘S)" style="height:30px;padding:0 14px;border:1px solid #1f2022;border-radius:6px;background:#1f2022;color:#efece6;font:inherit;font-size:13px;cursor:pointer;font-weight:500">Save</button>
+  </div>
+
+  <div style="flex:1;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 42% 58%,#ebe8e1 0%,#dedbd4 70%)">
+      <div id="kfb-stage" style="position:absolute;inset:0"></div>
+    </div>
+
+    <div id="kfb-objmenu" style="position:absolute;left:0;top:0;transform:translateX(-50%);display:flex;align-items:center;gap:1px;padding:3px;background:#efece6;border:1px solid #c9c5bc;border-radius:8px;box-shadow:0 4px 16px rgba(31,32,34,.14);z-index:12;white-space:nowrap">
+      <button data-m="translate" title="Move (G)" style="background:{{ mMoveBg }};color:{{ mMoveFg }}">✥</button>
+      <button data-m="rotate" title="Rotate (R)" style="background:{{ mRotBg }};color:{{ mRotFg }}">⟳</button>
+      <button data-m="scale" title="Free scale (S)" style="background:{{ mScaleBg }};color:{{ mScaleFg }}">⤡</button>
+      <button data-m="scale-down" title="Smaller ×0.8">−</button>
+      <button data-m="scale-up" title="Larger ×1.25">+</button>
+      <button data-m="floor" title="Drop onto support below (F)">⬓</button>
+      <button data-m="scope" title="Part ↔ group" style="background:{{ mScopeBg }};color:{{ mScopeFg }}">⊞</button>
+      <button data-m="close" title="Clear selection (Esc)">✕</button>
+    </div>
+
+    <div id="kfb-ikmenu" style="position:absolute;left:0;top:0;transform:translate(-50%,-100%);display:flex;align-items:center;gap:6px;padding:4px 4px 4px 10px;background:#1f2022;color:#efece6;border-radius:8px;box-shadow:0 4px 16px rgba(31,32,34,.24);z-index:13;white-space:nowrap;font-size:12px">
+      <span style="font-weight:600">{{ ikLabel }}</span>
+      <span class="kfbnum" style="font-size:11px;opacity:.72">{{ ikSub }}</span>
+      <sc-if value="{{ ikIsGrip }}">
+        <span onClick="{{ gripMove }}" style="height:24px;display:flex;align-items:center;padding:0 8px;border-radius:5px;cursor:pointer;background:{{ gripMoveBg }};color:{{ gripMoveFg }}">Move</span>
+        <span onClick="{{ gripRotate }}" style="height:24px;display:flex;align-items:center;padding:0 8px;border-radius:5px;cursor:pointer;background:{{ gripRotBg }};color:{{ gripRotFg }}">Rotate</span>
+      </sc-if>
+      <span onClick="{{ ikRelease }}" style="height:24px;display:flex;align-items:center;padding:0 8px;border-radius:5px;cursor:pointer;background:#3a3b3e">{{ ikReleaseLabel }}</span>
+      <span onClick="{{ ikClose }}" title="Done (Esc)" style="height:24px;width:24px;display:flex;align-items:center;justify-content:center;border-radius:5px;cursor:pointer">✕</span>
+    </div>
+
+    <div style="position:absolute;left:12px;top:12px;display:flex;gap:2px;background:#efece6;border:1px solid #c9c5bc;border-radius:7px;padding:3px;font-size:12px;z-index:9">
+      <span onClick="{{ camFull }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">Full</span>
+      <span onClick="{{ camFace }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">Face</span>
+      <span onClick="{{ camBody }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">Body</span>
+      <span style="width:1px;background:#c9c5bc;margin:3px 2px"></span>
+      <span onClick="{{ zoomOut }}" style="height:26px;display:flex;align-items:center;padding:0 8px;cursor:pointer">−</span>
+      <span onClick="{{ zoomIn }}" style="height:26px;display:flex;align-items:center;padding:0 8px;cursor:pointer">+</span>
+      <sc-if value="{{ showHint }}">
+        <span style="width:1px;background:#c9c5bc;margin:3px 2px"></span>
+        <span title="Left-drag: orbit · right-drag / shift-drag: pan · wheel: zoom · double-click: orbit around point" style="height:26px;display:flex;align-items:center;padding:0 8px;color:#5c6065">Orbit ⓘ</span>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ hasFailures }}">
+      <div style="position:absolute;left:12px;top:52px;max-width:400px;background:#a33d3d;color:#fbf5f0;border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.45;z-index:11;box-shadow:0 6px 18px rgba(31,32,34,.2)">
+        <div style="font-weight:600;margin-bottom:4px">SOURCE MISSING · no stand-in rendered</div>
+        <sc-for list="{{ failureRows }}" as="f" hint-placeholder-count="1">
+          <div style="margin-top:4px"><span style="font-weight:600">{{ f.name }}</span> · <span class="kfbnum" style="font-size:11px">{{ f.path }}</span><br><span style="opacity:.88">{{ f.msg }}</span></div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isLoading }}">
+      <div style="position:absolute;left:calc(50% - 150px);top:14px;transform:translateX(-50%);height:26px;display:flex;align-items:center;padding:0 12px;background:#1f2022;color:#efece6;border-radius:7px;font-size:12px;z-index:11;white-space:nowrap">{{ loadingText }}</div>
+    </sc-if>
+
+    <sc-if value="{{ isStudio }}">
+      <div style="position:absolute;left:12px;bottom:12px;display:flex;gap:2px;background:#efece6;border:1px solid #c9c5bc;border-radius:7px;padding:3px;font-size:12px;flex-wrap:wrap;max-width:{{ toolMax }}">
+        <span onClick="{{ setMove }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ mMoveBg }};color:{{ mMoveFg }}">✥ Move</span>
+        <span onClick="{{ setRotate }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ mRotBg }};color:{{ mRotFg }}">⟳ Rotate</span>
+        <span onClick="{{ setScale }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ mScaleBg }};color:{{ mScaleFg }}">⤡ Scale</span>
+        <span style="width:1px;background:#c9c5bc;margin:3px 4px"></span>
+        <span onClick="{{ drop }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer">⬓ Drop</span>
+        <span onClick="{{ toggleSnap }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ snapBg }};color:{{ snapFg }}">Snap</span>
+        <sc-if value="{{ showHint }}">
+          <span style="width:1px;background:#c9c5bc;margin:3px 4px"></span>
+          <span style="height:26px;display:flex;align-items:center;padding:0 8px;color:#5c6065">{{ studioHint }}</span>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isAnim }}">
+      <div style="position:absolute;left:12px;right:{{ dockRight }};bottom:12px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 6px 24px rgba(31,32,34,.10);padding:8px 12px 10px;display:flex;flex-direction:column;gap:8px;z-index:10">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          <span onClick="{{ togglePlay }}" title="Play / pause (Space)" style="width:34px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6;font-size:13px">{{ playIcon }}</span>
+          <span onClick="{{ stepBack }}" title="Previous frame (←)" style="width:28px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">‹</span>
+          <span onClick="{{ stepFwd }}" title="Next frame (→)" style="width:28px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">›</span>
+          <div style="position:relative;min-width:0">
+            <span onClick="{{ toggleClipPop }}" style="height:30px;display:flex;align-items:center;gap:8px;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;cursor:pointer;max-width:280px">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ clipLabel }}</span><span style="color:#5c6065">▾</span>
+            </span>
+            <sc-if value="{{ clipPopOpen }}">
+              <div style="position:absolute;bottom:36px;left:0;width:330px;max-height:min(420px, calc(100vh - 230px));background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 8px 28px rgba(31,32,34,.16);overflow:hidden;display:flex;flex-direction:column;z-index:30">
+                <div style="padding:8px"><input value="{{ clipSearch }}" onChange="{{ onClipSearch }}" placeholder="Search clip · role · group…" style="width:100%;box-sizing:border-box;height:30px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;padding:0 10px;font:inherit;font-size:13px;outline:none"></div>
+                <div class="kfb-pop" style="overflow-y:auto;padding:0 8px 8px;display:flex;flex-direction:column;gap:1px">
+                  <sc-for list="{{ clipRows }}" as="c" hint-placeholder-count="6">
+                    <sc-if value="{{ c.isHeader }}">
+                      <div style="padding:8px 6px 3px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5c6065">{{ c.label }}</div>
+                    </sc-if>
+                    <sc-if value="{{ c.isItem }}">
+                      <div onClick="{{ c.pick }}" style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;min-height:30px;padding:0 6px;border-radius:5px;cursor:pointer;background:{{ c.bg }};color:{{ c.fg }}">
+                        <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ c.label }}</span>
+                        <span class="kfbnum" style="font-size:10.5px;opacity:.72">{{ c.sub }}</span>
+                      </div>
+                    </sc-if>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+          <span class="kfbnum" style="color:#5c6065;font-size:12px;white-space:nowrap">f {{ frameText }} · {{ timeText }}</span>
+          <div style="flex:1"></div>
+          <span onClick="{{ toggleLoop }}" style="height:28px;display:flex;align-items:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ loopBg }};color:{{ loopFg }}">Loop</span>
+          <span style="display:flex;align-items:center;gap:6px;color:#5c6065;font-size:12px">Speed<input type="range" min="0.1" max="2" step="0.05" value="{{ speedVal }}" onChange="{{ onSpeed }}" style="width:90px"><span class="kfbnum" style="width:38px;color:#1f2022">{{ speedText }}</span></span>
+        </div>
+        <div onPointerDown="{{ onTrackDown }}" style="position:relative;height:40px;border-radius:6px;background:#f6f4ef;border:1px solid #dedbd4;cursor:ew-resize;touch-action:none;overflow:hidden">
+          <div style="position:absolute;left:0;top:3px;font-size:9.5px;color:#8a8f95;padding-left:4px">L</div>
+          <div style="position:absolute;left:0;top:17px;font-size:9.5px;color:#8a8f95;padding-left:4px">R</div>
+          <sc-for list="{{ bandsL }}" as="b" hint-placeholder-count="0">
+            <div style="position:absolute;top:4px;height:9px;border-radius:2px;background:#bdb7aa;left:{{ b.left }};width:{{ b.width }}"></div>
+          </sc-for>
+          <sc-for list="{{ bandsR }}" as="b" hint-placeholder-count="0">
+            <div style="position:absolute;top:18px;height:9px;border-radius:2px;background:#a9a395;left:{{ b.left }};width:{{ b.width }}"></div>
+          </sc-for>
+          <sc-for list="{{ corrMarks }}" as="m" hint-placeholder-count="0">
+            <div title="{{ m.title }}" style="position:absolute;bottom:2px;width:9px;height:9px;transform:translateX(-50%) rotate(45deg);background:{{ m.color }};left:{{ m.left }}"></div>
+          </sc-for>
+          <div id="kfb-playhead" style="position:absolute;top:0;bottom:0;left:0;width:2px;background:#1f2022;pointer-events:none"></div>
+          <div style="position:absolute;right:6px;top:3px;font-size:9.5px;color:#8a8f95">{{ bandNote }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ panelOpen }}">
+    <div style="position:absolute;top:12px;right:12px;bottom:12px;width:{{ panelW }};background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 6px 24px rgba(31,32,34,.10);display:flex;flex-direction:column;overflow:hidden;font-size:12.5px;z-index:10">
+
+      <sc-if value="{{ isStudio }}">
+        <div style="flex:none;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:6px;border-bottom:1px solid #c9c5bc">
+          <sc-for list="{{ sectionRows }}" as="sr" hint-placeholder-count="4">
+            <span onClick="{{ sr.pick }}" style="height:28px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:{{ sr.bg }};color:{{ sr.fg }}">{{ sr.label }}</span>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ secBody }}">
+          <div class="kfb-pop" style="padding:14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+            <sc-for list="{{ bodyFacts }}" as="bf" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:82px 1fr;gap:8px">
+                <span style="color:#5c6065">{{ bf.k }}</span><span class="kfbnum" style="font-size:11.5px;word-break:break-word">{{ bf.v }}</span>
+              </div>
+            </sc-for>
+            <sc-if value="{{ isLegacy }}">
+              <div style="border-top:1px solid #c9c5bc;padding-top:12px;display:flex;flex-direction:column;gap:10px">
+                <div style="font-weight:600">Character builder · Legacy</div>
+                <sc-for list="{{ legacySlots }}" as="ls" hint-placeholder-count="4">
+                  <div style="display:grid;grid-template-columns:62px 1fr;gap:8px;align-items:center">
+                    <span style="color:#5c6065">{{ ls.label }}</span>
+                    <div style="display:flex;gap:4px;flex-wrap:wrap">
+                      <sc-for list="{{ ls.options }}" as="lo" hint-placeholder-count="2">
+                        <span onClick="{{ lo.pick }}" style="height:26px;display:flex;align-items:center;padding:0 9px;border-radius:5px;cursor:pointer;border:1px solid #c9c5bc;background:{{ lo.bg }};color:{{ lo.fg }}">{{ lo.label }}</span>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+                <sc-if value="{{ hasHeld }}">
+                  <span onClick="{{ editGrip }}" style="height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #1f2022;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Fit held item on stage</span>
+                </sc-if>
+                <div style="color:#5c6065;line-height:1.45">Parts ride the existing six-bone Rig_Legacy (Resident-Atlas assembly, boneInverses). Legacy 1.2 clips drive every combination.</div>
+              </div>
+            </sc-if>
+            <div style="border-top:1px solid #c9c5bc;padding-top:12px;display:flex;flex-direction:column;gap:5px">
+              <div style="font-weight:600">Studio owners</div>
+              <sc-for list="{{ roadmapRows }}" as="rm" hint-placeholder-count="8">
+                <div style="display:grid;grid-template-columns:8px 1fr;gap:8px;align-items:start">
+                  <span style="width:7px;height:7px;border-radius:50%;margin-top:5px;background:{{ rm.dot }}"></span>
+                  <div><div>{{ rm.label }}</div><div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-word">{{ rm.src }}</div></div>
+                </div>
+              </sc-for>
+            </div>
+            <span onClick="{{ selectActor }}" style="height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #c9c5bc;border-radius:6px;cursor:pointer">Select actor on stage</span>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ secFace }}">
+          <div class="kfb-pop" style="padding:14px;display:flex;flex-direction:column;gap:14px;overflow-y:auto;flex:1">
+            <sc-if value="{{ hasRig }}">
+              <div>
+                <div style="color:#5c6065;margin-bottom:6px">Eyes · pupil</div>
+                <div style="display:flex;gap:6px">
+                  <span onClick="{{ setMatte }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ matteBg }};color:{{ matteFg }}">Matte cute</span>
+                  <span onClick="{{ setGlossy }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ glossyBg }};color:{{ glossyFg }}">Glossy googly</span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center">
+                <input type="color" value="{{ eyeColor }}" onChange="{{ onEyeColor }}" style="width:40px;height:40px;padding:0;border:1px solid rgba(0,0,0,.15);border-radius:6px;background:none;cursor:pointer">
+                <span class="kfbnum" style="display:flex;align-items:center;height:30px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;padding:0 8px;font-size:12px">{{ eyeColorUpper }}</span>
+                <span onClick="{{ resetEye }}" style="height:30px;display:flex;align-items:center;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;cursor:pointer;color:#7a4d0d">Original</span>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;color:#5c6065;margin-bottom:4px"><span>Eye spacing</span><span class="kfbnum">{{ eyeDx }}</span></div>
+                <input type="range" min="0.15" max="0.55" step="0.005" value="{{ eyeDx }}" onChange="{{ onEyeDx }}" style="width:100%">
+              </div>
+              <div style="display:flex;gap:6px">
+                <span onClick="{{ toggleBrow }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ browBg }};color:{{ browFg }}">Brow</span>
+                <span onClick="{{ toggleNose }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ noseBg }};color:{{ noseFg }}">Nose</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ hasMouth }}">
+              <div style="border-top:1px solid #c9c5bc;padding-top:12px">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="color:#5c6065">Mouth · viseme</span>
+                  <span onClick="{{ toggleTalk }}" style="height:26px;display:flex;align-items:center;padding:0 12px;border-radius:13px;cursor:pointer;border:1px solid #1f2022;background:{{ talkBg }};color:{{ talkFg }}">{{ talkLabel }}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px">
+                  <sc-for list="{{ visemeRows }}" as="vr" hint-placeholder-count="5">
+                    <span onClick="{{ vr.pick }}" style="height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;cursor:pointer;border:1px solid #c9c5bc;font-size:11.5px;background:{{ vr.bg }};color:{{ vr.fg }}">{{ vr.label }}</span>
+                  </sc-for>
+                </div>
+                <div style="display:flex;gap:4px;margin-top:8px">
+                  <sc-for list="{{ mouthSetRows }}" as="ms" hint-placeholder-count="3">
+                    <span onClick="{{ ms.pick }}" style="flex:1;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;cursor:pointer;border:1px solid #c9c5bc;font-size:11.5px;background:{{ ms.bg }};color:{{ ms.fg }}">{{ ms.label }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ noFace }}">
+              <div style="color:#5c6065;line-height:1.5">{{ noFaceText }}</div>
+            </sc-if>
+            <div style="color:#5c6065;padding-top:8px;border-top:1px solid #c9c5bc;line-height:1.45">EyeRig v6 owns the eyes · pet-mouth v1 owns mouth and visemes. Face settings live in the Actor Profile.</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ secPose }}">
+          <div class="kfb-pop" style="padding:14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+            <sc-if value="{{ hasPose }}">
+              <div style="display:flex;gap:6px">
+                <span onClick="{{ poseOff }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ poseOffBg }};color:{{ poseOffFg }}">Idle motion</span>
+                <span onClick="{{ poseOn }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ poseOnBg }};color:{{ poseOnFg }}">Hold pose</span>
+              </div>
+              <div>
+                <div style="color:#5c6065;margin-bottom:6px">IK targets · click a dot on stage</div>
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <sc-for list="{{ ikRows }}" as="ik" hint-placeholder-count="4">
+                    <div onClick="{{ ik.pick }}" style="display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;min-height:30px;padding:0 8px;border-radius:5px;cursor:pointer;background:{{ ik.bg }};color:{{ ik.fg }}">
+                      <span style="width:9px;height:9px;border-radius:50%;background:{{ ik.dot }}"></span>
+                      <span>{{ ik.label }}</span>
+                      <span class="kfbnum" style="font-size:11px;opacity:.75">{{ ik.sub }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div>
+                <div style="color:#5c6065;margin-bottom:6px">Preset</div>
+                <div style="display:flex;gap:4px;flex-wrap:wrap">
+                  <sc-for list="{{ presetRows }}" as="pr" hint-placeholder-count="5">
+                    <span onClick="{{ pr.pick }}" style="height:26px;display:flex;align-items:center;padding:0 9px;border-radius:5px;cursor:pointer;border:1px solid #c9c5bc;background:{{ pr.bg }};color:{{ pr.fg }}">{{ pr.label }}</span>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <sc-for list="{{ angleRows }}" as="ar" hint-placeholder-count="6">
+                  <div>
+                    <div style="display:flex;justify-content:space-between;color:#5c6065;font-size:11.5px"><span>{{ ar.label }}</span><span class="kfbnum">{{ ar.text }}</span></div>
+                    <input type="range" min="{{ ar.min }}" max="{{ ar.max }}" step="{{ ar.step }}" value="{{ ar.value }}" onChange="{{ ar.onInput }}" style="width:100%">
+                  </div>
+                </sc-for>
+              </div>
+              <div style="border-top:1px solid #c9c5bc;padding-top:12px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-weight:600">Pose Profiles</span><span class="kfbnum" style="color:#5c6065">{{ poseCount }}</span></div>
+                <sc-for list="{{ poseRows }}" as="pp" hint-placeholder-count="0">
+                  <div style="display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;min-height:28px;padding:0 8px;border-radius:5px;background:{{ pp.bg }};color:{{ pp.fg }}">
+                    <span onClick="{{ pp.pick }}" style="cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ pp.label }}</span>
+                    <span onClick="{{ pp.del }}" title="Delete" style="cursor:pointer;opacity:.7">✕</span>
+                  </div>
+                </sc-for>
+                <div style="display:grid;grid-template-columns:1fr auto;gap:6px">
+                  <input value="{{ poseName }}" onChange="{{ onPoseName }}" placeholder="Pose name" style="height:30px;box-sizing:border-box;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;padding:0 8px;font:inherit;font-size:12.5px;outline:none;min-width:0">
+                  <span onClick="{{ savePose }}" style="height:30px;display:flex;align-items:center;padding:0 12px;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Save pose</span>
+                </div>
+                <div style="color:#5c6065;line-height:1.45">Solver A · KFB two-bone · pose-rig.v1 owner fix (wrist-aware chains, the same owner in Studio and Animation Lab). Pose Profiles hold pose only — no look.</div>
+              </div>
+              <div style="border-top:1px solid #c9c5bc;padding-top:10px;display:flex;flex-direction:column;gap:6px">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-weight:600">Solver gate · same rig</span>
+                  <span onClick="{{ runSolverCmp }}" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #1f2022;white-space:nowrap">Compare A · B · C</span></div>
+                <sc-for list="{{ solverRows }}" as="sv" hint-placeholder-count="0">
+                  <div style="display:grid;grid-template-columns:1fr auto;gap:6px;font-size:11.5px"><span>{{ sv.name }}</span><span class="kfbnum" style="color:{{ sv.color }}">{{ sv.v }}</span></div>
+                </sc-for>
+                <div style="color:#5c6065;line-height:1.45">{{ solverVerdict }}</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ noPose }}">
+              <div style="color:#5c6065;line-height:1.5">{{ noPoseText }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ secFit }}">
+          <div class="kfb-pop" style="padding:14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+            <div style="font-weight:600">Vehicle · Surface Fit</div>
+            <div style="color:#5c6065;line-height:1.45">Fit profiles stay separate from Actor, Rig, Pose and Motion profiles. Next fixture: CARD_SURF for the animated KFB CardCarrier.</div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap">
+              <sc-for list="{{ fitPresetRows }}" as="fp" hint-placeholder-count="4">
+                <span onClick="{{ fp.pick }}" style="height:26px;display:flex;align-items:center;padding:0 9px;border-radius:5px;cursor:pointer;border:1px solid #c9c5bc;background:{{ fp.bg }};color:{{ fp.fg }}">{{ fp.label }}</span>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:3px;background:#f6f4ef;border:1px solid #dedbd4;border-radius:6px;padding:8px">
+              <sc-for list="{{ fitFacts }}" as="ff" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:86px 1fr;gap:6px;font-size:11.5px"><span style="color:#5c6065">{{ ff.k }}</span><span class="kfbnum" style="color:{{ ff.color }};word-break:break-word">{{ ff.v }}</span></div>
+              </sc-for>
+            </div>
+            <span onClick="{{ saveFit }}" style="height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Save CARD_SURF fit from current pose</span>
+            <div style="color:#5c6065;line-height:1.45">{{ fitHint }}</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ secScene }}">
+          <div class="kfb-pop" style="padding:12px 14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+            <sc-if value="{{ hasSel }}">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="font-weight:600">{{ selTitle }}</div>
+                <div style="color:#5c6065">{{ selSub }}</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+                  <span onClick="{{ drop }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">⬓ Drop on support</span>
+                  <span onClick="{{ resetSel }}" style="height:30px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;color:#7a4d0d">Reset</span>
+                </div>
+                <div class="kfbnum" style="color:#5c6065;font-size:11.5px;line-height:1.65;background:#f6f4ef;border:1px solid #dedbd4;border-radius:6px;padding:6px 8px">pos {{ posReadout }}<br>rot {{ rotReadout }}°<br>scl {{ sclReadout }}</div>
+                <sc-if value="{{ hasDrop }}"><div style="font-size:11.5px;color:#4d6b55">{{ lastDrop }}</div></sc-if>
+              </div>
+            </sc-if>
+            <sc-if value="{{ noSel }}"><div style="color:#5c6065">Click an object on stage or pick one below.</div></sc-if>
+            <div style="border-top:1px solid #c9c5bc;padding-top:10px">
+              <div style="display:flex;justify-content:space-between;color:#5c6065;margin-bottom:6px"><span>Scene objects</span><span class="kfbnum">{{ objCount }}</span></div>
+              <div style="display:flex;flex-direction:column;gap:1px">
+                <sc-for list="{{ objRows }}" as="o" hint-placeholder-count="4">
+                  <div onClick="{{ o.pick }}" style="display:grid;grid-template-columns:8px 1fr auto;gap:8px;align-items:center;min-height:28px;padding:0 6px;border-radius:5px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">
+                    <span style="width:7px;height:7px;border-radius:50%;background:{{ o.dot }}"></span>
+                    <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ o.label }}</span>
+                    <span style="font-size:11px;opacity:.7">{{ o.sub }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <sc-if value="{{ isAnim }}">
+        <div style="height:40px;flex:none;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid #c9c5bc">
+          <span style="font-weight:600;font-size:13px">Motion</span><span style="color:#5c6065;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">· {{ actorLabel }}</span>
+        </div>
+        <div style="flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:6px;border-bottom:1px solid #c9c5bc">
+          <sc-for list="{{ labRows }}" as="lr" hint-placeholder-count="4">
+            <span onClick="{{ lr.pick }}" style="height:28px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:{{ lr.bg }};color:{{ lr.fg }}">{{ lr.label }}</span>
+          </sc-for>
+        </div>
+        <div class="kfb-pop" style="padding:12px 14px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;flex:1">
+          <sc-if value="{{ hasClip }}">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-weight:600">{{ clipTitle }}</div>
+              <div class="kfbnum" style="font-size:11px;color:#5c6065;word-break:break-word">{{ clipSource }}</div>
+              <div class="kfbnum" style="font-size:11px;color:{{ bindColor }}">{{ bindText }}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:center">
+              <span style="color:#5c6065">Role</span>
+              <select value="{{ roleValue }}" onChange="{{ onRole }}" style="height:30px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;font:inherit;font-size:12.5px;padding:0 6px;min-width:0">
+                <sc-for list="{{ roleOptions }}" as="ro" hint-placeholder-count="0"><option value="{{ ro.id }}">{{ ro.label }}</option></sc-for>
+              </select>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:3px;background:#f6f4ef;border:1px solid #dedbd4;border-radius:6px;padding:8px">
+              <sc-for list="{{ clipFacts }}" as="cf" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:100px 1fr;gap:6px;font-size:11.5px"><span style="color:#5c6065">{{ cf.k }}</span><span class="kfbnum" style="color:{{ cf.color }}">{{ cf.v }}</span></div>
+              </sc-for>
+            </div>
+            <div style="border-top:1px solid #c9c5bc;padding-top:10px;display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;justify-content:space-between"><span style="font-weight:600">Contact corrections</span><span class="kfbnum" style="color:#5c6065">{{ corrCount }}</span></div>
+              <div style="color:#5c6065;line-height:1.45">{{ corrHint }}</div>
+              <sc-for list="{{ corrRows }}" as="cr" hint-placeholder-count="0">
+                <div style="display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;min-height:30px;padding:0 6px 0 8px;border-radius:5px;background:{{ cr.bg }};color:{{ cr.fg }}">
+                  <span onClick="{{ cr.pick }}" style="cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ cr.label }}</span>
+                  <select value="{{ cr.type }}" onChange="{{ cr.onType }}" style="height:24px;border:1px solid #c9c5bc;border-radius:5px;background:#f6f4ef;font:inherit;font-size:11.5px">
+                    <option value="key">Key pose</option><option value="contact">Contact</option><option value="override">Override</option><option value="blender">→ Blender</option>
+                  </select>
+                  <span onClick="{{ cr.del }}" title="Delete" style="cursor:pointer;opacity:.7;padding:0 2px">✕</span>
+                </div>
+              </sc-for>
+            </div>
+            <span onClick="{{ saveMotion }}" style="height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Save motion profile</span>
+            <div class="kfbnum" style="font-size:11px;color:#5c6065">{{ motionSummary }}</div>
+          </sc-if>
+          <sc-if value="{{ noClip }}">
+            <div style="color:#5c6065;line-height:1.5">{{ noClipText }}</div>
+          </sc-if>
+          <sc-if value="{{ labState }}">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-weight:600">KayKit locomotion · canonical</div>
+              <div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-word">{{ locoSource }}</div>
+            </div>
+            <sc-if value="{{ hasLocoMsg }}"><div style="color:#a33d3d;line-height:1.45">{{ locoMsg }}</div></sc-if>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <span onClick="{{ measureLoco }}" style="height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #1f2022">{{ measureLabel }}</span>
+              <span onClick="{{ previewLoco }}" style="height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">▶ Idle → Sprint → Idle</span>
+              <span onClick="{{ previewJump }}" style="height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">▶ Jump</span>
+              <sc-if value="{{ seqRunning }}"><span onClick="{{ stopSeqBtn }}" style="height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #a33d3d;color:#a33d3d">■ Stop</span></sc-if>
+            </div>
+            <sc-if value="{{ hasSeqText }}"><div class="kfbnum" style="font-size:11px;color:#4d6b55;line-height:1.5">{{ seqText }}</div></sc-if>
+            <sc-if value="{{ hasLoco }}">
+              <div style="display:flex;flex-direction:column;gap:1px">
+                <div style="display:grid;grid-template-columns:1fr 34px 40px;gap:6px;font-size:10.5px;color:#8a8f95;padding:0 6px"><span>role · source clip</span><span>spm</span><span>m/s</span></div>
+                <sc-for list="{{ locoRows }}" as="lp" hint-placeholder-count="14">
+                  <div onClick="{{ lp.pick }}" style="display:grid;grid-template-columns:1fr 34px 40px;gap:6px;align-items:center;min-height:32px;padding:3px 6px;border-radius:5px;cursor:pointer;font-size:11.5px;background:{{ lp.bg }};color:{{ lp.fg }}">
+                    <div style="min-width:0"><div>{{ lp.role }}</div><div class="kfbnum" style="font-size:10.5px;word-break:break-all;color:{{ lp.clipColor }}">{{ lp.clip }}</div></div><span class="kfbnum">{{ lp.spm }}</span><span class="kfbnum">{{ lp.mps }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ hasLocoDetail }}"><div style="display:flex;flex-direction:column;gap:3px;background:#f6f4ef;border:1px solid #dedbd4;border-radius:6px;padding:8px">
+              <sc-for list="{{ locoDetail }}" as="ld" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:6px;font-size:11.5px"><span style="color:#5c6065">{{ ld.k }}</span><span class="kfbnum" style="word-break:break-word;color:{{ ld.color }}">{{ ld.v }}</span></div>
+              </sc-for>
+            </div></sc-if>
+            <sc-if value="{{ hasLoco }}">
+              <div style="display:flex;gap:6px">
+                <span onClick="{{ saveLoco }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Save profiles</span>
+                <span onClick="{{ exportLoco }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">Export JSON</span>
+              </div>
+            </sc-if>
+            <div style="color:#5c6065;line-height:1.45">{{ locoNote }}</div>
+          </sc-if>
+          <sc-if value="{{ labEars }}">
+            <div style="font-weight:600">Ears · EAR-DANGLE-01</div>
+            <div style="color:#5c6065;line-height:1.45">{{ earOwnerText }}</div>
+            <sc-if value="{{ noEars }}">
+              <div style="color:#5c6065;line-height:1.45">{{ noEarsText }}</div>
+              <span onClick="{{ loadEarActor }}" style="height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Load FrizzleBob · Ear Rig v5</span>
+            </sc-if>
+            <sc-if value="{{ hasEars }}">
+              <div style="display:flex;gap:6px">
+                <span onClick="{{ toggleEars }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ earsBg }};color:{{ earsFg }}">{{ earsLabel }}</span>
+                <span onClick="{{ earTakeoff }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">Take-off</span>
+                <span onClick="{{ earLand }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">Landing</span>
+              </div>
+              <sc-for list="{{ earSliders }}" as="es" hint-placeholder-count="3">
+                <div>
+                  <div style="display:flex;justify-content:space-between;color:#5c6065;font-size:11.5px"><span>{{ es.label }}</span><span class="kfbnum">{{ es.text }}</span></div>
+                  <input type="range" min="{{ es.min }}" max="{{ es.max }}" step="{{ es.step }}" value="{{ es.value }}" onChange="{{ es.onInput }}" style="width:100%">
+                </div>
+              </sc-for>
+              <div class="kfbnum" style="font-size:11px;color:#5c6065">{{ earLive }}</div>
+              <span onClick="{{ runEarTest }}" style="height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6;text-align:center;padding:0 8px">{{ earTestLabel }}</span>
+              <sc-if value="{{ hasSeqText }}"><div class="kfbnum" style="font-size:11px;color:#4d6b55;line-height:1.5">{{ seqText }}</div></sc-if>
+              <sc-for list="{{ earRows }}" as="er" hint-placeholder-count="0">
+                <div style="display:grid;grid-template-columns:1fr auto;gap:6px;font-size:11.5px"><span>{{ er.k }}</span><span class="kfbnum" style="color:{{ er.color }}">{{ er.v }}</span></div>
+              </sc-for>
+              <div style="color:#5c6065;line-height:1.45">Georg reviews: follow-through, not noise · no head/ear clipping · ears settle in Idle · Walk/Run cadence stays stable · jump take-off and landing read · dance expressive, not wobbly.</div>
+            </sc-if>
+          </sc-if>
+          <sc-if value="{{ labBand }}">
+            <div style="font-weight:600">Resident Band · S39 performance fixture</div>
+            <div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-word">{{ bandSource }}</div>
+            <sc-if value="{{ noBand }}">
+              <div style="color:#5c6065;line-height:1.45">{{ noBandText }}</div>
+              <span onClick="{{ loadBandStage }}" style="height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;background:#1f2022;color:#efece6">Load S39 band stage</span>
+            </sc-if>
+            <sc-if value="{{ hasBand }}">
+              <div style="display:flex;gap:6px">
+                <span onClick="{{ toggleBand }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:{{ bandBg }};color:{{ bandFg }}">{{ bandLabel }}</span>
+                <span onClick="{{ toggleSong }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">{{ songLabel }}</span>
+                <span onClick="{{ measureBand }}" style="flex:1;height:30px;display:flex;align-items:center;justify-content:center;padding:0 10px;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc">Measure</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:3px;background:#f6f4ef;border:1px solid #dedbd4;border-radius:6px;padding:8px">
+              <sc-for list="{{ bandFacts }}" as="bx" hint-placeholder-count="5">
+                <div style="display:grid;grid-template-columns:92px 1fr;gap:6px;font-size:11.5px"><span style="color:#5c6065">{{ bx.k }}</span><span class="kfbnum" style="word-break:break-word;color:{{ bx.color }}">{{ bx.v }}</span></div>
+              </sc-for>
+            </div>
+            </sc-if>
+            <div style="color:#5c6065;line-height:1.45">MUSIC-PERF timeline/audio stays a donor; its wrist-bending guitarist/drummer set is not canonical. The host gives surface, anchor and clock — select the band on stage to move it.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <div style="flex:none;padding:9px 14px;border-top:1px solid #c9c5bc">
+        <span class="kfbnum" style="color:#5c6065;font-size:11px">{{ statusText }} · {{ lastSavedText }}</span>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ diagOpen }}">
+      <div class="kfb-pop" style="position:absolute;top:10px;right:{{ diagRight }};width:min(390px, calc(100% - 24px));max-height:calc(100% - 24px);overflow-y:auto;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 10px 30px rgba(31,32,34,.18);padding:12px 14px;font-size:12px;z-index:25;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span style="font-weight:600;font-size:13px">Sources · checks</span>
+          <span onClick="{{ toggleDiag }}" style="cursor:pointer;color:#5c6065">✕</span>
+        </div>
+        <div style="display:flex;gap:6px">
+          <span onClick="{{ reload }}" style="height:28px;display:flex;align-items:center;padding:0 12px;border-radius:6px;border:1px solid #c9c5bc;cursor:pointer">Reload saved workspace</span>
+          <span onClick="{{ runSelfTest }}" style="height:28px;display:flex;align-items:center;padding:0 12px;border-radius:6px;background:#1f2022;color:#efece6;cursor:pointer">{{ testBtnLabel }}</span>
+        </div>
+        <div style="color:#5c6065">{{ testSummary }}</div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <sc-for list="{{ testRows }}" as="t" hint-placeholder-count="0">
+            <div style="display:grid;grid-template-columns:40px 1fr;gap:6px">
+              <span class="kfbnum" style="font-size:11px;color:{{ t.color }}">{{ t.verdict }}</span>
+              <div><span>{{ t.name }}</span><div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-all">{{ t.detail }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;border-top:1px solid #c9c5bc;padding-top:10px">
+          <sc-for list="{{ sourceRows }}" as="s" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:8px 1fr;gap:8px;align-items:start">
+              <span style="width:7px;height:7px;border-radius:50%;margin-top:5px;background:{{ s.dot }}"></span>
+              <div><div>{{ s.label }}</div><div class="kfbnum" style="font-size:10.5px;color:#5c6065;word-break:break-all">{{ s.path }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+        <div onClick="{{ resetFixture }}" style="color:#7a4d0d;cursor:pointer;border-top:1px solid #c9c5bc;padding-top:8px">Reset to fixture (clears this ToolBox save)</div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;gridStep&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.05,&quot;min&quot;:0.01,&quot;max&quot;:0.25,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Edit&quot;},&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Stage&quot;},&quot;showContactBands&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Animation Lab&quot;}}">
+const PIN = '8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e';
+const REPO = 'georg-doc/kayfabizarro';
+const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
+const jsd = (p, c = PIN) => 'https://cdn.jsdelivr.net/gh/' + REPO + '@' + c + '/' + enc(p);
+const raw = (p, c = PIN) => 'https://raw.githubusercontent.com/' + REPO + '/' + c + '/' + enc(p);
+const SRC = {
+  editLayer: 'tools/KFB-ToolBox/lib/edit-layer.js',
+  graftMount: 'tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js',
+  eyeRig: 'tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js',
+  poseRig: 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js',   // OWNER FIX 25.09 of the pinned file below (wrist-aware chains, public IK) — patch for the repo path
+  poseRigPinned: 'tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js',
+  loco: 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5dcf34bcdf9d87445e927c98f60d41adae72f00e/tools/KFB-ToolBox/stage-first/src/lab/locomotion-profiles.v1.js',
+  mouth: 'tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v3/pet-mouth.v1.js',
+  graftProfile: 'tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/profiles/kfb-pet-graft-driver.georg-2026-09-15.json',
+  sceneDir: 'tools/resident_atlas/scenes/',
+  petLibrary: './kfb-lib/pet-library.v6.js',
+};
+/* Ear Rig candidate lane · PR #214 head (Animation Lab owns ear-dangle.v1.js; Studio authors kfb.ear-rig.v0). */
+const EAR = { pin: '19088b142c6a7e7626f27fba8e80caf6ab2437c1', dir: 'tools/KFB-ToolBox/ear-rig/', mod: 'ear-dangle.v1.js', rig: 'rigs/fb-default.ear-rig.json', fig: 'glb/FB_TEMPLATE_LOOK_v5.glb' };
+const MAIN = 'b64d7edca3ec0d184d97f1b3a5db0103332e3e54';
+/* S39 Resident Band donor (no baseplate) + WorldBuilder-compatible sky donor, both read at main @b64d7edc. */
+const BAND = { pin: MAIN, dir: 'tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/', mod: 'lib/band-module.js', def: 'data/resident-band-module-01.json' };
+const WDSKY = { pin: MAIN, path: 'tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/wd-sky.js' };
+/* Motion Library 01 (PR #197) + AN-PROFILE-01 — same pins as stage-first/src/lab/motion-library.v1.js (PR #185). */
+const ML = { rev: '032c9d50cd5de6764fa37fec65cb203ed35fcb11', root: 'media/3D_Assets/Animations/KFB_Motion_Library/',
+  catalogue: 'KFB_Motion_Library.catalog.json', profiles: 'KFB_Motion_Library.profile-catalog.v1.json', reader: 'motion-profile-reader.v1.js' };
+const STOCK = { rev: 'b97b5ac55df2724fae623992433685583eece51e', path: (rig, k) => 'media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_' + rig + '/Rig_' + rig + '_' + k + '.glb' };
+const LEGW = 'media/3D_Assets/KayKit Legacy/Orc Warband - legacy/';
+const LEG = { pin: '10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0',
+  rig: 'media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb',
+  parts: { A: LEGW + 'characters/gltf/character_orcA.gltf', B: LEGW + 'characters/gltf/character_orcB.gltf' },
+  props: { sword: LEGW + 'props/gltf/orc_sword.gltf.glb', axe: LEGW + 'props/gltf/orc_hammerAxe.gltf.glb', shield: LEGW + 'props/gltf/orc_shield.gltf.glb', banner: LEGW + 'props/gltf/orc_banner.gltf.glb' } };
+const LEG_SLOTS = { Body: /Body$/i, Head: /Head$/i, armLeft: /ArmLeft$/i, armRight: /ArmRight$/i };
+const BRUTE = { pin: '891eadf01e218f5fc21387e64cea1fec8332c5b6', path: 'media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb',
+  tex: 'media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/orcbrute_texture_A.png' };
+const RESIDENT_TEXTURE = { caveman: 'media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png' };
+const PETS = ['bunny','cat','fox','tiger','lion','penguin','panda','koala','deer','monkey','pig','hog','cow','polar','beaver','giraffe','chick','fish','parrot','bee','crab','caterpillar','elephant','dog'];
+const cap = (s) => s[0].toUpperCase() + s.slice(1);
+const ACTOR_H = 2.2;
+const CLASS_K = ACTOR_H / 2.3222826966;   // ActionFigure/Rig_Medium native height (TMB-1E) → same stage height; Large/Legacy keep class proportion
+const BASE_ROSTER = [
+  { id: 'frizzlebob-driver', kind: 'graft', label: 'FrizzleBob · Driver Graft', section: 'Graft', swatch: '#f2c93c', rig: 'Rig_Medium' },
+  { id: 'frizzlebob-earrig-v5', kind: 'earfb', label: 'FrizzleBob · Ear Rig v5', section: 'Graft', swatch: '#e8b923', rig: 'Rig_Medium' },
+  { id: 'kaykit-orcbrute', kind: 'kaykit', label: 'Orc Brute', section: 'KayKit', swatch: '#7d9a5b', rig: 'Rig_Large' },
+  { id: 'legacy-warband', kind: 'legacy', label: 'Warband Orc · Builder', section: 'Legacy', swatch: '#9b7bb8', rig: 'Rig_Legacy' },
+].concat(PETS.map((id) => ({ id: 'pet-' + id, kind: 'pet', petId: id, label: 'Cube Pet · ' + cap(id), section: 'Cube Pets', swatch: '#c9c5bc', rig: 'pet' })));
+const ROLES = ['idle','walk','walk.fast','run','sprint','backward','strafe.left','strafe.right','jump.start','jump.air','jump.land','crouch','sneak','crawl','dance','react.cheer','music.guitar','music.drums','mc.gesture','combat','transition'];
+const IK_KEYS = [['handL', 'Hand L'], ['handR', 'Hand R'], ['footL', 'Foot L'], ['footR', 'Foot R']];
+const IK_LABEL = Object.fromEntries(IK_KEYS);
+const STORE_KEY = 'kfb-toolbox-production-01';
+const WS_ID = 'tb-production-01';
+const SPOT = { neutral: [0, 0, 0], resident: [0.55, 0, 2.9], band: [0, 0, 1.6] };
+const clone = (v) => JSON.parse(JSON.stringify(v));
+const r4 = (v) => +(+v).toFixed(4);
+const hexOf = (n) => '#' + (n >>> 0).toString(16).padStart(6, '0').slice(-6);
+const SEL = '#1f2022', SELFG = '#efece6';
+const uid = () => Math.random().toString(36).slice(2, 8);
+
+/* Legacy parts ship as .gltf with one embedded data: buffer. Packed to GLB in memory before parse —
+   verbatim rule from KFB-Travel-Globe TMB1E_THREE_RIDER_CAPACITY_REVIEW (Repair Pass 1, Georg-accepted). */
+function decodeBase64Exact(s) {
+  const bin = atob(s.replace(/\s+/g, '')); const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i); return out;
+}
+function embeddedGltfToGlb(text, label) {
+  const json = JSON.parse(text);
+  if (!json.buffers || json.buffers.length !== 1) throw new Error(label + ' expected one embedded buffer');
+  const m = (json.buffers[0].uri || '').match(/^data:application\/octet-stream;base64,(.+)$/);
+  if (!m) throw new Error(label + ' embedded buffer URI missing');
+  const bin = decodeBase64Exact(m[1]);
+  if (bin.byteLength !== json.buffers[0].byteLength) throw new Error(label + ' buffer bytes ' + bin.byteLength + ' != ' + json.buffers[0].byteLength);
+  delete json.buffers[0].uri;
+  const jb = new TextEncoder().encode(JSON.stringify(json)), jp = (4 - jb.byteLength % 4) % 4, bp = (4 - bin.byteLength % 4) % 4;
+  const total = 12 + 8 + jb.byteLength + jp + 8 + bin.byteLength + bp, out = new Uint8Array(total), dv = new DataView(out.buffer);
+  let o = 0;
+  dv.setUint32(o, 0x46546c67, true); o += 4; dv.setUint32(o, 2, true); o += 4; dv.setUint32(o, total, true); o += 4;
+  dv.setUint32(o, jb.byteLength + jp, true); o += 4; dv.setUint32(o, 0x4e4f534a, true); o += 4;
+  out.set(jb, o); o += jb.byteLength; for (let i = 0; i < jp; i++) out[o++] = 0x20;
+  dv.setUint32(o, bin.byteLength + bp, true); o += 4; dv.setUint32(o, 0x004e4942, true); o += 4;
+  out.set(bin, o); o += bin.byteLength; for (let i = 0; i < bp; i++) out[o++] = 0;
+  return out.buffer;
+}
+
+class Component extends DCLogic {
+  state = { tab: 'studio', section: 'face', actorPop: false, stagePop: false, clipPop: false, diagOpen: false, actorSearch: '', clipSearch: '',
+    dirty: false, lastSaved: null, status: 'booting', selId: null, mode: 'translate', snap: true, scope: 'teil', lastDrop: '', failures: [],
+    loading: 0, loadingText: '', tests: null, testing: false, tick: 0, ikSel: null, playing: false, poseName: '', labSec: 'clip', locoSel: null, locoMsg: '',
+    vw: typeof window !== 'undefined' ? window.innerWidth : 1200, panelOpen: typeof window === 'undefined' || window.innerWidth >= 700 };
+
+  componentDidMount() {
+    this.roots = new Map(); this.runtime = null; this.mixers = []; this.locks = []; this.scenes = {}; this.sceneOrder = [];
+    this.srcStatus = {}; this._token = 0; this._frameN = 0; this._lastFrame = 0; this._gltfCache = new Map(); this._buildN = 0;
+    this.anim = { ref: null, clip: null, action: null, speed: 1, loop: true, bound: null };
+    this.drafts = {}; this._draftVer = 0; this._applied = -1;
+    this._editOpts = { gridStep: this.props.gridStep ?? 0.05, angleStep: 15 };
+    this._onResize = () => { if (window.innerWidth !== this.state.vw) this.setState({ vw: window.innerWidth }); };
+    window.addEventListener('resize', this._onResize);
+    if (window.__KFB3D) this._boot(); else window.addEventListener('kfb3dready', () => this._boot(), { once: true });
+  }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearInterval(this._wd); window.removeEventListener('keydown', this._onKey); window.removeEventListener('resize', this._onResize); }
+  componentDidUpdate() {
+    const g = this.props.gridStep ?? 0.05;
+    if (this.EDIT && this._editOpts.gridStep !== g) { this._editOpts.gridStep = g; this.EDIT.setSnap(this.EDIT.snap); }
+    if (this.grid) this.grid.visible = this.props.showGrid ?? true;
+  }
+
+  _touch() { if (this._pend) return; this._pend = true; setTimeout(() => { this._pend = false; this.setState((s) => ({ tick: s.tick + 1 })); }, 60); }
+  _fail(name, path, msg) { this.setState((s) => ({ failures: s.failures.concat([{ name, path, msg: String(msg && msg.message || msg), boot: !this.doc }]) })); }
+  _src(key, ok, detail) { this.srcStatus[key] = { ok, detail }; }
+  async _json(url) { const r = await fetch(url); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }
+  async _waitEl(id) { for (let i = 0; i < 100; i++) { const el = document.getElementById(id); if (el && el.clientWidth) return el; await new Promise((r) => setTimeout(r, 30)); } return document.getElementById(id); }
+
+  async _boot() {
+    const H = window.__KFB3D, THREE = this.THREE = H.THREE;
+    THREE.Cache.enabled = true; window.__kfbTB = this;
+    const el = this.stageEl = await this._waitEl('kfb-stage');
+    const menu = this.menu = document.getElementById('kfb-objmenu'); if (menu) menu.hidden = true;
+    this.ikMenu = document.getElementById('kfb-ikmenu'); if (this.ikMenu) this.ikMenu.hidden = true;
+    const renderer = this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    el.appendChild(renderer.domElement); renderer.domElement.style.display = 'block';
+    const scene = this.scene = new THREE.Scene();
+    const cam = this.cam = new THREE.PerspectiveCamera(38, 1, 0.05, 200); cam.position.set(7.8, 4.6, 12.8);
+    this.hemi = new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25); scene.add(this.hemi);
+    const sun = this.sun = new THREE.DirectionalLight(0xffffff, 1.8); sun.position.set(6, 11, 7); sun.castShadow = true;
+    sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -10, right: 10, top: 10, bottom: -10, near: 0.5, far: 40 }); sun.shadow.bias = -0.0005;
+    scene.add(sun);
+    const controls = this.controls = new H.OrbitControls(cam, renderer.domElement);
+    controls.enableDamping = true; controls.dampingFactor = 0.12; controls.target.set(0, 1.1, 0); controls.maxPolarAngle = Math.PI * 0.495;
+    controls.screenSpacePanning = true; controls.minDistance = 0.4; controls.maxDistance = 60; controls.rotateSpeed = 0.9; controls.zoomSpeed = 1.1;
+    /* free orbit pivot: double-click any surface → orbit around that point */
+    renderer.domElement.addEventListener('dblclick', (e) => {
+      const r = renderer.domElement.getBoundingClientRect(), ray = new THREE.Raycaster();
+      ray.setFromCamera(new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1), cam);
+      const hit = ray.intersectObjects(this.world.children, true).find((h) => h.object.visible); if (!hit) return;
+      const d = hit.point.clone().sub(controls.target); controls.target.add(d); cam.position.add(d);
+    });
+    this.world = new THREE.Group(); this.world.name = 'stage-world'; scene.add(this.world);
+    const floor = new THREE.Mesh(new THREE.CircleGeometry(9, 72).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xd8d4ca, roughness: 1 }));
+    floor.name = 'Stage floor'; floor.receiveShadow = true; this.world.add(floor); this.floor = floor;
+    this.grid = new THREE.GridHelper(18, 36, 0xbdb7aa, 0xcac5ba); this.grid.position.y = 0.003; this.grid.visible = this.props.showGrid ?? true; scene.add(this.grid);
+    this.loader = new H.GLTFLoader();
+    this._buildHandles();
+    const ro = new ResizeObserver(() => this._resize()); ro.observe(el); this._resize();
+
+    const mlP = this._loadMotionLibrary();
+    try { this.EL = await import(jsd(SRC.editLayer)); this._src('editLayer', true); } catch (e) { this._src('editLayer', false, e.message); this._fail('Shared edit-layer.js', SRC.editLayer + '@' + PIN.slice(0, 8), e); }
+    try { this.Eye = await import(jsd(SRC.eyeRig)); this._src('eyeRig', true); } catch (e) { this._src('eyeRig', false, e.message); this._fail('EyeRig v6', SRC.eyeRig, e); }
+    try { this.PetLib = await import(SRC.petLibrary); this._src('petLibrary', true); } catch (e) { this._src('petLibrary', false, e.message); this._fail('pet-library.v6', SRC.petLibrary, e); }
+    await this._prewarm();
+    try { this.PoseMod = await import(SRC.poseRig); this._src('poseRig', true); } catch (e) { this._src('poseRig', false, e.message); this._fail('Pose owner · pose-rig.v1', SRC.poseRig, e); }
+    try { this.MouthMod = await import(jsd(SRC.mouth)); } catch (e) {}
+    try { this.Loco = await import(SRC.loco); this._src('loco', true, this.Loco.ROLES.length + ' roles'); } catch (e) { this._src('loco', false, e.message); this._fail('Locomotion profiles · locomotion-profiles.v1', SRC.loco, e); }
+    try { this.EarMod = await import(jsd(EAR.dir + EAR.mod, EAR.pin)); this.earRig = await this._json(raw(EAR.dir + EAR.rig, EAR.pin)); this._src('earDangle', true, this.earRig.schema); }
+    catch (e) { this._src('earDangle', false, e.message); this._fail('Ear owner · ear-dangle.v1.js (PR #214)', EAR.dir + EAR.mod + ' @' + EAR.pin.slice(0, 8), e); }
+    try { this.Graft = await import(jsd(SRC.graftMount)); this._src('graftMount', true); } catch (e) { this._src('graftMount', false, e.message); this._fail('FrizzleBob Driver Graft · graft-mount.v1', SRC.graftMount, e); }
+    try { this.contract = await this._json(raw(SRC.graftProfile)); this._src('graftProfile', true, 'v' + (this.contract.version || '?')); } catch (e) { this._src('graftProfile', false, e.message); this._fail('FrizzleBob Driver Graft · profile', SRC.graftProfile, e); }
+    try {
+      const idx = await this._json(raw(SRC.sceneDir + 'index.json'));
+      for (const s of idx.scenes || []) {
+        try { this.scenes[s.id] = await this._json(raw(SRC.sceneDir + s.file)); this.sceneOrder.push(s.id); }
+        catch (e) { this._fail('Resident scene · ' + s.title, SRC.sceneDir + s.file, e); }
+      }
+      this._src('sceneIndex', true, this.sceneOrder.length + ' scene(s)');
+    } catch (e) { this._src('sceneIndex', false, e.message); this._fail('Resident scene index', SRC.sceneDir + 'index.json', e); }
+    await mlP;
+
+    if (this.EL) {
+      this.EDIT = this.EL.makeEditLayer({ camera: cam, scene, controls }, renderer.domElement, {
+        ...this._editOpts, getRoot: () => this.world, recordOf: (n) => this._rec(n), groupOf: (r) => (r && r.group) || null, menu,
+        onPick: (node, rec) => this._onPick(node, rec), onChange: (nodes) => this._onEdit(nodes), onMenu: (m) => { if (m === 'floor') this.drop(); },
+      });
+      this.EDIT.gizmo.size = 0.85; this.EDIT.setOn(true); this.EDIT.onChange(() => this._syncEdit());
+      this.EDIT.addClaim((ray) => this._claimHandle(ray));
+    }
+    this._onKey = (e) => this._key(e); window.addEventListener('keydown', this._onKey);
+    const loop = () => { this._raf = requestAnimationFrame(loop); this._frame(); };
+    loop();
+    /* rAF is unreliable in some preview hosts (github.md 23.09.) — a 16 ms watchdog keeps orbit/damping fluid. */
+    this._wd = setInterval(() => { if (performance.now() - this._lastFrame > 30) this._frame(); }, 16);
+
+    let restored = false;
+    try { const s = localStorage.getItem(STORE_KEY); if (s) { const d = JSON.parse(s); if (d.format === 'kfb-toolbox-workspace' && d.id === WS_ID) { this.ws = d; restored = true; } } } catch (e) {}
+    if (!this.ws) this.ws = this._freshWs(this._freshDoc('neutral', null, 'frizzlebob-driver'));
+    this.doc = this.ws.scene;
+    await this.rebuild();
+    this.setState({ status: restored ? 'restored' : 'ready', dirty: false, lastSaved: restored ? this.ws.savedAt : null });
+    this.camFull();
+  }
+
+  async _prewarm() {
+    const base = 'tools/KFB-ToolBox/kfb-rigs-embed-v3/';
+    const files = ['frizzlegraft-v1/graft-mount.v1.js', 'frizzlegraft-v1/graft-biped.v1.js', 'frizzlegraft-v1/headgraft.v1.js', 'frizzlegraft-v1/ears.v2.js', 'frizzlegraft-v1/facehost.v1.js',
+      'frizzlegraft-v1/matzones.v1.js', 'frizzlegraft-v1/eyeoval.v1.js', 'frizzlegraft-v1/headzones.v1.js', 'frizzlegraft-v1/donoreyes.v1.js', 'frizzlegraft-v1/wordmark.v1.js', 'frizzlegraft-v1/actor-wobble.v1.js',
+      'petstudio-v9/studio-v12/pet-eye-rig.v6.js', 'petstudio-v9/studio-v3/pet-mouth.v1.js', 'petstudio-v9/studio-v12/brow-rig.v2.js', 'petstudio-v9/studio-v12/pet-nose.v2.js', 'petstudio-v9/studio-v12/pet-moustache.v1.js',
+      'petstudio-v9/studio-v13/pose-rig.v1.js', 'petstudio-v9/studio-v12/frizzlebob.v4a.js', 'petstudio-v9/kfb-ink-canon.js', 'lab-v6/facegraft.v1.js', 'lab-v6/partrig.v1.js', 'lab-v4/carlrig.js', 'lab-v2/audit.js'];
+    const miss = [];
+    await Promise.all(files.map(async (f) => {
+      for (let i = 0; i < 3; i++) { try { const r = await fetch(jsd(base + f)); if (r.ok) { await r.text(); return; } } catch (e) {} await new Promise((r) => setTimeout(r, 400 * (i + 1))); }
+      miss.push(f);
+    }));
+    this._src('graftChain', !miss.length, (files.length - miss.length) + '/' + files.length + ' files');
+    for (const f of miss) this._fail('Driver Graft chain file', base + f + ' @' + PIN.slice(0, 8), 'not reachable after 3 tries');
+  }
+
+  /* Motion Library owner files, read-only (AN-PROFILE-01 contract). Checks mirror lab/motion-library.v1.js. */
+  async _loadMotionLibrary() {
+    const base = 'https://cdn.jsdelivr.net/gh/' + REPO + '@' + ML.rev + '/' + ML.root;
+    try {
+      const [cat, prof, reader] = await Promise.all([this._json(base + ML.catalogue), this._json(base + ML.profiles), import(base + ML.reader)]);
+      if (cat.schema !== 'kfb.motion-catalog.v1') throw new Error('catalogue schema ' + cat.schema);
+      if ((cat.clips || []).length !== 33) throw new Error('expected 33 clips, got ' + (cat.clips || []).length);
+      const v = reader.validateMotionProfileCatalog(prof); if (!v.ok) throw new Error(v.errors.join('; '));
+      const a = cat.clips.map((c) => c.id).sort(), b = Object.keys(prof.clipProfiles || {}).sort();
+      if (a.length !== b.length || a.some((x, i) => x !== b[i])) throw new Error('catalogue/profile clip ids differ');
+      this.ML = { cat, prof, reader, base, glb: {} };
+      this._src('mlMeta', true, cat.clips.length + ' clips · profiles ' + prof.schema);
+    } catch (e) { this._src('mlMeta', false, e.message); this._fail('Motion Library catalogue / profiles', ML.root + ' @' + ML.rev.slice(0, 8), e); }
+  }
+  _mlGlb(rig) {
+    const M = this.ML; if (!M) return Promise.reject(new Error('Motion Library not loaded'));
+    if (!M.glb[rig]) {
+      const name = M.cat.libraries[rig]; if (!name) return Promise.reject(new Error('no library for ' + rig));
+      M.glb[rig] = this.loader.loadAsync(M.base + encodeURIComponent(name))
+        .catch(() => this.loader.loadAsync(raw(ML.root + name, ML.rev)))
+        .then((g) => { this._src('ml' + rig, true, g.animations.length + ' clips'); return g; })
+        .catch((e) => { this._src('ml' + rig, false, e.message); this._fail('Motion Library GLB · ' + rig, ML.root + name + ' @' + ML.rev.slice(0, 8), e); M.glb[rig] = null; throw e; });
+    }
+    return M.glb[rig];
+  }
+  _stockGlb(rig, k) {
+    const key = 'stock:' + rig + ':' + k;
+    if (!this._gltfCache.has(key)) this._gltfCache.set(key, this.loader.loadAsync(raw(STOCK.path(rig.replace('Rig_', ''), k), STOCK.rev))
+      .then((g) => { this._src(key, true, g.animations.length + ' clips'); this._touch(); return g; })
+      .catch((e) => { this._src(key, false, e.message); this._fail('KayKit stock · ' + rig + ' ' + k, STOCK.path(rig.replace('Rig_', ''), k) + ' @' + STOCK.rev.slice(0, 8), e); throw e; }));
+    return this._gltfCache.get(key);
+  }
+
+  _resize() {
+    const el = this.stageEl; if (!el || !this.renderer) return;
+    const w = el.clientWidth, h = el.clientHeight; if (!w || !h) return;
+    this.renderer.setSize(w, h); this.cam.aspect = w / h; this.cam.updateProjectionMatrix();
+  }
+
+  /* ---------- per frame: ONE runtime, the tab only decides who writes the bones ---------- */
+  _frame() {
+    if (!this.renderer) return;
+    const now = performance.now(), dt = Math.min(0.05, (now - (this._lastFrame || now)) / 1000); this._lastFrame = now; this._frameN++;
+    this.controls.update();
+    for (const m of this.mixers) { try { m.update(dt); } catch (e) {} }
+    if (this._frameN % 8 === 0) for (const l of this.locks) this._groundLock(l);
+    const rt = this.runtime;
+    if (rt) {
+      try {
+        if (rt.kind === 'pet') { if (rt.ch.loaded !== false) rt.ch.update(dt); rt.rig.update(dt); }
+        else {
+          if (this.seq) this._seqTick(rt, dt); else if (this.state.tab === 'studio') this._studioBones(rt, dt); else this._animBones(rt, dt);
+          if (rt.update) rt.update(dt);
+          /* EAR-DANGLE · frame order per EAR_DANGLE_INTEGRATION §1: mixer → controller (preview root) → world matrices → ears */
+          if (rt.ears) { const ar = this.roots.get('actor'); if (ar) ar.updateMatrixWorld(true); rt.ears.update(dt, {}); if (this._frameN % 15 === 0 && this.state.labSec === 'ears' && this.state.tab === 'anim') this._touch(); }
+        }
+      } catch (e) { if (!this._frameErr) { this._frameErr = true; console.warn('[toolbox] frame', e); } }
+    }
+    if (this.band) this._bandTick(dt);
+    if (this.worldPrev && this.worldPrev.sky) { try { this.worldPrev.sky.update(this.cam, this.sun.position); } catch (e) {} }
+    this._placeHandles();
+    if (this.EDIT) { if (!this.EDIT.borrowed) this.EDIT.follow(); else if (this.menu) this.menu.hidden = true; }
+    this.renderer.render(this.scene, this.cam);
+    if (this.state.tab === 'anim') this._playhead();
+  }
+  _poseOn(rt) { const a = this.ws && this.ws.active[this._rid()]; return !!(rt && rt.pose && a && a.poseOn); }
+  _bind(rt) { if (!rt._skels) { rt._skels = []; rt.figure.traverse((n) => { if (n.isSkinnedMesh && n.skeleton && !rt._skels.includes(n.skeleton)) rt._skels.push(n.skeleton); }); } rt._skels.forEach((s) => s.pose()); }
+  _studioBones(rt, dt) {
+    if (this._poseOn(rt)) {
+      this._bind(rt);
+      const d = this._draft(), P = rt.pose;
+      if (this._applied !== this._draftVer) { P.set({ ...d.angles, on: true, weight: 1 }); this._applied = this._draftVer; }
+      P.p.on = true; P.apply();
+      for (const [k] of IK_KEYS) { const t = d.ik[k]; if (t && t.pinned) this._solveIK(rt, k, t.pos, 1); }
+    } else if (rt.mixer) rt.mixer.update(dt);
+  }
+  _animBones(rt, dt) {
+    const A = this.anim; if (!rt.mixer) return;
+    if (A.action && this.state.playing) {
+      rt.mixer.update(dt * A.speed); this._clipEventsTick(rt);
+      const d = A.clip.duration;
+      if (!A.loop && A.action.time >= d - 1e-3) { A.action.time = d; A.action.paused = true; this.setState({ playing: false }); }
+      if (this._frameN % 6 === 0) this._touch();
+    } else rt.mixer.update(0);
+    if (A.action) {
+      const f = this._frameF();
+      for (const c of this._corrections()) { const w = this._corrW(c, f); if (w > 0.001) this._solveIK(rt, c.target, c.pos, w); }
+    }
+  }
+
+  /* ---------- IK · Solver A: pose-rig.v1 OWNER FIX (25.09) — one chain owner for Studio AND Animation Lab ----------
+     The owner now measures every chain from world positions (wrist/intermediate bones included) and
+     re-measures before each solve; the ToolBox no longer re-measures anything itself. */
+  _ik(rt) {
+    if (!rt || !rt.pose || !rt.pose.built || !rt.pose.ikChain) return null;
+    if (rt.ik) return rt.ik;
+    const ik = {}; for (const [k] of IK_KEYS) { const c = rt.pose.ikChain(k); if (c) ik[k] = c; }
+    return (rt.ik = ik);
+  }
+  _effLocal(rt, key) { return this._ik(rt) && rt.ik[key] ? rt.pose.effector(key) : null; }
+  _solveIK(rt, key, pos, w) { if (!pos || !this._ik(rt) || !rt.ik[key]) return null; return rt.pose.solveIK(key, new this.THREE.Vector3().fromArray(pos), w); }
+  _miss(rt, key, pos) { const e = this._effLocal(rt, key); return e && pos ? e.distanceTo(new this.THREE.Vector3().fromArray(pos)) : null; }
+
+  _buildHandles() {
+    const T = this.THREE; this.handles = {};
+    this.ikGroup = new T.Group(); this.ikGroup.name = 'ik-handles'; this.scene.add(this.ikGroup);
+    for (const [k, label] of IK_KEYS.concat([['grip', 'Held item']])) {
+      const m = new T.Mesh(new T.SphereGeometry(k === 'grip' ? 0.04 : 0.065, 18, 12), new T.MeshBasicMaterial({ color: 0xffffff, depthTest: false, transparent: true, opacity: 0.95 }));
+      const ring = new T.Mesh(new T.SphereGeometry(k === 'grip' ? 0.052 : 0.085, 18, 12), new T.MeshBasicMaterial({ color: 0x1f2022, depthTest: false, transparent: true, opacity: 0.55, side: T.BackSide }));
+      m.add(ring); m.renderOrder = 20; ring.renderOrder = 19; m.name = 'IK · ' + label; m.userData.ik = k; m.userData.noMeasure = true; m.visible = false;
+      this.ikGroup.add(m); this.handles[k] = m;
+    }
+  }
+  _handlesOn() {
+    const rt = this.runtime, s = this.state; if (!rt || this.state.testing && false) return false;
+    if (s.tab === 'studio') return (s.section === 'pose' || s.section === 'fit') && !!this._ik(rt);
+    return !!this._ik(rt) && !!this.anim.action && !s.playing && !this.seq;
+  }
+  _placeHandles() {
+    const rt = this.runtime, on = this._handlesOn(), sel = this.state.ikSel;
+    for (const [k] of IK_KEYS) {
+      const h = this.handles[k]; h.visible = on && !!(rt.ik && rt.ik[k]);
+      if (!h.visible) continue;
+      const pinned = this._targetFor(k);
+      if (!(sel === k && this.EDIT && this.EDIT.borrowed && (this.EDIT.busy() || !this._reseat))) {
+        const p = pinned ? new this.THREE.Vector3().fromArray(pinned) : this._effLocal(rt, k);
+        if (p) h.position.copy(rt.pose.root.localToWorld(p));
+      }
+      h.material.color.set(sel === k ? 0x1f2022 : pinned ? 0xb8781c : 0xffffff);
+    }
+    this._reseat = false;
+    const g = this.handles.grip; g.visible = sel === 'grip' && !!(rt && rt.legacy && rt.legacy.holder);
+    if (g.visible && !(this.EDIT && this.EDIT.busy())) rt.legacy.holder.getWorldPosition(g.position);
+    this._placeIkMenu();
+  }
+  _placeIkMenu() {
+    const m = this.ikMenu, k = this.state.ikSel; if (!m) return;
+    const h = k && this.handles[k];
+    if (!h || !h.visible) { m.hidden = true; return; }
+    const p = h.getWorldPosition(new this.THREE.Vector3()).project(this.cam), r = this.renderer.domElement.getBoundingClientRect();
+    m.hidden = false; m.style.left = ((p.x * 0.5 + 0.5) * r.width) + 'px'; m.style.top = Math.max(40, (-p.y * 0.5 + 0.5) * r.height - 18) + 'px';
+  }
+  _targetFor(k) {
+    if (this.state.tab === 'studio') { const t = this._draft().ik[k]; return t && t.pinned ? t.pos : null; }
+    const c = this._corrAt(k, Math.round(this._frameF())); return c ? c.pos : null;
+  }
+  _claimHandle(ray) {
+    const vis = Object.values(this.handles).filter((h) => h.visible); if (!vis.length) return false;
+    const hit = ray.intersectObjects(vis, false)[0]; if (!hit) return false;
+    let o = hit.object; while (o && !o.userData.ik) o = o.parent;
+    if (o) { this.pickIK(o.userData.ik); return true; } return false;
+  }
+  pickIK(k) {
+    if (!this.EDIT) return;
+    const h = this.handles[k]; this._reseat = true; this._placeHandles();
+    this.EDIT.borrow(h, k === 'grip' ? (this._gripMode || 'translate') : 'translate', () => this._handleDrag(k), IK_LABEL[k] || 'Held item');
+    if (k === 'grip') { this.EDIT.release(); this.EDIT.borrow(this.runtime.legacy.holder, this._gripMode || 'translate', () => this._gripDrag(), 'Held item'); }
+    this.setState({ ikSel: k, selId: null });
+  }
+  closeIK() { if (this.EDIT && this.EDIT.borrowed) this.EDIT.release(); this.setState({ ikSel: null }); }
+  _handleDrag(k) {
+    const rt = this.runtime; if (!rt || !rt.pose) return;
+    const pos = rt.pose.root.worldToLocal(this.handles[k].position.clone()).toArray().map(r4);
+    if (this.state.tab === 'studio') { const d = this._draft(); d.ik[k] = { pinned: true, pos }; this._draftVer++; }
+    else this._upsertCorrection(k, Math.round(this._frameF()), pos);
+    this.setState({ dirty: true }); this._touch();
+  }
+  ikRelease() {
+    const k = this.state.ikSel; if (!k) return;
+    if (k === 'grip') { const lp = this._legacyCfg(); lp.grip = null; this.setState({ dirty: true }); this.closeIK(); this._rebuildActor(); return; }
+    if (this.state.tab === 'studio') { delete this._draft().ik[k]; this._draftVer++; }
+    else { const c = this._corrAt(k, Math.round(this._frameF())); if (c) this._delCorrection(c.id); }
+    this._reseat = true; this.setState({ dirty: true }); this._touch();
+  }
+
+  /* ---------- geometry helpers (WB2 fitObject / groundModelLocal semantics) ---------- */
+  _bounds(o, precise, step = 1) {
+    const THREE = this.THREE; o.updateWorldMatrix(true, true);
+    const b = new THREE.Box3(), v = new THREE.Vector3(), t = new THREE.Box3();
+    o.traverse((n) => {
+      if (!(n.isMesh || n.isSkinnedMesh) || !n.geometry || n.userData.noMeasure || n.userData.petOverlay) return;
+      for (let p = n; p && p !== o.parent; p = p.parent) if (!p.visible) return;
+      if (precise && n.isSkinnedMesh) { const pos = n.geometry.attributes.position; for (let i = 0; i < pos.count; i += step) { n.getVertexPosition(i, v); v.applyMatrix4(n.matrixWorld); b.expandByPoint(v); } }
+      else { if (!n.geometry.boundingBox) n.geometry.computeBoundingBox(); t.copy(n.geometry.boundingBox).applyMatrix4(n.matrixWorld); b.union(t); }
+    });
+    return b;
+  }
+  _fit(o, fit) {
+    if (!fit) return; const s = this._bounds(o, false).getSize(new this.THREE.Vector3());
+    let k = 1; if (fit.height) k = fit.height / Math.max(s.y, 1e-6); if (fit.max) k = fit.max / Math.max(s.x, s.y, s.z, 1e-6);
+    o.scale.multiplyScalar(k); o.updateWorldMatrix(true, true);
+  }
+  _groundFree(c) { const b = this._bounds(c, true); if (Number.isFinite(b.min.y)) { c.position.y -= b.min.y; c.updateWorldMatrix(true, true); } }
+  _groundLock(l) {
+    const { root, container } = l; if (!root.parent) return;
+    const inv = new this.THREE.Matrix4().copy(root.matrixWorld).invert();
+    const b = this._bounds(container, true, 2).applyMatrix4(inv);
+    if (Number.isFinite(b.min.y) && Math.abs(b.min.y) > 1e-4) container.position.y -= b.min.y;
+  }
+  async _gltf(url) { if (!this._gltfCache.has(url)) this._gltfCache.set(url, this.loader.loadAsync(url)); return this._gltfCache.get(url); }
+
+  /* ---------- workspace: scene doc (WB2/R2 records) + Actor / Pose / Motion profiles ---------- */
+  _freshWs(doc) { return { format: 'kfb-toolbox-workspace', version: 1, id: WS_ID, scene: doc, actors: {}, poses: {}, active: {}, motion: {}, locomotion: {}, fits: {} }; }
+  _bandRecord() {
+    const rec = { id: 'band-s39', kind: 'module', name: 'Resident Band · S39', role: 'resident module', group: 'band',
+      source: { path: BAND.dir + BAND.def, module: BAND.dir + BAND.mod, commit: BAND.pin }, transform: { position: [0, 0, -4.6], rotation: [0, 0, 0], scale: [1, 1, 1] } };
+    rec.defaultTransform = clone(rec.transform); return rec;
+  }
+  _rid() { const a = this._actorRec(); return a ? a.rosterId : null; }
+  _rosterEntry(id) { return BASE_ROSTER.find((x) => x.id === id) || null; }
+  _actorProf(rid = this._rid()) {
+    const w = this.ws.actors; if (!w[rid]) { const r = this._rosterEntry(rid) || {}; w[rid] = { schema: 'kfb.actor-profile/0.1', id: rid, label: r.label, rigFamily: r.rig, face: {}, legacy: null }; }
+    return w[rid];
+  }
+  _legacyCfg() { const p = this._actorProf('legacy-warband'); if (!p.legacy) p.legacy = { body: 'B', head: 'B', arms: 'B', held: 'none', grip: null }; return p.legacy; }
+  _motionProf(rid = this._rid()) {
+    const m = this.ws.motion; if (!m[rid]) m[rid] = { schema: 'kfb.motion-profile/0.1', actor: rid, rigFamily: (this.runtime && this.runtime.rigFamily) || null, roles: {}, clips: {} };
+    return m[rid];
+  }
+  _draft(rid = this._rid()) {
+    if (!this.drafts[rid]) {
+      const a = this.ws.active[rid], p = a && a.poseId && this.ws.poses[a.poseId];
+      const P = this.PoseMod && this.PoseMod.PRESETS;
+      this.drafts[rid] = p ? { angles: clone(p.angles), ik: clone(p.ik || {}), from: p.id } : { angles: { preset: 'stand', ...(P ? P.stand : {}) }, ik: {}, from: null };
+    }
+    return this.drafts[rid];
+  }
+
+  _roster() {
+    const res = [];
+    for (const sid of this.sceneOrder || []) {
+      const sc = this.scenes[sid];
+      (sc.assets || []).forEach((a, i) => { if (a.role === 'actor') res.push({ id: 'resident:' + sid + ':' + (a.residentId || i), kind: 'resident', sceneId: sid, recId: this._resId(sc, a, i), label: a.name, section: 'Resident · ' + sc.title, swatch: '#b0a58f' }); });
+    }
+    return BASE_ROSTER.slice(0, 4).concat(res, BASE_ROSTER.slice(4));
+  }
+  _resId(sc, a, i) { return 'res:' + sc.id + ':' + i; }
+  _actorRecord(rosterId, preset) {
+    const r = this._rosterEntry(rosterId) || BASE_ROSTER[0];
+    const src = r.kind === 'graft' ? { path: SRC.graftMount, profile: SRC.graftProfile, petId: 'graft-driver', commit: PIN }
+      : r.kind === 'earfb' ? { path: EAR.dir + EAR.fig, rig: EAR.dir + EAR.rig, module: EAR.dir + EAR.mod, commit: EAR.pin }
+      : r.kind === 'kaykit' ? { path: BRUTE.path, texture: BRUTE.tex, commit: BRUTE.pin }
+      : r.kind === 'legacy' ? { path: LEG.rig, parts: LEGW + 'characters/gltf/', commit: LEG.pin }
+      : { owner: 'kfb-lib/pet-library.v6.js#SETS.animals', petId: r.petId, path: 'media/3D_Assets/GLB_cube-pets/animal-' + r.petId + '.glb', commit: 'main (PET_BASE)' };
+    const rec = { id: 'actor', kind: r.kind, rosterId: r.id, name: r.label, role: 'featured actor', group: 'featured', rigFamily: r.rig, source: src,
+      transform: { position: (SPOT[preset] || SPOT.neutral).slice(), rotation: [0, 0, 0], scale: [1, 1, 1] } };
+    rec.defaultTransform = clone(rec.transform);
+    return rec;
+  }
+  _sceneRecords(sc) {
+    return (sc.assets || []).map((a, i) => {
+      const rec = { id: this._resId(sc, a, i), kind: a.role === 'actor' ? 'resident' : 'prop', name: a.name, role: a.role, group: a.group,
+        source: { path: a.path, commit: sc.assetCommit }, fit: a.fit || null,
+        transform: { position: (a.at || [0, 0, 0]).slice(), rotation: (a.rotationDeg || [0, 0, 0]).map((d) => +(d * Math.PI / 180).toFixed(5)), scale: [1, 1, 1] } };
+      if (a.role === 'actor') rec.resident = { id: a.residentId, rigFamily: a.rigFamily, texture: RESIDENT_TEXTURE[a.residentId] ? { path: RESIDENT_TEXTURE[a.residentId], commit: sc.assetCommit } : null,
+        clip: a.pose ? { name: a.pose.clip, path: a.pose.path, commit: a.pose.commit } : null, ground: a.ground || { y: 0, lock: true } };
+      rec.defaultTransform = clone(rec.transform);
+      return rec;
+    });
+  }
+  _freshDoc(preset, sceneId, rosterId) {
+    const sc = sceneId && this.scenes[sceneId];
+    const objects = (preset === 'resident' && sc ? this._sceneRecords(sc) : []).concat(preset === 'band' ? [this._bandRecord()] : [], [this._actorRecord(rosterId, preset)]);
+    return { format: 'kfb-worldbuilder-scene', version: 1, id: WS_ID,
+      stage: { preset, sceneId: sc ? sceneId : null, scene: sc ? { path: SRC.sceneDir + sceneId + '.json', commit: PIN, schema: sc.schema } : null },
+      sources: { sceneEdit: { owner: 'KFB ToolBox', module: SRC.editLayer, commit: PIN }, graft: { module: SRC.graftMount, profile: SRC.graftProfile, commit: PIN }, eyeRig: { module: SRC.eyeRig, commit: PIN } },
+      objects };
+  }
+  _rec(n) { const id = n && n.userData && n.userData.sceneObjectId; return id ? (this.doc.objects.find((o) => o.id === id) || null) : null; }
+  _actorRec() { return this.doc && this.doc.objects.find((o) => o.id === 'actor'); }
+  _updateRec(root) {
+    const rec = this._rec(root); if (!rec) return;
+    rec.transform.position = root.position.toArray().map(r4);
+    rec.transform.rotation = [root.rotation.x, root.rotation.y, root.rotation.z].map((v) => +v.toFixed(5));
+    rec.transform.scale = root.scale.toArray().map(r4);
+  }
+  _updateAll() { for (const r of this.roots.values()) this._updateRec(r); }
+
+  /* ---------- build ---------- */
+  async rebuild() {
+    const token = ++this._token;
+    if (this.EDIT) this.EDIT.clear();
+    for (const id of Array.from(this.roots.keys())) this._removeRoot(id);
+    this.mixers = []; this.locks = []; this.runtime = null; this.anim.action = null; this.anim.clip = null;
+    this.setState({ failures: this.state.failures.filter((f) => f.boot), selId: null, ikSel: null, playing: false, loading: this.doc.objects.length, loadingText: 'loading ' + this.doc.objects.length + ' source object(s)…' });
+    await Promise.all(this.doc.objects.map((rec) => this._build(rec, token)));
+    if (token !== this._token) return;
+    await this._setWorldPreview(this.doc.stage.preset === 'band');
+    await this._afterActor();
+    this.setState({ loading: 0 }); this._touch();
+  }
+  async _rebuildActor() {
+    const rec = this._actorRec(); if (!rec) return;
+    if (this.EDIT) this.EDIT.clear();
+    this._removeRoot('actor'); this.anim.action = null; this.anim.clip = null;
+    this.setState({ loading: 1, loadingText: 'loading ' + rec.name + '…', ikSel: null, playing: false, failures: this.state.failures.filter((f) => f.name !== rec.name) });
+    await this._build(rec, this._token);
+    await this._afterActor();
+    this.setState({ loading: 0 }); this._touch();
+  }
+  async _afterActor() {
+    this._applyFace(); this._applyEars();
+    if (this.state.tab === 'anim') await this._enterAnim(); else await this._enterStudio();
+  }
+  _removeRoot(id) {
+    const root = this.roots.get(id); if (!root) return;
+    if (this.band && this.band.recId === id) { try { this.band.M.dispose(); } catch (e) {} try { if (this.band.audio) this.band.audio.pause(); } catch (e) {} this.band = null; }
+    if (id === 'actor' && this.runtime) { try { this.runtime.dispose(); } catch (e) {} this.runtime = null; }
+    this.mixers = this.mixers.filter((m) => m.__root !== root); this.locks = this.locks.filter((l) => l.root !== root);
+    this.world.remove(root); this.roots.delete(id);
+  }
+  _makeRoot(rec) {
+    const root = new this.THREE.Group();
+    root.name = rec.name; root.userData.sceneObjectId = rec.id; root.userData.kind = rec.kind;
+    const t = rec.transform;
+    root.position.fromArray(t.position.map((v) => Number(v) || 0)); root.rotation.set(t.rotation[0] || 0, t.rotation[1] || 0, t.rotation[2] || 0); root.scale.fromArray(t.scale || [1, 1, 1]);
+    this.world.add(root); this.roots.set(rec.id, root);
+    return root;
+  }
+  async _build(rec, token) {
+    const THREE = this.THREE, root = this._makeRoot(rec);
+    const container = new THREE.Group(); container.name = 'model · ' + rec.name;
+    let rt = null;
+    try {
+      if (rec.kind === 'prop') {
+        const g = await this._gltf(raw(rec.source.path, rec.source.commit));
+        const m = g.scene.clone(true); container.add(m); this._fit(m, rec.fit);
+      } else if (rec.kind === 'resident') {
+        const g = await this.loader.loadAsync(raw(rec.source.path, rec.source.commit));
+        const m = g.scene; container.add(m); this._fit(m, rec.fit);
+        if (rec.resident && rec.resident.texture) { try { await this._applyTexture(m, rec.resident.texture); } catch (e) { this._fail(rec.name + ' · texture', rec.resident.texture.path, e); } }
+        if (rec.resident && rec.resident.clip) {
+          const ag = await this._gltf(raw(rec.resident.clip.path, rec.resident.clip.commit));
+          const clip = ag.animations.find((c) => c.name === rec.resident.clip.name);
+          if (!clip) throw new Error('clip not found: ' + rec.resident.clip.name);
+          const mixer = new THREE.AnimationMixer(m); mixer.clipAction(clip).play(); mixer.update(0); mixer.__root = root;
+          this.mixers.push(mixer); rec._clip = clip.name;
+        }
+        if (!rec.resident || !rec.resident.ground || rec.resident.ground.lock) this.locks.push({ root, container });
+      } else if (rec.kind === 'pet') {
+        if (!this.PetLib || !this.Eye) throw new Error('pet-library / EyeRig owner not loaded');
+        const o = { THREE, loadGltf: (url) => this.loader.loadAsync(url), makeMat: (opt) => new THREE.MeshStandardMaterial({ map: opt.map || null, color: opt.color != null ? opt.color : 0xffffff, roughness: opt.roughness != null ? opt.roughness : 0.85 }) };
+        const ch = new this.PetLib.Character(o); await ch.load('animals', rec.source.petId, {});
+        const rig = new this.Eye.EyeRig(ch, { pupilStyle: 'matte-cute', baseColor: 0xf2c93c }); rig.build();
+        container.add(ch.group);
+        rt = { kind: 'pet', ch, rig, rigFamily: 'pet', defColor: '#f2c93c', defStyle: 'matte-cute', defDx: rig.anchor ? rig.anchor.dx : 0.345, dispose: () => rig.dispose() };
+      } else if (rec.kind === 'graft') {
+        if (!this.Graft) throw new Error('graft-mount.v1.js not loaded');
+        if (!this.contract) throw new Error('graft profile not loaded');
+        const pet = this.Graft.pickGraftPet(this.contract, 'graft-driver'); if (!pet) throw new Error('graft-driver entry missing in profile');
+        const handle = await this.Graft.mountGraft({ THREE, loader: this.loader, parent: container, pet, lib: this.contract, camera: this.cam, animation: 'host', poseOverClip: false, log: (t) => { (window.__kfbGraftLog = window.__kfbGraftLog || []).push(t); } });
+        handle.poseOverClip = false;
+        const b = handle.biped;
+        /* Pose owner fix: the graft's PoseRig is rebuilt from the fixed owner (same constructor args as graft-mount) — one owner for both tabs. */
+        let pose = handle.pose;
+        if (this.PoseMod && handle.pose && handle.pose.root) {
+          try {
+            const np = new this.PoseMod.PoseRig({ THREE, root: handle.pose.root, figure: handle.pose.figure, fb: handle.pose.fb, log: () => {} }), st = np.build();
+            if (st.status === 'OK') { try { handle.pose.dispose(); } catch (e) {} pose = np; } else this._fail('Pose owner fix · graft', SRC.poseRig, JSON.stringify(st));
+          } catch (e) { this._fail('Pose owner fix · graft', SRC.poseRig, e); }
+        }
+        handle.update(0, this.cam);
+        const hb = this._bounds(handle.figure, true), h = hb.max.y - hb.min.y;
+        if (h > 1e-3) container.scale.setScalar(ACTOR_H / h);
+        for (const n of (handle.report.notes || [])) if (/fehlt|missing|failed/i.test(n)) this._fail('Driver Graft · part missing', SRC.graftMount + ' @' + PIN.slice(0, 8), n);
+        rec._graft = { host: pet.variant, nativeHeight: +h.toFixed(3), version: this.contract.version, petVersion: this.contract.meta && this.contract.meta.petVersions ? this.contract.meta.petVersions['graft-driver'] : null };
+        const g = pet.graft && pet.graft.roles && pet.graft.roles.eyes != null ? hexOf(pet.graft.roles.eyes) : (pet.color || '#f2c93c');
+        const stock = (b.allClips ? b.allClips() : []).filter((c) => c.clip).map((c) => ({ name: c.name, clip: c.clip, pack: c.source || 'KayKit' }));
+        try { const adv = await this._stockGlb('Rig_Medium', 'MovementAdvanced'); for (const c of adv.animations) if (!stock.find((x) => x.name === c.name)) stock.push({ name: c.name, clip: c, pack: 'MovementAdvanced' }); } catch (e) {}
+        rt = { kind: 'graft', handle, rig: handle.rig, mouth: handle.mouth, brow: handle.browGraft || handle.brow, nose: handle.noseGraft || handle.nose, pose,
+          figure: handle.figure, mixer: b.mixer, rigFamily: 'Rig_Medium', stock, own: [], bones: 0,
+          defColor: g, defStyle: (pet.eye && pet.eye.pupilStyle) || 'matte-cute', defDx: (pet.eye && pet.eye.anchor && pet.eye.anchor.dx) || 0.345,
+          defaultIdle: stock.find((c) => /^Idle_A$/.test(c.name)) ? { src: 'stock', id: 'Idle_A' } : (stock.find((c) => /^Idle/i.test(c.name)) ? { src: 'stock', id: stock.find((c) => /^Idle/i.test(c.name)).name } : null),
+          update: (dt) => handle.update(dt, this.cam), dispose: () => { try { if (pose !== handle.pose) pose.dispose(); } catch (e) {} handle.dispose(); } };
+      } else if (rec.kind === 'kaykit') {
+        const g = await this.loader.loadAsync(raw(BRUTE.path, BRUTE.pin));
+        const fig = g.scene; fig.name = 'figure · Orc Brute';
+        try { await this._applyTexture(fig, { path: BRUTE.tex, commit: BRUTE.pin }); } catch (e) { this._fail('Orc Brute · texture', BRUTE.tex, e); }
+        const inner = new THREE.Group(); inner.name = 'pose-root · Orc Brute'; inner.add(fig); container.add(inner);
+        container.scale.setScalar(CLASS_K);
+        let pose = null;
+        if (this.PoseMod) { try { pose = new this.PoseMod.PoseRig({ THREE, root: inner, figure: fig, log: () => {} }); const st = pose.build(); if (st.status !== 'OK') { this._fail('Orc Brute · pose owner', SRC.poseRig, JSON.stringify(st)); pose = null; } } catch (e) { pose = null; this._fail('Orc Brute · pose owner', SRC.poseRig, e); } }
+        const mixer = new THREE.AnimationMixer(fig);
+        let stock = [];
+        try { const sg = await this._stockGlb('Rig_Large', 'MovementBasic'); stock = sg.animations.map((c) => ({ name: c.name, clip: c, pack: 'MovementBasic' })); } catch (e) {}
+        rt = { kind: 'kaykit', figure: fig, mixer, pose, rigFamily: 'Rig_Large', stock, own: (g.animations || []).map((c) => ({ name: c.name, clip: c })),
+          defaultIdle: { src: 'ml', id: 'kfb_idle_breathing_a' }, dispose: () => { try { pose && pose.dispose(); } catch (e) {} } };
+      } else if (rec.kind === 'earfb') {
+        /* EAR-DANGLE-01 fixture: the Ear Rig lane's combined FrizzleBob (ear.l/r.1–3 skinned under head, KayKit Rig_Medium). */
+        if (!this.EarMod || !this.earRig) throw new Error('ear-dangle.v1.js / fb-default.ear-rig.json not loaded');
+        const g = await this.loader.loadAsync(raw(EAR.dir + EAR.fig, EAR.pin));
+        const fig = g.scene; fig.name = 'figure · FrizzleBob Ear Rig v5';
+        fig.traverse((n) => { if (n.isSkinnedMesh) n.frustumCulled = false; });
+        const inner = new THREE.Group(); inner.name = 'pose-root · FrizzleBob v5'; inner.add(fig); container.add(inner);
+        container.scale.setScalar(CLASS_K);
+        let pose = null;
+        if (this.PoseMod) { try { pose = new this.PoseMod.PoseRig({ THREE, root: inner, figure: fig, log: () => {} }); const st = pose.build(); if (st.status !== 'OK') { this._fail('FB Ear Rig v5 · pose owner', SRC.poseRig, JSON.stringify(st)); pose = null; } } catch (e) { pose = null; this._fail('FB Ear Rig v5 · pose owner', SRC.poseRig, e); } }
+        const stock = [];
+        for (const set of ['General', 'MovementBasic', 'MovementAdvanced']) { try { const sg = await this._stockGlb('Rig_Medium', set); for (const c of sg.animations) if (!stock.find((x) => x.name === c.name)) stock.push({ name: c.name, clip: c, pack: set }); } catch (e) {} }
+        const ears = this.EarMod.rigEars(fig, this.earRig);
+        if (ears.L.bones.length < 3 || ears.R.bones.length < 3) this._fail('FB Ear Rig v5 · ear chains', EAR.dir + EAR.fig, 'found ' + ears.L.bones.length + '+' + ears.R.bones.length + ' ear bones');
+        rt = { kind: 'earfb', figure: fig, mixer: new THREE.AnimationMixer(fig), pose, rigFamily: 'Rig_Medium', stock, own: [], ears,
+          defaultIdle: { src: 'stock', id: 'Idle_A' }, dispose: () => { try { pose && pose.dispose(); } catch (e) {} } };
+      } else if (rec.kind === 'module') {
+        /* S39 Resident Band: host gives parent, anchor and clock; the module brings NO ground plate. */
+        const B = await this._bandMod();
+        const def = await B.loadBandModuleDef(raw(BAND.dir + BAND.def, BAND.pin));
+        const M = await B.mountBandModule(def, { parent: container, anchor: { position: [0, 0, 0], rotationYDeg: 0 } });
+        if (token !== this._token) { try { M.dispose(); } catch (e) {} return; }
+        const groundMeshes = []; M.root.traverse((o) => { if (o.isMesh && /ground|plate|floor|podest|podium/i.test(o.name)) groundMeshes.push(o.name); });
+        this.band = { recId: rec.id, M, def, B, t: 0, beat: 0, playing: true, audio: null, groundMeshes, contact: null, ground: null };
+        this._src('band', true, Object.keys(M.perf || {}).length + ' performers · baseplate ' + String(def.baseplate));
+      } else if (rec.kind === 'legacy') {
+        const L = await this._buildLegacy(this._legacyCfg());
+        container.add(L.root); container.scale.setScalar(CLASS_K);
+        const own = L.clips.map((c) => ({ name: c.name, clip: c }));
+        const idle = own.find((c) => /^idle$/i.test(c.name)) || own.find((c) => /idle/i.test(c.name));
+        rt = { kind: 'legacy', figure: L.root, mixer: new THREE.AnimationMixer(L.root), pose: null, rigFamily: 'Rig_Legacy', stock: [], own, legacy: L,
+          defaultIdle: idle ? { src: 'own', id: idle.name } : null, dispose: () => {} };
+      }
+      if (token !== this._token) { if (rt) rt.dispose(); return; }
+      container.traverse((n) => { if (n.isMesh) { n.castShadow = true; n.receiveShadow = true; } });
+      if (rec.kind !== 'module') this._groundFree(container);   // a Resident module keeps its local y 0 support plane
+      root.add(container);
+      if (rt && rec.id === 'actor') { this.runtime = rt; this._buildN++; rt.buildN = this._buildN; }
+      rec.status = 'OK'; delete rec.error;
+    } catch (e) {
+      if (token !== this._token) return;
+      rec.status = 'SOURCE_FAILED'; rec.error = String(e && e.message || e);
+      this._removeRoot(rec.id);
+      this._fail(rec.name, (rec.source.path || '') + (rec.source.commit ? ' @' + String(rec.source.commit).slice(0, 8) : ''), e);
+    } finally {
+      if (token === this._token) this.setState((s) => ({ loading: Math.max(0, s.loading - 1), loadingText: 'loading · ' + Math.max(0, s.loading - 1) + ' left' }));
+    }
+  }
+  async _applyTexture(node, ref) {
+    const THREE = this.THREE, url = raw(ref.path, ref.commit);
+    const r = await fetch(url, { mode: 'cors' }); if (!r.ok) throw new Error('HTTP ' + r.status);
+    const tex = new THREE.Texture(await createImageBitmap(await r.blob()));
+    tex.colorSpace = THREE.SRGBColorSpace; tex.flipY = false; tex.magFilter = THREE.NearestFilter; tex.needsUpdate = true;
+    node.traverse((o) => { if (!(o.isMesh || o.isSkinnedMesh) || !o.material) return; const arr = [].concat(o.material).map((m) => { const n = m.clone(); n.map = tex; n.needsUpdate = true; return n; }); o.material = Array.isArray(o.material) ? arr : arr[0]; });
+  }
+
+  /* Legacy Character Builder · Resident-Atlas assembly rule: rigid source groups → six-bone Rig_Legacy via skeleton.boneInverses. */
+  async _legacyParts(key) {
+    const k = 'legacy-parts:' + key;
+    if (!this._gltfCache.has(k)) this._gltfCache.set(k, (async () => {
+      const r = await fetch(raw(LEG.parts[key], LEG.pin)); if (!r.ok) throw new Error('Orc ' + key + ' HTTP ' + r.status);
+      return this.loader.parseAsync(embeddedGltfToGlb(await r.text(), 'Orc ' + key), '');
+    })().then((g) => { this._src('legacyParts' + key, true); return g; }, (e) => { this._src('legacyParts' + key, false, e.message); this._gltfCache.delete(k); throw e; }));
+    return this._gltfCache.get(k);
+  }
+  async _buildLegacy(cfg) {
+    const want = [...new Set([cfg.body, cfg.head, cfg.arms])];
+    const [rigG, ...partGs] = await Promise.all([this.loader.loadAsync(raw(LEG.rig, LEG.pin)).then((g) => { this._src('legacyRig', true, g.animations.length + ' clips'); return g; }, (e) => { this._src('legacyRig', false, e.message); throw e; }),
+      ...want.map((k) => this._legacyParts(k))]);
+    const parts = {}; want.forEach((k, i) => { parts[k] = partGs[i].scene; });
+    const root = rigG.scene; root.name = 'Rig_Legacy · Warband Orc';
+    let skel = null; root.traverse((o) => { if (o.isSkinnedMesh && !skel) skel = o.skeleton; });
+    if (!skel) throw new Error('Legacy rig skeleton missing');
+    root.traverse((o) => { if (o.isSkinnedMesh) { o.visible = false; o.userData.noMeasure = true; } });
+    const src = { Body: cfg.body, Head: cfg.head, armLeft: cfg.arms, armRight: cfg.arms };
+    const placed = [], missing = [];
+    for (const [boneName, rx] of Object.entries(LEG_SLOTS)) {
+      const scene = parts[src[boneName]]; scene.updateMatrixWorld(true);
+      let hit = null; scene.traverse((o) => { if (!hit && rx.test(o.name)) hit = o; });
+      const bone = skel.bones.find((b) => b.name === boneName);
+      if (!bone || !hit) { missing.push(boneName); continue; }
+      const node = hit.clone(true), world = hit.matrixWorld.clone(), inv = skel.boneInverses[skel.bones.indexOf(bone)];
+      bone.add(node); node.matrixAutoUpdate = false; node.matrix.copy(inv).multiply(world); node.matrixWorldNeedsUpdate = true;
+      placed.push(boneName + ' ← Orc ' + src[boneName]);
+    }
+    if (missing.length) throw new Error('Legacy assembly missing: ' + missing.join(', '));
+    let holder = null, heldNode = null;
+    if (cfg.held && cfg.held !== 'none' && LEG.props[cfg.held]) {
+      const pg = await this._gltf(raw(LEG.props[cfg.held], LEG.pin));
+      const bone = skel.bones.find((b) => b.name === (cfg.held === 'shield' ? 'armLeft' : 'armRight'));
+      heldNode = pg.scene.clone(true); holder = new this.THREE.Group(); holder.name = 'held · ' + cfg.held; holder.add(heldNode);
+      bone.add(holder);
+      const gp = cfg.grip;
+      if (gp) { holder.position.fromArray(gp.pos); holder.rotation.set(...gp.rot); holder.scale.setScalar(gp.scale || 1); }
+      else { root.updateMatrixWorld(true); const armNode = bone.children.find((c) => c !== holder); const bb = armNode ? this._bounds(armNode, false) : null;
+        if (bb && !bb.isEmpty()) { const lo = bone.worldToLocal(new this.THREE.Vector3((bb.min.x + bb.max.x) / 2, bb.min.y, (bb.min.z + bb.max.z) / 2)); holder.position.copy(lo); } }
+    }
+    return { root, skel, clips: rigG.animations || [], placed, holder, heldNode, cfg: clone(cfg) };
+  }
+  setLegacy(patch) { Object.assign(this._legacyCfg(), patch); if ('held' in patch) this._legacyCfg().grip = null; this.setState({ dirty: true }); this._rebuildActor(); }
+  _gripDrag() {
+    const L = this.runtime && this.runtime.legacy; if (!L || !L.holder) return;
+    const h = L.holder; this._legacyCfg().grip = { pos: h.position.toArray().map(r4), rot: [h.rotation.x, h.rotation.y, h.rotation.z].map((v) => +v.toFixed(4)), scale: r4(h.scale.x) };
+    this.setState({ dirty: true }); this._touch();
+  }
+
+  /* ---------- Face (EyeRig v6 · pet-mouth v1) → Actor Profile ---------- */
+  _eye() {
+    const rt = this.runtime; if (!rt || !rt.rig) return null;
+    const s = (this._actorProf().face || {}).eye || {};
+    return { pupilStyle: s.pupilStyle || rt.defStyle, baseColor: s.baseColor || rt.defColor, dx: s.dx != null ? s.dx : rt.defDx };
+  }
+  _applyFace() {
+    const rt = this.runtime; if (!rt) return;
+    const e = this._eye(), f = this._actorProf().face || {};
+    if (rt.rig && e) { try { rt.rig.setPupilStyle(e.pupilStyle); rt.rig.setBaseColor(parseInt(e.baseColor.slice(1), 16)); rt.rig.setAnchor({ dx: e.dx }); } catch (err) {} }
+    if (rt.mouth && f.mouth) { try { if (f.mouth.set) rt.mouth.setSet(f.mouth.set); if (f.mouth.viseme) rt.mouth.setViseme(f.mouth.viseme); } catch (err) {} }
+    if (f.brow != null && rt.brow && rt.brow.set) try { rt.brow.set({ enabled: f.brow }); } catch (err) {}
+    if (f.nose != null && rt.nose && rt.nose.set) try { rt.nose.set({ enabled: f.nose }); } catch (err) {}
+  }
+  _setFace(patch) {
+    const p = this._actorProf(); p.face = { ...(p.face || {}), ...patch };
+    this._applyFace(); this.setState({ dirty: true }); this._touch();
+  }
+  _setEye(patch) { const cur = this._eye(); if (!cur) return; this._setFace({ eye: { ...cur, ...patch } }); }
+  setViseme(id) {
+    const m = this.runtime && this.runtime.mouth; if (!m) return null;
+    m.talk(false); const key = m.setViseme(id);
+    this._setFace({ mouth: { ...((this._actorProf().face || {}).mouth || {}), viseme: id, set: m.set } });
+    return key;
+  }
+  toggleTalk() { const m = this.runtime && this.runtime.mouth; if (!m) return; m.talk(!m.talking); if (!m.talking) { const v = ((this._actorProf().face || {}).mouth || {}).viseme; if (v) m.setViseme(v); } this._touch(); }
+
+  /* ---------- Clips (Motion Library · KayKit stock · Legacy own) ---------- */
+  _clipKey(ref) { return ref ? ref.src + ':' + ref.id : null; }
+  _mlClip(id) { return this.ML && this.ML.cat.clips.find((c) => c.id === id) || null; }
+  _mlProfile(id) { return this.ML ? this.ML.reader.getClipProfile(this.ML.prof, id) : null; }
+  _clipLabel(ref) {
+    if (!ref) return 'No clip';
+    if (ref.src === 'ml') { const c = this._mlClip(ref.id); return c ? c.label_de + ' · ' + c.group : ref.id; }
+    return ref.id + (ref.src === 'stock' ? ' · KayKit' : ' · Legacy');
+  }
+  async _resolveClip(ref) {
+    const rt = this.runtime; if (!rt || !ref) throw new Error('no actor');
+    if (ref.src === 'ml') {
+      const cat = this._mlClip(ref.id); if (!cat) throw new Error('unknown Motion Library clip ' + ref.id);
+      if (!cat.rigs.includes(rt.rigFamily)) throw new Error(ref.id + ' has no ' + rt.rigFamily + ' bake');
+      const g = await this._mlGlb(rt.rigFamily);
+      const clip = g.animations.find((c) => c.name === ref.id); if (!clip) throw new Error(ref.id + ' missing in ' + rt.rigFamily + ' GLB');
+      return clip;
+    }
+    const list = ref.src === 'stock' ? rt.stock : rt.own;
+    const e = (list || []).find((c) => c.name === ref.id); if (!e) throw new Error(ref.id + ' not in ' + ref.src + ' clips of this actor');
+    return e.clip;
+  }
+  _bindCount(clip, root) {
+    const PB = this.THREE.PropertyBinding; let n = 0;
+    for (const t of clip.tracks) { try { const p = PB.parseTrackName(t.name); if (PB.findNode(root, p.nodeName)) n++; } catch (e) {} }
+    return n;
+  }
+  async _play(ref, { paused = false, loop = true } = {}) {
+    const rt = this.runtime; if (!rt || !rt.mixer || !ref) return null;
+    const clip = await this._resolveClip(ref);
+    if (this.runtime !== rt) return null;
+    rt.mixer.stopAllAction();
+    const a = rt.mixer.clipAction(clip); a.reset(); a.setLoop(loop ? this.THREE.LoopRepeat : this.THREE.LoopOnce, Infinity); a.clampWhenFinished = !loop; a.play(); a.paused = paused;
+    rt.mixer.update(0);
+    return { clip, action: a, bound: this._bindCount(clip, rt.figure) };
+  }
+  _idleRef() { const rt = this.runtime; if (!rt) return null; const m = this.ws.motion[this._rid()]; return (m && m.roles.idle && m.roles.idle.ref) || rt.defaultIdle; }
+  async _enterStudio() {
+    const rt = this.runtime; if (!rt || !rt.mixer) return;
+    this.anim.action = null;
+    try { await this._play(this._idleRef()); } catch (e) { rt.mixer.stopAllAction(); this._bind(rt); }
+  }
+  async _enterAnim() {
+    const rt = this.runtime; if (!rt || !rt.mixer) { this.anim.action = null; this.anim.clip = null; return; }
+    const ref = this.anim.ref && this._clipOk(this.anim.ref) ? this.anim.ref : this._idleRef();
+    await this.loadClip(ref, { keepPlaying: false });
+  }
+  _clipOk(ref) {
+    const rt = this.runtime; if (!rt || !ref) return false;
+    if (ref.src === 'ml') { const c = this._mlClip(ref.id); return !!(c && c.rigs.includes(rt.rigFamily)); }
+    return !!((ref.src === 'stock' ? rt.stock : rt.own) || []).find((c) => c.name === ref.id);
+  }
+  async loadClip(ref, { keepPlaying = false } = {}) {
+    const rt = this.runtime; if (!rt || !ref) return null;
+    this.setState({ clipPop: false, clipSearch: '' });
+    try {
+      const mp = this._motionProf(), cs = mp.clips[this._clipKey(ref)];
+      const cat = ref.src === 'ml' ? this._mlClip(ref.id) : null;
+      const loop = cs && cs.loop != null ? cs.loop : (cat ? cat.loop : true);
+      const r = await this._play(ref, { paused: !keepPlaying, loop: true });
+      if (!r) return null;
+      Object.assign(this.anim, { ref, clip: r.clip, action: r.action, bound: r.bound, total: r.clip.tracks.length, loop, speed: cs && cs.speed ? cs.speed : 1 });
+      this._reseat = true; this.anim._pf = null;
+      this.setState({ playing: keepPlaying, ikSel: null }); if (this.EDIT && this.EDIT.borrowed) this.EDIT.release();
+      this._touch();
+      return r;
+    } catch (e) { this._fail('Clip · ' + this._clipLabel(ref), ref.src + ':' + ref.id, e); return null; }
+  }
+  _fps() { const c = this.anim.ref && this.anim.ref.src === 'ml' ? this._mlClip(this.anim.ref.id) : null; return c ? c.fps : 30; }
+  _frames() { const c = this.anim.ref && this.anim.ref.src === 'ml' ? this._mlClip(this.anim.ref.id) : null; return c ? c.frames : Math.max(1, Math.round((this.anim.clip ? this.anim.clip.duration : 1) * 30)); }
+  _frameF() { const a = this.anim.action; return a ? a.time * this._fps() + 1 : 1; }
+  scrubFrame(f) {
+    const A = this.anim; if (!A.action) return;
+    const n = this._frames(); f = Math.max(1, Math.min(n, f));
+    A.action.time = Math.min(A.clip.duration, (f - 1) / this._fps()); A.action.paused = true;
+    this.runtime.mixer.update(0); this._reseat = true;
+    if (this.state.playing) this.setState({ playing: false }); this._touch();
+  }
+  togglePlay() {
+    const A = this.anim; if (!A.action) return;
+    const play = !this.state.playing;
+    if (play && this.state.ikSel) this.closeIK();
+    if (play && A.action.time >= A.clip.duration - 1e-3) A.action.time = 0;
+    A.action.paused = !play; this.setState({ playing: play });
+  }
+  _playhead() {
+    const el = this._ph || (this._ph = document.getElementById('kfb-playhead'));
+    if (!el || !el.isConnected) { this._ph = null; return; }
+    const A = this.anim; el.style.left = A.action ? (Math.min(1, A.action.time / Math.max(1e-6, A.clip.duration)) * 100) + '%' : '0%';
+  }
+  _trackDown(ev) {
+    const el = ev.currentTarget; if (!this.anim.action) return;
+    const at = (x) => { const r = el.getBoundingClientRect(); const u = Math.max(0, Math.min(1, (x - r.left) / r.width)); this.scrubFrame(1 + u * (this._frames() - 1)); };
+    at(ev.clientX);
+    const mv = (e) => at(e.clientX), up = () => { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up); };
+    window.addEventListener('pointermove', mv); window.addEventListener('pointerup', up);
+  }
+
+  /* ---------- Motion Profile: role · loop · speed · calibration · corrections ---------- */
+  _clipState(create) {
+    const A = this.anim; if (!A.ref) return null;
+    const mp = this._motionProf(), k = this._clipKey(A.ref);
+    if (!mp.clips[k] && create) mp.clips[k] = { ref: clone(A.ref), loop: A.loop, speed: A.speed, corrections: [] };
+    return mp.clips[k] || null;
+  }
+  _corrections() { const cs = this._clipState(false); return cs ? cs.corrections : []; }
+  _corrAt(target, frame) { return this._corrections().find((c) => c.target === target && Math.abs(c.frame - frame) < 0.5) || null; }
+  _corrW(c, f) {
+    if (c.type === 'blender') return 0; if (c.type === 'override') return 1;
+    const d = Math.abs(f - c.frame), r = Math.max(1, c.radius || 8);
+    if (c.type === 'contact') return d <= r ? 1 : Math.max(0, 1 - (d - r) / 3);
+    return Math.max(0, 1 - d / r);
+  }
+  _upsertCorrection(target, frame, pos) {
+    const cs = this._clipState(true), c = cs.corrections.find((x) => x.target === target && x.frame === frame);
+    if (c) c.pos = pos; else cs.corrections.push({ id: 'c-' + uid(), target, frame, radius: 8, type: 'key', pos, rig: this.runtime.rigFamily });
+    cs.corrections.sort((a, b) => a.frame - b.frame);
+  }
+  _delCorrection(id) { const cs = this._clipState(false); if (cs) cs.corrections = cs.corrections.filter((c) => c.id !== id); this.setState({ dirty: true }); this._touch(); }
+  setRole(role) {
+    const A = this.anim; if (!A.ref) return;
+    const mp = this._motionProf(), k = this._clipKey(A.ref);
+    for (const r of Object.keys(mp.roles)) if (mp.roles[r] && this._clipKey(mp.roles[r].ref) === k) delete mp.roles[r];
+    if (role && role !== '—') mp.roles[role] = { ref: clone(A.ref), label: this._clipLabel(A.ref) };
+    this._clipState(true); this.setState({ dirty: true }); this._touch();
+  }
+  _calibration() {
+    const A = this.anim, rt = this.runtime; if (!A.ref || A.ref.src !== 'ml' || !rt) return null;
+    const c = this._mlClip(A.ref.id), p = this._mlProfile(A.ref.id); if (!c) return null;
+    const travel = c.travelMetersPerCycle ? c.travelMetersPerCycle[rt.rigFamily] : null, cyc = c.durationSec;
+    const ref = p ? this.ML.reader.getReferenceSpeedMps(p, rt.rigFamily) : null;
+    const root = this.roots.get('actor'), ws = root ? root.children[0].getWorldScale(new this.THREE.Vector3()).x * root.scale.x : 1;
+    const mps = travel != null && cyc ? travel / cyc : null;
+    return { mode: c.rootMotion, dir: c.travelDirection, travel, cycle: cyc, mps, ref, actorScale: +ws.toFixed(4), playback: A.speed,
+      world: mps != null ? +(mps * ws * A.speed).toFixed(3) : null };
+  }
+  saveMotion() {
+    const cs = this._clipState(true), A = this.anim; if (!cs) return;
+    cs.loop = A.loop; cs.speed = A.speed; cs.calibration = this._calibration(); cs.bound = A.bound + '/' + A.total;
+    const mp = this._motionProf(); mp.rigFamily = this.runtime.rigFamily; mp.savedAt = new Date().toISOString();
+    this.save();
+  }
+
+  /* ---------- Pose Profiles ---------- */
+  setPoseOn(on) {
+    const rid = this._rid(); this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseOn: on };
+    this._draftVer++; if (!on && this.runtime && this.runtime.mixer) this._enterStudio();
+    this.setState({ dirty: true }); this._touch();
+  }
+  setAngles(patch) { const d = this._draft(); d.angles = { ...d.angles, ...patch }; this._draftVer++; if (!this._poseOn(this.runtime)) this.setPoseOn(true); this.setState({ dirty: true }); this._touch(); }
+  setPreset(k) { const P = this.PoseMod && this.PoseMod.PRESETS; if (!P || !P[k]) return; this.setAngles({ ...P[k], preset: k }); }
+  savePose(name) {
+    const rid = this._rid(), d = this._draft(), rt = this.runtime; if (!rt || !rt.pose) return null;
+    const id = d.from && this.ws.poses[d.from] && (!name || this.ws.poses[d.from].name === name) ? d.from : 'pose-' + uid();
+    const nm = name || (this.ws.poses[id] && this.ws.poses[id].name) || ((this.PoseMod.PRESETS[d.angles.preset] || {}).label || 'Pose') + ' · ' + new Date().toLocaleTimeString().slice(0, 5);
+    const miss = {}; for (const [k] of IK_KEYS) { const t = d.ik[k]; if (t && t.pinned) { const m = this._miss(rt, k, t.pos); miss[k] = m == null ? null : r4(m); } }
+    this.ws.poses[id] = { schema: 'kfb.pose-profile/0.1', id, name: nm, actor: rid, rigFamily: rt.rigFamily, solver: 'A · pose-rig.v1 two-bone',
+      angles: clone(d.angles), ik: clone(d.ik), measured: { handMiss: miss }, savedAt: new Date().toISOString() };
+    d.from = id; this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseId: id, poseOn: true };
+    this.setState({ poseName: '' }); this.save();
+    return this.ws.poses[id];
+  }
+  loadPose(id) {
+    const p = this.ws.poses[id]; if (!p) return; const rid = this._rid();
+    this.drafts[rid] = { angles: clone(p.angles), ik: clone(p.ik || {}), from: id };
+    this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseId: id, poseOn: true }; this._draftVer++; this._reseat = true;
+    this.setState({ dirty: true }); this._touch();
+  }
+  delPose(id) { delete this.ws.poses[id]; for (const a of Object.values(this.ws.active)) if (a.poseId === id) a.poseId = null; for (const d of Object.values(this.drafts)) if (d.from === id) d.from = null; this.setState({ dirty: true }); this._touch(); }
+
+  /* ---------- tabs ---------- */
+  async setTab(tab) {
+    if (tab === this.state.tab) return;
+    this.closeIK(); this.stopSeq(false);
+    this.setState({ tab, clipPop: false, playing: false });
+    if (tab === 'anim') await this._enterAnim(); else await this._enterStudio();
+    this._touch();
+  }
+  setSection(s) { if (s !== 'pose' && s !== 'fit' && ['handL','handR','footL','footR'].includes(this.state.ikSel)) this.closeIK(); this.setState({ section: s }); }
+
+  /* ---------- edit-layer callbacks ---------- */
+  _onPick(node, rec) { this.setState({ selId: rec ? rec.id : null, lastDrop: '', ikSel: null }); if (rec && this.state.tab === 'studio' && this.state.section !== 'pose' && this.state.section !== 'scene') this.setState({ section: 'scene' }); }
+  _onEdit(nodes) { for (const n of nodes) this._updateRec(n); this.setState({ dirty: true }); this._touch(); }
+  _syncEdit() {
+    const E = this.EDIT; if (!E) return;
+    const n = E.node || E.selection[0]; const rec = n ? this._rec(n) : null;
+    if (E.mode !== this.state.mode || E.snap !== this.state.snap || E.scope !== this.state.scope || (!E.borrowed && (rec ? rec.id : null) !== this.state.selId))
+      this.setState({ mode: E.mode, snap: E.snap, scope: E.scope, ...(E.borrowed ? {} : { selId: rec ? rec.id : null }) });
+  }
+  selectId(id) { const root = this.roots.get(id); if (!root || !this.EDIT) return null; this.closeIK(); this.EDIT.setOn(true); this.EDIT.select(root); this.setState({ selId: id, lastDrop: '' }); return root; }
+  setMode(m) { if (this.EDIT) this.EDIT.setMode(m); if (this.state.ikSel === 'grip') { this._gripMode = m; } }
+  drop() {
+    if (!this.EDIT) return [];
+    const res = this.EDIT.drop();
+    const txt = res.length ? res.map((r) => r.refused ? (r.id + ': ' + r.refused) : ((r.moved >= 0 ? '+' : '') + r.moved.toFixed(3) + ' → ' + r.on + ' · y ' + r.to.toFixed(3))).join(' · ') : 'nothing selected';
+    this._updateAll(); this.setState({ lastDrop: txt, dirty: res.length ? true : this.state.dirty }); this._touch();
+    return res;
+  }
+  resetSel() {
+    if (!this.EDIT) return;
+    for (const n of this.EDIT.selection) { const rec = this._rec(n); if (!rec || !rec.defaultTransform) continue; const t = rec.defaultTransform; n.position.fromArray(t.position); n.rotation.set(...t.rotation); n.scale.fromArray(t.scale); n.updateMatrixWorld(true); this._updateRec(n); }
+    this.setState({ dirty: true }); this._touch();
+  }
+  _key(e) {
+    const tag = (e.target && e.target.tagName) || ''; if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') { e.preventDefault(); this.save(); return; }
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase(), anim = this.state.tab === 'anim';
+    if (anim && k === ' ') { e.preventDefault(); this.togglePlay(); return; }
+    if (anim && k === 'arrowleft') { this.scrubFrame(Math.round(this._frameF()) - 1); return; }
+    if (anim && k === 'arrowright') { this.scrubFrame(Math.round(this._frameF()) + 1); return; }
+    if (k === 'g') this.setMode('translate'); else if (k === 'r') this.setMode('rotate'); else if (k === 's') this.setMode('scale');
+    else if (k === 'f') this.drop(); else if (k === 'escape') { this.closeIK(); this.EDIT && this.EDIT.clear(); this.setState({ selId: null, actorPop: false, stagePop: false, clipPop: false }); }
+  }
+
+  /* ---------- actor / stage ---------- */
+  async pickRoster(r) {
+    this.setState({ actorPop: false, actorSearch: '' }); this.stopSeq(false);
+    if (r.kind === 'resident') {
+      if (this.doc.stage.preset !== 'resident' || this.doc.stage.sceneId !== r.sceneId) await this.setStage('resident', r.sceneId);
+      this.selectId(r.recId); this.setState({ tab: 'studio', section: 'scene' }); return;
+    }
+    const cur = this._actorRec(); if (cur && cur.rosterId === r.id) return;
+    const i = this.doc.objects.findIndex((o) => o.id === 'actor');
+    const rec = this._actorRecord(r.id, this.doc.stage.preset);
+    if (cur) rec.transform.position = cur.transform.position.slice();
+    if (i >= 0) this.doc.objects[i] = rec; else this.doc.objects.push(rec);
+    this.anim.ref = null; this.setState({ dirty: true });
+    await this._rebuildActor();
+  }
+  async setStage(preset, sceneId) {
+    this.setState({ stagePop: false });
+    const a = this._actorRec(); this._updateAll();
+    this.doc = this.ws.scene = this._freshDoc(preset, sceneId, a ? a.rosterId : 'frizzlebob-driver');
+    this.setState({ dirty: true }); await this.rebuild(); this.camFull();
+  }
+
+  /* ---------- persistence ---------- */
+  save() {
+    if (!this.ws) return;
+    this._updateAll(); this.ws.savedAt = new Date().toISOString(); this.ws.ui = { tab: this.state.tab, section: this.state.section };
+    const out = clone(this.ws); out.scene.objects.forEach((o) => { delete o._graft; delete o._clip; });
+    localStorage.setItem(STORE_KEY, JSON.stringify(out));
+    this.setState({ dirty: false, lastSaved: this.ws.savedAt, status: 'saved' });
+  }
+  async reload() {
+    let d = null; try { d = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) {}
+    if (!d || d.format !== 'kfb-toolbox-workspace' || d.id !== WS_ID) { this.setState({ status: 'no save' }); return false; }
+    this.ws = d; this.doc = d.scene; this.drafts = {}; this._draftVer++; this.anim.ref = null;
+    await this.rebuild();
+    this.setState({ dirty: false, lastSaved: d.savedAt, status: 'reloaded' });
+    return true;
+  }
+  async resetFixture() {
+    localStorage.removeItem(STORE_KEY);
+    this.ws = this._freshWs(this._freshDoc('neutral', null, 'frizzlebob-driver')); this.doc = this.ws.scene; this.drafts = {}; this.anim.ref = null;
+    await this.rebuild(); this.setState({ dirty: false, lastSaved: null, status: 'fixture' }); this.camFull();
+  }
+
+  /* ---------- Canonical KayKit locomotion · semantic profiles (owner: kfb-lib/locomotion-profiles.v1.js) ---------- */
+  _locoFor() {
+    const rid = this._rid(); if (this.loco && this.loco.actor === rid) return this.loco;
+    const w = this.ws && this.ws.locomotion && this.ws.locomotion[rid]; if (w && this.Loco) { this._setLoco(w); return w; }
+    return null;
+  }
+  _setLoco(set) {
+    this.loco = set; this._locoEvents = {};
+    for (const p of Object.values(set.profiles)) if (p.clip && /^jump\./.test(p.role)) {
+      const e = (p.measured && p.measured.events) || {};
+      this._locoEvents[p.clip] = { takeoff: p.role === 'jump.start' ? e.takeoff || null : null, land: p.role === 'jump.land' ? (e.touchdown || e.firstPlant || 1) : null };
+    }
+  }
+  async measureLocomotion() {
+    const rt = this.runtime, T = this.THREE;
+    if (!this.Loco || !rt || !rt.mixer || !rt.pose || !rt.pose.bones) { this.setState({ locoMsg: 'Needs a Rig_Medium actor with the pose owner (FrizzleBob Driver Graft or FrizzleBob Ear Rig v5).' }); return null; }
+    if (rt.rigFamily !== 'Rig_Medium') { this.setState({ locoMsg: 'Canonical KayKit locomotion is sourced for Rig_Medium. ' + rt.rigFamily + ' keeps its own clips — not measured here.' }); return null; }
+    this.stopSeq(false);
+    const P = rt.pose, legs = P.bones.legs, q = P.root.getWorldQuaternion(new T.Quaternion());
+    const fwd = P.fwd.clone().applyQuaternion(q), side = P.side.clone().applyQuaternion(q);
+    const root = this.roots.get('actor'), scale = root ? root.children[0].getWorldScale(new T.Vector3()).x : 1;
+    rt.mixer.stopAllAction();
+    const set = this.Loco.buildProfileSet(T, { clips: rt.stock, rigFamily: rt.rigFamily, actor: this._rid(), actorScale: scale,
+      measure: (clip) => this.Loco.measureClip(T, { mixer: rt.mixer, clip, space: this.world, feet: { l: legs[0].F, r: legs[1].F }, hips: P.bones.hips, fwd, side }) });
+    rt.mixer.stopAllAction();
+    this._setLoco(set);
+    const A = this.anim; if (this.state.tab === 'anim' && A.ref) await this.loadClip(A.ref); else if (this.state.tab === 'studio') await this._enterStudio();
+    this.setState({ locoMsg: '' }); this._touch();
+    return set;
+  }
+  saveLoco() {
+    const L = this._locoFor(); if (!L) return;
+    this.ws.locomotion = this.ws.locomotion || {}; this.ws.locomotion[L.actor] = clone(L);
+    const mp = this._motionProf();
+    for (const [k, p] of Object.entries(L.profiles)) if (p.clip && !mp.roles[k]) mp.roles[k] = { ref: clone(p.ref), label: p.clip + (p.variant ? ' ×' + p.playbackRate : ''), rate: p.playbackRate, profile: this.Loco.SCHEMA + '#' + k };
+    this.save();
+  }
+  exportLoco() {
+    const L = this._locoFor(); if (!L) return;
+    const out = { consumer: this.Loco.consumerView(L), full: L };
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1)], { type: 'application/json' }));
+    a.download = 'kfb-locomotion-profiles.' + L.rigFamily + '.' + L.actor + '.json'; a.click();
+  }
+  async pickLoco(role) {
+    const L = this._locoFor(), p = L && L.profiles[role]; this.setState({ locoSel: role });
+    if (!p || !p.clip || this.seq) return;
+    await this.loadClip(p.ref); this.anim.speed = p.playbackRate; this._touch();
+  }
+  _danceRef() {
+    const rt = this.runtime; if (!this.ML || !rt) return null;
+    const c = this.ML.cat.clips.find((x) => /danc/i.test(x.id + ' ' + x.group + ' ' + (x.label_de || '')) && x.rigs.includes(rt.rigFamily));
+    return c ? { src: 'ml', id: c.id } : null;
+  }
+  /* Calibration preview only — not a movement engine. One mixer, crossfades per TRANSITIONS hints, root
+     moved on a circle at the measured worldSpeed so stride and ground speed can be judged by eye. */
+  async startSeq(kind) {
+    const rt = this.runtime; if (!rt || !rt.mixer || this.seq) return;
+    let L = this._locoFor(); if (!L) L = await this.measureLocomotion(); if (!L) return;
+    const plans = { loco: [['idle', 1.5], ['walk', 2.5], ['walk.fast', 2.5], ['run', 2.5], ['sprint', 2.5], ['run', 2], ['walk', 2], ['idle', 1.5]],
+      jump: [['idle', 1], ['jump.start', 'end'], ['jump.air', 0.45], ['jump.land', 'end'], ['idle', 1.6]],
+      ear: [['idle', 2.5], ['walk', 3], ['run', 3], ['idle', 1.2], ['jump.start', 'end'], ['jump.air', 0.45], ['jump.land', 'end'], ['idle', 2.5], ['dance', 4], ['idle', 2.5]] };
+    let dance = null; if (kind === 'ear') { const d = this._danceRef(); if (d) { try { dance = { ref: d, clip: await this._resolveClip(d) }; } catch (e) { dance = null; } } }
+    const steps = [];
+    for (const [role, dur] of plans[kind]) {
+      if (role === 'dance') { if (dance) steps.push({ role, dur, clip: dance.clip, p: { role, clip: dance.ref.id, playbackRate: 1, loop: true, worldSpeed: 0, measured: null } }); continue; }
+      const p = L.profiles[role]; if (!p || !p.clip) continue;
+      const e = rt.stock.find((c) => c.name === p.clip); if (e) steps.push({ role, dur, p, clip: e.clip });
+    }
+    if (!steps.length) return;
+    this.closeIK(); if (this.EDIT && this.EDIT.borrowed) this.EDIT.release();
+    const root = this.roots.get('actor'); rt.mixer.stopAllAction(); this._earReset();
+    this.seq = { kind, steps, i: -1, t: 0, root, home: { p: root.position.clone(), ry: root.rotation.y }, heading: root.rotation.y, speed: 0, action: null, log: [], stats: [], dance: dance ? dance.ref.id : null };
+    this.setState({ playing: false }); this._seqNext(); this._touch();
+  }
+  _seqNext() {
+    const S = this.seq, rt = this.runtime, T = this.THREE; S.i++; S.t = 0; S.f_takeoff = S.f_land = false;
+    if (S.i >= S.steps.length) { this.stopSeq(true); return; }
+    const st = S.steps[S.i], prev = S.steps[S.i - 1], a = rt.mixer.clipAction(st.clip), TR = this.Loco.TRANSITIONS;
+    const tr = TR[(prev ? prev.role : 'idle') + '→' + st.role] || (st.role === 'jump.start' ? TR['any→jump.start'] : null);
+    const fade = tr && tr.fade != null ? tr.fade : 0.25;
+    if (S.action === a) a.setEffectiveTimeScale(st.p.playbackRate);
+    else {
+      a.reset(); a.enabled = true; a.setEffectiveTimeScale(st.p.playbackRate); a.setEffectiveWeight(1);
+      a.setLoop(st.p.loop ? T.LoopRepeat : T.LoopOnce, Infinity); a.clampWhenFinished = !st.p.loop;
+      if (tr && tr.syncPhase && S.action) a.time = (S.action.time / S.action.getClip().duration) * st.clip.duration;
+      a.play(); if (S.action) S.action.crossFadeTo(a, fade, false);
+    }
+    S.action = a; S.cur = st; S.dur = st.dur === 'end' ? st.clip.duration / st.p.playbackRate : st.dur;
+    const td = st.p.measured && st.p.measured.travelDir, v = st.p.worldSpeed || 0;
+    S.target = td && Math.abs(td.fwd) > 0.7 ? Math.sign(td.fwd) * v : 0;
+    S.stats[S.i] = { role: st.role, clip: st.p.clip, rate: st.p.playbackRate, peak: 0, lastAbove: 0, finite: true };
+    S.ev = /^jump\./.test(st.role) && this._locoEvents ? this._locoEvents[st.p.clip] || null : null;
+  }
+  _seqTick(rt, dt) {
+    const S = this.seq; if (!S || !S.action) return;
+    rt.mixer.update(dt); S.t += dt;
+    S.speed += (S.target - S.speed) * Math.min(1, dt * 5);
+    S.heading += (S.speed / 3.2) * dt;
+    S.root.rotation.y = S.heading;
+    const dx = Math.sin(S.heading) * S.speed * dt, dz = Math.cos(S.heading) * S.speed * dt;
+    S.root.position.x += dx; S.root.position.z += dz;
+    this.controls.target.x += dx; this.controls.target.z += dz; this.cam.position.x += dx; this.cam.position.z += dz;   // camera follows the preview
+    if (S.ev) { const fr = S.action.time * 60 + 1; for (const k of ['takeoff', 'land']) if (S.ev[k] != null && !S['f_' + k] && fr >= S.ev[k]) { S['f_' + k] = true; this._earImpulse(k); } }
+    if (rt.ears) { const m = this._earAngles(rt), st = S.stats[S.i]; if (!m.fin) st.finite = false; else st.peak = Math.max(st.peak, m.deg); if (m.deg > 1.5) st.lastAbove = S.t; }
+    if (this._frameN % 10 === 0) this._touch();
+    if (S.t >= S.dur) this._seqNext();
+  }
+  stopSeq(done) {
+    const S = this.seq; if (!S) return; this.seq = null;
+    const back = S.home.p.clone().sub(S.root.position); this.controls.target.add(back); this.cam.position.add(back);
+    S.root.position.copy(S.home.p); S.root.rotation.y = S.home.ry; S.root.updateMatrixWorld(true);
+    this._earReset();   // a teleport home is not an acceleration the ears should feel
+    if (S.kind === 'ear' && done) {
+      this.earReview = { schema: 'kfb.ear-review/0.1', gate: 'EAR-DANGLE-01', at: new Date().toISOString(), actor: this._rid(), owner: EAR.dir + EAR.mod + '@' + EAR.pin.slice(0, 8), dance: S.dance,
+        rows: S.stats.map((x) => ({ ...x, peak: +x.peak.toFixed(1), settle: x.role === 'idle' ? +x.lastAbove.toFixed(2) : null, lastAbove: undefined })), impulses: S.log.slice() };
+      this.ws.earReview = this.earReview; this.setState({ dirty: true });
+    }
+    this.lastSeq = { kind: S.kind, done: !!done, steps: S.stats.map((x) => x.role + (x.rate !== 1 ? ' ×' + x.rate : '')), events: S.log.slice() };
+    const rt = this.runtime, A = this.anim;
+    if (rt && rt.mixer) { rt.mixer.stopAllAction(); if (this.state.tab === 'anim' && A.ref) this.loadClip(A.ref); else if (this.state.tab === 'studio') this._enterStudio(); }
+    this._touch();
+  }
+  _clipEventsTick(rt) {
+    const A = this.anim, ev = A.clip && this._locoEvents && this._locoEvents[A.clip.name]; if (!ev) { A._pf = null; return; }
+    const f = A.action.time * 60 + 1, pf = A._pf; A._pf = f; if (pf == null) return;
+    const hit = (x) => x != null && (pf <= f ? pf < x && f >= x : pf < x || f >= x);
+    if (hit(ev.takeoff)) this._earImpulse('takeoff'); if (hit(ev.land)) this._earImpulse('land');
+  }
+
+  /* ---------- Ears · ear-dangle.v1.js is the ONE ear secondary-motion owner (PR #214) ---------- */
+  _earCfg() { const p = this._actorProf(); if (!p.ears) p.ears = { schema: 'kfb.ear-rig.v0#tuning', on: true, stiff: 1, damp: 1, elastic: (this.earRig && this.earRig.ears && this.earRig.ears.L.elastic) || 0.6 }; return p.ears; }
+  _applyEars() {
+    const rt = this.runtime; if (!rt || !rt.ears || !this.EarMod) return;
+    const c = this._earCfg(), D = this.EarMod.DANGLE_DEFAULTS; rt.ears.setEnabled(c.on !== false);
+    for (const ch of [rt.ears.L, rt.ears.R]) ch.setParams({ stiffness: D.stiffness.map((k) => k * c.stiff), damping: D.damping.map((x) => x * c.damp * Math.sqrt(c.stiff)), elastic: c.elastic });
+  }
+  setEar(patch) { Object.assign(this._earCfg(), patch); this._applyEars(); this.setState({ dirty: true }); this._touch(); }
+  _earAngles(rt) {
+    let m = 0, fin = true;
+    for (const ch of [rt.ears.L, rt.ears.R]) for (const st of ch.state) { const v = Math.max(Math.abs(st.x), Math.abs(st.z)); if (!Number.isFinite(v)) fin = false; else m = Math.max(m, v); }
+    return { deg: m * 180 / Math.PI, fin };
+  }
+  _earReset() { const rt = this.runtime; if (rt && rt.ears) { rt.ears.L.reset(); rt.ears.R.reset(); } }
+  _earImpulse(k) {
+    if (this.seq) this.seq.log.push(k);
+    this._lastImpulse = k; const rt = this.runtime;
+    if (rt && rt.ears) rt.ears.impulse(k === 'land' ? { pitch: 2.5 } : { pitch: -1.5 });
+  }
+
+  /* ---------- Solver gate: A (owner) vs upstream CCDIKSolver vs constrained CCD, same rig, same target ---------- */
+  async compareSolvers() {
+    const rt = this.runtime, T = this.THREE; if (!rt || !this._ik(rt)) return null;
+    const d = this._draft(), key = ['handR', 'handL', 'footR', 'footL'].find((k) => d.ik[k] && d.ik[k].pinned) || 'handR';
+    const P = rt.pose, c = P.ikChain(key), R = P.root, pin = d.ik[key];
+    const e0 = P.effector(key), tgt = pin && pin.pinned ? new T.Vector3().fromArray(pin.pos) : e0.clone().add(new T.Vector3(0.1, 0.18, 0.12));
+    const bones = [c.U, c.L].concat(c.mid, c.F ? [c.F] : []), snap = bones.map((b) => b.quaternion.clone());
+    const restore = () => { bones.forEach((b, i) => b.quaternion.copy(snap[i])); R.updateMatrixWorld(true); };
+    const wq = (b) => b.getWorldQuaternion(new T.Quaternion());
+    const measure = (name, fn) => {
+      restore(); const h0 = wq(c.F || c.L), t0 = performance.now(); let err = null; try { fn(); } catch (e) { err = e.message; }
+      const ms = performance.now() - t0; R.updateMatrixWorld(true);
+      const miss = P.effector(key).distanceTo(tgt);
+      const S0 = R.worldToLocal(c.U.getWorldPosition(new T.Vector3())), E = R.worldToLocal(c.L.getWorldPosition(new T.Vector3()));
+      const u = tgt.clone().sub(S0).normalize(), off = E.clone().sub(S0); off.addScaledVector(u, -off.dot(u));
+      const hv = c.hint.clone().addScaledVector(u, -c.hint.dot(u));
+      const flip = off.lengthSq() > 1e-8 && hv.lengthSq() > 1e-8 && off.normalize().dot(hv.normalize()) < 0;
+      return { name, miss: +miss.toFixed(4), flip, twist: +(h0.angleTo(wq(c.F || c.L)) * 180 / Math.PI).toFixed(1), ms: +ms.toFixed(2), err };
+    };
+    const { CCDIKSolver } = await import('three/addons/animation/CCDIKSolver.js');
+    const goal = new T.Object3D(); goal.name = 'ik-goal · solver gate'; this.scene.add(goal); goal.position.copy(R.localToWorld(tgt.clone())); goal.updateMatrixWorld(true);
+    const list = bones.concat([goal]), ix = (b) => list.indexOf(b), fake = { skeleton: { bones: list } };
+    const ccd = (limited) => {
+      const links = [{ index: ix(c.L) }, { index: ix(c.U) }];
+      if (limited && c.L.userData.kfbSide) links[0].limitation = c.L.userData.kfbSide.clone();
+      new CCDIKSolver(fake, [{ target: ix(goal), effector: ix(c.F || c.L), links, iteration: 24 }]).update();
+    };
+    const warn = console.warn; console.warn = () => {};
+    let rows;
+    try { rows = [measure('A · KFB two-bone · pose-rig.v1 owner fix', () => P.solveIK(key, tgt, 1)), measure('B · three.js CCDIKSolver r160', () => ccd(false)), measure('C · CCD + elbow hinge', () => ccd(true))]; }
+    finally { console.warn = warn; this.scene.remove(goal); restore(); }
+    const A = rows[0], better = rows.slice(1).filter((r) => !r.err && r.miss < A.miss - 0.002 && !r.flip && r.twist <= A.twist + 1);
+    this.solverCmp = { schema: 'kfb.solver-gate/0.1', key, rig: rt.rigFamily, actor: this._rid(), target: tgt.toArray().map(r4), rows,
+      verdict: better.length ? 'CANDIDATE · ' + better.map((r) => r.name.split(' ·')[0]).join('/') + ' beats A on this rig — Georg decides' : 'A stays · no same-rig improvement', at: new Date().toISOString() };
+    this.ws.solverGate = this.solverCmp; this.setState({ dirty: true }); this._touch();
+    return this.solverCmp;
+  }
+
+  /* ---------- Vehicle / Surface Fit seam · CARD_SURF (Travel owns flight) ---------- */
+  saveFit() {
+    const rt = this.runtime, rid = this._rid(); if (!rt || !rt.pose) return null;
+    const d = this._draft(), pins = {}, feet = {};
+    for (const [k] of IK_KEYS) { const t = d.ik[k]; if (t && t.pinned) pins[k] = t.pos; }
+    for (const k of ['footL', 'footR']) { const e = this._effLocal(rt, k); if (e) feet[k] = e.toArray().map(r4); }
+    const rec = { schema: 'kfb.vehicle-surface-fit-profile/0.1', id: 'CARD_SURF', actor: rid, rigFamily: rt.rigFamily,
+      carrier: { name: 'KFB CardCarrier (animated)', status: 'SOURCE PIN PENDING · carrier model not mounted in ToolBox', owner: 'Travel' },
+      pose: { profileId: d.from || null, preset: d.angles.preset || null, angles: clone(d.angles) }, ikPins: pins, feetAt: feet,
+      surface: { support: 'carrier deck · local y = 0 (host)', stance: { spread: d.angles.spread, stagger: d.angles.stagger } },
+      separateFrom: ['actor-profile', 'rig-profile', 'pose-profile', 'motion-profile'], flight: { owner: 'Travel', note: 'no flight controller in ToolBox' }, savedAt: new Date().toISOString() };
+    this.ws.fits = this.ws.fits || {}; this.ws.fits['CARD_SURF:' + rid] = rec; this.save();
+    return rec;
+  }
+
+  /* ---------- S39 band stage · WorldBuilder-compatible preview host (presentation only) ---------- */
+  _bandMod() {
+    if (!this._bandP) this._bandP = import(jsd(BAND.dir + BAND.mod, BAND.pin)).catch((e) => { this._bandP = null; this._src('band', false, e.message); throw e; });
+    return this._bandP;
+  }
+  _bandTick(dt) {
+    const B = this.band; if (!B || !B.M) return;
+    if (B.playing) B.t += dt;
+    const song = B.def.song || {}, t = B.audio && !B.audio.paused ? B.audio.currentTime : B.t;
+    B.beat = (t - (song.phaseOffset || 0)) * (song.bpm || 100) / 60;
+    try { B.M.update(B.beat); } catch (e) { if (!B.err) { B.err = String(e && e.message || e); this._fail('Band module · update', BAND.dir + BAND.mod, e); } }
+    if (this._frameN % 15 === 0 && this.state.labSec === 'band' && this.state.tab === 'anim') this._touch();
+  }
+  toggleSong() {
+    const B = this.band; if (!B || !B.def.song) return; const s = B.def.song;
+    if (!B.audio) { B.audio = new Audio(raw(s.repoPath, s.commit)); B.audio.crossOrigin = 'anonymous'; B.audio.loop = true; }
+    if (B.audio.paused) { B.audio.currentTime = Math.max(0, B.t); B.playing = true; B.audio.play().catch((e) => this._fail('Band song', s.repoPath, e)); }
+    else { B.t = B.audio.currentTime; B.audio.pause(); }
+    this._touch();
+  }
+  measureBand() {
+    const B = this.band; if (!B) return;
+    const f = (o) => o == null ? '—' : JSON.stringify(o, (k, v) => typeof v === 'number' ? +v.toFixed(3) : v).slice(0, 240);
+    try { B.contact = 'R ' + f(B.B.drumContact(B.M, 'r')) + ' · L ' + f(B.B.drumContact(B.M, 'l')); } catch (e) { B.contact = 'error · ' + e.message; }
+    try { B.ground = f(B.B.groundReport(B.M, 8)); } catch (e) { B.ground = 'error · ' + e.message; }
+    this._touch();
+  }
+  async _setWorldPreview(on) {
+    const T = this.THREE, R = this.renderer;
+    if (!on) {
+      const W = this.worldPrev; if (!W) return; this.worldPrev = null;
+      this.world.remove(W.ground); this.scene.remove(W.fill); if (W.sky) { try { W.sky.dispose(); } catch (e) {} }
+      this.floor.visible = true; this.grid.visible = this.props.showGrid ?? true; R.toneMapping = T.NoToneMapping; R.toneMappingExposure = 1;
+      this.hemi.color.set(0xfff4e0); this.hemi.groundColor.set(0x3a3226); this.hemi.intensity = 1.25; this.sun.color.set(0xffffff); this.sun.intensity = 1.8;
+      return;
+    }
+    if (this.worldPrev) return;
+    const W = this.worldPrev = {};
+    W.ground = new T.Mesh(new T.CircleGeometry(80, 96).rotateX(-Math.PI / 2), new T.MeshStandardMaterial({ color: 0x7d8457, roughness: 1 }));
+    W.ground.name = 'Host support plane · y 0'; W.ground.receiveShadow = true; this.world.add(W.ground);
+    this.floor.visible = false; this.grid.visible = false;
+    /* wd-light.js BASELINE (kit-lab makeViewer): Hemisphere 0xdcd6ff/0x2a2140 · key 0xfff3e0 · fill 0x9f8cff */
+    this.hemi.color.set(0xdcd6ff); this.hemi.groundColor.set(0x2a2140); this.hemi.intensity = 0.5 * 3.8; this.sun.color.set(0xfff3e0); this.sun.intensity = 0.7 * 3;
+    W.fill = new T.DirectionalLight(0x9f8cff, 0.7 * 0.86); W.fill.position.set(-6, 4, -5); this.scene.add(W.fill);
+    R.toneMapping = T.ACESFilmicToneMapping; R.toneMappingExposure = 1;
+    try { const S = await import(jsd(WDSKY.path, WDSKY.pin)); W.sky = await S.makeSky(this.scene, 'real'); this._src('wdSky', true, W.sky.label); }
+    catch (e) { this._src('wdSky', false, e.message); this._fail('WorldBuilder sky donor · wd-sky.js', WDSKY.path + ' @' + WDSKY.pin.slice(0, 8), e); }
+  }
+
+  /* ---------- camera ---------- */
+  _frameBox(b, k = 1.25) {
+    if (b.isEmpty()) return; const THREE = this.THREE;
+    const c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3()), r = Math.max(s.x, s.y, s.z, 3) * k;
+    const dir = this.cam.position.clone().sub(this.controls.target).normalize();
+    if (!Number.isFinite(dir.x) || dir.lengthSq() < 0.5) dir.set(0.5, 0.35, 0.8).normalize();
+    this.controls.target.copy(c); this.cam.position.copy(c).addScaledVector(dir, r / Math.tan(this.cam.fov * Math.PI / 360) * 0.62);
+  }
+  camFull() {
+    const b = new this.THREE.Box3(); for (const r of this.roots.values()) b.union(this._bounds(r, false));
+    if (b.isEmpty()) return;
+    this.cam.position.set(b.getCenter(new this.THREE.Vector3()).x + 7.8, 4.6, 12.8); this._frameBox(b, 0.95);
+  }
+  camFace() {
+    const r = this.roots.get('actor'); if (!r) return; const THREE = this.THREE;
+    const b = this._bounds(r, false), h = b.max.y - b.min.y, c = b.getCenter(new THREE.Vector3());
+    const pet = this.runtime && this.runtime.kind === 'pet', d = Math.max(pet ? h * 2.2 : h * 0.95, 1.9);
+    const face = new THREE.Vector3(c.x, b.min.y + h * (pet ? 0.55 : 0.82), c.z), fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(r.quaternion);
+    this.controls.target.copy(face); this.cam.position.copy(face).addScaledVector(fwd, d).add(new THREE.Vector3(d * 0.25, d * 0.06, 0));
+  }
+  camBody() {
+    const r = this.roots.get('actor'); if (!r) return; const THREE = this.THREE;
+    const b = this._bounds(r, false), c = b.getCenter(new THREE.Vector3()), h = b.max.y - b.min.y;
+    const fwd = new THREE.Vector3(0.55, 0, 1).normalize().applyQuaternion(r.quaternion);
+    this.controls.target.copy(c); this.cam.position.copy(c).addScaledVector(fwd, Math.max(3.2, h * 1.9)).add(new THREE.Vector3(0, h * 0.18, 0));
+  }
+  zoom(f) { const v = this.cam.position.clone().sub(this.controls.target); v.multiplyScalar(f); this.cam.position.copy(this.controls.target).add(v); }
+
+  /* ---------- TOOLBOX-PRODUCTION-01 self-test: the 13-step flow + Legacy fixture, real sources ---------- */
+  async selfTest() {
+    if (this.state.testing) return;
+    this.setState({ testing: true, tests: [] });
+    const out = [], T = (name, ok, detail) => { out.push({ name, ok: !!ok, detail: detail || '' }); this.setState({ tests: out.slice() }); };
+    const backupStore = localStorage.getItem(STORE_KEY), backupWs = clone(this.ws), backupTab = this.state.tab, backupSec = this.state.section;
+    const V = (a) => new this.THREE.Vector3().fromArray(a);
+    const tick = async (n = 3) => { for (let i = 0; i < n; i++) { this._frame(); await Promise.resolve(); } };   // no timers: hidden tabs throttle them
+    try {
+      await this.setTab('studio');
+      T('01 ToolBox open · Studio', this.state.tab === 'studio' && !!this.EDIT, 'tab ' + this.state.tab + ' · roster ' + this._roster().length);
+      if (this._rid() !== 'frizzlebob-driver') await this.pickRoster(BASE_ROSTER[0]);
+      const rt = this.runtime, n0 = this._buildN;
+      T('02 FrizzleBob Driver Graft loaded', rt && rt.kind === 'graft' && !!rt.rig && !!rt.pose && !!rt.mixer, rt ? 'rig ' + rt.rigFamily + ' · pose ' + (rt.pose ? rt.pose.last.status : '—') + ' · stock clips ' + rt.stock.length : 'no runtime');
+      this.setSection('face');
+      const vk = this.setViseme('open'); rt.mouth.talk(true); const talking = rt.mouth.talking; rt.mouth.talk(false);
+      T('03 Face · eyes + mouth owners', !!rt.rig.anchor && vk === rt.mouth.p.visemeMap.open && talking, 'eye dx ' + (+rt.rig.anchor.dx).toFixed(3) + ' · viseme open → ' + vk + ' · talk on/off');
+      this.setSection('pose'); this.setPoseOn(true);
+      this.drafts[this._rid()] = { angles: { preset: 'stand', ...this.PoseMod.PRESETS.stand }, ik: {}, from: null }; this._draftVer++; await tick(2);
+      const e0 = this._effLocal(rt, 'handR'), tgt = e0.clone().add(new this.THREE.Vector3(0.1, 0.18, 0.12)).toArray().map(r4);
+      this._draft().ik.handR = { pinned: true, pos: tgt }; this._draftVer++; await tick(3);
+      const miss = this._miss(rt, 'handR', tgt);
+      T('04 Pose · IK Hand R on stage', miss != null && miss < 0.03, 'target Δ (0.10, 0.18, 0.12) · miss ' + (miss != null ? miss.toFixed(4) : '—'));
+      const pp = this.savePose('Self-test reach');
+      const st1 = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      T('05 Pose Profile saved', pp && st1.poses && st1.poses[pp.id] && st1.poses[pp.id].ik.handR && !st1.poses[pp.id].face, pp ? pp.id + ' · ' + pp.name + ' · keys ' + Object.keys(pp).join(',') : '—');
+      await this.setTab('anim');
+      T('06 Animation Lab · same actor, no rebuild', this.runtime === rt && this._buildN === n0, 'runtime identical · builds ' + n0 + ' → ' + this._buildN);
+      const r7 = await this.loadClip({ src: 'ml', id: 'kfb_music_drums_a' });
+      T('07 Motion Library clip on Rig_Medium', r7 && this.anim.bound > 0, r7 ? 'kfb_music_drums_a · ' + this.anim.bound + '/' + this.anim.total + ' tracks bound · ' + r7.clip.duration.toFixed(2) + ' s' : 'load failed');
+      this.scrubFrame(1); await tick(1); const h1 = this._effLocal(rt, 'handR').clone();
+      this.scrubFrame(60); await tick(1); const h60 = this._effLocal(rt, 'handR').clone();
+      T('08 Scrub to frame 60', Math.abs(this._frameF() - 60) < 0.01 && h1.distanceTo(h60) > 1e-3, 'frame ' + this._frameF().toFixed(2) + ' · hand moved ' + h1.distanceTo(h60).toFixed(3));
+      const ct = h60.clone().add(new this.THREE.Vector3(0, -0.12, 0.08)).toArray().map(r4);
+      this._upsertCorrection('handR', 60, ct); await tick(2);
+      const m9 = this._miss(rt, 'handR', ct);
+      T('09 Contact correction via IK at f60', m9 != null && m9 < 0.03, 'Key pose · r 8 · miss ' + (m9 != null ? m9.toFixed(4) : '—'));
+      this.setRole('music.drums'); this.saveMotion();
+      const st2 = JSON.parse(localStorage.getItem(STORE_KEY) || '{}'), mp = st2.motion && st2.motion['frizzlebob-driver'];
+      const cs = mp && mp.clips['ml:kfb_music_drums_a'];
+      T('10 Clip · role · profile saved', mp && mp.roles['music.drums'] && cs && cs.corrections.length === 1 && cs.calibration, mp ? 'role music.drums · corrections ' + (cs ? cs.corrections.length : 0) + ' · calib ' + (cs && cs.calibration ? cs.calibration.mode : '—') : '—');
+      await this.setTab('studio'); await tick(2);
+      T('11 Back to Studio · nothing lost', this.runtime === rt && this._buildN === n0 && this.ws.poses[pp.id] && this.ws.motion['frizzlebob-driver'].clips['ml:kfb_music_drums_a'].corrections.length === 1 && this._poseOn(rt),
+        'runtime identical · pose ' + pp.id + ' active · correction kept');
+      await this.reload(); await tick(2);
+      const rt2 = this.runtime, d2 = this._draft();
+      T('12 Reload restores profiles', rt2 && rt2.kind === 'graft' && this.ws.poses[pp.id] && d2.ik.handR && this.ws.motion['frizzlebob-driver'].roles['music.drums'], 'pose ' + (this.ws.poses[pp.id] ? 'OK' : '—') + ' · IK ' + (d2.ik.handR ? 'pinned' : '—') + ' · role ' + (this.ws.motion['frizzlebob-driver'] ? 'OK' : '—'));
+      const cr = this.runtime && this.runtime.pose && this.runtime.pose.chainReport ? this.runtime.pose.chainReport() : null, hr = cr && cr.handR;
+      T('13 Pose owner fix · wrist-aware chain', hr && hr.lenL > 0.05 && (!hr.mid.length || hr.lenL > (hr.naiveLenL || 0) * 1.5),
+        hr ? hr.U + ' → ' + hr.L + (hr.mid.length ? ' → [' + hr.mid.join(', ') + ']' : '') + ' → ' + hr.F + ' · lenL ' + hr.lenL + ' (child.position ' + hr.naiveLenL + ') · leg chains ' + (cr.footL && cr.footR ? '2' : '0') : 'no chain report');
+      await this.setTab('anim');
+      const lset = await this.measureLocomotion(), pf = lset ? lset.profiles : {}, mapped = lset ? Object.values(pf).filter((p) => p.clip).length : 0;
+      T('14 KayKit locomotion profiles measured', lset && mapped >= 13 && pf.walk.worldSpeed > 0 && pf.run.worldSpeed > pf.walk.worldSpeed,
+        lset ? mapped + '/' + this.Loco.ROLES.length + ' roles · walk ' + pf.walk.worldSpeed + ' m/s · ' + pf.walk.cadenceSpm + ' spm · run ' + pf.run.worldSpeed + ' m/s · sprint ' + (pf.sprint.clip ? pf.sprint.clip + ' ' + pf.sprint.status : '—') + ' · unmapped ' + (lset.unmapped.join(',') || 'none') : (this.state.locoMsg || 'no set'));
+      const drive = async (kind) => { await this.startSeq(kind); for (let i = 0; i < 1200 && this.seq; i++) { const r = this.runtime; this._seqTick(r, 1 / 30); if (r.ears) { this.roots.get('actor').updateMatrixWorld(true); r.ears.update(1 / 30, {}); } if (i % 30 === 0) await Promise.resolve(); } return this.lastSeq; };
+      const jseq = await drive('jump');
+      T('15 State preview · Jump Start → Air → Land', jseq && jseq.done && jseq.events.includes('land'), jseq ? jseq.steps.join(' → ') + ' · events ' + (jseq.events.join(', ') || 'none') : '—');
+      await this.pickRoster(this._rosterEntry('frizzlebob-earrig-v5'));
+      const ert = this.runtime;
+      const eseq = ert && ert.ears ? await drive('ear') : null, er = this.earReview;
+      T('16 EAR-DANGLE-01 · one ear owner on the one mixer', ert && ert.ears && eseq && eseq.done && er && er.rows.every((r) => r.finite && r.peak < 85) && eseq.events.includes('land'),
+        er && ert ? er.rows.map((r) => r.role + ' ' + r.peak + '°' + (r.settle != null ? '/' + r.settle + 's' : '')).join(' · ') + ' · dance ' + (er.dance || 'none') + ' · ear bones ' + ert.ears.L.bones.length + '+' + ert.ears.R.bones.length : ((this._actorRec() || {}).error || 'no ears'));
+      await this.setStage('band', null);
+      const Bd = this.band;
+      T('17 S39 band on host support · no baseplate', Bd && Bd.M && !Bd.groundMeshes.length && Object.keys(Bd.M.perf || {}).length >= 3,
+        Bd ? Object.keys(Bd.M.perf || {}).join(' · ') + ' · ground-like meshes ' + Bd.groundMeshes.length + ' · sky ' + (this.worldPrev && this.worldPrev.sky ? 'wd-sky real' : 'missing') : ((this.doc.objects.find((o) => o.kind === 'module') || {}).error || 'not mounted'));
+      const nB = this._buildN, rtB = this.runtime; await this.setTab('studio'); await tick(2);
+      T('18 Back to Studio · actor + profiles intact', this.state.tab === 'studio' && this._buildN === nB && this.runtime === rtB && !!this.ws.earReview, 'runtime identical · builds ' + nB + ' · ear review kept');
+      this.setSection('body');
+      await this.pickRoster(this._rosterEntry('legacy-warband'));
+      const lr = this.runtime;
+      T('19 Legacy fixture via builder', lr && lr.kind === 'legacy' && lr.legacy.placed.length === 4 && lr.own.length > 0, lr && lr.legacy ? lr.legacy.placed.join(' · ') + ' · ' + lr.own.length + ' Legacy 1.2 clips' : (this._actorRec() || {}).error || '—');
+    } catch (e) { T('aborted', false, String(e && e.stack || e)); }
+    if (backupStore == null) localStorage.removeItem(STORE_KEY); else localStorage.setItem(STORE_KEY, backupStore);
+    this.ws = backupWs; this.doc = this.ws.scene; this.drafts = {}; this._draftVer++; this.anim.ref = null;
+    this.setState({ tab: backupTab, section: backupSec });
+    await this.rebuild(); this.camFull();
+    let prevSaved = null; try { prevSaved = backupStore ? JSON.parse(backupStore).savedAt : null; } catch (e) {}
+    this.setState({ testing: false, dirty: false, status: 'self-test done', lastSaved: prevSaved });
+    window.__kfbSelfTest = out;
+    return out;
+  }
+
+  renderVals() {
+    const s = this.state, doc = this.doc, a = doc ? this._actorRec() : null, rt = this.runtime, ws = this.ws;
+    const onoff = (on) => ({ bg: on ? SEL : 'transparent', fg: on ? SELFG : '#1f2022' });
+    const tabSty = (on) => ({ bg: on ? '#f6f4ef' : 'transparent', sh: on ? '0 1px 2px rgba(31,32,34,.16)' : 'none', fg: on ? '#1f2022' : '#5c6065' });
+    const q = (s.actorSearch || '').toLowerCase();
+    const roster = this.scenes ? this._roster() : BASE_ROSTER;
+    const rosterRows = []; let last = null;
+    for (const r of roster) {
+      if (q && !r.label.toLowerCase().includes(q)) continue;
+      const sec = r.section + (r.rig && r.rig !== 'pet' ? ' · ' + r.rig : '');
+      if (sec !== last) { rosterRows.push({ isHeader: true, isItem: false, label: sec }); last = sec; }
+      const act = (a && r.id === a.rosterId) || (r.kind === 'resident' && s.selId === r.recId);
+      rosterRows.push({ isHeader: false, isItem: true, label: r.label, swatch: r.swatch, ...onoff(act), pick: () => this.pickRoster(r) });
+    }
+    const stage = doc ? doc.stage : { preset: 'neutral' };
+    const stageRows = [{ label: 'Neutral floor', sub: 'presentation only', active: stage.preset === 'neutral', pick: () => this.setStage('neutral', null) }]
+      .concat((this.sceneOrder || []).map((sid) => ({ label: 'Resident · ' + this.scenes[sid].title, sub: sid + '.json @' + PIN.slice(0, 8) + ' · ' + (this.scenes[sid].assets || []).length + ' assets', active: stage.preset === 'resident' && stage.sceneId === sid, pick: () => this.setStage('resident', sid) })))
+      .concat([{ label: 'Resident Band · S39', sub: 'no baseplate · host support plane · WorldBuilder sky + light', active: stage.preset === 'band', pick: () => this.setStage('band', null) }])
+      .map((r) => ({ ...r, ...onoff(r.active) }));
+    const stageLabel = stage.preset === 'band' ? 'Band · S39' : stage.preset === 'resident' && this.scenes && this.scenes[stage.sceneId] ? this.scenes[stage.sceneId].title : 'Neutral floor';
+    const selRec = doc && s.selId ? doc.objects.find((o) => o.id === s.selId) : null, selRoot = selRec ? this.roots.get(selRec.id) : null;
+    const f2 = (v) => (+v).toFixed(2);
+    const objRows = (doc ? doc.objects : []).map((o) => ({ label: o.name, sub: o.group || o.kind, ...onoff(o.id === s.selId), dot: o.status === 'SOURCE_FAILED' ? '#a33d3d' : (o.status === 'OK' ? '#7fa58a' : '#c9c5bc'), pick: () => { this.selectId(o.id); } }));
+    const studio = s.tab === 'studio', anim = s.tab === 'anim';
+    const e = ws && this._eye ? this._eye() : null, face = ws && a ? (this._actorProf().face || {}) : {};
+
+    // Body
+    const ik = rt ? this._ik(rt) : null;
+    const bodyFacts = a ? [{ k: 'actor', v: a.name }, { k: 'rig family', v: (rt && rt.rigFamily) || a.rigFamily || '—' },
+      { k: 'source', v: (a.source.path || '').split('/').slice(-2).join('/') + ' @' + String(a.source.commit).slice(0, 8) }]
+      .concat(a.kind === 'graft' ? [{ k: 'head', v: 'FrizzleBob graft on ' + (a._graft ? a._graft.host : 'driver') + ' · profile v' + (a._graft ? a._graft.version : '?') }] : [])
+      .concat([{ k: 'motion', v: !rt ? '—' : rt.kind === 'pet' ? 'pet-library own clips' : rt.rigFamily === 'Rig_Legacy' ? 'Legacy 1.2 clips (' + rt.own.length + ') · Motion Library n/a' : 'Motion Library DIRECT · ' + rt.rigFamily + ' · stock ' + rt.stock.length },
+        { k: 'IK chains', v: ik ? Object.keys(ik).map((k) => IK_LABEL[k]).join(' · ') : (rt && rt.kind === 'legacy' ? 'none · Rig_Legacy has 6 rigid bones' : 'none') },
+        { k: 'status', v: a.status || 'loading' }]) : [];
+    const lc = ws ? this._legacyCfg() : {};
+    const opt = (key, list) => list.map(([v, l]) => ({ label: l, ...onoff(lc[key] === v), pick: () => this.setLegacy({ [key]: v }) }));
+    const legacySlots = [{ label: 'Body', options: opt('body', [['A', 'Orc A'], ['B', 'Orc B']]) }, { label: 'Head', options: opt('head', [['A', 'Orc A'], ['B', 'Orc B']]) },
+      { label: 'Arms', options: opt('arms', [['A', 'Orc A'], ['B', 'Orc B']]) }, { label: 'Held', options: opt('held', [['none', 'None'], ['sword', 'Sword'], ['axe', 'Hammer-axe'], ['shield', 'Shield'], ['banner', 'Banner']]) }];
+
+    // Pose
+    const P = this.PoseMod, poseOn = this._poseOn(rt), d = ws && rt && rt.pose ? this._draft() : null;
+    const presetRows = P && d ? Object.entries(P.PRESETS).map(([k, v]) => ({ label: v.label, ...onoff(d.angles.preset === k), pick: () => this.setPreset(k) })) : [];
+    const angleRows = P && d ? P.FIELDS.filter((f) => f.k !== 'weight').map((f) => ({ label: f.label, min: f.min, max: f.max, step: f.step, value: d.angles[f.k] ?? 0, text: (d.angles[f.k] ?? 0) + (f.unit || ''), onInput: (ev) => this.setAngles({ [f.k]: +ev.target.value }) })) : [];
+    const ikRows = ik ? IK_KEYS.filter(([k]) => ik[k]).map(([k, l]) => { const t = d && d.ik[k]; const m = t && t.pinned ? this._miss(rt, k, t.pos) : null;
+      return { label: l, sub: t && t.pinned ? 'pinned · miss ' + (m != null ? m.toFixed(3) : '—') : 'free', dot: t && t.pinned ? '#b8781c' : '#c9c5bc', ...onoff(s.ikSel === k), pick: () => { if (!poseOn) this.setPoseOn(true); this.pickIK(k); } }; }) : [];
+    const poses = ws ? Object.values(ws.poses).filter((p) => p.actor === this._rid()) : [];
+    const poseRows = poses.map((p) => ({ label: p.name + ' · ' + Object.keys(p.ik || {}).length + ' IK', ...onoff(d && d.from === p.id), pick: () => this.loadPose(p.id), del: () => this.delPose(p.id) }));
+
+    // Anim
+    const A = this.anim, cq = (s.clipSearch || '').toLowerCase(), clipRows = [];
+    if (rt && rt.kind !== 'pet') {
+      const mp = ws ? this.ws.motion[this._rid()] : null, roleOf = (ref) => { if (!mp) return ''; const k = this._clipKey(ref); const r = Object.keys(mp.roles).find((x) => mp.roles[x] && this._clipKey(mp.roles[x].ref) === k); return r || ''; };
+      const push = (hdr, items) => { const f = items.filter((it) => !cq || (it.label + ' ' + it.sub + ' ' + it.search).toLowerCase().includes(cq)); if (!f.length) return; clipRows.push({ isHeader: true, isItem: false, label: hdr }); f.forEach((it) => clipRows.push({ isHeader: false, isItem: true, ...it })); };
+      if (this.ML && rt.rigFamily !== 'Rig_Legacy') {
+        const groups = {}; for (const c of this.ML.cat.clips) (groups[c.group] = groups[c.group] || []).push(c);
+        for (const [g, list] of Object.entries(groups)) push('Motion Library · ' + g, list.map((c) => { const ref = { src: 'ml', id: c.id }; const role = roleOf(ref);
+          return { label: c.label_de, sub: (role ? role + ' · ' : '') + c.durationSec.toFixed(1) + 's' + (c.rootMotion === 'travel' ? ' · travel' : ''), search: c.id + ' ' + g + ' ' + role, ...onoff(this._clipKey(A.ref) === this._clipKey(ref)), pick: () => this.loadClip(ref) }; }));
+      }
+      if (rt.stock.length) push('KayKit stock · ' + rt.rigFamily, rt.stock.map((c) => { const ref = { src: 'stock', id: c.name }, role = roleOf(ref); return { label: c.name, sub: (role ? role + ' · ' : '') + c.clip.duration.toFixed(1) + 's', search: c.pack + ' ' + role, ...onoff(this._clipKey(A.ref) === this._clipKey(ref)), pick: () => this.loadClip(ref) }; }));
+      if (rt.kind === 'legacy' && rt.own.length) push('Legacy 1.2 · Rig_Legacy', rt.own.map((c) => { const ref = { src: 'own', id: c.name }, role = roleOf(ref); return { label: c.name, sub: (role ? role + ' · ' : '') + c.clip.duration.toFixed(1) + 's', search: role, ...onoff(this._clipKey(A.ref) === this._clipKey(ref)), pick: () => this.loadClip(ref) }; }));
+    }
+    const hasClip = anim && !!A.action, catc = A.ref && A.ref.src === 'ml' ? this._mlClip(A.ref.id) : null, prof = catc ? this._mlProfile(catc.id) : null;
+    const nF = hasClip ? this._frames() : 1, fNow = hasClip ? this._frameF() : 1;
+    const pct = (fr) => ((fr - 1) / Math.max(1, nF - 1) * 100).toFixed(2) + '%';
+    const bands = (foot) => {
+      if (!(this.props.showContactBands ?? true) || !catc || !prof || !rt) return [];
+      const iv = this.ML.reader.getPlantedIntervals(prof, rt.rigFamily, foot); if (!Array.isArray(iv)) return [];
+      return iv.map((x) => Array.isArray(x) ? x : Array.isArray(x.frames) ? x.frames : [x.start ?? x.from, x.end ?? x.to]).filter((x) => x[0] != null).map(([s0, e0]) => ({ left: pct(s0), width: (Math.max(1, e0 - s0) / Math.max(1, nF - 1) * 100).toFixed(2) + '%' }));
+    };
+    const bandsL = hasClip ? bands('foot.l') : [], bandsR = hasClip ? bands('foot.r') : [];
+    const corr = hasClip ? this._corrections() : [];
+    const TYPE_COLOR = { key: '#b8781c', contact: '#4d6b55', override: '#1f2022', blender: '#a33d3d' };
+    const corrMarks = corr.map((c) => ({ left: pct(c.frame), color: TYPE_COLOR[c.type] || '#b8781c', title: IK_LABEL[c.target] + ' · f' + c.frame + ' · ' + c.type }));
+    const corrRows = corr.map((c) => ({ label: IK_LABEL[c.target] + ' · f' + c.frame + (c.type === 'override' ? ' · all' : ' · ±' + c.radius), type: c.type, ...onoff(false), bg: Math.abs(fNow - c.frame) < 0.5 ? '#dedbd4' : 'transparent', fg: '#1f2022',
+      pick: () => this.scrubFrame(c.frame), onType: (ev) => { c.type = ev.target.value; this.setState({ dirty: true }); this._touch(); }, del: () => this._delCorrection(c.id) }));
+    const cal = hasClip ? this._calibration() : null;
+    const unk = '#8a8f95', fmt = (v, u) => v == null ? 'unknown · not measured' : v + (u || '');
+    const clipFacts = !hasClip ? [] : [
+      { k: 'duration', v: A.clip.duration.toFixed(3) + ' s · ' + nF + ' f @ ' + this._fps(), color: '#1f2022' },
+      { k: 'loop (catalogue)', v: catc ? String(catc.loop) : 'not catalogued', color: catc ? '#1f2022' : unk },
+      { k: 'root motion', v: catc ? catc.rootMotion + (catc.travelDirection !== 'none' ? ' · ' + catc.travelDirection : '') : 'unknown · stock', color: catc ? '#1f2022' : unk },
+      { k: 'travel / cycle', v: cal ? fmt(cal.travel, ' m') : 'unknown', color: cal && cal.travel != null ? '#1f2022' : unk },
+      { k: 'cycle speed', v: cal && cal.mps != null ? cal.mps.toFixed(3) + ' m/s' : 'unknown', color: cal && cal.mps != null ? '#1f2022' : unk },
+      { k: 'reference (AN-P01)', v: cal ? fmt(cal.ref != null ? cal.ref.toFixed(3) : null, ' m/s') : 'unknown', color: cal && cal.ref != null ? '#1f2022' : unk },
+      { k: 'world @ actor', v: cal && cal.world != null ? cal.world + ' m/s · scale ' + cal.actorScale + ' × ' + A.speed.toFixed(2) : 'n/a · in-place or unmeasured', color: cal && cal.world != null ? '#4d6b55' : unk },
+      { k: 'feet planted', v: catc && prof ? (rt.rigFamily === 'Rig_Medium' ? 'measured · Rig_Medium' : 'unknown on ' + rt.rigFamily + ' (not copied)') : 'unknown', color: catc && rt.rigFamily === 'Rig_Medium' ? '#1f2022' : unk },
+    ];
+    const mp = ws && rt ? this.ws.motion[this._rid()] : null;
+    const roleValue = mp && A.ref ? (Object.keys(mp.roles).find((r) => mp.roles[r] && this._clipKey(mp.roles[r].ref) === this._clipKey(A.ref)) || '—') : '—';
+    const hasPoseOwner = !!(rt && rt.pose && ik);
+
+    // ik menu
+    const ikSel = s.ikSel, ikPinned = ikSel && ikSel !== 'grip' ? this._targetFor(ikSel) : null;
+    const ikSub = !ikSel ? '' : ikSel === 'grip' ? (lc.held || '') + ' · ' + (this._gripMode || 'translate') : studio ? (ikPinned ? 'pinned · miss ' + ((this._miss(rt, ikSel, ikPinned) || 0).toFixed(3)) : 'drag to pin') : ('f' + Math.round(fNow) + (ikPinned ? ' · correction' : ' · drag to correct'));
+
+    const srcDef = [
+      ['editLayer', 'Shared edit-layer.js (one picker, one gizmo — IK borrows it)', SRC.editLayer + ' @' + PIN.slice(0, 8)],
+      ['graftMount', 'FrizzleBob Driver Graft · graft-mount.v1 (animation: host)', SRC.graftMount + ' @' + PIN.slice(0, 8)],
+      ['graftChain', 'Driver Graft module chain (prewarmed)', 'kfb-rigs-embed-v3/** @' + PIN.slice(0, 8)],
+      ['graftProfile', 'Driver Graft profile · Georg 15.09', SRC.graftProfile],
+      ['eyeRig', 'EyeRig v6 owner', SRC.eyeRig + ' @' + PIN.slice(0, 8)],
+      ['poseRig', 'Pose owner · pose-rig.v1 OWNER FIX (wrist-aware chains, public IK)', 'kfb-lib/pose-rig.v1.js ← ' + SRC.poseRigPinned + ' @' + PIN.slice(0, 8)],
+      ['loco', 'Locomotion profiles · locomotion-profiles.v1 (KayKit canonical)', 'kfb-lib/locomotion-profiles.v1.js'],
+      ['stock:Rig_Medium:MovementAdvanced', 'KayKit stock · Rig_Medium MovementAdvanced', STOCK.path('Medium', 'MovementAdvanced') + ' @' + STOCK.rev.slice(0, 8)],
+      ['earDangle', 'Ear owner · ear-dangle.v1.js + fb-default.ear-rig.json (PR #214)', EAR.dir + ' @' + EAR.pin.slice(0, 8)],
+      ['band', 'Resident Band · S39 band-module.js (no baseplate)', BAND.dir + BAND.mod + ' @' + BAND.pin.slice(0, 8)],
+      ['wdSky', 'WorldBuilder-compatible sky · wd-sky.js', WDSKY.path + ' @' + WDSKY.pin.slice(0, 8)],
+      ['mlMeta', 'Motion Library 01 · catalogue + AN-PROFILE-01', ML.root + ' @' + ML.rev.slice(0, 8)],
+      ['mlRig_Medium', 'Motion Library GLB · Rig_Medium (lazy)', ML.root + 'KFB_Motion_Library_Rig_Medium.glb'],
+      ['mlRig_Large', 'Motion Library GLB · Rig_Large (lazy)', ML.root + 'KFB_Motion_Library_Rig_Large.glb'],
+      ['stock:Rig_Large:MovementBasic', 'KayKit stock · Rig_Large MovementBasic', STOCK.path('Large', 'MovementBasic') + ' @' + STOCK.rev.slice(0, 8)],
+      ['legacyRig', 'Legacy rig + clips · Character Animations 1.2', LEG.rig + ' @' + LEG.pin.slice(0, 8)],
+      ['legacyPartsA', 'Legacy parts · Orc A', LEG.parts.A], ['legacyPartsB', 'Legacy parts · Orc B', LEG.parts.B],
+      ['petLibrary', 'Cube-pet roster · pet-library.v6 (local mirror)', 'kfb-lib/pet-library.v6.js'],
+      ['sceneIndex', 'Resident scenes · Resident Atlas', SRC.sceneDir + 'index.json @' + PIN.slice(0, 8)],
+    ];
+    const ss = this.srcStatus || {};
+    const sourceRows = srcDef.map(([k, label, path]) => ({ label: label + (ss[k] && ss[k].detail ? ' · ' + ss[k].detail : ''), path, dot: !ss[k] ? '#c9c5bc' : (ss[k].ok ? '#7fa58a' : '#a33d3d') }))
+      .concat((doc ? doc.objects : []).map((o) => ({ label: o.name + ' · ' + (o.status || '…'), path: (o.source.path || '') + ' @' + String(o.source.commit).slice(0, 8), dot: o.status === 'OK' ? '#7fa58a' : (o.status ? '#a33d3d' : '#c9c5bc') })));
+    const tests = s.tests || [], passN = tests.filter((t) => t.ok).length;
+    const noFaceText = !rt ? 'Loading actor…' : rt.kind === 'earfb' ? 'FrizzleBob Ear Rig v5 carries its painted template look (EyeColor · FB_Mouth materials). EyeRig v6 and pet-mouth v1 mount on the Driver Graft.' : rt.kind === 'kaykit' ? 'Orc Brute keeps its KayKit stock head — no EyeRig / mouth owner mounted on this body. FrizzleBob head on KayKit bodies = TB-PRODUCTION-04.' : rt.kind === 'legacy' ? 'Legacy Warband heads are rigid source parts — no EyeRig / mouth owner. Swap heads in Body.' : 'No face owner on this actor.';
+    const noPoseText = !rt ? 'Loading actor…' : rt.kind === 'legacy' ? 'Rig_Legacy has six rigid bones (Body · Head · arms) — no limb chains for IK. Pose it through clips in the Animation Lab.' : rt.kind === 'pet' ? 'Cube Pets carry no limb IK chains (pet-library owner).' : 'Pose owner did not build on this actor — see SOURCE MISSING.';
+    const noClipText = !rt ? 'Loading actor…' : rt.kind === 'pet' ? 'Cube Pets play their own pet-library clip set. Motion Library needs Rig_Medium, Rig_Large or Legacy clips.' : 'Pick a clip ▾ in the dock below.';
+    // Lab · State / Ears / Band · Studio · Fit / roadmap
+    const labSec = s.labSec || 'clip', rid = a ? a.rosterId : null;
+    const labRow = (id, label) => ({ label, ...onoff(labSec === id), pick: () => this.setState({ labSec: id }) });
+    const L = ws && this.Loco ? this._locoFor() : null;
+    const locoRows = L ? this.Loco.ROLES.map((R) => { const p = L.profiles[R.role] || {}, on = s.locoSel === R.role;
+      return { role: R.role, clip: p.clip ? p.clip + (p.variant ? ' ×' + p.playbackRate : '') : 'UNMAPPED', clipColor: on ? SELFG : !p.clip ? '#a33d3d' : p.variant ? '#b8781c' : '#1f2022',
+        spm: p.clip && p.cadenceSpm ? String(Math.round(p.cadenceSpm)) : '—', mps: p.clip && p.worldSpeed ? p.worldSpeed.toFixed(2) : '—', ...onoff(on), pick: () => this.pickLoco(R.role) }; }) : [];
+    const lpf = L && s.locoSel ? L.profiles[s.locoSel] : null, lm = lpf && lpf.measured;
+    const locoDetail = lpf && lpf.clip ? [
+      { k: 'source clip', v: lpf.clip + ' · ' + (lpf.pack || 'KayKit') + ' · ' + L.rigFamily + ' @' + L.source.commit.slice(0, 8) },
+      { k: 'status', v: lpf.status + (lpf.variant ? ' · ' + lpf.variant.why : '') + (lpf.semanticEvidence ? ' · ' + lpf.semanticEvidence : ''), color: lpf.variant ? '#b8781c' : '#4d6b55' },
+      { k: 'duration · loop', v: lpf.duration.toFixed(3) + ' s · ' + (lpf.loop ? 'loop' : 'once') + ' · rate ' + lpf.playbackRate },
+      { k: 'cadence', v: lpf.cadenceSpm ? lpf.cadenceSpm + ' steps/min · ' + lm.stepsPerCycle + ' steps/cycle' : 'no steps · feet stay planted' },
+      { k: 'stride', v: lm.strideLength ? lm.strideLength + ' m · stance slide ' + lm.stanceSpeed + ' m/s' : '—' },
+      { k: 'world speed', v: lpf.worldSpeed ? lpf.worldSpeed + ' m/s @ actor scale ' + L.actorScale + ' · native ' + lpf.nativeSpeed : '0 · stationary', color: lpf.worldSpeed ? '#4d6b55' : '#1f2022' },
+      { k: 'stride relation', v: lpf.strideRelation },
+      { k: 'travel dir', v: lm.travelDir ? 'fwd ' + lm.travelDir.fwd + ' · side ' + lm.travelDir.side : '—' },
+      { k: 'root motion', v: lpf.rootMotion },
+      { k: 'contacts L', v: lm.contacts['foot.l'].planted.map((x) => x.join('–')).join(' · ') + ' of ' + lm.frames + ' f @60' },
+      { k: 'contacts R', v: lm.contacts['foot.r'].planted.map((x) => x.join('–')).join(' · ') },
+      { k: 'events', v: Object.entries(lm.events).map(([k2, v2]) => k2 + ' f' + v2).join(' · ') || '—' },
+      { k: 'transitions', v: Object.entries(this.Loco.TRANSITIONS).filter(([k2]) => k2.split('→').includes(lpf.role)).map(([k2, v2]) => k2 + (v2.fade != null ? ' ' + v2.fade + 's' : '') + (v2.at ? ' @ ' + v2.at : '') + (v2.syncPhase ? ' · phase' : '')).join(' · ') || '—' },
+    ].map((x) => ({ color: '#1f2022', ...x })) : [];
+    const lpc = L && hasClip && !catc ? Object.values(L.profiles).find((p) => p.clip === A.clip.name) : null;
+    const locoBands = (foot) => { if (!(this.props.showContactBands ?? true) || !lpc) return []; const n = lpc.measured.frames;
+      return lpc.measured.contacts[foot].planted.map(([s0, e0]) => ({ left: ((s0 - 1) / Math.max(1, n - 1) * 100).toFixed(2) + '%', width: (Math.max(1, e0 - s0) / Math.max(1, n - 1) * 100).toFixed(2) + '%' })); };
+    const SQ = this.seq, seqText = SQ && SQ.cur ? 'preview · ' + SQ.kind + ' · ' + (SQ.i + 1) + '/' + SQ.steps.length + ' · ' + SQ.cur.role + ' (' + SQ.cur.p.clip + (SQ.cur.p.playbackRate !== 1 ? ' ×' + SQ.cur.p.playbackRate : '') + ') · root ' + SQ.speed.toFixed(2) + ' m/s'
+      : this.lastSeq ? 'last ' + this.lastSeq.kind + (this.lastSeq.done ? '' : ' (stopped)') + ' · ' + this.lastSeq.steps.join(' → ') + (this.lastSeq.events.length ? ' · kicks ' + this.lastSeq.events.join(', ') : '') : '';
+    const EA = rt && rt.ears, ec = EA && ws ? this._earCfg() : null, em = EA ? this._earAngles(rt) : null;
+    const erv = ws && ws.earReview && ws.earReview.actor === rid ? ws.earReview : null;
+    const Bd = this.band, song = Bd && Bd.def.song;
+    const fit = ws && ws.fits ? ws.fits['CARD_SURF:' + rid] : null;
+    const sgate = this.solverCmp && this.solverCmp.actor === rid ? this.solverCmp : (ws && ws.solverGate && ws.solverGate.actor === rid ? ws.solverGate : null);
+    const roadmapRows = [
+      ['FrizzleBob graft · graft-mount.v1', 'mounted · Driver host · Georg profile 15.09', 1], ['EyeRig · pet-eye-rig.v6', 'mounted · Face', 1], ['Mouth / viseme · pet-mouth.v1', 'mounted · Face', 1],
+      ['Brow · Nose', 'mounted · Face toggles', 1], ['Pose / IK · pose-rig.v1 owner fix', 'mounted · Pose + Animation Lab contacts', 1], ['Ear Rig · ear-dangle.v1 (PR #214)', 'mounted · Animation Lab › Ears', 1],
+      ['Legacy Character Builder', 'mounted · Body (Warband Orc A/B)', 1], ['Props · held item fit', 'mounted · Legacy held item on stage', 1], ['Vehicle / Surface Fit', 'seam · Fit › CARD_SURF · no flight', 2],
+      ['Materials / Look · matzones.v1', 'in the graft chain · no Studio surface yet', 0], ['Speech + thought bubbles · bubble-shaper.v3 · bubbles.v4', 'owner in stage-first/src/petstudio-v9 · not mounted here', 0],
+    ].map(([l, sub, st]) => ({ label: l, src: sub, dot: st === 1 ? '#7fa58a' : st === 2 ? '#b8781c' : '#c9c5bc' }));
+    const secRow = (id, label) => ({ label, ...onoff(s.section === id), pick: () => this.setSection(id) });
+    const vw = s.vw || 1200, pw = vw < 900 ? 260 : 300, po = s.panelOpen;
+    return {
+      showBrand: vw >= 1000, showRigTag: vw >= 1120, showStatusText: vw >= 960, showHint: vw >= 900, animTabLabel: vw < 900 ? 'Lab' : 'Animation Lab',
+      panelOpen: po, panelW: pw + 'px', dockRight: po ? (pw + 24) + 'px' : '12px', toolMax: po ? 'calc(100% - ' + (pw + 36) + 'px)' : 'calc(100% - 24px)',
+      diagRight: po && vw >= 900 ? (pw + 20) + 'px' : '12px', togglePanel: () => this.setState((x) => ({ panelOpen: !x.panelOpen })), panelBtnBg: po ? '#dedbd4' : 'transparent',
+      setTabStudio: () => this.setTab('studio'), setTabAnim: () => this.setTab('anim'),
+      studioTabBg: tabSty(studio).bg, studioTabSh: tabSty(studio).sh, studioTabFg: tabSty(studio).fg, animTabBg: tabSty(anim).bg, animTabSh: tabSty(anim).sh, animTabFg: tabSty(anim).fg,
+      isStudio: studio, isAnim: anim,
+      actorLabel: a ? a.name : '…', actorRig: (rt && rt.rigFamily !== 'pet' && rt.rigFamily) || '', actorSwatch: e ? e.baseColor : ((this._rosterEntry(a && a.rosterId) || {}).swatch || '#c9c5bc'),
+      actorPopOpen: s.actorPop, actorSearch: s.actorSearch, rosterRows,
+      toggleActorPop: () => this.setState((x) => ({ actorPop: !x.actorPop, stagePop: false })), onActorSearch: (ev) => this.setState({ actorSearch: ev.target.value }),
+      stagePopOpen: s.stagePop, stageRows, stageLabel, toggleStagePop: () => this.setState((x) => ({ stagePop: !x.stagePop, actorPop: false })),
+      dotColor: s.failures.length ? '#a33d3d' : (s.dirty ? '#b8781c' : '#7fa58a'), statusText: s.dirty ? 'unsaved' : s.status, statusShort: s.dirty ? 'unsaved' : (s.lastSaved ? 'saved' : s.status),
+      save: () => this.save(), reload: () => this.reload(),
+      lastSavedText: s.lastSaved ? ('saved ' + new Date(s.lastSaved).toLocaleString()) : 'not saved yet',
+      toggleDiag: () => this.setState((x) => ({ diagOpen: !x.diagOpen })), diagOpen: s.diagOpen, diagBtnBg: s.diagOpen ? '#dedbd4' : 'transparent',
+      hasFailures: s.failures.length > 0, failureRows: s.failures.slice(-6),
+      isLoading: s.loading > 0 || s.testing, loadingText: s.testing ? 'self-test running…' : s.loadingText,
+      mMoveBg: onoff(s.mode === 'translate').bg, mMoveFg: onoff(s.mode === 'translate').fg, mRotBg: onoff(s.mode === 'rotate').bg, mRotFg: onoff(s.mode === 'rotate').fg,
+      mScaleBg: onoff(s.mode === 'scale').bg, mScaleFg: onoff(s.mode === 'scale').fg, mScopeBg: onoff(s.scope === 'gruppe').bg, mScopeFg: onoff(s.scope === 'gruppe').fg,
+      snapBg: onoff(s.snap).bg, snapFg: onoff(s.snap).fg,
+      setMove: () => this.setMode('translate'), setRotate: () => this.setMode('rotate'), setScale: () => this.setMode('scale'),
+      drop: () => this.drop(), toggleSnap: () => this.EDIT && this.EDIT.setSnap(!this.EDIT.snap), resetSel: () => this.resetSel(),
+      studioHint: s.section === 'pose' && hasPoseOwner ? 'Click a dot to pose' : 'Click to select',
+      camFull: () => this.camFull(), camFace: () => this.camFace(), camBody: () => this.camBody(), zoomIn: () => this.zoom(0.85), zoomOut: () => this.zoom(1.18),
+      // ik menu
+      ikLabel: ikSel ? (IK_LABEL[ikSel] || 'Held item') : '', ikSub, ikIsGrip: ikSel === 'grip',
+      gripMove: () => { this._gripMode = 'translate'; this.EDIT && this.EDIT.setMode('translate'); this._touch(); }, gripRotate: () => { this._gripMode = 'rotate'; this.EDIT && this.EDIT.setMode('rotate'); this._touch(); },
+      gripMoveBg: onoff((this._gripMode || 'translate') === 'translate').bg === SEL ? '#efece6' : '#3a3b3e', gripMoveFg: (this._gripMode || 'translate') === 'translate' ? '#1f2022' : '#efece6',
+      gripRotBg: this._gripMode === 'rotate' ? '#efece6' : '#3a3b3e', gripRotFg: this._gripMode === 'rotate' ? '#1f2022' : '#efece6',
+      ikRelease: () => this.ikRelease(), ikReleaseLabel: ikSel === 'grip' ? 'Reset' : studio ? 'Unpin' : 'Delete', ikClose: () => this.closeIK(),
+      // studio sections
+      sectionRows: [secRow('body', 'Body'), secRow('face', 'Face'), secRow('pose', 'Pose'), secRow('fit', 'Fit'), secRow('scene', 'Scene')],
+      secBody: s.section === 'body', secFace: s.section === 'face', secPose: s.section === 'pose', secFit: s.section === 'fit', secScene: s.section === 'scene', roadmapRows,
+      bodyFacts, isLegacy: !!(rt && rt.kind === 'legacy'), legacySlots, hasHeld: !!(rt && rt.legacy && rt.legacy.holder),
+      editGrip: () => this.pickIK('grip'), selectActor: () => { this.selectId('actor'); this.setState({ section: 'scene' }); },
+      hasRig: !!(rt && rt.rig && e), hasMouth: !!(rt && rt.mouth), noFace: !(rt && rt.rig && e), noFaceText,
+      matteBg: onoff(e && e.pupilStyle === 'matte-cute').bg, matteFg: onoff(e && e.pupilStyle === 'matte-cute').fg,
+      glossyBg: onoff(e && e.pupilStyle === 'glossy-googly').bg, glossyFg: onoff(e && e.pupilStyle === 'glossy-googly').fg,
+      setMatte: () => this._setEye({ pupilStyle: 'matte-cute' }), setGlossy: () => this._setEye({ pupilStyle: 'glossy-googly' }),
+      eyeColor: e ? e.baseColor : '#f2c93c', eyeColorUpper: e ? e.baseColor.toUpperCase() : '', onEyeColor: (ev) => this._setEye({ baseColor: ev.target.value }),
+      eyeDx: e ? (+e.dx).toFixed(3) : '0.345', onEyeDx: (ev) => this._setEye({ dx: +ev.target.value }),
+      resetEye: () => { const p = this._actorProf(); if (p.face) delete p.face.eye; this._applyFace(); this.setState({ dirty: true }); this._touch(); },
+      browBg: onoff(face.brow !== false).bg, browFg: onoff(face.brow !== false).fg, noseBg: onoff(face.nose !== false).bg, noseFg: onoff(face.nose !== false).fg,
+      toggleBrow: () => this._setFace({ brow: face.brow === false }), toggleNose: () => this._setFace({ nose: face.nose === false }),
+      visemeRows: (this.MouthMod ? this.MouthMod.VISEMES : [['closed', 'Zu'], ['open', 'Offen'], ['wide', 'Breit'], ['round', 'Rund'], ['smile', 'Lächeln']]).map(([id, l]) => ({ label: l, ...onoff(rt && rt.mouth && !rt.mouth.talking && rt.mouth.viseme === id), pick: () => this.setViseme(id) })),
+      mouthSetRows: [['male', 'Male'], ['female', 'Female'], ['red', 'Red lips']].map(([id, l]) => ({ label: l, ...onoff(rt && rt.mouth && rt.mouth.set === id), pick: () => { if (rt && rt.mouth) { rt.mouth.setSet(id); this._setFace({ mouth: { ...(face.mouth || {}), set: id } }); } } })),
+      toggleTalk: () => this.toggleTalk(), talkLabel: rt && rt.mouth && rt.mouth.talking ? 'Talking…' : 'Talk', talkBg: rt && rt.mouth && rt.mouth.talking ? SEL : 'transparent', talkFg: rt && rt.mouth && rt.mouth.talking ? SELFG : '#1f2022',
+      hasPose: hasPoseOwner, noPose: !hasPoseOwner, noPoseText,
+      poseOffBg: onoff(!poseOn).bg, poseOffFg: onoff(!poseOn).fg, poseOnBg: onoff(poseOn).bg, poseOnFg: onoff(poseOn).fg,
+      poseOff: () => this.setPoseOn(false), poseOn: () => this.setPoseOn(true),
+      ikRows, presetRows, angleRows, poseRows, poseCount: poseRows.length, poseName: s.poseName, onPoseName: (ev) => this.setState({ poseName: ev.target.value }), savePose: () => this.savePose(s.poseName.trim()),
+      hasSel: !!selRoot, noSel: !selRoot, selTitle: selRec ? selRec.name : '', selSub: selRec ? [selRec.role || selRec.kind, selRec.group, (selRec.source.path || '').split('/').pop()].filter(Boolean).join(' · ') : '',
+      posReadout: selRoot ? selRoot.position.toArray().map(f2).join(', ') : '', rotReadout: selRoot ? [selRoot.rotation.x, selRoot.rotation.y, selRoot.rotation.z].map((v) => Math.round(v * 180 / Math.PI)).join(', ') : '', sclReadout: selRoot ? selRoot.scale.toArray().map(f2).join(', ') : '',
+      hasDrop: !!s.lastDrop, lastDrop: s.lastDrop, objRows, objCount: objRows.length,
+      // anim dock
+      togglePlay: () => this.togglePlay(), playIcon: s.playing ? '❚❚' : '▶', stepBack: () => this.scrubFrame(Math.round(fNow) - 1), stepFwd: () => this.scrubFrame(Math.round(fNow) + 1),
+      clipLabel: A.ref ? this._clipLabel(A.ref) : 'Pick clip', toggleClipPop: () => this.setState((x) => ({ clipPop: !x.clipPop })), clipPopOpen: s.clipPop && anim, clipSearch: s.clipSearch, onClipSearch: (ev) => this.setState({ clipSearch: ev.target.value }), clipRows,
+      frameText: hasClip ? Math.round(fNow) + ' / ' + nF : '— / —', timeText: hasClip ? A.action.time.toFixed(2) + ' s' : '',
+      toggleLoop: () => { A.loop = !A.loop; this.setState({ dirty: true }); this._touch(); }, loopBg: onoff(A.loop).bg, loopFg: onoff(A.loop).fg,
+      speedVal: A.speed, speedText: A.speed.toFixed(2) + '×', onSpeed: (ev) => { A.speed = +ev.target.value; this._touch(); },
+      onTrackDown: (ev) => this._trackDown(ev), bandsL: catc ? bandsL : locoBands('foot.l'), bandsR: catc ? bandsR : locoBands('foot.r'), corrMarks,
+      bandNote: !hasClip ? '' : catc ? (bandsL.length || bandsR.length ? 'feet planted · AN-PROFILE-01' : 'feet · unknown on ' + rt.rigFamily) : lpc ? 'feet planted · measured on this rig (' + lpc.role + ')' : 'feet · not measured — Lab › State',
+      hasClip: hasClip && labSec === 'clip', noClip: anim && labSec === 'clip' && !hasClip, noClipText,
+      clipTitle: A.ref ? this._clipLabel(A.ref) : '', clipSource: !A.ref ? '' : A.ref.src === 'ml' ? 'kfb-motion-library · ' + A.ref.id + ' · ' + (rt && rt.rigFamily) + ' @' + ML.rev.slice(0, 8) : A.ref.src === 'stock' ? 'KayKit Character Animations 1.1 · ' + A.ref.id : 'KayKit Legacy 1.2 · ' + A.ref.id,
+      bindText: hasClip ? (A.bound === A.total ? 'DIRECT · ' : A.bound ? 'PARTIAL · ' : 'NO BIND · ') + A.bound + '/' + A.total + ' tracks bound' : '', bindColor: hasClip && A.bound === A.total ? '#4d6b55' : '#a33d3d',
+      roleValue, roleOptions: ['—'].concat(ROLES).map((r) => ({ id: r, label: r })), onRole: (ev) => this.setRole(ev.target.value),
+      clipFacts, corrRows, corrCount: corr.length,
+      corrHint: hasPoseOwner ? (s.playing ? 'Pause to correct: scrub to the frame, click a hand/foot dot, drag.' : 'Click a hand/foot dot on stage and drag — the fix is keyed at this frame.') : 'No IK chains on this rig — corrections need Rig_Medium/Large.',
+      saveMotion: () => this.saveMotion(),
+      motionSummary: mp ? Object.keys(mp.roles).length + ' role(s) · ' + Object.keys(mp.clips).length + ' clip(s) in profile' : 'no motion profile yet',
+      sourceRows, runSelfTest: () => this.selfTest(), testBtnLabel: s.testing ? 'Running…' : 'Run PRODUCTION-01 self-test',
+      testSummary: tests.length ? (passN + '/' + tests.length + ' PASS') : '19 steps on real sources · restores your save afterwards',
+      testRows: tests.map((t) => ({ verdict: t.ok ? 'PASS' : 'FAIL', color: t.ok ? '#4d6b55' : '#a33d3d', name: t.name, detail: t.detail })),
+      resetFixture: () => this.resetFixture(),
+      // Lab sections
+      labRows: [labRow('clip', 'Clip'), labRow('state', 'State'), labRow('ears', 'Ears'), labRow('band', 'Band')],
+      labState: anim && labSec === 'state', labEars: anim && labSec === 'ears', labBand: anim && labSec === 'band',
+      locoSource: 'KayKit Character Animations 1.1 · Rig_Medium · General + MovementBasic + MovementAdvanced @' + STOCK.rev.slice(0, 8) + ' · owner kfb-lib/locomotion-profiles.v1.js',
+      hasLocoMsg: !!s.locoMsg, locoMsg: s.locoMsg, measureLoco: () => this.measureLocomotion(), measureLabel: L ? 'Re-measure' : 'Measure on this rig',
+      previewLoco: () => this.startSeq('loco'), previewJump: () => this.startSeq('jump'), seqRunning: !!SQ, stopSeqBtn: () => this.stopSeq(false), hasSeqText: !!seqText, seqText,
+      locoRows, hasLocoDetail: locoDetail.length > 0, locoDetail, saveLoco: () => this.saveLoco(), exportLoco: () => this.exportLoco(), hasLoco: !!L,
+      locoNote: L ? (Object.values(L.profiles).filter((p) => p.clip && p.sourceBacked).length + ' source-backed · ' + Object.values(L.profiles).filter((p) => p.variant).length + ' playback-rate variant(s) · ' + L.unmapped.length + ' unmapped. Motion Library (Mixamo) stays the variant/action layer — zombie/orc/sad locomotion, dance, performance, reactions, combat — and never overwrites these roles.')
+        : 'Measures every canonical role on the loaded actor: cadence from foot contacts, stride from stance-foot slide, world speed at this actor scale. WorldBuilder reads the exported set — no second movement controller.',
+      earOwnerText: 'ear-dangle.v1.js @' + EAR.pin.slice(0, 8) + ' (PR #214) is the ONE ear secondary-motion owner, layered after the actor’s one mixer. Studio authors placement and acting (kfb.ear-rig.v0).',
+      hasEars: !!EA, noEars: !EA,
+      noEarsText: rt && rt.kind === 'graft' ? 'The Driver Graft bakes FrizzleBob’s ears rigidly into the head mesh (headgraft.v1: ear bones → head). Dangle there waits for the ear-to-head junction decision (Ear Rig README, gap 1). EAR-DANGLE-01 runs on FrizzleBob Ear Rig v5 — ear.l/r.1–3 skinned to the main rig.' : 'This actor has no ear chains.',
+      loadEarActor: () => this.pickRoster(this._rosterEntry('frizzlebob-earrig-v5')),
+      toggleEars: () => this.setEar({ on: !(ec && ec.on !== false) }), earsLabel: ec && ec.on !== false ? 'Ears on' : 'Ears off', earsBg: onoff(ec && ec.on !== false).bg, earsFg: onoff(ec && ec.on !== false).fg,
+      earTakeoff: () => this._earImpulse('takeoff'), earLand: () => this._earImpulse('land'),
+      earSliders: ec ? [['stiff', 'Stiffness ×', 0.3, 2.5, 0.05], ['damp', 'Damping ×', 0.3, 2.5, 0.05], ['elastic', 'Rubber stretch', 0, 1.2, 0.05]].map(([k, l, mn, mx, st]) => ({ label: l, min: mn, max: mx, step: st, value: ec[k], text: (+ec[k]).toFixed(2), onInput: (ev) => this.setEar({ [k]: +ev.target.value }) })) : [],
+      earLive: EA ? 'live · spring peak ' + em.deg.toFixed(1) + '° · ' + (em.fin ? 'finite' : 'NaN') + ' · ear bones ' + EA.L.bones.length + '+' + EA.R.bones.length + (this._lastImpulse ? ' · last kick ' + this._lastImpulse : '') : '',
+      runEarTest: () => this.startSeq('ear'), earTestLabel: SQ && SQ.kind === 'ear' ? 'EAR-DANGLE-01 running…' : 'Run EAR-DANGLE-01 · Idle · Walk · Run · Jump · Dance',
+      earRows: erv ? erv.rows.map((r) => ({ k: r.role + ' · ' + r.clip + (r.rate !== 1 ? ' ×' + r.rate : ''), v: 'peak ' + r.peak + '°' + (r.settle != null ? ' · settles ' + r.settle + ' s' : '') + (r.finite ? '' : ' · NaN'), color: !r.finite || r.peak > 80 ? '#a33d3d' : '#1f2022' })) : [],
+      bandSource: 'S39-band-module-01 · band-module.js + resident-band-module-01.json @' + BAND.pin.slice(0, 8) + ' · Guitar A ml.guitar.a.fit · drum.v5c',
+      noBand: !Bd, noBandText: stage.preset === 'band' ? 'Band module loading or failed — see SOURCE MISSING.' : 'Loads the band as a Resident module on a host support plane — no baseplate — with the WorldBuilder-compatible sky and light. The actor stays in front.',
+      loadBandStage: () => this.setStage('band', null), hasBand: !!Bd,
+      toggleBand: () => { if (Bd) { Bd.playing = !Bd.playing; if (!Bd.playing && Bd.audio) { Bd.t = Bd.audio.currentTime; Bd.audio.pause(); } this._touch(); } },
+      bandLabel: Bd && Bd.playing ? '❚❚ Clock' : '▶ Clock', bandBg: onoff(Bd && Bd.playing).bg, bandFg: onoff(Bd && Bd.playing).fg,
+      toggleSong: () => this.toggleSong(), songLabel: Bd && Bd.audio && !Bd.audio.paused ? 'Song on' : 'Song', measureBand: () => this.measureBand(),
+      bandFacts: Bd ? [
+        { k: 'performers', v: Object.entries(Bd.def.actors || {}).map(([id, x]) => id + ' · ' + (x.action || '—')).join(' · ') },
+        { k: 'baseplate', v: 'def: ' + String(Bd.def.baseplate) + ' · ground-like meshes ' + (Bd.groundMeshes.length ? Bd.groundMeshes.join(', ') : '0'), color: Bd.groundMeshes.length ? '#a33d3d' : '#4d6b55' },
+        { k: 'clock', v: (song ? song.bpm + ' BPM · phase ' + song.phaseOffset + ' s · ' : '') + 'beat ' + Bd.beat.toFixed(2) + ' · ' + (Bd.audio && !Bd.audio.paused ? 'song' : 'free clock') },
+        { k: 'drum contact', v: Bd.contact || 'not measured — press Measure' },
+        { k: 'support (min/max y)', v: Bd.ground || 'not measured — press Measure' },
+        { k: 'environment', v: this.worldPrev ? (this.worldPrev.sky ? this.worldPrev.sky.label : 'sky donor missing') + ' · wd-light BASELINE · host support plane y 0' : '—' },
+      ].map((x) => ({ color: '#1f2022', ...x })) : [],
+      // Solver gate
+      runSolverCmp: () => this.compareSolvers(),
+      solverRows: sgate ? sgate.rows.map((r) => ({ name: r.name, v: r.err ? 'error' : 'miss ' + r.miss.toFixed(4) + ' · twist ' + r.twist + '°' + (r.flip ? ' · FLIP' : ''), color: r.err || r.flip ? '#a33d3d' : '#1f2022' })) : [],
+      solverVerdict: sgate ? sgate.key + ' · ' + sgate.verdict : 'Same target through A (current owner), B (upstream three.js CCDIKSolver) and C (CCD with elbow hinge) on this rig. A is replaced only if B or C clearly win.',
+      // Fit seam
+      fitPresetRows: P && d ? ['armchair', 'cockpit', 'bath', 'surf'].filter((k) => P.PRESETS[k]).map((k) => ({ label: P.PRESETS[k].label, ...onoff(d.angles.preset === k), pick: () => this.setPreset(k) })) : [],
+      fitFacts: [
+        { k: 'profile', v: 'CARD_SURF · kfb.vehicle-surface-fit-profile/0.1' },
+        { k: 'carrier', v: 'KFB CardCarrier (animated) · source pin pending', color: '#b8781c' },
+        { k: 'pose', v: d ? (d.angles.preset || 'custom') + (d.from && ws.poses[d.from] ? ' · ' + ws.poses[d.from].name : ' · unsaved draft') : '—' },
+        { k: 'feet pinned', v: d ? (['footL', 'footR'].filter((k) => d.ik[k] && d.ik[k].pinned).map((k) => IK_LABEL[k]).join(' · ') || 'none — click a foot dot on stage') : '—' },
+        { k: 'saved', v: fit ? new Date(fit.savedAt).toLocaleString() : 'not yet', color: fit ? '#4d6b55' : '#8a8f95' },
+      ].map((x) => ({ color: '#1f2022', ...x })),
+      saveFit: () => this.saveFit(),
+      fitHint: hasPoseOwner ? 'Surf preset → click a foot dot on stage → move it onto the deck line → save. Travel owns flight; Quaternius transformer vehicles stay source-pin gated.' : noPoseText,
+    };
+  }
+}
+</script>
+</body>
+</html>
