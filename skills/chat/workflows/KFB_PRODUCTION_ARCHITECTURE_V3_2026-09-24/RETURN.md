@@ -1098,3 +1098,22 @@ Keep under HUB-CTRL only. No public shell promotion from this intake.
 **REHOME TOOLBOX R2 → REHOME WORLD R2 WITH TOOLBOX LOCOMOTION SEAM → STAGE → GEORG REVIEW.**
 
 No merge or Live promotion authorized.
+
+
+## 2026-09-26 · ToolBox r2 owner rehome CI PASS
+
+The ToolBox r2 owner deltas are integrated on existing PR #185 rather than promoted as a second ToolBox runtime.
+
+Tested implementation head:
+`5dcf34bcdf9d87445e927c98f60d41adae72f00e`
+
+Actions:
+`36197260540 · SUCCESS`
+
+Actual counts:
+**31/31 + 34/34 static · 20/20 + 25/25 browser · 13/13 plain review**.
+
+Next:
+ToolBox r2 Stage review from the re-homed owner files.
+
+World r2 receiving integration may now consume the immutable ToolBox locomotion profile pin.
