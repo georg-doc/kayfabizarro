@@ -564,7 +564,7 @@ class Component extends DCLogic {
     window.addEventListener('resize', this._onResize);
     if (window.__KFB3D) this._boot(); else window.addEventListener('kfb3dready', () => this._boot(), { once: true });
   }
-  componentWillUnmount() { cancelAnimationFrame(this._raf); clearInterval(this._wd); window.removeEventListener('keydown', this._onKey); window.removeEventListener('resize', this._onResize); }
+  componentWillUnmount() { cancelAnimationFrame(this._raf); clearInterval(this._wd); if (this.ENV) this.ENV.dispose(); if (this.envCtl && this.envCtl.parentNode) this.envCtl.parentNode.removeChild(this.envCtl); window.removeEventListener('keydown', this._onKey); window.removeEventListener('resize', this._onResize); }
   componentDidUpdate() {
     const g = this.props.gridStep ?? 0.05;
     if (this.EDIT && this._editOpts.gridStep !== g) { this._editOpts.gridStep = g; this.EDIT.setSnap(this.EDIT.snap); }
@@ -607,6 +607,44 @@ class Component extends DCLogic {
     const floor = new THREE.Mesh(new THREE.CircleGeometry(9, 72).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xd8d4ca, roughness: 1 }));
     floor.name = 'Stage floor'; floor.receiveShadow = true; this.world.add(floor);
     this.grid = new THREE.GridHelper(18, 36, 0xbdb7aa, 0xcac5ba); this.grid.position.y = 0.003; this.grid.visible = this.props.showGrid ?? true; scene.add(this.grid);
+
+    /* ENV-PREVIEW-01 · shared current KFB environment, not a ToolBox-owned world. */
+    try {
+      this.EnvMod = await import('/tools/KFB-ToolBox/lib/environment-preview.v1.js');
+      this.ENV = this.EnvMod.mountEnvironmentPreview({
+        THREE,
+        host: { scene, camera: cam, renderer },
+        mode: 'WORLD_MATCH',
+        preset: 'world.current',
+        support: 'ground',
+        hostSupport: [floor],
+        groundSize: 90,
+        debugName: 'ToolBox Production-01'
+      });
+      window.__kfbEnvPreview = this.ENV;
+      this._src('environmentPreview', true, this.ENV.resolveProfile().sourceHead.slice(0, 8));
+
+      const ctl = this.envCtl = document.createElement('select');
+      ctl.id = 'kfb-env-preview-mode';
+      ctl.title = 'Shared KFB environment · current World/Travel presentation or neutral source isolation';
+      ctl.style.cssText = 'position:absolute;left:12px;top:50px;z-index:11;height:28px;padding:0 26px 0 9px;border:1px solid #c9c5bc;border-radius:6px;background:#efece6;color:#1f2022;font:12px system-ui;box-shadow:0 2px 8px rgba(31,32,34,.10)';
+      [
+        ['WORLD_MATCH::world.current', 'World Match'],
+        ['SOURCE_ISOLATION::world.current', 'Source Isolation'],
+        ['CONSUMER_PRESET::world.evening', 'World · Evening'],
+        ['CONSUMER_PRESET::world.night', 'World · Night']
+      ].forEach(([value, label]) => { const o = document.createElement('option'); o.value = value; o.textContent = label; ctl.appendChild(o); });
+      ctl.addEventListener('change', () => {
+        const [m, p] = ctl.value.split('::');
+        this.ENV.setMode(m, p);
+        ctl.title = JSON.stringify(this.ENV.resolveProfile());
+      });
+      el.appendChild(ctl);
+    } catch (e) {
+      this._src('environmentPreview', false, e.message);
+      this._fail('Shared Environment Preview', 'tools/KFB-ToolBox/lib/environment-preview.v1.js', e);
+    }
+
     this.loader = new H.GLTFLoader();
     this._buildHandles();
     const ro = new ResizeObserver(() => this._resize()); ro.observe(el); this._resize();
@@ -726,6 +764,7 @@ class Component extends DCLogic {
     }
     this._placeHandles();
     if (this.EDIT) { if (!this.EDIT.borrowed) this.EDIT.follow(); else if (this.menu) this.menu.hidden = true; }
+    if (this.ENV) this.ENV.update(dt);
     this.renderer.render(this.scene, this.cam);
     if (this.state.tab === 'anim') this._playhead();
   }
