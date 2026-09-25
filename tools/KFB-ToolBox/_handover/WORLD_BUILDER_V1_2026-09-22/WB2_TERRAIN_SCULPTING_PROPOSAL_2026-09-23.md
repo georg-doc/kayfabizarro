@@ -1,10 +1,10 @@
 # WorldBuilder WB2 · Terrain Sculpting Proposal · 2026-09-23
 
-Status: **CURRENT NEXT FUNCTIONAL TERRAIN SLICE · GEORG REPRIORITIZED WB2 · RUNTIME NOT STARTED**
+Status: **IMPLEMENTED · GEORG HUMAN PASS · FUNCTIONAL GATE CLOSED**
 Owner: **WorldBuilder terrain authoring**
 Shared object-edit owner: **ToolBox `lib/edit-layer.js`**
 Current accepted foundation: **WB1 R1 + shared inline editor R2 HUMAN PASS**
-Current separate editor candidate: **R3 uniform −/+ size gesture · HUMAN REVIEW PENDING**
+Current separate editor candidate: **R3 uniform −/+ size gesture · OPTIONAL / NON-BLOCKING**
 
 ## Human direction
 
@@ -18,6 +18,21 @@ Follow-up direction:
 - add a simple terrain-modelling workflow that can form low hills, rises and depressions directly in the continuous terrain;
 - avoid voxel, cube, tile or hex-piece terrain appearance;
 - prefer a small, robust 3D-modelling grammar over a large terrain suite.
+
+## Human result · 2026-09-25
+
+Georg accepted WB2-TERRAIN-SCULPT-01 including the R1 interaction additions:
+- Raise / Lower;
+- Radius / Strength;
+- wheel / touchpad Radius;
+- hold-Space temporary Orbit;
+- `1 / 2 / 3` quick modes;
+- Undo / Clear;
+- Save / Reload.
+
+Result: **GEORG HUMAN PASS**.
+
+The next gate is no longer terrain-sculpt functionality. The prepared Claude Design/UI authoring pass is now unblocked. Smooth / Flatten / material painting remain later separate functional slices.
 
 ## Product intent
 
