@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-22",
+  "updated": "2026-09-25",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -31,6 +31,22 @@
     "EXPERIMENTAL"
   ],
   "entries": [
+    {
+      "id": "claude-design-session-export-v1",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/claude-design-session-export_v1.md",
+      "loadWhen": [
+        "Claude Design export",
+        "full session cut",
+        "session cut ZIP",
+        "complete handoff",
+        "chat recovery export",
+        "/claude-export"
+      ],
+      "note": "Full runnable Claude Design Session Cut + ZIP: current codebase, Handover, active Changelog, Source/Donor locks, tests/evidence, NEXT_CHAT and voice-input ambiguity handling. Complements the slim session-export_v1; failure recovery remains a separate escalation after two failed repair passes."
+    },
     {
       "id": "fresh-chat-slice-protocol",
       "kind": "coordination",
