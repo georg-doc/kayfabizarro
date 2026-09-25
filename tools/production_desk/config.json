@@ -25,10 +25,30 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
-      "expectedHead": "50765a465591355062bb59ec93ebd06e3f901fd9",
+      "expectedHead": "19a1c62ced5ca012097fb707d179bf4c8f0b0f4d",
       "brief": {
         "label": "Hub UX Recovery Sprint",
         "path": "tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      }
+    },
+    {
+      "id": "hub-status-sync",
+      "bucket": "CAN_START",
+      "title": "KFB Hub · Status Sync v1",
+      "what": "Die öffentliche Seite pollt den Bot-Registry-Branch bereits direkt. Dieser Web-Slice macht genau diese Datenquelle zuverlässig frisch, ohne Cloudflare-Neubuild und ohne neues Backend.",
+      "provider": "ChatGPT Web / HUB-CTRL #202",
+      "yourAction": "",
+      "waitingFor": "",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "expectedHead": "19a1c62ced5ca012097fb707d179bf4c8f0b0f4d",
+      "brief": {
+        "label": "Status Sync v1",
+        "path": "tools/production_desk/HUB_STATUS_SYNC_V1_2026-09-25.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": true
       }
@@ -108,7 +128,7 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
-      "expectedHead": "50765a465591355062bb59ec93ebd06e3f901fd9",
+      "expectedHead": "19a1c62ced5ca012097fb707d179bf4c8f0b0f4d",
       "brief": {
         "label": "Claude Design UX Recovery Sprint",
         "path": "tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md",
