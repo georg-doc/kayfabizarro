@@ -1009,3 +1009,24 @@ ToolBox r2 → owner patch/profile rehome → Stage; then World r2 → reconcile
 The extra Hub UX Session Cut remains HUB-CTRL-owned and separate.
 
 For full Claude Design exports use self-contained `skills/session_ZIP_v1.md` v1.1; slash shortcut is optional.
+
+
+## 2026-09-26 · ToolBox r2 Stage review · STOP / failure recovery
+
+The receiving-owner rehome on ToolBox PR #185 remains technically green at `5dcf34bcdf9d87445e927c98f60d41adae72f00e`.
+
+The first bounded r2 Stage-review consumer is preserved on Draft PR **#220** / branch `chatgpt-web/toolbox-r2-stage-review-2026-09-26`, frozen implementation head `cab463b6a4b9bfd9cc365694ff462b39bc493b8e`.
+
+Two Chromium gate attempts both ended **28/29 PASS · FAIL**:
+- run `36198735113`: movement sample stayed at **0.000 m**;
+- one bounded repair starts State on semantic Walk;
+- run `36198914554`: movement passes at **0.299 m**, but deterministic semantic-transition evidence observes **1** transition instead of ≥2.
+
+The same evidence proves the exact source actor and pinned owners load with zero page/source-request failures, but screenshot review exposes an independent visual blocker: the actor camera crops the top of FrizzleBob's head and the EarRig-v5 ears, especially on mobile.
+
+**Stop condition reached.** No third repair in this slice. The planned `/kfb-hub/stage/toolbox/production-01-r2/` route was not published and must not be treated as a human test link. No merge or Live promotion.
+
+Recovery entrypoint:
+`tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026-09-26/START_HERE.md`
+
+Exactly one next ToolBox gate: **fresh Stage-review recovery for event-driven transition proof + complete actor/ear framing**. World r2 receiving-owner consumer reconciliation remains sequenced after that ToolBox review surface reaches its gate.
