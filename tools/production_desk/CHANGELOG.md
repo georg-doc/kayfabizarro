@@ -1,5 +1,16 @@
 
 
+## 2026-09-25 · Graveyard / Music / World presentation routing
+
+- removed Graveyard from current LOOK_AT; retained as archive/concept + grave-light flicker donor;
+- MUSIC-PERF moved from LOOK_AT to CAN_START/TUNE; timeline/audio retained, current visible band animations are not canonical;
+- routed future band performance to newer S39 Resident Band sources (Guitar A / ml.guitar.a.fit, drum.v5c) without baseplate;
+- recorded terrain-placeable Resident-module rule and WorldBuilder-compatible preview environment;
+- recorded global OSM facade/roof/contact-shadow presentation rules in Production Architecture;
+- no public Hub shell or Cloudflare publication changed.
+
+
+
 ## 2026-09-25 · Final live registry sync after PR #215 CI
 
 - advanced live bot registry to `cab4fcef34abfe7e438f31942db009c5ec960ca8`;
