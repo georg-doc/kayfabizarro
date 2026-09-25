@@ -433,3 +433,35 @@ Evidence boundary:
 - ToolBox 19/19 is reported by the Claude Session Cut; not re-run here.
 - World Hürth/Cologne 55/55 are reported by the Claude Session Cut; not re-run here.
 - r2 Human/Stage review remains pending.
+
+
+## External Demo Research Radar · Pass 1 validation · 2026-09-26
+
+Research file:
+`EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+
+Result: **14/14 PASS**
+
+Checks actually executed against branch head `febd9c23f1bed1792b72c35464ed45dde74d69b7`:
+
+1. PASS — report status is Pass 1 complete.
+2. PASS — Batch A present.
+3. PASS — Batch B present.
+4. PASS — Batch C present.
+5. PASS — Batch D present.
+6. PASS — Batch E present.
+7. PASS — Batch F present.
+8. PASS — Blueprint A present.
+9. PASS — Blueprint E present.
+10. PASS — all routed receiver IDs exist in current `HUB_BRIEFING_CATALOG.json`: `env-preview-01`, `world-nature-01`, `web-quick-3d-review`, `motion-intake-direct-01`, `npc-aitown-kiss-01`, `cz-env-01`, `curtain-02`, `stage-instance-01`.
+11. PASS — current catalogue remains exactly **96** briefing cards.
+12. PASS — all **96/96** briefing IDs remain unique.
+13. PASS — report explicitly adds **no new Production Architecture job**.
+14. PASS — report explicitly claims **no new public Stage candidate**.
+
+Additional content evidence:
+- **37** HTTPS source/demo links currently embedded in the report.
+- catalogue metrics remain **13 strands · 96 jobs · 44 READY · 52 HOLD**.
+- runtime code changed: **0 files**.
+- deployment/Cloudflare changed: **0**.
+- human review surface created: **none**; research/navigation only.
