@@ -6,7 +6,7 @@ const errors=[], failed=[];
 page.on('pageerror',e=>errors.push(String(e)));
 page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));
 await page.goto(base,{waitUntil:'domcontentloaded',timeout:120000});
-await page.waitForFunction(()=>window.__kfbTB && window.__kfbTB.state && !window.__kfbTB.state.loading,{timeout:180000});
+await page.waitForFunction(()=>window.__kfbTB && window.__kfbTB.state && window.__kfbTB.ws && window.__kfbTB.doc && window.__kfbTB.runtime && !window.__kfbTB.state.loading && ['ready','restored','self-test done'].includes(window.__kfbTB.state.status),{timeout:180000});
 const boot=await page.evaluate(()=>({failures:window.__kfbTB.state.failures?.map(x=>x.name+': '+x.msg)||[],stage:document.querySelector('#kfb-stage')?.getBoundingClientRect().toJSON?.()||null,canvas:document.querySelector('#kfb-stage canvas')?.getBoundingClientRect().toJSON?.()||null}));
 if(boot.failures.length) throw new Error('boot source failures: '+JSON.stringify(boot.failures));
 const results=await page.evaluate(async()=>await window.__kfbTB.selfTest());
