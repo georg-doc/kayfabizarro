@@ -102,7 +102,10 @@ Source manifest:
 `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/SOURCE.json`
 
 Source manifest blob:
-`a9e7839bd65d321d66616d2616673fde33287d8d`
+`2e1b9e75deaa8a9fff165fa0202ee3bc21339afd`
+
+Human acceptance manifest status:
+`GEORG_HUMAN_PASS`
 
 ## Architecture
 
