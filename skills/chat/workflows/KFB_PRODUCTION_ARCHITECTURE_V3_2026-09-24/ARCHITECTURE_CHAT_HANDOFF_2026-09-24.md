@@ -490,3 +490,34 @@ The previous Claude continuation briefs are provenance/history now, not the next
 
 Current action:
 **Web/GitHub receiving-owner integration first.**
+
+
+### ToolBox r2 receiving-owner checkpoint · 2026-09-26
+
+ToolBox r2 reusable owner deltas are no longer Inbox-only.
+
+Receiving owner:
+- PR #185;
+- branch `chatgpt-web/toolbox-source-lock-2026-09-23`;
+- tested runtime head `5dcf34bcdf9d87445e927c98f60d41adae72f00e`.
+
+Promoted:
+- PoseRig intermediate-wrist/world-position chain fix into canonical owner + byte-identical Stage mirror;
+- canonical `stage-first/src/lab/locomotion-profiles.v1.js`;
+- measured FrizzleBob EarRig-v5 Rig_Medium consumer fixture.
+
+Preserved owners:
+- Ear physics = PR #214;
+- S39 band = Resident owner;
+- Travel = Flight;
+- no game movement owner moved.
+
+CI run `36197260540` SUCCESS:
+- 31/31 coherent static;
+- 34/34 AN-PROFILE static;
+- 20/20 coherent browser;
+- 25/25 Animation Studio browser;
+- 13/13 plain review browser.
+
+Current ToolBox gate:
+**build one dominant/unobstructed Stage review from the re-homed owners; no return to the rejected AN-PROFILE review transport.**
