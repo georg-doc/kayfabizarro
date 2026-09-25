@@ -1915,3 +1915,17 @@ Exactly one next gate:
 
 Exactly one next gate:
 **R3d · TRACK/BARRIER/GROUND LAYER CHAT HTML HUMAN REVIEW**.
+
+## 2026-09-25 · Lead masterplan recovery checkpoint
+
+### DECISION
+Current KFB lead priority is playable integration: WorldBuilder inside the real world, real OSM continuity toward Köln/SAE, Race modules proven in Race before World placement, and one daily ToolBox with Studio + Animation Lab sharing Pose/IK.
+
+### DECISION
+KayKit Character Animations are the default base locomotion vocabulary. Mixamo Motion Library clips are a variant/action layer. World movement owns translation/physics; animation follows shared state/speed profiles.
+
+### RECOVERY
+WorldBuilder and ToolBox/Animation authoring sessions are already running from earlier briefs. Fresh lead chats must recover their complete exports first and compare them against current owners before issuing corrective briefs. Do not restart those products from prose.
+
+### ROUTING
+Production Architecture v3 branch PR #204 now carries the current masterplan override and crash-safe recovery checkpoint in its MVP Focus Plan, Architecture Handoff, architecture START_HERE, Return and Test Report.
