@@ -9,7 +9,7 @@
 - **Hub card not added:** `kfb-hub/index.html` is a generated file (see the 24.09 incident), so no hand-edited Hub card was added. WSA adds the card through the Production Desk config if wanted.
 
 ## Repository / branch
-- `georg-doc/kayfabizarro`, branch `chat/track-core-slice-plan-2026-09-26`, stacked on PR #216 (`chat/cologne-route-01-plan-2026-09-25`).
+- `georg-doc/kayfabizarro`, branch `georg-doc-patch-2` (web-upload branch name; the intended name was chat/track-core-slice-plan-2026-09-26), stacked on PR #216 (`chat/cologne-route-01-plan-2026-09-25`).
 - Companion candidate: Race branch `chat/rkit-11-rhein-run-2026-09-26`, stacked on Race PR #41.
 
 ## Files
