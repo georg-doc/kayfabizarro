@@ -1,0 +1,235 @@
+name: Billboard B2b-P1 deterministic collage proof
+
+on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/**'
+      - '.github/workflows/billboard-b2b-p1-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Static architecture and provenance proof
+        run: |
+          set -euo pipefail
+          B2A='tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24'
+          B2B='tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25'
+
+          cmp "$B2B/bb-scene.js" "$B2A/bb-scene.js"
+          cmp "$B2B/wd-donors.js" "$B2A/wd-donors.js"
+          cmp "$B2B/wd-registry.js" "$B2A/wd-registry.js"
+
+          node --check "$B2B/bb2b-p1-boot.js"
+          node --check "$B2B/collage-engine.js"
+          node --check "$B2B/donor-collage.js"
+          node --check "$B2B/bb-scene.js"
+
+          ! grep -E 'WebGLRenderTarget|EffectComposer|VideoTexture|WebGLMultipleRenderTargets' "$B2B/collage-engine.js" "$B2B/bb2b-p1-boot.js"
+          test "$(grep -c "new THREE.CanvasTexture" "$B2B/bb2b-p1-boot.js")" -eq 1
+          test "$(grep -c "Math.random" "$B2B/collage-engine.js")" -eq 1
+          grep -q '^// Structural randomness is fully seeded here; no per-frame Math.random choices.$' "$B2B/collage-engine.js"
+          grep -q "videoObject.visible = !!(videoModeActive && frontFacing)" "$B2B/bb2b-p1-boot.js"
+
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const file='tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/cc0-pool.json';
+          const pool=JSON.parse(fs.readFileSync(file,'utf8'));
+          if(pool.items.length!==6) throw new Error('expected exactly 6 curated CC0 stills');
+          for(const item of pool.items){
+            if(item.rights!=='CC0 1.0 Universal') throw new Error(item.id+' wrong rights');
+            if(!fs.existsSync(item.repoPath)) throw new Error(item.id+' missing repoPath');
+            if(!fs.existsSync(item.licenseEvidence)) throw new Error(item.id+' missing licenseEvidence');
+            const license=fs.readFileSync(item.licenseEvidence,'utf8');
+            if(!/CC0/i.test(license)) throw new Error(item.id+' license evidence lacks CC0');
+            const blob=execFileSync('git',['hash-object',item.repoPath],{encoding:'utf8'}).trim();
+            if(blob!==item.hash) throw new Error(item.id+' blob hash drift '+blob+' != '+item.hash);
+          }
+          console.log(JSON.stringify({cc0:pool.items.length,assets:pool.items.map(x=>x.id)},null,2));
+          JS
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof donor + B2b integration
+        run: |
+          mkdir -p artifacts/billboard-b2b-p1
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/b2b-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+
+          cat > artifacts/billboard-b2b-p1/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const root='http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/';
+          const report={root,checks:[],errors:[],httpErrors:[],modes:{}};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+          const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+          const context=await browser.newContext({viewport:{width:1440,height:900}});
+
+          function hook(page,label){
+            page.on('pageerror',e=>report.errors.push(label+' pageerror: '+String(e)));
+            page.on('response',r=>{
+              const u=r.url();
+              if(r.status()>=400 && (u.startsWith('http://127.0.0.1:4173/') || /cdn\.jsdelivr\.net|raw\.githubusercontent\.com/.test(u))) {
+                report.httpErrors.push({label,status:r.status(),url:u});
+              }
+            });
+          }
+
+          try {
+            // Source object isolation: actual Gate-1 BillboardContent, unchanged copy.
+            const donor=await context.newPage(); hook(donor,'donor');
+            const dr=await donor.goto(root+'donor-collage.html',{waitUntil:'domcontentloaded',timeout:90000});
+            check('donor HTTP',!!dr&&dr.ok(),dr?.status());
+            await donor.waitForFunction(()=>window.__donor?.report()?.ready===true,{}, {timeout:90000});
+            await donor.waitForTimeout(900);
+            const ds=await donor.evaluate(()=>window.__donor.report());
+            report.donor=ds;
+            check('actual Gate-1 BillboardContent isolated',ds.source==='Gate-1 BillboardContent',ds);
+            check('actual Gate-1 COLLAGE mode isolated',ds.mode==='COLLAGE',ds.mode);
+            await donor.screenshot({path:'artifacts/billboard-b2b-p1/00-gate1-donor-collage.png',fullPage:true});
+            await donor.close();
+
+            const page=await context.newPage(); hook(page,'candidate');
+            const res=await page.goto(root,{waitUntil:'domcontentloaded',timeout:90000});
+            check('candidate HTTP',!!res&&res.ok(),res?.status());
+            check('B2b title',(await page.title())==='KFB Billboard · B2b-P1 Living Collage',await page.title());
+            await page.waitForFunction(()=>window.__b2b&&window.__B2A_REPORT__?.ready===true,{}, {timeout:90000});
+
+            async function waitMode(mode){
+              await page.evaluate(m=>window.__b2b.setMode(m),mode);
+              await page.waitForFunction(m=>window.__B2A_REPORT__?.mode===m&&window.__B2A_REPORT__?.ready===true,mode,{timeout:90000});
+              await page.waitForTimeout(350);
+              const s=await page.evaluate(()=>window.__b2b.snapshot());
+              report.modes[mode]=s;
+              return s;
+            }
+
+            const quarter=await page.evaluate(()=>window.__b2b.snapshot());
+            report.modes.quarter=quarter;
+            check('default CARD quarter preserved',quarter.mode==='quarter'&&Number(quarter.sourceStats?.mean)>20,quarter);
+            check('B0/B1 markers preserved',quarter.b0Fork?.bbScene==='UNCHANGED'&&quarter.b0Fork?.bb0Boot==='UNCHANGED'&&quarter.b1Fork?.bb1Boot==='UNCHANGED_REFERENCE',{b0:quarter.b0Fork,b1:quarter.b1Fork});
+            check('CSS3D hidden outside video',quarter.dom?.objectVisible===false,quarter.dom?.objectVisible);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/01-quarter.png',fullPage:true});
+
+            const cover=await waitMode('cover');
+            check('COVER preserved',/cover page 1/.test(cover.content||''),cover.content);
+
+            const video=await waitMode('video');
+            check('VIDEO INLINE preserved',/Travel VIDEO MTCSwppblk0/.test(video.content||''),video.content);
+            check('VIDEO INLINE visible front',video.dom?.objectVisible===true,video.dom?.objectVisible);
+            check('VIDEO INLINE exact face size',Math.abs(video.css3d.objectWorldWidth-video.css3d.panelWorldWidth)<1e-6&&Math.abs(video.css3d.objectWorldHeight-video.css3d.panelWorldHeight)<1e-6,video.css3d);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/02-video-front.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2b.setView('BACK'));
+            await page.waitForTimeout(500);
+            const videoBack=await page.evaluate(()=>window.__b2b.snapshot());
+            report.videoBack=videoBack;
+            check('B2a rear culling preserved',videoBack.css3d?.frontFacing===false&&videoBack.dom?.objectVisible===false,videoBack.css3d);
+            check('backface CSS preserved',videoBack.dom?.surfaceBackfaceVisibility==='hidden'&&videoBack.dom?.iframeBackfaceVisibility==='hidden',videoBack.dom);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/03-video-back.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2b.setView('FRONT'));
+            const slogan=await waitMode('slogan');
+            check('SLOGAN preserved',slogan.content==='CHATTERBOX SHOW IT',slogan.content);
+
+            const collage=await waitMode('collage');
+            check('COLLAGE ready',collage.mode==='collage'&&collage.ready===true,collage.content);
+            check('A+ CanvasTexture architecture marker',collage.b2b?.architecture==='A+ CanvasTexture',collage.b2b);
+            check('mixed hypernormalisation marker',collage.b2b?.visualLanguage==='mixed hypernormalisation',collage.b2b);
+            check('curated pool loaded',collage.b2b?.cc0Count===6&&collage.b2b?.kfbCount===3,collage.b2b);
+            check('image/text caps',collage.b2b?.maxImageLayers<=5&&collage.b2b?.maxTextLayers<=3,collage.b2b);
+            check('FLAT_COLLAGE default',collage.b2b?.treatment==='FLAT_COLLAGE',collage.b2b?.treatment);
+            check('collage nonblack',Number(collage.sourceStats?.mean)>10,collage.sourceStats);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/04-collage-flat-front.png',fullPage:true});
+
+            const seq=await page.evaluate(()=>{
+              const a=window.__b2b.sequence(14,'seed-alpha');
+              const a2=window.__b2b.sequence(14,'seed-alpha');
+              const b=window.__b2b.sequence(14,'seed-beta');
+              return {a,a2,b};
+            });
+            report.sequences=seq;
+            check('same seed exact sequence',JSON.stringify(seq.a)===JSON.stringify(seq.a2),seq.a);
+            check('different seed differs',JSON.stringify(seq.a)!==JSON.stringify(seq.b),{a:seq.a.slice(0,2),b:seq.b.slice(0,2)});
+            check('four recipes max',new Set(seq.a.map(x=>x.recipe)).size<=4,[...new Set(seq.a.map(x=>x.recipe))]);
+            check('four grades max',new Set(seq.a.map(x=>x.grade)).size<=4,[...new Set(seq.a.map(x=>x.grade))]);
+            let heroOk=true, recipeOk=true, roleOk=true;
+            for(let i=0;i<seq.a.length;i++){
+              for(let j=Math.max(0,i-4);j<i;j++) if(seq.a[i].hero===seq.a[j].hero) heroOk=false;
+              for(let j=Math.max(0,i-2);j<i;j++) if(seq.a[i].recipe===seq.a[j].recipe) recipeOk=false;
+              if(i>0&&seq.a[i].heroRole===seq.a[i-1].heroRole) roleOk=false;
+            }
+            check('no last-4 hero reuse',heroOk,seq.a.map(x=>x.hero));
+            check('no last-2 recipe reuse',recipeOk,seq.a.map(x=>x.recipe));
+            check('no immediate hero-role repeat',roleOk,seq.a.map(x=>x.heroRole));
+
+            await page.evaluate(()=>window.__b2b.setView('LEFT34'));
+            await page.waitForTimeout(450);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/05-collage-left34.png',fullPage:true});
+            check('COLLAGE survives 3/4', (await page.evaluate(()=>window.__b2b.snapshot())).mode==='collage');
+
+            await page.evaluate(()=>window.__b2b.setView('BACK'));
+            await page.waitForTimeout(450);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/06-collage-back.png',fullPage:true});
+            check('COLLAGE rear uses billboard geometry, no CSS3D', (await page.evaluate(()=>window.__b2b.snapshot())).dom?.objectVisible===false);
+
+            await page.evaluate(()=>{window.__b2b.setView('FRONT');window.__b2b.setTreatment('LIVING_SCREEN');});
+            const beforeLiving=await page.evaluate(()=>window.__b2b.snapshot().b2b);
+            await page.waitForTimeout(650);
+            const afterLiving=await page.evaluate(()=>window.__b2b.snapshot().b2b);
+            report.living={before:beforeLiving,after:afterLiving};
+            check('LIVING_SCREEN selected',afterLiving.treatment==='LIVING_SCREEN',afterLiving);
+            check('restrained living redraw active',afterLiving.livingDraws-beforeLiving.livingDraws>=3,{before:beforeLiving.livingDraws,after:afterLiving.livingDraws});
+            check('living does not mutate structure per frame',afterLiving.compositionIndex===beforeLiving.compositionIndex,{before:beforeLiving.compositionIndex,after:afterLiving.compositionIndex});
+            await page.screenshot({path:'artifacts/billboard-b2b-p1/07-collage-living.png',fullPage:true});
+
+            const beforeExit=await page.evaluate(()=>window.__b2b.snapshot().b2b);
+            const q2=await waitMode('quarter');
+            const justExit=await page.evaluate(()=>window.__b2b.snapshot().b2b);
+            await page.waitForTimeout(650);
+            const afterExit=await page.evaluate(()=>window.__b2b.snapshot().b2b);
+            report.exit={beforeExit,justExit,afterExit};
+            check('leaving COLLAGE stops engine',justExit.running===false&&afterExit.running===false,{justExit,afterExit});
+            check('leaving COLLAGE stops redraw work',justExit.structuralDraws===afterExit.structuralDraws&&justExit.livingDraws===afterExit.livingDraws,{justExit,afterExit});
+            check('old mode restored after COLLAGE',q2.mode==='quarter'&&Number(q2.sourceStats?.mean)>20,q2);
+
+            check('no modal introduced',q2.dom?.modalElementExists===false,q2.dom);
+            check('no page errors',report.errors.length===0,report.errors);
+            check('no failed first-party/CDN assets',report.httpErrors.length===0,report.httpErrors);
+          } catch(e) {
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          } finally {
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2b-p1/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({status:report.status,checks:report.passed+'/'+report.total,errors:report.errors.length,httpErrors:report.httpErrors.length,living:report.living,exit:report.exit},null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-b2b-p1/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2b-p1-proof
+          path: artifacts/billboard-b2b-p1
+          retention-days: 90
