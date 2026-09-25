@@ -1,6 +1,6 @@
 {
   "schema": "kfb.production-architecture.v3-input-locks/9",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "architectureBranch": "chatgpt-web/production-architecture-v3-2026-09-24",
   "jobs": {
     "toolbox-coherent-integration-01": {
@@ -126,6 +126,39 @@
         "new runtime owner",
         "measurement dashboard as primary human surface",
         "Cloudflare deployment solely for the quick visual check"
+      ]
+    },
+    "env-preview-01": {
+      "ownerRepo": "georg-doc/kayfabizarro",
+      "owner": "Shared presentation adapter; current Travel/World providers retain environment truth",
+      "sources": [
+        "worldEnvironmentPresentation",
+        "spindleSky"
+      ],
+      "success": "Resident Atlas + ToolBox each switch SOURCE_ISOLATION ↔ WORLD_MATCH with exact resolved provider revision and no second renderer/terrain/animation owner",
+      "forbid": [
+        "copied Travel fork",
+        "second renderer/camera",
+        "second terrain generator",
+        "hidden baseplate default",
+        "unrecorded raw@main acceptance dependency"
+      ]
+    },
+    "world-env-consolidate-01": {
+      "ownerRepo": "georg-doc/KFB-Travel-Globe",
+      "owner": "Travel/World environment truth; Architecture only defines reference recipe",
+      "sources": [
+        "worldEnvironmentPresentation",
+        "worldSurfaceAdapter",
+        "cardZoneModules"
+      ],
+      "success": "one deterministic environment recipe resolves the same pinned source facts in current Travel and a neutral/shared preview consumer",
+      "forbid": [
+        "new universal terrain engine",
+        "visual/collision height divergence",
+        "hard biome theme switch",
+        "noise blob scatter",
+        "blanket GLB nature scatter"
       ]
     }
   },
@@ -719,6 +752,48 @@
       "reviewEntry": "KFB_Resident_Atlas_S9.html#__disco",
       "status": "CANDIDATE_ONLY_REVIEW_OPEN",
       "rule": "bridge into existing Resident/Music/Motion owners; do not promote local owner copies or second band transport"
+    },
+    "worldEnvironmentPresentation": {
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "main": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+      "terrainSurface": {
+        "path": "travel/globe-v13/terrain-surface.js",
+        "blob": "9513347b6e3192dfefbeb3371085b13ac41ebb5d"
+      },
+      "biomeField": {
+        "path": "travel/globe-v13/globe-biome.js",
+        "blob": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74"
+      },
+      "worldMood": {
+        "path": "travel/globe-v13/weltstimmungen.js",
+        "blob": "2747a526e2aa38989c9c4052304da8733662b61c"
+      },
+      "skyPresets": {
+        "path": "travel/globe-v13/sky-presets.js",
+        "blob": "04dd730ee735f064888e8472eff79583f17bebb0"
+      },
+      "proceduralNature": {
+        "path": "travel/globe-v13/ts-flora.js",
+        "blob": "3f9de0ee8624577ea85c73a3f101c00cfb4a38ee"
+      },
+      "curatedNature": {
+        "path": "travel/globe-v13/flora.js",
+        "blob": "9942577c79e65f92fba8314e0cc701c73b26ad55"
+      },
+      "scatter": {
+        "path": "travel/globe-v13/verteilung.js",
+        "blob": "ec72c8eb70e83a27046c9db5167c9f8b10fc2a1b"
+      },
+      "naturalLandmarks": {
+        "path": "travel/globe-v13/natur-marken.js",
+        "blob": "b074c8a206972911de620b9942916c5388e9634e"
+      },
+      "tinyskiesInventory": {
+        "path": "docs/v13/QUELLE_tinyskies-Inventar.md",
+        "blob": "df2842452276019ff56e5706cb090ce388ebf33d",
+        "upstream": "dannylimanseta/tinyskies@2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6"
+      },
+      "rule": "Reference current Travel/World providers; broad nature is asset-light/procedural, kit GLBs are curated accents; one height truth; WorldMood and BiomeField are separate axes; no noise-blob scatter."
     }
   },
   "strands": {
@@ -835,18 +910,20 @@
     },
     "sharedStage": {
       "sourceKeys": [
+        "worldEnvironmentPresentation",
         "spindleSky",
         "theatreCurtain",
         "combatArena",
         "audioFxAudition"
       ],
-      "target": "shared Spindle environment + Curtain transitions + host-owned stage/instance recipes"
+      "target": "shared current environment preview + Spindle environment + Curtain transitions + host-owned stage/instance recipes"
     },
     "cardZones": {
       "sourceKeys": [
         "cardZoneModules",
         "verticalWorld",
-        "sharedStage"
+        "sharedStage",
+        "worldEnvironmentPresentation"
       ],
       "target": "Reusable Card Zone modules: exact fluid, stack/reveal, beam, Card Cube/FaceFocus and card-seeded zone recipes placeable in WorldBuilder"
     },

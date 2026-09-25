@@ -2203,3 +2203,46 @@ Do not create a second role database: extend the shared Motion Library catalogue
 > Done when one current WorldBuilder review can switch/load real zone source through the seam while keeping WB2 editor/Save-Reload owners intact.
 >
 > No Ehrenfeld fetch/build in this gate. No Race Track placement.
+
+
+---
+
+# Environment Preview + World Environment consolidation
+
+Detailed briefs:
+- `ENV_PREVIEW_01_2026-09-25.md`
+- `WORLD_ENVIRONMENT_CONSOLIDATION_2026-09-25.md`
+
+## ENV-PREVIEW-01 · Shared KFB Environment Preview Host
+
+**Executor:** ChatGPT Web  
+**Execution profile:** `WEB_STANDARD` · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.  
+**Outcome:** current KFB sky/light/fog/palette/ground presentation available to Resident Atlas + ToolBox without a second world owner.
+
+> @GitHub  
+> Read `ENV_PREVIEW_01_2026-09-25.md` completely. Build only the shared preview adapter: WORLD_MATCH default, SOURCE_ISOLATION and source-backed CONSUMER_PRESET; support ground / terrainPatch / worldZone. Resolve `world.current` to an exact saved provider/head/profile. First consumers are Resident Atlas and ToolBox/Animation Studio. No copied Travel fork, renderer, camera, terrain generator or hidden baseplate.
+
+## WORLD-ENV-CONSOLIDATE-01 · Current world-environment contract
+
+**Executor:** ChatGPT Web  
+**Execution profile:** `WEB_DEEP` · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.  
+**Outcome:** source-pinned World Environment Recipe referencing current TerrainSurface, BiomeField, WorldMood, atmosphere, procedural Nature Base, curated accent props and natural landmarks.
+
+> @GitHub  
+> Read `WORLD_ENVIRONMENT_CONSOLIDATION_2026-09-25.md` completely. Pin current Travel/TinySkies-derived sources and define the thinnest recipe that references them. Preserve one height truth, separate WorldMood from BiomeField, keep broad nature asset-light, keep kit props as curated accents and retain the no-noise-blob scatter rule. Prove one deterministic seed in current Travel plus one neutral/shared preview consumer. Do not build a new terrain engine.
+
+## WORLD-BIOME-MOOD-01 · Biome × World Mood
+
+Prepared HOLD behind WORLD-ENV-CONSOLIDATE-01. Productize current mixed biome domains × source-backed world/deck mood without exposing scratch internals or hard-switching the whole world.
+
+## WORLD-NATURE-01 · Procedural Nature Base + Curated Accents
+
+Prepared HOLD behind world-environment consolidation. Productize current `ts-flora.js` broad asset-light vegetation and keep KayKit/Kenney `flora.js` as intentional low-density accent compositions.
+
+## WORLD-RECIPE-01 · Procedural World Recipe
+
+Prepared HOLD behind Biome/Mood + Nature + accepted support adapter. Deterministic recipe only; seed + parameters rather than persisted generated-point dumps.
+
+## CZ-ENV-01 · Card Zone × Current Environment
+
+Prepared HOLD behind ENV-PREVIEW-01 + accepted Card Zone recipe seam. Current host supplies environment/terrain truth; Card Zone supplies carve/calm, local support, exact fluid, stack/reveal/Beam, Card Cube/Face Focus and collection event. No hidden second voxel world.
