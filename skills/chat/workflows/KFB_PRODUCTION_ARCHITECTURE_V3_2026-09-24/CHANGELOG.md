@@ -389,3 +389,13 @@
 - reported Claude evidence preserved without converting it to Georg or Stage acceptance;
 - extra Hub UX Session Cut classified separately under HUB-CTRL;
 - previous Claude continuation briefs become provenance/history; current action is Web/GitHub receiving-owner rehome and Stage proof.
+
+
+## 2026-09-26 · ToolBox r2 owner integration green
+
+- r2 PoseRig chain fix promoted into existing ToolBox owner and mirror;
+- canonical KayKit locomotion profile source + measured consumer fixture promoted under Animation Lab/ToolBox Motion;
+- CI run 36197260540 SUCCESS at tested head 5dcf34bc;
+- counts: 31/31 coherent static, 34/34 AN-PROFILE static, 20/20 coherent browser, 25/25 Animation Studio browser, 13/13 review browser;
+- Ear/S39/Travel owners unchanged;
+- next ToolBox gate is a clean Stage review surface, not another internal lab/review rebuild.
