@@ -79,3 +79,14 @@ jeden relativen Asset-Pfad, den du findest, als Fix-Kandidat.
 
 *Prinzip: ein schlanker Export, ein ehrliches Manifest, kein Loeschen ohne Freigabe. Der Ballast
 bleibt auf Georgs Platte nur, wenn er es entscheidet, nicht weil ein Chat faul war.*
+
+
+## Vollständiger Claude Design Session Cut
+
+Dieser Skill bleibt für den **schlanken Session-Delta-Export** zuständig.
+
+Für einen vollständigen, recovery-tauglichen Claude-Design Export mit geschlossener aktueller Candidate-Codebasis, Handover, aktivem Changelog, Source-/Donor-Locks, Asset-Inventar, Tests, Checksums und Clean Run verwende:
+
+`skills/session_ZIP_v1.md` · **v1.1**
+
+Der Slash-Shortcut `/session-zip` ist optional. Wenn Claude Design ihn nicht anbietet, reicht es, die Datei zu verlinken/einzufügen und zu sagen: **„Führe session_ZIP_v1 jetzt aus.“** Das ist bereits Exportfreigabe; kein zweites Veto-Fenster.
