@@ -1,5 +1,17 @@
 
 
+## 2026-09-25 · Current Claude continuation briefs
+
+- Hub World card now points to the current World Integration Claude continuation brief;
+- Hub ToolBox card now points to the current ToolBox Production Claude continuation brief;
+- both are paste-ready and return through `/session-zip`;
+- World = shared locomotion consumer + global OSM presentation;
+- ToolBox = canonical locomotion/profile owner + shared Pose/IK + Ear Rig/S39 consumers;
+- Blender MCP route note stays source-pin gated and VOICE_INPUT_UNCERTAIN until the export arrives;
+- no new runtime owner or public shell change.
+
+
+
 ## 2026-09-25 · Graveyard / Music / World presentation routing
 
 - removed Graveyard from current LOOK_AT; retained as archive/concept + grave-light flicker donor;
