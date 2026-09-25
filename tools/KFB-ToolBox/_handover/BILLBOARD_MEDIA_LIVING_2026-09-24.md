@@ -206,3 +206,15 @@ GitHub state overrides Dropbox/chat copies.
 
 Current next gate:
 **B2b research/options memo for Living Mockup / Collage surfaces; do not implement before selection.**
+
+
+### 2026-09-25 · B3 rounded-cartoon body handover prepared
+- WSA / ToolBox 3D handover prepared at:
+  `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`;
+- goal: rounder/chunkier cartoon 3D billboard body while preserving the accepted media face and B2a front/rear semantics;
+- exact Kenney `billboard.glb` remains the starting donor;
+- Web deformation is allowed only for a small non-destructive silhouette pass;
+- Blender MCP is explicitly allowed/preferred when real rounded topology, casing, posts/supports or authored asymmetry are needed;
+- first gate is source-object isolation + same-camera before/after front/3/4/side/rear comparison;
+- B3 is **PREPARED / NOT STARTED**;
+- Georg asked to run **B2b Living Mockup / Collage research first**.
