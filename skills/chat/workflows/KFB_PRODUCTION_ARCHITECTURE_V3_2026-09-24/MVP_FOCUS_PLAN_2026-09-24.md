@@ -5,6 +5,42 @@ Status: **CURRENT PRODUCT FOCUS · no automatic merge/Live promotion**
 Focus: **World Building · Resident Scenes · ToolBox · Car Racer**
 
 
+## CURRENT DELTA · 2026-09-25 evening · EXPORTED CANDIDATES
+
+The earlier "running-work" instruction is now fulfilled.
+
+Received on main @ `8504afa9d14ad46855d0c590bc30eea0fc38d15d`:
+- ToolBox Production-01 Session Cut;
+- World Integration-01 Session Cut.
+
+Classification and Ear Rig decision:
+`INTAKE_SESSION_CUTS_EAR_RIG_2026-09-25.md`.
+
+### ToolBox now
+**KEEP.**
+It already proves the intended two-workspace direction: Studio + Animation Lab on one actor/runtime, direct IK targets, Motion audition/corrections, Legacy builder and profile persistence.
+
+Next:
+**Georg human review first.**
+Do not start Face/Voice/Bubbles, CCD solver replacement, Vehicle Fit or Ear-Dangle integration before that review identifies the next real blocker.
+
+### WorldBuilder now
+**KEEP.**
+The export uses the accepted WB2 authoring state inside Hürth rather than building a second editor.
+
+Next:
+**Web rehome 1:1 → World 26/26 + WB2 34/34 → Georg human review.**
+
+The candidate's local animation fixes are useful transition evidence, but canonical locomotion state/cadence/speed/profile ownership moves to ToolBox Animation Lab after the human gate. WorldBuilder consumes that shared truth.
+
+### Ear Rig now
+PR #214 is a ToolBox candidate.
+- runtime owner: Animation Lab / ToolBox Motion;
+- authoring consumer: FrankenStein Studio;
+- one runtime copy only: `tools/KFB-ToolBox/ear-rig/ear-dangle.v1.js`.
+
+EAR-DANGLE-01 waits behind ToolBox Production-01 review.
+
 ## CURRENT OVERRIDE · 2026-09-25 · Playable Integration Masterplan
 
 Georg's current lead priority is **integration into playable products**, not another round of standalone editors or look-alike labs.
