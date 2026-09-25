@@ -1,5 +1,40 @@
 # Cologne Route 01 · Track-first → OSM execution ladder · 2026-09-26
 
+## CURRENT OVERRIDE · Track Core prerequisite
+
+This ladder remains the downstream Track-R0 → OSM production plan, but it **starts only after the Track Core gate sequence** in stacked PR #219.
+
+Current full order:
+
+```text
+TRACK-CORE-0 · ChatGPT Web census + core contract
+→ Georg core-language gate
+→ TRACK-CORE-1A · Claude Coworker + Blender MCP proof
+→ TRACK-CORE-1B · ChatGPT Web authoritative core/runtime parity
+→ TRACK-CORE-2 · Claude Design transition visual grammar
+→ Phase A · WEB-PREP-TRACK-R0
+→ Phase B · CLAUDE DESIGN PLAYABLE-TRACK-R0
+→ Phase C · WEB-REHOME-TRACK-R0
+→ Phase D · WEB-PREP-OSM-ROUTE-01
+→ Phase E · CLAUDE DESIGN OSM COMPOSITION
+```
+
+Track Core incorporates the useful Perplexity transition mechanisms:
+
+- true Clothoid/Euler curvature easing;
+- connector frame/boundary state;
+- parameter curves over `s`;
+- staggered transition zones;
+- separated visual style layers.
+
+Do not use the Perplexity example Python generator as a production shortcut.
+
+Race PR #42 / RKIT-11 is the frozen acceptance fixture for proving the core can replace one-off transition hacks.
+
+**This file's Phase A is prepared, not the current next gate. Current next gate = TRACK-CORE-0.**
+
+---
+
 Status: **CURRENT EXECUTION PLAN · TRACK FIRST, OSM SEAM DESIGNED IN FROM START**
 
 Owner split remains unchanged:
