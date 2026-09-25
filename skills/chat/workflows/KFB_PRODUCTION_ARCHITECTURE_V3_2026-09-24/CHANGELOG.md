@@ -1,3 +1,28 @@
+## 2026-09-26 · External Demo Research Radar · Pass 2 G–L
+
+- Completed A–L broad external research in `EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`.
+- Pass 2 added:
+  - Vehicle/Drive/Boat/Flight donor analysis;
+  - Water/Weather/Sky/underwater mechanism analysis;
+  - Combat contact/reaction/crowd patterns;
+  - measured performance/LOD/streaming escalation;
+  - mobile/touch gesture ownership;
+  - small Activity Recipe / minigame-socket patterns.
+- Strong transfers:
+  - exact TinySkies Boat/Plane remain first Travel donors;
+  - Rapier ray-cast vehicle is an A/B donor for free drive, not a Race replacement;
+  - queryable water motion is separated from richer visual water;
+  - Weather is one semantic World state with explicit consumer modifiers;
+  - Combat physics yields contact candidates; Combat keeps hit/damage semantics;
+  - performance ladder = measure → dedupe → instance → batch → LOD → chunk → stream;
+  - touch pointers have one owner: UI / PLAY / CAMERA / OBJECT / BRUSH;
+  - `STAGE-INSTANCE-01` receives an Activity Recipe lifecycle instead of a new minigame engine.
+- Pass-2 validation: **15/15 PASS**; A–L report contains **73 HTTPS source/demo links**.
+- Catalog remains **13 strands · 96 jobs · 44 READY · 52 HOLD**; **0 new jobs**.
+- Runtime changes: **0**. Cloudflare/Stage changes: **0**.
+- Broad research now stops by default; future research is **question-triggered by a named product gate**.
+- Research-to-production next gate remains existing `ENV-PREVIEW-01` / World environment integration.
+
 ## 2026-09-26 · External Demo Research Radar · Pass 1 A–F
 
 - Added `EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md` as the living external donor/research index for Reddit, GitHub and public demos.
