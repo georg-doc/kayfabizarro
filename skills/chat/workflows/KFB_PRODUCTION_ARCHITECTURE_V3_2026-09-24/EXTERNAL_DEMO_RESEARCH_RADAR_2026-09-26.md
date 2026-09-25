@@ -1,6 +1,6 @@
 # KFB External Demo Research Radar · 2026-09-26
 
-Status: **RESEARCH RUNNING · CHECKPOINT 1 / PLAN PERSISTED**  
+Status: **PASS 1 COMPLETE · CHECKPOINT 3 / A–F RESEARCH PERSISTED**  
 Owner: **KFB Web Architecture lane** (planning/routing only; runtime owners unchanged)  
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/production-architecture-v3-2026-09-24`  
@@ -342,3 +342,210 @@ The strongest findings map cleanly into jobs that already exist:
 5. `NPC-AITOWN-KISS-01` ← ephemeral perception memory + explicit state primitives.
 
 Next research batch remains **E + F: Card Zones / portal-instance seams / diegetic interfaces + ToolBox/animation/review surfaces**.
+
+
+---
+
+# CHECKPOINT 3 · Batches E–F + first-pass synthesis
+
+Status: **PASS 1 COMPLETE**
+
+## Batch E · Card Zones / portals / diegetic interfaces
+
+Current KFB owner truth checked first:
+- `CURTAIN-02` is the current cover/reveal transition module.
+- `STAGE-INSTANCE-01` is the later shared instance recipe.
+- Card Zones already own exact fluid, stack/reveal/Beam, Card Cube, authored recipe, WorldBuilder placement and the later world→card→Journey loop.
+- Therefore an external portal technique may be a **visual surface/preview**, never a replacement enter/return owner.
+
+| Source | Evidence | Reusable mechanism | KFB receiver | Verdict | Smallest useful proof | Boundary |
+|---|---|---|---|---|---|---|
+| [drei-vanilla MeshPortalMaterial](https://github.com/pmndrs/drei-vanilla/blob/main/src/core/MeshPortalMaterial.ts) | SOURCE/DEMO · MIT | render a second scene to `WebGLRenderTarget`, align it perspectively behind a mesh, optional SDF-shaped soft edge | Card Zone / Stage presentation | **INSPIRATION / OPTIONAL DONOR** | one bounded “living window” that previews a real existing Zone/instance before entry; enter still fires current KFB transition/return contract | do not introduce portal-as-runtime owner; no recursive portal stack; no RenderTarget/Post stack as default |
+| [Three.js CSS3DRenderer](https://threejs.org/docs/#examples/en/renderers/CSS3DRenderer) + [iframe example](https://threejs.org/examples/#css3d_youtube) | SOURCE/DEMO · MIT | real DOM/iframe element receives hierarchical 3D transforms and can be combined visually with WebGL | Museum / kiosk / rare live Card/PDF surface | **BOUNDED INSPIRATION** | only when KFB must preserve an existing real DOM viewer inside a 3D scene without rewriting it | material/geometry limitations, dual-renderer occlusion/compositing, browser zoom limitation; not Card Zone core |
+| [Three.js HTMLMesh](https://threejs.org/docs/#examples/en/interactive/HTMLMesh) + InteractiveGroup | SOURCE · MIT | rasterize a DOM control into CanvasTexture on a 3D plane; re-dispatch pointer events; MutationObserver refresh | simple world-space control surfaces | **DONOR CANDIDATE FOR SMALL UI ONLY** | one simple diegetic button/panel where the same existing DOM control logic can be reused | not a full rich web-view replacement; do not rasterize the whole ToolBox/Almanac into the world |
+| Reddit: [fully diegetic UI discussion](https://www.reddit.com/r/gamedev/comments/tnkv7j) | COMMUNITY | all-diegetic UI can become cumbersome; a mostly diegetic world with minimal overlay is often clearer | adaptive HUD, Card Zone prompts, vehicles | **PRODUCT GUIDANCE** | keep physical/world-space UI for things that are genuinely objects; keep dense/meta information in existing adaptive overlay/Almanac | no ideology of “all UI must exist physically” |
+| Reddit: [world-space UI zoom/pan problem](https://www.reddit.com/r/gamedesign/comments/1wguxg0/) · 2026-09-15 | COMMUNITY · current | menus tightly attached to world objects become difficult across camera scale; world-space signals work best when they are part of the world | Card Zone/Museum interaction affordances | **ANTI-PATTERN WARNING** | world object supplies focus/affordance; detailed data opens in the existing readable overlay/focus surface | do not force long text, inventory or dense controls to remain perspective-distorted in world space |
+
+### E · concrete KFB recommendation
+
+A portal effect is worth keeping as a **future presentation option**, not a new job now.
+
+Best KFB grammar:
+
+`world object / Card Zone portal surface → optional live preview texture → player activates → CURTAIN/STAGE transition → real instance owner → explicit return anchor`.
+
+This preserves the Theatre Curtain and Stage recipe while allowing a more magical “peek inside” when a particular Zone benefits from it.
+
+For cards/PDFs/UI, use a **hybrid rule**:
+- world-space = object identity, affordance, short status, physical card/cube/beam;
+- focus/overlay = reading, detailed inspection, collection, Almanac, settings.
+
+That matches existing `CZ-CUBE-01`, `META-ALMANAC-01` and adaptive-HUD ownership better than an all-diegetic rewrite.
+
+## Batch F · ToolBox / animation / source-isolation / review surfaces
+
+| Source | Evidence | Reusable mechanism | KFB receiver | Verdict | Smallest useful KFB proof | Boundary |
+|---|---|---|---|---|---|---|
+| [Don McCurdy three-gltf-viewer](https://github.com/donmccurdy/three-gltf-viewer) | SOURCE/DEMO · MIT | local drag/drop glTF, auto center/fit, environment presets, cameras, AnimationMixer clips/speed, morph controls, axes/grid/skeleton helpers, Draco/KTX2/Meshopt loading | `WEB-QUICK-3D-REVIEW`, ToolBox, `MOTION-INTAKE-DIRECT-01` | **STRONG DONOR / CHECKLIST** | source-isolate one real KFB GLB with compact tabs: Source / Motion / Skeleton / Render / Validation; existing KFB owners remain authoritative | do not fork the whole viewer as a second ToolBox |
+| three-gltf-viewer validation report | SOURCE · MIT | provenance fields plus draw calls, animation/material/vertex/triangle counts, extensions, validator errors/warnings | Motion intake / asset audition | **ADOPT PATTERN** | emit compact inspection facts next to the source-isolation preview and persist only useful metadata into the existing catalogue | diagnostics stay secondary to visual review; no dashboard bloat |
+| [glTF-Transform inspect](https://gltf-transform.dev/cli.html#inspect) / [source](https://github.com/donmccurdy/glTF-Transform) | SOURCE · MIT | inspect scenes, meshes, materials, textures, animations; identify geometry/texture/draw-call pressure before choosing optimizations | ToolBox intake / production diagnostics | **ADOPT AS TOOLING REFERENCE** | use inspect-like facts for incoming GLB validation/triage before compression/conversion; browser UI optional | no automatic destructive “optimize everything” on owner assets |
+| [Khronos glTF Sample Viewer](https://github.khronos.org/glTF-Sample-Viewer-Release/) | SOURCE/REFERENCE DEMO | reference rendering + validator + animation controls + extension/material coverage + model/environment credits | difficult source fidelity disputes | **REFERENCE ORACLE, NOT DONOR UI** | compare a suspicious exported GLB against Khronos when ToolBox/KFB rendering looks wrong | no new production renderer |
+| Reddit: [browser glTF inspector / ZeroXR](https://www.reddit.com/r/threejs/comments/1w3estp/) · 2026-08-31 | COMMUNITY/DEMO | exploded/flattened component separation, wireframe and local-only inspection make complicated assets understandable | `WEB-QUICK-3D-REVIEW`, source isolation | **INSPIRATION** | optional “explode/isolate selected nodes + wireframe” review mode for multi-part donors | author explicitly describes the cost of bypassing Three.js; KFB should **not** write a custom WebGL renderer |
+| Reddit: [simple Three.js keyframe animation tool](https://www.reddit.com/r/threejs/comments/1l0b5fm/) | COMMUNITY/DEMO · 2025 | import FBX actor + existing FBX/GLB/GLTF motion, do a deliberately slim edit, export GLB | `MOTION-INTAKE-DIRECT-01`, ToolBox Animation Lab | **SUPPORT CURRENT KFB DIRECTION** | keep direct browser motion intake/edit/export narrow; Blender only for the technical exceptions already documented | do not turn the Animation Lab into a Blender clone |
+| [glTF Report](https://gltf.report/) / [glTF-Transform](https://github.com/donmccurdy/glTF-Transform) | DEMO + OPEN-CORE UI / MIT core | browser-local inspection/editing, source stays local; source SDK handles analysis/optimization | ToolBox diagnostic workflow | **INSPIRATION / CORE-LIB REFERENCE** | preserve local-first file inspection where practical; surface provenance/size/structure before any mutation | UI is open-core, not open-source; do not copy proprietary UI or treat it as a donor |
+
+### F · concrete KFB recommendation
+
+The best reusable ToolBox pattern is not “build a better universal viewer.” It is:
+
+`real source object → source isolation → compact structural/validation facts → selected owner-specific controls → export through existing owner`.
+
+For `WEB-QUICK-3D-REVIEW`, a useful later enhancement is a tiny diagnostic drawer:
+- source/provenance;
+- node tree / isolate;
+- wireframe;
+- optional exploded separation;
+- animation clip selector;
+- skeleton helper;
+- GLB stats/validator result.
+
+It should stay **collapsed by default**. Georg's primary surface remains the real object and the visual question, not the diagnostics.
+
+For `MOTION-INTAKE-DIRECT-01`, the external tools support the current route:
+**browser-direct when compatible; Blender queue only when technically required**.
+
+## Pass-1 synthesis · strongest KFB transfers
+
+### P0 / directly useful to current queue
+
+1. **Environment Preview Contract**  
+   Adopt the separation principle from model-viewer/drei: source object is constant; presentation is a small explicit preset. This directly strengthens `ENV-PREVIEW-01`.
+
+2. **Support-weighted procedural nature**  
+   Use seeded weighted surface sampling + a spacing/exclusion stage + instancing on current TerrainSurface/support. This is the strongest concrete blueprint for `WORLD-NATURE-01`.
+
+3. **WB2 localized sculpt optimization donor**  
+   Keep accepted WB2. If brush performance becomes a real gate, compare current code against three-mesh-bvh `shapecast → affected normals → partial refit`.
+
+4. **Track family through cross-section metadata**  
+   The Godot Road Generator strongly supports keeping the same KFB socket/segment topology while varying road width, shoulders, barriers/fences and surface roles. Enrich the existing Track Socket registry rather than creating a generator.
+
+5. **Source-isolation diagnostics**  
+   three-gltf-viewer + glTF-Transform provide a good donor/checklist for compact node/motion/skeleton/validation inspection around real KFB assets.
+
+### P1 / valuable after current gates
+
+6. **Ephemeral NPC perception memory**  
+   Yuka's short-term Vision/MemorySystem is a clean supplement to AI Town KISS, provided Journey remains the only durable semantic memory.
+
+7. **Portal preview, not portal runtime**  
+   A render-target/SDF portal can be a living preview window; KFB Curtain/Stage remains the actual transition/return owner.
+
+8. **Hybrid diegetic UI**  
+   Keep the card/cube/beam/physical interaction in-world; keep dense text, collection and settings readable in focus/Almanac surfaces.
+
+## Pass-1 anti-pattern list
+
+External research also gives several useful **NOs**:
+
+- **No custom renderer rewrite** merely because a demo is elegant; current Three.js ecosystem already solves most of it.
+- **No procedural road generator replacing OSM** for Hürth/Köln.
+- **No second World/sky/terrain stack** inside preview tools.
+- **No universal external NPC runtime** replacing AI Town KISS + existing host movement/ChatterBox/Journey owners.
+- **No universal new 3D editor**; keep plain JSON/recipes as source truth and add spatial authoring only where it pays.
+- **No noise-only flora placement** producing visible macro blobs.
+- **No all-diegetic UI mandate** for dense information.
+- **No portal RenderTarget/Post stack by default**.
+- **No destructive asset optimization on intake** without explicit owner workflow.
+
+## Candidate blueprints — routed into existing jobs, not added as new jobs
+
+### Blueprint A · WORLD-NATURE seeded scatter
+Receiver: `WORLD-NATURE-01`  
+Proof:
+1. current TerrainSurface/support only;
+2. one deterministic seed;
+3. biome/support weight;
+4. weighted surface samples;
+5. deterministic exclusion/min-distance pass;
+6. procedural/instanced flora;
+7. sparse curated accents;
+8. compare two seeds + reload determinism.
+
+### Blueprint B · ENV-PREVIEW source isolation
+Receiver: `ENV-PREVIEW-01`  
+Proof:
+1. load the exact donor object;
+2. show `SOURCE_ISOLATION` neutral view;
+3. switch to `WORLD_MATCH` consuming actual KFB World presentation;
+4. switch to one `CONSUMER_PRESET`;
+5. object identity/source ref stays unchanged;
+6. no hidden baseplate or cloned sky stack.
+
+### Blueprint C · TRACK cross-section metadata
+Receiver: current Racer Track Socket/Stunt Registry / later modular-track work  
+Proof only after current Race gate:
+1. use existing socket owner;
+2. same segment topology;
+3. 3 cross-section presets, e.g. open road / barrier / fence-high-wall;
+4. generated/interpolated edge treatment remains visual/geometry metadata;
+5. Race still owns contact/physics;
+6. WorldBuilder still places only admitted modules.
+
+### Blueprint D · NPC short-memory seam
+Receiver: `NPC-AITOWN-KISS-01`  
+Proof:
+1. three current Residents;
+2. one writer / one intent each;
+3. seconds-scale “seen recently” records;
+4. host-approved approach;
+5. actual Journey knowledge separate;
+6. no vector DB / no omniscient facts.
+
+### Blueprint E · Quick 3D Source Inspector
+Receiver: `WEB-QUICK-3D-REVIEW`, ToolBox  
+Proof:
+1. real source object isolated;
+2. camera fit;
+3. node isolate;
+4. wireframe/skeleton;
+5. clip selector;
+6. compact GLB stats + validation;
+7. optional exploded-node view;
+8. visual object remains primary.
+
+## Research queue · future timeout-safe waves
+
+These are **research batches, not production jobs**. Run only as needed and persist each batch before the next.
+
+- **G · Vehicle / driving / hover / boat / flight handoffs** — Rapier, arcade vehicle controllers, wheel/contact models, water/hover.
+- **H · Water / weather / sky / fog / stylized shader recipes** — current Travel/World owner first; Shadertoy mechanisms only as algorithm donors.
+- **I · Combat / hit reactions / choreography / crowd separation** — animation/contact/state donors without taking damage ownership.
+- **J · Performance / streaming / LOD / large-world loading** — only against measured KFB bottlenecks.
+- **K · Mobile/touch authoring and game controls** — WorldBuilder/ToolBox/Hub mobile pain points, pointer/touch parity.
+- **L · Small game loops / minigame sockets / playful UI** — patterns that can attach to existing Stage/Instance/Card/Town contracts.
+
+## Pass-1 source accounting
+
+Approximate focused surfaces inspected:
+- **10 external GitHub/source families**: Three.js, three-mesh-bvh, drei/drei-vanilla, model-viewer, Godot Road Generator, Yuka, three-gltf-viewer, glTF-Transform, Khronos glTF Sample Viewer, glTF ecosystem references.
+- **20+ focused source/doc/demo pages/files** across environment, scatter, sculpting, transforms, roads, AI, portals, DOM-in-3D, GLB inspection and animation.
+- **7 community/Reddit discussions/demos** used for practice/failure-mode evidence; community claims were not treated as implementation truth.
+- direct license checks where relevant: Three.js MIT · three-mesh-bvh MIT · drei-vanilla MIT · model-viewer Apache-2.0 · Godot Road Generator MIT · Yuka MIT · three-gltf-viewer MIT · glTF-Transform MIT.
+- older Reddit fetch failures remain **UNKNOWN/unavailable**, not evidence.
+
+## Production routing decision
+
+**No new Production Architecture job is added by Pass 1.**
+
+Reason: every strong finding has an existing receiving owner/job. Adding another “research implementation” job would duplicate the queue rather than improve it.
+
+The research report itself becomes the living external-donor index. Any future source that crosses from inspiration into a real implementation candidate must first be:
+1. pinned to source/license;
+2. shown in source isolation;
+3. mapped to an existing owner;
+4. converted into a bounded proof inside that owner's current job or a genuinely missing capability only.
+
+## One next gate
+
+**Use the Pass-1 findings while executing the already-current `ENV-PREVIEW-01` / World integration queue; do not start a separate implementation branch from this research.**
