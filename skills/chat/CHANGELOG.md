@@ -1929,3 +1929,23 @@ WorldBuilder and ToolBox/Animation authoring sessions are already running from e
 
 ### ROUTING
 Production Architecture v3 branch PR #204 now carries the current masterplan override and crash-safe recovery checkpoint in its MVP Focus Plan, Architecture Handoff, architecture START_HERE, Return and Test Report.
+
+
+## 2026-09-25 · Standard Claude Design full-session export
+
+### ADDED
+New current skill: skills/claude-design-session-export_v1.md.
+
+It provides one reusable /claude-export command for a full Claude Design Session Cut + ZIP containing the runnable current candidate, Handover, active Changelog, Housekeeping, source/donor locks, tests/evidence, checksums and NEXT_CHAT.
+
+### DECISION
+The existing skills/session-export_v1.md remains the slim session-delta export. The new Claude-specific skill is used when Georg wants the complete handoff/recovery package.
+
+### DECISION
+Voice-input ambiguity is explicit export metadata. Proper nouns, file paths and asset names must be resolved from actual workspace/source/GitHub state or marked VOICE_INPUT_UNCERTAIN; similarly named donors may not be substituted silently.
+
+### RECOVERY
+After two failed repair passes on the same gate, the existing Claude Design failure-recovery export remains the escalation path.
+
+### VALIDATION
+Skill/router wiring: **8/8 PASS**. No Claude runtime or real ZIP generation is inferred from that documentation check.
