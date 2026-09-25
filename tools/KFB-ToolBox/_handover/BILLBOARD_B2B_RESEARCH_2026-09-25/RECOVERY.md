@@ -1,58 +1,84 @@
 # RECOVERY · Billboard B2b · Living Mockup / Collage Research · 2026-09-25
 
-Status: **RESEARCH IN PROGRESS · RUNTIME NOT STARTED**
+Status: **RESEARCH COMPLETE · CHOICE PENDING · RUNTIME NOT STARTED**
 Owner: **KFB ToolBox / Billboard Media Residency**
 Branch: `chatgpt-web/billboard-b2b-research-2026-09-25`
+Draft PR: **#211**
 Base: accepted B2a head `07da4adfd1de293d03682d1af90a01df2a1eba19`
+Research memo head before this evidence checkpoint: `0345e0a94884000260476217b8591b97fb6da94d`
 Public accepted B2a reference: https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/
 
-## Scope
+Read after context loss:
+1. `skills/chat/START_HERE.md`
+2. `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`
+3. `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
+4. `skills/session-entry-use-what-works_v1.md`
+5. `tools/KFB-ToolBox/_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md`
+6. this file
+7. `OPTIONS_MEMO.md`
+8. `RETURN.md`
+9. exact PR #211 state/head
 
-Research and compare practical ways to add a reusable **Living Mockup / Collage** mode to the accepted billboard media surface.
+## Scope lock
 
-This slice is **memo/research only**:
+This slice is research/options only:
 - no B2b runtime;
-- no new editor;
-- no automatic asset scraping;
-- no new media owner;
-- no B2c Talking City Lights implementation;
-- no B3 3D body implementation;
+- no collage editor;
+- no live web scraping;
+- no B2c implementation;
+- no B3 modeling;
 - no Curtain C1.
 
-## Existing owner contract to preserve
+## Research result
 
-One accepted billboard/media surface already supports:
-`CARD · COVER · VIDEO_CSS3D · SLOGAN`.
+Recommended first POC:
+**A+ · CanvasTexture compositor + deterministic no-repeat recipes + small provenance-tracked pool + lightweight Living Screen treatment.**
 
-Future modes may add:
-`COLLAGE · KFB_FACE`.
+Why:
+- the original Billboard Gate-1 already contains a real `drawCollageFace()` / `BillboardContent` CanvasTexture donor;
+- KFB already uses CanvasTexture broadly;
+- the Birthday consumer already preferred CanvasTexture / short VideoTexture loops for this type of collage;
+- the Racer billboard plan already reserves a provenance-tracked `COLLAGE_LOOP`;
+- WithSeismic contributes the shared-live-source / emissive / reflection idea, not a requirement for its editor;
+- CSS3D remains reserved for interactive YouTube/web content.
 
-The billboard remains a consumer/presenter. Card, ChatterBox, video and future face/eye systems keep their own owners.
+Secondary options:
+- RenderTarget mini-scene later for real depth/parallax;
+- authored VideoTexture montage loops as a companion/premium mode;
+- CSS3D collage rejected;
+- full mockup editor/post stack rejected for this slice.
 
-## Research questions
+## Source-pool result
 
-1. What is the smallest robust browser architecture for a non-repetitive collage loop?
-2. Which layers from the WithSeismic / “living mockup” direction are useful without copying the editor?
-3. Which Three.js primitives already fit KFB: CanvasTexture, VideoTexture, CSS3D, shader overlays, masks, post-processing?
-4. Which public-domain/open-license archives are suitable as future **curated** source pools with explicit provenance?
-5. How can loops avoid obvious repetition without procedural overkill?
-6. What should remain authored presets vs seeded/random selection?
-7. What performance/cache budget is appropriate for a billboard surface?
-8. What is the smallest next POC worth building after Georg chooses an option?
+No runtime should decide licensing or fetch random web content.
 
-## Timeout rule
+Preferred source order:
+1. KFB-owned/registered;
+2. Smithsonian Open Access CC0;
+3. Library of Congress Free to Use and Reuse;
+4. Chronicling America rights-cleared historic newspaper material;
+5. Europeana only with explicit reusable-rights allow-list;
+6. Wikimedia Commons only with PD/CC0 allow-list first.
 
-Any timeout or interrupted write is **UNKNOWN**:
-- inspect exact branch ref;
-- inspect intended files;
-- inspect PR/workflow if present;
-- retry only if the write is absent.
+External items enter the normal KFB asset/registry path with source URL, creator/provider, rights statement/license URL, retrieval date and hash.
 
-Persist research in small checkpoints:
-1. branch + Recovery/SOURCE;
-2. options memo + evidence;
-3. additive Living Plan / Return / Production Desk metadata.
+## Timeout discipline
 
-## Exactly one current gate
+No write timeout occurred in this B2b slice so far.
 
-**Finish and persist the B2b research/options memo.**
+If a future write/tool call times out:
+- status = UNKNOWN;
+- inspect exact branch ref and intended files;
+- inspect PR/workflow if relevant;
+- retry only if absent.
+
+## Prepared parallel/future body lane
+
+WSA / Blender MCP handover already exists at:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`
+
+B3 remains PREPARED / NOT STARTED while B2b choice is pending.
+
+## Exactly one next gate
+
+**Georg chooses the B2b-P1 option/tone, or explicitly says B3 should run first/in parallel.**
