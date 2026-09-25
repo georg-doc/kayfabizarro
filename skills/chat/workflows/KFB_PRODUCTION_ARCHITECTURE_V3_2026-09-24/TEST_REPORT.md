@@ -387,3 +387,25 @@ Evidence status retained:
 - Ear Rig Node/headless-studio evidence remains candidate evidence; first real consumer/human gate pending.
 
 Current architecture action: no replacement mega-brief; preserve candidates and run the named human/rehome gates.
+
+
+## Claude continuation briefs validation · 2026-09-25 late
+
+Scope: source/routing consistency only; no Claude runtime execution.
+
+**Result: 11/11 PASS**
+
+Validated:
+1. current World continuation brief exists;
+2. current ToolBox continuation brief exists;
+3. shared World/Resident presentation rules exist;
+4. World Session Cut handover resolves;
+5. ToolBox Session Cut handover resolves;
+6. S39 Resident Band donor resolves;
+7. Ear Rig handover resolves;
+8. World brief preserves VOICE_INPUT_UNCERTAIN Blender route note;
+9. World brief consumes ToolBox locomotion/profile ownership;
+10. ToolBox brief defines canonical KayKit locomotion/profile ownership;
+11. ToolBox brief uses the S39 no-baseplate Resident Band donor.
+
+No runtime/browser/public PASS is inferred.
