@@ -57,10 +57,10 @@
     {
       "id": "toolbox-source-safe",
       "bucket": "CAN_START",
-      "title": "ToolBox Production-01 · PROCEED PASS → Locomotion + Ear Rig",
-      "what": "Georg hat den aktuellen Studio+Animation-Lab-Kandidaten ausreichend geprüft: funktioniert soweit und darf weitergehen. Das ist ein PROCEED PASS, keine Detailabnahme. Der nächste gemeinsame Schritt ist die kanonische KayKit-Locomotion/Profile-Wahrheit; danach kann EAR-DANGLE-01 auf derselben ToolBox-Fläche laufen.",
-      "provider": "ToolBox / Animation Lab",
-      "yourAction": "",
+      "title": "ToolBox Production · Claude continuation",
+      "what": "Georg PROCEED PASS. Continue the current Studio+Animation Lab candidate: canonical KayKit locomotion profiles, shared Pose/IK owner, Ear Rig first consumer and S39 performance fixture. No second ToolBox/Animation engine.",
+      "provider": "Claude Design → ToolBox Web/GitHub Bridge",
+      "yourAction": "Claude Design mit dem aktuellen Continuation-Brief starten; Ergebnis per /session-zip zurückgeben.",
       "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
@@ -68,10 +68,10 @@
       "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
       "expectedHead": "0405c4addba45934f95bb15a829f08086d0a0b22",
       "brief": {
-        "label": "Aktueller Integrationsplan",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
+        "label": "Claude Design · ToolBox Production Continuation",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_TOOLBOX_PRODUCTION_CONTINUATION_2026-09-25.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
-        "pasteReady": false
+        "pasteReady": true
       }
     },
     {
@@ -155,11 +155,11 @@
     {
       "id": "worldbuilder-wb2",
       "bucket": "CAN_START",
-      "title": "World Integration-01 · PROCEED PASS → Rehome / OSM / Mobility",
-      "what": "Georg hat den integrierten Hürth-Kandidaten ausreichend geprüft: funktioniert soweit und darf weitergehen. WB2 Terrain/Object/Save-Reload bleibt die Authoring-Basis in derselben Welt. Detailfehler bleiben offen.",
-      "provider": "WorldBuilder Web/GitHub Bridge",
-      "yourAction": "",
-      "waitingFor": "1:1 Web-Rehome + World 26/26 + WB2 34/34 Regression; danach gemeinsame Locomotion konsumieren und OSM Hürth→Köln/SAE fortsetzen.",
+      "title": "World Integration · Claude continuation",
+      "what": "Georg PROCEED PASS. Continue the current integrated Hürth/WB2 candidate: shared KayKit ground locomotion consumer, preserve in-world editing, and apply global OSM facade/roof/contact-shadow rules. Do not rebuild WorldBuilder.",
+      "provider": "Claude Design → WorldBuilder Web/GitHub Bridge",
+      "yourAction": "Claude Design mit dem aktuellen Continuation-Brief starten; Ergebnis per /session-zip zurückgeben.",
+      "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 190,
@@ -167,10 +167,10 @@
       "expectedHead": "ec52eb746be8c1a0e6f3f3d62857ed4b3121b284",
       "review": null,
       "brief": {
-        "label": "Session-Cut Intake / nächste Route",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_SESSION_CUTS_EAR_RIG_2026-09-25.md",
+        "label": "Claude Design · World Integration Continuation",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CLAUDE_DESIGN_WORLD_INTEGRATION_CONTINUATION_2026-09-25.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
-        "pasteReady": false
+        "pasteReady": true
       }
     },
     {
