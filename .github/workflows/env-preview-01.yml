@@ -25,3 +25,28 @@ jobs:
         run: node --check "tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation/lib/host-env.js"
       - name: Contract · owner and consumer seams
         run: node tools/KFB-ToolBox/tests/env_preview_01_contract_test.mjs
+
+  browser:
+    needs: contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local repo server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/env-preview-http.log 2>&1 &
+          sleep 2
+          curl -fsS http://127.0.0.1:4173/tools/KFB-ToolBox/lib/environment-preview.v1.js >/dev/null
+      - name: Browser · Resident Atlas + ToolBox
+        run: node tools/KFB-ToolBox/tests/env_preview_01_browser_test.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: env-preview-01-browser-proof
+          path: env-preview-proof/
