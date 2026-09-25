@@ -1,6 +1,6 @@
 # WB2-TERRAIN-SCULPT-01 · Test Report · 2026-09-23
 
-Status: **LOCAL CHAT REVIEW CANDIDATE · NOT PUBLIC · HUMAN TERRAIN-SHAPE REVIEW PENDING**
+Status: **R1 INTERACTION ENRICHED · LOCAL CHAT REVIEW CANDIDATE · NOT PUBLIC · HUMAN REVIEW PENDING**
 
 Repository: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23`  
@@ -40,6 +40,9 @@ Accepted WB1 files are not modified by WB2. WB2 adds a new folder:
 - strength per dab;
 - visible brush ring;
 - drag strokes;
+- wheel / touchpad brush-radius adjustment while sculpting;
+- hold-Space temporary Orbit without losing Raise/Lower mode;
+- quick mode keys: `1` Object/Orbit · `2` Raise · `3` Lower;
 - true C2 quintic radial falloff;
 - Undo last stroke;
 - Clear sculpt layer;
@@ -87,7 +90,20 @@ Covers:
 - inverse Raise/Lower roundtrip at the same center.
 
 ### Source + Review contract
-**33/33 PASS**
+**56/56 PASS**
+
+Includes the original WB2 terrain/persistence/review checks plus:
+- wheel/touchpad radius UX;
+- radius clamp `0.45 … 5`;
+- wheel remains untouched in Object/Orbit mode;
+- Space-hold temporary Orbit preserves the active Raise/Lower mode;
+- active sculpt strokes cannot be interrupted by the Space switch;
+- `1 / 2 / 3` quick mode switching;
+- accepted object `R` Rotate and `S` free Scale shortcuts remain intact;
+- Review bundles and blob markers remain exact.
+
+Focused interaction sub-contract:
+**31/31 PASS**
 
 Covers:
 - Source module syntax;
@@ -126,7 +142,7 @@ Covers:
 - `Rig_Medium_CombatMelee.glb` @ pinned animation commit.
 
 ### Embedded browser self-test
-**28 assertions prepared / 0 executed**
+**34 assertions prepared / 0 executed**
 
 Includes:
 - source actor + clip + explicit texture;
@@ -165,13 +181,16 @@ Review only:
 1. Source actor and Source prop still load correctly;
 2. enter Scene editor;
 3. choose **Raise** and drag a low hill;
-4. choose **Lower** and drag a shallow depression;
-5. vary Radius and Strength;
-6. orbit close to the result and inspect for cracks, spikes, hard stamp edges or faceted artifacts;
-7. **Undo stroke**;
-8. **Clear sculpt** and confirm the procedural base returns;
-9. make a sculpt, Save, alter/clear it, Reload and confirm the saved terrain returns;
-10. switch back to **Object edit** and confirm the accepted inline editor still works.
+4. while Raise/Lower is active, use mouse wheel / two-finger touchpad scroll and confirm the visible brush radius changes;
+5. hold **Space**, orbit the camera, release Space and confirm the previous Raise/Lower mode resumes immediately;
+6. test `1 / 2 / 3` for Object/Orbit / Raise / Lower;
+7. choose **Lower** and drag a shallow depression;
+8. vary Radius and Strength;
+9. orbit close to the result and inspect for cracks, spikes, hard stamp edges or faceted artifacts;
+10. **Undo stroke**;
+11. **Clear sculpt** and confirm the procedural base returns;
+12. make a sculpt, Save, alter/clear it, Reload and confirm the saved terrain returns;
+13. switch back to **Object edit** and confirm the accepted inline editor still works.
 
 ## Publication
 
