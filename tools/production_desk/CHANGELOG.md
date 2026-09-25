@@ -1,5 +1,17 @@
 
 
+## 2026-09-26 · ToolBox r2 green / World r2 stopped
+
+- ToolBox r2 receiving-owner CI on PR #185 is green: 31/31 + 34/34 static, 20/20 + 25/25 browser, 13/13 review-browser;
+- ToolBox now advances to an owner-backed Stage review gate;
+- World r2 receiving-owner static is 20/20 PASS but browser gate exhausted its repair budget;
+- World final diagnostic proves Hürth/source boot and isolates the failing stale selftest variant contract;
+- World recovery package persisted; Hub lane changed to WAITING / `WORLD-R2-CONTRACT-RESET-01`;
+- no World Stage/Public/Human PASS;
+- no merge or Live promotion.
+
+
+
 ## 2026-09-26 · ToolBox/World r2 + Hub UX intake
 
 - ToolBox r2 Session Cut received on main; Hub lane advanced from Claude-start to RUNNING receiving-owner rehome;
