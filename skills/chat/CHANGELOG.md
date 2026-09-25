@@ -1,3 +1,10 @@
+## 2026-09-25 · Cologne Route 01 planning lane
+
+- Added `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/` as the current cross-project planning brief for the Hürth → Dom → Rhein → Mülheimer Brücke → SAE drive.
+- Decision: route-first grammar is shared by OSM import, a future simple semantic editor and seeded generation; geometry presentation is separated into route, surface profile, edge treatment, structure and stunt modules.
+- Next bounded implementation gate: `RKIT-10 · Modular Route Adapters v1` in `georg-doc/KFB-Stunt-Car-Race`, donor-first and without Race physics/editor scope.
+- No runtime, Stage or Live result is claimed by this planning entry.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
