@@ -781,3 +781,54 @@ This branch does not:
 Existing HUB-CTRL mounts the v3 self-service catalog additively while preserving its existing operational Today lanes. The 13 strand cards expose current READY/HOLD jobs; the full current job map appears only on expansion.
 
 Product work may already start directly from the READY briefs without waiting for that public mount.
+
+## 2026-09-25 · Lead recovery · playable integration masterplan persisted
+
+Status: **PLANNING / RECOVERY CHECKPOINT COMPLETE · PRODUCT EXPORTS STILL RUNNING**
+
+Georg simplified the current lead goal to integrated playable capabilities rather than additional standalone editors/labs.
+
+### Current priorities
+
+1. WorldBuilder editing must operate inside the real playable World/Travel scene state.
+2. OSM continuity must extend real Hürth/Alstädten/Köln coverage toward SAE without invented geography.
+3. Modular Race parts must be proven in the Race/Rapier owner before World placement/handoff.
+4. ToolBox becomes one daily product with **Studio + Animation Lab** as the two primary workspaces.
+5. KayKit Character Animations define the default locomotion State/Action foundation; Mixamo Motion Library remains variant/action input.
+6. Studio and Animation Lab share one Pose/IK/contact-correction owner.
+7. Existing Travel Ground↔Flight bridge + animated CardCarrier is the first cross-mode continuation; ToolBox should author the KayKit CARD_SURF pose/profile.
+
+### Running-session protection
+
+WorldBuilder and ToolBox/Animation sessions are already running from earlier briefs.
+
+Decision: **do not interrupt them with replacement mega-briefs.**
+
+Next action is to intake their complete exports/Session Cuts, compare them against current owners and the updated masterplan, then issue only bounded correction/integration briefs.
+
+### Files updated by this recovery checkpoint
+
+- `MVP_FOCUS_PLAN_2026-09-24.md` — 2026-09-25 CURRENT OVERRIDE;
+- `ARCHITECTURE_CHAT_HANDOFF_2026-09-24.md` — current recovery checkpoint;
+- `START_HERE.md` — routes fresh architecture recovery to the override;
+- `TEST_REPORT.md` — 10/10 documentation/recovery consistency PASS.
+
+### What was not changed
+
+- no product runtime;
+- no WorldBuilder source;
+- no ToolBox runtime;
+- no Motion Library;
+- no Hub job ids/catalog metadata;
+- no Cloudflare publication;
+- no merge / Live promotion.
+
+### Unresolved / expected inputs
+
+- complete current WorldBuilder/Claude Design export;
+- complete current ToolBox/Animation export;
+- exact four Quaternius transformer-like vehicle sources remain to be resolved before that vehicle-fit slice.
+
+### Exactly one next architecture gate
+
+**INTAKE THE TWO RUNNING EXPORTS, THEN PREPARE BOUNDED CORRECTION/INTEGRATION BRIEFS.**
