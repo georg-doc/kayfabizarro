@@ -1,5 +1,28 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-26 · ToolBox r2 Stage review · frozen failure recovery
+
+### IMPLEMENTATION
+Added a bounded PR #220 review consumer with a dominant Three.js stage. It shows the exact `FB_TEMPLATE_LOOK_v5.glb` first in isolation, then consumes the canonical ToolBox locomotion profile, exact KayKit Rig_Medium clips, canonical fixed PoseRig and PR #214 Ear Dangle. No second ToolBox runtime owner was created.
+
+### EVIDENCE
+Browser attempt 1 `36198735113 / 108280429921`: **28/29 PASS · FAIL** because the fixed sample window remained at 0.000 m movement. One bounded repair starts State on semantic Walk.
+
+Browser attempt 2 `36198914554 / 108280990960`: **28/29 PASS · FAIL**. Movement passes at **0.299 m**; deterministic semantic-transition evidence remains **1 observed vs ≥2 expected**.
+
+Both runs load the exact actor and pinned owners, 15/11/13 KayKit clips, 3+3 ear bones and the corrected 0.3162 m lower-arm chain; direct IK and mobile shell checks pass with zero page/source-request failures.
+
+### VISUAL FAILURE
+Recorded Source/State/Pose/mobile screenshots show the review camera cropped too tightly: the head top and EarRig-v5 ears are not fully visible, especially on mobile. The review surface is therefore not valid for Georg's source/ear gate yet.
+
+### STOP / PUBLICATION
+Two failed browser attempts reached the slice stop condition. Candidate implementation `cab463b6a4b9bfd9cc365694ff462b39bc493b8e` is preserved on Draft PR #220. **No Cloudflare route, no Hub human-test link, no merge, no Live promotion.**
+
+Recovery: `_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026-09-26/START_HERE.md`.
+
+### NEXT
+Fresh review-surface recovery only: event-driven transition proof + full actor/ear framing. PR #185 owner rehome stays green and unchanged.
+
 ## 2026-09-24 · TOOLBOX-COHERENT-INTEGRATION-01
 
 ### IMPLEMENTATION
