@@ -11,15 +11,15 @@
 >
 > R1 functional foundation: **GEORG HUMAN PASS** — texture, Character Y, Character-Y save/reload and palette/FOV.
 > R2 shared inline editor: **GEORG HUMAN PASS** — object menu, Move / Rotate / free Scale / Drop / World-Local / Close + transform Save/Reload.
-> Current gate: **WB2-TERRAIN-SCULPT-01 · RAISE/LOWER HEIGHTFIELD BRUSH**.
+> Current gate: **CLAUDE DESIGN · WORLDBUILDER AUTHORING/UI REFINEMENT ON ACCEPTED WB2 FOUNDATION**.
 > Shared editor owner: `tools/KFB-ToolBox/lib/edit-layer.js` · accepted R2 base `c97b3537f71e939176f3ae5ce7ae83feabb7918f` · R3 candidate `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`.
 > Proposal: `SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`.
 > WB2 terrain-authoring brief: `WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`. Runtime candidate is now implemented on stacked Draft PR #190; R3 is optional/non-blocking.
 > R3 remains an optional/non-blocking shared-editor convenience candidate: **26/26 + 4/4 + 1/1 PASS**, no human R3 claim. WB2 is now reprioritized by Georg. Cloudflare remains HOLD.
 > WB2 implementation: branch `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23` · stacked Draft PR **#190**.
 > WB2 candidate: `worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html` + `WB2_TERRAIN_SCULPT_01_REVIEW.html` + `terrain-sculpt.js`.
-> WB2 evidence: **24/24** sculpt math/geometry + **56/56** current Source/Review contract + **31/31** focused interaction contract + **4/4** exact runtime sources; embedded browser self-test **34 prepared / 0 executed**.
-> WB2 interaction R1: wheel/touchpad changes Brush Radius only while sculpting; hold Space = temporary Orbit preserving Raise/Lower; `1/2/3` = Object/Orbit / Raise / Lower. WB2 Return: `RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`. Exactly one next gate: Georg Chat-HTML terrain + interaction review.
+> WB2 evidence: **24/24** sculpt math/geometry + **56/56** current Source/Review contract + **31/31** focused interaction contract + **4/4** exact runtime sources; embedded browser self-test **34 prepared / 0 executed**; **GEORG HUMAN PASS**.
+> WB2 interaction R1: wheel/touchpad changes Brush Radius only while sculpting; hold Space = temporary Orbit preserving Raise/Lower; `1/2/3` = Object/Orbit / Raise / Lower. **GEORG HUMAN PASS.** WB2 Return: `RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`. Exactly one next gate: existing `TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md` authoring/UI refinement.
 > The older `WB1-TERRAIN-EDITOR-01` wording is superseded where it omits the Resident/animation seam.
 
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
@@ -37,7 +37,7 @@ Read:
 `TERRAIN_FIRST_RESET_2026-09-23.md`
 
 Next gate:
-**WB2-TERRAIN-SCULPT-01 · isolated continuous-terrain Raise/Lower brush proof**
+**Claude Design authoring/UI refinement on the accepted WB2 source**
 
 Primary external terrain/editor donor:
 `ZyFou/ProceduralTerrains@f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070` · MIT.
