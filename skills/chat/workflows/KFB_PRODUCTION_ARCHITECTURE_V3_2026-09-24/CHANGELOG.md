@@ -378,3 +378,14 @@
 - shared World/Resident presentation rules are binding in both;
 - Blender MCP route note preserved as `VOICE_INPUT_UNCERTAIN` until exact export/pin;
 - no product runtime, Stage or Live promotion by this documentation checkpoint.
+
+
+## 2026-09-26 · r2 World/ToolBox intake
+
+- main upload `b24b129b...` contains ToolBox Production-01 r2 and World Integration-01 r2 Session Cuts;
+- ToolBox r2 retained: shared pose owner fix candidate, canonical KayKit locomotion profile layer, EAR-DANGLE-01, S39 no-baseplate fixture, CARD_SURF seam;
+- World r2 retained: existing WB2 editor in world, expanded locomotion consumer, Cologne profile, FACADE_RULE/FACE_NORMALS/support presentation fixes;
+- ToolBox remains canonical locomotion/profile owner; World remains consumer;
+- reported Claude evidence preserved without converting it to Georg or Stage acceptance;
+- extra Hub UX Session Cut classified separately under HUB-CTRL;
+- previous Claude continuation briefs become provenance/history; current action is Web/GitHub receiving-owner rehome and Stage proof.
