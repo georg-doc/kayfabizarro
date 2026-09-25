@@ -703,6 +703,22 @@
         "convex/constants.ts"
       ],
       "rule": "mechanics donor only; no Convex/Pixi/global memory owner"
+    },
+    "worldDesignD2Intake": {
+      "repo": "georg-doc/kayfabizarro",
+      "head": "706c3f121bc3a305778306917613ea23eb772c16",
+      "folder": "tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2",
+      "status": "CANDIDATE_INPUT",
+      "positiveHumanNote": "Hürth-Alstädten look + shadow fix described as top; full acceptance not recorded",
+      "rule": "presentation donor only; Alstädten OSM requires OSM City Lab re-cache before source promotion"
+    },
+    "residentDiscoS40Intake": {
+      "repo": "georg-doc/kayfabizarro",
+      "head": "a46dbdff150362e7153c143b21fa76ffe8ffb5e4",
+      "folder": "tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation",
+      "reviewEntry": "KFB_Resident_Atlas_S9.html#__disco",
+      "status": "CANDIDATE_ONLY_REVIEW_OPEN",
+      "rule": "bridge into existing Resident/Music/Motion owners; do not promote local owner copies or second band transport"
     }
   },
   "strands": {
@@ -733,7 +749,8 @@
         "audioFxAudition",
         "characterResidentWorkflow",
         "threeIkDonor",
-        "executionDispatch"
+        "executionDispatch",
+        "residentDiscoS40Intake"
       ],
       "target": "shared motion profiles + Resident performance pipeline"
     },
@@ -747,7 +764,8 @@
         "motionLab",
         "motionLibrary",
         "osmBake",
-        "elasticTorsion"
+        "elasticTorsion",
+        "worldDesignD2Intake"
       ],
       "target": "God Mode Construction Site"
     },
