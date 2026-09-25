@@ -96,17 +96,13 @@
     },
     {
       "id": "music-perf-01",
-      "bucket": "LOOK_AT",
-      "title": "Music Performance · KayfaBizarros im Takt",
-      "what": "Der echte ORB-P1-v5-Band-Donor läuft mit Rubbish Groove über einen gemeinsamen Songclock. Source Object zeigt den unveränderten Donor; Performance blendet nur den noch nicht akzeptierten Drummer aus.",
-      "provider": "ChatGPT Web / ToolBox Animation Studio",
-      "yourAction": "Source Object kurz mit dem ORB-Donor vergleichen, dann Performance starten/scrubben und PASS, TUNE oder REJECT für Timing und Timeline geben.",
-      "waitingFor": "Georgs direkte Playback-Prüfung.",
-      "questions": [
-        "Entspricht Source Object sichtbar dem ursprünglichen ORB-P1-v5-Donor?",
-        "Wirken Leader und Gitarrist beim Play/Scrub sauber an den Song gekoppelt?",
-        "Ist der Beat/Bar-Ruler nützlich, ohne wie eine unnötige DAW zu wirken?"
-      ],
+      "bucket": "CAN_START",
+      "title": "Music Performance · TUNE → S39 Band animations",
+      "what": "Timeline, Beat/Bar-Logik und Audio-Kopplung sind als Donor brauchbar. Die aktuelle sichtbare Gitarren-/Trommelanimation ist aber nicht kanonisch. Für die Performance die neuere S39 Resident Band als Source verwenden: Guitar A / ml.guitar.a.fit, drum.v5c + gemessene Kontakte, ohne Baseplate.",
+      "provider": "ToolBox Animation / Resident Band",
+      "yourAction": "",
+      "waitingFor": "",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 207,
       "branch": "web/music-perf-01-2026-09-24",
@@ -115,6 +111,12 @@
         "label": "Band-Performance prüfen",
         "path": "kfb-hub/stage/toolbox/music-performance/index.html",
         "sourceRef": "PR #207 · runtime d834f1d4 · 22/22 source + 29/29 Chromium PASS · cloudflare-live a29b2cdb · human pending"
+      },
+      "brief": {
+        "label": "Shared World/Resident Presentation Rules",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/WORLD_RESIDENT_PRESENTATION_RULES_2026-09-25.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "pasteReady": false
       }
     },
     {
@@ -241,25 +243,6 @@
         "label": "Akzeptierte Medienbasis ansehen",
         "path": "kfb-hub/pruefen/billboard-b2a/index.html",
         "sourceRef": "B2a HUMAN_ACCEPTED · B3 PREPARED / NOT STARTED"
-      }
-    },
-    {
-      "id": "graveyard",
-      "bucket": "LOOK_AT",
-      "title": "Graveyard · begehbares Post-Mortem-Archiv",
-      "what": "56 dokumentierte Fehler werden als begehbare Gräber mit Lehre und Reißleine sichtbar. Das Modul ist zugleich WorldBuilder-/Camp-Hub-Zone und Anti-Wiederholungs-Gedächtnis.",
-      "provider": "KFB Graveyard",
-      "yourAction": "Kurz betreten und prüfen, ob Bewegung, Lesbarkeit und Friedhofs-Stimmung als Review-Oberfläche tragen.",
-      "waitingFor": "Georgs Sichtprüfung.",
-      "questions": [
-        "Funktioniert der Friedhof als nützliche Lern- und Erinnerungszone, nicht nur als Gag?",
-        "Sind Grabtexte und Steuerung bei normalem Browserfenster lesbar?"
-      ],
-      "repo": "georg-doc/kayfabizarro",
-      "review": {
-        "label": "Graveyard betreten",
-        "path": "kfb-hub/pruefen/graveyard/index.html",
-        "sourceRef": "main · tools/kfb-graveyard · v1.6.0 · 56 Gräber"
       }
     },
     {
@@ -496,8 +479,8 @@
       "group": "Figuren und Animation",
       "id": "music-performance",
       "title": "Music Performance · KayfaBizarros",
-      "what": "Rubbish Groove + exakter ORB-P1-v5-Band-Donor mit Beat/Bar-Timeline, Play, Scrub und Performance-Rezept.",
-      "status": "Human Gate",
+      "what": "Timeline/Audio-Donor. Sichtbare Gitarren-/Trommelanimation ist TUNE; kanonische Performance-Quelle ist die neuere S39 Resident Band ohne Baseplate.",
+      "status": "TUNE / Donor",
       "path": "kfb-hub/stage/toolbox/music-performance/index.html"
     },
     {
@@ -529,6 +512,12 @@
     {
       "label": "Alle Briefings auf GitHub",
       "url": "https://github.com/georg-doc/kayfabizarro/tree/main/skills/chat"
+    },
+    {
+      "id": "graveyard-prototype",
+      "label": "Graveyard prototype · concept / lighting donor only",
+      "path": "kfb-hub/pruefen/graveyard/index.html",
+      "note": "Early dysfunctional movement/placement prototype. Retain only spatial-postmortem concept + grave-light flicker/lighting donor."
     }
   ]
 }
