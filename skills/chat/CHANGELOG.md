@@ -1949,3 +1949,29 @@ After two failed repair passes on the same gate, the existing Claude Design fail
 
 ### VALIDATION
 Skill/router wiring: **8/8 PASS**. No Claude runtime or real ZIP generation is inferred from that documentation check.
+
+
+## 2026-09-25 evening · Session ZIP proven · current WIPs intaked · Ear Rig owner
+
+### EXPORT
+Georg's current full Claude Design export trigger is now `/session-zip` via `skills/session_ZIP_v1.md`. The older `/claude-export` skill is retained as superseded history.
+
+The two current Session Cuts on main @ `8504afa9d14ad46855d0c590bc30eea0fc38d15d` demonstrate that the export format supplies the required runnable source closure, Handover, active Changelog/Housekeeping, SOURCE, manifest/checksums, tests/evidence and NEXT_CHAT.
+
+Recovery caveat: the GitHub entry is only the short fallback; the full canonical `claude/session-zip-SKILL.md` including `zipcheck.py` still needs an exact GitHub mirror when available.
+
+### TOOLBOX
+ToolBox Production-01 intake = **KEEP · GEORG HUMAN REVIEW NEXT**. No new ToolBox mega-brief before that review.
+
+### WORLD
+World Integration-01 intake = **KEEP · WEB REHOME/REGRESSION → GEORG HUMAN REVIEW NEXT**. It integrates the accepted WB2 authoring state into Hürth rather than creating a second editor.
+
+### EAR RIG
+PR #214 / `tools/KFB-ToolBox/ear-rig/` is an **EXPERIMENTAL candidate**.
+- Animation Lab / ToolBox Motion owns the single `ear-dangle.v1.js` secondary-motion runtime.
+- FrankenStein Studio authors ear geometry/placement/rest+acted pose/profile.
+- Consumers may supply wind/contact/impulse facts but may not fork the spring physics.
+- EAR-DANGLE-01 waits behind ToolBox Production-01 review.
+
+### VALIDATION
+Architecture source/recovery routing check: **12/12 PASS**. No new runtime, public Stage or Georg acceptance is inferred.
