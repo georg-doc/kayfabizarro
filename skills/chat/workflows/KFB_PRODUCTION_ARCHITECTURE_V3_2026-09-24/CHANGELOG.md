@@ -353,3 +353,14 @@
 - promoted WB-D2 `FACADE_RULE v1` as starting global ordinary-OSM facade grammar;
 - promoted WB-D1 roof/shadow repair and contact/clipping checks to global OSM presentation quality rules;
 - no new terrain, sky, animation, Resident or OSM runtime owner created.
+
+
+## 2026-09-25 late · Claude Design continuation briefs
+
+- added current World Integration continuation brief after Georg PROCEED PASS;
+- added current ToolBox Production continuation brief after Georg PROCEED PASS;
+- World brief consumes ToolBox locomotion/profile truth instead of owning a second animation engine;
+- ToolBox brief defines KayKit canonical locomotion foundation, shared Pose/IK, Ear Rig first consumer and S39 band fixture;
+- shared World/Resident presentation rules are binding in both;
+- Blender MCP route note preserved as `VOICE_INPUT_UNCERTAIN` until exact export/pin;
+- no product runtime, Stage or Live promotion by this documentation checkpoint.
