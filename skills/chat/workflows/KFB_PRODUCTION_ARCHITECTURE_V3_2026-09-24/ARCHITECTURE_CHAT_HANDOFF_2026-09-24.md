@@ -395,3 +395,24 @@ Until a real writable owner exists:
 4. Only then publish a replacement shell.
 
 No new Hub shell is accepted/live by this recovery checkpoint.
+
+
+### HUB-STATUS-SYNC-01 technical gate
+
+Freshness repair is now isolated in Draft PR **#215**:
+- branch `chatgpt-web/hub-status-sync-v1-2026-09-25`;
+- tested head `d45f215bce544ad1eb7e71a6aa743ca59919f08d`;
+- one workflow file only;
+- no rejected Hub shell / Cloudflare / runtime content.
+
+CI:
+- run `36168223283`;
+- **18/18 Production Desk tests PASS**;
+- online build PASS;
+- registry **VALID**;
+- result: 19 lanes · 2 LOOK_AT · 5 RUNNING · 7 CAN_START · 4 WAITING · 0 problems;
+- PR events never publish the bot branch.
+
+First CI failure was fixture setup only; repair pass 1 passed. No second repair pass.
+
+Merge remains human/owner gated. Until merge, the manually refreshed live bot registry remains the current data source.
