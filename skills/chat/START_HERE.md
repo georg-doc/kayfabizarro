@@ -964,3 +964,28 @@ WSA / ToolBox 3D may use Blender MCP when real rounded topology/casing/posts/sup
 
 Current Billboard gate:
 **Georg chooses B2b-P1 option/tone, or explicitly starts B3 first/in parallel.**
+
+
+## 2026-09-25 · Billboard B2b-P1 READY · mixed hypernormalisation locked
+
+Georg resolved the B2b option gate:
+
+- source pool: **KFB + small curated CC0 pool**;
+- visual language: **mixed hypernormalisation**;
+- architecture: **A+ CanvasTexture**.
+
+Current implementation handoff lives on Draft PR **#211**, branch `chatgpt-web/billboard-b2b-research-2026-09-25`, handoff head `ec475c5d3ae8d975a75e85cf2c60ecae0a0e527b`.
+
+Start a fresh Web slice from:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_FRESH_CHAT_START_2026-09-25.md`
+
+Full build brief:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_BUILD_BRIEF_2026-09-25.md`
+
+The WSA / Blender-MCP body handover now also contains five non-blocking future drafts:
+**Palimpsest · Billboard Chorus · World Memory · Neighborhood Dialects · Signal Takeover**.
+
+B3 rounded-cartoon body remains prepared/not started.
+
+Exactly one current Billboard execution gate:
+**build B2b-P1 only, then Georg visual review.**

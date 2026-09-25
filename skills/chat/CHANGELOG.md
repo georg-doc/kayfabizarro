@@ -1835,3 +1835,14 @@ Exactly one next gate:
 - WSA / Blender MCP handover prepared for a later rounded/cartoon 3D billboard body:
   `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`.
 - B3 is PREPARED / NOT STARTED and must preserve the accepted B1/B2a media face and rear semantics.
+
+
+## 2026-09-25 · Billboard B2b-P1 choices locked
+
+- Georg chose **KFB + small curated CC0 pool** and **mixed hypernormalisation**.
+- B2b-P1 implementation brief and ultra-short fresh-chat start persisted on PR #211.
+- B2b handoff head: `ec475c5d3ae8d975a75e85cf2c60ecae0a0e527b`.
+- Recommended runtime remains A+ CanvasTexture; no editor/live scraping/RenderTarget foundation.
+- WSA/B3 handover carries five non-blocking adjacent drafts: Palimpsest, Billboard Chorus, World Memory, Neighborhood Dialects, Signal Takeover.
+- HUB-CTRL source routes Billboard to CAN_START B2b-P1; B3 stays WAITING.
+- No B2b runtime or public Stage exists yet.
