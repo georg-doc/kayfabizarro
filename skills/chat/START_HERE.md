@@ -1030,3 +1030,35 @@ Recovery entrypoint:
 `tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_2026-09-26/START_HERE.md`
 
 Exactly one next ToolBox gate: **fresh Stage-review recovery for event-driven transition proof + complete actor/ear framing**. World r2 receiving-owner consumer reconciliation remains sequenced after that ToolBox review surface reaches its gate.
+
+
+## 2026-09-26 · World r2 stop / ToolBox r2 green
+
+Current product status:
+
+### ToolBox r2
+Receiving owner PR #185.
+Owner rehome technically PASS:
+- runtime-tested head `5dcf34bcdf9d87445e927c98f60d41adae72f00e`;
+- 31/31 + 34/34 static;
+- 20/20 + 25/25 browser;
+- 13/13 plain-review browser.
+
+Next:
+direct unobstructed KFB Stage review from the re-homed owners.
+
+### World r2
+Receiving owner PR #190.
+Current runtime candidate frozen at:
+`204afd6dbb1285f8cd77807af0db5fdd6e75308d`.
+
+Static 20/20 PASS, but browser gate exhausted its repair budget.
+Final run `36198999279` proves Hürth boots, 700 buildings load, 13 semantic states bind, and page/network errors are zero; it stops on a stale selftest variant-label contract.
+
+Read:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/START_HERE.md`
+
+Do not repair the same gate again.
+
+Next:
+`WORLD-R2-CONTRACT-RESET-01` · test contract only first.
