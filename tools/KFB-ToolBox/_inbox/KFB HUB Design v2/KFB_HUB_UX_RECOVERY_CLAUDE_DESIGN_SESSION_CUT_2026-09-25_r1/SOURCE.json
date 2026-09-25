@@ -1,0 +1,131 @@
+{
+  "schema": "kfb.claude-design-session-cut/1",
+  "project": "KFB Hub",
+  "slice": "HUB UX RECOVERY · Claude Design",
+  "exportedAt": "2026-09-25T18:44:06.442Z",
+  "status": "CANDIDATE",
+  "entrypoints": [
+    "code/KFB Hub UX Recovery v2.dc.html",
+    "code/Hub Donor Proof v2.dc.html"
+  ],
+  "owner": {
+    "name": "HUB-CTRL #202 · tools/production_desk",
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "work/hub-ctrl-01-2026-09-24",
+    "head": "ef8dbb07032a1d148893f2e0a125e04fe90263fd"
+  },
+  "sources": [
+    {
+      "name": "HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md",
+      "repo": "georg-doc/kayfabizarro",
+      "path": "tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md",
+      "ref": "ef8dbb07032a1d148893f2e0a125e04fe90263fd",
+      "role": "brief",
+      "use": "USED"
+    },
+    {
+      "name": "desk.template.html",
+      "path": "tools/production_desk/desk/desk.template.html",
+      "ref": "ef8dbb07032a1d148893f2e0a125e04fe90263fd",
+      "role": "data/reload logic",
+      "use": "USED"
+    },
+    {
+      "name": "config.json",
+      "path": "tools/production_desk/config.json",
+      "ref": "ef8dbb07032a1d148893f2e0a125e04fe90263fd",
+      "role": "lane truth",
+      "use": "USED"
+    },
+    {
+      "name": "registry/production/v1",
+      "path": "registry/production/v1/*",
+      "ref": "bot/production-desk-update",
+      "pinned": false,
+      "fallbackSourceCommit": "74c6fa5cd623dc378dec880905c6616f6a171754",
+      "role": "runtime data",
+      "use": "USED"
+    }
+  ],
+  "donors": [
+    {
+      "name": "KFB Hub UI v2",
+      "path": "kfb-hub/index.html",
+      "ref": "dfaafac070747f9543b5eb5a635e2aaa74e57b83",
+      "blob": "0de46343ddeb70a5f423876e75dc916ae7200c5b",
+      "use": "USED"
+    },
+    {
+      "name": "KayKit Motion Lab v1",
+      "path": "kfb-hub/stage/toolbox/kaykit-motion-lab-v1/lab.mjs",
+      "ref": "cloudflare-live",
+      "assetPin": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb",
+      "use": "USED"
+    }
+  ],
+  "contracts": [
+    {
+      "name": "kfb.hub-decision/1",
+      "defined": "code/KFB Hub UX Recovery v2.dc.html (packet())",
+      "fields": [
+        "itemId",
+        "decision",
+        "note",
+        "decidedAt",
+        "sourceRevision",
+        "itemTitle",
+        "item"
+      ]
+    },
+    {
+      "name": "kfb-pet-graft-driver.v4.json",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "ref": "bdaea0648f27c0f16e0a737bfba237eb54dd4cbb"
+    }
+  ],
+  "assetRefs": [
+    "see external/ASSET_REFS.md"
+  ],
+  "runtimeOwners": [
+    {
+      "area": "status truth",
+      "owner": "HUB-CTRL #202 / Production Desk"
+    },
+    {
+      "area": "actor montage",
+      "owner": "ToolBox · frizzlegraft-v1/graft-mount.v1.js"
+    },
+    {
+      "area": "animation clips",
+      "owner": "KayKit Character Animations 1.1"
+    },
+    {
+      "area": "decisions (local)",
+      "owner": "browser only until ingested"
+    }
+  ],
+  "protectedBoundaries": [
+    "Production Desk builder/registry",
+    "v3 catalog",
+    "project owners",
+    "KFB Stage publication",
+    "actor/face/eye/mouth",
+    "motion library",
+    "no backend",
+    "no second status DB"
+  ],
+  "voiceInputUncertain": [
+    {
+      "heard": "Friseur Bob FB drivercraft",
+      "resolved": "FrizzleBob · Driver Graft",
+      "source": "kaykit-motion-lab-v1/lab.mjs ACTORS.frizzlebob"
+    },
+    {
+      "heard": "Resident Sehens",
+      "resolved": "Resident-Atlas-Szenen",
+      "status": "DEFERRED · SOURCE_REQUIRED (keine Szene gepinnt)"
+    }
+  ],
+  "missing": [],
+  "nextGate": "GEORG HUMAN REVIEW · HUB UX RECOVERY CANDIDATE v2"
+}
