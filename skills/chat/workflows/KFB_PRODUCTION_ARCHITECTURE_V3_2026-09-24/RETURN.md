@@ -1,3 +1,99 @@
+## CURRENT UPDATE · EXTERNAL DEMO RESEARCH RADAR · PASS 1 · 2026-09-26
+
+Status: **PASS 1 COMPLETE · PERSISTED · NO RUNTIME / STAGE / LIVE CHANGE**
+
+### Exact lane
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `chatgpt-web/production-architecture-v3-2026-09-24`
+- Draft PR: **#204**
+- owner: **KFB Web Architecture planning lane**
+- pre-Return handoff head: `762b252453c700e0ec14237b86bcdb079c528b9b`
+- production catalogue remains: **13 strands · 96 jobs · 44 READY · 52 HOLD**
+
+### Research artifact
+
+`EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+
+Pass 1 covers:
+- A · World/environment/procedural Nature;
+- B · WorldBuilder authoring/sculpting;
+- C · modular roads/tracks/world→Race seams;
+- D · lightweight Residents/NPC simulation;
+- E · Card Zones/portals/diegetic interface;
+- F · ToolBox/animation/source-isolation/review.
+
+The report contains **37 HTTPS source/demo links** across GitHub/source, official demos/docs and Reddit/community evidence.
+
+Dropbox was used read-only to identify prior KFB research clusters; no Dropbox mutation was made.
+
+### Strongest routed findings
+
+1. `ENV-PREVIEW-01` — source identity stays fixed while `WORLD_MATCH / SOURCE_ISOLATION / CONSUMER_PRESET` changes presentation.
+2. `WORLD-NATURE-01` — current support/terrain → seeded weighted surface samples → deterministic spacing/exclusion → instanced procedural flora → sparse curated accents.
+3. accepted WB2 — three-mesh-bvh `shapecast → local normals → partial refit` is a performance donor only if a measured brush gate appears.
+4. current Race Track Socket/Stunt Registry — mature road generators support **same topology/socket logic + different cross-section/edge/shoulder/barrier/fence metadata**; no new track generator.
+5. `NPC-AITOWN-KISS-01` — add only bounded ephemeral perception memory; durable semantic memory remains Player Journey.
+6. Card Zone/Stage — render-target portal may preview an instance, but Curtain/Stage keeps enter/return ownership.
+7. `WEB-QUICK-3D-REVIEW` / `MOTION-INTAKE-DIRECT-01` — compact node/motion/skeleton/wireframe/validation facts around the real source object, not another universal editor.
+
+### Checkpoints
+
+- plan persisted: `9751a03b628287f96e24d379364317e4ae9074d1`
+- A–D findings: `5d9d4634399e2df1f68a6776d9e0314ce54b2b36`
+- E–F + synthesis: `febd9c23f1bed1792b72c35464ed45dde74d69b7`
+- research validation: `d3bee179cc44bd6ae09e0759e536166296f867fc`
+- Hub metadata link: `344616c1157962bc88960f70f7435b157989a390`
+- additive changelog: `e1e2d257d96e83ee6dc371ceae1c87fd03d9453c`
+- workflow router: `f313a36e7a977dd8c3fae84ec34c84f91dc99c1c`
+- central chat router: `762b252453c700e0ec14237b86bcdb079c528b9b`
+
+### Validation actually run
+
+Research routing/content integrity: **14/14 PASS**.
+
+Verified:
+- A–F present;
+- candidate blueprints present;
+- all recommended receiver job IDs exist;
+- catalog remains exactly 96 jobs;
+- 96/96 job IDs remain unique;
+- report explicitly adds no new Production Architecture job;
+- report explicitly creates no new public Stage candidate.
+
+Runtime tests: **N/A — runtime files changed = 0**.  
+Browser screenshot/public runtime proof: **N/A — no runtime candidate was built**.  
+Cloudflare deployment: **0 changes**.
+
+### Hub / human route
+
+Existing public Hub navigation only:
+`https://kayfabizarro.pages.dev/kfb-hub/`
+
+No new research Stage route is claimed. The public Hub is not asserted to have changed merely because source metadata changed.
+
+### Files changed by this research slice
+
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/TEST_REPORT.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CHANGELOG.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
+- `skills/chat/START_HERE.md`
+- this `RETURN.md`
+
+### Unresolved / deliberately not promoted
+
+- no external donor has been integrated merely because its demo loaded;
+- no new job was added;
+- older Reddit threads that failed retrieval remain UNKNOWN and are not implementation evidence;
+- optional portal/live-DOM ideas stay later presentation options;
+- public Hub deployment remains owned by HUB-CTRL, not this architecture research lane.
+
+### Exactly one next gate
+
+**Execute the already-READY `ENV-PREVIEW-01` / current World environment integration, using the research radar as donor guidance. Do not start a separate research implementation branch.**
+
 ## CURRENT UPDATE · ENVIRONMENT PREVIEW + WORLD ENVIRONMENT CONSOLIDATION · 2026-09-25
 
 Georg direction:
