@@ -465,3 +465,66 @@ Additional content evidence:
 - runtime code changed: **0 files**.
 - deployment/Cloudflare changed: **0**.
 - human review surface created: **none**; research/navigation only.
+
+
+## Receiving-owner evidence · ToolBox r2 PASS / World r2 STOP · 2026-09-26
+
+### ToolBox r2 · receiving owner PR #185
+
+Runtime-tested owner head:
+`5dcf34bcdf9d87445e927c98f60d41adae72f00e`
+
+GitHub Actions:
+`36197260540` · **SUCCESS**
+
+Executed:
+- coherent static: **31/31 PASS**
+- AN-PROFILE-02 static: **34/34 PASS**
+- coherent Chromium: **20/20 PASS**
+- Animation Studio Chromium: **25/25 PASS**
+- plain review Chromium: **13/13 PASS**
+
+Promoted owner facts:
+- PoseRig owner and Stage mirror synchronized;
+- wrist/intermediate-bone chain fix present;
+- canonical ToolBox locomotion profile module present;
+- measured FrizzleBob Rig_Medium consumer fixture present.
+
+This is technical owner PASS, not Georg visual r2 acceptance.
+
+### World r2 · receiving owner PR #190
+
+Frozen runtime candidate:
+`204afd6dbb1285f8cd77807af0db5fdd6e75308d`
+
+Static:
+**20/20 PASS**
+
+Browser attempts:
+- `36198357755` FAIL
+- `36198517698` FAIL
+- `36198999279` FAIL / stop rule
+
+Final diagnostic before abort:
+- Hürth boots;
+- 700 buildings;
+- terrain/document assertions PASS;
+- 13 semantic locomotion states bind;
+- ToolBox profile resolves;
+- page errors: **0**
+- failed source requests: **0**
+
+Proven failing contract:
+`source-backed clips only (variants labelled)`
+still encodes the old local variant-label vocabulary and rejects the new shared ToolBox/World semantics.
+
+Result:
+**BROWSER GATE FAIL · REPAIR BUDGET EXHAUSTED · RECOVERY EXPORTED**
+
+Recovery:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/`
+
+No Stage/Public/Human PASS for World r2.
+
+Next gate:
+`WORLD-R2-CONTRACT-RESET-01` · test contract only first.
