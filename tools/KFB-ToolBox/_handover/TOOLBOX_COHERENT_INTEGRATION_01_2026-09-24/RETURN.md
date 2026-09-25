@@ -99,3 +99,30 @@ Current next gate for this explicitly authorized lane:
 **AN-PROFILE-02 direct Chat HTML human review · judge 33-clip Library browsing + measured Data readability/usefulness only.**
 
 TB-EYE-01 remains a later ToolBox capability; WorldBuilder Motion consumption stays HOLD until this first Animation Studio consumer review.
+
+## ADDITIVE UPDATE · TOOLBOX r2 OWNER REHOME · 2026-09-26
+
+Claude ToolBox Production r2 has returned and the reusable owner deltas are now re-homed on this existing PR #185 rather than promoting the Inbox bundle as a second ToolBox.
+
+Current tested head:
+`5dcf34bcdf9d87445e927c98f60d41adae72f00e`
+
+Promoted:
+- canonical `kfb-rigs-embed-v3/.../pose-rig.v1.js` wrist/intermediate-bone world-position chain fix;
+- byte-identical Stage-First PoseRig mirror;
+- `stage-first/src/lab/locomotion-profiles.v1.js` canonical KayKit semantic locomotion profile owner;
+- measured FrizzleBob EarRig-v5 Rig_Medium consumer JSON.
+
+Not promoted into this owner:
+- duplicate ear physics (PR #214 remains owner);
+- S39 band runtime (Resident owner remains);
+- CARD_SURF Flight behavior (Travel remains owner);
+- r2 standalone Design shell as a second ToolBox runtime.
+
+Actions run `36197260540` SUCCESS:
+**31/31 static · 34/34 AN-PROFILE static · 20/20 Chromium coherent · 25/25 Animation Studio · 13/13 plain review**.
+
+Current next gate:
+**ToolBox r2 Stage review using the re-homed owners, with a dominant unobstructed 3D stage.**
+
+No merge or Live promotion authorized.
