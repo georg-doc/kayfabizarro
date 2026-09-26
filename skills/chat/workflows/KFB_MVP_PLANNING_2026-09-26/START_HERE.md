@@ -17,6 +17,7 @@ This folder is the token-sparse WSA entry for the next KFB production wave. It d
 Racer working page:
 - `RACER_DESIGN_EXECUTION_OVERVIEW_2026-09-26.md` — current dispatch order + direct brief links; use instead of older Hub/Racer cards.
 - `CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md` — startable-now fresh Claude Design wrapper.
+- `RACER_CROSS_MODE_3D_HUD_NAV_ADDENDUM_2026-09-26.md` — current WALK / DRIVE / FLIGHT adaptive HUD + source-backed 3D navigation extension; no second HUD owner.
 
 Supporting evidence:
 - `ABORTED_WEBCHAT_RECOVERY_INVENTORY_2026-09-26.md` — recent aborted/fragile-chat inventory.
@@ -60,3 +61,5 @@ Binding rules:
 - Playable Track R0 and Cologne OSM R0 remain HOLD.
 
 Execute exactly one bounded first-wave slice at a time from `EXECUTOR_BRIEFINGS_2026-09-26.md`. No mass merge or Live promotion.
+
+Racer dispatch clarification: the WSA decision recorded on this PR approves **JavaScript as authoritative Track Core**. Treat Track Core **W0 as startable now**; Playable Track R0 remains HOLD until W0 → Blender B1–B5 → Web W1 → Claude D1 → closed Web R0 prep are complete.
