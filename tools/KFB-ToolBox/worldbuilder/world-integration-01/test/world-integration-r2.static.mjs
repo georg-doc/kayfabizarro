@@ -12,6 +12,8 @@ const actor=read(root+'wi1-actor.js');
 const play=read(root+'wi1-play.js');
 const world=read(root+'wi1-world.js');
 const self=read(root+'wi1-selftest.js');
+const contract=read(root+'wi1-locomotion-contract.mjs');
+const surface=json(root+'contracts/world-surface-adapter.v1.json');
 const terrain=read('tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js');
 const edit=read('tools/KFB-ToolBox/lib/edit-layer.js');
 const huerth=json(root+'fixtures/huerth-crop-v0.json');
@@ -38,5 +40,9 @@ ok('World selftest covers shared scene document',self.includes('scene document i
 ok('World selftest covers facade rule',self.includes('FACADE_RULE'));
 ok('World selftest covers host support',self.includes('Support')||self.includes('support'));
 ok('World selftest preserves save/reload',self.includes('Reload')||self.includes('reload'));
+ok('World selftest uses structured locomotion contract',self.includes('auditLocomotionRows')&&!self.includes('/no .* clip/'));
+ok('locomotion contract separates ToolBox and World variants',contract.includes("toolbox.playback-variant")&&contract.includes("world.consumer-tuning"));
+ok('one Surface Adapter owns final visible/support query',surface.owners.finalVisibleSupportQuery==='SurfaceAdapter'&&surface.rules.oneResolver===true);
+ok('Surface Adapter preserves WorldBuilder and Race ownership',surface.owners.baseHeight==='WorldBuilder'&&surface.owners.contactPhysics==='Race'&&surface.rules.consumerHeightRecomposition==='forbidden');
 
 console.log('WORLD R2 STATIC PASS '+pass+'/'+pass);
