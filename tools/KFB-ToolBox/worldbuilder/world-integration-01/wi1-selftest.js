@@ -4,6 +4,7 @@
    driven deterministically at 60 Hz. The user's saved world is backed up and restored. */
 import * as THREE from 'three';
 import { makeStroke, addStrokePoint } from '../wb2-terrain-sculpt-01/terrain-sculpt.js';
+import { auditLocomotionRows } from './wi1-locomotion-contract.mjs';
 
 export async function run(A) {
   const W = A.world, P = A.play, rep = [];
@@ -27,7 +28,7 @@ export async function run(A) {
     const act = P.actor.actions, V = P.speeds;
     const need = ['idle', 'walk', 'run', 'sprint', 'backward', 'strafe.left', 'strafe.right', 'jump.start', 'jump.air', 'jump.land', 'crouch', 'sneak', 'crawl'];
     ok('KayKit semantic states bound', need.every((s) => act[s]), need.filter((s) => !act[s]).join(' ') || need.length + ' states');
-    ok('source-backed clips only (variants labelled)', P.profile().rows.every((r) => r.sourceClip && (r.variant == null || /no .* clip/.test(r.variant))), P.profile().rows.filter((r) => r.variant).map((r) => r.state).join(' · ') + ' = playback variants');
+    { const audit = auditLocomotionRows(P.profile().rows); ok('locomotion source/variant contract', audit.ok, audit.errors.join(' · ') || audit.counts.sourceBacked + ' source · ' + audit.counts.toolboxPlaybackVariants + ' ToolBox variant · ' + audit.counts.worldConsumerRows + ' World-tuned rows'); }
     const fb = P.actor.report.face;
     ok('one face owner (graft) · no second eye rig', !fb || (fb.eyeRig === 1 && fb.mouth <= 1), fb ? 'eyeRig ' + fb.eyeRig : 'fallback actor');
     /* 3 · tier chain idle → walk → walk.fast → run → sprint → back down → idle (states from movement) */
