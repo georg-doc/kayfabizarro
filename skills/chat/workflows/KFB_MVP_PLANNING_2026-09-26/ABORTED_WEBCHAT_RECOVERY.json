@@ -8,17 +8,22 @@
     {
       "id": "A1",
       "title": "Billboard B2b-P1 Living Collage",
-      "state": "ORPHANED_CLOSURE",
+      "state": "RECOVERED_OPEN_GATE",
       "confidence": "HIGH",
       "repo": "georg-doc/kayfabizarro",
-      "pr": 212,
-      "head": "5e0d6d7f32d2f5de1faa17933cf3bf12f1b42e99",
+      "pr": 211,
+      "head": "6b29367df59f7c901ae66fea852999f6d62750e7",
       "evidence": {
-        "workflow": 36081170177,
-        "checks": "40/40",
-        "artifact": 10841409354
+        "frozenRuntimeHead": "2348c069a99b57149d6a2685496b5ce1b40ebe1a",
+        "finalBrowserRun": 36205100427,
+        "checks": "39/40",
+        "pageErrors": 0,
+        "httpErrors": 0,
+        "note": "sole red assertion: one already-queued collage tick crossed mode exit (725 -> 726), then remained stable",
+        "olderImplementationProofPr": 212,
+        "olderImplementationProofHead": "5e0d6d7f32d2f5de1faa17933cf3bf12f1b42e99"
       },
-      "nextGate": "Closure-only recovery: Return/Recovery/Test/Hub/Stage handoff; preserve tested runtime."
+      "nextGate": "Web: isolated collage lifecycle/quiescence semantics test. Claude Design: visual review of frozen candidate only; no rebuild/repair pass 3."
     },
     {
       "id": "A2",
