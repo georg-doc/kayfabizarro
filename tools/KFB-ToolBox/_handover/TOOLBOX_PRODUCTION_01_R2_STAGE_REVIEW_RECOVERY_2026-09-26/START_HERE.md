@@ -1,6 +1,6 @@
 # START HERE · ToolBox Production-01 r2 Stage Review Recovery
 
-Status: **PUBLIC STAGE VERIFIED · HUMAN REVIEW NEXT**
+Status: **PUBLIC STAGE VERIFIED · GEORG TUNE · DIRECTION ACCEPTED**
 Date: 2026-09-26
 
 Read `RECOVERY.md`, then `TEST_REPORT.md`, then `RETURN.md`.
@@ -12,6 +12,8 @@ Public route:
 
 The exact Stage, ToolBox front door, live Registry and rendered Hub passed **20/20** in a real public-browser check.
 
-Exactly one next gate: **Georg reviews Source Object → State → Pose/IK and returns PASS / TUNE / REJECT.**
+Human result: **TUNE**. Direction accepted; rendering noise/streaks, grounding, State-loop calibration and below-actor Orbit range are deferred to bounded owner slices.
+
+Next: continue with the next approved production slice; do not reopen this integration review.
 
 No runtime-owner rewrite. No merge. No Live promotion.
