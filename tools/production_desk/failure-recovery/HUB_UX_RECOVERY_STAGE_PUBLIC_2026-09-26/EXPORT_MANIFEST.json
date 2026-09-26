@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.failure-recovery/1",
+  "project": "KFB Hub",
+  "slice": "HUB UX RECOVERY · public Stage verification",
+  "date": "2026-09-26",
+  "status": "STOP_AFTER_TWO_VERIFY_PASSES",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "work/hub-ctrl-01-2026-09-24",
+    "pr": 202
+  },
+  "checkpoints": {
+    "rehome": "66b84ef1ddbac48f343c29d66edccad5276c61ce",
+    "sourceSeal": "290fda4c5394f9ed66f2a619e00c7ac6a56fda95",
+    "stageRouter": "64e57cf893eac300a4b694792a204e076c0b339e",
+    "publicationBranch": {
+      "ref": "cloudflare-live",
+      "head": "69cfd8c6329f23725eefb84fcf908d6526cfd19d"
+    }
+  },
+  "exactBlobs": {
+    "candidate": "1fb367c70412d18ef9b0802c3feb2019357be525",
+    "donorProof": "1b1f67a7ed5497f765ac4d22f56b0933859ce12a",
+    "acceptedDonor": "0de46343ddeb70a5f423876e75dc916ae7200c5b"
+  },
+  "tests": {
+    "sourceSeal": {
+      "pass": 9,
+      "total": 9
+    },
+    "productionDeskActions": "NOT_RUN",
+    "publicBrowser": "BLOCKED_UNKNOWN"
+  },
+  "targetUrls": [
+    "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery/",
+    "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery/donor.html"
+  ],
+  "activeNextGate": "PUBLIC BROWSER VERIFY · HUB UX RECOVERY STAGE"
+}

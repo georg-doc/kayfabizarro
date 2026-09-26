@@ -1,5 +1,28 @@
 # CURRENT UPDATE · ENV-PREVIEW-01 PUBLIC STAGE · 2026-09-26
 
+## 2026-09-26 · Hub UX Recovery v2 · Stage rehome preserved / public browser verify blocked
+
+Status: **STOP AFTER TWO PUBLIC-VERIFY PASSES · CANDIDATE PRESERVED · NO LIVE HUB PROMOTION**
+
+- owner: HUB-CTRL #202 / `tools/production_desk`
+- owner branch / PR: `work/hub-ctrl-01-2026-09-24` / #202
+- exact candidate rehome checkpoint: `66b84ef1ddbac48f343c29d66edccad5276c61ce`
+- source-seal checkpoint: `290fda4c5394f9ed66f2a619e00c7ac6a56fda95`
+- Stage-router checkpoint before stop: `64e57cf893eac300a4b694792a204e076c0b339e`
+- preserved publication branch: `cloudflare-live@69cfd8c6329f23725eefb84fcf908d6526cfd19d`
+- candidate blob: `1fb367c70412d18ef9b0802c3feb2019357be525`
+- accepted donor blob: `0de46343ddeb70a5f423876e75dc916ae7200c5b`
+- donor-proof wrapper blob: `1b1f67a7ed5497f765ac4d22f56b0933859ce12a`
+- source seal: **9/9 PASS**
+- Production-Desk Actions suite: **NOT_RUN on this head** because `.github/workflows/production-desk.yml` is not present on `main`; GitHub emitted no PR run.
+- public branch readback: **PASS**.
+- exact pages.dev browser verification: **UNKNOWN / BLOCKED BY SESSION NETWORK** after two independent attempts.
+- candidate remains preserved as an unlinked Child path; Stage navigation does **not** expose it as a human gate while public verification is unknown.
+- full recovery export: `tools/production_desk/failure-recovery/HUB_UX_RECOVERY_STAGE_PUBLIC_2026-09-26/START_HERE.md`.
+
+Exactly one active next gate: **PUBLIC BROWSER VERIFY · HUB UX RECOVERY STAGE**.
+
+
 Status: **HUB SOURCE → LOOK_AT · PUBLIC STAGE 9/9 PASS · HUMAN REVIEW OPEN**
 
 - Source: PR #218 / `chatgpt-web/env-preview-01-2026-09-25@a50f2fb05eac0a6e9a8f6916905256a1a23a56a5`.

@@ -879,3 +879,12 @@ Still blocked:
 vehicle grounding/contact → hard-clamp/jitter → trails/speedlines → jump/landing.
 
 Cloudflare remains deferred.
+
+## Current routing update · KFB Hub UX Recovery · 2026-09-26
+
+- Owner remains **HUB-CTRL #202 / `tools/production_desk`** on `work/hub-ctrl-01-2026-09-24`.
+- Claude v2 candidate is re-homed byte-identically; accepted donor blob remains `0de46343ddeb70a5f423876e75dc916ae7200c5b`.
+- Source seal **9/9 PASS** and `cloudflare-live` branch readback PASS; exact pages.dev browser surface remains **UNKNOWN** after two blocked verification paths.
+- Do not redesign, retune, merge, replace the root Hub shell or expose a human-test link.
+- Resume only from `tools/production_desk/failure-recovery/HUB_UX_RECOVERY_STAGE_PUBLIC_2026-09-26/START_HERE.md`.
+- Exactly one active gate: **PUBLIC BROWSER VERIFY · HUB UX RECOVERY STAGE**.

@@ -41,20 +41,20 @@
     },
     {
       "id": "hub-ux-recovery",
-      "bucket": "RUNNING",
-      "title": "KFB Hub UX v2 · Candidate eingetroffen",
-      "what": "Claude Session Cut ist da. Akzeptierte Paper/Dark-v2-Sprache, Pocket Inbox, Frische/Reload, Decisions und Resident-Overlay-Prototyp sind im Kandidaten. Kein Live-Publish: erst HUB-CTRL-Rehome und echte Browser/Public-Reviewfläche.",
+      "bucket": "WAITING",
+      "title": "KFB Hub UX v2 · PUBLIC VERIFY BLOCKED",
+      "what": "Claude-v2-Kandidat und akzeptierter Paper/Dark-v2-Donor sind unter HUB-CTRL byte-identisch re-homed. Source-Seal 9/9 PASS; cloudflare-live Branch-Readback PASS. Zwei unabhängige öffentliche Verifikationswege konnten pages.dev aus dieser Sitzung nicht erreichen, daher bleibt der Browserzustand UNKNOWN und es gibt noch keinen Human-Test-Link.",
       "provider": "HUB-CTRL #202 / Web-GitHub Bridge",
       "yourAction": "",
-      "waitingFor": "Candidate unter HUB-CTRL reproduzieren/re-homen; danach direkte pages.dev Review und Georg finaler UX-Gate.",
+      "waitingFor": "PUBLIC BROWSER VERIFY · exakt den konservierten pages.dev Candidate + Donor öffnen; keine Source-Änderung, solange kein echter Marker-/Runtime-Fehler sichtbar ist.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
       "brief": {
-        "label": "Hub UX Session Cut Intake",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
-        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "label": "Hub UX public verification recovery",
+        "path": "tools/production_desk/failure-recovery/HUB_UX_RECOVERY_STAGE_PUBLIC_2026-09-26/START_HERE.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": false
       }
     },

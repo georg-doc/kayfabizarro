@@ -330,3 +330,16 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - no generated Hub HTML, Cloudflare publication or Runtime/Live claim.
 
 - Final PR #222 pin: `1271ca4ea310ec1bc33c9f8e0ba499f890b81b82`; HUB-CTRL config checkpoint `f66a59ee6eaf5bb8b26fdef0406f75b03697c9e6`; no generated/public Hub change.
+
+## 2026-09-26 · Hub UX Recovery v2 · Stage rehome + two-pass public verification STOP
+- Re-homed the exact Claude v2 candidate into the existing HUB-CTRL Stage owner; no source rewrite and no second Hub runtime.
+- Exact blobs preserved: candidate `1fb367c70412d18ef9b0802c3feb2019357be525`, donor proof `1b1f67a7ed5497f765ac4d22f56b0933859ce12a`, accepted donor `0de46343ddeb70a5f423876e75dc916ae7200c5b`.
+- Connector source seal: **9/9 PASS**.
+- Added `tools/production_desk/tests/test_hub_ux_recovery_stage.py`; GitHub Actions remained **NOT_RUN** because the workflow exists only on PR #202, not on `main`.
+- Published only the child payload to `cloudflare-live`; branch readback PASS.
+- Public verify pass 1: integrated web viewer could not access pages.dev.
+- Public verify pass 2: browser/container network failed DNS resolution for `kayfabizarro.pages.dev`.
+- Two-pass rule applied: STOP, preserve candidate, full failure recovery; public Stage navigation now says **PUBLIC VERIFY BLOCKED** and does not expose the unverified human-test link.
+- No root `kfb-hub/index.html` replacement, no Live Hub promotion, no merge.
+- Recovery: `tools/production_desk/failure-recovery/HUB_UX_RECOVERY_STAGE_PUBLIC_2026-09-26/START_HERE.md`.
+- Active next gate: **PUBLIC BROWSER VERIFY · HUB UX RECOVERY STAGE**.
