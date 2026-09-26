@@ -14,7 +14,9 @@ Receiving ToolBox owner remains:
 Recovery/checkpoint branch:
 `chatgpt-web/toolbox-production-02-intake-recovery-2026-09-26`
 
-This branch is documentation/recovery only. It does not become a second runtime owner.
+Recovery PR: **#227** · Draft · no auto-merge
+
+This branch is documentation/recovery only. It does not become a second runtime owner. The exact final branch head must be read back after this Return update.
 
 ## Source preserved
 
