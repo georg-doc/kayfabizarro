@@ -1,5 +1,30 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-26 · ToolBox Production-01 r2 human TUNE
+
+### HUMAN RESULT
+Georg accepted the overall ToolBox r2 direction as **TUNE**. The public review gate is closed; this is not a rejection and does not reopen the integration slice.
+
+### DEFERRED TUNE
+Strong streak/noise artifacts, incorrect actor grounding, several State-loop animation calibrations and the below-actor Orbit-camera range remain bounded follow-ups. They must be handled by their rendering, grounding, animation and shared-camera owners rather than by rewriting ToolBox.
+
+### NEXT
+Continue with the next approved production slice. No merge or Live promotion is authorized by this visual decision alone.
+
+## 2026-09-26 · ToolBox Production-01 r2 public review
+
+### PUBLICATION
+The unchanged PR #221 review candidate is publicly available at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`. The ToolBox front door, live Production Desk Registry and rendered KFB Hub link the same exact route.
+
+### EVIDENCE
+Existing repository gate remains **33/33 PASS**. The exact public Stage/ToolBox/Registry/Hub browser gate is **20/20 PASS**, with 0 page errors and 0 failed public requests.
+
+### BOUNDARY
+No ToolBox runtime owner, actor, motion, PoseRig or EarRig module changed. No merge or Live promotion. Human visual result remains pending.
+
+### NEXT
+Georg reviews Source Object → State loop → Pose/IK and returns PASS / TUNE / REJECT.
+
 ## 2026-09-24 · TOOLBOX-COHERENT-INTEGRATION-01
 
 ### IMPLEMENTATION
@@ -287,3 +312,23 @@ The coherent browser still emits the accepted donor/template 404/theme-icon warn
 
 ### NEXT
 One dominant/unobstructed ToolBox r2 Stage review using the re-homed owner files. Do not revive the failed AN-PROFILE review composition.
+
+
+## 2026-09-26 · ToolBox r2 Stage review recovery · CI PASS
+
+### RECOVERY
+Fresh PR #221 replaces only the failed review/test surface from frozen PR #220. Runtime owners remain PR #185 / EarRig PR #214 / pinned KayKit assets.
+
+### FIX
+- semantic proof is driven by explicit `kfb:semantic-transition` events;
+- semantic timers use real elapsed time rather than the 40 ms render cap;
+- actor framing uses precise skinned visual bounds so EarRig-v5 ear tips are included;
+- Source remains the first isolated view.
+
+### EVIDENCE
+Implementation head `8c25f3a904e4d877cc39367d8b88eed50e202491`.
+Actions `36201152882`: **33/33 browser PASS**.
+Artifact `10892306034`: Source / State / Pose-IK / Mobile inspected; complete ears visible; 0 browser/request failures.
+
+### NEXT
+`TOOLBOX-R2-STAGE-PUBLISH-01`: publish the exact review package plus direct Hub link, verify the exact pages.dev route/build marker, then Georg PASS/TUNE/REJECT. No merge or Live promotion.
