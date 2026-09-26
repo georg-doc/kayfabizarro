@@ -2143,7 +2143,31 @@ Do not create a second role database: extend the shared Motion Library catalogue
 
 ---
 
+## WORLD-R2-STAGE-PREP-01 · Current World human-review gate
+
+**Executor:** ChatGPT Web / existing WorldBuilder + HUB-CTRL publication owner  
+**Execution profile:** `WEB_STANDARD` · no new runtime implementation.  
+**Current source:** PR #190 @ `58028b07d7618926c40ffaec3bd4053dc88c0efd`.
+
+**Outcome:** package the exact Contract-Reset-green World r2 candidate unchanged as a direct KFB Stage review and repeat the same browser sequence.
+
+> @GitHub
+> Read current WorldBuilder PR #190, `tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/CONTRACT_RESET_RETURN.md` and `failure-recovery/NEXT_GATE.md`.
+>
+> The technical gate is already green: 13/13 contract, 24/24 owner/closure, Hürth 55/55, Köln 55/55, WB2 34/34, browser harness 12/12, 0 page/source failures.
+>
+> Package the **unchanged** candidate through the existing KFB Stage/Hub owner. Repeat Hürth → Köln → WB2 browser validation on the packaged build. Publish one direct `https://kayfabizarro.pages.dev/...` route only after the expected source marker is visibly verified.
+>
+> Do not add mobility, camera ownership, OSM carving, Track integration, terrain/editor features or Live promotion.
+>
+> Return exact head, publication files, real browser counts, direct Stage URL, visible proof and exactly one Georg visual/freeplay gate.
+
+---
+
 ## WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement
+
+**CURRENT STATUS · 2026-09-26:** **HOLD behind WORLD-R2-STAGE-PREP-01 + Georg Stage review.**  
+Current WorldBuilder source head is `58028b07d7618926c40ffaec3bd4053dc88c0efd`. Do not start a new Claude refinement pass before the unchanged recovered World r2 candidate is reviewed on Stage.
 
 **Executor:** Claude Design
 
@@ -2214,6 +2238,9 @@ Detailed briefs:
 - `WORLD_ENVIRONMENT_CONSOLIDATION_2026-09-25.md`
 
 ## ENV-PREVIEW-01 · Shared KFB Environment Preview Host
+
+**CURRENT STATUS · 2026-09-26:** **COMPLETE · PUBLIC STAGE VERIFIED · GEORG PASS_WITH_TUNE.**  
+Do **not** start this build prompt again. Consume the accepted adapter in the next bounded World/ToolBox slice. Camera/actor/rendering/lighting tune notes are separate owner work.
 
 **Executor:** ChatGPT Web  
 **Execution profile:** `WEB_STANDARD` · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.  
