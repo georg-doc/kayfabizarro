@@ -387,3 +387,12 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - Track Core remains parallel technical path; R0 remains HOLD;
 - stale B2b lane corrected to PR #211 39/40 frozen recovery state;
 - no generated/public Hub change.
+
+
+## 2026-09-26 · Racer W0 + Cross-Mode HUD source sync
+
+- Racer Track Core lane changed from stale **G0 → W0** wording to **W0 NOW** after the current lead/WSA decision that JavaScript is the authoritative Track Core and Blender/Python is the oracle.
+- Racer Design lane now names the current **Cross-Mode HUD + Billboards** slice: one WALK / DRIVE / FLIGHT HUD grammar, exact proven Factory Arrow as near-world 3D navigator, provider-gated Tacho / Map / Radar.
+- Playable Track R0 remains a separate HOLD lane.
+- source pointer for PR #222 updated to `974989ae29449a5cfab8881d84bfef9aacba22f9`.
+- config-only/source-metadata sync. Generated Hub HTML/public root was not republished and no Cloudflare change is claimed.
