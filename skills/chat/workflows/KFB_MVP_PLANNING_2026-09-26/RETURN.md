@@ -1,6 +1,6 @@
 # RETURN · KFB MVP dispatch prep · 2026-09-26
 
-Status: **WSA REVIEW READY · PLANNING ONLY · NO STAGE · NO LIVE**
+Status: **WSA APPROVED WITH D2/D3/D6 TUNES · PLANNING ONLY · NO STAGE · NO LIVE**
 
 ## Goal
 Prepare a token-sparse, GitHub-backed WSA recon/plan approval packet for the next KFB slices without creating parallel owners or prematurely dispatching blocked Claude Design work.
@@ -67,16 +67,19 @@ Completed on the existing HUB-CTRL owner branch #202.
 - config was fetched back and JSON-parsed after write;
 - GitHub reported **0 PR workflow runs** for both the config checkpoint and final HUB-CTRL documentation head, so no new Hub CI count is claimed.
 
-## Unresolved / WSA gates
-- G0 JavaScript authoritative Track Core decision;
-- shared camera owner approval;
-- world height-authority contract approval;
-- ToolBox r2 publish-before-expansion ordering;
-- ENV-PREVIEW Stage review approval;
-- world-base wording correction in architecture metadata;
+## WSA decision result
+- D0/D1 approved: JavaScript Track Core + contract-only Race contact census;
+- D2 tuned: Camera-Core-0 is recon/contract only; no new owner/module in that slice;
+- D3 tuned: one Surface Adapter resolves final visible/support height;
+- D4/D5 approved: ToolBox r2 and ENV Preview additive Stage review may proceed;
+- D6 tuned: correct superseded world-owner wording in PR #204 and PR #218 metadata, with no runtime migration;
+- D7 approved as optional contract fields only;
+- Playable Track R0 and Cologne OSM R0 remain HOLD.
+
+Unresolved later gate:
 - OSM `rhein-muelheim-v0` provenance/promotion.
 
 ## Exactly one next gate
-**WSA recon + planning approval** using `WSA_RECON_PLAN_APPROVAL_2026-09-26.md`.
+**Dispatch one bounded approved first-wave slice from the updated board.**
 
-No runtime slice starts merely because this planning branch exists.
+Allowed first wave: ENV-PREVIEW Stage, ToolBox r2 Stage, Track-Core G0→W0, or Camera-Core-0 recon. Each remains its own owner/branch/outcome; no mass dispatch or merge.
