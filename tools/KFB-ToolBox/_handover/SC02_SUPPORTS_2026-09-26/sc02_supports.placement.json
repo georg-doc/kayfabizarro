@@ -1,0 +1,226 @@
+{
+ "schema": "kfb.scenery-shell.v0",
+ "id": "sc02-supports",
+ "status": "CANDIDATE · scenery only",
+ "donor": "RKIT-03 rkit3_lib.build_support_v2 (unchanged)",
+ "socket": {
+  "frame": "route frame at s (heading + bank, grade)",
+  "attach": "soffit = road surface - 2.25 m (RKIT body; later from core profile)",
+  "base": "ground(x, z) from terrain/water owner"
+ },
+ "fixture": {
+  "A": "banked S-flyover, deck_half 7.2, peak 13 m, bank = clamp(-18·kappa, ±0.22 rad)",
+  "B": "ground road crossing under A, deck_half 7.2",
+  "ground": "1.2 sin(x/37) + 0.8 cos(z/53)"
+ },
+ "rule": {
+  "spacing": 12.0,
+  "min_height": 3.0,
+  "max_span": 32.0,
+  "foot_r": 4.4,
+  "margin": 1.0,
+  "self_skip": 25.0,
+  "drop": 2.25,
+  "embed": 0.25,
+  "side": 0.0
+ },
+ "stations": [
+  {
+   "s": 86.0,
+   "clear_h": 3.0
+  },
+  {
+   "s": 98.0,
+   "clear_h": 5.05
+  },
+  {
+   "s": 110.0,
+   "clear_h": 6.97
+  },
+  {
+   "s": 122.0,
+   "clear_h": 8.49
+  },
+  {
+   "s": 134.0,
+   "clear_h": 9.38
+  },
+  {
+   "s": 146.0,
+   "clear_h": 9.52
+  },
+  {
+   "s": 158.0,
+   "clear_h": 9.44
+  },
+  {
+   "s": 170.0,
+   "clear_h": 9.42
+  },
+  {
+   "s": 182.0,
+   "clear_h": 9.46
+  },
+  {
+   "s": 194.0,
+   "clear_h": 9.55
+  },
+  {
+   "s": 206.0,
+   "clear_h": 9.7
+  },
+  {
+   "s": 240.0,
+   "clear_h": 10.32
+  },
+  {
+   "s": 252.0,
+   "clear_h": 10.57
+  },
+  {
+   "s": 264.0,
+   "clear_h": 10.83
+  },
+  {
+   "s": 276.0,
+   "clear_h": 11.09
+  },
+  {
+   "s": 288.0,
+   "clear_h": 11.33
+  },
+  {
+   "s": 300.0,
+   "clear_h": 11.57
+  },
+  {
+   "s": 312.0,
+   "clear_h": 11.61
+  },
+  {
+   "s": 324.0,
+   "clear_h": 10.72
+  },
+  {
+   "s": 336.0,
+   "clear_h": 9.02
+  },
+  {
+   "s": 348.0,
+   "clear_h": 6.79
+  },
+  {
+   "s": 360.0,
+   "clear_h": 4.35
+  }
+ ],
+ "blocked": [
+  {
+   "s_from": 218.0,
+   "s_to": 239.0,
+   "reason": "keep-out B"
+  }
+ ],
+ "long_spans": [
+  [
+   206.0,
+   240.0
+  ]
+ ],
+ "styles": {
+  "classic": {
+   "checks": {
+    "other_corridor_intrusions": 0,
+    "own_corridor_intrusions": 0,
+    "plate_top_per_strip_local_y": [
+     -2.037,
+     -1.892
+    ],
+    "plate_target_y": -2.0,
+    "plate_ok": true,
+    "lowest_point_vs_ground_m": [
+     -0.8,
+     -0.8
+    ],
+    "foot_ok": true,
+    "PASS": true
+   },
+   "supports": 22,
+   "objects": 66,
+   "style_relocations": [],
+   "glb_kb": 556
+  },
+  "trunk": {
+   "checks": {
+    "other_corridor_intrusions": 0,
+    "own_corridor_intrusions": 0,
+    "plate_top_per_strip_local_y": [
+     -2.037,
+     -1.892
+    ],
+    "plate_target_y": -2.0,
+    "plate_ok": true,
+    "lowest_point_vs_ground_m": [
+     0.0,
+     0.0
+    ],
+    "foot_ok": true,
+    "PASS": true
+   },
+   "supports": 22,
+   "objects": 44,
+   "style_relocations": [],
+   "glb_kb": 1807
+  },
+  "vine": {
+   "checks": {
+    "other_corridor_intrusions": 0,
+    "own_corridor_intrusions": 0,
+    "plate_top_per_strip_local_y": [
+     -2.037,
+     -1.892
+    ],
+    "plate_target_y": -2.0,
+    "plate_ok": true,
+    "lowest_point_vs_ground_m": [
+     0.0,
+     0.0
+    ],
+    "foot_ok": true,
+    "PASS": true
+   },
+   "supports": 22,
+   "objects": 44,
+   "style_relocations": [
+    {
+     "station": 11,
+     "s_from": 240.0,
+     "s_to": 241.0
+    }
+   ],
+   "glb_kb": 1829
+  },
+  "rope": {
+   "checks": {
+    "other_corridor_intrusions": 0,
+    "own_corridor_intrusions": 0,
+    "plate_top_per_strip_local_y": [
+     -2.037,
+     -1.892
+    ],
+    "plate_target_y": -2.0,
+    "plate_ok": true,
+    "lowest_point_vs_ground_m": [
+     -0.8,
+     -0.8
+    ],
+    "foot_ok": true,
+    "PASS": true
+   },
+   "supports": 22,
+   "objects": 66,
+   "style_relocations": [],
+   "glb_kb": 1811
+  }
+ }
+}
