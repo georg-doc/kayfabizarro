@@ -1,0 +1,118 @@
+name: Clay Gemini Seam QA
+
+on:
+  push:
+    branches:
+      - chatgpt-web/clay-gemini-seam-qa-2026-09-26
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  seam-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install image QA dependencies
+        run: python -m pip install --disable-pip-version-check pillow numpy
+
+      - name: Measure periodic edge continuity and build repeat evidence
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import hashlib
+          import numpy as np
+          from PIL import Image, ImageChops
+
+          src = Path("tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/Gemini_Generated_Image_rx1fvxrx1fvxrx1f.jpeg")
+          out = Path("qa_out")
+          out.mkdir(exist_ok=True)
+
+          with src.open("rb") as f:
+              sha256 = hashlib.sha256(f.read()).hexdigest()
+
+          im = Image.open(src).convert("RGB")
+          a = np.asarray(im, dtype=np.float32)
+          h, w, _ = a.shape
+
+          lr = np.abs(a[:, 0, :] - a[:, -1, :])
+          tb = np.abs(a[0, :, :] - a[-1, :, :])
+          x_adj = np.abs(a[:, 1:, :] - a[:, :-1, :])
+          y_adj = np.abs(a[1:, :, :] - a[:-1, :, :])
+
+          lr_mae = float(lr.mean())
+          tb_mae = float(tb.mean())
+          x_adj_mae = float(x_adj.mean())
+          y_adj_mae = float(y_adj.mean())
+          ratio_x = lr_mae / max(x_adj_mae, 1e-9)
+          ratio_y = tb_mae / max(y_adj_mae, 1e-9)
+
+          def classify(r):
+              if r <= 1.25:
+                  return "LIKELY_CONTINUOUS"
+              if r <= 1.75:
+                  return "BORDERLINE"
+              return "SEAM_RISK"
+
+          metrics = {
+              "source": str(src),
+              "sha256": sha256,
+              "format": "JPEG",
+              "width": w,
+              "height": h,
+              "mode": "RGB",
+              "left_right_boundary_mae": round(lr_mae, 6),
+              "top_bottom_boundary_mae": round(tb_mae, 6),
+              "mean_internal_x_neighbor_mae": round(x_adj_mae, 6),
+              "mean_internal_y_neighbor_mae": round(y_adj_mae, 6),
+              "boundary_to_internal_ratio_x": round(ratio_x, 6),
+              "boundary_to_internal_ratio_y": round(ratio_y, 6),
+              "x_class": classify(ratio_x),
+              "y_class": classify(ratio_y),
+              "note": "Boundary ratios compare opposite-edge discontinuity against ordinary adjacent-pixel variation. This is technical evidence, not human visual approval or a mathematical certification. JPEG compression can perturb edge pixels."
+          }
+          (out / "metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
+
+          # 3x3 repeat evidence at review-friendly resolution.
+          tile = im.copy()
+          tile.thumbnail((512, 512), Image.Resampling.LANCZOS)
+          canvas = Image.new("RGB", (tile.width * 3, tile.height * 3))
+          for yy in range(3):
+              for xx in range(3):
+                  canvas.paste(tile, (xx * tile.width, yy * tile.height))
+          canvas.save(out / "repeat_3x3.jpg", quality=94, subsampling=0)
+
+          # Offset-wrap moves original boundaries to the center for seam inspection.
+          shifted = ImageChops.offset(im, w // 2, h // 2)
+          shifted.thumbnail((1536, 1536), Image.Resampling.LANCZOS)
+          shifted.save(out / "offset_center.jpg", quality=94, subsampling=0)
+
+          summary = Path(__import__("os").environ["GITHUB_STEP_SUMMARY"])
+          summary.write_text(
+              "## Clay Gemini seam QA\n\n"
+              f"- source: `{src}`\n"
+              f"- dimensions: **{w}×{h}** · JPEG/RGB\n"
+              f"- X boundary MAE: **{lr_mae:.4f}**; ordinary X-neighbor MAE: **{x_adj_mae:.4f}**; ratio: **{ratio_x:.3f}** → **{classify(ratio_x)}**\n"
+              f"- Y boundary MAE: **{tb_mae:.4f}**; ordinary Y-neighbor MAE: **{y_adj_mae:.4f}**; ratio: **{ratio_y:.3f}** → **{classify(ratio_y)}**\n"
+              "- Generated: `repeat_3x3.jpg`, `offset_center.jpg`, `metrics.json`.\n"
+              "- This is technical evidence only; human visual review remains required.\n",
+              encoding="utf-8"
+          )
+
+          print(json.dumps(metrics, indent=2))
+          PY
+
+      - name: Upload seam evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: clay-gemini-rx1f-seam-qa
+          path: qa_out/
+          if-no-files-found: error
