@@ -17,9 +17,9 @@
       "id": "wsa-mvp-dispatch-review",
       "bucket": "LOOK_AT",
       "title": "WSA · MVP Dispatch Recon / Planfreigabe",
-      "what": "PR #222 ist jetzt zusätzlich die Recovery-Inventur für abgebrochene/fragile Web-Chats. Recon trennt vollständig gerettete Slices, offene Gates, echte Closure-Orphans und nicht formalisierte Recon. Dazu liegt ein C0-Checkpoint-Protokoll für lange Research/CI/Browser-Jobs zur WSA-Freigabe vor.",
+      "what": "PR #222 enthält MVP-Planung, Fragile-Webchat-Recovery und Long-Job-Protokoll. Korrektur: B2b-P1 ist kein Closure-Orphan; aktueller Recovery-Owner ist PR #211 mit eingefrorenem 39/40-Kandidaten. Web testet nur Lifecycle/Quiescence, Claude Design darf den Kandidaten unverändert visuell zeigen. City Builder Bits bleibt der echte Recon-Orphan.",
       "provider": "WSA Work Lead · review only",
-      "yourAction": "PR #222 lesen: zuerst START_HERE, dann WSA Decision Register und ABORTED_WEBCHAT_RECOVERY_INVENTORY. D8 Long-Job-Protokoll APPROVE/TUNE/HOLD; außerdem A1 B2b-P1 Closure und A9 City Bits Recon freigeben oder halten.",
+      "yourAction": "WSA prüft D8 Long-Job-Protokoll. Für B2b-P1: kein Rebuild/Repair Pass 3; Web-Lifecycle-Test separat, Claude nur Visual Review. City Bits Recon separat freigeben.",
       "waitingFor": "",
       "questions": [
         "G0 JavaScript Track Core?",
@@ -31,7 +31,7 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 222,
       "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
-      "expectedHead": "1271ca4ea310ec1bc33c9f8e0ba499f890b81b82",
+      "expectedHead": "8eb2e41bce9f4c306dd0ce37df28c44dd26c25e1",
       "brief": {
         "label": "WSA Recon + Aborted Web-chat Recovery",
         "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/START_HERE.md",
@@ -451,7 +451,7 @@
   ],
   "wsa": {
     "state": "REVIEW_ONLY",
-    "text": "WSA prüft PR #222 als Plan-/Recovery-Paket: Owner/Dispatch-Gates plus Inventur abgebrochener Web-Chats und das C0-Checkpoint-Protokoll. Keine Runtime bauen. Zwei aktuelle Recovery-Orphans: B2b-P1 Closure (#212) und City Builder Bits Anwendungsmatrix."
+    "text": "WSA prüft PR #222. B2b-P1 ist recovered/open-gate auf PR #211 (39/40 frozen); City Builder Bits bleibt Recon-Orphan. Keine Runtime im WSA-Review."
   },
   "standards": [
     {
