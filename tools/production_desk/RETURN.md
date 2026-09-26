@@ -1,3 +1,16 @@
+# CURRENT UPDATE · CLAY PRIORITY CORRECTION · 2026-09-26
+
+Status: **TEXTURE SECONDARY · BLENDER LANE PARALLEL · NOT MVP-BLOCKING**
+
+- Georg reports the texture question is already handled with Blender MCP.
+- Asset-01 hash/source retrieval and Asset-03 look review are removed from the active WSA/Human critical path.
+- PR #231 records the correction at `60e34f26facf1f4d203833b2ebbf6574d185dc6a`; an exact Blender artifact/ref remains a later intake fact, not a current PASS claim.
+- Clay Hub lane moved `LOOK_AT → WAITING` with no user action.
+- World r2 remains the active bounded MVP gate: `WORLD-R2-STAGE-PREP-01`.
+- No runtime, Stage, Cloudflare publication, merge or Live promotion changed.
+
+---
+
 ### Concurrent ClayBound asset review sync
 
 HUB-CTRL metadata now routes **ClayBound · Asset 03 r2 · Human Review** to PR #228 / `tools/KFB-ToolBox/_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/START_HERE.md`.
