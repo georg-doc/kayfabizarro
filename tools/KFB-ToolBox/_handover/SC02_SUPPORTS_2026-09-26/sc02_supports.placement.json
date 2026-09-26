@@ -22,7 +22,8 @@
   "self_skip": 25.0,
   "drop": 2.25,
   "embed": 0.25,
-  "side": 0.0
+  "side": 0.0,
+  "footing": "round"
  },
  "stations": [
   {
@@ -139,16 +140,17 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     -0.8,
-     -0.8
+     -0.947,
+     -0.875
     ],
     "foot_ok": true,
+    "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 556
+   "glb_kb": 576
   },
   "trunk": {
    "checks": {
@@ -165,6 +167,7 @@
      0.0
     ],
     "foot_ok": true,
+    "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
    "supports": 22,
@@ -187,6 +190,7 @@
      0.0
     ],
     "foot_ok": true,
+    "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
    "supports": 22,
@@ -211,16 +215,17 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     -0.8,
-     -0.8
+     -0.947,
+     -0.875
     ],
     "foot_ok": true,
+    "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 1811
+   "glb_kb": 1831
   }
  }
 }

@@ -5,6 +5,12 @@
 **Georg (26.09):** "top! dann gerne weiter". This came after SC01 (PR #226) and is recorded as positive feedback on SC01, not as a formal look PASS.
 **Status:** CANDIDATE. Scenery only. No merge. No Stage or Live.
 
+**Update v2 (Georg 26.09):**
+- The footing is **round by default**; the square footing stays as a variant (`SC_RULE={'footing': 'square'}`).
+- The round footing is sunk 0.8 m. Its outer rim sits 5 cm below the ground and follows `ground(x, z)` all around, and a soft shoulder rises to a level top ring under the shaft foot.
+- The donor is unchanged: SC02 swaps the footing object after the donor has built it.
+- trunk and vine keep their roots and have no footing.
+
 ## Defects and limits first
 
 1. **The routes are stand-ins until W0.**
@@ -20,7 +26,7 @@
    - On the stand-in ground this passes.
    - On steeper terrain, one side of the roots may float. There is no slope check yet.
 5. **The checks are vertex-based.** Same limit as SC01.
-6. **Performance:** a full run of four styles takes about 43 s, near the 60 s budget. GLBs are not Draco-compressed; the organic styles are about 1.8 MB for 22 supports.
+6. **Performance:** a full run of four styles takes about 49 s with round footings, near the 60 s budget. Next step if it grows: one style per call. GLBs are not Draco-compressed; the organic styles are about 1.8 MB for 22 supports.
 7. **Not yet tested:**
    - self-crossing routes (figure-8, loop self-overlap). The self keep-out code exists (`self_skip` window) but has no fixture;
    - water as ground.
@@ -49,7 +55,8 @@
 | vertices inside road B's corridor | 0 | 0 | 0 | 0 |
 | vertices inside own corridor (road A) | 0 | 0 | 0 | 0 |
 | plate top vs soffit + embed (target −2.00) | −2.04…−1.89 ✅ | ✅ | ✅ | ✅ |
-| lowest point vs ground | −0.80 (footing sunk) ✅ | 0.00 (roots) ✅ | 0.00 ✅ | −0.80 ✅ |
+| lowest point vs ground | −0.95…−0.88 (round footing sunk) ✅ | 0.00 (roots) ✅ | 0.00 ✅ | −0.95…−0.88 ✅ |
+| round-footing rim above ground (max) | −0.05 ✅ | n/a | n/a | −0.05 ✅ |
 | relocations | – | – | #11: 240 → 241 | – |
 | **PASS** | ✅ | ✅ | ✅ | ✅ |
 
@@ -60,9 +67,11 @@
 - `lib/scenery_route.py`: shared route stand-in (samples, frames, windowed projection, horizontal keep-out query). Pure maths.
 - `sc02_supports.placement.json`: the rule, stations, blocked ranges, long spans and per-style checks.
 - `glb/sc02_supports_{classic,trunk,vine,rope}_fixture.glb`: supports on the fixture, +Y up.
-- `prev/sc02_overview_crossing.png` and `prev/sc02_side_crossing_gap.png`: Blender viewport, self-check (classic set).
-- Local only: `KFB_SC02_SUPPORTS_v1.blend` in Dropbox `KFB Racetrack Blender Kit/SC02-SUPPORTS/`. Collection `SC02_SUPPORTS`; classic is at Blender (1400, −3000), and trunk, vine and rope follow every 360 m in x.
+- `prev/sc02_overview_crossing.png` and `prev/sc02_side_crossing_gap.png`: v1, square footings.
+- `prev/sc02_round_footings_v2.png`: v2 default, round footings.
+- `IDEA_SPRING_PILLAR_LAUNCH.md`: Georg's spring/bumper pillar idea, with an architecture note.
+- Local only: `KFB_SC02_SUPPORTS_v2.blend` (v1 = square footings) in Dropbox `KFB Racetrack Blender Kit/SC02-SUPPORTS/`. Collection `SC02_SUPPORTS`; classic is at Blender (1400, −3000), and trunk, vine and rope follow every 360 m in x.
 
 ## Exactly one next gate
 
-**Georg · look/choice in Blender** (local view is set): which pillar styles to keep, and whether the 34 m gap over road B should get a spanning piece (girder or portal frame) or stay open.
+**Georg · look/choice in Blender** (local view is set). The round footing is accepted as the default. Still open: which pillar styles to keep, and whether the 34 m gap over road B should get a spanning piece (girder or portal frame) or stay open.
