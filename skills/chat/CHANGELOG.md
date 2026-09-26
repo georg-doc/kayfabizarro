@@ -1896,3 +1896,17 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+
+## 2026-09-26 · ToolBox Production-02 intake recovery checkpoint
+
+### RECOVERY / SOURCE SAFE
+- exact intake: `tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r1/`;
+- dual-location verification: GitHub ↔ Dropbox exact name/type/size match for **19/19 top-level · 7/7 kfb-lib · 6/6 evidence · 2/2 docs · 1/1 blender**;
+- Dropbox ZIP preserved at `/CLAUDE/KFB ToolBox Production-01-2.zip` (436462 bytes);
+- Claude export reports **27/27 preview self-test PASS**; clean HTTP, zipcheck, receiving-owner regression, Cloudflare and Georg acceptance remain **NOT RUN**;
+- receiving ToolBox runtime owner remains Draft PR #185; Production-02 entry/new modules were absent at observed owner head `10a83a63acd76d29f6867d15640f7861efc57b00`;
+- recovery entry: `tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_02_INTAKE_RECOVERY_2026-09-26/START_HERE.md`;
+- no Stage route, no merge, no Live promotion.
+
+Exactly one next gate: **FACE-VIS-01 / intake review before selective owner rehome**.
