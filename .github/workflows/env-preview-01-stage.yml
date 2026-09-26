@@ -1,0 +1,27 @@
+name: ENV-PREVIEW-01 Stage
+on:
+  push:
+    branches: [chatgpt-web/env-preview-01-2026-09-25]
+    paths:
+      - 'kfb-hub/stage/toolbox/environment-preview-01/**'
+      - 'tools/KFB-ToolBox/tests/env_preview_01_stage_test.mjs'
+      - '.github/workflows/env-preview-01-stage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm install --no-save playwright@1.51.1
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/env-preview-stage-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/environment-preview-01/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/env-preview-stage-http.log
+          exit 1
+      - run: node tools/KFB-ToolBox/tests/env_preview_01_stage_test.mjs

@@ -7,7 +7,7 @@
   "implementationCheckpoint": "32e12c837d347368fc4ae0bac1fa880a191aa258",
   "staticEvidenceCheckpoint": "733e5e7da1623f79c73062f23252497ae5597548",
   "browserEvidenceCheckpoint": "3327a901f1b20ea49e38b4c6f8d8aea29f9a57e6",
-  "environmentOwner": {
+  "presentationDonor": {
     "repo": "georg-doc/KFB-Travel-Globe",
     "head": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
     "mirrorSources": {
@@ -28,6 +28,11 @@
         "blob": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74"
       }
     }
+  },
+  "worldOwners": {
+    "authority": ["WorldBuilder", "OSM", "current terrain owners"],
+    "heightSupport": "Surface Adapter contract pending",
+    "travelRole": ["sky", "weather", "light", "mood", "selected camera/mobility donors"]
   },
   "consumers": [
     {
@@ -69,7 +74,9 @@
     ]
   },
   "publication": {
-    "stage": "NOT_PUBLISHED",
+    "stage": "PACKAGE_READY_LOCAL_BROWSER_9_OF_9",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/",
+    "publicVerified": false,
     "live": "UNCHANGED"
   }
 }

@@ -1,6 +1,6 @@
 # RETURN · ENV-PREVIEW-01 · 2026-09-25
 
-Status: **LOCAL_BROWSER_VERIFIED · HUMAN REVIEW OPEN · NOT STAGE · NOT LIVE**
+Status: **STAGE PACKAGE LOCAL BROWSER VERIFIED · PUBLICATION PENDING · NOT LIVE**
 
 ## Outcome
 
@@ -51,8 +51,10 @@ Final handoff head is the commit containing this Return.
 
 ## Owners preserved
 
-Travel/World remains environment truth:
-`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`.
+WorldBuilder, OSM and the current terrain owners remain authoritative for world construction and height/support truth.
+
+The pinned Travel source is a **presentation donor**, not the world owner:
+`georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a` supplies the current sky/light/fog/mood profile used by this comparison.
 
 Receiving hosts retain:
 - renderer;
@@ -73,6 +75,7 @@ No second terrain/sky/world owner was introduced.
 - local real Chromium/WebGL: **15/15 PASS**
 - existing Production Resource Registry on browser checkpoint: **SUCCESS**
 - page errors in both consumer proofs: **0**
+- portable Stage wrapper: **9/9 local real Chrome PASS**
 
 Browser artifact:
 `10886214792`
@@ -93,10 +96,14 @@ The source actor/Resident stays the same across each A/B.
 
 ## Publication
 
-Cloudflare Stage: **NOT PUBLISHED**.  
-Live: **UNCHANGED**.
+Cloudflare Stage package prepared at:
+`kfb-hub/stage/toolbox/environment-preview-01/`.
 
-There is intentionally no human test URL yet; local browser verification is the current development state.
+Intended human route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/`
+
+Public verification: **PENDING**.
+Live: **UNCHANGED**.
 
 ## Unresolved / deferred
 
@@ -107,4 +114,4 @@ There is intentionally no human test URL yet; local browser verification is the 
 - no promotion of the inbox consumer candidates to canonical runtime ownership in this slice.
 
 Exactly one next gate:
-**package ENV-PREVIEW-01 as an additive Cloudflare Stage comparison and let Georg review Resident Atlas + ToolBox World Match vs Source Isolation.**
+**publish the exact prepared Stage package, verify its marker and both consumers on the fixed Cloudflare route, then let Georg review World Match vs Source Isolation.**

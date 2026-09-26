@@ -130,3 +130,12 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+# 2026-09-26 · ENV-PREVIEW-01 portable Stage package
+
+- packaged the existing PR #218 Resident Atlas and ToolBox comparison under `kfb-hub/stage/toolbox/environment-preview-01/`;
+- copied only the exact required consumer files plus the pinned sky-preset donor;
+- kept a two-button, full-viewport review shell with no explanatory UI wall;
+- corrected metadata: Travel/TinySkies is a presentation donor, while WorldBuilder/OSM/current terrain owners retain world and height authority;
+- 30/30 source-contract checks PASS;
+- 9/9 portable Stage real-Chrome checks PASS;
+- Cloudflare publication and Georg review remain pending; Live unchanged.

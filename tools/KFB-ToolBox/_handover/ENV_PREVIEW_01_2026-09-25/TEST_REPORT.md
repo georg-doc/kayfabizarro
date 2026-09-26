@@ -1,6 +1,6 @@
 # ENV-PREVIEW-01 · TEST REPORT
 
-Status: **LOCAL_BROWSER_VERIFIED · HUMAN REVIEW OPEN · NOT STAGE · NOT LIVE**  
+Status: **SOURCE + PORTABLE STAGE LOCAL BROWSER VERIFIED · PUBLICATION PENDING · NOT LIVE**
 Date: 2026-09-25  
 PR: **#218**
 
@@ -88,5 +88,27 @@ Visual inspection confirms that both real consumers visibly change between the c
 - no public Cloudflare Stage has been created;
 - no Georg visual acceptance is claimed.
 
+## Portable Stage package · 2026-09-26
+
+Route package:
+`kfb-hub/stage/toolbox/environment-preview-01/`
+
+The package contains the two exact real consumers, their required local support files, the shared adapter and the exact pinned `sky-presets.js` donor. Only import paths were made portable; consumer/runtime behavior was not redesigned.
+
+Local real Chrome result:
+**9/9 PASS**
+
+- Stage build marker;
+- exact PR #218 source-head marker;
+- Resident Atlas WORLD_MATCH;
+- Resident Travel presentation-source pin;
+- ToolBox WORLD_MATCH;
+- ToolBox Travel presentation-source pin;
+- compact environment selector visible;
+- zero page/request errors;
+- narrow viewport without horizontal overflow.
+
+This is local Stage evidence, not public Cloudflare evidence.
+
 Exactly one next gate:
-**public Stage packaging of the two real consumer comparisons for Georg visual review, without promoting either consumer or the adapter Live.**
+**publish this exact package on the fixed Cloudflare Stage route and run the same marker/consumer browser gate before Georg visual review.**
