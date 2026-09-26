@@ -47,7 +47,7 @@ Planning/docs only. Runtime/browser/Stage tests: 0.
 ### Recon result
 - added `ABORTED_WEBCHAT_RECOVERY_INVENTORY_2026-09-26.md` and machine-readable `ABORTED_WEBCHAT_RECOVERY.json`;
 - 10 recent fragile/aborted lanes classified as recovered-complete, recovered-open-gate, orphaned-closure, recon-not-formalized or intentional-hold;
-- current true orphans: **A1 B2b-P1 closure** and **A9 City Builder Bits application recon**;
+- current correction: A1 B2b-P1 is recovered/open-gate on PR #211; A9 City Builder Bits remains the recon orphan;
 - external Demo Research A–L confirmed fully persisted; broad research is not restarted;
 - ToolBox r2, World r2, Hub UX, ENV-PREVIEW and Track Core all have durable current continuation gates.
 
