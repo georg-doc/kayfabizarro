@@ -396,3 +396,31 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - Playable Track R0 remains a separate HOLD lane.
 - source pointer for PR #222 updated to `974989ae29449a5cfab8881d84bfef9aacba22f9`.
 - config-only/source-metadata sync. Generated Hub HTML/public root was not republished and no Cloudflare change is claimed.
+
+
+## 2026-09-26 · ClayBound production lane sync
+
+### SOURCE / INPUT
+Registered the current ClayBound / handmade material intake from main:
+`tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md`.
+
+Four NotebookLM PDFs are pinned as source-only evidence:
+- ClayBound_Production_Pipeline.pdf
+- Digital_Clay_Grammar.pdf
+- Diorama_Texture_Atlas.pdf
+- KFB_ClayBound_Production_Spec.pdf
+
+They were not opened, rendered or web-optimized in this sync.
+
+### HUB METADATA
+Added one `CAN_START` lane:
+**ClayBound · Production Assets**.
+
+Added one briefing and one self-service strand with seven jobs:
+- 1 READY · P0 · CLAY-ASSET-01;
+- 6 HOLD · core library, Blender POC, approved-asset manifest, PDF web optimization, stronger seam QA, secondary handmade/utility assets.
+
+The private 50-item KFB Clay Asset Studio queue remains the detailed execution source; it is intentionally not exploded into 50 Hub cards.
+
+### BOUNDARY
+No root Hub publication, no Cloudflare deployment, no PDF processing, no asset integration and no Live claim.
