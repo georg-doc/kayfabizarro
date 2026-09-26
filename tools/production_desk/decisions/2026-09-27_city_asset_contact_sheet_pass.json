@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.hub-decision/1",
+  "kind": "ingested-decision",
+  "ingestedAt": "2026-09-26T23:25:49.952Z",
+  "owner": "HUB-CTRL #202 · tools/production_desk",
+  "sourcePacket": {
+    "exportedAt": "2026-09-26T23:24:07.823Z",
+    "sourceCommit": "b9d934b1ee096a251fa5518304561b84e9fdc6c9",
+    "contentHash": "manual-b9d934b1-pd-pool-intake-sync"
+  },
+  "decision": {
+    "itemId": "city-asset-contact-sheet-intake",
+    "value": "PASS",
+    "decidedAt": "2026-09-26T23:23:43.433Z",
+    "note": "kaykit & tiny treats first, kenney für den rest, ggf. angepasst, erstmal alle kenney cars bis auf das zu kleine police car"
+  },
+  "applied": {
+    "bucket": "WAITING",
+    "rationale": "Human review is complete; the accepted selection rule now waits for bounded Asset Librarian / WorldBuilder intake.",
+    "config": "tools/production_desk/config.json",
+    "registry": "registry/production/v1/lanes.json"
+  }
+}
