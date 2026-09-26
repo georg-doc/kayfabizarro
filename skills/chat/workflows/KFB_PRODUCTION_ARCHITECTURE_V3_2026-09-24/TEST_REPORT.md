@@ -1,3 +1,30 @@
+## 2026-09-26 · BL-OSM-CLAY-01 briefing + Hub catalogue validation
+
+Status: **10/10 PASS · briefing/catalogue/Hub-registry metadata only · runtime/browser N/A**
+
+Validated after the Blender-MCP OSM Cologne clay preparation:
+
+1. PASS — detailed briefing exists at `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`.
+2. PASS — catalogue contains exactly one job id `bl-osm-clay-01`.
+3. PASS — no duplicate briefing IDs are present in the 97-job catalogue.
+4. PASS — `BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender` resolves to exactly one prompt section across the configured prompt sources.
+5. PASS — WorldBuilder strand `currentReady` includes `bl-osm-clay-01`.
+6. PASS — catalogue totals are **13 strands · 97 jobs · 43 READY · 54 HOLD**.
+7. PASS — live Hub registry mirror contains the exact `bl-osm-clay-01` card.
+8. PASS — live Hub registry resolves the job's full prompt and exact prompt-source metadata.
+9. PASS — live Hub self-service totals are **97 jobs · 43 READY · 54 HOLD · 97 prompts**.
+10. PASS — live registry manifest content hash was recomputed from the eight registry payloads after the self-service change.
+
+Runtime files changed by this preparation: **0**.
+Blender execution/render tests: **0 — briefing only; execution is the next gate**.
+Cloudflare Stage files changed: **0**.
+Exact Hub Stage browser proof for the newly added card: **NOT RUN / NOT CLAIMED**.
+Live promotion: **none**.
+
+Detailed brief research includes BlendSwap clay donors, Poly Haven CC0 PBR reference and MOSAIQ / BlenderGIS / Blosm OSM→Blender comparison oracles while preserving OSM City Lab as geography/provenance owner.
+
+---
+
 ## 2026-09-26 · Card Zone / Biome / Environment recovery validation
 
 Status: **15/15 PASS · docs/source recovery only · runtime tests N/A**
