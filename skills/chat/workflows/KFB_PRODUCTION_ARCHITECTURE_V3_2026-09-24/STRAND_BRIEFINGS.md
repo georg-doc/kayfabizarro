@@ -2273,3 +2273,44 @@ Prepared HOLD behind Biome/Mood + Nature + accepted support adapter. Determinist
 ## CZ-ENV-01 · Card Zone × Current Environment
 
 Prepared HOLD behind ENV-PREVIEW-01 + accepted Card Zone recipe seam. Current host supplies environment/terrain truth; Card Zone supplies carve/calm, local support, exact fluid, stack/reveal/Beam, Card Cube/Face Focus and collection event. No hidden second voxel world.
+
+
+---
+
+## BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender
+
+**Executor:** Blender MCP / Claude Code  
+**Execution profile:** `BLENDER_STANDARD` · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.  
+**Detailed briefing:** `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`  
+**Outcome:** one source-exact Köln Dom/Hbf Blender comparison proving whether the current OSM massing can carry a convincing Claybound-inspired KFB clay presentation without moving geography/runtime ownership.
+
+> @GitHub @Dropbox @Blender
+> Read:
+> - `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md` completely;
+> - current `tools/osm-city-lab/START_HERE.md` + `README.md`;
+> - current `dom-zentrum-v0` CLAUDE_CONTEXT / PROVENANCE / SOURCE_SPEC / normalized source;
+> - `tools/KFB-ToolBox/_inbox/KFB Racetrack Blender Kit/ONBOARDING_BLENDER_MCP_CHAT.md`.
+>
+> Execute **BL-OSM-CLAY-01 only**.
+>
+> Start in a fresh Blender file. Import a small source-exact Dom/HBF crop from the existing KFB normalized city source and visibly prove that source object **without clay** first. Preserve OSM IDs and local-metre identity.
+>
+> Then isolate and compare the material donors before integration:
+> 1. BlendSwap 29812 · Clay shader / fingerprints · CC-BY;
+> 2. BlendSwap 25508 · Procedural Material Pack · CC0, including Clay + Asphalt;
+> 3. optional Poly Haven Clay Plaster / CC0 only if it adds a genuinely different surface-scale reference.
+>
+> Produce the same city crop under the same camera/light as:
+> `SOURCE_CLEAN | CLAY_SURFACE_ONLY | CLAY_FORM_SURFACE`.
+>
+> `CLAY_FORM_SURFACE` may add restrained bevel/rounding + low-frequency, object-normalized, ground-anchored deformation seeded deterministically by OSM identity. It is presentation geometry only; do not modify City Lab geography/collision/export truth.
+>
+> Keep clay surface scale coherent across object sizes; avoid “OSM boxes with noisy texture”. Prefer matte rough response and soft contact/form shadows. Do not change Dom/HBF landmark ownership.
+>
+> KFB runtime remains web/Three.js/GLB. Do not assume complex Cycles nodes survive glTF: if a runtime handoff is useful, bake standard PBR maps and keep clean/source geometry separately.
+>
+> Return one compact contact sheet (street 3/4, elevated 3/4, top sanity, close material crop), the isolated donor sheet, `.blend`, actual scripts, provenance, optional GLB/bakes and `RETURN.md`.
+>
+> Do not execute the other Blender queue items in this gate. Track Core 1A waits for TRACK-CORE-0; SC01 bridge is look-review only; Billboard B3 needs concept first; FrizzleBob body-family rig and Orc drummer stay with their owners.
+>
+> Stop after two failed repair passes on the same visual/import gate. No Cloudflare publication from this Blender POC.
