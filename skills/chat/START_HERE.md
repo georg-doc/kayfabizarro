@@ -7,6 +7,20 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## CURRENT TOOLBOX REVIEW · 2026-09-26 · PUBLIC STAGE VERIFIED
+
+ToolBox Production-01 r2 is now the bounded current review surface:
+
+- runtime owner: Draft PR #185;
+- review recovery: Draft PR #221;
+- repository browser evidence: **33/33 PASS**;
+- exact public Stage + ToolBox front door + live Registry + rendered Hub: **20/20 PASS**;
+- direct review: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`;
+- Source Object first, then State loop, then Pose/IK;
+- full FrizzleBob/EarRig-v5 silhouette visible; 0 public page/request failures.
+
+This supersedes the older ToolBox review-transport HOLD below for the r2 review gate only. The old AN-PROFILE transport remains rejected history. Current human gate is Georg **PASS / TUNE / REJECT**. No merge or Live promotion.
+
 ## CURRENT TOOLBOX SLICE · 2026-09-24 · HUMAN FAIL / HOLD
 
 Current owner: **KFB ToolBox / Stage-First integration** on Draft PR **#185**, branch `chatgpt-web/toolbox-source-lock-2026-09-23`.
