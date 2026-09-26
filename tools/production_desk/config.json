@@ -14,6 +14,47 @@
   },
   "lanes": [
     {
+      "id": "city-asset-contact-sheet-intake",
+      "bucket": "LOOK_AT",
+      "title": "Stadtmöblierung · Asset-Kontaktbogen",
+      "what": "Neuer Kontaktbogen im Inbox-Eingang: KayKit zuerst, Kenney zweite Wahl, Assets im Build-Maßstab neben 1,85-m-Figur. Er ist ein Auswahl-/Review-Artefakt, noch kein Asset-Librarian- oder WorldBuilder-Owner.",
+      "provider": "World / Asset selection intake",
+      "yourAction": "Kontaktbogen prüfen und Nehmen / Nein / Prüfen plus kurze Notizen exportieren. Vor Hub-Stage zuerst fehlende Laufzeitabhängigkeiten und echte Quellpfade verifizieren.",
+      "waitingFor": "",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "brief": {
+        "label": "Stadtmöblierung · Source Intake",
+        "path": "tools/KFB-ToolBox/_inbox/KFB Asset Kontaktbogen · Stadt.dc.html",
+        "ref": "main",
+        "pasteReady": false
+      }
+    },
+    {
+      "id": "toolbox-production-02-r2-intake",
+      "bucket": "LOOK_AT",
+      "title": "ToolBox Production-02 r2 · Sichtabnahme",
+      "what": "Neuer Claude-Design-Session-Cut mit Studio, Animation Studio und Rigging. LOAD_PASS ist belegt; r2-Selbsttest, Clean Run und Georgs Sichtprüfung sind noch offen. Animation Lab v1 darf nicht aus dem Gedächtnis nachgebaut werden.",
+      "provider": "Claude Design → ToolBox receiving owner",
+      "yourAction": "Im Rigging-Reiter nur die sechs benannten Punkte prüfen: Lider, Ohr-Basis, Body, Schatten, Talk und Bottom-Bar. PASS/TUNE/FAIL zurückgeben.",
+      "waitingFor": "",
+      "questions": [
+        "Liegen die Clay-Lider sauber auf dem Augapfel und schließen Glide/Fold korrekt?",
+        "Bleiben Ohr-Basis, Body-Grenzen, Schatten, Talk und Bottom-Bar visuell stabil?"
+      ],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "brief": {
+        "label": "ToolBox Production-02 r2 · START HERE",
+        "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r2/START_HERE.md",
+        "ref": "main",
+        "pasteReady": false
+      }
+    },
+    {
       "id": "public-domain-pool-pd01",
       "bucket": "CAN_START",
       "title": "Public-Domain-Pool · Vier-Quellen-Smoke-Test",
