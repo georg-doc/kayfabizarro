@@ -1,0 +1,67 @@
+{
+ "schema": "kfb.texture-set.v0",
+ "id": "ClayDandruff02",
+ "source_set": "clay2",
+ "source": "Dandruff - \"Clay seamless textures\" (https://dandruff.itch.io/clay-seamless-textures), made with RandTextureGen/Xargiv",
+ "license": "CC BY (generator terms: generated images CC BY, commercial use allowed, attribution required). Not CC0.",
+ "attribution": "Clay texture by Dandruff (dandruff.itch.io), generated with RandTextureGen / Xargiv (DD-moe)",
+ "license_review": "kayfabizarro PR #230, CLAY_PRODUCTION_SOURCE_REVIEW_2026-09-26.md",
+ "kfb_conversion": {
+  "normal": "DirectX -> OpenGL (G flipped)",
+  "roughness": "1 - smoothness",
+  "orm": "R=AO, G=roughness, B=metal 0",
+  "mottle": "greyscale of diffuse for palette tinting (diffuse is baked red; do not use as final colour)",
+  "metallic": "discarded",
+  "height": "not shipped (8-bit, very low range)",
+  "edge": "not shipped"
+ },
+ "kfb_note": "stronger relief, roughness 0.50-1.0",
+ "role": "candidate - fine-grain / micro layer (Asset 02 slot) for the Clay Master; Georg decides",
+ "qa": {
+  "size": [
+   1024,
+   1024
+  ],
+  "normal_source_convention": "DirectX",
+  "corr_G_vs_drow": -0.855,
+  "corr_R_vs_dcol": -0.867,
+  "roughness_range": [
+   0.502,
+   1.0
+  ],
+  "ao_range": [
+   0.494,
+   1.0
+  ],
+  "height_levels": 44,
+  "height_note": "8-bit, very low range -> not shipped; use normal",
+  "metallic": "discarded (clay = 0)",
+  "seam_ratio": {
+   "basecolor": [
+    0.988,
+    0.988
+   ],
+   "normal": [
+    0.927,
+    1.044
+   ],
+   "roughness": [
+    0.994,
+    0.993
+   ],
+   "ao": [
+    0.998,
+    0.99
+   ]
+  },
+  "files": {
+   "ClayDandruff02_ao.png": "82030f38bbd8983f",
+   "ClayDandruff02_diffuse.png": "fcb9cb7c4012f741",
+   "ClayDandruff02_mottle.png": "576961e36e9b36fa",
+   "ClayDandruff02_normal.png": "a0793a46a4fbdb54",
+   "ClayDandruff02_orm.png": "959c099e241ee7d2",
+   "ClayDandruff02_roughness.png": "9a0cd040a65a6df4"
+  },
+  "kb": 6834
+ }
+}
