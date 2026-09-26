@@ -130,9 +130,9 @@ WSA action: approve as non-blocking future requirements in W0 contracts.
 
 ### D8 · Timeout-safe long jobs / orphan recovery
 
-Current recon found two recent real orphans:
-- **B2b-P1 PR #212**: implementation + CI green, closure envelope missing;
-- **KayKit City Builder Bits recon**: source inventory exists, requested application matrix missing.
+Current recon correction:
+- **B2b-P1 is recovered, not orphaned**: latest PR #211 failure-recovery freezes the candidate at 39/40 after two repair passes; Web owns the isolated lifecycle test, Claude Design may only show the frozen candidate unchanged.
+- **City Builder Bits remains the real recon orphan**: source inventory exists, application matrix missing.
 
 Candidate protocol:
 `LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md`
