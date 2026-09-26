@@ -1,6 +1,6 @@
 # KFB MVP Dispatch Prep · WSA recon + planning approval · 2026-09-26
 
-Status: **PLANNING CANDIDATE · WSA REVIEW REQUIRED · NO RUNTIME · NO STAGE · NO LIVE**
+Status: **WSA APPROVED WITH D2/D3/D6 TUNES · BOUNDED DISPATCH OPEN · NO MASS EXECUTION**
 
 Owner: Georg / KFB lead planning  
 Branch: `chat/wsa-mvp-dispatch-prep-2026-09-26`  
@@ -40,14 +40,14 @@ From `main@388e9087…`:
 - Race runtime/physics owner remains `georg-doc/KFB-Stunt-Car-Race`.
 - Motion Library v2: PR #213; EarRig v5: PR #214.
 
-## One planning gate
+## Current gate
 
-**WSA recon + plan approval only.**
+WSA recon is complete. The recorded result is **APPROVE WITH D2/D3/D6 TUNES**.
 
-WSA should:
-- verify the refs/owners in the decision memo;
-- approve/correct the dispatch order and the small owner contracts;
-- classify each listed slice START / WAIT / DROP;
-- make no product merge or Live promotion in this review.
+Binding rules:
+- Camera-Core-0 is recon/contract only and creates no new owner/module;
+- one Surface Adapter resolves final visible/support height;
+- superseded Travel-world ownership wording must be corrected in PR #204 and PR #218 metadata without runtime migration;
+- Playable Track R0 and Cologne OSM R0 remain HOLD.
 
-After WSA approval, execute only the named first gates in `EXECUTOR_BRIEFINGS_2026-09-26.md`.
+Execute exactly one bounded first-wave slice at a time from `EXECUTOR_BRIEFINGS_2026-09-26.md`. No mass merge or Live promotion.
