@@ -452,21 +452,24 @@
     {
       "id": "claybound-materials",
       "bucket": "LOOK_AT",
-      "title": "ClayBound · Production Assets",
-      "what": "Build the KFB clay / handmade material library sequentially: approved seamless textures first, then Blender material proof, stronger seam QA and secondary craft assets.",
+      "title": "ClayBound · Asset 03 r2 · Human Review",
+      "what": "Asset 01 is human-accepted. Asset 02 is explicitly deferred. Asset 03 r2 is a 2048×2048 16-bit Non-Color meso-height candidate with 4/4 tile criteria PASS; r3 improved sculpt language but failed X/Y seams and is recovery evidence only. Two repair passes are spent.",
       "provider": "KFB Clay Asset Studio + Blender MCP",
-      "yourAction": "Review Asset 1 candidate: source image + plugin QA + 3×3 repeat / edge evidence; decide PASS or NEEDS FIX.",
+      "yourAction": "Review Asset 03 r2 in the current ChatGPT handoff. PASS authorizes one isolated Blender CLAY-B0/B1 proof; TUNE/REJECT starts a fresh Asset-03 slice from r3 sculpt language + PR #173 seam donor.",
       "waitingFor": "",
-      "questions": [],
+      "questions": [
+        "Ist Asset 03 r2 grob und handmodelliert genug für den KFB-Clay-Look?"
+      ],
       "repo": "georg-doc/kayfabizarro",
-      "branch": "main",
-      "expectedHead": "b286d14dd37b89f8952b969d8fd394a48275d841",
+      "branch": "claude/claybound-blender-lane-plan-2026-09-26",
+      "expectedHead": "19d51b70157f03ae44e7a02a71313ef2c6da06c1",
       "brief": {
-        "label": "ClayBound Material Production",
-        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
-        "ref": "main",
+        "label": "ClayBound Asset Pipeline · Start",
+        "path": "tools/KFB-ToolBox/_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/START_HERE.md",
+        "ref": "claude/claybound-blender-lane-plan-2026-09-26",
         "pasteReady": false
-      }
+      },
+      "pr": 228
     }
   ],
   "wsa": {
