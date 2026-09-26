@@ -1086,3 +1086,24 @@ Private personal ChatGPT plugin **KFB Clay Asset Studio** is now registered as *
 It does not replace ToolBox, Asset Librarian, Blender/MCP or any game shader/runtime owner. No asset has been generated or promoted yet.
 
 Exactly one next gate: **Asset 1 — Smooth matte clay seamless texture → source + 3×3 repeat human review.**
+
+
+## 2026-09-26 · ClayBound production lane + NotebookLM source decks
+
+Current ClayBound / handmade-material work is now routed as one bounded KFB production lane.
+
+Source intake:
+`tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md`
+
+New source-only NotebookLM decks:
+- `ClayBound_Production_Pipeline.pdf`
+- `Digital_Clay_Grammar.pdf`
+- `Diorama_Texture_Atlas.pdf`
+- `KFB_ClayBound_Production_Spec.pdf`
+
+The four PDFs are large and **were not opened or web-optimized** during the intake. Optimize derived copies later only if browser delivery is actually needed.
+
+HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus seven compact catalog jobs. The private KFB Clay Asset Studio 50-item queue remains the detailed execution source rather than becoming 50 Hub cards.
+
+Exactly one current gate:
+**CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
