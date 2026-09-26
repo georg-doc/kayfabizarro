@@ -20,10 +20,12 @@ Claude Design’s Playable Track R0 SOURCE_REQUIRED stop is accepted as correct.
 - repo: `georg-doc/kayfabizarro`
 - branch: `chat/wsa-mvp-dispatch-prep-2026-09-26`
 - base: `main@388e90875a0b28b9241f126f26ba44456419e43d`
-- PR: to be opened after final metadata checkpoint
+- Draft PR: **#222**
+- current head after this Return update: recorded by PR metadata; verify before handoff
 - no merge requested
 
-## Files added
+## Files changed
+Planning folder:
 - `START_HERE.md`
 - `WSA_RECON_PLAN_APPROVAL_2026-09-26.md`
 - `EXECUTOR_BRIEFINGS_2026-09-26.md`
@@ -32,8 +34,11 @@ Claude Design’s Playable Track R0 SOURCE_REQUIRED stop is accepted as correct.
 - `RETURN.md`
 - `CHANGELOG.md`
 
-all under:
-`skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/`.
+Router:
+- `skills/chat/START_HERE.md`
+- `skills/chat/CHANGELOG.md`
+
+Total PR #222 files: **9**.
 
 ## Checks performed
 Documentation/planning slice:
