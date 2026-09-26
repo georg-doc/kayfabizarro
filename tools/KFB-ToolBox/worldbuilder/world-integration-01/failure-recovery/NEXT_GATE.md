@@ -1,4 +1,14 @@
-# NEXT GATE · WORLD-R2-CONTRACT-RESET-01
+# NEXT GATE · WORLD-R2-STAGE-PREP-01
+
+The contract-reset gate passed without changing runtime owners.
+
+Package the unchanged recovered World r2 candidate through the existing KFB Stage owner, repeat the exact Hürth → Cologne → WB2 browser sequence on the packaged build, and expose one direct `kayfabizarro.pages.dev` human-review route only after the expected source marker is visible.
+
+No new World features, mobility, OSM corridor carving, camera owner, Track integration or Live promotion in this gate.
+
+---
+
+## Completed prior gate · WORLD-R2-CONTRACT-RESET-01
 
 ## Scope
 
@@ -36,5 +46,5 @@ If the contract-only change passes and later runtime assertions fail, open a new
 
 ## Exit
 
-PASS → resume Stage preparation.
+PASS → resume Stage preparation. **Completed 2026-09-26.**
 FAIL → preserve diagnostics and return to architecture; no automatic repair chain.
