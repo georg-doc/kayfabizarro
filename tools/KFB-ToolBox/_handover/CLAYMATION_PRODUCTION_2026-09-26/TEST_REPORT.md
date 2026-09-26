@@ -8,3 +8,5 @@
 - Not run: Blender, runtime/GLB, ToolBox/WorldBuilder/Race integration, edge pixel QA on the later r1, visual acceptance of Asset 03, mobile browser QA, four PDF content audits.
 
 Public Stage proves **briefing publication only**, not the clay material in a game. Georg's material look/gameplay review remains open.
+
+- New Gemini source QA: 2048×2048 RGB JPEG pinned to main `4daf059`, SHA-256 `05ae7c6fc97ce7b4094288ca01dca626f32e88d3e182f521f3db6f0b86041d33`; opposite-edge RGB MAE x **5.538**, y **5.534** /255 versus immediate inside neighbors x **4.304**, y **3.911**. Visual 3×3 shows joins and dominant motif repetition: **raw seamless FAIL**. See `GEMINI_IMAGE_SEAM_QA_2026-09-26.md`. Blender sphere/plane and human Web Chat approval pending.

@@ -29,3 +29,7 @@ No runtime or source model changed. No binary asset approved in this slice. The 
 - Georg's selection of a current KFB model/zone for first Blender calibration remains open.
 
 **Exactly one next gate:** recover and hash-check Asset 01 r1 and its 3×3 proof, then isolate one KFB source object for Blender CLAY-B0/B1.
+
+## Gemini intake · 2026-09-26
+
+Main `4daf059` added a 2048² JPEG. Visual handmade relief is promising, but raw seam/repeat QA fails; exact source SHA and method in `GEMINI_IMAGE_SEAM_QA_2026-09-26.md`. Web Chat has a specific review gate in `WEB_CHAT_BRIEF.md`. No asset number advanced and no Blender/game integration claimed. Public Stage is a review surface only.
