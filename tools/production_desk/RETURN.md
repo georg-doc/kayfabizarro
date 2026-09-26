@@ -987,3 +987,17 @@ Exactly one next gate:
 Final PR #222 pin: `1271ca4ea310ec1bc33c9f8e0ba499f890b81b82`
 HUB-CTRL config commit: `f66a59ee6eaf5bb8b26fdef0406f75b03697c9e6`.
 The WSA recovery lane now pins the exact final planning head rather than a moving branch snapshot. Generated Hub HTML/public root remain unchanged.
+
+
+## 2026-09-26 · Racer Design working page sync
+
+Status: **SOURCE METADATA UPDATED · NO PUBLICATION CLAIM**
+
+- added separate CAN_START lane `racer-design-hud-billboards` for the current productive Claude Design slice;
+- lane points to PR #222 current Fresh Chat Start for HUD + Billboard System;
+- existing Track-Core lane remains the technical G0→W0 path;
+- Playable Track R0 remains SOURCE_REQUIRED HOLD;
+- stale B2b Hub lane corrected to current PR #211 frozen 39/40 recovery truth;
+- generated Hub HTML/public root unchanged; no Cloudflare publication.
+
+Exactly one current Claude Racer gate: **HUD + Billboard visual system**.
