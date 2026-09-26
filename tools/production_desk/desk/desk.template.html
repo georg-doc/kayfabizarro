@@ -531,7 +531,7 @@ class Component extends DCLogic {
      this.reload('initial');
    }
 
-   diffCount(a,b){
+  diffCount(a,b){
     if(!a||!b)return 0;
     const A={};((a.lanes||{}).lanes||[]).forEach(l=>A[l.id]=sig(l));
     const B=((b.lanes||{}).lanes||[]);let n=0;
@@ -539,15 +539,26 @@ class Component extends DCLogic {
     return n+Object.keys(A).length;
   }
 
+  registryTime(reg){
+    const m=reg&&reg.manifest||{};
+    const t=Date.parse(m.checkedAt||m.generatedAt||'');
+    return Number.isFinite(t)?t:0;
+  }
+
   async reload(mode){
     if(this._busy)return;this._busy=true;
     const manual=mode!=='poll';
     if(manual)this.setState({reload:{phase:'loading',at:new Date(),detail:'',n:0}});
     const cur=this.state.reg,curSrc=this.state.source;
-    let result=null;const errs=[];
+    let result=null;const errs=[],older=[];
     for(const src of SOURCES){
       try{
         const manifest=await fetchJSON(src.base+'/manifest.json');
+        const curTime=this.registryTime(cur),nextTime=this.registryTime({manifest});
+        if(cur&&curTime&&nextTime&&nextTime<curTime){
+          older.push(src.label+' ist älter als der sichtbare Stand');
+          continue;
+        }
         if(cur&&curSrc&&curSrc.id===src.id&&cur.manifest.contentHash===manifest.contentHash&&cur.manifest.checkedAt===manifest.checkedAt){result={same:true,src};break;}
         const parts=await Promise.all(FILES.map(f=>fetchJSON(src.base+'/'+f+'.json')));
         const reg={manifest};FILES.forEach((f,i)=>reg[f]=parts[i]);
@@ -556,6 +567,10 @@ class Component extends DCLogic {
     }
     this._busy=false;
     const now=new Date();
+    if(!result&&older.length&&cur){
+      if(manual)this.setState({reload:{phase:'nochange',at:now,detail:older.join(' · '),n:0}});
+      return;
+    }
     if(!result){if(manual||this.state.reload.phase!=='error')this.setState({reload:{phase:'error',at:now,detail:errs.join(' · '),n:0}});return;}
     if(result.same){if(manual)this.setState({reload:{phase:'nochange',at:now,detail:'',n:0}});return;}
     const n=this.diffCount(cur,result.reg);
