@@ -2,6 +2,13 @@
 
 Status: **PLANNING RECOVERY · NO RUNTIME / NO STAGE WRITE**
 
+## Georg priority correction · 2026-09-26
+
+Asset-01 texture/hash work is **secondary / DEFERRED_NON_BLOCKING**. Georg reports it has already been handled with Blender MCP. Do not restart a source crawl and do not emit `SOURCE_REQUIRED` as an MVP stop. An exact Blender result is accepted into planning only after its durable artifact/ref is supplied.
+
+Current WSA next gate:
+**WORLD-R2-STAGE-PREP-01** on PR #190.
+
 ## Recover in this order
 
 1. `skills/chat/START_HERE.md` from current GitHub;
@@ -54,19 +61,11 @@ Products:
 9. No Clay asset changes ToolBox/WorldBuilder/Race/OSM ownership.
 10. No Blender proof counts as runtime integration.
 
-## If the chat dies during C0
+## If the Blender return is missing
 
-Resume by checking:
-- current PR #231 head;
-- current PR #228 `ASSET_MANIFEST.json`;
-- whether an exact file location was newly recorded for Asset 01 r1.
+Do not reconstruct the texture result. Record the Blender result as `REF_PENDING` and continue only work that does not depend on it. Do not repeat general GitHub/Dropbox searches already documented.
 
-If no exact location exists, finish C0 as:
-`SOURCE_REQUIRED · accepted manifest/hash preserved · no substitute used`.
-
-Do not repeat general GitHub/Dropbox searches already documented.
-
-## If C0 passes
+## If an exact Blender return arrives
 
 Open only PR #228 `BLENDER_MCP_BRIEF.md` plus the exact selected static KFB donor.
 
@@ -84,7 +83,7 @@ This route is not a clay-in-game proof.
 
 ## Stop rules
 
-- missing exact source after bounded check → SOURCE_REQUIRED;
+- missing exact Blender ref → REF_PENDING / non-blocking unless Clay itself is the named acceptance target;
 - same gate fails twice → freeze/export;
 - timeout / stream cache expiry → UNKNOWN, inspect exact ref/run;
 - no new owner or substitute asset;
@@ -92,4 +91,4 @@ This route is not a clay-in-game proof.
 
 ## Exactly one next gate
 
-**C0 SOURCE LOCK · Asset 01 r1 exact bytes + SHA verification.**
+**WORLD-R2-STAGE-PREP-01 · exact package of the tested PR #190 candidate for Stage/Human review.**
