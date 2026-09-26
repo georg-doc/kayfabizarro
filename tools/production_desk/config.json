@@ -451,25 +451,23 @@
     },
     {
       "id": "claybound-materials",
-      "bucket": "LOOK_AT",
-      "title": "ClayBound · Asset 03 r2 · Human Review",
-      "what": "Asset 01 is human-accepted. Asset 02 is explicitly deferred. Asset 03 r2 is a 2048×2048 16-bit Non-Color meso-height candidate with 4/4 tile criteria PASS; r3 improved sculpt language but failed X/Y seams and is recovery evidence only. Two repair passes are spent.",
+      "bucket": "WAITING",
+      "title": "ClayBound · Blender MCP separat · nicht MVP-blockierend",
+      "what": "Georg stuft die Textur als sekundär ein und hat sie bereits im Blender-MCP-Strang geklärt. WSA wiederholt weder Asset-01-Hashsuche noch Asset-03-Review. Ein exakter Blender-Return wird erst bei späterer ToolBox/World-Integration aufgenommen; bis dahin blockiert Clay kein MVP.",
       "provider": "KFB Clay Asset Studio + Blender MCP",
-      "yourAction": "Review Asset 03 r2 in the current ChatGPT handoff. PASS authorizes one isolated Blender CLAY-B0/B1 proof; TUNE/REJECT starts a fresh Asset-03 slice from r3 sculpt language + PR #173 seam donor.",
-      "waitingFor": "",
-      "questions": [
-        "Ist Asset 03 r2 grob und handmodelliert genug für den KFB-Clay-Look?"
-      ],
+      "yourAction": "",
+      "waitingFor": "Nur bei Bedarf: exakter Blender-MCP-Artifact/Ref für die spätere Integration. Kein aktueller Human Gate.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "branch": "claude/claybound-blender-lane-plan-2026-09-26",
-      "expectedHead": "19d51b70157f03ae44e7a02a71313ef2c6da06c1",
+      "branch": "claude/coworker-next-sprints-2026-09-26",
+      "expectedHead": "60e34f26facf1f4d203833b2ebbf6574d185dc6a",
       "brief": {
-        "label": "ClayBound Asset Pipeline · Start",
-        "path": "tools/KFB-ToolBox/_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/START_HERE.md",
-        "ref": "claude/claybound-blender-lane-plan-2026-09-26",
+        "label": "Clay priority correction",
+        "path": "skills/chat/workflows/COWORKER_NEXT_SPRINTS_2026-09-26/RETURN.md",
+        "ref": "claude/coworker-next-sprints-2026-09-26",
         "pasteReady": false
       },
-      "pr": 228
+      "pr": 231
     }
   ],
   "wsa": {
