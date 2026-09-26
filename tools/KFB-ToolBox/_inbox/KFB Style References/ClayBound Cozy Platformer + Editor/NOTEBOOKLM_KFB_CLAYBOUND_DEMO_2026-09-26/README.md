@@ -161,6 +161,25 @@ For the next production-deck run, include **both** the original research round a
 4. Run `PROMPT_A_PRODUCTION_DECK.md`.
 5. Save the useful texture/shader/material outputs and the generated deck for review.
 
+
+## KFB Clay Asset Studio · execution lane
+
+A private ChatGPT plugin now exists for sequential production of the actual raster assets:
+
+- **KFB Clay Asset Studio v0.1.0**
+- Plugin ID: `plugins_6ab7de04f0c881919ab552b1a8f702b3`
+- Release: `pluginrel_6ab7de067680819184bb6c981df7489c`
+- Skill: `produce-clay-assets`
+- Plugin: https://chatgpt.com/plugins/plugins_6ab7de04f0c881919ab552b1a8f702b3
+- GitHub documentation: [KFB_CLAY_ASSET_STUDIO_PLUGIN_v0.1.0_2026-09-26.md](../KFB_CLAY_ASSET_STUDIO_PLUGIN_v0.1.0_2026-09-26.md)
+
+Role split:
+
+- NotebookLM / research = define and decompose the required material system.
+- Clay Asset Studio = generate **one concrete raster asset at a time**, QA it, and wait for human acceptance.
+
+Current plugin gate: **Asset 1 — Smooth matte clay seamless texture**. No asset has yet been generated or promoted.
+
 ## Next gate
 
 **Run the 15-slide Production Deck with Research Round 01 + its KFB review as sources, then preserve the result for visual review.**
