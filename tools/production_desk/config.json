@@ -451,11 +451,11 @@
     },
     {
       "id": "claybound-materials",
-      "bucket": "CAN_START",
+      "bucket": "LOOK_AT",
       "title": "ClayBound · Production Assets",
       "what": "Build the KFB clay / handmade material library sequentially: approved seamless textures first, then Blender material proof, stronger seam QA and secondary craft assets.",
       "provider": "KFB Clay Asset Studio + Blender MCP",
-      "yourAction": "Start Asset 1: Smooth matte clay seamless texture; review source + 3×3 repeat before Asset 2.",
+      "yourAction": "Review Asset 1 candidate: source image + plugin QA + 3×3 repeat / edge evidence; decide PASS or NEEDS FIX.",
       "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
