@@ -1,0 +1,142 @@
+name: HUB Briefing Sync F1 Publish
+
+on:
+  push:
+    branches:
+      - work/hub-ctrl-01-2026-09-24
+    paths:
+      - ".github/workflows/hub-briefing-sync-f1-publish.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: kfb-hub-briefing-sync-f1-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout exact HUB-CTRL source
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Production Desk unit tests
+        run: |
+          python3 -m unittest discover -s tools/production_desk/tests -p 'test_build.py' -v
+          python3 -m unittest discover -s tools/production_desk/tests -p 'test_render_desk.py' -v
+
+      - name: Build current registry
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/production_desk/build.py --online --out registry/production/v1
+
+      - name: Validate registry and briefing closure
+        run: |
+          python3 tools/production_desk/build.py --validate registry/production/v1
+          python3 - <<'PY'
+          import json
+          m=json.load(open('registry/production/v1/manifest.json'))
+          s=json.load(open('registry/production/v1/self_service.json'))
+          p=json.load(open('registry/production/v1/problems.json'))
+          assert m['counts']['problems']==0, m['counts']
+          assert s['counts']['jobs']==96, s['counts']
+          assert s['counts']['prompts']==96, s['counts']
+          assert s['counts']['READY']==42, s['counts']
+          assert s['counts']['HOLD']==54, s['counts']
+          assert not p['problems'], p
+          print('BRIEFING_CLOSURE 96/96 · 42 READY · 54 HOLD · 0 problems')
+          PY
+
+      - name: Render accepted Hub UX v2 shell
+        run: python3 tools/production_desk/render_desk.py
+
+      - name: Hub UX v2 contract
+        run: |
+          mkdir -p /tmp/jsd && (cd /tmp/jsd && npm install --no-save --no-audit --no-fund jsdom@24 >/dev/null)
+          NODE_PATH=/tmp/jsd/node_modules node tools/production_desk/tests/hub_ux_v2_contract_test.mjs \
+            tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html registry/production/v1
+
+      - name: Seal publication payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/kfb-hub-publish
+          mkdir -p /tmp/kfb-hub-publish/registry/production/v1 /tmp/kfb-hub-publish/runtime
+          cp -a registry/production/v1/. /tmp/kfb-hub-publish/registry/production/v1/
+          cp tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html /tmp/kfb-hub-publish/index.html
+          cp kfb-hub/runtime/support.js /tmp/kfb-hub-publish/runtime/support.js
+          cp kfb-hub/runtime/resident-overlay.v1.js /tmp/kfb-hub-publish/runtime/resident-overlay.v1.js
+          python3 - <<'PY'
+          import json, os
+          m=json.load(open('registry/production/v1/manifest.json'))
+          marker={
+            'schema':'kfb.hub-root-build/1',
+            'sourceCommit':os.environ['GITHUB_SHA'],
+            'registryContentHash':m['contentHash'],
+            'registryCheckedAt':m['checkedAt'],
+            'shell':'HUB-UX-RECOVERY-V2',
+            'briefings':96,
+            'ready':42,
+            'hold':54,
+            'problems':0
+          }
+          json.dump(marker,open('/tmp/kfb-hub-publish/ROOT_BUILD.json','w'),indent=2)
+          open('/tmp/kfb-hub-publish/ROOT_BUILD.json','a').write('\n')
+          print(json.dumps(marker))
+          PY
+
+      - name: Publish exact registry to bot branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git reset --hard "$GITHUB_SHA"
+          git switch -C bot/production-desk-update
+          rm -rf registry/production/v1
+          mkdir -p registry/production/v1 tools/production_desk/desk
+          cp -a /tmp/kfb-hub-publish/registry/production/v1/. registry/production/v1/
+          cp /tmp/kfb-hub-publish/index.html tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html
+          git add registry/production/v1 tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html
+          git commit -m "chore: publish current KFB Production Desk registry"
+          git push --force origin HEAD:bot/production-desk-update
+
+      - name: Publish exact tested Hub root to cloudflare-live
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin cloudflare-live
+          git switch -C cloudflare-live FETCH_HEAD
+          mkdir -p kfb-hub/runtime
+          cp /tmp/kfb-hub-publish/index.html kfb-hub/index.html
+          cp /tmp/kfb-hub-publish/runtime/support.js kfb-hub/runtime/support.js
+          cp /tmp/kfb-hub-publish/runtime/resident-overlay.v1.js kfb-hub/runtime/resident-overlay.v1.js
+          cp /tmp/kfb-hub-publish/ROOT_BUILD.json kfb-hub/ROOT_BUILD.json
+          git add kfb-hub/index.html kfb-hub/runtime/support.js kfb-hub/runtime/resident-overlay.v1.js kfb-hub/ROOT_BUILD.json
+          if git diff --cached --quiet; then
+            echo "No cloudflare-live root changes needed."
+          else
+            git commit -m "hub: publish UX v2 root with current briefings"
+            git push origin HEAD:cloudflare-live
+          fi
+
+      - name: Upload sealed publication evidence
+        uses: actions/upload-artifact@v6
+        with:
+          name: hub-briefing-sync-f1-publication
+          path: /tmp/kfb-hub-publish/
