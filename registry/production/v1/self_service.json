@@ -9,16 +9,16 @@
       "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
       "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md"
     ],
-    "head": "ae5f4b9faba0b9331ab26929a7db1405ad38e1de",
+    "head": "24e1a46b628e65653987923ff24d0d097eab27d9",
     "catalogSchema": "kfb.hub-briefing-catalog/10",
     "pr": 204
   },
   "counts": {
     "strands": 13,
-    "jobs": 96,
-    "READY": 42,
+    "jobs": 97,
+    "READY": 43,
     "HOLD": 54,
-    "prompts": 96
+    "prompts": 97
   },
   "executionProfiles": {
     "WEB_FAST": {
@@ -153,7 +153,8 @@
       "capabilitiesTotal": 11,
       "currentReady": [
         "world-zone-bake-01",
-        "look-torsion-01"
+        "look-torsion-01",
+        "bl-osm-clay-01"
       ],
       "currentReview": "world-r2-stage-prep-01",
       "currentPriority": "WORLD-R2-STAGE-PREP-01 · operational lane in HUB-CTRL",
@@ -161,8 +162,8 @@
       "operationalBrief": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md",
       "operationalHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
       "counts": {
-        "jobs": 13,
-        "READY": 2,
+        "jobs": 14,
+        "READY": 3,
         "HOLD": 11
       }
     },
@@ -713,6 +714,33 @@
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
         "section": "WB-OSM-01 · Editable Cartoon District",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "bl-osm-clay-01",
+      "strand": "worldbuilder",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Blender MCP / Claude Code",
+      "title": "Blender MCP · OSM Köln Clay Look",
+      "what": "Current KFB dom-zentrum-v0 source-exact in Blender isolieren und BlendSwap 29812 plus permissive clay alternatives als SOURCE_CLEAN / SURFACE_ONLY / FORM+SURFACE vergleichen.",
+      "result": "One compact Dom/Hbf clay-look decision pack: source proof, donor isolation, .blend/scripts/provenance and optional GLB/PBR bakes; no geography/runtime owner transfer.",
+      "promptSection": "BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender",
+      "sourceSet": "worldbuilder",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "BLENDER_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender\n\n**Executor:** Blender MCP / Claude Code  \n**Execution profile:** `BLENDER_STANDARD` · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.  \n**Detailed briefing:** `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`  \n**Outcome:** one source-exact Köln Dom/Hbf Blender comparison proving whether the current OSM massing can carry a convincing Claybound-inspired KFB clay presentation without moving geography/runtime ownership.\n\n> @GitHub @Dropbox @Blender\n> Read:\n> - `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md` completely;\n> - current `tools/osm-city-lab/START_HERE.md` + `README.md`;\n> - current `dom-zentrum-v0` CLAUDE_CONTEXT / PROVENANCE / SOURCE_SPEC / normalized source;\n> - `tools/KFB-ToolBox/_inbox/KFB Racetrack Blender Kit/ONBOARDING_BLENDER_MCP_CHAT.md`.\n>\n> Execute **BL-OSM-CLAY-01 only**.\n>\n> Start in a fresh Blender file. Import a small source-exact Dom/HBF crop from the existing KFB normalized city source and visibly prove that source object **without clay** first. Preserve OSM IDs and local-metre identity.\n>\n> Then isolate and compare the material donors before integration:\n> 1. BlendSwap 29812 · Clay shader / fingerprints · CC-BY;\n> 2. BlendSwap 25508 · Procedural Material Pack · CC0, including Clay + Asphalt;\n> 3. optional Poly Haven Clay Plaster / CC0 only if it adds a genuinely different surface-scale reference.\n>\n> Produce the same city crop under the same camera/light as:\n> `SOURCE_CLEAN | CLAY_SURFACE_ONLY | CLAY_FORM_SURFACE`.\n>\n> `CLAY_FORM_SURFACE` may add restrained bevel/rounding + low-frequency, object-normalized, ground-anchored deformation seeded deterministically by OSM identity. It is presentation geometry only; do not modify City Lab geography/collision/export truth.\n>\n> Keep clay surface scale coherent across object sizes; avoid “OSM boxes with noisy texture”. Prefer matte rough response and soft contact/form shadows. Do not change Dom/HBF landmark ownership.\n>\n> KFB runtime remains web/Three.js/GLB. Do not assume complex Cycles nodes survive glTF: if a runtime handoff is useful, bake standard PBR maps and keep clean/source geometry separately.\n>\n> Return one compact contact sheet (street 3/4, elevated 3/4, top sanity, close material crop), the isolated donor sheet, `.blend`, actual scripts, provenance, optional GLB/bakes and `RETURN.md`.\n>\n> Do not execute the other Blender queue items in this gate. Track Core 1A waits for TRACK-CORE-0; SC01 bridge is look-review only; Billboard B3 needs concept first; FrizzleBob body-family rig and Orc drummer stay with their owners.\n>\n> Stop after two failed repair passes on the same visual/import gate. No Cloudflare publication from this Blender POC.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender",
         "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
       }
     },
