@@ -42,13 +42,13 @@ Highest-value receiving jobs for this research pass:
 8. ToolBox / Animation / Resident Atlas preview consumers.
 
 Protected boundaries:
-- Travel/TinySkies remains macro-world truth.
-- WorldBuilder remains its authoring owner.
+- WorldBuilder continuous terrain remains the local-world construction/authoring owner; OSM and Track feed bounded constraints through the Surface Adapter seam.
+- Travel/TinySkies is not the world base. It remains a pinned donor for sky, weather, light, mood and selected camera/mobility behaviour.
 - Race remains its track/physics owner.
 - ToolBox / Animation Lab remain actor/motion authoring owners.
 - Resident Atlas / Resident Scene remain resident presentation owners.
 - Card Zones mount into current environment rather than importing the historical standalone voxel world.
-- No second renderer, terrain generator, sky stack, locomotion writer, NPC memory runtime, asset registry or universal game runtime.
+- No second renderer, terrain generator, sky stack, locomotion writer, NPC memory runtime, asset registry or universal game runtime. This ownership correction is metadata only; it does not migrate runtime code.
 
 ## Research method
 
