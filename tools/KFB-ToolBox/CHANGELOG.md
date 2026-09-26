@@ -115,3 +115,18 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-26 · KFB Clay Asset Studio v0.1.0
+
+### TOOL CREATED · EXPERIMENTAL
+Private ChatGPT plugin `KFB Clay Asset Studio` verified at version **0.1.0** / release `pluginrel_6ab7de067680819184bb6c981df7489c`. Skill `produce-clay-assets` owns a fixed 50-item review-gated raster-production queue for clay textures, shader utility maps, craft materials and cutout/decal sheets.
+
+### CONTRACT
+Exactly one asset per review turn; human approval before advancing. Tile candidates require repeat/edge inspection, transparency must be real alpha where claimed, and grayscale-looking images are not promoted to calibrated height/roughness maps by appearance alone.
+
+### BOUNDARY
+The plugin is an **EXPERIMENTAL production helper**, not a replacement for ToolBox, Asset Librarian, Blender/MCP, shader owners or game runtimes. No asset has been generated, accepted, integrated, staged or promoted yet.
+
+### NEXT
+Asset 1: **Smooth matte clay seamless texture** → source + 3×3 repeat review before Asset 2.
