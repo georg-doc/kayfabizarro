@@ -1896,3 +1896,14 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+
+## 2026-09-26 · WSA MVP dispatch planning packet
+
+- added PR #222 planning-only WSA entry under `KFB_MVP_PLANNING_2026-09-26/`;
+- current gate is recon/plan approval, not execution;
+- split Racer routing into Track-Core G0→W0 versus Playable-R0 HOLD;
+- recorded Claude Design R0 SOURCE_REQUIRED stop as correct and rejected unpinned replacement recipes;
+- prepared small executor briefs for ENV-PREVIEW Stage, ToolBox r2 publication, Camera-Core recon, World contract reset, FrizzleBob body family and surf poses;
+- preserved Hub ownership under HUB-CTRL #202 and no generated Hub HTML edit;
+- no runtime/browser/Stage/Live work performed by this planning packet.
