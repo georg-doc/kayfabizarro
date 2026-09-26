@@ -36,11 +36,11 @@
     {
       "id": "hub-ux-recovery",
       "bucket": "WAITING",
-      "title": "KFB Hub UX v2 · PUBLIC VERIFY BLOCKED",
-      "what": "Claude-v2-Kandidat und akzeptierter Paper/Dark-v2-Donor sind unter HUB-CTRL byte-identisch re-homed. Source-Seal 9/9 PASS; cloudflare-live Branch-Readback PASS. Zwei unabhängige öffentliche Verifikationswege konnten pages.dev aus dieser Sitzung nicht erreichen, daher bleibt der Browserzustand UNKNOWN und es gibt noch keinen Human-Test-Link.",
+      "title": "KFB Hub UX v2 · Stage PASS_WITH_TUNE · Root promotion in progress",
+      "what": "The Claude Hub UX v2 candidate is already PUBLIC_VERIFIED on its Stage and Georg PASS_WITH_TUNE. It is now the accepted visual shell being rehomed into the Production Desk root; no redesign restart.",
       "provider": "HUB-CTRL #202 / Web-GitHub Bridge",
       "yourAction": "",
-      "waitingFor": "PUBLIC BROWSER VERIFY · exakt den konservierten pages.dev Candidate + Donor öffnen; keine Source-Änderung, solange kein echter Marker-/Runtime-Fehler sichtbar ist.",
+      "waitingFor": "HUB-BRIEFING-SYNC-F1 root publication/verification. Mobile tune remains separate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
@@ -171,19 +171,19 @@
     },
     {
       "id": "production-desk",
-      "bucket": "WAITING",
-      "title": "KFB Hub · Briefing Sync · DOM-Recovery",
-      "what": "Briefing- und Statusquellen sind synchronisiert. Production-Desk Builder, Online-Registry, Validator und Render sind grün; nach zwei begrenzten Reparaturpässen bleibt der DOM-Test rot. Der öffentliche Root-Hub wurde deshalb nicht aktualisiert.",
+      "bucket": "RUNNING",
+      "title": "KFB Hub · UX v2 + Briefings · Root Publish",
+      "what": "HUB-BRIEFING-SYNC-F1 recovered the prior DOM gate by rehoming the already accepted Hub UX v2 shell and using its 31/31 contract. Current sources are synchronized; WORLD-NATURE prompt resolution is fixed. Final clean build and root publication remain.",
       "provider": "HUB-CTRL #202 · Web + Claude Design",
       "yourAction": "",
-      "waitingFor": "HUB-BRIEFING-SYNC-F1 · frischer DOM-Contract-Census: verbleibenden sichtbaren Technik-Token lokalisieren + stale hardcoded Copy-Test verallgemeinern. Keine Status-/Runtime-/Publikationsänderung in diesem Gate.",
+      "waitingFor": "Final 96/96 briefing build → mirror exact tested root/runtime/registry to cloudflare-live → open exact pages.dev root.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
       "brief": {
-        "label": "HUB-BRIEFING-SYNC-01 Failure Recovery",
-        "path": "tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/START_HERE.md",
+        "label": "HUB-BRIEFING-SYNC-01 Recovery",
+        "path": "tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/RECOVERY.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": false
       }
@@ -452,7 +452,7 @@
   ],
   "wsa": {
     "state": "APPROVED_WITH_TUNES",
-    "text": "WSA recon/plan approval is complete. D2/D3/D6 tunes are binding. Briefing sources are synchronized; public Root-Hub refresh is frozen at the DOM validation gate after two repair passes. Product execution lanes remain valid."
+    "text": "WSA planning is complete. Current bounded work: World r2 Stage Prep; Track Core W0; Racer cross-mode HUD+Billboards may run in parallel. Hub UX v2 + current Briefings root refresh is in final publication verification."
   },
   "standards": [
     {
