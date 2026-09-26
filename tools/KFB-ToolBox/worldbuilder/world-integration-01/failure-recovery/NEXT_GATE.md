@@ -1,10 +1,14 @@
-# NEXT GATE · WORLD-R2-STAGE-PREP-01
+# NEXT GATE · WORLD-R2-STAGE-PUBLICATION-01
 
-The contract-reset gate passed without changing runtime owners.
+The contract-reset gate and local closed-package Stage gate passed without changing runtime owners.
 
-Package the unchanged recovered World r2 candidate through the existing KFB Stage owner, repeat the exact Hürth → Cologne → WB2 browser sequence on the packaged build, and expose one direct `kayfabizarro.pages.dev` human-review route only after the expected source marker is visible.
+Publish the unchanged, locally verified package through the existing KFB Stage owner. Open the exact
+`https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-r2/` route, verify source marker `58028b07...`,
+and repeat the exact Hürth → Cologne → WB2 browser sequence there.
 
 No new World features, mobility, OSM corridor carving, camera owner, Track integration or Live promotion in this gate.
+
+After public verification: **STOP for Georg World r2 visual/freeplay review.**
 
 ---
 
