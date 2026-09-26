@@ -1,3 +1,12 @@
+## 2026-09-26 · ClayBound Asset 03 review routing
+
+- Asset 01 recorded as HUMAN_ACCEPTED; Asset 02 explicitly deferred.
+- ClayBound lane now points to PR #228 / `CLAYBOUND_ASSET_PIPELINE_2026-09-26`.
+- Asset 03 r2 is the only human-review candidate: 2048×2048 16-bit Non-Color height, 4/4 tile criteria PASS.
+- r3 is preserved as two-pass failure recovery only because X/Y seam criteria fail.
+- Blender application remains blocked until Georg PASS.
+- HUB-CTRL config/brief updated only; **no registry rebuild, Cloudflare root publication or Live claim**, because the existing HUB-BRIEFING-SYNC DOM gate remains frozen.
+
 - Concurrent PR #222 advance: current head `f37c620ae60aa2b6f358a53257d767641980aed6` retains the synchronized executor board and adds compatible Racer HUD/W0 dispatch; HUB freshness pins updated without reopening validation/publication.
 ## 2026-09-26 · HUB-BRIEFING-SYNC-01 frozen at DOM gate
 
