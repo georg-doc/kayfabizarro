@@ -16,17 +16,17 @@ After the shared Environment Preview Host, consolidate and expand:
 
 The goal is not a retro-port of old prototypes. It is a source-backed product path into the current world owners.
 
-## Current world truth
+## Current world ownership
 
-Current Travel implementation SSOT:
+Current Travel donor SSOT:
 
 `georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`
 
-Current binding macro-world rule:
+Current binding rule:
 
-**Travel/TinySkies remains the world.**
+**WorldBuilder continuous terrain is the local-world host.** OSM and Track add bounded, provenance-labelled constraints/offsets through the Surface Adapter seam. Travel/TinySkies is not the world base; it supplies pinned procedural and presentation donors for sky, weather, light, mood and selected camera/mobility behaviour.
 
-Voxel/Hex/BlockBits may remain selective local modes/modules, but must not replace the macro-world aesthetic or height truth.
+Voxel/Hex/BlockBits may remain selective local modes/modules, but must not replace the WorldBuilder host or introduce a second height truth. This is a planning-owner correction only; it does not migrate runtime code.
 
 ### Exact high-value source pins
 
@@ -242,13 +242,13 @@ Do not create a new terrain generator.
 > @GitHub  
 > Read current KFB router/workflow/fresh-chat rules, Production Architecture v3, this World Environment Consolidation document, current Travel main and ENV-PREVIEW-01.
 >
-> Execute **WORLD-ENV-CONSOLIDATE-01**. Pin the current Travel/TinySkies-derived terrain, biome, mood, sky/light, TS-flora, curated flora, scatter and natural-landmark sources listed here.
+> Execute **WORLD-ENV-CONSOLIDATE-01**. Use current WorldBuilder continuous terrain as the local-world host and pin the listed Travel/TinySkies-derived terrain, biome, mood, sky/light, TS-flora, curated flora, scatter and natural-landmark sources as donors.
 >
 > Define the thinnest versioned World Environment Recipe that references those owners. Do not copy their implementations into a new engine.
 >
 > Prove one deterministic seed/profile can be resolved in current Travel and in one neutral/shared preview consumer with the same resolved source facts.
 >
-> Preserve one height truth; keep WorldMood separate from BiomeField; retain the no-noise-blob scatter rule. Return exact pins, contract, tests/evidence and one next gate.
+> Preserve one height truth through the Surface Adapter seam; keep WorldMood separate from BiomeField; retain the no-noise-blob scatter rule. Do not turn Travel/TinySkies into a second world base. Return exact pins, contract, tests/evidence and one next gate.
 
 ---
 
