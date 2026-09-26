@@ -1,3 +1,11 @@
+## 2026-09-26 · ENV human gate + ToolBox r2 public verification
+
+- ENV-PREVIEW-01 moved `LOOK_AT → WAITING` after Georg **PASS_WITH_TUNE**; shared environment/light direction accepted, five proportional follow-ups retained without reopening the slice;
+- ToolBox r2 remains `LOOK_AT`, now with exact PR #221 head `36315aae`, **33/33 repository PASS** and **20/20 public Stage/ToolBox/Registry/Hub PASS**;
+- public page/request failures for the ToolBox r2 gate: 0;
+- Hub source now points to the already-public fixed ToolBox review route and no longer says marker verification is pending;
+- no merge and no Live promotion.
+
 ## 2026-09-26 · ENV-PREVIEW-01 public and routed
 
 - added the verified Resident Atlas + ToolBox environment comparison as one `LOOK_AT` lane;
