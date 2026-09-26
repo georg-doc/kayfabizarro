@@ -124,21 +124,7 @@ def R3smooth(a, b, x):
     return t * t * (3 - 2 * t)
 
 
-def support_profile(cap_top, compact=False, cap_ref_min=6.0):
-    """Lathe profile [(r, z)] of the built pillar shaft. Below cap_top ~6 m the fixed foot/waist heights overtake the
-    capital heights and z runs backwards (the shaft folds into itself). compact=True (added 26.09, SC02): build the
-    profile for cap_ref_min and scale it down in z, so short pillars keep the same proportions. Default unchanged."""
-    ct = max(cap_top, cap_ref_min) if compact else cap_top
-    prof = [(2.9, 0.8), (2.75, 1.4), (2.3, 2.6), (1.9, max(3.0, ct * 0.45)), (1.55, max(3.4, ct - 2.2)),
-            (1.6, ct - 1.2), (1.95, ct - 0.72), (2.2, ct - 0.5), (2.55, ct - 0.44),
-            (2.62, ct - 0.36), (2.62, ct + 0.1), (2.55, ct + 0.16)]
-    if compact and ct != cap_top:
-        k = cap_top / ct
-        prof = [(r, z * k) for r, z in prof]
-    return prof
-
-
-def build_support_v2(name, f, side, ground_y=0.0, frames=None, embed=0.25, style='classic', seed=1, compact=False):
+def build_support_v2(name, f, side, ground_y=0.0, frames=None, embed=0.25, style='classic', seed=1):
     """Built pillar: footing plinth sunk into the ground, shaft thick at the foot and slimmer at the top
     (runtime radii 2.3 -> 1.5 kept as the waist), a capital with a round disc (counterpart of the footing),
     and a bearing plate that carries the deck. Plate, disc and capital follow the real soffit (bank + grade).
@@ -160,7 +146,9 @@ def build_support_v2(name, f, side, ground_y=0.0, frames=None, embed=0.25, style
     plate_t = 0.55
     cap_top = H - plate_t
     # shaft: thick foot (r 2.9 -> 2.3 waist) tapering to 1.5, capital flaring into a round disc (r 2.6)
-    prof = support_profile(cap_top, compact)
+    prof = [(2.9, 0.8), (2.75, 1.4), (2.3, 2.6), (1.9, max(3.0, cap_top * 0.45)), (1.55, max(3.4, cap_top - 2.2)),
+            (1.6, cap_top - 1.2), (1.95, cap_top - 0.72), (2.2, cap_top - 0.5), (2.55, cap_top - 0.44),
+            (2.62, cap_top - 0.36), (2.62, cap_top + 0.1), (2.55, cap_top + 0.16)]
     if style == 'classic':
         shaft = K.lathe(name + '_shaft', prof, segs=40)
     else:
