@@ -1,3 +1,18 @@
+# CURRENT UPDATE · WORLD r2 CONTRACT RESET PASS · 2026-09-26
+
+Status: **CONTRACT RESET PASS · STAGE PREP CAN START · NOT LIVE**
+
+- PR #190 exact head: `58028b07d7618926c40ffaec3bd4053dc88c0efd`.
+- No third runtime repair: the stale prose/variant selftest became a structured source/role contract.
+- Evidence: **13/13 contract · 24/24 static owner/closure · Hürth 55/55 · Köln 55/55 · WB2 34/34 · browser harness 12/12**, with 0 page and failed-source errors.
+- Surface Adapter boundary is documented: WorldBuilder owns editable base height; OSM/Track add bounded provenance-labelled constraints; Travel/TinySkies is not the world base and remains a presentation plus selected camera/mobility donor.
+- PR #204 planning wording is synchronized at `158c926cfdc1332b319e2a3ccfbb950147b76896`; PR #218 Environment Preview metadata is synchronized at `88c64c29075f31d655f4777437bb1aa82069df17`.
+- No World Stage, Cloudflare publication, merge or Live promotion is claimed.
+
+Exactly one next World gate: **WORLD-R2-STAGE-PREP-01**.
+
+---
+
 # CURRENT UPDATE · TOOLBOX r2 HUMAN TUNE · 2026-09-26
 
 Status: **GEORG TUNE · DIRECTION ACCEPTED · REVIEW GATE CLOSED · NOT LIVE**
