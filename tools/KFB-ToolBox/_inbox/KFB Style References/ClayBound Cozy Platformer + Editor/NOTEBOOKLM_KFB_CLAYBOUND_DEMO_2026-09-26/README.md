@@ -129,6 +129,22 @@ No KFB runtime, Stage route or Live surface is changed by this demo brief.
   https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/KFB%20ClayBound-Perplexity%20v1
 
 
+
+## Research inputs
+
+- **NotebookLM Research Round 01 — source preserved unchanged:** [ClayBound_Research_NotebooLM_01.md](../ClayBound_Research_NotebooLM_01.md)  
+  Status: **USEFUL RESEARCH INPUT · NOT PRODUCTION CANON**.
+- **KFB technical review / correction layer:** [RESEARCH_ROUND_01_REVIEW.md](./RESEARCH_ROUND_01_REVIEW.md)  
+  Retains the useful macro/meso/micro + texture-pack structure, while flagging Blender-specific issues before MCP/production use.
+
+### Current interpretation
+
+Research Round 01 is accepted as a source for the NotebookLM production-deck experiment.
+
+Do not treat its exact numeric shader values, node wiring, Cycles-specific features or rig-conversion operations as validated KFB production settings until they are calibrated on an actual KFB asset.
+
+For the next production-deck run, include **both** the original research round and the review note as sources so the useful findings are retained without silently promoting unverified implementation details.
+
 ## NotebookLM prompts
 
 - **Deep Research first:** [PROMPT_B_DEEP_RESEARCH.md](./PROMPT_B_DEEP_RESEARCH.md)  
@@ -140,11 +156,11 @@ No KFB runtime, Stage route or Live surface is changed by this demo brief.
 ### Recommended sequence
 
 1. Upload the minimal source set and ClayBound screenshots.
-2. Run `PROMPT_B_DEEP_RESEARCH.md`.
-3. Add the resulting Deep Research report to the notebook as an additional source.
+2. Add `ClayBound_Research_NotebooLM_01.md` and `RESEARCH_ROUND_01_REVIEW.md` as sources.
+3. Optionally run another pass with `PROMPT_B_DEEP_RESEARCH.md` if more evidence is needed.
 4. Run `PROMPT_A_PRODUCTION_DECK.md`.
 5. Save the useful texture/shader/material outputs and the generated deck for review.
 
 ## Next gate
 
-**Run Demo 1 with the minimal source set and preserve the result for visual review.**
+**Run the 15-slide Production Deck with Research Round 01 + its KFB review as sources, then preserve the result for visual review.**
