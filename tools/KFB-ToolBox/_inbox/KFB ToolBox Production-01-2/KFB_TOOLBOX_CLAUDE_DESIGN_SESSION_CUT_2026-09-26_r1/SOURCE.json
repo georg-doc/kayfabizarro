@@ -1,0 +1,30 @@
+{
+  "schema": "kfb.claude-design-session-cut/1",
+  "project": "KFB ToolBox",
+  "date": "2026-09-26",
+  "cut": "r1",
+  "entry": "KFB ToolBox Production-02.dc.html",
+  "repo": "georg-doc/kayfabizarro",
+  "pins": {
+    "runtime": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+    "earRig": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+    "hairDonor": "eabc87255ee3da6283f9d438390454d70e9d2e55",
+    "mainRead": "6e41ca0b (short, connector)"
+  },
+  "donors": {
+    "clayLids": {
+      "pr": 159,
+      "branch": "chatgpt-web/toolbox-eye-actor-studio-v1-2026-09-21",
+      "file": "tools/KFB-ToolBox/eye-actor-studio-v1/upper-lid-volume.v1.mjs",
+      "contract": "skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/EYELID_GEOMETRY_CONTRACT.v1.md"
+    }
+  },
+  "tests": {
+    "selfTest": "27/27 PASS",
+    "human": "NOT_RUN",
+    "zipcheck": "NOT_RUN (JS equivalent PASS)",
+    "cleanRun": "NOT_RUN"
+  },
+  "pushPossible": false,
+  "nextGate": "FACE-VIS-01"
+}
