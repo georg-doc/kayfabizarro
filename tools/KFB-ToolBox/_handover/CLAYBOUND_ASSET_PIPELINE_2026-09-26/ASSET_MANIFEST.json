@@ -1,0 +1,103 @@
+{
+  "schema": "kfb.clay-asset-manifest/0.1-candidate",
+  "date": "2026-09-26",
+  "status": "LOCAL_HANDOVER_ONLY_NOT_A_SECOND_ASSET_REGISTRY",
+  "owner": "KFB ToolBox / ClayBound material exploration",
+  "human": "Georg",
+  "receivers": [
+    "KFB Clay Asset Studio",
+    "Blender / Blender MCP",
+    "existing ToolBox / Asset Librarian after explicit acceptance"
+  ],
+  "sourceLane": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+  "blenderPlanPR": 228,
+  "assets": [
+    {
+      "queue": 1,
+      "canonicalName": "Smooth matte clay seamless texture",
+      "revision": "r1",
+      "approval": "HUMAN_ACCEPTED",
+      "fileName": "KFB_Asset_01_Smooth_Matte_Clay_Seamless_1024.png",
+      "sha256": "fb952516a6c77448b7107486256798ca201629a3c2fac4397121906dd3c04ea5",
+      "dimensions": [1024, 1024],
+      "format": "PNG",
+      "channels": "RGB",
+      "bitDepthPerChannel": 8,
+      "colorSpaceIntent": "sRGB / Base Color candidate",
+      "tileQA": {
+        "status": "PASS",
+        "leftRightMAE": 0.0,
+        "topBottomMAE": 0.0,
+        "preview": "KFB_Asset_01_Smooth_Matte_Clay_QA_3x3.png",
+        "previewSha256": "a1fd17f1ff5b814c754737b3cdf03819dfd5dd4e263dc1f155c8bdd334e83251"
+      },
+      "blenderRole": "Base Color candidate only; keep relief and roughness separate; scale/tint remain per-asset calibration.",
+      "promotion": "APPROVED_SOURCE_NOT_YET_BLENDER_PROVEN"
+    },
+    {
+      "queue": 2,
+      "canonicalName": "Fine-grain clay seamless texture",
+      "approval": "DEFERRED_EXPLICIT_USER_JUMP",
+      "note": "Georg explicitly requested the rough handmade modelling texture next."
+    },
+    {
+      "queue": 3,
+      "canonicalName": "Rough / porous clay seamless texture",
+      "variant": "rough handmade modelling / meso-height source",
+      "approval": "FROZEN_AFTER_TWO_REPAIR_PASSES_HUMAN_REVIEW_PENDING",
+      "dataRole": "relative height source",
+      "colorSpaceIntent": "Non-Color",
+      "physicalCalibration": "NOT_CLAIMED",
+      "seed": "0x4B464203",
+      "preferredTechnicalCandidate": {
+        "revision": "r2",
+        "fileName": "KFB_CLAY_ASSET_03_rough_handmade_meso_height_r2_2048_16bit.png",
+        "sha256": "f1d3cf4e5bd0b65e9a7d3d61c38b119efa25270e5905ddd36a50796e02f28e69",
+        "dimensions": [2048, 2048],
+        "format": "PNG",
+        "channels": "grayscale",
+        "bitDepth": 16,
+        "tileQA": {
+          "status": "PASS",
+          "xEdgeMeanDelta": 154.28,
+          "yEdgeMeanDelta": 160.75,
+          "localXMeanDelta": 171.83,
+          "localYMeanDelta": 170.76,
+          "xSeamLocalRatio": 0.898,
+          "ySeamLocalRatio": 0.941,
+          "halfOffsetXRatio": 1.104,
+          "halfOffsetYRatio": 1.268,
+          "threshold": "< 1.35"
+        },
+        "humanLookStatus": "PENDING",
+        "note": "Technically tile-green but still visually more cloud/noise-like than the intended sculpted-handmade target."
+      },
+      "recoveryCandidate": {
+        "revision": "r3",
+        "fileName": "KFB_CLAY_ASSET_03_rough_handmade_meso_height_r3_2048_16bit.png",
+        "sha256": "1b1a595ac8c6c88e52a42bea97a43f804fa6bf3dcfdb1e2176f8e7acc612fe8f",
+        "dimensions": [2048, 2048],
+        "format": "PNG",
+        "channels": "grayscale",
+        "bitDepth": 16,
+        "tileQA": {
+          "status": "NEEDS_FIX",
+          "xSeamLocalRatio": 2.123,
+          "ySeamLocalRatio": 2.079,
+          "halfOffsetXRatio": 1.265,
+          "halfOffsetYRatio": 1.184,
+          "threshold": "< 1.35"
+        },
+        "humanLookStatus": "DIRECTION_BETTER_NOT_PRODUCTION_SAFE",
+        "note": "Broad periodic kneading/compression strokes read more handmade, but edge continuity regressed. Preserved as failure-recovery evidence only."
+      },
+      "blenderRole": "After human acceptance only: Image Texture as Non-Color relative Height into a valid Bump chain; later bake/derive a tested tangent-space normal for deforming/runtime use.",
+      "runtimePromotion": "BLOCKED_PENDING_HUMAN_LOOK_AND_BLENDER_CALIBRATION"
+    }
+  ],
+  "binaryStorage": {
+    "github": "NOT_COMMITTED_IN_THIS_SLICE",
+    "reason": "Keep the handover textual/reproducible and avoid inventing a new binary asset owner. Exact PNGs are current conversation artifacts; approved repository/library destination remains an owner decision.",
+    "reproducer": "generator_asset03_r2.py"
+  }
+}
