@@ -1,5 +1,15 @@
 ## 2026-09-26 · Clay texture made non-blocking
 
+## 2026-09-27 · Review cleanup · Graveyard archive + Hürth TUNE
+
+- removed the already-commented Graveyard legacy slice from the active Hub review queue;
+- preserved its route and source as historical evidence only; no further human review requested;
+- ingested Georg's Hürth architecture TUNE from the exported browser decision packet;
+- recorded remaining Hürth tunes: shadow/light-edge artifacts and more varied, cartoon-logical door/window rhythms;
+- moved Hürth from `LOOK_AT` to `WAITING` for its existing WorldBuilder/Form-Language owner;
+- the previously ingested city-asset PASS was treated idempotently and not duplicated;
+- no runtime, source proof, public route, merge or Live gameplay state changed.
+
 ## 2026-09-27 · Browser decision sync · Stadtmöblierung PASS
 
 - ingested Georg's browser-local PASS for `city-asset-contact-sheet-intake`;
