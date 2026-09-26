@@ -1,0 +1,1182 @@
+{
+ "schema": "kfb.asset-pack-manifest.v0",
+ "pack": "voxel-park-pack",
+ "licence": "CC BY 4.0 \u00b7 MariaIsMe (itch.io) \u00b7 attribution required",
+ "native_unit": "0.1 unit per voxel (MagicaVoxel export)",
+ "suggested_kfb_scale": 0.5,
+ "up": "+Y (glTF)",
+ "origin": "bottom centre",
+ "sampling": "NEAREST (palette texture)",
+ "models": [
+  {
+   "name": "Animal_Bird_Dove_01",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Bird_Dove_01.glb",
+   "source": "Park Animals/Animal_Bird_Dove_01.obj",
+   "bbox_native": [
+    0.3,
+    0.5,
+    0.3
+   ],
+   "tris": 92,
+   "kb": 7
+  },
+  {
+   "name": "Animal_Bird_Dove_02",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Bird_Dove_02.glb",
+   "source": "Park Animals/Animal_Bird_Dove_02.obj",
+   "bbox_native": [
+    0.3,
+    0.5,
+    0.3
+   ],
+   "tris": 92,
+   "kb": 7
+  },
+  {
+   "name": "Animal_Bird_Duck",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Bird_Duck.glb",
+   "source": "Park Animals/Animal_Bird_Duck.obj",
+   "bbox_native": [
+    0.4,
+    0.8,
+    0.6
+   ],
+   "tris": 180,
+   "kb": 12
+  },
+  {
+   "name": "Animal_Bird_Goose",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Bird_Goose.glb",
+   "source": "Park Animals/Animal_Bird_Goose.obj",
+   "bbox_native": [
+    0.4,
+    1.2,
+    1.3
+   ],
+   "tris": 224,
+   "kb": 14
+  },
+  {
+   "name": "Animal_Bird_Pigeon",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Bird_Pigeon.glb",
+   "source": "Park Animals/Animal_Bird_Pigeon.obj",
+   "bbox_native": [
+    0.3,
+    0.5,
+    0.3
+   ],
+   "tris": 92,
+   "kb": 7
+  },
+  {
+   "name": "Animal_Dog_01",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Dog_01.glb",
+   "source": "Park Animals/Animal_Dog_01.obj",
+   "bbox_native": [
+    0.5,
+    1.5,
+    0.9
+   ],
+   "tris": 316,
+   "kb": 20
+  },
+  {
+   "name": "Animal_Dog_02",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Dog_02.glb",
+   "source": "Park Animals/Animal_Dog_02.obj",
+   "bbox_native": [
+    0.5,
+    1.1,
+    0.8
+   ],
+   "tris": 276,
+   "kb": 18
+  },
+  {
+   "name": "Animal_Dog_03",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Dog_03.glb",
+   "source": "Park Animals/Animal_Dog_03.obj",
+   "bbox_native": [
+    0.5,
+    1.1,
+    0.8
+   ],
+   "tris": 276,
+   "kb": 18
+  },
+  {
+   "name": "Animal_Squirrel_01",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Squirrel_01.glb",
+   "source": "Park Animals/Animal_Squirrel_01.obj",
+   "bbox_native": [
+    0.5,
+    0.8,
+    1.1
+   ],
+   "tris": 324,
+   "kb": 20
+  },
+  {
+   "name": "Animal_Squirrel_02",
+   "category": "Park Animals",
+   "file": "Park_Animals/Animal_Squirrel_02.glb",
+   "source": "Park Animals/Animal_Squirrel_02.obj",
+   "bbox_native": [
+    0.5,
+    0.6,
+    0.8
+   ],
+   "tris": 228,
+   "kb": 15
+  },
+  {
+   "name": "Bike_Basket_Metal_Back",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Basket_Metal_Back.glb",
+   "source": "Park Bikes/Bike_Basket_Metal_Back.obj",
+   "bbox_native": [
+    0.7,
+    0.5,
+    0.5
+   ],
+   "tris": 300,
+   "kb": 18
+  },
+  {
+   "name": "Bike_Basket_Metal_Front",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Basket_Metal_Front.glb",
+   "source": "Park Bikes/Bike_Basket_Metal_Front.obj",
+   "bbox_native": [
+    0.7,
+    0.7,
+    0.5
+   ],
+   "tris": 292,
+   "kb": 17
+  },
+  {
+   "name": "Bike_Basket_Weave_Back",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Basket_Weave_Back.glb",
+   "source": "Park Bikes/Bike_Basket_Weave_Back.obj",
+   "bbox_native": [
+    0.7,
+    0.5,
+    0.5
+   ],
+   "tris": 292,
+   "kb": 19
+  },
+  {
+   "name": "Bike_Basket_Weave_Front",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Basket_Weave_Front.glb",
+   "source": "Park Bikes/Bike_Basket_Weave_Front.obj",
+   "bbox_native": [
+    0.7,
+    0.7,
+    0.5
+   ],
+   "tris": 336,
+   "kb": 20
+  },
+  {
+   "name": "Bike_Blue",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Blue.glb",
+   "source": "Park Bikes/Bike_Blue.obj",
+   "bbox_native": [
+    2.6,
+    1.1,
+    1.5
+   ],
+   "tris": 1008,
+   "kb": 62
+  },
+  {
+   "name": "Bike_Pink",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Pink.glb",
+   "source": "Park Bikes/Bike_Pink.obj",
+   "bbox_native": [
+    2.6,
+    1.1,
+    1.5
+   ],
+   "tris": 1008,
+   "kb": 62
+  },
+  {
+   "name": "Bike_Rack_01",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Rack_01.glb",
+   "source": "Park Bikes/Bike_Rack_01.obj",
+   "bbox_native": [
+    3.1,
+    1.5,
+    0.9
+   ],
+   "tris": 960,
+   "kb": 54
+  },
+  {
+   "name": "Bike_Rack_02",
+   "category": "Park Bikes",
+   "file": "Park_Bikes/Bike_Rack_02.glb",
+   "source": "Park Bikes/Bike_Rack_02.obj",
+   "bbox_native": [
+    2.7,
+    1.5,
+    1.2
+   ],
+   "tris": 480,
+   "kb": 28
+  },
+  {
+   "name": "Foliage_Bush_1Small",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Bush_1Small.glb",
+   "source": "Park Foilage/Foliage_Bush_1Small.obj",
+   "bbox_native": [
+    1.2,
+    1.2,
+    1.0
+   ],
+   "tris": 2554,
+   "kb": 162
+  },
+  {
+   "name": "Foliage_Bush_2Average",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Bush_2Average.glb",
+   "source": "Park Foilage/Foliage_Bush_2Average.obj",
+   "bbox_native": [
+    1.2,
+    1.2,
+    1.3
+   ],
+   "tris": 4252,
+   "kb": 267
+  },
+  {
+   "name": "Foliage_Bush_3Big",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Bush_3Big.glb",
+   "source": "Park Foilage/Foliage_Bush_3Big.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    1.5
+   ],
+   "tris": 9286,
+   "kb": 581
+  },
+  {
+   "name": "Foliage_Flowers_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Flowers_01.glb",
+   "source": "Park Foilage/Foliage_Flowers_01.obj",
+   "bbox_native": [
+    1.2,
+    1.1,
+    0.3
+   ],
+   "tris": 128,
+   "kb": 10
+  },
+  {
+   "name": "Foliage_Flowers_02",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Flowers_02.glb",
+   "source": "Park Foilage/Foliage_Flowers_02.obj",
+   "bbox_native": [
+    1.3,
+    1.2,
+    0.4
+   ],
+   "tris": 272,
+   "kb": 19
+  },
+  {
+   "name": "Foliage_Grass",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Grass.glb",
+   "source": "Park Foilage/Foliage_Grass.obj",
+   "bbox_native": [
+    6.4,
+    6.4,
+    0.1
+   ],
+   "tris": 10716,
+   "kb": 415
+  },
+  {
+   "name": "Foliage_Hedge_Short_Corner_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Short_Corner_01.glb",
+   "source": "Park Foilage/Foliage_Hedge_Short_Corner_01.obj",
+   "bbox_native": [
+    1.4,
+    1.4,
+    1.5
+   ],
+   "tris": 7398,
+   "kb": 466
+  },
+  {
+   "name": "Foliage_Hedge_Short_Corner_02",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Short_Corner_02.glb",
+   "source": "Park Foilage/Foliage_Hedge_Short_Corner_02.obj",
+   "bbox_native": [
+    1.4,
+    1.6,
+    1.5
+   ],
+   "tris": 7160,
+   "kb": 451
+  },
+  {
+   "name": "Foliage_Hedge_Short_Corner_03",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Short_Corner_03.glb",
+   "source": "Park Foilage/Foliage_Hedge_Short_Corner_03.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    1.5
+   ],
+   "tris": 10894,
+   "kb": 674
+  },
+  {
+   "name": "Foliage_Hedge_Short_Edge_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Short_Edge_01.glb",
+   "source": "Park Foilage/Foliage_Hedge_Short_Edge_01.obj",
+   "bbox_native": [
+    1.6,
+    1.2,
+    1.5
+   ],
+   "tris": 7608,
+   "kb": 478
+  },
+  {
+   "name": "Foliage_Hedge_Short_End",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Short_End.glb",
+   "source": "Park Foilage/Foliage_Hedge_Short_End.obj",
+   "bbox_native": [
+    1.4,
+    1.2,
+    1.5
+   ],
+   "tris": 5674,
+   "kb": 362
+  },
+  {
+   "name": "Foliage_Hedge_Tall_Corner_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Tall_Corner_01.glb",
+   "source": "Park Foilage/Foliage_Hedge_Tall_Corner_01.obj",
+   "bbox_native": [
+    1.4,
+    1.4,
+    2.9
+   ],
+   "tris": 13230,
+   "kb": 829
+  },
+  {
+   "name": "Foliage_Hedge_Tall_Corner_02",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Tall_Corner_02.glb",
+   "source": "Park Foilage/Foliage_Hedge_Tall_Corner_02.obj",
+   "bbox_native": [
+    1.4,
+    1.6,
+    2.9
+   ],
+   "tris": 17086,
+   "kb": 1069
+  },
+  {
+   "name": "Foliage_Hedge_Tall_Corner_03",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Tall_Corner_03.glb",
+   "source": "Park Foilage/Foliage_Hedge_Tall_Corner_03.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    2.9
+   ],
+   "tris": 18356,
+   "kb": 1147
+  },
+  {
+   "name": "Foliage_Hedge_Tall_Edge_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Tall_Edge_01.glb",
+   "source": "Park Foilage/Foliage_Hedge_Tall_Edge_01.obj",
+   "bbox_native": [
+    1.6,
+    1.2,
+    2.9
+   ],
+   "tris": 14448,
+   "kb": 906
+  },
+  {
+   "name": "Foliage_Hedge_Tall_End",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Hedge_Tall_End.glb",
+   "source": "Park Foilage/Foliage_Hedge_Tall_End.obj",
+   "bbox_native": [
+    1.4,
+    1.2,
+    2.9
+   ],
+   "tris": 11926,
+   "kb": 751
+  },
+  {
+   "name": "Foliage_Path_Center",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Center.glb",
+   "source": "Park Foilage/Foliage_Path_Center.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    0.1
+   ],
+   "tris": 788,
+   "kb": 40
+  },
+  {
+   "name": "Foliage_Path_Corner_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Corner_01.glb",
+   "source": "Park Foilage/Foliage_Path_Corner_01.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.1
+   ],
+   "tris": 248,
+   "kb": 14
+  },
+  {
+   "name": "Foliage_Path_Corner_02",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Corner_02.glb",
+   "source": "Park Foilage/Foliage_Path_Corner_02.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.1
+   ],
+   "tris": 208,
+   "kb": 12
+  },
+  {
+   "name": "Foliage_Path_Corner_03",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Corner_03.glb",
+   "source": "Park Foilage/Foliage_Path_Corner_03.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.1
+   ],
+   "tris": 220,
+   "kb": 13
+  },
+  {
+   "name": "Foliage_Path_Corner_04",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Corner_04.glb",
+   "source": "Park Foilage/Foliage_Path_Corner_04.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.1
+   ],
+   "tris": 236,
+   "kb": 14
+  },
+  {
+   "name": "Foliage_Path_Corner_05",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Corner_05.glb",
+   "source": "Park Foilage/Foliage_Path_Corner_05.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    0.1
+   ],
+   "tris": 612,
+   "kb": 32
+  },
+  {
+   "name": "Foliage_Path_Edge_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Edge_01.glb",
+   "source": "Park Foilage/Foliage_Path_Edge_01.obj",
+   "bbox_native": [
+    0.9,
+    1.6,
+    0.1
+   ],
+   "tris": 396,
+   "kb": 20
+  },
+  {
+   "name": "Foliage_Path_Edge_02",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Edge_02.glb",
+   "source": "Park Foilage/Foliage_Path_Edge_02.obj",
+   "bbox_native": [
+    1.6,
+    0.9,
+    0.1
+   ],
+   "tris": 424,
+   "kb": 24
+  },
+  {
+   "name": "Foliage_Path_Edge_03",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Edge_03.glb",
+   "source": "Park Foilage/Foliage_Path_Edge_03.obj",
+   "bbox_native": [
+    1.0,
+    1.6,
+    0.1
+   ],
+   "tris": 428,
+   "kb": 22
+  },
+  {
+   "name": "Foliage_Path_Edge_04",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Path_Edge_04.glb",
+   "source": "Park Foilage/Foliage_Path_Edge_04.obj",
+   "bbox_native": [
+    1.6,
+    1.0,
+    0.1
+   ],
+   "tris": 484,
+   "kb": 26
+  },
+  {
+   "name": "Foliage_Tree_01",
+   "category": "Park Foilage",
+   "file": "Park_Foilage/Foliage_Tree_01.glb",
+   "source": "Park Foilage/Foliage_Tree_01.obj",
+   "bbox_native": [
+    2.9,
+    2.9,
+    4.8
+   ],
+   "tris": 37526,
+   "kb": 2585
+  },
+  {
+   "name": "Park_Bench_Metal_01",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bench_Metal_01.glb",
+   "source": "Park Furnishings/Park_Bench_Metal_01.obj",
+   "bbox_native": [
+    3.2,
+    1.4,
+    1.4
+   ],
+   "tris": 980,
+   "kb": 57
+  },
+  {
+   "name": "Park_Bench_Metal_02",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bench_Metal_02.glb",
+   "source": "Park Furnishings/Park_Bench_Metal_02.obj",
+   "bbox_native": [
+    3.2,
+    1.3,
+    0.8
+   ],
+   "tris": 716,
+   "kb": 44
+  },
+  {
+   "name": "Park_Bench_Wood_01",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bench_Wood_01.glb",
+   "source": "Park Furnishings/Park_Bench_Wood_01.obj",
+   "bbox_native": [
+    3.2,
+    1.3,
+    1.4
+   ],
+   "tris": 600,
+   "kb": 34
+  },
+  {
+   "name": "Park_Bench_Wood_02",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bench_Wood_02.glb",
+   "source": "Park Furnishings/Park_Bench_Wood_02.obj",
+   "bbox_native": [
+    3.2,
+    1.3,
+    0.7
+   ],
+   "tris": 480,
+   "kb": 27
+  },
+  {
+   "name": "Park_Bin_01",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bin_01.glb",
+   "source": "Park Furnishings/Park_Bin_01.obj",
+   "bbox_native": [
+    1.3,
+    1.3,
+    1.4
+   ],
+   "tris": 812,
+   "kb": 46
+  },
+  {
+   "name": "Park_Bin_02",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bin_02.glb",
+   "source": "Park Furnishings/Park_Bin_02.obj",
+   "bbox_native": [
+    1.1,
+    1.1,
+    1.5
+   ],
+   "tris": 760,
+   "kb": 46
+  },
+  {
+   "name": "Park_Bin_03",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Bin_03.glb",
+   "source": "Park Furnishings/Park_Bin_03.obj",
+   "bbox_native": [
+    1.3,
+    1.3,
+    1.4
+   ],
+   "tris": 812,
+   "kb": 46
+  },
+  {
+   "name": "Park_Fence_Corner",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Fence_Corner.glb",
+   "source": "Park Furnishings/Park_Fence_Corner.obj",
+   "bbox_native": [
+    1.2,
+    1.2,
+    3.0
+   ],
+   "tris": 460,
+   "kb": 25
+  },
+  {
+   "name": "Park_Fence_Edge",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Fence_Edge.glb",
+   "source": "Park Furnishings/Park_Fence_Edge.obj",
+   "bbox_native": [
+    1.6,
+    0.8,
+    3.0
+   ],
+   "tris": 324,
+   "kb": 19
+  },
+  {
+   "name": "Park_Fence_End",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Fence_End.glb",
+   "source": "Park Furnishings/Park_Fence_End.obj",
+   "bbox_native": [
+    0.8,
+    1.5,
+    3.0
+   ],
+   "tris": 300,
+   "kb": 18
+  },
+  {
+   "name": "Park_Fence_Pillar",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Fence_Pillar.glb",
+   "source": "Park Furnishings/Park_Fence_Pillar.obj",
+   "bbox_native": [
+    0.8,
+    0.8,
+    3.0
+   ],
+   "tris": 212,
+   "kb": 14
+  },
+  {
+   "name": "Park_Lamp_1Short",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Lamp_1Short.glb",
+   "source": "Park Furnishings/Park_Lamp_1Short.obj",
+   "bbox_native": [
+    0.5,
+    0.5,
+    0.7
+   ],
+   "tris": 204,
+   "kb": 13
+  },
+  {
+   "name": "Park_Lamp_2Average",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Lamp_2Average.glb",
+   "source": "Park Furnishings/Park_Lamp_2Average.obj",
+   "bbox_native": [
+    0.5,
+    0.5,
+    1.4
+   ],
+   "tris": 236,
+   "kb": 15
+  },
+  {
+   "name": "Park_Lamp_3Tall",
+   "category": "Park Furnishings",
+   "file": "Park_Furnishings/Park_Lamp_3Tall.glb",
+   "source": "Park Furnishings/Park_Lamp_3Tall.obj",
+   "bbox_native": [
+    0.5,
+    0.5,
+    4.0
+   ],
+   "tris": 300,
+   "kb": 18
+  },
+  {
+   "name": "Picnic_Basket",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Basket.glb",
+   "source": "Park Picnic/Picnic_Basket.obj",
+   "bbox_native": [
+    1.0,
+    0.7,
+    0.8
+   ],
+   "tris": 576,
+   "kb": 32
+  },
+  {
+   "name": "Picnic_Drink",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Drink.glb",
+   "source": "Park Picnic/Picnic_Drink.obj",
+   "bbox_native": [
+    0.3,
+    0.3,
+    0.8
+   ],
+   "tris": 108,
+   "kb": 8
+  },
+  {
+   "name": "Picnic_Food_Hotdog_Cooked",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Food_Hotdog_Cooked.glb",
+   "source": "Park Picnic/Picnic_Food_Hotdog_Cooked.obj",
+   "bbox_native": [
+    0.3,
+    0.5,
+    0.2
+   ],
+   "tris": 28,
+   "kb": 3
+  },
+  {
+   "name": "Picnic_Food_Hotdog_Raw",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Food_Hotdog_Raw.glb",
+   "source": "Park Picnic/Picnic_Food_Hotdog_Raw.obj",
+   "bbox_native": [
+    0.8,
+    0.5,
+    0.1
+   ],
+   "tris": 36,
+   "kb": 4
+  },
+  {
+   "name": "Picnic_Food_Steak_Cooked",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Food_Steak_Cooked.glb",
+   "source": "Park Picnic/Picnic_Food_Steak_Cooked.obj",
+   "bbox_native": [
+    0.7,
+    0.7,
+    0.1
+   ],
+   "tris": 164,
+   "kb": 11
+  },
+  {
+   "name": "Picnic_Food_Steak_Raw",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Food_Steak_Raw.glb",
+   "source": "Park Picnic/Picnic_Food_Steak_Raw.obj",
+   "bbox_native": [
+    0.7,
+    0.7,
+    0.1
+   ],
+   "tris": 108,
+   "kb": 8
+  },
+  {
+   "name": "Picnic_Grill",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Grill.glb",
+   "source": "Park Picnic/Picnic_Grill.obj",
+   "bbox_native": [
+    1.6,
+    1.2,
+    1.6
+   ],
+   "tris": 544,
+   "kb": 30
+  },
+  {
+   "name": "Picnic_Grill_Coal",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Grill_Coal.glb",
+   "source": "Park Picnic/Picnic_Grill_Coal.obj",
+   "bbox_native": [
+    0.7,
+    0.7,
+    1.3
+   ],
+   "tris": 268,
+   "kb": 20
+  },
+  {
+   "name": "Picnic_Plate_01",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Plate_01.glb",
+   "source": "Park Picnic/Picnic_Plate_01.obj",
+   "bbox_native": [
+    0.7,
+    0.7,
+    0.1
+   ],
+   "tris": 44,
+   "kb": 4
+  },
+  {
+   "name": "Picnic_Plate_02",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Plate_02.glb",
+   "source": "Park Picnic/Picnic_Plate_02.obj",
+   "bbox_native": [
+    1.0,
+    1.0,
+    0.1
+   ],
+   "tris": 124,
+   "kb": 8
+  },
+  {
+   "name": "Picnic_Table",
+   "category": "Park Picnic",
+   "file": "Park_Picnic/Picnic_Table.glb",
+   "source": "Park Picnic/Picnic_Table.obj",
+   "bbox_native": [
+    3.2,
+    3.1,
+    1.1
+   ],
+   "tris": 948,
+   "kb": 55
+  },
+  {
+   "name": "Playground_Rocking_Penguin_01",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Rocking_Penguin_01.glb",
+   "source": "Park Playground/Playground_Rocking_Penguin_01.obj",
+   "bbox_native": [
+    0.7,
+    1.2,
+    1.1
+   ],
+   "tris": 328,
+   "kb": 21
+  },
+  {
+   "name": "Playground_Rocking_Penguin_02",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Rocking_Penguin_02.glb",
+   "source": "Park Playground/Playground_Rocking_Penguin_02.obj",
+   "bbox_native": [
+    0.7,
+    1.2,
+    1.1
+   ],
+   "tris": 328,
+   "kb": 21
+  },
+  {
+   "name": "Playground_Sand_Bucket_01",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sand_Bucket_01.glb",
+   "source": "Park Playground/Playground_Sand_Bucket_01.obj",
+   "bbox_native": [
+    0.5,
+    0.5,
+    0.4
+   ],
+   "tris": 156,
+   "kb": 11
+  },
+  {
+   "name": "Playground_Sand_Bucket_02",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sand_Bucket_02.glb",
+   "source": "Park Playground/Playground_Sand_Bucket_02.obj",
+   "bbox_native": [
+    0.4,
+    0.3,
+    0.2
+   ],
+   "tris": 48,
+   "kb": 5
+  },
+  {
+   "name": "Playground_Sand_Castle",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sand_Castle.glb",
+   "source": "Park Playground/Playground_Sand_Castle.obj",
+   "bbox_native": [
+    0.8,
+    0.8,
+    0.4
+   ],
+   "tris": 146,
+   "kb": 10
+  },
+  {
+   "name": "Playground_Sand_Tools",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sand_Tools.glb",
+   "source": "Park Playground/Playground_Sand_Tools.obj",
+   "bbox_native": [
+    0.5,
+    0.7,
+    0.1
+   ],
+   "tris": 80,
+   "kb": 6
+  },
+  {
+   "name": "Playground_Sandbox_Center",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Center.glb",
+   "source": "Park Playground/Playground_Sandbox_Center.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    0.1
+   ],
+   "tris": 844,
+   "kb": 41
+  },
+  {
+   "name": "Playground_Sandbox_Corner_01",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Corner_01.glb",
+   "source": "Park Playground/Playground_Sandbox_Corner_01.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.2
+   ],
+   "tris": 242,
+   "kb": 13
+  },
+  {
+   "name": "Playground_Sandbox_Corner_02",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Corner_02.glb",
+   "source": "Park Playground/Playground_Sandbox_Corner_02.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.2
+   ],
+   "tris": 234,
+   "kb": 12
+  },
+  {
+   "name": "Playground_Sandbox_Corner_03",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Corner_03.glb",
+   "source": "Park Playground/Playground_Sandbox_Corner_03.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.2
+   ],
+   "tris": 230,
+   "kb": 14
+  },
+  {
+   "name": "Playground_Sandbox_Corner_04",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Corner_04.glb",
+   "source": "Park Playground/Playground_Sandbox_Corner_04.obj",
+   "bbox_native": [
+    0.9,
+    0.9,
+    0.2
+   ],
+   "tris": 226,
+   "kb": 13
+  },
+  {
+   "name": "Playground_Sandbox_Corner_05",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Corner_05.glb",
+   "source": "Park Playground/Playground_Sandbox_Corner_05.obj",
+   "bbox_native": [
+    1.6,
+    1.6,
+    0.2
+   ],
+   "tris": 762,
+   "kb": 41
+  },
+  {
+   "name": "Playground_Sandbox_Edge_01",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Edge_01.glb",
+   "source": "Park Playground/Playground_Sandbox_Edge_01.obj",
+   "bbox_native": [
+    0.9,
+    1.6,
+    0.2
+   ],
+   "tris": 432,
+   "kb": 24
+  },
+  {
+   "name": "Playground_Sandbox_Edge_02",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Edge_02.glb",
+   "source": "Park Playground/Playground_Sandbox_Edge_02.obj",
+   "bbox_native": [
+    1.6,
+    0.9,
+    0.2
+   ],
+   "tris": 414,
+   "kb": 23
+  },
+  {
+   "name": "Playground_Sandbox_Edge_03",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Edge_03.glb",
+   "source": "Park Playground/Playground_Sandbox_Edge_03.obj",
+   "bbox_native": [
+    1.0,
+    1.6,
+    0.2
+   ],
+   "tris": 504,
+   "kb": 27
+  },
+  {
+   "name": "Playground_Sandbox_Edge_04",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Sandbox_Edge_04.glb",
+   "source": "Park Playground/Playground_Sandbox_Edge_04.obj",
+   "bbox_native": [
+    1.6,
+    1.0,
+    0.2
+   ],
+   "tris": 468,
+   "kb": 26
+  },
+  {
+   "name": "Playground_Slide",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Slide.glb",
+   "source": "Park Playground/Playground_Slide.obj",
+   "bbox_native": [
+    1.0,
+    3.2,
+    2.3
+   ],
+   "tris": 1120,
+   "kb": 64
+  },
+  {
+   "name": "Playground_Slide_Swing",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Slide_Swing.glb",
+   "source": "Park Playground/Playground_Slide_Swing.obj",
+   "bbox_native": [
+    3.9,
+    3.2,
+    2.3
+   ],
+   "tris": 1912,
+   "kb": 115
+  },
+  {
+   "name": "Playground_Swing_01",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Swing_01.glb",
+   "source": "Park Playground/Playground_Swing_01.obj",
+   "bbox_native": [
+    3.0,
+    1.3,
+    3.0
+   ],
+   "tris": 1244,
+   "kb": 82
+  },
+  {
+   "name": "Playground_Swing_02",
+   "category": "Park Playground",
+   "file": "Park_Playground/Playground_Swing_02.glb",
+   "source": "Park Playground/Playground_Swing_02.obj",
+   "bbox_native": [
+    3.0,
+    1.3,
+    3.0
+   ],
+   "tris": 1236,
+   "kb": 79
+  }
+ ]
+}
