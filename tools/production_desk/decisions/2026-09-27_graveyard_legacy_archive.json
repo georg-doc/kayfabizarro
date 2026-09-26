@@ -1,0 +1,18 @@
+{
+  "schema": "kfb.hub-archive-decision/1",
+  "itemId": "graveyard",
+  "title": "Graveyard · begehbares Post-Mortem-Archiv",
+  "decision": "LEGACY_ARCHIVE",
+  "decidedAt": "2026-09-26T23:50:19.421Z",
+  "reason": "Georg has already commented on this slice three times. It must not remain in the active review queue.",
+  "disposition": {
+    "activeHubLane": false,
+    "sourcePreserved": true,
+    "publicRoutePreservedAsHistoricalEvidence": true,
+    "furtherHumanReviewRequested": false
+  },
+  "source": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/graveyard/",
+    "sourceRef": "main · tools/kfb-graveyard · v1.6.0 · 56 Gräber"
+  }
+}
