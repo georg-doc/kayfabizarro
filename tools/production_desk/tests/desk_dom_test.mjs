@@ -90,8 +90,8 @@ console.log('4 · polling picks up a new LIVE state without reload');
 
 console.log('5 · drawer + copy start prompt');
 {
-  const briefLane = baseReg.lanes.lanes.find(l => l.brief?.rawUrl);
-  ok(Boolean(briefLane), 'fixture has at least one real briefing source');
+  const briefLane = baseReg.lanes.lanes.find(l => l.brief?.rawUrl && l.brief?.pasteReady);
+  ok(Boolean(briefLane), 'fixture has at least one paste-ready real briefing source');
   const routes = { [briefLane.brief.rawUrl]: 'ECHTE STARTNACHRICHT' };
   const { d, clip } = makeDom({ routes });
   await tick();
