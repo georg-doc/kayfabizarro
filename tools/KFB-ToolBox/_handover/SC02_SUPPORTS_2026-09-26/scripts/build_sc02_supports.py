@@ -21,7 +21,7 @@ for m in (K, R3, SR):
     importlib.reload(m)
 COLL = 'SC02_SUPPORTS'
 RULE = dict(spacing=12.0, min_height=3.0, max_span=32.0, foot_r=4.4, margin=1.0, self_skip=25.0,
-            drop=K.TB['undersideDropM'], embed=0.25, side=0.0)
+            drop=K.TB['undersideDropM'], embed=0.25, side=0.0, footing='round')
 RULE.update(globals().get('SC_RULE', {}))
 
 
@@ -99,9 +99,48 @@ def place(route, others):
     return acc, blocked, spans
 
 
+FOOT_PROFILE = [(4.6, -0.8), (4.6, -0.05), (4.3, 0.2), (3.7, 0.5), (3.25, 0.75), (3.0, 0.9)]   # (r, h) from ground level
+
+
+def round_footing(name, base, segs=48):
+    """Round footing (Georg 26.09: default). Sunk 0.8 m; the outer skirt sits just below the ground and follows
+    ground(x, z) around its rim, the shoulder fades to a level top ring that meets the shaft foot (r 2.9 at h 0.8)."""
+    v, f = [], []
+    for r, h in FOOT_PROFILE:
+        w = 1.0 if h <= 0.2 else max(0.0, (0.9 - h) / 0.7)          # terrain-follow weight
+        for k in range(segs):
+            a = 2 * math.pi * k / segs
+            x, z = base.x + r * math.cos(a), base.z + r * math.sin(a)
+            y = base.y + h + (ground(x, z) - base.y) * w
+            bl = K.to_bl(x, y, z)
+            v.append(Vector((bl.x, bl.y, bl.z)))
+    n = len(FOOT_PROFILE)
+    for i in range(n - 1):
+        for k in range(segs):
+            kn = (k + 1) % segs
+            f.append((i * segs + k, i * segs + kn, (i + 1) * segs + kn, (i + 1) * segs + k))
+    top = K.to_bl(base.x, base.y + FOOT_PROFILE[-1][1], base.z)
+    c = len(v)
+    v.append(Vector((top.x, top.y, top.z)))
+    for k in range(segs):
+        f.append(((n - 1) * segs + k, (n - 1) * segs + (k + 1) % segs, c))
+    bot = K.to_bl(base.x, base.y - 0.8, base.z)
+    c2 = len(v)
+    v.append(Vector((bot.x, bot.y, bot.z)))
+    for k in range(segs):
+        f.append(((k + 1) % segs, k, c2))
+    ob = K.mesh_from(name, v, f, ['support'] * len(f))
+    return ob
+
+
 def build_one(route, frames, s, base, style, name, seed):
     f = donor_frame(route.at(s))
     got = R3.build_support_v2(name, f, RULE['side'], ground_y=base.y, frames=frames, embed=RULE['embed'], style=style, seed=seed)
+    if RULE['footing'] == 'round':
+        sq = [o for o in got if o.name.endswith('_footing')]
+        if sq:
+            remove(sq)
+            got = [o for o in got if o not in sq] + [round_footing(name + '_footing', base)]
     for o in got:
         o['kfb_module'] = 'scenery_support'
         o['kfb_route_s'] = round(s, 2)
@@ -175,6 +214,7 @@ def checks(route, others, built):
     corr_other, corr_self = 0, 0
     strip_max_rng = [1e9, -1e9]
     foot = [1e9, -1e9]
+    skirt_float = -1e9
     target = -RULE['drop'] + RULE['embed']
     for s, base, objs in built:
         lowest = 1e9
@@ -206,12 +246,18 @@ def checks(route, others, built):
                     strip_max_rng = [min(strip_max_rng[0], min(ys)), max(strip_max_rng[1], max(ys))]
         d = lowest - base.y
         foot = [min(foot[0], d), max(foot[1], d)]
+        for o in objs:
+            if o.name.endswith('_footing'):
+                for v in runtime_verts(o):
+                    if math.hypot(v.x - base.x, v.z - base.z) > 4.45:   # outer rim only (r 4.6); the 4.3 ring is the intended mound
+                        skirt_float = max(skirt_float, v.y - ground(v.x, v.z))
     plate_ok = strip_max_rng[0] >= target - 0.3 and strip_max_rng[1] <= target + 0.3
     foot_ok = foot[0] >= -1.05 and foot[1] <= 0.05
     return dict(other_corridor_intrusions=corr_other, own_corridor_intrusions=corr_self,
                 plate_top_per_strip_local_y=[round(v, 3) for v in strip_max_rng], plate_target_y=round(target, 3), plate_ok=plate_ok,
                 lowest_point_vs_ground_m=[round(v, 3) for v in foot], foot_ok=foot_ok,
-                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok))
+                footing_skirt_above_ground_max_m=(round(skirt_float, 3) if skirt_float > -1e8 else None),
+                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01))
 
 
 def ranges(pairs):
