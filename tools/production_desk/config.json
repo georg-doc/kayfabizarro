@@ -261,28 +261,24 @@
     },
     {
       "id": "billboard",
-      "bucket": "CAN_START",
-      "title": "Billboard B2b-P1 · Mixed Hypernormalisation bauen",
-      "what": "B2b-Recherche ist abgeschlossen und Georg hat entschieden: KFB + kleiner kuratierter CC0-Pool, mixed hypernormalisation, A+ CanvasTexture. Der nächste Slice darf genau diesen COLLAGE-Modus bauen; kein Editor und keine B2c/B3-Ausweitung.",
-      "provider": "Web-Chat",
-      "yourAction": "Fresh Chat starten und das kompakte B2b-P1-Briefing ausführen. Stop bei Georgs visueller Review.",
+      "bucket": "LOOK_AT",
+      "title": "Billboard B2b-P1 · frozen candidate · review + lifecycle gate",
+      "what": "Aktueller Recovery-Stand ist PR #211: B2b-P1 nach zwei Reparaturpässen bei 39/40 eingefroren. Ein bereits geplanter Tick lief beim Moduswechsel 725→726 und blieb danach stabil. Kein Repair Pass 3. Web testet Lifecycle/Quiescence isoliert; Claude Design darf den eingefrorenen Kandidaten unverändert visuell zeigen.",
+      "provider": "Web lifecycle test · Claude visual review",
+      "yourAction": "Kein Rebuild. Technisch nur isolierter Lifecycle-Test in Web; visuell den frozen candidate beurteilen.",
       "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 211,
       "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
-      "expectedHead": "ec475c5d3ae8d975a75e85cf2c60ecae0a0e527b",
+      "expectedHead": "6b29367df59f7c901ae66fea852999f6d62750e7",
       "brief": {
-        "label": "B2b-P1 Fresh Chat Start",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_FRESH_CHAT_START_2026-09-25.md",
+        "label": "B2b-P1 failure recovery",
+        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/failure-recovery/START_HERE.md",
         "ref": "chatgpt-web/billboard-b2b-research-2026-09-25",
-        "pasteReady": true
+        "pasteReady": false
       },
-      "review": {
-        "label": "Akzeptierte B2a Medienbasis",
-        "path": "kfb-hub/pruefen/billboard-b2a/index.html",
-        "sourceRef": "B2b-P1 READY · no B2b runtime/Stage yet"
-      }
+      "review": null
     },
     {
       "id": "billboard-b3-cartoon-body",
@@ -351,9 +347,9 @@
       "id": "racer",
       "bucket": "LOOK_AT",
       "title": "Racer · Track Core · G0 → W0",
-      "what": "Track Core ist die aktuelle Racer-Architektur. Neuester PR-#219-Stand verlangt zuerst G0 (JavaScript als maßgeblicher Core prüfen/freigeben), dann W0 Census/Contracts/reference. Claude Design Playable Track R0 hat korrekt SOURCE_REQUIRED gestoppt und bleibt separat HOLD.",
+      "what": "Track Core ist die aktuelle Racer-Architektur. Neuester PR-#219-Stand verlangt zuerst G0 (JavaScript als maßgeblicher Core prüfen/freigeben), dann W0 Census/Contracts/reference. Claude Design Playable Track R0 hat korrekt SOURCE_REQUIRED gestoppt und bleibt separat HOLD. Parallel dazu ist Claude Design HUD+Billboards jetzt separat startbar; die eigentliche Track-/R0-Komposition bleibt HOLD.",
       "provider": "Georg/WSA → ChatGPT Web → Blender MCP → Web → Claude Design",
-      "yourAction": "WSA prüft G0. Nach APPROVE startet nur TRACK-CORE W0. Playable Track R0 nicht starten.",
+      "yourAction": "Für Track Core: WSA prüft G0, dann nur W0. Parallel darf der separate Racer-Design-Lane HUD+Billboards jetzt starten.",
       "waitingFor": "G0 JavaScript-Entscheidung. R0 wartet zusätzlich auf Core proof/runtime parity + Web closed-package prep.",
       "questions": [
         "JavaScript als einzigen maßgeblichen Track-Core bestätigen oder einen konkreten aktuellen Owner-Konflikt nennen."
@@ -366,6 +362,27 @@
         "label": "TRACK-CORE-0 · Web Census + Core Contract",
         "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md",
         "ref": "georg-doc-patch-2",
+        "pasteReady": true
+      },
+      "review": null
+    },
+    {
+      "id": "racer-design-hud-billboards",
+      "bucket": "CAN_START",
+      "title": "Racer Design · HUD + Billboard System · NOW",
+      "what": "Produktiver Claude-Design-Slice ohne Track-Core-Abhängigkeit: vorhandene HUD-Richtung als Theme/Tokens fertigstellen, echte Kenney-Billboard-Familie source-isolieren, KFB Billboard-Visual-/Crop-Grammatik definieren und 6–10 Boards nur auf neutraler/Test-Fixture beweisen. Keine finale Köln-Platzierung.",
+      "provider": "Claude Design · fresh chat im bestehenden Racer-Projekt",
+      "yourAction": "Neuen Claude-Design-Chat starten und den CURRENT START verwenden. Stop bei Georg HUD+Billboard PASS/TUNE/REJECT.",
+      "waitingFor": "",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 222,
+      "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
+      "expectedHead": "9c013b741e45b71e898e892afd45b72ac97ea270",
+      "brief": {
+        "label": "Racer HUD + Billboards · CURRENT START",
+        "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md",
+        "ref": "chat/wsa-mvp-dispatch-prep-2026-09-26",
         "pasteReady": true
       },
       "review": null
