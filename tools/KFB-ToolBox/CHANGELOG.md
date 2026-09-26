@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-26 · ClayBound Asset 01 accepted · Asset 03 two-pass recovery
+
+### HUMAN / SOURCE STATE
+Asset 01 (smooth matte clay r1) is HUMAN_ACCEPTED with exact X/Y edge equality. Georg explicitly skipped Asset 02 for now and requested the rough handmade modelling surface next.
+
+### ASSET 03
+Asset 03 is authored as a 2048×2048 16-bit Non-Color relative meso-height source. r2 passes all 4 seam/half-offset criteria but still awaits Georg's look review. r3 improves the broad kneading/compression language but fails X/Y seam continuity. Two repair passes are spent; the slice is frozen.
+
+### ROUTING
+PR #228 now carries the manifest, deterministic r2 source generator, Blender MCP handoff and full failure-recovery export under `_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/`. Blender consumption is blocked until the human look gate. PR #173 remains the seam donor.
+
+### BOUNDARY
+No binary was guessed into Dropbox, no second asset registry was created, no production GLB/material was mutated and no Stage/Live route was published.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
@@ -115,3 +129,39 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-26 · KFB Clay Asset Studio v0.1.0
+
+### TOOL CREATED · EXPERIMENTAL
+Private ChatGPT plugin `KFB Clay Asset Studio` verified at version **0.1.0** / release `pluginrel_6ab7de067680819184bb6c981df7489c`. Skill `produce-clay-assets` owns a fixed 50-item review-gated raster-production queue for clay textures, shader utility maps, craft materials and cutout/decal sheets.
+
+### CONTRACT
+Exactly one asset per review turn; human approval before advancing. Tile candidates require repeat/edge inspection, transparency must be real alpha where claimed, and grayscale-looking images are not promoted to calibrated height/roughness maps by appearance alone.
+
+### BOUNDARY
+The plugin is an **EXPERIMENTAL production helper**, not a replacement for ToolBox, Asset Librarian, Blender/MCP, shader owners or game runtimes. No asset has been generated, accepted, integrated, staged or promoted yet.
+
+### NEXT
+Asset 1: **Smooth matte clay seamless texture** → source + 3×3 repeat review before Asset 2.
+
+
+## 2026-09-26 · ClayBound NotebookLM source decks + Hub production lane
+
+### SOURCE INTAKE
+Four NotebookLM slide-deck PDFs are now pinned in the existing ClayBound Style Reference folder:
+- `ClayBound_Production_Pipeline.pdf`
+- `Digital_Clay_Grammar.pdf`
+- `Diorama_Texture_Atlas.pdf`
+- `KFB_ClayBound_Production_Spec.pdf`
+
+Combined size is 68,563,328 B (~65.4 MiB). They were **not opened, rendered or web-optimized** in this intake; originals remain source evidence.
+
+### ROUTING
+Added `CLAYBOUND_INPUT_INTAKE_2026-09-26.md` with the bounded production backlog. HUB-CTRL #202 now carries one compact **ClayBound · Production Assets** lane plus seven catalog jobs instead of exposing the full 50-item plugin queue as cards.
+
+Current READY gate:
+**CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat + Georg review.**
+
+### BOUNDARY
+No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
