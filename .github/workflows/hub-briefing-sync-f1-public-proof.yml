@@ -55,7 +55,7 @@ jobs:
       - name: Open exact public Hub and visible Briefings
         run: |
           mkdir -p hub-briefing-sync-f1-public-proof
-          cat > /tmp/proof.mjs <<'JS'
+          cat > hub-briefing-sync-f1-public-proof/proof.mjs <<'JS'
           import { chromium } from 'playwright';
           import fs from 'node:fs';
           const url='https://kayfabizarro.pages.dev/kfb-hub/';
@@ -99,7 +99,7 @@ jobs:
             await browser.close();
           }
           JS
-          node /tmp/proof.mjs
+          node hub-briefing-sync-f1-public-proof/proof.mjs
 
       - uses: actions/upload-artifact@v6
         if: always()
