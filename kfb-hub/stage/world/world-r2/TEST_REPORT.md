@@ -23,10 +23,21 @@ Executed over `http://127.0.0.1:4173/`, never through `file://`.
 
 Screenshots were produced during the run and intentionally not committed; CI uploads equivalent evidence.
 
-## Publication
+## Public Cloudflare gate
 
-Not performed at this checkpoint. `PUBLIC_VERIFIED` remains false until the exact Cloudflare route
-shows source marker `58028b07...` and repeats the browser sequence.
+Publication head: `cloudflare-live@c035427ecb62023758589224c5d7872b217e0261`.
+
+The exact route was opened visibly and then tested with the same real-browser sequence:
+
+- source marker `58028b07...`: **PASS**;
+- Hürth: **55/55 PASS**;
+- Cologne: **55/55 PASS**;
+- accepted WB2: **34/34 PASS**;
+- public browser harness: **15/15 PASS**;
+- page errors: **0**;
+- failed source requests: **0**.
+
+Status: **PUBLIC_VERIFIED · HUMAN_REVIEW**.
 
 ## Scope note
 
