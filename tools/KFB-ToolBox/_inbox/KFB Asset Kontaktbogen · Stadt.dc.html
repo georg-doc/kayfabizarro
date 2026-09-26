@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#ece4d2;color:#1d1a14;font-family:Barlow,system-ui,sans-serif}
+a{color:#8a4b12}a:hover{color:#c2410c}
+textarea,input{font-family:inherit}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</helmet>
+<div data-screen-label="Kontaktbogen Stadtmöblierung" style="min-height:100vh;background:#ece4d2;background-image:radial-gradient(rgba(60,45,20,.06) 1px,transparent 1px);background-size:14px 14px;padding:28px clamp(14px,3vw,40px) 60px;box-sizing:border-box">
+
+  <header style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;border-bottom:3px solid #1d1a14;padding-bottom:14px;margin-bottom:22px">
+    <div style="display:flex;flex-direction:column;gap:4px;max-width:720px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6b604b">KFB World · Hürth · Asset-Kontaktbogen · 26.09.2026</div>
+      <h1 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(34px,5vw,56px);line-height:.95;letter-spacing:-.01em;text-transform:uppercase">Stadtmöblierung</h1>
+      <div style="font-size:15px;line-height:1.45;color:#3d3528;text-wrap:pretty">Jedes Bild zeigt das Asset im Build-Maßstab neben der grauen 1,85-m-Figur (FrizzleBob). Klick aufs Bild öffnet 3D. Vorbelegt: <b>Im Einsatz</b> und <b>Vorausgewählt</b> stehen auf Übernehmen. Ändern, anmerken, dann „Für Chat kopieren“.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.on }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:7px 12px;border:2px solid #1d1a14;border-radius:999px;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3d3528">{{ tally }}</div>
+        <button onClick="{{ openExport }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:.05em;text-transform:uppercase;padding:9px 16px;border:0;border-radius:6px;background:#1d1a14;color:#f2b61f;cursor:pointer">Für Chat kopieren</button>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ exportOpen }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#1d1a14;color:#efe6d2;border-radius:10px;padding:16px;margin-bottom:26px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em">Export · in den Chat einfügen</div>
+        <div style="display:flex;gap:8px">
+          <button onClick="{{ copyExport }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;padding:7px 14px;border:0;border-radius:6px;background:#f2b61f;color:#1d1a14;cursor:pointer">{{ copyLabel }}</button>
+          <button onClick="{{ closeExport }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;padding:7px 14px;border:1px solid #6b604b;border-radius:6px;background:transparent;color:#efe6d2;cursor:pointer">Schließen</button>
+        </div>
+      </div>
+      <textarea readonly="readonly" value="{{ exportText }}" style="width:100%;min-height:260px;box-sizing:border-box;background:#11100b;color:#efe6d2;border:1px solid #3d3528;border-radius:6px;padding:12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5"></textarea>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ showCars }}" hint-placeholder-val="{{ true }}">
+    <section style="margin-bottom:34px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+        <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.02em">Autovergleich</h2>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b604b">vorn KayKit · erste Wahl · hinten Kenney · zweite Wahl · alle auf reale Länge (PKW 3,9–4,7 m) · links die 1,85-m-Figur · Klick = 3D</div>
+      </div>
+      <div onClick="{{ openCars }}" title="3D öffnen" style="position:relative;background:#dcd3bf;border:1px solid #cfc3a8;border-radius:8px;overflow:hidden;cursor:zoom-in;aspect-ratio:1200/460">
+        <img src="{{ carImg }}" alt="Autovergleich KayKit gegen Kenney" style="width:100%;height:100%;object-fit:cover;display:block;opacity:{{ carOpacity }}">
+        <div style="position:absolute;left:12px;top:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.05em;background:#1d1a14;color:#a79f8b;padding:3px 8px;border-radius:4px">Reihe hinten · Kenney (zweite Wahl)</div>
+        <div style="position:absolute;left:12px;bottom:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.05em;background:#1d1a14;color:#7fd08a;padding:3px 8px;border-radius:4px">Reihe vorn · KayKit (erste Wahl)</div>
+        <div style="position:absolute;right:12px;bottom:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6b604b">{{ carLoading }}</div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="3">
+    <section style="margin-bottom:34px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+        <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.02em">{{ sec.title }}</h2>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b604b">{{ sec.sub }}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px">
+        <sc-for list="{{ sec.cards }}" as="c" hint-placeholder-count="6">
+          <article style="background:#fbf7ee;border:1px solid #cfc3a8;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 #cfc3a8,0 6px 14px rgba(40,30,10,.06)">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:#1d1a14;color:#d8cdb3;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em">
+              <span>{{ c.frame }}</span><span style="color:{{ c.stampColor }};font-weight:500">{{ c.stamp }}</span>
+            </div>
+            <div onClick="{{ c.open }}" title="3D öffnen" style="position:relative;aspect-ratio:6/5;background:#dcd3bf;cursor:zoom-in;display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <img src="{{ c.thumb }}" alt="{{ c.id }}" style="width:100%;height:100%;object-fit:cover;display:block;opacity:{{ c.thumbOpacity }}">
+              <div style="position:absolute;left:8px;bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3d3528;background:rgba(251,247,238,.85);padding:2px 6px;border-radius:4px">{{ c.size }}</div>
+              <div style="position:absolute;inset:auto 8px 6px auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b604b">{{ c.loading }}</div>
+            </div>
+            <div style="padding:10px 12px 12px;display:flex;flex-direction:column;gap:7px;flex:1">
+              <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline">
+                <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;line-height:1.05;word-break:break-word">{{ c.id }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b604b;text-align:right">{{ c.cat }}</div>
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b604b;word-break:break-all">{{ c.source }}</div>
+              <div style="font-size:14px;line-height:1.35;color:#2a241a;text-wrap:pretty">{{ c.use }}</div>
+              <sc-if value="{{ c.hasNote }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px;line-height:1.35;color:#6b4a12;font-style:italic">{{ c.note }}</div>
+              </sc-if>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:auto;padding-top:4px">
+                <button onClick="{{ c.yes }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;padding:7px 4px;border-radius:5px;cursor:pointer;border:2px solid #2f7d3a;background:{{ c.yesBg }};color:{{ c.yesFg }}">✓ Nehmen</button>
+                <button onClick="{{ c.no }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;padding:7px 4px;border-radius:5px;cursor:pointer;border:2px solid #b3261e;background:{{ c.noBg }};color:{{ c.noFg }}">✗ Nein</button>
+                <button onClick="{{ c.maybe }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;padding:7px 4px;border-radius:5px;cursor:pointer;border:2px solid #b86b00;background:{{ c.maybeBg }};color:{{ c.maybeFg }}">? Prüfen</button>
+              </div>
+              <textarea placeholder="Anmerkung …" value="{{ c.userNote }}" onInput="{{ c.onNote }}" rows="2" style="width:100%;box-sizing:border-box;resize:vertical;border:1px solid #cfc3a8;border-radius:5px;background:#fffdf7;padding:6px 8px;font-size:13px;color:#1d1a14"></textarea>
+              <sc-if value="{{ c.hasWorld }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ c.worldHref }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-decoration:none;color:#8a4b12">↗ in Hürth zeigen · {{ c.count }}</a>
+              </sc-if>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+  </sc-for>
+
+  <sc-if value="{{ showMissing }}" hint-placeholder-val="{{ true }}">
+    <section style="margin-bottom:30px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+        <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.02em">Fehlliste</h2>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b604b">was noch fehlt · „besorge ich“ anhaken · ⚙ = baue ich prozedural</div>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:2px solid #1d1a14">
+        <sc-for list="{{ missing }}" as="m" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,2fr) auto minmax(0,1.6fr);gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid #cfc3a8">
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;line-height:1.1">{{ m.name }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b604b">{{ m.where }}</div>
+            </div>
+            <div style="font-size:14px;line-height:1.35;color:#2a241a;text-wrap:pretty">{{ m.why }}</div>
+            <button onClick="{{ m.toggle }}" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;padding:7px 10px;border-radius:5px;cursor:pointer;border:2px solid #1d1a14;white-space:nowrap;background:{{ m.bg }};color:{{ m.fg }}">{{ m.label }}</button>
+            <input type="text" placeholder="Anmerkung / Quelle …" value="{{ m.note }}" onInput="{{ m.onNote }}" style="width:100%;box-sizing:border-box;border:1px solid #cfc3a8;border-radius:5px;background:#fffdf7;padding:7px 8px;font-size:13px">
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+
+  <footer style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b604b;line-height:1.6;border-top:1px solid #cfc3a8;padding-top:12px">
+    Quelle: Registry registry/assets/v1/packs/*.json · Pin 378b2093 · alle CC0 · Katalog city-assets.js (gleiche Quelle wie der Production-Tab im WorldBuilder) · Triage docs/KAYKIT_CITYBITS_TRIAGE.md · Entscheidungen bleiben lokal gespeichert
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { cat: null, dec: {}, miss: {}, thumbs: {}, sizes: {}, filter: 'all', exportOpen: false, copied: false };
+  KEY = 'kfb-asset-sheet.city.v1';
+
+  async componentDidMount() {
+    try { const s = JSON.parse(localStorage.getItem(this.KEY) || '{}'); this.setState({ dec: s.dec || {}, miss: s.miss || {} }); } catch {}
+    const cat = await import(new URL('./city-assets.js', location.href).href);
+    this.setState({ cat });
+    this.renderThumbs(cat).catch((e) => console.warn('[sheet] thumbs', e));
+  }
+  save() { try { localStorage.setItem(this.KEY, JSON.stringify({ dec: this.state.dec, miss: this.state.miss })); } catch {} }
+  srcOf(x) { const c = this.state.cat; if (x.path) return c.url(x); if (x.localFile) return new URL(encodeURI(x.localFile), location.href).href; return null; }
+
+  async setupThree() {
+    if (this.T) return this.T;
+    const THREE = await import('three');
+    const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
+    const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
+    const cache = new Map(), L = new GLTFLoader();
+    const load = (u) => { if (!cache.has(u)) cache.set(u, L.loadAsync(u)); return cache.get(u); };
+    const stage = () => {
+      const scene = new THREE.Scene(); scene.background = new THREE.Color(0xdcd3bf);
+      scene.add(new THREE.HemisphereLight(0xfff6e4, 0x8a7a5a, 1.6));
+      const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(4, 8, 5); sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
+      Object.assign(sun.shadow.camera, { left: -12, right: 12, top: 12, bottom: -12, near: 0.5, far: 60 }); sun.shadow.bias = -0.0004; scene.add(sun);
+      const ground = new THREE.Mesh(new THREE.CircleGeometry(40, 48).rotateX(-Math.PI / 2), new THREE.ShadowMaterial({ opacity: 0.22 })); ground.receiveShadow = true; scene.add(ground);
+      return { scene, sun };
+    };
+    const refFig = () => {
+      const g = new THREE.Group(), m = new THREE.MeshStandardMaterial({ color: 0x9a9384, roughness: 0.9 });
+      const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.26, 1.85 - 0.52 - 0.34, 6, 14), m); body.position.y = (1.85 - 0.34) / 2; body.castShadow = true; g.add(body);
+      const head = new THREE.Mesh(new THREE.SphereGeometry(0.17, 16, 12), m); head.position.y = 1.85 - 0.17; head.castShadow = true; g.add(head);
+      return g;
+    };
+    const place = async (x) => {
+      const u = this.srcOf(x); if (!u) return null;
+      const g = await load(u); const obj = g.scene.clone(true);
+      obj.traverse((o) => {
+        if (!o.isMesh) return; o.castShadow = true; o.receiveShadow = true;
+        /* wie im Build: KayKit-Ampelgehäuse US-Gelb (Feld 3,1) → Anthrazit (3,0) */
+        if (x.pack === 'KK' && x.id.startsWith('trafficlight') && o.geometry.attributes.uv) {
+          o.geometry = o.geometry.clone(); const uv = o.geometry.attributes.uv;
+          for (let i = 0; i < uv.count; i++) { const u = uv.getX(i), v = uv.getY(i); if (Math.floor(u * 8) === 3 && Math.floor(v * 4) === 1) uv.setY(i, v - 0.25); }
+          uv.needsUpdate = true;
+        }
+      });
+      const b0 = new THREE.Box3().setFromObject(obj), sz = b0.getSize(new THREE.Vector3());
+      let s = x.s; if (!s && x.h) s = x.h / Math.max(1e-6, sz.y); if (!s && x.len) s = x.len / Math.max(1e-6, Math.max(sz.x, sz.z)); if (!s) s = 1;
+      const sx = x.id === 'kr_sign_pole' ? 3.6 : s;
+      obj.scale.set(sx, s, sx);
+      const b = new THREE.Box3().setFromObject(obj); obj.position.y -= b.min.y; obj.position.x -= (b.min.x + b.max.x) / 2; obj.position.z -= (b.min.z + b.max.z) / 2;
+      const B = new THREE.Box3().setFromObject(obj); return { obj, box: B, s };
+    };
+    this.T = { THREE, OrbitControls, stage, refFig, place };
+    return this.T;
+  }
+
+  async renderThumbs(cat) {
+    const T = await this.setupThree(), { THREE } = T, W = 360, H = 300;
+    const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, H); r.setPixelRatio(1.5);
+    r.outputColorSpace = THREE.SRGBColorSpace; r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap;
+    const cam = new THREE.PerspectiveCamera(30, W / H, 0.05, 500);
+    for (const x of cat.ASSETS) {
+      let P = null; try { P = await T.place(x); } catch (e) { console.warn('[sheet]', x.id, e.message); }
+      if (!P) continue;
+      const { scene, sun } = T.stage(), fig = T.refFig();
+      const sz = P.box.getSize(new THREE.Vector3());
+      fig.position.set(-(sz.x / 2 + 0.55), 0, 0); scene.add(P.obj, fig);
+      const all = new THREE.Box3().setFromObject(P.obj).union(new THREE.Box3().setFromObject(fig));
+      const c = all.getCenter(new THREE.Vector3()), R = all.getSize(new THREE.Vector3()).length() / 2;
+      const d = R / Math.sin(THREE.MathUtils.degToRad(15)) * 0.9;
+      cam.position.set(c.x + d * 0.62, c.y + d * 0.34, c.z + d * 0.71); cam.lookAt(c); cam.updateProjectionMatrix();
+      sun.shadow.camera.left = sun.shadow.camera.bottom = -R * 2; sun.shadow.camera.right = sun.shadow.camera.top = R * 2; sun.shadow.camera.far = R * 10 + 20; sun.position.set(c.x + R * 2, R * 4 + 4, c.z + R * 2.5); sun.target.position.copy(c); scene.add(sun.target); sun.shadow.camera.updateProjectionMatrix();
+      r.render(scene, cam);
+      const url = r.domElement.toDataURL('image/jpeg', 0.86);
+      const hM = sz.y, lM = Math.max(sz.x, sz.z);
+      const fmt = (v) => v.toFixed(v < 10 ? 2 : 1).replace('.', ',');
+      this.setState((st) => ({ thumbs: { ...st.thumbs, [x.id]: url }, sizes: { ...st.sizes, [x.id]: fmt(hM) + ' m hoch · ' + fmt(lM) + ' m lang' } }));
+      await new Promise((res) => setTimeout(res, 0));
+    }
+    r.dispose();
+    this.renderCarCompare(cat).catch((e) => console.warn('[sheet] cars', e));
+  }
+
+  async carLineup(cat) {
+    const T = await this.setupThree(), { THREE } = T, { scene, sun } = T.stage();
+    const rows = [['kk', 0], ['kc', -7.5]], all = new THREE.Box3();
+    for (const [key, z] of rows) {
+      let x0 = 0; const fig = T.refFig(); fig.position.set(-1.2, 0, z); scene.add(fig); all.expandByObject(fig);
+      for (const a of cat.ASSETS.filter((q) => q.car === key)) {
+        let P = null; try { P = await T.place(a); } catch {} if (!P) continue;
+        const holder = new THREE.Group(); holder.add(P.obj); holder.rotation.y = -0.5;
+        const b = new THREE.Box3().setFromObject(holder), w = b.max.x - b.min.x;
+        holder.position.set(x0 - b.min.x, 0, z); x0 += w + 0.9; scene.add(holder); all.expandByObject(holder);
+      }
+    }
+    const c = all.getCenter(new THREE.Vector3()), R = all.getSize(new THREE.Vector3()).length() / 2;
+    sun.shadow.camera.left = sun.shadow.camera.bottom = -R * 1.5; sun.shadow.camera.right = sun.shadow.camera.top = R * 1.5; sun.shadow.camera.far = R * 8 + 40; sun.shadow.mapSize.set(2048, 2048);
+    sun.position.set(c.x + R, R * 2.5 + 8, c.z + R * 1.6); sun.target.position.copy(c); scene.add(sun.target); sun.shadow.camera.updateProjectionMatrix();
+    return { scene, c, R };
+  }
+  async renderCarCompare(cat) {
+    const T = await this.setupThree(), { THREE } = T, W = 1200, H = 460;
+    const { scene, c, R } = await this.carLineup(cat);
+    const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, H); r.setPixelRatio(1.5);
+    r.outputColorSpace = THREE.SRGBColorSpace; r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap;
+    const cam = new THREE.PerspectiveCamera(24, W / H, 0.1, 1000), d = R / Math.tan(THREE.MathUtils.degToRad(12 * W / H)) * 1.25;
+    cam.position.set(c.x, c.y + d * 0.45, c.z + d * 0.89); cam.lookAt(c.x, c.y - 0.2, c.z);
+    r.render(scene, cam); this.setState({ carCompare: r.domElement.toDataURL('image/jpeg', 0.88) }); r.dispose();
+  }
+  async openCarViewer() {
+    const cat = this.state.cat; if (!cat) return;
+    const T = await this.setupThree(), { THREE } = T, { scene, c, R } = await this.carLineup(cat);
+    this.openScene(scene, c, R, 'Autovergleich · vorn KayKit (erste Wahl) · hinten Kenney (zweite Wahl) · links 1,85-m-Figur');
+  }
+  openScene(scene, c, R, title) {
+    const { THREE } = this.T;
+    const ov = document.createElement('div');
+    Object.assign(ov.style, { position: 'fixed', inset: '0', background: 'rgba(29,26,20,.88)', zIndex: 1000, display: 'flex', flexDirection: 'column', padding: '18px', boxSizing: 'border-box', gap: '10px' });
+    const bar = document.createElement('div'); Object.assign(bar.style, { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', color: '#efe6d2', fontFamily: "'Barlow Condensed',sans-serif", fontSize: '22px', fontWeight: 700, textTransform: 'uppercase' });
+    const t = document.createElement('span'); t.textContent = title; bar.appendChild(t);
+    const close = document.createElement('button'); close.textContent = 'Schließen ✕'; Object.assign(close.style, { font: "700 16px 'Barlow Condensed',sans-serif", textTransform: 'uppercase', padding: '8px 14px', border: '0', borderRadius: '6px', background: '#f2b61f', color: '#1d1a14', cursor: 'pointer', flex: 'none' });
+    bar.appendChild(close); ov.appendChild(bar);
+    const host = document.createElement('div'); Object.assign(host.style, { flex: '1', borderRadius: '10px', overflow: 'hidden', minHeight: '0' }); ov.appendChild(host);
+    document.body.appendChild(ov);
+    const r = new THREE.WebGLRenderer({ antialias: true }); r.outputColorSpace = THREE.SRGBColorSpace; r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap; r.setPixelRatio(Math.min(2, devicePixelRatio));
+    host.appendChild(r.domElement);
+    const cam = new THREE.PerspectiveCamera(35, 1, 0.05, 1000), d = R / Math.sin(THREE.MathUtils.degToRad(17));
+    cam.position.set(c.x + d * 0.3, c.y + d * 0.4, c.z + d * 0.85);
+    const ctl = new this.T.OrbitControls(cam, r.domElement); ctl.target.copy(c); ctl.enableDamping = true; ctl.update();
+    let on = true;
+    const size = () => { const w = host.clientWidth, h = host.clientHeight; r.setSize(w, h); cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix(); };
+    size(); addEventListener('resize', size);
+    const loop = () => { if (!on) return; ctl.update(); r.render(scene, cam); requestAnimationFrame(loop); }; loop();
+    const key = (e) => { if (e.key === 'Escape') shut(); };
+    const shut = () => { on = false; removeEventListener('resize', size); removeEventListener('keydown', key); r.dispose(); ov.remove(); };
+    close.onclick = shut; addEventListener('keydown', key);
+  }
+
+  async openViewer(x) {
+    if (!this.srcOf(x)) return;
+    const T = await this.setupThree(), { THREE } = T;
+    const ov = document.createElement('div');
+    Object.assign(ov.style, { position: 'fixed', inset: '0', background: 'rgba(29,26,20,.88)', zIndex: 1000, display: 'flex', flexDirection: 'column', padding: '18px', boxSizing: 'border-box', gap: '10px' });
+    const bar = document.createElement('div'); Object.assign(bar.style, { display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#efe6d2', fontFamily: "'Barlow Condensed',sans-serif", fontSize: '22px', fontWeight: 700, textTransform: 'uppercase' });
+    bar.textContent = x.id + ' · ' + (this.state.sizes[x.id] || '') + ' · neben 1,85-m-Figur';
+    const close = document.createElement('button'); close.textContent = 'Schließen ✕'; Object.assign(close.style, { font: "700 16px 'Barlow Condensed',sans-serif", textTransform: 'uppercase', padding: '8px 14px', border: '0', borderRadius: '6px', background: '#f2b61f', color: '#1d1a14', cursor: 'pointer' });
+    bar.appendChild(close); ov.appendChild(bar);
+    const host = document.createElement('div'); Object.assign(host.style, { flex: '1', borderRadius: '10px', overflow: 'hidden', minHeight: '0' }); ov.appendChild(host);
+    document.body.appendChild(ov);
+    const r = new THREE.WebGLRenderer({ antialias: true }); r.outputColorSpace = THREE.SRGBColorSpace; r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFSoftShadowMap; r.setPixelRatio(Math.min(2, devicePixelRatio));
+    host.appendChild(r.domElement);
+    const { scene, sun } = T.stage(), P = await T.place(x), fig = T.refFig();
+    const sz = P.box.getSize(new THREE.Vector3()); fig.position.set(-(sz.x / 2 + 0.55), 0, 0); scene.add(P.obj, fig);
+    const all = new THREE.Box3().setFromObject(P.obj).union(new THREE.Box3().setFromObject(fig)), c = all.getCenter(new THREE.Vector3()), R = all.getSize(new THREE.Vector3()).length() / 2;
+    const cam = new THREE.PerspectiveCamera(35, 1, 0.05, 800), d = R / Math.sin(THREE.MathUtils.degToRad(17));
+    cam.position.set(c.x + d * 0.6, c.y + d * 0.3, c.z + d * 0.75);
+    sun.shadow.camera.left = sun.shadow.camera.bottom = -R * 2; sun.shadow.camera.right = sun.shadow.camera.top = R * 2; sun.shadow.camera.far = R * 10 + 20; sun.position.set(c.x + R * 2, R * 4 + 4, c.z + R * 2.5); sun.target.position.copy(c); scene.add(sun.target); sun.shadow.camera.updateProjectionMatrix();
+    const ctl = new T.OrbitControls(cam, r.domElement); ctl.target.copy(c); ctl.enableDamping = true; ctl.autoRotate = true; ctl.autoRotateSpeed = 1.2; ctl.update();
+    let on = true;
+    const size = () => { const w = host.clientWidth, h = host.clientHeight; r.setSize(w, h); cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix(); };
+    size(); addEventListener('resize', size);
+    const loop = () => { if (!on) return; ctl.update(); r.render(scene, cam); requestAnimationFrame(loop); }; loop();
+    const shut = () => { on = false; removeEventListener('resize', size); removeEventListener('keydown', key); r.dispose(); ov.remove(); };
+    const key = (e) => { if (e.key === 'Escape') shut(); };
+    close.onclick = shut; addEventListener('keydown', key);
+  }
+
+  decOf(x) { const d = this.state.dec[x.id]; if (d) return d; return { v: x.status === 'park' ? null : 'yes', note: '', pre: true }; }
+  setDec(x, patch) { this.setState((st) => ({ dec: { ...st.dec, [x.id]: { ...this.decOf(x), ...patch, pre: false } } }), () => this.save()); }
+
+  exportText() {
+    const c = this.state.cat; if (!c) return '';
+    const P = c.PACKS, groups = { yes: [], no: [], maybe: [], open: [] };
+    for (const x of c.ASSETS) {
+      const d = this.decOf(x), line = '- ' + x.id + ' (' + P[x.pack] + ' · ' + x.file + ') · ' + c.STATUS[x.status] + (d.pre && d.v ? ' · Vorbelegung' : '') + (d.note ? ' · Anmerkung: ' + d.note.replace(/\n+/g, ' ') : '');
+      groups[d.v || 'open'].push(line);
+    }
+    const out = ['## Kontaktbogen Stadtmöblierung · Entscheidungen (' + new Date().toISOString().slice(0, 10) + ')', ''];
+    const sec = (t, l) => { if (l.length) out.push('### ' + t + ' (' + l.length + ')', ...l, ''); };
+    sec('Übernehmen', groups.yes); sec('Ablehnen', groups.no); sec('Prüfen', groups.maybe); sec('Offen · nicht entschieden', groups.open);
+    const M = c.MISSING.map((m) => ({ m, s: this.state.miss[m.id] || {} }));
+    const get = M.filter((o) => o.s.get), noted = M.filter((o) => !o.s.get && o.s.note);
+    if (get.length) out.push('### Fehlliste · besorge ich (' + get.length + ')', ...get.map((o) => '- ' + o.m.name + (o.s.note ? ' · ' + o.s.note : '')), '');
+    if (noted.length) out.push('### Fehlliste · Anmerkungen', ...noted.map((o) => '- ' + o.m.name + ' · ' + o.s.note), '');
+    return out.join('\n');
+  }
+
+  renderVals() {
+    const c = this.state.cat, f = this.state.filter;
+    const mk = (label, key) => ({ label, bg: f === key ? '#1d1a14' : 'transparent', fg: f === key ? '#f2b61f' : '#1d1a14', on: () => this.setState({ filter: key }) });
+    const filters = [mk('Alle', 'all'), mk('Im Einsatz', 'live'), mk('Vorausgewählt', 'pick'), mk('Geparkt', 'park'), mk('Fehlliste', 'missing')];
+    if (!c) return { filters, tally: 'lade Katalog …', sections: [], missing: [], showMissing: false, showCars: false, carImg: '', carOpacity: 0, carLoading: '', openCars: () => {}, exportOpen: false, exportText: '', copyLabel: 'Kopieren', openExport: () => {}, copyExport: () => {}, closeExport: () => {} };
+    let spots = null;
+    const counts = { live: 0, pick: 0, park: 0 }, decided = { yes: 0, no: 0, maybe: 0 };
+    let frame = 0;
+    const sectionOf = (status, title, sub) => {
+      const list = c.ASSETS.filter((x) => x.status === status);
+      counts[status] = list.length;
+      const cards = list.map((x) => {
+        frame++;
+        const d = this.decOf(x); if (d.v) decided[d.v]++;
+        const on = (v, col) => d.v === v ? { bg: col, fg: '#fff' } : { bg: 'transparent', fg: col };
+        const Y = on('yes', '#2f7d3a'), N = on('no', '#b3261e'), Q = on('maybe', '#b86b00');
+        const src = this.srcOf(x), thumb = this.state.thumbs[x.id];
+        return {
+          id: x.id, cat: x.cat, frame: '#' + String(frame).padStart(2, '0') + ' · ' + ({ KK: 'KayKit 1.0', KB: 'KayKit 1.1', TT: 'Tiny Treats', KR: 'Kenney Roads', KC: 'Kenney Cars', KM: 'Kenney Comm.', KI: 'Kenney Ind.', KS: 'Kenney Sub.' }[x.pack] || x.pack),
+          stamp: ({ live: 'IM EINSATZ', pick: 'VORAUSWAHL', park: 'GEPARKT' })[x.status], stampColor: x.status === 'live' ? '#7fd08a' : x.status === 'pick' ? '#f2b61f' : '#a79f8b',
+          source: c.PACKS[x.pack] + ' · ' + x.file, use: x.use, note: x.note, hasNote: !!x.note,
+          thumb: thumb || (src ? 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221%22 height=%221%22/%3E' : 'refs/kaykit-citybits-1.1-contents.jpg'),
+          thumbOpacity: thumb ? 1 : src ? 0 : 0.35,
+          loading: thumb ? '' : src ? 'rendere …' : 'Vorschau nach WSA-Push',
+          size: this.state.sizes[x.id] || (x.h ? 'Ziel ' + String(x.h).replace('.', ',') + ' m hoch' : x.len ? 'Ziel ' + String(x.len).replace('.', ',') + ' m lang' : ''),
+          yesBg: Y.bg, yesFg: Y.fg, noBg: N.bg, noFg: N.fg, maybeBg: Q.bg, maybeFg: Q.fg,
+          yes: () => this.setDec(x, { v: d.v === 'yes' ? null : 'yes' }), no: () => this.setDec(x, { v: d.v === 'no' ? null : 'no' }), maybe: () => this.setDec(x, { v: d.v === 'maybe' ? null : 'maybe' }),
+          userNote: d.note || '', onNote: (e) => this.setDec(x, { note: e.target.value }),
+          open: () => this.openViewer(x),
+          hasWorld: x.status === 'live' && !!x.world, count: 'Build-Stellen im Production-Tab',
+          worldHref: encodeURI('KFB WORLD-INTEGRATION-01 · Hürth.dc.html') + '?world=huerth&focus=' + encodeURIComponent(x.world || '')
+        };
+      });
+      return { title, sub, cards, status };
+    };
+    const all = [
+      sectionOf('live', 'Im Einsatz', 'steht im Hürth-Build · Knopf „in Hürth zeigen“ fliegt hin'),
+      sectionOf('pick', 'Vorausgewählt', 'nächster Einbau · vorbelegt auf Übernehmen'),
+      sectionOf('park', 'Geparkt / unsicher', 'nicht vorbelegt · deine Entscheidung')
+    ];
+    const sections = f === 'all' ? all : all.filter((s) => s.status === f);
+    const missing = c.MISSING.map((m) => {
+      const s = this.state.miss[m.id] || {};
+      const setM = (p) => this.setState((st) => ({ miss: { ...st.miss, [m.id]: { ...(st.miss[m.id] || {}), ...p } } }), () => this.save());
+      return {
+        name: (m.self ? '⚙ ' : '') + m.name, why: m.why + (m.note ? ' · ' + m.note : ''), where: m.where,
+        label: s.get ? '✓ besorge ich' : m.self ? 'baue ich' : 'besorge ich?', bg: s.get ? '#1d1a14' : 'transparent', fg: s.get ? '#f2b61f' : '#1d1a14',
+        toggle: () => setM({ get: !s.get }), note: s.note || '', onNote: (e) => setM({ note: e.target.value })
+      };
+    });
+    const total = counts.live + counts.pick + counts.park;
+    return {
+      filters, sections, missing, showMissing: f === 'all' || f === 'missing',
+      showCars: f === 'all' || f === 'pick' || f === 'park',
+      carImg: this.state.carCompare || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221%22 height=%221%22/%3E',
+      carOpacity: this.state.carCompare ? 1 : 0, carLoading: this.state.carCompare ? '' : 'rendere Vergleich …',
+      openCars: () => this.openCarViewer(),
+      tally: total + ' Assets · ✓ ' + decided.yes + ' · ✗ ' + decided.no + ' · ? ' + decided.maybe + ' · offen ' + (total - decided.yes - decided.no - decided.maybe),
+      exportOpen: this.state.exportOpen, exportText: this.state.exportOpen ? this.exportText() : '',
+      copyLabel: this.state.copied ? 'Kopiert ✓' : 'Kopieren',
+      openExport: () => this.setState({ exportOpen: true, copied: false }),
+      closeExport: () => this.setState({ exportOpen: false }),
+      copyExport: async () => { const t = this.exportText(); try { await navigator.clipboard.writeText(t); } catch { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); } this.setState({ copied: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
