@@ -15,23 +15,17 @@
   "lanes": [
     {
       "id": "wsa-mvp-dispatch-review",
-      "bucket": "LOOK_AT",
-      "title": "WSA · MVP Dispatch Recon / Planfreigabe",
-      "what": "PR #222 enthält MVP-Planung, Fragile-Webchat-Recovery und Long-Job-Protokoll. Korrektur: B2b-P1 ist kein Closure-Orphan; aktueller Recovery-Owner ist PR #211 mit eingefrorenem 39/40-Kandidaten. Web testet nur Lifecycle/Quiescence, Claude Design darf den Kandidaten unverändert visuell zeigen. City Builder Bits bleibt der echte Recon-Orphan.",
+      "bucket": "WAITING",
+      "title": "WSA · MVP Dispatch · APPROVED WITH TUNES",
+      "what": "WSA planning is complete. Current dispatch board on PR #222 is synchronized after World Contract Reset: World Stage Prep now; Track Core G0→W0; Racer HUD+Billboards parallel; ENV Preview and ToolBox r2 review gates are closed.",
       "provider": "WSA Work Lead · review only",
-      "yourAction": "WSA prüft D8 Long-Job-Protokoll. Für B2b-P1: kein Rebuild/Repair Pass 3; Web-Lifecycle-Test separat, Claude nur Visual Review. City Bits Recon separat freigeben.",
-      "waitingFor": "",
-      "questions": [
-        "G0 JavaScript Track Core?",
-        "Shared Camera owner + World height contract?",
-        "ToolBox publish-before-expansion und ENV-PREVIEW Stage jetzt freigeben?",
-        "D8 C0-Checkpoint-Protokoll für lange/fragile Web-Chats übernehmen?",
-        "A1 B2b-P1 Closure und A9 City Builder Bits Recon als erste Recovery-Slices starten?"
-      ],
+      "yourAction": "",
+      "waitingFor": "No WSA action now. Use the bounded execution lanes; return only for a new cross-owner decision.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 222,
       "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
-      "expectedHead": "8eb2e41bce9f4c306dd0ce37df28c44dd26c25e1",
+      "expectedHead": "823bdb57c2ab30027cafcac9c867f5b6c3e8c9ac",
       "brief": {
         "label": "WSA Recon + Aborted Web-chat Recovery",
         "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/START_HERE.md",
@@ -83,11 +77,11 @@
     {
       "id": "toolbox-source-safe",
       "bucket": "WAITING",
-      "title": "ToolBox r2 · TUNE · Richtung akzeptiert",
-      "what": "Georg akzeptiert die grundsätzliche Richtung. Streifiges Bildrauschen, Bodenbezug, einzelne State-Animationen und die nach unten begrenzte Orbit-Kamera bleiben getrennte Rendering-, Grounding-, Animations- und Kamera-Nacharbeiten; die ToolBox-Integration wird dafür nicht neu geöffnet.",
+      "title": "ToolBox r2 · TUNE · Richtung akzeptiert · Gate geschlossen",
+      "what": "ToolBox r2 review is closed with Georg TUNE / direction accepted. The four observations remain separate bounded follow-ups: image artifacts, ground contact, State-loop animation calibration and free orbit camera. Do not reopen ToolBox r2 integration.",
       "provider": "ChatGPT Web / ToolBox receiving owner",
       "yourAction": "",
-      "waitingFor": "Nacharbeiten nur in den zuständigen bounded Owner-Slices; kein ToolBox-Neustart.",
+      "waitingFor": "Follow-ups only in their named rendering/grounding/animation/camera owners.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 221,
@@ -108,16 +102,16 @@
     {
       "id": "env-preview-01",
       "bucket": "WAITING",
-      "title": "Umgebungs-Vorschau · PASS_WITH_TUNE",
-      "what": "Georg hat den gemeinsamen Licht-, Himmel-, Nebel- und Stimmungsansatz für Resident Atlas und ToolBox als Grundlage angenommen. Resident-Schalter, Kamera von unten, WorldBuilder-Doppelkopf, helle Schattenkanten und Nacht-Lesbarkeit bleiben getrennte, nicht blockierende Folgepunkte.",
+      "title": "Umgebungs-Vorschau · PASS_WITH_TUNE · abgeschlossen",
+      "what": "Shared Environment Preview is PUBLIC STAGE VERIFIED and Georg PASS_WITH_TUNE. It is now an accepted presentation foundation; do not reopen this slice. Camera/actor/rendering/lighting observations remain separate follow-ups.",
       "provider": "WSA / ENV-PREVIEW-01",
       "yourAction": "",
-      "waitingFor": "Folgepunkte nur in ihren zuständigen Kamera-/Actor-/Rendering-/Lighting-Slices; ENV-PREVIEW-01 nicht erneut öffnen.",
+      "waitingFor": "Consume the accepted environment in the next bounded World/ToolBox owner slice.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 218,
       "branch": "chatgpt-web/env-preview-01-2026-09-25",
-      "expectedHead": "97a07ab9d805daf4e11d8e224e60f1885dcbd268",
+      "expectedHead": "88c64c29075f31d655f4777437bb1aa82069df17",
       "brief": {
         "label": "ENV-PREVIEW-01 Return",
         "path": "tools/KFB-ToolBox/_handover/ENV_PREVIEW_01_2026-09-25/RETURN.md",
@@ -127,7 +121,7 @@
       "review": {
         "label": "Umgebungs-Vorschau prüfen",
         "path": "kfb-hub/stage/toolbox/environment-preview-01/index.html",
-        "sourceRef": "PR #218 · 97a07ab9 · public browser 9/9 PASS · Georg PASS_WITH_TUNE · cloudflare-live f4e76abd"
+        "sourceRef": "PR #218 · 88c64c29 · public Stage 9/9 PASS · Georg PASS_WITH_TUNE · accepted foundation"
       }
     },
     {
@@ -178,20 +172,20 @@
     {
       "id": "production-desk",
       "bucket": "RUNNING",
-      "title": "KFB Hub · Daten-Refresh + UX Recovery",
-      "what": "Live Registry bleibt der aktuelle Datenowner. ToolBox/World r2 sowie Hub UX v2 sind intaked; Hub-Shell bleibt bis zur reproduzierten UX-v2-Review unter HUB-CTRL unverändert.",
+      "title": "KFB Hub · Briefing Sync + Root Refresh",
+      "what": "HUB-BRIEFING-SYNC-01 is synchronizing current #190/#204/#218/#221/#222 truth into the Production Desk, then rebuilding the registry/root Hub through the existing owner path. Product runtimes remain unchanged.",
       "provider": "HUB-CTRL #202 · Web + Claude Design",
       "yourAction": "",
-      "waitingFor": "HUB-CTRL rehome des UX-v2-Candidates; Status-Sync PR #215 bleibt separater Merge-Gate.",
+      "waitingFor": "Builder/registry/DOM validation → cloudflare-live root mirror → exact pages.dev verification.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
       "brief": {
-        "label": "Claude Design UX Recovery Sprint",
-        "path": "tools/production_desk/HUB_UX_RECOVERY_CLAUDE_DESIGN_2026-09-25.md",
+        "label": "HUB-BRIEFING-SYNC-01 Recovery",
+        "path": "tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/RECOVERY.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
-        "pasteReady": true
+        "pasteReady": false
       }
     },
     {
@@ -211,11 +205,11 @@
     {
       "id": "worldbuilder-wb2",
       "bucket": "CAN_START",
-      "title": "World r2 · Contract Reset PASS · Stage Prep next",
-      "what": "Der veraltete Selftest-Vertrag ist ersetzt, ohne einen dritten Runtime-Repair. 13/13 Rollenvertrag und 24/24 Owner/Closure PASS; Hürth und Köln je 55/55, WB2 34/34 und Browser-Harness 12/12 PASS bei 0 Page-/Source-Fehlern. Surface-Adapter-Grenze ist dokumentiert: WorldBuilder hostet die lokale Welt, OSM/Track liefern begrenzte Vorgaben, Travel/TinySkies bleibt Präsentations- und Bewegungsdonor.",
+      "title": "World r2 · Contract Reset PASS · Stage Prep NOW",
+      "what": "World r2 Contract Reset is complete without runtime changes: 13/13 contract, 24/24 owner/closure, Hürth 55/55, Köln 55/55, WB2 34/34, browser harness 12/12, 0 page/source failures. WorldBuilder is local world host; OSM/Track add bounded constraints; Travel/TinySkies is presentation/mobility donor.",
       "provider": "WorldBuilder PR #190 / Contract Reset",
-      "yourAction": "",
-      "waitingFor": "WORLD-R2-STAGE-PREP-01 · bestehenden geprüften Kandidaten exakt paketieren; keine neue World-/Track-Architektur.",
+      "yourAction": "Start WORLD-R2-STAGE-PREP-01: package the exact tested candidate unchanged, repeat Hürth→Köln→WB2 on the packaged build, then give Georg one direct KFB Stage visual/freeplay route.",
+      "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 190,
@@ -223,10 +217,10 @@
       "expectedHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
       "review": null,
       "brief": {
-        "label": "World r2 Stage Prep",
+        "label": "WORLD-R2-STAGE-PREP-01",
         "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md",
         "ref": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-        "pasteReady": false
+        "pasteReady": true
       }
     },
     {
@@ -279,7 +273,7 @@
       "what": "Das akzeptierte Kenney-Billboard soll später als runderer, weicherer KFB-Cartoon-Prop modelliert werden. B1/B2a-Medienfläche und Front/Rear-Vertrag bleiben unverändert; Blender MCP ist für echte Topologiearbeit ausdrücklich erlaubt.",
       "provider": "WSA / ToolBox 3D · ggf. Blender MCP",
       "yourAction": "",
-      "waitingFor": "B2b-P1 kann jetzt starten. B3 bleibt vorbereitet und startet nur auf Georgs ausdrücklichen Parallel-Start oder danach.",
+      "waitingFor": "B2b-P1 is frozen at 39/40 after two repair passes; B3 starts only on Georg explicit parallel/later start. Do not treat B2b rebuild as prerequisite.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
@@ -370,7 +364,7 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 222,
       "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
-      "expectedHead": "9c013b741e45b71e898e892afd45b72ac97ea270",
+      "expectedHead": "823bdb57c2ab30027cafcac9c867f5b6c3e8c9ac",
       "brief": {
         "label": "Racer HUD + Billboards · CURRENT START",
         "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md",
@@ -406,7 +400,7 @@
       "what": "Zielbild: vom Globus in eine Region hineinzoomen und dort bauen, dann wieder herauszoomen.",
       "provider": "Coworker + Claude Design + Blender",
       "yourAction": "",
-      "waitingFor": "Erst nach der fertigen ToolBox.",
+      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Georg Stage/freeplay gate + Camera contract; nicht mehr pauschal hinter ToolBox.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 193,
@@ -425,11 +419,11 @@
       "what": "Nach dem 1:1-Rehome des akzeptierten Hürth-Kandidaten: gemeinsame KayKit-Locomotion/Profile konsumieren, Ground↔Flight sauber anschließen und die echte OSM-Lücke Hürth→Köln/SAE schließen.",
       "provider": "ChatGPT Web / WorldBuilder + Travel",
       "yourAction": "",
-      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Stage/Human Gate. Danach Ground↔Flight und OSM-Korridor.",
+      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Georg Stage/freeplay gate + Camera contract. Danach Ground↔Flight/God Mode und OSM-Korridor.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
-      "expectedHead": "158c926cfdc1332b319e2a3ccfbb950147b76896",
+      "expectedHead": "deec05c883de02836c3d699fa6e64d647d32a9f7",
       "brief": {
         "label": "Playable Integration Masterplan",
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
@@ -459,8 +453,8 @@
     }
   ],
   "wsa": {
-    "state": "REVIEW_ONLY",
-    "text": "WSA prüft PR #222. B2b-P1 ist recovered/open-gate auf PR #211 (39/40 frozen); City Builder Bits bleibt Recon-Orphan. Keine Runtime im WSA-Review."
+    "state": "APPROVED_WITH_TUNES",
+    "text": "WSA recon/plan approval is complete. D2/D3/D6 tunes are binding: no new Camera owner/module, one Surface Adapter resolves visible/support height, Travel/TinySkies is presentation/mobility donor only. Current bounded execution: World r2 Stage Prep now; Track Core G0→W0; Racer HUD+Billboards may run in parallel; no mass merge/Live promotion."
   },
   "standards": [
     {
