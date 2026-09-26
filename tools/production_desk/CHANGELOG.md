@@ -1,3 +1,10 @@
+## 2026-09-26 · World r2 contract reset PASS
+
+- moved World r2 `WAITING → CAN_START` after the bounded contract-only reset;
+- pinned PR #190 at `58028b07d` with 13/13 contract, 24/24 static, Hürth/Köln 55/55 each, WB2 34/34 and browser harness 12/12 PASS;
+- recorded the Surface Adapter ownership seam and synchronized PR #204/#218 metadata;
+- next gate is `WORLD-R2-STAGE-PREP-01`; no Stage/Public/Live claim or runtime repair was added.
+
 ## 2026-09-26 · ToolBox r2 human TUNE
 
 - Georg accepted the overall ToolBox r2 direction as **TUNE**;
