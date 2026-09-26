@@ -153,3 +153,60 @@ Current intended order:
 HUD/Billboard Claude now → Track Core Web/Blender/Web → Claude transition grammar → Web R0 closed package → Claude Playable Track R0 → Web rehome/freeplay → real Cologne OSM.
 
 No runtime/browser/Stage tests were run for these documentation-only additions.
+
+
+## Addendum · Racer Cross-Mode HUD / 3D Navigation + Track readiness · 2026-09-26
+
+Status: **PLANNING / DESIGN BRIEF UPDATED · W0 STARTABLE · PLAYABLE R0 STILL HOLD · NO STAGE / LIVE**
+
+### HUD
+Added:
+`RACER_CROSS_MODE_3D_HUD_NAV_ADDENDUM_2026-09-26.md`
+
+The existing startable Claude Design Racer HUD/Billboard slice now also covers:
+- WALK / DRIVE-RACE / FLIGHT mode switching in one HUD grammar;
+- provider-gated instrument visibility;
+- source-proven Factory `arrow.glb` as first-choice near-world 3D navigator;
+- perspective/parallax placement near the Mini-map;
+- route-decision guidance for DRIVE;
+- full 3D target vector support for FLIGHT;
+- conditional Radar/sensor data only when a real provider exists;
+- desktop + mobile composition proof.
+
+No second HUD, route, audio, camera or player-state owner was created.
+
+### Track readiness
+Current lead/WSA decision on PR #222 records JavaScript as authoritative Track Core and Blender/Python as oracle. Operationally:
+- G0 decision is approved at the lead/dispatch layer;
+- **W0 is startable now**;
+- detailed execution then follows `B1 → B2/B3/B4 → B5 → W1 → D1 → R0 → K1`;
+- Playable Track R0 remains intentionally HOLD until those prerequisites and the closed Web input package exist.
+
+The older PR #219 files still contain pre-approval G0 wording in places; PR #222 is the newer dispatch decision and should be used for current execution routing until #219 metadata is synced.
+
+### Blender prework
+Safe now:
+- socketed scenery/structural shells only;
+- bridge/tunnel/support/parking/industrial shells;
+- route-frame attachment structures;
+- reuse existing KayKit/Kenney assets before new modeling.
+
+Wait for Track Core:
+- drivable hairpins/chicanes/spiral ramps;
+- loop road surface;
+- kicker/landing surface;
+- crossings and other centreline-defining geometry.
+
+No dedicated current KFB “Tokyo Drift” module/brief was found in GitHub/Dropbox recon. It is recorded as a later R0 urban-drift beat using core-generated geometry plus Blender scenery, not a bespoke parallel track system.
+
+### Tests / evidence
+This addendum is documentation / dispatch only:
+- new runtime tests: **0**
+- new browser tests: **0**
+- new Stage/Public QA: **0**
+- Dropbox mutations: **0**
+
+Every GitHub write in this addendum was fetched back from the exact PR #222 branch after commit.
+
+### One Racer next gate
+**Execute Track Core W0 in Web/GitHub while the already-startable Claude Design HUD/Billboard visual slice may run in parallel. Do not start Playable Track R0 yet.**
