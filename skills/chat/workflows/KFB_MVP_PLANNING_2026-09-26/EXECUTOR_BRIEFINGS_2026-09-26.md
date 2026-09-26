@@ -4,27 +4,56 @@ Status: **WSA APPROVED WITH BINDING D2/D3/D6 TUNES · BOUNDED DISPATCH OPEN**
 
 Use this file with the recorded WSA decision in `WSA_RECON_PLAN_APPROVAL_2026-09-26.md`. GitHub state overrides dated refs. D2, D3 and D6 below are binding.
 
-## Dispatch board
+## Dispatch board · CURRENT 2026-09-26 after WSA / Contract Reset
 
 | Slice | Executor | State now | Start condition | Outcome |
 |---|---|---|---|---|
-| B2B-P1-CLOSURE-01 | Web/GitHub | STARTABLE | WSA approves orphan recovery | Close green PR #212 without rebuilding; create Return/Recovery/Test/Hub/Stage handoff |
-| CITY-BITS-RECON-01 | Web/GitHub | STARTABLE RECON | WSA approves D8 | Classify 41 exact City Builder Bits models into World/OSM/Race uses; no implementation |
-| ENV-PREVIEW-STAGE-01 | Web/GitHub | STARTABLE | WSA approves D5 | Publish existing #218 candidate to additive Stage comparison + Hub link; no runtime change |
-| TOOLBOX-R2-PUBLISH-01 | Web/GitHub | STARTABLE | WSA approves D4 | Publish existing #221 review surface + Hub link; human review only |
-| TRACK-CORE-G0/W0 | Web/GitHub | STARTABLE | D0/D1 approved; refresh Race refs | Complete census/contracts + pure JS reference per latest #219 addendum |
+| WORLD-R2-STAGE-PREP-01 | Web/GitHub · existing World/Hub owner | **STARTABLE NOW** | Contract Reset PASS | Package exact #190 candidate unchanged → direct KFB Stage → repeat Hürth→Köln→WB2 browser sequence → Georg visual/freeplay |
+| RACER-HUD-BILLBOARD-DESIGN-01 | Claude Design | **STARTABLE NOW · PARALLEL** | fresh chat in existing Racer project | HUD theme/tokens + source-backed billboard family + neutral 6–10-board proof; no Track/R0 |
+| TRACK-CORE-G0/W0 | Web/GitHub | STARTABLE | G0 JS decision / latest #219 | census/contracts + authoritative JS reference; no one-off track |
+| CITY-BITS-RECON-01 | Web/GitHub | STARTABLE RECON | none beyond current source lock | classify exact 41 City Builder Bits models into World/OSM/Race uses; no implementation |
 | CAMERA-CORE-0 | Web/GitHub | STARTABLE RECON ONLY | D2 tune: no owner/module creation | donor census + shared camera contract; no integration |
-| WORLD-R2-CONTRACT-RESET-01 | Web/GitHub | WAITING | ToolBox r2 review + Surface Adapter/D6 metadata contract recorded | test/selftest contract reset only; no failed-runtime patch |
-| ACTOR-FB-BODY-FAMILY-01 | Web/ToolBox → Blender only if needed | WAITING | ToolBox front-door human gate | FrizzleBob identity on Legacy/Medium/Large destination rigs + EarRig v5 compatibility |
-| SURF-POSE-01 | Animation Lab / Web, Blender only if necessary | WAITING | body/profile owner pinned | source-backed card-flight pose set |
-| WORLD-MOBILITY-01 | Web/WorldBuilder | WAITING | World contract reset + camera contract | ground locomotion + card flight/God Mode using shared owners |
-| TRACK-CORE-1A..2 | Blender MCP → Web → Claude Design | WAITING | W0/G0 | proof → authoritative runtime parity → visual grammar |
+| B2B-P1-LIFECYCLE-01 | Web/GitHub | **OPEN TECHNICAL GATE** | current PR #211 recovery | isolated lifecycle/quiescence semantics test only; no rebuild / no repair pass 3 |
+| ENV-PREVIEW-01 | — | **COMPLETE · PASS_WITH_TUNE** | — | accepted/public foundation; consume it, do not reopen |
+| TOOLBOX-R2-REVIEW | — | **COMPLETE · GEORG TUNE / DIRECTION ACCEPTED** | — | review gate closed; four follow-ups stay separate bounded slices |
+| WORLD-R2-CONTRACT-RESET-01 | — | **COMPLETE · PASS** | — | superseded by WORLD-R2-STAGE-PREP-01 |
+| ACTOR-FB-BODY-FAMILY-01 | Web/ToolBox → Blender only if needed | WAITING | ToolBox follow-up scheduling | FrizzleBob identity on Legacy/Medium/Large destination rigs + EarRig v5 compatibility |
+| SURF-POSE-01 | Animation Lab / Web | WAITING | body/profile owner pinned | source-backed card-flight pose set |
+| WORLD-MOBILITY-01 | Web/WorldBuilder | WAITING | World r2 Stage + Georg gate + camera contract | ground locomotion + card flight/God Mode using shared owners |
+| TRACK-CORE-1A..2 | Blender MCP → Web → Claude Design | WAITING | W0/G0 | proof → authoritative runtime parity → transition visual grammar |
 | PLAYABLE-TRACK-R0 | Claude Design later | **DO NOT START** | Track Core proven + Web prep package complete | first playable representative route |
 | COLOGNE-OSM-R0 | Web/OSM/Claude Design later | **DO NOT START** | Playable R0 pass + OSM provenance | Hürth→Köln real route |
 
 ---
 
-## 1 · ENV-PREVIEW-STAGE-01 · copy-ready
+## CURRENT EXECUTION OVERRIDE · 2026-09-26
+
+### WORLD-R2-STAGE-PREP-01 · copy-ready
+
+> @GitHub
+> Use current WorldBuilder PR #190 at exact current head. Read the current Contract Reset Return and `tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md`.
+> The contract reset is complete: 13/13 contract, 24/24 owner/closure, Hürth 55/55, Köln 55/55, WB2 34/34, browser harness 12/12, 0 page/source failures.
+> Package the **unchanged** recovered World r2 candidate through the existing KFB Stage/Hub owner. Repeat the exact Hürth → Köln → WB2 browser sequence on the packaged build. Publish one direct `https://kayfabizarro.pages.dev/...` human-review route only after the expected source marker is visibly verified.
+> Do not add World features, mobility, OSM corridor carving, camera ownership, Track integration or Live promotion.
+> Return exact repo/branch/PR/head, publication files, actual browser counts, direct Stage URL, visible proof, unresolved items and exactly one Georg visual/freeplay gate.
+
+### RACER-HUD-BILLBOARD-DESIGN-01 · copy-ready
+
+Use:
+`CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md`
+
+This is productive now in a fresh Claude Design chat in the existing Racer project. It is intentionally independent of Playable Track R0.
+
+### Completed gates — do not restart
+
+- `ENV-PREVIEW-01`: PUBLIC STAGE VERIFIED · GEORG PASS_WITH_TUNE. Consume it; do not republish/rebuild it as a new slice.
+- `TOOLBOX-R2-REVIEW`: GEORG TUNE · direction accepted · review gate closed. Image artifacts / ground contact / state-loop calibration / free orbit camera are separate follow-ups.
+- `WORLD-R2-CONTRACT-RESET-01`: PASS. The next World gate is Stage Prep.
+- B2b-P1 is not a closure rebuild: PR #211 is frozen 39/40 after two repair passes; Web next is isolated lifecycle/quiescence only.
+
+
+
+## 1 · ENV-PREVIEW-STAGE-01 · SUPERSEDED / COMPLETE
 
 **Owner:** existing PR #218 only.  
 **No implementation changes unless required solely for publication wrapper.**
@@ -39,7 +68,7 @@ Use this file with the recorded WSA decision in `WSA_RECON_PLAN_APPROVAL_2026-09
 
 ---
 
-## 2 · TOOLBOX-R2-PUBLISH-01 · copy-ready
+## 2 · TOOLBOX-R2-PUBLISH-01 · SUPERSEDED / COMPLETE
 
 **Owner:** ToolBox PR #185; review recovery PR #221.  
 **No new ToolBox features in this slice.**
@@ -159,7 +188,7 @@ R0 becomes dispatchable only after:
 Until then Claude Design should return SOURCE_REQUIRED and stop, exactly as it did.
 
 
-## 10 · B2B-P1-CLOSURE-01 · orphan recovery
+## 10 · B2B-P1 · CURRENT PR #211 RECOVERY
 
 Use:
 `B2B_P1_CLOSURE_RECOVERY_BRIEF_2026-09-26.md`.
