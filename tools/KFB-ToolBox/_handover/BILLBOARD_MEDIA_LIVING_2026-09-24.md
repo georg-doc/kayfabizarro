@@ -3,7 +3,7 @@
 Status: **CURRENT LIVING DOCUMENT · ADDITIVE**
 Date started: 2026-09-24
 Owner: **KFB ToolBox / Billboard Media Residency**
-Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a HUMAN_ACCEPTED → B2b RESEARCH NEXT**
+Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a HUMAN_ACCEPTED → B2b-P1 ARCHIVED_FAILED_CANDIDATE / RECOVERY**
 Current B1 PR: **#198**
 Current accepted B1 branch/head: `chatgpt-web/billboard-b1-2026-09-24@d54273d30f5465df36b33ee13c896a0ee6f95ca7`
 
@@ -80,7 +80,7 @@ On the direct Cloudflare B2a route:
 
 ## PLANNED · B2b · Living Mockup / Collage surface
 
-Status: **RESEARCH / PROPOSAL · NOT STARTED**.
+Status: **P1 CANDIDATE FROZEN AFTER REPAIR LIMIT · NO STAGE**.
 
 Direction reference:
 - WithSeismic “Living mockups / LED walls”;
@@ -218,3 +218,41 @@ Current next gate:
 - first gate is source-object isolation + same-camera before/after front/3/4/side/rear comparison;
 - B3 is **PREPARED / NOT STARTED**;
 - Georg asked to run **B2b Living Mockup / Collage research first**.
+
+
+### 2026-09-25 · B2b research complete
+- Draft PR **#211** / `chatgpt-web/billboard-b2b-research-2026-09-25`;
+- no runtime change;
+- options memo: `tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/OPTIONS_MEMO.md`;
+- existing Gate-1 `drawCollageFace()` + `BillboardContent` is the reuse donor;
+- recommended first POC: **A+ CanvasTexture compositor** with deterministic no-repeat recipes, small provenance-tracked pool and light Living Screen treatment;
+- RenderTarget remains later escalation; authored VideoTexture loops remain optional companion mode;
+- CSS3D collage and full editor are rejected as foundations;
+- external media must be curated into the normal asset/registry pipeline with explicit rights/provenance;
+- strongest first external pools: Smithsonian CC0, LOC Free to Use/Reuse + Chronicling America, Europeana PDM/CC0 allow-list, Wikimedia PD/CC0 allow-list;
+- B3 rounded-cartoon body WSA/Blender handover remains prepared separately;
+- **current gate: Georg chooses B2b-P1 option/tone or B3 first/parallel.**
+
+
+### 2026-09-25 · five adjacent Billboard idea drafts
+The WSA/B3 handover now carries five explicitly non-blocking future ideas:
+1. **Palimpsest / Poster Archaeology** — visual residue of prior campaigns;
+2. **Billboard Chorus** — several boards consume one ChatterBox/cue bus in call-and-response;
+3. **World Memory** — present existing capture/Almanac refs as recent-event media;
+4. **Neighborhood Dialects** — world zone supplies a presentation hint without changing content ownership;
+5. **Signal Takeover** — bounded authored interruption, then exact sequence resume.
+
+Full commented drafts and owner boundaries:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`
+
+All five are **IDEA BACKLOG / NOT STARTED** and must not broaden B2b-P1 or B3.
+
+### 2026-09-26 · B2b-P1 repair-limit recovery
+- frozen runtime/test head `2348c069a99b57149d6a2685496b5ce1b40ebe1a`;
+- static proof fully green;
+- final browser pass **39/40**, 0 page errors, 0 HTTP errors, 11 compositions;
+- sole red assertion: one already-scheduled collage tick crossed the mode-switch boundary (725→726) and then remained stable;
+- this is preserved as evidence, not silently relaxed or repaired in a third pass;
+- no B2b-P1 Stage route was published;
+- B2c, B3 and Curtain C1 remain untouched;
+- next gate: isolated lifecycle/quiescence semantics only.

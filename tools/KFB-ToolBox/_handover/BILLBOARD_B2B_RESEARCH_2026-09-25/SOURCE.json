@@ -1,0 +1,77 @@
+{
+  "schema": "kfb.billboard-b2b-research/0.1",
+  "id": "BILLBOARD-B2B-RESEARCH-2026-09-25",
+  "date": "2026-09-25",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
+  "baseB2a": "07da4adfd1de293d03682d1af90a01df2a1eba19",
+  "scope": "research-options-only",
+  "runtimeStarted": false,
+  "publicRoute": null,
+  "status": "B2B_P1_READY",
+  "protected": [
+    "B2a accepted runtime",
+    "card/cover owners",
+    "CSS3D YouTube owner",
+    "ChatterBox owner",
+    "B3 body handover remains separate",
+    "no auto-scraping or unproven asset-license assumptions"
+  ],
+  "pr": 211,
+  "recommendation": "A_PLUS_CANVAS_TEXTURE",
+  "recommendedNextPOC": {
+    "id": "B2B-P1",
+    "foundation": "CanvasTexture compositor",
+    "additions": [
+      "deterministic no-repeat scheduler",
+      "small provenance-tracked still pool",
+      "4 composition recipes",
+      "4 color grade presets",
+      "FLAT_COLLAGE vs LIVING_SCREEN treatment toggle"
+    ],
+    "notIncluded": [
+      "full editor",
+      "live scraping",
+      "EffectComposer foundation",
+      "RenderTarget mini-scene",
+      "runtime external-rights decisions"
+    ]
+  },
+  "internalDonors": [
+    "tools/KFB-ToolBox/_inbox/KFB Billboard Media Szene · B0 Source Proof/BILLBOARD_B0_SOURCE_PROOF_2026-09-24/bb-scene.js",
+    "tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/POST_RETURN_CORRECTIONS_2026-09-15.md",
+    "tools/KFB-ToolBox/_handover/CLAUDE_DESIGN_WORLD_RACER_2026-09-22/RACER_CLAUDE_HUD_BILLBOARDS_ADDENDUM_2026-09-23.md"
+  ],
+  "externalResearch": [
+    "https://withseismic.com/post/living-mockups",
+    "https://threejs.org/docs/pages/CanvasTexture.html",
+    "https://threejs.org/docs/pages/VideoTexture.html",
+    "https://threejs.org/manual/#en/rendertargets",
+    "https://threejs.org/docs/pages/WebGLRenderTarget.html",
+    "https://threejs.org/docs/pages/MaskPass.html",
+    "https://threejs.org/docs/pages/EffectComposer.html",
+    "https://threejs.org/docs/pages/ShaderPass.html",
+    "https://www.si.edu/openaccess/faq",
+    "https://www.loc.gov/free-to-use/",
+    "https://www.loc.gov/collections/chronicling-america/about-this-collection/rights-and-access/",
+    "https://www.loc.gov/collections/chronicling-america/about-this-collection/technical-information/",
+    "https://pro.europeana.eu/page/available-rights-statements",
+    "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia"
+  ],
+  "publicDomainPoolOrder": [
+    "KFB-owned/registered first",
+    "Smithsonian Open Access CC0",
+    "Library of Congress Free to Use and Reuse",
+    "Chronicling America older-rights-cleared newspaper material",
+    "Europeana explicit PDM/CC0 allow-list",
+    "Wikimedia Commons PD/CC0 allow-list"
+  ],
+  "nextGate": "B2B_P1_IMPLEMENTATION",
+  "humanChoices": {
+    "sourcePool": "KFB_PLUS_SMALL_CC0",
+    "tone": "MIXED_HYPERNORMALISATION",
+    "architecture": "A_PLUS_CANVAS_TEXTURE"
+  },
+  "buildBrief": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_BUILD_BRIEF_2026-09-25.md",
+  "freshChatStart": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_RESEARCH_2026-09-25/B2B_P1_FRESH_CHAT_START_2026-09-25.md"
+}

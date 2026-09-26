@@ -1,0 +1,207 @@
+name: Billboard B2b-P1 browser proof · FROZEN manual only
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25
+          sparse-checkout-cone-mode: false
+
+      - name: Install lightweight browser driver
+        run: |
+          set -euo pipefail
+          command -v google-chrome >/dev/null
+          google-chrome --version
+          npm install --no-save playwright-core@1.51.1
+
+      - name: Browser proof donor then B2b-P1 integration
+        run: |
+          set -euo pipefail
+          OUT='artifacts/billboard-b2b-p1-browser'
+          mkdir -p "$OUT"
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/b2b-p1-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > "$OUT/check.mjs" <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright-core';
+
+          const root='http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/';
+          const report={root,checks:[],errors:[],httpErrors:[],states:{}};
+          const check=(name,pass,detail=null)=>{
+            report.checks.push({name,pass:!!pass,detail});
+            if(!pass) process.exitCode=1;
+          };
+          const browser=await chromium.launch({
+            headless:true,
+            executablePath:'/usr/bin/google-chrome',
+            args:['--use-angle=swiftshader','--enable-unsafe-swiftshader','--no-sandbox']
+          });
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('response',r=>{
+            const u=r.url();
+            if(r.status()>=400 && (
+              u.startsWith('http://127.0.0.1:4173/') ||
+              /cdn\.jsdelivr\.net|raw\.githubusercontent\.com/.test(u)
+            )) report.httpErrors.push({status:r.status(),url:u});
+          });
+
+          async function waitMode(mode){
+            await page.evaluate(async m=>await window.__b2b.setMode(m),mode);
+            await page.waitForFunction(m=>{
+              const r=window.__B2B_REPORT__;
+              return r?.mode===m && r?.ready===true;
+            },mode,{timeout:90000});
+            await page.waitForTimeout(350);
+            return await page.evaluate(()=>window.__b2b.snapshot());
+          }
+
+          try{
+            // Source object in isolation first.
+            let res=await page.goto(root+'donor-isolation.html',{waitUntil:'domcontentloaded',timeout:90000});
+            check('donor HTTP',!!res&&res.ok(),res?.status());
+            await page.waitForFunction(()=>window.__DONOR_REPORT__?.ready===true,{}, {timeout:90000});
+            const donor=await page.evaluate(()=>structuredClone(window.__DONOR_REPORT__));
+            report.states.donor=donor;
+            check('Gate-1 donor named',/Gate-1 drawCollageFace copied verbatim/.test(donor.source||''),donor.source);
+            check('Gate-1 donor has KFB card',!!donor.card?.title&&Number(donor.card?.cardNumber)>0,donor.card);
+            check('donor canvas visible',(await page.locator('canvas').boundingBox())?.width>300,await page.locator('canvas').boundingBox());
+            await page.screenshot({path:'artifacts/billboard-b2b-p1-browser/00-donor-isolation.png',fullPage:true});
+
+            // Integrated accepted B2a host.
+            res=await page.goto(root,{waitUntil:'domcontentloaded',timeout:90000});
+            check('integration HTTP',!!res&&res.ok(),res?.status());
+            check('B2b title',(await page.title())==='KFB Billboard · B2b-P1 Collage Surface',await page.title());
+            await page.waitForFunction(()=>window.__b2b&&window.__B2B_REPORT__?.ready===true,{}, {timeout:90000});
+
+            const quarter=await page.evaluate(()=>window.__b2b.snapshot());
+            report.states.quarter=quarter;
+            check('default CARD quarter',quarter.mode==='quarter',quarter.mode);
+            check('B0 protected markers',quarter.b0Fork?.bbScene==='UNCHANGED'&&quarter.b0Fork?.bb0Boot==='UNCHANGED',quarter.b0Fork);
+            check('B1 protected marker',quarter.b1Fork?.bb1Boot==='UNCHANGED_REFERENCE',quarter.b1Fork);
+            check('CARD visible',Number(quarter.sourceStats?.mean)>20,quarter.sourceStats);
+            check('video hidden outside VIDEO',quarter.dom?.objectVisible===false,quarter.dom?.objectVisible);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1-browser/01-card-quarter.png',fullPage:true});
+
+            const cover=await waitMode('cover');
+            report.states.cover=cover;
+            check('COVER preserved',/cover page 1/.test(cover.content||''),cover.content);
+            check('COVER video hidden',cover.dom?.objectVisible===false,cover.dom?.objectVisible);
+
+            const slogan=await waitMode('slogan');
+            report.states.slogan=slogan;
+            check('SLOGAN preserved',slogan.content==='CHATTERBOX SHOW IT',slogan.content);
+            check('SLOGAN video hidden',slogan.dom?.objectVisible===false,slogan.dom?.objectVisible);
+
+            const video=await waitMode('video');
+            report.states.videoFront=video;
+            check('VIDEO INLINE source preserved',/Travel VIDEO MTCSwppblk0/.test(video.content||''),video.content);
+            check('VIDEO INLINE visible on front',video.dom?.objectVisible===true,video.dom?.objectVisible);
+            check('VIDEO no-cookie iframe',/youtube-nocookie\.com\/embed\/MTCSwppblk0/.test(video.dom?.iframeSrc||''),video.dom?.iframeSrc);
+            check('VIDEO front-only contract',video.css3d?.frontOnly===true,video.css3d);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1-browser/02-video-front.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2b.setView('BACK'));
+            await page.waitForTimeout(550);
+            const back=await page.evaluate(()=>window.__b2b.snapshot());
+            report.states.videoBack=back;
+            check('B2a rear fix hides CSS3D iframe',back.dom?.objectVisible===false,{objectVisible:back.dom?.objectVisible,facing:back.css3d?.frontFacing});
+            check('rear iframe backface hidden',back.dom?.surfaceBackfaceVisibility==='hidden'&&back.dom?.iframeBackfaceVisibility==='hidden',back.dom);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1-browser/03-video-back.png',fullPage:true});
+            await page.evaluate(()=>window.__b2b.setView('FRONT'));
+
+            const collage=await waitMode('collage');
+            report.states.collageStart=collage;
+            check('COLLAGE mode active',collage.mode==='collage',collage.mode);
+            check('COLLAGE uses 6 local CC0 assets',collage.collage?.poolCount===6,{poolCount:collage.collage?.poolCount,assets:collage.collage?.localAssets});
+            check('COLLAGE local asset paths only',(collage.collage?.localAssets||[]).every(x=>x.startsWith('./assets/cc0/')),collage.collage?.localAssets);
+            check('COLLAGE recipe valid',['HEADLINE_SHOCK','POSTER_STACK','SIGNAL_NOISE','ARCHIVE_FEVER'].includes(collage.collage?.current?.recipe),collage.collage?.current);
+            check('COLLAGE grade valid',['WARM_DIRTY','COLD_PRINT','ACID_FAIRGROUND','MONO_PAPER'].includes(collage.collage?.current?.grade),collage.collage?.current);
+            check('LIVING_SCREEN default',collage.collage?.treatment==='LIVING_SCREEN',collage.collage?.treatment);
+            check('COLLAGE timer active',collage.dom?.collageTimerActive===true&&collage.collage?.running===true,{dom:collage.dom?.collageTimerActive,running:collage.collage?.running});
+            check('COLLAGE canvas visible',Number(collage.sourceStats?.mean)>20,collage.sourceStats);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1-browser/04-collage-living.png',fullPage:true});
+
+            await page.evaluate(()=>window.__b2b.setTreatment('FLAT_COLLAGE'));
+            await page.waitForTimeout(250);
+            const flat=await page.evaluate(()=>window.__b2b.snapshot());
+            report.states.collageFlat=flat;
+            check('FLAT_COLLAGE switches in-place',flat.collage?.treatment==='FLAT_COLLAGE',flat.collage?.treatment);
+            await page.screenshot({path:'artifacts/billboard-b2b-p1-browser/05-collage-flat.png',fullPage:true});
+            await page.evaluate(()=>window.__b2b.setTreatment('LIVING_SCREEN'));
+
+            const seq=await page.evaluate(()=>({
+              a:window.__b2b.previewSequence(18472,12),
+              b:window.__b2b.previewSequence(18472,12),
+              c:window.__b2b.previewSequence(18473,12)
+            }));
+            report.states.previewSequence=seq;
+            check('same seed reproduces sequence',JSON.stringify(seq.a)===JSON.stringify(seq.b),seq.a.slice(0,4));
+            check('different seed changes sequence',JSON.stringify(seq.a)!==JSON.stringify(seq.c),{a:seq.a.slice(0,2),c:seq.c.slice(0,2)});
+
+            // Required real-time no-repeat proof: run the actual CanvasTexture owner for 33 s.
+            await page.waitForTimeout(33000);
+            const lived=await page.evaluate(()=>window.__b2b.snapshot());
+            report.states.collage33s=lived;
+            const observed=lived.collage?.sequence||[];
+            check('33s produced multiple compositions',observed.length>=5,{length:observed.length,observed});
+            let heroOk=true,recipeOk=true,roleOk=true;
+            for(let i=0;i<observed.length;i++){
+              if(observed.slice(Math.max(0,i-4),i).some(x=>x.hero===observed[i].hero)) heroOk=false;
+              if(observed.slice(Math.max(0,i-2),i).some(x=>x.recipe===observed[i].recipe)) recipeOk=false;
+              if(i&&observed[i-1].heroRole===observed[i].heroRole) roleOk=false;
+            }
+            check('runtime hero no-repeat last 4',heroOk,observed);
+            check('runtime recipe no-repeat last 2',recipeOk,observed);
+            check('runtime hero role changes',roleOk,observed);
+            check('runtime still has no page errors',report.errors.length===0,report.errors);
+
+            // Switching away must stop dynamic work.
+            const beforeExit=lived.collage?.ticks;
+            const exitMode=await waitMode('slogan');
+            const afterExit=exitMode.collage?.ticks;
+            await page.waitForTimeout(1200);
+            const stopped=await page.evaluate(()=>window.__b2b.snapshot());
+            report.states.afterExit=stopped;
+            check('COLLAGE timer stops on exit',stopped.dom?.collageTimerActive===false&&stopped.collage?.running===false,{timer:stopped.dom?.collageTimerActive,running:stopped.collage?.running});
+            check('COLLAGE ticks stop on exit',afterExit===beforeExit&&stopped.collage?.ticks===afterExit,{beforeExit,afterExit,afterWait:stopped.collage?.ticks});
+            check('no failed first-party/CDN assets',report.httpErrors.length===0,report.httpErrors);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));
+            process.exitCode=1;
+          }finally{
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-b2b-p1-browser/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({
+              status:report.status,
+              checks:report.passed+'/'+report.total,
+              errors:report.errors.length,
+              httpErrors:report.httpErrors.length,
+              observed33s:report.states.collage33s?.collage?.sequence?.length||0,
+              current33s:report.states.collage33s?.collage?.current||null
+            },null,2));
+            await browser.close();
+          }
+          JS
+          node "$OUT/check.mjs"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-b2b-p1-browser-proof
+          path: artifacts/billboard-b2b-p1-browser
+          retention-days: 90

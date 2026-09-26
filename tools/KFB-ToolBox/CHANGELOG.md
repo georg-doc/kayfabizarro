@@ -170,3 +170,16 @@ Georg accepted B2a except for mirrored YouTube visibility on the billboard rear 
 
 ### NEXT
 B2b research/options memo only; no runtime implementation yet.
+
+## 2026-09-26 · Billboard B2b-P1 frozen recovery
+
+- Draft PR #211 / `chatgpt-web/billboard-b2b-research-2026-09-25`.
+- Frozen candidate head: `2348c069a99b57149d6a2685496b5ce1b40ebe1a`.
+- A+ CanvasTexture COLLAGE built from the existing Gate-1 donor.
+- Protected B2a modes/rear fix retained.
+- Static proof: green (4 protected byte compares; 12/12 contract/provenance; 4/4 boundary; 2/2 syntax; 124/124 scheduler).
+- Browser Repair 2: **39/40**, 0 page errors, 0 HTTP errors, 11 compositions.
+- Only failed assertion: one queued interval callback increments ticks once during mode exit (**725→726**), then the counter is stable.
+- Stop rule applied; no Repair Pass 3 and no B2b-P1 Stage publication.
+- Recovery export: `tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/failure-recovery/START_HERE.md`.
+- Exactly one next gate: isolated post-switch lifecycle/quiescence semantics test.

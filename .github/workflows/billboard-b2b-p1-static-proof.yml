@@ -1,0 +1,103 @@
+name: Billboard B2b-P1 static proof
+
+on:
+  push:
+    branches:
+      - 'chatgpt-web/billboard-b2b-research-2026-09-25'
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/**'
+      - '.github/workflows/billboard-b2b-p1-static-proof.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  static-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25
+            tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24
+          sparse-checkout-cone-mode: false
+
+      - name: Protected B2a copies remain byte-identical
+        run: |
+          set -euo pipefail
+          P1='tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25'
+          B2A='tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24'
+          cmp "$P1/bb-scene.js" "$B2A/bb-scene.js"
+          cmp "$P1/bb0-boot.js" "$B2A/bb0-boot.js"
+          cmp "$P1/bb1-boot.js" "$B2A/bb1-boot.js"
+          cmp "$P1/bb2a-boot.js" "$B2A/bb2a-boot.js"
+
+      - name: Contract and provenance parse
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25')
+          source=json.loads((root/'SOURCE.json').read_text())
+          prov=json.loads((root/'collage-provenance.json').read_text())
+          assert source['runtime']['recipes']==['HEADLINE_SHOCK','POSTER_STACK','SIGNAL_NOISE','ARCHIVE_FEVER']
+          assert source['runtime']['grades']==['WARM_DIRTY','COLD_PRINT','ACID_FAIRGROUND','MONO_PAPER']
+          assert source['runtime']['treatments']==['FLAT_COLLAGE','LIVING_SCREEN']
+          assert len(prov['assets'])==6
+          for a in prov['assets']:
+              assert 'CC0' in a['rights']
+              assert a['sourceUrl'].startswith('https://')
+              assert a['rightsUrl'].startswith('https://')
+              assert (root/a['localPath']).is_file(), a['localPath']
+              assert a['hash']['type']=='git-blob-sha1'
+              assert len(a['hash']['value'])==40
+          print('contract/provenance: 12/12 PASS')
+          PY
+
+      - name: B2b boundary scan
+        run: |
+          set -euo pipefail
+          P1='tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25'
+          ! grep -E 'WebGLRenderTarget|EffectComposer|ShaderPass|VideoTexture' "$P1/b2b-boot.js" "$P1/collage-engine.js"
+          ! grep -E 'api\.si\.edu|loc\.gov|europeana|wikimedia' "$P1/b2b-boot.js" "$P1/collage-engine.js"
+          grep -q "drawGate1CollageFace(ctx,W,H,this.cardResult,0,false)" "$P1/collage-engine.js"
+          grep -q "if (currentMode !== 'collage'" "$P1/b2b-boot.js"
+          echo 'boundary scan: 4/4 PASS'
+
+      - name: JavaScript syntax
+        run: |
+          set -euo pipefail
+          P1='tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25'
+          cp "$P1/collage-engine.js" /tmp/collage-engine.mjs
+          cp "$P1/b2b-boot.js" /tmp/b2b-boot.mjs
+          node --check /tmp/collage-engine.mjs
+          node --check /tmp/b2b-boot.mjs
+          echo 'syntax: 2/2 PASS'
+
+      - name: Deterministic scheduler and no-repeat rules
+        run: |
+          set -euo pipefail
+          P1="$GITHUB_WORKSPACE/tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25"
+          cp "$P1/collage-engine.js" /tmp/collage-engine.mjs
+          P1="$P1" node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const mod=await import('file:///tmp/collage-engine.mjs');
+          const manifest=JSON.parse(fs.readFileSync(process.env.P1+'/collage-provenance.json','utf8'));
+          const a=mod.generateSequence(18472,manifest.assets,40);
+          const b=mod.generateSequence(18472,manifest.assets,40);
+          const c=mod.generateSequence(18473,manifest.assets,40);
+          const checks=[];
+          const check=(name,pass)=>{checks.push([name,!!pass]); if(!pass) throw new Error(name)};
+          check('same seed same sequence',JSON.stringify(a)===JSON.stringify(b));
+          check('different seed differs',JSON.stringify(a)!==JSON.stringify(c));
+          check('four recipes',mod.RECIPES.length===4);
+          check('four grades',mod.GRADES.length===4);
+          check('two treatments',mod.TREATMENTS.length===2);
+          for(let i=0;i<a.length;i++){
+            check('hero no-repeat '+i,!a.slice(Math.max(0,i-4),i).some(x=>x.hero===a[i].hero));
+            check('recipe no-repeat '+i,!a.slice(Math.max(0,i-2),i).some(x=>x.recipe===a[i].recipe));
+            if(i) check('hero role no-repeat '+i,a[i-1].heroRole!==a[i].heroRole);
+          }
+          console.log(JSON.stringify({status:'PASS',checks:checks.length,first8:a.slice(0,8)},null,2));
+          JS

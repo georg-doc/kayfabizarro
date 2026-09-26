@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="kfb-slice" content="BILLBOARD_B2B_P1_2026-09-25">
+<title>KFB Billboard · B2b-P1 Collage Surface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#e9d8ad;font-family:'JetBrains Mono',ui-monospace,monospace}
+canvas{display:block}
+.toolbar{position:fixed;left:50%;top:14px;z-index:20;transform:translateX(-50%);display:flex;gap:6px;align-items:center;padding:6px;background:rgba(35,26,19,.82);border:1px solid rgba(242,230,201,.28);border-radius:4px;backdrop-filter:blur(5px)}
+.b2a-btn{font:600 10px/1.3 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.035em;text-transform:uppercase;color:#f2e6c9;background:#231a13;border:1px solid rgba(242,230,201,.28);padding:7px 10px;cursor:pointer;border-radius:2px}
+.b2a-btn:hover,.b2a-btn.active{background:#2c5c56;border-color:#d9c997}
+.bottom{position:fixed;left:14px;bottom:14px;z-index:20;display:flex;gap:6px;align-items:center}
+.hint{font:400 10px/1.4 'JetBrains Mono',monospace;color:#3a2c1e;background:rgba(242,230,201,.78);padding:5px 9px}
+#b2a-video-hint{display:none}
+#b2a-diag{display:none;position:fixed;left:14px;top:62px;z-index:20;margin:0;font:400 11px/1.5 'JetBrains Mono',monospace;color:#231a13;background:rgba(242,230,201,.94);padding:8px 10px;border:1px solid rgba(35,26,19,.25);max-width:72vw;white-space:pre-wrap}
+@media(max-width:720px){.toolbar{left:8px;right:8px;transform:none;overflow:auto;justify-content:flex-start}.b2a-btn{white-space:nowrap}.hint{display:none}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="./b2b-boot.js"></script>
+</head>
+<body>
+<nav class="toolbar" aria-label="Billboard content">
+  <button class="b2a-btn" data-mode="quarter">CARD QUARTER</button>
+  <button class="b2a-btn" data-mode="cover">COVER</button>
+  <button class="b2a-btn" data-mode="video">VIDEO INLINE</button>
+  <button class="b2a-btn" data-mode="slogan">SLOGAN</button>
+  <button class="b2a-btn" data-mode="collage">COLLAGE</button>
+</nav>
+<div class="bottom">
+  <button class="b2a-btn" id="b2a-reset">RESET VIEW</button>
+  <button class="b2a-btn" id="b2a-diag-toggle">DIAG</button>
+  <button class="b2a-btn" id="b2b-treatment" style="display:none">SCREEN: LIVING</button>
+  <div class="hint">drag outside media = orbit · wheel = zoom</div>
+  <div class="hint" id="b2a-video-hint">YouTube is directly on the billboard · click player controls inline</div>
+</div>
+<pre id="b2a-diag">loading…</pre>
+</body>
+</html>
