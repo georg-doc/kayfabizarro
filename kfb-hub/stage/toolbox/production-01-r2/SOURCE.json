@@ -13,7 +13,7 @@
     "implementationHead": "8c25f3a904e4d877cc39367d8b88eed50e202491",
     "buildMarker": "KFB_TOOLBOX_PRODUCTION_01_R2_STAGE_REVIEW_RECOVERY_2026_09_26",
     "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/",
-    "status": "PUBLIC_VERIFIED_HUMAN_PENDING"
+    "status": "PUBLIC_VERIFIED_HUMAN_TUNE_DIRECTION_ACCEPTED"
   },
   "retainedPins": {
     "earRigHead": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
@@ -46,6 +46,12 @@
     "toolboxLinkHead": "279aa8891",
     "verifiedCloudflareHead": "69cfd8c6329f23725eefb84fcf908d6526cfd19d"
   },
-  "humanGate": "PENDING_GEORG",
+  "humanGate": "GEORG_TUNE_DIRECTION_ACCEPTED",
+  "deferredTune": [
+    "motion-and-static streak/noise artifacts",
+    "actor ground contact",
+    "State-loop animation calibration",
+    "below-actor Orbit camera range for fall/flight review"
+  ],
   "livePromotion": "NOT_AUTHORIZED"
 }
