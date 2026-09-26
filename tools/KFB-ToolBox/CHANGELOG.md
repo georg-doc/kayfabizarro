@@ -1,5 +1,19 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-26 · ToolBox Production-01 r2 public review
+
+### PUBLICATION
+The unchanged PR #221 review candidate is publicly available at `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`. The ToolBox front door, live Production Desk Registry and rendered KFB Hub link the same exact route.
+
+### EVIDENCE
+Existing repository gate remains **33/33 PASS**. The exact public Stage/ToolBox/Registry/Hub browser gate is **20/20 PASS**, with 0 page errors and 0 failed public requests.
+
+### BOUNDARY
+No ToolBox runtime owner, actor, motion, PoseRig or EarRig module changed. No merge or Live promotion. Human visual result remains pending.
+
+### NEXT
+Georg reviews Source Object → State loop → Pose/IK and returns PASS / TUNE / REJECT.
+
 ## 2026-09-24 · TOOLBOX-COHERENT-INTEGRATION-01
 
 ### IMPLEMENTATION
