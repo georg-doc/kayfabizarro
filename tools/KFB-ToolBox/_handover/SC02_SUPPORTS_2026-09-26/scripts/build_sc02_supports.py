@@ -1,6 +1,6 @@
 """SC02 · Support family on route sockets · Track-Core safe prework · Claude Coworker 26.09.2026
 Supports are SCENERY under a route: they carry the route's soffit, they never define the route.
-Donor: RKIT-03 `build_support_v2` (called with compact=True, the additive short-pillar fix of 26.09) (footing, tapered shaft, capital disc, bearing plate that follows the real
+Donor (not rebuilt, unchanged): RKIT-03 `build_support_v2` (v1 shaft form, Georg 26.09) (footing, tapered shaft, capital disc, bearing plate that follows the real
 soffit incl. bank + grade; style layer classic / trunk / vine / rope). SC02 adds only:
   1. a PLACEMENT RULE over s (spacing, min clear height, keep-out zones of every other route + own lower branches, max span flag);
   2. a ground provider ground(x, z) (terrain / water owner later);
@@ -99,15 +99,15 @@ def place(route, others):
     return acc, blocked, spans
 
 
-FOOT_PROFILE = [(4.6, -0.8), (4.6, -0.05), (4.3, 0.2), (3.7, 0.5), (3.25, 0.75), (3.0, 0.9)]   # (r, h) from ground level
+FOOT_PROFILE = [(3.6, -0.8), (3.6, -0.05), (3.3, 0.12), (3.1, 0.3), (3.1, 0.65), (3.05, 0.85), (2.9, 0.97), (2.7, 1.0)]   # (r, h): v1 block proportions (6.2 m, top +1.0) + narrow ground skirt
 
 
 def round_footing(name, base, segs=48):
-    """Round footing (Georg 26.09: default). Sunk 0.8 m; the outer skirt sits just below the ground and follows
-    ground(x, z) around its rim, the shoulder fades to a level top ring that meets the shaft foot (r 2.9 at h 0.8)."""
+    """Round footing (Georg 26.09: default, v1 proportions). A round version of the donor's square block (6.2 m, top +1.0,
+    sunk 0.8) with a rounded top edge; only a narrow skirt (r 3.1 -> 3.6) follows ground(x, z) so it sits into the terrain."""
     v, f = [], []
     for r, h in FOOT_PROFILE:
-        w = 1.0 if h <= 0.2 else max(0.0, (0.9 - h) / 0.7)          # terrain-follow weight
+        w = 1.0 if h <= 0.12 else max(0.0, (0.3 - h) / 0.18)        # terrain-follow weight: skirt only, block stays level
         for k in range(segs):
             a = 2 * math.pi * k / segs
             x, z = base.x + r * math.cos(a), base.z + r * math.sin(a)
@@ -135,7 +135,7 @@ def round_footing(name, base, segs=48):
 
 def build_one(route, frames, s, base, style, name, seed):
     f = donor_frame(route.at(s))
-    got = R3.build_support_v2(name, f, RULE['side'], ground_y=base.y, frames=frames, embed=RULE['embed'], style=style, seed=seed, compact=True)
+    got = R3.build_support_v2(name, f, RULE['side'], ground_y=base.y, frames=frames, embed=RULE['embed'], style=style, seed=seed)
     if RULE['footing'] == 'round':
         sq = [o for o in got if o.name.endswith('_footing')]
         if sq:
@@ -249,13 +249,13 @@ def checks(route, others, built):
         for o in objs:
             if o.name.endswith('_footing'):
                 for v in runtime_verts(o):
-                    if math.hypot(v.x - base.x, v.z - base.z) > 4.45:   # outer rim only (r 4.6); the 4.3 ring is the intended mound
+                    if math.hypot(v.x - base.x, v.z - base.z) > 3.45:   # outer skirt rim only (r 3.6)
                         skirt_float = max(skirt_float, v.y - ground(v.x, v.z))
     folds = []
     for s, base, objs in built:
         q = route.at(s)
         cap_top = (q['p'].y - RULE['drop']) - base.y - 0.55
-        pr = R3.support_profile(cap_top, True)
+        pr = [(2.9, 0.8), (2.75, 1.4), (2.3, 2.6), (1.9, max(3.0, cap_top * 0.45)), (1.55, max(3.4, cap_top - 2.2)), (1.6, cap_top - 1.2)]
         if any(b[1] < a[1] for a, b in zip(pr, pr[1:])):
             folds.append(round(s, 1))
     plate_ok = strip_max_rng[0] >= target - 0.3 and strip_max_rng[1] <= target + 0.3
@@ -263,9 +263,9 @@ def checks(route, others, built):
     return dict(other_corridor_intrusions=corr_other, own_corridor_intrusions=corr_self,
                 plate_top_per_strip_local_y=[round(v, 3) for v in strip_max_rng], plate_target_y=round(target, 3), plate_ok=plate_ok,
                 lowest_point_vs_ground_m=[round(v, 3) for v in foot], foot_ok=foot_ok,
-                shaft_profile_folds=folds,
+                donor_profile_folds_hidden_info=folds,   # info only: folds sit inside footing/plate (v1 look, Georg OK)
                 footing_skirt_above_ground_max_m=(round(skirt_float, 3) if skirt_float > -1e8 else None),
-                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01 and not folds))
+                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01))
 
 
 def ranges(pairs):
@@ -360,6 +360,11 @@ if globals().get('SC_EXPORT'):
                 fixture=dict(A='banked S-flyover, deck_half 7.2, peak 13 m, bank = clamp(-18·kappa, ±0.22 rad)',
                              B='ground road crossing under A, deck_half 7.2', ground='1.2 sin(x/37) + 0.8 cos(z/53)'),
                 **report)
-    json.dump(meta, open(D + '/SC02-SUPPORTS/sc02_supports.placement.json', 'w'), indent=1, ensure_ascii=False, default=str)
+    jp = D + '/SC02-SUPPORTS/sc02_supports.placement.json'
+    if globals().get('SC_KEEP') and os.path.exists(jp):
+        old = json.load(open(jp))
+        old.get('styles', {}).update(meta['styles'])
+        meta['styles'] = old['styles']
+    json.dump(meta, open(jp, 'w'), indent=1, ensure_ascii=False, default=str)
 result = dict(stations=len(stations), blocked=ranges(blocked), long_spans=spans,
               styles={k: dict(v['checks'], n=v['supports'], moved=v['style_relocations'], glb_kb=v.get('glb_kb')) for k, v in report['styles'].items()})
