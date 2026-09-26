@@ -1,0 +1,43 @@
+{
+  "schema": "kfb.long-job-state/1",
+  "id": "HUB-BRIEFING-SYNC-01",
+  "owner": "HUB-CTRL #202 / tools/production_desk",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "work/hub-ctrl-01-2026-09-24",
+  "pr": 202,
+  "state": "ACTIVE",
+  "phase": "C0_PREFLIGHT",
+  "goal": "Synchronize current WSA/owner status into #222 executor briefings, #204 self-service catalog, HUB-CTRL lanes, then regenerate and publicly verify the KFB Hub root without changing product runtimes.",
+  "sourceRefs": [
+    "PR #190 @ 58028b07d7618926c40ffaec3bd4053dc88c0efd",
+    "PR #204 @ 158c926cfdc1332b319e2a3ccfbb950147b76896",
+    "PR #218 @ 88c64c29075f31d655f4777437bb1aa82069df17",
+    "PR #221 @ da20e926c38fa8576f31bffc5442d96d44fe4d1b",
+    "PR #222 @ 9c013b741e45b71e898e892afd45b72ac97ea270",
+    "HUB-CTRL #202 current branch"
+  ],
+  "completed": [],
+  "open": [
+    "Update #222 executor board to current World/ToolBox/ENV/Racer/B2b status",
+    "Update #204 catalog priorities/statuses/heads without changing runtime owners",
+    "Update #202 lane pins and briefing links",
+    "Regenerate Hub through existing Production Desk owner path",
+    "Verify exact https://kayfabizarro.pages.dev/kfb-hub/ revision"
+  ],
+  "nextAction": "Inspect Production Desk generation/publication path and then update #222 briefing state.",
+  "lastVerifiedHead": null,
+  "checkpoints": [],
+  "research": {
+    "checked": 0,
+    "useful": 0,
+    "rejected": 0,
+    "failed": 0,
+    "timeouts": 0
+  },
+  "tests": {},
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/",
+    "status": "NOT_STARTED"
+  },
+  "updated": "2026-09-26"
+}
