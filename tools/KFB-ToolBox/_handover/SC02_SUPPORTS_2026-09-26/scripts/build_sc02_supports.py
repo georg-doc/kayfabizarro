@@ -333,7 +333,9 @@ def ground_proxy(name, off, half=(170.0, 215.0), g=6.0):
 
 # ------------------------------------------------------------------ run
 OFF0 = globals().get('SC_OFFSET', (1400.0, -3000.0))
-STYLES = globals().get('SC_STYLES', ['classic', 'trunk', 'vine', 'rope'])
+# Georg 26.09: DEFAULT = classic cylinder; trunk/vine/rope are optional look styles (pass SC_STYLES to build them)
+DEFAULT_STYLE, OPTIONAL_STYLES = 'classic', ['trunk', 'vine', 'rope']
+STYLES = globals().get('SC_STYLES', [DEFAULT_STYLE])
 c = bpy.data.collections.get(COLL)
 if c and not globals().get('SC_KEEP'):
     for o in list(c.objects):
@@ -372,6 +374,7 @@ for k, style in enumerate(STYLES):
 if globals().get('SC_EXPORT'):
     meta = dict(schema='kfb.scenery-shell.v0', id='sc02-supports', status='CANDIDATE · scenery only',
                 family='SC-LIB/sc_support.py (SC02b redesign, Georg PASS 26.09); donor rkit3_lib unchanged (organic_shaft/rounded_box reused)',
+                default_style=DEFAULT_STYLE, optional_styles=OPTIONAL_STYLES,
                 socket=dict(frame='route frame at s (heading + bank, grade)', attach='soffit = road surface - %.2f m (RKIT body; later from core profile)' % RULE['drop'],
                             base='ground(x, z) from terrain/water owner'),
                 fixture=dict(A='banked S-flyover, deck_half 7.2, peak 13 m, bank = clamp(-18·kappa, ±0.22 rad)',
