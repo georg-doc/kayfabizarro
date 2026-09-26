@@ -139,3 +139,10 @@ Human three-actor motion review. Attachment proposals remain a separate visible 
 - 30/30 source-contract checks PASS;
 - 9/9 portable Stage real-Chrome checks PASS;
 - public Cloudflare Stage re-ran the same browser gate at 9/9 PASS on `cloudflare-live@bec8688c`; Georg review remains pending; Live unchanged.
+
+# 2026-09-26 · ENV-PREVIEW-01 human gate
+
+- Georg accepted the shared environment and light/mood direction as **PASS_WITH_TUNE**;
+- deferred selector discoverability, below-actor camera range, WorldBuilder duplicate-head assembly, bright thin-geometry shadow edges and Night readability as proportional follow-ups;
+- none of those follow-ups reopens the environment adapter or blocks the next approved ToolBox r2 publication/review slice;
+- no runtime, Stage, Cloudflare or Live file changed in this checkpoint.
