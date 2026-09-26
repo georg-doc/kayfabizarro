@@ -1,5 +1,24 @@
 # TEST REPORT · WORLD-INTEGRATION-r2 failure recovery
 
+## 2026-09-26 · Contract reset result
+
+`WORLD-R2-CONTRACT-RESET-01` changed only the selftest contract and contract documentation.
+
+- pure locomotion + Surface Adapter contract: **13/13 PASS**;
+- static owner/closure suite: **24/24 PASS**;
+- Hürth: **55/55 PASS**;
+- Cologne: **55/55 PASS**;
+- accepted WB2 baseline: **34/34 PASS**;
+- browser harness: **12/12 PASS**;
+- page errors: **0**;
+- failed source requests: **0**.
+
+The exact formerly failing semantic gate now reads structured state/source relationships instead of matching variant prose. No runtime-owner module changed. Stage/public/Georg review remain not started.
+
+---
+
+## Archived failure evidence
+
 ## Static / source
 
 Final candidate static owner/closure suite:
