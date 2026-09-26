@@ -1,3 +1,86 @@
+## CURRENT UPDATE · BL-OSM-CLAY-01 PREP + HUB REGISTRATION · 2026-09-26
+
+Status: **READY · BLENDER MCP BRIEF PREPARED · HUB SELF-SERVICE REGISTERED · NO RUNTIME/STAGE PROMOTION**
+
+### Exact lane
+
+- repo: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/production-architecture-v3-2026-09-24`
+- Draft PR: **#204**
+- preparation/evidence head before this Return write: `0d4652e1094a0f5e62d354175cb63f94dc7f04d7`
+- owner: **KFB Production Architecture / existing WorldBuilder + OSM City Lab routing**
+- Blender executor: **Blender MCP / Claude Code · BLENDER_STANDARD**
+
+### Outcome
+
+Prepared one bounded Blender experiment for Georg:
+
+**current KFB OSM Köln Dom/Hbf source → Blender source isolation → clay donor isolation → SOURCE_CLEAN / CLAY_SURFACE_ONLY / CLAY_FORM_SURFACE comparison.**
+
+Detailed brief:
+`skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`
+
+The brief includes:
+- exact `dom-zentrum-v0` data/provenance pins;
+- Claybound visual benchmark;
+- BlendSwap 29812 plus CC0/permissive clay alternatives;
+- optional BlendSwap asset-MCP sidecar;
+- MOSAIQ / BlenderGIS / Blosm OSM→Blender oracles;
+- glTF/PBR bake constraints for later Three.js consumption;
+- current Blender-MCP queue and dependency order.
+
+OSM City Lab remains geographic truth. Blender does not become a second OSM/World/Track owner.
+
+### Hub registration
+
+New self-service card:
+- id: `bl-osm-clay-01`
+- title: **Blender MCP · OSM Köln Clay Look**
+- strand: **WorldBuilder**
+- state: **READY**
+- profile: **BLENDER_STANDARD · Claude Sonnet 5 · Medium · STANDARD**
+- prompt source: `STRAND_BRIEFINGS.md → BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender`.
+
+Hub registry mirror:
+`bot/production-desk-update/registry/production/v1/self_service.json`
+
+Current registered totals at evidence checkpoint:
+**13 strands · 97 jobs · 43 READY · 54 HOLD · 97 resolved prompts**.
+
+### Validation actually run
+
+Brief/catalogue/registry metadata: **10/10 PASS**.
+
+- unique briefing IDs;
+- exact prompt resolves once;
+- detailed brief exists;
+- WorldBuilder currentReady registration exists;
+- live Hub registry contains the exact job and prompt;
+- registry manifest content hash refreshed after the new job.
+
+Runtime/browser/Blender render tests: **0 / N/A — this slice is preparation only**.
+Cloudflare Stage files changed: **0**.
+New public build published: **no**.
+Exact Hub Stage browser proof of the new card: **OPEN / NOT CLAIMED**.
+
+### Current Blender queue recorded, not started
+
+- **BL-OSM-CLAY-01:** READY NOW.
+- **Track Core 1A:** waits for TRACK-CORE-0 + language gate.
+- **SC01 bridge shells:** Georg look review first.
+- **Billboard B3:** design concept first; current exploration is not usable.
+- **FrizzleBob body-family Blender rig:** separate ToolBox owner.
+- **Orc drummer:** separate performance owner.
+- **KayKit city furniture:** current OSM City PR #223 owner; consume rather than duplicate.
+
+### Exactly one next gate
+
+Run **BL-OSM-CLAY-01** in a fresh Blender-MCP session and return the source-isolated + three-profile Dom/Hbf comparison for Georg’s visual choice.
+
+No merge, Cloudflare publication or Live promotion is authorized by this preparation.
+
+---
+
 ## CURRENT UPDATE · WORLD OWNERSHIP WORDING SYNC · 2026-09-26
 
 Status: **METADATA CORRECTED · NO RUNTIME / STAGE / LIVE CHANGE**
