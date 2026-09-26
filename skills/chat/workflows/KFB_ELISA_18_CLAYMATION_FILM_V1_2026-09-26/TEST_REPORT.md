@@ -136,8 +136,31 @@ These counts come from current project records and are useful donor confidence o
 - Cloudflare Stage
 - final film
 
-## One next gate
+## Autonomous one-shot contract revision · 2026-09-26
 
-**ELISA-FILM-G0 · source isolation + FrizzleBob/GothGirl rig/look proof**
+After Georg rejected the preflight-as-human-gate flow, the active contract was revised to an end-to-end autonomous production model.
 
-No full-film implementation should begin before that human visual decision.
+Static contract checks run on the current branch:
+
+**10 / 10 PASS**
+
+1. autonomous handover `START_HERE.md` exists;
+2. input manifest names the exact frozen FrizzleBob JSON path;
+3. WSA launcher contains compact + ultra-short variants;
+4. master prompt consumes the frozen FrizzleBob JSON;
+5. G0 is explicitly internal, not a human stop;
+6. External Critic + Repair Agent roles are explicit;
+7. two-repair stop rule is preserved;
+8. first intended human review is the final candidate;
+9. obsolete master-prompt G0 stop text is absent;
+10. obsolete START_HERE human-G0 question/stop text is absent.
+
+This is **contract/static evidence only**. No film runtime, render, external Critic execution or Cloudflare Stage was produced by this documentation revision.
+
+## Execution start condition
+
+Required input still pending:
+
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`
+
+Once present and frozen, the intended run proceeds autonomously through G0, animatic, final production and independent QA to the finished candidate.
