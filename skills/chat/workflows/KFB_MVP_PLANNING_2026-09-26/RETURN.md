@@ -37,23 +37,30 @@ all under:
 
 ## Checks performed
 Documentation/planning slice:
-- GitHub source recon of current main + PRs #185, #190, #202, #204, #215–#221 and relevant branch files;
+- GitHub source recon of current main + PRs #185, #190, #202, #204, #215–#222 and relevant branch files;
 - PR #216 changed-file check confirms the Claude Design R0 brief exists there;
 - PR #219 current Track-Core files read, including latest SP13KTRA/sprint/W0 addendum;
 - Dropbox search confirms `rhein-muelheim-v0` and RKIT-11 sources remain present; no Dropbox mutation;
-- every new planning file was fetched back from the exact branch after write.
+- every new planning file was fetched back from the exact branch after write;
+- router `skills/chat/START_HERE.md` and additive router `CHANGELOG.md` updated on this branch;
+- HUB-CTRL `config.json`, `RETURN.md` and `CHANGELOG.md` fetched back from the exact owner branch after write.
 
 New runtime/browser tests: **0**.  
 New Stage/Public QA: **0**.
 
 ## Hub metadata
-A separate same-handoff update is required on the existing HUB-CTRL owner branch #202:
-- expose WSA review packet;
-- fix Racer gate wording;
-- add explicit Playable-R0 HOLD;
-- retain no manual Hub HTML edits.
+Completed on the existing HUB-CTRL owner branch #202.
 
-Its exact commit/evidence is recorded separately after that write.
+- config checkpoint: `7dc340afd94023e65d68561228472a4dc19bdffb`;
+- HUB-CTRL documentation final observed head: `1542f04524238d3227f8e1a2b1d027d98f93d8eb`;
+- added WSA review-only lane for PR #222;
+- Racer now routes to **G0 → W0** first;
+- separate Playable Track R0 lane is **WAITING / SOURCE_REQUIRED HOLD**;
+- WSA summary changed from NOT_NEEDED to REVIEW_ONLY for this planning gate;
+- generated Hub HTML was not edited;
+- Cloudflare/public root was not republished or claimed changed;
+- config was fetched back and JSON-parsed after write;
+- GitHub reported **0 PR workflow runs** for both the config checkpoint and final HUB-CTRL documentation head, so no new Hub CI count is claimed.
 
 ## Unresolved / WSA gates
 - G0 JavaScript authoritative Track Core decision;
