@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-24
+Date: 2026-09-27
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -23,6 +23,21 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
+
+
+## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
+
+Knet-Medizin is now routed as a DocCheck project reference under `georg-doc/doccheck/Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/`.
+
+Current main remains the M0 / Concept-v1 source. The active bounded M1 candidate is Draft PR #8 on `chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27`: one **segmented-neutrophil Cell Forge** interaction (`Build → Smear → Verify → Repair`) for Claude Design. SimBlood keeps morphology Ground Truth; Knet-Medizin owns the tactile clay/gummy interaction; KFB Asset Librarian remains source/provenance for non-medical props only.
+
+Candidate brief:
+https://github.com/georg-doc/doccheck/blob/chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27/Knet-Medizin%20Konzept/doccheck-slice/Knet-Medizin/_handover/BRIEF_CLAUDE_DESIGN_CELL_FORGE_M1_2026-09-27.md
+
+Planned Stage route is reserved but **NOT DEPLOYED**:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/doccheck/knet-medizin-cell-forge-m1/`
+
+Do not add a second cell family before Georg reviews the single M1-N candidate.
 
 ## Hard rules
 
