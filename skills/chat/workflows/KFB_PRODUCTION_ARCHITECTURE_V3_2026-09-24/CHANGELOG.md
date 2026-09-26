@@ -1,3 +1,21 @@
+## 2026-09-26 · Blender MCP OSM Cologne clay briefing
+
+- Added the bounded `BL-OSM-CLAY-01` Blender MCP preparation for a source-exact Dom/HBF clay-look proof.
+- Current OSM City Lab `dom-zentrum-v0` remains geography/provenance truth; Blender is an authoring/look/bake oracle only.
+- Research routed into the brief:
+  - BlendSwap 29812 Clay shader / fingerprints as the first CC-BY material donor;
+  - BlendSwap 25508 CC0 Procedural Material Pack for Clay + Asphalt A/B;
+  - optional CC0 Clay Blob and Poly Haven Clay Plaster tactile/PBR references;
+  - MOSAIQ, BlenderGIS and Blosm as bounded OSM→Blender import/georeference comparison oracles.
+- First execution gate is intentionally small: source-isolated Dom/HBF crop → donor isolation → `SOURCE_CLEAN | CLAY_SURFACE_ONLY | CLAY_FORM_SURFACE` under one camera/light.
+- Complex Cycles material graphs are not assumed to survive glTF; optional web handoff uses standard PBR bakes plus separate clean/presentation geometry.
+- Existing Blender queue is recorded without starting it: Track Core 1A waits for TRACK-CORE-0; SC01 bridge shells wait for Georg look review; Billboard B3 requires design concept first; FrizzleBob body-family rig and Orc drummer stay with their current owners; PR #223 owns KayKit city furniture presentation.
+- Added READY Hub self-service job `bl-osm-clay-01` under WorldBuilder.
+- Catalogue after registration: **13 strands · 97 jobs · 43 READY · 54 HOLD**.
+- Live Hub registry mirror now contains **97 prompts / 97 jobs** and the new Blender job.
+- Validation: **10/10 PASS** for briefing/catalogue/registry metadata. Runtime/browser/Blender render = not run by this preparation; Cloudflare Stage files unchanged.
+- No owner transfer, merge, Stage publication or Live promotion.
+
 ## 2026-09-26 · Card Zone / Biome / Environment recovery
 
 - Recovered the aborted Card-Zone / biome / procedural-environment research into `CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`.
