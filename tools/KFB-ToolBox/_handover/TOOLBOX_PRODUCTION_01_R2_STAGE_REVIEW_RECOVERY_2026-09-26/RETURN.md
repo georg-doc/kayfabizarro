@@ -1,7 +1,7 @@
 # RETURN · ToolBox Production-01 r2 Stage Review Recovery
 
 Date: 2026-09-26  
-Status: **CI_PASS · STAGE PUBLICATION GATE OPEN**
+Status: **PUBLIC_VERIFIED · HUMAN REVIEW OPEN · NOT LIVE**
 
 ## Owner / branch / PR
 
@@ -32,14 +32,20 @@ Four screenshots visually inspected: Source, State, Pose/IK, Mobile. Complete Ea
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`
 
-At this checkpoint it is **not yet claimed PUBLIC_VERIFIED**. Publication and Hub-link verification are the next gate.
+Public publication is now verified:
+
+- runtime publication checkpoint: `cloudflare-live@44fda28e6`;
+- ToolBox front-door link checkpoint: `cloudflare-live@279aa8891`;
+- current verified Cloudflare head: `69cfd8c6329f23725eefb84fcf908d6526cfd19d`;
+- exact Stage + ToolBox front door + live Registry + rendered KFB Hub: **20/20 PASS**;
+- public page/request failures: **0**.
 
 ## Unresolved
 
-Only the human visual decision remains after public verification. No runtime defect is currently open in this slice.
+Only the human visual decision remains. No runtime defect is currently open in this slice.
 
 ## Next gate
 
-**TOOLBOX-R2-STAGE-PUBLISH-01** · exact candidate + Hub link → Cloudflare deploy → exact URL/browser marker proof → Georg PASS/TUNE/REJECT.
+**Georg reviews Source Object → State loop → Pose/IK on the fixed public route and returns PASS / TUNE / REJECT.**
 
 Do not auto-merge PR #221/#185 and do not promote Live.
