@@ -66,5 +66,25 @@ Visually inspected from the exact successful artifact:
 
 ## Status
 
-**CI_PASS / LOCAL_ARTIFACT_VISUALLY_VERIFIED.**  
-Public Cloudflare Stage and Georg human acceptance are separate subsequent gates.
+**CI_PASS / LOCAL_ARTIFACT_VISUALLY_VERIFIED / PUBLIC_VERIFIED.**
+
+## Public proof · 2026-09-26
+
+Exact route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`
+
+Real-browser gate: **20/20 PASS**.
+
+Covered:
+- exact Stage marker and HTTP 200;
+- exact ToolBox front-door revision and link;
+- live Production Desk Registry `LOOK_AT` lane and exact review URL;
+- rendered KFB Hub title and exact link;
+- exact source actor isolated first;
+- General 15 / MovementBasic 11 / MovementAdvanced 13 loaded;
+- complete source actor + EarRig silhouette inside safe chrome;
+- 0 Stage runtime errors;
+- 0 Hub page errors;
+- 0 failed public HTTP assets.
+
+Georg human acceptance remains separate and open.
