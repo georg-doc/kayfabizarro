@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17150f">
+<title>KFB WorldBuilder · ClayBound C1</title>
+<meta name="kfb-source-repo" content="georg-doc/kayfabizarro">
+<meta name="kfb-source-pr" content="190">
+<meta name="kfb-source-head" content="58028b07d7618926c40ffaec3bd4053dc88c0efd">
+<meta name="kfb-stage-id" content="CLAYBOUND-WORLD-C1">
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#17150f}</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script>window.__wb2dProps = Object.assign(window.__wb2dProps || {}, { world: 'huerth' });</script>
+</head>
+<body data-kfb-stage="CLAYBOUND-WORLD-C1" data-kfb-source-head="58028b07d7618926c40ffaec3bd4053dc88c0efd">
+<!-- C1 mounts the accepted WorldBuilder first, then a reversible presentation-only adapter. -->
+<script type="module">
+await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js');
+const { mountClayBound } = await import('./runtime/worldbuilder/presentation/claybound-presentation.v1.js');
+mountClayBound(window.__wb2d);
+</script>
+</body>
+</html>

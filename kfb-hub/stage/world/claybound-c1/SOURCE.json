@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.stage-source/1",
+  "stageId": "CLAYBOUND-WORLD-C1",
+  "status": "FROZEN_BROWSER_UNVERIFIED",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "work/claybound-world-c1-2026-09-26",
+  "baseBranch": "wsa/world-r2-stage-prep-2026-09-26",
+  "baseHead": "7b2393a54c6b31e4bd4d927275030423612cfde8",
+  "basePullRequest": 234,
+  "implementationCommit": "6f3f1669c18d502460d151913d8be8dc43b32103",
+  "diagnosticCommit": "09d98a8fd65d724277f75cb52035c8be6f9efe61",
+  "canonicalAdapter": "tools/KFB-ToolBox/worldbuilder/presentation/claybound-presentation.v1.js",
+  "stageEntry": "kfb-hub/stage/world/claybound-c1/index.html",
+  "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/claybound-c1/",
+  "publication": "NOT_STARTED",
+  "publicVerified": false,
+  "world": "huerth",
+  "seed": 43129,
+  "adapter": "claybound-presentation.v1",
+  "packageRule": "All 23 accepted World r2 runtime files are byte-identical copies; the C1 adapter is an exact canonical/runtime mirror.",
+  "protectedOwners": ["WorldBuilder terrain/editor/persistence", "OSM route geometry", "movement", "camera", "collision/contact", "Track Core"]
+}
