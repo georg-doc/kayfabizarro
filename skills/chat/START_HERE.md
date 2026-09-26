@@ -1107,3 +1107,32 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
+
+## 2026-09-26 · Clay external sources + Xargiv + Gemini seam QA
+
+The ClayBound production lane now also has a classified external-source review:
+
+`tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAY_PRODUCTION_SOURCE_REVIEW_2026-09-26.md`
+
+Current source roles:
+- **RandTextureGen / Xargiv** — supporting texture-authoring tool; generated images are CC BY / commercial with attribution according to its terms;
+- **Dandruff Clay seamless texture pack** — incoming calibration/source pack, inventory after arrival;
+- **Clay Knight** — combat feel/state-timing reference only; reuse existing KFB/KayKit animation owners;
+- **Unreal clay stop-motion project** — concept donor only;
+- **Belimoth Clay (Classic)** — unrelated patch-based generative-art environment, deferred from the clay-material lane.
+
+Gemini comparison `Gemini_Generated_Image_rx1fvxrx1fvxrx1f.jpeg` has completed repeat/edge QA:
+- 2048×2048 JPEG/RGB;
+- X edge **BORDERLINE**;
+- Y edge **LIKELY_CONTINUOUS**;
+- visible macro-form repetition in 3×3;
+- verdict for Asset 1: **NEEDS FIX**.
+
+Evidence:
+`tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAY_GEMINI_RX1F_SEAM_QA_2026-09-26.md`
+
+No new Hub card, Blender gate, Stage or runtime owner is created. The existing **ClayBound · Production Assets** lane remains current.
+
+Exactly one current gate remains:
+**CLAY-ASSET-01 · finish the primary smooth matte clay source + repeat/edge evidence → Georg review before Asset 2.**
+
