@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB · Environment Preview 01</title>
+<style>
+:root{color-scheme:dark;--ink:#f6f1e8;--bg:#171816;--panel:rgba(24,25,22,.88);--line:#59584f;--on:#f0aa3b}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);font:12px/1.2 system-ui,sans-serif;color:var(--ink)}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#ccc}
+nav{position:fixed;z-index:4;top:max(8px,env(safe-area-inset-top));left:8px;display:flex;gap:4px;padding:4px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(10px)}
+button{height:30px;padding:0 10px;border:1px solid var(--line);background:#262721;color:var(--ink);font:700 11px system-ui;cursor:pointer}
+button[aria-pressed="true"]{border-color:var(--on);color:#171816;background:var(--on)}
+.mark{align-self:center;padding:0 6px;color:#b8b3a9;font:700 9px ui-monospace,monospace;letter-spacing:.04em}
+@media(max-width:520px){nav{right:8px}.mark{display:none}button{flex:1}}
+</style>
+</head>
+<body data-build="ENV_PREVIEW_01_STAGE_2026_09_26" data-source-head="6718eef05f2b6dd0d79ae04884b33f3396c34379">
+<iframe id="view" title="KFB Environment Preview"></iframe>
+<nav aria-label="Vergleich">
+  <button id="resident" type="button">Residents</button>
+  <button id="toolbox" type="button">ToolBox</button>
+  <span class="mark">WORLD MATCH ↔ SOURCE</span>
+</nav>
+<script>
+const routes={resident:'./resident/',toolbox:'./toolbox/'};
+const frame=document.querySelector('#view');
+const buttons=[...document.querySelectorAll('button')];
+function show(id){
+  if(!routes[id])id='resident';
+  frame.src=routes[id];
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.id===id)));
+  const url=new URL(location.href);url.searchParams.set('view',id);history.replaceState(null,'',url);
+  window.__KFB_ENV_STAGE={ready:true,view:id,sourceHead:document.body.dataset.sourceHead,marker:document.body.dataset.build};
+}
+buttons.forEach(b=>b.addEventListener('click',()=>show(b.id)));
+show(new URLSearchParams(location.search).get('view')||'resident');
+</script>
+</body>
+</html>
