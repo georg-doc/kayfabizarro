@@ -14,6 +14,30 @@
   },
   "lanes": [
     {
+      "id": "wsa-mvp-dispatch-review",
+      "bucket": "LOOK_AT",
+      "title": "WSA · MVP Dispatch Recon / Planfreigabe",
+      "what": "Neuer planning-only Review-Packet PR #222: aktuelle Owner/Refs, widersprüchliche Gates, Start/Wait/Hold-Matrix und kleine executor-spezifische Briefings. Keine neue Runtime-Architektur.",
+      "provider": "WSA Work Lead · review only",
+      "yourAction": "PR #222 START_HERE + Decision Register lesen und pro Decision APPROVE/TUNE/HOLD zurückgeben. Keine produktive Ausführung in diesem Review.",
+      "waitingFor": "",
+      "questions": [
+        "G0 JavaScript Track Core?",
+        "Shared Camera owner + World height contract?",
+        "ToolBox publish-before-expansion und ENV-PREVIEW Stage jetzt freigeben?"
+      ],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 222,
+      "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
+      "expectedHead": "72896ca787c0b4bd80c29525aaa01ca00c241e0a",
+      "brief": {
+        "label": "WSA Recon + Plan Approval",
+        "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/START_HERE.md",
+        "ref": "chat/wsa-mvp-dispatch-prep-2026-09-26",
+        "pasteReady": false
+      }
+    },
+    {
       "id": "hub-ux-recovery",
       "bucket": "RUNNING",
       "title": "KFB Hub UX v2 · Candidate eingetroffen",
@@ -294,17 +318,19 @@
     },
     {
       "id": "racer",
-      "bucket": "CAN_START",
-      "title": "Racer · Track Core · flexible Versatzstücke",
-      "what": "Georgs RKIT-11-Entscheidung gilt: ein Base-Track-Core, alles Weitere als Pieces/Data. Perplexity liefert nützliche Mechanismen (echte Clothoid/Euler-Krümmungsübergänge, Connector-State, gestaffelte Transition-Zonen), aber kein Produktionsskript. Aktuell zuerst Census+Core-Contract; Playable Track R0 und Köln-OSM warten dahinter.",
-      "provider": "ChatGPT Web → Claude Coworker + Blender MCP → ChatGPT Web → Claude Design",
-      "yourAction": "TRACK-CORE-0 als frischen Web-Chat starten. Erst danach Sprach-Gate und die vorbereiteten 1A/1B/2-Briefings.",
-      "waitingFor": "",
-      "questions": [],
+      "bucket": "LOOK_AT",
+      "title": "Racer · Track Core · G0 → W0",
+      "what": "Track Core ist die aktuelle Racer-Architektur. Neuester PR-#219-Stand verlangt zuerst G0 (JavaScript als maßgeblicher Core prüfen/freigeben), dann W0 Census/Contracts/reference. Claude Design Playable Track R0 hat korrekt SOURCE_REQUIRED gestoppt und bleibt separat HOLD.",
+      "provider": "Georg/WSA → ChatGPT Web → Blender MCP → Web → Claude Design",
+      "yourAction": "WSA prüft G0. Nach APPROVE startet nur TRACK-CORE W0. Playable Track R0 nicht starten.",
+      "waitingFor": "G0 JavaScript-Entscheidung. R0 wartet zusätzlich auf Core proof/runtime parity + Web closed-package prep.",
+      "questions": [
+        "JavaScript als einzigen maßgeblichen Track-Core bestätigen oder einen konkreten aktuellen Owner-Konflikt nennen."
+      ],
       "repo": "georg-doc/kayfabizarro",
       "pr": 219,
       "branch": "georg-doc-patch-2",
-      "expectedHead": "c3ccd0d85a68593f5a545fd41ae0ef2112391965",
+      "expectedHead": "6610e5b0e819c37e36f63d5bbff4fc9b95465779",
       "brief": {
         "label": "TRACK-CORE-0 · Web Census + Core Contract",
         "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md",
@@ -312,6 +338,26 @@
         "pasteReady": true
       },
       "review": null
+    },
+    {
+      "id": "racer-playable-track-r0",
+      "bucket": "WAITING",
+      "title": "Racer · Playable Track R0 · SOURCE_REQUIRED HOLD",
+      "what": "Claude Design hat korrekt gestoppt: der R0-Brief liegt auf PR #216 statt main, aber das geschlossene Input-Paket und die isolierte Donor-Evidence existieren noch absichtlich nicht. Diese Voraussetzungen entstehen erst nach Track-Core proof/runtime parity und Web PLAYABLE_TRACK_R0_PREP.",
+      "provider": "Web Prep → Claude Design später",
+      "yourAction": "",
+      "waitingFor": "Track Core G0/W0 → Blender oracle → Web runtime parity → transition visual grammar → Web closed-package prep. Keine Ersatz-Rezepte verwenden.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 216,
+      "branch": "chat/cologne-route-01-plan-2026-09-25",
+      "expectedHead": "a65b23f77b6820098666a8a035c1f0a2e0914f47",
+      "brief": {
+        "label": "R0 blocker / routing correction",
+        "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/CLAUDE_DESIGN_RACER_R0_BLOCKER_RETURN_2026-09-26.md",
+        "ref": "chat/wsa-mvp-dispatch-prep-2026-09-26",
+        "pasteReady": false
+      }
     },
     {
       "id": "world-god",
@@ -373,8 +419,8 @@
     }
   ],
   "wsa": {
-    "state": "NOT_NEEDED",
-    "text": "Gerade nicht nötig. WorldBuilder, ToolBox, Racer und Residents haben normale Web-/GitHub-/Blender-Wege; Work erst bei einer konkreten Capability-Lücke."
+    "state": "REVIEW_ONLY",
+    "text": "WSA ist jetzt nur für Recon/Planfreigabe von PR #222 vorgesehen: Owner/Refs und Dispatch-Gates prüfen, keine Runtime bauen. Danach gehen freigegebene Slices zurück an Web/GitHub, Claude Design oder Blender MCP."
   },
   "standards": [
     {
