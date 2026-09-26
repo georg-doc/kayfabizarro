@@ -1,5 +1,23 @@
 # TEST REPORT · WORLD-INTEGRATION-r2 failure recovery
 
+## 2026-09-26 · Closed Stage package result
+
+`WORLD-R2-STAGE-PREP-01` packaged the unchanged source at a fixed Stage path.
+
+- package identity/scope: **28/28 PASS**;
+- Hürth packaged browser: **55/55 PASS**;
+- Cologne packaged browser: **55/55 PASS**;
+- accepted WB2 packaged regression: **34/34 PASS**;
+- packaged browser harness: **15/15 PASS**;
+- page errors: **0**;
+- failed source requests: **0**.
+
+Public Cloudflare publication at `c035427ecb62023758589224c5d7872b217e0261` repeated the exact
+sequence: source marker PASS, Hürth 55/55, Cologne 55/55, WB2 34/34, browser harness 15/15, zero page
+errors and zero failed source requests. Status: **PUBLIC_VERIFIED · HUMAN_REVIEW**.
+
+---
+
 ## 2026-09-26 · Contract reset result
 
 `WORLD-R2-CONTRACT-RESET-01` changed only the selftest contract and contract documentation.
