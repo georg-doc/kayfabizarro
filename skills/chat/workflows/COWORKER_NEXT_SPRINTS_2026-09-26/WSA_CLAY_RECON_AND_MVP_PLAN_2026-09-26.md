@@ -176,4 +176,4 @@ No new Stage route is created by PR #231.
 
 ## Exactly one next gate
 
-**C0 SOURCE LOCK — identify the exact Asset 01 r1 binary and verify SHA-256 `fb952516…3c04ea5`. If exact bytes are unavailable after the bounded check, return SOURCE_REQUIRED and stop; do not reconstruct or substitute.**
+**WORLD-R2-STAGE-PREP-01 — package the already-tested PR #190 World r2 candidate exactly for direct KFB Stage/Human review. No World/Track redesign, no Clay dependency, no merge or Live promotion.**
