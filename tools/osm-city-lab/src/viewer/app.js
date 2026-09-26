@@ -5,6 +5,7 @@ import { applyCartoonMassing, windowCodesForBuilding } from '../style/cartoon-ci
 import { joinedStrip, addJunctionPatches } from './street-surface.js';
 import { createStreetSigns } from './street-signs.js';
 import { createNaturePoc } from './nature-poc.js';
+import { createCityFurniture } from './city-furniture.js';
 
 const params=new URLSearchParams(location.search);
 const cityId=(params.get('city')||'ehrenfeld-v0').trim();
@@ -13,6 +14,7 @@ const requestedLook=(params.get('look')||'').trim().toLowerCase();
 const truthy=v=>['1','on','true','yes'].includes(String(v||'').toLowerCase());
 const requestedLabels=truthy(params.get('labels'));
 const requestedNature=truthy(params.get('nature'));
+const requestedFurniture=truthy(params.get('furniture'));
 
 const canvas=document.querySelector('#view');
 const status=document.querySelector('#status');
@@ -40,6 +42,7 @@ scene.add(root);
 
 let streetSignController=null;
 let natureController=null;
+let cityFurnitureController=null;
 
 const metrics={
   look:null,
@@ -58,6 +61,11 @@ const metrics={
   streetSignMinBuildingClearanceM:null,
   natureInstances:0,
   natureAssets:[],
+  cityFurnitureInstances:0,
+  cityFurnitureByType:{},
+  cityFurnitureAssets:[],
+  trafficSignalJunctions:0,
+  trafficPlanStatus:null,
   zLevels:null
 };
 
@@ -231,7 +239,7 @@ function bindLookButtons(look){
 }
 
 function bindFeatureButtons(){
-  const state={labels:requestedLabels,nature:requestedNature};
+  const state={labels:requestedLabels,nature:requestedNature,furniture:requestedFurniture};
   document.querySelectorAll('[data-feature]').forEach(button=>{
     const key=button.dataset.feature;
     button.classList.toggle('active',!!state[key]);
@@ -368,6 +376,18 @@ async function load(){
       if(natureController.errors.length)console.warn('[city nature POC] asset load errors',natureController.errors);
     }
 
+    if(requestedFurniture){
+      status.textContent='Loading KayKit city furniture R0…';
+      cityFurnitureController=await createCityFurniture(THREE,city,style.cityFurnitureR0||{},style.seed||'kfb-city');
+      root.add(cityFurnitureController.root);
+      metrics.cityFurnitureInstances=cityFurnitureController.candidates.length;
+      metrics.cityFurnitureByType={...cityFurnitureController.byType};
+      metrics.cityFurnitureAssets=[...cityFurnitureController.loadedAssets];
+      metrics.trafficSignalJunctions=cityFurnitureController.trafficPlan.junctions.length;
+      metrics.trafficPlanStatus=cityFurnitureController.trafficPlan.status;
+      if(cityFurnitureController.errors.length)console.warn('[city furniture R0] asset load errors',cityFurnitureController.errors);
+    }
+
     const startView=requestedLabels?'sign':look==='grotesque'?'grotesque':look==='cartoon'?'cartoon':'oblique';
     if(startView==='sign')focusStreetSign(city.bounds);
     else frame(city.bounds,startView);
@@ -383,7 +403,8 @@ async function load(){
 
     const features=[
       requestedLabels?`${metrics.streetSigns} street signs`:null,
-      requestedNature?`${metrics.natureInstances} KayKit trees`:null
+      requestedNature?`${metrics.natureInstances} KayKit trees`:null,
+      requestedFurniture?`${metrics.cityFurnitureInstances} city props / ${metrics.trafficSignalJunctions} signal junctions`:null
     ].filter(Boolean).join(' · ');
 
     diag.textContent=`${city.diagnostics.featureCounts.roads} roads · ${city.diagnostics.featureCounts.buildings} buildings · ${metrics.roadJunctionPatches} road junction patches · ${metrics.pathMeshes} paths below roads${features?' · '+features:''} · ${city.bounds.sizeM.x.toFixed(0)} × ${city.bounds.sizeM.z.toFixed(0)} m`;
@@ -393,6 +414,7 @@ async function load(){
         cityId,look,
         labels:requestedLabels,
         nature:requestedNature,
+        furniture:requestedFurniture,
         ...metrics,
         sourceCounts:{...city.diagnostics.featureCounts},
         bounds:city.bounds,
