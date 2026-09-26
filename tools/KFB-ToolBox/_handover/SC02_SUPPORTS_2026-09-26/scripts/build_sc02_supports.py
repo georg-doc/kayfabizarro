@@ -1,6 +1,6 @@
 """SC02 · Support family on route sockets · Track-Core safe prework · Claude Coworker 26.09.2026
 Supports are SCENERY under a route: they carry the route's soffit, they never define the route.
-Donor (not rebuilt, unchanged): RKIT-03 `build_support_v2` (v1 shaft form, Georg 26.09) (footing, tapered shaft, capital disc, bearing plate that follows the real
+v5: support family = SC-LIB/sc_support.py (SC02b redesign, Georg PASS 26.09); was RKIT-03 `build_support_v2` (footing, tapered shaft, capital disc, bearing plate that follows the real
 soffit incl. bank + grade; style layer classic / trunk / vine / rope). SC02 adds only:
   1. a PLACEMENT RULE over s (spacing, min clear height, keep-out zones of every other route + own lower branches, max span flag);
   2. a ground provider ground(x, z) (terrain / water owner later);
@@ -16,8 +16,8 @@ for p in (D + '/RKIT-01/scripts', D + '/RKIT-03/scripts', D + '/SC-LIB'):
     if p in sys.path:
         sys.path.remove(p)
     sys.path.insert(0, p)
-import rkit_lib as K, rkit3_lib as R3, scenery_route as SR
-for m in (K, R3, SR):
+import rkit_lib as K, rkit3_lib as R3, scenery_route as SR, sc_support as S
+for m in (K, R3, SR, S):
     importlib.reload(m)
 COLL = 'SC02_SUPPORTS'
 RULE = dict(spacing=12.0, min_height=3.0, max_span=32.0, foot_r=4.4, margin=1.0, self_skip=25.0,
@@ -133,19 +133,32 @@ def round_footing(name, base, segs=48):
     return ob
 
 
+def soffit_fn(route, s):
+    """Track underside y(x, z) near station s (bank + grade), same law the donor used: road y + sin(bank)*off + grade*along - drop."""
+    cand = [q for q in route.S if abs(q['s'] - s) <= 12.0]
+
+    def f(x, z):
+        q = min(cand, key=lambda q: (q['p'].x - x) ** 2 + (q['p'].z - z) ** 2)
+        Rh = Vector((q['R'].x, 0.0, q['R'].z)).normalized()
+        Th = Vector((q['T'].x, 0.0, q['T'].z))
+        hl = max(1e-6, Th.length)
+        Th.normalize()
+        dx, dz = x - q['p'].x, z - q['p'].z
+        bank = math.asin(max(-1.0, min(1.0, q['R'].y)))
+        return q['p'].y + math.sin(bank) * (dx * Rh.x + dz * Rh.z) + (q['T'].y / hl) * (dx * Th.x + dz * Th.z) - RULE['drop']
+    return f
+
+
 def build_one(route, frames, s, base, style, name, seed):
-    f = donor_frame(route.at(s))
-    got = R3.build_support_v2(name, f, RULE['side'], ground_y=base.y, frames=frames, embed=RULE['embed'], style=style, seed=seed)
-    if RULE['footing'] == 'round':
-        sq = [o for o in got if o.name.endswith('_footing')]
-        if sq:
-            remove(sq)
-            got = [o for o in got if o not in sq] + [round_footing(name + '_footing', base)]
+    """SC02b family (SC-LIB/sc_support.py, Georg PASS 26.09): height-share profile, round v1-proportion footing, soffit plate."""
+    q = route.at(s)
+    sof = soffit_fn(route, s)
+    H = sof(base.x, base.z) - base.y
+    tb = Vector((q['T'].x, -q['T'].z))
+    yaw = math.atan2(tb.y, tb.x) - math.pi / 2
+    got, info = S.build(K, R3, name, base, H, style=style, soffit=sof, yaw=yaw, ground=ground, embed=RULE['embed'], seed=seed)
     for o in got:
-        o['kfb_module'] = 'scenery_support'
         o['kfb_route_s'] = round(s, 2)
-        if o.type == 'MESH':
-            o.data.name = o.name
     return got
 
 
@@ -251,21 +264,25 @@ def checks(route, others, built):
                 for v in runtime_verts(o):
                     if math.hypot(v.x - base.x, v.z - base.z) > 3.45:   # outer skirt rim only (r 3.6)
                         skirt_float = max(skirt_float, v.y - ground(v.x, v.z))
-    folds = []
+    folds, pokes = [], 0
     for s, base, objs in built:
-        q = route.at(s)
-        cap_top = (q['p'].y - RULE['drop']) - base.y - 0.55
-        pr = [(2.9, 0.8), (2.75, 1.4), (2.3, 2.6), (1.9, max(3.0, cap_top * 0.45)), (1.55, max(3.4, cap_top - 2.2)), (1.6, cap_top - 1.2)]
-        if any(b[1] < a[1] for a, b in zip(pr, pr[1:])):
+        sof = soffit_fn(route, s)
+        cap_top = sof(base.x, base.z) - base.y - (S.P['plate_t'] - RULE['embed'])
+        if not S.check_profile(S.profile(cap_top)[0]):
             folds.append(round(s, 1))
+        for o in objs:
+            if o.name.endswith('_shaft'):
+                for v in runtime_verts(o):
+                    if route.local(v, s_hint=s, window=15.0)[2] > target + 0.02:
+                        pokes += 1
     plate_ok = strip_max_rng[0] >= target - 0.3 and strip_max_rng[1] <= target + 0.3
     foot_ok = foot[0] >= -1.05 and foot[1] <= 0.05
     return dict(other_corridor_intrusions=corr_other, own_corridor_intrusions=corr_self,
                 plate_top_per_strip_local_y=[round(v, 3) for v in strip_max_rng], plate_target_y=round(target, 3), plate_ok=plate_ok,
                 lowest_point_vs_ground_m=[round(v, 3) for v in foot], foot_ok=foot_ok,
-                donor_profile_folds_hidden_info=folds,   # info only: folds sit inside footing/plate (v1 look, Georg OK)
+                profile_folds=folds, shaft_vertices_above_plate_top=pokes,
                 footing_skirt_above_ground_max_m=(round(skirt_float, 3) if skirt_float > -1e8 else None),
-                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01))
+                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01 and not folds and pokes == 0))
 
 
 def ranges(pairs):
@@ -354,7 +371,7 @@ for k, style in enumerate(STYLES):
         report['styles'][style]['glb_kb'] = os.path.getsize(fn) // 1024
 if globals().get('SC_EXPORT'):
     meta = dict(schema='kfb.scenery-shell.v0', id='sc02-supports', status='CANDIDATE · scenery only',
-                donor='RKIT-03 rkit3_lib.build_support_v2 (unchanged)',
+                family='SC-LIB/sc_support.py (SC02b redesign, Georg PASS 26.09); donor rkit3_lib unchanged (organic_shaft/rounded_box reused)',
                 socket=dict(frame='route frame at s (heading + bank, grade)', attach='soffit = road surface - %.2f m (RKIT body; later from core profile)' % RULE['drop'],
                             base='ground(x, z) from terrain/water owner'),
                 fixture=dict(A='banked S-flyover, deck_half 7.2, peak 13 m, bank = clamp(-18·kappa, ±0.22 rad)',
