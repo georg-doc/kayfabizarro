@@ -1062,3 +1062,12 @@ Do not repair the same gate again.
 
 Next:
 `WORLD-R2-CONTRACT-RESET-01` · test contract only first.
+
+
+## 2026-09-26 · KFB Hub private Sites mirror
+
+HUB-CTRL remains the owner on Draft PR #202. The accepted-with-mobile-TUNE Hub UX candidate stays on stacked Draft PR #217, branch `chatgpt-web/hub-ux-recovery-v2-integration-2026-09-25`; private Sites mirror handoff head `d07a2ecdc93f47398f4206860300a97d12947c22`.
+
+The source-exact private review copy is https://kfb-production-hub.frizzlebob.chatgpt.site. It is a Site distribution mirror of the PR #217 candidate, not a new Production Desk registry or KFB Live promotion. Native Sites deployment succeeded; new Sites browser proof has not been obtained. The public Cloudflare Stage remains https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery-v2/ and the public root remains unchanged. The Hub Stage source card links the private Site on PR #217; that metadata has not been republished to Cloudflare.
+
+Read `tools/production_desk/SITES_MIRROR_RETURN_2026-09-26.md` on PR #217. Georg's `HUB-MOBILE-TUNE-01` remains open. One next gate: Georg reviews the private Site on desktop and mobile before an automated one-way HUB-CTRL → Sites synchronization is designed.
