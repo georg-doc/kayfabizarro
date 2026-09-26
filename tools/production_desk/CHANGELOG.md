@@ -301,3 +301,13 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
   Palimpsest, Billboard Chorus, World Memory, Neighborhood Dialects, Signal Takeover.
 - B3 remains WAITING / NOT STARTED.
 - No generated public root Hub or B2b Stage route is claimed by this metadata update.
+
+
+## 2026-09-26 · WSA dispatch review + Racer R0 hold
+
+- config commit `7dc340afd94023e65d68561228472a4dc19bdffb` adds PR #222 as WSA review-only lane;
+- Racer now routes first to Track-Core G0 → W0 instead of generic CAN_START;
+- separate Playable Track R0 lane is WAITING / SOURCE_REQUIRED until Track-Core proof + Web closed package;
+- updated PR #219 expected head to `6610e5b0…`;
+- no generated Hub HTML or Cloudflare publication changed;
+- config was fetched back and parsed; no PR workflow run was emitted for the config checkpoint, so no new CI count is claimed.
