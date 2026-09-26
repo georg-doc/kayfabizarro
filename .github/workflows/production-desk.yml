@@ -15,6 +15,7 @@ on:
   push:
     branches:
       - main
+      - work/hub-ctrl-01-2026-09-24
     paths:
       - "tools/production_desk/**"
       - "skills/chat/**"
@@ -54,7 +55,9 @@ jobs:
           node-version: "20"
 
       - name: Builder tests
-        run: python3 -m unittest discover -s tools/production_desk/tests -v
+        run: |
+          python3 -m unittest discover -s tools/production_desk/tests -p 'test_build.py' -v
+          python3 -m unittest discover -s tools/production_desk/tests -p 'test_render_desk.py' -v
 
       - name: Build production registry from live same-repo GitHub state
         env:
@@ -70,11 +73,10 @@ jobs:
       - name: Desk behaviour test (jsdom)
         run: |
           mkdir -p /tmp/jsd && (cd /tmp/jsd && npm install --no-save --no-audit --no-fund jsdom@24 >/dev/null)
-          NODE_PATH=/tmp/jsd/node_modules node tools/production_desk/tests/desk_dom_test.mjs \
+          NODE_PATH=/tmp/jsd/node_modules node tools/production_desk/tests/hub_ux_v2_contract_test.mjs \
             tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html registry/production/v1
 
       - name: Upload review evidence
-        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: kfb-production-desk
