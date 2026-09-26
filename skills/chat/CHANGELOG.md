@@ -1,3 +1,17 @@
+## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 routing
+
+### ROUTING
+- Registered `knet-medizin` in `REGISTRY.json` as a DocCheck project reference.
+- Current DocCheck main remains M0 / Concept v1 at `087376ebed9f81fb3b0ad736535e218f34d2f806`.
+- Active bounded candidate is Draft PR #8 on `chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27`.
+- Candidate brief routes Claude Design to one M1-N segmented-neutrophil loop: **Build → Smear → Verify → Repair**.
+- SimBlood remains morphology Ground-Truth owner; Knet-Medizin owns tactile presentation/interaction; Asset Librarian remains non-medical source/provenance owner.
+- KFB Hub source now exposes both the current task and Claude Design briefing.
+- Planned Stage route is recorded as `NOT_DEPLOYED`; no public or human acceptance is claimed.
+
+### NEXT GATE
+Claude Design must show the mandatory source donors in isolation, build only the single M1-N candidate, export a complete editable Session Cut and stop for Georg visual review before a second cell family.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
