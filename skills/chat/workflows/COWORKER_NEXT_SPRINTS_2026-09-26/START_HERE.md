@@ -9,6 +9,16 @@ PR: **#231**
 
 This is the Claymation-specific addendum to the already prepared general WSA dispatcher on PR #222. It does not replace Production Architecture PR #204, ToolBox, WorldBuilder, Race, HUB-CTRL, Asset Librarian or Blender owners.
 
+## Georg priority correction · 2026-09-26
+
+**Asset-01 texture/hash work is secondary and must not block an MVP.** Georg reports that the texture question has already been handled with Blender MCP. This checkpoint does not claim or reconstruct an unverified Blender artifact; it records the priority decision only.
+
+Therefore:
+- C0 byte/hash retrieval becomes `DEFERRED_NON_BLOCKING`;
+- do not spend WSA/Work budget on another source crawl;
+- any Blender result returns through PR #228 when its exact artifact/ref is available;
+- the next bounded WSA product gate is the already-green WorldBuilder packaging gate: **WORLD-R2-STAGE-PREP-01** on PR #190.
+
 ## Read only these first
 
 1. this file;
@@ -24,7 +34,7 @@ Only open the detailed Coworker plan or source PRs when the selected gate needs 
 - Asset 01 r1 is **HUMAN_ACCEPTED · tile QA PASS · not Blender-proven**.
 - Asset 01 r1 manifest SHA-256: `fb952516a6c77448b7107486256798ca201629a3c2fac4397121906dd3c04ea5`.
 - Exact approved Asset 01 r1 PNG bytes are **not committed in PR #228** and were **not located by the bounded Dropbox ClayBound search**.
-- Therefore the first Clay gate is **source-byte/hash lock only**. Do not re-open Georg's visual approval.
+- Asset-01 byte/hash retrieval is **DEFERRED_NON_BLOCKING** by Georg; do not re-open visual approval or spend WSA budget on it.
 - Asset 03 r2 is tile-green but human-look OPEN; r3 is seam-failed recovery and must not be used.
 - PR #230 classifies external sources; Gemini rx1f is **NEEDS FIX**, Xargiv generated output is **CC BY with attribution**, not CC0.
 - Main `622249e…` contains a newly uploaded `Asset 02 - ChatGPT-Bild ...png`, but no durable QA/approval record was found: treat it as **UNCLASSIFIED_ARRIVAL**, not accepted queue progress.
@@ -32,18 +42,12 @@ Only open the detailed Coworker plan or source PRs when the selected gate needs 
 
 ## WSA job
 
-WSA should do one short lock/dispatch pass, not implementation:
-
-1. verify the exact refs in the recon table;
-2. decide whether Asset 01 bytes are retrievable now;
-3. if YES: authorize one isolated Blender **CLAY-B0** material proof;
-4. if NO: return `SOURCE_REQUIRED` immediately and preserve the accepted manifest/hash;
-5. keep Asset 03, World-wide clay, Race clay and new drivable geometry behind their explicit dependencies.
+WSA must not reopen the texture source gate. Treat the Clay/Blender line as a parallel owner lane awaiting an exact return ref. Use the newly available Work budget on one current product gate only: package the already-tested World r2 candidate for its direct Stage/Human review without changing World architecture.
 
 ## First practical MVP ladder
 
-`C0 SOURCE LOCK`
-→ `C1 CLAY-B0 static Blender proof`
+`C0 SOURCE LOCK · DEFERRED_NON_BLOCKING`
+→ `C1 CLAY-B0 · handled in Blender lane / exact return ref pending`
 → `C2 CLAY-B1 one character/material-zone proof`
 → `C3 ToolBox consumer proof`
 → `C4 WorldBuilder one static patch/prop`
