@@ -96,7 +96,7 @@ Current execution order:
 3. `WORLD-ENV-CONSOLIDATE-01` · READY P1 — pin current TerrainSurface/Biome/Mood/Nature/Scatter/Landmark owners into a thin reference recipe;
 4. later Biome×Mood → procedural Nature + curated accents → deterministic World Recipe → Card Zone×current Environment.
 
-Travel/TinySkies remains macro-world truth. No second renderer, sky owner, terrain generator, hidden baseplate or copied preview-world stack.
+Current WorldBuilder continuous terrain is the local-world host. OSM and Track contribute bounded constraints through the Surface Adapter seam. Travel/TinySkies is not the world base; it contributes pinned sky/weather/light/mood and selected camera/mobility donors. No second renderer, sky owner, terrain generator, hidden baseplate or copied preview-world stack.
 
 
 ## CURRENT DELTA · 2026-09-25 evening · SESSION CUTS RECEIVED
