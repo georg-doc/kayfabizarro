@@ -1,12 +1,12 @@
 # KFB Elisa 18 · Claymation Birthday Film v1 · START HERE
 
-**Status:** PREPRODUCTION READY · NEW CINEMATIC CONSUMER · NO RUNTIME REACTIVATION · NO LIVE CLAIM  
+**Status:** AUTONOMOUS ONE-SHOT BRIEF READY · FRIZZLEBOB INPUT PENDING · NO RUNTIME REACTIVATION · NO LIVE CLAIM  
 **Date:** 2026-09-26  
 **Human:** Georg  
 **Owner:** KFB cinematic consumer / birthday-film composition only  
 **Repository:** `georg-doc/kayfabizarro`  
 **Branch:** `planning/elisa-18-claymation-film-v1-2026-09-26`  
-**Outcome:** one source-backed 30–60 s birthday-film plan + execution prompt + donor manifest + first evidence gate  
+**Outcome:** one source-backed 30–60 s birthday-film one-shot contract + donor manifest + internal QA/repair pipeline + final-candidate human review  
 **Reserved Stage family:** `https://kayfabizarro.pages.dev/kfb-hub/stage/story/elisa-18-claymation-film-v1/` — **NOT CREATED / NOT PUBLIC-VERIFIED**
 
 GitHub state overrides this document whenever a named source advances.
@@ -20,6 +20,7 @@ GitHub state overrides this document whenever a named source advances.
 5. `tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`
 6. `tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md`
 7. this folder's `SOURCE_MANIFEST.md`, `SHOT_PLAN.md`, `MASTER_PROMPT.md`, `TEST_REPORT.md`, `RECOVERY.md`, `RETURN.md`
+8. `tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/START_HERE.md` and `INPUT_MANIFEST.md`
 
 ## Critical recovery decision
 
@@ -130,11 +131,11 @@ If the execution environment uses OpenRouter for planning/script/tool assistance
 - hard maximum **USD 10 total OpenRouter spend**;
 - stop before exceeding the cap.
 
-## Source isolation rule
+## Internal source-isolation / preflight rule
 
 A loaded URL is not proof.
 
-Before integrated shots, the Stage/evidence pass must show these sources **in isolation**:
+Before integrated shots, the autonomous run must show these sources **in isolation** as an internal evidence/preflight pass:
 1. current FrizzleBob Driver Graft + EarRig/face;
 2. GothGirl source with current face cleanup / Rig_Medium;
 3. one Tiny Treats Bakery/Baked Goods source set;
@@ -144,7 +145,7 @@ Before integrated shots, the Stage/evidence pass must show these sources **in is
 7. `DemonHeart.gltf`;
 8. each shortlisted vehicle, with one chosen for the film.
 
-Only after those are visible and source-labelled may the integrated animatic use them.
+Only after those are visible, source-labelled and internally QA-accepted may the integrated animatic use them. This is not a routine human approval stop.
 
 ## Known source correction
 
@@ -155,22 +156,32 @@ Therefore:
 - use the verified gold `media/3D_Assets/Platformer Game Kit - Dec 2021/Powerups and Pickups/glTF/Key.gltf` for the unlock token;
 - show the KayKit RPGTools identity separately through its real `map.gltf`, `map_rolled.gltf`, `blueprint.gltf` and/or `blueprint_stacked.gltf`.
 
-## First bounded production gate · ELISA-FILM-G0
+## Internal production preflight · ELISA-FILM-G0
 
-Build only a source/rig/look proof, not the final film.
+G0 remains mandatory evidence, but it is **not a human micro-gate**.
 
-Required frame strip / small Stage:
+The autonomous run must build and inspect:
 - FrizzleBob isolated, rigged, neutral + one readable gesture;
 - GothGirl isolated, neutral + one locomotion/gesture clip;
 - one Tiny Treats bakery/snack mini-composition;
 - map/blueprint → dungeon floor-plan transition;
 - DemonHeart pulse proof;
 - 2–3 verified vehicle candidates shown side by side;
-- clay material comparison using current approved KFB material versus new ClayBound candidate only if CLAY-ASSET-01 has passed.
+- clay material comparison using current approved KFB material versus a new ClayBound candidate only where current canon permits it.
 
-**Human question:** “Do these exact donors already feel like one KFB clay/paper birthday film before we animate the full 55 seconds?”
+A separate Critic context/agent/model should review G0 for source fidelity, rig integrity, silhouette, clay/paper coherence and obvious technical errors. Failed criteria are repaired silently and re-reviewed.
 
-No full render before this gate.
+After two failed repair passes on the same issue, freeze/export failure recovery. Otherwise continue directly into the complete ~55 s production.
+
+**First intended human review:** finished candidate.
+
+## FrizzleBob one-shot input
+
+Required run-frozen Studio export:
+
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`
+
+The file is a film input, not an automatic global canonical promotion. If absent/invalid, stop on that exact blocker instead of substituting an older FrizzleBob.
 
 ## Exit criteria for this planning slice
 
@@ -182,6 +193,10 @@ No full render before this gate.
 - Hub/router point to this current brief;
 - no Stage/live claim is made.
 
-## One next gate
+## Execution start condition
 
-**ELISA-FILM-G0 · source isolation + FrizzleBob/GothGirl rig/look proof.**
+Georg places the new Studio export at:
+
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`
+
+After that input is frozen, WSA may execute the complete one-shot autonomously through independent QA and a finished candidate. No separate G0 human acceptance is required.
