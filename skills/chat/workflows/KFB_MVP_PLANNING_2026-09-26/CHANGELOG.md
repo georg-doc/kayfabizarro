@@ -75,3 +75,12 @@ Existing evidence re-read, not rerun:
 - external Demo Research: **15/15 routing + 8/8 handoff PASS**;
 - ToolBox r2 recovery: **33/33 browser PASS**;
 - ENV-PREVIEW-01: **30/30 static + 15/15 Chromium/WebGL PASS**.
+
+
+## 2026-09-26 · Racer design execution overview
+
+- added `RACER_DESIGN_EXECUTION_OVERVIEW_2026-09-26.md` as the current working page for Georg;
+- added a fresh-chat Claude Design wrapper for the startable-now HUD + Billboard visual slice;
+- preserved Track Core sequence W0 → Blender 1A → Web 1B → Claude Track-Core-2 → Web R0 prep → Claude Playable Track R0;
+- old blocked Claude R0 chat remains intentionally unused;
+- no Racer runtime, Stage or Live change.
