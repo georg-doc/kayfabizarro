@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-26 · World r2 contract reset
+
+### CONTRACT
+Replaced the stale World selftest prose-regex with a pure structured locomotion audit. Source roles, the ToolBox `walk.fast` playback variant and World-only backward/strafe tuning are now distinct and source-clip reuse is enforced.
+
+### SURFACE SEAM
+Recorded one contract-only Surface Adapter: WorldBuilder base height + bounded OSM/Track inputs → one final visible/support query; Race remains contact/physics owner. Travel Globe is not the world base.
+
+### EVIDENCE
+**13/13 contract · 24/24 static · Hürth 55/55 · Cologne 55/55 · WB2 34/34 · browser 12/12**, with 0 page errors and 0 failed source requests.
+
+### BOUNDARY / NEXT
+No runtime owner changed and no Stage/Live publication occurred. Next gate: `WORLD-R2-STAGE-PREP-01`.
+
 
 ## 2026-09-25 · WorldBuilder WB2 HUMAN PASS
 
