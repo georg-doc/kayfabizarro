@@ -1062,3 +1062,15 @@ Do not repair the same gate again.
 
 Next:
 `WORLD-R2-CONTRACT-RESET-01` · test contract only first.
+
+
+## 2026-09-26 · WSA MVP dispatch planning candidate
+
+Current planning review packet: PR #222 / branch `chat/wsa-mvp-dispatch-prep-2026-09-26`.
+
+Start at:
+`skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/START_HERE.md`.
+
+Purpose: WSA recon/plan approval only. It separates STARTABLE / WAITING / DO NOT START executor slices and records the Claude Design Playable Track R0 SOURCE_REQUIRED stop as correct. Playable R0 remains downstream of Track-Core G0/W0 + proof/runtime parity + Web closed-package prep. HUB-CTRL #202 remains the Hub/status owner; do not hand-edit generated Hub HTML.
+
+Exactly one planning gate: **WSA recon + planning approval**. No merge/Stage/Live follows automatically.
