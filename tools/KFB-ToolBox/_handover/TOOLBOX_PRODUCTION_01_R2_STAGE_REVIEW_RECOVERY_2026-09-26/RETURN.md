@@ -1,7 +1,7 @@
 # RETURN · ToolBox Production-01 r2 Stage Review Recovery
 
 Date: 2026-09-26  
-Status: **PUBLIC_VERIFIED · HUMAN REVIEW OPEN · NOT LIVE**
+Status: **PUBLIC_VERIFIED · GEORG TUNE · DIRECTION ACCEPTED · NOT LIVE**
 
 ## Owner / branch / PR
 
@@ -40,12 +40,21 @@ Public publication is now verified:
 - exact Stage + ToolBox front door + live Registry + rendered KFB Hub: **20/20 PASS**;
 - public page/request failures: **0**.
 
-## Unresolved
+## Georg visual result
 
-Only the human visual decision remains. No runtime defect is currently open in this slice.
+**TUNE · direction accepted.** The review is sufficient to continue; this is not a rejection or a request to reopen the integration slice.
+
+Deferred, non-blocking follow-ups:
+
+1. strong streak/noise artifacts visible both during motion and at rest;
+2. actor ground contact is incorrect;
+3. some State-loop animations still need calibration;
+4. Orbit camera must permit below-actor inspection for falling and flight animation review.
+
+These belong to bounded rendering, grounding, animation-calibration and shared camera work. They must not be collapsed into a ToolBox rewrite.
 
 ## Next gate
 
-**Georg reviews Source Object → State loop → Pose/IK on the fixed public route and returns PASS / TUNE / REJECT.**
+**Close this human gate as TUNE and continue with the next approved production slice.**
 
 Do not auto-merge PR #221/#185 and do not promote Live.
