@@ -318,3 +318,5 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - WSA lane now points to PR #222 aborted/fragile Web-chat recovery inventory + C0 long-job protocol;
 - two current recovery orphans surfaced: B2b-P1 closure and City Builder Bits application recon;
 - no generated Hub HTML, Cloudflare publication or Runtime/Live claim.
+
+- Final PR #222 pin: `1271ca4ea310ec1bc33c9f8e0ba499f890b81b82`; HUB-CTRL config checkpoint `f66a59ee6eaf5bb8b26fdef0406f75b03697c9e6`; no generated/public Hub change.
