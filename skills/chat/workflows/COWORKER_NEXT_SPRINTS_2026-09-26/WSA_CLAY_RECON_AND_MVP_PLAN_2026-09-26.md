@@ -1,8 +1,18 @@
 # WSA · Claymation recon + MVP plan · 2026-09-26
 
-Status: **RECON LOCKED FOR DISPATCH · NO IMPLEMENTATION IN THIS PR**
+Status: **RECON LOCKED · GEORG PRIORITY OVERRIDE APPLIED · NO IMPLEMENTATION IN THIS PR**
 
 This file reconciles the new Claymation line with the already-approved WSA dispatcher and current product owners. GitHub state at execution time overrides the observed refs below.
+
+## 0 · Current priority override
+
+Georg's current decision supersedes the former first gate: the texture/Asset-01 byte lock is **secondary** and has already been handled in the Blender MCP workstream. The exact Blender artifact/ref is not present in the GitHub sources inspected by this checkpoint, so no Blender/material PASS is invented here.
+
+Classification:
+- Asset-01 byte/hash lock: `DEFERRED_NON_BLOCKING`;
+- Clay/Blender result: parallel intake when an exact return ref exists;
+- WSA/Work critical path: **WORLD-R2-STAGE-PREP-01** on PR #190;
+- Track/OSM/Clay follow-ons remain behind their named owners and are not mass-dispatched here.
 
 ## 1 · Exact current source matrix
 
@@ -100,8 +110,8 @@ Owners stay:
 
 | MVP | Status | Outcome | Required input | Receiver / owner |
 |---|---|---|---|---|
-| **C0 SOURCE LOCK** | **START NOW** | retrieve exact accepted Asset 01 r1 bytes and verify SHA + QA preview identity | #228 manifest | Clay/WSA review only |
-| **C1 CLAY-B0** | WAIT C0 | neutral sphere + one static current KFB prop, same light/camera; T1 Cycles / T2 EEVEE / T3 GLB-safe material scaffold | exact Asset 01 | Blender MCP / #228 |
+| **C0 SOURCE LOCK** | **DEFERRED_NON_BLOCKING** | preserve accepted manifest/hash; no further WSA source crawl | #228 manifest | Clay/Blender owner |
+| **C1 CLAY-B0** | **PARALLEL BLENDER LANE · EXACT RETURN REF PENDING** | neutral sphere + one static current KFB prop, same light/camera; T1 Cycles / T2 EEVEE / T3 GLB-safe material scaffold | Blender result as supplied by Georg | Blender MCP / #228 |
 | **C2 CLAY-B1** | WAIT C1 | one copy-only current KFB character/material-zone proof; rig/slots untouched; two-pose anti-swim proof | accepted C1 + exact model selection | Blender MCP / ToolBox receiver |
 | **C3 TOOLBOX-T1** | WAIT C2 | one in-owner material preview/save-reload/browser review | accepted Blender proof | ToolBox owner |
 | **C4 WORLD-W1** | WAIT C3 + current World review gate | one static prop/bounded patch only; preserve terrain/OSM/sky owners | ToolBox look PASS + World owner | WorldBuilder |
@@ -137,14 +147,7 @@ General dispatcher PR #222 is newer than some wording on PR #219 and records Jav
 
 WSA should read this table, then open only the source needed for the chosen gate.
 
-For **C0**, read only:
-1. PR #228 `ASSET_MANIFEST.json`;
-2. PR #228 `START_HERE.md`;
-3. PR #229 `ASSET_01_RECON.md` only if identity is ambiguous.
-
-Do not decode the four ~65 MiB NotebookLM PDFs for C0/C1. They are source-only and not needed to prove byte identity.
-
-Do not repeat the broad Dropbox/GitHub clay search. One bounded Dropbox ClayBound search already returned no source match. If the exact binary cannot be identified from an explicit source/location, return `SOURCE_REQUIRED`.
+Do not spend further WSA budget on C0. Preserve the accepted manifest/hash and wait for the exact Blender MCP return ref if that material line needs integration. The missing binary is not an MVP blocker.
 
 ## 8 · Timeout/recovery contract
 
