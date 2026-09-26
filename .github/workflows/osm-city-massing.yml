@@ -16,6 +16,19 @@ on:
       - 'media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/**'
       - 'media/3D_Assets/kenney_city-kit-roads/Models/GLB format/**'
       - '.github/workflows/osm-city-massing.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/osm-city-lab/index.html'
+      - 'tools/osm-city-lab/src/viewer/**'
+      - 'tools/osm-city-lab/src/style/**'
+      - 'tools/osm-city-lab/styles/**'
+      - 'tools/osm-city-lab/source-proof/**'
+      - 'tools/osm-city-lab/qa/massing-local.mjs'
+      - 'media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/**'
+      - 'media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/**'
+      - 'media/3D_Assets/kenney_city-kit-roads/Models/GLB format/**'
+      - '.github/workflows/osm-city-massing.yml'
   workflow_dispatch:
 
 concurrency:
