@@ -1,3 +1,25 @@
+## 2026-09-26 · Elisa 18 Claymation Birthday Film v1 · autonomous one-shot revision
+
+- Replaced the earlier human-stop G0 flow with an **internal source/rig/look preflight**; first intended human review is now the finished ~55 s candidate.
+- Added frozen-input handover at `tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/`; Georg's required export path is `profiles/frizzlebob.georg-2026-09-26.json`.
+- Added compact and ultra-short WSA launchers for a single end-to-end run rather than routine micro-slices.
+- Added explicit Production Agent → independent External Critic → targeted Repair Agent separation; the Production Agent may not self-certify.
+- Preserved the global KFB stop rule: after two failed repair passes on the same gate/problem, freeze/export failure recovery instead of a third repair.
+- Added top-tier handcrafted stop-motion quality benchmark for tactile clay, staging, 3D camera, transitions, lighting and compositing without copying specific Wallace & Gromit/Aardman designs or scenes.
+- Static one-shot contract QA: **10 / 10 PASS**. No runtime film, Critic execution, video capture or Cloudflare Stage is claimed by this documentation revision.
+- No source owner, archived Birthday runtime, auto-merge or Live promotion was introduced.
+
+## 2026-09-26 · Elisa 18 Claymation Birthday Film v1 · preproduction
+
+- Added a new read-only cinematic-consumer workflow under `skills/chat/workflows/KFB_ELISA_18_CLAYMATION_FILM_V1_2026-09-26/`.
+- Preserved the current ToolBox Stage-First override: the earlier Birthday 2026 runtime remains archived and is not reactivated.
+- Recovered current donors for FrizzleBob Driver Graft/EarRig, GothGirl/Rig_Medium, ClayBound, Tiny Treats, KayKit RPGTools map/blueprint, Dungeon, DemonHeart, Registry vehicles, OSM/KFB Ink/Grotesque, S39 band/S40 disco and the accepted Audio baseline.
+- Corrected the requested key source: inspected KayKit RPGToolsBits has real map/blueprint/compass/tool models but no literal key in the inspected tree; the literal unlock key is the verified Platformer Game Kit gold `Key.gltf`.
+- Added a 55-second shot plan and execution prompt with a USD 10 hard OpenRouter cap, source-isolation rule and privacy-safe symbolic PayPal/banking beat.
+- Preproduction checks: 3/3 workflow docs read, 12/12 donor categories source-located, 5/5 direct source spot-checks PASS. Inherited public evidence is documented separately and was not rerun.
+- Reserved Stage family `https://kayfabizarro.pages.dev/kfb-hub/stage/story/elisa-18-claymation-film-v1/`; no Stage/live claim.
+- One next gate: **ELISA-FILM-G0 · source isolation + FrizzleBob/GothGirl rig/look proof.**
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY

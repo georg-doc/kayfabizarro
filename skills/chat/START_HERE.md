@@ -1107,3 +1107,23 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
+
+
+## 2026-09-26 · Elisa 18 Claymation Birthday Film v1
+
+A new **cinematic consumer** is prepared for Elisa's belated 18th-birthday film.
+
+- workflow: `skills/chat/workflows/KFB_ELISA_18_CLAYMATION_FILM_V1_2026-09-26/START_HERE.md`
+- branch: `planning/elisa-18-claymation-film-v1-2026-09-26`
+- visual target: KFB claymation + paper/collage + existing OSM/KFB Ink/Grotesque donors
+- actors: current FrizzleBob Driver Graft/EarRig + current GothGirl/Rig_Medium
+- content donors: Tiny Treats, KayKit RPGTools map/blueprint, KayKit Dungeon, DemonHeart, Registry vehicles, S39 Orc band/S40 disco
+- hard boundary: **do not reactivate the archived Birthday 2026 runtime**
+- Stage family is reserved but **not created / not public-verified**
+
+Source correction recorded: the inspected KayKit RPGToolsBits pack does not expose a literal key; use the verified Platformer Game Kit gold `Key.gltf` for the unlock token and keep RPGTools identity on its real map/blueprint assets.
+
+Execution start condition: Georg places the new Studio export at
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`.
+
+After input freeze, G0 is an **internal source/rig/look preflight**, not a human stop. The autonomous run proceeds through animatic, full production and independent Critic → targeted repair → Critic. The first intended human review is the finished candidate; no auto-merge or Live promotion.
