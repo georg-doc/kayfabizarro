@@ -251,12 +251,12 @@
     },
     {
       "id": "huerth-form-language",
-      "bucket": "LOOK_AT",
-      "title": "Hürth · drei Architektur-Beweise",
-      "what": "ROAD-01, HOUSE-01 und FACADE-01 sind isoliert und browsergeprüft. Sie beweisen Straßenmaterial, zusammenhängende Hausgeometrie und deterministische Fassadenrhythmen; sie sind noch kein neuer Stadt- oder WorldBuilder-Lauf.",
+      "bucket": "WAITING",
+      "title": "Hürth · Architektur-Beweise · TUNE",
+      "what": "Georg hat die drei Architektur-Beweise mit TUNE bewertet. Sichtbare Schatten-/Lichtkanten-Artefakte bleiben; Tür- und Fensterverteilung braucht mehr Variation und eine klarere Cartoon-Logik. Die Proofs bleiben Donoren, nicht finale Weltarchitektur.",
       "provider": "Web-Chat",
-      "yourAction": "A/B/C kurz ansehen und je PASS oder TUNE notieren.",
-      "waitingFor": "Georgs Sichtprüfung.",
+      "yourAction": "",
+      "waitingFor": "WorldBuilder/Form-Language-Owner übernimmt genau diese beiden Tunes im nächsten gebundenen Slice; keine weitere A/B/C-Sichtprüfung.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 200,
@@ -274,7 +274,7 @@
         "label": "A/B/C ansehen",
         "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/huerth-architecture-proofs/",
         "available": true,
-        "sourceRef": "PR #200 · Runtime c36f97be · 34/34 Browser PASS · human pending"
+        "sourceRef": "PR #200 · Runtime c36f97be · 34/34 Browser PASS · Georg TUNE 2026-09-27"
       }
     },
     {
