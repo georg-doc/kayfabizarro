@@ -15,6 +15,7 @@ on:
   push:
     branches:
       - main
+      - work/hub-ctrl-01-2026-09-24
     paths:
       - "tools/production_desk/**"
       - "skills/chat/**"
@@ -74,7 +75,6 @@ jobs:
             tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html registry/production/v1
 
       - name: Upload review evidence
-        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: kfb-production-desk
