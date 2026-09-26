@@ -1,3 +1,62 @@
+## CURRENT UPDATE · CARD ZONE / BIOME / ENVIRONMENT RECOVERY · 2026-09-26
+
+Status: **RECOVERED · SOURCE-PINNED · 15/15 PASS · NO RUNTIME / STAGE / LIVE CHANGE**
+
+### Exact lane
+
+- repo: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/production-architecture-v3-2026-09-24`
+- Draft PR: **#204**
+- owner: **KFB Web Architecture planning lane**
+- recovery artifact: `CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`
+- pre-Return metadata head: `45b283f455fd87228137ce763afac90f023aa2e2`
+
+### Recovered outcome
+
+- current WorldBuilder continuous terrain is reaffirmed as the one host surface/height owner;
+- superseded “Travel/TinySkies = macro-world truth” wording is explicitly retired;
+- Travel/TinySkies remain pinned procedural/presentation donors;
+- historical “biome” vocabularies are separated into `terrainDomain · ecologyProfile · zoneTheme · storyMode/register · worldMood`;
+- direct TinySkies source inspection records broad forest-noise filtering, coastal clusters and Fibonacci/separation landmark placement as distinct strategies;
+- later KFB `ts-flora.js / verteilung.js / natur-marken.js` learning is preserved: asset-light instanced Nature, terrain suitability, spacing/exclusion, local repair and semantic predicates;
+- Card semantic-vector / 3-card weighting, Rule-of-Three Anchor/Support/Accent, OSM→cartoon anatomy and P31 Track-first corridor support are recovered into one current-owner interpretation;
+- Hub briefing catalog still contains **96/96 unique jobs**; no new job was created.
+
+### Validation actually run
+
+Recovery/source-routing checks: **15/15 PASS**.  
+Runtime/browser tests: **N/A — runtime changed = 0 files**.  
+New Stage/public route: **none**.  
+Cloudflare/Live promotion: **none**.
+
+### Checkpoints
+
+- recovery memo: `31a0c140095ec5648413faa96de397dab2da9d26`
+- validation report: `3327f3d9817a6c314142fd393321e64f4ef17a98`
+- router/changelog/Hub metadata synchronized through: `45b283f455fd87228137ce763afac90f023aa2e2`
+
+### Files changed by this recovery
+
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/TEST_REPORT.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CHANGELOG.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/START_HERE.md`
+- `skills/chat/START_HERE.md`
+- `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/HUB_BRIEFING_CATALOG.json`
+- this `RETURN.md`
+
+### Hub / human surface
+
+Public Hub runtime is **unchanged** and remains owned by HUB-CTRL. This recovery updates architecture Hub metadata only; it creates no new Stage card or public route and makes no “live” claim.
+
+### Exactly one current gate
+
+**`ENV-PREVIEW-01` remains the architecture lane’s existing next gate.**
+
+After that gate, the first environment-specific follow-on is the **owner-corrected `WORLD-ENV-CONSOLIDATE-01`**. No separate research implementation branch.
+
+---
+
 ## CURRENT UPDATE · EXTERNAL DEMO RESEARCH RADAR · PASS 2 A–L · 2026-09-26
 
 Status: **PASS 2 COMPLETE · PERSISTED · ROUTING/HANDOFF VERIFIED · NO RUNTIME / STAGE / LIVE CHANGE**
