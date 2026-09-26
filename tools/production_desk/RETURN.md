@@ -1,4 +1,31 @@
-# CURRENT UPDATE · ENV-PREVIEW-01 PUBLIC STAGE · 2026-09-26
+# CURRENT UPDATE · ENV-PREVIEW-01 HUMAN PASS_WITH_TUNE + TOOLBOX r2 PUBLIC VERIFIED · 2026-09-26
+
+## ENV-PREVIEW-01
+
+Status: **GEORG PASS_WITH_TUNE · FOUNDATION ACCEPTED · NOT LIVE**
+
+- PR #218 final human-gate docs head: `97a07ab9d805daf4e11d8e224e60f1885dcbd268`.
+- Public Stage remains **9/9 PASS**.
+- Deferred, non-blocking: Resident selector discoverability; below-actor camera range; WorldBuilder duplicate-head actor assembly; bright thin-geometry shadow edges; Night readability/task lighting.
+- The environment adapter is not reopened by those items.
+
+## ToolBox Production-01 r2
+
+Status: **PUBLIC_VERIFIED · HUMAN REVIEW OPEN · NOT LIVE**
+
+- Runtime owner remains PR #185; no runtime-owner module changed in the review recovery.
+- Review owner: PR #221 at `36315aaeffe2029300d445fdb1ffbaa569519638`.
+- Repository browser: **33/33 PASS**.
+- Exact public Stage + ToolBox front door + live Registry + rendered Hub: **20/20 PASS**.
+- Public page/request failures: **0**.
+- Direct review: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`.
+
+Exactly one current ToolBox gate:
+**Georg reviews Source Object → State loop → Pose/IK and returns PASS / TUNE / REJECT.**
+
+---
+
+# PRIOR UPDATE · ENV-PREVIEW-01 PUBLIC STAGE · 2026-09-26
 
 ## 2026-09-26 · Hub UX Recovery v2 · Stage rehome preserved / public browser verify blocked
 
