@@ -10,3 +10,5 @@
 Public Stage proves **briefing publication only**, not the clay material in a game. Georg's material look/gameplay review remains open.
 
 - New Gemini source QA: 2048×2048 RGB JPEG pinned to main `4daf059`, SHA-256 `05ae7c6fc97ce7b4094288ca01dca626f32e88d3e182f521f3db6f0b86041d33`; opposite-edge RGB MAE x **5.538**, y **5.534** /255 versus immediate inside neighbors x **4.304**, y **3.911**. Visual 3×3 shows joins and dominant motif repetition: **raw seamless FAIL**. See `GEMINI_IMAGE_SEAM_QA_2026-09-26.md`. Blender sphere/plane and human Web Chat approval pending.
+
+- Public revision r2: `cloudflare-live` commit `cb7745607074e269a2070c8c5008519057d25560`; browser opened exact `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-production/` and saw `CLAY-RECON-2026-09-26-r2`, Gemini status and QA/Web Chat links. Both displayed source images loaded (`naturalWidth` 1254 and 2048). This verifies briefing publication, not a seamless material or Blender integration.
