@@ -116,6 +116,16 @@ def build(K, R3, name, base, H, style='classic', soffit=None, yaw=0.0, ground=No
         shaft = R3.organic_shaft(name + '_shaft', prof, cap_top, style, seed=seed)
     bl = K.to_bl(base.x, base.y, base.z)
     shaft.location = (bl.x, bl.y, bl.z)
+    # capital follows the soffit: the top band (0.75 m) is sheared by the same bank/grade as the plate, so a level disc
+    # can never cut through a tilted plate (concept rule, same as the donor; the flat ladder did not exercise it)
+    s0 = soffit(base.x, base.z)
+    z_from = cap_top - 0.75
+    for v in shaft.data.vertices:
+        if v.co.z > z_from:
+            k = min(1.0, (v.co.z - z_from) / 0.33)
+            wx, wy = bl.x + v.co.x, bl.y + v.co.y
+            v.co.z += (soffit(wx, -wy) - s0) * k
+    shaft.data.update()
     objs.append(shaft)
     sx, sy = p['plate']
     plate = R3.rounded_box(name + '_bearing_plate', sx, sy, p['plate_t'], p['plate_bevel'], 'underside', (0, 0, 0))
@@ -123,7 +133,6 @@ def build(K, R3, name, base, H, style='classic', soffit=None, yaw=0.0, ground=No
     plate.location = (bl.x, bl.y, bl.z + cap_top)
     bpy.context.view_layer.update()
     mw, inv = plate.matrix_world, plate.matrix_world.inverted()
-    s0 = soffit(base.x, base.z)
     for v in plate.data.vertices:
         w = mw @ v.co
         w.z += soffit(w.x, -w.y) - s0            # Blender (x, y) -> runtime (x, z = -y)
