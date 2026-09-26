@@ -105,3 +105,13 @@ A successful export is a recovery result, not proof that the failed visual/game 
 ## Paste-ready cold-start request
 
 > Sync from `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` and `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, then recover this project's current GitHub state. Complete only the named slice additively. Keep the existing owners and SSOTs. Update the project Return/changelog and leave the standard compact review packet with exact PR/head, actual tests, visible proof, open items and one next gate.
+
+
+## Long-job / timeout-safe extension · candidate 2026-09-26
+
+For research-heavy, multi-repo, browser/CI-wait or otherwise fragile slices, apply:
+`skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md`.
+
+Binding candidate rule for WSA review: **create or reuse the owner branch and persist a C0 preflight recovery stub before the expensive part starts.** Use `skills/chat/templates/KFB_LONG_JOB_STATE_TEMPLATE.json` for `JOB_STATE.json`. After each bounded research/implementation/evidence batch, update the job state and fetch the exact head/files. `Stream cache expired` is treated like any timeout: `UNKNOWN`, inspect first, never blind retry.
+
+This extension does not create another control plane; project SSOTs and existing owner branches remain authoritative.
