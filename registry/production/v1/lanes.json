@@ -3,12 +3,12 @@
   "lanes": [
     {
       "id": "city-asset-contact-sheet-intake",
-      "bucket": "LOOK_AT",
-      "title": "Stadtmöblierung · Asset-Kontaktbogen",
-      "what": "Neuer Kontaktbogen im Inbox-Eingang: KayKit zuerst, Kenney zweite Wahl, Assets im Build-Maßstab neben 1,85-m-Figur. Er ist ein Auswahl-/Review-Artefakt, noch kein Asset-Librarian- oder WorldBuilder-Owner.",
+      "bucket": "WAITING",
+      "title": "Stadtmöblierung · Asset-Kontaktbogen · PASS",
+      "what": "Georg hat den Kontaktbogen am 27.09.2026 angenommen. Auswahlregel: KayKit und Tiny Treats zuerst; Kenney für verbleibende Lücken, bei Bedarf angepasst. Für den ersten Fahrzeugpool sind alle Kenney-Autos zugelassen – außer dem zu kleinen Polizeiauto.",
       "provider": "World / Asset selection intake",
-      "yourAction": "Kontaktbogen prüfen und Nehmen / Nein / Prüfen plus kurze Notizen exportieren. Vor Hub-Stage zuerst fehlende Laufzeitabhängigkeiten und echte Quellpfade verifizieren.",
-      "waitingFor": "",
+      "yourAction": "",
+      "waitingFor": "Asset Librarian / WorldBuilder übernehmen diese Auswahlregel beim nächsten gebundenen Intake. Noch kein ungeprüfter Massentransfer.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
