@@ -19,7 +19,7 @@ GitHub state overrides this document whenever a named source advances.
 4. `tools/KFB-ToolBox/START_HERE.md`
 5. `tools/KFB-ToolBox/_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`
 6. `tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md`
-7. this folder's `SOURCE_MANIFEST.md`, `SHOT_PLAN.md`, `MASTER_PROMPT.md`, `TEST_REPORT.md`, `RETURN.md`
+7. this folder's `SOURCE_MANIFEST.md`, `SHOT_PLAN.md`, `MASTER_PROMPT.md`, `TEST_REPORT.md`, `RECOVERY.md`, `RETURN.md`
 
 ## Critical recovery decision
 
