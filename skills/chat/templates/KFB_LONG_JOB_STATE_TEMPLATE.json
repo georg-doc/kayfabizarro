@@ -1,0 +1,30 @@
+{
+  "schema": "kfb.long-job-state/1",
+  "id": "SLICE-ID",
+  "owner": "OWNER",
+  "repo": "owner/repo",
+  "branch": "branch",
+  "pr": null,
+  "state": "ACTIVE",
+  "phase": "C0_PREFLIGHT",
+  "goal": "One sentence bounded outcome.",
+  "sourceRefs": [],
+  "completed": [],
+  "open": [],
+  "nextAction": "One concrete next action.",
+  "lastVerifiedHead": null,
+  "checkpoints": [],
+  "research": {
+    "checked": 0,
+    "useful": 0,
+    "rejected": 0,
+    "failed": 0,
+    "timeouts": 0
+  },
+  "tests": {},
+  "stage": {
+    "route": null,
+    "status": "NOT_STARTED"
+  },
+  "updated": "YYYY-MM-DD"
+}
