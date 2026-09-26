@@ -910,3 +910,33 @@ Publication:
 
 Exactly one next gate for this sync:
 **WSA reviews PR #222; HUB-CTRL may regenerate/publish status through its existing owner path afterward.**
+
+## 2026-09-26 · Fragile Web-chat recovery inventory sync
+
+Status: **SOURCE METADATA UPDATED · REVIEW ONLY · NO PUBLICATION CLAIM**
+
+Config checkpoint:
+`6b736a0dc887609b7296a77fedb4f0f9c04f6e04`
+
+HUB-CTRL now exposes PR #222 as both MVP plan review and aborted/fragile Web-chat recovery inventory.
+
+Current recon distinguishes:
+- recovered complete;
+- recovered with one open gate;
+- closure orphan;
+- recon not formalized;
+- intentional hold.
+
+Two current real recovery orphans:
+1. Billboard B2b-P1 PR #212 — tested implementation exists; closure/Return/Hub/Stage handoff missing.
+2. KayKit City Builder Bits application recon — exact 41-model pack is indexed; product application matrix/source-isolation memo missing.
+
+Candidate long-job rule:
+persist C0_PREFLIGHT / JOB_STATE + recovery stub before expensive research/browser/CI work; `Stream cache expired` = UNKNOWN / inspect first.
+
+No generated Hub HTML changed.
+No Cloudflare/public publication changed.
+No Runtime/Stage/Live promotion.
+
+Exactly one next gate:
+**WSA reviews PR #222 D8 + A1/A9 recovery starts.**
