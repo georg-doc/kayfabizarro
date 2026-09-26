@@ -151,3 +151,36 @@ Current READY gate:
 
 ### BOUNDARY
 No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
+
+## 2026-09-26 · Clay external source review + Gemini seam QA
+
+### SOURCE REVIEW
+Added `CLAY_PRODUCTION_SOURCE_REVIEW_2026-09-26.md`.
+
+Classified:
+- **RandTextureGen / Xargiv** → supporting external texture-authoring tool;
+- **Dandruff Clay seamless texture pack** → incoming calibration/source pack;
+- **Clay Knight** → combat feel/state-timing reference only;
+- **Clay stop motion Project for Unreal Engine** → concept donor only;
+- **Belimoth Clay (Classic)** → unrelated generative-art patch environment; deferred from the clay-material lane.
+
+### LICENSE / PROVENANCE
+`DD-moe/xargiv` carries an MIT repository license, while its website terms separately describe site features as CC BY-NC-ND. Generated images are explicitly described as **CC BY** with commercial use permitted and attribution required. KFB therefore records output provenance/attribution and does not fork/redistribute the full web tool in this slice.
+
+### GEMINI SEAM QA
+`Gemini_Generated_Image_rx1fvxrx1fvxrx1f.jpeg` was decoded and tested at **2048×2048 JPEG/RGB**.
+
+GitHub Actions run **36257239128**, job **108446236219**:
+- substantive QA steps: **6/6 PASS**;
+- X boundary ratio: **1.359317 · BORDERLINE**;
+- Y boundary ratio: **1.093300 · LIKELY_CONTINUOUS**;
+- 3×3 review: strong visible repetition of large pressed/smeared clay forms.
+
+Verdict for CLAY-ASSET-01: **NEEDS FIX**. Preserve as a later compressed/kneaded/worked-clay donor; do not use as the smooth matte base.
+
+### BOUNDARY / HUB
+No runtime, Blender integration, Stage or Live change. HUB-CTRL #202's existing **ClayBound · Production Assets** lane remains current; no new Hub card/job is required because the active gate is unchanged.
+
+### NEXT
+**Finish the primary CLAY-ASSET-01 QA and Georg review before Asset 2.**
+
