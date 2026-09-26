@@ -140,18 +140,22 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     -0.947,
-     -0.875
+     -0.915,
+     -0.86
     ],
     "foot_ok": true,
-    "shaft_profile_folds": [],
+    "donor_profile_folds_hidden_info": [
+     86.0,
+     98.0,
+     360.0
+    ],
     "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 576
+   "glb_kb": 626
   },
   "trunk": {
    "checks": {
@@ -164,18 +168,22 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     -0.473,
+     0.0,
      0.0
     ],
     "foot_ok": true,
-    "shaft_profile_folds": [],
+    "donor_profile_folds_hidden_info": [
+     86.0,
+     98.0,
+     360.0
+    ],
     "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
    "supports": 22,
    "objects": 44,
    "style_relocations": [],
-   "glb_kb": 1808
+   "glb_kb": 1807
   },
   "vine": {
    "checks": {
@@ -188,11 +196,15 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     -0.473,
+     0.0,
      0.0
     ],
     "foot_ok": true,
-    "shaft_profile_folds": [],
+    "donor_profile_folds_hidden_info": [
+     86.0,
+     98.0,
+     360.0
+    ],
     "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
@@ -205,7 +217,7 @@
      "s_to": 241.0
     }
    ],
-   "glb_kb": 1831
+   "glb_kb": 1829
   },
   "rope": {
    "checks": {
@@ -218,18 +230,22 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     -0.947,
-     -0.875
+     -0.915,
+     -0.86
     ],
     "foot_ok": true,
-    "shaft_profile_folds": [],
+    "donor_profile_folds_hidden_info": [
+     86.0,
+     98.0,
+     360.0
+    ],
     "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 1834
+   "glb_kb": 1881
   }
  }
 }

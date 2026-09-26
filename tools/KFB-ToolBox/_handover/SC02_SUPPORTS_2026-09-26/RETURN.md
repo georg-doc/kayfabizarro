@@ -5,7 +5,21 @@
 **Georg (26.09):** "top! dann gerne weiter". This came after SC01 (PR #226) and is recorded as positive feedback on SC01, not as a formal look PASS.
 **Status:** CANDIDATE. Scenery only. No merge. No Stage or Live.
 
-**Update v3 (Georg 26.09, "something broke"): short pillars fixed.**
+**Update v4 (Georg 26.09): back to the v1 form, with a round footing. Supersedes v2 and v3.**
+- **What went wrong (two repairs at the same point):**
+  - v2 swapped the donor's 1.8 m square block for a low round mound. That exposed the donor's short-pillar profile fold, which the block had always hidden (the fold sits inside the block, the plate and the track body).
+  - v3 then "fixed" the fold by scaling the whole profile down. The short pillars came out squashed.
+  - Georg judged v1 better, and a side-by-side in Blender confirmed it.
+- **v4:**
+  - Donor **unchanged**: the `compact` patch was withdrawn, and `rkit3_lib.py` is byte-identical to the original (md5 98ad8609…).
+  - The round footing uses the **v1 block proportions**: 6.2 m wide, top at +1.0, sunk 0.8, with a rounded top edge.
+  - Only a narrow skirt (r 3.1 → 3.6) follows the ground; its rim sits 5 cm below the ground everywhere.
+  - Square stays available as a variant (`SC_RULE={'footing': 'square'}`).
+- **Known and accepted:** on the 3 m pillar the donor fold pokes about 0.15 m above the bearing plate. That is 0.4 m above the soffit, inside the track body, so it is invisible once the Track Core ribbon exists. It is visible now only because the proxy is a wire, and it was the same in v1. It is kept as info in `donor_profile_folds_hidden_info`.
+- **Runs:** one style per call (about 9–15 s each) with `SC_KEEP=True`. The JSON is merged per style.
+- **Checks:** all 4 styles PASS.
+
+~~superseded by v4~~ **Update v3 (Georg 26.09, "something broke"): short pillars fixed.**
 - **Symptom:** at the ramp ends (clear height 3–5 m, stations s 86, 98, 360) the shafts looked lumpy, with doubled discs.
 - **Root cause:** a bug in the **donor** `build_support_v2`. Its shaft profile has fixed foot/waist heights, and below about 6 m cap height they overtake the capital heights, so the lathe profile runs backwards and folds into itself.
   - It was already present in v1 (same stations). The round footing's shoulder made it more visible.
@@ -85,9 +99,10 @@
 - `prev/sc02_overview_crossing.png` and `prev/sc02_side_crossing_gap.png`: v1, square footings.
 - `prev/sc02_round_footings_v2.png`: v2 default, round footings (still showing the folded short shafts).
 - `prev/sc02_short_pillars_fixed_v3.png`: v3, short ramp-end pillars fixed.
-- `lib/rkit3_lib.py`: the patched donor (additive `compact` kwarg), for promotion by WSA.
+- `lib/rkit3_lib.py`: the **unchanged** donor (the patch was withdrawn in v4; kept here only for reference).
+- `prev/sc02_v4_round_v1form.png` and `prev/sc02_v4_vs_v1_square.png`: v4 short pillars, and v4 side by side with v1.
 - `IDEA_SPRING_PILLAR_LAUNCH.md`: Georg's spring/bumper pillar idea, with an architecture note.
-- Local only: `KFB_SC02_SUPPORTS_v3.blend` (v2 = round footings with folded short shafts, v1 = square footings) in Dropbox `KFB Racetrack Blender Kit/SC02-SUPPORTS/`. Collection `SC02_SUPPORTS`; classic is at Blender (1400, −3000), and trunk, vine and rope follow every 360 m in x.
+- Local only: `KFB_SC02_SUPPORTS_v4.blend` (v3/v2 superseded, v1 = square footings) in Dropbox `KFB Racetrack Blender Kit/SC02-SUPPORTS/`. Collection `SC02_SUPPORTS`; classic is at Blender (1400, −3000), and trunk, vine and rope follow every 360 m in x.
 
 ## Exactly one next gate
 
