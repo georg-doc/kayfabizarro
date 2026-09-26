@@ -5,6 +5,21 @@
 **Georg (26.09):** "top! dann gerne weiter". This came after SC01 (PR #226) and is recorded as positive feedback on SC01, not as a formal look PASS.
 **Status:** CANDIDATE. Scenery only. No merge. No Stage or Live.
 
+**Update v3 (Georg 26.09, "something broke"): short pillars fixed.**
+- **Symptom:** at the ramp ends (clear height 3–5 m, stations s 86, 98, 360) the shafts looked lumpy, with doubled discs.
+- **Root cause:** a bug in the **donor** `build_support_v2`. Its shaft profile has fixed foot/waist heights, and below about 6 m cap height they overtake the capital heights, so the lathe profile runs backwards and folds into itself.
+  - It was already present in v1 (same stations). The round footing's shoulder made it more visible.
+  - None of the SC02 checks tested shape validity.
+- **Fix, at the right layer and additive:**
+  - `rkit3_lib.support_profile(cap_top, compact=False)` was extracted, and `build_support_v2(..., compact=False)` gained a new kwarg.
+  - With `compact=True`, the profile is built for 6 m and scaled down in z, keeping the same proportions.
+  - The **default output is byte-identical** (verified on 5 heights), so frozen fixtures such as RKIT-11 are unaffected.
+  - Backup on Dropbox: `RKIT-03/scripts/rkit3_lib_pre_compact.py.bak`.
+- **New check:** `shaft_profile_folds` must be empty for every station. All 4 styles now PASS.
+- **Donor on GitHub:** the RKIT-03 copy in the Race repo is **not** updated yet. The patched `rkit3_lib.py` is attached here under `lib/` for WSA to promote.
+- **Runtime** is now about 55 s for all 4 styles, too close to the 60 s budget. From now on: one style per call.
+- **Open look question (Georg):** a 3 m support reads as a squat mushroom (footing plus plate take most of its height). Either keep it, or raise `min_height` to about 4 m and leave the ramp end unsupported.
+
 **Update v2 (Georg 26.09):**
 - The footing is **round by default**; the square footing stays as a variant (`SC_RULE={'footing': 'square'}`).
 - The round footing is sunk 0.8 m. Its outer rim sits 5 cm below the ground and follows `ground(x, z)` all around, and a soft shoulder rises to a level top ring under the shaft foot.
@@ -68,9 +83,11 @@
 - `sc02_supports.placement.json`: the rule, stations, blocked ranges, long spans and per-style checks.
 - `glb/sc02_supports_{classic,trunk,vine,rope}_fixture.glb`: supports on the fixture, +Y up.
 - `prev/sc02_overview_crossing.png` and `prev/sc02_side_crossing_gap.png`: v1, square footings.
-- `prev/sc02_round_footings_v2.png`: v2 default, round footings.
+- `prev/sc02_round_footings_v2.png`: v2 default, round footings (still showing the folded short shafts).
+- `prev/sc02_short_pillars_fixed_v3.png`: v3, short ramp-end pillars fixed.
+- `lib/rkit3_lib.py`: the patched donor (additive `compact` kwarg), for promotion by WSA.
 - `IDEA_SPRING_PILLAR_LAUNCH.md`: Georg's spring/bumper pillar idea, with an architecture note.
-- Local only: `KFB_SC02_SUPPORTS_v2.blend` (v1 = square footings) in Dropbox `KFB Racetrack Blender Kit/SC02-SUPPORTS/`. Collection `SC02_SUPPORTS`; classic is at Blender (1400, −3000), and trunk, vine and rope follow every 360 m in x.
+- Local only: `KFB_SC02_SUPPORTS_v3.blend` (v2 = round footings with folded short shafts, v1 = square footings) in Dropbox `KFB Racetrack Blender Kit/SC02-SUPPORTS/`. Collection `SC02_SUPPORTS`; classic is at Blender (1400, −3000), and trunk, vine and rope follow every 360 m in x.
 
 ## Exactly one next gate
 

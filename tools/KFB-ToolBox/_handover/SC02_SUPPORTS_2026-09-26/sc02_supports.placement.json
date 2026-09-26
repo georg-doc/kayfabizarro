@@ -144,6 +144,7 @@
      -0.875
     ],
     "foot_ok": true,
+    "shaft_profile_folds": [],
     "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
@@ -163,17 +164,18 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     0.0,
+     -0.473,
      0.0
     ],
     "foot_ok": true,
+    "shaft_profile_folds": [],
     "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
    "supports": 22,
    "objects": 44,
    "style_relocations": [],
-   "glb_kb": 1807
+   "glb_kb": 1808
   },
   "vine": {
    "checks": {
@@ -186,10 +188,11 @@
     "plate_target_y": -2.0,
     "plate_ok": true,
     "lowest_point_vs_ground_m": [
-     0.0,
+     -0.473,
      0.0
     ],
     "foot_ok": true,
+    "shaft_profile_folds": [],
     "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
@@ -202,7 +205,7 @@
      "s_to": 241.0
     }
    ],
-   "glb_kb": 1829
+   "glb_kb": 1831
   },
   "rope": {
    "checks": {
@@ -219,13 +222,14 @@
      -0.875
     ],
     "foot_ok": true,
+    "shaft_profile_folds": [],
     "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 1831
+   "glb_kb": 1834
   }
  }
 }
