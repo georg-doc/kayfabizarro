@@ -1,3 +1,11 @@
+## 2026-09-26 · ToolBox r2 human TUNE
+
+- Georg accepted the overall ToolBox r2 direction as **TUNE**;
+- closed the active ToolBox review gate and moved the lane `LOOK_AT → WAITING`;
+- retained four non-blocking follow-ups under their proper rendering, grounding, animation and shared-camera owners;
+- pinned PR #221 human-result head `da20e926`;
+- no ToolBox rewrite, merge or Live promotion.
+
 ## 2026-09-26 · ENV human gate + ToolBox r2 public verification
 
 - ENV-PREVIEW-01 moved `LOOK_AT → WAITING` after Georg **PASS_WITH_TUNE**; shared environment/light direction accepted, five proportional follow-ups retained without reopening the slice;
