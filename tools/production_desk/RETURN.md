@@ -1226,3 +1226,15 @@ Verification:
 - jsdom rerun: **NOT_RUN locally** (`jsdom` unavailable); the added test is committed for the existing GitHub workflow.
 
 Exactly one next gate: **GitHub Actions on this focused branch, then mirror the exact green generated Hub to Cloudflare and verify the fixed root URL.**
+
+### Publication addendum
+
+- GitHub Actions run `36268660181`: **SUCCESS**, including the jsdom behavior gate with the new stale-registry regression.
+- Exact tested artifact: `kfb-production-desk` artifact `10915250089`, digest `sha256:f47fa8f705a4f07ab3a03d1ab4645a4a6ca2a005a3c2f2b3ce6b0a4b3b79064c`.
+- Published package head: `cloudflare-live@44c28402664ec9ef1dd0613a575d9ad95be03881`.
+- Public root marker points to candidate `46307feed2ad08f8312acbc8e4a86888ef608dcb`, content hash `846e63884a340296414d9d50840c84cda4e3a2276fffe6f075a74aaca3be382a`.
+- Exact public root opened successfully. It kept the newer embedded snapshot and reported: `Live-Registry ist älter als der sichtbare Stand`.
+
+Final status: **PUBLIC_VERIFIED**.
+
+Exactly one next gate: **merge the focused freshness guard into the HUB-CTRL owner branch when desired; no further public repair is required.**

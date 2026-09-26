@@ -459,3 +459,4 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Added a DOM regression test for the stale-remote/newer-embedded case.
 - Regenerated the Production Desk artifact from the unchanged registry data.
 - No new Hub owner, route, UI design or registry schema.
+- CI and public browser verification passed; published as `cloudflare-live@44c28402664ec9ef1dd0613a575d9ad95be03881`.
