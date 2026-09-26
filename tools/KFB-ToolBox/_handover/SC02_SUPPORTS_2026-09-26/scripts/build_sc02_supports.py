@@ -1,6 +1,6 @@
 """SC02 · Support family on route sockets · Track-Core safe prework · Claude Coworker 26.09.2026
 Supports are SCENERY under a route: they carry the route's soffit, they never define the route.
-Donor (not rebuilt): RKIT-03 `build_support_v2` (footing, tapered shaft, capital disc, bearing plate that follows the real
+Donor: RKIT-03 `build_support_v2` (called with compact=True, the additive short-pillar fix of 26.09) (footing, tapered shaft, capital disc, bearing plate that follows the real
 soffit incl. bank + grade; style layer classic / trunk / vine / rope). SC02 adds only:
   1. a PLACEMENT RULE over s (spacing, min clear height, keep-out zones of every other route + own lower branches, max span flag);
   2. a ground provider ground(x, z) (terrain / water owner later);
@@ -135,7 +135,7 @@ def round_footing(name, base, segs=48):
 
 def build_one(route, frames, s, base, style, name, seed):
     f = donor_frame(route.at(s))
-    got = R3.build_support_v2(name, f, RULE['side'], ground_y=base.y, frames=frames, embed=RULE['embed'], style=style, seed=seed)
+    got = R3.build_support_v2(name, f, RULE['side'], ground_y=base.y, frames=frames, embed=RULE['embed'], style=style, seed=seed, compact=True)
     if RULE['footing'] == 'round':
         sq = [o for o in got if o.name.endswith('_footing')]
         if sq:
@@ -251,13 +251,21 @@ def checks(route, others, built):
                 for v in runtime_verts(o):
                     if math.hypot(v.x - base.x, v.z - base.z) > 4.45:   # outer rim only (r 4.6); the 4.3 ring is the intended mound
                         skirt_float = max(skirt_float, v.y - ground(v.x, v.z))
+    folds = []
+    for s, base, objs in built:
+        q = route.at(s)
+        cap_top = (q['p'].y - RULE['drop']) - base.y - 0.55
+        pr = R3.support_profile(cap_top, True)
+        if any(b[1] < a[1] for a, b in zip(pr, pr[1:])):
+            folds.append(round(s, 1))
     plate_ok = strip_max_rng[0] >= target - 0.3 and strip_max_rng[1] <= target + 0.3
     foot_ok = foot[0] >= -1.05 and foot[1] <= 0.05
     return dict(other_corridor_intrusions=corr_other, own_corridor_intrusions=corr_self,
                 plate_top_per_strip_local_y=[round(v, 3) for v in strip_max_rng], plate_target_y=round(target, 3), plate_ok=plate_ok,
                 lowest_point_vs_ground_m=[round(v, 3) for v in foot], foot_ok=foot_ok,
+                shaft_profile_folds=folds,
                 footing_skirt_above_ground_max_m=(round(skirt_float, 3) if skirt_float > -1e8 else None),
-                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01))
+                PASS=(corr_other == 0 and corr_self == 0 and plate_ok and foot_ok and skirt_float <= 0.01 and not folds))
 
 
 def ranges(pairs):
