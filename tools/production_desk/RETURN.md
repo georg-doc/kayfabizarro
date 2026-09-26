@@ -1123,3 +1123,33 @@ Status: **SOURCE METADATA UPDATED · NO PUBLICATION CLAIM**
 - generated Hub HTML/public root unchanged; no Cloudflare publication.
 
 Exactly one current Claude Racer gate: **HUD + Billboard visual system**.
+
+
+## Addendum · Racer W0 / Cross-Mode HUD Hub-source sync · 2026-09-26
+
+Status: **SOURCE METADATA UPDATED · PUBLIC HUB NOT REPUBLISHED**
+
+### Synced source state
+- planning source: PR #222 @ `974989ae29449a5cfab8881d84bfef9aacba22f9`;
+- Track Core lane: **CAN_START · W0 NOW**;
+- Racer Design lane: **CAN_START · Cross-Mode HUD + Billboards**;
+- Playable Track R0: **WAITING / SOURCE_REQUIRED HOLD**.
+
+### Meaning
+- current lead/WSA decision has already selected JavaScript as authoritative Track Core; the old Hub G0 prompt was stale;
+- Blender/Python remains Track-Core oracle/consumer, not a second solver;
+- current Claude Design HUD start now includes WALK / DRIVE / FLIGHT adaptive visibility plus the source-proven Factory Arrow as a 3D navigator;
+- no new Race/HUD/Map/Radar owner was created.
+
+### Hub/public boundary
+Changed only Hub source metadata/docs on this owner branch.
+- generated Hub HTML: **not edited in this sync**;
+- Cloudflare publication: **not run / not claimed**;
+- public `https://kayfabizarro.pages.dev/kfb-hub/`: remains whatever previously verified snapshot is currently deployed and must be treated as stale for this new Racer wording until the existing Hub pipeline republishes and the exact route is browser-verified.
+
+### Tests
+New Hub builder/browser/public tests in this sync: **0**.
+The config JSON was fetched back and parsed after the write.
+
+### Exactly one next Hub gate
+**Existing HUB-CTRL pipeline may later regenerate/publish the source update; do not claim it public until the exact Cloudflare route visibly shows the W0 / Cross-Mode HUD wording.**
