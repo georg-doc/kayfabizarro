@@ -8,6 +8,8 @@ Use this file with the recorded WSA decision in `WSA_RECON_PLAN_APPROVAL_2026-09
 
 | Slice | Executor | State now | Start condition | Outcome |
 |---|---|---|---|---|
+| B2B-P1-CLOSURE-01 | Web/GitHub | STARTABLE | WSA approves orphan recovery | Close green PR #212 without rebuilding; create Return/Recovery/Test/Hub/Stage handoff |
+| CITY-BITS-RECON-01 | Web/GitHub | STARTABLE RECON | WSA approves D8 | Classify 41 exact City Builder Bits models into World/OSM/Race uses; no implementation |
 | ENV-PREVIEW-STAGE-01 | Web/GitHub | STARTABLE | WSA approves D5 | Publish existing #218 candidate to additive Stage comparison + Hub link; no runtime change |
 | TOOLBOX-R2-PUBLISH-01 | Web/GitHub | STARTABLE | WSA approves D4 | Publish existing #221 review surface + Hub link; human review only |
 | TRACK-CORE-G0/W0 | Web/GitHub | STARTABLE | D0/D1 approved; refresh Race refs | Complete census/contracts + pure JS reference per latest #219 addendum |
@@ -155,3 +157,18 @@ R0 becomes dispatchable only after:
 4. WSA/Web confirms the exact branch/ref in the Claude brief.
 
 Until then Claude Design should return SOURCE_REQUIRED and stop, exactly as it did.
+
+
+## 10 · B2B-P1-CLOSURE-01 · orphan recovery
+
+Use:
+`B2B_P1_CLOSURE_RECOVERY_BRIEF_2026-09-26.md`.
+
+Do not rebuild PR #212. Preserve the exact tested candidate and complete only its missing closure/human-review envelope.
+
+## 11 · CITY-BITS-RECON-01 · city-liveliness source application
+
+Use:
+`CITY_BITS_WORLD_DRESSING_RECON_01_2026-09-26.md`.
+
+Do not rediscover the pack from scratch. The Asset Registry already has 41 exact models; complete the missing application matrix and source-isolation evidence only.
