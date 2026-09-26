@@ -1,5 +1,14 @@
 ## 2026-09-26 · Clay texture made non-blocking
 
+## 2026-09-27 · Browser decision sync · Stadtmöblierung PASS
+
+- ingested Georg's browser-local PASS for `city-asset-contact-sheet-intake`;
+- accepted priority: KayKit and Tiny Treats first, Kenney for remaining gaps and adjusted where needed;
+- admitted all Kenney cars for the first vehicle pool except the undersized police car;
+- moved the lane from `LOOK_AT` to `WAITING` for bounded Asset Librarian / WorldBuilder intake;
+- preserved the original sync packet under `tools/production_desk/decisions/`;
+- no assets imported, no mass transfer, no merge and no Live promotion.
+
 - applied Georg's priority correction: texture work is secondary and already handled in the Blender-MCP lane;
 - moved Clay from `LOOK_AT` to `WAITING` and removed Asset-01/Asset-03 from the current human/MVP gate;
 - pinned PR #231 correction head `60e34f26` and kept the Blender return ref as later intake;
