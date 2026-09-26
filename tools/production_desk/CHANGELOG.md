@@ -1,3 +1,11 @@
+## 2026-09-26 · Clay texture made non-blocking
+
+- applied Georg's priority correction: texture work is secondary and already handled in the Blender-MCP lane;
+- moved Clay from `LOOK_AT` to `WAITING` and removed Asset-01/Asset-03 from the current human/MVP gate;
+- pinned PR #231 correction head `60e34f26` and kept the Blender return ref as later intake;
+- World r2 Stage Prep remains the active bounded product gate;
+- no runtime, Stage or Live change.
+
 ## 2026-09-26 · ClayBound Asset 03 review routing
 
 - Asset 01 recorded as HUMAN_ACCEPTED; Asset 02 explicitly deferred.
