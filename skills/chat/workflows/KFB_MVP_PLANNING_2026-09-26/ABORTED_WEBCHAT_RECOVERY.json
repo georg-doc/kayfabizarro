@@ -1,0 +1,145 @@
+{
+  "schema": "kfb.aborted-webchat-recovery/1",
+  "updated": "2026-09-26",
+  "owner": "Georg / KFB lead planning",
+  "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
+  "policyCandidate": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md",
+  "entries": [
+    {
+      "id": "A1",
+      "title": "Billboard B2b-P1 Living Collage",
+      "state": "ORPHANED_CLOSURE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 212,
+      "head": "5e0d6d7f32d2f5de1faa17933cf3bf12f1b42e99",
+      "evidence": {
+        "workflow": 36081170177,
+        "checks": "40/40",
+        "artifact": 10841409354
+      },
+      "nextGate": "Closure-only recovery: Return/Recovery/Test/Hub/Stage handoff; preserve tested runtime."
+    },
+    {
+      "id": "A2",
+      "title": "External Reddit/GitHub/demo research A-L",
+      "state": "RECOVERED_COMPLETE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 204,
+      "head": "31df655615d7f911afbe2767a9aac287e2335999",
+      "evidence": {
+        "links": 73,
+        "routingChecks": "15/15",
+        "handoffChecks": "8/8"
+      },
+      "nextGate": "No broad research. Resume only for named product questions."
+    },
+    {
+      "id": "A3",
+      "title": "ToolBox r2 receiving-owner recovery",
+      "state": "RECOVERED_OPEN_GATE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 221,
+      "head": "e935f7ebbc2c40691248cd6910840a9f4b746a93",
+      "evidence": {
+        "browser": "33/33"
+      },
+      "nextGate": "Existing-owner Stage publication + Hub link + Georg human review."
+    },
+    {
+      "id": "A4",
+      "title": "World r2 receiving-owner recovery",
+      "state": "RECOVERED_OPEN_GATE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 190,
+      "nextGate": "WORLD-R2-CONTRACT-RESET-01; test contract only first; no runtime repair pass 3."
+    },
+    {
+      "id": "A5",
+      "title": "Hub UX v2 recovery",
+      "state": "RECOVERED_OPEN_GATE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 217,
+      "head": "2b4d800d1e0213c3b344eb3e2ee4b6664447a1ce",
+      "evidence": {
+        "builder": "18/18",
+        "contract": "31/31",
+        "publicChromium": "20/20",
+        "human": "PASS_WITH_TUNE"
+      },
+      "nextGate": "HUB-MOBILE-TUNE-01 or later explicit Live/merge gate."
+    },
+    {
+      "id": "A6",
+      "title": "ENV-PREVIEW-01",
+      "state": "RECOVERED_OPEN_GATE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 218,
+      "head": "6718eef05f2b6dd0d79ae04884b33f3396c34379",
+      "evidence": {
+        "static": "30/30",
+        "browser": "15/15"
+      },
+      "nextGate": "Publish unchanged additive Stage comparison + Georg visual review."
+    },
+    {
+      "id": "A7",
+      "title": "Track Core / Cologne / RKIT planning",
+      "state": "RECOVERED_OPEN_GATE",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 219,
+      "head": "6610e5b0e819c37e36f63d5bbff4fc9b95465779",
+      "nextGate": "G0 JavaScript decision -> W0 census/contracts/reference."
+    },
+    {
+      "id": "A8",
+      "title": "Claude Design Playable Track R0",
+      "state": "INTENTIONAL_HOLD",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 216,
+      "nextGate": "Wait for Track Core proof/runtime parity + Web closed package."
+    },
+    {
+      "id": "A9",
+      "title": "KayKit City Builder Bits city-liveliness recon",
+      "state": "RECON_NOT_FORMALIZED",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "source": "registry/assets/v1/packs/kaykit-city-builder-bits-1-0-free.json",
+      "evidence": {
+        "modelAssets": 41,
+        "notable": [
+          "trafficlight_A",
+          "trafficlight_B",
+          "trafficlight_C",
+          "streetlight",
+          "road_straight_crossing",
+          "road_junction",
+          "bench",
+          "firehydrant",
+          "dumpster",
+          "trash_A",
+          "trash_B",
+          "watertower"
+        ]
+      },
+      "nextGate": "CITY_BITS_WORLD_DRESSING_RECON_01 application matrix + source isolation + small existing-street proof."
+    },
+    {
+      "id": "A10",
+      "title": "Biome/Nature/World Recipe/Card Zone environment backlog",
+      "state": "INTENTIONAL_HOLD",
+      "confidence": "HIGH",
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 204,
+      "nextGate": "Keep dependency-gated behind environment consolidation and corrected world-base contract."
+    }
+  ]
+}
