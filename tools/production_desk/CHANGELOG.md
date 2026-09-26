@@ -1,3 +1,4 @@
+- Concurrent PR #222 advance: current head `f37c620ae60aa2b6f358a53257d767641980aed6` retains the synchronized executor board and adds compatible Racer HUD/W0 dispatch; HUB freshness pins updated without reopening validation/publication.
 ## 2026-09-26 · HUB-BRIEFING-SYNC-01 frozen at DOM gate
 
 - persisted C0 timeout-safe recovery before sync work;

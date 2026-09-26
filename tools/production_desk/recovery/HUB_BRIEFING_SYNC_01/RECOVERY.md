@@ -19,3 +19,11 @@ The public KFB Hub root was deliberately NOT republished because the DOM gate re
 
 Exactly one next gate: `HUB-BRIEFING-SYNC-F1`.
 Timeout / Stream cache expired = UNKNOWN; inspect before retrying.
+
+
+## Concurrent planning advance after source sync
+
+PR #222 advanced concurrently after the briefing-sync checkpoint. Current verified planning head: `f37c620ae60aa2b6f358a53257d767641980aed6`.
+The synchronized Executor Board remains present and current; the later commits add Racer cross-mode HUD navigation and confirm Track Core W0 readiness. No conflict with HUB-BRIEFING-SYNC-01 was found.
+
+HUB-CTRL lanes that consume #222 are pinned to this newer head for freshness only. The frozen DOM/publication gate remains unchanged.

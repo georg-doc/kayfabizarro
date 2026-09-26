@@ -1,3 +1,7 @@
+### Concurrent #222 freshness readback
+
+After the source sync, PR #222 advanced to `f37c620ae60aa2b6f358a53257d767641980aed6` with compatible Racer HUD/W0 dispatch additions. The current Executor Board still contains the synchronized World Stage / ENV / ToolBox / Racer states. HUB-CTRL freshness pins were updated; this does not reopen the frozen DOM gate and does not publish the root Hub.
+
 # CURRENT UPDATE · HUB-BRIEFING-SYNC-01 · FROZEN DOM GATE · 2026-09-26
 
 Status: **BRIEFING/SOURCE SYNC COMPLETE · ROOT PUBLICATION STOPPED · FAILURE RECOVERY PRESERVED**
