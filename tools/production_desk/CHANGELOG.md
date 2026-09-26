@@ -1,3 +1,11 @@
+## 2026-09-26 · private Sites mirror of Hub UX v2 candidate
+
+- Published the exact PR #217 Stage candidate as an owner-private Site: https://kfb-production-hub.frizzlebob.chatgpt.site.
+- Source commit `52403d29e7370f08991979e6bdeb41a5baef9fcf`; deployment `appgdep_6ab735dff0e88191b5ba455dffab7161` succeeded.
+- Git blob parity 4/4; syntax 3/3; embedded registry JSON parsed. No new Sites browser proof.
+- Added `SITES_MIRROR_RETURN_2026-09-26.md` with source pins, limitations and human gate.
+- HUB-CTRL/Production Desk retains the registry and GitHub truth. Cloudflare root and Stage unchanged; no merge or Live promotion; mobile defect remains open.
+
 ## 2026-09-25 · Hub UX Recovery v2 · Georg PASS_WITH_TUNE
 
 - Georg accepted the current v2 Hub candidate for now;
