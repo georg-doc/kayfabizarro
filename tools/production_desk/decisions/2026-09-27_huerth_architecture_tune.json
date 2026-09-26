@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.hub-decision/1",
+  "kind": "ingested-decision",
+  "ingestedAt": "2026-09-26T23:51:09.516Z",
+  "owner": "HUB-CTRL #202 · tools/production_desk",
+  "sourcePacket": {
+    "path": "/Users/georgv.westphalen/Dropbox/Mac/Downloads/kfb-hub-decisions_2026-09-26-23-50.json",
+    "exportedAt": "2026-09-26T23:50:03.737Z",
+    "sourceCommit": "12d0a41749e91bfdae0dfce21f200d6b39a4e77a",
+    "contentHash": "manual-12d0a417-city-asset-pass-sync"
+  },
+  "decision": {
+    "itemId": "huerth-form-language",
+    "value": "TUNE",
+    "decidedAt": "2026-09-26T23:48:40.878Z",
+    "note": "schatten + lichtkanten-bugs sind hier noch zu sehen; das verteilunsgmuster der türen und fenster sollte variabler sein und cartoon-logik entsprechen"
+  },
+  "applied": {
+    "bucket": "WAITING",
+    "rationale": "Human review complete; two bounded form-language tunes move to the owning WorldBuilder slice.",
+    "registry": "registry/production/v1/lanes.json"
+  }
+}
