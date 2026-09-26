@@ -60,6 +60,8 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
+- `workflows/KFB_TRACK_CORE_SLICE_2026-09-26/START_HERE.md` — **CURRENT TRACK / FLEXIBLE-CONNECTOR GATE**: one base Track Core, pieces as data; Perplexity research contributes real Clothoid/Euler easing, connector state and staggered transition curves; current next gate is TRACK-CORE-0 Web census + core contract, then Georg language gate → Blender MCP proof → Web runtime parity → Claude Design visual grammar
+- `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/START_HERE.md` — **CURRENT ROUTE TARGET · DOWNSTREAM OF TRACK CORE**: Hürth → Dom → Rhein → Mülheimer Brücke → SAE remains Route 01; Playable Track R0 and OSM mapping start only after the Track Core gate sequence is proven
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders

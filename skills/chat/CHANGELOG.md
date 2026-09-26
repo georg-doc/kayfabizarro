@@ -1,3 +1,31 @@
+## 2026-09-26 · Track Core gates Route 01 / Playable Track R0
+
+- Georg's RKIT-11 review establishes **one base Track Core; everything else is pieces/data**.
+- Stacked PR #219 now owns the current flexible-connector architecture gate and amends Cologne Route PR #216 without replacing its real Hürth → Dom → Rhein → Mülheimer Brücke → SAE target.
+- Perplexity transition research is integrated as mechanism input: true Clothoid/Euler curvature easing, connector boundary state, staggered transition zones and separate visual layers are adopted/adapted; its example Blender Python generator is explicitly not a production donor.
+- Race PR #42 / `chat/rkit-11-rhein-run-2026-09-26@bcc422b00fc4629ac113f086cddcea3b2b107f2a` is the frozen Track-Core acceptance fixture; no Race drive/Stage/Live pass is claimed.
+- Current agent order:
+  `TRACK-CORE-0 Web census/contract → Georg language gate → TRACK-CORE-1A Claude Coworker + Blender MCP → TRACK-CORE-1B Web authoritative runtime/core parity → TRACK-CORE-2 Claude Design visual grammar → Playable Track R0 → Köln OSM Route 01`.
+- Exactly one current next gate: **TRACK-CORE-0 · ChatGPT Web census + core contract**.
+- Root Hub is owner-generated; no new direct hand edit is made in this correction.
+
+## 2026-09-26 · Cologne Route 01 advances to Track R0 → OSM execution
+
+- Georg clarified that Blender MCP is already building the missing connector/offset pieces; latest GitHub inspection did not yet expose a new RKIT-10 branch, so that output remains user-reported in progress until pinned.
+- Added a coordinated Track-first execution ladder: Web source/runtime prep → Claude Design playable closed Track R0 → Web rehome/browser/freeplay → real Köln OSM route prep → Claude OSM composition.
+- Added dedicated Web-prep and Claude Design briefs under `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/`.
+- OSM is designed in before Track R0 composition through a required shared RouteRecipe/metre-frame/street↔track seam contract; the real Hürth → Dom → Rhein → Mülheimer Brücke → SAE corridor is still the target.
+- Race PR #12 is recorded as the existing continuous Hürth→Ehrenfeld OSM receiver/corridor donor; it is not mistaken for Route 01 geography.
+- No new Race runtime, Blender, browser or Stage result is claimed by this documentation update.
+- Exactly one next gate: `WEB-PREP-TRACK-R0`.
+
+## 2026-09-25 · Cologne Route 01 planning lane
+
+- Added `workflows/KFB_COLOGNE_ROUTE_01_2026-09-25/` as the current cross-project planning brief for the Hürth → Dom → Rhein → Mülheimer Brücke → SAE drive.
+- Decision: route-first grammar is shared by OSM import, a future simple semantic editor and seeded generation; geometry presentation is separated into route, surface profile, edge treatment, structure and stunt modules.
+- Next bounded implementation gate: `RKIT-10 · Modular Route Adapters v1` in `georg-doc/KFB-Stunt-Car-Race`, donor-first and without Race physics/editor scope.
+- No runtime, Stage or Live result is claimed by this planning entry.
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
