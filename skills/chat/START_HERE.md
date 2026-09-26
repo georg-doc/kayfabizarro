@@ -1071,3 +1071,23 @@ HUB-CTRL remains the owner on Draft PR #202. The accepted-with-mobile-TUNE Hub U
 The source-exact private review copy is https://kfb-production-hub.frizzlebob.chatgpt.site. It is a Site distribution mirror of the PR #217 candidate, not a new Production Desk registry or KFB Live promotion. Native Sites deployment succeeded; new Sites browser proof has not been obtained. The public Cloudflare Stage remains https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery-v2/ and the public root remains unchanged. The Hub Stage source card links the private Site on PR #217; that metadata has not been republished to Cloudflare.
 
 Read `tools/production_desk/SITES_MIRROR_RETURN_2026-09-26.md` on PR #217. Georg's `HUB-MOBILE-TUNE-01` remains open. One next gate: Georg reviews the private Site on desktop and mobile before an automated one-way HUB-CTRL → Sites synchronization is designed.
+
+
+## 2026-09-26 · ToolBox Production-02 source-safe intake recovery
+
+A new Claude Design Session Cut is preserved at:
+`tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r1/`.
+
+Recovery entrypoint:
+`tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_02_INTAKE_RECOVERY_2026-09-26/START_HERE.md`.
+
+Status: **SOURCE SAFE · NOT INTEGRATED · HUMAN GATE OPEN**.
+
+Verified recovery facts:
+- GitHub ↔ Dropbox exact name/type/size parity for 19/19 top-level, 7/7 `kfb-lib`, 6/6 evidence, 2/2 docs and 1/1 blender entries;
+- Dropbox ZIP preserved at `/CLAUDE/KFB ToolBox Production-01-2.zip` (436462 bytes);
+- Claude export reports 27/27 preview self-test PASS;
+- receiving owner remains ToolBox Draft PR #185; proposed Production-02 entry/new modules were not present at observed owner head `10a83a63acd76d29f6867d15640f7861efc57b00`;
+- no clean owner run, no Cloudflare route, no public verification, no merge/Live promotion.
+
+Exactly one next gate: **FACE-VIS-01 / intake review before any selective rehome into PR #185**.
