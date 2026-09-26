@@ -1,3 +1,20 @@
+# CURRENT UPDATE · ENV-PREVIEW-01 PUBLIC STAGE · 2026-09-26
+
+Status: **HUB SOURCE → LOOK_AT · PUBLIC STAGE 9/9 PASS · HUMAN REVIEW OPEN**
+
+- Source: PR #218 / `chatgpt-web/env-preview-01-2026-09-25@a50f2fb05eac0a6e9a8f6916905256a1a23a56a5`.
+- Public runtime publication: `cloudflare-live@bec8688c0c5a4743d8f484193939a74112d977c4`.
+- Final public metadata head: `cloudflare-live@f4e76abddef2f416fdccc34cb3eb6c0a4453e776`.
+- Direct review: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/`.
+- Contract **30/30 PASS**; existing direct consumers **15/15 PASS**; local portable Stage **9/9 PASS**; exact public Stage **9/9 PASS**.
+- Resident Atlas and ToolBox keep their renderer/camera/actor/animation/editor owners.
+- WorldBuilder, OSM and terrain owners retain world/height authority; Travel/TinySkies is only the current sky/weather/light/fog/mood donor.
+- The Hub config now exposes one `LOOK_AT` lane and one World/Terrain tool link through the existing route-check contract.
+- No merge and no Live promotion.
+
+Exactly one next gate:
+**Georg compares World Match with Source Isolation in both views and returns PASS or TUNE.**
+
 # CURRENT UPDATE · TOOLBOX r2 STAGE REVIEW GREEN · 2026-09-26
 
 Status: **HUB SOURCE → LOOK_AT · PUBLIC MARKER VERIFICATION PENDING**

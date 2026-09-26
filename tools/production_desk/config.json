@@ -110,6 +110,35 @@
       }
     },
     {
+      "id": "env-preview-01",
+      "bucket": "LOOK_AT",
+      "title": "Umgebungs-Vorschau · Residents + ToolBox",
+      "what": "Eine kompakte Prüfseite zeigt denselben aktuellen Licht-, Himmel-, Nebel- und Stimmungs-Look in Resident Atlas und ToolBox. WorldBuilder, OSM und Gelände bleiben die Welt-Owner; Travel/TinySkies liefert hier nur die Präsentationsstimmung.",
+      "provider": "WSA / ENV-PREVIEW-01",
+      "yourAction": "Prüfseite öffnen, zwischen Residents und ToolBox wechseln und jeweils World Match mit Source Isolation vergleichen. Danach PASS oder TUNE geben.",
+      "waitingFor": "",
+      "questions": [
+        "Passt World Match als gemeinsame Standardstimmung?",
+        "Bleiben Resident und Figur frei und gut beurteilbar?",
+        "Soll die neutrale Source Isolation weiterhin direkt erreichbar bleiben?"
+      ],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 218,
+      "branch": "chatgpt-web/env-preview-01-2026-09-25",
+      "expectedHead": "a50f2fb05eac0a6e9a8f6916905256a1a23a56a5",
+      "brief": {
+        "label": "ENV-PREVIEW-01 Return",
+        "path": "tools/KFB-ToolBox/_handover/ENV_PREVIEW_01_2026-09-25/RETURN.md",
+        "ref": "chatgpt-web/env-preview-01-2026-09-25",
+        "pasteReady": false
+      },
+      "review": {
+        "label": "Umgebungs-Vorschau prüfen",
+        "path": "kfb-hub/stage/toolbox/environment-preview-01/index.html",
+        "sourceRef": "PR #218 · a50f2fb0 · public browser 9/9 PASS · cloudflare-live f4e76abd"
+      }
+    },
+    {
       "id": "ear-dangle-01",
       "bucket": "CAN_START",
       "title": "Ear Rig · EAR-DANGLE-01",
@@ -487,6 +516,14 @@
       "what": "Von dir angenommene Umgebungs-Grundlage.",
       "status": "Fertig",
       "path": "kfb-hub/stage/toolbox/world-builder-p1-review/index.html"
+    },
+    {
+      "group": "Welt und Gelände",
+      "id": "environment-preview-01",
+      "title": "Umgebungs-Vorschau",
+      "what": "World Match und neutrale Source-Ansicht direkt in Residents und ToolBox vergleichen.",
+      "status": "Prüfen",
+      "path": "kfb-hub/stage/toolbox/environment-preview-01/index.html"
     },
     {
       "group": "Assets und Bausteine",

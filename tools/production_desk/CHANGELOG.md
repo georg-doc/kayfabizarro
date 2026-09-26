@@ -1,3 +1,13 @@
+## 2026-09-26 · ENV-PREVIEW-01 public and routed
+
+- added the verified Resident Atlas + ToolBox environment comparison as one `LOOK_AT` lane;
+- added the same fixed Cloudflare route to the World/Terrain tool group;
+- source PR #218 is pinned at `a50f2fb0`;
+- public runtime and final metadata were verified on `cloudflare-live@bec8688c` and `f4e76abd`;
+- exact public browser gate: **9/9 PASS**, zero page/request errors, mobile overflow zero;
+- WorldBuilder/OSM/terrain ownership stays explicit; Travel/TinySkies remains a presentation donor;
+- no merge and no Live promotion.
+
 ## 2026-09-26 · ToolBox r2 recovery review routed to Human Gate
 
 - ToolBox lane moved `RUNNING → LOOK_AT` after PR #221 final-head browser SUCCESS (**33/33**).
