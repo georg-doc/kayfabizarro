@@ -1,3 +1,17 @@
+## 2026-09-26 · Racer W0 + Cross-Mode 3D HUD navigation dispatch
+
+Current Racer dispatch is maintained on PR #222:
+
+- Track Core: lead/WSA has approved **JavaScript as authoritative core; Blender/Python is the oracle**. **W0 is startable now**. Playable Track R0 stays HOLD through W0 → B1–B5 → W1 → D1 → closed R0 prep.
+- Claude Design: existing Racer HUD + Billboard slice is startable in parallel and now reads `workflows/KFB_MVP_PLANNING_2026-09-26/RACER_CROSS_MODE_3D_HUD_NAV_ADDENDUM_2026-09-26.md`.
+- HUD addendum reuses the exact proven Factory Arrow GLB as first-choice 3D navigator, keeps one adaptive HUD family across WALK / DRIVE / FLIGHT, and gates Tacho / Mini-map / Radar by real mode providers.
+- Blender may build socketed scenery/set-piece shells now; new drivable track geometry remains Track-Core-owned.
+- no dedicated current KFB Tokyo-Drift module was recovered; treat that as a later core-native urban-drift beat, not a parallel track system.
+
+No runtime, Stage, Cloudflare or Live change is implied by this router update.
+
+---
+
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
