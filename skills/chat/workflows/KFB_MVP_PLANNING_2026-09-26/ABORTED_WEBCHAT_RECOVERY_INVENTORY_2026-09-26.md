@@ -19,7 +19,7 @@ This is not a new runtime owner. GitHub/project SSOTs remain authoritative.
 
 | ID | Likely chat/slice | Durable evidence | Current state | What is still open |
 |---|---|---|---|---|
-| A1 | **Billboard B2b-P1 · Living Collage** | kayfabizarro PR **#212**, head `5e0d6d7f32d2f5de1faa17933cf3bf12f1b42e99`; workflow `36081170177` | **ORPHANED_CLOSURE** | Technical proof is green (**40/40**, 0 page errors, 0 tracked HTTP errors; artifact **10841409354**), but PR #212 contains implementation/workflow files only: no slice Return/Recovery/TEST_REPORT/Hub metadata/Stage handoff. Georg visual gate never got a durable review route. |
+| A1 | **Billboard B2b-P1 · Living Collage** | current recovery truth: PR **#211**, head `6b29367df59f7c901ae66fea852999f6d62750e7`; frozen runtime/test head `2348c069a99b57149d6a2685496b5ce1b40ebe1a`; older implementation proof remains PR #212 | **RECOVERED_OPEN_GATE** | Latest browser run `36205100427`: **39/40**, 0 page errors, 0 HTTP errors. Sole red assertion: one already-queued collage tick crossed mode exit (725→726), then remained stable. Repair limit reached; no pass 3. Next technical gate = isolated lifecycle/quiescence semantics test in Web. Claude Design may show the frozen candidate for visual review only; no rebuild. |
 | A2 | **Reddit/GitHub/demo research for KFB World/Games** | PR **#204**, `EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`, final architecture head `31df655615d7f911afbe2767a9aac287e2335999` | **RECOVERED_COMPLETE** | Pass 2 A–L is complete: **73 HTTPS source/demo links**, routing validation **15/15**, final handoff sync **8/8**. Broad research is explicitly stopped by default; resume only for a named product question. Main follow-on `ENV-PREVIEW-01` was already implemented separately. |
 | A3 | **ToolBox r2 receiving-owner recovery** | PR #185 owner + failed review PR #220 + recovery PR **#221** head `e935f7ebbc2c40691248cd6910840a9f4b746a93` | **RECOVERED_OPEN_GATE** | First Stage-review slice exhausted two passes and froze correctly. Fresh review recovery is **33/33 browser PASS**, ears fully framed. Still needs existing-owner Cloudflare Stage publication + Hub link + Georg human review. No feature expansion before that gate. |
 | A4 | **World r2 receiving-owner recovery** | WorldBuilder PR **#190** + `world-integration-01/failure-recovery/` | **RECOVERED_OPEN_GATE** | Two runtime repair passes exhausted. Hürth boot/source/network were not the problem; stale selftest semantics were. Next gate is exactly `WORLD-R2-CONTRACT-RESET-01`: **test contract only first**, then one bounded regression run. No runtime patch pass 3. |
@@ -32,19 +32,22 @@ This is not a new runtime owner. GitHub/project SSOTs remain authoritative.
 
 ## Highest-risk items
 
-### 1. Billboard B2b-P1 is the only clear recent closure orphan
+### 1. Billboard B2b-P1 is recovered, not a closure orphan
 
-The implementation exists and its CI is green, but the usual handoff envelope was never completed.
+The newest canonical recovery is PR #211, not the older #212 implementation proof.
 
-Do **not** rebuild it.
+Current:
+- handoff head `6b29367d…`;
+- frozen runtime/test head `2348c069…`;
+- final browser run `36205100427`: **39/40**;
+- one queued collage tick crossed mode exit (725→726) and then remained stable;
+- two repair passes consumed; no repair pass 3;
+- failure-recovery `START_HERE.md` exists.
 
-Recommended recovery slice:
-1. fetch PR #212 exact head + workflow artifact;
-2. source-isolate the existing Gate-1 collage donor and current P1 result;
-3. write missing `SOURCE.json`, `TEST_REPORT.md`, `RECOVERY.md`, `RETURN.md`, additive changelog;
-4. preserve the exact 40/40-tested runtime;
-5. only then package the unchanged candidate for KFB Stage + Hub human review;
-6. stop at Georg visual PASS/TUNE/REJECT.
+Correct split:
+- **Web** owns the next isolated lifecycle/quiescence semantics test.
+- **Claude Design** may show the exact frozen candidate for Georg visual review, but must not repair/rebuild it.
+- PR #212 remains older implementation/proof evidence, not the latest recovery truth.
 
 ### 2. City Builder Bits is the only clear recent recon orphan
 
@@ -99,6 +102,6 @@ is **UNKNOWN_NO_TRACE**.
 
 For those, do not recreate supposed decisions from memory. The new long-job protocol exists specifically so every substantial chat leaves a durable checkpoint before doing expensive work.
 
-## Exactly one next meta-gate
+## ## Exactly one next meta-gate
 
-**Adopt the timeout-safe long-job protocol and recover the two real orphans first: A1 B2b-P1 closure and A9 City Builder Bits application recon.**
+**Adopt the timeout-safe long-job protocol and recover the remaining real recon orphan A9 City Builder Bits; keep A1 B2b-P1 on its existing split gates (Web lifecycle test / Claude visual review only).**
