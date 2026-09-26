@@ -880,3 +880,33 @@ Plus: does the Desk answer „was läuft, was muss ich entscheiden, was kann ich
 ## Next
 
 STEP 3 — resume ToolBox Source-Safe Integration (state: project memory `toolbox_model_switch_checkpoint`).
+
+
+## 2026-09-26 · WSA MVP dispatch / Racer R0 hold sync
+
+Status: **SOURCE METADATA UPDATED · NO NEW PUBLIC HUB CLAIM**
+
+Config checkpoint:
+`7dc340afd94023e65d68561228472a4dc19bdffb`
+
+Changes:
+- added LOOK_AT lane for WSA review-only PR #222;
+- changed Racer lane from generic CAN_START to **G0 → W0** review/start semantics;
+- updated Track-Core expected head to PR #219 `6610e5b0…`;
+- added separate WAITING lane for **Playable Track R0 · SOURCE_REQUIRED HOLD**;
+- records Claude Design’s no-build stop as correct and forbids replacement recipes;
+- WSA summary now says REVIEW_ONLY; approved execution returns to normal Web/Claude/Blender owners.
+
+Verification on the config write:
+- updated `config.json` was fetched back from `work/hub-ctrl-01-2026-09-24` and JSON-parsed;
+- PR #202 head resolved to `7dc340af…` after refresh;
+- expected refs were checked against PR #219, #216 and #222;
+- GitHub returned **0 PR workflow runs** associated with `7dc340af…`; therefore no new builder/CI PASS count is claimed for this metadata change.
+
+Publication:
+- generated root Hub HTML: unchanged by this sync;
+- Cloudflare/public root: no new publication claim;
+- Live promotion: none.
+
+Exactly one next gate for this sync:
+**WSA reviews PR #222; HUB-CTRL may regenerate/publish status through its existing owner path afterward.**
