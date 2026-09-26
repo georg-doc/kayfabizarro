@@ -17,21 +17,23 @@
       "id": "wsa-mvp-dispatch-review",
       "bucket": "LOOK_AT",
       "title": "WSA · MVP Dispatch Recon / Planfreigabe",
-      "what": "Neuer planning-only Review-Packet PR #222: aktuelle Owner/Refs, widersprüchliche Gates, Start/Wait/Hold-Matrix und kleine executor-spezifische Briefings. Keine neue Runtime-Architektur.",
+      "what": "PR #222 ist jetzt zusätzlich die Recovery-Inventur für abgebrochene/fragile Web-Chats. Recon trennt vollständig gerettete Slices, offene Gates, echte Closure-Orphans und nicht formalisierte Recon. Dazu liegt ein C0-Checkpoint-Protokoll für lange Research/CI/Browser-Jobs zur WSA-Freigabe vor.",
       "provider": "WSA Work Lead · review only",
-      "yourAction": "PR #222 START_HERE + Decision Register lesen und pro Decision APPROVE/TUNE/HOLD zurückgeben. Keine produktive Ausführung in diesem Review.",
+      "yourAction": "PR #222 lesen: zuerst START_HERE, dann WSA Decision Register und ABORTED_WEBCHAT_RECOVERY_INVENTORY. D8 Long-Job-Protokoll APPROVE/TUNE/HOLD; außerdem A1 B2b-P1 Closure und A9 City Bits Recon freigeben oder halten.",
       "waitingFor": "",
       "questions": [
         "G0 JavaScript Track Core?",
         "Shared Camera owner + World height contract?",
-        "ToolBox publish-before-expansion und ENV-PREVIEW Stage jetzt freigeben?"
+        "ToolBox publish-before-expansion und ENV-PREVIEW Stage jetzt freigeben?",
+        "D8 C0-Checkpoint-Protokoll für lange/fragile Web-Chats übernehmen?",
+        "A1 B2b-P1 Closure und A9 City Builder Bits Recon als erste Recovery-Slices starten?"
       ],
       "repo": "georg-doc/kayfabizarro",
       "pr": 222,
       "branch": "chat/wsa-mvp-dispatch-prep-2026-09-26",
-      "expectedHead": "72896ca787c0b4bd80c29525aaa01ca00c241e0a",
+      "expectedHead": "9ae62f70086da4619a8b119139cae33ade5e73a7",
       "brief": {
-        "label": "WSA Recon + Plan Approval",
+        "label": "WSA Recon + Aborted Web-chat Recovery",
         "path": "skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/START_HERE.md",
         "ref": "chat/wsa-mvp-dispatch-prep-2026-09-26",
         "pasteReady": false
@@ -420,7 +422,7 @@
   ],
   "wsa": {
     "state": "REVIEW_ONLY",
-    "text": "WSA ist jetzt nur für Recon/Planfreigabe von PR #222 vorgesehen: Owner/Refs und Dispatch-Gates prüfen, keine Runtime bauen. Danach gehen freigegebene Slices zurück an Web/GitHub, Claude Design oder Blender MCP."
+    "text": "WSA prüft PR #222 als Plan-/Recovery-Paket: Owner/Dispatch-Gates plus Inventur abgebrochener Web-Chats und das C0-Checkpoint-Protokoll. Keine Runtime bauen. Zwei aktuelle Recovery-Orphans: B2b-P1 Closure (#212) und City Builder Bits Anwendungsmatrix."
   },
   "standards": [
     {
