@@ -1907,3 +1907,15 @@ Exactly one next gate:
 - prepared small executor briefs for ENV-PREVIEW Stage, ToolBox r2 publication, Camera-Core recon, World contract reset, FrizzleBob body family and surf poses;
 - preserved Hub ownership under HUB-CTRL #202 and no generated Hub HTML edit;
 - no runtime/browser/Stage/Live work performed by this planning packet.
+
+
+## 2026-09-26 · Fragile Web-chat recovery inventory + long-job checkpoint candidate
+
+- reconstructed recent interrupted/fragile Web slices from current GitHub PRs/Returns/Recovery plus read-only Dropbox source presence;
+- added human + machine-readable recovery inventory under `KFB_MVP_PLANNING_2026-09-26/`;
+- classified two current real recovery orphans: Billboard B2b-P1 PR #212 (green implementation, missing closure) and KayKit City Builder Bits (41 exact models indexed, application recon not formalized);
+- confirmed external demo research Pass 2 A–L is complete (73 source/demo links; 15/15 routing + 8/8 handoff checks) and must not be restarted broadly;
+- added candidate `LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md` + `KFB_LONG_JOB_STATE_TEMPLATE.json` with C0 preflight before expensive research/browser/CI work;
+- candidate rule: `Stream cache expired` is the same as timeout — `UNKNOWN`, inspect actual ref/run before retry;
+- added closure-only B2b-P1 recovery brief and City Builder Bits application-recon brief;
+- no runtime, Stage, Cloudflare or Live work performed by this recovery-planning update.
