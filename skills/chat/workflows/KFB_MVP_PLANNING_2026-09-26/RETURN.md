@@ -139,3 +139,17 @@ HUB-CTRL #202 source metadata was updated to expose this recovery review. Genera
 
 ### Exactly one next gate
 **WSA approves/tunes D8 long-job protocol and starts the two bounded recoveries A1 Web lifecycle test / Claude visual review + A9 City Bits Recon.**
+
+
+### Racer design working page
+
+Added current dispatch page:
+`RACER_DESIGN_EXECUTION_OVERVIEW_2026-09-26.md`.
+
+Startable-now Claude Design wrapper:
+`CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md`.
+
+Current intended order:
+HUD/Billboard Claude now → Track Core Web/Blender/Web → Claude transition grammar → Web R0 closed package → Claude Playable Track R0 → Web rehome/freeplay → real Cologne OSM.
+
+No runtime/browser/Stage tests were run for these documentation-only additions.
