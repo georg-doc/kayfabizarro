@@ -83,3 +83,59 @@ Unresolved later gate:
 **Dispatch one bounded approved first-wave slice from the updated board.**
 
 Allowed first wave: ENV-PREVIEW Stage, ToolBox r2 Stage, Track-Core G0→W0, or Camera-Core-0 recon. Each remains its own owner/branch/outcome; no mass dispatch or merge.
+
+
+## Addendum · aborted / fragile Web-chat inventory · 2026-09-26
+
+Status: **RECOVERY INVENTORY PERSISTED · PROTOCOL CANDIDATE · NO RUNTIME/STAGE/LIVE**
+
+### Outcome
+A systematic recon of recent fragile/aborted Web chats found that most apparently lost work is recoverable from GitHub. Two recent items require explicit recovery because their closure/application layer is incomplete:
+
+1. **Billboard B2b-P1 PR #212 — ORPHANED_CLOSURE**
+   - implementation head observed: `5e0d6d7f32d2f5de1faa17933cf3bf12f1b42e99`;
+   - workflow `36081170177` / job `107903245120` SUCCESS;
+   - **40/40 PASS**, 0 page errors, 0 tracked HTTP errors;
+   - artifact `10841409354`;
+   - missing standard closure envelope / human Stage handoff;
+   - prepared closure-only brief: `B2B_P1_CLOSURE_RECOVERY_BRIEF_2026-09-26.md`.
+
+2. **KayKit City Builder Bits city-liveliness recon — RECON_NOT_FORMALIZED**
+   - exact source already exists at `registry/assets/v1/packs/kaykit-city-builder-bits-1-0-free.json`;
+   - **41 model-3d assets** indexed, including traffic lights A/B/C, streetlight, crossing/junction/roads, bench, hydrant, dumpster/trash, five cars, buildings and watertower;
+   - no separate traffic-sign model was found in that 41-model inventory;
+   - missing product application matrix/source-isolation/placement semantics;
+   - prepared brief: `CITY_BITS_WORLD_DRESSING_RECON_01_2026-09-26.md`.
+
+### Recovered and not lost
+- External Reddit/GitHub/demo research: Pass 2 A–L complete on PR #204, 73 HTTPS source/demo links, **15/15 routing + 8/8 handoff PASS**; broad research stops by default.
+- ToolBox r2: recovery PR #221 **33/33 browser PASS**; Stage/Hub/human gate remains.
+- World r2: failure recovery complete; next gate `WORLD-R2-CONTRACT-RESET-01`, test contract only, no runtime pass 3.
+- Hub UX v2: PR #217 PUBLIC_VERIFIED / Georg PASS_WITH_TUNE; mobile tune remains separate, candidate not Live.
+- ENV-PREVIEW-01: PR #218 **30/30 static + 15/15 Chromium/WebGL PASS**; Stage/human comparison remains.
+- Track/RKIT/Cologne: planning is durable on #219/#216; next is G0 → W0; Playable R0 remains intentional HOLD.
+- Biome/Nature/World Recipe/Card Zone environment work is dependency-gated backlog, not lost.
+
+### New durable recovery layer
+Added:
+- `ABORTED_WEBCHAT_RECOVERY_INVENTORY_2026-09-26.md`;
+- `ABORTED_WEBCHAT_RECOVERY.json`;
+- `LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md`;
+- `skills/chat/templates/KFB_LONG_JOB_STATE_TEMPLATE.json`;
+- candidate long-job extension in `FRESH_CHAT_SLICE_PROTOCOL.md` on this review branch.
+
+Protocol core:
+**C0_PREFLIGHT before expensive work** → source/research checkpoint → implementation → evidence → publication → Return. Every checkpoint updates job state and verifies exact head/files. `Stream cache expired` is treated as timeout = `UNKNOWN`, inspect first.
+
+### Dropbox
+Read-only recon only. RKIT-11 `rhein-muelheim-v0` remains present in the active RKIT-11 Dropbox tree and duplicate upload staging; nothing moved/deleted.
+
+### Tests in this addendum
+New runtime/browser/Stage tests: **0**.
+All numerical evidence above was read from existing exact PR/workflow/Return sources and is not counted as newly executed.
+
+### Hub
+HUB-CTRL #202 source metadata was updated to expose this recovery review. Generated Hub HTML/public root was not edited or republished.
+
+### Exactly one next gate
+**WSA approves/tunes D8 long-job protocol and starts the two bounded recoveries A1 B2b-P1 Closure + A9 City Bits Recon.**
