@@ -1,7 +1,7 @@
 {
   "schema": "kfb.toolbox-onboarding/1",
-  "version": "1.0.0",
-  "updated": "2026-09-18",
+  "version": "1.0.1",
+  "updated": "2026-09-25",
   "status": "ONBOARDING_IMPLEMENTED_RUNTIME_NOT_TESTED",
   "repository": "georg-doc/kayfabizarro",
   "path": "tools/KFB-ToolBox",
@@ -187,5 +187,19 @@
       "neutral"
     ],
     "phaseB": "Repeat with first generic Rig_Medium EyeProfile after Batch approval"
-  }
+  },
+  "candidateLanes": [
+    {
+      "id": "ear-rig",
+      "path": "ear-rig/",
+      "status": "CANDIDATE_ONLY",
+      "pr": 214,
+      "runtimeOwner": "Animation Lab / ToolBox Motion",
+      "authoringConsumer": "FrankenStein Studio",
+      "runtimeSSOT": "ear-rig/ear-dangle.v1.js",
+      "profileSchema": "kfb.ear-rig.v0",
+      "firstGate": "EAR-DANGLE-01 · FrizzleBob with KayKit Idle/Walk/Run/Jump + one Motion Library dance, human review",
+      "gameRuntimeChanged": false
+    }
+  ]
 }

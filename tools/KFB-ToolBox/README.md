@@ -15,5 +15,6 @@ Gemeinsame Arbeitsumgebung für FrankenStein Studio v17, Rigging Lab v1 und Anim
 | Schriftentscheidung / mögliche Nachlieferung | [FONTS](docs/FONTS.md) |
 | Quellenlage | [SOURCE_AUDIT](docs/SOURCE_AUDIT.md) · [Manifest](TOOLBOX_MANIFEST.json) |
 | Eingänge / Übergaben / Geschichte | [_inbox](_inbox/README.md) · [_handover](_handover/README.md) · [_archive](_archive/README.md) |
+| Ear Rig candidate | [ear-rig/README.md](ear-rig/README.md) · Animation Lab owns `ear-dangle.v1.js`; FrankenStein Studio authors placement/pose/profile |
 
 Die Dateien unter `KFB ToolBox (studio v17 - rigging v1 - animation v2)/WSA_2026-09-13/` bleiben der gepinnte Eingang, nicht ein still überschreibbarer Arbeitsstand. `temp` bleibt unangetastet.

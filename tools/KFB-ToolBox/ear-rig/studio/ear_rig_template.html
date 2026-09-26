@@ -1,0 +1,471 @@
+<title>Ear Rig Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#e9edf1; --panel:#ffffff; --ink:#1b2530; --muted:#5b6977; --line:#d3dae1;
+  --accent:#e2b93b; --accent-ink:#6f5200; --chip:#f4f6f8; --stage:#dde3e9; --grid:#c4ccd4;
+  --L:#2f7fd1; --R:#d1552f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11161b; --panel:#182028; --ink:#e7edf2; --muted:#94a3b0; --line:#2a3440;
+    --accent:#e8c24e; --accent-ink:#f3d77f; --chip:#202a34; --stage:#151c23; --grid:#2c3843;
+    --L:#6aa9ec; --R:#f08663; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11161b; --panel:#182028; --ink:#e7edf2; --muted:#94a3b0; --line:#2a3440;
+  --accent:#e8c24e; --accent-ink:#f3d77f; --chip:#202a34; --stage:#151c23; --grid:#2c3843;
+  --L:#6aa9ec; --R:#f08663; color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:12px;box-sizing:border-box}
+*{box-sizing:border-box}
+.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 330px;grid-template-rows:auto minmax(0,1fr);gap:12px 16px;max-width:1360px;margin:0 auto}
+header{grid-column:1/-1;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h1{font:800 26px/1.1 "Baloo 2",Figtree,system-ui,sans-serif;margin:0;text-wrap:balance}
+h1 span{color:var(--accent-ink)}
+.sub{color:var(--muted);font-size:13px}
+.stage{position:relative;background:var(--stage);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:340px}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.views{position:absolute;left:10px;top:10px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 20px)}
+.pill{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font:600 12px Figtree,system-ui,sans-serif;cursor:pointer}
+.pill:hover,.pill:focus-visible{border-color:var(--accent);outline:none}
+.pill[aria-pressed="true"]{background:var(--accent);color:#231a00;border-color:var(--accent)}
+.motion{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 20px)}
+.hint{position:absolute;right:12px;top:12px;color:var(--muted);font-size:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 9px;max-width:260px}
+.hint[hidden]{display:none}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;overflow:auto;display:flex;flex-direction:column;gap:16px}
+section h2{font:600 11px/1 Figtree,system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 9px}
+.tabs{display:grid;grid-template-columns:1fr 1fr auto;gap:6px}
+.tab{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:10px;padding:8px;font:700 13px Figtree,system-ui,sans-serif;cursor:pointer;display:flex;align-items:center;gap:7px;justify-content:center}
+.tab i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.tab[data-e="L"] i{background:var(--L)} .tab[data-e="R"] i{background:var(--R)}
+.tab[aria-selected="true"]{background:var(--panel);border-color:var(--ink)}
+.link{border:1px solid var(--line);background:var(--chip);border-radius:10px;padding:0 10px;font:600 12px Figtree,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.link[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#231a00}
+.ctl{display:grid;grid-template-columns:1fr auto;gap:0 8px;align-items:center;margin-top:7px}
+.ctl label{font-size:13px}
+.ctl output{font:600 11.5px "JetBrains Mono",ui-monospace,monospace;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.ctl input{grid-column:1/-1;width:100%;accent-color:var(--accent);margin:2px 0 0}
+.grp{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.grp:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.grp h3{font:600 12px Figtree,system-ui,sans-serif;margin:0;color:var(--ink)}
+.presets{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.btn{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 9px;font:600 12.5px Figtree,system-ui,sans-serif;cursor:pointer;text-align:left}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#231a00;text-align:center}
+.btn:focus-visible,.tab:focus-visible,.link:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+.row{display:flex;gap:6px;flex-wrap:wrap}
+.row .btn{flex:1;text-align:center}
+.note{font-size:12px;color:var(--muted);margin:6px 0 0}
+textarea{width:100%;min-height:110px;font:11.5px/1.4 "JetBrains Mono",ui-monospace,monospace;background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px;resize:vertical}
+.file{font-size:12px;color:var(--muted)}
+.err{position:absolute;inset:auto 12px 56px 12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr;grid-template-rows:auto 60vh auto;height:auto}
+  html,body{height:auto}
+}
+</style>
+
+<div class="app">
+  <header>
+    <h1>Ear Rig <span>Studio</span></h1>
+    <div class="sub">Ears as Actors · setzen, ausrichten, skalieren, spielen · jedes Ohr einzeln</div>
+  </header>
+
+  <div class="stage" id="stage">
+    <canvas id="c" aria-label="3D-Ansicht"></canvas>
+    <div class="views" role="group" aria-label="Ansicht">
+      <button class="pill" id="v-front">Vorne</button><button class="pill" id="v-q34">¾</button><button class="pill" id="v-side">Seite</button><button class="pill" id="v-back">Hinten</button><button class="pill" id="v-top">Oben</button>
+      <button class="pill" id="place" aria-pressed="false">Ansatz setzen</button>
+    </div>
+    <div class="hint" id="hint" hidden>Klick auf den Kopf setzt den Ansatz des gewählten Ohrs. Bei „Gespiegelt“ wandert das andere mit.</div>
+    <div class="motion" role="group" aria-label="Bewegung testen">
+      <button class="pill" id="m-hop">Hüpfen</button>
+      <button class="pill" id="m-nod">Nicken</button>
+      <button class="pill" id="m-shake">Kopfschütteln</button>
+      <button class="pill" id="m-drive" aria-pressed="false">Fahren</button>
+      <button class="pill" id="m-still" aria-pressed="false">Feder aus</button>
+    </div>
+    <div class="err" id="err" hidden></div>
+  </div>
+
+  <aside>
+    <section>
+      <h2>Ohr wählen</h2>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" data-e="L" id="tab-L" aria-selected="true"><i></i>Links</button>
+        <button class="tab" role="tab" data-e="R" id="tab-R" aria-selected="false"><i></i>Rechts</button>
+        <button class="link" id="mirror" aria-pressed="true" title="Änderungen gelten für beide Ohren, gespiegelt">Gespiegelt</button>
+      </div>
+      <p class="note">Tipp: Ein Ohr in der 3D-Ansicht anklicken wählt es aus. „Gespiegelt“ aus = jedes Ohr spielt für sich.</p>
+    </section>
+
+    <section id="panel"></section>
+
+    <section>
+      <h2>Ausdruck (Presets)</h2>
+      <div class="presets" id="presets"></div>
+    </section>
+
+    <section>
+      <h2>Modell</h2>
+      <div class="row">
+        <button class="btn" id="reset">Zurück auf FB-Standard</button>
+      </div>
+      <p class="note">Eigenes Modell testen:</p>
+      <input type="file" id="glb" accept=".glb,.gltf" class="file">
+      <p class="note" id="attachInfo">Ohren hängen am Knochen „head“.</p>
+    </section>
+
+    <section>
+      <h2>Rig-Einstellungen</h2>
+      <div class="row"><button class="btn primary" id="copy">JSON kopieren</button><button class="btn" id="apply">JSON übernehmen</button></div>
+      <textarea id="json" spellcheck="false" aria-label="Ear-Rig als JSON"></textarea>
+      <p class="note" id="copyMsg">Format <b>kfb.ear-rig.v0</b>. Das kann das Frankenstein-Studio später einlesen.</p>
+    </section>
+  </aside>
+</div>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ---- ear-dangle.v1.js (runtime SSOT, inlined at build time; edit the module, not this copy) ----
+/*__EAR_DANGLE__*/
+// ---- end ear-dangle.v1.js ----
+
+const BASE_B64 = "__BASE__";
+const EAR_B64 = "__EAR__";
+const $ = id => document.getElementById(id);
+const D2R = Math.PI / 180;
+
+// ------------------------------------------------ parameters (one set per ear; R is read in mirrored space)
+const FIELDS = [
+  ['Platz', [
+    ['px', 'Seitlich', -0.6, 0.6, 0.005, 'm'], ['py', 'Höhe', 0, 3, 0.005, 'm'], ['pz', 'Vor / zurück', -0.6, 0.6, 0.005, 'm'],
+    ['sink', 'Einsinken', -0.05, 0.25, 0.005, 'm']]],
+  ['Ausrichtung', [
+    ['out', 'Nach außen kippen', -40, 70, 1, '°'], ['back', 'Nach hinten kippen', -40, 60, 1, '°'], ['twist', 'Eindrehen', -60, 60, 1, '°']]],
+  ['Größe', [
+    ['size', 'Gesamt', 0.4, 2, 0.01, '×'], ['len', 'Länge', 0.5, 1.8, 0.01, '×'], ['wid', 'Breite', 0.5, 1.8, 0.01, '×'], ['thick', 'Dicke', 0.5, 2, 0.01, '×']]],
+  ['Pose (Schauspiel)', [
+    ['droop', 'Am Ansatz hängen', -30, 90, 1, '°'], ['fold', 'Knick (Schlappohr)', -30, 150, 1, '°'], ['foldAt', 'Knickstelle', 0, 1, 0.01, ''],
+    ['curl', 'Seitlich einrollen', -60, 60, 1, '°']]],
+  ['Dangle (Feder)', [
+    ['stiff', 'Steifigkeit', 0.2, 3, 0.05, '×'], ['damp', 'Dämpfung', 0.2, 3, 0.05, '×'], ['elastic', 'Gummi (Dehnen)', 0, 2, 0.05, '×'],
+    ['wind', 'Windempfindlich', 0, 2, 0.05, '×']]],
+];
+const FB_DEFAULT = { px: 0.16, py: 2.128, pz: -0.02, sink: 0.0, out: 19, back: 4, twist: 0, size: 1, len: 1, wid: 1, thick: 1,
+  droop: 0, fold: 0, foldAt: 0.55, curl: 0, stiff: 1, damp: 1, elastic: 0.6, wind: 1 };
+const ears = { L: { p: { ...FB_DEFAULT } }, R: { p: { ...FB_DEFAULT } } };
+let sel = 'L', mirror = true;
+
+const PRESETS = [
+  ['Neutral', {}, {}],
+  ['Wach / Alarm', { out: 6, back: -6, droop: 0, fold: 0, curl: 0 }, null],
+  ['Traurig', { out: 45, back: 30, droop: 45, fold: 25, curl: 0 }, null],
+  ['Wütend (angelegt)', { out: 25, back: 55, droop: 20, fold: -10, curl: 15 }, null],
+  ['Neugierig', { out: 12, back: -10, droop: 0, fold: 0 }, { out: 30, back: 10, droop: 10, fold: 70, foldAt: 0.5 }],
+  ['Schlappohr links', { fold: 100, foldAt: 0.5, droop: 10, out: 26 }, {}],
+  ['Verlegen', { out: 35, back: 15, droop: 20, fold: 40, twist: 20, curl: 20 }, null],
+  ['Ein Ohr hoch', { out: 30, back: 20, droop: 30, fold: 20 }, { out: 5, back: -8, droop: 0, fold: 0 }],
+];
+
+// ------------------------------------------------ renderer / scene
+const canvas = $('c'), stage = $('stage');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(32, 1, 0.02, 200);
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8f99, 1.15));
+const key = new THREE.DirectionalLight(0xffffff, 2.0); key.position.set(2.5, 4, 3); scene.add(key);
+const rim = new THREE.DirectionalLight(0xbfd4ff, 0.9); rim.position.set(-3, 2.5, -3); scene.add(rim);
+let grid;
+function themeColors(){
+  const s = getComputedStyle(document.documentElement);
+  scene.background = new THREE.Color(s.getPropertyValue('--stage').trim());
+  if (grid) scene.remove(grid);
+  const g = new THREE.Color(s.getPropertyValue('--grid').trim());
+  grid = new THREE.GridHelper(4, 16, g, g); scene.add(grid);
+}
+themeColors();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', themeColors);
+new MutationObserver(themeColors).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+function resize(){ const r = stage.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); camera.aspect = r.width / Math.max(1, r.height); camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(stage);
+function showErr(t){ const e = $('err'); e.textContent = t; e.hidden = false; setTimeout(() => e.hidden = true, 6000); }
+const b64buf = b => Uint8Array.from(atob(b), c => c.charCodeAt(0)).buffer;
+const loader = new GLTFLoader();
+const parse = buf => new Promise((res, rej) => loader.parse(buf, '', res, rej));
+
+// ------------------------------------------------ model (any GLB); ears follow the "head" bone
+let model = null, headBone = null, rootMover = null, headRestInv = new THREE.Matrix4(), headSize = 0.9, headCenter = new THREE.Vector3();
+const pickables = [];
+async function loadModel(buf, isDefault){
+  const gltf = await parse(buf);
+  if (model) scene.remove(model);
+  pickables.length = 0; headBone = null;
+  model = new THREE.Group(); model.add(gltf.scene); scene.add(model);
+  let found = null;
+  gltf.scene.traverse(o => {
+    if (o.isMesh) { o.frustumCulled = false; pickables.push(o);
+      if (/Eye|Brow|Nose|Mouth/.test(o.name) || (o.userData && o.userData.kfb_optional_face)) o.visible = false; }
+    if (o.isBone) {
+      const k = o.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (/^earl|^earr/.test(k)) return;
+      if (!found && (k === 'head' || /head$/.test(k)) && !/headtop|headend/.test(k)) found = o;
+    }
+  });
+  headBone = found;
+  model.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(gltf.scene);
+  const size = box.getSize(new THREE.Vector3());
+  // fit: stand on the grid, ~2.4 units tall like FB, so the ear unit keeps a sane scale
+  if (!isDefault) {
+    const s = 2.4 / Math.max(size.y, 1e-3);
+    gltf.scene.scale.multiplyScalar(s); model.updateMatrixWorld(true);
+    const b2 = new THREE.Box3().setFromObject(gltf.scene);
+    gltf.scene.position.y -= b2.min.y; gltf.scene.position.x -= (b2.min.x + b2.max.x) / 2; gltf.scene.position.z -= (b2.min.z + b2.max.z) / 2;
+    model.updateMatrixWorld(true);
+  }
+  rootMover = model;
+  headRestInv.copy((headBone || model).matrixWorld).invert();
+  // head size/centre from vertices weighted to the head, else the top 30 % of the model
+  const mb = new THREE.Box3().setFromObject(model);
+  headCenter.set((mb.min.x + mb.max.x) / 2, mb.max.y - (mb.max.y - mb.min.y) * 0.18, (mb.min.z + mb.max.z) / 2);
+  headSize = (mb.max.x - mb.min.x) * 0.5;
+  $('attachInfo').textContent = headBone ? `Ohren hängen am Knochen „${headBone.name}“.` : 'Kein Kopf-Knochen gefunden: Ohren hängen am ganzen Modell.';
+  if (!isDefault) autoPlace(mb);
+  setView('q34');
+}
+function autoPlace(mb){
+  // drop both ears onto the top of the new model with a raycast from above
+  const rc = new THREE.Raycaster();
+  const x = (mb.max.x - mb.min.x) * 0.12;
+  rc.set(new THREE.Vector3(x + (mb.min.x + mb.max.x) / 2, mb.max.y + 1, (mb.min.z + mb.max.z) / 2), new THREE.Vector3(0, -1, 0));
+  const hit = rc.intersectObjects(pickables, false)[0];
+  const p = hit ? hit.point : new THREE.Vector3(x, mb.max.y, 0);
+  for (const e of ['L', 'R']) Object.assign(ears[e].p, FB_DEFAULT, { px: Math.abs(p.x), py: p.y, pz: p.z });
+  buildPanel(); writeJSON();
+}
+
+// ------------------------------------------------ ear units (same GLB twice; R mirrored)
+async function makeEar(side){
+  const gltf = await parse(b64buf(EAR_B64));
+  const holder = new THREE.Group(); holder.matrixAutoUpdate = false; holder.add(gltf.scene); scene.add(holder);
+  const bones = [];
+  let mesh = null;
+  gltf.scene.traverse(o => {
+    if (o.isMesh) { o.frustumCulled = false; mesh = o; o.material = o.material.clone(); o.material.side = THREE.DoubleSide; o.userData.earSide = side; }
+    if (o.isBone) { const k = o.name.toLowerCase().replace(/[^a-z0-9]/g, ''); const m = k.match(/^ear([123])$/); if (m) bones[+m[1] - 1] = o; }
+  });
+  holder.updateMatrixWorld(true);
+  const chain = new DangleChain(bones, { side, mirroredTransform: true });   // R is a mirrored copy
+  return { holder, bones, mesh, chain, root: gltf.scene };
+}
+
+const S_MIRROR = new THREE.Matrix4().makeScale(-1, 1, 1);
+function restMatrix(e){
+  const p = ears[e].p;
+  const m = new THREE.Matrix4();
+  const q = new THREE.Quaternion().setFromEuler(new THREE.Euler(-p.back * D2R, p.twist * D2R, -p.out * D2R, 'ZXY'));
+  const pos = new THREE.Vector3(p.px, p.py, p.pz);
+  const down = new THREE.Vector3(0, -p.sink, 0).applyQuaternion(q);
+  m.compose(pos.add(down), q, new THREE.Vector3(p.size * p.wid, p.size * p.len, p.size * p.thick));
+  return e === 'R' ? S_MIRROR.clone().multiply(m) : m;
+}
+
+// ------------------------------------------------ UI
+function fmt(v, u){ return (Math.abs(v) < 10 && u !== '°' ? (+v).toFixed(2) : Math.round(v)) + (u ? ' ' + u : ''); }
+function buildPanel(){
+  const p = ears[sel].p, host = $('panel');
+  host.innerHTML = `<h2>Ohr ${sel === 'L' ? 'links' : 'rechts'}${mirror ? ' (+ gespiegelt)' : ''}</h2>`;
+  for (const [title, fields] of FIELDS) {
+    const g = document.createElement('div'); g.className = 'grp';
+    g.innerHTML = `<h3>${title}</h3>`;
+    for (const [k, label, min, max, step, u] of fields) {
+      const id = 'f-' + k;
+      const d = document.createElement('div'); d.className = 'ctl';
+      d.innerHTML = `<label for="${id}">${label}</label><output id="${id}-o">${fmt(p[k], u)}</output><input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${p[k]}">`;
+      d.querySelector('input').oninput = ev => {
+        const v = +ev.target.value; p[k] = v; d.querySelector('output').textContent = fmt(v, u);
+        if (mirror) ears[sel === 'L' ? 'R' : 'L'].p[k] = v;
+        writeJSON();
+      };
+      g.appendChild(d);
+    }
+    host.appendChild(g);
+  }
+}
+function selectEar(e){
+  sel = e;
+  for (const s of ['L', 'R']) $('tab-' + s).setAttribute('aria-selected', s === e);
+  buildPanel();
+}
+$('tab-L').onclick = () => selectEar('L');
+$('tab-R').onclick = () => selectEar('R');
+$('mirror').onclick = ev => {
+  mirror = !mirror; ev.currentTarget.setAttribute('aria-pressed', mirror);
+  if (mirror) ears[sel === 'L' ? 'R' : 'L'].p = { ...ears[sel].p };
+  buildPanel(); writeJSON();
+};
+const presetHost = $('presets');
+for (const [name, a, b] of PRESETS) {
+  const btn = document.createElement('button'); btn.className = 'btn'; btn.textContent = name;
+  btn.onclick = () => {
+    const base = { out: FB_DEFAULT.out, back: FB_DEFAULT.back, twist: 0, droop: 0, fold: 0, foldAt: 0.55, curl: 0 };
+    Object.assign(ears.L.p, base, a); Object.assign(ears.R.p, base, b === null ? a : b);
+    if (b !== null && Object.keys(b).length + Object.keys(a).length > 0) { mirror = false; $('mirror').setAttribute('aria-pressed', false); }
+    buildPanel(); writeJSON();
+  };
+  presetHost.appendChild(btn);
+}
+$('reset').onclick = async () => {
+  Object.assign(ears.L.p, FB_DEFAULT); Object.assign(ears.R.p, FB_DEFAULT);
+  await loadModel(b64buf(BASE_B64), true); buildPanel(); writeJSON();
+};
+$('glb').onchange = async ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  try { await loadModel(await f.arrayBuffer(), false); } catch (e) { showErr('Das Modell ließ sich nicht laden: ' + (e.message || e)); }
+};
+
+// JSON contract
+function writeJSON(){
+  const out = { schema: 'kfb.ear-rig.v0', unit: 'FB_EAR_UNIT_v5.glb', attachBone: headBone ? headBone.name : null, mirrored: mirror,
+    note: 'Position in model space (metres, glTF y-up, +z = face). R values are in mirrored space: out/back/curl mean the same thing for both ears.',
+    ears: { L: ears.L.p, R: ears.R.p } };
+  $('json').value = JSON.stringify(out, (k, v) => typeof v === 'number' ? Math.round(v * 1000) / 1000 : v, 1);
+}
+$('copy').onclick = async () => {
+  try { await navigator.clipboard.writeText($('json').value); $('copyMsg').textContent = 'Kopiert.'; }
+  catch { $('json').select(); $('copyMsg').textContent = 'Kopieren ging nicht direkt: Text ist markiert, bitte mit Cmd/Strg+C kopieren.'; }
+};
+$('apply').onclick = () => {
+  try {
+    const j = JSON.parse($('json').value);
+    Object.assign(ears.L.p, j.ears.L); Object.assign(ears.R.p, j.ears.R);
+    mirror = !!j.mirrored; $('mirror').setAttribute('aria-pressed', mirror);
+    buildPanel(); $('copyMsg').textContent = 'Übernommen.';
+  } catch (e) { $('copyMsg').textContent = 'Das JSON ist nicht lesbar: ' + e.message; }
+};
+
+// views
+function setView(which){
+  const d = { front: [0, 0.1, 1], q34: [0.75, 0.25, 0.7], side: [1, 0.08, 0], back: [0, 0.15, -1], top: [0.05, 1, 0.35] }[which];
+  const tgt = headCenter.clone().add(new THREE.Vector3(0, 0.5, 0));
+  camera.position.copy(tgt).addScaledVector(new THREE.Vector3(...d).normalize(), 5.2);
+  controls.target.copy(tgt); controls.update();
+}
+for (const v of ['front', 'q34', 'side', 'back', 'top']) $('v-' + v).onclick = () => setView(v);
+
+// click: place a base, or pick an ear
+let placing = false;
+$('place').onclick = ev => { placing = !placing; ev.currentTarget.setAttribute('aria-pressed', placing); $('hint').hidden = !placing; };
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+let downAt = null;
+canvas.addEventListener('pointerdown', e => downAt = [e.clientX, e.clientY]);
+canvas.addEventListener('pointerup', e => {
+  if (!downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 5) return;
+  const r = canvas.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  if (placing) {
+    const hit = ray.intersectObjects(pickables, false)[0];
+    if (!hit) return;
+    // back into the rest pose of the head, then into the ear's own (mirrored for R) space
+    const cur = (headBone || model).matrixWorld;
+    const p = hit.point.clone().applyMatrix4(new THREE.Matrix4().copy(cur).invert()).applyMatrix4(new THREE.Matrix4().copy(headRestInv).invert());
+    const side = p.x >= 0 ? 'L' : 'R';
+    const target = placing && side !== sel && !mirror ? sel : side;
+    Object.assign(ears[target].p, { px: Math.abs(p.x), py: p.y, pz: p.z });
+    if (mirror) Object.assign(ears[target === 'L' ? 'R' : 'L'].p, { px: Math.abs(p.x), py: p.y, pz: p.z });
+    selectEar(target); writeJSON();
+    return;
+  }
+  const hits = ray.intersectObjects([earObj.L.mesh, earObj.R.mesh].filter(Boolean), false);
+  if (hits[0]) selectEar(hits[0].object.userData.earSide);
+});
+
+// ------------------------------------------------ motion test + springs
+let hopT = -1, nodT = -1, shakeT = -1, driving = false, still = false, time = 0;
+$('m-hop').onclick = () => hopT = 0;
+$('m-nod').onclick = () => nodT = 0;
+$('m-shake').onclick = () => shakeT = 0;
+$('m-drive').onclick = ev => { driving = !driving; ev.currentTarget.setAttribute('aria-pressed', driving); };
+$('m-still').onclick = ev => { still = !still; ev.currentTarget.setAttribute('aria-pressed', still); };
+let headQ0 = null;
+function drive(t, dt){
+  let y = 0, z = 0;
+  if (hopT >= 0) {
+    const T = hopT;
+    if (T < 0.12) y = -0.08 * Math.sin(T / 0.12 * Math.PI / 2);
+    else if (T < 0.72) { const u = (T - 0.12) / 0.6; y = -0.08 + 1.3 * u * (1 - u) * 1.0 + 0.08 * u; }
+    else if (T < 0.9) y = -0.07 * Math.sin((T - 0.72) / 0.18 * Math.PI);
+    else hopT = -1;
+  }
+  if (driving) { y += 0.018 * Math.sin(t * 17) * Math.sin(t * 2.3) + (Math.sin(t * 5.1) > 0.97 ? 0.035 : 0); z += 0.03 * Math.sin(t * 1.3); }
+  else y += 0.006 * Math.sin(t * 2.2);
+  if (rootMover) rootMover.position.set(0, y, z);
+  if (headBone) {
+    if (!headQ0) headQ0 = headBone.quaternion.clone();
+    let rx = 0, ry = 0;
+    if (nodT >= 0) { rx = 0.35 * Math.sin(nodT * 9) * Math.exp(-nodT * 1.5); if (nodT > 2.2) nodT = -1; }
+    if (shakeT >= 0) { ry = 0.45 * Math.sin(shakeT * 11) * Math.exp(-shakeT * 1.4); if (shakeT > 2.2) shakeT = -1; }
+    headBone.quaternion.copy(headQ0).multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(rx, ry, 0)));
+  }
+  return { y, z };
+}
+const earObj = { L: null, R: null };
+const DEF = DANGLE_DEFAULTS;
+function syncChain(e){
+  const E = earObj[e], p = ears[e].p;
+  E.chain.setPose({ droop: p.droop, fold: p.fold, foldAt: p.foldAt, curl: p.curl });
+  E.chain.setParams({
+    stiffness: DEF.stiffness.map(k => k * p.stiff), damping: DEF.damping.map(c => c * p.damp * Math.sqrt(p.stiff)),
+    elastic: p.elastic, wind: DEF.wind * p.wind, flutter: DEF.flutter * p.wind,
+  });
+  E.chain.enabled = !still;
+}
+function step(dt){
+  if (!model || !(dt > 1e-4)) return;
+  drive(time, dt);
+  model.updateMatrixWorld(true);
+  const follow = new THREE.Matrix4().multiplyMatrices((headBone || model).matrixWorld, headRestInv);
+  const wind = new THREE.Vector3(0, 0, driving ? -20 : 0);          // FB faces +z; driving forward = air flows back
+  for (const e of ['L', 'R']) {
+    const E = earObj[e]; if (!E) continue;
+    E.holder.matrix.multiplyMatrices(follow, restMatrix(e));
+    E.holder.matrixWorldNeedsUpdate = true;
+    syncChain(e);
+    E.chain.update(dt, { wind });
+  }
+}
+const clock = new THREE.Clock();
+function frame(){
+  const dt = Math.min(0.033, clock.getDelta());
+  if (hopT >= 0) hopT += dt; if (nodT >= 0) nodT += dt; if (shakeT >= 0) shakeT += dt;
+  for (let i = 0; i < 2; i++) { time += dt / 2; step(dt / 2); }
+  controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(frame);
+}
+
+(async () => {
+  try {
+    await loadModel(b64buf(BASE_B64), true);
+    earObj.L = await makeEar('L'); earObj.R = await makeEar('R');
+    buildPanel(); writeJSON(); resize(); setView('q34'); frame();
+  } catch (e) { showErr('Laden fehlgeschlagen: ' + (e.message || e)); console.error(e); }
+})();
+</script>
