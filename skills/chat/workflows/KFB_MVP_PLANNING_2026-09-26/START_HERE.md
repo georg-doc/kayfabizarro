@@ -14,6 +14,10 @@ This folder is the token-sparse WSA entry for the next KFB production wave. It d
 2. `EXECUTOR_BRIEFINGS_2026-09-26.md` — STARTABLE / WAITING / DO NOT START + copy-ready executor starts.
 3. `RECOVERY.md` — refs and recovery if this planning chat disappears.
 
+Racer working page:
+- `RACER_DESIGN_EXECUTION_OVERVIEW_2026-09-26.md` — current dispatch order + direct brief links; use instead of older Hub/Racer cards.
+- `CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md` — startable-now fresh Claude Design wrapper.
+
 Supporting evidence:
 - `ABORTED_WEBCHAT_RECOVERY_INVENTORY_2026-09-26.md` — recent aborted/fragile-chat inventory.
 - `ABORTED_WEBCHAT_RECOVERY.json` — machine-readable state.
