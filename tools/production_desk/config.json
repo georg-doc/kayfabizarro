@@ -83,8 +83,8 @@
     {
       "id": "toolbox-source-safe",
       "bucket": "LOOK_AT",
-      "title": "ToolBox r2 · 33/33 PASS → Georg Review",
-      "what": "Die r2-Owner-Deltas bleiben in PR #185. Der frische Stage-Review PR #221 konsumiert exakt diese Owner plus EarRig-v5/KayKit-Pins. Browser-Gate auf finalem PR-Head ist grün: 33/33; Source Object, State, Pose/IK und Mobile zeigen die vollständige Figur inklusive Ohren.",
+      "title": "ToolBox r2 · öffentlich geprüft → Georg Review",
+      "what": "Die r2-Owner-Deltas bleiben in PR #185. Review PR #221 konsumiert exakt diese Owner plus EarRig-v5/KayKit-Pins. Repository-Gate 33/33 und öffentlicher Stage-/ToolBox-/Registry-/Hub-Gate 20/20 sind grün; Source Object, State, Pose/IK und Mobile zeigen die vollständige Figur inklusive Ohren.",
       "provider": "ChatGPT Web / ToolBox receiving owner",
       "yourAction": "ToolBox r2 öffnen: zuerst Source Object mit FrizzleBob/EarRig prüfen, dann State und Pose/IK. Danach PASS, TUNE oder REJECT für diese r2-Reviewfläche geben.",
       "waitingFor": "Georgs direkte Sichtprüfung; kein Merge und keine Live-Promotion davor.",
@@ -94,9 +94,9 @@
         "Bleiben Figur, Ohren und Pose/IK auf Desktop und Mobile frei und gut beurteilbar?"
       ],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 185,
-      "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
-      "expectedHead": "10a83a63acd76d29f6867d15640f7861efc57b00",
+      "pr": 221,
+      "branch": "chatgpt-web/toolbox-r2-stage-review-recovery-2026-09-26",
+      "expectedHead": "36315aaeffe2029300d445fdb1ffbaa569519638",
       "brief": {
         "label": "r2 Intake / Receiving Route",
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
@@ -106,26 +106,22 @@
       "review": {
         "label": "ToolBox r2 prüfen",
         "path": "kfb-hub/stage/toolbox/production-01-r2/index.html",
-        "sourceRef": "PR #221 · final head dc946730 · 33/33 Browser PASS · cloudflare-live 44fda28e · public marker verification pending"
+        "sourceRef": "PR #221 · final head 36315aae · 33/33 repository + 20/20 public browser PASS · cloudflare-live 69cfd8c6 · human pending"
       }
     },
     {
       "id": "env-preview-01",
-      "bucket": "LOOK_AT",
-      "title": "Umgebungs-Vorschau · Residents + ToolBox",
-      "what": "Eine kompakte Prüfseite zeigt denselben aktuellen Licht-, Himmel-, Nebel- und Stimmungs-Look in Resident Atlas und ToolBox. WorldBuilder, OSM und Gelände bleiben die Welt-Owner; Travel/TinySkies liefert hier nur die Präsentationsstimmung.",
+      "bucket": "WAITING",
+      "title": "Umgebungs-Vorschau · PASS_WITH_TUNE",
+      "what": "Georg hat den gemeinsamen Licht-, Himmel-, Nebel- und Stimmungsansatz für Resident Atlas und ToolBox als Grundlage angenommen. Resident-Schalter, Kamera von unten, WorldBuilder-Doppelkopf, helle Schattenkanten und Nacht-Lesbarkeit bleiben getrennte, nicht blockierende Folgepunkte.",
       "provider": "WSA / ENV-PREVIEW-01",
-      "yourAction": "Prüfseite öffnen, zwischen Residents und ToolBox wechseln und jeweils World Match mit Source Isolation vergleichen. Danach PASS oder TUNE geben.",
-      "waitingFor": "",
-      "questions": [
-        "Passt World Match als gemeinsame Standardstimmung?",
-        "Bleiben Resident und Figur frei und gut beurteilbar?",
-        "Soll die neutrale Source Isolation weiterhin direkt erreichbar bleiben?"
-      ],
+      "yourAction": "",
+      "waitingFor": "Folgepunkte nur in ihren zuständigen Kamera-/Actor-/Rendering-/Lighting-Slices; ENV-PREVIEW-01 nicht erneut öffnen.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 218,
       "branch": "chatgpt-web/env-preview-01-2026-09-25",
-      "expectedHead": "a50f2fb05eac0a6e9a8f6916905256a1a23a56a5",
+      "expectedHead": "97a07ab9d805daf4e11d8e224e60f1885dcbd268",
       "brief": {
         "label": "ENV-PREVIEW-01 Return",
         "path": "tools/KFB-ToolBox/_handover/ENV_PREVIEW_01_2026-09-25/RETURN.md",
@@ -135,7 +131,7 @@
       "review": {
         "label": "Umgebungs-Vorschau prüfen",
         "path": "kfb-hub/stage/toolbox/environment-preview-01/index.html",
-        "sourceRef": "PR #218 · a50f2fb0 · public browser 9/9 PASS · cloudflare-live f4e76abd"
+        "sourceRef": "PR #218 · 97a07ab9 · public browser 9/9 PASS · Georg PASS_WITH_TUNE · cloudflare-live f4e76abd"
       }
     },
     {
