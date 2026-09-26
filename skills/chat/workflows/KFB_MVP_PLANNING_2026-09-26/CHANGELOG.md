@@ -28,3 +28,15 @@ Planning/docs only. Runtime/browser/Stage tests: 0.
 - final observed HUB-CTRL documentation head `1542f04524238d3227f8e1a2b1d027d98f93d8eb`;
 - WSA review-only lane added; Racer split into Track-Core G0→W0 and Playable-R0 HOLD;
 - generated Hub HTML/public root unchanged; no new CI/public claim.
+
+
+## 2026-09-26 · WSA decision checkpoint
+
+- recorded overall **APPROVE WITH D2/D3/D6 TUNES**;
+- approved JavaScript as authoritative Track Core while Race retains contact/physics ownership;
+- limited Camera-Core-0 to donor/owner recon and contract only;
+- replaced per-consumer height composition with one Surface Adapter resolution contract;
+- extended world-owner metadata correction to PR #204 and PR #218;
+- opened bounded dispatch for ENV Preview Stage, ToolBox r2 Stage, Track-Core G0→W0 and Camera-Core-0 recon;
+- kept Playable Track R0 and Cologne OSM R0 on HOLD;
+- runtime/browser/Stage/Live changes: 0.
