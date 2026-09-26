@@ -138,4 +138,4 @@ All numerical evidence above was read from existing exact PR/workflow/Return sou
 HUB-CTRL #202 source metadata was updated to expose this recovery review. Generated Hub HTML/public root was not edited or republished.
 
 ### Exactly one next gate
-**WSA approves/tunes D8 long-job protocol and starts the two bounded recoveries A1 B2b-P1 Closure + A9 City Bits Recon.**
+**WSA approves/tunes D8 long-job protocol and starts the two bounded recoveries A1 Web lifecycle test / Claude visual review + A9 City Bits Recon.**
