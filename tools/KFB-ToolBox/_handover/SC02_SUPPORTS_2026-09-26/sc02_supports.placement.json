@@ -3,6 +3,12 @@
  "id": "sc02-supports",
  "status": "CANDIDATE · scenery only",
  "family": "SC-LIB/sc_support.py (SC02b redesign, Georg PASS 26.09); donor rkit3_lib unchanged (organic_shaft/rounded_box reused)",
+ "default_style": "classic",
+ "optional_styles": [
+  "trunk",
+  "vine",
+  "rope"
+ ],
  "socket": {
   "frame": "route frame at s (heading + bank, grade)",
   "attach": "soffit = road surface - 2.25 m (RKIT body; later from core profile)",
