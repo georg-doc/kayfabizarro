@@ -1074,3 +1074,21 @@ Start at:
 Purpose: WSA recon/plan approval only. It separates STARTABLE / WAITING / DO NOT START executor slices and records the Claude Design Playable Track R0 SOURCE_REQUIRED stop as correct. Playable R0 remains downstream of Track-Core G0/W0 + proof/runtime parity + Web closed-package prep. HUB-CTRL #202 remains the Hub/status owner; do not hand-edit generated Hub HTML.
 
 Exactly one planning gate: **WSA recon + planning approval**. No merge/Stage/Live follows automatically.
+
+
+## 2026-09-26 · Fragile Web-chat recovery + long-job checkpoints
+
+For interrupted Web chats, long research, browser/CI waits or `Stream cache expired`, use the WSA planning packet on PR #222:
+
+- recovery inventory: `skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/ABORTED_WEBCHAT_RECOVERY_INVENTORY_2026-09-26.md`;
+- machine state: `skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/ABORTED_WEBCHAT_RECOVERY.json`;
+- candidate protocol: `skills/chat/workflows/KFB_MVP_PLANNING_2026-09-26/LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md`;
+- state template: `skills/chat/templates/KFB_LONG_JOB_STATE_TEMPLATE.json`.
+
+Candidate binding rule pending WSA approval: for a fragile/long job, persist **C0_PREFLIGHT** (owner/branch/goal + `JOB_STATE.json` / Recovery stub) before the expensive part. `Stream cache expired` is `UNKNOWN`: inspect GitHub/workflow state before any retry.
+
+Current two real recovery orphans identified by recon:
+1. Billboard B2b-P1 PR #212 — implementation/evidence exists, closure envelope missing;
+2. KayKit City Builder Bits — exact 41-model source inventory exists, requested application matrix was not formalized.
+
+Do not rebuild either from scratch. Use the prepared closure/recon briefs in the same planning folder.
