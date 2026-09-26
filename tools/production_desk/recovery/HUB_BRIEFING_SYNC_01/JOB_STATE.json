@@ -5,8 +5,8 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "work/hub-ctrl-01-2026-09-24",
   "pr": 202,
-  "state": "ACTIVE",
-  "phase": "C0_PREFLIGHT",
+  "state": "FROZEN_FAILURE",
+  "phase": "FROZEN_FAILURE",
   "goal": "Synchronize current WSA/owner status into #222 executor briefings, #204 self-service catalog, HUB-CTRL lanes, then regenerate and publicly verify the KFB Hub root without changing product runtimes.",
   "sourceRefs": [
     "PR #190 @ 58028b07d7618926c40ffaec3bd4053dc88c0efd",
@@ -16,17 +16,55 @@
     "PR #222 @ 9c013b741e45b71e898e892afd45b72ac97ea270",
     "HUB-CTRL #202 current branch"
   ],
-  "completed": [],
-  "open": [
-    "Update #222 executor board to current World/ToolBox/ENV/Racer/B2b status",
-    "Update #204 catalog priorities/statuses/heads without changing runtime owners",
-    "Update #202 lane pins and briefing links",
-    "Regenerate Hub through existing Production Desk owner path",
-    "Verify exact https://kayfabizarro.pages.dev/kfb-hub/ revision"
+  "completed": [
+    "C0 recovery checkpoint persisted",
+    "PR #222 executor board synchronized",
+    "PR #204 self-service catalog synchronized to 96 jobs / 42 READY / 54 HOLD",
+    "HUB-CTRL operational lanes synchronized",
+    "Production Desk builder tests green in final validation attempt",
+    "Online registry build green and VALID",
+    "Rendered Desk generated successfully"
   ],
-  "nextAction": "Inspect Production Desk generation/publication path and then update #222 briefing state.",
-  "lastVerifiedHead": null,
-  "checkpoints": [],
+  "open": [
+    "DOM contract: locate remaining PR/SHA-like text on card faces",
+    "DOM contract: replace stale hardcoded vfx-sfx primary-copy assumption with generic current paste-ready lane",
+    "Re-run validation in a fresh recovery slice",
+    "Only after green validation mirror tested root to cloudflare-live and verify exact pages.dev route"
+  ],
+  "nextAction": "Start HUB-BRIEFING-SYNC-F1 as a fresh DOM-contract-only recovery slice. Do not alter runtime/status architecture or publish the root before that gate passes.",
+  "lastVerifiedHead": "632d46c316f4b7069aa9cbaad3cf4ddd91331150",
+  "checkpoints": [
+    {
+      "phase": "C0_PREFLIGHT",
+      "commit": "7f8299533d9210a8c136b44b5b22e64323e0bcab"
+    },
+    {
+      "phase": "C1_BRIEFING_SYNC",
+      "refs": {
+        "pr222": "823bdb57c2ab30027cafcac9c867f5b6c3e8c9ac",
+        "pr204": "deec05c883de02836c3d699fa6e64d647d32a9f7",
+        "hubConfig": "8fe5f7be6af8532393a135d194b0768659d9c5b2"
+      }
+    },
+    {
+      "phase": "C3_EVIDENCE",
+      "attempt": 1,
+      "run": 36212815856,
+      "result": "FAIL_BUILDER_SUITE_SEPARATE_UX_FIXTURE"
+    },
+    {
+      "phase": "C3_EVIDENCE",
+      "attempt": 2,
+      "run": 36212892871,
+      "result": "FAIL_DOM"
+    },
+    {
+      "phase": "C3_EVIDENCE",
+      "attempt": 3,
+      "run": 36213057662,
+      "result": "FAIL_DOM_AFTER_REPAIR_PASS_2"
+    }
+  ],
   "research": {
     "checked": 0,
     "useful": 0,
@@ -34,10 +72,21 @@
     "failed": 0,
     "timeouts": 0
   },
-  "tests": {},
+  "tests": {
+    "finalAttempt": {
+      "run": 36213057662,
+      "builder": "16/16 PASS",
+      "renderUnit": "2/2 PASS",
+      "onlineRegistry": "PASS · 22 lanes · LOOK_AT 3 · RUNNING 4 · CAN_START 5 · WAITING 9 · problems 1",
+      "registryValidation": "VALID",
+      "renderDesk": "PASS",
+      "dom": "FAIL",
+      "publication": "NOT_STARTED"
+    }
+  },
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/",
-    "status": "NOT_STARTED"
+    "status": "NOT_PUBLISHED_THIS_SLICE"
   },
   "updated": "2026-09-26"
 }

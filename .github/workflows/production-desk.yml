@@ -15,7 +15,6 @@ on:
   push:
     branches:
       - main
-      - work/hub-ctrl-01-2026-09-24
     paths:
       - "tools/production_desk/**"
       - "skills/chat/**"
@@ -55,12 +54,7 @@ jobs:
           node-version: "20"
 
       - name: Builder tests
-        run: |
-          # HUB-BRIEFING-SYNC-01 validates the Production Desk owner only.
-          # test_hub_ux_recovery_stage.py is a separate preserved Session-Cut parity gate
-          # whose source fixture is intentionally absent on this owner branch.
-          python3 -m unittest discover -s tools/production_desk/tests -p 'test_build.py' -v
-          python3 -m unittest discover -s tools/production_desk/tests -p 'test_render_desk.py' -v
+        run: python3 -m unittest discover -s tools/production_desk/tests -v
 
       - name: Build production registry from live same-repo GitHub state
         env:
@@ -80,6 +74,7 @@ jobs:
             tools/production_desk/desk/KFB_PRODUCTION_DESK_V0.html registry/production/v1
 
       - name: Upload review evidence
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: kfb-production-desk

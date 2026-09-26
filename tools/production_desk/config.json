@@ -171,19 +171,19 @@
     },
     {
       "id": "production-desk",
-      "bucket": "RUNNING",
-      "title": "KFB Hub · Briefing Sync + Root Refresh",
-      "what": "HUB-BRIEFING-SYNC-01 is synchronizing current #190/#204/#218/#221/#222 truth into the Production Desk, then rebuilding the registry/root Hub through the existing owner path. Product runtimes remain unchanged.",
+      "bucket": "WAITING",
+      "title": "KFB Hub · Briefing Sync · DOM-Recovery",
+      "what": "Briefing- und Statusquellen sind synchronisiert. Production-Desk Builder, Online-Registry, Validator und Render sind grün; nach zwei begrenzten Reparaturpässen bleibt der DOM-Test rot. Der öffentliche Root-Hub wurde deshalb nicht aktualisiert.",
       "provider": "HUB-CTRL #202 · Web + Claude Design",
       "yourAction": "",
-      "waitingFor": "Builder/registry/DOM validation → cloudflare-live root mirror → exact pages.dev verification.",
+      "waitingFor": "HUB-BRIEFING-SYNC-F1 · frischer DOM-Contract-Census: verbleibenden sichtbaren Technik-Token lokalisieren + stale hardcoded Copy-Test verallgemeinern. Keine Status-/Runtime-/Publikationsänderung in diesem Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
       "brief": {
-        "label": "HUB-BRIEFING-SYNC-01 Recovery",
-        "path": "tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/RECOVERY.md",
+        "label": "HUB-BRIEFING-SYNC-01 Failure Recovery",
+        "path": "tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/START_HERE.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": false
       }
@@ -454,7 +454,7 @@
   ],
   "wsa": {
     "state": "APPROVED_WITH_TUNES",
-    "text": "WSA recon/plan approval is complete. D2/D3/D6 tunes are binding: no new Camera owner/module, one Surface Adapter resolves visible/support height, Travel/TinySkies is presentation/mobility donor only. Current bounded execution: World r2 Stage Prep now; Track Core G0→W0; Racer HUD+Billboards may run in parallel; no mass merge/Live promotion."
+    "text": "WSA recon/plan approval is complete. D2/D3/D6 tunes are binding. Briefing sources are synchronized; public Root-Hub refresh is frozen at the DOM validation gate after two repair passes. Product execution lanes remain valid."
   },
   "standards": [
     {
