@@ -1,4 +1,14 @@
-# WORLD-INTEGRATION-r2 · Failure Recovery
+# WORLD-INTEGRATION-r2 · Failure Recovery + Contract Reset
+
+Current status: **WORLD-R2-CONTRACT-RESET-01 PASS · RUNTIME UNCHANGED · STAGE NOT STARTED**
+
+Read `CONTRACT_RESET_RETURN.md` and `CONTRACT_RESET_SOURCE.json` first. The stale variant-label contract is now replaced by a structured audit; Hürth and Cologne each pass 55/55, accepted WB2 remains 34/34, and the browser harness passes 12/12.
+
+Exactly one current next gate: **WORLD-R2-STAGE-PREP-01**.
+
+---
+
+## Archived failed gate
 
 Status: **ARCHIVED_FAILED_CANDIDATE · current browser gate stopped**
 
@@ -18,5 +28,4 @@ Read:
 
 Do not repair the current browser gate again in this slice.
 
-Exactly one next gate:
-**WORLD-R2-CONTRACT-RESET-01 · reconcile the selftest variant semantics with the shared ToolBox locomotion profile contract, test-only first, before any runtime change.**
+The archived browser gate above remains historical evidence. It must not be resumed or patched.
