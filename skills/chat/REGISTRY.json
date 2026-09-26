@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -61,6 +61,40 @@
         "next-day Work review"
       ],
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
+    },
+    {
+      "id": "kfb-clay-asset-studio",
+      "kind": "plugin-tool",
+      "status": "EXPERIMENTAL",
+      "version": "0.1.0",
+      "pluginId": "plugins_6ab7de04f0c881919ab552b1a8f702b3",
+      "releaseId": "pluginrel_6ab7de067680819184bb6c981df7489c",
+      "scope": "USER",
+      "discoverability": "PRIVATE",
+      "pluginUrl": "https://chatgpt.com/plugins/plugins_6ab7de04f0c881919ab552b1a8f702b3",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/KFB_CLAY_ASSET_STUDIO_PLUGIN_v0.1.0_2026-09-26.md",
+      "skill": "produce-clay-assets",
+      "loadWhen": [
+        "KFB clay textures",
+        "ClayBound production assets",
+        "seamless texture generation",
+        "clay masks or decals",
+        "DIY stop-motion material assets"
+      ],
+      "owns": [
+        "review-gated generation of one clay/craft raster asset at a time",
+        "50-item priority queue",
+        "tile/alpha QA reporting for generated candidates"
+      ],
+      "doesNotOwn": [
+        "KFB ToolBox runtime",
+        "Asset Librarian",
+        "Blender/MCP material implementation",
+        "game shader/runtime ownership",
+        "automatic asset promotion",
+        "Stage or Live deployment"
+      ],
+      "note": "Private personal plugin verified at v0.1.0. No asset generated or human-approved yet. First gate is Asset 1: Smooth matte clay seamless texture with source + 3x3 repeat review."
     },
     {
       "id": "kfb-audio-soundscape-baseline-v1-2026-09-24",
