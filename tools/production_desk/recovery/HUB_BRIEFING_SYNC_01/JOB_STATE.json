@@ -5,8 +5,8 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "work/hub-ctrl-01-2026-09-24",
   "pr": 202,
-  "state": "FROZEN_FAILURE",
-  "phase": "C2_IMPLEMENTATION",
+  "state": "ACTIVE",
+  "phase": "C3_EVIDENCE",
   "goal": "Synchronize current WSA/owner status into #222 executor briefings, #204 self-service catalog, HUB-CTRL lanes, then regenerate and publicly verify the KFB Hub root without changing product runtimes.",
   "sourceRefs": [
     "PR #190 @ 58028b07d7618926c40ffaec3bd4053dc88c0efd",
@@ -18,18 +18,19 @@
   ],
   "completed": [
     "Synced #222 executor board to current World/ToolBox/ENV/Racer/B2b status",
-    "Synced #204 self-service status: 96 jobs / 42 READY / 54 HOLD; ENV Preview complete; WB2 design deferred behind World Stage",
-    "Synced HUB-CTRL config: WSA approved with tunes; World Stage Prep now; Racer HUD+Billboards parallel",
-    "Rehomed accepted Hub UX v2 template/runtime/test from PR #217 byte-identically"
+    "Synced #204 self-service status and fixed WORLD-NATURE prompt resolution",
+    "Synced HUB-CTRL operational lanes and WSA state",
+    "Rehomed accepted Hub UX v2 template/runtime/test from PR #217 byte-identically",
+    "HUB-BRIEFING-SYNC-F1 v2 validation passed on eab41a4: builder 16/16, render 2/2, registry VALID, Hub UX v2 contract 31/31"
   ],
   "open": [
-    "Run exact HUB-CTRL validation with current Hub UX v2 contract",
-    "Materialize validated registry + rendered v2 root",
+    "Run final clean build after WORLD-NATURE 96/96 prompt fix and current HUB-CTRL config",
+    "Materialize final validated registry + rendered UX v2 root",
     "Publish exact tested root/runtime/registry to cloudflare-live",
     "Open exact pages.dev root and verify current revision + Briefings"
   ],
-  "nextAction": "Wait for current HUB-CTRL push validation; inspect exact run before any publication.",
-  "lastVerifiedHead": "c8ab5b38434a5886eed1c7157c362f4251e5f1c5",
+  "nextAction": "Use the next exact HUB-CTRL validation run as the final publication artifact; no more source edits before publication.",
+  "lastVerifiedHead": "eab41a4a351d68ac0b930ba62c2b01630bc6dc1a",
   "checkpoints": [
     {
       "phase": "C0_PREFLIGHT",
@@ -65,6 +66,13 @@
       "phase": "C2_IMPLEMENTATION",
       "head": "c8ab5b38434a5886eed1c7157c362f4251e5f1c5",
       "note": "Accepted UX v2 shell rehomed; workflow switched to v2 contract test."
+    },
+    {
+      "phase": "HUB-BRIEFING-SYNC-F1",
+      "head": "eab41a4a351d68ac0b930ba62c2b01630bc6dc1a",
+      "run": 36213927499,
+      "result": "SUCCESS",
+      "evidence": "16/16 builder + 2/2 render + VALID registry + 31/31 Hub UX v2 contract"
     }
   ],
   "research": {
@@ -81,11 +89,20 @@
       "builder": "16/16 PASS",
       "render": "2/2 PASS",
       "registry": "VALID"
+    },
+    "finalV2Recovery": {
+      "run": 36213927499,
+      "result": "SUCCESS",
+      "builder": "16/16 PASS",
+      "render": "2/2 PASS",
+      "registry": "VALID",
+      "hubUxV2": "31/31 PASS",
+      "artifact": 10896956775
     }
   },
   "stage": {
     "route": "https://kayfabizarro.pages.dev/kfb-hub/",
-    "status": "NOT_PUBLISHED_THIS_SLICE"
+    "status": "READY_FOR_FINAL_BUILD"
   },
   "updated": "2026-09-26"
 }
