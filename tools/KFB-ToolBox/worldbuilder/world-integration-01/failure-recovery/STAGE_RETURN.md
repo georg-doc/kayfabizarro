@@ -1,7 +1,7 @@
 # RETURN · WORLD-R2-STAGE-PREP-01
 
 Date: 2026-09-26  
-Status: **LOCAL PACKAGE + BROWSER PASS · PUBLICATION PENDING**
+Status: **PUBLIC VERIFIED · HUMAN REVIEW**
 
 ## Result
 
@@ -33,16 +33,19 @@ The browser gate ran over local HTTP in installed Chrome, not `file://`.
   It remains a separate integration lane because its 33 LoC plates require an explicit rights check
   before public deployment. H4 is not silently folded into World r2.
 
-## Publication boundary
+## Publication
 
 The intended human route is:
 
 <https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-r2/>
 
-At this checkpoint it is not yet claimed public or verified.
+Publication head: `cloudflare-live@c035427ecb62023758589224c5d7872b217e0261`.
+
+The exact URL was visibly opened and repeated the full browser sequence with source marker
+`58028b07...`: **15/15 PASS**, Hürth **55/55**, Cologne **55/55**, WB2 **34/34**, zero page errors and
+zero failed source requests.
 
 ## Exactly one next gate
 
-Publish the already-tested closed package through the existing Stage owner, open the exact Cloudflare
-route, verify marker `58028b07...`, and repeat the packaged browser sequence. Then stop for Georg's
-World r2 visual/freeplay review.
+**Georg World r2 visual/freeplay review** on the fixed URL. No further WSA implementation before that
+human gate.

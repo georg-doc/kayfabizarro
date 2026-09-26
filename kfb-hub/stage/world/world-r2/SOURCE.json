@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-source/1",
   "stageId": "WORLD-R2-STAGE-PREP-01",
-  "status": "LOCAL_VERIFIED_CANDIDATE_NOT_PUBLIC_VERIFIED",
+  "status": "PUBLIC_VERIFIED_HUMAN_REVIEW",
   "source": {
     "repository": "georg-doc/kayfabizarro",
     "pullRequest": 190,
@@ -10,6 +10,13 @@
     "entry": "tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html"
   },
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-r2/",
+  "publication": {
+    "branch": "cloudflare-live",
+    "head": "c035427ecb62023758589224c5d7872b217e0261",
+    "verifiedAt": "2026-09-26",
+    "sourceMarker": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
+    "browserProof": "15/15 PASS · Hürth 55/55 · Cologne 55/55 · WB2 34/34 · 0 page errors · 0 failed source requests"
+  },
   "packageRule": "Runtime files are byte-identical copies from the source head. Only the Stage entry path and source-marker metadata differ.",
   "worlds": ["huerth", "cologne"],
   "acceptedRegression": "WB2 34/34",

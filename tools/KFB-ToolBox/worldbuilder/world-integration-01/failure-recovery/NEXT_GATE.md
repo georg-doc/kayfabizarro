@@ -1,14 +1,14 @@
-# NEXT GATE · WORLD-R2-STAGE-PUBLICATION-01
+# NEXT GATE · GEORG WORLD-R2 VISUAL/FREEPLAY REVIEW
 
-The contract-reset gate and local closed-package Stage gate passed without changing runtime owners.
+The contract-reset, local package and exact public Cloudflare browser gates passed without changing runtime owners.
 
-Publish the unchanged, locally verified package through the existing KFB Stage owner. Open the exact
-`https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-r2/` route, verify source marker `58028b07...`,
-and repeat the exact Hürth → Cologne → WB2 browser sequence there.
+Open `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-r2/` and review Hürth and Cologne in
+Edit and Play. Judge world scale, ground/support contact, OSM/building coherence, orbit freedom,
+FrizzleBob locomotion feel and the protected Dom/Hbf landmark path.
 
 No new World features, mobility, OSM corridor carving, camera owner, Track integration or Live promotion in this gate.
 
-After public verification: **STOP for Georg World r2 visual/freeplay review.**
+Return **PASS / TUNE / FAIL** with only concrete observations. **WSA STOP until this human gate.**
 
 ---
 
