@@ -1,3 +1,15 @@
+## CURRENT UPDATE · WORLD OWNERSHIP WORDING SYNC · 2026-09-26
+
+Status: **METADATA CORRECTED · NO RUNTIME / STAGE / LIVE CHANGE**
+
+- current WorldBuilder continuous terrain is the local-world host;
+- OSM and Track contribute bounded constraints through the Surface Adapter seam;
+- Travel/TinySkies is not the world base and remains a pinned sky/weather/light/mood plus selected camera/mobility donor;
+- current ENV Preview, research radar, workflow router and World Environment Consolidation briefs now agree;
+- this correction migrates no runtime owner and creates no new architecture.
+
+---
+
 ## CURRENT UPDATE · CARD ZONE / BIOME / ENVIRONMENT RECOVERY · 2026-09-26
 
 Status: **RECOVERED · SOURCE-PINNED · 15/15 PASS · NO RUNTIME / STAGE / LIVE CHANGE**
@@ -309,7 +321,8 @@ Prepared HOLD sequence:
 - `CZ-ENV-01`.
 
 Binding donor decisions:
-- Travel/TinySkies remains macro-world truth;
+- current WorldBuilder continuous terrain is the local-world host; OSM/Track constraints resolve through the Surface Adapter seam;
+- Travel/TinySkies remains a pinned procedural/presentation donor, not the world base;
 - one terrain/support height truth must serve visible terrain, support/physics and placement;
 - BiomeField and World/Deck Mood remain separate axes;
 - broad Nature uses the current TinySkies-style procedural/faceted `ts-flora.js` lane;
