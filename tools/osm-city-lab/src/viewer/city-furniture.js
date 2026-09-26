@@ -139,7 +139,7 @@ function approachesForNode(roads,nodeId){
   }
   const dedup=[];
   for(const a of out){
-    if(dedup.some(b=>Math.abs(a.dir.x*b.dir.x+a.dir.z*b.dir.z)>.985&&a.roadId===b.roadId))continue;
+    if(dedup.some(b=>(a.dir.x*b.dir.x+a.dir.z*b.dir.z)>.985&&a.roadId===b.roadId))continue;
     dedup.push(a);
   }
   return dedup;
