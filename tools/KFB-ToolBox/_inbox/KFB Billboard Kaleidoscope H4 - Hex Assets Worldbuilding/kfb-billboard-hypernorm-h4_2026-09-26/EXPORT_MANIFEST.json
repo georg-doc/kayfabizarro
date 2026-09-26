@@ -1,0 +1,147 @@
+{
+  "schema": "kfb.session-export/0.1",
+  "id": "KFB-BILLBOARD-HYPERNORM-H4-2026-09-26",
+  "date": "2026-09-26",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "producer": "Claude Design",
+  "status": {
+    "H4": "GEORG_PASS",
+    "H1_H3": "FROZEN",
+    "B2bP1": "ARCHIVED_FROZEN_UNCHANGED"
+  },
+  "publicDeployment": null,
+  "stageRoute": null,
+  "excluded": [
+    "images (tile.loc.gov, per URL)",
+    "fonts (fonts.googleapis.com)",
+    "3D models",
+    "B2b-P1 runtime (PR #211)"
+  ],
+  "maxFileBytes": 91006,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1217
+    },
+    {
+      "path": "SPRINT_PLAN.md",
+      "bytes": 3132
+    },
+    {
+      "path": "BRIEFING_FRESH_CHAT.md",
+      "bytes": 2321
+    },
+    {
+      "path": "HANDOVER_WSA.md",
+      "bytes": 2909
+    },
+    {
+      "path": "CONCEPT_H4.md",
+      "bytes": 4943
+    },
+    {
+      "path": "CHANGELOG_ADDITIVE.md",
+      "bytes": 2747
+    },
+    {
+      "path": "PROVENANCE_LOC_H4.json",
+      "bytes": 13275
+    },
+    {
+      "path": "src/KFB Billboard Hypernormalisation H1.dc.html",
+      "bytes": 61628
+    },
+    {
+      "path": "src/KFB Billboard Art Direction H2.dc.html",
+      "bytes": 20926
+    },
+    {
+      "path": "src/KFB Billboard Kaleidoscope H3.dc.html",
+      "bytes": 67007
+    },
+    {
+      "path": "src/support.js",
+      "bytes": 64222
+    },
+    {
+      "path": "src/KFB Billboard Kaleidoscope H4.dc.html",
+      "bytes": 90807
+    },
+    {
+      "path": "context/B2b-P1_REVIEW_CLAUDE_DESIGN.md",
+      "bytes": 3780
+    },
+    {
+      "path": "context/B2b-P1_SOURCE.json",
+      "bytes": 1545
+    },
+    {
+      "path": "evidence/01-h1.jpg",
+      "bytes": 52194
+    },
+    {
+      "path": "evidence/02-h1.jpg",
+      "bytes": 43141
+    },
+    {
+      "path": "evidence/h2.jpg",
+      "bytes": 58038
+    },
+    {
+      "path": "evidence/01-h2b.jpg",
+      "bytes": 29907
+    },
+    {
+      "path": "evidence/01-h2c.jpg",
+      "bytes": 32093
+    },
+    {
+      "path": "evidence/01-h2d.jpg",
+      "bytes": 80931
+    },
+    {
+      "path": "evidence/01-h2e.jpg",
+      "bytes": 91006
+    },
+    {
+      "path": "evidence/01-h3.jpg",
+      "bytes": 38919
+    },
+    {
+      "path": "evidence/02-h3.jpg",
+      "bytes": 46206
+    },
+    {
+      "path": "evidence/03-h3.jpg",
+      "bytes": 67922
+    },
+    {
+      "path": "evidence/04-h3.jpg",
+      "bytes": 52599
+    },
+    {
+      "path": "evidence/01-h4.jpg",
+      "bytes": 20715
+    },
+    {
+      "path": "evidence/03-h4.jpg",
+      "bytes": 68880
+    },
+    {
+      "path": "evidence/04-h4.jpg",
+      "bytes": 77821
+    },
+    {
+      "path": "evidence/05-h4.jpg",
+      "bytes": 26833
+    },
+    {
+      "path": "evidence/01-h4live.jpg",
+      "bytes": 37830
+    },
+    {
+      "path": "evidence/04-h4live.jpg",
+      "bytes": 51352
+    }
+  ]
+}

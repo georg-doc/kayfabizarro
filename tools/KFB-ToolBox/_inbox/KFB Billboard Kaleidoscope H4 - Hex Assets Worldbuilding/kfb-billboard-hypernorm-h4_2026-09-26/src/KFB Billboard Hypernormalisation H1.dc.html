@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#121110;color:#ece6da;-webkit-font-smoothing:antialiased}
+a{color:#ece6da;text-decoration:underline;text-decoration-color:#6b645a;text-underline-offset:3px}
+a:hover{color:#ff6a50;text-decoration-color:#ff6a50}
+</style>
+</helmet>
+<div style="font-family:'Archivo',sans-serif;font-size:16px;line-height:1.5;max-width:1120px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:56px">
+
+  <header data-screen-label="Kopf" style="display:flex;flex-direction:column;gap:14px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">KFB · Billboard-Medienfläche · Hypernormalisation H1</div>
+    <h1 style="margin:0;font-size:56px;line-height:1;font-weight:800;font-stretch:75%;letter-spacing:-.01em;text-wrap:balance">Montage-Engine, erster Entwurf</h1>
+    <p style="margin:0;max-width:760px;font-size:18px;color:#d6cfc2;text-wrap:pretty">Die 2:1-Tafelfläche (4,20 × 2,10 m) wird wie Film geschnitten, mit Takt, Schnitt und Montage. Das Material sind Archivplatten der Library of Congress, dazu Papierschnitt, Vektor-Annotation, Pixel-Art und gesetzte Typografie. Jede Schleife wird aus Seed und Schleifennummer berechnet.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">
+      <span style="border:1px solid #3a362f;padding:4px 8px">Konzept-Prototyp</span>
+      <span style="border:1px solid #3a362f;padding:4px 8px">Nur 2D-Fläche, nicht in der 3D-Runtime</span>
+      <span style="border:1px solid #3a362f;padding:4px 8px">Claude-Design-Preview · kein Stage / Public / Live</span>
+    </div>
+  </header>
+
+  <section data-screen-label="Player" style="display:flex;flex-direction:column;gap:12px">
+    <div onClick="{{ togglePlay }}" style="position:relative;width:100%;aspect-ratio:2/1;background:#000;border:1px solid #2a2724;cursor:pointer">
+      <canvas ref="{{ faceRef }}" width="1024" height="512" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em">
+      <button onClick="{{ togglePlay }}" style="font:inherit;color:#121110;background:#ece6da;border:1px solid #ece6da;padding:8px 14px;cursor:pointer;min-width:84px">{{ playLabel }}</button>
+      <button onClick="{{ restart }}" style="font:inherit;color:#ece6da;background:transparent;border:1px solid #3a362f;padding:8px 12px;cursor:pointer">Restart loop</button>
+      <div style="display:flex;border:1px solid #3a362f">
+        <sc-for list="{{ moods }}" as="m" hint-placeholder-count="4">
+          <button onClick="{{ m.onClick }}" style="font:inherit;color:{{ m.fg }};background:{{ m.bg }};border:0;padding:8px 12px;cursor:pointer">{{ m.name }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;border:1px solid #3a362f">
+        <span style="padding:8px 10px;color:#a39b8c">Seed</span>
+        <button onClick="{{ seedPrev }}" style="font:inherit;color:#ece6da;background:transparent;border:0;border-left:1px solid #3a362f;padding:8px 10px;cursor:pointer">−</button>
+        <span style="padding:8px 10px;min-width:44px;text-align:center">{{ seed }}</span>
+        <button onClick="{{ seedNext }}" style="font:inherit;color:#ece6da;background:transparent;border:0;border-right:1px solid #3a362f;padding:8px 10px;cursor:pointer">+</button>
+        <button onClick="{{ seedRandom }}" style="font:inherit;color:#ece6da;background:transparent;border:0;padding:8px 10px;cursor:pointer">Random</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#2a2724;border:1px solid #2a2724;font-family:'IBM Plex Mono',monospace;font-size:12px">
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Loop · Mood</div><div>{{ info.loop }} · {{ info.mood }} · {{ info.bpm }} BPM</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Time</div><div>{{ info.tc }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Shot</div><div>{{ info.shot }} · {{ info.layout }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Cut · Layer</div><div>{{ info.cut }} · {{ info.ov }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Plates</div><div>{{ info.plates }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Measured</div><div>{{ info.fps }} fps · {{ info.pool }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">No-repeat</div><div>{{ info.uniq }}</div></div>
+    </div>
+    <canvas ref="{{ tlRef }}" onClick="{{ scrub }}" width="1024" height="90" style="width:100%;height:auto;display:block;cursor:pointer;border:1px solid #2a2724"></canvas>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#6f6a62"></span>FULL</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#b39a6a"></span>CUTOUT</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#6f8596"></span>SPLIT</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#8e6f86"></span>GRID</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#f4efe4"></span>INTERTITLE</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#ffd23f"></span>ENDCARD · PIXEL</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#e8412c"></span>STUTTER · VECTOR</span>
+      <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:#57c7d4"></span>MOSAIC</span>
+      <span>Klick auf die Zeitleiste springt an die Stelle.</span>
+    </div>
+  </section>
+
+  <section data-screen-label="Storyboard" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Storyboard der laufenden Schleife</h2>
+      <p style="margin:0;color:#a39b8c;max-width:720px">Acht Einstellungen aus der aktuellen Schleife, jeweils in der Mitte der Einstellung gerendert. Mit jeder neuen Schleife wird es neu gebaut.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
+      <sc-for list="{{ boards }}" as="b" hint-placeholder-count="8">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+          <canvas ref="{{ b.setRef }}" width="512" height="256" style="width:100%;height:auto;aspect-ratio:2/1;display:block;background:#000;border:1px solid #2a2724"></canvas>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c;line-height:1.4">{{ b.label }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Grammatik" style="display:flex;flex-direction:column;gap:28px">
+    <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Montage-Grammatik</h2>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Takt je Stimmung</h3>
+      <div style="overflow-x:auto">
+        <table style="border-collapse:collapse;width:100%;min-width:720px;font-size:14px">
+          <thead>
+            <tr style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">Mood</th>
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">BPM</th>
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">Schleife</th>
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">Einstellung (Schläge)</th>
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">Schnitte</th>
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">Grading</th>
+              <th style="padding:8px 10px;border-bottom:1px solid #3a362f">Typo Z1 / Z2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #2a2724;font-weight:700">CALM</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">72</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">53,3 s</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">4 · 8</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Hard, Dissolve, selten Flash</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Papier-Duoton, warm</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Caption / Caption</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #2a2724;font-weight:700">TENSE</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">96</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">40,0 s</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">2 · 4</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Hard, Flash, Stutter</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Kalt, hart</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Caption / Slab</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid #2a2724;font-weight:700">MANIC</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">132</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">29,1 s</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">1 · 2 · 4</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Hard, Flash, viel Stutter</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Acid-Duoton Navy/Gelb</td><td style="padding:8px 10px;border-bottom:1px solid #2a2724">Slab / Slab</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin:0;color:#a39b8c;font-size:14px;max-width:760px">AUTO läuft die Folge CALM → TENSE → MANIC → TENSE, eine Stimmung je Schleife. Die Schleifenlänge ist immer 16 Takte à 4 Schläge.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Aufbau einer Schleife (64 Schläge)</h3>
+        <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <li><b>0–24 · Etablieren.</b> Thema A. Zeile 1 steht ab Schlag 4 für 10 Schläge.</li>
+          <li><b>24–48 · Widerspruch.</b> Thema B. Zeile 2 steht ab Schlag 28.</li>
+          <li><b>48–52 · Zwischentitel.</b> Schwarz, Zeile 3, die Kippung.</li>
+          <li><b>52–60 · Nachklang.</b> Kurze Einstellungen, Thema B.</li>
+          <li><b>60–64 · Endkarte.</b> Pixel-Emblem und Wortmarke.</li>
+        </ol>
+        <p style="margin:0;color:#a39b8c;font-size:14px">Die Einstellungen werden parataktisch gereiht: Jede steht neben der vorigen, ohne Übergangslogik. Phrasengrenzen fallen immer auf einen harten Schnitt.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Ebenen</h3>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <li><b>L0 Archivplatte</b>: Ken-Burns-Fahrt, auf Zweiern gerendert (12 fps, Stop-Motion).</li>
+          <li><b>L1 Papierschnitt</b>: gerissene Kante, Schlagschatten, Klebestreifen, Wackeln auf Zweiern.</li>
+          <li><b>L2 Vektor</b>: SVG-Pfade als Path2D, also Kreis, Pfeil und Etikett, von Hand gezogen.</li>
+          <li><b>L3 Pixel</b>: 12×12-Sprites und Mosaikfenster in der Fotografie.</li>
+          <li><b>L4 Typo</b>: auf dem 12×6-Raster, wird auf Einsen gerendert (flüssig).</li>
+          <li><b>L5 Oberfläche</b>: Scanlines, Korn, Vignette. Zeilensprünge gibt es nur bei STUTTER-Schnitten.</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Schnitte und Layouts</h3>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <li><b>HARD</b>: der Grundschnitt.</li>
+          <li><b>DISSOLVE</b>: Überblendung über ¾ Schlag, nur bei CALM häufig.</li>
+          <li><b>FLASH</b>: 2 Frames Weiß oder Akzentfarbe.</li>
+          <li><b>STUTTER</b>: einen Schlag lang springt das Bild zwischen alter und neuer Einstellung, dazu ein Zeilensprung.</li>
+          <li><b>Layouts</b>: FULL · CUTOUT (Papierschnitt über Platte) · SPLIT (gerissene Naht) · GRID (dieselbe Platte dreimal, Mitte als Raster).</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Zufall und Wiederholung</h3>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px">
+          <li>Es gibt zwei unabhängige Ströme: Bild = hash(seed, loop, 11), Text = hash(seed, loop, 23).</li>
+          <li>Keine Platte kommt zweimal innerhalb von 5 Einstellungen, und keine aus den letzten 3 der Vorschleife.</li>
+          <li>Die Signatur der Schleife (Platten, Layouts, Triplet) wird gegen die letzten 12 Schleifen geprüft. Bei einem Treffer wird neu gewürfelt.</li>
+          <li>12 Schleifen dauern auch im schnellsten Mood 5,8 min. Das erfüllt „keine gleiche Sequenz in 5 min“.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Typo" style="display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Typo-System</h2>
+      <p style="margin:0;color:#a39b8c;max-width:760px">Das Raster hat 12 Spalten × 6 Zeilen auf 1024 × 512 px, der Rand beträgt 48 px. 1 px auf der Fläche entspricht 4,1 mm auf der Tafel. Es stehen nie mehr als drei Zeilen gleichzeitig, ein Triplet pro Schleife.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="aspect-ratio:2/1;background:#5b5650;position:relative;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6%">
+          <span style="background:rgba(0,0,0,.66);color:#f4efe4;font-weight:600;font-size:clamp(12px,2.2vw,19px);padding:4px 10px">It has all been arranged.</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">CAPTION · Archivo 600 · 30 px · Versalhöhe ≈ 8,6 cm · zentriert im unteren Band</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="aspect-ratio:2/1;background:#1b1464;position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:4px;padding:0 0 9% 5%">
+          <span style="background:#ffd23f;color:#1b1464;font-weight:800;font-stretch:75%;text-transform:uppercase;font-size:clamp(18px,3.8vw,34px);line-height:1;padding:3px 8px">Buy radium.</span>
+          <span style="background:#ffd23f;color:#1b1464;font-weight:800;font-stretch:75%;text-transform:uppercase;font-size:clamp(18px,3.8vw,34px);line-height:1;padding:3px 8px">Feel approved.</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">SLAB · Archivo 800 condensed · 76 px · Versalhöhe ≈ 22 cm · links auf Spalte 1, Breite 8 Spalten · Wort für Wort auf halben Schlägen</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="aspect-ratio:2/1;background:#000;display:flex;align-items:center;justify-content:center;padding:0 8%">
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#f4efe4;font-size:clamp(18px,3vw,28px);text-align:center">We learned to love the static.</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">INTERTITLE · Instrument Serif italic · 58 px · schwarz, eine Aussage, hält 4 Schläge</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Triplet dieser Schleife · {{ tripThemes }}</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#2a2724;border:1px solid #2a2724">
+        <div style="background:#121110;padding:12px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#a39b8c;text-transform:uppercase">1 · Behauptung</div><div style="font-size:18px">{{ trip0 }}</div></div>
+        <div style="background:#121110;padding:12px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#a39b8c;text-transform:uppercase">2 · Beruhigung</div><div style="font-size:18px">{{ trip1 }}</div></div>
+        <div style="background:#121110;padding:12px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#a39b8c;text-transform:uppercase">3 · Kippung</div><div style="font-size:18px">{{ trip2 }}</div></div>
+      </div>
+      <p style="margin:0;color:#a39b8c;font-size:14px;max-width:760px">Es gibt fünf Themen: consumption, control, science, media und hope. Pro Schleife werden zwei gezogen, A für die Bilder in Phrase 1, B für Phrase 2. Jede Zeile füllt eine Vorlage aus beiden Themen, daraus entsteht die semantische Spannung. Die Texte sind Englisch, weil sie für Spieler bestimmt sind.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Archivpool" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Archivpool · 16 Platten</h2>
+      <p style="margin:0;color:#a39b8c;max-width:760px">Alle Platten stammen aus den „Free to Use and Reuse“-Sets der Library of Congress und werden direkt von tile.loc.gov geladen. Es gibt keine Kopie im Projekt und kein Bild aus GitHub. Die Ladeprüfung läuft live, die Rechte je Einzelstück prüft ein Kurator. Die Runtime entscheidet keine Rechte.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:#2a2724;border:1px solid #2a2724">
+      <sc-for list="{{ pool }}" as="p" hint-placeholder-count="16">
+        <div style="background:#121110;padding:10px;display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;align-items:start">
+          <img src="{{ p.url }}" alt="{{ p.title }}" style="width:64px;height:64px;object-fit:cover;display:block;filter:grayscale(1);background:#222">
+          <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+            <div style="font-size:13px;line-height:1.3">{{ p.title }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#a39b8c">{{ p.who }} · {{ p.year }} · {{ p.tagText }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;display:flex;gap:8px"><a href="{{ p.link }}" target="_blank">{{ p.loc }}</a><span style="color:{{ p.statusColor }}">{{ p.status }}</span></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Befund" style="display:flex;flex-direction:column;gap:12px">
+    <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Befund</h2>
+    <div style="display:grid;grid-template-columns:180px minmax(0,1fr);gap:1px;background:#2a2724;border:1px solid #2a2724;font-size:14px">
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">SOURCE</div><div style="background:#121110;padding:10px">Georgs Briefing „Surreal Procedural Billboard Engine“ vom 26.09. und die LoC-Sets Poster Parade, Advertising Food, Scientists &amp; Inventors sowie FSA/OWI. GitHub wurde nicht als Bildquelle verwendet.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">DECISION</div><div style="background:#121110;padding:10px">B2b-P1 bleibt als Beleg liegen, sein Look ist ein Kandidat für CITY_LIGHTS_ROTATION. H1 ist ein neuer Kandidat daneben. P1 wird nicht umgebaut.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">IMPLEMENTATION</div><div style="background:#121110;padding:10px">Ein Canvas-2D-Compositor mit Sequencer, Triplet-Generator, Grading-Cache, Papierschnitt, Vektor- und Pixel-Ebene sowie Oberfläche, dazu Zeitleiste und Storyboard.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">TESTED RESULT</div><div style="background:#121110;padding:10px">Live gemessen und oben ausgewiesen: fps, geladene Platten und Wiederholungsprüfung. NOT_TESTED sind 60 fps auf einem Mittelklasse-Laptop und der Lauf auf der 3D-Tafel.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">GEORG ACCEPTANCE</div><div style="background:#121110;padding:10px">OPEN · Liest sich das als Hypernormalisation? PASS, TUNE oder REJECT.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">OPEN</div><div style="background:#121110;padding:10px">
+        <ol style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px">
+          <li>Videofragmente: PD-Filme (National Film Registry, Prelinger) sind noch nicht drin, H1 arbeitet nur mit Standbildern.</li>
+          <li>GLSL-CRT und Glitch statt der Canvas-Oberfläche. Das widerspricht dem alten B2b-Verbot „kein Post-Stack“, Georg entscheidet.</li>
+          <li>Die TTS-Ebene ist nicht begonnen.</li>
+          <li>Die Übertragung auf die akzeptierte B2a-Tafel als CanvasTexture ist ein eigener Slice.</li>
+          <li>Die Rechte je Platte sind noch nicht einzeln geprüft.</li>
+          <li>Georgs Reddit-Referenzen fehlen weiterhin. H1 ist nicht an ihnen geeicht.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;surfaceFx&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.6,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Face&quot;},&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Face&quot;},&quot;tempo&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.6,&quot;max&quot;:1.4,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sequencer&quot;}}">
+const T = 'https://tile.loc.gov/storage-services/service/pnp/';
+const W = 1024, H = 512, MG = 48, CW = (W - 2 * MG) / 12, RH = (H - 2 * MG) / 6;
+const PAPER = '#efe7d6';
+const POOL = [
+  { id: 'p01', src: 'fsa/8b08000/8b08100/8b08182v.jpg', loc: 'fsa.8b08182', title: 'Canned meat and canned fish. All of these are rationed.', who: 'Alfred T. Palmer', year: '1943', tags: ['consumption', 'control'] },
+  { id: 'p02', src: 'fsa/8a33000/8a33800/8a33841v.jpg', loc: 'fsa.8a33841', title: 'Self Service A&P Super Market, Durham, N.C.', who: 'Jack Delano', year: '1940', tags: ['consumption'] },
+  { id: 'p03', src: 'fsa/8d29000/8d29700/8d29742v.jpg', loc: 'fsa.8d29742', title: '"Keep Right. Eat Fish!" sign on a motor truck', who: 'Gordon Parks', year: '1943', tags: ['consumption', 'control'] },
+  { id: 'p04', src: 'fsa/8c52000/8c52400/8c52415v.jpg', loc: 'fsa.8c52415', title: 'General store interior, Moundville, Alabama', who: 'Walker Evans', year: '1936', tags: ['consumption'] },
+  { id: 'p05', src: 'fsa/8b27000/8b27500/8b27503v.jpg', loc: 'fsa.8b27503', title: 'Doctoring a sick sheep, National Agricultural Research Center', who: 'FSA/OWI', year: '1935–42', tags: ['science', 'control'] },
+  { id: 'p06', src: 'fsa/8d03000/8d03000/8d03008v.jpg', loc: 'fsa.8d03008', title: 'Laboratory technician, Provident Hospital, Chicago', who: 'FSA/OWI', year: '1942', tags: ['science'] },
+  { id: 'p07', src: 'fsa/8d43000/8d43300/8d43386v.jpg', loc: 'fsa.8d43386', title: 'Chemist Dr. C. K. Liang, National Institute of Health', who: 'FSA/OWI', year: '1944', tags: ['science'] },
+  { id: 'p08', src: 'fsa/8b14000/8b14900/8b14922v.jpg', loc: 'fsa.8b14922', title: 'Grocery store of Mr. J. Benjamin, Washington, D.C.', who: 'Gordon Parks', year: '1942', tags: ['consumption', 'hope'] },
+  { id: 'p09', src: 'ppmsca/05500/05583v.jpg', loc: 'ppmsca.05583', title: "Get fat on Loring's Fat-ten-u and Corpula foods", who: 'Poster', year: '1895', tags: ['consumption', 'media'], poster: true },
+  { id: 'p10', src: 'ppmsca/46300/46337v.jpg', loc: 'ppmsca.46337', title: 'Geological Society of America, all but 60 of their fellows', who: 'Composite', year: '1899', tags: ['control', 'science'] },
+  { id: 'p11', src: 'ppmsc/03700/03761v.jpg', loc: 'ppmsc.03761', title: "Edison's greatest marvel, the Vitascope", who: 'Poster', year: '1896', tags: ['media', 'hope'], poster: true },
+  { id: 'p12', src: 'hec/36100/36107v.jpg', loc: 'hec.36107', title: 'Carnegie Institution scientists broadcast over CBS radio', who: 'Harris & Ewing', year: '1930', tags: ['media', 'science'] },
+  { id: 'p13', src: 'hec/35900/35976v.jpg', loc: 'hec.35976', title: 'Bureau of Standards: listening to an engine', who: 'Harris & Ewing', year: '1930', tags: ['science', 'control'] },
+  { id: 'p14', src: 'hec/25800/25858v.jpg', loc: 'hec.25858', title: 'Philo Farnsworth talking about his patents', who: 'Harris & Ewing', year: '1939', tags: ['media'] },
+  { id: 'p15', src: 'npcc/12800/12896v.jpg', loc: 'npcc.12896', title: 'Astronomers at Naval Observatory viewing an eclipse', who: 'National Photo Co.', year: '1925', tags: ['hope', 'science'] },
+  { id: 'p16', src: 'ppmsc/03500/03521v.jpg', loc: 'ppmsc.03521', title: 'I want you for U.S. Army', who: 'James Montgomery Flagg', year: '1917', tags: ['control', 'media'], poster: true }
+];
+const THEMES = ['consumption', 'control', 'science', 'media', 'hope'];
+const BANK = {
+  consumption: { subj: ['Hunger', 'The supermarket', 'Your appetite', 'The tin can'], noun: ['abundance', 'margarine', 'appetite', 'comfort'], adj: ['satisfied', 'full', 'fresh', 'rationed'] },
+  control: { subj: ['The committee', 'Order', 'The plan', 'Management'], noun: ['order', 'permission', 'procedure', 'silence'], adj: ['approved', 'in order', 'arranged', 'correct'] },
+  science: { subj: ['The laboratory', 'Progress', 'The experiment', 'The expert'], noun: ['progress', 'evidence', 'precision', 'radium'], adj: ['measured', 'proven', 'sterile', 'calibrated'] },
+  media: { subj: ['The broadcast', 'The picture', 'The signal', 'The announcer'], noun: ['static', 'reception', 'applause', 'news'], adj: ['live', 'on air', 'clear', 'tuned in'] },
+  hope: { subj: ['Tomorrow', 'The future', 'The eclipse', 'Daylight'], noun: ['daylight', 'optimism', 'weather', 'dawn'], adj: ['bright', 'near', 'inevitable', 'ready'] }
+};
+const TPL = {
+  claim: ['{SubjA} is the new {nounB}.', 'Everything is {adjA} now.', '{SubjA} has been {adjB}.', 'There is enough {nounA} for everyone.'],
+  reassure: ['Relax. {SubjB} is taking care of it.', 'You do not need to understand.', 'It has all been arranged.', 'Nothing will change.'],
+  twist: ['Buy {nounA}. Feel {adjB}.', 'The truth was always {adjA}.', 'We learned to love the {nounB}.', '{SubjB} will remember you.']
+};
+const LABELS = ['FIG. 1', 'SUBJECT 04', 'APPROVED', 'NORMAL', 'CONTROL GROUP', 'YOU ARE HERE', 'SAMPLE B', 'OBSERVED'];
+const SPR = {
+  EYE: [['............', '....kkkk....', '..kkwwwwkk..', '.kwwwkkwwwk.', 'kwwwkkkkwwwk', 'kwwwkkrkwwwk', 'kwwwkkkkwwwk', '.kwwwkkwwwk.', '..kkwwwwkk..', '....kkkk....', '............', '............'],
+        ['............', '............', '............', '............', '............', 'kkkkkkkkkkkk', '.kk..kk..kk.', '............', '............', '............', '............', '............']],
+  SMILE: [['...kkkkkk...', '..kyyyyyyk..', '.kyyyyyyyyk.', 'kyykyyyykyyk', 'kyykyyyykyyk', 'kyyyyyyyyyyk', 'kyyyyyyyyyyk', 'kykyyyyyykyk', 'kyykkkkkkyyk', '.kyyyyyyyyk.', '..kyyyyyyk..', '...kkkkkk...'],
+          ['...kkkkkk...', '..kyyyyyyk..', '.kyyyyyyyyk.', 'kyyyyyyykyyk', 'kykkkyyykyyk', 'kyyyyyyyyyyk', 'kyyyyyyyyyyk', 'kykyyyyyykyk', 'kyykkkkkkyyk', '.kyyyyyyyyk.', '..kyyyyyyk..', '...kkkkkk...']],
+  BOLT: [['......kkkk..', '.....kyyk...', '....kyyk....', '...kyyk.....', '..kyyykkkk..', '.kyyyyyyyk..', '..kkkkyyk...', '.....kyk....', '....kyk.....', '...kyk......', '...kk.......', '............'],
+         ['......kkkk..', '.....kwwk...', '....kwwk....', '...kwwk.....', '..kwwwkkkk..', '.kwwwwwwwk..', '..kkkkwwk...', '.....kwk....', '....kwk.....', '...kwk......', '...kk.......', '............']],
+  HOUSE: [['.....kk.....', '....kwwk....', '...kwwwwk...', '..kwwwwwwk..', '.kwwwwwwwwk.', 'kkkkkkkkkkkk', '.kwwwwwwwwk.', '.kwkkwwrrwk.', '.kwkkwwrrwk.', '.kwwwwwkkwk.', '.kwwwwwkkwk.', '.kkkkkkkkkk.'],
+          ['.....kk.....', '....kwwk....', '...kwwwwk...', '..kwwwwwwk..', '.kwwwwwwwwk.', 'kkkkkkkkkkkk', '.kwwwwwwwwk.', '.kwyywwyywk.', '.kwyywwyywk.', '.kwwwwwkkwk.', '.kwwwwwkkwk.', '.kkkkkkkkkk.']]
+};
+const SPR_KEYS = ['EYE', 'SMILE', 'BOLT', 'HOUSE'];
+const PAL = { k: '#111111', w: '#f4efe4', r: '#e8412c', y: '#ffd23f' };
+const MOODS = {
+  CALM: { bpm: 72, lens: [4, 8, 8, 4], cuts: { HARD: 5, DISSOLVE: 4, FLASH: 1 }, layouts: { FULL: 5, CUTOUT: 4, SPLIT: 2 }, overlays: { NONE: 5, VECTOR: 3, PIXEL: 1, MOSAIC: 1 }, grade: 'PAPER', cutGrade: 'COLD', jitter: 0.8, typo0: 'CAPTION', typo1: 'CAPTION', slab: '#efe4cc', slabInk: '#141210', accent: '#e8412c', flash: '#ffffff' },
+  TENSE: { bpm: 96, lens: [2, 4, 4, 2, 4], cuts: { HARD: 6, FLASH: 3, STUTTER: 2, DISSOLVE: 1 }, layouts: { FULL: 4, CUTOUT: 3, SPLIT: 2, GRID: 2 }, overlays: { NONE: 3, VECTOR: 4, PIXEL: 2, MOSAIC: 2 }, grade: 'COLD', cutGrade: 'HT_PAPER', jitter: 1.4, typo0: 'CAPTION', typo1: 'SLAB', slab: '#f4f4f0', slabInk: '#0d1418', accent: '#e8412c', flash: '#ffffff' },
+  MANIC: { bpm: 132, lens: [1, 2, 2, 1, 4, 2], cuts: { HARD: 4, FLASH: 3, STUTTER: 4 }, layouts: { FULL: 2, CUTOUT: 3, SPLIT: 2, GRID: 3 }, overlays: { NONE: 2, VECTOR: 3, PIXEL: 4, MOSAIC: 3 }, grade: 'ACID', cutGrade: 'HT_ACID', jitter: 2.2, typo0: 'SLAB', typo1: 'SLAB', slab: '#ffd23f', slabInk: '#1b1464', accent: '#ff3b6b', flash: '#ff3b6b' }
+};
+const AUTO_SEQ = ['CALM', 'TENSE', 'MANIC', 'TENSE'];
+const GRADES = {
+  PAPER: { f: 'grayscale(1) contrast(1.15) brightness(1.05)', lo: '#2a2320', hi: '#efe4cc' },
+  COLD: { f: 'grayscale(1) contrast(1.45)', lo: '#0d1418', hi: '#d9e4e8' },
+  ACID: { f: 'grayscale(1) contrast(1.6)', lo: '#1b1464', hi: '#ffd23f' },
+  RAW: { f: 'saturate(1.2) contrast(1.08)', lo: null, hi: null }
+};
+const LAYOUT_COL = { FULL: '#6f6a62', CUTOUT: '#b39a6a', SPLIT: '#6f8596', GRID: '#8e6f86', INTERTITLE: '#f4efe4', ENDCARD: '#ffd23f' };
+const CUT_COL = { HARD: '#5a554d', DISSOLVE: '#9ab0c0', FLASH: '#ffffff', STUTTER: '#e8412c' };
+const OV_COL = { VECTOR: '#e8412c', PIXEL: '#ffd23f', MOSAIC: '#57c7d4' };
+const ARROW = 'M0 0 L34 0 M22 -10 L34 0 L22 10';
+const LS_KEY = 'kfb-hn-h1-v1';
+
+function mulberry(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function hash() { let h = 2166136261 >>> 0; for (let i = 0; i < arguments.length; i++) { h ^= (arguments[i] | 0); h = Math.imul(h, 16777619); h ^= h >>> 13; } return h >>> 0; }
+function strHash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function pick(r, a) { return a[Math.floor(r() * a.length)]; }
+function wpick(r, o) { let s = 0, k; for (k in o) s += o[k]; let x = r() * s; for (k in o) { x -= o[k]; if (x <= 0) return k; } return k; }
+function fmt(s) { const m = Math.floor(s / 60), r = s - m * 60; return m + ':' + (r < 10 ? '0' : '') + r.toFixed(1); }
+function torn(seed, x, y, w, h, amp) {
+  const r = mulberry(seed), pts = [];
+  const edge = (x0, y0, x1, y1, n) => { for (let i = 0; i < n; i++) { const t = i / n, nx = -(y1 - y0), ny = x1 - x0, L = Math.hypot(nx, ny) || 1, d = (r() - .5) * 2 * amp; pts.push([x0 + (x1 - x0) * t + nx / L * d, y0 + (y1 - y0) * t + ny / L * d]); } };
+  const nw = Math.max(6, Math.round(w / 16)), nh = Math.max(4, Math.round(h / 16));
+  edge(x, y, x + w, y, nw); edge(x + w, y, x + w, y + h, nh); edge(x + w, y + h, x, y + h, nw); edge(x, y + h, x, y, nh);
+  return pts;
+}
+function poly(ctx, pts) { ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); }
+
+class Component extends DCLogic {
+  state = { seed: 1966, moodSel: 'AUTO', playing: true, info: {}, boards: [], loadTick: 0, trip: ['', '', ''], tripThemes: '' };
+
+  faceRef = el => { this.faceEl = el; };
+  tlRef = el => { this.tlEl = el; };
+  boardEls = [];
+  boardRefFns = Array.from({ length: 8 }, (_, i) => el => { if (el) this.boardEls[i] = el; });
+
+  componentDidMount() {
+    this.imgs = {}; this.failed = {}; this.cache = new Map(); this.history = []; this.rerolls = 0; this.loopsMade = 0;
+    this.t = 0; this.loopIdx = 0; this.fps = 0; this.lastInfo = 0; this.lastSave = 0;
+    try { const s = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); if (s) { this.t = s.t || 0; this.loopIdx = s.loopIdx || 0; this.setState({ seed: s.seed ?? 1966, moodSel: s.moodSel || 'AUTO' }); this._seed = s.seed ?? 1966; this._moodSel = s.moodSel || 'AUTO'; } } catch (e) {}
+    this.off = document.createElement('canvas'); this.off.width = W; this.off.height = H;
+    this.tmp = document.createElement('canvas');
+    const sc = document.createElement('canvas'); sc.width = 4; sc.height = 3; const sx = sc.getContext('2d'); sx.fillStyle = 'rgba(0,0,0,1)'; sx.fillRect(0, 2, 4, 1); this.scanSrc = sc;
+    const nz = document.createElement('canvas'); nz.width = nz.height = 256; const nx = nz.getContext('2d'); const id = nx.createImageData(256, 256); const nr = mulberry(99);
+    for (let i = 0; i < id.data.length; i += 4) { const v = Math.floor(nr() * 255); id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } nx.putImageData(id, 0, 0); this.noiseSrc = nz;
+    const fontsReady = document.fonts ? Promise.all([document.fonts.load('800 76px Archivo'), document.fonts.load('condensed 800 76px Archivo'), document.fonts.load('600 30px Archivo'), document.fonts.load('italic 58px "Instrument Serif"'), document.fonts.load('600 15px "IBM Plex Mono"')]).catch(() => {}) : Promise.resolve();
+    const imgsReady = Promise.all(POOL.map(p => new Promise(res => {
+      const im = new Image(); im.crossOrigin = 'anonymous';
+      im.onload = () => { this.imgs[p.id] = im; this.setState(s => ({ loadTick: s.loadTick + 1 })); res(); };
+      im.onerror = () => { this.failed[p.id] = true; this.setState(s => ({ loadTick: s.loadTick + 1 })); res(); };
+      im.src = T + p.src;
+    })));
+    Promise.all([fontsReady, imgsReady]).then(() => {
+      this.pool = POOL.filter(p => this.imgs[p.id]);
+      if (!this.pool.length) return;
+      this.newPlan();
+      this.ready = true;
+    });
+    this.last = performance.now();
+    this.raf = requestAnimationFrame(this.tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+
+  seedV() { return this._seed ?? this.state.seed; }
+  moodSelV() { return this._moodSel ?? this.state.moodSel; }
+  moodFor(li) { const m = this.moodSelV(); return m === 'AUTO' ? AUTO_SEQ[li % AUTO_SEQ.length] : m; }
+
+  makeTriplet(r, A, B) {
+    const a = BANK[A], b = BANK[B];
+    const fill = s => s.replace('{SubjA}', pick(r, a.subj)).replace('{SubjB}', pick(r, b.subj)).replace('{nounA}', pick(r, a.noun)).replace('{nounB}', pick(r, b.noun)).replace('{adjA}', pick(r, a.adj)).replace('{adjB}', pick(r, b.adj));
+    return [fill(pick(r, TPL.claim)), fill(pick(r, TPL.reassure)), fill(pick(r, TPL.twist))];
+  }
+
+  makePlan(seed, li, moodName, salt) {
+    const M = MOODS[moodName], tempo = this.props.tempo ?? 1, bs = 60 / (M.bpm * tempo);
+    const rv = mulberry(hash(seed, li, 11 + salt * 101)), rt = mulberry(hash(seed, li, 23 + salt * 7));
+    const th = THEMES.slice(); for (let i = th.length - 1; i > 0; i--) { const j = Math.floor(rt() * (i + 1)); const x = th[i]; th[i] = th[j]; th[j] = x; }
+    const A = th[0], B = th[1];
+    const trip = this.makeTriplet(rt, A, B);
+    const used = [], prevTail = this.prevTail || [];
+    const pool = this.pool;
+    const choose = (theme, avoid) => {
+      let c = pool.filter(p => !used.slice(-5).includes(p.id) && !prevTail.includes(p.id) && !avoid.includes(p.id));
+      if (!c.length) c = pool.filter(p => !avoid.includes(p.id));
+      const w = c.map(p => p.tags.includes(theme) ? 3 : 1); let s = w.reduce((a, b) => a + b, 0), x = rv() * s;
+      for (let i = 0; i < c.length; i++) { x -= w[i]; if (x <= 0) { used.push(c[i].id); return c[i].id; } }
+      used.push(c[c.length - 1].id); return c[c.length - 1].id;
+    };
+    const shots = [];
+    const addShots = (from, to, themeAt) => {
+      let b = from;
+      while (b < to) {
+        let len = pick(rv, M.lens); if (b + len > to) len = to - b; if (b < 24 && b + len > 24) len = 24 - b;
+        const theme = themeAt(b), layout = wpick(rv, M.layouts);
+        const plate = choose(theme, []);
+        const plate2 = (layout === 'CUTOUT' || layout === 'SPLIT') ? choose(theme === A ? B : A, [plate]) : null;
+        const cut = (b === 0 || b === 24 || b === 52) ? 'HARD' : wpick(rv, M.cuts);
+        shots.push({ b0: b, b1: b + len, layout, plate, plate2, cut, ov: wpick(rv, M.overlays), fx: .3 + rv() * .4, fy: .3 + rv() * .4, dir: rv() * Math.PI * 2, zoom: rv() < .5 ? 1 : -1, cx: rv() < .5 ? .3 : .7, rot: (rv() - .5) * 9, tornSeed: Math.floor(rv() * 1e9), ax: .22 + rv() * .56, ay: .28 + rv() * .4, label: pick(rv, LABELS), sprite: pick(rv, SPR_KEYS), sx: rv() < .5 ? 0 : 10, mc: Math.floor(rv() * 9), mr: Math.floor(rv() * 4) });
+        b += len;
+      }
+    };
+    addShots(0, 48, b => b < 24 ? A : B);
+    shots.push({ b0: 48, b1: 52, layout: 'INTERTITLE', cut: 'HARD', ov: 'NONE' });
+    addShots(52, 60, () => B);
+    shots.push({ b0: 60, b1: 64, layout: 'ENDCARD', cut: moodName === 'MANIC' ? 'FLASH' : 'HARD', ov: 'NONE', sprite: pick(rv, SPR_KEYS) });
+    const lines = [
+      { i: 0, b0: 4, b1: 14, style: M.typo0, text: trip[0] },
+      { i: 1, b0: 28, b1: 38, style: M.typo1, text: trip[1] },
+      { i: 2, b0: 48, b1: 52, style: 'INTERTITLE', text: trip[2] }
+    ];
+    const sig = strHash(shots.map(s => (s.plate || '') + (s.plate2 || '') + s.layout).join(',') + trip.join('|'));
+    return { mood: moodName, bs, len: 64 * bs, shots, lines, trip, themes: [A, B], sig };
+  }
+
+  newPlan() {
+    const seed = this.seedV(), li = this.loopIdx, mood = this.moodFor(li);
+    let plan = null;
+    for (let salt = 0; salt < 8; salt++) { plan = this.makePlan(seed, li, mood, salt); if (!this.history.includes(plan.sig)) break; this.rerolls++; }
+    this.history.push(plan.sig); if (this.history.length > 12) this.history.shift();
+    this.loopsMade++;
+    this.plan = plan;
+    this.prevTail = plan.shots.filter(s => s.plate).slice(-3).map(s => s.plate);
+    if (this.t >= plan.len) this.t = 0;
+    const n = plan.shots.length, idx = [];
+    for (let i = 0; i < 8; i++) { const k = Math.round(i * (n - 1) / 7); if (!idx.includes(k)) idx.push(k); }
+    const boards = idx.map((k, i) => {
+      const s = plan.shots[k], b = (s.b0 + s.b1) / 2;
+      const ln = plan.lines.find(L => b >= L.b0 && b < L.b1);
+      return { key: plan.sig + '-' + k, b, label: String(k + 1).padStart(2, '0') + ' · ' + fmt(b * plan.bs) + ' · ' + s.layout + (s.cut !== 'HARD' ? ' · ' + s.cut : '') + (s.ov && s.ov !== 'NONE' ? ' · ' + s.ov : '') + (ln ? ' · „' + ln.text + '“' : ''), setRef: this.boardRefFns[i] };
+    });
+    this.setState({ boards, trip: plan.trip, tripThemes: plan.themes[0] + ' × ' + plan.themes[1] }, () => requestAnimationFrame(() => this.drawBoards()));
+  }
+
+  graded(id, g) {
+    const key = id + '|' + g; let c = this.cache.get(key); if (c) return c;
+    const img = this.imgs[id], w = img.naturalWidth, h = img.naturalHeight, ht = g.startsWith('HT_'), G = GRADES[ht ? g.slice(3) : g];
+    c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+    x.filter = ht ? 'grayscale(1) contrast(1.4)' : G.f; x.drawImage(img, 0, 0); x.filter = 'none';
+    if (ht) {
+      const cell = 6, sw = Math.ceil(w / cell), sh = Math.ceil(h / cell); const s = document.createElement('canvas'); s.width = sw; s.height = sh;
+      const sx = s.getContext('2d'); sx.drawImage(c, 0, 0, sw, sh); const d = sx.getImageData(0, 0, sw, sh).data;
+      x.fillStyle = G.hi || PAPER; x.fillRect(0, 0, w, h); x.fillStyle = G.lo || '#111'; x.beginPath();
+      for (let j = 0; j < sh; j++) for (let i = 0; i < sw; i++) { const l = d[(j * sw + i) * 4] / 255, r = (1 - l) * cell * .72; if (r > .4) { const cx = i * cell + cell / 2, cy = j * cell + cell / 2; x.moveTo(cx + r, cy); x.arc(cx, cy, r, 0, Math.PI * 2); } }
+      x.fill();
+    } else if (G.hi) {
+      x.globalCompositeOperation = 'multiply'; x.fillStyle = G.hi; x.fillRect(0, 0, w, h);
+      x.globalCompositeOperation = 'screen'; x.fillStyle = G.lo; x.fillRect(0, 0, w, h); x.globalCompositeOperation = 'source-over';
+    }
+    this.cache.set(key, c); return c;
+  }
+
+  cover(ctx, src, x, y, w, h, zoom, fx, fy, px, py, clip) {
+    const sw = src.width, sh = src.height, s = Math.max(w / sw, h / sh) * zoom, dw = sw * s, dh = sh * s;
+    let ox = x + (w - dw) * fx + px, oy = y + (h - dh) * fy + py;
+    ox = Math.min(x, Math.max(x + w - dw, ox)); oy = Math.min(y, Math.max(y + h - dh, oy));
+    if (clip === false) { ctx.drawImage(src, ox, oy, dw, dh); return; }
+    ctx.save(); ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip(); ctx.drawImage(src, ox, oy, dw, dh); ctx.restore();
+  }
+
+  cutGrade(id, M) { const p = POOL.find(q => q.id === id); return p && p.poster ? 'RAW' : M.cutGrade; }
+
+  paperPiece(ctx, pts, drawInside) {
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 14; ctx.shadowOffsetX = 4; ctx.shadowOffsetY = 8; poly(ctx, pts); ctx.fillStyle = PAPER; ctx.fill(); ctx.restore();
+    ctx.save(); ctx.lineJoin = 'round'; ctx.lineWidth = 10; ctx.strokeStyle = PAPER; poly(ctx, pts); ctx.stroke(); ctx.restore();
+    ctx.save(); poly(ctx, pts); ctx.clip(); drawInside(); ctx.restore();
+  }
+
+  drawSprite(ctx, key, frame, x, y, cell) {
+    const rows = SPR[key][frame % 2];
+    ctx.fillStyle = 'rgba(0,0,0,.45)';
+    rows.forEach((row, j) => { for (let i = 0; i < row.length; i++) if (row[i] !== '.') ctx.fillRect(x + (i + 1) * cell, y + (j + 1) * cell, cell, cell); });
+    rows.forEach((row, j) => { for (let i = 0; i < row.length; i++) { const ch = row[i]; if (ch !== '.') { ctx.fillStyle = PAL[ch]; ctx.fillRect(x + i * cell, y + j * cell, cell, cell); } } });
+  }
+
+  drawLayer(ctx, s, ps, tsec, tb, M) {
+    const fr = Math.floor(tsec * 12), jr = mulberry(hash(fr, s.b0, 7));
+    const jx = (jr() - .5) * 2 * M.jitter, jy = (jr() - .5) * 2 * M.jitter;
+    const kz = 1.06 + .12 * (s.zoom > 0 ? ps : 1 - ps), px = Math.cos(s.dir || 0) * 22 * ps, py = Math.sin(s.dir || 0) * 12 * ps;
+    if (s.layout === 'INTERTITLE') { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H); return; }
+    if (s.layout === 'ENDCARD') {
+      ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
+      this.drawSprite(ctx, s.sprite, Math.floor(tb) % 2, MG + CW * 1.2 + jx, H / 2 - 66 + jy, 11);
+      ctx.fillStyle = '#141210'; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+      ctx.font = '800 72px Archivo'; if ('fontStretch' in ctx) ctx.fontStretch = 'condensed';
+      ctx.fillText('KAYFABIZARRO', MG + CW * 3.6, H / 2 + 22);
+      if ('fontStretch' in ctx) ctx.fontStretch = 'normal';
+      ctx.font = '600 15px "IBM Plex Mono"'; ctx.fillStyle = '#4a433b';
+      ctx.fillText('ARCHIVE PLATES · LIBRARY OF CONGRESS · FREE TO USE', MG + CW * 3.6, H / 2 + 56);
+      return;
+    }
+    if (s.layout === 'FULL') this.cover(ctx, this.graded(s.plate, M.grade), 0, 0, W, H, kz, s.fx, s.fy, px + jx * .5, py + jy * .5);
+    else if (s.layout === 'CUTOUT') {
+      this.cover(ctx, this.graded(s.plate, M.grade), 0, 0, W, H, kz, s.fx, s.fy, px, py);
+      const cw = W * .4, ch = H * .62;
+      ctx.save(); ctx.translate(s.cx * W + jx, H * .47 + jy); ctx.rotate((s.rot + (jr() - .5) * .6) * Math.PI / 180);
+      const pts = torn(s.tornSeed, -cw / 2, -ch / 2, cw, ch, 4);
+      this.paperPiece(ctx, pts, () => this.cover(ctx, this.graded(s.plate2, this.cutGrade(s.plate2, M)), -cw / 2, -ch / 2, cw, ch, 1.04 + .08 * ps, .5, .4, -px * .4, 0, false));
+      ctx.save(); ctx.translate(-cw * .2, -ch / 2 - 2); ctx.rotate(-.12); ctx.fillStyle = 'rgba(236,224,186,.78)'; ctx.fillRect(-36, -10, 72, 20); ctx.restore();
+      ctx.restore();
+    } else if (s.layout === 'SPLIT') {
+      this.cover(ctx, this.graded(s.plate, M.grade), 0, 0, W, H, kz, s.fx * .6, s.fy, px, py);
+      const sx = W * (.46 + (s.cx - .5) * .14);
+      ctx.save(); ctx.translate(jx, jy);
+      const pts = torn(s.tornSeed, sx, -24, W - sx + 24, H + 48, 7);
+      this.paperPiece(ctx, pts, () => this.cover(ctx, this.graded(s.plate2, this.cutGrade(s.plate2, M)), sx, 0, W - sx, H, 1.04 + .06 * (1 - ps), .5, .45, 0, 0, false));
+      ctx.restore();
+    } else if (s.layout === 'GRID') {
+      ctx.fillStyle = '#0b0b0b'; ctx.fillRect(0, 0, W, H);
+      const g = 10, pw = (W - g * 4) / 3;
+      for (let i = 0; i < 3; i++) {
+        if (ps < i * .1) continue;
+        const x = g + i * (pw + g), src = this.graded(s.plate, i === 1 ? 'HT_' + M.grade : M.grade);
+        this.cover(ctx, src, x + (i === fr % 3 ? jx : 0), g, pw, H - 2 * g, 1.2 + i * .35 + .05 * ps, Math.min(.95, Math.max(.05, s.fx + (i - 1) * .22)), s.fy, 0, 0);
+      }
+    }
+    this.drawOverlay(ctx, s, ps, tsec, tb, M, jx, jy);
+  }
+
+  drawOverlay(ctx, s, ps, tsec, tb, M, jx, jy) {
+    if (s.ov === 'VECTOR') {
+      const ax = s.ax * W, ay = s.ay * H, r0 = 74, q = Math.min(1, ps * 2.4), seedA = s.tornSeed % 97;
+      ctx.save(); ctx.strokeStyle = M.accent; ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.beginPath(); const steps = 60;
+      for (let i = 0; i <= steps * q; i++) { const a = -Math.PI / 2 + i / steps * Math.PI * 2.08, rr = r0 * (1 + .05 * Math.sin(a * 3 + seedA)); const x = ax + Math.cos(a) * rr + jx * .3, y = ay + Math.sin(a) * rr * .86 + jy * .3; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+      ctx.stroke();
+      if (q > .55) {
+        const dir = ax < W / 2 ? 1 : -1, lx = ax + dir * (r0 + 70), ly = ay - r0 * .9;
+        ctx.beginPath(); ctx.moveTo(ax + dir * r0 * .75, ay - r0 * .5); ctx.lineTo(lx, ly); ctx.stroke();
+        ctx.font = '600 15px "IBM Plex Mono"'; const tw = ctx.measureText(s.label).width;
+        const bx = dir > 0 ? lx : lx - tw - 20;
+        ctx.fillStyle = M.accent; ctx.fillRect(bx, ly - 14, tw + 20, 28);
+        ctx.fillStyle = '#f4efe4'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText(s.label, bx + 10, ly + 1);
+        ctx.save(); ctx.translate(ax - dir * (r0 + 56), ay + r0 * .55); ctx.scale(dir, 1); ctx.stroke(new Path2D(ARROW)); ctx.restore();
+      }
+      ctx.restore();
+    } else if (s.ov === 'PIXEL') {
+      this.drawSprite(ctx, s.sprite, Math.floor(tb) % 2, MG + CW * s.sx, MG + RH * .4 + (Math.floor(tb) % 2) * 4, 10);
+    } else if (s.ov === 'MOSAIC') {
+      const x = Math.round(MG + s.mc * CW), y = Math.round(MG + s.mr * RH), w = Math.round(CW * 3), h = Math.round(RH * 2), b = [14, 10, 20][Math.floor(tb) % 3];
+      const tw = Math.max(1, Math.ceil(w / b)), th = Math.max(1, Math.ceil(h / b));
+      this.tmp.width = tw; this.tmp.height = th; const tx = this.tmp.getContext('2d'); tx.drawImage(ctx.canvas, x, y, w, h, 0, 0, tw, th);
+      ctx.save(); ctx.imageSmoothingEnabled = false; ctx.drawImage(this.tmp, 0, 0, tw, th, x, y, w, h); ctx.strokeStyle = '#111'; ctx.lineWidth = 3; ctx.strokeRect(x, y, w, h); ctx.restore();
+    }
+  }
+
+  wrap(ctx, text, maxW) {
+    const words = text.split(' '), lines = []; let cur = '';
+    words.forEach(w => { const t = cur ? cur + ' ' + w : w; if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t; });
+    if (cur) lines.push(cur); return lines;
+  }
+
+  drawTypo(ctx, plan, tb, M) {
+    plan.lines.forEach(L => {
+      if (tb < L.b0 || tb >= L.b1) return;
+      const a = Math.max(0, Math.min(1, (tb - L.b0) / .35, (L.b1 - tb) / .35));
+      ctx.save(); ctx.textBaseline = 'alphabetic';
+      if (L.style === 'CAPTION') {
+        ctx.globalAlpha = a; let fs = 30; ctx.font = '600 30px Archivo';
+        while (ctx.measureText(L.text).width > W - 2 * MG - 40 && fs > 18) { fs -= 2; ctx.font = '600 ' + fs + 'px Archivo'; }
+        const tw = ctx.measureText(L.text).width, y0 = H - MG - 52;
+        ctx.fillStyle = 'rgba(0,0,0,.66)'; ctx.fillRect(W / 2 - tw / 2 - 18, y0, tw + 36, 50);
+        ctx.fillStyle = '#f4efe4'; ctx.textAlign = 'center'; ctx.fillText(L.text, W / 2, y0 + 35);
+      } else if (L.style === 'SLAB') {
+        ctx.globalAlpha = Math.max(0, Math.min(1, (L.b1 - tb) / .35));
+        ctx.font = '800 76px Archivo'; if ('fontStretch' in ctx) ctx.fontStretch = 'condensed';
+        const lines = this.wrap(ctx, L.text.toUpperCase(), CW * 8);
+        let n = Math.floor((tb - L.b0) * 2) + 1;
+        const last = MG + RH * 5 - 8, lh = 84; ctx.textAlign = 'left';
+        lines.forEach((ln, i) => {
+          const ws = ln.split(' '), vis = ws.slice(0, Math.max(0, n)).join(' '); n -= ws.length; if (!vis) return;
+          const base = last - lh * (lines.length - 1 - i), tw = ctx.measureText(vis).width;
+          ctx.fillStyle = M.slab; ctx.fillRect(MG - 14, base - 64, tw + 28, 76);
+          ctx.fillStyle = M.slabInk; ctx.fillText(vis, MG, base);
+        });
+        if ('fontStretch' in ctx) ctx.fontStretch = 'normal';
+      } else if (L.style === 'INTERTITLE') {
+        ctx.font = 'italic 58px "Instrument Serif"'; ctx.fillStyle = '#f4efe4'; ctx.textAlign = 'center';
+        const lines = this.wrap(ctx, L.text, 780), lh = 66, y0 = H / 2 - (lines.length - 1) * lh / 2 + 18;
+        lines.forEach((ln, i) => ctx.fillText(ln, W / 2, y0 + i * lh));
+      }
+      ctx.restore();
+    });
+  }
+
+  drawSurface(ctx, tsec, fx) {
+    if (fx <= 0) return;
+    ctx.save();
+    if (!this.scanPat || this.scanCtx !== ctx) { this.scanPat = ctx.createPattern(this.scanSrc, 'repeat'); this.noisePat = ctx.createPattern(this.noiseSrc, 'repeat'); this.scanCtx = ctx; }
+    ctx.globalAlpha = .2 * fx; ctx.fillStyle = this.scanPat; ctx.fillRect(0, 0, W, H);
+    const o = hash(Math.floor(tsec * 12), 5); const ox = o % 256, oy = (o >>> 8) % 256;
+    ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = .22 * fx; ctx.translate(-ox, -oy); ctx.fillStyle = this.noisePat; ctx.fillRect(ox, oy, W, H); ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+    const g = ctx.createRadialGradient(W / 2, H / 2, H * .35, W / 2, H / 2, W * .62); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,' + (.6 * fx) + ')');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    ctx.restore();
+  }
+
+  drawGrid(ctx) {
+    ctx.save(); ctx.strokeStyle = 'rgba(87,199,212,.6)'; ctx.lineWidth = 1;
+    for (let i = 0; i <= 12; i++) { const x = Math.round(MG + i * CW) + .5; ctx.beginPath(); ctx.moveTo(x, MG); ctx.lineTo(x, H - MG); ctx.stroke(); }
+    for (let j = 0; j <= 6; j++) { const y = Math.round(MG + j * RH) + .5; ctx.beginPath(); ctx.moveTo(MG, y); ctx.lineTo(W - MG, y); ctx.stroke(); }
+    ctx.restore();
+  }
+
+  vhsJump(ctx, tsec) {
+    const r = mulberry(hash(Math.floor(tsec * 24), 3));
+    for (let k = 0; k < 3; k++) { const y = Math.floor(r() * H), h = Math.floor(6 + r() * 28), dx = Math.round((r() - .5) * 44); ctx.drawImage(ctx.canvas, 0, y, W, h, dx, y, W, h); }
+  }
+
+  drawFrame(ctx, tsec, plan, opts) {
+    const M = MOODS[plan.mood], bs = plan.bs, tq = Math.floor(tsec * 12) / 12, tb = tsec / bs, tbq = tq / bs;
+    let idx = plan.shots.findIndex(s => tb >= s.b0 && tb < s.b1); if (idx < 0) idx = plan.shots.length - 1;
+    const s = plan.shots[idx], prev = idx > 0 ? plan.shots[idx - 1] : null;
+    const ps = Math.min(1, Math.max(0, (tbq - s.b0) / (s.b1 - s.b0))), inShot = tb - s.b0;
+    ctx.save(); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+    if (s.cut === 'STUTTER' && prev && inShot < 1 && Math.floor(tsec * 12) % 2 === 1) this.drawLayer(ctx, prev, 1, tsec, tb, M);
+    else if (s.cut === 'DISSOLVE' && prev && inShot < .75) { this.drawLayer(ctx, prev, 1, tsec, tb, M); ctx.globalAlpha = inShot / .75; this.drawLayer(ctx, s, ps, tsec, tb, M); ctx.globalAlpha = 1; }
+    else this.drawLayer(ctx, s, ps, tsec, tb, M);
+    if (s.cut === 'STUTTER' && inShot < 1) this.vhsJump(ctx, tsec);
+    if (s.cut === 'FLASH' && (tsec - s.b0 * bs) < 2 / 24) { ctx.fillStyle = M.flash; ctx.fillRect(0, 0, W, H); }
+    this.drawTypo(ctx, plan, tb, M);
+    this.drawSurface(ctx, tsec, opts.fx);
+    if (opts.grid) this.drawGrid(ctx);
+    ctx.restore();
+    return { s, idx };
+  }
+
+  drawTimeline(tb) {
+    const c = this.tlEl, P = this.plan; if (!c || !P) return;
+    const x = c.getContext('2d'), TW = c.width, TH = c.height, G = 70, pw = TW - G - 8, bx = b => G + b / 64 * pw;
+    x.fillStyle = '#0e0d0c'; x.fillRect(0, 0, TW, TH);
+    for (let b = 0; b <= 64; b++) { x.fillStyle = b % 4 ? '#1f1c19' : '#3a352e'; x.fillRect(Math.round(bx(b)), 2, 1, TH - 4); }
+    x.font = '600 10px "IBM Plex Mono"'; x.fillStyle = '#a39b8c'; x.textBaseline = 'middle'; x.textAlign = 'left';
+    [['SHOT', 15], ['CUT', 35], ['LAYER', 52], ['TYPE', 73]].forEach(([l, y]) => x.fillText(l, 8, y));
+    P.shots.forEach(s => {
+      const a = bx(s.b0), w = bx(s.b1) - a;
+      x.fillStyle = LAYOUT_COL[s.layout]; x.fillRect(a + 1, 6, w - 2, 18);
+      if (s.cut !== 'HARD') { x.fillStyle = CUT_COL[s.cut]; x.fillRect(a, 30, s.cut === 'DISSOLVE' ? pw / 64 * .75 : Math.max(4, pw / 64 * (s.cut === 'STUTTER' ? 1 : .15)), 10); }
+      else { x.fillStyle = CUT_COL.HARD; x.fillRect(a, 30, 2, 10); }
+      if (OV_COL[s.ov]) { x.fillStyle = OV_COL[s.ov]; x.fillRect(a + 1, 47, w - 2, 10); }
+    });
+    P.lines.forEach(L => { const a = bx(L.b0), w = bx(L.b1) - a; x.fillStyle = '#ece6da'; x.fillRect(a, 64, w, 18); x.fillStyle = '#121110'; x.fillText((L.i + 1) + ' ' + L.style, a + 5, 73); });
+    const ph = bx(Math.min(64, tb)); x.fillStyle = '#ff3b1f'; x.fillRect(Math.round(ph) - 1, 0, 2, TH);
+  }
+
+  drawBoards() {
+    if (!this.plan || !this.ready) return;
+    const fx = this.props.surfaceFx ?? .6;
+    this.state.boards.forEach((b, i) => {
+      const el = this.boardEls[i]; if (!el) return;
+      this.drawFrame(this.off.getContext('2d'), b.b * this.plan.bs, this.plan, { fx, grid: false });
+      el.getContext('2d').drawImage(this.off, 0, 0, el.width, el.height);
+    });
+  }
+
+  drawLoading() {
+    const c = this.faceEl; if (!c) return; const x = c.getContext('2d');
+    x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
+    const n = Object.keys(this.imgs || {}).length, f = Object.keys(this.failed || {}).length;
+    x.fillStyle = '#a39b8c'; x.font = '600 18px "IBM Plex Mono", monospace'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText('LOADING ARCHIVE PLATES ' + (n + f) + ' / ' + POOL.length + (f ? ' · ' + f + ' FAILED' : ''), W / 2, H / 2);
+  }
+
+  tick = now => {
+    this.raf = requestAnimationFrame(this.tick);
+    const dt = Math.min(.1, (now - this.last) / 1000); this.last = now;
+    if (dt > 0) this.fps = this.fps ? this.fps * .95 + (1 / dt) * .05 : 1 / dt;
+    if (!this.ready) { this.drawLoading(); return; }
+    if (this.state.playing) {
+      this.t += dt;
+      if (this.t >= this.plan.len) { this.t -= this.plan.len; this.loopIdx++; this.newPlan(); }
+    }
+    const fx = this.props.surfaceFx ?? .6, grid = !!this.props.showGrid;
+    let r = null;
+    if (this.faceEl) r = this.drawFrame(this.faceEl.getContext('2d'), this.t, this.plan, { fx, grid });
+    this.drawTimeline(this.t / this.plan.bs);
+    if (now - this.lastInfo > 250 && r) {
+      this.lastInfo = now; const s = r.s, P = this.plan;
+      this.setState({ info: {
+        loop: '#' + (this.loopIdx + 1), mood: P.mood, bpm: Math.round(60 / P.bs), tc: fmt(this.t) + ' / ' + fmt(P.len),
+        shot: String(r.idx + 1).padStart(2, '0') + '/' + P.shots.length, layout: s.layout, cut: s.cut, ov: s.ov,
+        plates: [s.plate, s.plate2].filter(Boolean).join(' + ') || '—', fps: Math.round(this.fps),
+        pool: this.pool.length + '/' + POOL.length + ' plates',
+        uniq: this.loopsMade + ' loops · ' + this.rerolls + ' re-rolls · window 12'
+      } });
+    }
+    if (now - this.lastSave > 1000) { this.lastSave = now; try { localStorage.setItem(LS_KEY, JSON.stringify({ seed: this.seedV(), moodSel: this.moodSelV(), loopIdx: this.loopIdx, t: this.t })); } catch (e) {} }
+  };
+
+  resetLoop(seed, moodSel) {
+    if (seed !== undefined) this._seed = seed;
+    if (moodSel !== undefined) this._moodSel = moodSel;
+    this.loopIdx = 0; this.t = 0; this.history = []; this.prevTail = []; this.rerolls = 0; this.loopsMade = 0;
+    if (this.ready) this.newPlan();
+  }
+
+  renderVals() {
+    const st = this.state, sel = st.moodSel;
+    return {
+      faceRef: this.faceRef, tlRef: this.tlRef,
+      playLabel: st.playing ? 'Pause' : 'Play',
+      togglePlay: () => this.setState(s => ({ playing: !s.playing })),
+      restart: () => { this.t = 0; },
+      seed: st.seed,
+      seedPrev: () => { const v = Math.max(1, st.seed - 1); this.setState({ seed: v }); this.resetLoop(v); },
+      seedNext: () => { const v = st.seed + 1; this.setState({ seed: v }); this.resetLoop(v); },
+      seedRandom: () => { const v = 1 + Math.floor(Math.random() * 9999); this.setState({ seed: v }); this.resetLoop(v); },
+      moods: ['AUTO', 'CALM', 'TENSE', 'MANIC'].map(m => ({ name: m, bg: m === sel ? '#ece6da' : 'transparent', fg: m === sel ? '#121110' : '#ece6da', onClick: () => { this.setState({ moodSel: m }); this.resetLoop(undefined, m); } })),
+      info: { loop: '—', mood: '—', bpm: '—', tc: '—', shot: '—', layout: '—', cut: '—', ov: '—', plates: '—', fps: '—', pool: '—', uniq: '—', ...st.info },
+      scrub: e => { if (!this.plan) return; const r = e.currentTarget.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width * 1024; const b = (px - 70) / (1024 - 78) * 64; if (b >= 0 && b < 64) this.t = b * this.plan.bs; },
+      boards: st.boards,
+      trip0: st.trip[0] || '…', trip1: st.trip[1] || '…', trip2: st.trip[2] || '…', tripThemes: st.tripThemes || '…',
+      pool: POOL.map(p => {
+        const ok = this.imgs && this.imgs[p.id], bad = this.failed && this.failed[p.id];
+        return { ...p, url: T + p.src, link: 'https://www.loc.gov/resource/' + p.loc + '/', tagText: p.tags.join(', '), status: ok ? 'LOADED · CORS OK' : bad ? 'FAILED' : 'LOADING', statusColor: ok ? '#8fd18f' : bad ? '#ff6a50' : '#a39b8c' };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

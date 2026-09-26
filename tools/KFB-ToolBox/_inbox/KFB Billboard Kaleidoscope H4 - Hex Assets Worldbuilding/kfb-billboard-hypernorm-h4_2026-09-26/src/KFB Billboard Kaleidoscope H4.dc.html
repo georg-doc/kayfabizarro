@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Big+Shoulders+Display:wght@700;900&amp;family=Six+Caps&amp;family=Cinzel:wght@600;900&amp;family=UnifrakturMaguntia&amp;family=IM+Fell+English:ital@0;1&amp;family=Silkscreen&amp;family=Monoton&amp;family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;600&amp;family=Bungee+Shade&amp;family=Rubik+Mono+One&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#121110;color:#ece6da;-webkit-font-smoothing:antialiased}
+a{color:#ece6da;text-decoration:underline;text-decoration-color:#6b645a;text-underline-offset:3px}
+a:hover{color:#ff6a50;text-decoration-color:#ff6a50}
+</style>
+</helmet>
+<div style="font-family:'Archivo',sans-serif;font-size:16px;line-height:1.5;max-width:1180px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:56px">
+
+  <header data-screen-label="Kopf" style="display:flex;flex-direction:column;gap:14px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">KFB · Billboard-Medienfläche · H4 · Musikvideo-Logik</div>
+    <h1 style="margin:0;font-size:56px;line-height:1;font-weight:800;font-stretch:75%;text-wrap:balance">Kaleidoskop-Engine H4</h1>
+    <p style="margin:0;max-width:840px;font-size:18px;color:#d6cfc2;text-wrap:pretty">H3 teilte die Tafel in Felder auf. H4 legt Ebenen hintereinander und führt eine Kamera durch sie hindurch. Der Schnitt folgt einer Songform aus Intro, Verse, Build, Drop, Break und Outro. Jede Einstellung wird aus neun Achsen zusammengesetzt. Aus zehn Kandidaten gewinnt jeweils der, der den letzten Einstellungen am wenigsten ähnelt.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em">
+      <span style="border:1px solid #3a362f;padding:4px 8px">Konzept-Prototyp · 2D-Fläche</span>
+      <span style="border:1px solid #3a362f;padding:4px 8px">Material: Library of Congress · kein GitHub</span>
+      <span style="border:1px solid #3a362f;padding:4px 8px">Claude-Design-Preview · kein Stage / Public / Live</span>
+    </div>
+  </header>
+
+  <section data-screen-label="Player" style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:16px;align-items:start">
+      <div onClick="{{ togglePlay }}" style="position:relative;width:100%;aspect-ratio:2/1;background:#000;border:1px solid #2a2724;cursor:pointer">
+        <canvas ref="{{ faceRef }}" width="1024" height="512" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px">
+        <div style="color:#a39b8c;text-transform:uppercase;letter-spacing:.06em">Vorbeifahr-Test</div>
+        <canvas ref="{{ miniRef }}" width="160" height="80" style="width:160px;height:80px;display:block;filter:blur(.7px);border:1px solid #2a2724;background:#000"></canvas>
+        <div style="color:#a39b8c;line-height:1.4">Live, 160 px breit und leicht unscharf.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em">
+      <button onClick="{{ togglePlay }}" style="font:inherit;color:#121110;background:#ece6da;border:1px solid #ece6da;padding:8px 14px;cursor:pointer;min-width:84px">{{ playLabel }}</button>
+      <button onClick="{{ nextShot }}" style="font:inherit;color:#ece6da;background:transparent;border:1px solid #3a362f;padding:8px 12px;cursor:pointer">Next shot</button>
+      <div style="display:flex;flex-wrap:wrap;border:1px solid #3a362f">
+        <sc-for list="{{ ctxButtons }}" as="c" hint-placeholder-count="6">
+          <button onClick="{{ c.onClick }}" style="font:inherit;color:{{ c.fg }};background:{{ c.bg }};border:0;padding:8px 10px;cursor:pointer">{{ c.name }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;border:1px solid #3a362f">
+        <span style="padding:8px 10px;color:#a39b8c">Seed</span>
+        <button onClick="{{ seedPrev }}" style="font:inherit;color:#ece6da;background:transparent;border:0;border-left:1px solid #3a362f;padding:8px 10px;cursor:pointer">−</button>
+        <span style="padding:8px 10px;min-width:44px;text-align:center">{{ seed }}</span>
+        <button onClick="{{ seedNext }}" style="font:inherit;color:#ece6da;background:transparent;border:0;border-right:1px solid #3a362f;padding:8px 10px;cursor:pointer">+</button>
+        <button onClick="{{ seedRandom }}" style="font:inherit;color:#ece6da;background:transparent;border:0;padding:8px 10px;cursor:pointer">Random</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:#2a2724;border:1px solid #2a2724;font-family:'IBM Plex Mono',monospace;font-size:12px">
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Section · Cycle</div><div>{{ info.sec }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Shot</div><div>{{ info.shot }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Base · Mid</div><div>{{ info.layers }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Type · Font</div><div>{{ info.type }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Camera · Cut</div><div>{{ info.cam }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Palette · Plates</div><div>{{ info.pal }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Similarity to last 16</div><div>{{ info.nov }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Distinct so far</div><div>{{ info.uniq }}</div></div>
+      <div style="background:#121110;padding:8px 10px"><div style="color:#a39b8c;font-size:10px;text-transform:uppercase">Measured</div><div>{{ info.fps }}</div></div>
+    </div>
+    <canvas ref="{{ tlRef }}" onClick="{{ scrub }}" width="1024" height="100" style="width:100%;height:auto;display:block;cursor:pointer;border:1px solid #2a2724"></canvas>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">
+      <sc-for list="{{ legend }}" as="l" hint-placeholder-count="8">
+        <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;background:{{ l.c }}"></span>{{ l.n }}</span>
+      </sc-for>
+      <span>Klick auf die Zeitleiste springt an die Stelle.</span>
+    </div>
+  </section>
+
+  <section data-screen-label="Stichprobe" style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Stichprobe: 12 Einstellungen aus einem Zyklus</h2>
+        <p style="margin:0;color:#a39b8c;max-width:720px">Ein eigener Planer mit Seed + 7777. Jede Einstellung wird bei 65 % ihrer Dauer gerendert, also nach dem Übergang.</p>
+      </div>
+      <button onClick="{{ resample }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;color:#ece6da;background:transparent;border:1px solid #3a362f;padding:8px 12px;cursor:pointer">New sample</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+      <sc-for list="{{ boards }}" as="b" hint-placeholder-count="12">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+          <canvas ref="{{ b.setRef }}" width="512" height="256" style="width:100%;height:auto;aspect-ratio:2/1;display:block;background:#000;border:1px solid #2a2724"></canvas>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c;line-height:1.4">{{ b.label }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Bibliothek" style="display:flex;flex-direction:column;gap:24px">
+    <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Bibliothek</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1px;background:#2a2724;border:1px solid #2a2724;font-size:14px">
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Basis · 8</div><div><b>Plate</b> in 5 Gradings (S/W, Duoton, Poster, Schwelle, Raster) · <b>Kaleido</b> (6–12 gespiegelte Keile, Quelle wandert) · <b>Slitscan</b> (48 Streifen, Sinusversatz) · <b>Mirror</b> (Abklatsch, zwei- oder vierfach) · <b>Droste</b> (Endlos-Zoom durch verschachtelte Platten) · <b>Pattern</b> · <b>Field</b> (Bänder, Diagonalen, Verlauf) · <b>LED</b> (gedithert, 8-px-Zellen)</div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Mittelebene · 6</div><div><b>Blend</b> (zweite Platte, multiply, screen, difference, hard-light, luminosity oder overlay) · <b>Luma-Key</b> (Muster erscheint nur, wo die Platte hell ist) · <b>Strips</b> (Jalousie aus einer zweiten Platte) · <b>Blob</b> oder <b>Shard</b> (organische Maske ohne Rand) · <b>Sprites</b> · <b>keine</b></div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Typografie · 11 Behandlungen</div><div><b>Giant Crop</b> · <b>Knockout</b> (Platte in den Buchstaben) · <b>Echo</b> (Kontur-Kopien) · <b>Scatter</b> (Zeichen fliegen ein) · <b>Mixed Set</b> (jede Zeile in eigener Schrift, auf Breite gesetzt) · <b>Vertical</b> · <b>Texture</b> (Schriftwand als Laufband) · <b>Width Morph</b> (Archivo-Breitenachse im Takt) · <b>Outline Sweep</b> · <b>Char Flip</b> (Buchstaben wechseln die Schrift, bis sie einrasten) · <b>Arc</b></div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Schriften · 16 Schnitte</div><div>Archivo (normal, condensed, expanded) · Big Shoulders · Six Caps · Bodoni Moda (Kursiv, Versal) · Cinzel · Unifraktur · IM Fell · Instrument Serif · Silkscreen · Monoton · IBM Plex Mono · Bungee Shade · Rubik Mono. Die Schrift wird passend zur Textsorte gewählt: Sentenz, Gedicht, Slogan oder Signal.</div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Muster · 10</div><div>Moiré · Strahlen · Truchet · Punktwelle · Streifen · Flow (Riley-Wellen) · Quadrate · Lissajous · Schachbrett-Warp · Spirale</div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Kamera · 10</div><div>Push In · Pull Out · Truck · Crane · Roll · Dutch Push · Snap Zoom · Float · Orbit (starke Parallaxe) · Dolly Zoom (Hintergrund und Typo zoomen gegenläufig). Dazu kommen Handkamera-Rauschen und ab Energie 0,55 ein Zoom-Kick auf jedem Schlag. Die Ebenen liegen in drei Tiefen: 0,12, 0,5 und 0,9.</div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Übergänge · 9</div><div>Cut · Flash · Cross · Whip Pan (mit Bewegungsunschärfe) · Zoom Through · Slit (16 Streifen, zufällige Reihenfolge) · Type Wipe (ein Buchstabe wächst und enthält die nächste Einstellung) · Kaleido (die alte Einstellung zerfällt in Keile) · Glitch</div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Songform</div><div>Vier Formen aus den Sektionen INTRO, VERSE, BUILD, DROP, BREAK und OUTRO, 22–24 Takte bei 112 BPM. Die Energie der Sektion (0,12–1) steuert Einstellungslänge (1–16 Schläge), Übergänge, Kamera, Kick und den Anteil an Typografie. BREAK ist immer eine lange typografische Einstellung.</div></div>
+      <div style="background:#121110;padding:14px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:#a39b8c">Gegenüber H3 entfernt</div><div>Kreise mit Rand, Quadranten-Raster als Grundlogik, Ken-Burns-Fahrt je Feld und der Inset-Kreis. Was bleibt, sind Masken ohne Kontur, Ebenen in der Tiefe und eine Kamera.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Auswahl nach Unähnlichkeit</h3>
+        <p style="margin:0">Pro Einstellung werden K Kandidaten gewürfelt, Standard 10, als Tweak einstellbar. Jeder wird mit den letzten 16 Einstellungen verglichen, jeweils mit Gewicht 0,82^Alter. Gewicht der Achsen: Basis 3, Typo 3, Mittelebene 2, Schrift 2, Kamera 2, Palette 1,5, Muster 1,5, Übergang 1, Grading 1. Dieselbe Kombination aus Basis, Mittelebene und Typo kostet +6. Der Kandidat mit der kleinsten Summe gewinnt. Bei K = 1 ist die Auswahl rein zufällig, der Unterschied ist in der Zählung oben ablesbar.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <h3 style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a39b8c">Harte Regeln</h3>
+        <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px">
+          <li>Die Akzentfarbe bleibt der Typografie vorbehalten. Muster und Felder nutzen nur Grund, Tinte und Zweitfarbe.</li>
+          <li>Medienmix: Liegt unten eine Bild-Basis, bekommt die Mittelebene bevorzugt Muster, Pixel oder eine Platte anderer Gattung. Umgekehrt genauso.</li>
+          <li>Dieselbe Basis, Kamera, Palette oder Schrift folgt nie zweimal direkt aufeinander. Eine Platte kehrt frühestens nach 10 Einstellungen wieder, ein Text nach 14.</li>
+          <li>Knockout nur auf einer Fläche, einem Muster oder LED. Aufwendige Typo-Behandlungen nur in Einstellungen ab 2 Schlägen.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin:0;color:#a39b8c;font-size:14px">Der Archivpool ist derselbe wie in <a href="KFB Billboard Kaleidoscope H3.dc.html">H3</a>: 33 Platten aus den LoC-Sets „Free to Use and Reuse“, mit Liste und Nachweis je Platte.</p>
+  </section>
+
+  <section data-screen-label="Befund" style="display:flex;flex-direction:column;gap:12px">
+    <h2 style="margin:0;font-size:28px;font-weight:800;font-stretch:80%">Befund</h2>
+    <div style="display:grid;grid-template-columns:180px minmax(0,1fr);gap:1px;background:#2a2724;border:1px solid #2a2724;font-size:14px">
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">SOURCE</div><div style="background:#121110;padding:10px">Georgs Rückmeldung vom 26.09. zu H3: Die Konstruktion ist zu sichtbar (Kreise mit Rand, Quadranten), der Medienmix zu schwach, das Ganze zu statisch. Gewünscht sind Musikvideo, Kaleidoskop, Übergänge, filmische Kamerafahrten, abwechslungsreiche Typografie und eine größere Musterbibliothek. „Typography is art.“</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">DECISION</div><div style="background:#121110;padding:10px">Ebenen statt Felder, eine Kamera statt Ken Burns, eine Songform statt eines gleichmäßigen Takts, Auswahl nach Unähnlichkeit statt nur Sperrlisten. H1 bis H3 bleiben unverändert.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">IMPLEMENTATION</div><div style="background:#121110;padding:10px">Ein Canvas-2D-Compositor mit 2,5D-Kamera über drei Tiefenebenen, 8 Basen, 6 Mittelebenen, 11 Typo-Behandlungen, 16 Schriftschnitten, 10 Mustern, 10 Kamerafahrten, 9 Übergängen, 9 Paletten und 4 Songformen.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">TESTED RESULT</div><div style="background:#121110;padding:10px">Live gemessen und oben ausgewiesen: fps, Ähnlichkeitswert und Anzahl unterschiedlicher Kombinationen. NOT_TESTED sind der Lauf auf der 3D-Tafel und die Leistung auf einem Mittelklasse-Laptop.</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">GEORG ACCEPTANCE</div><div style="background:#121110;padding:10px">PASS · 26.09.2026 · „PASS für jetzt, kann später noch optimiert werden.“ H4 ist damit Referenzstand für H5..</div>
+      <div style="background:#121110;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#a39b8c">OPEN</div><div style="background:#121110;padding:10px">
+        <ol style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px">
+          <li>STAGE3D (KayKit-Figur oder -Prop mit Clip als Ebene) und KFB-Karten, jeweils als eigener Slice.</li>
+          <li>PD-Filmschnipsel als weitere Basis.</li>
+          <li>GLSL für Kaleido, Slitscan und Oberfläche. Das alte B2b-Verbot eines Post-Stacks muss Georg aufheben oder bestätigen.</li>
+          <li>Die Rechte je Platte sind noch nicht einzeln kuratiert.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bpm&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:112,&quot;min&quot;:80,&quot;max&quot;:140,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sequencer&quot;},&quot;candidates&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:10,&quot;min&quot;:1,&quot;max&quot;:16,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sequencer&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.25,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Face&quot;}}">
+const T = 'https://tile.loc.gov/storage-services/service/pnp/';
+const W = 1024, H = 512, OV = { x: -W * .35, y: -H * .35, w: W * 1.7, h: H * 1.7 };
+const P = (id, src, title, who, year, kind, tags) => ({ id, src, title, who, year, kind, tags });
+const POOL = [
+  P('fsa.8b08182', 'fsa/8b08000/8b08100/8b08182v.jpg', 'Canned meat and canned fish. All of these are rationed.', 'Alfred T. Palmer', '1943', 'photo', ['political', 'commercial']),
+  P('fsa.8a33841', 'fsa/8a33000/8a33800/8a33841v.jpg', 'Self Service A&P Super Market, Durham, N.C.', 'Jack Delano', '1940', 'photo', ['commercial']),
+  P('hec.36107', 'hec/36100/36107v.jpg', 'Carnegie Institution scientists broadcast over CBS radio', 'Harris & Ewing', '1930', 'photo', ['political', 'scientific']),
+  P('hec.35976', 'hec/35900/35976v.jpg', 'Bureau of Standards: listening to an engine', 'Harris & Ewing', '1930', 'photo', ['scientific']),
+  P('hec.25858', 'hec/25800/25858v.jpg', 'Philo Farnsworth talking about his patents', 'Harris & Ewing', '1939', 'photo', ['scientific', 'political']),
+  P('npcc.12896', 'npcc/12800/12896v.jpg', 'Astronomers at Naval Observatory viewing an eclipse', 'National Photo Co.', '1925', 'photo', ['scientific', 'artistic']),
+  P('ppmsca.46337', 'ppmsca/46300/46337v.jpg', 'Geological Society of America, all but 60 of their fellows', 'Composite', '1899', 'photo', ['historical', 'political']),
+  P('cph.3c34425', 'cph/3c30000/3c34000/3c34400/3c34425v.jpg', 'Project Mercury astronauts in a weightless flight', 'Photograph', '1959', 'photo', ['scientific']),
+  P('cph.3c07172', 'cph/3c00000/3c07000/3c07100/3c07172v.jpg', 'Laboratory of Thomas Edison', 'Engraving', '1880', 'engraving', ['historical', 'scientific']),
+  P('ppmsca.46336', 'ppmsca/46300/46336v.jpg', 'American scientists and inventors', 'Engraving', '1862', 'engraving', ['historical', 'scientific']),
+  P('ppmsca.10085', 'ppmsca/10000/10085v.jpg', 'Chocolat Klaus', 'Leonetto Cappiello', '1903', 'poster', ['commercial', 'artistic']),
+  P('ppmsca.42888', 'ppmsca/42800/42888v.jpg', 'Scientific American, poster advertisement', 'Poster', '1905', 'poster', ['scientific', 'commercial']),
+  P('ppmsca.54863', 'ppmsca/54800/54863v.jpg', 'The Barnum and Bailey greatest show on earth', 'Poster', 'c. 1900', 'poster', ['commercial', 'artistic']),
+  P('ppmsca.54904', 'ppmsca/54900/54904v.jpg', 'Forepaugh & Sells Brothers great shows consolidated', 'Poster', 'c. 1900', 'poster', ['commercial']),
+  P('ppmsca.43806', 'ppmsca/43800/43806v.jpg', 'Rohe & Bro. advertisement', 'Poster', 'c. 1900', 'poster', ['commercial']),
+  P('ppmsca.50988', 'ppmsca/50900/50988v.jpg', 'War gardens over the top', 'Poster', '1919', 'poster', ['political']),
+  P('ppmsca.12815', 'ppmsca/12800/12815v.jpg', 'Lloyd J. Harriss Pies', 'Poster', '1947', 'poster', ['commercial', 'political']),
+  P('ppmsca.05583', 'ppmsca/05500/05583v.jpg', "Get fat on Loring's Fat-ten-u and Corpula foods", 'Poster', '1895', 'poster', ['commercial']),
+  P('ppmsc.03521', 'ppmsc/03500/03521v.jpg', 'I want you for U.S. Army', 'James Montgomery Flagg', '1917', 'poster', ['political']),
+  P('ppmsc.03761', 'ppmsc/03700/03761v.jpg', "Edison's greatest marvel, the Vitascope", 'Poster', '1896', 'poster', ['commercial', 'artistic']),
+  P('cph.3g13310', 'cph/3g10000/3g13000/3g13300/3g13310v.jpg', 'Aetna dynamite', 'Poster', 'c. 1900', 'poster', ['commercial']),
+  P('cph.3g02080', 'cph/3g00000/3g02000/3g02000/3g02080v.jpg', 'Polio research: a light is beginning to dawn', 'Poster', '1949', 'poster', ['scientific', 'political']),
+  P('jpd.01578', 'jpd/01500/01578v.jpg', 'Senju great bridge', 'Hiroshige Andō', '1856', 'print', ['artistic', 'historical']),
+  P('jpd.00154', 'jpd/00100/00154v.jpg', 'Cherry blossom viewing month', 'Kiyonaga Torii', '1785–89', 'print', ['artistic', 'historical']),
+  P('jpd.02457', 'jpd/02400/02457v.jpg', 'Teahouse at Koishikawa the morning after a snowfall', 'Woodblock print', '—', 'print', ['artistic', 'historical']),
+  P('jpd.01307', 'jpd/01300/01307v.jpg', 'View of Mount Fuji from Meguro in Tokyo', 'Woodblock print', '—', 'print', ['artistic', 'historical']),
+  P('jpd.01803', 'jpd/01800/01803v.jpg', 'People working in rice paddies during a rain storm', 'Woodblock print', '—', 'print', ['artistic', 'historical']),
+  P('jpd.00278', 'jpd/00200/00278v.jpg', 'Sumo wrestler Arakuma, full-length portrait', 'Woodblock print', '—', 'print', ['artistic', 'historical']),
+  P('jpd.01822', 'jpd/01800/01822v.jpg', 'Man poling a small boat as the moon rises', 'Woodblock print', '—', 'print', ['artistic']),
+  P('ppmsca.51237', 'ppmsca/51200/51237v.jpg', 'Battle of Peach Tree Creek, Georgia, July 20, 1864', 'Adolph Metzner', '1864', 'drawing', ['historical', 'political']),
+  P('ppmsca.51225', 'ppmsca/51200/51225v.jpg', 'Lost on the field of Chickamauga', 'Adolph Metzner', '1863', 'drawing', ['historical', 'political']),
+  P('ppmsca.51200', 'ppmsca/51200/51200v.jpg', 'Casualties of the War', 'Adolph Metzner', '1860s', 'drawing', ['historical', 'political']),
+  P('ppmsca.51267', 'ppmsca/51200/51267v.jpg', 'Attention! Lt. Col. Henry von Trebra', 'Adolph Metzner', '1861', 'drawing', ['historical'])
+];
+const BANK = {
+  political: ['It has all been arranged.', 'Everyone is in order.', 'You are approved.', 'Nothing will change.', 'Remain calm.', 'The committee thanks you.', 'Stay where you are.'],
+  commercial: ['Buy radium.', 'Feel approved.', 'New! Improved! Eternal!', 'Now with more tomorrow.', 'Get fat on hope.', 'Everything is on sale.', 'Limited time. Forever.'],
+  scientific: ['Listen.', 'Look up.', 'Progress is measured.', 'The experiment continues.', 'Results may vary.', 'Everything is data.'],
+  artistic: ['Look again.', 'This is not a picture.', 'Colour is a promise.', 'Every surface speaks.', 'Nothing is decoration.'],
+  historical: ['History is on sale.', 'We were always modern.', 'Remember tomorrow.', 'The past is open late.']
+};
+const SCRIPTS = [
+  { t: 'SIC TRANSIT GLORIA MUNDI', f: 'ROMAN' }, { t: 'ET IN ARCADIA EGO', f: 'ROMAN' }, { t: 'FIAT LUX', f: 'ROMAN' }, { t: 'ARS LONGA VITA BREVIS', f: 'ROMAN' }, { t: 'NOSCE TE IPSUM', f: 'ROMAN' },
+  { t: 'Memento mori', f: 'FRAKTUR' }, { t: 'Tempus fugit', f: 'FRAKTUR' }, { t: 'Panta rhei', f: 'FRAKTUR' },
+  { t: 'All that is solid melts into air.', f: 'FELL' }, { t: 'Look on my works, ye Mighty, and despair!', f: 'FELL' }, { t: 'Hope is the thing with feathers.', f: 'FELL' }
+];
+const TTXB = ['STAY TUNED.', 'LOOK UP.', 'YOU ARE APPROVED', 'REMAIN CALM', 'NO SIGNAL', 'PAGE 100', 'ALL IS WELL', 'BUY NOW', 'NEWS AT 9'];
+
+const SPR = {
+  EYE: [['............', '....kkkk....', '..kkwwwwkk..', '.kwwwkkwwwk.', 'kwwwkkkkwwwk', 'kwwwkkrkwwwk', 'kwwwkkkkwwwk', '.kwwwkkwwwk.', '..kkwwwwkk..', '....kkkk....', '............', '............'],
+        ['............', '............', '............', '............', '............', 'kkkkkkkkkkkk', '.kk..kk..kk.', '............', '............', '............', '............', '............']],
+  SMILE: [['...kkkkkk...', '..kyyyyyyk..', '.kyyyyyyyyk.', 'kyykyyyykyyk', 'kyykyyyykyyk', 'kyyyyyyyyyyk', 'kyyyyyyyyyyk', 'kykyyyyyykyk', 'kyykkkkkkyyk', '.kyyyyyyyyk.', '..kyyyyyyk..', '...kkkkkk...'],
+          ['...kkkkkk...', '..kyyyyyyk..', '.kyyyyyyyyk.', 'kyyyyyyykyyk', 'kykkkyyykyyk', 'kyyyyyyyyyyk', 'kyyyyyyyyyyk', 'kykyyyyyykyk', 'kyykkkkkkyyk', '.kyyyyyyyyk.', '..kyyyyyyk..', '...kkkkkk...']],
+  HOUSE: [['.....kk.....', '....kwwk....', '...kwwwwk...', '..kwwwwwwk..', '.kwwwwwwwwk.', 'kkkkkkkkkkkk', '.kwwwwwwwwk.', '.kwkkwwrrwk.', '.kwkkwwrrwk.', '.kwwwwwkkwk.', '.kwwwwwkkwk.', '.kkkkkkkkkk.'],
+          ['.....kk.....', '....kwwk....', '...kwwwwk...', '..kwwwwwwk..', '.kwwwwwwwwk.', 'kkkkkkkkkkkk', '.kwwwwwwwwk.', '.kwyywwyywk.', '.kwyywwyywk.', '.kwwwwwkkwk.', '.kwwwwwkkwk.', '.kkkkkkkkkk.']],
+  BOLT: [['......kkkk..', '.....kyyk...', '....kyyk....', '...kyyk.....', '..kyyykkkk..', '.kyyyyyyyk..', '..kkkkyyk...', '.....kyk....', '....kyk.....', '...kyk......', '...kk.......', '............'],
+         ['......kkkk..', '.....kwwk...', '....kwwk....', '...kwwk.....', '..kwwwkkkk..', '.kwwwwwwwk..', '..kkkkwwk...', '.....kwk....', '....kwk.....', '...kwk......', '...kk.......', '............']]
+};
+const SPR_KEYS = Object.keys(SPR);
+
+const TEXTS = [];
+Object.keys(BANK).forEach(cat => BANK[cat].forEach(s => TEXTS.push({ s, voice: 'slogan', cat })));
+SCRIPTS.forEach(x => TEXTS.push({ s: x.t, voice: x.f === 'FELL' ? 'poem' : 'latin', cat: 'historical' }));
+TTXB.forEach(s => TEXTS.push({ s, voice: 'signal', cat: null }));
+
+const FONTS = {
+  GROT: { f: s => '900 ' + s + 'px Archivo', up: true, v: { slogan: 3, signal: 1.5, poem: .6, latin: .4 } },
+  GROT_C: { f: s => '900 condensed ' + s + 'px Archivo', up: true, v: { slogan: 3, signal: 1.5 } },
+  GROT_X: { f: s => '800 expanded ' + s + 'px Archivo', up: true, v: { slogan: 2, signal: 1.5 } },
+  SHOULDERS: { f: s => '900 ' + s + 'px "Big Shoulders Display"', up: true, v: { slogan: 3, signal: 2 } },
+  SIXCAPS: { f: s => s + 'px "Six Caps"', up: true, v: { slogan: 2.5, signal: 1 } },
+  DIDONE: { f: s => 'italic 800 ' + s + 'px "Bodoni Moda"', v: { slogan: 2, poem: 2.5, latin: 1 } },
+  DIDONE_R: { f: s => '900 ' + s + 'px "Bodoni Moda"', up: true, v: { slogan: 2, latin: 1.5 } },
+  ROMAN: { f: s => '600 ' + s + 'px Cinzel', up: true, ls: .06, v: { latin: 4, slogan: 1 } },
+  FRAKTUR: { f: s => s + 'px UnifrakturMaguntia', v: { latin: 3, poem: 1, slogan: .5 } },
+  FELL: { f: s => 'italic ' + s + 'px "IM Fell English"', v: { poem: 4, latin: 1.2, slogan: .6 } },
+  SERIF: { f: s => 'italic ' + s + 'px "Instrument Serif"', v: { poem: 3, slogan: 1.5 } },
+  PIXEL: { f: s => s + 'px Silkscreen', up: true, v: { signal: 4, slogan: 1 } },
+  DECO: { f: s => s + 'px Monoton', up: true, v: { slogan: 1.4, signal: 1 } },
+  MONO: { f: s => '600 ' + s + 'px "IBM Plex Mono"', up: true, v: { signal: 3, slogan: 1 } },
+  SHADE: { f: s => s + 'px "Bungee Shade"', up: true, v: { slogan: 1.4, signal: 1 } },
+  RUBIK: { f: s => s + 'px "Rubik Mono One"', up: true, v: { slogan: 2, signal: 1.5 } }
+};
+const FONT_KEYS = Object.keys(FONTS);
+const FLIPF = ['GROT', 'DIDONE_R', 'ROMAN', 'FRAKTUR', 'PIXEL', 'DECO', 'MONO', 'SHADE', 'RUBIK', 'SIXCAPS', 'SHOULDERS', 'GROT_X'];
+const STRETCH = ['ultra-condensed', 'extra-condensed', 'condensed', 'semi-condensed', 'normal', 'semi-expanded', 'expanded', 'extra-expanded', 'ultra-expanded'];
+
+const PALS = {
+  NOTICE: { bg: '#ece6da', ink: '#111111', a: '#e0301e', b: '#1f3cff' },
+  ACID: { bg: '#ffd23f', ink: '#1b1464', a: '#ff3b6b', b: '#00a896' },
+  COBALT: { bg: '#1f3cff', ink: '#f2f0ea', a: '#ffe600', b: '#ff2a2a' },
+  MINT: { bg: '#d9efe4', ink: '#0f2a24', a: '#ff5a36', b: '#6b4cff' },
+  UKIYO: { bg: '#efe2c4', ink: '#1d2a44', a: '#c8402a', b: '#3f7f6e' },
+  NOIR: { bg: '#0d0d0d', ink: '#ece6da', a: '#e0301e', b: '#6f6a62' },
+  ROSE: { bg: '#f6c7c1', ink: '#2b0f3a', a: '#ff2d55', b: '#2448ff' },
+  OXIDE: { bg: '#2a1a14', ink: '#f1dcc0', a: '#ff7a1a', b: '#58c4b8' },
+  VOID: { bg: '#07071a', ink: '#d8f3ff', a: '#7cff4f', b: '#ff3df0' }
+};
+const hexRGB = h => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+const lum = h => { const c = hexRGB(h); return (.299 * c[0] + .587 * c[1] + .114 * c[2]) / 255; };
+const darkOf = P => lum(P.bg) < lum(P.ink) ? P.bg : P.ink;
+const lightOf = P => lum(P.bg) < lum(P.ink) ? P.ink : P.bg;
+
+const IMG = { PLATE: 1, KALEIDO: 1, SLITSCAN: 1, MIRROR: 1, DROSTE: 1 };
+const BASE_W = { PLATE: 4, KALEIDO: 2.2, SLITSCAN: 2, MIRROR: 2, DROSTE: 1.6, PATTERN: 3, FIELD: 1.5, LED: 1.5 };
+const MID_W = { NONE: 2, BLEND: 2, LUMA_KEY: 2, SPRITES: 1.5, STRIPS: 1.5, BLOB: 2 };
+const TYPE_W = { NONE: 2, GIANT_CROP: 2, KNOCKOUT: 2, ECHO: 1.5, SCATTER: 1.5, MIXED: 2.2, VERTICAL: 1.2, TEXTURE: 1.5, WIDTH_MORPH: 1.3, OUTLINE_SWEEP: 1.5, CHARFLIP: 1.5, ARC: 1.2 };
+const CAM_W = { PUSH_IN: 2, PULL_OUT: 2, TRUCK: 2, CRANE: 1.2, ROLL: 1.2, DUTCH_PUSH: 1.5, SNAP: 1.2, FLOAT: 1, ORBIT: 1.5, DOLLY_ZOOM: 1.2 };
+const PAT_W = { MOIRE: 1, RAYS: 1, TRUCHET: 1, DOTWAVE: 1, STRIPES: 1, FLOW: 1.2, SQUARES: 1, LISSAJOUS: 1, CHECKER: 1, SPIRAL: 1 };
+const GRADE_W = { BW: 3, DUO: 3, POSTER: 2, THRESH: 1.5, HALFTONE: 1.2 };
+const PAL_W = { NOTICE: 1, ACID: 1, COBALT: 1, MINT: 1, UKIYO: 1, NOIR: 1, ROSE: 1, OXIDE: 1, VOID: 1 };
+const TMAX = { KNOCKOUT: 30, ECHO: 26, SCATTER: 24, MIXED: 44, VERTICAL: 22, TEXTURE: 40, OUTLINE_SWEEP: 30, CHARFLIP: 22, ARC: 30, GIANT_CROP: 999, WIDTH_MORPH: 999 };
+const TDUR = { CROSS: 1, WHIP: .6, ZOOM_THROUGH: .8, SLIT: .7, TYPE_WIPE: 1, KALEIDO: 1, GLITCH: .5 };
+const KPREF = {
+  PLATE: { photo: 3, engraving: 2, drawing: 2, poster: 2, print: 2 }, KALEIDO: { poster: 3, print: 3, drawing: 1, photo: 1 }, SLITSCAN: { photo: 3, print: 2, poster: 1.5 },
+  MIRROR: { drawing: 3, engraving: 3, photo: 2, print: 1 }, DROSTE: { photo: 2, poster: 2, print: 2, engraving: 1 }, LED: { photo: 3, poster: 2, engraving: 1 },
+  MID: { poster: 2, print: 2, photo: 2, drawing: 2, engraving: 2 }, KNOCK: { poster: 3, print: 3, photo: 1 }
+};
+const SECTIONS = {
+  INTRO: { e: .2, shot: [8, 8, 4], trans: { CROSS: 3, ZOOM_THROUGH: 1.5, CUT: 1 }, base: { PLATE: 1.5, DROSTE: 1.5, MIRROR: 1.3 }, type: { NONE: .6, ECHO: 1.5, ARC: 1.3, OUTLINE_SWEEP: 1.3 }, cam: { PUSH_IN: 2, PULL_OUT: 1.5, FLOAT: 1.5, DOLLY_ZOOM: 1.5, SNAP: .2, DUTCH_PUSH: .5 } },
+  VERSE: { e: .45, shot: [4, 4, 8, 2], trans: { CUT: 4, WHIP: 2, SLIT: 1.2, TYPE_WIPE: 1.2, CROSS: 1, ZOOM_THROUGH: 1 }, base: {}, type: { NONE: .5 }, cam: {} },
+  BUILD: { e: .7, shot: [2, 2, 4, 1], trans: { CUT: 3, FLASH: 2, GLITCH: 1.5, ZOOM_THROUGH: 2, WHIP: 1 }, base: { PATTERN: 1.3, SLITSCAN: 1.4 }, type: { CHARFLIP: 1.6, SCATTER: 1.5, WIDTH_MORPH: 1.5 }, cam: { SNAP: 2.5, DUTCH_PUSH: 2, PUSH_IN: 1.5 } },
+  DROP: { e: 1, shot: [1, 2, 2, 1, 4], trans: { CUT: 5, FLASH: 2, GLITCH: 2, WHIP: 2, KALEIDO: 1.5, SLIT: 1 }, base: { KALEIDO: 2.2, SLITSCAN: 2, PATTERN: 1.6, DROSTE: 1.6, FIELD: .5 }, type: { NONE: 1.6, CHARFLIP: 1.4, TEXTURE: 1.5, SCATTER: 1.2, ECHO: .6, ARC: .5 }, cam: { SNAP: 1.5, ORBIT: 1.5, ROLL: 1.5, FLOAT: .3 } },
+  BREAK: { e: .12, shot: [16, 8], trans: { CROSS: 2, KALEIDO: 1.5, TYPE_WIPE: 2 }, base: { FIELD: 1.6, PLATE: 1.4, MIRROR: 1.4, PATTERN: .8 }, type: { NONE: 0, GIANT_CROP: 2, MIXED: 2.2, ARC: 1.5, OUTLINE_SWEEP: 1.6, KNOCKOUT: 1.5 }, cam: { PUSH_IN: 2, TRUCK: 2, DOLLY_ZOOM: 2, SNAP: 0, FLOAT: 1 } },
+  OUTRO: { e: .25, shot: [8, 8], trans: { CROSS: 3, ZOOM_THROUGH: 1 }, base: { DROSTE: 2, PLATE: 1.3 }, type: { ECHO: 1.4, NONE: 1 }, cam: { PULL_OUT: 3, FLOAT: 1 } }
+};
+const FORMS = [
+  [['INTRO', 2], ['VERSE', 4], ['BUILD', 2], ['DROP', 4], ['BREAK', 2], ['VERSE', 4], ['DROP', 4], ['OUTRO', 2]],
+  [['INTRO', 2], ['VERSE', 2], ['DROP', 2], ['BREAK', 2], ['BUILD', 2], ['DROP', 4], ['OUTRO', 2]],
+  [['BREAK', 2], ['VERSE', 4], ['BUILD', 2], ['DROP', 4], ['VERSE', 2], ['DROP', 2], ['OUTRO', 2]],
+  [['INTRO', 2], ['BUILD', 2], ['DROP', 2], ['VERSE', 4], ['BREAK', 2], ['DROP', 4], ['OUTRO', 2]]
+];
+const CTX = {
+  KALEIDOSCOPE: { tags: null },
+  POLITICAL: { tags: ['political'], base: { PLATE: 2, LED: 2, FIELD: 1.5, KALEIDO: .4, MIRROR: .7 }, type: { GIANT_CROP: 1.5, TEXTURE: 1.6, OUTLINE_SWEEP: 1.4, ARC: .5, NONE: .5 }, pal: { NOTICE: 3, NOIR: 2.5, COBALT: 1.5, ROSE: .3, MINT: .3 }, voice: { slogan: 1, signal: 1.5, latin: .3, poem: .3 }, cat: { political: 5, scientific: 1, commercial: .5, artistic: .2, historical: .5 }, font: { GROT: 2, GROT_C: 2, SHOULDERS: 2, SIXCAPS: 1.5, MONO: 1.5, DECO: .3, SHADE: .3 } },
+  HISTORICAL: { tags: ['historical', 'artistic'], base: { PLATE: 2, MIRROR: 2, DROSTE: 1.4, LED: .3, PATTERN: .5, KALEIDO: .8 }, type: { MIXED: 1.6, CHARFLIP: 1.4, ARC: 1.5, ECHO: 1.3, WIDTH_MORPH: .3, TEXTURE: .7 }, pal: { UKIYO: 3, OXIDE: 2.5, NOTICE: 1.2, VOID: .2, ACID: .3 }, voice: { latin: 3, poem: 2.5, slogan: .6, signal: .2 }, cat: { historical: 4, artistic: 1, political: .5, commercial: .3, scientific: .5 }, font: { ROMAN: 3, FRAKTUR: 3, FELL: 3, DIDONE: 1.5, PIXEL: .2, RUBIK: .2 } },
+  ARTISTIC: { tags: ['artistic'], base: { KALEIDO: 2, MIRROR: 1.6, PATTERN: 2, SLITSCAN: 1.5, LED: .6 }, mid: { LUMA_KEY: 1.5, BLOB: 1.4 }, type: { NONE: 2, ARC: 1.5, SCATTER: 1.3, OUTLINE_SWEEP: 1.2 }, pal: { MINT: 2, ROSE: 2, ACID: 1.5, VOID: 1.5, UKIYO: 1.3 }, voice: { poem: 2, slogan: 1, latin: 1 }, cat: { artistic: 4, historical: 1 }, font: { DIDONE: 2, SERIF: 2, DECO: 2, FELL: 1.3 } },
+  COMMERCIAL: { tags: ['commercial'], base: { PLATE: 1.5, FIELD: 2, LED: 1.3, DROSTE: 1.2 }, mid: { SPRITES: 2, BLEND: 1.3 }, type: { KNOCKOUT: 2, WIDTH_MORPH: 2, TEXTURE: 1.5, SCATTER: 1.5, NONE: .3 }, pal: { ACID: 2, COBALT: 2, ROSE: 1.5, NOTICE: 1 }, voice: { slogan: 3, signal: 1 }, cat: { commercial: 5, scientific: 1 }, font: { RUBIK: 2, SHADE: 2, GROT: 2, GROT_X: 2, DIDONE_R: 1.6, DECO: 1.4 } },
+  ABSTRACT: { tags: ['artistic'], base: { PATTERN: 4, KALEIDO: 2, FIELD: 1.5, PLATE: .3, LED: .6, DROSTE: .6 }, mid: { SPRITES: 1.5, LUMA_KEY: 1.5, NONE: 1.5 }, type: { NONE: 6 }, pal: { VOID: 2, ACID: 1.5, MINT: 1.5, COBALT: 1.3 }, voice: { signal: 2 }, cat: { artistic: 1 }, font: { PIXEL: 2, MONO: 2 } }
+};
+const CTX_NAMES = Object.keys(CTX);
+const DIMW = { base: 3, mid: 2, type: 3, font: 2, cam: 2, trans: 1, pal: 1.5, pat: 1.5, grade: 1 };
+const SEC_COL = { INTRO: '#44566a', VERSE: '#56663f', BUILD: '#8a6a2a', DROP: '#b0342a', BREAK: '#3a3a78', OUTRO: '#4a4a4a' };
+const BASE_COL = { PLATE: '#8a8378', KALEIDO: '#c86bd6', SLITSCAN: '#57c7d4', MIRROR: '#b39a6a', DROSTE: '#6f8596', PATTERN: '#ffd23f', FIELD: '#e0301e', LED: '#3b5cff' };
+const BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]];
+const LS_KEY = 'kfb-kaleido-h4-v1';
+
+function mulberry(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function hash() { let h = 2166136261 >>> 0; for (let i = 0; i < arguments.length; i++) { h ^= (arguments[i] | 0); h = Math.imul(h, 16777619); h ^= h >>> 13; } return h >>> 0; }
+function strHash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+const pick = (r, a) => a[Math.floor(r() * a.length)];
+function wpick(r, base) {
+  const mults = Array.prototype.slice.call(arguments, 2), keys = Object.keys(base);
+  const ws = keys.map(k => { let w = base[k]; mults.forEach(m => { if (m && m[k] !== undefined) w *= m[k]; }); return Math.max(0, w); });
+  const s = ws.reduce((a, b) => a + b, 0); if (s <= 0) return keys[0];
+  let x = r() * s; for (let i = 0; i < keys.length; i++) { x -= ws[i]; if (x <= 0) return keys[i]; } return keys[keys.length - 1];
+}
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, u) => a + (b - a) * u;
+const eIOS = u => .5 - .5 * Math.cos(Math.PI * clamp(u, 0, 1));
+const eIOC = u => { u = clamp(u, 0, 1); return u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; };
+const eOC = u => 1 - Math.pow(1 - clamp(u, 0, 1), 3);
+const eIC = u => { u = clamp(u, 0, 1); return u * u * u; };
+const eOX = u => { u = clamp(u, 0, 1); return u === 1 ? 1 : 1 - Math.pow(2, -10 * u); };
+const eOB = u => { u = clamp(u, 0, 1); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); };
+const longestWord = s => s.replace(/[.,!?;:"“”]/g, '').split(' ').reduce((a, b) => b.length > a.length ? b : a, '');
+function perm(r, n) { const a = Array.from({ length: n }, (_, i) => i); for (let i = n - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); const x = a[i]; a[i] = a[j]; a[j] = x; } return a; }
+
+class Component extends DCLogic {
+  state = { seed: 1966, ctx: 'KALEIDOSCOPE', playing: true, info: {}, boards: [] };
+  faceRef = el => { this.faceEl = el; };
+  miniRef = el => { this.miniEl = el; };
+  tlRef = el => { this.tlEl = el; };
+  boardEls = [];
+  boardRefFns = Array.from({ length: 12 }, (_, i) => el => { if (el) this.boardEls[i] = el; });
+
+  componentDidMount() {
+    this.imgs = {}; this.failed = {}; this.cache = new Map(); this.ready = false; this.frame = 0; this.fps = 0; this.lastInfo = 0; this.lastSave = 0; this.grainPats = new WeakMap();
+    let saved = null; try { saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (e) {}
+    this._seed = saved && saved.seed || 1966; this._ctx = saved && CTX[saved.ctx] ? saved.ctx : 'KALEIDOSCOPE';
+    this._resume = saved ? { cycle: saved.cycle || 0, t: saved.t || 0 } : null;
+    this.setState({ seed: this._seed, ctx: this._ctx });
+    const mk = () => { const c = document.createElement('canvas'); c.width = W; c.height = H; return c; };
+    this.off = mk(); this.tmp = mk(); this.bufA = mk(); this.bufB = mk();
+    const nz = document.createElement('canvas'); nz.width = nz.height = 256; const nx = nz.getContext('2d'); const id = nx.createImageData(256, 256); const nr = mulberry(99);
+    for (let i = 0; i < id.data.length; i += 4) { const v = Math.floor(nr() * 255); id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } nx.putImageData(id, 0, 0); this.noiseSrc = nz;
+    const fl = f => document.fonts ? document.fonts.load(f).catch(() => {}) : Promise.resolve();
+    const fonts = Promise.all(FONT_KEYS.map(k => fl(FONTS[k].f(60))).concat([fl('600 12px "IBM Plex Mono"')]));
+    const imgs = Promise.all(POOL.map(p => new Promise(res => {
+      const im = new Image(); im.crossOrigin = 'anonymous'; im.decoding = 'async';
+      im.onload = () => { this.imgs[p.id] = im; res(); };
+      im.onerror = () => { this.failed[p.id] = true; res(); };
+      im.src = T + p.src;
+    })));
+    Promise.all([fonts, imgs]).then(() => {
+      this.pool = POOL.filter(p => this.imgs[p.id]);
+      if (this.pool.length < 6) return;
+      this.startAll(this._resume);
+      this.ready = true;
+      this.buildSample();
+    });
+    this.last = performance.now();
+    this.to = setTimeout(() => this.tick(performance.now()), 0);
+  }
+  componentWillUnmount() { this._dead = true; cancelAnimationFrame(this.raf); clearTimeout(this.to); }
+
+  bs() { return 60 / (this.props.bpm ?? 112); }
+  kCand() { return Math.max(1, Math.round(this.props.candidates ?? 10)); }
+  kindOf(id) { const p = POOL.find(q => q.id === id); return p ? p.kind : 'photo'; }
+
+  newState(seed, ctxName) { return { seed, ctxName, cycle: 0, hist: [], recent: { plates: [], texts: [] }, lastForm: -1 }; }
+
+  startAll(resume) {
+    this.st = this.newState(this._seed, this._ctx);
+    this.stats = { n: 0, sigs: new Set(), combos: new Set(), fonts: new Set(), types: new Set() };
+    this.lastKey = null; this.prevCycleLast = null;
+    const target = resume ? resume.cycle : 0;
+    this.cyc = this.planCycle(this.st);
+    for (let i = 0; i < target; i++) { this.prevCycleLast = this.cyc.shots[this.cyc.shots.length - 1]; this.st.cycle++; this.cyc = this.planCycle(this.st); }
+    this.t = resume ? Math.min(resume.t, this.cyc.beats * this.bs() - .01) : 0;
+  }
+
+  planCycle(st) {
+    const r = mulberry(hash(st.seed, st.cycle, 91, strHash(st.ctxName)));
+    let fi = Math.floor(r() * FORMS.length); if (fi === st.lastForm) fi = (fi + 1) % FORMS.length; st.lastForm = fi;
+    let beat = 0; const sections = [], shots = [];
+    FORMS[fi].forEach(([name, bars]) => {
+      const S = SECTIONS[name], b0 = beat, len = bars * 4; sections.push({ name, b0, b1: b0 + len, e: S.e });
+      let b = b0;
+      while (b < b0 + len) { let L = pick(r, S.shot); if (b + L > b0 + len) L = b0 + len - b; const sh = this.planShot(st, r, S, name, L); sh.b0 = b; sh.b1 = b + L; sh.k = shots.length; sh.cycle = st.cycle; shots.push(sh); b += L; }
+      beat += len;
+    });
+    return { sections, shots, beats: beat, form: fi, cycle: st.cycle };
+  }
+
+  genCand(r, C, S, prev, st, L) {
+    const c = {};
+    c.base = wpick(r, BASE_W, C.base, S.base); for (let i = 0; i < 5 && c.base === prev.base; i++) c.base = wpick(r, BASE_W, C.base, S.base);
+    c.type = wpick(r, TYPE_W, C.type, S.type);
+    if (L <= 1 && ['MIXED', 'SCATTER', 'OUTLINE_SWEEP', 'CHARFLIP', 'ARC', 'ECHO'].includes(c.type)) c.type = pick(r, ['NONE', 'GIANT_CROP', 'TEXTURE', 'WIDTH_MORPH']);
+    if (c.type === 'KNOCKOUT' && IMG[c.base]) c.base = pick(r, ['FIELD', 'PATTERN', 'LED']);
+    const img = IMG[c.base];
+    c.mid = wpick(r, MID_W, C.mid, img ? { BLEND: .8, STRIPS: .8, LUMA_KEY: 1.3, SPRITES: 1.2, BLOB: .9 } : { BLEND: 1.5, BLOB: 1.5, STRIPS: 1.2, LUMA_KEY: 1.6, SPRITES: .8, NONE: .5 });
+    if (c.base === 'LED' && c.mid === 'BLEND') c.mid = 'SPRITES';
+    if (c.type === 'TEXTURE' && c.mid === 'STRIPS') c.mid = 'NONE';
+    c.cam = wpick(r, CAM_W, S.cam); for (let i = 0; i < 5 && c.cam === prev.cam; i++) c.cam = wpick(r, CAM_W, S.cam);
+    c.trans = wpick(r, S.trans);
+    c.pal = wpick(r, PAL_W, C.pal); for (let i = 0; i < 5 && c.pal === prev.pal; i++) c.pal = wpick(r, PAL_W, C.pal);
+    c.pat = c.base === 'PATTERN' ? wpick(r, PAT_W) : '-'; for (let i = 0; i < 5 && c.pat !== '-' && (c.pat === prev.pat || c.pat === prev.pat2); i++) c.pat = wpick(r, PAT_W);
+    c.pat2 = c.mid === 'LUMA_KEY' ? wpick(r, PAT_W) : '-'; for (let i = 0; i < 5 && c.pat2 !== '-' && c.pat2 === c.pat; i++) c.pat2 = wpick(r, PAT_W);
+    c.grade = (img && c.base !== 'KALEIDO') ? wpick(r, GRADE_W) : '-';
+    if (c.base === 'SLITSCAN' && c.grade === 'HALFTONE') c.grade = 'DUO';
+    c.font = '-'; c.text = null;
+    if (c.type !== 'NONE') {
+      const recentT = st.recent.texts.slice(-14);
+      let cands = TEXTS.filter(x => !recentT.includes(x.s) && x.s.length <= TMAX[c.type]);
+      if (!cands.length) cands = TEXTS.filter(x => x.s.length <= TMAX[c.type]);
+      const tw = {}; cands.forEach((x, i) => { tw[i] = ((C.voice && C.voice[x.voice]) ?? 1) * (x.cat && C.cat ? (C.cat[x.cat] ?? .3) : 1); });
+      c.text = cands[+wpick(r, tw)];
+      if (c.type === 'WIDTH_MORPH') c.font = 'GROT';
+      else {
+        const fw = {}; FONT_KEYS.forEach(k => { fw[k] = (FONTS[k].v[c.text.voice] || .12) * ((C.font && C.font[k]) ?? 1) * (k === prev.font ? .05 : 1); });
+        c.font = wpick(r, fw);
+        if (c.type === 'MIXED') { c.mfonts = [c.font]; for (let i = 0; i < 3; i++) { let k = c.font; for (let j = 0; j < 8 && c.mfonts.includes(k); j++) k = wpick(r, fw); c.mfonts.push(k); } }
+      }
+    }
+    return c;
+  }
+
+  simScore(c, hist) {
+    let s = 0;
+    for (let a = 0; a < hist.length; a++) {
+      const h = hist[hist.length - 1 - a], w = Math.pow(.82, a); let m = 0;
+      for (const k in DIMW) if (c[k] !== '-' && c[k] === h[k]) m += DIMW[k];
+      if (c.base === h.base && c.mid === h.mid && c.type === h.type) m += 6;
+      s += w * m;
+    }
+    return s;
+  }
+
+  choosePlate(r, pref, st, used, avoidKind) {
+    const recent = st.recent.plates.slice(-10);
+    let c = this.pool.filter(p => (pref[p.kind] || 0) > 0 && !used.includes(p.id) && !recent.includes(p.id));
+    if (!c.length) c = this.pool.filter(p => (pref[p.kind] || 0) > 0 && !used.includes(p.id));
+    if (!c.length) c = this.pool.filter(p => !used.includes(p.id)); if (!c.length) c = this.pool;
+    const C = CTX[st.ctxName];
+    const w = {}; c.forEach((p, i) => { w[i] = (pref[p.kind] || .5) * (C.tags && p.tags.some(t => C.tags.includes(t)) ? 3 : 1) * (avoidKind && p.kind === avoidKind ? .25 : 1); });
+    const id = c[+wpick(r, w)].id; used.push(id); st.recent.plates.push(id); if (st.recent.plates.length > 40) st.recent.plates.shift();
+    return id;
+  }
+
+  planShot(st, r, S, secName, L) {
+    const C = CTX[st.ctxName], prev = st.hist[st.hist.length - 1] || {};
+    let best = null, bestS = Infinity;
+    for (let k = 0; k < this.kCand(); k++) { const c = this.genCand(r, C, S, prev, st, L); const s = this.simScore(c, st.hist); if (s < bestS) { bestS = s; best = c; } }
+    st.hist.push(best); if (st.hist.length > 16) st.hist.shift();
+    const sh = Object.assign({}, best), P = PALS[sh.pal], used = [];
+    sh.beats = L; sh.energy = S.e; sh.sec = secName; sh.sim = bestS;
+    sh.fx = .25 + r() * .5; sh.fy = .25 + r() * .5; sh.ph = r() * 6.28; sh.seed = Math.floor(r() * 1e9);
+    sh.cp = { amp: .7 + r() * .5, sgn: r() < .5 ? -1 : 1, fx: (r() - .5) * W * .22, fy: (r() - .5) * H * .18, ph: r() * 6.28 };
+    if (IMG[sh.base] || sh.base === 'LED') sh.plate = this.choosePlate(r, KPREF[sh.base], st, used);
+    if (sh.base === 'KALEIDO') { sh.kn = pick(r, [6, 8, 10, 12]); sh.spin = (.05 + r() * .18) * sh.cp.sgn * (1 + sh.energy); const kd = this.kindOf(sh.plate); sh.kgrade = (kd === 'poster' || kd === 'print') ? 'POSTER' : pick(r, ['DUO', 'BW', 'DUOA']); }
+    if (sh.base === 'SLITSCAN') { sh.sfreq = .12 + r() * .4; sh.sspeed = 1 + r() * 2.5; sh.shor = r() < .4; }
+    if (sh.base === 'MIRROR') sh.mquad = r() < .4;
+    if (sh.base === 'DROSTE') { sh.plate2b = this.choosePlate(r, KPREF.DROSTE, st, used); sh.grade2 = pick(r, ['BW', 'DUO', 'POSTER', 'DUOA'].filter(g => g !== sh.grade)); sh.drate = .15 + r() * .25; sh.drot = (r() - .5) * .25; }
+    if (sh.base === 'PATTERN' || sh.mid === 'LUMA_KEY') { sh.pinv = r() < .4; sh.pfx = r(); sh.la = pick(r, [[3, 2], [5, 4], [3, 4], [5, 2]]); }
+    if (sh.base === 'FIELD') { sh.fvar = pick(r, ['BANDS', 'DIAG', 'GRAD']); sh.fn = 3 + Math.floor(r() * 4); sh.fsp = (r() - .5) * 2; }
+    if (sh.base === 'LED') sh.ledA = r() < .45;
+    if (['BLEND', 'STRIPS', 'BLOB', 'LUMA_KEY'].includes(sh.mid)) {
+      sh.plate2 = this.choosePlate(r, KPREF.MID, st, used, sh.plate ? this.kindOf(sh.plate) : null);
+      const k2 = this.kindOf(sh.plate2); sh.g2 = (k2 === 'poster' || k2 === 'print') ? 'POSTER' : pick(r, ['BW', 'DUOA']);
+      sh.fx2 = .2 + r() * .6; sh.fy2 = .2 + r() * .6; sh.linv = r() < .3;
+      sh.bmode = lum(P.bg) < .4 ? pick(r, ['screen', 'difference', 'overlay', 'hard-light', 'lighten']) : pick(r, ['multiply', 'difference', 'luminosity', 'hard-light', 'darken']);
+      sh.sn = 5 + Math.floor(r() * 6);
+      sh.bshape = r() < .5 ? 'BLOB' : 'SHARD'; sh.bx = W * (.22 + r() * .56); sh.by = H * (.3 + r() * .4); sh.br = H * (.3 + r() * .14);
+      const nS = 6 + Math.floor(r() * 3); sh.shard = Array.from({ length: nS }, (_, i) => [i / nS * Math.PI * 2 + (r() - .5) * .5, .6 + r() * .6]);
+    }
+    if (sh.mid === 'SPRITES') { sh.spvar = pick(r, ['BIG', 'ROW', 'SCATTER']); sh.sprite = pick(r, SPR_KEYS); sh.spx = pick(r, [.2, .5, .8]); sh.spts = Array.from({ length: 9 }, () => [r(), r(), .012 + r() * .02, Math.floor(r() * 2)]); }
+    if (sh.type !== 'NONE') {
+      st.recent.texts.push(sh.text.s); if (st.recent.texts.length > 40) st.recent.texts.shift();
+      if (sh.type === 'KNOCKOUT') sh.plateT = this.choosePlate(r, KPREF.KNOCK, st, used);
+      const onImg = IMG[sh.base] || sh.base === 'LED';
+      const opts = onImg ? [[P.bg, 'source-over', 3], [P.a, 'source-over', 2], ['#ffffff', 'difference', 1.5]] : [[P.a, 'source-over', 3], [P.ink, 'source-over', 2], ['#ffffff', 'difference', 1]];
+      const ow = {}; opts.forEach((o, i) => { ow[i] = o[2]; }); const o = opts[+wpick(r, ow)];
+      sh.tc = o[0]; sh.tblend = o[1]; sh.tc2 = sh.tc === P.a ? (onImg ? P.bg : P.ink) : P.a;
+      sh.gy = (r() - .5) * .2; sh.edir = r() < .5 ? -1 : 1; sh.vside = r() < .5 ? -1 : 1; sh.txs = 52 + Math.floor(r() * 30); sh.tsp = .6 + r() * 1.4; sh.wrate = .5 + r();
+    }
+    sh.wdir = sh.cp.sgn; sh.slitOrder = perm(r, 16);
+    const letters = sh.text ? sh.text.s.toUpperCase().replace(/[^A-Z]/g, '') : '';
+    sh.wipeChar = letters ? letters[0] : pick(r, ['O', 'K', 'B', 'M', 'A', '8']);
+    sh.sig = [sh.base, sh.mid, sh.type, sh.cam, sh.font, sh.pal, sh.pat, sh.grade].join('|');
+    return sh;
+  }
+
+  graded(id, g, pal) {
+    const key = id + '|' + g + '|' + (g === 'BW' || g === 'POSTER' ? '' : pal); let c = this.cache.get(key); if (c) return c;
+    const img = this.imgs[id], s = Math.min(1, 900 / Math.max(img.naturalWidth, img.naturalHeight)), w = Math.max(2, Math.round(img.naturalWidth * s)), h = Math.max(2, Math.round(img.naturalHeight * s));
+    c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d', { willReadFrequently: true });
+    if (g === 'POSTER') { x.filter = 'contrast(1.1) saturate(1.2)'; x.drawImage(img, 0, 0, w, h); x.filter = 'none'; }
+    else {
+      x.filter = 'grayscale(1) contrast(1.45)'; x.drawImage(img, 0, 0, w, h); x.filter = 'none';
+      const P = PALS[pal] || PALS.NOTICE;
+      if (g === 'DUO' || g === 'DUOA' || g === 'THRESH') {
+        const lo = hexRGB(darkOf(P)), hi = hexRGB(g === 'DUOA' ? P.a : lightOf(P)), id2 = x.getImageData(0, 0, w, h), d = id2.data;
+        for (let i = 0; i < d.length; i += 4) { let l = d[i] / 255; if (g === 'THRESH') l = l > .52 ? 1 : 0; d[i] = lo[0] + (hi[0] - lo[0]) * l; d[i + 1] = lo[1] + (hi[1] - lo[1]) * l; d[i + 2] = lo[2] + (hi[2] - lo[2]) * l; }
+        x.putImageData(id2, 0, 0);
+      } else if (g === 'HALFTONE') {
+        const cell = 7, sw = Math.ceil(w / cell), shh = Math.ceil(h / cell), sm = document.createElement('canvas'); sm.width = sw; sm.height = shh;
+        const sx = sm.getContext('2d', { willReadFrequently: true }); sx.drawImage(c, 0, 0, sw, shh); const d = sx.getImageData(0, 0, sw, shh).data;
+        x.fillStyle = lightOf(P); x.fillRect(0, 0, w, h); x.fillStyle = darkOf(P); x.beginPath();
+        for (let j = 0; j < shh; j++) for (let i = 0; i < sw; i++) { const l = d[(j * sw + i) * 4] / 255, rr = (1 - l) * cell * .66; if (rr > .5) { const cx = i * cell + cell / 2, cy = j * cell + cell / 2; x.moveTo(cx + rr, cy); x.arc(cx, cy, rr, 0, Math.PI * 2); } }
+        x.fill();
+      }
+    }
+    this.cache.set(key, c); this.trim(); return c;
+  }
+  lumaMask(id, inv) {
+    const key = id + '|LUMA|' + (inv ? 1 : 0); let c = this.cache.get(key); if (c) return c;
+    const img = this.imgs[id], s = Math.min(1, 700 / Math.max(img.naturalWidth, img.naturalHeight)), w = Math.round(img.naturalWidth * s), h = Math.round(img.naturalHeight * s);
+    c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d', { willReadFrequently: true });
+    x.filter = 'grayscale(1) contrast(1.6)'; x.drawImage(img, 0, 0, w, h); x.filter = 'none';
+    const id2 = x.getImageData(0, 0, w, h), d = id2.data;
+    for (let i = 0; i < d.length; i += 4) { let l = d[i] / 255; if (inv) l = 1 - l; const a = clamp((l - .38) / .24, 0, 1); d[i] = d[i + 1] = d[i + 2] = 255; d[i + 3] = a * a * (3 - 2 * a) * 255; }
+    x.putImageData(id2, 0, 0); this.cache.set(key, c); this.trim(); return c;
+  }
+  ledCanvas(id, pal, accent) {
+    const key = id + '|LED|' + pal + (accent ? 'A' : ''); let c = this.cache.get(key); if (c) return c;
+    const P = PALS[pal], cols = Math.ceil(OV.w / 8), rows = Math.ceil(OV.h / 8), sm = document.createElement('canvas'); sm.width = cols; sm.height = rows;
+    const sx = sm.getContext('2d', { willReadFrequently: true }); sx.filter = 'grayscale(1) contrast(1.8)'; this.cover(sx, this.imgs[id], 0, 0, cols, rows, 1, .5, .4); sx.filter = 'none';
+    const d = sx.getImageData(0, 0, cols, rows).data, dark = hexRGB(darkOf(P)), lit = accent ? P.a : lightOf(P), off = 'rgb(' + dark.map(v => Math.min(255, v + 24)).join(',') + ')';
+    c = document.createElement('canvas'); c.width = cols * 8; c.height = rows * 8; const o = c.getContext('2d');
+    o.fillStyle = darkOf(P); o.fillRect(0, 0, c.width, c.height);
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) { const l = d[(j * cols + i) * 4] / 255; o.fillStyle = l > (BAYER[j % 4][i % 4] + .5) / 16 ? lit : off; o.fillRect(i * 8, j * 8, 7, 7); }
+    this.cache.set(key, c); this.trim(); return c;
+  }
+  trim() { if (this.cache.size > 60) { const it = this.cache.keys(); for (let i = 0; i < 12; i++) this.cache.delete(it.next().value); } }
+
+  cover(ctx, src, x, y, w, h, zoom, fx, fy) {
+    const sw = src.width || src.naturalWidth, shh = src.height || src.naturalHeight, s = Math.max(w / sw, h / shh) * zoom, dw = sw * s, dh = shh * s;
+    ctx.drawImage(src, x + (w - dw) * fx, y + (h - dh) * fy, dw, dh);
+  }
+  setFont(ctx, key, size) {
+    const F = FONTS[key]; ctx.font = F.f(Math.max(1, Math.round(size)));
+    if ('letterSpacing' in ctx) ctx.letterSpacing = F.ls ? Math.round(F.ls * size) + 'px' : '0px';
+  }
+  balance(words, n) {
+    const lines = [], total = words.join(' ').length, tgt = total / n; let cur = [], acc = 0;
+    words.forEach((w, i) => { cur.push(w); acc += w.length + 1; const remW = words.length - i - 1, remL = n - lines.length - 1; if (lines.length < n - 1 && acc >= tgt * (lines.length + 1) - 1 && remW >= remL) { lines.push(cur.join(' ')); cur = []; } });
+    if (cur.length) lines.push(cur.join(' ')); return lines;
+  }
+  fitBlock(ctx, str, key, maxW, maxH, maxLines, lhR) {
+    const words = str.split(' '); let best = null;
+    for (let n = 1; n <= Math.min(maxLines, words.length); n++) {
+      const lines = this.balance(words, n); this.setFont(ctx, key, 100); let s = Infinity;
+      lines.forEach(l => { s = Math.min(s, 100 * maxW / Math.max(1, ctx.measureText(l).width)); });
+      s = Math.min(s, maxH / ((n - 1) * lhR + .78));
+      if (!best || s > best.size * 1.08) best = { size: s, lines };
+    }
+    return best;
+  }
+  firstBase(n, s, lhR) { const tot = (n - 1) * s * lhR + s * .72; return H / 2 - tot / 2 + s * .72; }
+
+  camAt(sh, t, tb, u) {
+    const c = sh.cp, e = sh.energy; let x = 0, y = 0, z = 1.08, rot = 0, par = 1, dz = false;
+    switch (sh.cam) {
+      case 'PUSH_IN': z = lerp(1.04, 1.04 + .28 * c.amp, eIOS(u)); x = c.fx * eIOS(u); y = c.fy * eIOS(u); break;
+      case 'PULL_OUT': z = lerp(1.04 + .34 * c.amp, 1.04, eOC(u)); break;
+      case 'TRUCK': x = lerp(-1, 1, eIOS(u)) * W * .12 * c.sgn; z = 1.2; break;
+      case 'CRANE': y = lerp(-1, 1, eIOS(u)) * H * .16 * c.sgn; z = 1.22; break;
+      case 'ROLL': rot = lerp(-1, 1, eIOS(u)) * .09 * c.sgn; z = 1.24; break;
+      case 'DUTCH_PUSH': rot = eIOC(u) * .14 * c.sgn; z = lerp(1.06, 1.36, eIOC(u)); break;
+      case 'SNAP': { const k = u < .45 ? 0 : eOX((u - .45) / .3); z = lerp(1.05, 1.5, k); x = c.fx * k; y = c.fy * k; break; }
+      case 'FLOAT': z = 1.14; break;
+      case 'ORBIT': x = lerp(-1, 1, eIOS(u)) * W * .14 * c.sgn; z = 1.26; par = 1.7; break;
+      case 'DOLLY_ZOOM': z = lerp(1.02, 1.4, eIOS(u)); dz = true; break;
+    }
+    const h = .004 + .012 * e;
+    x += W * h * (Math.sin(t * 1.3 + c.ph) + .5 * Math.sin(t * 3.1 + c.ph * 2)); y += H * h * (Math.sin(t * 1.7 + c.ph * 3) + .5 * Math.sin(t * 2.3)); rot += h * .4 * Math.sin(t * 1.1 + c.ph);
+    if (e > .55) { const f = tb - Math.floor(tb); z *= 1 + .035 * e * Math.exp(-7 * f); }
+    return { x, y, z, rot, par, dz };
+  }
+  layer(ctx, cam, d) {
+    const zl = cam.dz ? (d < .5 ? cam.z : Math.max(.92, 2.35 - cam.z)) : 1 + (cam.z - 1) * (d > .8 ? .55 : .45 + .55 * d), par = (.3 + .7 * d) * cam.par;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.translate(W / 2, H / 2); ctx.rotate(cam.rot * (.6 + .4 * d)); ctx.scale(zl, zl); ctx.translate(-W / 2 - cam.x * par, -H / 2 - cam.y * par);
+    ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  }
+
+  drawShot(ctx, sh, t) {
+    const bs = this.bs(), tb = t / bs, u = clamp(t / (sh.beats * bs), 0, 1), P = PALS[sh.pal], cam = this.camAt(sh, t, tb, u);
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = P.bg; ctx.fillRect(0, 0, W, H);
+    this.layer(ctx, cam, .12); this.drawBase(ctx, sh, t, tb, u, P);
+    if (sh.mid !== 'NONE') { this.layer(ctx, cam, .5); this.drawMid(ctx, sh, t, tb, u, P); }
+    if (sh.type !== 'NONE') { this.layer(ctx, cam, .9); this.drawType(ctx, sh, t, tb, u, P); }
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    this.grain(ctx, t);
+    ctx.restore();
+  }
+
+  drawBase(ctx, sh, t, tb, u, P) {
+    const b = sh.base;
+    if (b === 'PLATE') this.cover(ctx, this.graded(sh.plate, sh.grade, sh.pal), OV.x, OV.y, OV.w, OV.h, 1, sh.fx, sh.fy);
+    else if (b === 'KALEIDO') this.kaleido(ctx, this.graded(sh.plate, sh.kgrade, sh.pal), sh.kn, t * sh.spin, t, sh.ph, 1);
+    else if (b === 'SLITSCAN') this.slitscan(ctx, this.graded(sh.plate, sh.grade, sh.pal), sh, t);
+    else if (b === 'MIRROR') this.mirror(ctx, this.graded(sh.plate, sh.grade, sh.pal), sh, t);
+    else if (b === 'DROSTE') this.droste(ctx, sh, t);
+    else if (b === 'PATTERN') this.pattern(ctx, sh.pat, sh, t, tb, P, sh.pinv);
+    else if (b === 'FIELD') this.field(ctx, sh, t, P);
+    else if (b === 'LED') ctx.drawImage(this.ledCanvas(sh.plate, sh.pal, sh.ledA), OV.x, OV.y, OV.w, OV.h);
+  }
+
+  kaleido(ctx, src, n, spin, t, ph, zoom) {
+    const R = 720, sw = src.width, shh = src.height, s = 2.4 * R * zoom / Math.min(sw, shh);
+    const px = sw * (.2 + .14 * Math.sin(t * .23 + ph)), py = shh * (.5 + .22 * Math.cos(t * .19 + ph));
+    for (let i = 0; i < n; i++) {
+      ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(spin + i * 2 * Math.PI / n); if (i % 2) ctx.scale(1, -1);
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, R, -Math.PI / n - .006, Math.PI / n + .006); ctx.closePath(); ctx.clip();
+      ctx.drawImage(src, -px * s, -py * s, sw * s, shh * s); ctx.restore();
+    }
+  }
+  slitscan(ctx, src, sh, t) {
+    const k = 48, s = Math.max(OV.w / src.width, OV.h / src.height) * 1.25, dw = src.width * s, dh = src.height * s, x0 = OV.x + (OV.w - dw) * sh.fx, y0 = OV.y + (OV.h - dh) * sh.fy, amp = H * (.05 + .12 * sh.energy);
+    if (sh.shor) { const sl = src.height / k; for (let j = 0; j < k; j++) { const dx = Math.sin(j * sh.sfreq + t * sh.sspeed) * amp * 1.5; ctx.drawImage(src, 0, j * sl, src.width, sl, x0 + dx, y0 + j * sl * s, dw, sl * s + 1); } }
+    else { const sl = src.width / k; for (let i = 0; i < k; i++) { const dy = Math.sin(i * sh.sfreq + t * sh.sspeed) * amp; ctx.drawImage(src, i * sl, 0, sl, src.height, x0 + i * sl * s, y0 + dy, sl * s + 1, dh); } }
+  }
+  mirror(ctx, src, sh, t) {
+    const pan = Math.sin(t * .35 + sh.ph) * .2, fx = clamp(sh.fx + pan, 0, 1), fy = clamp(sh.fy + (sh.mquad ? Math.cos(t * .3) * .15 : 0), 0, 1);
+    const quad = (mx, my) => { ctx.save(); if (mx) { ctx.translate(W, 0); ctx.scale(-1, 1); } if (my) { ctx.translate(0, H); ctx.scale(1, -1); } ctx.beginPath(); ctx.rect(OV.x, OV.y, W / 2 - OV.x + .5, sh.mquad ? H / 2 - OV.y + .5 : OV.h); ctx.clip(); this.cover(ctx, src, OV.x, OV.y, OV.w, OV.h, 1.15, fx, fy); ctx.restore(); };
+    quad(false, false); quad(true, false); if (sh.mquad) { quad(false, true); quad(true, true); }
+  }
+  droste(ctx, sh, t) {
+    const f = (t * sh.drate) % 1;
+    for (let j = -1; j < 6; j++) {
+      const s = Math.pow(.56, j - f); if (s > 3.4) continue;
+      const w = W * s * 1.06, h = H * s * 1.06, alt = ((j % 2) + 2) % 2;
+      ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate((j - f) * sh.drot);
+      this.cover(ctx, this.graded(alt ? sh.plate2b : sh.plate, alt ? sh.grade2 : sh.grade, sh.pal), -w / 2, -h / 2, w, h, 1, .5, .45); ctx.restore();
+    }
+  }
+  field(ctx, sh, t, P) {
+    const cols = [P.bg, P.ink, P.b];
+    if (sh.fvar === 'GRAD') { const g = ctx.createLinearGradient(OV.x, OV.y, OV.x + OV.w, OV.y + OV.h * (.5 + .5 * Math.sin(t * .2))); g.addColorStop(0, P.bg); g.addColorStop(.55, P.b); g.addColorStop(1, P.ink); ctx.fillStyle = g; ctx.fillRect(OV.x, OV.y, OV.w, OV.h); return; }
+    ctx.save(); if (sh.fvar === 'DIAG') { ctx.translate(W / 2, H / 2); ctx.rotate(-.5 * sh.cp.sgn); ctx.translate(-W / 2, -H / 2); }
+    const R = Math.hypot(OV.w, OV.h), hh = R / sh.fn / 1.6, off = ((t * sh.fsp * 24) % (hh * 3) + hh * 3) % (hh * 3), y0 = H / 2 - R / 2;
+    for (let i = -3; i < R / hh + 3; i++) { ctx.fillStyle = cols[((i % 3) + 3) % 3]; ctx.fillRect(W / 2 - R / 2, y0 + i * hh + off, R, hh + 1); }
+    ctx.restore();
+  }
+
+  pattern(ctx, id, sh, t, tb, P, inv) {
+    const fg = inv ? P.bg : P.ink, bg = inv ? P.ink : P.bg, c2 = P.b, cx = W / 2, cy = H / 2, R = OV;
+    ctx.fillStyle = bg; ctx.fillRect(R.x, R.y, R.w, R.h);
+    if (id === 'MOIRE') {
+      const s = H / 17, M = Math.hypot(R.w, R.h) * .6; ctx.strokeStyle = fg; ctx.lineWidth = s * .48;
+      const ring = (ox, oy) => { ctx.beginPath(); for (let r = s; r < M; r += s) { ctx.moveTo(ox + r, oy); ctx.arc(ox, oy, r, 0, Math.PI * 2); } ctx.stroke(); };
+      ring(cx - W * .12, cy); ring(cx + W * .1 + Math.cos(t * .5) * s * 3, cy + Math.sin(t * .7) * s * 2);
+    } else if (id === 'RAYS') {
+      const n = 36, ox = R.x + R.w * (.2 + .6 * sh.pfx), oy = R.y + R.h * .92, L = Math.hypot(R.w, R.h) * 1.2, a0 = t * .12 * sh.cp.sgn; ctx.fillStyle = fg;
+      for (let i = 0; i < n; i += 2) { const a = a0 + i / n * Math.PI * 2, b = a0 + (i + 1) / n * Math.PI * 2; ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + Math.cos(a) * L, oy + Math.sin(a) * L); ctx.lineTo(ox + Math.cos(b) * L, oy + Math.sin(b) * L); ctx.closePath(); ctx.fill(); }
+    } else if (id === 'TRUCHET') {
+      const s = H / 5, bt = Math.floor(tb); ctx.strokeStyle = fg; ctx.lineWidth = s / 3.2;
+      for (let y = R.y; y < R.y + R.h; y += s) for (let x = R.x; x < R.x + R.w; x += s) {
+        const i = Math.round((x - R.x) / s), j = Math.round((y - R.y) / s); let o = hash(i, j, sh.seed) & 1; if (hash(i, j, bt, sh.seed) % 4 === 0) o ^= 1;
+        ctx.beginPath();
+        if (o) { ctx.arc(x, y, s / 2, 0, Math.PI / 2); ctx.moveTo(x + s, y + s / 2); ctx.arc(x + s, y + s, s / 2, -Math.PI / 2, -Math.PI, true); }
+        else { ctx.moveTo(x + s / 2, y); ctx.arc(x + s, y, s / 2, Math.PI, Math.PI / 2, true); ctx.moveTo(x, y + s / 2); ctx.arc(x, y + s, s / 2, -Math.PI / 2, 0); }
+        ctx.stroke();
+      }
+    } else if (id === 'DOTWAVE') {
+      const s = H / 12; ctx.fillStyle = fg; ctx.beginPath();
+      for (let y = R.y + s / 2; y < R.y + R.h; y += s) for (let x = R.x + s / 2; x < R.x + R.w; x += s) { const v = .5 + .5 * Math.sin((x - cx) * .016 + t * 1.6) * Math.cos((y - cy) * .022 - t * 1.1), rr = s * .5 * (.1 + .9 * v); ctx.moveTo(x + rr, y); ctx.arc(x, y, rr, 0, Math.PI * 2); }
+      ctx.fill();
+    } else if (id === 'STRIPES') {
+      const s = H / 6, off = (t * s * .8) % (s * 2), L = Math.hypot(R.w, R.h);
+      ctx.save(); ctx.translate(cx, cy); ctx.rotate(Math.PI / 4 * sh.cp.sgn); ctx.fillStyle = fg; for (let x = -L - s * 2 + off; x < L; x += s * 2) ctx.fillRect(x, -L, s, L * 2);
+      ctx.fillStyle = c2; ctx.fillRect(-L, -s * .3 + Math.sin(t * .6) * H * .2, L * 2, s * .6); ctx.restore();
+    } else if (id === 'FLOW') {
+      const n = 30, gap = R.h / n; ctx.strokeStyle = fg; ctx.lineWidth = gap * .46; ctx.lineCap = 'butt';
+      for (let i = 0; i < n; i++) { const yb = R.y + i * gap + gap / 2; ctx.beginPath(); for (let x = R.x; x <= R.x + R.w; x += 12) { const env = Math.exp(-Math.pow((x - cx) / (W * .45), 2)), y = yb + Math.sin(x * .009 + i * .32 + t * 1.2) * gap * 2.4 * env; x === R.x ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } ctx.stroke(); }
+    } else if (id === 'SQUARES') {
+      const K = 14, step = Math.hypot(R.w, R.h) / K;
+      for (let k = 0; k < K; k++) { const sz = (K - k) * step; ctx.save(); ctx.translate(cx, cy); ctx.rotate(k * .07 * Math.sin(t * .4) + t * .08 * sh.cp.sgn); ctx.fillStyle = k % 2 ? bg : (k % 4 === 0 ? c2 : fg); ctx.fillRect(-sz / 2, -sz / 2, sz, sz); ctx.restore(); }
+    } else if (id === 'LISSAJOUS') {
+      const a = sh.la[0], b = sh.la[1], A = W * .44, B = H * .4, d = t * .35; ctx.strokeStyle = fg; ctx.lineWidth = H * .045; ctx.lineJoin = 'round'; ctx.beginPath();
+      for (let i = 0; i <= 600; i++) { const th = i / 600 * Math.PI * 2, x = cx + A * Math.sin(a * th + d), y = cy + B * Math.sin(b * th); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+      ctx.stroke(); ctx.strokeStyle = c2; ctx.lineWidth = H * .012; ctx.stroke();
+    } else if (id === 'CHECKER') {
+      const s = H / 6; ctx.fillStyle = fg;
+      for (let j = 0; j * s < R.h; j++) { const off = Math.sin(j * .55 + t * 1.4) * s * .9; for (let i = -1; i * s < R.w + s; i++) if ((i + j) % 2 === 0) ctx.fillRect(R.x + i * s + off, R.y + j * s, s, s); }
+    } else if (id === 'SPIRAL') {
+      const k = H * .045, rot = t * .5 * sh.cp.sgn; ctx.strokeStyle = fg; ctx.lineWidth = k * 2.8; ctx.beginPath();
+      for (let th = 0; th < 60; th += .05) { const r = k * th, x = cx + Math.cos(th + rot) * r, y = cy + Math.sin(th + rot) * r; th ? ctx.lineTo(x, y) : ctx.moveTo(x, y); if (r > W) break; }
+      ctx.stroke();
+    }
+  }
+
+  spriteDraw(ctx, key, frame, x, y, cell, P) {
+    const map = { k: P.ink, w: P.bg, r: P.a, y: P.b };
+    SPR[key][frame % 2].forEach((row, j) => { for (let i = 0; i < row.length; i++) { const ch = row[i]; if (ch !== '.') { ctx.fillStyle = map[ch]; ctx.fillRect(Math.round(x + i * cell), Math.round(y + j * cell), Math.ceil(cell), Math.ceil(cell)); } } });
+  }
+
+  drawMid(ctx, sh, t, tb, u, P) {
+    const m = sh.mid, bt = Math.floor(tb);
+    if (m === 'BLEND') {
+      ctx.globalCompositeOperation = sh.bmode; ctx.globalAlpha = .92;
+      this.cover(ctx, this.graded(sh.plate2, sh.g2, sh.pal), OV.x, OV.y, OV.w, OV.h, 1.08 + .08 * u, sh.fx2, sh.fy2);
+      ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+    } else if (m === 'LUMA_KEY') {
+      const tc = this.tmp.getContext('2d'); tc.setTransform(1, 0, 0, 1, 0, 0); tc.globalCompositeOperation = 'source-over'; tc.globalAlpha = 1; tc.clearRect(0, 0, W, H); tc.setTransform(ctx.getTransform());
+      this.pattern(tc, sh.pat2, sh, t, tb, P, !sh.pinv);
+      tc.globalCompositeOperation = 'destination-in'; this.cover(tc, this.lumaMask(sh.plate2, sh.linv), OV.x, OV.y, OV.w, OV.h, 1.1 + .06 * u, sh.fx2, sh.fy2); tc.globalCompositeOperation = 'source-over';
+      ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(this.tmp, 0, 0); ctx.restore();
+    } else if (m === 'STRIPS') {
+      const hh = OV.h / sh.sn, src = this.graded(sh.plate2, sh.g2, sh.pal);
+      for (let i = 1; i < sh.sn; i += 2) { const dx = ((i % 4) < 2 ? 1 : -1) * (t * W * .05 + u * W * .04); ctx.save(); ctx.beginPath(); ctx.rect(OV.x, OV.y + i * hh, OV.w, hh * .92); ctx.clip(); this.cover(ctx, src, OV.x + dx - W * .2, OV.y, OV.w + W * .4, OV.h, 1.05, sh.fx2, sh.fy2); ctx.restore(); }
+    } else if (m === 'BLOB') {
+      const cx = sh.bx + Math.sin(t * .4 + sh.ph) * W * .03, cy = sh.by + Math.cos(t * .33) * H * .02, R0 = sh.br * (.94 + .06 * eOC(tb / .6));
+      ctx.save(); ctx.beginPath();
+      if (sh.bshape === 'BLOB') { for (let i = 0; i <= 90; i++) { const a = i / 90 * Math.PI * 2, rr = R0 * (1 + .18 * Math.sin(3 * a + sh.ph + t * .7) + .1 * Math.sin(5 * a - t * 1.1) + .07 * Math.sin(2 * a + t * .5)); const x = cx + Math.cos(a) * rr * 1.25, y = cy + Math.sin(a) * rr; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } }
+      else { sh.shard.forEach((p, i) => { const a = p[0] + Math.sin(t * .5 + i) * .05, rr = R0 * p[1] * 1.3, x = cx + Math.cos(a) * rr * 1.2, y = cy + Math.sin(a) * rr; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); }
+      ctx.closePath(); ctx.clip(); this.cover(ctx, this.graded(sh.plate2, sh.g2, sh.pal), cx - R0 * 1.8, cy - R0 * 1.5, R0 * 3.6, R0 * 3, 1.1 + .08 * u, sh.fx2, sh.fy2); ctx.restore();
+    } else if (m === 'SPRITES') {
+      if (sh.spvar === 'BIG') { const cell = H * .055; this.spriteDraw(ctx, sh.sprite, bt, W * sh.spx - cell * 6, H / 2 - cell * 6 - (bt % 2) * cell * .5, cell, P); }
+      else if (sh.spvar === 'ROW') { const cell = H * .024, span = W * 1.4; for (let i = 0; i < 7; i++) { const x = ((i * span / 7 + t * W * .16 * sh.cp.sgn) % span + span) % span - W * .2; this.spriteDraw(ctx, sh.sprite, bt + i, x, H * .72 - ((bt + i) % 2) * cell, cell, P); } }
+      else sh.spts.forEach((p, i) => { const cell = H * p[2]; this.spriteDraw(ctx, SPR_KEYS[(i + (sh.seed & 3)) % SPR_KEYS.length], bt + p[3], OV.x + OV.w * (.2 + .6 * p[0]), OV.y + OV.h * (.25 + .5 * p[1]) - ((bt + p[3]) % 2) * cell, cell, P); });
+    }
+  }
+
+  drawType(ctx, sh, t, tb, u, P) {
+    const key = sh.font, F = FONTS[key], raw = sh.text.s, str = F.up ? raw.toUpperCase() : raw;
+    ctx.globalCompositeOperation = sh.tblend; ctx.fillStyle = sh.tc; ctx.strokeStyle = sh.tc; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic'; ctx.lineJoin = 'round';
+    const ty = sh.type;
+    if (ty === 'GIANT_CROP') {
+      const word = F.up ? longestWord(raw).toUpperCase() : longestWord(raw), size = H * 1.3; this.setFont(ctx, key, size);
+      const ww = ctx.measureText(word).width, x = ww > W * .9 ? lerp(W * .06, W * .94 - ww, eIOS(u)) : (W - ww) / 2 + lerp(-W * .04, W * .04, eIOS(u)) * sh.edir;
+      ctx.fillText(word, x, H * .5 + size * .34 + sh.gy * H);
+    } else if (ty === 'KNOCKOUT') {
+      const m = this.tmp.getContext('2d'); m.setTransform(1, 0, 0, 1, 0, 0); m.globalCompositeOperation = 'source-over'; m.globalAlpha = 1; m.clearRect(0, 0, W, H); m.setTransform(ctx.getTransform());
+      const fb = this.fitBlock(m, str, key, W * .9, H * .82, 2, .9); this.setFont(m, key, fb.size); m.fillStyle = '#fff'; m.textAlign = 'center'; m.textBaseline = 'alphabetic';
+      const y0 = this.firstBase(fb.lines.length, fb.size, .9); fb.lines.forEach((l, i) => m.fillText(l, W / 2, y0 + i * fb.size * .9));
+      m.globalCompositeOperation = 'source-in'; this.cover(m, this.graded(sh.plateT, 'POSTER', sh.pal), OV.x, OV.y, OV.w, OV.h, 1.05 + .12 * u, sh.fx, sh.fy); m.globalCompositeOperation = 'source-over';
+      if ('letterSpacing' in m) m.letterSpacing = '0px';
+      ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(this.tmp, 0, 0); ctx.restore();
+    } else if (ty === 'ECHO') {
+      const fb = this.fitBlock(ctx, str, key, W * .86, H * .32, 1, 1), s = fb.size, step = s * .84; this.setFont(ctx, key, s); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      const scroll = u * step * sh.edir, line = fb.lines[0]; ctx.lineWidth = Math.max(1.5, s * .018);
+      for (let j = -4; j <= 4; j++) { const y = H / 2 + j * step + scroll; if (j === 0) { ctx.globalAlpha = 1; ctx.fillText(line, W / 2, y); } else { ctx.globalAlpha = Math.max(0, 1 - Math.abs(j) * .2); ctx.strokeText(line, W / 2, y); } }
+      ctx.globalAlpha = 1;
+    } else if (ty === 'SCATTER') {
+      const fb = this.fitBlock(ctx, str, key, W * .88, H * .72, 2, 1.02), s = fb.size; this.setFont(ctx, key, s);
+      const r = mulberry(sh.seed), y0 = this.firstBase(fb.lines.length, s, 1.02); let ci = 0;
+      fb.lines.forEach((line, li) => {
+        const lw = ctx.measureText(line).width, x0 = (W - lw) / 2;
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i], fx = x0 + ctx.measureText(line.slice(0, i)).width, fy = y0 + li * s * 1.02, sx = OV.x + r() * OV.w, sy = OV.y + r() * OV.h, sr = (r() - .5) * 3;
+          const p = eOB((tb - .1 - ci * .045) / .8); ci++; if (p <= 0) continue;
+          ctx.save(); ctx.translate(lerp(sx, fx, p), lerp(sy, fy, p)); ctx.rotate(lerp(sr, 0, p)); ctx.globalAlpha = clamp(p * 3, 0, 1); ctx.fillText(ch, 0, 0); ctx.restore();
+        }
+      });
+    } else if (ty === 'MIXED') {
+      const words = raw.split(' '), lines = this.balance(words, Math.min(4, words.length)), hs = [], ss = [];
+      lines.forEach((l, i) => { const k = sh.mfonts[i % sh.mfonts.length], F2 = FONTS[k], txt = F2.up ? l.toUpperCase() : l; this.setFont(ctx, k, 100); const s = 100 * W * .88 / Math.max(1, ctx.measureText(txt).width); ss.push([k, txt, s]); hs.push(s * .78); });
+      const gap = 10, tot = hs.reduce((a, b) => a + b, 0) + gap * (lines.length - 1), sc = Math.min(1, H * .84 / tot); let y = (H - tot * sc) / 2;
+      ss.forEach(([k, txt, s], i) => { const S = s * sc; y += S * .74; if (tb * 2 >= i) { this.setFont(ctx, k, S); ctx.fillStyle = i % 2 ? sh.tc2 : sh.tc; ctx.fillText(txt, W * .06, y); } y += S * .04 + gap * sc; });
+    } else if (ty === 'VERTICAL') {
+      const fb = this.fitBlock(ctx, str, key, H * .92, W * .3, 1, 1), s = fb.size; this.setFont(ctx, key, s);
+      const x = sh.vside < 0 ? W * .05 + s * .36 : W * .95 - s * .36;
+      ctx.save(); ctx.translate(x, H / 2 + lerp(H * .06, -H * .06, eIOS(u))); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center'; ctx.fillText(fb.lines[0], 0, s * .36); ctx.restore();
+    } else if (ty === 'TEXTURE') {
+      const s = sh.txs; this.setFont(ctx, key, s); const unit = str + '   ·   ', uw = Math.max(40, ctx.measureText(unit).width), rowH = s * 1.02, rows = Math.ceil(OV.h / rowH), hi = Math.floor(rows / 2);
+      for (let j = 0; j < rows; j++) {
+        const y = OV.y + j * rowH + s * .8, dir = j % 2 ? 1 : -1, off = ((t * sh.tsp * dir * 70) % uw + uw) % uw;
+        if (j === hi) { ctx.globalAlpha = 1; ctx.fillStyle = sh.tc; ctx.fillRect(OV.x, y - s * .82, OV.w, rowH); ctx.fillStyle = sh.tc2; } else { ctx.globalAlpha = .82; ctx.fillStyle = sh.tc; }
+        for (let x = OV.x - uw + off; x < OV.x + OV.w; x += uw) ctx.fillText(unit, x, y);
+      }
+      ctx.globalAlpha = 1;
+    } else if (ty === 'WIDTH_MORPH') {
+      const word = longestWord(raw).toUpperCase();
+      ctx.font = '900 ultra-expanded 100px Archivo'; const s = Math.min(100 * W * .9 / Math.max(1, ctx.measureText(word).width), H * .78 / .74);
+      const v = .5 - .5 * Math.cos(tb * Math.PI * sh.wrate), idx = Math.round(v * 8);
+      ctx.font = '900 ' + STRETCH[idx] + ' ' + Math.round(s) + 'px Archivo'; ctx.textAlign = 'center'; ctx.fillText(word, W / 2, H / 2 + s * .36);
+    } else if (ty === 'OUTLINE_SWEEP') {
+      const fb = this.fitBlock(ctx, str, key, W * .9, H * .72, 2, .96), s = fb.size; this.setFont(ctx, key, s); ctx.textAlign = 'center'; ctx.lineWidth = Math.max(2, s * .026);
+      const y0 = this.firstBase(fb.lines.length, s, .96); fb.lines.forEach((l, i) => ctx.strokeText(l, W / 2, y0 + i * s * .96));
+      const prog = eIOC(clamp(u * 1.35, 0, 1)); ctx.save(); ctx.beginPath(); ctx.rect(OV.x, OV.y, (W * .05 - OV.x) + W * .9 * prog, OV.h); ctx.clip(); fb.lines.forEach((l, i) => ctx.fillText(l, W / 2, y0 + i * s * .96)); ctx.restore();
+    } else if (ty === 'CHARFLIP') {
+      const fb = this.fitBlock(ctx, str, key, W * .86, H * .5, 1, 1), s = fb.size, line = fb.lines[0]; this.setFont(ctx, key, s);
+      const lw = ctx.measureText(line).width, x0 = (W - lw) / 2, y = H / 2 + s * .36, fr = Math.floor(t * 12), slots = [];
+      for (let i = 0; i < line.length; i++) slots.push([ctx.measureText(line.slice(0, i)).width, ctx.measureText(line[i]).width]);
+      ctx.textAlign = 'center';
+      for (let i = 0; i < line.length; i++) { const settle = .3 + i * .06, k = tb < settle ? FLIPF[hash(i, fr, sh.seed) % FLIPF.length] : key; this.setFont(ctx, k, s); ctx.fillText(line[i], x0 + slots[i][0] + slots[i][1] / 2, y); }
+    } else if (ty === 'ARC') {
+      const R = W * .66, cx = W / 2, cy = H / 2 + R * .86; this.setFont(ctx, key, 100); const w100 = ctx.measureText(str).width, s = Math.min(H * .24, 100 * R * 1.8 / Math.max(1, w100)); this.setFont(ctx, key, s);
+      const tot = ctx.measureText(str).width / R, a0 = -Math.PI / 2 - tot / 2 + Math.sin(t * .3 + sh.ph) * .1; ctx.textAlign = 'center';
+      for (let i = 0; i < str.length; i++) { const pre = ctx.measureText(str.slice(0, i)).width, cw = ctx.measureText(str[i]).width, a = a0 + (pre + cw / 2) / R; ctx.save(); ctx.translate(cx + Math.cos(a) * R, cy + Math.sin(a) * R); ctx.rotate(a + Math.PI / 2); ctx.fillText(str[i], 0, 0); ctx.restore(); }
+    }
+    ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1; if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+  }
+
+  grain(ctx, t) {
+    const fx = this.props.grain ?? .25; if (fx <= 0) return;
+    let pat = this.grainPats.get(ctx); if (!pat) { pat = ctx.createPattern(this.noiseSrc, 'repeat'); this.grainPats.set(ctx, pat); }
+    const o = hash(Math.floor(t * 12), 5), ox = o % 256, oy = (o >>> 8) % 256;
+    ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = .16 * fx; ctx.translate(-ox, -oy); ctx.fillStyle = pat; ctx.fillRect(ox, oy, W, H); ctx.restore();
+  }
+
+  paint(ctx, cur, prev, t) {
+    const bs = this.bs(), tb = t / bs, D = Math.min(TDUR[cur.trans] || 0, cur.beats * .6), p = D ? tb / D : 1;
+    if (!prev || p >= 1 || !D) {
+      this.drawShot(ctx, cur, t);
+      if (cur.trans === 'FLASH' && t < 2 / 24) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = PALS[cur.pal].a; ctx.fillRect(0, 0, W, H); ctx.restore(); }
+      return;
+    }
+    const A = this.bufA, B = this.bufB;
+    this.drawShot(A.getContext('2d'), prev, prev.beats * bs + t); this.drawShot(B.getContext('2d'), cur, t);
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+    const tr = cur.trans;
+    if (tr === 'CROSS') { ctx.drawImage(A, 0, 0); ctx.globalAlpha = eIOS(p); ctx.drawImage(B, 0, 0); }
+    else if (tr === 'WHIP') {
+      const dir = cur.wdir, first = p < .5, e = first ? eIC(p * 2) : eOC((p - .5) * 2), src = first ? A : B, off = first ? -dir * e * W * 1.15 : dir * (1 - e) * W * 1.15, v = 1 - Math.abs(2 * p - 1);
+      ctx.drawImage(src, off, 0); ctx.globalAlpha = .22; for (let k = 1; k <= 4; k++) ctx.drawImage(src, off + dir * k * v * W * .04, 0);
+    } else if (tr === 'ZOOM_THROUGH') {
+      const sB = lerp(1.7, 1, eOC(p)), sA = lerp(1, 3.4, eIC(p));
+      ctx.drawImage(B, W / 2 - W * sB / 2, H / 2 - H * sB / 2, W * sB, H * sB); ctx.globalAlpha = 1 - clamp(p * 1.25, 0, 1); ctx.drawImage(A, W / 2 - W * sA / 2, H / 2 - H * sA / 2, W * sA, H * sA);
+    } else if (tr === 'SLIT') {
+      const k = 16, sw = W / k;
+      for (let i = 0; i < k; i++) { const th = cur.slitOrder[i] / k, on = p * 1.2 > th, dy = on ? (1 - clamp((p * 1.2 - th) * 6, 0, 1)) * H * .3 * (i % 2 ? 1 : -1) : 0; ctx.drawImage(on ? B : A, i * sw, 0, sw, H, i * sw, dy, sw + 1, H); }
+    } else if (tr === 'TYPE_WIPE') {
+      ctx.drawImage(A, 0, 0);
+      const m = this.tmp.getContext('2d'); m.setTransform(1, 0, 0, 1, 0, 0); m.globalCompositeOperation = 'source-over'; m.globalAlpha = 1; m.clearRect(0, 0, W, H);
+      const s = H * lerp(.3, 14, eIC(p)); m.font = '900 ' + Math.round(s) + 'px Archivo'; if ('letterSpacing' in m) m.letterSpacing = '0px'; m.fillStyle = '#fff'; m.textAlign = 'center'; m.textBaseline = 'middle'; m.fillText(cur.wipeChar, W / 2, H / 2 + s * .04);
+      m.globalCompositeOperation = 'source-in'; m.drawImage(B, 0, 0); m.globalCompositeOperation = 'source-over';
+      ctx.drawImage(this.tmp, 0, 0); if (p > .85) { ctx.globalAlpha = (p - .85) / .15; ctx.drawImage(B, 0, 0); }
+    } else if (tr === 'KALEIDO') {
+      ctx.drawImage(B, 0, 0); ctx.globalAlpha = 1 - eIOS(p);
+      const n = 8, R = 720, s = 1.45 * (1 + p * .8);
+      for (let i = 0; i < n; i++) { ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(p * 2.4 + i * 2 * Math.PI / n); if (i % 2) ctx.scale(1, -1); ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, R, -Math.PI / n - .006, Math.PI / n + .006); ctx.closePath(); ctx.clip(); ctx.drawImage(A, -W / 2 * s, -H / 2 * s, W * s, H * s); ctx.restore(); }
+    } else if (tr === 'GLITCH') {
+      ctx.drawImage(B, 0, 0); const r = mulberry(hash(Math.floor(t * 24), cur.seed)), n = Math.round(14 * (1 - p));
+      for (let i = 0; i < n; i++) { const y = r() * H, h = 6 + r() * 50, dx = (r() - .5) * 160; ctx.drawImage(A, 0, y, W, h, dx, y, W, h); }
+      if (p < .3) { ctx.globalCompositeOperation = 'difference'; ctx.globalAlpha = .5; ctx.drawImage(B, 8, 0); }
+    } else ctx.drawImage(B, 0, 0);
+    ctx.restore();
+  }
+
+  shotAt(beat) { const s = this.cyc.shots; for (let i = 0; i < s.length; i++) if (beat < s[i].b1) return i; return s.length - 1; }
+
+  buildSample() {
+    if (!this.pool) return;
+    const st = this.newState(this._seed + 7777 + (this._sampleSalt || 0), this._ctx), cyc = this.planCycle(st), n = cyc.shots.length, list = [];
+    for (let i = 0; i < 12; i++) list.push(cyc.shots[Math.min(n - 1, Math.round(i * (n - 1) / 11))]);
+    this.sample = list;
+    const boards = list.map((sh, i) => ({ key: sh.sig + i, label: String(i + 1).padStart(2, '0') + ' · ' + sh.sec + ' · ' + sh.base + (sh.pat !== '-' ? ':' + sh.pat : '') + (sh.mid !== 'NONE' ? ' + ' + sh.mid + (sh.pat2 !== '-' ? ':' + sh.pat2 : '') : '') + (sh.type !== 'NONE' ? ' · ' + sh.type + '/' + sh.font + ' „' + sh.text.s + '“' : '') + ' · ' + sh.cam, setRef: this.boardRefFns[i] }));
+    this.setState({ boards }, () => setTimeout(() => this.drawSample(), 30));
+  }
+  drawSample() {
+    const bs = this.bs(), octx = this.off.getContext('2d');
+    try { (this.sample || []).forEach((sh, i) => { const el = this.boardEls[i]; if (!el) return; this.drawShot(octx, sh, sh.beats * bs * .65); el.getContext('2d').drawImage(this.off, 0, 0, el.width, el.height); }); } catch (e) { this.setState({ info: { shot: 'SAMPLE ERR ' + String(e && e.stack || e).slice(0, 600) } }); }
+  }
+
+  drawTimeline(beat) {
+    const c = this.tlEl, cy = this.cyc; if (!c || !cy) return;
+    const x = c.getContext('2d'), TW = c.width, TH = c.height, G = 76, pw = TW - G - 8, bx = b => G + b / cy.beats * pw;
+    x.fillStyle = '#0e0d0c'; x.fillRect(0, 0, TW, TH);
+    x.font = '600 10px "IBM Plex Mono"'; x.textBaseline = 'middle'; x.textAlign = 'left'; x.fillStyle = '#a39b8c';
+    [['SECTION', 13], ['ENERGY', 38], ['SHOT', 64], ['TYPE', 86]].forEach(([l, y]) => x.fillText(l, 8, y));
+    cy.sections.forEach(s => { x.fillStyle = SEC_COL[s.name]; x.fillRect(bx(s.b0) + 1, 4, bx(s.b1) - bx(s.b0) - 2, 18); x.fillStyle = '#ece6da'; x.fillText(s.name, bx(s.b0) + 5, 13); });
+    x.strokeStyle = '#ece6da'; x.lineWidth = 2; x.beginPath(); cy.sections.forEach((s, i) => { const y = 50 - s.e * 22; i ? x.lineTo(bx(s.b0), y) : x.moveTo(bx(s.b0), y); x.lineTo(bx(s.b1), y); }); x.stroke();
+    cy.shots.forEach(s => { const a = bx(s.b0), w = Math.max(1, bx(s.b1) - a - 1); x.fillStyle = BASE_COL[s.base]; x.fillRect(a, 56, w, 16); if (s.trans !== 'CUT') { x.fillStyle = '#ffffff'; x.fillRect(a, 53, 2, 22); } if (s.type !== 'NONE') { x.fillStyle = '#ece6da'; x.fillRect(a, 79, w, 14); } });
+    x.fillStyle = '#ff3b1f'; x.fillRect(Math.round(bx(Math.min(cy.beats, beat))) - 1, 0, 2, TH);
+  }
+
+  drawLoading() {
+    const c = this.faceEl; if (!c) return; const x = c.getContext('2d');
+    x.fillStyle = '#000'; x.fillRect(0, 0, W, H);
+    const n = Object.keys(this.imgs).length, f = Object.keys(this.failed).length;
+    x.fillStyle = '#a39b8c'; x.font = '600 18px "IBM Plex Mono", monospace'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText('LOADING ARCHIVE ' + (n + f) + ' / ' + POOL.length + (f ? ' · ' + f + ' FAILED' : ''), W / 2, H / 2);
+  }
+
+  tick = now => {
+    if (this._dead) return;
+    cancelAnimationFrame(this.raf); clearTimeout(this.to);
+    this.raf = requestAnimationFrame(this.tick); this.to = setTimeout(() => this.tick(performance.now()), 120);
+    try { this.step(now); } catch (e) { if (!this._errShown) { this._errShown = true; this.setState({ info: { sec: 'ERR ' + String(e && e.stack || e).slice(0, 600) } }); } }
+  };
+  step(now) {
+    const dt = Math.min(.1, (now - this.last) / 1000); this.last = now;
+    if (dt > 0) this.fps = this.fps ? this.fps * .95 + (1 / dt) * .05 : 1 / dt;
+    if (!this.ready) { this.drawLoading(); return; }
+    const bs = this.bs();
+    if (this.state.playing) { this.t += dt; if (this.t >= this.cyc.beats * bs) { this.t -= this.cyc.beats * bs; this.prevCycleLast = this.cyc.shots[this.cyc.shots.length - 1]; this.st.cycle++; this.cyc = this.planCycle(this.st); } }
+    const beat = this.t / bs, i = this.shotAt(beat), sh = this.cyc.shots[i], prev = i > 0 ? this.cyc.shots[i - 1] : this.prevCycleLast, tIn = (beat - sh.b0) * bs;
+    const key = sh.cycle + ':' + sh.k;
+    if (key !== this.lastKey) { this.lastKey = key; const s = this.stats; s.n++; s.sigs.add(sh.sig); s.combos.add(sh.base + '|' + sh.mid + '|' + sh.type); s.fonts.add(sh.font); s.types.add(sh.type); }
+    if (this.faceEl) this.paint(this.faceEl.getContext('2d'), sh, prev, tIn);
+    if (this.miniEl && (this.frame++ % 3 === 0)) this.miniEl.getContext('2d').drawImage(this.faceEl, 0, 0, 160, 80);
+    this.drawTimeline(beat);
+    if (now - this.lastInfo > 250) {
+      this.lastInfo = now; const s = this.stats;
+      this.setState({ info: {
+        sec: sh.sec + ' · e ' + sh.energy + ' · #' + (this.cyc.cycle + 1),
+        shot: (sh.k + 1) + '/' + this.cyc.shots.length + ' · ' + sh.beats + ' beats',
+        layers: sh.base + (sh.pat !== '-' ? ':' + sh.pat : '') + (sh.grade !== '-' ? ':' + sh.grade : '') + ' · ' + sh.mid + (sh.pat2 !== '-' ? ':' + sh.pat2 : '') + (sh.bmode && sh.mid === 'BLEND' ? ':' + sh.bmode : ''),
+        type: sh.type + (sh.font !== '-' ? ' · ' + sh.font : ''),
+        cam: sh.cam + ' · ' + sh.trans,
+        pal: sh.pal + ' · ' + ([sh.plate, sh.plate2, sh.plateT, sh.plate2b].filter(Boolean).join(' + ') || '—'),
+        nov: sh.sim.toFixed(1) + ' (K=' + this.kCand() + ')',
+        uniq: s.sigs.size + '/' + s.n + ' shots · ' + s.combos.size + ' combos · ' + s.types.size + ' type · ' + s.fonts.size + ' fonts',
+        fps: Math.round(this.fps) + ' fps · ' + this.pool.length + '/' + POOL.length + ' plates'
+      } });
+    }
+    if (now - this.lastSave > 1000) { this.lastSave = now; try { localStorage.setItem(LS_KEY, JSON.stringify({ seed: this._seed, ctx: this._ctx, cycle: this.st.cycle, t: this.t })); } catch (e) {} }
+  }
+
+  reset(seed, ctxName) {
+    if (seed !== undefined) this._seed = seed; if (ctxName !== undefined) this._ctx = ctxName;
+    this.setState({ seed: this._seed, ctx: this._ctx });
+    if (this.ready) { this.startAll(null); this.buildSample(); }
+  }
+
+  renderVals() {
+    const st = this.state;
+    return {
+      faceRef: this.faceRef, miniRef: this.miniRef, tlRef: this.tlRef,
+      playLabel: st.playing ? 'Pause' : 'Play',
+      togglePlay: () => this.setState(s => ({ playing: !s.playing })),
+      nextShot: () => { if (!this.ready) return; const i = this.shotAt(this.t / this.bs()), s = this.cyc.shots[i]; this.t = Math.min(this.cyc.beats * this.bs() - .001, s.b1 * this.bs() + .001); },
+      ctxButtons: CTX_NAMES.map(n => ({ name: n, bg: n === st.ctx ? '#ece6da' : 'transparent', fg: n === st.ctx ? '#121110' : '#ece6da', onClick: () => this.reset(undefined, n) })),
+      seed: st.seed,
+      seedPrev: () => this.reset(Math.max(1, st.seed - 1)),
+      seedNext: () => this.reset(st.seed + 1),
+      seedRandom: () => this.reset(1 + Math.floor(Math.random() * 9999)),
+      resample: () => { this._sampleSalt = (this._sampleSalt || 0) + 1; this.buildSample(); },
+      scrub: e => { if (!this.cyc) return; const r = e.currentTarget.getBoundingClientRect(), px = (e.clientX - r.left) / r.width * 1024, b = (px - 76) / (1024 - 84) * this.cyc.beats; if (b >= 0 && b < this.cyc.beats) this.t = b * this.bs(); },
+      info: Object.assign({ sec: '—', shot: '—', layers: '—', type: '—', cam: '—', pal: '—', nov: '—', uniq: '—', fps: '—' }, st.info),
+      legend: Object.keys(BASE_COL).map(k => ({ n: k, c: BASE_COL[k] })).concat([{ n: 'TRANSITION', c: '#ffffff' }, { n: 'TYPE', c: '#ece6da' }]),
+      boards: st.boards
+    };
+  }
+}
+</script>
+</body>
+</html>
