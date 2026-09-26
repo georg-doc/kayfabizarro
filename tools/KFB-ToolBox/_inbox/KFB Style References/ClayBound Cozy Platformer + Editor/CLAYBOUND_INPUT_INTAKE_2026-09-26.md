@@ -1,6 +1,6 @@
 # KFB ClayBound · Input Intake + Production Backlog · 2026-09-26
 
-Status: **SOURCE INTAKE VERIFIED · PDFs NOT OPENED / NOT WEB-OPTIMIZED · NO RUNTIME CHANGE**
+Status: **SOURCE INTAKE VERIFIED · EXTERNAL TOOL/SOURCE REVIEW ADDED · NO RUNTIME CHANGE**
 
 Owner: **KFB ToolBox / ClayBound material exploration**  
 Human: Georg
@@ -35,7 +35,79 @@ Combined size: **68,563,328 B (~65.4 MiB)**.
 - `KFB_CLAY_ASSET_STUDIO_PLUGIN_v0.1.0_2026-09-26.md`;
 - private plugin **KFB Clay Asset Studio v0.1.0**;
 - plugin queue source under `KFB Clay Asset Studio v1 plugin/`;
-- KlayBound / ClayBound POC and technical research already present in this folder.
+- KlayBound / ClayBound POC and technical research already present in this folder;
+- external source/tool classification: `CLAY_PRODUCTION_SOURCE_REVIEW_2026-09-26.md`;
+- Gemini alternate seam evidence: `CLAY_GEMINI_RX1F_SEAM_QA_2026-09-26.md`.
+
+## External source/tool additions · 2026-09-26
+
+### RandTextureGen / Xargiv
+
+Accepted as a **supporting texture-authoring tool reference**.
+
+Verified source:
+- `DD-moe/xargiv`;
+- texture sizes 32×32 through 4096×4096;
+- intended seamless / unique texture generation;
+- generated textures may be processed, published and sold;
+- generator terms describe generated images as **CC BY** with commercial use permitted and attribution required.
+
+License caution:
+- repository root carries MIT;
+- website terms separately describe site features/code/tutorials as CC BY-NC-ND.
+
+Therefore:
+- generated texture output may enter KFB with explicit attribution/provenance;
+- do not fork/redistribute the full tool code in this slice;
+- do not treat output as CC0.
+
+### Dandruff · Clay seamless texture pack
+
+Incoming source:
+https://dandruff.itch.io/clay-seamless-textures
+
+Verified page:
+- 5 × 1024² clay textures;
+- Diffuse / Height / Normal / AO / Smoothness / Metallic / Edge maps;
+- no Roughness or Specular map;
+- author links Xargiv/RandTextureGen as the creator used.
+
+Georg is uploading the pack under `media/3D_Assets/Textures/`.
+
+Current status:
+**EXPECTED SOURCE · LICENSE/ATTRIBUTION BASIS RECORDED · INVENTORY AFTER ARRIVAL**
+
+Do not treat the Metallic map as a KFB clay-material recommendation.
+
+### Clay Knight
+
+Use only as **combat-state / animation-feel reference**.
+
+No source asset license was found on the itch page. KFB already has current KayKit Rig_Medium melee/dodge/run/strafe/hit/death clips, so the useful reference is:
+- lock-on;
+- attack windows;
+- light/heavy/charged timing;
+- dodge i-frames/recovery;
+- boss telegraphs;
+- stamina/punish windows.
+
+No asset or animation extraction.
+
+### Unreal Clay stop-motion project
+
+Use only as **concept donor**:
+- subtle texture layer;
+- optional wobbly edge/silhouette irregularity;
+- configurable clay color/texture.
+
+Do not copy Unreal shader graphs into Blender/WebGL.
+
+### Belimoth Clay (Classic)
+
+Despite the name, this is a patch-based generative-art programming environment, not a clay-material system.
+
+Status:
+**DEFERRED GENERATIVE-AUTHORING UX REFERENCE · OUT OF CURRENT CLAY MATERIAL GATE**
 
 ## Production backlog · priority order
 
@@ -53,6 +125,9 @@ Acceptance:
 - Georg review before Asset 2.
 
 No batch generation.
+
+Current alternate Gemini `rx1f` test:
+**NEEDS FIX FOR ASSET 1** because its macro pressed-clay motifs repeat visibly and its X edge is only borderline. Preserve it as a possible later compressed/kneaded clay donor.
 
 ### P1 · CLAY-ASSET-CORE · sequential core clay library
 
@@ -85,7 +160,8 @@ After the first approved assets, create a durable per-asset record:
 - intended Blender role;
 - source prompt;
 - intended UV/triplanar scale;
-- approved repository/library destination.
+- approved repository/library destination;
+- source/license/attribution where applicable.
 
 Do **not** create a parallel asset registry; approved assets later route into existing KFB asset/library ownership.
 
@@ -111,6 +187,8 @@ After early image-gen calibration, add stronger seam QA:
 - retain source + repaired derivative;
 - do not equate a visually plausible 3×3 preview with mathematical seamlessness.
 
+A first bounded implementation of this QA was used for the Gemini `rx1f` comparison and is recorded in `CLAY_GEMINI_RX1F_SEAM_QA_2026-09-26.md`. It is evidence, not yet a promoted permanent tool.
+
 ### P2 · CLAY-HANDMADE-02
 
 Only after core clay is accepted, continue:
@@ -126,6 +204,7 @@ The 50-item plugin queue remains the detailed order of execution.
 
 - **NotebookLM / research:** decompose and specify the look.
 - **KFB Clay Asset Studio:** generate and review one raster production asset at a time.
+- **RandTextureGen / Xargiv:** supporting external generator/post-process tool for seamless, anti-repeat and size-variant texture experiments; no ownership change.
 - **Blender / Blender MCP:** test approved assets as actual materials/shaders on existing KFB source models.
 - **ToolBox / Asset Librarian:** receiving ownership only after explicit acceptance.
 
@@ -137,8 +216,9 @@ The 50-item plugin queue remains the detailed order of execution.
 - No automatic Blender integration from generated images.
 - No Stage or Live claim.
 - No PDF processing in this intake.
+- No external asset extraction without source/license permission.
 - Large files remain source evidence until a separate optimization/inspection slice is started.
 
 ## Exactly one next gate
 
-**Generate and review CLAY-ASSET-01: Smooth matte clay seamless texture with source + 3×3 repeat evidence.**
+**Generate/review CLAY-ASSET-01: Smooth matte clay seamless texture with source + 3×3 repeat / edge evidence, then Georg decides before Asset 2.**
