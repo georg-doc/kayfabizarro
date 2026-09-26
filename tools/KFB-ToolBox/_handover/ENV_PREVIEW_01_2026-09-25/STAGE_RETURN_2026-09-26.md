@@ -1,6 +1,6 @@
 # RETURN · ENV-PREVIEW-01 Stage package · 2026-09-26
 
-Status: **PUBLIC STAGE PASS · HUMAN REVIEW OPEN · NOT LIVE**
+Status: **PUBLIC STAGE PASS · GEORG PASS_WITH_TUNE · NOT LIVE**
 
 ## Outcome
 
@@ -38,6 +38,10 @@ Travel/TinySkies is pinned here as sky/light/fog/mood presentation donor only. W
 - public browser proof: **9/9 PASS**;
 - Live: **UNCHANGED**.
 
+## Human gate · 2026-09-26
+
+Georg accepted the shared environment direction as **PASS_WITH_TUNE**. Deferred, non-blocking observations: Resident selector discoverability, below-actor camera range, WorldBuilder duplicate-head assembly, bright thin-geometry shadow edges and Night readability/task lighting.
+
 ## Exactly one next gate
 
-Georg reviews the fixed public URL and returns visual PASS or TUNE for World Match vs Source Isolation.
+Proceed with the already-approved ToolBox r2 publication/review slice. Do not spend this gate on ENV polish.
