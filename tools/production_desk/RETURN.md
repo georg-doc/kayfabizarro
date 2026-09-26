@@ -1,3 +1,67 @@
+# CURRENT UPDATE · HUB-BRIEFING-SYNC-01 · FROZEN DOM GATE · 2026-09-26
+
+Status: **BRIEFING/SOURCE SYNC COMPLETE · ROOT PUBLICATION STOPPED · FAILURE RECOVERY PRESERVED**
+
+## Synchronized source truth
+- WorldBuilder #190: `58028b07d7618926c40ffaec3bd4053dc88c0efd` · Contract Reset PASS · next `WORLD-R2-STAGE-PREP-01`.
+- Production Architecture #204: final sync head `deec05c883de02836c3d699fa6e64d647d32a9f7`; self-service remains 96 jobs, now **42 READY / 54 HOLD**.
+- ENV Preview #218: `88c64c29075f31d655f4777437bb1aa82069df17` · PUBLIC STAGE VERIFIED · Georg PASS_WITH_TUNE · completed foundation.
+- ToolBox r2 #221: `da20e926c38fa8576f31bffc5442d96d44fe4d1b` · Georg TUNE / direction accepted · review gate closed.
+- WSA/dispatch #222: `823bdb57c2ab30027cafcac9c867f5b6c3e8c9ac`; World Stage Prep + Track Core + Racer HUD/Billboards routing synchronized.
+- B2b-P1: current PR #211 frozen 39/40 after two repair passes; no rebuild/pass 3.
+
+## Hub source result
+HUB-CTRL config now shows:
+- WSA = APPROVED_WITH_TUNES;
+- World r2 Stage Prep = CAN_START;
+- Racer HUD + Billboard System = CAN_START in parallel;
+- ENV Preview = completed/pass-with-tune;
+- ToolBox r2 = completed/TUNE;
+- Playable Track R0 remains HOLD;
+- Production Desk itself = WAITING on DOM recovery.
+
+## Validation
+Attempt 1:
+- run `36212815856`;
+- stopped by the separate Hub-UX Session-Cut parity suite because its source fixture is absent on this owner branch.
+
+Repair pass 1 / attempt 2:
+- run `36212892871`;
+- builder **16/16 PASS**;
+- render unit **2/2 PASS**;
+- online registry build PASS;
+- validator **VALID**;
+- Desk render PASS;
+- DOM FAIL on card-face technical text + stale first copy-selector assumption.
+
+Repair pass 2 / final attempt:
+- run `36213057662` / job `108323464259`;
+- builder **16/16 PASS**;
+- render unit **2/2 PASS**;
+- online registry **PASS**: 22 lanes · 3 LOOK_AT · 4 RUNNING · 5 CAN_START · 9 WAITING · 1 problem;
+- registry **VALID**;
+- Desk render **PASS**;
+- embedded/live/main/polling PASS;
+- generic paste-ready briefing copy PASS;
+- drawer/details PASS;
+- DOM remains FAIL because:
+  1. at least one PR/SHA-like technical token is still visible on a card face;
+  2. a later DOM assertion still hardcodes `vfx-sfx .btn.primary`, which is no longer a valid current lane/button assumption.
+
+Repair budget exhausted. **No repair pass 3.**
+
+## Publication
+- `cloudflare-live`: unchanged by this slice;
+- public root Hub: **not republished**;
+- no new `https://kayfabizarro.pages.dev/kfb-hub/` revision is claimed;
+- no product runtime, Stage product candidate, merge or Live product promotion changed.
+
+Failure recovery:
+`tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/START_HERE.md`
+
+Exactly one next gate:
+**HUB-BRIEFING-SYNC-F1 · fresh DOM-contract census only.**
+
 # CURRENT UPDATE · WORLD r2 CONTRACT RESET PASS · 2026-09-26
 
 Status: **CONTRACT RESET PASS · STAGE PREP CAN START · NOT LIVE**
