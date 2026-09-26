@@ -1,5 +1,16 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-09-26 · ToolBox Production-01 r2 human TUNE
+
+### HUMAN RESULT
+Georg accepted the overall ToolBox r2 direction as **TUNE**. The public review gate is closed; this is not a rejection and does not reopen the integration slice.
+
+### DEFERRED TUNE
+Strong streak/noise artifacts, incorrect actor grounding, several State-loop animation calibrations and the below-actor Orbit-camera range remain bounded follow-ups. They must be handled by their rendering, grounding, animation and shared-camera owners rather than by rewriting ToolBox.
+
+### NEXT
+Continue with the next approved production slice. No merge or Live promotion is authorized by this visual decision alone.
+
 ## 2026-09-26 · ToolBox Production-01 r2 public review
 
 ### PUBLICATION
