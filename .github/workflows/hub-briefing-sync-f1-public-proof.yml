@@ -37,7 +37,7 @@ jobs:
           ok=0
           for i in $(seq 1 24); do
             if curl -fsSL --max-time 20 "$PUB" -o /tmp/public.html 2>/dev/null; then
-              if grep -q 'data-kfb-build="HUB-UX-RECOVERY-V2"' /tmp/public.html                  && grep -q '"briefings":96' /tmp/public.html                  && grep -q '"prompts":96' /tmp/public.html                  && grep -q "\"sourceCommit\":\"$EXPECTED_SOURCE\"" /tmp/public.html; then
+              if grep -q 'data-kfb-build="HUB-UX-RECOVERY-V2"' /tmp/public.html                  && grep -q '>Briefings<' /tmp/public.html                  && grep -q '"prompts":96' /tmp/public.html                  && grep -q "\"sourceCommit\":\"$EXPECTED_SOURCE\"" /tmp/public.html; then
                 ok=1; break
               fi
             fi
