@@ -2,41 +2,23 @@
   "schema": "kfb.production-registry/1",
   "reviews": [
     {
-      "lane": "worldbuilder-w0",
-      "title": "WorldBuilder WB-W0 · Maßstab und Begehbarkeit",
+      "lane": "hub-status-sync",
+      "title": "KFB Hub · Status Sync v1 · CI PASS",
       "questions": [
-        "Fühlt sich der Übergang vom Globus in eine messbare Region richtig an?",
-        "Tragen Maßstab, Route und freie Flächen als Grundlage für OSM und Racer?"
+        "Soll der workflow-only PR #215 nach main, damit der Bot-Registry-Sync dauerhaft alle 30 Minuten läuft?"
       ],
-      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/203",
-      "head": "40fe2c10959a2022694a2342482e04dd34cbe7be",
+      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/215",
+      "head": "d45f215bce544ad1eb7e71a6aa743ca59919f08d",
       "result": "PENDING"
     },
     {
-      "lane": "huerth-form-language",
-      "title": "Hürth · drei Architektur-Beweise",
-      "questions": [],
-      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/200",
-      "head": "0b42323af34a6e2e535765dc627ed8de45820314",
-      "result": "PENDING"
-    },
-    {
-      "lane": "billboard",
-      "title": "Billboard B2a · YouTube direkt auf der 3D-Fläche",
-      "questions": [],
-      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/199",
-      "head": "154edef4f220540c9079ab22d5b243baddea6909",
-      "result": "PENDING"
-    },
-    {
-      "lane": "graveyard",
-      "title": "Graveyard · begehbares Post-Mortem-Archiv",
+      "lane": "worldbuilder-wb2",
+      "title": "World r2 · PUBLIC VERIFIED · Georg Review",
       "questions": [
-        "Funktioniert der Friedhof als nützliche Lern- und Erinnerungszone, nicht nur als Gag?",
-        "Sind Grabtexte und Steuerung bei normalem Browserfenster lesbar?"
+        "Tragen Hürth und Köln denselben glaubwürdigen Weltmaßstab in Edit und Play?"
       ],
-      "prUrl": null,
-      "head": null,
+      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/234",
+      "head": "7b2393a54c6b31e4bd4d927275030423612cfde8",
       "result": "PENDING"
     }
   ]

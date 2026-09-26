@@ -9,16 +9,16 @@
       "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
       "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md"
     ],
-    "head": "531a8f4c2c26b4f5ed042cc360c49546017641c6",
-    "catalogSchema": "kfb.hub-briefing-catalog/7",
+    "head": "77907f008e568d03a5b18b6e07f53fad962f3572",
+    "catalogSchema": "kfb.hub-briefing-catalog/10",
     "pr": 204
   },
   "counts": {
     "strands": 13,
-    "jobs": 79,
-    "READY": 36,
-    "HOLD": 43,
-    "prompts": 79
+    "jobs": 97,
+    "READY": 43,
+    "HOLD": 54,
+    "prompts": 97
   },
   "executionProfiles": {
     "WEB_FAST": {
@@ -102,7 +102,7 @@
   "presentation": {
     "defaultView": "strands",
     "jobCardsCollapsed": true,
-    "todayShows": "current READY/REVIEW only; complete roadmap expands per strand",
+    "todayShows": "operational Today lanes from HUB-CTRL; self-service READY excludes completed/accepted foundations",
     "rule": "Do not render all jobs as one default wall.",
     "priorityRule": "Today/default priority view should not surface P2 READY work while P0/P1 product work exists; P2 remains available inside its parent strand."
   },
@@ -111,16 +111,18 @@
       "id": "toolbox",
       "title": "ToolBox Authoring Platform",
       "target": "FrankenStein + EyeRig + Pose + Animation + Vehicle + Resident Scene + Live Search in one Stage-First ToolBox",
-      "capabilitiesTotal": 8,
+      "capabilitiesTotal": 10,
       "currentReady": [
         "toolbox-coherent-integration-01",
         "tb-eye-01",
         "tb-pose-01",
-        "tb-anim-01"
+        "tb-anim-01",
+        "actor-fb-body-family-01",
+        "tb-v17-integration-01"
       ],
       "counts": {
-        "jobs": 12,
-        "READY": 5,
+        "jobs": 14,
+        "READY": 7,
         "HOLD": 7
       }
     },
@@ -128,17 +130,19 @@
       "id": "animation-residents",
       "title": "Animation & Residents",
       "target": "Reusable MotionProfiles plus productive Blender performance batches shared by ToolBox and WorldBuilder",
-      "capabilitiesTotal": 5,
+      "capabilitiesTotal": 7,
       "currentReady": [
         "an-perf-01",
         "an-profile-01",
         "resident-band-module-01",
         "pose-to-blender-01",
-        "ik-ccdik-parity-01"
+        "ik-ccdik-parity-01",
+        "res-disco-01",
+        "motion-intake-direct-01"
       ],
       "counts": {
-        "jobs": 7,
-        "READY": 5,
+        "jobs": 9,
+        "READY": 7,
         "HOLD": 2
       }
     },
@@ -146,32 +150,40 @@
       "id": "worldbuilder",
       "title": "WorldBuilder / God Mode",
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
-      "capabilitiesTotal": 8,
+      "capabilitiesTotal": 11,
       "currentReady": [
         "world-zone-bake-01",
-        "look-torsion-01"
+        "look-torsion-01",
+        "bl-osm-clay-01"
       ],
-      "currentReview": "worldbuilder-w0",
+      "currentReview": "world-r2-stage-prep-01",
+      "currentPriority": "WORLD-R2-STAGE-PREP-01 · operational lane in HUB-CTRL",
+      "acceptedFoundation": "WB2-TERRAIN-SCULPT-01 · GEORG_HUMAN_PASS + WORLD-R2-CONTRACT-RESET-01 · PASS",
+      "operationalBrief": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md",
+      "operationalHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
       "counts": {
-        "jobs": 9,
-        "READY": 2,
-        "HOLD": 7
+        "jobs": 14,
+        "READY": 3,
+        "HOLD": 11
       }
     },
     {
       "id": "racer-world",
       "title": "Racer → World",
       "target": "Clean route-driven track anatomy and visual module consumable inside the editable KFB/OSM world",
-      "capabilitiesTotal": 5,
+      "capabilitiesTotal": 6,
       "currentReady": [
         "race-anatomy-01",
         "race-track-recipe-01",
         "race-rkit-03"
       ],
+      "currentPriority": "TRACK-CORE-G0/W0 · PR #219",
+      "currentParallelDesign": "RACER HUD + Billboard System · PR #222 fresh Claude start",
+      "playableR0": "HOLD until Track Core proof/runtime parity + Web closed package",
       "counts": {
-        "jobs": 5,
+        "jobs": 6,
         "READY": 3,
-        "HOLD": 2
+        "HOLD": 3
       }
     },
     {
@@ -221,17 +233,18 @@
     {
       "id": "travel-surfaces",
       "title": "Travel Modes & World Surfaces",
-      "target": "Surface-independent FLAT/SPHERE/TORUS worlds with Ground/Flight/Drive/Boat/Air travel modes",
-      "capabilitiesTotal": 6,
+      "target": "Surface-independent worlds and travel modes plus current biome/mood/nature/procedural environment recipes",
+      "capabilitiesTotal": 10,
       "currentReady": [
         "surface-01",
         "travel-modes-01",
-        "travel-boat-01"
+        "travel-boat-01",
+        "world-env-consolidate-01"
       ],
       "counts": {
-        "jobs": 5,
-        "READY": 3,
-        "HOLD": 2
+        "jobs": 9,
+        "READY": 4,
+        "HOLD": 5
       }
     },
     {
@@ -252,21 +265,22 @@
       "id": "town-npc-life",
       "title": "Town / ChatterBox / Living NPCs",
       "target": "Living Resident scenes with encounter beats, ChatterBox, memory, gifts and optional combat",
-      "capabilitiesTotal": 6,
+      "capabilitiesTotal": 7,
       "currentReady": [
-        "npc-life-01"
+        "npc-life-01",
+        "npc-card-spec-01"
       ],
       "counts": {
-        "jobs": 4,
-        "READY": 1,
-        "HOLD": 3
+        "jobs": 6,
+        "READY": 2,
+        "HOLD": 4
       }
     },
     {
       "id": "shared-stage",
       "title": "Shared Stage / Transitions / FX",
-      "target": "Spindle environments, Theatre Curtain, instance recipes and semantic VFX/SFX maps",
-      "capabilitiesTotal": 4,
+      "target": "Shared current KFB environment previews, Spindle environments, Theatre Curtain, instance recipes and semantic VFX/SFX maps",
+      "capabilitiesTotal": 5,
       "currentReady": [
         "spindle-01",
         "curtain-02",
@@ -274,26 +288,28 @@
         "audio-audition-01",
         "vfx-audition-01"
       ],
+      "acceptedFoundation": "ENV-PREVIEW-01 · PUBLIC_STAGE_VERIFIED · GEORG_PASS_WITH_TUNE",
+      "acceptedHead": "88c64c29075f31d655f4777437bb1aa82069df17",
       "counts": {
-        "jobs": 7,
+        "jobs": 8,
         "READY": 5,
-        "HOLD": 2
+        "HOLD": 3
       }
     },
     {
       "id": "card-zones",
       "title": "Card Zones / Card Objects",
-      "target": "Exact Card Zone v2 fluid + stack/reveal/Beam + Card Cube/FaceFocus + card-seeded recipes as reusable WorldBuilder modules",
-      "capabilitiesTotal": 6,
+      "target": "Exact Card Zone v2 objects/hydrology plus recipes that dock into the current environment/terrain owner",
+      "capabilitiesTotal": 7,
       "currentReady": [
         "cz-fluid-01",
         "cz-card-present-01",
         "cz-cube-01"
       ],
       "counts": {
-        "jobs": 7,
+        "jobs": 8,
         "READY": 3,
-        "HOLD": 4
+        "HOLD": 5
       }
     },
     {
@@ -428,8 +444,8 @@
       "bucket": "READY",
       "executor": "ChatGPT Web",
       "title": "ToolBox · Animation Studio",
-      "what": "Motion Lab, Motion Library und Creator/KCL-Forschung zu einem echten Animations-Workspace konsolidieren.",
-      "result": "Kontinuierliche Geschwindigkeit, phase-aware transitions, Hysterese und semantische States an echten Actors testen.",
+      "what": "State/action Animation Studio: locomotion continuum plus Melee/Ranged/Tool/Simulation and Duel mode.",
+      "result": "Semantic states/action overrides on real actors in the current ToolBox.",
       "promptSection": "TB-ANIM-01 · ToolBox Animation Studio",
       "sourceSet": "toolbox",
       "cloudflareRequired": false,
@@ -440,7 +456,7 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false,
-      "prompt": "## TB-ANIM-01 · ToolBox Animation Studio\n\n**Executor:** ChatGPT Web / Coworker + optional Claude Design presentation  \n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n**Outcome:** one actual animation authoring/test workspace.\n\n> @GitHub\n> Read KFB Production Architecture v3, `PRODUCTION_STRANDS.md` → T4, KayKit Motion Lab PR #127, Motion Library PR #197, and KayKit creator/KCL research PR #107.\n>\n> Build **TB-ANIM-01 · ToolBox Animation Studio**. Do not promote the old unverified Animation Lab standalone as truth and do not rebuild its own actor/face owner.\n>\n> Consume:\n> - real current ToolBox actors;\n> - approved EyeRig profiles on by default;\n> - KFB Motion Library catalogue;\n> - registered KayKit motions;\n> - measured MotionProfile/contact facts from PR #107/#127;\n> - Resident Atlas motion audition;\n> - later Blender-authored actions through the same catalogue seam.\n>\n> Required product surfaces:\n> 1. clip library and compatibility filter;\n> 2. actor preview;\n> 3. continuous locomotion speed control;\n> 4. Idle/Walk variants/Run variants;\n> 5. phase-aware transitions;\n> 6. hysteresis between speed bands;\n> 7. playback-rate adjustment only inside calibrated ranges;\n> 8. richer semantic state preview: direction, stance/equipment, grounded, action override;\n> 9. optional contact/slip/debug information behind the visual preview.\n>\n> Do not implement “Shift = hard switch Walk/Run” as the motion model.\n>\n> Movement simulation may translate the actor to demonstrate cadence, but does not become a game movement owner.\n>\n> Done when I can select a real actor and visually test motion across a speed continuum and state changes in one ToolBox surface.\n\n---\n",
+      "prompt": "## TB-ANIM-01 · ToolBox Animation Studio\n\n**Executor:** ChatGPT Web / Coworker + optional Claude Design presentation  \n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n**Outcome:** one actual animation authoring/test workspace.\n\n> @GitHub\n> Read KFB Production Architecture v3, `PRODUCTION_STRANDS.md` → T4, KayKit Motion Lab PR #127, Motion Library PR #197, and KayKit creator/KCL research PR #107.\n>\n> Build **TB-ANIM-01 · ToolBox Animation Studio**. Do not promote the old unverified Animation Lab standalone as truth and do not rebuild its own actor/face owner.\n>\n> Consume:\n> - real current ToolBox actors;\n> - approved EyeRig profiles on by default;\n> - KFB Motion Library catalogue;\n> - registered KayKit motions;\n> - measured MotionProfile/contact facts from PR #107/#127;\n> - Resident Atlas motion audition;\n> - later Blender-authored actions through the same catalogue seam.\n>\n> Required product surfaces:\n> 1. clip library and compatibility filter;\n> 2. actor preview;\n> 3. continuous locomotion speed control;\n> 4. Idle/Walk variants/Run variants;\n> 5. phase-aware transitions;\n> 6. hysteresis between speed bands;\n> 7. playback-rate adjustment only inside calibrated ranges;\n> 8. richer semantic state preview: direction, stance/equipment, grounded, action override;\n> 9. optional contact/slip/debug information behind the visual preview.\n>\n> Do not implement “Shift = hard switch Walk/Run” as the motion model.\n>\n> Movement simulation may translate the actor to demonstrate cadence, but does not become a game movement owner.\n>\n> Done when I can select a real actor and visually test motion across a speed continuum and state changes in one ToolBox surface.\n\n\n### KayKit semantic State/Action extension · 2026-09-24\nUse current KayKit families as vocabulary: General, Movement, Melee, Ranged, Simulation/Tool. This is a state/action workspace, not a filename gallery.\n\nLocomotion: Idle → Walk → Run → source-backed fast-run/Sprint; backward/strafe; Jump Start/Air/Land; crouch/sneak/crawl where present.\n\nOverrides: Interact/Pickup/Use/Throw · 1H/2H/dual/unarmed Melee · Block/Hit/Defeat · Aim/Fire/Reload · Spell · Tool · Emote/Sit/Lie · Performance.\n\nConsume existing Combat Duel/contact contracts for a two-fighter Melee mode. Damage remains Combat-owned. Direct compatible FBX enters through `MOTION-INTAKE-DIRECT-01`; Blender handles real technical exceptions.\n\n---\n",
       "promptSource": {
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
@@ -508,8 +524,8 @@
       "bucket": "HOLD",
       "executor": "Web/Coworker + GitHub Bridge",
       "title": "ToolBox · Production Milestone",
-      "what": "Alle akzeptierten ToolBox-Authoring-Funktionen in der Stage-First-Oberfläche zusammenführen.",
-      "result": "Search → Actor/Resident/Vehicle → Face/Eyes → Fractal Edit → Pose → Motion → Save/Reload → Export.",
+      "what": "Complete Stage-First ToolBox while preserving useful FrankenStein/Pet Studio v17+ capabilities.",
+      "result": "Actor/body/face → eyes/mouth/materials → pose → Motion/FBX → vehicle/Resident scene → Save/Reload/export.",
       "promptSection": "TB-PROD-01 · ToolBox Production Milestone",
       "sourceSet": "toolbox",
       "waitingFor": "TB-EYE-01 + TB-POSE-01 + TB-ANIM-01 + TB-VEH-01 + TB-SCENE-01",
@@ -525,7 +541,7 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false,
-      "prompt": "## TB-PROD-01 · ToolBox Production Milestone\n\n**Executor:** Web/Coworker + GitHub Bridge  \n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `COWORK_STANDARD`, `GITHUB_BRIDGE`.\n**Outcome:** complete usable authoring chain.\n\n> @GitHub @Dropbox\n> Read KFB Production Architecture v3 and all accepted/current outputs of TB-EYE-01, TB-POSE-01, TB-ANIM-01, TB-VEH-01 and TB-SCENE-01.\n>\n> Integrate them into the accepted Stage-First ToolBox baseline without creating new owners.\n>\n> The human milestone is one flow:\n> search → load actor/Resident/vehicle → FrankenStein/Face/EyeRig → fractal edit → pose → animation test → place/scale props → Save → Reload → continue → export.\n>\n> Preserve current source roster, FrizzleBob, EyeRig v6, Resident Atlas, motion catalogue, shared editor and persistence owners.\n>\n> Do not send me five separate acceptance pages. Return one ToolBox artifact and a short list of any non-blocking TUNE items.\n\n---\n",
+      "prompt": "## TB-PROD-01 · ToolBox Production Milestone\n\n**Executor:** Web/Coworker + GitHub Bridge  \n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `COWORK_STANDARD`, `GITHUB_BRIDGE`.\n**Outcome:** complete usable authoring chain.\n\n> @GitHub @Dropbox\n> Read KFB Production Architecture v3 and all accepted/current outputs of TB-EYE-01, TB-POSE-01, TB-ANIM-01, TB-VEH-01 and TB-SCENE-01.\n>\n> Integrate them into the accepted Stage-First ToolBox baseline without creating new owners.\n>\n> The human milestone is one flow:\n> search → load actor/Resident/vehicle → FrankenStein/Face/EyeRig → fractal edit → pose → animation test → place/scale props → Save → Reload → continue → export.\n>\n> Preserve current source roster, FrizzleBob, EyeRig v6, Resident Atlas, motion catalogue, shared editor and persistence owners.\n>\n> Do not send me five separate acceptance pages. Return one ToolBox artifact and a short list of any non-blocking TUNE items.\n\n\n### FrankenStein / Pet Studio v17+ preservation gate\nOpen the actual v17+ donor before changing navigation. Retain every useful production capability as a named Stage-First mode/context or explicit specialist link; do not replace proven functions with generic chrome.\n\nReconcile at least: actor/pet roster · body/head/face graft · EyeRig · mouth/viseme/talk · material/color/texture · props/attachments · saved profiles · fractal hierarchy · pose/bones · animation · vehicle/driver · Resident Scene · Card/media · import/export/persistence.\n\nEvery migrated surface names its existing owner/module.\n\n---\n",
       "promptSource": {
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
@@ -698,6 +714,33 @@
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
         "section": "WB-OSM-01 · Editable Cartoon District",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "bl-osm-clay-01",
+      "strand": "worldbuilder",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Blender MCP / Claude Code",
+      "title": "Blender MCP · OSM Köln Clay Look",
+      "what": "Current KFB dom-zentrum-v0 source-exact in Blender isolieren und BlendSwap 29812 plus permissive clay alternatives als SOURCE_CLEAN / SURFACE_ONLY / FORM+SURFACE vergleichen.",
+      "result": "One compact Dom/Hbf clay-look decision pack: source proof, donor isolation, .blend/scripts/provenance and optional GLB/PBR bakes; no geography/runtime owner transfer.",
+      "promptSection": "BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender",
+      "sourceSet": "worldbuilder",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "BLENDER_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender\n\n**Executor:** Blender MCP / Claude Code  \n**Execution profile:** `BLENDER_STANDARD` · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD**.  \n**Detailed briefing:** `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`  \n**Outcome:** one source-exact Köln Dom/Hbf Blender comparison proving whether the current OSM massing can carry a convincing Claybound-inspired KFB clay presentation without moving geography/runtime ownership.\n\n> @GitHub @Dropbox @Blender\n> Read:\n> - `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md` completely;\n> - current `tools/osm-city-lab/START_HERE.md` + `README.md`;\n> - current `dom-zentrum-v0` CLAUDE_CONTEXT / PROVENANCE / SOURCE_SPEC / normalized source;\n> - `tools/KFB-ToolBox/_inbox/KFB Racetrack Blender Kit/ONBOARDING_BLENDER_MCP_CHAT.md`.\n>\n> Execute **BL-OSM-CLAY-01 only**.\n>\n> Start in a fresh Blender file. Import a small source-exact Dom/HBF crop from the existing KFB normalized city source and visibly prove that source object **without clay** first. Preserve OSM IDs and local-metre identity.\n>\n> Then isolate and compare the material donors before integration:\n> 1. BlendSwap 29812 · Clay shader / fingerprints · CC-BY;\n> 2. BlendSwap 25508 · Procedural Material Pack · CC0, including Clay + Asphalt;\n> 3. optional Poly Haven Clay Plaster / CC0 only if it adds a genuinely different surface-scale reference.\n>\n> Produce the same city crop under the same camera/light as:\n> `SOURCE_CLEAN | CLAY_SURFACE_ONLY | CLAY_FORM_SURFACE`.\n>\n> `CLAY_FORM_SURFACE` may add restrained bevel/rounding + low-frequency, object-normalized, ground-anchored deformation seeded deterministically by OSM identity. It is presentation geometry only; do not modify City Lab geography/collision/export truth.\n>\n> Keep clay surface scale coherent across object sizes; avoid “OSM boxes with noisy texture”. Prefer matte rough response and soft contact/form shadows. Do not change Dom/HBF landmark ownership.\n>\n> KFB runtime remains web/Three.js/GLB. Do not assume complex Cycles nodes survive glTF: if a runtime handoff is useful, bake standard PBR maps and keep clean/source geometry separately.\n>\n> Return one compact contact sheet (street 3/4, elevated 3/4, top sanity, close material crop), the isolated donor sheet, `.blend`, actual scripts, provenance, optional GLB/bakes and `RETURN.md`.\n>\n> Do not execute the other Blender queue items in this gate. Track Core 1A waits for TRACK-CORE-0; SC01 bridge is look-review only; Billboard B3 needs concept first; FrizzleBob body-family rig and Orc drummer stay with their owners.\n>\n> Stop after two failed repair passes on the same visual/import gate. No Cloudflare publication from this Blender POC.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "BL-OSM-CLAY-01 · OSM Cologne Clay Look in Blender",
         "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
       }
     },
@@ -910,7 +953,7 @@
       "priority": "P1",
       "executor": "ToolBox Animation Studio / Web",
       "title": "Combat · Duel Choreography Studio",
-      "what": "Two real fighters perform deterministic melee/ranged/block/reaction chains for testing and Hero Shots.",
+      "what": "Animation Lab two-fighter mode for source-backed Melee/Ranged/Block/Hit/Recover chains; Combat keeps damage.",
       "result": "Reusable choreography recipes on a versus stage.",
       "promptSection": "COMBAT-DUEL-01 · Duel Choreography Studio",
       "sourceSet": "combatChoreography",
@@ -923,7 +966,7 @@
       "budget": "STANDARD",
       "workDefault": false,
       "coworkDefault": false,
-      "prompt": "## COMBAT-DUEL-01 · Duel Choreography Studio\n\n**Executor:** ToolBox Animation Studio / Web  \n\n**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.\n**Outcome:** two-fighter autonomous choreography and Hero-Shot loops.\n\n> @GitHub\n> Read KFB Production Architecture v3 → C2, current TB-ANIM-01 output, Combat melee/ranged profiles and Resident/ToolBox actor sources.\n>\n> Build **COMBAT-DUEL-01 · Duel Choreography Studio** as a ToolBox Animation Studio mode, not as a second combat game.\n>\n> Stage two actual actors on a readable side-on/3/4 versus stage. Let me choose fighters, distance/facing, semantic actions and attack/reaction chains. Support deterministic looping recipes such as:\n> guard → attack → confirmed-contact marker → hit/block → counter → recover → reset/continue.\n>\n> Include Melee and Ranged only where current admitted profiles exist. Use actual weapons/props and one mixer/face owner per actor.\n>\n> It may visualize current swept-contact/profile facts, but HP/rewards remain Combat Arena ownership.\n>\n> Export a small choreography recipe usable for autonomous NPC matches and Hero Shots.\n\n---\n",
+      "prompt": "## COMBAT-DUEL-01 · Duel Choreography Studio\n\n**Executor:** ToolBox Animation Studio / Web  \n\n**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.\n**Outcome:** two-fighter autonomous choreography and Hero-Shot loops.\n\n> @GitHub\n> Read KFB Production Architecture v3 → C2, current TB-ANIM-01 output, Combat melee/ranged profiles and Resident/ToolBox actor sources.\n>\n> Build **COMBAT-DUEL-01 · Duel Choreography Studio** as a ToolBox Animation Studio mode, not as a second combat game.\n>\n> Stage two actual actors on a readable side-on/3/4 versus stage. Let me choose fighters, distance/facing, semantic actions and attack/reaction chains. Support deterministic looping recipes such as:\n> guard → attack → confirmed-contact marker → hit/block → counter → recover → reset/continue.\n>\n> Include Melee and Ranged only where current admitted profiles exist. Use actual weapons/props and one mixer/face owner per actor.\n>\n> It may visualize current swept-contact/profile facts, but HP/rewards remain Combat Arena ownership.\n>\n> Export a small choreography recipe usable for autonomous NPC matches and Hero Shots.\n\n\n### Animation Lab mode · KayKit semantic families\nExpose this inside current Animation Studio/ToolBox using the same source-backed 1H/2H/dual/unarmed, Block/Hit/Defeat and Ranged families. Do not create a separate fight-animation app.\n\n---\n",
       "promptSource": {
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
@@ -1586,8 +1629,8 @@
       "priority": "P0",
       "executor": "Racer Web + Blender MCP",
       "title": "Racer · Track A Recipe + Bake",
-      "what": "Build one authored figure-eight/over-under track from RKIT under Rapier stunt physics; no general editor.",
-      "result": "Baked reusable Track Module with base + 30m Hero jump.",
+      "what": "Current Track/RKIT source now includes registered RKIT-08/09 stunt modules; Race must drive LOOP_REAL before any MAG/cascade/skyramp or World placement.",
+      "result": "Measured LOOP_REAL Rapier gate first; reusable stunt candidates remain registered but not accepted/placed.",
       "promptSection": "RACE-TRACK-RECIPE-01 · Authored Track A + Bake",
       "sourceSet": "racerWorld",
       "cloudflareRequired": false,
@@ -1604,6 +1647,10 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false,
+      "rkit08_09": "0bbdc539c0d26c8d1feb40a7eda53162a66e7070",
+      "currentGate": "LOOP_REAL",
+      "rkit08_09RegistrationHead": "0bbdc539c0d26c8d1feb40a7eda53162a66e7070",
+      "rkit08_09CurrentHead": "22c3b2e2ebb66f1da999116e1b9547ac93d6a91d",
       "prompt": "## RACE-TRACK-RECIPE-01 · Authored Track A + Bake\n\n**Executor:** Racer Web + Blender MCP for RKIT authored geometry  \n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.\n**Outcome:** first complete reusable baked Track Module, no general track editor.\n\n> @GitHub @Dropbox @Blender\n> Read KFB Production Architecture v3, `RACE_WORLD_LOOK_AUDIO_DECISIONS_2026-09-24.md`, Race PR #34/#35 and current Race SSOT.\n>\n> Build **RACE-TRACK-RECIPE-01** around one authored recipe: `TRACK_A_STUNT_8`.\n>\n> Physics/dimensions:\n> - Rapier is the airborne/contact basis: 15 m/s² downward gravity magnitude, 27 m/s speed basis, real physical ramp;\n> - v0.8 steering/drift/grip remains the handling-feel donor, not a second physics owner;\n> - width ladder = 10.8 / 14.4 / 18.0 / 21.6 m;\n> - 28.8 m only as named special XL module if useful.\n>\n> Track A should be easy to understand: figure-eight / over-under with one ~12 m forgiving jump and one ~30 m Hero step-down, plus one bridge/tunnel/flap feature. Do not build a spline editor.\n>\n> Use RKIT's rounded profile sweep and reusable stunt modules. Blender owns visual geometry/module authoring only; Race owns route/contact/physics.\n>\n> Compile one reusable Track Module package: compact recipe + deterministic route + stunt zones + baked visual GLB + anchors/material roles + source/provenance + Race-owned contact metadata.\n>\n> Give me one directly playable/reviewable result. No Cloudflare debug loop.\n\n---\n",
       "promptSource": {
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
@@ -2550,11 +2597,522 @@
       "budget": "HIGH",
       "workDefault": false,
       "coworkDefault": false,
-      "prompt": "## IK-CCDIK-PARITY-01 · Three.js CCD IK parity\n\n**Executor:** ChatGPT Web\n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n\n**Outcome:** prove whether the upstream Three.js CCD IK approach is materially more stable than the current Resident Atlas `reachChain()` before changing the Puppet solver.\n\n> @GitHub\n> Read KFB Production Architecture v3, `IK_CCD_PARITY_DECISION_2026-09-24.md`, current Resident Atlas S7 `lib/rigwork.js` / `lib/atlas.js`, and the Three.js r184/current `webgl_animation_skinning_ik.html` + `CCDIKSolver.js`.\n>\n> Build one direct same-source A/B/C review:\n> A = current KFB `reachChain()`;\n> B = upstream Three.js `CCDIKSolver` with equivalent chain and no added anatomical tuning;\n> C = upstream CCD with explicit distal→proximal links plus conservative per-link rotation limits / per-step max angle where justified.\n>\n> Use the same KFB actor, start pose, target presets and camera.\n>\n> Required fixtures:\n> - one Rig_Medium arm;\n> - Orc Brute / Rig_Large hand-to-Wardrum contact;\n> - one reachable and one deliberately unreachable target.\n>\n> Show target marker and chain/helper visualization. Record residual distance, per-bone local rotation deltas and sudden flip/twist events between adjacent target samples. Human visual quality outranks smallest residual.\n>\n> The current Resident Puppet UI, shared TransformControls and Studio Patch persistence remain owners. The Three.js example is a solver donor only.\n>\n> Do not replace current IK until the comparison passes. Do not use Cloudflare or Work for this gate.\n",
+      "prompt": "## IK-CCDIK-PARITY-01 · Three.js CCD IK parity\n\n**Executor:** ChatGPT Web\n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n\n**Outcome:** prove whether the upstream Three.js CCD IK approach is materially more stable than the current Resident Atlas `reachChain()` before changing the Puppet solver.\n\n> @GitHub\n> Read KFB Production Architecture v3, `IK_CCD_PARITY_DECISION_2026-09-24.md`, current Resident Atlas S7 `lib/rigwork.js` / `lib/atlas.js`, and the Three.js r184/current `webgl_animation_skinning_ik.html` + `CCDIKSolver.js`.\n>\n> Build one direct same-source A/B/C review:\n> A = current KFB `reachChain()`;\n> B = upstream Three.js `CCDIKSolver` with equivalent chain and no added anatomical tuning;\n> C = upstream CCD with explicit distal→proximal links plus conservative per-link rotation limits / per-step max angle where justified.\n>\n> Use the same KFB actor, start pose, target presets and camera.\n>\n> Required fixtures:\n> - one Rig_Medium arm;\n> - Orc Brute / Rig_Large hand-to-Wardrum contact;\n> - one reachable and one deliberately unreachable target.\n>\n> Show target marker and chain/helper visualization. Record residual distance, per-bone local rotation deltas and sudden flip/twist events between adjacent target samples. Human visual quality outranks smallest residual.\n>\n> The current Resident Puppet UI, shared TransformControls and Studio Patch persistence remain owners. The Three.js example is a solver donor only.\n>\n> Do not replace current IK until the comparison passes. Do not use Cloudflare or Work for this gate.\n\n\n---\n",
       "promptSource": {
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
         "section": "IK-CCDIK-PARITY-01 · Three.js CCD IK parity",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "wb-design-parallel-01",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Claude Design",
+      "executionProfile": "CLAUDE_DESIGN_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "title": "WorldBuilder · Cologne Visual / Authoring Shell",
+      "what": "Latest WB-D2 candidate already proves Cologne/Hürth/Alstädten presentation, facade rule, contact shadows and street names. Do not rerun; next is docking into current WB2/editor.",
+      "result": "WB-D2 presentation candidate preserved; wait for WB2 Design/Rehome then WB-ZONE-SEAM-01.",
+      "promptSection": "WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell",
+      "sourceSet": "worldbuilder",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "parallelWith": [
+        "world-zone-bake-01"
+      ],
+      "latestCandidate": "706c3f121bc3a305778306917613ea23eb772c16",
+      "latestCandidatePath": "tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2",
+      "waitingFor": "WB2-DESIGN-REFINE-01 accepted/re-homed; then WB-ZONE-SEAM-01",
+      "humanResult": "PARTIAL_POSITIVE_LOOK_SHADOW_ONLY",
+      "prompt": "## WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell\n\n**Executor:** Claude Design\n\n**Execution profile:** `CLAUDE_DESIGN_STANDARD` · Claude Design · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD** · secondary only if needed: `WEB_STANDARD` for source/integration checks.\n\n**Outcome:** move the visible WorldBuilder / World-Zone presentation forward in parallel while `WORLD-ZONE-BAKE-01` is still compiling source data.\n\n> @GitHub\n> Read KFB Production Architecture v3, current WorldBuilder/WB-W0 sources, current Cologne/OSM donors and the current Cartoon/Elastic/Grotesque form-language sources.\n>\n> This job runs **in parallel with WORLD-ZONE-BAKE-01**.\n>\n> Do NOT:\n> - fetch new OSM;\n> - invent street/building geography;\n> - define the final World Zone schema;\n> - create a second WorldBuilder runtime;\n> - replace current terrain/editor owners;\n> - depend on unfinished compiler output.\n>\n> Use only already-available real source fixtures/donors, especially:\n> - `tools/osm-city-lab/data/dom-zentrum-v0/`;\n> - existing Cologne Option C / lab-v9 real-source city fixture;\n> - current WB-W0 measured world/region donor;\n> - current shared scene editor;\n> - current City GROTESQUE / BuildingElastic / LandmarkElastic donors;\n> - current KFB palette owners.\n>\n> First show the chosen real source fixture / landmark donor in isolation before integration.\n>\n> Build one **visual/authoring shell candidate** proving how a baked World Zone should feel once it arrives:\n>\n> 1. readable local-region view;\n> 2. continuous terrain/ground relationship;\n> 3. road/building/landmark visual hierarchy;\n> 4. current KFB cartoon material/palette language;\n> 5. stronger Elastic/Grotesque height-dependent bend/torsion on one tall landmark/building;\n> 6. one authored external landmark-placement example;\n> 7. one current editor interaction state showing select / Move / Rotate / Scale / Drop without creating a new editor;\n> 8. clean seam where a future baked Track Module could be placed as a referenced module, without actually compiling/owning the Race track.\n>\n> Use a **frozen small real Cologne fixture**, not a fake city and not placeholder geometry.\n>\n> Treat the future compiler result as data that will later replace the frozen fixture behind the same presentation seam.\n>\n> The artifact should answer visual/product questions only:\n> - does the world read as one coherent KFB world?\n> - does the landmark torsion/bend direction work?\n> - are roads/buildings/landmarks visually hierarchical?\n> - can the editor affordances stay legible without dominating the screen?\n>\n> Do not block on the OSM compiler chat.\n>\n> Return:\n> - exact source refs used;\n> - one directly reviewable visual artifact;\n> - what is purely visual and therefore safe to keep;\n> - what must still wait for WORLD-ZONE-BAKE-01;\n> - exactly one next integration gate.\n\n\n\n### Latest WB-D2 intake · 2026-09-25\n\nDo not rebuild the shell from the original brief.\n\nLatest candidate input is main upload `706c3f121bc3a305778306917613ea23eb772c16`:\n`tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2/`.\n\nIt already contains Cologne/Hürth/Alstädten on one presenter/seam, facade-rule v1, shadow fix, street names and the Alstädten homebase. Treat it as presentation candidate only. Its Alstädten OSM fetch is a documented rule deviation and must be re-cached by OSM City Lab before source promotion.\n\nCurrent continuation is **not another shell design pass**. Wait for the current WB2 Design/Rehome and then execute `WB-ZONE-SEAM-01`.\n\n---\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WB-DESIGN-PARALLEL-01 · Cologne World Visual / Authoring Shell",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "npc-card-spec-01",
+      "strand": "town-npc-life",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "Claude Design",
+      "executionProfile": "CLAUDE_DESIGN_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "title": "NPC Life · Resident Card Speculation Scene",
+      "what": "Use Pet Podcast v5 as choreography donor for two current Residents discussing one real mysterious KFB Card through existing mouth/gaze/bubble/ChatterBox owners.",
+      "result": "15–30 s reusable Resident Scene recipe with real actors/Card, deterministic Triplet beats, mouth/gaze/bubbles and no proprietary runtime.",
+      "promptSection": "NPC-CARD-SPEC-01 · Resident Card Speculation Scene",
+      "sourceSet": "townNpcLife",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "sourceConditions": [
+        "resolve exact user-named FrizzleBobrick actor source before integration",
+        "reuse current GothGirl mouth/head cleanup owner",
+        "use current real Card renderer"
+      ],
+      "prompt": "## NPC-CARD-SPEC-01 · Resident Card Speculation Scene\n\n**Executor:** Claude Design\n\n**Execution profile:** `CLAUDE_DESIGN_STANDARD` · Claude Design · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD** · secondary only if needed: `WEB_STANDARD` for exact source resolution / integration checks.\n\n**Outcome:** two current KFB Residents encounter one real KFB Card and speculate about it from their own worldview using existing mouth/gaze/bubble/ChatterBox owners — as a reusable Resident scene, not a new Podcast runtime.\n\n> @GitHub @Dropbox\n> Read KFB Production Architecture v3, current Town/NPC-Life strand, current Resident Scene rules, current ChatterBox/Triplet sources, and the recovered Cube Pet Podcast v5 donor.\n>\n> This is a **small MVP / Design Shop**, not “Pet Podcast v6”.\n>\n> ### Donor hierarchy\n>\n> Use the current **KFB Pet Podcast v5** as the presentation/choreography donor. It is the active documented fork of v4.\n>\n> Relevant v5 donor behavior:\n> - two-presenter composition;\n> - one clear shared Card/media object;\n> - gaze ownership through PetFace impulses rather than competing direct rig writes;\n> - speaker turns / transcript timing;\n> - voice/talk timing;\n> - existing speech-bubble donor family;\n> - role/persona seams;\n> - card/reaction/commentary seams.\n>\n> Preserve only useful mechanisms. Do not copy its whole floor/camera/game runtime into the new scene.\n>\n> Current source references include:\n> - Dropbox: `/CLAUDE/KFB Pet SpinballCast/KFB Pet Podcast v5/podcast-v5_2026-08-25/`\n> - v5 scene model: `docs/MODELL_szene_v5.md`\n> - v4 scene model remains donor history for Card / Pet-ground / Gutter relationships\n> - GitHub current donor audit: `skills/chat/backlog/LEGACY_DONOR_RECOVERY_2026-09-13.md`\n> - Town/ChatterBox sources: `skills/chat/town/LIVING_KFB_TOWN.md` and `skills/chat/workflows/KFB_WORLD_ONBOARDING_CHATTERBOX_V1_2026-09-19.md`\n>\n> ### Actors\n>\n> Use two **real current actors**.\n>\n> **Actor A · “FrizzleBobrick”**\n>\n> Georg wants the actor he currently refers to as **FrizzleBobrick**, because it already has a mouth/talk setup.\n>\n> Before integration:\n> - resolve the exact source/technical actor id;\n> - show that exact source actor in isolation;\n> - show its current mouth/talk owner in isolation.\n>\n> Do **not** silently substitute:\n> - FrizzleBob Driver Graft;\n> - legacy Arena FrizzleBob;\n> - canonical CubePet Bunny;\n> merely because the name sounds similar.\n>\n> If the exact FrizzleBobrick source cannot be resolved, stop that actor lane as `SOURCE_REQUIRED` rather than inventing it.\n>\n> **Actor B · GothGirl**\n>\n> Use the current real GothGirl source/profile.\n>\n> Current useful donor:\n> `tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json`\n>\n> It already records a current mouth source based on `FrizzelBob-Mouth_01` / viseme-compatible talk presentation.\n>\n> Reuse the current GothGirl face/head cleanup and mouth owner. Do not resurrect the original painted/source mouth underneath the KFB mouth.\n>\n> ### Card\n>\n> Use one **real current KFB Card** through the current Card/PDF/CardBuilder owner.\n>\n> Do not:\n> - use a mock rectangle;\n> - screenshot a fake card into the scene;\n> - build another card renderer.\n>\n> The Card should read as an object/event that has appeared in their environment and is initially unexplained.\n>\n> A lightweight floating/standing/placed Card presentation is sufficient for this MVP.\n>\n> ### Scene grammar\n>\n> This is the reusable encounter:\n>\n> ```\n> Card appears / is noticed\n> → both Residents orient attention toward it\n> → Resident A observes/interprets\n> → Resident B interprets the same Card differently\n> → A counters/reframes\n> → short pause / reaction\n> → scene settles back to idle while Card remains inspectable\n> ```\n>\n> The humor/meaning should come from **different worldviews applied to the same evidence**, not generic AI banter.\n>\n> ### ChatterBox / Triplet rule\n>\n> Reuse the current KFB semantic Triplet / mismatch / closure grammar.\n>\n> Each Resident gets:\n> - one persona/worldview ref;\n> - one small deterministic Triplet pool;\n> - one current Card/context input.\n>\n> For the first MVP, deterministic curated/fixture lines are enough.\n>\n> Do **not** require a live LLM call.\n> Do **not** create a new dialogue tree.\n> Do **not** create a new memory system.\n>\n> Suggested semantic beat per speaker:\n>\n> ```\n> observation\n> → worldview interpretation\n> → implication / counter\n> ```\n>\n> The final closure should remain partly with the player/viewer.\n>\n> ### Mouth / voice / bubbles / gaze\n>\n> Reuse existing owners:\n>\n> - mouth/viseme → current actor mouth owner;\n> - gaze → current EyeRig/PetFace owner;\n> - speech bubble → current KFB bubble owner;\n> - voice/media timing → existing voice/talk seam;\n> - idle/body motion → current Motion/Resident owner.\n>\n> No actor may get a second mouth, EyeRig, mixer or speech-bubble runtime inside this scene.\n>\n> Mouth animation can be a simple existing talk/viseme preview in the first MVP. Perfect phoneme alignment is not required.\n>\n> ### Resident Scene output\n>\n> The result must be a **thin reusable Resident Scene recipe**, not a proprietary app.\n>\n> Store/reference only:\n> - actor ids/profile refs;\n> - local transforms;\n> - Card ref;\n> - persona/Triplet refs;\n> - encounter beat recipe;\n> - existing mouth/voice/bubble/gaze refs;\n> - optional idle/action refs;\n> - camera/staging recipe if needed.\n>\n> The host world/Town/ToolBox supplies renderer, scene, persistence and world placement.\n>\n> The same scene recipe should later be placeable in:\n> - KFB Town;\n> - WorldBuilder;\n> - Card Zone;\n> - Tavern/street/interior;\n> - Hero-shot / Afterglow replay context.\n>\n> ### Visual direction\n>\n> Preserve the appealing **Pet Podcast “two characters + one mysterious Card” readability**, but adapt it into a world/resident vignette rather than reproducing the whole Podcast UI.\n>\n> Keep:\n> - clear triangle of attention: Resident A ↔ Card ↔ Resident B;\n> - readable faces/mouths;\n> - strong speaker turn;\n> - card always visually legible;\n> - restrained bubbles/transcript so the characters remain visible.\n>\n> Avoid:\n> - dashboard chrome;\n> - generic podcast microphones unless source/context calls for them;\n> - another transcript system if normal speech bubbles communicate the beat better;\n> - custom stage/baseplate that prevents placement in the world.\n>\n> ### First direct review\n>\n> One short loop, approximately 15–30 seconds:\n>\n> 1. both actors idle;\n> 2. Card becomes salient;\n> 3. gaze shifts;\n> 4. A speaks;\n> 5. B reacts/speaks;\n> 6. A short counter/reframe;\n> 7. both settle.\n>\n> Required review:\n> - real actors;\n> - real Card;\n> - mouths visibly react while speaking;\n> - gaze clearly points toward Card / counterpart;\n> - bubbles do not cover faces/Card;\n> - no duplicate actor/face/runtime owner;\n> - scene can be moved as one root and has no mandatory baseplate.\n>\n> ### Stop conditions\n>\n> Stop rather than invent if:\n> - FrizzleBobrick source identity is unresolved;\n> - GothGirl current face/mouth source cannot be reproduced;\n> - real Card renderer cannot be used;\n> - implementing the scene would require a second ChatterBox / mouth / EyeRig / renderer owner.\n>\n> ### Return\n>\n> Return:\n> - exact source refs for both actors and Card;\n> - which Pet Podcast v5 mechanisms were reused vs deliberately not reused;\n> - one directly reviewable scene artifact;\n> - the thin Resident Scene recipe;\n> - visible remaining TUNE items;\n> - exactly one next integration gate.\n\n\n---\n\n---\n\n# 2026-09-24 MVP focus additions\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "NPC-CARD-SPEC-01 · Resident Card Speculation Scene",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "res-disco-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "executor": "ChatGPT Web",
+      "title": "Residents · S40 Disco Rotation bridge",
+      "what": "Bridge the existing S9/S40 candidate: 8-song tempo-mapped rotation, multi-rig ensemble, DJ/MC graft, crowd collision and Disco Ball Core — do not rebuild it.",
+      "result": "Owner-clean S40 candidate plus bounded human review; one shared performance clock and shared Motion Library metadata.",
+      "promptSection": "RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble",
+      "sourceSet": "animationResidents",
+      "detailedBriefing": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "plannedStageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/",
+      "humanResult": "REVIEW_PENDING",
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "relatedCapability": "DISCO-BALL-CORE-01",
+      "priority": "P0",
+      "latestCandidate": "a46dbdff150362e7153c143b21fa76ffe8ffb5e4",
+      "latestCandidatePath": "tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation",
+      "nextGate": "Web/GitHub Bridge owner reconciliation → Georg visual review",
+      "prompt": "## RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble\n\n**Use when:** building the first reusable outdoor party/dance Resident scene with six to seven KayKit actors across Rig_Legacy, Rig_Medium and Rig_Large.\n\n**Executor:** ChatGPT Web for source proof, actor/motion audition and Animation Studio choreography. Blender MCP only for a named missing/retargeted motion.\n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only when needed: `BLENDER_STANDARD`.\n\n**Detailed briefing:**  \n`RESIDENT_DISCO_01_2026-09-24.md`\n\n**Protected owners:**\n- Resident Atlas / Resident Scene;\n- ToolBox Animation Studio / Motion Library;\n- MUSIC-PERF-01 `kfb.resident-performance.v1`;\n- existing Audio transport;\n- existing World/Presentation lighting and host-surface owners.\n\n**Outcome:** a baseplate-free six/seven-Resident outdoor disco performance using real source actors, existing dance actions, one beat/bar clock, bar-aware action changes, source-backed radio/speaker/disco-ball donors and an optional existing ORB band variant.\n\n**First gate:** `RES-DISCO-A · Source Cast + Motion Audition`. Show the real actors in isolation first, then audition only already-owned motions plus one Legacy-native party gesture. Do not import new Mixamo clips or compose the final disco before the actor/motion pairings are visually selected.\n\n### Paste-ready start prompt\n\n> @GitHub  \n> Read the current KFB Production Architecture v3 plus:\n> `skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/RESIDENT_DISCO_01_2026-09-24.md`.\n>\n> Execute **RES-DISCO-A · Source Cast + Motion Audition**.\n>\n> Reuse the current Resident Atlas actors, Motion Library and MUSIC-PERF timing owner. Do not create a second Resident database, animation catalogue, audio clock or performance schema.\n>\n> Start with the revised cast: Skeleton Minion (Legacy rigid-parts/bounce lane), Avian Swordsman, Protagonist_A as teenager, Toy Soldier, Witch (Medium), Black Knight and Demon Lord (Large). Prototype Pete and Action Figure are explicitly out. If an exact source is unavailable, fail closed rather than substituting another character.\n>\n> First show every actual source actor in isolation and prove its rig family. Then audition the current owned dance library on compatible Medium/Large actors. For the Legacy Skeleton Minion reuse the proven Orc-band beat-driven bounce presentation concept first; do not map Medium/Large footwork clips onto it.\n>\n> Also isolate the exact Tiny Treats radio and Goth Girl speaker. Treat the disco ball as a new reusable **DISCO-BALL-CORE-01** module requirement: freely placeable/spinning, own bounded disco/spot/beam effects, existing light/VFX owner integration and a reserved future EyeRig host seam. Show any existing disco-ball donor/source separately before integration. A loaded URL is not donor proof.\n>\n> Return one compact browser review where I can compare actor/motion pairings. Do not import the new Mixamo shortlist yet. Exactly one human decision: which six/seven actor-motion pairings should advance to the choreographed 32-bar performance.\n>\n> Planned milestone Stage after coherent review only:\n> `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/disco/`\n> Do not claim that route live until it has actually been published and opened.\n\n\n### Latest S40 candidate · 2026-09-25\n\nDo **not** execute RES-DISCO-A from scratch.\n\nLatest candidate input is main upload `a46dbdff150362e7153c143b21fa76ffe8ffb5e4`:\n`tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation/`.\n\nIt already provides Source Cast / Motion Audition / Ensemble, 8-song measured rotation with tempo maps, 16-bar phrase, root-wander correction, crowd collision, FrizzleBob DJ/MC graft and DISCO-BALL-CORE-01.\n\nCurrent task is **Bridge + bounded review**:\n- keep current Resident, Motion Library and MUSIC-PERF owners;\n- pin/fix the Graft reader's internal raw@main asset loads;\n- reconcile Disco vs Band Motion Library pins;\n- replace the Band's separate transport with the shared performance transport;\n- keep per-track downbeats explicitly marked as set/not measured;\n- keep HIT 2 placeholder explicit until Direct FBX supplies a source-backed cheer/react action;\n- do not retire prior Atlas generations without explicit approval.\n\nReturn one direct review for Georg's actor/motion pairing, Skeleton bounce, Disco-Ball and beam/dot questions.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "RES-DISCO-01 · Resident Atlas Outdoor Disco Ensemble",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/SELF_SERVICE_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "wb-mobility-mvp-01",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "WorldBuilder / Travel Web",
+      "title": "MVP · WorldBuilder all-mode mobility",
+      "what": "One WorldBuilder world with Ground/Drive/Flight/Boat/Air handoff plus shared actor locomotion states.",
+      "result": "Playable multi-mode world with one movement writer and MotionProfile state graph.",
+      "promptSection": "WB-MOBILITY-MVP-01 · WorldBuilder all-mode mobility + actor state graph",
+      "sourceSet": "worldbuilder",
+      "waitingFor": "WB-ZONE-SEAM-01 + TRAVEL-MODES-01 + source-proven Drive/Boat/Air adapters + accepted Motion consumer",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WB-MOBILITY-MVP-01 · WorldBuilder all-mode mobility + actor state graph\n\n**Executor:** WorldBuilder / Travel Web  \n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n**Outcome:** one WorldBuilder world supports the complete source-proven Travel family while one real actor uses the shared semantic motion-state graph.\n\n> Read `MVP_FOCUS_PLAN_2026-09-24.md`, World Zone/Flow shell, Travel Mode Router and Motion Library/Profile. Keep one world. Mode slots: Ground · Drive · Flight · Boat/Water · Plane/Air · Freefall/Parachute; only real source-backed modes count. Ground uses shared Idle/Walk/Run/fast-run-Sprint/backward-strafe/Jump Start-Air-Land/crouch-sneak-crawl states where admitted. Exactly one movement writer owns position.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WB-MOBILITY-MVP-01 · WorldBuilder all-mode mobility + actor state graph",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "wb-huerth-cologne-race-mvp-01",
+      "strand": "racer-world",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "WorldBuilder / Racer / OSM Web",
+      "title": "MVP · Hürth → Cologne → Race Track",
+      "what": "Drive through real OSM Hürth/corridor/Cologne streets and enter TRACK_A through an authored connector.",
+      "result": "One continuous drive with explicit world→Race handoff and no invented geography.",
+      "promptSection": "WB-HUERTH-COLOGNE-RACE-MVP-01 · Hürth → Cologne OSM streets → Track A",
+      "sourceSet": "racerWorld",
+      "waitingFor": "Hürth/corridor baked World Zones + TRAVEL-DRIVE-01 + WB-ZONE-SEAM-01 + Race-driven LOOP_REAL gate; no RKIT-08/09 world placement before then",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WB-HUERTH-COLOGNE-RACE-MVP-01 · Hürth → Cologne OSM streets → Track A\n\n**Executor:** WorldBuilder / Racer / OSM Web bridge  \n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n**Outcome:** one continuous drivable route from Hürth through real OSM-derived streets into Cologne and onto Track A.\n\n> Identify exact committed Hürth→Cologne corridor coverage first. Missing geometry returns to OSM City Lab; do not invent it. Compose by reference: Hürth Zone → corridor/street Zone(s) → Cologne Zone → visible service/ramp connector → TRACK_A_STUNT_8. Streets use Travel/WorldBuilder Drive; Race owns explicit Track contact/gameplay. Rigid placement only.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WB-HUERTH-COLOGNE-RACE-MVP-01 · Hürth → Cologne OSM streets → Track A",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "actor-fb-body-family-01",
+      "strand": "toolbox",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ToolBox Web / Blender only if needed",
+      "title": "Actors · FrizzleBob alternative KayKit bodies",
+      "what": "Keep one FrizzleBob identity while comparing several real modern KayKit destination bodies/rigs.",
+      "result": "2–4 explicit actor variants with provenance and motion/FaceHost compatibility.",
+      "promptSection": "ACTOR-FB-BODY-FAMILY-01 · FrizzleBob identity on alternative KayKit bodies",
+      "sourceSet": "toolbox",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## ACTOR-FB-BODY-FAMILY-01 · FrizzleBob identity on alternative KayKit bodies\n\n**Executor:** ToolBox Web · Blender only for proven mesh/weight work  \n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.\n**Outcome:** compare several real KayKit destination bodies under one explicit FrizzleBob identity.\n\n> Show identity donor and each candidate body in isolation. Choose 2–4 real modern bodies; preserve each destination rig/sockets/motion compatibility. Browser/ToolBox graft first. Blender only for selected variant if skinning/weights/topology require it. Give explicit actor ids/provenance and compare Idle/Walk/Run + one action + EyeRig/mouth compatibility.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "ACTOR-FB-BODY-FAMILY-01 · FrizzleBob identity on alternative KayKit bodies",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "motion-intake-direct-01",
+      "strand": "animation-residents",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ToolBox Animation Studio / Web",
+      "title": "Animation · Direct FBX Motion Intake",
+      "what": "Upload compatible FBX in Animation Lab, classify DIRECT vs BLENDER_REQUIRED, and emit shared GLB/catalogue/profile metadata including semantic roles needed by Resident performances.",
+      "result": "Browser intake + role-aware Motion Library metadata + GLB export + compact Blender exception queue.",
+      "promptSection": "MOTION-INTAKE-DIRECT-01 · Animation Lab direct FBX → GLB / Motion Library intake",
+      "sourceSet": "animationResidents",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "secondaryProfiles": [
+        "BLENDER_STANDARD"
+      ],
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## MOTION-INTAKE-DIRECT-01 · Animation Lab direct FBX → GLB / Motion Library intake\n\n**Executor:** ToolBox Animation Studio / Web  \n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH** · secondary only if needed: `BLENDER_STANDARD`.\n**Outcome:** already-good compatible FBX enters the shared Motion Library without mandatory Blender retargeting.\n\n> Read `KAYKIT_ANIMATION_RESEARCH_UPDATE_2026-09-24.md`, Animation Intake 01, Motion Library #197/#209, AN-PROFILE and current Animation Studio. Add local FBX Import: inspect skeleton/tracks/root → preview → classify DIRECT or BLENDER_REQUIRED. DIRECT keeps raw FBX private/local and exports derived GLB + catalogue/profile seed + provenance. BLENDER_REQUIRED covers mismatch/retarget/root/curve/contact/rig/bake work. No new motion DB/mixer.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "MOTION-INTAKE-DIRECT-01 · Animation Lab direct FBX → GLB / Motion Library intake",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "tb-v17-integration-01",
+      "strand": "toolbox",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "ToolBox Web / GitHub Bridge",
+      "title": "ToolBox · FrankenStein/Pet Studio v17+ integration",
+      "what": "Preserve useful v17+ production capabilities behind the Stage-First front door.",
+      "result": "Daily ToolBox front door with named owner-backed v17+ feature parity.",
+      "promptSection": "TB-V17-INTEGRATION-01 · Stage-First ToolBox with Pet / FrankenStein v17+ feature parity",
+      "sourceSet": "toolbox",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## TB-V17-INTEGRATION-01 · Stage-First ToolBox with Pet / FrankenStein v17+ feature parity\n\n**Executor:** ToolBox Web / GitHub Bridge  \n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n**Outcome:** Stage-First becomes the daily front door without losing useful v17+ specialist capability.\n\n> Read ToolBox PR #185 and actual FrankenStein/Pet Studio v17+ donor tree/living docs. Do not invent replacement tabs. Mount existing owner, expose module in context, or link specialist surface. Preserve roster, grafts, eyes, mouth/talk, materials, attachments, profiles, fractal hierarchy, pose, animation, vehicle, Resident Scene, Card/media and import/export/persistence.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "TB-V17-INTEGRATION-01 · Stage-First ToolBox with Pet / FrankenStein v17+ feature parity",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "npc-aitown-kiss-01",
+      "strand": "town-npc-life",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Resident / Town Web",
+      "title": "NPC Life · AI Town KISS intent loop",
+      "what": "Reuse AI Town state-machine lessons on KFB NPC-LIFE/Journey/ChatterBox without importing its runtime.",
+      "result": "Three Residents combine activity, notice, approach, encounter and actual-known memory.",
+      "promptSection": "NPC-AITOWN-KISS-01 · Living Residents intent loop from AI Town donor",
+      "sourceSet": "townNpcLife",
+      "waitingFor": "NPC-LIFE-01 visible/human gate + Journey filtered-memory seam",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## NPC-AITOWN-KISS-01 · Living Residents intent loop from AI Town donor\n\n**Executor:** Resident / Town Web  \n**Execution profile:** `WEB_STANDARD` · ChatGPT Web · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.\n**Outcome:** tiny emergent Resident life using AI Town state-machine lessons without importing its runtime.\n\n> Read `AI_TOWN_KFB_EVALUATION_2026-09-24.md`, NPC-LIFE-01, Town Living and Journey/ChatterBox. Each Resident has one intent: activity | approach | encounter | performance | travel | combat-handoff. First proof: 3 real Residents, seeded chooser, host movement, NPC-LIFE beats, ChatterBox text, Journey filtered facts. Live LLM optional. Optional low-frequency Observer recap cannot alter truth/rewards.\n\n\n\n### S40 role metadata requirement · 2026-09-25\n\nResident S40 proves why intake must expose semantic roles in addition to clip ids. DIRECT/BLENDER_REQUIRED output should support role tags such as:\n`dance`, `idle`, `react.cheer`, `music.drums`, `mc.gesture`, `transition`.\n\nPreserve source-backed fields already consumed by S40:\n`loop`, `rootMotion`, `durationSec`, `travelMetersPerCycle`, `bestVariant`, `sourceFbx`.\n\nFirst useful gaps from S40:\n- Cheer / Clap / Victory for HIT 2;\n- MC microphone gesture;\n- 1–2 bar transition actions.\n\nDo not create a second role database: extend the shared Motion Library catalogue/profile layer.\n\n---\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "NPC-AITOWN-KISS-01 · Living Residents intent loop from AI Town donor",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "wb2-design-refine-01",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "Claude Design",
+      "title": "WorldBuilder · WB2 UI / Authoring refinement",
+      "what": "Optional WB2 authoring/UI refinement is deferred behind the current World r2 Stage/freeplay gate. The World runtime/contract is already green; do not start a new design pass before the unchanged recovered candidate is reviewed on Stage.",
+      "result": "After WORLD-R2-STAGE-PREP-01 + Georg visual/freeplay review, refine only the accepted authoring surface if still useful; preserve current terrain/editor/runtime owners.",
+      "promptSection": "WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement",
+      "sourceSet": "worldbuilder",
+      "detailedBriefing": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md",
+      "sourcePr": 190,
+      "sourceHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "CLAUDE_DESIGN_STANDARD",
+      "secondaryProfiles": [
+        "WEB_STANDARD"
+      ],
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Georg Stage visual/freeplay gate",
+      "operationalStatus": "DEFERRED_BEHIND_WORLD_R2_STAGE_PREP_01",
+      "prompt": "## WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement\n\n**CURRENT STATUS · 2026-09-26:** **HOLD behind WORLD-R2-STAGE-PREP-01 + Georg Stage review.**  \nCurrent WorldBuilder source head is `58028b07d7618926c40ffaec3bd4053dc88c0efd`. Do not start a new Claude refinement pass before the unchanged recovered World r2 candidate is reviewed on Stage.\n\n**Executor:** Claude Design\n\n**Execution profile:** `CLAUDE_DESIGN_STANDARD` · Claude Design · Claude Sonnet 5 · reasoning **medium** · budget **STANDARD** · secondary only if needed: `WEB_STANDARD`.\n\n**Outcome:** make the accepted WB2 terrain/scene-authoring surface visibly cleaner and more useful without changing its terrain/editor architecture.\n\n> @GitHub\n> Read the exact accepted WB2 source first:\n> - PR #190 · `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23@ec52eb746be8c1a0e6f3f3d62857ed4b3121b284`;\n> - `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md`.\n>\n> Do not create a new WorldBuilder brief or runtime. Execute that existing handoff.\n>\n> Preserve the accepted WB2 behavior: Raise/Lower, Radius/Strength, wheel/touchpad Radius, hold-Space Orbit, `1/2/3`, Undo/Clear, Save/Reload and return to shared Object Edit.\n>\n> Design goals only:\n> - collapse/remove redundant side-panel scene-edit controls and explanatory copy;\n> - keep object transforms inline at the selected object;\n> - keep Terrain Sculpt compact and scene-level;\n> - maximize 3D field of view;\n> - integrate the already-owned WorldDesign/environment look controls coherently;\n> - preserve the shared `tools/KFB-ToolBox/lib/edit-layer.js` owner and all persistence seams.\n>\n> Do not add Smooth, Flatten/Set Height, material painting, masks, erosion or large-world bake/cache in this pass.\n>\n> Return a complete editable Session Cut. Web/GitHub Bridge rehomes 1:1 and creates the next local/direct review artifact. No Cloudflare publication or merge in this gate.\n\n\n---\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "wb-zone-seam-01",
+      "strand": "worldbuilder",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "ChatGPT Web / GitHub Bridge",
+      "title": "WorldBuilder · WB-D2 / baked-zone seam",
+      "what": "Dock the latest Cologne/Hürth/Alstädten presentation shell onto the current WB2 editor and canonical baked World Zone without moving owners.",
+      "result": "Current WorldBuilder consumes zone truth through wd1-seam; presentation stays WB-D2-owned; Alstädten remains candidate until OSM re-cache.",
+      "promptSection": "WB-ZONE-SEAM-01 · Dock WB-D2 shell onto current WorldBuilder + baked zones",
+      "sourceSet": "worldbuilder",
+      "waitingFor": "WB2-DESIGN-REFINE-01 accepted/re-homed",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WB-ZONE-SEAM-01 · Dock WB-D2 shell onto current WorldBuilder + baked zones\n\n**Executor:** ChatGPT Web / GitHub Bridge\n\n**Execution profile:** `WEB_DEEP` · ChatGPT Web · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.\n**Outcome:** current WorldBuilder/editor consumes WB-D2 presentation and canonical baked World Zone data through one thin adapter without moving owners.\n\n> @GitHub\n> Read:\n> - current accepted WB2 + completed Claude Design/Rehome result;\n> - `INTAKE_WBD2_RESIDENT_S40_2026-09-25.md`;\n> - WB-D2 `HANDOVER_WSA.md`, `START_NEXT_CHAT.md` and `wd1-seam.js`;\n> - current WORLD-ZONE-BAKE package/Return.\n>\n> Preserve:\n> - WorldBuilder owns terrain/editor/persistence;\n> - OSM City Lab / World Zone Bake owns geographic source + normalized/baked zone truth;\n> - WB-D2 owns presentation only: facade/look, names, landmark/water presentation and visual hierarchy.\n>\n> Add only the adapter needed for `wd1-seam.js` to consume the current baked zone format/current WorldBuilder host. Do not copy terrain, editor, route, persistence or OSM compiler into the shell.\n>\n> First integration fixtures: current canonical Cologne zone plus the already-exported Hürth/Alstädten presentation candidates. Alstädten remains source-candidate until OSM City Lab re-caches it with SOURCE_SPEC/provenance.\n>\n> Carry visible known defects honestly: B1 road-edge rasterization, B2 sign road-edge anchoring, live no-reload zone switch and missing Hürth landmark. Do not hide them by changing geography.\n>\n> Done when one current WorldBuilder review can switch/load real zone source through the seam while keeping WB2 editor/Save-Reload owners intact.\n>\n> No Ehrenfeld fetch/build in this gate. No Race Track placement.\n\n\n---\n\n# Environment Preview + World Environment consolidation\n\nDetailed briefs:\n- `ENV_PREVIEW_01_2026-09-25.md`\n- `WORLD_ENVIRONMENT_CONSOLIDATION_2026-09-25.md`\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WB-ZONE-SEAM-01 · Dock WB-D2 shell onto current WorldBuilder + baked zones",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "env-preview-01",
+      "strand": "shared-stage",
+      "bucket": "HOLD",
+      "priority": "P0",
+      "executor": "ChatGPT Web",
+      "title": "Environment · Shared Preview Host",
+      "what": "Accepted shared Environment Preview foundation. Public Stage and Georg PASS_WITH_TUNE are complete; consume the proven WORLD_MATCH / SOURCE_ISOLATION presentation in bounded World/ToolBox work instead of reopening this job.",
+      "result": "Existing accepted adapter remains the shared preview foundation; follow-up camera/actor/rendering/lighting observations are separate owner slices.",
+      "promptSection": "ENV-PREVIEW-01 · Shared KFB Environment Preview Host",
+      "sourceSet": "worldEnvironmentPresentation",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "repo": "georg-doc/kayfabizarro",
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "waitingFor": "COMPLETE · accepted foundation; do not rerun. Consume from next bounded owner slice.",
+      "sourceHead": "88c64c29075f31d655f4777437bb1aa82069df17",
+      "operationalStatus": "COMPLETE_PASS_WITH_TUNE",
+      "prompt": "## ENV-PREVIEW-01 · Shared KFB Environment Preview Host\n\n**CURRENT STATUS · 2026-09-26:** **COMPLETE · PUBLIC STAGE VERIFIED · GEORG PASS_WITH_TUNE.**  \nDo **not** start this build prompt again. Consume the accepted adapter in the next bounded World/ToolBox slice. Camera/actor/rendering/lighting tune notes are separate owner work.\n\n**Executor:** ChatGPT Web  \n**Execution profile:** `WEB_STANDARD` · GPT-5.6 Sol · reasoning **medium** · budget **STANDARD**.  \n**Outcome:** current KFB sky/light/fog/palette/ground presentation available to Resident Atlas + ToolBox without a second world owner.\n\n> @GitHub  \n> Read `ENV_PREVIEW_01_2026-09-25.md` completely. Build only the shared preview adapter: WORLD_MATCH default, SOURCE_ISOLATION and source-backed CONSUMER_PRESET; support ground / terrainPatch / worldZone. Resolve `world.current` to an exact saved provider/head/profile. First consumers are Resident Atlas and ToolBox/Animation Studio. No copied Travel fork, renderer, camera, terrain generator or hidden baseplate.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "ENV-PREVIEW-01 · Shared KFB Environment Preview Host",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "world-env-consolidate-01",
+      "strand": "travel-surfaces",
+      "bucket": "READY",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "World · Environment Source Consolidation",
+      "what": "Pin the current WorldBuilder continuous-terrain/support owner plus explicit terrainDomain, ecologyProfile, zoneTheme and worldMood axes into one thin source-referenced Environment Recipe. TinySkies/Travel are procedural/presentation donors only; include shared OSM/Track/CardZone modifier/exclusion seams. Recovery: CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md.",
+      "result": "Versioned owner-correct World Environment Recipe; one deterministic seed reconstructs the same host environment without creating a second terrain owner.",
+      "promptSection": "WORLD-ENV-CONSOLIDATE-01 · Current world-environment contract",
+      "sourceSet": "worldEnvironmentPresentation",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "repo": "georg-doc/KFB-Travel-Globe",
+      "sourceHead": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WORLD-ENV-CONSOLIDATE-01 · Current world-environment contract\n\n**Executor:** ChatGPT Web  \n**Execution profile:** `WEB_DEEP` · GPT-5.6 Sol · reasoning **high** · budget **HIGH**.  \n**Outcome:** source-pinned World Environment Recipe referencing current TerrainSurface, BiomeField, WorldMood, atmosphere, procedural Nature Base, curated accent props and natural landmarks.\n\n> @GitHub  \n> Read `WORLD_ENVIRONMENT_CONSOLIDATION_2026-09-25.md` completely. Pin current Travel/TinySkies-derived sources and define the thinnest recipe that references them. Preserve one height truth, separate WorldMood from BiomeField, keep broad nature asset-light, keep kit props as curated accents and retain the no-noise-blob scatter rule. Prove one deterministic seed in current Travel plus one neutral/shared preview consumer. Do not build a new terrain engine.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WORLD-ENV-CONSOLIDATE-01 · Current world-environment contract",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "world-biome-mood-01",
+      "strand": "travel-surfaces",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "World · Biome × Mood",
+      "what": "Productize terrainDomain × ecologyProfile × zoneTheme × global world/deck mood over the one current WorldBuilder terrain truth; keep morphology, ecology, narrative material and atmosphere independently addressable. Recovery: CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md.",
+      "result": "Compact seed/biome/mood authoring preview; no hard-theme world switch.",
+      "promptSection": "WORLD-BIOME-MOOD-01 · Biome × World Mood",
+      "sourceSet": "worldEnvironmentPresentation",
+      "waitingFor": "WORLD-ENV-CONSOLIDATE-01",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WORLD-BIOME-MOOD-01 · Biome × World Mood\n\nPrepared HOLD behind WORLD-ENV-CONSOLIDATE-01. Productize current mixed biome domains × source-backed world/deck mood without exposing scratch internals or hard-switching the whole world.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WORLD-BIOME-MOOD-01 · Biome × World Mood",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "world-nature-01",
+      "strand": "travel-surfaces",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "World · Procedural Nature + Curated Accents",
+      "what": "Build broad high-count Nature procedurally/instanced from current terrain suitability, deterministic spacing/exclusion and intentional clusters; use registry-backed KayKit/Kenney/KFB/Tiny-Treats assets only as sparse verified accents. Recovery: CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md.",
+      "result": "Asset-light Nature Base + low-density curated accent lane on current support/scatter truth.",
+      "promptSection": "WORLD-NATURE-01 · Procedural Nature Base + Curated Accents",
+      "sourceSet": "worldEnvironmentPresentation",
+      "waitingFor": "WORLD-ENV-CONSOLIDATE-01; ideally WORLD-BIOME-MOOD-01",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WORLD-NATURE-01 · Procedural Nature Base + Curated Accents\n\nPrepared HOLD behind world-environment consolidation. Productize current `ts-flora.js` broad asset-light vegetation and keep KayKit/Kenney `flora.js` as intentional low-density accent compositions.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WORLD-NATURE-01 · Procedural Nature Base + Curated Accents",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "world-recipe-01",
+      "strand": "travel-surfaces",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "World · Procedural Environment Recipe",
+      "what": "Compose current surface/height owner, terrainDomain, ecologyProfile, Card semantics/zoneTheme, worldMood, Nature, accents, semantic landmarks and authored OSM/Race/CardZone modules as deterministic references. Recovery: CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md.",
+      "result": "One reproducible World Environment Recipe; seed+parameters instead of generated-point dumps.",
+      "promptSection": "WORLD-RECIPE-01 · Procedural World Recipe",
+      "sourceSet": "worldEnvironmentPresentation",
+      "waitingFor": "WORLD-BIOME-MOOD-01 + WORLD-NATURE-01 + accepted support/surface adapter seam",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_DEEP",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "high",
+      "budget": "HIGH",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## WORLD-RECIPE-01 · Procedural World Recipe\n\nPrepared HOLD behind Biome/Mood + Nature + accepted support adapter. Deterministic recipe only; seed + parameters rather than persisted generated-point dumps.\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "WORLD-RECIPE-01 · Procedural World Recipe",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "cz-env-01",
+      "strand": "card-zones",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web",
+      "title": "Card Zone · Current Environment Adapter",
+      "what": "Mount real Card Zone recipes into the current WorldBuilder host terrain/environment using explicit local modifier/carve/exclusion masks and reversible presentation overrides; never import a hidden historical voxel/Travel ground owner. Recovery: CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md.",
+      "result": "One Card Zone reads as part of the current world rather than a standalone old lab world.",
+      "promptSection": "CZ-ENV-01 · Card Zone × Current Environment",
+      "sourceSet": "cardZoneModules",
+      "waitingFor": "ENV-PREVIEW-01 + accepted CZ-RECIPE-01/equivalent",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CZ-ENV-01 · Card Zone × Current Environment\n\nPrepared HOLD behind ENV-PREVIEW-01 + accepted Card Zone recipe seam. Current host supplies environment/terrain truth; Card Zone supplies carve/calm, local support, exact fluid, stack/reveal/Beam, Card Cube/Face Focus and collection event. No hidden second voxel world.\n\n\n---\n",
+      "promptSource": {
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "section": "CZ-ENV-01 · Card Zone × Current Environment",
         "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
       }
     }
