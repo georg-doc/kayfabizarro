@@ -15,6 +15,11 @@ This folder is the token-sparse WSA entry for the next KFB production wave. It d
 3. `RECOVERY.md` — refs and recovery if this planning chat disappears.
 
 Supporting evidence:
+- `ABORTED_WEBCHAT_RECOVERY_INVENTORY_2026-09-26.md` — recent aborted/fragile-chat inventory.
+- `ABORTED_WEBCHAT_RECOVERY.json` — machine-readable state.
+- `LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md` — proposed timeout-safe C0/checkpoint workflow.
+- `B2B_P1_CLOSURE_RECOVERY_BRIEF_2026-09-26.md` — closure-only recovery for green orphan PR #212.
+- `CITY_BITS_WORLD_DRESSING_RECON_01_2026-09-26.md` — recover the City Builder Bits application analysis without redoing source discovery.
 - `CLAUDE_DESIGN_RACER_R0_BLOCKER_RETURN_2026-09-26.md`
 - existing Coworker source drafts: `00_UEBERBLICK_MVP_WSA.md`, `DRAFT_WORLDBUILDER.md`, `DRAFT_TOOLBOX.md`, `DRAFT_RACER.md`, `AUDIT_PAKETE_WS1.md`.
 
