@@ -1071,3 +1071,18 @@ HUB-CTRL remains the owner on Draft PR #202. The accepted-with-mobile-TUNE Hub U
 The source-exact private review copy is https://kfb-production-hub.frizzlebob.chatgpt.site. It is a Site distribution mirror of the PR #217 candidate, not a new Production Desk registry or KFB Live promotion. Native Sites deployment succeeded; new Sites browser proof has not been obtained. The public Cloudflare Stage remains https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ux-recovery-v2/ and the public root remains unchanged. The Hub Stage source card links the private Site on PR #217; that metadata has not been republished to Cloudflare.
 
 Read `tools/production_desk/SITES_MIRROR_RETURN_2026-09-26.md` on PR #217. Georg's `HUB-MOBILE-TUNE-01` remains open. One next gate: Georg reviews the private Site on desktop and mobile before an automated one-way HUB-CTRL → Sites synchronization is designed.
+
+
+## 2026-09-26 · KFB Clay Asset Studio v0.1.0
+
+Private personal ChatGPT plugin **KFB Clay Asset Studio** is now registered as **EXPERIMENTAL**.
+
+- plugin: `plugins_6ab7de04f0c881919ab552b1a8f702b3`
+- release: `pluginrel_6ab7de067680819184bb6c981df7489c`
+- skill: `produce-clay-assets`
+- role: generate and QA one clay/craft raster production asset at a time from a fixed 50-item priority queue
+- documentation: `tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/KFB_CLAY_ASSET_STUDIO_PLUGIN_v0.1.0_2026-09-26.md`
+
+It does not replace ToolBox, Asset Librarian, Blender/MCP or any game shader/runtime owner. No asset has been generated or promoted yet.
+
+Exactly one next gate: **Asset 1 — Smooth matte clay seamless texture → source + 3×3 repeat human review.**
