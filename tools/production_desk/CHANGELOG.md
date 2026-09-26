@@ -311,3 +311,10 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - updated PR #219 expected head to `6610e5b0…`;
 - no generated Hub HTML or Cloudflare publication changed;
 - config was fetched back and parsed; no PR workflow run was emitted for the config checkpoint, so no new CI count is claimed.
+
+## 2026-09-26 · Fragile Web-chat recovery inventory
+
+- config checkpoint `6b736a0dc887609b7296a77fedb4f0f9c04f6e04`;
+- WSA lane now points to PR #222 aborted/fragile Web-chat recovery inventory + C0 long-job protocol;
+- two current recovery orphans surfaced: B2b-P1 closure and City Builder Bits application recon;
+- no generated Hub HTML, Cloudflare publication or Runtime/Live claim.
