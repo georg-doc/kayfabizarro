@@ -1,3 +1,18 @@
+## 2026-09-26 · Card Zone / Biome / Environment recovery
+
+The aborted Card-Zone / biome / procedural-Nature thread is recovered at:
+
+`workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`
+
+Binding correction: **current WorldBuilder continuous terrain owns the host surface/height truth; Travel/TinySkies are donors only.**
+
+The memo separates terrain morphology, ecology, Card-Zone theme and world mood; pins direct TinySkies/KFB scatter evidence; and connects OSM, Race corridor support and Card Zones through one terrain/modifier/exclusion seam.
+
+Evidence: **15/15 recovery checks PASS · 96 architecture jobs unchanged · no runtime / Stage / Live change.**  
+Existing next gate remains **ENV-PREVIEW-01**.
+
+---
+
 ## 2026-09-26 · External Demo Research Radar
 
 The current Production Architecture v3 branch contains a timeout-safe living research index for external Reddit/GitHub/public-demo donors:
