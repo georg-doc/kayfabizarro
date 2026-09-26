@@ -130,3 +130,24 @@ The plugin is an **EXPERIMENTAL production helper**, not a replacement for ToolB
 
 ### NEXT
 Asset 1: **Smooth matte clay seamless texture** → source + 3×3 repeat review before Asset 2.
+
+
+## 2026-09-26 · ClayBound NotebookLM source decks + Hub production lane
+
+### SOURCE INTAKE
+Four NotebookLM slide-deck PDFs are now pinned in the existing ClayBound Style Reference folder:
+- `ClayBound_Production_Pipeline.pdf`
+- `Digital_Clay_Grammar.pdf`
+- `Diorama_Texture_Atlas.pdf`
+- `KFB_ClayBound_Production_Spec.pdf`
+
+Combined size is 68,563,328 B (~65.4 MiB). They were **not opened, rendered or web-optimized** in this intake; originals remain source evidence.
+
+### ROUTING
+Added `CLAYBOUND_INPUT_INTAKE_2026-09-26.md` with the bounded production backlog. HUB-CTRL #202 now carries one compact **ClayBound · Production Assets** lane plus seven catalog jobs instead of exposing the full 50-item plugin queue as cards.
+
+Current READY gate:
+**CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat + Georg review.**
+
+### BOUNDARY
+No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
