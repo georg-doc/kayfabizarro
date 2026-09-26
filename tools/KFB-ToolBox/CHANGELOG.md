@@ -138,4 +138,4 @@ Human three-actor motion review. Attachment proposals remain a separate visible 
 - corrected metadata: Travel/TinySkies is a presentation donor, while WorldBuilder/OSM/current terrain owners retain world and height authority;
 - 30/30 source-contract checks PASS;
 - 9/9 portable Stage real-Chrome checks PASS;
-- Cloudflare publication and Georg review remain pending; Live unchanged.
+- public Cloudflare Stage re-ran the same browser gate at 9/9 PASS on `cloudflare-live@bec8688c`; Georg review remains pending; Live unchanged.

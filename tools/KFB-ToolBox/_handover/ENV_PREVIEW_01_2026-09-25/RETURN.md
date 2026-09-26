@@ -1,6 +1,6 @@
 # RETURN · ENV-PREVIEW-01 · 2026-09-25
 
-Status: **STAGE PACKAGE LOCAL BROWSER VERIFIED · PUBLICATION PENDING · NOT LIVE**
+Status: **PUBLIC STAGE VERIFIED · HUMAN REVIEW OPEN · NOT LIVE**
 
 ## Outcome
 
@@ -76,6 +76,8 @@ No second terrain/sky/world owner was introduced.
 - existing Production Resource Registry on browser checkpoint: **SUCCESS**
 - page errors in both consumer proofs: **0**
 - portable Stage wrapper: **9/9 local real Chrome PASS**
+- public Cloudflare Stage: **9/9 real Chrome PASS**
+- Cloudflare deployment for publication head `bec8688c0c5a4743d8f484193939a74112d977c4`: **SUCCESS**
 
 Browser artifact:
 `10886214792`
@@ -96,13 +98,13 @@ The source actor/Resident stays the same across each A/B.
 
 ## Publication
 
-Cloudflare Stage package prepared at:
-`kfb-hub/stage/toolbox/environment-preview-01/`.
-
-Intended human route:
+Cloudflare Stage: **PUBLIC_VERIFIED** at:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/`
 
-Public verification: **PENDING**.
+Publication branch/head:
+`cloudflare-live@bec8688c0c5a4743d8f484193939a74112d977c4`
+
+The exact public route showed the expected build/source markers, Resident Atlas and ToolBox consumers. Public automated browser gate: **9/9 PASS**.
 Live: **UNCHANGED**.
 
 ## Unresolved / deferred
@@ -114,4 +116,4 @@ Live: **UNCHANGED**.
 - no promotion of the inbox consumer candidates to canonical runtime ownership in this slice.
 
 Exactly one next gate:
-**publish the exact prepared Stage package, verify its marker and both consumers on the fixed Cloudflare route, then let Georg review World Match vs Source Isolation.**
+**Georg reviews World Match vs Source Isolation on the fixed public Stage route and returns PASS or TUNE.**

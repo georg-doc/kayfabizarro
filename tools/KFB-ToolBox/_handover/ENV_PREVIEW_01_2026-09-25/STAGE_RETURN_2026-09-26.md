@@ -1,6 +1,6 @@
 # RETURN · ENV-PREVIEW-01 Stage package · 2026-09-26
 
-Status: **LOCAL STAGE PASS · PUBLICATION PENDING · NOT LIVE**
+Status: **PUBLIC STAGE PASS · HUMAN REVIEW OPEN · NOT LIVE**
 
 ## Outcome
 
@@ -32,11 +32,12 @@ Travel/TinySkies is pinned here as sky/light/fog/mood presentation donor only. W
 
 ## Publication
 
-- package exists on the source branch;
-- Cloudflare publication: **PENDING**;
-- public browser proof: **PENDING**;
+- source branch package head before final Return sync: `1f12f97bcc0a63298642d98a6c1fdef10c47e286`;
+- Cloudflare publication: `cloudflare-live@bec8688c0c5a4743d8f484193939a74112d977c4`;
+- Cloudflare Pages: **SUCCESS**;
+- public browser proof: **9/9 PASS**;
 - Live: **UNCHANGED**.
 
 ## Exactly one next gate
 
-Publish the exact package to `cloudflare-live`, prove the build/source markers and both consumers at the fixed URL, then request Georg's visual PASS/TUNE.
+Georg reviews the fixed public URL and returns visual PASS or TUNE for World Match vs Source Isolation.

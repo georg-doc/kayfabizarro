@@ -1,6 +1,6 @@
 # ENV-PREVIEW-01 · TEST REPORT
 
-Status: **SOURCE + PORTABLE STAGE LOCAL BROWSER VERIFIED · PUBLICATION PENDING · NOT LIVE**
+Status: **SOURCE + PUBLIC STAGE BROWSER VERIFIED · HUMAN REVIEW OPEN · NOT LIVE**
 Date: 2026-09-25  
 PR: **#218**
 
@@ -85,7 +85,7 @@ Visual inspection confirms that both real consumers visibly change between the c
 - current proof uses shared visible `ground` support;
 - `terrainPatch` and `worldZone` are intentionally not faked and require a real World/support provider;
 - Combat Spindle is not integrated here; `SPINDLE-01` remains separate;
-- no public Cloudflare Stage has been created;
+- public Cloudflare Stage is additive and does not promote either consumer to Live;
 - no Georg visual acceptance is claimed.
 
 ## Portable Stage package · 2026-09-26
@@ -108,7 +108,8 @@ Local real Chrome result:
 - zero page/request errors;
 - narrow viewport without horizontal overflow.
 
-This is local Stage evidence, not public Cloudflare evidence.
+Public verification after `cloudflare-live@bec8688c0c5a4743d8f484193939a74112d977c4`:
+**9/9 PASS** against the exact fixed route, with the same checks listed above. Cloudflare Pages completed successfully; the route was then opened and both real consumer views were visibly present.
 
 Exactly one next gate:
-**publish this exact package on the fixed Cloudflare Stage route and run the same marker/consumer browser gate before Georg visual review.**
+**Georg visually reviews World Match vs Source Isolation and returns PASS or TUNE.**
