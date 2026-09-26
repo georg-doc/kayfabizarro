@@ -11,6 +11,8 @@ Status: **STARTABLE NOW · PRODUCTIVE VISUAL SLICE · NO TRACK-CORE DEPENDENCY**
    `tools/KFB-ToolBox/_handover/CLAUDE_DESIGN_WORLD_RACER_2026-09-22/RACER_CLAUDE_HUD_BILLBOARDS_ADDENDUM_2026-09-23.md`
 3. current Track Core planning only for boundaries:
    PR #219 / `skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/START_HERE.md`
+4. current Cross-Mode HUD / 3D Navigation addendum:
+   `RACER_CROSS_MODE_3D_HUD_NAV_ADDENDUM_2026-09-26.md`
 
 Do not reopen the blocked Playable Track R0 slice.
 
@@ -45,6 +47,22 @@ Provide:
 - optional tune variant.
 
 Prove desktop + narrow/mobile layout without collisions.
+
+### A2 · Adaptive WALK / DRIVE / FLIGHT + 3D navigation
+
+Apply `RACER_CROSS_MODE_3D_HUD_NAV_ADDENDUM_2026-09-26.md` without creating a second HUD runtime.
+
+Required direction:
+- shared HUD grammar, mode-specific visibility/providers;
+- Tacho/Race telemetry only in DRIVE/RACE;
+- WALK and FLIGHT show only real available instruments;
+- exact proven Factory `arrow.glb` is first-choice 3D navigator and must be shown in isolation before integration;
+- place the navigator in a shallow 3D near-world layer close to the Mini-map, with perspective/parallax instead of a fixed 2D icon;
+- DRIVE points to the real next route decision when available; FLIGHT can use yaw + pitch to the real 3D target vector;
+- Radar/sensor is conditional on a real provider and must never invent contacts;
+- keep the central road/flight corridor visually clear.
+
+Prove WALK / DRIVE / FLIGHT on desktop plus DRIVE / FLIGHT on narrow/mobile.
 
 ### B · Source-backed billboard family
 
