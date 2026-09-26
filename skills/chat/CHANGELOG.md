@@ -1896,3 +1896,36 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+
+## 2026-09-26 · WSA MVP dispatch planning packet
+
+- added PR #222 planning-only WSA entry under `KFB_MVP_PLANNING_2026-09-26/`;
+- current gate is recon/plan approval, not execution;
+- split Racer routing into Track-Core G0→W0 versus Playable-R0 HOLD;
+- recorded Claude Design R0 SOURCE_REQUIRED stop as correct and rejected unpinned replacement recipes;
+- prepared small executor briefs for ENV-PREVIEW Stage, ToolBox r2 publication, Camera-Core recon, World contract reset, FrizzleBob body family and surf poses;
+- preserved Hub ownership under HUB-CTRL #202 and no generated Hub HTML edit;
+- no runtime/browser/Stage/Live work performed by this planning packet.
+
+
+## 2026-09-26 · Fragile Web-chat recovery inventory + long-job checkpoint candidate
+
+- reconstructed recent interrupted/fragile Web slices from current GitHub PRs/Returns/Recovery plus read-only Dropbox source presence;
+- added human + machine-readable recovery inventory under `KFB_MVP_PLANNING_2026-09-26/`;
+- classified two current real recovery orphans: Billboard B2b-P1 PR #212 (green implementation, missing closure) and KayKit City Builder Bits (41 exact models indexed, application recon not formalized);
+- confirmed external demo research Pass 2 A–L is complete (73 source/demo links; 15/15 routing + 8/8 handoff checks) and must not be restarted broadly;
+- added candidate `LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md` + `KFB_LONG_JOB_STATE_TEMPLATE.json` with C0 preflight before expensive research/browser/CI work;
+- candidate rule: `Stream cache expired` is the same as timeout — `UNKNOWN`, inspect actual ref/run before retry;
+- added closure-only B2b-P1 recovery brief and City Builder Bits application-recon brief;
+- no runtime, Stage, Cloudflare or Live work performed by this recovery-planning update.
+
+
+## 2026-09-26 · Racer Track-Core W0 + adaptive 3D HUD navigation
+
+- current PR #222 lead decision routes Track Core directly to **W0** with JavaScript authoritative and Blender/Python as oracle;
+- Playable Track R0 remains dependency-gated behind W0 → B1–B5 → W1 → D1 → closed R0 prep;
+- added current Racer cross-mode HUD/Nav brief under the existing Claude HUD/Billboard slice;
+- exact proven Factory Arrow remains first-choice 3D navigator; WALK / DRIVE / FLIGHT share one HUD grammar with provider-gated Tacho / Mini-map / Radar;
+- Blender prework is limited to socketed scenery/set-piece shells until Track Core owns the drivable ribbon;
+- no runtime, Stage or Live change.
