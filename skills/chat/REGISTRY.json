@@ -63,6 +63,25 @@
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
     },
     {
+      "id": "kfb-claymation-production-recon-2026-09-26",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "path": "tools/KFB-ToolBox/_handover/CLAYMATION_PRODUCTION_2026-09-26/START_HERE.md",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/claymation-production-recon-2026-09-26",
+      "pr": 229,
+      "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-production/",
+      "stageStatus": "PUBLIC_VERIFIED_BRIEFING_ONLY",
+      "owner": "KFB ToolBox / ClayBound material exploration",
+      "loadWhen": [
+        "claymation production",
+        "KFB ClayBound",
+        "Blender MCP clay material",
+        "clay ToolBox WorldBuilder Race MVP"
+      ],
+      "note": "Routes WSA, Blender MCP, Web Chat, Claude Design and source inspection. PR #228 remains the Blender/material plan; no runtime or asset binary promotion."
+    },
+    {
       "id": "kfb-clay-asset-studio",
       "kind": "plugin-tool",
       "status": "EXPERIMENTAL",
@@ -94,7 +113,7 @@
         "automatic asset promotion",
         "Stage or Live deployment"
       ],
-      "note": "Private personal plugin verified at v0.1.0. No asset generated or human-approved yet. First gate is Asset 1: Smooth matte clay seamless texture with source + 3x3 repeat review."
+      "note": "Experimental plugin v0.1.0. The first main image is a 1254² presentation/look donor. PR #228 separately reports Asset 01 r1 human accepted and tile QA; its PNG binary requires retrieval/hash verification before Blender. Asset 03 r2 human look is pending; r3 seam failed. Use Claymation production recon PR #229."
     },
     {
       "id": "kfb-audio-soundscape-baseline-v1-2026-09-24",

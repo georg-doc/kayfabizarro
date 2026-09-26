@@ -1107,3 +1107,10 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
+
+
+## 2026-09-26 · Claymation production recon correction
+
+The original `ChatGPT-Bild 26. Sept. 2026, 17_38_23.png` is a 1254² RGB presentation board, **not** a 4096² seamless production texture. The prior statement above that no asset existed is superseded as an inventory statement. PR #228 separately reports a human-accepted 1024² Asset 01 r1 with tile QA, but its PNG/3×3 binaries were not committed there; verify their SHA before Blender use. Asset 03 r2 human look is open; r3 is a frozen seam failure.
+
+Owner: KFB ToolBox ClayBound exploration. Current recon and briefings: `tools/KFB-ToolBox/_handover/CLAYMATION_PRODUCTION_2026-09-26/START_HERE.md` on Draft PR #229. Public briefing route: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-production/`. No game material or runtime promoted. Next gate: Asset 01 r1 binary + hash + isolated KFB source object.

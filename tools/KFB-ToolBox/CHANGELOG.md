@@ -151,3 +151,15 @@ Current READY gate:
 
 ### BOUNDARY
 No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
+
+
+## 2026-09-26 · Claymation recon / briefing publication
+
+### VERIFIED SOURCE
+The first generated image on main is a 1254×1254 RGB presentation board with a printed 4096×4096 Seamless claim. It is a useful matte-clay look reference, not itself a usable seamless texture. PR #228 separately reports a human-accepted 1024² Asset 01 r1, but its binary remains outside that PR; Asset 03 r2 human look is pending and r3 seam failed.
+
+### IMPLEMENTATION / PUBLICATION
+Draft PR #229 adds ToolBox-owned WSA, Blender MCP, Web Chat and Claude Design briefs, Asset 01 recon, public review route and tests. The accepted Hub v2 shell on `cloudflare-live` gains a direct Claymation link and review page at mirror commit `3793f099469ef1923a71672c3bca4d919eee679a`; exact Cloudflare Stage and Hub were opened in a browser, poster image loaded. No runtime or material promotion.
+
+### NEXT
+Retrieve and hash-check approved Asset 01 r1 source and 3×3 proof; isolate one current KFB source model before Blender CLAY-B0/B1.
