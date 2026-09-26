@@ -1,3 +1,24 @@
+# CURRENT OPERATING UPDATE · HUB-BRIEFING-SYNC-01 · 2026-09-26
+
+Status: **OWNER / BRIEFING SYNC · NO RUNTIME CHANGE**
+
+Current owner truth:
+- WorldBuilder PR #190 @ `58028b07d7618926c40ffaec3bd4053dc88c0efd`: WORLD-R2-CONTRACT-RESET-01 PASS; current operational gate = **WORLD-R2-STAGE-PREP-01**.
+- ENV Preview PR #218 @ `88c64c29075f31d655f4777437bb1aa82069df17`: **PUBLIC STAGE VERIFIED · GEORG PASS_WITH_TUNE**; consume it, do not reopen it.
+- ToolBox r2 PR #221 @ `da20e926c38fa8576f31bffc5442d96d44fe4d1b`: **GEORG TUNE · direction accepted · review gate closed**; follow-ups are separate owner slices.
+- Track Core PR #219 remains G0→W0; Playable Track R0 remains HOLD.
+- Racer HUD + Billboard visual system may run in parallel from the current PR #222 Claude start.
+
+Self-service catalog remains capability-oriented, but completed/deferred gates are no longer shown as READY:
+**13 strands · 96 jobs · 42 READY · 54 HOLD**.
+
+The operational Today order comes from HUB-CTRL #202. Do not infer current execution priority from older historical sections below.
+
+Exactly one current World gate:
+**WORLD-R2-STAGE-PREP-01** — package the unchanged recovered World candidate through the existing Stage/Hub owner and request Georg visual/freeplay review.
+
+---
+
 ## CURRENT ADDITIVE RECOVERY · CARD ZONE / BIOME / ENVIRONMENT · 2026-09-26
 
 Read:
