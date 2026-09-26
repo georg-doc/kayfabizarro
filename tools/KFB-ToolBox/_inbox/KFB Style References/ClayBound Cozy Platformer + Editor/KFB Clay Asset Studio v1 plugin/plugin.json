@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kfb-clay-asset-studio",
+  "version": "0.1.0",
+  "description": "Generate and review KFB claymation texture, mask and decal assets one at a time for Blender production.",
+  "author": {
+    "name": "Georg Graf von Westphalen"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "KFB Clay Asset Studio",
+        "shortDescription": "Claymation textures, masks and decals, one asset at a time",
+        "longDescription": "Build a review-gated source library of handmade clay, craft material, shader input and cutout assets for KFB 3D production.",
+        "developerName": "Georg Graf von Westphalen",
+        "category": "Design",
+        "capabilities": [
+          "Interactive"
+        ],
+        "defaultPrompt": [
+          "Start with Asset 1: smooth matte clay seamless texture. Generate and review only this asset.",
+          "Revise the current asset for better seamless tiling and show a 3×3 repeat check.",
+          "What is the next approved asset in the production queue?"
+        ]
+      }
+    }
+  }
+}
