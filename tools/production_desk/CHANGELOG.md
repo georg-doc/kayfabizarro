@@ -452,3 +452,10 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+
+## 2026-09-26 · Registry freshness guard
+
+- Prevented an older cached Live/main registry from replacing a newer embedded Hub snapshot.
+- Added a DOM regression test for the stale-remote/newer-embedded case.
+- Regenerated the Production Desk artifact from the unchanged registry data.
+- No new Hub owner, route, UI design or registry schema.

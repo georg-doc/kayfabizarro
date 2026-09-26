@@ -1206,3 +1206,23 @@ Exactly one next gate:
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+
+## 2026-09-26 · HUB-REGISTRY-FRESHNESS-GUARD-01
+
+Status: **IMPLEMENTED · LOCAL BROWSER PASS · PUBLICATION PENDING**
+
+- Root cause: the public Hub could boot its newer embedded registry and then replace it with an older cached `bot/production-desk-update` response.
+- The Hub now compares `checkedAt` / `generatedAt` before replacing the visible registry.
+- An older Live or main registry is ignored; the newer embedded snapshot stays visible and the Hub never regresses to stale cards.
+- Added a focused DOM regression case for the exact failure mode.
+- Existing fallback order remains: Live Registry, then main, then embedded/emergency state.
+- No Production Desk owner, route, data model or UI shell changed.
+
+Verification:
+- Production Desk Python suite: **18/18 PASS**;
+- registry validation: **PASS**;
+- generated desk render: **PASS**;
+- local real-browser proof against current/stale registry paths: **PASS**;
+- jsdom rerun: **NOT_RUN locally** (`jsdom` unavailable); the added test is committed for the existing GitHub workflow.
+
+Exactly one next gate: **GitHub Actions on this focused branch, then mirror the exact green generated Hub to Cloudflare and verify the fixed root URL.**

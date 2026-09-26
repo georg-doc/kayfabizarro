@@ -68,6 +68,17 @@ console.log('2 · LIVE registry wins and is labelled Live');
   ok(cards(d, 'LOOK_AT').length === baseReg.manifest.counts.LOOK_AT + 1, 'Live data re-buckets a lane');
 }
 
+console.log('2b · older LIVE registry cannot replace a newer embedded snapshot');
+{
+  const old = JSON.parse(JSON.stringify(baseReg));
+  old.manifest.contentHash = 'older-live';
+  old.manifest.checkedAt = old.manifest.generatedAt = '2026-01-01T00:00:00Z';
+  const { d } = makeDom({ routes: liveRoutes(old) });
+  await tick();
+  ok(d.getElementById('srcBadge').textContent === 'Eingebauter Stand', 'keeps newer embedded snapshot');
+  ok(cards(d, 'LOOK_AT').length === baseReg.manifest.counts.LOOK_AT, 'older remote cannot re-bucket the visible Hub');
+}
+
 console.log('3 · LIVE down, main available → Hauptstand');
 {
   const canon = JSON.parse(JSON.stringify(baseReg)); canon.manifest.checkedAt = new Date().toISOString();
