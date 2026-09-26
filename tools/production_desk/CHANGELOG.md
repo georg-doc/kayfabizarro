@@ -343,3 +343,11 @@ rendered the current 14-lane snapshot in real Chrome. HUB-CTRL-01 is complete.
 - No root `kfb-hub/index.html` replacement, no Live Hub promotion, no merge.
 - Recovery: `tools/production_desk/failure-recovery/HUB_UX_RECOVERY_STAGE_PUBLIC_2026-09-26/START_HERE.md`.
 - Active next gate: **PUBLIC BROWSER VERIFY · HUB UX RECOVERY STAGE**.
+
+
+## 2026-09-26 · Racer Design working page sync
+
+- Production Desk source now exposes a dedicated CAN_START Racer Design lane for HUD + Billboards;
+- Track Core remains parallel technical path; R0 remains HOLD;
+- stale B2b lane corrected to PR #211 39/40 frozen recovery state;
+- no generated/public Hub change.
