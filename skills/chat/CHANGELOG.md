@@ -1919,3 +1919,13 @@ Exactly one next gate:
 - candidate rule: `Stream cache expired` is the same as timeout — `UNKNOWN`, inspect actual ref/run before retry;
 - added closure-only B2b-P1 recovery brief and City Builder Bits application-recon brief;
 - no runtime, Stage, Cloudflare or Live work performed by this recovery-planning update.
+
+
+## 2026-09-26 · Racer Track-Core W0 + adaptive 3D HUD navigation
+
+- current PR #222 lead decision routes Track Core directly to **W0** with JavaScript authoritative and Blender/Python as oracle;
+- Playable Track R0 remains dependency-gated behind W0 → B1–B5 → W1 → D1 → closed R0 prep;
+- added current Racer cross-mode HUD/Nav brief under the existing Claude HUD/Billboard slice;
+- exact proven Factory Arrow remains first-choice 3D navigator; WALK / DRIVE / FLIGHT share one HUD grammar with provider-gated Tacho / Mini-map / Radar;
+- Blender prework is limited to socketed scenery/set-piece shells until Track Core owns the drivable ribbon;
+- no runtime, Stage or Live change.
