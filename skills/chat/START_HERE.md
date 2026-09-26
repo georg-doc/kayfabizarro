@@ -1123,4 +1123,7 @@ A new **cinematic consumer** is prepared for Elisa's belated 18th-birthday film.
 
 Source correction recorded: the inspected KayKit RPGToolsBits pack does not expose a literal key; use the verified Platformer Game Kit gold `Key.gltf` for the unlock token and keep RPGTools identity on its real map/blueprint assets.
 
-Exactly one next gate: **ELISA-FILM-G0 · source isolation + FrizzleBob/GothGirl rig/look proof.**
+Execution start condition: Georg places the new Studio export at
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`.
+
+After input freeze, G0 is an **internal source/rig/look preflight**, not a human stop. The autonomous run proceeds through animatic, full production and independent Critic → targeted repair → Critic. The first intended human review is the finished candidate; no auto-merge or Live promotion.
