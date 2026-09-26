@@ -1,3 +1,15 @@
+## 2026-09-26 · HUB-BRIEFING-SYNC-01 frozen at DOM gate
+
+- persisted C0 timeout-safe recovery before sync work;
+- synchronized #222 executor board to current World/ToolBox/ENV/Racer/B2b gates;
+- synchronized #204 capability catalog from 44 READY / 52 HOLD to **42 READY / 54 HOLD** without changing the 96-job capability set;
+- synchronized HUB-CTRL operational lanes: World Stage Prep now, Racer HUD/Billboards parallel, ENV/ToolBox human gates closed;
+- validation run `36213057662`: builder 16/16, render unit 2/2, online registry PASS, VALID, render PASS; DOM contract remains red;
+- two bounded repair passes exhausted; no pass 3;
+- temporary HUB-CTRL validation trigger restored to the original main-only workflow;
+- full recovery export under `tools/production_desk/recovery/HUB_BRIEFING_SYNC_01/`;
+- **no cloudflare-live/root Hub publication** and no public-verified claim.
+
 ## 2026-09-26 · World r2 contract reset PASS
 
 - moved World r2 `WAITING → CAN_START` after the bounded contract-only reset;
