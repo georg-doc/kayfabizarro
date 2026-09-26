@@ -30,6 +30,7 @@ input::placeholder,textarea::placeholder{color:var(--muted)}
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
         <a href="{{ t.href }}" onClick="{{ t.onClick }}" style="display:flex;align-items:center;gap:6px;min-height:40px;padding:0 2px;border-bottom:2px solid {{ t.bd }};font-size:16px;font-weight:{{ t.weight }};text-decoration:none;white-space:nowrap;color:{{ t.fg }}">{{ t.label }}<sc-if value="{{ t.hasCount }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;font-weight:700;min-width:22px;text-align:center;padding:1px 7px;border-radius:10px;background:{{ t.countBg }};color:{{ t.countFg }}">{{ t.count }}</span></sc-if></a>
       </sc-for>
+      <a id="kfb-clay-review-link" href="/kfb-hub/stage/toolbox/clay-production/" style="display:inline-flex;align-items:center;min-height:40px;padding:0 2px;border-bottom:2px solid var(--accent2);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Claymation · Briefings</a>
     </nav>
     <div style="flex:1"></div>
     <div style="display:flex;gap:8px;flex-wrap:nowrap;align-items:center">
