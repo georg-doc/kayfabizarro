@@ -1,0 +1,38 @@
+{
+  "schema": "kfb.toolbox-production02-intake-recovery/1",
+  "date": "2026-09-26",
+  "repo": "georg-doc/kayfabizarro",
+  "recoveryBranch": "chatgpt-web/toolbox-production-02-intake-recovery-2026-09-26",
+  "baseMain": "2b85e1c0ed0c25e937891f142ff68788d6058042",
+  "receivingOwner": {
+    "pr": 185,
+    "branch": "chatgpt-web/toolbox-source-lock-2026-09-23",
+    "headAtCheck": "10a83a63acd76d29f6867d15640f7861efc57b00"
+  },
+  "source": {
+    "githubPath": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r1/",
+    "dropboxPath": "/CLAUDE/KFB ToolBox Production-01-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r1/",
+    "dropboxZip": "/CLAUDE/KFB ToolBox Production-01-2.zip",
+    "dropboxZipBytes": 436462,
+    "entry": "KFB ToolBox Production-02.dc.html"
+  },
+  "parity": {
+    "top": "19/19 name+type+size match",
+    "kfbLib": "7/7 name+type+size match",
+    "evidence": "6/6 name+type+size match",
+    "docs": "2/2 name+type+size match",
+    "blender": "1/1 name+type+size match"
+  },
+  "exportReported": {
+    "selfTest": "27/27 PASS",
+    "human": "NOT_RUN",
+    "zipcheck": "NOT_RUN in Claude Design",
+    "cleanHttpRun": "NOT_RUN"
+  },
+  "checkpoint": {
+    "runtimeIntegrated": false,
+    "stagePublished": false,
+    "publicVerified": false,
+    "nextGate": "FACE-VIS-01 / intake review before selective owner rehome"
+  }
+}
