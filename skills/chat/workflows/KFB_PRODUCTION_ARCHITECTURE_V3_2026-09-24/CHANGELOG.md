@@ -348,6 +348,13 @@
 
 # CHANGELOG · KFB Production Architecture v3
 
+## 2026-09-26 · World ownership wording sync
+
+- corrected current ENV Preview, research radar, router and World Environment Consolidation metadata;
+- WorldBuilder continuous terrain is the local-world host, with OSM/Track constraints resolved through the Surface Adapter seam;
+- Travel/TinySkies is explicitly a presentation/mechanism donor, not the world base;
+- no runtime owner, Stage route, Cloudflare publication or Live state changed.
+
 ## 2026-09-24 · v3 candidate created
 
 - established coherent usable capability as the normal unit of work;
