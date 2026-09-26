@@ -128,6 +128,20 @@ WSA action: approve as non-blocking future requirements in W0 contracts.
 - Only then: Playable Track R0 → real Cologne OSM route.
 - Small Resident scene can dock into the first stable World/Mobility host.
 
+### D8 · Timeout-safe long jobs / orphan recovery
+
+Current recon found two recent real orphans:
+- **B2b-P1 PR #212**: implementation + CI green, closure envelope missing;
+- **KayKit City Builder Bits recon**: source inventory exists, requested application matrix missing.
+
+Candidate protocol:
+`LONG_JOB_CHECKPOINT_PROTOCOL_2026-09-26.md`
+
+Key rule:
+before a long research/CI/browser job starts, persist a **C0 preflight** with owner/branch/goal/`JOB_STATE.json` + recovery stub. Then checkpoint source → implementation → evidence → publication → Return separately. `Stream cache expired` = `UNKNOWN`, inspect before retry.
+
+WSA action: approve/tune canonical adoption into Fresh Chat protocol + template; do not create a second control plane.
+
 ## WSA output requested
 
 Return one compact decision table:
