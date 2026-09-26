@@ -180,6 +180,29 @@ Role split:
 
 Current plugin gate: **Asset 1 — Smooth matte clay seamless texture**. No asset has yet been generated or promoted.
 
+
+## New source decks · 2026-09-26
+
+Four NotebookLM slide-deck PDFs are now registered in the parent ClayBound source folder:
+
+- `ClayBound_Production_Pipeline.pdf`
+- `Digital_Clay_Grammar.pdf`
+- `Diorama_Texture_Atlas.pdf`
+- `KFB_ClayBound_Production_Spec.pdf`
+
+Combined size: **68,563,328 B (~65.4 MiB)**.
+
+They are currently **source evidence only**. This intake did not open, render or web-optimize them.
+
+Current production intake:
+[CLAYBOUND_INPUT_INTAKE_2026-09-26.md](../CLAYBOUND_INPUT_INTAKE_2026-09-26.md)
+
+KFB Hub source lane:
+**ClayBound · Production Assets** · HUB-CTRL #202.
+
+Current READY job:
+**CLAY-ASSET-01 · Smooth matte clay seamless texture**.
+
 ## Next gate
 
 **Run the 15-slide Production Deck with Research Round 01 + its KFB review as sources, then preserve the result for visual review.**
