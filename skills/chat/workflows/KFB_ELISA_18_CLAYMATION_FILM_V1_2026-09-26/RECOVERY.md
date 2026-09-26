@@ -1,12 +1,12 @@
 # KFB Elisa 18 Claymation Film v1 · RECOVERY
 
 **Date:** 2026-09-26  
-**Status:** PREPRODUCTION CHECKPOINT · NO STAGE · NO LIVE CLAIM  
+**Status:** AUTONOMOUS ONE-SHOT CONTRACT READY · FRIZZLEBOB INPUT PENDING · NO STAGE · NO LIVE CLAIM  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `planning/elisa-18-claymation-film-v1-2026-09-26`  
 **Draft PR:** #233  
 **Owner:** KFB cinematic consumer / Elisa 18 film composition only  
-**One next gate:** `ELISA-FILM-G0`
+**Execution start condition:** `tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json` exists and is frozen
 
 ## Resume rule
 
@@ -24,7 +24,9 @@ Before any implementation:
 - bounded cinematic-consumer architecture;
 - exact source/donor manifest;
 - 55-second story/shot timing;
-- master execution prompt;
+- autonomous master execution prompt;
+- frozen-input handover + compact/ultra-short WSA launchers;
+- independent Critic / targeted repair contract;
 - source/preproduction evidence;
 - main chat router pointer;
 - additive changelog entry;
@@ -47,7 +49,12 @@ Do not invent or relabel a nonexistent RPGTools key.
 
 ### FrizzleBob
 
-Use current ToolBox/FrankenStein Driver Graft + current face owners + Ear Rig v5. Old Dropbox FrizzleBob-v5 standalone is reference only and must not become a second runtime owner.
+Use the run-frozen Studio JSON at:
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`
+
+with current ToolBox/FrankenStein Driver Graft + current face owners + Ear Rig v5.
+
+The frozen JSON is a one-shot input, not an automatic global promotion. If absent/invalid, stop on that exact blocker; do not substitute the old Dropbox FrizzleBob-v5 standalone or any other second runtime owner.
 
 ### Elisa / GothGirl
 
@@ -57,34 +64,35 @@ Use current GothGirl GLB, Rig_Medium sources, current source-face cleanup/EyeRig
 
 ClayBound is not yet a globally accepted production material until its current asset/material gate is human accepted. G0 may compare it, but must not silently promote it.
 
-## ELISA-FILM-G0
+## Autonomous execution / internal G0
 
-Build a small source-isolation/look proof only.
+G0 remains mandatory evidence but is **not a human approval gate**.
 
-Required isolated source views:
-- current FrizzleBob;
+Internal source-isolation views:
+- frozen FrizzleBob input + current graft/face/ear owner chain;
 - current GothGirl;
 - Tiny Treats bakery/snack composition;
 - KayKit RPGTools map/blueprint;
 - gold Key source;
 - DemonHeart;
 - 2–3 Registry vehicle candidates;
-- clay material comparison if the new ClayBound gate is accepted.
+- permitted clay material comparison.
 
-Then show one compact integrated look strip.
+A separate Critic context/agent/model reviews the preflight. Failed criteria receive targeted silent repair and re-review. Passing work is preserved.
 
-Human question:
-**“Do these exact donors already feel like one KFB clay/paper birthday film before we animate the full 55 seconds?”**
+If G0 passes, continue directly to the complete animatic and film. Repeat independent QA at the animatic and final candidate.
 
-If NO:
-- preserve the candidate;
-- record concrete visual/source failures;
-- repair only the named failed source/look seam;
-- after two failed repair passes, freeze and export failure recovery.
+After two failed repair passes on the same gate/problem, preserve the candidate and export failure recovery. Do not attempt a third repair.
 
-If YES:
-- open a new bounded implementation slice/branch for the 55-second animatic;
-- do not broaden G0 itself into the full movie.
+The first intended human review is the finished candidate.
+
+### Interruption recovery
+
+If the Work run interrupts:
+1. read the exact branch/ref and current Return;
+2. resume from the latest evidence-backed internal checkpoint;
+3. do not restart already-passing phases;
+4. do not insert a new human micro-gate merely because the chat/session changed.
 
 ## Stage
 
