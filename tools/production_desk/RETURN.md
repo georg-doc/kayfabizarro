@@ -1153,3 +1153,21 @@ The config JSON was fetched back and parsed after the write.
 
 ### Exactly one next Hub gate
 **Existing HUB-CTRL pipeline may later regenerate/publish the source update; do not claim it public until the exact Cloudflare route visibly shows the W0 / Cross-Mode HUD wording.**
+
+
+## 2026-09-26 · ClayBound production lane checkpoint
+
+- Owner: HUB-CTRL #202 / `tools/production_desk`.
+- Source owner remains KFB ToolBox / ClayBound material exploration.
+- New source intake on main:
+  `tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md`.
+- Four NotebookLM PDFs registered as source-only; none opened/rendered/web-optimized in this sync.
+- New Hub lane: `claybound-materials` · **CAN_START**.
+- New self-service strand: `clay-handmade-assets`.
+- Jobs: **7 total · 1 READY · 6 HOLD**.
+- Current READY job: `clay-asset-01` · Smooth matte clay seamless texture.
+- Plugin execution lane: KFB Clay Asset Studio v0.1.0, private USER plugin.
+- No PDF processing, no asset integration, no Cloudflare publication, no Stage/Live claim.
+
+Exactly one next gate:
+**Run CLAY-ASSET-01 and get Georg's review on source + 3×3 repeat before Asset 2.**
