@@ -1,0 +1,58 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "date": "2026-09-26",
+  "owner": "KFB ToolBox / ClayBound material exploration",
+  "status": "COMPLETE_TEXT_RECOVERY_BINARY_ARTIFACTS_EXTERNAL",
+  "parent": "tools/KFB-ToolBox/_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/",
+  "files": [
+    {
+      "path": "START_HERE.md",
+      "blob": "0a687be1ba172d15a5d340494f7687d8e9e9e843",
+      "commit": "6ee1b2a2ddab36ecb0f956932fbb8cc036de1354"
+    },
+    {
+      "path": "SOURCE_SNAPSHOT.md",
+      "blob": "2a862d4a0e4eb41cc728028753bf5e38e0ff9c1d",
+      "commit": "ad23c7300d7fc0789d89f65ae7a49d8933772cf4"
+    },
+    {
+      "path": "ATTEMPT_LOG.md",
+      "blob": "574bf61f6d6ed79cc1e8246c07f8867ce85d75f9",
+      "commit": "d6804756e45ac34db13fdde42bc7606a41d9f2c0"
+    },
+    {
+      "path": "TEST_REPORT.md",
+      "blob": "856d6c10fce419ceaeeeea6c81998a2e3266ef14",
+      "commit": "e207e56e1b01ce7c83bfcc2baba13c56ef3d0a9c"
+    },
+    {
+      "path": "SALVAGE_MAP.md",
+      "blob": "dec91f46e25f84394f097b22269f647ae6b84b9c",
+      "commit": "1001e1cc369a8239096316aee81866d527330140"
+    },
+    {
+      "path": "NEXT_GATE.md",
+      "blob": "0bad1af80e36cffcc78563462fb87179a4b109b3",
+      "commit": "b245f3bdb1efa9dc97896f4a92a92cb8e9436bbf"
+    }
+  ],
+  "externalArtifacts": [
+    {
+      "name": "asset03-r1",
+      "sha256": "60b48cd4133eb2f130457808860dfa7b1a3555860e3bbf69262d664cc41b130e",
+      "state": "preserved current-chat artifact"
+    },
+    {
+      "name": "asset03-r2",
+      "sha256": "f1d3cf4e5bd0b65e9a7d3d61c38b119efa25270e5905ddd36a50796e02f28e69",
+      "state": "technical candidate; current-chat artifact"
+    },
+    {
+      "name": "asset03-r3",
+      "sha256": "1b1a595ac8c6c88e52a42bea97a43f804fa6bf3dcfdb1e2176f8e7acc612fe8f",
+      "state": "failure evidence; current-chat artifact"
+    }
+  ],
+  "binaryPromotion": "BLOCKED_PENDING_HUMAN_ACCEPTANCE_AND_EXISTING_ASSET_OWNER_DESTINATION",
+  "nextGate": "GEORG HUMAN REVIEW · Asset 03 r2 look"
+}

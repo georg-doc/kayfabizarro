@@ -2,6 +2,20 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-26 · ClayBound Asset 01 accepted · Asset 03 two-pass recovery
+
+### HUMAN / SOURCE STATE
+Asset 01 (smooth matte clay r1) is HUMAN_ACCEPTED with exact X/Y edge equality. Georg explicitly skipped Asset 02 for now and requested the rough handmade modelling surface next.
+
+### ASSET 03
+Asset 03 is authored as a 2048×2048 16-bit Non-Color relative meso-height source. r2 passes all 4 seam/half-offset criteria but still awaits Georg's look review. r3 improves the broad kneading/compression language but fails X/Y seam continuity. Two repair passes are spent; the slice is frozen.
+
+### ROUTING
+PR #228 now carries the manifest, deterministic r2 source generator, Blender MCP handoff and full failure-recovery export under `_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/`. Blender consumption is blocked until the human look gate. PR #173 remains the seam donor.
+
+### BOUNDARY
+No binary was guessed into Dropbox, no second asset registry was created, no production GLB/material was mutated and no Stage/Live route was published.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
