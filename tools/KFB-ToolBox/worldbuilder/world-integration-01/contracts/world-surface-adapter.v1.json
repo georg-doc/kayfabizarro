@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.world-surface-adapter/1",
+  "status": "CONTRACT_ONLY_NOT_IMPLEMENTED",
+  "owners": {
+    "baseHeight": "WorldBuilder",
+    "corridorConstraints": ["OSM", "Track"],
+    "finalVisibleSupportQuery": "SurfaceAdapter",
+    "contactPhysics": "Race"
+  },
+  "input": {
+    "position": "local x/z or consumer-provided surface coordinate",
+    "baseHeight": "WorldBuilder editable terrain height",
+    "constraints": "zero or more bounded, provenance-labelled corridor offsets/limits"
+  },
+  "output": {
+    "height": "one finite final visible/support height",
+    "normal": "optional finite presentation/support normal",
+    "contributors": "ordered provenance list"
+  },
+  "rules": {
+    "oneResolver": true,
+    "consumerHeightRecomposition": "forbidden",
+    "trackPhysicsMigration": "forbidden",
+    "travelTerrainOwnership": "forbidden",
+    "travelPresentationDonors": ["sky", "weather", "light", "mood", "selected camera/mobility behaviour"]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.world-r2-contract-reset/1",
+  "date": "2026-09-26",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 190,
+    "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+    "startingHead": "d5d1ff69802908c71ad15d374ea4eeb169c45deb"
+  },
+  "scope": "TEST_AND_CONTRACT_ONLY",
+  "runtimeChanged": false,
+  "proof": {
+    "contract": "13/13 PASS",
+    "static": "24/24 PASS",
+    "huerthSelftest": "55/55 PASS",
+    "cologneSelftest": "55/55 PASS",
+    "wb2Regression": "34/34 PASS",
+    "browserHarness": "12/12 PASS",
+    "pageErrors": 0,
+    "failedSourceRequests": 0
+  },
+  "surfaceAdapter": "contracts/world-surface-adapter.v1.json",
+  "publication": "NOT_STARTED",
+  "nextGate": "WORLD-R2-STAGE-PREP-01"
+}

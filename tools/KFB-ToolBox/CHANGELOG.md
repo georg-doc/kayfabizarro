@@ -2,6 +2,144 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-26 · World r2 contract reset
+
+### CONTRACT
+Replaced the stale World selftest prose-regex with a pure structured locomotion audit. Source roles, the ToolBox `walk.fast` playback variant and World-only backward/strafe tuning are now distinct and source-clip reuse is enforced.
+
+### SURFACE SEAM
+Recorded one contract-only Surface Adapter: WorldBuilder base height + bounded OSM/Track inputs → one final visible/support query; Race remains contact/physics owner. Travel Globe is not the world base.
+
+### EVIDENCE
+**13/13 contract · 24/24 static · Hürth 55/55 · Cologne 55/55 · WB2 34/34 · browser 12/12**, with 0 page errors and 0 failed source requests.
+
+### BOUNDARY / NEXT
+No runtime owner changed and no Stage/Live publication occurred. Next gate: `WORLD-R2-STAGE-PREP-01`.
+
+
+## 2026-09-25 · WorldBuilder WB2 HUMAN PASS
+
+### HUMAN ACCEPTANCE
+Georg accepted the current WB2 Terrain Sculpt R1 interaction:
+- Raise / Lower terrain shaping;
+- Radius / Strength;
+- wheel / touchpad Brush Radius;
+- hold-Space temporary Orbit;
+- `1 / 2 / 3` quick Object/Orbit / Raise / Lower modes;
+- Undo / Clear;
+- Save / Reload;
+- return to the accepted object-edit workflow.
+
+Result:
+**WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS**
+
+### FUNCTIONAL FOUNDATION
+Accepted functional foundation now includes:
+- WB1 terrain + Resident scene;
+- shared inline object editor R2;
+- WB2 non-destructive Terrain Sculpt;
+- wheel/Space/quick-mode authoring gestures.
+
+R3 uniform `−/+` Size remains optional/non-blocking.
+
+### NEXT
+The existing Claude Design handoff is now unblocked.
+
+Exactly one next WorldBuilder gate:
+**Claude Design authoring/UI refinement on the accepted WB2 source.**
+
+Primary UX direction:
+- reduce/collapse redundant side-panel editor copy/controls;
+- keep object transforms inline at the selected object;
+- keep Terrain Sculpt compact and scene-level;
+- maximize 3D FOV;
+- compose accepted WorldDesign look/environment controls;
+- preserve terrain/edit/persistence owners.
+
+Smooth / Flatten / material painting remain later functional slices.
+
+
+## 2026-09-25 · WorldBuilder WB2 authoring interaction R1
+
+### HUMAN REQUEST
+Georg requested two faster authoring gestures on the accepted WB2 terrain-sculpt candidate:
+- mouse wheel / touchpad scroll changes Brush Radius while sculpting;
+- faster switching between Orbit and Raise/Lower.
+
+### IMPLEMENTATION
+The WB2 Source/Review now add:
+- wheel/touchpad Radius adjustment only while Raise/Lower is active;
+- logarithmic radius scaling with clamp `0.45 … 5`;
+- Orbit/Object mode keeps normal OrbitControls wheel zoom;
+- hold `Space` = temporary Orbit while retaining the active Raise/Lower mode;
+- releasing `Space` resumes that sculpt mode immediately;
+- `1 / 2 / 3` = Object/Orbit / Raise / Lower;
+- existing shared-object `R` Rotate and `S` free Scale shortcuts remain unchanged.
+
+No new editor owner or second picker was introduced.
+
+### EVIDENCE
+- existing sculpt math/geometry: **24/24 PASS**;
+- current Source/Review contract: **56/56 PASS**;
+- focused interaction contract: **31/31 PASS**;
+- exact runtime sources: **4/4 PASS**;
+- embedded browser self-test: **34 prepared / 0 executed**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+### NEXT
+Georg reviews wheel/touchpad radius, hold-Space temporary Orbit and `1/2/3` mode switching in the Chat HTML together with the existing terrain-shape gate.
+
+
+## 2026-09-23 · WorldBuilder WB2 Terrain Sculpt · local review candidate
+
+### IMPLEMENTATION
+Started a new stacked WorldBuilder slice on Draft PR #190 without modifying the accepted WB1 files.
+
+New files:
+- `worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js`;
+- `WB2_TERRAIN_SCULPT_01_SOURCE.html`;
+- `WB2_TERRAIN_SCULPT_01_REVIEW.html`;
+- `TEST_REPORT.md`;
+- dedicated WB2 Return.
+
+WB2 adds non-destructive continuous-heightfield authoring:
+- Raise / Lower;
+- Radius / Strength;
+- visible brush footprint;
+- drag strokes;
+- true C2 falloff;
+- Undo / Clear;
+- sculpt-stroke Save/Reload;
+- normal recompute.
+
+### OWNERS
+The seeded procedural terrain remains the base. Sculpting is an additive WorldBuilder terrain layer.
+
+Selected-object editing remains owned by:
+`tools/KFB-ToolBox/lib/edit-layer.js`
+
+No voxel/hex/CSG/marching-cubes terrain and no second object picker were introduced.
+
+### PRE-REVIEW CORRECTIONS
+- corrected brush-center distance;
+- isolated sculpt pointer ownership with `stopImmediatePropagation()`;
+- upgraded falloff to a true quintic C2 boundary.
+
+### EVIDENCE
+- sculpt math + geometry: **24/24 PASS**;
+- Source + Review contract: **33/33 PASS**;
+- exact pinned runtime sources: **4/4 PASS**;
+- embedded browser self-test: **28 prepared / 0 executed**;
+- automated browser runtime: **0**;
+- screenshots: **0**.
+
+### PUBLICATION
+Cloudflare remains **HOLD · NOT PUBLISHED**.
+
+### NEXT
+Georg reviews the exact WB2 Chat HTML for hill/depression shape, Radius/Strength, artifact-free edges, Undo/Clear, Save/Reload and return to Object edit.
+
 
 ## 2026-09-23 · WorldBuilder accepted foundation → WB2 Terrain Sculpt planning
 
@@ -334,3 +472,14 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+## 2026-09-26 · World r2 receiving-owner gate stopped
+
+- World r2 re-homed additively into PR #190; accepted WB2 terrain-sculpt and edit-layer owners remained byte-identical;
+- World consumes ToolBox locomotion profile pin `5dcf34bc...`; source-backed sprint = Running_B;
+- static owner/closure gate **20/20 PASS**;
+- browser attempts: `36198357755` FAIL, repair 1 `36198517698` FAIL, repair 2/final `36198999279` FAIL;
+- final diagnostic proves no page/network load failure; browser stops on stale selftest variant-label semantics;
+- candidate code frozen at `204afd6d...`;
+- full failure recovery exported under `world-integration-01/failure-recovery/`;
+- no third repair pass; next gate is test-only `WORLD-R2-CONTRACT-RESET-01`.

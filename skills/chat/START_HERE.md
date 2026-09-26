@@ -723,25 +723,28 @@ FrizzleBob source identity is separately pinned at:
 
 `tools/KFB-ToolBox/_handover/FRIZZLEBOB_IDENTITY_MAP_2026-09-23.md`
 
-Current first gate: **WB2-TERRAIN-SCULPT-01**.
+Current first gate: **CLAUDE DESIGN · WORLDBUILDER AUTHORING/UI REFINEMENT AFTER WB2 HUMAN PASS**.
 
-Current implementation state on Draft PR #186:
+Accepted foundation on Draft PR #186:
 - R1 functional foundation is **GEORG HUMAN PASS**: Caveman texture, Character Y, Character-Y save/reload and palette/FOV;
 - R2 shared inline editor is **GEORG HUMAN PASS**: object mini-menu, Move / Rotate / free Scale / Drop / World-Local / Close and Save/Reload transform roundtrip;
-- canonical source: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_SOURCE.html`;
-- local review artifact: `tools/KFB-ToolBox/worldbuilder/wb1-terrain-scene-01/WB1_TERRAIN_SCENE_01_REVIEW.html`;
 - shared edit owner: `tools/KFB-ToolBox/lib/edit-layer.js`;
-- accepted R2 base blob: `c97b3537f71e939176f3ae5ce7ae83feabb7918f`;
-- R3 uniform-scale candidate blob: `c15a200ba8615d55f9d3ae26616e0a8ceba8dc01`;
-- R3 proposal: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/SHARED_EDITOR_UNIFORM_SCALE_PROPOSAL_2026-09-23.md`;
-- WB2 current brief: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md` — Georg reprioritized continuous Raise/Lower heightfield sculpting as the next functional gate; no voxel/hex terrain;
-- WorldBuilder R3 menu keeps Move / Rotate / Drop / World-Local / Close and groups **−/+ uniform size** into one Scale field; keyboard `S` keeps the accepted free Scale gizmo;
-- defaults: smaller ×0.8, larger ×1.25, clamp 0.05…20;
-- R3 evidence: **26/26** static/integration + **4/4** exact runtime source paths + **1/1** shared-module syntax;
-- embedded browser self-test: **22 assertions prepared / 0 executed**;
-- no automated browser PASS or R3 uniform-scale human PASS claimed; R3 is optional/non-blocking;
+- R3 uniform smaller/larger remains **OPTIONAL / NON-BLOCKING**.
+
+Current WB2 implementation on stacked Draft PR #190:
+- branch: `chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23`;
+- brief: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/WB2_TERRAIN_SCULPTING_PROPOSAL_2026-09-23.md`;
+- Source: `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html`;
+- Chat Review: `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html`;
+- sculpt module: `tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js`;
+- Return: `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/RETURN_WB2_TERRAIN_SCULPT_2026-09-23.md`;
+- implemented: Object / Raise / Lower, Radius, Strength, visible brush footprint, drag strokes, C2 falloff, Undo/Clear, sculpt Save/Reload, normal recompute, wheel/touchpad Radius, hold-Space temporary Orbit and `1/2/3` quick modes;
+- evidence: **24/24** sculpt math/geometry + **56/56** current Source/Review contract + **31/31** focused interaction contract + **4/4** exact runtime sources;
+- embedded browser self-test: **34 assertions prepared / 0 executed**;
+- automated browser runtime: **0**; screenshots: **0**;
+- human result: **WB2-TERRAIN-SCULPT-01 · GEORG HUMAN PASS**;
 - Cloudflare: **HOLD · NOT PUBLISHED**.
 
-Exactly one next WorldBuilder gate: **WB2-TERRAIN-SCULPT-01** — isolated non-destructive Raise/Lower terrain brush with radius/strength, smooth falloff, Undo/Clear and Save/Reload on the continuous procedural heightfield.
+Exactly one next WorldBuilder gate: **Claude Design authoring/UI refinement on the accepted WB2 source**, using `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md`.
 
-R3 uniform smaller/larger remains an optional shared-editor convenience review and does not block WB2.
+Primary UX direction: reduce redundant side-panel editor controls/copy, keep object transforms inline, keep Terrain Sculpt compact and scene-level, maximize 3D FOV, and compose accepted WorldDesign look/environment controls. Smooth / Flatten / material painting remain separate later functional slices.

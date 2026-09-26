@@ -1,0 +1,37 @@
+name: World Integration r2
+
+on:
+  push:
+    branches:
+      - chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/**'
+      - 'tools/KFB-ToolBox/lib/edit-layer.js'
+      - '.github/workflows/world-integration-r2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  world-r2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: World r2 static owner and closure checks
+        run: node tools/KFB-ToolBox/worldbuilder/world-integration-01/test/world-integration-r2.static.mjs
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start repository server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/kfb-world-http.log 2>&1 &
+          echo $! >/tmp/kfb-world-http.pid
+          sleep 2
+      - name: Browser Hürth + Cologne + accepted WB2 regression
+        run: node tools/KFB-ToolBox/worldbuilder/world-integration-01/test/world-integration-r2.browser.mjs

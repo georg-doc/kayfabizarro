@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17150f">
+<title>KFB WorldBuilder · WORLD-INTEGRATION-01 · Hürth</title>
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#17150f}</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script>window.__wb2dProps = Object.assign(window.__wb2dProps || {}, { world: (function(){try{var w=localStorage.getItem('kfb-wi1.world');return ['huerth','alstaedten','cologne'].indexOf(w)>=0?w:'huerth'}catch(e){return 'huerth'}})() });</script>
+</head>
+<body>
+<!-- WORLD-INTEGRATION-01 · the real WorldBuilder (wb2-design-01/wb2d-app.js, WB2 engine from PR #190) opened on a
+     real World Zone. No second app: this file only picks the world zone (localStorage kfb-wi1.world, default huerth; ?world= wins). ?selftest=wi1 runs the world self-test. -->
+<script type="module" src="../wb2-design-01/wb2d-app.js"></script>
+</body>
+</html>

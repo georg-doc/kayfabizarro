@@ -1,0 +1,126 @@
+{
+  "format": "kfb-worldbuilder-wb2-source/1",
+  "id": "WB2-TERRAIN-SCULPT-01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+  "stacked_pr": 190,
+  "base_branch": "chatgpt-web/worldbuilder-toolbox-scene-authoring-2026-09-23",
+  "accepted_foundation": {
+    "wb1_r1": "GEORG_HUMAN_PASS",
+    "shared_inline_editor_r2": "GEORG_HUMAN_PASS",
+    "uniform_size_r3": "OPTIONAL_NON_BLOCKING"
+  },
+  "owners": {
+    "terrain_base": {
+      "owner": "WorldBuilder procedural terrain",
+      "donor_repository": "ZyFou/ProceduralTerrains",
+      "commit": "f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070",
+      "license": "MIT",
+      "files": [
+        "src/engine/terrain/noise/cpuNoise.js",
+        "src/engine/terrain/noise/seedDomain.js"
+      ]
+    },
+    "terrain_sculpt": {
+      "owner": "KFB WorldBuilder terrain authoring",
+      "module": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+      "blob": "182f7c42b709a00547a16cfe0040d5d636bdb680"
+    },
+    "object_edit": {
+      "owner": "KFB ToolBox shared edit layer",
+      "module": "tools/KFB-ToolBox/lib/edit-layer.js",
+      "blob": "c15a200ba8615d55f9d3ae26616e0a8ceba8dc01",
+      "accepted_r2_base_blob": "c97b3537f71e939176f3ae5ce7ae83feabb7918f"
+    },
+    "resident": "KFB Resident Atlas",
+    "animation": "existing KayKit Rig_Medium source"
+  },
+  "candidate": {
+    "source": {
+      "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html",
+      "blob": "a250f1a36137121942f0f99d6a259146d718b162"
+    },
+    "review": {
+      "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_REVIEW.html",
+      "blob": "393e277adaef0948597ae6781b17d6ddabac1972",
+      "surface": "ChatGPT attachment",
+      "public": false
+    }
+  },
+  "runtime_sources": {
+    "caveman": {
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blob": "a8845cf35e12b97226df8ce24817d84f6a17dbb8"
+    },
+    "caveman_texture": {
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/assets/gltf/caveman_texture.png",
+      "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blob": "26820d2be93cbcb7f78f15498d06b3c3505e4377"
+    },
+    "boulder": {
+      "path": "media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/Rock_3_E_Color1.gltf",
+      "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "blob": "7f240b47d32921e7f4d76f4fd9dddd86ea6f10e7"
+    },
+    "combat_melee_animation": {
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+      "commit": "aa16a777a970f23d3f11fb3c23dc40718b04fa88",
+      "blob": "0ab63f221ca5d5c7c485a245199fb6107f1f3764",
+      "clip": "Melee_Unarmed_Idle"
+    }
+  },
+  "boundaries": {
+    "no_voxel_hex_tile_terrain": true,
+    "no_csg_marching_cubes": true,
+    "no_second_object_picker": true,
+    "no_second_transform_owner": true,
+    "no_resident_or_animation_owner_change": true,
+    "cloudflare": "HOLD_NOT_PUBLISHED",
+    "live": "NOT_PROMOTED"
+  },
+  "interaction_enrichment": {
+    "status": "GEORG_HUMAN_PASS",
+    "wheel_touchpad_radius": {
+      "active_only_in_sculpt": true,
+      "min": 0.45,
+      "max": 5,
+      "curve": "exponential"
+    },
+    "temporary_orbit": {
+      "gesture": "hold Space",
+      "preserves_sculpt_mode": true
+    },
+    "quick_modes": {
+      "1": "Object/Orbit",
+      "2": "Raise",
+      "3": "Lower"
+    },
+    "preserved_object_shortcuts": {
+      "R": "Rotate",
+      "S": "free Scale"
+    }
+  },
+  "human_acceptance": {
+    "status": "GEORG_HUMAN_PASS",
+    "date": "2026-09-25",
+    "accepted": [
+      "raise_lower_terrain_sculpt",
+      "brush_radius_strength",
+      "wheel_touchpad_radius",
+      "hold_space_temporary_orbit",
+      "quick_modes_1_2_3",
+      "undo_clear",
+      "save_reload",
+      "return_to_object_edit"
+    ],
+    "does_not_promote": [
+      "cloudflare",
+      "live",
+      "merge",
+      "smooth_flatten",
+      "material_painting",
+      "claude_ui_cleanup"
+    ]
+  }
+}
