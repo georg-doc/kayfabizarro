@@ -1,6 +1,6 @@
 # RETURN · ENV-PREVIEW-01 · 2026-09-25
 
-Status: **PUBLIC STAGE VERIFIED · HUMAN REVIEW OPEN · NOT LIVE**
+Status: **PUBLIC STAGE VERIFIED · GEORG PASS_WITH_TUNE · NOT LIVE**
 
 ## Outcome
 
@@ -110,10 +110,18 @@ Live: **UNCHANGED**.
 ## Unresolved / deferred
 
 - real `terrainPatch` and `worldZone` provider integration;
-- Human visual judgement of whether World Match is the desired default presentation;
+- Resident Atlas does not expose the World Match / Source Isolation selector as visibly as the ToolBox consumer;
+- shared camera review is deferred to `CAMERA-CORE-0`; current Resident camera cannot inspect the actor freely from below;
+- the WorldBuilder actor currently shows a duplicated head from incomplete Baukasten/body assembly; quarantine as an actor-adapter issue, not an environment blocker;
+- bright shadow-edge artifacts around brows and similar thin geometry remain a known shared rendering issue also seen in OSM slices;
+- Night is intentionally dark in the current donor profile and needs a later task-lighting/readability policy before gameplay use;
 - `SPINDLE-01` as a separate named environment provider;
 - `WORLD-ENV-CONSOLIDATE-01` and later Biome/Mood/Nature work;
 - no promotion of the inbox consumer candidates to canonical runtime ownership in this slice.
 
+## Human gate · Georg · 2026-09-26
+
+**PASS_WITH_TUNE.** The shared World Match / Source Isolation approach and the light/mood direction are accepted as a foundation. The five observations above are proportional follow-ups and do not reopen ENV-PREVIEW-01 or block the next bounded production slice.
+
 Exactly one next gate:
-**Georg reviews World Match vs Source Isolation on the fixed public Stage route and returns PASS or TUNE.**
+**Proceed with the already-approved ToolBox r2 publication/review slice; keep the ENV observations on the bounded follow-up list.**
