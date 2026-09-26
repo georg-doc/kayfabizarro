@@ -1,3 +1,14 @@
+### Concurrent ClayBound asset review sync
+
+HUB-CTRL metadata now routes **ClayBound · Asset 03 r2 · Human Review** to PR #228 / `tools/KFB-ToolBox/_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/START_HERE.md`.
+
+- Asset 01: HUMAN_ACCEPTED.
+- Asset 02: explicitly deferred.
+- Asset 03 r2: 4/4 tile criteria PASS; human look gate OPEN.
+- Asset 03 r3: X/Y seam FAIL; failure-recovery evidence only; two repair passes spent.
+- Blender application remains blocked until Georg PASS.
+- This is source/config synchronization only. The frozen HUB-BRIEFING-SYNC DOM gate is unchanged; **no registry rebuild, root Cloudflare publication or public-verified claim** was made.
+
 ### Concurrent #222 freshness readback
 
 After the source sync, PR #222 advanced to `f37c620ae60aa2b6f358a53257d767641980aed6` with compatible Racer HUD/W0 dispatch additions. The current Executor Board still contains the synchronized World Stage / ENV / ToolBox / Racer states. HUB-CTRL freshness pins were updated; this does not reopen the frozen DOM gate and does not publish the root Hub.
