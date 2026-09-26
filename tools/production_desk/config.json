@@ -17,7 +17,7 @@
       "id": "wsa-mvp-dispatch-review",
       "bucket": "WAITING",
       "title": "WSA · MVP Dispatch · APPROVED WITH TUNES",
-      "what": "WSA planning is complete. Current Racer dispatch: Track Core W0 now; Racer Cross-Mode HUD+Billboards may run in parallel; Playable Track R0 remains HOLD. World Stage Prep remains the current World gate.",
+      "what": "WSA planning is complete. Current Racer dispatch: Track Core W0 now; Racer Cross-Mode HUD+Billboards may run in parallel; Playable Track R0 remains HOLD. World r2 Stage is PUBLIC_VERIFIED; Georg visual/freeplay review is the current World gate.",
       "provider": "WSA Work Lead · review only",
       "yourAction": "",
       "waitingFor": "No WSA action now. Use the bounded execution lanes; return only for a new cross-owner decision.",
@@ -204,23 +204,29 @@
     },
     {
       "id": "worldbuilder-wb2",
-      "bucket": "CAN_START",
-      "title": "World r2 · Contract Reset PASS · Stage Prep NOW",
-      "what": "World r2 Contract Reset is complete without runtime changes: 13/13 contract, 24/24 owner/closure, Hürth 55/55, Köln 55/55, WB2 34/34, browser harness 12/12, 0 page/source failures. WorldBuilder is local world host; OSM/Track add bounded constraints; Travel/TinySkies is presentation/mobility donor.",
-      "provider": "WorldBuilder PR #190 / Contract Reset",
-      "yourAction": "Start WORLD-R2-STAGE-PREP-01: package the exact tested candidate unchanged, repeat Hürth→Köln→WB2 on the packaged build, then give Georg one direct KFB Stage visual/freeplay route.",
+      "bucket": "LOOK_AT",
+      "title": "World r2 · PUBLIC VERIFIED · Georg Review",
+      "what": "The unchanged World r2 candidate is packaged and PUBLIC_VERIFIED: package 28/28, Hürth 55/55, Cologne 55/55, accepted WB2 34/34, public browser 15/15, zero page/source failures. No new World owner or Track/mobility integration was introduced.",
+      "provider": "WSA World Stage / PR #234",
+      "yourAction": "Review Hürth and Cologne in Edit and Play on the fixed Stage. Return PASS / TUNE / FAIL with concrete observations.",
       "waitingFor": "",
-      "questions": [],
+      "questions": [
+        "Tragen Hürth und Köln denselben glaubwürdigen Weltmaßstab in Edit und Play?"
+      ],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 190,
-      "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-      "expectedHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
-      "review": null,
+      "pr": 234,
+      "branch": "wsa/world-r2-stage-prep-2026-09-26",
+      "expectedHead": "7b2393a54c6b31e4bd4d927275030423612cfde8",
+      "review": {
+        "label": "World r2 prüfen",
+        "path": "kfb-hub/stage/world/world-r2/index.html",
+        "sourceRef": "PR #234 · 7b2393a5 · cloudflare-live runtime c035427e · 15/15 public browser PASS"
+      },
       "brief": {
-        "label": "WORLD-R2-STAGE-PREP-01",
-        "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md",
-        "ref": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
-        "pasteReady": true
+        "label": "World r2 Stage Return",
+        "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/STAGE_RETURN.md",
+        "ref": "wsa/world-r2-stage-prep-2026-09-26",
+        "pasteReady": false
       }
     },
     {
@@ -247,22 +253,22 @@
     },
     {
       "id": "billboard",
-      "bucket": "LOOK_AT",
-      "title": "Billboard B2b-P1 · frozen candidate · review + lifecycle gate",
-      "what": "B2b-P1 is frozen after two repair passes at 39/40. One already-queued collage tick crossed mode exit 725→726 and then stayed stable. No Repair Pass 3. Web tests lifecycle/quiescence in isolation; Claude Design may show the frozen candidate unchanged for visual review.",
-      "provider": "Web lifecycle test · Claude visual review",
-      "yourAction": "Kein Rebuild. Technisch nur isolierter Lifecycle-Test in Web; visuell den frozen candidate beurteilen.",
+      "bucket": "CAN_START",
+      "title": "Billboard H4 · Georg Visual PASS · W1 Modul-Extraktion",
+      "what": "H4 is Georg's accepted production direction: a 1024×512 Canvas-2D hypernormalisation surface with song-form timing, layered 2.5D camera and deterministic anti-repeat selection. Keep the accepted Kenney Billboard/B2a body and face ownership; do not rebuild B2b-P1. W1 extracts H4 as a module only.",
+      "provider": "ToolBox Billboard Media Residency · Web integration",
+      "yourAction": "",
       "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 211,
-      "branch": "chatgpt-web/billboard-b2b-research-2026-09-25",
-      "expectedHead": "6b29367df59f7c901ae66fea852999f6d62750e7",
+      "pr": null,
+      "branch": "main",
+      "expectedHead": "96beadeb9904ebe3efd9a9f71d2db3d5714db298",
       "brief": {
-        "label": "B2b-P1 failure recovery",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/failure-recovery/START_HERE.md",
-        "ref": "chatgpt-web/billboard-b2b-research-2026-09-25",
-        "pasteReady": false
+        "label": "H4 WSA/Web Handover",
+        "path": "tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H4 - Hex Assets Worldbuilding/kfb-billboard-hypernorm-h4_2026-09-26/HANDOVER_WSA.md",
+        "ref": "main",
+        "pasteReady": true
       },
       "review": null
     },

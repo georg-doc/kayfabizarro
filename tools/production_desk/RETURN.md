@@ -1195,3 +1195,14 @@ The config JSON was fetched back and parsed after the write.
 
 Exactly one next gate:
 **Run CLAY-ASSET-01 and get Georg's review on source + 3×3 repeat before Asset 2.**
+
+## 2026-09-26 · World r2 public gate + Billboard H4 decision
+
+- World r2 exact Stage is PUBLIC_VERIFIED at `/kfb-hub/stage/world/world-r2/`.
+- Source PR #234 head: `7b2393a54c6b31e4bd4d927275030423612cfde8`.
+- Public package runtime head: `cloudflare-live@c035427ecb62023758589224c5d7872b217e0261`; verification-doc head follows additively.
+- Public proof: 15/15; Hürth 55/55; Cologne 55/55; WB2 34/34; zero page/source failures.
+- Exactly one World gate: Georg PASS / TUNE / FAIL in Edit + Play.
+- Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
+- Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
+- H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
