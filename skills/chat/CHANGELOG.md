@@ -1,3 +1,15 @@
+## 2026-09-26 · Blender MCP OSM Cologne clay briefing + Hub card
+
+- Added READY self-service job `bl-osm-clay-01` under the existing WorldBuilder/OSM City owner route.
+- Detailed executor brief: `skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`.
+- Current `dom-zentrum-v0` remains the geographic/provenance truth; Blender MCP is only the look/bake/import-oracle lane.
+- First gate compares `SOURCE_CLEAN | CLAY_SURFACE_ONLY | CLAY_FORM_SURFACE` on a source-exact Dom/HBF crop after donor isolation.
+- Research bundled: BlendSwap 29812, CC0 clay/asphalt alternatives, Poly Haven clay PBR and bounded MOSAIQ/BlenderGIS/Blosm OSM→Blender checks.
+- Other Blender tasks remain dependency-routed rather than merged into this job: Track Core 1A, SC01 bridge shells, Billboard B3 design-first, FrizzleBob body-family rig, Orc drummer and existing OSM City furniture.
+- Hub live registry mirror now carries 97 jobs / 43 READY / 54 HOLD / 97 prompts.
+- Metadata validation: **10/10 PASS**. Runtime/Blender/browser/Cloudflare tests were not part of this preparation.
+- No auto-merge, Stage publication or Live promotion.
+
 ## 2026-09-25 · WB-D2 + Resident S40 intake
 
 - WB-D2 classified as latest presentation-shell donor, not WorldBuilder/OSM truth.
