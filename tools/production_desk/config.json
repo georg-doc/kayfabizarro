@@ -82,21 +82,17 @@
     },
     {
       "id": "toolbox-source-safe",
-      "bucket": "LOOK_AT",
-      "title": "ToolBox r2 · öffentlich geprüft → Georg Review",
-      "what": "Die r2-Owner-Deltas bleiben in PR #185. Review PR #221 konsumiert exakt diese Owner plus EarRig-v5/KayKit-Pins. Repository-Gate 33/33 und öffentlicher Stage-/ToolBox-/Registry-/Hub-Gate 20/20 sind grün; Source Object, State, Pose/IK und Mobile zeigen die vollständige Figur inklusive Ohren.",
+      "bucket": "WAITING",
+      "title": "ToolBox r2 · TUNE · Richtung akzeptiert",
+      "what": "Georg akzeptiert die grundsätzliche Richtung. Streifiges Bildrauschen, Bodenbezug, einzelne State-Animationen und die nach unten begrenzte Orbit-Kamera bleiben getrennte Rendering-, Grounding-, Animations- und Kamera-Nacharbeiten; die ToolBox-Integration wird dafür nicht neu geöffnet.",
       "provider": "ChatGPT Web / ToolBox receiving owner",
-      "yourAction": "ToolBox r2 öffnen: zuerst Source Object mit FrizzleBob/EarRig prüfen, dann State und Pose/IK. Danach PASS, TUNE oder REJECT für diese r2-Reviewfläche geben.",
-      "waitingFor": "Georgs direkte Sichtprüfung; kein Merge und keine Live-Promotion davor.",
-      "questions": [
-        "Ist Source Object sichtbar der richtige FrizzleBob mit vollständigen Ohren?",
-        "Wirken Walk → fast Walk → Run und Jump als brauchbare semantische Bewegungsbasis?",
-        "Bleiben Figur, Ohren und Pose/IK auf Desktop und Mobile frei und gut beurteilbar?"
-      ],
+      "yourAction": "",
+      "waitingFor": "Nacharbeiten nur in den zuständigen bounded Owner-Slices; kein ToolBox-Neustart.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 221,
       "branch": "chatgpt-web/toolbox-r2-stage-review-recovery-2026-09-26",
-      "expectedHead": "36315aaeffe2029300d445fdb1ffbaa569519638",
+      "expectedHead": "da20e926c38fa8576f31bffc5442d96d44fe4d1b",
       "brief": {
         "label": "r2 Intake / Receiving Route",
         "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/INTAKE_WORLD_TOOLBOX_R2_HUBUX_2026-09-26.md",
@@ -106,7 +102,7 @@
       "review": {
         "label": "ToolBox r2 prüfen",
         "path": "kfb-hub/stage/toolbox/production-01-r2/index.html",
-        "sourceRef": "PR #221 · final head 36315aae · 33/33 repository + 20/20 public browser PASS · cloudflare-live 69cfd8c6 · human pending"
+        "sourceRef": "PR #221 · da20e926 · 33/33 repository + 20/20 public browser PASS · Georg TUNE / direction accepted · cloudflare-live 69cfd8c6"
       }
     },
     {
