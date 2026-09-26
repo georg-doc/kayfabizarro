@@ -1,7 +1,7 @@
 # KFB Elisa 18 Claymation Film v1 · RETURN
 
 **Date:** 2026-09-26  
-**Status:** PREPRODUCTION COMPLETE · SOURCE PLAN PERSISTED · NO STAGE · NO LIVE PROMOTION  
+**Status:** AUTONOMOUS ONE-SHOT PREP COMPLETE · FRIZZLEBOB INPUT PENDING · NO STAGE · NO LIVE PROMOTION  
 **Repository:** `georg-doc/kayfabizarro`  
 **Branch:** `planning/elisa-18-claymation-film-v1-2026-09-26`  
 **Draft PR:** #233 — `Plan Elisa 18 claymation birthday film v1`  
@@ -11,7 +11,7 @@
 
 ## Outcome
 
-Prepared one bounded, recoverable production lane for a **52–58 second Elisa 18 birthday short** in:
+Prepared one bounded, recoverable **autonomous one-shot production contract** for a **52–58 second Elisa 18 birthday short** in:
 
 **KFB claymation + paper/collage + current OSM/KFB Ink/Grotesque presentation language**
 
@@ -20,7 +20,10 @@ The lane reuses current owners and does not reactivate the archived Birthday 202
 Persisted:
 - source/donor manifest;
 - 55-second shot plan;
-- full execution prompt;
+- autonomous end-to-end execution prompt;
+- frozen FrizzleBob input handover;
+- compact + ultra-short WSA launchers;
+- independent Critic / targeted repair loop;
 - preproduction evidence;
 - recovery checkpoint;
 - main chat router pointer;
@@ -49,9 +52,12 @@ It does not own:
 
 ### FrizzleBob
 
-Current ToolBox / FrankenStein Driver Graft + current face owners + Ear Rig v5.
+Run-frozen Studio input:
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json` — **pending Georg export**.
 
-Historical Dropbox FrizzleBob-v5 standalone remains reference/provenance only.
+Once present, combine it with current ToolBox / FrankenStein Driver Graft + current face owners + Ear Rig v5.
+
+The run-frozen JSON is not an automatic global promotion. Historical Dropbox FrizzleBob-v5 standalone remains reference/provenance only.
 
 ### Elisa / GothGirl
 
@@ -71,7 +77,7 @@ Current registered families recovered:
 - Charming Kitchen;
 - Homely House.
 
-Exact per-shot files remain a G0 visual selection.
+Exact per-shot files are selected during the internal G0 preflight and Critic pass.
 
 ### RPGTools / key correction
 
@@ -92,13 +98,13 @@ Exact:
 
 Current Registry vehicle donor contains 22 documented vehicles.
 
-G0 shortlist:
+Internal-preflight shortlist:
 - hatchback-sports;
 - sedan-sports;
 - race-future;
 - optional vehicle-speedster.
 
-No final vehicle was silently chosen.
+No final vehicle was silently chosen; the autonomous run selects one only after isolated comparison and Critic review.
 
 ### Finale
 
@@ -154,7 +160,7 @@ These are donor-confidence references, not tests executed by this planning branc
 **None generated.**
 
 Reason:
-this was source recon + preproduction planning only. The required visual proof is deliberately the next G0 gate.
+this was source recon + one-shot contract preparation only. Runtime source-isolation, Critic review and final visual proof belong to the autonomous execution run.
 
 Do not substitute Dropbox thumbnails, GitHub image presence or loaded asset URLs for the required source-isolation render.
 
@@ -182,28 +188,39 @@ No Live claim.
 9. `skills/chat/CHANGELOG.md`
 10. `kfb-hub/index.html`
 
-## Unresolved / deliberately held
+## One-shot contract QA added
 
-- `ELISA-FILM-G0` visual source-isolation proof not built;
-- final FrizzleBob film look/rig framing not human accepted;
-- final GothGirl clay conversion not human accepted;
-- current ClayBound `CLAY-ASSET-01` production-material gate must be respected;
-- exact Tiny Treats hero models not selected;
-- final vehicle not selected;
-- PayPal prop source not resolved;
-- actual JS timeline not implemented;
-- TTS voice/timing not generated;
-- final audio/Foley mix not built;
-- capture/export not built;
-- no Cloudflare Stage.
+The autonomous-flow revision ran **10 / 10 static contract checks PASS**:
+- frozen input handover present;
+- exact JSON path present;
+- compact + ultra-short launcher present;
+- G0 marked internal;
+- external Critic + Repair roles present;
+- two-repair stop present;
+- final candidate is first human-review target;
+- obsolete human-G0 stop language removed.
 
-## One next gate
+No runtime/browser/video QA was executed by this documentation revision.
 
-**ELISA-FILM-G0 · source isolation + FrizzleBob/GothGirl rig/look proof**
+## Unresolved / execution inputs
 
-Build only the compact donor/rig/look comparison from `START_HERE.md` and `MASTER_PROMPT.md`.
+- required FrizzleBob Studio JSON is not yet present at the frozen input path;
+- final source-isolation / rig / clay look has not been rendered;
+- exact Tiny Treats hero models remain an internal preflight choice;
+- final vehicle remains an internal preflight choice;
+- PayPal prop source remains unresolved;
+- actual JS timeline is not implemented;
+- TTS voice/timing is not generated;
+- final audio/Foley mix is not built;
+- capture/export is not built;
+- no Cloudflare Stage exists.
 
-Human question:
-**“Do these exact donors already feel like one KFB clay/paper birthday film before we animate the full 55 seconds?”**
+## Execution start condition
 
-No full-film implementation before that decision.
+Georg exports the new Studio JSON to:
+
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`
+
+Then WSA runs the current `MASTER_PROMPT.md` autonomously through internal G0, animatic, full production, independent QA/repair and the finished candidate.
+
+No separate G0 human acceptance. No auto-merge. No Live promotion.
