@@ -22,3 +22,9 @@ Playable Track R0 is explicitly `DO NOT START` until Track-Core proof/runtime pa
 
 ### Tests
 Planning/docs only. Runtime/browser/Stage tests: 0.
+
+### HUB-CTRL same-handoff sync
+- existing HUB-CTRL #202 config checkpoint `7dc340afd94023e65d68561228472a4dc19bdffb`;
+- final observed HUB-CTRL documentation head `1542f04524238d3227f8e1a2b1d027d98f93d8eb`;
+- WSA review-only lane added; Racer split into Track-Core G0→W0 and Playable-R0 HOLD;
+- generated Hub HTML/public root unchanged; no new CI/public claim.
