@@ -1,12 +1,27 @@
 # WSA Recon + Plan Approval · 2026-09-26
 
-Status: **REVIEW PACKET · DECISIONS ONLY · NO EXECUTION**
+Status: **WSA DECIDED · APPROVE WITH D2/D3/D6 TUNES · NO EXECUTION**
+
+## WSA decision · 2026-09-26
+
+| ID | Decision | Binding result |
+|---|---|---|
+| D0 | **APPROVE** | JavaScript is the single authoritative route/geometry Track Core. Race retains contact, vehicle physics, flight, landing and recovery. Blender/Python is oracle + scenery only. |
+| D1 | **APPROVE** | W0 inventories the real Race contact/collider path. `project(pos,sHint)` remains a contract proposal; no physics migration in W0. |
+| D2 | **TUNE** | `CAMERA-CORE-0` is recon + contract only. Do not create a new camera owner/module before WB2, WhackMan, Travel donors and current consumer owners are measured. |
+| D3 | **TUNE** | Exactly one Surface Adapter resolves final visible/support height. WorldBuilder owns editable base height; OSM/Track provide local constraints/offsets; Race retains contact/physics. No per-consumer height recomposition. |
+| D4 | **APPROVE** | Publish and human-review PR #221 before feature expansion on the same ToolBox owner. |
+| D5 | **APPROVE** | Additive ENV Preview Stage comparison may proceed. WORLD_MATCH becomes default only after human PASS. |
+| D6 | **TUNE** | Correct superseded Travel-world ownership wording in PR #204 and PR #218 metadata before default reuse. This is metadata/contract correction, not runtime migration. |
+| D7 | **APPROVE** | Add future-consumer fields to contracts only; rail/arbitrary-up/gravity/skins remain unimplemented. |
+
+Overall: **APPROVE WITH TUNES**. Playable Track R0 and Cologne OSM R0 remain **HOLD**.
 
 ## Defects / contradictions first
 
 1. **Playable Track R0 was routed too early to Claude Design.** The brief exists on Cologne Route PR #216, not `main`; more importantly, its required input package does not yet exist because current Track-Core planning explicitly blocks R0 until the core sequence is proven. See `CLAUDE_DESIGN_RACER_R0_BLOCKER_RETURN_2026-09-26.md`.
 2. **Hub Racer status drift:** HUB-CTRL currently marks Track Core `CAN_START`, while the latest PR #219 addendum says **G0 JS decision → W0**. Hub needs to distinguish Track-Core preparation from Playable-R0 HOLD.
-3. **World truth wording drift:** PR #204 still contains the older statement “Travel/TinySkies remains macro-world truth”. Georg’s newer decision on `main@388e9087…` supersedes that: Travel Globe is not world base; sky/weather/light/mood and selected movement/camera ideas remain donors.
+3. **World truth wording drift:** PR #204 and PR #218 metadata contain the older statement “Travel/TinySkies remains macro-world truth”. Georg’s newer decision on `main@388e9087…` supersedes that: Travel Globe is not world base; sky/weather/light/mood and selected movement/camera ideas remain donors.
 4. **World r2 stop condition is binding:** two repair passes were exhausted. Do not patch the failed runtime again. The next gate is contract/test semantics only.
 5. **ToolBox r2 is technically reviewable but public status is not yet a human PASS.** PR #221 has 33/33 browser proof; Stage/public publication must remain separately verified.
 6. **OSM `rhein-muelheim-v0` exists in Dropbox and a duplicate upload staging folder.** Do not delete/move. Promotion remains WSA/OSM provenance approval and blocks only the later OSM/RKIT-11 provenance gate, not Track-Core W0/B1–B4.
@@ -16,7 +31,7 @@ Status: **REVIEW PACKET · DECISIONS ONLY · NO EXECUTION**
 | Lane | Current source | State for planning |
 |---|---|---|
 | main lead decisions | `388e90875a0b28b9241f126f26ba44456419e43d` | binding |
-| HUB-CTRL | PR #202 · `41b273f6…` observed | owner |
+| HUB-CTRL | PR #202 · `1542f045…` observed | owner |
 | Hub status sync | PR #215 · `d45f215b…` | merge gate, not assumed |
 | Hub UX v2 | PR #217 · `2b4d800d…` | PASS_WITH_TUNE, mobile known broken, not Live |
 | Environment preview | PR #218 · `6718eef0…` | 30/30 static + 15/15 Chromium at final candidate, Stage comparison next |
@@ -26,7 +41,7 @@ Status: **REVIEW PACKET · DECISIONS ONLY · NO EXECUTION**
 | ToolBox r2 review | PR #221 · `e935f7eb…` observed | 33/33 browser, publication/human gate pending |
 | Motion Library v2 | PR #213 · `7b5cf664…` | 179 clips |
 | EarRig v5 | PR #214 · `19088b14…` | source candidate |
-| WorldBuilder | PR #190 | WB2 accepted checkpoint `ec52eb74…`; World r2 failure recovery later on same owner branch |
+| WorldBuilder | PR #190 · current head `d5d1ff69…` | WB2 accepted checkpoint retained; World r2 failure recovery later on same owner branch |
 | Production Architecture | PR #204 · `31df6556…` observed | catalog/brief source, contains one superseded world-rule sentence |
 
 GitHub state at execution time overrides these observed refs.
