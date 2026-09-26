@@ -1,0 +1,44 @@
+import { readFileSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+import { createRequire } from 'node:module';
+const require=createRequire(import.meta.url);
+const {JSDOM}=require('jsdom');
+const [,,htmlPath,regDir]=process.argv;
+const HTML=readFileSync(htmlPath,'utf8');
+const FILES=['manifest','lanes','briefings','reviews','standards','wsa','tools','problems','self_service'];
+const expected=Object.fromEntries(FILES.map(f=>[f,JSON.parse(readFileSync(join(regDir,f+'.json'),'utf8'))]));
+let pass=0,fail=0;
+function ok(cond,msg){if(cond){pass++;console.log('  PASS',msg)}else{fail++;console.log('  FAIL',msg)}}
+const dom=new JSDOM(HTML,{runScripts:'outside-only',url:'https://kayfabizarro.pages.dev/kfb-hub/'});
+const d=dom.window.document;
+ok(d.documentElement.dataset.kfbBuild==='HUB-UX-RECOVERY-V2','exact build marker');
+ok(d.title==='KFB Hub','document title');
+ok(!!d.querySelector('x-dc'),'Claude Design root retained');
+ok(!!d.querySelector('script[data-dc-script]'),'Claude Design behavior script retained');
+ok(d.querySelector('script[src="/kfb-hub/runtime/support.js"]')!==null,'shared Hub runtime support path');
+ok(HTML.includes('/kfb-hub/runtime/resident-overlay.v1.js'),'Resident overlay uses stable Hub runtime path');
+ok(!HTML.includes('embedded-registry-2026-09-25.js'),'dated frozen fallback removed');
+ok(!HTML.includes('window.KFB_HUB_EMBEDDED'),'second embedded-registry owner removed');
+const er=d.getElementById('embedded-registry'); let got=null;
+try{got=JSON.parse(er?.textContent||'')}catch(e){}
+ok(!!got,'rendered embedded registry parses');
+ok(JSON.stringify(got)===JSON.stringify(expected),'embedded registry equals generated owner registry');
+ok(HTML.includes('bot/production-desk-update/registry/production/v1'),'live bot registry remains first source');
+ok(HTML.includes("ref:'main',base:RAW+'main/registry/production/v1'"),'main registry fallback retained');
+for(const word of ['Heute','Briefings','Projekte','Entscheidungen','Archiv','Pocket Inbox']) ok(HTML.includes(word),'surface present: '+word);
+for(const decision of ['PASS','TUNE','HOLD','DONE','MISSING']) ok(HTML.includes("'"+decision+"'"),'decision present: '+decision);
+ok(HTML.includes('kfb.hub.decisions.v1'),'decision localStorage owner retained');
+ok(HTML.includes('kfb.hub.resident.v1'),'resident localStorage owner retained');
+ok(HTML.includes('kfb-hub-pocket-inbox-v1'),'Pocket Inbox IndexedDB donor retained');
+ok(!HTML.includes('/*__EMBEDDED_REGISTRY__*/'),'render output contains no marker');
+const script=d.querySelector('script[data-dc-script]')?.textContent||'';
+try{new Function(script);ok(true,'x-dc behavior script parses')}catch(e){ok(false,'x-dc behavior script parses: '+e.message)}
+const root=process.cwd();
+const supportPath=join(root,'kfb-hub/runtime/support.js');
+const overlayPath=join(root,'kfb-hub/runtime/resident-overlay.v1.js');
+ok(existsSync(supportPath)&&readFileSync(supportPath,'utf8').length>1000,'support runtime exists');
+const ov=existsSync(overlayPath)?readFileSync(overlayPath,'utf8'):'';
+ok(ov.includes('bdaea0648f27c0f16e0a737bfba237eb54dd4cbb'),'Resident overlay donor pin retained');
+ok(ov.includes('mountGraft')&&ov.includes("animation: 'host'"),'FrizzleBob graft remains external actor owner');
+console.log('\n'+pass+' passed, '+fail+' failed');
+process.exit(fail?1:0);
