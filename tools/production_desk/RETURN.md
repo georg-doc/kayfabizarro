@@ -1,4 +1,16 @@
-# CURRENT UPDATE · ENV-PREVIEW-01 HUMAN PASS_WITH_TUNE + TOOLBOX r2 PUBLIC VERIFIED · 2026-09-26
+# CURRENT UPDATE · TOOLBOX r2 HUMAN TUNE · 2026-09-26
+
+Status: **GEORG TUNE · DIRECTION ACCEPTED · REVIEW GATE CLOSED · NOT LIVE**
+
+- PR #221 human-result head: `da20e926c38fa8576f31bffc5442d96d44fe4d1b`.
+- Existing evidence remains **33/33 repository + 20/20 public browser PASS**, with 0 public page/request failures.
+- Deferred, non-blocking: strong motion/static streak noise; incorrect actor ground contact; several State-loop animation calibrations; below-actor Orbit range for fall/flight inspection.
+- These remain separate rendering, grounding, animation and shared-camera follow-ups. The ToolBox r2 integration slice is not reopened.
+- No merge and no Live promotion are authorized by this decision alone.
+
+---
+
+# PRIOR UPDATE · ENV-PREVIEW-01 HUMAN PASS_WITH_TUNE + TOOLBOX r2 PUBLIC VERIFIED · 2026-09-26
 
 ## ENV-PREVIEW-01
 
