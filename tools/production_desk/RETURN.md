@@ -940,3 +940,10 @@ No Runtime/Stage/Live promotion.
 
 Exactly one next gate:
 **WSA reviews PR #222 D8 + A1/A9 recovery starts.**
+
+
+### Final recovery-inventory pin
+
+Final PR #222 pin: `1271ca4ea310ec1bc33c9f8e0ba499f890b81b82`
+HUB-CTRL config commit: `f66a59ee6eaf5bb8b26fdef0406f75b03697c9e6`.
+The WSA recovery lane now pins the exact final planning head rather than a moving branch snapshot. Generated Hub HTML/public root remain unchanged.
