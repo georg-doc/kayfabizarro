@@ -128,6 +128,23 @@ No KFB runtime, Stage route or Live surface is changed by this demo brief.
 - Technical ClayBound research / POC:  
   https://github.com/georg-doc/kayfabizarro/tree/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/KFB%20ClayBound-Perplexity%20v1
 
+
+## NotebookLM prompts
+
+- **Deep Research first:** [PROMPT_B_DEEP_RESEARCH.md](./PROMPT_B_DEEP_RESEARCH.md)  
+  Use this to deconstruct the ClayBound look into geometry, seamless textures, Blender shader logic, lighting, animation-safe material rules and a reproducible KFB pipeline.
+- **Production Deck second:** [PROMPT_A_PRODUCTION_DECK.md](./PROMPT_A_PRODUCTION_DECK.md)  
+  Use this after the Deep Research result has been added back to NotebookLM as a source. It explicitly prioritizes production-ready seamless texture packs, Blender node/shader specs, material parameters, lighting specs, file/package structure and QA over redesigned character illustrations.
+- **Base source text:** [NOTEBOOKLM_SOURCE_TEXT.md](./NOTEBOOKLM_SOURCE_TEXT.md)
+
+### Recommended sequence
+
+1. Upload the minimal source set and ClayBound screenshots.
+2. Run `PROMPT_B_DEEP_RESEARCH.md`.
+3. Add the resulting Deep Research report to the notebook as an additional source.
+4. Run `PROMPT_A_PRODUCTION_DECK.md`.
+5. Save the useful texture/shader/material outputs and the generated deck for review.
+
 ## Next gate
 
 **Run Demo 1 with the minimal source set and preserve the result for visual review.**
