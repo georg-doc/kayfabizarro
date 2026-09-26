@@ -941,3 +941,24 @@ Current Billboard SSOT:
 Exactly one next gate:
 **B2b Living Mockup / Collage research-options memo only.**
 B2c/B3/C1 remain separate proposals/HOLD.
+
+## 2026-09-26 · Billboard B2b-P1 frozen recovery
+
+Draft PR **#211** now contains the bounded B2b-P1 CanvasTexture COLLAGE candidate.
+
+Frozen candidate head:
+`2348c069a99b57149d6a2685496b5ce1b40ebe1a`
+
+Result:
+- static proof green;
+- final browser run `36205100427`: **39/40**, 0 page errors, 0 HTTP errors, 11 compositions;
+- only failed assertion = one queued collage tick crossing mode exit (725→726), then stable;
+- repair limit reached, so candidate is **ARCHIVED_FAILED_CANDIDATE**;
+- no B2b-P1 Cloudflare Stage route exists or is claimed;
+- B2c/B3/C1 remain HOLD.
+
+Recovery:
+`tools/KFB-ToolBox/_handover/BILLBOARD_B2B_P1_2026-09-25/failure-recovery/START_HERE.md`
+
+Exactly one next gate:
+**isolated collage lifecycle/quiescence semantics**, not another visual/runtime repair pass.

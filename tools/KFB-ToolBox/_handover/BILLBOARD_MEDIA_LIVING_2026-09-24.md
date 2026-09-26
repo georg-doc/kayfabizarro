@@ -3,7 +3,7 @@
 Status: **CURRENT LIVING DOCUMENT · ADDITIVE**
 Date started: 2026-09-24
 Owner: **KFB ToolBox / Billboard Media Residency**
-Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a HUMAN_ACCEPTED → B2b RESEARCH COMPLETE / CHOICE PENDING**
+Current source chain: **B0 accepted → B1 HUMAN_ACCEPTED → B2a HUMAN_ACCEPTED → B2b-P1 ARCHIVED_FAILED_CANDIDATE / RECOVERY**
 Current B1 PR: **#198**
 Current accepted B1 branch/head: `chatgpt-web/billboard-b1-2026-09-24@d54273d30f5465df36b33ee13c896a0ee6f95ca7`
 
@@ -80,7 +80,7 @@ On the direct Cloudflare B2a route:
 
 ## PLANNED · B2b · Living Mockup / Collage surface
 
-Status: **RESEARCH / PROPOSAL · NOT STARTED**.
+Status: **P1 CANDIDATE FROZEN AFTER REPAIR LIMIT · NO STAGE**.
 
 Direction reference:
 - WithSeismic “Living mockups / LED walls”;
@@ -246,3 +246,13 @@ Full commented drafts and owner boundaries:
 `tools/KFB-ToolBox/_handover/BILLBOARD_B3_CARTOON_BODY_WSA_HANDOVER_2026-09-25.md`
 
 All five are **IDEA BACKLOG / NOT STARTED** and must not broaden B2b-P1 or B3.
+
+### 2026-09-26 · B2b-P1 repair-limit recovery
+- frozen runtime/test head `2348c069a99b57149d6a2685496b5ce1b40ebe1a`;
+- static proof fully green;
+- final browser pass **39/40**, 0 page errors, 0 HTTP errors, 11 compositions;
+- sole red assertion: one already-scheduled collage tick crossed the mode-switch boundary (725→726) and then remained stable;
+- this is preserved as evidence, not silently relaxed or repaired in a third pass;
+- no B2b-P1 Stage route was published;
+- B2c, B3 and Curtain C1 remain untouched;
+- next gate: isolated lifecycle/quiescence semantics only.

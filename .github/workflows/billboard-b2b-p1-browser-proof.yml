@@ -1,9 +1,7 @@
-name: Billboard B2b-P1 browser proof
+name: Billboard B2b-P1 browser proof · FROZEN manual only
 
 on:
-  push:
-    branches:
-      - 'chatgpt-web/billboard-b2b-research-2026-09-25'
+  workflow_dispatch:
 
 permissions:
   contents: read
