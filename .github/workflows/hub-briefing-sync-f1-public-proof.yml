@@ -1,0 +1,104 @@
+name: HUB Briefing Sync F1 Public Proof
+
+on:
+  push:
+    branches:
+      - work/hub-ctrl-01-2026-09-24
+    paths:
+      - ".github/workflows/hub-briefing-sync-f1-public-proof.yml"
+  workflow_dispatch:
+
+jobs:
+  public-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Wait for exact Cloudflare root marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          RAW="https://raw.githubusercontent.com/georg-doc/kayfabizarro/cloudflare-live/kfb-hub/ROOT_BUILD.json"
+          PUB="https://kayfabizarro.pages.dev/kfb-hub/ROOT_BUILD.json"
+          curl -fsSL "$RAW" -o /tmp/expected.json
+          ok=0
+          for i in $(seq 1 24); do
+            if curl -fsSL --max-time 20 "$PUB" -o /tmp/public.json 2>/dev/null; then
+              if python3 - <<'PY'
+          import json
+          a=json.load(open('/tmp/expected.json'))
+          b=json.load(open('/tmp/public.json'))
+          keys=['sourceCommit','registryContentHash','shell','briefings','ready','hold','problems']
+          assert all(a.get(k)==b.get(k) for k in keys), (a,b)
+          PY
+              then ok=1; break; fi
+            fi
+            sleep 5
+          done
+          test "$ok" = 1
+          cat /tmp/public.json
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Open exact public Hub and visible Briefings
+        run: |
+          mkdir -p hub-briefing-sync-f1-public-proof
+          cat > /tmp/proof.mjs <<'JS'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs';
+          const url='https://kayfabizarro.pages.dev/kfb-hub/';
+          const expected=JSON.parse(fs.readFileSync('/tmp/expected.json','utf8'));
+          const report={url,expected,checks:[],errors:[],httpErrors:[]};
+          const check=(name,pass,detail='')=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1440,height:900}});
+          page.on('pageerror',e=>report.errors.push(String(e)));
+          page.on('response',r=>{if(r.status()>=400) report.httpErrors.push({status:r.status(),url:r.url()})});
+          try{
+            const resp=await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+            check('root HTTP ok',!!resp && resp.ok(),resp?.status());
+            await page.waitForTimeout(5000);
+            check('UX v2 build marker',await page.evaluate(()=>document.documentElement.dataset.kfbBuild)==='HUB-UX-RECOVERY-V2');
+            check('KFB Hub heading visible',await page.getByText('KFB Hub',{exact:true}).first().isVisible().catch(()=>false));
+            check('Briefings nav visible',await page.getByRole('link',{name:/Briefings/}).first().isVisible().catch(()=>false));
+            await page.getByRole('link',{name:/Briefings/}).first().click();
+            await page.waitForTimeout(800);
+            check('Briefings page visible',await page.getByRole('heading',{name:'Briefings',exact:true}).isVisible().catch(()=>false));
+            const body=await page.locator('body').innerText();
+            check('WorldBuilder strand visible',body.includes('WorldBuilder / God Mode'));
+            check('Racer strand visible',body.includes('Racer → World'));
+            check('Briefing counts visible',body.includes('42') && body.includes('54'));
+            const search=page.locator('input[type="search"]');
+            if(await search.count()){
+              await search.fill('Racer');
+              await page.waitForTimeout(500);
+              const searched=await page.locator('body').innerText();
+              check('search works on current Hub',searched.includes('Racer'));
+            } else check('search works on current Hub',false,'search input missing');
+            await page.screenshot({path:'hub-briefing-sync-f1-public-proof/root-desktop.png',fullPage:true});
+            report.bodySample=body.slice(0,5000);
+          }catch(e){report.errors.push(String(e?.stack||e));process.exitCode=1}
+          finally{
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            report.status=process.exitCode?'FAIL':'PASS';
+            fs.writeFileSync('hub-briefing-sync-f1-public-proof/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({status:report.status,checks:report.passed+'/'+report.total,errors:report.errors.length,httpErrors:report.httpErrors.length},null,2));
+            await browser.close();
+          }
+          JS
+          node /tmp/proof.mjs
+
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: hub-briefing-sync-f1-public-proof
+          path: hub-briefing-sync-f1-public-proof/
