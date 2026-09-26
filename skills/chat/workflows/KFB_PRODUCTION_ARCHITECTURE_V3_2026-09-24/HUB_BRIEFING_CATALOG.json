@@ -49,13 +49,14 @@
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
       "capabilitiesTotal": 11,
       "currentReady": [
-        "wb2-design-refine-01",
         "world-zone-bake-01",
         "look-torsion-01"
       ],
-      "currentReview": "worldbuilder-w0",
-      "currentPriority": "wb2-design-refine-01",
-      "acceptedFoundation": "WB2-TERRAIN-SCULPT-01 · GEORG_HUMAN_PASS"
+      "currentReview": "world-r2-stage-prep-01",
+      "currentPriority": "WORLD-R2-STAGE-PREP-01 · operational lane in HUB-CTRL",
+      "acceptedFoundation": "WB2-TERRAIN-SCULPT-01 · GEORG_HUMAN_PASS + WORLD-R2-CONTRACT-RESET-01 · PASS",
+      "operationalBrief": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md",
+      "operationalHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd"
     },
     {
       "id": "racer-world",
@@ -66,7 +67,10 @@
         "race-anatomy-01",
         "race-track-recipe-01",
         "race-rkit-03"
-      ]
+      ],
+      "currentPriority": "TRACK-CORE-G0/W0 · PR #219",
+      "currentParallelDesign": "RACER HUD + Billboard System · PR #222 fresh Claude start",
+      "playableR0": "HOLD until Track Core proof/runtime parity + Web closed package"
     },
     {
       "id": "quick-review",
@@ -134,13 +138,14 @@
       "target": "Shared current KFB environment previews, Spindle environments, Theatre Curtain, instance recipes and semantic VFX/SFX maps",
       "capabilitiesTotal": 5,
       "currentReady": [
-        "env-preview-01",
         "spindle-01",
         "curtain-02",
         "fx-semantic-01",
         "audio-audition-01",
         "vfx-audition-01"
-      ]
+      ],
+      "acceptedFoundation": "ENV-PREVIEW-01 · PUBLIC_STAGE_VERIFIED · GEORG_PASS_WITH_TUNE",
+      "acceptedHead": "88c64c29075f31d655f4777437bb1aa82069df17"
     },
     {
       "id": "card-zones",
@@ -2077,17 +2082,17 @@
     {
       "id": "wb2-design-refine-01",
       "strand": "worldbuilder",
-      "bucket": "READY",
+      "bucket": "HOLD",
       "priority": "P0",
       "executor": "Claude Design",
       "title": "WorldBuilder · WB2 UI / Authoring refinement",
-      "what": "Polish the accepted WB2 authoring experience: less sidebar chrome, more 3D FOV, inline object transforms, compact sculpt controls and current WorldDesign look.",
-      "result": "Complete Claude Session Cut preserving all accepted WB2 terrain/editor behavior and owners.",
+      "what": "Optional WB2 authoring/UI refinement is deferred behind the current World r2 Stage/freeplay gate. The World runtime/contract is already green; do not start a new design pass before the unchanged recovered candidate is reviewed on Stage.",
+      "result": "After WORLD-R2-STAGE-PREP-01 + Georg visual/freeplay review, refine only the accepted authoring surface if still useful; preserve current terrain/editor/runtime owners.",
       "promptSection": "WB2-DESIGN-REFINE-01 · Accepted WB2 authoring/UI refinement",
       "sourceSet": "worldbuilder",
       "detailedBriefing": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md",
       "sourcePr": 190,
-      "sourceHead": "ec52eb746be8c1a0e6f3f3d62857ed4b3121b284",
+      "sourceHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
       "cloudflareRequired": false,
       "workRequired": false,
       "executionProfile": "CLAUDE_DESIGN_STANDARD",
@@ -2098,7 +2103,9 @@
       "reasoning": "medium",
       "budget": "STANDARD",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Georg Stage visual/freeplay gate",
+      "operationalStatus": "DEFERRED_BEHIND_WORLD_R2_STAGE_PREP_01"
     },
     {
       "id": "wb-zone-seam-01",
@@ -2124,12 +2131,12 @@
     {
       "id": "env-preview-01",
       "strand": "shared-stage",
-      "bucket": "READY",
+      "bucket": "HOLD",
       "priority": "P0",
       "executor": "ChatGPT Web",
       "title": "Environment · Shared Preview Host",
-      "what": "Expose current KFB World/Travel sky, light, fog, palette and support presentation to Resident Atlas, ToolBox and later 3D previews without copying a second world stack.",
-      "result": "WORLD_MATCH / SOURCE_ISOLATION / CONSUMER_PRESET adapter proven in Resident Atlas + ToolBox.",
+      "what": "Accepted shared Environment Preview foundation. Public Stage and Georg PASS_WITH_TUNE are complete; consume the proven WORLD_MATCH / SOURCE_ISOLATION presentation in bounded World/ToolBox work instead of reopening this job.",
+      "result": "Existing accepted adapter remains the shared preview foundation; follow-up camera/actor/rendering/lighting observations are separate owner slices.",
       "promptSection": "ENV-PREVIEW-01 · Shared KFB Environment Preview Host",
       "sourceSet": "worldEnvironmentPresentation",
       "cloudflareRequired": false,
@@ -2140,7 +2147,10 @@
       "reasoning": "medium",
       "budget": "STANDARD",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "waitingFor": "COMPLETE · accepted foundation; do not rerun. Consume from next bounded owner slice.",
+      "sourceHead": "88c64c29075f31d655f4777437bb1aa82069df17",
+      "operationalStatus": "COMPLETE_PASS_WITH_TUNE"
     },
     {
       "id": "world-env-consolidate-01",
@@ -2252,15 +2262,15 @@
   "presentation": {
     "defaultView": "strands",
     "jobCardsCollapsed": true,
-    "todayShows": "current READY/REVIEW only; complete roadmap expands per strand",
+    "todayShows": "operational Today lanes from HUB-CTRL; self-service READY excludes completed/accepted foundations",
     "rule": "Do not render all jobs as one default wall.",
     "priorityRule": "Today/default priority view should not surface P2 READY work while P0/P1 product work exists; P2 remains available inside its parent strand."
   },
   "metrics": {
     "strands": 13,
     "jobs": 96,
-    "ready": 44,
-    "hold": 52
+    "ready": 42,
+    "hold": 54
   },
   "executionProfiles": {
     "WEB_FAST": {
