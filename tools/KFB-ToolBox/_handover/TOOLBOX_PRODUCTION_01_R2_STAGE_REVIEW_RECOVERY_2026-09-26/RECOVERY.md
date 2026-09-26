@@ -1,7 +1,7 @@
 # RECOVERY · ToolBox Production-01 r2 Stage Review Recovery
 
 Date: 2026-09-26  
-Status: **CI PASS · PUBLIC STAGE NEXT**
+Status: **PUBLIC STAGE VERIFIED · HUMAN REVIEW OPEN**
 
 ## Read order
 
@@ -32,10 +32,10 @@ The frozen predecessor PR #220 stays untouched.
 
 ## Exactly one next gate
 
-Publish this exact Stage package plus its direct KFB Hub review link to the lean `cloudflare-live` mirror, wait for the Cloudflare deployment, then open:
+Open:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/production-01-r2/`
 
-Do not call it live/public-verified until the expected recovery build marker is visibly present. Human decision remains Georg: PASS / TUNE / REJECT.
+The expected recovery marker, direct ToolBox link, live Registry entry and rendered Hub link were publicly verified at **20/20 PASS**, with 0 page/request failures. Human decision remains Georg: PASS / TUNE / REJECT.
 
 No merge and no Live promotion.
