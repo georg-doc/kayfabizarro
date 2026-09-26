@@ -1,0 +1,138 @@
+name: KFB Hub Status Sync
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/kfb-hub-status-sync.yml"
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: kfb-hub-status-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Resolve current HUB-CTRL source
+        id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ref="$(gh api repos/${{ github.repository }}/pulls/202 --jq .head.ref)"
+          sha="$(gh api repos/${{ github.repository }}/pulls/202 --jq .head.sha)"
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+      - name: Overlay Production Desk source from HUB-CTRL
+        env:
+          HUB_REF: ${{ steps.source.outputs.ref }}
+        run: |
+          set -euo pipefail
+          git fetch --depth 1 origin "$HUB_REF"
+          git checkout FETCH_HEAD -- tools/production_desk
+
+      - name: Seed current registry fixture
+        run: |
+          set -euo pipefail
+          git fetch --depth 1 origin bot/production-desk-update
+          git checkout FETCH_HEAD -- registry/production/v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Builder tests
+        run: python3 -m unittest discover -s tools/production_desk/tests -v
+
+      - name: Build live registry from current GitHub state
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/production_desk/build.py --online \
+            --source-commit "${{ steps.source.outputs.sha }}" \
+            --source-ref "${{ steps.source.outputs.ref }}" \
+            --out registry/production/v1
+
+      - name: Validate registry
+        run: python3 tools/production_desk/build.py --validate registry/production/v1
+
+      - name: Decide publish
+        id: decide
+        env:
+          BOT_BRANCH: bot/production-desk-update
+        run: |
+          set -euo pipefail
+          old=""
+          if git fetch --depth 1 origin "$BOT_BRANCH" 2>/dev/null; then
+            old="$(git show FETCH_HEAD:registry/production/v1/manifest.json 2>/dev/null || true)"
+          fi
+          OLD="$old" python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt, json, os
+          new = json.load(open("registry/production/v1/manifest.json", encoding="utf-8"))
+          cfg = json.load(open("tools/production_desk/config.json", encoding="utf-8"))
+          raw = os.environ.get("OLD", "").strip()
+          if not raw:
+              print("publish=true"); print("reason=first-publish"); raise SystemExit
+          old = json.loads(raw)
+          if old.get("contentHash") != new.get("contentHash"):
+              print("publish=true"); print("reason=content-changed"); raise SystemExit
+          checked = dt.datetime.fromisoformat(old["checkedAt"].replace("Z", "+00:00"))
+          age_h = (dt.datetime.now(dt.timezone.utc) - checked).total_seconds() / 3600
+          if age_h >= cfg.get("heartbeatHours", 1):
+              print("publish=true"); print("reason=heartbeat")
+          else:
+              print("publish=false"); print("reason=unchanged")
+          PY
+
+      - name: Publish registry to bot branch
+        if: github.event_name != 'pull_request' && steps.decide.outputs.publish == 'true'
+        env:
+          BOT_BRANCH: bot/production-desk-update
+          REASON: ${{ steps.decide.outputs.reason }}
+        run: |
+          set -euo pipefail
+          tmpdir="$(mktemp -d)"
+          mkdir -p "$tmpdir/registry/production"
+          cp -a registry/production/v1 "$tmpdir/registry/production/v1"
+
+          git reset --hard HEAD
+          git clean -fd -- tools/production_desk registry/production/v1
+
+          if git fetch --depth 1 origin "$BOT_BRANCH" 2>/dev/null; then
+            git switch -C "$BOT_BRANCH" FETCH_HEAD
+          else
+            git switch -C "$BOT_BRANCH"
+          fi
+
+          rm -rf registry/production/v1
+          mkdir -p registry/production
+          cp -a "$tmpdir/registry/production/v1" registry/production/v1
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/production/v1
+          if git diff --cached --quiet; then
+            echo "No registry delta to publish."
+            exit 0
+          fi
+          git commit -m "chore: refresh KFB Hub registry ($REASON)"
+          git push origin "HEAD:$BOT_BRANCH"
+
+      - name: Summary
+        run: |
+          echo "HUB-CTRL source: ${{ steps.source.outputs.ref }} @ ${{ steps.source.outputs.sha }}"
+          echo "Publish decision: ${{ steps.decide.outputs.publish }} (${{ steps.decide.outputs.reason }})"
