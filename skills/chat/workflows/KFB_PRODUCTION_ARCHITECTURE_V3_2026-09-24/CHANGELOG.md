@@ -1,3 +1,14 @@
+## 2026-09-26 · Card Zone / Biome / Environment recovery
+
+- Recovered the aborted Card-Zone / biome / procedural-environment research into `CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`.
+- Corrected the superseded owner statement: current WorldBuilder continuous terrain is the host; Travel/TinySkies are pinned donors, not macro-world truth.
+- Recovered and separated `terrainDomain`, `ecologyProfile`, `zoneTheme`, `storyMode/register` and `worldMood` instead of treating historical “biome” vocabularies as one switch.
+- Direct TinySkies source check records mixed placement methods: broad tree noise filtering, coastal clusters and Fibonacci/separation for selected landmarks.
+- Preserved later KFB distribution learning: procedural/instanced Nature, spacing/exclusion, local `nachruecken`, semantic landmark predicates and sparse curated accents.
+- Recovered Card semantic-vector / three-card seed rules, Rule-of-Three Anchor/Support/Accent, OSM→cartoon seam and P31 Track-first / terrain-supports-it corridor contract.
+- Validation: **15/15 PASS**; architecture catalog remains **96 jobs**; no runtime / Stage / Cloudflare / Live change.
+- Existing global next gate remains **ENV-PREVIEW-01**.
+
 ## 2026-09-26 · External Demo Research Radar · Pass 2 G–L
 
 - Completed A–L broad external research in `EXTERNAL_DEMO_RESEARCH_RADAR_2026-09-26.md`.
