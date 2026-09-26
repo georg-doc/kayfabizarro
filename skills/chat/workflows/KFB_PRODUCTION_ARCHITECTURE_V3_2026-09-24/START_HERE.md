@@ -1,3 +1,19 @@
+## CURRENT ADDITIVE RECOVERY · CARD ZONE / BIOME / ENVIRONMENT · 2026-09-26
+
+Read:
+`CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`
+
+**Owner correction:** current WorldBuilder continuous terrain is the host. Travel/TinySkies remain source-pinned mechanism/presentation donors; do not restore the superseded “Travel = macro-world truth” wording.
+
+The recovery separates:
+`terrainDomain · ecologyProfile · zoneTheme · storyMode/register · worldMood`,
+pins TinySkies/KFB Nature distribution evidence, restores the Card semantic/seed rules, and connects the same host terrain to OSM, Race corridors and Card Zones.
+
+Recovery validation: **15/15 PASS**. No new production job or runtime/Stage/Live change.  
+Current global gate remains **ENV-PREVIEW-01**; the first environment-specific follow-on is the owner-corrected `WORLD-ENV-CONSOLIDATE-01`.
+
+---
+
 ## CURRENT ADDITIVE RESEARCH · 2026-09-26
 
 External Reddit/GitHub/demo research is routed through:
