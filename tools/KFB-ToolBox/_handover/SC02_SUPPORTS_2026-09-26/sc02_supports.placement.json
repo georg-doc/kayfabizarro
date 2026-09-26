@@ -2,7 +2,7 @@
  "schema": "kfb.scenery-shell.v0",
  "id": "sc02-supports",
  "status": "CANDIDATE · scenery only",
- "donor": "RKIT-03 rkit3_lib.build_support_v2 (unchanged)",
+ "family": "SC-LIB/sc_support.py (SC02b redesign, Georg PASS 26.09); donor rkit3_lib unchanged (organic_shaft/rounded_box reused)",
  "socket": {
   "frame": "route frame at s (heading + bank, grade)",
   "attach": "soffit = road surface - 2.25 m (RKIT body; later from core profile)",
@@ -144,18 +144,15 @@
      -0.86
     ],
     "foot_ok": true,
-    "donor_profile_folds_hidden_info": [
-     86.0,
-     98.0,
-     360.0
-    ],
+    "profile_folds": [],
+    "shaft_vertices_above_plate_top": 0,
     "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 626
+   "glb_kb": 791
   },
   "trunk": {
    "checks": {
@@ -172,18 +169,15 @@
      0.0
     ],
     "foot_ok": true,
-    "donor_profile_folds_hidden_info": [
-     86.0,
-     98.0,
-     360.0
-    ],
+    "profile_folds": [],
+    "shaft_vertices_above_plate_top": 0,
     "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
    "supports": 22,
    "objects": 44,
    "style_relocations": [],
-   "glb_kb": 1807
+   "glb_kb": 1722
   },
   "vine": {
    "checks": {
@@ -200,11 +194,8 @@
      0.0
     ],
     "foot_ok": true,
-    "donor_profile_folds_hidden_info": [
-     86.0,
-     98.0,
-     360.0
-    ],
+    "profile_folds": [],
+    "shaft_vertices_above_plate_top": 0,
     "footing_skirt_above_ground_max_m": null,
     "PASS": true
    },
@@ -217,7 +208,7 @@
      "s_to": 241.0
     }
    ],
-   "glb_kb": 1829
+   "glb_kb": 1716
   },
   "rope": {
    "checks": {
@@ -234,18 +225,15 @@
      -0.86
     ],
     "foot_ok": true,
-    "donor_profile_folds_hidden_info": [
-     86.0,
-     98.0,
-     360.0
-    ],
+    "profile_folds": [],
+    "shaft_vertices_above_plate_top": 0,
     "footing_skirt_above_ground_max_m": -0.05,
     "PASS": true
    },
    "supports": 22,
    "objects": 66,
    "style_relocations": [],
-   "glb_kb": 1881
+   "glb_kb": 1835
   }
  }
 }
