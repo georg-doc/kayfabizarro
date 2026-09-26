@@ -1,0 +1,50 @@
+name: ClayBound World C1 proof
+
+on:
+  push:
+    branches:
+      - work/claybound-world-c1-2026-09-26
+    paths:
+      - 'kfb-hub/stage/world/claybound-c1/**'
+      - 'tools/KFB-ToolBox/worldbuilder/presentation/claybound-presentation.v1.js'
+      - '.github/workflows/claybound-world-c1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package and syntax
+        run: |
+          node kfb-hub/stage/world/claybound-c1/package-proof.mjs
+          node --check kfb-hub/stage/world/claybound-c1/runtime/worldbuilder/presentation/claybound-presentation.v1.js
+          node --check kfb-hub/stage/world/claybound-c1/browser-proof.mjs
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local HTTP preview
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/kfb-claybound-c1-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/world/claybound-c1/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-claybound-c1-http.log
+          exit 1
+      - name: Desktop and narrow A/B browser gate
+        run: node kfb-hub/stage/world/claybound-c1/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: claybound-c1-evidence
+          path: claybound-c1-proof
+          retention-days: 14
