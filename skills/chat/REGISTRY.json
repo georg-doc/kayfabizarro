@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -433,6 +433,39 @@
       "note": "DocCheck SimBlood SSOT. Typed cell pools + deterministic Field Composer + Microscope Engine + Workflow Engine. Parallel SVG morphology renderer R&D reuses the same typed-cell/recipe/seed truth; it does not replace the true-alpha extraction lane. Documentation/recovery updates are maintained directly on main unless a risky implementation slice explicitly needs a branch.",
       "svgMorphologyBrief": "https://github.com/georg-doc/doccheck/blob/main/sim-blood/_handover/BRIEF_CLAUDE_DESIGN_SVG_MORPHOLOGY_FINE_TUNING_v0.1.md",
       "svgMorphologyStatus": "PARALLEL_RND_CLAUDE_DESIGN_BRIEF_READY"
+    },
+    {
+      "id": "knet-medizin",
+      "kind": "project",
+      "status": "CURRENT_REFERENCE",
+      "repository": "georg-doc/doccheck",
+      "path": "Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/",
+      "startHere": "https://github.com/georg-doc/doccheck/blob/main/Knet-Medizin%20Konzept/doccheck-slice/Knet-Medizin/START_HERE.md",
+      "currentMainHead": "087376ebed9f81fb3b0ad736535e218f34d2f806",
+      "activeCandidateBranch": "chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27",
+      "activeCandidatePR": "https://github.com/georg-doc/doccheck/pull/8",
+      "candidateBrief": "https://github.com/georg-doc/doccheck/blob/chatgpt-web/knet-medizin-cell-forge-m1-2026-09-27/Knet-Medizin%20Konzept/doccheck-slice/Knet-Medizin/_handover/BRIEF_CLAUDE_DESIGN_CELL_FORGE_M1_2026-09-27.md",
+      "plannedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/doccheck/knet-medizin-cell-forge-m1/",
+      "stageStatus": "NOT_DEPLOYED",
+      "loadWhen": [
+        "Knet-Medizin",
+        "DocCheck clay medical microlearning",
+        "Cell Forge",
+        "Leukozyten-Werkstatt",
+        "medical claymation minigame"
+      ],
+      "owns": [
+        "Knet-Medizin interaction and presentation candidate",
+        "16:9 article-embed microlearning loop"
+      ],
+      "doesNotOwn": [
+        "SimBlood morphology Ground Truth",
+        "SimBlood true-alpha extraction PR #7",
+        "KFB Asset Registry or Librarian",
+        "global KFB game runtime",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "Main contains the M0 medical-clay proof and Concept v1. Draft PR #8 prepares the bounded M1-N segmented-neutrophil Cell Forge brief: Build → Smear → Verify → Repair. The candidate consumes SimBlood morphology truth and KFB/ClayBound donors; it is not deployed or human-accepted."
     },
     {
       "id": "2d-animation-studio",
