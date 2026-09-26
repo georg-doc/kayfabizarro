@@ -1,3 +1,14 @@
+## 2026-09-26 · Elisa 18 Claymation Birthday Film v1 · preproduction
+
+- Added a new read-only cinematic-consumer workflow under `skills/chat/workflows/KFB_ELISA_18_CLAYMATION_FILM_V1_2026-09-26/`.
+- Preserved the current ToolBox Stage-First override: the earlier Birthday 2026 runtime remains archived and is not reactivated.
+- Recovered current donors for FrizzleBob Driver Graft/EarRig, GothGirl/Rig_Medium, ClayBound, Tiny Treats, KayKit RPGTools map/blueprint, Dungeon, DemonHeart, Registry vehicles, OSM/KFB Ink/Grotesque, S39 band/S40 disco and the accepted Audio baseline.
+- Corrected the requested key source: inspected KayKit RPGToolsBits has real map/blueprint/compass/tool models but no literal key in the inspected tree; the literal unlock key is the verified Platformer Game Kit gold `Key.gltf`.
+- Added a 55-second shot plan and execution prompt with a USD 10 hard OpenRouter cap, source-isolation rule and privacy-safe symbolic PayPal/banking beat.
+- Preproduction checks: 3/3 workflow docs read, 12/12 donor categories source-located, 5/5 direct source spot-checks PASS. Inherited public evidence is documented separately and was not rerun.
+- Reserved Stage family `https://kayfabizarro.pages.dev/kfb-hub/stage/story/elisa-18-claymation-film-v1/`; no Stage/live claim.
+- One next gate: **ELISA-FILM-G0 · source isolation + FrizzleBob/GothGirl rig/look proof.**
+
 ## 2026-09-20 · KCC-1A FrizzleBob Race secondary-motion facts
 
 ### SUPERSEDES · PUBLICATION STATUS ONLY
