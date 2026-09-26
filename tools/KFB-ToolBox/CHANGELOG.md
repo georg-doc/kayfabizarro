@@ -115,3 +115,15 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+
+
+## 2026-09-26 · Production-02 intake recovery
+
+### SOURCE CHECKPOINT · NOT INTEGRATED
+The Claude Design Session Cut at `_inbox/KFB ToolBox Production-01-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r1/` is now explicitly recoverable through `_handover/TOOLBOX_PRODUCTION_02_INTAKE_RECOVERY_2026-09-26/START_HERE.md`.
+
+GitHub and Dropbox match by exact name/type/file-size for the checked scopes: **19/19 top-level · 7/7 kfb-lib · 6/6 evidence · 2/2 docs · 1/1 blender**. Dropbox also retains `/CLAUDE/KFB ToolBox Production-01-2.zip` (436462 bytes).
+
+The export reports **27/27 Claude preview self-test PASS**, but receiving-owner integration, clean HTTP run, repository zipcheck, Cloudflare publication and Georg human acceptance remain **NOT RUN**. PR #185 remains the ToolBox receiving owner; none of the proposed Production-02 entry/new modules were present at observed owner head `10a83a63acd76d29f6867d15640f7861efc57b00`.
+
+Next gate: **FACE-VIS-01 / intake review**. No runtime promotion or Stage route from this recovery checkpoint.
