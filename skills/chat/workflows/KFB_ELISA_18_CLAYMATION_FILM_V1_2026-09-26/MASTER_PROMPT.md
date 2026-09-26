@@ -12,7 +12,7 @@ The visual target is **KFB claymation + handmade paper art / collage**, using th
 
 This is not a generic “hand-drawn collage” recreation and not a new KFB runtime. It is a **cinematic consumer** of existing owners.
 
-Work autonomously through the bounded slice, but do not merge or promote Live. Stop at the named human gate.
+Work autonomously end-to-end through the finished candidate. Do not merge or promote Live. Do not stop for routine human micro-gates; the first intended human review is the finished candidate unless a hard blocker or the two-repair stop rule is reached.
 
 ## READ FIRST — REQUIRED
 
@@ -27,6 +27,8 @@ Repository: `georg-doc/kayfabizarro`
 7. `skills/chat/workflows/KFB_ELISA_18_CLAYMATION_FILM_V1_2026-09-26/START_HERE.md`
 8. `SOURCE_MANIFEST.md`
 9. `SHOT_PLAN.md`
+10. `tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/START_HERE.md`
+11. `tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/INPUT_MANIFEST.md`
 
 Do not revive the archived Birthday 2026 runtime. Old Elisa Birthday mockups and old G0 Birthday Hero may be used only as visual/provenance donors.
 
@@ -35,7 +37,7 @@ Do not revive the archived Birthday 2026 runtime. Old Elisa Birthday mockups and
 Owner:
 **KFB cinematic consumer · Elisa 18 film composition only**
 
-Suggested implementation branch after G0 approval:
+Suggested autonomous execution branch:
 `stage/elisa-18-claymation-film-v1-2026-09-26`
 
 Reserved Stage family:
@@ -43,27 +45,24 @@ Reserved Stage family:
 
 Do not call it live until the exact Cloudflare URL has been opened and the expected revision is visibly present.
 
-## FIRST GATE — DO THIS BEFORE THE FULL FILM
+## INTERNAL PREFLIGHT — G0 IS NOT A HUMAN STOP
 
-Build **ELISA-FILM-G0** first: a compact source-isolation / rig / look proof.
+Before integrated production, build **ELISA-FILM-G0** as a compact source-isolation / rig / look proof.
 
 Show, individually and source-labelled:
 
-1. current FrizzleBob Driver Graft + current EarRig/face owner;
+1. frozen FrizzleBob Studio input + current Driver Graft / EarRig / face owner chain;
 2. current GothGirl GLB with current source-face cleanup / EyeRig and one Rig_Medium clip;
 3. one Tiny Treats Bakery/Baked Goods/Charming Kitchen composition;
 4. real KayKit RPGTools map/blueprint;
 5. verified gold `Platformer Game Kit .../Key.gltf`;
 6. exact `DemonHeart.gltf`;
 7. 2–3 vehicle candidates loaded from the current pinned Registry vehicle list;
-8. current clay material versus the new ClayBound candidate only if `CLAY-ASSET-01` is already human accepted.
+8. current clay material versus the new ClayBound candidate only where current canon permits it.
 
 A loaded asset URL is not evidence by itself. Render the source object in isolation.
 
-**G0 human question:**  
-“Do these exact donors already feel like one KFB clay/paper birthday film before the full 55 seconds are animated?”
-
-If G0 is not accepted, preserve the candidate and stop. Do not polish downstream shots around the wrong sources.
+G0 is reviewed by the independent Critic, repaired if necessary, and then production continues automatically. Do not stop for Georg unless a hard source/runtime blocker cannot be resolved or two repair passes on the same gate fail.
 
 ## TECHNICAL FORMAT
 
@@ -81,7 +80,15 @@ If G0 is not accepted, preserve the candidate and stop. Do not polish downstream
 ## SOURCE OWNERS — DO NOT REPLACE
 
 ### FrizzleBob
-Use current ToolBox / FrankenStein:
+
+Required run-frozen Studio profile:
+`tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/profiles/frizzlebob.georg-2026-09-26.json`
+
+If it is absent or invalid, stop with that exact blocker. Do not substitute an older profile.
+
+The one-shot profile is a film input, not an automatic promotion of global FrizzleBob canon.
+
+Use it with current ToolBox / FrankenStein:
 - `kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js`
 - current graft contract
 - current face / EyeRig / PetMouth chain
@@ -159,6 +166,22 @@ Reuse:
 - current Orc/Warband performance sources.
 
 Do not create a duplicate music transport.
+
+## PRODUCTION QUALITY BENCHMARK
+
+Aim for the care, tactile richness, staging clarity, camera discipline and animation polish associated with top-tier handcrafted studio stop-motion.
+
+Use that as a quality benchmark, not as a copying instruction. Do not reproduce specific Wallace & Gromit / Aardman character designs, scenes, proprietary assets or signature compositions.
+
+Required qualities:
+- tactile handcrafted surfaces;
+- readable silhouettes and poses;
+- precise shot staging;
+- expressive but controlled acting;
+- intentional 3D camera moves;
+- transitions motivated by physical paper/clay transformations;
+- clean contact, lighting and compositing;
+- coherent art direction across all shots.
 
 ## CLAYMATION LOOK
 
@@ -353,6 +376,39 @@ OpenRouter:
 - stop before the cap;
 - do not use paid generations where project/local assets already solve the problem.
 
+## INDEPENDENT QA / SILENT REPAIR
+
+Use explicit role separation.
+
+### Production Agent
+Builds the candidate and records source/runtime evidence.
+
+### External Critic Agent
+Must be a separate agent/model/context where the environment supports it. It must not simply rationalize the Production Agent's choices and may not accept unsupported claims.
+
+It checks at least:
+- exact source fidelity and no silent substitutes;
+- FrizzleBob/GothGirl rig integrity and one-mixer ownership;
+- clay material quality and preservation of authored identity;
+- paper/collage physicality and integration;
+- character posing, timing, anticipation/impact/follow-through;
+- camera framing, depth, intentional movement and continuity;
+- transition design;
+- lighting/contact shadows/compositing;
+- story readability and birthday-message clarity;
+- TTS/audio balance and Foley;
+- asset/runtime/capture errors;
+- final coherence as one short film rather than an asset demo.
+
+### Repair Agent
+Receives only failed criteria, repairs those while preserving passing work, and returns the candidate to the Critic.
+
+Run Critic → targeted repair → Critic silently.
+
+Maximum: **two failed repair passes on the same gate/problem**. After that, preserve the candidate and create the standard KFB failure-recovery export instead of attempting a third repair.
+
+A QA pass must be evidence-backed; the Production Agent cannot self-certify.
+
 ## QUALITY BAR
 
 This should look like a small finished short film, not an asset viewer.
@@ -390,30 +446,37 @@ Do not introduce:
 - generic AI jokes;
 - placeholder models when an exact source is named.
 
-## EVIDENCE / CHECKPOINTS
+## INTERNAL CHECKPOINTS / EVIDENCE
 
-Checkpoint 1 — **G0 source proof**
+Checkpoint 1 — **G0 source proof · internal**
 - exact donors;
 - source isolation;
 - FrizzleBob/GothGirl rig proof;
 - clay/paper look;
 - vehicle shortlist;
 - screenshot strip;
-- browser/source tests.
+- browser/source tests;
+- independent Critic result.
+- continue automatically after PASS.
 
-Checkpoint 2 — **55 s animatic**
-- grey/material-light but complete timing;
+Checkpoint 2 — **55 s animatic · internal**
+- complete timing;
 - TTS timing;
 - all transitions;
-- no final polish;
-- exact total duration.
+- camera plan;
+- no final polish required;
+- exact total duration;
+- Critic checks story/readability/timing before polish;
+- continue automatically after PASS.
 
-Checkpoint 3 — **final candidate**
+Checkpoint 3 — **final candidate · human-review target**
 - clay/paper materials;
 - lighting;
+- animation/camera/transitions;
 - Foley/audio mix;
 - final render/capture;
-- no asset/load errors.
+- no asset/load errors;
+- final independent Critic PASS.
 
 After every GitHub write:
 - fetch exact branch head;
@@ -447,18 +510,29 @@ Do not claim “live” until the exact public route visibly shows the intended 
 
 ## STOP CONDITION
 
-For the immediate next slice, stop after **ELISA-FILM-G0** is source/browser proven and ready for Georg's visual decision.
+The normal stop condition is **a finished ~55-second candidate with independent Critic PASS**, ready for Georg's first human review.
 
-Do not build the complete 55-second film before that human gate.
+Do not stop at G0 or the animatic when their issues are autonomously repairable.
+
+Stop early only if:
+- the required frozen FrizzleBob JSON is missing/invalid;
+- a named source/owner cannot be resolved without inventing a substitute;
+- a required runtime/capture capability is unavailable and no repository-native path exists;
+- the hard model-spend cap would be exceeded;
+- or two repair passes on the same failed gate/problem have not produced progress.
+
+On early stop, preserve the candidate and make the full failure-recovery export.
 
 Return:
+- final candidate or preserved failed candidate;
 - exact repo;
 - branch;
 - PR;
 - head;
 - changed files;
-- source/test counts;
-- screenshot/browser proof;
-- direct Stage URL if actually published;
+- actual source/test/QA counts;
+- screenshots/browser/capture proof;
+- direct Cloudflare Stage URL only if actually published and revision-proven;
 - unresolved items;
-- exactly one next gate.
+- reusable pipeline findings;
+- exactly one next gate after human review.
