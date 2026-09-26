@@ -448,6 +448,25 @@
         "ref": "chatgpt-web/npc-life-01-2026-09-24",
         "pasteReady": false
       }
+    },
+    {
+      "id": "claybound-materials",
+      "bucket": "CAN_START",
+      "title": "ClayBound · Production Assets",
+      "what": "Build the KFB clay / handmade material library sequentially: approved seamless textures first, then Blender material proof, stronger seam QA and secondary craft assets.",
+      "provider": "KFB Clay Asset Studio + Blender MCP",
+      "yourAction": "Start Asset 1: Smooth matte clay seamless texture; review source + 3×3 repeat before Asset 2.",
+      "waitingFor": "",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "branch": "main",
+      "expectedHead": "d2a7e7c7cb00ed1b2e71a0f5c8dc3eb22b728d3c",
+      "brief": {
+        "label": "ClayBound Material Production",
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "pasteReady": false
+      }
     }
   ],
   "wsa": {
