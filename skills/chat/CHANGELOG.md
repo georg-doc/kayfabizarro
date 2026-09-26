@@ -1,3 +1,14 @@
+## 2026-09-26 · Elisa 18 Claymation Birthday Film v1 · autonomous one-shot revision
+
+- Replaced the earlier human-stop G0 flow with an **internal source/rig/look preflight**; first intended human review is now the finished ~55 s candidate.
+- Added frozen-input handover at `tools/KFB-ToolBox/_handover/ELISA_18_CLAYMATION_ONESHOT_2026-09-26/`; Georg's required export path is `profiles/frizzlebob.georg-2026-09-26.json`.
+- Added compact and ultra-short WSA launchers for a single end-to-end run rather than routine micro-slices.
+- Added explicit Production Agent → independent External Critic → targeted Repair Agent separation; the Production Agent may not self-certify.
+- Preserved the global KFB stop rule: after two failed repair passes on the same gate/problem, freeze/export failure recovery instead of a third repair.
+- Added top-tier handcrafted stop-motion quality benchmark for tactile clay, staging, 3D camera, transitions, lighting and compositing without copying specific Wallace & Gromit/Aardman designs or scenes.
+- Static one-shot contract QA: **10 / 10 PASS**. No runtime film, Critic execution, video capture or Cloudflare Stage is claimed by this documentation revision.
+- No source owner, archived Birthday runtime, auto-merge or Live promotion was introduced.
+
 ## 2026-09-26 · Elisa 18 Claymation Birthday Film v1 · preproduction
 
 - Added a new read-only cinematic-consumer workflow under `skills/chat/workflows/KFB_ELISA_18_CLAYMATION_FILM_V1_2026-09-26/`.
