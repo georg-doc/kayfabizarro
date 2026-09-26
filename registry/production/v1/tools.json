@@ -7,50 +7,6 @@
   },
   "tools": [
     {
-      "group": "Figuren und Gesichter",
-      "id": "eyerig-batch",
-      "title": "EyeRig-Werkbank",
-      "what": "Augen für Rig_Medium- und Rig_Large-Figuren einstellen und prüfen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/eye-rig-batch/index.html",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
-      "available": true,
-      "blob": "4991cf82404903f4b5aa752c5ab2ce092e73f957"
-    },
-    {
-      "group": "Figuren und Gesichter",
-      "id": "eyerig-legacy",
-      "title": "Legacy-Augen 17/17",
-      "what": "Die 17 Legacy-Köpfe von vorne und schräg ansehen und Augen freigeben.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/eye-rig-batch/legacy/index.html",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
-      "available": true,
-      "blob": "87d6fb5a5820e1de2394a823ea0350710194efb0"
-    },
-    {
-      "group": "Figuren und Gesichter",
-      "id": "motion-lab",
-      "title": "KayKit Motion Lab",
-      "what": "Bewegungen für KayKit-Figuren ansehen und abstimmen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/kaykit-motion-lab-v1/index.html",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/",
-      "available": true,
-      "blob": "38dfb46c3388cf7481ad51a485505c8faa555024"
-    },
-    {
-      "group": "Figuren und Gesichter",
-      "id": "ranged-calibration",
-      "title": "Fernkampf-Kalibrierung",
-      "what": "Angenommene Grundeinstellung für Schusswaffen an KayKit-Figuren.",
-      "status": "Fertig",
-      "path": "kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/index.html",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-ranged-calibration-v1/",
-      "available": true,
-      "blob": "3bd9e5f2f03516bc19778d3bbe7fbb119de0c71e"
-    },
-    {
       "group": "Welt und Gelände",
       "id": "world-atlas",
       "title": "World / Environment Atlas",
@@ -74,25 +30,14 @@
     },
     {
       "group": "Welt und Gelände",
-      "id": "world-builder-p2",
-      "title": "WorldBuilder · flach, Kugel, Ring (P2)",
-      "what": "Dieselbe Mini-Szene auf drei Weltformen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/world-building-preflight/index.html",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/world-building-preflight/",
+      "id": "environment-preview-01",
+      "title": "Umgebungs-Vorschau",
+      "what": "World Match und neutrale Source-Ansicht direkt in Residents und ToolBox vergleichen.",
+      "status": "Prüfen",
+      "path": "kfb-hub/stage/toolbox/environment-preview-01/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/",
       "available": true,
-      "blob": "87b85fb96a9a63918ff8a917eb9cb9e0718f397e"
-    },
-    {
-      "group": "Welt und Gelände",
-      "id": "tileable-seam",
-      "title": "Nahtlose Wandtextur",
-      "what": "Alte wiederholte Textur gegen nahtlose Variante an der Wandnaht vergleichen.",
-      "status": "Zum Prüfen",
-      "path": "kfb-hub/stage/toolbox/tileable-macro-seam-lab/index.html",
-      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/tileable-macro-seam-lab/",
-      "available": true,
-      "blob": "8afd4c4f595c8d461a4d71c9d2c3f745e53fe966"
+      "blob": "de48c4b626e9b8850ba4859e2ee1fe23d3d97161"
     },
     {
       "group": "Assets und Bausteine",
@@ -108,9 +53,9 @@
     {
       "group": "Assets und Bausteine",
       "id": "card-zone-lab",
-      "title": "Card Zone Lab",
-      "what": "Karten-Effekte: Flüssigkeit, Kartenstapel, Himmelsstrahlen, Kartenwürfel.",
-      "status": "Zum Prüfen",
+      "title": "Card Zone Lab v2 · Recovery-Referenz",
+      "what": "Alte, visuell brauchbare Card-Zone-v2-Recovery. Donor für Fluid, Stack/Reveal, Beam und Card Cube — kein aktuelles Produktionswerkzeug.",
+      "status": "Referenz / Donor",
       "path": "kfb-hub/stage/toolbox/card-zone-lab-v2-source/index.html",
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/card-zone-lab-v2-source/",
       "available": true,
@@ -150,6 +95,17 @@
       "blob": "e1c37a2b50f1b1741c96fe3a67c1367fbd3d834b"
     },
     {
+      "group": "Figuren und Animation",
+      "id": "music-performance",
+      "title": "Music Performance · KayfaBizarros",
+      "what": "Timeline/Audio-Donor. Sichtbare Gitarren-/Trommelanimation ist TUNE; kanonische Performance-Quelle ist die neuere S39 Resident Band ohne Baseplate.",
+      "status": "TUNE / Donor",
+      "path": "kfb-hub/stage/toolbox/music-performance/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/music-performance/",
+      "available": true,
+      "blob": "83610447de444b053d8a5463c18ea470c3e13b49"
+    },
+    {
       "group": "Spielen",
       "id": "stage",
       "title": "Alle Bühnen",
@@ -158,7 +114,18 @@
       "path": "kfb-hub/stage/index.html",
       "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/",
       "available": true,
-      "blob": "e9a41c93ae1575bb5d3c020a45f86a7a28d08933"
+      "blob": "389148460e767f9d315865fcb80bb71b115e5db7"
+    },
+    {
+      "group": "Figuren und Animation",
+      "id": "toolbox-home",
+      "title": "KFB ToolBox",
+      "what": "Aktuelle öffentliche ToolBox-Frontpage mit echten Routen, Source-Gates und Produktions-Briefings.",
+      "status": "Übersicht",
+      "path": "kfb-hub/stage/toolbox/index.html",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+      "available": true,
+      "blob": "0079171ebaa7cfd7bb6389b0e4db2d93f2fccf89"
     }
   ],
   "archive": [
@@ -177,6 +144,14 @@
     {
       "label": "Alle Briefings auf GitHub",
       "url": "https://github.com/georg-doc/kayfabizarro/tree/main/skills/chat",
+      "available": true
+    },
+    {
+      "id": "graveyard-prototype",
+      "label": "Graveyard prototype · concept / lighting donor only",
+      "path": "kfb-hub/pruefen/graveyard/index.html",
+      "note": "Early dysfunctional movement/placement prototype. Retain only spatial-postmortem concept + grave-light flicker/lighting donor.",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/graveyard/",
       "available": true
     }
   ]
