@@ -1,3 +1,32 @@
+## 2026-09-26 · Card Zone / Biome / Environment recovery validation
+
+Status: **15/15 PASS · docs/source recovery only · runtime tests N/A**
+
+Validated against current GitHub sources:
+
+- recovery memo exists on the PR branch;
+- obsolete “Travel/TinySkies = macro-world owner” wording is explicitly corrected to the current WorldBuilder continuous-terrain owner;
+- current main WorldBuilder source independently confirms Travel Globe is out as the world base;
+- `terrainDomain / ecologyProfile / zoneTheme / worldMood` are separate axes;
+- six Card-Zone narrative/material themes are source-backed;
+- existing CardTriplet weights `0.60 / 0.28 / 0.12` are source-backed;
+- TinySkies source distinction is recorded: broad forest noise filter vs coastal clusters vs Fibonacci/separation landmark placement;
+- later KFB `nachruecken` / spacing / exclusion learning is preserved;
+- Rule-of-Three is clamped to composition policy, not “three meshes everywhere”;
+- OSM factual-footprint → cartoon grammar seam is present;
+- Track-first / terrain-supports-it corridor seam is present;
+- future acceptance matrix covers determinism, height truth, OSM/Track exclusions, Card-Zone seam, spacing, clustering, source identity and instancing;
+- architecture catalog remains **96 briefings**;
+- existing IDs remain present: `ENV-PREVIEW-01`, `WORLD-ENV-CONSOLIDATE-01`, `WORLD-BIOME-MOOD-01`, `WORLD-NATURE-01`, `WORLD-RECIPE-01`, `CZ-ENV-01`;
+- no new production job, runtime file, Stage route or Live surface was created.
+
+Recovery memo:
+`CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`
+
+Runtime/browser test count: **N/A — runtime changed = 0 files**.
+
+---
+
 ## WB-D2 / Resident S40 intake catalogue validation · 2026-09-25
 
 Scope: architecture/catalogue registration only; no runtime/browser/public PASS.
