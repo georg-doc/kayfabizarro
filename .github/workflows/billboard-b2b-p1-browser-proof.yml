@@ -172,8 +172,8 @@ jobs:
 
             // Switching away must stop dynamic work.
             const beforeExit=lived.collage?.ticks;
-            const q2=await waitMode('quarter');
-            const afterExit=q2.collage?.ticks;
+            const exitMode=await waitMode('slogan');
+            const afterExit=exitMode.collage?.ticks;
             await page.waitForTimeout(1200);
             const stopped=await page.evaluate(()=>window.__b2b.snapshot());
             report.states.afterExit=stopped;
