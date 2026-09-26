@@ -1,0 +1,77 @@
+{
+  "schema": "kfb.disco-ball-core/1",
+  "id": "disco-ball-core-01",
+  "title": "DISCO-BALL-CORE-01 · reusable disco ball",
+  "status": "candidate-only · RES-DISCO-CD-01",
+  "productRole": "reusable in-game core object, analogous in role (not in look) to Theatre Curtain Core. Town, WorldBuilder, Resident events and Birthday scenes mount it; none of them own it.",
+  "consumerSeam": "mountDiscoBall(def, { parent, anchor, renderer, budget }) → { root, frame, spinner, faceHost, update(beatState), setMode, setSpin, setIntensity, setPalette, impulse, reset, place, state, dispose }",
+  "beatState": "{ time: host scene clock in s (required), beatPos?: shared beat position, level?: 0…1 song loudness, camera?: for glints }",
+  "modes": {
+    "OFF": "ball hangs, no lights, faint glints",
+    "AMBIENT": "slow spin, dim dot projection, no beams",
+    "DISCO": "spin, beams to the floor with floor pools, three real spots riding three beams (actors and props inside a beam are lit), dim dot projection, mild beat pulse",
+    "BEAT_PULSE": "as DISCO, beat-pulsed, spin kick on every bar",
+    "SPOT_SWEEP": "three colour spots sweep the floor, beams low, projection low"
+  },
+  "mode": "DISCO",
+  "params": {
+    "radius": 0.7,
+    "tile": 0.085,
+    "hang": 1.6,
+    "spin": 0.45,
+    "intensity": 1,
+    "beams": 10,
+    "beamSpread": 0.075,
+    "projAngle": 1.05,
+    "projRange": 14,
+    "dots": 70,
+    "sweepCount": 3,
+    "sweepAngle": 0.1,
+    "sweepRadius": 3.2,
+    "beatResponse": 0.6,
+    "palette": [
+      "#ff5fa8",
+      "#4fd6ff",
+      "#ffd24f",
+      "#9a6bff",
+      "#5cff9a"
+    ],
+    "float": true,
+    "floatAmp": 0.16,
+    "floatDrift": 0.12,
+    "floatTilt": 3.5,
+    "floatRate": 0.11,
+    "spring": 2.6,
+    "damping": 1.5,
+    "floorCatch": true,
+    "floorY": 0,
+    "bop": 0.11,
+    "bopSpring": 95,
+    "bopDamping": 8.5,
+    "beamMax": 16,
+    "beamLights": 3
+  },
+  "lightingBoundary": {
+    "budgetDefault": {
+      "lights": 4,
+      "shadowLights": 1
+    },
+    "owns": "one shadow-casting projector spot (dot mask) + three shadowless spots that either ride three beams (DISCO/BEAT_PULSE/AMBIENT) or sweep (SPOT_SWEEP) + additive beam cones ending on the floor with additive floor pools + tile glints. Max 4 lights.",
+    "doesNotOwn": "scene lighting, background, fog, tone mapping, post-processing. The host dims or keeps its own light; the ball never recolours the scene.",
+    "clock": "effects follow the host scene clock passed to update(); scrubbing back rotates back"
+  },
+  "eyeRigSeam": {
+    "anchor": "ball.faceHost",
+    "follows": "frame (does not spin)",
+    "note": "reserved and empty. No eye is baked into the mesh; geometry and materials work with and without a later EyeRig."
+  },
+  "geometry": {
+    "path": "atlas://generated/disco-ball-core-01",
+    "why": "no pack in the repo ships a disco ball. A WorldDesign/Birthday donor was NOT isolated in this pass (repo code search was bounded, see docs), so this object does not claim to be that donor."
+  },
+  "fallback": "no renderer → matte tiles instead of mirrors; no shadow-light budget → projector without dot mask. Both are reported in state().fallback.",
+  "float": "Default: floats freely, heavy and slow as if in syrup (slow incommensurate drift + tilt, beat impulses swing out through an under-damped spring). setFloat(false) = hangs on its chain.",
+  "floorCatch": "Without a host surface the projector light meets nothing (the host shadow plane shows shadows only). The ball lays its dot pattern as its own additive projection at the host floor height (params.floorY). setFloorCatch(false) when the host provides a real receiving surface — otherwise dots appear twice.",
+  "bop": "Cartoon pulse on the beat (Georg 2026-09-25): every beat onset kicks an under-damped scale spring (louder song = bigger kick, bar downbeat ×1.5) → the ball puffs out wide, overshoots and squashes. Strength per mode: OFF 0 · AMBIENT 0.35 · DISCO 1 · BEAT_PULSE 1.35 · SPOT_SWEEP 0.7. faceHost follows the pulse radius.",
+  "beams": "Georg 2026-09-25 (S40c): beams are the main effect, dots secondary. Each beam is scaled every frame to end at params.floorY and leaves a soft additive pool there."
+}

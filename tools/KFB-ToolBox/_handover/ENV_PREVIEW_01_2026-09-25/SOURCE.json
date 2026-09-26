@@ -1,0 +1,100 @@
+{
+  "schema": "kfb.env-preview-01/source/1",
+  "date": "2026-09-25",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/env-preview-01-2026-09-25",
+  "pr": 218,
+  "implementationCheckpoint": "32e12c837d347368fc4ae0bac1fa880a191aa258",
+  "staticEvidenceCheckpoint": "733e5e7da1623f79c73062f23252497ae5597548",
+  "browserEvidenceCheckpoint": "3327a901f1b20ea49e38b4c6f8d8aea29f9a57e6",
+  "presentationDonor": {
+    "repo": "georg-doc/KFB-Travel-Globe",
+    "head": "8614282aab2ced43bb5dda9fcf7abadf9768100a",
+    "mirrorSources": {
+      "skyPresets": {
+        "path": "travel/wip/travel_globe_wsa/globe-v13/sky-presets.js",
+        "blob": "04dd730ee735f064888e8472eff79583f17bebb0"
+      },
+      "worldMood": {
+        "path": "travel/wip/travel_globe_wsa/globe-v13/weltstimmungen.js",
+        "blob": "2747a526e2aa38989c9c4052304da8733662b61c"
+      },
+      "terrainSurface": {
+        "path": "travel/wip/travel_globe_wsa/globe-v13/terrain-surface.js",
+        "blob": "9513347b6e3192dfefbeb3371085b13ac41ebb5d"
+      },
+      "biomeField": {
+        "path": "travel/wip/travel_globe_wsa/globe-v13/globe-biome.js",
+        "blob": "db3acf6ae6b7ebbc6cb4a7113a0d0fe782429d74"
+      }
+    }
+  },
+  "worldOwners": {
+    "authority": ["WorldBuilder", "OSM", "current terrain owners"],
+    "heightSupport": "Surface Adapter contract pending",
+    "travelRole": ["sky", "weather", "light", "mood", "selected camera/mobility donors"]
+  },
+  "consumers": [
+    {
+      "id": "resident-atlas-s40",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation/KFB_Resident_Atlas_S9.html",
+      "seam": "lib/host-env.js"
+    },
+    {
+      "id": "toolbox-production-01",
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-01/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/KFB ToolBox Production-01.dc.html"
+    }
+  ],
+  "boundaries": {
+    "hostOwns": [
+      "renderer",
+      "scene",
+      "camera",
+      "clock",
+      "gameplay/movement",
+      "animation/mixer",
+      "editing",
+      "persistence"
+    ],
+    "environmentProviderOwns": [
+      "sky/light/fog/presentation facts",
+      "current profile/source revision",
+      "real terrain/support when delegated"
+    ],
+    "adapterOwns": [
+      "mode/preset selection",
+      "mount/unmount",
+      "resolved-profile reporting"
+    ],
+    "notOwned": [
+      "terrain generator",
+      "world collision",
+      "world persistence",
+      "actor/runtime state"
+    ]
+  },
+  "publication": {
+    "stage": "PUBLIC_VERIFIED_9_OF_9",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/",
+    "publicationHead": "bec8688c0c5a4743d8f484193939a74112d977c4",
+    "publicVerified": true,
+    "live": "UNCHANGED"
+  },
+  "humanGate": {
+    "date": "2026-09-26",
+    "status": "PASS_WITH_TUNE",
+    "accepted": [
+      "shared environment adapter direction",
+      "World Match versus Source Isolation comparison",
+      "current light and mood foundation"
+    ],
+    "deferredNonBlocking": [
+      "Resident selector discoverability",
+      "below-actor camera range",
+      "WorldBuilder duplicate-head actor assembly",
+      "bright thin-geometry shadow-edge artifacts",
+      "Night readability and task-lighting policy"
+    ],
+    "nextGate": "TOOLBOX-R2-PUBLISH-01"
+  }
+}

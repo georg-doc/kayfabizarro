@@ -610,7 +610,7 @@ class Component extends DCLogic {
 
     /* ENV-PREVIEW-01 · shared current KFB environment, not a ToolBox-owned world. */
     try {
-      this.EnvMod = await import('/tools/KFB-ToolBox/lib/environment-preview.v1.js');
+      this.EnvMod = await import('../environment-preview.v1.js');
       this.ENV = this.EnvMod.mountEnvironmentPreview({
         THREE,
         host: { scene, camera: cam, renderer },

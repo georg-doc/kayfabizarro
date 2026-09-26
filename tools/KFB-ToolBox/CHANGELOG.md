@@ -1,3 +1,18 @@
+## 2026-09-25 · ENV-PREVIEW-01 · shared current KFB environment in real previews
+
+- added thin shared `tools/KFB-ToolBox/lib/environment-preview.v1.js`; host still owns renderer/scene/camera/clock/gameplay/editing/persistence;
+- current presentation resolves to Travel/World owner `georg-doc/KFB-Travel-Globe@8614282aab2ced43bb5dda9fcf7abadf9768100a`;
+- modes: `WORLD_MATCH` default · `SOURCE_ISOLATION` · source-backed `CONSUMER_PRESET`;
+- support levels declared as `ground / terrainPatch / worldZone`; only visible shared `ground` is implemented in this proof, while terrain/world levels fail closed without a real provider;
+- Resident Atlas S40 now consumes the shared environment through its existing host-env seam instead of owning a separate procedural placeholder sky/light/ground stack;
+- ToolBox Production-01 now consumes the same environment while preserving its single renderer, actor/motion/pose owners and neutral source-isolation floor;
+- static owner/contract checks: **30/30 PASS**;
+- real local Chromium/WebGL proof on Resident Atlas + ToolBox: **15/15 PASS**, 0 page errors;
+- push run `36187868823` SUCCESS; PR run `36187874602` SUCCESS;
+- proof artifact `10886214792`, SHA-256 `a3b2e0bbb575a549155ae2bdf0c66fda9a1c98cfd10ad60b497c5475f7556807`;
+- screenshot proof visually confirms distinct World Match vs Source Isolation in both consumers;
+- no Cloudflare Stage / Live publication and no human acceptance claimed.
+
 # KFB ToolBox · additives Changelog
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
@@ -115,3 +130,19 @@ No consumer movement/physics owner changed. Animation Lab remains an unpromoted 
 
 ### NEXT
 Human three-actor motion review. Attachment proposals remain a separate visible gate.
+# 2026-09-26 · ENV-PREVIEW-01 portable Stage package
+
+- packaged the existing PR #218 Resident Atlas and ToolBox comparison under `kfb-hub/stage/toolbox/environment-preview-01/`;
+- copied only the exact required consumer files plus the pinned sky-preset donor;
+- kept a two-button, full-viewport review shell with no explanatory UI wall;
+- corrected metadata: Travel/TinySkies is a presentation donor, while WorldBuilder/OSM/current terrain owners retain world and height authority;
+- 30/30 source-contract checks PASS;
+- 9/9 portable Stage real-Chrome checks PASS;
+- public Cloudflare Stage re-ran the same browser gate at 9/9 PASS on `cloudflare-live@bec8688c`; Georg review remains pending; Live unchanged.
+
+# 2026-09-26 · ENV-PREVIEW-01 human gate
+
+- Georg accepted the shared environment and light/mood direction as **PASS_WITH_TUNE**;
+- deferred selector discoverability, below-actor camera range, WorldBuilder duplicate-head assembly, bright thin-geometry shadow edges and Night readability as proportional follow-ups;
+- none of those follow-ups reopens the environment adapter or blocks the next approved ToolBox r2 publication/review slice;
+- no runtime, Stage, Cloudflare or Live file changed in this checkpoint.

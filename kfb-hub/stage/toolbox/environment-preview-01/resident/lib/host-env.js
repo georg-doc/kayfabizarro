@@ -2,7 +2,7 @@
    The Atlas keeps the host seam; current World/Travel presentation is supplied by the shared
    adapter. Residents still own neither sky, terrain nor a mandatory baseplate. */
 import * as THREE from 'three';
-import { mountEnvironmentPreview } from '../../../../lib/environment-preview.v1.js';
+import { mountEnvironmentPreview } from '../../environment-preview.v1.js';
 
 export const ENV_SCHEMA = 'kfb.resident-host-env/2';
 

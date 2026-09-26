@@ -1,0 +1,34 @@
+{
+  "schema": "kfb.env-preview-01-stage-source/1",
+  "date": "2026-09-26",
+  "repo": "georg-doc/kayfabizarro",
+  "sourcePr": 218,
+  "sourceBranch": "chatgpt-web/env-preview-01-2026-09-25",
+  "sourceHead": "6718eef05f2b6dd0d79ae04884b33f3396c34379",
+  "buildMarker": "ENV_PREVIEW_01_STAGE_2026_09_26",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-preview-01/",
+  "consumers": ["resident-atlas-s40", "toolbox-production-01"],
+  "portableDonors": {
+    "environmentPreview": "tools/KFB-ToolBox/lib/environment-preview.v1.js",
+    "skyPresets": {
+      "path": "travel/wip/travel_globe_wsa/globe-v13/sky-presets.js",
+      "blob": "04dd730ee735f064888e8472eff79583f17bebb0"
+    }
+  },
+  "worldOwnership": {
+    "authoritative": ["WorldBuilder", "OSM", "current terrain owners"],
+    "travelTinySkiesRole": ["sky", "weather", "light", "mood", "selected camera/mobility donors"],
+    "environmentPreviewRole": "presentation consumer adapter"
+  },
+  "publication": "PUBLIC_VERIFIED_9_OF_9",
+  "publicationHead": "bec8688c0c5a4743d8f484193939a74112d977c4",
+  "humanGate": "PASS_WITH_TUNE",
+  "humanTune": [
+    "Resident selector discoverability",
+    "below-actor camera range",
+    "WorldBuilder duplicate-head actor assembly",
+    "bright thin-geometry shadow-edge artifacts",
+    "Night readability and task-lighting policy"
+  ],
+  "livePromotion": "NOT_AUTHORIZED"
+}
