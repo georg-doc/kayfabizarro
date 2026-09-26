@@ -1,5 +1,15 @@
 ## 2026-09-26 · Card Zone / Biome / Environment recovery
 
+## 2026-09-26 · Blender MCP OSM Cologne clay look
+
+New bounded READY self-service briefing:
+`skills/chat/workflows/BLENDER_MCP_OSM_COLOGNE_CLAY_2026-09-26/START_HERE.md`.
+
+Purpose: use the current OSM City Lab `dom-zentrum-v0` source as immutable geographic/provenance truth and test a Claybound-inspired clay presentation in Blender MCP. First proof is a small Dom/HBF crop with source isolation, isolated material donors, then `SOURCE_CLEAN | CLAY_SURFACE_ONLY | CLAY_FORM_SURFACE` under one camera/light. Blender remains an authoring/look/bake oracle; it does not become a new World/OSM/Track owner.
+
+Hub self-service id: `bl-osm-clay-01`. Execution profile: `BLENDER_STANDARD`. No Cloudflare/Live promotion is implied.
+
+
 The aborted Card-Zone / biome / procedural-Nature thread is recovered at:
 
 `workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/CARD_ZONE_BIOME_ENVIRONMENT_RECOVERY_2026-09-26.md`
