@@ -1,3 +1,15 @@
+## CURRENT UPDATE · PRIVATE SITES MIRROR · 2026-09-26
+
+Status: **PRIVATE SITES DEPLOYED · CANDIDATE MIRROR · NO NEW BROWSER PROOF · NOT KFB LIVE**.
+
+The exact PR #217 Hub UX Recovery v2 candidate is available at https://kfb-production-hub.frizzlebob.chatgpt.site. It is owner-private. HUB-CTRL remains the only registry/build owner; this Site is a distribution copy. Source and actual checks: [Sites mirror Return](SITES_MIRROR_RETURN_2026-09-26.md).
+
+The PR #217 Cloudflare Stage is still the project's public acceptance route. The Site deployment has not been checked in a real browser here; Georg's mobile defect remains `HUB-MOBILE-TUNE-01`. No KFB Live promotion or auto-merge.
+
+Exactly one next gate: Georg checks the private Site on desktop and mobile and reports whether it works as his daily mirror, including the known mobile issue.
+
+---
+
 ## CURRENT UPDATE · HUB UX RECOVERY v2 · Georg review · 2026-09-25
 
 Status: **GEORG HUMAN PASS_WITH_TUNE · MOBILE KNOWN BROKEN · STAGE ACCEPTED FOR NOW · NOT LIVE**
