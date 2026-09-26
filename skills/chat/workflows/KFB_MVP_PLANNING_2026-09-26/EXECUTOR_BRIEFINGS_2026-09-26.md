@@ -1,8 +1,8 @@
 # KFB Executor Briefings · 2026-09-26
 
-Status: **PLANNING CANDIDATE · WSA APPROVAL REQUIRED BEFORE START**
+Status: **WSA APPROVED WITH BINDING D2/D3/D6 TUNES · BOUNDED DISPATCH OPEN**
 
-Use this file only after `WSA_RECON_PLAN_APPROVAL_2026-09-26.md` is reviewed. GitHub state overrides dated refs.
+Use this file with the recorded WSA decision in `WSA_RECON_PLAN_APPROVAL_2026-09-26.md`. GitHub state overrides dated refs. D2, D3 and D6 below are binding.
 
 ## Dispatch board
 
@@ -10,9 +10,9 @@ Use this file only after `WSA_RECON_PLAN_APPROVAL_2026-09-26.md` is reviewed. Gi
 |---|---|---|---|---|
 | ENV-PREVIEW-STAGE-01 | Web/GitHub | STARTABLE | WSA approves D5 | Publish existing #218 candidate to additive Stage comparison + Hub link; no runtime change |
 | TOOLBOX-R2-PUBLISH-01 | Web/GitHub | STARTABLE | WSA approves D4 | Publish existing #221 review surface + Hub link; human review only |
-| TRACK-CORE-G0/W0 | Georg/WSA → Web/GitHub | WAITING ONE DECISION | G0 JS approved | Complete census/contracts + pure JS reference per latest #219 addendum |
-| CAMERA-CORE-0 | Web/GitHub | STARTABLE RECON | WSA approves D2 owner | donor census + shared camera contract; no integration |
-| WORLD-R2-CONTRACT-RESET-01 | Web/GitHub | WAITING | ToolBox r2 review gate + WSA D3/D6 | test/selftest contract reset only; no failed-runtime patch |
+| TRACK-CORE-G0/W0 | Web/GitHub | STARTABLE | D0/D1 approved; refresh Race refs | Complete census/contracts + pure JS reference per latest #219 addendum |
+| CAMERA-CORE-0 | Web/GitHub | STARTABLE RECON ONLY | D2 tune: no owner/module creation | donor census + shared camera contract; no integration |
+| WORLD-R2-CONTRACT-RESET-01 | Web/GitHub | WAITING | ToolBox r2 review + Surface Adapter/D6 metadata contract recorded | test/selftest contract reset only; no failed-runtime patch |
 | ACTOR-FB-BODY-FAMILY-01 | Web/ToolBox → Blender only if needed | WAITING | ToolBox front-door human gate | FrizzleBob identity on Legacy/Medium/Large destination rigs + EarRig v5 compatibility |
 | SURF-POSE-01 | Animation Lab / Web, Blender only if necessary | WAITING | body/profile owner pinned | source-backed card-flight pose set |
 | WORLD-MOBILITY-01 | Web/WorldBuilder | WAITING | World contract reset + camera contract | ground locomotion + card flight/God Mode using shared owners |
@@ -31,7 +31,7 @@ Use this file only after `WSA_RECON_PLAN_APPROVAL_2026-09-26.md` is reviewed. Gi
 > Start from current `georg-doc/kayfabizarro` PR #218 `ENV-PREVIEW-01`.
 > Read current START_HERE/Stage workflow first. Verify the final candidate head and exact evidence; current observed PR head is `6718eef05f2b6dd0d79ae04884b33f3396c34379`.
 > Publish the unchanged candidate as an additive KFB Cloudflare Stage comparison using the existing Hub/Stage owner. Link the direct `https://kayfabizarro.pages.dev/…` route from KFB Hub only after the exact route is browser-verified.
-> Preserve WORLD_MATCH / SOURCE_ISOLATION / source-backed CONSUMER_PRESET. No second renderer, terrain, sky, camera or movement owner. Do not turn Travel Globe into world truth.
+> Preserve WORLD_MATCH / SOURCE_ISOLATION / source-backed CONSUMER_PRESET. No second renderer, terrain, sky, camera or movement owner. Before any default reuse, correct the superseded PR #218 metadata claim that Travel/World is environment truth: current WorldBuilder/OSM/Terrain owners remain authoritative; Travel/TinySkies donate presentation and selected mobility/camera behavior.
 > Return exact repo/branch/PR/head, changed publication/metadata files, actual browser counts, direct Stage URL, screenshot/browser proof, unresolved items, and exactly one human next gate.
 > No merge and no Live promotion.
 
@@ -80,7 +80,7 @@ After G0:
 > 3. accepted Travel ground↔flight camera/movement transition as a donor only.
 > Show each actual donor behavior/source in isolation before proposing integration.
 > Write a small camera contract for orbit, pan, cursor-focused zoom, touch, fit/target, viewport resize and consumer handoff. State exactly who writes camera transform and how game/player movement remains consumer-owned.
-> Recommend the existing best owner path; only if no suitable shared owner exists may WSA approve a new small module adjacent to `tools/KFB-ToolBox/lib/edit-layer.js`.
+> Recommend the existing best owner path. **Do not create a new module in CAMERA-CORE-0.** If no suitable owner exists, return that evidence and a separate WSA gate for a small module; location and ownership remain undecided until then.
 > No World runtime integration in this slice. Return donor refs, contract, risks, tests of any pure helper math, and one implementation gate.
 
 ---
@@ -94,7 +94,8 @@ After G0:
 > The previous World r2 browser gate exhausted two repair passes. Do not make repair pass 3.
 > Complete only `WORLD-R2-CONTRACT-RESET-01`: identify the stale selftest/variant-label assumptions that reject the now-shared ToolBox locomotion semantics, rewrite the test/contract expectation against the current owner vocabulary, and prove the contract independently before any runtime retry.
 > Preserve accepted WB2 terrain/editor behavior and shared ToolBox locomotion ownership.
-> Also record the current world rule: Travel Globe is not world base; TinySkies/Travel sky/weather/light/mood and selected movement/camera donors remain reusable.
+> Define one Surface Adapter contract: WorldBuilder supplies editable base height; OSM/Track supply bounded corridor constraints/offsets; the adapter resolves one final visible/support query; Race remains contact/physics owner. Do not let each consumer recompute height independently.
+> Also correct superseded PR #204 and PR #218 ownership wording and record the current world rule: Travel Globe is not world base; TinySkies/Travel sky/weather/light/mood and selected movement/camera donors remain reusable.
 > Return exact changed contract/test files, before/after assertion counts, no hidden runtime changes, and exactly one next gate. No Stage/Live.
 
 ---
