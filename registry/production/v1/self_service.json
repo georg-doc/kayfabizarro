@@ -14,11 +14,11 @@
     "pr": 204
   },
   "counts": {
-    "strands": 13,
-    "jobs": 79,
-    "READY": 36,
-    "HOLD": 43,
-    "prompts": 79
+    "strands": 14,
+    "jobs": 86,
+    "READY": 37,
+    "HOLD": 49,
+    "prompts": 86
   },
   "executionProfiles": {
     "WEB_FAST": {
@@ -309,6 +309,20 @@
       "counts": {
         "jobs": 9,
         "READY": 3,
+        "HOLD": 6
+      }
+    },
+    {
+      "id": "clay-handmade-assets",
+      "title": "Clay / Handmade Production Assets",
+      "target": "Production-ready seamless clay textures, shader utility maps, handmade craft materials and cutout detail assets, validated sequentially and then proven in Blender.",
+      "capabilitiesTotal": 7,
+      "currentReady": [
+        "clay-asset-01"
+      ],
+      "counts": {
+        "jobs": 7,
+        "READY": 1,
         "HOLD": 6
       }
     }
@@ -2556,6 +2570,201 @@
         "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
         "section": "IK-CCDIK-PARITY-01 · Three.js CCD IK parity",
         "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      }
+    },
+    {
+      "id": "clay-asset-01",
+      "strand": "clay-handmade-assets",
+      "bucket": "READY",
+      "priority": "P0",
+      "executor": "KFB Clay Asset Studio / ChatGPT Image Generation",
+      "title": "Clay · Asset 1 smooth matte seamless",
+      "what": "Generate exactly one smooth matte clay texture and prove it as a tile candidate before advancing.",
+      "result": "Source image + actual format/dimensions + 3×3 repeat preview + tile/edge QA + Georg review.",
+      "promptSection": "CLAY-ASSET-01 · Smooth matte clay seamless texture",
+      "sourceSet": "clayProduction",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-ASSET-01 · Smooth matte clay seamless texture\n\nUse the private KFB Clay Asset Studio v0.1.0. Generate only Asset 1: Smooth matte clay seamless texture. Do not batch. Return the source asset, actual dimensions/format if inspected, a 3×3 repeat preview, tile/edge QA status, and one review point. Wait for Georg before Asset 2.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P0 · CLAY-ASSET-01 · start now"
+      }
+    },
+    {
+      "id": "clay-asset-core",
+      "strand": "clay-handmade-assets",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "KFB Clay Asset Studio / ChatGPT Image Generation",
+      "title": "Clay · Core texture library 2–10",
+      "what": "Continue the foundational clay queue only after Asset 1 is accepted; one asset and one human gate at a time.",
+      "result": "Human-approved core clay family with per-asset QA; no batch atlas.",
+      "promptSection": "CLAY-ASSET-CORE · Core clay assets 2–10",
+      "sourceSet": "clayProduction",
+      "waitingFor": "Georg PASS on CLAY-ASSET-01",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-ASSET-CORE · Core clay assets 2–10\n\nContinue the KFB Clay Asset Studio queue from the next human-approved number. Generate exactly one asset per review turn. Stay within core clay items 2–10 until Georg accepts the visual language. Preserve tile/alpha/data-map QA discipline.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P1 · CLAY-ASSET-CORE · sequential core clay library"
+      }
+    },
+    {
+      "id": "clay-blender-poc-01",
+      "strand": "clay-handmade-assets",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "Blender MCP",
+      "title": "Clay · One-model Blender material proof",
+      "what": "Apply one human-approved clay texture to one existing KFB model and prove the smallest reusable material/node-group seam.",
+      "result": "One source-preserving Blender material proof with Cycles/Eevee/runtime distinctions and donor comparison.",
+      "promptSection": "CLAY-BLENDER-POC-01 · One approved texture on one KFB model",
+      "sourceSet": "clayProduction",
+      "waitingFor": "At least one human-approved core clay texture",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "BLENDER_STANDARD",
+      "model": "Claude Sonnet 5",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-BLENDER-POC-01 · One approved texture on one KFB model\n\nUse one human-approved Clay Asset Studio texture on one current KFB source model. Preserve source geometry, rig and material-zone ownership. Build only the smallest reusable clay material/node-group proof. Separate Cycles look-dev, Eevee approximation and runtime/export-safe rules. Compare against the isolated ClayBound donor; do not redesign the character.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P1 · CLAY-BLENDER-POC-01"
+      }
+    },
+    {
+      "id": "clay-asset-manifest-01",
+      "strand": "clay-handmade-assets",
+      "bucket": "HOLD",
+      "priority": "P1",
+      "executor": "ChatGPT Web / GitHub Bridge",
+      "title": "Clay · Approved asset manifest",
+      "what": "Create durable metadata for accepted assets without creating a second asset registry.",
+      "result": "Per-asset revision, approval, dimensions, alpha/tile QA, Blender role, prompt and scale metadata routed to existing owners.",
+      "promptSection": "CLAY-ASSET-MANIFEST-01 · Approved asset metadata",
+      "sourceSet": "clayProduction",
+      "waitingFor": "First human-approved production asset",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "GITHUB_BRIDGE",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "LOW-STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-ASSET-MANIFEST-01 · Approved asset metadata\n\nAfter the first human-approved clay assets exist, record queue number, canonical name, revision, approval state, dimensions/format, alpha status, tile QA, intended Blender role, source prompt, intended UV/triplanar scale and approved destination. Do not create a parallel asset registry; route into existing KFB asset/library ownership.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P1 · CLAY-ASSET-MANIFEST-01"
+      }
+    },
+    {
+      "id": "clay-pdf-web-01",
+      "strand": "clay-handmade-assets",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "ChatGPT Web",
+      "title": "Clay · Optimize NotebookLM PDFs for web",
+      "what": "Derive web-friendly copies of the four large NotebookLM source decks only when browser delivery becomes useful.",
+      "result": "Originals preserved + optimized derivatives + before/after sizes + visual spot-check; no automatic Stage publish.",
+      "promptSection": "CLAY-PDF-WEB-01 · Web-optimize four source PDFs",
+      "sourceSet": "clayProduction",
+      "waitingFor": "Explicit need for browser delivery; originals remain source evidence",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-PDF-WEB-01 · Web-optimize four source PDFs\n\nPreserve all original PDFs. Create derived web-friendly copies only. Record before/after file sizes and visually spot-check representative pages after compression. Do not overwrite sources and do not publish to Stage automatically.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P2 · CLAY-PDF-WEB-01"
+      }
+    },
+    {
+      "id": "clay-seam-qa-02",
+      "strand": "clay-handmade-assets",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "ChatGPT Web",
+      "title": "Clay · Pixel-level seam QA",
+      "what": "Strengthen texture certification after early visual calibration with opposite-edge checks and optional seam repair.",
+      "result": "Source + measured edge evidence + repaired derivative when needed; explicit candidate/PASS status.",
+      "promptSection": "CLAY-SEAM-QA-02 · Pixel seam check",
+      "sourceSet": "clayProduction",
+      "waitingFor": "Early image-generation calibration and candidate textures",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-SEAM-QA-02 · Pixel seam check\n\nFor an accepted-looking texture candidate, compare opposite pixel edges and quantify visible discontinuity. If needed, create a repaired derivative while retaining the original. Keep 3×3 visual QA, but do not call a texture mathematically seamless without edge evidence.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P2 · CLAY-SEAM-QA-02"
+      }
+    },
+    {
+      "id": "clay-handmade-02",
+      "strand": "clay-handmade-assets",
+      "bucket": "HOLD",
+      "priority": "P2",
+      "executor": "KFB Clay Asset Studio / ChatGPT Image Generation",
+      "title": "Clay · Utility maps + handmade craft materials",
+      "what": "After core clay acceptance, continue shader maps, triplanar variation, craft materials and cutout clay/diorama details.",
+      "result": "Sequential approved utility/craft/detail assets following the existing 50-item queue.",
+      "promptSection": "CLAY-HANDMADE-02 · Secondary material and detail library",
+      "sourceSet": "clayProduction",
+      "waitingFor": "Core clay visual language accepted",
+      "cloudflareRequired": false,
+      "workRequired": false,
+      "executionProfile": "WEB_STANDARD",
+      "model": "GPT-5.6 Sol",
+      "reasoning": "medium",
+      "budget": "STANDARD",
+      "workDefault": false,
+      "coworkDefault": false,
+      "prompt": "## CLAY-HANDMADE-02 · Secondary material and detail library\n\nContinue the existing KFB Clay Asset Studio priority queue only after core clay acceptance. Produce one asset at a time across utility maps, triplanar-friendly variation, felt/cloth/paper/cardboard/cork/foam/wood and cutout dents/bumps/grooves/tool marks/crumbs/diorama artifacts. Keep human review between assets.",
+      "promptSource": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "ref": "main",
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+        "section": "P2 · CLAY-HANDMADE-02"
       }
     }
   ]
