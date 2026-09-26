@@ -18,7 +18,17 @@ for (const spec of [{ name: 'desktop', width: 1280, height: 820 }, { name: 'narr
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('requestfailed', r => failed.push(r.url() + ' :: ' + r.failure()?.errorText));
   await page.goto(base + '?world=huerth&selftest=wi1', { waitUntil: 'domcontentloaded', timeout: 120000 });
-  await page.waitForFunction(() => window.__clayboundC1 && document.querySelector('#wiTest')?.textContent?.split('\n').filter(x => x.startsWith('PASS · ')).length >= 55, null, { timeout: 180000 });
+  try {
+    await page.waitForFunction(() => window.__clayboundC1 || document.body.dataset.selftest === 'FAIL', null, { timeout: 90000 });
+  } catch (e) {
+    const state = await page.evaluate(() => ({ app: !!window.__wb2d, world: window.__wb2d?.world?.id, clay: !!window.__clayboundC1, selftest: document.body.dataset.selftest, status: document.querySelector('#status')?.textContent, error: document.querySelector('#selftest')?.textContent?.slice(-1200), wiTest: document.querySelector('#wiTest')?.textContent?.slice(-1200) }));
+    throw Error('C1 mount timeout ' + JSON.stringify({ state, errors, failed: failed.slice(0, 8) }));
+  }
+  if (document.body.dataset.selftest === 'FAIL') {
+    const state = await page.evaluate(() => ({ status: document.querySelector('#status')?.textContent, error: document.querySelector('#selftest')?.textContent?.slice(-1200), wiTest: document.querySelector('#wiTest')?.textContent?.slice(-1200) }));
+    throw Error('World selftest failed ' + JSON.stringify({ state, errors, failed: failed.slice(0, 8) }));
+  }
+  await page.waitForFunction(() => document.querySelector('#wiTest')?.textContent?.split('\n').filter(x => x.startsWith('PASS · ')).length >= 55, null, { timeout: 60000 });
   const original = await page.evaluate(() => ({
     report: window.__clayboundC1.report(),
     checks: document.querySelector('#wiTest').textContent.split('\n').filter(x => x.startsWith('PASS · ')).length,
