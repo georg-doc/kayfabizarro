@@ -9,6 +9,15 @@ Human: Georg
 
 Persist the current ClayBound / DIY stop-motion material work as one bounded KFB production lane.
 
+### Continuation checkpoint · 2026-09-26
+
+- **Asset 01 · smooth matte clay r1:** Georg HUMAN_ACCEPTED; 1024×1024 RGB PNG; exact opposite-edge equality PASS.
+- **Asset 02 · fine-grain clay:** DEFERRED because Georg explicitly jumped to the rough handmade target.
+- **Asset 03 · rough/porous handmade meso-height:** r2 is 2048×2048 16-bit Non-Color relative height with 4/4 tile criteria PASS; human look review remains OPEN.
+- **Asset 03 r3:** broader kneading/compression language improved, but X/Y seam criteria FAIL. Two repair passes are spent; slice frozen.
+- Durable handoff / Blender instructions / recovery: `tools/KFB-ToolBox/_handover/CLAYBOUND_ASSET_PIPELINE_2026-09-26/` on PR #228.
+- No generated asset is automatically installed into Blender or runtime.
+
 This intake deliberately does **not** render, inspect, convert or optimize the four large NotebookLM PDFs. They are registered as source evidence only to avoid a long PDF-processing job and timeout risk.
 
 ## Current source folder
