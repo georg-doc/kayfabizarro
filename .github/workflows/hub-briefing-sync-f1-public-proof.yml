@@ -19,29 +19,33 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Wait for exact Cloudflare root marker
+      - name: Wait for exact Cloudflare root HTML revision
         shell: bash
         run: |
           set -euo pipefail
-          RAW="https://raw.githubusercontent.com/georg-doc/kayfabizarro/cloudflare-live/kfb-hub/ROOT_BUILD.json"
-          PUB="https://kayfabizarro.pages.dev/kfb-hub/ROOT_BUILD.json"
-          curl -fsSL "$RAW" -o /tmp/expected.json
+          RAW="https://raw.githubusercontent.com/georg-doc/kayfabizarro/cloudflare-live/kfb-hub/index.html"
+          PUB="https://kayfabizarro.pages.dev/kfb-hub/"
+          curl -fsSL "$RAW" -o /tmp/expected.html
+          python3 - <<'PY'
+          import re
+          s=open('/tmp/expected.html',encoding='utf-8').read()
+          assert 'data-kfb-build="HUB-UX-RECOVERY-V2"' in s
+          m=re.search(r'"sourceCommit":"([0-9a-f]{40})"',s); assert m
+          open('/tmp/expected-source.txt','w').write(m.group(1))
+          PY
+          EXPECTED_SOURCE="$(cat /tmp/expected-source.txt)"
           ok=0
           for i in $(seq 1 24); do
-            if curl -fsSL --max-time 20 "$PUB" -o /tmp/public.json 2>/dev/null; then
-              if python3 - <<'PY'
-          import json
-          a=json.load(open('/tmp/expected.json'))
-          b=json.load(open('/tmp/public.json'))
-          keys=['sourceCommit','registryContentHash','shell','briefings','ready','hold','problems']
-          assert all(a.get(k)==b.get(k) for k in keys), (a,b)
-          PY
-              then ok=1; break; fi
+            if curl -fsSL --max-time 20 "$PUB" -o /tmp/public.html 2>/dev/null; then
+              if grep -q 'data-kfb-build="HUB-UX-RECOVERY-V2"' /tmp/public.html                  && grep -q '"briefings":96' /tmp/public.html                  && grep -q '"prompts":96' /tmp/public.html                  && grep -q "\"sourceCommit\":\"$EXPECTED_SOURCE\"" /tmp/public.html; then
+                ok=1; break
+              fi
             fi
             sleep 5
           done
           test "$ok" = 1
-          cat /tmp/public.json
+          echo "PUBLIC_ROOT_MATCH source=$EXPECTED_SOURCE"
+          grep -o 'data-kfb-build="[^"]*"' /tmp/public.html | head -1
 
       - name: Install Playwright Chromium
         run: |
@@ -55,8 +59,8 @@ jobs:
           import { chromium } from 'playwright';
           import fs from 'node:fs';
           const url='https://kayfabizarro.pages.dev/kfb-hub/';
-          const expected=JSON.parse(fs.readFileSync('/tmp/expected.json','utf8'));
-          const report={url,expected,checks:[],errors:[],httpErrors:[]};
+          const expectedSource=fs.readFileSync('/tmp/expected-source.txt','utf8').trim();
+          const report={url,expectedSource,checks:[],errors:[],httpErrors:[]};
           const check=(name,pass,detail='')=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1};
           const browser=await chromium.launch({headless:true});
           const page=await browser.newPage({viewport:{width:1440,height:900}});
