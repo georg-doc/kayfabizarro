@@ -84,3 +84,36 @@ Existing evidence re-read, not rerun:
 - preserved Track Core sequence W0 → Blender 1A → Web 1B → Claude Track-Core-2 → Web R0 prep → Claude Playable Track R0;
 - old blocked Claude R0 chat remains intentionally unused;
 - no Racer runtime, Stage or Live change.
+
+
+## 2026-09-26 · Cross-mode Racer HUD / 3D Navigation + Track dispatch sync
+
+### Added
+- `RACER_CROSS_MODE_3D_HUD_NAV_ADDENDUM_2026-09-26.md`.
+- Existing `CLAUDE_DESIGN_RACER_HUD_BILLBOARDS_CURRENT_START_2026-09-26.md` now reads that addendum; no second HUD owner was created.
+- Existing `RACER_DESIGN_EXECUTION_OVERVIEW_2026-09-26.md` now records the current Track-Core sprint ladder and safe Blender prework boundary.
+
+### HUD decisions
+- same adaptive HUD family across WALK / DRIVE-RACE / FLIGHT;
+- mode-specific instruments appear only when backed by a real provider;
+- exact proven Kenney Factory `arrow.glb` remains first-choice 3D navigation donor;
+- navigator sits in a shallow perspective/parallax layer near the Mini-map rather than as a flat 2D badge;
+- DRIVE prefers next route decision; FLIGHT may use yaw + pitch to a real 3D target vector;
+- Radar/sensor is provider-gated and never invents contacts;
+- existing map/radio lower-right composition uses conditional slot arbitration rather than stacking permanent widgets.
+
+### Track / Blender decisions
+- PR #222 WSA decision makes **W0 startable now**: JavaScript authoritative core, Blender/Python oracle.
+- current detailed ladder: `W0 → B1 → B2/B3/B4 → B5 → W1 → D1 → R0 → K1`.
+- Blender may author socketed scenery/set-piece shells now; new drivable track geometry remains Track-Core-owned.
+- no dedicated current KFB Tokyo-Drift module/brief was found in GitHub/Dropbox recon; the idea is recorded as a later core-native urban drift beat, not a new track system.
+
+### Evidence / tests
+Planning/docs only. New runtime/browser/Stage tests: **0**.
+Read-only source evidence reused:
+- Race HUD Toy PR #23 source proof and frozen recovery state;
+- Race Undermine D.R.I.V.E. research @ `24c430bedb7cc18edcd029fc1932f78f5fb7ff83`;
+- RKIT guide / RKIT-11 Dropbox sources;
+- Track Core sprint plan on PR #219.
+
+No Stage, Cloudflare or Live claim.
