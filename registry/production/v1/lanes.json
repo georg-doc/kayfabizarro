@@ -2,6 +2,37 @@
   "schema": "kfb.production-registry/1",
   "lanes": [
     {
+      "id": "public-domain-pool-pd01",
+      "bucket": "CAN_START",
+      "title": "Public-Domain-Pool · Vier-Quellen-Smoke-Test",
+      "what": "Der vorhandene Pool für Met, Art Institute Chicago, Wikimedia Commons und Internet Archive wird mit genau einem Objekt pro Quelle geprüft. Kein Bulk-Import; der Downloader bleibt bis zum Beweis auf HOLD.",
+      "provider": "Asset Librarian / Billboard Media",
+      "yourAction": "Briefing kopieren und den kleinen 4-Objekt-Test in einem Web-Chat starten. Internet-Archive-Treffer vor öffentlicher Nutzung immer ansehen.",
+      "waitingFor": "",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "external": false,
+      "freshness": "CURRENT",
+      "freshnessNote": "",
+      "head": "97b1949bd2d464acefc7ba594bcf59e36039095b",
+      "headDate": "2026-09-27T00:00:00Z",
+      "expectedHead": "97b1949bd2d464acefc7ba594bcf59e36039095b",
+      "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/202",
+      "prState": "open",
+      "brief": {
+        "label": "PD-POOL-01 · Startbriefing",
+        "path": "tools/production_desk/briefings/PUBLIC_DOMAIN_POOL_PD01_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "exists": true,
+        "blob": "a6b9a10d611049a671f251a6dc7419c2ed1fcfbb",
+        "pasteReady": true,
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/work/hub-ctrl-01-2026-09-24/tools/production_desk/briefings/PUBLIC_DOMAIN_POOL_PD01_2026-09-27.md",
+        "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/work/hub-ctrl-01-2026-09-24/tools/production_desk/briefings/PUBLIC_DOMAIN_POOL_PD01_2026-09-27.md"
+      }
+    },
+    {
       "id": "toolbox-source-safe",
       "bucket": "RUNNING",
       "title": "ToolBox: echte Figuren, Szenen und Editor",
