@@ -1,0 +1,186 @@
+{
+ "schema": "kfb.route-recipe/0.1-draft",
+ "id": "TD_SHOWCASE_SEED",
+ "label": "Tokyo Drift piece proof v0.2 (seed for S3, not the final Uni-Center layout)",
+ "units": "metres, degrees; heading 0 = +Z; positive turn = right",
+ "start": {
+  "p": [
+   0,
+   0,
+   0
+  ],
+  "headingDeg": 0
+ },
+ "defaults": {
+  "widthClass": "STANDARD",
+  "markings": "STREET"
+ },
+ "pieces": [
+  {
+   "id": "entry",
+   "type": "STRAIGHT",
+   "length": 30
+  },
+  {
+   "id": "c1",
+   "type": "CURVE_EASE",
+   "turn": -90,
+   "radius": 40
+  },
+  {
+   "id": "w_up",
+   "type": "WIDTH_STEP",
+   "length": 24,
+   "widthTo": "WIDE",
+   "markings": "TRACK"
+  },
+  {
+   "id": "hairpin",
+   "type": "HAIRPIN_180",
+   "radius": 24,
+   "dir": 1
+  },
+  {
+   "id": "w_down",
+   "type": "WIDTH_STEP",
+   "length": 24,
+   "widthTo": "STANDARD"
+  },
+  {
+   "id": "s_off",
+   "type": "OFFSET_S",
+   "length": 60,
+   "shift": -8
+  },
+  {
+   "id": "ramp_in",
+   "type": "STRAIGHT",
+   "length": 40
+  },
+  {
+   "id": "spiral",
+   "type": "SPIRAL",
+   "turn": -360,
+   "radius": 26,
+   "rise": 9,
+   "tags": [
+    "parkdeck_ramp"
+   ],
+   "bankDeg": -6
+  },
+  {
+   "id": "roof",
+   "type": "STRAIGHT",
+   "length": 40,
+   "markings": "MAG",
+   "params": {
+    "sideL": {
+     "to": 0.45,
+     "zone": [
+      0.2,
+      1
+     ]
+    },
+    "sideR": {
+     "to": 0.45,
+     "zone": [
+      0.2,
+      1
+     ]
+    },
+    "deckDepth": {
+     "to": 1.0,
+     "zone": [
+      0.2,
+      1
+     ]
+    }
+   }
+  },
+  {
+   "id": "loop",
+   "type": "LOOP",
+   "height": 18,
+   "side": 1
+  },
+  {
+   "id": "runout",
+   "type": "STRAIGHT",
+   "length": 40,
+   "markings": "TRACK",
+   "params": {
+    "sideL": {
+     "to": 1,
+     "zone": [
+      0,
+      0.8
+     ]
+    },
+    "sideR": {
+     "to": 1,
+     "zone": [
+      0,
+      0.8
+     ]
+    },
+    "deckDepth": {
+     "to": 2.25,
+     "zone": [
+      0,
+      0.8
+     ]
+    }
+   }
+  },
+  {
+   "id": "kicker",
+   "type": "KICKER",
+   "length": 30,
+   "lipHeight": 5,
+   "lipDeg": 16
+  },
+  {
+   "id": "air",
+   "type": "AIR",
+   "gap": 22,
+   "drop": 0
+  },
+  {
+   "id": "landing",
+   "type": "LANDING",
+   "length": 40,
+   "drop": 5
+  },
+  {
+   "id": "calm",
+   "type": "STRAIGHT",
+   "length": 20
+  },
+  {
+   "id": "taper",
+   "type": "WIDTH_STEP",
+   "length": 40,
+   "params": {
+    "barrierVisL": {
+     "to": 0,
+     "ease": "smoothstep",
+     "zone": [
+      0,
+      0.75
+     ]
+    }
+   }
+  },
+  {
+   "id": "c2",
+   "type": "CURVE_EASE",
+   "turn": -90,
+   "radius": 35
+  },
+  {
+   "id": "exit",
+   "type": "STRAIGHT",
+   "length": 20
+  }
+ ]
+}
