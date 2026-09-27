@@ -1910,3 +1910,13 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+### 2026-09-27 · PD-POOL-F1 isolated AIC transport
+- Fresh recovery slice started from last compiling PD fetcher `154e573b8defacd17e836de049b3853578291f94`; frozen PR #239 was not resumed.
+- Draft PR #240 / branch `chatgpt-web/public-domain-pool-f1-aic-2026-09-27`.
+- AIC-only transport change adds provider-specific request handling; Met, Commons and Internet Archive code paths were not rerun or retuned.
+- GitHub Actions run `36285175091` / job `108524466091` PASS on tested head `c4f25c156e611a2fac7063becaf4fed3e3769638`.
+- Evidence: API HTTP 200; artwork 24645 public-domain/image-id gate PASS; one 843 px IIIF image HTTP 200; 238,585 bytes; SHA-256 `e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56`.
+- Proof remained ephemeral; no generated PD asset persisted, no Stage/Live publication.
+- Exactly one next gate: `PD-POOL-R1` four-source smoke + idempotence/persistence rerun using the proven AIC path. Bulk population remains blocked by the missing original selected-hit manifest.
+
