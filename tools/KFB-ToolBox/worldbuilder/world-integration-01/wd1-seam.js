@@ -31,16 +31,12 @@ const sourcePoint=p=>({x:Number(p.x),z:Number(p.z)});
 const sameXZ=(a,b)=>a&&b&&Math.abs(a.x-b.x)<.002&&Math.abs(a.z-b.z)<.002;
 const inside=(p,r)=>p.x>=r.minX&&p.x<=r.maxX&&p.z>=r.minZ&&p.z<=r.maxZ;
 function centroid(poly){
-  let a=(poly||[]).map(sourcePoint);
-  if(a.length>1&&sameXZ(a[0],a.at(-1)))a=a.slice(0,-1);
+  // Frozen WB-D1 crop follows the existing OSM City buildingCenter grammar:
+  // use the footprint bounding-box centre, not vertex mean / polygon area centroid.
+  const a=(poly||[]).map(sourcePoint);
   if(!a.length)return{x:0,z:0};
-  let crossSum=0,cx=0,cz=0;
-  for(let i=0;i<a.length;i++){
-    const p=a[i],q=a[(i+1)%a.length],cross=p.x*q.z-q.x*p.z;
-    crossSum+=cross;cx+=(p.x+q.x)*cross;cz+=(p.z+q.z)*cross;
-  }
-  if(Math.abs(crossSum)<1e-9)return{x:a.reduce((n,q)=>n+q.x,0)/a.length,z:a.reduce((n,q)=>n+q.z,0)/a.length};
-  return{x:cx/(3*crossSum),z:cz/(3*crossSum)};
+  const xs=a.map(p=>p.x),zs=a.map(p=>p.z);
+  return{x:(Math.min(...xs)+Math.max(...xs))/2,z:(Math.min(...zs)+Math.max(...zs))/2};
 }
 function clipSegment(a,b,r){
   const dx=b.x-a.x,dz=b.z-a.z;let t0=0,t1=1;
