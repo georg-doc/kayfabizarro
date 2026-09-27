@@ -24,6 +24,14 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
+## 2026-09-27 · CURRENT TRACK PRODUCTION BRIEF · T3 transitions + Clay VFX
+
+The accepted visual base is T3 `Knetstrang` on `main@692240b5`. For the next Blender MCP production kit and a fresh Claude Design T4 chat, start at:
+
+`skills/chat/workflows/KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27/START_HERE.md`
+
+It provides one shared staggered transition contract across road surface, markings, barrier, pit lane, curb/sidewalk and nature plus biome/event-specific clay-particle VFX. T1/T2 remain rejected visual history. Blender owns geometry/sockets/export; Design owns look/readability/VFX presets; later Work integration owns adoption into the real WorldBuilder/Racer.
+
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
@@ -1290,4 +1298,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-
