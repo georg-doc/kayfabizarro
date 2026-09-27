@@ -1,5 +1,15 @@
 ## 2026-09-26 · Clay texture made non-blocking
 
+## 2026-09-27 · Decision sync 00:44 + active production updates
+
+- ToolBox Production-02 r2: Georg PASS; moved out of active review to accepted-owner waiting state;
+- WorldBuilder WB-W0: Georg PASS; no repeated scale/walkability human gate;
+- ClayBound material review: DONE for now because the usable clay texture is already available; removed from active lanes while preserving history;
+- Billboard B2a: Georg PASS; current work is Billboard Engine v4+ on the accepted H4/B2a direction;
+- Public-Domain-Pool: RUNNING in Web Chat; any timeout is UNKNOWN until GitHub/Return reconciliation;
+- Rollercoaster v11: registered as RUNNING Blender donor study for Rollercoaster/Rail/Track logic;
+- no mass import, runtime merge, Live promotion or second movement owner.
+
 ## 2026-09-27 · Review cleanup · Graveyard archive + Hürth TUNE
 
 - removed the already-commented Graveyard legacy slice from the active Hub review queue;
