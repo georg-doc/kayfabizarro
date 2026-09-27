@@ -1,0 +1,95 @@
+{
+ "schema": "kfb.route-graph/0.2-draft",
+ "id": "SPLIT_MERGE_SEED",
+ "label": "Split by halving (HERO 21.6 -> 10.8 | 10.8), lifted branch with crest, connector back, merge",
+ "ds": 0.5,
+ "defaults": {
+  "widthClass": "HERO",
+  "markings": "STREET"
+ },
+ "routes": [
+  {
+   "id": "T",
+   "start": {
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "headingDeg": 0
+   },
+   "pieces": [
+    {
+     "id": "approach",
+     "type": "STRAIGHT",
+     "length": 60
+    },
+    {
+     "id": "j1",
+     "type": "SPLIT_HALF",
+     "length": 80,
+     "keep": 1,
+     "gore": 1.0
+    },
+    {
+     "id": "through",
+     "type": "STRAIGHT",
+     "length": 420
+    },
+    {
+     "id": "m1",
+     "type": "MERGE_HALF",
+     "length": 80,
+     "keep": 1,
+     "gore": 1.0
+    },
+    {
+     "id": "away",
+     "type": "STRAIGHT",
+     "length": 60
+    }
+   ]
+  },
+  {
+   "id": "L",
+   "from": {
+    "route": "T",
+    "piece": "j1"
+   },
+   "to": {
+    "route": "T",
+    "piece": "m1"
+   },
+   "pieces": [
+    {
+     "id": "veer",
+     "type": "OFFSET_S",
+     "length": 90,
+     "shift": -14,
+     "markings": "TRACK",
+     "bankDeg": 0
+    },
+    {
+     "id": "lift",
+     "type": "STRAIGHT",
+     "length": 70,
+     "rise": 10,
+     "markings": "MAG"
+    },
+    {
+     "id": "crest",
+     "type": "CREST",
+     "length": 60,
+     "height": 3
+    },
+    {
+     "id": "down",
+     "type": "STRAIGHT",
+     "length": 70,
+     "rise": -10,
+     "markings": "TRACK"
+    }
+   ]
+  }
+ ]
+}
