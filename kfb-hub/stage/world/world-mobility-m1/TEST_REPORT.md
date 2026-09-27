@@ -1,7 +1,7 @@
 # WORLD-MOBILITY-M1 · Test Report
 
 Datum: 2026-09-27  
-Status: `LOCAL_BROWSER_PASS`
+Status: `LOCAL_BROWSER_PASS · PUBLIC_ROUTE_FALLBACK`
 
 ## Paket und Owner
 
@@ -44,7 +44,15 @@ Pro Ansicht geprüft:
 
 ## Noch nicht behauptet
 
-- keine öffentliche `pages.dev`-Verifikation;
+- keine öffentliche `pages.dev`-Verifikation: drei Browseraufrufe lieferten die Site-Root-Fallbackseite statt `WORLD-MOBILITY-M1`;
 - kein Race-Track-Core;
 - kein Drive- oder Water-Modus;
 - kein finales Movement-Tuning.
+
+## Publication-Evidence
+
+- `cloudflare-live` Head: `e10745def24c1dde96ef36b474cea0b90dc1b237`
+- Branch-Readback: 41/41 Paketdateien vorhanden
+- Browser Marker: FAIL, `WORLD-MOBILITY-M1` nicht sichtbar
+- beobachtete Seite: `KayfaBizarro — Reality is negotiable.` Root statt Stage-Kandidat
+- Klassifikation: Deployment/Route UNKNOWN; Runtime-Kandidat bleibt lokal browser-grün

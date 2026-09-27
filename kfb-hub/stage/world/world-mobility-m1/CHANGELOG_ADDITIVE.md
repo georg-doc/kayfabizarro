@@ -1,5 +1,13 @@
 # WORLD-MOBILITY-M1 · Additive Changelog
 
+## 2026-09-27 · Publication route fallback preserved
+
+- exact 41-file package pushed to `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`;
+- branch readback PASS;
+- three exact public browser requests returned the general site root instead of the M1 marker;
+- status recorded as `PUBLIC_ROUTE_FALLBACK`, not falsely promoted to `PUBLIC_VERIFIED`;
+- no rebuild or runtime patch triggered by the deployment symptom.
+
 ## 2026-09-27 · productive Ground/Flight integration
 
 - den abgelehnten gefalteten ST01-Track-Dummy vollständig entfernt;

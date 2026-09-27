@@ -34,11 +34,13 @@ Der unbrauchbare gefaltete Track-Dummy ist vollständig entfernt. Die akzeptiert
 
 ## Status
 
-`LOCAL_BROWSER_PASS · CANDIDATE_PRESERVED`
+`LOCAL_BROWSER_PASS · PUBLIC_ROUTE_FALLBACK · CANDIDATE_PRESERVED`
 
-Die öffentliche Stage wurde noch nicht verändert. Darum ist die vorgesehene URL noch kein Akzeptanzbeleg:
+Der exakte Ordner wurde auf `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237` veröffentlicht und mit 41 Dateien zurückgelesen. Die öffentliche URL lieferte bei drei echten Browseraufrufen jedoch weiterhin die allgemeine KayfaBizarro-Root-Seite statt M1. Deshalb kein `PUBLIC_VERIFIED`:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-mobility-m1/`
+
+Kein weiterer Rebuild wurde gestartet. Der geprüfte Kandidat und der Publication-Commit bleiben erhalten; der Fehler liegt an Route/Deployment, nicht an einem neuen World-Runtime-Befund.
 
 ## Kein künstlicher Human Gate
 

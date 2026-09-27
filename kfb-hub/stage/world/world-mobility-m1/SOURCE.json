@@ -1,13 +1,19 @@
 {
   "schema": "kfb.stage-source/1",
   "stageId": "WORLD-MOBILITY-M1",
-  "status": "LOCAL_BROWSER_PASS",
+  "status": "PUBLIC_ROUTE_FALLBACK",
   "repository": "georg-doc/kayfabizarro",
   "branch": "work/world-mobility-m1-2026-09-27",
   "implementationCommit": "3538f07e0714959c5bf70dadeb2d190123efc5fd",
   "stageEntry": "kfb-hub/stage/world/world-mobility-m1/index.html",
   "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-mobility-m1/",
-  "publication": null,
+  "publication": {
+    "branch": "cloudflare-live",
+    "head": "e10745def24c1dde96ef36b474cea0b90dc1b237",
+    "branchReadback": "PASS",
+    "publicRoute": "FALLBACK_TO_SITE_ROOT",
+    "checkedAt": "2026-09-27"
+  },
   "publicVerified": false,
   "world": "huerth",
   "seed": 43129,
