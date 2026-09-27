@@ -1124,16 +1124,18 @@ Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
 
 
-## LOOK-TORSION-01 · current human gate · 2026-09-27
+## LOOK-TORSION-01 · architecture pass only · 2026-09-27
 
-Elastic Torsion W9 is now **PUBLIC_VERIFIED · HUMAN PENDING** on Draft PR **#245** / `chatgpt-web/look-torsion-01-2026-09-27`.
+Elastic Torsion W9 is **ARCHITECTURE PASS ONLY · STANDALONE HUMAN GATE CLOSED** on Draft PR **#245** / `chatgpt-web/look-torsion-01-2026-09-27`.
 
 - protected boundary: frozen Hürth R2 / PR #194 remains untouched;
-- source: cached Cologne OSM `way/23574173`, 46.5 m;
-- proof: A source → B Elastic without twist → C same field + cumulative torsion;
-- source/browser: **45/45 PASS**;
-- exact public Cloudflare proof: workflow `36287292857`, attempt 2 / job `108530790350` → **19/19 PASS**;
-- human route: https://kayfabizarro.pages.dev/kfb-hub/stage/look-torsion-01/;
-- Hub route: https://kayfabizarro.pages.dev/kfb-hub/stage/.
+- source/browser mechanism proof: **45/45 PASS**;
+- retain cumulative height-dependent torsion, anchored base and shared roof/body final deformation field;
+- the isolated grey A/B/C render is **not** WorldBuilder/look, lighting/shadow, material or final calibration acceptance;
+- recurring shadow/light defects remain open;
+- the direct Stage is historical engineering evidence only and is no longer a Georg task;
+- no further standalone torsion review page.
 
-Exactly one gate: **Georg visual A/B/C review**. Do not merge PR #245, patch Hürth R2 or promote Live before that gate.
+Next meaningful evaluation: consume the mechanism in the next clean/current WorldBuilder or world-presentation candidate with the real scene/camera and shared shadow/lighting corrections.
+
+Binding workflow rule: `skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md` — no low-fidelity proxy human gates.
