@@ -372,6 +372,22 @@ Preserve:
 
 Do not key ear bones from a second animation path while DangleChain owns them.
 
+### Brick Fish / Town social-hit contract
+
+Also preserve the reaction contract for the Town **Brick Fish / Red Herring** interaction:
+
+- semantic event: `social.prop_hit`;
+- default NPC meaning when no stronger context exists: **BONK → recoil/blink → heart Emanata**;
+- the heart starts only after the physical impact is readable and is visual punctuation, not relationship state;
+- relationship/dramaturgy is consumer-supplied: `affectionate`, `buddy-banter`, `argument`, `kayfabe-performance`, or real harm;
+- Kayfabe may deliberately use a large physical **sell** while remaining staged/friendly;
+- actual HP/damage/aggro requires the consumer to emit `damage.light/heavy`;
+- Reaction Choreography may pass a banter/argument/Kayfabe cue to the existing dialogue owner but must not generate a second dialogue/banter system.
+
+Source pins are recorded in `REACTION_CHOREOGRAPHY.md`, `reaction-choreography.v0.1.json` and `SOURCE.json`.
+
+Do **not** add Brick Fish modeling/prop integration to the five-event first proof. That visual integration waits for a source-proven Brick Fish asset and the later Town/WorldBuilder `BRICK-FISH-TOSS-01` receiver slice.
+
 ### Five required integrated event proofs
 
 1. **surprise**  
