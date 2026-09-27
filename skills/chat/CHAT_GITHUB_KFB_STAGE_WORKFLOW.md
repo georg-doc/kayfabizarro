@@ -74,6 +74,18 @@ Reason: a long explanatory/paste-ready response before persistence creates an av
 
 If a write itself times out, keep the user-facing response minimal while status is `UNKNOWN`; inspect the exact ref/file first. Never spend a separate conversational turn merely drafting text that the same chat is already authorized to persist.
 
+### Continuous checkpoint rule
+
+For authorized production work, **GitHub-first applies throughout the slice, not only at closure**. After every meaningful completed implementation step, evidence/test result, Georg decision, next-gate change or recovery finding:
+
+- write it into the existing owner branch/PR and existing Return/Recovery/WIP/changelog surface;
+- fetch the exact branch head and intended file back;
+- then continue substantial work or send non-trivial user-visible prose.
+
+The objective is that a timeout may lose chat prose, but not the latest proven production state. Do not create a new status document when the owner already has an appropriate Return/Recovery/WIP location.
+
+At each checkpoint GitHub must be sufficient for a fresh chat to recover: **owner · branch/PR · exact verified head · last proven result · unresolved/deferred items · exactly one current next action/gate**. A fresh chat must never require Georg to reconstruct the previous conversation before continuing.
+
 ## 4. Publish only to KFB Stage
 
 Human test links use:
