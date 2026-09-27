@@ -55,6 +55,38 @@ Repository-native comparison against all frozen roads:
 
 The current baked adapter instead geometrically clips any intersecting segment, yielding 865 roads and synthesized boundary points. That is the proven road-parts mismatch.
 
+## Road repair result
+
+Repair pass 1 on the road gate is **PASS** in GitHub Actions run/job `36324286331 / 108633931939`:
+- building crop: **369 PASS**;
+- road count: **844 PASS**;
+- exact road IDs + line geometry + metadata: **844/844 PASS**.
+
+The next isolated seam gate exposed by CI is:
+- **landuse 32 actual vs 36 frozen fixture**.
+
+## Proven landuse + water fixture semantics
+
+The frozen fixture is reproduced exactly by:
+
+### Landuse
+- use **all** normalized landuse classes, including `class:"water"`;
+- select by the same serialized-coordinate arithmetic mean used for buildings;
+- retain the original serialized polygon;
+- round x/z to **2 decimals**;
+- result: **36/36 exact IDs + polygons + class values**.
+
+The current baked adapter incorrectly diverts water-class polygons away from `landuse`, causing the 32/36 result.
+
+### Water
+- start from normalized `class:"water"` polygons;
+- apply Sutherland–Hodgman to the crop **without removing the serialized closing point first**;
+- do **not** force a closing point after clipping;
+- round output x/z to **2 decimals**;
+- result: **5/5 exact IDs + polygon geometry**.
+
+This historical behavior also explains the Rhine relation polygon ordering/closure shape in the fixture.
+
 ## Current next action
 
-**Repair pass 1:** change only the baked-road second-crop adapter to the proven frozen rule, strengthen seam assertions to exact road IDs/geometry/metadata, then rerun the full existing seam workflow.
+**Landuse/Water repair pass 1:** change only the baked second-crop adapter to the proven 36/5 fixture semantics, add exact fixture assertions, then rerun the existing seam → static → browser workflow.
