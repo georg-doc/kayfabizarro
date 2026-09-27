@@ -1,0 +1,20 @@
+{
+  "schema": "kfb.pd-seeds.v1",
+  "note": "Startbestand fuer media/public_domain. perQuery = Obergrenze je Quelle und Suchbegriff, nach Lizenzfilter.",
+  "perQuery": 6,
+  "categories": [
+    { "id": "alchemy",        "sources": ["commons", "met", "aic"], "queries": ["alchemy engraving", "alchemical symbols", "Khunrath Amphitheatrum"] },
+    { "id": "davinci",        "sources": ["commons", "met"],        "queries": ["Leonardo da Vinci drawing", "Leonardo da Vinci codex"] },
+    { "id": "anatomy",        "sources": ["commons", "met"],        "queries": ["Vesalius anatomy", "anatomical engraving"] },
+    { "id": "science",        "sources": ["commons", "met"],        "queries": ["scientific diagram 18th century", "astronomy engraving", "machine patent drawing"] },
+    { "id": "maps",           "sources": ["commons", "met"],        "queries": ["antique world map", "map 1700", "celestial map"] },
+    { "id": "arthistory",     "sources": ["met", "aic"],            "queries": ["Hiroshige", "Hokusai", "Goya etching", "Bosch"] },
+    { "id": "photo",          "sources": ["met", "aic"],            "queries": ["19th century photograph city", "daguerreotype portrait"] },
+    { "id": "newspaper",      "sources": ["commons", "ia"],         "queries": ["newspaper 1920", "newspaper front page 1910"] },
+    { "id": "propaganda",     "sources": ["ia", "commons"],         "queries": ["propaganda 1943", "wartime poster 1942", "newsreel 1944"] },
+    { "id": "silentfilm",     "sources": ["ia"],                    "queries": ["silent film 1920", "Melies", "silent comedy 1917"] },
+    { "id": "cartoon",        "sources": ["ia", "commons"],         "queries": ["cartoon 1930", "Fleischer cartoon", "Emile Cohl"] },
+    { "id": "documentary",    "sources": ["ia"],                    "queries": ["Prelinger industrial film", "educational film 1950"] },
+    { "id": "audio",          "sources": ["ia"],                    "queries": ["public domain music 1920", "old time radio"] }
+  ]
+}
