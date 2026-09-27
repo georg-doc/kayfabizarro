@@ -42,7 +42,21 @@ const roadSigFixture=fx.roads.map(r=>({
 assert.deepEqual(roadSigZone,roadSigFixture,'exact frozen road ids + line geometry + metadata');
 pass++;console.log('ok '+pass+' - exact frozen road ids + line geometry + metadata · '+roadSigZone.length+' roads');
 eq('crop landuse parity',zone.counts.landuse,fx.counts.landuse);
+const landSigZone=zone.landuse.map(l=>({
+  id:l.id,cls:l.cls,
+  poly:l.poly.map(p=>[p.x,Object.is(-p.z,-0)?0:-p.z])
+})).sort((a,b)=>a.id.localeCompare(b.id));
+const landSigFixture=fx.landuse.map(l=>({id:l.id,cls:l.cls,poly:l.poly})).sort((a,b)=>a.id.localeCompare(b.id));
+assert.deepEqual(landSigZone,landSigFixture,'exact frozen landuse ids + polygon geometry + class');
+pass++;console.log('ok '+pass+' - exact frozen landuse ids + polygon geometry + class · '+landSigZone.length+' surfaces');
 eq('crop water parity',zone.counts.water,fx.counts.water);
+const waterSigZone=zone.water.map(l=>({
+  id:l.id,cls:l.cls,
+  poly:l.poly.map(p=>[p.x,Object.is(-p.z,-0)?0:-p.z])
+})).sort((a,b)=>a.id.localeCompare(b.id));
+const waterSigFixture=fx.water.map(l=>({id:l.id,cls:l.cls,poly:l.poly})).sort((a,b)=>a.id.localeCompare(b.id));
+assert.deepEqual(waterSigZone,waterSigFixture,'exact frozen water ids + clipped polygon geometry');
+pass++;console.log('ok '+pass+' - exact frozen water ids + clipped polygon geometry · '+waterSigZone.length+' surfaces');
 eq('exact building id set survives bake→crop',zone.buildings.map(x=>x.id).sort(),fx.buildings.map(x=>x.id).sort());
 eq('protected Dom id retained',zone.landmark.id,fx.landmark.id);
 eq('presentation railway count retained',zone.railways.length,fx.railways.length);
