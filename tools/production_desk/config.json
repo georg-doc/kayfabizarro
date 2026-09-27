@@ -411,23 +411,43 @@
     {
       "id": "racer",
       "bucket": "CAN_START",
-      "title": "Racer · Track Core · W0 NOW",
-      "what": "Lead/WSA hat JavaScript als maßgeblichen Track Core bestätigt; Blender/Python bleibt unabhängiger Oracle. W0 Census/Contract + kleiner lauffähiger JS-Reference-Core ist jetzt startbar. Danach B1–B5 Blender-Oracle, W1 Runtime-Parität, D1 Visual Grammar; Playable Track R0 bleibt bis zum geschlossenen Web-Paket HOLD.",
-      "provider": "Georg/WSA → ChatGPT Web → Blender MCP → Web → Claude Design",
-      "yourAction": "Track Core W0 im Web/GitHub starten. Keine neue fahrbare Blender-Einzelstrecke und noch kein Playable Track R0.",
-      "waitingFor": "",
+      "title": "Racer · Clay Track Design S4 · NEXT",
+      "what": "Track Core W0–S8 is the geometry foundation. The next design pass keeps all drivable geometry in the KFB Blender-MCP Racer / Track Core, while Kenny/Kenney, KayKit and Tiny Treats are buildings/environment/roadside props only. Claude Design now solves clay edge/runoff/socket grammar plus patch-scatter biome transitions (no visible gradients) for dirt/desert, snow, water, canyon, urban→country and source-pinned Cosmic cases across 14.4 m / 18 m / variable widths.",
+      "provider": "Claude Design · Track Core S4 / TRACK-CORE-2",
+      "yourAction": "",
+      "waitingFor": "Source-first S4 result: actual KFB Track Core/profile/socket isolation, edge/runoff atlas, connector transition matrix, patch-scatter edge-case POCs and 2–3 clay look options. No Stage until a meaningful integrated visual milestone exists.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 219,
       "branch": "georg-doc-patch-2",
-      "expectedHead": "6610e5b0e819c37e36f63d5bbff4fc9b95465779",
+      "expectedHead": "e21d983502a6cedf1ec19b2561de963bdae53ac4",
       "brief": {
-        "label": "TRACK-CORE-0 · Web Census + Core Contract",
-        "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md",
+        "label": "Racer · Clay Track Design S4",
+        "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md",
         "ref": "georg-doc-patch-2",
         "pasteReady": true
       },
       "review": null
+    },
+    {
+      "id": "world-building-facade-clay-s5",
+      "bucket": "WAITING",
+      "title": "World · Building/Façade Clay Adapter S5 · PREPARED",
+      "what": "Separate follow-on WorldBuilder/OSM slice: harmonize real OSM buildings with verified KayKit/Kenney building donors using the proven H0 Knetwelt clay preprocess/material stack plus Elastic Grotesque Clay V2. Preserve OSM identity/footprints and native kit anchors. This does not own roads or Track Core.",
+      "provider": "WorldBuilder / OSM City → Claude Design",
+      "yourAction": "",
+      "waitingFor": "Start only as its own bounded slice when the receiving WorldBuilder/OSM owner opens the building-look gate; first proof is unchanged OSM + KayKit + Kenney sources in isolation, then the shared clay adapter.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 219,
+      "branch": "georg-doc-patch-2",
+      "expectedHead": "e21d983502a6cedf1ec19b2561de963bdae53ac4",
+      "brief": {
+        "label": "Building/Façade Clay Adapter S5 · START",
+        "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/START_HERE.md",
+        "ref": "georg-doc-patch-2",
+        "pasteReady": true
+      }
     },
     {
       "id": "racer-design-hud-billboards",
