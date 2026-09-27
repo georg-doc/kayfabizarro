@@ -534,3 +534,11 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Updated the existing Hub lane and M2 briefing in place; no second Hub or registry was introduced.
 - Removed frozen numeric briefing counts from the existing Hub publication workflow. Publication closure now proves nonzero jobs, one prompt per job, READY+HOLD completeness and zero problems from the generated registry itself.
 - Builder tests: 16/16 PASS. The local render test still lacks the generated online registry fixture in this isolated checkout; the publication workflow owns that build and validation.
+
+## 2026-09-27 · World Drive M2A source candidate
+
+- M2A-Kernloop als Draft PR #253 @ `c59cd460f57b0129157722d4ab3a0eeab22978aa` geroutet;
+- 19/19 Paket- und 28/28 lokale Browserprüfungen dokumentiert;
+- `E` verbindet Ground und das bewährte Race-PR-#10-Fahrzeug; Ground/Drive/Flight behalten getrennte Owner;
+- kein Track-Proxy; M2B bleibt `WAITING_SOURCE`;
+- Stage/Cloudflare ausdrücklich noch nicht als veröffentlicht behauptet.
