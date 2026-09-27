@@ -588,3 +588,11 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Added one Hub lane for the bounded reliability implementation; no second Hub or deployment owner.
 - Reconciled current Track S4/S5, World/OSM Seam, Clay Emanata, Brick Fish and Public-Domain recovery inputs into the masterplan.
 - Separated PR #257's browser-runtime proof from its later fixed-margin CI harness timeout.
+
+
+## 2026-09-27 · World M2A R1 gemessen
+
+- PR #258 erhält den reparierten Fahrboden und das korrekte Fahrzeug-Grounding.
+- Kaltstartziel bestanden; Framebudget nicht bestanden.
+- Nächster Produktionsschritt ist ausschließlich `WORLD-M2A-R2 · RENDER BUDGET`.
+- Track S9/S4B, Emanata/Brick Fish und HUD bleiben Inputs außerhalb dieses Gates.

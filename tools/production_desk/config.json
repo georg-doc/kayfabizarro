@@ -551,26 +551,26 @@
     {
       "id": "worldbuilder-mobility-mvp",
       "bucket": "CAN_START",
-      "title": "World M2A · TUNE · aktuell nicht spielbar",
-      "what": "Die feste Stage lädt und der formale Zu-Fuß/Auto/Flug-Ablauf besteht die automatischen Prüfungen, aber Georgs freier Spieltest ist ein klares HUMAN_TUNE: Bewegung und Frametiming sind langsam/ruckelig, Animationen passen nicht, das Fahrzeug schwebt und abseits der Straße fällt es durch fehlende Terrain-Kollision. Der Stand ist Fehlerbeleg, kein spielbares MVP.",
-      "provider": "Work · Sol High · WorldBuilder + Travel + Race",
+      "title": "World M2A R1 · Boden repariert · Renderbudget NEXT",
+      "what": "R1 hat den vollständigen 716 × 716-m-Fahrboden, das Fahrzeug-Grounding und den Kaltstart repariert. Auto: 4/4 Radkontakte, 2–3 mm Ground Gap, Offroad-Probe ohne Fall. Der Stand bleibt dennoch unveröffentlicht: Zu Fuß/Fahrt liegen bei p95 84–89 ms statt ≤33,3 ms. Der eigentliche Renderpfad ist der Engpass, nicht Movement, World-Update oder UI.",
+      "provider": "Work · Sol High · bestehende World-M2A-Runtime",
       "yourAction": "",
-      "waitingFor": "WORLD-M2A-R1: auf exakt derselben Szene zuerst messen, dann höchstens zwei kleine Reparaturkandidaten für durchgehenden Terrainkontakt/Fahrzeug-Grounding und den größten gemessenen Performance-/Movement-Blocker. Keine neuen Features.",
+      "waitingFor": "WORLD-M2A-R2: Grafikbeschleunigung/Renderpfad einmal verifizieren und danach genau eine sichtbare Stadt-LOD-/Shadow-Budget-Lösung. Keine Features, Tracks, HUDs oder neue Assets.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 253,
-      "branch": "work/world-drive-interact-m2a-2026-09-27",
-      "expectedHead": "b34d9566450cbc72cb0eb556cab09126c8587503",
+      "pr": 258,
+      "branch": "work/world-m2a-playability-r1-2026-09-27",
+      "expectedHead": "9e74fc792e6f00309e9f57f1d3ae4c46e1f0ee57",
       "brief": {
-        "label": "World M2A-R1 · Playability + Performance",
-        "path": "tools/production_desk/briefings/WORLD_M2A_PLAYABILITY_R1_2026-09-27.md",
+        "label": "World M2A-R2 · Render Budget",
+        "path": "tools/production_desk/briefings/WORLD_M2A_RENDER_BUDGET_R2_2026-09-27.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": true
       },
       "review": {
-        "label": "Aktuellen Fehlerstand öffnen",
+        "label": "Öffentlicher M2A-Fehlerstand",
         "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
-        "sourceRef": "PR #253 · Runtime 3a9375b · Human TUNE/NOT_PLAYABLE @ b34d956 · automated 34/34 is technical evidence only"
+        "sourceRef": "PR #258 · R1 candidate 9e74fc79 · contact/boot PASS · frame budget FAIL · candidate not published"
       }
     },
     {
@@ -614,8 +614,8 @@
     }
   ],
   "wsa": {
-    "state": "M2A_HUMAN_TUNE_NOT_PLAYABLE",
-    "text": "World M2A has a public reproducible route but failed Georg's free-play gate. Current Work priority is one bounded R1: continuous off-road terrain contact, correct vehicle grounding, then the largest measured frame/load/movement blocker. Track, HUD and new content remain outside R1."
+    "state": "M2A_R1_PARTIAL_RENDER_BUDGET_NEXT",
+    "text": "World M2A R1 repaired full-zone contact, parked vehicle grounding and cold-control time. The candidate is preserved in PR #258 but not published because walk/drive p95 remains 84–89 ms. Current Work priority is exactly one R2 render-budget pass: verify actual graphics acceleration/render path, then one city LOD/shadow-budget candidate. No feature expansion."
   },
   "standards": [
     {
@@ -741,8 +741,8 @@
       "group": "Spielen",
       "id": "world-drive-m2a",
       "title": "KlayfaBizarro World M2A",
-      "what": "In der Knetwelt laufen, mit E einsteigen, fahren, aussteigen und fliegen.",
-      "status": "Jetzt testen",
+      "what": "Öffentliche reproduzierbare M2A-Fehlerreferenz. Der bessere R1-Candidate mit durchgehendem Boden und korrektem Fahrzeugkontakt liegt unveröffentlicht in PR #258, bis das Renderbudget bestanden ist.",
+      "status": "TUNE · öffentlicher Fehlerstand",
       "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html"
     },
     {

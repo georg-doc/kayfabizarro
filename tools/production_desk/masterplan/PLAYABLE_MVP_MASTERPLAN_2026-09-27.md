@@ -160,3 +160,11 @@ Zusätzlich: isolierte Clay-Speech-/Thought-Bubble-Golden-Samples auf Basis der 
 ## Georgs aktuelle Aufgabe
 
 **Keine.** World M1, Track M2 und ToolBox Recovery sind Produktionsjobs. Der nächste sinnvolle Georg-Gate entsteht erst auf einer echten spielbaren Track-in-World-Stage oder einer tatsächlich wiederhergestellten Studio-Funktion.
+
+
+## 2026-09-27 · World M2A R1 gemessen
+
+- PR #258 erhält den reparierten Fahrboden und das korrekte Fahrzeug-Grounding.
+- Kaltstartziel bestanden; Framebudget nicht bestanden.
+- Nächster Produktionsschritt ist ausschließlich `WORLD-M2A-R2 · RENDER BUDGET`.
+- Track S9/S4B, Emanata/Brick Fish und HUD bleiben Inputs außerhalb dieses Gates.

@@ -1309,3 +1309,11 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Binding Workflow auf v2 erweitert: erster Recovery-Checkpoint spätestens nach zehn Minuten bzw. vor jedem langen Schritt; stabiler Checkpoint-ID; Ref-/Datei-Hash-Prüfung vor Retry; Cloudflare als separater dauerhafter Job mit Deployment-Receipt.
 - Aktuelle Inputs verifiziert: PR #219 Track S4/S5, PR #257 World/OSM Seam, PR #256 Emanata-Konzept, PR #254 Brick-Fish-Toss und PR #251 PD-Manifest-Recovery sind auf GitHub persistiert.
 - Masterplan auf WORLD-M2A-R1 als Work-Priorität und Track S4 als parallelen Claude-Design-Job korrigiert.
+
+
+## 2026-09-27 · World M2A R1 gemessen
+
+- PR #258 erhält den reparierten Fahrboden und das korrekte Fahrzeug-Grounding.
+- Kaltstartziel bestanden; Framebudget nicht bestanden.
+- Nächster Produktionsschritt ist ausschließlich `WORLD-M2A-R2 · RENDER BUDGET`.
+- Track S9/S4B, Emanata/Brick Fish und HUD bleiben Inputs außerhalb dieses Gates.
