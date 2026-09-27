@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.stage-source/1",
+  "stageId": "WORLD-MOBILITY-M1",
+  "status": "LOCAL_BROWSER_PASS",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "work/world-mobility-m1-2026-09-27",
+  "implementationCommit": "3538f07e0714959c5bf70dadeb2d190123efc5fd",
+  "stageEntry": "kfb-hub/stage/world/world-mobility-m1/index.html",
+  "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-mobility-m1/",
+  "publication": null,
+  "publicVerified": false,
+  "world": "huerth",
+  "seed": 43129,
+  "sources": {
+    "worldR2": {
+      "pullRequest": 234,
+      "runtimeHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
+      "role": "world, ground contact, ground locomotion and resident owner"
+    },
+    "travelModes01": {
+      "repository": "georg-doc/KFB-Travel-Globe",
+      "pullRequest": 39,
+      "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
+      "runtimeHead": "f5ea32f817403cda0e30a426e70f37db8ce03d66",
+      "currentHeadAtIntake": "e10a977501cd186fe1330e9d3fd1a7b5811beb3a",
+      "roles": ["mode router", "400 ms double-Space intent", "actual card carrier"]
+    },
+    "clayBound": {
+      "pullRequest": 237,
+      "head": "e1f693347fd0049deb9f7ef89ee85341bd9f355d",
+      "role": "reversible presentation only"
+    }
+  },
+  "donorHashesSha256": {
+    "travel-mode-router.js": "391907040a9d4ed2ba607ee3aa8683a45afc7b79f1f962f5e9f85eae2a68768e",
+    "mode-intent.js": "ad4664640ac5fb2217d095ca3404df652ffee52fa202ff60f45e66106b6f656d",
+    "card-carrier.js": "c9033bb3dcd694b161258b96b2c31f07732eb1f113bd585f7f6230acd89ca9b9"
+  },
+  "explicitlyAbsent": [
+    "folded ST01 proxy track",
+    "second renderer",
+    "second simultaneous movement or camera writer",
+    "Drive mode without its source owner",
+    "Water mode without its source owner"
+  ]
+}

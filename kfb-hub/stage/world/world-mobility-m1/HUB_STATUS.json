@@ -1,0 +1,20 @@
+{
+  "schema": "kfb.hub-stage-candidate/1",
+  "id": "WORLD-MOBILITY-M1",
+  "title": "World · Ground + Flight M1",
+  "route": "/kfb-hub/stage/world/world-mobility-m1/",
+  "sourceBranch": "work/world-mobility-m1-2026-09-27",
+  "runtimeHead": "3538f07e0714959c5bf70dadeb2d190123efc5fd",
+  "visibility": "SOURCE_CANDIDATE",
+  "publication": "NOT_PUBLISHED",
+  "reviewState": "PROCEED_PASS_IMPLEMENTED__LOCAL_BROWSER_PASS",
+  "humanGate": null,
+  "completed": [
+    "removed folded ST01 proxy",
+    "real Ground/Flight owner handoff",
+    "actual Travel card carrier",
+    "400 ms double-Space intent",
+    "reversible Original/Clay"
+  ],
+  "next": "Connect the real Race Track Core owner; do not build another proxy."
+}
