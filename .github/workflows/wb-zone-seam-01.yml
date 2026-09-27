@@ -1,0 +1,49 @@
+name: WB-ZONE-SEAM-01 · baked Cologne in real WB2
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wb-zone-seam-01-2026-09-27
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/**'
+      - 'tools/KFB-ToolBox/lib/edit-layer.js'
+      - '.github/workflows/wb-zone-seam-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  seam-and-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact WORLD-ZONE-BAKE-01 → WB2 seam contract
+        run: node tools/KFB-ToolBox/worldbuilder/world-integration-01/test/wb-zone-seam-01.mjs
+      - name: Existing World r2 owner and closure checks
+        run: node tools/KFB-ToolBox/worldbuilder/world-integration-01/test/world-integration-r2.static.mjs
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start repository server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/kfb-wb-zone-seam-http.log 2>&1 &
+          echo $! >/tmp/kfb-wb-zone-seam-http.pid
+          sleep 2
+      - name: Real Hürth + baked Cologne + accepted WB2 browser regression
+        run: node tools/KFB-ToolBox/worldbuilder/world-integration-01/test/world-integration-r2.browser.mjs
+      - name: Upload HTTP log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wb-zone-seam-01-http-log
+          path: /tmp/kfb-wb-zone-seam-http.log
+          if-no-files-found: ignore
+          retention-days: 14

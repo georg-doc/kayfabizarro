@@ -1,0 +1,48 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "WB-ZONE-SEAM-01",
+  "exportRevision": "2026-09-27-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wb-zone-seam-01-2026-09-27",
+  "draftPR": 252,
+  "sourceHead": "2224d95d15fabb99a6a64f77ec863d37f9134fd3",
+  "entrypoints": [
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html"
+  ],
+  "sourceFiles": [
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wd1-seam.js",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-world.js",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wd1-city.js",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-selftest.js"
+  ],
+  "dataFiles": [
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/fixtures/cologne-dom-crop-v0.json"
+  ],
+  "externalDependencies": [
+    {
+      "role": "WORLD-ZONE-BAKE-01",
+      "ref": "georg-doc/kayfabizarro@3b4909d4c83b704662e66b60212e7f20ba5cf662",
+      "path": "tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/"
+    },
+    {
+      "role": "Elastic Grotesque Clay deformation donor",
+      "ref": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+      "path": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs"
+    }
+  ],
+  "evidence": [
+    "GitHub Actions 36291539816",
+    "GitHub Actions 36291711090",
+    "GitHub Actions 36291859889"
+  ],
+  "missing": [
+    "exact original generator implementation for frozen cologne-dom-crop-v0 selection"
+  ],
+  "exportMode": "Git branch is the complete editable export; no redundant ZIP created.",
+  "start": {
+    "command": null,
+    "url": null,
+    "notes": "Do not restart runtime candidate. Run NEXT_GATE.md diagnostic first."
+  }
+}

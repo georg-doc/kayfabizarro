@@ -11,6 +11,8 @@ const presentation=read('tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-prese
 const actor=read(root+'wi1-actor.js');
 const play=read(root+'wi1-play.js');
 const world=read(root+'wi1-world.js');
+const seam=read(root+'wd1-seam.js');
+const city=read(root+'wd1-city.js');
 const self=read(root+'wi1-selftest.js');
 const contract=read(root+'wi1-locomotion-contract.mjs');
 const surface=json(root+'contracts/world-surface-adapter.v1.json');
@@ -31,6 +33,10 @@ ok('sprint consumes source-backed ToolBox role',play.includes("sprint: { clip: '
 ok('World movement still owns controller',play.includes('createWalkController')&&play.includes('walker.setParams'));
 ok('World does not export a second movement controller',!actor.includes('createWalkController'));
 ok('World integration uses stable local presentation seam',world.includes("const ROOT = new URL('./', import.meta.url).href;"));
+ok('Cologne now consumes pinned WORLD-ZONE-BAKE-01',world.includes("WORLD_ZONE_BAKE_PIN = '3b4909d4c83b704662e66b60212e7f20ba5cf662'")&&world.includes("kind: 'world-zone-bake'"));
+ok('World Zone adapter consumes bake without replacing presenter',seam.includes('fromBakedZone')&&seam.includes('presentation-only railway/Hbf metadata')&&seam.includes("conflicts:new Set()"));
+ok('WB2 document stores manifest ref plus transform',world.includes("kind: 'world-zone'")&&world.includes("transform: { position: [0, 0, 0]"));
+ok('LOOK-TORSION pass is consumed by existing Elastic owner',city.includes('elasticTorsionProfile')&&city.includes('EG.buildElasticShell(src, anchor, torsion)')&&city.includes('protectedLandmarksSeparate: true'));
 ok('WB2 presentation uses stable WorldBuilder presentation modules',presentation.includes("../presentation/wd-light.js")&&presentation.includes("../presentation/wd-look.js"));
 ok('Hürth fixture parses with buildings',Array.isArray(huerth.buildings)&&huerth.buildings.length>100);
 ok('Alstädten fixture parses with buildings',Array.isArray(alt.buildings)&&alt.buildings.length>100);

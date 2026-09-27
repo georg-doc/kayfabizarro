@@ -24,6 +24,13 @@ export async function run(A) {
     { const c = W.city.stats, lm = (c.base || 0) + (c.base2 || 0), miss = W.zone.counts.buildings - c.buildings - lm; ok('city layer = zone buildings (ordinary + protected landmark bases)', miss <= Math.ceil(W.zone.counts.buildings * 0.015), c.buildings + ' ordinary + ' + lm + ' landmark-base parts / ' + W.zone.counts.buildings + (miss ? ' · ' + miss + ' not built (degenerate ring / shell failed ' + (c.failed || 0) + ')' : '')); }
     ok('WB2 terrain mesh is the world tile', A.terrain && A.terrain.geometry.parameters.width === W.tile.size, W.tile.size + ' m @ ' + (W.tile.size / W.tile.seg) + ' m');
     ok('scene document is a WB2 document', A.doc.format === 'kfb-worldbuilder-scene' && A.doc.version === 1 && A.doc.id === W.docId && !!A.doc.world);
+    if (W.id === 'cologne') {
+      ok('Cologne geography comes through WORLD-ZONE-BAKE-01', W.zone.kind === 'world-zone-bake' && W.zone.package?.id === 'cologne-dom-zentrum-v0' && W.zone.package?.revision === '2026-09-24.1', W.zone.kind + ' · ' + (W.zone.package?.revision || 'no revision'));
+      ok('baked support owns zone heightAt', W.zone.heightAtSource?.schema === 'kfb.world-zone.support-collision.v1' && W.zone.heightAtSource.truth === 'undeformed-normalized-semantics' && Math.abs(W.zone.heightAt(0, 0) - Number(W.zone.heightAtSource.ground?.y || 0)) < 1e-9, W.zone.heightAtSource?.schema || 'no support source');
+      ok('WB2 stores manifest ref + transform, not copied bake geometry', A.doc.world.zoneRef?.kind === 'world-zone' && A.doc.world.zoneRef.manifest === W.zone.package.manifestUrl && Array.isArray(A.doc.world.zoneRef.transform?.position), A.doc.world.zoneRef?.manifest || 'no zoneRef');
+      ok('historical Track conflicts are not applied without a mounted Track socket', W.zone.conflicts.size === 0 && W.zone.deferredTrackConflicts?.length === 8, 'active ' + W.zone.conflicts.size + ' · deferred ' + (W.zone.deferredTrackConflicts?.length || 0));
+      ok('LOOK-TORSION mechanism is consumed by ordinary real-world stock', W.city.stats.torsionProfile?.owner?.includes('LOOK-TORSION-01') && W.city.stats.torsionProfile.minDeg <= 5 && W.city.stats.torsionProfile.maxDeg <= 9.5 && W.city.stats.torsionProfile.maxDeg > W.city.stats.torsionProfile.minDeg && W.city.stats.torsionProfile.protectedLandmarksSeparate === true, JSON.stringify(W.city.stats.torsionProfile));
+    }
     /* 2 · actor + consumed locomotion profile (KayKit 1.1 canon) */
     const act = P.actor.actions, V = P.speeds;
     const need = ['idle', 'walk', 'run', 'sprint', 'backward', 'strafe.left', 'strafe.right', 'jump.start', 'jump.air', 'jump.land', 'crouch', 'sneak', 'crawl'];

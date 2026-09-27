@@ -379,10 +379,21 @@ function makeSupport(out, recs) {
     }
   };
 }
+/* LOOK-TORSION-01 architecture pass, consumed in the real presenter.
+   Existing Elastic owns the deformation; this only selects role/height-dependent authoring amplitude.
+   Ordinary stock stays subtle, tall regular buildings may approach the 9.5° hero proof range.
+   Protected landmarks keep wd1-landmark.js as their separate owner. */
+export function elasticTorsionProfile(heightM){
+  const h=Math.max(3,Number(heightM)||9);
+  const deg=h<=18
+    ? 0.6+(4.6-0.6)*Math.max(0,Math.min(1,(h-3)/15))
+    : 4.6+(9.5-4.6)*Math.max(0,Math.min(1,(h-18)/(46.5-18)));
+  return {twistDeg:+deg.toFixed(3),verticalSteps:Math.max(12,Math.min(24,Math.ceil(h/2.5))),heightM:h};
+}
 export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts = true, renderer = null, extraBase = new Set(), facade = 'rule-v1' }) {
   const group = new THREE.Group(); group.name = 'city:' + mode;
   const Ly = layersFrom(style), clean = mode === 'clean', E = ELASTIC_PALETTE;
-  const stats = { buildings: 0, base: 0, base2: 0, ghosts: 0, flatRoofRouted: 0, details: 0, roadParts: 0, tunnelsSkipped: 0, roadsByTier: {}, facade: { rule: facade === 'owner' ? 'owner protectedDetails()' : FACADE_RULE.id, doors: 0, garageDoors: 0, windows: 0, edges: 0, partyEdges: 0, streetDoors: 0, capped: 0, bare: 0, fallback: 0 } };
+  const stats = { buildings: 0, base: 0, base2: 0, ghosts: 0, flatRoofRouted: 0, details: 0, roadParts: 0, tunnelsSkipped: 0, roadsByTier: {}, torsionProfile: { owner: 'LOOK-TORSION-01 → existing Elastic', minDeg: Infinity, maxDeg: 0, maxSteps: 0, protectedLandmarksSeparate: true }, facade: { rule: facade === 'owner' ? 'owner protectedDetails()' : FACADE_RULE.id, doors: 0, garageDoors: 0, windows: 0, edges: 0, partyEdges: 0, streetDoors: 0, capped: 0, bare: 0, fallback: 0 } };
   const FX = mode === 'clean' || facade === 'owner' ? null : facadeContext(zone);
   const col = clean ? CLEAN : { ground: E.ground, green: style.palette.green, water: '#1f4f5c', road: E.road, curb: E.curb, path: E.path, foot: E.path };
 
@@ -503,7 +514,11 @@ export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts =
       const concave = solidity(r) < 0.85;
       if (concave && b.roof && b.roof.type !== 'flat') stats.flatRoofRouted++;
       const src = { id: b.id, footprint: r, heightM: h, roof: concave ? { ...(b.roof || {}), type: 'flat' } : b.roof, materialClass: b.mc };
-      let shell; try { shell = EG.buildElasticShell(src, anchor); } catch (e) { stats.failed = (stats.failed || 0) + 1; continue; }
+      const torsion=elasticTorsionProfile(h);
+      stats.torsionProfile.minDeg=Math.min(stats.torsionProfile.minDeg,torsion.twistDeg);
+      stats.torsionProfile.maxDeg=Math.max(stats.torsionProfile.maxDeg,torsion.twistDeg);
+      stats.torsionProfile.maxSteps=Math.max(stats.torsionProfile.maxSteps,torsion.verticalSteps);
+      let shell; try { shell = EG.buildElasticShell(src, anchor, torsion); } catch (e) { stats.failed = (stats.failed || 0) + 1; continue; }
       const sg = tint(shell.geometry, colorSlot(E.walls, b.id, 'wall')); sg.userData.ground = !b.minH;
       const rg = tint(EG.buildElasticRoof(src, shell), colorSlot(E.roofs, b.id, 'roof'));
       stats.wallsFlipped = (stats.wallsFlipped || 0) + orientEG(sg, shell.topRing.length, { wallNormals: true }); orientEG(rg, shell.topRing.length);

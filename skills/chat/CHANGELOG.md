@@ -1466,3 +1466,16 @@ Bounded next review:
 - `design-3d_v1` + `session-design-briefing` are recommended review helpers; `kfb-frankensteining_v1` / `cartoon-motion_v1` load only when their seam is actually needed.
 
 TMB-2 Double-Space remains HOLD. Card thickness redesign, Studio v17 implementation, transition logic and party-flight gameplay remain DEFERRED.
+
+
+## 2026-09-27 · WB-ZONE-SEAM-01 stop-rule recovery
+
+- Started a productive, real-owner WB2 seam on `chatgpt-web/wb-zone-seam-01-2026-09-27`, stacked on PR #190.
+- Reused WORLD-ZONE-BAKE-01 PR #241 and the existing `wd1-seam / wd1-city / wd1-landmark` owners.
+- Cologne candidate stores the baked Zone manifest ref + transform; no runtime Overpass and no second World owner.
+- LOOK-TORSION architecture pass is consumed through the existing Elastic deformer with a height-dependent ordinary→hero range; protected landmarks retain their owner.
+- Exact frozen Cologne crop parity blocked the seam before runtime regression: initial 368/369, repair 1 370/369, repair 2 370/369.
+- GitHub runs: `36291539816`, `36291711090`, `36291859889`.
+- Two repair passes exhausted → candidate frozen; Draft PR **#252** is recovery, not merge-ready.
+- No Stage/human pseudo-gate was created.
+- Next gate only: **WB-ZONE-CROP-PARITY-01**, diagnostic exact-id reconstruction of the historical 369-building crop.

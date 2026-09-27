@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.wb-zone-seam-01.failure-source/1",
+  "date": "2026-09-27",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wb-zone-seam-01-2026-09-27",
+  "draftPR": 252,
+  "base": {
+    "pr": 190,
+    "branch": "chatgpt-web/worldbuilder-wb2-terrain-sculpt-2026-09-23",
+    "head": "58028b07d7618926c40ffaec3bd4053dc88c0efd"
+  },
+  "candidateHeadBeforeRecovery": "2224d95d15fabb99a6a64f77ec863d37f9134fd3",
+  "donors": {
+    "worldZoneBake": {
+      "pr": 241,
+      "branch": "chatgpt-web/world-zone-review-g3-2026-09-24",
+      "head": "3b4909d4c83b704662e66b60212e7f20ba5cf662",
+      "package": "tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/",
+      "manifest": {
+        "schema": "kfb.world-zone.manifest.v1",
+        "id": "cologne-dom-zentrum-v0",
+        "revision": "2026-09-24.1"
+      },
+      "normalizedBlob": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9"
+    },
+    "torsion": {
+      "pr": 245,
+      "status": "PASS_ARCHITECTURE_ONLY",
+      "use": "existing Elastic deformer calibration only"
+    },
+    "frozenCologneFixture": "tools/KFB-ToolBox/worldbuilder/world-integration-01/fixtures/cologne-dom-crop-v0.json"
+  },
+  "changedRuntimeFiles": [
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wd1-seam.js",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-world.js",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wd1-city.js",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-selftest.js"
+  ],
+  "changedTestFiles": [
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/test/wb-zone-seam-01.mjs",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/test/world-integration-r2.static.mjs",
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/test/world-integration-r2.browser.mjs",
+    ".github/workflows/wb-zone-seam-01.yml"
+  ],
+  "protectedUnchanged": [
+    "tools/KFB-ToolBox/worldbuilder/world-integration-01/wd1-landmark.js",
+    "tools/KFB-ToolBox/worldbuilder/presentation/wd-light.js",
+    "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/",
+    "tools/KFB-ToolBox/lib/edit-layer.js",
+    "PR #194 frozen Hürth R2"
+  ],
+  "stagePublished": false,
+  "humanGateCreated": false,
+  "livePromotion": false
+}

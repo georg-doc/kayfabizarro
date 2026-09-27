@@ -17,7 +17,7 @@ async function world(zone){
   page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));
   await page.goto(base+route+'?world='+zone+'&selftest=wi1',{waitUntil:'domcontentloaded',timeout:120000});
   try {
-    await page.waitForFunction(()=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=55,null,{timeout:180000});
+    await page.waitForFunction((want)=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=want,zone==='cologne'?60:55,{timeout:180000});
   } catch (err) {
     const diag=await page.evaluate(()=>({
       status:document.querySelector('#status')?.textContent||'',
@@ -35,7 +35,8 @@ async function world(zone){
     facts:document.querySelector('#wiZone')?.textContent||''
   }));
   const passes=data.lines.filter(x=>x.startsWith('PASS · ')).length;
-  ok(zone+' world selftest 55/55',passes===55,String(passes));
+  const want=zone==='cologne'?60:55;
+  ok(zone+' world selftest '+want+'/'+want,passes===want,String(passes));
   ok(zone+' no selftest failure',!data.fail);
   ok(zone+' no page errors',pageErrors.length===0,pageErrors.join(' | '));
   ok(zone+' no failed source requests',failed.length===0,failed.slice(0,4).join(' | '));
