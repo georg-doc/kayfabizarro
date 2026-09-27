@@ -7,14 +7,16 @@ AR3 projects the existing media/kfb/kfb-index.json deck contract into small shar
 AR4 adds stale-output cleanup and a deterministic delta against the previous
 canonical registry committed in Git HEAD.
 
-Semantic gameplay roles, licenses, donor suitability, rig compatibility, and
-inferred deck groupings remain out of scope.
+Semantic gameplay roles, license inference, donor suitability, rig compatibility,
+and inferred deck groupings remain out of scope. Explicit persisted rights/provenance
+sidecars may be passed through without reinterpretation.
 
 Same commit + same config + same override files => byte-identical output.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 import subprocess
@@ -35,6 +37,9 @@ from packs import assign_packs
 
 SCHEMA = "kfb.asset-registry.v1"
 GENERATOR = "tools/asset_registry/build.py"
+PUBLIC_DOMAIN_ROOT = "media/public_domain"
+PUBLIC_DOMAIN_SIDECAR_SUFFIX = ".license.json"
+ALLOWED_PUBLIC_DOMAIN_TIERS = {"free", "fallback-attribution"}
 
 MODEL_EXTS = {".glb", ".gltf", ".fbx", ".obj", ".blend", ".dae", ".3ds"}
 IMAGE_EXTS = {".png", ".jpg", ".svg", ".tif", ".gif", ".webp"}
@@ -196,6 +201,103 @@ def make_record(entry: dict, *, repo: str, commit: str, roots: list[str]) -> dic
     return record
 
 
+def _sha256_path(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def apply_explicit_public_domain_metadata(
+    repo_root: Path,
+    record: dict,
+    *,
+    tracked_paths: set[str],
+) -> dict:
+    """Pass through persisted rights/provenance facts for public-domain pool assets.
+
+    This function does not infer copyright status. A public-domain asset is accepted
+    into the Registry only when its neighboring tracked sidecar is complete and
+    matches the exact payload bytes and SHA-256.
+    """
+    path = record["path"]
+    prefix = PUBLIC_DOMAIN_ROOT.rstrip("/") + "/"
+    if not path.startswith(prefix):
+        return record
+
+    sidecar_rel = path + PUBLIC_DOMAIN_SIDECAR_SUFFIX
+    if sidecar_rel not in tracked_paths:
+        raise RuntimeError(f"public-domain asset missing tracked rights sidecar: {path}")
+
+    sidecar_path = repo_root / sidecar_rel
+    sidecar = json.loads(sidecar_path.read_text(encoding="utf-8"))
+    required = (
+        "provider",
+        "sourceId",
+        "sourcePage",
+        "sourceRecordUrl",
+        "sourceFileUrl",
+        "title",
+        "rights",
+        "tier",
+        "retrievedAt",
+        "sha256",
+        "bytes",
+        "localPath",
+    )
+    missing = [key for key in required if sidecar.get(key) in (None, "")]
+    if missing:
+        raise RuntimeError(
+            f"public-domain sidecar missing required facts for {path}: {', '.join(missing)}"
+        )
+
+    tier = str(sidecar["tier"])
+    if tier not in ALLOWED_PUBLIC_DOMAIN_TIERS:
+        raise RuntimeError(f"public-domain sidecar has non-registerable tier for {path}: {tier}")
+
+    expected_local = path[len(prefix):]
+    if sidecar["localPath"] != expected_local:
+        raise RuntimeError(
+            f"public-domain sidecar localPath mismatch for {path}: "
+            f"{sidecar['localPath']!r} != {expected_local!r}"
+        )
+
+    if int(sidecar["bytes"]) != int(record["sizeBytes"]):
+        raise RuntimeError(
+            f"public-domain sidecar byte mismatch for {path}: "
+            f"{sidecar['bytes']} != {record['sizeBytes']}"
+        )
+
+    digest = _sha256_path(repo_root / path)
+    if str(sidecar["sha256"]).lower() != digest:
+        raise RuntimeError(
+            f"public-domain sidecar SHA-256 mismatch for {path}: "
+            f"{sidecar['sha256']} != {digest}"
+        )
+
+    record["name"] = str(sidecar["title"])
+    record["license"] = str(sidecar["rights"])
+    record["tags"] = list(sidecar.get("tags") or [])
+    record["rightsEvidence"] = {
+        "mode": "explicit-sidecar",
+        "sidecarPath": sidecar_rel,
+        "provider": sidecar["provider"],
+        "sourceId": sidecar["sourceId"],
+        "sourcePage": sidecar["sourcePage"],
+        "sourceRecordUrl": sidecar["sourceRecordUrl"],
+        "sourceFileUrl": sidecar["sourceFileUrl"],
+        "tier": tier,
+        "retrievedAt": sidecar["retrievedAt"],
+        "sha256": digest,
+        "bytes": int(sidecar["bytes"]),
+        "sourceFacts": sidecar.get("sourceFacts") or {},
+    }
+    record.setdefault("provenance", {})["rights"] = "explicit-sidecar"
+    record["provenance"]["displayName"] = "explicit-sidecar"
+    return record
+
+
 def _write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -270,7 +372,13 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
         path = entry["path"]
         if is_excluded(path, exclude_prefixes) or classify(path) is None:
             continue
-        records.append(make_record(entry, repo=repo, commit=commit, roots=roots))
+        record = make_record(entry, repo=repo, commit=commit, roots=roots)
+        record = apply_explicit_public_domain_metadata(
+            repo_root,
+            record,
+            tracked_paths=tracked_paths,
+        )
+        records.append(record)
     records.sort(key=lambda rec: rec["path"])
 
     pack_overrides = load_optional_json(repo_root, config.get("packOverrides"), {})
@@ -354,6 +462,12 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
             "dependencies": config.get("dependencyOverrides"),
         },
         "owners": {"deckRegistry": deck_registry},
+        "explicitMetadata": {
+            "publicDomainRoot": PUBLIC_DOMAIN_ROOT,
+            "rightsMode": "persisted-sidecar-passthrough-only",
+            "sidecarSuffix": PUBLIC_DOMAIN_SIDECAR_SUFFIX,
+            "licenseInference": False,
+        },
         "counts": {
             "total": len(records),
             "byKind": {kind: counts.get(kind, 0) for kind in sorted(shard_paths)},
@@ -376,7 +490,7 @@ def build_registry(repo_root: Path, config: dict, out_dir: Path | None = None) -
         },
         "catalog": "catalog.jsonl",
         "determinism": "same commit + same config + same override files => byte-identical output",
-        "scope": "AR1 inventory + AR2 structural packs/dependencies + AR3 explicit decks + AR4 deterministic delta; no gameplay roles, license inference, rig compatibility or inferred deck grouping",
+        "scope": "AR1 inventory + AR2 structural packs/dependencies + AR3 explicit decks + AR4 deterministic delta; explicit persisted public-domain sidecars are passed through without license inference; no gameplay roles, donor suitability, rig compatibility or inferred deck grouping",
     }
 
     _prepare_output_dir(out_dir)
