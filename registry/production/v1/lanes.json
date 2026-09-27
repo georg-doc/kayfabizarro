@@ -2,6 +2,29 @@
   "schema": "kfb.production-registry/1",
   "lanes": [
     {
+      "id": "rollercoaster-v11-blender-logic",
+      "bucket": "RUNNING",
+      "title": "Rollercoaster v11 · Blender-Logikdonor",
+      "what": "Georg erprobt Rollercoaster v11 in Blender als Basis für Rollercoaster-, Rail- und Track-Bewegungslogik. Der Slice soll die vorhandene Logik vermessen und wiederverwenden, nicht eine zweite Fahrengine erfinden.",
+      "provider": "Blender MCP → Race / Travel",
+      "yourAction": "",
+      "waitingFor": "Blender-Ergebnis mit exakter v11-Quelle, brauchbaren Bewegungs-/Connector-Regeln und klaren Grenzen für die spätere Runtime-Integration.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": null,
+      "branch": null,
+      "external": false,
+      "freshness": "UNVERIFIED",
+      "freshnessNote": "User-reported active Blender experiment; exact source/return pending.",
+      "head": null,
+      "headDate": null,
+      "expectedHead": null,
+      "prUrl": null,
+      "prState": null,
+      "brief": null,
+      "review": null
+    },
+    {
       "id": "city-asset-contact-sheet-intake",
       "bucket": "WAITING",
       "title": "Stadtmöblierung · Asset-Kontaktbogen · PASS",
@@ -34,16 +57,13 @@
     },
     {
       "id": "toolbox-production-02-r2-intake",
-      "bucket": "LOOK_AT",
-      "title": "ToolBox Production-02 r2 · Sichtabnahme",
-      "what": "Neuer Claude-Design-Session-Cut mit Studio, Animation Studio und Rigging. LOAD_PASS ist belegt; r2-Selbsttest, Clean Run und Georgs Sichtprüfung sind noch offen. Animation Lab v1 darf nicht aus dem Gedächtnis nachgebaut werden.",
+      "bucket": "WAITING",
+      "title": "ToolBox Production-02 r2 · PASS",
+      "what": "Georg hat den Claude-Design-Session-Cut am 27.09.2026 angenommen. Studio, Animation Studio und Rigging gelten als akzeptierte Arbeitsrichtung; die offene Animation-Lab-v1-Quellwiederherstellung bleibt ein eigener Integrationsschritt.",
       "provider": "Claude Design → ToolBox receiving owner",
-      "yourAction": "Im Rigging-Reiter nur die sechs benannten Punkte prüfen: Lider, Ohr-Basis, Body, Schatten, Talk und Bottom-Bar. PASS/TUNE/FAIL zurückgeben.",
-      "waitingFor": "",
-      "questions": [
-        "Liegen die Clay-Lider sauber auf dem Augapfel und schließen Glide/Fold korrekt?",
-        "Bleiben Ohr-Basis, Body-Grenzen, Schatten, Talk und Bottom-Bar visuell stabil?"
-      ],
+      "yourAction": "",
+      "waitingFor": "ToolBox-Owner übernimmt den akzeptierten r2-Stand; Animation Lab v1 weiterhin nicht aus dem Gedächtnis nachbauen.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
@@ -68,12 +88,12 @@
     },
     {
       "id": "public-domain-pool-pd01",
-      "bucket": "CAN_START",
-      "title": "Public-Domain-Pool · Vier-Quellen-Smoke-Test",
-      "what": "Der vorhandene Pool für Met, Art Institute Chicago, Wikimedia Commons und Internet Archive wird mit genau einem Objekt pro Quelle geprüft. Kein Bulk-Import; der Downloader bleibt bis zum Beweis auf HOLD.",
+      "bucket": "RUNNING",
+      "title": "Public-Domain-Pool · Web-Chat läuft",
+      "what": "Der gebundene Vier-Quellen-Smoke-Test läuft im Web-Chat. Ein möglicher Chat-Timeout gilt als UNKNOWN; vor einem Retry zuerst GitHub-Ref und Return prüfen. Kein Bulk-Import.",
       "provider": "Asset Librarian / Billboard Media",
-      "yourAction": "Briefing kopieren und den kleinen 4-Objekt-Test in einem Web-Chat starten. Internet-Archive-Treffer vor öffentlicher Nutzung immer ansehen.",
-      "waitingFor": "",
+      "yourAction": "",
+      "waitingFor": "Web-Chat Return oder nach Timeout GitHub-Recon. Internet-Archive-Treffer bleiben vor öffentlicher Nutzung im Human Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
@@ -220,16 +240,13 @@
     },
     {
       "id": "worldbuilder-w0",
-      "bucket": "LOOK_AT",
-      "title": "WorldBuilder WB-W0 · Maßstab und Begehbarkeit",
-      "what": "Der gemessene Welt-Kandidat ist als vollständiger Source-Lock gesichert und öffentlich spielbar. 10/10 Welt-Prüfungen bestehen; die bekannte schwarze Baumtextur, harte Laufblende und fragliche Kopf-Tusche bleiben offen sichtbar, blockieren aber nicht die Prüfung der Weltgrundlage.",
+      "bucket": "WAITING",
+      "title": "WorldBuilder WB-W0 · PASS",
+      "what": "Georg hat Maßstab und Begehbarkeit der Weltgrundlage am 27.09.2026 angenommen. WB-W0 bleibt gemessener World-Donor; bekannte visuelle Tunes werden nicht erneut als Human Gate vorgelegt.",
       "provider": "Claude Design → WSA",
-      "yourAction": "Die Welt kurz vom Globus bis zum Boden ansehen, WALK testen und dann PASS, TUNE oder REJECT für Maßstab und Begehbarkeit geben.",
-      "waitingFor": "Georgs Sicht- und Spielprüfung der Weltgrundlage.",
-      "questions": [
-        "Fühlt sich der Übergang vom Globus in eine messbare Region richtig an?",
-        "Tragen Maßstab, Route und freie Flächen als Grundlage für OSM und Racer?"
-      ],
+      "yourAction": "",
+      "waitingFor": "WorldBuilder-Owner nutzt die angenommene Grundlage im nächsten gebundenen World-Slice.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 203,
       "branch": "work/worldbuilder-w0-source-lock-2026-09-24",
@@ -246,7 +263,7 @@
         "label": "WB-W0 spielen",
         "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/worldbuilder-w0/",
         "available": true,
-        "sourceRef": "PR #203 · PUBLIC_VERIFIED · 10/10 Welt-Gates PASS · human pending"
+        "sourceRef": "PR #203 · PUBLIC_VERIFIED · 10/10 Welt-Gates PASS · Georg PASS 2026-09-27"
       }
     },
     {
@@ -323,12 +340,12 @@
     },
     {
       "id": "billboard",
-      "bucket": "LOOK_AT",
-      "title": "Billboard B2a · YouTube direkt auf der 3D-Fläche",
-      "what": "B1 ist angenommen. B2a spielt das echte YouTube-iframe jetzt direkt auf der gemessenen 3D-Werbefläche über den offiziellen Three.js-CSS3D-Weg; kein Modal-Viewer.",
+      "bucket": "RUNNING",
+      "title": "Billboard Engine v4+ · läuft",
+      "what": "Georg hat B2a mit PASS abgeschlossen und baut nun die Billboard Engine v4+ auf der akzeptierten H4-/B2a-Richtung. Vorhandene Body/Face-Owner und H4-Hypernormalisation weiterverwenden; keine Rückkehr zur alten B2a-Sichtprüfung.",
       "provider": "Web-Chat",
-      "yourAction": "B2a öffnen und VIDEO INLINE anklicken/bedienen. Prüfen, ob der Player wirklich als Teil der Werbetafel wirkt und beim 3D-Blick korrekt mitgeht.",
-      "waitingFor": "Georg PASS/TUNE für B2a.",
+      "yourAction": "",
+      "waitingFor": "Engine-v4+-Check-in / Return aus dem zuständigen Arbeitschat.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 199,
@@ -342,20 +359,14 @@
       "prUrl": "https://github.com/georg-doc/kayfabizarro/pull/199",
       "prState": "open",
       "brief": {
-        "label": "B2a Return / Recovery",
-        "path": "tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/RETURN.md",
-        "ref": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+        "label": "H4 WSA/Web Handover",
+        "path": "tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H4 - Hex Assets Worldbuilding/kfb-billboard-hypernorm-h4_2026-09-26/HANDOVER_WSA.md",
+        "ref": "main",
         "exists": true,
-        "blob": "5b714302f282036c7a2b6d5ae8983d141e5cd1c5",
-        "pasteReady": false,
-        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/billboard-b2a-css3d-2026-09-24/tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/RETURN.md",
-        "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/billboard-b2a-css3d-2026-09-24/tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/RETURN.md"
-      },
-      "review": {
-        "label": "B2a ansehen",
-        "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/billboard-b2a/",
-        "available": true,
-        "sourceRef": "PR #199 · PUBLIC_VERIFIED · 22/22 PASS · human pending"
+        "blob": null,
+        "pasteReady": true,
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Billboard%20Kaleidoscope%20H4%20-%20Hex%20Assets%20Worldbuilding/kfb-billboard-hypernorm-h4_2026-09-26/HANDOVER_WSA.md",
+        "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/tools/KFB-ToolBox/_inbox/KFB%20Billboard%20Kaleidoscope%20H4%20-%20Hex%20Assets%20Worldbuilding/kfb-billboard-hypernorm-h4_2026-09-26/HANDOVER_WSA.md"
       }
     },
     {
@@ -462,37 +473,6 @@
         "pasteReady": false,
         "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WORLDBUILDER_GOD_MODE_V0.md",
         "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/chatgpt-web/kfb-hybrid-production-handoff-2026-09-23/skills/chat/workflows/KFB_HYBRID_PRODUCTION_HANDOFF_2026-09-23/WORLDBUILDER_GOD_MODE_V0.md"
-      }
-    },
-    {
-      "id": "claybound-materials",
-      "bucket": "LOOK_AT",
-      "title": "ClayBound · Production Assets",
-      "what": "Build the KFB clay / handmade material library sequentially: approved seamless textures first, then Blender material proof, stronger seam QA and secondary craft assets.",
-      "provider": "KFB Clay Asset Studio + Blender MCP",
-      "yourAction": "Review Asset 1 candidate: source image + plugin QA + 3×3 repeat / edge evidence; decide PASS or NEEDS FIX.",
-      "waitingFor": "",
-      "questions": [],
-      "repo": "georg-doc/kayfabizarro",
-      "pr": null,
-      "branch": "main",
-      "external": false,
-      "freshness": "CURRENT",
-      "freshnessNote": "Asset 1 candidate exists on main; plugin QA/analysis and Georg review are still pending. Do not call it seamless-approved yet.",
-      "head": "b286d14dd37b89f8952b969d8fd394a48275d841",
-      "headDate": "2026-09-26T15:29:31Z",
-      "expectedHead": "b286d14dd37b89f8952b969d8fd394a48275d841",
-      "prUrl": null,
-      "prState": null,
-      "brief": {
-        "label": "ClayBound Material Production",
-        "path": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
-        "ref": "main",
-        "exists": true,
-        "blob": "cb8a163bc40ca4b528e7b8b7a11def5dd6bfb8d4",
-        "pasteReady": false,
-        "url": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
-        "rawUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/tools/KFB-ToolBox/_inbox/KFB%20Style%20References/ClayBound%20Cozy%20Platformer%20%2B%20Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md"
       }
     }
   ]
