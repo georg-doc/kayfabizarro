@@ -1938,3 +1938,13 @@ Exactly one next gate:
 - WSA planning now has slide-ready override `KFB_MVP_PLANNING_2026-09-26/WSA_SLIDES_PRODUCTIVE_FLOW_OVERRIDE_2026-09-27.md`.
 - `TRAVEL-MODES-01` receives a **PROCEED PASS**; its contract-only Stage page remains evidence/history and is no longer a blocking Georg gate.
 - Next Travel/WorldBuilder mobility proof must occur in the real product/consumer surface with source-proven adapters.
+
+
+## 2026-09-27 · LOOK-TORSION human result + proxy-fidelity rule
+
+- LOOK-TORSION-01 receives **ARCHITECTURE PASS ONLY**: keep cumulative height-dependent torsion, anchored base and shared roof/body deformation field.
+- The isolated grey A/B/C page is **not** WorldBuilder/look acceptance and does not accept its lighting, shadows, materials or final torsion calibration.
+- Known recurring shadow/light rendering defects remain open.
+- The binding Productive Review policy now rejects **low-fidelity proxy human gates**: a ruckly/simplified/unrepresentative review surface or one carrying known renderer defects is internal evidence only.
+- No further standalone torsion review page is required. Next meaningful evaluation belongs in the real WorldBuilder/world presentation context.
+- WSA/architecture must optimize for integrated usable capability per Georg attention, not proof pages or pseudo-acceptance ceremonies.
