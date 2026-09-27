@@ -2,7 +2,7 @@
 
 ## Ergebnis
 
-Der erste spielbare World-Integrationsschnitt läuft lokal im echten Browser. Er verbindet die akzeptierte Hürth-Welt mit genau zwei neuen, reversiblen Adaptern und einem vorhandenen Track-Rezept:
+Der erste spielbare World-Integrationsschnitt läuft unter der festen KFB-Stage-URL im echten Browser. Er verbindet die akzeptierte Hürth-Welt mit genau zwei neuen, reversiblen Adaptern und einem vorhandenen Track-Rezept:
 
 - zu Fuß und frei fliegen in derselben Welt;
 - Original und Clay direkt vergleichen;
@@ -35,10 +35,10 @@ Der erste spielbare World-Integrationsschnitt läuft lokal im echten Browser. Er
 
 ## Veröffentlichung
 
-Noch nicht veröffentlicht. Die feste Route bleibt bis zum exakten öffentlichen Browser-Beweis unbeansprucht:
+Veröffentlicht aus `cloudflare-live@e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b` und auf der exakten Route im echten Browser erneut mit **36/36 PASS** geprüft:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-flight-clay-c0/`
 
 ## Genau ein nächster Gate
 
-Stage veröffentlichen, die exakte Cloudflare-Route öffnen und dort die erwartete Revision sichtbar prüfen. Danach Georg: `PASS` oder `TUNE` für Fluggefühl, Track-Platzierung und Clay-Richtung.
+Georg: `PASS` oder `TUNE` für Fluggefühl, Track-Platzierung und Clay-Richtung. Erst danach folgt ein eigener, begrenzter Slice für Fahrbetrieb oder reaktive Knetwelt.

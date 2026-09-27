@@ -5,8 +5,9 @@
   "route": "/kfb-hub/stage/world/world-flight-clay-c0/",
   "sourceBranch": "work/world-flight-clay-c0-runtime-2026-09-27",
   "sourceHead": "5af56ee0a8c9fc1ef581911dffc7eb431efddd72",
-  "visibility": "NOT_LINKED",
-  "publication": "NOT_STARTED",
-  "reviewState": "LOCAL_BROWSER_PASS",
-  "humanGate": "Open exact Cloudflare route, then PASS or TUNE flight, track placement and Clay direction."
+  "visibility": "DIRECT_STAGE_READY",
+  "publication": "PUBLIC_VERIFIED",
+  "publicationHead": "e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b",
+  "reviewState": "HUMAN_REVIEW_READY",
+  "humanGate": "PASS or TUNE flight, track placement and Clay direction."
 }

@@ -1,7 +1,7 @@
 # WORLD-FLIGHT-CLAY-C0 · Test Report
 
 Datum: 2026-09-27  
-Status: `LOCAL_BROWSER_PASS · PUBLIC_UNKNOWN`
+Status: `PUBLIC_VERIFIED`
 
 ## Paket
 
@@ -20,9 +20,9 @@ Geprüft wurden unter anderem:
 
 ## Browser
 
-`browser-proof.mjs` → **36/36 PASS**
+`browser-proof.mjs` → **36/36 PASS** lokal und **36/36 PASS** auf der festen öffentlichen Stage
 
-Browser: lokales Google Chrome, HTTP-Preview.  
+Browser: Google Chrome, zunächst lokale HTTP-Preview und danach dieselbe Sequenz auf Cloudflare.
 Ansichten: 1280 × 820 und 390 × 844.
 
 Je Ansicht geprüft:
@@ -42,4 +42,10 @@ Je Ansicht geprüft:
 
 ## Öffentlicher Beweis
 
-Noch nicht ausgeführt. `PUBLIC_VERIFIED` bleibt false, bis die feste Cloudflare-Route mit dem erwarteten Source-Marker geöffnet wurde.
+`https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-flight-clay-c0/?build=e4b04d3e`
+
+- Source-Marker `WORLD-FLIGHT-CLAY-C0` sichtbar;
+- erwarteter Stage-Titel sichtbar;
+- Desktop + schmal erneut **36/36 PASS**;
+- 0 Konsolenfehler, 0 fehlgeschlagene Requests, 0 HTTP-Fehler;
+- Publication-Head: `e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b`.
