@@ -1,6 +1,6 @@
 # LOOK-TORSION-01 · Public Stage provenance
 
-Status: **STAGE MIRROR · HUMAN GATE**  
+Status: **HISTORICAL ENGINEERING EVIDENCE · ARCHITECTURE PASS ONLY · NO HUMAN ACTION**  
 Published from source implementation: `0ebc3837f74ecc6565fb557d9b4b670de61fdc20`  
 Source PR: https://github.com/georg-doc/kayfabizarro/pull/245  
 Source branch: `chatgpt-web/look-torsion-01-2026-09-27`
@@ -19,3 +19,7 @@ Workflow run `36286925929`: **45/45 PASS**.
 Artifact `10919709921`, digest `sha256:27614f1b09afadd7a6a4658b10bd896a78ba32db7e886949c4e0a2af976c0db0`.
 
 Hürth R2 is frozen and is neither edited nor imported by this Stage.
+
+## Human result · 2026-09-27
+
+LOOK-TORSION-01 passed only as an architecture mechanism. The isolated Stage is not WorldBuilder/look, lighting/shadow or final calibration acceptance. It is retained as historical engineering evidence only; no further human review is requested here.
