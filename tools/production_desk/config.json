@@ -515,6 +515,25 @@
       }
     },
     {
+      "id": "claymation-hud-c0",
+      "bucket": "CAN_START",
+      "title": "Claymation HUD C0 · gemeinsame Base UI · NEXT",
+      "what": "Eine gemeinsame Knetgummi-HUD-Familie für WALK, DRIVE/RACE, FLIGHT und COMBAT: Backpack mit 20-Slot-Inventar, bis zu sechs nur bei Belegung sichtbare Action-Slots, Popcorn-Pop-Score, Combat-HP und responsive Clay-Controls. Der aktuelle Racer-HUD bleibt Funktionsdonor; keine zweite Runtime.",
+      "provider": "Claude Design · Hirnwelt/Knetgummi-Katalog → danach Work-Integration",
+      "yourAction": "",
+      "waitingFor": "C0 zeigt zuerst echte HUD-, KayKit-Backpack-, Combat- und Score-Quellen isoliert und liefert dann die vier Modusansichten. Sprech-/Denkblasen bleiben ein eigener Lesbarkeits-Slice.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "brief": {
+        "label": "Claymation HUD C0 · gemeinsames Base UI",
+        "path": "tools/production_desk/briefings/CLAYMATION_HUD_C0_SHARED_BASE_UI_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      }
+    },
+    {
       "id": "npc-life-01",
       "bucket": "RUNNING",
       "title": "Residents · Living encounter bus",

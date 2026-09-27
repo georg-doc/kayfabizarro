@@ -1279,3 +1279,11 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 
 - Reclassified the Production Desk self-card from stale RUNNING publication text to current/public WAITING state.
 - No product lane or visual shell changed; this prevents the current Hub from describing its own completed publication as unfinished.
+
+
+## 2026-09-27 · Claymation HUD C0 routed
+
+- Added one shared Clay HUD design slice for WALK, DRIVE/RACE, FLIGHT and COMBAT.
+- Preserved the current Racer HUD as functional donor and kept runtime ownership outside Claude Design.
+- Routed real KayKit backpacks, 20-slot inventory, conditional action slots, Pop Score, HP and adjustable HUD reactivity into one visual system.
+- Kept dynamic speech/thought bubbles as a separate later readability slice; no placeholders or fake providers.
