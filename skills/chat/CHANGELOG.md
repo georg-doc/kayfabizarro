@@ -1931,3 +1931,15 @@ Exactly one next gate:
 - the KFB Hub Stage at https://kayfabizarro.pages.dev/kfb-hub/stage/ contains the direct LOOK-TORSION-01 card.
 
 Exactly one next gate: **Georg reviews A → B → C and returns PASS / TUNE / FAIL for the geometric torsion direction.** No merge, Hürth repair or Live promotion follows automatically.
+
+
+## 2026-09-27 · LOOK-TORSION-01 human result · mechanism PASS / review-workflow correction
+
+- Georg marks LOOK-TORSION-01 **PASS for the underlying torsion architecture only**.
+- No WorldBuilder/look acceptance is implied; the standalone grey A/B/C render, lighting, shadows and material presentation are not accepted targets.
+- Recurring shadow/light defects remain open and must be solved at the real renderer/owner layer.
+- The standalone pseudo-acceptance-site pattern is explicitly rejected as a production default: do not create bespoke WebGL review pages or measurement dashboards merely to obtain a human pass for reversible, bounded mechanisms.
+- Technical/static/browser QA should run autonomously; Georg human gates are reserved for consequential integrated product decisions.
+- Prefer review in the current WorldBuilder/ToolBox/game surface; Stage is used only when a meaningful integrated candidate is worth human review.
+- No further standalone torsion page. Next meaningful evaluation is in the next clean/current WorldBuilder/world presentation candidate with the real scene, camera and shadow/lighting corrections.
+- Detailed human result: `workflows/LOOK_TORSION_01_2026-09-27/HUMAN_RESULT_2026-09-27.md`.
