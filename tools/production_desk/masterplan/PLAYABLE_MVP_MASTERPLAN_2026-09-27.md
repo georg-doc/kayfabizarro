@@ -168,3 +168,7 @@ Zusätzlich: isolierte Clay-Speech-/Thought-Bubble-Golden-Samples auf Basis der 
 - Kaltstartziel bestanden; Framebudget nicht bestanden.
 - Nächster Produktionsschritt ist ausschließlich `WORLD-M2A-R2 · RENDER BUDGET`.
 - Track S9/S4B, Emanata/Brick Fish und HUD bleiben Inputs außerhalb dieses Gates.
+
+## World M2A performance decision · 2026-09-27
+
+R1 keeps the repaired full-zone ground, correct parked vehicle contact and improved boot time. R2 proved Metal hardware acceleration and rejected broad clay-quality reduction as ineffective. The next Work integration gate is one structural City Shell LOD: light mid/far silhouettes plus full near facades. Track, NPC, HUD, audio and new interaction work remain downstream until the walk/drive/flight runtime meets its frame budget.
