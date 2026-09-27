@@ -1334,3 +1334,13 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - p95 Walk/Drive 42,7/43,9 ms: großer Gewinn, Ziel 33,3 ms noch nicht erreicht.
 - R3 nicht publiziert; nächster Gate R4 Adaptive Resolution + Clay-Distanzbudget.
 - Echte instanzierte Fassaden-Donors folgen separat nach dem Performance-Gate.
+
+
+## 2026-09-27 · R4 public + Track T1 decision sync
+
+- World M2A R4 source: PR #261 / `c8ecbf570dd9689c3e732209fbc89a4b6d00acc7`.
+- Public runtime: `cloudflare-live@2e1978821a043cf604c8bc556493cae282a87a86`.
+- Evidence: package 26/26, local browser 38/38, fixed public Stage 38/38, local p95 Idle/Walk/Drive 16.7 ms.
+- Hub lane moved to LOOK_AT with one free-play action; FACADE-DONOR-01 remains next after that.
+- Track T1 decision locked on PR #219 / `64d8597c3dad1dc9814c794d4a566d589e1e1a25`: A/Hirnwelt base + B/Race semantics; C/Toy optional; patch-scatter replaces colour fades.
+- Hub source/status only in this checkpoint; root Hub regeneration/publication is not claimed.

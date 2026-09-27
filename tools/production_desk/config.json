@@ -429,20 +429,20 @@
     },
     {
       "id": "racer",
-      "bucket": "CAN_START",
-      "title": "Racer · Clay Track Design S4 · NEXT",
-      "what": "Track Core W0–S8 is the geometry foundation. The next design pass keeps all drivable geometry in the KFB Blender-MCP Racer / Track Core, while Kenny/Kenney, KayKit and Tiny Treats are buildings/environment/roadside props only. Claude Design now solves clay edge/runoff/socket grammar plus patch-scatter biome transitions (no visible gradients) for dirt/desert, snow, water, canyon, urban→country and source-pinned Cosmic cases across 14.4 m / 18 m / variable widths.",
-      "provider": "Claude Design · Track Core S4 / TRACK-CORE-2",
+      "bucket": "RUNNING",
+      "title": "Racer · Track Look T1 · A+B festgelegt · CONTINUE",
+      "what": "A/Hirnwelt ist die KlayfaBizarro-Material- und Weltbasis; B/Race liefert lesbare Kerbs, Barrieren, Runoff und Gefahrenhinweise. C/Toy bleibt optional. Keine zweite Strecke: Track Core bleibt Geometrie-/Kontakt-Owner; Übergänge werden als deterministische Clay-Patches statt Farbverläufe gestaltet.",
+      "provider": "Claude Design · bestehendes T1/K7-Projekt",
       "yourAction": "",
-      "waitingFor": "Source-first S4 result: actual KFB Track Core/profile/socket isolation, edge/runoff atlas, connector transition matrix, patch-scatter edge-case POCs and 2–3 clay look options. No Stage until a meaningful integrated visual milestone exists.",
+      "waitingFor": "TD03 Edge-Atlas + erste vier Übergänge + echtes TN02-Portal/eine Tunnelfamilie. FS01-Stream bleibt SOURCE_REQUIRED und blockiert diesen Pass nicht.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 219,
       "branch": "georg-doc-patch-2",
-      "expectedHead": "a97c323f397304da8fe17246a155e0e372249839",
+      "expectedHead": "64d8597c3dad1dc9814c794d4a566d589e1e1a25",
       "brief": {
-        "label": "Racer · Clay Track Design S4",
-        "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md",
+        "label": "Georg-Antwort K7/T1 · A+B",
+        "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S4_DESIGN_RESPONSE_2026-09-27/GEORG_RESPONSE_K7_T1.md",
         "ref": "georg-doc-patch-2",
         "pasteReady": true
       },
@@ -460,7 +460,7 @@
       "repo": "georg-doc/kayfabizarro",
       "pr": 219,
       "branch": "georg-doc-patch-2",
-      "expectedHead": "a97c323f397304da8fe17246a155e0e372249839",
+      "expectedHead": "64d8597c3dad1dc9814c794d4a566d589e1e1a25",
       "brief": {
         "label": "Reactive Clay S4B · VFX/SFX/Surface",
         "path": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S4B_REACTIVE_CLAY_LAYER_2026-09-27/BRIEF_REACTIVE_CLAY_VFX_SFX_SURFACE_S4B.md",
@@ -550,27 +550,27 @@
     },
     {
       "id": "worldbuilder-mobility-mvp",
-      "bucket": "CAN_START",
-      "title": "World M2A R3 · deutlich schneller · R4 NEXT",
-      "what": "R3 staffelt die echte Hürth-Stadt räumlich: volle elastische Gebäude und Fassaden nahe am Spieler, leichte OSM-Hüllen in der Ferne. Sichtbare Last sinkt von ca. 1,13 Mio. auf 185–198 Tsd. Dreiecke; p95 Walk/Drive von 84–89 auf 42,7–43,9 ms. Das ist ein großer Gewinn, aber noch über dem 33,3-ms-Ziel. Schatten oder Stadt komplett abzuschalten bringt wenig; geringere Pixelmenge erreicht 26,3 ms.",
+      "bucket": "LOOK_AT",
+      "title": "World M2A R4 · Performance-Ziel erreicht · TEST NOW",
+      "what": "Der echte Hürth-/KlayfaBizarro-M2A-Kernloop ist auf der festen Stage: zu Fuß → E ins Fahrzeug → freie Fahrt auch abseits der Straße → E aussteigen → Flug. Adaptive 3D-Auflösung und vereinfachte Fernstadt-Knete senken p95 Idle/Walk/Drive lokal auf 16,7 ms; Paket 26/26, Browser lokal 38/38 und öffentlich 38/38.",
       "provider": "Work · Sol High · bestehende World-M2A-Runtime",
-      "yourAction": "",
-      "waitingFor": "WORLD-M2A-R4: genau eine adaptive Auflösungs- und distanzabhängige Clay-Qualitätsregel. Danach separat echte KayKit-/Tiny-Treats-/Kenney-Fenster und Türen isolieren und als geteilte Instanzen in die Nahstufe einsetzen.",
+      "yourAction": "Feste Stage frei testen: Bewegungsgefühl, Bildschärfe während Fahrt, Fahrzeugstand und Wechsel Ground/Drive/Flight.",
+      "waitingFor": "Georgs freier Spieltest. Danach separat FACADE-DONOR-01 mit echten instanzierten KayKit-/Kenney-Fenstern und -Türen in der Nahstufe.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 260,
-      "branch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
-      "expectedHead": "69d7910cde4275131f6701416c26d9cab3937ba5",
+      "pr": 261,
+      "branch": "work/world-m2a-adaptive-quality-r4-2026-09-27",
+      "expectedHead": "c8ecbf570dd9689c3e732209fbc89a4b6d00acc7",
       "brief": {
-        "label": "World M2A-R4 · Adaptive Auflösung + Clay-Budget",
-        "path": "tools/production_desk/briefings/WORLD_M2A_ADAPTIVE_RES_CLAY_R4_2026-09-27.md",
-        "ref": "work/hub-ctrl-01-2026-09-24",
-        "pasteReady": true
+        "label": "R4 Return · öffentlich verifiziert",
+        "path": "kfb-hub/stage/world/world-drive-interact-m2a/RETURN.md",
+        "ref": "work/world-m2a-adaptive-quality-r4-2026-09-27",
+        "pasteReady": false
       },
       "review": {
-        "label": "R3 Draft · nicht öffentlich",
-        "path": "kfb-hub/stage/world/world-drive-interact-m2a/RETURN.md",
-        "sourceRef": "PR #260 · R3 69d7910c · package 24/24 · local browser 34/34 · p95 target PARTIAL · not published"
+        "label": "R4 Stage · jetzt frei testen",
+        "path": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/",
+        "sourceRef": "cloudflare-live@2e197882 · package 26/26 · local 38/38 · public 38/38 · p95 16.7 ms"
       }
     },
     {
@@ -614,8 +614,8 @@
     }
   ],
   "wsa": {
-    "state": "M2A_R1_PARTIAL_RENDER_BUDGET_NEXT",
-    "text": "World M2A R1 repaired full-zone contact, parked vehicle grounding and cold-control time. The candidate is preserved in PR #258 but not published because walk/drive p95 remains 84–89 ms. Current Work priority is exactly one R2 render-budget pass: verify actual graphics acceleration/render path, then one city LOD/shadow-budget candidate. No feature expansion."
+    "state": "M2A_R4_PUBLIC_VERIFIED__HUMAN_FREEPLAY_NEXT",
+    "text": "World M2A R4 is published on the fixed Stage and passed package 26/26, local browser 38/38 and public browser 38/38. Local Idle/Walk/Drive p95 is 16.7 ms. Next product action is Georg free-play; after that FACADE-DONOR-01. Track Look T1 is concurrently RUNNING with A/Hirnwelt base + B/Race semantics locked."
   },
   "standards": [
     {
