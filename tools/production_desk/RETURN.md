@@ -1273,3 +1273,9 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Hirnwelt H0 clay is the visible default on real World meshes; Original remains reversible.
 - Local browser proof: 34/34; exact public Stage browser proof: 34/34; desktop and narrow; zero page/request/HTTP errors.
 - Hub now presents one direct World M2A free-play action. Track/M2B remains WAITING_SOURCE; no proxy track.
+
+
+## 2026-09-27 · Hub self-status closed
+
+- Reclassified the Production Desk self-card from stale RUNNING publication text to current/public WAITING state.
+- No product lane or visual shell changed; this prevents the current Hub from describing its own completed publication as unfinished.
