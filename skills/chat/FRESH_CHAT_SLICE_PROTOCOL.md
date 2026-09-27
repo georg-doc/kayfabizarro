@@ -79,6 +79,22 @@ Do not spend a separate user turn producing paste-ready GitHub text when this ch
 
 If the persistence step is still `UNKNOWN`, say only that and inspect the ref; do not create a long handoff that may become the only surviving copy.
 
+## 3B. Continuous crash-safe continuation
+
+Do not wait for slice closure to persist useful state. For an authorized Web/GitHub production slice, every **meaningful durable checkpoint** is GitHub-first:
+
+1. persist a completed implementation step before starting the next substantial step;
+2. persist test/evidence results as soon as they change what is known about the candidate;
+3. persist Georg decisions, changed next gates and recovery findings immediately;
+4. after each write, read back the exact branch head and intended file before continuing;
+5. only then send non-trivial chat prose about that checkpoint.
+
+Use the owner's existing `Return`, `Recovery`, `WIP_STATUS`, changelog or PR body. Do not create a second status owner merely for chat continuity.
+
+**Fresh-chat invariant:** after any completed checkpoint, a replacement chat must be able to continue from GitHub alone without reconstructing the preceding conversation. The durable state must identify at least the existing owner, branch/PR, exact verified head, last proven result, unresolved blocker/deferred items and exactly one current next action/gate.
+
+If the chat disappears before the final handoff, the last verified GitHub checkpoint is authoritative and the fresh chat resumes there.
+
 ## 4. Test the thing that changed
 
 Run the narrow static/integration checks first. If the slice changes a visible browser/game experience, also test the actual browser result at the intended size. Save a screenshot or live URL when useful.
