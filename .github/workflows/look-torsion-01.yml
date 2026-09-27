@@ -26,7 +26,6 @@ jobs:
         with:
           sparse-checkout: |
             tools/osm-city-lab
-            tools/KFB-ToolBox
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
