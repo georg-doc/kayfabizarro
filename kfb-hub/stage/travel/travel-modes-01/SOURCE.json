@@ -2,7 +2,7 @@
   "schema": "kfb.stage.travel-modes-01/1",
   "revision": "TRAVEL-MODES-01",
   "owner": "georg-doc/KFB-Travel-Globe",
-  "status": "PUBLIC_VERIFIED_HUMAN_REVIEW_PENDING",
+  "status": "PROCEED_PASS_EVIDENCE_ONLY",
   "travel": {
     "draftPR": 39,
     "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
@@ -16,7 +16,7 @@
     "buildId": "travel-b0-56d8ba57a8de3810",
     "artifactId": 10919953835,
     "artifactSha256": "5bb26077ad7f87baea51dfdbb8da8cf0ccf80229c37cf17458f5a08cd604fbcc",
-    "finalHandoffHead": "e3b966efec49e8859254cb48e4aed27fb8963d04",
+    "finalHandoffHead": "e10a977501cd186fe1330e9d3fd1a7b5811beb3a",
     "finalCi": {
       "run": 36287034124,
       "job": 108529617196,
@@ -41,7 +41,7 @@
     "DRIVE": "SOURCE_REQUIRED",
     "WATER": "SOURCE_REQUIRED"
   },
-  "humanAcceptance": "PENDING",
+  "humanAcceptance": "PROCEED_PASS_2026-09-27",
   "livePromotion": false,
   "publicProof": {
     "branchHead": "fc31b85a96352c4eab730c73059bfd5ea2fc67f8",
@@ -56,5 +56,12 @@
       "travel-modes-01-flight.png",
       "kfb-hub-travel-modes-01.png"
     ]
-  }
+  },
+  "workflowPolicy": {
+    "repository": "georg-doc/kayfabizarro",
+    "commit": "8e0626180d21d792d541fcc8aff848d6ce5782ea",
+    "path": "skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md"
+  },
+  "currentHumanTask": false,
+  "nextProductiveStep": "REAL_WORLDBUILDER_TRAVEL_MOBILITY_CONSUMER"
 }

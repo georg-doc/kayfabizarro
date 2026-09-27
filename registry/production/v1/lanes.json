@@ -475,25 +475,22 @@
     },
     {
       "id": "travel",
-      "bucket": "LOOK_AT",
-      "title": "Travel · Movement Mode Router",
-      "what": "TRAVEL-MODES-01 is technically green: one atomic Ground/Flight selector preserves the accepted 400 ms double-Space intent and the existing movement/camera owners. Drive and Water are explicit SOURCE_REQUIRED slots with no writer.",
-      "provider": "Web-Chat (Travel)",
-      "yourAction": "Open the Stage contract review. Switch Ground ↔ Flight and confirm the owner/support/presentation matrix; Drive/Water must remain unavailable.",
-      "waitingFor": "Georg human review only. No merge, landing implementation, Drive/Water movement or Live promotion.",
-      "questions": [
-        "Does the contract make the single active movement/camera owner obvious for Ground and Flight?",
-        "Are Drive and Water clearly reserved without pretending movement exists?"
-      ],
+      "bucket": "CAN_START",
+      "title": "Travel / WorldBuilder Mobility · router ready",
+      "what": "TRAVEL-MODES-01 is PROCEED_PASS: the one-active-writer Ground/Flight router and accepted 400 ms handoff are sufficient to continue. The contract page is technical evidence, not a Georg task. Next work belongs in real WorldBuilder/Travel mobility.",
+      "provider": "WorldBuilder / Travel Web",
+      "yourAction": "",
+      "waitingFor": "Continue in the real WorldBuilder/Travel consumer. Drive and Water remain source-required until real adapters exist.",
+      "questions": [],
       "repo": "georg-doc/KFB-Travel-Globe",
       "pr": 39,
       "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
       "external": true,
       "freshness": "CURRENT",
-      "freshnessNote": "Travel PR #39 final handoff head; runtime f5ea32f8 is CI- and Cloudflare-browser-proved.",
-      "head": "e3b966efec49e8859254cb48e4aed27fb8963d04",
-      "headDate": "2026-09-27T01:56:35Z",
-      "expectedHead": "e3b966efec49e8859254cb48e4aed27fb8963d04",
+      "freshnessNote": "Travel PR #39 PROCEED_PASS; contract Stage is evidence only.",
+      "head": "e10a977501cd186fe1330e9d3fd1a7b5811beb3a",
+      "headDate": "2026-09-27T02:00:00Z",
+      "expectedHead": "e10a977501cd186fe1330e9d3fd1a7b5811beb3a",
       "prUrl": "https://github.com/georg-doc/KFB-Travel-Globe/pull/39",
       "prState": "open",
       "brief": {
@@ -504,12 +501,7 @@
         "pasteReady": true,
         "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
       },
-      "review": {
-        "label": "Movement Mode Router prüfen",
-        "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/",
-        "available": true,
-        "sourceRef": "Travel PR #39 · final e3b966ef · runtime f5ea32f8 · final CI 133/133 · public Chromium 24/24 · human pending"
-      }
+      "review": null
     },
     {
       "id": "racer",
