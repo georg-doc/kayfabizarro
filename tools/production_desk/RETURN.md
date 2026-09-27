@@ -1317,3 +1317,10 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Kaltstartziel bestanden; Framebudget nicht bestanden.
 - Nächster Produktionsschritt ist ausschließlich `WORLD-M2A-R2 · RENDER BUDGET`.
 - Track S9/S4B, Emanata/Brick Fish und HUD bleiben Inputs außerhalb dieses Gates.
+
+## 2026-09-27 · WORLD-M2A-R2 outcome
+
+- PR #259 / head `3e4cfc1f47408718a4fe751f641b61484483817c` preserves the single measured render candidate.
+- Hardware acceleration is confirmed on Apple M1 Max / Metal.
+- Shader simplification and facade-detail hiding did not improve frame p95; no Stage publication.
+- Production Desk now routes exactly one next Work gate: `WORLD-M2A-R3 · CITY SHELL LOD`.
