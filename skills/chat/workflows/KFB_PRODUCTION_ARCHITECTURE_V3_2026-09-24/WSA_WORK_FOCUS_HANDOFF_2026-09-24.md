@@ -129,7 +129,7 @@ Binding source:
 `PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md`
 
 Canonical main policy:
-`georg-doc/kayfabizarro@8e0626180d21d792d541fcc8aff848d6ce5782ea · skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+`georg-doc/kayfabizarro@e3bc3ba4a8ffa7123e4cb29a0f615ffb91be0ce4 · skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
 
 WSA must not turn technical proof into a queue of Georg tasks.
 
@@ -146,3 +146,27 @@ Travel example:
 
 WSA success metric:
 **integrated usable capabilities / Georg attention**, not number of gates, proof pages or review PRs.
+
+## CURRENT HARD OVERRIDE · 2026-09-27 · no low-fidelity proxy acceptance
+
+Georg has now applied the productive-review rule directly to LOOK-TORSION-01.
+
+**Binding result:**
+- LOOK-TORSION-01 = **ARCHITECTURE PASS ONLY**;
+- retain the torsion mechanism as reusable engineering evidence;
+- the isolated grey A/B/C WebGL page is **not** WorldBuilder/look acceptance, not lighting/shadow acceptance and not a final calibration decision;
+- recurring shadow/light defects remain open;
+- no further standalone torsion review page or equivalent pseudo-acceptance site.
+
+**WSA planning rule:**
+1. Do not schedule Georg review for a low-fidelity proxy that is materially less representative than the real product.
+2. A ruckly/simplified lab, grey-box renderer, measurement UI or proxy carrying known shadow/light bugs is internal evidence only.
+3. Reversible bounded mechanisms should move directly into the real owner/product surface after machine/native QA.
+4. Human gates are reserved for integrated visual/play/irreversible decisions that actually change the next build.
+5. Do not fragment architecture into micro-slices whose main output is another review site, table, selector or PASS button.
+6. Prefer one coherent WorldBuilder/ToolBox/Racer/Travel/Resident/Combat milestone over several proxy gates.
+7. Historical handoffs that demand a standalone human review page are superseded by this rule unless Georg explicitly asks for that page.
+
+For torsion specifically, the next meaningful evaluation is inside the next clean/current WorldBuilder or world-presentation candidate, with the real camera/scene and the shared shadow/lighting corrections. Do not patch frozen Hürth R2.
+
+WSA success metric remains: **integrated usable capabilities / Georg attention**, not number of gates, proof pages or review PRs.
