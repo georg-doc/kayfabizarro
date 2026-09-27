@@ -45,13 +45,15 @@ A loaded path/URL is not donor proof.
 ## Changed files
 1. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/START_HERE.md`
 2. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/CLAUDE_DESIGN_BRIEF.md`
-3. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/clay-emanata.v0.1.json`
-4. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/SOURCE.json`
-5. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/TEST_REPORT.md`
-6. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/RETURN.md`
-7. `tools/KFB-ToolBox/CHANGELOG.md`
-8. `skills/chat/START_HERE.md`
-9. `kfb-hub/index.html`
+3. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/REACTION_CHOREOGRAPHY.md`
+4. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/clay-emanata.v0.1.json`
+5. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/reaction-choreography.v0.1.json`
+6. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/SOURCE.json`
+7. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/TEST_REPORT.md`
+8. `tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/RETURN.md`
+9. `tools/KFB-ToolBox/CHANGELOG.md`
+10. `skills/chat/START_HERE.md`
+11. `kfb-hub/index.html`
 
 ## Actual checks
 - catalog JSON parse: **PASS**;
