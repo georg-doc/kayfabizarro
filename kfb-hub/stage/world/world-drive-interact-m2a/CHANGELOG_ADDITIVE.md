@@ -49,3 +49,12 @@
 - exakt diesen R4-Unterordner auf `cloudflare-live@2e1978821a043cf604c8bc556493cae282a87a86` veröffentlicht;
 - feste Cloudflare-Stage danach erneut Desktop + schmal mit **38/38 PASS** geprüft; keine Seiten-, Request- oder HTTP-Fehler;
 - Produktstatus auf `PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING` gesetzt.
+
+## 2026-09-27 · R5 Playability repair
+
+- öffentliches R4 unverändert gelassen und R5 auf eigenem Owner-Branch aufgebaut;
+- Fahrzeug vor dem ersten sichtbaren Frame bis 4/4 Radkontakt vorgerechnet;
+- Walk-Antritt von gemessen 1,23 auf 1,41 m/s beschleunigt, Sprint 2,99 m/s;
+- 12,67-m-Offroad-Beweis mit vollständigem Bodenkontakt ergänzt;
+- Paket 27/27, Browser lokal 38/38, Playability-Proof und 30-fps-Performance-Gate bestanden;
+- R5 noch nicht auf die feste Stage veröffentlicht.

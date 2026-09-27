@@ -33,15 +33,15 @@ body[data-m1-ready="true"] #top,body[data-m1-ready="true"] #dock,body[data-m1-re
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","@dimforge/rapier3d-compat/rapier.es.js":"https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.17.3/rapier.es.js"}}
 </script>
-<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false,playabilityProfile:'R4',maxPixelRatio:.86,walkCadence:1.75,paceUpAfter:.55,walkAccel:5,walkDecel:7.5});</script>
+<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false,playabilityProfile:'R5',maxPixelRatio:.86,walkCadence:2.15,paceUpAfter:.32,walkAccel:8,walkDecel:10});</script>
 </head>
 <body data-kfb-stage="WORLD-DRIVE-INTERACT-M2A" data-kfb-source-head="M2A_WORK_CANDIDATE">
 <script type="module">
 const bootStartedAt=performance.now();
-await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability-r4');
+await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability-r5');
 const app=window.__wb2d;
 const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4}]=await Promise.all([
-  import('./clay-world-m1.mjs?r4=distance-budget'),import('./world-mobility-m1.mjs?r1=playability2'),import('./world-mobility-ui.mjs'),import('./adaptive-quality-r4.mjs')
+  import('./clay-world-m1.mjs?r4=distance-budget'),import('./world-mobility-m1.mjs?r5=playability'),import('./world-mobility-ui.mjs'),import('./adaptive-quality-r4.mjs')
 ]);
 const clay=await mountClayWorld(app);
 app.setPlay(true);

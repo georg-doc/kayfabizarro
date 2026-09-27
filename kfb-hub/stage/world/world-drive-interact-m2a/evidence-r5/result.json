@@ -1,0 +1,396 @@
+{
+  "schema": "kfb.world-m2a-r5-playability-proof/1",
+  "base": "http://127.0.0.1:4196/kfb-hub/stage/world/world-drive-interact-m2a/",
+  "viewport": {
+    "width": 1280,
+    "height": 820
+  },
+  "ground": {
+    "samples": [
+      {
+        "atMs": 300,
+        "position": [
+          -34.52,
+          0,
+          -26.01
+        ],
+        "motion": "walk",
+        "speed": 1.06
+      },
+      {
+        "atMs": 700,
+        "position": [
+          -34.37,
+          0,
+          -26.55
+        ],
+        "motion": "walk.fast",
+        "speed": 1.41
+      },
+      {
+        "atMs": 1200,
+        "position": [
+          -34.17,
+          0,
+          -27.25
+        ],
+        "motion": "walk.fast",
+        "speed": 1.41
+      },
+      {
+        "atMs": 1800,
+        "position": [
+          -33.95,
+          0,
+          -28.06
+        ],
+        "motion": "walk.fast",
+        "speed": 1.41
+      }
+    ],
+    "bootMs": 4046.226291,
+    "start": {
+      "position": [
+        -34.59,
+        0,
+        -25.74
+      ],
+      "motion": "idle",
+      "speed": 0
+    },
+    "sprint": [
+      {
+        "atMs": 300,
+        "position": [
+          -33.82,
+          0,
+          -28.52
+        ],
+        "motion": "run",
+        "speed": 1.83
+      },
+      {
+        "atMs": 700,
+        "position": [
+          -33.5,
+          0,
+          -29.67
+        ],
+        "motion": "sprint",
+        "speed": 2.98
+      },
+      {
+        "atMs": 1200,
+        "position": [
+          -33.09,
+          0,
+          -31.16
+        ],
+        "motion": "sprint",
+        "speed": 2.99
+      }
+    ]
+  },
+  "drive": {
+    "samples": [
+      {
+        "atMs": 400,
+        "schema": "kfb.world-drive-m2a/1",
+        "active": true,
+        "source": {
+          "owner": "FREE_ROAM_C0",
+          "racePr": 10,
+          "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+          "vehicleRepo": "georg-doc/kayfabizarro",
+          "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+          "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+          "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+          "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+        },
+        "physicalOwner": "FREE_ROAM_C0",
+        "worldOwner": "World r2",
+        "sourceSurfaceAdapter": true,
+        "buildingTriangles": 12974,
+        "contactBounds": {
+          "minX": -358,
+          "maxX": 358,
+          "minZ": -358,
+          "maxZ": 358,
+          "width": 716,
+          "depth": 716
+        },
+        "idleSettled": true,
+        "preSettledSteps": 41,
+        "position": {
+          "x": -32.27,
+          "y": 0.74,
+          "z": -32.44
+        },
+        "speedKmh": 23.4,
+        "contacts": 4,
+        "visualGroundGapM": -0.071,
+        "deformer": {
+          "impactWeight": 0.022,
+          "dominant": "load",
+          "pose": {
+            "pitch": 3.132,
+            "roll": 0.74,
+            "yaw": 0,
+            "squash": 0.0041,
+            "stretch": 0.0292
+          }
+        }
+      },
+      {
+        "atMs": 1000,
+        "schema": "kfb.world-drive-m2a/1",
+        "active": true,
+        "source": {
+          "owner": "FREE_ROAM_C0",
+          "racePr": 10,
+          "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+          "vehicleRepo": "georg-doc/kayfabizarro",
+          "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+          "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+          "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+          "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+        },
+        "physicalOwner": "FREE_ROAM_C0",
+        "worldOwner": "World r2",
+        "sourceSurfaceAdapter": true,
+        "buildingTriangles": 12974,
+        "contactBounds": {
+          "minX": -358,
+          "maxX": 358,
+          "minZ": -358,
+          "maxZ": 358,
+          "width": 716,
+          "depth": 716
+        },
+        "idleSettled": true,
+        "preSettledSteps": 41,
+        "position": {
+          "x": -26.03,
+          "y": 0.74,
+          "z": -33.89
+        },
+        "speedKmh": 42.8,
+        "contacts": 4,
+        "visualGroundGapM": -0.023,
+        "deformer": {
+          "impactWeight": 0.004,
+          "dominant": "load",
+          "pose": {
+            "pitch": -1.345,
+            "roll": 1.204,
+            "yaw": 0,
+            "squash": 0.0071,
+            "stretch": -0.0133
+          }
+        }
+      },
+      {
+        "atMs": 1800,
+        "schema": "kfb.world-drive-m2a/1",
+        "active": true,
+        "source": {
+          "owner": "FREE_ROAM_C0",
+          "racePr": 10,
+          "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+          "vehicleRepo": "georg-doc/kayfabizarro",
+          "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+          "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+          "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+          "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+        },
+        "physicalOwner": "FREE_ROAM_C0",
+        "worldOwner": "World r2",
+        "sourceSurfaceAdapter": true,
+        "buildingTriangles": 12974,
+        "contactBounds": {
+          "minX": -358,
+          "maxX": 358,
+          "minZ": -358,
+          "maxZ": 358,
+          "width": 716,
+          "depth": 716
+        },
+        "idleSettled": true,
+        "preSettledSteps": 41,
+        "position": {
+          "x": -22.77,
+          "y": 0.74,
+          "z": -25.89
+        },
+        "speedKmh": 44.1,
+        "contacts": 4,
+        "visualGroundGapM": -0.019,
+        "deformer": {
+          "impactWeight": 0.007,
+          "dominant": "load",
+          "pose": {
+            "pitch": 1.066,
+            "roll": 1.221,
+            "yaw": 0,
+            "squash": 0.0073,
+            "stretch": 0.013
+          }
+        }
+      },
+      {
+        "atMs": 2600,
+        "schema": "kfb.world-drive-m2a/1",
+        "active": true,
+        "source": {
+          "owner": "FREE_ROAM_C0",
+          "racePr": 10,
+          "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+          "vehicleRepo": "georg-doc/kayfabizarro",
+          "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+          "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+          "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+          "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+        },
+        "physicalOwner": "FREE_ROAM_C0",
+        "worldOwner": "World r2",
+        "sourceSurfaceAdapter": true,
+        "buildingTriangles": 12974,
+        "contactBounds": {
+          "minX": -358,
+          "maxX": 358,
+          "minZ": -358,
+          "maxZ": 358,
+          "width": 716,
+          "depth": 716
+        },
+        "idleSettled": true,
+        "preSettledSteps": 41,
+        "position": {
+          "x": -30.92,
+          "y": 0.74,
+          "z": -23.47
+        },
+        "speedKmh": 42.8,
+        "contacts": 4,
+        "visualGroundGapM": -0.02,
+        "deformer": {
+          "impactWeight": 0.004,
+          "dominant": "load",
+          "pose": {
+            "pitch": -0.596,
+            "roll": 1.211,
+            "yaw": 0,
+            "squash": 0.0071,
+            "stretch": -0.0056
+          }
+        }
+      }
+    ],
+    "bootMs": 4088.779042,
+    "start": {
+      "schema": "kfb.world-drive-m2a/1",
+      "active": false,
+      "source": {
+        "owner": "FREE_ROAM_C0",
+        "racePr": 10,
+        "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+        "vehicleRepo": "georg-doc/kayfabizarro",
+        "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+        "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+        "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+        "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+      },
+      "physicalOwner": "FREE_ROAM_C0",
+      "worldOwner": "World r2",
+      "sourceSurfaceAdapter": true,
+      "buildingTriangles": 12974,
+      "contactBounds": {
+        "minX": -358,
+        "maxX": 358,
+        "minZ": -358,
+        "maxZ": 358,
+        "width": 716,
+        "depth": 716
+      },
+      "idleSettled": true,
+      "preSettledSteps": 41,
+      "position": {
+        "x": -32.99,
+        "y": 0.73,
+        "z": -31.52
+      },
+      "speedKmh": 0,
+      "contacts": 4,
+      "visualGroundGapM": 0.003,
+      "deformer": {
+        "impactWeight": 0,
+        "dominant": "idle",
+        "pose": {
+          "pitch": 0,
+          "roll": 0,
+          "yaw": 0,
+          "squash": 0,
+          "stretch": 0
+        }
+      }
+    },
+    "end": {
+      "schema": "kfb.world-drive-m2a/1",
+      "active": true,
+      "source": {
+        "owner": "FREE_ROAM_C0",
+        "racePr": 10,
+        "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+        "vehicleRepo": "georg-doc/kayfabizarro",
+        "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+        "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+        "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+        "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+      },
+      "physicalOwner": "FREE_ROAM_C0",
+      "worldOwner": "World r2",
+      "sourceSurfaceAdapter": true,
+      "buildingTriangles": 12974,
+      "contactBounds": {
+        "minX": -358,
+        "maxX": 358,
+        "minZ": -358,
+        "maxZ": 358,
+        "width": 716,
+        "depth": 716
+      },
+      "idleSettled": true,
+      "preSettledSteps": 41,
+      "position": {
+        "x": -45.44,
+        "y": 0.74,
+        "z": -33.87
+      },
+      "speedKmh": 38.8,
+      "contacts": 4,
+      "visualGroundGapM": -0.009,
+      "deformer": {
+        "impactWeight": 0.002,
+        "dominant": "load",
+        "pose": {
+          "pitch": -1.324,
+          "roll": 0,
+          "yaw": 0,
+          "squash": 0.0034,
+          "stretch": -0.0103
+        }
+      }
+    }
+  },
+  "errors": [],
+  "assertions": {
+    "bootUnder15s": true,
+    "initialVehicleGrounded": true,
+    "responsiveWalk": true,
+    "responsiveSprint": true,
+    "offroadDistanceM": 12.67,
+    "offroadContact": true,
+    "noErrors": true
+  },
+  "pass": true
+}
