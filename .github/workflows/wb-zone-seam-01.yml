@@ -10,13 +10,6 @@ on:
       - 'tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/**'
       - 'tools/KFB-ToolBox/lib/edit-layer.js'
       - '.github/workflows/wb-zone-seam-01.yml'
-  pull_request:
-    paths:
-      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/**'
-      - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/**'
-      - 'tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/**'
-      - 'tools/KFB-ToolBox/lib/edit-layer.js'
-      - '.github/workflows/wb-zone-seam-01.yml'
   workflow_dispatch:
 
 permissions:
