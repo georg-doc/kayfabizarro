@@ -75,6 +75,29 @@ Use the current screenshot/reference set and the existing KFB 3D Cartoon Style r
 
 Before integrating, Claude Design must show at least one exact ClayBound screenshot/reference from this folder in isolation and record its repo path/blob in the Return. Merely loading an URL is not donor proof.
 
+### D4 · Town / Brick Fish social-hit donor
+
+Town relationship/encounter source:
+- `skills/chat/town/LIVING_KFB_TOWN.md` @ main blob `a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61`;
+- encounters emit semantic beats while animation and text choose independently;
+- Town figures are friendly by default; physical slapstick does not silently become Combat.
+
+Brick Fish / Red Herring source:
+- Draft PR #254;
+- branch `chatgpt-web/kfb-town-prop-throw-pattern-2026-09-27`;
+- head `79d7c18a8f07b99efe8276211a9cda527ac2f2ea`;
+- `skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md` @ blob `99205974c8fcc08ef41e6f66edcdd495f5e81cef`.
+
+Reaction rule:
+- a non-damaging Brick Fish contact is `social.prop_hit`, **not** `damage.light`;
+- for an NPC with no stronger context, the canonical post-impact Emanata is `heart` — physical BONK first, affectionate read second;
+- `buddy-banter`, `argument` and `kayfabe-performance` context may resolve a different face/body/Emanata performance;
+- real harm is remapped by the consumer to `damage.light/heavy`;
+- the heart is transient visual punctuation, never a relationship score, affection meter or reward currency;
+- dialogue remains owned by existing ChatterBox/Triplet/Kayfabulation.
+
+This contract does **not** add Brick Fish asset production to the first post-RECOVERY-01 Emanata proof. The real prop integration remains a later source-proven `BRICK-FISH-TOSS-01` step.
+
 ## Protected boundaries
 
 - **ToolBox owns authoring/presentation of the Emanata library.**
