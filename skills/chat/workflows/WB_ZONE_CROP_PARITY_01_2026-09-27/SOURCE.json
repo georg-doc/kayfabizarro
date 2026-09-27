@@ -1,0 +1,43 @@
+{
+  "schema": "kfb.wb-zone-crop-parity-01.source/1",
+  "date": "2026-09-27",
+  "status": "TESTED_PASS_DIAGNOSTIC",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wb-zone-crop-parity-01-2026-09-27",
+  "draftPR": 255,
+  "base": {
+    "pr": 252,
+    "branch": "chatgpt-web/wb-zone-seam-01-2026-09-27",
+    "head": "6b08636e552f39ac5f00d0216adcf70fa40f80c6",
+    "status": "ARCHIVED_FAILED_CANDIDATE"
+  },
+  "donor": {
+    "pr": 241,
+    "branch": "chatgpt-web/world-zone-review-g3-2026-09-24",
+    "head": "3b4909d4c83b704662e66b60212e7f20ba5cf662",
+    "normalizedPath": "tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/normalized.json",
+    "normalizedBlob": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9"
+  },
+  "fixture": "tools/KFB-ToolBox/worldbuilder/world-integration-01/fixtures/cologne-dom-crop-v0.json",
+  "crop": {
+    "minX": -620,
+    "maxX": 180,
+    "minZ": -300,
+    "maxZ": 300
+  },
+  "diagnosticScript": "tools/KFB-ToolBox/worldbuilder/world-integration-01/test/wb-zone-crop-parity-01.mjs",
+  "workflow": ".github/workflows/wb-zone-crop-parity-01.yml",
+  "testedImplementationHead": "3178163a4fad44139aa548fabd3c89bf5d2dbb54",
+  "githubActions": {
+    "run": 36323360087,
+    "job": 108631340758,
+    "artifact": 10932773701
+  },
+  "protectedBoundary": [
+    "no renderer changes",
+    "no WorldBuilder runtime changes",
+    "no Stage publication",
+    "no human gate",
+    "no repair 3 on PR #252"
+  ]
+}
