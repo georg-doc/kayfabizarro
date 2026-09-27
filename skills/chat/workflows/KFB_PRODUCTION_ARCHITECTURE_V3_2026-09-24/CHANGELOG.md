@@ -514,3 +514,15 @@
 - `TRAVEL-MODES-01` is closed as `COMPLETE_PROCEED_PASS`; contract-only Stage remains evidence/history.
 - Removed `TRAVEL-MODES-01` as a blocking dependency from downstream Travel/WorldBuilder mobility planning; Drive/Water source dependencies remain.
 - No runtime, merge or Live promotion.
+
+## 2026-09-27 · LOOK-TORSION architecture pass · standalone proxy gate retired
+
+- Georg marks LOOK-TORSION-01 **PASS for the torsion architecture/mechanism only**.
+- The grey isolated A/B/C renderer is not WorldBuilder/look acceptance and does not accept lighting, shadows, materials or a final universal torsion value.
+- Recurring shadow/light defects remain open.
+- WSA/Web/Claude routing now treats low-fidelity, ruckly or known-bug-carrying review proxies as internal evidence, not blocking Georg gates.
+- Standalone pseudo-acceptance pages are not a default production unit; reversible mechanisms proceed after technical QA into the real owner/product surface.
+- `WSA_WORK_FOCUS_HANDOFF_2026-09-24.md` and `PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md` now carry the hard no-proxy rule.
+- `HUB_BRIEFING_CATALOG.json`: LOOK-TORSION-01 removed from WorldBuilder `currentReady`, moved to `HOLD/CLOSED_PASS` with `PASS_ARCHITECTURE_ONLY`; catalogue = **97 jobs · 41 READY · 56 HOLD**.
+- Next meaningful torsion evaluation: integrated WorldBuilder/world presentation with real camera/scene and shared shadow/lighting fixes.
+- Frozen Hürth R2 remains untouched; no merge or Live promotion authorized.
