@@ -1,6 +1,6 @@
 {
   "schema": "kfb.hub-briefing-catalog/10",
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "architecture": {
     "repo": "georg-doc/kayfabizarro",
     "pr": 204,
@@ -109,7 +109,6 @@
       "capabilitiesTotal": 10,
       "currentReady": [
         "surface-01",
-        "travel-modes-01",
         "travel-boat-01",
         "world-env-consolidate-01"
       ]
@@ -825,25 +824,27 @@
     {
       "id": "travel-modes-01",
       "strand": "travel-surfaces",
-      "bucket": "READY",
+      "bucket": "HOLD",
       "priority": "P0",
       "executor": "Travel/WorldBuilder Web",
       "title": "Travel · Movement Mode Router",
-      "what": "Atomic one-active-writer Ground/Flight/Drive/Water architecture; preserve accepted 400 ms Ground→Flight behavior.",
-      "result": "Explicit mode contract + current Ground/Flight proof.",
+      "what": "Completed/proceed-pass one-active-writer Ground/Flight router foundation. Retain as evidence; consume it in real WorldBuilder/Travel mobility instead of rerunning a contract-only human gate.",
+      "result": "Ground/Flight router accepted sufficiently to continue; Drive/Water remain source-required.",
       "promptSection": "TRAVEL-MODES-01 · Movement Mode Router",
       "sourceSet": "travelWorldModes",
       "cloudflareRequired": false,
       "workRequired": false,
       "repo": "georg-doc/KFB-Travel-Globe",
-      "pr": 38,
-      "sourceHead": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
+      "pr": 39,
+      "sourceHead": "e10a977501cd186fe1330e9d3fd1a7b5811beb3a",
       "executionProfile": "WEB_DEEP",
       "model": "GPT-5.6 Sol",
       "reasoning": "high",
       "budget": "HIGH",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "waitingFor": "COMPLETE · PROCEED_PASS · do not rerun; consume in real WorldBuilder/Travel mobility.",
+      "operationalStatus": "COMPLETE_PROCEED_PASS"
     },
     {
       "id": "travel-drive-01",
@@ -856,7 +857,7 @@
       "result": "Enter/drive/stop/exit world mode with one movement owner.",
       "promptSection": "TRAVEL-DRIVE-01 · Free Drive off-track",
       "sourceSet": "travelWorldModes",
-      "waitingFor": "TRAVEL-MODES-01 + WB-AUTHOR-01 + usable vehicle authoring source",
+      "waitingFor": "WB-AUTHOR-01 + usable source-proven vehicle/Drive adapter",
       "cloudflareRequired": false,
       "workRequired": false,
       "executionProfile": "WEB_DEEP",
@@ -1982,7 +1983,7 @@
       "result": "Playable multi-mode world with one movement writer and MotionProfile state graph.",
       "promptSection": "WB-MOBILITY-MVP-01 · WorldBuilder all-mode mobility + actor state graph",
       "sourceSet": "worldbuilder",
-      "waitingFor": "WB-ZONE-SEAM-01 + TRAVEL-MODES-01 + source-proven Drive/Boat/Air adapters + accepted Motion consumer",
+      "waitingFor": "WB-ZONE-SEAM-01 + source-proven Drive/Boat/Air adapters + accepted Motion consumer",
       "cloudflareRequired": false,
       "workRequired": false,
       "executionProfile": "WEB_DEEP",
@@ -2283,15 +2284,15 @@
   "presentation": {
     "defaultView": "strands",
     "jobCardsCollapsed": true,
-    "todayShows": "operational Today lanes from HUB-CTRL; self-service READY excludes completed/accepted foundations",
+    "todayShows": "operational Today lanes from HUB-CTRL; technical diagnostics and completed/proceed foundations are excluded from human review queues",
     "rule": "Do not render all jobs as one default wall.",
     "priorityRule": "Today/default priority view should not surface P2 READY work while P0/P1 product work exists; P2 remains available inside its parent strand."
   },
   "metrics": {
     "strands": 13,
     "jobs": 97,
-    "ready": 43,
-    "hold": 54
+    "ready": 42,
+    "hold": 55
   },
   "executionProfiles": {
     "WEB_FAST": {

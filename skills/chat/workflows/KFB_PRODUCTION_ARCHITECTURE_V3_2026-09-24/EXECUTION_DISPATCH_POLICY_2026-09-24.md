@@ -1,3 +1,14 @@
+# CURRENT DISPATCH OVERRIDE · 2026-09-27 · PRODUCTIVE OWNER SURFACE FIRST
+
+Before selecting an executor or review surface, apply:
+`PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md`
+
+A technical diagnostic is not a human review task. Prefer automated/native evidence and continue in the real owner/product surface. Create a human review artifact only when a named human decision blocks further product work.
+
+A `PROCEED_PASS` closes the current intermediate gate without claiming exhaustive acceptance.
+
+---
+
 # KFB Production Architecture v3 · Execution / Model / Reasoning Dispatch · 2026-09-24
 
 Status: **CURRENT DISPATCH POLICY · BUDGET-FIRST · CAPABILITY ESCALATION ONLY**

@@ -1,3 +1,26 @@
+# CURRENT WORKFLOW OVERRIDE · PRODUCTIVE REVIEW / NO PSEUDO-HUMAN GATES · 2026-09-27
+
+Status: **BINDING · SUPERSEDES REVIEW-ARTIFACT-AS-DEFAULT LANGUAGE BELOW**
+
+Read first:
+`PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md`
+
+Canonical rule:
+`georg-doc/kayfabizarro@8e0626180d21d792d541fcc8aff848d6ce5782ea · skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+Current architecture behavior:
+- integrate in the real owner/product surface first;
+- technical tables, counters, source matrices and contract selectors are internal evidence, not automatic Georg gates;
+- human review only when a real product decision blocks the next step;
+- a Georg continuation instruction is a `PROCEED_PASS`, not exhaustive acceptance;
+- Stage is for meaningful milestones/shared review, not a mandatory slice terminus.
+
+**TRAVEL-MODES-01 = COMPLETE_PROCEED_PASS.** Do not route it back to Georg. The next Travel/WorldBuilder work consumes the router in real mobility.
+
+Current self-service catalog after this correction: **97 jobs · 42 READY · 55 HOLD**. Completed/proceed foundations stay out of READY.
+
+---
+
 # CURRENT OPERATING UPDATE · HUB-BRIEFING-SYNC-01 · 2026-09-26
 
 Status: **OWNER / BRIEFING SYNC · NO RUNTIME CHANGE**
@@ -10,7 +33,7 @@ Current owner truth:
 - Racer HUD + Billboard visual system may run in parallel from the current PR #222 Claude start.
 
 Self-service catalog remains capability-oriented, but completed/deferred gates are no longer shown as READY:
-**13 strands · 96 jobs · 42 READY · 54 HOLD**.
+**13 strands · 97 jobs · 42 READY · 55 HOLD**.
 
 The operational Today order comes from HUB-CTRL #202. Do not infer current execution priority from older historical sections below.
 

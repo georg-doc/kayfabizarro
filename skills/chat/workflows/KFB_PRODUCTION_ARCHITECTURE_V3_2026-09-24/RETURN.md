@@ -1558,3 +1558,33 @@ Next:
 `WORLD-R2-CONTRACT-RESET-01` test-only contract reconciliation.
 
 ToolBox r2 remains **OWNER REHOME CI PASS · STAGE NEXT**.
+
+
+## 2026-09-27 · PRODUCTIVE REVIEW OVERRIDE / TRAVEL PROCEED PASS
+
+Status: **WORKFLOW CORRECTION PERSISTED · NO RUNTIME / LIVE PROMOTION**
+
+Georg rejected the recurring production anti-pattern where technical diagnostics, measurement tables, owner/writer matrices or state-machine buttons become blocking human ACCEPT/REJECT tasks.
+
+Binding central source:
+`georg-doc/kayfabizarro@8e0626180d21d792d541fcc8aff848d6ce5782ea · skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+Architecture-local override:
+`PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md`
+
+Result:
+- productive owner integration is default;
+- technical QA remains internal/automated evidence;
+- human gates require a concrete product decision;
+- explicit continuation = `PROCEED_PASS`;
+- Stage is milestone/shared review, not mandatory slice ceremony;
+- WSA next slides must show flow to usable products and remove/combine redundant gates.
+
+Travel:
+- `TRAVEL-MODES-01` = **COMPLETE_PROCEED_PASS**;
+- Travel PR #39 current decision head `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`;
+- contract Stage retained as evidence/history, not a Georg task;
+- Travel-mode dependency is satisfied for downstream planning;
+- Drive/Water still require real sources.
+
+No automatic merge or product Live promotion.

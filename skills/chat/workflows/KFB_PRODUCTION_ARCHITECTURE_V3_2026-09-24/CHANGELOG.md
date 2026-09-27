@@ -501,3 +501,16 @@
 - full failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - next gate is test-only `WORLD-R2-CONTRACT-RESET-01`; no repair pass 3;
 - ToolBox r2 remains technically green and proceeds separately.
+
+
+## 2026-09-27 · Productive review override / pseudo-human-gate removal
+
+- Georg identified repeated technical review artifacts as a workflow anti-pattern that was slowing production.
+- Canonical policy is now `main@8e062618.../skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`.
+- Added architecture-local `PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md`.
+- Default architecture flow is real-owner integration + automated/native evidence; human gates require a concrete product decision.
+- Added `PROCEED_PASS` semantics; do not reopen the same intermediate gate without a new blocker.
+- WSA next slides must collapse technical QA and show only real human decision points.
+- `TRAVEL-MODES-01` is closed as `COMPLETE_PROCEED_PASS`; contract-only Stage remains evidence/history.
+- Removed `TRAVEL-MODES-01` as a blocking dependency from downstream Travel/WorldBuilder mobility planning; Drive/Water source dependencies remain.
+- No runtime, merge or Live promotion.

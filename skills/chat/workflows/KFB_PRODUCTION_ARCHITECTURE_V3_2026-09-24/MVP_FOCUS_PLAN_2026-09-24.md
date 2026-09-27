@@ -1,3 +1,18 @@
+# CURRENT OVERRIDE · 2026-09-27 · PRODUCTIVE INTEGRATION, NOT REVIEW-GATE CHAINS
+
+Canonical policy:
+`georg-doc/kayfabizarro@8e0626180d21d792d541fcc8aff848d6ce5782ea · skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+This plan now interprets all older “review first / Stage review / Georg gate” language narrowly:
+- keep it only where Georg must make a genuine visual/play/product choice;
+- otherwise convert it to automated/internal evidence and continue integration;
+- do not create a separate diagnostic artifact as the default next step;
+- prefer review in the real WorldBuilder/ToolBox/Racer/Travel/Resident/Combat product surface.
+
+`TRAVEL-MODES-01` is **PROCEED_PASS** and no longer blocks mobility dependencies. Its next useful consumer is real WorldBuilder/Travel mobility.
+
+---
+
 # KFB MVP Focus Plan · 2026-09-24 evening
 
 Status: **CURRENT PRODUCT FOCUS · no automatic merge/Live promotion**

@@ -121,3 +121,28 @@ Return:
 **NO WORK EXECUTION REQUIRED · current tasks routed to their cheaper capable owners.**
 
 Do not merge, promote Live or start a broad consolidation pass.
+
+
+## CURRENT OVERRIDE · 2026-09-27 · WSA slides / workflow planning
+
+Binding source:
+`PRODUCTIVE_REVIEW_OVERRIDE_2026-09-27.md`
+
+Canonical main policy:
+`georg-doc/kayfabizarro@8e0626180d21d792d541fcc8aff848d6ce5782ea · skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+WSA must not turn technical proof into a queue of Georg tasks.
+
+For next architecture/workflow slides:
+- show the productive owner surfaces and integration flow;
+- collapse CI, owner/writer invariants, source pins and contract checks into internal evidence;
+- show Georg only where a visual/play/irreversible product decision actually changes the next action;
+- label explicit continuation signals as `PROCEED_PASS`;
+- treat Stage as milestone/shared review, not an end-of-slice ritual;
+- flag standalone diagnostic/review artifacts as an exception requiring a named human decision.
+
+Travel example:
+`TRAVEL-MODES-01` is complete enough to proceed; its contract-only Stage is not a human task. Continue in real WorldBuilder/Travel mobility. Drive/Water remain source-required.
+
+WSA success metric:
+**integrated usable capabilities / Georg attention**, not number of gates, proof pages or review PRs.
