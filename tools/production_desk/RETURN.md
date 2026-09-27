@@ -1206,3 +1206,50 @@ Exactly one next gate:
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+# CURRENT UPDATE · WORLD M2 DRIVE + INTERACTION CONTRACT · 2026-09-27
+
+Status: **PLAN CONSOLIDATED · SOURCE DONORS LOCKED · NO NEW RUNTIME CLAIM**
+
+- Next World milestone is now `WORLD-TRACK-DRIVE-CLAY-M2`, not a separate Drive sidequest.
+- Travel target is the smallest complete loop: **Walk → Drive → Track → Walk → Flight → Walk**. Water stays outside this MVP.
+- Track acceptance source is Race PR #42 @ `bcc422b00fc4629ac113f086cddcea3b2b107f2a`; it remains an acceptance scene, not a replacement Runtime owner.
+- Proven Drive/visual donor is Race PR #10 @ `406cd26f44f22811fe3b3a58776839be7ffb7b2c`: Free Roam owns movement/contact; Vehicle Deformer v2 owns presentation only.
+- `E` / semantic `INTERACT` is the single contextual action for vehicle enter/exit, Resident ChatterBox, props and portals. The visible focus prompt and executed target must always match.
+- Vehicle entry/exit uses the source-compatible no-door solution: character hop + vehicle duck/squash + safe World-ground pop-out. No door geometry or second physics owner.
+- One proven vehicle carries the MVP; other vehicles are additive and individually quarantinable.
+- Clay Speech/Thought Bubbles are a parallel isolated design donor over the existing ChatterBox, not a new dialogue or Memory owner and not an M2 blocker.
+- Billboard/Public Domain is admitted as the first living environment sidecar: existing B2a body + extracted H4 compositor + exactly the four PD-POOL-R3 public-verified objects. H4's 33 `RIGHTS NOT_VERIFIED` LoC plates remain excluded.
+- Added briefs: `WORLD_INTERACTION_E_V1_2026-09-27.md` and `CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`; both are linked from the single M2 production brief instead of creating more Hub clutter.
+- Added `WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md` under the same M2 lane; no new Hub card or media registry.
+- Added one evidence-driven Credits/Attribution experience: shared manifest → `E` landmark plaques, Billboard Creator Kudos and Showreel credits. Satire is presentation-only; names, licenses, required attribution and sources remain exact.
+- No World runtime, Stage, publication, merge or Live state changed in this planning checkpoint.
+
+Exactly one next gate: **execute WORLD-TRACK-DRIVE-CLAY-M2 as the next productive Work slice; Georg reviews only the resulting playable Travel loop.**
+
+# PREVIOUS UPDATE · WORLD MOBILITY M1 + TOOLBOX RECOVERY-01 · 2026-09-27
+
+Status: **HIRNWELT H0 INTEGRATED · SOURCE SYNC COMPLETE · NO GEORG TASK · PUBLIC HUB NOT REBUILT**
+
+- World/Clay direction remains Georg `PROCEED PASS`.
+- Productive World candidate: PR #249, `work/world-mobility-m1-2026-09-27@40037597485436e185f129091be908786925341d`.
+- M1 removes the rejected folded track proxy and integrates the existing World Ground owner with the accepted Travel Ground/Flight router, 400-ms mode intent and actual Card Carrier.
+- Hirnwelt H0 is implemented rather than merely planned: actual H0 material/relief modules, three surface scales, reversible Original/Knete, no runtime softening or SkinnedMesh preprocessing.
+- Evidence: package 43/43; local desktop+narrow browser 40/40; zero page/console/request/HTTP errors.
+- The exact 41-file M1 package is preserved at `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`.
+- Three reads of the exact pages.dev route, including an explicit `index.html` cache-buster, returned the general KayfaBizarro website instead of the M1 source marker. Classification: `PUBLIC_ROUTE_FALLBACK`; no `PUBLIC_VERIFIED` claim and no Georg review task.
+- Next World slice is `WORLD-TRACK-CORE-M2`: consume the real Race Track Core and add one physically modeled curb/sidewalk city cell; no replacement track geometry or second physics owner.
+- New ToolBox session-cut input is routed to `TOOLBOX Production-02 RECOVERY-01`: 27/28 current selftest, Feature-Parity Matrix first, then one source-backed restoration.
+- H0 Hirnwelt is the accepted and now integrated KlayfaBizarro style donor. D2 is implemented for World materials/relief; physical facade/street preprocessing remains in M2. H1/M1 remain sidequests.
+- Public Domain Pool is now correctly closed as merged/public/live-registry verified; bulk import remains not started.
+- No generated Hub root or Cloudflare publication changed in this source checkpoint.
+
+Exactly one Hub-publication gate remains: run the existing Production Desk generation/publication owner once from this synchronized source, then read back the exact public root. This is an internal publication job, not a Georg review task.
+# 2026-09-27 · Hub current-state publication prep / M2A
+
+- Owner remains HUB-CTRL #202 / `tools/production_desk`; no new Hub shell.
+- Current GitHub recon found no unknown post-#252 Web slice. PR #251 is historical Public-Domain recovery only; the four-object PD-POOL-R3 is already merged/public. PR #252 is correctly frozen after two failed crop-parity passes and does not block World mobility.
+- Source correction: Track Core PR #219 is planning-only and Race PR #42 is an acceptance fixture. The Hub now presents M2A as the executable Drive+E loop and M2B/Track as `WAITING_SOURCE`, instead of implying the Track runtime already exists.
+- Exact donor refs rechecked: World M1 `40037597485436e185f129091be908786925341d`; Race Drive/Deformer `406cd26f44f22811fe3b3a58776839be7ffb7b2c`; Race fixture `bcc422b00fc4629ac113f086cddcea3b2b107f2a`; Travel router branch `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`.
+- Hub builder tests: 16/16 PASS; config JSON PASS. Local render test remains unavailable until the workflow creates `registry/production/v1`; this is not converted into a fake PASS.
+- Publication workflow was made count-independent while retaining zero-problem closure, so new briefing totals no longer invalidate an otherwise current Hub.
+- Next gate: run the existing exact Hub publication workflow once from this corrected owner state, then visibly verify the public root before claiming `PUBLIC_VERIFIED`.

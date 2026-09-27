@@ -481,3 +481,56 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+# 2026-09-27 · World M2 Drive + contextual interaction consolidation
+
+- Expanded the single productive World M2 brief from Track/Clay-only into a complete Ground + Drive + Flight loop; Water remains later.
+- Source-locked the Drive path to Race PR #10 and its presentation-only Vehicle Deformer v2; Track acceptance source is Race PR #42.
+- Standardized keyboard interaction on `E` through semantic `INTERACT`, shared by vehicles, Residents, props and portals without a second gameplay owner.
+- Defined the no-door cartoon vehicle transition: hop, duck/squash and safe pop-out on World-confirmed ground.
+- Added a source-backed interaction contract and an isolated Clay Speech/Thought Bubble design brief while keeping both under the one World M2 Hub lane.
+- Admitted the existing Billboard production line as a quarantinable M2 environment module: B2a body, H4 compositor and only the four PD-POOL-R3 public-verified assets; all 33 unverified H4 LoC plates remain excluded.
+- Added one Billboard/Public-Domain integration brief under the same World M2 lane; no second registry, Hub lane or runtime owner.
+- Added a shared Credits/Attribution experience brief covering in-world plaques, Billboard Creator Kudos and a representative-asset showreel; required credit lines remain exact while voluntary CC0/Public-Domain kudos may use KFB satire.
+- Kept the MVP proportional: one proven vehicle carries the loop; additional vehicles cannot block it.
+- Planning/source update only. No runtime, Stage, public Hub or Live promotion claimed.
+
+# 2026-09-27 · World Mobility M1 + ToolBox Recovery-01 source sync
+
+- WORLD-FLIGHT-CLAY-C0 decision converted into execution state: World/Clay remains `PROCEED PASS`; rejected track proxy and temporary flight adapter are no longer presented as Georg review work.
+- Added PR #249 / `WORLD-MOBILITY-M1` as the current productive World lane: real World Ground owner + accepted Travel router/400-ms intent/actual Card Carrier, 40/40 package and 40/40 local browser PASS.
+- Added paste-ready `WORLD-TRACK-CORE-M2` brief for the next real Race Track Core integration; explicitly forbids another visual proxy or second Track/Drive owner.
+- Routed the 2026-09-27 ToolBox Production-02 session cut into `RECOVERY-01`: feature parity first, one source-backed restoration, no new UI shell.
+- Public Domain Pool corrected from stale RUNNING to `MERGED · PUBLIC_VERIFIED · LIVE REGISTRY VERIFIED`; no bulk import.
+- World r2 technical review card closed as a Georg task; it remains the consumed foundation.
+- Masterplan now shows **no current Georg task** for these production lanes.
+- Source/config/briefing sync only: no generated Hub root, registry, Cloudflare publication, merge or Live claim in this checkpoint.
+
+## H0 Hirnwelt style decision
+
+- Accepted `KFB_CLAYMATION_H0_HIRNWELT_2026-09-27` as the current KlayfaBizarro visual donor.
+- Chose H0 option **D2** for the production line: transfer the actual soften/material/relief modules into the World/Track consumer.
+- M2 now includes one complete clay city cell with three relief scales, softened KayKit facades, jointed bright curbs, sidewalk, green/entrance transitions and clay road markings.
+- H0/H1 and Knet-Medizin remain separate sidequests; no 40-second runtime soften pass will be accepted as the production path.
+
+## 2026-09-27 · M1 exact publication package, route fallback recorded
+
+- Advanced PR #249 to exact documentation head `0f9139c523cc6968b0a64551aed0a6fa88040a09`.
+- Preserved the exact 41-file M1 package on `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`.
+- The fixed Stage URL returned the general KayfaBizarro site on three browser reads instead of the M1 marker; status is `PUBLIC_ROUTE_FALLBACK`, not `PUBLIC_VERIFIED`.
+- Routing repair remains an internal Publication-owner task. It is not a product Human Gate and does not reopen the rejected proxy-track direction.
+
+## 2026-09-27 · Hirnwelt H0 productive World integration
+
+- PR #249 advanced to exact head `40037597485436e185f129091be908786925341d`; runtime integration commit `52027a5d4701e284b49e5b9b106ce18596050de8`.
+- Accepted H0 material and relief now run on the existing World surfaces in three scales; Original/Knete remains reversible.
+- Package/owner proof advanced to 43/43; desktop+narrow browser remains 40/40 PASS with zero page/console/request/HTTP errors.
+- H0 runtime softening and SkinnedMesh preprocessing remain excluded; geometry softening is offline/cached only.
+- M2 is narrowed to the real Track Core plus physical street-cell geometry: carriageway, jointed bright curbs, sidewalk and terrain transition.
+- Public route remains `PUBLIC_ROUTE_FALLBACK`; no blind redeploy or false live claim.
+# 2026-09-27 · Hub publication recovery + M2A source correction
+
+- GitHub recon confirmed: the real Track Core is still planning/contract work on PR #219; Race PR #42 remains an acceptance fixture, not a runtime.
+- Reframed the active World milestone without inventing a proxy: M2A now builds the playable Walk → Drive → Walk → Flight → Walk loop from the proven PR-#10 Drive donor; M2B attaches the real Track Core only after its owner ships source.
+- Updated the existing Hub lane and M2 briefing in place; no second Hub or registry was introduced.
+- Removed frozen numeric briefing counts from the existing Hub publication workflow. Publication closure now proves nonzero jobs, one prompt per job, READY+HOLD completeness and zero problems from the generated registry itself.
+- Builder tests: 16/16 PASS. The local render test still lacks the generated online registry fixture in this isolated checkout; the publication workflow owns that build and validation.
