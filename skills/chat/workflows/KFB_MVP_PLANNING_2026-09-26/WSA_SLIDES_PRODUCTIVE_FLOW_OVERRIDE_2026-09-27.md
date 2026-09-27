@@ -17,6 +17,20 @@ Examples to classify as internal evidence:
 
 Message: **technical proof ≠ human gate**.
 
+
+## Slide 1b · Fidelity test before any human gate
+
+Before presenting a review artifact to Georg, ask whether it is at least representative enough to judge the real product decision.
+
+**Invalid as blocking human gates:**
+- grey-box / simplified geometry when the real WorldBuilder/product context already exists;
+- generic or substitute lighting/materials/camera that hide the actual look question;
+- ruckly/slow controls that prevent reliable feel judgment;
+- a proxy that reproduces known shadow clipping, banding or light-seam bugs;
+- a reversible mechanism that can safely proceed into the real owner after machine QA.
+
+If the proxy requires Georg to mentally extrapolate how it might look/feel in the real product, keep it as internal evidence and continue integration.
+
 ## Slide 2 · New default production loop
 
 `Owner source → implement in real product surface → automated/native evidence → continue integration`
@@ -100,6 +114,23 @@ Next:
 - prove real Ground/Flight continuity there;
 - add Drive/Water only from source-proven adapters;
 - next human review should be about the playable integrated mobility experience, not a router table.
+
+
+## Slide 7b · LOOK-TORSION example
+
+`LOOK-TORSION-01`:
+- 45/45 engineering/browser checks proved the geometry mechanism;
+- Georg grants **ARCHITECTURE PASS ONLY** for cumulative height-dependent torsion, anchored base and shared roof/body deformation;
+- the isolated grey A/B/C WebGL page is **not** WorldBuilder/look acceptance;
+- known shadow/light defects remain open;
+- no final universal torsion angle is accepted from that proxy;
+- the standalone Human Gate is closed and must not be recreated.
+
+Next:
+- consume the mechanism in the next clean/current WorldBuilder/world-presentation candidate;
+- judge it only there with the real scene/camera and shared shadow/lighting corrections.
+
+Message: **a mechanism may pass while the proxy review workflow fails.**
 
 ## Slide 8 · WSA role
 
