@@ -2,6 +2,24 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+
+## 2026-09-27 · Clay Emanata v1 · concept + Claude Design queue
+
+### CONCEPT
+Added a bounded ToolBox handover for a reusable **3D claymation Emanata + emotional acting layer**. The proposal keeps face/EyeRig/body acting as the primary emotional read and treats floating clay tears, hearts, manga-style rays/ticks, sweat, anger marks, stars, spirals and related symbols as short-lived semantic punctuation.
+
+### SOURCE / CONTRACT
+Pinned the current Production-02 face/clay-lid cut, the repo-exact 2D KFB Emanata image, current cartoon-motion / 3D-cartoon style references, and the ClayBound donor folder. Added a machine-readable proposal with **19 reusable Emanata families**, **18 acting presets**, semantic anchors, one-family-per-actor budget, stable seeded variation, pooling/instancing and shadow boundaries.
+
+### CLAUDE DESIGN ROUTE
+Prepared the post-recovery implementation brief. First integrated proof is **tears + hearts + shock rays on one real current Resident**, using real eye/head anchors and existing face/body controls. Donors must be shown in isolation before integration; no grey proxy gallery or second runtime owner.
+
+### BOUNDARY / GATE
+No ToolBox runtime, Stage route or Live surface changed in this concept slice. The newest Production-02 Return still requires **RECOVERY-01 before further Studio expansion**. Reserved future Stage route: `/kfb-hub/stage/toolbox/clay-emanata-v1/`.
+
+### NEXT
+Close/clear **RECOVERY-01**, then run the integrated three-family Claude Design proof and rehome the verified Session Cut through Web/GitHub.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
