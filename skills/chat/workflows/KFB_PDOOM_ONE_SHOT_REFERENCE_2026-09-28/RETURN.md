@@ -4,6 +4,9 @@
 **Status:** RESEARCH ANALYSIS COMPLETE · ROUTED CURRENT_REFERENCE CANDIDATE · NO STAGE  
 **Repository:** `georg-doc/kayfabizarro`  
 **Branch:** `research/pdoom-one-shot-reference-2026-09-28`  
+**Draft PR:** #270 — `Document PDoom autonomous coded-animation reference`  
+**Branch head immediately before this metadata write:** `649dbf5ae698c34fb449812196a6c3dc92821364`  
+**Authoritative final head:** read PR #270 / branch ref after this Return write  
 **Owner:** KFB Chat Production Router / reusable production research  
 **Stage:** none; no public/human review surface required
 
