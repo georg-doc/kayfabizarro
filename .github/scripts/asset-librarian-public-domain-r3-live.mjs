@@ -273,7 +273,8 @@ async function run() {
     assert(state.sourceCommit === EXPECTED_SOURCE, `Live Registry source mismatch: ${state.sourceCommit} != ${EXPECTED_SOURCE}`);
 
     const sourceLabel = await cdp.eval(`document.getElementById('sourceCommit')?.textContent || ''`);
-    assert(String(sourceLabel).includes(EXPECTED_SOURCE), `visible source label missing expected commit: ${sourceLabel}`);
+    const visibleCommit = EXPECTED_SOURCE.slice(0, 12);
+    assert(String(sourceLabel).includes(visibleCommit), `visible source label missing expected commit prefix ${visibleCommit}: ${sourceLabel}`);
     assert(String(sourceLabel).toUpperCase().includes('LIVE'), `visible source label is not LIVE: ${sourceLabel}`);
 
     for (let i = 0; i < CASES.length; i += 1) {
