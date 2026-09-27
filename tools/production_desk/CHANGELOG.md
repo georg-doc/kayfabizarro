@@ -596,3 +596,9 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Kaltstartziel bestanden; Framebudget nicht bestanden.
 - Nächster Produktionsschritt ist ausschließlich `WORLD-M2A-R2 · RENDER BUDGET`.
 - Track S9/S4B, Emanata/Brick Fish und HUD bleiben Inputs außerhalb dieses Gates.
+
+## 2026-09-27 · M2A R2 measured stop
+
+- Recorded PR #259 as `HARDWARE_PASS · CANDIDATE_NO_GAIN · NOT_PUBLISHED`.
+- Replaced the completed R2 dispatch with the bounded R3 City Shell LOD briefing.
+- Kept the public M2A card labeled as an error reference; no false playable/live claim.
