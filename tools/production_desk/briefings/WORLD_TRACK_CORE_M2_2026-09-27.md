@@ -17,6 +17,7 @@
 - Vehicle-Deformer-Quelle: `tools/KFB-ToolBox/_inbox/KFB Cartoon Vehicle Deformer Lab v2/WSA_Vehicles_v2_2026-09-18/lab-v7/vehicle-cartoon-deformer.v2.js`
 - Interaction-Vertrag: `tools/production_desk/briefings/WORLD_INTERACTION_E_V1_2026-09-27.md`
 - Clay-ChatterBox-Sidecar: `tools/production_desk/briefings/CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`
+- Billboard-/Public-Domain-Modul: `tools/production_desk/briefings/WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md`
 - Track-Core-W0-Brief: `skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md`
 - akzeptierter Style-Donor: `tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/`
 - Style-Module: `lab-clay/clay-soften.v1.js`, `clay-material.v4.js`, `clay-relief.v2.js`
@@ -41,6 +42,7 @@ H0 ist Georgs akzeptierter Look-Donor und in M1 bereits als echtes Material/Reli
 - Einstieg: Figur hüpft kurz zum Fahrzeug, Fahrzeug duckt/squasht cartoonig, danach übernimmt Drive; Ausstieg: Fahrzeug duckt sich und spuckt die Figur auf einen vom World-Owner bestätigten sicheren Bodenpunkt aus;
 - der Übergang besitzt keine erfundene Tür und keine neue Physik. Während der kurzen Übergabe sind Bewegung und erneute Interaktion gesperrt; bei Abbruch wird der letzte gültige Zustand wiederhergestellt;
 - vom Freiraum über eine echte Auf-/Abfahrt auf die Strecke fahren und wieder in die Stadt zurückkehren;
+- mindestens eine echte Billboard-/Monitor-Fläche in der Stadtzelle montieren: akzeptierter B2a-Körper, extrahierte H4-Kompositionsengine und ausschließlich die vier bereits verifizierten Public-Domain-Pool-Objekte als erster sicherer Medienbestand;
 - mehrere bereits definierte Track-Breiten sichtbar behalten;
 - Track-Anfang, Track-Ende und spätere Anschlussstellen explizit markieren;
 - unterschiedliche Gebäudehöhen bleiben erhalten;
@@ -61,6 +63,7 @@ H0 ist Georgs akzeptierter Look-Donor und in M1 bereits als echtes Material/Reli
 - kein Fahrzeugauswahlzwang für alle 61 Modelle im MVP und kein einzelnes fehlerhaftes Fahrzeug als Blocker;
 - keine Türanimation oder fingierte Tür-Geometrie;
 - kein zweites Interaktionssystem neben der semantischen `INTERACT`-Aktion;
+- keine der 33 ungeprüften H4-LoC-Platten in einer öffentlichen Runtime und kein iframe als vermeintliche CanvasTexture-Integration;
 - `E` ersetzt weder Springen noch den vorhandenen Ground↔Flight-Intent;
 - kein neues Test-Dashboard im Sichtfeld;
 - kein Georg-Gate auf technische Tabellen oder unfertige Maßstabsobjekte.
@@ -90,3 +93,5 @@ Stop bei einem spielbaren Track-in-World-Kandidaten mit einer glaubwürdigen Kla
 ## Nicht blockierender Design-Sidecar
 
 Das neue Clay-Speech-/Thought-Bubble-Design darf parallel als isolierter visueller Donor entstehen. Es ersetzt nur die Darstellung der vorhandenen ChatterBox, niemals Dialogzustand, Memory, Resident-Owner oder Interaktionslogik. Sein Fehlen blockiert den Travel-MVP nicht; bis zur visuellen Abnahme bleibt die vorhandene ChatterBox-Darstellung aktiv.
+
+Auch das Billboard-/Pool-Modul läuft als klar quarantinierbarer Umweltbaustein innerhalb desselben Produktionsslices. Es soll in der Welt sichtbar funktionieren, darf aber bei einem isolierten Medien-/CORS-/Performance-Fehler nicht den Travel-Kernloop blockieren.

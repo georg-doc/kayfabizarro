@@ -60,6 +60,7 @@ Ziel:
 - `E` als einheitliche Kontextaktion für Fahrzeuge, Residents, Props und Portale verwenden;
 - ohne erfundene Türen cartoonig ein-/aussteigen: Figur hüpft, Fahrzeug duckt sich, beim Ausstieg wird die Figur auf sicheren Boden „ausgespuckt“;
 - eine reale Auf-/Abfahrt zwischen Freiraum und Strecke bereitstellen;
+- als erstes lebendes Umweltmodul eine vorhandene Billboard-Fläche einsetzen: B2a-Körper + H4-Kompositionsengine + nur die vier bereits öffentlich verifizierten Public-Domain-Pool-Objekte;
 - keine Ersatzstrecke, keine neue Fahrphysik und kein Fahrzeugkatalog als MVP-Pflicht.
 
 Damit sind **Ground, Flight und Drive** der erste gemeinsame Travel-MVP. Water bleibt bewusst später. Ein fehlerhaftes Fahrzeug wird quarantiniert; ein bewiesenes Fahrzeug trägt den MVP.
@@ -67,6 +68,8 @@ Damit sind **Ground, Flight und Drive** der erste gemeinsame Travel-MVP. Water b
 Der Interaktionsvertrag liegt in `tools/production_desk/briefings/WORLD_INTERACTION_E_V1_2026-09-27.md`.
 
 Die Clay-Speech-/Thought-Bubbles sind ein paralleler, nicht blockierender Design-Sidecar. Sie ersetzen nur die Darstellung der vorhandenen ChatterBox und niemals Gespräch, Memory oder Resident-Ownership. Brief: `tools/production_desk/briefings/CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`.
+
+Billboard/Public Domain wird ebenfalls nicht neu erfunden: B2a bleibt 3D-Körper, H4 liefert die akzeptierte Kompositionslogik, Asset Librarian/PD-POOL-R3 liefert Medien und Rechtebelege. Die 33 H4-LoC-Prototypplatten bleiben gesperrt, bis sie einzeln geprüft sind. Brief: `tools/production_desk/briefings/WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md`.
 
 Mit dieser Entscheidung ist im H0-Export **D2** gewählt. H1 Hirnwelt-Kreuzungen und M1 Knet-Medizin bleiben Sidequests und blockieren die World-Produktion nicht.
 

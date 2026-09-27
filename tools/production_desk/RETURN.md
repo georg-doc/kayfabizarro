@@ -1218,7 +1218,9 @@ Status: **PLAN CONSOLIDATED · SOURCE DONORS LOCKED · NO NEW RUNTIME CLAIM**
 - Vehicle entry/exit uses the source-compatible no-door solution: character hop + vehicle duck/squash + safe World-ground pop-out. No door geometry or second physics owner.
 - One proven vehicle carries the MVP; other vehicles are additive and individually quarantinable.
 - Clay Speech/Thought Bubbles are a parallel isolated design donor over the existing ChatterBox, not a new dialogue or Memory owner and not an M2 blocker.
+- Billboard/Public Domain is admitted as the first living environment sidecar: existing B2a body + extracted H4 compositor + exactly the four PD-POOL-R3 public-verified objects. H4's 33 `RIGHTS NOT_VERIFIED` LoC plates remain excluded.
 - Added briefs: `WORLD_INTERACTION_E_V1_2026-09-27.md` and `CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`; both are linked from the single M2 production brief instead of creating more Hub clutter.
+- Added `WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md` under the same M2 lane; no new Hub card or media registry.
 - No World runtime, Stage, publication, merge or Live state changed in this planning checkpoint.
 
 Exactly one next gate: **execute WORLD-TRACK-DRIVE-CLAY-M2 as the next productive Work slice; Georg reviews only the resulting playable Travel loop.**
