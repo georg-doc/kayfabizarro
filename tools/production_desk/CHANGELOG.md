@@ -580,3 +580,11 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Added a bounded Sol-High R1 briefing with comparable baseline, explicit metrics and at most two candidates.
 - Kept shadow/bright-edge artifacts visible but outside the critical path.
 - No runtime, Stage, merge or Live promotion in this source checkpoint.
+
+## 2026-09-27 · Resilient checkpoint workflow v2 + recent input recon
+
+- Added a ten-minute/pre-long-step recovery checkpoint rule for Web, Design and Work chats.
+- Added stable checkpoint ids, exact ref/file-hash verification and an asynchronous publication-receipt contract.
+- Added one Hub lane for the bounded reliability implementation; no second Hub or deployment owner.
+- Reconciled current Track S4/S5, World/OSM Seam, Clay Emanata, Brick Fish and Public-Domain recovery inputs into the masterplan.
+- Separated PR #257's browser-runtime proof from its later fixed-margin CI harness timeout.

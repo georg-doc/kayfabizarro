@@ -1302,3 +1302,10 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Boulder-/Prop-Schattenartefakt bleibt sichtbar erfasst, blockiert R1 aber nicht.
 - Neuer einziger World-Gate: `WORLD-M2A-R1` mit fester Baseline und höchstens zwei kleinen Kandidaten.
 - Keine Runtime-Änderung und keine neue Stage in diesem Status-Checkpoint.
+
+## 2026-09-27 · Timeout-/Branch-Recon und resilienter Produktionsfluss
+
+- Wiederkehrende Chat-, GitHub-Write-, CI-Harness- und Cloudflare-Probleme in vier getrennte Fehlerklassen zerlegt; sie werden nicht mehr als ein diffuser „Timeout“ behandelt.
+- Binding Workflow auf v2 erweitert: erster Recovery-Checkpoint spätestens nach zehn Minuten bzw. vor jedem langen Schritt; stabiler Checkpoint-ID; Ref-/Datei-Hash-Prüfung vor Retry; Cloudflare als separater dauerhafter Job mit Deployment-Receipt.
+- Aktuelle Inputs verifiziert: PR #219 Track S4/S5, PR #257 World/OSM Seam, PR #256 Emanata-Konzept, PR #254 Brick-Fish-Toss und PR #251 PD-Manifest-Recovery sind auf GitHub persistiert.
+- Masterplan auf WORLD-M2A-R1 als Work-Priorität und Track S4 als parallelen Claude-Design-Job korrigiert.

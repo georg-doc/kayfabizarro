@@ -46,6 +46,7 @@ For `MINOR / QUARANTINABLE`: one diagnostic pass maximum, then quarantine/defer 
 ## 3. Work additively
 
 - Use a reviewable branch/PR when that project's contract calls for one.
+- Persist a first recovery checkpoint within ten minutes or before the first long-running command/browser/publication step, whichever comes first. It may be a source lock + `RUN_STATE`; it must not wait for the final polished Return.
 - Save implementation, evidence and handoff in small checkpoints; after each GitHub write verify the exact branch head.
 - Treat timeouts as `UNKNOWN`, inspect before retrying, and never duplicate a commit on assumption.
 - Use only a direct `kayfabizarro.pages.dev` route linked from the KFB Hub for human Stage testing.
@@ -76,6 +77,8 @@ The repository/PR must let tomorrow's Work session review without replaying the 
 - exactly one recommended next gate.
 
 A chat link is optional convenience, not the evidence store.
+
+If the chat disconnects after the first checkpoint, the replacement chat resumes from the exact verified head and `RUN_STATE`; it does not reconstruct the task from prose memory.
 
 ## 6. Stop conditions
 

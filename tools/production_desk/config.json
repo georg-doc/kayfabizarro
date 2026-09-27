@@ -259,6 +259,25 @@
       }
     },
     {
+      "id": "production-reliability-r0",
+      "bucket": "CAN_START",
+      "title": "Produktionsfluss R0 · Checkpoint vor Timeout",
+      "what": "Wiederkehrende Chat-, GitHub- und Publikationsabbrüche werden nicht mehr durch Transcript-Recovery kompensiert. Jeder Slice persistiert früh einen RUN_STATE-Checkpoint; Writes sind idempotent und werden per Ref/File-Hash verifiziert; Cloudflare läuft als separater GitHub-Job mit Deployment-Receipt.",
+      "provider": "Work/Codex · GitHub workflow owner",
+      "yourAction": "",
+      "waitingFor": "R0 setzt zuerst das Checkpoint-/Receipt-Schema und einen einzigen dauerhaften Publication-Dispatcher um. Keine Produkt-Runtime wird dabei verändert.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "brief": {
+        "label": "Resilient Production Flow v2",
+        "path": "skills/chat/workflows/KFB_RESILIENT_PRODUCTION_FLOW_2026-09-27/START_HERE.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      }
+    },
+    {
       "id": "warband-blender",
       "bucket": "RUNNING",
       "title": "Orc-Warband: Band-Auftritt in Blender",
@@ -275,25 +294,25 @@
     {
       "id": "worldbuilder-wb2",
       "bucket": "WAITING",
-      "title": "World r2 · technische Basis · übernommen",
-      "what": "World r2 bleibt die geprüfte technische Weltbasis. Georgs World-/Clay-Richtung ist bereits PROCEED PASS; diese alte Prüfkarte ist keine offene Aufgabe mehr.",
-      "provider": "WSA World Stage / PR #234",
+      "title": "World r2 + OSM Seam · technische Basis",
+      "what": "World r2 bleibt die technische Weltbasis. Der neue WB-ZONE-SEAM-Strang ist auf PR #257 mit exakter Köln-Crop-Parität und einem vollständigen erfolgreichen Browserlauf persistiert. Ein späterer Lauf traf nur die feste 180-s-Harnessgrenze; das ist Observability/CI-Marge, kein neues Produkt-Gate.",
+      "provider": "WorldBuilder / OSM City · PR #257",
       "yourAction": "",
-      "waitingFor": "Wird von WORLD-MOBILITY-M1 konsumiert; keine erneute World-r2-Abnahme.",
+      "waitingFor": "Vor Verbrauch exakten PR-#257-Head neu lesen und genau einen sauberen Harness-Lauf mit korrektem wi1Selftest-Key/ausreichender Marge sichern. Keine neue Human-Stage und keine neue World-Architektur.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 234,
-      "branch": "wsa/world-r2-stage-prep-2026-09-26",
-      "expectedHead": "7b2393a54c6b31e4bd4d927275030423612cfde8",
+      "pr": 257,
+      "branch": "chatgpt-web/wb-zone-seam-01-restart-2026-09-27",
+      "expectedHead": "ac361b4fed20e05786ba6297b8c83df5c5c3cfbc",
       "review": {
         "label": "World r2 prüfen",
         "path": "kfb-hub/stage/world/world-r2/index.html",
-        "sourceRef": "PR #234 · 7b2393a5 · cloudflare-live runtime c035427e · 15/15 public browser PASS"
+        "sourceRef": "PR #257 · ac361b4f · proven run 36324555131 · later timeout classified as harness margin/observability"
       },
       "brief": {
-        "label": "World r2 Stage Return",
-        "path": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/STAGE_RETURN.md",
-        "ref": "wsa/world-r2-stage-prep-2026-09-26",
+        "label": "WB-ZONE-SEAM restart Return",
+        "path": "skills/chat/workflows/WB_ZONE_SEAM_01_RESTART_2026-09-27/RETURN.md",
+        "ref": "chatgpt-web/wb-zone-seam-01-restart-2026-09-27",
         "pasteReady": false
       }
     },

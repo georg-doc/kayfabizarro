@@ -8,6 +8,23 @@ Owner: Georg / KFB · execution routing by WSA Work Lead
 
 WORLD-M2A ist nach Georgs freiem Spieltest **nicht spielbar**. Der formale 34/34-Browserlauf bleibt technische Evidence, aber kein Produkt-PASS. Aktueller Work-Gate ist ausschließlich `WORLD-M2A-R1`: lückenloser Terrainkontakt auch abseits der Straße, korrektes Fahrzeug-Grounding und ein messbarer Performance-/Movement-Pass auf derselben Szene. Track, neue Inhalte, HUD und Schattenpolitur bleiben außerhalb dieses Gates.
 
+## GitHub-Recon und nächste Sprints · 2026-09-27
+
+Persistiert und nicht aus abgebrochenen Chats zu rekonstruieren:
+
+- **Track / Bordstein / Clay:** PR #219 @ `e21d9835` enthält S4 Clay Track Design mit KFB-eigener Track-Geometrie, Edge/Runoff/Socket-Grammatik, variable Breiten und Patch-Scatter-Biomübergänge. S5 für OSM-/KayKit-/Kenney-Fassaden ist vorbereitet. Das ist der aktuelle Claude-Design-Auftrag; Race PR #42 @ `bcc422b0` bleibt nur Acceptance Fixture.
+- **World/OSM Seam:** PR #257 @ `ac361b4f` enthält die wiederhergestellte exakte Köln-Crop-Semantik und mindestens einen vollständigen erfolgreichen Browserlauf. Ein späterer Lauf erreichte die feste 180-s-Harnessgrenze ohne Seiten-/Requestfehler; vor Verbrauch genügt ein CI-Harness-Margen-/Observability-Check, keine neue World-Architektur.
+- **Clay Emanata:** PR #256 @ `0128e045` ist Konzept/Queue und bleibt hinter ToolBox RECOVERY-01; keine Runtime oder Stage.
+- **Brick Fish / Red Herring Toss:** PR #254 @ `79d7c18a` ist als späterer Town-/World-Input gesichert; kein aktueller MVP-Blocker.
+- **Public-Domain-Manifest:** PR #251 @ `262f04b2` bewahrt die historischen 84/6/40-Fakten; die ursprünglichen Objektidentitäten wurden in den verbundenen Quellen nicht gefunden und werden nicht synthetisiert.
+
+Sprint-Reihenfolge:
+
+1. **Work · Sol High:** WORLD-M2A-R1 auf derselben Szene: Terrainkontakt, Fahrzeug-Grounding, messbare Bewegung/Performance.
+2. **Claude Design parallel:** Track S4 aus PR #219, source-first und ohne Runtime-/Physics-Ownership; Bordstein/Runoff/Connector/Clay-Übergänge als beurteilbare Golden Samples.
+3. **Web/GitHub klein:** PR #257 Harness-Marge und korrekten `wi1Selftest`-Status einmal sauber schließen; danach Seam als technische World-Quelle verfügbar machen.
+4. **Work/Codex Infrastruktur:** Resilient Production Flow R0: früher RUN_STATE-Checkpoint, idempotente Write-Receipts und ein asynchroner Publication-Dispatcher. Das verbessert Verlustsicherheit, blockiert aber Sprint 1 nicht.
+
 ## North Star
 
 Die Welt ist ein Spielzeug, das reagiert, lebt, atmet und pulsiert.
