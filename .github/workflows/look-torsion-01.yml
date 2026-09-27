@@ -1,0 +1,42 @@
+name: LOOK-TORSION-01 · Elastic Torsion Proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/look-torsion-01-2026-09-27
+    paths:
+      - 'tools/osm-city-lab/experiments/look-torsion-01/**'
+      - 'tools/osm-city-lab/qa/look-torsion-01.mjs'
+      - '.github/workflows/look-torsion-01.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: look-torsion-01-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: A/B/C neutral torsion browser proof
+        run: node tools/osm-city-lab/qa/look-torsion-01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: look-torsion-01-evidence
+          path: look-torsion-01-evidence
+          retention-days: 30
