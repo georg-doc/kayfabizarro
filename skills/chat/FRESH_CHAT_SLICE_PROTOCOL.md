@@ -43,17 +43,41 @@ If Georg can resolve the ambiguity faster than another diagnostic pass, ask him.
 
 For `MINOR / QUARANTINABLE`: one diagnostic pass maximum, then quarantine/defer and continue the core slice.
 
+## 2B. Do not manufacture a Georg gate
+
+Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`.
+
+A fresh chat should normally finish by making the capability usable in its real receiving owner, not by creating a separate review artifact. Technical checks, contract tables, measurement pages and ownership diagnostics are evidence for agents/WSA unless a concrete human product decision depends on them.
+
+Before naming a human gate, state the exact decision Georg can make. If no meaningful decision exists, keep testing automated/internal and continue to the next productive integration.
+
+A clear Georg instruction to proceed closes the current intermediate gate as a **PROCEED PASS**; retain unresolved details without forcing another accept/reject cycle.
+
 ## 3. Work additively
 
 - Use a reviewable branch/PR when that project's contract calls for one.
 - Save implementation, evidence and handoff in small checkpoints; after each GitHub write verify the exact branch head.
 - Treat timeouts as `UNKNOWN`, inspect before retrying, and never duplicate a commit on assumption.
-- Use only a direct `kayfabizarro.pages.dev` route linked from the KFB Hub for human Stage testing.
+- When human Stage testing is genuinely required, use only a direct `kayfabizarro.pages.dev` route linked from the KFB Hub. Do not create Stage merely because the slice ended.
 - Preserve existing working paths; make experiments reversible.
 - Reuse pinned donors before rebuilding.
 - Keep one writer for movement, camera, actor, audio state, asset truth and deployment.
 - Append to changelog/Return. Do not rewrite old outcomes to make the history look cleaner.
 - Separate `PROPOSAL`, `DECISION`, `IMPLEMENTATION`, `TESTED RESULT`, public deployment and `HUMAN FREEPLAY / GEORG PASS`.
+
+## 3A. Persist closure before chat prose
+
+For any slice already authorized to write GitHub state, closure is not complete until the durable owner state is written and verified.
+
+In particular, after Georg gives PASS / TUNE / FAIL or asks to “check this in”, “secure this” or continue:
+1. update the owner Return / review record / next gate first;
+2. verify the exact branch head and intended file;
+3. add any required WSA / Work planning note;
+4. only then send the compact chat summary.
+
+Do not spend a separate user turn producing paste-ready GitHub text when this chat already has the GitHub connector and permission to persist it.
+
+If the persistence step is still `UNKNOWN`, say only that and inspect the ref; do not create a long handoff that may become the only surviving copy.
 
 ## 4. Test the thing that changed
 
@@ -73,7 +97,7 @@ The repository/PR must let tomorrow's Work session review without replaying the 
 - screenshot/live URL for visual work;
 - additive changelog/Return location;
 - `UNRESOLVED` / `DEFERRED` items;
-- exactly one recommended next gate.
+- exactly one recommended next productive step or, only when genuinely necessary, one human gate.
 
 A chat link is optional convenience, not the evidence store.
 
@@ -83,7 +107,7 @@ Stop at the current owner boundary when:
 
 - product intent conflicts with current code/contract;
 - a different project must change first;
-- a visual/medical/play decision needs Georg;
+- a genuinely decision-relevant visual/medical/play choice needs Georg; technical diagnostics alone do not;
 - a destructive migration, promotion or public replacement was not authorized;
 - the slice cannot be proven without inventing missing source or evidence.
 

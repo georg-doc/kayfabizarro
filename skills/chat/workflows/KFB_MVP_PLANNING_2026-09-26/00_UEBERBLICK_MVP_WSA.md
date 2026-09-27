@@ -2,12 +2,28 @@
 
 Status: **ENTWURF von Coworker zur Diskussion.** Keine finalen Briefings (siehe WSA-Regel aus #201: Coworker schreibt keine ungeprüften produktiven Briefings).
 
+## CURRENT OVERRIDE · 2026-09-27 · produktive Integration statt Pseudo-Human-Gates
+
+Bindend für die nächste WSA-Architektur-/Workflow-Planung und die nächsten Slides:
+
+- **Keine Human-Gates für technische Meta-Evidence.** Tabellen mit Messwerten, Owner-/Writer-Matrizen, Contract-Buttons, isolated diagnostics und reine Zustandsumschalter werden automatisiert geprüft und dokumentiert, nicht Georg zur Abnahme vorgelegt.
+- **Produktfläche zuerst.** WorldBuilder-Arbeit wird im realen WorldBuilder geprüft, ToolBox-Arbeit in ToolBox/Animation, Racer beim Fahren, Travel-Mobilität als echte WorldBuilder/Travel-Interaktion.
+- **Human Review nur bei echter Entscheidung.** Look/Feel, zwei relevante Designalternativen, Spielgefühl oder irreversible Promotion dürfen Georg blockieren; technische Invarianten nicht.
+- **Proceed Pass ist gültig.** „Passt soweit / weiter / zügig weiter“ schließt den Zwischen-Gate, ohne alle Details pauschal abzunehmen.
+- **Stage ist Milestone, nicht Ritual.** Keine neue Prüfseite nur weil ein Web-Slice fertig ist.
+- **WSA-Slides zeigen Flow, nicht Gate-Stau:** Owner → Integration → automatische Evidence → nur echte Human Decisions → nächster produktiver Schritt.
+
+Aktueller Travel-Fall: `TRAVEL-MODES-01` = **PROCEED PASS**. Die Contract-Stage ist Evidence, kein weiterer Stopper. Nächste Mobilitätsarbeit gehört in den echten WorldBuilder/Travel-Consumer; Drive/Water erst mit realem Source-Adapter.
+
+Slide-ready Detail:
+`WSA_SLIDES_PRODUCTIVE_FLOW_OVERRIDE_2026-09-27.md`
+
 ## 1 · Wo wir stehen (GitHub + lokal, gelesen am 26.09.)
 
 | Strang | Stand | Nächstes Tor |
 |---|---|---|
 | **Hub** | läuft, zeigt Live-Stand; Besitzer HUB-CTRL #202. Status-Sync als Workflow-only-PR #215 (18/18 grün) wartet auf dein Merge-Ja. Hub-UX v2 (#217) ist Kandidat aus Claude Design. | #215 mergen (deine Entscheidung) · #217 rehomen |
-| **Produktionsarchitektur** | #204: 13 Stränge, ~96 Jobs (44 READY / 52 HOLD) mit Executor/Modell/Budget je Job. | ENV-PREVIEW-01 (#218) |
+| **Produktionsarchitektur** | #204: bestehende Stränge/Jobs bleiben Routing-Hilfe. Neuer bindender Workflow-Override: produktive Owner-Integration statt Pseudo-Human-Gates. | Gate-Stau abbauen; nur echte Human Decisions behalten |
 | **ToolBox** | r2 technisch grün (#185: 31/31 + 34/34 statisch, 20/20 + 25/25 Browser). Stage-Review-Recovery #221: 33/33, Ohren (EarRig v5, #214) vollständig sichtbar. Noch nicht veröffentlicht. | Stage veröffentlichen + Hub-Link |
 | **Motion Library** | v2 mit **179 Clips**, je Rig/Gruppe, Katalog, Contact-Sheets (#213). #209 ist ein älteres Duplikat (33 Clips). | #213 Review · #209 schließen |
 | **WorldBuilder** | WB2 (#190) von dir abgenommen. World r2 **gescheitert** nach zwei Reparaturpässen (Ursache: veraltete Selbsttest-Labels nach ToolBox-Profilübernahme; Hürth bootet, 700 Gebäude, 0 Fehler). WB-W0 (#203) World-MVP-Kandidat. | WORLD-R2-CONTRACT-RESET-01 |
@@ -77,3 +93,15 @@ Kriterium: braucht Zugriff auf private Repos, mehrere Repos gleichzeitig, Secret
   - Schwerkraft als Parameter: Erde, Gefälle im Bergwerk, Gravitationsfelder im Weltraum;
   - Skin getrennt vom Kern: Profil, Material, Versatzstücke.
   RKIT-01 hat bereits notiert, dass `cross()` heute Welt-Y als oben nimmt. Genau das muss ein Parameter werden.
+
+
+### Current exact heads · 2026-09-27
+
+For WSA recovery and the next architecture/workflow slides:
+- canonical Productive Review policy: `main@e3bc3ba4a8ffa7123e4cb29a0f615ffb91be0ce4`;
+- Production Architecture v3: PR #204 @ `c754d8704f8fa24d4e490c01f750ad52f6bc06d0`;
+- Travel Proceed Pass: PR #39 @ `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`;
+- HUB-CTRL: PR #202 @ `7d37efe3d0c4330cbdbcafdfe8f1f5ff3c9ea673`;
+- Cloudflare source: `ec57cf48f916c228847184ca072ad895c934a712`.
+
+Do not convert these checkpoints into new Georg review tasks.
