@@ -1,0 +1,44 @@
+name: TRAVEL-MODES-01 public Stage proof
+
+on:
+  push:
+    branches:
+      - cloudflare-live
+    paths:
+      - 'kfb-hub/stage/travel/travel-modes-01/**'
+      - 'kfb-hub/index.html'
+      - 'registry/production/v1/**'
+      - '.github/workflows/travel-modes-01-public.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/travel/travel-modes-01/travel-mode-router.js
+          node --check kfb-hub/stage/travel/travel-modes-01/review.js
+          node --check kfb-hub/stage/travel/travel-modes-01/public-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Exact Cloudflare Stage + Hub proof
+        env:
+          TRAVEL_MODES_STAGE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/
+          TRAVEL_MODES_PROOF_DIR: travel-modes-01-public-proof
+        run: node kfb-hub/stage/travel/travel-modes-01/public-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: travel-modes-01-public-proof
+          path: travel-modes-01-public-proof
+          retention-days: 14
