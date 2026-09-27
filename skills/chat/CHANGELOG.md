@@ -1932,3 +1932,16 @@ Exactly one next gate:
 - No bulk import, Asset Librarian registration, Billboard runtime change, Stage or Live publication.
 - Exactly one next gate: `PD-POOL-R2` · register only these four proven objects in the existing Asset Librarian and verify provenance/discoverability.
 
+### 2026-09-27 · PD-POOL-R2 Asset Librarian registration
+- Stacked Draft PR #246 on R1 PR #242; owner remains Asset Librarian / Billboard Media.
+- Current-main drift was checked before implementation; no Asset Librarian/tool-node drift was found. R2 stays stacked because R1's four persisted assets are required source input.
+- Existing Registry config gains `media/public_domain` as a third source root.
+- Builder passes through explicit persisted `.license.json` facts only after tracked-sidecar, required-field, tier, local-path, byte-count and SHA-256 checks; license inference remains false.
+- Existing Librarian provenance detail shows rights provenance/tier/provider/source/check-time/SHA/sidecar; query/handoff preserves `license`, `rightsEvidence` and tags.
+- Dedicated final R2 gate: run `36288195716` / job `108532932188` at `8c8b907c3526956a90e5ddbe2d6174eab2ee16da` — 46/46 tests, Registry build/validate PASS, 4/4 registrations, 4/4 CLI discovery, Chrome 153 4/4 search/detail/preview/provenance, 0 console errors, 0 exceptions.
+- First dedicated run `36288091709` failed only in the proof harness due to a non-public state lookup; repair pass 1 changed only that harness and then passed. Product implementation was unchanged.
+- Existing owner regressions PASS: Asset Registry run `36288282662`; Librarian Browser run `36288282599` with all v1/v1.3-v1.7 gates green.
+- Browser evidence artifact `10921660721` contains machine-readable evidence and four screenshots.
+- Candidate is not merged or published; permanent Cloudflare Librarian is not claimed updated.
+- Exactly one next gate: `PD-POOL-R3` · Georg-gated stacked merge/reconciliation → existing Registry refresh → exact permanent Cloudflare Librarian verification. No bulk work.
+
