@@ -9,7 +9,9 @@
     "oneEarSecondaryMotionOwnerPerActor": true,
     "bodyShapeIsMorphologyNotReactionAnimator": true,
     "maxActiveEmanataFamiliesPerActor": 1,
-    "reactionRootMotionDefault": "consumer-owned"
+    "reactionRootMotionDefault": "consumer-owned",
+    "brickFishDefaultIsSocialNotDamage": true,
+    "heartEmanataIsNotRelationshipState": true
   },
   "sourceOwners": {
     "eyeRig": {
@@ -124,12 +126,14 @@
     "success",
     "failure",
     "pickup.reward",
+    "social.prop_hit",
     "social.positive",
     "social.negative",
     "speech.emphasis",
     "attention.notice"
   ],
   "clipRoles": [
+    "react.social_prop_hit",
     "react.positive",
     "react.negative",
     "react.surprise",
@@ -214,6 +218,91 @@
         "tear_bead"
       ],
       "recovery": "previous-or-negative-hold"
+    },
+    {
+      "id": "social.prop_hit",
+      "meaning": "non-damaging social projectile contact; Brick Fish is canonical Town default",
+      "clipRole": "react.social_prop_hit",
+      "clipFallbackRole": "react.hit.light",
+      "clipLayer": "full-body",
+      "face": [
+        "impact-blink-or-squeeze",
+        "refocus-source",
+        "context-resolved-social-read"
+      ],
+      "mouth": "context-resolved-if-free; defer-to-active-viseme",
+      "ears": "directional-impact-impulse-then-context-pose",
+      "emanata": [
+        "heart"
+      ],
+      "emanataDefaultForNpcBrickFish": "heart",
+      "recovery": "previous-social-or-locomotion-state",
+      "timing": {
+        "impactMs": 0,
+        "heartDelayMs": [
+          80,
+          180
+        ],
+        "rule": "physical impact must read before heart appears"
+      },
+      "ownership": {
+        "collisionTruth": "prop/world interaction owner",
+        "damageTruth": "consumer/combat owner",
+        "reactionPerformance": "Reaction Choreography",
+        "dialogue": "existing ChatterBox/Triplet/Kayfabulation owner",
+        "retaliation": "social interaction owner"
+      },
+      "contextVariants": {
+        "default_friendly": {
+          "body": "readable-short-recoil-quick-recovery",
+          "face": "blink-then-soften-refocus",
+          "emanata": "heart",
+          "dialogueCue": null
+        },
+        "affectionate": {
+          "body": "lighter-recoil-playful-overshoot",
+          "face": "soft-eyes-smile-if-free",
+          "emanata": "heart",
+          "dialogueCue": "optional-existing-social-line"
+        },
+        "buddy_banter": {
+          "body": "recoil-then-counter-ready",
+          "face": "side-eye-smug-or-amused",
+          "emanataByBeat": [
+            "heart",
+            "sparkle"
+          ],
+          "dialogueCue": "buddy-banter"
+        },
+        "argument": {
+          "body": "sharper-recoil-hold-toward-source",
+          "face": "negative-brow-glare",
+          "emanataByBeat": [
+            "anger_knot",
+            "anger_spikes",
+            null
+          ],
+          "dialogueCue": "argument-response"
+        },
+        "kayfabe_performance": {
+          "body": "consumer-authorized-exaggerated-sell",
+          "face": "showmanship-refocus-partner-or-audience",
+          "emanataByBeat": [
+            "dizzy_stars",
+            "anger_spikes",
+            "heart"
+          ],
+          "dialogueCue": "kayfabe-sell-or-buddy-banter",
+          "note": "large physical sell does not imply hostility or real damage"
+        },
+        "hostile_or_real_harm": {
+          "remapTo": [
+            "damage.light",
+            "damage.heavy"
+          ],
+          "note": "do not remain on social.prop_hit"
+        }
+      }
     },
     {
       "id": "surprise",
@@ -431,5 +520,69 @@
     "jump.land"
   ],
   "blockedBy": "ToolBox RECOVERY-01",
-  "nextGate": "After RECOVERY-01, implement combined Reaction Choreography + Clay Emanata proof on the real current Resident, including source-backed animation clips."
+  "nextGate": "After RECOVERY-01, implement combined Reaction Choreography + Clay Emanata proof on the real current Resident, including source-backed animation clips.",
+  "contextPolicy": {
+    "authority": "consumer/game-state provides relationship/dramaturgy; choreography never infers hostility from contact alone",
+    "fields": {
+      "sourcePropId": "optional asset/prop identity",
+      "targetKind": [
+        "npc",
+        "player",
+        "other"
+      ],
+      "relationshipTone": [
+        "neutral",
+        "affectionate",
+        "buddy-banter",
+        "argument",
+        "hostile"
+      ],
+      "sceneMode": [
+        "ambient",
+        "social-play",
+        "kayfabe-performance",
+        "combat"
+      ],
+      "dramaticBeat": [
+        "setup",
+        "escalation",
+        "sell",
+        "reversal",
+        "reconciliation"
+      ],
+      "harmMode": [
+        "social",
+        "staged",
+        "real"
+      ]
+    },
+    "brickFishNpcDefault": {
+      "semantic": "social.prop_hit",
+      "harmMode": "social",
+      "emanata": "heart",
+      "meaning": "Krazy Kat-style inversion: physical bonk first, affection read second",
+      "note": "Heart is transient visual Emanata only; never relationship points, affection meter, reward currency or UI state."
+    },
+    "realHarmRule": "consumer must emit damage.light or damage.heavy; social.prop_hit never creates HP damage/aggro by itself"
+  },
+  "brickFishIntegration": {
+    "townSource": {
+      "pr": 254,
+      "branch": "chatgpt-web/kfb-town-prop-throw-pattern-2026-09-27",
+      "headSha": "79d7c18a8f07b99efe8276211a9cda527ac2f2ea",
+      "path": "skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md",
+      "blobSha": "99205974c8fcc08ef41e6f66edcdd495f5e81cef"
+    },
+    "townEncounterSource": {
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "blobSha": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+      "facts": [
+        "encounters emit semantic beats while animation and text choose independently",
+        "friendly-by-default / aggro only after someone starts"
+      ]
+    },
+    "visualProofStatus": "DEFERRED_UNTIL_SOURCE_PROVEN_BRICK_FISH_ASSET",
+    "doesNotBlockFirstIntegratedProof": true,
+    "dialogueBoundary": "Reaction Choreography may emit a banter/argument/kayfabe cue but never generates dialogue."
+  }
 }
