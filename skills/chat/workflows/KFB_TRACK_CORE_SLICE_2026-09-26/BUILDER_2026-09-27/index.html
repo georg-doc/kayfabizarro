@@ -1,0 +1,562 @@
+<title>KFB Streckenbauer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --ground: #eceee9; --panel: #f8f9f6; --panel-2: #f1f3ef; --ink: #1c2226; --muted: #5d676c; --line: #d3d8d2;
+  --accent: #d9622b; --accent-ink: #ffffff; --teal: #1f8a86; --pass: #2f8a4c; --warn: #b7791f; --fail: #c8412f;
+  --sel: rgba(217, 98, 43, 0.12); --view: #dfe4de; --grid: #b9c0b8; --shadow: 0 1px 0 rgba(0,0,0,.04);
+  --f-disp: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #131719; --panel: #1b2023; --panel-2: #20262a; --ink: #e6ebe8; --muted: #9aa5a8; --line: #2c3438;
+    --accent: #ef7a43; --accent-ink: #1b1109; --teal: #3fb3ad; --pass: #55b872; --warn: #d9a441; --fail: #e8664f;
+    --sel: rgba(239, 122, 67, 0.16); --view: #0f1315; --grid: #2d3538;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #131719; --panel: #1b2023; --panel-2: #20262a; --ink: #e6ebe8; --muted: #9aa5a8; --line: #2c3438;
+  --accent: #ef7a43; --accent-ink: #1b1109; --teal: #3fb3ad; --pass: #55b872; --warn: #d9a441; --fail: #e8664f;
+  --sel: rgba(239, 122, 67, 0.16); --view: #0f1315; --grid: #2d3538;
+}
+html, body { height: 100%; }
+body { background: var(--ground); color: var(--ink); font: 400 14px/1.45 var(--f-body); padding-inline: 0; }
+* { box-sizing: border-box; }
+button, select, input, textarea { font: inherit; color: inherit; }
+.app { display: grid; height: 100%; grid-template-rows: auto 1fr; }
+header.bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 10px 16px;
+  background: var(--panel); border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: baseline; gap: 10px; margin-right: auto; }
+.brand h1 { font: 700 22px/1 var(--f-disp); letter-spacing: .02em; margin: 0; text-transform: uppercase; }
+.brand h1 b { color: var(--accent); font-weight: 700; }
+.brand small { font: 500 12px/1 var(--f-mono); color: var(--muted); }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.btn {
+  border: 1px solid var(--line); background: var(--panel-2); border-radius: 6px; padding: 6px 10px; cursor: pointer;
+  font: 600 13px/1 var(--f-body); display: inline-flex; gap: 6px; align-items: center; min-height: 32px;
+}
+.btn:hover { border-color: var(--muted); }
+.btn:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, .piece:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.btn[disabled] { opacity: .45; cursor: default; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.danger { color: var(--fail); }
+select, input[type=number], input[type=text], textarea {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; min-height: 32px;
+}
+.main { display: grid; grid-template-columns: 290px minmax(0, 1fr) 330px; min-height: 0; }
+.col { background: var(--panel); min-height: 0; overflow: auto; }
+.col.left { border-right: 1px solid var(--line); }
+.col.right { border-left: 1px solid var(--line); }
+.sec { padding: 12px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 10px; }
+.sec h2 {
+  margin: 0; font: 600 15px/1.1 var(--f-disp); text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+}
+.sec h2 .count { font: 500 12px var(--f-mono); letter-spacing: 0; }
+.plist { list-style: none; margin: 0; padding: 0; display: grid; }
+.piece {
+  display: grid; grid-template-columns: 26px 44px 1fr auto; gap: 8px; align-items: center; padding: 6px 14px 6px 10px;
+  border-left: 3px solid transparent; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.piece:hover { background: var(--panel-2); }
+.piece.on { background: var(--sel); border-left-color: var(--accent); }
+.piece .n { font: 500 11px var(--f-mono); color: var(--muted); text-align: right; }
+.piece .code {
+  font: 700 12px/1 var(--f-disp); letter-spacing: .05em; text-align: center; padding: 4px 0; border-radius: 4px;
+  background: var(--panel-2); border: 1px solid var(--line);
+}
+.piece .code.stunt { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.piece .code.tun { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 45%, var(--line)); }
+.piece .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.piece .nm small { display: block; color: var(--muted); font: 400 11px var(--f-mono); overflow: hidden; text-overflow: ellipsis; }
+.piece .flag { width: 8px; height: 8px; border-radius: 50%; background: transparent; }
+.piece .flag.fail { background: var(--fail); } .piece .flag.warn { background: var(--warn); }
+.palette { display: grid; gap: 8px; }
+.palette .grp { display: grid; gap: 4px; }
+.palette .grp span { font: 600 11px var(--f-disp); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.palette .row { display: flex; flex-wrap: wrap; gap: 4px; }
+.palette .btn { min-height: 28px; padding: 4px 8px; font-size: 12px; }
+.view { position: relative; min-height: 0; background: var(--view); }
+.view canvas { display: block; width: 100%; height: 100%; }
+.hud {
+  position: absolute; left: 10px; bottom: 10px; right: 10px; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none;
+}
+.chip {
+  pointer-events: auto; font: 500 12px/1 var(--f-mono); background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font-variant-numeric: tabular-nums;
+}
+.viewtools { position: absolute; top: 10px; right: 10px; display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.banner {
+  position: absolute; top: 10px; left: 10px; right: 170px; background: var(--panel); border: 1px solid var(--fail);
+  border-left: 4px solid var(--fail); border-radius: 6px; padding: 8px 12px; font-size: 13px;
+}
+.banner b { color: var(--fail); }
+.field { display: grid; grid-template-columns: 96px 1fr 76px; gap: 8px; align-items: center; }
+.field label { font-size: 13px; color: var(--muted); }
+.field input[type=range] { width: 100%; accent-color: var(--accent); }
+.field input[type=number] { width: 100%; font: 400 13px var(--f-mono); text-align: right; }
+.field.wide { grid-template-columns: 96px 1fr; }
+.field .auto { display: flex; gap: 4px; align-items: center; font-size: 12px; color: var(--muted); }
+.field.off input[type=range], .field.off input[type=number] { opacity: .35; }
+.row2 { display: flex; flex-wrap: wrap; gap: 6px; }
+.hint { font-size: 12px; color: var(--muted); margin: 0; max-width: 60ch; }
+.kv { font: 400 12px/1.5 var(--f-mono); color: var(--muted); background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 8px; white-space: pre-wrap; overflow-x: auto; max-height: 140px; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.ck {
+  display: grid; grid-template-columns: 10px 1fr auto; gap: 8px; align-items: baseline; padding: 5px 6px; border-radius: 5px;
+  font-size: 13px; cursor: default;
+}
+.ck.jump { cursor: pointer; } .ck.jump:hover { background: var(--panel-2); }
+.ck .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pass); align-self: center; }
+.ck.warn .dot { background: var(--warn); } .ck.fail .dot { background: var(--fail); }
+.ck .id { font: 500 12px var(--f-mono); }
+.ck .v { font: 400 12px var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.ck .note { grid-column: 2 / 4; font-size: 12px; color: var(--muted); }
+.ck.pass .note { display: none; }
+.sumpill { white-space: nowrap; font: 600 12px/1 var(--f-mono); padding: 4px 8px; border-radius: 999px; border: 1px solid var(--line); }
+.sumpill.ok { color: var(--pass); } .sumpill.bad { color: var(--fail); border-color: var(--fail); }
+.json { display: grid; gap: 8px; }
+.json textarea { width: 100%; min-height: 180px; font: 400 12px/1.4 var(--f-mono); resize: vertical; }
+.toast { position: fixed; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: var(--panel); padding: 8px 14px; border-radius: 6px; font-size: 13px; }
+@media (max-width: 1100px) { .main { grid-template-columns: 250px minmax(0, 1fr) 300px; } }
+@media (max-width: 900px) {
+  html, body { height: auto; }
+  .app { height: auto; }
+  .main { grid-template-columns: 1fr; }
+  .view { height: 58vh; min-height: 320px; order: -1; }
+  .col.left, .col.right { border: 0; border-top: 1px solid var(--line); overflow: visible; }
+  .banner { right: 10px; top: 52px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand"><h1>KFB <b>Streckenbauer</b></h1><small id="coreTag">Track Core</small></div>
+    <div class="tools">
+      <label class="hint" for="preset" style="margin:0">Strecke</label>
+      <select id="preset" aria-label="Beispielstrecke laden">
+        <option value="sandbox">Sandkasten (je ein Stück)</option>
+        <option value="td03">TD03 Uni-Center</option>
+        <option value="td05">TD05 Balkon-Twist</option>
+        <option value="seed">Showcase-Seed</option>
+        <option value="blank">Leer (eine Gerade)</option>
+        <option value="draft" hidden>Eigener Entwurf</option>
+      </select>
+      <button class="btn" id="undo" title="Rückgängig (Strg/Cmd+Z)">↶ Zurück</button>
+      <button class="btn" id="redo" title="Wiederholen (Strg/Cmd+Umschalt+Z)">↷ Vor</button>
+      <button class="btn" id="jsonBtn">Rezept-JSON</button>
+      <button class="btn primary" id="copyBtn">JSON kopieren</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <aside class="col left">
+      <section class="sec">
+        <h2>Stücke <span class="count" id="pcount"></span></h2>
+        <ul class="plist" id="plist" role="listbox" aria-label="Stücke der Strecke"></ul>
+      </section>
+      <section class="sec">
+        <h2>Einfügen <span class="count">nach der Auswahl</span></h2>
+        <div class="palette" id="palette"></div>
+      </section>
+    </aside>
+
+    <div class="view" id="view">
+      <div class="banner" id="err" hidden></div>
+      <div class="viewtools">
+        <button class="btn" id="fitBtn">Alles zeigen</button>
+        <button class="btn" id="focusBtn">Stück zeigen</button>
+        <button class="btn" id="povBtn">Fahrersicht</button>
+      </div>
+      <div class="hud" id="hud"></div>
+    </div>
+
+    <aside class="col right">
+      <section class="sec" id="inspector"></section>
+      <section class="sec">
+        <h2>Prüfungen <span id="sum"></span></h2>
+        <ul class="checks" id="checks"></ul>
+        <p class="hint">Grün = Core-Prüfung bestanden. Klick auf eine Zeile mit Ort springt dorthin.</p>
+      </section>
+      <section class="sec json" id="jsonSec" hidden>
+        <h2>Rezept-JSON</h2>
+        <textarea id="jsonTa" spellcheck="false" aria-label="Rezept als JSON"></textarea>
+        <div class="row2">
+          <button class="btn primary" id="applyJson">Übernehmen</button>
+          <button class="btn" id="copyJson">Kopieren</button>
+          <button class="btn" id="closeJson">Schließen</button>
+        </div>
+        <p class="hint" id="jsonMsg">JSON einfügen und übernehmen, um ein eigenes Rezept zu laden.</p>
+      </section>
+    </aside>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { buildTrack } from './stream-to-three.mjs';
+
+// ------------------------------------------------------------------ piece schema (what the inspector offers)
+const N = (key, label, min, max, step, opt = {}) => ({ key, label, kind: 'num', min, max, step, ...opt });
+const E = (key, label, values, opt = {}) => ({ key, label, kind: 'enum', values, ...opt });
+const BANK = N('bankDeg', 'Neigung °', -45, 45, 1, { optional: true, autoLabel: 'auto' });
+const SCHEMA = {
+  STRAIGHT:    { code: 'GER', grp: 'plan', fields: [N('length', 'Länge m', 5, 400, 1)], def: { length: 60 } },
+  CURVE_EASE:  { code: 'KUR', grp: 'plan', fields: [N('turn', 'Winkel °', -360, 360, 1), N('radius', 'Radius m', 8, 400, 1), N('ease', 'Übergang m', 0, 120, 1, { optional: true, autoLabel: 'auto' }), BANK], def: { turn: 90, radius: 60 } },
+  HAIRPIN_180: { code: 'HAR', grp: 'plan', fields: [E('dir', 'Richtung', [[1, 'rechts'], [-1, 'links']]), N('radius', 'Radius m', 8, 200, 1), N('ease', 'Übergang m', 0, 120, 1, { optional: true, autoLabel: 'auto' }), BANK], def: { dir: 1, radius: 25 } },
+  SPIRAL:      { code: 'SPI', grp: 'plan', fields: [N('turn', 'Winkel °', -1440, 1440, 5), N('radius', 'Radius m', 10, 200, 1), N('rise', 'Steigung m', -80, 80, 0.5, { optional: true, autoLabel: 'flach' }), N('riseSteps', 'Etagen', 0, 8, 1, { optional: true, autoLabel: 'stufenlos' }), N('ease', 'Übergang m', 0, 80, 1, { optional: true, autoLabel: 'auto' }), BANK], def: { turn: 360, radius: 30, rise: 6 } },
+  OFFSET_S:    { code: 'VER', grp: 'plan', fields: [N('length', 'Länge m', 20, 300, 1), N('shift', 'Versatz m', -40, 40, 0.5)], def: { length: 80, shift: 12 } },
+  CREST:       { code: 'KUP', grp: 'up', fields: [N('length', 'Länge m', 10, 300, 1), N('height', 'Höhe m', 0.5, 30, 0.5)], def: { length: 80, height: 4 } },
+  DIP:         { code: 'MUL', grp: 'up', fields: [N('length', 'Länge m', 10, 300, 1), N('height', 'Tiefe m', 0.5, 30, 0.5)], def: { length: 80, height: 3 } },
+  KICKER:      { code: 'KIC', grp: 'stunt', fields: [N('length', 'Länge m', 8, 80, 1), N('lipHeight', 'Lippe m', 0, 12, 0.25), N('lipDeg', 'Lippe °', 0, 35, 0.5)], def: { length: 30, lipHeight: 2, lipDeg: 14 } },
+  AIR:         { code: 'LUF', grp: 'stunt', fields: [N('gap', 'Weite m', 5, 140, 1), N('drop', 'Fall m', -20, 40, 0.5)], def: { gap: 30, drop: 0 } },
+  LANDING:     { code: 'LAN', grp: 'stunt', fields: [N('length', 'Länge m', 10, 120, 1), N('drop', 'Abstieg m', -10, 60, 0.5)], def: { length: 35, drop: 4 } },
+  LOOP:        { code: 'LOO', grp: 'stunt', fields: [N('height', 'Höhe m', 8, 80, 0.5), E('side', 'Versatz nach', [[1, 'rechts'], [-1, 'links']]), N('drift', 'Versatz m', 10, 80, 0.5, { optional: true, autoLabel: 'auto' })], def: { height: 20, side: 1 } },
+  WIDTH_STEP:  { code: 'BRE', grp: 'width', fields: [N('length', 'Länge m', 8, 120, 1)], def: { length: 30, widthTo: 'WIDE' } },
+  CONNECT:     { code: 'ANS', grp: 'width', fields: [], connect: true, def: null },
+};
+const GROUPS = [['plan', 'Gerade & Kurven'], ['up', 'Höhe'], ['stunt', 'Stunt'], ['width', 'Breite & Anschluss']];
+const TYPE_NAME = { STRAIGHT: 'Gerade', CURVE_EASE: 'Kurve', HAIRPIN_180: 'Kehre', SPIRAL: 'Spirale', OFFSET_S: 'S-Versatz', CREST: 'Kuppe', DIP: 'Mulde',
+  KICKER: 'Kicker', AIR: 'Luft', LANDING: 'Landung', LOOP: 'Looping', WIDTH_STEP: 'Breitenwechsel', CONNECT: 'Anschluss', SPLIT_HALF: 'Teilung', MERGE_HALF: 'Zusammenführung' };
+const WIDTH_OPTS = [['', '— bleibt'], ['NARROW', 'NARROW 10,8'], ['STANDARD', 'STANDARD 14,4'], ['WIDE', 'WIDE 18'], ['HERO', 'HERO 21,6'], ['HERO_XL', 'HERO_XL 28,8 (Weiche)']];
+const MARK_OPTS = [['', '— bleibt'], ['STREET', 'Straße'], ['TRACK', 'Rennstrecke'], ['MAG', 'Magnet'], ['NONE', 'ohne']];
+const SKIN_OPTS = [['', '— aus Markierung'], ['street', 'street'], ['track', 'track'], ['mag', 'mag'], ['buoy', 'buoy'], ['toy', 'toy']];
+const DRIVE_OPTS = [['', '— frei (Standard)'], ['free', 'free'], ['assist', 'assist'], ['locked', 'locked']];
+const FX = ['bounce', 'magnet_catch', 'zero_g'];
+const TUNNEL_OPTS = [['keep', '— bleibt'], ['leave', 'Tunnel verlassen'], ['p:gotthard', 'Gotthard (Bogen)'], ['p:dumb', 'Bunker (D.U.M.B.)'], ['p:alien', 'Alien-Basis'],
+  ['p:toy', 'Spielzeug-Röhre'], ['p:hangar', 'Hangar'], ['s:round', 'rund'], ['s:oval', 'oval'], ['s:rect', 'eckig'], ['s:poly', 'Vieleck'], ['s:arch', 'Bogen']];
+const STUNT = new Set(['KICKER', 'AIR', 'LANDING', 'LOOP']);
+const CHECK_NAME = { s_monotonic: 's steigt', s_matches_arc: 'Bogenlänge', frame_orthonormal: 'Rahmen', frame_flip: 'kein Umklappen', frame_flips: 'kein Umklappen', jump_speed: 'Sprungtempo', tangent_kink: 'kein Knick',
+  curvature_step: 'Krümmungssprung', bank_rate: 'Neigungsrate', slot_parity: 'Querschnitt', inner_edge_fold: 'Innenkante', self_clearance: 'Abstand zu sich selbst',
+  crossing_headroom: 'Durchfahrhöhe', vehicle_headroom: 'LKW-Höhe Kreuzung', loop_envelope: 'LKW im Looping', landing_dip: 'Landung ohne Loch', fingerprint: 'Fingerabdruck',
+  closure: 'Rundkurs geschlossen', tunnel_clearance: 'Tunnel-Freiraum', tunnel_morph: 'Tunnel-Formwechsel', portal_match: 'Portal passt', tunnel_shell: 'Fels zwischen Röhren',
+  buried_open: 'offen unter Boden', pad_level: 'Platz eben', joint_continuity: 'Stöße stetig' };
+
+// ------------------------------------------------------------------ state
+let presets = {};
+let recipe = null;
+let sel = -1;             // selected piece index, -1 = route settings
+const undoStack = [], redoStack = [];
+let pendingSnap = null;
+let lastStream = null, lastChecks = [];
+const $ = (id) => document.getElementById(id);
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const fmt = (v, d = 1) => (typeof v === 'number' ? v.toLocaleString('de-DE', { maximumFractionDigits: d }) : String(v));
+
+function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => { t.hidden = true; }, 1800); }
+function store() { try { localStorage.setItem('kfb-builder-draft', JSON.stringify(recipe)); } catch (e) { /* storage off */ } }
+function snapshot() { undoStack.push(JSON.stringify(recipe)); if (undoStack.length > 200) undoStack.shift(); redoStack.length = 0; syncUndo(); }
+function beginEdit() { if (!pendingSnap) { pendingSnap = JSON.stringify(recipe); } }
+function endEdit() { if (pendingSnap && pendingSnap !== JSON.stringify(recipe)) { undoStack.push(pendingSnap); redoStack.length = 0; } pendingSnap = null; syncUndo(); }
+function syncUndo() { $('undo').disabled = !undoStack.length; $('redo').disabled = !redoStack.length; }
+function undo() { if (!undoStack.length) return; redoStack.push(JSON.stringify(recipe)); recipe = JSON.parse(undoStack.pop()); sel = Math.min(sel, recipe.pieces.length - 1); changed(true); }
+function redo() { if (!redoStack.length) return; undoStack.push(JSON.stringify(recipe)); recipe = JSON.parse(redoStack.pop()); sel = Math.min(sel, recipe.pieces.length - 1); changed(true); }
+
+function uid(type) { const base = (TYPE_NAME[type] ?? type).toLowerCase().replace(/[^a-z0-9]+/g, '_'); let i = 1; const ids = new Set(recipe.pieces.map((p) => p.id)); while (ids.has(`${base}_${i}`)) i++; return `${base}_${i}`; }
+
+// ------------------------------------------------------------------ compile (worker, fallback main thread)
+let worker = null, reqId = 0, coreFallback = null;
+try { worker = new Worker(new URL('./worker.mjs', location.href), { type: 'module' }); worker.onmessage = (ev) => onResult(ev.data); worker.onerror = () => { worker = null; compileNow(); }; } catch (e) { worker = null; }
+let compileTimer = 0;
+function compileSoon() { clearTimeout(compileTimer); compileTimer = setTimeout(compileNow, 90); }
+async function compileNow() {
+  const id = ++reqId, r = clone(recipe);
+  if (worker) { worker.postMessage({ id, recipe: r }); return; }
+  coreFallback = coreFallback || await import('./track-core.mjs');
+  try { const t0 = performance.now(); const s = coreFallback.compileRecipe(r); const t1 = performance.now();
+    onResult({ id, kind: 'stream', core: coreFallback.CORE_VERSION, ms: t1 - t0, stream: s });
+    onResult({ id, kind: 'checks', ms: performance.now() - t1, results: coreFallback.runChecks(s).results });
+  } catch (e) { onResult({ id, kind: 'error', message: String(e.message || e) }); }
+}
+let compileMs = 0, checkMs = 0, coreVersion = '';
+function onResult(m) {
+  if (m.id !== reqId) return;
+  if (m.kind === 'error') { $('err').innerHTML = `<b>Strecke lässt sich so nicht bauen.</b> ${escapeHtml(m.message)} Die Ansicht zeigt den letzten gültigen Stand.`; $('err').hidden = false; lastChecks = []; renderChecks(); return; }
+  if (m.kind === 'stream') { $('err').hidden = true; compileMs = m.ms; coreVersion = m.core; lastStream = m.stream; drawTrack(); renderHud(); if (!drawTrack.fitted) { fitAll(); drawTrack.fitted = true; } return; }
+  if (m.kind === 'checks') { checkMs = m.ms; lastChecks = m.results; renderChecks(); renderList(); renderHud(); drawMarkers(); }
+}
+function escapeHtml(s) { return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+// ------------------------------------------------------------------ three.js view
+const view = $('view');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+view.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(42, 1, 0.5, 20000);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; controls.dampingFactor = 0.12; controls.screenSpacePanning = true;
+scene.add(new THREE.HemisphereLight(0xe8f0f8, 0xb09070, 1.1));
+const sun = new THREE.DirectionalLight(0xfff4e6, 2.2); sun.position.set(-300, 600, 250); scene.add(sun);
+let grid = null, trackGroup = null, selMesh = null, markerGroup = new THREE.Group(); scene.add(markerGroup);
+const trackMat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.92, side: THREE.DoubleSide });
+function themeColors() { const cs = getComputedStyle(document.documentElement); return { view: cs.getPropertyValue('--view').trim(), grid: cs.getPropertyValue('--grid').trim(), accent: cs.getPropertyValue('--accent').trim(), fail: cs.getPropertyValue('--fail').trim(), warn: cs.getPropertyValue('--warn').trim() }; }
+function applyTheme() {
+  const c = themeColors(); scene.background = new THREE.Color(c.view);
+  if (grid) { scene.remove(grid); grid.geometry.dispose(); }
+  grid = new THREE.GridHelper(6000, 120, c.grid, c.grid); grid.material.transparent = true; grid.material.opacity = 0.55; grid.position.y = gridY; scene.add(grid);
+  drawSelection(); drawMarkers();
+}
+let gridY = -0.6;
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+function resize() { const w = view.clientWidth, h = view.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / Math.max(h, 1); camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(view);
+function dispose(o) { if (!o) return; o.traverse((x) => { if (x.geometry) x.geometry.dispose(); if (x.material && x.material !== trackMat) (Array.isArray(x.material) ? x.material : [x.material]).forEach((m) => m.dispose()); }); scene.remove(o); }
+function drawTrack() {
+  dispose(trackGroup);
+  trackGroup = buildTrack(THREE, lastStream, trackMat);
+  scene.add(trackGroup);
+  let minY = Infinity; for (let i = 0; i < lastStream.samples.length; i += 10) minY = Math.min(minY, lastStream.samples[i].p[1]);
+  gridY = (Number.isFinite(minY) ? minY : 0) - 0.6; if (grid) grid.position.y = gridY;
+  drawSelection();
+}
+function pieceRange(i) {
+  if (!lastStream || i < 0) return null;
+  const J = lastStream.joints; if (!J || !J[i]) return null;
+  const a = J[i].index, b = i + 1 < J.length ? J[i + 1].index : lastStream.samples.length - 1;
+  return [a, Math.max(a + 1, b)];
+}
+function drawSelection() {
+  dispose(selMesh); selMesh = null;
+  const r = pieceRange(sel); if (!r) return;
+  const S = lastStream.samples, pos = [], idx = []; const lift = 0.12;
+  for (let i = r[0]; i <= r[1]; i++) { const q = S[i]; if (!q) continue; const a = q.slots[6][0], b = q.slots[7][0], h = Math.max(q.slots[6][1], q.slots[7][1]) + lift;
+    for (const l of [a, b]) pos.push(q.p[0] + q.R[0] * l + q.U[0] * h, q.p[1] + q.R[1] * l + q.U[1] * h, q.p[2] + q.R[2] * l + q.U[2] * h); }
+  for (let k = 0; k < pos.length / 6 - 1; k++) { const o = 2 * k; idx.push(o, o + 1, o + 3, o, o + 3, o + 2); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx);
+  selMesh = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: themeColors().accent, transparent: true, opacity: 0.42, side: THREE.DoubleSide, depthWrite: false }));
+  scene.add(selMesh);
+}
+function sampleAtS(s) { const S = lastStream.samples; let lo = 0, hi = S.length - 1; while (lo < hi) { const m = (lo + hi) >> 1; if (S[m].s < s) lo = m + 1; else hi = m; } return S[lo]; }
+function checkPlaces(r) { const out = []; const re = /(?<![A-Za-z/])s\s(-?\d+(?:\.\d+)?)/g; let m; const t = `${r.note ?? ''}`; while ((m = re.exec(t))) out.push(+m[1]); return out; }
+function drawMarkers() {
+  markerGroup.children.slice().forEach((c) => { c.geometry.dispose(); c.material.dispose(); markerGroup.remove(c); });
+  if (!lastStream) return; const c = themeColors();
+  for (const r of lastChecks) { if (r.pass) continue; for (const s of checkPlaces(r)) { const q = sampleAtS(s); if (!q) continue;
+    const m = new THREE.Mesh(new THREE.SphereGeometry(2.2, 16, 12), new THREE.MeshBasicMaterial({ color: r.severity === 'warn' ? c.warn : c.fail }));
+    m.position.set(q.p[0] + q.U[0] * 5, q.p[1] + q.U[1] * 5, q.p[2] + q.U[2] * 5); markerGroup.add(m); } }
+}
+function fitBox(box) {
+  const size = box.getSize(new THREE.Vector3()), ctr = box.getCenter(new THREE.Vector3()); const r = Math.max(size.length() / 2, 20);
+  const dir = new THREE.Vector3(-0.55, 0.75, -0.9).normalize(); const vf = THREE.MathUtils.degToRad(camera.fov / 2), hf = Math.atan(Math.tan(vf) * camera.aspect); const d = r / Math.sin(Math.min(vf, hf)) * 1.05;
+  camera.position.copy(ctr).addScaledVector(dir, d); camera.near = Math.max(0.5, d / 2000); camera.far = d * 20; camera.updateProjectionMatrix();
+  controls.target.copy(ctr); controls.update();
+}
+function fitAll() { if (!trackGroup) return; fitBox(new THREE.Box3().setFromObject(trackGroup)); }
+function focusRange(r) { const S = lastStream.samples, b = new THREE.Box3(); for (let i = r[0]; i <= r[1]; i += 4) b.expandByPoint(new THREE.Vector3(...S[i].p)); b.expandByScalar(18); fitBox(b); }
+function focusPiece() { const r = pieceRange(sel); if (r) focusRange(r); else fitAll(); }
+function focusS(s) { const q = sampleAtS(s); if (!q) return; const b = new THREE.Box3().setFromCenterAndSize(new THREE.Vector3(...q.p), new THREE.Vector3(60, 30, 60)); fitBox(b); }
+function driverView() {
+  const r = pieceRange(sel >= 0 ? sel : 0); if (!r) return; const q = lastStream.samples[r[0]];
+  const p = new THREE.Vector3(...q.p), T = new THREE.Vector3(...q.T), U = new THREE.Vector3(...q.U);
+  camera.position.copy(p).addScaledVector(U, 3.2).addScaledVector(T, -9); camera.near = 0.3; camera.far = 8000; camera.updateProjectionMatrix();
+  controls.target.copy(p).addScaledVector(T, 40).addScaledVector(U, 2); controls.update();
+}
+(function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+
+// ------------------------------------------------------------------ list, palette, inspector, checks
+function summary(p) {
+  const f = (k, u, d = 0) => (p[k] != null ? `${fmt(p[k], d)}${u}` : null);
+  const parts = { STRAIGHT: [f('length', ' m')], CURVE_EASE: [f('turn', '°'), f('radius', ' m R')], HAIRPIN_180: [p.dir === -1 ? 'links' : 'rechts', f('radius', ' m R')],
+    SPIRAL: [f('turn', '°'), f('rise', ' m ↑', 1)], OFFSET_S: [f('length', ' m'), f('shift', ' m ↔', 1)], CREST: [f('height', ' m', 1)], DIP: [f('height', ' m', 1)],
+    KICKER: [f('lipHeight', ' m', 2), f('lipDeg', '°', 1)], AIR: [f('gap', ' m'), f('drop', ' m ↓', 1)], LANDING: [f('length', ' m'), f('drop', ' m ↓', 1)],
+    LOOP: [f('height', ' m')], WIDTH_STEP: [p.widthTo ?? p.width ?? ''], CONNECT: ['Ziel'] }[p.type] ?? [];
+  const extra = []; if (p.tunnel === null || p.tunnel === false) extra.push('Tunnel aus'); else if (p.tunnel) extra.push(p.tunnel.preset ?? p.tunnel.shape ?? 'Tunnel');
+  if (p.markings) extra.push(p.markings.toLowerCase()); if (p.drive?.mode) extra.push(p.drive.mode);
+  return [...parts.filter(Boolean), ...extra].join(' · ');
+}
+function flagsFor(i) {
+  const r = pieceRange(i); if (!r || !lastStream) return '';
+  const s0 = lastStream.samples[r[0]].s, s1 = lastStream.samples[r[1]].s; let lvl = '';
+  for (const c of lastChecks) { if (c.pass) continue; if (checkPlaces(c).some((s) => s >= s0 - 0.01 && s <= s1 + 0.01)) { lvl = c.severity === 'warn' && lvl !== 'fail' ? 'warn' : 'fail'; if (lvl === 'fail') break; } }
+  return lvl;
+}
+function renderList() {
+  const ul = $('plist'); ul.innerHTML = '';
+  const head = document.createElement('li'); head.className = 'piece' + (sel === -1 ? ' on' : ''); head.tabIndex = 0; head.setAttribute('role', 'option');
+  head.innerHTML = `<span class="n">–</span><span class="code">START</span><span class="nm">Strecke<small>${escapeHtml(recipe.id ?? '')}</small></span><span class="flag"></span>`;
+  head.onclick = () => select(-1); ul.append(head);
+  recipe.pieces.forEach((p, i) => {
+    const li = document.createElement('li'); li.className = 'piece' + (sel === i ? ' on' : ''); li.tabIndex = 0; li.setAttribute('role', 'option'); li.setAttribute('aria-selected', sel === i);
+    const sc = SCHEMA[p.type]; const code = sc?.code ?? p.type.slice(0, 3); const cls = STUNT.has(p.type) ? 'stunt' : (p.tunnel ? 'tun' : '');
+    li.innerHTML = `<span class="n">${i + 1}</span><span class="code ${cls}">${code}</span><span class="nm">${escapeHtml(p.id ?? '')}<small>${escapeHtml(summary(p))}</small></span><span class="flag ${flagsFor(i)}"></span>`;
+    li.onclick = () => select(i);
+    li.onkeydown = (e) => { if (e.key === 'ArrowDown') { e.preventDefault(); select(Math.min(i + 1, recipe.pieces.length - 1), true); } if (e.key === 'ArrowUp') { e.preventDefault(); select(i - 1, true); } };
+    ul.append(li);
+  });
+  $('pcount').textContent = `${recipe.pieces.length}`;
+}
+function select(i, keepFocus) { sel = i; renderList(); renderInspector(); drawSelection(); if (keepFocus) { const el = $('plist').children[i + 1]; el && el.focus(); } }
+function renderPalette() {
+  const pal = $('palette'); pal.innerHTML = '';
+  for (const [g, name] of GROUPS) {
+    const d = document.createElement('div'); d.className = 'grp'; d.innerHTML = `<span>${name}</span>`; const row = document.createElement('div'); row.className = 'row';
+    for (const [type, sc] of Object.entries(SCHEMA)) { if (sc.grp !== g) continue; const b = document.createElement('button'); b.className = 'btn'; b.textContent = TYPE_NAME[type]; b.onclick = () => insertPiece(type); row.append(b); }
+    d.append(row); pal.append(d);
+  }
+}
+function endFrameOf(i) { const r = pieceRange(i); if (!r) return null; const q = lastStream.samples[r[1]]; const psi = Math.atan2(q.T[0], q.T[2]) * 180 / Math.PI; return { p: q.p.map((v) => +v.toFixed(2)), psi }; }
+function insertPiece(type) {
+  snapshot();
+  let pc;
+  if (type === 'CONNECT') {
+    const e = endFrameOf(sel >= 0 ? sel : recipe.pieces.length - 1) ?? { p: [0, 0, 0], psi: 0 }; const rad = e.psi * Math.PI / 180;
+    pc = { type, to: { p: [+(e.p[0] + Math.sin(rad) * 80 + Math.cos(rad) * 30).toFixed(2), e.p[1], +(e.p[2] + Math.cos(rad) * 80 - Math.sin(rad) * 30).toFixed(2)], headingDeg: Math.round(e.psi), grade: 0 } };
+  } else pc = { type, ...clone(SCHEMA[type].def) };
+  pc = { id: uid(type), ...pc };
+  const at = sel >= 0 ? sel + 1 : recipe.pieces.length; recipe.pieces.splice(at, 0, pc); sel = at; changed();
+}
+function movePiece(d) { const j = sel + d; if (sel < 0 || j < 0 || j >= recipe.pieces.length) return; snapshot(); const a = recipe.pieces; [a[sel], a[j]] = [a[j], a[sel]]; sel = j; changed(); }
+function dupPiece() { if (sel < 0) return; snapshot(); const c = clone(recipe.pieces[sel]); c.id = uid(c.type); recipe.pieces.splice(sel + 1, 0, c); sel++; changed(); }
+function delPiece() { if (sel < 0 || recipe.pieces.length < 2) { toast('Mindestens ein Stück bleibt.'); return; } snapshot(); recipe.pieces.splice(sel, 1); sel = Math.min(sel, recipe.pieces.length - 1); changed(); }
+
+function numField(obj, f, onChange) {
+  const wrap = document.createElement('div'); wrap.className = 'field';
+  const has = obj[f.key] != null; const v = has ? obj[f.key] : (f.min + f.max) / 2;
+  const idb = `f_${f.key}`;
+  wrap.innerHTML = `<label for="${idb}">${f.label}</label><input type="range" id="${idb}_r" min="${f.min}" max="${f.max}" step="${f.step}" value="${v}" aria-label="${f.label}"><input type="number" id="${idb}" min="${f.min}" max="${f.max}" step="${f.step}" value="${v}">`;
+  const [r, n] = wrap.querySelectorAll('input');
+  const set = (x) => { x = +x; if (!Number.isFinite(x)) return; obj[f.key] = x; r.value = x; n.value = x; wrap.classList.remove('off'); if (autoBox) autoBox.checked = false; onChange(); };
+  let autoBox = null;
+  if (f.optional) {
+    const a = document.createElement('label'); a.className = 'auto'; a.innerHTML = `<input type="checkbox" id="${idb}_a" ${has ? '' : 'checked'}> ${f.autoLabel}`;
+    autoBox = a.querySelector('input'); wrap.classList.add('wide'); wrap.style.gridTemplateColumns = '96px 1fr 76px'; if (!has) wrap.classList.add('off');
+    autoBox.onchange = () => { beginEdit(); if (autoBox.checked) { delete obj[f.key]; wrap.classList.add('off'); } else { obj[f.key] = +n.value; wrap.classList.remove('off'); } onChange(); endEdit(); };
+    const row = document.createElement('div'); row.style.gridColumn = '2 / 4'; row.append(a); wrap.append(row);
+  }
+  for (const el of [r, n]) { el.addEventListener('pointerdown', beginEdit); el.addEventListener('focus', beginEdit); el.addEventListener('change', endEdit); el.addEventListener('blur', endEdit); }
+  r.addEventListener('input', () => set(r.value)); n.addEventListener('input', () => set(n.value));
+  return wrap;
+}
+function selField(label, id, opts, value, onSet) {
+  const w = document.createElement('div'); w.className = 'field wide';
+  w.innerHTML = `<label for="${id}">${label}</label><select id="${id}">${opts.map(([v, t]) => `<option value="${escapeHtml(String(v))}">${escapeHtml(t)}</option>`).join('')}</select>`;
+  const s = w.querySelector('select'); s.value = String(value ?? opts[0][0]); s.onchange = () => { snapshot(); onSet(s.value); changed(); };
+  return w;
+}
+function renderInspector() {
+  const box = $('inspector'); box.innerHTML = '';
+  const live = () => { pieceChanged(); };
+  if (sel < 0) {
+    box.innerHTML = `<h2>Strecke <span class="count">Start &amp; Vorgaben</span></h2>`;
+    const st = recipe.start ?? (recipe.start = { p: [0, 0, 0], headingDeg: 0 });
+    const tmp = { x: st.p[0], y: st.p[1], z: st.p[2], h: st.headingDeg ?? 0 };
+    const upd = () => { st.p = [tmp.x, tmp.y, tmp.z]; st.headingDeg = tmp.h; live(); };
+    box.append(numField(tmp, N('x', 'Start x m', -2000, 2000, 1), upd), numField(tmp, N('y', 'Start Höhe m', -100, 200, 0.5), upd), numField(tmp, N('z', 'Start z m', -2000, 2000, 1), upd), numField(tmp, N('h', 'Richtung °', -180, 180, 1), upd));
+    recipe.defaults ??= {};
+    box.append(selField('Breite', 'd_w', WIDTH_OPTS.slice(1, 5), recipe.defaults.widthClass ?? 'STANDARD', (v) => { recipe.defaults.widthClass = v; }));
+    box.append(selField('Markierung', 'd_m', MARK_OPTS.slice(1), recipe.defaults.markings ?? 'TRACK', (v) => { recipe.defaults.markings = v; }));
+    const p = document.createElement('p'); p.className = 'hint'; p.textContent = 'Wähle links ein Stück, um es zu bearbeiten. Neue Stücke kommen hinter die Auswahl; das nächste Stück setzt immer am Ende des vorigen an.'; box.append(p);
+    return;
+  }
+  const pc = recipe.pieces[sel]; const sc = SCHEMA[pc.type];
+  box.innerHTML = `<h2>${escapeHtml(TYPE_NAME[pc.type] ?? pc.type)} <span class="count">#${sel + 1} · ${pc.type}</span></h2>`;
+  const idw = document.createElement('div'); idw.className = 'field wide'; idw.innerHTML = `<label for="p_id">Name</label><input type="text" id="p_id" value="${escapeHtml(pc.id ?? '')}">`;
+  const idIn = idw.querySelector('input'); idIn.onfocus = beginEdit; idIn.oninput = () => { pc.id = idIn.value.trim() || uid(pc.type); renderList(); compileSoon(); }; idIn.onblur = endEdit; box.append(idw);
+  if (sc) for (const f of sc.fields) {
+    if (f.kind === 'num') box.append(numField(pc, f, live));
+    else box.append(selField(f.label, `p_${f.key}`, f.values, pc[f.key], (v) => { pc[f.key] = +v; }));
+  }
+  if (pc.type === 'CONNECT') {
+    pc.to ??= { p: [0, 0, 0], headingDeg: 0, grade: 0 };
+    const t = { x: pc.to.p[0], y: pc.to.p[1], z: pc.to.p[2], h: pc.to.headingDeg ?? 0, g: (pc.to.grade ?? 0) * 100, st: pc.stretch ?? 1 };
+    const upd = () => { pc.to = { p: [t.x, t.y, t.z], headingDeg: t.h, grade: t.g / 100 }; if (t.st !== 1) pc.stretch = t.st; else delete pc.stretch; live(); };
+    box.append(numField(t, N('x', 'Ziel x m', -3000, 3000, 1), upd), numField(t, N('y', 'Ziel Höhe m', -100, 200, 0.5), upd), numField(t, N('z', 'Ziel z m', -3000, 3000, 1), upd),
+      numField(t, N('h', 'Ziel Richtung °', -180, 180, 1), upd), numField(t, N('g', 'Ziel Gefälle %', -30, 30, 0.5), upd), numField(t, N('st', 'Spannung', 0.3, 2, 0.05), upd));
+    const p = document.createElement('p'); p.className = 'hint'; p.textContent = 'Ein Anschluss führt glatt zu einem festen Punkt. So bleibt der Rest der Strecke stehen, wenn du davor etwas änderst.'; box.append(p);
+  }
+  if (typeof pc.to === 'string') { const p = document.createElement('p'); p.className = 'hint'; p.textContent = `Ziel ist ein benannter Anker (${pc.to}); im Builder nicht verfügbar.`; box.append(p); }
+  // section attributes
+  const h3 = document.createElement('h2'); h3.innerHTML = 'Abschnitt'; h3.style.marginTop = '4px'; box.append(h3);
+  box.append(selField('Breite zu', 'p_w', WIDTH_OPTS, pc.widthTo ?? '', (v) => { if (v) pc.widthTo = v; else delete pc.widthTo; }));
+  box.append(selField('Markierung', 'p_m', MARK_OPTS, pc.markings ?? '', (v) => { if (v) pc.markings = v; else delete pc.markings; }));
+  box.append(selField('Skin', 'p_s', SKIN_OPTS, pc.skin ?? '', (v) => { if (v) pc.skin = v; else delete pc.skin; }));
+  const tv = pc.tunnel === null || pc.tunnel === false ? 'leave' : pc.tunnel ? (pc.tunnel.preset ? `p:${pc.tunnel.preset}` : `s:${pc.tunnel.shape}`) : 'keep';
+  box.append(selField('Tunnel', 'p_t', TUNNEL_OPTS, tv, (v) => {
+    if (v === 'keep') delete pc.tunnel; else if (v === 'leave') pc.tunnel = null;
+    else { const [k, name] = v.split(':'); const keep = pc.tunnel && typeof pc.tunnel === 'object' ? pc.tunnel : {}; const nt = { ...keep }; delete nt.preset; delete nt.shape; nt[k === 'p' ? 'preset' : 'shape'] = name; pc.tunnel = nt; }
+  }));
+  box.append(selField('Fahrmodus', 'p_d', DRIVE_OPTS, pc.drive?.mode ?? '', (v) => { if (v) pc.drive = { ...(pc.drive ?? {}), mode: v }; else delete pc.drive; }));
+  const fxw = document.createElement('div'); fxw.className = 'field wide'; fxw.innerHTML = `<label>Effekte</label><div class="row2">${FX.map((f) => `<label class="auto"><input type="checkbox" id="fx_${f}" ${(pc.drive?.fx ?? []).includes(f) ? 'checked' : ''}> ${f}</label>`).join('')}</div>`;
+  fxw.querySelectorAll('input').forEach((cb) => { cb.onchange = () => { snapshot(); const f = cb.id.slice(3); const d = pc.drive ?? (pc.drive = { mode: 'free' }); const s = new Set(d.fx ?? []); cb.checked ? s.add(f) : s.delete(f); d.fx = [...s]; if (!d.fx.length) delete d.fx; changed(); }; });
+  box.append(fxw);
+  const tg = document.createElement('div'); tg.className = 'field wide'; const co = (pc.tags ?? []).includes('crossing_ok');
+  tg.innerHTML = `<label>Kreuzung</label><label class="auto"><input type="checkbox" id="p_cross" ${co ? 'checked' : ''}> gewollte Über-/Unterführung</label>`;
+  tg.querySelector('input').onchange = (e) => { snapshot(); const s = new Set(pc.tags ?? []); e.target.checked ? s.add('crossing_ok') : s.delete('crossing_ok'); pc.tags = [...s]; if (!pc.tags.length) delete pc.tags; changed(); };
+  box.append(tg);
+  const known = new Set(['id', 'type', 'widthTo', 'markings', 'skin', 'tunnel', 'drive', 'tags', 'to', 'stretch', ...(sc?.fields ?? []).map((f) => f.key)]);
+  const rest = Object.fromEntries(Object.entries(pc).filter(([k]) => !known.has(k)));
+  if (Object.keys(rest).length) { const k = document.createElement('div'); k.className = 'kv'; k.textContent = `weitere Felder (im JSON bearbeitbar)\n${JSON.stringify(rest, null, 1)}`; box.append(k); }
+  const acts = document.createElement('div'); acts.className = 'row2';
+  acts.innerHTML = `<button class="btn" id="mvUp">↑ nach oben</button><button class="btn" id="mvDn">↓ nach unten</button><button class="btn" id="dup">Duplizieren</button><button class="btn danger" id="del">Löschen</button>`;
+  box.append(acts);
+  $('mvUp').onclick = () => movePiece(-1); $('mvDn').onclick = () => movePiece(1); $('dup').onclick = dupPiece; $('del').onclick = delPiece;
+}
+function pieceChanged() { const li = $('plist').children[sel + 1]; if (li && sel >= 0) li.querySelector('.nm small').textContent = summary(recipe.pieces[sel]); store(); compileSoon(); }
+function changed(fromUndo) { syncUndo(); renderList(); renderInspector(); store(); compileSoon(); if (fromUndo) drawSelection(); }
+
+function renderChecks() {
+  const ul = $('checks'); ul.innerHTML = '';
+  const fails = lastChecks.filter((c) => !c.pass && c.severity !== 'warn').length, warns = lastChecks.filter((c) => !c.pass && c.severity === 'warn').length, ok = lastChecks.filter((c) => c.pass).length;
+  $('sum').innerHTML = lastChecks.length ? `<span class="sumpill ${fails ? 'bad' : 'ok'}">${ok}/${lastChecks.length} grün${warns ? ` · ${warns} Warnung` : ''}${fails ? ` · ${fails} Fehler` : ''}</span>` : '';
+  const order = (c) => (c.pass ? 2 : c.severity === 'warn' ? 1 : 0);
+  for (const c of [...lastChecks].sort((a, b) => order(a) - order(b))) {
+    const li = document.createElement('li'); const st = c.pass ? 'pass' : c.severity === 'warn' ? 'warn' : 'fail'; const places = checkPlaces(c);
+    li.className = `ck ${st}${places.length && !c.pass ? ' jump' : ''}`;
+    const v = c.value == null ? '' : typeof c.value === 'number' ? fmt(c.value, 3) : String(c.value);
+    li.innerHTML = `<span class="dot"></span><span class="id" title="${escapeHtml(c.id)}">${escapeHtml(CHECK_NAME[c.id] ?? c.id)}</span><span class="v">${escapeHtml(v)}</span><span class="note">${escapeHtml(c.note ?? '')}</span>`;
+    if (places.length && !c.pass) { li.tabIndex = 0; li.onclick = () => focusS(places[0]); li.onkeydown = (e) => { if (e.key === 'Enter') focusS(places[0]); }; }
+    ul.append(li);
+  }
+}
+function renderHud() {
+  if (!lastStream) return; const S = lastStream.samples; const L = S[S.length - 1].s;
+  $('hud').innerHTML = [`${fmt(L, 0)} m`, `${S.length.toLocaleString('de-DE')} Samples`, `${fmt(compileMs, 0)} + ${fmt(checkMs, 0)} ms`, `fp ${lastStream.fingerprint ?? '–'}`].map((t) => `<span class="chip">${t}</span>`).join('');
+  $('coreTag').textContent = coreVersion.replace('kfb.track-core/', 'Track Core v');
+}
+
+// ------------------------------------------------------------------ load, json, keys
+function loadRecipe(r, msg) { recipe = clone(r); recipe.pieces ??= []; if (!recipe.pieces.length) recipe.pieces.push({ id: 'gerade_1', type: 'STRAIGHT', length: 60 }); sel = -1; drawTrack.fitted = false; changed(); if (msg) toast(msg); }
+function blank() { return { schema: 'kfb.route-recipe/0.1-draft', id: 'NEUE_STRECKE', start: { p: [0, 0, 0], headingDeg: 0 }, defaults: { widthClass: 'STANDARD', markings: 'TRACK' }, pieces: [{ id: 'gerade_1', type: 'STRAIGHT', length: 60 }] }; }
+$('preset').onchange = (e) => { snapshot(); const k = e.target.value; loadRecipe(k === 'blank' ? blank() : presets[k], 'Strecke geladen'); };
+$('undo').onclick = undo; $('redo').onclick = redo;
+$('fitBtn').onclick = fitAll; $('focusBtn').onclick = focusPiece; $('povBtn').onclick = driverView;
+function recipeText() { return JSON.stringify(recipe, null, 1); }
+async function copyText(t) { try { await navigator.clipboard.writeText(t); toast('Rezept kopiert'); } catch (e) { openJson(); const ta = $('jsonTa'); ta.focus(); ta.select(); toast('Text ist markiert – mit Strg/Cmd+C kopieren'); } }
+$('copyBtn').onclick = () => copyText(recipeText());
+function openJson() { $('jsonSec').hidden = false; $('jsonTa').value = recipeText(); $('jsonMsg').textContent = 'JSON einfügen und übernehmen, um ein eigenes Rezept zu laden.'; $('jsonSec').scrollIntoView({ block: 'nearest' }); }
+$('jsonBtn').onclick = openJson; $('closeJson').onclick = () => { $('jsonSec').hidden = true; };
+$('copyJson').onclick = () => copyText($('jsonTa').value);
+$('applyJson').onclick = () => { try { const r = JSON.parse($('jsonTa').value); if (!Array.isArray(r.pieces)) throw new Error('Es fehlt die Liste "pieces".'); if (r.routes) throw new Error('Graphen mit mehreren Routen kann der Builder noch nicht bearbeiten.'); snapshot(); loadRecipe(r, 'Rezept übernommen'); $('jsonMsg').textContent = 'Übernommen.'; } catch (e) { $('jsonMsg').textContent = `Nicht übernommen: ${e.message}`; } };
+addEventListener('keydown', (e) => {
+  const tag = (e.target.tagName || '').toLowerCase(); if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); e.shiftKey ? redo() : undo(); }
+});
+
+// ------------------------------------------------------------------ boot
+renderPalette(); applyTheme(); resize();
+presets = await (await fetch('./presets.json')).json();
+let draft = null; try { draft = JSON.parse(localStorage.getItem('kfb-builder-draft') || 'null'); } catch (e) { draft = null; }
+if (draft && Array.isArray(draft.pieces) && draft.pieces.length) { loadRecipe(draft, 'Letzter Entwurf wiederhergestellt'); $('preset').value = 'draft'; }
+else loadRecipe(presets.sandbox);
+syncUndo();
+</script>
