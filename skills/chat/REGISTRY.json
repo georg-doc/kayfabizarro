@@ -32,6 +32,35 @@
   ],
   "entries": [
     {
+      "id": "kfb-track-t3-transitions-vfx-2026-09-27",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27/START_HERE.md",
+      "loadWhen": [
+        "T3 Knetstrang",
+        "Blender MCP racetrack",
+        "track city nature transitions",
+        "pit lane",
+        "track ramps and exits",
+        "KFB clay billboards",
+        "clay particle VFX",
+        "fresh Claude Design track chat"
+      ],
+      "owns": [
+        "shared staggered visual transition contract",
+        "Blender MCP B0 production briefing",
+        "Claude Design T4 visual/VFX briefing"
+      ],
+      "doesNotOwn": [
+        "Track Core route or collision",
+        "WorldBuilder movement/camera",
+        "Racer physics",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "T3 is the accepted visual base. Blender owns geometry/sockets/export, Claude Design owns look/readability/VFX presets, and later Work integration adopts both in the real WorldBuilder/Racer."
+    },
+    {
       "id": "session-zip-v1",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
