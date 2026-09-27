@@ -1,0 +1,43 @@
+name: PD-POOL-R3 permanent Cloudflare Librarian proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/public-domain-pool-r3-live-verify-2026-09-27
+    paths:
+      - ".github/workflows/public-domain-pool-r3-live.yml"
+      - ".github/scripts/asset-librarian-public-domain-r3-live.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pd-pool-r3-live
+  cancel-in-progress: false
+
+jobs:
+  public-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: chatgpt-web/public-domain-pool-r3-live-verify-2026-09-27
+          fetch-depth: 1
+
+      - name: Check public proof syntax
+        run: node --check .github/scripts/asset-librarian-public-domain-r3-live.mjs
+
+      - name: Verify permanent Cloudflare Asset Librarian
+        env:
+          EXPECTED_SOURCE_COMMIT: b133e66c4f8cc191501da504ebeceea67c6b4317
+        run: node .github/scripts/asset-librarian-public-domain-r3-live.mjs
+
+      - name: Upload public proof
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: pd-pool-r3-cloudflare-librarian
+          path: artifacts/asset-librarian-public-domain-r3-live/
+          if-no-files-found: error
