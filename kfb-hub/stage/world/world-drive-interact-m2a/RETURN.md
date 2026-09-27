@@ -21,11 +21,13 @@ Es wurde keine Ersatz-Rennstrecke gebaut. Track Core bleibt `WAITING_SOURCE` fü
 - Kenney `kart-oobi.glb`: `15e36b915c9bdfd7ff000d398418269e27c6ef9f`
 - Vehicle Deformer v2: `f30b719a8c9da3e9ac90d4d9628c0691d676d1e9`
 - Travel Modes PR #39: `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`
-- GitHub-Runtime-Checkpoint: `c59cd460f57b0129157722d4ab3a0eeab22978aa`
+- GitHub-Runtime-Checkpoint: `3a9375bba2acdcc448473f24838830ba92305277`
+- Publication-Checkpoint: `afc5841abcb6ce057080618ab4aba36a4831bf3a`
 
 ## Prüfungen
 
-- Browser Desktop + schmal: **34/34 PASS**
+- Browser Desktop + schmal, lokal: **34/34 PASS**
+- Browser Desktop + schmal, feste öffentliche Stage: **34/34 PASS**
 - Hirnwelt-H0-Knete ist sichtbarer Standard; `?look=original` und der Umschalter bleiben als reversibler Vergleich erhalten
 - E → Drive, echte Radkontakte, Bewegung, E → Ground, Ground → Flight: PASS
 - kompakte Bedienoberfläche ohne horizontales Überlaufen: PASS
@@ -36,8 +38,10 @@ Es wurde keine Ersatz-Rennstrecke gebaut. Track Core bleibt `WAITING_SOURCE` fü
 
 ## Status
 
-`LOCAL_BROWSER_PASS · SOURCE_CANDIDATE · PUBLIC_NOT_PUBLISHED`
+`PUBLIC_VERIFIED · PUBLIC_BROWSER_PASS_34_OF_34`
+
+Direkter Fahrtest: <https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/>
 
 ## Genau ein nächster Gate
 
-Den exakten Kandidaten auf die feste Stage-Route veröffentlichen, dort denselben Browserlauf wiederholen und dann Georgs freien Fahrtest öffnen. Kein Track-Proxy und kein M2B vor einer realen Track-Core-Runtime.
+Georgs freier M2A-Fahrtest: Kneteindruck, Ein-/Ausstieg, Fahrgefühl und Wechsel zum Flug. Kein Track-Proxy und kein M2B vor einer realen Track-Core-Runtime.

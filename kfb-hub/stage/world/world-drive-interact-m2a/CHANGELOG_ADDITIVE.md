@@ -12,3 +12,4 @@
 - Desktop und Narrow Browser 28/28 PASS;
 - Track Core ausdrücklich nicht durch einen Proxy ersetzt.
 - Hirnwelt-H0-Knete als sichtbaren Standard gesetzt; Original bleibt reversibel per Toggle oder `?look=original`.
+- 2026-09-27 · Feste Cloudflare-Stage publiziert und im echten Browser erneut mit 34/34 Prüfungen auf Desktop und schmalem Viewport bestätigt.
