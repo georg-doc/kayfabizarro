@@ -1,0 +1,79 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "PD-POOL-R1",
+  "status": "PASS",
+  "date": "2026-09-27",
+  "owner": "Asset Librarian / Billboard Media",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/public-domain-pool-r1-2026-09-27",
+  "pullRequest": 242,
+  "baseMain": "6fb02674ea4344169778c0ae9e76b2543f1d78f9",
+  "sourceF1": {
+    "pullRequest": 240,
+    "finalHandoffHead": "db88a9978bbd2a47fa22f2578d506def120d7c60",
+    "testedImplementationHead": "c4f25c156e611a2fac7063becaf4fed3e3769638"
+  },
+  "r1": {
+    "workflowDefinitionHead": "85c154eb796b7abd733b848249b0938045ec0ff2",
+    "workflowRun": 36285925572,
+    "workflowJob": 108526571635,
+    "workflowConclusion": "success",
+    "persistenceHead": "f3acaaeb98530dd9ffb7d200d61956891e738336",
+    "manualReviewHead": "911fd16c0d0c15550f373203452a9373c0820176",
+    "runner": "ubuntu-24.04",
+    "python": "3.12.14"
+  },
+  "assertions": {
+    "pythonCompile": "1/1 PASS",
+    "firstRun": "4/4 LOADED · 0 rejected",
+    "sidecars": "4/4 complete",
+    "payloadTypeSanity": "4/4 PASS",
+    "secondRun": "4/4 UNCHANGED · 0 redownloaded",
+    "stalePartialCleanup": "1/1 PASS",
+    "hashIdentity": "8/8 payload+sidecar files unchanged",
+    "generatedManifest": "4/4 rows",
+    "credits": "0 attribution rows · all four free tier",
+    "internetArchiveManualReview": "PASS · source/object correspondence"
+  },
+  "assets": {
+    "met": {
+      "sourceId": 86434,
+      "localPath": "media/public_domain/met/bathing-suit-1890-95.jpg",
+      "bytes": 258743,
+      "sha256": "8d4696259a2fa664da351e6f619a8808ca129c1bd45e4d0f80e87381c151917c",
+      "tier": "free"
+    },
+    "aic": {
+      "sourceId": 24645,
+      "localPath": "media/public_domain/aic/great-wave-hokusai-1830-33.jpg",
+      "bytes": 238585,
+      "sha256": "e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56",
+      "tier": "free",
+      "apiHttpStatus": 200,
+      "imageHttpStatus": 200
+    },
+    "commons": {
+      "sourceId": "File:Silent film.svg",
+      "localPath": "media/public_domain/commons/silent-film.svg",
+      "bytes": 26061,
+      "sha256": "e55e5d25eb1c834816a10d4d15d9ef30fa8a467c92d853f7439556b5774aadc7",
+      "tier": "free"
+    },
+    "ia": {
+      "sourceId": "TheGeneral1926",
+      "localPath": "media/public_domain/ia/the-general-1926-item-tile.jpg",
+      "bytes": 4070,
+      "sha256": "bbc1321e8ca53998e8bb2761a199d0130dc6230de589087ea62eddaf7888ee19",
+      "tier": "free",
+      "selectedFormat": "Item Tile",
+      "rights": "http://creativecommons.org/publicdomain/mark/1.0/"
+    }
+  },
+  "stage": "NONE_NOT_APPLICABLE",
+  "livePromotion": false,
+  "bulkImport": false,
+  "unresolved": [
+    "original historical selected-hit manifest remains missing"
+  ],
+  "nextGate": "PD-POOL-R2 · register only the proven four-object smoke set in the existing Asset Librarian and verify provenance/discoverability"
+}
