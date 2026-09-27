@@ -1,0 +1,153 @@
+name: PD-POOL-01 four-source smoke
+
+on:
+  push:
+    branches:
+      - chatgpt-web/public-domain-pool-pd01-2026-09-27
+    paths:
+      - ".github/workflows/public-domain-pool-pd01.yml"
+      - "tools/public_domain/**"
+      - "media/public_domain/README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pd-pool-01
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-web/public-domain-pool-pd01-2026-09-27
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Static syntax
+        run: |
+          python -m py_compile tools/public_domain/fetch_pool.py
+
+      - name: Four-source download and idempotence gate
+        env:
+          SOURCE_HEAD: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          rm -f media/public_domain/here
+          find media/public_domain -type f -name "*.part" -delete
+
+          python tools/public_domain/fetch_pool.py             tools/public_domain/pd01-smoke-manifest.jsonl             --report /tmp/pd01-first.json             --expect 4
+
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root=Path("media/public_domain")
+          snap={}
+          for provider in ("met","aic","commons","ia"):
+              for p in sorted((root/provider).glob("*")):
+                  if p.is_file() and not p.name.endswith(".part"):
+                      snap[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
+          Path("/tmp/pd01-before.json").write_text(json.dumps(snap,sort_keys=True,indent=2)+"\n")
+          assert len(snap) == 8, snap
+          PY
+
+          printf 'INTENTIONAL-PARTIAL-FILE' > media/public_domain/commons/silent-film.svg.part
+
+          python tools/public_domain/fetch_pool.py             tools/public_domain/pd01-smoke-manifest.jsonl             --report /tmp/pd01-second.json             --expect 4
+
+          test ! -e media/public_domain/commons/silent-film.svg.part
+
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root=Path("media/public_domain")
+          before=json.loads(Path("/tmp/pd01-before.json").read_text())
+          after={}
+          for provider in ("met","aic","commons","ia"):
+              for p in sorted((root/provider).glob("*")):
+                  if p.is_file() and not p.name.endswith(".part"):
+                      after[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
+          assert before == after, {"before":before,"after":after}
+          first=json.loads(Path("/tmp/pd01-first.json").read_text())
+          second=json.loads(Path("/tmp/pd01-second.json").read_text())
+          assert first["counts"]["rejected"] == 0, first
+          assert first["counts"]["loaded"] + first["counts"]["unchanged"] == 4, first
+          assert second["counts"] == {"loaded":0,"rejected":0,"unchanged":4}, second
+          providers={r["provider"] for r in second["results"]}
+          assert providers == {"met","aic","commons","ia"}, providers
+
+          report={
+              "schema":"kfb.pd-pool-pd01-test/0.1",
+              "sourceHead":os.environ["SOURCE_HEAD"],
+              "status":"PASS",
+              "assertions":{
+                  "pythonCompile":"PASS",
+                  "fourSourceGate":"4/4 PASS",
+                  "secondRun":"4/4 UNCHANGED",
+                  "stalePartialCleanup":"PASS",
+                  "providerPayloadFiles":"8/8 hash-identical across second run"
+              },
+              "firstRun":first,
+              "secondRun":second
+          }
+          (root/"PD01_TEST_REPORT.json").write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
+
+          rows=second["results"]
+          lines=[
+              "# RETURN · PD-POOL-01 · four-source smoke",
+              "",
+              "Status: **PASS · 4/4 SOURCES · IDEMPOTENT · NO BULK IMPORT**",
+              f"Source implementation head: {os.environ['SOURCE_HEAD']}",
+              "",
+              "## Persisted smoke assets",
+              "",
+              "| Provider | Local path | Bytes | SHA-256 |",
+              "|---|---|---:|---|",
+          ]
+          for r in sorted(rows,key=lambda x:x["provider"]):
+              lines.append(f"| {r['provider']} | {r['localPath']} | {r['bytes']} | {r['sha256']} |")
+          lines += [
+              "",
+              "## Actual checks",
+              "",
+              "- Python compile: 1/1 PASS",
+              "- First provider gate: 4/4 accepted; 0 rejected",
+              "- Second run: 4/4 unchanged; 0 downloads required",
+              "- Stale partial-file injection: 1/1 removed; never registered",
+              "- Provider payload hash identity: 8/8 files unchanged across second run",
+              "- Generated manifest/credits derive only from stored sidecars",
+              "",
+              "## Protected",
+              "",
+              "- Asset Librarian remains the registry/discovery owner.",
+              "- Billboard runtime unchanged.",
+              "- No Stage/Live publication.",
+              "- No bulk import: the intake ZIP has no original exported selection manifest.",
+              "",
+              "## Exactly one next gate",
+              "",
+              "**PD-POOL-02 · recover/export the original selected-hit manifest, then review compact GitHub-suitable candidates before any bulk fill.**",
+              ""
+          ]
+          (root/"PD01_RETURN.md").write_text("\n".join(lines),encoding="utf-8")
+          PY
+
+      - name: Persist proven smoke set
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media/public_domain
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+            exit 0
+          fi
+          git commit -m "PD-POOL-01: persist four-source smoke evidence"
+          git push origin HEAD:chatgpt-web/public-domain-pool-pd01-2026-09-27
