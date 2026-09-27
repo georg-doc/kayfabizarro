@@ -106,6 +106,228 @@ Contract and schema: `kit/README_TRACK-CORE.md` and the S3 RETURN. Core source: 
 | b11b | branch lift with magnet run | crest on a split lane |
 | b12 | barrier close-up (drift ring) | barrier side / cap / shoulder at driver height |
 
+## 4A · Georg addendum · universal clay edge / runoff / transition kit
+
+**New product direction, 27.09.2026.** Do not design sidewalks, kerbs, barriers, fences and runoff as a bag of unrelated props. Design one **universal edge / runoff / transition grammar** that can dress the same Track Core continuously across OSM/city streets, race track, dirt road, stunt pieces, bridge, tunnel and later Cosmic Highway.
+
+The Track Core remains the geometry/socket truth. This addendum expands the **visible design vocabulary** and the connector/cap deliverable; it does not create another route, contact, collider or track owner.
+
+### 4A.1 · Edge families to cover
+
+Build a small, composable family system. Individual assets may be omitted where no source exists yet, but the grammar must reserve their role.
+
+**Urban / OSM street and path**
+- flush painted road edge;
+- low / mountable kerb;
+- raised kerb + clay sidewalk;
+- dropped kerb / driveway transition;
+- gutter / drainage channel;
+- grass or soil verge;
+- shallow ditch / swale and culvert mouth;
+- retaining edge / low wall;
+- bollard or planter edge only where a verified donor supports it.
+
+**Race / circuit**
+- painted edge line;
+- flat, rumble and raised **red/white kerb** variants;
+- rounded / sausage kerb as an optional high-feedback race edge;
+- red/white modular barrier blocks;
+- low/high wall and pit wall;
+- steel/Armco-like guardrail language;
+- generic impact-block / tyre-wall family without copying proprietary branding;
+- low spectator fence and high catch/debris fence;
+- asphalt runoff;
+- grass runoff;
+- gravel / **sand bed** with a designed entry and exit seam;
+- sand/gravel → barrier/fence outer containment.
+
+**Dirt / off-road**
+- soft shoulder;
+- clay/earth berm;
+- grass verge;
+- rut / drainage ditch;
+- rock edge;
+- wood/log fence;
+- rope / low rail;
+- mud or water ditch where the world owner provides the surface.
+
+**Bridge / elevated / tunnel**
+- parapet;
+- guardrail / catch fence;
+- slim service ledge;
+- tunnel kerb / service strip;
+- tunnel wall / shell meeting the track;
+- portal transition: open road → cut / portal → enclosed shell → open road.
+
+**Construction / temporary**
+- cone;
+- construction barrier;
+- temporary fence;
+- narrowing / lane-takeover edge.
+
+**Cosmic / surreal**
+- reserve a KFB-specific safe-edge family for **Cosmic Highway** and zero-/low-gravity sections;
+- do not invent generic cyan/magenta neon. Until an exact KFB cosmic donor is pinned, treat this family as `SOURCE_REQUIRED`;
+- it must still use the same connector/profile grammar as street, race and dirt.
+
+The visual treatment should feel **modelled in clay**, not like normal low-poly assets painted beige: soft hand-shaped mass, rounded joins, slight controlled irregularity, tactile relief and compressed/dented detail where appropriate. Connector geometry itself remains exact even when the visible clay skin is imperfect.
+
+### 4A.2 · Runoff is part of the road language
+
+A boundary is not only a wall. Claude Design must design the **lateral sequence away from the driving surface**.
+
+Examples:
+
+```text
+ROAD → KERB → SIDEWALK → FENCE
+TRACK → RED/WHITE KERB → ASPHALT RUNOFF → GUARDRAIL
+TRACK → KERB → GRASS → GRAVEL/SAND BED → CATCH FENCE
+DIRT → SOFT SHOULDER → DITCH → EARTH BERM / WOOD FENCE
+BRIDGE → SHOULDER → PARAPET / RAIL
+TUNNEL → KERB / SERVICE STRIP → WALL / SHELL
+```
+
+Treat these as **role stacks** that can change over `s`, not as one-off scene dressing. Surface/contact behaviour remains Race/World owned; this brief designs visible composition and source-backed parts only.
+
+### 4A.3 · Connector rule · cable-bed / plug logic
+
+Georg's existing **Kabelbett** example is the design precedent for the Blender track's plug/socket idea: modules should feel like they were made to connect, and transitions should be deliberate pieces rather than gaps hidden by decoration.
+
+The literal Kabelbett source file has not yet been pinned in the GitHub/Dropbox census under that name. **Do not invent a path or reconstruct it from memory.** For implementation truth use the current Track Core `CONNECT` / socket contract and existing Racetrack Blender socket artifacts; when the exact Kabelbett donor is identified, add it as visual precedent without changing the connector contract.
+
+Every visible transition must respect one mathematical joint frame and its boundary state:
+
+- position / tangent / up / right;
+- surface height and bank;
+- lane/track width and lateral offset;
+- left/right edge state;
+- shoulder/runoff state;
+- skin/material family and markings;
+- headroom / clearance envelope;
+- semantic tags such as street, dirt, race, stunt, bridge, tunnel, mag or cosmic.
+
+The sculpted clay transition may begin before the joint and finish after it, but the socket itself is exact. No gap, overlap, duplicate road plate or decorative cover mesh is allowed.
+
+### 4A.4 · Required transition families
+
+Design these as **adapters on the same core**, not separate track systems:
+
+1. **OSM/city street ↔ Race track** — asphalt/road width, centre/lane markings, kerb/sidewalk withdrawal, race kerb/runoff/barrier arrival.
+2. **Street/path ↔ Dirt road** — hard curb/edge relaxes into soft shoulder, verge and ditch.
+3. **Race track ↔ Dirt track** — race kerb/runoff becomes soft shoulder/berm; return adapter must be equally intentional.
+4. **Race track ↔ Sand/gravel runoff** — lateral escape zone, not a new centre-line route.
+5. **Normal road/track ↔ Ramp / Loop / Kicker / Landing** — profile and edge treatment taper into stunt-safe slim edges and back out.
+6. **Open road/track ↔ Bridge / elevated deck** — verge/runoff resolves into parapet/rail; supports remain world/landmark dressing.
+7. **Open road/track ↔ Tunnel** — shoulder/edge becomes service strip + wall/shell; portal is a real transition family.
+8. **Race/road ↔ Mag / Cosmic Highway** — same geometry/socket truth; visual family changes through the existing staggered `s` curves.
+9. **Split / gore / merge** — the inner edges disappear, separate, then rise/rejoin without barrier noses or decoration crossing the drive line.
+10. **Width / lane takeover / construction narrowing** — edge and marking timing follows the width change instead of snapping at one metre.
+
+For each family, show at least one **entry**, one **mid-transition** and one **settled** state. Use the existing 32 m stagger as the default visual rhythm and the current 8 m minimum seam rule unless the source scene demonstrates a better value; do not create another hardcoded transition-length system.
+
+### 4A.5 · Source-backed donor bank · isolate before use
+
+These are **candidate donors already present in the KFB Registry**, not automatic design approvals. Every selected core donor must first be rendered **alone** with exact path/revision before it enters a clay composition.
+
+**Kenney Racing Kit**  
+Registry: `registry/assets/v1/packs/kenney-racing-kit.json`
+
+High-value source objects:
+- `barrierRed`, `barrierWhite`, `barrierWall`;
+- `fenceCurved`, `fenceStraight`;
+- `rail`, `railDouble`;
+- `roadCornerLargeBorder`, `roadCornerLargeBorderInner`;
+- `roadCornerLargeSand`, `roadCornerLargeSandInner`;
+- `roadCornerLargeWall`, `roadCornerLargeWallInner`;
+- corresponding `Larger` and `Small` variants;
+- `roadPitEntry`, `roadPitStraight`, `roadPitStraightLong`;
+- `roadRamp`, `roadRampLong`, `roadRampLongCurved` and wall variants.
+
+This family is the first reference for classic circuit kerb/border, sand runoff, wall, fence/rail and pit-edge semantics.
+
+**Kenney City Kit Roads**  
+Registry: `registry/assets/v1/packs/kenney-city-kit-roads.json`
+
+High-value source objects:
+- `construction-barrier`, `construction-cone`, `construction-fence`;
+- `road-*-barrier` families for bends, curves, intersections, roundabout, side entry/exit, slants, splits and straights;
+- `bridge-pillar`, `bridge-pillar-wide`.
+
+This family is the reference for ordinary road containment and temporary/construction transitions.
+
+**Kenney Toy Car Kit**  
+Registry: `registry/assets/v1/packs/kenney-toy-car-kit.json`
+
+Use as a **connector/piece vocabulary donor**:
+- narrow/wide `track`, `track-road`, `track-striped`;
+- front/back caps;
+- corner ramps and curves;
+- loopings;
+- bump-up / bump-down;
+- hill beginning / complete / end;
+- skew-left / skew-right connectors.
+
+Do not copy it as a second track runtime. Study how a finite set of piece types communicates connection and transition.
+
+**KayKit City Builder Bits**  
+Registry: `registry/assets/v1/packs/kaykit-city-builder-bits-1-0-free.json`  
+Measured donor surface: `tools/world_atlas/source/KayKit_Road_Network_S5.html`
+
+Relevant road pieces:
+- `road_straight`, `road_corner`, `road_corner_curved`;
+- `road_junction`, `road_tsplit`, `road_straight_crossing`.
+
+Important design lesson from S5: road openings and **kerb slots are measured from geometry**, not guessed from filenames or typed prop coordinates. Preserve that mental model when adapting OSM/city edges.
+
+**Tiny Treats · Homely House**  
+Registry: `registry/assets/v1/packs/tiny-treats-homely-house-1-0-free.json`
+
+Fence family:
+- `fence_corner`, `fence_post`;
+- `fence_rails`, `fence_rails_long`;
+- `fence_straight`, `fence_straight_long`;
+- open/wide/long variants.
+
+Use for the softer, handmade residential/rural clay fence language where it actually fits the source.
+
+**Kenney Platformer Kit**  
+Registry: `registry/assets/v1/packs/kenney-platformer-kit.json`
+
+Useful candidates:
+- low/straight/curved/broken fence variants;
+- `fence-rope`;
+- `platform-ramp`.
+
+Use as an off-road/rural boundary donor, not as a generic replacement when a more exact road/race source exists.
+
+**Sand material/form candidates**
+- Racing Kit `roadCorner*Sand*` is the strongest race-semantic source.
+- `registry/assets/v1/packs/kaykit-blockbits-1-0-free.json` contains `sand_A` / `sand_B` as secondary form/material references only.
+
+### 4A.6 · Clay translation rules for the donors
+
+- **Red/white kerbs and barriers:** alternating pressed-clay masses with softened corners and controlled hand variation; preserve exact module/connector length so the pattern does not drift at joints.
+- **Guardrails / rails:** rounded stamped clay/soft-metal language is allowed, but do not distort the clear vehicle envelope or create hidden collision lips.
+- **Fences:** soften the verified source silhouette; do not stretch one fence mesh arbitrarily to cover every length. Use posts/rails/corners as a real modular family.
+- **Sand / gravel beds:** surface relief and particle/detail density may sell the material, but the visible driving/runoff surface must remain continuous with the core/world contact truth.
+- **Ditches / berms:** design as world/edge profiles tied to the road frame; do not cut a second route trench through the world behind Track Core's back.
+- **Loop/ramp edges:** become slimmer/safer through the same profile parameters; no separate stunt-road shell.
+- **Tunnel portals:** should look pressed/built into the clay world while retaining the S8 tunnel clearance and portal-match truth.
+- **Cosmic:** wait for a pinned KFB donor rather than using generic neon sci-fi language.
+
+### 4A.7 · New required design evidence
+
+Add to the S4 delivery:
+
+1. **Source isolation sheet** — at least one exact source object from each donor family actually used, shown alone before clay adaptation.
+2. **Edge atlas** — one common cross-section diagram showing the major left/right states: open, curb/sidewalk, race kerb, barrier/wall, guardrail, fence, grass/gravel/sand runoff, ditch/berm, parapet/tunnel wall.
+3. **Transition matrix** — show at minimum the ten families in §4A.4 as compatible socket-to-socket recipes; mark any unbuilt/source-missing family explicitly.
+4. **Same-route comparison** — street, race, dirt and one enclosed/surreal state on the same core route; no duplicate route mesh.
+5. **Driver-height proof** — red/white kerb + runoff + outer containment; street curb/sidewalk; dirt shoulder/ditch; tunnel portal.
+6. **Connector close-up** — one joint with the mathematical socket visible in the evidence pass and the finished clay transition in the design pass, proving that visual softness did not move the joint.
+
+The goal is a **universal clay track construction kit**, not a catalogue of pretty edge props.
+
 ## 5 · Conditions (each one checkable)
 
 1. **The geometry comes from the stream.** Your look reads `slots`, roles, `skin`, `paint` and `markings`; it does not re-solve the track.
