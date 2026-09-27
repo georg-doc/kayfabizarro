@@ -1151,3 +1151,23 @@ No bulk import occurred. The historical selected-hit manifest is still missing. 
 
 Exactly one next gate: **PD-POOL-R2 · register only the proven four-object smoke set in the existing Asset Librarian and verify provenance/discoverability.**
 
+## 2026-09-27 · Public Domain Pool · PD-POOL-R2 Asset Librarian candidate
+
+PD-POOL-R2 is a **TESTED PASS CANDIDATE · NOT MERGED · NOT PUBLISHED** on stacked Draft PR #246, branch `chatgpt-web/public-domain-pool-r2-librarian-2026-09-27`, above R1 PR #242.
+
+The existing Asset Registry/Librarian owner is retained:
+- `media/public_domain` becomes one additional Registry source root;
+- exactly the four R1-proven smoke assets are registered;
+- persisted neighboring `.license.json` facts are passed through only after exact path/byte/SHA validation;
+- the Registry performs **no license inference**;
+- the existing Librarian provenance detail and candidate-only handoff surfaces carry the rights evidence.
+
+Tested implementation head `8c8b907c3526956a90e5ddbe2d6174eab2ee16da`:
+- dedicated R2 run `36288195716`: 46/46 tests, 4/4 Registry entries, 4/4 CLI discovery, Chrome 153 4/4 search/detail/preview/provenance, 0 console errors, 0 exceptions;
+- Asset Registry owner run `36288282662`: PASS;
+- Librarian browser owner run `36288282599`: all v1/v1.3-v1.7 gates PASS.
+
+The permanent Cloudflare Librarian is **not claimed updated**. No bulk import occurred; the historical selected-hit manifest remains missing.
+
+Exactly one next gate after final handoff: **PD-POOL-R3 · Georg-gated merge/reconciliation of the stacked R1/R2 chain, owner Registry refresh, then exact permanent Cloudflare Librarian verification before any broader pool work.**
+
