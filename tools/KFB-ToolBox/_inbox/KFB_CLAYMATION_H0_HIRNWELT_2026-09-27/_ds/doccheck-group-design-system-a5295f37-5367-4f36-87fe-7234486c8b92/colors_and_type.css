@@ -1,0 +1,329 @@
+/* ==========================================================================
+   DocCheck Design System — Colors & Type
+   Reconstructed from the DocCheck Digital Design System Figma file.
+   Primary brand: DocCheck (doccheck.com) — German medical/community platform.
+   ========================================================================== */
+
+/* --- Fonts --- */
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Thin.ttf") format("truetype");         font-weight: 100; font-style: normal; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-ThinItalic.ttf") format("truetype");   font-weight: 100; font-style: italic; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Light.ttf") format("truetype");        font-weight: 300; font-style: normal; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-LightItalic.ttf") format("truetype");  font-weight: 300; font-style: italic; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Regular.ttf") format("truetype");      font-weight: 400; font-style: normal; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Italic.ttf") format("truetype");       font-weight: 400; font-style: italic; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Medium.ttf") format("truetype");       font-weight: 500; font-style: normal; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Bold.ttf") format("truetype");         font-weight: 700; font-style: normal; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-BoldItalic.ttf") format("truetype");   font-weight: 700; font-style: italic; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-Black.ttf") format("truetype");        font-weight: 900; font-style: normal; }
+@font-face { font-family: "Roboto"; src: url("fonts/Roboto-BlackItalic.ttf") format("truetype");  font-weight: 900; font-style: italic; }
+@font-face { font-family: "Roboto Slab"; src: url("fonts/RobotoSlab-VariableFont_wght.ttf") format("truetype-variations"); font-weight: 100 900; font-style: normal; }
+
+:root {
+  /* ---------- Primary brand colors ---------- */
+  --dc-red:            #c03;  /* headlines, text links, active state, header */
+  --dc-dark-red:       #902;  /* hover / pressed red */
+  --dc-red-15:         #f7d9e1;  /* dc 15% red — soft red bg */
+  --dc-green:          #9c3;  /* primary buttons, form success */
+  --dc-dark-green:     #690;  /* green hover */
+  --dc-green-20:       #ebf5d6;  /* dc 20% green — soft green bg */
+  --dc-black:          #000;
+  --dc-white:          #fff;
+
+  /* ---------- Greyscale (used heavily) ---------- */
+  --dc-table-grey:     #f6f6f6;
+  --dc-bg-grey:        #eee;  /* background grey */
+  --dc-grey:           #ddd;  /* light grey */
+  --dc-medium-grey:    #ccc;
+  --dc-neutral-grey:   #aaa;  /* button-light, disabled */
+  --dc-icon-grey:      #888;  /* icons, menu text */
+  --dc-dark-grey:      #666;
+  --dc-light-black:    #222;
+
+  /* ---------- Shades — DC Red family ---------- */
+  --dc-pink:           #fbc;
+  --dc-dark-pink:      #e79;
+  --dc-light-red:      #d36;
+  --dc-maroon:         #601;
+  --dc-dark-maroon:    #300;
+
+  /* ---------- Highlight ---------- */
+  --dc-highlight-yellow: #ff0;
+
+  /* ---------- Secondary palette (accent / tagging) ---------- */
+  --dc-leaf-green:     #3b3;
+  --dc-dark-leaf:      #080;
+  --dc-sea-green:      #3c9;
+  --dc-dark-sea:       #096;
+  --dc-turquoise:      #6dd;
+  --dc-dark-turquoise: #0cc;
+  --dc-teal:           #8cd;
+  --dc-dark-teal:      #59b;
+  --dc-sky-blue:       #adf;
+  --dc-dark-sky-blue:  #8cf;
+  --dc-ocean-blue:     #3ae;
+  --dc-dark-ocean:     #08c;
+  --dc-violet:         #b3d;
+  --dc-dark-violet:    #83c;
+  --dc-fuchsia:        #d6a;
+  --dc-dark-fuchsia:   #c09;
+  --dc-orange:         #f80;
+  --dc-dark-orange:    #e70;
+  --dc-yellow:         #fd0;
+  --dc-dark-yellow:    #fc0;
+  --dc-tan:            #eca;
+  --dc-dark-tan:       #db9;
+
+  /* ---------- Semantic / functional ---------- */
+  --color-bg:          var(--dc-white);
+  --color-bg-subtle:   var(--dc-bg-grey);
+  --color-bg-table:    var(--dc-table-grey);
+  --color-surface:     var(--dc-white);
+  --color-border:      var(--dc-bg-grey);       /* #eee — the ubiquitous hairline */
+  --color-divider:     #d9d9d9;                 /* wide section dividers */
+  --color-fg:          var(--dc-black);
+  --color-fg-muted:    var(--dc-icon-grey);     /* #888 — menu/meta text */
+  --color-fg-subtle:   var(--dc-dark-grey);     /* #666 */
+  --color-link:        var(--dc-red);
+  --color-link-hover:  var(--dc-dark-red);
+  --color-accent:      var(--dc-red);
+  --color-primary:     var(--dc-green);         /* Primary button = green */
+  --color-primary-hover: var(--dc-dark-green);
+  --color-disabled:    var(--dc-neutral-grey);
+  --color-success:     var(--dc-green);
+  --color-error:       var(--dc-red);
+  --color-error-bg:    var(--dc-red-15);
+  --color-success-bg:  var(--dc-green-20);
+
+  /* ---------- Font stacks ---------- */
+  --font-slab:  "Roboto Slab", Georgia, serif;         /* Display / H1 */
+  --font-sans:  "Roboto", -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* ---------- Base font size scales (MAX / BASIS / MIN) ----------
+     The design system publishes three sizing scales depending on viewport:
+       MAX    = ≥ 20px base   — large screens / print / hero areas
+       BASIS  = 16px base     — default desktop / tablet
+       MIN    = 14px base     — dense surfaces / secondary contexts
+     Use --fs-* tokens; they resolve from --fs-base. Override --fs-base on
+     a section to switch scale. */
+  --fs-base: 16px;              /* BASIS default */
+  --fs-display: 48px;
+  --fs-h1: 28px;
+  --fs-h2: 20px;
+  --fs-h3: 16px;
+  --fs-h4: 16px;
+  --fs-h5: 16px;
+  --fs-h6: 16px;
+  --fs-copy: 16px;
+  --fs-quote: 16px;
+  --fs-label: 12px;
+  --fs-button: 16px;
+
+  /* ---------- Spacing & layout ----------
+     From frame analysis: core rhythm is 10/20/40/80/100 px. */
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 20px;
+  --space-4: 40px;
+  --space-5: 80px;
+  --space-6: 100px;
+
+  /* ---------- Radii ----------
+     Buttons use 5px; circles for color swatches and avatars. No large
+     rounding anywhere in the system. */
+  --radius-sm: 3px;
+  --radius:    5px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* ---------- Borders ----------
+     1px on inputs, 2px hairline dividers (#eee), 20px thick full-bleed
+     section dividers (#d9d9d9). */
+  --border-hairline: 1px solid var(--color-border);
+  --border-divider:  2px solid var(--color-border);
+
+  /* ---------- Elevation (very restrained — system is flat) ---------- */
+  --shadow-0: none;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-menu: 0 4px 16px rgba(0, 0, 0, 0.10);
+
+  /* ---------- Motion ---------- */
+  --ease: cubic-bezier(.2, .7, .3, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur: 180ms; /* @kind other */
+  --dur-slow: 280ms; /* @kind other */
+}
+
+/* MAX scale (large / print) */
+.fs-max {
+  --fs-base: 20px;
+  --fs-display: 64px;
+  --fs-h1: 32px; --fs-h2: 24px; --fs-h3: 20px; --fs-h4: 20px; --fs-h5: 20px; --fs-h6: 20px;
+  --fs-copy: 20px; --fs-quote: 20px; --fs-label: 14px; --fs-button: 20px;
+}
+
+/* MIN scale (dense) */
+.fs-min {
+  --fs-base: 14px;
+  --fs-display: 40px;
+  --fs-h1: 24px; --fs-h2: 16px; --fs-h3: 14px; --fs-h4: 14px; --fs-h5: 14px; --fs-h6: 14px;
+  --fs-copy: 14px; --fs-quote: 14px; --fs-label: 10px; --fs-button: 14px;
+}
+
+/* Dark mode swaps — from the "Farbwechsel Light/Dark" Flexikon App spec.
+   Red and green stay identical; greys invert. */
+.dc-dark, [data-theme="dark"] {
+  --color-bg:          #000;
+  --color-bg-subtle:   #222;
+  --color-bg-table:    #191919;
+  --color-surface:     #222;
+  --color-border:      #333;
+  --color-divider:     #333;
+  --color-fg:          #fff;
+  --color-fg-muted:    #aaa;
+  --color-fg-subtle:   #ddd;
+  --color-error-bg:    #301;
+  --color-success-bg:  #120;
+  --dc-highlight-yellow: #550;
+}
+
+/* ==========================================================================
+   Semantic typography — as specified in Figma (three scales).
+   Use these on real elements; do not override weights/sizes ad hoc.
+   ========================================================================== */
+html { font-size: var(--fs-base); }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-copy);
+  line-height: 1.5;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.dc-display {
+  font-family: var(--font-slab); font-weight: 700;
+  font-size: var(--fs-display); line-height: 1.2; margin: 0 0 .5em;
+}
+h1, .dc-h1 {
+  font-family: var(--font-slab); font-weight: 700;
+  font-size: var(--fs-h1); line-height: 1.2; margin: 0 0 .5em;
+  color: var(--color-fg);
+}
+h2, .dc-h2 {
+  font-family: var(--font-sans); font-weight: 700;
+  font-size: var(--fs-h2); line-height: 1.2;
+  margin: 1em 0 .5em;
+}
+h3, .dc-h3 {
+  font-family: var(--font-sans); font-weight: 700;
+  font-size: var(--fs-h3); line-height: 1.2; margin: 1em 0 .5em;
+}
+h4, .dc-h4 {
+  font-family: var(--font-sans); font-weight: 700;
+  font-size: var(--fs-h4); line-height: 1.2; margin: .5em 0;
+}
+h5, .dc-h5 {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--fs-h5); line-height: 1.2; margin: .5em 0;
+}
+h6, .dc-h6 {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--fs-h6); line-height: 1.2; margin: .5em 0 .2em;
+}
+p, .dc-copy {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--fs-copy); line-height: 1.5; margin: 0 0 .5em;
+}
+.dc-copy-bold, strong { font-weight: 700; }
+.dc-quote, blockquote {
+  font-family: var(--font-sans); font-weight: 400; font-style: italic;
+  font-size: var(--fs-quote); line-height: 1.5; margin: 0 0 .5em;
+}
+.dc-label, label, small {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: var(--fs-label); line-height: 1.2;
+}
+.dc-label-bold { font-weight: 700; }
+.dc-menu {
+  font-family: var(--font-sans); font-weight: 700;
+  font-size: var(--fs-copy); line-height: 1; color: var(--color-fg-muted);
+  text-transform: none;
+}
+
+a, .dc-link {
+  color: var(--color-link); text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+a:hover, .dc-link:hover { color: var(--color-link-hover); text-decoration: underline; }
+
+hr { border: 0; border-top: var(--border-divider); margin: var(--space-3) 0; }
+
+/* ==========================================================================
+   Core components — shared across UI kits.
+   ========================================================================== */
+
+/* Buttons */
+.dc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-sans); font-weight: 700;
+  font-size: var(--fs-button); line-height: 1;
+  padding: .5em 1em; border: 0; border-radius: var(--radius);
+  background: var(--color-primary); color: #fff;
+  cursor: pointer; transition: background var(--dur-fast) var(--ease);
+}
+.dc-btn:hover  { background: var(--color-primary-hover); }
+.dc-btn:active { transform: translateY(1px); }
+.dc-btn:disabled, .dc-btn[aria-disabled="true"] { background: var(--color-disabled); cursor: not-allowed; }
+.dc-btn--light    { background: var(--dc-neutral-grey); border-radius: 0; font-weight: 400; }
+.dc-btn--light:hover { background: var(--dc-icon-grey); }
+.dc-btn--red      { background: var(--dc-red); }
+.dc-btn--red:hover{ background: var(--dc-dark-red); }
+.dc-btn--ghost    { background: transparent; color: var(--color-fg); }
+.dc-btn--ghost:hover { background: var(--dc-bg-grey); }
+
+/* Form fields — 1px border, red on error, green on success, no rounding */
+.dc-input {
+  font-family: var(--font-sans); font-size: var(--fs-copy); color: var(--color-fg);
+  background: #fff; border: 0; border-bottom: 1px solid var(--color-fg-muted);
+  padding: 8px 2px; outline: none; width: 100%;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.dc-input:focus   { border-bottom-color: var(--dc-red); }
+.dc-input.is-error   { border-bottom-color: var(--dc-red); }
+.dc-input.is-success { border-bottom-color: var(--dc-green); }
+.dc-input::placeholder { color: var(--color-fg-muted); }
+
+/* Cards — minimal, hairline border, no shadow by default */
+.dc-card {
+  background: var(--color-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+/* Tag / chip */
+.dc-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 2px 8px; background: var(--dc-bg-grey); color: var(--color-fg);
+  font-size: var(--fs-label); font-weight: 700; line-height: 1.2;
+  border-radius: var(--radius-pill);
+}
+
+/* Brand header — the signature red bar from every DC surface */
+.dc-header {
+  height: 100px; background: var(--dc-red); color: #fff;
+  display: flex; align-items: center; gap: 40px; padding: 0 var(--space-6);
+}
+.dc-header__title {
+  font-family: var(--font-slab); font-weight: 700;
+  font-size: 40px; line-height: 1; color: #fff;
+}
+
+/* Minimal focus ring — brand red */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--dc-red); outline-offset: 2px;
+}

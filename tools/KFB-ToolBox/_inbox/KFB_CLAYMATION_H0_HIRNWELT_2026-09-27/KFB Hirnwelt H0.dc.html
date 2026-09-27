@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#96bede;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17191d}
+a{color:#5d4cff}a:hover{color:#17191d}
+canvas{display:block}
+input[type=range]{accent-color:#5d4cff;width:100%;margin:0}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import { boot } from './lab-brain/brain-world.v4.js';
+window.__KFB_BRAIN = { boot };
+window.dispatchEvent(new Event('kfbBrainReady'));
+</script>
+</helmet>
+
+<div style="position:relative;width:100%;height:100vh;overflow:hidden">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+
+  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#96bede">
+      <div style="text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:#0e5f4d">Knetwelt · Side Quest</div>
+      <div style="font-weight:800;font-size:30px;letter-spacing:-.04em;line-height:1">H0 · Hirnwelt</div>
+      <div style="font-size:13px;color:#2c3440">{{ note }}</div>
+    </div>
+  </sc-if>
+
+  <button onClick="{{ togglePanel }}" title="{{ toggleTitle }}" aria-label="{{ toggleTitle }}" style="position:absolute;top:16px;left:16px;z-index:3;width:42px;height:42px;display:flex;align-items:center;justify-content:center;padding:0;border-radius:12px;cursor:pointer;background:{{ toggleBg }};color:{{ toggleFg }};border:1px solid {{ toggleLine }};box-shadow:0 12px 34px rgba(19,25,35,.08)" style-hover="transform:translateY(-1px)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="4" x2="14" y2="4"></line><line x1="10" y1="4" x2="3" y2="4"></line><line x1="21" y1="12" x2="12" y2="12"></line><line x1="8" y1="12" x2="3" y2="12"></line><line x1="21" y1="20" x2="16" y2="20"></line><line x1="12" y1="20" x2="3" y2="20"></line><line x1="14" y1="2" x2="14" y2="6"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="16" y1="18" x2="16" y2="22"></line></svg>
+  </button>
+
+  <sc-if value="{{ panelOpen }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;top:70px;left:16px;z-index:3;width:300px;max-height:calc(100vh - 86px);overflow:auto;background:#fff;border:1px solid #dfe3e8;border-radius:18px;box-shadow:0 12px 34px rgba(19,25,35,.08);padding:20px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box">
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:#0e8f73">Knetwelt · Side Quest</div>
+        <div style="font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.1">H0 · Hirnwelt</div>
+        <div style="font-size:13px;color:#6d737d;text-wrap:pretty">Gelände aus BodyParts3D, 44 Netze. Gyri sind Hügelrücken, Sulci Flüsse, Straßen folgen den Windungen.</div>
+      </div>
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="7">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-size:12px;font-weight:700;color:#6d737d">{{ g.label }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3">
+              <button onClick="{{ o.pick }}" style="border-radius:10px;padding:7px 10px;font:inherit;font-weight:700;font-size:12px;line-height:1.1;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};border:1px solid {{ o.line }}" style-hover="transform:translateY(-1px)">{{ o.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div style="height:1px;background:#dfe3e8"></div>
+      <sc-for list="{{ sliders }}" as="s" hint-placeholder-count="5">
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:12px">
+          <div style="display:flex;justify-content:space-between;gap:10px"><span style="font-weight:700">{{ s.label }}</span><span style="color:#6d737d;font-variant-numeric:tabular-nums">{{ s.shown }}</span></div>
+          <input type="range" min="{{ s.min }}" max="{{ s.max }}" step="{{ s.step }}" value="{{ s.value }}" onInput="{{ s.onInput }}">
+        </label>
+      </sc-for>
+      <div style="font-size:11px;line-height:1.5;color:#6d737d;background:#eef0f4;border-radius:10px;padding:10px 12px;white-space:pre-line;font-variant-numeric:tabular-nums">{{ stats }}</div>
+      <div style="font-size:11px;line-height:1.5;color:#6d737d">Anatomie: BodyParts3D 3.0 © DBCLS, CC BY-SA 2.1 JP. Figuren: KayKit, Resident Atlas.</div>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  canvasRef = React.createRef();
+  state = { loading: true, note: 'Lädt …', palette: 'hirn', mood: 'day', cam: 'totale', traffic: true, labels: true, relief: true, ao: true,
+    panelOpen: localStorage.getItem('kfb-brain-panel') !== '0', orte: [], ort: 0,
+    knet: 3, water: 2.2, speed: 1, stroke: 0.55, print: 0.35, stats: '' };
+  componentDidMount() {
+    const go = async () => {
+      if (this.api || !this.canvasRef.current) return;
+      try {
+        this.api = await window.__KFB_BRAIN.boot(this.canvasRef.current, note => this.setState({ note }));
+        window.__brainWorld = this.api;
+        ['palette', 'mood', 'traffic', 'labels', 'relief', 'ao'].forEach(k => this.api.set(k, this.state[k]));
+        ['stroke', 'print'].forEach(k => this.api.set(k, this.state[k]));
+        this.setState({ loading: false, orte: this.api.ORTE });
+        this.timer = setInterval(() => this.tick(), 1000);
+      } catch (e) { this.setState({ note: 'Fehler: ' + e.message }); console.error(e); }
+    };
+    if (window.__KFB_BRAIN) go(); else window.addEventListener('kfbBrainReady', go, { once: true });
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.deb); this.api && this.api.dispose(); }
+  tick() {
+    const i = this.api.info;
+    const s = `${i.fps} fps · ${(i.tris / 1000).toFixed(0)}k Dreiecke\nStraße ${(i.roadLen / 10).toFixed(0)} cm Hirnoberfläche · ${i.bridges} Brücken\n${i.chars} Bewohner · ${i.cars} Autos · ${i.loaded} Dateien` + (i.errors.length ? '\nFehler: ' + i.errors.join('; ') : '');
+    if (s !== this.state.stats) this.setState({ stats: s });
+  }
+  pick(k, v) { this.setState({ [k]: v }); this.api && this.api.set(k, v); }
+  renderVals() {
+    const S = this.state;
+    const btn = (on, label, pick) => ({ label, bg: on ? '#5d4cff' : '#fff', fg: on ? '#fff' : '#17191d', line: on ? '#5d4cff' : '#dfe3e8', pick });
+    const grp = (label, key, opts) => ({ label, opts: opts.map(([v, l]) => btn(S[key] === v, l, () => this.pick(key, v))) });
+    const sl = (label, key, min, max, step, dec = 2, heavy = false) => ({ label, min, max, step, value: S[key], shown: (+S[key]).toFixed(dec),
+      onInput: e => { const v = +e.target.value; this.setState({ [key]: v });
+        if (!this.api) return;
+        if (heavy) { clearTimeout(this.deb); this.deb = setTimeout(() => this.api.set(key, v), 260); } else this.api.set(key, v); } });
+    const open = S.panelOpen;
+    return {
+      canvasRef: this.canvasRef, loading: S.loading, note: S.note, stats: S.stats, panelOpen: open,
+      toggleTitle: open ? 'Steuerung ausblenden' : 'Steuerung einblenden',
+      toggleBg: open ? '#5d4cff' : '#fff', toggleFg: open ? '#fff' : '#17191d', toggleLine: open ? '#5d4cff' : '#dfe3e8',
+      togglePanel: () => { const v = !this.state.panelOpen; localStorage.setItem('kfb-brain-panel', v ? '1' : '0'); this.setState({ panelOpen: v }); },
+      groups: [
+        grp('Kamera', 'cam', [['totale', 'Totale'], ['fahrt', 'Mitfahren'], ['rundflug', 'Rundflug']]),
+        { label: 'Orte', opts: S.orte.slice(1).map((n, i) => btn(S.ort === i + 1 && S.cam === 'totale', n, () => { this.setState({ ort: i + 1, cam: 'totale' }); this.api && this.api.flyTo(i + 1); })) },
+        grp('Farbe', 'palette', [['hirn', 'Knethirn'], ['land', 'Landschaft'], ['lappen', 'Hirnlappen']]),
+        grp('Licht', 'mood', [['day', 'Tag'], ['golden', 'Golden Hour'], ['nacht', 'Nacht']]),
+        grp('Verkehr', 'traffic', [[true, 'an'], [false, 'steht']]),
+        grp('Beschriftung', 'labels', [[true, 'an'], [false, 'aus']]),
+        grp('Relief · Umgebungsverdeckung', 'relief', [[true, 'Relief an'], [false, 'Relief aus']]),
+        grp('', 'ao', [[true, 'AO an'], [false, 'AO aus']])
+      ],
+      sliders: [
+        sl('Knetgrad (Glättung, Schritte)', 'knet', 0, 12, 1, 0, true),
+        sl('Wasserstand in den Furchen (mm)', 'water', 0, 6, 0.1, 1),
+        sl('Tempo', 'speed', 0, 2, 0.05),
+        sl('Handspuren', 'stroke', 0, 1.5, 0.01),
+        sl('Fingerabdrücke', 'print', 0, 1.2, 0.01)
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
