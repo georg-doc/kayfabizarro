@@ -38,6 +38,9 @@ Observed in Georg's 2026-09-27 screenshot:
 Working label:
 `GLOBAL-SHADOW-CONTACT-ARTIFACT-FIX`
 
+Global backlog:
+`#247 · GLOBAL-SHADOW-CONTACT-ARTIFACT-FIX · ground contact + under-roof shadow clipping`
+
 Scope for that later owner:
 - shadow-map clipping / bias / normal-bias / contact seam;
 - caster/receiver grounding;
