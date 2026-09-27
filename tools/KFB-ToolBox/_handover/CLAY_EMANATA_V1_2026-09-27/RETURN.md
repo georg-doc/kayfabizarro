@@ -63,6 +63,11 @@ A loaded path/URL is not donor proof.
 - repo-exact Emanata registry pin: **PASS**;
 - current Production-02 Return contains `RECOVERY-01`: **PASS**;
 - current-main reconciliation immediately before Return: **PASS**;
+- Reaction Choreography JSON parse: **PASS**;
+- core reaction event recipes: **17**;
+- semantic reaction clip roles: **15**;
+- reaction owner/source reads: **7/7 PASS**;
+- first integrated reaction proof events: **5**;
 - runtime tests: **NOT RUN** — runtime unchanged;
 - browser visual tests: **NOT RUN** — no candidate runtime/Stage exists;
 - human visual review: **NOT REQUESTED** — no integrated visual candidate exists.
@@ -81,7 +86,7 @@ These issues are not silently accepted or fixed by this concept.
 Updated additively on this branch:
 - ToolBox changelog;
 - central `skills/chat/START_HERE.md`;
-- KFB Hub Briefings card **ToolBox · Clay Emanata v1 · QUEUED AFTER RECOVERY-01**.
+- KFB Hub Briefings card **ToolBox · Clay Emanata + Reaction Choreography v1 · QUEUED AFTER RECOVERY-01**.
 
 No pseudo-human acceptance page was added.
 
