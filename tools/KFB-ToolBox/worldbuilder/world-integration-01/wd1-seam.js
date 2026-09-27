@@ -75,8 +75,10 @@ function clipPolyline(points,rect){
   return parts;
 }
 function clipPolygon(points,rect){
+  // Frozen WB-D1 water crop truth: keep the serialized closing point during
+  // Sutherland-Hodgman clipping, do not force-close afterwards, and round
+  // the resulting source coordinates to the fixture's 2-decimal precision.
   let poly=(points||[]).map(sourcePoint);
-  if(poly.length>1&&sameXZ(poly[0],poly.at(-1)))poly.pop();
   const edges=[
     {in:p=>p.x>=rect.minX,x:(a,b)=>({x:rect.minX,z:a.z+(b.z-a.z)*(rect.minX-a.x)/(b.x-a.x)})},
     {in:p=>p.x<=rect.maxX,x:(a,b)=>({x:rect.maxX,z:a.z+(b.z-a.z)*(rect.maxX-a.x)/(b.x-a.x)})},
@@ -89,7 +91,7 @@ function clipPolygon(points,rect){
     for(const b of input){const bin=e.in(b);if(bin){if(!ain)poly.push(e.x(a,b));poly.push(b);}else if(ain)poly.push(e.x(a,b));a=b;ain=bin;}
   }
   if(poly.length<3)return[];
-  const out=poly.map(p=>({x:round3(p.x),z:round3(p.z)}));out.push({...out[0]});return out;
+  return poly.map(p=>({x:round2(p.x),z:round2(p.z)}));
 }
 async function getJson(url,data=null){
   if(data)return data;
@@ -129,10 +131,15 @@ function bakedCrop(normalized,crop){
   }
   const landuse=[],water=[];
   for(const l of normalized.features?.landuse||[]){
-    const c=centroid(l.polygon);
+    const sourcePoly=(l.polygon||[]).map(p=>({x:round2(p.x),z:round2(p.z)}));
+    if(sourcePoly.length&&inside(serializedVertexMean(l.polygon),crop)){
+      // Historical fixture keeps water-class surfaces in landuse too.
+      landuse.push({id:l.id,cls:l.class,poly:sourcePoly.map(w)});
+    }
     if(l.class==='water'){
-      const poly=clipPolygon(l.polygon,crop);if(poly.length)water.push({id:l.id,cls:l.class,poly:poly.map(w),src:poly.map(sourcePoint)});
-    }else if(inside(c,crop))landuse.push({id:l.id,cls:l.class,poly:l.polygon.map(w)});
+      const poly=clipPolygon(l.polygon,crop);
+      if(poly.length)water.push({id:l.id,cls:l.class,poly:poly.map(w),src:poly.map(sourcePoint)});
+    }
   }
   return{buildings,roads,landuse,water};
 }
