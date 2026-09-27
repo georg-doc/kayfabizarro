@@ -4,7 +4,7 @@
   "status": "R5_LOCAL_PLAYABILITY_CANDIDATE",
   "repository": "georg-doc/kayfabizarro",
   "branch": "work/world-m2a-playable-r5-2026-09-27",
-  "implementationCommit": null,
+  "implementationCommit": "b0142b3540728afac80a6ef9b15315fd7089a5fe",
   "publicationCommit": null,
   "stageEntry": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
   "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/",
@@ -54,13 +54,23 @@
     "publication": "PUBLIC_VERIFIED"
   },
   "r5": {
-    "outcome": "LOCAL_PLAYABILITY_CANDIDATE",
+    "outcome": "LOCAL_PLAYABILITY_AND_FRAME_TARGET_PASS",
     "inherits": "R4 public candidate and adaptive quality",
     "changes": [
       "vehicle physics pre-settled before first visible frame",
       "walk pace-up 0.32 s, cadence 2.15, acceleration 8, deceleration 10",
       "real walk/sprint/offroad browser proof"
     ],
+    "walkSpeedMps": 1.41,
+    "sprintSpeedMps": 2.99,
+    "initialVehicleContacts": 4,
+    "initialVehicleGroundGapM": 0.003,
+    "offroadProofDistanceM": 12.67,
+    "walkP95Ms": 16.8,
+    "driveP95Ms": 16.8,
+    "packageChecks": "27/27 PASS",
+    "browserChecks": "38/38 LOCAL PASS",
+    "playabilityProof": "PASS",
     "publication": "NOT_PUBLISHED"
   },
   "sources": {
