@@ -46,3 +46,6 @@
 - Paket 26/26 und Browser Desktop/schmal 38/38 PASS;
 - p95 Idle/Walk/Drive jeweils 16,7 ms, damit Ziel ≤ 33,3 ms lokal bestanden;
 - Kandidat als eigener Branch gesichert; Public-Stage erst im nächsten Publication-Gate.
+- exakt diesen R4-Unterordner auf `cloudflare-live@2e1978821a043cf604c8bc556493cae282a87a86` veröffentlicht;
+- feste Cloudflare-Stage danach erneut Desktop + schmal mit **38/38 PASS** geprüft; keine Seiten-, Request- oder HTTP-Fehler;
+- Produktstatus auf `PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING` gesetzt.

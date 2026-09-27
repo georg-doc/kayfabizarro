@@ -5,12 +5,13 @@
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
   "sourceBranch": "work/world-m2a-adaptive-quality-r4-2026-09-27",
   "implementationHead": "1d803d177789fa834c5165fe36caa12fc26fe7c7",
-  "publicationHead": "afc5841abcb6ce057080618ab4aba36a4831bf3a",
-  "visibility": "PUBLIC_STAGE_FAILURE_EVIDENCE",
-  "reviewState": "R4_PERFORMANCE_PASS__PUBLICATION_PENDING",
+  "publicationHead": "2e1978821a043cf604c8bc556493cae282a87a86",
+  "visibility": "PUBLIC_STAGE_R4_CANDIDATE",
+  "reviewState": "R4_PUBLIC_VERIFIED__HUMAN_FREEPLAY_PENDING",
   "automatedEvidence": [
     "R4 package 26/26",
     "R4 local browser 38/38",
+    "R4 public browser 38/38 on fixed Cloudflare Stage",
     "Idle/Walk/Drive p95 16.7/16.7/16.7 ms",
     "0 page/request/HTTP errors; quality transition guard PASS"
   ],
@@ -22,5 +23,5 @@
   "deferred": [
     "boulder/prop shadow and bright-edge artifact"
   ],
-  "next": "Publish the measured R4 candidate to the fixed Stage and run one human free-play; then FACADE-DONOR-01 for real instanced facade parts."
+  "next": "Run one human free-play on the public R4 candidate; then FACADE-DONOR-01 for real instanced facade parts."
 }
