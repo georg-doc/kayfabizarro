@@ -1208,17 +1208,18 @@ Exactly one next gate:
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
 # CURRENT UPDATE · WORLD MOBILITY M1 + TOOLBOX RECOVERY-01 · 2026-09-27
 
-Status: **SOURCE SYNC COMPLETE · NO GEORG TASK · PUBLIC HUB NOT REBUILT**
+Status: **HIRNWELT H0 INTEGRATED · SOURCE SYNC COMPLETE · NO GEORG TASK · PUBLIC HUB NOT REBUILT**
 
 - World/Clay direction remains Georg `PROCEED PASS`.
-- New productive World candidate: PR #249, `work/world-mobility-m1-2026-09-27@0f9139c523cc6968b0a64551aed0a6fa88040a09`.
+- Productive World candidate: PR #249, `work/world-mobility-m1-2026-09-27@40037597485436e185f129091be908786925341d`.
 - M1 removes the rejected folded track proxy and integrates the existing World Ground owner with the accepted Travel Ground/Flight router, 400-ms mode intent and actual Card Carrier.
-- Evidence: package 40/40; local desktop+narrow browser 40/40; zero page/console/request/HTTP errors.
+- Hirnwelt H0 is implemented rather than merely planned: actual H0 material/relief modules, three surface scales, reversible Original/Knete, no runtime softening or SkinnedMesh preprocessing.
+- Evidence: package 43/43; local desktop+narrow browser 40/40; zero page/console/request/HTTP errors.
 - The exact 41-file M1 package is preserved at `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`.
 - Three reads of the exact pages.dev route, including an explicit `index.html` cache-buster, returned the general KayfaBizarro website instead of the M1 source marker. Classification: `PUBLIC_ROUTE_FALLBACK`; no `PUBLIC_VERIFIED` claim and no Georg review task.
-- Next World slice is `WORLD-TRACK-CORE-M2`: consume the real Race Track Core; no replacement geometry or second physics owner.
+- Next World slice is `WORLD-TRACK-CORE-M2`: consume the real Race Track Core and add one physically modeled curb/sidewalk city cell; no replacement track geometry or second physics owner.
 - New ToolBox session-cut input is routed to `TOOLBOX Production-02 RECOVERY-01`: 27/28 current selftest, Feature-Parity Matrix first, then one source-backed restoration.
-- H0 Hirnwelt is now the accepted KlayfaBizarro style donor. Its actual soften/material/relief modules and KayKit-facade method are bound into WORLD-TRACK-CLAY-M2; D2 is selected, H1/M1 remain sidequests.
+- H0 Hirnwelt is the accepted and now integrated KlayfaBizarro style donor. D2 is implemented for World materials/relief; physical facade/street preprocessing remains in M2. H1/M1 remain sidequests.
 - Public Domain Pool is now correctly closed as merged/public/live-registry verified; bulk import remains not started.
 - No generated Hub root or Cloudflare publication changed in this source checkpoint.
 

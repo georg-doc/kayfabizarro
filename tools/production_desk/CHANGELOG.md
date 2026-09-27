@@ -505,3 +505,12 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Preserved the exact 41-file M1 package on `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`.
 - The fixed Stage URL returned the general KayfaBizarro site on three browser reads instead of the M1 marker; status is `PUBLIC_ROUTE_FALLBACK`, not `PUBLIC_VERIFIED`.
 - Routing repair remains an internal Publication-owner task. It is not a product Human Gate and does not reopen the rejected proxy-track direction.
+
+## 2026-09-27 · Hirnwelt H0 productive World integration
+
+- PR #249 advanced to exact head `40037597485436e185f129091be908786925341d`; runtime integration commit `52027a5d4701e284b49e5b9b106ce18596050de8`.
+- Accepted H0 material and relief now run on the existing World surfaces in three scales; Original/Knete remains reversible.
+- Package/owner proof advanced to 43/43; desktop+narrow browser remains 40/40 PASS with zero page/console/request/HTTP errors.
+- H0 runtime softening and SkinnedMesh preprocessing remain excluded; geometry softening is offline/cached only.
+- M2 is narrowed to the real Track Core plus physical street-cell geometry: carriageway, jointed bright curbs, sidewalk and terrain transition.
+- Public route remains `PUBLIC_ROUTE_FALLBACK`; no blind redeploy or false live claim.

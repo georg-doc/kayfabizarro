@@ -21,7 +21,7 @@ Der nächste Fortschritt wird an **spielbaren Zuständen** gemessen, nicht an de
 ### Produktiver Kandidat · WORLD-MOBILITY-M1
 
 **Executor:** Work · Sol High
-**PR:** #249 · `work/world-mobility-m1-2026-09-27@0f9139c5`
+**PR:** #249 · `work/world-mobility-m1-2026-09-27@40037597`
 
 - gefalteter Track-Dummy entfernt;
 - bestehende World-r2-Bewegung und Bodenlogik bleiben Ground-Owner;
@@ -29,8 +29,10 @@ Der nächste Fortschritt wird an **spielbaren Zuständen** gemessen, nicht an de
 - zweiter frischer Space innerhalb von 400 ms = Flight;
 - echter Travel-Card-Carrier statt Ersatz-Flugobjekt;
 - ein Movement-/Camera-Owner pro Modus;
-- Original/Clay reversibel;
-- Paket **40/40**, lokaler Browser Desktop+schmal **40/40 PASS**.
+- Original/Knete reversibel;
+- akzeptierter Hirnwelt-H0-Look auf Terrain, Straße, Gehweg, Dächern und Fassaden in drei Reliefmaßstäben;
+- keine Laufzeit-Weichzeichnung und kein Clay-Preprocessing auf Figuren;
+- Paket **43/43**, lokaler Browser Desktop+schmal **40/40 PASS**.
 
 Der exakte Kandidat wurde unter `cloudflare-live@e10745de` verpackt. Die feste Stage-Route liefert jedoch weiterhin die allgemeine KayfaBizarro-Website statt M1. Das ist ein **Publication-/Routing-Fehler**, kein Produkt-Gate und keine neue Aufgabe für Georg. Bis zur einmaligen Reparatur gilt ausdrücklich nicht `PUBLIC_VERIFIED`.
 
@@ -46,7 +48,7 @@ Ziel:
 - den tatsächlichen Race Track Core als bestehenden Owner konsumieren;
 - genau ein echtes Track-Rezept in Hürth platzieren;
 - Ground/Flight und Original/Clay aus M1 beibehalten;
-- H0 Hirnwelt als Georg-akzeptierten Style-Donor mit den echten Clay-Modulen konsumieren;
+- den bereits integrierten Hirnwelt-H0-Look beibehalten und nicht erneut bauen;
 - KayKit-Häuser unverändert als Quellen behalten und ihre weichen/eingedellten Fassaden durch Vorstufe + Relief erzeugen;
 - drei Materialmaßstäbe verwenden: grob für Häuser, mittel für Gelände/Straße/Gehweg, fein für kleine Props/Figuren;
 - eine komplette Stadtzelle aus Knet-Fahrbahn, hellem Fugen-Bordstein, Gehweg, Grünübergang, Hauseingängen und Zebrastreifen bauen;

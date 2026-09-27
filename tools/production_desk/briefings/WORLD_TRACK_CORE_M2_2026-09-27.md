@@ -6,7 +6,8 @@
 
 ## Eingänge
 
-- World Mobility M1: PR `#249`, Head `0f9139c523cc6968b0a64551aed0a6fa88040a09`
+- World Mobility M1: PR `#249`, Head `40037597485436e185f129091be908786925341d`
+- Hirnwelt-H0 Runtime-Integration: `52027a5d4701e284b49e5b9b106ce18596050de8` · 43/43 Paket + 40/40 Browser PASS
 - M1 publication evidence: `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`; die feste Route fällt derzeit auf die allgemeine Website zurück und ist **kein** akzeptierter Testlink
 - World r2 Runtime: `58028b07d7618926c40ffaec3bd4053dc88c0efd`
 - Travel Modes 01 Runtime: `f5ea32f817403cda0e30a426e70f37db8ce03d66`
@@ -22,11 +23,11 @@ GitHub-Stand unmittelbar vor dem Bau erneut prüfen. Der Race-Owner darf nicht d
 
 In derselben Hürth-/Clay-Welt eine echte, vom Race Track Core gelieferte Strecke und eine zusammenhängende **KlayfaBizarro-Stadtzelle** laden und aus Ground/Flight beurteilen können. OSM liefert grobe Architektur und Anschlusspunkte; ein guter Chill-&-Fun-/Stunt-Verlauf ist wichtiger als sklavische Kartentreue.
 
-H0 ist Georgs akzeptierter Look-Donor. Nicht den Screenshot nachbauen: die drei echten Module übernehmen. KayKit-Häuser bleiben Quellmodelle; weiche Türen, schiefe/eingedellte Fenster und gedrückte Fassaden entstehen aus Vorstufe + Material.
+H0 ist Georgs akzeptierter Look-Donor und in M1 bereits als echtes Material/Relief integriert. Nicht neu nachbauen und nicht durch ein anderes Clay-System ersetzen. KayKit-Häuser bleiben Quellmodelle; die noch fehlende physische Fassaden-/Straßenform entsteht offline oder einmalig gecacht, nicht in einer 40-Sekunden-Laufzeit-Vorstufe.
 
 ## Kleinstes spielbares Ergebnis
 
-- M1 Ground/Flight und Clay unverändert weiterverwenden;
+- M1 Ground/Flight und den integrierten Hirnwelt-H0-Look unverändert weiterverwenden;
 - genau ein echtes Track-Rezept über dessen Source-/Runtime-Vertrag laden;
 - mehrere bereits definierte Track-Breiten sichtbar behalten;
 - Track-Anfang, Track-Ende und spätere Anschlussstellen explizit markieren;
