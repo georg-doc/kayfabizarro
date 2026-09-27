@@ -1158,8 +1158,16 @@ Prepared catalog:
 - shared geometry/materials, pooling/instancing, stable seeded handmade variation;
 - no dirty facial cast-shadows.
 
-First Claude Design integrated proof after the current ToolBox Recovery gate:
-**tears + hearts + shock rays on one real current Resident**. Exact current face, repo-exact 2D Emanata donor and an exact ClayBound reference must each be shown in isolation before integration.
+Additive **Resident Reaction Choreography** is now part of the same slice:
+- **17 core semantic in-game event recipes**;
+- **15 semantic animation-clip roles**;
+- one event coordinates source-backed animation clip → body/Parts-as-Actors → EyeRig/brows → mouth/active Viseme → Ear Dangle → Emanata → recovery;
+- one existing mixer remains authoritative; reaction root motion is consumer-owned/locked by default;
+- current Pet `react-positive/react-negative`, Production semantic reaction pads, KFB Motion Library holds and Resident Atlas bone-subtree clip layering are source evidence;
+- missing one-shot clips remain `SOURCE_REQUIRED` or use existing procedural parts/pose fallback, never a hidden invented clip.
+
+First Claude Design integrated proof after the current ToolBox Recovery gate now covers:
+**surprise · social.positive · damage.light · speech.emphasis during Talk · jump.land**, with tears/hearts/shock and the wider Emanata grammar available where semantically appropriate. Exact current face, repo-exact 2D Emanata donor and an exact ClayBound reference must each be shown in isolation before integration.
 
 Current blocker: the newest Production-02 Return still sets **RECOVERY-01 before any further Studio expansion**. Therefore this is a ready next slice, not an implementation or Stage claim.
 
@@ -1167,7 +1175,7 @@ Reserved Stage route, **NOT DEPLOYED**:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-emanata-v1/`
 
 Exactly one next gate:
-**close/clear ToolBox RECOVERY-01 → run the integrated Claude Design tears/hearts/shock proof.**
+**close/clear ToolBox RECOVERY-01 → run the combined Reaction Choreography + Clay Emanata proof with source-backed animation clips.**
 
 ## 2026-09-27 · TRAVEL-MODES-01 · Movement Mode Router public human gate
 
