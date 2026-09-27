@@ -1,7 +1,7 @@
 # KFB Chat Production · Living Masterplan
 
 Status: CURRENT LEAD PLAN
-Updated: 2026-09-13
+Updated: 2026-09-27
 Owner: Georg / KFB
 
 This document is the durable lead-level plan for the KFB ChatGPT/Astra + Claude Design production line. It is not an implementation SSOT. Project repositories remain authoritative for their code, current branches, tests and returns.
@@ -60,6 +60,21 @@ Each active job/project has one self-contained folder containing its briefing/do
 The older public path `georg-doc/kayfabizarro/travel/wip/travel_globe_wsa/_inbox/` is historical staging only and should not receive new non-public coordination packages.
 
 ## Current priorities
+
+### P0 · T3 Knetstrang → production transitions + Clay VFX
+
+Accepted base: `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 - TUNE/KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27/` on `main@692240b5`.
+
+Current production packet: `workflows/KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27/START_HERE.md`.
+
+Sequence:
+
+1. Blender MCP B0 turns the T3 form language into measured, socketed modules.
+2. Claude Design T4 authors one real-context transition/VFX atlas from GitHub-only sources.
+3. Work integrates both into the actual WorldBuilder/Racer and measures playability/performance.
+4. Only after T4: separate Design jobs add Pit Lane + Track on/off ramps and source-backed Claymation billboards with the existing media/embed engine.
+
+Transitions are layered over distance across track, markings, barrier, pit lane, sidewalk/city and nature. T1/T2 are not reopened as a visual direction. No standalone proxy review gate blocks the integration.
 
 ### P1 · Travel MVP1 Bath Flight
 
