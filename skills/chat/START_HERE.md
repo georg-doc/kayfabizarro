@@ -1159,12 +1159,13 @@ Prepared catalog:
 - no dirty facial cast-shadows.
 
 Additive **Resident Reaction Choreography** is now part of the same slice:
-- **17 core semantic in-game event recipes**;
-- **15 semantic animation-clip roles**;
+- **18 core semantic in-game event recipes**;
+- **16 semantic animation-clip roles**;
 - one event coordinates source-backed animation clip → body/Parts-as-Actors → EyeRig/brows → mouth/active Viseme → Ear Dangle → Emanata → recovery;
 - one existing mixer remains authoritative; reaction root motion is consumer-owned/locked by default;
 - current Pet `react-positive/react-negative`, Production semantic reaction pads, KFB Motion Library holds and Resident Atlas bone-subtree clip layering are source evidence;
 - missing one-shot clips remain `SOURCE_REQUIRED` or use existing procedural parts/pose fallback, never a hidden invented clip.
+- **Brick Fish / Red Herring is included as `social.prop_hit`**: default NPC reaction is physical BONK/recoil followed by `heart` Emanata; buddy-banter, argument and Kayfabe-performance can override the presentation, while real harm must be emitted as `damage.*` by the consumer. Heart Emanata is visual punctuation, not relationship state.
 
 First Claude Design integrated proof after the current ToolBox Recovery gate now covers:
 **surprise · social.positive · damage.light · speech.emphasis during Talk · jump.land**, with tears/hearts/shock and the wider Emanata grammar available where semantically appropriate. Exact current face, repo-exact 2D Emanata donor and an exact ClayBound reference must each be shown in isolation before integration.
