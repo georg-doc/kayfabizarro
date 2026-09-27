@@ -1,3 +1,18 @@
+# CURRENT UPDATE · MVP MASTERPLAN TAB · 2026-09-27
+
+Status: **HUB CANDIDATE · LOCAL BROWSER PASS · PUBLIC PENDING**
+
+- added `/kfb-hub/masterplan/` as a compact interactive production-order view inside the existing Hub navigation;
+- did not create another Production Desk or replace the current Hub UI;
+- removed the already-rejected Graveyard lane from visible human-gate rendering while preserving its historical source;
+- linked the current World M2, ToolBox P03/BODY-02, Track T2 and Combat next gates;
+- added bounded briefs under `skills/chat/workflows/KFB_MVP_MASTERPLAN_2026-09-27/`;
+- P03-ADOPT-01 lives separately on Draft PR #263 at exact head `e12da329be6a061f058702319ea5367a5a329c0f`.
+
+Local browser: Hub contains the Masterplan tab/focus line, Graveyard is absent from visible gates, Masterplan filters correctly, 420-px layout has no horizontal overflow and the console is clean. No root/Cloudflare publication or Live claim yet. Next gate: exact GitHub checkpoint.
+
+---
+
 # CURRENT UPDATE · CLAY PRIORITY CORRECTION · 2026-09-26
 
 Status: **TEXTURE SECONDARY · BLENDER LANE PARALLEL · NOT MVP-BLOCKING**

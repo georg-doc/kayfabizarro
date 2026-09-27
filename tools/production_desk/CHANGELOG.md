@@ -1,3 +1,11 @@
+## 2026-09-27 · Compact MVP Masterplan tab
+
+- added an interactive Masterplan at `/kfb-hub/masterplan/` using the existing Hub visual language;
+- added a direct Hub navigation tab and current MVP focus line;
+- kept Graveyard out of visible human-gate rendering, consistent with the previously recorded archive decision;
+- linked the bounded World M2, Track T2, Combat Next and ToolBox BODY-02 briefs;
+- no registry owner, runtime, root publication or Live state changed.
+
 ## 2026-09-26 · Clay texture made non-blocking
 
 ## 2026-09-27 · Decision sync 00:44 + active production updates
