@@ -61,6 +61,26 @@ The older public path `georg-doc/kayfabizarro/travel/wip/travel_globe_wsa/_inbox
 
 ## Current priorities
 
+### P0 · World M2A R5 · public playability gate
+
+The fixed Stage now contains the R5 ground/movement/offroad candidate. Public browser, playability and performance proofs pass; the next product gate is Georg's real free-play, not another diagnostic microsite. Clip/feel tuning follows only from observed play.
+
+Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/`
+
+### P0b · Clay production system · ToolBox + Resident Atlas + Color/Mood
+
+Current packet: `workflows/KFB_CLAY_TOOLBOX_RESIDENT_COLOR_2026-09-28/START_HERE.md`.
+
+Sequence:
+
+1. extend ToolBox Production-03 with the existing H0/K1/T3 Clay material/profile controls;
+2. use Resident Atlas as the measured Character/Pose/Seat-Fit authoring surface;
+3. prove FrizzleBob Driver + `kart-oobi`, with GothGirl as Rig_Medium countercheck;
+4. export shared Clay Look, Seat Fit and Palette/Mood JSON profiles;
+5. let World/Racer/Combat consume them through owner-preserving adapters.
+
+The color hierarchy is Golden Base → Seed → Biome → Zone/Card → Time/Weather → Interaction Accent. KayKit/Kenney colors are mapped to semantic roles, not globally tinted.
+
 ### P0 · T3 Knetstrang → production transitions + Clay VFX
 
 Accepted base: `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 - TUNE/KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27/` on `main@692240b5`.

@@ -32,6 +32,14 @@ The accepted visual base is T3 `Knetstrang` on `main@692240b5`. For the next Ble
 
 It provides one shared staggered transition contract across road surface, markings, barrier, pit lane, curb/sidewalk and nature plus biome/event-specific clay-particle VFX. T1/T2 remain rejected visual history. Blender owns geometry/sockets/export; Design owns look/readability/VFX presets; later Work integration owns adoption into the real WorldBuilder/Racer.
 
+## 2026-09-28 · CURRENT CLAY PRODUCTION BRIEF · ToolBox + Resident Atlas + Color/Mood
+
+For Clay material authoring, Character/Seat-Fit work and the shared palette/biome/light system, start at:
+
+`skills/chat/workflows/KFB_CLAY_TOOLBOX_RESIDENT_COLOR_2026-09-28/START_HERE.md`
+
+It extends the existing ToolBox Production-03 and Resident Atlas owners. It does not create a new Studio, Vehicle runtime or World owner. H0/K1/T3 material v8/profiles v2 and the existing OKLCH palette generator are the required donors.
+
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
