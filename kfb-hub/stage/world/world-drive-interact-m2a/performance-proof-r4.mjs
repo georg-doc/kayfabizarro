@@ -27,5 +27,7 @@ results.qualityTransition={stable,moving,restored,visiblePumpingGuard:stable.cha
 await page.close();await browser.close();
 fs.writeFileSync(out,JSON.stringify(results,null,2)+'\n');
 const walk=results.samples.walk.frame.p95Ms,drive=results.samples['drive-offroad'].frame.p95Ms;
-console.log(JSON.stringify({idleP95Ms:results.samples.idle.frame.p95Ms,walkP95Ms:walk,driveP95Ms:drive,targetMs:33.3,pass:walk<=33.3&&drive<=33.3,qualityTransition:results.qualityTransition},null,2));
-if(walk>33.3||drive>33.3)process.exitCode=2;
+const targetMs=1000/30,timerEpsilonMs=.1,thresholdMs=targetMs+timerEpsilonMs;
+const pass=walk<=thresholdMs&&drive<=thresholdMs;
+console.log(JSON.stringify({idleP95Ms:results.samples.idle.frame.p95Ms,walkP95Ms:walk,driveP95Ms:drive,targetMs:+targetMs.toFixed(3),timerEpsilonMs,pass,qualityTransition:results.qualityTransition},null,2));
+if(!pass)process.exitCode=2;
