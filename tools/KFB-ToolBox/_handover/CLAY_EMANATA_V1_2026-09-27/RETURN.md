@@ -8,7 +8,7 @@ Status: **CONCEPT + CLAUDE DESIGN HANDOFF READY · RUNTIME NOT IMPLEMENTED · ST
 - Branch: `chatgpt-web/toolbox-clay-emanata-v1-2026-09-27`
 - Draft PR: **#256** · `https://github.com/georg-doc/kayfabizarro/pull/256`
 - Current main reconciled immediately before Return: `2be8d874cd43a05b96a78d628911d6288df3276a`
-- Verified integrated branch head before Return metadata: `f126720a1f3c3e8fecaf6e7fb2fb914b44a0570a`
+- Verified integrated branch head before this Return metadata update: `cfc3851cc6ca1ae1182a569b0bcdf3ae51f2b06b`
 - Merge/Live: **NOT AUTHORIZED / NOT PERFORMED**
 
 The final branch head after this Return commit is verified by the Web/GitHub handoff; a commit cannot embed its own final SHA without changing itself.
@@ -64,9 +64,9 @@ A loaded path/URL is not donor proof.
 - current Production-02 Return contains `RECOVERY-01`: **PASS**;
 - current-main reconciliation immediately before Return: **PASS**;
 - Reaction Choreography JSON parse: **PASS**;
-- core reaction event recipes: **17**;
-- semantic reaction clip roles: **15**;
-- reaction owner/source reads: **7/7 PASS**;
+- core reaction event recipes: **18**;
+- semantic reaction clip roles: **16**;
+- reaction owner/source reads: **9/9 PASS**;
 - first integrated reaction proof events: **5**;
 - runtime tests: **NOT RUN** — runtime unchanged;
 - browser visual tests: **NOT RUN** — no candidate runtime/Stage exists;
@@ -133,6 +133,42 @@ The resulting performance stack is:
 Source checks added: **7/7 PASS** for EyeRig, Face, Body Shape, PoseRig, Motion Library, Resident Atlas subtree-layer evidence and Ear Dangle PR #214.
 
 No runtime/browser/visual PASS is claimed; implementation still waits behind **RECOVERY-01**.
+
+## Additive update · Brick Fish / Town context
+
+The Town Brick Fish / Red Herring interaction is now part of the Reaction Choreography contract without becoming Combat or a second social-state system.
+
+Source pins:
+- Town encounter/attitude source: `skills/chat/town/LIVING_KFB_TOWN.md` @ main blob `a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61`;
+- Brick Fish Prop-Toss source: Draft PR #254 @ `79d7c18a8f07b99efe8276211a9cda527ac2f2ea`;
+- Brick Fish reference blob: `99205974c8fcc08ef41e6f66edcdd495f5e81cef`.
+
+New semantic:
+- `social.prop_hit` = non-damaging social projectile contact;
+- **NPC + Brick Fish + no stronger context → physical BONK/recoil first, then `heart` Emanata**;
+- the heart is transient visual punctuation only, not relationship points, an affection meter, reward currency or UI state;
+- consumer-supplied context can resolve the same hit as `affectionate`, `buddy-banter`, `argument` or `kayfabe-performance`;
+- a staged Kayfabe hit may use a deliberately large physical **sell** without implying hostility;
+- actual harm must be emitted by the consumer as `damage.light` / `damage.heavy`;
+- Reaction Choreography may forward a semantic dialogue cue, but existing ChatterBox/Triplet/Kayfabulation remains the dialogue owner;
+- prop flight, impact truth, Brick Fish BONK/SPLAT/POP deformation and retaliation availability remain with the prop/world/social interaction owners.
+
+Contract checks after the update:
+- Reaction JSON parse: **PASS**;
+- Source JSON parse: **PASS**;
+- core events: **18**;
+- clip roles: **16**;
+- first integrated proof events: **5** unchanged;
+- Brick Fish context variants: **6**;
+- default NPC Brick Fish Emanata: **heart**;
+- real-harm remap: **damage.light / damage.heavy**;
+- Town + Brick Fish source reads added: **2/2 PASS**, bringing reaction owner/context source reads to **9/9 PASS**;
+- Hub card count: **1**;
+- runtime files changed by this concept PR: **0**.
+
+The real Brick Fish model is **not** added to the first post-RECOVERY-01 proof. Its later visual integration remains `BRICK-FISH-TOSS-01` in the real Town/WorldBuilder receiver and must use a source-proven asset.
+
+
 
 ## Exactly one next gate
 **Close / clear ToolBox RECOVERY-01, then run the combined Reaction Choreography + Clay Emanata proof on the real current Resident, including source-backed animation clips.**
