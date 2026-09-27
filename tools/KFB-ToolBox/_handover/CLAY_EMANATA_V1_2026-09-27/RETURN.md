@@ -89,5 +89,43 @@ Reserved only:
 
 Status: **NOT DEPLOYED · NOT BROWSER-VERIFIED · NOT LIVE**.
 
+
+
+## Additive update · Reaction Choreography + Animation Clips
+
+Georg extended the same slice to cover coordinated **core in-game reactions**, explicitly including animation clips.
+
+New durable files:
+
+- `REACTION_CHOREOGRAPHY.md`
+- `reaction-choreography.v0.1.json`
+
+The resulting performance stack is:
+
+`semantic game event → source-backed animation clip → body/parts-as-actors → EyeRig/brows → mouth/Viseme → ears/secondary chains → Clay Emanata → recovery`
+
+### Key decisions
+
+- Animation clips are the primary skeletal reaction layer.
+- Exactly one existing mixer remains authoritative.
+- Existing subtree clip layering may be reused for upper-body reactions over a seated/locomoting base.
+- Reaction root motion defaults to consumer-owned/locked.
+- Active Talk/Viseme keeps mouth ownership; other reaction layers perform around it.
+- Ear Dangle remains the one ear/secondary-chain owner and receives semantic pose/impulse after mixer/body motion.
+- `body-shape.v1.js` remains morphology only, not an emotion animator.
+- Missing reaction clip roles are `SOURCE_REQUIRED` or use source-backed procedural Parts-as-Actors fallback; no fabricated hidden clip.
+- Recovery returns to the current gameplay state, e.g. Run after a light hit while running, not blindly to Idle.
+
+### Current semantic contract
+
+- **17 core event recipes**
+- **15 semantic reaction clip roles**
+- **5 first integrated proof events**:
+  `surprise`, `social.positive`, `damage.light`, `speech.emphasis`, `jump.land`.
+
+Source checks added: **7/7 PASS** for EyeRig, Face, Body Shape, PoseRig, Motion Library, Resident Atlas subtree-layer evidence and Ear Dangle PR #214.
+
+No runtime/browser/visual PASS is claimed; implementation still waits behind **RECOVERY-01**.
+
 ## Exactly one next gate
-**Close / clear ToolBox RECOVERY-01, then run the integrated Claude Design tears + hearts + shock-rays proof on the real current Resident/Face system.**
+**Close / clear ToolBox RECOVERY-01, then run the combined Reaction Choreography + Clay Emanata proof on the real current Resident, including source-backed animation clips.**
