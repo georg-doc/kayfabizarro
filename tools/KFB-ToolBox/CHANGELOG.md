@@ -17,8 +17,13 @@ Prepared the post-recovery implementation brief. First integrated proof is **tea
 ### BOUNDARY / GATE
 No ToolBox runtime, Stage route or Live surface changed in this concept slice. The newest Production-02 Return still requires **RECOVERY-01 before further Studio expansion**. Reserved future Stage route: `/kfb-hub/stage/toolbox/clay-emanata-v1/`.
 
+### ADDITIVE · Reaction Choreography + animation clips
+Extended the same Clay Emanata slice with a source-pinned Resident Reaction Choreography contract. One semantic game event coordinates the existing animation mixer, body/Parts-as-Actors accents, EyeRig/brows, mouth/active Viseme, Ear Dangle and Clay Emanata, then recovers to the consumer-owned gameplay state.
+
+The machine-readable proposal defines **17 core event recipes**, **15 semantic reaction clip roles** and a five-event first integrated proof (`surprise`, `social.positive`, `damage.light`, `speech.emphasis`, `jump.land`). Animation clips are explicitly first-class: current Pet `react-positive/react-negative`, Production semantic pads, Motion Library state holds and Resident Atlas subtree layering are reused. Missing one-shot reaction clips remain `SOURCE_REQUIRED` or fall back through existing pose/parts owners; no second mixer or fabricated generic clip.
+
 ### NEXT
-Close/clear **RECOVERY-01**, then run the integrated three-family Claude Design proof and rehome the verified Session Cut through Web/GitHub.
+Close/clear **RECOVERY-01**, then run the combined Reaction Choreography + Clay Emanata proof and rehome the verified Session Cut through Web/GitHub.
 
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
