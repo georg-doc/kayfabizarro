@@ -551,26 +551,26 @@
     {
       "id": "worldbuilder-mobility-mvp",
       "bucket": "CAN_START",
-      "title": "World M2A R1 · Boden repariert · Renderbudget NEXT",
-      "what": "R1 hat den vollständigen 716 × 716-m-Fahrboden, das Fahrzeug-Grounding und den Kaltstart repariert. Auto: 4/4 Radkontakte, 2–3 mm Ground Gap, Offroad-Probe ohne Fall. Der Stand bleibt dennoch unveröffentlicht: Zu Fuß/Fahrt liegen bei p95 84–89 ms statt ≤33,3 ms. Der eigentliche Renderpfad ist der Engpass, nicht Movement, World-Update oder UI.",
+      "title": "World M2A R2 · Renderdiagnose fertig · City LOD NEXT",
+      "what": "R1 hat Boden, Fahrzeugkontakt und Kaltstart repariert. R2 bestätigt echte Apple-Metal-Beschleunigung und zeigt: Stadtwände, Dächer und Fenster tragen fast die gesamte sichtbare Geometrie; weder Details ausblenden noch den Knet-Shader vereinfachen verbessert die Bildrate ausreichend. R2 bleibt unveröffentlicht.",
       "provider": "Work · Sol High · bestehende World-M2A-Runtime",
       "yourAction": "",
-      "waitingFor": "WORLD-M2A-R2: Grafikbeschleunigung/Renderpfad einmal verifizieren und danach genau eine sichtbare Stadt-LOD-/Shadow-Budget-Lösung. Keine Features, Tracks, HUDs oder neue Assets.",
+      "waitingFor": "WORLD-M2A-R3: genau eine echte leichte Stadt-Fernstufe bauen; volle Fassaden/Fenster nur im Nahbereich. Kein weiterer Clay-Qualitätsabbau und keine neuen Features.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 258,
-      "branch": "work/world-m2a-playability-r1-2026-09-27",
-      "expectedHead": "9e74fc792e6f00309e9f57f1d3ae4c46e1f0ee57",
+      "pr": 259,
+      "branch": "work/world-m2a-render-budget-r2-2026-09-27",
+      "expectedHead": "3e4cfc1f47408718a4fe751f641b61484483817c",
       "brief": {
-        "label": "World M2A-R2 · Render Budget",
-        "path": "tools/production_desk/briefings/WORLD_M2A_RENDER_BUDGET_R2_2026-09-27.md",
+        "label": "World M2A-R3 · City Shell LOD",
+        "path": "tools/production_desk/briefings/WORLD_M2A_CITY_SHELL_LOD_R3_2026-09-27.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": true
       },
       "review": {
         "label": "Öffentlicher M2A-Fehlerstand",
         "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
-        "sourceRef": "PR #258 · R1 candidate 9e74fc79 · contact/boot PASS · frame budget FAIL · candidate not published"
+        "sourceRef": "PR #259 · R2 candidate 3e4cfc1f · hardware PASS · render candidate NO GAIN · not published"
       }
     },
     {
