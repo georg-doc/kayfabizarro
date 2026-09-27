@@ -70,6 +70,69 @@
     "emanataRegistryPin": "PASS",
     "recoveryGateConfirmed": "PASS",
     "runtimeTests": "NOT_RUN - no runtime changed",
-    "browserVisual": "NOT_RUN - no runtime/Stage candidate exists"
+    "browserVisual": "NOT_RUN - no runtime/Stage candidate exists",
+    "reactionCatalogJsonParse": "PASS",
+    "reactionCoreEventCount": 17,
+    "reactionClipRoleCount": 15,
+    "animationClipLayerIncluded": true
+  },
+  "reactionChoreography": {
+    "docs": [
+      "tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/REACTION_CHOREOGRAPHY.md",
+      "tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/reaction-choreography.v0.1.json"
+    ],
+    "owners": {
+      "eyeRig": {
+        "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+        "blobSha": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+      },
+      "face": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/kfb-lib/face-mount.v1.js",
+        "blobSha": "583807bd63413954c1d36d7e032c61961007f667"
+      },
+      "bodyShape": {
+        "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/kfb-lib/body-shape.v1.js",
+        "blobSha": "60f2a57f4f9b846fbbf73edb05646db9a0f143ba"
+      },
+      "poseRig": {
+        "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js",
+        "blobSha": "a418fe550d66afea51dd95cf3229a13a343e1957"
+      },
+      "earDangle": {
+        "path": "tools/KFB-ToolBox/ear-rig/ear-dangle.v1.js",
+        "pr": 214,
+        "headSha": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+        "blobSha": "6bb4531a2f5ad47d0c5eccde6cd97951a95a28c9"
+      },
+      "motionLibrary": {
+        "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+        "blobSha": "694d797702d126e71a724eab137197bf2a8e6914"
+      },
+      "subtreeLayering": {
+        "path": "tools/resident_atlas_s6/github.md",
+        "fact": "S6 proves clip layering along a bone subtree (Sit_Chair_Idle + Waving)"
+      }
+    },
+    "currentClipEvidence": {
+      "pet": [
+        "react-positive",
+        "react-negative",
+        "celebrate",
+        "talk"
+      ],
+      "bipedSemanticPads": [
+        "react.cheer",
+        "react.neg"
+      ],
+      "motionLibraryStateHolds": [
+        "kfb_idle_happy_a",
+        "kfb_idle_laughing_a",
+        "kfb_idle_sad_a",
+        "kfb_idle_rejected_a",
+        "kfb_idle_injured_a",
+        "kfb_idle_defeat_a",
+        "kfb_locomotion_sad_walk_a"
+      ]
+    }
   }
 }
