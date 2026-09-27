@@ -1,6 +1,13 @@
 name: PD-POOL-01 four-source smoke
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/public-domain-pool-pd01.yml"
+      - "tools/public_domain/**"
+      - "media/public_domain/README.md"
   push:
     branches:
       - chatgpt-web/public-domain-pool-pd01-2026-09-27
