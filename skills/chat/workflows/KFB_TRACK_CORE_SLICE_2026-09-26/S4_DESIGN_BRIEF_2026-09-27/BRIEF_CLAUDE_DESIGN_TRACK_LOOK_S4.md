@@ -271,11 +271,99 @@ This explicitly supersedes any earlier reading of Kenney Racing, Kenney City Roa
 - **Tunnel portals:** should look pressed/built into the clay world while retaining the S8 tunnel clearance and portal-match truth.
 - **Cosmic:** wait for a pinned KFB donor rather than using generic neon sci-fi language.
 
-### 4A.7 · New required design evidence
+### 4A.7 · Patch-scatter transition grammar · no visible material gradients
+
+**Hard visual rule from Georg:** a biome or surface handoff must not read as a colour/alpha gradient. The underlying drivable surface remains the same continuous Track Core, while the visible material transition is built from **discrete clay patches / plates / blobs / pebbles / clumps / stamped pieces** whose distribution changes over route-space.
+
+Use deterministic scatter fields over arc length `s` and lateral road-space `u`. The transition recipe may vary:
+- target-patch coverage / source-remnant coverage;
+- patch radius / length / thickness;
+- clumping vs. isolated pieces;
+- rotation and controlled shape variation;
+- relief/depth and material family;
+- density falloff and negative space;
+- seed, so the same RouteRecipe reproduces the same transition.
+
+A typical handoff reads:
+
+```text
+SOURCE settled
+→ a few small TARGET clay patches appear
+→ TARGET patches become larger / denser while SOURCE breaks into smaller islands
+→ mixed seam zone with deliberate negative space
+→ a few small SOURCE remnants survive
+→ TARGET settled
+```
+
+This is a **coverage/scale/scatter transition**, not a smooth shader blend. Avoid transparent fades, one long texture lerp, noisy pixel dithering or a decal that merely hides a hard geometry seam. The pieces may overlap visually, but must not create a second collider, road plate or Z-fighting layer.
+
+Suggested clay vocabularies:
+- asphalt → dirt: broken asphalt/clay plates give way to packed-earth blobs, pebbles and wheel-rut relief;
+- asphalt → desert: hard road patches shrink while sand pads / dunes / pebble clumps take over;
+- forest floor → snow: brown/green ground islands become smaller while irregular snow clumps and sheets accumulate;
+- normal road → Cosmic: ordinary clay surface fragments yield to a **source-pinned** KFB cosmic insert/material family; no generic neon gradient;
+- wet/water context: damp clay/spray/puddle pieces may increase before a water crossing or water-track context, while actual drive/contact behaviour stays with Race/World.
+
+### 4A.7a · Couple surface patches to edge / biome logic
+
+The surface handoff and the outer road boundary belong to one recipe, but they do **not** have to change at the same metre.
+
+A landscape may use:
+- no barrier at all;
+- curb / verge;
+- guardrail;
+- low or catch fence;
+- tree avenue;
+- forest clearing;
+- soft ditch + berm;
+- open water edge;
+- canyon / cliff edge;
+- bridge parapet;
+- tunnel wall;
+- a future source-pinned Cosmic safe edge.
+
+The recipe therefore needs a surface-scatter state plus an edge/environment state. Their timings may lead or lag one another over `s`.
+
+Do not force every biome into a race barrier. A country road can dissolve into an avenue or clearing; a dirt route can be held by terrain alone; a Grand-Canyon-like section may deliberately expose the cliff edge if the Race safety/contact owner says the route supports it.
+
+### 4A.7b · Width independence
+
+The patch/scatter field must work on the accepted Racer widths and on continuous width changes:
+- STANDARD: 14.4 m;
+- WIDE / WB-W0 road: 18 m;
+- future parameter-driven widths.
+
+Define scatter in normalized lateral coordinates relative to the Track Core road/shoulder/runoff slots, never in one fixed mesh width. A STREET→DIRT or STREET→TRACK transition must survive a simultaneous width change without stretching the clay pieces into obvious bands.
+
+### 4A.7c · Required difficult POCs
+
+Treat these as the first high-value design probes, not as separate worlds:
+
+1. **HIGHWAY / OSM ROAD → DIRT TRACK → DESERT PISTE**  
+   Asphalt clay islands break apart into dirt clumps, stones and sand pads; curb/guardrail can withdraw into ditch/berm/open desert edge.
+
+2. **FOREST / EARTH → SNOW LANDSCAPE**  
+   Ground patches exchange by coverage/scale; tree density and edge treatment shift with the biome. No white colour fade.
+
+3. **NORMAL ROAD → COSMIC HIGHWAY → NORMAL ROAD**  
+   Same sockets, width and route truth. Cosmic surface/edge inserts arrive as discrete pressed pieces and retreat again. Exact Cosmic donor remains `SOURCE_REQUIRED` until pinned.
+
+4. **ROAD / TRACK → LONG WATER-CROSSING CONTEXT**  
+   Show how roadside ground, containment and props disappear/recompose around a long water section. Do not decide water-driving physics here; preserve the existing Track Core/contact owner.
+
+5. **URBAN / COMMERCIAL / INDUSTRIAL → COUNTRY ROAD / AVENUE / CLEARING**  
+   Building/prop density, lamps, lights, bins, mailboxes, vegetation and edge states recede in staggered beats while the same KFB road construction remains continuous.
+
+6. **OPEN LAND → CANYON / CLIFF EDGE**  
+   Prove a boundary that may intentionally have no conventional barrier, plus an alternate guarded version. Readability/safety must come from the existing edge/contact contract, not from a generic fence.
+
+For every POC show entry / mixed zone / settled state from the same chase-height camera and one overhead view that exposes the scatter field.
+
+### 4A.8 · New required design evidence
 
 Add to the S4 delivery:
 
-1. **Source isolation sheet** — at least one exact source object from each donor family actually used, shown alone before clay adaptation.
+1. **Source isolation sheet** — the actual KFB Track Core / Blender-MCP Racer profile + socket geometry first, then each external **environment prop/building** family actually used. External road/track meshes are not candidates.
 2. **Edge atlas** — one common cross-section diagram showing the major left/right states: open, curb/sidewalk, race kerb, barrier/wall, guardrail, fence, grass/gravel/sand runoff, ditch/berm, parapet/tunnel wall.
 3. **Transition matrix** — show at minimum the ten families in §4A.4 as compatible socket-to-socket recipes; mark any unbuilt/source-missing family explicitly.
 4. **Same-route comparison** — street, race, dirt and one enclosed/surreal state on the same core route; no duplicate route mesh.
@@ -283,6 +371,16 @@ Add to the S4 delivery:
 6. **Connector close-up** — one joint with the mathematical socket visible in the evidence pass and the finished clay transition in the design pass, proving that visual softness did not move the joint.
 
 The goal is a **universal clay track construction kit**, not a catalogue of pretty edge props.
+
+### 4B · Separate follow-on slice · Building / façade Clay Adapter
+
+Do **not** solve building deformation inside the Track Core. A separate prepared slice is routed at:
+
+`S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/BRIEF_CLAUDE_DESIGN_BUILDING_FACADE_CLAY_ADAPTER_S5.md`
+
+Its purpose is to make OSM buildings and verified KayKit/Kenney building donors share the same clay/cartoon façade language: softened massing, slightly wonky windows/doors, coherent roofs/bases and reusable façade detail treatment. It reuses H0 Knetwelt / Elastic Grotesque Clay work and keeps OSM geography and WorldBuilder ownership intact.
+
+This is adjacent world-look work, **not** a second Track/Core owner and not a reason to replace the current road geometry.
 
 ## 5 · Conditions (each one checkable)
 

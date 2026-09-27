@@ -161,20 +161,26 @@ If Track Core later needs a new field to carry one of these states, return it as
 
 ## Material/look
 
-Blend references/tokens, not arbitrary new materials.
+Use KFB palette/material owners. **Do not solve biome/surface handoffs with a visible colour or alpha gradient.**
 
-Use KFB palette/material owners.
+For asphalt↔dirt, dirt↔snow, road↔desert, road↔cosmic and similar changes, use deterministic **patch-scatter fields**: discrete clay plates/blobs/clumps/pebbles whose size, coverage, density, rotation, relief and source/target ratio change over route-space `s` and normalized lateral coordinate `u`.
+
+The underlying Track Core surface stays continuous. Scatter pieces are presentation/material language, not another road mesh or collider.
 
 ## Props/environment
 
 Density / family transitions may lag or lead the road transition:
 
-- lamps;
-- signs;
-- fences;
-- vegetation;
-- industrial props;
+- lamps / traffic lights;
+- signs / mailboxes / bins / benches;
+- environment fences outside the Track Core safety envelope;
+- vegetation / tree avenues / clearings;
+- urban / commercial / industrial buildings;
 - surreal props.
+
+Kenny/Kenney, KayKit and Tiny Treats are used here as **environment/building/prop sources**, never as the drivable road/track geometry source.
+
+Building façade deformation is a separate follow-on owner slice: `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27`. Track-Core-2 only composes already-approved building output around the route.
 
 ## FX
 
@@ -288,7 +294,7 @@ Show:
 - the sand bed as a lateral runoff treatment, not a second route;
 - an entry/exit seam that still reads at chase speed.
 
-Use Kenney Racing `roadCorner*Sand*` only after isolated source proof.
+Build the runoff shape from the KFB Track Core / World edge truth. Do not import or reskin a Kenney/KayKit sand-road mesh as production geometry.
 
 ## V7 · ROAD / TRACK ↔ STUNT PIECE
 
@@ -343,6 +349,29 @@ Show a compact atlas of:
 - track ↔ mag/cosmic.
 
 For one example, show the exact mathematical socket frame as evidence next to the finished clay transition. The visible connection should feel hand-built, while the port remains exact.
+
+## V11 · PATCH-SCATTER BIOME / SURFACE EDGE CASES
+
+Target:
+
+prove the difficult handoffs without a visible material gradient.
+
+Required probes:
+- highway / OSM road → dirt track → desert piste;
+- forest / earth → snow;
+- normal road → Cosmic Highway → normal road (Cosmic source may remain `SOURCE_REQUIRED`);
+- open road / track → long water-crossing context;
+- urban/commercial/industrial → country road / tree avenue / clearing;
+- open land → canyon/cliff edge with both open and guarded edge variants.
+
+Rules:
+- source and target materials exchange through discrete clay patches/clumps/plates whose scale and density change over `s`;
+- scatter uses normalized road-space so it survives 14.4 m, 18 m and changing widths;
+- edge/biome state is coupled but may lead/lag the material scatter;
+- a biome does not automatically require a barrier;
+- the road centre-line, sockets, contact surface and route owner never change.
+
+Show entry / mixed / settled states for each selected probe.
 
 # 5 · Preserve driving readability
 
