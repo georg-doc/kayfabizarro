@@ -53,6 +53,7 @@ PASS  td03 · slot_parity  · 0
 PASS  td03 · inner_edge_fold  · 0 · min radius margin 5.04 m
 PASS  td03 · self_clearance  · 3.236 · closest at s 454.1 / 606.1
 PASS  td03 · crossing_headroom  · 3.354 · lower road to upper underside (m), 4062 overlapping pairs, worst at s 396.1 under 536.1
+PASS  td03 · vehicle_headroom  · WARN · 3.354 · crossings vs vehicle envelope 4 m + 1 m reserve = 5 m; worst at s 396.1 under 536.1
 PASS  td03 · landing_dip  · 0 · no dip
 PASS  td03 · jump_speed  · 26.16 · designed lip speed m/s vs 27 (above = boost needed)
 PASS  td03 · fingerprint  · 256f2478
@@ -69,6 +70,7 @@ PASS  td04 · slot_parity  · 0
 PASS  td04 · inner_edge_fold  · 0 · min radius margin 4.29 m
 PASS  td04 · self_clearance  · 3.126 · closest at s 692.3 / 1616.2
 PASS  td04 · crossing_headroom  · 2.521 · lower road to upper underside (m), 7641 overlapping pairs, worst at s 746.3 under 1548.3
+PASS  td04 · vehicle_headroom  · WARN · 2.521 · crossings vs vehicle envelope 4 m + 1 m reserve = 5 m; worst at s 746.3 under 1548.3
 PASS  td04 · landing_dip  · 0.06 · deepest dip below the run-out height at s 2066.2 (m)
 PASS  td04 · jump_speed  · 26.26 · designed lip speed m/s vs 27 (above = boost needed)
 PASS  td04 · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
@@ -88,6 +90,7 @@ PASS  td05 · slot_parity  · 0
 PASS  td05 · inner_edge_fold  · 0 · min radius margin 4.29 m
 PASS  td05 · self_clearance  · 3.236 · closest at s 454.1 / 606.1
 PASS  td05 · crossing_headroom  · 3.246 · lower road to upper underside (m), 7873 overlapping pairs, worst at s 748.3 under 1558.5
+PASS  td05 · vehicle_headroom  · WARN · 3.246 · crossings vs vehicle envelope 4 m + 1 m reserve = 5 m; worst at s 748.3 under 1558.5
 PASS  td05 · landing_dip  · 0.045 · deepest dip below the run-out height at s 2123.4 (m)
 PASS  td05 · jump_speed  · 26.26 · designed lip speed m/s vs 27 (above = boost needed)
 PASS  td05 · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
@@ -182,6 +185,9 @@ PASS  edge · a morph that starts at the portal: collar would not match the tube
 PASS  edge · a shaft without a tunnel spec is open road inside the rock  · open road 80.00 m under ground outside any cavern at s 828.3
 PASS  edge · spiral laps 20 m apart: the tube shells cut into each other  · min rock between a tube shell and any other pass (m), at tube s 41 vs s 417.5; 9785 points closer than 1 m
 PASS  edge · braid dip 3 m: the strands hit each other  · -8.068 m
+PASS  vehicles · tunnel headroom comes from the vehicle envelope  · 4 + 1 = 5 m
+PASS  vehicles · every TN01 tube clears the tallest truck with reserve  · lowest roof over the road 10.38 m
+PASS  vehicles · showcase crossings measured against the envelope (known: trucks do not fit under the balconies)  · td03 3.354 m < 5 · td04 2.521 m < 5 · td05 3.246 m < 5
 
 seed stream: 1893 samples · 954.3 m · 18 pieces · 73 marking bands · fingerprint aac439f8
 
