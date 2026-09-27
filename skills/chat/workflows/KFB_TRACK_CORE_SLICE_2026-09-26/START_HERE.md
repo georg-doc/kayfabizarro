@@ -8,8 +8,9 @@
 Current branch truth now includes W0 and Track Core slices through **S8 Tunnels**. The older TRACK-CORE-0/G0 next-gate language below is retained as planning history where it conflicts with the newer slice Returns.
 
 Current design briefs:
-- `S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md` — detailed clay track look, now expanded with §4A universal edge/runoff/socket grammar and source-backed donor bank.
-- `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md` — receiving Claude Design transition grammar, now aligned to the same scope.
+- `S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md` — detailed clay track look, universal edge/runoff/socket grammar, patch-scatter biome transitions and difficult edge-case POCs.
+- `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md` — receiving Claude Design transition grammar, aligned to the same scope.
+- `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/START_HERE.md` — prepared separate follow-on slice for OSM + KayKit/Kenney building/façade clay adaptation; it does not own roads or Track Core.
 
 The design system must cover, on the **same Track Core / RouteRecipe / socket truth**:
 - OSM/city street + clay sidewalk/kerb;
@@ -18,15 +19,17 @@ The design system must cover, on the **same Track Core / RouteRecipe / socket tr
 - dirt/off-road shoulder, ditch and berm families;
 - normal track ↔ ramp/loop/kicker/landing;
 - bridge/parapet and S8 tunnel/service-edge/portal transitions;
-- future Mag/Cosmic Highway as a source-pinned skin/edge family, never generic neon.
+- future Mag/Cosmic Highway as a source-pinned skin/edge family, never generic neon;
+- patch-scatter surface/biome transitions with **no visible colour/alpha gradient**: highway→dirt/desert, forest→snow, road→cosmic→road, water-crossing context, urban→country/avenue/clearing and canyon/cliff edge;
+- 14.4 m STANDARD, 18 m WIDE and continuous width changes using normalized lateral road-space rather than fixed-width decoration.
 
-Source families are pinned in the S4 addendum from the KFB Registry: Kenney Racing, Kenney City Roads, Kenney Toy Car, KayKit City Builder Bits, Tiny Treats Homely House and Kenney Platformer. **Donor isolation remains mandatory before composition.**
+**Source ownership correction:** the drivable road/track, kerbs, shoulders, runoff geometry, barriers, ramps, loops, tunnel roadbed and connector pieces come only from the existing **KFB Blender-MCP Racer / Track Core**. Kenny/Kenney, KayKit and Tiny Treats are environment/building/roadside-prop sources only; their road/track pieces must not be used as production geometry or visual road donors. External objects actually used still require donor isolation before composition.
 
 Georg's existing **Kabelbett** example is retained as the visual precedent for plug/adapter thinking. Its literal source file is not yet pinned under that name; do not invent it. The implementation reference remains the current Track Core `CONNECT`/socket boundary state and Racetrack Blender socket artifacts.
 
 **No new human gate is created by this documentation expansion.** S8's unresolved shaft depth/section-size/maze choices remain open design/tuning questions and do not block Claude Design from developing the shared visual grammar.
 
-**Exactly one next productive gate:** Claude Design executes the updated S4 / TRACK-CORE-2 brief **source-first**: isolate the selected real donors, then produce the edge/runoff atlas + connector transition matrix + 2–3 clay look options on the existing core. No Stage/Live publication until there is a meaningful integrated visual milestone.
+**Exactly one next productive gate:** Claude Design executes the updated S4 / TRACK-CORE-2 brief **source-first**: show the actual KFB Track Core / Blender-MCP Racer profile + sockets in isolation, then produce the edge/runoff atlas, connector transition matrix, patch-scatter edge-case POCs and 2–3 clay look options on the existing core. The prepared S5 building/façade adapter remains a separate follow-on slice. No Stage/Live publication until there is a meaningful integrated visual milestone.
 
 
 ## CURRENT EXECUTION DELTA · SP13KTRA alignment + sprint plan · 2026-09-26 (Claude Coworker)

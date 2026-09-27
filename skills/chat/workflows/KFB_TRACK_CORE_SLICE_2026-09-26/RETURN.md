@@ -33,27 +33,56 @@ The visible design follows the existing **Track Core CONNECT/socket boundary sta
 - Transitions are source/target states blended over the same `s` parameter grammar.
 - The literal Kabelbett source file is still **UNRESOLVED / SOURCE PATH NOT PINNED**; no guessed path was written.
 
-### Source pool prepared
+### Source ownership correction + world donors
 
-The S4 brief now pins the relevant KFB Registry families for **isolation before use**:
+The earlier source-pool wording has been corrected.
 
-- Kenney Racing: red/white barriers, wall, fences, rails, border/sand/wall corner families, pit and ramp pieces;
-- Kenney City Roads: ordinary road barrier variants, construction barrier/cone/fence, bridge pillars;
-- Kenney Toy Car: cap/bend/bump/hill/loop/skew families as modular connector vocabulary;
-- KayKit City Builder Bits + measured KayKit Road Network S5 road/kerb-slot logic;
-- Tiny Treats Homely House: modular post/rail/corner/open/straight fences;
-- Kenney Platformer: low/broken/rope/rural fence candidates;
-- KayKit BlockBits sand forms as secondary material/form references.
+**Production road/track geometry source:**
+- existing KFB Blender-MCP Racer / Track Core only;
+- current `CONNECT` / socket grammar;
+- current canonical profile/slots and own stunt/bridge/tunnel pieces.
 
-These are donor **candidates**, not accepted final designs.
+**External kits:**
+- Kenny/Kenney, KayKit and Tiny Treats may provide buildings, lamps, traffic lights, mailboxes, bins, benches, signs, vegetation and other environment/world props;
+- they do **not** provide road/track/kerb/barrier/ramp/loop/runoff geometry for the production track;
+- external fences are scenery outside the Track Core safety/runoff envelope unless the receiving owner explicitly promotes a source-backed structural use.
+
+### New transition design rule
+
+Biome/material handoffs are now specified as deterministic **patch-scatter** transitions, not visible colour/alpha gradients.
+
+Required POC matrix now includes:
+- highway / OSM road → dirt track → desert piste;
+- forest/earth → snow;
+- normal road → Cosmic Highway → normal road;
+- long water-crossing context;
+- urban/commercial/industrial → country road / tree avenue / clearing;
+- canyon/cliff edge with open and guarded variants.
+
+Patch size, coverage, density, clumping, relief and source/target ratio change over `s` and normalized lateral road-space. The physical route surface remains one Track Core.
+
+### Prepared separate building/façade slice
+
+Added:
+`S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/`
+
+It reuses:
+- H0 Knetwelt `clay-soften.v1.js`, `clay-material.v4.js`, `clay-relief.v2.js`;
+- Elastic Grotesque Clay V2 geometry basis `0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`;
+- WB-D1 OSM building evidence.
+
+Purpose: one clay/cartoon façade adapter across real OSM buildings and verified KayKit/Kenney building donors while preserving OSM identity/footprints and native kit anchors. It is a separate WorldBuilder/OSM receiving slice and does not become a second road or city owner.
 
 ### Files changed in this checkpoint
 
 - `S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md`
 - `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md`
+- `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/BRIEF_CLAUDE_DESIGN_BUILDING_FACADE_CLAY_ADAPTER_S5.md`
+- `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/START_HERE.md`
 - `START_HERE.md`
 - `CHANGELOG.md`
 - this `RETURN.md`
+- root router `skills/chat/START_HERE.md`
 
 ### Actual evidence / tests
 
@@ -66,6 +95,7 @@ This was a design-brief / routing checkpoint only:
 - Stage deployments: **0**
 - GitHub S4 read-back: **1/1**
 - GitHub TRACK-CORE-2 read-back: **1/1**
+- GitHub S5 building brief read-back: **1/1**
 - GitHub current-cursor read-back: **1/1**
 
 No existing S8/Track-Core test result is re-counted as a new test.
@@ -87,7 +117,7 @@ No new KFB Hub human to-do and no Cloudflare Stage route were created. This is i
 
 ### Exactly one next productive gate
 
-**Claude Design executes the updated S4 / TRACK-CORE-2 design pass source-first:** show the selected donor objects in isolation, then deliver the edge/runoff atlas + connector transition matrix + 2–3 clay look options on the existing Track Core.
+**Claude Design executes the updated S4 / TRACK-CORE-2 design pass source-first:** show the actual KFB Track Core / Blender-MCP Racer profile and sockets in isolation, then deliver the edge/runoff atlas + connector transition matrix + patch-scatter edge-case POCs + 2–3 clay look options on the existing Track Core.
 
 No new geometry owner, no separate review website, no Stage/Live claim until the integrated result is a meaningful visual milestone.
 

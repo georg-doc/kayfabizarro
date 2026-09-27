@@ -1,5 +1,55 @@
 # KFB Track Core · Changelog
 
+## 2026-09-27 · road-source correction + patch-scatter biome POCs + S5 façade slice
+
+### Georg correction · road ownership
+
+- Kenny/Kenney, KayKit and Tiny Treats are **not** production road/track geometry or road-detail donors.
+- Drivable road, track, kerb, shoulder/runoff geometry, barriers, ramps/loops, tunnel roadbed and connectors remain the existing **KFB Blender-MCP Racer / Track Core**.
+- External kits remain building / roadside / environment-prop sources: e.g. buildings, lamps, traffic lights, mailboxes, bins, benches, signs and vegetation.
+- OSM supplies geography/alignment/context; the KFB Track Core is the continuous drivable construction inside it.
+
+### New visual transition mechanism
+
+Added a mandatory **patch-scatter** grammar:
+- no visible colour/alpha gradient for biome/material handoffs;
+- discrete clay plates/blobs/clumps/pebbles exchange source↔target coverage;
+- size, density, clustering, relief and source/target ratio vary deterministically over `s` and normalized lateral road-space;
+- works across STANDARD 14.4 m, WIDE 18 m and parameter-driven width changes;
+- surface transition and outer edge/biome state can lead/lag independently.
+
+Required difficult POCs:
+1. highway/OSM road → dirt track → desert piste;
+2. forest/earth → snow;
+3. normal road → Cosmic Highway → normal road;
+4. long water-crossing context;
+5. urban/commercial/industrial → country road / avenue / clearing;
+6. canyon/cliff edge, open and guarded.
+
+A biome does not automatically require a barrier.
+
+### Prepared S5 building/façade adapter
+
+Added `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/`.
+
+It routes a separate WorldBuilder/OSM slice using:
+- H0 Knetwelt shared clay preprocess/material modules;
+- Elastic Grotesque Clay V2;
+- WB-D1 OSM building evidence.
+
+Goal: OSM + KayKit/Kenney buildings share softened clay/cartoon massing, windows/doors/façades/roofs/bases without changing OSM identity or native kit anchors and without creating a second building/road owner.
+
+### Tests / evidence
+
+Documentation-only checkpoint:
+- runtime tests: **0**
+- Blender builds: **0**
+- browser tests: **0**
+- Stage deployments: **0**
+- new brief read-backs after commit: **3/3**
+
+Exactly one next productive gate remains the source-first S4 / TRACK-CORE-2 design pass on the existing Track Core.
+
 
 ## 2026-09-27 · universal clay edge / runoff / connector design scope
 
