@@ -1,21 +1,125 @@
-import {mountClayBound} from './runtime/worldbuilder/presentation/claybound-presentation.v1.js';
+import * as THREE from 'three';
+import {makeClayRelief} from './h0-clay/clay-relief.v2.js';
+import {makeClayUniforms,makeClayMaterial,setPalette,seedGeometry,PALETTES} from './h0-clay/clay-material.v4.js';
 
-function claySurface(source,color,key){
-  const m=source.clone();m.map=source.map;m.color.set(color);m.roughness=.98;m.metalness=0;m.name=(source.name||key)+':ClayWorld-M1';
-  m.onBeforeCompile=s=>{s.vertexShader=s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nfloat c0w=sin(position.x*.105)*sin(position.z*.087)+.45*sin((position.x+position.z)*.19);\ntransformed+=normal*c0w*.018;');};
-  m.customProgramCacheKey=()=>`clay-world-m1:${key}`;m.needsUpdate=true;return m;
+const H0_SOURCE={
+  id:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27',
+  ref:'georg-doc/kayfabizarro@main',
+  modules:['clay-material.v4.js','clay-relief.v2.js','clay-soften.v1.js'],
+  geometryPolicy:'consume existing ElasticGrotesqueClayV2 geometry; H0 soften is source-locked but not executed at runtime'
+};
+
+function makeReliefTexture(){
+  const relief=makeClayRelief({size:512,seed:43129,density:.78});
+  const texture=new THREE.DataTexture(relief.data,relief.size,relief.size,THREE.RGBAFormat);
+  texture.name='H0 Hirnwelt hand-relief 512';
+  texture.wrapS=texture.wrapT=THREE.RepeatWrapping;
+  texture.minFilter=THREE.LinearMipmapLinearFilter;
+  texture.magFilter=THREE.LinearFilter;
+  texture.generateMipmaps=true;
+  texture.needsUpdate=true;
+  return {texture,relief};
 }
+
+function layerFor(mesh,terrain,far){
+  if(mesh===terrain)return {id:'terrain',scale:1.35,role:'world'};
+  if(mesh===far)return {id:'far-terrain',scale:2.65,role:'world'};
+  const n=(mesh.name||'').toLowerCase();
+  if(/wall|building|facade|elasticgrotesque/.test(n))return {id:'facade',scale:2.45,role:'world'};
+  if(/roof/.test(n))return {id:'roof',scale:2.05,role:'world'};
+  if(/ground|plate|road|curb|path|water/.test(n))return {id:'ground-road-sidewalk',scale:1.35,role:'world'};
+  return {id:'prop-detail',scale:.62,role:'soft'};
+}
+
+function clayMaterialFor(source,U,layer){
+  return makeClayMaterial(THREE,U,{
+    src:source,
+    role:layer.role,
+    palMap:true,
+    reliefK:layer.id==='prop-detail'?.62:layer.id==='far-terrain'?.72:1,
+    proc:false,
+    scale:layer.scale
+  });
+}
+
 export async function mountClayWorld(app){
-  const top=document.querySelector('#top');
-  if(top&&!top.querySelector(':scope > .col:last-child')){const host=document.createElement('div');host.className='col';host.hidden=true;top.appendChild(host)}
-  const base=mountClayBound(app),terrain=app.terrain,city=app.world.city,far=app.scene.getObjectByName('far-ground');
-  if(!terrain||!city?.plate)throw Error('Clay C0 needs World r2 terrain and city plate');
-  const originals={terrain:terrain.material,plate:city.plate.material,far:far?.material||null};
-  const clay={terrain:claySurface(originals.terrain,0xf2dfbd,'terrain'),plate:claySurface(originals.plate,0xf4dfc8,'osm-ground'),far:originals.far?claySurface(originals.far,0x8fae68,'far-ground'):null};
-  const setBase=base.setMode.bind(base);let mode='original';
-  function setMode(next){mode=next==='clay'?'clay':'original';const on=mode==='clay';setBase(on?'claybound':'original');terrain.material=on?clay.terrain:originals.terrain;city.plate.material=on?clay.plate:originals.plate;if(far&&clay.far)far.material=on?clay.far:originals.far;document.body.dataset.m1Look=mode;return report()}
-  const heights=(city.support?.records||[]).map(r=>{const p=city.blocks.geometry.attributes.position;let lo=Infinity,hi=-Infinity;for(let i=r.walls[0];i<r.walls[0]+r.walls[1];i++){lo=Math.min(lo,p.getY(i));hi=Math.max(hi,p.getY(i))}return hi-lo}).filter(Number.isFinite);
-  function report(){return {schema:'kfb.clay-world-m1/1',mode,world:app.world.id,buildingCount:heights.length,buildingHeightM:heights.length?[+Math.min(...heights).toFixed(2),+Math.max(...heights).toFixed(2)]:[],surfaces:['terrain','OSM ground map','building walls','roofs'],reversible:true,collisionOwner:'World r2 ground/contact',visualSurfaceAmplitudeM:.018}}
+  const terrain=app.terrain,city=app.world?.city,far=app.scene.getObjectByName('far-ground');
+  if(!terrain||!city?.plate||!city?.group)throw Error('H0 Clay needs the accepted World r2 terrain and city owners');
+
+  const {texture,relief}=makeReliefTexture();
+  const uniforms=makeClayUniforms(THREE,texture);
+  uniforms.uClayTile.value=1.75;
+  uniforms.uClayStroke.value=.48;
+  uniforms.uClayGrain.value=.13;
+  uniforms.uClayMacro.value=.42;
+  uniforms.uClayFacet.value=.1;
+  uniforms.uClayCrease.value=.5;
+  setPalette(THREE,uniforms,PALETTES.claybound,.2);
+
+  const meshes=[];
+  const seen=new Set();
+  const add=mesh=>{if(mesh?.isMesh&&!seen.has(mesh)){seen.add(mesh);meshes.push(mesh)}};
+  add(terrain);add(far);city.group.traverse(add);
+
+  const records=[];
+  const counts={terrain:0,'far-terrain':0,facade:0,roof:0,'ground-road-sidewalk':0,'prop-detail':0};
+  let seed=43129;
+  for(const mesh of meshes){
+    if(!mesh.geometry?.attributes?.position||mesh.isSkinnedMesh)continue;
+    const layer=layerFor(mesh,terrain,far);
+    seedGeometry(THREE,mesh.geometry,seed++);
+    const original=mesh.material;
+    const clay=Array.isArray(original)
+      ? original.map(material=>clayMaterialFor(material,uniforms,layer))
+      : clayMaterialFor(original,uniforms,layer);
+    records.push({mesh,original,clay,layer});
+    counts[layer.id]++;
+  }
+  if(!counts.facade||!counts['ground-road-sidewalk'])throw Error('H0 Clay could not bind facade and street/ground owners');
+
+  const sun=app.scene.children.find(o=>o.isDirectionalLight&&o.castShadow);
+  const hemi=app.scene.children.find(o=>o.isHemisphereLight);
+  const light0=sun&&hemi?{
+    sunColor:sun.color.clone(),sunIntensity:sun.intensity,
+    hemiColor:hemi.color.clone(),ground:hemi.groundColor.clone(),hemiIntensity:hemi.intensity,
+    mapping:app.renderer.toneMapping,exposure:app.renderer.toneMappingExposure
+  }:null;
+  const fill=new THREE.DirectionalLight(0xffc7a7,.38);
+  fill.name='H0 Hirnwelt warm clay fill';fill.position.set(-10,15,-7);fill.visible=false;app.scene.add(fill);
+
+  let mode='original';
+  function setMode(next){
+    mode=next==='clay'?'clay':'original';
+    const on=mode==='clay';
+    for(const r of records)r.mesh.material=on?r.clay:r.original;
+    if(light0){
+      sun.color.copy(on?new THREE.Color(0xffd0a5):light0.sunColor);sun.intensity=on?2.35:light0.sunIntensity;
+      hemi.color.copy(on?new THREE.Color(0xffe5c8):light0.hemiColor);
+      hemi.groundColor.copy(on?new THREE.Color(0x55667a):light0.ground);hemi.intensity=on?2.05:light0.hemiIntensity;
+      app.renderer.toneMapping=on?THREE.ACESFilmicToneMapping:light0.mapping;
+      app.renderer.toneMappingExposure=on?1.08:light0.exposure;
+    }
+    fill.visible=on;
+    document.body.dataset.m1Look=mode;
+    return report();
+  }
+  const heights=(city.support?.records||[]).map(r=>{
+    const p=city.blocks.geometry.attributes.position;let lo=Infinity,hi=-Infinity;
+    for(let i=r.walls[0];i<r.walls[0]+r.walls[1];i++){lo=Math.min(lo,p.getY(i));hi=Math.max(hi,p.getY(i))}
+    return hi-lo;
+  }).filter(Number.isFinite);
+  function report(){
+    return {
+      schema:'kfb.h0-hirnwelt-world-adapter/1',mode,world:app.world.id,
+      donor:H0_SOURCE,relief:{size:relief.size,seed:relief.seed,ms:relief.ms,source:'clay-relief.v2.js'},
+      layers:{coarse:'facades/roofs 2.45/2.05',medium:'terrain/road/sidewalk 1.35',fine:'props .62'},
+      boundMeshes:records.length,counts,
+      buildingCount:heights.length,
+      buildingHeightM:heights.length?[+Math.min(...heights).toFixed(2),+Math.max(...heights).toFixed(2)]:[],
+      geometryRuntimePreprocess:false,skinnedMeshesUntouched:true,reversible:true,
+      owners:{geometry:'World r2 · ElasticGrotesqueClayV2',material:'H0 Hirnwelt clay-material.v4 + clay-relief.v2',collision:'World r2 ground/contact'}
+    };
+  }
   setMode(new URLSearchParams(location.search).get('look')==='clay'?'clay':'original');
   return {setMode,report,get mode(){return mode}};
 }

@@ -38,10 +38,12 @@ ok('M1 explicitly excludes proxy track',mobility.includes('trackProxy:false'));
 ok('flight actor no longer uses jump.air',!mobility.includes("play.actor.play('jump.air'")&&mobility.includes("play.actor.play('idle'"));
 ok('ground return uses existing World placement owner',mobility.includes('play.place(p.x,p.z,heading)'));
 ok('Drive and Water remain source-required',router.includes("id: 'DRIVE'")&&router.includes("id: 'WATER'")&&(router.match(/TRAVEL_MODE_SOURCE_REQUIRED/g)||[]).length>=3);
-ok('Clay stays reversible',clay.includes("terrain.material=on?clay.terrain:originals.terrain"));
+ok('H0 Hirnwelt material and relief are real source modules',clay.includes("from './h0-clay/clay-relief.v2.js'")&&clay.includes("from './h0-clay/clay-material.v4.js'")&&fs.existsSync(path.join(candidate,'h0-clay/clay-soften.v1.js')));
+ok('H0 uses three material scales',clay.includes("facades/roofs 2.45/2.05")&&clay.includes("terrain/road/sidewalk 1.35")&&clay.includes("props .62"));
+ok('H0 runtime leaves geometry and skinned actors with their owners',clay.includes('geometryRuntimePreprocess:false')&&clay.includes('skinnedMeshesUntouched:true')&&!clay.includes('softenGeometry('));
+ok('Clay stays reversible',clay.includes('r.mesh.material=on?r.clay:r.original'));
 ok('no second renderer or camera constructor',!/new THREE\.(WebGLRenderer|PerspectiveCamera|OrthographicCamera)/.test(joined));
 ok('compact integrated controls',ui.includes('1× Leertaste springen')&&ui.includes('2× innerhalb 400 ms abheben'));
 ok('documentation hidden by default',ui.includes('id="m1-help" hidden'));
 ok('no placeholder branding',!/(Lorem|placeholder|helvetiker|TextGeometry)/i.test(joined));
 console.log('WORLD MOBILITY M1 PACKAGE PASS '+count+'/'+count);
-

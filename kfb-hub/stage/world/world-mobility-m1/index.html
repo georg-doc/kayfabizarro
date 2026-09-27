@@ -35,7 +35,7 @@ body[data-m1-ready="true"] #top,body[data-m1-ready="true"] #dock,body[data-m1-re
 </script>
 <script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false});</script>
 </head>
-<body data-kfb-stage="WORLD-MOBILITY-M1" data-kfb-source-head="LOCAL_CANDIDATE">
+<body data-kfb-stage="WORLD-MOBILITY-M1" data-kfb-source-head="PR249_H0_CANDIDATE">
 <script type="module">
 await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js');
 const app=window.__wb2d;
@@ -46,9 +46,8 @@ const clay=await mountClayWorld(app);
 app.setPlay(true);
 const mobility=mountWorldMobility(app);
 const ui=mountWorldMobilityUi({app,clay,mobility});
-window.__worldMobilityM1={app,clay,mobility,ui,report:()=>({schema:'kfb.world-mobility-m1-stage/1',source:{worldR2:'58028b07d7618926c40ffaec3bd4053dc88c0efd',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',clayBound:'e1f693347fd0049deb9f7ef89ee85341bd9f355d'},mobility:mobility.report(),clay:clay.report()})};
+window.__worldMobilityM1={app,clay,mobility,ui,report:()=>({schema:'kfb.world-mobility-m1-stage/1',source:{worldR2:'58028b07d7618926c40ffaec3bd4053dc88c0efd',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report()})};
 document.body.dataset.m1Ready='true';
 </script>
 </body>
 </html>
-
