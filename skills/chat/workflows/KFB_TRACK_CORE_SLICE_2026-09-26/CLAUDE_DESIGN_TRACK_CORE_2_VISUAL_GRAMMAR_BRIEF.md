@@ -53,7 +53,7 @@ Left/right edge treatment and lateral runoff are first-class design states. Requ
 
 **Connector principle:** preserve the existing Track Core socket/CONNECT boundary state. Georg's existing Kabelbett example is a visual precedent for the plug/transition idea, but no literal Kabelbett source path is pinned yet; do not invent one. Visual clay softness may span the joint, but the mathematical port remains exact.
 
-**Donor rule:** use the pinned KFB Registry families in S4 §4A.5. In particular, inspect the real Kenney Racing sand/border/wall/barrier/fence/rail pieces, Kenney City Roads barrier variants, Kenney Toy Car connector-piece families, KayKit City Builder roads, Tiny Treats Homely House fences and Kenney Platformer off-road fences **in isolation before composition**.
+**Geometry-source rule:** the road/track system is KFB-owned. Use the existing Blender-MCP Racer / Track Core profile, slots and `CONNECT` sockets as the only drivable-geometry source. Do **not** use Kenney/Kenny, KayKit or Tiny Treats road/track/kerb/barrier/ramp/loop geometry as design or production donors. Those kits remain environment sources for buildings and standalone roadside/world props (mailboxes, bins, lamps, traffic lights, signs, vegetation, etc.). A fence from an external pack may dress the environment outside the Track Core clearance/runoff envelope, but it is not the structural track edge. Any external prop actually used must still be shown in isolation before composition.
 
 # Goal
 
@@ -78,20 +78,19 @@ Do not turn these into separate track systems.
 
 # 1 · Source proof first
 
-Before designing combinations, show exact pinned source donors in isolation for:
+Before designing combinations, show the **actual KFB source system** in isolation:
 
-- CITY_STREET / road surface;
-- current RKIT track surface;
-- KFB marking styles;
-- verified barrier/edge sources;
-- verified fence/guardrail source if one exists;
-- KFB terrain/ground style;
-- current sky/environment profiles relevant to the proof;
-- any verified Cosmic/Surreal donor actually approved for KFB.
+- current Blender-MCP Racer / Track Core road cross-section and named slot/profile roles;
+- current `CONNECT` / socket boundary state and at least one real joined module pair;
+- representative own KFB road/track piece, stunt transition and one bridge/tunnel roadbed state where available;
+- current KFB marking/style/material owners applied to that geometry;
+- the OSM/world seam showing that geography/world context surrounds the same KFB drivable construction rather than replacing it;
+- any external building or roadside/world prop actually used in the scene, shown alone first;
+- any verified Cosmic/Surreal visual donor actually approved for KFB.
 
-If a visible source does not exist, mark `SOURCE_REQUIRED`.
+The isolation requirement for Kenny/Kenney, KayKit and Tiny Treats applies to **environment props only**. Their road, track, kerb, barrier, runoff, ramp and loop models are not source candidates for this design pass.
 
-Do not manufacture generic racing/futuristic assets as substitutes.
+If a visible environment prop source does not exist, mark `SOURCE_REQUIRED`. Do not manufacture generic racing/futuristic assets as substitutes.
 
 ---
 
