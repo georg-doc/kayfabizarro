@@ -36,6 +36,25 @@ This is **repair pass 1** on the newly exposed road-parts gate. It is not repair
 
 Do not change renderer, presenter, terrain, LOOK-TORSION, landmarks, actor/movement owners or Stage. Diagnose the existing frozen road-crop semantics first.
 
+## Proven road-fixture cause
+
+The old and baked World Zone sources are the **same normalized blob**:
+`14d3f09da6e14fb7f5dc9478f78be9f876bffab9`.
+
+The frozen road fixture is reproduced exactly by this deterministic second-crop rule:
+1. keep only the road's **original serialized centerline vertices** inside the crop;
+2. require at least **2 retained vertices**;
+3. do **not** synthesize boundary-intersection points;
+4. round retained x/z to **2 decimals**;
+5. preserve `area` from OSM `area=yes`.
+
+Repository-native comparison against all frozen roads:
+- IDs: **844/844 exact · 0 missing · 0 extra**;
+- line geometry: **0 differences**;
+- road metadata: **0 differences**.
+
+The current baked adapter instead geometrically clips any intersecting segment, yielding 865 roads and synthesized boundary points. That is the proven road-parts mismatch.
+
 ## Current next action
 
-Repository-native source/history inspection for the exact frozen road-part crop rule. Persist the finding before any repair.
+**Repair pass 1:** change only the baked-road second-crop adapter to the proven frozen rule, strengthen seam assertions to exact road IDs/geometry/metadata, then rerun the full existing seam workflow.
