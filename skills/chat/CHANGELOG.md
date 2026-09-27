@@ -1910,3 +1910,18 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+
+## 2026-09-27 · TRAVEL-MODES-01 public gate
+
+- Added the atomic Ground/Flight Travel Mode Router on private Travel Draft PR #39.
+- Final handoff: `e3b966efec49e8859254cb48e4aed27fb8963d04`; tested runtime/evidence: `f5ea32f817403cda0e30a426e70f37db8ce03d66`.
+- Preserved the human-accepted 400 ms Ground→Flight double-Space behavior and retained existing Ground/Flight movement/camera owners.
+- Drive + Water are explicit `SOURCE_REQUIRED` slots with no fake writer.
+- Final Travel CI: **133/133 PASS**, build/verify PASS, 0 missing; run `36287034124`, artifact `10919999491`.
+- HUB-CTRL #202 routes the direct human Stage and is pinned to the final Travel handoff.
+- Final publication: `cloudflare-live@67fb7aeb9682e137e2e01225450aed70ba56e26e`.
+- Exact Cloudflare Chromium proof: **24/24 PASS**, 0 page errors; run `36287139911`, artifact `10920773576`.
+- Direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/
+- No landing, Drive/Water movement, merge or Live promotion.
+- Next gate only: Georg ACCEPT / REJECT the router architecture.

@@ -1122,3 +1122,46 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
+
+
+## 2026-09-27 · TRAVEL-MODES-01 · Movement Mode Router public human gate
+
+Travel remains owned by private `georg-doc/KFB-Travel-Globe`.
+
+Current bounded slice:
+- Draft PR #39;
+- branch `chatgpt-web/travel-modes-01-router-2026-09-27`;
+- final Return/handoff head `e3b966efec49e8859254cb48e4aed27fb8963d04`;
+- tested runtime/evidence head `f5ea32f817403cda0e30a426e70f37db8ce03d66`;
+- accepted PR #38 **400 ms** Ground→Flight double-Space behavior preserved unchanged.
+
+Architecture proof:
+- Ground READY → movement/camera owner `wb0-ground-controller`;
+- Flight READY → movement `carpet.js`, camera `camera-rig.js`;
+- Drive + Water remain `SOURCE_REQUIRED` with no movement/camera writer;
+- router selects one owner atomically and has no frame/input/world-position/camera write loop;
+- retained `runtime-mode.js` remains the actual Ground/Flight ownership handoff.
+
+Final Travel CI:
+- run `36287034124`, job `108529617196`;
+- **133/133 PASS**, 0 fail, 0 skipped;
+- build PASS · 197 files;
+- verify PASS · 108 runtime files · 87 local ESM closure · 9 remote specifiers · 0 missing · syntax/JSON PASS;
+- artifact `10919999491`;
+- SHA-256 `27eba8e9d67d82665573ac61221a8cba81e782db2a8424338cc7ca941a8109f4`.
+
+Public Stage:
+https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/
+
+Final publication proof:
+- KFB Hub owner PR #202 source head `b4c7ddf2199e05d38b6eb673bf7e43e4091f779f`;
+- publication branch `cloudflare-live@67fb7aeb9682e137e2e01225450aed70ba56e26e`;
+- Chromium run `36287139911`, job `108529920021`;
+- **24/24 PASS**, 0 page errors, exact Travel runtime marker visible on attempt 1;
+- Stage + KFB Hub direct link both opened successfully;
+- screenshot/report artifact `10920773576`;
+- SHA-256 `514c99a5ecbe3ed64fcb1d775145f8276c6762de3355379acf7eab8f2d236841`.
+
+No TMB-3 landing, Drive/Water implementation, merge or product Live promotion occurred.
+
+Exactly one next gate: **Georg opens the direct Stage route and returns ACCEPT or REJECT for the Ground/Flight router architecture.**
