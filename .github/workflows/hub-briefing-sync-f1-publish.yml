@@ -54,12 +54,13 @@ jobs:
           s=json.load(open('registry/production/v1/self_service.json'))
           p=json.load(open('registry/production/v1/problems.json'))
           assert m['counts']['problems']==0, m['counts']
-          assert s['counts']['jobs']==96, s['counts']
-          assert s['counts']['prompts']==96, s['counts']
-          assert s['counts']['READY']==42, s['counts']
-          assert s['counts']['HOLD']==54, s['counts']
+          assert s['counts']['jobs'] > 0, s['counts']
+          assert s['counts']['prompts']==s['counts']['jobs'], s['counts']
+          assert s['counts']['READY'] + s['counts']['HOLD']==s['counts']['jobs'], s['counts']
           assert not p['problems'], p
-          print('BRIEFING_CLOSURE 96/96 · 42 READY · 54 HOLD · 0 problems')
+          print('BRIEFING_CLOSURE {jobs}/{prompts} · {ready} READY · {hold} HOLD · 0 problems'.format(
+            jobs=s['counts']['jobs'], prompts=s['counts']['prompts'],
+            ready=s['counts']['READY'], hold=s['counts']['HOLD']))
           PY
 
       - name: Render accepted Hub UX v2 shell
@@ -84,15 +85,16 @@ jobs:
           python3 - <<'PY'
           import json, os
           m=json.load(open('registry/production/v1/manifest.json'))
+          s=json.load(open('registry/production/v1/self_service.json'))
           marker={
             'schema':'kfb.hub-root-build/1',
             'sourceCommit':os.environ['GITHUB_SHA'],
             'registryContentHash':m['contentHash'],
             'registryCheckedAt':m['checkedAt'],
             'shell':'HUB-UX-RECOVERY-V2',
-            'briefings':96,
-            'ready':42,
-            'hold':54,
+            'briefings':s['counts']['jobs'],
+            'ready':s['counts']['READY'],
+            'hold':s['counts']['HOLD'],
             'problems':0
           }
           json.dump(marker,open('/tmp/kfb-hub-publish/ROOT_BUILD.json','w'),indent=2)

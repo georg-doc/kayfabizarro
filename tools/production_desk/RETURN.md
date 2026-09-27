@@ -1244,3 +1244,12 @@ Status: **HIRNWELT H0 INTEGRATED · SOURCE SYNC COMPLETE · NO GEORG TASK · PUB
 - No generated Hub root or Cloudflare publication changed in this source checkpoint.
 
 Exactly one Hub-publication gate remains: run the existing Production Desk generation/publication owner once from this synchronized source, then read back the exact public root. This is an internal publication job, not a Georg review task.
+# 2026-09-27 · Hub current-state publication prep / M2A
+
+- Owner remains HUB-CTRL #202 / `tools/production_desk`; no new Hub shell.
+- Current GitHub recon found no unknown post-#252 Web slice. PR #251 is historical Public-Domain recovery only; the four-object PD-POOL-R3 is already merged/public. PR #252 is correctly frozen after two failed crop-parity passes and does not block World mobility.
+- Source correction: Track Core PR #219 is planning-only and Race PR #42 is an acceptance fixture. The Hub now presents M2A as the executable Drive+E loop and M2B/Track as `WAITING_SOURCE`, instead of implying the Track runtime already exists.
+- Exact donor refs rechecked: World M1 `40037597485436e185f129091be908786925341d`; Race Drive/Deformer `406cd26f44f22811fe3b3a58776839be7ffb7b2c`; Race fixture `bcc422b00fc4629ac113f086cddcea3b2b107f2a`; Travel router branch `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`.
+- Hub builder tests: 16/16 PASS; config JSON PASS. Local render test remains unavailable until the workflow creates `registry/production/v1`; this is not converted into a fake PASS.
+- Publication workflow was made count-independent while retaining zero-problem closure, so new briefing totals no longer invalidate an otherwise current Hub.
+- Next gate: run the existing exact Hub publication workflow once from this corrected owner state, then visibly verify the public root before claiming `PUBLIC_VERIFIED`.

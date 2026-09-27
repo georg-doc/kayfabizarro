@@ -527,3 +527,10 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - H0 runtime softening and SkinnedMesh preprocessing remain excluded; geometry softening is offline/cached only.
 - M2 is narrowed to the real Track Core plus physical street-cell geometry: carriageway, jointed bright curbs, sidewalk and terrain transition.
 - Public route remains `PUBLIC_ROUTE_FALLBACK`; no blind redeploy or false live claim.
+# 2026-09-27 · Hub publication recovery + M2A source correction
+
+- GitHub recon confirmed: the real Track Core is still planning/contract work on PR #219; Race PR #42 remains an acceptance fixture, not a runtime.
+- Reframed the active World milestone without inventing a proxy: M2A now builds the playable Walk → Drive → Walk → Flight → Walk loop from the proven PR-#10 Drive donor; M2B attaches the real Track Core only after its owner ships source.
+- Updated the existing Hub lane and M2 briefing in place; no second Hub or registry was introduced.
+- Removed frozen numeric briefing counts from the existing Hub publication workflow. Publication closure now proves nonzero jobs, one prompt per job, READY+HOLD completeness and zero problems from the generated registry itself.
+- Builder tests: 16/16 PASS. The local render test still lacks the generated online registry fixture in this isolated checkout; the publication workflow owns that build and validation.

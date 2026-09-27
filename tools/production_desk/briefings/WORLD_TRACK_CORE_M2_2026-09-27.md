@@ -26,6 +26,15 @@
 
 GitHub-Stand unmittelbar vor dem Bau erneut prüfen. Der Race-Owner darf nicht durch eine WorldBuilder-Ersatzstrecke ersetzt werden.
 
+## GitHub-Recon · 27.09.2026
+
+Der reale Track Core ist **noch nicht als Runtime verfügbar**. PR `#219` ist weiterhin Planung/Vertrag; Race PR `#42` ist ausschließlich die eingefrorene Akzeptanzszene. Deshalb beginnt M2 ohne Proxy in zwei produktiven Checkpoints:
+
+1. **M2A · jetzt ausführbar:** M1-Welt + echter PR-#10-Drive-Owner + genau ein bewiesenes Fahrzeug + `E` Ein-/Ausstieg auf den vorhandenen World-Straßen. Ergebnis muss bereits frei spielbar sein.
+2. **M2B · WAITING_SOURCE:** denselben Drive-Loop an den echten Track Core anschließen, sobald dessen JavaScript-Runtime samt Kontaktvertrag vorliegt.
+
+M2A darf keinen eigenen Track erzeugen. Der fehlende Track blockiert Drive/Enter/Exit nicht; er blockiert nur den späteren Streckenanteil des Gesamtloops.
+
 ## Ziel
 
 In derselben Hürth-/Clay-Welt eine echte, vom Race Track Core gelieferte Strecke und eine zusammenhängende **KlayfaBizarro-Stadtzelle** laden. Die Welt ist danach in drei Reisemodi wirklich spielbar: **zu Fuß, im freien Flug und mit einem bewiesenen Fahrzeug**. Wasser bleibt ausdrücklich außerhalb dieses MVPs. OSM liefert grobe Architektur und Anschlusspunkte; ein guter Chill-&-Fun-/Stunt-Verlauf ist wichtiger als sklavische Kartentreue.
@@ -35,6 +44,7 @@ H0 ist Georgs akzeptierter Look-Donor und in M1 bereits als echtes Material/Reli
 ## Kleinstes spielbares Ergebnis
 
 - M1 Ground/Flight und den integrierten Hirnwelt-H0-Look unverändert weiterverwenden;
+- zuerst M2A liefern: zu Fuß → `E` → echtes Fahrzeug → freies Fahren auf der vorhandenen World-Straße → `E` → weiterlaufen → Flight → Ground;
 - genau ein echtes Track-Rezept über dessen Source-/Runtime-Vertrag laden;
 - genau ein bewiesenes Fahrzeug aus dem vorhandenen Race-/Free-Roam-Pfad anschließen; weitere Modelle sind additive Testkandidaten und blockieren den Kernloop nicht;
 - World bleibt Boden-/Kontakt-Owner, Race/Free Roam bleibt Fahrphysik-Owner, Vehicle Deformer bleibt reine Darstellung;
@@ -91,6 +101,8 @@ H0 ist Georgs akzeptierter Look-Donor und in M1 bereits als echtes Material/Reli
 ## Stop
 
 Stop bei einem spielbaren Track-in-World-Kandidaten mit einer glaubwürdigen KlayfaBizarro-Stadtzelle und dem vollständigen kleinsten Reise-Loop **Walk → Drive → Track → Walk → Flight → Walk**. Reaktive Knetwelt, Wasser, Fahrzeugkatalog, OSM-Korridor Hürth→Köln und Track-Editor bleiben additive Nachfolger.
+
+Zwischenstop M2A ist nur dann zulässig, wenn der echte **Walk → Drive → Walk → Flight → Walk**-Loop browsergeprüft ist. Er ist ein produktiver spielbarer Stand, aber kein Ersatz für M2B/Track.
 
 ## Nicht blockierender Design-Sidecar
 
