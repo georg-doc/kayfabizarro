@@ -30,6 +30,17 @@ eq('baked revision',zone.package.revision,'2026-09-24.1');
 eq('WB contract stores manifest ref + transform only',zone.package.worldBuilderContract.storage,'zone manifest reference + transform only');
 eq('crop buildings parity',zone.counts.buildings,fx.counts.buildings);
 eq('crop road-parts parity',zone.counts.roadParts,fx.counts.roadParts);
+const roadSigZone=zone.roads.map(r=>({
+  id:r.id,cls:r.cls,w:r.w,drive:!!r.drive,name:r.name??null,bridge:r.bridge??null,tunnel:r.tunnel??null,
+  layer:Number(r.layer||0),area:!!r.area,
+  line:r.line.map(p=>[p.x,Object.is(-p.z,-0)?0:-p.z])
+})).sort((a,b)=>a.id.localeCompare(b.id));
+const roadSigFixture=fx.roads.map(r=>({
+  id:r.id,cls:r.cls,w:r.w,drive:!!r.drive,name:r.name??null,bridge:r.bridge??null,tunnel:r.tunnel??null,
+  layer:Number(r.layer||0),area:!!r.area,line:r.line
+})).sort((a,b)=>a.id.localeCompare(b.id));
+assert.deepEqual(roadSigZone,roadSigFixture,'exact frozen road ids + line geometry + metadata');
+pass++;console.log('ok '+pass+' - exact frozen road ids + line geometry + metadata · '+roadSigZone.length+' roads');
 eq('crop landuse parity',zone.counts.landuse,fx.counts.landuse);
 eq('crop water parity',zone.counts.water,fx.counts.water);
 eq('exact building id set survives bake→crop',zone.buildings.map(x=>x.id).sort(),fx.buildings.map(x=>x.id).sort());
