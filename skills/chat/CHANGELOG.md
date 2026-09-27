@@ -1920,3 +1920,15 @@ Exactly one next gate:
 - Proof remained ephemeral; no generated PD asset persisted, no Stage/Live publication.
 - Exactly one next gate: `PD-POOL-R1` four-source smoke + idempotence/persistence rerun using the proven AIC path. Bulk population remains blocked by the missing original selected-hit manifest.
 
+### 2026-09-27 · PD-POOL-R1 four-source smoke + persistence
+- Continued from PD-POOL-F1 Draft PR #240 / final handoff `db88a9978bbd2a47fa22f2578d506def120d7c60`; no frozen PR #239 code was resumed.
+- Draft PR #242 / branch `chatgpt-web/public-domain-pool-r1-2026-09-27`.
+- Added isolated R1 workflow `.github/workflows/public-domain-pool-r1.yml`; existing fetcher and fixed four-object manifest were reused unchanged.
+- GitHub Actions run `36285925572` / job `108526571635` PASS on tested workflow head `85c154eb796b7abd733b848249b0938045ec0ff2`.
+- First run: 4/4 LOADED, 0 rejected. Second run: 4/4 UNCHANGED, 0 redownloaded. Stale `.part`: 1/1 removed. Payload type sanity: 4/4. Payload+sidecar hash identity: 8/8.
+- Persistence commit `f3acaaeb98530dd9ffb7d200d61956891e738336` wrote exactly the bounded four-object set plus sidecars, generated manifest, credits and R1 test/return evidence.
+- Persisted asset hashes: Met `8d469625…1917c`; AIC `e0aa55ad…7f0f56`; Commons `e55e5d25…4aadc7`; IA `bbc1321e…8ee19`.
+- Required manual IA review PASS: persisted tile reads “Copyright by Joseph M. Schenck” and matches independent *The General* identity evidence.
+- No bulk import, Asset Librarian registration, Billboard runtime change, Stage or Live publication.
+- Exactly one next gate: `PD-POOL-R2` · register only these four proven objects in the existing Asset Librarian and verify provenance/discoverability.
+
