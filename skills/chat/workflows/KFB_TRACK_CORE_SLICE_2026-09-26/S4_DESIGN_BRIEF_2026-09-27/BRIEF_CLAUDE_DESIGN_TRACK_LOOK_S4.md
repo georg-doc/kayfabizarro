@@ -225,86 +225,42 @@ Design these as **adapters on the same core**, not separate track systems:
 
 For each family, show at least one **entry**, one **mid-transition** and one **settled** state. Use the existing 32 m stagger as the default visual rhythm and the current 8 m minimum seam rule unless the source scene demonstrates a better value; do not create another hardcoded transition-length system.
 
-### 4A.5 · Source-backed donor bank · isolate before use
+### 4A.5 · Source ownership correction · our Racer geometry, external environment props only
 
-These are **candidate donors already present in the KFB Registry**, not automatic design approvals. Every selected core donor must first be rendered **alone** with exact path/revision before it enters a clay composition.
+**Hard rule from Georg, 27.09.2026:** Kenny/Kenney, KayKit and Tiny Treats are **not road/track geometry or road-detail donors for this system**. The road, track, kerb, shoulder, barrier/runoff profile, ramps, loops, dirt-track transitions, tunnel roadbed and connector pieces come from the **existing KFB Blender-MCP Racer / Track Core** and are then skinned in the new claymation language.
 
-**Kenney Racing Kit**  
-Registry: `registry/assets/v1/packs/kenney-racing-kit.json`
+The external kits remain useful only for the surrounding world:
+- buildings and architectural dressing;
+- standalone roadside props already in the environment vocabulary, e.g. mailboxes, bins, benches, lamps, traffic lights, signs, cones and similar objects;
+- vegetation and scene dressing;
+- fences only when they are clearly **environment scenery outside the Track Core clearance/runoff envelope**, never the structural track edge/socket itself.
 
-High-value source objects:
-- `barrierRed`, `barrierWhite`, `barrierWall`;
-- `fenceCurved`, `fenceStraight`;
-- `rail`, `railDouble`;
-- `roadCornerLargeBorder`, `roadCornerLargeBorderInner`;
-- `roadCornerLargeSand`, `roadCornerLargeSandInner`;
-- `roadCornerLargeWall`, `roadCornerLargeWallInner`;
-- corresponding `Larger` and `Small` variants;
-- `roadPitEntry`, `roadPitStraight`, `roadPitStraightLong`;
-- `roadRamp`, `roadRampLong`, `roadRampLongCurved` and wall variants.
+This explicitly supersedes any earlier reading of Kenney Racing, Kenney City Roads, Kenney Toy Car, KayKit Road Network S5 or Platformer road/ramp pieces as design donors for the drivable surface or its canonical edge construction. Those assets may remain historical semantic/reference evidence in the repository, but Claude Design must not trace, reskin, substitute or assemble them into the production road/track system.
 
-This family is the first reference for classic circuit kerb/border, sand runoff, wall, fence/rail and pit-edge semantics.
+**Canonical source to show first:**
+1. the current Track Core / Blender-MCP Racer cross-section and slot/profile output;
+2. the current socket / `CONNECT` boundary state;
+3. representative existing KFB pieces from that system: ordinary road/track, width/edge transition, ramp/loop or other stunt piece, bridge/elevated piece and tunnel roadbed where available;
+4. only after that, any external building/prop actually used in the surrounding OSM scene, shown in isolation under the normal donor-first rule.
 
-**Kenney City Kit Roads**  
-Registry: `registry/assets/v1/packs/kenney-city-kit-roads.json`
+**OSM integration rule:** OSM supplies geography/alignment and world context. The KFB Track Core supplies the continuous drivable construction. Kenny/KayKit/Tiny Treats add buildings and roadside/world props around it. They do not replace the OSM-aligned KFB road surface.
 
-High-value source objects:
-- `construction-barrier`, `construction-cone`, `construction-fence`;
-- `road-*-barrier` families for bends, curves, intersections, roundabout, side entry/exit, slants, splits and straights;
-- `bridge-pillar`, `bridge-pillar-wide`.
+**Kabelbett / plug logic:** treat the existing Blender-MCP Racer connector construction as the actual modelling precedent Georg refers to. The exact historical object/file named “Kabelbett” is still not pinned by path, so do not invent one; however the *implemented idea* is no longer merely a visual metaphor. The production design must preserve the Racer's exact socket/connector grammar so modules can be skinned and joined without bespoke geometry patches.
 
-This family is the reference for ordinary road containment and temporary/construction transitions.
+### 4A.6 · Clay translation rules for Track Core + environment props
 
-**Kenney Toy Car Kit**  
-Registry: `registry/assets/v1/packs/kenney-toy-car-kit.json`
+- **Road / track body first:** claymation changes the visible skin, relief, colour/material zones and controlled softening; it does not replace the Track Core road mesh with kit-road assets.
+- **Red/white kerbs and barriers:** design them as KFB Track-Core edge/profile states, with alternating pressed-clay masses and softened corners while preserving the existing connector/profile dimensions.
+- **Guardrails / rails:** design a KFB clay edge treatment on the existing profile/slot grammar; do not import a Kenney/KayKit race-road rail as the structural boundary.
+- **Fences:** environment fences from Tiny Treats/KayKit/Kenney may dress the world beyond the safety/runoff envelope. Structural race/catch-fence behaviour and its attachment line remain Track-Core/Race-owned.
+- **Sand / gravel beds:** the runoff shape belongs to the KFB road/edge profile and world-contact truth; clay surface relief and particles sell the material without substituting an external roadCornerSand mesh.
+- **Dirt roads, ditches and berms:** remain variants/adapters of the same KFB track construction and socket system.
+- **Loop/ramp edges:** are skins/profile states of the existing stunt geometry; no Toy-Car/Kenney loop or ramp donor becomes production geometry.
+- **Tunnel portals:** should look pressed/built into the clay world while retaining the S8 tunnel clearance, roadbed and portal-match truth.
+- **External environment props:** keep their proven source identity, then clay-adapt only where the look system explicitly allows it; they never move the mathematical track socket.
+- **Cosmic:** wait for a pinned KFB visual donor; the same Track Core and sockets remain underneath.
 
-Use as a **connector/piece vocabulary donor**:
-- narrow/wide `track`, `track-road`, `track-striped`;
-- front/back caps;
-- corner ramps and curves;
-- loopings;
-- bump-up / bump-down;
-- hill beginning / complete / end;
-- skew-left / skew-right connectors.
 
-Do not copy it as a second track runtime. Study how a finite set of piece types communicates connection and transition.
-
-**KayKit City Builder Bits**  
-Registry: `registry/assets/v1/packs/kaykit-city-builder-bits-1-0-free.json`  
-Measured donor surface: `tools/world_atlas/source/KayKit_Road_Network_S5.html`
-
-Relevant road pieces:
-- `road_straight`, `road_corner`, `road_corner_curved`;
-- `road_junction`, `road_tsplit`, `road_straight_crossing`.
-
-Important design lesson from S5: road openings and **kerb slots are measured from geometry**, not guessed from filenames or typed prop coordinates. Preserve that mental model when adapting OSM/city edges.
-
-**Tiny Treats · Homely House**  
-Registry: `registry/assets/v1/packs/tiny-treats-homely-house-1-0-free.json`
-
-Fence family:
-- `fence_corner`, `fence_post`;
-- `fence_rails`, `fence_rails_long`;
-- `fence_straight`, `fence_straight_long`;
-- open/wide/long variants.
-
-Use for the softer, handmade residential/rural clay fence language where it actually fits the source.
-
-**Kenney Platformer Kit**  
-Registry: `registry/assets/v1/packs/kenney-platformer-kit.json`
-
-Useful candidates:
-- low/straight/curved/broken fence variants;
-- `fence-rope`;
-- `platform-ramp`.
-
-Use as an off-road/rural boundary donor, not as a generic replacement when a more exact road/race source exists.
-
-**Sand material/form candidates**
-- Racing Kit `roadCorner*Sand*` is the strongest race-semantic source.
-- `registry/assets/v1/packs/kaykit-blockbits-1-0-free.json` contains `sand_A` / `sand_B` as secondary form/material references only.
-
-### 4A.6 · Clay translation rules for the donors
 
 - **Red/white kerbs and barriers:** alternating pressed-clay masses with softened corners and controlled hand variation; preserve exact module/connector length so the pattern does not drift at joints.
 - **Guardrails / rails:** rounded stamped clay/soft-metal language is allowed, but do not distort the clear vehicle envelope or create hidden collision lips.
