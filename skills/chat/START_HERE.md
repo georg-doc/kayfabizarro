@@ -748,3 +748,24 @@ Current WB2 implementation on stacked Draft PR #190:
 Exactly one next WorldBuilder gate: **Claude Design authoring/UI refinement on the accepted WB2 source**, using `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_EDITOR_CLAUDE_DESIGN_AFTER_WEB_2026-09-23.md`.
 
 Primary UX direction: reduce redundant side-panel editor controls/copy, keep object transforms inline, keep Terrain Sculpt compact and scene-level, maximize 3D FOV, and compose accepted WorldDesign look/environment controls. Smooth / Flatten / material painting remain separate later functional slices.
+
+
+## 2026-09-27 · WB-ZONE-SEAM-01 failure recovery
+
+WB-ZONE-SEAM-01 is frozen on Draft PR **#252** / `chatgpt-web/wb-zone-seam-01-2026-09-27`.
+
+Goal was productive integration of the accepted Cologne WORLD-ZONE-BAKE-01 into the real WB2 owner plus consumption of the LOOK-TORSION architecture pass in the existing city presenter. No review website was created.
+
+The bake identity/storage contract passes, but the historical frozen Cologne crop cannot yet be reconstructed exactly from its surviving `centroid inside` wording:
+- vertex-average centre → 368 buildings;
+- polygon-area centroid → 370;
+- current City bbox-centre donor → 370;
+- frozen fixture → 369.
+
+Two repair passes are exhausted. Static/browser WorldBuilder regression was not reached; no integration PASS is claimed.
+
+Recovery:
+`skills/chat/workflows/WB_ZONE_SEAM_01_FAILURE_RECOVERY_2026-09-27/RECOVERY.md`
+
+Exactly one next gate:
+**WB-ZONE-CROP-PARITY-01 · diagnostic-only exact 369-id rule.**
