@@ -79,3 +79,30 @@ No runtime files, source owners, Stage package or Live promotion changed in this
 **Georg World r2 visual/freeplay review · PASS / TUNE / FAIL.**
 
 Do not start `WB-ZONE-SEAM-01` or another World implementation slice before this human gate is recorded.
+
+
+## 2026-09-27 · Georg human result
+
+Status: **TUNE / PROCEED · HUMAN GATE CLOSED**
+
+Georg reviewed the World r2 Stage and accepted the current direction far enough to continue.
+
+Durable review:
+`tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/GEORG_REVIEW_WORLD_R2_2026-09-27.md`
+
+Accepted:
+- overall visual/world direction;
+- current Hürth / Cologne continuation foundation;
+- no architecture reset requested.
+
+Non-blocking follow-ups:
+- `GLOBAL-SHADOW-CONTACT-ARTIFACT-FIX` — recurring ground-contact / under-roof shadow clipping, leakage and banding should be solved globally where possible;
+- `WORLD-PERF-CONTROLS-TUNING-LATER` — current review surface felt sluggish/choppy, so Orbit zoom, walking speed and animation/movement timing are deferred until a more representative integrated WorldBuilder / Travel environment.
+
+Georg explicitly asked not to spend this gate on another long Cloudflare/publication loop or pseudo-review page.
+
+## Exactly one next productive gate
+
+**WB-ZONE-SEAM-01**
+
+Proceed from the current accepted WorldBuilder foundation and the proven baked Cologne World Zone. The shadow and performance/control items remain non-blocking backlog, not prerequisites.
