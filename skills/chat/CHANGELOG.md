@@ -1,3 +1,13 @@
+## 2026-09-27 · Persist-before-reply workflow hardening
+
+- Georg flagged a failure-window anti-pattern: an authorized Web/GitHub slice can output a long paste-ready handoff before actually persisting the result, leaving the authoritative state vulnerable if the chat then times out.
+- The existing workflow already required Return/changelog/Hub updates in the same handoff, but did not explicitly constrain **response ordering**.
+- Added binding `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md → 3B Persist before replying`.
+- Added `FRESH_CHAT_SLICE_PROTOCOL.md → 3A Persist closure before chat prose`.
+- New safe order: **user feedback → owner GitHub write → exact ref/file verification → required WSA/Hub note → concise chat confirmation**.
+- When the GitHub connector is available and the write is authorized, paste-ready GitHub text is no longer an acceptable substitute for the actual write.
+- If a write times out, status remains `UNKNOWN`; keep chat output minimal while inspecting the exact ref/file.
+
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 routing
 
 ### ROUTING
