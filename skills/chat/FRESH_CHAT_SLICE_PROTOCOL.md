@@ -65,6 +65,20 @@ A clear Georg instruction to proceed closes the current intermediate gate as a *
 - Append to changelog/Return. Do not rewrite old outcomes to make the history look cleaner.
 - Separate `PROPOSAL`, `DECISION`, `IMPLEMENTATION`, `TESTED RESULT`, public deployment and `HUMAN FREEPLAY / GEORG PASS`.
 
+## 3A. Persist closure before chat prose
+
+For any slice already authorized to write GitHub state, closure is not complete until the durable owner state is written and verified.
+
+In particular, after Georg gives PASS / TUNE / FAIL or asks to “check this in”, “secure this” or continue:
+1. update the owner Return / review record / next gate first;
+2. verify the exact branch head and intended file;
+3. add any required WSA / Work planning note;
+4. only then send the compact chat summary.
+
+Do not spend a separate user turn producing paste-ready GitHub text when this chat already has the GitHub connector and permission to persist it.
+
+If the persistence step is still `UNKNOWN`, say only that and inspect the ref; do not create a long handoff that may become the only surviving copy.
+
 ## 4. Test the thing that changed
 
 Run the narrow static/integration checks first. If the slice changes a visible browser/game experience, also test the actual browser result at the intended size. Save a screenshot or live URL when useful.
