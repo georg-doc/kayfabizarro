@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.route-recipe/0.1-draft",
+  "title": "KFB RouteRecipe (Track Core W0 draft)",
+  "type": "object",
+  "required": ["schema", "id", "pieces"],
+  "properties": {
+    "schema": { "const": "kfb.route-recipe/0.1-draft" },
+    "id": { "type": "string" },
+    "label": { "type": "string" },
+    "units": { "type": "string" },
+    "ds": { "type": "number", "exclusiveMinimum": 0, "default": 0.5 },
+    "start": { "type": "object", "properties": { "p": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 }, "headingDeg": { "type": "number" } } },
+    "defaults": {
+      "type": "object",
+      "properties": {
+        "widthClass": { "enum": ["NARROW", "STANDARD", "WIDE", "HERO", "HERO_XL"] },
+        "markings": { "enum": ["TRACK", "STREET", "MAG", "NONE"] },
+        "profile": { "$ref": "#/$defs/profileValues" },
+        "autoBank": { "type": "object", "properties": { "gain": { "type": "number" }, "limitDeg": { "type": "number" } } }
+      }
+    },
+    "pieces": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/piece" } },
+    "junctions": {
+      "type": "array",
+      "description": "Data only; Race owns behaviour. SPLIT_HALF / SWITCH_Y / MERGE edges between routes, with default option and HUD hints.",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "atPiece"],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "enum": ["SPLIT_HALF", "SWITCH_Y", "MERGE_HALF", "MERGE_Y", "AIR_CHOICE"] },
+          "atPiece": { "type": "string" },
+          "decisionWindowS": { "type": "number", "default": 1.5 },
+          "defaultOption": { "type": "string" },
+          "options": { "type": "array", "items": { "type": "object", "properties": { "route": { "type": "string" }, "mode": { "type": "string" }, "hint": { "type": "string" } } } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "profileValues": {
+      "type": "object",
+      "properties": {
+        "width": { "type": "number" }, "offset": { "type": "number" }, "shoulderW": { "type": "number" }, "shoulderDrop": { "type": "number" },
+        "barrierGap": { "type": "number" }, "barrierT": { "type": "number" }, "barrierH": { "type": "number" }, "barrierOuterTop": { "type": "number" },
+        "deckDepth": { "type": "number" }, "barrierVisL": { "type": "number", "minimum": 0, "maximum": 1 }, "barrierVisR": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "paramTarget": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "object", "required": ["to"], "properties": { "to": { "type": "number" }, "ease": { "enum": ["step", "linear", "smoothstep", "smootherstep"] }, "zone": { "type": "array", "items": { "type": "number", "minimum": 0, "maximum": 1 }, "minItems": 2, "maxItems": 2 } } }
+      ]
+    },
+    "piece": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "enum": ["STRAIGHT", "CURVE_EASE", "HAIRPIN_180", "OFFSET_S", "SPIRAL", "WIDTH_STEP", "LOOP", "CHICANE", "CREST", "DIP", "KICKER", "LANDING", "STREET_TO_TRACK", "FUNNEL", "LANE_TAKEOVER"] },
+        "length": { "type": "number", "description": "STRAIGHT, OFFSET_S, WIDTH_STEP" },
+        "turn": { "type": "number", "description": "degrees, > 0 right (CURVE_EASE, SPIRAL)" },
+        "radius": { "type": "number" },
+        "ease": { "type": "number", "description": "clothoid length in metres" },
+        "dir": { "enum": [1, -1], "description": "HAIRPIN_180: 1 = right" },
+        "shift": { "type": "number", "description": "OFFSET_S lateral shift, > 0 right" },
+        "height": { "type": "number", "description": "LOOP apex height" },
+        "drift": { "type": "number", "description": "LOOP lateral drift, default width + 3" },
+        "side": { "enum": [1, -1] },
+        "rise": { "type": "number" },
+        "riseEase": { "enum": ["linear", "smoothstep", "smootherstep"] },
+        "bankDeg": { "type": "number" },
+        "width": { "type": ["string", "number"] },
+        "widthTo": { "type": ["string", "number"] },
+        "widthZone": { "type": "array", "items": { "type": "number" } },
+        "params": { "type": "object", "additionalProperties": { "$ref": "#/$defs/paramTarget" } },
+        "markings": { "enum": ["TRACK", "STREET", "MAG", "NONE"] },
+        "mode": { "enum": ["free", "assist", "locked", "magnet_push", "magnet_pull", "zero_g", "flight_free", "skydive_guided", "bounce"] },
+        "holdAllowed": { "type": "boolean", "description": "Georg 27.09: player may brake to a stop on magnet sections (free camera)" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
