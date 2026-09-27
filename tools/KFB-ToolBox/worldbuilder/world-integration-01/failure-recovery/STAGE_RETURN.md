@@ -49,3 +49,33 @@ zero failed source requests.
 
 **Georg World r2 visual/freeplay review** on the fixed URL. No further WSA implementation before that
 human gate.
+
+
+## 2026-09-27 · Hub/link recheck
+
+Status: **ACCEPTANCE SURFACE LINKED · HUMAN GATE UNCHANGED**
+
+Current `cloudflare-live` head inspected:
+`44c28402664ec9ef1dd0613a575d9ad95be03881`.
+
+The KFB Hub at that publication head now routes the World lane as:
+- `LOOK_AT`;
+- title `World r2 · PUBLIC VERIFIED · Georg Review`;
+- PR `#234`;
+- review URL `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-r2/`;
+- source ref `PR #234 · 7b2393a5 · cloudflare-live runtime c035427e · 15/15 public browser PASS`.
+
+The Stage entry present on the same current publication head still carries:
+- `kfb-stage-id = WORLD-R2-STAGE-PREP-01`;
+- `kfb-source-pr = 190`;
+- `kfb-source-head = 58028b07d7618926c40ffaec3bd4053dc88c0efd`.
+
+A fresh network/browser reopen from the 2026-09-27 chat environment could not be completed because the available external browser transport could not access the Cloudflare host. That fresh recheck is therefore **UNKNOWN**, not a new PASS. The last completed exact public-browser proof remains the 2026-09-26 **15/15 PASS** recorded above.
+
+No runtime files, source owners, Stage package or Live promotion changed in this recheck.
+
+## Exactly one current gate
+
+**Georg World r2 visual/freeplay review · PASS / TUNE / FAIL.**
+
+Do not start `WB-ZONE-SEAM-01` or another World implementation slice before this human gate is recorded.
