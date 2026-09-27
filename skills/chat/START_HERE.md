@@ -1254,3 +1254,18 @@ The Live Librarian shows Registry source `b133e66c4f8c...` and 14,923 assets, in
 
 The bounded PD production slice is closed. Broader population remains blocked until the original selected-hit manifest is recovered or Georg explicitly authorizes a clearly new curated discovery round.
 
+
+
+## 2026-09-27 · WB-ZONE-SEAM-01 stop-rule recovery
+
+The productive WB2 seam attempt is preserved on Draft PR **#252** / `chatgpt-web/wb-zone-seam-01-2026-09-27`.
+
+- WORLD-ZONE-BAKE-01 remains a technically usable donor; its manifest/revision/WorldBuilder storage contract passed.
+- The blocker is reconstruction of the historical frozen Cologne presentation crop: documented `centroid inside` semantics produce 368 / 370 / 370 across the tested deterministic interpretations instead of the frozen 369-id set.
+- Two repair passes are exhausted; **no repair 3**.
+- The candidate is frozen at recovery head `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
+- No Stage or Georg pseudo-gate was created.
+- Next gate only: **WB-ZONE-CROP-PARITY-01**, repository-native diagnostic exact-id reconstruction; no renderer/human review.
+
+Recovery:
+`skills/chat/workflows/WB_ZONE_SEAM_01_FAILURE_RECOVERY_2026-09-27/` on PR #252.

@@ -2021,3 +2021,15 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Public proof artifact `10922076232`, digest `sha256:f12289a03929be80bddfe68f42f7b93ee4fd1d26cd6df7d6e050054182598adf`, includes result JSON plus four screenshots.
 - PD-POOL-R1→R3 bounded slice is closed. No broader bulk import was started. The historical original selected-hit manifest/UI export remains missing; any larger pool requires its recovery or an explicitly new curated discovery round.
 
+
+
+## 2026-09-27 · WB-ZONE-SEAM-01 failure recovery routed
+
+- Draft PR #252 preserves the real-owner WB2 + baked Cologne seam candidate; base remains accepted PR #190.
+- WORLD-ZONE-BAKE-01 package identity/storage contract passed and remains a reusable technical donor.
+- LOOK-TORSION was consumed through the existing Elastic owner; no second deformer/presenter was created.
+- Crop parity blocked before static/browser regression: 368/369 → 370/369 → 370/369.
+- Runs: 36291539816 · 36291711090 · 36291859889.
+- Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
+- No public Stage or human review task.
+- Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
