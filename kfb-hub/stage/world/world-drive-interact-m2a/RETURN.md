@@ -58,6 +58,31 @@ Die öffentliche Stage bleibt als reproduzierbarer Fehlerbeleg erhalten. Sie ist
 
 Direkter Fehlerbeleg: <https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/>
 
+## WORLD-M2A-R1 · 2026-09-27
+
+R1 wurde nach zwei Kandidaten regelkonform gestoppt. Der Kandidatenbranch ist nicht auf die feste Stage veröffentlicht.
+
+Bestanden:
+
+- der befahrbare Boden deckt jetzt die vollständige sichtbare Hürth-Zone von 716 × 716 m ab;
+- das geparkte Fahrzeug wird bereits vor dem Einsteigen physikalisch gesetzt: 4/4 Radkontakte und 0,002–0,003 m sichtbarer Bodenabstand;
+- eine automatisierte Offroad-Fahrt bewegte das Fahrzeug rund 24 m mit 4/4 Kontakten und ohne Fall/Recovery;
+- Walk-Antritt und Zustandswechsel wurden beschleunigt;
+- der beste gemessene Kaltstart bis zur Kontrolle lag bei 14,2 s und erfüllt damit das 15-s-Ziel;
+- Paketprüfung: 23/23 PASS.
+
+Noch nicht bestanden:
+
+- Frame p95 liegt bei 84,4 ms zu Fuß und 89,4 ms fahrend statt höchstens 33,3 ms;
+- der Renderpfad verbraucht etwa 46–71 ms pro Bild, während Movement, World-Update und UI jeweils deutlich unter 1 ms bleiben;
+- die öffentliche Stage bleibt deshalb unverändert der bekannte Fehlerbeleg; R1 ist nur ein erhaltener Candidate.
+
+Die priorisierte Kosten-/Nutzen-Entscheidung steht in `PERFORMANCE_VALUE_MATRIX.md`. Track S9/S4B, Emanata/Brick Fish und weitere neue GitHub-Inputs sind gesichert, aber ausdrücklich nicht in diesen Reparaturpass gezogen worden.
+
+R1-Implementierungscheckpoint: `58297e79696fe60f805cb0bf894f1da9fa2beb7b`.
+
+R1-Status: `CONTACT_AND_BOOT_PASS · RENDER_BUDGET_FAIL · CANDIDATE_PRESERVED · NOT_PUBLISHED`.
+
 ## Genau ein nächster Gate
 
-`WORLD-M2A-R1`: begrenzter Playability-/Performance-Pass auf exakt derselben Szene. Erst messen, dann höchstens zwei kleine Kandidaten: durchgehender Terrainkontakt, brauchbares Frametiming und Ladeverhalten, korrekter Fahrzeug-Bodenkontakt sowie offensichtliche Movement-State-Fehler. Keine neuen Features, Assets, Tracks oder HUDs. Danach ein freier Zu-Fuß-/Offroad-/Fahrtest durch Georg.
+`WORLD-M2A-R2 · RENDER BUDGET`: Grafikbeschleunigung/Renderpfad einmal verifizieren und danach genau eine Stadt-LOD-/Shadow-Budget-Lösung testen. Erst bei p95 ≤ 33,3 ms folgt Veröffentlichung und Georgs freier Zu-Fuß-/Offroad-/Fahrtest.

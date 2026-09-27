@@ -51,9 +51,10 @@ export async function makePlay({ scene, camera, dom, groundAt, obstacles, hud, l
   const prop = (k, d) => { const v = (window.__wb2dProps || {})[k]; return v == null ? d : v; };
   const TUNE = {
     cadence: THREE.MathUtils.clamp(+prop('walkCadence', 1.35), 0.8, 2),
-    paceUp: !!prop('paceUp', true), paceUpAfter: 1.1,
+    paceUp: !!prop('paceUp', true), paceUpAfter: THREE.MathUtils.clamp(+prop('paceUpAfter', .55), .2, 1.5),
     sprint: !!prop('sprint', true),
-    accel: 3.2, decel: 5.5
+    accel: THREE.MathUtils.clamp(+prop('walkAccel', 5), 1, 12),
+    decel: THREE.MathUtils.clamp(+prop('walkDecel', 7.5), 1, 16)
   };
   const V = {};
   function retune() {
