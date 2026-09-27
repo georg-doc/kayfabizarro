@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-28
+
+- Georgs akzeptiertes T3-v2/K2-Paket auf `main@7bd27b3d2` als aktuelle visuelle und materielle Basis übernommen.
+- Fresh-Chat-Briefing auf `track-look.v4`, `clay-material.v10`, `clay-relief.v4` und `clay-toolmix.v1` umgestellt; neue Arbeit wird additiv als v5/Transition-Atlas gebaut.
+- Bekannte K2-Befunde als Guardrails übernommen: auslaufende Facetten, kein Spachtel-Kreuzraster, Macro/Legacy nur gezielt, Fahrbahnprofil vorerst geschützt.
+- VFX-/Biom-Vertrag an gemeinsame Seeds und reduzierte instanzierte Partikelmaterialien gebunden.
+- WFC als begrenzten 2.5D-Füll-/Adjazenzsolver eingeordnet; Route, Track Core, OSM, Physik und globale Dramaturgie bleiben feste Owner.
+
 ## 2026-09-27
 
 - T3 `Knetstrang` als verbindliche visuelle Basis gesetzt.

@@ -75,6 +75,28 @@ Andockpunkte sind leere Objekte/Nodes mit stabilen Namen. Visuelle Teile dürfen
 - Handspuren sind reliefartig und maßstabil; keine großen Krater oder verformte Reifenebene.
 - Knetstrang, Rand und Stützen reagieren weich; sie ersetzen nicht die Kollisionslogik.
 
+## K2 Materialvertrag
+
+- Basis ist `clay-material.v10` mit `clay-relief.v4` und `clay-toolmix.v1`, nicht v8.
+- Häuser/Türme, Strang/Stützen, Gelände, Kronen/Büsche, Stämme, Fels, Wolken und Karts behalten ihre bewiesenen Klassenmischungen.
+- Fahrbahn bleibt vorerst `legacy = 1`, weil ihr Straßenprofil ausdrücklich erhalten werden soll.
+- Facetten laufen an Zellgrenzen aus; harte dunkle Polygon-Scherben dürfen nicht zurückkehren.
+- Spachtel-Querraster und Macro-Maserung sind bekannte Fehlerquellen. Sie werden nicht als Stilmittel wieder eingeschaltet.
+- Übergänge variieren Profilgewichte räumlich gestaffelt. Sie schalten nicht alle Werkzeuge an derselben `u`-Position um.
+
+## Biom-/Seed-Vertrag
+
+Ein Zonen-Seed bestimmt gemeinsam, aber über getrennte Rollen:
+
+- Track-/Randpalette;
+- Terrain-/Vegetationspalette;
+- K2-Klassenprofil;
+- Licht-/Mood-Preset;
+- VFX-Profil;
+- optionale WFC-Füllung außerhalb der gesperrten Route.
+
+Der Seed ist reproduzierbar und exportierbar. WFC oder andere Generatoren dürfen Track Core, Fahrkorridor, Landmark-Anker und Ground-/Camera-Clearance nicht verändern.
+
 ## Erfolg
 
 Ein Übergang ist gelungen, wenn er aus Fahr-, Mitfahr- und Fußperspektive als ein zusammenhängender Ort wirkt, bei schneller Fahrt früh lesbar bleibt und an keiner einzelnen Querlinie „umschaltet“.

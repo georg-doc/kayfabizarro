@@ -13,6 +13,8 @@ VFX sehen aus, als würden kleine Stücke derselben lebenden Knetwelt abgeschabt
 
 Alle wiederkehrenden Formen werden instanziert. Rotation, Maßstab und Farbe variieren deterministisch über Seed.
 
+Die VFX-Materialien leiten Farbe, Rauheit und Reliefmaß aus den K2-Rollen ab, verwenden aber **nicht** den vollständigen `clay-material.v10`-Werkzeugpfad pro Partikel. Ein reduzierter, schattenloser Clay-Shader erhält die Oberfläche, ohne die bis zu sechs Werkzeuglagen je Pixel zu vervielfachen.
+
 ## Ereignisfamilien
 
 | Ereignis | Bewegung | Materialreaktion |
@@ -32,6 +34,8 @@ Alle wiederkehrenden Formen werden instanziert. Rotation, Maßstab und Farbe var
 - **Küste/nass:** dunklere gequetschte Tropfen und wenige helle Schaumkügelchen; nur visuell, solange kein Water-Owner angebunden ist.
 - **weird/fraktal:** dieselbe Formfamilie mit gezieltem Palette-Shift; keine zusätzliche Partikelarchitektur.
 
+Biome, Licht/Mood, Trackrand und VFX lesen denselben Zonen-Seed. Ein Biomwechsel mischt kurz beide Partikelprofile, während Geometrie, Markierungen, Props und Licht jeweils eigene versetzte Fenster besitzen.
+
 ## Qualitätsstufen
 
 Startwerte, in der echten Runtime zu messen:
@@ -41,6 +45,8 @@ Startwerte, in der echten Runtime zu messen:
 - `HIGH/desktop`: maximal ca. 200, 3–4 Grundmeshes, wenige klebende/rollende Nachläufer.
 
 Emitter verwenden Pools; keine Objektanlage pro Frame. Entfernte VFX werden reduziert oder ganz ausgelassen. Partikel werfen standardmäßig keine dynamischen Schatten.
+
+Der T4-Beweis misst drei Zustände in derselben Kamera: K2 ohne VFX, LOW-VFX und HIGH-VFX. Bei Unterschreitung des Performanceziels werden zuerst MaxAlive, Lebensdauer und Bodenabpraller reduziert; die Fahrbarkeit und K2-Großform bleiben unangetastet.
 
 ## Datenprofil
 
@@ -55,4 +61,3 @@ Emitter verwenden Pools; keine Objektanlage pro Frame. Entfernte VFX werden redu
 - `sourceRef` und `notes`
 
 Gameplay liefert Ereignis, Kontaktpunkt, Normalenrichtung, Geschwindigkeit/Energie und Biom. Das VFX-Modul liest diese Werte; es schreibt keine Fahrzeugphysik und entscheidet keinen Schaden.
-
