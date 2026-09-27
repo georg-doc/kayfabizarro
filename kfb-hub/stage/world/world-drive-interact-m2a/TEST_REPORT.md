@@ -69,3 +69,17 @@ Bewertung: `R3 PARTIAL · MATERIAL PERFORMANCE GAIN · FRAME TARGET FAIL`. Die S
 Zusätzlich wurde exakt `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/` nach Publication-Head `2e1978821a043cf604c8bc556493cae282a87a86` erneut geprüft: **38/38 PASS** auf Desktop und schmalem Viewport, einschließlich Ground → Drive → Ground → Flight, echter Radkontakte sowie 0 Seiten-, Request- und HTTP-Fehler.
 
 Bewertung: `R4 LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING`. Die Werte sind vergleichbare lokale Browsermessungen auf derselben R3/R4-Testumgebung, kein allgemeiner Hardware-Benchmark. Das menschliche Spielgefühl bleibt der nächste Produktcheck.
+
+## R5 · Playability repair
+
+- Paket-/Owner-Prüfung: **27/27 PASS**.
+- Vollständiger lokaler Browserlauf Desktop + schmal: **38/38 PASS**.
+- Gesonderter Spielbarkeitstest: **PASS**, 0 Seiten-/Konsolenfehler.
+- Kaltstart bis Kontrolle: **4,05 / 4,09 s** in den beiden Interaktionsläufen.
+- Normaler Lauf nach 0,7 s: **1,41 m/s**; Sprint: **2,99 m/s**.
+- Fahrzeug im ersten sichtbaren Zustand: **4/4 Kontakte**, **0,003 m** Ground-Gap, 41 Pre-settle-Schritte.
+- Offroad-Probe: **12,67 m**, am Ende 4/4 Kontakte, Ground-Gap −0,009 m, kein Fall.
+- Isolierte Performance: Idle **33,4 ms**, Walk **16,8 ms**, Drive **16,8 ms** p95; 30-fps-Ziel bestanden.
+- Adaptive Qualität: `stable → moving → stable`, kein sichtbares Pumpen im Zustandsprüfer.
+
+Bewertung: `R5 LOCAL PLAYABILITY PASS · FRAME TARGET PASS · PUBLICATION PENDING`. Die automatischen Prüfungen belegen Boden, Eingabe, Zustände und Performance; sie ersetzen nicht Georgs Sichtprüfung von Clip-Taktung und Spielgefühl.
