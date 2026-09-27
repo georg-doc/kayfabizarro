@@ -481,6 +481,16 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+# 2026-09-27 · World M2 Drive + contextual interaction consolidation
+
+- Expanded the single productive World M2 brief from Track/Clay-only into a complete Ground + Drive + Flight loop; Water remains later.
+- Source-locked the Drive path to Race PR #10 and its presentation-only Vehicle Deformer v2; Track acceptance source is Race PR #42.
+- Standardized keyboard interaction on `E` through semantic `INTERACT`, shared by vehicles, Residents, props and portals without a second gameplay owner.
+- Defined the no-door cartoon vehicle transition: hop, duck/squash and safe pop-out on World-confirmed ground.
+- Added a source-backed interaction contract and an isolated Clay Speech/Thought Bubble design brief while keeping both under the one World M2 Hub lane.
+- Kept the MVP proportional: one proven vehicle carries the loop; additional vehicles cannot block it.
+- Planning/source update only. No runtime, Stage, public Hub or Live promotion claimed.
+
 # 2026-09-27 · World Mobility M1 + ToolBox Recovery-01 source sync
 
 - WORLD-FLIGHT-CLAY-C0 decision converted into execution state: World/Clay remains `PROCEED PASS`; rejected track proxy and temporary flight adapter are no longer presented as Georg review work.

@@ -392,7 +392,7 @@
       "what": "Der geprüfte Ground/Flight-Router, der 400-ms-Doppeldruck und der echte Card-Carrier sind in WORLD-MOBILITY-M1 eingebaut. Die alte Vertragsseite bleibt nur technische Evidence und ist keine Aufgabe für Georg.",
       "provider": "WorldBuilder / Travel Web",
       "yourAction": "",
-      "waitingFor": "Drive und Water bleiben source-required; erst mit realen Adaptern ergänzen.",
+      "waitingFor": "Drive ist für M2 auf den bewiesenen Race-/Free-Roam-Donor PR #10 source-locked. Water bleibt bewusst später und source-required.",
       "questions": [],
       "repo": "georg-doc/KFB-Travel-Globe",
       "pr": 39,
@@ -492,18 +492,18 @@
     {
       "id": "worldbuilder-mobility-mvp",
       "bucket": "RUNNING",
-      "title": "World Mobility M1 → Track + KlayfaBizarro M2",
-      "what": "M1 ist lokal browser-grün und nutzt jetzt direkt den von Georg akzeptierten Hirnwelt-H0-Look: echtes H0-Material/Relief auf Terrain, Straße, Gehweg, Dächern und Fassaden in drei Maßstäben. Track-Dummy bleibt entfernt; World-r2 bleibt Ground-/Kontakt-Owner, Travel liefert Router und Card-Carrier. Die feste pages.dev-Route fällt weiterhin auf die allgemeine Website zurück und ist nicht als Stage freigegeben. M2 ergänzt nun den realen Track Core und eine physisch modellierte Knet-Stadtzelle mit Fahrbahn, hellem Fugen-Bordstein, Gehweg und Grünübergang.",
-      "provider": "Work · Sol High · WorldBuilder + Travel",
+      "title": "World M2 · Track + Drive + KlayfaBizarro",
+      "what": "M1 ist lokal browser-grün und nutzt den akzeptierten Hirnwelt-H0-Look. M2 verbindet jetzt den realen Track Core, eine modellierte Knet-Stadtzelle und einen bewiesenen Race-/Free-Roam-Fahrzeugpfad. Ziel ist ein zusammenhängender Spieltest: zu Fuß → mit E cartoonig einsteigen → frei fahren → Rampe/Track → aussteigen → weiterlaufen → Flight → zurück zu Ground. Water und der vollständige Fahrzeugkatalog bleiben später. E wird zugleich der gemeinsame Kontextknopf für Residents, Props und Portale; die Clay-ChatterBox ist ein nicht blockierender Design-Sidecar.",
+      "provider": "Work · Sol High · WorldBuilder + Travel + Race",
       "yourAction": "",
-      "waitingFor": "Einmalige Reparatur des bestehenden Stage-Routings durch dessen Publication-Owner; parallel WORLD-TRACK-CLAY-M2: echter Track Core + modellierte Bordstein-/Gehweg-Stadtzelle. Der H0-Look ist bereits integriert. Keine weitere Proxy-Fahrbahn und keine Laufzeit-Vorstufe mit 40-s-Ladezeit.",
+      "waitingFor": "Produktive Umsetzung von WORLD-TRACK-DRIVE-CLAY-M2 und einmalige Reparatur des bestehenden Stage-Routings durch dessen Publication-Owner. Keine Proxy-Fahrbahn, keine neue Fahrphysik, keine Tür-Attrappe und kein Fahrzeug-Vollkatalog als Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 249,
       "branch": "work/world-mobility-m1-2026-09-27",
       "expectedHead": "40037597485436e185f129091be908786925341d",
       "brief": {
-        "label": "World Track + KlayfaBizarro M2 · produktiver Work-Slice",
+        "label": "World + Track + Drive + E-Interaktion · produktiver M2-Slice",
         "path": "tools/production_desk/briefings/WORLD_TRACK_CORE_M2_2026-09-27.md",
         "ref": "work/hub-ctrl-mobility-toolbox-sync-2026-09-27",
         "pasteReady": true
@@ -532,7 +532,7 @@
   ],
   "wsa": {
     "state": "APPROVED_WITH_TUNES",
-    "text": "World/Clay direction is PROCEED PASS. WORLD-MOBILITY-M1 is implemented and locally browser-proven without the rejected track proxy. Next Work slice is the real Race Track Core connection; ToolBox RECOVERY-01 restores proven features before any UI expansion. No Georg task is open for these two lanes."
+    "text": "World/Clay direction is PROCEED PASS. WORLD-MOBILITY-M1 is implemented and locally browser-proven without the rejected track proxy. Next Work slice connects the real Race Track Core, one proven Drive vehicle and the shared E interaction into the Walk → Drive → Track → Walk → Flight loop; Water remains later. ToolBox RECOVERY-01 restores proven features before UI expansion. No Georg task is open for these production lanes."
   },
   "standards": [
     {

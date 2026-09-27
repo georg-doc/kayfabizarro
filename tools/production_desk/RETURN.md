@@ -1206,7 +1206,24 @@ Exactly one next gate:
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
-# CURRENT UPDATE · WORLD MOBILITY M1 + TOOLBOX RECOVERY-01 · 2026-09-27
+# CURRENT UPDATE · WORLD M2 DRIVE + INTERACTION CONTRACT · 2026-09-27
+
+Status: **PLAN CONSOLIDATED · SOURCE DONORS LOCKED · NO NEW RUNTIME CLAIM**
+
+- Next World milestone is now `WORLD-TRACK-DRIVE-CLAY-M2`, not a separate Drive sidequest.
+- Travel target is the smallest complete loop: **Walk → Drive → Track → Walk → Flight → Walk**. Water stays outside this MVP.
+- Track acceptance source is Race PR #42 @ `bcc422b00fc4629ac113f086cddcea3b2b107f2a`; it remains an acceptance scene, not a replacement Runtime owner.
+- Proven Drive/visual donor is Race PR #10 @ `406cd26f44f22811fe3b3a58776839be7ffb7b2c`: Free Roam owns movement/contact; Vehicle Deformer v2 owns presentation only.
+- `E` / semantic `INTERACT` is the single contextual action for vehicle enter/exit, Resident ChatterBox, props and portals. The visible focus prompt and executed target must always match.
+- Vehicle entry/exit uses the source-compatible no-door solution: character hop + vehicle duck/squash + safe World-ground pop-out. No door geometry or second physics owner.
+- One proven vehicle carries the MVP; other vehicles are additive and individually quarantinable.
+- Clay Speech/Thought Bubbles are a parallel isolated design donor over the existing ChatterBox, not a new dialogue or Memory owner and not an M2 blocker.
+- Added briefs: `WORLD_INTERACTION_E_V1_2026-09-27.md` and `CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`; both are linked from the single M2 production brief instead of creating more Hub clutter.
+- No World runtime, Stage, publication, merge or Live state changed in this planning checkpoint.
+
+Exactly one next gate: **execute WORLD-TRACK-DRIVE-CLAY-M2 as the next productive Work slice; Georg reviews only the resulting playable Travel loop.**
+
+# PREVIOUS UPDATE · WORLD MOBILITY M1 + TOOLBOX RECOVERY-01 · 2026-09-27
 
 Status: **HIRNWELT H0 INTEGRATED · SOURCE SYNC COMPLETE · NO GEORG TASK · PUBLIC HUB NOT REBUILT**
 
