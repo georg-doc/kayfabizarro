@@ -1,3 +1,11 @@
+## WB-ZONE-SEAM-01 · STOP-RULE RECOVERY · 2026-09-27
+
+Draft PR #252 is a frozen failed integration candidate, not a new human gate. WORLD-ZONE-BAKE-01 remains technically consumable. The blocker is exact parity with the historical 369-building Cologne presentation crop: tested rules produced 368 / 370 / 370. Two repair passes are exhausted.
+
+Next gate only: **WB-ZONE-CROP-PARITY-01**, diagnostic exact-id reconstruction. Do not run a renderer or create a review page.
+
+Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
+
 # CURRENT WORKFLOW OVERRIDE · PRODUCTIVE REVIEW / NO PSEUDO-HUMAN GATES · 2026-09-27
 
 Status: **BINDING · SUPERSEDES REVIEW-ARTIFACT-AS-DEFAULT LANGUAGE BELOW**

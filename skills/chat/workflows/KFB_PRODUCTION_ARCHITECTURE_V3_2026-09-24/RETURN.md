@@ -1,3 +1,35 @@
+## CURRENT UPDATE · WB-ZONE-SEAM-01 STOP-RULE RECOVERY · 2026-09-27
+
+Status: **PR #252 FROZEN · NO REPAIR 3 · NO HUMAN GATE**
+
+Productive integration was attempted directly in the accepted WB2 owner:
+- WORLD-ZONE-BAKE-01 PR #241 consumed as the Cologne geography/support donor;
+- WB2 stores the Zone manifest ref + transform, not copied generated geometry;
+- current `wd1-city.js` remains presentation owner;
+- LOOK-TORSION architecture pass is consumed through the existing Elastic deformer;
+- Hürth R2 remains untouched;
+- no standalone review site was created.
+
+The bake identity/storage contract passes, but exact reconstruction of the frozen Cologne 369-building crop fails:
+- initial vertex-average centre: **368**;
+- repair 1 polygon-area centroid: **370**;
+- repair 2 current-City bbox centre: **370**.
+
+Runs: `36291539816`, `36291711090`, `36291859889`.
+
+Two repairs on the same gate are exhausted. Candidate is preserved on Draft PR **#252** @
+`6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
+
+Recovery:
+`skills/chat/workflows/WB_ZONE_SEAM_01_FAILURE_RECOVERY_2026-09-27/` on PR #252.
+
+Exactly one next gate:
+**WB-ZONE-CROP-PARITY-01** — repository-native diagnostic only; identify the exact deterministic 369-id crop rule. No renderer, Stage or Georg review.
+
+WORLD-ZONE-BAKE-01 itself remains a technically usable donor; the blocker is the historical presentation-crop adapter.
+
+---
+
 ## CURRENT UPDATE · LOOK-TORSION PASS + NO-PROXY WORKFLOW CORRECTION · 2026-09-27
 
 Status: **ARCHITECTURE PASS ONLY · STANDALONE HUMAN GATE CLOSED · WSA OVERRIDE PERSISTED**

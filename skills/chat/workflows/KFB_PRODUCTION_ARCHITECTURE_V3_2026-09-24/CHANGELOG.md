@@ -526,3 +526,16 @@
 - `HUB_BRIEFING_CATALOG.json`: LOOK-TORSION-01 removed from WorldBuilder `currentReady`, moved to `HOLD/CLOSED_PASS` with `PASS_ARCHITECTURE_ONLY`; catalogue = **97 jobs · 41 READY · 56 HOLD**.
 - Next meaningful torsion evaluation: integrated WorldBuilder/world presentation with real camera/scene and shared shadow/lighting fixes.
 - Frozen Hürth R2 remains untouched; no merge or Live promotion authorized.
+
+
+## 2026-09-27 · WB-ZONE-SEAM-01 frozen after crop-parity stop rule
+
+- Real-owner WB2 integration attempted on Draft PR #252, stacked on accepted PR #190.
+- WORLD-ZONE-BAKE-01 package identity/storage contract passes and remains a consumable technical donor.
+- Candidate integrates manifest-ref + transform, baked support `heightAt`, existing WB-D2 presenter ownership and LOOK-TORSION through existing Elastic.
+- Exact historical Cologne crop parity blocks integration before static/browser regression: 368/369, then 370/369, then 370/369.
+- Runs: 36291539816 · 36291711090 · 36291859889.
+- Two repairs exhausted → no repair 3; recovery head `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
+- No Stage/human gate was created.
+- Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact-id rule.
+- Hub catalogue removes WORLD-ZONE-BAKE-01 from READY as completed technical donor and keeps WB-ZONE-SEAM-01 HOLD/FROZEN; no new diagnostic card.

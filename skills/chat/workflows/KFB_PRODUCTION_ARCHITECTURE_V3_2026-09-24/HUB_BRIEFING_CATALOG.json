@@ -49,14 +49,14 @@
       "target": "Globe → editable region → search/place → fractal edit → locomotion → OSM/Race world composition",
       "capabilitiesTotal": 11,
       "currentReady": [
-        "world-zone-bake-01",
         "bl-osm-clay-01"
       ],
-      "currentReview": "world-r2-stage-prep-01",
-      "currentPriority": "WORLD-R2-STAGE-PREP-01 · operational lane in HUB-CTRL",
+      "currentReview": null,
+      "currentPriority": "WB-ZONE-CROP-PARITY-01 · diagnostic-only recovery gate · no human review",
       "acceptedFoundation": "WB2-TERRAIN-SCULPT-01 · GEORG_HUMAN_PASS + WORLD-R2-CONTRACT-RESET-01 · PASS",
-      "operationalBrief": "tools/KFB-ToolBox/worldbuilder/world-integration-01/failure-recovery/NEXT_GATE.md",
-      "operationalHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd"
+      "operationalBrief": "PR #252 · skills/chat/workflows/WB_ZONE_SEAM_01_FAILURE_RECOVERY_2026-09-27/NEXT_GATE.md",
+      "operationalHead": "6b08636e552f39ac5f00d0216adcf70fa40f80c6",
+      "recoveryPr": 252
     },
     {
       "id": "racer-world",
@@ -1195,12 +1195,12 @@
     {
       "id": "world-zone-bake-01",
       "strand": "worldbuilder",
-      "bucket": "READY",
-      "priority": "P0",
+      "bucket": "HOLD",
+      "priority": "CLOSED_PASS",
       "executor": "ChatGPT Web",
       "title": "World · Cologne OSM Zone Bake",
       "what": "Compile the existing Cologne OSM source once into a versioned reusable World Zone.",
-      "result": "Cached zone package load/place/reload; no runtime Overpass.",
+      "result": "TECHNICAL_PASS / CONSUMABLE DONOR · package identity/storage contract proven; no human gate required.",
       "promptSection": "WORLD-ZONE-BAKE-01 · Cologne OSM World Zone compiler",
       "sourceSet": "worldbuilder",
       "cloudflareRequired": false,
@@ -1210,7 +1210,9 @@
       "reasoning": "high",
       "budget": "HIGH",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "operationalStatus": "COMPLETE_TECHNICAL_DONOR",
+      "humanReviewRequired": false
     },
     {
       "id": "world-zone-bake-02",
@@ -1915,7 +1917,7 @@
       ],
       "latestCandidate": "706c3f121bc3a305778306917613ea23eb772c16",
       "latestCandidatePath": "tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2",
-      "waitingFor": "WB2-DESIGN-REFINE-01 accepted/re-homed; then WB-ZONE-SEAM-01",
+      "waitingFor": "WB-ZONE-CROP-PARITY-01 diagnostic PASS → resume PR #252 seam; do not rerun WB-D2",
       "humanResult": "PARTIAL_POSITIVE_LOOK_SHADOW_ONLY"
     },
     {
@@ -2107,7 +2109,7 @@
       "id": "wb2-design-refine-01",
       "strand": "worldbuilder",
       "bucket": "HOLD",
-      "priority": "P0",
+      "priority": "P1",
       "executor": "Claude Design",
       "title": "WorldBuilder · WB2 UI / Authoring refinement",
       "what": "Optional WB2 authoring/UI refinement is deferred behind the current World r2 Stage/freeplay gate. The World runtime/contract is already green; do not start a new design pass before the unchanged recovered candidate is reviewed on Stage.",
@@ -2128,21 +2130,21 @@
       "budget": "STANDARD",
       "workDefault": false,
       "coworkDefault": false,
-      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Georg Stage visual/freeplay gate",
-      "operationalStatus": "DEFERRED_BEHIND_WORLD_R2_STAGE_PREP_01"
+      "waitingFor": "Deferred behind WB-ZONE-SEAM recovery; World r2 human gate is closed/proceed.",
+      "operationalStatus": "DEFERRED_BEHIND_WB_ZONE_SEAM_RECOVERY"
     },
     {
       "id": "wb-zone-seam-01",
       "strand": "worldbuilder",
       "bucket": "HOLD",
-      "priority": "P0",
+      "priority": "P0_RECOVERY",
       "executor": "ChatGPT Web / GitHub Bridge",
       "title": "WorldBuilder · WB-D2 / baked-zone seam",
-      "what": "Dock the latest Cologne/Hürth/Alstädten presentation shell onto the current WB2 editor and canonical baked World Zone without moving owners.",
-      "result": "Current WorldBuilder consumes zone truth through wd1-seam; presentation stays WB-D2-owned; Alstädten remains candidate until OSM re-cache.",
+      "what": "Frozen integration candidate on PR #252: baked Cologne + real WB2 + existing presenter/torsion owner. Do not repair again before crop-parity diagnostic.",
+      "result": "ARCHIVED_FAILED_CANDIDATE · bake contract passes; exact frozen Cologne crop is 368/370 vs required 369.",
       "promptSection": "WB-ZONE-SEAM-01 · Dock WB-D2 shell onto current WorldBuilder + baked zones",
       "sourceSet": "worldbuilder",
-      "waitingFor": "WB2-DESIGN-REFINE-01 accepted/re-homed",
+      "waitingFor": "WB-ZONE-CROP-PARITY-01 diagnostic PASS (exact 369-id set; no renderer/human gate)",
       "cloudflareRequired": false,
       "workRequired": false,
       "executionProfile": "WEB_DEEP",
@@ -2150,7 +2152,11 @@
       "reasoning": "high",
       "budget": "HIGH",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "operationalStatus": "FROZEN_FAILED_CANDIDATE_PR_252",
+      "recoveryPr": 252,
+      "recoveryHead": "6b08636e552f39ac5f00d0216adcf70fa40f80c6",
+      "humanReviewRequired": false
     },
     {
       "id": "env-preview-01",
@@ -2293,8 +2299,8 @@
   "metrics": {
     "strands": 13,
     "jobs": 97,
-    "ready": 41,
-    "hold": 56
+    "ready": 40,
+    "hold": 57
   },
   "executionProfiles": {
     "WEB_FAST": {

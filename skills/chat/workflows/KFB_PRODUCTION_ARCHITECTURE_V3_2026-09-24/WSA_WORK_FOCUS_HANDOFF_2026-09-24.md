@@ -170,3 +170,28 @@ Georg has now applied the productive-review rule directly to LOOK-TORSION-01.
 For torsion specifically, the next meaningful evaluation is inside the next clean/current WorldBuilder or world-presentation candidate, with the real camera/scene and the shared shadow/lighting corrections. Do not patch frozen Hürth R2.
 
 WSA success metric remains: **integrated usable capabilities / Georg attention**, not number of gates, proof pages or review PRs.
+
+
+## CURRENT OVERRIDE · 2026-09-27 · WB-ZONE-SEAM recovery
+
+WB-ZONE-SEAM-01 was executed in the real WB2 owner and is now **FROZEN FAILED CANDIDATE** on Draft PR #252.
+
+What worked:
+- baked Cologne manifest/revision/WorldBuilder-storage contract;
+- owner-correct manifest-ref integration architecture;
+- LOOK-TORSION routed through the existing Elastic presenter;
+- no second World/runtime/presenter owner;
+- no pseudo-human review page.
+
+What blocked:
+- exact frozen Cologne crop parity. The surviving phrase `centroid inside` does not encode the original 369-building selection rule strongly enough.
+- initial = 368; repair 1 = 370; repair 2 = 370.
+
+**STOP RULE:** no third repair pass.
+
+WSA must not schedule Work, Claude, Stage or Georg review for this issue.
+
+Exactly one next action:
+**WB-ZONE-CROP-PARITY-01 · repository-native diagnostic** to name the differing boundary building ids and recover the exact 369-id selection rule. Only after that machine PASS may PR #252 resume.
+
+This is a technical provenance seam, not a product decision.
