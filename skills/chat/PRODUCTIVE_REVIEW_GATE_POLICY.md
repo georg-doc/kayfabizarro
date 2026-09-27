@@ -95,6 +95,37 @@ Use Stage when:
 
 Diagnostics may remain repository/internal evidence without a Stage card.
 
+## Fidelity rule · no low-fidelity proxy gates
+
+A human review surface is invalid when the proxy is materially worse or less informative than the real receiving product.
+
+Do **not** ask Georg to infer product quality from an isolated review page when any of these are true:
+- simplified geometry, grey-box materials, generic lighting or a substitute camera hide the actual product context;
+- the proxy reproduces already-known renderer defects such as shadow clipping, shadow banding, light seams or related presentation bugs;
+- low frame rate, slow controls or poor interaction make visual/feel judgment unreliable;
+- the real WorldBuilder, ToolBox, Racer, Travel, Resident or Combat surface already exists and can carry the change;
+- the mechanism is reversible and can safely proceed to integrated evaluation without a separate approval ceremony.
+
+In those cases the isolated artifact may remain **internal engineering evidence**, but it must not become a blocking Georg task.
+
+A human gate must be representative enough that Georg can judge the actual consequential question directly. If the review requires him to mentally extrapolate from a grey proxy, tolerate known rendering bugs, or imagine how it would behave in the real product, use the real product instead.
+
+## LOOK-TORSION-01 application · 2026-09-27
+
+`LOOK-TORSION-01` receives **ARCHITECTURE PASS ONLY**.
+
+Retain:
+- cumulative height-dependent geometric torsion;
+- anchored base;
+- shared roof/body final deformation field;
+- role/height-dependent magnitude family.
+
+Do **not** interpret the isolated grey A/B/C page as WorldBuilder visual acceptance, lighting/shadow acceptance or a final torsion calibration. Known shadow/light defects remain open.
+
+Do not create another standalone torsion review page. Carry the proven mechanism into the next clean/current WorldBuilder or world-presentation candidate and judge it there with the real scene, camera and shared shadow/lighting fixes.
+
+This application is a concrete example of the policy: **the mechanism can pass while the proxy review workflow is rejected.**
+
 ## WSA / architecture rule
 
 WSA plans and slides must optimize for **flow to usable products**, not a queue of human gates.
