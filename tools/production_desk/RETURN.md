@@ -1264,3 +1264,12 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Paket 19/19 und lokaler Browser 28/28 PASS;
 - Stage/Public weiterhin ehrlich nicht behauptet;
 - echter Track Core bleibt eigener M2B-Quellblocker, nicht M2A-Blocker.
+
+
+## 2026-09-27 · World M2A public + Clay default
+
+- PR #253 current docs head: `5238219cbb6462d054afeb2ff70cc6a1f11a424a`; runtime head: `3a9375bba2acdcc448473f24838830ba92305277`.
+- Fixed Stage published at `/kfb-hub/stage/world/world-drive-interact-m2a/` via `cloudflare-live@afc5841abcb6ce057080618ab4aba36a4831bf3a`.
+- Hirnwelt H0 clay is the visible default on real World meshes; Original remains reversible.
+- Local browser proof: 34/34; exact public Stage browser proof: 34/34; desktop and narrow; zero page/request/HTTP errors.
+- Hub now presents one direct World M2A free-play action. Track/M2B remains WAITING_SOURCE; no proxy track.

@@ -491,24 +491,28 @@
     },
     {
       "id": "worldbuilder-mobility-mvp",
-      "bucket": "RUNNING",
-      "title": "World M2A · Zu Fuß + Auto + Flug · SOURCE/LOCAL PASS",
-      "what": "Der produktive M2A-Kernloop ist umgesetzt: FrizzleBob läuft in der bestehenden KlayfaBizarro-Welt, steigt mit E in ein sichtbares KayKit-Fahrzeug, fährt mit dem bewährten Free-Roam-Fahrkern aus Race PR #10, steigt mit E sicher aus und kann anschließend weiterlaufen oder fliegen. World bleibt Boden-/Kollisionsowner; Drive bleibt Race-Owner. 19/19 Paket- und 28/28 lokale Browserprüfungen sind grün. Runtime-Checkpoint ist c59cd460; der additive Dokumentations-Head ist 98bc539b. Es wurde keine Ersatz-Rennstrecke gebaut.",
+      "bucket": "LOOK_AT",
+      "title": "World M2A · Knete + Zu Fuß + Auto + Flug · PUBLIC",
+      "what": "Der produktive M2A-Kernloop ist öffentlich spielbar. Hirnwelt-H0-Knete ist jetzt sichtbar Standard auf Terrain, Straße, Bordstein und Gebäuden; Original bleibt umschaltbar. FrizzleBob läuft, steigt mit E ins bewährte Race-Fahrzeug, fährt mit echten Radkontakten, steigt wieder aus und kann anschließend fliegen. Kein Track-Proxy.",
       "provider": "Work · Sol High · WorldBuilder + Travel + Race",
-      "yourAction": "",
-      "waitingFor": "Die feste Stage wurde noch nicht veröffentlicht, weil dafür der Deployment-Branch aktualisiert werden müsste. Track/M2B bleibt getrennt WAITING_SOURCE bis eine echte Track-Core-Runtime vorliegt.",
+      "yourAction": "M2A direkt frei testen: Kneteindruck, E-Einstieg/Ausstieg, Fahrgefühl und Wechsel zum Flug.",
+      "waitingFor": "",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 253,
       "branch": "work/world-drive-interact-m2a-2026-09-27",
-      "expectedHead": "98bc539b514daa467aac66dff3d3bd9f1c06da82",
+      "expectedHead": "5238219cbb6462d054afeb2ff70cc6a1f11a424a",
       "brief": {
         "label": "World M2A · Return und Prüfbericht",
         "path": "kfb-hub/stage/world/world-drive-interact-m2a/RETURN.md",
         "ref": "work/world-drive-interact-m2a-2026-09-27",
         "pasteReady": false
       },
-      "review": null
+      "review": {
+        "label": "World M2A spielen",
+        "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
+        "sourceRef": "PR #253 · Runtime 3a9375b · Docs 5238219 · cloudflare-live afc5841 · 34/34 local + 34/34 public browser PASS · Clay default"
+      }
     },
     {
       "id": "npc-life-01",
@@ -532,8 +536,8 @@
     }
   ],
   "wsa": {
-    "state": "APPROVED_WITH_TUNES",
-    "text": "World/Clay direction is PROCEED PASS. WORLD-MOBILITY-M1 is implemented and locally browser-proven without the rejected track proxy. Next Work slice connects the real Race Track Core, one proven Drive vehicle and the shared E interaction into the Walk → Drive → Track → Walk → Flight loop; Water remains later. ToolBox RECOVERY-01 restores proven features before UI expansion. No Georg task is open for these production lanes."
+    "state": "M2A_PUBLIC_FREEPLAY",
+    "text": "World M2A is PUBLIC_VERIFIED with Hirnwelt clay as the visible default: Walk → E → Drive → E → Walk → Flight. Georg free-play is the only current World gate. Track/M2B remains WAITING_SOURCE until the real Track Core runtime exists; no proxy track."
   },
   "standards": [
     {
@@ -654,6 +658,14 @@
       "what": "Timeline/Audio-Donor. Sichtbare Gitarren-/Trommelanimation ist TUNE; kanonische Performance-Quelle ist die neuere S39 Resident Band ohne Baseplate.",
       "status": "TUNE / Donor",
       "path": "kfb-hub/stage/toolbox/music-performance/index.html"
+    },
+    {
+      "group": "Spielen",
+      "id": "world-drive-m2a",
+      "title": "KlayfaBizarro World M2A",
+      "what": "In der Knetwelt laufen, mit E einsteigen, fahren, aussteigen und fliegen.",
+      "status": "Jetzt testen",
+      "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html"
     },
     {
       "group": "Spielen",
