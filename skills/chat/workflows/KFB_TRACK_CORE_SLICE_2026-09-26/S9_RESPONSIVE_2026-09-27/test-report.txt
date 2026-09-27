@@ -1,0 +1,238 @@
+PASS  seed · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  seed · s_matches_arc  · 5.6621374255882984e-14 · max |chord - ds|
+PASS  seed · frame_orthonormal  · 4.440892098500626e-16
+PASS  seed · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9991
+PASS  seed · tangent_kink  · 0.1166 · max jump of the turning rate (deg/m), at s 592.8; air spans exempt
+PASS  seed · curvature_step  · 0.00293 · max |dkappa| between samples of the same law
+PASS  seed · bank_rate  · 1.2258 · max deg per metre
+PASS  seed · slot_parity  · 0
+PASS  seed · inner_edge_fold  · 0 · min radius margin 10.68 m
+PASS  seed · self_clearance  · 4.078 · closest at s 598.6 / 640.3
+PASS  seed · landing_dip  · 0 · no dip
+PASS  seed · jump_speed  · 24.95 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  seed · fingerprint  · aac439f8
+PASS  seed · deterministic fingerprint  · aac439f8
+PASS  seed · slot count constant  · 14 slots
+PASS  seed · loop apex height ≈ 18 m  · 18.00
+PASS  seed · road up after loop = world up  · 0.0000,1.0000,0.0000
+PASS  seed · upside down at apex (U.y < -0.99)  · -1.0000
+PASS  seed · hairpin runs at WIDE 18  · 189 samples
+PASS  seed · barrier taper is a blend, not a step  · 59 blended samples
+PASS  seed · markings are bands, no mesh cuts  · 73 bands
+PASS  edge · too-tight WIDE hairpin folds the inner edge  · min radius margin -3.32 m
+PASS  edge · loop without lateral drift hits itself  · closest at s 594.2 / 640.2 · 0.269 m
+PASS  edge · spiral with 3 m rise has no headroom  · 0.749 m
+PASS  edge · corner without clothoid ease = curvature jump  · 0.025
+PASS  edge · hard barrier step is visible in the stream (review flag)  · step at s 838.3
+PASS  seed · air span has no driving surface  · 44 samples
+PASS  seed · jump reachable without boost (≤ 27 m/s)  · 24.95 m/s
+PASS  seed · touchdown is tangent to the landing (≤ 1°)  · 0.012°
+PASS  edge · 40 m gap needs boost (warning, not a failure)  · 33.65 m/s
+PASS  graph T · all route checks  · 11 checks
+PASS  graph L · all route checks  · 11 checks
+PASS  graph · cross_clearance T|L  · 1.126 · closest at s 142.4 / 142.9 (split/merge/connect zones excluded)
+PASS  graph · split_edge T|L  · 0 · inner road edges of both lanes coincide at the split start (m)
+PASS  graph · merge_end T|L  · 0 · branch ends on the main axis frame
+PASS  graph · lanes are exactly half of HERO at the split  · 10.8 | 10.8
+PASS  graph · through road is HERO again after the merge  · 21.6
+PASS  graph · branch lifts 13 m (10 + crest 3)  · 13.00
+PASS  edge · branch veering into the through lane is caught  · 0.397 m
+PASS  style · every sample carries a paint set  · 1893
+PASS  style · at the seam the barrier cap has already turned, the road has not (staggered)  · cap 0.98 · road 0.07 at s 117.3 (street → track)
+PASS  style · the colour change starts before the seam (spread over the joint)  · cap already blending 8 m before the seam
+PASS  style · magnet bars grow from a narrow tip over the first bars  · 0.1259 → 0.2407 → 0.39 → 0.5393 → 0.6541 → 0.7 → 0.7
+PASS  style · and taper out at the end of the run  · 0.39 → 0.2407 → 0.1259
+PASS  td03 · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  td03 · s_matches_arc  · 1.1335377081422848e-13 · max |chord - ds|
+PASS  td03 · frame_orthonormal  · 3.3306690738754696e-16
+PASS  td03 · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9993
+PASS  td03 · tangent_kink  · 0.3486 · max jump of the turning rate (deg/m), at s 624.1; air spans exempt
+PASS  td03 · curvature_step  · 0.00608 · max |dkappa| between samples of the same law
+PASS  td03 · bank_rate  · 0 · max deg per metre
+PASS  td03 · slot_parity  · 0
+PASS  td03 · inner_edge_fold  · 0 · min radius margin 5.04 m
+PASS  td03 · self_clearance  · 3.236 · closest at s 454.1 / 606.1
+PASS  td03 · crossing_headroom  · 3.354 · lower road to upper underside (m), 4062 overlapping pairs, worst at s 396.1 under 536.1
+PASS  td03 · vehicle_headroom  · WARN · 3.354 · crossings vs vehicle envelope 4 m + 3 m reserve = 7 m; worst at s 396.1 under 536.1
+PASS  td03 · landing_dip  · 0 · no dip
+PASS  td03 · jump_speed  · 26.16 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  td03 · fingerprint  · 256f2478
+PASS  td03 · roof loop is 26 m tall  · 26.00
+PASS  td03 · helix climbs three floors of 5 m  · 15.30
+PASS  td04 · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  td04 · s_matches_arc  · 2.2715163083830703e-13 · max |chord - ds|
+PASS  td04 · frame_orthonormal  · 3.3306690738754696e-16
+PASS  td04 · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9993
+PASS  td04 · tangent_kink  · 0.366 · max jump of the turning rate (deg/m), at s 1573.7; air spans exempt
+PASS  td04 · curvature_step  · 0.00639 · max |dkappa| between samples of the same law
+PASS  td04 · bank_rate  · 0 · max deg per metre
+PASS  td04 · slot_parity  · 0
+PASS  td04 · inner_edge_fold  · 0 · min radius margin 4.29 m
+PASS  td04 · self_clearance  · 3.126 · closest at s 692.3 / 1616.2
+PASS  td04 · crossing_headroom  · 2.521 · lower road to upper underside (m), 7641 overlapping pairs, worst at s 746.3 under 1548.3
+PASS  td04 · vehicle_headroom  · WARN · 2.521 · crossings vs vehicle envelope 4 m + 3 m reserve = 7 m; worst at s 746.3 under 1548.3
+PASS  td04 · landing_dip  · 0.06 · deepest dip below the run-out height at s 2066.2 (m)
+PASS  td04 · jump_speed  · 26.26 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  td04 · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
+PASS  td04 · fingerprint  · ea7fa061
+PASS  td04 · is a closed circuit (closure check present)
+PASS  td04 · balcony climbs as designed (two floors less the eased ends)  · 15.30 → 27.09 m (design 11.79)
+PASS  td04 · lap 2 stacks on lap 1 in plan (< 0.3 m), one floor up (6 m)  · plan 0.001 m · rise 6.00–6.00 m · lap 253.8 m
+PASS  td04 · balcony grade has no step at the piece joints  · max grade step 1.97e-3 · grade 2.37 %
+PASS  td05 · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  td05 · s_matches_arc  · 2.2737367544323206e-13 · max |chord - ds|
+PASS  td05 · frame_orthonormal  · 3.3306690738754696e-16
+PASS  td05 · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9992
+PASS  td05 · tangent_kink  · 0.4383 · max jump of the turning rate (deg/m), at s 1777.5; air spans exempt
+PASS  td05 · curvature_step  · 0.00608 · max |dkappa| between samples of the same law
+PASS  td05 · bank_rate  · 0.818 · max deg per metre
+PASS  td05 · slot_parity  · 0
+PASS  td05 · inner_edge_fold  · 0 · min radius margin 4.29 m
+PASS  td05 · self_clearance  · 3.236 · closest at s 454.1 / 606.1
+PASS  td05 · crossing_headroom  · 3.246 · lower road to upper underside (m), 7873 overlapping pairs, worst at s 748.3 under 1558.5
+PASS  td05 · vehicle_headroom  · WARN · 3.246 · crossings vs vehicle envelope 4 m + 3 m reserve = 7 m; worst at s 748.3 under 1558.5
+PASS  td05 · landing_dip  · 0.045 · deepest dip below the run-out height at s 2123.4 (m)
+PASS  td05 · jump_speed  · 26.26 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  td05 · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
+PASS  td05 · fingerprint  · b734f4ea
+PASS  td05 · corners tilt both ways (banked into the turn and off-camber)  · bank -5.1° … 17.2°
+PASS  td05 · lap 2 is not a parallel copy of lap 1 (floor gap varies)  · gap 7.40 … 10.68 m around 9 m
+PASS  taper · barriers thin out to the lip and grow back after touchdown (no step)  · lip T 0.3 vis 0.22 · touchdown T 0.3006 · full 1.62 → 1.62 · max step 0.088
+PASS  fs01 · M · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  fs01 · M · s_matches_arc  · 1.1363132657038477e-13 · max |chord - ds|
+PASS  fs01 · M · frame_orthonormal  · 4.440892098500626e-16
+PASS  fs01 · M · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9987
+PASS  fs01 · M · tangent_kink  · 0.4422 · max jump of the turning rate (deg/m), at s 1580.5; air spans exempt
+PASS  fs01 · M · curvature_step  · 0.00751 · max |dkappa| between samples of the same law
+PASS  fs01 · M · bank_rate  · 0.7355 · max deg per metre
+PASS  fs01 · M · slot_parity  · 0
+PASS  fs01 · M · inner_edge_fold  · 0 · min radius margin 0.63 m
+PASS  fs01 · M · self_clearance  · 4.522 · closest at s 1505.4 / 1545.4
+PASS  fs01 · M · landing_dip  · 0 · no dip
+PASS  fs01 · M · jump_speed  · 24.75 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  fs01 · M · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
+PASS  fs01 · M · fingerprint  · 7ccb112b
+PASS  fs01 · J · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  fs01 · J · s_matches_arc  · 5.517808432387028e-14 · max |chord - ds|
+PASS  fs01 · J · frame_orthonormal  · 3.3306690738754696e-16
+PASS  fs01 · J · frame_flips  · 0 · min dot(R_i, R_i-1) = 1.0000
+PASS  fs01 · J · tangent_kink  · 0.3313 · max jump of the turning rate (deg/m), at s 422.5; air spans exempt
+PASS  fs01 · J · curvature_step  · 0.00241 · max |dkappa| between samples of the same law
+PASS  fs01 · J · bank_rate  · 0 · max deg per metre
+PASS  fs01 · J · slot_parity  · 0
+PASS  fs01 · J · inner_edge_fold  · 0 · min radius margin 35.51 m
+PASS  fs01 · J · self_clearance  · null · no far pairs closer than 24 m
+PASS  fs01 · J · landing_dip  · 0 · no dip
+PASS  fs01 · J · jump_speed  · 21.93 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  fs01 · J · fingerprint  · 8972146f
+PASS  fs01 · cross_clearance M|J  · 1.116 · closest at s 393.3 / 392.8 (split/merge/connect zones excluded)
+PASS  fs01 · split_edge M|J  · 0 · inner road edges of both lanes coincide at the split start (m)
+PASS  fs01 · merge_end M|J  · 0 · branch ends on the main axis frame
+PASS  fs01 · pad_level  · 0 · max |route height - pad height| inside pads (m)
+PASS  fs01 · main route is a closed circuit
+PASS  fs01 · practice pad with slalom, parking boxes, brake line  · cones, parking_box, parking_box, parking_box, brake_line, sign
+PASS  fs01 · every drive mode is taught (free, assist, locked; bounce, magnet catch)  · assist/free/locked · bounce/magnet_catch
+PASS  fs01 · Weiche widens to 28.8 and splits into two full 14.4 lanes  · max 28.8 · lane 14.4
+PASS  fs01 · lifebuoys float: road stays dry (> 0.5 m over the water), underside dips into it  · lowest road 0.14 m · lowest underside -1.85 m · water -1.2
+PASS  tn01 · M · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  tn01 · M · s_matches_arc  · 9.092726571680032e-13 · max |chord - ds|
+PASS  tn01 · M · frame_orthonormal  · 4.440892098500626e-16
+PASS  tn01 · M · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9999
+PASS  tn01 · M · tangent_kink  · 0.1555 · max jump of the turning rate (deg/m), at s 3087.8; air spans exempt
+PASS  tn01 · M · curvature_step  · 0.00413 · max |dkappa| between samples of the same law
+PASS  tn01 · M · bank_rate  · 0.8665 · max deg per metre
+PASS  tn01 · M · slot_parity  · 0
+PASS  tn01 · M · inner_edge_fold  · 0 · min radius margin 19.58 m
+PASS  tn01 · M · self_clearance  · 6.367 · closest at s 3812 / 3960.9
+PASS  tn01 · M · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
+PASS  tn01 · M · tunnel_clearance  · 0.3 · min distance of barriers / shoulders / car envelope (7 m) to the ring (m), at s 100.5; min roof over the road 8.36 m
+PASS  tn01 · M · tunnel_morph  · 0.0556 · max ring point shift per metre (m/m), at s 357.6; limit 0.3
+PASS  tn01 · M · portal_match  · 0 · 5 tubes; ring deviation within 10 m of each portal (m)
+PASS  tn01 · M · tunnel_shell  · 14.542 · min rock between a tube shell and any other pass (m), at tube s 4712.5 vs s 4332.8; 0 points closer than 1 m
+PASS  tn01 · M · buried_open  · 0 · open road under ground only inside caverns
+PASS  tn01 · M · fingerprint  · bc676e65
+PASS  tn01 · J · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  tn01 · J · s_matches_arc  · 2.2593038551121936e-13 · max |chord - ds|
+PASS  tn01 · J · frame_orthonormal  · 3.3306690738754696e-16
+PASS  tn01 · J · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9999
+PASS  tn01 · J · tangent_kink  · 0.1555 · max jump of the turning rate (deg/m), at s 3036.8; air spans exempt
+PASS  tn01 · J · curvature_step  · 0.00413 · max |dkappa| between samples of the same law
+PASS  tn01 · J · bank_rate  · 0.4696 · max deg per metre
+PASS  tn01 · J · slot_parity  · 0
+PASS  tn01 · J · inner_edge_fold  · 0 · min radius margin 19.58 m
+PASS  tn01 · J · self_clearance  · null · no far pairs closer than 24 m
+PASS  tn01 · J · tunnel_clearance  · 0.3 · min distance of barriers / shoulders / car envelope (7 m) to the ring (m), at s 3168.3; min roof over the road 8.36 m
+PASS  tn01 · J · tunnel_morph  · 0 · max ring point shift per metre (m/m), at s undefined; limit 0.3
+PASS  tn01 · J · portal_match  · 0 · 1 tubes; ring deviation within 10 m of each portal (m)
+PASS  tn01 · J · tunnel_shell  · null · no other pass near a tube
+PASS  tn01 · J · buried_open  · 0 · open road under ground only inside caverns
+PASS  tn01 · J · fingerprint  · 1efebb7e
+PASS  tn01 · cross_clearance M|J  · 1.128 · closest at s 3648.5 / 3648.0 (split/merge/connect zones excluded)
+PASS  tn01 · split_edge M|J  · 0 · inner road edges of both lanes coincide at the split start (m)
+PASS  tn01 · tunnel_shell M|J  · 1.804 · min rock between the routes' tube shells / decks (m), tube J s 3455.4 vs M s 3452.4
+PASS  tn01 · merge_end M|J  · 0 · branch ends on the main axis frame
+PASS  tn01 · main route is a closed circuit
+PASS  tn01 · all four section shapes are used (round, oval, rect, poly)  · round, oval, rect, poly
+PASS  tn01 · tubes through a mountain, a building, shafts and a labyrinth  · mountain, building, shaft, labyrinth
+PASS  tn01 · the mountain tube morphs round -> oval inside, portals keep their own shape  · round -> oval over 541.585 m
+PASS  tn01 · the shaft goes deep: cavern floor > 200 m under ground  · lowest road -216.0 m
+PASS  tn01 · every tube sample carries a full ring (palette, ringId)  · 401 distinct rings for 9040 samples
+PASS  tn01 · rings survive JSON (attachRings)
+PASS  tn01 · braid strands cross over / under with rock between the tubes  · 1.804 m
+PASS  edge · round -> rect over 8 m is a step, not a morph  · 2.6166 m/m
+PASS  edge · a 5 m rect tube is too low for barriers + car  · -1.64 m
+PASS  edge · a morph that starts at the portal: collar would not match the tube  · 0.1954 m
+PASS  edge · a shaft without a tunnel spec is open road inside the rock  · open road 80.00 m under ground outside any cavern at s 828.3
+PASS  edge · spiral laps 20 m apart: the tube shells cut into each other  · min rock between a tube shell and any other pass (m), at tube s 41 vs s 417.5; 7635 points closer than 1 m
+PASS  edge · braid dip 3 m: the strands hit each other  · -8.164 m
+PASS  vehicles · tunnel headroom comes from the vehicle envelope  · 4 + 3 = 7 m
+PASS  vehicles · every TN01 tube clears the tallest truck with reserve  · lowest roof over the road 8.36 m
+PASS  vehicles · showcase crossings measured against the envelope (known: trucks do not fit under the balconies)  · td03 3.354 m < 7 · td04 2.521 m < 7 · td05 3.246 m < 7
+PASS  tn02 · M · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  tn02 · M · s_matches_arc  · 4.545253062815391e-13 · max |chord - ds|
+PASS  tn02 · M · frame_orthonormal  · 3.3306690738754696e-16
+PASS  tn02 · M · frame_flips  · 0 · min dot(R_i, R_i-1) = 1.0000
+PASS  tn02 · M · tangent_kink  · 0.0793 · max jump of the turning rate (deg/m), at s 1119.9; air spans exempt
+PASS  tn02 · M · curvature_step  · 0.0021 · max |dkappa| between samples of the same law
+PASS  tn02 · M · bank_rate  · 0.1635 · max deg per metre
+PASS  tn02 · M · slot_parity  · 0
+PASS  tn02 · M · inner_edge_fold  · 0 · min radius margin 35.64 m
+PASS  tn02 · M · self_clearance  · null · no far pairs closer than 24 m
+PASS  tn02 · M · closure  · 0 · end-start gap (m); 1-dot T 0.0e+0, U 0.0e+0; profile diff 0.0e+0; skin street/street
+PASS  tn02 · M · tunnel_clearance  · 0.3 · min distance of barriers / shoulders / car envelope (7 m) to the ring (m), at s 80.5; min roof over the road 8.92 m
+PASS  tn02 · M · tunnel_morph  · 0.2384 · max ring point shift per metre (m/m), at s 691.7; limit 0.3
+PASS  tn02 · M · portal_match  · 0 · 7 tubes; ring deviation within 10 m of each portal (m)
+PASS  tn02 · M · tunnel_shell  · null · no other pass near a tube
+PASS  tn02 · M · buried_open  · 0 · open road under ground only inside caverns
+PASS  tn02 · M · fingerprint  · 52ed7dde
+PASS  tn02 · J · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  tn02 · J · s_matches_arc  · 1.1235457009206584e-13 · max |chord - ds|
+PASS  tn02 · J · frame_orthonormal  · 2.220446049250313e-16
+PASS  tn02 · J · frame_flips  · 0 · min dot(R_i, R_i-1) = 1.0000
+PASS  tn02 · J · tangent_kink  · 0.0793 · max jump of the turning rate (deg/m), at s 1048.2; air spans exempt
+PASS  tn02 · J · curvature_step  · 0.0021 · max |dkappa| between samples of the same law
+PASS  tn02 · J · bank_rate  · 0 · max deg per metre
+PASS  tn02 · J · slot_parity  · 0
+PASS  tn02 · J · inner_edge_fold  · 0 · min radius margin 35.64 m
+PASS  tn02 · J · self_clearance  · null · no far pairs closer than 24 m
+PASS  tn02 · J · tunnel_clearance  · 0.3 · min distance of barriers / shoulders / car envelope (7 m) to the ring (m), at s 1120.4; min roof over the road 14.33 m
+PASS  tn02 · J · tunnel_morph  · 0 · max ring point shift per metre (m/m), at s undefined; limit 0.3
+PASS  tn02 · J · portal_match  · 0 · 1 tubes; ring deviation within 10 m of each portal (m)
+PASS  tn02 · J · tunnel_shell  · null · no other pass near a tube
+PASS  tn02 · J · buried_open  · 0 · open road under ground only inside caverns
+PASS  tn02 · J · fingerprint  · 2778a203
+PASS  tn02 · cross_clearance M|J  · 10 · closest at s 1438.4 / 1459.9 (split/merge/connect zones excluded)
+PASS  tn02 · split_edge M|J  · 0 · inner road edges of both lanes coincide at the split start (m)
+PASS  tn02 · tunnel_shell M|J  · 4.96 · min rock between the routes' tube shells / decks (m), tube M s 1120.4 vs J s 1120.4
+PASS  tn02 · merge_end M|J  · 0 · branch ends on the main axis frame
+PASS  tn02 · the Gotthard tube follows the road width (NARROW < WIDE < HERO)  · 23.1 < 29.8 < 33.4 m
+PASS  tn02 · the Weiche inside the bunker becomes two junction halls (fork, join)  · T3_switch 72.692 m · T5_rejoin 72.192 m
+PASS  tn02 · the branch has no tube of its own inside the hall  · hall w 62.117 m
+PASS  tn02 · presets used: gotthard (arch), dumb bunker, alien, toy, hangar  · mountain, bunker, alien, hangar, toy
+PASS  tn02 · the toy branch wears the toy skin
+PASS  tn02 · the hangar is 70 m high and wide enough for a ship beside the track  · 92.949 x 70 m, floor 1.836 m under the road
+PASS  responsive · 10 shapes / presets x 5 widths size themselves and clear the envelope  · 50 sections, worst margin 0.300 m
+
+seed stream: 1893 samples · 954.3 m · 18 pieces · 73 marking bands · fingerprint aac439f8
+
+0 unexpected result(s)
