@@ -10,9 +10,15 @@
 // v0.2: horizontal parametrisation of plan pieces; CREST / DIP / KICKER / AIR / LANDING; CONNECT (quintic Hermite
 //       connector); SPLIT_HALF / MERGE_HALF with per-side profile scale; route graph (compileGraph) + cross-route checks.
 
-export const CORE_VERSION = 'kfb.track-core/0.7';
+export const CORE_VERSION = 'kfb.track-core/0.7.1';
 export const WIDTHS = Object.freeze({ NARROW: 10.8, STANDARD: 14.4, WIDE: 18.0, HERO: 21.6, HERO_XL: 28.8 });
 export const PHYS = Object.freeze({ g: 15, vMax: 27 }); // WSA D1 (PR #204): Rapier g 15 m/s², 27 m/s
+// v0.7.1 vehicle envelope (Georg 27.09): every vehicle must pass everywhere, including the big trucks; mechs / walkers /
+// transformers are scaled to be no taller than a tall truck. Race scale = Box-Stop BOX1 (lengths normalised: cars 4.1 m,
+// van 5.0, heavy 6.5): Kenney firetruck 3.25 m high, garbage truck 3.01, toy truck 3.96, monster truck 4.89 (above the
+// cap). height = tallest vehicle, reserve = bounce / squash-stretch / crest allowance. Proposal, Georg decides.
+export const VEHICLE_ENVELOPE = Object.freeze({ height: 4.0, reserve: 1.0, width: 4.1 });
+export const VEHICLE_HEADROOM = VEHICLE_ENVELOPE.height + VEHICLE_ENVELOPE.reserve;   // clear height over the road
 
 // ---------------------------------------------------------------- small vector helpers
 const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
@@ -574,7 +580,7 @@ export const TUNNEL_SHAPES = Object.freeze({
   rect: { w: 26, h: 11, e: 10 },     // superellipse e 10 = rectangle with rounded corners (clay look, no hard corner)
   poly: { w: 28, h: 22, n: 6 },      // regular n-gon with a flat floor edge, stretched to w x h
 });
-export const TUNNEL_DEFAULTS = Object.freeze({ wall: 1.2, host: 'earth', headroom: 5.0, margin: 0.3, portalZone: 10 });
+export const TUNNEL_DEFAULTS = Object.freeze({ wall: 1.2, host: 'earth', headroom: VEHICLE_HEADROOM, margin: 0.3, portalZone: 10 });
 export function tunnelSpec(t) {
   const shape = t.shape ?? 'round';
   if (!TUNNEL_SHAPES[shape]) throw new Error(`tunnel: unknown shape ${shape}`);
@@ -838,6 +844,10 @@ export function runChecks(stream, tol = TOL) {
     if (hr < minH) { minH = hr; atH = [lo.s.toFixed(1), hi.s.toFixed(1)]; }
   }
   if (pairs) add_('crossing_headroom', minH >= tol.headroom, +minH.toFixed(3), `lower road to upper underside (m), ${pairs} overlapping pairs, worst at s ${atH[0]} under ${atH[1]}`);
+  // v0.7.1: the same crossings against the full vehicle envelope (tallest truck + reserve). Warning until the layouts
+  // are raised: crossing_headroom keeps its cartoon-car threshold so the showcase tracks stay comparable.
+  if (pairs) add_('vehicle_headroom', minH >= VEHICLE_HEADROOM, +minH.toFixed(3),
+    `crossings vs vehicle envelope ${VEHICLE_ENVELOPE.height} m + ${VEHICLE_ENVELOPE.reserve} m reserve = ${VEHICLE_HEADROOM} m; worst at s ${atH[0]} under ${atH[1]}`, 'warn');
   // v0.6 landing_dip: a landing ramp must not dip more than 0.1 m below the height it runs out at (reads as a hole).
   // Buoy landings (bounce pads, skin 'buoy') are meant to squash and are exempt.
   { let worst = 0, at = null, run = [];

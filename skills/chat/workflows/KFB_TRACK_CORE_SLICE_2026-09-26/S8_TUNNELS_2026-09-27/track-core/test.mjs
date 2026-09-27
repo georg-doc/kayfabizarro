@@ -7,7 +7,7 @@ import { recipe as td05Recipe, TWIST } from './layout/td05.mjs';
 import { END_TAPER, compileGraph as cg6, runGraphChecks as rgc6 } from './track-core.mjs';
 import { graph as fs01Graph } from './layout/fs01.mjs';
 import { graph as tn01Graph, TN } from './layout/tn01.mjs';
-import { compileRecipe as cr7, runChecks as rc7, attachRings, TUNNEL_N } from './track-core.mjs';
+import { compileRecipe as cr7, runChecks as rc7, attachRings, TUNNEL_N, VEHICLE_ENVELOPE, VEHICLE_HEADROOM, TUNNEL_DEFAULTS } from './track-core.mjs';
 const rec = JSON.parse(fs.readFileSync(new URL('./fixtures/td_showcase_seed.recipe.json', import.meta.url)));
 let failures = 0; const log = [];
 const expect = (name, cond, info = '') => { log.push(`${cond ? 'PASS' : 'FAIL'}  ${name}${info ? '  · ' + info : ''}`); if (!cond) failures++; };
@@ -94,7 +94,7 @@ for (const r of gck.results) expect(`graph · ${r.id}`, r.pass, `${r.value} · $
 
 // 6 · S3 showcase: Tokyo Drift at the Uni-Center (layout/td03.mjs), every core check green
 { const T3 = compileRecipe(td03Recipe()), c3 = runChecks(T3);
-  for (const r of c3.results) expect(`td03 · ${r.id}`, r.pass, `${r.value}${r.note ? ' · ' + r.note : ''}`);
+  for (const r of c3.results) expect(`td03 · ${r.id}`, r.pass || r.severity === 'warn', `${r.pass ? '' : 'WARN · '}${r.value}${r.note ? ' · ' + r.note : ''}`);
   const loop = T3.samples.filter((q) => q.law === 'loop');
   expect('td03 · roof loop is 26 m tall', Math.abs(Math.max(...loop.map((q) => q.p[1])) - loop[0].p[1] - 26) < 0.1, (Math.max(...loop.map((q) => q.p[1])) - loop[0].p[1]).toFixed(2));
   const hx = T3.samples.filter((q) => q.tags.includes('SPIRAL'));
@@ -103,7 +103,7 @@ for (const r of gck.results) expect(`graph · ${r.id}`, r.pass, `${r.value} · $
 
 // 7 · S5 circuit: TD04 = TD03 + balcony climb round the yellow wing + finale jump + street return, closed
 { const T4 = compileRecipe(td04Recipe()), c4 = runChecks(T4), S = T4.samples;
-  for (const r of c4.results) expect(`td04 · ${r.id}`, r.pass, `${r.value}${r.note ? ' · ' + r.note : ''}`);
+  for (const r of c4.results) expect(`td04 · ${r.id}`, r.pass || r.severity === 'warn', `${r.pass ? '' : 'WARN · '}${r.value}${r.note ? ' · ' + r.note : ''}`);
   expect('td04 · is a closed circuit (closure check present)', c4.results.some((r) => r.id === 'closure' && r.pass));
   const bal = S.filter((q) => q.tags.includes('balcony'));
   const z0 = bal[0].p[1], z1 = bal[bal.length - 1].p[1];
@@ -123,7 +123,7 @@ for (const r of gck.results) expect(`graph · ${r.id}`, r.pass, `${r.value} · $
 
 // 8 · S6: TD05 twisted balcony (tilted, lifted corners; twisting straights; 9 m floors) + barriers thinning at open ends
 { const T5 = compileRecipe(td05Recipe()), c5 = runChecks(T5), S = T5.samples, D = 180 / Math.PI;
-  for (const r of c5.results) expect(`td05 · ${r.id}`, r.pass, `${r.value}${r.note ? ' · ' + r.note : ''}`);
+  for (const r of c5.results) expect(`td05 · ${r.id}`, r.pass || r.severity === 'warn', `${r.pass ? '' : 'WARN · '}${r.value}${r.note ? ' · ' + r.note : ''}`);
   const bal = S.filter((q) => q.tags.includes('balcony'));
   const bmax = Math.max(...bal.map((q) => q.bank)) * D, bmin = Math.min(...bal.map((q) => q.bank)) * D;
   expect('td05 · corners tilt both ways (banked into the turn and off-camber)', bmax > 12 && bmin < -3, `bank ${bmin.toFixed(1)}° … ${bmax.toFixed(1)}°`);
@@ -195,6 +195,17 @@ for (const r of gck.results) expect(`graph · ${r.id}`, r.pass, `${r.value} · $
   { const G2 = cg6(tn01Graph({ braid: { ...TN.braid, dip: 3 } })), c = rgc6(G2).results.find((r) => r.id === 'tunnel_shell M|J');
     expect('edge · braid dip 3 m: the strands hit each other', !c.pass, `${c.value} m`); }
   G.meta = tn01Graph().meta; fs.writeFileSync(new URL('./out/tn01.graph.stream.json', import.meta.url), JSON.stringify(G)); }
+
+// 11 · v0.7.1 vehicle envelope: tunnels are built for it; the older showcase crossings are measured against it (warning)
+{ expect('vehicles · tunnel headroom comes from the vehicle envelope', TUNNEL_DEFAULTS.headroom === VEHICLE_HEADROOM && VEHICLE_HEADROOM === 5, `${VEHICLE_ENVELOPE.height} + ${VEHICLE_ENVELOPE.reserve} = ${VEHICLE_HEADROOM} m`);
+  const G = cg6(tn01Graph()); let roof = Infinity;
+  for (const r of Object.values(G.routes)) for (const q of r.samples) if (q.tunnel) { const w = q.prm.width / 2;
+    roof = Math.min(roof, Math.max(...q.tunnel.ring.filter(([l]) => Math.abs(l) < w).map(([, h]) => h))); }
+  expect('vehicles · every TN01 tube clears the tallest truck with reserve', roof >= VEHICLE_HEADROOM, `lowest roof over the road ${roof.toFixed(2)} m`);
+  const vh = [['td03', compileRecipe(td03Recipe())], ['td04', compileRecipe(td04Recipe())], ['td05', compileRecipe(td05Recipe())]]
+    .map(([n, st]) => [n, runChecks(st).results.find((r) => r.id === 'vehicle_headroom')]);
+  expect('vehicles · showcase crossings measured against the envelope (known: trucks do not fit under the balconies)',
+    vh.every(([, r]) => r && r.severity === 'warn'), vh.map(([n, r]) => `${n} ${r.value} m${r.pass ? '' : ' < ' + VEHICLE_HEADROOM}`).join(' · ')); }
 
 // 3 · stream stats
 const L = A.samples[A.samples.length - 1].s;
