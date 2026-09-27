@@ -1,6 +1,6 @@
 # LOOK-TORSION-01 · TEST REPORT
 
-Status: **ENGINEERING PASS · HUMAN VISUAL GATE PENDING**  
+Status: **ENGINEERING PASS · HUMAN RESULT RECORDED · ARCHITECTURE PASS ONLY**  
 Date: 2026-09-27  
 Owner: **OSM City Lab presentation / KFB ToolBox authoring**  
 Branch: `chatgpt-web/look-torsion-01-2026-09-27`
@@ -73,12 +73,16 @@ Manual engineering screenshot review:
 - A → B remains intentionally modest, showing bend/lean/taper without torsion;
 - A/B → C at 9.5° is visibly different on the elongated footprint and reads as cumulative geometric torsion rather than camera skew;
 - 2.6° is visibly subtler, preserving a usable ordinary-building range;
-- the Stage therefore advances to **HUMAN VISUAL GATE**, not visual acceptance.
+- the Stage was sufficient as engineering evidence; Georg later closed the standalone human gate as **ARCHITECTURE PASS ONLY**, not visual acceptance.
 
 ## Gate
 
 Engineering gate: **PASS**.  
-Human gate: **PENDING** — compare A → B → C on the direct Cloudflare Stage and decide whether the stronger wonky/twisted read is the correct 90s-cartoon direction.
+Human result: **ARCHITECTURE PASS ONLY** — retain the geometric torsion mechanism, anchored base and shared roof/body field.
+
+This does **not** accept the isolated grey rendering as WorldBuilder/look truth, does not accept its lighting/shadows/materials, and does not set a final universal torsion calibration. Known shadow/light defects remain open. The standalone human gate is closed; no further torsion review site is required.
+
+Next meaningful evaluation belongs inside the next clean/current WorldBuilder/world-presentation candidate with the real scene/camera and shared shadow/lighting corrections.
 
 
 ## Public Cloudflare gate
@@ -113,4 +117,4 @@ Public artifact:
 Direct human route:
 https://kayfabizarro.pages.dev/kfb-hub/stage/look-torsion-01/
 
-Exactly one remaining gate: Georg visual A/B/C review. No merge or Live promotion has been performed.
+Standalone human gate: **CLOSED**. The direct Stage remains historical engineering evidence only. No merge or Live promotion has been performed.
