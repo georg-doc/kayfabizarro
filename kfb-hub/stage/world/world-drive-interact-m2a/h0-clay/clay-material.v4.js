@@ -289,6 +289,36 @@ if (uClayOn > 0.5 && uClayK > 0.0) {
 }
 `;
 
+/* R2 playable tier: keep the same hand-relief source, scale and palette, but sample only the
+   dominant projection. The full 3-axis/Voronoi treatment remains available for close props and
+   authoring views; the city/terrain no longer pay that fragment cost on every visible pixel. */
+const FRAG_NORMAL_PLAYABLE = /* glsl */`
+if (uClayOn > 0.5 && uClayK > 0.0) {
+  float sc = length(modelMatrix[0].xyz);
+  vec3 n0 = normalize(vClayN);
+  vec3 P = vClayP * sc + vClaySeed * 37.0;
+  float vs = uClayS * (0.8 + 0.4 * fract(vClaySeed.x * 7.13 + vClaySeed.z));
+  vec3 an = abs(n0);
+  vec3 g = vec3(0.0);
+  vec4 t;
+  if (an.x > an.y && an.x > an.z) {
+    t = clayTap(P.zy / (uClayTile * vs));
+    g = vec3(0.0, t.y, t.x) * uClayStroke + vec3(0.0, t.w, t.z) * uClayGrain;
+  } else if (an.y > an.z) {
+    t = clayTap(P.xz / (uClayTile * vs));
+    g = vec3(t.x, 0.0, t.y) * uClayStroke + vec3(t.z, 0.0, t.w) * uClayGrain;
+  } else {
+    t = clayTap(P.xy / (uClayTile * vs));
+    g = vec3(t.x, t.y, 0.0) * uClayStroke + vec3(t.z, t.w, 0.0) * uClayGrain;
+  }
+  g *= uClayK * 0.72;
+  g -= n0 * dot(g, n0);
+  vec3 dN = normalize(n0 - g) - n0;
+  vec3 dV = (viewMatrix * vec4(mat3(modelMatrix) * dN / sc, 0.0)).xyz;
+  normal = normalize(normal + dV * faceDirection);
+}
+`;
+
 /**
  * Baut ein Knet-Material. `src` darf ein vorhandenes (glTF-)Material sein; übernommen werden
  * Farbe, Farbkarte, Vertexfarben, Normal-Map. `role` wählt Rauheit und Relief:
@@ -296,7 +326,7 @@ if (uClayOn > 0.5 && uClayK > 0.0) {
  *   'knetbar' Rauheit 0,55, Relief 0,5     (Quelle: Claybound PR #7)
  *   'soft'    Rauheit 0,9,  Relief 0,7     (Figuren, Wolken)
  */
-export function makeClayMaterial(THREE, U, { src = null, color = null, role = 'world', palMap = false, reliefK = null, side = null, proc = null, scale = 1 } = {}) {
+export function makeClayMaterial(THREE, U, { src = null, color = null, role = 'world', palMap = false, reliefK = null, side = null, proc = null, scale = 1, quality = 'full' } = {}) {
   const useProc = proc ?? !src;
   const R = { world: [0.98, 1.0, 0.12], knetbar: [0.55, 0.45, 0.3], soft: [0.9, 0.7, 0.18] }[role] || [0.95, 1, 0.12];
   const m = new THREE.MeshPhysicalMaterial({ roughness: R[0], metalness: 0 });
@@ -316,15 +346,16 @@ export function makeClayMaterial(THREE, U, { src = null, color = null, role = 'w
   if (color) m.color.set(color);
   if (side != null) m.side = side;
   const K = { value: reliefK ?? R[1] }, S = { value: scale };
-  m.userData.clay = { role, K, S, palMap };
+  const playable=quality==='playable';
+  m.userData.clay = { role, K, S, palMap, quality };
   m.onBeforeCompile = (sh) => {
     Object.assign(sh.uniforms, U, { uClayK: K, uClayS: S });
     sh.vertexShader = VERT_DECL + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n vClayP = position; vClayN = normal; vClaySeed = claySeed;');
     sh.fragmentShader = (palMap ? '#define CLAY_PALMAP\n' : '') + (useProc ? '#define CLAY_PROC\n' : '') + 'uniform float uClayS;\n' + FRAG_DECL + sh.fragmentShader
       .replace('#include <color_fragment>', '#include <color_fragment>\n' + FRAG_PALETTE)
-      .replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n' + FRAG_NORMAL);
+      .replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n' + (playable?FRAG_NORMAL_PLAYABLE:FRAG_NORMAL));
   };
-  m.customProgramCacheKey = () => 'kfb-clay-v4' + (palMap ? '-pal' : '') + (useProc ? '-proc' : '');
+  m.customProgramCacheKey = () => 'kfb-clay-v4' + (palMap ? '-pal' : '') + (useProc ? '-proc' : '') + (playable?'-playable':'');
   return m;
 }
 
@@ -374,4 +405,3 @@ export async function makePrintTexture(THREE, url, size = 2048) {
   t.generateMipmaps = true; t.needsUpdate = true;
   return t;
 }
-
