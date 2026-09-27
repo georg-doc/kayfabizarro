@@ -402,25 +402,41 @@
     },
     {
       "id": "travel",
-      "bucket": "WAITING",
-      "title": "Travel: gezielte Landung",
-      "what": "Sprung → Flug mit 400 ms ist angenommen. Die gezielte Landung ist noch nicht begonnen.",
+      "bucket": "LOOK_AT",
+      "title": "Travel · Movement Mode Router",
+      "what": "TRAVEL-MODES-01 is technically green: one atomic Ground/Flight selector preserves the accepted 400 ms double-Space intent and the existing movement/camera owners. Drive and Water are explicit SOURCE_REQUIRED slots with no writer.",
       "provider": "Web-Chat (Travel)",
-      "yourAction": "",
-      "waitingFor": "Wird erst gestartet, wenn du es als nächstes Projekt auswählst.",
-      "questions": [],
+      "yourAction": "Open the Stage contract review. Switch Ground ↔ Flight and confirm the owner/support/presentation matrix; Drive/Water must remain unavailable.",
+      "waitingFor": "Georg human review only. No merge, landing implementation, Drive/Water movement or Live promotion.",
+      "questions": [
+        "Does the contract make the single active movement/camera owner obvious for Ground and Flight?",
+        "Are Drive and Water clearly reserved without pretending movement exists?"
+      ],
       "repo": "georg-doc/KFB-Travel-Globe",
-      "pr": 38,
-      "branch": null,
+      "pr": 39,
+      "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
       "external": true,
-      "freshness": "LAST_KNOWN",
-      "freshnessNote": "Separates Repo. Der Stand wird hier nicht automatisch geprüft (zuletzt bekannt, bitte bei Bedarf nachprüfen).",
-      "head": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
-      "headDate": "2026-09-23T20:05:00Z",
-      "expectedHead": null,
-      "prUrl": "https://github.com/georg-doc/KFB-Travel-Globe/pull/38",
-      "prState": null,
-      "brief": null
+      "freshness": "CURRENT",
+      "freshnessNote": "Private Travel PR #39 exact tested head; public Stage mirror is the human review surface.",
+      "head": "f5ea32f817403cda0e30a426e70f37db8ce03d66",
+      "headDate": "2026-09-27T01:43:14Z",
+      "expectedHead": "f5ea32f817403cda0e30a426e70f37db8ce03d66",
+      "prUrl": "https://github.com/georg-doc/KFB-Travel-Globe/pull/39",
+      "prState": "open",
+      "brief": {
+        "label": "TRAVEL-MODES-01 · V2 brief",
+        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md",
+        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
+        "exists": true,
+        "pasteReady": true,
+        "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/production-architecture-v3-2026-09-24/skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/STRAND_BRIEFINGS.md"
+      },
+      "review": {
+        "label": "Movement Mode Router prüfen",
+        "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/",
+        "available": true,
+        "sourceRef": "Travel PR #39 · f5ea32f8 · 133/133 PASS · human pending"
+      }
     },
     {
       "id": "racer",

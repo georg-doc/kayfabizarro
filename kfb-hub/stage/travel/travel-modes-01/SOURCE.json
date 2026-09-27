@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.stage.travel-modes-01/1",
+  "revision": "TRAVEL-MODES-01",
+  "owner": "georg-doc/KFB-Travel-Globe",
+  "status": "HUB_SOURCE_READY_PUBLIC_MIRROR_PENDING",
+  "travel": {
+    "draftPR": 39,
+    "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
+    "implementationHead": "f5ea32f817403cda0e30a426e70f37db8ce03d66",
+    "basePR": 38,
+    "baseHead": "08147fb4a6726f4c0248ff79ade67eec24afdbca",
+    "acceptedDoubleSpaceMs": 400,
+    "ciRun": 36286376040,
+    "ciJob": 108527822378,
+    "tests": "133/133 PASS",
+    "buildId": "travel-b0-56d8ba57a8de3810",
+    "artifactId": 10919953835,
+    "artifactSha256": "5bb26077ad7f87baea51dfdbb8da8cf0ccf80229c37cf17458f5a08cd604fbcc"
+  },
+  "files": {
+    "sourceHtmlBlob": "a45dcdb54535fc34fd43cb9c9dfcb4bb0b3f74ac",
+    "sourceReviewBlob": "96d1a22101559784fe41fbedf95302519c5a71a5",
+    "routerBlob": "8c99aa4d7860e83fe2cc4185b19d0ed9dc20ae04",
+    "stageReviewChange": "relative import only; router source byte-identical"
+  },
+  "route": "/kfb-hub/stage/travel/travel-modes-01/",
+  "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/",
+  "modeStatus": {
+    "GROUND": "READY",
+    "FLIGHT": "READY",
+    "DRIVE": "SOURCE_REQUIRED",
+    "WATER": "SOURCE_REQUIRED"
+  },
+  "humanAcceptance": "PENDING",
+  "livePromotion": false
+}
