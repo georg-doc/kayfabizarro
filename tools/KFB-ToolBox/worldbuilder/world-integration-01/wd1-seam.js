@@ -30,9 +30,19 @@ const w=p=>({x:Number(p[0]??p.x),z:-Number(p[1]??p.z)});
 const sourcePoint=p=>({x:Number(p.x),z:Number(p.z)});
 const sameXZ=(a,b)=>a&&b&&Math.abs(a.x-b.x)<.002&&Math.abs(a.z-b.z)<.002;
 const inside=(p,r)=>p.x>=r.minX&&p.x<=r.maxX&&p.z>=r.minZ&&p.z<=r.maxZ;
+function serializedVertexMean(poly){
+  // Frozen Cologne building crop truth: average every serialized footprint coordinate
+  // exactly as stored, including the repeated closing point on closed rings.
+  const a=(poly||[]).map(sourcePoint);
+  if(!a.length)return{x:0,z:0};
+  return{
+    x:a.reduce((sum,p)=>sum+p.x,0)/a.length,
+    z:a.reduce((sum,p)=>sum+p.z,0)/a.length
+  };
+}
 function centroid(poly){
-  // Frozen WB-D1 crop follows the existing OSM City buildingCenter grammar:
-  // use the footprint bounding-box centre, not vertex mean / polygon area centroid.
+  // Retained for non-building presentation crops. WB-ZONE-CROP-PARITY-01
+  // changes only the baked-building selector.
   const a=(poly||[]).map(sourcePoint);
   if(!a.length)return{x:0,z:0};
   const xs=a.map(p=>p.x),zs=a.map(p=>p.z);
@@ -100,7 +110,7 @@ function fromFrozenFixture(fx,url){
   };
 }
 function bakedCrop(normalized,crop){
-  const buildings=(normalized.features?.buildings||[]).filter(b=>inside(centroid(b.footprint),crop)).map(b=>({
+  const buildings=(normalized.features?.buildings||[]).filter(b=>inside(serializedVertexMean(b.footprint),crop)).map(b=>({
     id:b.id,h:b.heightM,minH:b.minHeightM||0,kind:b.osm?.tags?.building||'yes',name:b.osm?.tags?.name||null,roof:b.roof||null,mc:b.materialClass||null,fp:b.footprint.map(p=>w(p))
   }));
   const roads=[];
