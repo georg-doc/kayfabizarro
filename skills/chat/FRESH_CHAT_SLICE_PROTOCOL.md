@@ -1,7 +1,7 @@
 # KFB Fresh Chat Slice Protocol
 
-Status: CURRENT REFERENCE v1.0
-Date: 2026-09-19
+Status: CURRENT REFERENCE v1.1
+Date: 2026-09-28
 Owner: Georg / KFB
 Purpose: cold starts, parallel web chats, bounded modules and POCs
 
@@ -116,6 +116,21 @@ The repository/PR must let tomorrow's Work session review without replaying the 
 - exactly one recommended next productive step or, only when genuinely necessary, one human gate.
 
 A chat link is optional convenience, not the evidence store.
+
+### 5A. Make the Hub usable before declaring done
+
+The same handoff must update the **existing accepted KFB Hub** so the slice can be continued without this chat:
+
+- replace its superseded active card or briefing;
+- show the direct public test/tool URL when available;
+- otherwise show the exact current brief and owner;
+- state whether Georg should test, decide, continue or do nothing;
+- keep missing/source-only tools visibly non-playable;
+- confirm that old titles and prompts are no longer active in `Heute` or the default briefing view.
+
+Do not create a new Hub, alternative navigation page or separate design to satisfy this rule. Update the accepted Hub and its ToolBox aggregate in place.
+
+If the Hub cannot be updated in the current owner boundary, the slice returns `HANDOFF_INCOMPLETE · HUB_SYNC_REQUIRED`; it must not claim complete closure.
 
 ## 6. Stop conditions
 
