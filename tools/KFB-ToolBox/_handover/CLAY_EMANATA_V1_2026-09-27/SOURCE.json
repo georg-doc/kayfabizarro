@@ -72,9 +72,10 @@
     "runtimeTests": "NOT_RUN - no runtime changed",
     "browserVisual": "NOT_RUN - no runtime/Stage candidate exists",
     "reactionCatalogJsonParse": "PASS",
-    "reactionCoreEventCount": 17,
-    "reactionClipRoleCount": 15,
-    "animationClipLayerIncluded": true
+    "reactionCoreEventCount": 18,
+    "reactionClipRoleCount": 16,
+    "animationClipLayerIncluded": true,
+    "reactionOwnerSourceReads": "9/9 PASS"
   },
   "reactionChoreography": {
     "docs": [
@@ -133,6 +134,38 @@
         "kfb_idle_defeat_a",
         "kfb_locomotion_sad_walk_a"
       ]
+    },
+    "contextSources": {
+      "townLiving": {
+        "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+        "ref": "main",
+        "blobSha": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+        "facts": [
+          "encounters emit semantic beats; animation and text resolve independently",
+          "friendly-by-default Town attitude; physical contact alone is not Combat"
+        ]
+      },
+      "brickFishPropToss": {
+        "pr": 254,
+        "branch": "chatgpt-web/kfb-town-prop-throw-pattern-2026-09-27",
+        "headSha": "79d7c18a8f07b99efe8276211a9cda527ac2f2ea",
+        "path": "skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md",
+        "blobSha": "99205974c8fcc08ef41e6f66edcdd495f5e81cef",
+        "status": "DESIGN_DIRECTION_NOT_IMPLEMENTED"
+      }
+    },
+    "socialPropHit": {
+      "semantic": "social.prop_hit",
+      "defaultNpcBrickFishEmanata": "heart",
+      "rule": "BONK/recoil first; heart second",
+      "contextOverrides": [
+        "affectionate",
+        "buddy-banter",
+        "argument",
+        "kayfabe-performance",
+        "real-harm->damage.*"
+      ],
+      "heartMeaning": "transient visual Emanata only; not relationship state"
     }
   }
 }
