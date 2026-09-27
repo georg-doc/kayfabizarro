@@ -22,7 +22,7 @@ permissions:
 
 concurrency:
   group: pd-pool-01
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   smoke:
