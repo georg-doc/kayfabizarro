@@ -382,6 +382,25 @@ Its purpose is to make OSM buildings and verified KayKit/Kenney building donors 
 
 This is adjacent world-look work, **not** a second Track/Core owner and not a reason to replace the current road geometry.
 
+### 4C · Phase 2 prepared · Reactive Clay VFX / SFX / temporary deformation
+
+After Georg selects the static S4 look direction, continue with the separate prepared Phase-2 brief:
+
+`../S4B_REACTIVE_CLAY_LAYER_2026-09-27/BRIEF_REACTIVE_CLAY_VFX_SFX_SURFACE_S4B.md`
+
+S4B does **not** change Track Core geometry. It consumes the selected S4 surface/biome ids and adds:
+- track/biome-specific clay particles for corner load, braking, drift, re-grip, takeoff, landing/bounce and impacts;
+- particle colour/form derived from the actual local surface palette rather than one universal smoke;
+- surface-specific SFX through the existing KFB Audio/Soundscape owner;
+- temporary tyre smears, ruts, landing dents and scrape grooves;
+- temporary local dents/squash on eligible OSM / asset buildings and props;
+- animated clay relaxation back toward the undeformed presentation;
+- mixed-surface reactions inside S4 patch-scatter transitions.
+
+The authoritative contact/collision surface stays unchanged. This is a **presentation-reactivity layer**, not destructible track physics.
+
+S4 therefore must leave S4B stable inputs: surface/biome id, local material/colour family, route `s,u`, width/edge state and the selected skin.
+
 ## 5 · Conditions (each one checkable)
 
 1. **The geometry comes from the stream.** Your look reads `slots`, roles, `skin`, `paint` and `markings`; it does not re-solve the track.
