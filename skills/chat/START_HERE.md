@@ -1269,3 +1269,16 @@ The productive WB2 seam attempt is preserved on Draft PR **#252** / `chatgpt-web
 
 Recovery:
 `skills/chat/workflows/WB_ZONE_SEAM_01_FAILURE_RECOVERY_2026-09-27/` on PR #252.
+
+
+## 2026-09-27 · Town / WorldBuilder future interaction input · Brick Fish toss
+
+New additive reference:
+`skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md`
+
+Consumer note:
+`tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/PROP_TOSS_AND_MOTION_VARIANTS_INPUT_2026-09-27.md`
+
+Direction only, not current runtime: recurring NPC/player prop toss with a KFB clay **Brick Fish / Red Herring** default, distance-aware throw-motion roles, clay impact/recovery and optional retaliation. WorldBuilder should also expose the existing KayKit short/long jump family plus suitable Motion Library v2 jump variants through shared semantic roles. Motion Library v2 source is PR #213 (179 clips); do not create a duplicate animation store or movement writer.
+
+No Stage/Hub human gate is created for this parked future input.

@@ -2033,3 +2033,39 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-27 · Town future interaction · Brick Fish / Prop Toss + motion variants
+
+Status: **DOCUMENTED / FUTURE INPUT · NOT IMPLEMENTED**
+
+Persisted:
+- `skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md`
+- `tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/PROP_TOSS_AND_MOTION_VARIANTS_INPUT_2026-09-27.md`
+- Town `START_HERE.md` + `SESSION_CARD.md` routing
+- global `skills/chat/START_HERE.md` routing
+- Tuxdi donor research parked at `skills/chat/masterplan/TUXDI_LABS_THREEJS_DONOR_NOTE_2026-09-27.md`
+
+Design decision:
+- recurring social/cartoon prop toss supports NPC↔NPC, NPC↔player and player↔NPC;
+- preferred default prop is a KFB clay **Brick Fish**, a red brick/fish hybrid and literal Red Herring / adventure-game MacGuffin;
+- arbitrary props require explicit tossable metadata;
+- throw motion becomes a role palette selected by distance/situation, not one hardcoded clip;
+- clay impact can squash/splat/pop through cheap pooled VFX before any real fracture work;
+- optional retaliation is an ephemeral interaction opportunity, not a combat/reputation subsystem.
+
+Source verification:
+- Motion Library v2 PR #213 / `chat/kfb-motion-library-v2b-2026-09-25`: **179 clips** verified from catalogue;
+- verified throw candidates: `kfb_action_baseball_pitching_a`, `kfb_action_quarterback_pass_a`, `kfb_action_fireball_a`;
+- verified v2 jump candidates: `kfb_locomotion_jump_a`, `kfb_locomotion_running_jump_a`, `kfb_locomotion_joyful_jump_a`, `kfb_locomotion_unarmed_jump_a`, `kfb_locomotion_jumping_up_a`;
+- existing KayKit source evidence includes `Jump_Start`, `Jump_Idle`, `Jump_Land`, `Jump_Full_Short`, `Jump_Full_Long` and `General/Throw`;
+- current `main` Motion Library catalogue is still the older 33-clip v1 source, so future WorldBuilder work must pin/consume v2 rather than reconstructing it.
+
+Open implementation seams:
+- measured release hand/frame + approach/recovery for throw clips;
+- Brick Fish GLB/material/pivot + tossable profile;
+- single-owner root-motion reservation and prop handoff to deterministic flight;
+- semantic target anchors and clay hit/miss/recovery;
+- WorldBuilder role mapping for jump and throw variants.
+
+No runtime files changed. No tests claimed. No Stage or KFB Hub card created because there is no current human decision. Recommended later slice: **BRICK-FISH-TOSS-01** inside the real WorldBuilder/Town surface.

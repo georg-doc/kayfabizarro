@@ -67,3 +67,21 @@ Der erste integrierte Pass soll bereits wie ein kompletter Geburtstagseinstieg w
 ## Owner-Grenzen
 
 Town bleibt Design-/Meta-Referenz. Travel, Stunt, Combat, ToolBox/Animation Lab, ChatterBox/Journey und Asset Librarian behalten ihre Owner/SSOTs. GitHub-Sync ist Übergabe, keine automatische Annahme oder Implementation.
+
+
+## 2026-09-27 · Prop Toss / Brick Fish · additive design input
+
+New durable reference:
+[`references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md`](references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md).
+
+Direction:
+- recurring social/cartoon prop throwing between NPC↔NPC, NPC↔player and player↔NPC;
+- **Brick Fish** is the preferred default prop: red clay brick/fish hybrid, also a literal Red Herring / adventure-game MacGuffin;
+- arbitrary Asset-Librarian props may participate only through an explicit tossable profile;
+- throw motion is selected by situation/distance instead of hardcoding one animation;
+- Motion Library v2 PR #213 is the current 179-clip source and already contains Baseball Pitching, Quarterback Pass and multiple jump variants;
+- WorldBuilder should expose both existing KayKit `Jump_Full_Short` / `Jump_Full_Long` and the suitable Motion-Library-v2 jump variants through semantic roles;
+- Animation Studio/ToolBox measures release/contact/recovery; it does not become a second movement owner;
+- first implementation later belongs in the real WorldBuilder/Town receiving surface, with no standalone pseudo-review page.
+
+This is a design/consumer requirement only. No runtime, Stage or human gate is created here.
