@@ -1,3 +1,15 @@
+## 2026-09-28 · PDoom / coded-animation one-shot production reference
+
+### RESEARCH REFERENCE
+- Added `skills/chat/workflows/KFB_PDOOM_ONE_SHOT_REFERENCE_2026-09-28/` as a source-backed `CURRENT_REFERENCE` candidate for design, animation, coded-video tech and autonomous prompting.
+- Inspected `JohnHeibel/PDoomVideo` at `fa546a38092e75f2b079e6a86d6abc54dd525d17`: 3/3 core production docs, 5/5 technical surfaces, 9/9 chapter roster and 2/2 detailed chapter samples.
+- Inspected the explicitly linked generalized successor `JohnHeibel/ClaudeAnimationBase` including README, expanded animation guide and explicit MIT LICENSE.
+- Separated repository-verified facts from public creator/post claims such as the “one prompt” framing and autonomous work duration.
+- Main portable finding: **one human delegation can contain a deliberately multi-pass internal studio workflow** — source/research → style/production bible → storyboard → isolated scene work → evidence renders → Critic/repair → integrated candidate.
+- Proposed reusable KFB cinematic additions: timed viewer reads, explicit `OUT` transition per shot, keypose evidence before interpolation, reproducible film-clock capture, and a contact-sheet → motion-strip → detail-crop → short-clip QA ladder.
+- Explicitly **not adopted**: universal 12 Hz line boil, “everything always moves”, p5.brush as KFB renderer, external-generated replacements for source-backed KFB assets, or new human micro-gates.
+- No runtime, Stage or Live change. This is routing/reference documentation only.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
