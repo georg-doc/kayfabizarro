@@ -317,6 +317,92 @@ Export a full editable Session Cut without being asked again:
 
 Claude Design does not claim GitHub push, Cloudflare Stage or Live. Web/GitHub rehomes and verifies after export.
 
+## Reaction Choreography + Animation Clips extension
+
+Also read:
+
+- `REACTION_CHOREOGRAPHY.md`
+- `reaction-choreography.v0.1.json`
+- current KFB Motion Library catalog;
+- current EyeRig v6;
+- current `face-mount.v1.js`;
+- current `body-shape.v1.js`;
+- PR #214 `ear-dangle.v1.js`;
+- existing PoseRig / Resident Atlas subtree clip-layering evidence.
+
+The integrated proof is no longer only an Emanata emitter. It must prove the **shared reaction conductor**.
+
+### Required acting layers
+
+For every proof event, show which source-backed layer actually runs:
+
+1. animation clip / skeletal layer;
+2. body/parts-as-actors additive accent;
+3. EyeRig;
+4. brows;
+5. mouth / active Viseme ownership;
+6. ears / secondary chains;
+7. Emanata;
+8. recovery to the consumer's current state.
+
+### Animation clip rules
+
+- Keep exactly one existing mixer owner per actor.
+- Address reaction clips by semantic role, not by a new hard-coded clip system.
+- Reuse existing subtree layering where a seated/locomoting base must remain while an upper-body reaction plays.
+- Default reaction root policy is **consumer-owned / locked**.
+- Never let a reaction FBX translate the authoritative gameplay root unless the consumer explicitly grants authored travel.
+- Current Motion Library emotional idle clips are useful **holds**, not automatically one-shot reactions.
+- If no compatible source-backed clip exists, mark that semantic role `SOURCE_REQUIRED` and use the documented procedural body/parts fallback. Do not manufacture a hidden generic clip.
+
+### Mouth / speech conflict
+
+During active Talk:
+
+- existing Viseme owns mouth;
+- `speech.emphasis` coordinates eyes, brows, gaze, head/torso, ears and optional semantic Emanata around the Viseme;
+- a mild reaction must not replace the current phoneme;
+- a heavy interrupt may end speech only through the current speech owner, then use a reaction mouth.
+
+### Ear / body update order
+
+Preserve:
+
+`consumer root → mixer → body-shape.update → pose/parts accent → final head/body transform → Ear Dangle update → Face update → Emanata anchors → Emanata update`
+
+Do not key ear bones from a second animation path while DangleChain owns them.
+
+### Five required integrated event proofs
+
+1. **surprise**  
+   source-backed clip or body recoil + wide eyes/high brows + free-mouth O + ear throw + `shock_rays`.
+
+2. **social.positive**  
+   `react.positive` / `react.cheer` or documented fallback + positive face + ear perk + `heart` or `sparkle`.
+
+3. **damage.light**  
+   source-backed hit role or directional body/parts recoil + blink/brows/free-mouth grimace + directional ear impulse + optional high-intensity `anger_spikes`.
+
+4. **speech.emphasis during active Talk**  
+   active Viseme remains visibly correct while body/head/eyes/brows/ears accent the phrase.
+
+5. **jump.land**  
+   existing landing/contact animation + body compression + ear impulse + post-contact blink; no emotional Emanata. World dust/contact VFX remains a separate owner.
+
+### Interruption/recovery test
+
+At minimum prove:
+
+- low-priority social reaction interrupted by `damage.light`;
+- repeated same cue does not accumulate transforms/instances;
+- hit while locomoting returns to the current locomotion state rather than forcing Idle;
+- stronger event replaces/clears previous Emanata cleanly;
+- exactly one mixer / Face owner / Ear owner remains.
+
+### Review target
+
+Georg should eventually review the **real Resident reacting to actual semantic trigger buttons/events on the existing Stage**, not a reaction-state table or clip browser.
+
 ## Exactly one next gate
 
-**Integrated three-family Resident acting proof: tears + hearts + shock rays, after RECOVERY-01.**
+**After RECOVERY-01, implement the combined Reaction Choreography + Clay Emanata Resident proof, including source-backed animation clips as the primary skeletal motion layer.**
