@@ -78,3 +78,10 @@ Read [TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md](references/TOWN_PO
 The six audio binaries plus per-file provenance manifest are now in `media/3D_Assets/Audio/Music/Birthday Radio - VOLE CC0/`. Their presence is an asset/source result, **not** a claim that a Birthday Radio runtime, Town audio owner or D6 interaction has already been built.
 
 Travel, ToolBox/Animation Lab, Asset Librarian, ChatterBox/Journey/Almanac, Stunt and Combat keep their existing owners. The GitHub delta and the post-cut handoffs are readable inputs, not automatic acceptance or implementation.
+
+
+## 2026-09-27 · Prop Toss + Brick Fish
+
+Read [KFB Prop Toss + Brick Fish](references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md) for the additive social/cartoon interaction direction: distance-aware throw motion roles, Brick Fish / Red Herring default prop, clay impact/recovery, retaliation, and the WorldBuilder requirement to consume existing short/long/running jump variants from the shared animation sources rather than copying them into a second motion store.
+
+Current source fact: Motion Library v2 is the 179-clip candidate on PR #213; current `main` still carries the older 33-clip v1 library. The design note creates no runtime owner, Stage or human gate.
