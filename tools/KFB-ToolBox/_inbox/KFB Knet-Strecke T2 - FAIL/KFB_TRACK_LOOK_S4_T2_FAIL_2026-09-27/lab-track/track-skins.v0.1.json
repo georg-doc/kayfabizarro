@@ -1,0 +1,1328 @@
+{
+ "schema": "kfb.track-skins/0.1",
+ "core": "kfb.track-core/0.8.1",
+ "date": "2026-09-27",
+ "status": "PROPOSAL · Georg entscheidet",
+ "roles": {
+  "road": "Fläche road_L..road_R (Stream-Rolle road)",
+  "shoulder": "Stream-Rolle shoulder ohne den Kerb-Streifen",
+  "kerb": "NEU: innerer Teil der shoulder-Fläche ab road_L/road_R, Breite kerb.w; Wulst liegt außerhalb road_L..road_R; im Tunnel Servicestreifen (ledge, 0,30 m)",
+  "barrier_side": "Stream-Rolle barrier_side",
+  "barrier_cap": "Stream-Rolle barrier_cap, als Wulst gerundet (Höhe min(0,30 m, 0,3 × Kappenbreite))",
+  "underside": "Stream-Rolle underside",
+  "tube_inner": "Tunnel-Innenwand aus stream.tunnelRings, Knet-Beule nach innen ≤ 0,7 m, 8 m vor Portal ausgeblendet",
+  "tube_outer": "reserviert",
+  "collar": "Portalkragen, folgt dem Ring der Röhre (über Grund)",
+  "headwall": "NEU: Stirnwand und Berg um das Portal (mountain)"
+ },
+ "clayScale": "Relief-Maßstab je Rolle in Metern vor dem Diorama-Faktor k. Handmaß = 0,5 × k m. Voreinstellung k = 3: Fingerkuppe 15 mm ↔ 1,5 m Welt, also Diorama 1:100 (Fahrbahn 14,4 m ↔ 14,4 cm Knete).",
+ "stagger": {
+  "barrier_cap": [
+   -16,
+   2
+  ],
+  "barrier_side": [
+   -13,
+   6
+  ],
+  "underside": [
+   -12,
+   12
+  ],
+  "shoulder": [
+   -8,
+   12
+  ],
+  "kerb": [
+   -8,
+   12
+  ],
+  "road": [
+   -3,
+   16
+  ],
+  "marks": [
+   -3,
+   16
+  ],
+  "note": "Meter relativ zur Skin-Fuge, abgelesen an b13 (32 m, Kappe zuerst, Fahrbahn zuletzt)",
+  "tunnel": [
+   -4,
+   8
+  ],
+  "zone": [
+   -6,
+   10
+  ],
+  "kerbZone": [
+   0,
+   0.02
+  ]
+ },
+ "options": {
+  "CB": {
+   "name": "CB · Claybound-Palette (Produktion)",
+   "short": "Palette gemessen an Claybound: schieferblaue Fahrbahn, satter Knetkörper (Bahn orange, Straße creme, Magnet violett), ein Gelb als Warnakzent, Wiese limone.",
+   "kerb": {
+    "w": 1,
+    "per": {
+     "street": {
+      "h": 0.16,
+      "shape": "bulge"
+     },
+     "track": {
+      "h": 0.08,
+      "shape": "flat",
+      "zoneOnly": true
+     },
+     "mag": {
+      "h": 0,
+      "shape": "flat"
+     },
+     "buoy": {
+      "h": 0,
+      "shape": "flat"
+     },
+     "toy": {
+      "h": 0.2,
+      "shape": "sausage"
+     },
+     "tunnel": {
+      "h": 0.3,
+      "shape": "ledge",
+      "w": 1.2
+     }
+    }
+   },
+   "blocks": null,
+   "stripeLen": 3,
+   "capRound": 1,
+   "ground": "#cdc666",
+   "geo": 0.3,
+   "skins": {
+    "street": {
+     "road": {
+      "c": "#5d6f86",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "kerb": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_side": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_cap": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "underside": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.6
+     }
+    },
+    "track": {
+     "road": {
+      "c": "#5d6f86",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ef5a22",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "kerb": {
+      "c": "#ef5a22",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_side": {
+      "c": "#ef5a22",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_cap": {
+      "c": "#ef5a22",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "underside": {
+      "c": "#ef5a22",
+      "clay": "world",
+      "scale": 0.6
+     }
+    },
+    "mag": {
+     "road": {
+      "c": "#8b68c7",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#a582d9",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "kerb": {
+      "c": "#a582d9",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_side": {
+      "c": "#a582d9",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_cap": {
+      "c": "#a582d9",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "underside": {
+      "c": "#a582d9",
+      "clay": "world",
+      "scale": 0.6
+     }
+    },
+    "buoy": {
+     "road": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#b8a898",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "toy": {
+     "road": {
+      "c": "#f2771e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ffb45e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#c85a18",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#a44c16",
+      "clay": "world",
+      "scale": 1.1
+     }
+    }
+   },
+   "marks": {
+    "STREET": {
+     "centre": "#e2d0bc",
+     "edges": "#e2d0bc"
+    },
+    "TRACK": {
+     "edges": "#e2d0bc"
+    },
+    "MAG": {
+     "edges": "#e2d0bc",
+     "bars": "#e2d0bc"
+    }
+   },
+   "status": "PRODUKTION",
+   "tunnelEdge": {
+    "kerb": "#d6cbb6",
+    "shoulder": "#7f786e"
+   },
+   "race": {
+    "kerbStripes": [
+     "#ef5a22",
+     "#e2d0bc"
+    ],
+    "kerbR": 60,
+    "hazardR": 35,
+    "minLen": 10,
+    "pad": 6,
+    "chevron": null
+   },
+   "edge": {
+    "mode": "mould",
+    "concept": "Ein Guss: Fahrbahn und Rand sind ein geformter Knetkörper wie eine Spielzeugbahn. Zwei Farben je Welt: Fahrbahn und Körper.",
+    "parts": [
+     "Hohlkehle: die Fahrbahn biegt in einem großen Radius in den Rand hoch (über Schulter und Fuge). In Kurven innen rot/creme bemalt, sonst Körperfarbe.",
+     "Randwulst: runder Wulst über die ganze Wandbreite, gleiche Farbe wie der Körper. Kein Deckel, keine Kappe in anderer Farbe.",
+     "Außenwand und Unterseite glatt und gerade, Kanten gerundet. Keine Beulen, kein Bauch.",
+     "Warnung nur als große Tafel auf dem Wulst, außen in engen Kurven, alle 8 m."
+    ],
+    "geometry": "Aus den Stream-Slots: Hohlkehle road_L → barrier_in_top (Höhe bis Wulstansatz), Wulst über barrierT, Außenwand bis under. Fahrbahn unverändert.",
+    "handmade": "Stärke-Regler wirkt nur auf die Wulst-Oberkante (±6 cm Welle, Daumendellen), nicht auf Flächen."
+   },
+   "source": "lab-clay/clay-material.v8.js PALETTES.claybound (gemessen an ref/claybound)"
+  },
+  "AB": {
+   "name": "AB · Hirnwelt + Race (Produktion)",
+   "short": "Ein Guss: Fahrbahn und Rand als ein Knetkörper, zwei Farben je Welt. Kerb-Farbe nur innen in Kurven, Warntafel nur außen in engen Kurven.",
+   "kerb": {
+    "w": 1,
+    "per": {
+     "street": {
+      "h": 0.16,
+      "shape": "bulge"
+     },
+     "track": {
+      "h": 0.08,
+      "shape": "flat",
+      "zoneOnly": true
+     },
+     "mag": {
+      "h": 0,
+      "shape": "flat"
+     },
+     "buoy": {
+      "h": 0,
+      "shape": "flat"
+     },
+     "toy": {
+      "h": 0.2,
+      "shape": "sausage"
+     },
+     "tunnel": {
+      "h": 0.3,
+      "shape": "ledge",
+      "w": 1.2
+     }
+    }
+   },
+   "blocks": null,
+   "stripeLen": 3,
+   "capRound": 1,
+   "ground": "#a7b48c",
+   "geo": 0.3,
+   "skins": {
+    "street": {
+     "road": {
+      "c": "#4d5d73",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#8f877b",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "kerb": {
+      "c": "#d9ccb8",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_side": {
+      "c": "#8f877b",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_cap": {
+      "c": "#8f877b",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "underside": {
+      "c": "#8f877b",
+      "clay": "world",
+      "scale": 0.6
+     }
+    },
+    "track": {
+     "road": {
+      "c": "#2c5a57",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#6b4238",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "kerb": {
+      "c": "#6b4238",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_side": {
+      "c": "#6b4238",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_cap": {
+      "c": "#6b4238",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "underside": {
+      "c": "#6b4238",
+      "clay": "world",
+      "scale": 0.6
+     }
+    },
+    "mag": {
+     "road": {
+      "c": "#2a3570",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#3f3478",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "kerb": {
+      "c": "#3f3478",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_side": {
+      "c": "#3f3478",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "barrier_cap": {
+      "c": "#3f3478",
+      "clay": "world",
+      "scale": 0.6
+     },
+     "underside": {
+      "c": "#3f3478",
+      "clay": "world",
+      "scale": 0.6
+     }
+    },
+    "buoy": {
+     "road": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#b8a898",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "toy": {
+     "road": {
+      "c": "#f2771e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ffb45e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#c85a18",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#a44c16",
+      "clay": "world",
+      "scale": 1.1
+     }
+    }
+   },
+   "marks": {
+    "STREET": {
+     "centre": "#e2d0bc",
+     "edges": "#e2d0bc"
+    },
+    "TRACK": {
+     "edges": "#e8dcc6"
+    },
+    "MAG": {
+     "edges": "#e8dcc6",
+     "bars": "#bfe9ff"
+    }
+   },
+   "status": "Vorstufe (abgelehnt 27.09.: Palette)",
+   "tunnelEdge": {
+    "kerb": "#d6cbb6",
+    "shoulder": "#7f786e"
+   },
+   "race": {
+    "kerbStripes": [
+     "#c4553f",
+     "#f0dcc0"
+    ],
+    "kerbR": 60,
+    "hazardR": 35,
+    "minLen": 10,
+    "pad": 6,
+    "chevron": null
+   },
+   "edge": {
+    "mode": "mould",
+    "concept": "Ein Guss: Fahrbahn und Rand sind ein geformter Knetkörper wie eine Spielzeugbahn. Zwei Farben je Welt: Fahrbahn und Körper.",
+    "parts": [
+     "Hohlkehle: die Fahrbahn biegt in einem großen Radius in den Rand hoch (über Schulter und Fuge). In Kurven innen rot/creme bemalt, sonst Körperfarbe.",
+     "Randwulst: runder Wulst über die ganze Wandbreite, gleiche Farbe wie der Körper. Kein Deckel, keine Kappe in anderer Farbe.",
+     "Außenwand und Unterseite glatt und gerade, Kanten gerundet. Keine Beulen, kein Bauch.",
+     "Warnung nur als große Tafel auf dem Wulst, außen in engen Kurven, alle 8 m."
+    ],
+    "geometry": "Aus den Stream-Slots: Hohlkehle road_L → barrier_in_top (Höhe bis Wulstansatz), Wulst über barrierT, Außenwand bis under. Fahrbahn unverändert.",
+    "handmade": "Stärke-Regler wirkt nur auf die Wulst-Oberkante (±6 cm Welle, Daumendellen), nicht auf Flächen."
+   }
+  },
+  "A": {
+   "name": "A · Hirnwelt-Knete",
+   "short": "H0-Straße als Anker: blaugraue Fahrbahn, cremefarbene Wülste an Kerb und Kappe, weiche Farben.",
+   "kerb": {
+    "w": 0.9,
+    "h": 0.16,
+    "shape": "bulge",
+    "on": {
+     "street": 1,
+     "track": 1,
+     "mag": 0.5,
+     "buoy": 0,
+     "toy": 0
+    }
+   },
+   "blocks": null,
+   "stripeLen": 0,
+   "capRound": 1,
+   "ground": "#a7b48c",
+   "geo": 0.35,
+   "skins": {
+    "street": {
+     "road": {
+      "c": "#4d5d73",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#8a8174",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#a99c8c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#e2d0bc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#6c6258",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "track": {
+     "road": {
+      "c": "#2c5a57",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#c49a74",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#f0dcc0",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#8a5a4e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f2c79a",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#7a5646",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "mag": {
+     "road": {
+      "c": "#2a3570",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#6fb0d8",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#cfe6f2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#6e5aa6",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f7c6e0",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#4d4380",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "buoy": {
+     "road": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#b8a898",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "toy": {
+     "road": {
+      "c": "#f2771e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ffb45e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#c85a18",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#a44c16",
+      "clay": "world",
+      "scale": 1.1
+     }
+    }
+   },
+   "marks": {
+    "STREET": {
+     "centre": "#e2d0bc",
+     "edges": "#e2d0bc"
+    },
+    "TRACK": {
+     "edges": "#f0c35a"
+    },
+    "MAG": {
+     "edges": "#f0c35a",
+     "bars": "#bfe9ff"
+    }
+   },
+   "status": "Grundlage für AB",
+   "tunnelEdge": {
+    "kerb": "#d6cbb6",
+    "shoulder": "#7f786e"
+   }
+  },
+  "B": {
+   "name": "B · Rennknete",
+   "short": "Rennstrecke zuerst: rot-weiße Kerbs und Wandblöcke, dunkle Fahrbahn, starke Hell-Dunkel-Stufen.",
+   "kerb": {
+    "w": 1.2,
+    "h": 0.07,
+    "shape": "flat",
+    "on": {
+     "street": 0.6,
+     "track": 1,
+     "mag": 0.6,
+     "buoy": 0,
+     "toy": 0
+    }
+   },
+   "blocks": {
+    "len": 4,
+    "groove": 0.05,
+    "skins": [
+     "track"
+    ]
+   },
+   "stripeLen": 3,
+   "capRound": 0.7,
+   "ground": "#b9ad98",
+   "geo": 0.25,
+   "skins": {
+    "street": {
+     "road": {
+      "c": "#454b55",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#8d877c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#d8d2c6",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#aaa498",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#dcd6ca",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#6a655e",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "track": {
+     "road": {
+      "c": "#383c44",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#9c8f7e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": [
+       "#c8423a",
+       "#f1e9dc"
+      ],
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": [
+       "#c8423a",
+       "#f1e9dc"
+      ],
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f1e9dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#5a4a44",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "mag": {
+     "road": {
+      "c": "#26306a",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#74b7e0",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": [
+       "#3a4aa0",
+       "#e6eef6"
+      ],
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#3a2f63",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f2f2f2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#3c3566",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "buoy": {
+     "road": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": [
+       "#d9493c",
+       "#f2ece2"
+      ],
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#d9493c",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#f2ece2",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#b8a898",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "toy": {
+     "road": {
+      "c": "#f2771e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ffb45e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#c85a18",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#fff0dc",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#a44c16",
+      "clay": "world",
+      "scale": 1.1
+     }
+    }
+   },
+   "marks": {
+    "STREET": {
+     "centre": "#f1e9dc",
+     "edges": "#f1e9dc"
+    },
+    "TRACK": {
+     "edges": "#f1e9dc"
+    },
+    "MAG": {
+     "edges": "#f1e9dc",
+     "bars": "#9fdcff"
+    }
+   },
+   "status": "Streckensprache für AB",
+   "tunnelEdge": {
+    "kerb": "#d6cbb6",
+    "shoulder": "#7f786e"
+   }
+  },
+  "C": {
+   "name": "C · Spielzeugknete",
+   "short": "Toy-Welt: satte Farben, Wurst-Kerb, glänzende Kappen und Magnetspur (knetbar), mehr Verzug in der Geometrie.",
+   "kerb": {
+    "w": 0.7,
+    "h": 0.24,
+    "shape": "sausage",
+    "on": {
+     "street": 0.4,
+     "track": 1,
+     "mag": 1,
+     "buoy": 1,
+     "toy": 1
+    }
+   },
+   "blocks": null,
+   "stripeLen": 0,
+   "capRound": 1.3,
+   "ground": "#9fbf7c",
+   "geo": 0.6,
+   "skins": {
+    "street": {
+     "road": {
+      "c": "#58606e",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#b0a594",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#efe6d6",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#7a7f8a",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#efe6d6",
+      "clay": "world",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#6d6a66",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "track": {
+     "road": {
+      "c": "#1f7f76",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#e0a070",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#ffd9a0",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#5e3448",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#ff8a3d",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#8a4a3a",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "mag": {
+     "road": {
+      "c": "#3048a0",
+      "clay": "knetbar",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#86d4ff",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#ff5fb0",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#3a2a70",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#ff5fb0",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#4a3a8a",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "buoy": {
+     "road": {
+      "c": "#fff4ea",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ff4a3d",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#ffffff",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#ff4a3d",
+      "clay": "world",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#ffffff",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#d0b8a8",
+      "clay": "world",
+      "scale": 1.1
+     }
+    },
+    "toy": {
+     "road": {
+      "c": "#ff7a1a",
+      "clay": "knetbar",
+      "scale": 0.5
+     },
+     "shoulder": {
+      "c": "#ffb15a",
+      "clay": "knetbar",
+      "scale": 0.5
+     },
+     "kerb": {
+      "c": "#4f9be8",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "barrier_side": {
+      "c": "#e0601a",
+      "clay": "knetbar",
+      "scale": 0.5
+     },
+     "barrier_cap": {
+      "c": "#fff0e0",
+      "clay": "knetbar",
+      "scale": 0.4
+     },
+     "underside": {
+      "c": "#c05a18",
+      "clay": "knetbar",
+      "scale": 1.1
+     }
+    }
+   },
+   "marks": {
+    "STREET": {
+     "centre": "#efe6d6",
+     "edges": "#efe6d6"
+    },
+    "TRACK": {
+     "edges": "#ffd24a"
+    },
+    "MAG": {
+     "edges": "#ffd24a",
+     "bars": "#c8f0ff"
+    }
+   },
+   "status": "PRESET · später über Seed/Zone, kein Produktionsstandard",
+   "tunnelEdge": {
+    "kerb": "#d6cbb6",
+    "shoulder": "#7f786e"
+   }
+  }
+ },
+ "clayGeometry": {
+  "layers": {
+   "lumps": "Schwellung entlang s, 2 Oktaven (14 m / 5,5 m), Amplitude außen 0,35 m, unten 0,30 m, innen 0,12 m × Stärke",
+   "thumbDents": "je 7-m-Zelle mit p = 0,5: Delle 0,5 m lang, bis 0,08 m tief × Stärke, nur Kappenmitte",
+   "slump": "Kappenwulst sackt bis 35 % × Stärke",
+   "blockGrooves": "Option B: Fuge alle 4 m, 0,05 m tief",
+   "toolMarks": "im Material (clay-material v8: Kerben, Haarrisse), nicht in der Geometrie"
+  },
+  "steps": {
+   "kaum": 0.15,
+   "geknetet": 0.5,
+   "verzogen": 1
+  },
+  "rules": [
+   "Fahrbahn road_L..road_R unverformt (0 cm)",
+   "Wulst und Beulen nur außerhalb road_L..road_R",
+   "Beulen innen ≤ 0,12 m, weit unter dem 0,7-m-Budget der Röhren"
+  ]
+ },
+ "production": "CB",
+ "surfaces": {
+  "gravel": {
+   "c": "#b6a58c",
+   "c2": "#8e8171",
+   "mode": "grain",
+   "cell": 0.24,
+   "note": "Kiesbett"
+  },
+  "sand": {
+   "c": "#e2c898",
+   "c2": "#cfb27f",
+   "mode": "grain",
+   "cell": 0.5,
+   "note": "Sandbett"
+  },
+  "grass": {
+   "c": "#7e9a5a",
+   "c2": "#68884a",
+   "mode": "grain",
+   "cell": 0.34,
+   "note": "Grasauslauf"
+  },
+  "earth": {
+   "c": "#9a7656",
+   "c2": "#86664a",
+   "mode": "grain",
+   "cell": 0.6,
+   "note": "Erdwall, Graben"
+  },
+  "sidewalk": {
+   "c": "#cfc5b4",
+   "c2": "#bdb3a2",
+   "mode": "grain",
+   "cell": 1.1,
+   "note": "Gehweg-Platten"
+  }
+ },
+ "patch": {
+  "rule": "Übergänge als deterministische Knetflecken über (s, u): Fleck erscheint, wenn h·0,75 + 0,35·r < 1,1·t. Kein Alpha, kein Farbverlauf.",
+  "cell": {
+   "road": 1.6,
+   "shoulder": 0.9,
+   "kerb": 0.7,
+   "barrier_side": 1,
+   "barrier_cap": 0.7,
+   "underside": 1.8,
+   "marks": 1
+  },
+  "rim": 0.28
+ },
+ "tunnels": {
+  "mountain": {
+   "family": "Gotthard",
+   "inner": "#d9cdb8",
+   "lights": "#fff1c8",
+   "collar": "#e6d9c2",
+   "rock": "#9b8a74",
+   "rock2": "#86765f",
+   "grass": "#8ea466",
+   "bulgeMax": 0.7,
+   "fade": 8
+  }
+ },
+ "clayDetail": {
+  "rule": "Fahrbahn, Schulter, Kerb, Markierung: Straßenprofil unverändert wie 27.09. 21:30 (Georg: das einzig Gute). Nicht überschreiben.",
+  "barrier_side": {
+   "print": 0.3,
+   "dent": 0,
+   "gouge": 0,
+   "crack": 0,
+   "stroke": 1,
+   "facet": 0.9,
+   "crease": 0.5
+  },
+  "barrier_cap": {
+   "print": 0.3,
+   "dent": 0,
+   "gouge": 0,
+   "crack": 0,
+   "stroke": 1,
+   "facet": 0.9,
+   "crease": 0.5
+  },
+  "underside": {
+   "print": 0.2,
+   "dent": 0,
+   "gouge": 0,
+   "crack": 0,
+   "stroke": 1,
+   "facet": 0.9,
+   "crease": 0.5
+  },
+  "tube_inner": {
+   "print": 0.08,
+   "dent": 0,
+   "gouge": 0.04,
+   "crack": 0.03,
+   "stroke": 0.5,
+   "facet": 0.5,
+   "crease": 0.3
+  },
+  "rock": {
+   "print": 0,
+   "dent": 0,
+   "gouge": 0,
+   "crack": 0,
+   "stroke": 1,
+   "facet": 1,
+   "crease": 0.6
+  },
+  "table": {
+   "print": 0,
+   "dent": 0,
+   "gouge": 0,
+   "crack": 0,
+   "stroke": 0.9,
+   "facet": 0.8,
+   "crease": 0.4
+  }
+ },
+ "scatter": {
+  "leaf": [
+   "#1f7a3e",
+   "#2f8a45",
+   "#cdc666"
+  ],
+  "trunk": "#8a5a3a",
+  "rock": [
+   "#ef5a22",
+   "#e8743a"
+  ],
+  "cloud": "#e2d0bc",
+  "clearance": 16,
+  "clusters": 110,
+  "rule": "Rule of Three: Baum (Anker), zwei Büsche (Stütze), ein Fels (Akzent). Kugel-in-Kugel."
+ }
+}
