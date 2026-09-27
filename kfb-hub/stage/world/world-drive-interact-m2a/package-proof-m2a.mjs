@@ -15,10 +15,14 @@ ok('Free Roam owns Drive',mobility.includes("movementOwner:'FREE_ROAM_C0'")&&mob
 ok('E interaction exists',mobility.includes("e.code!=='KeyE'")&&ui.includes('E aussteigen'));
 ok('World supplies building contacts',drive.includes('buildingTriangles(app.world.zone'));
 ok('World supplies terrain contact',drive.includes('app.terrainHeightAt'));
+ok('terrain contact covers the full visible zone',drive.includes('app.world.zone?.rectW')&&drive.includes("id:'world-ground'")&&drive.includes('contactBounds'));
+ok('parked vehicle settles before entry',drive.includes('idleSettled')&&drive.includes('simulate();accumulator-=STEP'));
+ok('visual ground gap is measurable',drive.includes('visualGroundGapM'));
 ok('actor remains visible in vehicle',mobility.includes("actorParent='drive'")&&mobility.includes('play.actor.holder.visible=true'));
 ok('safe exit checks World solids',drive.includes('app.world.solidAt'));
 ok('no proxy track',mobility.includes('trackProxy:false')&&!drive.includes('ST01'));
 ok('Flight owner preserved',mobility.includes("movementOwner:'Travel flight ENU surface adapter'"));
 ok('Rapier import map explicit',index.includes('@dimforge/rapier3d-compat@0.17.3'));
-ok('public not falsely verified',source.publicVerified===false&&source.status==='LOCAL_BROWSER_PASS');
+ok('R1 playability profile explicit',index.includes("playabilityProfile:'R1'")&&index.includes('maxPixelRatio:1.25'));
+ok('R1 candidate is not falsely public-verified',source.publicVerified===false&&source.status==='R1_LOCAL_CANDIDATE');
 console.log('WORLD DRIVE M2A PACKAGE PASS '+n+'/'+n);

@@ -65,20 +65,29 @@ async function loadVehicle(){
 export async function createWorldDriveM2A(app){
   if(!app?.world||!app?.play||!app?.scene||!app?.camera)throw Error('WORLD-DRIVE-M2A needs the accepted World r2 host');
   const start=findCarStart(app),groundY=app.terrainHeightAt(start.x,start.z);
-  const half=Math.min(92,(app.world.tile?.size||184)/2-4);
+  const zoneRect=app.world.zone?.rectW;
+  const tileHalf=Math.min(92,(app.world.tile?.size||184)/2-4);
+  const contactRect=zoneRect?{
+    minX:zoneRect.minX-8,maxX:zoneRect.maxX+8,minZ:zoneRect.minZ-8,maxZ:zoneRect.maxZ+8
+  }:{
+    minX:app.world.tile.cx-tileHalf,maxX:app.world.tile.cx+tileHalf,
+    minZ:app.world.tile.cz-tileHalf,maxZ:app.world.tile.cz+tileHalf
+  };
+  const contactCenter={x:(contactRect.minX+contactRect.maxX)/2,z:(contactRect.minZ+contactRect.maxZ)/2};
+  const contactSize={x:contactRect.maxX-contactRect.minX,z:contactRect.maxZ-contactRect.minZ};
   const fixture={
     surfaces:[
-      {id:'island',shape:'box',kind:'terrain',road:true,p:[app.world.tile.cx,groundY-.25,app.world.tile.cz],size:[half*2,.5,half*2]},
+      {id:'world-ground',shape:'box',kind:'terrain',road:true,p:[contactCenter.x,groundY-.25,contactCenter.z],size:[contactSize.x,.5,contactSize.z]},
       {id:'world-buildings',shape:'gltf',kind:'building',road:false,p:[0,0,0]}
     ],
     start:{p:[start.x,groundY+1.2,start.z],yaw:start.heading},
-    inBounds(point,purpose){const margin=purpose==='safe'?1:8;return point[0]>=app.world.tile.cx-half-margin&&point[0]<=app.world.tile.cx+half+margin&&point[2]>=app.world.tile.cz-half-margin&&point[2]<=app.world.tile.cz+half+margin&&point[1]>-20&&point[1]<100}
+    inBounds(point,purpose){const margin=purpose==='safe'?1:8;return point[0]>=contactRect.minX-margin&&point[0]<=contactRect.maxX+margin&&point[2]>=contactRect.minZ-margin&&point[2]<=contactRect.maxZ+margin&&point[1]>-20&&point[1]<100}
   };
   const buildingMesh=buildingTriangles(app.world.zone,groundY);
   const physics=await createPhysics(fixture);physics.addMesh('world-buildings',buildingMesh.vertices,buildingMesh.indices);physics.reset('world-receiver-start-heading');
   Object.assign(physics.params,{steerMax:.55,steerFalloff:.045,steerEase:.22,brake:90,coast:3});
   const intent=createDriveIntent(),keys=new Set();
-  let current=physics.snapshot(),previous=current,accumulator=0,active=false,wheelAngle=0,lastSpeed=0,lastEvent=current.events.at(-1)?.id||null;
+  let current=physics.snapshot(),previous=current,accumulator=0,active=false,wheelAngle=0,lastSpeed=0,lastEvent=current.events.at(-1)?.id||null,idleSettled=false;
 
   const root=new THREE.Group();root.name='M2A · proven kart-oobi · Race PR10';app.scene.add(root);
   const shell=new THREE.Group();root.add(shell);const wheelPivots=[];
@@ -122,7 +131,14 @@ export async function createWorldDriveM2A(app){
   }
   function setActive(on){active=!!on;keys.clear();intent.reset();accumulator=0;root.userData.active=active;if(active)place(1,true)}
   function update(dt){
-    if(!active){place(1);deformer.update(dt);return current}
+    if(!active){
+      if(!idleSettled){
+        accumulator+=Math.min(.1,dt);let n=0;
+        while(accumulator>=STEP&&n++<6){simulate();accumulator-=STEP}
+        idleSettled=current.contacts.filter(Boolean).length>=4&&Math.abs(current.velocity.y)<.08;
+      }
+      place(1);deformer.update(dt);return current
+    }
     accumulator+=Math.min(.1,dt);let n=0;while(accumulator>=STEP&&n++<6){simulate();accumulator-=STEP}if(n>=6)accumulator=0;
     wheelAngle=(wheelAngle+signedSpeed(current)*dt/.42)%(Math.PI*2);place(Math.max(0,accumulator/STEP));deformer.update(dt);return current;
   }
@@ -130,6 +146,10 @@ export async function createWorldDriveM2A(app){
   const kd=e=>{if(!active||ignore(e)||e.repeat)return;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();keys.add(e.code)};
   const ku=e=>keys.delete(e.code);addEventListener('keydown',kd,{capture:true});addEventListener('keyup',ku,{capture:true});addEventListener('blur',()=>keys.clear());
   place(1,true);
-  function report(){return {schema:'kfb.world-drive-m2a/1',active,source:DRIVE_SOURCE,physicalOwner:'FREE_ROAM_C0',worldOwner:'World r2',sourceSurfaceAdapter:true,buildingTriangles:buildingMesh.indices.length/3,position:{x:+current.position.x.toFixed(2),y:+current.position.y.toFixed(2),z:+current.position.z.toFixed(2)},speedKmh:+(Math.abs(signedSpeed(current))*3.6).toFixed(1),contacts:current.contacts.filter(Boolean).length,deformer:deformer.readout}}
+  function report(){
+    const visualWheelBottom=root.position.y-Math.max(...current.wheelLengths)-.42;
+    const surfaceY=app.terrainHeightAt(root.position.x,root.position.z);
+    return {schema:'kfb.world-drive-m2a/1',active,source:DRIVE_SOURCE,physicalOwner:'FREE_ROAM_C0',worldOwner:'World r2',sourceSurfaceAdapter:true,buildingTriangles:buildingMesh.indices.length/3,contactBounds:{...contactRect,width:+contactSize.x.toFixed(1),depth:+contactSize.z.toFixed(1)},idleSettled,position:{x:+current.position.x.toFixed(2),y:+current.position.y.toFixed(2),z:+current.position.z.toFixed(2)},speedKmh:+(Math.abs(signedSpeed(current))*3.6).toFixed(1),contacts:current.contacts.filter(Boolean).length,visualGroundGapM:+(visualWheelBottom-surfaceY).toFixed(3),deformer:deformer.readout}
+  }
   return {root,physics,setActive,update,safeExit,report,get active(){return active},get position(){return current.position},get yaw(){return current.yaw||0},distanceTo(p){return Math.hypot(current.position.x-p.x,current.position.z-p.z)}};
 }

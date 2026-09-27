@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {createTravelModeRouter,TRAVEL_MODE_DEFINITIONS} from './travel-mode-router.js';
 import {createGroundFlightIntent,DEFAULT_DOUBLE_SPACE_WINDOW_MS} from './mode-intent.js';
 import {createCardCarrier} from './card-carrier.js';
-import {createWorldDriveM2A,DRIVE_SOURCE} from './world-drive-m2a.mjs';
+import {createWorldDriveM2A,DRIVE_SOURCE} from './world-drive-m2a.mjs?r1=playability2';
 
 const SOURCE={
   travelPr:39,
@@ -169,7 +169,7 @@ export async function mountWorldMobility(app){
     drive.update(dt);return baseUpdate(dt);
   };
 
-  function report(){return {schema:'kfb.world-drive-interact-m2a/1',mode:mode.toLowerCase(),sameWorld:true,trackProxy:false,source:{...SOURCE,drive:DRIVE_SOURCE},router:router.report(),intent:intent.report(),interaction:{key:'E',vehicleDistanceM:+drive.distanceTo(play.position).toFixed(2),available:mode==='DRIVE'||(mode==='GROUND'&&drive.distanceTo(play.position)<=8)},drive:drive.report(),flight:{position:[flight.position.x,flight.position.y,flight.position.z].map(v=>+v.toFixed(2)),speed:+flight.speed.toFixed(2),clearance:+flight.clearance.toFixed(2),actorPose:mode==='FLIGHT'?'idle on card carrier':play.motion.state,vehicle:mode==='FLIGHT'?'card-carrier.js':null}}}
+  function report(){return {schema:'kfb.world-drive-interact-m2a/1',mode:mode.toLowerCase(),sameWorld:true,trackProxy:false,source:{...SOURCE,drive:DRIVE_SOURCE},router:router.report(),intent:intent.report(),interaction:{key:'E',vehicleDistanceM:+drive.distanceTo(play.position).toFixed(2),available:mode==='DRIVE'||(mode==='GROUND'&&drive.distanceTo(play.position)<=8)},ground:{position:[play.position.x,play.position.y,play.position.z].map(v=>+v.toFixed(2)),motion:play.motion.state,speed:+(play.motion.speed||0).toFixed(2)},drive:drive.report(),flight:{position:[flight.position.x,flight.position.y,flight.position.z].map(v=>+v.toFixed(2)),speed:+flight.speed.toFixed(2),clearance:+flight.clearance.toFixed(2),actorPose:mode==='FLIGHT'?'idle on card carrier':play.motion.state,vehicle:mode==='FLIGHT'?'card-carrier.js':null}}}
   function setMode(next,meta={source:'UI'}){
     const raw=String(next||'').toUpperCase(),target=raw==='FLIGHT'?'FLIGHT':raw==='DRIVE'?'DRIVE':'GROUND';
     if(target===mode)return report();

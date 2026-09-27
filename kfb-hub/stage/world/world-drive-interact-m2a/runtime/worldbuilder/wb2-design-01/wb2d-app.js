@@ -267,7 +267,7 @@ document.body.appendChild(APP);
    `world=<zone>` (URL or host prop) = a real World Zone in the SAME engine, scene document,
    sculpt layer, edit layer and save/reload — plus Play, which reads that same state. */
 const WORLD_ID=new URLSearchParams(location.search).get('world')||(window.__wb2dProps&&window.__wb2dProps.world)||'';
-const WI=WORLD_ID?await import('../world-integration-01/wi1-world.js'):null;
+const WI=WORLD_ID?await import('../world-integration-01/wi1-world.js?r1=playability2'):null;
 const WORLD=WI?await WI.prepare(WORLD_ID):null;
 let PLAY=null;
 
@@ -353,7 +353,7 @@ function seedDomainOffset(value){
 /* ---- end pinned donor subset ---- */
 
 const renderer=new THREE.WebGLRenderer({antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setPixelRatio(Math.min(devicePixelRatio,+window.__wb2dProps?.maxPixelRatio||2));
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.shadowMap.enabled=true;
 E('stage').prepend(renderer.domElement);
@@ -890,7 +890,7 @@ async function showScene(){
    the zone's footprints and the edited scene objects. Edit and Play never hold two copies. */
 async function initPlay(){
   status('loading player · FrizzleBob graft + KFB Motion Library…');
-  const WP=await import('../world-integration-01/wi1-play.js');
+  const WP=await import('../world-integration-01/wi1-play.js?r1=playability2');
   PLAY=await WP.makePlay({scene,camera,dom:renderer.domElement,groundAt:(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)),obstacles:()=>[...sceneObjects.values()],hud:E('wiState'),log:t=>WORLD.log.push(t)});
   PLAY.readDoc(sceneDoc);
   const AM=await import('../world-integration-01/wi1-actor.js');
@@ -1116,21 +1116,24 @@ function resize(){
 addEventListener('resize',resize);
 new ResizeObserver(resize).observe(E('stage'));
 resize();
+const runtimePerf=window.__m2aRuntimePerf={frames:0,total:{mixer:0,grounding:0,presentation:0,play:0,world:0,editor:0,render:0}};
+const timed=(name,fn)=>{const t=performance.now(),value=fn();runtimePerf.total[name]+=performance.now()-t;return value};
 renderer.setAnimationLoop(()=>{
   const dt=Math.min(clock.getDelta(),.05);
-  if(currentMixer)currentMixer.update(dt);
-  if(mode==='actor'&&previewRoot.children[0])groundModelLocal(previewRoot.children[0]);
-  if(mode==='scene'){
+  runtimePerf.frames++;
+  if(currentMixer)timed('mixer',()=>currentMixer.update(dt));
+  if(mode==='actor'&&previewRoot.children[0])timed('grounding',()=>groundModelLocal(previewRoot.children[0]));
+  if(mode==='scene'&&!(PLAY&&PLAY.on)){
     const actorRoot=sceneObjects.get(ACTOR.id);
     if(actorRoot&&actorRoot.userData.model){
-      groundModelLocal(actorRoot.userData.model);
+      timed('grounding',()=>groundModelLocal(actorRoot.userData.model));
     }
   }
-  PRES.tick(clock.elapsedTime);
-  if(PLAY&&mode==='scene')PLAY.update(dt);
-  if(WORLD)WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera);
-  EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on))controls.update();
-  if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera);
+  timed('presentation',()=>PRES.tick(clock.elapsedTime));
+  if(PLAY&&mode==='scene')timed('play',()=>PLAY.update(dt));
+  if(WORLD)timed('world',()=>WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera));
+  timed('editor',()=>{EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on))controls.update()});
+  timed('render',()=>{if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera)});
 });
 
 function fail(err){
