@@ -1,0 +1,41 @@
+name: LOOK-TORSION-01 · Public Cloudflare Gate
+
+on:
+  push:
+    branches:
+      - chatgpt-web/look-torsion-01-2026-09-27
+    paths:
+      - 'tools/osm-city-lab/qa/look-torsion-01-public-stage.mjs'
+      - '.github/workflows/look-torsion-01-public-stage.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: look-torsion-01-public-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  public-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab/qa
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Open exact Cloudflare Stage and Hub routes
+        run: node tools/osm-city-lab/qa/look-torsion-01-public-stage.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: look-torsion-01-public-evidence
+          path: look-torsion-01-public-evidence
+          retention-days: 30
