@@ -5,7 +5,7 @@ Status: `LOCAL_BROWSER_PASS · PUBLIC_ROUTE_FALLBACK`
 
 ## Paket und Owner
 
-`package-proof-m1.mjs` → **40/40 PASS**
+`package-proof-m1.mjs` → **43/43 PASS**
 
 Belegt wurden unter anderem:
 
@@ -15,7 +15,9 @@ Belegt wurden unter anderem:
 - tatsächlicher Travel-Card-Carrier statt Ersatzobjekt;
 - 400-ms-Intent ohne doppelten Ground-Sprung;
 - kein ST01-Proxy und kein Track-Modul;
-- Clay als reversible Präsentation;
+- Hirnwelt H0 als reversible Knet-Präsentation;
+- echte H0-Material-/Reliefmodule und getrennte Maßstäbe für große, mittlere und kleine Oberflächen;
+- kein Laufzeit-Softening und kein Preprocessing von SkinnedMesh;
 - Drive und Water bleiben ohne Source-Owner gesperrt.
 
 ## Browser
@@ -35,7 +37,7 @@ Pro Ansicht geprüft:
 - echter Travel-Carrier trägt FrizzleBob;
 - Router übergibt Movement und Camera gemeinsam;
 - Flight bewegt sich und gewinnt Höhe;
-- Clay ist sichtbar und reversibel;
+- Hirnwelt-Knete ist sichtbar und reversibel;
 - Rückkehr zu Ground stellt den World-Owner wieder her;
 - Inline-Dokumentation funktioniert;
 - 0 Seiten-/Konsolenfehler;
@@ -48,6 +50,7 @@ Pro Ansicht geprüft:
 - kein Race-Track-Core;
 - kein Drive- oder Water-Modus;
 - kein finales Movement-Tuning.
+- noch keine physisch modellierte Bordstein-/Gehweg-Stadtzelle und kein echter Race-Track-Core.
 
 ## Publication-Evidence
 

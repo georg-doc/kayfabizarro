@@ -1,5 +1,17 @@
 # WORLD-MOBILITY-M1 · Additive Changelog
 
+## 2026-09-27 · accepted Hirnwelt H0 look integrated
+
+- Georgs akzeptierten Hirnwelt-H0-Donor als aktuelle Clay-Richtung übernommen;
+- `clay-material.v4.js` und `clay-relief.v2.js` tatsächlich in der World-Runtime eingesetzt;
+- Reliefmaßstäbe für Fassaden/Dächer, Terrain/Straße/Gehweg und kleine Props getrennt;
+- ursprüngliche Materialkarten und Farben erhalten und nur kontrolliert mit Knetpalette gemischt;
+- `clay-soften.v1.js` als Source-Lock mitgeführt, aber nicht zur Laufzeit ausgeführt;
+- SkinnedMesh/Characters ausdrücklich nicht vorverarbeitet;
+- Original/Knete weiterhin direkt reversibel;
+- Paket-/Owner-Prüfung 43/43 und Browserprüfung 40/40 bestanden;
+- nächste Geometriearbeit klar getrennt: echter Track-Core plus modellierte Bordstein-/Gehweg-Stadtzelle.
+
 ## 2026-09-27 · Publication route fallback preserved
 
 - exact 41-file package pushed to `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`;

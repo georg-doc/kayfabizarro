@@ -4,7 +4,7 @@
   "status": "PUBLIC_ROUTE_FALLBACK",
   "repository": "georg-doc/kayfabizarro",
   "branch": "work/world-mobility-m1-2026-09-27",
-  "implementationCommit": "3538f07e0714959c5bf70dadeb2d190123efc5fd",
+  "implementationCommit": "52027a5d4701e284b49e5b9b106ce18596050de8",
   "stageEntry": "kfb-hub/stage/world/world-mobility-m1/index.html",
   "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-mobility-m1/",
   "publication": {
@@ -34,7 +34,27 @@
     "clayBound": {
       "pullRequest": 237,
       "head": "e1f693347fd0049deb9f7ef89ee85341bd9f355d",
-      "role": "reversible presentation only"
+      "role": "superseded technical presentation donor; no longer the visual target"
+    },
+    "hirnweltH0": {
+      "repositoryPath": "tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27",
+      "role": "Georg-accepted clay material, relief and facade direction",
+      "modules": [
+        "lab-clay/clay-material.v4.js",
+        "lab-clay/clay-relief.v2.js",
+        "lab-clay/clay-soften.v1.js"
+      ],
+      "runtimeUse": {
+        "material": true,
+        "relief": true,
+        "softenGeometry": false,
+        "reason": "softening remains an offline/cached preprocessing step; never run on SkinnedMesh"
+      },
+      "scales": {
+        "largeFacadesAndRoofs": 2.45,
+        "terrainRoadAndSidewalk": 1.35,
+        "smallPropsAndCharacters": 0.62
+      }
     }
   },
   "donorHashesSha256": {
@@ -47,6 +67,8 @@
     "second renderer",
     "second simultaneous movement or camera writer",
     "Drive mode without its source owner",
-    "Water mode without its source owner"
+    "Water mode without its source owner",
+    "runtime clay softening",
+    "SkinnedMesh clay preprocessing"
   ]
 }
