@@ -492,22 +492,23 @@
     {
       "id": "worldbuilder-mobility-mvp",
       "bucket": "RUNNING",
-      "title": "World M2A · Drive + E in der KlayfaBizarro-Welt",
-      "what": "M1 ist browser-grün und nutzt den akzeptierten Hirnwelt-H0-Look. M2A verbindet jetzt genau ein bewiesenes Fahrzeug mit der bestehenden World-/Travel-Runtime: zu Fuß → mit E cartoonig einsteigen → frei auf den vorhandenen Straßen fahren → mit E aussteigen → weiterlaufen → Flight → zurück zu Ground. Der echte Track Core ist auf GitHub noch Planung und wird deshalb erst in M2B angeschlossen; es entsteht keine Ersatzstrecke. Water und der vollständige Fahrzeugkatalog bleiben später. Billboard, Credits und Clay-ChatterBox sind quarantinierbare Sidecars und blockieren diesen Kernloop nicht.",
+      "title": "World M2A · Zu Fuß + Auto + Flug · SOURCE/LOCAL PASS",
+      "what": "Der produktive M2A-Kernloop ist umgesetzt: FrizzleBob läuft in der bestehenden KlayfaBizarro-Welt, steigt mit E in ein sichtbares KayKit-Fahrzeug, fährt mit dem bewährten Free-Roam-Fahrkern aus Race PR #10, steigt mit E sicher aus und kann anschließend weiterlaufen oder fliegen. World bleibt Boden-/Kollisionsowner; Drive bleibt Race-Owner. 19/19 Paket- und 28/28 lokale Browserprüfungen sind grün. Es wurde keine Ersatz-Rennstrecke gebaut.",
       "provider": "Work · Sol High · WorldBuilder + Travel + Race",
       "yourAction": "",
-      "waitingFor": "Work setzt M2A direkt um: echter PR-#10-Drive-Owner, ein Fahrzeug und E Ein-/Ausstieg. M2B/Track wartet auf die echte Track-Core-Runtime aus ihrem Owner. Keine Proxy-Fahrbahn, keine neue Fahrphysik, keine Tür-Attrappe und kein Fahrzeug-Vollkatalog als Gate.",
+      "waitingFor": "Die feste Stage wurde noch nicht veröffentlicht, weil dafür der Deployment-Branch aktualisiert werden müsste. Track/M2B bleibt getrennt WAITING_SOURCE bis eine echte Track-Core-Runtime vorliegt.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 249,
-      "branch": "work/world-mobility-m1-2026-09-27",
-      "expectedHead": "40037597485436e185f129091be908786925341d",
+      "pr": 253,
+      "branch": "work/world-drive-interact-m2a-2026-09-27",
+      "expectedHead": "c59cd460f57b0129157722d4ab3a0eeab22978aa",
       "brief": {
-        "label": "World + Drive + E · produktiver M2A-Slice; Track folgt source-backed in M2B",
-        "path": "tools/production_desk/briefings/WORLD_TRACK_CORE_M2_2026-09-27.md",
-        "ref": "work/hub-ctrl-mobility-toolbox-sync-2026-09-27",
-        "pasteReady": true
-      }
+        "label": "World M2A · Return und Prüfbericht",
+        "path": "kfb-hub/stage/world/world-drive-interact-m2a/RETURN.md",
+        "ref": "work/world-drive-interact-m2a-2026-09-27",
+        "pasteReady": false
+      },
+      "review": null
     },
     {
       "id": "npc-life-01",
