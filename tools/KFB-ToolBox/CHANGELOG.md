@@ -151,3 +151,21 @@ Current READY gate:
 
 ### BOUNDARY
 No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
+
+## 2026-09-27 · ToolBox Production-03 r2 intake
+
+### SOURCE
+The Claude Design session cut under `_inbox/KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/` is the current integrated ToolBox candidate for Studio, Animation Studio and Rigging.
+
+### VERIFIED
+- package `zipcheck.py`: PASS;
+- fresh HTTP boot: PASS;
+- browser self-test: 33/33 PASS;
+- browser console: 0 errors and 0 warnings.
+
+### REPAIRED
+- self-test eye-spacing movement now stays inside the measured actor-profile bounds;
+- first React render uses an inert local animation state until the runtime mounts.
+
+### BOUNDARY / NEXT
+The inbox candidate is not yet the canonical ToolBox or a public Stage. Next only: `P03-ADOPT-01`, owner-preserving adoption of the candidate and the three explicit local module deltas. BODY-02 follows after adoption.

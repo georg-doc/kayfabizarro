@@ -2054,3 +2054,11 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+## 2026-09-27 · ToolBox Production-03 intake routed
+
+- Current source candidate: `_inbox/KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/`.
+- WSA intake PASS: zipcheck, fresh HTTP boot, 33/33 browser self-test, 0 errors/warnings.
+- Two bounded candidate fixes: actor-profile-safe Stage-dot test and inert pre-mount animation state.
+- Georg continuation = PROCEED PASS; no extra proxy human gate.
+- Next only: `P03-ADOPT-01` through the existing ToolBox owner. BODY-02 remains subsequent.

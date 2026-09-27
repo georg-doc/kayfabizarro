@@ -2924,10 +2924,12 @@ class Component extends DCLogic {
         const ovOk = !!(this._stateOv().Wave && this._stateOv().Wave.ref && this._stateOv().Wave.ref.id === (wv && wv.clip));
         T('21f Motion profile export → import · state override kept', ovOk && JSON.stringify(this.ws.motion[rid0].roles) === JSON.stringify(back.roles), 'Wave → ' + (ovOk ? this._stateOv().Wave.label : 'lost'));
         if (mp0) this.ws.motion[rid0] = mp0; else delete this.ws.motion[rid0]; }
-      const dx0 = F.get('eye.anchor.dx'); this.pickFace('face:eyes'); const S0 = this._faceDragState;
-      if (S0) { this.handles['face:eyes'].position.add(S0.J[0].clone().multiplyScalar(0.05)); this._faceDrag(); }
+      const dx0 = F.get('eye.anchor.dx'), dxMeta = this._rigMeta('eye.anchor.dx');
+      const dxStep = dxMeta && dx0 + 0.05 > dxMeta.max ? -0.05 : 0.05;
+      this.pickFace('face:eyes'); const S0 = this._faceDragState;
+      if (S0) { this.handles['face:eyes'].position.add(S0.J[0].clone().multiplyScalar(dxStep)); this._faceDrag(); }
       this.closeIK(); await tick(1); const dx1 = F.get('eye.anchor.dx');
-      T('22 Stage dot → eye spacing (measured Jacobian)', S0 && Math.abs(dx1 - dx0 - 0.05) < 0.011, 'dx ' + (+dx0).toFixed(3) + ' → ' + (+dx1).toFixed(3) + (S0 ? ' · |∂p/∂dx| ' + S0.J[0].length().toFixed(3) : ''));
+      T('22 Stage dot → eye spacing (measured Jacobian)', S0 && Math.abs(dx1 - dx0 - dxStep) < 0.011, 'dx ' + (+dx0).toFixed(3) + ' → ' + (+dx1).toFixed(3) + (S0 ? ' · |∂p/∂dx| ' + S0.J[0].length().toFixed(3) : ''));
       const rtR = this.rigRoundTrip();
       T('23 Export → import round trip', rtR.ok, rtR.detail);
       const sp0 = F.get('eye.splay') || 0, x0 = F.rig.eyes[1].position.x; F.set('eye.splay', 2); await tick(1);
@@ -3014,17 +3016,19 @@ class Component extends DCLogic {
     const poseRows = poses.map((p) => ({ label: p.name + ' · ' + Object.keys(p.ik || {}).length + ' IK', ...onoff(d && d.from === p.id), pick: () => this.loadPose(p.id), del: () => this.delPose(p.id) }));
 
     // Anim
-    const A = this.anim, cq = (s.clipSearch || '').toLowerCase(), clipRows = [];
+    // React renders once before componentDidMount initialises the animation
+    // runtime.  Keep that first frame inert instead of throwing on A.ref.
+    const A = this.anim || { ref: null, action: null, speed: 1, loop: true }, cq = (s.clipSearch || '').toLowerCase(), clipRows = [];
     if (rt && rt.kind !== 'pet') {
       const mp = ws ? this.ws.motion[this._rid()] : null, roleOf = (ref) => { if (!mp) return ''; const k = this._clipKey(ref); const r = Object.keys(mp.roles).find((x) => mp.roles[x] && this._clipKey(mp.roles[x].ref) === k); return r || ''; };
       const push = (hdr, items) => { const f = items.filter((it) => !cq || (it.label + ' ' + it.sub + ' ' + it.search).toLowerCase().includes(cq)); if (!f.length) return; clipRows.push({ isHeader: true, isItem: false, label: hdr }); f.forEach((it) => clipRows.push({ isHeader: false, isItem: true, ...it })); };
       if (this.ML && rt.rigFamily !== 'Rig_Legacy') {
         const groups = {}; for (const c of this.ML.cat.clips) (groups[c.group] = groups[c.group] || []).push(c);
         for (const [g, list] of Object.entries(groups)) push('Motion Library · ' + g, list.map((c) => { const ref = { src: 'ml', id: c.id }; const role = roleOf(ref);
-          return { label: c.label_de, sub: (role ? role + ' · ' : '') + c.durationSec.toFixed(1) + 's' + (c.rootMotion === 'travel' ? ' · travel' : ''), search: c.id + ' ' + g + ' ' + role, ...onoff(this._clipKey(A.ref) === this._clipKey(ref)), ref, pick: () => this.loadClip(ref) }; }));
+          return { label: c.label_de, sub: (role ? role + ' · ' : '') + c.durationSec.toFixed(1) + 's' + (c.rootMotion === 'travel' ? ' · travel' : ''), search: c.id + ' ' + g + ' ' + role, ...onoff(!!A.ref && this._clipKey(A.ref) === this._clipKey(ref)), ref, pick: () => this.loadClip(ref) }; }));
       }
-      if (rt.stock.length) push('KayKit stock · ' + rt.rigFamily, rt.stock.map((c) => { const ref = { src: 'stock', id: c.name }, role = roleOf(ref); return { label: c.name, sub: (role ? role + ' · ' : '') + c.clip.duration.toFixed(1) + 's', search: c.pack + ' ' + role, ...onoff(this._clipKey(A.ref) === this._clipKey(ref)), ref, pick: () => this.loadClip(ref) }; }));
-      if (rt.kind === 'legacy' && rt.own.length) push('Legacy 1.2 · Rig_Legacy', rt.own.map((c) => { const ref = { src: 'own', id: c.name }, role = roleOf(ref); return { label: c.name, sub: (role ? role + ' · ' : '') + c.clip.duration.toFixed(1) + 's', search: role, ...onoff(this._clipKey(A.ref) === this._clipKey(ref)), ref, pick: () => this.loadClip(ref) }; }));
+      if (rt.stock.length) push('KayKit stock · ' + rt.rigFamily, rt.stock.map((c) => { const ref = { src: 'stock', id: c.name }, role = roleOf(ref); return { label: c.name, sub: (role ? role + ' · ' : '') + c.clip.duration.toFixed(1) + 's', search: c.pack + ' ' + role, ...onoff(!!A.ref && this._clipKey(A.ref) === this._clipKey(ref)), ref, pick: () => this.loadClip(ref) }; }));
+      if (rt.kind === 'legacy' && rt.own.length) push('Legacy 1.2 · Rig_Legacy', rt.own.map((c) => { const ref = { src: 'own', id: c.name }, role = roleOf(ref); return { label: c.name, sub: (role ? role + ' · ' : '') + c.clip.duration.toFixed(1) + 's', search: role, ...onoff(!!A.ref && this._clipKey(A.ref) === this._clipKey(ref)), ref, pick: () => this.loadClip(ref) }; }));
     }
     const hasClip = anim && !!A.action, catc = A.ref && A.ref.src === 'ml' ? this._mlClip(A.ref.id) : null, prof = catc ? this._mlProfile(catc.id) : null;
     const clipFams = clipRows.filter((r) => r.isHeader).map((r) => r.label), famSel = clipFams.includes(s.clipFam) ? s.clipFam : null, clipChips = [];
