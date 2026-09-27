@@ -61,6 +61,37 @@ Required POC matrix now includes:
 
 Patch size, coverage, density, clumping, relief and source/target ratio change over `s` and normalized lateral road-space. The physical route surface remains one Track Core.
 
+### Prepared Phase 2 · S4B Reactive Clay
+
+Added:
+`S4B_REACTIVE_CLAY_LAYER_2026-09-27/BRIEF_REACTIVE_CLAY_VFX_SFX_SURFACE_S4B.md`
+
+This is deliberately **after** the static S4 look gate.
+
+S4B specifies one shared surface-response grammar for:
+- material-coloured clay particles/puffs on cornering, braking, drift, re-grip, takeoff, landing/bounce and impacts;
+- asphalt / dirt / gravel / sand / snow / wet-water / later Cosmic response families;
+- temporary tyre smears, ruts, landing dents and scrape grooves that animate back toward the undeformed clay surface;
+- temporary local dents/squash on eligible OSM buildings and source-backed asset buildings/props;
+- SFX mapped from the same `surfaceId + eventType` through the existing KFB Audio/Soundscape owner;
+- mixed-material reaction inside S4 patch-scatter biome transition zones.
+
+Protected boundary:
+- no change to Track Core/contact/collider geometry;
+- no permanent source-asset deformation;
+- no second audio engine;
+- no resurrection of the rejected sustained A2 synthetic friction voice.
+
+Existing technical donors are explicitly reused for motion/pooling mechanics: Travel `drift-smoke.js`, `impact-dust.js`, `carpet-wake.js`, `contrails.js` and `speed-lines.js`. Their legacy visuals are not automatically the final clay look.
+
+Mandatory first POCs when S4B starts:
+1. asphalt drift/brake;
+2. dirt corner;
+3. gravel hard brake;
+4. sand or snow;
+5. jump landing + secondary bounce;
+6. barrier/building/prop impact with local dent and recovery.
+
 ### Prepared separate building/façade slice
 
 Added:
@@ -79,6 +110,7 @@ Purpose: one clay/cartoon façade adapter across real OSM buildings and verified
 - `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md`
 - `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/BRIEF_CLAUDE_DESIGN_BUILDING_FACADE_CLAY_ADAPTER_S5.md`
 - `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/START_HERE.md`
+- `S4B_REACTIVE_CLAY_LAYER_2026-09-27/BRIEF_REACTIVE_CLAY_VFX_SFX_SURFACE_S4B.md`
 - `START_HERE.md`
 - `CHANGELOG.md`
 - this `RETURN.md`
@@ -96,6 +128,7 @@ This was a design-brief / routing checkpoint only:
 - GitHub S4 read-back: **1/1**
 - GitHub TRACK-CORE-2 read-back: **1/1**
 - GitHub S5 building brief read-back: **1/1**
+- GitHub S4B reactive-clay brief read-back: **1/1**
 - GitHub current-cursor read-back: **1/1**
 
 No existing S8/Track-Core test result is re-counted as a new test.
