@@ -1206,3 +1206,17 @@ Exactly one next gate:
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+# CURRENT UPDATE · WORLD / FLIGHT / CLAY C0 · 2026-09-27
+
+Status: **CURRENT PRODUCT GATE · HUB SOURCE SYNCHRONIZED**
+
+- genau eine aktuelle Nutzerentscheidung: World / Flight / Clay C0;
+- World r2 bleibt akzeptierte Runtime-Grundlage und wird nicht erneut separat geprüft;
+- Reaktive Clay-Welt R0 und Combat Freeplay C0 sind sichtbar, aber nachgelagert;
+- PR #243 ist mit exaktem Head `18f78846ce573b8d5ca847885a9c3d958183a302` eingetragen;
+- direkte Prüfroute: `kfb-hub/stage/world/world-flight-clay-c0/index.html`;
+- Hub-Quelle und Briefings aktualisiert; öffentlicher Root-Hub wird erst nach erfolgreichem Build/Route-Gate gespiegelt.
+
+Exactly one next gate: **Georg PASS oder TUNE für Fluggefühl, Track-Platzierung und Clay-Richtung.**
+
+---

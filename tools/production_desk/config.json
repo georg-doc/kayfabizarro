@@ -274,16 +274,81 @@
       "expectedHead": "9dda7957a33e69926265c1e3a69028a4b35b26f0"
     },
     {
-      "id": "worldbuilder-wb2",
+      "id": "world-flight-clay-c0",
       "bucket": "LOOK_AT",
-      "title": "World r2 · PUBLIC VERIFIED · Georg Review",
-      "what": "The unchanged World r2 candidate is packaged and PUBLIC_VERIFIED: package 28/28, Hürth 55/55, Cologne 55/55, accepted WB2 34/34, public browser 15/15, zero page/source failures. No new World owner or Track/mobility integration was introduced.",
-      "provider": "WSA World Stage / PR #234",
-      "yourAction": "Review Hürth and Cologne in Edit and Play on the fixed Stage. Return PASS / TUNE / FAIL with concrete observations.",
+      "title": "World · Flug · Clay C0",
+      "what": "Der erste gemeinsame Welt-MVP verbindet Hürth, freien Flug, den vorhandenen ST01-Track und einen umschaltbaren Clay-Look in derselben spielbaren Welt. Die bestehende World-Runtime bleibt unverändert zuständig.",
+      "provider": "Work Integration · PR #243",
+      "yourAction": "Teste zuerst den Flug, dann Original/Clay und zuletzt den Track im Gelände. Antworte mit PASS oder TUNE und höchstens drei konkreten Beobachtungen.",
       "waitingFor": "",
       "questions": [
-        "Tragen Hürth und Köln denselben glaubwürdigen Weltmaßstab in Edit und Play?"
+        "Fühlt sich der Flug gut genug an, um Gelände und Strecken zu beurteilen?",
+        "Trägt die Clay-Richtung als gemeinsame Weltoptik?",
+        "Wirkt der Track im Maßstab der Stadt plausibel?"
       ],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 243,
+      "branch": "work/world-flight-clay-c0-runtime-2026-09-27",
+      "expectedHead": "18f78846ce573b8d5ca847885a9c3d958183a302",
+      "review": {
+        "label": "World · Flug · Clay testen",
+        "path": "kfb-hub/stage/world/world-flight-clay-c0/index.html",
+        "sourceRef": "PR #243 · 41/41 package + 36/36 local browser PASS · cloudflare-live e4b04d3e"
+      },
+      "brief": {
+        "label": "World · Flug · Clay C0",
+        "path": "tools/production_desk/briefings/WORLD_FLIGHT_CLAY_C0_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      }
+    },
+    {
+      "id": "reactive-clay-world-r0",
+      "bucket": "WAITING",
+      "title": "Reaktive Clay-Welt · danach",
+      "what": "Nach dem Look-Gate folgt ein kleiner Reaktionsbeweis: Fahrspuren oder Dellen, ein klarer Gummi-Bounce und sanftes Gebäude-Idle – ohne die ganze Welt gleichzeitig umzubauen.",
+      "provider": "Work Integration · nächster gebundener Slice",
+      "yourAction": "Noch nichts. Erst den World/Flight/Clay-C0-Look beurteilen.",
+      "waitingFor": "Georgs PASS oder TUNE für World · Flug · Clay C0.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "brief": {
+        "label": "Reaktive Clay-Welt R0",
+        "path": "tools/production_desk/briefings/REACTIVE_CLAY_WORLD_R0_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      }
+    },
+    {
+      "id": "combat-freeplay-c0",
+      "bucket": "WAITING",
+      "title": "Combat Freeplay C0 · später",
+      "what": "Die Combat-Demo wird anschließend auf einen echten Spielstart reduziert: Figur wählen, einen bewährten Gegner bekämpfen, Treffer, Sieg, Belohnung und Neustart. Testoberfläche und problematische Einzelgegner blockieren den Kernloop nicht.",
+      "provider": "Combat Owner · separater MVP-Slice",
+      "yourAction": "Noch nichts. World/Flight/Clay ist der aktuelle Produkt-Gate.",
+      "waitingFor": "World-C0-Review; danach eigener Combat-Freeplay-Slice ohne Melee-/Legacy-Massenausbau.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24",
+      "brief": {
+        "label": "Combat Freeplay C0",
+        "path": "tools/production_desk/briefings/COMBAT_FREEPLAY_C0_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      }
+    },
+    {
+      "id": "worldbuilder-wb2",
+      "bucket": "WAITING",
+      "title": "World r2 · akzeptierte Grundlage",
+      "what": "World r2 bleibt die geprüfte Grundlage für Hürth und Köln. Es wird nicht erneut separat bewertet: Der neue World/Flight/Clay-C0-Slice verwendet genau diese Runtime weiter.",
+      "provider": "WSA World Stage / PR #234",
+      "yourAction": "",
+      "waitingFor": "Wird als Donor in World · Flug · Clay C0 konsumiert.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 234,
       "branch": "wsa/world-r2-stage-prep-2026-09-26",
@@ -529,7 +594,7 @@
   ],
   "wsa": {
     "state": "APPROVED_WITH_TUNES",
-    "text": "WSA planning is complete. Current bounded work: World r2 Stage Prep; Track Core W0; Racer cross-mode HUD+Billboards may run in parallel. Hub UX v2 + current Briefings root refresh is in final publication verification."
+    "text": "Aktueller Produkt-Gate: World · Flug · Clay C0 testen. Danach folgt genau ein kleiner Reaktivitätsbeweis; Combat Freeplay bleibt ein separater späterer MVP. Track Core und Billboard dürfen parallel ihre eigenen Owner-Arbeiten fortsetzen."
   },
   "standards": [
     {
@@ -546,6 +611,11 @@
       "label": "Proportionale Gates und Token-Budget",
       "path": "skills/chat/GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md",
       "ref": "main"
+    },
+    {
+      "label": "Spielbare MVP-Reihenfolge",
+      "path": "tools/production_desk/masterplan/PLAYABLE_MVP_MASTERPLAN_2026-09-27.md",
+      "ref": "work/hub-ctrl-01-2026-09-24"
     },
     {
       "label": "World / Racer / Hub Masterplan",
@@ -579,6 +649,14 @@
     "base": "https://kayfabizarro.pages.dev/"
   },
   "tools": [
+    {
+      "group": "Welt und Gelände",
+      "id": "world-flight-clay-c0",
+      "title": "World · Flug · Clay C0",
+      "what": "Hürth überfliegen, Clay-Look umschalten und einen Track im Stadtmaßstab prüfen.",
+      "status": "Prüfen",
+      "path": "kfb-hub/stage/world/world-flight-clay-c0/index.html"
+    },
     {
       "group": "Welt und Gelände",
       "id": "world-atlas",
