@@ -1,7 +1,7 @@
 # KFB PDoom / One-Shot Animation Reference · RETURN
 
 **Date:** 2026-09-28  
-**Status:** RESEARCH ANALYSIS COMPLETE · ROUTING METADATA PENDING  
+**Status:** RESEARCH ANALYSIS COMPLETE · ROUTED CURRENT_REFERENCE CANDIDATE · NO STAGE  
 **Repository:** `georg-doc/kayfabizarro`  
 **Branch:** `research/pdoom-one-shot-reference-2026-09-28`  
 **Owner:** KFB Chat Production Router / reusable production research  
@@ -173,6 +173,41 @@ This slice did not:
 
 That is intentional: the requested outcome is durable analysis/reference documentation.
 
-## Current next productive action
+## Routing / metadata closure
 
-Route this case study as a `CURRENT_REFERENCE` in the KFB registry/router so future coded-animation, cinematic and autonomous one-shot work can load it deliberately.
+Completed on this branch:
+- Registry entry: `kfb-pdoom-one-shot-reference-2026-09-28`;
+- `START_HERE.md` router pointer;
+- additive `CHANGELOG.md` entry;
+- KFB Hub **Reference** briefing card;
+- no Todo/P0 task and no Stage link.
+
+The Hub card is intentionally a reference surface, not a Georg gate.
+
+## Static closure checks
+
+**12 / 12 PASS**
+
+1. three reference documents exist;
+2. Registry JSON parses;
+3. Registry entry is present;
+4. main router link is present;
+5. additive changelog entry is present;
+6. Hub reference card is present;
+7. Hub inline JavaScript parses syntactically;
+8. repository facts / creator claims / KFB inferences are separated;
+9. design / animation / tech / prompting sections are present;
+10. explicit non-adoption safeguards are present;
+11. Elisa one-shot application is documented;
+12. no Stage claim is present.
+
+Current `main` verified during closure:
+`7bd27b3d281911670250d6adad8f02e04412e149`
+
+The branch was **7 commits ahead / 0 behind** immediately before this Return update.
+
+## Next productive use
+
+No new review gate.
+
+Future coded-animation / autonomous cinematic work should load this reference when useful, then apply its portable patterns inside the actual project owner. The first concrete consumer can be the Elisa 18 one-shot when its frozen FrizzleBob Studio input is ready.
