@@ -574,6 +574,31 @@
       }
     },
     {
+      "id": "combat-ranged-mvp",
+      "bucket": "LOOK_AT",
+      "title": "Combat Arena · Warrior-Kernloop spielbar · später testen",
+      "what": "Der kleinste echte Arena-Loop ist öffentlich bewiesen: FrizzleBob Driver → 3 Warrior-Treffer → Kill → Reward/Pop → Run Clear → Next Card/Respawn. Mage bleibt HOLD und blockiert den MVP nicht. Während Georg unterwegs ist, darf nur der isolierte Rogue/Crossbow-Quellenproof vorbereitet werden.",
+      "provider": "Combat Arena · PR #5 / #10 / #7",
+      "yourAction": "Später die feste Combat-Stage frei spielen und nur Spielgefühl, Lesbarkeit sowie Test-Interface vs. Spieloberfläche beurteilen.",
+      "waitingFor": "Georgs Combat-Freeplay. Danach entweder ein kleiner Warrior-Playability-Tune oder CA2-LEGACY-01R; Melee bleibt der folgende getrennte Slice.",
+      "questions": [],
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "pr": 5,
+      "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+      "expectedHead": "d6cf532e64d45fd3117775ec61cfc87b9e948ac0",
+      "brief": {
+        "label": "Combat Arena · aktueller MVP-Stand und nächste Schritte",
+        "path": "tools/production_desk/briefings/COMBAT_MVP_NEXT_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
+      },
+      "review": {
+        "label": "Combat Arena spielen",
+        "path": "kfb-hub/stage/combat/index.html",
+        "sourceRef": "Combat PR #5 · d6cf532e · C-MVP-A-R2 PUBLIC_VERIFIED · Warrior core loop PASS · Mage HOLD"
+      }
+    },
+    {
       "id": "claymation-hud-c0",
       "bucket": "CAN_START",
       "title": "Claymation HUD C0 · gemeinsame Base UI · NEXT",
