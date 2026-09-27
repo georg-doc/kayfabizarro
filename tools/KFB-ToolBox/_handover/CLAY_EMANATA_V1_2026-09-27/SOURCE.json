@@ -1,0 +1,75 @@
+{
+  "schema": "kfb.slice-source/1",
+  "date": "2026-09-27",
+  "slice": "CLAY-EMANATA-V1",
+  "owner": "KFB ToolBox",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/toolbox-clay-emanata-v1-2026-09-27",
+  "baseMainHead": "1430f32a6aa95c0af2c273affd9c23831d02dc01",
+  "outcome": "Reusable 3D claymation Emanata + emotional acting proposal and Claude Design execution brief; no runtime implementation in this slice.",
+  "plannedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-emanata-v1/",
+  "stageStatus": "NOT_DEPLOYED",
+  "blockingGate": "ToolBox RECOVERY-01",
+  "currentToolboxCut": {
+    "root": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/",
+    "return": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/RETURN.md",
+      "blobSha": "53de50081ce3959c46ffa34f77ce2c1b75ccfa75"
+    },
+    "recovery": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/RECOVERY_PLAN.md",
+      "blobSha": "77c77ad79aabfc3a7b986ff3e6478a04770f4ef6"
+    },
+    "source": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/SOURCE.json",
+      "blobSha": "37eee830ca3b28b23607d981c3a4d5aa3a7931bc"
+    },
+    "testReport": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/TEST_REPORT.md",
+      "blobSha": "2f1efb9b3ea55a90b0761b0e766885ea16d50de8"
+    },
+    "clayLids": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/kfb-lib/clay-lids.v1.js",
+      "blobSha": "f2b4c33d742e0ec943ced1184bc346a65bd62541",
+      "schema": "kfb.clay-lids/0.2"
+    }
+  },
+  "emanata2d": {
+    "registry": "registry/assets/v1/packs/kfb-custom.json",
+    "registryBlobSha": "d9d853ea630d098b2e9683206efff87d68918e53",
+    "path": "media/2D_Assets/KFB_Custom/KFB_Emanata_ChatGPT Image 12. Aug. 2026, 16_41_34.png",
+    "blobSha": "bfcd4780e8d31363eb2ac771909cf800911d9c35",
+    "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+    "sizeBytes": 2175271,
+    "role": "shape/semantic donor only"
+  },
+  "claybound": {
+    "root": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/",
+    "intake": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAYBOUND_INPUT_INTAKE_2026-09-26.md",
+    "role": "visual/form/material donor set; implementation must pin and show one exact reference in isolation"
+  },
+  "normative": [
+    {
+      "path": "skills/kfb-cartoon-animation_v2.md",
+      "blobSha": "302c56489afe1a99a4157968222aa96615c96626"
+    },
+    {
+      "path": "skills/KFB_3D_CartoonStyle_v1.md",
+      "blobSha": "5fe583af82f8b728f8d6c75542c1b323c626179a"
+    },
+    {
+      "path": "skills/KFB_Cartoon_Authoring_System_Living_Brief_v0.1.md",
+      "blobSha": "d8e3638b63fa0d822e010f65a2da2792605f3831"
+    }
+  ],
+  "testsAtConceptCheckpoint": {
+    "catalogJsonParse": "PASS",
+    "familyCount": 19,
+    "presetCount": 18,
+    "donorSourceReads": "9/9 PASS",
+    "emanataRegistryPin": "PASS",
+    "recoveryGateConfirmed": "PASS",
+    "runtimeTests": "NOT_RUN - no runtime changed",
+    "browserVisual": "NOT_RUN - no runtime/Stage candidate exists"
+  }
+}
