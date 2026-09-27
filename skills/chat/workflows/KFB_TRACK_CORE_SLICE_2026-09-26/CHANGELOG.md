@@ -1,5 +1,63 @@
 # KFB Track Core · Changelog
 
+## 2026-09-27 · S4B Reactive Clay phase 2 prepared
+
+### Georg direction
+
+After the static clay Track/Biome look, add one reactive presentation layer:
+
+- surface-coloured clay particles for curve load, braking, drift, re-grip, takeoff, landing/bounce and impacts;
+- distinct asphalt / dirt / gravel / sand / snow / wet-water / future Cosmic response families;
+- temporary tyre smears, ruts, landing dents and scrape grooves;
+- temporary local dents/squash on eligible OSM and source-backed asset buildings/props;
+- animated relaxation / smoothing back toward the base clay presentation;
+- surface-specific SFX driven by the same response profile.
+
+### Architecture
+
+Prepared:
+`S4B_REACTIVE_CLAY_LAYER_2026-09-27/BRIEF_REACTIVE_CLAY_VFX_SFX_SURFACE_S4B.md`
+
+One shared `surfaceId + eventType` response contract couples:
+- VFX colour/form;
+- temporary deformation;
+- SFX semantics.
+
+Track Core/contact/collision remain unchanged. World/OSM transforms remain unchanged. Audio stays inside the existing KFB Audio/Soundscape + consumer owner.
+
+### Donors reused
+
+- Travel `drift-smoke.js`;
+- `impact-dust.js`;
+- `carpet-wake.js`;
+- `contrails.js`;
+- `speed-lines.js`;
+- H0 Knetwelt clay material/preprocess stack;
+- current KFB Audio & Soundscape baseline.
+
+These are mechanics/source donors, not automatic final visual/audio acceptance.
+
+### First POC matrix
+
+1. asphalt drift + brake;
+2. dirt corner;
+3. gravel hard brake;
+4. sand or snow;
+5. jump landing + secondary bounce;
+6. barrier/building/prop impact.
+
+S4B remains **WAITING behind S4 look selection**.
+
+### Evidence
+
+Documentation-only:
+- runtime tests: **0**
+- Blender builds: **0**
+- browser tests: **0**
+- audio listening tests: **0**
+- Stage deployments: **0**
+- S4B brief read-back: **1/1**
+
 ## 2026-09-27 · road-source correction + patch-scatter biome POCs + S5 façade slice
 
 ### Georg correction · road ownership
