@@ -1,27 +1,26 @@
 {
   "schema": "kfb.hub-stage-candidate/1",
   "id": "WORLD-DRIVE-INTERACT-M2A",
-  "title": "World M2A · R3 deutlich schneller · Ziel noch nicht erreicht",
+  "title": "World M2A · R4 Performance-Ziel erreicht · freier Test folgt",
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
-  "sourceBranch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
-  "implementationHead": "342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5",
+  "sourceBranch": "work/world-m2a-adaptive-quality-r4-2026-09-27",
+  "implementationHead": "1d803d177789fa834c5165fe36caa12fc26fe7c7",
   "publicationHead": "afc5841abcb6ce057080618ab4aba36a4831bf3a",
   "visibility": "PUBLIC_STAGE_FAILURE_EVIDENCE",
-  "reviewState": "R3_PERFORMANCE_PARTIAL__NOT_PUBLISHED",
+  "reviewState": "R4_PERFORMANCE_PASS__PUBLICATION_PENDING",
   "automatedEvidence": [
-    "R3 package 24/24",
-    "R3 local browser 34/34",
-    "public browser 34/34",
-    "0 page/request/HTTP errors"
+    "R4 package 26/26",
+    "R4 local browser 38/38",
+    "Idle/Walk/Drive p95 16.7/16.7/16.7 ms",
+    "0 page/request/HTTP errors; quality transition guard PASS"
   ],
   "coreBlockers": [
-    "frame p95 42.7–43.9 ms remains above the 33.3 ms target",
-    "incorrect movement animation/state timing",
-    "vehicle ground/contact height",
-    "off-road terrain collision holes drop the vehicle through the world"
+    "human free-play still required for movement feel and image sharpness",
+    "incorrect movement animation/state timing remains a separate tune",
+    "vehicle visual stance/seat still needs human review"
   ],
   "deferred": [
     "boulder/prop shadow and bright-edge artifact"
   ],
-  "next": "WORLD-M2A-R4 adaptive resolution + distance-based Clay budget; then FACADE-DONOR-01 for real instanced facade parts."
+  "next": "Publish the measured R4 candidate to the fixed Stage and run one human free-play; then FACADE-DONOR-01 for real instanced facade parts."
 }

@@ -97,6 +97,19 @@ Ergebnis: ca. 185–198 Tsd. statt 1,13 Mio. sichtbare Dreiecke. Idle/Walk/Drive
 
 R3-Implementierungscheckpoint: `342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5`.
 
+## WORLD-M2A-R4 · 2026-09-27
+
+Der eine erlaubte Kandidat verbindet zwei bereits gemessene Hebel:
+
+- Die 3D-Auflösung sinkt während Bewegung auf 0,65 (schmal 0,60) und stabilisiert sich 1,4 s nach Stillstand auf 0,86 (schmal 0,72). Das HUD bleibt scharf, weil nur der WebGL-Inhalt skaliert wird.
+- Entfernte OSM-Stadthüllen behalten ihre Form und Farben, verwenden aber nicht den vollständigen Clay-Relief-Shader. Die nähere Welt behält den Hirnwelt-Knetlook.
+
+Ergebnis: Paket **26/26**, Browser Desktop + schmal **38/38**, keine Seiten-/Request-/HTTP-Fehler. In den drei isolierten 8-s-Messläufen lagen Idle, Walk und Drive jeweils bei **16,7 ms p95**; das Ziel von höchstens 33,3 ms ist damit lokal erreicht. Die Qualitätsregel wechselte im Start/Stop-Test exakt `stable → moving → stable`, nicht frameweise.
+
+R4-Implementierungscheckpoint: `1d803d177789fa834c5165fe36caa12fc26fe7c7`.
+
+Status: `LOCAL PERFORMANCE PASS · FUNCTIONAL BROWSER PASS · NOT YET PUBLIC VERIFIED`.
+
 ## Genau ein nächster Gate
 
-`WORLD-M2A-R4 · ADAPTIVE RESOLUTION + CLAY DISTANCE BUDGET`: Die Messung bei Pixelratio 0,6 erreicht p95 26,3 ms; Stadt- und Schattenabschaltung bringen dagegen wenig. Deshalb genau eine sichtbare Qualitätsregel testen: Bewegung/kleiner Viewport reduziert Auflösung, Stillstand stabilisiert sie; volles Clay-Relief nur nahe. Erst bei p95 ≤ 33,3 ms und akzeptabler Bildruhe folgt Veröffentlichung und Georgs freier Test. Danach separat `FACADE-DONOR-01`: echte Türen/Fenster isoliert beweisen und instanziert in die nahe Fassadenstufe einsetzen.
+Den gemessenen R4-Kandidaten unverändert auf die feste Stage publizieren, dort öffentlich verifizieren und dann Georgs freien Spieltest durchführen. Erst danach separat `FACADE-DONOR-01`: echte KayKit-/Kenney-Türen und -Fenster isoliert beweisen, skalieren/deformieren/umfärben und instanziert in die nahe Fassadenstufe einsetzen.

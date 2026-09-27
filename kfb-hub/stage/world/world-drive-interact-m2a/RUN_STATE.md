@@ -1,36 +1,36 @@
-# WORLD-M2A-R3 · Run State
+# WORLD-M2A-R4 · Run State
 
-Status: `R3_PARTIAL · LARGE_GAIN · FRAME_TARGET_FAIL · NOT_PUBLISHED`
+Status: `R4_LOCAL_PASS · FRAME_TARGET_PASS · PUBLICATION_PENDING`
 Datum: 2026-09-27
 
 ## Lock
 
 - Owner: bestehende World-M2A-Runtime
 - Repo: `georg-doc/kayfabizarro`
-- Branch: `work/world-m2a-city-shell-lod-r3-2026-09-27`
-- Basis: R1 `9e74fc792e6f00309e9f57f1d3ae4c46e1f0ee57`
-- Implementierung: `342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5`
-- Outcome: eine räumliche Stadt-LOD messen; keine neuen Spielmerkmale
+- Branch: `work/world-m2a-adaptive-quality-r4-2026-09-27`
+- Basis: R3 `69d7910cde4275131f6701416c26d9cab3937ba5`
+- Implementierung: `1d803d177789fa834c5165fe36caa12fc26fe7c7`
+- Outcome: genau eine adaptive Auflösungs-/Clay-Distanzregel messen; keine neuen Spielmerkmale
 
 ## Protected
 
 - World r2 bleibt World-/Terrain-Owner.
 - Race PR #10 bleibt Drive-/Physics-/Camera-Owner.
 - World M1 bleibt Ground-/Flight-/Actor-Owner.
-- Öffentliche Fehler-Stage bleibt unverändert.
+- Öffentliche Fehler-Stage bleibt bis zum erfolgreichen Publication-Gate unverändert.
 - Echte Fassaden-Donors kommen erst nach isoliertem Quellenbeweis.
 
 ## Ergebnis
 
-- 96-m-Bereiche; volle Nähe bis 120 m, leichte OSM-Hüllen in der Ferne, 150-m-Hysterese.
-- Dreiecke von ca. 1,13 Mio. auf ca. 185–198 Tsd. reduziert.
-- Paket 24/24; Browser Desktop + schmal 34/34.
-- p95 Idle/Walk/Drive 43,3/42,7/43,9 ms statt 84–89 ms in R1.
-- Ziel ≤ 33,3 ms bleibt FAIL.
-- Abschalten von Schatten oder Stadt bringt nur kleinen Restgewinn; Pixelratio 0,6 erreicht 26,3 ms.
+- Bewegung: Pixelratio 0,65 (schmal 0,60); Stillstand nach 1,4 s: 0,86 (schmal 0,72).
+- WebGL passt seine interne Auflösung an; HTML-/HUD-Oberfläche bleibt in nativer CSS-Auflösung.
+- Entfernte Stadt-Hüllen behalten Form und Farbe, aber nicht den vollständigen Clay-Relief-Shader.
+- Paket 26/26; Browser Desktop + schmal 38/38.
+- p95 Idle/Walk/Drive 16,7/16,7/16,7 ms; Ziel ≤ 33,3 ms bestanden.
+- 0 Frames über 50 ms in den drei 8-s-Läufen; 4 stabile Qualitätswechsel im Start/Stop-Test.
 
 ## Stop
 
-Der einzelne R3-Kandidat ist gemessen und bleibt unveröffentlicht erhalten. Kein zweiter LOD-Patch in diesem Gate.
+Der einzelne R4-Kandidat ist gemessen. Kein zweiter Performance-Patch in diesem Gate.
 
-Nächster Gate: `WORLD-M2A-R4 · ADAPTIVE RESOLUTION + CLAY DISTANCE BUDGET`. Danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe übernehmen.
+Nächster Gate: exakt diesen Kandidaten auf die feste Stage publizieren und dort öffentlich verifizieren; danach Georgs freier Spieltest. Erst danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe übernehmen.
