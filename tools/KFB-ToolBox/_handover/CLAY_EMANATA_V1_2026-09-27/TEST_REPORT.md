@@ -81,10 +81,10 @@ This remains a **contract/source checkpoint**, not a runtime implementation.
 | Check | Result |
 |---|---|
 | `reaction-choreography.v0.1.json` parses as JSON | **PASS** |
-| Core semantic event recipes | **17** |
-| Semantic reaction clip roles | **15** |
+| Core semantic event recipes | **18** |
+| Semantic reaction clip roles | **16** |
 | First integrated proof events | **5** |
-| Reaction owner/source reads | **7/7 PASS** |
+| Reaction owner/source reads | **9/9 PASS** |
 | EyeRig v6 owner pin | **PASS** · `853bcf5f...` |
 | Face owner pin | **PASS** · `583807bd...` |
 | Body-shape owner pin | **PASS** · `60f2a57f...` |
@@ -92,6 +92,10 @@ This remains a **contract/source checkpoint**, not a runtime implementation.
 | Motion Library catalog pin | **PASS** · `694d7977...` |
 | Resident Atlas subtree-layer evidence | **PASS** · `a1e21656...` |
 | Ear Dangle PR #214 donor pin | **PASS** · `6bb4531a...` |
+| Town Living encounter/attitude source | **PASS** · blob `a1bb4ec9...` |
+| Brick Fish Prop-Toss source | **PASS** · PR #254 head `79d7c18a...`, blob `99205974...` |
+| `social.prop_hit` NPC default | **PASS / contract** · `heart` after physical BONK read |
+| Context overrides | **PASS / contract** · buddy-banter / argument / Kayfabe / real harm |
 | Animation clips included as primary skeletal reaction layer | **YES / contract only** |
 | Runtime choreography tests | **NOT RUN — implementation blocked by RECOVERY-01** |
 
@@ -103,5 +107,8 @@ Verified source behavior incorporated into the contract:
 - Body Shape: morphology update after mixer, explicitly **not** reaction animation ownership;
 - Resident Atlas: existing clip layering along a bone subtree;
 - current Motion Library emotional clips are classified as state/hold candidates unless proven as one-shot reaction clips.
+- Brick Fish social contact is explicitly separate from real damage: `social.prop_hit` defaults to heart Emanata for NPC targets when no stronger context is supplied; real harm must be emitted as `damage.light/heavy` by the consumer.
+- Heart Emanata is presentation only and does not reintroduce the Town-rejected relationship-point/heart-meter pattern.
+- Kayfabe/buddy-banter may use an exaggerated physical sell without implying hostility or HP damage.
 
 No browser/runtime/visual PASS is claimed by these additional checks.
