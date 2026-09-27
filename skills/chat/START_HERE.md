@@ -1122,3 +1122,12 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
+
+## 2026-09-27 · Public Domain Pool · PD-POOL-F1 PASS
+
+PD-POOL-F1 is **PASS** on Draft PR #240, branch `chatgpt-web/public-domain-pool-f1-aic-2026-09-27`. The tested implementation head is `c4f25c156e611a2fac7063becaf4fed3e3769638`; GitHub Actions run `36285175091` proved AIC artwork 24645 API HTTP 200 plus exactly one 843 px IIIF image HTTP 200, 238,585 bytes, SHA-256 `e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56`.
+
+The proof is **ephemeral only**: no downloaded image or sidecar was committed, no Stage route exists, and no Live promotion occurred. Frozen predecessor PR #239 remains recovery/history and must not be resumed.
+
+Exactly one next gate: **PD-POOL-R1 · resume the original four-source smoke + idempotence/persistence gate using the proven AIC transport path**. Bulk population remains blocked until the original selected-hit manifest is recovered or a clearly new curated discovery round is authorized.
+
