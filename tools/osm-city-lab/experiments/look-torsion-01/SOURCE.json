@@ -1,0 +1,65 @@
+{
+  "schema": "kfb.look-torsion-01.source/1.0",
+  "date": "2026-09-27",
+  "owner": "OSM City Lab presentation / KFB ToolBox authoring",
+  "goal": "Fourth isolated recovery proof: direct source → Elastic → Elastic+Torsion comparison without editing frozen Hürth R2.",
+  "base": {
+    "repo": "georg-doc/kayfabizarro",
+    "branchBase": "main",
+    "commit": "6fb02674ea4344169778c0ae9e76b2543f1d78f9"
+  },
+  "architecture": {
+    "pr": 204,
+    "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+    "headRead": "77907f008e568d03a5b18b6e07f53fad962f3572",
+    "section": "W9 · Landmark / Elastic Torsion proof"
+  },
+  "recovery": {
+    "pr": 194,
+    "branch": "chatgpt-web/elastic-grotesque-clay-huerth01-2026-09-23",
+    "headRead": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea",
+    "files": [
+      "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/FAILURE_RECOVERY_HUERTH01_R2_2026-09-24.md",
+      "skills/chat/workflows/KFB_ELASTIC_GROTESQUE_CLAY_V1_2026-09-23/DESIGN_PATTERN_RESEARCH_2026-09-24.md"
+    ],
+    "protected": "Hürth R2 is frozen; no source/runtime file from PR #194 is edited or imported."
+  },
+  "sourceObject": {
+    "name": "Kölner Dom",
+    "osm": "way/4532022",
+    "heightM": 157.38,
+    "implementation": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-world.v1.js#buildDom",
+    "donor": "tools/img2threejs/prototypes/koelner-dom/v0.2/index.html",
+    "proofRule": "Panel A calls buildDom() directly and does not deform or tessellate its geometry; only review material is normalized."
+  },
+  "donors": [
+    {
+      "role": "geometric deformation grammar",
+      "path": "tools/osm-city-lab/src/style/cartoon-city.js#deformPoint",
+      "use": "anchored height-normalized taper + cumulative twist + bend + lean"
+    },
+    {
+      "role": "City GROTESQUE reference",
+      "path": "tools/osm-city-lab/styles/kfb-city-v0.json",
+      "facts": {"verticalSteps": 8, "bend": 0.105, "lean": 0.09, "taper": 0.22, "twistDeg": 11}
+    },
+    {
+      "role": "Cologne BuildingElastic low-range evidence",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-world.v1.js",
+      "facts": {"leanAbsMax": 0.03, "bendAbsMax": 0.022, "taperRange": [0.06, 0.13], "twistDegAbsMax": 2.6}
+    },
+    {
+      "role": "Cologne LandmarkElastic / vertical segmentation evidence",
+      "path": "tools/KFB-ToolBox/_inbox/KFB WB-D1 · Cologne World Shell 2-1/SESSION_2026-09-25_WB-D2/code/wd1-landmark.js",
+      "facts": {"verticalBandDonorUnits": 1.5, "torsionXGrotesque": 1.2, "cityGrotesqueTwistDeg": 11, "currentEvidenceDeg": 13.2}
+    }
+  ],
+  "proofProfiles": {
+    "A": "exact source geometry; neutral material; no deformation",
+    "B": "BuildingElastic-scale bend/lean/taper; twist deliberately 0 degrees to isolate the missing channel",
+    "C": "same B field + cumulative twist; 9.5 degree hero default; interactive low 2.6 / City reference 11 / Landmark evidence 13.2"
+  },
+  "lighting": "Neutral material; hemisphere + one directional light; shadows disabled.",
+  "camera": "Identical perspective in A/B/C. Film-offset skew is optional and off by default; it never changes geometry.",
+  "plannedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/look-torsion-01/"
+}

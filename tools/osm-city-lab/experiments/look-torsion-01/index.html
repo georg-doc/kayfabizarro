@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LOOK-TORSION-01 · Elastic Torsion Proof</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#2b2926;background:#d9d4cc}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#d9d4cc}
+header{padding:16px 18px 12px;border-bottom:1px solid #8e887f;background:#eeeae3}
+h1{font-size:17px;letter-spacing:.04em;margin:0 0 5px}
+.sub{font-size:12px;line-height:1.45;color:#59544d;max-width:1100px}
+.controls{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:11px}
+.controls strong{font-size:11px;margin-right:3px}
+button{font:inherit;font-size:11px;border:1px solid #777168;border-radius:6px;background:#f7f4ee;color:#2b2926;padding:6px 9px;cursor:pointer}
+button.active{background:#302d29;color:#fff;border-color:#302d29}
+.sep{width:1px;height:24px;background:#aaa39a;margin:0 2px}
+main{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:10px}
+.panel{min-width:0;background:#e7e2da;border:1px solid #aaa39a;border-radius:8px;overflow:hidden}
+.panel h2{font-size:13px;margin:0;padding:10px 11px 4px}
+.panel p{font-size:11px;line-height:1.4;color:#5b554e;margin:0;padding:0 11px 9px;min-height:52px}
+.viewport{height:min(62vh,590px);min-height:420px;background:#d5d0c8;position:relative}
+canvas{width:100%;height:100%;display:block}
+.metric{position:absolute;left:8px;right:8px;bottom:8px;padding:6px 8px;border-radius:5px;background:#f3efe8de;border:1px solid #a39c92;font-size:10px;line-height:1.35;pointer-events:none}
+footer{font-size:10px;line-height:1.45;color:#5d574f;padding:0 18px 14px}
+@media(max-width:1000px){main{grid-template-columns:1fr}.viewport{height:520px}.panel p{min-height:0}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}
+</script>
+</head>
+<body>
+<header>
+  <h1>LOOK-TORSION-01 · ELASTIC TORSION ARCHITECTURE PROOF</h1>
+  <div class="sub">Fourth isolated proof after the frozen Hürth R2 recovery. Same accepted Cologne Cathedral donor in all three panels. Neutral material, simple light, shadows off. B intentionally holds twist at 0° so C exposes geometric torsion instead of hiding it in camera skew.</div>
+  <div class="controls">
+    <strong>C torsion magnitude</strong>
+    <button data-torsion="2.6">LOW BUILDING 2.6°</button>
+    <button data-torsion="9.5" class="active">HERO 9.5°</button>
+    <button data-torsion="11">CITY GROTESQUE REF 11°</button>
+    <button data-torsion="13.2">LANDMARK DONOR 13.2°</button>
+    <span class="sep"></span>
+    <button id="skew">CAMERA SKEW OFF</button>
+    <button data-view="oblique" class="active">OBLIQUE</button>
+    <button data-view="front">FRONT</button>
+    <button data-view="side">SIDE</button>
+  </div>
+</header>
+<main>
+  <article class="panel">
+    <h2>A · SOURCE</h2>
+    <p>Exact <code>buildDom()</code> geometry donor, isolated. No deformation; neutral review material only.</p>
+    <div class="viewport"><canvas id="source"></canvas><div class="metric" id="source-meta"></div></div>
+  </article>
+  <article class="panel">
+    <h2>B · CURRENT ELASTIC IDEA</h2>
+    <p>Same donor, vertically tessellated. BuildingElastic-scale bend + lean + taper; twist intentionally held at 0° for the delta.</p>
+    <div class="viewport"><canvas id="elastic"></canvas><div class="metric" id="elastic-meta"></div></div>
+  </article>
+  <article class="panel">
+    <h2>C · ELASTIC + TORSION</h2>
+    <p>Same field and source, now with cumulative height-dependent geometric twist. Default hero range stays below the 11° City GROTESQUE reference.</p>
+    <div class="viewport"><canvas id="torsion"></canvas><div class="metric" id="torsion-meta"></div></div>
+  </article>
+</main>
+<footer>
+Source: Kölner Dom · OSM <code>way/4532022</code> · source height 157.38 m · accepted <code>koelner-dom v0.2</code> donor. Low-building evidence: Cologne BuildingElastic ±2.6°. Strong references: City GROTESQUE 11°; existing LandmarkElastic evidence 1.2× GROTESQUE = 13.2°. Hürth R2 remains untouched.
+</footer>
+<script type="module" src="./proof.mjs"></script>
+</body>
+</html>
