@@ -1,7 +1,7 @@
 # Chat → GitHub → KFB Stage Workflow
 
-Status: **CURRENT BINDING WORKFLOW v1.1**  
-Date: 2026-09-19  
+Status: **CURRENT BINDING WORKFLOW v1.2**
+Date: 2026-09-28
 Owner: Georg / KFB  
 Applies to: ChatGPT Web, Codex/Work, Claude Design and other external LLM production slices
 
@@ -134,6 +134,26 @@ Every new current brief, Stage candidate, human gate or Georg to-do updates:
 - the lean Cloudflare publication mirror.
 
 If the public mirror is behind, say so explicitly. Never show an old Hub as current.
+
+### 5A. Hub-current closure invariant
+
+A slice is **not finished** while the accepted Hub still presents its previous gate as current.
+
+The final checkpoint of every productive slice must update the existing Hub in place, in the same handoff:
+
+1. replace the superseded active card; do not leave both old and new work as parallel current choices;
+2. expose the exact next useful action: **play/test**, **decide**, **continue a named brief**, or **nothing for Georg**;
+3. link the direct public runtime/tool when one exists, otherwise the exact current briefing/owner branch;
+4. label the surface honestly as `PUBLIC PLAYABLE`, `PUBLIC TOOL`, `BRIEF ONLY`, `SOURCE ONLY`, `HOLD`, `REJECTED` or `ARCHIVED`;
+5. keep the existing accepted Hub design and navigation; no new dashboard, distributor page or replacement Hub;
+6. verify the active Hub no longer advertises the superseded gate, title or start prompt;
+7. publish and open the exact Hub URL when this handoff includes an authorized public update.
+
+The ToolBox tab is the aggregate front door for tools. It may list incomplete tools, but cards without a working public route must remain visibly `PUBLIC ROUTE MISSING` or `SOURCE ONLY`; they must never look playable.
+
+Briefing history stays in GitHub for provenance, but the Hub's active `Heute`/briefing set contains only the current continuation. For example, once T3 is accepted, T2 may remain as rejected history but must not remain an active `CLAUDE NEXT` card.
+
+**Closure test:** a fresh Georg session opening only the Hub can identify what is usable now, what still needs work, and the one next productive action without reconstructing the preceding chat.
 
 ## 6. Return packet
 
