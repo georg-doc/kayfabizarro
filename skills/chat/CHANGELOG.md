@@ -2054,3 +2054,11 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+# 2026-09-27 · T3 Knetstrang production briefings
+
+- Added `KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27` as the current shared Blender/Claude follow-up packet.
+- Locked T3 as accepted visual base and T1/T2 as rejected visual history.
+- Added one staggered transition grammar for track, markings, barrier, pit lane, curb/sidewalk and nature.
+- Added source-first Blender MCP B0 and GitHub-autarkic Claude Design T4 briefs plus clay-particle VFX profiles.
+- Deferred Pit Lane and Track on/off ramps to a separate post-T4 design job; added a separate source-backed Claymation billboard/embedded-media follow-up.
+- Updated the Living Masterplan with the Blender → Design → Work integration sequence.
