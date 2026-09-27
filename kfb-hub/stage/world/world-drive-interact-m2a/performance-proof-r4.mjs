@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+const {chromium}=await import(process.env.KFB_PLAYWRIGHT_PATH||'playwright');
+const base=(process.env.WORLD_M2A_BASE_URL||'http://127.0.0.1:4186/kfb-hub/stage/world/world-drive-interact-m2a/').replace(/\/?$/,'/');
+const out=process.env.WORLD_M2A_R4_METRICS||'world-drive-interact-m2a-r4-metrics.json';
+const browser=await chromium.launch({headless:true,executablePath:process.env.KFB_BROWSER_EXECUTABLE||undefined});
+const results={schema:'kfb.world-m2a-r4-performance-proof/1',base,viewport:{width:1280,height:820},samples:{}};
+for(const scenario of ['idle','walk','drive-offroad']){
+  const page=await browser.newPage({viewport:results.viewport});
+  await page.goto(base+'?world=huerth&measure=1&scenario='+scenario,{waitUntil:'domcontentloaded',timeout:120000});
+  await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:60000});
+  await page.waitForFunction(()=>document.body.dataset.m2aPerfReady==='true',null,{timeout:60000});
+  results.samples[scenario]=await page.evaluate(()=>JSON.parse(document.querySelector('#m2a-perf-output').textContent));
+  await page.close();
+}
+const page=await browser.newPage({viewport:results.viewport});
+await page.goto(base+'?world=huerth',{waitUntil:'domcontentloaded',timeout:120000});
+await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:60000});
+await page.waitForFunction(()=>window.__worldDriveM2A.quality.report().state==='stable',null,{timeout:10000});
+const stable=await page.evaluate(()=>window.__worldDriveM2A.quality.report());
+await page.keyboard.down('KeyW');
+await page.waitForFunction(()=>window.__worldDriveM2A.quality.report().state==='moving',null,{timeout:2000});
+const moving=await page.evaluate(()=>window.__worldDriveM2A.quality.report());
+await page.keyboard.up('KeyW');
+await page.waitForFunction(()=>window.__worldDriveM2A.quality.report().state==='stable',null,{timeout:6000});
+const restored=await page.evaluate(()=>window.__worldDriveM2A.quality.report());
+results.qualityTransition={stable,moving,restored,visiblePumpingGuard:stable.changes<=4&&restored.changes<=6};
+await page.close();await browser.close();
+fs.writeFileSync(out,JSON.stringify(results,null,2)+'\n');
+const walk=results.samples.walk.frame.p95Ms,drive=results.samples['drive-offroad'].frame.p95Ms;
+console.log(JSON.stringify({idleP95Ms:results.samples.idle.frame.p95Ms,walkP95Ms:walk,driveP95Ms:drive,targetMs:33.3,pass:walk<=33.3&&drive<=33.3,qualityTransition:results.qualityTransition},null,2));
+if(walk>33.3||drive>33.3)process.exitCode=2;

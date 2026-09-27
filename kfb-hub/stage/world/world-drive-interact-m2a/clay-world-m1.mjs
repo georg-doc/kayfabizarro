@@ -25,10 +25,22 @@ function layerFor(mesh,terrain,far){
   if(mesh===terrain)return {id:'terrain',scale:1.35,role:'world'};
   if(mesh===far)return {id:'far-terrain',scale:2.65,role:'world'};
   const n=(mesh.name||'').toLowerCase();
+  if(n.startsWith('far-shell:'))return {id:'far-city-shell',scale:0,role:'world'};
   if(/wall|building|facade|elasticgrotesque/.test(n))return {id:'facade',scale:2.45,role:'world'};
   if(/roof/.test(n))return {id:'roof',scale:2.05,role:'world'};
   if(/ground|plate|road|curb|path|water/.test(n))return {id:'ground-road-sidewalk',scale:1.35,role:'world'};
   return {id:'prop-detail',scale:.62,role:'soft'};
+}
+
+function simplifiedFarClay(source){
+  const material=source.clone();
+  material.name=(source.name||'city-shell')+' · R4 simplified far clay';
+  if('roughness'in material)material.roughness=1;
+  if('metalness'in material)material.metalness=0;
+  material.onBeforeCompile=()=>{};
+  material.customProgramCacheKey=()=> 'kfb-r4-simple-far-clay';
+  material.needsUpdate=true;
+  return material;
 }
 
 function clayMaterialFor(source,U,layer){
@@ -62,16 +74,18 @@ export async function mountClayWorld(app){
   add(terrain);add(far);city.group.traverse(add);
 
   const records=[];
-  const counts={terrain:0,'far-terrain':0,facade:0,roof:0,'ground-road-sidewalk':0,'prop-detail':0};
+  const counts={terrain:0,'far-terrain':0,'far-city-shell':0,facade:0,roof:0,'ground-road-sidewalk':0,'prop-detail':0};
   let seed=43129;
   for(const mesh of meshes){
     if(!mesh.geometry?.attributes?.position||mesh.isSkinnedMesh)continue;
     const layer=layerFor(mesh,terrain,far);
-    seedGeometry(THREE,mesh.geometry,seed++);
+    if(layer.id!=='far-city-shell')seedGeometry(THREE,mesh.geometry,seed++);
     const original=mesh.material;
-    const clay=Array.isArray(original)
-      ? original.map(material=>clayMaterialFor(material,uniforms,layer))
-      : clayMaterialFor(original,uniforms,layer);
+    const clay=layer.id==='far-city-shell'
+      ? (Array.isArray(original)?original.map(simplifiedFarClay):simplifiedFarClay(original))
+      : (Array.isArray(original)
+        ? original.map(material=>clayMaterialFor(material,uniforms,layer))
+        : clayMaterialFor(original,uniforms,layer));
     records.push({mesh,original,clay,layer});
     counts[layer.id]++;
   }
@@ -117,6 +131,7 @@ export async function mountClayWorld(app){
       buildingCount:heights.length,
       buildingHeightM:heights.length?[+Math.min(...heights).toFixed(2),+Math.max(...heights).toFixed(2)]:[],
       geometryRuntimePreprocess:false,skinnedMeshesUntouched:true,reversible:true,
+      distanceBudget:{fullRelief:'near terrain, streets, props and near city',simplified:'far-city-shell',simplifiedMeshes:counts['far-city-shell']},
       owners:{geometry:'World r2 · ElasticGrotesqueClayV2',material:'H0 Hirnwelt clay-material.v4 + clay-relief.v2',collision:'World r2 ground/contact'}
     };
   }

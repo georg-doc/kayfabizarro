@@ -19,7 +19,7 @@ function sceneFacts(app){
   return {objects,meshes,skinned,casters,materials:materials.size,geometries:geometries.size};
 }
 
-export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
+export function mountPerfProbe({app,mobility,quality,bootStartedAt,sampleMs=8000}){
   const out=document.createElement('output');
   out.id='m2a-perf-output';
   out.hidden=true;
@@ -29,7 +29,7 @@ export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
   const scenario=params.get('scenario')||'idle',diagnostic=params.get('diagnostic')||'none';
   if(diagnostic==='no-shadows')app.renderer.shadowMap.enabled=false;
   if(diagnostic==='no-city'&&app.world.city?.group)app.world.city.group.visible=false;
-  if(diagnostic==='low-res')app.renderer.setPixelRatio(.6);
+  if(diagnostic==='low-res')(quality?.setOverride?quality.setOverride(.6):app.renderer.setPixelRatio(.6));
   const key=(type,code)=>dispatchEvent(new KeyboardEvent(type,{code,bubbles:true,cancelable:true}));
   const cleanup=[];
   if(scenario==='walk'){
@@ -58,7 +58,7 @@ export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
       sampleMs:+(performance.now()-started).toFixed(1),
       frame:{count:frames.length,medianMs:percentile(frames,.5),p95Ms:percentile(frames,.95),p99Ms:percentile(frames,.99),long50:frames.filter(v=>v>50).length,long100:frames.filter(v=>v>100).length},
       renderer:{pixelRatio:app.renderer.getPixelRatio(),calls:render.calls,triangles:render.triangles,lines:render.lines,points:render.points,textures:memory.textures,geometries:memory.geometries},
-      phaseAvgMs:phaseAvg,
+      phaseAvgMs:phaseAvg,quality:quality?.report?.()||null,
       scene:sceneFacts(app),
       mobility:{mode:report.mode,ground:report.ground,drive:report.drive,flight:report.flight}
     };

@@ -1,10 +1,10 @@
 {
   "schema": "kfb.stage-source/1",
   "stageId": "WORLD-DRIVE-INTERACT-M2A",
-  "status": "R3_LOCAL_CANDIDATE",
+  "status": "R4_LOCAL_CANDIDATE",
   "repository": "georg-doc/kayfabizarro",
-  "branch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
-  "implementationCommit": "342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5",
+  "branch": "work/world-m2a-adaptive-quality-r4-2026-09-27",
+  "implementationCommit": null,
   "publicationCommit": null,
   "stageEntry": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
   "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/",
@@ -31,6 +31,17 @@
     "walkP95Ms": 42.7,
     "driveP95Ms": 43.9,
     "walkLowResolutionDiagnosticP95Ms": 26.3,
+    "frameTargetMs": 33.3,
+    "publication": "NOT_PUBLISHED"
+  },
+  "r4": {
+    "outcome": "MEASUREMENT_PENDING",
+    "candidate": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+    "movingPixelRatio": {"desktop": 0.65, "narrow": 0.6},
+    "stablePixelRatio": {"desktop": 0.86, "narrow": 0.72},
+    "idleDelayMs": 1400,
+    "farCityMaterial": "simplified rough material without full clay relief",
+    "cssUiNativeResolution": true,
     "frameTargetMs": 33.3,
     "publication": "NOT_PUBLISHED"
   },
