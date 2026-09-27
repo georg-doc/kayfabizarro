@@ -421,6 +421,7 @@ function stateOf(l){
   return ({LOOK_AT:['PRÜFEN','var(--accent)'],RUNNING:['LÄUFT','var(--run)'],CAN_START:['STARTKLAR','var(--accent2)'],WAITING:['WARTET','var(--muted)']})[l.bucket]||[l.bucket||'?','var(--muted)'];
 }
 function fetchJSON(url){return fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();});}
+function registryStamp(m){const raw=m&&(m.checkedAt||m.generatedAt);const t=Date.parse(raw||'');return Number.isFinite(t)?t:0;}
 function saveBlob(blob,name){const href=URL.createObjectURL(blob),a=document.createElement('a');a.href=href;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),800);}
 function fmtBytes(v){if(v<1024)return v+' B';if(v<1048576)return (v/1024).toFixed(1)+' KB';return (v/1048576).toFixed(1)+' MB';}
 function legacyCopy(text){return new Promise((res,rej)=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();ok?res():rej(new Error('blocked'));});}
@@ -548,6 +549,8 @@ class Component extends DCLogic {
     for(const src of SOURCES){
       try{
         const manifest=await fetchJSON(src.base+'/manifest.json');
+        const incomingStamp=registryStamp(manifest),currentStamp=registryStamp(cur&&cur.manifest);
+        if(cur&&currentStamp&&incomingStamp&&incomingStamp<currentStamp){result={same:true,src:curSrc||src,staleLabel:src.label};break;}
         if(cur&&curSrc&&curSrc.id===src.id&&cur.manifest.contentHash===manifest.contentHash&&cur.manifest.checkedAt===manifest.checkedAt){result={same:true,src};break;}
         const parts=await Promise.all(FILES.map(f=>fetchJSON(src.base+'/'+f+'.json')));
         const reg={manifest};FILES.forEach((f,i)=>reg[f]=parts[i]);
@@ -557,7 +560,7 @@ class Component extends DCLogic {
     this._busy=false;
     const now=new Date();
     if(!result){if(manual||this.state.reload.phase!=='error')this.setState({reload:{phase:'error',at:now,detail:errs.join(' · '),n:0}});return;}
-    if(result.same){if(manual)this.setState({reload:{phase:'nochange',at:now,detail:'',n:0}});return;}
+    if(result.same){if(manual)this.setState({reload:{phase:'nochange',at:now,detail:result.staleLabel?'älteren Stand von '+result.staleLabel+' ignoriert':'',n:0}});return;}
     const n=this.diffCount(cur,result.reg);
     const sameContent=!!cur&&cur.manifest.contentHash===result.reg.manifest.contentHash&&n===0;
     this.setState({reg:result.reg,source:{id:result.src.id,label:result.src.label,ref:result.src.ref},

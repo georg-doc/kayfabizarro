@@ -565,3 +565,10 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Preserved the current Racer HUD as functional donor and kept runtime ownership outside Claude Design.
 - Routed real KayKit backpacks, 20-slot inventory, conditional action slots, Pop Score, HP and adjustable HUD reactivity into one visual system.
 - Kept dynamic speech/thought bubbles as a separate later readability slice; no placeholders or fake providers.
+
+
+## 2026-09-27 · Hub freshness guard
+
+- Fixed the public Hub bootstrap so an older cached remote registry cannot overwrite a newer embedded build.
+- The current embedded registry remains visible until an equally new or newer remote registry is available.
+- This keeps new briefings such as Claymation HUD C0 visible during GitHub/raw/Cloudflare propagation lag.
