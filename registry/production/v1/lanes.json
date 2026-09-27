@@ -417,10 +417,10 @@
       "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
       "external": true,
       "freshness": "CURRENT",
-      "freshnessNote": "Private Travel PR #39 exact tested head; public Stage mirror is the human review surface.",
-      "head": "f5ea32f817403cda0e30a426e70f37db8ce03d66",
-      "headDate": "2026-09-27T01:43:14Z",
-      "expectedHead": "f5ea32f817403cda0e30a426e70f37db8ce03d66",
+      "freshnessNote": "Travel PR #39 final handoff head; runtime f5ea32f8 is CI- and Cloudflare-browser-proved.",
+      "head": "e3b966efec49e8859254cb48e4aed27fb8963d04",
+      "headDate": "2026-09-27T01:56:35Z",
+      "expectedHead": "e3b966efec49e8859254cb48e4aed27fb8963d04",
       "prUrl": "https://github.com/georg-doc/KFB-Travel-Globe/pull/39",
       "prState": "open",
       "brief": {
@@ -435,7 +435,7 @@
         "label": "Movement Mode Router prüfen",
         "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/",
         "available": true,
-        "sourceRef": "Travel PR #39 · f5ea32f8 · 133/133 PASS · human pending"
+        "sourceRef": "Travel PR #39 · final e3b966ef · runtime f5ea32f8 · final CI 133/133 · public Chromium 24/24 · human pending"
       }
     },
     {

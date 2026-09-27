@@ -2,7 +2,7 @@
   "schema": "kfb.stage.travel-modes-01/1",
   "revision": "TRAVEL-MODES-01",
   "owner": "georg-doc/KFB-Travel-Globe",
-  "status": "HUB_SOURCE_READY_PUBLIC_MIRROR_PENDING",
+  "status": "PUBLIC_VERIFIED_HUMAN_REVIEW_PENDING",
   "travel": {
     "draftPR": 39,
     "branch": "chatgpt-web/travel-modes-01-router-2026-09-27",
@@ -15,7 +15,17 @@
     "tests": "133/133 PASS",
     "buildId": "travel-b0-56d8ba57a8de3810",
     "artifactId": 10919953835,
-    "artifactSha256": "5bb26077ad7f87baea51dfdbb8da8cf0ccf80229c37cf17458f5a08cd604fbcc"
+    "artifactSha256": "5bb26077ad7f87baea51dfdbb8da8cf0ccf80229c37cf17458f5a08cd604fbcc",
+    "finalHandoffHead": "e3b966efec49e8859254cb48e4aed27fb8963d04",
+    "finalCi": {
+      "run": 36287034124,
+      "job": 108529617196,
+      "tests": "133/133 PASS",
+      "buildFiles": 197,
+      "verifyMissing": 0,
+      "artifact": 10919999491,
+      "artifactSha256": "27eba8e9d67d82665573ac61221a8cba81e782db2a8424338cc7ca941a8109f4"
+    }
   },
   "files": {
     "sourceHtmlBlob": "a45dcdb54535fc34fd43cb9c9dfcb4bb0b3f74ac",
@@ -32,5 +42,19 @@
     "WATER": "SOURCE_REQUIRED"
   },
   "humanAcceptance": "PENDING",
-  "livePromotion": false
+  "livePromotion": false,
+  "publicProof": {
+    "branchHead": "fc31b85a96352c4eab730c73059bfd5ea2fc67f8",
+    "run": 36286920845,
+    "job": 108529307561,
+    "checks": "24/24 PASS",
+    "pageErrors": 0,
+    "markerAttempt": 1,
+    "artifact": 10919964594,
+    "artifactSha256": "bc92e79c57e4d4dc4b52899c21ee5c915dafc4595687d8640673d840b70e1f1e",
+    "screenshots": [
+      "travel-modes-01-flight.png",
+      "kfb-hub-travel-modes-01.png"
+    ]
+  }
 }
