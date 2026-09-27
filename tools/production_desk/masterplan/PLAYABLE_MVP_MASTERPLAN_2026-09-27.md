@@ -4,6 +4,10 @@ Status: CURRENT PRODUCT FOCUS
 Date: 2026-09-27  
 Owner: Georg / KFB · execution routing by WSA Work Lead
 
+## Aktueller Produkt-Override · 2026-09-27
+
+WORLD-M2A ist nach Georgs freiem Spieltest **nicht spielbar**. Der formale 34/34-Browserlauf bleibt technische Evidence, aber kein Produkt-PASS. Aktueller Work-Gate ist ausschließlich `WORLD-M2A-R1`: lückenloser Terrainkontakt auch abseits der Straße, korrektes Fahrzeug-Grounding und ein messbarer Performance-/Movement-Pass auf derselben Szene. Track, neue Inhalte, HUD und Schattenpolitur bleiben außerhalb dieses Gates.
+
 ## North Star
 
 Die Welt ist ein Spielzeug, das reagiert, lebt, atmet und pulsiert.

@@ -572,3 +572,11 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Fixed the public Hub bootstrap so an older cached remote registry cannot overwrite a newer embedded build.
 - The current embedded registry remains visible until an equally new or newer remote registry is available.
 - This keeps new briefings such as Claymation HUD C0 visible during GitHub/raw/Cloudflare propagation lag.
+
+## 2026-09-27 · World M2A playability correction
+
+- Hub lane corrected from PUBLIC/free-play acceptance wording to `HUMAN_TUNE · NOT_PLAYABLE`.
+- Added continuous off-road terrain contact and vehicle grounding as core blockers.
+- Added a bounded Sol-High R1 briefing with comparable baseline, explicit metrics and at most two candidates.
+- Kept shadow/bright-edge artifacts visible but outside the critical path.
+- No runtime, Stage, merge or Live promotion in this source checkpoint.

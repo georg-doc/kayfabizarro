@@ -511,27 +511,27 @@
     },
     {
       "id": "worldbuilder-mobility-mvp",
-      "bucket": "LOOK_AT",
-      "title": "World M2A · Knete + Zu Fuß + Auto + Flug · PUBLIC",
-      "what": "Der produktive M2A-Kernloop ist öffentlich spielbar. Hirnwelt-H0-Knete ist jetzt sichtbar Standard auf Terrain, Straße, Bordstein und Gebäuden; Original bleibt umschaltbar. FrizzleBob läuft, steigt mit E ins bewährte Race-Fahrzeug, fährt mit echten Radkontakten, steigt wieder aus und kann anschließend fliegen. Kein Track-Proxy.",
+      "bucket": "CAN_START",
+      "title": "World M2A · TUNE · aktuell nicht spielbar",
+      "what": "Die feste Stage lädt und der formale Zu-Fuß/Auto/Flug-Ablauf besteht die automatischen Prüfungen, aber Georgs freier Spieltest ist ein klares HUMAN_TUNE: Bewegung und Frametiming sind langsam/ruckelig, Animationen passen nicht, das Fahrzeug schwebt und abseits der Straße fällt es durch fehlende Terrain-Kollision. Der Stand ist Fehlerbeleg, kein spielbares MVP.",
       "provider": "Work · Sol High · WorldBuilder + Travel + Race",
-      "yourAction": "M2A direkt frei testen: Kneteindruck, E-Einstieg/Ausstieg, Fahrgefühl und Wechsel zum Flug.",
-      "waitingFor": "",
+      "yourAction": "",
+      "waitingFor": "WORLD-M2A-R1: auf exakt derselben Szene zuerst messen, dann höchstens zwei kleine Reparaturkandidaten für durchgehenden Terrainkontakt/Fahrzeug-Grounding und den größten gemessenen Performance-/Movement-Blocker. Keine neuen Features.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 253,
       "branch": "work/world-drive-interact-m2a-2026-09-27",
-      "expectedHead": "5238219cbb6462d054afeb2ff70cc6a1f11a424a",
+      "expectedHead": "b34d9566450cbc72cb0eb556cab09126c8587503",
       "brief": {
-        "label": "World M2A · Return und Prüfbericht",
-        "path": "kfb-hub/stage/world/world-drive-interact-m2a/RETURN.md",
-        "ref": "work/world-drive-interact-m2a-2026-09-27",
-        "pasteReady": false
+        "label": "World M2A-R1 · Playability + Performance",
+        "path": "tools/production_desk/briefings/WORLD_M2A_PLAYABILITY_R1_2026-09-27.md",
+        "ref": "work/hub-ctrl-01-2026-09-24",
+        "pasteReady": true
       },
       "review": {
-        "label": "World M2A spielen",
+        "label": "Aktuellen Fehlerstand öffnen",
         "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
-        "sourceRef": "PR #253 · Runtime 3a9375b · Docs 5238219 · cloudflare-live afc5841 · 34/34 local + 34/34 public browser PASS · Clay default"
+        "sourceRef": "PR #253 · Runtime 3a9375b · Human TUNE/NOT_PLAYABLE @ b34d956 · automated 34/34 is technical evidence only"
       }
     },
     {
@@ -575,8 +575,8 @@
     }
   ],
   "wsa": {
-    "state": "M2A_PUBLIC_FREEPLAY",
-    "text": "World M2A is PUBLIC_VERIFIED with Hirnwelt clay as the visible default: Walk → E → Drive → E → Walk → Flight. Georg free-play is the only current World gate. Track/M2B remains WAITING_SOURCE until the real Track Core runtime exists; no proxy track."
+    "state": "M2A_HUMAN_TUNE_NOT_PLAYABLE",
+    "text": "World M2A has a public reproducible route but failed Georg's free-play gate. Current Work priority is one bounded R1: continuous off-road terrain contact, correct vehicle grounding, then the largest measured frame/load/movement blocker. Track, HUD and new content remain outside R1."
   },
   "standards": [
     {

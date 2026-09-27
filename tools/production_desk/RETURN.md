@@ -1294,3 +1294,11 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Fixed the public Hub bootstrap so an older cached remote registry cannot overwrite a newer embedded build.
 - The current embedded registry remains visible until an equally new or newer remote registry is available.
 - This keeps new briefings such as Claymation HUD C0 visible during GitHub/raw/Cloudflare propagation lag.
+
+## 2026-09-27 · World M2A Human-TUNE
+
+- Georgs freier Spieltest überschreibt die missverständliche Produktwirkung des automatischen 34/34-PASS: `HUMAN_TUNE · NOT_PLAYABLE`.
+- Kernblocker: langsame/ruckelige Bewegung, Ladezeit/Frametiming, falsche Bewegungszustände, Fahrzeug-Grounding und fehlende Offroad-Terrainkollision.
+- Boulder-/Prop-Schattenartefakt bleibt sichtbar erfasst, blockiert R1 aber nicht.
+- Neuer einziger World-Gate: `WORLD-M2A-R1` mit fester Baseline und höchstens zwei kleinen Kandidaten.
+- Keine Runtime-Änderung und keine neue Stage in diesem Status-Checkpoint.
