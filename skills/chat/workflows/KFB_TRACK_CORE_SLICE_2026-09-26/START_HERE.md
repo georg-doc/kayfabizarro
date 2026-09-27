@@ -1,5 +1,34 @@
 # KFB Track Core · one base track, pieces only · planning slice
 
+
+## CURRENT OVERRIDE · 27.09.2026 · Clay edge / runoff / connector design expansion
+
+**Georg continuation / PROCEED PASS:** expand the existing Claude Design track-look work into one universal clay road/track boundary and transition system. Do not create another Track Core, edge solver or review site.
+
+Current branch truth now includes W0 and Track Core slices through **S8 Tunnels**. The older TRACK-CORE-0/G0 next-gate language below is retained as planning history where it conflicts with the newer slice Returns.
+
+Current design briefs:
+- `S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md` — detailed clay track look, now expanded with §4A universal edge/runoff/socket grammar and source-backed donor bank.
+- `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md` — receiving Claude Design transition grammar, now aligned to the same scope.
+
+The design system must cover, on the **same Track Core / RouteRecipe / socket truth**:
+- OSM/city street + clay sidewalk/kerb;
+- classic circuit kerbs, red/white barriers, guardrails, fences and pit edges;
+- asphalt/grass/gravel/**sand-bed** runoff;
+- dirt/off-road shoulder, ditch and berm families;
+- normal track ↔ ramp/loop/kicker/landing;
+- bridge/parapet and S8 tunnel/service-edge/portal transitions;
+- future Mag/Cosmic Highway as a source-pinned skin/edge family, never generic neon.
+
+Source families are pinned in the S4 addendum from the KFB Registry: Kenney Racing, Kenney City Roads, Kenney Toy Car, KayKit City Builder Bits, Tiny Treats Homely House and Kenney Platformer. **Donor isolation remains mandatory before composition.**
+
+Georg's existing **Kabelbett** example is retained as the visual precedent for plug/adapter thinking. Its literal source file is not yet pinned under that name; do not invent it. The implementation reference remains the current Track Core `CONNECT`/socket boundary state and Racetrack Blender socket artifacts.
+
+**No new human gate is created by this documentation expansion.** S8's unresolved shaft depth/section-size/maze choices remain open design/tuning questions and do not block Claude Design from developing the shared visual grammar.
+
+**Exactly one next productive gate:** Claude Design executes the updated S4 / TRACK-CORE-2 brief **source-first**: isolate the selected real donors, then produce the edge/runoff atlas + connector transition matrix + 2–3 clay look options on the existing core. No Stage/Live publication until there is a meaningful integrated visual milestone.
+
+
 ## CURRENT EXECUTION DELTA · SP13KTRA alignment + sprint plan · 2026-09-26 (Claude Coworker)
 
 Read these first; they supersede the agent ladder below for execution:
