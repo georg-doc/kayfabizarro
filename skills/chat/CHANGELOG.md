@@ -2005,3 +2005,19 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Browser evidence artifact `10921660721` contains machine-readable evidence and four screenshots.
 - Candidate is not merged or published; permanent Cloudflare Librarian is not claimed updated.
 - Exactly one next gate: `PD-POOL-R3` · Georg-gated stacked merge/reconciliation → existing Registry refresh → exact permanent Cloudflare Librarian verification. No bulk work.
+
+### 2026-09-27 · PD-POOL-R3 merge + permanent Cloudflare verification
+- Georg explicitly approved the R3 merge/publication gate.
+- R1→R2 stack was reconciled against current main with two-parent commit `83a0bed0325065087d927a0dc735da7a90249a8e`; only parallel router/changelog history required additive conflict resolution.
+- Exact reconciliation-head owner gates PASS: Asset Registry run `36289329583`; Asset Librarian Browser run `36289329589`.
+- PR #246 was marked ready and merged with expected head SHA; main integration commit: `b133e66c4f8cc191501da504ebeceea67c6b4317`.
+- Post-merge owner gates PASS: Asset Registry run `36289510712`; Asset Librarian Browser run `36289510743`; repository Pages build `36289509882` also succeeded but was not used as the Cloudflare acceptance surface.
+- Existing Registry owner refreshed `bot/asset-registry-update@85776f806cec78dae4e8f8b6dce3ccd755490155`; generated Registry source is exactly `b133e66c...`, total 14,923 assets, `media/public_domain` count 4, no license inference.
+- Direct bot-shard inspection PASS for `met`, `aic`, `commons`, and `ia`; all four carry the persisted explicit-sidecar rights facts and exact SHA-256.
+- Minimal Cloudflare publication updated only `tools/asset_registry/librarian/render.js` on `cloudflare-live@6457d0376d7577e2719cab92d482c9104157c4c8`; blob `5bf9a570952bd403f7befc9e5a9324da3bebad28` is byte-identical to main.
+- First permanent-URL proof run `36289682425` failed only because the harness expected the full 40-char SHA in a UI label that intentionally displays 12 chars; the exact 40-char Live Registry assertion had already passed. Repair pass 1 changed test-only code.
+- Permanent Cloudflare proof run `36289917378` / job `108537898828`: **PASS** in Chrome 153. Bathing suit, Great Wave, Silent film and The General each passed search/detail/image-preview/visible-provenance; 0 console errors, 0 runtime exceptions.
+- Exact human route: `https://kayfabizarro.pages.dev/asset-librarian/`.
+- Public proof artifact `10922076232`, digest `sha256:f12289a03929be80bddfe68f42f7b93ee4fd1d26cd6df7d6e050054182598adf`, includes result JSON plus four screenshots.
+- PD-POOL-R1→R3 bounded slice is closed. No broader bulk import was started. The historical original selected-hit manifest/UI export remains missing; any larger pool requires its recovery or an explicitly new curated discovery round.
+
