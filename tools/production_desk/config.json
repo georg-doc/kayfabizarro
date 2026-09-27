@@ -14,6 +14,19 @@
   },
   "lanes": [
     {
+      "id": "rollercoaster-v11-blender-logic",
+      "bucket": "RUNNING",
+      "title": "Rollercoaster v11 · Blender-Logikdonor",
+      "what": "Georg erprobt Rollercoaster v11 in Blender als Basis für Rollercoaster-, Rail- und Track-Bewegungslogik. Der Slice soll die vorhandene Logik vermessen und wiederverwenden, nicht eine zweite Fahrengine erfinden.",
+      "provider": "Blender MCP → Race / Travel",
+      "yourAction": "",
+      "waitingFor": "Blender-Ergebnis mit exakter v11-Quelle, brauchbaren Bewegungs-/Connector-Regeln und klaren Grenzen für die spätere Runtime-Integration.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": null,
+      "branch": null
+    },
+    {
       "id": "city-asset-contact-sheet-intake",
       "bucket": "WAITING",
       "title": "Stadtmöblierung · Asset-Kontaktbogen · PASS",
@@ -34,16 +47,13 @@
     },
     {
       "id": "toolbox-production-02-r2-intake",
-      "bucket": "LOOK_AT",
-      "title": "ToolBox Production-02 r2 · Sichtabnahme",
-      "what": "Neuer Claude-Design-Session-Cut mit Studio, Animation Studio und Rigging. LOAD_PASS ist belegt; r2-Selbsttest, Clean Run und Georgs Sichtprüfung sind noch offen. Animation Lab v1 darf nicht aus dem Gedächtnis nachgebaut werden.",
+      "bucket": "WAITING",
+      "title": "ToolBox Production-02 r2 · PASS",
+      "what": "Georg hat den Claude-Design-Session-Cut am 27.09.2026 angenommen. Studio, Animation Studio und Rigging gelten damit als akzeptierte Arbeitsrichtung; die offene Animation-Lab-v1-Quellwiederherstellung bleibt ein eigener Integrationsschritt.",
       "provider": "Claude Design → ToolBox receiving owner",
-      "yourAction": "Im Rigging-Reiter nur die sechs benannten Punkte prüfen: Lider, Ohr-Basis, Body, Schatten, Talk und Bottom-Bar. PASS/TUNE/FAIL zurückgeben.",
-      "waitingFor": "",
-      "questions": [
-        "Liegen die Clay-Lider sauber auf dem Augapfel und schließen Glide/Fold korrekt?",
-        "Bleiben Ohr-Basis, Body-Grenzen, Schatten, Talk und Bottom-Bar visuell stabil?"
-      ],
+      "yourAction": "",
+      "waitingFor": "ToolBox-Owner übernimmt den akzeptierten r2-Stand; Animation Lab v1 weiterhin nicht aus dem Gedächtnis nachbauen.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
       "branch": "work/hub-ctrl-01-2026-09-24",
@@ -56,12 +66,12 @@
     },
     {
       "id": "public-domain-pool-pd01",
-      "bucket": "CAN_START",
-      "title": "Public-Domain-Pool · Vier-Quellen-Smoke-Test",
-      "what": "Der vorhandene Pool für Met, Art Institute Chicago, Wikimedia Commons und Internet Archive wird mit genau einem Objekt pro Quelle geprüft. Kein Bulk-Import; der Downloader bleibt bis zum Beweis auf HOLD.",
+      "bucket": "RUNNING",
+      "title": "Public-Domain-Pool · Web-Chat läuft",
+      "what": "Der gebundene Vier-Quellen-Smoke-Test läuft im Web-Chat. Ein möglicher Chat-Timeout gilt als UNKNOWN; vor einem Retry zuerst GitHub-Ref und Return prüfen. Kein Bulk-Import.",
       "provider": "Asset Librarian / Billboard Media",
-      "yourAction": "Briefing kopieren und den kleinen 4-Objekt-Test in einem Web-Chat starten. Internet-Archive-Treffer vor öffentlicher Nutzung immer ansehen.",
-      "waitingFor": "",
+      "yourAction": "",
+      "waitingFor": "Web-Chat Return oder nach Timeout GitHub-Recon. Internet-Archive-Treffer bleiben vor öffentlicher Nutzung im Human Gate.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
@@ -314,12 +324,12 @@
     },
     {
       "id": "billboard",
-      "bucket": "CAN_START",
-      "title": "Billboard H4 · Georg Visual PASS · W1 Modul-Extraktion",
-      "what": "H4 is Georg's accepted production direction: a 1024×512 Canvas-2D hypernormalisation surface with song-form timing, layered 2.5D camera and deterministic anti-repeat selection. Keep the accepted Kenney Billboard/B2a body and face ownership; do not rebuild B2b-P1. W1 extracts H4 as a module only.",
+      "bucket": "RUNNING",
+      "title": "Billboard Engine v4+ · läuft",
+      "what": "Georg hat B2a mit PASS abgeschlossen und baut nun die Billboard Engine v4+ auf der akzeptierten H4-/B2a-Richtung. Vorhandene Body/Face-Owner und H4-Hypernormalisation weiterverwenden; keine Rückkehr zur alten B2a-Sichtprüfung.",
       "provider": "ToolBox Billboard Media Residency · Web integration",
       "yourAction": "",
-      "waitingFor": "",
+      "waitingFor": "Engine-v4+-Check-in / Return aus dem zuständigen Arbeitschat.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": null,
@@ -515,26 +525,6 @@
         "ref": "chatgpt-web/npc-life-01-2026-09-24",
         "pasteReady": false
       }
-    },
-    {
-      "id": "claybound-materials",
-      "bucket": "WAITING",
-      "title": "ClayBound · Blender MCP separat · nicht MVP-blockierend",
-      "what": "Georg stuft die Textur als sekundär ein und hat sie bereits im Blender-MCP-Strang geklärt. WSA wiederholt weder Asset-01-Hashsuche noch Asset-03-Review. Ein exakter Blender-Return wird erst bei späterer ToolBox/World-Integration aufgenommen; bis dahin blockiert Clay kein MVP.",
-      "provider": "KFB Clay Asset Studio + Blender MCP",
-      "yourAction": "",
-      "waitingFor": "Nur bei Bedarf: exakter Blender-MCP-Artifact/Ref für die spätere Integration. Kein aktueller Human Gate.",
-      "questions": [],
-      "repo": "georg-doc/kayfabizarro",
-      "branch": "claude/coworker-next-sprints-2026-09-26",
-      "expectedHead": "60e34f26facf1f4d203833b2ebbf6574d185dc6a",
-      "brief": {
-        "label": "Clay priority correction",
-        "path": "skills/chat/workflows/COWORKER_NEXT_SPRINTS_2026-09-26/RETURN.md",
-        "ref": "claude/coworker-next-sprints-2026-09-26",
-        "pasteReady": false
-      },
-      "pr": 231
     }
   ],
   "wsa": {
