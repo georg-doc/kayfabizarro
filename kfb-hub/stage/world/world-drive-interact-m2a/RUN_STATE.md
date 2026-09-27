@@ -1,36 +1,36 @@
-# WORLD-M2A-R1 · Run State
+# WORLD-M2A-R3 · Run State
 
-Status: `R1_PARTIAL · CONTACT_AND_BOOT_PASS · FRAME_BUDGET_FAIL`
+Status: `R3_PARTIAL · LARGE_GAIN · FRAME_TARGET_FAIL · NOT_PUBLISHED`
 Datum: 2026-09-27
 
 ## Lock
 
 - Owner: bestehende World-M2A-Runtime
 - Repo: `georg-doc/kayfabizarro`
-- Branch: `work/world-m2a-playability-r1-2026-09-27`
-- Source: `work/world-drive-interact-m2a-2026-09-27@b34d9566450cbc72cb0eb556cab09126c8587503`
-- Outcome: dieselbe Hürth-Szene begeh- und befahrbar machen; keine neuen Features
+- Branch: `work/world-m2a-city-shell-lod-r3-2026-09-27`
+- Basis: R1 `9e74fc792e6f00309e9f57f1d3ae4c46e1f0ee57`
+- Implementierung: `342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5`
+- Outcome: eine räumliche Stadt-LOD messen; keine neuen Spielmerkmale
 
 ## Protected
 
 - World r2 bleibt World-/Terrain-Owner.
 - Race PR #10 bleibt Drive-/Physics-/Camera-Owner.
 - World M1 bleibt Ground-/Flight-/Actor-Owner.
-- Track S9/S4B, Clay Emanata und Brick-Fish-Reaktionen sind neue Inputs, aber nicht Teil von R1.
+- Öffentliche Fehler-Stage bleibt unverändert.
+- Echte Fassaden-Donors kommen erst nach isoliertem Quellenbeweis.
 
 ## Ergebnis
 
-- Kandidat 1: durchgehender Fahrboden, geparkte Fahrzeug-Simulation und schnellerer Walk-Antritt — bestanden.
-- Kandidat 2: Runtime-Profil mit geringerem DPR, 2048er Bodenkarte, 2048er Schattenkarte und halbierter Terrain-Auflösung — Startzeit bestanden, Frame-Budget nicht bestanden.
-- Auto: 4/4 Radkontakte; sichtbarer Ground Gap 0,002–0,003 m.
-- Kontaktfläche: 716 × 716 m statt nur 184 × 184 m Edit-Tile.
-- Automatisierte Offroad-Fahrt: ca. 24 m, 4/4 Kontakte, kein Fall.
-- Bester Kaltstart bis Kontrolle: 14,2 s (Ziel ≤ 15 s).
-- Frame p95: 84,4 ms zu Fuß / 89,4 ms fahrend (Ziel ≤ 33,3 ms) — **FAIL**.
-- Engpass: Renderpfad, nicht Movement/World/UI-JavaScript.
+- 96-m-Bereiche; volle Nähe bis 120 m, leichte OSM-Hüllen in der Ferne, 150-m-Hysterese.
+- Dreiecke von ca. 1,13 Mio. auf ca. 185–198 Tsd. reduziert.
+- Paket 24/24; Browser Desktop + schmal 34/34.
+- p95 Idle/Walk/Drive 43,3/42,7/43,9 ms statt 84–89 ms in R1.
+- Ziel ≤ 33,3 ms bleibt FAIL.
+- Abschalten von Schatten oder Stadt bringt nur kleinen Restgewinn; Pixelratio 0,6 erreicht 26,3 ms.
 
 ## Stop
 
-Zwei Kandidaten sind ausgeschöpft. R1 bleibt erhalten, aber unveröffentlicht.
+Der einzelne R3-Kandidat ist gemessen und bleibt unveröffentlicht erhalten. Kein zweiter LOD-Patch in diesem Gate.
 
-Nächster Gate: `WORLD-M2A-R2 · RENDER BUDGET` — Grafikbeschleunigung und Renderpfad einmal verifizieren, danach genau eine sichtbare Stadt-LOD-/Shadow-Budget-Lösung. Kein weiterer M2A-Feature-Ausbau davor.
+Nächster Gate: `WORLD-M2A-R4 · ADAPTIVE RESOLUTION + CLAY DISTANCE BUDGET`. Danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe übernehmen.

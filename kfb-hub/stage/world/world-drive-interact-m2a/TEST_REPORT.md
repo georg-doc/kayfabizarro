@@ -36,3 +36,19 @@ Noch nicht behauptet: spielbares World-MVP, echter Track Core, Water, finales Fa
 - Renderlast: ca. **1,13 Mio. Dreiecke**; `renderer.render` dominiert mit ca. **46–71 ms/Bild**. Die übrigen gemessenen Runtime-Phasen bleiben jeweils deutlich unter 1 ms.
 
 Bewertung: `R1 PARTIAL`. Kontakt, Fahrzeug-Bodenniveau und Kaltstart sind repariert. Das Frame-Budget von p95 ≤ 33,3 ms ist nicht erreicht. Kein Public-Publish und kein dritter R1-Kandidat.
+
+## R3 · City Shell LOD
+
+- Paket-/Owner-Prüfung: **24/24 PASS**.
+- Vollständiger lokaler Browserlauf Desktop + schmal: **34/34 PASS**.
+- 0 Seiten-/Konsolenfehler, 0 fehlgeschlagene Requests, 0 HTTP-Fehler.
+- Kaltstart der drei isolierten Hauptläufe: **6,0–6,5 s**.
+- Sichtbare Dreiecke: ca. **185–198 Tsd.** statt ca. 1,13 Mio.
+- Idle: Median **27,8 ms**, p95 **43,3 ms**.
+- Walk: Median **26,3 ms**, p95 **42,7 ms**.
+- Drive/Offroad: Median **26,4 ms**, p95 **43,9 ms**, 4/4 Kontakte; kein Fall durch den Boden.
+- Diagnose ohne Schatten: Walk p95 **41,6 ms**.
+- Diagnose ohne Stadt: Walk p95 **39,9 ms**.
+- Diagnose Pixelratio 0,6: Walk p95 **26,3 ms** — Ziel bestanden, aber noch keine akzeptierte sichtbare Qualitätsregel.
+
+Bewertung: `R3 PARTIAL · MATERIAL PERFORMANCE GAIN · FRAME TARGET FAIL`. Die Stadt-LOD ist ein tragfähiger technischer Donor, aber noch kein veröffentlichter Kandidat. Der nächste Pass muss die Auflösung und Clay-Relief-Qualität abhängig von Gerät, Bewegung und Distanz staffeln.

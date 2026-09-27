@@ -83,6 +83,20 @@ R1-Implementierungscheckpoint: `58297e79696fe60f805cb0bf894f1da9fa2beb7b`.
 
 R1-Status: `CONTACT_AND_BOOT_PASS · RENDER_BUDGET_FAIL · CANDIDATE_PRESERVED · NOT_PUBLISHED`.
 
+## WORLD-M2A-R2/R3 · 2026-09-27
+
+R2 bestätigte Metal-Hardwarebeschleunigung und verwarf einen wirkungslosen Shader-Kandidaten. R3 setzt darauf genau eine räumliche Stadtstaffelung um:
+
+- nahe Bereiche: akzeptierte elastische Gebäude samt heutiger Fassade;
+- entfernte Bereiche: leichte Hülle aus echtem OSM-Grundriss und echter Quellhöhe, ohne einzelne Fenster/Türen und ohne Echtzeitschatten;
+- 96-m-Bereiche mit 120/150-m-Umschaltspanne;
+- keine zweite World-, Terrain-, Movement- oder Drive-Ownership;
+- ein sauberer Slot für spätere echte KayKit-/Tiny-Treats-/Kenney-Fassadeninstanzen, aber noch keine erfundenen Ersatzteile.
+
+Ergebnis: ca. 185–198 Tsd. statt 1,13 Mio. sichtbare Dreiecke. Idle/Walk/Drive p95 liegen bei 43,3/42,7/43,9 ms. Das ist ungefähr halb so teuer wie R1, bleibt aber oberhalb des 33,3-ms-Ziels. Der vollständige lokale Browserlauf besteht 34/34, das Paket 24/24. R3 wird nicht auf die feste Stage veröffentlicht.
+
+R3-Implementierungscheckpoint: `342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5`.
+
 ## Genau ein nächster Gate
 
-`WORLD-M2A-R2 · RENDER BUDGET`: Grafikbeschleunigung/Renderpfad einmal verifizieren und danach genau eine Stadt-LOD-/Shadow-Budget-Lösung testen. Erst bei p95 ≤ 33,3 ms folgt Veröffentlichung und Georgs freier Zu-Fuß-/Offroad-/Fahrtest.
+`WORLD-M2A-R4 · ADAPTIVE RESOLUTION + CLAY DISTANCE BUDGET`: Die Messung bei Pixelratio 0,6 erreicht p95 26,3 ms; Stadt- und Schattenabschaltung bringen dagegen wenig. Deshalb genau eine sichtbare Qualitätsregel testen: Bewegung/kleiner Viewport reduziert Auflösung, Stillstand stabilisiert sie; volles Clay-Relief nur nahe. Erst bei p95 ≤ 33,3 ms und akzeptabler Bildruhe folgt Veröffentlichung und Georgs freier Test. Danach separat `FACADE-DONOR-01`: echte Türen/Fenster isoliert beweisen und instanziert in die nahe Fassadenstufe einsetzen.

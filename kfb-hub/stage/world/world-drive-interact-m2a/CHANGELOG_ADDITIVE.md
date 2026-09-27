@@ -22,3 +22,16 @@
 - Boulder-/Prop-Schattenartefakt als nachrangigen sichtbaren Bug erfasst;
 - öffentlichen Stand als reproduzierbaren Fehlerbeleg erhalten;
 - genau einen begrenzten nächsten Gate gesetzt: `WORLD-M2A-R1`.
+
+## 2026-09-27 · R3 City Shell LOD
+
+- Stadt in räumliche 96-m-Bereiche geteilt;
+- nahe Gebäude mit akzeptierter elastischer Form und Fassade erhalten;
+- entfernte Gebäude auf leichte OSM-Grundriss-/Quellhöhen-Hüllen reduziert;
+- Fassadendetails und volle Gebäudegruppen nur in Spielernähe gezeichnet;
+- Umschaltspanne 120/150 m gegen sichtbares Flattern ergänzt;
+- Clay-Umschaltung respektiert unsichtbare LOD-Materialien;
+- Paket 24/24 und lokaler Browser Desktop/schmal 34/34 PASS;
+- sichtbare Last auf ca. 185–198 Tsd. Dreiecke gesenkt;
+- p95 Idle/Walk/Drive auf 43,3/42,7/43,9 ms gesenkt, Ziel 33,3 ms noch verfehlt;
+- Pixelratio-Diagnose als nächsten Haupthebel belegt; Kandidat nicht veröffentlicht.

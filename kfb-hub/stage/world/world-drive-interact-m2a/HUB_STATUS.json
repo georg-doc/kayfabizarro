@@ -1,22 +1,21 @@
 {
   "schema": "kfb.hub-stage-candidate/1",
   "id": "WORLD-DRIVE-INTERACT-M2A",
-  "title": "World M2A · HUMAN TUNE · aktuell nicht spielbar",
+  "title": "World M2A · R3 deutlich schneller · Ziel noch nicht erreicht",
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
-  "sourceBranch": "work/world-drive-interact-m2a-2026-09-27",
-  "implementationHead": "3a9375bba2acdcc448473f24838830ba92305277",
+  "sourceBranch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
+  "implementationHead": "342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5",
   "publicationHead": "afc5841abcb6ce057080618ab4aba36a4831bf3a",
   "visibility": "PUBLIC_STAGE_FAILURE_EVIDENCE",
-  "reviewState": "HUMAN_TUNE__NOT_PLAYABLE",
+  "reviewState": "R3_PERFORMANCE_PARTIAL__NOT_PUBLISHED",
   "automatedEvidence": [
-    "package 19/19",
-    "local browser 34/34",
+    "R3 package 24/24",
+    "R3 local browser 34/34",
     "public browser 34/34",
     "0 page/request/HTTP errors"
   ],
   "coreBlockers": [
-    "slow and jerky movement",
-    "unacceptable load time/frame pacing",
+    "frame p95 42.7–43.9 ms remains above the 33.3 ms target",
     "incorrect movement animation/state timing",
     "vehicle ground/contact height",
     "off-road terrain collision holes drop the vehicle through the world"
@@ -24,5 +23,5 @@
   "deferred": [
     "boulder/prop shadow and bright-edge artifact"
   ],
-  "next": "WORLD-M2A-R1 bounded playability/performance pass on the same scene; no new features."
+  "next": "WORLD-M2A-R4 adaptive resolution + distance-based Clay budget; then FACADE-DONOR-01 for real instanced facade parts."
 }
