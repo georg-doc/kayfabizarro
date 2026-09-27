@@ -1,0 +1,181 @@
+{
+  "schema": "kfb.stunt-race.track-ribbon/0.1",
+  "revision": "2026-09-19.st01.1",
+  "status": "IMPLEMENTATION_CANDIDATE",
+  "owner": "georg-doc/KFB-Stunt-Car-Race",
+  "basis": {
+    "feel": "Track Lab v0.8 human-accepted baseline",
+    "flowRecipe": "2026-09-17.t1t2.a0.2",
+    "planningPr": 13
+  },
+  "widthClasses": {
+    "NARROW": 10.8,
+    "STANDARD": 14.4,
+    "WIDE": 18,
+    "HERO": 21.6
+  },
+  "widthProfile": [
+    [
+      0,
+      14.4
+    ],
+    [
+      0.12,
+      14.4
+    ],
+    [
+      0.18,
+      18
+    ],
+    [
+      0.38,
+      18
+    ],
+    [
+      0.45,
+      14.4
+    ],
+    [
+      0.52,
+      10.8
+    ],
+    [
+      0.64,
+      10.8
+    ],
+    [
+      0.7,
+      14.4
+    ],
+    [
+      0.74,
+      21.6
+    ],
+    [
+      0.86,
+      21.6
+    ],
+    [
+      0.92,
+      14.4
+    ],
+    [
+      1,
+      14.4
+    ]
+  ],
+  "verticalGestures": {
+    "crest": {
+      "start": 0.08,
+      "end": 0.18,
+      "amplitude": 2.8
+    },
+    "dip": {
+      "start": 0.22,
+      "end": 0.32,
+      "amplitude": -2
+    },
+    "ramp": {
+      "riseStart": 0.72,
+      "riseEnd": 0.78,
+      "deckEnd": 0.81,
+      "landEnd": 0.88,
+      "amplitude": 5.2
+    }
+  },
+  "grid": {
+    "preset": "KFB_TOY_GRID",
+    "implementation": "SINGLE_SURFACE_SHADER",
+    "longitudinalDivisions": 6,
+    "minorSpacingM": 4.5,
+    "majorSpacingM": 18,
+    "overlayMeshes": 0
+  },
+  "zones": [
+    {
+      "id": "standard-flat",
+      "start": 0,
+      "end": 0.12,
+      "label": "STANDARD FLAT"
+    },
+    {
+      "id": "crest",
+      "start": 0.08,
+      "end": 0.18,
+      "label": "CREST"
+    },
+    {
+      "id": "wide-sweeper",
+      "start": 0.18,
+      "end": 0.38,
+      "label": "WIDE SWEEPER"
+    },
+    {
+      "id": "dip",
+      "start": 0.22,
+      "end": 0.32,
+      "label": "DIP"
+    },
+    {
+      "id": "narrow-squeeze",
+      "start": 0.52,
+      "end": 0.64,
+      "label": "NARROW SQUEEZE"
+    },
+    {
+      "id": "hero-ramp",
+      "start": 0.74,
+      "end": 0.81,
+      "label": "HERO RAMP"
+    },
+    {
+      "id": "landing-fan",
+      "start": 0.81,
+      "end": 0.88,
+      "label": "LANDING FAN"
+    }
+  ],
+  "samples": {
+    "standard": 0.05,
+    "wide": 0.3,
+    "narrow": 0.58,
+    "ramp": 0.79,
+    "landing": 0.84
+  },
+  "cueCluster": {
+    "routeT": 0.42,
+    "sourceCommit": "825d32f29dd97707daf7ebb8eab33cc06aea0395",
+    "packRoot": "media/3D_Assets/kenney_racing-kit/Models/GLTF format",
+    "license": "CC0 · Kenney",
+    "items": [
+      {
+        "role": "ANCHOR",
+        "asset": "grandStand.glb",
+        "targetSize": 8,
+        "lateralExtra": 9,
+        "forwardOffset": 0
+      },
+      {
+        "role": "SUPPORT",
+        "asset": "treeLarge.glb",
+        "targetSize": 4.5,
+        "lateralExtra": 6,
+        "forwardOffset": 7
+      },
+      {
+        "role": "ACCENT",
+        "asset": "barrierRed.glb",
+        "targetSize": 1.8,
+        "lateralExtra": 4,
+        "forwardOffset": -5
+      }
+    ]
+  },
+  "nonClaims": [
+    "v0.8 feel values are not retuned",
+    "ramp jump remains the existing route-relative jump proxy",
+    "no Flight runtime",
+    "no OSM or production race replacement",
+    "no public Live promotion"
+  ]
+}
