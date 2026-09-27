@@ -1,6 +1,6 @@
 # TRAVEL-MODES-01 · Stage test report
 
-**Status:** PUBLIC_VERIFIED · HUMAN REVIEW PENDING
+**Status:** PUBLIC_VERIFIED EVIDENCE · PROCEED PASS · HUMAN GATE CLOSED
 
 ## Final Travel branch
 
@@ -39,4 +39,6 @@ The Stage review remains diagnostic-only: no movement, camera or physics is simu
 
 ## Human gate
 
-Pending. No merge or product Live promotion.
+Closed by Georg **PROCEED PASS** on 2026-09-27. This contract-only page remains technical evidence and is not a current user task.
+
+Next productive step: real WorldBuilder/Travel mobility integration. No merge or product Live promotion implied.
