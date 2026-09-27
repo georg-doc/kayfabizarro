@@ -1324,3 +1324,13 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Hardware acceleration is confirmed on Apple M1 Max / Metal.
 - Shader simplification and facade-detail hiding did not improve frame p95; no Stage publication.
 - Production Desk now routes exactly one next Work gate: `WORLD-M2A-R3 · CITY SHELL LOD`.
+
+
+## 2026-09-27 · World M2A R3
+
+- Draft PR #260 @ `69d7910cde4275131f6701416c26d9cab3937ba5`.
+- City Shell LOD senkt ca. 1,13 Mio. auf 185–198 Tsd. sichtbare Dreiecke.
+- Paket 24/24; lokaler Browser Desktop/schmal 34/34.
+- p95 Walk/Drive 42,7/43,9 ms: großer Gewinn, Ziel 33,3 ms noch nicht erreicht.
+- R3 nicht publiziert; nächster Gate R4 Adaptive Resolution + Clay-Distanzbudget.
+- Echte instanzierte Fassaden-Donors folgen separat nach dem Performance-Gate.

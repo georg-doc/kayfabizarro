@@ -551,26 +551,26 @@
     {
       "id": "worldbuilder-mobility-mvp",
       "bucket": "CAN_START",
-      "title": "World M2A R2 · Renderdiagnose fertig · City LOD NEXT",
-      "what": "R1 hat Boden, Fahrzeugkontakt und Kaltstart repariert. R2 bestätigt echte Apple-Metal-Beschleunigung und zeigt: Stadtwände, Dächer und Fenster tragen fast die gesamte sichtbare Geometrie; weder Details ausblenden noch den Knet-Shader vereinfachen verbessert die Bildrate ausreichend. R2 bleibt unveröffentlicht.",
+      "title": "World M2A R3 · deutlich schneller · R4 NEXT",
+      "what": "R3 staffelt die echte Hürth-Stadt räumlich: volle elastische Gebäude und Fassaden nahe am Spieler, leichte OSM-Hüllen in der Ferne. Sichtbare Last sinkt von ca. 1,13 Mio. auf 185–198 Tsd. Dreiecke; p95 Walk/Drive von 84–89 auf 42,7–43,9 ms. Das ist ein großer Gewinn, aber noch über dem 33,3-ms-Ziel. Schatten oder Stadt komplett abzuschalten bringt wenig; geringere Pixelmenge erreicht 26,3 ms.",
       "provider": "Work · Sol High · bestehende World-M2A-Runtime",
       "yourAction": "",
-      "waitingFor": "WORLD-M2A-R3: genau eine echte leichte Stadt-Fernstufe bauen; volle Fassaden/Fenster nur im Nahbereich. Kein weiterer Clay-Qualitätsabbau und keine neuen Features.",
+      "waitingFor": "WORLD-M2A-R4: genau eine adaptive Auflösungs- und distanzabhängige Clay-Qualitätsregel. Danach separat echte KayKit-/Tiny-Treats-/Kenney-Fenster und Türen isolieren und als geteilte Instanzen in die Nahstufe einsetzen.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 259,
-      "branch": "work/world-m2a-render-budget-r2-2026-09-27",
-      "expectedHead": "3e4cfc1f47408718a4fe751f641b61484483817c",
+      "pr": 260,
+      "branch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
+      "expectedHead": "69d7910cde4275131f6701416c26d9cab3937ba5",
       "brief": {
-        "label": "World M2A-R3 · City Shell LOD",
-        "path": "tools/production_desk/briefings/WORLD_M2A_CITY_SHELL_LOD_R3_2026-09-27.md",
+        "label": "World M2A-R4 · Adaptive Auflösung + Clay-Budget",
+        "path": "tools/production_desk/briefings/WORLD_M2A_ADAPTIVE_RES_CLAY_R4_2026-09-27.md",
         "ref": "work/hub-ctrl-01-2026-09-24",
         "pasteReady": true
       },
       "review": {
-        "label": "Öffentlicher M2A-Fehlerstand",
-        "path": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
-        "sourceRef": "PR #259 · R2 candidate 3e4cfc1f · hardware PASS · render candidate NO GAIN · not published"
+        "label": "R3 Draft · nicht öffentlich",
+        "path": "kfb-hub/stage/world/world-drive-interact-m2a/RETURN.md",
+        "sourceRef": "PR #260 · R3 69d7910c · package 24/24 · local browser 34/34 · p95 target PARTIAL · not published"
       }
     },
     {

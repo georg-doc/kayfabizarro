@@ -602,3 +602,13 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Recorded PR #259 as `HARDWARE_PASS · CANDIDATE_NO_GAIN · NOT_PUBLISHED`.
 - Replaced the completed R2 dispatch with the bounded R3 City Shell LOD briefing.
 - Kept the public M2A card labeled as an error reference; no false playable/live claim.
+
+
+## 2026-09-27 · World M2A R3
+
+- Draft PR #260 @ `69d7910cde4275131f6701416c26d9cab3937ba5`.
+- City Shell LOD senkt ca. 1,13 Mio. auf 185–198 Tsd. sichtbare Dreiecke.
+- Paket 24/24; lokaler Browser Desktop/schmal 34/34.
+- p95 Walk/Drive 42,7/43,9 ms: großer Gewinn, Ziel 33,3 ms noch nicht erreicht.
+- R3 nicht publiziert; nächster Gate R4 Adaptive Resolution + Clay-Distanzbudget.
+- Echte instanzierte Fassaden-Donors folgen separat nach dem Performance-Gate.
