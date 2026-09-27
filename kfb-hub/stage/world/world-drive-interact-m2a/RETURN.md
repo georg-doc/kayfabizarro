@@ -122,10 +122,20 @@ R5 reagiert ausschließlich auf Georgs konkreten Spieltest. Es fügt keine neue 
 
 Implementierungscheckpoint: `b0142b3540728afac80a6ef9b15315fd7089a5fe`.
 
-Noch offen und nicht schöngeredet: menschliches Gefühl der Bewegungs-/Clip-Taktung, Schatten-/Hellkanten-Artefakt an Boulder/Props und die eigentliche Track-Integration. R5 ist lokal technisch bestanden, aber weder veröffentlicht noch menschlich abgenommen.
+Noch offen und nicht schöngeredet: menschliches Gefühl der Bewegungs-/Clip-Taktung, Schatten-/Hellkanten-Artefakt an Boulder/Props und die eigentliche Track-Integration. R5 ist öffentlich technisch bestanden, aber noch nicht menschlich abgenommen.
 
 Seit Abschluss der Runtime-Prüfung liegt `KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27` auf `main@692240b5`. Georg hat den bunten Knetstrang ausdrücklich als ausbaufähige Basis akzeptiert. Er ersetzt T1/T2 als visueller Track-Donor, wird aber nicht nachträglich in diesen Playability-Repair hineingezogen.
 
 ## Genau ein nächster Gate
 
-Den unveränderten R5-Kandidaten auf die feste M2A-Stage veröffentlichen, dort öffentlich dieselben Browserchecks ausführen und anschließend Georgs freien Spieltest abwarten. Erst danach folgen Clip-Tuning oder Fassaden-/Track-Arbeit.
+Georgs freien Spieltest auf der festen M2A-Stage abwarten. Erst danach folgen genau ein beobachtetes Clip-/Feel-Tuning oder Fassaden-/Track-Arbeit.
+
+## R5 · öffentliche Verifikation
+
+- Publication-Head: `f827839509cf7b517daa98fe3074f49d9510c626`.
+- Feste Route: <https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/>.
+- Browser Desktop + schmal: **38/38 PASS**, 0 Seiten-, Request- oder HTTP-Fehler.
+- Öffentlicher Playability-Proof: **PASS**; Walk 1,41 m/s, Sprint 2,99 m/s, Offroad 12,96 m, 4/4 Radkontakte.
+- Öffentliche Performance: Idle/Walk/Drive **33,3/16,7/16,8 ms p95**, 30-fps-Ziel PASS; Qualitätswechsel `stable → moving → stable`.
+
+Status: `R5 PUBLIC PLAYABILITY PASS · HUMAN FREE-PLAY PENDING`.
