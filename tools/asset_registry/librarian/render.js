@@ -215,11 +215,25 @@ export async function showDetail(id) {
   renderDependencies(record);
   renderProblems(record);
   const source = record.source || {};
-  $('provenanceFacts').replaceChildren(
+  const rights = record.rightsEvidence || null;
+  const provenanceNodes = [
     fact(source.repo || state.manifest?.sourceRepo, 'source repo'),
     fact(source.commit || state.manifest?.sourceCommit, 'source commit'),
     fact(source.blobSha || 'unknown', 'blob SHA'),
     fact(record.license || record.sourceLicense || 'unknown', 'license/source metadata'),
-  );
+  ];
+  if (rights) {
+    provenanceNodes.push(
+      fact(rights.mode || 'explicit-sidecar', 'rights provenance'),
+      fact(rights.tier || 'unknown', 'rights tier'),
+      fact(rights.provider || 'unknown', 'external provider'),
+      fact(rights.sourceId ?? 'unknown', 'external source ID'),
+      fact(rights.sourcePage || 'unknown', 'external source page'),
+      fact(rights.retrievedAt || 'unknown', 'rights checked at'),
+      fact(rights.sha256 || 'unknown', 'payload SHA-256'),
+      fact(rights.sidecarPath || 'unknown', 'rights evidence sidecar'),
+    );
+  }
+  $('provenanceFacts').replaceChildren(...provenanceNodes);
   renderResults(state.lastResults);
 }

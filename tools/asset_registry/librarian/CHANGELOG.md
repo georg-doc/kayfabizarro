@@ -76,3 +76,39 @@ Evidence artifact SHA256: `aac14624e0dc0b3f72a3616f514e29d3cceb5b0b681f14d827387
 - consumer profiles and owner boundaries
 - v1 browser WebGL regression test
 - v1.1 LLM/OpenAI code, untouched and not required
+
+## PD-POOL-R2 · public-domain provenance registration · 2026-09-27
+
+Status: **TESTED CANDIDATE · NOT MERGED · NOT PUBLISHED**
+
+### Decision
+- Register only the four PD-POOL-R1 proven smoke assets through the existing Asset Registry/Librarian owner.
+- Add `media/public_domain` as a normal Registry source root; do not create a second media index.
+- Pass through only explicit persisted `.license.json` evidence. The Registry does not infer copyright/license status.
+- Reuse the existing Librarian provenance detail panel and candidate-only handoff contract.
+
+### Implementation
+- Registry builder verifies tracked sidecar, required facts, allowed stored tier, exact local path, byte count and fresh SHA-256 before accepting a public-domain asset.
+- Catalog records carry `license`, `rightsEvidence`, tags and explicit-sidecar provenance.
+- Librarian detail exposes stored rights provenance, tier, external provider/source ID/page, check timestamp, payload SHA-256 and sidecar path.
+- CLI/handoff preserves the same evidence.
+- Existing Registry workflow now watches `media/public_domain/**`.
+
+### Tested result
+Dedicated R2 run `36288195716` / job `108532932188` on `8c8b907c3526956a90e5ddbe2d6174eab2ee16da`:
+- 46/46 unit/regression tests PASS;
+- generated Registry build + validator PASS;
+- 4/4 public-domain registrations PASS;
+- 4/4 CLI discoverability PASS;
+- Chrome 153: 4/4 search, detail, image preview and visible provenance PASS;
+- 0 console errors; 0 runtime exceptions.
+
+Existing PR owner regressions also PASS:
+- Asset Registry run `36288282662`;
+- Asset Librarian Browser Smoke run `36288282599`, all v1/v1.3–v1.7 gates green.
+
+Dedicated browser evidence artifact: `10921660721` (`pd-pool-r2-asset-librarian`), including four screenshots.
+
+### Boundary
+The permanent Cloudflare Librarian has **not** been updated by this candidate. Merge/publication remains a separate Georg-gated step. Bulk pool population remains blocked by the missing historical selected-hit manifest.
+

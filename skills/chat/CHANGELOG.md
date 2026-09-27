@@ -1971,3 +1971,37 @@ Exactly one next gate:
 Travel is no longer a `LOOK_AT` task. Hub routes it as `CAN_START`; its contract Stage is technical evidence only.
 
 WSA / next slides: remove/combine technical human gates and show progress through real owner/product integration.
+
+### 2026-09-27 · PD-POOL-F1 isolated AIC transport
+- Fresh recovery slice started from last compiling PD fetcher `154e573b8defacd17e836de049b3853578291f94`; frozen PR #239 was not resumed.
+- Draft PR #240 / branch `chatgpt-web/public-domain-pool-f1-aic-2026-09-27`.
+- AIC-only transport change adds provider-specific request handling; Met, Commons and Internet Archive code paths were not rerun or retuned.
+- GitHub Actions run `36285175091` / job `108524466091` PASS on tested head `c4f25c156e611a2fac7063becaf4fed3e3769638`.
+- Evidence: API HTTP 200; artwork 24645 public-domain/image-id gate PASS; one 843 px IIIF image HTTP 200; 238,585 bytes; SHA-256 `e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56`.
+- Proof remained ephemeral; no generated PD asset persisted, no Stage/Live publication.
+- Exactly one next gate: `PD-POOL-R1` four-source smoke + idempotence/persistence rerun using the proven AIC path. Bulk population remains blocked by the missing original selected-hit manifest.
+
+### 2026-09-27 · PD-POOL-R1 four-source smoke + persistence
+- Continued from PD-POOL-F1 Draft PR #240 / final handoff `db88a9978bbd2a47fa22f2578d506def120d7c60`; no frozen PR #239 code was resumed.
+- Draft PR #242 / branch `chatgpt-web/public-domain-pool-r1-2026-09-27`.
+- Added isolated R1 workflow `.github/workflows/public-domain-pool-r1.yml`; existing fetcher and fixed four-object manifest were reused unchanged.
+- GitHub Actions run `36285925572` / job `108526571635` PASS on tested workflow head `85c154eb796b7abd733b848249b0938045ec0ff2`.
+- First run: 4/4 LOADED, 0 rejected. Second run: 4/4 UNCHANGED, 0 redownloaded. Stale `.part`: 1/1 removed. Payload type sanity: 4/4. Payload+sidecar hash identity: 8/8.
+- Persistence commit `f3acaaeb98530dd9ffb7d200d61956891e738336` wrote exactly the bounded four-object set plus sidecars, generated manifest, credits and R1 test/return evidence.
+- Persisted asset hashes: Met `8d469625…1917c`; AIC `e0aa55ad…7f0f56`; Commons `e55e5d25…4aadc7`; IA `bbc1321e…8ee19`.
+- Required manual IA review PASS: persisted tile reads “Copyright by Joseph M. Schenck” and matches independent *The General* identity evidence.
+- No bulk import, Asset Librarian registration, Billboard runtime change, Stage or Live publication.
+- Exactly one next gate: `PD-POOL-R2` · register only these four proven objects in the existing Asset Librarian and verify provenance/discoverability.
+
+### 2026-09-27 · PD-POOL-R2 Asset Librarian registration
+- Stacked Draft PR #246 on R1 PR #242; owner remains Asset Librarian / Billboard Media.
+- Current-main drift was checked before implementation; no Asset Librarian/tool-node drift was found. R2 stays stacked because R1's four persisted assets are required source input.
+- Existing Registry config gains `media/public_domain` as a third source root.
+- Builder passes through explicit persisted `.license.json` facts only after tracked-sidecar, required-field, tier, local-path, byte-count and SHA-256 checks; license inference remains false.
+- Existing Librarian provenance detail shows rights provenance/tier/provider/source/check-time/SHA/sidecar; query/handoff preserves `license`, `rightsEvidence` and tags.
+- Dedicated final R2 gate: run `36288195716` / job `108532932188` at `8c8b907c3526956a90e5ddbe2d6174eab2ee16da` — 46/46 tests, Registry build/validate PASS, 4/4 registrations, 4/4 CLI discovery, Chrome 153 4/4 search/detail/preview/provenance, 0 console errors, 0 exceptions.
+- First dedicated run `36288091709` failed only in the proof harness due to a non-public state lookup; repair pass 1 changed only that harness and then passed. Product implementation was unchanged.
+- Existing owner regressions PASS: Asset Registry run `36288282662`; Librarian Browser run `36288282599` with all v1/v1.3-v1.7 gates green.
+- Browser evidence artifact `10921660721` contains machine-readable evidence and four screenshots.
+- Candidate is not merged or published; permanent Cloudflare Librarian is not claimed updated.
+- Exactly one next gate: `PD-POOL-R3` · Georg-gated stacked merge/reconciliation → existing Registry refresh → exact permanent Cloudflare Librarian verification. No bulk work.

@@ -1188,3 +1188,51 @@ Current Travel decision head:
 `georg-doc/KFB-Travel-Globe#39@e10a977501cd186fe1330e9d3fd1a7b5811beb3a`
 
 Next productive step: continue mobility in the real WorldBuilder/Travel consumer. Drive/Water remain source-required until real adapters exist.
+
+## 2026-09-27 · Public Domain Pool · PD-POOL-F1 PASS
+
+PD-POOL-F1 is **PASS** on Draft PR #240, branch `chatgpt-web/public-domain-pool-f1-aic-2026-09-27`. The tested implementation head is `c4f25c156e611a2fac7063becaf4fed3e3769638`; GitHub Actions run `36285175091` proved AIC artwork 24645 API HTTP 200 plus exactly one 843 px IIIF image HTTP 200, 238,585 bytes, SHA-256 `e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56`.
+
+The proof is **ephemeral only**: no downloaded image or sidecar was committed, no Stage route exists, and no Live promotion occurred. Frozen predecessor PR #239 remains recovery/history and must not be resumed.
+
+Exactly one next gate: **PD-POOL-R1 · resume the original four-source smoke + idempotence/persistence gate using the proven AIC transport path**. Bulk population remains blocked until the original selected-hit manifest is recovered or a clearly new curated discovery round is authorized.
+
+## 2026-09-27 · Public Domain Pool · PD-POOL-R1 PASS
+
+PD-POOL-R1 is **PASS · 4/4 SOURCES · IDEMPOTENT · PERSISTED** on Draft PR #242, branch `chatgpt-web/public-domain-pool-r1-2026-09-27`.
+
+Automated gate:
+- tested workflow-definition head `85c154eb796b7abd733b848249b0938045ec0ff2`;
+- Actions run/job `36285925572` / `108526571635`;
+- first run 4/4 LOADED, 0 rejected;
+- second run 4/4 UNCHANGED, 0 redownloaded;
+- stale `.part` injection 1/1 removed;
+- 8/8 provider payload/sidecar files hash-identical;
+- 4/4 provenance sidecars and 4/4 manifest rows;
+- persistence commit `f3acaaeb98530dd9ffb7d200d61956891e738336`.
+
+The four persisted smoke objects are Met 86434, AIC 24645, Commons `File:Silent film.svg`, and Internet Archive `TheGeneral1926` Item Tile. The Archive tile also passed manual source/object review against *The General* evidence.
+
+No bulk import occurred. The historical selected-hit manifest is still missing. No Stage or Live publication is involved.
+
+Exactly one next gate: **PD-POOL-R2 · register only the proven four-object smoke set in the existing Asset Librarian and verify provenance/discoverability.**
+
+## 2026-09-27 · Public Domain Pool · PD-POOL-R2 Asset Librarian candidate
+
+PD-POOL-R2 is a **TESTED PASS CANDIDATE · NOT MERGED · NOT PUBLISHED** on stacked Draft PR #246, branch `chatgpt-web/public-domain-pool-r2-librarian-2026-09-27`, above R1 PR #242.
+
+The existing Asset Registry/Librarian owner is retained:
+- `media/public_domain` becomes one additional Registry source root;
+- exactly the four R1-proven smoke assets are registered;
+- persisted neighboring `.license.json` facts are passed through only after exact path/byte/SHA validation;
+- the Registry performs **no license inference**;
+- the existing Librarian provenance detail and candidate-only handoff surfaces carry the rights evidence.
+
+Tested implementation head `8c8b907c3526956a90e5ddbe2d6174eab2ee16da`:
+- dedicated R2 run `36288195716`: 46/46 tests, 4/4 Registry entries, 4/4 CLI discovery, Chrome 153 4/4 search/detail/preview/provenance, 0 console errors, 0 exceptions;
+- Asset Registry owner run `36288282662`: PASS;
+- Librarian browser owner run `36288282599`: all v1/v1.3-v1.7 gates PASS.
+
+The permanent Cloudflare Librarian is **not claimed updated**. No bulk import occurred; the historical selected-hit manifest remains missing.
+
+Exactly one next gate after final handoff: **PD-POOL-R3 · Georg-gated merge/reconciliation of the stacked R1/R2 chain, owner Registry refresh, then exact permanent Cloudflare Librarian verification before any broader pool work.**
