@@ -79,3 +79,38 @@ Manual engineering screenshot review:
 
 Engineering gate: **PASS**.  
 Human gate: **PENDING** — compare A → B → C on the direct Cloudflare Stage and decide whether the stronger wonky/twisted read is the correct 90s-cartoon direction.
+
+
+## Public Cloudflare gate
+
+Publication branch:
+- `cloudflare-live@00e632e062c4de0ba9d6c65eadda5ec2cc652b3b`.
+
+Cloudflare Pages:
+- check `108530649024`;
+- conclusion: **SUCCESS**;
+- deployment id: `ce88d3ee-3e58-4408-a921-0196d078c041`;
+- completion: `2026-09-27T02:03:48Z`.
+
+Public proof workflow:
+- run `36287292857`;
+- attempt 1 reached the old KayfaBizarro root fallback at `02:02:13Z`, before the Cloudflare deployment completed; no candidate/source repair was made;
+- unchanged attempt 2 started only after the deployment check was confirmed;
+- job `108530790350`: **SUCCESS**;
+- exact public route checks: **19/19 PASS**;
+- status: **PUBLIC_VERIFIED · HUMAN PENDING**;
+- page/console errors: **0**;
+- exact Stage route opened with LOOK-TORSION-01 title/source marker;
+- KFB Hub Stage opened with exactly one LOOK-TORSION-01 card and the direct child link.
+
+Public artifact:
+- `10920134639`;
+- digest `sha256:0c4df894cd1daa5a4c32f07204f8425f8253e20535802e06481fb7977dae6b4f`;
+- `01-public-abc-hero.png`;
+- `02-public-landmark-range.png`;
+- `03-hub-stage-card.png`.
+
+Direct human route:
+https://kayfabizarro.pages.dev/kfb-hub/stage/look-torsion-01/
+
+Exactly one remaining gate: Georg visual A/B/C review. No merge or Live promotion has been performed.

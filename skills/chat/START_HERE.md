@@ -1122,3 +1122,18 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
+
+
+## LOOK-TORSION-01 · current human gate · 2026-09-27
+
+Elastic Torsion W9 is now **PUBLIC_VERIFIED · HUMAN PENDING** on Draft PR **#245** / `chatgpt-web/look-torsion-01-2026-09-27`.
+
+- protected boundary: frozen Hürth R2 / PR #194 remains untouched;
+- source: cached Cologne OSM `way/23574173`, 46.5 m;
+- proof: A source → B Elastic without twist → C same field + cumulative torsion;
+- source/browser: **45/45 PASS**;
+- exact public Cloudflare proof: workflow `36287292857`, attempt 2 / job `108530790350` → **19/19 PASS**;
+- human route: https://kayfabizarro.pages.dev/kfb-hub/stage/look-torsion-01/;
+- Hub route: https://kayfabizarro.pages.dev/kfb-hub/stage/.
+
+Exactly one gate: **Georg visual A/B/C review**. Do not merge PR #245, patch Hürth R2 or promote Live before that gate.

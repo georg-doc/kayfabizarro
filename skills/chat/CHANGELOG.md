@@ -1910,3 +1910,24 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+
+## 2026-09-27 · LOOK-TORSION-01 · Elastic Torsion PUBLIC_VERIFIED · HUMAN PENDING
+
+- bounded owner: **OSM City Lab presentation / KFB ToolBox authoring**;
+- Draft PR **#245**, branch `chatgpt-web/look-torsion-01-2026-09-27`;
+- frozen Hürth R2 / PR #194 remains untouched and is not imported;
+- final proof source is cached Cologne OSM `way/23574173`, 46.5 m, exact 18-point footprint;
+- A/B/C = source → bend/lean/taper with 0° twist → same field + cumulative height-dependent torsion;
+- source body uses **24 vertical steps** and one indexed roof/body mesh sharing the same final top ring;
+- range evidence stays explicit: **2.6° low building / 9.5° hero default / 11° City GROTESQUE reference / 13.2° LandmarkElastic evidence**;
+- source/browser workflow `36286925929`: **45/45 PASS**, base drift 0 m, 0 page/console errors;
+- publication: `cloudflare-live@00e632e062c4de0ba9d6c65eadda5ec2cc652b3b`;
+- Cloudflare Pages check `108530649024`: **SUCCESS**, deploy `ce88d3ee-3e58-4408-a921-0196d078c041`, completed 2026-09-27T02:03:48Z;
+- the first public probe ran before that deploy and correctly hit the old root fallback; unchanged attempt 2 after confirmed deployment passed;
+- public workflow `36287292857`, attempt 2 / job `108530790350`: **19/19 PASS · PUBLIC_VERIFIED**;
+- public artifact `10920134639`, digest `sha256:0c4df894cd1daa5a4c32f07204f8425f8253e20535802e06481fb7977dae6b4f`;
+- direct human route: https://kayfabizarro.pages.dev/kfb-hub/stage/look-torsion-01/;
+- the KFB Hub Stage at https://kayfabizarro.pages.dev/kfb-hub/stage/ contains the direct LOOK-TORSION-01 card.
+
+Exactly one next gate: **Georg reviews A → B → C and returns PASS / TUNE / FAIL for the geometric torsion direction.** No merge, Hürth repair or Live promotion follows automatically.
