@@ -1,0 +1,42 @@
+PASS  seed · s_monotonic  · 0 · count of non-increasing s (zero-length only at topology breaks)
+PASS  seed · s_matches_arc  · 5.6621374255882984e-14 · max |chord - ds|
+PASS  seed · frame_orthonormal  · 4.440892098500626e-16
+PASS  seed · frame_flips  · 0 · min dot(R_i, R_i-1) = 0.9991
+PASS  seed · tangent_kink  · 0.1166 · max jump of the turning rate (deg/m), at s 592.8; air spans exempt
+PASS  seed · curvature_step  · 0.00293 · max |dkappa| between samples of the same law
+PASS  seed · bank_rate  · 1.2258 · max deg per metre
+PASS  seed · slot_parity  · 0
+PASS  seed · inner_edge_fold  · 0 · min radius margin 10.68 m
+PASS  seed · self_clearance  · 4.078 · closest at s 598.6 / 640.3
+PASS  seed · jump_speed  · 24.95 · designed lip speed m/s vs 27 (above = boost needed)
+PASS  seed · fingerprint  · aac439f8
+PASS  seed · deterministic fingerprint  · aac439f8
+PASS  seed · slot count constant  · 14 slots
+PASS  seed · loop apex height ≈ 18 m  · 18.00
+PASS  seed · road up after loop = world up  · 0.0000,1.0000,0.0000
+PASS  seed · upside down at apex (U.y < -0.99)  · -1.0000
+PASS  seed · hairpin runs at WIDE 18  · 189 samples
+PASS  seed · barrier taper is a blend, not a step  · 59 blended samples
+PASS  seed · markings are bands, no mesh cuts  · 73 bands
+PASS  edge · too-tight WIDE hairpin folds the inner edge  · min radius margin -3.32 m
+PASS  edge · loop without lateral drift hits itself  · closest at s 594.2 / 640.2 · 0.269 m
+PASS  edge · spiral with 3 m rise has no headroom  · 0.749 m
+PASS  edge · corner without clothoid ease = curvature jump  · 0.025
+PASS  edge · hard barrier step is visible in the stream (review flag)  · step at s 838.3
+PASS  seed · air span has no driving surface  · 44 samples
+PASS  seed · jump reachable without boost (≤ 27 m/s)  · 24.95 m/s
+PASS  seed · touchdown is tangent to the landing (≤ 1°)  · 0.012°
+PASS  edge · 40 m gap needs boost (warning, not a failure)  · 33.65 m/s
+PASS  graph T · all route checks  · 11 checks
+PASS  graph L · all route checks  · 11 checks
+PASS  graph · cross_clearance T|L  · 1.126 · closest at s 142.4 / 142.9 (split/merge/connect zones excluded)
+PASS  graph · split_edge T|L  · 0 · inner road edges of both lanes coincide at the split start (m)
+PASS  graph · merge_end T|L  · 0 · branch ends on the main axis frame
+PASS  graph · lanes are exactly half of HERO at the split  · 10.8 | 10.8
+PASS  graph · through road is HERO again after the merge  · 21.6
+PASS  graph · branch lifts 13 m (10 + crest 3)  · 13.00
+PASS  edge · branch veering into the through lane is caught  · 0.397 m
+
+seed stream: 1893 samples · 954.3 m · 18 pieces · 73 marking bands · fingerprint aac439f8
+
+0 unexpected result(s)

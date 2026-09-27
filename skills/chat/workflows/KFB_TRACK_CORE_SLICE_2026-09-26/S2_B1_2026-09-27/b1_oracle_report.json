@@ -1,0 +1,63 @@
+{
+ "TC_TD_SEED_TD_SHOWCASE_SEED": {
+  "samples": 1893,
+  "fingerprint": "aac439f8",
+  "body_faces": 25862,
+  "marking_faces": 3895,
+  "oracle": {
+   "frame_orthonormal_and_R_is_TxU": 1.2310379476739693e-07,
+   "flips": 0,
+   "s_vs_chord": 2.687495112702054e-05,
+   "slot_parity_bad": 0,
+   "pass_": true
+  }
+ },
+ "TC_SPLIT_MERGE_T": {
+  "samples": 1403,
+  "fingerprint": "bb461e32",
+  "body_faces": 19606,
+  "marking_faces": 3506,
+  "oracle": {
+   "frame_orthonormal_and_R_is_TxU": 4.0978192394902635e-08,
+   "flips": 0,
+   "s_vs_chord": 1.21459002300206e-07,
+   "slot_parity_bad": 0,
+   "pass_": true
+  }
+ },
+ "TC_SPLIT_MERGE_L": {
+  "samples": 1166,
+  "fingerprint": "181c5d6e",
+  "body_faces": 16312,
+  "marking_faces": 2484,
+  "oracle": {
+   "frame_orthonormal_and_R_is_TxU": 1.1920928955078125e-07,
+   "flips": 0,
+   "s_vs_chord": 5.193045159224141e-05,
+   "slot_parity_bad": 0,
+   "pass_": true
+  }
+ },
+ "_glb_round_trip": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Racetrack Blender Kit/TRACK-CORE-W0/b1/track_core_b1_preview.glb",
+  "bbox_blender": [
+   -385.48,
+   -700.0,
+   -7.473,
+   354.027,
+   0.0,
+   29.471
+  ],
+  "bbox_glb": [
+   -385.48,
+   -700.0,
+   -7.473,
+   354.027,
+   0.0,
+   29.471
+  ],
+  "max_dev_m": 0.0,
+  "pass_": true,
+  "size_kb": 6189
+ }
+}
