@@ -77,6 +77,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - After two repair passes without progress on the same gate, stop and export. Preserve the failed candidate and route through the failure-recovery template instead of spending a third pass on the same foundation.
 - **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
 - **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
+- **Crash-safe continuation is continuous.** During authorized Web/GitHub production, persist every meaningful implementation/test/decision checkpoint to the existing owner Return/Recovery/WIP surface, read back the exact head/file, then continue or reply. A fresh chat must be able to resume from GitHub alone without transcript reconstruction.
 
 ## Status vocabulary
 
@@ -1269,3 +1270,24 @@ The productive WB2 seam attempt is preserved on Draft PR **#252** / `chatgpt-web
 
 Recovery:
 `skills/chat/workflows/WB_ZONE_SEAM_01_FAILURE_RECOVERY_2026-09-27/` on PR #252.
+
+## 2026-09-27 · WB-ZONE-CROP-PARITY-01 PASS
+
+The diagnostic recovery gate is **TESTED PASS · NO RUNTIME / STAGE CHANGE** on Draft PR **#255**, branch `chatgpt-web/wb-zone-crop-parity-01-2026-09-27`.
+
+- frozen source remains PR #252 recovery head `6b08636e552f39ac5f00d0216adcf70fa40f80c6`;
+- tested diagnostic implementation head: `3178163a4fad44139aa548fabd3c89bf5d2dbb54`;
+- current handoff head at closure: `fa30b834e0fb6feb970e6e08ecb7c6946e5b7ce7`;
+- GitHub Actions run/job: `36323360087` / `108631340758` · SUCCESS;
+- artifact: `10932773701`;
+- exact result: **369/369 frozen building IDs**;
+- proven rule: arithmetic mean of every serialized footprint coordinate **including the repeated closing coordinate**, then existing inclusive crop bounds;
+- historical 368 failure is reproduced by removing the closing coordinate before averaging;
+- area centroid and bbox centre remain rejected foundations at 370 with different wrong ID sets;
+- no renderer, WorldBuilder runtime, Stage or Georg gate was created.
+
+Durable handoff:
+`skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
+
+Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
+
