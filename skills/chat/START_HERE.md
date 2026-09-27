@@ -42,7 +42,7 @@ Additional hard rule: **no low-fidelity proxy human gates**. If a review artifac
 
 ### Current ToolBox continuation
 
-ToolBox Production-03 r2 is the current integrated source candidate for Studio + Animation Studio + Rigging. WSA intake is technically green: ZIPCHECK PASS, fresh HTTP boot, 33/33 browser checks, 0 errors/warnings. Georg's request to plan and continue is a PROCEED PASS. Route next to `tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_03_INTAKE_2026-09-27/START_HERE.md` and execute only `P03-ADOPT-01`; do not create another ToolBox UI or isolated acceptance page.
+ToolBox Production-03 r2 is the current integrated source candidate for Studio + Animation Studio + Rigging. WSA intake is technically green: ZIPCHECK PASS, fresh HTTP boot, 33/33 browser checks, 0 errors/warnings. `P03-ADOPT-01` has now adopted the Candidate into `tools/KFB-ToolBox/production-03/` without creating another UI. Route through `skills/chat/workflows/TOOLBOX_P03_ADOPT_BODY02_2026-09-27/START_HERE.md`: first adopted browser regression, then Claude Design `BODY-02` only.
 
 
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate

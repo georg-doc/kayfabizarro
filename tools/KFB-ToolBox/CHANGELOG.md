@@ -2,6 +2,17 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-27 · P03-ADOPT-01
+
+### ADOPTION
+Production-03 r2 wurde als bestehender ToolBox-Candidate unter `production-03/` übernommen und identisch für die direkte Stage verpackt. Es wurde keine neue Oberfläche gebaut.
+
+### OWNER DELTAS
+`anim-map.v1.js` entspricht dem kanonischen Donor. Der dokumentierte Handgelenk-/IK-Fix wurde in den bestehenden `pose-rig`-Owner übernommen. `face-mount.v1.js` wurde als Nicht-Graft-Adapter ergänzt; EyeRig, Mouth und FrizzleBob Graft behalten ihre Besitzer.
+
+### NEXT
+Browserregression des adoptierten Pakets; danach Claude Design `BODY-02` für Material, Farbe, Licht und Character-Oberflächen.
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
