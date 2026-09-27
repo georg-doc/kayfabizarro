@@ -1,10 +1,10 @@
 {
   "schema": "kfb.stage-source/1",
   "stageId": "WORLD-DRIVE-INTERACT-M2A",
-  "status": "R1_LOCAL_CANDIDATE",
+  "status": "R2_CANDIDATE_NO_GAIN",
   "repository": "georg-doc/kayfabizarro",
-  "branch": "work/world-m2a-playability-r1-2026-09-27",
-  "implementationCommit": "58297e79696fe60f805cb0bf894f1da9fa2beb7b",
+  "branch": "work/world-m2a-render-budget-r2-2026-09-27",
+  "implementationCommit": "46d796dcb139807f008294b2074a8d2f7b530ab3",
   "publicationCommit": null,
   "stageEntry": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
   "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/",
@@ -18,6 +18,14 @@
     "measuredFrameP95Ms": 89.1,
     "frameTargetMs": 33.3,
     "nextAction": "HUMAN_PLAYABILITY_GATE_BEFORE_PUBLICATION"
+  },
+  "r2": {
+    "outcome": "HARDWARE_PASS__PLAYABLE_SHADER_NO_GAIN",
+    "graphics": "ANGLE Metal Renderer · Apple M1 Max",
+    "candidateFrameP95Ms": [180.8, 172.8],
+    "frameTargetMs": 33.3,
+    "publicVerified": false,
+    "nextAction": "CITY_SHELL_LOD_R3"
   },
   "sources": {
     "worldM1": {"pullRequest": 249, "head": "40037597485436e185f129091be908786925341d", "role": "World, Ground, Flight, actor and contact owner"},
