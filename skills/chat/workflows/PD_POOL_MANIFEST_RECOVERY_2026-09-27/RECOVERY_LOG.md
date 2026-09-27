@@ -145,3 +145,134 @@ Classification: **NO ORIGINAL CANDIDATE**.
 3. Search local Dropbox-synced KAYFABIZARRO workspace for untracked/ignored Public Domain artifacts only if Dropbox exposes them as normal files.
 4. If no original is recoverable from those sources, return **RECOVERY_NOT_FOUND** rather than inventing a manifest; a new curated discovery round remains a separate explicitly new dataset.
 
+## Checkpoint 07 · earliest durable 84/6/40 evidence recovered
+
+The earliest durable GitHub evidence for the historical UI has been recovered.
+
+### First PD briefing commit
+
+Commit:
+`68f312e72a60c832420566fc5076fd75ca061eeb`
+at **2026-09-26T23:08:10Z**
+
+Created:
+`tools/production_desk/briefings/PUBLIC_DOMAIN_POOL_PD01_2026-09-27.md`
+
+The new file states as already proven at that time:
+- the selection UI queried **The Met, Art Institute of Chicago, Wikimedia Commons and Internet Archive**;
+- the existing `silent film` preview showed **84 free**, **6 requiring attribution/name credit**, and **40 rejected**;
+- clicking an object could place it in an **export list**;
+- a downloader package existed but was **UNTESTED / HOLD**.
+
+This is the strongest recovered description of the lost interface so far.
+
+Classification:
+**DERIVED_REFERENCE_ONLY · HISTORICAL COUNTS/FUNCTIONALITY PROVEN, OBJECT ROWS ABSENT**.
+
+It does **not** contain the original object-level results or export list and therefore is not the missing manifest.
+
+### Routing chronology
+
+- `68f312e…` 23:08:10Z — smoke-test brief created;
+- `97b1949…` 23:08:35Z — public-domain pool surfaced on Hub Today;
+- `6d342db…` 23:08:57Z — lane `public-domain-pool-pd01` added to production registry;
+- `b9d934b1…` 23:10:24Z — later intake metadata sync; it did not create the PD lane.
+
+The later Hub decision marker `manual-b9d934b1-pd-pool-intake-sync` therefore points to already-existing PD routing, not the original manifest.
+
+## Checkpoint 08 · known ZIP history exhausted
+
+Known ZIP:
+`tools/KFB-ToolBox/_inbox/KFB Public Domain Pool claude design.zip`
+
+Git history:
+- exactly **one** commit touches this path:
+  `d52325945805f8d27cc636907afcd85036e09aa0`
+  at **2026-09-26T21:10:39Z**;
+- no older GitHub revision exists to restore;
+- commit contains only that ZIP upload.
+
+Previously verified ZIP contents remain:
+1. `media/public_domain/README.md`
+2. `tools/public_domain/fetch_pool.py`
+
+No selection UI and no exported hit manifest.
+
+## Checkpoint 09 · Dropbox timing and deleted-file evidence
+
+Read-only Dropbox activity was checked around both critical windows.
+
+### Around ZIP GitHub upload · ~21:10Z
+- `/Mac`, `/Mac/Downloads`, `/CLAUDE` and root activity show **no Public Domain Pool file**;
+- first nearby Downloads additions are unrelated:
+  - `KFB Asset Kontaktbogen · Stadt.dc.html` at 21:14:36Z;
+  - `AN_PROFILE_02_REVIEW_PLAIN.html` at 21:15:32Z.
+
+### Around first PD briefing · ~23:08Z
+- `/CLAUDE` activity shows the city contact sheet at 23:07:16Z, then Racetrack files from 23:21Z;
+- no Public Domain Pool HTML/JSON/ZIP add/delete/move event appears in the sampled critical interval.
+
+The city contact sheet itself was fetched and inspected:
+- World/Hürth city-asset contact sheet;
+- Registry pin / city-assets source;
+- no 84/6/40 data;
+- no four-provider Public Domain UI.
+
+Classification: **UNRELATED**.
+
+## Checkpoint 10 · UI-text and untracked-file searches
+
+Dropbox searches using recovered UI semantics returned no candidate:
+- four-provider combinations (Met / AIC / Commons / Internet Archive);
+- `silent film Exportliste`;
+- `Namensnennung verworfen Exportliste`;
+- `freie Treffer Namensnennung verworfen`;
+- `silent film 84 6 40`;
+- exact known ZIP/manifest name variants.
+
+Dropbox-synced local KAYFABIZARRO workspace was searched outside `.git` for:
+- public
+- domain
+- pool
+- manifest
+- selection
+
+Result: **0 non-Git relevant files**.
+
+Personal Library/prior-chat search also found no original attachment or filename.
+
+## Current recovery assessment
+
+**ORIGINAL MANIFEST / SELECTION UI NOT RECOVERED FROM CONNECTED GITHUB, DROPBOX, OR CHAT/LIBRARY SOURCES.**
+
+What *is* recovered and durable:
+- exact historical counts;
+- exact four providers;
+- query phrase `silent film`;
+- existence of an interactive export-list UI;
+- downloader hold state;
+- precise first durable briefing commit and chronology.
+
+What remains missing:
+- original UI source/artifact;
+- object-level search result rows/cards;
+- export-list contents;
+- 84 free identities;
+- 6 attribution identities;
+- 40 rejected identities.
+
+Therefore no historical 130-row manifest can be reconstructed honestly from current evidence.
+
+## Remaining recovery frontier
+
+The remaining likely source is a **Claude Design session-only artifact/state that was never exported into Dropbox/GitHub**, or another local non-synced browser/download location unavailable through the connected sources.
+
+Next chat should:
+1. verify PR #251 branch head;
+2. read `START_HERE.md`, this log and `NEXT_CHAT.md`;
+3. do **not** repeat connected-source searches already listed here;
+4. pursue only newly available Claude Design/session export/history evidence;
+5. if no new source surface exists, close as `RECOVERY_NOT_FOUND` rather than manufacture the 130 rows.
+
+No new curated discovery round is authorized by this recovery branch.
+
