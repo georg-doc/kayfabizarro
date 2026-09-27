@@ -24,6 +24,24 @@ A detail may block a slice only when failure of that detail prevents the named o
 
 Do not promote a local defect into a project blocker merely because it is measurable.
 
+## No pseudo-human-gate rule
+
+A technically measurable checkpoint is not automatically a human gate.
+
+Do not stop productive work to ask Georg to approve:
+- counters or pass/fail tables;
+- ownership/writer matrices;
+- contract-only selectors;
+- state-machine buttons;
+- source/provenance diagnostics;
+- isolated technical artifacts that do not represent the actual product experience.
+
+These belong in automated/internal evidence whenever possible.
+
+A human gate is valid only when a concrete product decision cannot be made safely by the existing owner/tests. Prefer reviewing the integrated WorldBuilder, ToolBox, Racer, Travel consumer, Resident scene or Combat experience instead of a proxy artifact.
+
+If Georg gives an explicit continuation signal, record a **PROCEED PASS** and continue. Do not interpret a Proceed Pass as exhaustive acceptance, and do not reopen the same intermediate gate without a new blocker.
+
 ## Classify every discovered issue before repairing it
 
 Every new issue must be placed in exactly one class:
@@ -186,6 +204,8 @@ After two failed repair passes:
 - stop and export failure recovery.
 
 ## Gate wording requirement
+
+Every proposed human gate must first state the **human decision** it enables. If that decision cannot be stated plainly, it is not a human gate; convert it to technical evidence.
 
 Every slice must state:
 

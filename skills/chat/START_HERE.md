@@ -25,6 +25,18 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
+
+Binding policy:
+`skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+KFB Web/WSA/Claude work must optimize for usable integrated capability, not the number of review artifacts. Technical tables, owner/writer matrices, state-machine selectors and measurement dashboards are internal evidence unless a concrete human product decision depends on them. Prefer the real WorldBuilder, ToolBox, Racer, Travel consumer, Resident scene or Combat surface for review.
+
+A clear Georg continuation instruction is a **PROCEED PASS**: continue without reopening the same intermediate gate; unresolved details remain documented and are not silently accepted.
+
+Current application: **TRAVEL-MODES-01 = PROCEED PASS**. Do not ask Georg to approve the contract-only Travel router Stage again. Continue mobility work in the real WorldBuilder/Travel consumer with source-proven adapters.
+
+
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
 Knet-Medizin is now routed as a DocCheck project reference under `georg-doc/doccheck/Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/`.
@@ -60,6 +72,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - A timeout is `UNKNOWN`, never success: verify the exact branch head, workflow/deployment and public URL before retrying or claiming completion.
 - After two repair passes without progress on the same gate, stop and export. Preserve the failed candidate and route through the failure-recovery template instead of spending a third pass on the same foundation.
 - **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
+- **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
 
 ## Status vocabulary
 
@@ -77,6 +90,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
+- `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs

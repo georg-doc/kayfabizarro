@@ -1925,3 +1925,16 @@ Exactly one next gate:
 - Direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/
 - No landing, Drive/Water movement, merge or Live promotion.
 - Next gate only: Georg ACCEPT / REJECT the router architecture.
+
+
+## 2026-09-27 · Productive integration / no pseudo-human-gates policy
+
+- Georg identified the recurring review anti-pattern as a production blocker: technical tables, owner/writer matrices, state-machine buttons and isolated diagnostics were being promoted into blocking human gates.
+- Added binding `PRODUCTIVE_REVIEW_GATE_POLICY.md`.
+- Default loop is now real-owner integration → automated/native evidence → continue; human review only when a concrete product decision actually needs Georg.
+- Cloudflare Stage is milestone/shared review, not an end-of-slice ritual.
+- Added **PROCEED PASS** semantics: explicit “passt/weiter” closes an intermediate gate without implying exhaustive acceptance.
+- Updated Stage workflow, Fresh Chat protocol and Gate Proportionality protocol accordingly.
+- WSA planning now has slide-ready override `KFB_MVP_PLANNING_2026-09-26/WSA_SLIDES_PRODUCTIVE_FLOW_OVERRIDE_2026-09-27.md`.
+- `TRAVEL-MODES-01` receives a **PROCEED PASS**; its contract-only Stage page remains evidence/history and is no longer a blocking Georg gate.
+- Next Travel/WorldBuilder mobility proof must occur in the real product/consumer surface with source-proven adapters.

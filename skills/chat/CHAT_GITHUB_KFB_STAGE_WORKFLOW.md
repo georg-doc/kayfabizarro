@@ -1,6 +1,6 @@
 # Chat → GitHub → KFB Stage Workflow
 
-Status: **CURRENT BINDING WORKFLOW v1.0**  
+Status: **CURRENT BINDING WORKFLOW v1.1**  
 Date: 2026-09-19  
 Owner: Georg / KFB  
 Applies to: ChatGPT Web, Codex/Work, Claude Design and other external LLM production slices
@@ -9,14 +9,14 @@ Applies to: ChatGPT Web, Codex/Work, Claude Design and other external LLM produc
 
 A chat is not the archive, GitHub is not the test surface, and a successful commit is not a live result.
 
-`Chat slice → named GitHub branch/PR → verified commit → KFB Cloudflare Stage → KFB Hub link → Georg review → deliberate Live promotion`
+`Chat slice → named GitHub branch/PR → verified commit → integrate in the real owner surface → [human review only when a real decision is needed] → Stage for meaningful milestones → deliberate Live promotion`
 
 ## 1. Recover exact truth
 
 1. Read `skills/chat/START_HERE.md`, this workflow and the named project brief.
 2. Fetch the current project default-branch head and any active PR immediately before writing.
 3. GitHub state overrides chat memory, screenshots and old handovers.
-4. Name one owner, one bounded outcome, one branch and one Stage route.
+4. Name one owner, one bounded outcome and one branch. Name a Stage route only when the slice has a meaningful milestone/public review reason; Stage is not mandatory for every technical slice.
 
 ## 2. Save in small checkpoints
 
@@ -42,6 +42,16 @@ Use these states literally:
 - `HUMAN_ACCEPTED`: Georg accepted the candidate.
 
 If a commit or deployment call times out, report `UNKNOWN`. First inspect the ref/run/deployment; retry only when the intended result is demonstrably absent. Never create a duplicate “just in case” commit.
+
+## 3A. No pseudo-human gates
+
+Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md` before creating any human review surface.
+
+Do not turn technical evidence into a blocking Georg gate merely because a slice produced a measurable result. Ownership matrices, counters, contract tables, isolated diagnostics and state-machine buttons belong in tests/Returns unless they expose a real product decision.
+
+Default to continuing implementation inside the real owner/product surface. A human gate must name the concrete decision Georg can make from the artifact. If that decision is unclear, convert the artifact to internal evidence and continue.
+
+A Georg **PROCEED PASS** closes the current intermediate gate without implying exhaustive acceptance. Do not reopen the same gate before the next productive integration unless a new blocker appears.
 
 ## 4. Publish only to KFB Stage
 
@@ -77,7 +87,7 @@ Preferred iteration loop:
 
 Do not use Cloudflare as the normal debug-refresh loop.
 
-Only move to KFB Stage when the candidate is worth shared/public acceptance review.
+Only move to KFB Stage when the candidate is a meaningful integrated milestone worth shared/public review, or when public/cross-device verification is itself required. Do not publish contract-only diagnostics solely to manufacture an ACCEPT/REJECT.
 
 Local preview does not replace the final public Stage gate when a slice requires `PUBLIC_VERIFIED`.
 
@@ -99,8 +109,8 @@ Every slice returns:
 - repository, branch/PR and exact head;
 - changed files and retained owners;
 - actual tests and counts;
-- direct Cloudflare Stage URL;
-- screenshot or visible browser proof;
+- direct Cloudflare Stage URL when Stage was actually required/published;
+- screenshot or visible browser proof when relevant to the named outcome;
 - `RETURN.md`, `SOURCE.json`, `TEST_REPORT.md` and additive changelog where the brief requires them;
 - unresolved items and exactly one next gate.
 
