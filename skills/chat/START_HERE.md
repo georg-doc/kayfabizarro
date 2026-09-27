@@ -1236,3 +1236,21 @@ Tested implementation head `8c8b907c3526956a90e5ddbe2d6174eab2ee16da`:
 The permanent Cloudflare Librarian is **not claimed updated**. No bulk import occurred; the historical selected-hit manifest remains missing.
 
 Exactly one next gate after final handoff: **PD-POOL-R3 · Georg-gated merge/reconciliation of the stacked R1/R2 chain, owner Registry refresh, then exact permanent Cloudflare Librarian verification before any broader pool work.**
+
+## 2026-09-27 · Public Domain Pool · PD-POOL-R3 PUBLIC_VERIFIED
+
+PD-POOL-R1 → R3 is **MERGED · PUBLIC_VERIFIED**.
+
+Canonical production facts:
+- merged PR: **#246**;
+- main integration commit: `b133e66c4f8cc191501da504ebeceea67c6b4317`;
+- Registry bot: `85776f806cec78dae4e8f8b6dce3ccd755490155`;
+- Cloudflare publication: `6457d0376d7577e2719cab92d482c9104157c4c8`;
+- permanent route: `https://kayfabizarro.pages.dev/asset-librarian/`;
+- public Chrome proof: run `36289917378` / job `108537898828` → 4/4 search/detail/preview/provenance PASS, 0 console errors, 0 runtime exceptions;
+- public proof artifact: `10922076232`, digest `sha256:f12289a03929be80bddfe68f42f7b93ee4fd1d26cd6df7d6e050054182598adf`.
+
+The Live Librarian shows Registry source `b133e66c4f8c...` and 14,923 assets, including exactly the four proven public-domain smoke objects with explicit persisted rights sidecars. No license inference and no second Registry were introduced.
+
+The bounded PD production slice is closed. Broader population remains blocked until the original selected-hit manifest is recovered or Georg explicitly authorizes a clearly new curated discovery round.
+
