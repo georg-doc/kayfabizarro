@@ -622,3 +622,13 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Hub lane moved to LOOK_AT with one free-play action; FACADE-DONOR-01 remains next after that.
 - Track T1 decision locked on PR #219 / `64d8597c3dad1dc9814c794d4a566d589e1e1a25`: A/Hirnwelt base + B/Race semantics; C/Toy optional; patch-scatter replaces colour fades.
 - Hub source/status only in this checkpoint; root Hub regeneration/publication is not claimed.
+
+
+## 2026-09-27 · Combat MVP truth restored in Hub
+
+- Added a current Combat Arena Hub lane instead of leaving Combat absent from the Production Desk.
+- Corrected the stale planning state: C-MVP-A is already public/browser verified on PR #5.
+- Recorded the proven Warrior ranged core loop and quarantined Mage as non-critical HOLD.
+- Routed Legacy Rogue/Crossbow source proof to PR #10 and melee contact work to the later separate PR #7 lane.
+- Added `tools/production_desk/briefings/COMBAT_MVP_NEXT_2026-09-27.md`.
+- No gameplay, Stage payload, merge or Live promotion changed.
