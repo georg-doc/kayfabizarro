@@ -11,6 +11,7 @@ Current design briefs:
 - `S4_DESIGN_BRIEF_2026-09-27/BRIEF_CLAUDE_DESIGN_TRACK_LOOK_S4.md` — detailed clay track look, universal edge/runoff/socket grammar, patch-scatter biome transitions and difficult edge-case POCs.
 - `CLAUDE_DESIGN_TRACK_CORE_2_VISUAL_GRAMMAR_BRIEF.md` — receiving Claude Design transition grammar, aligned to the same scope.
 - `S5_BUILDING_FACADE_CLAY_ADAPTER_2026-09-27/START_HERE.md` — prepared separate follow-on slice for OSM + KayKit/Kenney building/façade clay adaptation; it does not own roads or Track Core.
+- `S4B_REACTIVE_CLAY_LAYER_2026-09-27/BRIEF_REACTIVE_CLAY_VFX_SFX_SURFACE_S4B.md` — **prepared Phase 2 after S4 look selection**: surface/biome-specific clay particles + SFX + temporary tyre marks/ruts/dents + animated smoothing on track/world/buildings/props, all presentation-only over existing contact geometry.
 
 The design system must cover, on the **same Track Core / RouteRecipe / socket truth**:
 - OSM/city street + clay sidewalk/kerb;
@@ -29,7 +30,7 @@ Georg's existing **Kabelbett** example is retained as the visual precedent for p
 
 **No new human gate is created by this documentation expansion.** S8's unresolved shaft depth/section-size/maze choices remain open design/tuning questions and do not block Claude Design from developing the shared visual grammar.
 
-**Exactly one next productive gate:** Claude Design executes the updated S4 / TRACK-CORE-2 brief **source-first**: show the actual KFB Track Core / Blender-MCP Racer profile + sockets in isolation, then produce the edge/runoff atlas, connector transition matrix, patch-scatter edge-case POCs and 2–3 clay look options on the existing core. The prepared S5 building/façade adapter remains a separate follow-on slice. No Stage/Live publication until there is a meaningful integrated visual milestone.
+**Exactly one next productive gate:** Claude Design executes the updated S4 / TRACK-CORE-2 brief **source-first**: show the actual KFB Track Core / Blender-MCP Racer profile + sockets in isolation, then produce the edge/runoff atlas, connector transition matrix, patch-scatter edge-case POCs and 2–3 clay look options on the existing core. **Only after Georg selects that static look does S4B Reactive Clay start.** The prepared S5 building/façade adapter remains a separate follow-on slice. No Stage/Live publication until there is a meaningful integrated visual milestone.
 
 
 ## CURRENT EXECUTION DELTA · SP13KTRA alignment + sprint plan · 2026-09-26 (Claude Coworker)
