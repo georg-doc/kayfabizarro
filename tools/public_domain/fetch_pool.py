@@ -28,7 +28,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path("media/public_domain")
-UA = "KFB-PublicDomainPool/PD01 (+https://github.com/georg-doc/kayfabizarro)"
+UA = "Mozilla/5.0 (compatible; KFB-PublicDomainPool/PD01; +https://github.com/georg-doc/kayfabizarro)"\nAIC_UA = "KFB-PublicDomainPool/PD01 (https://github.com/georg-doc/kayfabizarro)"
 IA_PREFER = [
     "Text PDF", "text pdf", "Item Tile", "JPEG", "jpeg", "PNG", "png",
     "H.264", "h.264", "MPEG4", "mpeg4", "512Kb MPEG4", "512kb mpeg4",
@@ -85,7 +85,7 @@ def download_atomic(url: str, target: Path, max_bytes: int) -> int:
     target.parent.mkdir(parents=True, exist_ok=True)
     part = target.with_name(target.name + ".part")
     part.unlink(missing_ok=True)
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    req = urllib.request.Request(url, headers=request_headers(url, "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"))
     total = 0
     try:
         with urllib.request.urlopen(req, timeout=90) as response, part.open("wb") as out:

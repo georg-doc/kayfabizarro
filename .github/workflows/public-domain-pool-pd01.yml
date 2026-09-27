@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: chatgpt-web/public-domain-pool-pd01-2026-09-27
-          fetch-depth: 0
+          fetch-depth: 1
 
       - uses: actions/setup-python@v5
         with:
