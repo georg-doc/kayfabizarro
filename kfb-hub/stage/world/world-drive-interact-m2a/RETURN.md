@@ -86,3 +86,27 @@ R1-Status: `CONTACT_AND_BOOT_PASS · RENDER_BUDGET_FAIL · CANDIDATE_PRESERVED �
 ## Genau ein nächster Gate
 
 `WORLD-M2A-R2 · RENDER BUDGET`: Grafikbeschleunigung/Renderpfad einmal verifizieren und danach genau eine Stadt-LOD-/Shadow-Budget-Lösung testen. Erst bei p95 ≤ 33,3 ms folgt Veröffentlichung und Georgs freier Zu-Fuß-/Offroad-/Fahrtest.
+
+## WORLD-M2A-R2 · 2026-09-27
+
+R2 wurde als genau ein sichtbarer Renderkandidat ausgeführt und danach gestoppt.
+
+Bestätigt:
+
+- Hardware-Beschleunigung ist aktiv: `ANGLE Metal Renderer · Apple M1 Max`; Software-Rendering ist nicht die Ursache.
+- Die drei größten Kostenblöcke sind Stadtwände (509.294 Dreiecke), Dächer (215.255) und Fenster (zusammen 270.320).
+- Der Kandidat behält Knet-Palette, Handrelief und volle Prop-Qualität, reduziert aber große Gelände-/Gebäudeflächen auf eine dominante Relief-Projektion.
+- Der sichtbare Look blieb intakt; Paketprüfung blieb 23/23 PASS.
+
+Nicht bestanden:
+
+- p95 lag in zwei Kandidatenläufen bei 180,8 beziehungsweise 172,8 ms; das ist kein Gewinn und weit vom 33,3-ms-Ziel entfernt.
+- Auch `Fassadendetails aus` senkte zwar die Geometrie auf ca. 833.000 Dreiecke, aber nicht die Framezeit.
+
+Bewertung: `HARDWARE_PASS · PLAYABLE_SHADER_NO_GAIN · STOP_AFTER_ONE_CANDIDATE · NOT_PUBLISHED`.
+
+Der Kandidat bleibt ausschließlich als Failure-Evidence auf dem R2-Branch. Die feste öffentliche Stage und R1 werden nicht überschrieben.
+
+## Genau ein nächster Gate
+
+`WORLD-M2A-R3 · CITY SHELL LOD`: eine echte leichte Stadt-Fernstufe bauen und nur den Nahbereich mit vollständigen Fassaden/Fenstern rendern. Kein weiterer Clay-Qualitätsabbau und keine neue Gameplay-Funktion in diesem Gate.
