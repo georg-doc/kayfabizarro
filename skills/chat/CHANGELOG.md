@@ -2062,3 +2062,9 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two bounded candidate fixes: actor-profile-safe Stage-dot test and inert pre-mount animation state.
 - Georg continuation = PROCEED PASS; no extra proxy human gate.
 - Next only: `P03-ADOPT-01` through the existing ToolBox owner. BODY-02 remains subsequent.
+## 2026-09-27 · ToolBox P03 adoption + BODY-02 routing
+
+- `P03-ADOPT-01` übernimmt den technisch grünen Production-03-Candidate in den bestehenden ToolBox-Owner; keine weitere UI-Variante.
+- Die drei lokalen Module wurden gegen ihre Besitzer klassifiziert: donor-identisches `anim-map`, bounded `pose-rig`-Fix und Nicht-Graft-`face-mount`-Adapter.
+- Der Folgeauftrag für Claude Design ist auf `BODY-02` begrenzt: Material, Farbe, Licht und Character-Oberflächen in der vorhandenen Oberfläche.
+- Work bleibt Besitzer von Adoption, Tests und Stage; Spiele behalten ihre Runtime-Owner.

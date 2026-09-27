@@ -1,0 +1,21 @@
+{
+  "schema": "kfb.source/1",
+  "slice": "P03-ADOPT-01",
+  "status": "ADOPTED_CANDIDATE",
+  "source": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/",
+  "receivingOwner": "tools/KFB-ToolBox/production-03/",
+  "stageRoute": "/kfb-hub/stage/toolbox/production-03/",
+  "publicVerified": false,
+  "adoptedModules": {
+    "anim-map.v1.js": "canonical donor byte match",
+    "pose-rig.v1.js": "bounded owner patch: measured chains, wrist intermediates, public IK helpers",
+    "face-mount.v1.js": "non-graft adapter; no second face owner"
+  },
+  "protectedOwners": [
+    "EyeRig",
+    "Mouth",
+    "FrizzleBob Graft",
+    "consumer movement/physics/gameplay"
+  ],
+  "nextGate": "BODY-02 after adopted browser regression"
+}
