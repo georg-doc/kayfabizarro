@@ -29,6 +29,9 @@ from pathlib import Path
 
 ROOT = Path("media/public_domain")
 UA = "KFB-PublicDomainPool/PD01 (+https://github.com/georg-doc/kayfabizarro)"
+AIC_BROWSER_UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+AIC_UA = "KFB-PublicDomainPool/PD-F1 (+https://github.com/georg-doc/kayfabizarro)"
+AIC_REFERER = "https://www.artic.edu/"
 IA_PREFER = [
     "Text PDF", "text pdf", "Item Tile", "JPEG", "jpeg", "PNG", "png",
     "H.264", "h.264", "MPEG4", "mpeg4", "512Kb MPEG4", "512kb mpeg4",
@@ -52,6 +55,55 @@ def http_get(url: str, *, timeout: int = 45) -> bytes:
 
 def get_json(url: str) -> dict:
     return json.loads(http_get(url).decode("utf-8"))
+
+
+def aic_headers(accept: str) -> dict[str, str]:
+    return {
+        "User-Agent": AIC_BROWSER_UA,
+        "AIC-User-Agent": AIC_UA,
+        "Referer": AIC_REFERER,
+        "Accept": accept,
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+
+
+def aic_get_json(url: str, *, timeout: int = 45) -> tuple[dict, int]:
+    req = urllib.request.Request(url, headers=aic_headers("application/json,*/*;q=0.8"))
+    with urllib.request.urlopen(req, timeout=timeout) as response:
+        status = int(getattr(response, "status", response.getcode()))
+        return json.loads(response.read().decode("utf-8")), status
+
+
+def download_atomic_aic(url: str, target: Path, max_bytes: int) -> tuple[int, int]:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    part = target.with_name(target.name + ".part")
+    part.unlink(missing_ok=True)
+    req = urllib.request.Request(
+        url,
+        headers=aic_headers("image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"),
+    )
+    total = 0
+    try:
+        with urllib.request.urlopen(req, timeout=90) as response, part.open("wb") as out:
+            status = int(getattr(response, "status", response.getcode()))
+            content_length = response.headers.get("Content-Length")
+            if content_length and int(content_length) > max_bytes:
+                raise RuntimeError(f"remote file exceeds maxBytes ({content_length} > {max_bytes})")
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                total += len(chunk)
+                if total > max_bytes:
+                    raise RuntimeError(f"download exceeds maxBytes ({total} > {max_bytes})")
+                out.write(chunk)
+        if total <= 0:
+            raise RuntimeError("empty download")
+        os.replace(part, target)
+        return total, status
+    except Exception:
+        part.unlink(missing_ok=True)
+        raise
 
 
 def sha256_file(path: Path) -> str:
@@ -168,10 +220,12 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
     if provider == "aic":
         fields = "id,title,artist_display,date_display,is_public_domain,image_id"
         record_url = f"https://api.artic.edu/api/v1/artworks/{sid}?fields={fields}"
-        d = get_json(record_url).get("data") or {}
+        payload, api_status = aic_get_json(record_url)
+        d = payload.get("data") or {}
         if d.get("is_public_domain") is not True or not d.get("image_id"):
             return "reject", "", "", {"reason": "AIC API is_public_domain/image_id gate failed", "recordUrl": record_url}
-        image = f"https://www.artic.edu/iiif/2/{d['image_id']}/full/843,/0/default.jpg"
+        iiif_base = (payload.get("config") or {}).get("iiif_url") or "https://www.artic.edu/iiif/2"
+        image = f"{iiif_base.rstrip('/')}/{d['image_id']}/full/843,/0/default.jpg"
         return (
             "free",
             image,
@@ -182,6 +236,7 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
                 "creator": d.get("artist_display"),
                 "date": d.get("date_display"),
                 "objectId": d.get("id"),
+                "apiHttpStatus": api_status,
             },
         )
 
@@ -361,7 +416,11 @@ def process_item(item: dict) -> dict:
                 "tier": tier,
             }
 
-    size = download_atomic(file_url, target, max_bytes)
+    if provider == "aic":
+        size, download_status = download_atomic_aic(file_url, target, max_bytes)
+        source["downloadHttpStatus"] = download_status
+    else:
+        size = download_atomic(file_url, target, max_bytes)
     digest = sha256_file(target)
     record = {
         "schema": "kfb.public-domain-asset/0.2",
@@ -384,7 +443,7 @@ def process_item(item: dict) -> dict:
         "sourceFacts": {k: v for k, v in source.items() if k not in {"recordUrl", "title", "creator", "date"}},
     }
     atomic_write_text(lic_path, json.dumps(record, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
-    return {
+    result = {
         "id": item_id,
         "provider": provider,
         "status": "loaded",
@@ -393,6 +452,10 @@ def process_item(item: dict) -> dict:
         "bytes": size,
         "tier": tier,
     }
+    if provider == "aic":
+        result["apiHttpStatus"] = source.get("apiHttpStatus")
+        result["httpStatus"] = source.get("downloadHttpStatus")
+    return result
 
 
 def parse_manifest(path: Path) -> list[dict]:
