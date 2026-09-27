@@ -1,0 +1,18 @@
+{
+  "schema": "kfb.hub-stage-candidate/1",
+  "id": "WORLD-FLIGHT-CLAY-C0",
+  "title": "World · Flight · Clay C0",
+  "route": "/kfb-hub/stage/world/world-flight-clay-c0/",
+  "sourceBranch": "work/world-flight-clay-c0-runtime-2026-09-27",
+  "sourceHead": "5af56ee0a8c9fc1ef581911dffc7eb431efddd72",
+  "visibility": "DIRECT_STAGE_READY",
+  "publication": "PUBLIC_VERIFIED",
+  "publicationHead": "e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b",
+  "reviewState": "PROCEED_PASS_WORLD_CLAY__SUPERSEDED_MOBILITY_TRACK_PROXY",
+  "humanGate": null,
+  "decision": {
+    "accepted": ["World direction", "Clay direction"],
+    "replaceNext": ["ST01 proxy track", "jump.air flight adapter", "current Ground/Jump feel"],
+    "next": "WORLD-MOBILITY-M1"
+  }
+}

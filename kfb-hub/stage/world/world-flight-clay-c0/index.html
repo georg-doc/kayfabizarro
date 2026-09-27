@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#b9d7e4">
+<link rel="icon" href="data:,">
+<title>KFB World · Flight + Clay C0</title>
+<meta name="kfb-source-repo" content="georg-doc/kayfabizarro">
+<meta name="kfb-source-pr" content="234,237">
+<meta name="kfb-stage-id" content="WORLD-FLIGHT-CLAY-C0">
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#b9d7e4}
+body[data-c0-ready="true"] #top,body[data-c0-ready="true"] #dock,body[data-c0-ready="true"] #facts,body[data-c0-ready="true"] #drawer,body[data-c0-ready="true"] #wiHud{display:none!important}
+#c0-ui{position:fixed;inset:0;z-index:80;pointer-events:none;color:#251d21;font:600 13px/1.25 system-ui,-apple-system,sans-serif}
+#c0-ui *{box-sizing:border-box}
+#c0-bar{position:absolute;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));display:flex;justify-content:space-between;gap:8px;align-items:flex-start;pointer-events:auto}
+.c0-cluster{display:flex;gap:6px;padding:5px;border-radius:16px;background:#fff8ebdf;border:1px solid #71563e55;box-shadow:0 5px 24px #4e385033;backdrop-filter:blur(10px);pointer-events:auto}
+#c0-ui button{border:0;border-radius:11px;background:transparent;color:#443237;padding:8px 11px;font:700 12px/1 system-ui;cursor:pointer}
+#c0-ui button[aria-pressed="true"]{background:#d05d49;color:#fff8e9;box-shadow:inset 0 -2px 0 #873d35}
+#c0-ui button:hover{background:#efddc9}
+#c0-ui button[aria-pressed="true"]:hover{background:#c65343}
+#c0-info{font-size:17px!important;width:36px;padding:8px 0!important}
+#c0-help{position:absolute;right:max(12px,env(safe-area-inset-right));top:66px;width:min(360px,calc(100vw - 24px));max-height:calc(100vh - 90px);overflow:auto;padding:16px 18px;border-radius:18px;background:#fffaf0f2;border:1px solid #71563e55;box-shadow:0 12px 44px #39263055;pointer-events:auto}
+#c0-help[hidden]{display:none}
+#c0-help h1{font-size:16px;margin:0 0 8px}
+#c0-help h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin:16px 0 5px;color:#8c4c3f}
+#c0-help p,#c0-help li{font-weight:500;line-height:1.45}
+#c0-help p{margin:5px 0}
+#c0-help ul{margin:5px 0;padding-left:18px}
+#c0-help code{font:11px ui-monospace,monospace;background:#eadcc8;padding:2px 4px;border-radius:4px}
+#c0-hint{position:absolute;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);max-width:calc(100vw - 24px);padding:8px 13px;border-radius:13px;background:#2c2430d9;color:#fff4df;font:600 11px/1.35 system-ui;text-align:center;box-shadow:0 5px 22px #261b2a44;pointer-events:none;white-space:nowrap}
+@media(max-width:620px){#c0-bar{top:max(7px,env(safe-area-inset-top));left:7px;right:7px}.c0-cluster{gap:2px;padding:3px;border-radius:13px}#c0-ui button{padding:7px 8px;font-size:11px}#c0-hint{white-space:normal;width:calc(100vw - 20px);bottom:10px}#c0-help{right:7px;top:55px;width:calc(100vw - 14px)}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false});</script>
+</head>
+<body data-kfb-stage="WORLD-FLIGHT-CLAY-C0" data-kfb-source-head="5af56ee0a8c9fc1ef581911dffc7eb431efddd72">
+<script type="module">
+await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js');
+const app=window.__wb2d;
+const [{mountTrackModule},{mountClayWorld},{mountFlightMode},{mountC0Ui}]=await Promise.all([
+  import('./track-module-c0.mjs'),import('./clay-world-c0.mjs'),import('./flight-mode-c0.mjs'),import('./world-c0-ui.mjs')
+]);
+const track=await mountTrackModule(app);
+const clay=await mountClayWorld(app,track);
+app.setPlay(true);
+const flight=mountFlightMode(app);
+const ui=mountC0Ui({app,track,clay,flight});
+window.__worldFlightClayC0={app,track,clay,flight,ui,report:()=>({schema:'kfb.world-flight-clay-c0/1',source:{worldR2:'58028b07d7618926c40ffaec3bd4053dc88c0efd',clayBound:'e1f693347fd0049deb9f7ef89ee85341bd9f355d',trackRecipe:track.source.revision},mobility:flight.report(),clay:clay.report(),track:track.report()})};
+document.body.dataset.c0Ready='true';
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "schema": "kfb.stage-source/1",
+  "stageId": "WORLD-FLIGHT-CLAY-C0",
+  "status": "PUBLIC_VERIFIED",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "work/world-flight-clay-c0-runtime-2026-09-27",
+  "implementationCommit": "5af56ee0a8c9fc1ef581911dffc7eb431efddd72",
+  "stageEntry": "kfb-hub/stage/world/world-flight-clay-c0/index.html",
+  "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-flight-clay-c0/",
+  "publication": {
+    "branch": "cloudflare-live",
+    "head": "e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b",
+    "verifiedAt": "2026-09-27",
+    "browserProof": "36/36 PASS"
+  },
+  "publicVerified": true,
+  "world": "huerth",
+  "seed": 43129,
+  "sources": {
+    "worldR2": {
+      "pullRequest": 234,
+      "planningHead": "7b2393a54c6b31e4bd4d927275030423612cfde8",
+      "runtimeHead": "58028b07d7618926c40ffaec3bd4053dc88c0efd",
+      "rule": "All 23 accepted runtime files remain byte-identical."
+    },
+    "clayBound": {
+      "pullRequest": 237,
+      "head": "e1f693347fd0049deb9f7ef89ee85341bd9f355d",
+      "rule": "Presentation donor only; no terrain, contact or runtime ownership."
+    },
+    "track": {
+      "owner": "georg-doc/KFB-Stunt-Car-Race",
+      "revision": "2026-09-19.st01.1",
+      "source": "kfb-hub/stage/stunt-world/track-ribbon-st01/site/RACE_TRACK_ST01_CONFIG.json"
+    }
+  },
+  "protectedOwners": [
+    "WorldBuilder terrain/editor/persistence",
+    "OSM route geometry",
+    "World r2 movement and ground contact",
+    "World r2 camera",
+    "Track Core driving/contact"
+  ]
+}
