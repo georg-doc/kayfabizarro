@@ -110,6 +110,22 @@ R4-Implementierungscheckpoint: `1d803d177789fa834c5165fe36caa12fc26fe7c7`.
 
 Status: `LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING`.
 
+## WORLD-M2A-R5 · Playability repair · 2026-09-27
+
+R5 reagiert ausschließlich auf Georgs konkreten Spieltest. Es fügt keine neue Welt-, Track- oder UI-Architektur hinzu.
+
+- Das Fahrzeug wird vor dem ersten sichtbaren Bild physikalisch gesetzt. Gemessen: 41 interne Schritte, 4/4 Radkontakte, 0,003 m sichtbarer Bodenabstand.
+- Die vollständige 716 × 716-m-Kontaktfläche bleibt erhalten. Die reale Offroad-Probe fährt 12,67 m über die Grün-/Nebenfläche und endet mit 4/4 Kontakten ohne Fall durch die Welt.
+- Der normale Lauf beschleunigt nach 0,32 s auf 1,41 m/s statt zuvor 1,23 m/s; Sprint erreicht 2,99 m/s. Mehr Walk-Cadence wurde nicht erzwungen, weil der vorhandene Motion-Adapter `walk.fast` bewusst relativ zum echten Run-Clip begrenzt.
+- Der isolierte Performance-Lauf misst Idle/Walk/Drive mit 33,4/16,8/16,8 ms p95. Das 30-fps-Ziel wird mit dokumentierter 0,1-ms-Timerauflösung bestanden; der Qualitätswechsel bleibt `stable → moving → stable`.
+- Paket **27/27**, Browser Desktop + schmal **38/38**, gesonderter Ground/Sprint/Offroad-Test **PASS**, keine Seitenfehler.
+
+Implementierungscheckpoint: `b0142b3540728afac80a6ef9b15315fd7089a5fe`.
+
+Noch offen und nicht schöngeredet: menschliches Gefühl der Bewegungs-/Clip-Taktung, Schatten-/Hellkanten-Artefakt an Boulder/Props und die eigentliche Track-Integration. R5 ist lokal technisch bestanden, aber weder veröffentlicht noch menschlich abgenommen.
+
+Seit Abschluss der Runtime-Prüfung liegt `KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27` auf `main@692240b5`. Georg hat den bunten Knetstrang ausdrücklich als ausbaufähige Basis akzeptiert. Er ersetzt T1/T2 als visueller Track-Donor, wird aber nicht nachträglich in diesen Playability-Repair hineingezogen.
+
 ## Genau ein nächster Gate
 
-Georgs freien Spieltest auf der unverändert veröffentlichten R4-Stage durchführen. Danach separat `FACADE-DONOR-01`: echte KayKit-/Kenney-Türen und -Fenster isoliert beweisen, skalieren/deformieren/umfärben und instanziert in die nahe Fassadenstufe einsetzen.
+Den unveränderten R5-Kandidaten auf die feste M2A-Stage veröffentlichen, dort öffentlich dieselben Browserchecks ausführen und anschließend Georgs freien Spieltest abwarten. Erst danach folgen Clip-Tuning oder Fassaden-/Track-Arbeit.
