@@ -50,7 +50,6 @@
       "capabilitiesTotal": 11,
       "currentReady": [
         "world-zone-bake-01",
-        "look-torsion-01",
         "bl-osm-clay-01"
       ],
       "currentReview": "world-r2-stage-prep-01",
@@ -1237,12 +1236,12 @@
     {
       "id": "look-torsion-01",
       "strand": "worldbuilder",
-      "bucket": "READY",
-      "priority": "P0",
+      "bucket": "HOLD",
+      "priority": "CLOSED_PASS",
       "executor": "ChatGPT Web / optional Blender MCP",
       "title": "Look · Elastic Torsion proof",
-      "what": "Restore height-dependent twist/bend on one isolated tall building/landmark without reopening failed Hürth R2.",
-      "result": "Source vs Elastic vs Elastic+Torsion direct visual A/B/C.",
+      "what": "Architecture mechanism passed; do not rerun standalone. Consume height-dependent torsion in the next clean/current WorldBuilder or world-presentation candidate.",
+      "result": "ARCHITECTURE_PASS_ONLY · standalone human gate closed · no WorldBuilder/look acceptance implied.",
       "promptSection": "LOOK-TORSION-01 · Elastic Torsion architecture proof",
       "sourceSet": "worldbuilder",
       "cloudflareRequired": false,
@@ -1257,7 +1256,10 @@
       "reasoning": "high",
       "budget": "HIGH",
       "workDefault": false,
-      "coworkDefault": false
+      "coworkDefault": false,
+      "humanResult": "PASS_ARCHITECTURE_ONLY",
+      "reviewWorkflow": "REJECT_STANDALONE_LOW_FIDELITY_PROXY_GATE",
+      "nextConsumption": "REAL_WORLDBUILDER_OR_WORLD_PRESENTATION_WITH_SHARED_SHADOW_LIGHTING_FIX"
     },
     {
       "id": "audio-audition-01",
@@ -2291,8 +2293,8 @@
   "metrics": {
     "strands": 13,
     "jobs": 97,
-    "ready": 42,
-    "hold": 55
+    "ready": 41,
+    "hold": 56
   },
   "executionProfiles": {
     "WEB_FAST": {
