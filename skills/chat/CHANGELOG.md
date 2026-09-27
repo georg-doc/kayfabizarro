@@ -1,3 +1,24 @@
+## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
+
+### WORKFLOW HARDENING
+- Georg explicitly requires authorized Web/GitHub production to persist **throughout the slice**, not only at final closure, because chat timeouts must not strand the latest production truth in prose.
+- `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` now has a continuous checkpoint rule.
+- `FRESH_CHAT_SLICE_PROTOCOL.md` now has a fresh-chat invariant: after every meaningful completed implementation/test/decision checkpoint, GitHub must identify owner, branch/PR, exact verified head, last proven result, unresolved/deferred items and exactly one next action/gate.
+- `START_HERE.md` now exposes the same rule in the hard-rule layer.
+- Existing owner Return/Recovery/WIP surfaces remain the continuation anchor; no second status owner was introduced.
+
+### WB-ZONE-CROP-PARITY-01
+- Fresh diagnostic branch: `chatgpt-web/wb-zone-crop-parity-01-2026-09-27`, Draft PR **#255**, stacked on frozen recovery PR #252.
+- Proven deterministic crop rule: arithmetic mean of **every serialized footprint coordinate including the repeated closing coordinate**, then existing inclusive bounds.
+- GitHub Actions run/job `36323360087 / 108631340758` = **SUCCESS** on tested implementation head `3178163a4fad44139aa548fabd3c89bf5d2dbb54`.
+- Result: **exact 369/369 frozen building IDs**.
+- Historical 368 failure is reproduced by deleting the closing coordinate before averaging; area-centroid and bbox-centre variants both produce 370 with different wrong ID sets.
+- Durable evidence: `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/{SOURCE.json,RESULT.json,TEST_REPORT.md,RETURN.md}`.
+- No renderer, WorldBuilder runtime, Stage or Georg gate changed.
+
+### NEXT GATE
+Fresh **WB-ZONE-SEAM-01 restart** on a new branch from PR #252 recovery head `6b08636e552f39ac5f00d0216adcf70fa40f80c6`; change only the baked-building crop selector, then rerun seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
+
 ## 2026-09-27 · Persist-before-reply workflow hardening
 
 - Georg flagged a failure-window anti-pattern: an authorized Web/GitHub slice can output a long paste-ready handoff before actually persisting the result, leaving the authoritative state vulnerable if the chat then times out.
