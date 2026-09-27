@@ -22,7 +22,7 @@ Es wurde keine Ersatz-Rennstrecke gebaut. Track Core bleibt `WAITING_SOURCE` fü
 - Vehicle Deformer v2: `f30b719a8c9da3e9ac90d4d9628c0691d676d1e9`
 - Travel Modes PR #39: `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`
 - GitHub-Runtime-Checkpoint: `3a9375bba2acdcc448473f24838830ba92305277`
-- Publication-Checkpoint: `afc5841abcb6ce057080618ab4aba36a4831bf3a`
+- R4-Publication-Checkpoint: `2e1978821a043cf604c8bc556493cae282a87a86`
 
 ## Automatische Prüfungen
 
@@ -104,12 +104,12 @@ Der eine erlaubte Kandidat verbindet zwei bereits gemessene Hebel:
 - Die 3D-Auflösung sinkt während Bewegung auf 0,65 (schmal 0,60) und stabilisiert sich 1,4 s nach Stillstand auf 0,86 (schmal 0,72). Das HUD bleibt scharf, weil nur der WebGL-Inhalt skaliert wird.
 - Entfernte OSM-Stadthüllen behalten ihre Form und Farben, verwenden aber nicht den vollständigen Clay-Relief-Shader. Die nähere Welt behält den Hirnwelt-Knetlook.
 
-Ergebnis: Paket **26/26**, Browser Desktop + schmal **38/38**, keine Seiten-/Request-/HTTP-Fehler. In den drei isolierten 8-s-Messläufen lagen Idle, Walk und Drive jeweils bei **16,7 ms p95**; das Ziel von höchstens 33,3 ms ist damit lokal erreicht. Die Qualitätsregel wechselte im Start/Stop-Test exakt `stable → moving → stable`, nicht frameweise.
+Ergebnis: Paket **26/26**, Browser Desktop + schmal lokal **38/38** und auf der festen öffentlichen Stage erneut **38/38**, keine Seiten-/Request-/HTTP-Fehler. In den drei isolierten 8-s-Messläufen lagen Idle, Walk und Drive jeweils bei **16,7 ms p95**; das Ziel von höchstens 33,3 ms ist damit lokal erreicht. Die Qualitätsregel wechselte im Start/Stop-Test exakt `stable → moving → stable`, nicht frameweise.
 
 R4-Implementierungscheckpoint: `1d803d177789fa834c5165fe36caa12fc26fe7c7`.
 
-Status: `LOCAL PERFORMANCE PASS · FUNCTIONAL BROWSER PASS · NOT YET PUBLIC VERIFIED`.
+Status: `LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING`.
 
 ## Genau ein nächster Gate
 
-Den gemessenen R4-Kandidaten unverändert auf die feste Stage publizieren, dort öffentlich verifizieren und dann Georgs freien Spieltest durchführen. Erst danach separat `FACADE-DONOR-01`: echte KayKit-/Kenney-Türen und -Fenster isoliert beweisen, skalieren/deformieren/umfärben und instanziert in die nahe Fassadenstufe einsetzen.
+Georgs freien Spieltest auf der unverändert veröffentlichten R4-Stage durchführen. Danach separat `FACADE-DONOR-01`: echte KayKit-/Kenney-Türen und -Fenster isoliert beweisen, skalieren/deformieren/umfärben und instanziert in die nahe Fassadenstufe einsetzen.

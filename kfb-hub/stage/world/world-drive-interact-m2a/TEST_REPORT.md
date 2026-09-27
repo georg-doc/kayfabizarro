@@ -66,4 +66,6 @@ Bewertung: `R3 PARTIAL · MATERIAL PERFORMANCE GAIN · FRAME TARGET FAIL`. Die S
 - Qualitätswechsel `stable → moving → stable`: 0,86 → 0,65 → 0,86; vier Zustandswechsel insgesamt, kein frameweises Umschalten.
 - Entfernte Stadt-Hüllen nutzen ein einfaches raues Material ohne vollständigen Clay-Relief-Shader; nahe Welt, Straßen, Props und nahe Stadt behalten das Relief.
 
-Bewertung: `R4 LOCAL PERFORMANCE PASS · FUNCTIONAL BROWSER PASS · PUBLICATION PENDING`. Die Werte sind vergleichbare lokale Browsermessungen auf derselben R3/R4-Testumgebung, kein allgemeiner Hardware-Benchmark. Öffentliche Stage und menschliches Spielgefühl sind noch nicht verifiziert.
+Zusätzlich wurde exakt `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/` nach Publication-Head `2e1978821a043cf604c8bc556493cae282a87a86` erneut geprüft: **38/38 PASS** auf Desktop und schmalem Viewport, einschließlich Ground → Drive → Ground → Flight, echter Radkontakte sowie 0 Seiten-, Request- und HTTP-Fehler.
+
+Bewertung: `R4 LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING`. Die Werte sind vergleichbare lokale Browsermessungen auf derselben R3/R4-Testumgebung, kein allgemeiner Hardware-Benchmark. Das menschliche Spielgefühl bleibt der nächste Produktcheck.

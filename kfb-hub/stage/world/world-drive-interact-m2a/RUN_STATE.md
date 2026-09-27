@@ -1,6 +1,6 @@
 # WORLD-M2A-R4 · Run State
 
-Status: `R4_LOCAL_PASS · FRAME_TARGET_PASS · PUBLICATION_PENDING`
+Status: `R4_LOCAL_PASS · FRAME_TARGET_PASS · PUBLIC_BROWSER_PASS · HUMAN_FREEPLAY_PENDING`
 Datum: 2026-09-27
 
 ## Lock
@@ -17,7 +17,7 @@ Datum: 2026-09-27
 - World r2 bleibt World-/Terrain-Owner.
 - Race PR #10 bleibt Drive-/Physics-/Camera-Owner.
 - World M1 bleibt Ground-/Flight-/Actor-Owner.
-- Öffentliche Fehler-Stage bleibt bis zum erfolgreichen Publication-Gate unverändert.
+- Feste öffentliche Stage enthält exakt den gemessenen R4-Kandidaten; keine Live-Promotion außerhalb dieser Route.
 - Echte Fassaden-Donors kommen erst nach isoliertem Quellenbeweis.
 
 ## Ergebnis
@@ -25,7 +25,7 @@ Datum: 2026-09-27
 - Bewegung: Pixelratio 0,65 (schmal 0,60); Stillstand nach 1,4 s: 0,86 (schmal 0,72).
 - WebGL passt seine interne Auflösung an; HTML-/HUD-Oberfläche bleibt in nativer CSS-Auflösung.
 - Entfernte Stadt-Hüllen behalten Form und Farbe, aber nicht den vollständigen Clay-Relief-Shader.
-- Paket 26/26; Browser Desktop + schmal 38/38.
+- Paket 26/26; Browser Desktop + schmal lokal 38/38 und öffentlich 38/38.
 - p95 Idle/Walk/Drive 16,7/16,7/16,7 ms; Ziel ≤ 33,3 ms bestanden.
 - 0 Frames über 50 ms in den drei 8-s-Läufen; 4 stabile Qualitätswechsel im Start/Stop-Test.
 
@@ -33,4 +33,4 @@ Datum: 2026-09-27
 
 Der einzelne R4-Kandidat ist gemessen. Kein zweiter Performance-Patch in diesem Gate.
 
-Nächster Gate: exakt diesen Kandidaten auf die feste Stage publizieren und dort öffentlich verifizieren; danach Georgs freier Spieltest. Erst danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe übernehmen.
+Nächster Gate: Georgs freier Spieltest auf der festen R4-Stage. Erst danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe übernehmen.
