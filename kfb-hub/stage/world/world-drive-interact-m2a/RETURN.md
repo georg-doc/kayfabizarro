@@ -24,24 +24,40 @@ Es wurde keine Ersatz-Rennstrecke gebaut. Track Core bleibt `WAITING_SOURCE` fü
 - GitHub-Runtime-Checkpoint: `3a9375bba2acdcc448473f24838830ba92305277`
 - Publication-Checkpoint: `afc5841abcb6ce057080618ab4aba36a4831bf3a`
 
-## Prüfungen
+## Automatische Prüfungen
 
 - Browser Desktop + schmal, lokal: **34/34 PASS**
 - Browser Desktop + schmal, feste öffentliche Stage: **34/34 PASS**
-- Hirnwelt-H0-Knete ist sichtbarer Standard; `?look=original` und der Umschalter bleiben als reversibler Vergleich erhalten
-- E → Drive, echte Radkontakte, Bewegung, E → Ground, Ground → Flight: PASS
-- kompakte Bedienoberfläche ohne horizontales Überlaufen: PASS
 - 0 Seiten-/Konsolenfehler
 - 0 fehlgeschlagene Requests
 - 0 HTTP-Fehler
-- Race-Donoren lokal bytegleich zum exakten PR-#10-Checkout verifiziert
+
+Diese Prüfungen belegen Packaging, Ladepfade und den formalen Moduswechsel. Sie belegen ausdrücklich **nicht** Spielbarkeit, flüssige Bewegung, korrekte Bodenhaftung oder akzeptable Ladezeit.
+
+## 2026-09-27 · Georgs freier Spieltest
+
+Aktueller Produktstatus: **`HUMAN_TUNE · NOT_PLAYABLE`**.
+
+Kernblocker:
+
+- Bewegung ist zu langsam, ruckelig und derzeit nicht spielbar;
+- Ladezeit und Frametiming sind nicht akzeptabel;
+- Bewegungs- und Zustandsanimationen sind sichtbar falsch oder falsch getaktet;
+- das Fahrzeug sitzt nicht korrekt auf dem Boden;
+- außerhalb der Straße fehlt eine lückenlose befahrbare Terrain-Kollision: auf Grünflächen und anderen Wegen fällt das Fahrzeug durch die Welt.
+
+Nachrangig, aber dokumentiert:
+
+- bekannte Schatten-/Hellkanten-Artefakte an Boulder und Props.
+
+Die öffentliche Stage bleibt als reproduzierbarer Fehlerbeleg erhalten. Sie ist **keine** freigegebene spielbare MVP-Version.
 
 ## Status
 
-`PUBLIC_VERIFIED · PUBLIC_BROWSER_PASS_34_OF_34`
+`PUBLIC_ROUTE_PRESENT · AUTOMATED_BROWSER_PASS · HUMAN_TUNE_NOT_PLAYABLE`
 
-Direkter Fahrtest: <https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/>
+Direkter Fehlerbeleg: <https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/>
 
 ## Genau ein nächster Gate
 
-Georgs freier M2A-Fahrtest: Kneteindruck, Ein-/Ausstieg, Fahrgefühl und Wechsel zum Flug. Kein Track-Proxy und kein M2B vor einer realen Track-Core-Runtime.
+`WORLD-M2A-R1`: begrenzter Playability-/Performance-Pass auf exakt derselben Szene. Erst messen, dann höchstens zwei kleine Kandidaten: durchgehender Terrainkontakt, brauchbares Frametiming und Ladeverhalten, korrekter Fahrzeug-Bodenkontakt sowie offensichtliche Movement-State-Fehler. Keine neuen Features, Assets, Tracks oder HUDs. Danach ein freier Zu-Fuß-/Offroad-/Fahrtest durch Georg.
