@@ -80,3 +80,23 @@ WSA must show:
 5. next usable capability.
 
 WSA should explicitly identify and remove/combine redundant human gates rather than reproducing them from historical handoffs.
+
+## Proxy fidelity override
+
+A standalone review artifact is **not** a valid Georg gate when it is materially less representative than the receiving product.
+
+Especially reject as blocking human gates:
+- grey-box / simplified substitutes for an existing real product surface;
+- ruckly or control-limited WebGL labs that prevent reliable feel/visual judgment;
+- proxy renders that reproduce already-known shadow clipping, shadow banding, light seams or related renderer defects;
+- micro-comparisons whose mechanism is reversible and can proceed safely into the receiving owner.
+
+These remain internal engineering evidence. WSA must route the next action into the real owner/product context instead of manufacturing another acceptance page.
+
+## LOOK-TORSION-01 application
+
+Status: **ARCHITECTURE PASS ONLY · STANDALONE HUMAN GATE CLOSED**.
+
+Keep the cumulative height-dependent torsion mechanism, anchored base and shared roof/body field. Do not promote the grey A/B/C rendering as KFB look truth, do not interpret it as acceptance of lighting/shadows/materials, and do not freeze 9.5° as a universal artistic default.
+
+Next evaluation: consume the mechanism in the next clean/current WorldBuilder/world-presentation candidate, together with the real scene/camera and shared shadow/lighting corrections. No further standalone torsion review surface.
