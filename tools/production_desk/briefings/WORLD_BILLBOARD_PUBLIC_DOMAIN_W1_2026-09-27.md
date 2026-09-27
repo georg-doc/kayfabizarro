@@ -31,6 +31,8 @@ H4 darf Rhythmus, Schnitte, Ebenen, Typografie, Palette und deterministische Un�
 
 Der erste Beweis ist eine selbstlaufende Umweltfläche. Später darf `E · Anzeige ansehen` die bestehende Medienansicht oder einen bereits registrierten Modus öffnen. Das Billboard führt dafür kein eigenes Eingabesystem ein.
 
+Ein zusätzlicher Modus `CREATOR_KUDOS` darf KayKit/Kay Lousberg, Kenney und weitere nachweislich verwendete Quellen würdigen. Er konsumiert ausschließlich das gemeinsame Credits-Manifest. Satirische Werbeslogans stehen getrennt von der unveränderten Fakten-/Lizenzzeile; keine Namen, Lizenzbegriffe oder Links werden für einen Gag umgeschrieben.
+
 ## Prüfung
 
 - echte World-M2-Szene: Ground, Drive und Flight;

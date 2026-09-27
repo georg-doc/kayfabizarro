@@ -18,6 +18,7 @@
 - Interaction-Vertrag: `tools/production_desk/briefings/WORLD_INTERACTION_E_V1_2026-09-27.md`
 - Clay-ChatterBox-Sidecar: `tools/production_desk/briefings/CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`
 - Billboard-/Public-Domain-Modul: `tools/production_desk/briefings/WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md`
+- Credits-/Creator-System: `tools/production_desk/briefings/KFB_CREDITS_ATTRIBUTION_EXPERIENCE_V1_2026-09-27.md`
 - Track-Core-W0-Brief: `skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/WEBCHAT_TRACK_CORE_0_CENSUS_CONTRACT_BRIEF.md`
 - akzeptierter Style-Donor: `tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/`
 - Style-Module: `lab-clay/clay-soften.v1.js`, `clay-material.v4.js`, `clay-relief.v2.js`
@@ -43,6 +44,7 @@ H0 ist Georgs akzeptierter Look-Donor und in M1 bereits als echtes Material/Reli
 - der Übergang besitzt keine erfundene Tür und keine neue Physik. Während der kurzen Übergabe sind Bewegung und erneute Interaktion gesperrt; bei Abbruch wird der letzte gültige Zustand wiederhergestellt;
 - vom Freiraum über eine echte Auf-/Abfahrt auf die Strecke fahren und wieder in die Stadt zurückkehren;
 - mindestens eine echte Billboard-/Monitor-Fläche in der Stadtzelle montieren: akzeptierter B2a-Körper, extrahierte H4-Kompositionsengine und ausschließlich die vier bereits verifizierten Public-Domain-Pool-Objekte als erster sicherer Medienbestand;
+- dieselbe Fläche kann einen `CREATOR_KUDOS`-Modus zeigen; ein verwendetes besonderes Landmark darf daneben eine kleine, mit `E` lesbare Ausstellungstafel erhalten. Beide Ansichten stammen aus demselben Credit-Manifest und formulieren keine Lizenzangaben von Hand;
 - mehrere bereits definierte Track-Breiten sichtbar behalten;
 - Track-Anfang, Track-Ende und spätere Anschlussstellen explizit markieren;
 - unterschiedliche Gebäudehöhen bleiben erhalten;

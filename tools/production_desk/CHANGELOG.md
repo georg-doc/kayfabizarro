@@ -490,6 +490,7 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Added a source-backed interaction contract and an isolated Clay Speech/Thought Bubble design brief while keeping both under the one World M2 Hub lane.
 - Admitted the existing Billboard production line as a quarantinable M2 environment module: B2a body, H4 compositor and only the four PD-POOL-R3 public-verified assets; all 33 unverified H4 LoC plates remain excluded.
 - Added one Billboard/Public-Domain integration brief under the same World M2 lane; no second registry, Hub lane or runtime owner.
+- Added a shared Credits/Attribution experience brief covering in-world plaques, Billboard Creator Kudos and a representative-asset showreel; required credit lines remain exact while voluntary CC0/Public-Domain kudos may use KFB satire.
 - Kept the MVP proportional: one proven vehicle carries the loop; additional vehicles cannot block it.
 - Planning/source update only. No runtime, Stage, public Hub or Live promotion claimed.
 

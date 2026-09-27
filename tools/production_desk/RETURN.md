@@ -1221,6 +1221,7 @@ Status: **PLAN CONSOLIDATED · SOURCE DONORS LOCKED · NO NEW RUNTIME CLAIM**
 - Billboard/Public Domain is admitted as the first living environment sidecar: existing B2a body + extracted H4 compositor + exactly the four PD-POOL-R3 public-verified objects. H4's 33 `RIGHTS NOT_VERIFIED` LoC plates remain excluded.
 - Added briefs: `WORLD_INTERACTION_E_V1_2026-09-27.md` and `CLAY_CHATTERBOX_PRESENTATION_D0_2026-09-27.md`; both are linked from the single M2 production brief instead of creating more Hub clutter.
 - Added `WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md` under the same M2 lane; no new Hub card or media registry.
+- Added one evidence-driven Credits/Attribution experience: shared manifest → `E` landmark plaques, Billboard Creator Kudos and Showreel credits. Satire is presentation-only; names, licenses, required attribution and sources remain exact.
 - No World runtime, Stage, publication, merge or Live state changed in this planning checkpoint.
 
 Exactly one next gate: **execute WORLD-TRACK-DRIVE-CLAY-M2 as the next productive Work slice; Georg reviews only the resulting playable Travel loop.**

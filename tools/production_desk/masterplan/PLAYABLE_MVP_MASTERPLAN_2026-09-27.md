@@ -71,6 +71,8 @@ Die Clay-Speech-/Thought-Bubbles sind ein paralleler, nicht blockierender Design
 
 Billboard/Public Domain wird ebenfalls nicht neu erfunden: B2a bleibt 3D-Körper, H4 liefert die akzeptierte Kompositionslogik, Asset Librarian/PD-POOL-R3 liefert Medien und Rechtebelege. Die 33 H4-LoC-Prototypplatten bleiben gesperrt, bis sie einzeln geprüft sind. Brief: `tools/production_desk/briefings/WORLD_BILLBOARD_PUBLIC_DOMAIN_W1_2026-09-27.md`.
 
+Credits werden aus denselben Registry-/Lizenzbelegen erzeugt und als KFB-Erlebnis sichtbar: `E`-Infotafeln bei ausgewählten Landmarken, satirische Creator-Kudos auf Billboards und ein Showreel-Abspann mit repräsentativen verwendeten Assets. Pflichtangaben bleiben unverändert; freiwillige CC0-/Public-Domain-Würdigung darf charmant und überdreht sein. Brief: `tools/production_desk/briefings/KFB_CREDITS_ATTRIBUTION_EXPERIENCE_V1_2026-09-27.md`.
+
 Mit dieser Entscheidung ist im H0-Export **D2** gewählt. H1 Hirnwelt-Kreuzungen und M1 Knet-Medizin bleiben Sidequests und blockieren die World-Produktion nicht.
 
 ## Parallel, aber getrennt
