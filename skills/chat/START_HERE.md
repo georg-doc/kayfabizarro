@@ -25,6 +25,22 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
+
+Binding policy:
+`skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+KFB Web/WSA/Claude work must optimize for usable integrated capability, not the number of review artifacts. Technical tables, owner/writer matrices, state-machine selectors and measurement dashboards are internal evidence unless a concrete human product decision depends on them. Prefer the real WorldBuilder, ToolBox, Racer, Travel consumer, Resident scene or Combat surface for review.
+
+A clear Georg continuation instruction is a **PROCEED PASS**: continue without reopening the same intermediate gate; unresolved details remain documented and are not silently accepted.
+
+Current applications:
+- **TRAVEL-MODES-01 = PROCEED PASS**. Do not ask Georg to approve the contract-only Travel router Stage again. Continue mobility work in the real WorldBuilder/Travel consumer with source-proven adapters.
+- **LOOK-TORSION-01 = ARCHITECTURE PASS ONLY**. Retain the torsion mechanism, but the isolated grey A/B/C page is **not** WorldBuilder/look, lighting/shadow or final calibration acceptance. Do not create another standalone torsion review site; evaluate the mechanism next inside the real WorldBuilder/world context.
+
+Additional hard rule: **no low-fidelity proxy human gates**. If a review artifact is ruckly, simplified, visually unrepresentative, or reproduces known renderer defects such as shadow clipping/banding/light seams, it is internal evidence only and must not become a Georg blocking task.
+
+
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
 Knet-Medizin is now routed as a DocCheck project reference under `georg-doc/doccheck/Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/`.
@@ -60,6 +76,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - A timeout is `UNKNOWN`, never success: verify the exact branch head, workflow/deployment and public URL before retrying or claiming completion.
 - After two repair passes without progress on the same gate, stop and export. Preserve the failed candidate and route through the failure-recovery template instead of spending a third pass on the same foundation.
 - **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
+- **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
 
 ## Status vocabulary
 
@@ -77,6 +94,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
+- `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
@@ -1123,6 +1141,54 @@ HUB-CTRL #202 carries the visible lane **ClayBound · Production Assets** plus s
 Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
 
+
+## 2026-09-27 · TRAVEL-MODES-01 · Movement Mode Router public human gate
+
+Travel remains owned by private `georg-doc/KFB-Travel-Globe`.
+
+Current bounded slice:
+- Draft PR #39;
+- branch `chatgpt-web/travel-modes-01-router-2026-09-27`;
+- final Return/handoff head `e3b966efec49e8859254cb48e4aed27fb8963d04`;
+- tested runtime/evidence head `f5ea32f817403cda0e30a426e70f37db8ce03d66`;
+- accepted PR #38 **400 ms** Ground→Flight double-Space behavior preserved unchanged.
+
+Architecture proof:
+- Ground READY → movement/camera owner `wb0-ground-controller`;
+- Flight READY → movement `carpet.js`, camera `camera-rig.js`;
+- Drive + Water remain `SOURCE_REQUIRED` with no movement/camera writer;
+- router selects one owner atomically and has no frame/input/world-position/camera write loop;
+- retained `runtime-mode.js` remains the actual Ground/Flight ownership handoff.
+
+Final Travel CI:
+- run `36287034124`, job `108529617196`;
+- **133/133 PASS**, 0 fail, 0 skipped;
+- build PASS · 197 files;
+- verify PASS · 108 runtime files · 87 local ESM closure · 9 remote specifiers · 0 missing · syntax/JSON PASS;
+- artifact `10919999491`;
+- SHA-256 `27eba8e9d67d82665573ac61221a8cba81e782db2a8424338cc7ca941a8109f4`.
+
+Public Stage:
+https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/
+
+Final publication proof:
+- KFB Hub owner PR #202 source head `b4c7ddf2199e05d38b6eb673bf7e43e4091f779f`;
+- publication branch `cloudflare-live@67fb7aeb9682e137e2e01225450aed70ba56e26e`;
+- Chromium run `36287139911`, job `108529920021`;
+- **24/24 PASS**, 0 page errors, exact Travel runtime marker visible on attempt 1;
+- Stage + KFB Hub direct link both opened successfully;
+- screenshot/report artifact `10920773576`;
+- SHA-256 `514c99a5ecbe3ed64fcb1d775145f8276c6762de3355379acf7eab8f2d236841`.
+
+No TMB-3 landing, Drive/Water implementation, merge or product Live promotion occurred.
+
+Georg decision 2026-09-27: **PROCEED PASS**. The router Stage is retained evidence/history, not a current acceptance task.
+
+Current Travel decision head:
+`georg-doc/KFB-Travel-Globe#39@e10a977501cd186fe1330e9d3fd1a7b5811beb3a`
+
+Next productive step: continue mobility in the real WorldBuilder/Travel consumer. Drive/Water remain source-required until real adapters exist.
+
 ## 2026-09-27 · Public Domain Pool · PD-POOL-F1 PASS
 
 PD-POOL-F1 is **PASS** on Draft PR #240, branch `chatgpt-web/public-domain-pool-f1-aic-2026-09-27`. The tested implementation head is `c4f25c156e611a2fac7063becaf4fed3e3769638`; GitHub Actions run `36285175091` proved AIC artwork 24645 API HTTP 200 plus exactly one 843 px IIIF image HTTP 200, 238,585 bytes, SHA-256 `e0aa55ad5865f5ffa3e0fb7087e91a1e11ce5d7f13f392ba0f493c513b7f0f56`.
@@ -1170,4 +1236,3 @@ Tested implementation head `8c8b907c3526956a90e5ddbe2d6174eab2ee16da`:
 The permanent Cloudflare Librarian is **not claimed updated**. No bulk import occurred; the historical selected-hit manifest remains missing.
 
 Exactly one next gate after final handoff: **PD-POOL-R3 · Georg-gated merge/reconciliation of the stacked R1/R2 chain, owner Registry refresh, then exact permanent Cloudflare Librarian verification before any broader pool work.**
-
