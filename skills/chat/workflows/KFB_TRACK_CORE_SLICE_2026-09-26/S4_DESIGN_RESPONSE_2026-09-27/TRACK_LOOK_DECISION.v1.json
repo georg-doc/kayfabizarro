@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.track-look-decision/1",
+  "id": "TRACK-LOOK-S4-T1",
+  "decidedAt": "2026-09-27",
+  "decision": "A_BASE_PLUS_B_RACE_SEMANTICS",
+  "productionBase": "A_HIRNWELT",
+  "raceSemanticLayer": "B_RACE",
+  "toyPreset": "OPTIONAL_NOT_DEFAULT",
+  "geometryOwner": "KFB_TRACK_CORE",
+  "roadContactSurfaceDeformation": "FORBIDDEN",
+  "visualClayDeformation": [
+    "barrier",
+    "tube",
+    "kerb",
+    "eligible_scenery"
+  ],
+  "transitionStyle": "DETERMINISTIC_PATCH_SCATTER",
+  "colourConfiguration": "track-skins.v0.1.json",
+  "sources": {
+    "ownerRef": "georg-doc-patch-2@f74f840311b122f5e8872a84fb71629212f44471",
+    "tn02": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S9_RESPONSIVE_2026-09-27/tn02.graph.stream.json.gz",
+    "fs01Layout": "skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S8_TUNNELS_2026-09-27/track-core/layout/fs01.mjs",
+    "fs01CompiledStream": "SOURCE_REQUIRED"
+  },
+  "continueNow": [
+    "TD03_EDGE_ATLAS",
+    "FIRST_FOUR_TRANSITIONS",
+    "TN02_PORTAL_AND_ONE_TUNNEL_FAMILY"
+  ],
+  "deferred": [
+    "FS01_COMPILED_STREAM",
+    "B11_SPLIT_MERGE_IF_STREAM_ABSENT",
+    "S4B_REACTIVE_CLAY",
+    "S5_BUILDING_FACADES"
+  ]
+}
