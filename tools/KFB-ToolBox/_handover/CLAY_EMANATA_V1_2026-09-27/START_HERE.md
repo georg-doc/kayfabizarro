@@ -429,6 +429,39 @@ The candidate is ready for a real visual review when:
 - existing ToolBox tests are no worse than the pre-slice baseline;
 - Return names actual test counts and unresolved issues.
 
+## Reaction Choreography extension
+
+The Clay Emanata proof is now part of a broader **Resident Reaction Choreography** contract:
+
+- `REACTION_CHOREOGRAPHY.md`
+- `reaction-choreography.v0.1.json`
+
+A core in-game trigger should play as **one coordinated performance** across:
+
+`animation clip → body/parts-as-actors → EyeRig/brows → mouth/viseme → ears/secondary chains → Emanata → recovery`
+
+Key rules:
+
+- Animation clips are a first-class reaction layer, not an afterthought.
+- Use the existing actor mixer and source-backed clip libraries; no second mixer.
+- Reaction root motion is consumer-owned/locked by default.
+- Existing subtree clip layering may be reused for upper-body/head/arm reaction clips.
+- Active Talk/Viseme keeps mouth ownership; reaction choreography layers eyes/brows/head/body/ears around it unless a high-priority interrupt cancels speech through its owner.
+- Ear Dangle receives acted pose/impulses and updates after mixer + body/head motion.
+- `body-shape.v1.js` remains persistent morphology and is not an emotion animator.
+- Missing reaction clips fall back to source-backed procedural parts/face/ears/Emanata; they are not fabricated from guessed filenames.
+- Recovery returns to the **current consumer state** (for example running after a hit while running), not blindly to idle.
+
+First integrated reaction proof after Recovery covers:
+
+1. `surprise` — body/clip + wide EyeRig/brows + mouth + ears + shock rays;
+2. `social.positive` — positive clip/body + face + ears + heart/sparkle;
+3. `damage.light` — directional recoil + blink/brows/mouth + ear impulse + optional anger spikes;
+4. `speech.emphasis` while Talk is active — Viseme keeps mouth, all other acting layers coordinate;
+5. `jump.land` — existing landing/contact motion + body compression + ear impulse + blink, **no emotional Emanata**.
+
+The reaction conductor does not own gameplay state, movement, physics, animation assets, face rigs or secondary-motion physics. It only resolves one semantic event into timed calls to those existing owners.
+
 ## Exactly one next gate
 
-**Close / clear ToolBox RECOVERY-01. Then Claude Design implements the integrated three-family proof (tears + hearts + shock rays) on the real current Resident/Face system.**
+**Close / clear ToolBox RECOVERY-01. Then Claude Design implements the combined Reaction Choreography + Clay Emanata proof on the real current Resident, including source-backed animation clips as the skeletal primary-motion layer.**
