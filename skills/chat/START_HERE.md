@@ -34,7 +34,11 @@ KFB Web/WSA/Claude work must optimize for usable integrated capability, not the 
 
 A clear Georg continuation instruction is a **PROCEED PASS**: continue without reopening the same intermediate gate; unresolved details remain documented and are not silently accepted.
 
-Current application: **TRAVEL-MODES-01 = PROCEED PASS**. Do not ask Georg to approve the contract-only Travel router Stage again. Continue mobility work in the real WorldBuilder/Travel consumer with source-proven adapters.
+Current applications:
+- **TRAVEL-MODES-01 = PROCEED PASS**. Do not ask Georg to approve the contract-only Travel router Stage again. Continue mobility work in the real WorldBuilder/Travel consumer with source-proven adapters.
+- **LOOK-TORSION-01 = ARCHITECTURE PASS ONLY**. Retain the torsion mechanism, but the isolated grey A/B/C page is **not** WorldBuilder/look, lighting/shadow or final calibration acceptance. Do not create another standalone torsion review site; evaluate the mechanism next inside the real WorldBuilder/world context.
+
+Additional hard rule: **no low-fidelity proxy human gates**. If a review artifact is ruckly, simplified, visually unrepresentative, or reproduces known renderer defects such as shadow clipping/banding/light seams, it is internal evidence only and must not become a Georg blocking task.
 
 
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
