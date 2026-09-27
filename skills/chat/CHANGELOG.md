@@ -1948,3 +1948,16 @@ Exactly one next gate:
 - The binding Productive Review policy now rejects **low-fidelity proxy human gates**: a ruckly/simplified/unrepresentative review surface or one carrying known renderer defects is internal evidence only.
 - No further standalone torsion review page is required. Next meaningful evaluation belongs in the real WorldBuilder/world presentation context.
 - WSA/architecture must optimize for integrated usable capability per Georg attention, not proof pages or pseudo-acceptance ceremonies.
+
+
+## 2026-09-27 · Productive-review coordination heads
+
+- canonical policy + proxy-fidelity additions: `main@e3bc3ba4a8ffa7123e4cb29a0f615ffb91be0ce4`;
+- Travel Proceed Pass: PR #39 @ `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`;
+- Production Architecture v3 workflow override: PR #204 @ `c754d8704f8fa24d4e490c01f750ad52f6bc06d0`;
+- HUB-CTRL source: PR #202 @ `7d37efe3d0c4330cbdbcafdfe8f1f5ff3c9ea673`;
+- Cloudflare publication source: `ec57cf48f916c228847184ca072ad895c934a712`.
+
+Travel is no longer a `LOOK_AT` task. Hub routes it as `CAN_START`; its contract Stage is technical evidence only.
+
+WSA / next slides: remove/combine technical human gates and show progress through real owner/product integration.

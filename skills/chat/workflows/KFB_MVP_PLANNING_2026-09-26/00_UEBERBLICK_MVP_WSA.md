@@ -93,3 +93,15 @@ Kriterium: braucht Zugriff auf private Repos, mehrere Repos gleichzeitig, Secret
   - Schwerkraft als Parameter: Erde, Gefälle im Bergwerk, Gravitationsfelder im Weltraum;
   - Skin getrennt vom Kern: Profil, Material, Versatzstücke.
   RKIT-01 hat bereits notiert, dass `cross()` heute Welt-Y als oben nimmt. Genau das muss ein Parameter werden.
+
+
+### Current exact heads · 2026-09-27
+
+For WSA recovery and the next architecture/workflow slides:
+- canonical Productive Review policy: `main@e3bc3ba4a8ffa7123e4cb29a0f615ffb91be0ce4`;
+- Production Architecture v3: PR #204 @ `c754d8704f8fa24d4e490c01f750ad52f6bc06d0`;
+- Travel Proceed Pass: PR #39 @ `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`;
+- HUB-CTRL: PR #202 @ `7d37efe3d0c4330cbdbcafdfe8f1f5ff3c9ea673`;
+- Cloudflare source: `ec57cf48f916c228847184ca072ad895c934a712`.
+
+Do not convert these checkpoints into new Georg review tasks.
