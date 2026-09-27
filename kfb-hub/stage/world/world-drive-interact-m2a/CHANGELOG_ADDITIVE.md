@@ -35,3 +35,17 @@
 - sichtbare Last auf ca. 185–198 Tsd. Dreiecke gesenkt;
 - p95 Idle/Walk/Drive auf 43,3/42,7/43,9 ms gesenkt, Ziel 33,3 ms noch verfehlt;
 - Pixelratio-Diagnose als nächsten Haupthebel belegt; Kandidat nicht veröffentlicht.
+
+## 2026-09-27 · R4 Adaptive Resolution + Clay Distance Budget
+
+- WebGL-Auflösung auf 0,65 während Bewegung und 0,86 nach 1,4 s Stillstand gestaffelt; schmale Ansichten nutzen 0,60/0,72;
+- Zustandswechsel mit Haltezeit versehen, damit die Bildqualität nicht frameweise pumpt;
+- HTML-/HUD-Oberfläche von der internen 3D-Auflösung unberührt gelassen;
+- entfernte Stadt-Hüllen auf einfaches raues Knetmaterial ohne vollständiges Relief begrenzt;
+- R3-Stadt-LOD auch für das R4-Profil aktiv gehalten;
+- Paket 26/26 und Browser Desktop/schmal 38/38 PASS;
+- p95 Idle/Walk/Drive jeweils 16,7 ms, damit Ziel ≤ 33,3 ms lokal bestanden;
+- Kandidat als eigener Branch gesichert; Public-Stage erst im nächsten Publication-Gate.
+- exakt diesen R4-Unterordner auf `cloudflare-live@2e1978821a043cf604c8bc556493cae282a87a86` veröffentlicht;
+- feste Cloudflare-Stage danach erneut Desktop + schmal mit **38/38 PASS** geprüft; keine Seiten-, Request- oder HTTP-Fehler;
+- Produktstatus auf `PUBLIC BROWSER PASS · HUMAN FREE-PLAY PENDING` gesetzt.

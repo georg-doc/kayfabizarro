@@ -14,6 +14,8 @@ for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:3
   ok(spec.name+' Hirnwelt H0 clay is default',r.clay.mode==='clay'&&await page.evaluate(()=>document.body.dataset.m1Look)==='clay');
   ok(spec.name+' clay binds real World meshes',r.clay.boundMeshes>0&&r.clay.buildingCount>0,JSON.stringify(r.clay));
   ok(spec.name+' clay covers terrain road sidewalk facades roofs',r.clay.layers.medium.includes('terrain/road/sidewalk')&&r.clay.layers.coarse.includes('facades/roofs'));
+  ok(spec.name+' R4 adaptive quality active',r.quality.profile==='ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4'&&r.quality.pixelRatio<=.86&&r.quality.cssUiNativeResolution);
+  ok(spec.name+' far city clay is simplified',r.clay.distanceBudget.simplifiedMeshes>0);
   ok(spec.name+' starts Ground beside vehicle',r.mobility.mode==='ground'&&r.mobility.interaction.available);
   ok(spec.name+' exact Race donor pinned',r.mobility.drive.source.raceHead==='406cd26f44f22811fe3b3a58776839be7ffb7b2c');
   ok(spec.name+' no proxy Track',r.mobility.trackProxy===false);

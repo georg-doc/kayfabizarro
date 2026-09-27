@@ -32,7 +32,7 @@ const OPT = K + 'tools/KFB-ToolBox/_inbox/KFB%20Cologne%20Race%20Option%20C-2/la
 const TILE = { size: 192, seg: 384 };   // editable terrain tile · 0.5 m vertex spacing · centred on the spawn · carries the 4.7 cm/px ground map
 const PLAYABILITY_PROFILE = window.__wb2dProps?.playabilityProfile || '';
 const PLAYABILITY_R1 = /^R[1-9]/.test(PLAYABILITY_PROFILE);
-const CITY_LOD_R3 = PLAYABILITY_PROFILE === 'R3';
+const CITY_LOD_R3 = /^R[3-9]/.test(PLAYABILITY_PROFILE);
 const GROUND_MAP_PX = PLAYABILITY_R1 ? 2048 : 4096;
 
 async function imp(url) {
