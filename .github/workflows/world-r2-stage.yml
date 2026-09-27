@@ -1,0 +1,52 @@
+name: World r2 Stage proof
+
+on:
+  push:
+    branches:
+      - wsa/world-r2-stage-prep-2026-09-26
+      - main
+    paths:
+      - 'kfb-hub/stage/world/world-r2/**'
+      - '.github/workflows/world-r2-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact package proof
+        run: node kfb-hub/stage/world/world-r2/package-proof.mjs
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/world/world-r2/runtime/worldbuilder/wb2-design-01/wb2d-app.js
+          node --check kfb-hub/stage/world/world-r2/runtime/worldbuilder/world-integration-01/wi1-world.js
+          node --check kfb-hub/stage/world/world-r2/browser-proof.mjs
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local Stage mirror
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/kfb-world-r2-stage-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/world/world-r2/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-world-r2-stage-http.log
+          exit 1
+      - name: Hürth → Cologne → accepted WB2 browser sequence
+        run: node kfb-hub/stage/world/world-r2/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: world-r2-stage-evidence
+          path: world-r2-stage-proof
+          retention-days: 14
