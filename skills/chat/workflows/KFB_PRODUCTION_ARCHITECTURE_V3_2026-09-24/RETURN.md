@@ -1,3 +1,37 @@
+## CURRENT UPDATE · LOOK-TORSION PASS + NO-PROXY WORKFLOW CORRECTION · 2026-09-27
+
+Status: **ARCHITECTURE PASS ONLY · STANDALONE HUMAN GATE CLOSED · WSA OVERRIDE PERSISTED**
+
+### Human result
+
+- LOOK-TORSION-01 may be retained as a PASS for the underlying geometric torsion mechanism.
+- This is **not** WorldBuilder/look acceptance and does not accept the isolated grey renderer, lighting, shadows, materials or final torsion calibration.
+- Recurring shadow/light defects remain open.
+- Frozen Hürth R2 remains untouched.
+
+### Workflow correction
+
+Georg explicitly rejects the recurring pattern of creating separate low-fidelity pseudo-acceptance sites, measurement UIs or tiny WebGL selector demos for mechanisms that can safely proceed into the real owner/product context.
+
+Binding cross-project policy is now on current main:
+`skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md`
+
+Hard rule for WSA/Web/Claude planning:
+- do not make a ruckly/simplified/unrepresentative proxy a blocking Georg task;
+- known shadow/light bugs invalidate a proxy as meaningful product-look evidence;
+- machine/native QA handles technical invariants;
+- reversible bounded mechanisms proceed to the real owner surface;
+- reserve human gates for integrated visual/play/irreversible decisions;
+- optimize for integrated usable capabilities per Georg attention, not review-page count.
+
+### Routing consequence
+
+- Architecture catalog: LOOK-TORSION-01 moved out of WorldBuilder `currentReady` and marked `CLOSED_PASS / PASS_ARCHITECTURE_ONLY`.
+- No further standalone torsion review page.
+- Next meaningful torsion evaluation occurs in the next clean/current WorldBuilder/world-presentation candidate with the real scene/camera and shared shadow/lighting corrections.
+- No automatic merge or Live promotion.
+
+---
 ## CURRENT UPDATE · BL-OSM-CLAY-01 PREP + HUB REGISTRATION · 2026-09-26
 
 Status: **READY · BLENDER MCP BRIEF PREPARED · HUB SELF-SERVICE REGISTERED · NO RUNTIME/STAGE PROMOTION**
