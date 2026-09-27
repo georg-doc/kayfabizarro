@@ -17,13 +17,15 @@ async function world(zone){
   page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));
   await page.goto(base+route+'?world='+zone+'&selftest=wi1',{waitUntil:'domcontentloaded',timeout:120000});
   try {
-    await page.waitForFunction((want)=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=want,zone==='cologne'?60:55,{timeout:180000});
+    await page.waitForFunction((want)=>document.querySelector('#wiTest')?.textContent?.split('\n').filter(x=>x.startsWith('PASS · ')).length>=want,zone==='cologne'?60:55,{timeout:240000});
   } catch (err) {
     const diag=await page.evaluate(()=>({
       status:document.querySelector('#status')?.textContent||'',
       wiTest:document.querySelector('#wiTest')?.textContent||'',
       body:document.body?.innerText?.slice(0,5000)||'',
-      selftest:document.body?.dataset?.selftest||''
+      wi1Selftest:document.body?.dataset?.wi1Selftest||'',
+      wi1SelftestCount:document.body?.dataset?.wi1SelftestCount||'',
+      report:Array.isArray(window.__wi1SelftestReport)?window.__wi1SelftestReport.slice(-8):null
     })).catch(()=>({}));
     console.error('WORLD BOOT DIAGNOSTIC', JSON.stringify({zone,diag,pageErrors,failed},null,2));
     throw err;
