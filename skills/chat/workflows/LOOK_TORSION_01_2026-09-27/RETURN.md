@@ -1,6 +1,6 @@
 # LOOK-TORSION-01 · RETURN
 
-Status: **PUBLIC_VERIFIED · HUMAN VISUAL GATE PENDING**  
+Status: **HUMAN PASS · ARCHITECTURE MECHANISM ONLY · NOT WORLD/LOOK ACCEPTANCE**  
 Date: 2026-09-27
 
 ## Exact handoff
@@ -128,14 +128,25 @@ Hub/Stage mirror carried on the PR branch:
 
 The generated HUB-CTRL root `kfb-hub/index.html` was deliberately not hand-edited because HUB-CTRL remains its separate current owner. The human Stage directory is current and publicly verified.
 
+## Human result · 2026-09-27
+
+Georg records the torsion mechanism as **PASS for architecture/implementation evidence only**.
+
+This does **not** accept the standalone grey rendering as a KFB look target, does not accept its lighting/shadow rendering and does not establish 9.5° as a final WorldBuilder calibration. Known recurring shadow/light defects remain open.
+
+The separate pseudo-acceptance-site workflow is explicitly rejected as a production default. See `HUMAN_RESULT_2026-09-27.md`.
+
 ## Unresolved
 
-No engineering/publication blocker remains.
+No engineering/publication blocker remains for the torsion mechanism.
 
-Human judgment remains open: whether the A/B/C delta restores the desired bent/twisted 90s-cartoon read, and whether 9.5° is the right hero calibration versus a TUNE within the exposed range.
+Open product work belongs in the real receiving context:
+- shared shadow/light rendering defects remain unresolved;
+- final torsion calibration remains contextual rather than universal;
+- no WorldBuilder/world-look acceptance is implied by this isolated proof.
 
 ## Exactly one next gate
 
-**Georg opens the direct Stage, compares A → B → C, exercises 2.6° / 9.5° / 11° / 13.2° and returns PASS / TUNE / FAIL for the geometric torsion direction.**
+**Carry the proven torsion mechanism into the next clean/current WorldBuilder or world-presentation candidate and judge it there together with the real scene, camera and shared shadow/lighting corrections.**
 
-Do not merge PR #245, patch frozen Hürth R2 or promote Live before that human gate.
+Do not create another standalone torsion review site and do not patch frozen Hürth R2. No merge or Live promotion follows automatically.
