@@ -30,6 +30,10 @@ export const ZONES = {
 };
 const OPT = K + 'tools/KFB-ToolBox/_inbox/KFB%20Cologne%20Race%20Option%20C-2/lab-v9/';
 const TILE = { size: 192, seg: 384 };   // editable terrain tile · 0.5 m vertex spacing · centred on the spawn · carries the 4.7 cm/px ground map
+const PLAYABILITY_PROFILE = window.__wb2dProps?.playabilityProfile || '';
+const PLAYABILITY_R1 = /^R[1-9]/.test(PLAYABILITY_PROFILE);
+const CITY_LOD_R3 = /^R[3-9]/.test(PLAYABILITY_PROFILE);
+const GROUND_MAP_PX = PLAYABILITY_R1 ? 2048 : 4096;
 
 async function imp(url) {
   try { return await import(url); } catch (e1) {
@@ -94,7 +98,7 @@ export async function prepare(id) {
   const zone = await SEAM.loadZone({ kind: 'frozen-fixture', url: ROOT + Z.fixture });
   const fp = footprintIndex(zone);
   const spawn = findSpawn(zone, fp);
-  const tile = { cx: Math.round(spawn.x), cz: Math.round(spawn.z), size: TILE.size, seg: TILE.seg };
+  const tile = { cx: Math.round(spawn.x), cz: Math.round(spawn.z), size: TILE.size, seg: PLAYABILITY_R1 ? 192 : TILE.seg };
   return makeWorld({ id, Z, SEAM, zone, fp, spawn, tile });
 }
 
@@ -174,7 +178,7 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
       controls.zoomToCursor = true; controls.screenSpacePanning = true;
       fog.near = 140; fog.far = 1100;
       S.sun = sun; S.sunDir = sun.position.clone().normalize();
-      sun.shadow.mapSize.set(4096, 4096); S.shHalf = 0;
+      sun.shadow.mapSize.set(PLAYABILITY_R1 ? 2048 : 4096, PLAYABILITY_R1 ? 2048 : 4096); S.shHalf = 0;
       Object.assign(sun.shadow.camera, { left: -34, right: 34, top: 34, bottom: -34, near: 1, far: 260 });
       /* contact shadow (WB-D1 fix, again): a large bias/normalBias lifts the shadow off the contact → light gap under
          rocks and feet. Texel 68 m / 4096 = 1.7 cm → normalBias ≈ 1 texel, tiny depth bias. */
@@ -206,7 +210,7 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
           S.LMK = LMK;
         } catch (e) { log('landmarks unavailable · ' + e.message + ' · landmark OSM parts stay as plain bases'); LMS = []; }
       }
-      S.city = CITY.buildCityLayer(zone, { mode: 'elastic', style, CC, EG, ghosts: false, renderer, facade: 'rule-v1', extraBase });
+      S.city = CITY.buildCityLayer(zone, { mode: 'elastic', style, CC, EG, ghosts: false, renderer, facade: 'rule-v1', extraBase, lod: CITY_LOD_R3 ? { enabled: true, chunkSizeM: 96, nearM: 120, farM: 150 } : null });
       if (LMS.length) {
         const g = new THREE.Group(); g.name = 'landmarks (protected owners · wd1-landmark)';
         S.landmarks = [];
@@ -223,11 +227,12 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
       S.city.group.position.y = -Ly.plate;               // plate level = WB2 terrain zero
       S.city.group.name = 'world-zone:' + zone.id;
       scene.add(S.city.group);
+      if (S.city.lod) { const lr = S.city.lod.update(new THREE.Vector3(spawn.x, 0, spawn.z)); log('city LOD · ' + lr.near + ' near / ' + lr.far + ' far chunks · ' + lr.nearM + '–' + lr.farM + ' m hysteresis'); }
       S.map = S.city.plate.material.map;
       /* walkable tile: the SAME ground-map drawing, for the tile rect only, at 4096 px → 3 cm/px */
       const h = tile.size / 2;
       S.tileRect = { minX: tile.cx - h, maxX: tile.cx + h, minZ: tile.cz - h, maxZ: tile.cz + h };
-      if (CITY.groundMapFor) { S.tileMap = CITY.groundMapFor(zone, { style, renderer, rect: S.tileRect, px: 4096 }).tex; log('tile ground map · 4096 px over ' + tile.size + ' m · ' + (tile.size / 4096 * 100).toFixed(1) + ' cm/px (zone map 17 cm/px)'); }
+      if (CITY.groundMapFor) { S.tileMap = CITY.groundMapFor(zone, { style, renderer, rect: S.tileRect, px: GROUND_MAP_PX }).tex; log('tile ground map · ' + GROUND_MAP_PX + ' px over ' + tile.size + ' m · ' + (tile.size / GROUND_MAP_PX * 100).toFixed(1) + ' cm/px · ' + (PLAYABILITY_R1 ? 'playability profile' : 'authoring profile')); }
       await W.setSky(W.skyMode);
       /* the plate keeps its material; its geometry gets a hole where the WB2 tile carries the map */
       const R = zone.rectW, Wd = R.maxX - R.minX, Dp = R.maxZ - R.minZ, m = 0.5;
@@ -301,6 +306,7 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
     },
 
     tick(focus, camera) {
+      if (S.city && S.city.lod && focus) S.city.lod.update(focus);
       if (S.names) S.names.update(camera);
       if (S.sky) { S.sky.update(camera); if (S.sky.background && S.scene.background !== S.sky.background) S.scene.background = S.sky.background; }
       if (S.fog && W.controls) { const d = camera.position.distanceTo(W.controls.target); S.fog.near = Math.max(140, d * 0.9); S.fog.far = Math.max(1100, d * 3.5); }

@@ -33,21 +33,27 @@ body[data-m1-ready="true"] #top,body[data-m1-ready="true"] #dock,body[data-m1-re
 <script type="importmap">
 {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","@dimforge/rapier3d-compat/rapier.es.js":"https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.17.3/rapier.es.js"}}
 </script>
-<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false});</script>
+<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false,playabilityProfile:'R4',maxPixelRatio:.86,walkCadence:1.75,paceUpAfter:.55,walkAccel:5,walkDecel:7.5});</script>
 </head>
 <body data-kfb-stage="WORLD-DRIVE-INTERACT-M2A" data-kfb-source-head="M2A_WORK_CANDIDATE">
 <script type="module">
-await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js');
+const bootStartedAt=performance.now();
+await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability-r4');
 const app=window.__wb2d;
-const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi}]=await Promise.all([
-  import('./clay-world-m1.mjs'),import('./world-mobility-m1.mjs'),import('./world-mobility-ui.mjs')
+const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4}]=await Promise.all([
+  import('./clay-world-m1.mjs?r4=distance-budget'),import('./world-mobility-m1.mjs?r1=playability2'),import('./world-mobility-ui.mjs'),import('./adaptive-quality-r4.mjs')
 ]);
 const clay=await mountClayWorld(app);
 app.setPlay(true);
 const mobility=await mountWorldMobility(app);
+const quality=mountAdaptiveQualityR4({app,mobility});
 const ui=mountWorldMobilityUi({app,clay,mobility});
-window.__worldDriveM2A={app,clay,mobility,ui,report:()=>({schema:'kfb.world-drive-interact-m2a-stage/1',source:{worldM1:'40037597485436e185f129091be908786925341d',raceDrive:'406cd26f44f22811fe3b3a58776839be7ffb7b2c',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report()})};
+window.__worldDriveM2A={app,clay,mobility,quality,ui,report:()=>({schema:'kfb.world-drive-interact-m2a-stage/1',source:{worldM1:'40037597485436e185f129091be908786925341d',raceDrive:'406cd26f44f22811fe3b3a58776839be7ffb7b2c',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report(),quality:quality.report()})};
 document.body.dataset.m1Ready='true';
+if(new URLSearchParams(location.search).get('measure')==='1'){
+  const {mountPerfProbe}=await import('./perf-probe.mjs?r4=adaptive-quality');
+  mountPerfProbe({app,mobility,quality,bootStartedAt});
+}
 </script>
 </body>
 </html>

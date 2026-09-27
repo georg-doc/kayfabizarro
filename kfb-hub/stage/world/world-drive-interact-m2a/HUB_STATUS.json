@@ -1,12 +1,26 @@
 {
   "schema": "kfb.hub-stage-candidate/1",
   "id": "WORLD-DRIVE-INTERACT-M2A",
-  "title": "World M2A · Zu Fuß + Auto + Flug",
+  "title": "World M2A · R4 Performance-Ziel erreicht · freier Test folgt",
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
-  "sourceBranch": "work/world-drive-interact-m2a-2026-09-27",
-  "implementationHead": "c59cd460f57b0129157722d4ab3a0eeab22978aa",
-  "visibility": "SOURCE_CANDIDATE",
-  "reviewState": "LOCAL_BROWSER_PASS_34_OF_34__CLAY_DEFAULT__PUBLIC_NOT_PUBLISHED",
-  "completed": ["E enter/exit", "proven vehicle", "real wheel contact", "World building collision", "Ground/Drive/Flight owner handoff", "desktop and narrow browser proof"],
-  "next": "Publish exact candidate to the fixed Stage route and perform Georg free-play. Track Core remains a separate WAITING_SOURCE M2B."
+  "sourceBranch": "work/world-m2a-adaptive-quality-r4-2026-09-27",
+  "implementationHead": "1d803d177789fa834c5165fe36caa12fc26fe7c7",
+  "publicationHead": "afc5841abcb6ce057080618ab4aba36a4831bf3a",
+  "visibility": "PUBLIC_STAGE_FAILURE_EVIDENCE",
+  "reviewState": "R4_PERFORMANCE_PASS__PUBLICATION_PENDING",
+  "automatedEvidence": [
+    "R4 package 26/26",
+    "R4 local browser 38/38",
+    "Idle/Walk/Drive p95 16.7/16.7/16.7 ms",
+    "0 page/request/HTTP errors; quality transition guard PASS"
+  ],
+  "coreBlockers": [
+    "human free-play still required for movement feel and image sharpness",
+    "incorrect movement animation/state timing remains a separate tune",
+    "vehicle visual stance/seat still needs human review"
+  ],
+  "deferred": [
+    "boulder/prop shadow and bright-edge artifact"
+  ],
+  "next": "Publish the measured R4 candidate to the fixed Stage and run one human free-play; then FACADE-DONOR-01 for real instanced facade parts."
 }

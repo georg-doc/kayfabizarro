@@ -309,7 +309,7 @@ export function makeClayMaterial(THREE, U, { src = null, color = null, role = 'w
       m.normalMap = src.normalMap;
       m.normalScale.copy(src.normalScale).multiplyScalar(0.45); // multiplizieren, nie setScalar
     }
-    m.transparent = !!src.transparent; m.opacity = src.opacity ?? 1; m.alphaTest = src.alphaTest || 0;
+    m.transparent = !!src.transparent; m.opacity = src.opacity ?? 1; m.alphaTest = src.alphaTest || 0; m.visible = src.visible !== false;
     m.side = src.side;
     m.name = 'clay:' + (src.name || '');
   }
@@ -374,4 +374,3 @@ export async function makePrintTexture(THREE, url, size = 2048) {
   t.generateMipmaps = true; t.needsUpdate = true;
   return t;
 }
-

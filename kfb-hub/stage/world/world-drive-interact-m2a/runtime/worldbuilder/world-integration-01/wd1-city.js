@@ -370,8 +370,11 @@ function makeSupport(out, recs) {
         maxSpan = Math.max(maxSpan, hi - lo);
         const dy = lo - r.y; if (Math.abs(dy) < 1e-4) continue;
         shift(out.blocks, r.walls[0], r.walls[1], dy); shift(out.roofs, r.roof[0], r.roof[1], dy);
-        for (const [k, s, c] of r.det) shift(out.detailMeshes && out.detailMeshes[k], s, c, dy);
-        touched.add(out.blocks); touched.add(out.roofs); for (const [k] of r.det) if (out.detailMeshes && out.detailMeshes[k]) touched.add(out.detailMeshes[k]);
+        const detailMeshes = r.detailMeshes || out.detailMeshes;
+        for (const [k, s, c] of r.det) shift(detailMeshes && detailMeshes[k], s, c, dy);
+        if (r.shell && r.shellMesh) shift(r.shellMesh, r.shell[0], r.shell[1], dy);
+        touched.add(out.blocks); touched.add(out.roofs); touched.add(r.shellMesh);
+        for (const [k] of r.det) if (detailMeshes && detailMeshes[k]) touched.add(detailMeshes[k]);
         r.y = lo; moved++; maxAbs = Math.max(maxAbs, Math.abs(lo));
       }
       for (const m of touched) if (m) { m.geometry.attributes.position.needsUpdate = true; m.geometry.computeBoundingSphere(); m.geometry.computeBoundingBox(); }
@@ -379,7 +382,7 @@ function makeSupport(out, recs) {
     }
   };
 }
-export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts = true, renderer = null, extraBase = new Set(), facade = 'rule-v1' }) {
+export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts = true, renderer = null, extraBase = new Set(), facade = 'rule-v1', lod = null }) {
   const group = new THREE.Group(); group.name = 'city:' + mode;
   const Ly = layersFrom(style), clean = mode === 'clean', E = ELASTIC_PALETTE;
   const stats = { buildings: 0, base: 0, base2: 0, ghosts: 0, flatRoofRouted: 0, details: 0, roadParts: 0, tunnelsSkipped: 0, roadsByTier: {}, facade: { rule: facade === 'owner' ? 'owner protectedDetails()' : FACADE_RULE.id, doors: 0, garageDoors: 0, windows: 0, edges: 0, partyEdges: 0, streetDoors: 0, capped: 0, bare: 0, fallback: 0 } };
@@ -474,6 +477,21 @@ export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts =
   const lmFp = zone.landmark ? zone.landmark.footprint : null;
   const buckets = { blocks: [], roofs: [], base: [], base2: [], ghost: [] };
   const details = { window: new Map(), door: new Map() };
+  const LOD = !clean && lod && lod.enabled ? {
+    chunkSize: lod.chunkSizeM || 96,
+    nearM: lod.nearM || 120,
+    farM: Math.max(lod.farM || 150, (lod.nearM || 120) + 8),
+    chunks: new Map()
+  } : null;
+  const chunkFor = (fp) => {
+    let x = 0, z = 0; for (const p of fp) { x += p.x; z += p.z; } x /= fp.length; z /= fp.length;
+    const ix = Math.floor(x / LOD.chunkSize), iz = Math.floor(z / LOD.chunkSize), key = ix + ':' + iz;
+    if (!LOD.chunks.has(key)) LOD.chunks.set(key, {
+      key, x: (ix + 0.5) * LOD.chunkSize, z: (iz + 0.5) * LOD.chunkSize,
+      records: [], shells: [], shellVC: 0, details: { window: new Map(), door: new Map() }, near: null
+    });
+    return LOD.chunks.get(key);
+  };
   const colorSlot = (arr, id, salt) => arr[CC.stableHash(E.id + ':' + salt + ':' + id) % arr.length];
   const tint = (g, hex) => { const c = new THREE.Color(hex), n = g.attributes.position.count, a = new Float32Array(n * 3); for (let i = 0; i < n; i++) { a[i * 3] = c.r; a[i * 3 + 1] = c.g; a[i * 3 + 2] = c.b; } g.setAttribute('color', new THREE.BufferAttribute(a, 3)); if (g.attributes.uv) g.deleteAttribute('uv'); return g; };
   const anchor = zone.landmark ? zone.landmark.centroid : { x: (R.minX + R.maxX) / 2, z: (R.minZ + R.maxZ) / 2 };
@@ -512,23 +530,37 @@ export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts =
       if (b.minH) { sg.translate(0, b.minH, 0); rg.translate(0, b.minH, 0); }
       if (role === 'base' || role === 'base2') { buckets[role].push(sg, rg); }
       else {
+        const chunk = LOD ? chunkFor(r) : null;
         /* support record (r2): vertex ranges of this building inside the merged meshes → host terrain support */
-        const rec = { id: b.id, fp: r, y: 0, grounded: !b.minH, walls: [vc.walls, sg.attributes.position.count], roof: [vc.roofs, rg.attributes.position.count], det: [] };
+        const rec = { id: b.id, fp: r, y: 0, grounded: !b.minH, walls: [vc.walls, sg.attributes.position.count], roof: [vc.roofs, rg.attributes.position.count], det: [], wallGroup: buckets.blocks.length, roofGroup: buckets.roofs.length, chunkKey: chunk && chunk.key };
         vc.walls += sg.attributes.position.count; vc.roofs += rg.attributes.position.count; supportRecs.push(rec);
         buckets.blocks.push(sg); buckets.roofs.push(rg);
+        if (chunk) {
+          let far;
+          try { far = new THREE.ExtrudeGeometry(new THREE.Shape(r.map((p) => new THREE.Vector2(p.x, -p.z))), { depth: h, steps: 1, bevelEnabled: false }); }
+          catch { far = null; }
+          if (far) {
+            far.rotateX(-Math.PI / 2); far.translate(0, b.minH || 0, 0);
+            const N = far.attributes.normal, wallC = new THREE.Color(colorSlot(E.walls, b.id, 'wall')), roofC = new THREE.Color(colorSlot(E.roofs, b.id, 'roof')), ca = new Float32Array(N.count * 3);
+            for (let i = 0; i < N.count; i++) { const c = Math.abs(N.getY(i)) > 0.7 ? roofC : wallC; ca[i * 3] = c.r; ca[i * 3 + 1] = c.g; ca[i * 3 + 2] = c.b; }
+            far.setAttribute('color', new THREE.BufferAttribute(ca, 3)); if (far.attributes.uv) far.deleteAttribute('uv');
+            rec.shell = [chunk.shellVC, far.attributes.position.count]; chunk.shellVC += far.attributes.position.count; chunk.shells.push(far);
+          }
+          chunk.records.push(rec);
+        }
         const wc = colorSlot(E.windows, b.id, 'window'), dc = colorSlot(E.doors, b.id, 'door');
         let list;
         if (FX) list = facadeSpecs(EG, CC, { ...src, kind: b.kind }, shell, FX, stats.facade);
         else { const SP = detailSpecs(EG, CC, src, shell); list = SP.list.map((d) => ({ S: SP, d })); for (const q of list) stats.facade[q.d.kind === 'door' ? 'doors' : 'windows']++; }
         if (!list.length) stats.facade.bare++;
-        for (const { S: SP, d } of list) { const kind = d.kind === 'window' ? 'window' : 'door', map = details[kind], key = d.kind === 'window' ? wc : dc; if (!map.has(key)) map.set(key, { P: [], I: [] }); const acc = map.get(key), v0 = acc.P.length / 3; conformDetail(EG, SP, d, b.minH || 0, acc.P, acc.I); rec.det.push([kind + ':' + key, v0, acc.P.length / 3 - v0]); stats.details++; }
+        for (const { S: SP, d } of list) { const kind = d.kind === 'window' ? 'window' : 'door', map = (chunk ? chunk.details : details)[kind], key = d.kind === 'window' ? wc : dc; if (!map.has(key)) map.set(key, { P: [], I: [] }); const acc = map.get(key), v0 = acc.P.length / 3; conformDetail(EG, SP, d, b.minH || 0, acc.P, acc.I); rec.det.push([kind + ':' + key, v0, acc.P.length / 3 - v0]); stats.details++; }
       }
     }
     stats[role === 'blocks' ? 'buildings' : role === 'ghost' ? 'ghosts' : role]++;
   }
   /* shadowSide Back: gegen Schatten-Akne (Streifen) auf gewölbten Dächern bei streifendem Licht */
   const mat = (rough) => new THREE.MeshStandardMaterial({ vertexColors: true, roughness: rough, metalness: 0, flatShading: clean, side: THREE.FrontSide, shadowSide: THREE.BackSide });
-  const add = (list, m, name, shadow = true) => { if (!list.length) return null; const mesh = new THREE.Mesh(mergeGeometries(list), m); mesh.name = name; mesh.castShadow = shadow; mesh.receiveShadow = true; group.add(mesh); return mesh; };
+  const add = (list, m, name, shadow = true, groups = false) => { if (!list.length) return null; const mesh = new THREE.Mesh(mergeGeometries(list, groups), m); mesh.name = name; mesh.castShadow = shadow; mesh.receiveShadow = true; group.add(mesh); return mesh; };
   /* Sockel (Georg 25.09.: „heller Schein unter den Häusern“): die unterste Wandreihe 0,6 m unter die Bodenplatte
      ziehen — kein Spalt, durch den Licht unter die Schale fällt, egal wo die Verformung den Fuß hinlegt.
      Erst nach dem Fassadendurchlauf, der die Schale unverändert liest. */
@@ -538,8 +570,9 @@ export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts =
     for (let i = 0; i < p.count; i++) if (p.getY(i) < lo + 0.02) p.setY(i, lo - 0.6);
     stats.sunkBases = (stats.sunkBases || 0) + 1;
   }
-  out.blocks = add(buckets.blocks, mat(clean ? 0.95 : 0.975), clean ? 'buildings-clean' : 'ElasticGrotesqueClayV2:walls');
-  out.roofs = add(buckets.roofs, mat(0.98), 'ElasticGrotesqueClayV2:roofs');
+  const hidden = new THREE.MeshBasicMaterial({ visible: false, colorWrite: false, depthWrite: false }); hidden.name = 'city-lod-hidden';
+  out.blocks = add(buckets.blocks, LOD ? [mat(0.975), hidden] : mat(clean ? 0.95 : 0.975), clean ? 'buildings-clean' : 'ElasticGrotesqueClayV2:walls', true, !!LOD);
+  out.roofs = add(buckets.roofs, LOD ? [mat(0.98), hidden] : mat(0.98), 'ElasticGrotesqueClayV2:roofs', true, !!LOD);
   out.base = add(buckets.base, mat(0.95), 'landmark-base:procedural (OSM parts inside ' + (zone.landmark ? zone.landmark.id : '—') + ')');
   out.base2 = add(buckets.base2, mat(0.95), 'landmark-base:procedural (OSM parts under the Hbf hall)');
   if (buckets.ghost.length) {
@@ -547,13 +580,27 @@ export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts =
     out.ghost.name = 'track-socket-conflicts (deferred to WORLD-ZONE-BAKE-01)'; out.ghost.renderOrder = 5; out.ghost.visible = !!ghosts; group.add(out.ghost);
   }
   if (!clean) {
-    const dg = new THREE.Group(); dg.name = 'protectedDetails (conformed to shell)';
-    out.detailMeshes = {};
-    for (const [kind, map] of Object.entries(details)) for (const [hex, acc] of map) {
-      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(acc.P, 3)); g.setIndex(acc.I); g.computeVertexNormals();
-      const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: hex, roughness: kind === 'window' ? 0.86 : 0.96, metalness: 0, side: THREE.DoubleSide }));
-      m.name = kind; m.receiveShadow = true; dg.add(m); out.detailMeshes[kind + ':' + hex] = m;
-    }
+    const makeDetails = (store, parent, meshMap) => {
+      for (const [kind, map] of Object.entries(store)) for (const [hex, acc] of map) {
+        const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(acc.P, 3)); g.setIndex(acc.I); g.computeVertexNormals();
+        const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: hex, roughness: kind === 'window' ? 0.86 : 0.96, metalness: 0, side: THREE.DoubleSide }));
+        m.name = kind; m.receiveShadow = true; parent.add(m); meshMap[kind + ':' + hex] = m;
+      }
+    };
+    const dg = new THREE.Group(); dg.name = 'protectedDetails (near chunks only; donor seam)'; out.detailMeshes = {};
+    if (LOD) {
+      const shells = new THREE.Group(); shells.name = 'city-far-shells (OSM footprint + source height)';
+      for (const chunk of LOD.chunks.values()) {
+        chunk.detailGroup = new THREE.Group(); chunk.detailGroup.name = 'facade-near:' + chunk.key; chunk.detailMeshes = {};
+        makeDetails(chunk.details, chunk.detailGroup, chunk.detailMeshes); dg.add(chunk.detailGroup);
+        for (const rec of chunk.records) rec.detailMeshes = chunk.detailMeshes;
+        if (chunk.shells.length) {
+          chunk.shellMesh = new THREE.Mesh(mergeGeometries(chunk.shells), mat(0.99)); chunk.shellMesh.name = 'far-shell:' + chunk.key; chunk.shellMesh.receiveShadow = true; chunk.shellMesh.castShadow = false; shells.add(chunk.shellMesh);
+          for (const rec of chunk.records) rec.shellMesh = chunk.shellMesh;
+        }
+      }
+      group.add(shells); out.shells = shells;
+    } else makeDetails(details, dg, out.detailMeshes);
     group.add(dg); out.details = dg;
   }
   /* Zonenrand */
@@ -566,6 +613,25 @@ export function buildCityLayer(zone, { mode = 'elastic', style, CC, EG, ghosts =
     lg.name = 'landmark-footprint ' + zone.landmark.id; group.add(lg);
   }
   out.rails = railGroup;
+  if (LOD) {
+    const setGroup = (mesh, index, materialIndex) => { const g = mesh && mesh.geometry.groups[index]; if (g) g.materialIndex = materialIndex; };
+    out.lod = {
+      profile: 'CITY_SHELL_LOD_R3', chunkSizeM: LOD.chunkSize, nearM: LOD.nearM, farM: LOD.farM,
+      update(focus) {
+        if (!focus) return this.report();
+        for (const chunk of LOD.chunks.values()) {
+          const d = Math.hypot(focus.x - chunk.x, focus.z - chunk.z), near = chunk.near == null ? d < LOD.nearM : chunk.near ? d <= LOD.farM : d < LOD.nearM;
+          if (near === chunk.near) continue; chunk.near = near;
+          if (chunk.shellMesh) chunk.shellMesh.visible = !near;
+          if (chunk.detailGroup) chunk.detailGroup.visible = near;
+          for (const rec of chunk.records) { setGroup(out.blocks, rec.wallGroup, near ? 0 : 1); setGroup(out.roofs, rec.roofGroup, near ? 0 : 1); }
+        }
+        return this.report();
+      },
+      report() { let near = 0, far = 0; for (const c of LOD.chunks.values()) c.near ? near++ : far++; return { profile: this.profile, chunks: LOD.chunks.size, near, far, nearM: LOD.nearM, farM: LOD.farM }; }
+    };
+    stats.lod = out.lod.report();
+  }
   out.support = makeSupport(out, supportRecs);
   out.flatParts = [plate, out.edge, out.ghost, railGroup, ...out.waters.map((f) => f.mesh)].filter(Boolean);
   return out;
