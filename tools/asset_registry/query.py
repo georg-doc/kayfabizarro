@@ -146,6 +146,9 @@ def compact_record(record: dict) -> dict:
         "collectionPath": record.get("collectionPath"),
         "dependencyStatus": record.get("dependencyStatus"),
         "source": record.get("source"),
+        "license": record.get("license"),
+        "rightsEvidence": record.get("rightsEvidence"),
+        "tags": record.get("tags"),
         "rigFacts": rig or None,
     }
 
