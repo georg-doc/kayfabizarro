@@ -1,3 +1,14 @@
+## 2026-09-27 · Track Core clay edge / runoff / connector design expansion
+
+- Advanced the Track Core router from the old TRACK-CORE-0 planning gate to the current PR #219 lane carrying W0 through S8 Tunnels.
+- Georg's continuation instruction is recorded as a PROCEED PASS for the **design lane**, not exhaustive acceptance of S8 tuning.
+- Expanded the existing S4 / TRACK-CORE-2 Claude Design brief into one source-first clay boundary/runoff/socket system covering OSM streets, classic race kerbs/barriers/guardrails/fences, asphalt/grass/gravel/sand runoff, dirt shoulders/ditches/berms, stunt transitions, bridge/parapet, tunnel portal/service edges and future source-pinned Cosmic Highway.
+- Pinned donor families from the KFB Registry: Kenney Racing, Kenney City Roads, Kenney Toy Car, KayKit City Builder Bits / measured Road Network S5, Tiny Treats Homely House, Kenney Platformer; donor isolation remains mandatory.
+- Georg's Kabelbett example is retained as visual connector precedent. No unverified file path was invented; Track Core CONNECT/socket state remains implementation truth.
+- No runtime, Blender, browser, Stage or Live claim was introduced; no new Hub human gate was manufactured.
+
+**Next productive gate:** Claude Design isolates the selected donors, then produces the edge/runoff atlas, connector transition matrix and 2–3 clay look options on the existing Track Core.
+
 ## 2026-09-26 · Track Core transition research + explicit agent ladder
 
 - Reviewed `tools/KFB-ToolBox/_inbox/KFB Race Track Baukasten TBD perplexity 01.md`.
