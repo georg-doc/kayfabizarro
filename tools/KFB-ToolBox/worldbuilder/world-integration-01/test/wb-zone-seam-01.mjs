@@ -6,6 +6,7 @@ const PIN='3b4909d4c83b704662e66b60212e7f20ba5cf662';
 const MANIFEST='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+PIN+'/tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/MANIFEST.json';
 const FIXTURE='tools/KFB-ToolBox/worldbuilder/world-integration-01/fixtures/cologne-dom-crop-v0.json';
 const fx=JSON.parse(fs.readFileSync(FIXTURE,'utf8'));
+assert.equal(fx.counts.buildings,369,'frozen Cologne fixture pins 369 buildings');
 const requests=[];
 const nativeFetch=globalThis.fetch;
 globalThis.fetch=async(url,opts)=>{requests.push(String(url));return nativeFetch(url,opts);};
