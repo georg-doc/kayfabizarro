@@ -481,3 +481,20 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+# 2026-09-27 · World Mobility M1 + ToolBox Recovery-01 source sync
+
+- WORLD-FLIGHT-CLAY-C0 decision converted into execution state: World/Clay remains `PROCEED PASS`; rejected track proxy and temporary flight adapter are no longer presented as Georg review work.
+- Added PR #249 / `WORLD-MOBILITY-M1` as the current productive World lane: real World Ground owner + accepted Travel router/400-ms intent/actual Card Carrier, 40/40 package and 40/40 local browser PASS.
+- Added paste-ready `WORLD-TRACK-CORE-M2` brief for the next real Race Track Core integration; explicitly forbids another visual proxy or second Track/Drive owner.
+- Routed the 2026-09-27 ToolBox Production-02 session cut into `RECOVERY-01`: feature parity first, one source-backed restoration, no new UI shell.
+- Public Domain Pool corrected from stale RUNNING to `MERGED · PUBLIC_VERIFIED · LIVE REGISTRY VERIFIED`; no bulk import.
+- World r2 technical review card closed as a Georg task; it remains the consumed foundation.
+- Masterplan now shows **no current Georg task** for these production lanes.
+- Source/config/briefing sync only: no generated Hub root, registry, Cloudflare publication, merge or Live claim in this checkpoint.
+
+## H0 Hirnwelt style decision
+
+- Accepted `KFB_CLAYMATION_H0_HIRNWELT_2026-09-27` as the current KlayfaBizarro visual donor.
+- Chose H0 option **D2** for the production line: transfer the actual soften/material/relief modules into the World/Track consumer.
+- M2 now includes one complete clay city cell with three relief scales, softened KayKit facades, jointed bright curbs, sidewalk, green/entrance transitions and clay road markings.
+- H0/H1 and Knet-Medizin remain separate sidequests; no 40-second runtime soften pass will be accepted as the production path.

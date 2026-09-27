@@ -6,111 +6,118 @@ Owner: Georg / KFB · execution routing by WSA Work Lead
 
 ## North Star
 
-The world is a toy that reacts, lives, breathes and pulses.
+Die Welt ist ein Spielzeug, das reagiert, lebt, atmet und pulsiert.
 
-The next useful result is not another catalog, dashboard or isolated proof. It is one playable world slice in which Georg can:
+Der nächste Fortschritt wird an **spielbaren Zuständen** gemessen, nicht an der Zahl von Briefings, Tabellen oder Human Gates.
 
-1. enter the accepted world;
-2. switch between walking and flight;
-3. judge terrain, an OSM corridor and one placed race-track module from the air and ground;
-4. switch Original / Clay;
-5. see whether clay terrain, road, sidewalk and buildings form one coherent production direction;
-6. return without losing the world state.
+## Aktueller Stand
 
-## One production line
+### Erledigt · World/Clay C0
 
-### 1 · NOW · WORLD-FLIGHT-CLAY-C0
+- Hürth-Welt und Clay-Richtung: **Georg PROCEED PASS**.
+- Der gefaltete ST01-Dummy, der alte Dauer-`jump.air`-Flug und das damalige Ground-/Jump-Feel sind ausdrücklich keine Produktbasis.
+- C0 bleibt technische Historie, nicht die neue Mobility-Baseline.
 
-**Executor:** Work · Sol High.  
-**Why Work:** this joins existing World, Travel-flight, OSM and Track owners inside one runtime. Claude Design must not own that integration.
+### Produktiver Kandidat · WORLD-MOBILITY-M1
 
-Smallest playable result:
+**Executor:** Work · Sol High
+**PR:** #249 · `work/world-mobility-m1-2026-09-27@1aa3db0b`
 
-- accepted WB-W0 / World r2 foundation;
-- one source-locked existing flight donor;
-- WALK / FLIGHT toggle under one camera and movement seam;
-- one OSM-derived corridor used as layout guidance, not sacred final track geometry;
-- one existing track module placed through a measured connector/transform;
-- Original / Clay presentation toggle;
-- clay terrain, road, sidewalk strip, curb-stone row and one building family;
-- direct Stage URL and compact docs icon; no permanent test dashboard in the field of view.
+- gefalteter Track-Dummy entfernt;
+- bestehende World-r2-Bewegung und Bodenlogik bleiben Ground-Owner;
+- erster Space = bestehender World-Sprung;
+- zweiter frischer Space innerhalb von 400 ms = Flight;
+- echter Travel-Card-Carrier statt Ersatz-Flugobjekt;
+- ein Movement-/Camera-Owner pro Modus;
+- Original/Clay reversibel;
+- Paket **40/40**, lokaler Browser Desktop+schmal **40/40 PASS**.
 
-This is the next Work slice. Georg has no required preparatory task.
+Die öffentliche Stage ist noch nicht verändert. Das ist ein interner Veröffentlichungsjob, keine neue Aufgabe für Georg.
 
-### 2 · AFTER C0 PASS · REACTIVE-CLAY-WORLD-R0
+## Genau ein nächster World-Slice
 
-**Executor:** Work · Sol High.  
-**Claude Design:** only isolated motion/look targets.  
-**Blender MCP:** optional measured deformable geometry donor.
+### WORLD-TRACK-CLAY-M2 · echter Track + KlayfaBizarro-Stadtzelle
 
-First bounded reactions:
+**Executor:** Work · Sol High
+**Brief:** `tools/production_desk/briefings/WORLD_TRACK_CORE_M2_2026-09-27.md`
 
-- one recoverable wheel-track/dent on clay road or terrain;
-- one prop/building squash-and-bounce response that returns to its authored transform;
-- one subtle, phase-offset building idle pulse;
-- optional curb/bumper wobble from the same response profile.
+Ziel:
 
-No permanent destruction, no full soft-body simulation and no second physics owner. If the bounded adapter is too expensive, the visual deformation becomes a presentation-only effect driven by the existing collision event.
+- den tatsächlichen Race Track Core als bestehenden Owner konsumieren;
+- genau ein echtes Track-Rezept in Hürth platzieren;
+- Ground/Flight und Original/Clay aus M1 beibehalten;
+- H0 Hirnwelt als Georg-akzeptierten Style-Donor mit den echten Clay-Modulen konsumieren;
+- KayKit-Häuser unverändert als Quellen behalten und ihre weichen/eingedellten Fassaden durch Vorstufe + Relief erzeugen;
+- drei Materialmaßstäbe verwenden: grob für Häuser, mittel für Gelände/Straße/Gehweg, fein für kleine Props/Figuren;
+- eine komplette Stadtzelle aus Knet-Fahrbahn, hellem Fugen-Bordstein, Gehweg, Grünübergang, Hauseingängen und Zebrastreifen bauen;
+- wiederverwendete Geometrie offline/cached vorbereiten statt H0s rund 40 Sekunden Laufzeit-Vorstufe zu übernehmen;
+- OSM als grobe Stadt-/Anschlussarchitektur verwenden;
+- Chill-&-Fun-, Stunt- und Fahrfluss höher gewichten als sklavische Kartentreue;
+- keine Ersatzstrecke und keine neue Fahrphysik.
 
-### 3 · SECOND PLAYABLE MVP · COMBAT-FREEPLAY-C0
+Drive folgt erst, wenn Track- und Vehicle-Owner wirklich angeschlossen sind.
 
-**Executor:** Work · Sol High after the World C0 human gate.
+Mit dieser Entscheidung ist im H0-Export **D2** gewählt. H1 Hirnwelt-Kreuzungen und M1 Knet-Medizin bleiben Sidequests und blockieren die World-Produktion nicht.
 
-The first result is a player-facing freeplay, not another calibration interface:
+## Parallel, aber getrennt
+
+### ToolBox Production-02 · RECOVERY-01
+
+**Executor:** Work · Sol High
+
+Der Session-Cut vom 27.09. ist der Recovery-Startpunkt. Erst wird Feature-Parität zu den alten produktiven Studios hergestellt; danach wird jeweils eine verlorene Funktion source-getreu zurückgebracht. Kein neues Interface, kein Nachbau von Animation Lab v1 aus dem Gedächtnis.
+
+### Rollercoaster v11 · Blender-Donor
+
+**Executor:** Blender MCP
+
+Nur Bewegungs-, Connector- und Kurvenlogik vermessen. Kein zweiter Runtime-Owner.
+
+### Look-/Materialziele
+
+**Executor:** Claude Design
+
+Nur isolierte, visuell beurteilbare Ziele für Clay-Straße, Bürgersteig, Bordstein, Gebäude und spätere Reaktionen. Keine Bewegung, Physik, Kamera oder Integration besitzen.
+
+## Danach
+
+### REACTIVE-CLAY-WORLD-R0
+
+- eine temporäre Reifenspur/Delle;
+- ein Prop-/Gebäude-Squash-and-Bounce mit Rückkehr zum Authoring-Transform;
+- ein sehr leichter, phasenversetzter Gebäude-Idle;
+- instancing-freundlich und event-getrieben, keine globale Soft-Body-Simulation.
+
+### COMBAT-FREEPLAY-C0
 
 - FrizzleBob Driver;
-- one proven Skeleton Warrior;
+- ein bewiesener Skeleton Warrior;
 - Aim → Shoot → Hit → Kill → Reward → Run Clear → Respawn;
-- compact actor choice only for already proven characters;
-- test/debug information behind one docs icon.
+- keine blockierende Testoberfläche;
+- Mage, Legacy, Melee und weitere KayKit-Figuren additiv, nie Kernloop-Blocker.
 
-Legacy and melee remain additive:
+## Aufgabenverteilung
 
-- Legacy readiness exists in Combat PR #10, but human EyeRig acceptance is still a gate;
-- sword/melee exists as a technical candidate in PR #7;
-- axe-specific defects remain quarantined and do not block the MVP;
-- KayKit Medium/Legacy actors enter one at a time after source/eye/weapon proof.
-
-## Authoring roles
-
-| Work type | Correct executor |
+| Arbeit | Richtiger Executor |
 |---|---|
-| World + flight + OSM + track runtime integration | Work · Sol High |
-| Clay material/look target, curb/road/building visual grammar | Claude Design, isolated proof only |
-| Track geometry, Rollercoaster v11 study, connectors and exports | Blender MCP |
-| Source locks, inventories, four-item smoke tests, small docs/adapters | Web Chat |
-| Product/look/play acceptance | Georg |
+| World + Travel + Track + OSM Runtime-Integration | Work · Sol High |
+| schwieriger echter Cross-Repo-Owner-Konflikt nach einem Sol-Pass | Work · Astra |
+| visuelle Clay-/HUD-/Prop-Grammatik | Claude Design, isoliert |
+| Track-Geometrie, Rollercoaster-v11-Vermessung, Blender-Exporte | Blender MCP |
+| kleine Source-Locks, Inventare, vierteilige Smoke-Tests | Web Chat |
+| Produkt-/Look-/Spielurteil | Georg, erst auf echter nutzbarer Oberfläche |
 
-Astra is reserved for a genuinely hard cross-repo failure after one bounded Sol pass. It is not the default.
+## Harte Regeln
 
-## Current evidence retained
+- wiederverwenden, was nachweislich funktioniert;
+- keine zweite World-, Camera-, Movement-, Track- oder ToolBox-Ownership;
+- keine Low-Fidelity-Proxies als Georg-Gate;
+- keine technischen Tabellen als angebliche Produktabnahme;
+- ein einzelner Actor-/Asset-Bug wird quarantiniert, wenn der MVP-Kernloop mit einem bewiesenen Set läuft;
+- Stage erst bei einem sinnvollen spielbaren Meilenstein;
+- Cloudflare-Timeout = UNKNOWN, nicht neuer Rebuild;
+- kein neuer Hub und keine neue ToolBox-Shell.
 
-- WB-W0: Georg PASS.
-- World r2: public technical proof retained.
-- Hürth architecture proofs: TUNE donor, not final world.
-- Rollercoaster v11: active Blender donor study.
-- Billboard B2a/H4: PASS direction; Engine v4+ running.
-- ToolBox Production-02 r2: PASS direction.
-- Public-Domain Pool: bounded Web test running; timeout means UNKNOWN.
-- Combat PR #5: ranged CA2 base.
-- Combat PR #7: sword/melee technical candidate.
-- Combat PR #10: Legacy readiness only.
+## Georgs aktuelle Aufgabe
 
-## Explicit holds
-
-- no new generic world engine;
-- no full-city OSM fidelity before driving/flying feels good;
-- no mass Track/asset import;
-- no soft-body simulation across the whole world;
-- no Mage, axe, Legacy or melee issue may block the minimum ranged Combat loop;
-- no Claude Design rebuild of movement, physics, camera or runtime ownership;
-- no new Hub or ToolBox shell.
-
-## Human gates
-
-Only two near-term gates:
-
-1. **World C0:** Does walking, flight, track placement and the Clay toggle feel like one viable world?
-2. **Combat C0:** Can Georg freely complete the smallest real ranged run without a test interface blocking play?
-
-Everything else is implementation evidence or backlog, not a new Georg task.
+**Keine.** World M1, Track M2 und ToolBox Recovery sind Produktionsjobs. Der nächste sinnvolle Georg-Gate entsteht erst auf einer echten spielbaren Track-in-World-Stage oder einer tatsächlich wiederhergestellten Studio-Funktion.

@@ -1206,3 +1206,19 @@ Exactly one next gate:
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+# CURRENT UPDATE · WORLD MOBILITY M1 + TOOLBOX RECOVERY-01 · 2026-09-27
+
+Status: **SOURCE SYNC COMPLETE · NO GEORG TASK · PUBLIC HUB NOT REBUILT**
+
+- World/Clay direction remains Georg `PROCEED PASS`.
+- New productive World candidate: PR #249, `work/world-mobility-m1-2026-09-27@1aa3db0bff41fcca96c28ba87574b26392cf6ef0`.
+- M1 removes the rejected folded track proxy and integrates the existing World Ground owner with the accepted Travel Ground/Flight router, 400-ms mode intent and actual Card Carrier.
+- Evidence: package 40/40; local desktop+narrow browser 40/40; zero page/console/request/HTTP errors.
+- M1 is not yet publicly staged; no `PUBLIC_VERIFIED` claim.
+- Next World slice is `WORLD-TRACK-CORE-M2`: consume the real Race Track Core; no replacement geometry or second physics owner.
+- New ToolBox session-cut input is routed to `TOOLBOX Production-02 RECOVERY-01`: 27/28 current selftest, Feature-Parity Matrix first, then one source-backed restoration.
+- H0 Hirnwelt is now the accepted KlayfaBizarro style donor. Its actual soften/material/relief modules and KayKit-facade method are bound into WORLD-TRACK-CLAY-M2; D2 is selected, H1/M1 remain sidequests.
+- Public Domain Pool is now correctly closed as merged/public/live-registry verified; bulk import remains not started.
+- No generated Hub root or Cloudflare publication changed in this source checkpoint.
+
+Exactly one Hub-publication gate remains: run the existing Production Desk generation/publication owner once from this synchronized source, then read back the exact public root. This is an internal publication job, not a Georg review task.

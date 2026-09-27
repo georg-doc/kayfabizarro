@@ -47,41 +47,40 @@
     },
     {
       "id": "toolbox-production-02-r2-intake",
-      "bucket": "WAITING",
-      "title": "ToolBox Production-02 r2 · PASS",
-      "what": "Georg hat den Claude-Design-Session-Cut am 27.09.2026 angenommen. Studio, Animation Studio und Rigging gelten damit als akzeptierte Arbeitsrichtung; die offene Animation-Lab-v1-Quellwiederherstellung bleibt ein eigener Integrationsschritt.",
-      "provider": "Claude Design → ToolBox receiving owner",
+      "bucket": "CAN_START",
+      "title": "ToolBox Production-02 · Recovery-01 · NOW",
+      "what": "Der neue Session-Cut vom 27.09. ist der konkrete Wiederaufnahme-Punkt: Mund sitzt auf der Kopfhaut, Face-Overlays werfen keine falschen Schatten, Selbsttest 27/28. Jetzt werden die alten ToolBox-/Animation-Lab-Funktionen vollständig inventarisiert und fehlende Funktionen source-getreu zurückgeführt – kein neues Interface und kein Nachbau aus dem Gedächtnis.",
+      "provider": "Work · Sol High · ToolBox receiving owner",
       "yourAction": "",
-      "waitingFor": "ToolBox-Owner übernimmt den akzeptierten r2-Stand; Animation Lab v1 weiterhin nicht aus dem Gedächtnis nachbauen.",
+      "waitingFor": "RECOVERY-01: Feature-Paritätsmatrix HAVE / MOVED / SCHWUND / MISSING / OUT, Animation-Lab-v1-Quelle lokalisieren, danach genau einen kleinen Wiederherstellungs-Slice umsetzen.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 202,
-      "branch": "work/hub-ctrl-01-2026-09-24",
+      "branch": "work/hub-ctrl-mobility-toolbox-sync-2026-09-27",
       "brief": {
-        "label": "ToolBox Production-02 r2 · START HERE",
-        "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-26_r2/START_HERE.md",
-        "ref": "main",
-        "pasteReady": false
+        "label": "ToolBox Production-02 · Recovery-01",
+        "path": "tools/production_desk/briefings/TOOLBOX_PRODUCTION_02_RECOVERY_01_2026-09-27.md",
+        "ref": "work/hub-ctrl-mobility-toolbox-sync-2026-09-27",
+        "pasteReady": true
       }
     },
     {
       "id": "public-domain-pool-pd01",
-      "bucket": "RUNNING",
-      "title": "Public-Domain-Pool · Web-Chat läuft",
-      "what": "Der gebundene Vier-Quellen-Smoke-Test läuft im Web-Chat. Ein möglicher Chat-Timeout gilt als UNKNOWN; vor einem Retry zuerst GitHub-Ref und Return prüfen. Kein Bulk-Import.",
+      "bucket": "WAITING",
+      "title": "Public-Domain-Pool · LIVE · abgeschlossen",
+      "what": "Der gebundene Vier-Quellen-Slice ist gemergt und öffentlich verifiziert. Vier Assets samt Rechtebelegen sind im normalen Asset Librarian sichtbar; der Live-Registry-Stand umfasst 14.923 Assets. Kein Bulk-Import wurde gestartet.",
       "provider": "Asset Librarian / Billboard Media",
       "yourAction": "",
-      "waitingFor": "Web-Chat Return oder nach Timeout GitHub-Recon. Internet-Archive-Treffer bleiben vor öffentlicher Nutzung im Human Gate.",
+      "waitingFor": "Nur bei einem neuen, ausdrücklich kuratierten Durchlauf oder nach Wiederfinden des ursprünglichen Auswahl-Exports fortsetzen.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 202,
-      "branch": "work/hub-ctrl-01-2026-09-24",
-      "expectedHead": "68f312e72a60c832420566fc5076fd75ca061eeb",
+      "branch": "main",
+      "expectedHead": "154f9e9e2c13d22929996d3c47288c55a7d8e55c",
       "brief": {
-        "label": "PD-POOL-01 · Startbriefing",
-        "path": "tools/production_desk/briefings/PUBLIC_DOMAIN_POOL_PD01_2026-09-27.md",
-        "ref": "work/hub-ctrl-01-2026-09-24",
-        "pasteReady": true
+        "label": "PD-POOL-R3 · Abschluss",
+        "path": "skills/chat/workflows/PD_POOL_R3_CLOSEOUT_2026-09-27/RETURN.md",
+        "ref": "main",
+        "pasteReady": false
       }
     },
     {
@@ -275,15 +274,13 @@
     },
     {
       "id": "worldbuilder-wb2",
-      "bucket": "LOOK_AT",
-      "title": "World r2 · PUBLIC VERIFIED · Georg Review",
-      "what": "The unchanged World r2 candidate is packaged and PUBLIC_VERIFIED: package 28/28, Hürth 55/55, Cologne 55/55, accepted WB2 34/34, public browser 15/15, zero page/source failures. No new World owner or Track/mobility integration was introduced.",
+      "bucket": "WAITING",
+      "title": "World r2 · technische Basis · übernommen",
+      "what": "World r2 bleibt die geprüfte technische Weltbasis. Georgs World-/Clay-Richtung ist bereits PROCEED PASS; diese alte Prüfkarte ist keine offene Aufgabe mehr.",
       "provider": "WSA World Stage / PR #234",
-      "yourAction": "Review Hürth and Cologne in Edit and Play on the fixed Stage. Return PASS / TUNE / FAIL with concrete observations.",
-      "waitingFor": "",
-      "questions": [
-        "Tragen Hürth und Köln denselben glaubwürdigen Weltmaßstab in Edit und Play?"
-      ],
+      "yourAction": "",
+      "waitingFor": "Wird von WORLD-MOBILITY-M1 konsumiert; keine erneute World-r2-Abnahme.",
+      "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 234,
       "branch": "wsa/world-r2-stage-prep-2026-09-26",
@@ -390,12 +387,12 @@
     },
     {
       "id": "travel",
-      "bucket": "CAN_START",
-      "title": "Travel / WorldBuilder Mobility · router ready",
-      "what": "TRAVEL-MODES-01 is PROCEED_PASS: the one-active-writer Ground/Flight router and accepted 400 ms handoff are sufficient to continue. The contract page is technical evidence, not a Georg task. Next work belongs in real WorldBuilder/Travel mobility.",
+      "bucket": "WAITING",
+      "title": "Travel Modes 01 · in World-Mobility M1 übernommen",
+      "what": "Der geprüfte Ground/Flight-Router, der 400-ms-Doppeldruck und der echte Card-Carrier sind in WORLD-MOBILITY-M1 eingebaut. Die alte Vertragsseite bleibt nur technische Evidence und ist keine Aufgabe für Georg.",
       "provider": "WorldBuilder / Travel Web",
       "yourAction": "",
-      "waitingFor": "Continue in the real WorldBuilder/Travel consumer. Drive and Water remain source-required until real adapters exist.",
+      "waitingFor": "Drive und Water bleiben source-required; erst mit realen Adaptern ergänzen.",
       "questions": [],
       "repo": "georg-doc/KFB-Travel-Globe",
       "pr": 39,
@@ -494,21 +491,22 @@
     },
     {
       "id": "worldbuilder-mobility-mvp",
-      "bucket": "WAITING",
-      "title": "WorldBuilder · OSM + Mobility Integration",
-      "what": "Nach dem 1:1-Rehome des akzeptierten Hürth-Kandidaten: gemeinsame KayKit-Locomotion/Profile konsumieren, Ground↔Flight sauber anschließen und die echte OSM-Lücke Hürth→Köln/SAE schließen.",
-      "provider": "ChatGPT Web / WorldBuilder + Travel",
+      "bucket": "RUNNING",
+      "title": "World Mobility M1 → Track + KlayfaBizarro M2",
+      "what": "M1 ist lokal browser-grün: Track-Dummy entfernt, World-r2 bleibt Ground-/Kontakt-Owner, echter Travel-Router und Card-Carrier. Für M2 ist H0 Hirnwelt als Georg-akzeptierter Style-Donor gesetzt: echte Clay-Module, KayKit-Fassaden, drei Reliefmaßstäbe sowie Knet-Straße, Bordstein, Gehweg und Grünübergang – gemeinsam mit dem realen Track Core.",
+      "provider": "Work · Sol High · WorldBuilder + Travel",
       "yourAction": "",
-      "waitingFor": "WORLD-R2-STAGE-PREP-01 + Georg Stage/freeplay gate + Camera contract. Danach Ground↔Flight/God Mode und OSM-Korridor.",
+      "waitingFor": "WORLD-TRACK-CLAY-M2 als ein sinnvoller spielbarer Meilenstein: echter Track Core + eine vollständige KlayfaBizarro-Stadtzelle. Keine weitere Proxy-Fahrbahn und keine Laufzeit-Vorstufe mit 40-s-Ladezeit.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
-      "expectedHead": "deec05c883de02836c3d699fa6e64d647d32a9f7",
+      "pr": 249,
+      "branch": "work/world-mobility-m1-2026-09-27",
+      "expectedHead": "1aa3db0bff41fcca96c28ba87574b26392cf6ef0",
       "brief": {
-        "label": "Playable Integration Masterplan",
-        "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/MVP_FOCUS_PLAN_2026-09-24.md",
-        "ref": "chatgpt-web/production-architecture-v3-2026-09-24",
-        "pasteReady": false
+        "label": "World Track + KlayfaBizarro M2 · produktiver Work-Slice",
+        "path": "tools/production_desk/briefings/WORLD_TRACK_CORE_M2_2026-09-27.md",
+        "ref": "work/hub-ctrl-mobility-toolbox-sync-2026-09-27",
+        "pasteReady": true
       }
     },
     {
@@ -534,7 +532,7 @@
   ],
   "wsa": {
     "state": "APPROVED_WITH_TUNES",
-    "text": "WSA planning is complete. Current bounded work: World r2 Stage Prep; Track Core W0; Racer cross-mode HUD+Billboards may run in parallel. Hub UX v2 + current Briefings root refresh is in final publication verification."
+    "text": "World/Clay direction is PROCEED PASS. WORLD-MOBILITY-M1 is implemented and locally browser-proven without the rejected track proxy. Next Work slice is the real Race Track Core connection; ToolBox RECOVERY-01 restores proven features before any UI expansion. No Georg task is open for these two lanes."
   },
   "standards": [
     {
