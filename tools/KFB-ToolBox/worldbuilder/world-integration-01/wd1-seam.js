@@ -26,6 +26,7 @@ export const SEAM = {
 };
 
 const round3=v=>Math.round(Number(v)*1000)/1000;
+const round2=v=>Math.round(Number(v)*100)/100;
 const w=p=>({x:Number(p[0]??p.x),z:-Number(p[1]??p.z)});
 const sourcePoint=p=>({x:Number(p.x),z:Number(p.z)});
 const sameXZ=(a,b)=>a&&b&&Math.abs(a.x-b.x)<.002&&Math.abs(a.z-b.z)<.002;
@@ -115,11 +116,16 @@ function bakedCrop(normalized,crop){
   }));
   const roads=[];
   for(const r of normalized.features?.roads||[]){
-    const parts=clipPolyline(r.centerline||[],crop);
-    parts.forEach((line,i)=>roads.push({
-      id:parts.length===1?r.id:r.id+':wb-crop-'+i,cls:r.class,w:r.widthM,drive:!!r.driveable,name:r.osm?.tags?.name||null,
-      bridge:r.osm?.tags?.bridge||null,tunnel:r.osm?.tags?.tunnel||null,layer:Number(r.osm?.tags?.layer||0),area:false,line:line.map(w)
-    }));
+    // Frozen WB-D1 road crop truth: retain only original serialized centreline
+    // vertices inside the crop, require >=2 vertices, add no boundary points,
+    // and round retained source coordinates to the fixture's 2-decimal precision.
+    const line=(r.centerline||[]).filter(p=>inside(p,crop)).map(p=>({x:round2(p.x),z:round2(p.z)}));
+    if(line.length<2)continue;
+    roads.push({
+      id:r.id,cls:r.class,w:r.widthM,drive:!!r.driveable,name:r.osm?.tags?.name||null,
+      bridge:r.osm?.tags?.bridge||null,tunnel:r.osm?.tags?.tunnel||null,layer:Number(r.osm?.tags?.layer||0),
+      area:r.osm?.tags?.area==='yes',line:line.map(w)
+    });
   }
   const landuse=[],water=[];
   for(const l of normalized.features?.landuse||[]){
