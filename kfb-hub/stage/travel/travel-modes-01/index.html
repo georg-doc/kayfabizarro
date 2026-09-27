@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRAVEL-MODES-01 · Movement Mode Router</title>
+<style>
+html,body{margin:0;min-height:100%;background:#101722;color:#f4ead7;font:15px/1.45 system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 22px 48px}
+h1{font-size:24px;margin:0 0 5px}p{max-width:78ch}
+small,.muted{color:#aeb7c6}.proof{font:12px/1.5 ui-monospace,monospace;white-space:pre-wrap;border-top:1px solid #394354;padding-top:14px;margin-top:18px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+button{font:inherit;padding:7px 12px;border:1px solid #66748a;background:#1b2738;color:#f4ead7;border-radius:5px}
+button[aria-pressed="true"]{border-color:#f4ead7;background:#31445f}button:disabled{opacity:.42}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid #313b49}
+th{color:#d8b25b}code{color:#f2c979}
+</style>
+</head>
+<body>
+<main>
+<h1>TRAVEL-MODES-01 · Movement Mode Router</h1>
+<p>Contract-only diagnostic. No movement, camera or physics is simulated here. The page imports the same router contract used by WB0 and only audits ownership selection.</p>
+<p class="muted"><strong>Input evidence:</strong> PR #38 human-accepted Ground→Flight double-Space remains <code>400 ms</code>. This page does not reimplement its timing.</p>
+<nav aria-label="Mode contract">
+<button data-mode="GROUND">Ground</button>
+<button data-mode="FLIGHT">Flight</button>
+<button data-mode="DRIVE">Drive · source required</button>
+<button data-mode="WATER">Water · source required</button>
+</nav>
+<table>
+<thead><tr><th>Mode</th><th>Status</th><th>Movement writer</th><th>Camera writer / preset</th><th>Support</th><th>Presentation</th><th>FX</th></tr></thead>
+<tbody id="modes"></tbody>
+</table>
+<div id="proof" class="proof" aria-live="polite">Loading exact contract…</div>
+</main>
+<script type="module" src="./review.js"></script>
+</body>
+</html>
