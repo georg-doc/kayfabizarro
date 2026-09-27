@@ -32,3 +32,25 @@ Copyright status does not automatically clear trademarks, logos, privacy/publici
 ## Bulk-import boundary
 
 Do not run a blind bulk import. The 2026-09-26 intake ZIP does not contain the original exported selection manifest. A later bulk fill must start from a recovered/exported selection list or a separately reviewed discovery brief.
+
+## PD-POOL-R1 verified smoke set
+
+Status: **PASS · 4/4 SOURCES · IDEMPOTENT · PERSISTED · NO BULK IMPORT**  
+Date: 2026-09-27  
+Draft PR: **#242**  
+Persistence commit: `f3acaaeb98530dd9ffb7d200d61956891e738336`
+
+The fixed smoke set is now durably present:
+- Met object 86434 · Bathing suit;
+- AIC artwork 24645 · Hokusai, Great Wave;
+- Wikimedia Commons · `File:Silent film.svg`;
+- Internet Archive · `TheGeneral1926`, Item Tile only.
+
+Each object has a stored provenance/rights sidecar, retrieval timestamp, byte count and SHA-256. The second execution returned 4/4 unchanged, an injected stale `.part` file was removed, and all eight provider payload/sidecar files remained hash-identical. `manifest.jsonl`, `CREDITS.md`, `PD_R1_TEST_REPORT.json` and `PD_R1_RETURN.md` are generated from the persisted evidence.
+
+The Internet Archive Item Tile also passed the required manual source/object review; see `skills/chat/workflows/PD_POOL_R1_2026-09-27/MANUAL_REVIEW.md`.
+
+This is **not** the historical full pool and must not be described as such. The original selected-hit manifest remains missing.
+
+Exactly one next gate: **PD-POOL-R2 · register only these four proven objects in the existing Asset Librarian and verify provenance/discoverability.**
+
