@@ -1910,3 +1910,17 @@ Exactly one next gate:
 - proven failure is stale selftest variant-label semantics after shared ToolBox profile ownership;
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
+
+
+## 2026-09-27 · PD-POOL-01 four-source smoke · stop-rule recovery
+
+- bounded owner: Asset Librarian / Billboard Media; no second registry and no Billboard runtime change;
+- Draft PR #239 / branch `chatgpt-web/public-domain-pool-pd01-2026-09-27` executed the four-source public-domain smoke from HUB-CTRL brief PD-POOL-01;
+- initial real Actions gate `36283860675`: Python compile PASS; Met LOADED; Commons LOADED; Internet Archive LOADED; AIC HTTP 403 → **3/4**, persistence correctly skipped;
+- intake ZIP is proven to contain README + fetcher only; the original selected-hit manifest/UI is absent, so no bulk hit list is reconstructed;
+- repair pass 1 introduced a literal `\\n` syntax defect; repair pass 2 did not change that source blob;
+- final frozen implementation head `b49ae450aa378718e5e595fd8f00bfd215c1df65`, run `36284076862`: static syntax FAIL, provider gate skipped;
+- two-pass stop rule applied; no repair pass 3;
+- failure-recovery handoff: `skills/chat/workflows/PD_POOL_01_FAILURE_RECOVERY_2026-09-27/START_HERE.md`;
+- Stage/Live: none;
+- exactly one next gate: **PD-POOL-F1 · isolated AIC transport proof from the last compiling fetcher**.

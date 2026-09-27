@@ -25,6 +25,14 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+
+## 2026-09-27 · Public Domain Pool · PD-POOL-01 recovery
+
+PD-POOL-01 is **ARCHIVED_FAILED_CANDIDATE** on Draft PR #239 after the two-pass stop rule. The initial real provider run reached **3/4** (Met, Commons and Internet Archive loaded; AIC returned HTTP 403) but persisted no assets. Two subsequent repair passes failed on a Python syntax defect; do not resume the frozen branch code.
+
+Recovery: `skills/chat/workflows/PD_POOL_01_FAILURE_RECOVERY_2026-09-27/START_HERE.md`  
+Exactly one next gate: **PD-POOL-F1 · isolated AIC transport proof** from the last compiling fetcher. The original intake ZIP contains no exported selected-hit manifest, so bulk population remains blocked.
+
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
 Knet-Medizin is now routed as a DocCheck project reference under `georg-doc/doccheck/Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/`.

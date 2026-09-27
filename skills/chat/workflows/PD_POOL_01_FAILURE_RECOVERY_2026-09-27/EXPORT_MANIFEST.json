@@ -1,0 +1,115 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "PD-POOL-01 Public Domain Pool",
+  "exportRevision": "2026-09-27-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/public-domain-pool-pd01-2026-09-27",
+  "pullRequest": 239,
+  "baseMain": "6fb02674ea4344169778c0ae9e76b2543f1d78f9",
+  "frozenImplementationHead": "b49ae450aa378718e5e595fd8f00bfd215c1df65",
+  "owner": "Asset Librarian / Billboard Media",
+  "entrypoints": [
+    ".github/workflows/public-domain-pool-pd01.yml",
+    "tools/public_domain/fetch_pool.py",
+    "tools/public_domain/pd01-smoke-manifest.jsonl"
+  ],
+  "sourceFiles": [
+    {
+      "path": "tools/public_domain/fetch_pool.py",
+      "blob": "509a3458a815a71b2759bb2788b045a3256c4f00",
+      "status": "ARCHIVED_FAILED"
+    },
+    {
+      "path": "tools/public_domain/pd01-smoke-manifest.jsonl",
+      "blob": "0e548640b2e8f1cfb6238a56aad02f6db741295d",
+      "status": "REUSE_CANDIDATE"
+    },
+    {
+      "path": "tools/public_domain/PD01_PLAN.md",
+      "blob": "438855098cbf6647fa511339e6b257f02bdb097e",
+      "status": "REUSE_CANDIDATE"
+    },
+    {
+      "path": "tools/public_domain/SOURCE_REVIEW_PD01.md",
+      "blob": "1e2b66796ac91606664fadf43c05bfa0695d1f81",
+      "status": "REUSE_CANDIDATE"
+    },
+    {
+      "path": "media/public_domain/README.md",
+      "blob": "c67743e0a6cd06bf118585681d0715fdbab6b377",
+      "status": "REUSE_CANDIDATE"
+    },
+    {
+      "path": ".github/workflows/public-domain-pool-pd01.yml",
+      "blob": "7c48c76ff4fe615fcd7a3b56b7e5794c8d55d09c",
+      "status": "NEEDS_ISOLATED_TEST"
+    }
+  ],
+  "buildOutputs": [],
+  "dataFiles": [
+    "tools/public_domain/pd01-smoke-manifest.jsonl"
+  ],
+  "assetRefs": [
+    {
+      "provider": "met",
+      "sourceId": 86434,
+      "status": "LOADED_EPHEMERAL_RUN_36283860675"
+    },
+    {
+      "provider": "aic",
+      "sourceId": 24645,
+      "status": "HTTP_403_RUN_36283860675"
+    },
+    {
+      "provider": "commons",
+      "sourceId": "File:Silent film.svg",
+      "status": "LOADED_EPHEMERAL_RUN_36283860675"
+    },
+    {
+      "provider": "ia",
+      "sourceId": "TheGeneral1926",
+      "status": "LOADED_EPHEMERAL_RUN_36283860675"
+    }
+  ],
+  "externalDependencies": [
+    "The Met Open Access API",
+    "Art Institute of Chicago API + IIIF",
+    "Wikimedia Commons API",
+    "Internet Archive metadata/download"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "type": "github-actions",
+      "run": 36283860675,
+      "job": 108520821629,
+      "result": "3/4 provider paths; AIC HTTP 403"
+    },
+    {
+      "type": "github-actions",
+      "run": 36283989583,
+      "job": 108521124193,
+      "result": "repair 1 static syntax FAIL"
+    },
+    {
+      "type": "github-actions",
+      "run": 36284076862,
+      "job": 108521380387,
+      "result": "final frozen head static syntax FAIL"
+    }
+  ],
+  "missing": [
+    "original exported selected-hit pool-manifest.jsonl",
+    "selection UI/source used to produce historical hit counts",
+    "durably persisted downloaded smoke assets",
+    "AIC transport PASS",
+    "idempotence PASS",
+    "partial-download rejection PASS"
+  ],
+  "start": {
+    "command": null,
+    "url": null,
+    "notes": "Do not execute the frozen fetcher. Start next work from last compiling commit 154e573b8defacd17e836de049b3853578291f94 and follow NEXT_GATE.md."
+  }
+}
