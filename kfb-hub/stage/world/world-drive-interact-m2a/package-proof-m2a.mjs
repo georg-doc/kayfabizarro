@@ -1,1 +1,29 @@
-m«ëˆ§½©buªàºg§¶GÛ†æÿ²Ö {ü(®WÂŠåuÚâ½è§µêÚrÙ¶kúZrF zšè¡ù¶jhìRÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçhºÚn¶êbžÚ%Šw¬¡ù^žažéƒu×œ¡×yÊz)éºØazZ]ŠÊek+aŠÉž²Æ z(§¦ëbž›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+import fs from 'node:fs';import crypto from 'node:crypto';
+const read=p=>fs.readFileSync(new URL(p,import.meta.url),'utf8'),hash=p=>crypto.createHash('sha256').update(fs.readFileSync(new URL(p,import.meta.url))).digest('hex');
+let n=0;const ok=(name,v)=>{if(!v)throw Error('FAIL '+name);console.log('ok '+(++n)+' - '+name)};
+const index=read('./index.html'),mobility=read('./world-mobility-m1.mjs'),drive=read('./world-drive-m2a.mjs'),ui=read('./world-mobility-ui.mjs'),source=JSON.parse(read('./SOURCE.json'));
+ok('M2A marker',index.includes('WORLD-DRIVE-INTERACT-M2A'));
+ok('World M1 source pin',index.includes('40037597485436e185f129091be908786925341d'));
+ok('Race PR10 source pin',drive.includes('406cd26f44f22811fe3b3a58776839be7ffb7b2c'));
+ok('proven vehicle pin',drive.includes('15e36b915c9bdfd7ff000d398418269e27c6ef9f'));
+ok('deformer pin',drive.includes('f30b719a8c9da3e9ac90d4d9628c0691d676d1e9'));
+ok('physics byte lock',hash('./donor-race-pr10/physics.js')===source.vendoredDonorHashesSha256['donor-race-pr10/physics.js']);
+ok('world donor byte lock',hash('./donor-race-pr10/world.js')===source.vendoredDonorHashesSha256['donor-race-pr10/world.js']);
+ok('intent byte lock',hash('./donor-race-pr10/drive-intent.mjs')===source.vendoredDonorHashesSha256['donor-race-pr10/drive-intent.mjs']);
+ok('Drive router is source-backed READY',mobility.includes("if(copy.id==='DRIVE')")&&mobility.includes("copy.status='READY'"));
+ok('Free Roam owns Drive',mobility.includes("movementOwner:'FREE_ROAM_C0'")&&mobility.includes("cameraOwner:'FREE_ROAM_C0'"));
+ok('E interaction exists',mobility.includes("e.code!=='KeyE'")&&ui.includes('E aussteigen'));
+ok('World supplies building contacts',drive.includes('buildingTriangles(app.world.zone'));
+ok('World supplies terrain contact',drive.includes('app.terrainHeightAt'));
+ok('terrain contact covers the full visible zone',drive.includes('app.world.zone?.rectW')&&drive.includes("id:'world-ground'")&&drive.includes('contactBounds'));
+ok('parked vehicle settles before entry',drive.includes('idleSettled')&&drive.includes('simulate();accumulator-=STEP'));
+ok('visual ground gap is measurable',drive.includes('visualGroundGapM'));
+ok('actor remains visible in vehicle',mobility.includes("actorParent='drive'")&&mobility.includes('play.actor.holder.visible=true'));
+ok('safe exit checks World solids',drive.includes('app.world.solidAt'));
+ok('no proxy track',mobility.includes('trackProxy:false')&&!drive.includes('ST01'));
+ok('Flight owner preserved',mobility.includes("movementOwner:'Travel flight ENU surface adapter'"));
+ok('Rapier import map explicit',index.includes('@dimforge/rapier3d-compat@0.17.3'));
+ok('R3 playability profile explicit',index.includes("playabilityProfile:'R3'")&&index.includes('maxPixelRatio:1.25'));
+ok('R3 city shell LOD is explicit',read('./runtime/worldbuilder/world-integration-01/wd1-city.js').includes("profile: 'CITY_SHELL_LOD_R3'")&&read('./runtime/worldbuilder/world-integration-01/wi1-world.js').includes('CITY_LOD_R3'));
+ok('R3 candidate is not falsely public-verified',source.publicVerified===false&&source.status==='R3_LOCAL_CANDIDATE');
+console.log('WORLD DRIVE M2A PACKAGE PASS '+n+'/'+n);

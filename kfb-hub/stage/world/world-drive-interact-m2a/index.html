@@ -1,1 +1,58 @@
-m«ëˆ§½©buªàºg§¶GÛ†æÿ²Ö {ü(®WÂŠåuÚâ½è§µêÚrÙ¶kø§uìa¶iT±¨m«ë€İ…¹îš(§~)^¢‹­~)^mºŞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`İuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#b9d7e4">
+<link rel="icon" href="data:,">
+<title>KFB World Â· Drive & Interact M2A</title>
+<meta name="kfb-source-repo" content="georg-doc/kayfabizarro">
+<meta name="kfb-source-pr" content="249,10,39">
+<meta name="kfb-stage-id" content="WORLD-DRIVE-INTERACT-M2A">
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#b9d7e4}
+body[data-m1-ready="true"] #top,body[data-m1-ready="true"] #dock,body[data-m1-ready="true"] #facts,body[data-m1-ready="true"] #drawer,body[data-m1-ready="true"] #wiHud{display:none!important}
+#m1-ui{position:fixed;inset:0;z-index:80;pointer-events:none;color:#251d21;font:600 13px/1.25 system-ui,-apple-system,sans-serif}
+#m1-ui *{box-sizing:border-box}
+#m1-bar{position:absolute;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));display:flex;justify-content:space-between;gap:8px;align-items:flex-start;pointer-events:auto}
+.m1-cluster{display:flex;gap:6px;padding:5px;border-radius:16px;background:#fff8ebdf;border:1px solid #71563e55;box-shadow:0 5px 24px #4e385033;backdrop-filter:blur(10px);pointer-events:auto}
+#m1-ui button{border:0;border-radius:11px;background:transparent;color:#443237;padding:8px 11px;font:700 12px/1 system-ui;cursor:pointer}
+#m1-ui button[aria-pressed="true"]{background:#d05d49;color:#fff8e9;box-shadow:inset 0 -2px 0 #873d35}
+#m1-ui button:hover{background:#efddc9}
+#m1-ui button[aria-pressed="true"]:hover{background:#c65343}
+#m1-info{font-size:17px!important;width:36px;padding:8px 0!important}
+#m1-help{position:absolute;right:max(12px,env(safe-area-inset-right));top:66px;width:min(360px,calc(100vw - 24px));max-height:calc(100vh - 90px);overflow:auto;padding:16px 18px;border-radius:18px;background:#fffaf0f2;border:1px solid #71563e55;box-shadow:0 12px 44px #39263055;pointer-events:auto}
+#m1-help[hidden]{display:none}
+#m1-help h1{font-size:16px;margin:0 0 8px}
+#m1-help h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin:16px 0 5px;color:#8c4c3f}
+#m1-help p{font-weight:500;line-height:1.45;margin:5px 0}
+#m1-help code{font:11px ui-monospace,monospace;background:#eadcc8;padding:2px 4px;border-radius:4px}
+#m1-hint{position:absolute;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);max-width:calc(100vw - 24px);padding:8px 13px;border-radius:13px;background:#2c2430d9;color:#fff4df;font:600 11px/1.35 system-ui;text-align:center;box-shadow:0 5px 22px #261b2a44;pointer-events:none;white-space:nowrap}
+@media(max-width:620px){#m1-bar{top:max(7px,env(safe-area-inset-top));left:7px;right:7px}.m1-cluster{gap:2px;padding:3px;border-radius:13px}#m1-ui button{padding:7px 8px;font-size:11px}#m1-hint{white-space:normal;width:calc(100vw - 20px);bottom:10px}#m1-help{right:7px;top:55px;width:calc(100vw - 14px)}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","@dimforge/rapier3d-compat/rapier.es.js":"https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.17.3/rapier.es.js"}}
+</script>
+<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false,playabilityProfile:'R3',maxPixelRatio:1.25,walkCadence:1.75,paceUpAfter:.55,walkAccel:5,walkDecel:7.5});</script>
+</head>
+<body data-kfb-stage="WORLD-DRIVE-INTERACT-M2A" data-kfb-source-head="M2A_WORK_CANDIDATE">
+<script type="module">
+const bootStartedAt=performance.now();
+await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability4');
+const app=window.__wb2d;
+const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi}]=await Promise.all([
+  import('./clay-world-m1.mjs'),import('./world-mobility-m1.mjs?r1=playability2'),import('./world-mobility-ui.mjs')
+]);
+const clay=await mountClayWorld(app);
+app.setPlay(true);
+const mobility=await mountWorldMobility(app);
+const ui=mountWorldMobilityUi({app,clay,mobility});
+window.__worldDriveM2A={app,clay,mobility,ui,report:()=>({schema:'kfb.world-drive-interact-m2a-stage/1',source:{worldM1:'40037597485436e185f129091be908786925341d',raceDrive:'406cd26f44f22811fe3b3a58776839be7ffb7b2c',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report()})};
+document.body.dataset.m1Ready='true';
+if(new URLSearchParams(location.search).get('measure')==='1'){
+  const {mountPerfProbe}=await import('./perf-probe.mjs?r1=playability5');
+  mountPerfProbe({app,mobility,bootStartedAt});
+}
+</script>
+</body>
+</html>

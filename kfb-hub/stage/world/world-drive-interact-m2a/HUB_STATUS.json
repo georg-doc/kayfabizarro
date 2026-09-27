@@ -1,1 +1,27 @@
-m«ëˆ§½©buªàºg§¶GÛ†æÿ²Ö {ü(®WÂŠåuÚâ½è§µêÚrÙ¶kñÔ$ÀMD£²‰Ô±¨m«ë€İ…¹îš(§~)^¢‹­~)^mºŞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`İuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë
+{
+  "schema": "kfb.hub-stage-candidate/1",
+  "id": "WORLD-DRIVE-INTERACT-M2A",
+  "title": "World M2A Â· R3 deutlich schneller Â· Ziel noch nicht erreicht",
+  "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
+  "sourceBranch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
+  "implementationHead": "342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5",
+  "publicationHead": "afc5841abcb6ce057080618ab4aba36a4831bf3a",
+  "visibility": "PUBLIC_STAGE_FAILURE_EVIDENCE",
+  "reviewState": "R3_PERFORMANCE_PARTIAL__NOT_PUBLISHED",
+  "automatedEvidence": [
+    "R3 package 24/24",
+    "R3 local browser 34/34",
+    "public browser 34/34",
+    "0 page/request/HTTP errors"
+  ],
+  "coreBlockers": [
+    "frame p95 42.7â€“43.9 ms remains above the 33.3 ms target",
+    "incorrect movement animation/state timing",
+    "vehicle ground/contact height",
+    "off-road terrain collision holes drop the vehicle through the world"
+  ],
+  "deferred": [
+    "boulder/prop shadow and bright-edge artifact"
+  ],
+  "next": "WORLD-M2A-R4 adaptive resolution + distance-based Clay budget; then FACADE-DONOR-01 for real instanced facade parts."
+}

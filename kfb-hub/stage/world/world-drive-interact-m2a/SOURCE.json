@@ -1,1 +1,51 @@
-m´ÎàßΩ©bu™‡∫gß∂G€ÜÊˇ≤÷†{¸(ÆW¬äÂu⁄‚ΩËßµÍ⁄rŸ∂kÙéQÑé 'R∆†y∂¨{ÆvÁ∫h¢ù¯•zä.µ¯•y∂Îy©≠Ê§zw(uÁh∫⁄n∂Íbû⁄%äw¨°˘^ûaûÈÉu◊ú°◊ùy z)È∫ÿazZ]ä ek+aä…û≤∆†z(ß¶Îbûõ≠~)^uÁ⁄∫[_¢ª-v)Ë¢Îi∫⁄.∂õ≠~)^uÁ⁄∫[_¢ª-vã≠
+{
+  "schema": "kfb.stage-source/1",
+  "stageId": "WORLD-DRIVE-INTERACT-M2A",
+  "status": "R3_LOCAL_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "work/world-m2a-city-shell-lod-r3-2026-09-27",
+  "implementationCommit": "342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5",
+  "publicationCommit": null,
+  "stageEntry": "kfb-hub/stage/world/world-drive-interact-m2a/index.html",
+  "intendedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/",
+  "publicVerified": false,
+  "baselineCommit": "b34d9566450cbc72cb0eb556cab09126c8587503",
+  "r1": {
+    "outcome": "CONTACT_AND_BOOT_PASS__FRAME_P95_PARTIAL",
+    "contactBoundsM": [716, 716],
+    "parkedVehicleGroundGapM": 0.002,
+    "coldControlBestMs": 14217.8,
+    "measuredFrameP95Ms": 89.1,
+    "frameTargetMs": 33.3,
+    "nextAction": "HUMAN_PLAYABILITY_GATE_BEFORE_PUBLICATION"
+  },
+  "r3": {
+    "outcome": "TRIANGLE_AND_FRAME_COST_REDUCED__P95_TARGET_PARTIAL",
+    "candidate": "CITY_SHELL_LOD_R3",
+    "chunkSizeM": 96,
+    "nearM": 120,
+    "farM": 150,
+    "farRepresentation": "real OSM footprint + source height; no per-window/per-door geometry",
+    "nearRepresentation": "accepted elastic shell + current facade; donor component seam reserved",
+    "idleP95Ms": 43.3,
+    "walkP95Ms": 42.7,
+    "driveP95Ms": 43.9,
+    "walkLowResolutionDiagnosticP95Ms": 26.3,
+    "frameTargetMs": 33.3,
+    "publication": "NOT_PUBLISHED"
+  },
+  "sources": {
+    "worldM1": {"pullRequest": 249, "head": "40037597485436e185f129091be908786925341d", "role": "World, Ground, Flight, actor and contact owner"},
+    "drive": {"repository": "georg-doc/KFB-Stunt-Car-Race", "pullRequest": 10, "head": "406cd26f44f22811fe3b3a58776839be7ffb7b2c", "role": "Free Roam physics, drive intent and camera clearance owner"},
+    "vehicle": {"head": "15e36b915c9bdfd7ff000d398418269e27c6ef9f", "path": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb"},
+    "deformer": {"head": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9", "role": "presentation only; collision remains undeformed"},
+    "travelModes": {"repository": "georg-doc/KFB-Travel-Globe", "pullRequest": 39, "head": "e10a977501cd186fe1330e9d3fd1a7b5811beb3a"}
+  },
+  "vendoredDonorHashesSha256": {
+    "donor-race-pr10/physics.js": "e217ac8ffc75c3dce1159b844ea2045a0825ccc1027cc3e5ed734db9680737cd",
+    "donor-race-pr10/world.js": "70395f3c654300cc8d6b132a67b83bbb200a0920203d4ee26ab747f3139f28ce",
+    "donor-race-pr10/drive-intent.mjs": "61b55959a55b807a3b33eccd717142734bc5cc767828bc004a15ddc5792a2ea4"
+  },
+  "scope": {"m2a": "Walk ‚Üí E ‚Üí Drive ‚Üí E ‚Üí Walk ‚Üí Flight", "m2b": "WAITING_SOURCE: real Track Core runtime"},
+  "explicitlyAbsent": ["proxy race track", "second World owner", "new drive physics", "Water mode", "Track Core claim"]
+}

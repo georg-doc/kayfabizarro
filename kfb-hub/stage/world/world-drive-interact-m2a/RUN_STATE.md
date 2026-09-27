@@ -1,1 +1,36 @@
-m«ëˆ§½©buªàºg§¶GÛ†æÿ²Ö {ü(®WÂŠåuÚâ½è§µêÚrÙ¶kôT5$ÀLIRÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçhºÚn¶êbÚ%Šw¬¡ù^aéƒu×œ¡×yÊz)éºØazZ]ŠÊek+aŠÉ²Æ z(§¦ëb›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+# WORLD-M2A-R3 Â· Run State
+
+Status: `R3_PARTIAL Â· LARGE_GAIN Â· FRAME_TARGET_FAIL Â· NOT_PUBLISHED`
+Datum: 2026-09-27
+
+## Lock
+
+- Owner: bestehende World-M2A-Runtime
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `work/world-m2a-city-shell-lod-r3-2026-09-27`
+- Basis: R1 `9e74fc792e6f00309e9f57f1d3ae4c46e1f0ee57`
+- Implementierung: `342f06886f2dc1410a7d4b11d7cc0a5f150f9cd5`
+- Outcome: eine rÃ¤umliche Stadt-LOD messen; keine neuen Spielmerkmale
+
+## Protected
+
+- World r2 bleibt World-/Terrain-Owner.
+- Race PR #10 bleibt Drive-/Physics-/Camera-Owner.
+- World M1 bleibt Ground-/Flight-/Actor-Owner.
+- Ã–ffentliche Fehler-Stage bleibt unverÃ¤ndert.
+- Echte Fassaden-Donors kommen erst nach isoliertem Quellenbeweis.
+
+## Ergebnis
+
+- 96-m-Bereiche; volle NÃ¤he bis 120 m, leichte OSM-HÃ¼llen in der Ferne, 150-m-Hysterese.
+- Dreiecke von ca. 1,13 Mio. auf ca. 185â€“198 Tsd. reduziert.
+- Paket 24/24; Browser Desktop + schmal 34/34.
+- p95 Idle/Walk/Drive 43,3/42,7/43,9 ms statt 84â€“89 ms in R1.
+- Ziel â‰¤ 33,3 ms bleibt FAIL.
+- Abschalten von Schatten oder Stadt bringt nur kleinen Restgewinn; Pixelratio 0,6 erreicht 26,3 ms.
+
+## Stop
+
+Der einzelne R3-Kandidat ist gemessen und bleibt unverÃ¶ffentlicht erhalten. Kein zweiter LOD-Patch in diesem Gate.
+
+NÃ¤chster Gate: `WORLD-M2A-R4 Â· ADAPTIVE RESOLUTION + CLAY DISTANCE BUDGET`. Danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe Ã¼bernehmen.
