@@ -24,5 +24,5 @@ ok('no proxy track',mobility.includes('trackProxy:false')&&!drive.includes('ST01
 ok('Flight owner preserved',mobility.includes("movementOwner:'Travel flight ENU surface adapter'"));
 ok('Rapier import map explicit',index.includes('@dimforge/rapier3d-compat@0.17.3'));
 ok('R1 playability profile explicit',index.includes("playabilityProfile:'R1'")&&index.includes('maxPixelRatio:1.25'));
-ok('R1 candidate is not falsely public-verified',source.publicVerified===false&&source.status==='R1_LOCAL_CANDIDATE');
+ok('candidate is not falsely public-verified',source.publicVerified===false&&['R1_LOCAL_CANDIDATE','R2_CANDIDATE_NO_GAIN'].includes(source.status));
 console.log('WORLD DRIVE M2A PACKAGE PASS '+n+'/'+n);

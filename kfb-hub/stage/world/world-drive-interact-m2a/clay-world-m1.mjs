@@ -38,7 +38,8 @@ function clayMaterialFor(source,U,layer){
     palMap:true,
     reliefK:layer.id==='prop-detail'?.62:layer.id==='far-terrain'?.72:1,
     proc:false,
-    scale:layer.scale
+    scale:layer.scale,
+    quality:layer.role==='world'?'playable':'full'
   });
 }
 
@@ -117,6 +118,7 @@ export async function mountClayWorld(app){
       buildingCount:heights.length,
       buildingHeightM:heights.length?[+Math.min(...heights).toFixed(2),+Math.max(...heights).toFixed(2)]:[],
       geometryRuntimePreprocess:false,skinnedMeshesUntouched:true,reversible:true,
+      shaderBudget:{world:'playable dominant-axis relief',props:'full clay relief'},
       owners:{geometry:'World r2 · ElasticGrotesqueClayV2',material:'H0 Hirnwelt clay-material.v4 + clay-relief.v2',collision:'World r2 ground/contact'}
     };
   }

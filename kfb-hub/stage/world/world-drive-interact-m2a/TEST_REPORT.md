@@ -36,3 +36,15 @@ Noch nicht behauptet: spielbares World-MVP, echter Track Core, Water, finales Fa
 - Renderlast: ca. **1,13 Mio. Dreiecke**; `renderer.render` dominiert mit ca. **46–71 ms/Bild**. Die übrigen gemessenen Runtime-Phasen bleiben jeweils deutlich unter 1 ms.
 
 Bewertung: `R1 PARTIAL`. Kontakt, Fahrzeug-Bodenniveau und Kaltstart sind repariert. Das Frame-Budget von p95 ≤ 33,3 ms ist nicht erreicht. Kein Public-Publish und kein dritter R1-Kandidat.
+
+## R2 · lokaler Renderkandidat
+
+- Hardware: **ANGLE Metal Renderer · Apple M1 Max**.
+- Paket/Owner-Prüfung: **23/23 PASS**.
+- Top-Geometrie: Wände **509.294**, Dächer **215.255**, Fenster **270.320** Dreiecke.
+- Diagnose `Fassadendetails aus`: ca. **832.865 Dreiecke**, p95 **209,1 ms**; kein Gewinn.
+- Diagnose Originalmaterial: p95 **177,7 ms**.
+- Kandidat „playable clay shader“: zwei Läufe, p95 **180,8 / 172,8 ms**; optisch intakt, aber kein Performancegewinn.
+- Keine Browser-/Shader-Compile-Fehler, keine Veröffentlichung.
+
+Bewertung: `R2 FAIL / NO GAIN`. Gemäß Ein-Kandidaten-Limit gestoppt; nächster sinnvoller Schritt ist strukturelle Stadt-LOD statt weiterer Materialkürzung.

@@ -41,7 +41,7 @@ const bootStartedAt=performance.now();
 await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability4');
 const app=window.__wb2d;
 const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi}]=await Promise.all([
-  import('./clay-world-m1.mjs'),import('./world-mobility-m1.mjs?r1=playability2'),import('./world-mobility-ui.mjs')
+  import('./clay-world-m1.mjs?r2=playable-shader'),import('./world-mobility-m1.mjs?r1=playability2'),import('./world-mobility-ui.mjs')
 ]);
 const clay=await mountClayWorld(app);
 app.setPlay(true);
@@ -50,8 +50,8 @@ const ui=mountWorldMobilityUi({app,clay,mobility});
 window.__worldDriveM2A={app,clay,mobility,ui,report:()=>({schema:'kfb.world-drive-interact-m2a-stage/1',source:{worldM1:'40037597485436e185f129091be908786925341d',raceDrive:'406cd26f44f22811fe3b3a58776839be7ffb7b2c',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report()})};
 document.body.dataset.m1Ready='true';
 if(new URLSearchParams(location.search).get('measure')==='1'){
-  const {mountPerfProbe}=await import('./perf-probe.mjs?r1=playability5');
-  mountPerfProbe({app,mobility,bootStartedAt});
+  const {mountPerfProbe}=await import('./perf-probe.mjs?r2=render-diagnosis');
+  mountPerfProbe({app,clay,mobility,bootStartedAt});
 }
 </script>
 </body>

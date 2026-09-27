@@ -7,6 +7,7 @@ const percentile=(values,p)=>{
 function sceneFacts(app){
   let objects=0,meshes=0,skinned=0,casters=0;
   const materials=new Set(),geometries=new Set();
+  const triangleOwners=[];
   app.scene.traverse(node=>{
     objects++;
     if(!node.isMesh)return;
@@ -15,11 +16,20 @@ function sceneFacts(app){
     if(node.castShadow)casters++;
     if(node.geometry)geometries.add(node.geometry);
     for(const material of [].concat(node.material||[]))if(material)materials.add(material);
+    const geometry=node.geometry;
+    const baseTriangles=geometry?.index?.count
+      ? geometry.index.count/3
+      : geometry?.attributes?.position?.count
+        ? geometry.attributes.position.count/3
+        : 0;
+    const triangles=baseTriangles*(node.isInstancedMesh?node.count:1);
+    if(triangles)triangleOwners.push({name:node.name||node.type,triangles:Math.round(triangles),visible:node.visible!==false,castShadow:!!node.castShadow});
   });
-  return {objects,meshes,skinned,casters,materials:materials.size,geometries:geometries.size};
+  triangleOwners.sort((a,b)=>b.triangles-a.triangles);
+  return {objects,meshes,skinned,casters,materials:materials.size,geometries:geometries.size,topTriangles:triangleOwners.slice(0,12)};
 }
 
-export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
+export function mountPerfProbe({app,clay,mobility,bootStartedAt,sampleMs=8000}){
   const out=document.createElement('output');
   out.id='m2a-perf-output';
   out.hidden=true;
@@ -30,6 +40,8 @@ export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
   if(diagnostic==='no-shadows')app.renderer.shadowMap.enabled=false;
   if(diagnostic==='no-city'&&app.world.city?.group)app.world.city.group.visible=false;
   if(diagnostic==='low-res')app.renderer.setPixelRatio(.6);
+  if(diagnostic==='original')clay?.setMode('original');
+  if(diagnostic==='no-details'&&app.world.city?.details)app.world.city.details.visible=false;
   const key=(type,code)=>dispatchEvent(new KeyboardEvent(type,{code,bubbles:true,cancelable:true}));
   const cleanup=[];
   if(scenario==='walk'){
@@ -49,6 +61,11 @@ export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
   };
   const snapshot=()=>{
     const render=app.renderer.info.render,memory=app.renderer.info.memory;
+    const gl=app.renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
+    const graphics={
+      vendor:debug?gl.getParameter(debug.UNMASKED_VENDOR_WEBGL):gl.getParameter(gl.VENDOR),
+      renderer:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER)
+    };
     const report=mobility.report();
     const phase=window.__m2aRuntimePerf;
     const phaseAvg=phase?Object.fromEntries(Object.entries(phase.total).map(([key,value])=>[key,+(value/Math.max(1,phase.frames)).toFixed(3)])):null;
@@ -58,6 +75,7 @@ export function mountPerfProbe({app,mobility,bootStartedAt,sampleMs=8000}){
       sampleMs:+(performance.now()-started).toFixed(1),
       frame:{count:frames.length,medianMs:percentile(frames,.5),p95Ms:percentile(frames,.95),p99Ms:percentile(frames,.99),long50:frames.filter(v=>v>50).length,long100:frames.filter(v=>v>100).length},
       renderer:{pixelRatio:app.renderer.getPixelRatio(),calls:render.calls,triangles:render.triangles,lines:render.lines,points:render.points,textures:memory.textures,geometries:memory.geometries},
+      graphics,
       phaseAvgMs:phaseAvg,
       scene:sceneFacts(app),
       mobility:{mode:report.mode,ground:report.ground,drive:report.drive,flight:report.flight}

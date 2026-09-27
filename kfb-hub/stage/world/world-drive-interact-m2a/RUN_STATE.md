@@ -1,36 +1,28 @@
-# WORLD-M2A-R1 · Run State
+# WORLD-M2A-R2 · Run State
 
-Status: `R1_PARTIAL · CONTACT_AND_BOOT_PASS · FRAME_BUDGET_FAIL`
+Status: `STOPPED · HARDWARE_PASS · CANDIDATE_NO_GAIN · NOT_PUBLISHED`
 Datum: 2026-09-27
 
 ## Lock
 
 - Owner: bestehende World-M2A-Runtime
 - Repo: `georg-doc/kayfabizarro`
-- Branch: `work/world-m2a-playability-r1-2026-09-27`
-- Source: `work/world-drive-interact-m2a-2026-09-27@b34d9566450cbc72cb0eb556cab09126c8587503`
-- Outcome: dieselbe Hürth-Szene begeh- und befahrbar machen; keine neuen Features
-
-## Protected
-
-- World r2 bleibt World-/Terrain-Owner.
-- Race PR #10 bleibt Drive-/Physics-/Camera-Owner.
-- World M1 bleibt Ground-/Flight-/Actor-Owner.
-- Track S9/S4B, Clay Emanata und Brick-Fish-Reaktionen sind neue Inputs, aber nicht Teil von R1.
+- Branch: `work/world-m2a-render-budget-r2-2026-09-27`
+- Parent: R1-Dokumentationsstand `9e74fc792e6f00309e9f57f1d3ae4c46e1f0ee57`
+- R2-Implementierungscheckpoint: `46d796dcb139807f008294b2074a8d2f7b530ab3`
+- Outcome: genau einen sichtbaren Renderkandidaten messen; keine Features und keine Veröffentlichung
 
 ## Ergebnis
 
-- Kandidat 1: durchgehender Fahrboden, geparkte Fahrzeug-Simulation und schnellerer Walk-Antritt — bestanden.
-- Kandidat 2: Runtime-Profil mit geringerem DPR, 2048er Bodenkarte, 2048er Schattenkarte und halbierter Terrain-Auflösung — Startzeit bestanden, Frame-Budget nicht bestanden.
-- Auto: 4/4 Radkontakte; sichtbarer Ground Gap 0,002–0,003 m.
-- Kontaktfläche: 716 × 716 m statt nur 184 × 184 m Edit-Tile.
-- Automatisierte Offroad-Fahrt: ca. 24 m, 4/4 Kontakte, kein Fall.
-- Bester Kaltstart bis Kontrolle: 14,2 s (Ziel ≤ 15 s).
-- Frame p95: 84,4 ms zu Fuß / 89,4 ms fahrend (Ziel ≤ 33,3 ms) — **FAIL**.
-- Engpass: Renderpfad, nicht Movement/World/UI-JavaScript.
+- Hardware: ANGLE/Metal auf Apple M1 Max — PASS.
+- Stadtlast: Wände 509.294, Dächer 215.255, Fenster 270.320 Dreiecke.
+- Kandidat: vereinfachte dominante Knet-Reliefprojektion für Weltflächen; Props behalten volle Qualität.
+- Paket: 23/23 PASS; Browser lädt ohne Shader-/Seitenfehler.
+- p95: 180,8 / 172,8 ms statt Ziel ≤ 33,3 ms — FAIL, kein Gewinn.
+- Diagnose ohne Fassadendetails: 832.865 Dreiecke, ebenfalls kein Framegewinn.
 
 ## Stop
 
-Zwei Kandidaten sind ausgeschöpft. R1 bleibt erhalten, aber unveröffentlicht.
+Der eine zulässige R2-Kandidat ist ausgeschöpft. Keine Veröffentlichung und kein zweiter Material-/Shadow-Patch.
 
-Nächster Gate: `WORLD-M2A-R2 · RENDER BUDGET` — Grafikbeschleunigung und Renderpfad einmal verifizieren, danach genau eine sichtbare Stadt-LOD-/Shadow-Budget-Lösung. Kein weiterer M2A-Feature-Ausbau davor.
+Nächster Gate: `WORLD-M2A-R3 · CITY SHELL LOD` — leichte mittlere/weite Stadtschale, volle Fassaden nur im Nahbereich.
