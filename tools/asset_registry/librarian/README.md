@@ -125,3 +125,29 @@ Source/recovery home:
 Game Dev Studio may consume exact Registry/Librarian source identity and existing 3D preview mechanisms, but it does **not** turn this Librarian UI into the production-review shell. The Studio is package-first: current package → preview → derived/QA status → consumer handoff.
 
 This keeps the Librarian broad and source-oriented while allowing Georg's production workflow to avoid the filter/drawer-heavy navigation when reviewing a specific package.
+
+## Public-domain source provenance · PD-POOL-R2 candidate
+
+Status: **TESTED CANDIDATE · NOT YET ON THE PERMANENT CLOUDFLARE LIBRARIAN**
+
+The existing Asset Registry can now treat `media/public_domain` as an additional source root **without becoming a rights classifier**.
+
+For that root only, an asset is eligible for Registry output when its neighboring tracked `.license.json` sidecar matches the exact payload path, byte count and SHA-256 and contains the required persisted source/rights facts. Those explicit facts are passed through as `license` + `rightsEvidence`; they are not inferred from filenames, age, provider name or search result text.
+
+The Librarian reuses the existing provenance panel to display:
+- stored license/source metadata;
+- explicit-sidecar provenance;
+- stored rights tier;
+- external provider + source ID/page;
+- rights-check timestamp;
+- payload SHA-256;
+- evidence sidecar path.
+
+The candidate-only query/handoff path preserves the same facts.
+
+PD-POOL-R2 currently registers exactly four proven R1 smoke objects. It does not authorize bulk discovery/import, and it does not reconstruct the missing historical selected-hit manifest.
+
+Evidence: Draft PR #246, dedicated run `36288195716`, Asset Registry owner run `36288282662`, Librarian Browser owner run `36288282599`.
+
+Publication remains a separate Georg-gated step.
+
