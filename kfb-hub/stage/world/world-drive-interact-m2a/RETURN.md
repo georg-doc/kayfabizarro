@@ -21,7 +21,7 @@ Es wurde keine Ersatz-Rennstrecke gebaut. Track Core bleibt `WAITING_SOURCE` fü
 - Kenney `kart-oobi.glb`: `15e36b915c9bdfd7ff000d398418269e27c6ef9f`
 - Vehicle Deformer v2: `f30b719a8c9da3e9ac90d4d9628c0691d676d1e9`
 - Travel Modes PR #39: `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`
-- Implementierungscheckpoint: `91286ef74eac6da1269e4b32d6ea9024c804c777`
+- GitHub-Runtime-Checkpoint: `c59cd460f57b0129157722d4ab3a0eeab22978aa`
 
 ## Prüfungen
 
