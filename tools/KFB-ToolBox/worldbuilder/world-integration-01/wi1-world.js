@@ -21,12 +21,24 @@ const DONOR = {
   elastic: 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@0c59e92d9d8688f5a88cd309ae8891dcd174c2fc/tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs',
   sky: K + 'travel/wip/travel_globe_wsa/globe-v13/sky-presets.js'
 };
+const WORLD_ZONE_BAKE_PIN = '3b4909d4c83b704662e66b60212e7f20ba5cf662';
+const WORLD_ZONE_BAKE_BASE = 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@' + WORLD_ZONE_BAKE_PIN + '/tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/';
 export const ZONES = {
   huerth: { fixture: 'fixtures/huerth-crop-v0.json', label: 'Hürth' },
   alstaedten: { fixture: 'fixtures/huerth-alstaedten-v0.json', label: 'Hürth-Alstädten' },
   /* Cologne ordinary stock gets the SAME presenter rules; Dom + Hbf stay protected landmark owners (wd1-landmark),
      their OSM parts route to plain landmark bases (no facade grammar), hidden once the landmark validates. */
-  cologne: { fixture: 'fixtures/cologne-dom-crop-v0.json', label: 'Köln Dom/Hbf', landmarks: true }
+  cologne: {
+    fixture: 'fixtures/cologne-dom-crop-v0.json', label: 'Köln Dom/Hbf', landmarks: true,
+    source: {
+      kind: 'world-zone-bake',
+      manifestUrl: WORLD_ZONE_BAKE_BASE + 'MANIFEST.json',
+      expectedId: 'cologne-dom-zentrum-v0',
+      expectedRevision: '2026-09-24.1',
+      expectedNormalizedBlob: '14d3f09da6e14fb7f5dc9478f78be9f876bffab9',
+      crop: { minX: -620, maxX: 180, minZ: -300, maxZ: 300 }
+    }
+  }
 };
 const OPT = K + 'tools/KFB-ToolBox/_inbox/KFB%20Cologne%20Race%20Option%20C-2/lab-v9/';
 const TILE = { size: 192, seg: 384 };   // editable terrain tile · 0.5 m vertex spacing · centred on the spawn · carries the 4.7 cm/px ground map
@@ -91,7 +103,10 @@ function findSpawn(zone, fp) {
 export async function prepare(id) {
   const Z = ZONES[id]; if (!Z) throw new Error('unknown world zone ' + id);
   const SEAM = await import(ROOT + 'wd1-seam.js');
-  const zone = await SEAM.loadZone({ kind: 'frozen-fixture', url: ROOT + Z.fixture });
+  const source = Z.source
+    ? { ...Z.source, presentationUrl: ROOT + Z.fixture }
+    : { kind: 'frozen-fixture', url: ROOT + Z.fixture };
+  const zone = await SEAM.loadZone(source);
   const fp = footprintIndex(zone);
   const spawn = findSpawn(zone, fp);
   const tile = { cx: Math.round(spawn.x), cz: Math.round(spawn.z), size: TILE.size, seg: TILE.seg };
@@ -104,7 +119,8 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
   const S = { city: null, names: null, far: null, plate: null, map: null, ink: null, inkOn: false, inkList: [], inkScan: 0, inkReport: null, sun: null, sunDir: null, getTerrain: () => null, scanRoots: [] };
   const LOG = [];
   const log = (t) => { LOG.push(t); console.info('[wi1]', t); };
-  log('zone · ' + zone.id + ' · ' + zone.counts.buildings + ' buildings · ' + zone.counts.roadParts + ' road parts · seam ' + SEAM.SEAM.version);
+  log('zone · ' + zone.id + ' · ' + zone.counts.buildings + ' buildings · ' + zone.counts.roadParts + ' road parts · ' + zone.kind + ' · seam ' + SEAM.SEAM.version);
+  if (zone.package) log('world-zone-bake · ' + zone.package.id + '@' + zone.package.revision + ' · manifest ref only in WB2 document');
   log('spawn · ' + (spawn.road || 'zone centre') + ' · ' + spawn.x.toFixed(1) + ' / ' + spawn.z.toFixed(1) + ' · ' + spawn.d.toFixed(0) + ' m from zone centre · edit tile ' + tile.size + ' m @ ' + (tile.size / tile.seg) + ' m');
 
   /* shadow box = WB-D1 shadowFollow (Georg-accepted shadow fix): edge follows the camera distance (90–400 m),
@@ -152,13 +168,22 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
       const a = doc.objects.find((o) => o.kind === 'resident'), p = doc.objects.find((o) => o.kind === 'prop');
       if (a) { a.transform.position = at(7, 2.8); a.transform.rotation = [0, +(spawn.heading + Math.PI).toFixed(5), 0]; }
       if (p) { p.transform.position = at(5, -2.4); }
+      const zoneRef = zone.kind === 'world-zone-bake' ? {
+        kind: 'world-zone',
+        manifest: zone.package.manifestUrl,
+        id: zone.package.id,
+        revision: zone.package.revision,
+        transform: { position: [0, 0, 0], rotation: [0, 0, 0], scale: [1, 1, 1] }
+      } : null;
       doc.world = {
-        format: 'kfb.wi1.world-ref/0', zone: { id: zone.id, label: Z.label, fixture: Z.fixture, seam: SEAM.SEAM.version, status: zone.status, provenance: zone.provenance },
+        format: 'kfb.wi1.world-ref/0',
+        zone: { id: zone.id, label: Z.label, sourceKind: zone.kind, fixture: zone.kind === 'frozen-fixture' ? Z.fixture : null, manifest: zone.package?.manifestUrl || null, seam: SEAM.SEAM.version, status: zone.status, provenance: zone.provenance },
+        zoneRef,
         player: { position: [+spawn.x.toFixed(3), 0, +spawn.z.toFixed(3)], heading: +spawn.heading.toFixed(5) }
       };
       doc.sources.world = {
         owner: 'OSM City Lab / World Zone (geography) · WB-D2 (presentation donor)',
-        seam: 'wd1-seam.js loadZone · frozen-fixture', presenter: 'wd1-city.js buildCityLayer · wd1-names.js buildStreetNames',
+        seam: 'wd1-seam.js loadZone · ' + zone.kind, presenter: 'wd1-city.js buildCityLayer · wd1-names.js buildStreetNames',
         walker: 'travel/KFB Travel Combat v25/terrain-v25/walk-controller.js (unchanged, metre params)',
         motion: 'media/3D_Assets/Animations/KFB_Motion_Library + KayKit_Character_Animations_1.1 Rig_Medium'
       };
