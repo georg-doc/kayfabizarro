@@ -1131,3 +1131,23 @@ The proof is **ephemeral only**: no downloaded image or sidecar was committed, n
 
 Exactly one next gate: **PD-POOL-R1 · resume the original four-source smoke + idempotence/persistence gate using the proven AIC transport path**. Bulk population remains blocked until the original selected-hit manifest is recovered or a clearly new curated discovery round is authorized.
 
+## 2026-09-27 · Public Domain Pool · PD-POOL-R1 PASS
+
+PD-POOL-R1 is **PASS · 4/4 SOURCES · IDEMPOTENT · PERSISTED** on Draft PR #242, branch `chatgpt-web/public-domain-pool-r1-2026-09-27`.
+
+Automated gate:
+- tested workflow-definition head `85c154eb796b7abd733b848249b0938045ec0ff2`;
+- Actions run/job `36285925572` / `108526571635`;
+- first run 4/4 LOADED, 0 rejected;
+- second run 4/4 UNCHANGED, 0 redownloaded;
+- stale `.part` injection 1/1 removed;
+- 8/8 provider payload/sidecar files hash-identical;
+- 4/4 provenance sidecars and 4/4 manifest rows;
+- persistence commit `f3acaaeb98530dd9ffb7d200d61956891e738336`.
+
+The four persisted smoke objects are Met 86434, AIC 24645, Commons `File:Silent film.svg`, and Internet Archive `TheGeneral1926` Item Tile. The Archive tile also passed manual source/object review against *The General* evidence.
+
+No bulk import occurred. The historical selected-hit manifest is still missing. No Stage or Live publication is involved.
+
+Exactly one next gate: **PD-POOL-R2 · register only the proven four-object smoke set in the existing Asset Librarian and verify provenance/discoverability.**
+
