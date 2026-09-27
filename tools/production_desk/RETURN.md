@@ -1211,10 +1211,11 @@ Exactly one next gate:
 Status: **SOURCE SYNC COMPLETE · NO GEORG TASK · PUBLIC HUB NOT REBUILT**
 
 - World/Clay direction remains Georg `PROCEED PASS`.
-- New productive World candidate: PR #249, `work/world-mobility-m1-2026-09-27@1aa3db0bff41fcca96c28ba87574b26392cf6ef0`.
+- New productive World candidate: PR #249, `work/world-mobility-m1-2026-09-27@0f9139c523cc6968b0a64551aed0a6fa88040a09`.
 - M1 removes the rejected folded track proxy and integrates the existing World Ground owner with the accepted Travel Ground/Flight router, 400-ms mode intent and actual Card Carrier.
 - Evidence: package 40/40; local desktop+narrow browser 40/40; zero page/console/request/HTTP errors.
-- M1 is not yet publicly staged; no `PUBLIC_VERIFIED` claim.
+- The exact 41-file M1 package is preserved at `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`.
+- Three reads of the exact pages.dev route, including an explicit `index.html` cache-buster, returned the general KayfaBizarro website instead of the M1 source marker. Classification: `PUBLIC_ROUTE_FALLBACK`; no `PUBLIC_VERIFIED` claim and no Georg review task.
 - Next World slice is `WORLD-TRACK-CORE-M2`: consume the real Race Track Core; no replacement geometry or second physics owner.
 - New ToolBox session-cut input is routed to `TOOLBOX Production-02 RECOVERY-01`: 27/28 current selftest, Feature-Parity Matrix first, then one source-backed restoration.
 - H0 Hirnwelt is now the accepted KlayfaBizarro style donor. Its actual soften/material/relief modules and KayKit-facade method are bound into WORLD-TRACK-CLAY-M2; D2 is selected, H1/M1 remain sidequests.

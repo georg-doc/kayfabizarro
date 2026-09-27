@@ -498,3 +498,10 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Chose H0 option **D2** for the production line: transfer the actual soften/material/relief modules into the World/Track consumer.
 - M2 now includes one complete clay city cell with three relief scales, softened KayKit facades, jointed bright curbs, sidewalk, green/entrance transitions and clay road markings.
 - H0/H1 and Knet-Medizin remain separate sidequests; no 40-second runtime soften pass will be accepted as the production path.
+
+## 2026-09-27 · M1 exact publication package, route fallback recorded
+
+- Advanced PR #249 to exact documentation head `0f9139c523cc6968b0a64551aed0a6fa88040a09`.
+- Preserved the exact 41-file M1 package on `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`.
+- The fixed Stage URL returned the general KayfaBizarro site on three browser reads instead of the M1 marker; status is `PUBLIC_ROUTE_FALLBACK`, not `PUBLIC_VERIFIED`.
+- Routing repair remains an internal Publication-owner task. It is not a product Human Gate and does not reopen the rejected proxy-track direction.

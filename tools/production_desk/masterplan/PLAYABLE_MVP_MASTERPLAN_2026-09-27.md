@@ -21,7 +21,7 @@ Der nächste Fortschritt wird an **spielbaren Zuständen** gemessen, nicht an de
 ### Produktiver Kandidat · WORLD-MOBILITY-M1
 
 **Executor:** Work · Sol High
-**PR:** #249 · `work/world-mobility-m1-2026-09-27@1aa3db0b`
+**PR:** #249 · `work/world-mobility-m1-2026-09-27@0f9139c5`
 
 - gefalteter Track-Dummy entfernt;
 - bestehende World-r2-Bewegung und Bodenlogik bleiben Ground-Owner;
@@ -32,7 +32,7 @@ Der nächste Fortschritt wird an **spielbaren Zuständen** gemessen, nicht an de
 - Original/Clay reversibel;
 - Paket **40/40**, lokaler Browser Desktop+schmal **40/40 PASS**.
 
-Die öffentliche Stage ist noch nicht verändert. Das ist ein interner Veröffentlichungsjob, keine neue Aufgabe für Georg.
+Der exakte Kandidat wurde unter `cloudflare-live@e10745de` verpackt. Die feste Stage-Route liefert jedoch weiterhin die allgemeine KayfaBizarro-Website statt M1. Das ist ein **Publication-/Routing-Fehler**, kein Produkt-Gate und keine neue Aufgabe für Georg. Bis zur einmaligen Reparatur gilt ausdrücklich nicht `PUBLIC_VERIFIED`.
 
 ## Genau ein nächster World-Slice
 

@@ -6,7 +6,8 @@
 
 ## Eingänge
 
-- World Mobility M1: PR `#249`, Head `1aa3db0bff41fcca96c28ba87574b26392cf6ef0`
+- World Mobility M1: PR `#249`, Head `0f9139c523cc6968b0a64551aed0a6fa88040a09`
+- M1 publication evidence: `cloudflare-live@e10745def24c1dde96ef36b474cea0b90dc1b237`; die feste Route fällt derzeit auf die allgemeine Website zurück und ist **kein** akzeptierter Testlink
 - World r2 Runtime: `58028b07d7618926c40ffaec3bd4053dc88c0efd`
 - Travel Modes 01 Runtime: `f5ea32f817403cda0e30a426e70f37db8ce03d66`
 - Race/Track-Owner: aktueller GitHub-Stand von `georg-doc/KFB-Stunt-Car-Race`
