@@ -1253,3 +1253,14 @@ Exactly one Hub-publication gate remains: run the existing Production Desk gener
 - Hub builder tests: 16/16 PASS; config JSON PASS. Local render test remains unavailable until the workflow creates `registry/production/v1`; this is not converted into a fake PASS.
 - Publication workflow was made count-independent while retaining zero-problem closure, so new briefing totals no longer invalidate an otherwise current Hub.
 - Next gate: run the existing exact Hub publication workflow once from this corrected owner state, then visibly verify the public root before claiming `PUBLIC_VERIFIED`.
+
+## 2026-09-27 · World Drive M2A routing
+
+Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Arbeitsauftrags:
+
+- Draft PR #253 / `work/world-drive-interact-m2a-2026-09-27`;
+- exakter Head `c59cd460f57b0129157722d4ab3a0eeab22978aa`;
+- Kernloop Ground → E → Drive → E → Ground → Flight;
+- Paket 19/19 und lokaler Browser 28/28 PASS;
+- Stage/Public weiterhin ehrlich nicht behauptet;
+- echter Track Core bleibt eigener M2B-Quellblocker, nicht M2A-Blocker.
