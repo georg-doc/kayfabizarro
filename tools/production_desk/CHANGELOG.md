@@ -481,3 +481,13 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Clay/texture source lock is not an MVP blocker; Georg handled it separately through Blender MCP.
 - Billboard H4 is Georg Visual PASS and replaces the frozen B2b repair loop as the current production-direction donor.
 - H4 remains a separate W1 module-extraction lane. The 33 LoC plates require per-item rights verification before H4 may be publicly deployed.
+## 2026-09-27 · World / Flight / Clay C0 als aktueller MVP-Gate
+
+- World/Flight/Clay C0 als einzige aktuelle Nutzerentscheidung eingetragen;
+- feste Stage öffentlich geprüft: 36/36 Desktop + schmal, ohne Konsolen-, Request- oder HTTP-Fehler;
+- PR #243 auf Dokumentations-Head `06f2168e1ca141ef0126406de625e021501a560b` und Publication `cloudflare-live@e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b` nachgezogen;
+- World r2 von einer doppelten Sichtprüfung zur akzeptierten Grundlage zurückgestuft;
+- Reaktive Clay-Welt und Combat Freeplay als klar nachgelagerte, getrennte MVPs eingeordnet;
+- spielbare MVP-Reihenfolge und alle drei ausführbaren Briefings verlinkt;
+- direkte Stage-/Tool-Kachel für World/Flight/Clay ergänzt;
+- keine alte Graveyard-Prüfung reaktiviert und keine zusätzliche Verteilerseite gebaut.
