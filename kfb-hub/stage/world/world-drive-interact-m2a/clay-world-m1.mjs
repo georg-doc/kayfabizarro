@@ -120,6 +120,7 @@ export async function mountClayWorld(app){
       owners:{geometry:'World r2 · ElasticGrotesqueClayV2',material:'H0 Hirnwelt clay-material.v4 + clay-relief.v2',collision:'World r2 ground/contact'}
     };
   }
-  setMode(new URLSearchParams(location.search).get('look')==='clay'?'clay':'original');
+  const requestedLook=new URLSearchParams(location.search).get('look');
+  setMode(requestedLook==='original'?'original':'clay');
   return {setMode,report,get mode(){return mode}};
 }

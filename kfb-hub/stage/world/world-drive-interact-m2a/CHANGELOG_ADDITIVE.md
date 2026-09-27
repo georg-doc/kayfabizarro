@@ -11,3 +11,4 @@
 - Ground, Drive und Flight mit jeweils genau einem Movement-/Camera-Owner verbunden;
 - Desktop und Narrow Browser 28/28 PASS;
 - Track Core ausdrücklich nicht durch einen Proxy ersetzt.
+- Hirnwelt-H0-Knete als sichtbaren Standard gesetzt; Original bleibt reversibel per Toggle oder `?look=original`.

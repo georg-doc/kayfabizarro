@@ -11,6 +11,9 @@ for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:3
   try{await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:45000})}catch(error){console.error('BOOT DIAG',JSON.stringify({errors,failed,http,body:await page.evaluate(()=>({dataset:{...document.body.dataset},text:document.body.innerText.slice(0,500)}))},null,2));throw error}await page.waitForTimeout(900);
   let r=await page.evaluate(()=>window.__worldDriveM2A.report());
   ok(spec.name+' M2A marker',await page.evaluate(()=>document.body.dataset.kfbStage)==='WORLD-DRIVE-INTERACT-M2A');
+  ok(spec.name+' Hirnwelt H0 clay is default',r.clay.mode==='clay'&&await page.evaluate(()=>document.body.dataset.m1Look)==='clay');
+  ok(spec.name+' clay binds real World meshes',r.clay.boundMeshes>0&&r.clay.buildingCount>0,JSON.stringify(r.clay));
+  ok(spec.name+' clay covers terrain road sidewalk facades roofs',r.clay.layers.medium.includes('terrain/road/sidewalk')&&r.clay.layers.coarse.includes('facades/roofs'));
   ok(spec.name+' starts Ground beside vehicle',r.mobility.mode==='ground'&&r.mobility.interaction.available);
   ok(spec.name+' exact Race donor pinned',r.mobility.drive.source.raceHead==='406cd26f44f22811fe3b3a58776839be7ffb7b2c');
   ok(spec.name+' no proxy Track',r.mobility.trackProxy===false);

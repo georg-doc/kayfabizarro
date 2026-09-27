@@ -25,7 +25,8 @@ Es wurde keine Ersatz-Rennstrecke gebaut. Track Core bleibt `WAITING_SOURCE` fü
 
 ## Prüfungen
 
-- Browser Desktop + schmal: **28/28 PASS**
+- Browser Desktop + schmal: **34/34 PASS**
+- Hirnwelt-H0-Knete ist sichtbarer Standard; `?look=original` und der Umschalter bleiben als reversibler Vergleich erhalten
 - E → Drive, echte Radkontakte, Bewegung, E → Ground, Ground → Flight: PASS
 - kompakte Bedienoberfläche ohne horizontales Überlaufen: PASS
 - 0 Seiten-/Konsolenfehler
