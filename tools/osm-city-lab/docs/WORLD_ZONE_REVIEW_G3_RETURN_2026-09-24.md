@@ -125,3 +125,44 @@ No product/runtime changes.
 Update the City Lab Return/changelog, central router/changelog and KFB Hub briefing metadata to the proven state, open one Draft PR, and return the exact final head.
 
 After that administrative close, the next product decision belongs to Georg; Barcelona remains the prepared second-city portability proof, not part of this slice.
+
+## Handoff close · 2026-09-27
+
+Status: **CLOSED TO DRAFT PR · TECHNICAL RESULT UNCHANGED**
+
+Draft PR:
+`#241 · WORLD-ZONE-BAKE-01 · Cologne baked World Zone · G0→G3 handoff`
+
+PR URL:
+`https://github.com/georg-doc/kayfabizarro/pull/241`
+
+The existing G3 owner branch was reused. No second implementation branch, compiler rebuild, package rewrite or runtime owner was introduced.
+
+At PR creation:
+- base `main`: `6fb02674ea4344169778c0ae9e76b2543f1d78f9`;
+- preserved G3 branch head: `3c6aa96c9c91a5478d95fb840508befbe2b0e5a5`;
+- PR state: **Draft / open / not merged**;
+- GitHub reports the preserved historical branch as not directly mergeable against the newer `main`.
+
+Do **not** repair that divergence by force-updating the historical evidence branch or overwriting newer router/Hub work. Reconcile deliberately only if promotion is requested.
+
+The earlier metadata close at `3c6aa96c9c91a5478d95fb840508befbe2b0e5a5` already updated:
+- City Lab START_HERE + additive changelog;
+- central `skills/chat/START_HERE.md` + additive changelog;
+- KFB Hub briefing metadata.
+
+No Cloudflare route was created because this technical job is explicitly non-publication and the architecture catalog marks Cloudflare as not required.
+
+## Exactly one next product gate
+
+**WB-ZONE-SEAM-01**
+
+Consume the proven baked Cologne Zone through the current WorldBuilder seam, preserving:
+- WorldBuilder as local-world host;
+- OSM City Lab as geographic/semantic/bake owner;
+- Zone manifest ref + transform persistence;
+- separate landmark modules;
+- no runtime Overpass;
+- no second world/runtime owner.
+
+Barcelona remains the later second-city portability proof, not a prerequisite for this close.
