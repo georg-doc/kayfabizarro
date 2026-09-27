@@ -72,3 +72,36 @@ After RECOVERY-01 and Claude Design implementation:
 4. verify anchors, stable seed, one-family budget, cleanup/retrigger and pool stability;
 5. rerun all existing ToolBox tests;
 6. only then package a Stage candidate and perform browser/visual evidence.
+
+
+## Reaction Choreography extension checks
+
+This remains a **contract/source checkpoint**, not a runtime implementation.
+
+| Check | Result |
+|---|---|
+| `reaction-choreography.v0.1.json` parses as JSON | **PASS** |
+| Core semantic event recipes | **17** |
+| Semantic reaction clip roles | **15** |
+| First integrated proof events | **5** |
+| Reaction owner/source reads | **7/7 PASS** |
+| EyeRig v6 owner pin | **PASS** · `853bcf5f...` |
+| Face owner pin | **PASS** · `583807bd...` |
+| Body-shape owner pin | **PASS** · `60f2a57f...` |
+| PoseRig owner pin | **PASS** · `a418fe55...` |
+| Motion Library catalog pin | **PASS** · `694d7977...` |
+| Resident Atlas subtree-layer evidence | **PASS** · `a1e21656...` |
+| Ear Dangle PR #214 donor pin | **PASS** · `6bb4531a...` |
+| Animation clips included as primary skeletal reaction layer | **YES / contract only** |
+| Runtime choreography tests | **NOT RUN — implementation blocked by RECOVERY-01** |
+
+Verified source behavior incorporated into the contract:
+
+- EyeRig: `applyEmote`, `blinkNow`, `setKinetics`, `setLife`;
+- Face: Brow-Life / `browReact`, mouth swap respecting Talk/Viseme ownership;
+- Ear Dangle: acted pose + `impulse` + spring recovery, updated after mixer/root movement;
+- Body Shape: morphology update after mixer, explicitly **not** reaction animation ownership;
+- Resident Atlas: existing clip layering along a bone subtree;
+- current Motion Library emotional clips are classified as state/hold candidates unless proven as one-shot reaction clips.
+
+No browser/runtime/visual PASS is claimed by these additional checks.
