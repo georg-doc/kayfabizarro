@@ -82,4 +82,11 @@ Bewertung: `R4 LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY 
 - Isolierte Performance: Idle **33,4 ms**, Walk **16,8 ms**, Drive **16,8 ms** p95; 30-fps-Ziel bestanden.
 - Adaptive Qualität: `stable → moving → stable`, kein sichtbares Pumpen im Zustandsprüfer.
 
-Bewertung: `R5 LOCAL PLAYABILITY PASS · FRAME TARGET PASS · PUBLICATION PENDING`. Die automatischen Prüfungen belegen Boden, Eingabe, Zustände und Performance; sie ersetzen nicht Georgs Sichtprüfung von Clip-Taktung und Spielgefühl.
+Öffentliche Wiederholung auf der festen Route nach Publication-Head `f827839509cf7b517daa98fe3074f49d9510c626`:
+
+- Browser Desktop + schmal: **38/38 PASS**.
+- Playability: **PASS**; Walk 1,41 m/s, Sprint 2,99 m/s, Offroad 12,96 m, 4/4 Kontakte.
+- Performance: Idle **33,3 ms**, Walk **16,7 ms**, Drive **16,8 ms** p95; Qualitätswechsel stabil.
+- 0 Seiten-, Konsolen-, Request- oder HTTP-Fehler.
+
+Bewertung: `R5 PUBLIC PLAYABILITY PASS · FRAME TARGET PASS · HUMAN FREE-PLAY PENDING`. Die automatischen Prüfungen belegen Boden, Eingabe, Zustände und Performance; sie ersetzen nicht Georgs Sichtprüfung von Clip-Taktung und Spielgefühl.

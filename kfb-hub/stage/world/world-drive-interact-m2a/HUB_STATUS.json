@@ -1,27 +1,26 @@
 {
   "schema": "kfb.hub-stage-candidate/1",
   "id": "WORLD-DRIVE-INTERACT-M2A",
-  "title": "World M2A · R5 Boden und Bewegung repariert · Stage folgt",
+  "title": "World M2A · R5 Boden, Bewegung und Offroad öffentlich",
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
   "sourceBranch": "work/world-m2a-playable-r5-2026-09-27",
   "implementationHead": "b0142b3540728afac80a6ef9b15315fd7089a5fe",
-  "publicationHead": null,
-  "visibility": "LOCAL_R5_CANDIDATE__PUBLIC_ROUTE_STILL_R4",
-  "reviewState": "R5_LOCAL_PLAYABILITY_PASS__PUBLICATION_PENDING",
+  "publicationHead": "f827839509cf7b517daa98fe3074f49d9510c626",
+  "visibility": "PUBLIC_R5_STAGE",
+  "reviewState": "R5_PUBLIC_PLAYABILITY_PASS__HUMAN_FREE_PLAY_PENDING",
   "automatedEvidence": [
     "R5 package 27/27",
-    "R5 local browser 38/38",
+    "R5 public browser 38/38",
     "R5 playability proof PASS: walk 1.41 m/s, sprint 2.99 m/s",
-    "vehicle starts at 4/4 contacts and remains grounded for 12.67 m offroad",
-    "Walk/Drive p95 16.8/16.8 ms; no page errors"
+    "vehicle starts at 4/4 contacts and remains grounded for 12.96 m offroad",
+    "public Walk/Drive p95 16.7/16.8 ms; no page errors"
   ],
   "coreBlockers": [
-    "publish exact R5 candidate before human free-play",
     "incorrect movement animation/state timing remains a separate tune",
     "vehicle visual stance/seat still needs human review after pre-settle"
   ],
   "deferred": [
     "boulder/prop shadow and bright-edge artifact"
   ],
-  "next": "Publish exact R5 to the fixed Stage, repeat browser proof, then request one human free-play."
+  "next": "Georg free-plays Ground, Drive/Offroad and Flight on the fixed Stage; tune only the observed blocker."
 }
