@@ -1,0 +1,427 @@
+{
+  "schema": "kfb.world-m2a-r4-performance-proof/1",
+  "base": "http://127.0.0.1:4196/kfb-hub/stage/world/world-drive-interact-m2a/",
+  "viewport": {
+    "width": 1280,
+    "height": 820
+  },
+  "samples": {
+    "idle": {
+      "schema": "kfb.world-m2a-perf/1",
+      "complete": true,
+      "scenario": "idle",
+      "diagnostic": "none",
+      "bootToControlMs": 4855.7,
+      "sampleMs": 8037.3,
+      "frame": {
+        "count": 336,
+        "medianMs": 16.700000000000728,
+        "p95Ms": 33.400000000001455,
+        "p99Ms": 50,
+        "long50": 3,
+        "long100": 0
+      },
+      "renderer": {
+        "pixelRatio": 0.86,
+        "calls": 199,
+        "triangles": 191860,
+        "lines": 4,
+        "points": 0,
+        "textures": 27,
+        "geometries": 136
+      },
+      "phaseAvgMs": {
+        "mixer": 0.037,
+        "grounding": 0.366,
+        "presentation": 0.002,
+        "play": 0.209,
+        "world": 0.038,
+        "editor": 0.017,
+        "render": 3.771
+      },
+      "quality": {
+        "schema": "kfb.world-adaptive-quality-r4/1",
+        "profile": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+        "state": "stable",
+        "pixelRatio": 0.86,
+        "movingRatio": 0.65,
+        "stableRatio": 0.86,
+        "idleDelayMs": 1400,
+        "narrow": false,
+        "cssUiNativeResolution": true,
+        "changes": 2,
+        "override": null
+      },
+      "scene": {
+        "objects": 829,
+        "meshes": 519,
+        "skinned": 12,
+        "casters": 81,
+        "materials": 438,
+        "geometries": 516
+      },
+      "mobility": {
+        "mode": "ground",
+        "ground": {
+          "position": [
+            -34.59,
+            0,
+            -25.74
+          ],
+          "motion": "idle",
+          "speed": 0
+        },
+        "drive": {
+          "schema": "kfb.world-drive-m2a/1",
+          "active": false,
+          "source": {
+            "owner": "FREE_ROAM_C0",
+            "racePr": 10,
+            "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+            "vehicleRepo": "georg-doc/kayfabizarro",
+            "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+            "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+            "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+            "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+          },
+          "physicalOwner": "FREE_ROAM_C0",
+          "worldOwner": "World r2",
+          "sourceSurfaceAdapter": true,
+          "buildingTriangles": 12974,
+          "contactBounds": {
+            "minX": -358,
+            "maxX": 358,
+            "minZ": -358,
+            "maxZ": 358,
+            "width": 716,
+            "depth": 716
+          },
+          "idleSettled": true,
+          "preSettledSteps": 41,
+          "position": {
+            "x": -32.99,
+            "y": 0.73,
+            "z": -31.52
+          },
+          "speedKmh": 0,
+          "contacts": 4,
+          "visualGroundGapM": 0.003,
+          "deformer": {
+            "impactWeight": 0,
+            "dominant": "idle",
+            "pose": {
+              "pitch": 0,
+              "roll": 0,
+              "yaw": 0,
+              "squash": 0,
+              "stretch": 0
+            }
+          }
+        },
+        "flight": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "speed": 0,
+          "clearance": 3,
+          "actorPose": "idle",
+          "vehicle": null
+        }
+      }
+    },
+    "walk": {
+      "schema": "kfb.world-m2a-perf/1",
+      "complete": true,
+      "scenario": "walk",
+      "diagnostic": "none",
+      "bootToControlMs": 6998.4,
+      "sampleMs": 8014,
+      "frame": {
+        "count": 464,
+        "medianMs": 16.69999999999891,
+        "p95Ms": 16.799999999999272,
+        "p99Ms": 33.399999999999636,
+        "long50": 0,
+        "long100": 0
+      },
+      "renderer": {
+        "pixelRatio": 0.65,
+        "calls": 185,
+        "triangles": 177514,
+        "lines": 4,
+        "points": 0,
+        "textures": 27,
+        "geometries": 140
+      },
+      "phaseAvgMs": {
+        "mixer": 0.045,
+        "grounding": 0.29,
+        "presentation": 0.004,
+        "play": 0.233,
+        "world": 0.038,
+        "editor": 0.02,
+        "render": 4.78
+      },
+      "quality": {
+        "schema": "kfb.world-adaptive-quality-r4/1",
+        "profile": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+        "state": "moving",
+        "pixelRatio": 0.65,
+        "movingRatio": 0.65,
+        "stableRatio": 0.86,
+        "idleDelayMs": 1400,
+        "narrow": false,
+        "cssUiNativeResolution": true,
+        "changes": 1,
+        "override": null
+      },
+      "scene": {
+        "objects": 829,
+        "meshes": 519,
+        "skinned": 12,
+        "casters": 81,
+        "materials": 438,
+        "geometries": 516
+      },
+      "mobility": {
+        "mode": "ground",
+        "ground": {
+          "position": [
+            -31.62,
+            0,
+            -36.46
+          ],
+          "motion": "walk.fast",
+          "speed": 1.41
+        },
+        "drive": {
+          "schema": "kfb.world-drive-m2a/1",
+          "active": false,
+          "source": {
+            "owner": "FREE_ROAM_C0",
+            "racePr": 10,
+            "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+            "vehicleRepo": "georg-doc/kayfabizarro",
+            "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+            "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+            "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+            "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+          },
+          "physicalOwner": "FREE_ROAM_C0",
+          "worldOwner": "World r2",
+          "sourceSurfaceAdapter": true,
+          "buildingTriangles": 12974,
+          "contactBounds": {
+            "minX": -358,
+            "maxX": 358,
+            "minZ": -358,
+            "maxZ": 358,
+            "width": 716,
+            "depth": 716
+          },
+          "idleSettled": true,
+          "preSettledSteps": 41,
+          "position": {
+            "x": -32.99,
+            "y": 0.73,
+            "z": -31.52
+          },
+          "speedKmh": 0,
+          "contacts": 4,
+          "visualGroundGapM": 0.003,
+          "deformer": {
+            "impactWeight": 0,
+            "dominant": "idle",
+            "pose": {
+              "pitch": 0,
+              "roll": 0,
+              "yaw": 0,
+              "squash": 0,
+              "stretch": 0
+            }
+          }
+        },
+        "flight": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "speed": 0,
+          "clearance": 3,
+          "actorPose": "walk.fast",
+          "vehicle": null
+        }
+      }
+    },
+    "drive-offroad": {
+      "schema": "kfb.world-m2a-perf/1",
+      "complete": true,
+      "scenario": "drive-offroad",
+      "diagnostic": "none",
+      "bootToControlMs": 5944.8,
+      "sampleMs": 8014.3,
+      "frame": {
+        "count": 459,
+        "medianMs": 16.69999999999891,
+        "p95Ms": 16.80000000000109,
+        "p99Ms": 33.399999999999636,
+        "long50": 0,
+        "long100": 0
+      },
+      "renderer": {
+        "pixelRatio": 0.65,
+        "calls": 153,
+        "triangles": 165542,
+        "lines": 4,
+        "points": 0,
+        "textures": 29,
+        "geometries": 159
+      },
+      "phaseAvgMs": {
+        "mixer": 0.04,
+        "grounding": 0.257,
+        "presentation": 0.003,
+        "play": 0.396,
+        "world": 0.038,
+        "editor": 0.022,
+        "render": 3.686
+      },
+      "quality": {
+        "schema": "kfb.world-adaptive-quality-r4/1",
+        "profile": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+        "state": "moving",
+        "pixelRatio": 0.65,
+        "movingRatio": 0.65,
+        "stableRatio": 0.86,
+        "idleDelayMs": 1400,
+        "narrow": false,
+        "cssUiNativeResolution": true,
+        "changes": 1,
+        "override": null
+      },
+      "scene": {
+        "objects": 829,
+        "meshes": 519,
+        "skinned": 12,
+        "casters": 81,
+        "materials": 438,
+        "geometries": 516
+      },
+      "mobility": {
+        "mode": "drive",
+        "ground": {
+          "position": [
+            -34.59,
+            0,
+            -25.74
+          ],
+          "motion": "idle",
+          "speed": 0
+        },
+        "drive": {
+          "schema": "kfb.world-drive-m2a/1",
+          "active": true,
+          "source": {
+            "owner": "FREE_ROAM_C0",
+            "racePr": 10,
+            "raceHead": "406cd26f44f22811fe3b3a58776839be7ffb7b2c",
+            "vehicleRepo": "georg-doc/kayfabizarro",
+            "vehicleCommit": "15e36b915c9bdfd7ff000d398418269e27c6ef9f",
+            "vehiclePath": "media/3D_Assets/kenney_car-kit/Models/GLB format/kart-oobi.glb",
+            "deformerCommit": "f30b719a8c9da3e9ac90d4d9628c0691d676d1e9",
+            "deformerSchema": "kfb.cartoon-vehicle-deformer/2"
+          },
+          "physicalOwner": "FREE_ROAM_C0",
+          "worldOwner": "World r2",
+          "sourceSurfaceAdapter": true,
+          "buildingTriangles": 12974,
+          "contactBounds": {
+            "minX": -358,
+            "maxX": 358,
+            "minZ": -358,
+            "maxZ": 358,
+            "width": 716,
+            "depth": 716
+          },
+          "idleSettled": true,
+          "preSettledSteps": 41,
+          "position": {
+            "x": -54.66,
+            "y": 0.74,
+            "z": 42.34
+          },
+          "speedKmh": 44,
+          "contacts": 4,
+          "visualGroundGapM": -0.007,
+          "deformer": {
+            "impactWeight": 0.001,
+            "dominant": "load",
+            "pose": {
+              "pitch": -0.07,
+              "roll": 0,
+              "yaw": 0,
+              "squash": 0.0038,
+              "stretch": 0.0014
+            }
+          }
+        },
+        "flight": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "speed": 0,
+          "clearance": 3,
+          "actorPose": "idle",
+          "vehicle": null
+        }
+      }
+    }
+  },
+  "qualityTransition": {
+    "stable": {
+      "schema": "kfb.world-adaptive-quality-r4/1",
+      "profile": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+      "state": "stable",
+      "pixelRatio": 0.86,
+      "movingRatio": 0.65,
+      "stableRatio": 0.86,
+      "idleDelayMs": 1400,
+      "narrow": false,
+      "cssUiNativeResolution": true,
+      "changes": 2,
+      "override": null
+    },
+    "moving": {
+      "schema": "kfb.world-adaptive-quality-r4/1",
+      "profile": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+      "state": "moving",
+      "pixelRatio": 0.65,
+      "movingRatio": 0.65,
+      "stableRatio": 0.86,
+      "idleDelayMs": 1400,
+      "narrow": false,
+      "cssUiNativeResolution": true,
+      "changes": 3,
+      "override": null
+    },
+    "restored": {
+      "schema": "kfb.world-adaptive-quality-r4/1",
+      "profile": "ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4",
+      "state": "stable",
+      "pixelRatio": 0.86,
+      "movingRatio": 0.65,
+      "stableRatio": 0.86,
+      "idleDelayMs": 1400,
+      "narrow": false,
+      "cssUiNativeResolution": true,
+      "changes": 4,
+      "override": null
+    },
+    "visiblePumpingGuard": true
+  }
+}

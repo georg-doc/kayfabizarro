@@ -1,27 +1,26 @@
 {
   "schema": "kfb.hub-stage-candidate/1",
   "id": "WORLD-DRIVE-INTERACT-M2A",
-  "title": "World M2A · R4 Performance-Ziel erreicht · freier Test folgt",
+  "title": "World M2A · R5 Boden, Bewegung und Offroad öffentlich",
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
-  "sourceBranch": "work/world-m2a-adaptive-quality-r4-2026-09-27",
-  "implementationHead": "1d803d177789fa834c5165fe36caa12fc26fe7c7",
-  "publicationHead": "2e1978821a043cf604c8bc556493cae282a87a86",
-  "visibility": "PUBLIC_STAGE_R4_CANDIDATE",
-  "reviewState": "R4_PUBLIC_VERIFIED__HUMAN_FREEPLAY_PENDING",
+  "sourceBranch": "work/world-m2a-playable-r5-2026-09-27",
+  "implementationHead": "b0142b3540728afac80a6ef9b15315fd7089a5fe",
+  "publicationHead": "f827839509cf7b517daa98fe3074f49d9510c626",
+  "visibility": "PUBLIC_R5_STAGE",
+  "reviewState": "R5_PUBLIC_PLAYABILITY_PASS__HUMAN_FREE_PLAY_PENDING",
   "automatedEvidence": [
-    "R4 package 26/26",
-    "R4 local browser 38/38",
-    "R4 public browser 38/38 on fixed Cloudflare Stage",
-    "Idle/Walk/Drive p95 16.7/16.7/16.7 ms",
-    "0 page/request/HTTP errors; quality transition guard PASS"
+    "R5 package 27/27",
+    "R5 public browser 38/38",
+    "R5 playability proof PASS: walk 1.41 m/s, sprint 2.99 m/s",
+    "vehicle starts at 4/4 contacts and remains grounded for 12.96 m offroad",
+    "public Walk/Drive p95 16.7/16.8 ms; no page errors"
   ],
   "coreBlockers": [
-    "human free-play still required for movement feel and image sharpness",
     "incorrect movement animation/state timing remains a separate tune",
-    "vehicle visual stance/seat still needs human review"
+    "vehicle visual stance/seat still needs human review after pre-settle"
   ],
   "deferred": [
     "boulder/prop shadow and bright-edge artifact"
   ],
-  "next": "Run one human free-play on the public R4 candidate; then FACADE-DONOR-01 for real instanced facade parts."
+  "next": "Georg free-plays Ground, Drive/Offroad and Flight on the fixed Stage; tune only the observed blocker."
 }

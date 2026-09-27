@@ -145,11 +145,17 @@ export async function createWorldDriveM2A(app){
   const ignore=e=>['INPUT','TEXTAREA','SELECT'].includes(e.target?.tagName);
   const kd=e=>{if(!active||ignore(e)||e.repeat)return;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();keys.add(e.code)};
   const ku=e=>keys.delete(e.code);addEventListener('keydown',kd,{capture:true});addEventListener('keyup',ku,{capture:true});addEventListener('blur',()=>keys.clear());
+  let preSettledSteps=0;
+  for(;preSettledSteps<180;preSettledSteps++){
+    simulate();
+    if(current.contacts.filter(Boolean).length>=4&&Math.abs(current.velocity.y)<.08){idleSettled=true;break}
+  }
+  previous=current;
   place(1,true);
   function report(){
     const visualWheelBottom=root.position.y-Math.max(...current.wheelLengths)-.42;
     const surfaceY=app.terrainHeightAt(root.position.x,root.position.z);
-    return {schema:'kfb.world-drive-m2a/1',active,source:DRIVE_SOURCE,physicalOwner:'FREE_ROAM_C0',worldOwner:'World r2',sourceSurfaceAdapter:true,buildingTriangles:buildingMesh.indices.length/3,contactBounds:{...contactRect,width:+contactSize.x.toFixed(1),depth:+contactSize.z.toFixed(1)},idleSettled,position:{x:+current.position.x.toFixed(2),y:+current.position.y.toFixed(2),z:+current.position.z.toFixed(2)},speedKmh:+(Math.abs(signedSpeed(current))*3.6).toFixed(1),contacts:current.contacts.filter(Boolean).length,visualGroundGapM:+(visualWheelBottom-surfaceY).toFixed(3),deformer:deformer.readout}
+    return {schema:'kfb.world-drive-m2a/1',active,source:DRIVE_SOURCE,physicalOwner:'FREE_ROAM_C0',worldOwner:'World r2',sourceSurfaceAdapter:true,buildingTriangles:buildingMesh.indices.length/3,contactBounds:{...contactRect,width:+contactSize.x.toFixed(1),depth:+contactSize.z.toFixed(1)},idleSettled,preSettledSteps,position:{x:+current.position.x.toFixed(2),y:+current.position.y.toFixed(2),z:+current.position.z.toFixed(2)},speedKmh:+(Math.abs(signedSpeed(current))*3.6).toFixed(1),contacts:current.contacts.filter(Boolean).length,visualGroundGapM:+(visualWheelBottom-surfaceY).toFixed(3),deformer:deformer.readout}
   }
   return {root,physics,setActive,update,safeExit,report,get active(){return active},get position(){return current.position},get yaw(){return current.yaw||0},distanceTo(p){return Math.hypot(current.position.x-p.x,current.position.z-p.z)}};
 }

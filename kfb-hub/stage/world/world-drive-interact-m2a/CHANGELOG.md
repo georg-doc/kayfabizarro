@@ -11,3 +11,11 @@
 - Unnötiges permanentes Neu-Grounding des Player-Modells während des aktiven Play-Modus beendet.
 - Performance-/Spielwert-Matrix ergänzt.
 - R1 nach zwei Kandidaten als `PARTIAL` gestoppt; nicht auf die feste Stage veröffentlicht.
+
+## 2026-09-27 · R5 Playability repair
+
+- Fahrzeug vor dem ersten sichtbaren Bild bis zum realen Vier-Rad-Kontakt gesetzt.
+- Zu-Fuß-Antritt, Pace-up und Bremsen reaktionsfreudiger abgestimmt, ohne den bestehenden Motion-Owner zu ersetzen.
+- Eigenen Browserbeweis für Gehen, Sprint, Erstkontakt und Offroad-Fahrt ergänzt.
+- 30-fps-Prüfer gegen die dokumentierte 0,1-ms-Timerauflösung robust gemacht.
+- Paket 27/27, Browser 38/38 und Playability-Proof lokal bestanden; keine Stage-Promotion.

@@ -35,6 +35,13 @@ Stand: 2026-09-27 · Grundsatz: **Spielbarkeit und Reaktionszeit vor maximaler D
 - Ohne Stadt: Walk p95 **39,9 ms**. Ohne Schatten: **41,6 ms**. Beide sind nur kleine Resthebel.
 - Bei Pixelratio **0,6**: Walk p95 **26,3 ms**. Damit ist der nächste klare Hebel eine adaptive Auflösungs-/Clay-Qualitätsregel, nicht das Löschen weiterer Spielwelt.
 
+## R4/R5 · aktueller bezahlbarer Stand
+
+- R4 hält die vollständige Welt mit City Shell LOD und adaptiver Auflösung im 30-fps-Budget.
+- R5 verändert den Renderumfang nicht. Der isolierte Kontrolllauf liegt bei Walk/Drive jeweils **16,8 ms p95**; kurzfristige 33,3/33,4-ms-Quantisierung in belasteten Headless-Läufen entspricht weiterhin dem 30-fps-Raster.
+- Der Playability-Gewinn kommt aus früherem Pace-up und sauberem Fahrzeug-Pre-settle, nicht aus dem Entfernen sichtbarer Welt.
+- Nächster Performance-Schritt ist kein pauschales Feature-Sterben: erst Georgs freier Test, dann nur den tatsächlich störenden Zustand messen.
+
 ## Fassaden-Donor-Regel
 
 Fenster, Türen, Vordächer und Schilder dürfen als echte KayKit-/Tiny-Treats-/Kenney-Quellbauteile isoliert und danach instanziert werden. Erlaubt sind Skalierung, leichte Cartoon-Verformung, Farbvarianten und regelbasierte Fassadenrhythmen. Ein Asset-Link oder selbst gebauter Ersatz ist kein Donor-Beweis. Die Ferne erhält keine Einzelbauteile; nahe Fassaden teilen Geometrie und Material und variieren über Instanzdaten.

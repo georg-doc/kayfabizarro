@@ -1,36 +1,40 @@
-# WORLD-M2A-R4 · Run State
+# WORLD-M2A-R5 · Run State
 
-Status: `R4_LOCAL_PASS · FRAME_TARGET_PASS · PUBLIC_BROWSER_PASS · HUMAN_FREEPLAY_PENDING`
+Status: `R5_PUBLIC_PLAYABILITY_PASS · FRAME_TARGET_PASS · HUMAN_FREE_PLAY_PENDING`
 Datum: 2026-09-27
 
 ## Lock
 
 - Owner: bestehende World-M2A-Runtime
 - Repo: `georg-doc/kayfabizarro`
-- Branch: `work/world-m2a-adaptive-quality-r4-2026-09-27`
-- Basis: R3 `69d7910cde4275131f6701416c26d9cab3937ba5`
-- Implementierung: `1d803d177789fa834c5165fe36caa12fc26fe7c7`
-- Outcome: genau eine adaptive Auflösungs-/Clay-Distanzregel messen; keine neuen Spielmerkmale
+- Branch: `work/world-m2a-playable-r5-2026-09-27`
+- Basis: R4 `c8ecbf570dd9689c3e732209fbc89a4b6d00acc7`
+- Implementierung: `b0142b3540728afac80a6ef9b15315fd7089a5fe`
+- Outcome: Georgs konkrete Boden-, Tempo- und Offroad-Blocker reparieren; keine neuen Features
 
 ## Protected
 
 - World r2 bleibt World-/Terrain-Owner.
 - Race PR #10 bleibt Drive-/Physics-/Camera-Owner.
 - World M1 bleibt Ground-/Flight-/Actor-Owner.
-- Feste öffentliche Stage enthält exakt den gemessenen R4-Kandidaten; keine Live-Promotion außerhalb dieser Route.
-- Echte Fassaden-Donors kommen erst nach isoliertem Quellenbeweis.
+- Die feste Stage zeigt exakt R5 ab Publication-Head `f827839509cf7b517daa98fe3074f49d9510c626`.
+- Track T3 ist ein neuer akzeptierter Look-Donor, aber nicht Bestandteil dieses Reparaturpasses.
 
 ## Ergebnis
 
-- Bewegung: Pixelratio 0,65 (schmal 0,60); Stillstand nach 1,4 s: 0,86 (schmal 0,72).
-- WebGL passt seine interne Auflösung an; HTML-/HUD-Oberfläche bleibt in nativer CSS-Auflösung.
-- Entfernte Stadt-Hüllen behalten Form und Farbe, aber nicht den vollständigen Clay-Relief-Shader.
-- Paket 26/26; Browser Desktop + schmal lokal 38/38 und öffentlich 38/38.
-- p95 Idle/Walk/Drive 16,7/16,7/16,7 ms; Ziel ≤ 33,3 ms bestanden.
-- 0 Frames über 50 ms in den drei 8-s-Läufen; 4 stabile Qualitätswechsel im Start/Stop-Test.
+- Fahrzeug startet sichtbar bei 4/4 Radkontakten und 0,003 m Ground-Gap.
+- 12,96 m öffentlicher Offroad-Lauf bleiben auf der vollständigen World-Kontaktfläche.
+- Walk 1,41 m/s; Sprint 2,99 m/s; früherer Pace-up nach 0,32 s.
+- Paket 27/27; öffentliche Browserprüfung Desktop + schmal 38/38; öffentlicher Playability-Proof PASS.
+- Öffentliche p95 Idle/Walk/Drive 33,3/16,7/16,8 ms; 30-fps-Ziel bestanden.
+- 0 Seitenfehler; Qualitätswechsel stabil statt frameweise.
+
+## Neuer visueller Donor
+
+`KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27` liegt auf `main@692240b5` und ist von Georg als ausbaufähige Basis akzeptiert. T1/T2 bleiben verworfen. T3 gehört erst in einen eigenen Track-/World-Seam-Slice; R5 wird dafür nicht wieder geöffnet.
 
 ## Stop
 
-Der einzelne R4-Kandidat ist gemessen. Kein zweiter Performance-Patch in diesem Gate.
+R5 ist auf der festen Stage technisch bewiesen. Keine weitere Bewegungs- oder Performance-Änderung vor Georgs menschlichem Fahrtest.
 
-Nächster Gate: Georgs freier Spieltest auf der festen R4-Stage. Erst danach separat echte KayKit-/Tiny-Treats-/Kenney-Fassadenbauteile isolieren und instanziert in die Nahstufe übernehmen.
+Nächster Gate: Georg testet zu Fuß, Auto, Offroad und Flug auf der festen Stage. Erst danach folgt genau ein gezieltes Clip-/Feel-Tuning oder der nächste Integrationsslice.

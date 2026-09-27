@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {createTravelModeRouter,TRAVEL_MODE_DEFINITIONS} from './travel-mode-router.js';
 import {createGroundFlightIntent,DEFAULT_DOUBLE_SPACE_WINDOW_MS} from './mode-intent.js';
 import {createCardCarrier} from './card-carrier.js';
-import {createWorldDriveM2A,DRIVE_SOURCE} from './world-drive-m2a.mjs?r1=playability2';
+import {createWorldDriveM2A,DRIVE_SOURCE} from './world-drive-m2a.mjs?r5=pre-settle';
 
 const SOURCE={
   travelPr:39,
