@@ -53,6 +53,27 @@ Default to continuing implementation inside the real owner/product surface. A hu
 
 A Georg **PROCEED PASS** closes the current intermediate gate without implying exhaustive acceptance. Do not reopen the same gate before the next productive integration unless a new blocker appears.
 
+## 3B. Persist before replying
+
+When Georg has already authorized GitHub persistence for the slice, **write and verify the durable state before sending a long user-visible handoff**.
+
+This applies especially to:
+- Georg PASS / TUNE / FAIL or other acceptance feedback;
+- Return / Recovery / changelog closure;
+- WSA / Work planning notes;
+- current next-gate changes;
+- explicit requests to “check this in”, “secure this”, or continue under the standing production workflow.
+
+Do not substitute a paste-ready GitHub note for the actual GitHub write when the connector is available and the requested write is within the authorized owner/branch boundary.
+
+The safe order is:
+
+`user feedback → owner GitHub write → ref/file verification → optional WSA/Hub metadata note → concise chat confirmation`
+
+Reason: a long explanatory/paste-ready response before persistence creates an avoidable failure window. If the chat times out after that response but before the write, the authoritative state is lost or ambiguous.
+
+If a write itself times out, keep the user-facing response minimal while status is `UNKNOWN`; inspect the exact ref/file first. Never spend a separate conversational turn merely drafting text that the same chat is already authorized to persist.
+
 ## 4. Publish only to KFB Stage
 
 Human test links use:
