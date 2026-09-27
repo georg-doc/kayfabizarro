@@ -147,6 +147,7 @@ type ReactionEvent = {
     | 'speech.emphasis'
     | 'social.positive'
     | 'social.negative'
+    | 'social.prop_hit'
     | 'surprise'
     | 'threat.alert'
     | 'damage.light'
@@ -166,10 +167,20 @@ type ReactionEvent = {
   targetId?: string;
   seed: number;
   source?: string;
+  sourcePropId?: string;
+  targetKind?: 'npc' | 'player' | 'other';
+  relationshipTone?: 'neutral' | 'affectionate' | 'buddy-banter' | 'argument' | 'hostile';
+  sceneMode?: 'ambient' | 'social-play' | 'kayfabe-performance' | 'combat';
+  dramaticBeat?: 'setup' | 'escalation' | 'sell' | 'reversal' | 'reconciliation';
+  harmMode?: 'social' | 'staged' | 'real';
 };
 ```
 
 The consumer emits the fact. Reaction Choreography decides only **how that fact is performed**.
+
+For Town/social interactions, the consumer must also supply relationship/dramaturgy context when it matters. Choreography must **not infer hostility from physical contact alone**. A Brick Fish hit is therefore `social.prop_hit` by default, not `damage.light`. Real combat/hazard damage stays on the existing `damage.*` semantics.
+
+A heart emitted by this reaction is **visual Emanata only**. It is not a relationship point, affection meter, reward currency or UI state.
 
 # 4 · ReactionCue tracks
 
@@ -341,6 +352,7 @@ Initial roles:
 ```
 react.positive
 react.negative
+react.social_prop_hit
 react.surprise
 react.alert
 react.hit.light
@@ -441,7 +453,7 @@ defeat / terminal
 > damage.light / collision
 > threat / surprise
 > success / failure / reward
-> social reactions
+> social.prop_hit / social reactions
 > speech emphasis
 > ambient attention
 ```
@@ -520,6 +532,91 @@ Emanata:
 - `heart` for affection;
 - `sparkle` for pride/delight;
 - never both by default.
+
+## 9.3A social.prop_hit · Brick Fish / Red Herring
+
+**Use:** a non-damaging social projectile hits an actor. The canonical Town/default prop is the **Brick Fish** from the Town Prop-Toss slice.
+
+Source/design lock:
+- Town Prop-Toss / Brick Fish: Draft PR #254 @ `79d7c18a8f07b99efe8276211a9cda527ac2f2ea`;
+- source blob: `skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md` @ `99205974c8fcc08ef41e6f66edcdd495f5e81cef`;
+- current Town encounter model: semantic encounter beats drive animation and text independently;
+- Town attitude remains friendly-by-default; physical slapstick does not silently become Combat.
+
+### Canonical default · Krazy Kat inversion
+
+For an **NPC target** with no stronger context supplied:
+
+```text
+Brick Fish contact
+→ physical recoil / BONK read
+→ eyes blink/squeeze
+→ ears/secondary parts kick opposite contact
+→ actor refocuses on thrower
+→ heart Emanata pops after the impact read
+→ optional retaliation window
+→ recovery to prior social/locomotion state
+```
+
+The comic inversion is intentional: **the target is hit, then displays affection**. This is the default Brick Fish signature.
+
+Timing direction:
+- contact/recoil begins at 0 ms;
+- blink/brow accent begins with or immediately after contact;
+- heart appears **after** the physical hit is readable, roughly +80–180 ms;
+- one family only: normally 1–3 `heart` instances;
+- heart recovery may trail the body recovery;
+- retaliation availability is emitted/owned by the social interaction layer, not by Emanata.
+
+This heart is not a Town relationship meter. It is a transient performance mark.
+
+### Context resolver
+
+The same contact may be performed differently when the consumer supplies relationship/dramaturgy context.
+
+| Context | Physical performance | Face / secondary acting | Emanata direction | Dialogue handoff |
+|---|---|---|---|---|
+| default / friendly | readable short recoil, quick recovery | blink → soften/refocus | **`heart` default** | none required |
+| affectionate | lighter recoil, playful overshoot | smile/soft eyes | `heart`, possibly stronger | optional existing social line |
+| buddy-banter | recoil + quick counter-ready pose | side-eye / grin / smug or amused read | `heart` **or** `sparkle` according to beat | existing ChatterBox/Triplet/Kayfabulation only |
+| argument | sharper recoil, hold toward thrower | negative brow / glare | `anger_knot`, `anger_spikes` or no Emanata | existing argument/response content only |
+| kayfabe-performance | deliberately **sell** the hit, potentially exaggerated full-body reaction | showmanship, refocus to partner/audience | `dizzy_stars`, `anger_spikes`, or `heart` for wink/reconciliation beat | existing show/buddy-banter layer |
+| hostile / real harm | **do not stay on `social.prop_hit`** | consumer remaps to real damage state | governed by `damage.light/heavy` | Combat/consumer owner |
+
+The choreography receives these meanings; it does not decide that two actors are friends, arguing, performing Kayfabe or actually fighting.
+
+### Kayfabe / buddy-banter rule
+
+A staged fight may use a **larger physical sell with a friendlier semantic meaning**.
+
+Therefore:
+- body magnitude does not equal hostility;
+- an exaggerated knockback/sell may still be `harmMode: 'staged'`;
+- real HP/damage/aggro changes require the consumer to emit a real `damage.*` event;
+- a Kayfabe hit may end on a smirk, taunt, heart, sparkle or counter-ready pose depending on the dramatic beat;
+- `reconciliation` may deliberately return to the Brick Fish heart signature.
+
+### Town / dialogue boundary
+
+Town's encounter model already separates the animation layer from the text/Triplet layer. Keep that separation here.
+
+Reaction Choreography may expose a semantic cue such as `buddy-banter`, `argument-response` or `kayfabe-sell`, but:
+- it does not generate dialogue;
+- it does not create a second banter system;
+- ChatterBox/Triplet/Kayfabulation remains the dialogue/content owner;
+- the existing Town speech-bubble attention budget still applies;
+- no line is required for the Brick Fish gag to work.
+
+### Prop / VFX boundary
+
+Brick Fish BONK/SPLAT/POP deformation belongs to the prop/VFX interaction owner. Reaction Choreography consumes the same contact event and performs the **target actor**.
+
+Do not make Emanata own:
+- projectile flight;
+- collision truth;
+- Brick Fish deformation;
+- retaliation state;
+- damage.
 
 ## 9.4 social.negative
 
@@ -813,6 +910,8 @@ After RECOVERY-01, the same integrated Resident proof should demonstrate at leas
 
 5. **jump.land**  
    existing clip/contact + body compression + ear impulse + blink, with **no emotional Emanata**.
+
+Brick Fish / `social.prop_hit` is now part of the choreography contract, but it does **not** expand the first post-RECOVERY-01 visual proof into a new prop-production gate. Its real visual integration waits for a source-proven Brick Fish asset / `BRICK-FISH-TOSS-01`. Contract-level checks must already verify the default NPC-heart mapping and context overrides.
 
 For each:
 - trigger the same cue repeatedly;
