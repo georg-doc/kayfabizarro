@@ -1,3 +1,13 @@
+## 2026-09-27 · Persist-before-reply workflow hardening
+
+- Georg flagged a failure-window anti-pattern: an authorized Web/GitHub slice can output a long paste-ready handoff before actually persisting the result, leaving the authoritative state vulnerable if the chat then times out.
+- The existing workflow already required Return/changelog/Hub updates in the same handoff, but did not explicitly constrain **response ordering**.
+- Added binding `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md → 3B Persist before replying`.
+- Added `FRESH_CHAT_SLICE_PROTOCOL.md → 3A Persist closure before chat prose`.
+- New safe order: **user feedback → owner GitHub write → exact ref/file verification → required WSA/Hub note → concise chat confirmation**.
+- When the GitHub connector is available and the write is authorized, paste-ready GitHub text is no longer an acceptable substitute for the actual write.
+- If a write times out, status remains `UNKNOWN`; keep chat output minimal while inspecting the exact ref/file.
+
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 routing
 
 ### ROUTING
@@ -1911,6 +1921,57 @@ Exactly one next gate:
 - full World failure-recovery package persisted under `world-integration-01/failure-recovery/`;
 - no repair pass 3; next gate = `WORLD-R2-CONTRACT-RESET-01`.
 
+
+## 2026-09-27 · TRAVEL-MODES-01 public gate
+
+- Added the atomic Ground/Flight Travel Mode Router on private Travel Draft PR #39.
+- Final handoff: `e3b966efec49e8859254cb48e4aed27fb8963d04`; tested runtime/evidence: `f5ea32f817403cda0e30a426e70f37db8ce03d66`.
+- Preserved the human-accepted 400 ms Ground→Flight double-Space behavior and retained existing Ground/Flight movement/camera owners.
+- Drive + Water are explicit `SOURCE_REQUIRED` slots with no fake writer.
+- Final Travel CI: **133/133 PASS**, build/verify PASS, 0 missing; run `36287034124`, artifact `10919999491`.
+- HUB-CTRL #202 routes the direct human Stage and is pinned to the final Travel handoff.
+- Final publication: `cloudflare-live@67fb7aeb9682e137e2e01225450aed70ba56e26e`.
+- Exact Cloudflare Chromium proof: **24/24 PASS**, 0 page errors; run `36287139911`, artifact `10920773576`.
+- Direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-modes-01/
+- No landing, Drive/Water movement, merge or Live promotion.
+- Next gate only: Georg ACCEPT / REJECT the router architecture.
+
+
+## 2026-09-27 · Productive integration / no pseudo-human-gates policy
+
+- Georg identified the recurring review anti-pattern as a production blocker: technical tables, owner/writer matrices, state-machine buttons and isolated diagnostics were being promoted into blocking human gates.
+- Added binding `PRODUCTIVE_REVIEW_GATE_POLICY.md`.
+- Default loop is now real-owner integration → automated/native evidence → continue; human review only when a concrete product decision actually needs Georg.
+- Cloudflare Stage is milestone/shared review, not an end-of-slice ritual.
+- Added **PROCEED PASS** semantics: explicit “passt/weiter” closes an intermediate gate without implying exhaustive acceptance.
+- Updated Stage workflow, Fresh Chat protocol and Gate Proportionality protocol accordingly.
+- WSA planning now has slide-ready override `KFB_MVP_PLANNING_2026-09-26/WSA_SLIDES_PRODUCTIVE_FLOW_OVERRIDE_2026-09-27.md`.
+- `TRAVEL-MODES-01` receives a **PROCEED PASS**; its contract-only Stage page remains evidence/history and is no longer a blocking Georg gate.
+- Next Travel/WorldBuilder mobility proof must occur in the real product/consumer surface with source-proven adapters.
+
+
+## 2026-09-27 · LOOK-TORSION human result + proxy-fidelity rule
+
+- LOOK-TORSION-01 receives **ARCHITECTURE PASS ONLY**: keep cumulative height-dependent torsion, anchored base and shared roof/body deformation field.
+- The isolated grey A/B/C page is **not** WorldBuilder/look acceptance and does not accept its lighting, shadows, materials or final torsion calibration.
+- Known recurring shadow/light rendering defects remain open.
+- The binding Productive Review policy now rejects **low-fidelity proxy human gates**: a ruckly/simplified/unrepresentative review surface or one carrying known renderer defects is internal evidence only.
+- No further standalone torsion review page is required. Next meaningful evaluation belongs in the real WorldBuilder/world presentation context.
+- WSA/architecture must optimize for integrated usable capability per Georg attention, not proof pages or pseudo-acceptance ceremonies.
+
+
+## 2026-09-27 · Productive-review coordination heads
+
+- canonical policy + proxy-fidelity additions: `main@e3bc3ba4a8ffa7123e4cb29a0f615ffb91be0ce4`;
+- Travel Proceed Pass: PR #39 @ `e10a977501cd186fe1330e9d3fd1a7b5811beb3a`;
+- Production Architecture v3 workflow override: PR #204 @ `c754d8704f8fa24d4e490c01f750ad52f6bc06d0`;
+- HUB-CTRL source: PR #202 @ `7d37efe3d0c4330cbdbcafdfe8f1f5ff3c9ea673`;
+- Cloudflare publication source: `ec57cf48f916c228847184ca072ad895c934a712`.
+
+Travel is no longer a `LOOK_AT` task. Hub routes it as `CAN_START`; its contract Stage is technical evidence only.
+
+WSA / next slides: remove/combine technical human gates and show progress through real owner/product integration.
+
 ### 2026-09-27 · PD-POOL-F1 isolated AIC transport
 - Fresh recovery slice started from last compiling PD fetcher `154e573b8defacd17e836de049b3853578291f94`; frozen PR #239 was not resumed.
 - Draft PR #240 / branch `chatgpt-web/public-domain-pool-f1-aic-2026-09-27`.
@@ -1944,4 +2005,3 @@ Exactly one next gate:
 - Browser evidence artifact `10921660721` contains machine-readable evidence and four screenshots.
 - Candidate is not merged or published; permanent Cloudflare Librarian is not claimed updated.
 - Exactly one next gate: `PD-POOL-R3` · Georg-gated stacked merge/reconciliation → existing Registry refresh → exact permanent Cloudflare Librarian verification. No bulk work.
-
