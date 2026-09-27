@@ -39,6 +39,18 @@ Veröffentlicht aus `cloudflare-live@e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b` u
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-flight-clay-c0/`
 
-## Genau ein nächster Gate
+## Georgs Urteil · 2026-09-27
 
-Georg: `PASS` oder `TUNE` für Fluggefühl, Track-Platzierung und Clay-Richtung. Erst danach folgt ein eigener, begrenzter Slice für Fahrbetrieb oder reaktive Knetwelt.
+`PROCEED PASS` für die Welt- und Clay-Richtung. Dieser Teil wird ohne weitere Zwischenabnahme produktiv weitergeführt.
+
+Nicht akzeptiert als Produktbasis:
+
+- die in die Welt gefaltete ST01-Proxy-Fahrbahn;
+- der aktuelle Flug-Adapter mit dauerhaftem `jump.air`;
+- die aktuelle Ground-/Jump-Experience als Grundlage für eine Bewegungsbeurteilung.
+
+Diese drei Punkte sind keine Detail-Tunes, sondern werden im Nachfolger ersetzt. C0 bleibt technischer Integrationsbeleg und öffentliche Historie; es ist nicht die neue World-/Mobility-Baseline.
+
+## Nächster produktiver Schritt
+
+`WORLD-MOBILITY-M1`: echte Ground/Flight-Übergabe mit dem akzeptierten Travel-Mode-Vertrag im realen World-Kontext, ohne Track-Proxy. Danach folgt ein separater Anschluss an den echten Race-Track-Core – nicht noch eine visuelle Ersatzfahrbahn.

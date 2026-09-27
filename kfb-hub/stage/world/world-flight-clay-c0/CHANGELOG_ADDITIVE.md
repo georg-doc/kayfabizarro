@@ -1,5 +1,13 @@
 # WORLD-FLIGHT-CLAY-C0 · Additive Changelog
 
+## 2026-09-27 · Georg Proceed Pass + produktive Kurskorrektur
+
+- Welt-/Clay-Richtung als `PROCEED PASS` erfasst; keine erneute Zwischenabnahme.
+- ST01-Proxy-Fahrbahn ausdrücklich nicht als Produkt- oder Track-Baseline akzeptiert.
+- aktueller `jump.air`-Flugadapter und Ground-/Jump-Feel nicht als Bewegungsbaseline akzeptiert.
+- Nachfolger auf `WORLD-MOBILITY-M1` festgelegt: echter Travel-Ground/Flight-Vertrag im realen World-Kontext, Track erst über den tatsächlichen Race-Owner.
+- C0 bleibt unverändert als öffentlicher technischer Beleg; kein stilles Umschreiben der publizierten Runtime.
+
 ## 2026-09-27 · Public Stage verified
 
 - Published the exact candidate package on `cloudflare-live@e4b04d3eb8187728e1c5eaf0e3a0303be93e7c6b`.
