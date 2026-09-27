@@ -1344,3 +1344,16 @@ Der Hub-Owner zeigt jetzt den umgesetzten M2A-Quellkandidaten statt des alten Ar
 - Hub lane moved to LOOK_AT with one free-play action; FACADE-DONOR-01 remains next after that.
 - Track T1 decision locked on PR #219 / `64d8597c3dad1dc9814c794d4a566d589e1e1a25`: A/Hirnwelt base + B/Race semantics; C/Toy optional; patch-scatter replaces colour fades.
 - Hub source/status only in this checkpoint; root Hub regeneration/publication is not claimed.
+
+
+## 2026-09-27 · Combat Arena current-state sync
+
+- Combat PR #5 current head: `d6cf532e64d45fd3117775ec61cfc87b9e948ac0`.
+- C-MVP-A-R2 is `PUBLIC_VERIFIED` at `/kfb-hub/stage/combat/`.
+- Proven loop: FrizzleBob Driver → 3 Warrior hits → kill → Reward/Pop → Run Clear → Next Card/respawn.
+- Skeleton Mage remains `HOLD_C_MVP_MAGE_ADAPTER` and does not block the MVP.
+- Combat PR #10 keeps the Legacy Rogue/Crossbow source-readiness proof; Combat PR #7 keeps the separate melee contact core.
+- Production Desk now exposes one current Combat card and one plain-language briefing.
+- No Combat runtime, Stage package, merge or Live promotion changed in this metadata sync.
+
+Exactly one next human gate: Georg Combat freeplay on the fixed Stage.
