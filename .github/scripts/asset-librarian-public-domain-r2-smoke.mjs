@@ -145,16 +145,18 @@ async function searchAndOpen(cdp,test,index){
     `image preview ${test.path}`,
   );
 
-  const record=await cdp.eval(`(()=>{
-    const rec=window.KFBAssetLibrarianV17.getState().catalogById.get(${JSON.stringify(test.path)});
-    return {
-      assetId:rec?.assetId,
-      name:rec?.name,
-      license:rec?.license,
-      rightsEvidence:rec?.rightsEvidence,
-      source:rec?.source,
-    };
-  })()`);
+  const record=await cdp.eval(`fetch('../../../registry/assets/v1/catalog.jsonl',{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw new Error('catalog '+r.status);return r.text();})
+    .then(text=>{
+      const rec=text.split('\\n').filter(Boolean).map(line=>JSON.parse(line)).find(row=>row.assetId===${JSON.stringify(test.path)});
+      return {
+        assetId:rec?.assetId,
+        name:rec?.name,
+        license:rec?.license,
+        rightsEvidence:rec?.rightsEvidence,
+        source:rec?.source,
+      };
+    })`);
   assert(record?.assetId===test.path,`${test.path}: catalog record missing`);
   assert(String(record.license||'').toLowerCase().includes(test.rights.toLowerCase()),`${test.path}: rights text mismatch ${record.license}`);
   assert(record.rightsEvidence?.mode==='explicit-sidecar',`${test.path}: explicit-sidecar provenance missing`);
