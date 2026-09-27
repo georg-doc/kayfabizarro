@@ -1,0 +1,48 @@
+{
+  "schema": "kfb.hub-decision/1",
+  "kind": "ingested-sync-packet",
+  "exportedAt": "2026-09-27T00:44:29.735Z",
+  "ingestedAt": "2026-09-27T00:48:33.105Z",
+  "owner": "HUB-CTRL #202 · tools/production_desk",
+  "sourceFile": "/Users/georgv.westphalen/Dropbox/Mac/Downloads/kfb-hub-decisions_2026-09-27-00-44.json",
+  "decisions": [
+    {
+      "itemId": "toolbox-production-02-r2-intake",
+      "decision": "PASS",
+      "decidedAt": "2026-09-27T00:43:30.138Z",
+      "applied": "WAITING · accepted ToolBox direction"
+    },
+    {
+      "itemId": "worldbuilder-w0",
+      "decision": "PASS",
+      "decidedAt": "2026-09-27T00:43:31.470Z",
+      "applied": "WAITING · accepted world foundation"
+    },
+    {
+      "itemId": "claybound-materials",
+      "decision": "DONE",
+      "note": "irrelevant, da wir clay texture haben ertsmal",
+      "decidedAt": "2026-09-27T00:43:59.501Z",
+      "applied": "removed from active lanes · source/history preserved"
+    },
+    {
+      "itemId": "billboard",
+      "decision": "PASS",
+      "note": "ich baue gerade die billboard engine v4+",
+      "decidedAt": "2026-09-27T00:44:20.035Z",
+      "applied": "RUNNING · Billboard Engine v4+"
+    }
+  ],
+  "contemporaneousUpdates": [
+    {
+      "itemId": "rollercoaster-v11-blender-logic",
+      "status": "RUNNING",
+      "note": "Blender experiment with Rollercoaster v11 as logic donor"
+    },
+    {
+      "itemId": "public-domain-pool-pd01",
+      "status": "RUNNING_UNKNOWN_IF_TIMEOUT",
+      "note": "Web chat active; timeout must be reconciled against GitHub before retry"
+    }
+  ]
+}
