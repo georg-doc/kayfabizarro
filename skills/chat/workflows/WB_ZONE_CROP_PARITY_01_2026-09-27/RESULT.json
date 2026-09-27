@@ -1,0 +1,575 @@
+{
+  "schema": "kfb.wb-zone-crop-parity-01.report/1",
+  "source": {
+    "normalizedCommit": "3b4909d4c83b704662e66b60212e7f20ba5cf662",
+    "normalizedBlob": "14d3f09da6e14fb7f5dc9478f78be9f876bffab9",
+    "normalizedUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/3b4909d4c83b704662e66b60212e7f20ba5cf662/tools/osm-city-lab/world-zones/cologne-dom-zentrum-v0/2026-09-24.1/normalized.json",
+    "fixture": "tools/KFB-ToolBox/worldbuilder/world-integration-01/fixtures/cologne-dom-crop-v0.json"
+  },
+  "crop": {
+    "minX": -620,
+    "maxX": 180,
+    "minZ": -300,
+    "maxZ": 300
+  },
+  "result": {
+    "pass": true,
+    "deterministicRule": "arithmetic mean of every serialized footprint coordinate, including the repeated closing coordinate, then inclusive crop bounds",
+    "exactFixtureIds": 369,
+    "note": "Strict and inclusive comparisons produce the same set for this source; no raw serialized-mean centre lies exactly on a crop boundary."
+  },
+  "variantDeltas": {
+    "vertex-serialized-inclusive": {
+      "count": 369,
+      "missing": [],
+      "extra": []
+    },
+    "vertex-serialized-strict": {
+      "count": 369,
+      "missing": [],
+      "extra": []
+    },
+    "vertex-dedup-closing-inclusive": {
+      "count": 368,
+      "missing": [
+        "way/282677032",
+        "way/328265555"
+      ],
+      "extra": [
+        "way/328262455"
+      ]
+    },
+    "area-centroid-inclusive": {
+      "count": 370,
+      "missing": [
+        "way/282677032",
+        "way/328265555"
+      ],
+      "extra": [
+        "way/236557601",
+        "way/328262455",
+        "way/328828242"
+      ]
+    },
+    "bbox-centre-inclusive": {
+      "count": 370,
+      "missing": [
+        "way/282677032",
+        "way/328262451",
+        "way/328265555"
+      ],
+      "extra": [
+        "way/236557601",
+        "way/328262455",
+        "way/328828242",
+        "way/32949873"
+      ]
+    },
+    "vertex-serialized-round3-inclusive": {
+      "count": 369,
+      "missing": [],
+      "extra": []
+    },
+    "vertex-serialized-expand-1mm-inclusive": {
+      "count": 369,
+      "missing": [],
+      "extra": []
+    },
+    "vertex-serialized-shrink-1mm-strict": {
+      "count": 369,
+      "missing": [],
+      "extra": []
+    }
+  },
+  "differingBuildings": [
+    {
+      "id": "way/236557601",
+      "fixture": false,
+      "closedRing": true,
+      "osm": {
+        "kind": "yes",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -177.07416666666666,
+          "z": 301.6665
+        },
+        "vertexDedupClosing": {
+          "x": -176.61919999999998,
+          "z": 300.9166
+        },
+        "areaCentroid": {
+          "x": -177.26109519188253,
+          "z": 299.988181385733
+        },
+        "bboxCentre": {
+          "x": -177.245,
+          "z": 299.9895
+        }
+      },
+      "bbox": {
+        "minX": -180.766,
+        "maxX": -173.724,
+        "minZ": 294.563,
+        "maxZ": 305.416
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": 442.92583333333334,
+          "toMaxX": 357.07416666666666,
+          "toMinZ": 601.6665,
+          "toMaxZ": -1.666499999999985
+        },
+        "vertexDedupClosing": {
+          "toMinX": 443.3808,
+          "toMaxX": 356.6192,
+          "toMinZ": 600.9166,
+          "toMaxZ": -0.9166000000000167
+        },
+        "areaCentroid": {
+          "toMinX": 442.73890480811747,
+          "toMaxX": 357.26109519188253,
+          "toMinZ": 599.988181385733,
+          "toMaxZ": 0.011818614266985605
+        },
+        "bboxCentre": {
+          "toMinX": 442.755,
+          "toMaxX": 357.245,
+          "toMinZ": 599.9895,
+          "toMaxZ": 0.010499999999979082
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": false,
+        "vertex-serialized-strict": false,
+        "vertex-dedup-closing-inclusive": false,
+        "area-centroid-inclusive": true,
+        "bbox-centre-inclusive": true,
+        "vertex-serialized-round3-inclusive": false,
+        "vertex-serialized-expand-1mm-inclusive": false,
+        "vertex-serialized-shrink-1mm-strict": false
+      }
+    },
+    {
+      "id": "way/282677032",
+      "fixture": true,
+      "closedRing": true,
+      "osm": {
+        "kind": "yes",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -204.84483333333333,
+          "z": 299.91516666666666
+        },
+        "vertexDedupClosing": {
+          "x": -205.22480000000002,
+          "z": 300.22200000000004
+        },
+        "areaCentroid": {
+          "x": -205.7902443193123,
+          "z": 300.68333521208666
+        },
+        "bboxCentre": {
+          "x": -205.786,
+          "z": 300.674
+        }
+      },
+      "bbox": {
+        "minX": -209.258,
+        "maxX": -202.314,
+        "minZ": 298.236,
+        "maxZ": 303.112
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": 415.1551666666667,
+          "toMaxX": 384.8448333333333,
+          "toMinZ": 599.9151666666667,
+          "toMaxZ": 0.08483333333333576
+        },
+        "vertexDedupClosing": {
+          "toMinX": 414.7752,
+          "toMaxX": 385.2248,
+          "toMinZ": 600.222,
+          "toMaxZ": -0.22200000000003683
+        },
+        "areaCentroid": {
+          "toMinX": 414.2097556806877,
+          "toMaxX": 385.7902443193123,
+          "toMinZ": 600.6833352120866,
+          "toMaxZ": -0.6833352120866607
+        },
+        "bboxCentre": {
+          "toMinX": 414.214,
+          "toMaxX": 385.786,
+          "toMinZ": 600.674,
+          "toMaxZ": -0.6739999999999782
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": true,
+        "vertex-serialized-strict": true,
+        "vertex-dedup-closing-inclusive": false,
+        "area-centroid-inclusive": false,
+        "bbox-centre-inclusive": false,
+        "vertex-serialized-round3-inclusive": true,
+        "vertex-serialized-expand-1mm-inclusive": true,
+        "vertex-serialized-shrink-1mm-strict": true
+      }
+    },
+    {
+      "id": "way/328262451",
+      "fixture": true,
+      "closedRing": true,
+      "osm": {
+        "kind": "yes",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -615.7775625,
+          "z": 197.27068749999998
+        },
+        "vertexDedupClosing": {
+          "x": -614.6644666666667,
+          "z": 194.67186666666663
+        },
+        "areaCentroid": {
+          "x": -619.8159757742618,
+          "z": 198.99364679911736
+        },
+        "bboxCentre": {
+          "x": -621.8645,
+          "z": 202.65699999999998
+        }
+      },
+      "bbox": {
+        "minX": -648.782,
+        "maxX": -594.947,
+        "minZ": 169.061,
+        "maxZ": 236.253
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": 4.222437499999955,
+          "toMaxX": 795.7775625,
+          "toMinZ": 497.2706875,
+          "toMaxZ": 102.72931250000002
+        },
+        "vertexDedupClosing": {
+          "toMinX": 5.335533333333274,
+          "toMaxX": 794.6644666666667,
+          "toMinZ": 494.67186666666663,
+          "toMaxZ": 105.32813333333337
+        },
+        "areaCentroid": {
+          "toMinX": 0.18402422573819877,
+          "toMaxX": 799.8159757742618,
+          "toMinZ": 498.99364679911736,
+          "toMaxZ": 101.00635320088264
+        },
+        "bboxCentre": {
+          "toMinX": -1.864500000000021,
+          "toMaxX": 801.8645,
+          "toMinZ": 502.657,
+          "toMaxZ": 97.34300000000002
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": true,
+        "vertex-serialized-strict": true,
+        "vertex-dedup-closing-inclusive": true,
+        "area-centroid-inclusive": true,
+        "bbox-centre-inclusive": false,
+        "vertex-serialized-round3-inclusive": true,
+        "vertex-serialized-expand-1mm-inclusive": true,
+        "vertex-serialized-shrink-1mm-strict": true
+      }
+    },
+    {
+      "id": "way/328262455",
+      "fixture": false,
+      "closedRing": true,
+      "osm": {
+        "kind": "office",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -621.5246,
+          "z": 164.78640000000001
+        },
+        "vertexDedupClosing": {
+          "x": -617.79475,
+          "z": 163.6565
+        },
+        "areaCentroid": {
+          "x": -617.8285362507008,
+          "z": 163.63996010377267
+        },
+        "bboxCentre": {
+          "x": -617.9685,
+          "z": 163.6845
+        }
+      },
+      "bbox": {
+        "minX": -637.223,
+        "maxX": -598.714,
+        "minZ": 158.063,
+        "maxZ": 169.306
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": -1.524599999999964,
+          "toMaxX": 801.5246,
+          "toMinZ": 464.7864,
+          "toMaxZ": 135.21359999999999
+        },
+        "vertexDedupClosing": {
+          "toMinX": 2.205249999999978,
+          "toMaxX": 797.79475,
+          "toMinZ": 463.6565,
+          "toMaxZ": 136.3435
+        },
+        "areaCentroid": {
+          "toMinX": 2.171463749299164,
+          "toMaxX": 797.8285362507008,
+          "toMinZ": 463.63996010377264,
+          "toMaxZ": 136.36003989622733
+        },
+        "bboxCentre": {
+          "toMinX": 2.031500000000051,
+          "toMaxX": 797.9685,
+          "toMinZ": 463.6845,
+          "toMaxZ": 136.3155
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": false,
+        "vertex-serialized-strict": false,
+        "vertex-dedup-closing-inclusive": true,
+        "area-centroid-inclusive": true,
+        "bbox-centre-inclusive": true,
+        "vertex-serialized-round3-inclusive": false,
+        "vertex-serialized-expand-1mm-inclusive": false,
+        "vertex-serialized-shrink-1mm-strict": false
+      }
+    },
+    {
+      "id": "way/328265555",
+      "fixture": true,
+      "closedRing": true,
+      "osm": {
+        "kind": "roof",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -420.1786,
+          "z": 299.5632
+        },
+        "vertexDedupClosing": {
+          "x": -420.682,
+          "z": 301.31425
+        },
+        "areaCentroid": {
+          "x": -420.70071708691853,
+          "z": 301.27861406935324
+        },
+        "bboxCentre": {
+          "x": -420.74,
+          "z": 301.4145
+        }
+      },
+      "bbox": {
+        "minX": -425.264,
+        "maxX": -416.216,
+        "minZ": 292.559,
+        "maxZ": 310.27
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": 199.82139999999998,
+          "toMaxX": 600.1786,
+          "toMinZ": 599.5632,
+          "toMaxZ": 0.4368000000000052
+        },
+        "vertexDedupClosing": {
+          "toMinX": 199.31799999999998,
+          "toMaxX": 600.682,
+          "toMinZ": 601.31425,
+          "toMaxZ": -1.3142500000000155
+        },
+        "areaCentroid": {
+          "toMinX": 199.29928291308147,
+          "toMaxX": 600.7007170869185,
+          "toMinZ": 601.2786140693532,
+          "toMaxZ": -1.2786140693532388
+        },
+        "bboxCentre": {
+          "toMinX": 199.26,
+          "toMaxX": 600.74,
+          "toMinZ": 601.4145,
+          "toMaxZ": -1.4144999999999754
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": true,
+        "vertex-serialized-strict": true,
+        "vertex-dedup-closing-inclusive": false,
+        "area-centroid-inclusive": false,
+        "bbox-centre-inclusive": false,
+        "vertex-serialized-round3-inclusive": true,
+        "vertex-serialized-expand-1mm-inclusive": true,
+        "vertex-serialized-shrink-1mm-strict": true
+      }
+    },
+    {
+      "id": "way/328828242",
+      "fixture": false,
+      "closedRing": true,
+      "osm": {
+        "kind": "apartments",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -591.6922307692307,
+          "z": -300.2363076923077
+        },
+        "vertexDedupClosing": {
+          "x": -590.9609166666667,
+          "z": -300.7666666666667
+        },
+        "areaCentroid": {
+          "x": -590.0134658528066,
+          "z": -299.23456315963034
+        },
+        "bboxCentre": {
+          "x": -590.4235,
+          "z": -299.605
+        }
+      },
+      "bbox": {
+        "minX": -600.468,
+        "maxX": -580.379,
+        "minZ": -305.516,
+        "maxZ": -293.694
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": 28.30776923076928,
+          "toMaxX": 771.6922307692307,
+          "toMinZ": -0.23630769230771875,
+          "toMaxZ": 600.2363076923077
+        },
+        "vertexDedupClosing": {
+          "toMinX": 29.039083333333338,
+          "toMaxX": 770.9609166666667,
+          "toMinZ": -0.7666666666667084,
+          "toMaxZ": 600.7666666666667
+        },
+        "areaCentroid": {
+          "toMinX": 29.986534147193424,
+          "toMaxX": 770.0134658528066,
+          "toMinZ": 0.7654368403696594,
+          "toMaxZ": 599.2345631596304
+        },
+        "bboxCentre": {
+          "toMinX": 29.57650000000001,
+          "toMaxX": 770.4235,
+          "toMinZ": 0.3949999999999818,
+          "toMaxZ": 599.605
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": false,
+        "vertex-serialized-strict": false,
+        "vertex-dedup-closing-inclusive": false,
+        "area-centroid-inclusive": true,
+        "bbox-centre-inclusive": true,
+        "vertex-serialized-round3-inclusive": false,
+        "vertex-serialized-expand-1mm-inclusive": false,
+        "vertex-serialized-shrink-1mm-strict": false
+      }
+    },
+    {
+      "id": "way/32949873",
+      "fixture": false,
+      "closedRing": true,
+      "osm": {
+        "kind": "retail",
+        "name": null
+      },
+      "centers": {
+        "vertexSerialized": {
+          "x": -469.492380952381,
+          "z": -304.9523333333333
+        },
+        "vertexDedupClosing": {
+          "x": -469.4310487804878,
+          "z": -305.51336585365846
+        },
+        "areaCentroid": {
+          "x": -463.48895773826354,
+          "z": -302.70945434949425
+        },
+        "bboxCentre": {
+          "x": -459.88,
+          "z": -298.5475
+        }
+      },
+      "bbox": {
+        "minX": -483.939,
+        "maxX": -435.821,
+        "minZ": -315.145,
+        "maxZ": -281.95
+      },
+      "distanceToCropBoundaries": {
+        "vertexSerialized": {
+          "toMinX": 150.50761904761902,
+          "toMaxX": 649.4923809523809,
+          "toMinZ": -4.952333333333286,
+          "toMaxZ": 604.9523333333333
+        },
+        "vertexDedupClosing": {
+          "toMinX": 150.5689512195122,
+          "toMaxX": 649.4310487804878,
+          "toMinZ": -5.513365853658456,
+          "toMaxZ": 605.5133658536585
+        },
+        "areaCentroid": {
+          "toMinX": 156.51104226173646,
+          "toMaxX": 643.4889577382635,
+          "toMinZ": -2.7094543494942513,
+          "toMaxZ": 602.7094543494943
+        },
+        "bboxCentre": {
+          "toMinX": 160.12,
+          "toMaxX": 639.88,
+          "toMinZ": 1.4524999999999864,
+          "toMaxZ": 598.5475
+        }
+      },
+      "memberships": {
+        "vertex-serialized-inclusive": false,
+        "vertex-serialized-strict": false,
+        "vertex-dedup-closing-inclusive": false,
+        "area-centroid-inclusive": false,
+        "bbox-centre-inclusive": true,
+        "vertex-serialized-round3-inclusive": false,
+        "vertex-serialized-expand-1mm-inclusive": false,
+        "vertex-serialized-shrink-1mm-strict": false
+      }
+    }
+  ],
+  "githubActions": {
+    "run": 36323360087,
+    "job": 108631340758,
+    "artifact": 10932773701,
+    "head": "3178163a4fad44139aa548fabd3c89bf5d2dbb54"
+  }
+}
