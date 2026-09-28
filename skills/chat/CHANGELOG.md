@@ -2079,13 +2079,24 @@ KFB integration direction:
 - ChatterBox / semantic Triplets / selectable retorts remain the language lineage;
 - Fluffolekt / Fluff-o-lect may omit the carrying word only when shared memory or visible context makes meaning recoverable;
 - current Brick Fish PR #254 and Reaction Choreography PR #256 are explicit candidate seams, not promoted runtime truth;
+- world-owned POIs expose player, Residents, Cube Pets, plants/nature, environment, resources, props/Cards and activity stations without creating a second registry;
+- perception is bounded as immediate contact → visible attention field → deliberate local semantic search → remembered/reported target;
+- source-backed Fishing/Hammering/Chop/Dig/Pickaxe/Saw/resource-work joins Georg's patrol/explore/inspect/gather/carry/tend/music/social/rest return-path direction;
+- personal motivations and concrete current goals determine salience and provide the conflict motor without automatically implying hostility or Combat;
+- shared player/NPC KFB AIDA loop: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget;
+- `resident-aida-poi.v0.1.json` is the machine-readable design contract;
 - movement, persistence, POP/rewards, Combat and actor/rig owners remain unchanged.
 
 Actual evidence:
-- source reads: **11/11 PASS**;
+- source reads: **13/13 PASS**;
 - machine-readable source manifest parse: **1/1 PASS**;
-- design invariant checks: **12/12 PASS**;
+- machine-readable AIDA/POI contract parse: **1/1 PASS**;
+- design invariant checks: **20/20 PASS**;
 - runtime/browser/Stage tests: **0**, intentionally not claimed.
+
+Workflow:
+- natural-language shortcut `KFB WEB PUSH/READ — <project or slice> — recover + continue` is documented on this branch in `FRESH_CHAT_SLICE_PROTOCOL.md`;
+- Web/GitHub remains default; Work/WSA escalation-only; no proxy review surface for this design slice.
 
 Reserved future Stage route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/` — **NOT DEPLOYED**.
