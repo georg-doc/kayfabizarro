@@ -92,6 +92,17 @@ Every new current brief, Stage candidate, human gate or Georg to-do updates:
 
 If the public mirror is behind, say so explicitly. Never show an old Hub as current.
 
+This synchronization is part of completing the slice, not a later user request or optional human gate. Before returning:
+
+1. reconcile every Hub item touched by the slice against the exact GitHub head;
+2. replace stale titles, states, links and next actions in place;
+3. remove a completed or superseded job from `Today` and open `Briefings`;
+4. retain its useful output under the appropriate playable MVP, Tool, Result or History area with the direct use/test URL;
+5. never leave “start”, “work now” or copyable executor text attached to work already completed;
+6. publish the existing canonical Hub/Site update when authorized by its standing workflow—do not wait for Georg to remind the chat and do not create another Hub.
+
+If Hub publication fails or times out, classify it as `UNKNOWN`, verify source/version/deployment separately, and return the Hub as incomplete until the existing canonical surface is current.
+
 ## 6. Return packet
 
 Every slice returns:

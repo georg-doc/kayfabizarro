@@ -1,6 +1,6 @@
 # WORLD-M2A-R5 · Run State
 
-Status: `R5_PUBLIC_PLAYABILITY_PASS · FRAME_TARGET_PASS · HUMAN_FREE_PLAY_PENDING`
+Status: `RENDER_R0_LOCAL_PASS · PUBLIC_ROUTE_REMAINS_R5 · HUMAN_VISUAL_REVIEW_PENDING`
 Datum: 2026-09-27
 
 ## Lock
@@ -38,3 +38,19 @@ Datum: 2026-09-27
 R5 ist auf der festen Stage technisch bewiesen. Keine weitere Bewegungs- oder Performance-Änderung vor Georgs menschlichem Fahrtest.
 
 Nächster Gate: Georg testet zu Fuß, Auto, Offroad und Flug auf der festen Stage. Erst danach folgt genau ein gezieltes Clip-/Feel-Tuning oder der nächste Integrationsslice.
+
+## Render R0 · 2026-09-28
+
+- Branch: `work/render-r0-shared-preset-2026-09-28`
+- Draft PR: `#273`, gestapelt auf dem unveränderten R5-Owner-Branch
+- Implementierung: `eb15def4a6d1bab33685d4116896a5cad9947c2c`
+- Erlaubte Owner: gemeinsames Render-Preset, World-Schatten-Adapter, H0-Clay-Detailtier, Tests/Doku
+- Geschützt: World/OSM/Terrain, Player/Movement, Race-Drive/Physics/Camera, Kollision, UI
+
+Der bisherige Schattenpfad vergrößerte die 2K-Schattenprojektion bis ±400 m und setzte `normalBias` auf 1,2 Texel. Im Extrem entsprach das 0,469 m sichtbarem Kontaktversatz. Render R0 begrenzt die aktive Projektion auf ±72–140 m und den metrischen Offset auf höchstens 0,028 m; die Mitte bleibt auf ganze Texel stabilisiert.
+
+Die Knetoberfläche besitzt jetzt getrennte Hero-/World-/Far-Tiers. Während Bewegung werden nur hochfrequente Grain-/Crease-Anteile abgesenkt; im Stand kehrt das stabile Detailprofil zurück. Entfernte Stadthüllen und Far Terrain verwenden die vereinfachte Stufe.
+
+Ergebnis: Paket 32/32, Browser Desktop + schmal 48/48, fokussierter Renderbeweis 9/9, Playability PASS, p95 Idle/Walk/Drive 16,7/16,7/16,8 ms.
+
+Genau ein nächster Gate: visueller A/B-Blick auf Kontaktkanten und Texturflimmern. Keine Stage-/Live-Promotion ohne diesen Human Gate.

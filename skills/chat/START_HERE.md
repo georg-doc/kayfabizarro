@@ -77,6 +77,7 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 - `workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/START_HERE.md` — current Baukasten catalog + Dungeon/Hex/Combat Web-Chat slices
 - `workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — lock-first WSA/Astra playable loop
 - `workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md` — reusable cutscene/loading/instance transition seam
+- `workflows/KFB_RENDER_R0_SHARED_PRESET_2026-09-28/START_HERE.md` — shared contact-shadow and clay-detail policy; World M2A candidate on Draft PR #273, human visual review before publication
 - `workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — verified intake, source census and bounded module proofs
 - `tool-nodes/` — current tool/project entry cards
 - `consumers/` — project/chat-specific sync adapters without copied skill bodies

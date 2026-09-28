@@ -90,3 +90,18 @@ Bewertung: `R4 LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY 
 - 0 Seiten-, Konsolen-, Request- oder HTTP-Fehler.
 
 Bewertung: `R5 PUBLIC PLAYABILITY PASS · FRAME TARGET PASS · HUMAN FREE-PLAY PENDING`. Die automatischen Prüfungen belegen Boden, Eingabe, Zustände und Performance; sie ersetzen nicht Georgs Sichtprüfung von Clip-Taktung und Spielgefühl.
+
+## Render R0 · Shared shadow/detail preset
+
+- Paket-/Owner-Prüfung: **32/32 PASS**.
+- Vollständiger lokaler Browserlauf Desktop + schmal: **48/48 PASS**.
+- Fokussierter Renderlauf bei Standard- und flachem Licht: **9/9 PASS**.
+- Aktive Schatten-Halbausdehnung: **72 m**, erlaubt bis **140 m**; vorher bis 400 m.
+- Gemessener Kontakt-Offset: **0,02109 m**, hart begrenzt auf **0,028 m**; vorher im Extrem 0,469 m.
+- Knetdetail: `stable → moving → stable`, Hero-Grain 0,10 → 0,04 → 0,10; World-Grain 0,055 → 0,018 → 0,055.
+- Texturfilter: Mipmaps an, Anisotropie auf 4 begrenzt.
+- Playability: PASS; Walk **1,41 m/s**, Sprint **2,99 m/s**, Offroad **12,83 m**, 4/4 Kontakte.
+- Performance p95 Idle/Walk/Drive: **16,7 / 16,7 / 16,8 ms**.
+- 0 Seiten-, Request- oder HTTP-Fehler.
+
+Bewertung: `LOCAL_RENDER_PASS · PLAYABILITY_PRESERVED · HUMAN_VISUAL_REVIEW_PENDING`. Der Test belegt Preset, Grenzen, Zustandswechsel und Regressionen. Die visuelle Wahrnehmung von Restflimmern oder verbleibendem Kontaktabstand bleibt ein Human Gate; keine öffentliche Promotion.

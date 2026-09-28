@@ -40,15 +40,16 @@ body[data-m1-ready="true"] #top,body[data-m1-ready="true"] #dock,body[data-m1-re
 const bootStartedAt=performance.now();
 await import('./runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability-r5');
 const app=window.__wb2d;
-const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4}]=await Promise.all([
-  import('./clay-world-m1.mjs?r4=distance-budget'),import('./world-mobility-m1.mjs?r5=playability'),import('./world-mobility-ui.mjs'),import('./adaptive-quality-r4.mjs')
+const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4},{mountRenderPresetR0}]=await Promise.all([
+  import('./clay-world-m1.mjs?r0=shared-render-preset'),import('./world-mobility-m1.mjs?r5=playability'),import('./world-mobility-ui.mjs'),import('./adaptive-quality-r4.mjs'),import('./render-preset-r0.mjs')
 ]);
 const clay=await mountClayWorld(app);
 app.setPlay(true);
 const mobility=await mountWorldMobility(app);
 const quality=mountAdaptiveQualityR4({app,mobility});
+const renderPreset=mountRenderPresetR0({app,clay,quality});
 const ui=mountWorldMobilityUi({app,clay,mobility});
-window.__worldDriveM2A={app,clay,mobility,quality,ui,report:()=>({schema:'kfb.world-drive-interact-m2a-stage/1',source:{worldM1:'40037597485436e185f129091be908786925341d',raceDrive:'406cd26f44f22811fe3b3a58776839be7ffb7b2c',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report(),quality:quality.report()})};
+window.__worldDriveM2A={app,clay,mobility,quality,renderPreset,ui,report:()=>({schema:'kfb.world-drive-interact-m2a-stage/1',source:{worldM1:'40037597485436e185f129091be908786925341d',raceDrive:'406cd26f44f22811fe3b3a58776839be7ffb7b2c',travelModes:'e10a977501cd186fe1330e9d3fd1a7b5811beb3a',travelFlight:'f5ea32f817403cda0e30a426e70f37db8ce03d66',hirnweltH0:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27'},mobility:mobility.report(),clay:clay.report(),quality:quality.report(),render:renderPreset.report()})};
 document.body.dataset.m1Ready='true';
 if(new URLSearchParams(location.search).get('measure')==='1'){
   const {mountPerfProbe}=await import('./perf-probe.mjs?r4=adaptive-quality');
