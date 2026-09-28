@@ -131,6 +131,7 @@ The branch changes these Town/router/Hub surfaces plus the bounded workflow pack
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_DANCE_CULTURE_2026-09-28.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_GIFT_CULTURE_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SIGNATURE_DECKS_2026-09-28.md`
 - this `RETURN.md`
 - `skills/chat/town/START_HERE.md`
 - `skills/chat/town/SESSION_CARD.md`
@@ -145,7 +146,7 @@ No runtime source file is changed.
 
 From `TEST_REPORT.md`:
 
-- source reads: **23/23 PASS**
+- source reads: **25/25 PASS**
 - source manifest parse: **1/1 PASS**
 - AIDA/POI contract parse: **1/1 PASS**
 - design invariants: **20/20 PASS**
@@ -153,6 +154,7 @@ From `TEST_REPORT.md`:
 - Resident Dance Culture source/design checks: **12/12 PASS**
 - Resident Gift Culture source/design checks: **15/15 PASS**
 - Gift KISS correction checks: **6/6 PASS**
+- Resident Signature Deck source/design checks: **12/12 PASS**
 - runtime tests: **0**
 - browser tests: **0**
 - screenshots: **0**
@@ -187,7 +189,10 @@ Durable details are in:
 - generic gift wrapper/payload reveal choreography is not yet runtime-implemented;
 - **KISS correction:** no Resident item economy, barter ledger or exhaustive prop provenance is required for MVP;
 - barter/regift/exploding-present chains remain primarily semantic/visual design beats;
-- future Santa/Helpers North-Pole winter environment and Holiday audio remain source-required.
+- future Santa/Helpers North-Pole winter environment and Holiday audio remain source-required;
+- final Resident→Deck mapping table is not authored yet;
+- Deck-aware ChatterBox retrieval and Card-recovery runtime are not implemented;
+- Card count/page count must remain source-driven; no 56/15 hard-code.
 
 ## Exactly one next gate
 
@@ -294,3 +299,26 @@ Current MVP rule:
 - optional GPT-Site persistence may use a tiny semantic `ResidentMemoryReceipt` store; visible interaction must still work with zero persistence.
 
 This correction prioritizes Resident behavior, reactions, animation and emotional choreography over meta item administration.
+
+
+## Additive checkpoint · Resident Signature Decks · 2026-09-28
+
+Persisted the existing Town Signature-Deck decision as a concrete Resident identity/ChatterBox/Card-POI contract.
+
+Design rules:
+- every Resident may have a Signature/Favourite/Catchphrase Deck or cluster selection;
+- Deck knowledge belongs to stable authored identity, **not Lean Memory**;
+- use `deckRef + stance` to support direct fit and intentional mismatch;
+- ChatterBox retrieves only current context + Resident stance + **1–3 relevant Cards** + small Lean Memory set;
+- optional **3–7 Signature Cards** give a Resident stronger recurring anchors without reducing the whole Deck to prompt context;
+- Card POIs can feed a lightweight recover/find/confiscate/archive/destroy thread without creating a second Quest or Card inventory owner;
+- Player Journey / Almanac remains Card discovery/collection truth; a narrative return/confiscation does not need to delete the player's discovery record;
+- full Deck completion can remain long-form, while Resident visits batch newly relevant Cards/milestones instead of producing 56–60 identical courier tasks;
+- source index is authoritative for counts: Anti-Rules currently 57/16, 9/11 Money Trail 60/15, Big Bad Brain Wrestling 56/15;
+- controversial, satirical, scientific or medical Deck material remains **Deck-authored lens**, not automatically objective world truth;
+- Officer Doppel-Denk × Anti-Rules is the first candidate mapping, but his stance remains open: `misreads-as-law`, `confiscate/destroy`, or `archivist/evidence-locker`.
+
+Durable design:
+`RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
+
+Evidence: **25/25 source reads · 12/12 Signature Deck checks PASS**. No runtime/browser/Stage/Live claim.
