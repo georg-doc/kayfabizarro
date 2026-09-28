@@ -1,3 +1,13 @@
+## 2026-09-29 · Clay source lock + sparse World grammar
+
+- The Claymation target is no longer a prose-only label. Existing GitHub packages are now the binding donor chain: **H0 Hirnwelt = art direction/world grammar; K2 Knet-Werkzeuge = accepted material/tool implementation; T3/T4 = Track/world composition**.
+- Claude Design must read the H0/K2/T3 source packages, use the real `clay-material.v10`, `clay-relief.v4`, `clay-tools.v1`, `clay-toolmix.v1`, `clay-profiles.v2` and `track-look.v3/v4` modules, and record exact paths/refs in `SOURCE.json`. It may not create a new Graveyard-only Clay style.
+- The local `SPRINT_PATH_BAND_CLAY_01.md` report is not currently discoverable on GitHub and therefore cannot supersede the existing kit. Reported KayKit/Quaternius density, height and shared-texture measurements are retained as inputs to verify when that source package lands.
+- Clay City MVP density is intentionally sparse: 4–8 deterministic, instanced scene clusters on colourful terrain; two or three buildings may imply a block; nature vignettes and interaction-rich Resident pockets replace continuous OSM/asset coverage.
+- WFC is allowed only to select approved cluster recipes in unlocked filler zones. It never owns routes, Track contact, landmarks, spawn/quest/interaction anchors or biome identity.
+- T4 Clay particles are part of the shared presentation donor: small biome-coloured Clay balls/flakes for feet, jumps/landings, tyres and collisions. They must be pooled, event-driven and quality-tiered (`off / low / standard / high`), never a continuous or gameplay-critical emitter.
+- The shared VFX vocabulary also covers Brickfish throw/hit, gift open/burst, melee/wrestling impact, prop break and explosion. Clay particles are the common base layer; comic starburst/impact marks and smoke remain optional additive overlays for Resident interactions and Combat Arena rather than separate effect systems.
+
 ## 2026-09-29 · Motion Library v4 → integrated Resident + Animation ToolBox UI
 
 - Motion Library v4 is source-locked to Draft PR #275 @ `c9c3f9aa437e969b3ec2f0a6e9a1e87b2a2f3f1a`; its canonical catalog now contains **263 clips**.

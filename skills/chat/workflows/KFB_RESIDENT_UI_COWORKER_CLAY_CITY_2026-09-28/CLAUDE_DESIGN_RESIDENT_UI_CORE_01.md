@@ -25,6 +25,50 @@ GitHub main ist beim Briefing `51f9bc22596a0d0165f4da9e8e2ea14118466210`. Vor Be
 
 Der S11-Export ist Content- und Funktionsdonor. Seine UI ist keine akzeptierte Gestaltungsvorlage.
 
+## Clay-Look Source Lock · verbindlich, nicht neu erfinden
+
+Der KFB-Claymation-Look **existiert bereits als Baukasten auf GitHub**. Claude Design darf in diesem Job weder einen vierten Clay-Stil noch ein isoliertes Graveyard-Materialsystem bauen. Lies und verwende die folgende Donor-Kette in dieser Reihenfolge:
+
+1. **H0 Hirnwelt · Art Direction und Weltgrammatik**
+   `tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/`
+   Zuerst: `START_HERE.md` → `HANDOVER_WSA.md` → `HOWTO_KFB_3D_Claymation_Diorama_Worldbuilding.md` → `docs/LIVING_CLAY.md`.
+   Visuelle Referenzen: `KFB Hirnwelt H0.dc.html`, `KFB Knetwelt Look-Konzept.dc.html`, `evidence/01-h0.png` bis `04-h0.png`, `ref/claybound/web/`.
+   H0 besitzt die bunt-harmonisch-weirde Diorama-/Hirnwelt-Richtung, die Fassaden-/Fensterrhythmik und die Größenstaffelung von Clay-Spuren.
+2. **K2 Knet-Werkzeuge · akzeptierter Material- und Werkzeugbaukasten**
+   `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/`
+   Zuerst: `START_HERE.md` → `HANDOVER_WSA.md` → `docs/LIVING_CLAY.md`.
+   Ausführbare Quellen: `lab-clay/clay-material.v10.js`, `clay-relief.v4.js`, `clay-tools.v1.js`, `clay-toolmix.v1.js`, `clay-profiles.v2.js`; Prüfoberfläche: `KFB Knet-Werkzeuge K2.dc.html`.
+   Status laut Paket: `ACCEPTED AS BASE`. Verwende diese Profile und Werkzeuge; keine optisch ähnliche Eigenimplementierung.
+3. **T3/T3 v2 · Track-/World-Komposition**
+   `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 - TUNE/KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27/` sowie der K2/T3-v2-Ordner oben.
+   Relevante Quellen: `DESIGN_SPEC_T3.md`, `lab-track/KONZEPT_S4_KNETSTRANG.md`, `lab-track/track-look.v3.js` und in K2 `lab-track/track-look.v4.js`.
+   T3 ist `ACCEPTED AS BASE`; T3 v2 zeigt denselben Look auf K2-Material.
+4. **T4/M2 · jüngster Kompositionsdonor, falls im Chat verfügbar**
+   Production-Inbox-Receipt `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21`, 1.433.281 Bytes, SHA-256 `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`.
+   T4 verfeinert Track, Biome, sparsame Szeneninseln und die Clay-VFX-Sprache. Dazu gehören kleine Knetkügelchen/-flocken für Schritte, Sprünge, Landungen, Reifen, Kollisionen und biomeabhängigen Staub. Fehlt das Paket im Claude-Design-Chat, bleiben H0 + K2 + T3/T3 v2 die verbindliche, vollständig auf GitHub abrufbare Baseline; kein erfundener Ersatz.
+
+### Eigentum und Beweis
+
+- H0 bestimmt den **Look**, K2 die **Clay-Material-/Werkzeugimplementierung**, T3/T4 die **Track-/World-Komposition**; ToolBox Production-05 bleibt der **UI-Shell-Donor**.
+- Zeige vor Integration mindestens je eine unveränderte Donor-Probe für Terrain/große Architektur, Prop/Mittelgrund und Character/Feindetail.
+- Eine Auswahlbox oder ein Label `Clay` ist kein Beweis. Der Session Cut muss sichtbar dieselben Materialprofile bzw. Module verwenden und sie in `SOURCE.json` mit Pfad und Ref nennen.
+- Die Clay-Schichten müssen einzeln abschaltbar sein, damit Materialkosten, Schatten-/Kantenartefakte und Clipping prüfbar bleiben.
+- T4-VFX werden als eigener schaltbarer Layer übernommen: ereignisgetrieben statt dauernd emittierend, gepoolt, farblich aus Biome/Untergrund abgeleitet und in `low / standard / high` begrenzt. `low` darf nur wenige Kontaktkügelchen zeigen; `off` bleibt als Performance-Fallback.
+- `SPRINT_PATH_BAND_CLAY_01.md` ist derzeit kein auffindbarer GitHub-Source-Lock. Ein lokaler Sprint-Text darf deshalb nicht den vorhandenen H0/K2/T3-Baukasten ersetzen oder still neu definieren.
+
+### Wegband-Daten · aufnehmen, aber nicht zum UI-Blocker machen
+
+Die aktuelle Graveyard-Messung liefert folgende vorläufige Gestaltungsdaten; im Session Cut als `reported / verify against source package` kennzeichnen:
+
+- KayKit: `path_A` + `path_B` als dichter Kern, `path_C` als Rand, `path_D` als Saum; gemeldete Flächenanteile B `0.899`, A `0.853`, C `0.629`, D `0.293`;
+- Quaternius: eckige Steine ca. `0.85` für Kern, runde Platten ca. `0.65` für Rand, Einzelsteine für Saum;
+- Quaternius-Höhe `0.17` gegenüber KayKit `0.10`: beim Mischen angleichen;
+- die 13 Quaternius-Kacheln teilen dieselbe ca. 0,8-MB-Textur: genau einmal laden und wiederverwenden;
+- Dateien über die Katalogtabelle adressieren, nicht über fehleranfällige Namen wie `Smal`;
+- Flächenanteil ist die relevante Dichtemetrik, nicht die gezählte Zahl berührender Steine.
+
+Das Wegband darf als Environment-Beispiel im Graveyard erscheinen. Es ist kein Grund, den Resident-/Animation-UI-Job um einen neuen World- oder Material-Owner zu erweitern.
+
 ## Negativreferenz · verbindlich
 
 Im Graveyard-Edit-Modus konkurrieren derzeit drei Oberflächen für dieselbe Aufgabe:
@@ -111,6 +155,7 @@ Die technische Studioansicht bleibt für Rig-, Kontakt- und Clipping-Kontrolle v
 - Clay-Relief/Texturmaßstab wird nach Größenklasse getrennt: grob für Terrain/große Architektur, mittel für Props, fein für Characters;
 - Studio/World ist ein Darstellungswechsel derselben Auswahl und Animation, kein zweiter Szenen- oder Runtime-Owner;
 - mindestens drei direkt vergleichbare Prüfzustände: Locomotion auf Clay-Terrain, Resident↔Resident-Reaktion und Resident↔Clay-Prop/Attachment.
+- Locomotion, Sprung/Landung und Prop-Kontakt zeigen optional die T4-Clay-Partikelreaktion, ohne die Animation oder Kontaktprüfung zu verdecken.
 
 Der Session Cut muss diese Claymation-World-Ansicht tatsächlich darstellen. Eine bloße Auswahlbox oder ein Label `Clay` ohne gerendertes Terrain, Residents und Props erfüllt den Auftrag nicht.
 
@@ -126,6 +171,21 @@ Der Detailbereich nutzt denselben einklappbaren Inspektor wie Resident Atlas und
 - Actor-/Terrain-Kontakt sowie erkennbare Handgelenk-/Arm-/Kopf-Clipping-Probleme.
 
 Für die 8 Angriffe aus Intake 04 müssen die vorgeschlagenen Strike-Zeitpunkte visuell verschiebbar und prüfbar sein. Sie sind Kandidaten, keine bereits akzeptierten Gameplay-Marker.
+
+### Gemeinsamer Clay-VFX-Eventvertrag
+
+Animation Lab und Resident Atlas zeigen VFX nicht als fest in einen Clip eingebrannte Sonderlösung. Eine Animation/Choreografie liefert ein Ereignis; der gemeinsame Präsentationslayer rendert dazu ein Profil.
+
+Mindestens diese Ereignisklassen müssen im Editor sichtbar, zeitlich verschiebbar und als additives JSON exportierbar sein:
+
+- `footstep`, `jump`, `land`;
+- `brickfish_throw`, `brickfish_hit`, `melee_hit`, `wrestling_impact`;
+- `gift_open`, `gift_burst`, `prop_break`;
+- `vehicle_contact`, `collision`, `explosion`.
+
+Die Basisschicht besteht aus kleinen Knetkügelchen/-flocken. Optionale additive Layer sind Comic-Starburst/Impact-Zeichen, Ring/Flash und Rauch. Combat Arena, Ranged/Melee, Resident/NPC Interactions, World/Track und spätere Geschenk-Interaktionen konsumieren dieselben Eventnamen und Profile; kein Consumer erfindet einen eigenen zweiten Knet-Partikelstandard.
+
+Ein Profil hält mindestens `event`, `effectId`, `originSocket`, `direction`, `surfaceOrBiome`, `paletteSeed`, `intensity`, `lifetime` und `qualityTier`. VFX bleiben reine Präsentation: Hit, Damage, Geschenkzustand oder Kontakt werden niemals aus sichtbaren Partikeln abgeleitet. Der Editor zeigt `off / low / standard / high` und kann Basis-Clay, Comic-Overlay und Rauch einzeln schalten.
 
 ### Props, Residents und Choreografie
 
@@ -169,6 +229,7 @@ Liefere ein vollständiges, herunterladbares Session-Paket mit:
 - offenem und geschlossenem Inspektor;
 - Library View mit realer 263-Clip-Katalogstruktur, Suche, Filtern, Character-Auswahl und animierten Preview-Karten;
 - mindestens je einem sichtbaren Beispiel für Prop-Attachment, Strike-Marker, Resident-Signature-Move, sitzenden Clip und Paar-/Kampfsequenz;
+- mindestens je einem sichtbaren Clay-VFX-Beispiel für Landung, Brickfish/Combat-Impact und Geschenk-Burst, mit einzeln schaltbarer Basis-/Comic-/Rauchschicht;
 - echter Claymation-World-Ansicht mit gerendertem Terrain, mindestens zwei Residents und mindestens einem verwendeten Prop;
 - JSON Import/Export und lokaler Intake-Drop-Zone;
 - `RETURN.md` problems first;

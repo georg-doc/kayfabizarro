@@ -122,6 +122,21 @@ Therefore:
 
 The integrated sample needs only one short, properly driveable Track segment. A full circuit, pit lane and complete Racer mode are outside this slice.
 
+## Clay material source lock · reuse the existing kit
+
+T4 is the current scene/Track presentation donor, but it does not replace the already accepted Clay material kit. Before integrating the district, read and reuse:
+
+- H0 art direction and world grammar: `tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/`;
+- K2 accepted material/tool owner: `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/`;
+- K2 executable modules: `lab-clay/clay-material.v10.js`, `clay-relief.v4.js`, `clay-tools.v1.js`, `clay-toolmix.v1.js`, `clay-profiles.v2.js`;
+- accepted Track composition fallback/reference: T3 `track-look.v3.js` and K2/T3-v2 `track-look.v4.js`.
+
+Ownership is fixed: H0 = visual direction, K2 = material/tool implementation, T3/T4 = Track/world composition, Track Core = contact geometry. Do not write a new Clay shader family inside World M2. Prove large/medium/small surface profiles in isolation, then adapt them with bounded quality tiers. If one expensive layer threatens the frame budget, disable that layer in the lower tier rather than replacing the whole look with boxes or flat colour.
+
+T4's Clay particle/VFX language is also a donor, not a new effect system. Support a small pooled, event-driven set for footsteps, jump/landing, tyre contact, collision and biome dust. Colour and particle profile derive from the contacted terrain/Track biome. Quality tiers are `off / low / standard / high`; no continuous emitter, per-particle shadow, unbounded spawn count or required VFX for gameplay contact. VFX failure is quarantinable and may not block the playable tile.
+
+Keep the adapter extensible to the shared interaction vocabulary `brickfish_throw`, `brickfish_hit`, `melee_hit`, `wrestling_impact`, `gift_open`, `gift_burst`, `prop_break` and `explosion`. The MVP tile only has to prove the events already present in its play loop; the others are contract entries for Resident/Combat consumers, not extra scene scope. Base Clay particles may later combine with optional comic starburst/impact marks and smoke. Gameplay remains authoritative; VFX only observes events.
+
 ## Required implementation gates
 
 ### 0 · prove real donors
