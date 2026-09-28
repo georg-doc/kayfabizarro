@@ -52,7 +52,7 @@ One approximately 184 m coherent play tile containing:
 - one taller silhouette landmark;
 - one real, driveable KFB race-track segment with a city/nature transition plus a branch/ramp socket;
 - continuous terrain around and below every driveable area;
-- 6–12 verified KayKit/Kenney/Tiny Treats building archetypes, approximately 60–120 deterministic instances;
+- 4–8 verified KayKit/Kenney/Tiny Treats building archetypes, approximately 12–36 deterministic building instances arranged as readable scene clusters rather than continuous city fill;
 - one small Resident pocket, allowed to sleep outside its near range;
 - one lightweight billboard/sign socket without autoplay media;
 - one shared skydome adapter with `BASIC` and `TINY_SKIES`; richer `KFB_UNIVERSE` bodies are optional and quarantinable.
@@ -69,6 +69,37 @@ Keep only what improves gameplay:
 - provenance.
 
 Remove visible OSM building extrusions, far generic block shells and their collision from the active candidate tile. Do not render another 700-building OSM city.
+
+## Sparse Scene Grammar · preferred MVP direction
+
+Treat empty space as composition, not missing content. The visual target is the economical Knet-Strecke-T4 logic: colourful Clay terrain carries a small number of readable, interaction-rich islands.
+
+- road graph and Track Core define traversal; the world does not need to reproduce every real parcel or building;
+- two or three buildings plus facade/prop rhythm may represent one street block;
+- nature appears as reusable vignettes: one Clay hill, 1–3 trees, rocks, fence/ditch or a picnic/activity pocket;
+- landmarks and interaction pockets are hand-authored anchors;
+- Residents, props and animation-heavy interactions concentrate in a few hero pockets; distant pockets sleep or use cheap loops;
+- use instanced cluster recipes with deterministic palette/rotation/scale variation, not independent random scatter;
+- coloured terrain is allowed and encouraged per biome, including purple, green, ochre or surreal combinations, as long as road/contact readability stays clear;
+- preserve deliberate breathing room between clusters so the World reads as a cartoon stage/playset rather than an asset dump;
+- far distance uses silhouettes, fog, sky and a few landmarks instead of generic building carpets.
+
+### WFC boundary
+
+Wave Function Collapse may select and arrange **approved cluster recipes** only in unlocked filler zones.
+
+WFC does not own:
+
+- the road or Track path;
+- driving/contact geometry;
+- OSM provenance;
+- landmark position;
+- spawn, quest or interaction anchors;
+- the visual identity of a biome.
+
+Its rules may choose compatible neighbours such as `street pocket → small building cluster → sidewalk/prop edge → terrain vignette`. Every generated placement must remain seed-reproducible, collision-safe and removable without changing the traversal graph.
+
+For the 184 m MVP tile, prefer 4–8 scene clusters over continuous coverage. One strong Resident/interaction pocket is more valuable than dozens of inert props.
 
 ## Track source lock · T4 required
 
@@ -165,7 +196,8 @@ Test the same representative tile in Ground, Drive and Flight, desktop and narro
 - p95 frame time ≤ 33.3 ms;
 - local boot ≤ 8 s;
 - total draw calls no worse than R6;
-- city draw calls target ≤ 24;
+- city/world cluster draw calls target ≤ 24;
+- inactive cluster recipes must be instanced, culled or sleeping; no per-frame logic merely because an asset is visible;
 - visible triangles target ≤ 200k;
 - moving resolution floors remain at least R6: desktop 0.80, narrow 0.72;
 - zero page errors, request failures and missing assets.
@@ -235,4 +267,4 @@ After two failed repair passes on the same core gate, preserve the candidate and
 
 ## Definition of done
 
-Georg can use one real browser surface to walk, enter Auto directly, drive on/off a smooth geometric clay road and fly over a colourful, varied kit-built KFB district under a proper skydome. The scene is materially smoother and clearer than public World M2A R5, and every claim is recoverable from GitHub plus the Site handoff.
+Georg can use one real browser surface to walk, enter Auto directly, drive on/off a smooth geometric clay road and fly over a colourful, sparse-but-lively kit-built KFB playset under a proper skydome. The scene is materially smoother and clearer than public World M2A R5, and every claim is recoverable from GitHub plus the Site handoff.
