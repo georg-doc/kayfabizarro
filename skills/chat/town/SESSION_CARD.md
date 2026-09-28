@@ -82,8 +82,12 @@ Core direction:
 - Fluffolekt / Fluff-o-lect uses shared memory and visible context to carry the omitted word; without recoverable context, speak normally.
 - Brick Fish `social.prop_hit` and the Reaction Choreography candidate provide the physical social-action seam.
 - World state, movement, persistence, POP/rewards, Combat and actor-rig ownership remain unchanged.
+- World-owned **Points of Interest** cover player, Residents/NPCs, Cube Pets, plants/nature, environment/landmarks, resources, props/Cards and activity stations.
+- Routine activity is the default path rather than idle filler: source-backed Fishing, Hammering/smithing, Chop, Dig, Pickaxe and Saw join the current patrol/explore direction.
+- Personal goals/motivations influence what attracts attention and can create non-automatic conflict over resources, stations, promises, space or social priorities.
+- Shared KFB **AIDA** loop for player and NPCs: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget.
 
 Recommended later integrated gate:
-**RESIDENT-SOCIAL-MEMORY-01** — two real Residents, Brick Fish + one Card/gift context, witness-specific memory, one bounded social thread, later recall, one ChatterBox/Triplet response and one context-valid Fluff-o-lect variant.
+**RESIDENT-SOCIAL-MEMORY-01** — two real Residents, one bounded POI sight/range/search loop, one source-backed resumable routine, one motivation-backed AIDA cycle, Brick Fish + one Card/gift context, witness-specific memory, one bounded social thread, later recall, one ChatterBox/Triplet response and one context-valid Fluff-o-lect variant.
 
 Reserved Stage route is `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/`, currently **NOT DEPLOYED**. No proxy human-review page.
