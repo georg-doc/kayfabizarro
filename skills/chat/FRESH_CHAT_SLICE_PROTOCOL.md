@@ -75,6 +75,8 @@ The repository/PR must let tomorrow's Work session review without replaying the 
 - `UNRESOLVED` / `DEFERRED` items;
 - exactly one recommended next gate.
 
+The same checkpoint must reconcile the canonical KFB Hub without another prompt from Georg. Completed or superseded executor briefs leave `Today` and open `Briefings`; their real outputs remain discoverable as playable MVPs, tools, results or history. Stale action labels and stale test links are a failed handoff even when implementation tests pass.
+
 A chat link is optional convenience, not the evidence store.
 
 ## 6. Stop conditions
