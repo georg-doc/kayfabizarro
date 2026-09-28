@@ -6,7 +6,7 @@
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
   "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
-  "outcome": "AI Town donor synthesis for Resident Lean Memory + POI/AIDA + resident-specific behavior + shared Dance Culture/Common Bounce + Signature Move learning using existing Motion/Player Journey owners",
+  "outcome": "AI Town donor synthesis for Resident Lean Memory + POI/AIDA + resident-specific behavior + Dance Culture + Gift Culture using existing Motion/Reaction/Player Journey/world ownership",
   "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
   "stageStatus": "NOT_DEPLOYED",
   "sources": [
@@ -246,6 +246,49 @@
         "migrations",
         "durable semantic journey facts"
       ]
+    },
+    {
+      "id": "kfb-santa-gifts",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/Santa",
+      "characterPath": "media/3D_Assets/KayKit_Mystery_Series6/Santa/characters/Santa.glb",
+      "characterBlobSha": "df3613f049da5d3bcace5ac2f3fe2523f1886dd5",
+      "presentVariants": {
+        "Present_A": "99181738281fba41b3f91033edbfe8117b2218bf",
+        "Present_B": "a6dc8a52200a90f7c9ee8b98058f7b989fea4db3",
+        "Present_C": "acebb11a6d03f7ae88f2807980f794d55678824f",
+        "Present_D": "61b24f377dc26c16791c2dcbfcacababf23aa4d6",
+        "Present_E": "c90e7c50d75ad193774249d0946ffd93375a4236"
+      },
+      "facts": [
+        "Santa.glb exists as a source character",
+        "five distinct source Present_A-E GLTF variants exist",
+        "the five wrappers share santa_texture.png",
+        "no opened-state counterpart was found in the checked Santa GLTF set"
+      ]
+    },
+    {
+      "id": "kfb-helpers-characters",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters",
+      "characters": {
+        "Helper_A": "c78b9ad7d863e4de8303f7e5b8085139da381289",
+        "Helper_B": "eb4d26eb2804507eef6406d98fa734bb7a8537c6"
+      },
+      "facts": [
+        "Helper_A.glb and Helper_B.glb are present",
+        "future North-Pole/Holiday Resident scene can use the exact helper sources"
+      ]
+    },
+    {
+      "id": "kfb-helpers-workshop-props",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/assets/gltf",
+      "treeSha": "5933c4732c335e1c64bff8cc3ef96abd92407844",
+      "facts": [
+        "verified GLTF props: Candycane, Drawers, Glue_A/B, Hammer, Lamp_Workbench, Toy_Train_Paint, Toy_Train_Wood, Toy_Workbench, Toy_Workbench_decorated",
+        "checked Helper GLTF set contains workshop/toy props but not the Santa Present_A-E models"
+      ]
     }
   ],
   "nonGoals": [
@@ -263,7 +306,8 @@
     "KFB AIDA gameplay loop for player and NPCs: attention → curiosity/interest → expectation → interaction → reaction → interpret/remember/update → return/resume/retarget.",
     "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict.",
     "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume.",
-    "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory."
+    "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory.",
+    "Gift-giving is a shared Resident culture mechanic: source-proven wrapped presents can contain real bizarre/satirical props, trigger character-specific reactions, barter/regifting, bounded prank/failure spirals and later reconciliation while preserving Kayfabe and ownership provenance."
   ],
   "userDirection": {
     "poiClasses": [
@@ -344,6 +388,59 @@
       "groupPattern": "Common Groove between phrase-boundary Signature inserts; one shared transport",
       "firstDonor": "Legacy Orc B orb.bounce",
       "animationAuthoringOwner": "existing Animation Studio / Motion Library"
+    },
+    "residentGiftCulture": {
+      "sourceWrappers": [
+        "Santa/Present_A",
+        "Santa/Present_B",
+        "Santa/Present_C",
+        "Santa/Present_D",
+        "Santa/Present_E"
+      ],
+      "revealDonor": "Toy Soldier Present_Base → Present_UnwrappedBase timing grammar",
+      "separation": "wrapperRef != payloadRef",
+      "intents": [
+        "care",
+        "welcome",
+        "celebrate",
+        "thanks",
+        "trade",
+        "reconcile",
+        "tease",
+        "satirical_needling",
+        "prank",
+        "tribute",
+        "apology"
+      ],
+      "ownershipOwner": "existing world/inventory for object transfer; Player Journey / Meta for durable player-facing gift provenance",
+      "socialThread": "existing ResidentSocialThread kind=gift with bounded continuation/escalation",
+      "reconciliation": [
+        "replacement gift",
+        "shared food/drink when source-backed",
+        "dance/common bounce",
+        "repair/help",
+        "apology",
+        "return to routine"
+      ],
+      "northPoleFuture": {
+        "actors": [
+          "Santa",
+          "Helper_A",
+          "Helper_B"
+        ],
+        "props": [
+          "Present_A-E",
+          "Candycane",
+          "Toy trains",
+          "Toy Workbench",
+          "Glue",
+          "Hammer",
+          "Lamp",
+          "Drawers"
+        ],
+        "environment": "SOURCE_REQUIRED",
+        "holidayAudio": "SOURCE_REQUIRED"
+      }
     }
   }
 }
