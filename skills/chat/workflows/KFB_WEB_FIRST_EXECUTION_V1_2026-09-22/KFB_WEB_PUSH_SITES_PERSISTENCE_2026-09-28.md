@@ -83,4 +83,4 @@ DECISION: register Sites persistence as a supported KFB exploration path and reg
 
 NOT DECIDED: replacing Cloudflare hosting, migrating the main game runtime to Sites, moving canonical assets to R2, or making D1 the global KFB database.
 
-Exactly one next gate: implement P0A in the existing KFB Production Control Site — one authenticated, user-owned World M2 or Combat playtest report in D1 plus one screenshot/JSON/ZIP attachment in R2, saved as a review version before deployment.
+Existing foundation verified: the Site already has authenticated D1/R2 Production Inbox records and uploads. Exactly one next gate: P0A hardens that path with user-scoped reads/downloads/deletes and adds one real World M2 or Combat playtest report plus one attachment. Save a review version before deployment.
