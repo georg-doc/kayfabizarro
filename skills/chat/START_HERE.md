@@ -1319,7 +1319,7 @@ KFB resident direction:
 - shared KFB AIDA loop for player and NPCs: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget;
 - `resident-aida-poi.v0.1.json` is the machine-readable proposal contract;
 - first resident-specific overlay: **Officer Doppel-Denk** on technical `toy-soldier` source — one-time gift reveal → rifle patrol → order/disorder-biased POI interpretation → reaction/retort → clean patrol resume;
-- source-backed motion audition is `Running_HoldingRifle` plus `Walking_A/B`; no shoulder-rifle march is accepted until visually proven;
+- Officer motion gate: Georg's preferred external donor is Mixamo `Walk with Briefcase` (USER-IDENTIFIED / NOT YET ADMITTED); prefer In Place and retarget through the existing Motion Library. `Running_HoldingRifle` plus `Walking_A/B` remain pinned A/B/fallback candidates; no shoulder-rifle march is accepted until visually proven;
 - world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
 
 Evidence: **15/15 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 source checks PASS**. Runtime/browser/Stage tests remain 0.
