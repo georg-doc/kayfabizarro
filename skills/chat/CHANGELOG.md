@@ -1,3 +1,27 @@
+## 2026-09-28 · KFB Town · Resident Gift Culture / barter / Kayfabe escalation / reconciliation
+
+### DESIGN
+- Gift-giving is now a third shared Resident culture axis beside Brick Fish play and Dance Culture.
+- Added `RESIDENT_GIFT_CULTURE_2026-09-28.md`.
+- Exact Santa source provides `Santa.glb` plus five real wrapper variants `Present_A–E`.
+- December-2024 Helpers provide `Helper_A/B` and a source-backed toy-workshop prop set for a later North-Pole/Holiday Resident scene.
+- Existing Toy Soldier `Present_Base → Present_UnwrappedBase` remains the strongest current reveal-animation/timing donor; its exact opened geometry is not generalized to Santa wrappers.
+- Gift contract separates **wrapperRef**, **payloadRef** and giver **intent**. Actual ownership transfer remains with current world/inventory owners.
+- Player Journey / Meta owns durable player-facing gift provenance; replay must not duplicate transfers/rewards.
+- Gift intents include care, thanks, trade, reconciliation, tease, satirical needling, prank, tribute and apology without creating a global relationship score.
+- Gift continuity reuses bounded `ResidentSocialThread kind: gift`.
+- Exploding/prank gifts default to social/Kayfabe cartoon violence; Combat owns real damage only when explicitly invoked.
+- Failure Spiral is bounded: **warm/neutral → tease → slapstick → Kayfabe blowout → reconciliation/cooldown/return**.
+- Reconciliation can use replacement gifts, source-backed shared food/drink, Dance/Common Bounce, repair/help, apology or simple return to routine.
+- Future North-Pole scene stays separate and source-first; winter environment and exact Holiday/Jingle-Bells-like audio remain `SOURCE_REQUIRED`.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **23** pinned entries with Santa and Helpers sources.
+- Current evidence: **23/23 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture PASS**.
+- Runtime/browser/Stage remain 0; no Gift game, barter economy, exploding-present runtime, North-Pole Stage or Live promotion was created.
+- START_HERE, Return and Recovery carry the same continuation state.
+- Exactly one integrated next gate remains **RESIDENT-SOCIAL-MEMORY-01**; Gift Culture enters after the basic POI/AIDA/reaction/resume seam and first Dance mappings.
+
 ## 2026-09-28 · KFB Town · Shared Resident Dance Culture + collectible Signature Moves
 
 ### DESIGN
