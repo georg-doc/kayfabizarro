@@ -1,0 +1,116 @@
+{
+ "schema": "kfb.animation-local-intake/0.1",
+ "status": "LOCAL_PREVIEW_NOT_REGISTERED",
+ "createdAt": "2026-09-28T10:05:00.000Z",
+ "sourceHash": "LOCAL_SHA256_PLACEHOLDER_64_HEX",
+ "hashAlgorithm": "SHA-256 (browser, local file bytes)",
+ "originalFilename": "PRIVATE_LOCAL_ONLY",
+ "selectedClip": "Armature|mixamo.com|Layer0",
+ "proposedMotionId": "kfb_talk_explain_candidate_a",
+ "displayName": "Erklärt mit beiden Händen",
+ "detectedRigFamily": "KayKit-style (Rig_Medium / Rig_Large names)",
+ "compatibility": "PROVEN",
+ "trackBinding": "69/69 on the selected KFB actor",
+ "facts": {
+  "format": "FBX",
+  "bytes": 1843200,
+  "clips": [
+   {
+    "name": "Armature|mixamo.com|Layer0",
+    "duration": 4.2,
+    "tracks": 69,
+    "fps": 30,
+    "frames": 127,
+    "rootTravelRaw": 0
+   }
+  ],
+  "boneCount": 24,
+  "meshCount": 1,
+  "testedOnActor": "frizzlebob-driver",
+  "actorRig": "Rig_Medium"
+ },
+ "correctionPatch": {
+  "shoulderAbductionDeg": {
+   "left": 4,
+   "right": 4
+  },
+  "upperArmTwistDeg": {
+   "left": 0,
+   "right": 0
+  },
+  "forearmTwistDeg": {
+   "left": 0,
+   "right": 0
+  },
+  "wristBendDeg": {
+   "left": 0,
+   "right": 0
+  },
+  "wristTwistDeg": {
+   "left": -6,
+   "right": 3
+  },
+  "rootOffsetY": 0,
+  "facingDeg": 0,
+  "rootMode": "preview-in-place",
+  "previewSpeed": 1
+ },
+ "license": {
+  "declared": true,
+  "text": "Mixamo, downloaded for a KayKit upload; redistribution not allowed"
+ },
+ "intendedRoles": [
+  "talk.explain"
+ ],
+ "tags": [
+  "talk",
+  "candidate"
+ ],
+ "validation": [
+  {
+   "check": "source hash computed locally",
+   "ok": true
+  },
+  {
+   "check": "clip chosen",
+   "ok": true
+  },
+  {
+   "check": "immutable id proposed",
+   "ok": true
+  },
+  {
+   "check": "compatibility measured on a KFB actor",
+   "ok": true
+  },
+  {
+   "check": "license/source declared",
+   "ok": true
+  },
+  {
+   "check": "baked GLB + catalog entry by Blender MCP / deterministic lane",
+   "ok": false
+  },
+  {
+   "check": "contact data + preview sheet",
+   "ok": false
+  },
+  {
+   "check": "human review of sheet",
+   "ok": false
+  }
+ ],
+ "promotion": {
+  "requested": true,
+  "autoPublish": false,
+  "rawFbxIncluded": false,
+  "requiredOutputs": [
+   "runtime-glb",
+   "catalog-entry",
+   "contact-data",
+   "preview-sheet"
+  ],
+  "owner": "Blender MCP / Motion Library pipeline"
+ },
+ "_sample": "Illustrative receipt with a fake hash. The real one comes from »Export intake receipt« in the Library tab."
+}

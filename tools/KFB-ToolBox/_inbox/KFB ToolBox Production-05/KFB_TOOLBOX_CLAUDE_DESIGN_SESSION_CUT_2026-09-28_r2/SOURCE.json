@@ -1,0 +1,95 @@
+{
+ "schema": "kfb.session-source-manifest/0.1",
+ "slice": "ANIMATION-LIBRARY-V1",
+ "date": "2026-09-28",
+ "entry": "KFB ToolBox Production-05.dc.html",
+ "repo": "georg-doc/kayfabizarro",
+ "sources": [
+  {
+   "role": "canonical motion manifest (read-only)",
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+   "rev": "4fa082714c7200f6926008a1cd0b34db8df4dbad",
+   "pr": "#275 (stacked on #213, not merged)",
+   "schema": "kfb.motion-catalog.v1",
+   "version": "2026-09-28",
+   "clips": 204,
+   "sha256": "computed at load · TEST_REPORT L01"
+  },
+  {
+   "role": "runtime clips (per-clip library field)",
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/{Rig_Medium,Rig_Large}/KFB_Motion_<group>[_i03].glb",
+   "rev": "4fa082714c7200f6926008a1cd0b34db8df4dbad",
+   "files": 28,
+   "loaded": "lazily, per file, jsDelivr then raw.githubusercontent"
+  },
+  {
+   "role": "contact sheets",
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/sheets/<group>/<id>.png",
+   "rev": "4fa082714c7200f6926008a1cd0b34db8df4dbad",
+   "layout": "6 frames × 2 rows (Rig_Medium top, Rig_Large bottom), 220 px tiles · per ml_sheets.py"
+  },
+  {
+   "role": "license notice",
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/NOTICE.md",
+   "rev": "4fa082714c7200f6926008a1cd0b34db8df4dbad"
+  },
+  {
+   "role": "intake facts",
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/RETURN_INTAKE_03.md",
+   "rev": "4fa082714c7200f6926008a1cd0b34db8df4dbad"
+  },
+  {
+   "role": "Librarian consumer read (no edit)",
+   "path": "tools/asset_registry/librarian/{animation-sources.js,motion-preview.js,state.js,SOURCE_PATHS.md}",
+   "rev": "4fa082714c7200f6926008a1cd0b34db8df4dbad"
+  },
+  {
+   "role": "brief",
+   "path": "skills/chat/workflows/KFB_ANIMATION_LIBRARY_V1_2026-09-28/",
+   "ref": "work/animation-library-v1-brief-2026-09-28"
+  },
+  {
+   "role": "Render R0",
+   "path": "skills/chat/workflows/KFB_RENDER_R0_SHARED_PRESET_2026-09-28/START_HERE.md",
+   "ref": "work/render-r0-shared-preset-2026-09-28",
+   "status": "brief only · no preset code in the branch · NOT consumed"
+  },
+  {
+   "role": "ToolBox donor",
+   "path": "KFB ToolBox Production-04.dc.html (this project)",
+   "note": "all P04 pins unchanged (PIN 8922d4b1, Motion Library 01 @032c9d50 for the Animation Studio tab)"
+  }
+ ],
+ "local": [
+  "KFB ToolBox Production-05.dc.html",
+  "support.js",
+  "kfb-lib/anim-library.v1.js (new)",
+  "kfb-lib/librarian-motion-projection.v1.js (new)",
+  "kfb-lib/* (unchanged from P04)"
+ ],
+ "notIncluded": [
+  "raw FBX (never)",
+  "a copy of the 204-row catalog (read live from the pin)",
+  "GLB libraries (read live from the pin)"
+ ],
+ "cut": "KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r2",
+ "status": "GEORG_PASS_UI_TUNE_LATER",
+ "createdAt": "2026-09-28T09:05:00Z",
+ "remotePins": {
+  "PIN": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e · ToolBox owners (edit-layer, graft chain, EyeRig, mouth, face owners, profile, Resident scenes)",
+  "ML3": "4fa082714c7200f6926008a1cd0b34db8df4dbad · Motion Library v3 (PR #275) · Library tab",
+  "ML": "032c9d50cd5de6764fa37fec65cb203ed35fcb11 · Motion Library 01 + AN-PROFILE-01 · Animation Studio tab",
+  "EAR": "19088b142c6a7e7626f27fba8e80caf6ab2437c1 · ear-dangle.v1 + FB Ear Rig v5",
+  "MAIN": "b64d7edca3ec0d184d97f1b3a5db0103332e3e54 · S39 band module + wd-sky",
+  "STOCK": "b97b5ac55df2724fae623992433685583eece51e · KayKit Character Animations 1.1",
+  "LEG": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0 · KayKit Legacy parts + clips",
+  "hairTufts": "eabc87255ee3da6283f9d438390454d70e9d2e55 · FrizzleBob_Yellow.gltf (kfb-lib/hair-tufts.v1.js)"
+ },
+ "tests": {
+  "librarySelfTest": "24/24 PASS (workspace + staged copy)",
+  "productionSelfTest": "NOT_RUN in this cut (P04: 36/38)",
+  "zipcheck": "NOT_RUN",
+  "cleanRunFromZip": "NOT_RUN",
+  "human": "PASS 28.09. (UI/UX tune later)"
+ }
+}

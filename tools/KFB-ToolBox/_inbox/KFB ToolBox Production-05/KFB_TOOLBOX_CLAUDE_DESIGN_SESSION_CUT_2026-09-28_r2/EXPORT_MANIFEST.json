@@ -1,0 +1,303 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "name": "KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r2",
+ "createdAt": "2026-09-28T09:05:00Z",
+ "entry": "KFB ToolBox Production-05.dc.html",
+ "fileCount": 46,
+ "bytes": 1411778,
+ "inventory": {
+  "EXPORTED": "46 files (list + EXPORT_MANIFEST.json + CHECKSUMS.sha256)",
+  "PINNED_REMOTE": [
+   "jsDelivr / raw.githubusercontent georg-doc/kayfabizarro @ PIN 8922d4b1 · ML3 4fa08271 · ML 032c9d50 · EAR 19088b14 · MAIN b64d7edc · STOCK b97b5ac5 · LEG 10a7fdce · eabc8725 (hair-tufts)"
+  ],
+  "UNPINNED_REMOTE": [
+   "kfb-lib/pet-library.v6.js PET_BASE = raw.githubusercontent.com/georg-doc/kayfabizarro/main/ (Cube-pet GLBs · inherited since Round1, unchanged)"
+  ],
+  "CDN_EXTERNAL": [
+   "unpkg three@0.160.0 (+ examples/jsm: OrbitControls, GLTFLoader, FBXLoader)",
+   "Google Fonts: Space Grotesk, IBM Plex Mono"
+  ],
+  "LOCAL_NOT_EXPORTED": [
+   "earlier ToolBox pages (Production-01…04, Stage-First *) · not in the entry closure",
+   "media/3D_Assets/Animations/KFB_Motion_Library/* reference copies · read remotely by the entry"
+  ],
+  "REPLAY_DEPENDENCY_MISSING": [
+   "Real Mixamo FBX for the Drop Zone (never in GitHub by rule) · FBX path NOT_RUN"
+  ],
+  "RELATIVE_PATH_RISK": [
+   "file:// breaks ES module imports · serve over HTTP"
+  ]
+ },
+ "checks": {
+  "requiredMissing": [],
+  "filesOver2MB": [],
+  "secretHits": [],
+  "jsonParse": "PASS"
+ },
+ "files": [
+  {
+   "path": "docs/LESSONS_SHADOWS.md",
+   "bytes": 5002,
+   "sha256": "a2a8f403a1e11fec82827d15599d7e6e3fb5f8b46dff7f3eecc289949833ae4c",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "docs/PROJECT_RULES.md",
+   "bytes": 882,
+   "sha256": "edafd8a3fd2de94cde2e7483d93e177c78b003991c462f2748700160e0ddfdd0",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "docs/github.md",
+   "bytes": 43794,
+   "sha256": "d5d1cac147e67fc7d9849c810e796368db29ae1242dc14d14883f1cc6121799e",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/01-studio-search-reden.jpg",
+   "bytes": 40296,
+   "sha256": "e1a1a2cd6b8c125a33e42991a88b0e9ea1b321f97b343b5aee8079a4c83ed40b",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/02-editorial-rename-tag.jpg",
+   "bytes": 45821,
+   "sha256": "402d2778cb953011025bbcd534062a6c2a1bde141753d70fbb6318be9cdbaf44",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/03-terrain-same-clip.jpg",
+   "bytes": 45815,
+   "sha256": "da2f9736207fef6ae154df7e86dbba555380c5a46eaf99acfc670c9c0fe2c0b5",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/04-asset-librarian-record.jpg",
+   "bytes": 45042,
+   "sha256": "bdb6ac93059e678c63b80ab206730d5dc2589de1ca3001cd4092c3eaf85fdd02",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/05-back-in-library.jpg",
+   "bytes": 47814,
+   "sha256": "476e00db344aa45372b3659cf27f7dd2d52f8bda884179d6fc3bb49e707acd5a",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/06-filter-panel.jpg",
+   "bytes": 43211,
+   "sha256": "124db0c61dccb9d59d237dd7cd0fef83bdc1c661b887f74fba94fe3dd200ff27",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/07-library-selftest-24of24.jpg",
+   "bytes": 50506,
+   "sha256": "e8e10c48e81799cac0362cf3dae759151a5b81cb0893a3139afe5361a61bbfc2",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/08-dropzone-local-preview.jpg",
+   "bytes": 55010,
+   "sha256": "b07eaa3ef39f8af7e6ff9eb380be4a546ec6bc33f0ebedd8f505de4b438b34be",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/09-local-clip-on-kfb-actor.jpg",
+   "bytes": 54865,
+   "sha256": "15fa72e3aade80e02e11d1a396b8e92725d376479bc4f3748777307dd27dc34f",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/10-narrow-420-dock.jpg",
+   "bytes": 25948,
+   "sha256": "8fe140a09e72e6f7b047f5fc90f363388e9a266d8ac1b4e351df3d758a8245a6",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/11-narrow-420-drawer.jpg",
+   "bytes": 25010,
+   "sha256": "c03ec2ff844835c75a5b85e12a955d60e48c2e85a233f3e65245825490c57db1",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/12-narrow-420-inspector-sheet.jpg",
+   "bytes": 23971,
+   "sha256": "d95d18f74a3f331d1d4f888f1f31f8ceed63ad0acd225b7b56c123514bfb33c1",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "evidence/13-staged-copy-library-selftest-24of24.jpg",
+   "bytes": 56889,
+   "sha256": "bc22ed796b6594ead2807080ee4fffe9001202fdf9ecee012dc638140327ca6e",
+   "status": "EXPORTED · evidence"
+  },
+  {
+   "path": "kfb-lib/anim-library.v1.js",
+   "bytes": 16344,
+   "sha256": "46f4e5547399d65c0811544411c0b654fb4470d30291d34b7572f0ef979af0bc",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/anim-map.v1.js",
+   "bytes": 10914,
+   "sha256": "d4ac375b1e2b90faae5d22698d19dc4f99c29f5da76f707a3eda3cd9455483ce",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/body-shape.v1.js",
+   "bytes": 8779,
+   "sha256": "4f66a25024aa515435caa9c3420771833dd8f8026a8e5ca37721c7de9cde36cb",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/body-surface.v1.js",
+   "bytes": 10342,
+   "sha256": "d641fb51ba361519fff91f3324afddcba7ab26c471d139aa1a370071c0100d46",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay-lids.v1.js",
+   "bytes": 21659,
+   "sha256": "459a8b41b1c13f19b78b3d8072c8428a5e0503d9dda0e4b4831b210177fc4c99",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/ear-base.v1.js",
+   "bytes": 5463,
+   "sha256": "b95773049103ac44a6f616af4471254d7411932a9dabb6660589087ff006dd5c",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/face-mount.v1.js",
+   "bytes": 48728,
+   "sha256": "eaa3e002e1bd8228a0a1011b3fd9eaaab05fbf9c86262f6198cd82bfb0b09567",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/hair-tufts.v1.js",
+   "bytes": 9819,
+   "sha256": "7150dcf8b3710c60cc77539e105c372f448eafb5f4b4b9b526c079b575681fdd",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/librarian-motion-projection.v1.js",
+   "bytes": 2777,
+   "sha256": "02055a8eb919241c1ef30aacbeaf90552b8c3c5f440b4a00cb72cfa85fffa66c",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/lipsync-text.v1.js",
+   "bytes": 3631,
+   "sha256": "95bbdda93be9c8cec03f6616eb113a3bdb9426190ee9be2b7513894f8ba5b22d",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/locomotion-profiles.v1.js",
+   "bytes": 11712,
+   "sha256": "a36716a3e868e700ae2259e47f39fe296556ba35b91d378da4941a8ddf65ceae",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/pet-eye-rig.v6.js",
+   "bytes": 20892,
+   "sha256": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/pet-library.v6.js",
+   "bytes": 34954,
+   "sha256": "778534979c35b4a9ba267be5bb9ea63217c27af135897ee9054a9f80627617b7",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/pose-rig.v1.js",
+   "bytes": 34451,
+   "sha256": "643831c63403a5dbe7b6e47edc629963c2172a1bf7d8d2c00fd982bf3c6a8350",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "samples/kfb-animation-editorial-patch.sample.json",
+   "bytes": 3485,
+   "sha256": "7adb9b018e0f3a2a9b3a2877f26aedf732b313a3d80718be2754939c78e84f31",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "samples/kfb-intake-receipt.sample.json",
+   "bytes": 2436,
+   "sha256": "e7d745cbd74e5ce64b4f65bfa57fabbcff42805ee9ca27637ef3546a84dd984e",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "bytes": 1515,
+   "sha256": "1f9124ab3998789d6e3963a36e40d8236fad6e3c40ee37e5bb20b22166886f53",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "CURRENT_STATE.md",
+   "bytes": 846,
+   "sha256": "9dad9ae618026aa58451a1a37dcd6dbc820e9bf4a3ce9d2732cafb4eb87087bc",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "HANDOVER.md",
+   "bytes": 1178,
+   "sha256": "6c3f643cd8e7846d44be31b46e9c7e7a5c52064bf452c062f39e5c7441d9629e",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "HOUSEKEEPING.md",
+   "bytes": 1051,
+   "sha256": "76f8cfe305ceb17bfff44bb47f233c45dbc0d8df8ec814cd28a2604877e02a27",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "KFB ToolBox Production-05.dc.html",
+   "bytes": 462597,
+   "sha256": "1415671b70b6160760b0f833efcc4dbc831130930ac375e0acc0276aafbbc05d",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "NEXT_CHAT.md",
+   "bytes": 1917,
+   "sha256": "f3d43749a7c9d9e506ae80621b5d09c7864b97ff510a9284fb241d56de03a57e",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "RETURN.md",
+   "bytes": 5635,
+   "sha256": "7935cc623d830915c722d9f4c1976f0e086e679ecf3727197df06a9e71e2cad0",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "SOURCE.json",
+   "bytes": 3913,
+   "sha256": "67e1bb6e382653cf1ad51058f31fd4c8a4d6f3a4f7e0d29ee4aaae640b4733a9",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "START_HERE.md",
+   "bytes": 1804,
+   "sha256": "3d40596a0a4ad70a5f7a60daddeb2d3a501a3fbb883f679640b81e28b84b51f7",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "bytes": 4588,
+   "sha256": "fce55a95189b12ac963e60540d9d350619b2fa2630a7e0d0dd9bae62394f8abd",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "support.js",
+   "bytes": 69150,
+   "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "zipcheck.py",
+   "bytes": 1322,
+   "sha256": "88b6b35941222e0d9264cf0bc2e7218462e9594220da04bcb2ee6922d2923406",
+   "status": "EXPORTED"
+  }
+ ]
+}
