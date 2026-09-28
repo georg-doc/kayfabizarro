@@ -1324,14 +1324,15 @@ KFB resident direction:
 - accepted Legacy Orc B `orb.bounce` is the first Common Bounce behavioral donor; Resident Disco supplies shared-transport/group-pattern and first per-character pairing candidates;
 - player starts with Common Bounce; Signature Moves are discovered/learned from Residents and persist through Player Journey / Meta with teacher/event/method provenance, not Backpack slots or a second skill inventory;
 - learned Signature Moves can be replayed as social tokens: the origin Resident may recognize/join/correct/challenge/parody through existing Reaction/Lean-Memory layers when provenance/knowledge supports it;
-- shared **Resident Gift Culture**: exact Santa `Present_A–E` wrappers + real payload props drive giving, barter, teasing, satirical needling, pranks and reconciliation; wrapper/payload/intent remain separate;
+- shared **Resident Gift Culture**: exact Santa `Present_A–E` wrappers + presented payload props drive giving, loose exchange, teasing, satirical needling, pranks and reconciliation; wrapper/payload/intent remain separate;
 - Toy Soldier reveal timing is the current unwrap-animation donor; Santa wrappers have no proven opened-state geometry and must not receive an invented lid;
-- gift ownership changes only through existing world/inventory owners; Player Journey / Meta stores durable player-facing gift provenance;
+- **KISS correction:** Resident Gift Culture MVP has no durable item economy, barter ledger or per-prop provenance chain; scene props may be ephemeral;
+- persist only meaningful semantic gift receipts (participants, intent/meaning, notable outcome/reconciliation) through Lean Memory / optional Player Journey or GPT-Site storage; visible scenes do not depend on persistence;
 - gift Failure Spiral is bounded from warm/neutral → tease → slapstick → Kayfabe blowout → reconciliation/cooldown/return; exploding presents default to social/cartoon violence, with real damage Combat-owned;
 - future North-Pole scene uses source Santa + Helper_A/B + toy-workshop props, while winter environment and Holiday/Jingle-Bells-like audio remain source-required;
 - world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
 
-Evidence: **23/23 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 · Dance Culture 12/12 · Gift Culture 15/15 PASS**. Runtime/browser/Stage tests remain 0.
+Evidence: **23/23 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 · Dance Culture 12/12 · Gift Culture 15/15 · Gift KISS correction 6/6 PASS**. Runtime/browser/Stage tests remain 0.
 
 Fresh-chat shorthand: **`KFB WEB PUSH/READ — <project or slice> — recover + continue`**. It means Web/GitHub-first recovery + continuation, read-back after every write, timeout = UNKNOWN, Work/WSA only for a concrete capability gap, and no manufactured review gate.
 
