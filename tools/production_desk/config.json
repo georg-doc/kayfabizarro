@@ -621,10 +621,10 @@
       "id": "npc-life-01",
       "bucket": "RUNNING",
       "title": "Residents · Living encounter bus",
-      "what": "Drei kleine soziale Bausteine bleiben getrennt: Host bewegt und entscheidet Legalität, Animation performt, ChatterBox spricht. 21/21 Vertragstests sind grün; Stage/Browser/Human-Gate fehlt noch.",
+      "what": "Drei kleine soziale Bausteine bleiben getrennt: Host bewegt und entscheidet Legalität, Animation performt, ChatterBox spricht. 21/21 Vertragstests sind grün. Der exakte Stage-Payload liegt bereits auf cloudflare-live und pinnt PR #210 @ ea157c52; öffentlicher Browserbeleg und Hub-Root-Link sind noch nicht verifiziert.",
       "provider": "ChatGPT Web / Resident+Town",
       "yourAction": "",
-      "waitingFor": "Stage veröffentlichen und im echten Browser prüfen; danach Georg-Pacing-Review.",
+      "waitingFor": "Hub-Root-Link publizieren und die exakte Cloudflare-Route im echten Browser prüfen; erst danach Georg-Pacing-Review.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
       "pr": 210,
@@ -635,6 +635,11 @@
         "path": "tools/resident_atlas/life/RETURN.md",
         "ref": "chatgpt-web/npc-life-01-2026-09-24",
         "pasteReady": false
+      },
+      "review": {
+        "label": "NPC-LIFE-01 prüfen",
+        "path": "kfb-hub/stage/resident/npc-life-01/index.html",
+        "sourceRef": "PR #210 · ea157c52 · 21/21 contract PASS · cloudflare-live payload present · PUBLIC_VERIFY_PENDING"
       }
     }
   ],
