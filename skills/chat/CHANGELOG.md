@@ -2063,3 +2063,12 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Claude Design and Blender receive closed packages and return complete packages; they are not assigned GitHub/Hub maintenance without a verified connector.
 - Added `KFB_SITES_GAME_TOOL_PLATFORM_P0_2026-09-28.md` for the existing KFB Production Control Site: D1 playtest/decision/progress records, R2 uploads, optional ChatGPT sign-in, task packets and later game/tool persistence.
 - First implementation gate is P0A: one real user-owned playtest report plus one attachment, saved as a review version before deployment.
+
+
+## 2026-09-28 · Animation Library PASS → TUNE + durable Production Inbox
+
+- Production-05 Animation Library accepted as functional base: 204 clips and 24/24 Library checks. It is **PASS → UI/UX TUNE**, not a rebuild or MVP blocker.
+- Added the binding ToolBox UI standard: quiet status icons instead of long labels in the field of view, full-frame card previews without grey side gutters, and one complete shared 3D Inline Editor contract rather than partial per-tool variants.
+- Existing KFB Production Control Site updated in place: Pocket Inbox is now the authenticated D1/R2 **Production Inbox** with owner-scoped list/download/delete and R2 cleanup.
+- Browser-local legacy entries remain visible in a collapsed rescue area. They are not claimed synchronized until uploaded once through the new durable intake.
+- The local `visuelle Grammatik für Fahrbahnmarkierungen.md` entry was observed in browser storage but was absent from the server inbox. Next gate is its one-time upload and authenticated file roundtrip.
