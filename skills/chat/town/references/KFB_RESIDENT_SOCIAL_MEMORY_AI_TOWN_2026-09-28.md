@@ -615,3 +615,493 @@ This document is design persistence only.
 
 One next gate:
 **after the current relevant ToolBox/WorldBuilder recovery blockers are cleared, implement RESIDENT-SOCIAL-MEMORY-01 as one integrated two-Resident world interaction, reusing ChatterBox/Triplets, Fluff-o-lect, Reaction Choreography and existing persistence owners.**
+
+
+## 17 · Points of Interest are the perception surface
+
+A Resident should not search directly for hard-coded action targets such as “find blacksmith” or “find player”.
+
+The world should expose **Points of Interest (POIs)** through the existing world/object owners. A POI is a lightweight semantic view of something that can attract attention or satisfy/block a goal.
+
+POI classes may include:
+- player;
+- Resident / NPC;
+- Cube Pet;
+- plant / tree / natural object;
+- landmark / building / environment feature;
+- resource node or resource-bearing object;
+- loose prop;
+- Card / MediaSurface;
+- activity station such as anvil, fishing spot, workbench or stage;
+- vehicle / mount;
+- event / temporary social scene;
+- hazard / obstruction.
+
+A POI does **not** own behaviour. It exposes enough information for the current actor to evaluate it.
+
+Proposed semantic view:
+
+```ts
+type PointOfInterest = {
+  ref: string
+  kind: string
+
+  worldAnchor: string
+  position: { x: number; y: number; z: number }
+
+  tags: string[]
+  affordances: string[]
+
+  visible: boolean
+  active: boolean
+
+  salience?: number
+  ownerId?: string
+  resourceKind?: string
+  activityKind?: string
+
+  stateRef?: string
+}
+```
+
+Examples:
+- a pond exposes `water`, `fishing`, `shoreline`;
+- an anvil exposes `workshop`, `smithing`, `hammer-target`;
+- a tree may expose `nature`, `shade`, `wood-source` only if the world/resource owner says so;
+- a player exposes social affordances only when current gameplay state allows them;
+- a Cube Pet is a social POI with its own actor identity, not a decorative prop;
+- a Brick Fish on the ground exposes `tossable`, `red-herring`, and its provenance through the existing prop owner.
+
+No second POI registry should duplicate Asset Librarian or world state. This is a **query/view layer** over existing objects.
+
+## 18 · Sight, range and search
+
+Perception should be staged so every Resident does not query the whole world each tick.
+
+### 18.1 · Immediate contact / near field
+
+Very cheap, very local:
+- collision/contact;
+- prop impact;
+- direct handoff;
+- someone entering personal space;
+- an activity target immediately in use.
+
+This can trigger Reaction Choreography without any LLM call.
+
+### 18.2 · Visible attention field
+
+Candidates inside current sight/range, filtered by:
+- distance;
+- view direction where relevant;
+- simple occlusion/visibility;
+- current focus lock;
+- semantic salience;
+- personal goals/motivations;
+- social availability.
+
+This is the main source of **Attention**.
+
+### 18.3 · Local semantic search
+
+When a goal requires a target not currently visible, query the world owner's spatial/semantic index for compatible POIs:
+- nearest valid fishing spot;
+- nearest usable anvil/workbench;
+- assigned patrol marker;
+- unexplored landmark;
+- known resident;
+- available resource node.
+
+This is a deliberate search operation, not ambient all-world scanning.
+
+### 18.4 · Remembered / reported target
+
+Lean Memory may provide a POI reference outside current sight:
+- “the player left the Brick Fish by the stage”;
+- “B told me the ore vein is near the cave”;
+- “I promised to meet A at the workshop”.
+
+Memory can create a **search target**, but the actor must still navigate through the world owner and verify the target when arriving. A remembered POI is not guaranteed to still exist or remain available.
+
+## 19 · Routine activity is the default path, not idle filler
+
+Residents should usually be doing something locally meaningful before the player arrives.
+
+Existing source-backed activity donors already include:
+- `Hammer / Hammering` → smith/workshop with exact hammer + anvil/work surface;
+- `Chop / Chopping` → woodcutter/camp with exact axe + target;
+- `Dig / Digging` → farmer/miner/archaeologist with exact shovel + ground target;
+- `Pickaxe / Pickaxing` → mine/ore activity;
+- `Saw / Sawing` → carpenter/build activity;
+- `Fishing_*` → shoreline/water activity;
+- verified world direction for fishing, mining gold/ore, chopping wood and transporting/using resources.
+
+Additional routine roles from Georg's current direction:
+- patrol;
+- explore;
+- inspect;
+- gather/collect;
+- carry/deliver;
+- tend/care;
+- rehearse/play music;
+- rest/socialize;
+- return-home / return-to-post.
+
+The receiving world still owns:
+- navigation;
+- legal path;
+- terrain contact;
+- resource existence/consumption;
+- collision;
+- schedules if schedules exist.
+
+ToolBox/Resident activity owners provide the **body performance and prop fit**, not the world rule.
+
+A routine should be resumable:
+
+```text
+routine activity
+→ attention interruption
+→ optional investigation / interaction
+→ reaction / dialogue / social thread
+→ resolve or defer
+→ resume previous activity
+   OR choose a newly motivated activity
+```
+
+A Resident does not snap to generic Idle after every social beat.
+
+## 20 · Personal goals and motivations are the conflict motor
+
+Each Resident can have a small authored motivation profile. This is lighter than a life simulator and richer than random wandering.
+
+Separate:
+
+### Stable motivations
+
+Longer-lived authored tendencies, for example:
+- protect / guard;
+- make / repair;
+- gather / trade;
+- perform;
+- help;
+- investigate / curiosity;
+- explore;
+- patrol / duty;
+- socialize;
+- collect Cards/objects;
+- preserve a place or resource.
+
+These are character-specific; do not give every Resident the same list at the same weights.
+
+### Current goals
+
+Concrete short-lived intentions, for example:
+- finish hammering this object;
+- reach the patrol marker;
+- find a fishing spot;
+- return the Brick Fish;
+- show this Card to another Resident;
+- investigate the noise near the stage;
+- keep a promise;
+- find the player.
+
+### Conflict
+
+Conflict emerges when current goals compete:
+- two Residents want the same resource or station;
+- guard duty conflicts with curiosity;
+- a promised meeting conflicts with a performance;
+- one Resident wants to preserve a plant/object another wants to harvest/use;
+- one Resident wants to continue an argument while the other wants to leave;
+- a player interrupts an activity the Resident considers important.
+
+Do not translate competing goals automatically into hostility or Combat. The outcome can be:
+- wait;
+- negotiate;
+- retort;
+- trade;
+- reroute;
+- refuse;
+- ask for help;
+- stage a Kayfabe conflict;
+- abandon the goal;
+- escalate only when the current consumer authorizes it.
+
+## 21 · KFB AIDA gameplay loop
+
+Georg's current gameplay direction uses **AIDA** as an interaction loop for both player and NPC behaviour. This is not the classic marketing acronym; in KFB it is a perception/action sequence.
+
+Canonical working sequence for this slice:
+
+```text
+ATTENTION
+→ CURIOSITY / INTEREST
+→ EXPECTATION
+→ INTERACTION
+→ REACTION
+→ INTERPRET / REMEMBER / UPDATE THREAD
+→ RETURN / RESUME / RETARGET
+```
+
+The loop may terminate at any stage.
+
+### 21.1 · Attention
+
+Something enters the actor's attention field:
+- player;
+- Resident;
+- Cube Pet;
+- plant;
+- resource;
+- prop;
+- landmark;
+- sound/event;
+- Card;
+- routine station.
+
+Attention is selection, not yet action.
+
+Candidate score can be thought of as:
+
+```text
+salience
+× perceptibility
+× motivation relevance
+× novelty / unresolved-memory relevance
+× social availability
+÷ interruption cost
+```
+
+No single numeric formula is canon yet. The important rule is that personal motivation and current activity influence what becomes noticeable enough to matter.
+
+### 21.2 · Curiosity / Interest
+
+The actor decides whether to spend attention.
+
+Possible outcomes:
+- glance and ignore;
+- turn toward it;
+- slow/stop current activity;
+- approach;
+- search for more information;
+- recall a related memory;
+- ask a nearby Resident;
+- continue routine.
+
+Most POIs should die here without starting a scene.
+
+### 21.3 · Expectation
+
+Before interacting, the actor forms a lightweight expectation from:
+- affordance;
+- authored motivation;
+- current goal;
+- prior memory;
+- relationship tone;
+- visible state.
+
+Examples:
+- “that fishing spot may satisfy my fishing routine”;
+- “the player may still have the Card I lent them”;
+- “that Brick Fish may mean another banter beat”;
+- “the anvil is occupied, so I may have to wait or negotiate”.
+
+Expectation is subjective. It is not world truth and should not be persisted unless later relevant.
+
+### 21.4 · Interaction
+
+Only now is a concrete action requested from the relevant owner:
+- navigate;
+- inspect;
+- pick up;
+- harvest/use;
+- give;
+- talk;
+- throw;
+- work;
+- play;
+- trade;
+- assist;
+- challenge;
+- leave.
+
+The world/consumer validates whether it is actually possible.
+
+### 21.5 · Reaction
+
+The result resolves through:
+- world state;
+- semantic encounter event;
+- Reaction Choreography;
+- optional ChatterBox/Triplet speech;
+- optional context-valid Fluff-o-lect;
+- resource/quest/social owner where applicable.
+
+The reaction can differ from the expectation.
+
+That mismatch is a natural source of comedy, surprise and conflict without generic joke generation.
+
+### 21.6 · Interpret / remember / update thread
+
+Persist only when the result matters:
+- witnessed meaningful event;
+- gift/provenance;
+- promise;
+- argument/retort;
+- unusual success/failure;
+- goal state changed;
+- new knowledge source;
+- recurring social gag;
+- Card interpretation;
+- resource/POI discovery worth remembering.
+
+Do **not** store every glance, path correction or routine animation.
+
+### 21.7 · Return / resume / retarget
+
+After the beat:
+- resume prior activity;
+- continue dialogue;
+- return to patrol;
+- return to fishing/smithing/building;
+- resume route;
+- choose a new goal if the interaction changed priorities;
+- follow a newly opened social thread;
+- leave if interest is exhausted.
+
+This return seam is essential to making Residents look like they had a life before the player arrived.
+
+## 22 · AIDA is shared by player and NPC loops
+
+The same grammar can drive player-facing design.
+
+Player example:
+
+```text
+sees Cube Pet doing something unusual
+→ interest
+→ expects a small social beat
+→ approaches / interacts
+→ Pet reacts
+→ player receives retort / Card / clue / nothing
+→ memory/Almanac may update
+→ player returns to exploration
+```
+
+NPC example:
+
+```text
+Resident sees player carrying Brick Fish
+→ recalls prior bonk
+→ expects banter
+→ approaches / comments / requests throw
+→ player accepts/refuses
+→ coordinated reaction
+→ social thread closes or remains open
+→ Resident returns to patrol/work
+```
+
+Because both sides use the same pattern, Town does not need separate “player content” and “NPC simulation” grammars.
+
+## 23 · POI × motivation × memory selection
+
+A minimal decision frame:
+
+```ts
+type ResidentDecisionContext = {
+  actorId: string
+
+  routine: {
+    kind: string
+    stateRef?: string
+    resumable: boolean
+  }
+
+  currentGoal?: {
+    kind: string
+    targetRef?: string
+    priority: number
+  }
+
+  motivations: Array<{
+    kind: string
+    weight: number
+  }>
+
+  visiblePois: PointOfInterest[]
+  rememberedTargets: string[]
+  openThreadIds: string[]
+}
+```
+
+Selection order proposal:
+1. hard owner state: danger/combat/action lock;
+2. must-recall commitment or urgent goal;
+3. current routine continuation;
+4. high-salience visible POI relevant to motivation;
+5. open social thread opportunity;
+6. local semantic search for goal target;
+7. explore/patrol/wander fallback.
+
+This prevents a shiny prop from constantly stealing attention from a more important authored activity.
+
+## 24 · Routine memory and world change
+
+Routine itself is normally **not** episodic memory.
+
+Record a routine-linked receipt only when something changes:
+- resource exhausted or discovered;
+- station unavailable;
+- player interrupted/helped;
+- another Resident interfered;
+- unusual catch/find;
+- tool/object changed hands;
+- routine completed a meaningful authored milestone;
+- new POI learned.
+
+The world/resource owner remains the source of truth for resources and environment state.
+
+Lean Memory remembers the Resident's experience of that change.
+
+## 25 · Updated first productive implementation later
+
+**RESIDENT-SOCIAL-MEMORY-01** should now prove the smallest end-to-end AIDA loop rather than dialogue recall alone.
+
+Inside the real receiving world:
+
+Actors:
+- two real Residents;
+- player as an optional visible POI.
+
+POIs:
+- one real Brick Fish;
+- one Card or gift object;
+- one routine station or resource POI.
+
+Routine:
+- one source-backed activity, preferably from the verified Resident Activity donor;
+- interruption and clean resume required.
+
+Required loop:
+1. Resident is visibly doing the routine;
+2. player/Resident/prop enters attention range;
+3. attention selects the POI for a motivation-backed reason;
+4. curiosity/interest creates an approach or inspect beat;
+5. expectation is formed from memory/current state;
+6. interaction occurs;
+7. Reaction Choreography resolves the body performance;
+8. optional ChatterBox/Triplet line;
+9. one context-valid Fluff-o-lect variant;
+10. meaningful result writes witness-specific memory/open thread only if warranted;
+11. actor resumes routine/path/dialogue or retargets based on changed goal.
+
+Additional evidence:
+- sight/range candidate list is bounded;
+- no whole-world scan per frame;
+- non-relevant POIs do not constantly interrupt;
+- routine resumes from a legal consumer-owned state;
+- no false resource mutation from memory;
+- personal goal can outweigh a low-salience distraction;
+- one goal conflict resolves without automatically becoming Combat.
+
