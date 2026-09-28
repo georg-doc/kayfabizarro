@@ -1,3 +1,22 @@
+## 2026-09-28 · KFB Town · Officer Doppel-Denk first resident-specific overlay
+
+### CHARACTER / DESIGN
+- Working character name **Officer Doppel-Denk** is bound to technical Resident source `toy-soldier`; asset ID is not renamed.
+- Existing Toy Soldier gift reveal is reused as a one-time world entrance: closed present → reveal → emerged → patrol.
+- First uniqueness overlay adds resident-specific Attention Bias rather than a new NPC system: perceived disorder, obstruction, litter, noise, unsafe horseplay, unattended objects, authority opportunities and royal-interest cues.
+- First mini-scenario POIs: Brick Fish exchange, Tiny Treats pizza slice on the ground and plant/path obstruction.
+- Social motor is tragicomic authority: eager royal loyalty and recognition-seeking, low actual acceptance by nearby Residents, with retorts/laughter/compliance feeding bounded social outcomes.
+- ChatterBox/Triplets remain language owner; Reaction Choreography remains physical response owner; Lean Memory stores only socially meaningful recurring outcomes.
+- First source-backed motion gate is `Running_HoldingRifle` plus `Walking_A/B`; no shoulder-rifle march is accepted yet and no static fake offset is introduced. Mixamo/new motion intake follows only if current Motion Library candidates fail.
+
+### EVIDENCE / RECOVERY
+- Added `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`.
+- SOURCE manifest expanded from 13 to **15** pinned entries with current Resident Atlas Toy Soldier and Motion Registry sources.
+- Current evidence: **15/15 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer profile source checks PASS**.
+- Runtime/browser/Stage remain 0; no public review surface or Live promotion was created.
+- Main router, KFB Hub card, START_HERE, Return and Recovery are updated to the same character checkpoint.
+- Exactly one next gate remains **RESIDENT-SOCIAL-MEMORY-01**, using Officer Doppel-Denk as the preferred first resident-specific overlay inside the real receiving world.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
