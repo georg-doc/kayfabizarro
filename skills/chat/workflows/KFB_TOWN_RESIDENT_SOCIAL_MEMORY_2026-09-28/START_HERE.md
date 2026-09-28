@@ -63,3 +63,27 @@ After relevant current recovery blockers clear, implement **RESIDENT-SOCIAL-MEMO
 - one context-valid Fluff-o-lect variant;
 - coordinated Reaction Choreography;
 - clean recovery to consumer-owned path/activity/dialogue state.
+
+
+## Execution lane · Web-first / no Work by default
+
+Binding current workflow:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`
+
+For this Resident / POI / routine / AIDA slice:
+- **ChatGPT Web + GitHub is the default production lane** for architecture, source recovery, contracts, implementation, tests, Return/changelog and owner integration;
+- Claude Design is used only for visual/3D authoring where it materially helps;
+- **Work / WSA is escalation-only** and needs a concrete capability gap that Web/Claude cannot perform;
+- do not send routine Resident logic, memory, POI search, AIDA, ChatterBox integration, tests or metadata maintenance to Work;
+- human review should happen in the real Resident/WorldBuilder receiving surface when a meaningful product decision exists, not through a proxy dashboard.
+
+Historical delivery distinction:
+- the older Astra Integration delivery contract required a native ChatGPT Site **and** KFB Cloudflare from the same source state when that specific runtime was delivered;
+- a ChatGPT Site is therefore a possible private distribution/review mirror, **not a second runtime owner and not the default place where this work is authored**;
+- current KFB acceptance links remain the direct `kayfabizarro.pages.dev` route when this slice reaches a meaningful integrated Stage milestone.
+
+For the present design-only slice:
+- no Work escalation;
+- no ChatGPT Site deployment;
+- no Cloudflare deployment;
+- continue repository-native Web/GitHub persistence only.
