@@ -1,0 +1,103 @@
+{
+ "schema": "kfb.route-recipe/0.1-draft",
+ "id": "MODUL_KREISVERKEHR",
+ "label": "Modul \u00b7 Kreisverkehr",
+ "start": {
+  "p": [
+   0,
+   0,
+   0
+  ],
+  "headingDeg": 0
+ },
+ "defaults": {
+  "widthClass": "STANDARD",
+  "markings": "TRACK"
+ },
+ "pieces": [
+  {
+   "id": "rennstrecke",
+   "type": "STRAIGHT",
+   "length": 40
+  },
+  {
+   "id": "zur_stadt",
+   "type": "TRANSITION",
+   "to": "city",
+   "length": 80
+  },
+  {
+   "id": "zufahrt",
+   "type": "STRAIGHT",
+   "length": 30
+  },
+  {
+   "id": "kreisel_m",
+   "type": "ROUNDABOUT",
+   "island": 16,
+   "arms": [
+    0,
+    90,
+    180,
+    270
+   ],
+   "scenery": {
+    "kind": "park"
+   }
+  },
+  {
+   "id": "allee",
+   "type": "STRAIGHT",
+   "length": 50
+  },
+  {
+   "id": "bogen",
+   "type": "CURVE_EASE",
+   "turn": 35,
+   "radius": 140
+  },
+  {
+   "id": "kreisel_s",
+   "type": "ROUNDABOUT",
+   "island": 10,
+   "ringWidth": "NARROW",
+   "splitter": 3.6,
+   "arms": [
+    0,
+    110,
+    235
+   ],
+   "exit": 1,
+   "scenery": {
+    "kind": "statue"
+   }
+  },
+  {
+   "id": "gasse",
+   "type": "STRAIGHT",
+   "length": 60
+  },
+  {
+   "id": "kreisel_l",
+   "type": "ROUNDABOUT",
+   "island": 30,
+   "arms": [
+    0,
+    70,
+    145,
+    215,
+    290
+   ],
+   "exit": 2,
+   "scenery": {
+    "kind": "resident",
+    "set": "orc_band"
+   }
+  },
+  {
+   "id": "weiter",
+   "type": "STRAIGHT",
+   "length": 60
+  }
+ ]
+}
