@@ -78,3 +78,24 @@ Read [TOWN_POST_R022_ARCHETYPES_BIRTHDAY_RADIO_2026-09-15.md](references/TOWN_PO
 The six audio binaries plus per-file provenance manifest are now in `media/3D_Assets/Audio/Music/Birthday Radio - VOLE CC0/`. Their presence is an asset/source result, **not** a claim that a Birthday Radio runtime, Town audio owner or D6 interaction has already been built.
 
 Travel, ToolBox/Animation Lab, Asset Librarian, ChatterBox/Journey/Almanac, Stunt and Combat keep their existing owners. The GitHub delta and the post-cut handoffs are readable inputs, not automatic acceptance or implementation.
+
+
+## 2026-09-28 · Resident Social Memory / AI Town donor synthesis
+
+Read [Resident Social Memory + AI Town donor synthesis](references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md) for the current additive direction connecting Town Lean Memory to autonomous resident encounters.
+
+Current architecture direction:
+- `georg-doc/ai-town` is a **mechanism donor only** for compact episodic memory, small top-k retrieval, relevance/recency/importance ranking, cooldowns and asynchronous cognition;
+- ChatterBox / semantic Triplets / selectable retorts remain the language lineage;
+- Fluffolekt / Fluff-o-lect may omit the carrying word only when shared memory, visible world state or the current action makes the meaning recoverable;
+- witness, hearsay and subjective interpretation remain distinct;
+- small resumable social threads carry gifts, promises, banter, arguments, Cards, work and performance continuity without a global relationship meter;
+- current Brick Fish and Reaction Choreography candidates provide the physical social-action seam;
+- world movement, persistence, rewards, Combat, actor rigs and dialogue ownership remain with their existing consumers.
+
+Workflow/evidence:
+`../workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/`
+
+Reserved future Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/` — **NOT DEPLOYED**.
+
+One later implementation gate: **RESIDENT-SOCIAL-MEMORY-01** in the real receiving world after the relevant current recovery blockers are cleared. No standalone proxy review page.
