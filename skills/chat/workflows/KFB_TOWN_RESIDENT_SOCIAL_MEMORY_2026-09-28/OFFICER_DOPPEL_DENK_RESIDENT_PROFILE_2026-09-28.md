@@ -395,17 +395,53 @@ Do not turn these into a second global NPC database. They belong in the existing
 
 ## 15 · First animation gate
 
-Before Mixamo intake:
+### 15.1 · Priority candidate · Mixamo `Walk with Briefcase`
 
-1. load Officer Doppel-Denk with exact Toy Soldier rifle;
-2. audition `Running_HoldingRifle`;
-3. audition `Walking_A` / `Walking_B` with the rifle attached;
-4. verify whether the rifle actually reads as shoulder/parade carry throughout the cycle;
-5. check hand/rifle contact, shoulder clearance, bayonet/head clearance and loop quality;
-6. if no source-backed clip passes, search Mixamo or another approved motion donor for a march;
-7. only then admit a new clip through the existing Motion Library/MotionProfile path.
+Georg has identified Mixamo **`Walk with Briefcase`** as the current preferred donor candidate.
 
-A static transform should not compensate for a motion whose arm pose is fundamentally wrong.
+Why it is promising:
+- the right arm already stays in a deliberate carrying pose rather than performing a normal walk swing;
+- the left arm keeps a normal locomotion swing;
+- this gives the desired asymmetric Nutcracker silhouette;
+- the exact Toy Soldier rifle can potentially replace the implied briefcase load and be fitted so it reads as a shoulder-carried rifle;
+- the clip can therefore solve locomotion and character silhouette together instead of combining an unrelated walk with a rigid weapon correction.
+
+Source status: **USER-IDENTIFIED EXTERNAL DONOR · NOT YET ADMITTED / NOT YET PINNED IN REPO**.
+
+Preferred adaptation path:
+
+1. obtain/export the exact Mixamo `Walk with Briefcase` clip and preserve its source identity;
+2. admit it through the existing Motion Library / motion-intake path rather than embedding an anonymous animation in the Resident;
+3. retarget it to the current `Rig_Medium` Toy Soldier;
+4. attach exact `ToySoldier_Rifle.gltf` to `handslot.r`;
+5. preserve the clip's lower body and left-arm swing;
+6. use the carried right-arm pose as the base;
+7. if needed, apply only a small additive right shoulder / forearm / wrist pose patch to establish the classic shoulder-rifle silhouette;
+8. adjust the rifle's local grip transform only as needed for believable hand contact and shoulder resting position;
+9. do not keyframe the rifle as an independent fake world-space prop while the body walks;
+10. save the final motion + pose/attachment recipe as reusable resident configuration.
+
+Validation across the entire loop:
+- right hand stays on a plausible grip point;
+- rifle visually rests on/near the shoulder rather than floating;
+- no shoulder, cheek, hat/head or bayonet clipping;
+- no forearm/wrist break;
+- left arm keeps its natural swing;
+- torso counter-rotation does not make the rifle cut through the head/body;
+- feet do not visibly slide at the intended patrol speed;
+- loop seam is clean;
+- transition from reveal/settle into march and from interruption back into march is acceptable.
+
+### 15.2 · Existing KFB motions remain comparison donors
+
+Still audition:
+- `Running_HoldingRifle`;
+- `Walking_A`;
+- `Walking_B`.
+
+They remain useful A/B references and possible fallback sources, but `Walk with Briefcase` is now the **priority candidate** because its asymmetric arm behavior matches the intended Officer walk more directly.
+
+A static prop transform must not compensate for a fundamentally wrong arm animation. A small attachment fit or additive right-arm pose patch is acceptable when the base motion already provides the correct carrying behavior.
 
 ## 16 · First integrated Officer mini-scenario
 
@@ -461,8 +497,9 @@ This is the layer that makes the same POI ecology produce a unique population wi
 
 - final player-facing name remains open; **Officer Doppel-Denk** is the working name;
 - exact patrol route belongs to the receiving world;
-- `Running_HoldingRifle` is candidate, not accepted march;
-- shoulder-rifle pose must be visually proven;
+- Mixamo `Walk with Briefcase` is the **priority** march/walk donor candidate but is not yet admitted/pinned;
+- `Running_HoldingRifle` and `Walking_A/B` remain comparison/fallback candidates;
+- shoulder-rifle pose must be visually proven across the whole loop;
 - trumpet usage is not part of the first patrol proof;
 - exact King K. Fabian interactions remain authored social content, not autonomous political hierarchy;
 - concrete dialogue takes remain ChatterBox-owned;
