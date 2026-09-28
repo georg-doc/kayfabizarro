@@ -380,3 +380,78 @@ This chat has no direct Site/D1/R2 write action, so the process is **not falsely
 with `siteWrite.status = PENDING_TOOL_GAP`.
 
 Evidence: **27/27 source reads · 15/15 Social Card Relay checks PASS**. Runtime/browser/Stage/Site-backend write remain 0 for this checkpoint.
+
+
+## Productive runtime checkpoint · Travel PR #40 · 2026-09-29
+
+The first Card-specific proof is no longer design-only.
+
+Receiving implementation:
+- repo: `georg-doc/KFB-Travel-Globe`;
+- branch: `chatgpt-web/resident-social-card-relay-01-2026-09-29`;
+- Draft PR: **#40**;
+- runtime candidate head: `392d2b909afe3d26a25e2f64e3fdae19d1159273`;
+- recovery/handoff head observed after closure: `a8aba4fdc4de8ece4d529cc9edcd4097ec876e05`.
+
+Implemented in the existing playable Travel Town host:
+- Caveman gives the player real Anti-Rules Card 4, **The Authority Figure**;
+- the player carries it to existing King Kayfabian;
+- selectable `SHOW IT → SPIN IT → SELL IT`;
+- proof path `power → portrait → answer`;
+- visible King reaction;
+- `kfb-town-chatterbox-seed`;
+- `kfb-town-reaction`;
+- exactly one compact witnessed `card-relay` memory receipt;
+- state reaches `RESOLVED`.
+
+No second movement/camera/world/Card inventory/Journey/Combat/Race owner was created.
+
+Actual static evidence:
+- run/job `36498754015 / 109184348867`;
+- **140/140 PASS**;
+- build PASS;
+- verify PASS;
+- 0 missing;
+- artifact `11004492242`;
+- digest `sha256:65d52153ef902f87da88ec5c08b1e0cd911a61306e6caec11d2441f532f14cb6`.
+
+Actual browser evidence:
+- run/job `36498754082 / 109184348812`;
+- **27 functional Relay assertions PASS**;
+- real pinned Card source observed;
+- Relay reaches `RESOLVED`;
+- evidence artifact `11004023875`;
+- digest `sha256:da00d8545b7d28db444c8409505fc61919f97f1d256b90b45f9e70fab9440f98`;
+- screenshots: Caveman offer · Sell choice · resolved King reaction.
+
+Overall browser workflow is still **FAIL / BLOCKED**, because the final strict same-origin resource assertion sees existing Town-relative 404 requests:
+- `/town/asset-repo.json`;
+- `/town/globe-v13/auswahl-georg.json`;
+- `/town/globe-v13/flora-auswahl.json`.
+
+These requests did not prevent the new Relay from completing.
+
+Two repair passes are exhausted. No repair 3. The functional candidate is preserved in Travel PR #40 with full Failure Recovery.
+
+Georg's parallel Blender MCP work on gift interactions, brawls, emotional choreography and clay-particle VFX is intentionally **not modified or claimed** here. The runtime already emits semantic Reaction intents that can consume those assets later after source admission.
+
+### Current status correction
+
+For **Social Card Relay only**:
+- runtime source changed: **YES** in Travel PR #40;
+- runtime tests: **140/140 PASS** at candidate head;
+- functional browser assertions: **27 PASS**;
+- overall browser gate: **BLOCKED / not PASS**;
+- screenshots: **3 in CI artifact**;
+- Stage: **0 / NOT DEPLOYED**;
+- Live: **0 / NOT PROMOTED**.
+
+### Exactly one next gate
+
+**TOWN-RESOURCE-PATH-01**
+
+Do not change the Social Card Relay candidate.
+
+Identify the existing Town/Travel owner of the three relative resource request families, resolve/retire/classify those requests, then rerun the exact unchanged Relay browser proof.
+
+Only after that PASS may the Social Card Relay move to public Stage or the subsequent real ChatterBox/Reaction adapter subgate.
