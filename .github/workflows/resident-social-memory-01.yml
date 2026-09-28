@@ -1,0 +1,62 @@
+name: Resident Social Memory 01
+
+on:
+  pull_request:
+    branches:
+      - work/world-m2a-playable-r5-2026-09-27
+    paths:
+      - 'kfb-hub/stage/town/resident-social-memory-01/**'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-m1.mjs'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-ui.mjs'
+      - '.github/workflows/resident-social-memory-01.yml'
+  push:
+    branches:
+      - work/resident-social-memory-01-2026-09-28
+    paths:
+      - 'kfb-hub/stage/town/resident-social-memory-01/**'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-m1.mjs'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-ui.mjs'
+      - '.github/workflows/resident-social-memory-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package and owner proof
+        run: node kfb-hub/stage/town/resident-social-memory-01/package-proof-rsm01.mjs
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-m1.mjs
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-ui.mjs
+          node --check kfb-hub/stage/town/resident-social-memory-01/resident-social-memory.mjs
+          node --check kfb-hub/stage/town/resident-social-memory-01/browser-proof-rsm01.mjs
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local Stage mirror
+        run: |
+          python3 -m http.server 4198 --bind 127.0.0.1 >/tmp/kfb-rsm01-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4198/kfb-hub/stage/town/resident-social-memory-01/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-rsm01-http.log
+          exit 1
+      - name: Resident AIDA + interaction + memory browser proof
+        run: node kfb-hub/stage/town/resident-social-memory-01/browser-proof-rsm01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resident-social-memory-01-proof
+          path: resident-social-memory-01-proof
+          retention-days: 30

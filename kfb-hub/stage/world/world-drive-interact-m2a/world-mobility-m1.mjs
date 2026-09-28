@@ -42,6 +42,34 @@ const wrapPi=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export async function mountWorldMobility(app){
   if(!app?.play||!app?.scene||!app?.camera)throw Error('WORLD-MOBILITY-M1 needs the existing World r2 play owner');
   const play=app.play,baseUpdate=play.update.bind(play),keys={};
+  const interactionResolvers=[];
+  function registerInteractionResolver(def={}){
+    if(!def.id||typeof def.probe!=='function'||typeof def.interact!=='function')throw Error('interaction resolver needs id + probe + interact');
+    const entry={id:String(def.id),priority:Number(def.priority)||0,probe:def.probe,interact:def.interact};
+    interactionResolvers.push(entry);
+    interactionResolvers.sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id));
+    paintModeEvent();
+    return ()=>{const i=interactionResolvers.indexOf(entry);if(i>=0)interactionResolvers.splice(i,1);paintModeEvent();};
+  }
+  function interactionCandidates(){
+    if(mode!=='GROUND')return [];
+    const out=[];
+    const vehicleDistance=drive?.distanceTo?.(play.position)??Infinity;
+    if(vehicleDistance<=8)out.push({id:'vehicle:kart-oobi',kind:'vehicle',label:'get in the car',distanceM:vehicleDistance,priority:0,resolverId:null});
+    for(const resolver of interactionResolvers){
+      let candidate=null;
+      try{candidate=resolver.probe({app,play,mode,vehicleDistanceM:vehicleDistance});}catch(err){console.warn('KFB interaction probe failed',resolver.id,err);}
+      if(!candidate||candidate.available===false)continue;
+      const distanceM=Number(candidate.distanceM);
+      out.push({...candidate,id:String(candidate.id||resolver.id),kind:String(candidate.kind||'interaction'),label:String(candidate.label||'interact'),distanceM:Number.isFinite(distanceM)?distanceM:Infinity,priority:Number(candidate.priority??resolver.priority)||0,resolverId:resolver.id,_resolver:resolver});
+    }
+    return out.sort((a,b)=>b.priority-a.priority||a.distanceM-b.distanceM||a.id.localeCompare(b.id));
+  }
+  function publicCandidate(candidate){
+    if(!candidate)return null;
+    const { _resolver, ...safe }=candidate;
+    return {...safe,distanceM:Number.isFinite(safe.distanceM)?+safe.distanceM.toFixed(2):null};
+  }
   const drive=await createWorldDriveM2A(app);
   const carrier=createCardCarrier({THREE,width:3.2});
   carrier.group.name='Travel Card Carrier · exact donor · World ENU adapter';
@@ -169,7 +197,10 @@ export async function mountWorldMobility(app){
     drive.update(dt);return baseUpdate(dt);
   };
 
-  function report(){return {schema:'kfb.world-drive-interact-m2a/1',mode:mode.toLowerCase(),sameWorld:true,trackProxy:false,source:{...SOURCE,drive:DRIVE_SOURCE},router:router.report(),intent:intent.report(),interaction:{key:'E',vehicleDistanceM:+drive.distanceTo(play.position).toFixed(2),available:mode==='DRIVE'||(mode==='GROUND'&&drive.distanceTo(play.position)<=8)},ground:{position:[play.position.x,play.position.y,play.position.z].map(v=>+v.toFixed(2)),motion:play.motion.state,speed:+(play.motion.speed||0).toFixed(2)},drive:drive.report(),flight:{position:[flight.position.x,flight.position.y,flight.position.z].map(v=>+v.toFixed(2)),speed:+flight.speed.toFixed(2),clearance:+flight.clearance.toFixed(2),actorPose:mode==='FLIGHT'?'idle on card carrier':play.motion.state,vehicle:mode==='FLIGHT'?'card-carrier.js':null}}}
+  function report(){
+    const candidate=mode==='GROUND'?publicCandidate(interactionCandidates()[0]):null;
+    return {schema:'kfb.world-drive-interact-m2a/1',mode:mode.toLowerCase(),sameWorld:true,trackProxy:false,source:{...SOURCE,drive:DRIVE_SOURCE},router:router.report(),intent:intent.report(),interaction:{key:'E',available:mode==='DRIVE'||!!candidate,target:mode==='DRIVE'?{id:'vehicle:kart-oobi',kind:'vehicle',label:'get out of the car',distanceM:0}:candidate,candidateCount:mode==='GROUND'?interactionCandidates().length:0,vehicleDistanceM:+drive.distanceTo(play.position).toFixed(2)},ground:{position:[play.position.x,play.position.y,play.position.z].map(v=>+v.toFixed(2)),motion:play.motion.state,speed:+(play.motion.speed||0).toFixed(2)},drive:drive.report(),flight:{position:[flight.position.x,flight.position.y,flight.position.z].map(v=>+v.toFixed(2)),speed:+flight.speed.toFixed(2),clearance:+flight.clearance.toFixed(2),actorPose:mode==='FLIGHT'?'idle on card carrier':play.motion.state,vehicle:mode==='FLIGHT'?'card-carrier.js':null}};
+  }
   function setMode(next,meta={source:'UI'}){
     const raw=String(next||'').toUpperCase(),target=raw==='FLIGHT'?'FLIGHT':raw==='DRIVE'?'DRIVE':'GROUND';
     if(target===mode)return report();
@@ -178,14 +209,22 @@ export async function mountWorldMobility(app){
   function interact(meta={source:'E interaction'}){
     if(mode==='DRIVE'){router.set('GROUND',meta);return {ok:true,action:'EXIT_VEHICLE',report:report()}}
     if(mode!=='GROUND')return {ok:false,reason:'GROUND_REQUIRED',report:report()};
-    if(drive.distanceTo(play.position)>8)return {ok:false,reason:'VEHICLE_TOO_FAR',report:report()};
-    router.set('DRIVE',meta);return {ok:true,action:'ENTER_VEHICLE',report:report()};
+    const candidate=interactionCandidates()[0];
+    if(!candidate)return {ok:false,reason:'NO_INTERACTION_TARGET',report:report()};
+    if(candidate.kind==='vehicle'){
+      router.set('DRIVE',meta);return {ok:true,action:'ENTER_VEHICLE',target:publicCandidate(candidate),report:report()};
+    }
+    const resolver=candidate._resolver;
+    const result=resolver?.interact?.({candidate:publicCandidate(candidate),meta,app,play,mode});
+    paintModeEvent();
+    return {ok:true,action:'EXTERNAL_INTERACTION',target:publicCandidate(candidate),result:result??null,report:report()};
   }
   addEventListener('keydown',e=>{if(!play.on||e.repeat||e.code!=='KeyE')return;const t=String(e.target?.tagName||'').toLowerCase();if(['input','textarea','select'].includes(t))return;e.preventDefault();e.stopImmediatePropagation();interact()},{capture:true});
   function paintModeEvent(){dispatchEvent(new CustomEvent('kfb-world-mobility',{detail:report()}))}
   document.body.dataset.m1Mobility='ground';
   return {
-    setMode,interact,router,intent,source:SOURCE,carrier,drive,
+    setMode,interact,registerInteractionResolver,interactionCandidates:()=>interactionCandidates().map(publicCandidate),
+    router,intent,source:SOURCE,carrier,drive,
     report,
     get mode(){return mode.toLowerCase()}
   };
