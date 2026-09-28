@@ -1,6 +1,14 @@
 # RESIDENT-BAND-MODULE-01 · KayfaBizarros Orc Band ohne Grundplatte · 2026-09-24
 
-Status: **Stage source published · public HTTP verification UNKNOWN · wartet auf Georgs Trommler-Handpose.** Keine Human-Abnahme, kein Live-Promote.
+Status: **Public Stage runtime reached · public QA frozen after 2 attempts · Hub-link public proof open · wartet auf Georgs Trommler-Handpose.** Keine Human-Abnahme, kein Live-Promote.ne Human-Abnahme, kein Live-Promote.
+
+> **S39f · 2026-09-28 · Public QA frozen after two attempts.** GitHub Actions opened the exact
+> Cloudflare Stage twice and proved the real S8 runtime, song identity, Play/Pause and R-strike hold.
+> Both runs ended 21/23 because the QA harness demanded exactly three performers although S39 has
+> the documented optional trumpeter extension, and omitted the stable `resident-module:` root prefix.
+> After all 23 Stage checks, screenshot #2 timed out before the Hub-link proof. Per two-pass rule:
+> no third attempt in this slice. Runtime/data stay unchanged; recovery lives under
+> `failure-recovery/PUBLIC_QA_2026-09-28/`.
 
 > **S39e · 2026-09-28 · Recovery / Pose Gate.** Der bestehende S39/S8-Owner wurde unverändert als
 > Stage-Snapshot gespiegelt: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`.

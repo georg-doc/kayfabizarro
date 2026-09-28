@@ -65,3 +65,20 @@ No HUMAN_ACCEPTED claim exists yet.
 ## One next test gate
 
 Open the exact Pages route successfully and confirm that the S8 band workspace is visible; then Georg authors the drummer reference pose.
+
+## Public Cloudflare browser attempts · FROZEN AFTER TWO
+
+- run `36398578326` @ workflow head `9254becd331076b616ab4ec71c27e5dfefb1959d`: **21/23 FAIL**, artifact `10959452416`;
+- run `36398674762` @ workflow head `13e3b6a50335fbb0cfb4225153740169fd2d459b`: **21/23 FAIL**, artifact `10959143954`;
+- exact Stage HTTP **200** and exact source marker in both attempts;
+- failed Stage HTTP assets: **0**;
+- Play/Pause and `holdStrike('R')` proved;
+- false negatives: optional trumpeter extension and stable root prefix;
+- screenshot #2 timed out after the 23 Stage checks; Hub semantic/link proof **NOT REACHED**;
+- no third run in this slice.
+
+Detailed evidence and the 23-check table:
+`tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/failure-recovery/PUBLIC_QA_2026-09-28/TEST_REPORT.md`
+
+Browser artifact #10959143954 contains `report.json`, `check.mjs` and `01-band-loaded.png`.
+

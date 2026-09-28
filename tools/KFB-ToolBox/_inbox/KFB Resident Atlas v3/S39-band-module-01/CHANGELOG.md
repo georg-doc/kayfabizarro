@@ -4,6 +4,19 @@ Nur Zuwachs. Ältere Einträge bleiben stehen.
 
 ---
 
+## S39f · 2026-09-28 · Public browser evidence + two-pass recovery freeze
+
+- Added exact Pages proof workflow `.github/workflows/resident-band-module-01-public.yml`.
+- Runs `36398578326` and `36398674762`: both **21/23 FAIL**.
+- Both attempts: exact Stage HTTP 200, correct build marker, song identity, Play/Pause + R strike hold, 0 failed Stage HTTP assets.
+- Two failures are proven QA mismatches: optional trumpeter versus exact-three assertion; runtime root prefix versus shortened expected id.
+- Screenshot #2 timed out after all 23 Stage checks; Hub public-link proof never ran.
+- Two-pass rule: no third attempt here.
+- Full recovery export: `failure-recovery/PUBLIC_QA_2026-09-28/`.
+- Resident runtime/data remain untouched; `posePatches.drummer` remains null for Georg's hand-pose gate.
+
+---
+
 ## S39e · 2026-09-28 · Recovery + Stage Drummer-Pose-Gate
 
 - **Kein Neubau.** GitHub-Recovery bestätigt S39 als vorhandenen Resident-Owner. S8 bleibt die Autoring-Oberfläche; ToolBox/S9 konsumieren diesen Donor nur.

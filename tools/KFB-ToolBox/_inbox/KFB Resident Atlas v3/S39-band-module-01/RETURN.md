@@ -1,6 +1,6 @@
 # RETURN · RESIDENT-BAND-MODULE-01 · 2026-09-28
 
-Status: **STAGE SOURCE PUBLISHED · PUBLIC HTTP VERIFICATION UNKNOWN · HUMAN DRUMMER POSE PENDING**
+Status: **PUBLIC STAGE RUNTIME PROVEN · PUBLIC QA FROZEN AFTER 2 ATTEMPTS · HUB-LINK PUBLIC PROOF OPEN · HUMAN DRUMMER POSE PENDING**
 
 ## Checkpoint · 2026-09-28 10:xx Europe/Berlin
 
@@ -14,6 +14,22 @@ Status: **STAGE SOURCE PUBLISHED · PUBLIC HTTP VERIFICATION UNKNOWN · HUMAN DR
 - Fixed Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`.
 - Public HTTP state: **UNKNOWN**. Two exact Pages fetch attempts failed at the available public-fetch layer, including the already-known `/kfb-hub/` root. GitHub exposes no status/workflow for the Cloudflare publication commit. Therefore neither `DEPLOYED` nor `PUBLIC_VERIFIED` is claimed here.
 - No human acceptance is claimed; `posePatches.drummer` remains null by design until Georg authors the reference pose.
+
+## Public QA stop · 2026-09-28
+
+Two exact GitHub-Actions browser attempts were executed; the loop is frozen by the two-pass rule.
+
+- Run `36398578326`: **21/23 FAIL** · artifact `10959452416`.
+- Run `36398674762`: **21/23 FAIL** · artifact `10959143954`.
+- Both opened the exact Stage with HTTP 200 and the exact build marker `RESIDENT_BAND_MODULE_01_S39_STAGE_2026_09_28`.
+- Browser facts proven: baseplate false; S8 `__band`; three core performers plus optional trumpeter; root `resident-module:resident-band-module-01`; song blob `368eb5ae…`; 100 BPM; phase 0.465; drummer `orb.drum.v5c`; R strike frame 0 gap 0.0256; Play/Pause; strike hold; **0 failed Stage HTTP assets**.
+- The two FAIL assertions are QA false negatives: exact-three performer equality ignored the optional extension; root assertion omitted the stable `resident-module:` prefix.
+- After all 23 Stage checks, screenshot #2 timed out at 30 s; the Hub browser proof was therefore never reached.
+- No third attempt in this slice. No `PUBLIC_VERIFIED` or `HUMAN_ACCEPTED` claim.
+
+Recovery: `tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/failure-recovery/PUBLIC_QA_2026-09-28/RECOVERY.md`.
+
+Exactly one next gate: **PUBLIC-QA-RECOVERY-01** in a fresh slice. Correct only the QA expectations/order against the unchanged Stage; then return to Georg's drummer hand-pose gate.
 
 ## Owner / branch / outcome
 
