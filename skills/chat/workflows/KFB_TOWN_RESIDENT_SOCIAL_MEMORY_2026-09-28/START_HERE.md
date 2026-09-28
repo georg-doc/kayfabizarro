@@ -260,3 +260,60 @@ Therefore:
 - no Site write is claimed;
 - intended process payload is durably stored in `SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json` with status `PENDING_TOOL_GAP`;
 - GitHub remains the recovery truth until a Site-capable execution surface writes the exact same payload into the existing Site owner.
+
+
+## 2026-09-29 · PRODUCTIVE RUNTIME CHECKPOINT · Travel PR #40
+
+**SUPERSEDES the earlier “runtime/browser 0” statements for the Social Card Relay only.**
+
+Receiving runtime owner:
+- repo: `georg-doc/KFB-Travel-Globe`
+- branch: `chatgpt-web/resident-social-card-relay-01-2026-09-29`
+- Draft PR: **#40**
+- stack base: `chatgpt-web/travel-modes-01-router-2026-09-27@e10a977501cd186fe1330e9d3fd1a7b5811beb3a`
+- runtime candidate head: `392d2b909afe3d26a25e2f64e3fdae19d1159273`
+- current recovery/handoff head: `a8aba4fdc4de8ece4d529cc9edcd4097ec876e05`
+
+Implemented in the real existing Travel Town host:
+```text
+Caveman
+→ real Anti-Rules Card 4 / The Authority Figure
+→ player discovery
+→ carry to existing King Kayfabian
+→ SHOW IT
+→ SPIN IT
+→ SELL IT
+→ visible King reaction
+→ ChatterBox seed + Reaction intent
+→ one witnessed semantic receipt
+→ RESOLVED
+```
+
+Owner boundaries remain intact:
+- Travel keeps world/movement/camera;
+- Player Journey/Almanac is not written yet;
+- no new Card inventory;
+- ChatterBox and Reaction Choreography are semantic event seams only;
+- Combat/Race unchanged;
+- Georg's parallel Blender MCP gift/brawl/clay-particle work remains untouched and may become a later source-admitted Reaction donor.
+
+Evidence at runtime candidate head:
+- baseline run `36498754015` / job `109184348867`: **140/140 PASS · build PASS · verify PASS**;
+- browser run `36498754082` / job `109184348812`: **27 functional Relay assertions PASS** and Relay reaches `RESOLVED`;
+- browser artifact `11004023875`, digest `sha256:da00d8545b7d28db444c8409505fc61919f97f1d256b90b45f9e70fab9440f98`;
+- screenshots: `01-caveman-offer.png`, `02-sell-choice.png`, `03-resolved.png`.
+
+Overall browser workflow remains **FAIL / BLOCKED**, not PASS, because the strict shared-host network assertion sees existing Town-relative 404 requests:
+- `/town/asset-repo.json`
+- `/town/globe-v13/auswahl-georg.json`
+- `/town/globe-v13/flora-auswahl.json`.
+
+Two repair passes are exhausted. The functional Relay candidate is frozen; no repair 3.
+
+Travel recovery:
+`_handover/RESIDENT_SOCIAL_CARD_RELAY_01_2026-09-29/FAILURE_RECOVERY.md`.
+
+Exactly one current next gate:
+**TOWN-RESOURCE-PATH-01** — isolate the existing Town resource-path owner, resolve/classify those requests, then rerun the unchanged Relay browser proof.
+
+Stage remains **NOT DEPLOYED**. Live remains **NOT PROMOTED**.
