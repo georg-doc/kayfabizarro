@@ -39,6 +39,6 @@ This bounded planning slice reconciles the current clay sources and the new Trac
 
 ## Next gate
 
-`WFC-01A · Module catalog + protected-mask proof`
+`RENDER-R0 · Shared diagnostic + preset adapter`
 
-Use a fresh Claude Design chat with `START_HERE.md`. Produce the small source-proven catalog, deterministic recipe and protected-space proof only. No full city, no new road, no Stage gate.
+Implement the global face/actor/prop/architecture/terrain shadow presets and Near/Mid/Far clay tiers once in the shared diagnostic scene, then prove the adapter first in World M2. WFC-01A and Blender BL-LM-01 remain ready but must consume the resulting preset instead of adding scene-specific workarounds.
