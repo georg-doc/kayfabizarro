@@ -156,6 +156,10 @@ export async function mountWorldMobility(app){
     const drift=wrapPi(flight.heading-flight.velocityHeading);
     const bankTarget=clamp(-turnSmoothed*.42+drift*.55,-.78,.78);flight.bank+=(bankTarget-flight.bank)*Math.min(1,5*dt);
     const pitchTarget=clamp(-rise*.025,-.38,.38);flight.pitchTilt+=(pitchTarget-flight.pitchTilt)*Math.min(1,4*dt);
+    // The World presenter reads play.position as its single focus owner. Keep it
+    // aligned with the real Flight position so city LOD and shadows do not stay
+    // pinned to the last Ground position.
+    play.position.copy(flight.position);
     play.actor.play('idle',1,.18);play.actor.update(dt);updateCarrier(dt);follow(dt,false);
     return flight;
   }
@@ -164,7 +168,11 @@ export async function mountWorldMobility(app){
     if(mode==='DRIVE'&&play.on){
       if(drivePulse>0){drivePulse=Math.max(0,drivePulse-dt);const q=1-Math.abs(drivePulse/.21-1);drive.root.scale.set(1+.05*q,1-.08*q,1+.05*q)}else drive.root.scale.setScalar(1);
       play.actor.play('idle',1,.18);play.actor.update(dt);
-      return drive.update(dt);
+      const state=drive.update(dt);
+      // Same focus contract for Drive: presentation follows the actual vehicle,
+      // not the abandoned on-foot spawn.
+      play.position.set(state.position.x,state.position.y,state.position.z);
+      return state;
     }
     drive.update(dt);return baseUpdate(dt);
   };
@@ -173,6 +181,9 @@ export async function mountWorldMobility(app){
   function setMode(next,meta={source:'UI'}){
     const raw=String(next||'').toUpperCase(),target=raw==='FLIGHT'?'FLIGHT':raw==='DRIVE'?'DRIVE':'GROUND';
     if(target===mode)return report();
+    if(target==='DRIVE'&&mode==='GROUND'&&drive.distanceTo(play.position)>8&&meta.allowTeleport===true){
+      play.place(drive.position.x,drive.position.z,drive.yaw);
+    }
     intent.reset('explicit-mode-change');router.set(target,meta);return report();
   }
   function interact(meta={source:'E interaction'}){

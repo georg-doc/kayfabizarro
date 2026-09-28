@@ -14,7 +14,7 @@ for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:3
   ok(spec.name+' Hirnwelt H0 clay is default',r.clay.mode==='clay'&&await page.evaluate(()=>document.body.dataset.m1Look)==='clay');
   ok(spec.name+' clay binds real World meshes',r.clay.boundMeshes>0&&r.clay.buildingCount>0,JSON.stringify(r.clay));
   ok(spec.name+' clay covers terrain road sidewalk facades roofs',r.clay.layers.medium.includes('terrain/road/sidewalk')&&r.clay.layers.coarse.includes('facades/roofs'));
-  ok(spec.name+' R4 adaptive quality active',r.quality.profile==='ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4'&&r.quality.pixelRatio<=.86&&r.quality.cssUiNativeResolution);
+  ok(spec.name+' R6 readability quality active',r.quality.profile==='ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4_R6_READABILITY_FLOOR'&&r.quality.movingRatio>=(spec.name==='narrow'?.72:.80)&&r.quality.cssUiNativeResolution);
   ok(spec.name+' far city clay is simplified',r.clay.distanceBudget.simplifiedMeshes>0);
   ok(spec.name+' starts Ground beside vehicle',r.mobility.mode==='ground'&&r.mobility.interaction.available);
   ok(spec.name+' exact Race donor pinned',r.mobility.drive.source.raceHead==='406cd26f44f22811fe3b3a58776839be7ffb7b2c');
@@ -28,11 +28,18 @@ for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:3
   r=await page.evaluate(()=>window.__worldDriveM2A.report());
   ok(spec.name+' vehicle moves',Math.hypot(r.mobility.drive.position.x-start.x,r.mobility.drive.position.z-start.z)>.35,JSON.stringify(r.mobility.drive));
   ok(spec.name+' physical wheel contact',r.mobility.drive.contacts>=2,JSON.stringify(r.mobility.drive));
+  ok(spec.name+' Drive updates World focus',await page.evaluate(()=>{const q=window.__worldDriveM2A.report().mobility.drive.position,p=window.__worldDriveM2A.app.play.position;return Math.hypot(q.x-p.x,q.z-p.z)<.15}));
   await page.screenshot({path:out+'/'+spec.name+'-drive.png'});
   await page.keyboard.press('KeyE');await page.waitForFunction(()=>document.body.dataset.m1Mobility==='ground');
   r=await page.evaluate(()=>window.__worldDriveM2A.report());ok(spec.name+' E exits to Ground',r.mobility.mode==='ground'&&!r.mobility.drive.active);
   await page.keyboard.press('Space');await page.waitForTimeout(120);await page.keyboard.press('Space');await page.waitForFunction(()=>document.body.dataset.m1Mobility==='flight');
+  await page.keyboard.down('KeyW');await page.waitForTimeout(350);await page.keyboard.up('KeyW');
   r=await page.evaluate(()=>window.__worldDriveM2A.report());ok(spec.name+' double Space enters Flight',r.mobility.mode==='flight'&&r.mobility.flight.vehicle==='card-carrier.js');
+  ok(spec.name+' Flight updates World focus',await page.evaluate(()=>{const q=window.__worldDriveM2A.report().mobility.flight.position,p=window.__worldDriveM2A.app.play.position;return Math.hypot(q[0]-p.x,q[2]-p.z)<.15}));
+  await page.click('#m1-ground');await page.waitForFunction(()=>document.body.dataset.m1Mobility==='ground');
+  await page.evaluate(()=>window.__worldDriveM2A.app.play.place(180,180,0));
+  await page.click('#m1-drive');await page.waitForFunction(()=>document.body.dataset.m1Mobility==='drive');
+  ok(spec.name+' Auto button bypasses traversal for playtest',await page.evaluate(()=>window.__worldDriveM2A.report().mobility.mode==='drive'));
   await page.click('#m1-ground');await page.waitForFunction(()=>document.body.dataset.m1Mobility==='ground');
   ok(spec.name+' compact controls',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&[...document.querySelectorAll('#m1-bar button')].every(b=>{const x=b.getBoundingClientRect();return x.left>=0&&x.right<=innerWidth})));
   ok(spec.name+' no page errors',errors.length===0,errors.join(' | '));ok(spec.name+' no failed requests',failed.length===0,failed.slice(0,4).join(' | '));ok(spec.name+' no HTTP errors',http.length===0,http.slice(0,4).join(' | '));await page.close();

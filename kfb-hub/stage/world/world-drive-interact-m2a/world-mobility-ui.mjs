@@ -6,7 +6,10 @@ export function mountWorldMobilityUi({clay,mobility}){
   document.body.appendChild(root);
   const $=id=>root.querySelector('#'+id),buttons={ground:$('m1-ground'),drive:$('m1-drive'),flight:$('m1-flight'),original:$('m1-original'),clay:$('m1-clay')},hint=$('m1-hint'),help=$('m1-help'),state=$('m1-state');
   function pressed(group,key){for(const k of group)buttons[k].ariaPressed=String(k===key)}
-  function setMobility(next){if(next==='drive')mobility.interact({source:'World Mobility UI'});else mobility.setMode(next,{source:'World Mobility UI'});paint()}
+  // The top mode switch is a playtest shortcut. E remains the in-world
+  // interaction path; clicking Auto may move the tester directly to the proven
+  // vehicle so a slow Ground traversal never blocks Drive review.
+  function setMobility(next){mobility.setMode(next,{source:'World Mobility UI',allowTeleport:next==='drive'});paint()}
   function setLook(next){clay.setMode(next);paint()}
   function paint(){
     const r=mobility.report(),flying=mobility.mode==='flight',driving=mobility.mode==='drive';pressed(['ground','drive','flight'],flying?'flight':driving?'drive':'ground');pressed(['original','clay'],clay.mode==='clay'?'clay':'original');
