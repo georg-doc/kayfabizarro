@@ -143,13 +143,17 @@ export function buildT4Segment({ L, placement, seg = SEGMENT, tools = null, reli
   { const sp = [], si = [], rp = [], rw = [], rsu = [], ri = [], spw = [], spb = [], sps = [], rbio = []; let sBase = 0, rBase = 0;
     for (const [a, b] of runs) {
       let nr = 0;
-      for (let i = a; i <= b; i++) { const q = S[i], ring = ringOf(q, i); nr = ring.length; let arc = 0;
-        ring.forEach((p, k) => { if (k) arc += Math.hypot(p[0] - ring[k - 1][0], p[1] - ring[k - 1][1], p[2] - ring[k - 1][2]); sp.push(...p); const sd = k < nr / 2 ? -1 : 1; spw.push(AT.barrierT(q.s, sd, i)); spb.push(bS[i]); sps.push(q.s, arc); });
+      /* strang rows every STRIDE samples (1 m instead of 0.5 m: half the triangles, same cross-section);
+         the deck keeps every Track Core sample (it is the contact surface) */
+      const STRIDE = 2; let row = -1;
+      for (let i = a; i <= b; i++) { const q = S[i];
+        if ((i - a) % STRIDE === 0 || i === b) { const ring = ringOf(q, i); nr = ring.length; let arc = 0; row++;
+          ring.forEach((p, k) => { if (k) arc += Math.hypot(p[0] - ring[k - 1][0], p[1] - ring[k - 1][1], p[2] - ring[k - 1][2]); sp.push(...p); const sd = k < nr / 2 ? -1 : 1; spw.push(AT.barrierT(q.s, sd, i)); spb.push(bS[i]); sps.push(q.s, arc); });
+          if (row > 0) { const A = sBase + (row - 1) * nr, B = sBase + row * nr; for (let k = 0; k < nr - 1; k++) si.push(A + k, B + k, A + k + 1, A + k + 1, B + k, B + k + 1); } }
         const Lr = q.slots[6], Rr = q.slots[7];
         for (let n = 0; n <= 6; n++) { const lat = lerp(Lr[0], Rr[0], n / 6), h = lerp(Lr[1], Rr[1], n / 6); rp.push(...W3(q, lat, h)); rw.push(wS[i]); rbio.push(bS[i]); rsu.push(q.s, lat); }
-        if (i > a) { const A = sBase + (i - a - 1) * nr, B = sBase + (i - a) * nr; for (let k = 0; k < nr - 1; k++) si.push(A + k, B + k, A + k + 1, A + k + 1, B + k, B + k + 1);
-          const C = rBase + (i - a - 1) * 7, E = rBase + (i - a) * 7; for (let k = 0; k < 6; k++) ri.push(C + k, C + k + 1, E + k, C + k + 1, E + k + 1, E + k); } }
-      for (const [i, dir] of [[a, -1], [b, 1]]) { const base = sBase + (i - a) * nr, c = [0, 0, 0];
+        if (i > a) { const C = rBase + (i - a - 1) * 7, E = rBase + (i - a) * 7; for (let k = 0; k < 6; k++) ri.push(C + k, C + k + 1, E + k, C + k + 1, E + k + 1, E + k); } }
+      for (const [i, dir, r0] of [[a, -1, 0], [b, 1, row]]) { const base = sBase + r0 * nr, c = [0, 0, 0];
         for (let k = 0; k < nr; k++) for (let j = 0; j < 3; j++) c[j] += sp[(base + k) * 3 + j] / nr;
         const ci = sp.length / 3; sp.push(...c); spw.push(0); spb.push(0); sps.push(S[i].s, 0); const T = S[i].T;
         for (let k = 0; k < nr - 1; k++) { const p0 = V(sp.slice((base + k) * 3, (base + k) * 3 + 3)), p1 = V(sp.slice((base + k + 1) * 3, (base + k + 1) * 3 + 3));

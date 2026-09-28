@@ -21,7 +21,7 @@ import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 
 export const ROAD_RULE = Object.freeze({
   id: 'kfb-clay-road-geom-v1',
-  cellM: 0.75,
+  cellM: 1.0,
   sampleM: 3,
   sidewalkM: 1.7,
   pathM: 1.8,
@@ -125,7 +125,7 @@ export function buildClayRoad({ zone, rect, heightAt, rule = ROAD_RULE }) {
     { id: 'walk', lift: L.walk, color: new THREE.Color(rule.colors.walk), clips: [[(v) => v.dr, 'r0'], [(v) => SW - v.dr, 'rS']] },
     { id: 'path', lift: L.path, color: new THREE.Color(rule.colors.path), clips: [[(v) => -v.df, 'f0'], [(v) => v.dr - SW, 'rS']] }
   ];
-  const skirtOn = { walk: ['r0', 'rS'] };   // paths sit 1.8 cm proud: no skirt needed
+  const skirtOn = { walk: ['rS'] };   // outer sidewalk edge only; the 4.5 cm kerb step and 1.8 cm paths need none
   const P = [], Cc = [], S = [], Sc = [], stats = { road: 0, walk: 0, path: 0, skirts: 0 };
   const kerb = new THREE.Color(rule.colors.kerb), hCache = new Map();
   const H = (x, z) => { const k = x.toFixed(3) + ',' + z.toFixed(3); let h = hCache.get(k); if (h === undefined) { h = heightAt(x, z); hCache.set(k, h); } return h; };
@@ -197,7 +197,7 @@ export function buildClayRoad({ zone, rect, heightAt, rule = ROAD_RULE }) {
       driveSegments: drive.length, footSegments: foot.length, classes: used, names: [...used.names],
       triangles: { road: stats.road, walk: stats.walk, path: stats.path, top: top.index.count / 3, skirt: stats.skirts * 2 },
       liftM: L, sidewalkM: SW, buildMs: +(performance.now() - t0).toFixed(1),
-      method: 'SDF union on 0.75 m grid, exact per-triangle iso clip, terrain-projected, kerb/outer skirts'
+      method: 'SDF union on 1.0 m grid, exact per-triangle iso clip, terrain-projected, kerb/outer skirts'
     }
   };
 }

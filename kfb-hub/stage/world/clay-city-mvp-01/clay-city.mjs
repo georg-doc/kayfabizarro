@@ -17,7 +17,7 @@ import { buildClayRoad, ROAD_RULE } from './clay-road.mjs';
 import { DISTRICT_RULE, planDistrict, loadArchetypes, buildDistrict, districtCollision } from './kit-district.mjs';
 import { loadT4, windowPolyline, makePlacement, buildT4Segment, SEGMENT, T4_PIN, T4_DIR } from './t4-segment.mjs';
 
-export const CLAY_CITY = Object.freeze({ id: 'CLAY-CITY-MVP-01', tileHalfM: 92, roadHalfM: 122, ground: '#86a85a' });
+export const CLAY_CITY = Object.freeze({ id: 'CLAY-CITY-MVP-01', tileHalfM: 92, roadHalfM: 112, ground: '#86a85a' });
 
 function clayUniforms() {
   const relief = makeClayRelief({ size: 512, seed: 43129, density: 0.78 });
