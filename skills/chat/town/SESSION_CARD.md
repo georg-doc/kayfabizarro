@@ -67,3 +67,23 @@ Der erste integrierte Pass soll bereits wie ein kompletter Geburtstagseinstieg w
 ## Owner-Grenzen
 
 Town bleibt Design-/Meta-Referenz. Travel, Stunt, Combat, ToolBox/Animation Lab, ChatterBox/Journey und Asset Librarian behalten ihre Owner/SSOTs. GitHub-Sync ist Übergabe, keine automatische Annahme oder Implementation.
+
+
+## 2026-09-28 · Resident Social Memory / ChatterBox / Fluff-o-lect
+
+New additive design reference:
+[`references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`](references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md).
+
+Core direction:
+- Residents keep **small, witness-specific episodic receipts**, not full transcripts or a global omniscient NPC database.
+- Open gifts, promises, Card disputes, banter, work and performances may create tiny resumable **social threads**.
+- `georg-doc/ai-town` donates memory/retrieval/cooldown patterns only; it does not become the KFB runtime.
+- ChatterBox + semantic Triplets + selectable retorts remain the language layer.
+- Fluffolekt / Fluff-o-lect uses shared memory and visible context to carry the omitted word; without recoverable context, speak normally.
+- Brick Fish `social.prop_hit` and the Reaction Choreography candidate provide the physical social-action seam.
+- World state, movement, persistence, POP/rewards, Combat and actor-rig ownership remain unchanged.
+
+Recommended later integrated gate:
+**RESIDENT-SOCIAL-MEMORY-01** — two real Residents, Brick Fish + one Card/gift context, witness-specific memory, one bounded social thread, later recall, one ChatterBox/Triplet response and one context-valid Fluff-o-lect variant.
+
+Reserved Stage route is `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/`, currently **NOT DEPLOYED**. No proxy human-review page.
