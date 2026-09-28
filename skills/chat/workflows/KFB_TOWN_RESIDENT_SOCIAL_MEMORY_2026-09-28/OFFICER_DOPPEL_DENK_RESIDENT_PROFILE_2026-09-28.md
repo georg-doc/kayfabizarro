@@ -410,8 +410,8 @@ Source status: **USER-IDENTIFIED EXTERNAL DONOR · NOT YET ADMITTED / NOT YET PI
 
 Preferred adaptation path:
 
-1. obtain/export the exact Mixamo `Walk with Briefcase` clip and preserve its source identity;
-2. admit it through the existing Motion Library / motion-intake path rather than embedding an anonymous animation in the Resident;
+1. obtain/export the exact Mixamo `Walk with Briefcase` clip and preserve its source identity; prefer an **In Place** export for the Town patrol consumer;
+2. admit it through the existing Motion Library / motion-intake path rather than embedding an anonymous animation in the Resident; record root/travel behavior explicitly if the acquired file is not in-place;
 3. retarget it to the current `Rig_Medium` Toy Soldier;
 4. attach exact `ToySoldier_Rifle.gltf` to `handslot.r`;
 5. preserve the clip's lower body and left-arm swing;
@@ -419,7 +419,8 @@ Preferred adaptation path:
 7. if needed, apply only a small additive right shoulder / forearm / wrist pose patch to establish the classic shoulder-rifle silhouette;
 8. adjust the rifle's local grip transform only as needed for believable hand contact and shoulder resting position;
 9. do not keyframe the rifle as an independent fake world-space prop while the body walks;
-10. save the final motion + pose/attachment recipe as reusable resident configuration.
+10. keep patrol translation/navigation with the existing world owner; Mixamo root translation must not silently become a second movement owner;
+11. save the final motion + pose/attachment recipe as reusable resident configuration.
 
 Validation across the entire loop:
 - right hand stays on a plausible grip point;
