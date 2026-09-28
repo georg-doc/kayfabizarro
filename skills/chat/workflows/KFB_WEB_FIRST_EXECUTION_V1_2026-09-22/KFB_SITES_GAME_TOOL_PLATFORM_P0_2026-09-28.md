@@ -97,20 +97,41 @@ R2 file objects:
 
 Do not store canonical licensed source packs in public R2 merely for convenience.
 
-## P0A · first real implementation
+## Existing foundation already present
 
-Implement in the existing KFB Production Control Site, preserving its approved design:
+The current KFB Production Control Site already has:
 
-1. optional Sign in with ChatGPT;
-2. one **Playtest & Intake** panel reachable from the existing Hub;
-3. save one user-owned playtest report in D1;
-4. attach one screenshot or JSON/ZIP file in R2;
-5. show the saved record after reload and in a compact history;
-6. export a small `kfb.site-intake/1` JSON receipt with stable record id, checksum and canonical owner target;
-7. handle storage failure without losing the typed report;
-8. include a visible privacy/retention note and delete action.
+- D1 and R2 bindings;
+- ChatGPT-authenticated Production Inbox writes;
+- persistent note, link and JSON records;
+- ZIP/JSON/screenshot uploads with extension/size checks and SHA-256 metadata;
+- reloadable history and downloadable attachments;
+- browser-context tools for listing and creating Production Inbox records.
 
-The first proof uses a World M2 or Combat session, not dummy data.
+Do not rebuild those capabilities.
+
+Current gaps before multi-user playtesting:
+
+- the Inbox GET path currently returns the shared record set instead of filtering by `createdBy`;
+- there is no owner-scoped delete path that also deletes matching R2 objects;
+- the generic intake record has no explicit World/Combat playtest schema, build/state fields or receipt export;
+- the current Site does not declare a callable MCP server; browser-context tools are not proof that Claude Design, Blender MCP or another chat can connect directly;
+- no stable closed task-packet route exists yet.
+
+## P0A · harden and prove Playtest & Intake
+
+Extend the existing implementation, preserving its approved design:
+
+1. filter all list/download/mutation paths by the authenticated Site user;
+2. add owner-scoped delete for a record and its R2 objects;
+3. add one compact **Playtest Report** form for World M2 or Combat with build, device, mode, severity, repro/state and note;
+4. reuse the existing R2 upload path for one screenshot or JSON/ZIP attachment;
+5. export a small `kfb.site-intake/1` JSON receipt with stable record id, checksum and canonical owner target;
+6. preserve typed input on storage/network failure;
+7. show privacy/retention and delete behavior in plain language;
+8. prove reload, download, ownership isolation and deletion in the real deployed Site.
+
+The first proof uses a real World M2 or Combat session, not dummy data.
 
 ## Later bounded slices
 
@@ -135,4 +156,4 @@ PASS only when the production Site visibly proves:
 
 No Cloudflare mirror or second Hub is created for this proof.
 
-Exactly one next gate: implement **P0A · one authenticated playtest report plus one attachment** in the existing KFB Production Control Site, save a review version first, and deploy only after the storage/auth behavior is verified.
+Exactly one next gate: implement **P0A · harden the existing Production Inbox and add one real Playtest Report** — user-scoped reads/downloads/deletes, one World M2 or Combat report and one attachment. Save a review version first; deploy only after ownership, reload and delete behavior are verified.
