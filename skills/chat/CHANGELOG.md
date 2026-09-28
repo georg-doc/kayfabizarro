@@ -1,3 +1,14 @@
+## 2026-09-29 · Motion Library v4 → integrated Resident + Animation ToolBox UI
+
+- Motion Library v4 is source-locked to Draft PR #275 @ `c9c3f9aa437e969b3ec2f0a6e9a1e87b2a2f3f1a`; its canonical catalog now contains **263 clips**.
+- Intake 04 admitted 59 of 61 incoming Mixamo clips, skipped two exact duplicates and reports 71 uploaded files with matching sizes.
+- Existing PR #275 metadata was corrected from the stale Intake-03 / 204-clip description to the current Intake-04 / 263-clip state.
+- `RESIDENT-ANIMATION-TOOLBOX-UI-01` now combines the Resident Atlas UI redesign and Animation Lab/Library within the accepted current ToolBox design. It does not create a new shell, editor owner or motion catalog.
+- The design must consume real catalog fields for variants, prop hand/role, resident assignments, signature moves, seated/pair requirements and candidate strike events. `surprise_uppercut` remains a receiving reaction; `walking_n` is visibly marked non-looping.
+- One complete inline 3D editor is the shared primary edit surface. Long `PROVEN` labels, duplicate context palettes, Graveyard/GothGirl leaks and preview-edge gaps are explicit UI defects to remove.
+- A compact FBX/GLB drop zone may preview and prepare additive JSON, but it may not silently admit or overwrite canonical Motion Library assets.
+- This remains a documentation/routing update. No Animation Lab runtime, Resident runtime, Stage or browser acceptance is claimed.
+
 ## 2026-09-28 · Resident UI Core + Claude Coworker Clay City MVP
 
 The Resident Atlas S11 Graveyard/Dancing Skeletons session cut is accepted as useful content input, not as the shared UI standard. Georg's review proves three competing edit surfaces and a Graveyard/GothGirl context leak. `RESIDENT-UI-CORE-01` therefore makes the complete inline editor the single primary object-edit surface, moves measurements into a collapsed inspector and requires the accepted current ToolBox design. Claude Design Desktop returns an artifact package and does not own GitHub.
