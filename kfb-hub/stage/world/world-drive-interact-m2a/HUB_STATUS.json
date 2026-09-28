@@ -1,26 +1,28 @@
 {
   "schema": "kfb.hub-stage-candidate/1",
   "id": "WORLD-DRIVE-INTERACT-M2A",
-  "title": "World M2A · R5 Boden, Bewegung und Offroad öffentlich",
+  "title": "World M2A · Human-Fail, R6 Reparaturkandidat",
   "route": "/kfb-hub/stage/world/world-drive-interact-m2a/",
-  "sourceBranch": "work/world-m2a-playable-r5-2026-09-27",
-  "implementationHead": "b0142b3540728afac80a6ef9b15315fd7089a5fe",
+  "sourceBranch": "work/world-m2a-r6-focus-quality-2026-09-28",
+  "implementationHead": "710bd00d9adcabe90b96a81d243e32991bfe7e5a",
   "publicationHead": "f827839509cf7b517daa98fe3074f49d9510c626",
-  "visibility": "PUBLIC_R5_STAGE",
-  "reviewState": "R5_PUBLIC_PLAYABILITY_PASS__HUMAN_FREE_PLAY_PENDING",
+  "visibility": "PUBLIC_R5_FAILURE_EVIDENCE__R6_LOCAL_ONLY",
+  "reviewState": "HUMAN_PLAYTEST_FAIL__R6_TECHNICAL_PARTIAL",
   "automatedEvidence": [
-    "R5 package 27/27",
-    "R5 public browser 38/38",
-    "R5 playability proof PASS: walk 1.41 m/s, sprint 2.99 m/s",
-    "vehicle starts at 4/4 contacts and remains grounded for 12.96 m offroad",
-    "public Walk/Drive p95 16.7/16.8 ms; no page errors"
+    "R6 package 30/30 local PASS",
+    "R6 browser 44/44 local PASS",
+    "Drive and Flight now update the World/LOD focus",
+    "Auto button is a direct playtest shortcut; E remains in-world interaction",
+    "local Idle/Walk/Drive p95 16.7/16.8/16.8 ms"
   ],
   "coreBlockers": [
-    "incorrect movement animation/state timing remains a separate tune",
-    "vehicle visual stance/seat still needs human review after pre-settle"
+    "Ground movement and walk animation remain human-playtest failures",
+    "OSM road and curb remain a raster ground map with visible jagged edges",
+    "R6 has no public visual proof and must not replace the fixed Stage"
   ],
   "deferred": [
-    "boulder/prop shadow and bright-edge artifact"
+    "boulder/prop shadow and bright-edge artifact",
+    "SKY-CORE-01: shared TinySkies/Travel/Rollercoaster sky owner and real-cost performance profile"
   ],
-  "next": "Georg free-plays Ground, Drive/Offroad and Flight on the fixed Stage; tune only the observed blocker."
+  "next": "Connect a terrain-conforming geometric clay-road/curb seam, then repeat one human Ground/Drive/Flight playtest."
 }

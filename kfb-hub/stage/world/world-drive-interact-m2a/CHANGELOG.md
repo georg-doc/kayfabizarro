@@ -1,5 +1,14 @@
 # WORLD-DRIVE-INTERACT-M2A · Changelog
 
+## 2026-09-28 · WORLD-M2A-R6
+
+- Georgs Freeplay überschreibt den früheren R5-Produkt-PASS: Ground ruckelt, Walk-Clip falsch, City-LOD und Straßenkante visuell unbrauchbar.
+- Drive/Flight-Fokus an tatsächliche Position gebunden; City-LOD bleibt nicht mehr am Fußgänger-Spawn hängen.
+- Adaptive Auflösung auf lesbare 0,80/0,95 (Desktop) und 0,72/0,82 (schmal) angehoben.
+- Auto-Button als direkter Playtest-Shortcut; `E` bleibt die In-World-Interaktion.
+- 30/30 Paket, 44/44 Browser und Lauf/Sprint/Offroad lokal PASS; Rasterstraße bleibt Blocker. Keine Veröffentlichung.
+- `SKY-CORE-01` als separater gemeinsamer Sky-Owner/Performance-Gate für World und Resident vorgemerkt.
+
 ## 2026-09-27 · R1 Playability/Performance
 
 - Reproduzierbaren Performance-Probe für Idle, Walk und Offroad-Drive ergänzt.

@@ -139,3 +139,34 @@ Georgs freien Spieltest auf der festen M2A-Stage abwarten. Erst danach folgen ge
 - Öffentliche Performance: Idle/Walk/Drive **33,3/16,7/16,8 ms p95**, 30-fps-Ziel PASS; Qualitätswechsel `stable → moving → stable`.
 
 Status: `R5 PUBLIC PLAYABILITY PASS · HUMAN FREE-PLAY PENDING`.
+
+## WORLD-M2A-R6 · Human-Fail-Korrektur · 2026-09-28
+
+Georgs freier Test am 28.09. überschreibt die frühere Produktwertung eindeutig:
+
+- Ground ist weiterhin langsam und ruckelig; die Laufanimation ist nicht korrekt;
+- die vereinfachten Ferngebäude erscheinen beim Erkunden als große eckige Blöcke direkt vor der Kamera;
+- Straßen- und Bordsteinkanten rasterisieren sichtbar, besonders während Bewegung und mit zunehmender Entfernung;
+- der bisherige Auto-Test verlangt einen unnötig langen Fußweg.
+
+Der enge R6-Kandidat behebt zwei nachgewiesene technische Ursachen, ohne die World- oder Drive-Owner zu ersetzen:
+
+- Drive und Flight synchronisieren nun die tatsächliche Position in den bestehenden World-Fokus. Dadurch folgt die City-LOD dem Fahrzeug beziehungsweise Flugträger statt am letzten Fußgängerpunkt stehenzubleiben.
+- Die adaptive 3D-Auflösung fällt während Bewegung nicht mehr auf 0,60/0,65, sondern auf 0,72 (schmal) beziehungsweise 0,80 (Desktop); in Ruhe 0,82/0,95. UI bleibt unverändert scharf.
+- Der sichtbare `Auto`-Schalter ist nun ausdrücklich ein Playtest-Shortcut und versetzt den Tester bei Bedarf direkt zum vorhandenen Fahrzeug. `E` bleibt der normale In-World-Interaktionsweg.
+
+Prüfungen am lokalen Kandidaten:
+
+- Paket/Owner: **30/30 PASS**;
+- echter Browser Desktop + schmal: **44/44 PASS**;
+- Lauf/Sprint/Offroad-Regression: **PASS**;
+- Idle/Walk/Drive: **16,7/16,8/16,8 ms p95** in der vergleichbaren lokalen Browsermessung;
+- Sichtprüfung der neuen Drive-Aufnahme: klarer als R5, aber die OSM-Straße bleibt eine gerasterte Bodenkarte und ist weiterhin keine saubere produktive Knetstraße.
+
+Implementierungscheckpoint: `710bd00d9adcabe90b96a81d243e32991bfe7e5a`.
+
+Status: `HUMAN_PLAYTEST_FAIL_ACKNOWLEDGED · FOCUS_FIX_PASS · PERFORMANCE_PASS · ROAD_PRESENTATION_BLOCKED · CANDIDATE_NOT_PUBLISHED`.
+
+## Genau ein nächster Gate
+
+Keine erneute Public-Promotion von R6. Als nächster begrenzter World-Schritt wird die gerasterte Straßen-/Bordsteindarstellung durch eine terrain-konforme, geometrische Knetstraßen-Seam ersetzt oder der akzeptierte Track-/Knetstraßen-Owner dort angeschlossen. Erst danach folgt ein neuer menschlicher Spieltest von Ground/Auto/Flug.

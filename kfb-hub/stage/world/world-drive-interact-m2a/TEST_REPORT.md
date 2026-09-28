@@ -90,3 +90,20 @@ Bewertung: `R4 LOCAL PERFORMANCE PASS · PUBLIC BROWSER PASS · HUMAN FREE-PLAY 
 - 0 Seiten-, Konsolen-, Request- oder HTTP-Fehler.
 
 Bewertung: `R5 PUBLIC PLAYABILITY PASS · FRAME TARGET PASS · HUMAN FREE-PLAY PENDING`. Die automatischen Prüfungen belegen Boden, Eingabe, Zustände und Performance; sie ersetzen nicht Georgs Sichtprüfung von Clip-Taktung und Spielgefühl.
+
+## R6 · Human-Fail-Korrektur
+
+Der menschliche Test vom 28.09. hat R5 als Produkt-PASS verworfen. R6 prüft deshalb zusätzlich die zuvor fehlenden Verträge:
+
+- Package/Owner: **30/30 PASS**.
+- Browser Desktop + schmal: **44/44 PASS**.
+- Drive- und Flight-Position stimmen im Browser mit dem World-/LOD-Fokus überein.
+- Der Auto-Button startet den vorhandenen Drive-Modus auch aus einer absichtlich 180 m entfernten Ground-Position; `E` bleibt separat geprüft.
+- Lauf/Sprint/Offroad: PASS; 4/4 Radkontakte, kein Fall durch den Boden.
+- Performance lokal: Idle **16,7 ms**, Walk **16,8 ms**, Drive **16,8 ms p95**.
+- Qualitätsstufen: Desktop moving/stable **0,80/0,95** statt **0,65/0,86**; schmal **0,72/0,82** statt **0,60/0,72**.
+- 0 Seiten-, Request- oder HTTP-Fehler.
+
+Die sichtbare Aufnahme bestätigt zugleich einen verbleibenden Produktblocker: OSM-Fahrbahn und Bordstein sind weiterhin Teil einer Canvas-Bodenkarte. Die höhere Renderauflösung reduziert das Artefakt, beseitigt aber nicht die gerasterte Kante. Deshalb gilt kein visueller PASS und keine Public-Verifikation für R6.
+
+Bewertung: `R6 TECHNICAL PARTIAL · HUMAN FAIL REMAINS · NOT PUBLISHED`.
