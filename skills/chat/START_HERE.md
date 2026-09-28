@@ -1307,4 +1307,4 @@ Fresh-chat package:
 - `KFB_RENDER_CONTRACT_R0.md` is the binding global rebrief for shadow detachment, contact rims and clay-detail clipping/aliasing; per-scene bias guesses are rejected.
 - No runtime, Stage or Live claim was made.
 
-Exactly one next gate: `WFC-01A · Module catalog + protected-mask proof`.
+Exactly one next gate: `RENDER-R0 · Shared diagnostic + preset adapter`. WFC-01A remains ready behind that global presentation gate.
