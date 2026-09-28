@@ -103,3 +103,22 @@ Workflow/evidence:
 Reserved future Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/` — **NOT DEPLOYED**.
 
 One later implementation gate: **RESIDENT-SOCIAL-MEMORY-01** in the real receiving world after the relevant current recovery blockers are cleared. No standalone proxy review page.
+
+
+## 2026-09-29 · Social Card Relay / interaction-first Card loop
+
+Current preferred Card-game direction inside Town:
+- Residents are the **primary Card interaction surface**;
+- Resident A introduces a real Card, the player learns/discovers it, then presents it to Resident B through **SHOW IT → SPIN IT → SELL IT**;
+- recipient reaction is driven by Resident identity, Signature Deck stance, ChatterBox/Triplets, Reaction Choreography and small Lean Memory;
+- Freestyle `NAME IT → CLAIM IT → POWER IT` remains the separate Card-entry ritual;
+- Signature Decks remain worldview/Card-source profiles; “lost Deck” is one optional motive, not the default loop;
+- Free Roam/Race connect encounters; Combat/Card Zones are exceptional acquisition/proof routes;
+- Player Journey/Almanac remains Card collection truth;
+- King Kayfabian's existing `Actor + 3 Scene + Quest` Kayfabulation is the later synthesis layer;
+- no second Card inventory, Quest DB, Card corpus or minigame owner.
+
+Durable workflow:
+`../workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
+
+Current evidence: **27/27 source reads · 15/15 Social Card Relay checks PASS**. Runtime/browser/Stage/Site-backend implementation remain 0.
