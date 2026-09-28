@@ -383,3 +383,21 @@ If the public Combat MVP needs a new feature:
 For the next browser/game slice, prove this workflow in practice:
 
 **Web implements one small change and supplies one zero-install REVIEW.html artifact in chat. Georg reviews it directly. No Work and no Cloudflare until the slice is accepted enough to justify publication.**
+
+
+---
+
+## 12 · Timeout-safe Web dispatch · binding update 2026-09-28
+
+Before starting or recovering any Web job, apply:
+
+`WEBCHAT_TIMEOUT_SAFE_EXECUTION_PROTOCOL_2026-09-28.md`
+
+Important corrections:
+
+- a chat containing only Georg's initial message is `FAILED_TO_START`, not RUNNING;
+- do not use `STRAND_BRIEFINGS.md`, a Masterplan or an Inbox folder as an executable Web prompt;
+- Web defaults to one connector-friendly outcome, one repo/branch and one checkpoint;
+- Site upload is an intake receipt, not Git source control;
+- ZIP/binary/bulk intake and game-runtime integration route to Work/Codex;
+- every productive handoff updates current Hub/Site status without waiting for a separate request.

@@ -7,6 +7,15 @@ Purpose: cold starts, parallel web chats, bounded modules and POCs
 
 Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
 
+## 0. Identify the executor before writing the brief
+
+- **GitHub-capable Web / Work / Codex:** include exact repo/branch/head, allowed files, direct `KFB-Web-Push`, verification and owner/Hub update duties.
+- **Claude Design / artifact author without reliable GitHub writes:** do not include commit/push/PR/hidden-repository duties. Provide a closed `KFB-Web-Read` input packet and require a complete downloadable return package.
+- **Blender MCP / local authoring:** use the same package return contract; keep restricted raw sources local and return approved derivatives plus metadata.
+- **Site-backed intake:** use only a named, tested upload endpoint. A proposed future endpoint is not a delivery mechanism.
+
+The receiving GitHub-capable chat owns ingestion and the durable production write. Never make Georg manually reconstruct the missing provider bridge from chat prose.
+
 ## 1. Recover before changing anything
 
 1. Read `START_HERE.md`, `REGISTRY.json` and the relevant router changelog delta.
