@@ -1,3 +1,30 @@
+## 2026-09-29 · KFB Town · Interaction-first Social Card Relay + King synthesis
+
+### DESIGN
+- Card gameplay priority is now Resident-first rather than landscape-search-first.
+- Added `RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
+- Preferred loop: Resident A introduces a real Card → player learns/discovers it → player brings/pitches it to Resident B via **SHOW IT → SPIN IT → SELL IT** → B reacts through identity, Signature Deck stance, ChatterBox, Reaction Choreography and Lean Memory.
+- Freestyle `NAME IT → CLAIM IT → POWER IT` remains the separate card-entry ritual; it is not silently renamed into the Town presentation grammar.
+- Signature Decks remain stable worldview/Card-source profiles, but universal lost-Deck search is explicitly downgraded to an optional Resident motive.
+- Player Journey / Almanac remains Card discovery truth; narrative delivery/show/confiscation does not need to consume the discovery.
+- Free Roam/Race serve as connective travel and emergent interruption.
+- Combat/Card Zones/minigames serve as exceptional missing-Card acquisition/proof and keep their existing owners.
+- Existing five-card King Kayfabulation `Actor + 3 Scene + Quest` is the higher-order synthesis/closure layer.
+- Lean Memory stores meaningful relay outcomes/interpretations, not Card-instance inventory transactions.
+- No second Card inventory, Quest database, Card corpus, Combat, Race or Almanac owner is introduced.
+- First Card proof inside `RESIDENT-SOCIAL-MEMORY-01`: one real Resident→Player→Resident relay before default Card-search grind or courier runtime.
+
+### SITE PROCESS
+- Added `SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json`.
+- Existing KFB Production Control Site target is identified; no second Site is created.
+- This execution surface exposes Site metadata but no direct Site persistence mutation action. Site backend write remains explicitly `PENDING_TOOL_GAP`; no false Site-write claim.
+- GitHub remains the authoritative recovery state.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **27** pinned entries with canonical Freestyle rules and the current Overworld Kayfabulation donor.
+- Current evidence: **27/27 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer · 12/12 Dance · 15/15 Gift · 6/6 Gift KISS · 12/12 Signature Deck · 15/15 Social Card Relay PASS**.
+- Runtime/browser/Stage/Site-backend implementation remain 0.
+
 ## 2026-09-28 · KFB Town · Resident Signature Decks / worldview / Card recovery
 
 ### DESIGN
