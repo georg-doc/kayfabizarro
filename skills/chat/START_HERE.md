@@ -1320,9 +1320,12 @@ KFB resident direction:
 - `resident-aida-poi.v0.1.json` is the machine-readable proposal contract;
 - first resident-specific overlay: **Officer Doppel-Denk** on technical `toy-soldier` source — one-time gift reveal → rifle patrol → order/disorder-biased POI interpretation → reaction/retort → clean patrol resume;
 - Officer motion gate: Georg's preferred external donor is Mixamo `Walk with Briefcase` (USER-IDENTIFIED / NOT YET ADMITTED); prefer In Place and retarget through the existing Motion Library. `Running_HoldingRifle` plus `Walking_A/B` remain pinned A/B/fallback candidates; no shoulder-rifle march is accepted until visually proven;
+- shared **Resident Dance Culture**: all compatible Residents can enter a beat-driven Common Bounce; each eventually gets one learnable Signature Move/motion slice; current Motion Library v2b has 24 dance entries across Rig_Medium/Rig_Large;
+- accepted Legacy Orc B `orb.bounce` is the first Common Bounce behavioral donor; Resident Disco supplies shared-transport/group-pattern and first per-character pairing candidates;
+- player starts with Common Bounce; Signature Moves are discovered/learned from Residents and persist through Player Journey / Meta with teacher/event/method provenance, not Backpack slots or a second skill inventory;
 - world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
 
-Evidence: **15/15 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 source checks PASS**. Runtime/browser/Stage tests remain 0.
+Evidence: **20/20 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 source checks PASS · Dance Culture 12/12 PASS**. Runtime/browser/Stage tests remain 0.
 
 Fresh-chat shorthand: **`KFB WEB PUSH/READ — <project or slice> — recover + continue`**. It means Web/GitHub-first recovery + continuation, read-back after every write, timeout = UNKNOWN, Work/WSA only for a concrete capability gap, and no manufactured review gate.
 
