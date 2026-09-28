@@ -8,7 +8,7 @@ Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
 ### Source reads
 
-**13 / 13 PASS**
+**15 / 15 PASS**
 
 Verified directly from current GitHub state:
 1. `georg-doc/ai-town` main ref;
@@ -24,6 +24,8 @@ Verified directly from current GitHub state:
 11. KFB Reaction Choreography Draft PR #256;
 12. Resident Scene Modules activity backlog;
 13. Overworld Living Concept resource/routine direction.
+14. Resident Atlas `tools/resident_atlas_s6/data/cast.js` for exact Toy Soldier actor/props/reveal state.
+15. Motion Registry `registry/resources/v1/motions.jsonl` for Rig_Medium `Walking_A`, `Walking_B` and `Running_HoldingRifle`.
 
 The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before the source/evidence closure. Current exact pin:
 `9ca3ed0a9987fbb11d0721f5689d6040943403d5`.
@@ -32,7 +34,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 **1 / 1 PASS**
 
-`SOURCE.json` parses as JSON and contains exactly **13** pinned source entries.
+`SOURCE.json` parses as JSON and contains exactly **15** pinned source entries.
 
 ### Machine-readable AIDA / POI contract
 
@@ -55,7 +57,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 Checked against the committed design reference, source manifest and AIDA contract:
 
-1. source manifest contains 13 donors;
+1. source manifest contains 15 donors;
 2. AIDA contract parses;
 3. exact AI Town donor HEAD present;
 4. ChatterBox + Triplet lineage present;
@@ -76,6 +78,21 @@ Checked against the committed design reference, source manifest and AIDA contrac
 19. AI Town remains donor-only / no second runtime;
 20. Stage remains explicitly `NOT_DEPLOYED`.
 
+## Officer Doppel-Denk profile evidence
+
+**6 / 6 PASS**
+
+Source/read-back checks for the first resident-specific profile overlay:
+
+1. technical resident source remains `toy-soldier` / `Rig_Medium`;
+2. exact `ToySoldier_Rifle.gltf` source is attached to `handslot.r` in the Atlas baseline;
+3. `Present_Base.gltf` and `Present_UnwrappedBase.gltf` are both source-proven and the Atlas contains an anticipation → pop → overshoot → settle reveal;
+4. Atlas documentation explicitly records that `Idle_B` does not supply the desired shoulder-rifle stance;
+5. Motion Registry exposes `Walking_A`, `Walking_B` and `Running_HoldingRifle` for Rig_Medium;
+6. the committed Officer profile keeps `Running_HoldingRifle` as an audition candidate only and requires visual attachment/shoulder/clearance proof before acceptance or Mixamo intake.
+
+No patrol, POI reaction, ChatterBox, Lean Memory or world persistence runtime is claimed by these checks.
+
 ## Runtime / browser / Stage
 
 - runtime code changed: **0 files**
@@ -95,7 +112,7 @@ is now documented in the branch version of `skills/chat/FRESH_CHAT_SLICE_PROTOCO
 
 ## Result
 
-**PASS for documentation/source synthesis + POI/AIDA contract.**
+**PASS for documentation/source synthesis + POI/AIDA contract + Officer Doppel-Denk source-backed profile.**
 
 This is not an implementation PASS for autonomous Residents, Lean Memory, POI perception, routines, motivations, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
 
