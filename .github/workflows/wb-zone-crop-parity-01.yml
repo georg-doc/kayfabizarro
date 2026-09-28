@@ -1,0 +1,31 @@
+name: WB Zone Crop Parity 01
+
+on:
+  pull_request:
+    branches:
+      - chatgpt-web/wb-zone-seam-01-2026-09-27
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/test/wb-zone-crop-parity-01.mjs'
+      - '.github/workflows/wb-zone-crop-parity-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crop-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Node version
+        run: node --version
+      - name: Run exact 369-id crop diagnostic
+        run: node tools/KFB-ToolBox/worldbuilder/world-integration-01/test/wb-zone-crop-parity-01.mjs
+      - name: Upload diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wb-zone-crop-parity-01-report
+          path: wb-zone-crop-parity-01-report.json
+          if-no-files-found: error
