@@ -87,3 +87,30 @@ For the present design-only slice:
 - no ChatGPT Site deployment;
 - no Cloudflare deployment;
 - continue repository-native Web/GitHub persistence only.
+
+
+## 2026-09-28 · POI / Routine / Goal / AIDA extension
+
+The current design now also includes:
+- POIs covering player, Residents, Cube Pets, plants/nature, environment/landmarks, resources, props, Cards/MediaSurfaces, activity stations, vehicles, events and hazards;
+- bounded perception as immediate contact → visible attention field → deliberate local semantic search → remembered/reported target;
+- source-backed routine roles for fishing, smith/work, chopping, digging, pickaxing, sawing and resource work;
+- Georg's additive routine direction for patrol, explore, inspect, gather, carry/deliver, tend/care, music/rehearsal, socialize/rest and return-home/post;
+- small authored motivations + concrete current goals as the conflict motor;
+- the shared KFB AIDA loop for player and NPC:
+  `Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget`;
+- mandatory clean return to prior routine/path/dialogue or deliberate retarget instead of generic Idle.
+
+Machine-readable contract:
+`resident-aida-poi.v0.1.json`
+
+Current evidence:
+- **13/13** source reads PASS;
+- **1/1** SOURCE manifest parse PASS;
+- **1/1** AIDA/POI contract parse PASS;
+- **20/20** design invariants PASS;
+- runtime/browser/Stage remain 0 because this is design persistence only.
+
+Fresh-chat shorthand:
+
+> **KFB WEB PUSH/READ — Town Resident Social Memory — recover + continue**
