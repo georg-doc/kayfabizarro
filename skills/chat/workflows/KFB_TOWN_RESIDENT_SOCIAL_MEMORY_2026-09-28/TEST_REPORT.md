@@ -238,7 +238,11 @@ After current relevant ToolBox/WorldBuilder recovery blockers clear, implement *
 - one motivation-backed Attention → Interest → Expectation choice;
 - one interaction + Reaction Choreography;
 - optional ChatterBox/Triplet speech;
-- one context-valid Fluff-o-lect variant;
-- witness-specific memory only if the outcome matters;
+- **one real Social Card Relay**: Resident A introduces a real KFB Card → player carries/presents it to Resident B through SHOW IT / SPIN IT / SELL IT → B reacts;
+- Card discovery remains in Player Journey/Almanac;
+- one compact meaningful relay receipt only when the outcome matters;
+- one context-valid Fluff-o-lect variant where shared Card/context makes it recoverable;
 - one bounded social thread;
 - clean return to routine/path/dialogue or retarget to a changed goal.
+
+Do not begin with a universal lost-Deck fetch loop, separate courier runtime, second Card inventory or King sequence. Free Roam/Race/Combat/Card Zone/King adapters follow only after the social Card interaction itself reads well.
