@@ -91,3 +91,21 @@ Recommended later integrated gate:
 **RESIDENT-SOCIAL-MEMORY-01** — two real Residents, one bounded POI sight/range/search loop, one source-backed resumable routine, one motivation-backed AIDA cycle, Brick Fish + one Card/gift context, witness-specific memory, one bounded social thread, later recall, one ChatterBox/Triplet response and one context-valid Fluff-o-lect variant.
 
 Reserved Stage route is `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/`, currently **NOT DEPLOYED**. No proxy human-review page.
+
+
+## 2026-09-29 · Social Card Relay / Resident-first Card gameplay
+
+Current content priority for the later `RESIDENT-SOCIAL-MEMORY-01` proof:
+- one Resident gives/introduces a **real KFB Card** to the player;
+- player carries the Card socially to a second Resident;
+- the receiving interaction is performed through **SHOW IT → SPIN IT → SELL IT** with Monkey-Island-like selectable choices;
+- recipient reaction uses Signature Deck stance, ChatterBox/Triplets, Reaction Choreography and Lean Memory;
+- one meaningful relay receipt may persist; no physical Card-instance ledger is required;
+- Free Roam/Race are connective tissue, while Combat/Card Zones are optional exceptional Card sources;
+- Player Journey/Almanac keeps discovery truth;
+- later King Kayfabian synthesis uses the existing **Actor + 3 Scene + Quest** grammar.
+
+The Signature Deck layer remains character identity. Universal “find my lost Deck” gameplay is no longer the default proposal.
+
+Durable design:
+`../workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
