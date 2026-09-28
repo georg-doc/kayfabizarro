@@ -29,9 +29,10 @@ No second runtime, NPC database, dialogue engine, movement owner, reward owner o
 5. `skills/chat/town/SESSION_CARD.md`
 6. `skills/chat/town/references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`
 7. `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md` — first resident-specific attention/reaction overlay
-8. `SOURCE.json`
-9. `TEST_REPORT.md`
-10. `RETURN.md`
+8. `RESIDENT_DANCE_CULTURE_2026-09-28.md` — Common Bounce, Signature Move mapping and player learning/collection
+9. `SOURCE.json`
+10. `TEST_REPORT.md`
+11. `RETURN.md`
 
 For implementation later, also read the **current heads**, not stale copies, of:
 - Brick Fish / Prop Toss candidate;
@@ -106,10 +107,11 @@ Machine-readable contract:
 `resident-aida-poi.v0.1.json`
 
 Current evidence:
-- **15/15** source reads PASS;
+- **20/20** source reads PASS;
 - **1/1** SOURCE manifest parse PASS;
 - **1/1** AIDA/POI contract parse PASS;
 - **20/20** design invariants PASS;
+- Resident Dance Culture checks: **12/12 PASS**;
 - runtime/browser/Stage remain 0 because this is design persistence only.
 
 Fresh-chat shorthand:
@@ -134,3 +136,24 @@ Source-backed profile:
 `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
 
 Additional profile evidence: **6/6 PASS**. No runtime/browser/Stage claim.
+
+
+## 2026-09-28 · Shared Dance Culture + collectible Signature Moves
+
+Music/dance is now a second shared Resident culture axis beside Brick Fish social play.
+
+Design stack:
+- **Common Bounce** = shared beat-driven groove semantic for all compatible actor families;
+- Legacy Orc B `orb.bounce` is the first behavioral donor, not a universal binary clip;
+- Animation Studio / Motion Library remains the authoring owner for Rig_Medium/Rig_Large mappings;
+- each Resident eventually receives one learnable **Signature Move** or beat-aligned motion slice;
+- Resident Disco pairings are the first audition pool, not final assignments;
+- one shared music transport drives group timing; Signature inserts occur on phrase boundaries between Common Bounce phrases;
+- Brick Fish/Reaction Choreography may interrupt dancing and actors return to the groove on a legal beat/bar;
+- player starts with Common Bounce; Signature Moves are discovered/learned from Residents and persisted by **Player Journey / Meta**, not a second skill inventory or Backpack slots;
+- learned move identity is semantic so incompatible avatar families may keep the unlock without forcing humanoid retargets.
+
+Durable design:
+`RESIDENT_DANCE_CULTURE_2026-09-28.md`.
+
+Current evidence: **20/20 source reads · 12/12 Dance Culture checks PASS**. No Common Bounce runtime, final Signature mapping, player Dance UI or Stage deployment is claimed.
