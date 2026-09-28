@@ -255,3 +255,46 @@ First POI examples: Brick Fish exchange, Tiny Treats pizza slice, plant/path obs
 Open animation seam updated: Georg identified Mixamo **`Walk with Briefcase`** as the priority external donor because its right arm already carries a load while the left arm keeps a normal walk swing. It is **USER-IDENTIFIED / NOT YET ADMITTED / NOT PINNED**. Preferred intake is In Place → existing Motion Library → retarget to `Rig_Medium` → exact Toy Soldier rifle at `handslot.r` → small right-arm/attachment fit only if needed. World/navigation remains translation owner. `Running_HoldingRifle` and `Walking_A/B` remain A/B/fallback candidates.
 
 The single next gate remains **RESIDENT-SOCIAL-MEMORY-01**; Officer Doppel-Denk is the preferred first character-specific overlay inside that integrated proof, not a separate runtime or proxy Stage.
+
+
+## Additive recovery checkpoint · Resident Dance Culture · 2026-09-28
+
+Latest verified design checkpoint before this Recovery write: `72a403fbc9d6c836f8e093389e1ebfbdde38d819`.
+
+New durable design:
+`RESIDENT_DANCE_CULTURE_2026-09-28.md`.
+
+Source stack expanded to **20** pinned entries with:
+- Motion Library v2b dance catalogue (**24 dance entries**, Rig_Medium + Rig_Large);
+- Resident Disco shared transport and pairing candidates;
+- Orc Band real beat clock + accepted Legacy Orc B `orb.bounce`;
+- Player Meta STRAND M progression ownership;
+- versioned Journey save/export/import donor.
+
+Recovered design state:
+```text
+music POI/event
+→ Resident enters Common Bounce
+→ shared song transport keeps group coherent
+→ resident-specific Signature Move inserts on phrase boundary
+→ return to Common Bounce
+→ optional Brick Fish / social reaction interruption
+→ re-enter groove on legal beat/bar
+```
+
+Player collection state:
+```text
+UNKNOWN
+→ DISCOVERED (observe / join / teach context)
+→ LEARNED / PERFORMABLE
+```
+
+Persistence owner: **Player Journey / Meta**. Preserve teacher Resident, source event and learning method. Learned dance moves do not consume Backpack slots.
+
+Compatibility rule: collected move identity is semantic. Rig_Medium/Rig_Large use compatible Motion Library mappings; Legacy/CubePet/non-humanoid families use their own owner-specific adapters or remain temporarily unperformable without losing the unlock.
+
+First authoring route: existing Animation Studio / Motion Library should define Common Bounce and resident Signature mappings/motion slices; do not create a second Dance runtime.
+
+Evidence: **20/20 source reads · 20/20 general design invariants · 6/6 Officer checks · 12/12 Dance Culture checks PASS**. Runtime/browser/Stage remain 0.
+
+The single next integrated gate remains **RESIDENT-SOCIAL-MEMORY-01**, now expected to consume the Dance Culture layer when the first Animation Studio mappings are available; no separate proxy Dance Stage is required.
