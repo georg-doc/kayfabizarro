@@ -238,6 +238,7 @@ Persisted Georg's shared KFB music/dance direction as one reusable Resident laye
 - persistent ownership belongs to **Player Journey / Meta**, with teacher/event/method provenance; learned dances do not consume Backpack slots;
 - collected move identity is semantic across avatars, so unsupported actor families keep the unlock without invalid retargeting;
 - Animation Studio / Motion Library is the intended authoring/mapping surface, not a new Dance Studio runtime.
+- learned Signature Moves remain reusable social tokens: performing one near its origin Resident may trigger recognition/join/correct/challenge/parody through the existing Reaction/Memory layers; Player Journey still owns the unlock.
 
 Durable design:
 `RESIDENT_DANCE_CULTURE_2026-09-28.md`.
