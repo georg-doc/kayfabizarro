@@ -1,3 +1,26 @@
+## 2026-09-28 · KFB Town · Resident Signature Decks / worldview / Card recovery
+
+### DESIGN
+- Extended the existing Town decision that every NPC may have a favourite/signature/catchphrase Deck or a personal selection inside a Deck cluster.
+- Added `RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
+- Signature Deck content is **stable authored identity/knowledge**, not Lean episodic memory.
+- Resident identity uses `deckRef + stance`, supporting direct fit and deliberate mismatch: aligned, misreads-as-law, archive, confiscate/destroy, parody, etc.
+- ChatterBox retrieval is bounded to current beat + Resident stance + **1–3 relevant Cards** + small Lean Memory context; never full-Deck prompt dumps.
+- Residents may have **3–7 high-salience Signature Cards** inside the broader Deck/cluster.
+- Card recovery/search reuses existing Card POIs and Player Journey/Almanac collection; no second Card inventory or Quest owner.
+- Full Deck collection may remain long-form, but Resident reactions are batched through meaningful Card/milestone visits instead of one courier transaction per Card.
+- Narrative show/return/confiscation does not need to delete the player's Almanac discovery.
+- Card/page counts remain source-driven. Current index examples: Anti-Rules 57/16, 9/11 Money Trail 60/15, Big Bad Brain Wrestling 56/15.
+- Deck content is a character lens, not automatically objective world truth.
+- First candidate mapping is Officer Doppel-Denk × `anti_rules_toolkit`; stance remains intentionally open between `misreads-as-law`, `confiscate/destroy` and `archivist/evidence-locker`.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **25** pinned entries with the current KFB Card index and structured Anti-Rules source.
+- Current evidence: **25/25 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture · 6/6 Gift KISS · 12/12 Signature Deck PASS**.
+- Runtime/browser/Stage remain 0; no final Resident→Deck mapping table, Deck-ChatterBox adapter, Card-recovery runtime or Live promotion was created.
+- START_HERE, Return and Recovery carry the same continuation state.
+- Exactly one integrated gate remains **RESIDENT-SOCIAL-MEMORY-01**; a small first Resident→Deck mapping pass is preparation inside that gate, not a new parallel project.
+
 ## 2026-09-28 · SUPERSEDES · Gift Culture KISS baseline / semantic memory only
 
 - Georg clarified that the earlier “barter society” wording is **not** a request for Resident resource management, durable item ownership or a gift-economy ledger.
