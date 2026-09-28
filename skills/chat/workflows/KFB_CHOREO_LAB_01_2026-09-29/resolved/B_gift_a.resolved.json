@@ -1,0 +1,128 @@
+{
+ "id": "gift_a",
+ "stage": {
+  "A": {
+   "pos": [
+    0,
+    0
+   ],
+   "yawDeg": 93.5,
+   "auto": null
+  },
+  "B": {
+   "pos": [
+    1.52,
+    0
+   ],
+   "yawDeg": 273.5,
+   "auto": "handover: head spacing (2 x 0.73 m face front + 6 cm); arms reach out to the box at the pass"
+  }
+ },
+ "tracks": {
+  "A": [
+   {
+    "clip": "kfb_locomotion_walk_to_stop_a",
+    "start": 0,
+    "end": 148,
+    "loc": [
+     -1.125,
+     -0.068
+    ]
+   },
+   {
+    "clip": "kfb_idle_breathing_a",
+    "start": 148,
+    "end": 180,
+    "loc": [
+     -0.002,
+     0.006
+    ]
+   },
+   {
+    "clip": "kfb_idle_happy_a",
+    "start": 180,
+    "end": 215,
+    "loc": [
+     0.014,
+     0.009
+    ]
+   },
+   {
+    "clip": "kfb_gesture_cheering_a",
+    "start": 215,
+    "end": 303,
+    "loc": [
+     0.164,
+     0.034
+    ]
+   }
+  ],
+  "B": [
+   {
+    "clip": "kfb_idle_breathing_a",
+    "start": 0,
+    "end": 178,
+    "loc": [
+     1.522,
+     -0.006
+    ]
+   },
+   {
+    "clip": "kfb_idle_breathing_a",
+    "start": 178,
+    "end": 215,
+    "loc": [
+     1.522,
+     -0.006
+    ]
+   },
+   {
+    "clip": "kfb_idle_breathing_a",
+    "start": 215,
+    "end": 514,
+    "loc": [
+     1.522,
+     -0.006
+    ]
+   }
+  ]
+ },
+ "events": [
+  {
+   "type": "handover",
+   "_t": 178
+  },
+  {
+   "type": "open",
+   "_t": 198
+  },
+  {
+   "type": "reveal",
+   "_t": 200
+  },
+  {
+   "type": "bubble",
+   "actor": "B",
+   "_t": 240
+  },
+  {
+   "type": "bubble",
+   "actor": "A",
+   "_t": 262
+  }
+ ],
+ "shots": [
+  40,
+  150,
+  179,
+  206,
+  245,
+  270
+ ],
+ "stretch": [],
+ "spacing": [],
+ "segmentNotes": {
+  "A": {},
+  "B": {}
+ }
+}
