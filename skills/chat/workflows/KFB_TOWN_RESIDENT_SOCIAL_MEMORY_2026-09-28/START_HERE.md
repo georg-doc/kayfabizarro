@@ -32,9 +32,11 @@ No second runtime, NPC database, dialogue engine, movement owner, reward owner o
 8. `RESIDENT_DANCE_CULTURE_2026-09-28.md` — Common Bounce, Signature Move mapping and player learning/collection
 9. `RESIDENT_GIFT_CULTURE_2026-09-28.md` — gifts, barter, prank escalation, provenance and reconciliation
 10. `RESIDENT_SIGNATURE_DECKS_2026-09-28.md` — worldview/ChatterBox Deck lens + Card-recovery threads
-11. `SOURCE.json`
-12. `TEST_REPORT.md`
-13. `RETURN.md`
+11. `RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md` — interaction-first Resident→Player→Resident Card loop + King synthesis
+12. `SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json` — exact existing Site target + pending process payload
+13. `SOURCE.json`
+14. `TEST_REPORT.md`
+15. `RETURN.md`
 
 For implementation later, also read the **current heads**, not stale copies, of:
 - Brick Fish / Prop Toss candidate;
@@ -109,7 +111,7 @@ Machine-readable contract:
 `resident-aida-poi.v0.1.json`
 
 Current evidence:
-- **25/25** source reads PASS;
+- **27/27** source reads PASS;
 - **1/1** SOURCE manifest parse PASS;
 - **1/1** AIDA/POI contract parse PASS;
 - **20/20** design invariants PASS;
@@ -117,6 +119,7 @@ Current evidence:
 - Resident Gift Culture checks: **15/15 PASS**;
 - Gift KISS correction checks: **6/6 PASS**;
 - Resident Signature Deck checks: **12/12 PASS**;
+- Resident Social Card Relay checks: **15/15 PASS**;
 - runtime/browser/Stage remain 0 because this is design persistence only.
 
 Fresh-chat shorthand:
@@ -207,3 +210,53 @@ Durable design:
 `RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
 
 Current evidence: **25/25 source reads · 12/12 Signature Deck checks PASS**. No final mapping table, Deck-ChatterBox runtime adapter, Card-recovery implementation or Stage deployment is claimed.
+
+
+## 2026-09-29 · Interaction-first Social Card Relay + King Kayfabulation
+
+Current preferred **design proposal** shifts Card gameplay toward Residents rather than landscape fetch as the default.
+
+Core loop:
+```text
+Resident A introduces Card
+→ player discovers/learns it
+→ A asks player to bring/show/pitch it to Resident B
+→ travel / world life
+→ SHOW IT
+→ SPIN IT
+→ SELL IT
+→ B reacts through personality + Signature Deck stance + Lean Memory
+→ ChatterBox / Reaction Choreography / optional counter-Card
+→ compact semantic Card-relay receipt
+→ Almanac grows
+→ later King Kayfabian synthesizes collected Cards
+```
+
+Source grammar remains separated:
+- Freestyle Card entry = **NAME IT → CLAIM IT → POWER IT**;
+- Town/Tourbus social performance = **SHOW IT → SPIN IT → SELL IT**;
+- King synthesis = existing **Actor + 3 Scene + Quest** five-card Kayfabulation.
+
+Product emphasis:
+- Resident interaction / ChatterBox / emotional choreography is the core game;
+- Free Roam/Race provide connective travel and interruptions;
+- Combat/Card Zones provide exceptional missing-Card acquisition/proof rather than default Card collection;
+- Signature Decks supply worldview, candidate Cards and stance; “lost Deck” remains one optional Resident motive, not universal;
+- Player Journey / Almanac remains Card collection truth; narrative handoff does not consume discovery;
+- Lean Memory stores meaningful Card-relay outcomes, not Card-instance bookkeeping;
+- no second Card inventory, Quest DB, Combat, Race or Almanac owner.
+
+Durable design:
+`RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
+
+Current evidence: **27/27 source reads · 15/15 Social Card Relay checks PASS**. No runtime/browser/Stage implementation is claimed.
+
+### Existing ChatGPT Site process mirror
+
+Exact existing owner is **KFB Production Control** / project `appgprj_6ab82e3950b88191a8ead3c495e21454`. This chat can read its Library/Site metadata but exposes no direct Site/D1/R2 mutation action.
+
+Therefore:
+- no second Site was created;
+- no Site write is claimed;
+- intended process payload is durably stored in `SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json` with status `PENDING_TOOL_GAP`;
+- GitHub remains the recovery truth until a Site-capable execution surface writes the exact same payload into the existing Site owner.
