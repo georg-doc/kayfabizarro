@@ -6,7 +6,7 @@
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
   "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
-  "outcome": "Resident Lean Memory + POI/AIDA + unique behavior + Dance/Gift culture + Signature Deck worldview/ChatterBox/Card-thread integration using existing Card/Player Journey owners",
+  "outcome": "Interaction-first Resident life: Lean Memory + POI/AIDA + ChatterBox/Reaction + Dance/Gift cultures + Signature Decks + Resident→Player→Resident Social Card Relay feeding existing Almanac/minigame/King Kayfabulation owners",
   "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
   "stageStatus": "NOT_DEPLOYED",
   "sources": [
@@ -313,6 +313,30 @@
         "structured card fields include num/name/power/lore",
         "contains authority/rule/improvisation themes usable as authored character lens"
       ]
+    },
+    {
+      "id": "kfb-freestyle-rules-v18-4",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "Kayfabizarro_Freestyle_Rules_v18-4.md",
+      "blobSha": "38186727f0735a5fb02d25d2cdb052fe641dda4b",
+      "facts": [
+        "card-entry ritual is Name it → Claim it → Power it",
+        "turn grammar is five ordered Story Wrestling steps",
+        "King Kayfabian exists as optional final caller in table rules",
+        "Card powers are performed narratively rather than resolved as dry transactions"
+      ]
+    },
+    {
+      "id": "kfb-overworld-kayfabulation-v23",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "overworld/docs/ChatGPT_Living_Concept_v23.md",
+      "blobSha": "d51b3e8146c90d30e5d9f9ed2b4642e653db69e7",
+      "facts": [
+        "King story set is Actor Card + three Scene Cards + Quest Card",
+        "player assembles Card order/connective logic before Kayfabulation",
+        "collected Scene Cards persist in Fractal Almanac and are not consumed by story use",
+        "King performance and Quest progression are a later synthesis layer"
+      ]
     }
   ],
   "nonGoals": [
@@ -333,7 +357,8 @@
     "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory.",
     "Gift-giving is a shared Resident culture mechanic: source-proven wrapped presents can contain real bizarre/satirical props, trigger character-specific reactions, barter/regifting, bounded prank/failure spirals and later reconciliation while preserving Kayfabe and ownership provenance.",
     "KISS correction: Gift Culture MVP persists meaningful social/emotional receipts, not a durable Resident item economy, barter ledger, per-prop ownership chain or exhaustive gift provenance. Real item tracking is optional future integration only.",
-    "Every Resident may have a Signature Deck or cluster that shapes worldview, ChatterBox language and Card POI salience; a Resident may want missing Cards recovered, confiscated, destroyed, archived or otherwise pursued. Deliberate archetype/deck mismatch is valid."
+    "Every Resident may have a Signature Deck or cluster that shapes worldview, ChatterBox language and Card POI salience; a Resident may want missing Cards recovered, confiscated, destroyed, archived or otherwise pursued. Deliberate archetype/deck mismatch is valid.",
+    "Current Card gameplay preference: social Resident interaction is the primary loop. Residents hand the player Cards to present to other Residents through SHOW IT → SPIN IT → SELL IT; Free Roam/Race/Combat/Card Zones are connective travel or exceptional acquisition routes, and King Kayfabian's five-card Kayfabulation is the synthesis layer."
   ],
   "userDirection": {
     "poiClasses": [
@@ -519,6 +544,41 @@
         "deckRef": "anti_rules_toolkit",
         "stance": "OPEN: misreads-as-law | confiscate/destroy | archivist/evidence-locker"
       }
+    },
+    "residentSocialCardRelay": {
+      "status": "CURRENT_DESIGN_PROPOSAL",
+      "primaryLoop": "Resident A → player → Resident B → SHOW IT → SPIN IT → SELL IT → Reaction/ChatterBox/Lean Memory",
+      "cardEntryRitual": "Freestyle donor remains Name it → Claim it → Power it; do not silently rename it",
+      "signatureDeckRole": "source of Cards/worldview/stance, not universal lost-deck fetch quest",
+      "playerLearning": "player learns a Card by hearing sender framing and actively presenting it to a receiver",
+      "almanac": "Card discovery persists; narrative handoff does not need to consume/remove discovery",
+      "minigames": {
+        "role": "connective tissue / exceptional acquisition / proof",
+        "adapters": [
+          "Free Roam travel",
+          "Race route/event",
+          "Combat/Card Zone missing Card acquisition"
+        ]
+      },
+      "kingSynthesis": "Actor + 3 Scene + Quest five-card Kayfabulation",
+      "antiPostman": "the interaction is the interpretation/pitch, not walk-and-click delivery",
+      "kissPersistence": [
+        "cardRef",
+        "senderResidentId",
+        "recipientId",
+        "show/spin/sell choices",
+        "outcomeTag",
+        "optional responseCardRef",
+        "one meaningful beat ref"
+      ],
+      "noSecondOwners": [
+        "Card inventory",
+        "Quest DB",
+        "Combat",
+        "Race",
+        "Almanac/Journey",
+        "Card corpus"
+      ]
     }
   }
 }
