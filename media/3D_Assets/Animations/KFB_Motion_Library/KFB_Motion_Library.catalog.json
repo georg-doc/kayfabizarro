@@ -1,7 +1,7 @@
 {
  "schema": "kfb.motion-catalog.v1",
- "version": "2026-09-25",
- "clipCount": 179,
+ "version": "2026-09-28",
+ "clipCount": 204,
  "fps": 30,
  "units": "metres, glTF Y-up",
  "rigs": [
@@ -137,6 +137,86 @@
    "bytes": 695700,
    "sha256": "d11345be333f4aadf62b40f362aa5b415538ae8769ad352fe69b26f15b153e6a",
    "clipCount": 16
+  },
+  "libs/Rig_Medium/KFB_Motion_reaction_i03.glb": {
+   "rig": "Rig_Medium",
+   "group": "reaction",
+   "bytes": 51988,
+   "sha256": "1ee75dcc8faec37a4fb2b4be6473cd8df11ee1bd07e44a6c13a014cd80d7c91d",
+   "clipCount": 1,
+   "intake": "03"
+  },
+  "libs/Rig_Large/KFB_Motion_reaction_i03.glb": {
+   "rig": "Rig_Large",
+   "group": "reaction",
+   "bytes": 52196,
+   "sha256": "364fd79daf75bef5a4acb5d0b62e6eb118e6d4008b3e2f110f568770647eebad",
+   "clipCount": 1,
+   "intake": "03"
+  },
+  "libs/Rig_Medium/KFB_Motion_action_i03.glb": {
+   "rig": "Rig_Medium",
+   "group": "action",
+   "bytes": 81116,
+   "sha256": "9f2b1c0ecc0df982044abde24f4da83a66e96329a7e2acd14fc23eba69df4710",
+   "clipCount": 1,
+   "intake": "03"
+  },
+  "libs/Rig_Large/KFB_Motion_action_i03.glb": {
+   "rig": "Rig_Large",
+   "group": "action",
+   "bytes": 80920,
+   "sha256": "1fe8741eebd8690b1b39a56a4d407834222e81660b89af66045d9773d246839b",
+   "clipCount": 1,
+   "intake": "03"
+  },
+  "libs/Rig_Medium/KFB_Motion_locomotion_i03.glb": {
+   "rig": "Rig_Medium",
+   "group": "locomotion",
+   "bytes": 289792,
+   "sha256": "9a249d0434b56501e5b5d13e428b43f16025539fcb76a1ece81b0cdbb57e5d50",
+   "clipCount": 2,
+   "intake": "03"
+  },
+  "libs/Rig_Large/KFB_Motion_locomotion_i03.glb": {
+   "rig": "Rig_Large",
+   "group": "locomotion",
+   "bytes": 289452,
+   "sha256": "2d342a4275211e704523cd157b2c085192d2b4c96188e3db858af4c4da34d7f1",
+   "clipCount": 2,
+   "intake": "03"
+  },
+  "libs/Rig_Medium/KFB_Motion_talk.glb": {
+   "rig": "Rig_Medium",
+   "group": "talk",
+   "bytes": 1822696,
+   "sha256": "094b0d3e3b493a88875b11573042256273b9e19f87ef47d6e7a5e2d7cd6e9291",
+   "clipCount": 11,
+   "intake": "03"
+  },
+  "libs/Rig_Large/KFB_Motion_talk.glb": {
+   "rig": "Rig_Large",
+   "group": "talk",
+   "bytes": 1824008,
+   "sha256": "dae5ffc1e97e44109f5fb42a8788098ed04c607fd56f6566f8c01d2f3ecd452f",
+   "clipCount": 11,
+   "intake": "03"
+  },
+  "libs/Rig_Medium/KFB_Motion_throw.glb": {
+   "rig": "Rig_Medium",
+   "group": "throw",
+   "bytes": 535048,
+   "sha256": "04e7f7a48931c085c6dabd33bb603983ba60c6684e96dc3395d6061cc9b579e8",
+   "clipCount": 10,
+   "intake": "03"
+  },
+  "libs/Rig_Large/KFB_Motion_throw.glb": {
+   "rig": "Rig_Large",
+   "group": "throw",
+   "bytes": 535948,
+   "sha256": "e5212a7510981cd88da429dd87591f77a01f58198cc871582556d6a14d35a784",
+   "clipCount": 10,
+   "intake": "03"
   }
  },
  "newOptionalFields": [
@@ -146,7 +226,10 @@
   "rootBone",
   "sourcePack",
   "facingYawDeg",
-  "library"
+  "library",
+  "intake",
+  "events.release (throw clips: measured release frame candidate)",
+  "pairedWith (two-person clips)"
  ],
  "rootMotionRule": "rootMotion = travel when max(horizontal hips travel, horizontal root travel) per cycle >= 0.05 m in the Rig_Medium bake (v1 clips keep their v1 value). The runtime strips horizontal translation of rootBone when it wants in-place.",
  "clips": [
@@ -17043,7 +17126,2498 @@
     "Rig_Large": "libs/Rig_Large/KFB_Motion_reaction.glb"
    },
    "notes": ""
+  },
+  {
+   "id": "kfb_reaction_agony_a",
+   "label_de": "Qualvoll leiden",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 121,
+   "durationSec": 4.033,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        121
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        121
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        121
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        121
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Agony.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 24.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_reaction_i03.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_reaction_i03.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_action_casting_spell_a",
+   "label_de": "Zauber wirken",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 232,
+   "durationSec": 7.733,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        232
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        171
+       ],
+       [
+        197,
+        232
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        232
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        159
+       ],
+       [
+        201,
+        232
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Casting Spell.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -88.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_action_i03.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_action_i03.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_catwalk_walk_a",
+   "label_de": "Laufsteg-Gang",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 460,
+   "durationSec": 15.333,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        29
+       ],
+       [
+        48,
+        64
+       ],
+       [
+        84,
+        98
+       ],
+       [
+        118,
+        131
+       ],
+       [
+        153,
+        176
+       ],
+       [
+        180,
+        186
+       ],
+       [
+        201,
+        208
+       ],
+       [
+        212,
+        241
+       ],
+       [
+        263,
+        278
+       ],
+       [
+        298,
+        313
+       ],
+       [
+        333,
+        349
+       ],
+       [
+        368,
+        395
+       ],
+       [
+        397,
+        460
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        30,
+        46
+       ],
+       [
+        52,
+        52
+       ],
+       [
+        66,
+        81
+       ],
+       [
+        87,
+        87
+       ],
+       [
+        101,
+        115
+       ],
+       [
+        121,
+        122
+       ],
+       [
+        135,
+        150
+       ],
+       [
+        156,
+        156
+       ],
+       [
+        169,
+        219
+       ],
+       [
+        246,
+        259
+       ],
+       [
+        266,
+        266
+       ],
+       [
+        281,
+        296
+       ],
+       [
+        302,
+        302
+       ],
+       [
+        316,
+        331
+       ],
+       [
+        350,
+        370
+       ],
+       [
+        385,
+        460
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        26
+       ],
+       [
+        49,
+        62
+       ],
+       [
+        84,
+        97
+       ],
+       [
+        119,
+        129
+       ],
+       [
+        153,
+        173
+       ],
+       [
+        214,
+        239
+       ],
+       [
+        264,
+        276
+       ],
+       [
+        298,
+        311
+       ],
+       [
+        333,
+        347
+       ],
+       [
+        368,
+        393
+       ],
+       [
+        399,
+        460
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        30,
+        45
+       ],
+       [
+        66,
+        80
+       ],
+       [
+        102,
+        114
+       ],
+       [
+        121,
+        121
+       ],
+       [
+        136,
+        149
+       ],
+       [
+        170,
+        216
+       ],
+       [
+        247,
+        258
+       ],
+       [
+        281,
+        295
+       ],
+       [
+        316,
+        330
+       ],
+       [
+        351,
+        369
+       ],
+       [
+        386,
+        419
+       ],
+       [
+        422,
+        460
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Catwalk Walk.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 1.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i03.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i03.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_walk_in_circle_a",
+   "label_de": "Im Kreis gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 522,
+   "durationSec": 17.4,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        30
+       ],
+       [
+        49,
+        70
+       ],
+       [
+        83,
+        109
+       ],
+       [
+        121,
+        148
+       ],
+       [
+        161,
+        187
+       ],
+       [
+        202,
+        227
+       ],
+       [
+        241,
+        265
+       ],
+       [
+        283,
+        304
+       ],
+       [
+        321,
+        344
+       ],
+       [
+        358,
+        384
+       ],
+       [
+        399,
+        427
+       ],
+       [
+        441,
+        470
+       ],
+       [
+        484,
+        513
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ],
+       [
+        23,
+        50
+       ],
+       [
+        63,
+        90
+       ],
+       [
+        102,
+        128
+       ],
+       [
+        140,
+        167
+       ],
+       [
+        180,
+        208
+       ],
+       [
+        220,
+        247
+       ],
+       [
+        259,
+        284
+       ],
+       [
+        300,
+        325
+       ],
+       [
+        337,
+        365
+       ],
+       [
+        377,
+        406
+       ],
+       [
+        418,
+        449
+       ],
+       [
+        461,
+        493
+       ],
+       [
+        504,
+        522
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        30
+       ],
+       [
+        50,
+        70
+       ],
+       [
+        85,
+        108
+       ],
+       [
+        123,
+        148
+       ],
+       [
+        163,
+        187
+       ],
+       [
+        206,
+        227
+       ],
+       [
+        241,
+        265
+       ],
+       [
+        284,
+        303
+       ],
+       [
+        323,
+        343
+       ],
+       [
+        359,
+        384
+       ],
+       [
+        399,
+        427
+       ],
+       [
+        443,
+        470
+       ],
+       [
+        485,
+        513
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ],
+       [
+        24,
+        50
+       ],
+       [
+        63,
+        89
+       ],
+       [
+        103,
+        105
+       ],
+       [
+        108,
+        128
+       ],
+       [
+        140,
+        167
+       ],
+       [
+        180,
+        183
+       ],
+       [
+        185,
+        208
+       ],
+       [
+        221,
+        246
+       ],
+       [
+        259,
+        284
+       ],
+       [
+        304,
+        324
+       ],
+       [
+        337,
+        364
+       ],
+       [
+        379,
+        380
+       ],
+       [
+        382,
+        406
+       ],
+       [
+        418,
+        448
+       ],
+       [
+        461,
+        492
+       ],
+       [
+        504,
+        522
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walk In Circle.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 11.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i03.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i03.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_meeting_a",
+   "label_de": "Besprechung (sitzend am Tisch)",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 1401,
+   "durationSec": 46.7,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1401
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1401
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1401
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1401
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Having A Meeting, Male.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 5.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": "seated pose: needs a seat; the pelvis stays at seat height"
+  },
+  {
+   "id": "kfb_talk_sitting_a",
+   "label_de": "Im Sitzen reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 1323,
+   "durationSec": 44.1,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1323
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1323
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1323
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1323
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Sitting Talking.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -8.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": "seated pose: needs a seat; the pelvis stays at seat height"
+  },
+  {
+   "id": "kfb_talk_arguing_a",
+   "label_de": "Im Stehen streiten",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 625,
+   "durationSec": 20.833,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        625
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        625
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        625
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        625
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Arguing.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -8.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_arguing_b",
+   "label_de": "Im Stehen streiten",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 625,
+   "durationSec": 20.833,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        625
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        625
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        625
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        625
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Arguing (1).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -1.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_talking_a",
+   "label_de": "Reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 151,
+   "durationSec": 5.033,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        151
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        151
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        151
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        151
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking (4).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -20.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_talking_b",
+   "label_de": "Reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 176,
+   "durationSec": 5.867,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        176
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        176
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        176
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        176
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking (5).fbx",
+   "sourcePack": null,
+   "facingYawDeg": 24.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_talking_c",
+   "label_de": "Reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 118,
+   "durationSec": 3.933,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        118
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        118
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        118
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        118
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking (6).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -5.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_talking_d",
+   "label_de": "Reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 219,
+   "durationSec": 7.3,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        219
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        219
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        219
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        219
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking (7).fbx",
+   "sourcePack": null,
+   "facingYawDeg": 14.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_talking_e",
+   "label_de": "Reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 309,
+   "durationSec": 10.3,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        309
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        309
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        309
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        309
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking (8).fbx",
+   "sourcePack": null,
+   "facingYawDeg": 0.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_talking_f",
+   "label_de": "Reden",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 135,
+   "durationSec": 4.5,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        135
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        135
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        135
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        135
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking (9).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -4.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_watercooler_a",
+   "label_de": "Plausch am Wasserspender",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 1338,
+   "durationSec": 44.6,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.2,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1338
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1338
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1338
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1338
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Talking At Watercooler.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -30.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk.glb"
+   },
+   "intake": "03",
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_throw_a",
+   "label_de": "Werfen",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 67,
+   "durationSec": 2.233,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        67
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        33,
+        67
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        67
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        32,
+        67
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Throw.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -5.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 27,
+     "hand": "hand.r",
+     "handSpeedMs": 10.69,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_throwing_a",
+   "label_de": "Werfen (Schwung)",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 168,
+   "durationSec": 5.6,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 87.7,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.529,
+    "Rig_Large": 1.357
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        26
+       ],
+       [
+        36,
+        168
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        16
+       ],
+       [
+        23,
+        44
+       ],
+       [
+        82,
+        168
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        25
+       ],
+       [
+        37,
+        168
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        16
+       ],
+       [
+        22,
+        42
+       ],
+       [
+        88,
+        168
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Throwing.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 8.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 50,
+     "hand": "hand.r",
+     "handSpeedMs": 6.14,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_dice_a",
+   "label_de": "Würfeln",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 170,
+   "durationSec": 5.667,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        170
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        170
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        170
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        170
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Throwing Dice.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -0.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 83,
+     "hand": "hand.r",
+     "handSpeedMs": 1.24,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": "small underhand toss (dice); fits a short gentle hand-over"
+  },
+  {
+   "id": "kfb_throw_frisbee_a",
+   "label_de": "Frisbee werfen",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 100,
+   "durationSec": 3.333,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        55
+       ],
+       [
+        65,
+        100
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        23,
+        70
+       ],
+       [
+        80,
+        100
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        55
+       ],
+       [
+        65,
+        100
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        23,
+        70
+       ],
+       [
+        80,
+        100
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Frisbee Throw.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -66.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 40,
+     "hand": "hand.r",
+     "handSpeedMs": 7.11,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_goalie_a",
+   "label_de": "Torwart-Abwurf",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 116,
+   "durationSec": 3.867,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 78.7,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.814,
+    "Rig_Large": 2.089
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        19
+       ],
+       [
+        22,
+        27
+       ],
+       [
+        44,
+        82
+       ],
+       [
+        91,
+        116
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        34,
+        44
+       ],
+       [
+        76,
+        116
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        27
+       ],
+       [
+        43,
+        50
+       ],
+       [
+        64,
+        81
+       ],
+       [
+        91,
+        116
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        35,
+        43
+       ],
+       [
+        66,
+        67
+       ],
+       [
+        76,
+        116
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Goalie Throw.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 1.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 51,
+     "hand": "hand.r",
+     "handSpeedMs": 12.52,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_goalkeeper_overhand_a",
+   "label_de": "Torwart-Überkopfwurf",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 86,
+   "durationSec": 2.867,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 47.8,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.702,
+    "Rig_Large": 6.935
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        7
+       ],
+       [
+        11,
+        12
+       ],
+       [
+        25,
+        31
+       ],
+       [
+        40,
+        56
+       ],
+       [
+        64,
+        86
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        18,
+        23
+       ],
+       [
+        34,
+        40
+       ],
+       [
+        56,
+        62
+       ],
+       [
+        67,
+        86
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        6
+       ],
+       [
+        25,
+        32
+       ],
+       [
+        35,
+        36
+       ],
+       [
+        41,
+        45
+       ],
+       [
+        47,
+        56
+       ],
+       [
+        64,
+        65
+       ],
+       [
+        68,
+        86
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        17,
+        23
+       ],
+       [
+        34,
+        39
+       ],
+       [
+        56,
+        62
+       ],
+       [
+        67,
+        86
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Goalkeeper Overhand Throw.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -6.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 44,
+     "hand": "hand.r",
+     "handSpeedMs": 11.98,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_grenade_a",
+   "label_de": "Granatenwurf (Überkopf)",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 246,
+   "durationSec": 8.2,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.2,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        246
+       ]
+      ],
+      "foot.r": [
+       [
+        64,
+        69
+       ],
+       [
+        111,
+        197
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        246
+       ]
+      ],
+      "foot.r": [
+       [
+        65,
+        67
+       ],
+       [
+        109,
+        193
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Grenade Throw.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -15.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 102,
+     "hand": "hand.r",
+     "handSpeedMs": 5.37,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_run_and_throw_a",
+   "label_de": "Anlauf und Wurf",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 89,
+   "durationSec": 2.967,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 6.463,
+    "Rig_Large": 16.591
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        3
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        15,
+        25
+       ],
+       [
+        29,
+        29
+       ],
+       [
+        37,
+        47
+       ],
+       [
+        51,
+        51
+       ],
+       [
+        59,
+        69
+       ],
+       [
+        73,
+        73
+       ],
+       [
+        81,
+        89
+       ]
+      ],
+      "foot.r": [
+       [
+        5,
+        13
+       ],
+       [
+        17,
+        17
+       ],
+       [
+        27,
+        35
+       ],
+       [
+        39,
+        39
+       ],
+       [
+        49,
+        57
+       ],
+       [
+        61,
+        61
+       ],
+       [
+        71,
+        79
+       ],
+       [
+        83,
+        83
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        2
+       ],
+       [
+        7,
+        7
+       ],
+       [
+        15,
+        16
+       ],
+       [
+        18,
+        24
+       ],
+       [
+        29,
+        29
+       ],
+       [
+        37,
+        38
+       ],
+       [
+        40,
+        46
+       ],
+       [
+        59,
+        60
+       ],
+       [
+        62,
+        68
+       ],
+       [
+        73,
+        73
+       ],
+       [
+        81,
+        82
+       ],
+       [
+        84,
+        89
+       ]
+      ],
+      "foot.r": [
+       [
+        5,
+        12
+       ],
+       [
+        27,
+        34
+       ],
+       [
+        49,
+        56
+       ],
+       [
+        71,
+        78
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Run And Throw Grenade.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 19.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 53,
+     "hand": "hand.l",
+     "handSpeedMs": 16.89,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "notes": ""
+  },
+  {
+   "id": "kfb_throw_shoulder_aggressor_a",
+   "label_de": "Schulterwurf (Werfer)",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 201,
+   "durationSec": 6.7,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 69.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 3.023,
+    "Rig_Large": 7.761
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        25
+       ],
+       [
+        44,
+        55
+       ],
+       [
+        64,
+        125
+       ],
+       [
+        137,
+        169
+       ],
+       [
+        180,
+        201
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        19
+       ],
+       [
+        29,
+        39
+       ],
+       [
+        52,
+        53
+       ],
+       [
+        57,
+        84
+       ],
+       [
+        96,
+        97
+       ],
+       [
+        100,
+        115
+       ],
+       [
+        168,
+        201
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        21
+       ],
+       [
+        47,
+        50
+       ],
+       [
+        63,
+        82
+       ],
+       [
+        101,
+        106
+       ],
+       [
+        117,
+        121
+       ],
+       [
+        138,
+        157
+       ],
+       [
+        166,
+        169
+       ],
+       [
+        180,
+        201
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        18
+       ],
+       [
+        33,
+        39
+       ],
+       [
+        52,
+        52
+       ],
+       [
+        57,
+        57
+       ],
+       [
+        59,
+        63
+       ],
+       [
+        65,
+        83
+       ],
+       [
+        100,
+        115
+       ],
+       [
+        168,
+        201
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Shoulder Throw, Aggressor.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -159.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "events": {
+    "release": {
+     "frame": 59,
+     "hand": "hand.r",
+     "handSpeedMs": 9.42,
+     "method": "frame of peak world speed of the faster hand, Rig_Medium bake; a measured candidate for the prop-release marker, to be confirmed in the runtime"
+    }
+   },
+   "pairedWith": "kfb_throw_shoulder_victim_a",
+   "notes": "two-person grapple throw (not a prop throw); play both clips in sync, aligned by root"
+  },
+  {
+   "id": "kfb_throw_shoulder_victim_a",
+   "label_de": "Schulterwurf (Geworfener)",
+   "group": "throw",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 201,
+   "durationSec": 6.7,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 148.5,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.102,
+    "Rig_Large": 2.829
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        104,
+        106
+       ]
+      ],
+      "foot.r": [
+       [
+        118,
+        122
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        104,
+        106
+       ]
+      ],
+      "foot.r": [
+       [
+        118,
+        122
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Shoulder Throw, Victim.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 33.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_throw.glb"
+   },
+   "intake": "03",
+   "pairedWith": "kfb_throw_shoulder_aggressor_a",
+   "notes": "two-person grapple throw (not a prop throw); play both clips in sync, aligned by root"
   }
  ],
- "mergedFromV1": "bestVariant, ledgeHeightM, endsOnTop merged from the published v1 catalogue by Coworker 2026-09-25"
+ "mergedFromV1": "bestVariant, ledgeHeightM, endsOnTop merged from the published v1 catalogue by Coworker 2026-09-25",
+ "intakes": {
+  "01": "33 clips (v1)",
+  "02": "146 clips (v2, 2026-09-25)",
+  "03": "25 clips (2026-09-28): new groups talk and throw; supplement libraries *_i03.glb for action, locomotion and reaction; v2 files unchanged"
+ }
 }
