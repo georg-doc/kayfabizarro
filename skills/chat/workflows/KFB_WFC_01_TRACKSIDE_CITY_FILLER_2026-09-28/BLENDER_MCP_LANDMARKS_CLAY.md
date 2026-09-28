@@ -167,3 +167,21 @@ Do not:
 - create a second façade/runtime owner;
 - add residents, driving, combat or gameplay scripts inside Blender;
 - use the watermarked street-style sample as a texture or modeled trace.
+
+
+## Track Core v0.11 sockets · mandatory
+
+Consume the exact v0.11 transition contract on branch `georg-doc-patch-2`:
+
+- `skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S12_V011_2026-09-28/modul_uebergang.transitions.json`
+- use the supplied curb / sidewalk / nature / barrier sockets, position and direction;
+- use the supplied role seeds, including `seeds.wfc`;
+- never reshape or re-export the centreline, drive surface, width, grade, curvature, bank or contact;
+- keep visual transition pieces separate from collision;
+- pit-lane line crossings, floating pit marks and the city curb/barrier collision choice remain a separate Track Core TUNE.
+
+Landmark and façade outputs must declare which v0.11 socket family they attach to, or `none` for pre-placed hero landmarks.
+
+## Shared rendering contract
+
+Read `KFB_RENDER_CONTRACT_R0.md` in this workflow before authoring runtime materials. Blender exports provide clean material regions, tangents/normals, pivots and LODs; they must not bake a scene-specific shadow workaround or dense microrelief into all distances.
