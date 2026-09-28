@@ -1,4 +1,4 @@
-# TEST REPORT · KFB Town Resident Social Memory · 2026-09-28
+# TEST REPORT · KFB Town Resident Social Memory + POI/AIDA · 2026-09-28
 
 Status: **DOCUMENTATION / DONOR-SYNTHESIS TESTED · NO RUNTIME TEST CLAIM**
 
@@ -22,50 +22,59 @@ Verified directly from current GitHub state:
 9. KFB Fluff-o-lect meta-narration source;
 10. KFB Brick Fish Draft PR #254;
 11. KFB Reaction Choreography Draft PR #256;
-12. KFB Overworld Living Concept resource/routine source;
-13. Resident Scene Modules activity backlog.
+12. Resident Scene Modules activity backlog;
+13. Overworld Living Concept resource/routine direction.
 
-The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before this report. Current exact pin:
+The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before the source/evidence closure. Current exact pin:
 `9ca3ed0a9987fbb11d0721f5689d6040943403d5`.
 
 ### Machine-readable source manifest
 
 **1 / 1 PASS**
 
-`SOURCE.json` parses as JSON and contains exactly **13** pinned source entries plus the explicitly separated current user directions for POIs, routines, KFB AIDA and goals/motivations.
+`SOURCE.json` parses as JSON and contains exactly **13** pinned source entries.
+
+### Machine-readable AIDA / POI contract
+
+**1 / 1 PASS**
+
+`resident-aida-poi.v0.1.json` parses as JSON and exposes:
+- schema `kfb.resident-aida-poi/0.1-proposal`;
+- **7** KFB AIDA states;
+- **12** POI kinds;
+- four perception/search tiers;
+- source-backed plus additive routine roles;
+- stable motivations/current goals;
+- memory write / do-not-write rules;
+- explicit return/resume policy;
+- first gate `RESIDENT-SOCIAL-MEMORY-01`.
 
 ### Design invariant checks
 
-Final rerun: **24 / 24 PASS**
+**20 / 20 PASS**
 
-Checked against the committed design reference and source manifest:
+Checked against the committed design reference, source manifest and AIDA contract:
 
-1. source JSON parse;
-2. exact AI Town donor HEAD present;
-3. ChatterBox + Triplet lineage present;
-4. Fluff-o-lect present;
-5. `witnessed / told / inferred` knowledge provenance present;
-6. bounded `ResidentSocialThread` contract present;
-7. Reaction Choreography seam present;
-8. Brick Fish social-interaction seam present;
-9. explicit no-second-runtime / AI-Town-donor-only boundary present;
-10. Stage explicitly `NOT_DEPLOYED`;
-11. next gate `RESIDENT-SOCIAL-MEMORY-01` present;
-12. source manifest count = 13;
-13. POI kinds include player, Resident/NPC, Cube Pet, nature/plants and resources;
-14. POI layer is explicitly a query/view, not a second registry;
-15. staged sight/range/local-semantic-search contract present;
-16. source-backed routine roles include Hammering, Fishing and Pickaxe;
-17. Patrol and Explore current-user-direction roles present;
-18. personal goals/motivations defined as conflict motor;
-19. competing goals do not automatically become hostility/Combat;
-20. KFB AIDA sequence present: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Return/Resume/Retarget;
-21. return-to-routine seam covers prior activity / patrol / fishing-smithing-building;
-22. perception noise is not persisted as memory;
-23. whole-world-per-frame scanning is rejected;
-24. AIDA grammar is shared by player and NPC loops.
-
-First automated invariant pass reported **23/24** because the test expression expected an unformatted literal for the no-second-runtime sentence while the document contained Markdown emphasis around “not”. No product/design change was required. The harness assertion was corrected and the full rerun passed **24/24**.
+1. source manifest contains 13 donors;
+2. AIDA contract parses;
+3. exact AI Town donor HEAD present;
+4. ChatterBox + Triplet lineage present;
+5. Fluff-o-lect present;
+6. `witnessed / told / inferred` knowledge provenance present;
+7. bounded `ResidentSocialThread` contract present;
+8. Reaction Choreography seam present;
+9. Brick Fish social-interaction seam present;
+10. POI query/view layer present;
+11. POIs explicitly include player, Resident, Cube Pet, plant and resource;
+12. perception is bounded; no whole-world scan per frame;
+13. source-backed routines include hammering, fishing and resource work;
+14. Georg's additive routines include patrol, explore and return-home/post;
+15. personal goals/motivations are the conflict motor;
+16. KFB AIDA has seven states from Attention through Return/Resume/Retarget;
+17. the loop is explicitly shared by player and NPC behaviour;
+18. routine resume is mandatory; no generic Idle reset after every beat;
+19. AI Town remains donor-only / no second runtime;
+20. Stage remains explicitly `NOT_DEPLOYED`.
 
 ## Runtime / browser / Stage
 
@@ -78,23 +87,28 @@ First automated invariant pass reported **23/24** because the test expression ex
 
 These are intentionally not claimed because this slice is design persistence and donor synthesis only.
 
+## Workflow shortcut
+
+`KFB WEB PUSH/READ — <project or slice> — recover + continue`
+
+is now documented in the branch version of `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md` and in this slice Recovery. It is a natural-language KFB project shortcut, not a product slash command.
+
 ## Result
 
-**PASS for documentation/source synthesis.**
+**PASS for documentation/source synthesis + POI/AIDA contract.**
 
-This is not an implementation PASS for autonomous Residents, POI perception, routines, AIDA, Lean Memory, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
+This is not an implementation PASS for autonomous Residents, Lean Memory, POI perception, routines, motivations, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
 
 ## Next gate
 
-After current relevant ToolBox/WorldBuilder recovery blockers clear, implement **RESIDENT-SOCIAL-MEMORY-01** in the real receiving world with:
+After current relevant ToolBox/WorldBuilder recovery blockers clear, implement **RESIDENT-SOCIAL-MEMORY-01** in the real receiving world:
 - two source-proven Residents;
-- one bounded POI search/perception loop;
-- one source-backed resumable routine;
-- Brick Fish + one Card/gift context;
-- one motivation-backed Attention → Interest → Expectation → Interaction → Reaction cycle;
-- witness-specific memory receipts;
-- one bounded social thread;
-- ChatterBox/Triplet speech;
+- one source-backed routine activity;
+- bounded visible/local POI candidates;
+- one motivation-backed Attention → Interest → Expectation choice;
+- one interaction + Reaction Choreography;
+- optional ChatterBox/Triplet speech;
 - one context-valid Fluff-o-lect variant;
-- coordinated Reaction Choreography;
-- clean return to the consumer-owned path/activity/dialogue state.
+- witness-specific memory only if the outcome matters;
+- one bounded social thread;
+- clean return to routine/path/dialogue or retarget to a changed goal.
