@@ -35,15 +35,41 @@ Production-03 already has `Studio`, `Animation Studio`, and `Rigging` tabs. Exte
 Required:
 
 - `RETURN.md`
+- `RETURN_INTAKE_03.md`
 - `KFB_Motion_Library.catalog.json`
-- `KFB_Motion_Library_Rig_Medium.glb`
-- `KFB_Motion_Library_Rig_Large.glb`
+- `libs/Rig_Medium/`
+- `libs/Rig_Large/`
 - `sheets/`
 - `NOTICE.md`
 
-The currently accepted baseline contains 33 clips on the real Rig_Medium and Rig_Large skeletons. Blender MCP is importing, converting, measuring, and registering additional clips. The prototype must therefore read a manifest/catalog dynamically; never hard-code “33” as a product limit.
+Pinned current candidate: PR #275 at `4fa082714c7200f6926008a1cd0b34db8df4dbad`, stacked on Motion Library PR #213. Its catalog contains **204 unique clips** on the real Rig_Medium and Rig_Large skeletons. Intake 03 contributes 25 clips: talk 11, throw 10, action 1, locomotion 2 and reaction 1. The prototype must read the manifest/catalog dynamically; never hard-code 33, 179 or 204 as a product limit. Show 204 only as the count of the currently loaded pinned manifest.
+
+Intake 03 has several non-trivial cases which must remain visible rather than being normalized away:
+
+- two seated talk clips require a seat;
+- shoulder throw is a paired aggressor/victim interaction, not a prop throw;
+- throw release frames are measured candidates and require runtime confirmation;
+- `run and throw` releases from the left hand; the other prop throws use the right;
+- four additions live in `*_i03.glb` supplement files so the 179 earlier clips remain byte-identical;
+- a source `loop: true` can mean matching endpoint poses even when gameplay should run the clip once.
 
 Raw Mixamo FBX files remain outside GitHub. Do not ask for, embed, export, or redistribute them.
+
+### Existing Asset Librarian consumer
+
+The current Asset Librarian already owns shared asset discovery and has an `Animation source` type plus motion preview support under `tools/asset_registry/librarian/`. Extend that owner; do not create an Animation-Library-only registry.
+
+The design must show how every clip from `KFB_Motion_Library.catalog.json` is discoverable in the Librarian as a motion record with:
+
+- immutable motion ID and editable human display label;
+- group/tags, Rig_Medium/Rig_Large support and compatibility state;
+- duration, root-motion/travel and loop/one-shot interpretation;
+- contact-sheet thumbnail and exact library GLB path;
+- seat, paired-actor, release-event and handedness facts where present;
+- license/source notice without exposing raw FBX;
+- `In Animation Library öffnen` deep link carrying the motion ID and optional actor ID.
+
+The Librarian remains the catalog/discovery surface; Animation Library remains the character × motion preview/editor. Both read the same canonical manifest. Editorial labels and assignments remain a separate patch and never rewrite Registry or Motion Library source facts. See `MOTION_LIBRARY_V3_AND_LIBRARIAN_ADDENDUM.md` for the projection and acceptance checks.
 
 ## FBX Drop Zone · three explicit lanes
 
@@ -224,6 +250,8 @@ Provide a compact filter button that opens a multi-select panel. Initial semanti
 
 Filters remain understandable to Georg; detailed measurements belong in the info layer.
 
+The current pinned catalog must visibly expose the new `talk` and `throw` groups. Several clips share the source label “Reden”; search results must distinguish them by immutable ID, editable display label and preview rather than collapsing them as duplicates.
+
 ## Resident and runtime assignments
 
 The prototype must include a small assignment editor demonstrating that one selected character can receive:
@@ -270,6 +298,12 @@ Prefer small patch records keyed by immutable IDs. Do not duplicate GLB files or
 9. Export the patch, reset, import it, and recover the same editorial state.
 10. Demonstrate narrow viewport without hiding search, character selection, playback, or save/export.
 11. Drop a local FBX, show `LOCAL PREVIEW · NOT REGISTERED`, apply a wrist/arm correction A/B, and export an intake receipt without the raw FBX.
+12. Load the pinned v3 manifest and prove `204 clips / 204 unique IDs`; do not synthesize missing cards.
+13. Search `Reden`, inspect at least two distinct `kfb_talk_talking_*` variants, rename only their editorial labels and keep both immutable IDs.
+14. Open `kfb_talk_meeting_a` and show `SEAT REQUIRED` in Studio and Terrain/seat context.
+15. Open `kfb_throw_run_and_throw_a` and show left-hand release candidate frame 53 plus `RUNTIME CONFIRMATION REQUIRED`.
+16. Open the two shoulder-throw records as a linked pair and never preview either as a prop throw.
+17. From one motion card, open the matching Asset Librarian record; return to the same selected actor/motion without losing the editorial patch.
 
 ## Performance rules
 
@@ -297,6 +331,7 @@ Prefer small patch records keyed by immutable IDs. Do not duplicate GLB files or
 - real source manifest with exact GitHub paths and revisions;
 - included sample editorial patch using real motion IDs;
 - included sample local-intake receipt with a fake hash placeholder but no raw FBX;
+- a manifest-driven Asset Librarian motion projection or mock adapter using the exact v3 fields, not a second catalog;
 - `START_HERE.md`;
 - `RETURN.md` with problems first;
 - `TEST_REPORT.md`;

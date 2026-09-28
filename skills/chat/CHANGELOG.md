@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 31623)
+Total output lines: 2078
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
@@ -977,110 +980,7 @@ Run `35484127790`, public-proof job `106007210838`:
 
 ### FINDINGS
 - Medium shared motion facts: 25 bindable General+MovementBasic clips; candidate Walk/Run handoff ~1.108 with a small ~0.016 playback-window gap at the current technical clamp.
-- Large Black Knight: 8 bindable clips in the tested sets; Walk/Run handoff ~1.811 near native rates (~1.02× / ~0.97×); Running_A automatic slip remains high and needs visual review.
-- Running_B stays HOLD on Medium.
-- Large does not inherit Medium clips/timing.
-- Attachments remain source-pinned proposals, not accepted mounts.
-
-`PUBLIC_VERIFIED = YES`.
-
-Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.
-
-
-## 2026-09-20 · EyeRig Batch · four Large profiles accepted + actor-specific lid color
-
-### ACCEPTED LARGE PROFILES
-Georg's reviewed batch from `tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json` at `main@52532aee17f85324a6d04ab53150216f00ac5d89` is now the canonical per-character Large baseline.
-
-Accepted:
-- Monstrosity
-- Black Knight
-- Demon Lord
-- Orc Brute
-
-Canonical copy: `tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json`.
-
-### LID COLOR FIX
-The common pink fallback `#b58f83` is no longer persisted for generic actors.
-
-A new source-head sampler reads each loaded actor's own face/head texture around the eye placement. The sampled color becomes the EyeRig base color; existing EyeRig v6 remains the owner that darkens it for lids. Explicit actor colors such as GothGirl remain untouched.
-
-### EVIDENCE
-- implementation `480c5770ef8ef391043b0b93ec3f51b04af7dfef`;
-- evidence `40c2f920a96ea00bf99593610a49a646b2e0873c`;
-- source/Return `e277c3456651d314a01adea046e0105d2a12cdd1`;
-- Stage `e9f97c594bce46607e95928dd349cf081c36783d`;
-- **95/95 PASS**;
-- **4/4 runtime-critical JS syntax PASS**.
-
-### NEXT
-Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
-
-## 2026-09-20 · MVP integration board and bounded briefs
-
-Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
-
-
-## 2026-09-21 · Hub UI v2 accepted + ToolBox v2 route audit
-
-### HUMAN ACCEPTANCE
-Georg accepted the public Hub UI v2 Paper/Dark candidate and asked to check it in and use it. PR #141 is retained as design/evidence history but not merged wholesale because it is behind newer Hub content.
-
-### IMPLEMENTATION
-A current-main promotion branch ports the accepted Paper/Dark theme, shareable hash routes and Stage/Live previews onto the latest Hub data. ToolBox becomes a prominent header destination and receives the same v2 presentation grammar.
-
-### TOOLBOX ROUTE AUDIT
-Against the current Cloudflare publication tree: 6 exact public preview routes, 5 missing/blocked routes and 6 source/integration gates. Missing routes no longer pretend to have previews. Vehicle Deformer v2 and KayKit Ranged Calibration are surfaced as real public Stage tools; KCC remains PUBLIC BLOCKED.
-
-### WORLDSURFACE I1A
-Travel branch `wsa/worldsurface-trackpatch-i1-2026-09-20@d9d9d93c286fa52551ee881292a4db426a4cb8fc` is locally green (72/72). B changes 99 host vertices but is coarse; C replaces 380 source triangles with 6,080 refined triangles, with zero measured seam displacement and zero outside-patch mutation. C is technical leader only; Georg's visual B/C/neither gate remains open.
-
-
-## 2026-09-21 · Hub/ToolBox v2 publication checkpoint
-
-Hub UI v2 + ToolBox v2 promotion merged at `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`. The exact public files were copied to and read back from `cloudflare-live@cbbae810e6ddb8f282e702d0897bed8566361327`. Direct `kayfabizarro.pages.dev` browser verification is still pending because this session's HTTP viewer cannot access that host; no PUBLIC_VERIFIED claim is made yet.
-
-
-## 2026-09-21 · Hub/ToolBox v2 status consistency refresh
-
-### USER DIRECTION
-Keep the accepted Hub UI v2, use the same design language for ToolBox and make ToolBox prominent in the KFB Hub.
-
-### IMPLEMENTATION
-Retain the accepted Paper/Dark Hub + ToolBox v2 surfaces, remove stale “review Hub UI v2” and “15-card ToolBox” copy, add ToolBox to the Hub fallback and KFB Stage router, and refresh the ToolBox route audit against the current Cloudflare publication tree.
-
-### TESTED RESULT
-**18/18 source/tree checks PASS** on branch `hub/toolbox-v2-status-refresh-2026-09-21` at `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`. ToolBox truth remains 17 cards = 6 public previews + 5 missing/blocked + 6 source/integration gates. No fake preview is introduced.
-
-### PUBLICATION BOUNDARY
-GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabizarro.pages.dev` URLs must still show the v2 revision before a new PUBLIC_VERIFIED claim.
-
-
-### PUBLICATION SEAL · Hub/ToolBox v2 status refresh
-- PR #153 merged: `dfaafac070747f9543b5eb5a635e2aaa74e57b83`
-- exact Hub/Stage/ToolBox-audit files mirrored to `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
-- publication-branch blob readback: PASS
-- direct pages.dev verification: PENDING because both available HTTP paths are blocked in this session; no new PUBLIC_VERIFIED claim.
-
-
-## 2026-09-21 · KLR-KIT-F1 selector regression PASS
-
-- Fresh branch: `chatgpt-web/klr-kit-f1-2026-09-21`, based on frozen KLR-KIT head `e3a06e3451637a8b447192113cab43f3ece84cd8`.
-- Runtime repair stayed bounded to the proven selector seam in Tool + Stage mirror: `$('[data-mode]') → $$('[data-mode]')`.
-- Tested head: `44d595bc60259f4a74da7043df13582f1b5ccd89`.
-- Run `35552848730`, job `106190694773`: **33/33 static + 16/16 ActorRecipe + 2/2 selector + 21/21 isolated browser PASS**.
-- Exact browser recipe: `gate-16 = Knight + Rogue Head C + no held item`; 30 clips/core parts retained; 0 failed resources; 0 page/console errors.
-- Artifact `10618729208`, digest `sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`.
-- No F1 runtime was published to Cloudflare; Legacy public Stage remains unverified.
-- Next gate: resume only the KLR-KIT three-seed browser matrix `gate-16 → gate-75 → gate-33 → repeat gate-16`. Combat/WhackMan consumer integration remains deferred.
-
-
-## 2026-09-21 · Legacy Web Pet v0 sidequest
-
-- Draft PR #157 / branch `chatgpt-web/legacy-web-pet-v0-2026-09-21`.
-- Shared Legacy Web Pet runtime built for ordinary Web/KFB Hub and a Chrome MV3 host.
-- Web candidate at tested head `f41c59a8178bf77266c0f776f2e20a7948ee6223`: **15/15 static + 12/12 WebGL PASS**.
-- Proven Web behavior: Rogue default, real Rig_Legacy actions, 3D shadow, exact Orc-Warband camp, click SFX/VFX, right-click settings, Mage switch, normal page link retained, 0 failed resources, 0 page/console errors.
+- Large Black Knight: 8 bindable clips in the tested sets; Walk/Run handoff ~1.811 near …1623 tokens truncated…y actions, 3D shadow, exact Orc-Warband camp, click SFX/VFX, right-click settings, Mage switch, normal page link retained, 0 failed resources, 0 page/console errors.
 - MV3 source bundles successfully with local executable JS only.
 - Extension arbitrary-page `ready` gate timed out in runs `35553680781` and `35553968462`; explicit bundled-Chromium launch did not resolve it.
 - Per two-pass rule the extension gate is frozen. Artifact `10619267683`, digest `sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3`, contains Web evidence only; validated extension ZIP packaging was skipped.
@@ -2066,3 +1966,13 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 
 ### DECISION
 The Animation Library is a ToolBox/Animation Studio consumer of the canonical Motion Library. Blender MCP owns intake, conversion, measurement and registration. Editorial display names, tags, export inclusion and Resident role assignments live in reversible JSON patches keyed by immutable motion IDs. The existing GPT Site becomes the later persistence surface after the Claude Design flow is accepted.
+
+## 2026-09-28 · ANIMATION-LIBRARY-V1 · MOTION LIBRARY V3 / LIBRARIAN UPDATE
+
+### UPDATED
+- Pinned Motion Library PR #275 at `4fa082714c7200f6926008a1cd0b34db8df4dbad`: 204 unique clips for Rig_Medium and Rig_Large.
+- Added Intake-03 talk/throw/seated/paired/release-marker cases to the Claude Design walkthrough and example patch.
+- Added `MOTION_LIBRARY_V3_AND_LIBRARIAN_ADDENDUM.md` so the existing Asset Librarian projects every canonical motion record from the same manifest instead of creating a second catalog.
+
+### DECISION
+Asset Librarian owns discovery; Animation Library owns character × motion preview and reversible editorial assignments; Blender MCP/Motion Library owns conversion and canonical facts. Raw FBX remains local-only.

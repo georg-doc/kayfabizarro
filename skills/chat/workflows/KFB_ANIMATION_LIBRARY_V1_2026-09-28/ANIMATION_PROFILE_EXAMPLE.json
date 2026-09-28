@@ -2,7 +2,7 @@
   "schema": "kfb.animation-editorial-patch/1",
   "catalog": {
     "schema": "kfb.motion-catalog.v1",
-    "version": "01",
+    "version": "2026-09-28",
     "sourcePath": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
     "contentHash": "RESOLVE_AT_IMPORT"
   },
@@ -16,7 +16,7 @@
         "idle.default": "kfb_idle_breathing_a",
         "locomotion.walk": null,
         "locomotion.run": "kfb_locomotion_run_forward_a",
-        "talk.explain": null,
+        "talk.explain": "kfb_talk_talking_a",
         "react.happy": "kfb_idle_happy_a",
         "signature.primary": "kfb_action_fireball_a",
         "vehicle.seated": null
@@ -46,6 +46,20 @@
       "cluster": "dance.house",
       "exportEnabled": false,
       "notes": "Excluded editorially; source clip remains untouched."
+    },
+    "kfb_talk_talking_a": {
+      "displayName": "Reden · ruhig mit beiden Händen",
+      "tags": ["talk", "resident", "variant-a"],
+      "cluster": "talk.explain",
+      "exportEnabled": true,
+      "notes": "Intake 03 example. The immutable ID distinguishes this clip from the other source-labelled Reden variants."
+    },
+    "kfb_throw_run_and_throw_a": {
+      "displayName": "Anlauf und Wurf",
+      "tags": ["throw", "travel", "left-hand", "one-shot"],
+      "cluster": "action.throw",
+      "exportEnabled": true,
+      "notes": "Release candidate frame 53 on hand.l; requires runtime confirmation and must not be inferred as a gameplay loop."
     }
   },
   "localIntakeExample": {
