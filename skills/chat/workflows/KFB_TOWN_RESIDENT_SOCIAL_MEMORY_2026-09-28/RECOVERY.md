@@ -252,6 +252,6 @@ closed present
 
 First POI examples: Brick Fish exchange, Tiny Treats pizza slice, plant/path obstruction.
 
-Open animation seam: audition `Running_HoldingRifle` and `Walking_A/B` with exact Toy Soldier rifle; no accepted shoulder-rifle march yet. Only if current source clips fail should a Mixamo/new motion donor enter the existing Motion Library intake.
+Open animation seam updated: Georg identified Mixamo **`Walk with Briefcase`** as the priority external donor because its right arm already carries a load while the left arm keeps a normal walk swing. It is **USER-IDENTIFIED / NOT YET ADMITTED / NOT PINNED**. Preferred intake is In Place → existing Motion Library → retarget to `Rig_Medium` → exact Toy Soldier rifle at `handslot.r` → small right-arm/attachment fit only if needed. World/navigation remains translation owner. `Running_HoldingRifle` and `Walking_A/B` remain A/B/fallback candidates.
 
 The single next gate remains **RESIDENT-SOCIAL-MEMORY-01**; Officer Doppel-Denk is the preferred first character-specific overlay inside that integrated proof, not a separate runtime or proxy Stage.
