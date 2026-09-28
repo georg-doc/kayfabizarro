@@ -10,18 +10,38 @@ Gift-giving is a third shared KFB Resident culture axis alongside:
 - Brick Fish / Red Herring social play;
 - music / Common Bounce / Signature Dance culture.
 
-Residents should regularly give, trade, pass on and sometimes weaponize or satirize gifts as part of ordinary social life.
+### KISS correction · 2026-09-28
 
-The gift is not merely a loot container. It is simultaneously:
-- an object transfer;
-- a social statement;
+The first implementation does **not** need a durable Resident item economy, barter ledger or per-prop ownership/provenance history.
+
+For the MVP, a gift is primarily:
+- a visible social action;
 - a Point of Interest;
 - a character test;
-- a possible joke/prank;
-- a provenance-bearing memory object;
-- a seed for a small social thread.
+- a joke/prank/reconciliation device;
+- a trigger for Reaction Choreography;
+- a possible **semantic memory receipt** when the interaction becomes meaningful.
 
-KFB gift culture should allow sincere warmth, barter, teasing, status play, absurdity, cartoon violence and reconciliation without requiring a global relationship meter.
+The physical prop may be scene-local, randomly selected from admitted props, reused later, or disappear after the beat according to the receiving scene's ordinary prop rules.
+
+Persist **meaningful social content**, not routine object bookkeeping.
+
+Examples worth remembering:
+- A deliberately mocked B with a gift aimed at B's vanity;
+- B unexpectedly loved the insulting gift;
+- A prank gift triggered a memorable escalation;
+- A later apology/reconciliation closed that thread.
+
+Examples normally **not** worth remembering:
+- exact gift instance ID;
+- every wrapper color;
+- every routine handoff;
+- who technically owned a disposable scene prop after the beat;
+- a full chain of low-value regifts.
+
+A later true item/inventory/provenance system may attach to this culture layer when a real gameplay need exists. It is not a prerequisite for lively Resident behavior.
+
+KFB gift culture should allow sincere warmth, loose exchange, teasing, status play, absurdity, cartoon violence and reconciliation without requiring a global relationship meter or economy.
 
 ## 2 · Verified source foundation
 
@@ -103,23 +123,24 @@ Georg's current music direction includes traditional Holiday/Jingle-Bells-like s
 
 Do not make the seasonal North-Pole scene a prerequisite for ordinary Town gift culture. Present A–E can already be reusable packaging props in other contexts.
 
-## 4 · Gift = wrapper + payload + social intent
+## 4 · Gift = wrapper + presented payload + social intent
 
-Separate what the gift **looks like**, what is **inside**, and what the giver **means**.
+Separate what the gift **looks like**, what appears **inside the scene**, and what the giver **means**.
 
-Proposed semantic contract:
+KISS baseline:
 
 ```ts
-type GiftEvent = {
+type GiftBeat = {
   id: string
   sourceEventRef: string
 
   giverId: string
   recipientId: string
-  witnessIds: string[]
+  witnessIds?: string[]
 
   wrapperRef: string
-  payloadRef: string
+  payloadRef?: string
+  payloadTags?: string[]
 
   intent:
     | 'care'
@@ -134,24 +155,23 @@ type GiftEvent = {
     | 'tribute'
     | 'apology'
 
-  ownershipMode:
-    | 'persistent_transfer'
-    | 'temporary_loan'
-    | 'stage_prop'
-
-  revealProfileRef?: string
   relationshipTone?: string
+  revealProfileRef?: string
 }
 ```
 
 Important:
 - `wrapperRef` is presentation;
-- `payloadRef` is the actual object identity;
+- `payloadRef` may point to a real source prop shown in the scene, but the Gift Culture layer does **not** require durable ownership;
+- `payloadTags` can carry the semantic meaning when the exact prop instance is disposable;
 - `intent` is the giver's authored/subjective social intention;
-- the recipient may interpret it differently;
-- item transfer is only real when the current inventory/world owner validates it.
+- the recipient may interpret it differently.
 
-No LLM is allowed to create an item by mentioning it in dialogue.
+No LLM is allowed to create persistent inventory truth by merely mentioning an item.
+
+### Optional future extension
+
+If a later consumer already has real inventory/object identity and the gift genuinely changes player/world inventory, it may attach an external `itemTransferRef` or provenance ref. That remains an **optional integration seam**, not MVP Gift Culture state.
 
 ## 5 · Generic gift choreography
 
@@ -167,7 +187,7 @@ giver selects/holds gift
 → payload reveal
 → recipient Reaction Choreography
 → optional ChatterBox / Triplet
-→ ownership / social-thread update
+→ optional semantic-memory / social-thread update
 → return / continue / escalate
 ```
 
@@ -313,7 +333,7 @@ No meta joke about “game physics”. The characters treat the event as part of
 
 ## 10 · Gift social thread
 
-The existing `ResidentSocialThread kind: 'gift'` is the correct continuity handle.
+The existing `ResidentSocialThread kind: 'gift'` is the correct continuity handle when a gift interaction matters enough to continue.
 
 Suggested states:
 
@@ -322,102 +342,97 @@ offered
 → accepted / refused
 → opened
 → interpreted
-→ used / kept / returned / regifted
-→ optional countergift
+→ optional response / countergift
 → reconciled / closed
 ```
 
-Store:
+KISS memory payload:
 - giver;
 - recipient;
-- payload;
-- wrapper;
+- semantic gift/payload tag when useful;
 - source event;
-- witnesses;
-- meaningful reaction;
-- current owner;
-- whether one bounded response/countergift remains.
+- witnesses only when relevant;
+- meaningful interpretation/reaction;
+- whether one bounded response remains.
 
-Do not store the full conversation transcript.
+Normally do **not** persist:
+- current item owner;
+- wrapper instance ID;
+- every regift hop;
+- full conversation transcript.
 
-## 11 · Gift provenance
+The thread remembers **what the exchange meant**, not a miniature warehouse ledger.
 
-Gift provenance is especially valuable because the same prop can re-enter later scenes.
+## 11 · Semantic gift memory, not item provenance by default
 
-Example:
+The valuable persistent fact is usually the **social meaning** of the exchange.
+
+Example compact receipt:
 
 ```ts
 {
-  objectRef: 'prop-x',
-  provenance: {
-    giftedBy: 'resident-a',
-    giftedTo: 'resident-b',
-    giftEventRef: 'evt-42',
-    placeRef: 'town-square'
-  }
+  kind: 'gift',
+  giverId: 'resident-a',
+  recipientId: 'resident-b',
+  meaningTags: ['tease', 'vanity'],
+  outcome: 'recipient-loved-it',
+  sourceEventRef: 'evt-42'
 }
 ```
 
-Later:
-- giver sees recipient still carrying it;
-- witness comments on it;
-- recipient regifts it;
-- player acquires it;
-- object becomes part of another prank.
+Later this can influence:
+- a callback in ChatterBox;
+- a repeat prank;
+- a warmer reconciliation;
+- a Resident choosing a related gift;
+- a reaction when a visually/semantically similar prop appears.
 
-Knowledge remains witness-specific.
+The exact same prop object does **not** need to survive for the memory to matter.
 
-A third Resident does not magically know who originally gave the object unless they witnessed or were told.
+If a later real inventory system supplies durable object identity, the receipt may point to it. Until then, no item-provenance graph is required.
+
+Knowledge remains witness-specific. A third Resident does not magically know the exchange unless they witnessed it or were told.
 
 ## 12 · Player participation
 
 The same culture should include the player.
 
 Player may:
-- give a gift from actual inventory;
+- give a scene gift where the consumer allows it;
 - receive one;
 - reject one;
 - unwrap one;
-- regift one;
-- trade;
-- use a gift later in front of the giver;
 - trigger a prank;
-- use an acquired object to reopen a prior social thread.
+- use a later dialogue/action callback based on a memorable gift exchange.
 
-Durable player-facing gift facts belong to **Player Journey / Meta**.
+For the KISS baseline, **Player Journey does not need to become a gift inventory ledger**.
 
-They can record:
-- giver;
-- object;
-- place/event;
-- gift intent where known;
-- later important use/regift.
+Only meaningful player-facing receipts may persist, for example:
+- who gave the player something memorable;
+- what the social intent/meaning was;
+- where/when the notable beat happened;
+- whether it opened or closed a social thread.
 
-Physical carry slots still belong to the existing inventory/Backpack owner.
+If a later real inventory consumer transfers a durable object, that consumer owns the item state and may attach its reference. No duplicate item is created by replaying a reveal.
 
-No duplicate item is created by replaying the reveal.
+## 13 · Loose exchange, not an economy
 
-## 13 · Barter without a global price economy
+Georg's “barter society” direction is primarily **cultural and performative**, not a request for resource management.
 
-Residents can exchange objects frequently without requiring one universal commodity market.
+Residents may visibly:
+- offer;
+- accept;
+- refuse;
+- counteroffer;
+- swap;
+- regift;
+- hand over a ridiculous substitute.
 
-Useful social actions:
-- `gift.offer`;
-- `gift.accept`;
-- `gift.refuse`;
-- `gift.counteroffer`;
-- `gift.swap`;
-- `gift.regift`.
+For ordinary Resident-life scenes these may be ephemeral props and semantic beats. No universal commodity table, stock count, price system or durable ownership chain is required.
 
-The relevant world/inventory owner validates:
-- item exists;
-- current owner can transfer it;
-- recipient can accept it;
-- ownership changes once.
+If a specific later gameplay consumer already has inventory/resource truth, Gift Culture may call that owner's transfer action. Otherwise the scene ends after the social beat and meaningful memory update.
 
-The LLM/ChatterBox layer can propose/phrase the exchange but does not mutate ownership.
-
-This supports a loose barter culture without inventing a global price table or relationship currency.
+This keeps exchange lively without turning Resident life into an economy simulator.
 
 ## 14 · Kayfabe escalation
 
@@ -544,10 +559,10 @@ REACTION
 reveal + character-specific choreography
 
 INTERPRET / REMEMBER
-gift meaning + provenance + outcome if socially relevant
+gift meaning + outcome if socially relevant
 
 RETURN / RESUME / RETARGET
-keep/use/display/regift/countergift/reconcile/leave
+continue / joke / countergift / reconcile / leave
 ```
 
 Expectation mismatch is a major comic engine:
@@ -574,10 +589,10 @@ Bad gift prompts a bounded Brick Fish retaliation.
 ### Brick Fish → Reconciliation Gift
 Resident returns later with a sincere or sarcastic peace offering.
 
-### Gift → learned social token
-Player receives/keeps an object, later uses or regifts it in front of the original giver, reopening the memory thread.
+### Gift → remembered social token
+A memorable gift beat creates a semantic callback. Later a related prop, joke, Resident or situation can reopen the memory thread even if the original object instance no longer exists.
 
-This is how a small object library can generate recurring social history.
+This is how a small prop library can generate recurring social history without requiring persistent item bookkeeping.
 
 ## 20 · First productive implementation later
 
@@ -604,11 +619,10 @@ Resident A carries/offers wrapped gift
 → Toy-Soldier-derived reveal timing
 → payload appears
 → B reacts according to profile
-→ ownership/provenance is recorded once
+→ meaningful interpretation is optionally written as one compact receipt
 → one optional retort/countergift beat
-→ B later uses/displays/regifts payload
-→ A or witness recognizes provenance
 → thread closes or reconciles
+→ both Residents return to their prior activity
 ```
 
 Second variation only after the warm baseline works:
@@ -618,10 +632,10 @@ Second variation only after the warm baseline works:
 - reconciliation/return.
 
 Evidence must prove:
-- no duplicate item/reward;
-- wrapper and payload remain distinct;
-- witness knowledge is correct;
-- replay does not re-transfer ownership;
+- wrapper and presented payload remain visually/semantically distinct;
+- no unnecessary durable item ledger is created;
+- only meaningful social outcomes enter Lean Memory;
+- witness knowledge is correct when a receipt is written;
 - social thread is bounded;
 - Reaction Choreography recovers cleanly;
 - both actors return to routine/social state.
@@ -635,12 +649,45 @@ ToolBox / Resident Scene / Animation Studio should eventually support:
 - select gift intent;
 - preview offer/accept/unwrap;
 - map recipient Reaction profile;
-- inspect ownership/provenance event;
+- inspect the optional semantic memory receipt;
 - save as reusable mini-scenario recipe.
 
-The interface must consume existing Asset Library, Motion Library, Reaction Choreography and Player Journey owners.
+The interface must consume existing Asset Library, Motion Library and Reaction Choreography owners. Player Journey / site persistence is only needed when a gift beat is important enough to become durable player memory.
 
-No duplicate Gift Inventory or Gift Animation runtime.
+No Gift Inventory, barter ledger or Gift Animation runtime.
+
+## 22 · Minimal persistence / GPT-Site architecture sketch
+
+If the initial GPT-Site runtime offers a simple persistent store, the first implementation only needs a tiny semantic receipt collection, for example:
+
+```ts
+type ResidentMemoryReceipt = {
+  id: string
+  actorId: string
+  otherActorIds?: string[]
+  kind: 'gift' | 'dance' | 'brick_fish' | 'promise' | 'argument' | 'performance'
+  meaningTags: string[]
+  outcome?: string
+  sourceEventRef?: string
+  importance: 1 | 2 | 3
+  createdAt: number
+}
+```
+
+For gifts this can capture:
+- who was involved;
+- whether it was affectionate, mocking, prankish or reconciliatory;
+- what character trait/context made it meaningful;
+- the outcome.
+
+It does **not** need:
+- item instance ownership;
+- resource counts;
+- per-wrapper persistence;
+- complete prop histories.
+
+If storage is unavailable or unreliable, the runtime can still play the scene correctly without durable memory. Persistence enriches callbacks; it must not be a prerequisite for the visible interaction.
+
 
 ## One next gate
 
