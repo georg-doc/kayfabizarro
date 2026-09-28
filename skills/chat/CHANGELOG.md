@@ -1,3 +1,14 @@
+## 2026-09-28 · SUPERSEDES · Gift Culture KISS baseline / semantic memory only
+
+- Georg clarified that the earlier “barter society” wording is **not** a request for Resident resource management, durable item ownership or a gift-economy ledger.
+- MVP priority is now explicitly **Behavior + Reaction + Animation + Emotional Choreography + compact semantic memory**.
+- Gift props may be scene-local, random/admitted and disposable after the beat.
+- Lean Memory persists only meaningful social content: participants, giver intent/meaning, notable reaction/escalation, reconciliation and relevant witness provenance.
+- Do **not** persist every wrapper instance, handoff, current owner, resource count or regift chain.
+- Player Journey / GPT-Site persistence is optional for compact semantic `ResidentMemoryReceipt` callbacks; the visible gift interaction must work with zero persistence.
+- A later real inventory/provenance system may attach externally if a concrete gameplay need emerges; it is not part of Gift Culture MVP.
+- Current Gift Culture source checks remain **15/15 PASS**; KISS correction checks add **6/6 PASS**. No runtime/browser/Stage claim changes.
+
 ## 2026-09-28 · KFB Town · Resident Gift Culture / barter / Kayfabe escalation / reconciliation
 
 ### DESIGN
