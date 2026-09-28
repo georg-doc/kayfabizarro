@@ -1,0 +1,145 @@
+{
+  "schema": "kfb.town-resident-social-memory-source/0.1",
+  "status": "DESIGN_REFERENCE_CANDIDATE_NOT_RUNTIME",
+  "date": "2026-09-28",
+  "owner": "Georg / KFB Town design reference",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
+  "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
+  "outcome": "AI Town donor synthesis for resident Lean Memory + ChatterBox/Triplet + Fluff-o-lect + Reaction Choreography",
+  "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
+  "stageStatus": "NOT_DEPLOYED",
+  "sources": [
+    {
+      "id": "ai-town-main",
+      "repository": "georg-doc/ai-town",
+      "ref": "main",
+      "head": "2693ed6973e3461204385c9d11fb3aca4e8e3a7a",
+      "role": "donor only"
+    },
+    {
+      "id": "ai-town-architecture",
+      "repository": "georg-doc/ai-town",
+      "path": "ARCHITECTURE.md",
+      "blobSha": "4c39ed9e7fef79d3c2435d94f804a0bf09b690ef",
+      "facts": [
+        "separate game/agent/UI layers",
+        "small game state",
+        "async agent operations"
+      ]
+    },
+    {
+      "id": "ai-town-memory",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/agent/memory.ts",
+      "blobSha": "25994567b544c0a3e957f6ec6dd73979e7d38d69",
+      "facts": [
+        "conversation summary memory",
+        "top-k vector retrieval",
+        "relevance+recency+importance",
+        "reflection"
+      ]
+    },
+    {
+      "id": "ai-town-memory-schema",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/agent/schema.ts",
+      "blobSha": "480467b6d625acde7b56011e32893fc1645d8a50",
+      "facts": [
+        "relationship/conversation/reflection memory types",
+        "per-player memory index",
+        "vector index"
+      ]
+    },
+    {
+      "id": "ai-town-agent-loop",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/aiTown/agent.ts",
+      "blobSha": "ae49157d5b363e6f51dcf884aa01a499037022fd",
+      "facts": [
+        "conversation cooldowns",
+        "one in-progress operation",
+        "autonomous candidate selection"
+      ]
+    },
+    {
+      "id": "ai-town-agent-ops",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/aiTown/agentOperations.ts",
+      "blobSha": "a8eb89dc4aecfc6b4b05534d6764dad062289e96",
+      "facts": [
+        "async cognition outside game state",
+        "activities/wander/conversation actions"
+      ]
+    },
+    {
+      "id": "kfb-town-living",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "blobSha": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+      "facts": [
+        "Lean Memory",
+        "knowledge provenance",
+        "Triplet/Fluff-o-lect direction",
+        "signature decks"
+      ]
+    },
+    {
+      "id": "kfb-chatterbox-tourbus",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "blobSha": "9025a43f042cf055d19851c9a93a6ddd016e3c36",
+      "facts": [
+        "ChatterBox reuse",
+        "semantic Triplet",
+        "SHOW IT/SPIN IT/SELL IT",
+        "bubble budget"
+      ]
+    },
+    {
+      "id": "kfb-fluff-o-lect",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "skills/chat/town/references/KFB_META_NARRATION_SAMMLUNG_WS0_2026-09-14.md",
+      "blobSha": "9ca3ed0a9987fbb11d0721f5689d6040943403d5",
+      "facts": [
+        "carrying word replaced by Fluff",
+        "meaning from context"
+      ]
+    },
+    {
+      "id": "kfb-brick-fish",
+      "repository": "georg-doc/kayfabizarro",
+      "pullRequest": 254,
+      "branch": "chatgpt-web/kfb-town-prop-throw-pattern-2026-09-27",
+      "head": "79d7c18a8f07b99efe8276211a9cda527ac2f2ea",
+      "status": "OPEN_DRAFT_CANDIDATE",
+      "facts": [
+        "social prop toss",
+        "Brick Fish/Red Herring",
+        "one-retaliation bounded loop"
+      ]
+    },
+    {
+      "id": "kfb-reaction-choreography",
+      "repository": "georg-doc/kayfabizarro",
+      "pullRequest": 256,
+      "branch": "chatgpt-web/toolbox-clay-emanata-v1-2026-09-27",
+      "head": "051b376d717ce54fc7d563b5ce95c3317523d96d",
+      "status": "OPEN_DRAFT_CANDIDATE",
+      "facts": [
+        "semantic reaction events",
+        "clip→body→face→ears→Emanata→recovery",
+        "Brick Fish social.prop_hit context variants"
+      ]
+    }
+  ],
+  "nonGoals": [
+    "port AI Town runtime",
+    "create second NPC database",
+    "create second dialogue engine",
+    "create relationship score meter",
+    "let LLM write movement/reward/combat truth",
+    "deploy Stage before integrated runtime exists"
+  ],
+  "nextGate": "RESIDENT-SOCIAL-MEMORY-01 in the real receiving world after current relevant recovery blockers clear"
+}
