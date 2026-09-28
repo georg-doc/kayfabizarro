@@ -57,6 +57,10 @@ const ui=mountWorldMobilityUi({app,clay,mobility});
 window.__worldDriveM2A={app,clay,mobility,quality,ui,city,report:()=>({schema:'kfb.clay-city-mvp-01-stage/1',bootMs:Math.round(window.__ccBootMs||0),mobility:mobility.report(),clay:clay.report(),quality:quality.report(),city:city.report()})};
 window.__ccBootMs=performance.now()-bootStartedAt;
 document.body.dataset.m1Ready='true';document.body.dataset.ccReady='true';
+if(new URLSearchParams(location.search).get('probe')==='1'){
+  const {runProbe}=await import('./playtest-probe.mjs?cc=1');
+  setTimeout(()=>runProbe({app,mobility,city}),2500);
+}
 if(new URLSearchParams(location.search).get('measure')==='1'){
   const {mountPerfProbe}=await import(H+'perf-probe.mjs?r4=adaptive-quality');
   mountPerfProbe({app,mobility,quality,bootStartedAt});

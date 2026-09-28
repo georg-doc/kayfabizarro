@@ -75,7 +75,7 @@ function crossroads(lines, rect) {
   let best = null;
   for (const e of deg.values()) {
     if (e.cls.size < 2) continue;
-    const d = Math.hypot(e.p.x - cx, e.p.z - cz); if (d > 75) continue;
+    const d = Math.hypot(e.p.x - cx, e.p.z - cz); if (d > 55) continue;
     const score = e.cls.size * 25 - d; if (!best || score > best.score) best = { ...e.p, degree: e.cls.size, score };
   }
   return best || { x: cx, z: cz, degree: 0, score: 0 };
@@ -128,9 +128,10 @@ export function planDistrict({ zone, rect, road, heightAt, reserved = [], rule =
   };
   let landmark = null;
   const byPocket = lines.slice().sort((a, b) => Math.min(...a.pts.map((p) => Math.hypot(p.x - pocket.x, p.z - pocket.z))) - Math.min(...b.pts.map((p) => Math.hypot(p.x - pocket.x, p.z - pocket.z))));
-  for (const l of byPocket) {
+  for (const [lo, hi] of [[10, 34], [8, 60]]) for (const l of byPocket) {
+    if (landmark) break;
     tryLine(l, 0, (p, n) => {
-      if (Math.hypot(p.x - pocket.x, p.z - pocket.z) > 30 || Math.hypot(p.x - pocket.x, p.z - pocket.z) < 12) return 2;
+      if (Math.hypot(p.x - pocket.x, p.z - pocket.z) > hi || Math.hypot(p.x - pocket.x, p.z - pocket.z) < lo) return 2;
       for (const side of [1, -1]) {
         const r = recipeAt(p, n, side, l.hw, 'kk-F', 'landmark');
         r.deform.sy = 1.05; r.h = ARCHETYPES['kk-F'].size.y * ARCHETYPES['kk-F'].scale * 1.05;
