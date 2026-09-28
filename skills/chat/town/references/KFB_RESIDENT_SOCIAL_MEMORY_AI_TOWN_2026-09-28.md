@@ -88,7 +88,7 @@ Current Town spelling is explicitly preserved as **Fluffolekt / Fluff-o-lect**.
 
 Source:
 - `skills/chat/town/references/KFB_META_NARRATION_SAMMLUNG_WS0_2026-09-14.md`
-- inspected blob: `9ca3ed0a9987fbb11d0721f56d1ec4a83757146`
+- inspected blob: `9ca3ed0a9987fbb11d0721f5689d6040943403d5`
 
 Core rule:
 - the carrying word may be replaced by **Fluff**;
