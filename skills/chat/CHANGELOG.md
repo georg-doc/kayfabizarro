@@ -12,6 +12,7 @@
 - Player starts with Common Bounce. Signature Moves progress `UNKNOWN → DISCOVERED → LEARNED/PERFORMABLE`.
 - Durable learned-move ownership stays with **Player Journey / Meta**; teacher/event/method provenance is retained and learned moves do not consume Backpack slots.
 - Learned move identity is semantic across avatar families; incompatible rigs use owner-specific adapters or remain temporarily unperformable without losing the unlock.
+- Learned Signature Moves are reusable social tokens: playing one near its origin Resident may trigger recognize/join/correct/challenge/parody reactions through existing Reaction/Lean-Memory layers; no omniscient recognition.
 - Animation Studio / Motion Library remains the authoring/mapping owner; no second Dance Studio/runtime is introduced.
 
 ### SOURCES / EVIDENCE
