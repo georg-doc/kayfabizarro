@@ -419,3 +419,55 @@ Officer Doppel-Denk first candidate:
 Evidence: **25/25 source reads · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture · 6/6 Gift KISS · 12/12 Signature Deck PASS**. Runtime/browser/Stage remain 0.
 
 Single integrated next gate remains **RESIDENT-SOCIAL-MEMORY-01**. Its content preparation now includes a small first Resident→Deck mapping pass before the real Card-POI/ChatterBox proof; no new parallel Deck runtime or proxy Stage.
+
+
+## Additive recovery checkpoint · Social Card Relay · 2026-09-29
+
+Latest verified design head before this Recovery write:
+`614aeff4f32af6c0dbecc3ef85e4c9ebd2c248cc`.
+
+New durable design:
+`RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
+
+New Site-process handoff:
+`SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json`.
+
+Recovered preferred loop:
+```text
+Resident A introduces Card
+→ player discovers it
+→ A asks player to show/pitch it to B
+→ travel through living world
+→ SHOW IT
+→ SPIN IT
+→ SELL IT
+→ B reacts via identity + Deck stance + Lean Memory
+→ ChatterBox / Reaction Choreography / optional counter-Card
+→ compact semantic receipt
+→ Residents resume
+```
+
+Source grammar stays separate:
+- Freestyle entry: `NAME IT → CLAIM IT → POWER IT`;
+- Town presentation: `SHOW IT → SPIN IT → SELL IT`;
+- King synthesis: `Actor + 3 Scene + Quest`.
+
+Priority:
+- Resident interaction is the core game;
+- Signature Decks supply worldview/Card pool/stance;
+- lost-Deck search is optional, not universal;
+- Free Roam/Race are connective travel;
+- Combat/Card Zones are exceptional acquisition/proof;
+- Almanac remains Card collection truth;
+- King Kayfabulation is later synthesis/closure.
+
+KISS relay state stores only Card ref, participants, presentation choices, outcome and one meaningful beat ref. No second Card inventory, Quest DB, Card corpus or minigame owner.
+
+Site backend write is **not claimed**. The exact existing Site target and intended payload are frozen in the Site-process checkpoint with status `PENDING_TOOL_GAP`.
+
+Evidence:
+**27/27 source reads · 20/20 general design invariants · 6/6 Officer · 12/12 Dance · 15/15 Gift · 6/6 Gift KISS · 12/12 Signature Deck · 15/15 Social Card Relay PASS**.
+
+Runtime/browser/Stage/Site-backend implementation remain 0.
+
+Single next gate remains **RESIDENT-SOCIAL-MEMORY-01**. First Card proof: one real Resident→Player→Resident relay before any default Card-search grind.
