@@ -28,9 +28,10 @@ No second runtime, NPC database, dialogue engine, movement owner, reward owner o
 4. `skills/chat/town/START_HERE.md`
 5. `skills/chat/town/SESSION_CARD.md`
 6. `skills/chat/town/references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`
-7. `SOURCE.json`
-8. `TEST_REPORT.md`
-9. `RETURN.md`
+7. `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md` — first resident-specific attention/reaction overlay
+8. `SOURCE.json`
+9. `TEST_REPORT.md`
+10. `RETURN.md`
 
 For implementation later, also read the **current heads**, not stale copies, of:
 - Brick Fish / Prop Toss candidate;
@@ -105,7 +106,7 @@ Machine-readable contract:
 `resident-aida-poi.v0.1.json`
 
 Current evidence:
-- **13/13** source reads PASS;
+- **15/15** source reads PASS;
 - **1/1** SOURCE manifest parse PASS;
 - **1/1** AIDA/POI contract parse PASS;
 - **20/20** design invariants PASS;
@@ -114,3 +115,22 @@ Current evidence:
 Fresh-chat shorthand:
 
 > **KFB WEB PUSH/READ — Town Resident Social Memory — recover + continue**
+
+
+## 2026-09-28 · First resident-specific overlay · Officer Doppel-Denk
+
+Technical source remains `toy-soldier`; **Officer Doppel-Denk** is the working character name, not a replacement asset ID.
+
+The first character overlay proves the intended uniqueness layer:
+- gift reveal as one-time world entrance state;
+- patrol/march as resumable routine;
+- resident-specific Attention Bias toward perceived disorder, obstruction, litter, noise, unsafe horseplay, unattended objects and authority opportunities;
+- Brick Fish, Tiny Treats pizza slice and plant/path obstruction as different POI interpretations of the same general AIDA contract;
+- tragicomic authority dynamic: loyal to King K. Fabian, seeks recognition, commonly not taken seriously by other Residents;
+- ChatterBox/Triplets remain language owner; Reaction Choreography remains physical response owner; Lean Memory stores only socially meaningful outcomes;
+- `Running_HoldingRifle` plus `Walking_A/B` are source-backed audition candidates; no shoulder-rifle march is accepted until visually proven.
+
+Source-backed profile:
+`OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
+
+Additional profile evidence: **6/6 PASS**. No runtime/browser/Stage claim.
