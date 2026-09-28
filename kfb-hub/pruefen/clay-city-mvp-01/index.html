@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+<base href="https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@d79d311066e52893f8a33700c4d5eb4b26e5ca26/kfb-hub/stage/world/clay-city-mvp-01/">
+<!-- REVIEW WRAPPER · CLAY-CITY-MVP-01 · unchanged stage index from coworker/clay-city-mvp-01-2026-09-28 @d79d311066e52893f8a33700c4d5eb4b26e5ca26; modules load from jsDelivr at that exact commit. Not the fixed public Stage. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#b9d7e4">
+<link rel="icon" href="data:,">
+<title>KFB World · Clay City MVP-01</title>
+<meta name="kfb-source-repo" content="georg-doc/kayfabizarro">
+<meta name="kfb-source-pr" content="282,283">
+<meta name="kfb-stage-id" content="CLAY-CITY-MVP-01">
+<!-- Host = World M2A R6 (unchanged, ../world-drive-interact-m2a/). This page only adds ./clay-city.mjs on top. -->
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#b9d7e4}
+body[data-m1-ready="true"] #top,body[data-m1-ready="true"] #dock,body[data-m1-ready="true"] #facts,body[data-m1-ready="true"] #drawer,body[data-m1-ready="true"] #wiHud{display:none!important}
+#m1-ui{position:fixed;inset:0;z-index:80;pointer-events:none;color:#251d21;font:600 13px/1.25 system-ui,-apple-system,sans-serif}
+#m1-ui *{box-sizing:border-box}
+#m1-bar{position:absolute;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));display:flex;justify-content:space-between;gap:8px;align-items:flex-start;pointer-events:auto}
+.m1-cluster{display:flex;gap:6px;padding:5px;border-radius:16px;background:#fff8ebdf;border:1px solid #71563e55;box-shadow:0 5px 24px #4e385033;backdrop-filter:blur(10px);pointer-events:auto}
+#m1-ui button{border:0;border-radius:11px;background:transparent;color:#443237;padding:8px 11px;font:700 12px/1 system-ui;cursor:pointer}
+#m1-ui button[aria-pressed="true"]{background:#d05d49;color:#fff8e9;box-shadow:inset 0 -2px 0 #873d35}
+#m1-ui button:hover{background:#efddc9}
+#m1-ui button[aria-pressed="true"]:hover{background:#c65343}
+#m1-info{font-size:17px!important;width:36px;padding:8px 0!important}
+#m1-help{position:absolute;right:max(12px,env(safe-area-inset-right));top:66px;width:min(360px,calc(100vw - 24px));max-height:calc(100vh - 90px);overflow:auto;padding:16px 18px;border-radius:18px;background:#fffaf0f2;border:1px solid #71563e55;box-shadow:0 12px 44px #39263055;pointer-events:auto}
+#m1-help[hidden]{display:none}
+#m1-help h1{font-size:16px;margin:0 0 8px}
+#m1-help h2{font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin:16px 0 5px;color:#8c4c3f}
+#m1-help p{font-weight:500;line-height:1.45;margin:5px 0}
+#m1-help code{font:11px ui-monospace,monospace;background:#eadcc8;padding:2px 4px;border-radius:4px}
+#m1-hint{position:absolute;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);max-width:calc(100vw - 24px);padding:8px 13px;border-radius:13px;background:#2c2430d9;color:#fff4df;font:600 11px/1.35 system-ui;text-align:center;box-shadow:0 5px 22px #261b2a44;pointer-events:none;white-space:nowrap}
+#cc-boot{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:90;padding:14px 18px;border-radius:16px;background:#fff8ebee;border:1px solid #71563e55;font:700 13px system-ui;color:#443237}
+body[data-cc-ready="true"] #cc-boot{display:none}
+@media(max-width:620px){#m1-bar{top:max(7px,env(safe-area-inset-top));left:7px;right:7px}.m1-cluster{gap:2px;padding:3px;border-radius:13px}#m1-ui button{padding:7px 8px;font-size:11px}#m1-hint{white-space:normal;width:calc(100vw - 20px);bottom:10px}#m1-help{right:7px;top:55px;width:calc(100vw - 14px)}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/","@dimforge/rapier3d-compat/rapier.es.js":"https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.17.3/rapier.es.js"}}
+</script>
+<script>window.__wb2dProps=Object.assign(window.__wb2dProps||{},{world:'huerth',legend:false,selectionRing:false,playabilityProfile:'R6',maxPixelRatio:.95,walkCadence:2.15,paceUpAfter:.32,walkAccel:8,walkDecel:10});</script>
+</head>
+<body data-kfb-stage="CLAY-CITY-MVP-01" data-kfb-source-head="CLAY_CITY_WORK_CANDIDATE">
+<div id="cc-boot">Knetstadt wird gebaut …</div>
+<script type="module">
+const bootStartedAt=performance.now();
+const H='../world-drive-interact-m2a/';
+await import(H+'runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability-r6');
+const app=window.__wb2d;
+const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4},{mountClayCity},{mountSkyCore,mountSkyButton}]=await Promise.all([
+  import(H+'clay-world-m1.mjs?r4=distance-budget'),import(H+'world-mobility-m1.mjs?r6=focus-sync'),import(H+'world-mobility-ui.mjs?r6=direct-modes'),import(H+'adaptive-quality-r4.mjs?r6=readability-floor'),import('./clay-city.mjs?cc=1'),import('./sky-core.mjs?cc=1')
+]);
+const Q=new URLSearchParams(location.search);
+const clay=await mountClayWorld(app);
+app.setPlay(true);
+const mobility=await mountWorldMobility(app);
+const city=await mountClayCity({app,mobility});
+const sky=mountSkyCore({scene:app.scene,camera:app.camera,world:app.world});
+await sky.set(Q.get('sky')==='basic'?'BASIC':'TINY_SKIES',Q.get('skyv')||'day');
+mountSkyButton(sky);
+const quality=mountAdaptiveQualityR4({app,mobility});
+const ui=mountWorldMobilityUi({app,clay,mobility});
+window.__worldDriveM2A={app,clay,mobility,quality,ui,city,sky,report:()=>({schema:'kfb.clay-city-mvp-01-stage/1',bootMs:Math.round(window.__ccBootMs||0),mobility:mobility.report(),clay:clay.report(),quality:quality.report(),city:city.report(),sky:sky.report()})};
+window.__ccBootMs=performance.now()-bootStartedAt;
+document.body.dataset.m1Ready='true';document.body.dataset.ccReady='true';
+if(Q.get('probe')==='1'){
+  const {runProbe}=await import('./playtest-probe.mjs?cc=1');
+  setTimeout(()=>runProbe({app,mobility,city}),2500);
+}
+if(new URLSearchParams(location.search).get('measure')==='1'){
+  const {mountPerfProbe}=await import(H+'perf-probe.mjs?r4=adaptive-quality');
+  mountPerfProbe({app,mobility,quality,bootStartedAt});
+}
+</script>
+</body>
+</html>
