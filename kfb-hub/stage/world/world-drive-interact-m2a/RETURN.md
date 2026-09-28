@@ -170,3 +170,18 @@ Status: `HUMAN_PLAYTEST_FAIL_ACKNOWLEDGED · FOCUS_FIX_PASS · PERFORMANCE_PASS 
 ## Genau ein nächster Gate
 
 Keine erneute Public-Promotion von R6. Als nächster begrenzter World-Schritt wird die gerasterte Straßen-/Bordsteindarstellung durch eine terrain-konforme, geometrische Knetstraßen-Seam ersetzt oder der akzeptierte Track-/Knetstraßen-Owner dort angeschlossen. Erst danach folgt ein neuer menschlicher Spieltest von Ground/Auto/Flug.
+
+## Architekturentscheidung · OSM-Skelett statt OSM-Gebäudewelt
+
+Der Team-Review bestätigt Georgs vorgeschlagene MVP-Richtung:
+
+- OSM bleibt für Straßengraph, Klassen/Breiten, Landmark-Anker und nötige Weltgrenzen erhalten;
+- sichtbare OSM-Gebäude, Fernblöcke, Rasterstraße und OSM-Gebäudekollision sind nicht mehr die Zielarchitektur;
+- die sichtbare Stadt entsteht aus isoliert bewiesenen, instanzierten KayKit-, Kenney- und Tiny-Treats-Donors im KFB-Knetlook;
+- Render- und Kollisionsdaten müssen aus demselben deterministischen Gebäude-Rezept entstehen;
+- Offroad-Kontakt bleibt die durchgehende World-/WB2-Terrainfläche;
+- `SKY-CORE-01` wird danach als ein gemeinsamer, gemessener Environment-Sky für World und Resident angeschlossen.
+
+Der vollständige produktive Brief liegt unter `skills/chat/workflows/KFB_WORLD_CLAY_CITY_SKY_CORE_2026-09-28/START_HERE.md`.
+
+Der eine nächste Gate bleibt klein und spielrelevant: echte Gebäudedonors isolieren und eine 184-m-Spielkachel mit terrain-konformer geometrischer Knetstraße herstellen. Keine ganze Stadt, kein neuer World-Owner und keine Public-Promotion vor lokalem Spieltest.

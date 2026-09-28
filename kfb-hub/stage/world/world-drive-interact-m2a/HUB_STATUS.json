@@ -24,5 +24,7 @@
     "boulder/prop shadow and bright-edge artifact",
     "SKY-CORE-01: shared TinySkies/Travel/Rollercoaster sky owner and real-cost performance profile"
   ],
-  "next": "Connect a terrain-conforming geometric clay-road/curb seam, then repeat one human Ground/Drive/Flight playtest."
+  "architectureDecision": "OSM supplies the road graph and landmark anchors; verified KayKit/Kenney/Tiny Treats donors supply the visible instanced Clay city. OSM building render and collision are not the target runtime truth.",
+  "brief": "skills/chat/workflows/KFB_WORLD_CLAY_CITY_SKY_CORE_2026-09-28/START_HERE.md",
+  "next": "CLAY-CITY-A1 Gate 0+1: isolate real building donors and build one 184 m terrain-conforming geometric Clay-road tile before any whole-city population or public promotion."
 }

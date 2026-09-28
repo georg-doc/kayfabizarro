@@ -45,6 +45,16 @@ Personal payment, birthday and individual administrative items are not published
 
 # KFB Chat Production Router · additive changelog
 
+## 2026-09-28 · World MVP pivot · OSM road skeleton + Kit city + shared Sky
+
+Georg rejected the current public World M2A presentation/playability as an MVP baseline. R6 repairs the stale Ground/Drive/Flight LOD focus, adds a direct Auto playtest switch and restores a readable adaptive-resolution floor, but remains local and does not solve the canvas-raster road/curb seam.
+
+The preferred next architecture is now explicit: OSM supplies road graph, landmark anchors and only necessary world boundaries; verified KayKit/Kenney/Tiny Treats donors supply the visible instanced Clay city. Render and collision must derive from one deterministic recipe. The first productive gate is one 184 m terrain-conforming geometric Clay-road tile, followed by a bounded Kit district—not a full OSM/whole-city rebuild.
+
+`SKY-CORE-01` is recorded as one shared presentation owner for World and Resident, reusing Travel/TinySkies, WorldDesign Lab and Cologne Option C donors. Basic, TinySkies and full KFB-Universe modes must be measured on the representative gameplay scene before public promotion.
+
+Preferred executor is GPT-6 Sol High; GPT-6 Astra High is reserved for a bounded architecture/red-team pass if the cross-owner seam remains genuinely difficult. Claude Design may review the frozen visual package but does not own runtime/GitHub integration.
+
 ## 2026-09-19 · World/Race P0 + Tiny Treats discovery + Babel Generator
 
 ### DECISION

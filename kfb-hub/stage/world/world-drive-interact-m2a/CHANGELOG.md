@@ -28,3 +28,10 @@
 - Eigenen Browserbeweis für Gehen, Sprint, Erstkontakt und Offroad-Fahrt ergänzt.
 - 30-fps-Prüfer gegen die dokumentierte 0,1-ms-Timerauflösung robust gemacht.
 - Paket 27/27, Browser 38/38 und Playability-Proof lokal bestanden; keine Stage-Promotion.
+# 2026-09-28 · Architecture decision after R6
+
+- Keep OSM as the road/landmark skeleton, not the visible building runtime.
+- Next productive gate remains the terrain-conforming geometric Clay-road/curb seam on one bounded tile.
+- Follow with a deterministic instanced district from verified KayKit/Kenney/Tiny Treats donors; render and collision share one recipe.
+- Record `SKY-CORE-01` as the shared measured environment-sky owner for World and Resident after the road tile is stable.
+- Full brief: `skills/chat/workflows/KFB_WORLD_CLAY_CITY_SKY_CORE_2026-09-28/START_HERE.md`.
