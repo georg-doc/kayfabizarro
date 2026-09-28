@@ -71,3 +71,16 @@ That persisted batch is **TECHNICALLY_GREEN_BUT_NOT_REVIEW_READY** and is not th
 - correct workflow provenance so `sourceHead` records the actual GitHub SHA.
 
 No scope expansion: caps, rights recheck, byte limits, single Asset Librarian owner and no-publication boundary remain unchanged.
+
+## Repair pass 2 · semantic relevance gate
+
+Repair 1 produced a technically valid but still semantically noisy batch: provider search results could match broad/full-text metadata while the displayed object itself did not justify the discovery tag.
+
+This is the **second and final repair pass for the C1 quality gate**:
+- query-specific relevance groups are checked against provider metadata;
+- Met relevance can use title, artist, object type, medium and classification;
+- AIC relevance can use title, artist, medium and artwork type;
+- Commons relevance can use title/description/artist;
+- Internet Archive is split by category media type (`movies` vs `audio`) and uses tighter AND search terms plus subject/description relevance.
+
+If this pass still produces materially misleading source/category matches, C1 must stop with a failure-recovery export rather than receive a third repair.

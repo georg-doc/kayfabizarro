@@ -98,6 +98,44 @@ def safe_piece(value: str) -> str:
     return (out or "asset")[:72]
 
 
+def normalized_text(*values) -> str:
+    return re.sub(r"\s+", " ", " ".join(strip_html(str(v)) for v in values if v not in (None, ""))).lower()
+
+
+RELEVANCE_GROUPS = {
+    "alchemy engraving": (("alchem", "laboratory", "philosopher"),),
+    "alchemical symbols": (("alchem",), ("symbol", "emblem", "tree of life")),
+    "Vesalius anatomy": (("vesali", "corporis"),),
+    "anatomical engraving": (("anatom", "skeleton", "muscle", "human body"),),
+    "scientific diagram 18th century": (("diagram", "scientific", "astronom", "geometry", "instrument", "chem", "botan", "anatom"),),
+    "astronomy engraving": (("astronom", "celestial", "constellation", "planet", "star"),),
+    "celestial map": (("celestial", "constellation", "star chart", "astronom"), ("map", "chart", "atlas")),
+    "antique world map": (("map", "atlas", "globe"), ("world", "hemisphere", "terrestrial")),
+    "Hiroshige": (("hiroshige",),),
+    "Hokusai": (("hokusai",),),
+    "Goya etching": (("goya",), ("etch", "aquatint")),
+    "Japanese woodblock print": (("japan", "ukiyo"), ("woodblock", "woodcut", "print")),
+    "daguerreotype portrait": (("daguerre",),),
+    "19th century photograph city": (("photograph", "photo", "albumen", "salted paper"), ("city", "street", "urban", "view", "architecture")),
+    "silent film 1920": (("silent",), ("1920",)),
+    "Melies": (("meliès", "melies"),),
+    "silent comedy 1917": (("silent",), ("comedy",), ("1917",)),
+    "Prelinger industrial film": (("prelinger",), ("industrial",)),
+    "educational film 1950": (("educational",), ("1950",)),
+    "newsreel 1944": (("newsreel",), ("1944",)),
+    "public domain music 1920": (("music", "recording", "78rpm", "jazz"), ("1920",)),
+    "old time radio": (("old time radio", "otr", "radio"),),
+}
+
+
+def relevant_candidate(query: str, found: dict) -> bool:
+    groups = RELEVANCE_GROUPS.get(query)
+    if not groups:
+        return True
+    text = str(found.get("candidateText") or found.get("candidateTitle") or "").lower()
+    return all(any(term in text for term in group) for group in groups)
+
+
 def search_met(query: str, limit: int):
     url = (
         "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q="
@@ -116,6 +154,14 @@ def search_met(query: str, limit: int):
                 "sourceId": obj.get("objectID") or object_id,
                 "sourcePage": obj.get("objectURL") or f"https://www.metmuseum.org/art/collection/search/{object_id}",
                 "candidateTitle": obj.get("title"),
+                "candidateText": normalized_text(
+                    obj.get("title"),
+                    obj.get("artistDisplayName"),
+                    obj.get("objectName"),
+                    obj.get("medium"),
+                    obj.get("classification"),
+                    obj.get("objectDate"),
+                ),
                 "candidateTier": "free",
             }
         time.sleep(0.03)
@@ -125,7 +171,7 @@ def search_aic(query: str, limit: int):
     params = {
         "q": query,
         "query[term][is_public_domain]": "true",
-        "fields": "id,title,artist_title,date_display,image_id,is_public_domain",
+        "fields": "id,title,artist_title,artist_display,date_display,image_id,is_public_domain,medium_display,artwork_type_title",
         "limit": str(max(limit * 4, 24)),
     }
     url = "https://api.artic.edu/api/v1/artworks/search?" + urllib.parse.urlencode(params)
@@ -137,6 +183,14 @@ def search_aic(query: str, limit: int):
                 "sourceId": aid,
                 "sourcePage": f"https://www.artic.edu/artworks/{aid}",
                 "candidateTitle": art.get("title"),
+                "candidateText": normalized_text(
+                    art.get("title"),
+                    art.get("artist_title"),
+                    art.get("artist_display"),
+                    art.get("date_display"),
+                    art.get("medium_display"),
+                    art.get("artwork_type_title"),
+                ),
                 "candidateTier": "free",
             }
 
@@ -167,21 +221,42 @@ def search_commons(query: str, limit: int):
         title = page.get("title")
         if not tier or not title or not info.get("url"):
             continue
+        candidate_title = strip_html((meta.get("ObjectName") or {}).get("value")) or title
         yield {
             "sourceId": title,
             "pageId": page.get("pageid"),
             "sourcePage": info.get("descriptionurl") or (
                 "https://commons.wikimedia.org/wiki/" + urllib.parse.quote(title.replace(" ", "_"))
             ),
-            "candidateTitle": strip_html((meta.get("ObjectName") or {}).get("value")) or title,
+            "candidateTitle": candidate_title,
+            "candidateText": normalized_text(
+                candidate_title,
+                title,
+                (meta.get("ImageDescription") or {}).get("value"),
+                (meta.get("Artist") or {}).get("value"),
+                (meta.get("DateTimeOriginal") or {}).get("value"),
+            ),
             "candidateTier": tier,
         }
 
 
-def search_ia(query: str, limit: int):
+def search_ia(query: str, limit: int, category: str):
     license_clause = " OR ".join(f'licenseurl:"{value}"' for value in IA_LICENSE_TERMS)
+    media = "audio" if category == "audio" else "movies"
+    token_map = {
+        "silent film 1920": ("silent", "1920"),
+        "Melies": ("Melies",),
+        "silent comedy 1917": ("silent", "comedy", "1917"),
+        "Prelinger industrial film": ("Prelinger", "industrial"),
+        "educational film 1950": ("educational", "1950"),
+        "newsreel 1944": ("newsreel", "1944"),
+        "public domain music 1920": ("music", "1920"),
+        "old time radio": ("old time radio",),
+    }
+    tokens = token_map.get(query) or tuple(re.findall(r"[A-Za-z0-9]+", query))
+    content_clause = " AND ".join(f'"{token}"' for token in tokens)
     q = (
-        f"({query}) AND mediatype:(movies OR image OR audio OR texts) "
+        f"({content_clause}) AND mediatype:{media} "
         f"AND ({license_clause}) AND NOT collection:youtube*"
     )
     params = [
@@ -190,10 +265,13 @@ def search_ia(query: str, limit: int):
         ("fl[]", "title"),
         ("fl[]", "creator"),
         ("fl[]", "date"),
+        ("fl[]", "year"),
+        ("fl[]", "subject"),
+        ("fl[]", "description"),
         ("fl[]", "licenseurl"),
         ("fl[]", "mediatype"),
         ("sort[]", "downloads desc"),
-        ("rows", str(max(limit * 6, 36))),
+        ("rows", str(max(limit * 8, 48))),
         ("output", "json"),
     ]
     url = "https://archive.org/advancedsearch.php?" + urllib.parse.urlencode(params)
@@ -206,12 +284,26 @@ def search_ia(query: str, limit: int):
         title = row.get("title")
         if isinstance(title, list):
             title = title[0] if title else None
-        yield {
+        creator = row.get("creator")
+        subject = row.get("subject")
+        description = row.get("description")
+        found = {
             "sourceId": identifier,
             "sourcePage": f"https://archive.org/details/{identifier}",
             "candidateTitle": title or identifier,
+            "candidateText": normalized_text(
+                title,
+                creator,
+                row.get("date"),
+                row.get("year"),
+                subject,
+                description,
+                row.get("mediatype"),
+            ),
             "candidateTier": tier,
         }
+        if relevant_candidate(query, found):
+            yield found
 
 
 SEARCHERS = {
@@ -298,10 +390,14 @@ def main() -> int:
             try:
                 # At most one accepted discovery per search phrase. This preserves thematic
                 # diversity and prevents the first broad query from filling the whole cap.
-                candidates = searcher(query, max(3, needed))
+                candidates = (
+                    search_ia(query, max(3, needed), category)
+                    if provider == "ia"
+                    else searcher(query, max(3, needed))
+                )
                 for found in candidates:
                     key = (provider, str(found["sourceId"]))
-                    if key in seen:
+                    if key in seen or not relevant_candidate(query, found):
                         continue
                     seen.add(key)
                     output.append(make_manifest_item(provider, found, category, query))
