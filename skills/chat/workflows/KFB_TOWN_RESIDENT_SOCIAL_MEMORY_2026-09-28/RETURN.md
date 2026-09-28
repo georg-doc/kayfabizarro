@@ -263,10 +263,10 @@ Source-backed foundation:
 - existing Toy Soldier reveal remains the presentation/timing donor for anticipation → pop → overshoot → settle.
 
 Design rules:
-- **wrapper != payload**: a present visual never replaces the actual object identity;
+- **wrapper != payload** remains a presentation/content distinction, but MVP does not require durable item-instance identity;
 - giver intent and recipient interpretation are separate subjective layers;
-- real object ownership changes only through existing world/inventory owners;
-- Player Journey / Meta stores durable player-facing gift provenance;
+- ordinary Resident gifts are scene-local/ephemeral social props unless a later real inventory consumer explicitly owns a transfer;
+- Lean Memory / optional Player Journey or GPT-Site persistence stores only meaningful semantic receipts, not routine item provenance;
 - gifts can carry care, thanks, trade, reconciliation, teasing, satirical needling, prank, tribute or apology;
 - `ResidentSocialThread kind: gift` carries bounded continuity rather than a new relationship system;
 - prank/exploding presents default to non-Combat Kayfabe/cartoon violence; Combat owns real damage when explicitly invoked;
@@ -277,7 +277,7 @@ Design rules:
 Durable design:
 `RESIDENT_GIFT_CULTURE_2026-09-28.md`.
 
-Evidence: **23/23 source reads · 15/15 Gift Culture checks PASS**. No gift runtime/browser/Stage/Live claim.
+Evidence: **23/23 source reads · 15/15 Gift Culture checks · 6/6 Gift KISS correction checks PASS**. No gift runtime/browser/Stage/Live claim.
 
 
 ### KISS correction · Gift Culture · 2026-09-28
