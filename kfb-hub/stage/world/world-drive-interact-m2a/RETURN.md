@@ -139,3 +139,28 @@ Georgs freien Spieltest auf der festen M2A-Stage abwarten. Erst danach folgen ge
 - Öffentliche Performance: Idle/Walk/Drive **33,3/16,7/16,8 ms p95**, 30-fps-Ziel PASS; Qualitätswechsel `stable → moving → stable`.
 
 Status: `R5 PUBLIC PLAYABILITY PASS · HUMAN FREE-PLAY PENDING`.
+
+## RENDER-R0 · Shared diagnostic + preset adapter · 2026-09-28
+
+Der globale Render-Fix ist als gestapelter Kandidat umgesetzt, ohne World-, Movement-, Drive-, Physics- oder Collision-Owner zu ersetzen.
+
+- Gemeinsames Preset: `kfb-hub/shared/render/kfb-render-preset.v1.mjs`
+- World-Adapter: aktiver Gameplay-Schattenkorridor ±72–140 m statt camera-/weltgetrieben bis ±400 m.
+- Kontaktversatz: metrischer `normalBias` höchstens 0,028 m statt vorher im Extrem 0,469 m.
+- Stabilität: Fokus bleibt auf ganze Schatten-Texel eingerastet.
+- Knetdetail: getrennte Hero-/World-/Far-Tiers; weniger Grain/Crease während Bewegung, automatische Rückkehr im Stand; Mipmaps + maximal 4× Anisotropie.
+- Ferne Welt: Stadthüllen und Far Terrain bleiben echte World-Geometrie, aber ohne den vollen Relief-Shader.
+
+Lokale Evidence:
+
+- Paket: **32/32 PASS**
+- Browser Desktop + schmal: **48/48 PASS**
+- fokussierter Renderbeweis bei zwei Lichtwinkeln: **9/9 PASS**
+- Playability: **PASS** — Walk 1,41 m/s, Sprint 2,99 m/s, Offroad 12,83 m, 4/4 Kontakte
+- p95 Idle/Walk/Drive: **16,7 / 16,7 / 16,8 ms**
+- 0 Seiten-, Request- oder HTTP-Fehler
+
+Draft PR: <https://github.com/georg-doc/kayfabizarro/pull/273>
+Implementierungshead: `eb15def4a6d1bab33685d4116896a5cad9947c2c`
+
+Publication: **nicht erfolgt**. Die feste Cloudflare-Route bleibt auf dem öffentlich verifizierten R5-Stand. Genau ein nächster Gate: Georg prüft Kontaktkanten und Clay-Crawling visuell; erst dann folgt gegebenenfalls die Stage-Promotion.

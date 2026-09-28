@@ -19,3 +19,12 @@
 - Eigenen Browserbeweis für Gehen, Sprint, Erstkontakt und Offroad-Fahrt ergänzt.
 - 30-fps-Prüfer gegen die dokumentierte 0,1-ms-Timerauflösung robust gemacht.
 - Paket 27/27, Browser 38/38 und Playability-Proof lokal bestanden; keine Stage-Promotion.
+
+## 2026-09-28 · Render R0
+
+- Gemeinsames, wiederverwendbares KFB-Renderpreset für Kontaktschatten und Clay-Detail ergänzt.
+- World-Schattenprojektion auf den aktiven Gameplay-Korridor begrenzt und metrischen Normal-Offset hart gedeckelt.
+- Hero-, World-, Far- und Moving-Detailstufen für die bestehende H0-Knetoberfläche ergänzt.
+- Far Terrain wie entfernte Stadtgeometrie vom vollständigen Relief-Shader entlastet.
+- Desktop-/Narrow-Browserproof, fokussierten Lichtwinkelbeweis und bestehende Performance-/Playability-Regressionsläufe erweitert.
+- Kandidat bleibt auf Draft PR #273; keine feste Stage oder Live-Promotion vor menschlicher Sichtprüfung.
