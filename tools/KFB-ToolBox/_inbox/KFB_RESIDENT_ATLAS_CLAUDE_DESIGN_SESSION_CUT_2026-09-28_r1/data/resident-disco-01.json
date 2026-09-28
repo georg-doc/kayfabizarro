@@ -1,0 +1,753 @@
+{
+  "schema": "kfb.resident-disco-module/1",
+  "id": "resident-disco-01",
+  "title": "Resident Disco · Outdoor Street Party",
+  "status": "candidate-only · RES-DISCO-CD-01 · authoring/review artifact, not the production runtime",
+  "performanceOwner": "kfb.resident-performance.v1 (MUSIC-PERF-01). This file is a CONSUMER recipe candidate. Field names under `phrase` and `cues` are a proposal for the existing owner, not a fork of its schema.",
+  "baseplate": false,
+  "baseplateNote": "No floor, stage or plinth ships with this module, and the review host shows NONE by default (Georg 2026-09-25: residents and events are shown free, with a few signature props signalling the environment). The host plaza is an optional toggle.",
+  "clock": {
+    "songFrom": "./data/resident-band-module-01.json",
+    "key": "song",
+    "role": "ROTATION (S40e). Acht Titel, gemessen am echten Audio (data/disco-playlist-01.json). Rubbish Groove bleibt Beweis-Uhr und erster Titel.",
+    "rule": "beatPos = (songTime − phase) · bpm / 60 · one transport for the whole scene",
+    "playlist": "./data/disco-playlist-01.json"
+  },
+  "motionLibrary": {
+    "commit": "032c9d50cd5de6764fa37fec65cb203ed35fcb11",
+    "root": "media/3D_Assets/Animations/KFB_Motion_Library/",
+    "rigs": {
+      "Rig_Medium": "KFB_Motion_Library_Rig_Medium.glb",
+      "Rig_Large": "KFB_Motion_Library_Rig_Large.glb"
+    },
+    "catalog": "KFB_Motion_Library.catalog.json",
+    "note": "33 clips per rig, read-only. No new Mixamo intake in this pass."
+  },
+  "tempo": {
+    "default": "barlock",
+    "maxRateDelta": 0.06,
+    "policy": "barlock: a loop is played at rate r so that it spans a whole number of bars, but only if |r − 1| ≤ 0.06; otherwise native speed. The 6 % window is a SETTING of this candidate, not a measured acceptable window (AN-PROFILE-01: per-clip playback windows are unknown).",
+    "alternative": "native"
+  },
+  "cast": [
+    {
+      "id": "minion",
+      "slot": "D1",
+      "label": "Skeleton Minion",
+      "role": "comic hype figure next to the radio",
+      "lane": "Rig_Legacy",
+      "asset": {
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Legacy Character Pack - Skeletons 1.0/Models/characters/gltf/character_skeleton_minion.gltf",
+        "commit": "e0037d79af9f0546c73cee02e361f78f7d662df2",
+        "source": "Georg's pinned path and revision, used verbatim"
+      },
+      "legacy": {
+        "rig": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb",
+        "rigCommit": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+        "assemble": "lib/atlas.js legacyAssemble() — four rigid part groups onto Body/Head/armLeft/armRight, extras re-parented"
+      },
+      "motions": [
+        "bounce",
+        "legacy:*"
+      ],
+      "pairing": [
+        "bounce"
+      ],
+      "beatOffset": 0,
+      "ensemble": {
+        "p": [
+          -5.54,
+          0,
+          2.7
+        ],
+        "ry": 32
+      },
+      "roam": {
+        "min": [
+          0.2,
+          -0.6
+        ],
+        "max": [
+          2.5,
+          1
+        ],
+        "everyBeats": 4,
+        "jump": 0.45,
+        "turn": 0.6,
+        "note": "Georg 2026-09-25: nutzt den Platz zu seiner Linken (+x lokal) und springt umher wie der Legacy-Orc der Band — alle 4 Schläge ein Sprung, Landung auf der Eins. Zone ist eine Setzung."
+      }
+    },
+    {
+      "id": "avian",
+      "slot": "D2",
+      "label": "Avian Swordsman",
+      "role": "sharp, athletic dancer",
+      "lane": "Rig_Medium",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), browser-proven since S10"
+      },
+      "pairing": [
+        "kfb_dance_wave_hip_hop_a",
+        "kfb_dance_step_hip_hop_a",
+        "kfb_dance_locking_hip_hop_a"
+      ],
+      "ensemble": {
+        "p": [
+          -2.29,
+          0,
+          3.38
+        ],
+        "ry": 12
+      }
+    },
+    {
+      "id": "teen",
+      "slot": "D3",
+      "label": "Protagonist_A · teenager",
+      "role": "teenage party resident",
+      "lane": "Rig_Medium",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), browser-proven since S36"
+      },
+      "pairing": [
+        "kfb_dance_house_b",
+        "kfb_dance_slide_hip_hop_a"
+      ],
+      "ensemble": {
+        "p": [
+          0.14,
+          0,
+          4.32
+        ],
+        "ry": 0
+      }
+    },
+    {
+      "id": "soldier",
+      "slot": "D4",
+      "label": "Toy Soldier",
+      "role": "stiff comic contrast",
+      "lane": "Rig_Medium",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), browser-proven since S6"
+      },
+      "pairing": [
+        "kfb_dance_chicken_a",
+        "kfb_dance_house_a"
+      ],
+      "ensemble": {
+        "p": [
+          4.19,
+          0,
+          3.24
+        ],
+        "ry": -16
+      }
+    },
+    {
+      "id": "witch",
+      "slot": "D5",
+      "label": "Witch",
+      "role": "loose, flowing dancer",
+      "lane": "Rig_Medium",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), browser-proven since S9"
+      },
+      "pairing": [
+        "kfb_dance_samba_a",
+        "kfb_dance_wave_hip_hop_a",
+        "kfb_dance_house_a"
+      ],
+      "ensemble": {
+        "p": [
+          2.03,
+          0,
+          1.22
+        ],
+        "ry": -6
+      }
+    },
+    {
+      "id": "knight",
+      "slot": "D6",
+      "label": "Black Knight",
+      "role": "heavy groove, rear-left visual anchor",
+      "lane": "Rig_Large",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), Rig_Large proven since S10"
+      },
+      "pairing": [
+        "kfb_dance_house_a",
+        "kfb_dance_slide_hip_hop_a",
+        "kfb_dance_locking_hip_hop_a"
+      ],
+      "ensemble": {
+        "p": [
+          -2.97,
+          0,
+          -3.1
+        ],
+        "ry": 18
+      }
+    },
+    {
+      "id": "monstrosity",
+      "slot": "D6b",
+      "label": "Monstrosity",
+      "role": "Alternative zu Black Knight · gleicher Platz",
+      "lane": "Rig_Large",
+      "altOf": "knight",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), Rig_Large seit S24"
+      },
+      "pairing": [
+        "kfb_dance_slide_hip_hop_a",
+        "kfb_dance_house_b",
+        "kfb_dance_wave_hip_hop_a",
+        "kfb_dance_step_hip_hop_a"
+      ],
+      "ensemble": {
+        "p": [
+          -2.97,
+          0,
+          -3.1
+        ],
+        "ry": 18
+      }
+    },
+    {
+      "id": "demon",
+      "slot": "D7",
+      "label": "Demon Lord",
+      "role": "big theatrical dancer, rear-right",
+      "lane": "Rig_Large",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+        "source": "atlas cast (data/cast.js), Rig_Large proven since S22"
+      },
+      "pairing": [
+        "kfb_dance_hip_hop_a",
+        "kfb_dance_step_hip_hop_a",
+        "kfb_dance_locking_hip_hop_a"
+      ],
+      "ensemble": {
+        "p": [
+          4.86,
+          0,
+          -2.7
+        ],
+        "ry": -22
+      },
+      "note": "Thriller Part 3 bleibt nur im Vorsprechen (keine Schleife)."
+    },
+    {
+      "id": "mc",
+      "slot": "D8",
+      "label": "FrizzleBob · DJ/MC",
+      "role": "MC hinter der Drum Machine, Goth-Girl-Mikro links",
+      "lane": "Rig_Medium",
+      "asset": {
+        "path": "KayKit Driver + FrizzleBob-Kopf (graft-mount.v1 · graft-driver)",
+        "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+        "source": "Georgs Profil kfb-pet-graft-driver.georg-2026-09-15.json (Nase carl-original · Braue carl-original), gelesen über EMBED_KFB_RIGS_v3 §2 / §2a"
+      },
+      "graft": {
+        "module": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5f268e806a4f48b68944ce025ee8f1d2837a0590/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+        "contract": "tools/KFB-ToolBox/_handover/BIRTHDAY_STARTSCREEN_2026-09-15/profiles/kfb-pet-graft-driver.georg-2026-09-15.json",
+        "contractCommit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+        "pet": "graft-driver",
+        "note": "Leser über jsDelivr (raw liefert JS als text/plain), Profil über raw. animation:host — die Motion Library treibt das Skelett, der Leser setzt danach nur das Gesicht."
+      },
+      "matchHeight": {
+        "of": "teen",
+        "k": 1.05,
+        "note": "Setzung: 5 % größer als Protagonist_A, gemessen beim Laden"
+      },
+      "hold": [
+        {
+          "id": "mic",
+          "label": "GothGirl Microphone",
+          "bone": "handslot.l",
+          "asset": {
+            "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Microphone.gltf",
+            "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+          },
+          "note": "Identität am Slot wie beim Goth Girl rechts (data/cast.js) — links gespiegelt ungeprüft; im Studio nachstellbar"
+        }
+      ],
+      "pairing": [
+        "kfb_dance_hip_hop_a",
+        "kfb_dance_wave_hip_hop_a",
+        "kfb_dance_locking_hip_hop_a"
+      ],
+      "mc": {
+        "talkBars": [
+          [
+            1,
+            4
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            11,
+            12
+          ]
+        ],
+        "note": "Mund-Shuffle in diesen Phrasen-Takten, sonst zu. Kein Lip-Sync."
+      },
+      "ensemble": {
+        "p": [
+          0.95,
+          0,
+          -4.4
+        ],
+        "ry": 0
+      }
+    }
+  ],
+  "collision": {
+    "module": "lib/resident-collide.js · RESIDENT-COLLIDE-01 · Standard für alle Residents und Mobs",
+    "default": true,
+    "appliesIn": "ensemble",
+    "rule": "Kreis je Körper um den posierten Hüft-Bone (Legacy: Body). Überlappen zwei, schubsen sie sich weg (Impuls + Neigung weg vom Kontakt) und federn in ihre Platzierung zurück. Versatz sitzt auf einer Zwischengruppe push.<id>, nie auf Bones oder Platzierung. Requisiten sind feste Hindernisse.",
+    "radius": {
+      "Rig_Legacy": 0.45,
+      "Rig_Medium": 0.55,
+      "Rig_Large": 0.85
+    },
+    "mass": {
+      "Rig_Legacy": 0.6,
+      "Rig_Medium": 1,
+      "Rig_Large": 2.2
+    },
+    "propRadius": 0.45,
+    "tuning": {
+      "stiffness": 12,
+      "damping": 5,
+      "bounce": 7,
+      "restitution": 0.4,
+      "correct": 0.55,
+      "maxOffset": 0.9,
+      "lean": 14,
+      "leanMax": 16,
+      "leanDecay": 5
+    },
+    "note": "Radien und Tuning sind Setzungen dieses Kandidaten, nicht gemessen. Mit „Ringe“ im Disco-Panel sichtbar."
+  },
+  "grooves": {
+    "legacy-bounce-v1": {
+      "principle": "Orc-band bounce (ORB leader, 8-beat bounce on the shared clock): vertical body bounce, squash/stretch, slight lean — here procedural on the assembled legacy rig, no Medium/Large footwork mapped onto rigid parts",
+      "hop": 0.16,
+      "squash": 0.09,
+      "lean": 7,
+      "nod": 9,
+      "pump": 38,
+      "hitHop": 0.42,
+      "hitArms": 150
+    }
+  },
+  "props": [
+    {
+      "id": "radio",
+      "label": "Tiny Treats radio",
+      "asset": {
+        "path": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/radio.gltf",
+        "commit": "032c9d50cd5de6764fa37fec65cb203ed35fcb11"
+      },
+      "targetHeight": 1,
+      "ensemble": {
+        "p": [
+          -7.56,
+          0,
+          2.03
+        ],
+        "ry": 48
+      },
+      "scaleNote": "scaled to 1.0 tall (party radio / boombox read) — a decision, the pack has no size reference to KayKit"
+    },
+    {
+      "id": "speaker.a",
+      "label": "Goth Girl speaker",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.gltf",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "targetHeight": 1.5,
+      "ensemble": {
+        "p": [
+          -8.91,
+          0,
+          -1.22
+        ],
+        "ry": 42
+      },
+      "scaleNote": "scaled to 1.5 tall — decision",
+      "pulse": {
+        "hop": 0.05,
+        "squash": 0.08,
+        "bulge": 0.06,
+        "offset": 0,
+        "note": "Georg 2026-09-25: Boxen hüpfen leicht im Takt und pulsieren (Deformer: Front wölbt sich), vom Bass getragen"
+      }
+    },
+    {
+      "id": "speaker.b",
+      "label": "Goth Girl speaker",
+      "asset": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.gltf",
+        "commit": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "targetHeight": 1.5,
+      "ensemble": {
+        "p": [
+          8.37,
+          0,
+          0.27
+        ],
+        "ry": -48
+      },
+      "scaleNote": "same file, second instance · moved to the right edge (Georg 2026-09-25: the Black Knight danced into it)",
+      "pulse": {
+        "hop": 0.05,
+        "squash": 0.08,
+        "bulge": 0.06,
+        "offset": 0,
+        "note": "Georg 2026-09-25: Boxen hüpfen leicht im Takt und pulsieren (Deformer: Front wölbt sich), vom Bass getragen"
+      },
+      "rowHidden": true
+    },
+    {
+      "id": "drum",
+      "label": "Drum Machine 2 (Peter Simcoe)",
+      "asset": {
+        "path": "media/3D_Assets/KFB/Drum Machine 2 by Peter Simcoe - eflBcV4gcIl.glb",
+        "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+        "gitBlob": "7918bb5003ff6c6953f0f4ae862c91cf0f56efcc"
+      },
+      "targetWidth": 2.1,
+      "center": true,
+      "ensemble": {
+        "p": [
+          0.95,
+          -1.9,
+          -2.9
+        ],
+        "ry": 0,
+        "s": 0.826
+      },
+      "scaleNote": "Georg 2026-09-25 (Studio-Export disco-01, 02:01Z): kleiner (Knoten s 0,826 auf die 2,1-m-Breite → 1,73 m) und 1,9 tief in den Boden gesetzt, damit nur das Pad-Pult herausragt und FB dahinter sichtbar ist. Als Standard übernommen.",
+      "pulse": {
+        "hop": 0.02,
+        "squash": 0.04,
+        "bulge": 0,
+        "offset": 0,
+        "note": "hüpft leicht im Takt, keine Front-Wölbung (Pads liegen oben)"
+      }
+    }
+  ],
+  "discoBall": {
+    "def": "./data/disco-ball-core-01.json",
+    "mount": "referenced, not owned — the scene mounts the core object and passes the beat state",
+    "ensemble": {
+      "p": [
+        0.95,
+        7.6,
+        -0.4
+      ],
+      "ry": 0,
+      "s": 1
+    },
+    "mode": "DISCO"
+  },
+  "reserved": {
+    "band": {
+      "zone": {
+        "min": [
+          9.8,
+          -5.4
+        ],
+        "max": [
+          15.6,
+          2.7
+        ]
+      },
+      "note": "room for the ORB band on the right, not mounted in this pass"
+    }
+  },
+  "phrase": {
+    "bars": 16,
+    "crossfadeBeats": 1.5,
+    "hitCrossfadeBeats": 0.5,
+    "hits": [
+      {
+        "bar": 9,
+        "bars": 2,
+        "motion": "kfb_dance_chicken_a",
+        "label": "HIT 1 · alle Chicken Dance, gleiche Phase",
+        "ball": "impulse"
+      },
+      {
+        "bar": 15,
+        "bars": 2,
+        "motion": "kfb_idle_happy_a",
+        "label": "HIT 2 · alle Happy Idle, gleiche Phase (Platzhalter für den fehlenden Cheer)",
+        "ball": "impulse"
+      }
+    ],
+    "shape": "S40e · individueller: jede Figur hat eigenes Vokabular (3 Clips), eigene Wechseltakte und große, verschiedene Einstiegs-Versätze in lange Clips — niemand tanzt dieselbe Stelle desselben Clips. HIT 1 (Takt 9) bleibt gemeinsam; HIT 2 (Takt 15) nur für Avian, Soldier, Knight, MC — die anderen tanzen durch (Call and Response)."
+  },
+  "cues": {
+    "avian": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_wave_hip_hop_a",
+        "offset": 0
+      },
+      {
+        "bar": 4,
+        "motion": "kfb_dance_step_hip_hop_a",
+        "offset": 6
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_locking_hip_hop_a",
+        "offset": 10
+      },
+      {
+        "bar": 15,
+        "hit": 1
+      }
+    ],
+    "teen": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_house_b",
+        "offset": 16
+      },
+      {
+        "bar": 6,
+        "motion": "kfb_dance_slide_hip_hop_a",
+        "offset": 3
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_house_b",
+        "offset": 40
+      },
+      {
+        "bar": 14,
+        "motion": "kfb_dance_slide_hip_hop_a",
+        "offset": 22
+      }
+    ],
+    "soldier": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_chicken_a",
+        "offset": 1
+      },
+      {
+        "bar": 3,
+        "motion": "kfb_dance_house_a",
+        "offset": 30
+      },
+      {
+        "bar": 7,
+        "motion": "kfb_dance_chicken_a",
+        "offset": 3
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_house_a",
+        "offset": 52
+      },
+      {
+        "bar": 15,
+        "hit": 1
+      }
+    ],
+    "witch": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_samba_a",
+        "offset": 8
+      },
+      {
+        "bar": 5,
+        "motion": "kfb_dance_wave_hip_hop_a",
+        "offset": 20
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_samba_a",
+        "offset": 44
+      },
+      {
+        "bar": 13,
+        "motion": "kfb_dance_house_a",
+        "offset": 12
+      }
+    ],
+    "knight": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_house_a",
+        "offset": 64
+      },
+      {
+        "bar": 5,
+        "motion": "kfb_dance_slide_hip_hop_a",
+        "offset": 40
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_locking_hip_hop_a",
+        "offset": 28
+      },
+      {
+        "bar": 15,
+        "hit": 1
+      }
+    ],
+    "demon": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_hip_hop_a",
+        "offset": 4
+      },
+      {
+        "bar": 5,
+        "motion": "kfb_dance_step_hip_hop_a",
+        "offset": 14
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_hip_hop_a",
+        "offset": 30
+      },
+      {
+        "bar": 13,
+        "motion": "kfb_dance_locking_hip_hop_a",
+        "offset": 44
+      }
+    ],
+    "minion": [
+      {
+        "bar": 1,
+        "motion": "bounce"
+      }
+    ],
+    "mc": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_hip_hop_a",
+        "offset": 20
+      },
+      {
+        "bar": 5,
+        "motion": "kfb_dance_wave_hip_hop_a",
+        "offset": 32
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_hip_hop_a",
+        "offset": 44
+      },
+      {
+        "bar": 13,
+        "motion": "kfb_dance_locking_hip_hop_a",
+        "offset": 4
+      },
+      {
+        "bar": 15,
+        "hit": 1
+      }
+    ],
+    "monstrosity": [
+      {
+        "bar": 1,
+        "motion": "kfb_dance_slide_hip_hop_a",
+        "offset": 12
+      },
+      {
+        "bar": 5,
+        "motion": "kfb_dance_house_b",
+        "offset": 36
+      },
+      {
+        "bar": 9,
+        "hit": 0
+      },
+      {
+        "bar": 11,
+        "motion": "kfb_dance_wave_hip_hop_a",
+        "offset": 6
+      },
+      {
+        "bar": 14,
+        "motion": "kfb_dance_step_hip_hop_a",
+        "offset": 2
+      }
+    ]
+  },
+  "layoutNote": "S40e · Georg 2026-09-25: Tanzkreis vergrößert — alle Ensemble-Positionen (Figuren, Radio, Boxen) ×1,35 um den Ursprung. Drum Machine mittig zwischen Black Knight und Demon Lord, FrizzleBob als DJ/MC dahinter. Studio-Korrekturen aus dem Browser (placementPatch) überschreiben die Rezeptwerte weiterhin.",
+  "alternates": {
+    "knight": [
+      "knight",
+      "monstrosity"
+    ],
+    "default": {
+      "knight": "knight"
+    },
+    "note": "Georg 2026-09-25: Monstrosity als Alternative zum Knight. Im Ensemble steht genau einer von beiden auf dem Platz; Source/Audition zeigen beide."
+  },
+  "wander": {
+    "mode": "ensemble",
+    "windowSec": 2,
+    "rule": "Im Ensemble wird das gleitende Mittel (2 s) der Hüft-Horizontalen jedes Clips herausgerechnet: Schritte bleiben, die langsame Reise nicht. Damit sind auch die Reise-Clips step/locking_hip_hop im Ensemble einsetzbar. Im Vorsprechen laufen alle Clips unverändert.",
+    "why": "Georg 2026-09-25: am Ende vieler Clips wurden die Figuren ohne passende Bewegung auf ihre Plätze zurückgeschoben (Schleifenende/Cue-Wechsel nach Hüftwanderung)."
+  }
+}
