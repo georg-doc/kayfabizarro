@@ -7,7 +7,7 @@
 - First mini-scenario POIs: Brick Fish exchange, Tiny Treats pizza slice on the ground and plant/path obstruction.
 - Social motor is tragicomic authority: eager royal loyalty and recognition-seeking, low actual acceptance by nearby Residents, with retorts/laughter/compliance feeding bounded social outcomes.
 - ChatterBox/Triplets remain language owner; Reaction Choreography remains physical response owner; Lean Memory stores only socially meaningful recurring outcomes.
-- First source-backed motion gate is `Running_HoldingRifle` plus `Walking_A/B`; no shoulder-rifle march is accepted yet and no static fake offset is introduced. Mixamo/new motion intake follows only if current Motion Library candidates fail.
+- Motion gate updated after Georg's Mixamo review: **`Walk with Briefcase`** is the priority external donor because the right arm already carries a load while the left arm keeps a normal walk swing. It is USER-IDENTIFIED / NOT YET ADMITTED / NOT PINNED. Prefer In Place → Motion Library intake → Rig_Medium retarget → exact rifle attachment/pose fit; world/navigation remains translation owner. `Running_HoldingRifle` plus `Walking_A/B` remain A/B/fallback candidates.
 
 ### EVIDENCE / RECOVERY
 - Added `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`.
