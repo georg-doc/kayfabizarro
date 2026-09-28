@@ -91,7 +91,11 @@ Current architecture direction:
 - witness, hearsay and subjective interpretation remain distinct;
 - small resumable social threads carry gifts, promises, banter, arguments, Cards, work and performance continuity without a global relationship meter;
 - current Brick Fish and Reaction Choreography candidates provide the physical social-action seam;
-- world movement, persistence, rewards, Combat, actor rigs and dialogue ownership remain with their existing consumers.
+- world movement, persistence, rewards, Combat, actor rigs and dialogue ownership remain with their existing consumers;
+- the same layer now includes world-owned **Points of Interest** for player, Residents/NPCs, Cube Pets, nature/plants, environment, resources, props/Cards and activity stations;
+- source-backed routine activity (Fishing, Hammering/smithing, Chop, Dig, Pickaxe, Saw) plus current patrol/explore direction gives Residents a meaningful path to return to;
+- personal goals/motivations drive POI salience, search and conflict without automatically producing hostility;
+- the shared KFB **AIDA gameplay loop** for player and NPCs is: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget.
 
 Workflow/evidence:
 `../workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/`
