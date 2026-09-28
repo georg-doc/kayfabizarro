@@ -1,0 +1,250 @@
+name: PD-POOL-C1 curated discovery expansion
+
+on:
+  push:
+    branches:
+      - chatgpt-web/public-domain-pool-c1-2026-09-28
+    paths:
+      - ".github/workflows/public-domain-pool-c1.yml"
+      - "tools/public_domain/harvest.py"
+      - "tools/public_domain/seeds.c1.json"
+      - "tools/public_domain/fetch_pool.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pd-pool-c1
+  cancel-in-progress: false
+
+jobs:
+  curated-fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-web/public-domain-pool-c1-2026-09-28
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Static contract
+        run: |
+          set -euo pipefail
+          python -m py_compile tools/public_domain/harvest.py tools/public_domain/fetch_pool.py
+          python -m json.tool tools/public_domain/seeds.c1.json >/dev/null
+
+      - name: Existing four-object regression
+        run: |
+          set -euo pipefail
+          python tools/public_domain/fetch_pool.py \
+            tools/public_domain/pd01-smoke-manifest.jsonl \
+            --report /tmp/pd-c1-smoke-regression.json \
+            --expect 4
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("/tmp/pd-c1-smoke-regression.json").read_text())
+          assert d["counts"] == {"loaded":0,"rejected":0,"unchanged":4}, d
+          PY
+
+      - name: Discover bounded C1 candidates
+        run: |
+          set -euo pipefail
+          python tools/public_domain/harvest.py \
+            tools/public_domain/seeds.c1.json \
+            --report /tmp/pd-c1-discovery.json \
+            > tools/public_domain/pd-c1-curated-manifest.jsonl \
+            2> /tmp/pd-c1-harvest.stderr
+          cat /tmp/pd-c1-harvest.stderr
+          python - <<'PY'
+          import collections, json
+          from pathlib import Path
+
+          candidates=[json.loads(x) for x in Path("tools/public_domain/pd-c1-curated-manifest.jsonl").read_text().splitlines() if x.strip()]
+          discovery=json.loads(Path("/tmp/pd-c1-discovery.json").read_text())
+          existing=[json.loads(x) for x in Path("media/public_domain/manifest.jsonl").read_text().splitlines() if x.strip()]
+          existing_keys={(str(x["provider"]),str(x["sourceId"])) for x in existing}
+          candidate_keys=[(str(x["provider"]),str(x["sourceId"])) for x in candidates]
+          assert 12 <= len(candidates) <= 24, len(candidates)
+          assert len(candidate_keys) == len(set(candidate_keys)), "duplicate candidate keys"
+          assert not (set(candidate_keys) & existing_keys), "candidate overlaps existing pool"
+          counts=collections.Counter(x["provider"] for x in candidates)
+          assert all(2 <= counts[p] <= 6 for p in ("met","aic","commons","ia")), counts
+          assert discovery["total"] == len(candidates), discovery
+          Path("/tmp/pd-c1-base-count.txt").write_text(str(len(existing)))
+          PY
+
+      - name: Fetch, recheck and prove idempotence
+        env:
+          SOURCE_HEAD: $GITHUB_SHA
+        run: |
+          set -euo pipefail
+
+          set +e
+          python tools/public_domain/fetch_pool.py \
+            tools/public_domain/pd-c1-curated-manifest.jsonl \
+            --report /tmp/pd-c1-first.json
+          first_rc=$?
+          set -e
+          echo "$first_rc" > /tmp/pd-c1-first-rc.txt
+
+          python - <<'PY'
+          import collections, hashlib, json
+          from pathlib import Path
+
+          first=json.loads(Path("/tmp/pd-c1-first.json").read_text())
+          accepted=[r for r in first["results"] if r["status"] in {"loaded","unchanged"}]
+          counts=collections.Counter(r["provider"] for r in accepted)
+          assert len(accepted) >= 12, first
+          assert all(counts[p] >= 2 for p in ("met","aic","commons","ia")), counts
+
+          root=Path("media/public_domain")
+          snap={}
+          new_bytes=0
+          accepted_ids=[]
+          for r in accepted:
+              p=root/r["localPath"]
+              assert p.is_file(), p
+              lic=p.with_name(p.name+".license.json")
+              assert lic.is_file(), lic
+              snap[str(p)]=hashlib.sha256(p.read_bytes()).hexdigest()
+              snap[str(lic)]=hashlib.sha256(lic.read_bytes()).hexdigest()
+              if "/c1-" in str(p).replace("\\","/"):
+                  new_bytes += p.stat().st_size
+              accepted_ids.append(r["id"])
+          assert new_bytes <= 200_000_000, new_bytes
+          Path("/tmp/pd-c1-accepted.json").write_text(json.dumps(sorted(accepted_ids)))
+          Path("/tmp/pd-c1-before.json").write_text(json.dumps(snap,sort_keys=True,indent=2))
+          Path("/tmp/pd-c1-new-bytes.txt").write_text(str(new_bytes))
+          PY
+
+          set +e
+          python tools/public_domain/fetch_pool.py \
+            tools/public_domain/pd-c1-curated-manifest.jsonl \
+            --report /tmp/pd-c1-second.json
+          second_rc=$?
+          set -e
+          echo "$second_rc" > /tmp/pd-c1-second-rc.txt
+
+          python - <<'PY'
+          import collections, hashlib, json, os
+          from pathlib import Path
+
+          root=Path("media/public_domain")
+          first=json.loads(Path("/tmp/pd-c1-first.json").read_text())
+          second=json.loads(Path("/tmp/pd-c1-second.json").read_text())
+          accepted_ids=set(json.loads(Path("/tmp/pd-c1-accepted.json").read_text()))
+          second_map={r["id"]:r for r in second["results"]}
+
+          assert second["counts"]["loaded"] == 0, second
+          for aid in accepted_ids:
+              assert second_map.get(aid,{}).get("status") == "unchanged", (aid,second_map.get(aid))
+
+          before=json.loads(Path("/tmp/pd-c1-before.json").read_text())
+          after={}
+          for name in before:
+              p=Path(name)
+              assert p.is_file(), p
+              after[name]=hashlib.sha256(p.read_bytes()).hexdigest()
+          assert before == after, {"before":before,"after":after}
+          assert not list(root.rglob("*.part")), "stale .part file remains"
+
+          baseline=int(Path("/tmp/pd-c1-base-count.txt").read_text())
+          manifest=[json.loads(x) for x in (root/"manifest.jsonl").read_text().splitlines() if x.strip()]
+          assert len(manifest) == baseline + len(accepted_ids), (baseline,len(accepted_ids),len(manifest))
+
+          all_sidecars=[]
+          for p in root.rglob("*.license.json"):
+              d=json.loads(p.read_text())
+              asset=root/d["localPath"]
+              assert asset.is_file(), asset
+              assert asset.stat().st_size == d["bytes"], (asset,d["bytes"])
+              assert hashlib.sha256(asset.read_bytes()).hexdigest() == d["sha256"], asset
+              all_sidecars.append(d)
+
+          fallback=sum(1 for d in all_sidecars if d.get("tier")=="fallback-attribution")
+          credit_lines=[
+              line for line in (root/"CREDITS.md").read_text().splitlines()
+              if line.startswith("- ")
+          ]
+          assert len(credit_lines) == fallback, (len(credit_lines),fallback)
+
+          discovery=json.loads(Path("/tmp/pd-c1-discovery.json").read_text())
+          new_bytes=int(Path("/tmp/pd-c1-new-bytes.txt").read_text())
+          accepted=[r for r in first["results"] if r["status"] in {"loaded","unchanged"}]
+          rejected=[r for r in first["results"] if r["status"]=="rejected"]
+          provider_counts=collections.Counter(r["provider"] for r in accepted)
+
+          report={
+              "schema":"kfb.pd-pool-c1-test/0.1",
+              "sourceHead":os.environ["SOURCE_HEAD"],
+              "status":"PASS",
+              "discovery":discovery,
+              "firstRun":first,
+              "secondRun":second,
+              "accepted":len(accepted),
+              "acceptedByProvider":dict(provider_counts),
+              "rejected":len(rejected),
+              "rejectedIds":[r["id"] for r in rejected],
+              "newPayloadBytes":new_bytes,
+              "poolRowsAfter":len(manifest),
+              "fallbackAttributionRowsAfter":fallback,
+              "assertions":{
+                  "compile":"PASS",
+                  "existingSmokeRegression":"4/4 UNCHANGED",
+                  "boundedDiscovery":"PASS",
+                  "acceptanceFloor":"PASS",
+                  "secondRunIdempotence":"PASS",
+                  "stalePartialFiles":"0",
+                  "storedPayloadSidecarIntegrity":"PASS",
+                  "creditsFromSidecars":"PASS"
+              }
+          }
+          (root/"PD_C1_TEST_REPORT.json").write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
+
+          lines=[
+              "# RETURN · PD-POOL-C1 · curated expansion",
+              "",
+              "Status: **PASS · NEW CURATED DATASET · IDEMPOTENT · NOT HISTORICAL RECONSTRUCTION · NOT MERGED / NOT PUBLISHED**",
+              f"Tested implementation head: `{os.environ['SOURCE_HEAD']}`",
+              "",
+              "## Result",
+              "",
+              f"- discovered candidates: **{discovery['total']}**",
+              f"- accepted/persisted: **{len(accepted)}**",
+              f"- rejected by live recheck/download gate: **{len(rejected)}**",
+              f"- accepted by provider: **{dict(provider_counts)}**",
+              f"- new stored payload: **{new_bytes} bytes**",
+              f"- pool manifest rows after C1: **{len(manifest)}**",
+              f"- fallback-attribution rows after C1: **{fallback}**",
+              "",
+              "## Boundaries",
+              "",
+              "- This is a newly curated C1 dataset, not the missing 84/6/40 historical selection.",
+              "- Asset Librarian remains the registry/discovery owner.",
+              "- Billboard runtime is unchanged.",
+              "- No second media registry was introduced.",
+              "- No merge or Cloudflare publication is claimed by this workflow.",
+              "",
+              "## Next gate",
+              "",
+              "**C1 review/merge gate · inspect the exact accepted C1 manifest/evidence, then merge only on Georg approval; after merge verify Registry/Librarian counts on the permanent Cloudflare route.**",
+              ""
+          ]
+          (root/"PD_C1_RETURN.md").write_text("\n".join(lines),encoding="utf-8")
+          PY
+
+      - name: Persist passing C1 batch
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/public_domain/pd-c1-curated-manifest.jsonl media/public_domain
+          git diff --cached --check
+          git commit -m "PD-POOL-C1: persist curated public-domain expansion"
+          git push origin HEAD:chatgpt-web/public-domain-pool-c1-2026-09-28
