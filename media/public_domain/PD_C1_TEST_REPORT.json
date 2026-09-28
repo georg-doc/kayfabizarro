@@ -1,7 +1,7 @@
 {
-  "accepted": 23,
+  "accepted": 22,
   "acceptedByProvider": {
-    "aic": 5,
+    "aic": 4,
     "commons": 6,
     "ia": 6,
     "met": 6
@@ -18,7 +18,7 @@
   },
   "discovery": {
     "counts": {
-      "aic": 6,
+      "aic": 5,
       "commons": 6,
       "ia": 6,
       "met": 6
@@ -26,16 +26,16 @@
     "errors": [],
     "existingSkippedBase": 4,
     "schema": "kfb.pd-pool-c1-discovery/0.1",
-    "total": 24
+    "total": 23
   },
-  "fallbackAttributionRowsAfter": 4,
+  "fallbackAttributionRowsAfter": 5,
   "firstRun": {
     "counts": {
-      "loaded": 23,
+      "loaded": 22,
       "rejected": 1,
       "unchanged": 0
     },
-    "generatedAt": "2026-09-28T19:09:14+00:00",
+    "generatedAt": "2026-09-28T19:13:32+00:00",
     "manifest": "tools/public_domain/pd-c1-curated-manifest.jsonl",
     "results": [
       {
@@ -57,20 +57,20 @@
         "tier": "free"
       },
       {
-        "bytes": 107214,
-        "id": "met-c1-437791",
-        "localPath": "met/c1-437791.jpg",
+        "bytes": 275279,
+        "id": "met-c1-337494",
+        "localPath": "met/c1-337494.jpg",
         "provider": "met",
-        "sha256": "5677ead2d4bff7f62e899d953da366e1723e747203ddfa41db3979d541cbc1e4",
+        "sha256": "5e3b6b8f2453d13bd7acd9a3f6612f0abc2620fc6eeec2bafaf1e99d9e4b4acf",
         "status": "loaded",
         "tier": "free"
       },
       {
-        "bytes": 34844,
-        "id": "met-c1-544484",
-        "localPath": "met/c1-544484.jpg",
+        "bytes": 389415,
+        "id": "met-c1-358366",
+        "localPath": "met/c1-358366.jpg",
         "provider": "met",
-        "sha256": "2882e1b3d0ee5e15b069ef657eb970ad1c2a1b1f42e2ca2d5ad0edc4df1deca4",
+        "sha256": "eab80e324079d61ed8cbe4ec7cb5e1350db47df75bec787c5221197e8c7cf27d",
         "status": "loaded",
         "tier": "free"
       },
@@ -127,23 +127,12 @@
       },
       {
         "apiHttpStatus": 200,
-        "bytes": 423791,
+        "bytes": 856335,
         "httpStatus": 200,
-        "id": "aic-c1-48715",
-        "localPath": "aic/c1-48715.jpg",
+        "id": "aic-c1-44743",
+        "localPath": "aic/c1-44743.jpg",
         "provider": "aic",
-        "sha256": "22b52431726d38ae18c22eb88c691a93d7f74c4e116739ea161460fde67c430f",
-        "status": "loaded",
-        "tier": "free"
-      },
-      {
-        "apiHttpStatus": 200,
-        "bytes": 443690,
-        "httpStatus": 200,
-        "id": "aic-c1-40866",
-        "localPath": "aic/c1-40866.jpg",
-        "provider": "aic",
-        "sha256": "8dd154f925c08ad3cb6d52fc1164f7694b4921f8e020cbe30f62d7387ad09591",
+        "sha256": "f364dd4f965fcc7a1d85e645e567a075ff9c27bdbb166858ac5a74406e1e56a7",
         "status": "loaded",
         "tier": "free"
       },
@@ -208,29 +197,29 @@
         "tier": "fallback-attribution"
       },
       {
-        "bytes": 9241,
-        "id": "ia-c1-paulwhiteman1920-1935completecollection",
-        "localPath": "ia/c1-paulwhiteman1920-1935completecollection.jpg",
+        "bytes": 8502,
+        "id": "ia-c1-classic_cartoons_201603",
+        "localPath": "ia/c1-classic_cartoons_201603.jpg",
         "provider": "ia",
-        "sha256": "a73ce6a90964b6c5d31698890295387847828472cde5d6b919fe81bb35415af7",
+        "sha256": "2431aa20b23d1480f17741c99be0107f7487e952f5d5a74bcd3d3be80c71dcb3",
         "status": "loaded",
         "tier": "free"
       },
       {
-        "bytes": 7291,
-        "id": "ia-c1-afarewelltoarms_202501",
-        "localPath": "ia/c1-afarewelltoarms_202501.jpg",
+        "bytes": 8707,
+        "id": "ia-c1-tecnopatia-biliar",
+        "localPath": "ia/c1-tecnopatia-biliar.jpg",
         "provider": "ia",
-        "sha256": "c76f07c533f87c7a49b31aa8a69df37890eaf38dfb547aa577d09c44be66a66d",
+        "sha256": "af5a81b2c90489e3d48ce37ccf322b8cae2fc72dc6c7059f74769eac26a92ae1",
         "status": "loaded",
-        "tier": "free"
+        "tier": "fallback-attribution"
       },
       {
-        "bytes": 26116,
-        "id": "ia-c1-christmascarols2011_1112_librivox",
-        "localPath": "ia/c1-christmascarols2011_1112_librivox.jpg",
+        "bytes": 30230,
+        "id": "ia-c1-the_bamboo_garden_1704.poem_librivox",
+        "localPath": "ia/c1-the_bamboo_garden_1704.poem_librivox.jpg",
         "provider": "ia",
-        "sha256": "192fdcf48fb0003b29b920996b879fb02cf76f0c44272b6c4e7569a550f16b01",
+        "sha256": "342768d235b7a6bad6cffdcc51d21c1d4e560f66c60962fe53277ec1448e4afa",
         "status": "loaded",
         "tier": "free"
       },
@@ -264,8 +253,8 @@
     ],
     "schema": "kfb.pd-pool-run-report/0.1"
   },
-  "newPayloadBytes": 12237192,
-  "poolRowsAfter": 27,
+  "newPayloadBytes": 12753473,
+  "poolRowsAfter": 26,
   "rejected": 1,
   "rejectedIds": [
     "aic-c1-7624"
@@ -275,9 +264,9 @@
     "counts": {
       "loaded": 0,
       "rejected": 1,
-      "unchanged": 23
+      "unchanged": 22
     },
-    "generatedAt": "2026-09-28T19:09:19+00:00",
+    "generatedAt": "2026-09-28T19:13:36+00:00",
     "manifest": "tools/public_domain/pd-c1-curated-manifest.jsonl",
     "results": [
       {
@@ -299,20 +288,20 @@
         "tier": "free"
       },
       {
-        "bytes": 107214,
-        "id": "met-c1-437791",
-        "localPath": "met/c1-437791.jpg",
+        "bytes": 275279,
+        "id": "met-c1-337494",
+        "localPath": "met/c1-337494.jpg",
         "provider": "met",
-        "sha256": "5677ead2d4bff7f62e899d953da366e1723e747203ddfa41db3979d541cbc1e4",
+        "sha256": "5e3b6b8f2453d13bd7acd9a3f6612f0abc2620fc6eeec2bafaf1e99d9e4b4acf",
         "status": "unchanged",
         "tier": "free"
       },
       {
-        "bytes": 34844,
-        "id": "met-c1-544484",
-        "localPath": "met/c1-544484.jpg",
+        "bytes": 389415,
+        "id": "met-c1-358366",
+        "localPath": "met/c1-358366.jpg",
         "provider": "met",
-        "sha256": "2882e1b3d0ee5e15b069ef657eb970ad1c2a1b1f42e2ca2d5ad0edc4df1deca4",
+        "sha256": "eab80e324079d61ed8cbe4ec7cb5e1350db47df75bec787c5221197e8c7cf27d",
         "status": "unchanged",
         "tier": "free"
       },
@@ -362,20 +351,11 @@
         "tier": "free"
       },
       {
-        "bytes": 423791,
-        "id": "aic-c1-48715",
-        "localPath": "aic/c1-48715.jpg",
+        "bytes": 856335,
+        "id": "aic-c1-44743",
+        "localPath": "aic/c1-44743.jpg",
         "provider": "aic",
-        "sha256": "22b52431726d38ae18c22eb88c691a93d7f74c4e116739ea161460fde67c430f",
-        "status": "unchanged",
-        "tier": "free"
-      },
-      {
-        "bytes": 443690,
-        "id": "aic-c1-40866",
-        "localPath": "aic/c1-40866.jpg",
-        "provider": "aic",
-        "sha256": "8dd154f925c08ad3cb6d52fc1164f7694b4921f8e020cbe30f62d7387ad09591",
+        "sha256": "f364dd4f965fcc7a1d85e645e567a075ff9c27bdbb166858ac5a74406e1e56a7",
         "status": "unchanged",
         "tier": "free"
       },
@@ -440,29 +420,29 @@
         "tier": "fallback-attribution"
       },
       {
-        "bytes": 9241,
-        "id": "ia-c1-paulwhiteman1920-1935completecollection",
-        "localPath": "ia/c1-paulwhiteman1920-1935completecollection.jpg",
+        "bytes": 8502,
+        "id": "ia-c1-classic_cartoons_201603",
+        "localPath": "ia/c1-classic_cartoons_201603.jpg",
         "provider": "ia",
-        "sha256": "a73ce6a90964b6c5d31698890295387847828472cde5d6b919fe81bb35415af7",
+        "sha256": "2431aa20b23d1480f17741c99be0107f7487e952f5d5a74bcd3d3be80c71dcb3",
         "status": "unchanged",
         "tier": "free"
       },
       {
-        "bytes": 7291,
-        "id": "ia-c1-afarewelltoarms_202501",
-        "localPath": "ia/c1-afarewelltoarms_202501.jpg",
+        "bytes": 8707,
+        "id": "ia-c1-tecnopatia-biliar",
+        "localPath": "ia/c1-tecnopatia-biliar.jpg",
         "provider": "ia",
-        "sha256": "c76f07c533f87c7a49b31aa8a69df37890eaf38dfb547aa577d09c44be66a66d",
+        "sha256": "af5a81b2c90489e3d48ce37ccf322b8cae2fc72dc6c7059f74769eac26a92ae1",
         "status": "unchanged",
-        "tier": "free"
+        "tier": "fallback-attribution"
       },
       {
-        "bytes": 26116,
-        "id": "ia-c1-christmascarols2011_1112_librivox",
-        "localPath": "ia/c1-christmascarols2011_1112_librivox.jpg",
+        "bytes": 30230,
+        "id": "ia-c1-the_bamboo_garden_1704.poem_librivox",
+        "localPath": "ia/c1-the_bamboo_garden_1704.poem_librivox.jpg",
         "provider": "ia",
-        "sha256": "192fdcf48fb0003b29b920996b879fb02cf76f0c44272b6c4e7569a550f16b01",
+        "sha256": "342768d235b7a6bad6cffdcc51d21c1d4e560f66c60962fe53277ec1448e4afa",
         "status": "unchanged",
         "tier": "free"
       },
@@ -496,6 +476,6 @@
     ],
     "schema": "kfb.pd-pool-run-report/0.1"
   },
-  "sourceHead": "4108d536f931915a0a52b9a777bcdb036c29401a",
+  "sourceHead": "5ba9d609dc11a7f2d7acfbd720ded442f65c438e",
   "status": "PASS"
 }
