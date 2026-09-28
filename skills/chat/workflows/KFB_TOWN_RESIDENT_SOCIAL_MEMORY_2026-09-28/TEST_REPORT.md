@@ -136,15 +136,26 @@ Documentation/source checks for gifting, barter, prank escalation and reconcilia
 6. checked Helpers GLTF tree does not contain Santa `Present_A–E`, so later North-Pole composition is explicitly cross-pack;
 7. existing Toy Soldier source already proves `Present_Base → Present_UnwrappedBase` reveal timing/geometry for that pack only;
 8. Gift Culture contract separates `wrapperRef` from `payloadRef`;
-9. actual object ownership transfer remains with existing world/inventory owners, never dialogue/LLM text;
+9. KISS baseline does not require durable Resident item ownership/provenance; if a later real inventory consumer transfers an item, that external owner remains authoritative;
 10. gift continuity reuses bounded `ResidentSocialThread kind: gift` rather than a new relationship system;
 11. recipient reactions route through existing Reaction Choreography + optional ChatterBox/Triplet;
 12. default exploding/prank gift is social/Kayfabe cartoon violence; real damage remains Combat-owned when explicitly requested by the consumer;
-13. player-facing durable gift provenance routes to Player Journey / Meta and replay may not duplicate an item transfer;
+13. Player Journey / GPT-Site persistence is optional for meaningful semantic gift receipts only; ordinary disposable gift props require no durable item ledger;
 14. escalation has a bounded Failure-Spiral budget plus explicit reconciliation/return options;
 15. future North-Pole winter environment and Holiday/Jingle-Bells-like audio remain `SOURCE_REQUIRED`, not falsely attributed to Santa/Helpers packs.
 
-No generic unwrap runtime, barter economy, exploding-present effect, North-Pole scene or player gift UI is claimed by these checks.
+No generic unwrap runtime, barter economy, item-provenance ledger, exploding-present effect, North-Pole scene or player gift UI is claimed by these checks.
+
+### Gift KISS correction checks
+
+**6 / 6 PASS**
+
+1. current Gift Culture explicitly rejects a durable Resident item economy for MVP;
+2. routine wrapper instance IDs / handoffs / disposable prop ownership are in the do-not-persist set;
+3. meaningful giver/recipient intent, outcome and reconciliation may persist as compact semantic receipts;
+4. visible gift interactions remain playable even when persistent storage is unavailable;
+5. a tiny GPT-Site `ResidentMemoryReceipt` store is architecture-only / optional, not a runtime prerequisite;
+6. later real inventory/provenance may attach externally without changing the social Gift Culture contract.
 
 ## Runtime / browser / Stage
 
