@@ -9,6 +9,10 @@ Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
 Connect the existing KFB Town Lean Memory direction with:
 - `georg-doc/ai-town` as a **mechanism donor** for compact episodic memory, small top-k retrieval, cooldowns and async agent cognition;
+- world-owned **Points of Interest** covering player, Residents/NPCs, Cube Pets, nature/plants, environment, resources, props/Cards and activity stations;
+- source-backed **routine activities** plus current patrol/explore direction;
+- small authored **personal goals/motivations** as attention and conflict drivers;
+- a shared KFB **AIDA gameplay loop** for player and NPCs: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget;
 - existing ChatterBox / semantic Triplets / selectable retorts as the language owner;
 - Fluffolekt / Fluff-o-lect as a context-dependent omission register;
 - current Brick Fish social interaction candidate;
@@ -48,6 +52,9 @@ Do not create a standalone review page for the design contract. Use the route on
 
 After relevant current recovery blockers clear, implement **RESIDENT-SOCIAL-MEMORY-01** in the real receiving world with:
 - two real current Residents;
+- one bounded POI perception/search loop;
+- one source-backed resumable routine;
+- one personal-goal/motivation-backed AIDA cycle;
 - Brick Fish plus one Card/gift context;
 - witness-specific event receipts;
 - one bounded social thread;
@@ -55,4 +62,4 @@ After relevant current recovery blockers clear, implement **RESIDENT-SOCIAL-MEMO
 - ChatterBox/Triplet speech;
 - one context-valid Fluff-o-lect variant;
 - coordinated Reaction Choreography;
-- clean recovery to consumer-owned world state.
+- clean recovery to consumer-owned path/activity/dialogue state.
