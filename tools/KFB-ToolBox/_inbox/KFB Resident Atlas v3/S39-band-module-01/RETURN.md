@@ -1,6 +1,19 @@
 # RETURN · RESIDENT-BAND-MODULE-01 · 2026-09-28
 
-Status: **RECOVERED EXISTING IMPLEMENTATION · HUMAN DRUMMER POSE PENDING**
+Status: **STAGE SOURCE PUBLISHED · PUBLIC HTTP VERIFICATION UNKNOWN · HUMAN DRUMMER POSE PENDING**
+
+## Checkpoint · 2026-09-28 10:xx Europe/Berlin
+
+- Resident owner PR: **#277** · branch `chatgpt-web/resident-band-module-01-2026-09-28`.
+- Current static evidence: **26/26 PASS** in `TEST_REPORT.md`.
+- Cloudflare publication branch: `cloudflare-live@b5d5c85f1ad155a39058b8a73ab4680817dc5fe9`.
+- Resident Stage snapshot commit inside that history: `b6a8c7a43989493e6699303f705096004dcd14d1`.
+- Stage HTML is byte-identical to owner S8: blob `ee56b1556ca2c25c3d859b639ff224b0f0b6d21c`.
+- Stage band definition is byte-identical to owner data: blob `f9ac5ca71738562e5fee25e94d97daf255bed235`.
+- Current Hub source owner: PR **#269** @ `057d74fff44e6947d95d8c5a2f5fefb2425d4a2d`; the old Orc Band POC card was replaced in place with the S39 drummer-pose route.
+- Fixed Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`.
+- Public HTTP state: **UNKNOWN**. Two exact Pages fetch attempts failed at the available public-fetch layer, including the already-known `/kfb-hub/` root. GitHub exposes no status/workflow for the Cloudflare publication commit. Therefore neither `DEPLOYED` nor `PUBLIC_VERIFIED` is claimed here.
+- No human acceptance is claimed; `posePatches.drummer` remains null by design until Georg authors the reference pose.
 
 ## Owner / branch / outcome
 

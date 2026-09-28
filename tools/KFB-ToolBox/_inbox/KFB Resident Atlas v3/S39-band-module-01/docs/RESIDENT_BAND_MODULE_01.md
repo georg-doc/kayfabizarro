@@ -1,6 +1,15 @@
 # RESIDENT-BAND-MODULE-01 · KayfaBizarros Orc Band ohne Grundplatte · 2026-09-24
 
-Status: **candidate-only · wartet auf Georgs Blick und Handpose.** Kein Push, kein Deployment.
+Status: **Stage source published · public HTTP verification UNKNOWN · wartet auf Georgs Trommler-Handpose.** Keine Human-Abnahme, kein Live-Promote.
+
+> **S39e · 2026-09-28 · Recovery / Pose Gate.** Der bestehende S39/S8-Owner wurde unverändert als
+> Stage-Snapshot gespiegelt: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`.
+> `index.html` ist byte-identisch mit `KFB_Resident_Atlas_S8.html`; die Band-Definition ist
+> ebenfalls byte-identisch. Der einzige Acceptance-Blocker ist weiterhin
+> `posePatches.drummer: null`: Georg setzt die reale Kontaktpose am gemessenen Schlagbild.
+> Danach 48-Frame-Konstanttest; nur bei zeitabhängiger Abweichung geht der exakte Delta-Befund an
+> `POSE-TO-BLENDER-01`. Kein neuer Arm-zu-Trommel-Solver. Public HTTP konnte in diesem Chat nicht
+> verifiziert werden und bleibt deshalb UNKNOWN.
 
 > **S39b · Arbeitsplatz ist jetzt `KFB_Resident_Atlas_S8.html#__band`.** Die eigenständige
 > DC-Seite unten ist SUPERSEDED. In S8: Klick auf Arm oder Körper greift den Bone, Klick auf eine
@@ -15,10 +24,10 @@ Es bringt **keine Grundplatte** mit: das `Ground`-Mesh aus ORB-P1 wird nicht ref
 Der Host gibt einen Ankerpunkt auf SEINER Fläche. Das Modul setzt seinen Stützpunkt (lokal y = 0)
 dorthin. Die Uhr gibt auch der Host.
 
-- Review: `KFB Resident Band Module 01.dc.html`
+- Aktueller Review/Authoring-Host: `KFB_Resident_Atlas_S8.html#__band` · Stage-Ziel `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`
 - Definition: `data/resident-band-module-01.json` (`kfb.resident-band-module/1`)
 - Laufzeit: `lib/band-module.js` · `mountBandModule(def, { parent, anchor })` → `{ root, update(beatPos), place(), dispose() }`
-- Review-Host: `lib/band-review.js`, Werkzeuge aus S7 wiederverwendet (`edit-layer`, `rigwork`-Puppe, `studio`)
+- Review-Host: S8 integriert die bestehenden S7-Werkzeuge (`edit-layer`, `rigwork`-Puppe, `studio`) plus Band-Workshop/IK; die alte `lib/band-review.js`-Standalone-Seite ist superseded
 - Sonden: `tools/band-module-probe.html` (Quellen, Clips, Blob), `tools/band-module-smoke.html` (Laufzeit ohne Oberfläche)
 
 ## Quellen (gemessen)
