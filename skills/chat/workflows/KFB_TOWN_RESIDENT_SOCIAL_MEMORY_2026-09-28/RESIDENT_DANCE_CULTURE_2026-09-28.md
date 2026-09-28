@@ -522,7 +522,49 @@ Useful item facts:
 
 This is provenance and memory, not a Pokémon-style completion percentage requirement.
 
-## 16 · Animation Studio work
+## 16 · Learned moves become social tokens
+
+A learned Signature Move should remain meaningful after unlock.
+
+When the player performs a learned move inside another actor's attention field, emit a semantic performance event:
+
+```ts
+dance.signature.perform({
+  performerId,
+  moveId,
+  originResidentId,
+  witnessIds,
+  sourceEventRef
+})
+```
+
+The original teacher may recognize their own move and select a character-specific reaction intent:
+- join;
+- approve;
+- correct;
+- challenge / answer with another move;
+- parody;
+- deadpan-ignore;
+- recall the original teaching event.
+
+Other Residents may recognize the move only when their authored knowledge or memory provenance supports it. No omniscient global recognition.
+
+This can open a tiny bounded `dance_exchange` social thread:
+
+```text
+player performs learned Signature
+→ teacher notices / remembers
+→ teacher reaction or answer move
+→ optional one-beat player response
+→ thread closes
+→ both return to groove / prior activity
+```
+
+This makes dance collection function like reusable retorts and meaningful props: an acquired thing can later change an encounter instead of merely filling a collection screen.
+
+The teacher's subjective memory may store that the player learned/used the move when the outcome is socially meaningful. Player Journey remains the authoritative owner of the unlock itself.
+
+## 17 · Animation Studio work
 
 Animation Studio is the correct place to build the mappings.
 
@@ -540,7 +582,7 @@ Needed authoring support:
 
 This should be integrated with the existing animation/motion catalogue rather than becoming a standalone Dance Studio runtime.
 
-## 17 · First productive proof
+## 18 · First productive proof
 
 A later integrated proof can use:
 
@@ -580,7 +622,7 @@ Evidence:
 - Brick Fish interruption returns correctly;
 - actor compatibility is explicit.
 
-## 18 · First mapping principle
+## 19 · First mapping principle
 
 Every Resident should eventually answer:
 
