@@ -129,6 +129,7 @@ The branch changes these Town/router/Hub surfaces plus the bounded workflow pack
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/TEST_REPORT.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/resident-aida-poi.v0.1.json`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_DANCE_CULTURE_2026-09-28.md`
 - this `RETURN.md`
 - `skills/chat/town/START_HERE.md`
 - `skills/chat/town/SESSION_CARD.md`
@@ -143,11 +144,12 @@ No runtime source file is changed.
 
 From `TEST_REPORT.md`:
 
-- source reads: **15/15 PASS**
+- source reads: **20/20 PASS**
 - source manifest parse: **1/1 PASS**
 - AIDA/POI contract parse: **1/1 PASS**
 - design invariants: **20/20 PASS**
 - Officer Doppel-Denk source/profile checks: **6/6 PASS**
+- Resident Dance Culture source/design checks: **12/12 PASS**
 - runtime tests: **0**
 - browser tests: **0**
 - screenshots: **0**
@@ -175,7 +177,10 @@ Durable details are in:
 - resource availability/consumption stays world/resource-owned and is not defined by Lean Memory;
 - Brick Fish PR #254 and Reaction Choreography PR #256 remain separate Draft candidates;
 - current relevant ToolBox/WorldBuilder recovery blockers must be checked at implementation time;
-- no public Stage exists for this slice.
+- no public Stage exists for this slice;
+- Common Bounce is design-only: no universal runtime clip/profile has been authored yet;
+- Resident Signature Move assignments are audition candidates only, not final mappings;
+- player dance discovery/learning events are not yet added to the Player Journey schema/runtime.
 
 ## Exactly one next gate
 
@@ -215,3 +220,26 @@ Durable profile:
 `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`.
 
 No runtime file, browser proof, Stage deployment or Live promotion was added by this checkpoint.
+
+
+## Additive checkpoint · Resident Dance Culture · 2026-09-28
+
+Persisted Georg's shared KFB music/dance direction as one reusable Resident layer:
+
+- all compatible Residents/characters are music-positive and can enter a shared beat-driven **Common Bounce**;
+- accepted Legacy Orc B `orb.bounce` is the behavioral donor; it is not falsely declared a universal skeletal clip;
+- current Motion Library v2b provides **24 dance entries** for both `Rig_Medium` and `Rig_Large`;
+- long dances may yield beat-aligned **Signature Move slices**, avoiding one new FBX per Resident;
+- each Resident eventually gets one authored/learnable Signature Move mapping;
+- Resident Disco pairings provide the first audition pool, including Toy Soldier, Witch, Avian, Black Knight, Demon Lord, FrizzleBob and others;
+- group grammar is Common Bounce between phrase-boundary Signature inserts, with one shared song transport;
+- Brick Fish / Reaction Choreography may interrupt a dancer, then return them to Common Bounce on a legal beat/bar;
+- player starts with Common Bounce; Signature Moves progress `UNKNOWN → DISCOVERED → LEARNED/PERFORMABLE`;
+- persistent ownership belongs to **Player Journey / Meta**, with teacher/event/method provenance; learned dances do not consume Backpack slots;
+- collected move identity is semantic across avatars, so unsupported actor families keep the unlock without invalid retargeting;
+- Animation Studio / Motion Library is the intended authoring/mapping surface, not a new Dance Studio runtime.
+
+Durable design:
+`RESIDENT_DANCE_CULTURE_2026-09-28.md`.
+
+Evidence: **20/20 source reads · 12/12 Dance Culture checks PASS**. Runtime/browser/Stage remain 0 for this additive design checkpoint.
