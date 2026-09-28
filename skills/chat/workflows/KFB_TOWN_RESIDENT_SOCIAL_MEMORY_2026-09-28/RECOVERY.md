@@ -220,3 +220,38 @@ Use:
 > **KFB WEB PUSH/READ — Town Resident Social Memory — recover + continue**
 
 This invokes the repository-documented shortcut in `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`: recover current GitHub truth, keep the existing owner/branch, continue Web/GitHub-first, persist before long chat prose, read back every write, treat timeouts as UNKNOWN, and avoid Work/WSA or human review surfaces unless a concrete capability/decision requires them.
+
+
+## Additive recovery checkpoint · Officer Doppel-Denk · 2026-09-28
+
+Latest verified design checkpoint before this Recovery write: `0a36500fbb16835ea9b2b3bc9dc79cbba721b3ba`.
+
+New durable profile:
+`OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
+
+Working name: **Officer Doppel-Denk**. Technical source remains `toy-soldier`.
+
+Source/evidence updates:
+- source manifest now contains **15** entries, adding current Resident Atlas Toy Soldier and Motion Registry pins;
+- general design checks remain **20/20 PASS**;
+- Officer-specific source/profile checks: **6/6 PASS**;
+- no runtime/browser/Stage test is claimed.
+
+Recovered continuation state:
+```text
+closed present
+→ existing one-time reveal
+→ Officer emerges
+→ rifle march/patrol
+→ resident-specific order/disorder POI scan
+→ inspect/admonish/interact
+→ ChatterBox/Triplet + Reaction Choreography as needed
+→ Lean Memory only if socially meaningful
+→ resume patrol
+```
+
+First POI examples: Brick Fish exchange, Tiny Treats pizza slice, plant/path obstruction.
+
+Open animation seam: audition `Running_HoldingRifle` and `Walking_A/B` with exact Toy Soldier rifle; no accepted shoulder-rifle march yet. Only if current source clips fail should a Mixamo/new motion donor enter the existing Motion Library intake.
+
+The single next gate remains **RESIDENT-SOCIAL-MEMORY-01**; Officer Doppel-Denk is the preferred first character-specific overlay inside that integrated proof, not a separate runtime or proxy Stage.
