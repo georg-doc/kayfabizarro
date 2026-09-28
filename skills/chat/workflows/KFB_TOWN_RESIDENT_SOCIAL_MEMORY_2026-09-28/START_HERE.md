@@ -114,6 +114,7 @@ Current evidence:
 - **20/20** design invariants PASS;
 - Resident Dance Culture checks: **12/12 PASS**;
 - Resident Gift Culture checks: **15/15 PASS**;
+- Gift KISS correction checks: **6/6 PASS**;
 - runtime/browser/Stage remain 0 because this is design persistence only.
 
 Fresh-chat shorthand:
@@ -169,8 +170,10 @@ Design stack:
 - exact Santa source provides `Santa.glb` plus five real wrappers `Present_A–E`;
 - December-2024 Helpers provide `Helper_A/B` plus toy-workshop props for a later North-Pole/Holiday Resident scene;
 - Toy Soldier `Present_Base → Present_UnwrappedBase` remains the strongest reveal-animation donor, but its opened geometry is not generalized to Santa wrappers;
-- Gift Culture separates **wrapperRef**, **payloadRef** and giver **intent**;
-- real ownership transfer stays with existing world/inventory owners; Player Journey / Meta keeps durable player-facing gift provenance;
+- Gift Culture separates **wrapperRef**, optional presented **payloadRef/payloadTags** and giver **intent**;
+- **KISS baseline:** ordinary Resident gifts are social scene beats, not durable item transfers; do not build a Resident inventory/barter ledger or per-prop provenance chain;
+- persist only meaningful semantic receipts (who, social intent/meaning, notable outcome/reconciliation); exact wrapper instance, routine handoff and disposable prop owner normally stay transient;
+- Player Journey / GPT-Site persistence is optional for meaningful callbacks, not required for the visible gift scene; later real inventory may attach through its existing owner;
 - gifts can be warm, useful, barter, teasing, satirical needling, prank, tribute, apology or reconciliation without creating a global relationship score;
 - character-specific Reaction Choreography + ChatterBox/Triplets resolve the reveal; Lean Memory stores only meaningful provenance/outcomes;
 - exploding/prank presents default to social/Kayfabe cartoon violence; actual damage only when Combat explicitly owns the event;
@@ -180,4 +183,4 @@ Design stack:
 Durable design:
 `RESIDENT_GIFT_CULTURE_2026-09-28.md`.
 
-Current evidence: **23/23 source reads · 15/15 Gift Culture checks PASS**. No gift runtime, barter economy, North-Pole scene, unwrap VFX or Stage deployment is claimed.
+Current evidence: **23/23 source reads · 15/15 Gift Culture checks · 6/6 Gift KISS correction checks PASS**. No gift runtime, barter/item economy, North-Pole scene, unwrap VFX or Stage deployment is claimed.
