@@ -2054,3 +2054,41 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-28 · KFB Town · Resident Social Memory / AI Town donor synthesis
+
+Status: **DESIGN REFERENCE CANDIDATE · DOCUMENTED / TESTED · NOT IMPLEMENTED**
+
+Persisted:
+- `skills/chat/town/references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/START_HERE.md`
+- `SOURCE.json`
+- `TEST_REPORT.md`
+- Town `START_HERE.md` and `SESSION_CARD.md` routing.
+
+Donor result:
+- `georg-doc/ai-town@2693ed6973e3461204385c9d11fb3aca4e8e3a7a` is pinned as a **mechanism donor only**;
+- retained mechanisms: compact episodic memory, small top-k retrieval, relevance/recency/importance ranking, cooldowns and asynchronous cognition;
+- no AI Town runtime/Convex requirement, second NPC database or second dialogue engine is adopted.
+
+KFB integration direction:
+- world events create compact witness-specific memory receipts;
+- `witnessed / told / inferred` remain distinct;
+- gifts, promises, Cards, banter, arguments, work and performances may open tiny resumable social threads;
+- ChatterBox / semantic Triplets / selectable retorts remain the language lineage;
+- Fluffolekt / Fluff-o-lect may omit the carrying word only when shared memory or visible context makes meaning recoverable;
+- current Brick Fish PR #254 and Reaction Choreography PR #256 are explicit candidate seams, not promoted runtime truth;
+- movement, persistence, POP/rewards, Combat and actor/rig owners remain unchanged.
+
+Actual evidence:
+- source reads: **11/11 PASS**;
+- machine-readable source manifest parse: **1/1 PASS**;
+- design invariant checks: **12/12 PASS**;
+- runtime/browser/Stage tests: **0**, intentionally not claimed.
+
+Reserved future Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/` — **NOT DEPLOYED**.
+
+Exactly one later productive gate:
+**RESIDENT-SOCIAL-MEMORY-01** in the real receiving world after relevant current recovery blockers clear. No standalone proxy review page.
