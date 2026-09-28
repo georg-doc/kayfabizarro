@@ -1323,6 +1323,7 @@ KFB resident direction:
 - shared **Resident Dance Culture**: all compatible Residents can enter a beat-driven Common Bounce; each eventually gets one learnable Signature Move/motion slice; current Motion Library v2b has 24 dance entries across Rig_Medium/Rig_Large;
 - accepted Legacy Orc B `orb.bounce` is the first Common Bounce behavioral donor; Resident Disco supplies shared-transport/group-pattern and first per-character pairing candidates;
 - player starts with Common Bounce; Signature Moves are discovered/learned from Residents and persist through Player Journey / Meta with teacher/event/method provenance, not Backpack slots or a second skill inventory;
+- learned Signature Moves can be replayed as social tokens: the origin Resident may recognize/join/correct/challenge/parody through existing Reaction/Lean-Memory layers when provenance/knowledge supports it;
 - world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
 
 Evidence: **20/20 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 source checks PASS · Dance Culture 12/12 PASS**. Runtime/browser/Stage tests remain 0.
