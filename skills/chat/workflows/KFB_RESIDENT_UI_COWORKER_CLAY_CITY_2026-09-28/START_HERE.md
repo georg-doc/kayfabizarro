@@ -17,7 +17,7 @@ Outcome: redesign Resident Atlas and Animation Lab/Library together inside the a
 
 Read `CLAUDE_COWORKER_CLAY_CITY_MVP_01.md`.
 
-Outcome: implement one genuinely playable Clay City tile with a geometric road, verified kit buildings, Ground/Auto/Flight and a measured shared sky. Claude Coworker is the selected integration executor. It writes a bounded GitHub branch and returns a Site-ingestible handoff; it does not assume direct access to the private GPT Site.
+Outcome: implement one genuinely playable Clay City tile with a geometric road, a sparse set of instanced Kit scene clusters, Ground/Auto/Flight and a measured shared sky. OSM remains route/landmark skeleton; approved WFC rules may fill only unlocked side zones and never own route, Track contact or interaction anchors. Claude Coworker is the selected integration executor. It writes a bounded GitHub branch and returns a Site-ingestible handoff; it does not assume direct access to the private GPT Site.
 
 ## Current source locks
 
