@@ -59,6 +59,7 @@ jobs:
           m=json.load(open('registry/production/v1/manifest.json'))
           s=json.load(open('registry/production/v1/self_service.json'))
           p=json.load(open('registry/production/v1/problems.json'))
+          print('REGISTRY_PROBLEMS '+json.dumps(p, ensure_ascii=False))
           assert m['counts']['problems']==0, m['counts']
           assert s['counts']['jobs'] > 0, s['counts']
           assert s['counts']['prompts']==s['counts']['jobs'], s['counts']
