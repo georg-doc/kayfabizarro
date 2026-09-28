@@ -1,3 +1,29 @@
+## 2026-09-29 · KFB Town · productive Social Card Relay runtime candidate in Travel
+
+### IMPLEMENTATION
+- The interaction-first Social Card Relay design is now consumed by the real `georg-doc/KFB-Travel-Globe` Town host on Draft PR **#40**.
+- Runtime branch: `chatgpt-web/resident-social-card-relay-01-2026-09-29`.
+- Runtime candidate head: `392d2b909afe3d26a25e2f64e3fdae19d1159273`.
+- Existing Caveman sends real Anti-Rules Card 4 / **The Authority Figure** to the player; existing King Kayfabian receives it through selectable **SHOW IT → SPIN IT → SELL IT**.
+- The proof emits existing-owner semantic seams for Card discovery, ChatterBox seed, Reaction intent and one witnessed semantic memory receipt; no second movement/camera/world/Card-inventory/Journey/Combat/Race owner.
+- Georg's parallel Blender MCP gift/brawl/emotional-choreography/clay-particle work remains untouched and is not claimed until source-admitted.
+
+### TESTED RESULT
+- Travel baseline run/job `36498754015 / 109184348867`: **140/140 PASS · build PASS · verify PASS · 0 missing**.
+- Static artifact `11004492242`, digest `sha256:65d52153ef902f87da88ec5c08b1e0cd911a61306e6caec11d2441f532f14cb6`.
+- Browser run/job `36498754082 / 109184348812`: **27 functional Relay assertions PASS**; real pinned Card source loaded; Relay reaches `RESOLVED`; one witnessed receipt; visible King reaction; all semantic seams observed.
+- Browser artifact `11004023875`, digest `sha256:da00d8545b7d28db444c8409505fc61919f97f1d256b90b45f9e70fab9440f98`, with three screenshots.
+- Overall browser workflow is **BLOCKED / not PASS** because the existing Town host emits relative 404 requests for `/town/asset-repo.json`, `/town/globe-v13/auswahl-georg.json` and `/town/globe-v13/flora-auswahl.json`.
+- Two repair passes exhausted; no repair 3. Functional Relay candidate preserved with full Travel Failure Recovery.
+
+### NEXT GATE
+Exactly one: **TOWN-RESOURCE-PATH-01**. Do not modify Social Card Relay. Isolate/fix/retire/classify the existing Town relative resource requests, then rerun the unchanged Relay browser proof.
+
+### PUBLIC
+- Stage: **NOT DEPLOYED**
+- Live: **NOT PROMOTED**
+- human gate: **not requested**
+
 ## 2026-09-29 · KFB Town · Interaction-first Social Card Relay + King synthesis
 
 ### DESIGN
