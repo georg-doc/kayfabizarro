@@ -471,3 +471,74 @@ Evidence:
 Runtime/browser/Stage/Site-backend implementation remain 0.
 
 Single next gate remains **RESIDENT-SOCIAL-MEMORY-01**. First Card proof: one real Resident→Player→Resident relay before any default Card-search grind.
+
+
+## Productive runtime recovery · Social Card Relay · 2026-09-29
+
+The earlier design-only Social Card Relay checkpoint has now been consumed by the real Travel Town runtime.
+
+Receiving owner:
+- `georg-doc/KFB-Travel-Globe`
+- branch `chatgpt-web/resident-social-card-relay-01-2026-09-29`
+- Draft PR **#40**
+- runtime candidate `392d2b909afe3d26a25e2f64e3fdae19d1159273`
+- closed recovery/handoff state observed at `a8aba4fdc4de8ece4d529cc9edcd4097ec876e05`
+
+Runtime proof:
+```text
+existing Caveman
+→ Anti-Rules / The Authority Figure
+→ player discovery + carry state
+→ existing King Kayfabian
+→ SHOW
+→ SPIN
+→ SELL
+→ visible reaction
+→ semantic ChatterBox seed
+→ semantic Reaction intent
+→ one witnessed card-relay receipt
+→ RESOLVED
+```
+
+Static/build evidence:
+- `36498754015 / 109184348867`
+- **140/140 PASS**
+- build PASS
+- verify PASS
+- 0 missing
+- artifact `11004492242`
+- digest `sha256:65d52153ef902f87da88ec5c08b1e0cd911a61306e6caec11d2441f532f14cb6`
+
+Final browser repair-pass evidence:
+- `36498754082 / 109184348812`
+- **27 functional Relay assertions PASS**
+- real Card source observed as `remote-pinned`
+- Relay reached `RESOLVED`
+- artifact `11004023875`
+- digest `sha256:da00d8545b7d28db444c8409505fc61919f97f1d256b90b45f9e70fab9440f98`
+- screenshots: offer / Sell choice / resolved reaction
+
+Overall browser gate remains **BLOCKED**, not PASS, because the host emits existing relative 404 requests:
+- `/town/asset-repo.json`
+- `/town/globe-v13/auswahl-georg.json`
+- `/town/globe-v13/flora-auswahl.json`
+
+These requests did not prevent the new Card Relay flow from completing.
+
+Two browser repair passes are exhausted:
+1. diagnostics proved the Relay's old 15 s mount deadline expired before real Town boot;
+2. 90 s owner-ready wait fixed the mount race and proved the full Relay flow, after which only the pre-existing shared-host 404 gate remained.
+
+**STOP. No repair 3.**
+
+Travel full recovery:
+`_handover/RESIDENT_SOCIAL_CARD_RELAY_01_2026-09-29/FAILURE_RECOVERY.md`.
+
+Parallel Blender MCP gift/brawl/clay VFX work remains an external upcoming donor. Do not claim or integrate it until source-admitted.
+
+Exactly one current next gate:
+**TOWN-RESOURCE-PATH-01**.
+
+Do not modify Social Card Relay runtime. Isolate the existing Town request owner, resolve/retire/classify those resource paths, then rerun the exact unchanged browser proof.
+
+Public Stage remains **NOT DEPLOYED**. Live remains **NOT PROMOTED**.
