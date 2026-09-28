@@ -15,8 +15,11 @@ Existing Sites surface: `https://kfb-production-control.frizzlebob.chatgpt.site/
 - `KFB-Web-Read` means a bounded task/source packet. `KFB-Web-Push` means a verified GitHub write by a GitHub-capable executor; it never silently implies merge, deployment or Live promotion.
 - Added `KFB_SITES_GAME_TOOL_PLATFORM_P0_2026-09-28.md` for the existing KFB Production Control Site.
 - Recon proved that the existing Site already has D1 and R2 bindings, authenticated intake, note/link/JSON input, file upload, SHA-256 receipts, reloadable history, export and model-context tools. P0 therefore hardens and adapts the existing foundation instead of rebuilding it.
-- The remaining safety gap is explicit: record lists/downloads/mutations must be scoped to the signed-in owner; owner delete and R2 cleanup must be added before broader playtests.
-- P0A is narrowed to one compact World M2/Combat playtest-report flow using the existing upload path and a portable `kfb.site-intake/1` receipt.
+- P0A owner hardening is implemented: list, download and delete are scoped to the signed-in owner; delete also removes matching R2 objects and D1 file rows.
+- The former browser-only Pocket Inbox is replaced in the existing Site by the authenticated D1/R2 **Production Inbox**. Local legacy entries remain available in a collapsed rescue area for one-time re-upload.
+- The browser-local `visuelle Grammatik für Fahrbahnmarkierungen.md` was visibly present locally but absent from the server inbox. It is therefore preserved, not falsely reported as synchronized.
+- Animation Library Production-05 is **PASS → UI/UX TUNE**: 204 clips, 24/24 checks. Added the binding quiet-status/full-preview/complete-inline-editor standard; no rebuild was started.
+- The remaining product gate is one real local-file upload/readback, followed later by the compact World M2/Combat playtest report and portable `kfb.site-intake/1` receipt.
 - Existing HUB-CTRL / Production Desk and GitHub owner truth remain unchanged. No second status database or Hub was introduced.
 - The existing approved KFB Production Control Site was updated in place with a visible **KFB Sites P0A · Playtest & Übergaben** card. No replacement design or second Site was created.
 - No merge and no Cloudflare Stage/Live promotion occurred.
@@ -29,6 +32,7 @@ Existing Sites surface: `https://kfb-production-control.frizzlebob.chatgpt.site/
 - `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`
 - `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_WEB_PUSH_SITES_PERSISTENCE_2026-09-28.md`
 - `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_SITES_GAME_TOOL_PLATFORM_P0_2026-09-28.md`
+- `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_UI_DENSITY_INLINE_EDITOR_STANDARD_2026-09-28.md`
 - this Return
 
 ## Verified GitHub checkpoints
@@ -44,13 +48,14 @@ Existing Sites surface: `https://kfb-production-control.frizzlebob.chatgpt.site/
 
 ## Existing Site update and proof
 
-- Site source commit: `cfbbc12cdd52ec75c297046bce17df0f05eb329e`
+- Site source commit: `d171330bf2f27d1e96427320a529c1c63abb2b41`
 - Site project: `appgprj_6ab82e3950b88191a8ead3c495e21454`
-- Saved/deployed version: `appgprj_6ab82e3950b88191a8ead3c495e21454~appgver_5db0cac49f10819194cc490d589ac8fd`
-- Deployment: `appgdep_6aba2455423c8191a360bb3929fabf5b` — succeeded.
-- Local production build: all five build stages passed.
-- Public browser proof: the exact Site URL was reloaded and the new card text `KFB Sites P0A · Playtest & Übergaben` was visibly present.
-- Packaging recovery: the first packaging call lacked the bundled Node path; the source remained intact, the corrected retry succeeded, and no duplicate Site was created.
+- Saved/deployed version: `appgprj_6ab82e3950b88191a8ead3c495e21454~appgver_3179bac9896481919d28c90dafa85ac6`
+- Deployment: `appgdep_6aba2fa569588191897a63fc4580ccb2` — succeeded.
+- Production build: all five build stages passed; `git diff --check` passed.
+- Public browser proof: the exact Site URL was reloaded and visibly showed **Production Inbox**, `1 synchronisiert`, the authenticated system-check record, the legacy rescue disclosure and **Animation Library V1 · PASS → TUNE**.
+- WebMCP server readback contained the synchronized system-check record but not `visuelle Grammatik für Fahrbahnmarkierungen.md`; this proves the user file is still local-only rather than silently synchronized.
+- No replacement Hub, duplicate Site, merge or Cloudflare promotion was created.
 
 Documentation checks: required headings and links were read back from GitHub; official OpenAI Sites documentation was rechecked on 2026-09-28.
 
@@ -58,6 +63,6 @@ Documentation checks: required headings and links were read back from GitHub; of
 
 Cloudflare reported a failed preview build for the earlier documentation head `b2f52f2...`. This branch has no Cloudflare Stage route and no Cloudflare publication outcome; the failure is not retried or promoted as part of this workflow slice.
 
-The deployed Site currently exposes the existing authenticated inbox foundation. It is not yet classified as a multi-user playtest backend until P0A proves owner isolation, download isolation, deletion and attachment cleanup.
+The deployed Site now exposes owner-scoped Production Inbox reads, downloads and deletion. It is not yet classified as a complete multi-user playtest backend until a real attachment roundtrip, cross-user isolation and the explicit playtest-report receipt are proven.
 
-Exactly one next gate: implement **P0A** in the existing KFB Production Control Site — harden user ownership and deletion, then add one authenticated World M2/Combat playtest report using the existing R2 upload flow. Prove reload, download isolation, deletion and a portable `kfb.site-intake/1` receipt in the deployed Site.
+Exactly one next gate: in the same Chrome profile that owns the legacy entry, upload **`visuelle Grammatik für Fahrbahnmarkierungen.md`** once through **Datei dauerhaft ablegen**; then verify its authenticated record and downloadable bytes before extending the schema.
