@@ -369,3 +369,53 @@ Current rule:
 - a later real inventory system may attach an external item ref if a specific gameplay use requires durable ownership.
 
 Priority remains **Behavior → Reaction Choreography → emotional expression → compact meaning-memory**, not item administration.
+
+
+## Additive recovery checkpoint · Resident Signature Decks · 2026-09-28
+
+Latest verified design checkpoint before this Recovery write: `05b0f95f384a5fd94b30021c6839ccdcf6f08206`.
+
+New durable design:
+`RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
+
+Source stack expanded to **25** pinned entries with:
+- current `media/kfb/index.json` deck metadata;
+- structured Anti-Rules source JSON;
+- existing Town Signature/Favourite/Catchphrase-Deck decision and ChatterBox donors already pinned.
+
+Recovered architecture:
+```text
+stable Resident identity
++ signatureDeckRef / cluster
++ authored stance
++ 3–7 high-salience Signature Cards
+
+current POI / interaction
++ 1–3 relevant Deck Cards
++ small Lean Memory set
+→ ChatterBox / Triplet / retort
+```
+
+Deck content is authored knowledge, not episodic memory. Lean Memory stores only meaningful Card encounters, arguments, promises, returns or changed interpretations.
+
+Card-recovery KISS loop:
+```text
+player discovers Cards naturally
+→ Almanac / Player Journey records normal collection truth
+→ matching Resident treats them as salient
+→ next visit batches newly relevant Cards
+→ one reaction / ChatterBox beat / Deck-thread update
+→ player keeps discovery record
+```
+
+Do not create one courier interaction per Card by default. Full Deck completion may remain a long-form collection goal while Resident reactions occur at authored milestones.
+
+Current source counts are variable: Anti-Rules 57/16, 9/11 Money Trail 60/15, Big Bad Brain Wrestling 56/15. No 56/15 hard-code.
+
+Officer Doppel-Denk first candidate:
+- Deck: `anti_rules_toolkit` / The Anti-Rules Manifesto;
+- stance remains open: `misreads-as-law` vs `confiscate/destroy` vs `archivist/evidence-locker`.
+
+Evidence: **25/25 source reads · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture · 6/6 Gift KISS · 12/12 Signature Deck PASS**. Runtime/browser/Stage remain 0.
+
+Single integrated next gate remains **RESIDENT-SOCIAL-MEMORY-01**. Its content preparation now includes a small first Resident→Deck mapping pass before the real Card-POI/ChatterBox proof; no new parallel Deck runtime or proxy Stage.
