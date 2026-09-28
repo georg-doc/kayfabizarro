@@ -211,3 +211,12 @@ Application to this slice:
 - do **not** wait for WSA/Work;
 - do **not** create a standalone review HTML or Stage page for this design contract;
 - escalate to Work only later if the real integrated RESIDENT-SOCIAL-MEMORY-01 hits an actual Web capability gap.
+
+
+## Fresh-chat shorthand
+
+Use:
+
+> **KFB WEB PUSH/READ — Town Resident Social Memory — recover + continue**
+
+This invokes the repository-documented shortcut in `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`: recover current GitHub truth, keep the existing owner/branch, continue Web/GitHub-first, persist before long chat prose, read back every write, treat timeouts as UNKNOWN, and avoid Work/WSA or human review surfaces unless a concrete capability/decision requires them.
