@@ -7,7 +7,7 @@ Date: 2026-09-29
 Two bounded jobs are ready and separated by capability:
 
 - Claude Design Desktop owns one integrated ToolBox-style Resident + Animation UI redesign and returns a complete artifact package. It does not own GitHub or integration.
-- Claude Coworker owns one playable Clay City integration tile and persists checkpoints to GitHub. It returns a Site-ingestible handoff instead of assuming private GPT Site access.
+- Claude Coworker owns one playable Clay City integration tile and persists checkpoints to GitHub. Its preferred MVP density is now sparse: 4–8 instanced scene clusters on colourful Clay terrain, with OSM limited to route/landmark skeleton and WFC limited to approved filler recipes. It returns a Site-ingestible handoff instead of assuming private GPT Site access.
 
 The UI brief no longer treats Resident Atlas and Animation Lab as unrelated products. They share one current ToolBox shell, one complete inline 3D editor and one catalog-driven animation surface. The required World preview now renders terrain, Residents and used props together in the current KFB Claymation look; a neutral studio remains only the technical control view.
 
@@ -23,7 +23,8 @@ The UI brief no longer treats Resident Atlas and Animation Lab as unrelated prod
 - World R6 PR #282 @ `df7220331932a28865af96d8411aac630d21dff7`;
 - Halloween Bits PR #279 @ `10a2c5e29bf752215dadb60b23f07253f63e9d34`;
 - current KFB Site and executor-delivery rules;
-- Georg's explicit requirement that Terrain, Residents and Props be judged together in the Claymation render context.
+- Georg's explicit requirement that Terrain, Residents and Props be judged together in the Claymation render context;
+- Georg's T4-based sparse-world direction: breathing room, small building/nature clusters and interaction-rich hero pockets instead of continuous asset coverage.
 
 `KFB Knet-Strecke T4/M2` is required for the Coworker Track presentation. It is not yet in GitHub, but is durably identified in the authenticated Production Inbox as receipt `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21`, 1,433,281 bytes, SHA-256 `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`. Coworker Desktop must verify and ingest these exact bytes; silent fallback to T2/T3 is forbidden.
 
