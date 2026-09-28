@@ -2054,3 +2054,15 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-28 · ANIMATION-LIBRARY-V1 · BRIEF READY
+
+### ADDED
+- `skills/chat/workflows/KFB_ANIMATION_LIBRARY_V1_2026-09-28/START_HERE.md`
+- `skills/chat/workflows/KFB_ANIMATION_LIBRARY_V1_2026-09-28/CLAUDE_DESIGN_BRIEF_ANIMATION_LIBRARY_V1_2026-09-28.md`
+- `skills/chat/workflows/KFB_ANIMATION_LIBRARY_V1_2026-09-28/ANIMATION_PROFILE_EXAMPLE.json`
+- `skills/chat/workflows/KFB_ANIMATION_LIBRARY_V1_2026-09-28/RETURN.md`
+
+### DECISION
+The Animation Library is a ToolBox/Animation Studio consumer of the canonical Motion Library. Blender MCP owns intake, conversion, measurement and registration. Editorial display names, tags, export inclusion and Resident role assignments live in reversible JSON patches keyed by immutable motion IDs. The existing GPT Site becomes the later persistence surface after the Claude Design flow is accepted.

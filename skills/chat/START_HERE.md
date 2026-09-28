@@ -1291,3 +1291,11 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-09-28 · Animation Library V1 · READY FOR CLAUDE DESIGN
+
+Fresh-context design brief:
+`skills/chat/workflows/KFB_ANIMATION_LIBRARY_V1_2026-09-28/START_HERE.md`
+
+Goal: one Mixamo-like Character × Motion browser inside the existing ToolBox Production-03 design, backed by the canonical KFB Motion Library and reversible editorial patches. Blender MCP remains the import/conversion/registration owner. The brief replaces stale generic “Animation Studio” planning for this bounded UI flow; do not create a second ToolBox shell or motion registry.
