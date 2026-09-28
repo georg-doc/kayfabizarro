@@ -1291,3 +1291,33 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-09-28 · KFB Town · Resident Social Memory / AI Town donor synthesis
+
+Current bounded Town design slice:
+`skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/START_HERE.md`
+
+Owner: **KFB Town design reference**. Runtime ownership is unchanged.
+
+Pinned external donor:
+- `georg-doc/ai-town@2693ed6973e3461204385c9d11fb3aca4e8e3a7a`
+
+Use AI Town only for mechanisms: compact episodic memory, small top-k retrieval, relevance/recency/importance ranking, cooldowns and asynchronous cognition. Do **not** port its runtime, Convex requirement, full conversation engine or authoritative free-form relationship/reflection truth.
+
+KFB resident direction:
+- world/encounter truth → witness-specific Lean Memory receipts;
+- `witnessed / told / inferred` remain distinct;
+- tiny resumable social threads carry gifts, promises, Card disputes, banter, work and performances;
+- ChatterBox / semantic Triplets / selectable retorts remain the language lineage;
+- Fluffolekt / Fluff-o-lect can omit the carrying word only when shared memory or visible context makes meaning recoverable;
+- current Brick Fish PR #254 and Reaction Choreography PR #256 are explicit candidate seams;
+- world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
+
+Evidence: **11/11 source reads · 1/1 source-manifest parse · 12/12 design invariants PASS**. Runtime/browser/Stage tests remain 0.
+
+Reserved future route, **NOT DEPLOYED**:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/`
+
+Exactly one later implementation gate:
+**RESIDENT-SOCIAL-MEMORY-01** inside the real receiving world after relevant current recovery blockers clear. No proxy human-review site.
