@@ -6,6 +6,12 @@ on:
       - work/hub-ctrl-01-2026-09-24
     paths:
       - ".github/workflows/hub-briefing-sync-f1-publish.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "tools/production_desk/config.json"
+      - ".github/workflows/hub-briefing-sync-f1-publish.yml"
   workflow_dispatch:
 
 permissions:
