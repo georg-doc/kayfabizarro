@@ -11,7 +11,7 @@ This package turns Georg's latest Resident Atlas review and World MVP direction 
 
 Read `CLAUDE_DESIGN_RESIDENT_UI_CORE_01.md`.
 
-Outcome: redesign Resident Atlas and Animation Lab/Library together inside the accepted current ToolBox design. The shared complete 3D inline editor becomes the only object-edit control surface. Motion Library v4 supplies 263 catalog-driven clips, filters, prop/strike metadata and Resident assignments. Dancing Skeletons remains content; Claude Design does not rebuild the runtime or write GitHub.
+Outcome: redesign Resident Atlas and Animation Lab/Library together inside the accepted current ToolBox design. The shared complete 3D inline editor becomes the only object-edit control surface. Motion Library v4 supplies 263 catalog-driven clips, filters, prop/strike metadata and Resident assignments. Besides the neutral technical studio, the required World view renders terrain, at least two Residents and used props together in the current KFB Claymation look with scale-appropriate material detail. Dancing Skeletons remains content; Claude Design does not rebuild the runtime or write GitHub.
 
 ## Job B · Claude Coworker
 
