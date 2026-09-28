@@ -41,6 +41,8 @@ The same event vocabulary now covers Resident/Combat interaction work in progres
 
 Documentation/routing slice only. No runtime, browser, Stage or public QA is claimed. PR #275's reported asset/catalog checks are preserved as source evidence and were not rerun here.
 
+The existing KFB Production Control Site was updated in place and published successfully from Site source commit `844ac30aee1a16a9aef78da5ef24305164407725`, version `appgprj_6ab82e3950b88191a8ead3c495e21454~appgver_3f564809c39c81919cee44690e56e7d4`. Its framework build passed. The Briefings view now sorts the running Clay City and Resident/Animation jobs first, followed by their current T4 intake and Motion Library donor; frozen/superseded/human-fail entries sort after active work. No browser visual acceptance is claimed.
+
 ## Exactly one next gate
 
-Dispatch `CLAY-CITY-MVP-01` to Claude Coworker. The integrated Resident + Animation ToolBox UI job can run independently in Claude Design Desktop and must not block the playable World MVP.
+Review the first coherent playable `CLAY-CITY-MVP-01` checkpoint from Claude Coworker. The integrated Resident + Animation ToolBox UI job continues independently in Claude Design Desktop and must not block the playable World MVP.

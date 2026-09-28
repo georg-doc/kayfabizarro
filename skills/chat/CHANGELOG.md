@@ -7,6 +7,7 @@
 - WFC is allowed only to select approved cluster recipes in unlocked filler zones. It never owns routes, Track contact, landmarks, spawn/quest/interaction anchors or biome identity.
 - T4 Clay particles are part of the shared presentation donor: small biome-coloured Clay balls/flakes for feet, jumps/landings, tyres and collisions. They must be pooled, event-driven and quality-tiered (`off / low / standard / high`), never a continuous or gameplay-critical emitter.
 - The shared VFX vocabulary also covers Brickfish throw/hit, gift open/burst, melee/wrestling impact, prop break and explosion. Clay particles are the common base layer; comic starburst/impact marks and smoke remain optional additive overlays for Resident interactions and Combat Arena rather than separate effect systems.
+- The existing KFB Production Control Site was updated in place and published from Site source `844ac30a...`. Briefings now place the running Clay City and Resident/Animation jobs first, then their current T4 and Motion Library inputs; frozen, superseded and human-fail records remain available but sort behind active work.
 
 ## 2026-09-29 · Motion Library v4 → integrated Resident + Animation ToolBox UI
 
