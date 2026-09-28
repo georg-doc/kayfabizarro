@@ -132,6 +132,8 @@ The branch changes these Town/router/Hub surfaces plus the bounded workflow pack
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_DANCE_CULTURE_2026-09-28.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_GIFT_CULTURE_2026-09-28.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SIGNATURE_DECKS_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json`
 - this `RETURN.md`
 - `skills/chat/town/START_HERE.md`
 - `skills/chat/town/SESSION_CARD.md`
@@ -146,7 +148,7 @@ No runtime source file is changed.
 
 From `TEST_REPORT.md`:
 
-- source reads: **25/25 PASS**
+- source reads: **27/27 PASS**
 - source manifest parse: **1/1 PASS**
 - AIDA/POI contract parse: **1/1 PASS**
 - design invariants: **20/20 PASS**
@@ -155,6 +157,7 @@ From `TEST_REPORT.md`:
 - Resident Gift Culture source/design checks: **15/15 PASS**
 - Gift KISS correction checks: **6/6 PASS**
 - Resident Signature Deck source/design checks: **12/12 PASS**
+- Resident Social Card Relay source/design checks: **15/15 PASS**
 - runtime tests: **0**
 - browser tests: **0**
 - screenshots: **0**
@@ -191,7 +194,9 @@ Durable details are in:
 - barter/regift/exploding-present chains remain primarily semantic/visual design beats;
 - future Santa/Helpers North-Pole winter environment and Holiday audio remain source-required;
 - final Resident→Deck mapping table is not authored yet;
-- Deck-aware ChatterBox retrieval and Card-recovery runtime are not implemented;
+- Social Card Relay / SHOW-SPIN-SELL runtime and Deck-aware ChatterBox adapter are not implemented;
+- Free Roam/Race/Combat/Card Zone Card adapters and King Kayfabulation integration are not implemented;
+- existing KFB Production Control Site target is identified, but this chat exposes no direct Site/D1/R2 mutation action; Site process payload remains `PENDING_TOOL_GAP` in the durable checkpoint;
 - Card count/page count must remain source-driven; no 56/15 hard-code.
 
 ## Exactly one next gate
@@ -322,3 +327,56 @@ Durable design:
 `RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
 
 Evidence: **25/25 source reads · 12/12 Signature Deck checks PASS**. No runtime/browser/Stage/Live claim.
+
+
+## Additive checkpoint · Social Card Relay / King Kayfabulation · 2026-09-29
+
+Georg refined the Card gameplay direction toward an **interaction-first hybrid**.
+
+Preferred social core:
+```text
+Resident A introduces a real Card
+→ player learns/discovers it
+→ A asks player to bring/show/pitch it to Resident B
+→ player travels through the living world
+→ SHOW IT
+→ SPIN IT
+→ SELL IT
+→ B reacts through personality + Signature Deck stance + Lean Memory
+→ ChatterBox / Reaction Choreography / retort / optional counter-Card
+→ one compact semantic Card-relay receipt
+→ both Residents return to their routines
+```
+
+Important source separation:
+- Freestyle card-entry ritual remains **NAME IT → CLAIM IT → POWER IT**;
+- Town/Tourbus social presentation remains **SHOW IT → SPIN IT → SELL IT**;
+- the existing King synthesis remains **Actor + 3 Scene + Quest**.
+
+Product hierarchy now favors:
+1. Resident interaction / ChatterBox / emotional choreography / Lean Memory;
+2. Social Card Relay as the first repeatable Card mechanic;
+3. Free Roam/Race as connective travel and emergent interruption;
+4. Dance/Gift/Brick Fish as social culture;
+5. Combat/Card Zones/minigames as exceptional Card acquisition/proof;
+6. King Kayfabulation as periodic synthesis/closure.
+
+Signature Decks remain stable character worldview/Card-source profiles, but “recover my lost Deck” is now explicitly one optional character motive rather than the default gameplay loop.
+
+Player Journey / Almanac remains Card discovery truth. Narrative handoff does not consume discovery, and MVP needs no physical Card inventory duplication.
+
+Durable design:
+`RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
+
+### Site process persistence
+
+Existing Site owner identified through the connected Library:
+- KFB Production Control;
+- project `appgprj_6ab82e3950b88191a8ead3c495e21454`;
+- existing owner only; no second Site created.
+
+This chat has no direct Site/D1/R2 write action, so the process is **not falsely claimed as written to Site storage**. The exact intended Site payload is persisted in:
+`SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json`
+with `siteWrite.status = PENDING_TOOL_GAP`.
+
+Evidence: **27/27 source reads · 15/15 Social Card Relay checks PASS**. Runtime/browser/Stage/Site-backend write remain 0 for this checkpoint.
