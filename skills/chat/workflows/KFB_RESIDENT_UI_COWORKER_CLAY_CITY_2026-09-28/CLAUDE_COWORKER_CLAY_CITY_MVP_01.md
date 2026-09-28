@@ -9,7 +9,7 @@ The outcome must let Georg walk, switch directly to a car, drive on and off the 
 
 Do not build the whole Open World.
 
-Preferred execution environment: **Claude Coworker Desktop** with the real local repository checkout, browser and GitHub access. Desktop is preferred because the job needs local asset inspection, browser playtesting and small crash-safe commits. Do not continue from an uploaded snapshot when the current checkout is available.
+Execution environment: **Claude Coworker Desktop**. Capability note confirmed on 2026-09-28: this Coworker session has Dropbox and Chrome/GitHub access, but no real local Git checkout or local server. Work through the existing GitHub branch and review browser surfaces with small crash-safe commits. Do not claim local tests that this environment cannot run, and do not publish every micro-checkpoint to the fixed public Stage.
 
 ## Recover exact truth first
 
@@ -83,8 +83,8 @@ T4/M2 is not yet on GitHub, but its exact uploaded package is present in the aut
 
 Therefore:
 
-1. on Coworker Desktop, download it from the owner-authenticated Production Inbox or receive the identical local ZIP from Georg;
-2. verify byte count and SHA-256 before unpacking;
+1. use the verified local copy at `/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1.zip`;
+2. verify byte count and SHA-256 again before unpacking;
 3. inspect its manifest/checksums, then ingest it into the existing Track receiving owner on the Coworker branch;
 4. commit the verified intake as the first checkpoint before runtime integration;
 5. if the exact bytes are unavailable, return `T4_SOURCE_REQUIRED` for the Track subgate and do not silently substitute T2/T3 visuals.
@@ -182,7 +182,9 @@ Checkpoint early and narrowly:
 4. sky + performance evidence;
 5. Return/changelog/Hub handoff.
 
-After every write, read back the exact branch head and intended files. A timeout is `UNKNOWN`: inspect first, retry only when the write is absent.
+These are recovery checkpoints, not Human Gates. Do not stop after checkpoints 1 or 2 merely to ask Georg to approve progress. Continue autonomously while the next bounded step is clear. Stop early only for a true core blocker, conflicting source ownership, or after the second failed repair pass on the same gate.
+
+Because this environment has no local server, publish a review surface only when a coherent browser-testable checkpoint exists. Do not churn the fixed Stage for every commit. After every write, read back the exact branch head and intended files. A timeout is `UNKNOWN`: inspect first, retry only when the write is absent.
 
 For binary intake, verify file count, size, format magic and parse/load before commit. Never commit command stderr as asset data and never perform a blind ZIP/base64 bulk upload.
 
