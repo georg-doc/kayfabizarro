@@ -1291,3 +1291,20 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-09-28 · WFC-01 Trackside & City Filler · READY BRIEF
+
+Fresh-chat package:
+
+`skills/chat/workflows/KFB_WFC_01_TRACKSIDE_CITY_FILLER_2026-09-28/START_HERE.md`
+
+- K2 clay tools remain `ACCEPTED AS BASE`; T3 v2 remains a retained donor.
+- S1 road v1-v3 and T3-v3 markings are quarantined as visual failures.
+- Track Core v0.11 on `georg-doc-patch-2` supplies protected drive/contact geometry, `seeds.wfc`, sockets and staggered transition windows.
+- WFC fills only approved trackside/city/nature cells and exports deterministic recipes with bounded fallback.
+- Blender MCP is separately briefed for source-proven clay landmarks, façade pieces and socketed kit donors.
+- `KFB_RENDER_CONTRACT_R0.md` is the binding global rebrief for shadow detachment, contact rims and clay-detail clipping/aliasing; per-scene bias guesses are rejected.
+- No runtime, Stage or Live claim was made.
+
+Exactly one next gate: `WFC-01A · Module catalog + protected-mask proof`.
