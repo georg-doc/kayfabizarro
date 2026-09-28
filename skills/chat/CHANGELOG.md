@@ -2054,3 +2054,12 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-28 · KFB Sites P0 and executor-specific delivery
+
+- PR #276 now distinguishes GitHub-capable Web/Work/Codex execution from Claude Design and Blender MCP artifact authoring.
+- `KFB-Web-Read` is the bounded source/task packet; `KFB-Web-Push` is the verified GitHub write performed only by a GitHub-capable executor.
+- Claude Design and Blender receive closed packages and return complete packages; they are not assigned GitHub/Hub maintenance without a verified connector.
+- Added `KFB_SITES_GAME_TOOL_PLATFORM_P0_2026-09-28.md` for the existing KFB Production Control Site: D1 playtest/decision/progress records, R2 uploads, optional ChatGPT sign-in, task packets and later game/tool persistence.
+- First implementation gate is P0A: one real user-owned playtest report plus one attachment, saved as a review version before deployment.
