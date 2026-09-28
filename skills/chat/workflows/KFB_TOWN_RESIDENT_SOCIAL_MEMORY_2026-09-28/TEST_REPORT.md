@@ -8,7 +8,7 @@ Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
 ### Source reads
 
-**23 / 23 PASS**
+**25 / 25 PASS**
 
 Verified directly from current GitHub state:
 1. `georg-doc/ai-town` main ref;
@@ -34,6 +34,8 @@ Verified directly from current GitHub state:
 21. Santa pack for exact `Santa.glb` plus source `Present_A–E` wrapper variants.
 22. December-2024 Helpers characters for exact `Helper_A.glb` / `Helper_B.glb`.
 23. December-2024 Helpers GLTF asset tree for verified toy-workshop props.
+24. `media/kfb/index.json` for current deck/card/page metadata and variable deck sizes.
+25. `Anti-Rules_Toolkit_-_ADD_web.pdf.json` for the structured Anti-Rules source deck.
 
 The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before the source/evidence closure. Current exact pin:
 `9ca3ed0a9987fbb11d0721f5689d6040943403d5`.
@@ -42,7 +44,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 **1 / 1 PASS**
 
-`SOURCE.json` parses as JSON and contains exactly **23** pinned source entries.
+`SOURCE.json` parses as JSON and contains exactly **25** pinned source entries.
 
 ### Machine-readable AIDA / POI contract
 
@@ -65,7 +67,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 Checked against the committed design reference, source manifest and AIDA contract:
 
-1. source manifest contains 23 donors;
+1. source manifest contains 25 donors;
 2. AIDA contract parses;
 3. exact AI Town donor HEAD present;
 4. ChatterBox + Triplet lineage present;
@@ -157,6 +159,27 @@ No generic unwrap runtime, barter economy, item-provenance ledger, exploding-pre
 5. a tiny GPT-Site `ResidentMemoryReceipt` store is architecture-only / optional, not a runtime prerequisite;
 6. later real inventory/provenance may attach externally without changing the social Gift Culture contract.
 
+## Resident Signature Deck evidence
+
+**12 / 12 PASS**
+
+Documentation/source checks for worldview, ChatterBox and Card-recovery threads:
+
+1. current Town source explicitly states that every NPC has a favourite/signature/catchphrase Deck or an individual selection within a cluster;
+2. Town source explicitly says a Signature Deck is not an admission barrier and deliberate Moshpit mismatches are allowed;
+3. current Card index parses and is used as count/source metadata rather than hard-coded deck size;
+4. current index reports `anti_rules_toolkit` at **57 cards / 16 pages**;
+5. current index reports `the_kayfabe_money_trail_9_11` at **60 cards / 15 pages**;
+6. current index reports `big_bad_brain_wrestling` at **56 cards / 15 pages**;
+7. Anti-Rules source is structured card data with name/power/lore fields;
+8. committed Resident Deck contract treats Deck knowledge as stable authored identity, not Lean episodic memory;
+9. ChatterBox retrieval is bounded to current beat + stance + **1–3 relevant Cards** + small memory set, never a full Deck prompt dump;
+10. `deckRef + stance` supports direct fit and deliberate archetype/deck mismatch;
+11. Card recovery/search reuses existing Card POIs and Player Journey/Almanac collection rather than a second Card inventory/quest owner;
+12. full-deck collection may remain long-form, but Resident handoff/reactivity is batched through meaningful Card/milestone beats rather than one identical courier transaction per Card.
+
+No final Resident→Deck mapping table, Card-recovery runtime, ChatterBox Deck adapter or public Stage is claimed by these checks.
+
 ## Runtime / browser / Stage
 
 - runtime code changed: **0 files**
@@ -176,7 +199,7 @@ is now documented in the branch version of `skills/chat/FRESH_CHAT_SLICE_PROTOCO
 
 ## Result
 
-**PASS for documentation/source synthesis + POI/AIDA contract + Officer Doppel-Denk profile + Resident Dance Culture + Resident Gift Culture contracts.**
+**PASS for documentation/source synthesis + POI/AIDA + Officer Doppel-Denk + Dance Culture + Gift Culture + Signature Deck contracts.**
 
 This is not an implementation PASS for autonomous Residents, Lean Memory, POI perception, routines, motivations, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
 
