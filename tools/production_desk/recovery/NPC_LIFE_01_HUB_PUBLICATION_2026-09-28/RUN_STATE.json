@@ -1,0 +1,99 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "NPC-LIFE-01 Hub publication",
+  "exportRevision": "2026-09-28-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "stopReason": "Two Hub publication closure attempts failed; no third repair permitted in this slice.",
+  "owners": {
+    "hub": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 202,
+      "branch": "work/hub-ctrl-01-2026-09-24"
+    },
+    "product": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 210,
+      "branch": "chatgpt-web/npc-life-01-2026-09-24",
+      "implementationHead": "ea157c52dd6cadbae1b0fe40f6cacede65ec9792",
+      "evidenceHead": "b638507eef20ae29f3e3022165714e6d567aef57"
+    },
+    "combat": {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "pr": 5,
+      "branch": "chatgpt-web/combat-arena-integration-v2-2026-09-19",
+      "head": "d6cf532e64d45fd3117775ec61cfc87b9e948ac0",
+      "visibility": "private"
+    }
+  },
+  "stage": {
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident/npc-life-01/",
+    "cloudflareBranch": "cloudflare-live",
+    "implementationMarker": "ea157c52dd6cadbae1b0fe40f6cacede65ec9792",
+    "appBlob": "76e8cc5b166188c11948d7e4c101efc72be5eb70",
+    "branchPayloadVerified": true,
+    "publicBrowserVerified": false
+  },
+  "attempts": [
+    {
+      "runId": 36470315166,
+      "sourceHead": "52883aa16253c4e325367ff2d59e7b50fdcd94f4",
+      "unitTests": {
+        "build": "16/16",
+        "render": "2/2"
+      },
+      "registryProblems": 6,
+      "conclusion": "failure",
+      "cloudflareRootPublishReached": false
+    },
+    {
+      "runId": 36471270090,
+      "sourceHead": "82f6d6dc0ee02752d84180e1761495fafb35563b",
+      "unitTests": {
+        "build": "16/16",
+        "render": "2/2"
+      },
+      "registryProblems": 3,
+      "conclusion": "failure",
+      "cloudflareRootPublishReached": false
+    }
+  ],
+  "provenBlockers": [
+    {
+      "lane": "combat-ranged-mvp",
+      "kind": "pr-missing",
+      "detail": "kayfabizarro repository-scoped Actions token cannot read private georg-doc/KFB-Combat-Arena PR #5"
+    },
+    {
+      "lane": "combat-ranged-mvp",
+      "kind": "branch-missing",
+      "detail": "kayfabizarro repository-scoped Actions token cannot read the private Combat product branch"
+    },
+    {
+      "lane": "combat-ranged-mvp",
+      "kind": "brief-missing",
+      "detail": "current resolver looks the Hub-owned brief up in the product repo because lane repo and brief repo are coupled"
+    }
+  ],
+  "preserved": [
+    "NPC-LIFE implementation and existing cloudflare-live Stage payload",
+    "NPC-LIFE public-proof.mjs evidence script",
+    "Hub NPC-LIFE review metadata",
+    "World M2A review-path correction a91928febeaeba6f321703f52d1979cde0fb8419",
+    "REGISTRY_PROBLEMS diagnostic log line"
+  ],
+  "temporaryWorkflowDelta": [
+    "pull_request trigger in .github/workflows/hub-briefing-sync-f1-publish.yml",
+    "REGISTRY_PROBLEMS diagnostic print before unchanged strict assertion"
+  ],
+  "nextGate": {
+    "id": "HUB-CROSS-REPO-RESOLUTION-01",
+    "outcome": "Repository-native cross-repo lane/Hub-local brief contract test and resolver repair; online registry must report 0 problems before another publication attempt."
+  },
+  "forbiddenUntilNextGatePass": [
+    "third Hub publication attempt",
+    "NPC-LIFE runtime rebuild",
+    "Combat rebuild or owner replacement",
+    "auto-merge",
+    "Live promotion"
+  ]
+}
