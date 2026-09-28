@@ -1352,3 +1352,37 @@ Reserved future route, **NOT DEPLOYED**:
 
 Exactly one later implementation gate:
 **RESIDENT-SOCIAL-MEMORY-01** inside the real receiving world after relevant current recovery blockers clear. No proxy human-review site.
+
+
+## 2026-09-29 · KFB Town · Social Card Relay productive runtime checkpoint
+
+The earlier Town Resident Social Memory / Social Card Relay design now has a productive receiving-runtime candidate.
+
+Runtime owner:
+- `georg-doc/KFB-Travel-Globe`
+- Draft PR **#40**
+- branch `chatgpt-web/resident-social-card-relay-01-2026-09-29`
+- runtime candidate head `392d2b909afe3d26a25e2f64e3fdae19d1159273`
+- full recovery handoff under `_handover/RESIDENT_SOCIAL_CARD_RELAY_01_2026-09-29/`
+
+Implemented in the existing Travel `site/town/` host:
+- Caveman → real Anti-Rules Card 4 → player → King Kayfabian;
+- selectable `SHOW IT → SPIN IT → SELL IT`;
+- semantic ChatterBox seed;
+- semantic Reaction intent;
+- one witnessed compact Card-relay receipt;
+- clean `RESOLVED` state;
+- no second movement/camera/world/Card inventory/Journey/Combat/Race owner.
+
+Evidence:
+- **140/140 Travel tests PASS · build PASS · verify PASS**;
+- browser flow: **27 functional assertions PASS**, Relay reaches `RESOLVED`;
+- browser artifact `11004023875` includes three screenshots;
+- overall browser workflow remains **BLOCKED / not PASS** only because the existing Town host emits relative 404 requests for `asset-repo.json`, `auswahl-georg.json` and `flora-auswahl.json`.
+
+Two repair passes are exhausted. No repair 3.
+
+Exactly one next gate:
+**TOWN-RESOURCE-PATH-01** — isolate the existing Town resource-path owner and resolve/classify those requests before rerunning the unchanged Relay proof.
+
+Do not start ChatterBox/Reaction binding, Blender gift/brawl integration, public Stage or Live promotion until this recovery gate is resolved.
