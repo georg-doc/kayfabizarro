@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.public-stage/0.2",
+  "build": "RESIDENT_BAND_MODULE_01_S39_STAGE_2026_09_28",
+  "status": "HUMAN_DRUMMER_POSE_PENDING",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/resident-band-module-01-2026-09-28",
+  "sourcePr": 277,
+  "sourceRuntimeHead": "3f665dacf274c959a3598ee1ed743404bba42c94",
+  "sourceMainBase": "67f28c955b8dfeb10085d9d09c895e004edb6614",
+  "ownerPath": "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/",
+  "runtimeEntry": "KFB_Resident_Atlas_S8.html#__band",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band",
+  "baseplate": false,
+  "requiredHumanDecision": "Author the Orc Brute drummer contact pose at the measured strike frame; save Studio reference; then test constant delta across 48 frames.",
+  "constraints": [
+    "No character rebuild",
+    "No monolithic stage GLB",
+    "No automatic arm-to-drum solver",
+    "Host surface and host clock remain external"
+  ],
+  "publicationParent": "4e769e937c2ea7d446d58f3da18ed6f39a4f65d7"
+}
