@@ -6,7 +6,7 @@
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
   "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
-  "outcome": "AI Town donor synthesis for Resident Lean Memory + POI/AIDA + resident-specific behavior + Dance Culture + Gift Culture using existing Motion/Reaction/Player Journey/world ownership",
+  "outcome": "Resident Lean Memory + POI/AIDA + unique behavior + Dance/Gift culture + Signature Deck worldview/ChatterBox/Card-thread integration using existing Card/Player Journey owners",
   "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
   "stageStatus": "NOT_DEPLOYED",
   "sources": [
@@ -289,6 +289,30 @@
         "verified GLTF props: Candycane, Drawers, Glue_A/B, Hammer, Lamp_Workbench, Toy_Train_Paint, Toy_Train_Wood, Toy_Workbench, Toy_Workbench_decorated",
         "checked Helper GLTF set contains workshop/toy props but not the Santa Present_A-E models"
       ]
+    },
+    {
+      "id": "kfb-card-index",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/kfb/index.json",
+      "blobSha": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+      "facts": [
+        "deck/card/page metadata is source-driven rather than one fixed global count",
+        "anti_rules_toolkit = 57 cards / 16 pages",
+        "the_kayfabe_money_trail_9_11 = 60 cards / 15 pages",
+        "big_bad_brain_wrestling = 56 cards / 15 pages"
+      ]
+    },
+    {
+      "id": "kfb-anti-rules-source",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+      "blobSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+      "facts": [
+        "deckTitle The Anti-Rules Manifesto",
+        "deckType Meta-rules deck",
+        "structured card fields include num/name/power/lore",
+        "contains authority/rule/improvisation themes usable as authored character lens"
+      ]
     }
   ],
   "nonGoals": [
@@ -308,7 +332,8 @@
     "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume.",
     "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory.",
     "Gift-giving is a shared Resident culture mechanic: source-proven wrapped presents can contain real bizarre/satirical props, trigger character-specific reactions, barter/regifting, bounded prank/failure spirals and later reconciliation while preserving Kayfabe and ownership provenance.",
-    "KISS correction: Gift Culture MVP persists meaningful social/emotional receipts, not a durable Resident item economy, barter ledger, per-prop ownership chain or exhaustive gift provenance. Real item tracking is optional future integration only."
+    "KISS correction: Gift Culture MVP persists meaningful social/emotional receipts, not a durable Resident item economy, barter ledger, per-prop ownership chain or exhaustive gift provenance. Real item tracking is optional future integration only.",
+    "Every Resident may have a Signature Deck or cluster that shapes worldview, ChatterBox language and Card POI salience; a Resident may want missing Cards recovered, confiscated, destroyed, archived or otherwise pursued. Deliberate archetype/deck mismatch is valid."
   ],
   "userDirection": {
     "poiClasses": [
@@ -463,6 +488,36 @@
         "store": "tiny semantic ResidentMemoryReceipt collection if the site runtime exposes reliable persistence",
         "requiredForVisibleInteraction": false,
         "itemLedger": false
+      }
+    },
+    "residentSignatureDecks": {
+      "owner": "stable authored Resident identity + existing Card corpus; not Lean Memory and not a new Card database",
+      "profile": [
+        "signatureDeckRef",
+        "stance",
+        "3–7 signatureCardRefs",
+        "worldviewTags",
+        "deckGoal"
+      ],
+      "stanceExamples": [
+        "aligned",
+        "misreads-as-law",
+        "adversarial",
+        "confiscate",
+        "destroy",
+        "archive",
+        "parody"
+      ],
+      "chatterbox": "retrieve current beat + Resident stance + 1–3 relevant Cards + small Lean Memory set; never prompt-dump full deck",
+      "memoryRule": "Deck content is authored knowledge; Lean Memory only stores meaningful card encounters/discussions/promises/returns",
+      "questRule": "reuse existing Card POIs and Player Journey/Almanac collection; do not create a second quest/card inventory owner",
+      "antiGrind": "player may collect full deck but Resident reacts in milestones/batches rather than 56–60 identical deliveries",
+      "playerCardRule": "show/return/confiscate narrative does not need to erase the player's Almanac discovery",
+      "firstCandidate": {
+        "residentId": "toy-soldier",
+        "workingName": "Officer Doppel-Denk",
+        "deckRef": "anti_rules_toolkit",
+        "stance": "OPEN: misreads-as-law | confiscate/destroy | archivist/evidence-locker"
       }
     }
   }
