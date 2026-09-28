@@ -11,7 +11,7 @@ This package turns Georg's latest Resident Atlas review and World MVP direction 
 
 Read `CLAUDE_DESIGN_RESIDENT_UI_CORE_01.md`.
 
-Outcome: redesign Resident Atlas and Animation Lab/Library together inside the accepted current ToolBox design. The shared complete 3D inline editor becomes the only object-edit control surface. Motion Library v4 supplies 263 catalog-driven clips, filters, prop/strike metadata and Resident assignments. Besides the neutral technical studio, the required World view renders terrain, at least two Residents and used props together in the current KFB Claymation look with scale-appropriate material detail. Dancing Skeletons remains content; Claude Design does not rebuild the runtime or write GitHub.
+Outcome: redesign Resident Atlas and Animation Lab/Library together inside the accepted current ToolBox design. The shared complete 3D inline editor becomes the only object-edit control surface. Motion Library v4 supplies 263 catalog-driven clips, filters, prop/strike metadata and Resident assignments. CHOREO LAB 01 supplies the modular interaction contract for playable gift, debate and brawl previews plus extensible Speaker Corner, map explanation, booth and NPC activities with separate emotion/prop/VFX tracks. Besides the neutral technical studio, the required World view renders terrain, at least two Residents and used props together in the current KFB Claymation look with scale-appropriate material detail. Dancing Skeletons remains content; Claude Design does not rebuild the runtime or write GitHub.
 
 ## Job B · Claude Coworker
 
@@ -26,7 +26,7 @@ Outcome: implement one genuinely playable Clay City tile with a geometric road, 
 - World R6 / Clay City direction: Draft PR #282, `work/world-m2a-r6-focus-quality-2026-09-28@df7220331932a28865af96d8411aac630d21dff7`
 - Halloween Bits complete repair: PR #279, `chat/halloween-glb-import-2026-09-28@10a2c5e29bf752215dadb60b23f07253f63e9d34`
 - ToolBox Animation Library design/behavior reference: PR #274 plus accepted Production-05 session cut; retain the current ToolBox design and shared UI standard.
-- Motion Library v4: PR #275, `georg-doc-patch-3@c9c3f9aa437e969b3ec2f0a6e9a1e87b2a2f3f1a`; 263 unique clips. Read `RETURN_INTAKE_04.md` and the current catalogue. Intake 04 adds 59 clips, prop requirements, variants, Resident ideas and 8 candidate strike markers.
+- Motion Library v4 + CHOREO LAB 01: PR #275, `georg-doc-patch-3@358f4eeece97587498bd898a170089d53ad3f628`; 263 unique clips plus `skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/`. Read `RETURN_INTAKE_04.md`, the current catalogue and `CHOREO_LAB_01_RETURN.md`. Intake 04 adds 59 clips, prop requirements, variants, Resident ideas and 8 candidate strike markers. CHOREO LAB adds three six-frame storyboards and a `kfb.choreo.v0` contract on `Rig_Medium`; it does not yet prove playback or `Rig_Large` fit.
 - `KFB Knet-Strecke T4/M2`: required current Track-look donor for the Coworker MVP. The exact verified package is now at `/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1.zip` and remains recorded in the Production Inbox under receipt `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21` (1,433,281 bytes; SHA-256 `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`). Verify and ingest this exact package before Track integration; do not substitute T2 or an older freehand look.
 - Site: existing KFB Production Control only: `https://kfb-production-control.frizzlebob.chatgpt.site/`
 

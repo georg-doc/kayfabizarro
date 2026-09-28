@@ -137,6 +137,8 @@ T4's Clay particle/VFX language is also a donor, not a new effect system. Suppor
 
 Keep the adapter extensible to the shared interaction vocabulary `brickfish_throw`, `brickfish_hit`, `melee_hit`, `wrestling_impact`, `gift_open`, `gift_burst`, `prop_break` and `explosion`. The MVP tile only has to prove the events already present in its play loop; the others are contract entries for Resident/Combat consumers, not extra scene scope. Base Clay particles may later combine with optional comic starburst/impact marks and smoke. Gameplay remains authoritative; VFX only observes events.
 
+CHOREO LAB 01 on PR #275 @ `358f4eeece97587498bd898a170089d53ad3f628` is the current interaction-contract donor. It proves `kfb.choreo.v0` storyboards and timing/spacing rules on `Rig_Medium`, not a playable two-actor runtime. If the Resident pocket uses an interaction, consume at most one small recipe such as gift handoff or argument through an adapter; do not rebuild the full Choreography Player in this World slice. Keep Body, Face/Eyes/Brows/Eyelids, Prop, Event and Clay-VFX tracks separable so the later Animation Lab owner can replace the preview adapter without changing World gameplay.
+
 ## Required implementation gates
 
 ### 0 · prove real donors

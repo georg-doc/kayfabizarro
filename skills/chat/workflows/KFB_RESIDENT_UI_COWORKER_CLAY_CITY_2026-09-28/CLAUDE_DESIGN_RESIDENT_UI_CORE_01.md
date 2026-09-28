@@ -17,9 +17,11 @@ Lies zuerst aus dem öffentlichen GitHub-Stand:
 4. `lib/edit-layer.js`
 5. `data/graveyard-01.json` und `lib/graveyard.js`
 6. den aktuellen KFB ToolBox Production-05 Session Cut als angenommene Funktions- und Designbasis;
-7. PR #275 `georg-doc-patch-3@c9c3f9aa437e969b3ec2f0a6e9a1e87b2a2f3f1a`;
+7. PR #275 `georg-doc-patch-3@358f4eeece97587498bd898a170089d53ad3f628`;
 8. dort `media/3D_Assets/Animations/KFB_Motion_Library/RETURN_INTAKE_04.md`;
-9. dort `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json` mit 263 eindeutigen Clips
+9. dort `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json` mit 263 eindeutigen Clips;
+10. dort `skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/CHOREO_LAB_01_RETURN.md`;
+11. dort `scenes/*.json`, `resolved/*.resolved.json` und die sechs Storyboard-/Graft-Prüfbilder aus `renders/`.
 
 GitHub main ist beim Briefing `51f9bc22596a0d0165f4da9e8e2ea14118466210`. Vor Beginn erneut prüfen.
 
@@ -197,6 +199,81 @@ Ein Profil hält mindestens `event`, `effectId`, `originSocket`, `direction`, `s
 - Paar- und Kampfsequenzen können Attack/Reaction nebeneinander synchronisieren. `kfb_reaction_surprise_uppercut_a` ist die getroffene/KO-Seite, kein Angriff.
 - `walking_n` wird als nicht sauberer Loop markiert; kein automatisches Kaschieren.
 
+### CHOREO LAB 01 · Source Lock und belastbare Grenze
+
+CHOREO LAB 01 ist der aktuelle Donor für die **Interaktionslogik**, aber noch kein fertiger Animation Player.
+
+Bewiesen und zu übernehmen:
+
+- ein additives `kfb.choreo.v0`-Szenenformat mit Actor-, Stage-, Prop-, Track-, Event- und Shot-Daten;
+- drei auf `Rig_Medium`/Raider-Orc geprüfte Sechs-Moment-Storyboards: Geschenk, Streit und Rauferei;
+- sitzende Oberkörpergesten auf stehenden Beinen in den Varianten `upright` und `keep lean`;
+- kopfbasierte Abstandskontrolle, Attack/Reaction-Synchronisation, Re-Aim für verdrehte Clips und Kontinuität von KO zu Aufstehen;
+- vorhandene Motion-Library-Clips bleiben unverändert; Choreografie komponiert sie.
+
+Nicht bewiesen und daher sichtbar als offen zu markieren:
+
+- keine flüssige Wiedergabe, keine Übergänge und kein abspielbarer Zwei-Figuren-Player;
+- nur `Rig_Medium`; `Rig_Large` braucht eigene Kopf-, Reichweiten- und Abstandsmaße;
+- kein echter Give-/Receive-Clip;
+- Strike- und Reaction-Marker bleiben Kandidaten;
+- Speaker Corner ist beschrieben, aber noch nicht gebaut;
+- der bisherige türkise Ring, die einfachen Boxen und der seitliche Reveal sind Platzhalter, keine akzeptierten Geschenk-Assets.
+
+Eine Storyboard-Leiste oder ein `PROVEN`-Label darf diese Grenze nicht als fertige Animation darstellen.
+
+### Modularer ChoreographyRecipe · ein Vertrag, viele Szenen
+
+Der Designpass erweitert `kfb.choreo.v0` kompatibel zu einem editierbaren `ChoreographyRecipe`; er erfindet keine zweite Motion Library. Ein Rezept enthält mindestens:
+
+- `id`, Familie, Variante, Tags, Seed und Qualitätsstufe;
+- Teilnehmerrollen, Rig-Profil und Character-/Resident-IDs;
+- Stage-Anker, Kopfvolumen, Abstand, Blickrichtung und Kontakt-Sockets;
+- Body-Tracks mit Katalog-Clip-IDs, Ganzkörper-/Upper-/Lower-/Arms-Masken, Blend und Timing;
+- Face-Tracks als eigene Actors: Augen, Augenbrauen, Clay-Eyelids, Mund/Gesicht und Emotion-Preset;
+- Prop-Track mit echter Asset-ID, Socket oder Mittelpunkt-Anker, Größe, Sichtbarkeit, Spawn/Despawn und Übergabe;
+- Event-Track für Treffer, Reaktion, Geschenk, Sprache und `Show it / Spin it / Sell it`;
+- VFX-Track ausschließlich über den gemeinsamen Clay-VFX-Vertrag;
+- Phasen `approach → setup → action → reaction → resolve → return`.
+
+Mindestens diese Familien müssen als wiederverwendbare Rezepte statt als hart codierte Einzelszenen erscheinen:
+
+1. Geschenk überreichen und minimal auspacken;
+2. Gespräch, Debatte und Streit;
+3. Rauferei/Wrestling/Faustkampf;
+4. Monolog und Speaker Corner;
+5. Karte oder Objekt erklären;
+6. Booth-/Vendor-Handlungen `Show it`, `Spin it`, `Sell it`;
+7. modulare NPC-Default-Aktivitäten.
+
+Emotion ist keine Kopie der Körperanimation. Dieselbe Geschenk-, Gesprächs- oder Kampfchoreografie kann pro Phase unter anderem `surprised`, `delighted`, `amused`, `grumpy`, `angry`, `disappointed`, `confused` oder `proud` auf Augen, Brauen, Eyelids und Gesicht legen. Damit entstehen Varianten ohne neue Ganzkörperclips.
+
+### Verbindliche KISS-Entscheidungen für den ersten Player
+
+- `upright` ist der Standard für im Stehen verwendete Sitz-Gesten. `keep lean` ist ein phasenweiser Modifier für verschwörerisches Reden, Theke/Bar, Streit oder Betonung.
+- Treffer werden zuerst durch kompatible Clipwahl, kopfbasierten Abstand und einen kurzen Ganzkörper-Schritt/Lunge lesbar gemacht. Eine permanente Unterarmstreckung von 1,6–2,6× ist **kein** Standard.
+- Optionaler Cartoon-Gummiarm ist ein editierbarer Akzent mit sanfter Ein-/Ausblendung und zunächst höchstens ca. 1,15–1,35×. Reicht das nicht, werden Stage-Abstand, Schritt oder Clip gewechselt; der VFX-Burst darf keinen dauerhaften Kontaktfehler kaschieren.
+- Abstand wird pro Rig aus Kopf-/Gesichtsvolumen und nicht allein aus Armlänge bestimmt. Warnungen für Kopf-Clipping und unerreichbaren Kontakt bleiben im Inspector sichtbar.
+
+### Geschenk · reale Props, minimale lesbare Auflösung
+
+- Verwende verifizierte Santa-/Gift-Props aus dem bestehenden Asset-Katalog, pro Rig passend skaliert; keine generische Ersatzbox und kein türkiser Augenring.
+- Ein Geschenk darf für die Übergabe klar zwischen beiden Actors schweben bzw. am gemeinsamen Mittelpunkt verankert sein. Das ist als cartoonige Minimallösung akzeptiert.
+- Beim Event `gift_open` darf die Geschenkbox mit kleinem Clay-Burst verschwinden. Der eigentliche Gegenstand erscheint danach gut lesbar, größer und kameragünstig ausgerichtet. Eine aufwendige Deckel-/Auspackanimation ist für den ersten Player nicht erforderlich.
+- Geschenkreaktionen kombinieren Body-Clip, Face-/Eyes-/Brows-/Eyelids-Preset, Symbol/Sprechblase und `gift_open`/`gift_burst`; sie werden nicht als monolithische Spezialanimation gespeichert.
+
+### Choreography View im Animation Lab
+
+Neben dem Einzelclip-Modus gibt es einen klaren Zwei-/Mehr-Actor-Modus derselben Arbeitsfläche:
+
+- Play, Pause, Scrub, Loop und Phasen-/Eventmarker;
+- Actor/Rig-Auswahl mit `Rig_Medium`- und `Rig_Large`-Fitstatus;
+- Tracks für Body, Face, Prop, Event und VFX; Detailwerte bleiben im einklappbaren Inspector;
+- sichtbarer Wechsel der Emotionsvariante ohne Austausch des Body-Rezepts;
+- JSON Import/Export für `ChoreographyRecipe` und additive Korrekturen;
+- mindestens Geschenk, Debatte und Rauferei müssen wirklich abspielbar sein, nicht nur als Standbildstreifen;
+- Speaker Corner, Kartenerklärung und `Show it / Spin it / Sell it` müssen als auswählbare Rezeptfamilien mit einem kurzen funktionalen Beispiel sichtbar sein.
+
 ### Intake / Drop-Zone
 
 Eine kompakte Drop-Zone darf lokale FBX/GLB-Clips zur Vorschau annehmen. Sie ist ein **Preview-/Intake-Eingang**, keine stillschweigende Aufnahme in die kanonische Library. Zeige vor Export klar: Dateiname, erkannter Rig-Typ, Dauer, verfügbare Animationen, notwendige Konvertierung und offene Prop-/Retarget-Fragen.
@@ -229,6 +306,9 @@ Liefere ein vollständiges, herunterladbares Session-Paket mit:
 - offenem und geschlossenem Inspektor;
 - Library View mit realer 263-Clip-Katalogstruktur, Suche, Filtern, Character-Auswahl und animierten Preview-Karten;
 - mindestens je einem sichtbaren Beispiel für Prop-Attachment, Strike-Marker, Resident-Signature-Move, sitzenden Clip und Paar-/Kampfsequenz;
+- abspielbarem Choreography View für Geschenk, Debatte und Rauferei sowie kurzen Rezeptbeispielen für Speaker Corner, Kartenerklärung und `Show it / Spin it / Sell it`;
+- Emotionsvarianten über Eyes/Eyebrows/Eyelids/Face, ohne Body-Clips zu duplizieren;
+- echten, skalierten Santa-/Gift-Props und der akzeptierten minimalistischen Übergabe/Reveal-Logik;
 - mindestens je einem sichtbaren Clay-VFX-Beispiel für Landung, Brickfish/Combat-Impact und Geschenk-Burst, mit einzeln schaltbarer Basis-/Comic-/Rauchschicht;
 - echter Claymation-World-Ansicht mit gerendertem Terrain, mindestens zwei Residents und mindestens einem verwendeten Prop;
 - JSON Import/Export und lokaler Intake-Drop-Zone;
@@ -255,5 +335,7 @@ PASS, wenn Georg in Graveyard Edit sofort erkennt:
 7. dass die 263 Clips auffindbar sind, ohne das Interface mit Metadaten zu überladen;
 8. dass Props, Strike-Marker und Resident-Zuordnungen verständlich bearbeitet und als JSON exportiert werden können;
 9. dass Terrain, Residents und Props in der World-Ansicht sichtbar im gemeinsamen Claymation-Look gerendert werden.
+10. dass Geschenk, Debatte und Rauferei flüssig abspielbar sind und nicht nur aus sechs Standbildern bestehen;
+11. dass dieselbe Choreografie durch modulare Emotions-, Prop- und VFX-Tracks variiert werden kann.
 
 Budget-Stopp: ein Designpass plus ein klar begrenzter UI-TUNE-Pass. Keine dritte Neugestaltung.
