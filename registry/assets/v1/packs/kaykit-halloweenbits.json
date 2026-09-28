@@ -4,7 +4,7 @@
     {
       "assetId": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf",
       "collectionPath": "Assets",
-      "dependencyStatus": "complete",
+      "dependencyStatus": "missing",
       "folder": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf",
       "format": "gltf",
       "kind": "model-3d",
@@ -20,12 +20,12 @@
       "relations": {
         "dependencies": [
           {
-            "exists": true,
+            "exists": false,
             "path": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
             "provenance": "file-explicit",
             "reference": "buffers[0].uri",
             "role": "buffer",
-            "status": "ok",
+            "status": "missing",
             "uri": "gravemarker_A.bin"
           },
           {
