@@ -74,12 +74,20 @@ Remove visible OSM building extrusions, far generic block shells and their colli
 
 The visual owner for the integrated track is **KFB Knet-Strecke T4**, not T2 and not an older freehand proxy. T4 supplies the accepted clay look, edge/band/marking language, transition staging and biome/VFX language. Track Core remains the geometry/contact owner.
 
-At briefing time no file, branch or PR named T4 is discoverable on GitHub main. Therefore:
+T4/M2 is not yet on GitHub, but its exact uploaded package is present in the authenticated KFB Production Inbox:
 
-1. check the current KFB Production Inbox/Site receipt and GitHub `_inbox` for the exact T4 session package;
-2. if found, persist or reference its complete package and pin exact path/ref/checksums before implementation;
-3. if absent, classify `T4_SOURCE_REQUIRED` and do not silently substitute T2/T3 visuals;
-4. continue donor isolation, geometric road, city and sky work if useful, but do not claim the Track-look gate complete without T4.
+- receipt: `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21`;
+- bytes: `1,433,281`;
+- SHA-256: `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`;
+- content: accepted Knet-Strecke T4, road-marking grammar M2, transitions/VFX, evidence and checksums.
+
+Therefore:
+
+1. on Coworker Desktop, download it from the owner-authenticated Production Inbox or receive the identical local ZIP from Georg;
+2. verify byte count and SHA-256 before unpacking;
+3. inspect its manifest/checksums, then ingest it into the existing Track receiving owner on the Coworker branch;
+4. commit the verified intake as the first checkpoint before runtime integration;
+5. if the exact bytes are unavailable, return `T4_SOURCE_REQUIRED` for the Track subgate and do not silently substitute T2/T3 visuals.
 
 The integrated sample needs only one short, properly driveable Track segment. A full circuit, pit lane and complete Racer mode are outside this slice.
 

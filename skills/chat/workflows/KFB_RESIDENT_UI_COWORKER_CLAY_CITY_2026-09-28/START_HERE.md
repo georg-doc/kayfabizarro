@@ -26,7 +26,7 @@ Outcome: implement one genuinely playable Clay City tile with a geometric road, 
 - World R6 / Clay City direction: Draft PR #282, `work/world-m2a-r6-focus-quality-2026-09-28@df7220331932a28865af96d8411aac630d21dff7`
 - Halloween Bits complete repair: PR #279, `chat/halloween-glb-import-2026-09-28@10a2c5e29bf752215dadb60b23f07253f63e9d34`
 - ToolBox Animation Library design/behavior reference: PR #274 plus accepted Production-05 session cut; retain the current ToolBox design and shared UI standard.
-- `KFB Knet-Strecke T4`: required current Track-look donor for the Coworker MVP, but `SOURCE_REQUIRED` at this checkpoint because no T4 path, branch or PR is present on GitHub main. Do not silently substitute T2 or an older freehand track look. Ingest and pin the exact T4 package before the Track presentation gate.
+- `KFB Knet-Strecke T4/M2`: required current Track-look donor for the Coworker MVP. It is stored in the authenticated KFB Production Inbox under receipt `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21` (1,433,281 bytes; SHA-256 `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`) and is not yet in GitHub. Download/attach, verify and ingest this exact package before Track integration; do not substitute T2 or an older freehand look.
 - Site: existing KFB Production Control only: `https://kfb-production-control.frizzlebob.chatgpt.site/`
 
 GitHub current state overrides every snapshot. Re-fetch these heads immediately before execution.
