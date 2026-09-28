@@ -158,6 +158,30 @@
         "Saw/Sawing",
         "Fishing activity"
       ]
+    },
+    {
+      "id": "kfb-resident-atlas-toy-soldier",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "tools/resident_atlas_s6/data/cast.js",
+      "blobSha": "5e918ae1521e63d121558fb7aff4fd1f8239baec",
+      "facts": [
+        "toy-soldier is Rig_Medium",
+        "ToySoldier rifle attaches to handslot.r",
+        "Present_Base and Present_UnwrappedBase are source-proven reveal states",
+        "existing reveal animation uses anticipation/pop/overshoot/settle",
+        "Idle_B rifle pose is not accepted as a shoulder-rifle stance"
+      ]
+    },
+    {
+      "id": "kfb-motion-registry-rig-medium",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "registry/resources/v1/motions.jsonl",
+      "blobSha": "1f266ab2e9e57db63f5596ba83f616872b502909",
+      "facts": [
+        "Rig_Medium MovementBasic exposes Walking_A and Walking_B",
+        "Rig_Medium MovementAdvanced exposes Running_HoldingRifle",
+        "Running_HoldingRifle is a candidate audition source, not proof of Nutcracker parade posture"
+      ]
     }
   ],
   "nonGoals": [
@@ -173,7 +197,8 @@
     "Points of Interest include player, NPCs/Residents, Cube Pets, plants/nature, environment/landmarks, resources, props/cards and activity stations.",
     "Routine activity includes fishing, smithing/hammering, patrol, explore and other role-specific work.",
     "KFB AIDA gameplay loop for player and NPCs: attention → curiosity/interest → expectation → interaction → reaction → interpret/remember/update → return/resume/retarget.",
-    "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict."
+    "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict.",
+    "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume."
   ],
   "userDirection": {
     "poiClasses": [
@@ -210,6 +235,28 @@
       "interpret/remember/update-thread",
       "return/resume/retarget"
     ],
-    "note": "Patrol/explore and the explicit KFB AIDA sequence are Georg's additive 2026-09-28 direction, not retroactively attributed to older donor documents."
+    "note": "Patrol/explore and the explicit KFB AIDA sequence are Georg's additive 2026-09-28 direction, not retroactively attributed to older donor documents.",
+    "officerDoppelDenk": {
+      "workingName": "Officer Doppel-Denk",
+      "technicalResidentId": "toy-soldier",
+      "routine": "gift reveal → patrol/march → inspect perceived disorder → react → resume",
+      "attentionBias": [
+        "possible_disorder",
+        "public_obstruction",
+        "litter",
+        "noise",
+        "unsafe_horseplay",
+        "unattended_object",
+        "authority_opportunity",
+        "royal_interest"
+      ],
+      "examples": [
+        "Brick Fish exchange",
+        "Tiny Treats pizza slice on ground",
+        "plant/path obstruction"
+      ],
+      "authorityDynamic": "loyal to King K. Fabian, seeks recognition, commonly not taken seriously by other Residents",
+      "animationGate": "audition Running_HoldingRifle plus Walking_A/B before any new Mixamo motion intake"
+    }
   }
 }
