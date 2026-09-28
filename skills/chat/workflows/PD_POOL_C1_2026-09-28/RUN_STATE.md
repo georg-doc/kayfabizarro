@@ -1,6 +1,6 @@
 # RUN STATE · PD-POOL-C1 · 2026-09-28
 
-Status: **IMPLEMENTATION CHECKPOINT · NEW CURATED DISCOVERY ROUND · NOT HISTORICAL RECONSTRUCTION**
+Status: **FROZEN_FAILED_CANDIDATE · MACHINE PASS · SEMANTIC CURATION FAIL AFTER REPAIR 2 · DRAFT PR #281 · NOT MERGED / NOT PUBLISHED**
 
 - Slice: `PD-POOL-C1`
 - Owner: **Asset Librarian / Billboard Media**
@@ -42,15 +42,23 @@ C1 is explicitly a **new dataset**. It must not be described as the lost histori
 - New C1 branch created from current main.
 - Discovery/fetch contract adapted additively; no existing smoke behavior is intentionally changed.
 
-## Next operation
+## Frozen outcome
 
-Run the dedicated C1 GitHub Actions gate:
-1. compile + JSON checks;
-2. re-run the existing 4-object smoke manifest as regression;
-3. discover bounded new candidates;
-4. recheck/download via current fetcher;
-5. second-run idempotence;
-6. persist only a passing C1 batch and machine-readable evidence.
+- final tested implementation head: `5ba9d609dc11a7f2d7acfbd720ded442f65c438e`;
+- frozen candidate content head before recovery metadata: `253a73a64b2c42653798940140e472dc3e4638e8`;
+- Draft PR: **#281**;
+- runs: `36469308353` → `36469998059` → `36470538545`, all machine-successful;
+- final discovery: **23**; persisted: **22**; rejected: **1** (`aic-c1-7624`, HTTP 403);
+- provider split: **Met 6 / AIC 4 / Commons 6 / IA 6**;
+- new payload: **12,753,473 bytes**;
+- branch pool rows: **26** = 4 prior verified + 22 C1;
+- attribution fallback rows: **5**;
+- semantic curation gate: **FAIL after Repair 2**;
+- Stage/Live: **NOT UPDATED**.
+
+The machine report remains `media/public_domain/PD_C1_TEST_REPORT.json` and intentionally records the technical PASS. The final slice disposition is governed by `RETURN.md` + `RECOVERY.md`.
+
+Exactly one next gate: **PD-POOL-C2 · fresh from current main with a small manually reviewed exact object-ID/source-page manifest; reuse the hardened fetcher and do not continue C1 broad semantic discovery.**
 
 ## Stop condition
 

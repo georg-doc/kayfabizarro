@@ -1,0 +1,78 @@
+{
+  "schema": "kfb.failure-recovery/1",
+  "slice": "PD-POOL-C1",
+  "status": "FROZEN_FAILED_CANDIDATE",
+  "failureGate": "semantic discovery relevance",
+  "repairsExhausted": 2,
+  "noThirdRepair": true,
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/public-domain-pool-c1-2026-09-28",
+  "pullRequest": 281,
+  "baseMain": "dbc7a6bc2414f3e870ff08053eb62fb67dc9202a",
+  "testedImplementationHead": "5ba9d609dc11a7f2d7acfbd720ded442f65c438e",
+  "frozenCandidateContentHead": "253a73a64b2c42653798940140e472dc3e4638e8",
+  "workflowRuns": [
+    {
+      "id": 36469308353,
+      "conclusion": "success",
+      "semanticGate": "fail"
+    },
+    {
+      "id": 36469998059,
+      "conclusion": "success",
+      "semanticGate": "fail_after_repair_1"
+    },
+    {
+      "id": 36470538545,
+      "conclusion": "success",
+      "semanticGate": "fail_after_repair_2"
+    }
+  ],
+  "machineEvidence": {
+    "discovered": 23,
+    "persisted": 22,
+    "rejected": 1,
+    "persistedByProvider": {
+      "met": 6,
+      "aic": 4,
+      "commons": 6,
+      "ia": 6
+    },
+    "newPayloadBytes": 12753473,
+    "poolRowsAfter": 26,
+    "fallbackAttributionRowsAfter": 5,
+    "smokeUnchanged": 4,
+    "secondRunLoaded": 0,
+    "secondRunUnchanged": 22,
+    "stalePartFiles": 0,
+    "sidecarIntegrity": "PASS",
+    "creditsIntegrity": "PASS"
+  },
+  "semanticMismatchExamples": [
+    {
+      "id": "met-c1-337494",
+      "fact": "date 1480–85",
+      "query": "scientific diagram 18th century"
+    },
+    {
+      "id": "ia-c1-tecnopatia-biliar",
+      "fact": "date 2026",
+      "query": "Prelinger industrial film"
+    },
+    {
+      "id": "ia-c1-the_bamboo_garden_1704.poem_librivox",
+      "fact": "LibriVox/poem candidate",
+      "query": "public domain music 1920"
+    },
+    {
+      "id": "ia-c1-classic_cartoons_201603",
+      "fact": "later compilation",
+      "query": "silent film 1920"
+    }
+  ],
+  "mergeAllowed": false,
+  "stagePublished": false,
+  "publicRoute": "https://kayfabizarro.pages.dev/asset-librarian/",
+  "publicRouteContainsC1": false,
+  "nextGate": "PD-POOL-C2 · fresh branch from current main with manually reviewed exact source IDs/pages; hardened fetcher only"
+}
