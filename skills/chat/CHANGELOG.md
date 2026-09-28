@@ -7,6 +7,7 @@
 - The design must consume real catalog fields for variants, prop hand/role, resident assignments, signature moves, seated/pair requirements and candidate strike events. `surprise_uppercut` remains a receiving reaction; `walking_n` is visibly marked non-looping.
 - One complete inline 3D editor is the shared primary edit surface. Long `PROVEN` labels, duplicate context palettes, Graveyard/GothGirl leaks and preview-edge gaps are explicit UI defects to remove.
 - A compact FBX/GLB drop zone may preview and prepare additive JSON, but it may not silently admit or overwrite canonical Motion Library assets.
+- The visual production gate now requires a real Claymation World view: scale-appropriate Clay terrain, at least two rendered Residents and the used Props/Attachments under one consistent light/shadow contract. The neutral studio remains a technical inspection view only.
 - This remains a documentation/routing update. No Animation Lab runtime, Resident runtime, Stage or browser acceptance is claimed.
 
 ## 2026-09-28 · Resident UI Core + Claude Coworker Clay City MVP
