@@ -7,6 +7,8 @@ Entwirf für einen frischen Claude-Design-Chat genau eine integrierbare Neufassu
 
 Beide Bereiche nutzen dieselbe ToolBox-Shell, denselben vollständigen 3D-Inline-Editor und dieselbe Character-/Motion-Auswahl. Dies ist ein UI-/Interaction-Design-Job. Keine neue Runtime, kein neuer Atlas, kein zweites Animation Studio, kein neues ToolBox-Shell-Design und kein GitHub-Job.
 
+**Ausführungsentscheidung:** Der bereits laufende Resident-Atlas/Claude-Design-Chat führt Job A weiter. Kein Neustart in einem frischen Chat und kein Human Gate nach einem isolierten Editor-Mikroschritt. Interne Checkpoints sind erwünscht, aber die Abgabe bleibt ein zusammenhängender Session Cut mit Editor, Library/Choreography View und Clay-World-Ansicht. Nur ein echter Source-/Runtime-Blocker oder zwei fehlgeschlagene Reparaturversuche stoppen den Durchgang.
+
 ## Eingabepaket
 
 Lies zuerst aus dem öffentlichen GitHub-Stand:
@@ -49,6 +51,8 @@ Der KFB-Claymation-Look **existiert bereits als Baukasten auf GitHub**. Claude D
    Production-Inbox-Receipt `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21`, 1.433.281 Bytes, SHA-256 `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`.
    T4 verfeinert Track, Biome, sparsame Szeneninseln und die Clay-VFX-Sprache. Dazu gehören kleine Knetkügelchen/-flocken für Schritte, Sprünge, Landungen, Reifen, Kollisionen und biomeabhängigen Staub. Fehlt das Paket im Claude-Design-Chat, bleiben H0 + K2 + T3/T3 v2 die verbindliche, vollständig auf GitHub abrufbare Baseline; kein erfundener Ersatz.
 
+   **Aktueller GitHub-Donor:** Das exakte Paket ist inzwischen zusätzlich vollständig auf `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49` eingecheckt unter `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T4/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/`. Der laufende Design-Chat liest diese öffentliche Quelle; ein erneuter Upload durch Georg ist nicht nötig.
+
 ### Eigentum und Beweis
 
 - H0 bestimmt den **Look**, K2 die **Clay-Material-/Werkzeugimplementierung**, T3/T4 die **Track-/World-Komposition**; ToolBox Production-05 bleibt der **UI-Shell-Donor**.
@@ -70,6 +74,14 @@ Die aktuelle Graveyard-Messung liefert folgende vorläufige Gestaltungsdaten; im
 - Flächenanteil ist die relevante Dichtemetrik, nicht die gezählte Zahl berührender Steine.
 
 Das Wegband darf als Environment-Beispiel im Graveyard erscheinen. Es ist kein Grund, den Resident-/Animation-UI-Job um einen neuen World- oder Material-Owner zu erweitern.
+
+### Verbindliche Antworten für Pflaster und Pack-Texturen
+
+- Pflaster-/Path-Tiles verwenden in K2 die **mittlere Größenklasse** wie Props, jedoch mit abgesenkter Reliefamplitude, damit Fugen und Steinform lesbar bleiben und die Oberfläche nicht wie grobes Terrain aufbricht.
+- Pack-Texturen bleiben als Detail-/Maskenquelle erhalten, werden einmal geladen, geteilt und durch die KFB-Palette eingefärbt/abgetönt. K2 ersetzt sie im Standardmodus nicht durch flache Vollfarbe.
+- `flat clay` ist nur ein expliziter Low-End-/Diagnose-Fallback. Er darf den Standard-Look nicht still ersetzen.
+- Für die 13 Quaternius-Kacheln wird die gemeinsame Textur genau einmal verwendet; Höhenangleichung und K2-Material bleiben getrennte Schritte.
+- Takt 9 der Skelette emittiert `prop_break`. Rückkehrende Knochen dürfen beim Bodenkontakt `land`-VFX auslösen; das finale Einrasten bleibt als Choreografiephase `reassemble_complete` beschreibbar, ohne einen zweiten Partikelstandard zu erfinden.
 
 ## Negativreferenz · verbindlich
 

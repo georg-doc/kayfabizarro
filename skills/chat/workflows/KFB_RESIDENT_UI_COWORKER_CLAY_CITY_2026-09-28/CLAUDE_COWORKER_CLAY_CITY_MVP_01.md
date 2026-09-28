@@ -9,6 +9,23 @@ The outcome must let Georg walk, switch directly to a car, drive on and off the 
 
 Do not build the whole Open World.
 
+## Current execution result · 2026-09-29
+
+The first Coworker implementation is persisted on `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49` and has a public review wrapper:
+
+`https://kayfabizarro.pages.dev/kfb-hub/pruefen/clay-city-mvp-01/`
+
+Measured result: play probe 6/7, donor isolation 13/13, T4 intake 52/52 and 45–68% fewer draw calls than R6. Ground/road continuity, direct Auto, off-road Drive, the full short T4 segment and Flight work. This is a useful candidate, not an accepted MVP.
+
+Georg's first human test fixes the repair priority without another decision gate:
+
+1. walking is still unacceptably slow and appears to use the wrong or incorrectly timed standard KayKit walk / Movement-State mapping;
+2. the Clay look is incomplete on facades and buildings: H0/K2 cartoon bend, facade deformation and characteristic surface treatment are missing or too weak;
+3. triangles remain 213–240k against the 200k target; trim after the near-field look is correct, without replacing accepted buildings with boxes;
+4. real visible p95 and boot remain unproven.
+
+The next implementation pass is one coherent **playability + look acceptance repair**, not a choice between unrelated micro-gates: correct the movement owner and animation timing, complete the bounded H0/K2 building/facade treatment, then trim triangles and rerun the same Ground/Auto/T4/Flight probe. T4 extras and the Resident pocket remain secondary until this acceptance pass is green.
+
 Execution environment: **Claude Coworker Desktop**. Capability note confirmed on 2026-09-28: this Coworker session has Dropbox and Chrome/GitHub access, but no real local Git checkout or local server. Work through the existing GitHub branch and review browser surfaces with small crash-safe commits. Do not claim local tests that this environment cannot run, and do not publish every micro-checkpoint to the fixed public Stage.
 
 ## Recover exact truth first

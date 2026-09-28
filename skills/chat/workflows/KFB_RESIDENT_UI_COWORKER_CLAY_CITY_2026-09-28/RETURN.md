@@ -21,6 +21,10 @@ CHOREO LAB 01 is now source-locked from PR #275 @ `358f4eeece97587498bd898a17008
 
 Production defaults are intentionally conservative: `upright` is the standing-talk base and forward lean is a phase modifier. Hits use compatible clips, head-envelope spacing and a short step/lunge before any bounded 1.15–1.35× cartoon stretch. The rough 1.6–2.6× storyboard forearm stretch is not adopted as a global standard. Gift scenes use verified Santa/Gift props, may hold the gift at the midpoint, then remove the box with a small Clay burst and reveal the actual item at a readable scale. Emotion variants combine body motion with eyes, eyebrows, Clay eyelids and face presets instead of duplicating entire animations.
 
+The first Clay City implementation landed on `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49`. It is a meaningful technical improvement: 6/7 play probe, 13/13 donors, 52/52 T4 intake and 45–68% fewer draw calls than R6. Georg's human result is `TUNE`, not PASS: Ground walking remains too slow/wrongly timed, facade/building Clay deformation is incomplete, triangles exceed budget and real visible performance remains unproven. The next gate is one combined playability + look acceptance repair, not another user choice or isolated micro-slice.
+
+Resident/Design execution is also de-fragmented: the already running chat continues the whole Job A. Paving uses K2 medium-scale relief at reduced amplitude; shared pack textures remain as tinted detail sources, with flat colour only as a low-end fallback. T4/M2 is now readable directly from the Coworker branch. No fresh chat, T4 re-upload or interim editor-only human gate is required.
+
 ## Evidence used
 
 - current main `51f9bc22596a0d0165f4da9e8e2ea14118466210`;
@@ -50,4 +54,4 @@ The existing KFB Production Control Site was updated in place and published succ
 
 ## Exactly one next gate
 
-Review the first coherent playable `CLAY-CITY-MVP-01` checkpoint from Claude Coworker. The integrated Resident + Animation ToolBox UI job continues independently in Claude Design Desktop and must not block the playable World MVP.
+Complete the single Clay City playability + look acceptance repair, then rerun the same Ground/Auto/T4/Flight human test. Resident + Animation + Choreography continues as the second consolidated lane without intermediate user gates.
