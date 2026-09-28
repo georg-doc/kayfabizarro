@@ -1,31 +1,25 @@
 {
   "schema": "kfb.public-stage/0.2",
-  "build": "KFB_HUB_UI_V2_CURRENT_STATE_2026_09_28",
+  "build": "KFB_HUB_UI_V2_CURRENT_STATE_2026_09_28_RESIDENT_BAND",
   "status": "PUBLICATION_CANDIDATE",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "work/hub-current-state-source-2026-09-28",
   "sourcePr": 269,
-  "sourceRuntimeHead": "5dc4618e860ac695b7a2785c13aaacdad53ea5fa",
-  "sourceEvidenceHead": "5dc4618e860ac695b7a2785c13aaacdad53ea5fa",
+  "sourceRuntimeHead": "057d74fff44e6947d95d8c5a2f5fefb2425d4a2d",
+  "sourceEvidenceHead": "057d74fff44e6947d95d8c5a2f5fefb2425d4a2d",
   "publicationHead": null,
   "sourcePath": "kfb-hub/index.html",
   "stagePath": "kfb-hub/stage/hub-ui-v2/index.html",
-  "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/",
+  "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/",
   "observed": {
-    "routeVisible": true,
-    "worldM2aR5Active": true,
-    "trackT3T4Active": true,
-    "toolboxAggregateLinked": true
-  },
-  "corrected": {
-    "supersededWorldM2RepairCard": "removed from active Hub",
-    "supersededTrackT2Card": "removed from active Hub",
-    "toolboxFrontDoor": "/kfb-hub/stage/toolbox/",
-    "closureRule": "Hub current-state synchronization is part of slice Done"
+    "residentBandCard": "Resident Band · Drummer-Pose setzen",
+    "residentBandStage": "/kfb-hub/stage/resident-atlas/band/#__band",
+    "priorOrcBandPocCard": "replaced in place"
   },
   "constraints": [
     "Existing accepted Hub design only",
     "No parallel Hub or distributor",
     "KFB Hub remains single runtime owner"
-  ]
+  ],
+  "publicationParent": "b6a8c7a43989493e6699303f705096004dcd14d1"
 }
