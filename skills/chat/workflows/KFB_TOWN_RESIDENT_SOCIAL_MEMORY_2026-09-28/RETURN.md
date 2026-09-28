@@ -171,7 +171,7 @@ Durable details are in:
 - current concrete ChatterBox runtime donor must be pinned by the receiving consumer before implementation;
 - actual sight distances, FOV/occlusion method and POI spatial index are deliberately not hard-coded here;
 - patrol/explore require source-backed motion/route evidence where they become visible animation rather than navigation intent;
-- Officer Doppel-Denk's desired shoulder-rifle march is **not yet accepted**: `Running_HoldingRifle` and `Walking_A/B` are source-backed audition candidates; Mixamo/new intake only follows if none passes visual attachment/pose checks;
+- Officer Doppel-Denk's desired shoulder-rifle march is **not yet accepted**. Georg has now identified Mixamo `Walk with Briefcase` as the priority external donor because of its asymmetric carry pose; it is USER-IDENTIFIED / NOT YET ADMITTED / NOT PINNED. Preferred path is In Place → Motion Library intake → Rig_Medium retarget → exact rifle attachment/pose fit. `Running_HoldingRifle` and `Walking_A/B` remain source-backed A/B/fallback candidates;
 - resource availability/consumption stays world/resource-owned and is not defined by Lean Memory;
 - Brick Fish PR #254 and Reaction Choreography PR #256 remain separate Draft candidates;
 - current relevant ToolBox/WorldBuilder recovery blockers must be checked at implementation time;
@@ -209,7 +209,7 @@ Persisted character-specific layer:
 - tragicomic authority/status dynamic with King K. Fabian and other Residents;
 - ChatterBox/Triplet language ownership and Reaction Choreography ownership preserved;
 - Lean Memory only for meaningful recurring authority/social outcomes;
-- source-first motion gate: audition `Running_HoldingRifle` + `Walking_A/B`; no fake static shoulder offset; Mixamo only if current Motion Library candidates fail.
+- motion gate updated: Mixamo `Walk with Briefcase` is now priority candidate; prefer In Place, preserve left-arm swing, use right carrying arm as base, fit exact Toy Soldier rifle to `handslot.r`, and use only a small additive right-arm/attachment patch if needed. Keep world/navigation as translation owner. `Running_HoldingRifle` + `Walking_A/B` remain comparison/fallback donors.
 
 Durable profile:
 `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`.
