@@ -152,6 +152,7 @@ From `TEST_REPORT.md`:
 - Officer Doppel-Denk source/profile checks: **6/6 PASS**
 - Resident Dance Culture source/design checks: **12/12 PASS**
 - Resident Gift Culture source/design checks: **15/15 PASS**
+- Gift KISS correction checks: **6/6 PASS**
 - runtime tests: **0**
 - browser tests: **0**
 - screenshots: **0**
@@ -183,8 +184,9 @@ Durable details are in:
 - Common Bounce is design-only: no universal runtime clip/profile has been authored yet;
 - Resident Signature Move assignments are audition candidates only, not final mappings;
 - player dance discovery/learning events are not yet added to the Player Journey schema/runtime;
-- generic gift wrapper/payload transfer and unwrap choreography are not yet runtime-implemented;
-- barter/regift/exploding-present chains remain design-only;
+- generic gift wrapper/payload reveal choreography is not yet runtime-implemented;
+- **KISS correction:** no Resident item economy, barter ledger or exhaustive prop provenance is required for MVP;
+- barter/regift/exploding-present chains remain primarily semantic/visual design beats;
 - future Santa/Helpers North-Pole winter environment and Holiday audio remain source-required.
 
 ## Exactly one next gate
@@ -276,3 +278,19 @@ Durable design:
 `RESIDENT_GIFT_CULTURE_2026-09-28.md`.
 
 Evidence: **23/23 source reads · 15/15 Gift Culture checks PASS**. No gift runtime/browser/Stage/Live claim.
+
+
+### KISS correction · Gift Culture · 2026-09-28
+
+Georg clarified that “barter society” is primarily a **content/behavior direction**, not a request for inventory/resource management.
+
+Current MVP rule:
+- gifts are visible social scene props + semantic interaction beats;
+- props may be randomly selected/admitted and remain scene-local/disposable;
+- Lean Memory stores only emergent high-value meaning: who interacted, the social intent/trait being exposed, notable reaction/escalation and reconciliation;
+- do **not** persist every wrapper, gift instance, handoff, current owner or regift chain;
+- no universal barter/resource ledger;
+- if a later real inventory system exists, it may attach an external item reference without changing Gift Culture;
+- optional GPT-Site persistence may use a tiny semantic `ResidentMemoryReceipt` store; visible interaction must still work with zero persistence.
+
+This correction prioritizes Resident behavior, reactions, animation and emotional choreography over meta item administration.
