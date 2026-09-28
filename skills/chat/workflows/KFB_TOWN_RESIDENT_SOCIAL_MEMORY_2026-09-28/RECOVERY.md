@@ -298,3 +298,12 @@ First authoring route: existing Animation Studio / Motion Library should define 
 Evidence: **20/20 source reads · 20/20 general design invariants · 6/6 Officer checks · 12/12 Dance Culture checks PASS**. Runtime/browser/Stage remain 0.
 
 The single next integrated gate remains **RESIDENT-SOCIAL-MEMORY-01**, now expected to consume the Dance Culture layer when the first Animation Studio mappings are available; no separate proxy Dance Stage is required.
+
+
+### Dance collection interaction refinement
+
+Learned Signature Moves are reusable **social tokens**, not dead collection entries.
+
+When the player performs a learned Signature inside an actor's attention field, emit `dance.signature.perform` with performer, move, origin Resident, witnesses and source-event provenance. The original teacher may join, approve, correct, challenge with another move, parody, ignore or recall the teaching event through their own Reaction/Memory profile. Other Residents recognize the move only when their authored knowledge or memory supports it.
+
+A tiny bounded `dance_exchange` thread may open and then return both actors to Common Bounce or their prior activity. Player Journey remains authoritative for the unlock; Resident Lean Memory may store only the socially meaningful teaching/use event.
