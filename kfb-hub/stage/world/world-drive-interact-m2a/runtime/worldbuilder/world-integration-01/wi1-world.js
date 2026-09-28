@@ -9,6 +9,7 @@
      · ink              → w0-ink.js, consumer-side exclusion of geometry that is not visibly drawn
    OSM City Lab stays owner of geography. Nothing here invents streets or buildings. */
 import * as THREE from 'three';
+import {followDirectionalShadow,KFB_RENDER_PRESET_R0} from '../../../../../../shared/render/kfb-render-preset.v1.mjs';
 
 /* Claude Design project layout: the WB-D2 modules and fixtures sit at the project root.
    Web re-points ROOT when rehoming (one constant). */
@@ -111,21 +112,13 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
   log('zone · ' + zone.id + ' · ' + zone.counts.buildings + ' buildings · ' + zone.counts.roadParts + ' road parts · seam ' + SEAM.SEAM.version);
   log('spawn · ' + (spawn.road || 'zone centre') + ' · ' + spawn.x.toFixed(1) + ' / ' + spawn.z.toFixed(1) + ' · ' + spawn.d.toFixed(0) + ' m from zone centre · edit tile ' + tile.size + ' m @ ' + (tile.size / tile.seg) + ' m');
 
-  /* shadow box = WB-D1 shadowFollow (Georg-accepted shadow fix): edge follows the camera distance (90–400 m),
-     centre snaps to whole texels (no crawling edges), normalBias 1.2 texel, tiny depth bias → no light gap
-     under houses, and houses outside a fixed ±34 m box no longer switch their shadow off. */
+  /* Render R0: the shadow map follows only the active gameplay corridor, not the loaded world.
+     The previous 90–400 m half extent made one 2K texel up to 39 cm wide and then applied 1.2 texel
+     normal bias — the visible light gap at props/buildings. The shared preset caps both envelope and
+     metric bias while preserving whole-texel stabilization. */
   function shadowFollow(focus, camera) {
-    const sh = S.sun.shadow, cam = sh.camera, d = camera.position.distanceTo(W.controls ? W.controls.target : focus), SUN_D = 900;
-    const half = Math.max(90, Math.min(400, Math.round(d * 2.2 / 10) * 10)), texel = 2 * half / sh.mapSize.x;
-    if (half !== S.shHalf) {
-      S.shHalf = half;
-      Object.assign(cam, { left: -half, right: half, top: half, bottom: -half, near: SUN_D - Math.max(half * 1.2, 380), far: SUN_D + half * 1.2 + 80 });
-      cam.updateProjectionMatrix(); sh.normalBias = texel * 1.2; sh.bias = -0.00003;
-    }
-    const sd = S.sunDir, e1 = new THREE.Vector3(0, 1, 0).cross(sd).normalize(), e2 = sd.clone().cross(e1).normalize();
-    const a = Math.round(focus.dot(e1) / texel) * texel, b = Math.round(focus.dot(e2) / texel) * texel;
-    const f = e1.multiplyScalar(a).addScaledVector(e2, b).addScaledVector(sd, focus.dot(sd));
-    S.sun.target.position.copy(f); S.sun.position.copy(f).addScaledVector(sd, SUN_D); S.sun.target.updateMatrixWorld();
+    const state=followDirectionalShadow({sun:S.sun,direction:S.sunDir,focus,camera,controlsTarget:W.controls?.target});
+    S.shHalf=state.halfExtentM;
   }
   const W = {
     id, zone, spawn, tile, log: LOG,
@@ -178,11 +171,12 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
       controls.zoomToCursor = true; controls.screenSpacePanning = true;
       fog.near = 140; fog.far = 1100;
       S.sun = sun; S.sunDir = sun.position.clone().normalize();
-      sun.shadow.mapSize.set(PLAYABILITY_R1 ? 2048 : 4096, PLAYABILITY_R1 ? 2048 : 4096); S.shHalf = 0;
+      const shadowMapSize=PLAYABILITY_R1?KFB_RENDER_PRESET_R0.shadow.mapSize:4096;
+      sun.shadow.mapSize.set(shadowMapSize,shadowMapSize); S.shHalf = 0;
       Object.assign(sun.shadow.camera, { left: -34, right: 34, top: 34, bottom: -34, near: 1, far: 260 });
-      /* contact shadow (WB-D1 fix, again): a large bias/normalBias lifts the shadow off the contact → light gap under
-         rocks and feet. Texel 68 m / 4096 = 1.7 cm → normalBias ≈ 1 texel, tiny depth bias. */
-      sun.shadow.camera.updateProjectionMatrix(); sun.shadow.bias = -0.00005; sun.shadow.normalBias = 0.016;
+      sun.shadow.camera.updateProjectionMatrix();
+      sun.shadow.bias=KFB_RENDER_PRESET_R0.shadow.depthBias;
+      sun.shadow.normalBias=KFB_RENDER_PRESET_R0.shadow.normalBiasMinM;
       scene.add(sun.target);
     },
 

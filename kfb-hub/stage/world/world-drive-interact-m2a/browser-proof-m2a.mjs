@@ -16,6 +16,11 @@ for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:3
   ok(spec.name+' clay covers terrain road sidewalk facades roofs',r.clay.layers.medium.includes('terrain/road/sidewalk')&&r.clay.layers.coarse.includes('facades/roofs'));
   ok(spec.name+' R4 adaptive quality active',r.quality.profile==='ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4'&&r.quality.pixelRatio<=.86&&r.quality.cssUiNativeResolution);
   ok(spec.name+' far city clay is simplified',r.clay.distanceBudget.simplifiedMeshes>0);
+  ok(spec.name+' Render R0 shared preset active',r.render.preset==='KFB_RENDER_R0_CONTACT_AND_DETAIL'&&r.render.policies.runtimeOwnersUnchanged);
+  ok(spec.name+' contact shadow envelope and bias bounded',r.render.shadow&&r.render.shadow.halfExtentM<=140&&r.render.shadow.normalBiasM<=.028,JSON.stringify(r.render.shadow));
+  ok(spec.name+' clay detail follows adaptive quality',r.render.detailState===r.quality.state&&r.render.clay.state===r.quality.state,JSON.stringify({render:r.render,quality:r.quality}));
+  ok(spec.name+' clay texture uses bounded filtering',r.render.clay.texture.mipmaps&&r.render.clay.texture.anisotropy>=1&&r.render.clay.texture.anisotropy<=4);
+  ok(spec.name+' real render classes audited',r.render.classes.ACTOR>0&&r.render.classes.ARCHITECTURE>0&&r.render.classes.TERRAIN>0,JSON.stringify(r.render.classes));
   ok(spec.name+' starts Ground beside vehicle',r.mobility.mode==='ground'&&r.mobility.interaction.available);
   ok(spec.name+' exact Race donor pinned',r.mobility.drive.source.raceHead==='406cd26f44f22811fe3b3a58776839be7ffb7b2c');
   ok(spec.name+' no proxy Track',r.mobility.trackProxy===false);

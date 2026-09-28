@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {makeClayRelief} from './h0-clay/clay-relief.v2.js';
 import {makeClayUniforms,makeClayMaterial,setPalette,seedGeometry,PALETTES} from './h0-clay/clay-material.v4.js';
+import {KFB_RENDER_PRESET_R0,clayTierValues} from '../../../shared/render/kfb-render-preset.v1.mjs';
 
 const H0_SOURCE={
   id:'KFB_CLAYMATION_H0_HIRNWELT_2026-09-27',
@@ -43,12 +44,12 @@ function simplifiedFarClay(source){
   return material;
 }
 
-function clayMaterialFor(source,U,layer){
+function clayMaterialFor(source,U,layer,reliefK){
   return makeClayMaterial(THREE,U,{
     src:source,
     role:layer.role,
     palMap:true,
-    reliefK:layer.id==='prop-detail'?.62:layer.id==='far-terrain'?.72:1,
+    reliefK,
     proc:false,
     scale:layer.scale
   });
@@ -59,14 +60,24 @@ export async function mountClayWorld(app){
   if(!terrain||!city?.plate||!city?.group)throw Error('H0 Clay needs the accepted World r2 terrain and city owners');
 
   const {texture,relief}=makeReliefTexture();
-  const uniforms=makeClayUniforms(THREE,texture);
-  uniforms.uClayTile.value=1.75;
-  uniforms.uClayStroke.value=.48;
-  uniforms.uClayGrain.value=.13;
-  uniforms.uClayMacro.value=.42;
-  uniforms.uClayFacet.value=.1;
-  uniforms.uClayCrease.value=.5;
-  setPalette(THREE,uniforms,PALETTES.claybound,.2);
+  texture.anisotropy=Math.min(KFB_RENDER_PRESET_R0.clay.maxAnisotropy,app.renderer.capabilities.getMaxAnisotropy?.()||1);
+  const uniforms={hero:makeClayUniforms(THREE,texture),world:makeClayUniforms(THREE,texture)};
+  for(const value of Object.values(uniforms))setPalette(THREE,value,PALETTES.claybound,.2);
+  let detailState='moving';
+  function setDetailState(next){
+    detailState=next==='stable'?'stable':'moving';
+    for(const tier of ['hero','world']){
+      const U=uniforms[tier],P=clayTierValues(tier,detailState);
+      U.uClayTile.value=P.tile;U.uClayStroke.value=P.stroke;U.uClayGrain.value=P.grain;
+      U.uClayMacro.value=P.macro;U.uClayFacet.value=P.facet;U.uClayCrease.value=P.crease;
+    }
+    document.body.dataset.m2aClayDetail=detailState;
+    return detailReport();
+  }
+  function detailReport(){
+    return {schema:'kfb.clay-detail-tier-r0/1',state:detailState,tiers:{hero:clayTierValues('hero',detailState),world:clayTierValues('world',detailState),far:'simplified'},texture:{size:relief.size,mipmaps:texture.generateMipmaps,anisotropy:texture.anisotropy}};
+  }
+  setDetailState('moving');
 
   const meshes=[];
   const seen=new Set();
@@ -79,14 +90,17 @@ export async function mountClayWorld(app){
   for(const mesh of meshes){
     if(!mesh.geometry?.attributes?.position||mesh.isSkinnedMesh)continue;
     const layer=layerFor(mesh,terrain,far);
-    if(layer.id!=='far-city-shell')seedGeometry(THREE,mesh.geometry,seed++);
+    const simplified=layer.id==='far-city-shell'||layer.id==='far-terrain';
+    if(!simplified)seedGeometry(THREE,mesh.geometry,seed++);
     const original=mesh.material;
-    const clay=layer.id==='far-city-shell'
+    const tier=layer.id==='prop-detail'?'hero':'world';
+    const reliefK=clayTierValues(tier,'stable').relief;
+    const clay=simplified
       ? (Array.isArray(original)?original.map(simplifiedFarClay):simplifiedFarClay(original))
       : (Array.isArray(original)
-        ? original.map(material=>clayMaterialFor(material,uniforms,layer))
-        : clayMaterialFor(original,uniforms,layer));
-    records.push({mesh,original,clay,layer});
+        ? original.map(material=>clayMaterialFor(material,uniforms[tier],layer,reliefK))
+        : clayMaterialFor(original,uniforms[tier],layer,reliefK));
+    records.push({mesh,original,clay,layer,tier:simplified?'far':tier});
     counts[layer.id]++;
   }
   if(!counts.facade||!counts['ground-road-sidewalk'])throw Error('H0 Clay could not bind facade and street/ground owners');
@@ -131,11 +145,12 @@ export async function mountClayWorld(app){
       buildingCount:heights.length,
       buildingHeightM:heights.length?[+Math.min(...heights).toFixed(2),+Math.max(...heights).toFixed(2)]:[],
       geometryRuntimePreprocess:false,skinnedMeshesUntouched:true,reversible:true,
-      distanceBudget:{fullRelief:'near terrain, streets, props and near city',simplified:'far-city-shell',simplifiedMeshes:counts['far-city-shell']},
+      distanceBudget:{fullRelief:'hero props + near terrain/streets/city in bounded hero/world tiers',simplified:'far-city-shell + far-terrain',simplifiedMeshes:counts['far-city-shell']+counts['far-terrain']},
+      detail:detailReport(),
       owners:{geometry:'World r2 · ElasticGrotesqueClayV2',material:'H0 Hirnwelt clay-material.v4 + clay-relief.v2',collision:'World r2 ground/contact'}
     };
   }
   const requestedLook=new URLSearchParams(location.search).get('look');
   setMode(requestedLook==='original'?'original':'clay');
-  return {setMode,report,get mode(){return mode}};
+  return {setMode,setDetailState,detailReport,report,get mode(){return mode}};
 }
