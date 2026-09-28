@@ -276,3 +276,29 @@ Stop and return `SOURCE_REQUIRED` if:
 - the next step would become S1-v4.
 
 No Stage publication and no Georg gate for a catalog-only or debug-only result. First integrate the bounded proof into the real receiving owner.
+
+
+## Track Core v0.11 host contract · mandatory update
+
+Use the exact Track Core source on branch `georg-doc-patch-2`:
+
+- `skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S12_V011_2026-09-28/RETURN_S12_V011_2026-09-28.md`
+- `skills/chat/workflows/KFB_TRACK_CORE_SLICE_2026-09-26/S12_V011_2026-09-28/modul_uebergang.transitions.json`
+
+Verified facts:
+
+- Core v0.11 passed 317/317 repository tests.
+- Drive surface, frames, width, grade, curvature, bank and contact geometry remain unchanged by transition zones.
+- Each zone already supplies `from`, `to`, `kind`, `u`, staggered layer weights, sockets and deterministic role seeds.
+- Consume the supplied `seeds.wfc`; do not invent a parallel zone seed.
+- Place WFC modules from the provided curb/sidewalk/nature sockets and their frame. Never re-solve the centreline.
+- Respect the v0.11 windows for surface, markings, barrier, pit, curb, nature, props, light and VFX. WFC fills only the `props`/environment layer and compatible edge cells; it does not collapse every layer into one switch line.
+- The builder preview is schematic placeholder evidence, not accepted K2 look.
+
+Known separate TUNE items:
+
+- pit-lane edge lines cross the main-track edge line;
+- pit-box markings float;
+- city-edge presentation may look like a curb while barrier collision remains full-height.
+
+WFC-01 must not repair, hide or redefine those Track Core issues. Record them as owner-held `HOLD/TUNE`.
