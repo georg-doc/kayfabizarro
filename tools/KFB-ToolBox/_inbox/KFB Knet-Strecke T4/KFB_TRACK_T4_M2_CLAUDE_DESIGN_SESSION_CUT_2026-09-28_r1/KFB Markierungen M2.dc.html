@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#f4f1ec;font-family:"Nunito Sans",ui-sans-serif,system-ui,sans-serif;color:#17191d}
+a{color:#5d4cff}a:hover{color:#17191d}
+</style>
+</helmet>
+
+<div style="max-width:1120px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:44px;box-sizing:border-box">
+
+  <header style="display:flex;flex-direction:column;gap:12px">
+    <div style="text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:#0e8f73">Knetwelt · Regelwerk Markierung M2 · 28.09.2026</div>
+    <h1 style="margin:0;font-size:44px;line-height:1;letter-spacing:-.04em;font-weight:800">Straßenmaß, Knetmaterial.</h1>
+    <p style="margin:0;max-width:760px;font-size:17px;line-height:1.45;font-weight:700;text-wrap:pretty">Geometrie, Rhythmus und Konstruktion kommen aus dem deutschen Regelwerk (RMS, StVO). Der Knetlook kommt nur aus Querschnitt, Material und Farbe. Kein Element erfindet eine eigene Form.</p>
+    <p style="margin:0;max-width:760px;font-size:14.5px;line-height:1.5;color:#4a515c;text-wrap:pretty">Umrechnung mit zwei Faktoren: Längen × 2 (Fahrstreifen real 3,5 m, bei uns 7,2 m), Strichbreiten × 2,5 (damit Linien aus Kartsicht tragen). Enden gerade, Ecken 7,5 cm. Vertrag: <span style="font-weight:700">lab-track/road-markings.m2.json</span>. Vorgänger: <a href="KFB Markierungen M1.dc.html">M1</a>.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+      <div style="font-size:12px;font-weight:700;color:#6d737d;width:70px">Welt</div>
+      <sc-for list="{{ worldBtns }}" as="o" hint-placeholder-count="3">
+        <button onClick="{{ o.pick }}" style="border-radius:10px;padding:7px 11px;font:inherit;font-weight:700;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};border:1px solid #17191d">{{ o.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+      <div style="font-size:12px;font-weight:700;color:#6d737d;width:70px">Regelwerk</div>
+      <sc-for list="{{ ruleBtns }}" as="o" hint-placeholder-count="2">
+        <button onClick="{{ o.pick }}" style="border-radius:10px;padding:7px 11px;font:inherit;font-weight:700;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};border:1px solid #17191d">{{ o.label }}</button>
+      </sc-for>
+    </div>
+  </header>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">1 · Drei Strichbreiten</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Wie real: Schmalstrich, Breitstrich = 2 × Schmalstrich, Querstrich = 4 × Schmalstrich. Keine Zwischenstärken.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ widths }}" as="w" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,1.2fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-weight:800;font-size:16px">{{ w.k }} · {{ w.name }}</div>
+            <div style="font-size:12px;color:#6d737d;font-variant-numeric:tabular-nums">real {{ w.real }} · Knetwelt {{ w.knet }}</div>
+          </div>
+          <svg viewBox="{{ w.plan.vb }}" style="display:block;width:100%;height:auto;aspect-ratio:{{ w.plan.ar }};border-radius:6px">
+            <sc-for list="{{ w.plan.shapes }}" as="s" hint-placeholder-count="2"><path d="{{ s.d }}" style="fill:{{ s.f }};stroke:{{ s.st }};stroke-width:{{ s.sw }}px;stroke-linejoin:round"></path></sc-for>
+          </svg>
+          <div style="font-size:13px;line-height:1.4;color:#4a515c">{{ w.use }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">2 · Maßtabelle</h2>
+    <div style="background:#fff;border-radius:14px;border:1px solid #e4dfd6;overflow:hidden">
+      <div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:12px;padding:10px 16px;background:#17191d;color:#fff;font-size:12px;font-weight:800">
+        <div>Element</div><div>Regel</div><div>real</div><div>Knetwelt</div>
+      </div>
+      <sc-for list="{{ table }}" as="r" hint-placeholder-count="12">
+        <div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:12px;padding:9px 16px;border-top:1px solid #efebe4;font-size:13px;font-variant-numeric:tabular-nums">
+          <div style="font-weight:700">{{ r.a }}</div><div style="color:#4a515c">{{ r.b }}</div><div style="color:#4a515c">{{ r.c }}</div><div style="font-weight:700">{{ r.d }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">3 · Längsmuster</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Alle Streifen im selben Maßstab, je 72 m. Gestrichelte Linien werden vom Ereignis rückwärts angelegt: Wer auf eine Haltlinie, ein Zebra oder eine Sperrfläche zufährt, sieht immer dieselbe Folge aus Leitlinie, Warnlinie und Fahrstreifenbegrenzung.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ patterns }}" as="p" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-weight:800;font-size:15px">{{ p.label }}</div>
+            <div style="font-size:12.5px;color:#4a515c;line-height:1.35">{{ p.text }}</div>
+          </div>
+          <svg viewBox="{{ p.plan.vb }}" style="display:block;width:100%;height:auto;aspect-ratio:{{ p.plan.ar }};border-radius:6px">
+            <sc-for list="{{ p.plan.shapes }}" as="s" hint-placeholder-count="4"><path d="{{ s.d }}" style="fill:{{ s.f }};stroke:{{ s.st }};stroke-width:{{ s.sw }}px;stroke-linejoin:round"></path></sc-for>
+          </svg>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">4 · Pfeile</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Ein Schaft, ein Bogen, ein Kopf. Schaft Breitstrich, 10 m lang. Abbiegen immer mit demselben Bogen (Radius 0,9 m) und demselben Kopf, der Nebenarm zweigt immer bei 42 % der Länge ab. Kombinationspfeile teilen den Schaft. Alle Pfeile passen in einen Fahrstreifen, mit mindestens 0,6 m Luft zur Randlinie.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px">
+      <sc-for list="{{ arrows }}" as="a" hint-placeholder-count="7">
+        <div style="background:#fff;border-radius:14px;padding:10px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:8px">
+          <svg viewBox="{{ a.plan.vb }}" style="display:block;width:100%;height:auto;aspect-ratio:{{ a.plan.ar }};border-radius:6px">
+            <sc-for list="{{ a.plan.shapes }}" as="s" hint-placeholder-count="4"><path d="{{ s.d }}" style="fill:{{ s.f }};stroke:{{ s.st }};stroke-width:{{ s.sw }}px;stroke-linejoin:round"></path></sc-for>
+          </svg>
+          <div style="font-size:12px;font-weight:700;text-align:center">{{ a.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">5 · Anwendungen</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Alle Pläne im selben Maßstab (72 m breit), Fahrtrichtung links nach rechts, Rechtsverkehr. Linien stoßen so aneinander wie auf echten Straßen: Haltlinie an Fahrstreifenbegrenzung, Parkstand an Parkstreifenbegrenzung.</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="9">
+        <div style="background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <div style="font-weight:800;font-size:16px">{{ p.title }}</div>
+            <div style="font-size:11px;font-weight:700;color:{{ p.stateC }};white-space:nowrap">{{ p.state }}</div>
+          </div>
+          <svg viewBox="{{ p.plan.vb }}" style="display:block;width:100%;height:auto;aspect-ratio:{{ p.plan.ar }};border-radius:8px">
+            <sc-for list="{{ p.plan.shapes }}" as="s" hint-placeholder-count="10"><path d="{{ s.d }}" style="fill:{{ s.f }};stroke:{{ s.st }};stroke-width:{{ s.sw }}px;stroke-linejoin:round"></path></sc-for>
+          </svg>
+          <div style="font-size:13.5px;line-height:1.5;color:#2c3440;max-width:900px;text-wrap:pretty">{{ p.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">6 · Übergänge</h2>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ transitions }}" as="x" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+          <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:800;font-size:15px">{{ x.title }}</div><div style="font-size:12.5px;color:#4a515c;line-height:1.45;text-wrap:pretty">{{ x.text }}</div></div>
+          <svg viewBox="{{ x.plan.vb }}" style="display:block;width:100%;height:auto;aspect-ratio:{{ x.plan.ar }};border-radius:6px">
+            <sc-for list="{{ x.plan.shapes }}" as="s" hint-placeholder-count="6"><path d="{{ s.d }}" style="fill:{{ s.f }};stroke:{{ s.st }};stroke-width:{{ s.sw }}px;stroke-linejoin:round"></path></sc-for>
+          </svg>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">7 · Farbe je Welt</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">hell ist die Grundfarbe aller Markierungen. signal nur für Magnet, Boost und Boxengasse (im US-Regelwerk auch die Mittellinie). rot nur für Curbs. Jede Welt tönt die Rollen leicht zu ihrem Biom.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px">
+      <sc-for list="{{ colorCards }}" as="c" hint-placeholder-count="3">
+        <div style="background:#fff;border-radius:14px;padding:14px;border:{{ c.border }};display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:800;font-size:14px">{{ c.name }}</div>
+          <svg viewBox="{{ c.plan.vb }}" style="display:block;width:100%;height:auto;aspect-ratio:{{ c.plan.ar }};border-radius:8px">
+            <sc-for list="{{ c.plan.shapes }}" as="s" hint-placeholder-count="6"><path d="{{ s.d }}" style="fill:{{ s.f }};stroke:{{ s.st }};stroke-width:{{ s.sw }}px;stroke-linejoin:round"></path></sc-for>
+          </svg>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11.5px;color:#4a515c">
+            <sc-for list="{{ c.sw }}" as="s" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:5px"><div style="width:13px;height:13px;border-radius:4px;border:1px solid #d9d3c8;background:{{ s.c }}"></div>{{ s.k }}</div></sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">8 · Was M2 an M1 ändert</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:10px">
+      <sc-for list="{{ changes }}" as="c" hint-placeholder-count="6">
+        <div style="background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:4px">
+          <div style="font-weight:800;font-size:14px">{{ c.k }}</div>
+          <div style="font-size:13px;line-height:1.45;color:#4a515c;text-wrap:pretty">{{ c.v }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.5;color:#4a515c">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em;color:#17191d">9 · Offen</h2>
+    <div>Die 3D-Strecke <a href="KFB Knet-Strecke T4.dc.html">T4</a> läuft jetzt mit M2: Randlinien S/B mit Stärkewechsel über 20 m, Takt-Auslauf statt Tropfen, Magnet als Blocklinie, Mitte Leit/Warn vom Zebra rückwärts, Zebra 12 m vor der Sackgasse. Einmündung, Parkbucht, Linksabbieger und Parkdeck gibt es in T4 als Situation noch nicht. Der Punktraster-Übergang läuft im 3D noch mit den M1-Knetflecken. Offen außerdem: Anschlüsse der Nebenstraße, Symbole (Rad, Bus, P, Schrift), Lernebene.</div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;world&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;canyon&quot;,&quot;bucht&quot;,&quot;otown&quot;],&quot;default&quot;:&quot;canyon&quot;,&quot;tsType&quot;:&quot;'canyon'|'bucht'|'otown'&quot;},&quot;rulebook&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;de&quot;,&quot;us&quot;],&quot;default&quot;:&quot;de&quot;,&quot;tsType&quot;:&quot;'de'|'us'&quot;}}">
+class Component extends DCLogic {
+  state = { R: null, world: null, rule: null };
+  componentDidMount() { fetch('lab-track/road-markings.m2.json?r=4').then(r => r.json()).then(R => this.setState({ R })).catch(e => console.error(e)); }
+  renderVals() {
+    const R = this.state.R, wk = this.state.world ?? this.props.world ?? 'canyon', rk = this.state.rule ?? this.props.rulebook ?? 'de';
+    const WN = { canyon: 'A · Canyon', bucht: 'B · Bikini-Bucht', otown: 'C · O-Town' };
+    const tog = (on, label, pick) => ({ label, pick, bg: on ? '#17191d' : '#fff', fg: on ? '#fff' : '#17191d' });
+    const worldBtns = Object.keys(WN).map(k => tog(k === wk, WN[k], () => this.setState({ world: k })));
+    const ruleBtns = [['de', 'DE · Mitte hell'], ['us', 'US · Mitte signal']].map(([k, l]) => tog(k === rk, l, () => this.setState({ rule: k })));
+    if (!R) return { worldBtns, ruleBtns, widths: [], table: [], patterns: [], arrows: [], plans: [], transitions: [], colorCards: [], changes: [] };
+
+    const h1 = n => { const v = Math.sin(n * 91.345 + 47.853) * 43758.5453; return v - Math.floor(v); };
+    const S = R.widths.S, B = R.widths.B, Q = R.widths.Q, RC = R.corner, PT = R.patterns;
+    const palette = k => { const c = R.colors.worlds[k]; return { ...c, centre: rk === 'us' ? c.signal : c.hell }; };
+    let C = palette(wk);
+    const col = c => C[c] || c, f3 = n => Math.round(n * 1000) / 1000;
+    const path = (pts, close) => 'M' + pts.map(p => f3(p[0]) + ' ' + f3(p[1])).join(' L') + (close ? ' Z' : '');
+    const A = (pts, c) => ({ d: path(pts, true), f: col(c), st: 'none', sw: 0 });
+    const F = (pts, c) => ({ d: path(pts, true), f: col(c), st: col(c), sw: 2 * RC });
+    const ST = (pts, w, c) => ({ d: path(pts, false), f: 'none', st: col(c), sw: w });
+    const rp = (x0, y0, x1, y1) => [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
+    const Bx = (x0, y0, x1, y1, c = 'hell') => F(rp(Math.min(x0, x1) + RC, Math.min(y0, y1) + RC, Math.max(x0, x1) - RC, Math.max(y0, y1) - RC), c);
+    const plan = (L, H, shapes) => ({ vb: `0 0 ${L} ${H}`, ar: `${L} / ${H}`, shapes });
+    const hline = (x0, x1, y, w, c = 'hell') => Bx(x0, y - w / 2, x1, y + w / 2, c);
+    // Längsmuster vom Anker aus. segs: [[muster, anzahl|null], …]; Lücke beim Wechsel = Lücke des nächsten Musters
+    const run = (out, anchor, dir, segs, lo, hi, y, c = 'hell', vert = false) => { let t = anchor;
+      for (let si = 0; si < segs.length; si++) { const [pk, n] = segs[si], p = PT[pk], w = R.widths[p.w]; let k = 0;
+        while (k < (n ?? 999)) { const a = dir > 0 ? t : t - p.dash, z = dir > 0 ? t + p.dash : t; if (dir > 0 ? a > hi - 1e-6 : z < lo + 1e-6) return;
+          const ca = Math.max(a, lo), cz = Math.min(z, hi); if (cz - ca >= w) out.push(vert ? Bx(y - w / 2, ca, y + w / 2, cz, c) : hline(ca, cz, y, w, c)); k++; const g = (k === n && segs[si + 1]) ? PT[segs[si + 1][0]].gap : p.gap; t = (dir > 0 ? z : a) + dir * g; } } };
+    // Takt-Auslauf: Linie endet bei x0 und zerfällt in n Stücke im Takt, Länge linear bis zur Strichbreite
+    const taper = (out, x0, dir, y, w, c = 'hell', n = 7) => { const TP = R.transitions.taper, p = TP.period, L0 = TP.first * p, step = (L0 - w) / (n - 1), c0 = x0 + dir * (p - (L0 + step) / 2);
+      for (let k = 0; k < n; k++) { const L = L0 - step * k, cx = c0 + dir * k * p; out.push(hline(cx - L / 2, cx + L / 2, y, w, c)); } };
+    // Pfeile: lokale Achse u (Fahrtrichtung), v (rechts); M bildet auf den Plan ab
+    const AR = R.elements.arrow, AL = AR.length, HW = AR.headW, HL = AR.headL, TR = AR.turn.radius;
+    const arrow = (out, M, type, c = 'hell') => { const mp = a => a.map(q => M(q[0], q[1])), nb = HL * 0.18;
+      const head = (p, t) => { const n = [-t[1], t[0]]; out.push(F(mp([[p[0] + n[0] * HW / 2, p[1] + n[1] * HW / 2], [p[0] + t[0] * HL, p[1] + t[1] * HL], [p[0] - n[0] * HW / 2, p[1] - n[1] * HW / 2], [p[0] + t[0] * nb, p[1] + t[1] * nb]]), c)); };
+      const hasS = type.includes('S'), hasL = type.includes('L'), hasR = type.includes('R');
+      const v0 = { R: -TR, L: TR, SR: -0.9, SL: 0.9 }[type] ?? 0, ub = hasS ? AL * AR.turn.branch : AL - TR - HW / 2;
+      out.push(ST(mp([[0, v0], [hasS ? AL - HL + nb + 0.05 : ub + 0.05, v0]]), B, c)); if (hasS) head([AL - HL, v0], [1, 0]);
+      [hasR ? 1 : 0, hasL ? -1 : 0].filter(Boolean).forEach(s => { const arc = []; for (let i = 0; i <= 18; i++) { const ph = Math.PI / 2 * i / 18; arc.push([ub + TR * Math.sin(ph), v0 + s * TR * (1 - Math.cos(ph))]); }
+        arc.push([ub + TR, v0 + s * (TR + nb + 0.05)]); out.push(ST(mp(arc), B, c)); head([ub + TR, v0 + s * TR], [0, s]); }); };
+    const clipPoly = (subj, cp) => { let out = subj; const sg = Math.sign(cp.reduce((s, p, i) => { const q = cp[(i + 1) % cp.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0));
+      for (let i = 0; i < cp.length && out.length; i++) { const P0 = cp[i], P1 = cp[(i + 1) % cp.length], inp = out; out = [];
+        const sd = p => sg * ((P1[0] - P0[0]) * (p[1] - P0[1]) - (P1[1] - P0[1]) * (p[0] - P0[0]));
+        for (let j = 0; j < inp.length; j++) { const a = inp[j], b = inp[(j + 1) % inp.length], da = sd(a), db = sd(b), X = () => { const t = da / (da - db); return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]; };
+          if (da >= 0) { out.push(a); if (db < 0) out.push(X()); } else if (db >= 0) out.push(X()); } }
+      return out; };
+    const insetTri = (tri, d) => { const dist = (p, q) => Math.hypot(p[0] - q[0], p[1] - q[1]), [P, Qp, Rp] = tri, a = dist(Qp, Rp), b = dist(P, Rp), c = dist(P, Qp), s = (a + b + c) / 2;
+      const I = [(a * P[0] + b * Qp[0] + c * Rp[0]) / (2 * s), (a * P[1] + b * Qp[1] + c * Rp[1]) / (2 * s)], r = Math.sqrt((s - a) * (s - b) * (s - c) / s), k = (r - d) / r;
+      return tri.map(p => [I[0] + (p[0] - I[0]) * k, I[1] + (p[1] - I[1]) * k]); };
+    const hatch = (out, poly, x0, x1, pitch, w, c = 'hell') => { const d = [Math.SQRT1_2, -Math.SQRT1_2], n = [Math.SQRT1_2, Math.SQRT1_2], yc = poly.reduce((s, p) => s + p[1], 0) / poly.length;
+      for (let x = x0; x <= x1; x += pitch) { const P0 = [x - d[0] * 40, yc - d[1] * 40], P1 = [x + d[0] * 40, yc + d[1] * 40];
+        const bar = clipPoly([[P0[0] + n[0] * w / 2, P0[1] + n[1] * w / 2], [P1[0] + n[0] * w / 2, P1[1] + n[1] * w / 2], [P1[0] - n[0] * w / 2, P1[1] - n[1] * w / 2], [P0[0] - n[0] * w / 2, P0[1] - n[1] * w / 2]], poly);
+        if (bar.length > 2) out.push(F(bar, c)); } };
+    // Punktraster: B-Punkte auf dem Gitter, A-Punkte auf dem Zwischengitter. Schwelle cos u + cos v = 2 − 4·Deckung, je Kachel radial gelöst.
+    const HT = R.transitions.halftone, DR = R.transitions.drift, BL = R.transitions.blend;
+    const halftone = (x0, x1, y0, y1, xb, cov, c) => { const p = HT.pitch, K = 2 * Math.PI / p, N = 64, subs = [], box = rp(x0, y0, Math.min(xb, x1), y1);
+      const Lv = (x, y) => 2 - 4 * Math.min(1, Math.max(0, cov(x, y)));
+      const dia = (cx, cy) => [[cx + p / 2, cy], [cx, cy + p / 2], [cx - p / 2, cy], [cx, cy - p / 2]];
+      const blob = (cx, cy, sg) => { const pts = []; let mx = 0;
+        for (let a = 0; a < N; a++) { const th = 2 * Math.PI * a / N, ct = Math.cos(th), s = Math.sin(th), rm = (p / 2) / (Math.abs(ct) + Math.abs(s));
+          const f = r => Math.cos(K * r * ct) + Math.cos(K * r * s) - sg * Lv(cx + r * ct, cy + r * s); let r;
+          if (f(rm) >= 0) r = rm; else if (f(0) <= 0) r = 0; else { let lo = 0, hi = rm; for (let k = 0; k < 20; k++) { const m = (lo + hi) / 2; if (f(m) > 0) lo = m; else hi = m; } r = lo; }
+          mx = Math.max(mx, r); pts.push([cx + r * ct, cy + r * s]); }
+        return mx < HT.min ? null : pts; };
+      const add = pts => { const q = clipPoly(pts, box); if (q.length > 2) subs.push(path(q, true)); return q.length > 2; };
+      const nx = Math.ceil((Math.min(xb, x1) - x0) / p), ny = Math.round((y1 - y0) / p);
+      for (let i = 0; i <= nx; i++) for (let j = 0; j <= ny; j++) {
+        if (j < ny) { const cx = x0 + (i + .5) * p, cy = y0 + (j + .5) * p; if (Lv(cx, cy) <= 0) add(dia(cx, cy)); else { const b = blob(cx, cy, 1); if (b) add(b); } }
+        const cx = x0 + i * p, cy = y0 + j * p; if (Lv(cx, cy) < 0 && add(dia(cx, cy))) { const h = blob(cx, cy, -1); if (h) add(h.reverse()); } }
+      if (xb < x1) subs.push(path(rp(xb, y0, x1, y1), true));
+      return { d: subs.join(' '), f: col(c), st: 'none', sw: 0 }; };
+    const driftCov = (X0, cy, h) => (x, y) => { const q = (y - cy) / h; return (x - X0 - DR.edgeLead * (1 - q * q)) / DR.length; };
+
+    const walk = 3, hw = 7.2, Lp = 72;
+    // Zebra: Balken Q, Lücke Q, füllt die Fahrbahn zwischen den Randlinien, symmetrisch zur Achse
+    const zebra = (out, z0, z1, cy) => { const n = Math.floor((2 * hw - 2 * S + Q) / (2 * Q)); for (let k = 0; k < n; k++) out.push(hline(z0, z1, cy + (k - (n - 1) / 2) * 2 * Q, Q)); };
+    const widths = [['S', 'Schmalstrich', '12 cm', '30 cm', 'Randlinie Stadt, Leit-, Warn-, Doppellinie, Fahrstreifenbegrenzung, Parkstände, Sperrflächenrand'],
+      ['B', 'Breitstrich', '25 cm', '60 cm', 'Randlinie Strecke, Blocklinie, Pfeilschaft, Schraffur, Startboxen'],
+      ['Q', 'Querstrich', '50 cm', '1,20 m', 'Haltlinie, Wartelinie, Zebrabalken, Start/Ziel-Karo, Curb']].map(([k, name, real, knet, use]) => {
+      const w = R.widths[k]; return { k, name, real, knet, use, plan: plan(24, 3, [A(rp(0, 0, 24, 3), 'roadStreet'), hline(3, 21, 1.5, w)]) }; });
+    const table = R.table.map(([a, b, c, d]) => ({ a, b, c, d }));
+
+    const strip = (fn, bg = 'roadStreet', H = 3) => { const out = [A(rp(0, 0, Lp, H), bg)]; fn(out, H / 2); return plan(Lp, H, out); };
+    const patterns = [
+      { label: 'Fahrstreifenbegrenzung', text: 'S durchgezogen. Nicht überfahren.', plan: strip((o, y) => o.push(hline(0, Lp, y, S))) },
+      { label: 'Leitlinie', text: 'S, 6 m Strich, 12 m Lücke (real 3 / 6 m).', plan: strip((o, y) => run(o, 0, 1, [['leit', null]], 0, Lp, y)) },
+      { label: 'Leitlinie im Knoten', text: 'S, 3 m / 3 m. Über Einmündungen und Fahrstreifenwechsel.', plan: strip((o, y) => run(o, 0, 1, [['leitKnoten', null]], 0, Lp, y)) },
+      { label: 'Warnlinie', text: 'S, 6 m Strich, 3 m Lücke. Kündigt an.', plan: strip((o, y) => run(o, 0, 1, [['warn', null]], 0, Lp, y)) },
+      { label: 'Anfahrt auf ein Ereignis', text: 'Rückwärts vom Ereignis: Begrenzung, 3 m, drei Warnstriche, 12 m, Leitlinie.', plan: strip((o, y) => { o.push(hline(45, Lp, y, S)); run(o, 42, -1, [['warn', 3], ['leit', null]], 0, Lp, y); }) },
+      { label: 'Doppellinie', text: 'Zwei S, Abstand S. Verstärkte Sperre.', plan: strip((o, y) => { o.push(hline(0, Lp, y - S, S, 'centre'), hline(0, Lp, y + S, S, 'centre')); }) },
+      { label: 'Randlinie Strecke', text: 'B durchgezogen, bündig an der Kehle.', plan: strip((o, y) => o.push(hline(0, Lp, y, B)), 'roadTrack') },
+      { label: 'Blocklinie', text: 'B, 3 m / 3 m, signal. Magnet, Boxeneinfahrt.', plan: strip((o, y) => run(o, 0, 1, [['block', null]], 0, Lp, y, 'signal'), 'roadTrack') }
+    ];
+
+    const arrows = [['S', 'geradeaus'], ['L', 'links'], ['R', 'rechts'], ['SL', 'geradeaus + links'], ['SR', 'geradeaus + rechts'], ['LR', 'links + rechts'], ['SLR', 'alle drei']].map(([t, label]) => {
+      const out = [A(rp(0, 0, 7.2, 14), 'roadStreet'), Bx(0, 0, S, 14), Bx(7.2 - S, 0, 7.2, 14)]; arrow(out, (u, v) => [3.6 + v, 12 - u], t); return { label, plan: plan(7.2, 14, out) }; });
+
+    // ---------- Anwendungen ----------
+    const cityBase = (out, H, y0, lanes = 2) => { const y1 = y0 + lanes * hw; out.push(A(rp(0, 0, Lp, H), 'walk'), A(rp(0, y0 - 0.4, Lp, y1 + 0.4), 'curb'), A(rp(0, y0, Lp, y1), 'roadStreet')); return y1; };
+    const plans = [];
+    { const P = 4.0, H = 2 * walk + 2 * P + 2 * hw, out = [A(rp(0, 0, Lp, H), 'walk')], y0 = walk, y3 = H - walk, eT = y0 + P, eB = y3 - P, cy = (eT + eB) / 2, pl = R.elements.parking.parallel.l, nB = 4, bx0 = (Lp - nB * pl) / 2, bx1 = bx0 + nB * pl;
+      const top = [[0, eT], [bx0 - P, eT], [bx0, y0], [bx1, y0], [bx1 + P, eT], [Lp, eT]], bot = top.map(p => [p[0], H - p[1]]).reverse();
+      out.push(ST(top, 0.8, 'curb'), ST(bot, 0.8, 'curb'), A([...top, ...bot], 'roadStreet'), hline(0, Lp, eT + S / 2, S), hline(0, Lp, eB - S / 2, S)); run(out, 3, 1, [['leit', null]], 0, Lp, cy, 'centre');
+      for (let k = 1; k < nB; k++) { const x = bx0 + k * pl; out.push(Bx(x - S / 2, y0, x + S / 2, eT), Bx(x - S / 2, eB, x + S / 2, y3)); }
+      plans.push({ title: 'Stadtstraße mit Parkbuchten (Regelfall)', state: 'geregelt', plan: plan(Lp, H, out), text: 'Gehweg, Parkbucht, zwei Fahrstreifen, Parkbucht, Gehweg. Die Bucht ist in den Gehweg eingezogen, 4 m tief (real 2 m), vier Stände à 11,4 m (real 5,7 m). An beiden Enden läuft der Bord unter 45° auf die Fahrbahnkante zurück. Die Fahrbahnbegrenzung (S) läuft ohne Versatz durch. Trennstriche (S) stehen nur zwischen den Ständen und stoßen im T an sie, die Endstände begrenzt der Bord.' }); }
+    { const H = 2 * walk + 2 * hw, out = [], y0 = walk, y1 = cityBase(out, H, y0), cy = y0 + hw, z0 = 33, z1 = 39;
+      out.push(hline(0, Lp, y0 + S / 2, S), hline(0, Lp, y1 - S / 2, S)); zebra(out, z0, z1, cy);
+      run(out, z0 - PT.warn.gap, -1, [['warn', 3], ['leit', null]], 0, Lp, cy, 'centre'); run(out, z1 + PT.warn.gap, 1, [['warn', 3], ['leit', null]], 0, Lp, cy, 'centre');
+      plans.push({ title: 'Fußgängerüberweg', state: 'auf TD03 (M1)', plan: plan(Lp, H, out), text: 'Balken Q (1,2 m), Lücke Q, 6 m lang, parallel zur Fahrtrichtung, symmetrisch zur Achse. Randlinien laufen durch. Mittellinie in beiden Richtungen: Lücke 3 m, drei Warnstriche, dann Leitlinie.' }); }
+    { const yT = walk, yB = walk + 2 * hw, H = yB + 51, xs0 = 28.8, xs1 = 43.2, cxs = 36, r = 6.3, e = S / 2, out = [A(rp(0, 0, Lp, H), 'walk')];
+      const arcPts = (cx, cy, rr, a0, a1) => Array.from({ length: 17 }, (_, i) => { const a = a0 + (a1 - a0) * i / 16; return [cx + rr * Math.cos(a), cy + rr * Math.sin(a)]; });
+      const edgeL = [[0, yB], ...arcPts(xs0 - r, yB + r, r, -Math.PI / 2, 0), [xs0, H]], edgeR = [[xs1, H], ...arcPts(xs1 + r, yB + r, r, Math.PI, 1.5 * Math.PI), [Lp, yB]];
+      out.push(ST([[0, yT], [Lp, yT]], 0.8, 'curb'), ST(edgeL, 0.8, 'curb'), ST(edgeR, 0.8, 'curb'), A([[0, yT], [Lp, yT], ...edgeR.slice().reverse(), ...edgeL.slice().reverse()], 'roadStreet'));
+      const ey = yB - e; out.push(hline(0, Lp, yT + e, S));
+      out.push(ST([[0, ey], ...arcPts(xs0 - r, yB + r, r + e, -Math.PI / 2, 0), [xs0 + e, H]], S, 'hell'), ST([[xs1 - e, H], ...arcPts(xs1 + r, yB + r, r + e, Math.PI, 1.5 * Math.PI), [Lp, ey]], S, 'hell'));
+      const d = PT.leitKnoten.dash, g = PT.leitKnoten.gap, m0 = xs0 - r, W = xs1 + r - m0, nK = Math.floor((W - g) / (d + g)), k0 = m0 + (W - nK * d - (nK - 1) * g) / 2;
+      for (let k = 0; k < nK; k++) out.push(hline(k0 + k * (d + g), k0 + k * (d + g) + d, ey, S));
+      run(out, cxs - PT.leit.dash / 2, 1, [['leit', null]], 0, Lp, yT + hw, 'centre'); run(out, cxs - PT.leit.dash / 2 - PT.leit.gap, -1, [['leit', null]], 0, Lp, yT + hw, 'centre');
+      const wl = PT.warte, yw0 = yB + wl.gap, yw1 = yw0 + Q, yS = yw0 + 6; out.push(Bx(cxs - e, yw0, cxs + e, yS, 'centre')); run(out, yS + PT.warn.gap, 1, [['warn', 3], ['leit', null]], yB, H, cxs, 'centre', true);
+      const arcX = y => xs1 + r - Math.sqrt(Math.max(0, (r + S) ** 2 - (yB + r - y) ** 2));
+      const wx0 = cxs + e, wx1 = arcX(yw1), nW = Math.floor((wx1 - wx0 + wl.gap) / (wl.dash + wl.gap)), wg = nW > 1 ? (wx1 - wx0 - nW * wl.dash) / (nW - 1) : 0;
+      for (let k = 0; k < nW - 1; k++) { const x = wx0 + k * (wl.dash + wg); out.push(Bx(x, yw0, x + wl.dash, yw1)); }
+      { const x = wx1 - wl.dash, arc = Array.from({ length: 9 }, (_, i) => { const y = yw0 + Q * i / 8; return [arcX(y) - RC, i === 0 ? y + RC : i === 8 ? y - RC : y]; }); out.push(F([[x + RC, yw0 + RC], ...arc, [x + RC, yw1 - RC]], 'hell')); }
+      plans.push({ title: 'Einmündung mit Wartelinie', state: 'geregelt', plan: plan(Lp, H, out), text: 'Die Randlinie folgt dem Bordradius (6,3 m) ohne Unterbrechung in die Nebenstraße. Über die Öffnung läuft der Fahrbahnrand als Leitlinie im Knoten weiter: vier Striche 3 / 3 m, symmetrisch zur Achse, je 3 m Lücke an den Bogenanfängen. Die Wartelinie (Q, Blöcke 1,2 m) liegt eine Lücke (0,6 m) hinter diesem Rand, nie darauf. Sie reicht über den ganzen eigenen Fahrstreifen: links bündig an der Fahrstreifenbegrenzung, rechts bündig an der Randlinie im Bogen, die Lücken werden dafür gleichmäßig gestreckt. Die Fahrstreifenbegrenzung beginnt an der Wartelinie, dann die feste Folge: 6 m Begrenzung, 3 m Lücke, drei Warnstriche, Leitlinie.' }); }
+    { const yT = walk, yA = walk + hw, yE0 = yA + hw, yE1 = yA + 2 * hw, H = yE1 + walk, tip = 12, wide = 30, halt = 60, out = [A(rp(0, 0, Lp, H), 'walk')];
+      const bot = [[Lp, yE1], [wide, yE1], [tip, yE0], [0, yE0]]; out.push(ST([[0, yT], [Lp, yT]], 0.8, 'curb'), ST(bot, 0.8, 'curb'), A([[0, yT], [Lp, yT], ...bot], 'roadStreet'));
+      out.push(hline(0, Lp, yT + S / 2, S), ST(bot.map(p => [p[0], p[1] - S / 2]), S, 'hell'));
+      run(out, tip - PT.warn.gap, -1, [['warn', 3], ['leit', null]], 0, Lp, yA, 'centre'); out.push(hline(tip, halt + Q / 2, yA, S, 'centre'));
+      const tri = [[tip, yA], [wide, yA], [wide, yE0]]; out.push(ST([[tip, yA], [wide, yE0]], S, 'centre'), Bx(wide - S / 2, yA, wide + S / 2, yE0, 'centre'));
+      hatch(out, insetTri(tri, S / 2 + 0.2 + RC), tip, wide + 8, 3, B, 'centre');
+      out.push(hline(42, halt, yE0, S)); run(out, 42 - PT.leitKnoten.gap, -1, [['leitKnoten', null]], wide, halt, yE0);
+      out.push(Bx(halt, yA - S / 2, halt + Q, yE1 - S / 2));
+      arrow(out, (u, v) => [46 + u, yA + hw / 2 + v], 'L'); arrow(out, (u, v) => [46 + u, yE0 + hw / 2 + v], 'SR'); arrow(out, (u, v) => [30 + u, yE0 + hw / 2 + v], 'S');
+      plans.push({ title: 'Linksabbieger: Sperrfläche, Pfeile, Haltlinie', state: 'geregelt', plan: plan(Lp, H, out), text: 'Die Fahrbahn weitet sich, die Mittellinie teilt sich an der Spitze der Sperrfläche: oben bleibt die Fahrstreifenbegrenzung zum Gegenverkehr, unten läuft der Rand der Sperrfläche (S) zum eigenen Fahrstreifen. Schraffur B unter 45°, Teilung 3 m. Hinter der Sperrfläche Leitlinie im Knoten, dann Fahrstreifenbegrenzung bis zur Haltlinie (Q). Die Haltlinie schließt oben bündig mit der Außenkante der Fahrstreifenbegrenzung ab und reicht unten bis in die Randlinie: keine Stufe, keine Fuge. Die Sperrfläche trennt Gegenrichtungen und hat deshalb die Farbe der Mitte (US: signal). Haltlinie, Pfeile und die Linie zwischen den gleichgerichteten Streifen bleiben hell.' }); }
+    { const H = 2 * walk + 2 * hw, E = 46, out = [A(rp(0, 0, Lp, H), 'sand')], y0 = walk, y1 = y0 + 2 * hw, cy = y0 + hw;
+      out.push(A(rp(0, 0, E, y0), 'walk'), A(rp(0, y1, E, H), 'walk'), A(rp(0, y0 - 0.4, E, y0), 'curb'), A(rp(0, y1, E, y1 + 0.4), 'curb'), A(rp(0, y0, Lp, y1), 'roadStreet'));
+      out.push(hline(0, Lp, y0 + S / 2, S), hline(0, Lp, y1 - S / 2, S)); const z1 = E - R.deadEnd.zebraFromEnd, z0 = z1 - 6;
+      zebra(out, z0, z1, cy); run(out, z0 - PT.warn.gap, -1, [['warn', 3], ['leit', null]], 0, Lp, cy, 'centre'); run(out, z1 + PT.warn.gap, 1, [['warn', null]], 0, Lp, cy, 'centre');
+      out.push(halftone(0, Lp, y0, y1, E + DR.edgeLead + DR.length, driftCov(E, cy, hw), 'sand'));
+      plans.push({ title: 'Sackgasse: Zebra und Verwehung', state: 'auf TD03 (M1)', plan: plan(Lp, H, out), text: 'Zebra 12 m vor dem Ende des Gehwegs. Danach laufen Asphalt, Randlinien und Warnlinie gerade weiter, der Platzsand weht im Punktraster darüber: erst kleine Sandpunkte, die wachsen und sich berühren, dann kleine Asphaltpunkte, in denen die Markierung noch durchscheint, dann ist alles zu. An den Borden beginnt das Raster 6 m früher als in der Mitte.' }); }
+    { const H = 2 * walk + 2 * hw, y0 = walk, y1 = y0 + 2 * hw, cy = y0 + hw, out = [A(rp(0, 0, Lp, H), 'strang'), A(rp(0, y0, Lp, y1), 'roadTrack')], kx = 50;
+      out.push(hline(0, Lp, y0 + B / 2, B), hline(0, Lp, y1 - B / 2, B)); const n = Math.round((y1 - y0 - 2 * B) / Q);
+      for (let r = 0; r < 2; r++) for (let k = 0; k < n; k++) if ((k + r) % 2 === 0) out.push(Bx(kx + r * Q, y0 + B + k * Q, kx + (r + 1) * Q, y0 + B + (k + 1) * Q));
+      const G = R.elements.start.grid; for (let i = 0; i < 6; i++) { const xf = kx - 3 - i * G.stagger, yc = cy + (i % 2 ? 1 : -1) * hw / 2, a = yc - G.box / 2, b = yc + G.box / 2; if (xf - G.leg < 0) break;
+        out.push(Bx(xf - B, a, xf, b), Bx(xf - G.leg, a, xf - B + RC * 2, a + B), Bx(xf - G.leg, b - B, xf - B + RC * 2, b)); }
+      for (let k = 0; k < 4; k++) out.push(Bx(k * 3, y0 + B, (k + 1) * 3, y0 + B + Q, k % 2 ? 'hell' : 'rot'));
+      plans.push({ title: 'Rennstrecke: Start/Ziel, Startaufstellung, Curb', state: 'geregelt', plan: plan(Lp, H, out), text: 'Randlinien B, bündig an der Kehle, keine Fahrstreifen. Start/Ziel: zwei Reihen Q-Quadrate, genau von Randlinie zu Randlinie. Startboxen aus B: Querstrich 3,4 m vor dem Kart, Schenkel 1,8 m nach hinten, im Abstand von 6 m links und rechts versetzt. Curb nur am Kurvenscheitel: 3-m-Blöcke Q, rot und hell im Wechsel, direkt an der Randlinie.' }); }
+    { const H = 2 * walk + 2 * hw, y0 = walk, y1 = y0 + 2 * hw, cy = y0 + hw, out = [A(rp(0, 0, Lp, H), 'strang'), A(rp(0, y0, Lp, y1), 'roadTrack')], Bo = R.elements.boost, hs = Bo.span * hw;
+      for (const y of [y0 + B / 2, y1 - B / 2]) { out.push(hline(0, 12, y, B)); run(out, 15, 1, [['block', null]], 0, Lp, y, 'signal'); }
+      for (let x = 21; x + Bo.thick + Bo.tip <= Lp - 3; x += 6) out.push(F([[x, cy - hs], [x + Bo.thick, cy - hs], [x + Bo.thick + Bo.tip, cy], [x + Bo.thick, cy + hs], [x, cy + hs], [x + Bo.tip, cy]], 'signal'));
+      plans.push({ title: 'Magnetzone und Loop', state: 'auf TD03 (M1)', plan: plan(Lp, H, out), text: 'Die Randlinie wird zur Blocklinie (B, 3 / 3 m, signal), mit einer Lücke von 3 m zum durchgezogenen Teil. Boost-Pfeile aus TD03 im Takt von 6 m.' }); }
+    { const yT = walk, yP = yT + 2 * hw, yW = yP + hw, yX = yW + 5, H = yX + walk, out = [A(rp(0, 0, Lp, H), 'strang'), A(rp(0, yT, Lp, yX), 'roadTrack')];
+      out.push(hline(0, Lp, yT + B / 2, B), hline(0, Lp, yX - B / 2, B)); run(out, 0, 1, [['block', 4]], 0, Lp, yP, 'signal'); out.push(hline(24, Lp, yP, B));
+      out.push(hline(24, Lp, yW, S, 'signal')); for (let x = 30; x <= Lp - 2 + 1e-6; x += 10) out.push(Bx(x - S / 2, yW + S / 2, x + S / 2, yX - B, 'signal'));
+      plans.push({ title: 'Boxengasse', state: 'D1 reserviert', plan: plan(Lp, H, out), text: 'Einfahrt über vier Blockstriche (signal), dann trennt eine durchgezogene Randlinie B Gasse und Strecke. In der Gasse trennt eine Begrenzung S (signal) Fahrgasse und Arbeitsbereich. Boxenplätze 10 m, getrennt durch je einen S-Strich, der an die Begrenzung stößt.' }); }
+    { const pp = R.elements.parking.perpendicular, H = 2 * pp.d + pp.aisle + 2, y0 = 1, yA0 = y0 + pp.d, yA1 = yA0 + pp.aisle, y1 = yA1 + pp.d, out = [A(rp(0, 0, Lp, H), 'roadTrack')];
+      out.push(hline(1, Lp - 1, y0 + S / 2, S), hline(1, Lp - 1, y1 - S / 2, S)); for (let x = 1; x <= Lp - 1 + 1e-6; x += pp.w) out.push(Bx(x - S / 2, y0 + S, x + S / 2, yA0), Bx(x - S / 2, yA1, x + S / 2, y1 - S));
+      const ya = (yA0 + yA1) / 2; arrow(out, (u, v) => [12 + u, ya + v], 'S'); arrow(out, (u, v) => [48 + u, ya + v], 'S');
+      plans.push({ title: 'Parkdeck (Ausnahme)', state: 'geregelt', plan: plan(Lp, H, out), text: 'Nur im Parkdeck: Senkrechtparken 5 × 10 m (real 2,5 × 5 m). Rückwärtige Begrenzung S, Trennstriche S stoßen im T an sie, zur Fahrgasse offen. Fahrgasse 12 m im Einrichtungsverkehr, wie im Parkhaus üblich: Richtungspfeile auf der Gassenmitte, alle in Fahrtrichtung, alle 36 m.' }); }
+    plans.forEach(p => { p.stateC = p.state.startsWith('auf TD03') ? '#0e8f73' : '#8a6d1f'; });
+
+    const transitions = [
+      { title: 'Takt-Auslauf', text: 'Wenn eine Linie enden muss, zerfällt sie in ihren Takt von 3 m. Die Stücke bleiben mittig im Takt und werden gleichmäßig kürzer, das letzte ist ein Quadrat in Strichbreite. Keine Zufallslücken, nichts kleiner als die Strichbreite.', plan: strip((o, y) => { o.push(hline(0, 30, y - 0.6, B)); taper(o, 30, 1, y - 0.6, B); o.push(hline(0, 30, y + 0.7, S)); taper(o, 30, 1, y + 0.7, S); }, 'roadTrack', 3) },
+      { title: 'Stärkewechsel', text: 'Strecke B zu Stadt S als Keil über 20 m. Die Außenkante bleibt bündig am Fahrbahnrand.', plan: strip((o) => { o.push(A(rp(0, 0, 36, 3), 'roadTrack')); o.push(F([[0, 0.9 + RC], [Lp - RC, 0.9 + RC], [Lp - RC, 0.9 + S - RC], [46, 0.9 + S - RC], [26, 0.9 + B - RC], [0, 0.9 + B - RC]], 'hell')); }, 'roadStreet', 3) },
+      { title: 'Punktraster · Knetfleck-Regel', text: 'Flächen gehen nur über ein Punktraster ineinander über, wie im Comic. Ein festes Raster (1,2 m), eine Punktform, nur die Größe wandert: kleine runde Punkte von B in A wachsen, berühren sich als Karos und kippen in kleine runde Punkte von A in B. Keine Kontur, kein Zufall. Für gleichrangige Massen ohne Richtung, 30 m lang. Nie über Markierungen.', plan: (() => { const H = 7.2, o = [A(rp(0, 0, Lp, H), 'strang')]; o.push(halftone(0, Lp, 0, H, 21 + BL.length, x => (x - 21) / BL.length, 'grass')); return plan(Lp, H, o); })() },
+      { title: 'Verwehung', text: 'Dasselbe Raster, gerichtet: Loses weht über Festes, an den Borden 6 m früher als in der Mitte, 14 m lang. Die Markierung liegt darunter und scheint in den Asphaltpunkten noch durch.', plan: (() => { const H = 2 * hw + 2, y0 = 1, y1 = y0 + 2 * hw, cy = y0 + hw, X0 = 26, o = [A(rp(0, 0, Lp, H), 'sand'), A(rp(0, y0, Lp, y1), 'roadStreet'), hline(0, Lp, y0 + S / 2, S), hline(0, Lp, y1 - S / 2, S)]; run(o, 0, 1, [['leit', null]], 0, Lp, cy, 'centre'); o.push(halftone(0, Lp, y0, y1, X0 + DR.edgeLead + DR.length, driftCov(X0, cy, hw), 'sand')); return plan(Lp, H, o); })() }
+    ];
+
+    const colorCards = Object.keys(WN).map(k => { C = palette(k); const H = 10, o = [A(rp(0, 0, 36, H), 'strang'), A(rp(0, 1, 18, H - 1), 'roadTrack'), A(rp(18, 1, 36, H - 1), 'roadStreet')];
+      o.push(hline(0, 18, 1 + B / 2, B)); run(o, 0, 1, [['block', null]], 0, 18, H - 1 - B / 2, 'signal'); for (let j = 0; j < 4; j++) o.push(Bx(j * 3, 1 + B, j * 3 + 3, 1 + B + Q, j % 2 ? 'hell' : 'rot'));
+      o.push(hline(18, 36, 1 + S / 2, S), hline(18, 36, H - 1 - S / 2, S)); run(o, 18, 1, [['leitKnoten', null]], 18, 36, H / 2, 'centre');
+      const card = { name: WN[k], border: k === wk ? '2px solid #17191d' : '1px solid #e4dfd6', sw: ['hell', 'signal', 'rot'].map(s => ({ k: s, c: C[s] })), plan: plan(36, H, o) }; return card; });
+    C = palette(wk);
+
+    const changes = [
+      { k: 'Maß aus dem Regelwerk', v: 'Statt einer erfundenen Einheit gelten die echten deutschen Maße mit zwei festen Faktoren. Rhythmus und Proportion sind damit die einer echten Straße.' },
+      { k: 'Enden gerade', v: 'Keine Halbkreis-Enden mehr. Alle Ecken mit 7,5 cm Radius, auch an Pfeilköpfen und Karos.' },
+      { k: 'Echte Konstruktion', v: 'Haltlinie, Wartelinie und Parkstände stoßen an ihre Längslinie wie auf der Straße. Die künstliche Querfuge von M1 ist weg.' },
+      { k: 'Parken im Zusammenhang', v: 'Parkstreifen = Fahrbahnrand, Stände im 11,4-m-Takt über die ganze Straße. Senkrecht nur im Parkdeck.' },
+      { k: 'Pfeile als Familie', v: 'Ein Schaft, ein Bogen, ein Kopf für alle sieben Pfeile. Nebenarme zweigen immer an derselben Stelle ab.' },
+      { k: 'Übergänge als Raster', v: 'Linien enden im Takt-Auslauf. Flächen gehen über ein Punktraster ineinander über: ein Raster, eine Punktform, nur die Größe wandert. Verwehung und Knetfleck sind dieselbe Regel, einmal gerichtet, einmal nicht.' }
+    ];
+    return { worldBtns, ruleBtns, widths, table, patterns, arrows, plans, transitions, colorCards, changes };
+  }
+}
+</script>
+</body>
+</html>

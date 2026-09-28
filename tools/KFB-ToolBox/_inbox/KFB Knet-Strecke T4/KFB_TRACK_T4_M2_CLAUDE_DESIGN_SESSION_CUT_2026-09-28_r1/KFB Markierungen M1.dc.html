@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#f4f1ec;font-family:"Nunito Sans",ui-sans-serif,system-ui,sans-serif;color:#17191d}
+a{color:#5d4cff}a:hover{color:#17191d}
+</style>
+</helmet>
+
+<div style="max-width:1120px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:44px;box-sizing:border-box">
+
+  <header style="display:flex;flex-direction:column;gap:12px">
+    <div style="text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:#0e8f73">Knetwelt · Regelwerk Markierung M1.2 · 28.09.2026</div>
+    <h1 style="margin:0;font-size:44px;line-height:1;letter-spacing:-.04em;font-weight:800">Ein Strich, eine Bedeutung.</h1>
+    <p style="margin:0;max-width:720px;font-size:18px;line-height:1.45;font-weight:700;text-wrap:pretty">Form sagt, wo etwas gilt. Muster sagt, wie verbindlich es ist. Farbe sagt, für wen oder in welchem Modus es gilt.</p>
+    <p style="margin:0;max-width:720px;font-size:14.5px;line-height:1.5;color:#4a515c;text-wrap:pretty">Alle Markierungen kommen aus einer Grundstärke, einem Takt und zwei Fugen. Abgeglichen mit dem Grammatik-Input (§11). Vertrag: <span style="font-weight:700">lab-track/road-markings.m1.json</span>, gebaut in <a href="KFB Knet-Strecke T4.dc.html">T4 Knet-Strecke</a>.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+      <div style="font-size:12px;font-weight:700;color:#6d737d;width:70px">Welt</div>
+      <sc-for list="{{ worldBtns }}" as="o" hint-placeholder-count="3">
+        <button onClick="{{ o.pick }}" style="border-radius:10px;padding:7px 11px;font:inherit;font-weight:700;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};border:1px solid #17191d">{{ o.label }}</button>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+      <div style="font-size:12px;font-weight:700;color:#6d737d;width:70px">Regelwerk</div>
+      <sc-for list="{{ ruleBtns }}" as="o" hint-placeholder-count="2">
+        <button onClick="{{ o.pick }}" style="border-radius:10px;padding:7px 11px;font:inherit;font-weight:700;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};border:1px solid #17191d">{{ o.label }}</button>
+      </sc-for>
+    </div>
+  </header>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">1 · Grundsätze</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px">
+      <sc-for list="{{ principles }}" as="p" hint-placeholder-count="6">
+        <div style="display:flex;gap:12px;background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #e4dfd6">
+          <div style="font-weight:800;font-size:13px;color:#0e8f73;font-variant-numeric:tabular-nums">{{ p.n }}</div>
+          <div style="font-size:14px;line-height:1.45;text-wrap:pretty">{{ p.t }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">2 · Maß: b, Takt und vier Stärken</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">b = 25 cm ist eine Knetwurst, der Takt m = 6b = 1,5 m ist ein Handmaß. Stärken sind nur ganze Vielfache von b. W1 gehört nur zur Lernebene und liegt nie als Markierung auf der Fahrbahn.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ weights }}" as="w" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:130px minmax(0,1fr) minmax(0,1.3fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-weight:800;font-size:16px">{{ w.key }} · {{ w.label }}</div>
+            <div style="font-size:12px;color:#6d737d;font-variant-numeric:tabular-nums">{{ w.b }} b = {{ w.cm }} cm</div>
+          </div>
+          <div style="position:relative;width:100%;aspect-ratio:{{ w.plan.aspect }};border-radius:6px;overflow:hidden;background:{{ w.plan.bg }}">
+            <sc-for list="{{ w.plan.els }}" as="e" hint-placeholder-count="1"><div style="position:absolute;left:{{ e.l }};top:{{ e.t }};width:{{ e.w }};height:{{ e.h }};background:{{ e.c }};border-radius:{{ e.r }};clip-path:{{ e.clip }}"></div></sc-for>
+          </div>
+          <div style="font-size:13px;line-height:1.4;color:#4a515c">{{ w.use }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">3 · Zwei Fugen, sonst keine</h2>
+    <div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6">
+      <div style="position:relative;width:100%;aspect-ratio:{{ jointPlan.aspect }};border-radius:8px;overflow:hidden;background:{{ jointPlan.bg }}">
+        <sc-for list="{{ jointPlan.els }}" as="e" hint-placeholder-count="12"><div style="position:absolute;left:{{ e.l }};top:{{ e.t }};width:{{ e.w }};height:{{ e.h }};background:{{ e.c }};border-radius:{{ e.r }};clip-path:{{ e.clip }}"></div></sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.5;color:#2c3440;text-wrap:pretty">
+        <div><span style="font-weight:800">F1 = 1 Takt (1,5 m), längs.</span> Jede Lücke in jedem Längsmuster, jeder Musterwechsel, jeder Abstand vor und nach einem Querelement. Im Bild: rote Marken.</div>
+        <div><span style="font-weight:800">F2 = 2b (50 cm), quer.</span> Jeder seitliche Abstand: Haltelinie zur Mittel- und Randlinie, Zebrabalken zueinander, Parkstrich zu Randlinie und Bord, Karo zur Randlinie. Im Bild: blaue Marken.</div>
+        <div><span style="font-weight:800">Nie:</span> T-Stoß, Kreuzung, Sonderlücke. Ein Rahmen (Parktasche, Startbox) ist ein Element mit runden Verbindungen, kein Stoß.</div>
+        <div><span style="font-weight:800">Mindestlücke:</span> nie kleiner als die Linie, die sie trennt.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">4 · Muster: wie verbindlich</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Die Lücke ist in allen Längsmustern gleich (F1). Muster unterscheiden sich nur in Strichlänge, Stärke und Farbe. Gestrichelte Linien werden vom Ereignis aus angelegt. Der Rest fällt in eine durchgezogene Linie, eine Tropfenzone oder einen freien Anfang, nie in einen Strich oder eine Lücke.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ patterns }}" as="p" hint-placeholder-count="7">
+        <div style="display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-weight:800;font-size:15px">{{ p.label }}</div>
+            <div style="font-size:12px;font-weight:700;color:#0e8f73">liest sich: {{ p.reads }}</div>
+            <div style="font-size:12.5px;color:#4a515c;line-height:1.35">{{ p.meaning }}</div>
+          </div>
+          <div style="position:relative;width:100%;aspect-ratio:{{ p.plan.aspect }};border-radius:6px;overflow:hidden;background:{{ p.plan.bg }}">
+            <sc-for list="{{ p.plan.els }}" as="e" hint-placeholder-count="8"><div style="position:absolute;left:{{ e.l }};top:{{ e.t }};width:{{ e.w }};height:{{ e.h }};background:{{ e.c }};border-radius:{{ e.r }};clip-path:{{ e.clip }}"></div></sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">5 · Formfamilien: wo etwas gilt</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px">
+      <sc-for list="{{ families }}" as="f" hint-placeholder-count="8">
+        <div style="background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:5px">
+          <div style="font-weight:800;font-size:15px">{{ f.name }}</div>
+          <div style="font-size:13px;color:#0e8f73;font-weight:700">{{ f.reads }}</div>
+          <div style="font-size:12.5px;color:#4a515c;line-height:1.4">{{ f.els }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">6 · Rundung und Pfeilkopf</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px">
+      <div style="background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6;font-size:13.5px;line-height:1.6;color:#2c3440">
+        <div style="font-weight:800;font-size:16px;margin-bottom:6px;color:#17191d">Eine Rundungslogik</div>
+        Offene Enden: Halbkreis, Radius = halbe Stärke.<br>Ecken (Karo, Rahmen, Blöcke): Radius b/2 = 12,5 cm, für alle gleich.<br>Verbindungen im Rahmen: rund.<br>Keine spitzen Formen außer dem Pfeilkopf.<br>Querschnitt: flach gewölbte Knetwurst, matt, 5,5 cm hoch.
+      </div>
+      <div style="background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6;font-size:13.5px;line-height:1.6;color:#2c3440">
+        <div style="font-weight:800;font-size:16px;margin-bottom:6px;color:#17191d">Ein Pfeilkopf für alle</div>
+        Schaft W3, Pfeil 4 Takte lang.<br>Kopfbreite 3 × Schaft (2,25 m), Kopflänge 2 × Schaft (1,5 m = 1 Takt).<br>Richtungs-, Entscheidungs- und Annäherungspfeil teilen denselben Kopf.<br>Boost-Pfeile sind Annäherungsköpfe im Fahrflächenmaß aus TD03.
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">7 · Farbe: für wen, in welchem Modus</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px">
+      <div style="background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:15px">Ebene 1 · Verkehr</div><div style="font-size:13px;line-height:1.5;color:#2c3440;text-wrap:pretty">hell (DE-Grundfarbe Weiß) für alles Normale. signal (Gelb) für Sonderfunktionen, im US-Regelwerk für die Mittellinie. rot für Warnung und Curbs, blau für Behindertenplätze, grün für Rad. Farbe nie ohne Form.</div></div>
+      <div style="background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:15px">Ebene 2 · Lernebene</div><div style="font-size:13px;line-height:1.5;color:#2c3440;text-wrap:pretty">Nur als Halo, Lichtkante oder W1-Overlay: Lernziel, Fehler, gelöst. Darf pulsieren. Ersetzt nie eine Markierung und verändert nie deren Form.</div></div>
+      <div style="background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:15px">Ebene 3 · Weltstil</div><div style="font-size:13px;line-height:1.5;color:#2c3440;text-wrap:pretty">Jede Welt tönt alle Rollen um ca. 8 % zu ihrem Biom. Der Knetlook kommt aus Material, Rundung und Querschnitt, nicht aus neuen Farben.</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px">
+      <sc-for list="{{ colorCards }}" as="c" hint-placeholder-count="3">
+        <div style="background:#fff;border-radius:14px;padding:14px;border:{{ c.border }};display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:800;font-size:14px">{{ c.name }}</div>
+          <div style="position:relative;width:100%;aspect-ratio:{{ c.plan.aspect }};border-radius:8px;overflow:hidden;background:{{ c.plan.bg }}">
+            <sc-for list="{{ c.plan.els }}" as="e" hint-placeholder-count="6"><div style="position:absolute;left:{{ e.l }};top:{{ e.t }};width:{{ e.w }};height:{{ e.h }};background:{{ e.c }};border-radius:{{ e.r }};clip-path:{{ e.clip }}"></div></sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11.5px;color:#4a515c;font-variant-numeric:tabular-nums">
+            <sc-for list="{{ c.sw }}" as="s" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:5px"><div style="width:13px;height:13px;border-radius:4px;border:1px solid #d9d3c8;background:{{ s.c }}"></div>{{ s.k }}</div></sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">8 · Lage: bündig, nie schwebend</h2>
+    <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6">
+      <div style="position:relative;width:100%;aspect-ratio:14 / 4;background:#eef3f8;border-radius:10px;overflow:hidden">
+        <div style="position:absolute;left:1%;top:22%;width:17%;height:62%;border-radius:48% 52% 30% 30%;background:{{ col.strang }}"></div>
+        <div style="position:absolute;left:10%;top:60%;width:18%;height:26%;border-radius:0 0 0 90%;background:{{ col.strang }}"></div>
+        <div style="position:absolute;left:24%;top:70%;width:76%;height:16%;background:{{ col.track }}"></div>
+        <div style="position:absolute;left:24%;top:66.5%;width:5.4%;height:5%;border-radius:999px;background:{{ col.hell }}"></div>
+        <div style="position:absolute;left:61%;top:66.5%;width:3.6%;height:5%;border-radius:999px;background:{{ col.hell }}"></div>
+        <div style="position:absolute;left:24%;top:8%;width:1px;height:60%;background:#17191d"></div>
+        <div style="position:absolute;left:25.5%;top:6%;font-size:11px;font-weight:700;color:#17191d">road_L = Außenkante Linie</div>
+        <div style="position:absolute;left:58%;top:40%;font-size:11px;font-weight:700;color:#17191d">Achse (offset)</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.5;color:#2c3440;text-wrap:pretty">
+        <div><span style="font-weight:800">Randlinie:</span> Außenkante genau auf road_L/road_R, keine Lücke zur Kehle, bei 14,4 wie bei 18 m Breite.</div>
+        <div><span style="font-weight:800">Achse:</span> Mittel-, Sperr- und Doppellinie sitzen auf dem TD03-offset.</div>
+        <div><span style="font-weight:800">Führung:</span> Jede Linie liegt Sample für Sample auf der Fahrbahn, auch im Loop.</div>
+        <div><span style="font-weight:800">Quer:</span> Querelemente sitzen F2 neben den Längslinien. Randlinien laufen an Zebra, Karo und Haltelinie durch, die Mittellinie setzt F1 davor und danach aus.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">9 · Übergänge: nie eine Kante</h2>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ transitions }}" as="x" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+          <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:800;font-size:15px">{{ x.title }}</div><div style="font-size:12.5px;color:#4a515c;line-height:1.4;text-wrap:pretty">{{ x.text }}</div></div>
+          <div style="position:relative;width:100%;aspect-ratio:{{ x.plan.aspect }};border-radius:6px;overflow:hidden;background:{{ x.plan.bg }}">
+            <sc-for list="{{ x.plan.els }}" as="e" hint-placeholder-count="8"><div style="position:absolute;left:{{ e.l }};top:{{ e.t }};width:{{ e.w }};height:{{ e.h }};background:{{ e.c }};border-radius:{{ e.r }};clip-path:{{ e.clip }}"></div></sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div style="display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid #e4dfd6">
+        <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:800;font-size:15px">Knetfleck-Regel</div><div style="font-size:12.5px;color:#4a515c;line-height:1.4;text-wrap:pretty">Farben und Massen, die gleichrangig ineinander übergehen (Strang zu Wiese, Bahn zu Straße): zuerst kleine runde Tropfen von B in A, dann große verschmolzene Flecken, am Ende kleine Tropfen von A in B. Deckung = Übergangsgewicht w.</div></div>
+        <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px">
+          <sc-for list="{{ blend }}" as="s" hint-placeholder-count="5">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="position:relative;width:100%;aspect-ratio:1;border-radius:8px;overflow:hidden;background:{{ s.bg }}">
+                <sc-for list="{{ s.dots }}" as="d" hint-placeholder-count="6"><div style="position:absolute;left:{{ d.l }};top:{{ d.t }};width:{{ d.s }};height:{{ d.s }};border-radius:50%;background:{{ d.c }}"></div></sc-for>
+              </div>
+              <div style="font-size:11px;color:#6d737d;text-align:center;font-variant-numeric:tabular-nums">w = {{ s.w }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">10 · Anwendungen</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Alle Pläne entstehen aus denselben Werten im Vertrag. Rote Marken zeigen F1, blaue F2. Fahrtrichtung von links nach rechts, Rechtsverkehr.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:12px">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="12">
+        <div style="background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <div style="font-weight:800;font-size:15px">{{ p.title }}</div>
+            <div style="font-size:11px;font-weight:700;color:{{ p.stateC }};white-space:nowrap">{{ p.state }}</div>
+          </div>
+          <div style="position:relative;width:100%;aspect-ratio:{{ p.plan.aspect }};border-radius:8px;overflow:hidden;background:{{ p.plan.bg }}">
+            <sc-for list="{{ p.plan.els }}" as="e" hint-placeholder-count="10"><div style="position:absolute;left:{{ e.l }};top:{{ e.t }};width:{{ e.w }};height:{{ e.h }};background:{{ e.c }};border-radius:{{ e.r }};clip-path:{{ e.clip }}"></div></sc-for>
+          </div>
+          <div style="font-size:13px;line-height:1.5;color:#2c3440;text-wrap:pretty">{{ p.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em">11 · Abgleich mit dem Grammatik-Input</h2>
+    <p style="margin:0;max-width:760px;font-size:14px;line-height:1.5;color:#4a515c;text-wrap:pretty">Input: uploads/visuelle Grammatik für Fahrbahnmarkierungen.md. Was M1 davon übernimmt, was es schärfer fasst und wo es bewusst abweicht.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px">
+      <sc-for list="{{ compare }}" as="c" hint-placeholder-count="3">
+        <div style="background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4dfd6;display:flex;flex-direction:column;gap:10px">
+          <div style="font-weight:800;font-size:16px;color:{{ c.tone }}">{{ c.title }}</div>
+          <sc-for list="{{ c.items }}" as="i" hint-placeholder-count="5">
+            <div style="display:flex;flex-direction:column;gap:2px;padding-top:8px;border-top:1px solid #efebe4">
+              <div style="font-size:13px;font-weight:800;line-height:1.35">{{ i.k }}</div>
+              <div style="font-size:12.5px;line-height:1.45;color:#4a515c;text-wrap:pretty">{{ i.v }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.5;color:#4a515c">
+    <h2 style="margin:0;font-size:22px;letter-spacing:-.02em;color:#17191d">12 · Offen</h2>
+    <div>Auf TD03 gebaut: Randlinien, Magnet-Blocklinie, Mittellinie, Sperrlinie, Zebra, Verwehung an beiden Stadt-Enden. Nur geregelt, noch ohne Anlass in der Route: Halte- und Wartelinie, Parken, Sperrfläche, Pfeile, Start/Ziel, Boxengasse, Curbs.</div>
+    <div>Symbole (Rad, Bus, Rollstuhl, P) sind als Familie festgelegt, aber noch nicht gezeichnet. Die Lernebene der Fahrschule ist beschrieben und nicht gebaut. Die 3D-Strecke nutzt das DE-Regelwerk.</div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;world&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;canyon&quot;,&quot;bucht&quot;,&quot;otown&quot;],&quot;default&quot;:&quot;canyon&quot;,&quot;tsType&quot;:&quot;'canyon'|'bucht'|'otown'&quot;},&quot;rulebook&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;de&quot;,&quot;us&quot;],&quot;default&quot;:&quot;de&quot;,&quot;tsType&quot;:&quot;'de'|'us'&quot;}}">
+class Component extends DCLogic {
+  state = { R: null, world: null, rule: null };
+  componentDidMount() { fetch('lab-track/road-markings.m1.json?r=3').then(r => r.json()).then(R => this.setState({ R })).catch(e => console.error(e)); }
+  renderVals() {
+    const R = this.state.R, wk = this.state.world ?? this.props.world ?? 'canyon', rk = this.state.rule ?? this.props.rulebook ?? 'de';
+    const WN = { canyon: 'A · Canyon', bucht: 'B · Bikini-Bucht', otown: 'C · O-Town' };
+    const tog = (on, label, pick) => ({ label, pick, bg: on ? '#17191d' : '#fff', fg: on ? '#fff' : '#17191d' });
+    const worldBtns = Object.keys(WN).map(k => tog(k === wk, WN[k], () => this.setState({ world: k })));
+    const ruleBtns = [['de', 'DE · Mitte hell'], ['us', 'US · Mitte signal']].map(([k, l]) => tog(k === rk, l, () => this.setState({ rule: k })));
+    const empty = { aspect: '10 / 1', els: [], bg: '#fff' };
+    if (!R) return { worldBtns, ruleBtns, principles: [], weights: [], patterns: [], families: [], colorCards: [], transitions: [], plans: [], blend: [], compare: [], jointPlan: empty, col: {} };
+    const pc = v => (v * 100).toFixed(3) + '%', clamp = (x, a, b) => Math.min(b, Math.max(a, x)), sstep = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); }, lerp = (a, b, t) => a + (b - a) * t;
+    const h1 = n => { const v = Math.sin(n * 91.345 + 47.853) * 43758.5453; return v - Math.floor(v); };
+    const b = R.unit.b, m = R.unit.m, rC = R.unit.corner * b, Wt = k => R.weights[k].b * b, W1 = Wt('W1'), W2 = Wt('W2'), W3 = Wt('W3'), W4 = Wt('W4');
+    const F1 = R.joints.long * b, F2 = R.joints.lat * b, P = R.patterns;
+    const colOf = key => { const C = R.colors.worlds[key]; return { ...C, street: C.roadStreet, track: C.roadTrack, centre: rk === 'us' ? C.signal : C.hell, f1: '#e0443a', f2: '#2f7fe0', learn: '#27b5c9' }; };
+    const col = colOf(wk);
+    // Plan: Länge len, Höhe H (m), Elemente in m (x nach rechts, y nach unten)
+    const plan = (len, H, bg, items, cc = col) => ({ aspect: `${len} / ${H}`, bg: cc[bg] || bg, els: items.filter(Boolean).map(it => {
+      if (it.pts) { const xs = it.pts.map(p => p[0]), ys = it.pts.map(p => p[1]), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+        return { l: pc(x0 / len), t: pc(y0 / H), w: pc((x1 - x0) / len), h: pc((y1 - y0) / H), c: cc[it.c] || it.c, r: '0', clip: 'polygon(' + it.pts.map(p => pc((p[0] - x0) / (x1 - x0)) + ' ' + pc((p[1] - y0) / (y1 - y0))).join(', ') + ')' }; }
+      const y0 = it.y0 ?? it.y - it.w / 2, y1 = it.y1 ?? it.y + it.w / 2, w = it.x1 - it.x0, h = y1 - y0;
+      const r = it.r === 'c' ? `${(rC / w * 100).toFixed(2)}% / ${(rC / h * 100).toFixed(2)}%` : it.r ?? '999px';
+      return { l: pc(it.x0 / len), t: pc(y0 / H), w: pc(w / len), h: pc(h / H), c: cc[it.c] || it.c, r, clip: 'none' }; }) });
+    const rect = (x0, x1, y0, y1, c, r = '0') => ({ x0, x1, y0, y1, c, r });
+    const pill = (x0, x1, y, w, c = 'hell') => ({ x0, x1, y, w, c });
+    const dotAt = (x, y, d, c) => ({ x0: x - d / 2, x1: x + d / 2, y, w: d, c });
+    // Längsmuster vom Anker aus: dir +1 nach rechts, -1 nach links; nur ganze Striche zwischen lo und hi
+    const lay = (anchor, dir, dashT, lo, hi, y, w, c = 'hell') => { const out = [], dash = dashT * m, per = dash + F1; let t = anchor;
+      for (let k = 0; k < 200; k++) { const a = dir > 0 ? t : t - dash, z = dir > 0 ? t + dash : t; if (a < lo - 1e-6 || z > hi + 1e-6) break; out.push(dashT === 0 ? dotAt((a + z) / 2, y, w, c) : pill(a, z, y, w, c)); t += dir * (dashT === 0 ? w + F1 : per); if (dashT === 0) t = dir > 0 ? a + w + F1 : a - F1; }
+      return out; };
+    const dots = (anchor, dir, lo, hi, y, w, c) => { const out = []; let x = anchor + dir * w / 2; while (x - w / 2 >= lo - 1e-6 && x + w / 2 <= hi + 1e-6) { out.push(dotAt(x, y, w, c)); x += dir * (w + F1); } return out; };
+    const mark1 = (x0, x1, y) => [rect(x0, x1, y - 0.12, y + 0.12, 'f1', '999px')];
+    const mark2 = (x, y0, y1) => [rect(x - 0.12, x + 0.12, y0, y1, 'f2', '999px')];
+
+    // Straßen-Grundlagen: zweistreifig hw = 7.2, Achse cy
+    const hw = R.lanes.lane, PS = R.lanes.parkStrip;
+    const edgesAt = (x0, x1, cy, h, w, c = 'hell') => [pill(x0, x1, cy - h + w / 2, w, c), pill(x0, x1, cy + h - w / 2, w, c)];
+    const zebraBars = (x0, cy, h, ew) => { const Z = R.elements.zebra, bw = Wt(Z.bar), span = 2 * h - 2 * (ew + F2), nB = Math.floor((span + F2) / (bw + F2)), used = nB * bw + (nB - 1) * F2, out = [];
+      for (let k = 0; k < nB; k++) { const y = cy - used / 2 + bw / 2 + k * (bw + F2); out.push(pill(x0, x0 + Z.length * m, y, bw)); } return out; };
+    const arrowPts = (x, y, L, ang, sw) => { const hl = R.arrow.headL * sw, hwid = R.arrow.headW * sw / 2, s = sw / 2, c = Math.cos(ang), si = Math.sin(ang);
+      return [[0, -s], [L - hl, -s], [L - hl, -hwid], [L, 0], [L - hl, hwid], [L - hl, s], [0, s]].map(([u, v]) => [x + u * c - v * si, y + u * si + v * c]); };
+    const chevPts = (x, y, sw) => { const hl = R.arrow.headL * sw, hwid = R.arrow.headW * sw / 2; return [[x, y - hwid], [x + hl * 0.45, y - hwid], [x + hl, y], [x + hl * 0.45, y + hwid], [x, y + hwid], [x + hl * 0.55, y]]; };
+    const TR = R.transitions.drops;
+    const dropLine = (x0, x1, y, w, aOf) => { const out = []; let run = -1; const n = Math.floor((x1 - x0) / m);
+      for (let k = 0; k <= n; k++) { const t0 = x0 + k * m, mid = t0 + m / 2, a = k < n ? aOf(mid) : 0;
+        if (k < n && a >= TR.full) { if (run < 0) run = t0; continue; } if (run >= 0) { out.push(pill(run, t0, y, w)); run = -1; } if (k >= n) break;
+        if (a > TR.dashToDrop) { const L = Math.max(w, m * (a - TR.dashToDrop) / (1 - TR.dashToDrop)); out.push(pill(mid - L / 2, mid + L / 2, y, w)); continue; }
+        if (a < TR.dropMin || h1(k * 7 + 13) > TR.keepMin + (1 - TR.keepMin) * a / TR.dashToDrop) continue;
+        out.push(dotAt(mid, y, w * lerp(TR.dropScale[0], TR.dropScale[1], a / TR.dashToDrop), 'hell')); }
+      return out; };
+
+    const principles = R.principles.map((t, i) => ({ n: String(i + 1).padStart(2, '0'), t }));
+    const weights = Object.entries(R.weights).map(([key, w]) => ({ key, label: w.label, b: w.b, cm: Math.round(w.b * b * 100), use: w.use.join(' · '),
+      plan: plan(8, 1.6, key === 'W1' ? '#fff' : 'track', [pill(0.8, 7.2, 0.8, w.b * b, key === 'W1' ? 'learn' : 'hell')]) }));
+    const strip = (items, bg = 'track') => plan(36, 1.8, bg, items);
+    const patterns = [
+      { ...P.solid, plan: strip([pill(0.75, 35.25, 0.9, W3)]) },
+      { ...P.guide, plan: strip([...lay(0.75, 1, P.guide.dash, 0, 36, 0.9, W2), ...mark1(3.75, 3.75 + F1, 0.2)], 'street') },
+      { ...P.warn, plan: strip([...lay(0.75, 1, P.warn.dash, 0, 36, 0.9, W2), ...mark1(6.75, 6.75 + F1, 0.2)], 'street') },
+      { ...P.block, plan: strip([...lay(0.75, 1, P.block.dash, 0, 36, 0.9, W3, 'signal'), ...mark1(2.25, 2.25 + F1, 0.2)]) },
+      { ...P.dotted, plan: strip([...dots(0.75, 1, 0, 36, 0.9, W2, 'hell'), ...mark1(1.25, 1.25 + F1, 0.2)], 'street') },
+      { ...P.double, plan: strip([pill(0.75, 35.25, 0.9 - (F2 + W2) / 2, W2, 'centre'), pill(0.75, 35.25, 0.9 + (F2 + W2) / 2, W2, 'centre'), ...mark2(18, 0.9 - F2 / 2, 0.9 + F2 / 2)], 'street') },
+      { ...P.drops, plan: strip(dropLine(0.75, 35.25, 0.9, W3, x => 1 - sstep(4, 32, x))) }
+    ];
+    const FAM = { line: 'Linie', 'cross-line': 'Querlinie', 'stripe-field': 'Streifenfeld', arrow: 'Pfeil', dots: 'Punktfolge', frame: 'Rahmen', symbol: 'Symbol', zone: 'Farbfeld / Zone' };
+    const EL = { edge_track: 'Randlinie Strecke', edge_city: 'Randlinie Stadt', edge_mag: 'Magnet-Randlinie', centre_city: 'Mittel-Leitlinie', no_pass: 'Sperrlinie', no_pass_double: 'Doppelsperrlinie', pit: 'Boxengassen-Trennung', stop: 'Haltelinie', yield: 'Wartelinie', zebra: 'Zebra', hatch: 'Sperrfläche', start: 'Start/Ziel-Karo', arrow: 'Richtungs-, Entscheidungs-, Annäherungspfeil', boost: 'Boost', guide_dots: 'Ideallinie (Lernebene)', parking: 'Parktasche längs/senkrecht', grid_box: 'Startbox', pit_box: 'Boxenplatz', symbol: 'Rad, Bus, Rollstuhl, P', curb: 'Curb', colour_zone: 'Busspur, Radweg' };
+    const families = Object.entries(R.families).map(([k, f]) => ({ name: FAM[k] || k, reads: f.reads, els: f.elements.map(e => EL[e] || e).join(' · ') }));
+
+    // Fugen-Plan: Stadtstraße mit Haltelinie
+    const jointPlan = (() => { const H = 2 * hw + 2, cy = H / 2, x = 24, items = [rect(0, 34, 0, H, 'walk'), rect(0, 34, cy - hw, cy + hw, 'street'), ...edgesAt(0, 34, cy, hw, W2)];
+      const sB = x - F1, sA = sB - R.elements.no_pass.length * m; items.push(pill(sA, sB, cy, W2, 'centre'), ...lay(sA - F1, -1, P.guide.dash, 0, 34, cy, W2, 'centre'));
+      const y0 = cy + W2 / 2 + F2, y1 = cy + hw - W2 - F2; items.push(rect(x, x + W3, y0, y1, 'hell', '999px'));
+      items.push(...mark1(sB, x, cy - 0.7), ...mark1(sA - F1, sA, cy - 0.7), ...mark2(x + W3 + 0.6, cy + W2 / 2, y0), ...mark2(x + W3 + 0.6, y1, cy + hw - W2));
+      return plan(34, H, 'walk', items); })();
+
+    const colorCards = Object.keys(WN).map(k => { const c = colOf(k), H = 7;
+      return { name: WN[k], border: k === wk ? '2px solid #17191d' : '1px solid #e4dfd6', sw: ['hell', 'signal', 'rot', 'blau', 'gruen'].map(s => ({ k: s, c: c[s] })),
+        plan: plan(24, H, 'strang', [rect(0, 12, 0.8, H - 0.8, 'track'), rect(12, 24, 0.8, H - 0.8, 'street'), pill(0, 11.25, 0.8 + W3 / 2, W3), ...lay(0.75, 1, 1, 0, 11.4, H - 0.8 - W3 / 2, W3, 'signal'), ...Array.from({ length: 7 }, (_, j) => rect(j * 1.5 + 0.3, j * 1.5 + 1.8, 0, 0.8 - F2 / 2, j % 2 ? 'hell' : 'rot', 'c')),
+          ...edgesAt(12.75, 24, H / 2, H / 2 - 0.8, W2), ...lay(12.75, 1, 2, 12, 24, H / 2, W2, 'centre')], c) }; });
+
+    const tr = (len, H, bg, items) => plan(len, H, bg, items);
+    const sandCover = (x0, x1, cy, h, E, L, seedK) => { const out = [], RO = R.runout;
+      for (let gx = x0; gx < x1; gx += 0.8) for (let gy = cy - h; gy <= cy + h; gy += 0.8) { const k = Math.round(gx * 13 + gy * 7) + seedK, jx = gx + (h1(k) - 0.5) * 0.7, jy = gy + (h1(k + 5) - 0.5) * 0.7;
+        const t = (jx - E) / L, q = Math.abs(jy - cy) / h, w = clamp(1.08 * t + RO.edgeK * Math.pow(q, RO.edgePow) + 0.03, 0, 1); if (w < 0.02 || h1(k + 9) > 0.25 + 0.9 * w) continue;
+        const d = 0.25 + 1.5 * w * (0.6 + 0.6 * h1(k + 3)); if (Math.abs(jy - cy) + d / 2 > h + 0.05) { const dd = Math.max(0.2, 2 * (h - Math.abs(jy - cy))); out.push(dotAt(jx, jy, dd, 'sand')); continue; } out.push(dotAt(jx, jy, d, 'sand')); }
+      return out; };
+    const transitions = [
+      { title: 'Tropfenregel', text: 'Für Striche. Der Takt bleibt stehen. Striche werden zur Slot-Mitte kürzer, dann zu Tropfen, dann kleiner und seltener, dann nichts.', plan: tr(36, 1.8, 'track', dropLine(0.75, 35.25, 0.9, W3, x => 1 - sstep(4, 32, x))) },
+      { title: 'Stärkewechsel', text: 'Strecke W3 zu Stadt W2 gleitend im Fenster mark_city. Die Randlinie reißt nicht ab, solange die Fahrbahn Fahrbahn bleibt.', plan: tr(36, 1.8, 'street', Array.from({ length: 175 }, (_, k) => { const x0 = 0.5 + k * 0.2, w = lerp(W3, W2, sstep(8, 28, x0 + 0.1)); return { x0, x1: x0 + 0.22, y: 0.9, w, c: 'hell', r: k === 0 ? '999px 0 0 999px' : k === 174 ? '0 999px 999px 0' : '0' }; })) },
+      { title: 'Überdeckung', text: 'Loses weht über Festes, nie umgekehrt. Sand deckt Asphalt und Linien zu, zuerst an den Rändern. Kein Asphalt außerhalb der Fahrbahn. Die Endform entsteht aus der Verwehung.', plan: (() => { const H = 8, cy = 4, h = 3; return tr(36, H, 'sand', [rect(0, 34, cy - h, cy + h, 'street'), ...edgesAt(0, 34, cy, h, W2), ...lay(0, 1, 2, 0, 34, cy, W2, 'centre'), ...sandCover(0, 36, cy, h, 10, 22, 7), rect(32, 36, 0, H, 'sand')]); })() }
+    ];
+    const blend = [0.08, 0.3, 0.5, 0.7, 0.92].map((w, si) => { const A = col.strang, B = col.gruen, dts = [], lo = w < 0.5, f = lo ? w : 1 - w, f2 = 2 * f, n = Math.round(6 + 8 * f2);
+      for (let k = 0; k < n; k++) { const s = (5 + 22 * f2) * (0.55 + 0.9 * h1(k * 3 + si * 31)); dts.push({ l: pc(h1(k * 7 + 1) * 1.1 - 0.05 - s / 200), t: pc(h1(k * 11 + 5) * 1.1 - 0.05 - s / 200), s: s.toFixed(1) + '%', c: lo ? A : B }); }
+      return { w: w.toFixed(2), bg: lo ? B : A, dots: dts }; });
+
+    // ---------- Anwendungen ----------
+    const NP = R.elements.no_pass.length * m, H2 = 2 * hw + 3, cy2 = H2 / 2;
+    const cityBase = (len, H = H2, cy = cy2) => [rect(0, len, cy - hw - 0.5, cy + hw + 0.5, 'curb'), rect(0, len, cy - hw, cy + hw, 'street'), ...edgesAt(0, len, cy, hw, W2)];
+    const plans = [];
+    { const len = 60, H = 2 * hw + 6, cy = H / 2, items = [rect(0, len, cy - hw, cy + hw, 'track'), ...edgesAt(0, len, cy, hw, W3)];
+      const y1 = cy - hw - F2, y0 = y1 - W4; for (let k = 0; k < 10; k++) items.push(rect(18 + k * m, 18 + (k + 1) * m, y0, y1, k % 2 ? 'hell' : 'rot', k === 0 ? '999px 0 0 999px' : k === 9 ? '0 999px 999px 0' : '0'));
+      items.push(...mark2(33.5, y1, cy - hw));
+      plans.push({ title: 'Rennstrecke mit Curb', state: 'auf TD03 · Curb geregelt', plan: plan(len, H, 'strang', items), text: 'Randlinie W3 hell, durchgezogen, bündig an der Kehle. Keine Fahrstreifen. Curb nur am Kurvenscheitel: Blöcke 1 Takt × W4 im Wechsel rot/hell, F2 außen neben der Randlinie, Enden rund.' }); }
+    { const len = 60, H = 2 * (hw + PS) + 5, cy = H / 2, items = [rect(0, len, 0, H, 'walk'), rect(0, len, cy - hw - PS - 0.5, cy + hw + PS + 0.5, 'curb'), rect(0, len, cy - hw - PS, cy + hw + PS, 'street'), ...edgesAt(0, len, cy, hw, W2), ...lay(0, 1, P.guide.dash, 0, len, cy, W2, 'centre')];
+      for (const sd of [-1, 1]) { const ya = sd < 0 ? cy - hw - PS + F2 : cy + hw + F2, yb = sd < 0 ? cy - hw - F2 : cy + hw + PS - F2; let x = 1.5;
+        while (x + 4 * R.elements.parking.parallel.bay * m <= len) { for (let j = 0; j <= 4; j++) { const xs = x + j * R.elements.parking.parallel.bay * m; items.push(rect(xs - W2 / 2, xs + W2 / 2, ya, yb, 'hell', '999px')); } x += 4 * R.elements.parking.parallel.bay * m + F1; } }
+      items.push(...mark2(9, cy + hw, cy + hw + F2), ...mark1(25.5, 27, cy + hw + PS / 2));
+      plans.push({ title: 'Stadtstraße mit Parkstreifen (Regelfall)', state: 'geregelt', plan: plan(len, H, 'walk', items), text: 'Gehweg · Parkstreifen · zwei Fahrstreifen · Parkstreifen · Gehweg. Parkstreifen = halber Fahrstreifen (3,6 m), Tasche 4 Takte (6 m). Trennstriche quer W2 mit F2 zu Randlinie und Bord, nach 4 Taschen 1 Takt frei für Einfahrt oder Baum. Randlinie W2 trennt Fahrbahn und Parken.' }); }
+    { const len = 60, H = 2 * hw + 4, cy = H / 2, items = [rect(0, len, cy - hw, cy + hw, 'track'), ...lay(0.75, 1, 1, 0, len, cy - hw + W3 / 2, W3, 'signal'), ...lay(0.75, 1, 1, 0, len, cy + hw - W3 / 2, W3, 'signal')];
+      for (const x of [8, 20, 32, 44]) items.push({ pts: chevPts(x, cy, 3.4), c: 'signal' });
+      plans.push({ title: 'Magnetzone und Loop', state: 'auf TD03', plan: plan(len, H, 'strang', items), text: 'Randlinie wird Blocklinie W3 in Signal, vom Musterwechsel aus angelegt, F1 zur durchgezogenen Linie davor und danach. Boost-Pfeile: Annäherungsköpfe im Fahrflächenmaß.' }); }
+    { const len = 60, zx = 28.5, items = cityBase(len); const zb = zx + R.elements.zebra.length * m;
+      items.push(...zebraBars(zx, cy2, hw, W2)); const aB = zx - F1, aA = aB - NP, bA = zb + F1, bB = bA + NP;
+      items.push(pill(aA, aB, cy2, W2, 'centre'), pill(bA, bB, cy2, W2, 'centre'), ...lay(aA - F1, -1, P.guide.dash, 0, len, cy2, W2, 'centre'), ...lay(bB + F1, 1, P.guide.dash, 0, len, cy2, W2, 'centre'));
+      items.push(...mark1(aB, zx, cy2 - 0.8), ...mark1(zb, bA, cy2 - 0.8), ...mark2(zx + 1, cy2 - hw + W2, cy2 - hw + W2 + F2));
+      plans.push({ title: 'Zebra', state: 'auf TD03', plan: plan(len, H2, 'walk', items), text: 'Balken W2, Lücke F2 (= Balken), 2 Takte lang, symmetrisch zwischen den Randlinien mit F2. Randlinien laufen durch. Mittellinie: F1, Sperrlinie 6 Takte, F1, dann Leitlinie vom Ereignis weg.' }); }
+    { const len = 54, E = 30, zb = E - R.placement.zebraFromEnd * m, zx = zb - R.elements.zebra.length * m, H = H2, cy = cy2;
+      const items = [rect(0, E, cy - hw - 0.5, cy + hw + 0.5, 'curb'), rect(0, len, cy - hw, cy + hw, 'street'), ...edgesAt(0, len, cy, hw, W2), ...zebraBars(zx, cy, hw, W2)];
+      const sB = zx - F1, sA = sB - NP; items.push(pill(sA, sB, cy, W2, 'centre'), ...lay(sA - F1, -1, P.guide.dash, 0, len, cy, W2, 'centre'));
+      items.push(...sandCover(E - R.runout.before * m, len, cy, hw, E, R.runout.length * m, 3), rect(E + R.runout.length * m * 0.93, len, 0, H, 'sand'));
+      plans.push({ title: 'Sackgasse: Zebra und Verwehung', state: 'auf TD03', plan: plan(len, H, 'sand', items), text: 'Zebra 6 Takte vor dem Ende. Danach laufen Asphalt und Randlinien gerade weiter, der Platzsand weht darüber: zuerst an den Rändern, ab 4 Takten vor dem Ende auch in der Mitte, nach 12 Takten ist alles bedeckt. Kein Asphalt außerhalb der Fahrbahn, keine gezeichnete Endform.' }); }
+    { const len = 40, x = 27, items = cityBase(len); const y0 = cy2 + W2 / 2 + F2, y1 = cy2 + hw - W2 - F2, sB = x - F1, sA = sB - NP;
+      items.push(rect(x, x + W3, y0, y1, 'hell', '999px'), pill(sA, sB, cy2, W2, 'centre'), ...lay(sA - F1, -1, P.guide.dash, 0, len, cy2, W2, 'centre'), ...mark1(sB, x, cy2 - 0.8), ...mark2(x + 1.5, cy2 + W2 / 2, y0), ...mark2(x + 1.5, y1, cy2 + hw - W2));
+      plans.push({ title: 'Haltelinie', state: 'geregelt', plan: plan(len, H2, 'walk', items), text: 'Haltelinie W3 über den eigenen Fahrstreifen, seitlich F2 zu Mittel- und Randlinie. Sperrlinie endet F1 davor, Leitlinie von der Sperrlinie weg. Fußabdruck des stehenden Karts: Vorderkante bleibt dahinter.' }); }
+    { const len = 40, x = 27, items = cityBase(len); const y0 = cy2 + W2 / 2 + F2, y1 = cy2 + hw - W2 - F2, bl = R.elements.yield.block * b, n = Math.floor((y1 - y0 + F2) / (bl + F2)), used = n * bl + (n - 1) * F2, ys = (y0 + y1) / 2 - used / 2;
+      for (let k = 0; k < n; k++) items.push(rect(x, x + W3, ys + k * (bl + F2), ys + k * (bl + F2) + bl, 'hell', 'c'));
+      items.push(...lay(x - F1, -1, P.guide.dash, 0, len, cy2, W2, 'centre'), ...mark1(x - F1, x, cy2 - 0.8), ...mark2(x + 1.5, ys + bl, ys + bl + F2));
+      plans.push({ title: 'Wartelinie', state: 'geregelt', plan: plan(len, H2, 'walk', items), text: 'Die Haltelinie als Blockfolge: Blöcke W3 × 4b, Lücke F2, Ecken b/2. Leichter als Halt, gleiche Lage. Leitlinie endet F1 davor.' }); }
+    { const len = 60, items = cityBase(len), x0 = 16, x1 = 44, ih = 1.5 * m, y0 = cy2 - ih, y1 = cy2 + ih;
+      items.push(rect(x0, x1, y0, y1, 'hell', '999px'), rect(x0 + W2, x1 - W2, y0 + W2, y1 - W2, 'street', '999px'));
+      const iy0 = y0 + W2 + F2, iy1 = y1 - W2 - F2, hh = iy1 - iy0, sx0 = x0 + ih + F2, sx1 = x1 - ih - F2, d = W2 * Math.SQRT2;
+      for (let xs = sx0 + hh; xs + d <= sx1; xs += m) items.push({ pts: [[xs, iy0], [xs + d, iy0], [xs + d - hh, iy1], [xs - hh, iy1]], c: 'hell' });
+      items.push(...lay(x0 - F1, -1, P.guide.dash, 0, len, cy2, W2, 'centre'), ...lay(x1 + F1, 1, P.guide.dash, 0, len, cy2, W2, 'centre'), ...mark1(x0 - F1, x0, cy2 - 0.8));
+      plans.push({ title: 'Sperrfläche', state: 'geregelt', plan: plan(len, H2, 'walk', items), text: 'Runder Rahmen W2, Schrägstreifen W2 unter 45°, Teilung 1 Takt, Streifen enden F2 vor dem Rahmen. Längslinien enden F1 vor der Fläche.' }); }
+    { const len = 60, H = hw + 2, cy = H / 2, h = hw / 2, items = [rect(0, len, cy - h, cy + h, 'street'), ...edgesAt(0, len, cy, h, W2)], L = R.arrow.length * m;
+      items.push({ pts: arrowPts(4, cy, L, 0, W3), c: 'hell' }, { pts: arrowPts(22, cy, L, 0, W3), c: 'hell' }, { pts: arrowPts(22 + m, cy, L * 0.62, 0.55, W3), c: 'hell' });
+      for (let k = 0; k < 4; k++) items.push({ pts: chevPts(40 + k * (R.arrow.headL * W3 + F1), cy, W3), c: 'hell' });
+      items.push(...mark1(10, 10 + 0, cy + 1.6));
+      plans.push({ title: 'Pfeile', state: 'geregelt', plan: plan(len, H, 'walk', items), text: 'Richtung, Entscheidung, Annäherung. Schaft W3, 4 Takte, Kopf 3 × 2 Schaftstärken für alle. Pfeil in Streifenmitte, F1 zu jedem Querelement. Annäherung: Köpfe in Folge, Lücke F1.' }); }
+    { const len = 60, H = 2 * hw + 4, cy = H / 2, items = [rect(0, len, cy - hw, cy + hw, 'track'), ...edgesAt(0, len, cy, hw, W3)], cx = 44, ya = cy - hw + W3 + F2, yb = cy + hw - W3 - F2, nC = Math.floor((yb - ya) / W4), ys = (ya + yb) / 2 - nC * W4 / 2;
+      for (let r = 0; r < 2; r++) for (let k = 0; k < nC; k++) if ((k + r) % 2 === 0) items.push(rect(cx + r * W4, cx + (r + 1) * W4, ys + k * W4, ys + (k + 1) * W4, 'hell', 'c'));
+      const bx = R.elements.parking.perpendicular, bw = bx.bay * m, bd = bx.depth * m;
+      [[cx - F1, cy - bw / 2 - 1.2], [cx - F1 - bd, cy + bw / 2 + 1.2], [cx - F1 - 2 * bd, cy - bw / 2 - 1.2], [cx - F1 - 3 * bd, cy + bw / 2 + 1.2]].forEach(([fx, yc]) => {
+        if (fx - bd < 0) return; items.push(rect(fx - bd, fx, yc - bw / 2, yc - bw / 2 + W2, 'hell', '999px'), rect(fx - bd, fx, yc + bw / 2 - W2, yc + bw / 2, 'hell', '999px'), rect(fx - bd, fx - bd + W2, yc - bw / 2, yc + bw / 2, 'hell', '999px')); });
+      items.push(...mark1(cx - F1, cx, cy - 0.6), ...mark2(cx + 3, cy - hw + W3, ya));
+      plans.push({ title: 'Start/Ziel und Startaufstellung', state: 'geregelt', plan: plan(len, H, 'strang', items), text: 'Karo aus W4-Quadraten (zwei Zebrabalken), zwei Reihen, Ecken b/2, F2 zu den Randlinien, Randlinien laufen durch. Startboxen = Parktaschen-Rahmen 2 × 4 Takte, vorn offen, versetzt, F1 hinter dem Karo.' }); }
+    { const len = 60, pl = 4.5, bd = R.elements.parking.perpendicular.depth * m, bw = R.elements.parking.perpendicular.bay * m, H = hw + pl + bd + 3, top = 1, yL = top + hw, items = [rect(0, len, top, yL + pl, 'track'), pill(0, len, top + W3 / 2, W3)];
+      items.push(...lay(0, 1, P.warn.dash, 0, 17, yL, W2), ...lay(18, 1, P.block.dash, 18, len, yL, W3, 'signal'), pill(0, len, yL + pl - W2 / 2, W2));
+      for (let x = 22; x + bw <= len; x += bw + F2) { const y0 = yL + pl + F2, y1 = y0 + bd; items.push(rect(x, x + W2, y0, y1, 'signal', '999px'), rect(x + bw - W2, x + bw, y0, y1, 'signal', '999px'), rect(x, x + bw, y1 - W2, y1, 'signal', '999px')); }
+      items.push(...mark1(16.5, 18, yL - 0.7), ...mark2(22 + bw + F2 / 2, yL + pl + F2 + 1, yL + pl + F2 + 1.01));
+      plans.push({ title: 'Boxengasse', state: 'D1 reserviert', plan: plan(len, H, 'strang', items), text: 'Warnlinie 4 : 1 kündigt an, F1, dann trennt eine Blocklinie W3 in Signal Gasse und Strecke. Boxenplätze = Parktaschen-Rahmen in Signal, F2 zur Gassen-Randlinie und zueinander.' }); }
+    { const len = 48, pp = R.elements.parking.perpendicular, bw = pp.bay * m, bd = pp.depth * m, H = hw + 2 * bd + 2, cy = H / 2, items = [rect(0, len, 0, H, 'track'), ...edgesAt(0, len, cy, hw / 2, W2)];
+      for (const sd of [-1, 1]) { const yEdge = cy + sd * (hw / 2), yA = yEdge + sd * F2, yR = yEdge + sd * (F2 + bd); items.push(rect(1.5, len - 1.5, Math.min(yR, yR - sd * W2), Math.max(yR, yR - sd * W2), 'hell', '999px'));
+        for (let x = 1.5; x <= len - 1.5 + 1e-6; x += bw) items.push(rect(x - W2 / 2, x + W2 / 2, Math.min(yA, yR), Math.max(yA, yR), 'hell', '999px')); }
+      items.push(...mark2(10, cy + hw / 2, cy + hw / 2 + F2));
+      plans.push({ title: 'Parkdeck (Ausnahme)', state: 'geregelt', plan: plan(len, H, 'track', items), text: 'Nur im Parkdeck oder Parkhaus: Senkrechtparken, Tasche 2 Takte breit, 4 Takte tief. Rahmen W2 als Kamm, hinten geschlossen, F2 zur Randlinie der Fahrgasse.' }); }
+    plans.forEach(p => { p.stateC = p.state.startsWith('auf TD03') ? '#0e8f73' : '#8a6d1f'; });
+
+    const compare = [
+      { title: 'Übernommen', tone: '#0e8f73', items: [
+        { k: 'Kernsatz', v: 'Form sagt wo, Muster sagt wie verbindlich, Farbe sagt für wen. Steht jetzt über allem.' },
+        { k: 'Acht Formfamilien', v: 'Linie, Querlinie, Streifenfeld, Pfeil, Punktfolge, Rahmen, Symbol, Farbfeld ordnen alle Elemente (§5).' },
+        { k: 'Lesart der Muster', v: 'geschlossen, offen, angekündigt, verstärkt. Neu dazu: Punktfolge und Doppellinie.' },
+        { k: 'Eine Rundung', v: 'runde Enden, runde Verbindungen, ein Eckenradius, ein Pfeilkopf mit 3 × 2 Schaftstärken.' },
+        { k: 'Mindestlücke', v: 'nie kleiner als die Linie, die sie trennt.' },
+        { k: 'Zebra, Wartelinie', v: 'Zebrabalken in Standardstärke W2, Lücke gleich Balken. Wartelinie als leichtere Blockfolge der Haltelinie.' },
+        { k: 'Rahmen', v: 'Parktasche = Rahmen + Unterbrechung + Symbol. Startbox und Boxenplatz sind derselbe Rahmen.' },
+        { k: 'Curbs, Farbebenen, Fahrschule', v: 'Curb als Blockfolge im Grundmaß. Drei Farbebenen (Verkehr, Lernebene, Weltstil). Fahrschule als Markierung, Bedeutungs-Chip, Regelaktion.' }] },
+      { title: 'Schärfer gefasst', tone: '#5d4cff', items: [
+        { k: 'Einheit', v: 'Input: M mit Faktoren 0,75 / 1,25 / 1,5 / 1,8. M1: nur ganze Vielfache von b (W1 bis W4). Zwischenstärken entfallen.' },
+        { k: 'Lücken', v: 'Input: Standardlücke 3 M und kurze Lücke 1,5 M. M1: eine Längsfuge F1, eine Querfuge F2. Muster unterscheiden sich über die Strichlänge.' },
+        { k: 'Eckenradius', v: 'Input: 0,25 × Linienbreite, damit je Linie anders. M1: fest b/2 für alle Ecken.' },
+        { k: 'Kleine Linien', v: 'Input: kleine Lernmarkierung 0,75 M auf der Fahrbahn. M1: W1 nur Lernebene, nie Fahrbahn.' },
+        { k: 'Gelb', v: 'DE: Signal = Sonderfunktion. US: Mittellinie in Signal. Als Regelwerk-Schalter statt Mischung.' }] },
+      { title: 'Bewusst anders oder neu', tone: '#8a6d1f', items: [
+        { k: 'Übergänge', v: 'Tropfenregel, Stärkewechsel, Knetfleck-Regel und Überdeckung fehlen im Input. Sie tragen den Knetlook zwischen Strecke, Stadt und Natur.' },
+        { k: 'Anker statt Strecken', v: 'Muster werden vom Ereignis aus angelegt. Nichts wird gestreckt oder angeschnitten.' },
+        { k: 'Strang-Lage', v: 'Randlinie bündig an der Kehle. Rennstrecke ohne Fahrstreifen, Ideallinie nur als Lernebene.' },
+        { k: 'Keine Wartezähne', v: 'Die US/UK-Haifischzähne entfallen. Die Wartelinie deckt die Bedeutung mit vorhandener Form ab.' },
+        { k: 'Animation', v: 'Input: pulsierende oder rotierende Schraffur. M1: nur in der Lernebene. Die Markierung selbst bewegt sich nie.' },
+        { k: 'Farbfeld', v: 'Nie ohne Rahmen. Farbe allein trägt keine Bedeutung.' }] }
+    ];
+    return { worldBtns, ruleBtns, principles, weights, patterns, families, jointPlan, colorCards, transitions, blend, plans, compare, col };
+  }
+}
+</script>
+</body>
+</html>

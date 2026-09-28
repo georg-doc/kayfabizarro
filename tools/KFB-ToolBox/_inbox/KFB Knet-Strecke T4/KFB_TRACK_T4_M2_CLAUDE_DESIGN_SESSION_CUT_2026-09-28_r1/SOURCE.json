@@ -1,0 +1,48 @@
+{
+  "schema": "kfb.return-source/1",
+  "slice": "T4 Knet-Strecke + Straßenmarkierung M2",
+  "createdAt": "2026-09-28",
+  "owner": "Claude Design (Look)",
+  "receivingOwner": "WSA-Lead / nächster Claude-Design-Chat",
+  "project": "KFB World Design Setup (Claude Design)",
+  "entryPoints": [
+    "KFB Knet-Strecke T4.dc.html",
+    "KFB Markierungen M2.dc.html",
+    "KFB Markierungen M1.dc.html"
+  ],
+  "base": {
+    "previousReturn": "export/KFB_TRACK_T4_TRANSITIONS_VFX_2026-09-28 (T4_ATLAS_CANDIDATE)",
+    "repo": "georg-doc/kayfabizarro",
+    "acceptedBaseCommit": "7bd27b3d281911670250d6adad8f02e04412e149",
+    "note": "Projektkopien nicht gegen den Commit gehasht."
+  },
+  "inputs": {
+    "grammar": "docs/input-visuelle-grammatik-fahrbahnmarkierungen.md (Upload 28.09.)",
+    "rulebook": "RMS Teil 1/2, StVO Anlage 2/3 (Maße aus Fachwissen, nicht aus Dokument im Projekt)",
+    "review": "Georg Sprach-Feedback 28.09. abends + evidence/georg-review-*.png",
+    "voiceUncertain": [
+      "„da fehlt ein kompletter Streifen\" (Einmündung) als zu kurze Wartelinie gelesen"
+    ]
+  },
+  "assets": {
+    "pin": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@378b209355b13304e3cff656ec0806ca5b89df28/",
+    "note": "15 KayKit/Tiny-Treats-glTF, unverändert zu T4"
+  },
+  "new": [
+    "lab-track/road-markings.m2.js",
+    "KFB Markierungen M2.dc.html",
+    "lab-track/road-markings.m2.json",
+    "docs/ROAD_MARKINGS_M2.md",
+    "POSTMORTEM.md"
+  ],
+  "changed": [
+    "lab-track/transition-atlas.v1.js",
+    "lab-track/track-look.v5.js",
+    "KFB Knet-Strecke T4.dc.html",
+    "lab-track/road-markings.m2.json (2.1.0 → 2.2.0)"
+  ],
+  "missing": {
+    "ref/clay-joebinns/Fingerprints01_3K.png": "fehlt auch im Workspace (404), T4 loggt und läuft ohne"
+  },
+  "status": "T4_M2_CANDIDATE"
+}

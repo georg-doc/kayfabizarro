@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#96bede;font-family:"Nunito Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#17191d}
+a{color:#5d4cff}a:hover{color:#17191d}
+canvas{display:block}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import { boot } from './lab-track/track-look.v5.js?r=18';
+window.__KFB_TRACK4 = { boot };
+window.dispatchEvent(new Event('kfbTrack4Ready'));
+</script>
+</helmet>
+
+<div style="position:relative;width:100%;height:100vh;overflow:hidden">
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+
+  <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#96bede;padding:24px;text-align:center">
+      <div style="text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:#0e5f4d">Knetwelt · Track-Look T4</div>
+      <div style="font-weight:800;font-size:30px;letter-spacing:-.04em;line-height:1">Übergänge + Clay-VFX</div>
+      <div style="font-size:13px;color:#2c3440">{{ note }}</div>
+    </div>
+  </sc-if>
+
+  <button onClick="{{ togglePanel }}" title="{{ toggleTitle }}" aria-label="{{ toggleTitle }}" style="position:absolute;top:14px;left:14px;z-index:3;width:40px;height:40px;display:flex;align-items:center;justify-content:center;padding:0;border-radius:12px;cursor:pointer;background:{{ toggleBg }};color:{{ toggleFg }};border:1px solid {{ toggleLine }};box-shadow:0 10px 28px rgba(19,25,35,.10)" style-hover="transform:translateY(-1px)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="4" x2="14" y2="4"></line><line x1="10" y1="4" x2="3" y2="4"></line><line x1="21" y1="12" x2="12" y2="12"></line><line x1="8" y1="12" x2="3" y2="12"></line><line x1="21" y1="20" x2="16" y2="20"></line><line x1="12" y1="20" x2="3" y2="20"></line><line x1="14" y1="2" x2="14" y2="6"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="16" y1="18" x2="16" y2="22"></line></svg>
+  </button>
+
+  <sc-if value="{{ panelOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:64px;left:14px;z-index:3;width:min(318px,calc(100vw - 28px));max-height:calc(100vh - 80px);overflow:auto;background:#fff;border:1px solid #dfe3e8;border-radius:18px;box-shadow:0 12px 34px rgba(19,25,35,.10);padding:18px;display:flex;flex-direction:column;gap:13px;box-sizing:border-box">
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <div style="text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:800;color:#0e8f73">Knetwelt · Track-Look T4</div>
+        <div style="font-size:19px;font-weight:800;letter-spacing:-.02em;line-height:1.1">Übergänge + Clay-VFX</div>
+        <div style="font-size:12.5px;color:#6d737d;text-wrap:pretty;line-height:1.45">T3 v2 / K2 unverändert als Basis. Vier Zonen auf TD03: Parkdeck → Strang, Strang → Wiese, Wiese → Strang vor dem Kicker, Landung → Stadt. Jede Schicht wechselt in ihrem eigenen Fenster.</div>
+        <div style="font-size:11.5px;color:#0e8f73;font-weight:700">{{ worldName }} · {{ shotLabel }}</div>
+      </div>
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-size:12px;font-weight:700;color:#6d737d">{{ g.label }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="3">
+              <button onClick="{{ o.pick }}" title="{{ o.title }}" style="border-radius:10px;padding:7px 10px;font:inherit;font-weight:700;font-size:12px;line-height:1.1;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};border:1px solid {{ o.line }}" style-hover="transform:translateY(-1px)">{{ o.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <sc-if value="{{ showLegend }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:11px;line-height:1.5;color:#4a515c;background:#f6f3ee;border-radius:10px;padding:10px 12px;white-space:pre-line">{{ legend }}</div>
+      </sc-if>
+      <div style="height:1px;background:#dfe3e8"></div>
+      <div style="font-size:11px;line-height:1.5;color:#6d737d;background:#eef0f4;border-radius:10px;padding:10px 12px;white-space:pre-line;font-variant-numeric:tabular-nums">{{ stats }}</div>
+      <a href="KFB Markierungen M2.dc.html" style="font-size:12px;font-weight:700">Regelwerk Markierung M2 öffnen →</a>
+      <div style="font-size:11px;line-height:1.5;color:#6d737d;text-wrap:pretty">Markierung: lab-track/road-markings.m2.json (Verwehung noch m1) · Vertrag: lab-track/transition-profiles.v1.json · Partikel: lab-vfx/clay-particle-profiles.v1.json · Spec: DESIGN_SPEC_T4.md. Quellen KayKit City Builder Bits 1.0, Tiny Treats Homely House / Pretty Park 1.0 (Repo-Pin 378b209).</div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;world&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;canyon&quot;,&quot;bucht&quot;,&quot;otown&quot;],&quot;default&quot;:&quot;canyon&quot;,&quot;tsType&quot;:&quot;'canyon'|'bucht'|'otown'&quot;},&quot;vfx&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;off&quot;,&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;],&quot;default&quot;:&quot;high&quot;,&quot;tsType&quot;:&quot;'off'|'low'|'medium'|'high'&quot;}}">
+class Component extends DCLogic {
+  canvasRef = React.createRef();
+  state = { loading: true, note: 'Lädt …', world: 'canyon', shot: 'totale', run: true, grey: false, vfx: 'high', stats: '', measuring: false, panelOpen: localStorage.getItem('kfb-track-t4-panel') === '1' };
+  componentDidMount() {
+    const go = async () => {
+      if (this.api || !this.canvasRef.current) return;
+      try {
+        this.api = await window.__KFB_TRACK4.boot(this.canvasRef.current, note => this.setState({ note }));
+        window.__trackLook4 = this.api;
+        const w = this.props.world ?? 'canyon', q = this.props.vfx ?? 'high';
+        if (w !== 'canyon') this.api.set('world', w);
+        this.api.set('vfx', q); this.api.shot('totale');
+        this.setState({ loading: false, world: w, vfx: q });
+        this.timer = setInterval(() => this.tick(), 500);
+      } catch (e) { this.setState({ note: 'Fehler: ' + e.message }); console.error(e); }
+    };
+    if (window.__KFB_TRACK4) go(); else window.addEventListener('kfbTrack4Ready', go, { once: true });
+  }
+  componentWillUnmount() { clearInterval(this.timer); this.api && this.api.dispose(); }
+  componentDidUpdate(pp) {
+    if (!this.api) return;
+    if (pp.world !== this.props.world && this.props.world) { this.api.set('world', this.props.world); this.setState({ world: this.props.world }); }
+    if (pp.vfx !== this.props.vfx && this.props.vfx) { this.api.set('vfx', this.props.vfx); this.setState({ vfx: this.props.vfx }); }
+  }
+  tick() {
+    const i = this.api.info, t = i.t4 || {}, v = i.vfx || {};
+    let s = `${i.fps} fps · Lastwächter ${i.guard ? i.guard.level + ' (' + Math.round(i.guard.avg) + ' ms)' : '–'}\n${i.calls} Draw Calls · ${(i.frameTris / 1000).toFixed(0)}k Dreiecke im Bild\nSzene ${(i.tris / 1000).toFixed(0)}k Dreiecke · Bau ${i.buildMs} ms · Laden ${i.loadMs} ms\nT4: ${t.markPieces} Markierungsstücke · ${t.curbStones} Bordsteine · ${t.slabs} Platten\n${t.houses} Häuser · ${t.props} Möbel · ${t.fence} Zaunteile · ${t.triples} Dreiergruppen\nQuellen ${t.assets}/15 in ${t.assetMs} ms\nVFX ${v.quality}: ${v.alive} aktiv · Spitze ${v.peak} · ${v.calls} Calls`;
+    if (i.measure) s += '\n\nMessung (' + i.measure.cam + ', ' + i.measure.px.join('×') + ' px):\n' + i.measure.rows.map(r => `${r.state.toUpperCase().padEnd(4)} ${r.msMean} ms · ${r.fps} fps · ${r.calls} Calls · ${(r.tris / 1000).toFixed(0)}k · ${r.particlesPeak} Partikel`).join('\n');
+    const errs = [...(i.errors || []), ...((t.errors) || [])]; if (errs.length) s += '\nFehler: ' + errs.join('; ');
+    if (s !== this.state.stats) this.setState({ stats: s });
+  }
+  renderVals() {
+    const S = this.state, api = this.api;
+    const btn = (on, label, pick, title = '') => ({ label, title, bg: on ? '#5d4cff' : '#fff', fg: on ? '#fff' : '#17191d', line: on ? '#5d4cff' : '#dfe3e8', pick });
+    const set = (k, v) => { this.setState({ [k]: v }); api && api.set(k, v); };
+    const shot = (id, label, title) => btn(S.shot === id, label, () => { this.setState({ shot: id }); api && api.shot(id); }, title);
+    const LBL = { totale: 'Totale · Wiese, Rückkehr, Landung, Stadt', fahrt: 'Mitfahren hinter dem gelben Kart', fahrtNatur: 'Mitfahren · Strang → Wiese → Strang', fahrtStadt: 'Mitfahren · Kicker, Landung, Stadt',
+      stadt: 'Stadt-Naht ZA · Landung → Stadt', natur: 'Natur-Naht ZB · Wulst → Böschung → Zaun', rueck: 'Rückkehr ZN · Strang sammelt die Böschung ein', fuss: 'Fußhöhe · Gehweg in der Stadt',
+      quellen: 'Quellenbank · links Quelle, rechts Knete', atlas: 'VFX-Probenbrett · Zeilen Ereignisse, Spalten Biome', uebersicht: 'T3-Übersicht',
+      vfx_roll: 'VFX · Rollen', vfx_drift: 'VFX · Drift/Bremsen', vfx_scrape: 'VFX · Bande streifen', vfx_landing: 'VFX · Landung', vfx_boost: 'VFX · Boost', vfx_biome: 'VFX · Biomwechsel',
+      markStrang: 'M2 · Randlinie Strecke B, bündig am Strang', loop: 'M2 · Loop mit Blocklinie B 3/3 Signal', markMag: 'M2 · Magnetzone, Blocklinie + Boost', zebra: 'M2 · Warnlinie, Zebra, Sackgasse', auslauf: 'M1 · Auslaufzunge auf dem Platz' };
+    const W = api ? api.WORLDS[S.world] : null, open = S.panelOpen;
+    const groups = [
+      { label: 'Welt / Biom-Preset', opts: [['canyon', 'A · Canyon'], ['bucht', 'B · Bikini-Bucht'], ['otown', 'C · O-Town']].map(([v, l]) => btn(S.world === v, l, () => set('world', v))) },
+      { label: 'Übergänge', opts: [shot('totale', 'Totale'), shot('fahrtNatur', 'Fahrt Wiese'), shot('fahrtStadt', 'Fahrt Stadt'), shot('natur', 'Natur-Naht'), shot('rueck', 'Rückkehr'), shot('stadt', 'Stadt-Naht'), shot('fuss', 'Fußhöhe'), shot('quellen', 'Quellen'), shot('fahrt', 'Mitfahren')] },
+      { label: 'Markierung M2 · Auslauf', opts: [shot('markStrang', 'Strang-Rand'), shot('markMag', 'Magnet'), shot('loop', 'Loop'), shot('zebra', 'Zebra'), shot('auslauf', 'Auslauf')] },
+      { label: 'Clay-VFX', opts: [shot('atlas', 'Probenbrett'), shot('vfx_roll', 'Rollen'), shot('vfx_drift', 'Drift'), shot('vfx_scrape', 'Streifen'), shot('vfx_landing', 'Landung'), shot('vfx_boost', 'Boost'), shot('vfx_biome', 'Biomwechsel')] },
+      { label: 'VFX-Qualität', opts: [['off', 'aus'], ['low', 'LOW'], ['medium', 'MEDIUM'], ['high', 'HIGH']].map(([v, l]) => btn(S.vfx === v, l, () => set('vfx', v))) },
+      { label: 'Fahrt · Prüfung', opts: [btn(S.run, S.run ? 'läuft' : 'steht', () => set('run', !S.run)), btn(S.grey, 'Graustufen', () => set('grey', !S.grey)),
+        btn(S.measuring, S.measuring ? 'misst …' : 'Messen (aus/LOW/HIGH)', async () => { if (!api || this.state.measuring) return; this.setState({ measuring: true }); await api.measure(); this.setState({ measuring: false }); this.tick(); }, 'misst dieselbe Kamera je 3 s ohne VFX, LOW und HIGH')] }
+    ];
+    const showLegend = S.shot === 'atlas' || S.shot.startsWith('vfx_') || S.shot === 'quellen';
+    const legend = S.shot === 'quellen' ? 'Je Paar links die Quelle mit Originalmaterial, rechts dieselbe Datei in Knete K2.\nVon vorn nach hinten: KayKit building_A (gebogen), building_E (gebogen), Tiny Treats fence_straight_long (× 1,5), KayKit streetlight (× 5,95), Tiny Treats tree_large (× 1,9).'
+      : 'Von links nach rechts: Rollen · Drift · Bande streifen · Landung · Boost · Biomwechsel (Zelle halb/halb mit dem Nachbarbiom).\nVon vorn nach hinten: Stadt/Asphalt · Wiese · Canyon · Küste (nur visuell).\nDer gelbe Knubbel ist nur Emitter-Stellvertreter, kein Fahrzeug.';
+    return {
+      canvasRef: this.canvasRef, loading: S.loading, note: S.note, stats: S.stats, panelOpen: open, groups, showLegend, legend,
+      worldName: W ? W.name : 'T4', shotLabel: LBL[S.shot] || '',
+      toggleTitle: open ? 'Prüfoptionen ausblenden' : 'Prüfoptionen einblenden',
+      toggleBg: open ? '#5d4cff' : '#fff', toggleFg: open ? '#fff' : '#17191d', toggleLine: open ? '#5d4cff' : '#dfe3e8',
+      togglePanel: () => { const v = !this.state.panelOpen; localStorage.setItem('kfb-track-t4-panel', v ? '1' : '0'); this.setState({ panelOpen: v }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
