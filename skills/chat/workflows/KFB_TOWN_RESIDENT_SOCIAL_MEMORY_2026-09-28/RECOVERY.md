@@ -354,3 +354,18 @@ Future North-Pole scene is separate and source-first:
 Evidence: **23/23 source reads · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture PASS**. Runtime/browser/Stage remain 0.
 
 Single integrated next gate remains **RESIDENT-SOCIAL-MEMORY-01**. Gift Culture should enter after the basic POI/AIDA/reaction/resume seam and first Dance mappings; no separate Gift-game runtime or proxy Stage.
+
+
+### KISS correction · Gift Culture persistence
+
+**SUPERSEDES the item-ledger implications in the earlier Gift Culture recovery checkpoint.**
+
+Current rule:
+- first-run gift props are scene-local/social by default;
+- no Resident inventory economy, barter ledger, resource accounting or full prop provenance chain is required;
+- persist only high-value semantic receipts when an interaction becomes meaningful: participants, intent/meaning, notable reaction/escalation, reconciliation and relevant witness provenance;
+- do not persist routine wrapper colors/instances, every handoff, disposable prop ownership or low-value regift chains;
+- optional GPT-Site persistence may hold a tiny `ResidentMemoryReceipt` collection; the visible interaction must work without it;
+- a later real inventory system may attach an external item ref if a specific gameplay use requires durable ownership.
+
+Priority remains **Behavior → Reaction Choreography → emotional expression → compact meaning-memory**, not item administration.
