@@ -96,6 +96,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_WEB_PUSH_SITES_PERSISTENCE_2026-09-28.md` — binding `KFB-Web-Read` / `KFB-Web-Push` semantics and executor split; Claude Design/Blender use closed packages, GitHub-capable chats own persistence
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_SITES_GAME_TOOL_PLATFORM_P0_2026-09-28.md` — planned existing-Site P0 for authenticated playtest reports, uploads, task packets and later game/tool persistence
+- `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_UI_DENSITY_INLINE_EDITOR_STANDARD_2026-09-28.md` — binding quiet-status, preview-frame and complete shared 3D Inline Editor standard; Animation Library V1 is PASS → UI/UX TUNE, not a rebuild gate
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
