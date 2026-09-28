@@ -31,9 +31,10 @@ No second runtime, NPC database, dialogue engine, movement owner, reward owner o
 7. `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md` — first resident-specific attention/reaction overlay
 8. `RESIDENT_DANCE_CULTURE_2026-09-28.md` — Common Bounce, Signature Move mapping and player learning/collection
 9. `RESIDENT_GIFT_CULTURE_2026-09-28.md` — gifts, barter, prank escalation, provenance and reconciliation
-10. `SOURCE.json`
-11. `TEST_REPORT.md`
-12. `RETURN.md`
+10. `RESIDENT_SIGNATURE_DECKS_2026-09-28.md` — worldview/ChatterBox Deck lens + Card-recovery threads
+11. `SOURCE.json`
+12. `TEST_REPORT.md`
+13. `RETURN.md`
 
 For implementation later, also read the **current heads**, not stale copies, of:
 - Brick Fish / Prop Toss candidate;
@@ -108,13 +109,14 @@ Machine-readable contract:
 `resident-aida-poi.v0.1.json`
 
 Current evidence:
-- **23/23** source reads PASS;
+- **25/25** source reads PASS;
 - **1/1** SOURCE manifest parse PASS;
 - **1/1** AIDA/POI contract parse PASS;
 - **20/20** design invariants PASS;
 - Resident Dance Culture checks: **12/12 PASS**;
 - Resident Gift Culture checks: **15/15 PASS**;
 - Gift KISS correction checks: **6/6 PASS**;
+- Resident Signature Deck checks: **12/12 PASS**;
 - runtime/browser/Stage remain 0 because this is design persistence only.
 
 Fresh-chat shorthand:
@@ -184,3 +186,24 @@ Durable design:
 `RESIDENT_GIFT_CULTURE_2026-09-28.md`.
 
 Current evidence: **23/23 source reads · 15/15 Gift Culture checks · 6/6 Gift KISS correction checks PASS**. No gift runtime, barter/item economy, North-Pole scene, unwrap VFX or Stage deployment is claimed.
+
+
+## 2026-09-28 · Resident Signature Decks / Card-recovery threads
+
+This extends an existing Town decision: every NPC may have a favourite/signature/catchphrase Deck or individual selection inside a cluster; deliberate Moshpit mismatch remains valid and a Signature Deck is not a speech admission barrier.
+
+Current design:
+- Signature Deck belongs to **stable authored identity**, not Lean episodic memory;
+- use `deckRef + stance` so the same Deck can be loved, misread, archived, confiscated, destroyed or parodied;
+- ChatterBox retrieval uses current beat + Resident stance + **1–3 relevant Cards** + small memory set, never a full-deck prompt dump;
+- each Resident may have **3–7 Signature Cards** with higher salience inside the broader Deck/cluster;
+- Card POIs may open a small Deck search/recovery thread without creating a second Quest/Card inventory owner;
+- Player Journey/Almanac remains Card-collection truth; showing/returning/confiscating a Card narratively does not need to erase the player's discovery;
+- collect-the-whole-Deck may remain long-form, but Resident interaction is batched through meaningful Card/milestone beats rather than one courier transaction per Card;
+- current Card index is source-driven: many Decks are 56/15, but Anti-Rules is currently 57/16 and the 9/11 Money Trail 60/15, so no Resident code may hard-code 56/15;
+- Officer Doppel-Denk's first candidate is `anti_rules_toolkit`; his exact stance remains deliberately open between `misreads-as-law`, `confiscate/destroy` and `archivist/evidence-locker`.
+
+Durable design:
+`RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
+
+Current evidence: **25/25 source reads · 12/12 Signature Deck checks PASS**. No final mapping table, Deck-ChatterBox runtime adapter, Card-recovery implementation or Stage deployment is claimed.
