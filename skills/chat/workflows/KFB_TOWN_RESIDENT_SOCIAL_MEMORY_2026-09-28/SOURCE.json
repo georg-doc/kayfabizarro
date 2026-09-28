@@ -307,7 +307,8 @@
     "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict.",
     "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume.",
     "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory.",
-    "Gift-giving is a shared Resident culture mechanic: source-proven wrapped presents can contain real bizarre/satirical props, trigger character-specific reactions, barter/regifting, bounded prank/failure spirals and later reconciliation while preserving Kayfabe and ownership provenance."
+    "Gift-giving is a shared Resident culture mechanic: source-proven wrapped presents can contain real bizarre/satirical props, trigger character-specific reactions, barter/regifting, bounded prank/failure spirals and later reconciliation while preserving Kayfabe and ownership provenance.",
+    "KISS correction: Gift Culture MVP persists meaningful social/emotional receipts, not a durable Resident item economy, barter ledger, per-prop ownership chain or exhaustive gift provenance. Real item tracking is optional future integration only."
   ],
   "userDirection": {
     "poiClasses": [
@@ -412,7 +413,7 @@
         "tribute",
         "apology"
       ],
-      "ownershipOwner": "existing world/inventory for object transfer; Player Journey / Meta for durable player-facing gift provenance",
+      "ownershipOwner": "KISS baseline: no durable Resident item ownership required; scene prop lifecycle stays with receiving scene. Optional future real inventory transfer may attach externally.",
       "socialThread": "existing ResidentSocialThread kind=gift with bounded continuation/escalation",
       "reconciliation": [
         "replacement gift",
@@ -440,6 +441,28 @@
         ],
         "environment": "SOURCE_REQUIRED",
         "holidayAudio": "SOURCE_REQUIRED"
+      },
+      "memoryPolicy": {
+        "persist": [
+          "meaningful giver/recipient interaction",
+          "intent/meaning tags",
+          "notable outcome",
+          "reconciliation/important callback",
+          "witness provenance only when relevant"
+        ],
+        "doNotPersist": [
+          "routine wrapper instance",
+          "every handoff",
+          "current owner of disposable prop",
+          "resource counts",
+          "full regift chain"
+        ]
+      },
+      "gptSitePersistenceSketch": {
+        "status": "OPTIONAL_ARCHITECTURE_ONLY",
+        "store": "tiny semantic ResidentMemoryReceipt collection if the site runtime exposes reliable persistence",
+        "requiredForVisibleInteraction": false,
+        "itemLedger": false
       }
     }
   }
