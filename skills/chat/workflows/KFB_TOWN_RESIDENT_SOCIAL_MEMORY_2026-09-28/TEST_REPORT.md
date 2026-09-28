@@ -8,7 +8,7 @@ Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
 ### Source reads
 
-**25 / 25 PASS**
+**27 / 27 PASS**
 
 Verified directly from current GitHub state:
 1. `georg-doc/ai-town` main ref;
@@ -36,6 +36,8 @@ Verified directly from current GitHub state:
 23. December-2024 Helpers GLTF asset tree for verified toy-workshop props.
 24. `media/kfb/index.json` for current deck/card/page metadata and variable deck sizes.
 25. `Anti-Rules_Toolkit_-_ADD_web.pdf.json` for the structured Anti-Rules source deck.
+26. `Kayfabizarro_Freestyle_Rules_v18-4.md` for the canonical `Name it → Claim it → Power it` card-entry ritual and perform-not-calculate rule.
+27. `overworld/docs/ChatGPT_Living_Concept_v23.md` for the existing five-card King Kayfabulation (`Actor + 3 Scene + Quest`) and persistent Almanac collection.
 
 The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before the source/evidence closure. Current exact pin:
 `9ca3ed0a9987fbb11d0721f5689d6040943403d5`.
@@ -44,7 +46,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 **1 / 1 PASS**
 
-`SOURCE.json` parses as JSON and contains exactly **25** pinned source entries.
+`SOURCE.json` parses as JSON and contains exactly **27** pinned source entries.
 
 ### Machine-readable AIDA / POI contract
 
@@ -67,7 +69,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 Checked against the committed design reference, source manifest and AIDA contract:
 
-1. source manifest contains 25 donors;
+1. source manifest contains 27 donors;
 2. AIDA contract parses;
 3. exact AI Town donor HEAD present;
 4. ChatterBox + Triplet lineage present;
@@ -180,6 +182,30 @@ Documentation/source checks for worldview, ChatterBox and Card-recovery threads:
 
 No final Resident→Deck mapping table, Card-recovery runtime, ChatterBox Deck adapter or public Stage is claimed by these checks.
 
+## Resident Social Card Relay evidence
+
+**15 / 15 PASS**
+
+Documentation/source checks for the interaction-first Card loop:
+
+1. Town source already defines Monkey-Island-style selectable responses;
+2. Town source already defines collectible retorts / listening as collection;
+3. Town/Tourbus source retains `Actor/POV → SHOW IT → SPIN IT → SELL IT → closure`;
+4. Freestyle source independently defines `Name it → Claim it → Power it` as the card-entry ritual, so the two grammars remain distinct rather than being silently renamed;
+5. Freestyle powers are performed narratively rather than resolved as dry transactions;
+6. existing Signature Deck source remains the Resident worldview/Card-selection layer;
+7. committed Relay design makes Resident→Player→Resident presentation the preferred Card gameplay loop;
+8. player interaction is interpretive (`SHOW / SPIN / SELL`), not a walk-and-click courier completion;
+9. Player Journey / Almanac remains the Card discovery/collection truth and social handoff does not need to consume discovery;
+10. Free Roam/Race are connective travel/interruption layers rather than new Card owners;
+11. Combat/Card Zone are exceptional acquisition/proof adapters and Combat remains the only combat owner;
+12. existing Overworld donor defines the five-card King synthesis as `Actor + 3 Scene + Quest`;
+13. minigame-acquired Cards return to the Resident social loop rather than replacing it;
+14. Lean Memory stores only meaningful relay outcomes/interpretations, not physical Card-instance bookkeeping;
+15. the prior universal lost-Deck/fetch reading is explicitly downgraded to an optional Resident-specific motive.
+
+No Social Card Relay runtime, SHOW/SPIN/SELL UI, Card hand-prop animation, ChatterBox adapter, minigame bridge or King integration is claimed by these checks.
+
 ## Runtime / browser / Stage
 
 - runtime code changed: **0 files**
@@ -199,7 +225,7 @@ is now documented in the branch version of `skills/chat/FRESH_CHAT_SLICE_PROTOCO
 
 ## Result
 
-**PASS for documentation/source synthesis + POI/AIDA + Officer Doppel-Denk + Dance Culture + Gift Culture + Signature Deck contracts.**
+**PASS for documentation/source synthesis + POI/AIDA + Officer Doppel-Denk + Dance/Gift cultures + Signature Deck + Social Card Relay contracts.**
 
 This is not an implementation PASS for autonomous Residents, Lean Memory, POI perception, routines, motivations, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
 
