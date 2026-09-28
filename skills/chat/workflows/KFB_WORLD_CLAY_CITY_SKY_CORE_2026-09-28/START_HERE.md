@@ -141,11 +141,14 @@ SKY-CORE-01 does not block Gate 1. Integrate it only after the geometric road ti
 
 ## Model / provider routing
 
-Preferred productive executor: **GPT-6 Sol · High**.
+Selected productive executor: **Claude Coworker Desktop**, using the real local repository checkout, browser and GitHub access.
 
-Reason: this is demanding repository coding and integration with a clear bounded architecture. Sol is the Codex-oriented balance of strong reasoning and cost. Use **GPT-6 Astra · High** only for a single architecture/red-team pass if the road/terrain/collision seam remains ambiguous after source inspection. Use **GPT-6 Luna** only for later mechanical catalogue, metadata or repetitive file updates.
+Reason: this is a demanding but bounded repository integration job, and Georg currently has substantially more Claude budget than OpenAI Work budget. Desktop execution is preferred for real asset inspection, local browser playtesting and small crash-safe GitHub checkpoints.
 
-Claude Design may provide an external visual review from this frozen brief and isolated donor package. It must not own GitHub recovery, private-repo census or the runtime integration. Treat its output as review input, not source truth.
+Use the executor-ready brief from PR #283:
+`skills/chat/workflows/KFB_RESIDENT_UI_COWORKER_CLAY_CITY_2026-09-28/CLAUDE_COWORKER_CLAY_CITY_MVP_01.md`.
+
+It adds the required KFB Knet-Strecke T4 source gate and the GitHub-to-Site handoff. Claude Design remains a visual/UI author only and must not own runtime integration. GPT-6 Sol/Astra remain fallback reviewers, not the selected current executor.
 
 ## Stop conditions
 
