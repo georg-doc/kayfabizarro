@@ -93,10 +93,26 @@ Die Animation Library ist kataloggetrieben. Keine Clip-Liste wird im Interface e
 - Suche sowie Live-Filter für Gruppe, Tags, Loop/One-shot, Props, Varianten, Resident-Ideen und Combat/Reaction;
 - links kompakte animierte Preview-Karten, rechts großer 3D-Preview;
 - Umschaltung zwischen ruhigem Studio und echter Terrain-/World-Umgebung;
+- die Terrain-/World-Ansicht rendert Terrain, aktive Residents, Nebenfiguren und verwendete Props gemeinsam im aktuellen KFB-Claymation-Look; sie ist keine graue Testfläche und kein neutraler GLB-Viewer;
 - keine langen `PROVEN`- oder Statusplaketten im Sichtfeld; kleines Häkchen genügt;
 - Preview-Hintergrund füllt jede Karte vollständig; keine grauen Seitenstreifen;
 - Namen, redaktionelle Tags, Kommentare, Resident-Zuordnung und Signature Moves editierbar;
 - Änderungen als additives JSON exportierbar/importierbar, ohne den kanonischen Katalog im Browser still zu überschreiben.
+
+### Claymation-Prüfkontext · verbindlich
+
+Die technische Studioansicht bleibt für Rig-, Kontakt- und Clipping-Kontrolle verfügbar. Für die visuelle Produktionsbeurteilung ist zusätzlich eine echte Claymation-World-Ansicht Pflicht:
+
+- Gelände, Straßen-/Bodenflächen und Kontaktzone nutzen den aktuellen KFB-Claymation-Material-/Renderansatz; kein Wasserfarben-Hintergrund, keine graue Rasterkachel und kein untexturierter Platzhalterboden;
+- der ausgewählte Character/Resident wird koloriert und mit seinem Claymation-Material gezeigt, nicht als weißes oder neutrales Prüfmodell;
+- mindestens ein weiterer Resident wird in derselben Szene mit demselben Rendervertrag gezeigt, damit Pair-, Talk-, Reaction- und Fight-Clips im räumlichen Kontext prüfbar sind;
+- Requisiten und Attachments werden mit dem passenden Claymation-Look gerendert. Ihre echte Donor-Geometrie und Socket-Zuordnung bleiben erhalten; der Look darf kein Ersatzmodell erfinden;
+- Terrain, Residents und Props teilen eine konsistente Licht-/Schattenrichtung. Bekannte helle Schattenkanten, Banding, Clipping und schwebende Kontakte werden sichtbar markiert statt durch andere Hintergründe kaschiert;
+- Clay-Relief/Texturmaßstab wird nach Größenklasse getrennt: grob für Terrain/große Architektur, mittel für Props, fein für Characters;
+- Studio/World ist ein Darstellungswechsel derselben Auswahl und Animation, kein zweiter Szenen- oder Runtime-Owner;
+- mindestens drei direkt vergleichbare Prüfzustände: Locomotion auf Clay-Terrain, Resident↔Resident-Reaktion und Resident↔Clay-Prop/Attachment.
+
+Der Session Cut muss diese Claymation-World-Ansicht tatsächlich darstellen. Eine bloße Auswahlbox oder ein Label `Clay` ohne gerendertes Terrain, Residents und Props erfüllt den Auftrag nicht.
 
 ### Motion-Details und Anpassung
 
@@ -153,6 +169,7 @@ Liefere ein vollständiges, herunterladbares Session-Paket mit:
 - offenem und geschlossenem Inspektor;
 - Library View mit realer 263-Clip-Katalogstruktur, Suche, Filtern, Character-Auswahl und animierten Preview-Karten;
 - mindestens je einem sichtbaren Beispiel für Prop-Attachment, Strike-Marker, Resident-Signature-Move, sitzenden Clip und Paar-/Kampfsequenz;
+- echter Claymation-World-Ansicht mit gerendertem Terrain, mindestens zwei Residents und mindestens einem verwendeten Prop;
 - JSON Import/Export und lokaler Intake-Drop-Zone;
 - `RETURN.md` problems first;
 - `SOURCE.json` mit exakten Pins;
@@ -175,6 +192,7 @@ PASS, wenn Georg in Graveyard Edit sofort erkennt:
 5. dass der 3D-View die Hauptfläche bleibt;
 6. dass Resident Atlas und Animation Lab dieselbe Editor-Komponente verwenden;
 7. dass die 263 Clips auffindbar sind, ohne das Interface mit Metadaten zu überladen;
-8. dass Props, Strike-Marker und Resident-Zuordnungen verständlich bearbeitet und als JSON exportiert werden können.
+8. dass Props, Strike-Marker und Resident-Zuordnungen verständlich bearbeitet und als JSON exportiert werden können;
+9. dass Terrain, Residents und Props in der World-Ansicht sichtbar im gemeinsamen Claymation-Look gerendert werden.
 
 Budget-Stopp: ein Designpass plus ein klar begrenzter UI-TUNE-Pass. Keine dritte Neugestaltung.
