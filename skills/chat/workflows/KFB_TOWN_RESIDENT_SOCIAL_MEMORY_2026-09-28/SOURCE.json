@@ -6,7 +6,7 @@
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
   "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
-  "outcome": "AI Town donor synthesis for resident Lean Memory + ChatterBox/Triplet + Fluff-o-lect + Reaction Choreography",
+  "outcome": "AI Town donor synthesis for resident Lean Memory + POI perception + routines/goals + KFB AIDA + ChatterBox/Triplet + Fluff-o-lect + Reaction Choreography",
   "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
   "stageStatus": "NOT_DEPLOYED",
   "sources": [
@@ -168,11 +168,48 @@
     "let LLM write movement/reward/combat truth",
     "deploy Stage before integrated runtime exists"
   ],
-  "nextGate": "RESIDENT-SOCIAL-MEMORY-01 with POI perception + resumable routine + one KFB AIDA loop in the real receiving world after current relevant recovery blockers clear",
+  "nextGate": "RESIDENT-SOCIAL-MEMORY-01 with bounded POI perception, one source-backed routine interruption/resume, motivation-backed AIDA selection, Lean Memory, ChatterBox/Triplet, Fluff-o-lect and Reaction Choreography",
   "userDirections": [
     "Points of Interest include player, NPCs/Residents, Cube Pets, plants/nature, environment/landmarks, resources, props/cards and activity stations.",
     "Routine activity includes fishing, smithing/hammering, patrol, explore and other role-specific work.",
     "KFB AIDA gameplay loop for player and NPCs: attention → curiosity/interest → expectation → interaction → reaction → interpret/remember/update → return/resume/retarget.",
     "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict."
-  ]
+  ],
+  "userDirection": {
+    "poiClasses": [
+      "player",
+      "resident",
+      "cube-pet",
+      "plant",
+      "environment",
+      "resource",
+      "prop",
+      "card/media",
+      "activity-station",
+      "vehicle",
+      "event",
+      "hazard"
+    ],
+    "addedRoutineRoles": [
+      "patrol",
+      "explore",
+      "inspect",
+      "gather/collect",
+      "carry/deliver",
+      "tend/care",
+      "rehearse/play-music",
+      "rest/socialize",
+      "return-home/return-to-post"
+    ],
+    "aida": [
+      "attention",
+      "curiosity/interest",
+      "expectation",
+      "interaction",
+      "reaction",
+      "interpret/remember/update-thread",
+      "return/resume/retarget"
+    ],
+    "note": "Patrol/explore and the explicit KFB AIDA sequence are Georg's additive 2026-09-28 direction, not retroactively attributed to older donor documents."
+  }
 }
