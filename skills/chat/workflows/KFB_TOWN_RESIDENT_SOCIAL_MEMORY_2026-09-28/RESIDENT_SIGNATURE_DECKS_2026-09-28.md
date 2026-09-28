@@ -4,6 +4,21 @@ Status: **DESIGN PERSISTENCE · SOURCE-BACKED DIRECTION · NOT RUNTIME IMPLEMENT
 Owner: **KFB Town Resident Social Memory**  
 Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
+
+## CURRENT INTERACTION-FIRST ADDENDUM · 2026-09-28
+
+This document's Signature-Deck identity model remains valid, but **`RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md` now carries the preferred gameplay emphasis**.
+
+Current priority:
+- Residents primarily **send/show Cards through social encounters**;
+- the player actively presents them to other Residents via `SHOW IT → SPIN IT → SELL IT`;
+- Signature Decks supply worldview, candidate Cards and reaction stance;
+- “recover my lost Deck” remains one optional Resident-specific motive, **not** the universal Card loop;
+- Free Roam/Race/Combat/Card Zones remain secondary travel/acquisition routes;
+- King Kayfabian's existing five-card Kayfabulation is the higher-order synthesis layer.
+
+Do not interpret Sections 12–15 below as a mandate to make every Resident a missing-Deck fetch quest.
+
 ## 1 · Existing Town decision
 
 Current Town source already states:
