@@ -1,0 +1,507 @@
+{
+  "accepted": 24,
+  "acceptedByProvider": {
+    "aic": 6,
+    "commons": 6,
+    "ia": 6,
+    "met": 6
+  },
+  "assertions": {
+    "acceptanceFloor": "PASS",
+    "boundedDiscovery": "PASS",
+    "compile": "PASS",
+    "creditsFromSidecars": "PASS",
+    "existingSmokeRegression": "4/4 UNCHANGED",
+    "secondRunIdempotence": "PASS",
+    "stalePartialFiles": "0",
+    "storedPayloadSidecarIntegrity": "PASS"
+  },
+  "discovery": {
+    "counts": {
+      "aic": 6,
+      "commons": 6,
+      "ia": 6,
+      "met": 6
+    },
+    "errors": [],
+    "existingSkippedBase": 4,
+    "schema": "kfb.pd-pool-c1-discovery/0.1",
+    "total": 24
+  },
+  "fallbackAttributionRowsAfter": 4,
+  "firstRun": {
+    "counts": {
+      "loaded": 24,
+      "rejected": 0,
+      "unchanged": 0
+    },
+    "generatedAt": "2026-09-28T19:03:25+00:00",
+    "manifest": "tools/public_domain/pd-c1-curated-manifest.jsonl",
+    "results": [
+      {
+        "bytes": 175361,
+        "id": "met-c1-397573",
+        "localPath": "met/c1-397573.jpg",
+        "provider": "met",
+        "sha256": "c50b25b93d77fec5065a43c0a8a57c8371bfe615c3d97f70622d6bdc97694b57",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 120270,
+        "id": "met-c1-436918",
+        "localPath": "met/c1-436918.jpg",
+        "provider": "met",
+        "sha256": "a66add82b4fe860171d568919c9e87604c387006889d27ff2641167acbb72fac",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 79082,
+        "id": "met-c1-436106",
+        "localPath": "met/c1-436106.jpg",
+        "provider": "met",
+        "sha256": "7026adc2bcc2ecd5cbb4f4e3fe323a0d9cb4aebc24739ab09eeae92d83a10fbe",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 34939,
+        "id": "met-c1-205883",
+        "localPath": "met/c1-205883.jpg",
+        "provider": "met",
+        "sha256": "704a6a2176a613972ed59ac7ac659512b6ade60b9c62b5d00a0c8a5ae0a5f934",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 103427,
+        "id": "met-c1-436037",
+        "localPath": "met/c1-436037.jpg",
+        "provider": "met",
+        "sha256": "d27a9e240ecfdabc70eb0ade639f5f6904bda5301b45dbee4f7b291d578d6a53",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 55294,
+        "id": "met-c1-206698",
+        "localPath": "met/c1-206698.jpg",
+        "provider": "met",
+        "sha256": "53536d6a53412c9b321d1c2d12c56f3e7c4d4e6815201542b9c1772d8802491a",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 434071,
+        "httpStatus": 200,
+        "id": "aic-c1-4371",
+        "localPath": "aic/c1-4371.jpg",
+        "provider": "aic",
+        "sha256": "51e960e84b42f107dd6f1f272c4a6d9f236d246740291c32c41f64f8e5e77b75",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 383682,
+        "httpStatus": 200,
+        "id": "aic-c1-4368",
+        "localPath": "aic/c1-4368.jpg",
+        "provider": "aic",
+        "sha256": "cc6a81bedb6e503a95bd7c6c1b10a7182c8b15ab54e5306037ba8b606f80655f",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 353093,
+        "httpStatus": 200,
+        "id": "aic-c1-10926",
+        "localPath": "aic/c1-10926.jpg",
+        "provider": "aic",
+        "sha256": "5a9f7a11c24d0f9241b39655f3b2d3fdfc70309153ca48aebf5f24e624b49646",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 368350,
+        "httpStatus": 200,
+        "id": "aic-c1-4378",
+        "localPath": "aic/c1-4378.jpg",
+        "provider": "aic",
+        "sha256": "edd5549ef9648f02f88f881b63016cf856b17417f7dd85bbf305a997b1252e20",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 477953,
+        "httpStatus": 200,
+        "id": "aic-c1-4374",
+        "localPath": "aic/c1-4374.jpg",
+        "provider": "aic",
+        "sha256": "664890b8f52d7ce6c2a6a67b30cea54849b71184b18cbf08ab3a55999b4a88e3",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 339039,
+        "httpStatus": 200,
+        "id": "aic-c1-11050",
+        "localPath": "aic/c1-11050.jpg",
+        "provider": "aic",
+        "sha256": "d8b36db4d0e3cdcad4f634879bd2b5706191ca264c08f328438883c32d5d6a6a",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 3270166,
+        "id": "commons-c1-165149574",
+        "localPath": "commons/c1-165149574.png",
+        "provider": "commons",
+        "sha256": "53928ba6ad2701933ff76916a2bc7c5901f7a2efff6f7ff3cae52ab90e838744",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 3071855,
+        "id": "commons-c1-36576044",
+        "localPath": "commons/c1-36576044.jpg",
+        "provider": "commons",
+        "sha256": "d716574495703fdaa0ca62ba70a9944e6ff73648028bb7f2c5429f9784245d3a",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 2592437,
+        "id": "commons-c1-36576201",
+        "localPath": "commons/c1-36576201.jpg",
+        "provider": "commons",
+        "sha256": "4aa56174e24d3255ac01769edde8ac0b8da60980c0c775a78e1bccb895c21566",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 2018443,
+        "id": "commons-c1-36576224",
+        "localPath": "commons/c1-36576224.jpg",
+        "provider": "commons",
+        "sha256": "ec1646ebd3ca1e8e79716e7e5d1a0fef847ec96fb9546903b866f54196c49fb8",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 742902,
+        "id": "commons-c1-87476882",
+        "localPath": "commons/c1-87476882.jpg",
+        "provider": "commons",
+        "sha256": "25bd7b9f4634b2d2772cf19acbd883617c0133e082b80397dba2765cf365f0e6",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 2007778,
+        "id": "commons-c1-127462594",
+        "localPath": "commons/c1-127462594.jpg",
+        "provider": "commons",
+        "sha256": "5195211b4c8569c9e34579fea5cd96385bf188178db0211557d4b4aa98af68b4",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 9241,
+        "id": "ia-c1-paulwhiteman1920-1935completecollection",
+        "localPath": "ia/c1-paulwhiteman1920-1935completecollection.jpg",
+        "provider": "ia",
+        "sha256": "a73ce6a90964b6c5d31698890295387847828472cde5d6b919fe81bb35415af7",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 8910,
+        "id": "ia-c1-parlorbedroomandbathimagequalityupgrade",
+        "localPath": "ia/c1-parlorbedroomandbathimagequalityupgrade.jpg",
+        "provider": "ia",
+        "sha256": "71fa0a199f5a6705a2773393c921333f169cdba65e2bcb1597fb06a445ba9c03",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 8502,
+        "id": "ia-c1-classic_cartoons_201603",
+        "localPath": "ia/c1-classic_cartoons_201603.jpg",
+        "provider": "ia",
+        "sha256": "2431aa20b23d1480f17741c99be0107f7487e952f5d5a74bcd3d3be80c71dcb3",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 14615,
+        "id": "ia-c1-daddavefromsnakegullyaus",
+        "localPath": "ia/c1-daddavefromsnakegullyaus.jpg",
+        "provider": "ia",
+        "sha256": "7d2a4fb8cf83b373eba6fb7caa9c897ca3bb0a23651c8c70e79437a5d8353513",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 7345,
+        "id": "ia-c1-the-archive-boogie",
+        "localPath": "ia/c1-the-archive-boogie.jpg",
+        "provider": "ia",
+        "sha256": "4d22a0015d7db7807f89c8c754fd7615146ca5af12d91af62e01dd91c1a51202",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 7501,
+        "id": "ia-c1-suds_1920",
+        "localPath": "ia/c1-suds_1920.jpg",
+        "provider": "ia",
+        "sha256": "eb1219abc9186fcbdd6e06136dc7916512bf0277859d499b5dcdab5714430971",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      }
+    ],
+    "schema": "kfb.pd-pool-run-report/0.1"
+  },
+  "newPayloadBytes": 16684256,
+  "poolRowsAfter": 28,
+  "rejected": 0,
+  "rejectedIds": [],
+  "schema": "kfb.pd-pool-c1-test/0.1",
+  "secondRun": {
+    "counts": {
+      "loaded": 0,
+      "rejected": 0,
+      "unchanged": 24
+    },
+    "generatedAt": "2026-09-28T19:03:31+00:00",
+    "manifest": "tools/public_domain/pd-c1-curated-manifest.jsonl",
+    "results": [
+      {
+        "bytes": 175361,
+        "id": "met-c1-397573",
+        "localPath": "met/c1-397573.jpg",
+        "provider": "met",
+        "sha256": "c50b25b93d77fec5065a43c0a8a57c8371bfe615c3d97f70622d6bdc97694b57",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 120270,
+        "id": "met-c1-436918",
+        "localPath": "met/c1-436918.jpg",
+        "provider": "met",
+        "sha256": "a66add82b4fe860171d568919c9e87604c387006889d27ff2641167acbb72fac",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 79082,
+        "id": "met-c1-436106",
+        "localPath": "met/c1-436106.jpg",
+        "provider": "met",
+        "sha256": "7026adc2bcc2ecd5cbb4f4e3fe323a0d9cb4aebc24739ab09eeae92d83a10fbe",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 34939,
+        "id": "met-c1-205883",
+        "localPath": "met/c1-205883.jpg",
+        "provider": "met",
+        "sha256": "704a6a2176a613972ed59ac7ac659512b6ade60b9c62b5d00a0c8a5ae0a5f934",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 103427,
+        "id": "met-c1-436037",
+        "localPath": "met/c1-436037.jpg",
+        "provider": "met",
+        "sha256": "d27a9e240ecfdabc70eb0ade639f5f6904bda5301b45dbee4f7b291d578d6a53",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 55294,
+        "id": "met-c1-206698",
+        "localPath": "met/c1-206698.jpg",
+        "provider": "met",
+        "sha256": "53536d6a53412c9b321d1c2d12c56f3e7c4d4e6815201542b9c1772d8802491a",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 434071,
+        "id": "aic-c1-4371",
+        "localPath": "aic/c1-4371.jpg",
+        "provider": "aic",
+        "sha256": "51e960e84b42f107dd6f1f272c4a6d9f236d246740291c32c41f64f8e5e77b75",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 383682,
+        "id": "aic-c1-4368",
+        "localPath": "aic/c1-4368.jpg",
+        "provider": "aic",
+        "sha256": "cc6a81bedb6e503a95bd7c6c1b10a7182c8b15ab54e5306037ba8b606f80655f",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 353093,
+        "id": "aic-c1-10926",
+        "localPath": "aic/c1-10926.jpg",
+        "provider": "aic",
+        "sha256": "5a9f7a11c24d0f9241b39655f3b2d3fdfc70309153ca48aebf5f24e624b49646",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 368350,
+        "id": "aic-c1-4378",
+        "localPath": "aic/c1-4378.jpg",
+        "provider": "aic",
+        "sha256": "edd5549ef9648f02f88f881b63016cf856b17417f7dd85bbf305a997b1252e20",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 477953,
+        "id": "aic-c1-4374",
+        "localPath": "aic/c1-4374.jpg",
+        "provider": "aic",
+        "sha256": "664890b8f52d7ce6c2a6a67b30cea54849b71184b18cbf08ab3a55999b4a88e3",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 339039,
+        "id": "aic-c1-11050",
+        "localPath": "aic/c1-11050.jpg",
+        "provider": "aic",
+        "sha256": "d8b36db4d0e3cdcad4f634879bd2b5706191ca264c08f328438883c32d5d6a6a",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 3270166,
+        "id": "commons-c1-165149574",
+        "localPath": "commons/c1-165149574.png",
+        "provider": "commons",
+        "sha256": "53928ba6ad2701933ff76916a2bc7c5901f7a2efff6f7ff3cae52ab90e838744",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 3071855,
+        "id": "commons-c1-36576044",
+        "localPath": "commons/c1-36576044.jpg",
+        "provider": "commons",
+        "sha256": "d716574495703fdaa0ca62ba70a9944e6ff73648028bb7f2c5429f9784245d3a",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 2592437,
+        "id": "commons-c1-36576201",
+        "localPath": "commons/c1-36576201.jpg",
+        "provider": "commons",
+        "sha256": "4aa56174e24d3255ac01769edde8ac0b8da60980c0c775a78e1bccb895c21566",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 2018443,
+        "id": "commons-c1-36576224",
+        "localPath": "commons/c1-36576224.jpg",
+        "provider": "commons",
+        "sha256": "ec1646ebd3ca1e8e79716e7e5d1a0fef847ec96fb9546903b866f54196c49fb8",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 742902,
+        "id": "commons-c1-87476882",
+        "localPath": "commons/c1-87476882.jpg",
+        "provider": "commons",
+        "sha256": "25bd7b9f4634b2d2772cf19acbd883617c0133e082b80397dba2765cf365f0e6",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 2007778,
+        "id": "commons-c1-127462594",
+        "localPath": "commons/c1-127462594.jpg",
+        "provider": "commons",
+        "sha256": "5195211b4c8569c9e34579fea5cd96385bf188178db0211557d4b4aa98af68b4",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 9241,
+        "id": "ia-c1-paulwhiteman1920-1935completecollection",
+        "localPath": "ia/c1-paulwhiteman1920-1935completecollection.jpg",
+        "provider": "ia",
+        "sha256": "a73ce6a90964b6c5d31698890295387847828472cde5d6b919fe81bb35415af7",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 8910,
+        "id": "ia-c1-parlorbedroomandbathimagequalityupgrade",
+        "localPath": "ia/c1-parlorbedroomandbathimagequalityupgrade.jpg",
+        "provider": "ia",
+        "sha256": "71fa0a199f5a6705a2773393c921333f169cdba65e2bcb1597fb06a445ba9c03",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 8502,
+        "id": "ia-c1-classic_cartoons_201603",
+        "localPath": "ia/c1-classic_cartoons_201603.jpg",
+        "provider": "ia",
+        "sha256": "2431aa20b23d1480f17741c99be0107f7487e952f5d5a74bcd3d3be80c71dcb3",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 14615,
+        "id": "ia-c1-daddavefromsnakegullyaus",
+        "localPath": "ia/c1-daddavefromsnakegullyaus.jpg",
+        "provider": "ia",
+        "sha256": "7d2a4fb8cf83b373eba6fb7caa9c897ca3bb0a23651c8c70e79437a5d8353513",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 7345,
+        "id": "ia-c1-the-archive-boogie",
+        "localPath": "ia/c1-the-archive-boogie.jpg",
+        "provider": "ia",
+        "sha256": "4d22a0015d7db7807f89c8c754fd7615146ca5af12d91af62e01dd91c1a51202",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 7501,
+        "id": "ia-c1-suds_1920",
+        "localPath": "ia/c1-suds_1920.jpg",
+        "provider": "ia",
+        "sha256": "eb1219abc9186fcbdd6e06136dc7916512bf0277859d499b5dcdab5714430971",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      }
+    ],
+    "schema": "kfb.pd-pool-run-report/0.1"
+  },
+  "sourceHead": "$GITHUB_SHA",
+  "status": "PASS"
+}
