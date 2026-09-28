@@ -1,0 +1,24 @@
+{
+ "schema": "kfb.source/1",
+ "id": "CLAY-CITY-MVP-01",
+ "executor": "Claude Coworker Desktop",
+ "repo": "georg-doc/kayfabizarro",
+ "branch": "coworker/clay-city-mvp-01-2026-09-28",
+ "base": { "branch": "work/world-m2a-r6-focus-quality-2026-09-28", "commit": "09077e1fe0c1a03c7d8283cc3280b8c3dfae884c", "pr": 282 },
+ "brief": { "pr": 283, "path": "skills/chat/workflows/KFB_RESIDENT_UI_COWORKER_CLAY_CITY_2026-09-28/CLAUDE_COWORKER_CLAY_CITY_MVP_01.md" },
+ "runtimeHeadTested": "d79d311066e52893f8a33700c4d5eb4b26e5ca26",
+ "reviewPage": { "url": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/clay-city-mvp-01/", "branch": "cloudflare-live", "wrapperOf": "kfb-hub/stage/world/clay-city-mvp-01/index.html@d79d311066e52893f8a33700c4d5eb4b26e5ca26" },
+ "host": { "dir": "kfb-hub/stage/world/world-drive-interact-m2a/", "modified": false, "owners": { "terrainHeight": "WB2 app.terrainHeightAt", "walker": "World r2 wi1-play", "drive": "Race PR10 FREE_ROAM_C0 physics.js", "flight": "Travel PR39 card carrier", "clay": "H0 Hirnwelt clay-material.v4" } },
+ "donors": { "pin": "7cc4a4f3fc40fcad56e75ddf587b77cd856e202c", "file": "DONOR_ISOLATION.json", "count": 13, "families": ["KayKit City Builder Bits 1.0", "Kenney City Kit Suburban 2.0", "Tiny Treats Homely House 1.0"] },
+ "track": {
+  "visualOwner": "KFB Knet-Strecke T4 (T4_M2_CANDIDATE)",
+  "intake": { "dir": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T4/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/", "zipBytes": 1433281, "zipSha256": "101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a", "receipt": "6d9b0cd8-bc29-4b8b-b41f-5821eef69d21" },
+  "modulesImported": ["lab-clay/clay-material.v10.js", "lab-clay/clay-relief.v2.js", "lab-clay/clay-toolmix.v1.js", "lab-track/transition-atlas.v1.js", "lab-track/road-markings.m1.js", "lab-track/road-markings.m2.js"],
+  "portedFrom": "lab-track/track-look.v5.js (sideProfile, ringOf, deck strip, ROAD shader, lips)",
+  "contactOwner": "Track Core kfb.track-core/0.8.1 TD03_UNICENTER_DRIFT fingerprint 256f2478",
+  "window": { "s0": 1245, "s1": 1407.6, "socket": "kicker KICKER" },
+  "placement": "one rigid transform (yaw + translation, deck to ground height); no sample edited"
+ },
+ "osm": { "kept": ["road graph (centre lines, class, names)"], "hidden": ["building extrusions", "far shells", "facade details", "canvas ground/road map", "rails", "zone edge"], "collisionRemoved": ["world-buildings trimesh (700 footprints)"] },
+ "sky": { "contract": "kfb.sky-core/1", "BASIC": "own", "TINY_SKIES": "World wd-sky.js → travel_globe_wsa/globe-v13/sky-presets.js paintRadialSky", "default": "TINY_SKIES day" }
+}

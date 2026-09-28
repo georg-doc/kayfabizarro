@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLAY-CITY-MVP-01 · Donor-Isolation (Gate 0)</title>
+<style>
+body{margin:0;background:#f3efe6;font:13px/1.4 system-ui,sans-serif;color:#2b2328}
+h1{font-size:16px;margin:14px 16px 4px}p{margin:0 16px 10px;color:#6b5d57}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;padding:0 16px 16px}
+.c{background:#fffaf0;border:1px solid #71563e33;border-radius:12px;overflow:hidden}
+.c canvas{display:block;width:100%;aspect-ratio:1;background:#e9e3d6}
+.c pre{margin:0;padding:8px 10px;font:11px/1.35 ui-monospace,monospace;white-space:pre-wrap}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<h1>Donor-Isolation · jedes Gebäude einzeln, exakt die Datei, die die Knetstadt instanziert</h1>
+<p>Quelle: <code>kit-donors.mjs</code> (ein Pin, ein Pfad je Donor). Werte: Maße (Quell-Einheiten), Pivot, Materialien, Dreiecke, Ladezeit.</p>
+<div id="grid"></div>
+<script type="module">
+import * as THREE from 'three';
+import { DONORS, loadDonor, measureDonor, ASSET_PIN } from './kit-donors.mjs';
+const grid = document.getElementById('grid'), R = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+R.setSize(420, 420); R.outputColorSpace = THREE.SRGBColorSpace;
+const out = [];
+for (const d of DONORS) {
+  const card = document.createElement('div'); card.className = 'c'; const cv = document.createElement('canvas'); cv.width = cv.height = 420; const pre = document.createElement('pre'); card.append(cv, pre); grid.append(card);
+  try {
+    const l = await loadDonor(d), m = measureDonor(l); out.push(m);
+    const sc = new THREE.Scene(); sc.background = new THREE.Color('#e9e3d6'); sc.add(new THREE.HemisphereLight(0xffffff, 0x998877, 2.2)); const dl = new THREE.DirectionalLight(0xffffff, 2.2); dl.position.set(3, 6, 5); sc.add(dl);
+    const b = new THREE.Box3().setFromObject(l.scene), s = b.getSize(new THREE.Vector3()), c = b.getCenter(new THREE.Vector3()), r = Math.max(s.x, s.y, s.z);
+    sc.add(l.scene); const cam = new THREE.PerspectiveCamera(30, 1, r / 100, r * 20); cam.position.set(c.x + r * 1.6, c.y + r * 1.0, c.z + r * 2.4); cam.lookAt(c);
+    R.render(sc, cam); cv.getContext('2d').drawImage(R.domElement, 0, 0);
+    pre.textContent = `${m.id} · ${m.family}\n${m.path.split('/').pop()}\nsize ${m.sizeM.join(' × ')} · minY ${m.pivot.minY}\n${m.triangles} tris · ${m.meshes} mesh · ${Object.keys(m.materials).join(', ')}\nload ${m.loadMs} ms`;
+  } catch (e) { pre.textContent = d.id + ' · QUARANTINE · ' + e.message; out.push({ id: d.id, error: e.message }); }
+}
+window.__donorIsolation = { schema: 'kfb.clay-city-donor-isolation/1', pin: ASSET_PIN, donors: out };
+</script>
+</body>
+</html>

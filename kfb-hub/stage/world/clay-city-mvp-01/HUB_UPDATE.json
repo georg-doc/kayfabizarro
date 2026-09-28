@@ -1,0 +1,14 @@
+{
+ "schema": "kfb.hub-update/1",
+ "id": "CLAY-CITY-MVP-01",
+ "title": "Knetstadt zum Spielen: Straße, Häuser, T4-Strecke, Himmel",
+ "status": "REVIEW_READY · HUMAN_PLAYTEST_PENDING",
+ "result": "Eine Spielkachel in Hürth: glatte Knetstraße statt Pixelkante, 64 Häuser aus echten KayKit-/Kenney-/Tiny-Treats-Bausteinen, ein 7-stöckiges Wahrzeichen, ein Stück T4-Knetstrecke zum Reinfahren, TinySkies-Himmel. Auto, Offroad, Strecke und Flug laufen im Test; das Laufen zu Fuß ist weiterhin zu langsam (altes Problem, nicht neu).",
+ "testLink": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/clay-city-mvp-01/",
+ "testLinkProbe": "https://kayfabizarro.pages.dev/kfb-hub/pruefen/clay-city-mvp-01/?probe=1",
+ "tests": { "playProbe": "6/7", "donors": "13/13", "t4Intake": "52/52", "drawCallsVsR6": "-45 … -68 %", "trianglesVsTarget": "213–240k / 200k (not met)" },
+ "nextAction": "Georg spielt die Kachel frei (zu Fuß, Auto, T4-Strecke, Flug) und sagt, was als Einziges als Nächstes repariert wird.",
+ "branch": "coworker/clay-city-mvp-01-2026-09-28",
+ "runtimeHead": "d79d311066e52893f8a33700c4d5eb4b26e5ca26",
+ "updatedAt": "2026-09-29"
+}

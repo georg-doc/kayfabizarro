@@ -1,0 +1,311 @@
+{
+ "schema": "kfb.clay-city-donor-isolation/1",
+ "gate": "0 · prove real donors",
+ "repo": "georg-doc/kayfabizarro",
+ "pin": "7cc4a4f3fc40fcad56e75ddf587b77cd856e202c",
+ "root": "media/3D_Assets/",
+ "method": "each file loaded alone with GLTFLoader from the pin; Box3 of the loaded scene; triangle count from index/position; materials by name; rendered alone on a neutral stage (contact sheet 2026-09-29, reproducible via donors.html). Storeys counted on the isolated render; scale = world metres per source unit chosen for ~3.3 m storeys (KayKit) / ~9 m house width (Kenney) / Tiny Treats already in metres.",
+ "pivotNote": "KayKit *_withoutBase files float 0.1 units above origin; flattenDonor() re-pivots every donor to base y=0, footprint centred.",
+ "quarantined": [],
+ "donors": [
+  {
+   "id": "kk-A",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_A_withoutBase.gltf",
+   "sizeSourceUnits": [
+    1.207,
+    1.55,
+    1.45
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0.075
+   ],
+   "meshes": 1,
+   "triangles": 435,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 2,
+   "worldScale": 5.6,
+   "role": "shop"
+  },
+  {
+   "id": "kk-B",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_B_withoutBase.gltf",
+   "sizeSourceUnits": [
+    1.607,
+    1.55,
+    1.3
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 586,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 2,
+   "worldScale": 5.6,
+   "role": "row"
+  },
+  {
+   "id": "kk-C",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_C_withoutBase.gltf",
+   "sizeSourceUnits": [
+    1.207,
+    2.25,
+    1.3
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 666,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 3,
+   "worldScale": 5.6,
+   "role": "row"
+  },
+  {
+   "id": "kk-D",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_D_withoutBase.gltf",
+   "sizeSourceUnits": [
+    1.607,
+    2.25,
+    1.3
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 848,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 3,
+   "worldScale": 5.6,
+   "role": "row"
+  },
+  {
+   "id": "kk-E",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_E_withoutBase.gltf",
+   "sizeSourceUnits": [
+    2.007,
+    2.25,
+    1.45
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0.075
+   ],
+   "meshes": 1,
+   "triangles": 950,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 3,
+   "worldScale": 5.6,
+   "role": "shop"
+  },
+  {
+   "id": "kk-F",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_F_withoutBase.gltf",
+   "sizeSourceUnits": [
+    2.007,
+    2.25,
+    1.3
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 1097,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 3,
+   "worldScale": 5.6,
+   "role": "shop"
+  },
+  {
+   "id": "kk-G",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_G_withoutBase.gltf",
+   "sizeSourceUnits": [
+    2.007,
+    2.25,
+    1.45
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0.075
+   ],
+   "meshes": 1,
+   "triangles": 1053,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 3,
+   "worldScale": 5.6,
+   "role": "row"
+  },
+  {
+   "id": "kk-H",
+   "family": "kaykit-city",
+   "path": "KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_H_withoutBase.gltf",
+   "sizeSourceUnits": [
+    2.007,
+    2.95,
+    1.3
+   ],
+   "pivotMinY": 0.1,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 1333,
+   "materials": [
+    "citybits_texture"
+   ],
+   "storeys": 4,
+   "worldScale": 5.6,
+   "role": "accent"
+  },
+  {
+   "id": "ks-a",
+   "family": "kenney-suburban",
+   "path": "kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb",
+   "sizeSourceUnits": [
+    1.3,
+    0.834,
+    1.028
+   ],
+   "pivotMinY": 0,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 1174,
+   "materials": [
+    "colormap"
+   ],
+   "storeys": 1,
+   "worldScale": 7.2,
+   "role": "house"
+  },
+  {
+   "id": "ks-c",
+   "family": "kenney-suburban",
+   "path": "kenney_city-kit-suburban_20/Models/GLB format/building-type-c.glb",
+   "sizeSourceUnits": [
+    1.286,
+    1.034,
+    1.028
+   ],
+   "pivotMinY": 0,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 1196,
+   "materials": [
+    "colormap"
+   ],
+   "storeys": 1,
+   "worldScale": 7.2,
+   "role": "house"
+  },
+  {
+   "id": "ks-h",
+   "family": "kenney-suburban",
+   "path": "kenney_city-kit-suburban_20/Models/GLB format/building-type-h.glb",
+   "sizeSourceUnits": [
+    1.3,
+    0.737,
+    0.916
+   ],
+   "pivotMinY": 0,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 770,
+   "materials": [
+    "colormap"
+   ],
+   "storeys": 1,
+   "worldScale": 7.2,
+   "role": "house"
+  },
+  {
+   "id": "ks-m",
+   "family": "kenney-suburban",
+   "path": "kenney_city-kit-suburban_20/Models/GLB format/building-type-m.glb",
+   "sizeSourceUnits": [
+    1.428,
+    0.737,
+    1.428
+   ],
+   "pivotMinY": 0,
+   "centreXZ": [
+    0,
+    0
+   ],
+   "meshes": 1,
+   "triangles": 1112,
+   "materials": [
+    "colormap"
+   ],
+   "storeys": 1,
+   "worldScale": 7.2,
+   "role": "house"
+  },
+  {
+   "id": "tt-house",
+   "family": "tinytreats-house",
+   "path": "Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf",
+   "sizeSourceUnits": [
+    5.9,
+    6.5,
+    6.542
+   ],
+   "pivotMinY": 0,
+   "centreXZ": [
+    0,
+    1.054
+   ],
+   "meshes": 4,
+   "triangles": 3759,
+   "materials": [
+    "tiny_treats_1"
+   ],
+   "storeys": 1,
+   "worldScale": 1.3,
+   "role": "house"
+  }
+ ]
+}
