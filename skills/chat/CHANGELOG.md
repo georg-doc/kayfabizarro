@@ -1,3 +1,14 @@
+Warning: truncated output (original token count: 31614)
+Total output lines: 2064
+
+## 2026-09-28 · Resident UI Core + Claude Coworker Clay City MVP
+
+The Resident Atlas S11 Graveyard/Dancing Skeletons session cut is accepted as useful content input, not as the shared UI standard. Georg's review proves three competing edit surfaces and a Graveyard/GothGirl context leak. `RESIDENT-UI-CORE-01` therefore makes the complete inline editor the single primary object-edit surface, moves measurements into a collapsed inspector and requires the accepted current ToolBox design. Claude Design Desktop returns an artifact package and does not own GitHub.
+
+World integration routing is corrected from the earlier default GPT executor recommendation: Georg selected Claude Coworker Desktop for the bounded productive implementation because current OpenAI Work budget is limited. `CLAY-CITY-MVP-01` builds one 184 m playable tile with geometric road, verified instanced kit buildings, Ground/direct Auto/Drive/Flight and a measured Basic/TinySkies environment. Coworker writes GitHub checkpoints plus a Site-ingestible handoff; direct private GPT Site access is not assumed.
+
+`KFB Knet-Strecke T4` is the required current Track-look donor for the integrated playable segment. No exact T4 file/ref is discoverable on GitHub main at this checkpoint, so it is explicitly `SOURCE_REQUIRED`; older T2/T3 visuals may not be silently substituted. The S11 snapshot's claim that PR #279 is defective is also stale: current PR #279 @ `10a2c5e29bf752215dadb60b23f07253f63e9d34` is the complete 63/63 repair candidate and must be rechecked at execution time.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
@@ -941,124 +952,7 @@ At commit preparation this is **LOCAL 87/87 · PUBLIC PENDING**. No consumer pro
 
 **Do not promote:** dense 45-zone terrain strip + separate visual road ribbon as production Track.
 
-**New planning:** `KFB-Travel-Globe/site/terrain-corridor-tc01/RED_TEAM_WORLD_SURFACE_PIVOT.md`.
-
-**Next bounded proof:** same short route A/B/C:
-- host terrain alone;
-- direct existing-face Track grading/material mask;
-- locally refined SurfacePatch derived from the host polygons.
-
-The Track style proof must use continuous material masks, close zoom and no face-by-face colour noise.
-
-OSM follows after this gate: geographic/semantic truth → WorldSurface adapter → stylised OMS/KFB buildings/landmarks. TinySkies stays a spherical-world donor, not the only KFB topology.
-
-
-## 2026-09-20 · ToolBox KayKit Motion Lab · public 87/87 PASS
-
-### IMPLEMENTATION
-ToolBox-owned Motion/Animation-Lab candidate for:
-- FrizzleBob · Driver Graft · Rig_Medium;
-- GothGirl · Rig_Medium;
-- Black Knight · Rig_Large.
-
-The exact tested runtime mirrors implementation head `3ab2a439b013b816e843ea303e7015a26ee2aff8`.
-
-### PUBLIC EVIDENCE
-Fixed Stage:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/kaykit-motion-lab-v1/`
-
-Run `35484127790`, public-proof job `106007210838`:
-- **87/87 PASS**;
-- artifact `10596912462`;
-- digest `sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4`;
-- FrizzleBob / GothGirl / Black Knight screenshots;
-- 0 failed resources;
-- 0 page/console errors.
-
-### FINDINGS
-- Medium shared motion facts: 25 bindable General+MovementBasic clips; candidate Walk/Run handoff ~1.108 with a small ~0.016 playback-window gap at the current technical clamp.
-- Large Black Knight: 8 bindable clips in the tested sets; Walk/Run handoff ~1.811 near native rates (~1.02× / ~0.97×); Running_A automatic slip remains high and needs visual review.
-- Running_B stays HOLD on Medium.
-- Large does not inherit Medium clips/timing.
-- Attachments remain source-pinned proposals, not accepted mounts.
-
-`PUBLIC_VERIFIED = YES`.
-
-Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.
-
-
-## 2026-09-20 · EyeRig Batch · four Large profiles accepted + actor-specific lid color
-
-### ACCEPTED LARGE PROFILES
-Georg's reviewed batch from `tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json` at `main@52532aee17f85324a6d04ab53150216f00ac5d89` is now the canonical per-character Large baseline.
-
-Accepted:
-- Monstrosity
-- Black Knight
-- Demon Lord
-- Orc Brute
-
-Canonical copy: `tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json`.
-
-### LID COLOR FIX
-The common pink fallback `#b58f83` is no longer persisted for generic actors.
-
-A new source-head sampler reads each loaded actor's own face/head texture around the eye placement. The sampled color becomes the EyeRig base color; existing EyeRig v6 remains the owner that darkens it for lids. Explicit actor colors such as GothGirl remain untouched.
-
-### EVIDENCE
-- implementation `480c5770ef8ef391043b0b93ec3f51b04af7dfef`;
-- evidence `40c2f920a96ea00bf99593610a49a646b2e0873c`;
-- source/Return `e277c3456651d314a01adea046e0105d2a12cdd1`;
-- Stage `e9f97c594bce46607e95928dd349cf081c36783d`;
-- **95/95 PASS**;
-- **4/4 runtime-critical JS syntax PASS**.
-
-### NEXT
-Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
-
-## 2026-09-20 · MVP integration board and bounded briefs
-
-Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
-
-
-## 2026-09-21 · Hub UI v2 accepted + ToolBox v2 route audit
-
-### HUMAN ACCEPTANCE
-Georg accepted the public Hub UI v2 Paper/Dark candidate and asked to check it in and use it. PR #141 is retained as design/evidence history but not merged wholesale because it is behind newer Hub content.
-
-### IMPLEMENTATION
-A current-main promotion branch ports the accepted Paper/Dark theme, shareable hash routes and Stage/Live previews onto the latest Hub data. ToolBox becomes a prominent header destination and receives the same v2 presentation grammar.
-
-### TOOLBOX ROUTE AUDIT
-Against the current Cloudflare publication tree: 6 exact public preview routes, 5 missing/blocked routes and 6 source/integration gates. Missing routes no longer pretend to have previews. Vehicle Deformer v2 and KayKit Ranged Calibration are surfaced as real public Stage tools; KCC remains PUBLIC BLOCKED.
-
-### WORLDSURFACE I1A
-Travel branch `wsa/worldsurface-trackpatch-i1-2026-09-20@d9d9d93c286fa52551ee881292a4db426a4cb8fc` is locally green (72/72). B changes 99 host vertices but is coarse; C replaces 380 source triangles with 6,080 refined triangles, with zero measured seam displacement and zero outside-patch mutation. C is technical leader only; Georg's visual B/C/neither gate remains open.
-
-
-## 2026-09-21 · Hub/ToolBox v2 publication checkpoint
-
-Hub UI v2 + ToolBox v2 promotion merged at `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`. The exact public files were copied to and read back from `cloudflare-live@cbbae810e6ddb8f282e702d0897bed8566361327`. Direct `kayfabizarro.pages.dev` browser verification is still pending because this session's HTTP viewer cannot access that host; no PUBLIC_VERIFIED claim is made yet.
-
-
-## 2026-09-21 · Hub/ToolBox v2 status consistency refresh
-
-### USER DIRECTION
-Keep the accepted Hub UI v2, use the same design language for ToolBox and make ToolBox prominent in the KFB Hub.
-
-### IMPLEMENTATION
-Retain the accepted Paper/Dark Hub + ToolBox v2 surfaces, remove stale “review Hub UI v2” and “15-card ToolBox” copy, add ToolBox to the Hub fallback and KFB Stage router, and refresh the ToolBox route audit against the current Cloudflare publication tree.
-
-### TESTED RESULT
-**18/18 source/tree checks PASS** on branch `hub/toolbox-v2-status-refresh-2026-09-21` at `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`. ToolBox truth remains 17 cards = 6 public previews + 5 missing/blocked + 6 source/integration gates. No fake preview is introduced.
-
-### PUBLICATION BOUNDARY
-GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabizarro.pages.dev` URLs must still show the v2 revision before a new PUBLIC_VERIFIED claim.
-
-
-### PUBLICATION SEAL · Hub/ToolBox v2 status refresh
-- PR #153 merged: `dfaafac070747f9543b5eb5a635e2aaa74e57b83`
-- exact Hub/Stage/ToolBox-audit files mirrored to `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
+**New planning:** `KFB-Tra…1614 tokens truncated…e@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
 - publication-branch blob readback: PASS
 - direct pages.dev verification: PENDING because both available HTTP paths are blocked in this session; no new PUBLIC_VERIFIED claim.
 

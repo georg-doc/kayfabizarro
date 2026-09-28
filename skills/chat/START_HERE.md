@@ -113,6 +113,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — lock-first WSA/Astra playable loop
 - `workflows/KFB_THEATRE_CURTAIN_CORE_V2_2026-09-21/START_HERE.md` — reusable cutscene/loading/instance transition seam
 - `workflows/KFB_TOOLBOX_FLUID_CARD_VOXEL_CONSOLIDATION_V1_2026-09-21/START_HERE.md` — verified intake, source census and bounded module proofs
+- `workflows/KFB_RESIDENT_UI_COWORKER_CLAY_CITY_2026-09-28/START_HERE.md` — current split: Claude Design fixes the shared Resident/ToolBox UI; Claude Coworker Desktop implements one playable Clay City + T4 Track + shared Sky tile with GitHub-to-Site handoff
 - `tool-nodes/` — current tool/project entry cards
 - `consumers/` — project/chat-specific sync adapters without copied skill bodies
 
@@ -1290,4 +1291,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-
