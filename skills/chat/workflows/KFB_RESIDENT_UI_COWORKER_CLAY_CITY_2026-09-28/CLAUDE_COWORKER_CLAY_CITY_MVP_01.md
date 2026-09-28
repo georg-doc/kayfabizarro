@@ -26,6 +26,8 @@ Georg's first human test fixes the repair priority without another decision gate
 
 The next implementation pass is one coherent **playability + look acceptance repair**, not a choice between unrelated micro-gates: correct the movement owner and animation timing, complete the bounded H0/K2 building/facade treatment, then trim triangles and rerun the same Ground/Auto/T4/Flight probe. T4 extras and the Resident pocket remain secondary until this acceptance pass is green.
 
+The candidate currently places 64–66 buildings, although this brief asked for approximately 12–36 instances in 4–8 readable clusters. Treat that as scope drift, not as a new density target. The first triangle/composition lever is to return to a few strong street/landmark clusters and spend the saved budget on visible Clay facade quality. Do not first degrade the geometric road, continuous ground or hero buildings.
+
 Execution environment: **Claude Coworker Desktop**. Capability note confirmed on 2026-09-28: this Coworker session has Dropbox and Chrome/GitHub access, but no real local Git checkout or local server. Work through the existing GitHub branch and review browser surfaces with small crash-safe commits. Do not claim local tests that this environment cannot run, and do not publish every micro-checkpoint to the fixed public Stage.
 
 ## Recover exact truth first

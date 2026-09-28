@@ -23,6 +23,8 @@ Production defaults are intentionally conservative: `upright` is the standing-ta
 
 The first Clay City implementation landed on `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49`. It is a meaningful technical improvement: 6/7 play probe, 13/13 donors, 52/52 T4 intake and 45–68% fewer draw calls than R6. Georg's human result is `TUNE`, not PASS: Ground walking remains too slow/wrongly timed, facade/building Clay deformation is incomplete, triangles exceed budget and real visible performance remains unproven. The next gate is one combined playability + look acceptance repair, not another user choice or isolated micro-slice.
 
+The candidate's 64–66 buildings also exceed this brief's intended 12–36 instances. The preferred triangle trim is therefore a return to 4–8 strong scene clusters, preserving hero buildings, road and continuous terrain while reinvesting the saved budget in visible Clay facade quality.
+
 Resident/Design execution is also de-fragmented: the already running chat continues the whole Job A. Paving uses K2 medium-scale relief at reduced amplitude; shared pack textures remain as tinted detail sources, with flat colour only as a low-end fallback. T4/M2 is now readable directly from the Coworker branch. No fresh chat, T4 re-upload or interim editor-only human gate is required.
 
 ## Evidence used
