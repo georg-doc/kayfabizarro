@@ -307,3 +307,50 @@ Learned Signature Moves are reusable **social tokens**, not dead collection entr
 When the player performs a learned Signature inside an actor's attention field, emit `dance.signature.perform` with performer, move, origin Resident, witnesses and source-event provenance. The original teacher may join, approve, correct, challenge with another move, parody, ignore or recall the teaching event through their own Reaction/Memory profile. Other Residents recognize the move only when their authored knowledge or memory supports it.
 
 A tiny bounded `dance_exchange` thread may open and then return both actors to Common Bounce or their prior activity. Player Journey remains authoritative for the unlock; Resident Lean Memory may store only the socially meaningful teaching/use event.
+
+
+## Additive recovery checkpoint · Resident Gift Culture · 2026-09-28
+
+Latest verified design checkpoint before this Recovery write: `d0d9751b5b6d5a7099cf75b5039de2bb0ded8377`.
+
+New durable design:
+`RESIDENT_GIFT_CULTURE_2026-09-28.md`.
+
+Source stack expanded to **23** pinned entries with:
+- Santa `Santa.glb` + five exact wrapper variants `Present_A–E`;
+- Helper_A / Helper_B;
+- Helpers toy-workshop GLTF tree;
+- existing Toy Soldier reveal source already pinned as the timing/unwrap donor.
+
+Recovered Gift Culture state:
+```text
+real gift wrapper + real payload
+→ giver offers
+→ recipient notices / expects meaning
+→ accept / refuse / inspect
+→ Toy-Soldier-derived anticipation/pop reveal
+→ character-specific Reaction Choreography
+→ optional ChatterBox/Triplet
+→ validated ownership/provenance update
+→ keep / use / regift / countergift / prank
+→ bounded escalation if warranted
+→ reconcile / cooldown / return
+```
+
+Hard separations:
+- wrapper identity is never payload identity;
+- dialogue/LLM never creates or transfers an object;
+- player-facing durable gift provenance belongs to Player Journey / Meta;
+- real item ownership stays with existing inventory/world owner;
+- prank/exploding present is social/Kayfabe cartoon violence by default; Combat owns real damage only if explicitly invoked.
+
+Failure Spiral working budget:
+`warm/neutral → tease → slapstick → Kayfabe blowout → reconciliation/cooldown/return`.
+
+Future North-Pole scene is separate and source-first:
+- verified: Santa, Helper_A/B, Present_A–E, Candycane, Drawers, Glue A/B, Hammer, Lamp_Workbench, Toy trains, Toy workbenches;
+- still `SOURCE_REQUIRED`: winter/North-Pole environment and exact Holiday/Jingle-Bells-like audio source.
+
+Evidence: **23/23 source reads · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture PASS**. Runtime/browser/Stage remain 0.
+
+Single integrated next gate remains **RESIDENT-SOCIAL-MEMORY-01**. Gift Culture should enter after the basic POI/AIDA/reaction/resume seam and first Dance mappings; no separate Gift-game runtime or proxy Stage.
