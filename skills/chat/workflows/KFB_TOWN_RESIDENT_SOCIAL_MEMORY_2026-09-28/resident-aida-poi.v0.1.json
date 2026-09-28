@@ -1,0 +1,252 @@
+{
+  "schema": "kfb.resident-aida-poi/0.1-proposal",
+  "status": "DESIGN_PROPOSAL_NOT_RUNTIME",
+  "date": "2026-09-28",
+  "owner": "KFB Town design reference",
+  "receivingOwners": {
+    "world": "existing WorldBuilder/Travel/game host",
+    "persistence": "existing Journey/Almanac/session owner",
+    "dialogue": "existing ChatterBox/Triplet lineage",
+    "acting": "existing ToolBox/Resident + Reaction Choreography",
+    "resources": "existing world/resource consumer",
+    "combat": "existing Combat consumer"
+  },
+  "principle": "Residents have a meaningful resumable activity before and after interaction; perception and personal goals decide what interrupts it.",
+  "aida": {
+    "note": "KFB gameplay sequence; not the classic marketing acronym.",
+    "states": [
+      "attention",
+      "curiosity_interest",
+      "expectation",
+      "interaction",
+      "reaction",
+      "interpret_remember_update_thread",
+      "return_resume_retarget"
+    ],
+    "mayTerminateAtAnyState": true,
+    "returnRequiredAfterCompletedBeat": true
+  },
+  "poi": {
+    "role": "semantic query/view over existing world objects; not a second registry",
+    "kinds": [
+      "player",
+      "resident",
+      "cube_pet",
+      "plant",
+      "environment_feature",
+      "resource",
+      "loose_prop",
+      "card_media",
+      "activity_station",
+      "vehicle",
+      "temporary_event",
+      "hazard_obstruction"
+    ],
+    "fields": [
+      "ref",
+      "kind",
+      "worldAnchor",
+      "position",
+      "tags",
+      "affordances",
+      "visible",
+      "active",
+      "salience?",
+      "ownerId?",
+      "resourceKind?",
+      "activityKind?",
+      "stateRef?"
+    ]
+  },
+  "perception": [
+    {
+      "id": "immediate_contact",
+      "cost": "very_low",
+      "examples": [
+        "collision",
+        "prop impact",
+        "handoff",
+        "personal-space entry",
+        "current activity target"
+      ],
+      "canTriggerReactionWithoutLLM": true
+    },
+    {
+      "id": "visible_attention_field",
+      "cost": "low",
+      "filters": [
+        "distance",
+        "view direction when relevant",
+        "visibility/occlusion",
+        "focus lock",
+        "semantic salience",
+        "motivation relevance",
+        "social availability"
+      ],
+      "purpose": "primary attention candidate set"
+    },
+    {
+      "id": "local_semantic_search",
+      "cost": "deliberate",
+      "rule": "Use only when a current goal needs a target not visible.",
+      "examples": [
+        "fishing spot",
+        "anvil/workbench",
+        "patrol marker",
+        "unexplored landmark",
+        "known resident",
+        "resource node"
+      ]
+    },
+    {
+      "id": "remembered_reported_target",
+      "cost": "memory_lookup",
+      "rule": "Memory may produce a target reference, but world owner must revalidate it on arrival."
+    }
+  ],
+  "candidateScoringDimensions": [
+    "salience",
+    "perceptibility",
+    "motivation_relevance",
+    "novelty_or_unresolved_memory_relevance",
+    "social_availability",
+    "interruption_cost"
+  ],
+  "routines": {
+    "sourceBacked": [
+      "hammering",
+      "chopping",
+      "digging",
+      "pickaxing",
+      "sawing",
+      "fishing",
+      "role_specific_work",
+      "mining_gold_ore",
+      "transporting_resources"
+    ],
+    "additiveDirection": [
+      "patrol",
+      "explore",
+      "inspect",
+      "gather_collect",
+      "carry_deliver",
+      "tend_care",
+      "rehearse_play_music",
+      "rest_socialize",
+      "return_home_or_post"
+    ],
+    "rule": "Routine performance never mutates world/resources independently of the receiving owner.",
+    "resumable": true,
+    "noGenericIdleAfterEveryBeat": true
+  },
+  "motivations": {
+    "stableExamples": [
+      "protect_guard",
+      "make_repair",
+      "gather_trade",
+      "perform",
+      "help",
+      "investigate_curiosity",
+      "explore",
+      "patrol_duty",
+      "socialize",
+      "collect_cards_objects",
+      "preserve_place_resource"
+    ],
+    "currentGoalExamples": [
+      "finish_current_work",
+      "reach_patrol_marker",
+      "find_fishing_spot",
+      "return_brick_fish",
+      "show_card",
+      "investigate_event",
+      "keep_promise",
+      "find_player"
+    ],
+    "conflictRule": "Competing goals create social/dramatic conflict but do not imply hostility or Combat.",
+    "nonCombatResolutions": [
+      "wait",
+      "negotiate",
+      "retort",
+      "trade",
+      "reroute",
+      "refuse",
+      "ask_for_help",
+      "kayfabe_conflict",
+      "abandon_goal"
+    ]
+  },
+  "selectionPriority": [
+    "hard_owner_state_danger_combat_action_lock",
+    "must_recall_commitment_or_urgent_goal",
+    "continue_current_routine",
+    "high_salience_visible_poi_relevant_to_motivation",
+    "open_social_thread_opportunity",
+    "local_semantic_search_for_goal_target",
+    "explore_patrol_wander_fallback"
+  ],
+  "memory": {
+    "writeWhen": [
+      "meaningful_witnessed_event",
+      "gift_or_provenance",
+      "promise",
+      "argument_or_retort",
+      "unusual_success_failure",
+      "goal_state_changed",
+      "new_knowledge_source",
+      "recurring_social_gag",
+      "card_interpretation",
+      "valuable_poi_or_resource_discovery"
+    ],
+    "doNotWriteFor": [
+      "glance",
+      "ordinary_path_correction",
+      "routine_loop_iteration",
+      "transient_expectation",
+      "every_animation_cycle"
+    ],
+    "knowledgeModes": [
+      "witnessed",
+      "told",
+      "inferred"
+    ],
+    "rule": "World truth remains immutable source provenance; resident interpretation is subjective."
+  },
+  "language": {
+    "owner": "ChatterBox/Triplet",
+    "fluffOlectRule": "Use only when shared memory or visible context makes the omitted carrying word recoverable.",
+    "reactionOwner": "Reaction Choreography",
+    "llmNotRequiredForMicroReaction": true
+  },
+  "returnPolicy": {
+    "options": [
+      "resume_prior_activity",
+      "continue_dialogue",
+      "return_to_patrol",
+      "return_to_work",
+      "resume_route",
+      "retarget_due_to_changed_goal",
+      "follow_open_social_thread",
+      "leave"
+    ],
+    "rule": "Return/resume is part of the loop and must restore a legal consumer-owned state."
+  },
+  "firstGate": {
+    "id": "RESIDENT-SOCIAL-MEMORY-01",
+    "required": [
+      "two real residents",
+      "one source-backed routine",
+      "bounded POI candidate set",
+      "one motivation-backed attention choice",
+      "curiosity/interest beat",
+      "expectation",
+      "interaction",
+      "reaction choreography",
+      "optional chatterbox/triplet",
+      "one context-valid fluff-o-lect variant",
+      "conditional lean-memory write",
+      "one bounded social thread",
+      "clean resume or retarget"
+    ]
+  }
+}
