@@ -55,3 +55,19 @@ Run the dedicated C1 GitHub Actions gate:
 ## Stop condition
 
 If the same C1 gate fails after two repair passes, freeze the candidate and export failure recovery. Do not broaden scope or fall back to blind bulk import.
+
+## Quality audit after first green machine run
+
+Workflow run `36469308353` proved transport/rights/idempotence, but the first selector allowed one broad query to fill an entire provider cap. That produced misleading discovery tags (for example non-silent IA items under `silent film 1920` and loosely related Met objects under `alchemy`).
+
+That persisted batch is **TECHNICALLY_GREEN_BUT_NOT_REVIEW_READY** and is not the C1 acceptance candidate.
+
+### Repair pass 1
+
+- interleave categories round-robin per provider;
+- accept at most one candidate per search phrase;
+- reset only prior `c1-*` candidate payload/sidecars before re-running;
+- preserve the original four verified smoke assets;
+- correct workflow provenance so `sourceHead` records the actual GitHub SHA.
+
+No scope expansion: caps, rights recheck, byte limits, single Asset Librarian owner and no-publication boundary remain unchanged.

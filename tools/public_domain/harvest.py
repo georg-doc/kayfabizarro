@@ -223,12 +223,26 @@ SEARCHERS = {
 
 
 def query_plan(seeds: dict, provider: str) -> list[tuple[str, str]]:
-    rows: list[tuple[str, str]] = []
+    """Interleave categories so one early query cannot monopolize a provider cap."""
+    buckets: list[tuple[str, list[str]]] = []
     for category in seeds.get("categories") or []:
         if provider not in (category.get("sources") or []):
             continue
-        for query in category.get("queries") or []:
-            rows.append((str(category.get("id") or "misc"), str(query)))
+        queries = [str(q) for q in (category.get("queries") or []) if str(q).strip()]
+        if queries:
+            buckets.append((str(category.get("id") or "misc"), queries))
+
+    rows: list[tuple[str, str]] = []
+    depth = 0
+    while True:
+        added = False
+        for category, queries in buckets:
+            if depth < len(queries):
+                rows.append((category, queries[depth]))
+                added = True
+        if not added:
+            break
+        depth += 1
     return rows
 
 
@@ -282,7 +296,9 @@ def main() -> int:
                 break
             needed = per_provider_cap - counts[provider]
             try:
-                candidates = searcher(query, needed)
+                # At most one accepted discovery per search phrase. This preserves thematic
+                # diversity and prevents the first broad query from filling the whole cap.
+                candidates = searcher(query, max(3, needed))
                 for found in candidates:
                     key = (provider, str(found["sourceId"]))
                     if key in seen:
@@ -290,8 +306,7 @@ def main() -> int:
                     seen.add(key)
                     output.append(make_manifest_item(provider, found, category, query))
                     counts[provider] += 1
-                    if counts[provider] >= per_provider_cap or len(output) >= total_cap:
-                        break
+                    break
             except Exception as exc:
                 errors.append({"provider": provider, "query": query, "error": f"{type(exc).__name__}: {exc}"})
                 print(f"DISCOVERY ERROR {provider} {query!r}: {type(exc).__name__}: {exc}", file=sys.stderr)

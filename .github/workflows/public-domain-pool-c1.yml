@@ -38,6 +38,12 @@ jobs:
           python -m py_compile tools/public_domain/harvest.py tools/public_domain/fetch_pool.py
           python -m json.tool tools/public_domain/seeds.c1.json >/dev/null
 
+      - name: Reset prior C1 candidate payload
+        run: |
+          set -euo pipefail
+          find media/public_domain -type f -name 'c1-*' -delete
+          rm -f media/public_domain/PD_C1_TEST_REPORT.json media/public_domain/PD_C1_RETURN.md
+
       - name: Existing four-object regression
         run: |
           set -euo pipefail
@@ -81,7 +87,7 @@ jobs:
 
       - name: Fetch, recheck and prove idempotence
         env:
-          SOURCE_HEAD: $GITHUB_SHA
+          SOURCE_HEAD: ${{ github.sha }}
         run: |
           set -euo pipefail
 
