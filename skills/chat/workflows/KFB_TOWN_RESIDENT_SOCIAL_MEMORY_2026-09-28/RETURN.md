@@ -128,6 +128,7 @@ The branch changes these Town/router/Hub surfaces plus the bounded workflow pack
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/SOURCE.json`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/TEST_REPORT.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/resident-aida-poi.v0.1.json`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
 - this `RETURN.md`
 - `skills/chat/town/START_HERE.md`
 - `skills/chat/town/SESSION_CARD.md`
@@ -142,10 +143,11 @@ No runtime source file is changed.
 
 From `TEST_REPORT.md`:
 
-- source reads: **13/13 PASS**
+- source reads: **15/15 PASS**
 - source manifest parse: **1/1 PASS**
 - AIDA/POI contract parse: **1/1 PASS**
 - design invariants: **20/20 PASS**
+- Officer Doppel-Denk source/profile checks: **6/6 PASS**
 - runtime tests: **0**
 - browser tests: **0**
 - screenshots: **0**
@@ -169,6 +171,7 @@ Durable details are in:
 - current concrete ChatterBox runtime donor must be pinned by the receiving consumer before implementation;
 - actual sight distances, FOV/occlusion method and POI spatial index are deliberately not hard-coded here;
 - patrol/explore require source-backed motion/route evidence where they become visible animation rather than navigation intent;
+- Officer Doppel-Denk's desired shoulder-rifle march is **not yet accepted**: `Running_HoldingRifle` and `Walking_A/B` are source-backed audition candidates; Mixamo/new intake only follows if none passes visual attachment/pose checks;
 - resource availability/consumption stays world/resource-owned and is not defined by Lean Memory;
 - Brick Fish PR #254 and Reaction Choreography PR #256 remain separate Draft candidates;
 - current relevant ToolBox/WorldBuilder recovery blockers must be checked at implementation time;
@@ -178,7 +181,7 @@ Durable details are in:
 
 **RESIDENT-SOCIAL-MEMORY-01**
 
-Implement in the real receiving world, Web/GitHub-first:
+Implement in the real receiving world, Web/GitHub-first. **Officer Doppel-Denk / `toy-soldier` is now the preferred first resident-specific overlay** for the routine/attention/reaction half of the proof:
 
 - two source-proven Residents;
 - one source-backed routine activity;
@@ -192,3 +195,23 @@ Implement in the real receiving world, Web/GitHub-first:
 - clean return to routine/path/dialogue or deliberate retarget.
 
 Do not create a standalone proxy review page. Use Stage only if/when the integrated world result becomes a meaningful human-review milestone.
+
+
+## Additive checkpoint · Officer Doppel-Denk · 2026-09-28
+
+Working character name: **Officer Doppel-Denk**. Technical Resident source remains `toy-soldier`.
+
+Persisted character-specific layer:
+- one-time closed-present → existing reveal → emerged state;
+- march/patrol routine with clean interruption/resume;
+- attention bias toward perceived disorder, obstruction, litter, noise, unsafe horseplay, unattended props, authority opportunities and royal-interest cues;
+- Brick Fish, Tiny Treats pizza and plant/path obstruction as first POI mini-scenario examples;
+- tragicomic authority/status dynamic with King K. Fabian and other Residents;
+- ChatterBox/Triplet language ownership and Reaction Choreography ownership preserved;
+- Lean Memory only for meaningful recurring authority/social outcomes;
+- source-first motion gate: audition `Running_HoldingRifle` + `Walking_A/B`; no fake static shoulder offset; Mixamo only if current Motion Library candidates fail.
+
+Durable profile:
+`OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`.
+
+No runtime file, browser proof, Stage deployment or Live promotion was added by this checkpoint.
