@@ -1,0 +1,944 @@
+{
+ "core": "kfb.track-core/0.11",
+ "recipe": {
+  "schema": "kfb.route-recipe/0.1-draft",
+  "id": "MODUL_UEBERGANG",
+  "label": "Modul · Übergänge Stadt / Natur",
+  "start": {
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "headingDeg": 0
+  },
+  "defaults": {
+   "widthClass": "STANDARD",
+   "markings": "TRACK"
+  },
+  "pieces": [
+   {
+    "id": "rennstrecke",
+    "type": "STRAIGHT",
+    "length": 60
+   },
+   {
+    "id": "zur_stadt",
+    "type": "TRANSITION",
+    "to": "city",
+    "length": 80
+   },
+   {
+    "id": "stadt",
+    "type": "STRAIGHT",
+    "length": 80
+   },
+   {
+    "id": "zur_natur",
+    "type": "TRANSITION",
+    "to": "nature",
+    "length": 90
+   },
+   {
+    "id": "natur",
+    "type": "CURVE_EASE",
+    "turn": 45,
+    "radius": 120
+   },
+   {
+    "id": "zurueck",
+    "type": "TRANSITION",
+    "to": "track",
+    "length": 80
+   },
+   {
+    "id": "weiter",
+    "type": "STRAIGHT",
+    "length": 60
+   }
+  ]
+ },
+ "transitions": [
+  {
+   "id": "zur_stadt",
+   "from": "track",
+   "to": "city",
+   "kind": "leave",
+   "s0": 60,
+   "s1": 140,
+   "length": 80,
+   "windows": {
+    "surface": [
+     0.05,
+     0.72
+    ],
+    "markings": [
+     0.1,
+     0.82
+    ],
+    "barrier": [
+     0,
+     0.55
+    ],
+    "pit": [
+     0.15,
+     0.88
+    ],
+    "curb": [
+     0.28,
+     1
+    ],
+    "nature": [
+     0.35,
+     1
+    ],
+    "props": [
+     0.45,
+     1
+    ],
+    "light": [
+     0.15,
+     0.9
+    ],
+    "vfx": [
+     0.42,
+     0.58
+    ]
+   },
+   "seed": "MODUL_UEBERGANG:zur_stadt",
+   "seeds": {
+    "trackPalette": 2558235861,
+    "terrainPalette": 4267545747,
+    "k2Profile": 1768892091,
+    "light": 1367143093,
+    "vfx": 810510193,
+    "wfc": 3507543631
+   },
+   "markings": {
+    "from": "TRACK",
+    "to": "STREET"
+   },
+   "sockets": {
+    "centerline_in": {
+     "p": [
+      0,
+      0,
+      60
+     ],
+     "forward": [
+      0,
+      0,
+      1
+     ],
+     "up": [
+      0,
+      1,
+      0
+     ],
+     "right": [
+      -1,
+      0,
+      0
+     ]
+    },
+    "surface_left_in": {
+     "p": [
+      7.2,
+      0,
+      60
+     ]
+    },
+    "barrier_left_in": {
+     "p": [
+      10.71,
+      -0.28,
+      60
+     ]
+    },
+    "curb_left_in": {
+     "p": [
+      7.7,
+      0,
+      60
+     ]
+    },
+    "sidewalk_left_in": {
+     "p": [
+      9.86,
+      0,
+      60
+     ]
+    },
+    "nature_left_in": {
+     "p": [
+      13.52,
+      0,
+      60
+     ]
+    },
+    "surface_right_in": {
+     "p": [
+      -7.2,
+      0,
+      60
+     ]
+    },
+    "barrier_right_in": {
+     "p": [
+      -10.71,
+      -0.28,
+      60
+     ]
+    },
+    "curb_right_in": {
+     "p": [
+      -7.7,
+      0,
+      60
+     ]
+    },
+    "sidewalk_right_in": {
+     "p": [
+      -9.86,
+      0,
+      60
+     ]
+    },
+    "nature_right_in": {
+     "p": [
+      -13.52,
+      0,
+      60
+     ]
+    },
+    "centerline_out": {
+     "p": [
+      0,
+      0,
+      140
+     ],
+     "forward": [
+      0,
+      0,
+      1
+     ],
+     "up": [
+      0,
+      1,
+      0
+     ],
+     "right": [
+      -1,
+      0,
+      0
+     ]
+    },
+    "surface_left_out": {
+     "p": [
+      7.2,
+      0,
+      140
+     ]
+    },
+    "barrier_left_out": {
+     "p": [
+      10.71,
+      -0.28,
+      140
+     ]
+    },
+    "curb_left_out": {
+     "p": [
+      7.7,
+      0,
+      140
+     ]
+    },
+    "sidewalk_left_out": {
+     "p": [
+      9.86,
+      0,
+      140
+     ]
+    },
+    "nature_left_out": {
+     "p": [
+      13.52,
+      0,
+      140
+     ]
+    },
+    "surface_right_out": {
+     "p": [
+      -7.2,
+      0,
+      140
+     ]
+    },
+    "barrier_right_out": {
+     "p": [
+      -10.71,
+      -0.28,
+      140
+     ]
+    },
+    "curb_right_out": {
+     "p": [
+      -7.7,
+      0,
+      140
+     ]
+    },
+    "sidewalk_right_out": {
+     "p": [
+      -9.86,
+      0,
+      140
+     ]
+    },
+    "nature_right_out": {
+     "p": [
+      -13.52,
+      0,
+      140
+     ]
+    },
+    "pit_in": null,
+    "pit_out": null
+   },
+   "contact": "unchanged: drive surface, width, grade, frames and barrier slots are the route profile (Track Core owner)"
+  },
+  {
+   "id": "zur_natur",
+   "from": "city",
+   "to": "nature",
+   "kind": "across",
+   "s0": 220,
+   "s1": 310,
+   "length": 90,
+   "windows": {
+    "surface": [
+     0.1,
+     0.8
+    ],
+    "markings": [
+     0.15,
+     0.85
+    ],
+    "barrier": [
+     0.05,
+     0.6
+    ],
+    "pit": [
+     0.05,
+     0.7
+    ],
+    "curb": [
+     0.28,
+     0.98
+    ],
+    "nature": [
+     0.25,
+     1
+    ],
+    "props": [
+     0.4,
+     1
+    ],
+    "light": [
+     0.15,
+     0.9
+    ],
+    "vfx": [
+     0.42,
+     0.58
+    ]
+   },
+   "seed": "MODUL_UEBERGANG:zur_natur",
+   "seeds": {
+    "trackPalette": 3360698103,
+    "terrainPalette": 1452496453,
+    "k2Profile": 2416652081,
+    "light": 3224847755,
+    "vfx": 580956099,
+    "wfc": 3066315517
+   },
+   "markings": {
+    "from": "STREET",
+    "to": "NONE"
+   },
+   "sockets": {
+    "centerline_in": {
+     "p": [
+      0,
+      0,
+      220
+     ],
+     "forward": [
+      0,
+      0,
+      1
+     ],
+     "up": [
+      0,
+      1,
+      0
+     ],
+     "right": [
+      -1,
+      0,
+      0
+     ]
+    },
+    "surface_left_in": {
+     "p": [
+      7.2,
+      0,
+      220
+     ]
+    },
+    "barrier_left_in": {
+     "p": [
+      10.71,
+      -0.28,
+      220
+     ]
+    },
+    "curb_left_in": {
+     "p": [
+      7.7,
+      0,
+      220
+     ]
+    },
+    "sidewalk_left_in": {
+     "p": [
+      9.86,
+      0,
+      220
+     ]
+    },
+    "nature_left_in": {
+     "p": [
+      13.52,
+      0,
+      220
+     ]
+    },
+    "surface_right_in": {
+     "p": [
+      -7.2,
+      0,
+      220
+     ]
+    },
+    "barrier_right_in": {
+     "p": [
+      -10.71,
+      -0.28,
+      220
+     ]
+    },
+    "curb_right_in": {
+     "p": [
+      -7.7,
+      0,
+      220
+     ]
+    },
+    "sidewalk_right_in": {
+     "p": [
+      -9.86,
+      0,
+      220
+     ]
+    },
+    "nature_right_in": {
+     "p": [
+      -13.52,
+      0,
+      220
+     ]
+    },
+    "centerline_out": {
+     "p": [
+      0,
+      0,
+      310
+     ],
+     "forward": [
+      0,
+      0,
+      1
+     ],
+     "up": [
+      -0.02953,
+      0.99956,
+      0
+     ],
+     "right": [
+      -0.99956,
+      -0.02953,
+      0
+     ]
+    },
+    "surface_left_out": {
+     "p": [
+      7.1969,
+      0.2126,
+      310
+     ]
+    },
+    "barrier_left_out": {
+     "p": [
+      10.7136,
+      0.0364,
+      310
+     ]
+    },
+    "curb_left_out": {
+     "p": [
+      7.6966,
+      0.2274,
+      310
+     ]
+    },
+    "sidewalk_left_out": {
+     "p": [
+      9.8557,
+      0.2912,
+      310
+     ]
+    },
+    "nature_left_out": {
+     "p": [
+      13.5141,
+      0.3993,
+      310
+     ]
+    },
+    "surface_right_out": {
+     "p": [
+      -7.1969,
+      -0.2126,
+      310
+     ]
+    },
+    "barrier_right_out": {
+     "p": [
+      -10.6971,
+      -0.5962,
+      310
+     ]
+    },
+    "curb_right_out": {
+     "p": [
+      -7.6966,
+      -0.2274,
+      310
+     ]
+    },
+    "sidewalk_right_out": {
+     "p": [
+      -9.8557,
+      -0.2912,
+      310
+     ]
+    },
+    "nature_right_out": {
+     "p": [
+      -13.5141,
+      -0.3993,
+      310
+     ]
+    },
+    "pit_in": null,
+    "pit_out": null
+   },
+   "contact": "unchanged: drive surface, width, grade, frames and barrier slots are the route profile (Track Core owner)"
+  },
+  {
+   "id": "zurueck",
+   "from": "nature",
+   "to": "track",
+   "kind": "enter",
+   "s0": 434.248,
+   "s1": 514.248,
+   "length": 80,
+   "windows": {
+    "props": [
+     0,
+     0.4
+    ],
+    "nature": [
+     0.05,
+     0.55
+    ],
+    "curb": [
+     0.1,
+     0.62
+    ],
+    "pit": [
+     0.12,
+     0.85
+    ],
+    "surface": [
+     0.25,
+     0.85
+    ],
+    "barrier": [
+     0.3,
+     0.95
+    ],
+    "light": [
+     0.1,
+     0.85
+    ],
+    "vfx": [
+     0.42,
+     0.58
+    ],
+    "markings": [
+     0.45,
+     1
+    ]
+   },
+   "seed": "MODUL_UEBERGANG:zurueck",
+   "seeds": {
+    "trackPalette": 204142122,
+    "terrainPalette": 848767944,
+    "k2Profile": 464276414,
+    "light": 2831910416,
+    "vfx": 3381734560,
+    "wfc": 728837682
+   },
+   "markings": {
+    "from": "NONE",
+    "to": "TRACK"
+   },
+   "sockets": {
+    "centerline_in": {
+     "p": [
+      -45.8399,
+      0,
+      420.6671
+     ],
+     "forward": [
+      -0.70711,
+      0,
+      0.70711
+     ],
+     "up": [
+      -0.02088,
+      0.99956,
+      -0.02088
+     ],
+     "right": [
+      -0.7068,
+      -0.02953,
+      -0.7068
+     ]
+    },
+    "surface_left_in": {
+     "p": [
+      -40.7509,
+      0.2126,
+      425.756
+     ]
+    },
+    "barrier_left_in": {
+     "p": [
+      -38.2642,
+      0.0364,
+      428.2427
+     ]
+    },
+    "curb_left_in": {
+     "p": [
+      -40.3975,
+      0.2274,
+      426.1094
+     ]
+    },
+    "sidewalk_left_in": {
+     "p": [
+      -38.8708,
+      0.2912,
+      427.6361
+     ]
+    },
+    "nature_left_in": {
+     "p": [
+      -36.284,
+      0.3993,
+      430.223
+     ]
+    },
+    "surface_right_in": {
+     "p": [
+      -50.9288,
+      -0.2126,
+      415.5781
+     ]
+    },
+    "barrier_right_in": {
+     "p": [
+      -53.4038,
+      -0.5962,
+      413.1031
+     ]
+    },
+    "curb_right_in": {
+     "p": [
+      -51.2822,
+      -0.2274,
+      415.2247
+     ]
+    },
+    "sidewalk_right_in": {
+     "p": [
+      -52.8089,
+      -0.2912,
+      413.698
+     ]
+    },
+    "nature_right_in": {
+     "p": [
+      -55.3958,
+      -0.3993,
+      411.1111
+     ]
+    },
+    "centerline_out": {
+     "p": [
+      -102.4085,
+      0,
+      477.2356
+     ],
+     "forward": [
+      -0.70711,
+      0,
+      0.70711
+     ],
+     "up": [
+      0,
+      1,
+      0
+     ],
+     "right": [
+      -0.70711,
+      0,
+      -0.70711
+     ]
+    },
+    "surface_left_out": {
+     "p": [
+      -97.3173,
+      0,
+      482.3267
+     ]
+    },
+    "barrier_left_out": {
+     "p": [
+      -94.8354,
+      -0.28,
+      484.8087
+     ]
+    },
+    "curb_left_out": {
+     "p": [
+      -96.9637,
+      0,
+      482.6803
+     ]
+    },
+    "sidewalk_left_out": {
+     "p": [
+      -95.4364,
+      0,
+      484.2076
+     ]
+    },
+    "nature_left_out": {
+     "p": [
+      -92.8484,
+      0,
+      486.7956
+     ]
+    },
+    "surface_right_out": {
+     "p": [
+      -107.4996,
+      0,
+      472.1444
+     ]
+    },
+    "barrier_right_out": {
+     "p": [
+      -109.9816,
+      -0.28,
+      469.6624
+     ]
+    },
+    "curb_right_out": {
+     "p": [
+      -107.8532,
+      0,
+      471.7908
+     ]
+    },
+    "sidewalk_right_out": {
+     "p": [
+      -109.3805,
+      0,
+      470.2635
+     ]
+    },
+    "nature_right_out": {
+     "p": [
+      -111.9685,
+      0,
+      467.6755
+     ]
+    },
+    "pit_in": null,
+    "pit_out": null
+   },
+   "contact": "unchanged: drive surface, width, grade, frames and barrier slots are the route profile (Track Core owner)"
+  }
+ ],
+ "windows": {
+  "leave": {
+   "surface": [
+    0.05,
+    0.72
+   ],
+   "markings": [
+    0.1,
+    0.82
+   ],
+   "barrier": [
+    0,
+    0.55
+   ],
+   "pit": [
+    0.15,
+    0.88
+   ],
+   "curb": [
+    0.28,
+    1
+   ],
+   "nature": [
+    0.35,
+    1
+   ],
+   "props": [
+    0.45,
+    1
+   ],
+   "light": [
+    0.15,
+    0.9
+   ],
+   "vfx": [
+    0.42,
+    0.58
+   ]
+  },
+  "enter": {
+   "props": [
+    0,
+    0.4
+   ],
+   "nature": [
+    0.05,
+    0.55
+   ],
+   "curb": [
+    0.1,
+    0.62
+   ],
+   "pit": [
+    0.12,
+    0.85
+   ],
+   "surface": [
+    0.25,
+    0.85
+   ],
+   "barrier": [
+    0.3,
+    0.95
+   ],
+   "light": [
+    0.1,
+    0.85
+   ],
+   "vfx": [
+    0.42,
+    0.58
+   ],
+   "markings": [
+    0.45,
+    1
+   ]
+  },
+  "across": {
+   "surface": [
+    0.1,
+    0.8
+   ],
+   "markings": [
+    0.15,
+    0.85
+   ],
+   "barrier": [
+    0.05,
+    0.6
+   ],
+   "pit": [
+    0.05,
+    0.7
+   ],
+   "curb": [
+    0.28,
+    0.98
+   ],
+   "nature": [
+    0.25,
+    1
+   ],
+   "props": [
+    0.4,
+    1
+   ],
+   "light": [
+    0.15,
+    0.9
+   ],
+   "vfx": [
+    0.42,
+    0.58
+   ]
+  }
+ },
+ "biomeMarkings": {
+  "track": "TRACK",
+  "city": "STREET",
+  "nature": "NONE",
+  "canyon": "NONE",
+  "coast": "NONE"
+ },
+ "layers": [
+  "surface",
+  "markings",
+  "barrier",
+  "pit",
+  "curb",
+  "nature",
+  "props",
+  "light",
+  "vfx"
+ ]
+}
