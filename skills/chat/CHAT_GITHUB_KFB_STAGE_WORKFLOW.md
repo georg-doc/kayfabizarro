@@ -11,6 +11,20 @@ A chat is not the archive, GitHub is not the test surface, and a successful comm
 
 `Chat slice → named GitHub branch/PR → verified commit → integrate in the real owner surface → [human review only when a real decision is needed] → Stage for meaningful milestones → deliberate Live promotion`
 
+## Shortcut · KFB-Web-Push
+
+When Georg says **`KFB-Web-Push`**, treat it as an authorized shorthand for this existing crash-safe GitHub-first persistence workflow within the named current owner/slice:
+
+1. recover current GitHub truth and the exact owner/SSOT/Return/Recovery;
+2. persist the current decision, result, implementation checkpoint or recovery state in the existing owner surface;
+3. update Return/changelog/router/Hub metadata when that owner contract requires it;
+4. fetch the exact branch head and intended files after every write;
+5. treat timeout as `UNKNOWN` and inspect before retrying;
+6. do **not** merge, promote Live, deploy Cloudflare Stage or publish a ChatGPT Site merely because `KFB-Web-Push` was requested.
+
+The shortcut does not create a second runtime owner or database. Current ChatGPT Sites persistence capability and KFB adoption boundaries are documented in:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_WEB_PUSH_SITES_PERSISTENCE_2026-09-28.md`.
+
 ## 1. Recover exact truth
 
 1. Read `skills/chat/START_HERE.md`, this workflow and the named project brief.
