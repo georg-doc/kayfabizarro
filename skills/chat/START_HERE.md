@@ -1312,9 +1312,17 @@ KFB resident direction:
 - ChatterBox / semantic Triplets / selectable retorts remain the language lineage;
 - Fluffolekt / Fluff-o-lect can omit the carrying word only when shared memory or visible context makes meaning recoverable;
 - current Brick Fish PR #254 and Reaction Choreography PR #256 are explicit candidate seams;
+- world-owned POIs expose player, Residents/NPCs, Cube Pets, plants/nature, environment, resources, props/Cards, activity stations, vehicles, events and hazards without creating a second registry;
+- bounded perception/search is immediate contact → visible attention field → deliberate local semantic search → remembered/reported target;
+- source-backed routines plus Georg's patrol/explore/inspect/gather/carry/tend/music/social/rest direction give Residents a resumable default path;
+- personal goals/motivations drive attention and conflict without automatically escalating to Combat;
+- shared KFB AIDA loop for player and NPCs: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget;
+- `resident-aida-poi.v0.1.json` is the machine-readable proposal contract;
 - world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
 
-Evidence: **11/11 source reads · 1/1 source-manifest parse · 12/12 design invariants PASS**. Runtime/browser/Stage tests remain 0.
+Evidence: **13/13 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS**. Runtime/browser/Stage tests remain 0.
+
+Fresh-chat shorthand: **`KFB WEB PUSH/READ — <project or slice> — recover + continue`**. It means Web/GitHub-first recovery + continuation, read-back after every write, timeout = UNKNOWN, Work/WSA only for a concrete capability gap, and no manufactured review gate.
 
 Reserved future route, **NOT DEPLOYED**:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/`
