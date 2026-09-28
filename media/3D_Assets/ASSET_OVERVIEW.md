@@ -13,7 +13,7 @@
 
 **KFB-eigene `GLB_*` (im Repo/Katalog gespiegelt):** `GLB_graveyard` (91) · `GLB_pirate` (72) · `GLB_hexagon_kit` (72) · `GLB_block_chars` (26) · `GLB_mini_chars` (26) · `GLB_cube-pets` (24) · `GLB_blocky_chars` (18) · `GLB_platformer` (5) · `GLB_mini_arcade/arena/dungeon/market` (1–2).
 
-**KayKit (gekauft + free):** `Mystery_Series6` (14 GLB — **bereinigt, upload-ready**) · `Adventurers_2.0` (8 GLB + 31 gltf) · `Character_Animations_1.1` (16 — **Retarget-Rig**) · `Dungeon_Pack` (211 gltf) · `Medieval_Hexagon` (221) · `Forest_Nature` (84) · `RPGToolsBits` (44) · `BlockBits` (40) · `HalloweenBits` (36) · `BoardGameBits` (35) · `FantasyWeaponsBits` (31) · `Skeletons` (6 GLB + 13).
+**KayKit (gekauft + free):** `Mystery_Series6` (14 GLB — **bereinigt, upload-ready**) · `Adventurers_2.0` (8 GLB + 31 gltf) · `Character_Animations_1.1` (16 — **Retarget-Rig**) · `Dungeon_Pack` (211 gltf) · `Medieval_Hexagon` (221) · `Forest_Nature` (84) · `RPGToolsBits` (44) · `BlockBits` (40) · `HalloweenBits` (63 GLB + 63 vollständige glTF/BIN-Quellen) · `BoardGameBits` (35) · `FantasyWeaponsBits` (31) · `Skeletons` (6 GLB + 13).
 
 **Kenney (groß):** `nature` (329) · `coaster` (183) · `tower-defense` (160) · `platformer` (153) · `prototype` (145) · `factory` (143) · `furniture` (140) · `modular-buildings` (108) · `holiday` (99) · `graveyard` (91) · `survival` (80) · `building` (79) · `castle` (76) · `hexagon` (72) · `pirate` (72) · `city-kit ×3` · `mini-*` (20–26) · `cube-pets` (24). **Plus Staging-Dumps:** `_UPLOAD_kenney` (1.559 GLB) · `_UPLOAD_starter` (667).
 

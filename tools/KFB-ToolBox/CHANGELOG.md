@@ -151,3 +151,9 @@ Current READY gate:
 
 ### BOUNDARY
 No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
+# 2026-09-28 · KayKit Halloween Bits intake repair
+
+- Replaced the 28 corrupt pseudo-GLBs from PR #279 with valid GLB v2 containers generated from the repository's original provider ZIP.
+- Restored the complete 63-model GLTF/BIN source roster, including the previously missing `gravemarker_A.bin` dependency.
+- Added a fail-closed pack integrity gate and a bounded Return under `_handover/HALLOWEEN_BITS_INTAKE_2026-09-28/`.
+- No Resident Atlas runtime or scene ownership changed; S11 adoption remains the next gate.
