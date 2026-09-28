@@ -10,7 +10,7 @@ export function mountWorldMobilityUi({clay,mobility}){
   function setLook(next){clay.setMode(next);paint()}
   function paint(){
     const r=mobility.report(),flying=mobility.mode==='flight',driving=mobility.mode==='drive';pressed(['ground','drive','flight'],flying?'flight':driving?'drive':'ground');pressed(['original','clay'],clay.mode==='clay'?'clay':'original');
-    hint.textContent=flying?'Flug · W Gas · S Bremse · A/D steuern · Leertaste/C Höhe':driving?'Auto · W/S fahren · A/D lenken · Q/R Drift · E aussteigen':r.interaction.available?'E · ins Auto steigen':'W/S laufen · A/D drehen · 1× springen · 2× abheben';
+    hint.textContent=flying?'Flug · W Gas · S Bremse · A/D steuern · Leertaste/C Höhe':driving?'Auto · W/S fahren · A/D lenken · Q/R Drift · E aussteigen':r.interaction.available?'E · '+(r.interaction.target?.label||'interact'):'W/S laufen · A/D drehen · 1× springen · 2× abheben';
     state.textContent=`Aktuell: ${flying?'Flug':driving?'Auto':'zu Fuß'} · ${clay.mode==='clay'?'Clay':'Original'} · ${driving?r.drive.speedKmh+' km/h':flying?r.flight.speed+' m/s':'Ground'}`;
   }
   buttons.ground.onclick=()=>setMobility('ground');buttons.drive.onclick=()=>setMobility('drive');buttons.flight.onclick=()=>setMobility('flight');buttons.original.onclick=()=>setLook('original');buttons.clay.onclick=()=>setLook('clay');$('m1-info').onclick=()=>{help.hidden=!help.hidden;paint()};
