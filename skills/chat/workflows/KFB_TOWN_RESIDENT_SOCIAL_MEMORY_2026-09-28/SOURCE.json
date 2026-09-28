@@ -6,7 +6,7 @@
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
   "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
-  "outcome": "AI Town donor synthesis for resident Lean Memory + POI perception + routines/goals + KFB AIDA + ChatterBox/Triplet + Fluff-o-lect + Reaction Choreography",
+  "outcome": "AI Town donor synthesis for Resident Lean Memory + POI/AIDA + resident-specific behavior + shared Dance Culture/Common Bounce + Signature Move learning using existing Motion/Player Journey owners",
   "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
   "stageStatus": "NOT_DEPLOYED",
   "sources": [
@@ -182,6 +182,70 @@
         "Rig_Medium MovementAdvanced exposes Running_HoldingRifle",
         "Running_HoldingRifle is a candidate audition source, not proof of Nutcracker parade posture"
       ]
+    },
+    {
+      "id": "kfb-motion-library-v2b-dance",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chat/kfb-motion-library-v2b-2026-09-25",
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+      "blobSha": "ea3b467c21cd3302106e706e58ac7a01ef5dd3e4",
+      "facts": [
+        "179 catalogued clips",
+        "24 dance entries",
+        "Rig_Medium and Rig_Large dance libraries",
+        "loop/root-motion/contact metadata support beat-aligned audition and slicing"
+      ]
+    },
+    {
+      "id": "kfb-resident-disco-01",
+      "repository": "georg-doc/kayfabizarro",
+      "ref": "51f9bc22596a0d0165f4da9e8e2ea14118466210",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/data/resident-disco-01.json",
+      "blobSha": "e52ba8d70742760ef35c569b5bbd74bca6583194",
+      "facts": [
+        "one shared music transport and beatPos",
+        "mixed Legacy/Rig_Medium/Rig_Large dance ensemble",
+        "resident-specific dance pairing candidates",
+        "ensemble travel-removal and bounce/roam behavior"
+      ]
+    },
+    {
+      "id": "kfb-resident-orc-band-01",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/resident-band-module-01-2026-09-28",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/data/resident-band-module-01.json",
+      "blobSha": "f9ac5ca71738562e5fee25e94d97daf255bed235",
+      "facts": [
+        "real measured shared beat clock",
+        "accepted Legacy Orc B orb.bounce donor",
+        "8-beat performance unit",
+        "music-driven local performer choreography"
+      ]
+    },
+    {
+      "id": "kfb-player-meta-strand-m",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+      "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/PRODUCTION_STRANDS.md",
+      "blobSha": "e4e4bf898ec19e4f0e72f49847eed7f6620f09c5",
+      "facts": [
+        "Player Journey/Meta owns durable cross-mode progression",
+        "candidate domains include inventory, songs/media unlocks, NPC facts and replay/choreography refs",
+        "consumers emit typed semantic events rather than owning global progression"
+      ]
+    },
+    {
+      "id": "kfb-journey-state-donor",
+      "repository": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "path": "overworld/overworld/journey.js",
+      "blobSha": "ad58ef4239254f42a994ada3e729dd820fa1806c",
+      "facts": [
+        "versioned save schema",
+        "JSON export/import",
+        "migrations",
+        "durable semantic journey facts"
+      ]
     }
   ],
   "nonGoals": [
@@ -198,7 +262,8 @@
     "Routine activity includes fishing, smithing/hammering, patrol, explore and other role-specific work.",
     "KFB AIDA gameplay loop for player and NPCs: attention → curiosity/interest → expectation → interaction → reaction → interpret/remember/update → return/resume/retarget.",
     "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict.",
-    "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume."
+    "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume.",
+    "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory."
   ],
   "userDirection": {
     "poiClasses": [
@@ -257,6 +322,28 @@
       ],
       "authorityDynamic": "loyal to King K. Fabian, seeks recognition, commonly not taken seriously by other Residents",
       "animationGate": "audition Running_HoldingRifle plus Walking_A/B before any new Mixamo motion intake"
+    },
+    "residentDanceCulture": {
+      "commonGroove": "dance.common_bounce",
+      "commonBehavior": "beat-driven bounce/hop with optional bounded local circle choreography",
+      "signatureRule": "one authored resident-specific Signature Move or beat-aligned slice",
+      "playerCollection": {
+        "states": [
+          "unknown",
+          "discovered",
+          "learned"
+        ],
+        "owner": "Player Journey / Meta",
+        "provenance": [
+          "teacherResidentId",
+          "sourceEventRef",
+          "method"
+        ],
+        "backpackSlot": false
+      },
+      "groupPattern": "Common Groove between phrase-boundary Signature inserts; one shared transport",
+      "firstDonor": "Legacy Orc B orb.bounce",
+      "animationAuthoringOwner": "existing Animation Studio / Motion Library"
     }
   }
 }
