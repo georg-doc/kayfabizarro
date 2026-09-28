@@ -130,6 +130,7 @@ The branch changes these Town/router/Hub surfaces plus the bounded workflow pack
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/resident-aida-poi.v0.1.json`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`
 - `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_DANCE_CULTURE_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_GIFT_CULTURE_2026-09-28.md`
 - this `RETURN.md`
 - `skills/chat/town/START_HERE.md`
 - `skills/chat/town/SESSION_CARD.md`
@@ -144,12 +145,13 @@ No runtime source file is changed.
 
 From `TEST_REPORT.md`:
 
-- source reads: **20/20 PASS**
+- source reads: **23/23 PASS**
 - source manifest parse: **1/1 PASS**
 - AIDA/POI contract parse: **1/1 PASS**
 - design invariants: **20/20 PASS**
 - Officer Doppel-Denk source/profile checks: **6/6 PASS**
 - Resident Dance Culture source/design checks: **12/12 PASS**
+- Resident Gift Culture source/design checks: **15/15 PASS**
 - runtime tests: **0**
 - browser tests: **0**
 - screenshots: **0**
@@ -180,7 +182,10 @@ Durable details are in:
 - no public Stage exists for this slice;
 - Common Bounce is design-only: no universal runtime clip/profile has been authored yet;
 - Resident Signature Move assignments are audition candidates only, not final mappings;
-- player dance discovery/learning events are not yet added to the Player Journey schema/runtime.
+- player dance discovery/learning events are not yet added to the Player Journey schema/runtime;
+- generic gift wrapper/payload transfer and unwrap choreography are not yet runtime-implemented;
+- barter/regift/exploding-present chains remain design-only;
+- future Santa/Helpers North-Pole winter environment and Holiday audio remain source-required.
 
 ## Exactly one next gate
 
@@ -244,3 +249,30 @@ Durable design:
 `RESIDENT_DANCE_CULTURE_2026-09-28.md`.
 
 Evidence: **20/20 source reads · 12/12 Dance Culture checks PASS**. Runtime/browser/Stage remain 0 for this additive design checkpoint.
+
+
+## Additive checkpoint · Resident Gift Culture · 2026-09-28
+
+Persisted Georg's gift-giving / barter / Kayfabe escalation direction as the third shared Resident culture layer.
+
+Source-backed foundation:
+- exact Santa pack: `Santa.glb` + five source wrappers `Present_A–E`;
+- exact Helpers pack: `Helper_A/B` + Candycane, Drawers, Glue A/B, Hammer, Lamp_Workbench, Toy_Train_Paint/Wood, Toy_Workbench and decorated workbench;
+- existing Toy Soldier reveal remains the presentation/timing donor for anticipation → pop → overshoot → settle.
+
+Design rules:
+- **wrapper != payload**: a present visual never replaces the actual object identity;
+- giver intent and recipient interpretation are separate subjective layers;
+- real object ownership changes only through existing world/inventory owners;
+- Player Journey / Meta stores durable player-facing gift provenance;
+- gifts can carry care, thanks, trade, reconciliation, teasing, satirical needling, prank, tribute or apology;
+- `ResidentSocialThread kind: gift` carries bounded continuity rather than a new relationship system;
+- prank/exploding presents default to non-Combat Kayfabe/cartoon violence; Combat owns real damage when explicitly invoked;
+- Failure Spiral is bounded: warm/neutral → tease → slapstick → Kayfabe blowout → reconciliation/cooldown/return;
+- reconciliation may use replacement gifts, source-backed shared food/drink, dance/Common Bounce, repair/help, apology or simple return to routine;
+- later North-Pole Holiday Scene is separate: Santa + Helpers + toy workshop + presents, with winter environment and Holiday/Jingle-Bells-like audio still source-required.
+
+Durable design:
+`RESIDENT_GIFT_CULTURE_2026-09-28.md`.
+
+Evidence: **23/23 source reads · 15/15 Gift Culture checks PASS**. No gift runtime/browser/Stage/Live claim.
