@@ -25,6 +25,35 @@ When Georg says **`KFB-Web-Push`**, treat it as an authorized shorthand for this
 The shortcut does not create a second runtime owner or database. Current ChatGPT Sites persistence capability and KFB adoption boundaries are documented in:
 `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_WEB_PUSH_SITES_PERSISTENCE_2026-09-28.md`.
 
+## Executor delivery matrix · binding
+
+Do not give every executor the same persistence instructions.
+
+### GitHub-capable Web / Work / Codex chat
+
+- Provide the exact repository, owner, branch/PR, source head and allowed files.
+- `KFB-Web-Read` means: recover the named current GitHub owner state and read only the bounded source/brief/evidence needed for the slice.
+- `KFB-Web-Push` means: persist implementation, evidence, Return/changelog and required Hub metadata directly to the current owner branch, then read back the exact head and files.
+- A timeout remains `UNKNOWN`; inspect before retrying.
+
+### Claude Design or another artifact author without reliable GitHub write access
+
+- Never instruct it to commit, push, merge, update a PR, inspect hidden repositories or keep GitHub/Hub current.
+- Give it a closed, self-contained input package or a stable public/readable `KFB-Web-Read` packet containing the exact brief, pinned source files, donor assets, manifest and acceptance checks.
+- Its required output is a complete downloadable return package, or an upload into an explicitly provided KFB Site intake endpoint when that endpoint exists and has been tested.
+- The return package must include editable source, exported runtime/assets, `RETURN.md`, source manifest/checksums, observed failures and exactly one suggested next action.
+- A GitHub-capable receiving chat performs ingestion, verification, owner updates and `KFB-Web-Push`. Claude Design never claims that step.
+
+### Blender MCP / local authoring
+
+- Treat Blender as an asset-authoring and measurement executor, not as the production registry.
+- Input and output use the same closed-package/return-package rule unless a verified direct persistence connector is explicitly available.
+- Raw or licensed sources stay in their approved local/Dropbox scope; only approved runtime derivatives and metadata enter GitHub or a Site.
+
+### KFB Site bridge
+
+A KFB Site may later provide authenticated task packets, uploads and status records. Until the named endpoint is implemented and browser-tested, do not write a brief as though Claude Design, Blender or a Web chat can already use it.
+
 ## 1. Recover exact truth
 
 1. Read `skills/chat/START_HERE.md`, this workflow and the named project brief.
