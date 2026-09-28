@@ -1,0 +1,47 @@
+{
+  "schema": "kfb.site-process-checkpoint/1",
+  "createdAt": "2026-09-29",
+  "owner": "KFB Town Resident Social Memory",
+  "github": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
+    "pr": 272
+  },
+  "existingSite": {
+    "name": "KFB Production Control",
+    "projectId": "appgprj_6ab82e3950b88191a8ead3c495e21454",
+    "slug": "kfb-production-control",
+    "liveUrl": "https://kfb-production-control.frizzlebob.chatgpt.site",
+    "observedSourceVersion": 26,
+    "observedProjectionRevision": 50,
+    "observedStatus": "active",
+    "libraryArtifactRole": "editor"
+  },
+  "siteWrite": {
+    "status": "PENDING_TOOL_GAP",
+    "reason": "This chat exposes the existing Site artifact through Library metadata but no direct ChatGPT Site/D1/R2 mutation action. Do not claim the process payload was written to Site storage.",
+    "intendedTarget": "existing KFB Production Control owner only; no second Site"
+  },
+  "process": {
+    "id": "resident-social-card-relay",
+    "status": "DESIGN_PROPOSAL",
+    "primaryLoop": "Resident A → player → Resident B → SHOW IT → SPIN IT → SELL IT → Reaction/ChatterBox/Lean Memory",
+    "entryRitual": "NAME IT → CLAIM IT → POWER IT remains the Freestyle card-entry ritual",
+    "signatureDeckRole": "worldview/Card source/stance; universal lost-Deck fetch quest is not the default",
+    "cardCollectionOwner": "Player Journey / Fractal Almanac",
+    "minigameRole": [
+      "Free Roam/Race connective travel",
+      "Combat/Card Zone exceptional Card acquisition/proof"
+    ],
+    "kingSynthesis": "Actor + 3 Scene + Quest → King Kayfabian Kayfabulation",
+    "nextProof": "one real Card relay between two source-proven Residents",
+    "noSecondOwners": [
+      "Card inventory",
+      "Quest database",
+      "Card corpus",
+      "Combat",
+      "Race",
+      "Almanac/Journey"
+    ]
+  }
+}
