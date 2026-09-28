@@ -1,3 +1,20 @@
+# CURRENT UPDATE · NPC-LIFE-01 PUBLICATION RECOVERY · 2026-09-28
+
+**Status:** CONTRACT PASS · EXACT STAGE PAYLOAD PRESENT ON `cloudflare-live` · PUBLIC BROWSER/HUB GATE BLOCKED · PRODUCT CANDIDATE PRESERVED
+
+- Runtime/contract implementation remains `ea157c52dd6cadbae1b0fe40f6cacede65ec9792`.
+- Deterministic encounter contract remains **21/21 PASS**.
+- Exact Stage payload is already present on `cloudflare-live`; the published `app.js` blob is byte-identical to the PR #210 implementation payload.
+- Evidence-only commit `b638507eef20ae29f3e3022165714e6d567aef57` adds `kfb-hub/stage/resident/npc-life-01/public-proof.mjs`; it has **not** been run because the generated Hub root cannot yet pass its strict registry closure.
+- HUB-CTRL publication attempts `36470315166` and `36471270090` both stopped before Hub render/Cloudflare-root publication.
+- The remaining global blocker is not NPC-LIFE: `combat-ranged-mvp` is a private cross-repo product lane whose PR/branch cannot be read by the `kayfabizarro` repository-scoped Actions token, while its Hub-local brief is incorrectly resolved against that product repo.
+- Full recovery: `tools/production_desk/recovery/NPC_LIFE_01_HUB_PUBLICATION_2026-09-28/START_HERE.md`.
+- **No PUBLIC_VERIFIED claim. No third publish repair in this slice. No merge/Live promotion.**
+
+Exactly one next gate: **HUB-CROSS-REPO-RESOLUTION-01** — prove the Production Desk cross-repo lane + Hub-local brief contract and reach an online registry with **0 problems** before another Hub publication attempt.
+
+---
+
 # NPC-LIFE-01 · Living Resident encounter bus · RETURN
 
 **Status:** REVIEW CANDIDATE · contract tests green · public Stage publication pending  
