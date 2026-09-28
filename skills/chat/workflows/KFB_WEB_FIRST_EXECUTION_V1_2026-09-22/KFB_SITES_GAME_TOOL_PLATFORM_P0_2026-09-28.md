@@ -1,6 +1,6 @@
 # KFB Sites · Game & Tool Platform P0 · 2026-09-28
 
-Status: PLANNED / BOUNDED IMPLEMENTATION BRIEF
+Status: P0A OWNER HARDENING DEPLOYED · REAL LEGACY FILE MIGRATION PENDING
 Owner: HUB-CTRL / existing KFB Production Control Site
 Source workflow: `KFB_WEB_PUSH_SITES_PERSISTENCE_2026-09-28.md`
 Current Site: https://kfb-production-control.frizzlebob.chatgpt.site/
@@ -71,7 +71,7 @@ Use the same closed packet and return package. Raw licensed files stay in their 
 
 - **KFB-Web-Read** — open a stable, bounded task packet; read-only and safe for a fresh executor.
 - **KFB-Web-Push** — GitHub-capable executor persists accepted production state in the canonical owner.
-- **KFB-Site-Drop** — future Site action for Georg to upload a return ZIP/JSON/screenshot and create an intake record. Do not use this name as though it exists until P0 is browser-tested.
+- **KFB-Site-Drop** — the deployed authenticated Production Inbox for durable text/JSON/ZIP/screenshot intake. A record is intake evidence, not canonical GitHub truth before owner ingestion.
 - **KFB-Site-Report** — future in-game/tool action that stores a playtest note, runtime state, console/error summary and optional screenshot.
 
 ## Target data shape
@@ -110,28 +110,28 @@ The current KFB Production Control Site already has:
 
 Do not rebuild those capabilities.
 
-Current gaps before multi-user playtesting:
+## P0A · deployed owner-safe Production Inbox
 
-- the Inbox GET path currently returns the shared record set instead of filtering by `createdBy`;
-- there is no owner-scoped delete path that also deletes matching R2 objects;
-- the generic intake record has no explicit World/Combat playtest schema, build/state fields or receipt export;
-- the current Site does not declare a callable MCP server; browser-context tools are not proof that Claude Design, Blender MCP or another chat can connect directly;
-- no stable closed task-packet route exists yet.
+Implemented in the existing Site without a second Hub or replacement design:
 
-## P0A · harden and prove Playtest & Intake
+- list, file download and delete are scoped to the authenticated `createdBy` owner;
+- deleting a record also removes its matching R2 objects and D1 file rows;
+- the former local-only Pocket Inbox is now the authenticated D1/R2 **Production Inbox**;
+- note/JSON/file intake, export and delete are visible in the current Site;
+- old browser-local entries remain in a collapsed **legacy rescue** area so they can be downloaded or uploaded once instead of silently disappearing;
+- the Site build passed all five production stages and the deployed URL visibly shows the synchronized inbox;
+- Animation Library V1 is recorded as **PASS → TUNE**, with 204 clips and 24/24 checks; its UI tune is governed by `KFB_UI_DENSITY_INLINE_EDITOR_STANDARD_2026-09-28.md`.
 
-Extend the existing implementation, preserving its approved design:
+Important migration fact: the user’s `visuelle Grammatik für Fahrbahnmarkierungen.md` was verified in browser-local storage but was not present in the authenticated server inbox. Browser-local bytes cannot be migrated server-side without one upload from the browser that owns them. This is preserved as a visible rescue step, not reported as synchronized.
 
-1. filter all list/download/mutation paths by the authenticated Site user;
-2. add owner-scoped delete for a record and its R2 objects;
-3. add one compact **Playtest Report** form for World M2 or Combat with build, device, mode, severity, repro/state and note;
-4. reuse the existing R2 upload path for one screenshot or JSON/ZIP attachment;
-5. export a small `kfb.site-intake/1` JSON receipt with stable record id, checksum and canonical owner target;
-6. preserve typed input on storage/network failure;
-7. show privacy/retention and delete behavior in plain language;
-8. prove reload, download, ownership isolation and deletion in the real deployed Site.
+Still open before multi-user playtesting:
 
-The first proof uses a real World M2 or Combat session, not dummy data.
+- upload the real local Fahrbahnmarkierungen file once through the new durable Production Inbox and verify its server record;
+- add the explicit World/Combat playtest schema, build/state fields and portable `kfb.site-intake/1` receipt;
+- prove a real attachment reload/download/delete roundtrip and cross-user isolation;
+- expose a stable closed task-packet route for Claude Design / Blender MCP. Browser-context tools alone are not a provider bridge.
+
+The first playtest proof must use a real World M2 or Combat session, not dummy data.
 
 ## Later bounded slices
 
@@ -156,4 +156,4 @@ PASS only when the production Site visibly proves:
 
 No Cloudflare mirror or second Hub is created for this proof.
 
-Exactly one next gate: implement **P0A · harden the existing Production Inbox and add one real Playtest Report** — user-scoped reads/downloads/deletes, one World M2 or Combat report and one attachment. Save a review version first; deploy only after ownership, reload and delete behavior are verified.
+Exactly one next gate: in the same browser that owns the legacy entry, upload **`visuelle Grammatik für Fahrbahnmarkierungen.md`** once through the deployed Production Inbox; then verify its authenticated server record and file roundtrip before adding the World/Combat report schema.
