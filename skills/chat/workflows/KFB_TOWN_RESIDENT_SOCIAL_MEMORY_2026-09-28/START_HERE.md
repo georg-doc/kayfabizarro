@@ -30,9 +30,10 @@ No second runtime, NPC database, dialogue engine, movement owner, reward owner o
 6. `skills/chat/town/references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`
 7. `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md` — first resident-specific attention/reaction overlay
 8. `RESIDENT_DANCE_CULTURE_2026-09-28.md` — Common Bounce, Signature Move mapping and player learning/collection
-9. `SOURCE.json`
-10. `TEST_REPORT.md`
-11. `RETURN.md`
+9. `RESIDENT_GIFT_CULTURE_2026-09-28.md` — gifts, barter, prank escalation, provenance and reconciliation
+10. `SOURCE.json`
+11. `TEST_REPORT.md`
+12. `RETURN.md`
 
 For implementation later, also read the **current heads**, not stale copies, of:
 - Brick Fish / Prop Toss candidate;
@@ -107,11 +108,12 @@ Machine-readable contract:
 `resident-aida-poi.v0.1.json`
 
 Current evidence:
-- **20/20** source reads PASS;
+- **23/23** source reads PASS;
 - **1/1** SOURCE manifest parse PASS;
 - **1/1** AIDA/POI contract parse PASS;
 - **20/20** design invariants PASS;
 - Resident Dance Culture checks: **12/12 PASS**;
+- Resident Gift Culture checks: **15/15 PASS**;
 - runtime/browser/Stage remain 0 because this is design persistence only.
 
 Fresh-chat shorthand:
@@ -157,3 +159,25 @@ Durable design:
 `RESIDENT_DANCE_CULTURE_2026-09-28.md`.
 
 Current evidence: **20/20 source reads · 12/12 Dance Culture checks PASS**. No Common Bounce runtime, final Signature mapping, player Dance UI or Stage deployment is claimed.
+
+
+## 2026-09-28 · Shared Gift Culture / barter / prank / reconciliation
+
+Gift-giving is now a third shared Resident culture axis beside Brick Fish play and Dance Culture.
+
+Design stack:
+- exact Santa source provides `Santa.glb` plus five real wrappers `Present_A–E`;
+- December-2024 Helpers provide `Helper_A/B` plus toy-workshop props for a later North-Pole/Holiday Resident scene;
+- Toy Soldier `Present_Base → Present_UnwrappedBase` remains the strongest reveal-animation donor, but its opened geometry is not generalized to Santa wrappers;
+- Gift Culture separates **wrapperRef**, **payloadRef** and giver **intent**;
+- real ownership transfer stays with existing world/inventory owners; Player Journey / Meta keeps durable player-facing gift provenance;
+- gifts can be warm, useful, barter, teasing, satirical needling, prank, tribute, apology or reconciliation without creating a global relationship score;
+- character-specific Reaction Choreography + ChatterBox/Triplets resolve the reveal; Lean Memory stores only meaningful provenance/outcomes;
+- exploding/prank presents default to social/Kayfabe cartoon violence; actual damage only when Combat explicitly owns the event;
+- bounded Failure Spiral: warm/neutral → tease → slapstick → Kayfabe blowout → reconciliation/cooldown/return;
+- later North-Pole winter environment and Holiday/Jingle-Bells-like audio remain source-required and are not falsely attributed to Santa/Helpers packs.
+
+Durable design:
+`RESIDENT_GIFT_CULTURE_2026-09-28.md`.
+
+Current evidence: **23/23 source reads · 15/15 Gift Culture checks PASS**. No gift runtime, barter economy, North-Pole scene, unwrap VFX or Stage deployment is claimed.
