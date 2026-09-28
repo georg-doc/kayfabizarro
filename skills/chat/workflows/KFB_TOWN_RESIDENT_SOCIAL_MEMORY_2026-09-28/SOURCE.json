@@ -131,6 +131,33 @@
         "clip→body→face→ears→Emanata→recovery",
         "Brick Fish social.prop_hit context variants"
       ]
+    },
+    {
+      "id": "kfb-overworld-living-routines",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "overworld/docs/LIVING_CONCEPT_overworld.md",
+      "blobSha": "8f9e3c70c5046ce7b0e63698d500129a27975207",
+      "facts": [
+        "regions have appropriate resources and faction activity",
+        "resources include gold/ore/wood/water",
+        "units perform fishing/mining/chopping/resource transport routines",
+        "player can encounter and interrupt routines"
+      ]
+    },
+    {
+      "id": "kfb-resident-activity-backlog",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/BACKLOG.md",
+      "blobSha": "38323ce5a72c479ca5017d3daa1aa0508494c7ba",
+      "facts": [
+        "source-backed resident activity library candidate",
+        "Hammer/Hammering smithing",
+        "Chop/Chopping",
+        "Dig/Digging",
+        "Pickaxe/Pickaxing",
+        "Saw/Sawing",
+        "Fishing activity"
+      ]
     }
   ],
   "nonGoals": [
@@ -141,5 +168,11 @@
     "let LLM write movement/reward/combat truth",
     "deploy Stage before integrated runtime exists"
   ],
-  "nextGate": "RESIDENT-SOCIAL-MEMORY-01 in the real receiving world after current relevant recovery blockers clear"
+  "nextGate": "RESIDENT-SOCIAL-MEMORY-01 with POI perception + resumable routine + one KFB AIDA loop in the real receiving world after current relevant recovery blockers clear",
+  "userDirections": [
+    "Points of Interest include player, NPCs/Residents, Cube Pets, plants/nature, environment/landmarks, resources, props/cards and activity stations.",
+    "Routine activity includes fishing, smithing/hammering, patrol, explore and other role-specific work.",
+    "KFB AIDA gameplay loop for player and NPCs: attention → curiosity/interest → expectation → interaction → reaction → interpret/remember/update → return/resume/retarget.",
+    "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict."
+  ]
 }
