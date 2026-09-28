@@ -45,19 +45,23 @@ const bootStartedAt=performance.now();
 const H='../world-drive-interact-m2a/';
 await import(H+'runtime/worldbuilder/wb2-design-01/wb2d-app.js?r1=playability-r6');
 const app=window.__wb2d;
-const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4},{mountClayCity}]=await Promise.all([
-  import(H+'clay-world-m1.mjs?r4=distance-budget'),import(H+'world-mobility-m1.mjs?r6=focus-sync'),import(H+'world-mobility-ui.mjs?r6=direct-modes'),import(H+'adaptive-quality-r4.mjs?r6=readability-floor'),import('./clay-city.mjs?cc=1')
+const [{mountClayWorld},{mountWorldMobility},{mountWorldMobilityUi},{mountAdaptiveQualityR4},{mountClayCity},{mountSkyCore,mountSkyButton}]=await Promise.all([
+  import(H+'clay-world-m1.mjs?r4=distance-budget'),import(H+'world-mobility-m1.mjs?r6=focus-sync'),import(H+'world-mobility-ui.mjs?r6=direct-modes'),import(H+'adaptive-quality-r4.mjs?r6=readability-floor'),import('./clay-city.mjs?cc=1'),import('./sky-core.mjs?cc=1')
 ]);
+const Q=new URLSearchParams(location.search);
 const clay=await mountClayWorld(app);
 app.setPlay(true);
 const mobility=await mountWorldMobility(app);
 const city=await mountClayCity({app,mobility});
+const sky=mountSkyCore({scene:app.scene,camera:app.camera,world:app.world});
+await sky.set(Q.get('sky')==='basic'?'BASIC':'TINY_SKIES',Q.get('skyv')||'day');
+mountSkyButton(sky);
 const quality=mountAdaptiveQualityR4({app,mobility});
 const ui=mountWorldMobilityUi({app,clay,mobility});
-window.__worldDriveM2A={app,clay,mobility,quality,ui,city,report:()=>({schema:'kfb.clay-city-mvp-01-stage/1',bootMs:Math.round(window.__ccBootMs||0),mobility:mobility.report(),clay:clay.report(),quality:quality.report(),city:city.report()})};
+window.__worldDriveM2A={app,clay,mobility,quality,ui,city,sky,report:()=>({schema:'kfb.clay-city-mvp-01-stage/1',bootMs:Math.round(window.__ccBootMs||0),mobility:mobility.report(),clay:clay.report(),quality:quality.report(),city:city.report(),sky:sky.report()})};
 window.__ccBootMs=performance.now()-bootStartedAt;
 document.body.dataset.m1Ready='true';document.body.dataset.ccReady='true';
-if(new URLSearchParams(location.search).get('probe')==='1'){
+if(Q.get('probe')==='1'){
   const {runProbe}=await import('./playtest-probe.mjs?cc=1');
   setTimeout(()=>runProbe({app,mobility,city}),2500);
 }

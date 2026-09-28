@@ -157,7 +157,8 @@ export async function mountClayCity({ app, mobility }) {
   ms.donors = Math.round(performance.now() - t); t = performance.now();
   const plan = planDistrict({ zone: W.zone, rect: tileRect, road, heightAt: H, reserved, widths: ROAD_RULE.width });
   const padMat = makeClayMaterial(THREE, U, { src: new THREE.MeshStandardMaterial({ color: '#cdb088', name: 'clay-foundation' }), role: 'world', proc: false, reliefK: 0.7, scale: 1.35 });
-  const district = buildDistrict({ plan, meshes, padMaterial: padMat });
+  const signMat = makeClayMaterial(THREE, U, { src: new THREE.MeshStandardMaterial({ color: '#fff1d6', name: 'clay-sign-socket' }), role: 'world', proc: false, reliefK: 0.6, scale: 1.35 });
+  const district = buildDistrict({ plan, meshes, padMaterial: padMat, signMaterial: signMat, seedGeometry: (g, s) => seedGeometry(THREE, g, s) });
   app.scene.add(district.group);
   const coll = districtCollision(plan);
   ms.district = Math.round(performance.now() - t);

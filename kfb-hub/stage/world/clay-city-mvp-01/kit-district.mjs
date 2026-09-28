@@ -220,7 +220,7 @@ export async function loadArchetypes({ makeMaterial, seedGeometry }) {
   return { measured, meshes };
 }
 
-export function buildDistrict({ plan, meshes, padMaterial }) {
+export function buildDistrict({ plan, meshes, padMaterial, signMaterial = null, seedGeometry = null }) {
   const group = new THREE.Group(); group.name = 'KFB kit district · ' + DISTRICT_RULE.id;
   const count = {};
   const push = (arch, M, color) => { (count[arch] ||= []).push({ M, color }); };
@@ -245,7 +245,21 @@ export function buildDistrict({ plan, meshes, padMaterial }) {
     pad.setMatrixAt(i, M);
   });
   pad.receiveShadow = true; pad.name = 'kit:foundation-pads'; group.add(pad);
-  return { group, instanced, drawCalls: instanced.length + 1 };
+  /* lightweight billboard/sign socket on the landmark roof: blank clay board, no media, no autoplay */
+  let sign = null;
+  const L = plan.landmark;
+  if (L?.signSocket && signMaterial) {
+    const w = Math.min(9, L.w * 0.8), h = 3.2, parts = [];
+    const board = new THREE.BoxGeometry(w, h, 0.35); board.translate(0, 1.6 + h / 2, 0); parts.push(board);
+    for (const x of [-w * 0.35, w * 0.35]) { const p = new THREE.BoxGeometry(0.35, 1.8, 0.35); p.translate(x, 0.9, -0.1); parts.push(p); }
+    const g = mergeGeometries(parts.map((p) => p.toNonIndexed()));
+    const c = Math.cos(L.yaw), s = Math.sin(L.yaw), ox = L.deform.lean * L.h;
+    g.applyMatrix4(new THREE.Matrix4().makeTranslation(L.x + ox * c, L.baseY + L.h - 0.2, L.z - ox * s).multiply(new THREE.Matrix4().makeRotationY(L.yaw)));
+    if (seedGeometry) seedGeometry(g, 4242);
+    sign = new THREE.Mesh(g, signMaterial); sign.name = 'kit:landmark-sign-socket (blank, no media)'; sign.castShadow = true; group.add(sign);
+    L.signSocket.mesh = sign.name; L.signSocket.sizeM = [+w.toFixed(2), h];
+  }
+  return { group, instanced, sign: !!sign, drawCalls: instanced.length + 1 + (sign ? 1 : 0) };
 }
 
 /* collision from the SAME recipes: oriented boxes (pad + body) → trimesh, and a point query */
