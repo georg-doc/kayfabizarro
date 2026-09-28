@@ -1,3 +1,26 @@
+## 2026-09-28 · KFB Town · Shared Resident Dance Culture + collectible Signature Moves
+
+### DESIGN
+- Music/dance is now a shared Resident culture axis alongside Brick Fish social play.
+- Added `RESIDENT_DANCE_CULTURE_2026-09-28.md`.
+- **Common Bounce** is the shared beat-driven groove semantic; accepted Legacy Orc B `orb.bounce` is the first behavioral donor, not a universal clip.
+- Current Motion Library v2b contributes **24 dance entries** across dedicated Rig_Medium/Rig_Large dance libraries.
+- Long dance sources may be reused through beat-aligned **motion slices**, so Resident uniqueness does not require one new FBX per character.
+- Each Resident eventually gets one authored learnable Signature Move mapping; current Resident Disco pairings are the first audition pool, not final assignments.
+- Group choreography uses one song transport: Common Bounce between phrase-boundary Signature inserts, with optional group hits/call-response and bounded local roam.
+- Brick Fish / Reaction Choreography may interrupt dancing; the dancer returns to the active groove on a legal beat/bar instead of generic Idle.
+- Player starts with Common Bounce. Signature Moves progress `UNKNOWN → DISCOVERED → LEARNED/PERFORMABLE`.
+- Durable learned-move ownership stays with **Player Journey / Meta**; teacher/event/method provenance is retained and learned moves do not consume Backpack slots.
+- Learned move identity is semantic across avatar families; incompatible rigs use owner-specific adapters or remain temporarily unperformable without losing the unlock.
+- Animation Studio / Motion Library remains the authoring/mapping owner; no second Dance Studio/runtime is introduced.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **20** pinned entries with Motion Library v2b, Resident Disco, Orc Band, Player Meta STRAND M and versioned Journey-state donors.
+- Current evidence: **20/20 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer profile checks · 12/12 Dance Culture checks PASS**.
+- Runtime/browser/Stage remain 0; no public Dance review page or Live promotion was created.
+- START_HERE, Return and Recovery carry the same continuation state.
+- Exactly one next integrated gate remains **RESIDENT-SOCIAL-MEMORY-01**, consuming Dance Culture when first Animation Studio mappings are ready.
+
 ## 2026-09-28 · KFB Town · Officer Doppel-Denk first resident-specific overlay
 
 ### CHARACTER / DESIGN
