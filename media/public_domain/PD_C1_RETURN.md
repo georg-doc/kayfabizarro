@@ -1,16 +1,16 @@
 # RETURN · PD-POOL-C1 · curated expansion
 
 Status: **PASS · NEW CURATED DATASET · IDEMPOTENT · NOT HISTORICAL RECONSTRUCTION · NOT MERGED / NOT PUBLISHED**
-Tested implementation head: `$GITHUB_SHA`
+Tested implementation head: `4108d536f931915a0a52b9a777bcdb036c29401a`
 
 ## Result
 
 - discovered candidates: **24**
-- accepted/persisted: **24**
-- rejected by live recheck/download gate: **0**
-- accepted by provider: **{'met': 6, 'aic': 6, 'commons': 6, 'ia': 6}**
-- new stored payload: **16684256 bytes**
-- pool manifest rows after C1: **28**
+- accepted/persisted: **23**
+- rejected by live recheck/download gate: **1**
+- accepted by provider: **{'met': 6, 'aic': 5, 'commons': 6, 'ia': 6}**
+- new stored payload: **12237192 bytes**
+- pool manifest rows after C1: **27**
 - fallback-attribution rows after C1: **4**
 
 ## Boundaries
