@@ -190,3 +190,24 @@ The first real integrated proof should now include:
 5. Open/update a Draft PR.
 6. Read back exact final branch head and intended files.
 7. Do not deploy Stage or promote Live in this design-only slice.
+
+
+## Execution lane clarification · Web-first, WSA/Work escalation only
+
+Current binding process from `skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md`:
+
+- **ChatGPT Web/GitHub is the default KFB production lane** for recovery, planning, architecture, repository implementation, tests/CI, donor extraction, debugging, bounded repair, Return/changelog/Hub metadata and fresh-chat handoffs.
+- **Claude Design** is the visual-authoring specialist when needed.
+- **Work / WSA is escalation-only**, only when a concrete capability is unavailable or impractical in Web/GitHub/Claude, such as private/local binary movement, exact simultaneous local multi-repo checkout, OS/browser automation, a hard local cross-repo runtime seam or final packaging that cannot be done through GitHub.
+- If there is no concrete missing capability, **do not use Work**.
+
+The later `PRODUCTIVE_REVIEW_GATE_POLICY.md` further qualifies the older HTML-review-first wording:
+- do not manufacture a zero-install/Stage review artifact merely because a slice ended;
+- prefer implementation and evaluation in the **real WorldBuilder / ToolBox / Resident / Travel / Combat owner surface**;
+- technical evidence stays internal unless Georg has a concrete product decision to make.
+
+Application to this slice:
+- continue Resident Social Memory / POI / Routine / AIDA design and repository work in **ChatGPT Web + GitHub**;
+- do **not** wait for WSA/Work;
+- do **not** create a standalone review HTML or Stage page for this design contract;
+- escalate to Work only later if the real integrated RESIDENT-SOCIAL-MEMORY-01 hits an actual Web capability gap.
