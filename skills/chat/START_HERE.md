@@ -1334,9 +1334,16 @@ KFB resident direction:
 - use `deckRef + stance` so direct fit and deliberate mismatch both work; ChatterBox retrieves only current context + stance + 1–3 relevant Cards + small memory context;
 - Card recovery/search reuses Card POIs + Player Journey/Almanac, batches meaningful milestones instead of one courier transaction per Card, and never hard-codes 56/15 because current deck metadata varies;
 - Officer Doppel-Denk's first candidate is `anti_rules_toolkit`, with stance still open between `misreads-as-law`, `confiscate/destroy` and `archivist/evidence-locker`;
+- **interaction-first Social Card Relay** is now the preferred Card gameplay proposal: Resident A introduces a real Card → player discovers it → player brings/pitches it to Resident B via **SHOW IT → SPIN IT → SELL IT** → B reacts through identity, Signature Deck stance, ChatterBox, Reaction Choreography and Lean Memory;
+- Freestyle `NAME IT → CLAIM IT → POWER IT` remains the separate card-entry ritual; do not silently rename/merge the two grammars;
+- Player Journey / Almanac remains Card collection truth; social handoff does not consume discovery;
+- Free Roam/Race are connective travel/interruption layers; Combat/Card Zones are exceptional Card acquisition/proof adapters, not default Card ownership;
+- existing five-card King Kayfabulation `Actor + 3 Scene + Quest` remains the higher-order synthesis/closure layer;
+- universal lost-Deck search is optional, not the default Card loop;
+- existing KFB Production Control Site target is identified, but this chat has no direct Site backend mutation action; exact intended process payload is frozen in the slice Site checkpoint with `PENDING_TOOL_GAP`;
 - world movement, persistence, POP/rewards, Combat and actor-rig ownership remain with existing owners.
 
-Evidence: **25/25 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 · Dance Culture 12/12 · Gift Culture 15/15 · Gift KISS 6/6 · Signature Deck 12/12 PASS**. Runtime/browser/Stage tests remain 0.
+Evidence: **27/27 source reads · 1/1 source-manifest parse · 1/1 AIDA-contract parse · 20/20 design invariants PASS · Officer profile 6/6 · Dance 12/12 · Gift 15/15 · Gift KISS 6/6 · Signature Deck 12/12 · Social Card Relay 15/15 PASS**. Runtime/browser/Stage/Site-backend implementation remain 0.
 
 Fresh-chat shorthand: **`KFB WEB PUSH/READ — <project or slice> — recover + continue`**. It means Web/GitHub-first recovery + continuation, read-back after every write, timeout = UNKNOWN, Work/WSA only for a concrete capability gap, and no manufactured review gate.
 
