@@ -8,7 +8,7 @@ Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
 ### Source reads
 
-**15 / 15 PASS**
+**20 / 20 PASS**
 
 Verified directly from current GitHub state:
 1. `georg-doc/ai-town` main ref;
@@ -26,6 +26,11 @@ Verified directly from current GitHub state:
 13. Overworld Living Concept resource/routine direction.
 14. Resident Atlas `tools/resident_atlas_s6/data/cast.js` for exact Toy Soldier actor/props/reveal state.
 15. Motion Registry `registry/resources/v1/motions.jsonl` for Rig_Medium `Walking_A`, `Walking_B` and `Running_HoldingRifle`.
+16. KFB Motion Library v2b catalogue for 179 clips / 24 dance entries and Rig_Medium/Rig_Large dance libraries.
+17. Resident Disco candidate for shared beat transport, mixed-rig ensemble and resident dance pairing candidates.
+18. Orc Band candidate for real measured beat clock and accepted Legacy Orc B `orb.bounce` donor.
+19. Production Architecture v3 STRAND M for Player Journey / Meta progression ownership.
+20. `overworld/overworld/journey.js` for versioned save/export/import/migration donor.
 
 The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before the source/evidence closure. Current exact pin:
 `9ca3ed0a9987fbb11d0721f5689d6040943403d5`.
@@ -34,7 +39,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 **1 / 1 PASS**
 
-`SOURCE.json` parses as JSON and contains exactly **15** pinned source entries.
+`SOURCE.json` parses as JSON and contains exactly **20** pinned source entries.
 
 ### Machine-readable AIDA / POI contract
 
@@ -57,7 +62,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 Checked against the committed design reference, source manifest and AIDA contract:
 
-1. source manifest contains 15 donors;
+1. source manifest contains 20 donors;
 2. AIDA contract parses;
 3. exact AI Town donor HEAD present;
 4. ChatterBox + Triplet lineage present;
@@ -93,6 +98,27 @@ Source/read-back checks for the first resident-specific profile overlay:
 
 No patrol, POI reaction, ChatterBox, Lean Memory or world persistence runtime is claimed by these checks.
 
+## Resident Dance Culture evidence
+
+**12 / 12 PASS**
+
+Documentation/source checks for Common Bounce + Signature Moves + player learning:
+
+1. Motion Library catalogue parses and reports **179** total clips;
+2. exactly **24** catalogue entries are in the `dance` group;
+3. both `Rig_Medium` and `Rig_Large` have dedicated dance-library GLBs;
+4. dance metadata distinguishes in-place vs travel/root behavior;
+5. Resident Disco defines one shared song transport / `beatPos` rule;
+6. Resident Disco contains mixed Legacy, Rig_Medium and Rig_Large dancers;
+7. Resident Disco already provides character-specific dance pairing candidates including Toy Soldier;
+8. Orc Band defines accepted Legacy Orc B `orb.bounce` as an **8-beat** leader action;
+9. Player Meta STRAND M assigns durable cross-mode progression to Player Journey rather than individual consumers;
+10. the existing Journey donor supplies versioned state, export/import and migrations;
+11. committed Dance Culture design keeps learned moves out of the 20-slot Backpack while preserving collection provenance through Player Journey;
+12. committed design keeps Common Bounce semantic across rig families and requires owner-specific adapters rather than invalid humanoid retargets.
+
+No Common Bounce clip, Signature mapping set, player dance UI or durable dance unlock runtime is claimed by these checks.
+
 ## Runtime / browser / Stage
 
 - runtime code changed: **0 files**
@@ -112,7 +138,7 @@ is now documented in the branch version of `skills/chat/FRESH_CHAT_SLICE_PROTOCO
 
 ## Result
 
-**PASS for documentation/source synthesis + POI/AIDA contract + Officer Doppel-Denk source-backed profile.**
+**PASS for documentation/source synthesis + POI/AIDA contract + Officer Doppel-Denk source-backed profile + Resident Dance Culture contract.**
 
 This is not an implementation PASS for autonomous Residents, Lean Memory, POI perception, routines, motivations, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
 
