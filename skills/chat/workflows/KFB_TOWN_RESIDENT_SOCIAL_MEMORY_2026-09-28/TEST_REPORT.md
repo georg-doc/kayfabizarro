@@ -8,7 +8,7 @@ Branch: `chatgpt-web/town-resident-social-memory-2026-09-28`
 
 ### Source reads
 
-**20 / 20 PASS**
+**23 / 23 PASS**
 
 Verified directly from current GitHub state:
 1. `georg-doc/ai-town` main ref;
@@ -31,6 +31,9 @@ Verified directly from current GitHub state:
 18. Orc Band candidate for real measured beat clock and accepted Legacy Orc B `orb.bounce` donor.
 19. Production Architecture v3 STRAND M for Player Journey / Meta progression ownership.
 20. `overworld/overworld/journey.js` for versioned save/export/import/migration donor.
+21. Santa pack for exact `Santa.glb` plus source `Present_A–E` wrapper variants.
+22. December-2024 Helpers characters for exact `Helper_A.glb` / `Helper_B.glb`.
+23. December-2024 Helpers GLTF asset tree for verified toy-workshop props.
 
 The first design checkpoint initially carried one truncated/incorrect Fluff-o-lect blob SHA due to connector output truncation. It was caught by read-back and corrected before the source/evidence closure. Current exact pin:
 `9ca3ed0a9987fbb11d0721f5689d6040943403d5`.
@@ -39,7 +42,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 **1 / 1 PASS**
 
-`SOURCE.json` parses as JSON and contains exactly **20** pinned source entries.
+`SOURCE.json` parses as JSON and contains exactly **23** pinned source entries.
 
 ### Machine-readable AIDA / POI contract
 
@@ -62,7 +65,7 @@ The first design checkpoint initially carried one truncated/incorrect Fluff-o-le
 
 Checked against the committed design reference, source manifest and AIDA contract:
 
-1. source manifest contains 20 donors;
+1. source manifest contains 23 donors;
 2. AIDA contract parses;
 3. exact AI Town donor HEAD present;
 4. ChatterBox + Triplet lineage present;
@@ -119,6 +122,30 @@ Documentation/source checks for Common Bounce + Signature Moves + player learnin
 
 No Common Bounce clip, Signature mapping set, player dance UI or durable dance unlock runtime is claimed by these checks.
 
+## Resident Gift Culture evidence
+
+**15 / 15 PASS**
+
+Documentation/source checks for gifting, barter, prank escalation and reconciliation:
+
+1. exact `Santa.glb` source exists;
+2. five distinct Santa wrapper sources `Present_A–E.gltf` exist;
+3. the checked Santa wrapper set does not provide a proven opened-state counterpart;
+4. exact `Helper_A.glb` and `Helper_B.glb` sources exist;
+5. Helpers GLTF tree contains verified Candycane, Drawers, Glue A/B, Hammer, Lamp_Workbench, two Toy Trains and two Toy Workbenches;
+6. checked Helpers GLTF tree does not contain Santa `Present_A–E`, so later North-Pole composition is explicitly cross-pack;
+7. existing Toy Soldier source already proves `Present_Base → Present_UnwrappedBase` reveal timing/geometry for that pack only;
+8. Gift Culture contract separates `wrapperRef` from `payloadRef`;
+9. actual object ownership transfer remains with existing world/inventory owners, never dialogue/LLM text;
+10. gift continuity reuses bounded `ResidentSocialThread kind: gift` rather than a new relationship system;
+11. recipient reactions route through existing Reaction Choreography + optional ChatterBox/Triplet;
+12. default exploding/prank gift is social/Kayfabe cartoon violence; real damage remains Combat-owned when explicitly requested by the consumer;
+13. player-facing durable gift provenance routes to Player Journey / Meta and replay may not duplicate an item transfer;
+14. escalation has a bounded Failure-Spiral budget plus explicit reconciliation/return options;
+15. future North-Pole winter environment and Holiday/Jingle-Bells-like audio remain `SOURCE_REQUIRED`, not falsely attributed to Santa/Helpers packs.
+
+No generic unwrap runtime, barter economy, exploding-present effect, North-Pole scene or player gift UI is claimed by these checks.
+
 ## Runtime / browser / Stage
 
 - runtime code changed: **0 files**
@@ -138,7 +165,7 @@ is now documented in the branch version of `skills/chat/FRESH_CHAT_SLICE_PROTOCO
 
 ## Result
 
-**PASS for documentation/source synthesis + POI/AIDA contract + Officer Doppel-Denk source-backed profile + Resident Dance Culture contract.**
+**PASS for documentation/source synthesis + POI/AIDA contract + Officer Doppel-Denk profile + Resident Dance Culture + Resident Gift Culture contracts.**
 
 This is not an implementation PASS for autonomous Residents, Lean Memory, POI perception, routines, motivations, ChatterBox, Fluff-o-lect, Brick Fish or Reaction Choreography.
 
