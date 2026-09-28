@@ -31,7 +31,11 @@ const LOCAL_GOTH_DEF=Object.freeze({
   id:'world-m2a-goth-girl',
   title:'Goth Girl · World M2A consumer fixture',
   status:'consumer-local-source-backed',
-  source:{residentId:'goth-girl'},
+  source:{
+    residentId:'goth-girl',
+    includeIds:['stool','speaker','micstand'],
+    animationSets:['General','Simulation']
+  },
   scene:{position:[0,0,0],rotationYDeg:0,scale:1},
   support:{owner:'consumer',collisionOwnedByConsumer:true}
 });
@@ -131,11 +135,19 @@ export async function mountResidentSocialMemory({app,mobility}={}){
 
   const sourceBase='../../../../tools/resident_atlas/modules/';
   const clownDef=await loadResidentSceneModule(sourceBase+'clown-juggling-island.module.json');
+  const clownWorldDef={
+    ...clownDef,
+    source:{
+      ...clownDef.source,
+      includeIds:['podium','pin_blue','pin_green','pin_red'],
+      animationSets:['General']
+    }
+  };
   const anchors={
     clown:openAnchor(app,{ahead:11,side:-7},0),
     'goth-girl':openAnchor(app,{ahead:12,side:8},1)
   };
-  const clownModule=await mountResidentSceneModule(clownDef,{parent:app.scene,anchor:{position:[anchors.clown.x,anchors.clown.y,anchors.clown.z],rotationYDeg:18}});
+  const clownModule=await mountResidentSceneModule(clownWorldDef,{parent:app.scene,anchor:{position:[anchors.clown.x,anchors.clown.y,anchors.clown.z],rotationYDeg:18}});
   const gothModule=await mountResidentSceneModule(LOCAL_GOTH_DEF,{parent:app.scene,anchor:{position:[anchors['goth-girl'].x,anchors['goth-girl'].y,anchors['goth-girl'].z],rotationYDeg:-20}});
 
   let time=0,scanClock=0,interactionSeq=0,disposed=false;
@@ -294,6 +306,7 @@ export async function mountResidentSocialMemory({app,mobility}={}){
       source:RESIDENT_SOCIAL_SOURCE,
       config:{...CONFIG},
       ownerBoundaries:{world:'World M2A / World r2',actors:'Resident Atlas scene module',movement:'World consumer',dialogue:'ChatterBox request only',persistence:'Journey event receipt request + bounded session cache',reaction:'Reaction Choreography semantic request; no second mixer'},
+      sourceSelections:Object.fromEntries(residents.map((r)=>[r.id,r.module.sourceSelection])),
       residents:residents.map(r=>({
         id:r.id,name:r.name,state:r.state,distanceM:+r.distanceM.toFixed(2),visible:r.visible,interestScore:+r.interestScore.toFixed(2),
         motivation:r.motivation,activity:r.activityKind,activityEnabled:r.module.activity?.enabled!==false,
