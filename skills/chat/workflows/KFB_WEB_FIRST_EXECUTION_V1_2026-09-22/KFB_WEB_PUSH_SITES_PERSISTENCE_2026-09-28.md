@@ -1,6 +1,6 @@
 # KFB Web Push · ChatGPT Sites persistence · 2026-09-28
 
-Status: CURRENT PROPOSAL / DOCUMENTED CAPABILITY
+Status: CURRENT WORKFLOW DECISION / P0 IMPLEMENTATION PLANNED
 Owner: Georg / KFB Web-First execution lane
 Branch: `chatgpt-web/kfb-web-push-sites-persistence-2026-09-28`
 Stage route: none; documentation / workflow slice only
@@ -17,6 +17,18 @@ Stage route: none; documentation / workflow slice only
 6. do not merge, promote Live or publish a Site merely because a push was requested.
 
 This is a shortcut, not a second runtime owner and not a replacement for `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`.
+
+## Two shortcuts, different meanings
+
+- `KFB-Web-Read`: assemble or open the bounded source packet for the named task. It may be a GitHub ref for a GitHub-capable executor or a closed/public Site packet for Claude Design/Blender.
+- `KFB-Web-Push`: a GitHub-capable executor writes and verifies the durable production checkpoint in the existing owner.
+
+Neither shortcut implies merge, deployment or Live promotion.
+
+Claude Design and Blender MCP are never assigned GitHub maintenance unless a verified connector is explicitly available. Their normal contract is closed input package -> complete return package -> GitHub-capable ingestion.
+
+The concrete Site product plan is:
+`skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/KFB_SITES_GAME_TOOL_PLATFORM_P0_2026-09-28.md`.
 
 ## Verified ChatGPT Sites capability
 
@@ -71,4 +83,4 @@ DECISION: register Sites persistence as a supported KFB exploration path and reg
 
 NOT DECIDED: replacing Cloudflare hosting, migrating the main game runtime to Sites, moving canonical assets to R2, or making D1 the global KFB database.
 
-Exactly one next gate: choose one bounded game-owned persistence proof (for example one player progress record) only when a current game slice actually needs durable server-side state.
+Exactly one next gate: implement P0A in the existing KFB Production Control Site — one authenticated, user-owned World M2 or Combat playtest report in D1 plus one screenshot/JSON/ZIP attachment in R2, saved as a review version before deployment.
