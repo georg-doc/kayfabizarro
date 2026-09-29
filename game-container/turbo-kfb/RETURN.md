@@ -424,3 +424,25 @@ Public measured Travel-Walk remains:
 
 ## Exactly one current next gate
 **GEORG HUMAN PACE FEEL:** freeplay only the dedicated Pace-Tune Stage and judge whether ~1.10 u/s normal W is lively/enjoyable enough without obvious foot-slide or renewed tiny/tripping-step feel. If TUNE because it is still too slow, the next design choice is normal-W-as-`Running_A`/jog versus deliberately raising the Walk playback ceiling. No merge and no Enter/Exit Kart before this human gate.
+
+
+## Georg human pace review · 2026-09-29 · TUNE 2
+
+Outcome: **TUNE · 1.10 u/s STILL TOO SLOW · NORMAL W MUST BE RUNNING_A**
+
+Observed on the dedicated PUBLIC VERIFIED Pace-Tune Stage:
+- the controller/locomotion still reads like the old too-slow state;
+- merely overdriving `Walking_A` to ~1.10 u/s is not enough for normal free travel.
+
+Binding human direction:
+- **normal W in the Travel profile = `Running_A` immediately** — treat this as the normal second gear / default traversal state;
+- **Shift+W = `Running_B` Sprint**;
+- do not insert the old Walking_A / walk.fast tier between idle and normal travel;
+- preserve actor-scale Jump, backward/strafe semantics, Orbit and the measured/no-query comparison path.
+
+Interpretation:
+- the Travel profile becomes a two-gear forward ladder: **Idle → Running_A (W) → Running_B (Shift)**;
+- `Walking_A` remains source/reference and measured-profile evidence, not the default forward traversal animation.
+
+## Exactly one current next gate
+**GROUND-WALK-PACE-TUNE-02:** implement the two-gear Travel ladder on this same owner branch, prove normal W = Running_A and Shift = Running_B in the integrated Ground+Orbit host, then republish the same dedicated Pace-Tune Stage for Georg feel review. No Enter/Exit Kart before this gate.
