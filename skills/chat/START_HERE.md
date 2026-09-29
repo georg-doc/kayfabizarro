@@ -55,6 +55,13 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-09-29 · Resident/Scenery rebrief · terrain-aware Site Module
+
+Current bounded Claude Resident/Scenery continuation:
+`workflows/RESIDENT_SITE_CONTRACT_01_2026-09-29/START_HERE.md`
+
+The current good Graveyard performance/grounding fixes are **user-reported and must be checkpointed in the next complete Claude Session Cut before repository PASS claims**. Resident/Actor owns no ground; a Scene/Set may declare footprint/grade/blend/cutout requirements; only WorldBuilder may actually deform world terrain. First target is the Graveyard open grave as an explicit site cutout. WorldBuilder integration is a later separate Web slice; do not ask Georg to locate/redefine the WorldBuilder.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
