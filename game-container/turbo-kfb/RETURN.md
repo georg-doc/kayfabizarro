@@ -528,3 +528,28 @@ The prior ~1.10 u/s `Walking_A` Travel candidate remains additive history only a
 
 ## Exactly one current next gate
 **GEORG HUMAN TWO-GEAR FEEL:** on the direct Stage, judge only whether normal W now feels correct as the default `Running_A` travel gear and Shift as `Running_B` Sprint. No merge and no Enter/Exit Kart before this verdict.
+
+
+## Georg human two-gear review · 2026-09-29 · TUNE 3
+
+Outcome: **TUNE · CLIPS/GEARS CORRECT · WORLD MOTION STILL SLOW / RUCKLY**
+
+Observed on the PUBLIC VERIFIED Two-Gear Stage:
+- the new state mapping is directionally correct: W as `Running_A`, Shift as `Running_B`;
+- the animation itself now reads correctly;
+- actual world traversal still feels much too slow and intermittently ruckly / slow-motion-like;
+- the environment is the same class of host that previously ran acceptably, so this does not read as a content-density-only problem.
+
+Runtime diagnosis:
+- live `frame()` currently does `rawDt = clock.getDelta(); dt = Math.min(rawDt, 1/30); simulate(w, dt)`;
+- any real frame slower than 30 FPS therefore discards elapsed wall-clock time instead of catching it up;
+- at ~15 FPS, the simulation advances only ~0.033 s per ~0.067 s wall-clock frame: world motion can read at roughly half speed while the semantic animation state remains correct;
+- deterministic QA avoided this bug because `advanceBy(seconds)` already catches up in small fixed slices.
+
+Binding direction:
+- do **not** increase Running_A / Running_B target speeds again before repairing the live clock;
+- reuse the existing fixed-slice `advanceBy` principle in the actual frame loop: bounded wall-clock catch-up in small simulation slices, one render per RAF;
+- preserve the current W=Running_A / Shift=Running_B state contract, Jump, Orbit and measured reference profile.
+
+## Exactly one current next gate
+**GROUND-WALLCLOCK-TIMING-01:** repair the live RAF timing path so elapsed wall-clock time is not silently discarded below 30 FPS; prove slow-frame catch-up plus existing Ground+Orbit / Two-Gear regression before republishing the same Stage route. No speed retune until this timing gate is judged.
