@@ -125,6 +125,26 @@ Host/support truth stays separate:
 - walls, roof, windows and doors move together;
 - no fake base plate is introduced merely to hide a contact defect.
 
+## Clay foliage / interpenetrating-crown exception
+
+Georg's 2026-09-29 tree screenshot exposed a separate failure class: a dark horizontal band between stacked clay crown blobs.
+
+The exact K1/H0 source package confirms that these trees are built from **interpenetrating / nested crown blobs**. This is not the same topology as one solid building shell or prop.
+
+For this class:
+
+- keep the global fitted/snapped shadow-camera rule;
+- keep crown/foliage casting world shadows;
+- do **not** let sibling crown blobs receive each other's shadow-map self-shadow by default;
+- trunk / branches remain ordinary receivers;
+- large GTAO/contact AO can amplify the same intersection seam, so a seam that survives shadow-receive suppression must be diagnosed as AO/overlap topology, not “fixed” with more global bias;
+- if necessary, replace the crown's shadow/depth representation with one single-surface or proxy canopy while preserving the visible K1/H0 multi-lobed clay silhouette.
+
+Do not solve this with a large scene-wide `normalBias`: that only trades the black crown seam for detached building/prop shadows.
+
+Binding visual/code source:
+`tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md`.
+
 ## Shadow-map choice
 
 Keep `PCFSoftShadowMap` for this line.
@@ -140,7 +160,8 @@ Use at least one representative consumer, not an isolated diagnostic only:
 3. close-up of inserted/contact parts — no bright seam and no acne stripes;
 4. moving actor/prop — shadow remains attached and does not clip at frustum edge;
 5. building close-up — roof/wall seam and wall/ground contact have no bright band;
-6. one wider world view — no new detached shadows caused by an over-tight frustum.
+6. one wider world view — no new detached shadows caused by an over-tight frustum;
+7. one close clay-tree view — no black sibling-crown contact band while the canopy still casts onto trunk/ground.
 
 ## Known anti-patterns
 
