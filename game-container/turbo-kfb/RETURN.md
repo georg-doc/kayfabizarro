@@ -210,3 +210,44 @@ Parallel boundary remains binding:
 **GEORG HUMAN LOCOMOTION FEEL:** use the direct Stage and judge whether Walk → Run → Sprint, stop/release, backward/strafe and moving Jump now read as intentional full-body locomotion rather than tripping/small steps.
 
 No merge. No Enter/Exit Kart. No Orbit decision in this gate.
+
+
+## Integrated slice · GROUND-ORBIT-INTEGRATION-01
+
+Status: **IMPLEMENTED · CI RUNNING · NOT STAGE-PUBLISHED**
+
+Owner:
+- repo: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/kfb-container-ground-orbit-integration-01-2026-09-29`
+- base: GROUND-CONTROLLER-DONOR-01 handoff `8016b925bf44f380a17b9aa4f3ff7e86c9f4b210`
+- implementation commit: `299d44314f351fff5e03dff555266fabcc88fa7f`
+- QA commit: `9a71c79d63cd985f0ab622e4309656ab522ccea4`
+
+Integration:
+- transplanted exact tested B2a `ground-orbit-camera.js` blob `c05eddbf33bffb8fa0dc63b3a9ce4fa6d6c43e51`;
+- transplanted exact tested Orbit `main.js` seam blob `4faafa7616497a7c3bcbcc2ef39e3bd972bf0c6c`;
+- retained #287 Locomotion blobs unchanged:
+  - `ground-player.js` `99544c0d03eca37b11f8d9e6b9fe58abe187d869`;
+  - `walk-controller.js` `18dd999be52981122b011487286e99db1ad00455`;
+  - `ground-feel.js` `0001dbe9e9a5e9e111b1587d7374e0f551c0132b`.
+
+Runtime ownership:
+- Ground movement remains the #287 Walker/Velocity owner;
+- AnimationMixer remains presentation only;
+- Ground camera uses the isolated Orbit owner;
+- Kart/Race/Explore retain the original Turbo ChaseCamera;
+- no Enter/Exit Kart and no second movement owner added.
+
+QA:
+- workflow run `36557928700` is currently running on exact QA head `9a71c79d...`;
+- static Locomotion donor: **16/16 PASS**;
+- static integration seam: **10/10 PASS**;
+- pending in the same run:
+  1. B2 browser regression;
+  2. Velocity Locomotion browser proof;
+  3. combined Velocity + Orbit browser proof.
+
+No Stage/Hub publication until the combined browser proof passes.
+
+## Exactly one current next gate
+Finish workflow `36557928700`. If green, record evidence and publish one integrated Ground+Orbit Stage milestone; if red, repair only the concrete combined regression.
