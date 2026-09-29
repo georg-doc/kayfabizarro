@@ -313,3 +313,34 @@ Interpretation:
 
 ## Exactly one current next gate
 **GROUND-WALK-PACE-TUNE-01:** choose the best existing source-backed Walk tier (Walking_A/B/C and existing profile data), raise normal W to an enjoyable travel pace, keep Run/Sprint hierarchy intact, and prove no obvious foot-slide/tripping regression in the real integrated Ground+Orbit host.
+
+
+## GROUND-WALK-PACE-TUNE-01 · implementation checkpoint
+
+Status: **IMPLEMENTED · CI RUNNING · OPT-IN TUNE**
+
+- branch: `chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29`
+- base: public-verified Ground+Orbit integration + Georg TUNE feedback
+- implementation commit: `d3679c2e8609232674225ab798b4931327e43cff`
+- QA commit: `eb8d5a660eea64187b26df6d4b82d40cc14d9eee`
+- activation: `?ground=1&groundFeel=velocity&walkPace=travel`
+
+Design finding:
+- later Rig_Medium consumer profile measured `Walking_B` only +9.8% vs `Walking_A`; it is not a meaningful missing medium gait;
+- existing semantic profile therefore already defines `walk.fast` as playback-rate variation;
+- older Motion Lab technical handoff was ~1.108 u/s at `Walking_A ×1.8`.
+
+Tune:
+- normal travel W target = `Walking_A reference × 1.8 = 1.0997117224 u/s`;
+- playback cap remains 1.8; no extra animation-rate range invented;
+- current measured 0.6109509569 u/s path remains default when `walkPace=travel` is absent;
+- Run / Running_B Sprint / backward / strafe / Jump / Orbit unchanged.
+
+QA run:
+- `36581374090` on exact QA head `eb8d5a66...`;
+- static Walk-pace checks **6/6 PASS**;
+- integration static checks **10/10 PASS**;
+- browser regression + tuned Travel-Walk currently running.
+
+## Exactly one current next gate
+Finish run `36581374090`. If regression + tuned Travel-Walk both pass, publish a dedicated pace-tune Stage for Georg feel review. Do not replace the current public Combined baseline before that review.

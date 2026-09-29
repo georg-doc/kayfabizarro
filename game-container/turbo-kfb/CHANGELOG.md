@@ -73,3 +73,11 @@
 - final Hub/metadata `cloudflare-live@0f2e0588...`: Cloudflare Pages SUCCESS + public Chromium 18/18 PASS again;
 - final artifact `11029408390`, digest `sha256:0ec22fc23ce71dd2e6f84b34bb5d0772ba2895f5d84074ba17f50314546e48f5`;
 - public route proves Locomotion + Orbit together; next gate is Georg combined feel, then Enter/Exit Kart if PROCEED.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-01 · implementation
+- Georg TUNE: animation improved, but 0.611 u/s default Walk is too slow for enjoyable free travel.
+- Confirmed later Rig_Medium profile: Walking_B only +9.8% vs Walking_A; no hidden medium-speed gait.
+- Added opt-in `walkPace=travel`: Walking_A at existing 1.8× cap, target 1.0997117224 u/s.
+- Preserved measured Walk baseline and all Run/Sprint/Jump/Orbit behavior.
+- Dedicated regression + travel-pace browser proof running on `eb8d5a66...`.
