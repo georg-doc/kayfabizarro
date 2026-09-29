@@ -41,6 +41,38 @@ Current applications:
 Additional hard rule: **no low-fidelity proxy human gates**. If a review artifact is ruckly, simplified, visually unrepresentative, or reproduces known renderer defects such as shadow clipping/banding/light seams, it is internal evidence only and must not become a Georg blocking task.
 
 
+
+
+## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
+
+Current persistence correction: source-backed movement/vehicle knowledge must exist under a stable owner path and be consumed by the runtime; a measured donor or loaded asset is not enough if the active consumer still carries local parallel mappings.
+
+### Ground · current gate
+- current candidate branch: `chatgpt-web/kfb-ground-travel-pace-timing-01-2026-09-29`;
+- current recovery/decision head: `c211dd2f3cdb82a1a1db274f49a0f14e12902b33`;
+- next gate: **GROUND-LOCOMOTION-PROFILE-CONSUMER-01**;
+- existing KCL-M1 / ToolBox semantic locomotion profile is the presentation-state owner;
+- target stable owner path: `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`;
+- current defect: that stable path is missing from main, while session-cut copies exist; Turbo Ground hand-wires only a subset;
+- protected owner: `walk-controller` remains the only Ground world-movement writer; Orbit and Travel wall-clock repair remain separate retained behavior.
+
+### Cars · queued after Ground pattern proves
+- owner repo: `georg-doc/KFB-Stunt-Car-Race`;
+- next named slice: **RACE-VEHICLE-PROFILE-CONSUMER-01**;
+- protect the human-accepted Track-Lab v0.8 driving feel and Race steering/drift/jump/contact physics;
+- consume existing Vehicle Lab / Box Stop source-backed vehicle/deformer/profile facts as presentation/fit/capability data rather than duplicating physics constants;
+- no blanket promotion of all 43 Box Stop candidates or four deformer profiles.
+
+### Flight · queued after Ground pattern proves
+- owner repo: `georg-doc/KFB-Travel-Globe`;
+- next named slice: **TRAVEL-FLIGHT-PROFILE-CONSUMER-01**;
+- protect Travel's Flight movement owner and runtime mode bridge (`FLIGHT → carpet.js` in current Travel contract/recovery);
+- ToolBox/vehicle profiles may provide carrier geometry, fit, orientation, animation/presentation and capability facts;
+- they must not introduce a second flight-physics owner or per-vehicle parallel movement loop.
+
+Clay/facade/shadow routing is intentionally separate and owned by the other design chat; do not fold that work into these mobility slices.
+
+
 ## 2026-09-29 · Shared 3D shadow + clay-building routing correction
 
 For any KFB three.js task involving bright shadow/contact seams, shadow clipping/banding, props that appear lit where they should be shadowed, roof/wall light bands, clay buildings, Knetgummi façades, OSM building deformation, Elastic Grotesque, `FACADE_RULE` or `LOOK-TORSION`, read these stable ToolBox routers before inventing a new fix:

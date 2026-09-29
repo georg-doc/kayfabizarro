@@ -2082,3 +2082,11 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - New closure invariant: reusable acceptance is not persistence-complete until a cold chat can recover stable home/source pin, precedence, consumer scope, open remainder and forbidden rebuilds from the standard router.
 - Added Graveyard entry `kanon-irgendwo-auf-github`; canonical Graveyard advances **v1.6.0 → v1.7.0**, **56 → 57 graves**.
 - Recovery remains docs/routing-only on Draft PR #290; no runtime, Stage or Live change.
+
+
+## 2026-09-29 · Mobility profile owner routing persistence
+- Persisted the cross-mode correction that measured donor/profile knowledge must be consumed by the active runtime rather than re-created as local constants.
+- Ground current gate: `GROUND-LOCOMOTION-PROFILE-CONSUMER-01` on `chatgpt-web/kfb-ground-travel-pace-timing-01-2026-09-29` / recovery head `c211dd2f...`; stable ToolBox locomotion owner path is missing from main and must be promoted from the existing session-cut owner before further pace tuning.
+- Cars queued separately in `georg-doc/KFB-Stunt-Car-Race`: preserve human-accepted v0.8 Race feel; consume Vehicle Lab / Box Stop profile facts without moving steering/drift/jump/contact ownership.
+- Flight queued separately in `georg-doc/KFB-Travel-Globe`: preserve Travel Flight / `carpet.js` movement ownership; consume carrier/profile facts without creating second flight physics.
+- Clay/facade/shadow remains explicitly outside this mobility lane.
