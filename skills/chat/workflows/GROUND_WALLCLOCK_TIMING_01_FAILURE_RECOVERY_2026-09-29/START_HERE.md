@@ -76,10 +76,8 @@ Prior artifacts:
 - frozen `9431a89c...`: **ARCHIVED_FAILED**
 
 ## Exactly one next gate
-**GROUND-WALLCLOCK-TRAVEL-ONLY-01**
+**GROUND-TRAVEL-PACE-TIMING-01**
 
 Start a fresh branch from `542eedb91f96b6f718df9e619fb3d3f746b79854`, not from this frozen candidate.
 
-Apply bounded wall-clock catch-up only to the explicit Travel profile `?ground=1&groundFeel=velocity&walkPace=travel`. Keep Race, Explore, measured/no-query Ground and existing Ground+Orbit baseline timing unchanged. Keep all speed constants unchanged. Prove 15-FPS wall-clock parity plus unchanged baseline regressions before republishing the same Stage.
-
-No speed retune until that timing-only gate gets a human freeplay result.
+Apply bounded wall-clock catch-up only to the explicit Travel profile `?ground=1&groundFeel=velocity&walkPace=travel`. Keep W=Running_A / Shift=Running_B, but calibrate Travel at **1.8× source cadence**, coupling locomotion playback and world speed: Running_A ≈ **4.46 u/s**, Running_B ≈ **5.45 u/s**. Keep Race, Explore, measured/no-query Ground and their timing/speeds unchanged. Prove low-FPS wall-clock parity, cadence/world synchronization and unchanged baseline regressions before republishing the same Stage.
