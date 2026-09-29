@@ -1,0 +1,57 @@
+# KFB · Produktionskarte 2026-09-29 · Claude Design zuerst
+
+Status: **PLAN / AUSFÜHRBARE DESIGN-BRIEFS**, nicht Implementierungs-PASS. Owner: Georg. Branch: `codex/kfb-production-map-2026-09-29`. Die freigegebene KFB Production Control Site spiegelt diese Karte als Arbeitsoberfläche; dieser öffentliche GitHub-Text ist der für Claude Design abrufbare Handoff. Jede Ausführung prüft vorab den aktuellen GitHub-Stand nach `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` und `FRESH_CHAT_SLICE_PROTOCOL.md`. Kein automatischer Merge/Live.
+
+## Wahrheit vor Planung
+
+- **K1/H0 ist das visuelle Gold**, nicht R0A. Erst echter KayKit-Donor, dann pro Haus `clayify` + `clay-soften.v1`, Material/K2-Oberfläche, Fußkontakt, erst danach freigegebene Biegung. Quelle: [K1/H0-Router](https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md); [Façade-Gold-Kandidat PR #295](https://github.com/georg-doc/kayfabizarro/pull/295). PR #295 ist **nicht abgenommen**: integrierter Schatten-Browsernachweis fehlgeschlagen. Kein globaler Schatten-PASS.
+- **Motion:** [v5-Katalog auf georg-doc-patch-3](https://github.com/georg-doc/kayfabizarro/blob/georg-doc-patch-3/media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json) enthält 345 Clips für Medium/Large und sieben Locomotion-Sets. PR #275 trägt noch einen veralteten v4-Titel; den Katalog lesen, nicht den Titel.
+- **Ground:** [Profil-Router PR #294](https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kfb-ground-locomotion-profile-consumer-01-2026-09-29/tools/KFB-ToolBox/docs/MOTION_PROFILE_ROUTER.md) ist SOURCE PASS, öffentliche freie Spielprobe offen. `walk-controller` bleibt einziger Ground-Positionsschreiber. KayKit-Creator-Recherche/KCL-M1: [PR #107](https://github.com/georg-doc/kayfabizarro/pull/107) und [Living Research](https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/kaykit-creator-learning-2026-09-19/tools/game-dev-studio/research/KAYKIT_CREATOR_LESSONS_LIVING.md). Kontakt/Cadence/Phasen-Sync messen; `Running_B` ist für den konkreten ActionFigure keine automatische Sprint-Wahl.
+- **Track:** Joyride Parcours P1 läuft bereits im Claude-Design-Projekt. Das lokale `START_PARCOURS_P1.md` wird durch Brief C unten vollständig wiedergegeben; nicht einen zweiten Track-Owner eröffnen.
+- **MapLibre:** [Travel PR #42](https://github.com/georg-doc/KFB-Travel-Globe/pull/42) ist ein Draft-Spike für Karte, DEM-Terrain, Kamera und Tile-Streaming; [direkte Prüfroute](https://kayfabizarro.pages.dev/kfb-hub/stage/maplibre-world-owner-spike-01/). Öffentliches Browser-Gate ist **unverifiziert**; kein World-Owner-Wechsel.
+- **Performance:** World R0A meldete ca. 1,47 Mio. Dreiecke und ca. 6 fps im Design-Preview. Clay City meldete 213–240 Tsd. Dreiecke und 45–68 % weniger Draw Calls gegenüber R6; echte FPS/Ladezeit dort nicht sauber belegt. Das sind verschiedene Szenen/Geräte, kein direkter Siegervergleich.
+
+## Arbeitsreihenfolge und Gate
+
+1. **Jetzt fortsetzen:** Parcours P1 im bestehenden World/Track-Design-Chat: zuerst Inventar und Draufsicht zur Entscheidung. Keine parallele neue Strecke.
+2. **Parallel nur in bestehenden getrennten Projekten:** Resident Atlas erhält Brief A-R; ToolBox Production-05 erhält Brief A-T. Beide teilen den K1/H0-Look, nicht die UI/Runtime.
+3. **Danach:** Brief B Travel-Mode-Design/State-Proof auf echten Clips/Profilen. Runtime-Adoption bleibt Ground/Race/Travel-Ownern.
+4. **Vor mehr Weltvolumen:** Brief D als Design-/Performance-Entscheidung mit realen Vergleichsszenen.
+5. **MapLibre Gate:** Brief E nur als A/B-Donor gegen denselben Parcours/Actor; erst nach bestandener Kontakt/Kamera/Performance-Probe darf MapLibre als World-Owner vorgeschlagen werden.
+6. Jeder fertige Slice liefert Session Cut/Return mit tatsächlichem Stand, Screenshots, Quellen, offenen Punkten und genau einem nächsten Gate. Ein Design-Preview ist kein spielbarer World-PASS.
+
+## Brief A-R · Resident Atlas · Clay Characters / Diorama (laufenden Chat fortsetzen)
+
+**Ausführer:** bestehender KayKit Resident Atlas S12 Claude Design Desktop Chat, High. **Nicht** ToolBox Production-05.
+
+Lies den K1/H0-Router und dessen exaktes Code-/Bildpaket; verwende echte Figuren/Props und K2-Oberfläche als getrennte Schicht. Übertrage den Knet-Look auf Residents, Props, Weg/Boden und Szene: weiche Silhouette, differenzierte Materialität, sichtbare aber kontrollierte Handarbeit, korrekter Fuß-/Objektkontakt. Behalte vorhandene Graveyard/Dancing-Skeletons-Szenen und Animationen; keine Ersatzfiguren oder flachen Farbfilter. Ein gemeinsamer vollständiger Inline-Editor (Mini-Menü am Objekt, **ein** klappbarer Inspektor, Snap Raster/Anschluss/Halterung) statt doppelter Paletten. Nutze Motion v5 nur für ausgewählte Szenenclips; baue **nicht** die 345-Clip-Library hier. Skydome Basic/TinySkies als schaltbare Vorschau. Der Schattenfix ist offen: zeige Schatten+AO/AO-only/Schatten-only an Boden/Füßen, Props, Bäumen und unter Überhängen; keine Behauptung „global gefixt“ ohne integrierten Beleg. Liefere Vorher/Nachher-Bilder aus identischer Kamera, editierbare Quelle, Session Cut und offene Defekte. Nach zwei Fehlpässen einfrieren/exportieren.
+
+## Brief A-T · ToolBox Production-05 · Clay Character / Animation Studio
+
+**Ausführer:** bestehendes KFB ToolBox Production-05 Claude Design Desktop Projekt, High. **Nicht** Resident Atlas.
+
+Behalte die angenommene Production-05-Shell. Lies K1/H0 und die exakten donor-basierten Character-/Clay-Profile, den v5-Katalog (345 Clips, zwei Rigs, sieben Sets), Motion-Profile-Router und KCL-M1. Eine Mixamo-artige Library mit Such-/Tag-/Set-Filter, animierten Karten und großem Preview; keine großen Statuslabels im 3D-FOV, nur diskrete Statuszeichen. Vollständiger Standard-Inline-Editor statt reduzierter Neu-Erfindung; Editierbarkeit von Namen/Zuordnungen, JSON-Export, FBX/GLB-Drop-Probe mit klar markiertem Konvertierungsstatus. Studio-neutral und echte Clay-Terrain-/Skydome-Vorschau als zwei Ansichten; Charakter, Requisiten, Bodenkontakt und Schatten im selben Knet-Canon. Zeige Walking, Running, Turn, Jump und einen Carry-Set-Übergang mit Fußkontakt/Phasen-Sync; bekannte problematische Clips nicht stillschweigend als PASS markieren. Exportiere Motion-/Choreo-Rezepte für Resident als Datenvertrag; keine Resident-Atlas-UI nachbauen. Liefere Session Cut, getestete Clips/Modelle, Screenshots und offene Fälle.
+
+## Brief B · Travel Modes / States · Design- und Bewegungsproof
+
+**Ausführer:** Claude Design Desktop im bestehenden KFB World/Joyride-Projekt, High; **nach** dem P1-Draufsicht-Gate. Kein neuer Runtime-Owner.
+
+Baue einen kleinen spielbaren Mode-Switch-Proof auf **einem** realen Actor und derselben Strecke: zu Fuß (idle/walk/run/sprint/back/strafe/turn/jump/land), Auto (direkter Mode-Button, Enter/Exit, seated/steer/brake/airborne/land), Flug (direkter Button, Start/Steigen/Sinken/Landen). Behalte Joyride Race-v0.8-Fahrphysik und Travel Flight/`carpet.js`; Ground-`walk-controller` schreibt nur Ground-Weltposition. Animiere nach den gemessenen KayKit-/v5-Profilen; Clip-Tempo, Weltgeschwindigkeit und Schrittlänge dürfen nicht auseinanderlaufen. `Running_B` nur bei konkreter Rig-Prüfung, nicht pauschal als Sprint. Kein Root-Motion-Doppeltransport. Gib eine kompakte State-/Transition-Tabelle, drei 20-Sekunden-Spielproben, Kontakt-/Fußrutsch- und Modewechsel-Beweis. Runtime-Promotion in Ground/Race/Travel ist ein **späterer separater Integrations-Gate**, nicht Design-Preview-Automatismus.
+
+## Brief C · Track-Baukasten / Joyride Parcours P1 · laufenden Job präzisieren
+
+**Ausführer:** frischer oder laufender KFB World Design / Joyride Claude Design Chat laut lokalem `START_PARCOURS_P1.md`, High. Nicht neu starten, falls Inventar/Plan bereits läuft.
+
+Aktueller TD03 in `KFB Joyride J05 · Knet-Racer.dc.html` wird zum großen **einen** Straßen-/Race-Parcours: Auf-/Abfahrten, Uni-Center, Tunnel, Fahrschule, Rampen, Hero Jump, Skydrive. Vorher Generator hinter `lab-track/data/td03.stream.json` und `lab-track/stream-to-three.mjs` finden; neuer Stream kommt aus **demselben** Track Core/Generator. `track-look.v5.js`, M2-Markierungen und Übergangsatlas bleiben, ebenso Fahrphysik `lab-drive/kfb-drive.k2.js`, Kameras, VFX und Leicht-Pass. Fassaden und Schatten sind **außer Scope**; ihre bekannten Defekte nicht als gelöst zeigen. Reihenfolge strikt: (1) Baustein-Inventar mit Quelle/Parametern, (2) Draufsicht-Plan zur Wahl, (3) Stream über bestehenden Generator, (4) echte Fahrprobe inkl. Tunnel/Looping/Skydrive. Screenshots vor jeder Übergabe; zwei Fehlpässe = Stop/A-B; keine geratenen Werte. Für den Test genügen vorhandene Joyride-Q/E/Flug-Funktionen; vollständige Travel-Mode-Adoption aus Brief B nicht künstlich als Vorbedingung erfinden.
+
+## Brief D · Performance-Entscheidungsblatt für Georg
+
+**Ausführer:** Claude Design als visuelle Vergleichs-/Budgetstudie, High; keine neue Runtime. Die bestehende [Performance-Seite](https://kfb-production-control.frizzlebob.chatgpt.site/performance) ist nur eine Arbeitshilfe, nicht der Mess-SSOT.
+
+Erstelle **keine Datenkolonnen**. Gleiche Kamera/Route/Actor und drei Ansichten: Design-nah, Normal, älteres Gerät. Variiere jeweils nur einen Kostenblock und notiere Bildgewinn, Laufzeit/Draw Calls/Dreiecke/Startzeit wo tatsächlich messbar, sonst „unbelegt“: (a) OSM Straßenskelett vs volle Gebäude, (b) Terrain grob/fein + Hügel, (c) echte instanzierte KayKit/Kenney/Tiny-Treats-Gruppen mit K1/H0-Look vs viele Einzelobjekte, (d) K2-Nahtextur/Mid/Far, (e) Skydome Basic/TinySkies/Universe, (f) Resident-Loops/Interaktion, (g) statische Card-Billboards vs aktivierte Medien, (h) Partikel/Schatten. Priorität: Fahrbarkeit, Kontakt und erkennbare Weltidentität. Keine generischen Würfel-Häuser als angebliche Lösung. Empfiehl pro Block **behalten / staffeln / nur bei Bedarf / weglassen** samt Low-Device-Fallback, aber nur nach A/B-Beweis. Der Generator muss viele Deck-Welten aus Regeln/Seeds erzeugen; nicht 130 Welten einzeln kuratieren.
+
+## Brief E · MapLibre als möglicher World-Donor, noch kein Wechsel
+
+**Ausführer:** Claude Design für visuelle A/B-Prüfung, High, danach technischer Owner-Review in Travel/World. Ausgang: Travel PR #42 + direkte Prüfroute oben.
+
+Zuerst den Spike in Isolation testen: lädt der echte ActionFigure, DEM-Boden, stabile Kamera/Depth, WASD/Shift, Kontakt? Den aktuellen Public-Status nicht als PASS ausgeben. Dann dieselbe kurze Route/Actor/geringe Kit-Dichte in zwei Varianten gegenüberstellen: bestehender World/Joyride-Owner und MapLibre als Terrain/Koordinaten/Tile-Streamer. K1/H0/K2-Clay darf als Präsentationsschicht **erst danach** hinzu; ein hübscher Shader beweist keine funktionierende Mobilität. Pro Variante: Startzeit, Frame-Pacing, Draw Calls/Dreiecke, Terrain-Kontakt, Straßeneinpassung, Nah-/Fernbild, Offline-/Tile-Ausfall, ältere Geräte, Lizenz-/Dienstabhängigkeit. Stop, wenn MapLibre den existing Track Core, Race- oder Flight-Movement-Owner verdoppeln müsste. Ergebnis ist eine Entscheidungsnotiz: World-Donor übernehmen / nur Karten- und DEM-Daten nutzen / verwerfen – mit Beleg, kein stiller Owner-Swap.
