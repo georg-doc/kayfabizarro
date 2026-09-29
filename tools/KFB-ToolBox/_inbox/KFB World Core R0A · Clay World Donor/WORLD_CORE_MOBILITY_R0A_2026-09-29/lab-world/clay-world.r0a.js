@@ -27,6 +27,7 @@ import { patchify } from '../lab-track/transition-atlas.v1.js?r=14';
 import { KFB_BLEND_GLSL } from '../lab-track/road-markings.m1.js?r=4';
 import { makeClayVFX } from '../lab-vfx/clay-vfx.v1.js?r=3';
 import { SKY_PRESETS, makeSkyDome } from './sky-core.r0a.js?r=1';
+import { fitKfbDirectionalShadow } from '../../../kfb-lib/kfb-shadow-contact.v1.js?r=1';
 
 const here = f => new URL(f, import.meta.url).href;
 const V = a => new THREE.Vector3(a[0], a[1], a[2]);
@@ -111,21 +112,14 @@ export async function boot(canvas, onNote = () => {}) {
     sun.position.set(CX, 0, CZ).addScaledVector(d, 700); sun.target.position.set(CX, 0, CZ);
     back.position.set(CX, 0, CZ).addScaledVector(new THREE.Vector3(-d.x, 0.45, -d.z), 300); }
   const shadowFollow = (focus, forcedHalf = null) => {
-    const sh = sun.shadow, cam = sh.camera, SUN_D = 700;
     const dist = camera.position.distanceTo(focus);
-    const half = forcedHalf == null ? THREE.MathUtils.clamp(Math.round(dist * 1.6 / 10) * 10, 90, 260) : forcedHalf;
-    const texel = 2 * half / Math.max(1, sh.mapSize.x);
-    if (half !== SHADOW.half || sh.mapSize.x !== SHADOW.mapX) {
-      SHADOW.half = half; SHADOW.mapX = sh.mapSize.x;
-      Object.assign(cam, { left: -half, right: half, top: half, bottom: -half, near: SUN_D - Math.max(half * 1.2, 380), far: SUN_D + half * 1.2 + 80 });
-      cam.updateProjectionMatrix();
-      sh.normalBias = texel * 1.2; sh.bias = -0.00003;
-    }
-    const sd = SHADOW.dir, e1 = new THREE.Vector3(0, 1, 0).cross(sd).normalize(), e2 = sd.clone().cross(e1).normalize();
-    const a = Math.round(focus.dot(e1) / texel) * texel, b = Math.round(focus.dot(e2) / texel) * texel;
-    const f = e1.multiplyScalar(a).addScaledVector(e2, b).addScaledVector(sd, focus.dot(sd));
-    sun.target.position.copy(f); sun.position.copy(f).addScaledVector(sd, SUN_D); sun.target.updateMatrixWorld();
-    SHADOW.report = { profile: SHADOW.profile, halfM: half, texelM: +texel.toFixed(5), normalBias: +sh.normalBias.toFixed(5), normalBiasTexels: 1.2, bias: sh.bias, mapSize: [sh.mapSize.x, sh.mapSize.y], focus: focus.toArray().map(v => +v.toFixed(2)) };
+    SHADOW.report = fitKfbDirectionalShadow(sun, focus, SHADOW.dir, {
+      forcedHalfM: forcedHalf,
+      focusDistanceM: dist,
+      id: 'KFB_SHARED_SHADOW_CONTACT_V1_R0A'
+    });
+    SHADOW.half = SHADOW.report.halfM;
+    SHADOW.mapX = SHADOW.report.mapSize;
   };
 
   // ---------- Materialien je Klasse (Rezept material.classes) ----------

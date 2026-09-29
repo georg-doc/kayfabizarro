@@ -1,0 +1,53 @@
+name: Shadow Contact + Facade Gold
+
+on:
+  push:
+    branches:
+      - codex/shadow-facade-gold-2026-09-29
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static and contract checks
+        run: |
+          node --check tools/KFB-ToolBox/kfb-lib/kfb-shadow-contact.v1.js
+          node --check "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-world/clay-world.r0a.js"
+          node tools/KFB-ToolBox/tests/shadow-contact.v1.test.mjs
+          grep -q '"status": "CURRENT_BINDING_GOLDEN_SAMPLES"' tools/KFB-ToolBox/docs/CLAY_FACADE_GOLDEN_SAMPLES.v1.json
+          grep -q 'softenGeometry maxEdge=0.18' tools/KFB-ToolBox/docs/CLAY_FACADE_GOLDEN_SAMPLES.v1.json
+          grep -q 'fitKfbDirectionalShadow' "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-world/clay-world.r0a.js"
+      - name: Install browser runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start repository server
+        run: |
+          python3 -m http.server 4192 --bind 127.0.0.1 >/tmp/kfb-shadow-gold-http.log 2>&1 &
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4192/ >/dev/null && exit 0
+            sleep 1
+          done
+          exit 1
+      - name: Integrated tree shadow proof
+        env:
+          KFB_BASE_URL: http://127.0.0.1:4192/
+          KFB_TREE_SHADOW_PROOF_DIR: shadow-facade-gold-artifacts
+        run: node "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/tree-shadow-proof.mjs"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shadow-facade-gold-evidence
+          path: |
+            shadow-facade-gold-artifacts
+            /tmp/kfb-shadow-gold-http.log
+          retention-days: 14
