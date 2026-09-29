@@ -28,7 +28,7 @@ ok('R3 city shell LOD remains active in R4',read('./runtime/worldbuilder/world-i
 const quality=read('./adaptive-quality-r4.mjs'),clay=read('./clay-world-m1.mjs');
 ok('R4 adaptive resolution has stable and moving states',quality.includes("state='moving'")&&quality.includes("apply('stable'")&&quality.includes('cssUiNativeResolution:true'));
 ok('R4 clay distance budget keeps far shells simple',clay.includes("id:'far-city-shell'")&&clay.includes('simplifiedFarClay'));
-ok('R4 candidate is not falsely public-verified',source.publicVerified===false&&source.status==='R4_LOCAL_CANDIDATE');
+ok('inherited R4 public-verification metadata is truthful',source.publicVerified===true&&source.status==='R4_PUBLIC_VERIFIED_CANDIDATE');
 ok('shared shadow/contact profile marker',world.includes('KFB_SHARED_SHADOW_CONTACT_V1'));
 ok('shared owner forces PCFSoftShadowMap',world.includes('renderer.shadowMap.type = THREE.PCFSoftShadowMap'));
 ok('startup fixed-frustum guessed bias removed',!world.includes('sun.shadow.normalBias = 0.016')&&!world.includes('left: -34, right: 34'));
