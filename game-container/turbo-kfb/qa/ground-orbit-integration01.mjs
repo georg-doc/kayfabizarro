@@ -27,7 +27,7 @@ try{
   check('candidate opts into velocity feel',g0.feelMode==='velocity'&&g0.enhanced===true,JSON.stringify({feel:g0.feelMode,enhanced:g0.enhanced}));
   const required=['Idle_A','Walking_A','Running_A','Running_B','Walking_Backwards','Running_Strafe_Left','Running_Strafe_Right','Jump_Start','Jump_Idle','Jump_Land'];
   check('candidate binds semantic source clips',JSON.stringify(g0.clips)===JSON.stringify(required),JSON.stringify(g0.clips));
-  check('candidate travel walk separates gameplay pace from source cadence',Math.abs(g0.walkSpeed-1.10)<1e-9&&Math.abs(g0.walkRefSpeed-0.610950956910957)<1e-9&&g0.walkPlaybackRate>1.79&&g0.walkPlaybackRate<=1.8,JSON.stringify({walk:g0.walkSpeed,ref:g0.walkRefSpeed,rate:g0.walkPlaybackRate}));
+  check('candidate walk speed returns to measured Walking_A',Math.abs(g0.walkSpeed-0.610950956910957)<1e-9,String(g0.walkSpeed));
   check('candidate sprint tier exceeds Running_A',g0.sprintSpeed>g0.runSpeed,String(g0.sprintSpeed));
   check('candidate jump apex bounded to actor scale',g0.jump&&g0.jump.apex>g0.actorHeight*.45&&g0.jump.apex<g0.actorHeight*.60,JSON.stringify(g0.jump));
   check('candidate nominal airtime bounded',g0.jump.nominalAirTime>.70&&g0.jump.nominalAirTime<.90,String(g0.jump.nominalAirTime));
@@ -82,7 +82,7 @@ try{
   check('forward starts Walking_A',gAccel.currentAnimation==='Walking_A',gAccel.currentAnimation);
   await page.evaluate(()=>window.__game.advanceBy(.70));
   const gWalk=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-  check('walk settles near travel pace',gWalk.speed>g0.walkSpeed*.90&&gWalk.speed<g0.walkSpeed*1.06,String(gWalk.speed));
+  check('walk settles near measured speed',gWalk.speed>g0.walkSpeed*.90&&gWalk.speed<g0.walkSpeed*1.06,String(gWalk.speed));
 
   await keyEvent(page,'keydown','ShiftLeft','Shift');
   await page.evaluate(()=>window.__game.advanceBy(.16));

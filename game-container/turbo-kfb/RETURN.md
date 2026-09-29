@@ -313,17 +313,3 @@ Interpretation:
 
 ## Exactly one current next gate
 **GROUND-WALK-PACE-TUNE-01:** choose the best existing source-backed Walk tier (Walking_A/B/C and existing profile data), raise normal W to an enjoyable travel pace, keep Run/Sprint hierarchy intact, and prove no obvious foot-slide/tripping regression in the real integrated Ground+Orbit host.
-
-
-## GROUND-WALK-PACE-TUNE-01 · implementation checkpoint
-
-Status: **IMPLEMENTED · TESTS PENDING**
-
-- continues the integrated Ground+Orbit owner on PR #288; no camera, Jump, Run/Sprint clip or movement-owner replacement;
-- ToolBox consumer evidence confirms `Walking_B` is only **+9.8 %** versus `Walking_A`, so it remains an alternate rather than a real fast-Walk tier;
-- normal W gameplay pace is now **1.10 u/s**, intentionally decoupled from the measured `Walking_A` source reference `0.6109509569 u/s`;
-- presentation remains `Walking_A`; playback follows world speed through the existing `rateFor()` path at about **1.80×**;
-- `Running_A` Run, `Running_B` Sprint, directional MovementAdvanced states, actor-scale Jump and free Orbit are retained;
-- baseline/no-query B2 remains unchanged.
-
-Exactly one current gate: rerun the existing static + B2 regression + Velocity + integrated Ground+Orbit browser proofs on the tuned pace before Stage publication.

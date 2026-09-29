@@ -32,9 +32,7 @@ const REF_SPEED = Object.freeze({
   Running_Strafe_Right: 2.4802741670129 * 1.0555,
 });
 const LEGACY_WALK_SPEED = 1.08;
-// Georg TUNE 2026-09-29: gameplay travel pace is intentionally decoupled from the measured source cadence.
-const WALK_REF_SPEED = REF_SPEED.Walking_A;
-const WALK_SPEED = 1.10;
+const WALK_SPEED = REF_SPEED.Walking_A;
 const RUN_SPEED = REF_SPEED.Running_A;
 const SPRINT_SPEED = REF_SPEED.Running_B;
 const HANDOFF_SPEED = 1.108;
@@ -417,8 +415,6 @@ export async function createGroundPlayer({ scene, track } = {}) {
         feelMode,
         enhanced,
         walkSpeed:enhanced?WALK_SPEED:LEGACY_WALK_SPEED,
-        walkRefSpeed:enhanced?WALK_REF_SPEED:null,
-        walkPlaybackRate:enhanced?rateFor(CLIP.walk,WALK_SPEED):null,
         runSpeed:RUN_SPEED,
         sprintSpeed:enhanced?SPRINT_SPEED:null,
         jump:enhanced?{
