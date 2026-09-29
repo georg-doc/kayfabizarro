@@ -35,3 +35,28 @@ Target:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-orbit-integration-01/?ground=1&groundFeel=velocity`
 
 Do not claim PUBLIC_VERIFIED until the dedicated public Chromium workflow passes this exact revision and Hub link.
+
+
+## Public Cloudflare proof
+
+Publication source head:
+`cloudflare-live@65c00aed4a9e0250b0850d1b170460d9ea66126e`
+
+Cloudflare Pages: **SUCCESS**
+
+Public Chromium:
+- run `36559167238`;
+- job `109375578354`;
+- **18/18 PASS**;
+- exact runtime marker `9a71c79d63cd985f0ab622e4309656ab522ccea4` PASS;
+- Velocity candidate + Running_B/directional clips PASS;
+- actor-scale Jump PASS;
+- Orbit owner / drag / zoom / C-recenter PASS;
+- public Walk / Sprint / Jump air / Land PASS;
+- runtime errors 0;
+- page/console errors 0;
+- Hub integrated link PASS;
+- artifact `11029362774`;
+- digest `sha256:49b3eac2fc189a7babb5b993d03d7499e0b86b1a5f4f9ee06e951daffb9be650`.
+
+Status: **PUBLIC VERIFIED**.
