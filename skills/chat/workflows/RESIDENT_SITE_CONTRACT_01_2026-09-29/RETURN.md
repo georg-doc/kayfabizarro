@@ -6,6 +6,8 @@ Status: **REBRIEF PREPARED · NO RUNTIME CHANGE · CLAUDE RESIDENT/SCENERY OWNER
 
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/resident-site-contract-01-2026-09-29`
+- Draft PR: **#285**
+- PR creation head: `6fe62166ccb718477af025c1cb0ff64692f16381`
 - base main: `09737a8f8fd7f71c979f292322c755d0f2c2168b`
 - owner: existing Resident Atlas / Resident Scenery Claude Design project
 - Stage: none
