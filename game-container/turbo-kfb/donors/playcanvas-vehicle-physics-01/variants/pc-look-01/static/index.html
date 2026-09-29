@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style></style>
+    <title>Vehicle Physics</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script>
+        ASSET_PREFIX = "";
+        SCRIPT_PREFIX = "";
+        SCENE_PATH = "815920.json";
+        CONTEXT_OPTIONS = {
+            'antialias': true,
+            'alpha': false,
+            'preserveDrawingBuffer': false,
+            'preferWebGl2': true,
+            'powerPreference': "default"
+        };
+        SCRIPTS = [ 23933653, 32149370, 32153220, 32214901, 32268941, 33521214, 41749579, 42213443, 42213445, 42213964, 42218194, 42218805, 52418021 ];
+        CONFIG_FILENAME = "config.json";
+        INPUT_SETTINGS = {
+            useKeyboard: true,
+            useMouse: true,
+            useGamepads: false,
+            useTouch: true
+        };
+        pc.script.legacy = false;
+        PRELOAD_MODULES = [
+            {'moduleName' : 'Ammo', 'glueUrl' : 'files/assets/32149308/1/ammo.wasm.js', 'wasmUrl' : 'files/assets/32149309/1/ammo.wasm.wasm', 'fallbackUrl' : 'files/assets/32149307/1/ammo.js', 'preload' : true},
+            {'moduleName' : 'BASIS', 'glueUrl' : 'files/assets/32216058/1/basis.wasm.js', 'wasmUrl' : 'files/assets/32216057/1/basis.wasm.wasm', 'fallbackUrl' : 'files/assets/32216059/1/basis.js', 'preload' : false},
+        ];
+    </script>
+</head>
+<body>
+    <script src="__modules__.js"></script>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
+</html>
