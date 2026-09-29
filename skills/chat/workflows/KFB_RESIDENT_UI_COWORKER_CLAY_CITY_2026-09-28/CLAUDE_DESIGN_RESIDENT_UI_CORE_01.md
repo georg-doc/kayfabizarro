@@ -38,11 +38,12 @@ Lies zuerst aus dem öffentlichen GitHub-Stand:
 4. `lib/edit-layer.js`
 5. `data/graveyard-01.json` und `lib/graveyard.js`
 6. den aktuellen KFB ToolBox Production-05 Session Cut als angenommene Funktions- und Designbasis;
-7. PR #275 `georg-doc-patch-3@358f4eeece97587498bd898a170089d53ad3f628`;
-8. dort `media/3D_Assets/Animations/KFB_Motion_Library/RETURN_INTAKE_04.md`;
-9. dort `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json` mit 263 eindeutigen Clips;
-10. dort `skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/CHOREO_LAB_01_RETURN.md`;
-11. dort `scenes/*.json`, `resolved/*.resolved.json` und die sechs Storyboard-/Graft-Prüfbilder aus `renders/`.
+7. Motion-Library-v5-Branch `georg-doc-patch-3@95a8197c76c2bae4d12bfc867d54debe15ffc1f2`;
+8. dort `media/3D_Assets/Animations/KFB_Motion_Library/RETURN_INTAKE_05.md`;
+9. dort `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json` mit 345 eindeutigen Clips und sieben `locomotionSets`;
+10. Intake 04 bleibt nur als historische Detailquelle für dort eingeführte Strike-/Prop-Kandidaten; Katalogstand und Clipzahl werden vollständig durch Intake 05 ersetzt;
+11. dort `skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/CHOREO_LAB_01_RETURN.md`;
+12. dort `scenes/*.json`, `resolved/*.resolved.json` und die sechs Storyboard-/Graft-Prüfbilder aus `renders/`.
 
 GitHub main ist beim Briefing `51f9bc22596a0d0165f4da9e8e2ea14118466210`. Vor Beginn erneut prüfen.
 
@@ -176,7 +177,7 @@ Die Animation Library ist kataloggetrieben. Keine Clip-Liste wird im Interface e
 ### Library View
 
 - beliebigen verfügbaren Character/Rig auswählen;
-- 263 Clips aus Motion Library v4 laden;
+- 345 Clips aus Motion Library v5 laden;
 - Suche sowie Live-Filter für Gruppe, Tags, Loop/One-shot, Props, Varianten, Resident-Ideen und Combat/Reaction;
 - links kompakte animierte Preview-Karten, rechts großer 3D-Preview;
 - Umschaltung zwischen ruhigem Studio und echter Terrain-/World-Umgebung;
@@ -319,6 +320,69 @@ Neben dem Einzelclip-Modus gibt es einen klaren Zwei-/Mehr-Actor-Modus derselben
 
 Eine kompakte Drop-Zone darf lokale FBX/GLB-Clips zur Vorschau annehmen. Sie ist ein **Preview-/Intake-Eingang**, keine stillschweigende Aufnahme in die kanonische Library. Zeige vor Export klar: Dateiname, erkannter Rig-Typ, Dauer, verfügbare Animationen, notwendige Konvertierung und offene Prop-/Retarget-Fragen.
 
+## Motion Library v5 · Intake 05 · verbindlicher neuer Katalogstand
+
+**Aktiver Source Lock:** `georg-doc-patch-3@95a8197c76c2bae4d12bfc867d54debe15ffc1f2`.
+
+- Katalogversion: `2026-09-29b`;
+- 345 eindeutige Clip-IDs;
+- 79 neue Clips aus Intake 05, auf `Rig_Medium` und `Rig_Large` gebacken;
+- 27 exakte Dubletten wurden bewusst nicht erneut aufgenommen;
+- 16 neue GLB-Libraries und 79 geprüfte Kontaktbögen sind auf GitHub;
+- alle früheren Library-Dateien bleiben byte-identisch;
+- rohe FBX-Dateien bleiben außerhalb des Repositories.
+
+### Locomotion Sets statt loser Clip-Wand
+
+Die ToolBox liest den neuen Top-Level-Block `locomotionSets` direkt aus dem Katalog. Keine zweite, manuell gepflegte Set-Liste.
+
+Pflichtsets:
+
+- `male_basic`;
+- `female_basic`;
+- `magic_caster`;
+- `drunk`;
+- `carry_box`;
+- `carry_holding`;
+- `wheelbarrow`.
+
+Der Library View bietet zusätzlich zur Einzelclip-Suche einen Set-Modus. Er zeigt pro Set die vorhandenen Rollen wie Idle, Walk, Run, Strafe, Turn und Jump, die gemessene Geschwindigkeit je Rig und fehlende Rollen. Der Claymation-World-Preview kann ein Set als Zustandsfolge `idle → start → walk/run → turn → stop` abspielen, ohne neue Clips zu erfinden.
+
+Die spätere Runtime wählt nach Zustand und Bewegungsrichtung, blendet benachbarte Rollen anhand der gemessenen Geschwindigkeit und verwendet Turn-Clips nur bei Richtungswechsel auf der Stelle. Root Speed, sichtbare Schrittlänge und Playback Rate müssen gemeinsam beurteilt werden; eine Animation darf nicht durch beliebiges Beschleunigen von der Spielfigur wegrutschen.
+
+### Intake-05-Mängel sichtbar erhalten
+
+- `female_left_turn_b` und `female_right_turn_b` drehen nicht. Als ungeeignet markieren; standardmäßig die `_a`-Varianten anbieten.
+- `kfb_locomotion_standing_walk_forward_a` ist der Magier-/Caster-Gang, kein Waffen-Walk.
+- Nicht saubere Loops und Kurven werden als solche markiert; kein automatisches Kaschieren.
+- `drunk_idle_a` und `drunk_idle_variation_c` benötigen beim Loopen einen Übergang.
+- Box, Schubkarre, Handy, Gießkanne, Pflanze, Setzling und Tür sind Anforderungen der Clips, aber nicht in den Motion-GLBs enthalten. Im Preview echte Asset-IDs/Sockets verwenden oder kompakt `Prop fehlt` zeigen.
+- Farming-Kniekontakte besitzen kein Ground IK. Der Clay-Terrain-Preview muss Kontaktabweichungen sichtbar machen.
+- `Survivalist.fbx` und die Skinning-Testdatei sind keine Animationen und erscheinen nicht als Clips.
+
+### Neue produktive Filter und Resident-Zuordnung
+
+Ergänze Filter für `locomotionSet`, Richtungsrolle, gemessene Geschwindigkeit, Rig, Prop-Anforderung, sauberer Loop, Kurvenbewegung und One-shot. Resident-Profile können ein komplettes Locomotion Set plus einzelne Overrides für Signature Walk, Idle, Talk, Reaction und Special Move speichern.
+
+Farming, Magic, Drunk, Phone-Pacing, Old-Man-Walk, Texting, Door, Stairs, Tripping und Swatting-Bugs werden als mögliche Resident-/NPC-Aktivitäten auffindbar. Redaktionelle Namen, Tags und Zuordnungen bleiben additive JSON-Daten; der kanonische Katalog wird im Browser nicht still überschrieben.
+
+## Claymation-, Skydome- und Grounding-Gate · auch für Motion v5
+
+Jeder Einzelclip- und Locomotion-Set-Preview muss wahlweise in der bestehenden Claymation-Diorama-Ansicht laufen. Verbindlich bleiben H0 für Art Direction, K2 für Material/Werkzeuge und T4 für Szeneninseln/VFX. Kein neutraler GLB-Viewer als einzige Produktionsansicht.
+
+Skydome-Donor: `travel/travel-v16/terrain-v16/skydome-shader.js`. Mindestens `day / evening / night-space / basic`, mit `off / basic / full` für Performance. Der Dome folgt der Kamera; kein blauer Streifen und kein festes Wasserfarbenbild.
+
+Schatten-/Grounding-Gate:
+
+- sichtbare Oberfläche, Snap-/Fußkontakt und Shadow Receiver verwenden dieselbe finale Oberflächenhöhe;
+- keine versetzte unsichtbare Schattenebene;
+- genau ein Schattenvertrag pro Objekt;
+- keine abgelösten Schattenflecken, vertikalen Streifen, Doppelbilder, Z-Fighting oder schwebenden Kontakte;
+- Prüfungen auf ebenem Clay-Terrain, Hang, Pflaster-/Terrain-Naht und während Walk, Turn, Jump und Land;
+- Beauty, Shadow-off und Receiver-/Kontakt-Diagnose liefern.
+
+Der Motion-v5-Import gilt erst als im Studio integriert, wenn mindestens `female_basic`, `magic_caster`, `drunk` und ein Carry-Set in dieser Claymation-World-Ansicht mit korrektem Grounding abspielbar sind.
+
 ## Inhaltsschutz
 
 Unverändert erhalten:
@@ -328,7 +392,7 @@ Unverändert erhalten:
 - fliegende Knochen und Kollisionen als schaltbare Szeneoptionen;
 - Gate- und Audio-Funktionen;
 - aktuelles Resident-/Motion-/Scene-Ownership;
-- Motion Library v4 mit 263 eindeutigen Clips als aktueller Katalogstand;
+- Motion Library v5 mit 263 eindeutigen Clips als aktueller Katalogstand;
 - Intake-04-Metadaten für Varianten, Props, Kommentare, Resident-Ideen und Strike-Kandidaten;
 - vollständiger 3D-Inline-Editor-Vertrag.
 
@@ -345,7 +409,7 @@ Liefere ein vollständiges, herunterladbares Session-Paket mit:
 - den vier Zuständen View, Actor, Requisite, Edit;
 - sichtbarem kompletten Inline-Menü;
 - offenem und geschlossenem Inspektor;
-- Library View mit realer 263-Clip-Katalogstruktur, Suche, Filtern, Character-Auswahl und animierten Preview-Karten;
+- Library View mit realer 345-Clip-Katalogstruktur, Suche, Filtern, Character-Auswahl und animierten Preview-Karten;
 - mindestens je einem sichtbaren Beispiel für Prop-Attachment, Strike-Marker, Resident-Signature-Move, sitzenden Clip und Paar-/Kampfsequenz;
 - abspielbarem Choreography View für Geschenk, Debatte und Rauferei sowie kurzen Rezeptbeispielen für Speaker Corner, Kartenerklärung und `Show it / Spin it / Sell it`;
 - Emotionsvarianten über Eyes/Eyebrows/Eyelids/Face, ohne Body-Clips zu duplizieren;
@@ -373,7 +437,7 @@ PASS, wenn Georg in Graveyard Edit sofort erkennt:
 4. dass kein zweites oder drittes Panel dieselbe Aufgabe beansprucht;
 5. dass der 3D-View die Hauptfläche bleibt;
 6. dass Resident Atlas und Animation Lab dieselbe Editor-Komponente verwenden;
-7. dass die 263 Clips auffindbar sind, ohne das Interface mit Metadaten zu überladen;
+7. dass die 345 Clips auffindbar sind, ohne das Interface mit Metadaten zu überladen;
 8. dass Props, Strike-Marker und Resident-Zuordnungen verständlich bearbeitet und als JSON exportiert werden können;
 9. dass Terrain, Residents und Props in der World-Ansicht sichtbar im gemeinsamen Claymation-Look gerendert werden.
 10. dass Geschenk, Debatte und Rauferei flüssig abspielbar sind und nicht nur aus sechs Standbildern bestehen;
