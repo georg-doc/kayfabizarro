@@ -6,3 +6,6 @@
 - Owner gepinnt (@8922d4b1 über jsDelivr): graft-mount-Kette, EyeRig v6, pet-mouth.v1, brow-rig.v2, pet-nose.v2, pet-moustache.v1, partrig.v1, facegraft.v1 u. a.
 - Look-Entscheid Georg 27.09.: Visem »Zu« → Neutral-Decal (TB_VISEME_LOOK).
 - Schalter »Notes« (aus als Vorgabe) blendet Erklärtexte ein.
+- WSA-Intake 27.09.: ZIPCHECK PASS; frischer HTTP-Boot und Selbsttest 33/33 PASS; 0 Browserfehler/Warnings.
+- Der Candidate bleibt bis `P03-ADOPT-01` ein geprüfter Inbox-Kandidat. Er ist noch nicht der kanonische ToolBox-Live-Stand und hat keine behauptete Cloudflare-Route.
+- Nächste Reihenfolge: korrigierten Candidate rehome/adoptieren → drei lokale Owner-Deltas einzeln abgleichen → feste Stage → danach BODY-02 (Material/Farbe/Licht/Character-Surface).

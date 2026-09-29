@@ -40,6 +40,10 @@ Current applications:
 
 Additional hard rule: **no low-fidelity proxy human gates**. If a review artifact is ruckly, simplified, visually unrepresentative, or reproduces known renderer defects such as shadow clipping/banding/light seams, it is internal evidence only and must not become a Georg blocking task.
 
+### Current ToolBox continuation
+
+ToolBox Production-03 r2 is the current integrated source candidate for Studio + Animation Studio + Rigging. WSA intake is technically green: ZIPCHECK PASS, fresh HTTP boot, 33/33 browser checks, 0 errors/warnings. Georg's request to plan and continue is a PROCEED PASS. Route next to `tools/KFB-ToolBox/_handover/TOOLBOX_PRODUCTION_03_INTAKE_2026-09-27/START_HERE.md` and execute only `P03-ADOPT-01`; do not create another ToolBox UI or isolated acceptance page.
+
 
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
@@ -1290,4 +1294,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-

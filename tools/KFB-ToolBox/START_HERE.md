@@ -1,5 +1,7 @@
 # KFB ToolBox v1 · Start here
 
+> **CURRENT OVERRIDE · 2026-09-27:** Der aktuelle zusammengeführte Produktionskandidat ist **ToolBox Production-03 r2**. WSA-Intake: ZIPCHECK PASS, frischer HTTP-Boot, 33/33 Browserprüfungen, 0 Errors/Warnings. Lies zuerst [`_handover/TOOLBOX_PRODUCTION_03_INTAKE_2026-09-27/START_HERE.md`](_handover/TOOLBOX_PRODUCTION_03_INTAKE_2026-09-27/START_HERE.md). Nächster Slice ist `P03-ADOPT-01`: Candidate in den bestehenden ToolBox-Owner übernehmen, keine weitere ToolBox-Variante bauen. Der ältere Stage-First-Override darunter bleibt Herkunft, nicht aktueller Ausführungsauftrag.
+
 > **CURRENT OVERRIDE · 2026-09-18:** Lies zuerst [`_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md`](_handover/STAGE_FIRST_V1_INTAKE_2026-09-18/START_HERE.md). Der vollständige Stage-First-v1-Export ist eingetroffen und als Intake geprüft. Die ältere A/B-/Birthday-Routinglogik unten bleibt Herkunft/History, nicht aktueller Ausführungsauftrag. **Birthday 2026 = FAIL / OUTDATED / ARCHIVED HISTORY.**
 
 Status: DECISION / EXECUTION BRIEF · 2026-09-14
