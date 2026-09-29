@@ -31,6 +31,24 @@ Walk (Zu Fuß) · press **Auto** (direct, no long walk) · drive on the geometri
 All new, in `kfb-hub/stage/world/clay-city-mvp-01/`: `index.html`, `clay-city.mjs`, `clay-road.mjs`, `kit-donors.mjs`, `kit-district.mjs`, `t4-segment.mjs`, `sky-core.mjs`, `playtest-probe.mjs`, `perf-bench.mjs`, `donors.html`, handoff files. Plus the T4 intake folder (CP1) and one wrapper `kfb-hub/pruefen/clay-city-mvp-01/index.html` on `cloudflare-live`.
 **No file of the R6 host (`world-drive-interact-m2a/`) was modified.** Owners stay: WB2 terrain height, World r2 walker, Race PR10 drive, Travel flight, H0 clay.
 
+
+## 2026-09-29 · HUMAN FREEPLAY VERDICT: FAIL
+
+This candidate is frozen as **ARCHIVED_FAILED_CANDIDATE / RECOVERY EVIDENCE**. Automated probe claims above do not override Georg's public freeplay. Do not merge, promote or repair this branch piecemeal.
+
+Observed on the public review route:
+
+- shared shadow/contact/clipping fix is not effective on the rock/props; the screenshot also shows player/vehicle interpenetration and unreliable vehicle ground contact;
+- the direct **Auto** mode button does not work;
+- **E / car interaction** does not work;
+- buildings sit on visible foundation plates instead of reading as terrain-integrated;
+- the promised T4 world-building is not materially present: clay terrain relief/hills, T4 props, clay surface treatment and the intended sparse living world are missing or only partial;
+- walking speed is acceptable now, but the selected/timed locomotion clip is visually unclean and not fun; state/stride/clip synchronization remains unresolved.
+
+The earlier labels `PASS by construction` and `6/7 PASS` are therefore insufficient for acceptance. The public route remains evidence of failure, not a current playable MVP.
+
+**Exactly one next gate:** create a fresh `WORLD-CORE-MOBILITY-R0` slice from the verified owner, not from this candidate. First use Claude Design (Opus 5.5 High) only to author the accepted H0/K2/T4 sparse Clay-World look and terrain/building integration reference. Then use Codex GPT-6 Sol High (xhigh only for the final integration/verification pass) to implement and prove one shared runtime for Walk/Auto/Flight, E interaction, stride-synced locomotion, ground/contact/shadow behavior and the accepted visual donor. No new broad Coworker repair pass on this branch.
+
 ## Actual test counts
 
 - Play probe (visible pane, `9d1182fa`): **6/7 PASS** — fail = real-time walk speed (see open item 1).
