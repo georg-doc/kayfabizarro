@@ -1,11 +1,18 @@
 # SHARED-SHADOW-CLAY-CANON-01 · START_HERE
 
 Date: 2026-09-29  
-Status: **DOCUMENTATION / ROUTING REPAIR · RUNTIME UNCHANGED · NO STAGE**  
+Status: **DOCUMENTATION / ROUTING REPAIR · WSA LEAD FAIL RECORDED · RUNTIME UNCHANGED · NO STAGE**  
 Owner: existing KFB ToolBox / WorldBuilder routing layer  
 Repo: `georg-doc/kayfabizarro`  
 Branch: `chatgpt-web/shared-shadow-clay-canon-2026-09-29`  
 Base: `main@2602ff6c980894405e970d22e45f7db76da0e1a7`
+
+## Incident classification
+
+This recovery records a **WSA Lead persistence/routing FAIL**:
+`skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md`.
+
+The failure was not byte loss. Accepted/proven knowledge survived in GitHub but was not promoted/routed with enough stable-path, branch-pin and precedence information for a fresh chat to recover it reliably.
 
 ## Outcome
 
