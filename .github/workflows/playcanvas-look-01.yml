@@ -17,6 +17,8 @@ jobs:
         with:
           sparse-checkout: |
             game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01
+            kfb-hub/stage/playcanvas-donor-01
+            kfb-hub/stage/playcanvas-look-01
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
@@ -35,7 +37,7 @@ jobs:
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pc-look-http.log 2>&1 &
           for i in {1..30}; do
-            if curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/static/ >/dev/null; then exit 0; fi
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/playcanvas-look-01/ >/dev/null; then exit 0; fi
             sleep 1
           done
           cat /tmp/pc-look-http.log
