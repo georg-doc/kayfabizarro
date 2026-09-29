@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
-Status: CURRENT ROUTER v0.3
-Date: 2026-09-27
+Status: CURRENT ROUTER v0.4
+Date: 2026-09-29
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -40,6 +40,22 @@ Current applications:
 
 Additional hard rule: **no low-fidelity proxy human gates**. If a review artifact is ruckly, simplified, visually unrepresentative, or reproduces known renderer defects such as shadow clipping/banding/light seams, it is internal evidence only and must not become a Georg blocking task.
 
+
+## 2026-09-29 · Shared 3D shadow + clay-building routing correction
+
+For any KFB three.js task involving bright shadow/contact seams, shadow clipping/banding, props that appear lit where they should be shadowed, roof/wall light bands, clay buildings, Knetgummi façades, OSM building deformation, Elastic Grotesque, `FACADE_RULE` or `LOOK-TORSION`, read these stable ToolBox routers before inventing a new fix:
+
+- `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md` — shared fitted/snapped shadow-frustum recipe, texel-relative `normalBias`, overlay casting rule, FACE_NORMALS/contact distinction and integrated verification.
+- `tools/KFB-ToolBox/docs/CLAY_BUILDING_FACADE_ROUTER.md` — S5 / H0 / K2 / Elastic / WorldBuilder / LOOK-TORSION source-resolution order and version overrides.
+
+Important source-resolution facts:
+- the full S5 Building / Façade Clay Adapter is branch-local on `georg-doc-patch-2@3232a1070686896833d6b7942fcd631b9fa8cda6`, not on main;
+- S5's 27.09 material references predate the accepted K2 28.09 base; new stages use K2 `clay-material.v10` + current relief/toolmix unless a bounded legacy comparison explicitly requires the old H0 path;
+- H0 remains on its own accepted frozen material line;
+- LOOK-TORSION is architecture-pass only: preserve cumulative height-dependent torsion, anchored base and shared roof/body deformation, but do not import a universal final angle or the proxy page's lighting/shadows;
+- World/OSM `kfb-facade-rule-v1`, FACE_NORMALS, support and the WB-D2 texel-relative contact-shadow direction remain protected evidence, not optional rediscovery.
+
+A main-only code search is insufficient when the current routed source is explicitly branch-local. Read the exact branch/pin named by the current router/brief before declaring a donor or spec missing.
 
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
