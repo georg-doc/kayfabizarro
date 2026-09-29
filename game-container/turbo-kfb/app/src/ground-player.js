@@ -32,10 +32,14 @@ const REF_SPEED = Object.freeze({
   Running_Strafe_Right: 2.4802741670129 * 1.0555,
 });
 const LEGACY_WALK_SPEED = 1.08;
-const WALK_SPEED = REF_SPEED.Walking_A;
+// Georg TUNE 2026-09-29: gameplay travel must be faster than the conservative source-cadence
+// measurement. Reuse the existing Motion Lab Rig_Medium handoff candidate: 1.108 u/s at ~1.8×
+// Walking_A playback. Source reference remains REF_SPEED.Walking_A for cadence/slip matching.
+const PLAYABLE_WALK_SPEED = 1.108;
+const WALK_SPEED = PLAYABLE_WALK_SPEED;
 const RUN_SPEED = REF_SPEED.Running_A;
 const SPRINT_SPEED = REF_SPEED.Running_B;
-const HANDOFF_SPEED = 1.108;
+const HANDOFF_SPEED = PLAYABLE_WALK_SPEED;
 const SPRINT_HANDOFF = RUN_SPEED * 1.08;
 const RATE_MIN = 0.30;
 const RATE_MAX = 1.8;
@@ -415,6 +419,8 @@ export async function createGroundPlayer({ scene, track } = {}) {
         feelMode,
         enhanced,
         walkSpeed:enhanced?WALK_SPEED:LEGACY_WALK_SPEED,
+        walkReferenceSpeed:REF_SPEED[CLIP.walk],
+        walkPlaybackRateAtTarget:enhanced?rateFor(CLIP.walk,WALK_SPEED):rateFor(CLIP.walk,LEGACY_WALK_SPEED),
         runSpeed:RUN_SPEED,
         sprintSpeed:enhanced?SPRINT_SPEED:null,
         jump:enhanced?{
