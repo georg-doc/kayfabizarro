@@ -1,0 +1,43 @@
+{
+  "schema": "kfb.playcanvas-look-source/1",
+  "status": "PC_LOOK_01_CANDIDATE",
+  "ownerRepository": "georg-doc/kayfabizarro",
+  "ownerBranch": "chatgpt-web/playcanvas-look-01-2026-09-29",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/playcanvas-look-01/",
+  "immutableDonor": {
+    "branch": "chatgpt-web/playcanvas-donor-01-2026-09-29",
+    "head": "732deba269aa49ff987c9f946ffd3568a9bed3bb",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/playcanvas-donor-01/",
+    "runtimeTree": "baaf8e0312e39d03d2830dbabb7cc9b8d4ea9bf6"
+  },
+  "lookDonor": {
+    "canon": "K2 · ACCEPTED AS BASE · 2026-09-28",
+    "materialSource": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-material.v10.js",
+    "profilesSource": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-profiles.v2.js",
+    "toolmixSource": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-toolmix.v1.js",
+    "translation": "PlayCanvas StandardMaterial only; no Three.js/K2 shader runtime imported"
+  },
+  "protected": [
+    "physics",
+    "vehicle tuning",
+    "wheel/suspension",
+    "controls",
+    "Follow Camera",
+    "R reset",
+    "collision",
+    "scene geometry",
+    "GLB geometry",
+    "scripts"
+  ],
+  "runtimeDelta": [
+    "config.json material fields only"
+  ],
+  "materialAssets": {
+    "52417947": "bug_body",
+    "52417948": "bug_prop1bonnet",
+    "52417949": "bug_tyre",
+    "52417952": "bug_props2",
+    "52417961": "bug_props1",
+    "52418068": "desert"
+  }
+}

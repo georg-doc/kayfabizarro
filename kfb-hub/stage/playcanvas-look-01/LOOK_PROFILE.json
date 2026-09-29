@@ -1,0 +1,104 @@
+{
+  "schema": "kfb.pc-look-01.material-profile/1",
+  "basis": "K2 accepted clay material semantics translated to existing PlayCanvas material slots",
+  "k2Semantics": {
+    "vehicleRole": "soft · roughness 0.9 · metalness 0",
+    "terrainRole": "world · roughness 0.98 · metalness 0",
+    "vehicleToolmix": "thumb k0.5 s0.25 c0.5; dent k0.35 s0.3 c0.4",
+    "note": "Toolmix is provenance only in PC-LOOK-01; no second shader owner is introduced."
+  },
+  "palette": {
+    "body": "#f2b632",
+    "bonnet": "#5983ac",
+    "props": "#e2d0bc",
+    "tyre": "#2e2c3a",
+    "desert": "#f0cf7e"
+  },
+  "edits": {
+    "52417947": {
+      "asset": "bug_body",
+      "diffuseTint": "#f2b632",
+      "diffuseMapTint": true,
+      "metalness": 0,
+      "specular": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "shininess": 4,
+      "reflectivity": 0.22,
+      "bumpMapFactor": 0.55
+    },
+    "52417948": {
+      "asset": "bug_prop1bonnet",
+      "diffuseTint": "#5983ac",
+      "diffuseMapTint": true,
+      "metalness": 0,
+      "specular": [
+        0.07,
+        0.07,
+        0.07
+      ],
+      "shininess": 4,
+      "reflectivity": 0.18,
+      "bumpMapFactor": 0.55
+    },
+    "52417949": {
+      "asset": "bug_tyre",
+      "diffuseTint": "#2e2c3a",
+      "diffuseMapTint": true,
+      "metalness": 0,
+      "specular": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "shininess": 2,
+      "reflectivity": 0.05,
+      "bumpMapFactor": 0.65
+    },
+    "52417952": {
+      "asset": "bug_props2",
+      "diffuseTint": "#e2d0bc",
+      "diffuseMapTint": true,
+      "metalness": 0,
+      "specular": [
+        0.06,
+        0.06,
+        0.06
+      ],
+      "shininess": 3,
+      "reflectivity": 0.14,
+      "bumpMapFactor": 0.5
+    },
+    "52417961": {
+      "asset": "bug_props1",
+      "diffuseTint": "#e2d0bc",
+      "diffuseMapTint": true,
+      "metalness": 0,
+      "specular": [
+        0.06,
+        0.06,
+        0.06
+      ],
+      "shininess": 3,
+      "reflectivity": 0.14,
+      "bumpMapFactor": 0.5
+    },
+    "52418068": {
+      "asset": "desert",
+      "diffuseTint": "#f0cf7e",
+      "diffuseMapTint": true,
+      "metalness": 0,
+      "specular": [
+        0,
+        0,
+        0
+      ],
+      "shininess": 1,
+      "reflectivity": 0.04,
+      "bumpMapFactor": 0.45
+    }
+  },
+  "invariant": "All original texture maps, UVs, models, scene entities and gameplay scripts remain the donor blobs."
+}
