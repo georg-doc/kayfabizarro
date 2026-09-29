@@ -110,6 +110,49 @@ try {
   check('Ground starts Idle_A', g0.currentAnimation === 'Idle_A', g0.currentAnimation);
   check('Ground owns no root-motion translation', g0.rootMotionWorldTranslation === false);
 
+  const orbit0 = await page.evaluate(() => {
+    const w=window.__game.world;
+    const r=w.groundOrbit?.report?.();
+    const c=window.__game.camera.position;
+    return { report:r, camera:{x:c.x,y:c.y,z:c.z}, heading:w.groundPlayer.heading };
+  });
+  check('Ground Orbit owner mounted', !!orbit0.report && orbit0.report.enabled === true, JSON.stringify(orbit0.report));
+
+  await page.evaluate(() => {
+    const canvas=document.getElementById('game-canvas');
+    const fire=(type,x,y,buttons,button=0)=>canvas.dispatchEvent(new PointerEvent(type,{pointerId:7,pointerType:'mouse',clientX:x,clientY:y,button,buttons,bubbles:true,cancelable:true}));
+    fire('pointerdown',720,420,1,0);
+    fire('pointermove',520,360,1,0);
+    fire('pointerup',520,360,0,0);
+    for(let i=0;i<24;i++) window.__game.world.groundOrbit.update(1/60,window.__game.world.groundPlayer);
+  });
+  const orbit1 = await page.evaluate(() => {
+    const r=window.__game.world.groundOrbit.report();
+    const c=window.__game.camera.position;
+    return { report:r, camera:{x:c.x,y:c.y,z:c.z} };
+  });
+  const orbitCamMove=Math.hypot(orbit1.camera.x-orbit0.camera.x,orbit1.camera.y-orbit0.camera.y,orbit1.camera.z-orbit0.camera.z);
+  check('Pointer drag changes Orbit yaw', Math.abs(orbit1.report.targetYaw-orbit0.report.targetYaw) > 0.5, JSON.stringify({before:orbit0.report.targetYaw,after:orbit1.report.targetYaw}));
+  check('Pointer drag moves Ground camera', orbitCamMove > 1.0, 'camera distance=' + orbitCamMove.toFixed(2));
+
+  await page.evaluate(() => {
+    const canvas=document.getElementById('game-canvas');
+    canvas.dispatchEvent(new WheelEvent('wheel',{deltaY:-420,bubbles:true,cancelable:true}));
+    for(let i=0;i<24;i++) window.__game.world.groundOrbit.update(1/60,window.__game.world.groundPlayer);
+  });
+  const orbit2 = await page.evaluate(() => window.__game.world.groundOrbit.report());
+  check('Wheel zoom changes Orbit distance', orbit2.targetDistance < orbit1.report.targetDistance - 0.2, JSON.stringify({before:orbit1.report.targetDistance,after:orbit2.targetDistance}));
+
+  await keyEvent(page,'keydown','KeyC','c'); await keyEvent(page,'keyup','KeyC','c');
+  await page.evaluate(() => { for(let i=0;i<28;i++) window.__game.world.groundOrbit.update(1/60,window.__game.world.groundPlayer); });
+  const orbit3=await page.evaluate(() => {
+    const w=window.__game.world, r=w.groundOrbit.report();
+    const expected=((w.groundPlayer.heading+Math.PI+Math.PI)%(Math.PI*2)+Math.PI*2)%(Math.PI*2)-Math.PI;
+    const diff=Math.atan2(Math.sin(r.targetYaw-expected),Math.cos(r.targetYaw-expected));
+    return {targetYaw:r.targetYaw,expected,diff};
+  });
+  check('C recenters Orbit behind actor', Math.abs(orbit3.diff) < 0.02, JSON.stringify(orbit3));
+
   await keyEvent(page,'keydown','KeyW','w');
   await page.evaluate(() => window.__game.advanceBy(0.9));
   const gw = await page.evaluate(() => window.__game.world.groundPlayer.report());
