@@ -2,7 +2,7 @@ name: World Core Mobility R0B collision Stage proof
 
 on:
   pull_request:
-    branches: [main]
+    branches: ['work/world-m2a-r6-focus-quality-2026-09-28']
     paths:
       - 'kfb-hub/stage/world/world-core-mobility-r0b-collision-01/**'
       - 'kfb-hub/stage/world/world-drive-interact-m2a/world-drive-m2a.mjs'
