@@ -632,3 +632,32 @@ Recovery export:
 `skills/chat/workflows/GROUND_WALLCLOCK_TIMING_01_FAILURE_RECOVERY_2026-09-29/`
 
 Exactly one next gate: **GROUND-WALLCLOCK-TRAVEL-ONLY-01** on a fresh branch from `542eedb9...`: apply catch-up only to explicit Travel mode, keep Race/Explore/no-query Ground timing unchanged, prove low-FPS wall-clock parity + unchanged baselines, then and only then republish the same Pace-Tune route.
+
+
+## Georg human timing/pace review · 2026-09-29 · TUNE 4
+
+Outcome: **TUNE · STATE MAPPING RIGHT · SOURCE REFERENCE WAS MISTAKEN FOR GAMEPLAY PACE**
+
+New human observation:
+- feet/world displacement are roughly synchronized;
+- the whole locomotion cycle itself reads too slow;
+- therefore simply preserving the measured Rig_Medium stride at native clip playback produces an internally synchronized but globally under-paced result.
+
+Source confirmation:
+- current Travel W sets `baseForwardSpeed = REF_SPEED.Running_A = 2.480274167...`;
+- `rateFor(Running_A, speed) = desiredSpeed / referenceSpeed`, so Travel W at its current target yields effectively **1.0× Running_A playback**;
+- the Motion Lab marks this mapping as a **technical candidate / actor-specific human-open proposal**, not a promoted gameplay default;
+- the older Walker/Travel donor uses `speed=5.4` and `sprintMul=1.75` → 5.4 u/s cruise / 9.45 u/s sprint, showing the current 2.48-u/s Travel target is not a historically normal KFB traversal pace.
+
+Interpretation:
+- the current problem is not just “wrong world speed” and not just “wrong animation clip”;
+- we coupled **world distance** and **clip cadence** correctly to each other, but anchored both to a source-measurement value that is too slow for gameplay;
+- the proven live wall-clock discard bug can further worsen the symptom below 30 FPS, but even at perfect frame timing the current W still only plays Running_A at ~1×.
+
+Recommended next calibration:
+- keep W = Running_A and Shift = Running_B;
+- introduce a Travel-only gameplay multiplier and apply it to **both playback rate and world target speed** so feet remain synchronized;
+- first bounded range: Running_A at 1.6–1.8× → ~3.97–4.46 u/s; Running_B at the same multiplier → ~4.85–5.45 u/s;
+- do not reuse measured `referenceSpeed` as the gameplay default again.
+
+Exactly one next gate should combine the already-planned Travel-only wall-clock isolation with this Travel-only playback/world-speed calibration, leaving Race/Explore/no-query Ground untouched.
