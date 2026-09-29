@@ -104,6 +104,8 @@ Its recipe uses:
 
 That candidate does **not** become a new universal deformation owner by existing. If accepted, its recipe is a visual donor that the receiving World/Core runtime reconciles with the established WorldBuilder/S5 ownership.
 
+Routing correction: the R0A design page footer names `export/WORLD_CORE_MOBILITY_R0A_2026-09-29/START_HERE.md`, but that export subpath is not present on main. The actual handover is the sibling file `WORLD_CORE_MOBILITY_R0A_2026-09-29/START_HERE.md`. Treat the footer path as stale display text, not as evidence that the handover is missing.
+
 Its current `START_HERE.md` says contact shadows are outside R0A runtime ownership. That is valid as an ownership boundary, but design/runtime consumers must still read the shared shadow recipe rather than rediscovering the known bright-seam problem.
 
 ## The five layers must stay separate
