@@ -6,6 +6,8 @@ Status: **REBRIEF PREPARED · SOURCE PREFLIGHT COMPLETE · NO TOOL RUNTIME CHANG
 
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/toolbox-animation-production-06-rebrief-2026-09-29`
+- Draft PR: **#286**
+- PR creation head: `775daad3a1deed841a7f7c380ea6ddfe489c6225`
 - base main: `09737a8f8fd7f71c979f292322c755d0f2c2168b`
 - owner: existing KFB ToolBox / Animation Studio Claude Design project
 - predecessor project: **KFB ToolBox Production-05**
