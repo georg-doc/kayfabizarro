@@ -1,47 +1,32 @@
 {
   "schema": "kfb.stage-mirror/0.1",
   "product": "GROUND-WALK-PACE-TUNE-02",
-  "status": "PUBLIC_VERIFIED_HUMAN_TWO_GEAR_FEEL_OPEN",
+  "status": "PUBLIC_VERIFIED_RUNTIME_HUMAN_TIMING_TUNE_OPEN",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29",
+  "acceptedSourceHandoff": "542eedb91f96b6f718df9e619fb3d3f746b79854",
+  "currentRecoveryHandoff": "43190d7740a701aa6cff6708f52df0f399063108",
   "runtimeSourceHead": "4475271b61e65fae95e5044925b83f2e39c18e6e",
-  "currentHandoffHead": "542eedb91f96b6f718df9e619fb3d3f746b79854",
   "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel",
-  "query": "ground=1&groundFeel=velocity&walkPace=travel",
-  "evidence": {
-    "run": 36588655547,
-    "job": 109475640957,
-    "artifact": 11043426976,
-    "digest": "sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f",
-    "paceStatic": "8/8",
-    "integrationStatic": "10/10",
-    "regression": "27/27",
-    "travelTwoGear": "16/16",
+  "runtimeEvidence": {
+    "publicRun": 36590570535,
+    "checks": "15/15",
     "errors": 0
   },
-  "measured": {
-    "normalWClip": "Running_A",
-    "normalWTarget": 2.4802741670129,
-    "normalWSettled": 2.4785986456399214,
-    "shiftClip": "Running_B",
-    "shiftSettled": 3.026331548770273,
-    "releaseClip": "Running_A",
-    "releaseSpeed": 2.5503960035413793,
-    "orbitRetained": true
+  "humanResult": {
+    "outcome": "TUNE",
+    "accepted": "Two-Gear state direction",
+    "issue": "world traversal remains slow/ruckly; likely wall-clock timing",
+    "provenFinding": "old live frame path discards elapsed time above 1/30 s"
   },
-  "publicProof": {
-    "publicationSourceHead": "92335555295ee84eecfd2c3cec9d01ead98533ab",
-    "run": 36589579432,
-    "job": 109478846810,
-    "checks": "15/15",
-    "artifact": 11043990368,
-    "digest": "sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707",
-    "screenshots": [
-      "stage.png",
-      "hub.png"
-    ],
-    "runtimeErrors": 0,
-    "pageConsoleErrors": 0
+  "failedTimingCandidate": {
+    "status": "ARCHIVED_FAILED_CANDIDATE_NOT_PUBLISHED",
+    "frozenHead": "9431a89c8b28c21579f61ae8cdb5e3be197706d5",
+    "finalRun": 36593362023,
+    "finalArtifact": 11044688869,
+    "digest": "sha256:629aff621427e1a365866e6977fbe5d13a402c2cafad8678e25ae50af1cfb852",
+    "repairsUsed": "2/2",
+    "recovery": "skills/chat/workflows/GROUND_WALLCLOCK_TIMING_01_FAILURE_RECOVERY_2026-09-29/"
   },
-  "cloudflarePages": "SUCCESS"
+  "nextGate": "GROUND-WALLCLOCK-TRAVEL-ONLY-01"
 }
