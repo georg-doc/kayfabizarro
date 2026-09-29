@@ -143,3 +143,9 @@
 - first run `36591956187`: static timing PASS; Explore/Race/Ground Walk/Run/Stop baseline PASS; narrow Jump_Start timing assertion failed because corrected live RAF catch-up double-counted wall time after deterministic `advanceBy()`.
 - Repair is QA-clock isolation only: manual simulation helpers reset `THREE.Clock` after consuming their interval.
 - Production RAF catch-up, W=Running_A / Shift=Running_B and all speed targets unchanged.
+
+
+## 2026-09-29 · GROUND-WALLCLOCK-TIMING-01 · Repair 2
+- second run `36592599717`: static 9/9 PASS; Explore/Race/Ground Walk/Run/Stop PASS; same headless split-task Jump_Start transient failed.
+- Final allowed repair is QA-only: atomically dispatch Space + deterministic Jump_Start/Air/Land fixed-step snapshots in one browser task in Checkpoint-A and Ground+Orbit regression.
+- No production code or speed change. If next gate fails: stop, preserve, failure-recovery export; no Repair 3.

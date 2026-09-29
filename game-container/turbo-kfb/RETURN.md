@@ -598,3 +598,18 @@ Repair 1:
 - wall-clock catch-up implementation and Two-Gear speeds are unchanged.
 
 Next: rerun the full five-layer gate. This is repair pass 1 of max 2.
+
+
+### GROUND-WALLCLOCK-TIMING-01 · Repair 2
+Second run `36592599717`:
+- timing static **9/9 PASS**;
+- Explore / Race / Ground Walk / Run / Stop baseline PASS again;
+- the only red assertion remained the same transient `Jump_Start` check.
+
+Final repair allowed by stop rule:
+- changed **QA only**;
+- transient Jump Start/Air/Land snapshots are now captured atomically inside one browser JS task while deterministic fixed-step time advances;
+- applied to both legacy Checkpoint-A and the Ground+Orbit regression, because both used the same split-task transient pattern;
+- production timing code, Two-Gear locomotion, speeds, Jump implementation and Orbit are unchanged.
+
+If the next full gate is red, **STOP — no Repair 3**. Preserve the candidate and create failure-recovery export.

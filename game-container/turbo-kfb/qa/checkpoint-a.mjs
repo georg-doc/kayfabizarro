@@ -132,15 +132,25 @@ try {
   const gi = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Stop returns to Idle_A', gi.currentAnimation === 'Idle_A', gi.currentAnimation);
 
-  await keyEvent(page,'keydown','Space',' '); await keyEvent(page,'keyup','Space',' ');
-  await page.evaluate(() => window.__game.advanceBy(0.10));
-  const gjs = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  // Keep transient jump snapshots in one browser task. With the corrected live wall-clock
+  // catch-up, a throttled RAF between separate Playwright calls can legitimately advance past
+  // Jump_Start before the deterministic probe begins.
+  const jumpProbe = await page.evaluate(() => {
+    const fire=(type)=>window.dispatchEvent(new KeyboardEvent(type,{code:'Space',key:' ',bubbles:true,cancelable:true}));
+    fire('keydown'); fire('keyup');
+    window.__game.advanceBy(0.10);
+    const start=window.__game.world.groundPlayer.report();
+    window.__game.advanceBy(0.28);
+    const air=window.__game.world.groundPlayer.report();
+    window.__game.advanceBy(1.25);
+    const land=window.__game.world.groundPlayer.report();
+    return {start,air,land};
+  });
+  const gjs=jumpProbe.start;
   check('Jump begins with Jump_Start', gjs.currentAnimation === 'Jump_Start', gjs.currentAnimation);
-  await page.evaluate(() => window.__game.advanceBy(0.28));
-  const gair=await page.evaluate(() => window.__game.world.groundPlayer.report());
+  const gair=jumpProbe.air;
   check('Air uses Jump_Idle', gair.currentAnimation === 'Jump_Idle' && gair.onGround === false, gair.currentAnimation);
-  await page.evaluate(() => window.__game.advanceBy(1.25));
-  const gland=await page.evaluate(() => window.__game.world.groundPlayer.report());
+  const gland=jumpProbe.land;
   check('Landing recovers to stable ground locomotion', gland.onGround === true && ['Jump_Land','Idle_A'].includes(gland.currentAnimation), gland.currentAnimation);
   await page.screenshot({ path: out + '/checkpoint-b-ground.png', fullPage: true });
 
