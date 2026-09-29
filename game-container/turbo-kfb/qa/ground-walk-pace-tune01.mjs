@@ -27,7 +27,8 @@ try{
   check('travel walk target is ~1.10 u/s',g0.walkSpeed>1.09&&g0.walkSpeed<1.11,String(g0.walkSpeed));
   check('Walking_A playback is overdriven to cap',Math.abs(g0.walkPlaybackRate-1.8)<1e-9,String(g0.walkPlaybackRate));
   check('velocity semantic consumer retained',g0.feelMode==='velocity'&&g0.enhanced===true,JSON.stringify({feel:g0.feelMode,enhanced:g0.enhanced}));
-  check('Orbit retained',!!window.__game,await page.evaluate(()=>!!window.__game.world.groundOrbit?.report?.().enabled));
+  const orbitRetained=await page.evaluate(()=>!!window.__game.world.groundOrbit?.report?.().enabled);
+  check('Orbit retained',orbitRetained,String(orbitRetained));
 
   await key(page,'keydown','KeyW','w');
   await page.evaluate(()=>window.__game.advanceBy(.12));
