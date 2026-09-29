@@ -149,7 +149,9 @@ canvas.addEventListener('wheel', (e) => { e.preventDefault(); view.distance = Ma
 const metric = id => document.getElementById(id);
 let ema = { frame: 0, render: 0, draws: 0, fps: 0, vram: 0 };
 let warm = 0;
+let frameCounter = 0;
 app.on('frameend', () => {
+  frameCounter++;
   const s = app.stats;
   const a = warm++ < 20 ? 1 : 0.12;
   const mix = (old, val) => old ? old * (1 - a) + val * a : val;
@@ -183,14 +185,16 @@ document.getElementById('reset-view').addEventListener('click', () => { view.yaw
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function sample(seconds = 1.6) {
-  const rows = []; const end = performance.now() + seconds * 1000;
-  while (performance.now() < end) {
-    await new Promise(requestAnimationFrame);
+  const rows = [];
+  const startFrame = frameCounter;
+  const end = Date.now() + Math.max(0.1, Number(seconds) || 1.6) * 1000;
+  do {
+    await new Promise(resolve => setTimeout(resolve, 34));
     const s = app.stats;
-    if (s.frameTime > 0) rows.push({ frame: s.frameTime, render: s.cpuRenderTime, draws: s.drawCallCount, vram: s.vramTotalBytes });
-  }
+    rows.push({ frame: s.frameTime || 0, render: s.cpuRenderTime || 0, draws: s.drawCallCount || 0, vram: s.vramTotalBytes || 0 });
+  } while (Date.now() < end);
   const avg = k => rows.length ? rows.reduce((a, r) => a + r[k], 0) / rows.length : 0;
-  return { frames: rows.length, frameMs: avg('frame'), cpuRenderMs: avg('render'), drawCalls: avg('draws'), vramMB: avg('vram') / 1048576 };
+  return { frames: frameCounter - startFrame, samples: rows.length, frameMs: avg('frame'), cpuRenderMs: avg('render'), drawCalls: avg('draws'), vramMB: avg('vram') / 1048576 };
 }
 
 let running = false;
