@@ -49,13 +49,13 @@ try {
   check('Explore has player kart', exploreStart.player);
   check('Race item system disabled in Explore', exploreStart.items === false);
 
-  await page.keyboard.down('KeyW');
+  await page.keyboard.down('w');
   await page.waitForTimeout(1400);
   const exploreMove = await page.evaluate(() => {
     const p = window.__game.world.player;
     return { x:p.position.x, y:p.position.y, z:p.position.z, speed:p.speed, state:window.__game.state };
   });
-  await page.keyboard.up('KeyW');
+  await page.keyboard.up('w');
   const moved = Math.hypot(exploreMove.x-exploreStart.x, exploreMove.z-exploreStart.z);
   check('Explore player drives', moved > 2, 'distance=' + moved.toFixed(2));
   check('Explore keeps playable state', exploreMove.state === 'explore', exploreMove.state);
@@ -74,12 +74,12 @@ try {
   const racePos0 = await page.evaluate(() => {
     const p=window.__game.world.player.position; return {x:p.x,z:p.z};
   });
-  await page.keyboard.down('KeyW');
+  await page.keyboard.down('w');
   await page.waitForTimeout(1200);
   const raceMove = await page.evaluate(() => {
     const p=window.__game.world.player; return {x:p.position.x,z:p.position.z,speed:p.speed,state:window.__game.state};
   });
-  await page.keyboard.up('KeyW');
+  await page.keyboard.up('w');
   const raceMoved = Math.hypot(raceMove.x-racePos0.x, raceMove.z-racePos0.z);
   check('Race player still drives', raceMoved > 1, 'distance=' + raceMoved.toFixed(2));
   check('Race remains racing', raceMove.state === 'racing', raceMove.state);
@@ -94,24 +94,24 @@ try {
   check('Ground starts Idle_A', g0.currentAnimation === 'Idle_A', g0.currentAnimation);
   check('Ground owns no root-motion translation', g0.rootMotionWorldTranslation === false);
 
-  await page.keyboard.down('KeyW');
+  await page.keyboard.down('w');
   await page.waitForTimeout(900);
   const gw = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Ground Walk moves', Math.hypot(gw.position.x-g0.position.x, gw.position.z-g0.position.z) > 0.45, JSON.stringify(gw.position));
   check('Ground Walk uses Walking_A', gw.currentAnimation === 'Walking_A', gw.currentAnimation);
 
-  await page.keyboard.down('ShiftLeft');
+  await page.keyboard.down('Shift');
   await page.waitForTimeout(650);
   const gr = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Ground Run uses Running_A', gr.currentAnimation === 'Running_A', gr.currentAnimation);
   check('Ground Run speed reflects calibrated consumer', gr.speed > 1.8 && gr.speed < 3.2, String(gr.speed));
 
-  await page.keyboard.up('ShiftLeft');
+  await page.keyboard.up('Shift');
   await page.waitForTimeout(450);
   const gw2 = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Run returns to Walking_A', gw2.currentAnimation === 'Walking_A', gw2.currentAnimation);
 
-  await page.keyboard.up('KeyW');
+  await page.keyboard.up('w');
   await page.waitForTimeout(450);
   const gi = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Stop returns to Idle_A', gi.currentAnimation === 'Idle_A', gi.currentAnimation);
