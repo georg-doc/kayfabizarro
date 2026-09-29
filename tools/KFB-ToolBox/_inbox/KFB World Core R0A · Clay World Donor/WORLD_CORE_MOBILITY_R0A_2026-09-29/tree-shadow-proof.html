@@ -19,15 +19,15 @@ api.set('run',false);api.set('ao',true);api.set('shadows',true);
 const foliage=[];
 api.scene.traverse(o=>{if(o.isMesh&&(/^leaf\d/.test(o.name)||o.name==='spender:nature'))foliage.push(o)});
 if(!foliage.length)throw Error('no foliage mesh');
-let target=foliage.find(o=>/^leaf\d/.test(o.name))||foliage[0];
-const box=new THREE.Box3().setFromObject(target),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),radius=Math.max(size.x,size.y,size.z)*0.55;
+const cluster=api.recipe.clusters.items[0],sc=cluster.sc||1,ground=api.GH(cluster.x,cluster.z);
+const center=new THREE.Vector3(cluster.x,ground+9.5*sc,cluster.z),radius=10.5*sc;
 api.controls.target.copy(center);
-api.camera.position.set(center.x+radius*2.2,center.y+radius*0.75,center.z+radius*2.4);
+api.camera.position.set(center.x+radius*1.85,center.y+radius*0.35,center.z+radius*2.1);
 api.camera.near=0.12;api.camera.far=9000;api.camera.updateProjectionMatrix();api.controls.update();
 api.frame(3,1/60);
 window.__treeShadowProof={
   api,
-  report:()=>({shadow:api.shadowReport(),center:center.toArray(),size:size.toArray(),target:target.name,errors:api.info.errors.slice()})
+  report:()=>({shadow:api.shadowReport(),center:center.toArray(),radius,target:'cluster:'+cluster.id,errors:api.info.errors.slice()})
 };
 document.body.dataset.treeShadowReady='true';
 </script>
