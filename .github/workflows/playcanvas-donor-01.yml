@@ -1,9 +1,9 @@
-name: PlayCanvas Donor 01 probe
+name: PlayCanvas Donor 01 source probe
 on:
   push:
     branches: [chatgpt-web/playcanvas-donor-01-2026-09-29]
     paths:
-      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/**'
+      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/probe.mjs'
       - '.github/workflows/playcanvas-donor-01.yml'
   workflow_dispatch:
 permissions:
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: |
-            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01
+            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/probe.mjs
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
@@ -27,7 +27,7 @@ jobs:
         run: |
           npm install --no-save playwright@1.51.1
           npx playwright install --with-deps chromium
-      - name: Probe exact public fork scene
+      - name: Probe exact public donor
         run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/probe.mjs
       - uses: actions/upload-artifact@v4
         if: always()
