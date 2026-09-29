@@ -24,11 +24,11 @@ try{
   check('consumer schema is canonical',g0.profileSchema==='kfb.locomotion-profile-set/0.1#consumer',g0.profileSchema);
   check('profile source is KayKit Character Animations 1.1',g0.profileSource?.pack==='KayKit Character Animations 1.1',JSON.stringify(g0.profileSource));
   check('run role resolves Running_A',g0.profileRoles?.run?.clip==='Running_A',JSON.stringify(g0.profileRoles?.run));
-  check('sprint role resolves Running_B',g0.profileRoles?.sprint?.clip==='Running_B',JSON.stringify(g0.profileRoles?.sprint));
-  check('sprint role measured materially faster than run',g0.profileRoles.sprint.worldSpeed>g0.profileRoles.run.worldSpeed*1.1,JSON.stringify({run:g0.profileRoles.run.worldSpeed,sprint:g0.profileRoles.sprint.worldSpeed}));
+  check('ActionFigure sprint follows canonical measured fallback',g0.profileRoles?.sprint?.clip==='Running_A'&&g0.profileRoles?.sprint?.sourceBacked===false&&g0.profileRoles?.sprint?.variant?.type==='playback-rate',JSON.stringify(g0.profileRoles?.sprint));
+  check('ActionFigure sprint profile is faster via playback variant',g0.profileRoles.sprint.worldSpeed>g0.profileRoles.run.worldSpeed*1.1&&Math.abs(g0.profileRoles.sprint.rate-1.3)<1e-9,JSON.stringify({run:g0.profileRoles.run,sprint:g0.profileRoles.sprint}));
   check('Travel gameplay targets come from legacy Walker feel donor',Math.abs(g0.travelRunSpeed-5.4)<1e-9&&Math.abs(g0.travelSprintSpeed-9.45)<1e-9,JSON.stringify({run:g0.travelRunSpeed,sprint:g0.travelSprintSpeed}));
   check('run target playback is profile-derived',g0.travelRunPlaybackRate>1&&g0.travelRunPlaybackRate<3,String(g0.travelRunPlaybackRate));
-  check('sprint target playback is profile-derived and faster',g0.travelSprintPlaybackRate>g0.travelRunPlaybackRate&&g0.travelSprintPlaybackRate<3,String(g0.travelSprintPlaybackRate));
+  check('sprint target playback is profile-derived and faster',g0.travelSprintPlaybackRate>g0.travelRunPlaybackRate&&g0.travelSprintPlaybackRate<4,String(g0.travelSprintPlaybackRate));
   check('Orbit retained',await page.evaluate(()=>!!window.__game.world.groundOrbit?.report?.().enabled));
 
   const probe=await page.evaluate(()=>{
@@ -61,12 +61,12 @@ try{
   const sprintRaw=probe.sprintFrames.reduce((n,r)=>n+r.rawDt,0);
   const sprintSim=probe.sprintFrames.reduce((n,r)=>n+r.simulatedDt,0);
   check('15 FPS sprint preserves wall-clock',Math.abs(sprintRaw-1)<1e-6&&Math.abs(sprintSim-1)<1e-6,JSON.stringify({raw:sprintRaw,sim:sprintSim}));
-  check('Shift uses canonical sprint role',probe.sprint.currentRole==='sprint'&&probe.sprint.currentAnimation==='Running_B'&&probe.sprint.semantic==='sprint',JSON.stringify({role:probe.sprint.currentRole,a:probe.sprint.currentAnimation,s:probe.sprint.semantic}));
+  check('Shift uses canonical sprint role',probe.sprint.currentRole==='sprint'&&probe.sprint.currentAnimation==='Running_A'&&probe.sprint.semantic==='sprint',JSON.stringify({role:probe.sprint.currentRole,a:probe.sprint.currentAnimation,s:probe.sprint.semantic}));
   check('Shift settles near 9.45 u/s',probe.sprint.speed>9.38&&probe.sprint.speed<9.46,String(probe.sprint.speed));
   check('Shift playback follows measured profile',Math.abs(probe.sprint.currentPlaybackRate-probe.sprint.travelSprintPlaybackRate)<0.03,JSON.stringify({current:probe.sprint.currentPlaybackRate,target:probe.sprint.travelSprintPlaybackRate}));
-  check('run to sprint uses canonical transition hint',probe.sprint.lastTransition?.from==='run'&&probe.sprint.lastTransition?.to==='sprint'&&Math.abs(probe.sprint.lastTransition.fade-.15)<1e-9&&probe.sprint.lastTransition.syncPhase===true,JSON.stringify(probe.sprint.lastTransition));
+  check('run to sprint uses canonical same-clip transition hint',probe.sprint.lastTransition?.from==='run'&&probe.sprint.lastTransition?.to==='sprint'&&Math.abs(probe.sprint.lastTransition.fade-.15)<1e-9&&probe.sprint.lastTransition.syncPhase===true&&probe.sprint.lastTransition.sameClip===true,JSON.stringify(probe.sprint.lastTransition));
   check('Shift release returns canonical run role',probe.released.currentRole==='run'&&probe.released.currentAnimation==='Running_A',JSON.stringify({role:probe.released.currentRole,a:probe.released.currentAnimation}));
-  check('sprint to run uses canonical transition hint',probe.released.lastTransition?.from==='sprint'&&probe.released.lastTransition?.to==='run'&&Math.abs(probe.released.lastTransition.fade-.2)<1e-9&&probe.released.lastTransition.syncPhase===true,JSON.stringify(probe.released.lastTransition));
+  check('sprint to run uses canonical same-clip transition hint',probe.released.lastTransition?.from==='sprint'&&probe.released.lastTransition?.to==='run'&&Math.abs(probe.released.lastTransition.fade-.2)<1e-9&&probe.released.lastTransition.syncPhase===true&&probe.released.lastTransition.sameClip===true,JSON.stringify(probe.released.lastTransition));
 
   check('runtime errors empty',(await page.evaluate(()=>window.__game.errors())).length===0,JSON.stringify(await page.evaluate(()=>window.__game.errors())));
   check('page/console errors empty',errors.length===0,JSON.stringify(errors));
