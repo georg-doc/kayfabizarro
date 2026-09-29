@@ -85,6 +85,53 @@ try {
   check('Race remains racing', raceMove.state === 'racing', raceMove.state);
   await page.screenshot({ path: out + '/checkpoint-a-race.png', fullPage: true });
 
+  // Checkpoint B · real Ground consumer in the same product world.
+  await page.goto(BASE + '?ground=1', { waitUntil: 'networkidle', timeout: 30000 });
+  await waitFor(page, () => window.__game?.state === 'ground' && window.__game?.world?.groundPlayer?.ready === true, 30000);
+  const g0 = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Ground uses pinned ActionFigure source', g0.sourcePin === '29c7500b39d20945f4f8e73fb02fef91a055b02c', g0.sourcePin);
+  check('Ground loads exact six semantic clips', JSON.stringify(g0.clips) === JSON.stringify(['Idle_A','Walking_A','Running_A','Jump_Start','Jump_Idle','Jump_Land']), JSON.stringify(g0.clips));
+  check('Ground starts Idle_A', g0.currentAnimation === 'Idle_A', g0.currentAnimation);
+  check('Ground owns no root-motion translation', g0.rootMotionWorldTranslation === false);
+
+  await page.keyboard.down('KeyW');
+  await page.waitForTimeout(900);
+  const gw = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Ground Walk moves', Math.hypot(gw.position.x-g0.position.x, gw.position.z-g0.position.z) > 0.45, JSON.stringify(gw.position));
+  check('Ground Walk uses Walking_A', gw.currentAnimation === 'Walking_A', gw.currentAnimation);
+
+  await page.keyboard.down('ShiftLeft');
+  await page.waitForTimeout(650);
+  const gr = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Ground Run uses Running_A', gr.currentAnimation === 'Running_A', gr.currentAnimation);
+  check('Ground Run speed reflects calibrated consumer', gr.speed > 1.8 && gr.speed < 3.2, String(gr.speed));
+
+  await page.keyboard.up('ShiftLeft');
+  await page.waitForTimeout(450);
+  const gw2 = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Run returns to Walking_A', gw2.currentAnimation === 'Walking_A', gw2.currentAnimation);
+
+  await page.keyboard.up('KeyW');
+  await page.waitForTimeout(450);
+  const gi = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Stop returns to Idle_A', gi.currentAnimation === 'Idle_A', gi.currentAnimation);
+
+  await page.keyboard.press('Space');
+  await page.waitForTimeout(100);
+  const gjs = await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Jump begins with Jump_Start', gjs.currentAnimation === 'Jump_Start', gjs.currentAnimation);
+  await page.waitForFunction(() => {
+    const r=window.__game?.world?.groundPlayer?.report?.();
+    return r && r.onGround === false && r.currentAnimation === 'Jump_Idle';
+  }, null, {timeout:2500});
+  const gair=await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Air uses Jump_Idle', gair.currentAnimation === 'Jump_Idle' && gair.onGround === false, gair.currentAnimation);
+  await page.waitForFunction(() => window.__game?.world?.groundPlayer?.report?.().onGround === true, null, {timeout:3500});
+  await page.waitForTimeout(350);
+  const gland=await page.evaluate(() => window.__game.world.groundPlayer.report());
+  check('Landing recovers to stable ground locomotion', gland.onGround === true && ['Jump_Land','Idle_A'].includes(gland.currentAnimation), gland.currentAnimation);
+  await page.screenshot({ path: out + '/checkpoint-b-ground.png', fullPage: true });
+
   const runtimeErrors = await page.evaluate(() => window.__game.errors());
   check('runtime error collector empty', Array.isArray(runtimeErrors) && runtimeErrors.length === 0, JSON.stringify(runtimeErrors));
   check('page/console errors empty', pageErrors.length === 0, JSON.stringify(pageErrors));
