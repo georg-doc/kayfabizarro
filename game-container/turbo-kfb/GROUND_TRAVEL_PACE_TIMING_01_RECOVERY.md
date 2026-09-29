@@ -38,3 +38,15 @@ publish `ada92c557d3ef24dd18e511b4cff6f18e8b721fc` to the existing direct Pace-T
 - public status remains **PENDING / UNKNOWN**, not verified
 
 Resume by checking run `36602463818` first. Do not republish unless that run has failed and its log proves the intended Cloudflare revision never appeared.
+
+
+## Direct runtime proof
+Run `36602463818`:
+- exact public runtime marker PASS;
+- all locomotion/timing/runtime assertions PASS;
+- only final Hub-link lookup FAIL;
+- therefore direct Stage is valid for human freeplay, while Hub metadata remains non-blocking follow-up.
+- artifact `11050371267`.
+
+Direct Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`

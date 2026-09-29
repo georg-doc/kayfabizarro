@@ -608,3 +608,28 @@ Status: **SOURCE PASS · CLOUDFLARE WRITE VERIFIED · EXACT PUBLIC PROOF PENDING
 - no retry/write should occur while this run remains in progress because the intended GitHub write is already present.
 
 Exactly one current gate: finish run `36602463818`. On SUCCESS, persist public evidence and return the direct Stage for Georg freeplay; on FAILURE, inspect its exact log before any repair.
+
+
+## GROUND-TRAVEL-PACE-TIMING-01 · direct public runtime proof
+
+Public proof run `36602463818` reached the exact runtime and all **runtime** checks passed:
+- exact marker `ada92c557d3ef24dd18e511b4cff6f18e8b721fc` visible;
+- Travel 1.8× active;
+- Running_A target `4.4644935006 u/s`, playback target 1.8×;
+- Running_B target `5.4511465643 u/s`, playback target 1.8×;
+- 15-FPS W preserves 0.8 s wall-clock with 0 dropped ordinary-frame time;
+- public W settles `4.4534271276 u/s` at `1.7955382461×`, distance `3.01 u`;
+- public Shift settles `5.4400629025 u/s` at `1.7963401110×`;
+- 15-FPS Shift preserves 0.6 s wall-clock;
+- Shift release returns Running_A;
+- Orbit mounted;
+- runtime/page errors: 0.
+
+Workflow conclusion is red **only** because the Hub lookup did not find the new Travel 1.8× card after the runtime checks. This does not invalidate the direct Stage runtime.
+
+Direct human test surface:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+
+Artifact: `11050371267`.
+
+Exactly one current gate: Georg freeplays the direct Stage and judges only whether cadence + covered distance now feel right. Hub-card repair is non-blocking metadata.
