@@ -149,3 +149,13 @@
 - second run `36592599717`: static 9/9 PASS; Explore/Race/Ground Walk/Run/Stop PASS; same headless split-task Jump_Start transient failed.
 - Final allowed repair is QA-only: atomically dispatch Space + deterministic Jump_Start/Air/Land fixed-step snapshots in one browser task in Checkpoint-A and Ground+Orbit regression.
 - No production code or speed change. If next gate fails: stop, preserve, failure-recovery export; no Repair 3.
+
+
+## 2026-09-29 · GROUND-WALLCLOCK-TIMING-01 · STOP-RULE RECOVERY
+- Two repair passes consumed; no Repair 3.
+- Frozen candidate `9431a89c8b28c21579f61ae8cdb5e3be197706d5` is `ARCHIVED_FAILED_CANDIDATE` and was not published.
+- Proven issue retained: live `Math.min(rawDt,1/30)` discards wall-clock time and can cause slow-motion traversal below 30 FPS.
+- Final run `36593362023`: static 8/8 + 10/10 + 9/9 PASS; Explore/Race/Ground Walk/Run/Stop + Jump_Start + Jump_Idle PASS; legacy landing gate remained red.
+- Recovery export: `skills/chat/workflows/GROUND_WALLCLOCK_TIMING_01_FAILURE_RECOVERY_2026-09-29/`.
+- Last public Two-Gear runtime remains `4475271b...`.
+- Next only: fresh Travel-only timing slice from `542eedb9...`.

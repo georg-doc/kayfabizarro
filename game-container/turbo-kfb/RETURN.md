@@ -613,3 +613,22 @@ Final repair allowed by stop rule:
 - production timing code, Two-Gear locomotion, speeds, Jump implementation and Orbit are unchanged.
 
 If the next full gate is red, **STOP — no Repair 3**. Preserve the candidate and create failure-recovery export.
+
+
+## GROUND-WALLCLOCK-TIMING-01 · STOP-RULE RECOVERY
+
+Status: **ARCHIVED_FAILED_CANDIDATE · NO REPAIR 3 · NOT PUBLISHED**
+
+- frozen candidate: `9431a89c8b28c21579f61ae8cdb5e3be197706d5`;
+- recovery package checkpoint: `8e4b2480726bda97a98386c64d450792e8185ccd`;
+- accepted/public Two-Gear source handoff remains `542eedb91f96b6f718df9e619fb3d3f746b79854`;
+- accepted/public runtime remains `4475271b61e65fae95e5044925b83f2e39c18e6e`;
+- proven finding retained: the old live `Math.min(rawDt,1/30)` path discards elapsed wall-clock time below 30 FPS;
+- final run `36593362023`: static **8/8 + 10/10 + 9/9 PASS**, Explore/Race/Ground Walk/Run/Stop PASS, Jump_Start PASS, Jump_Idle PASS, landing FAIL (`Jump_Idle`), later gates skipped;
+- final artifact `11044688869`, digest `sha256:629aff621427e1a365866e6977fbe5d13a402c2cafad8678e25ae50af1cfb852`;
+- timing candidate was never mirrored to Cloudflare.
+
+Recovery export:
+`skills/chat/workflows/GROUND_WALLCLOCK_TIMING_01_FAILURE_RECOVERY_2026-09-29/`
+
+Exactly one next gate: **GROUND-WALLCLOCK-TRAVEL-ONLY-01** on a fresh branch from `542eedb9...`: apply catch-up only to explicit Travel mode, keep Race/Explore/no-query Ground timing unchanged, prove low-FPS wall-clock parity + unchanged baselines, then and only then republish the same Pace-Tune route.
