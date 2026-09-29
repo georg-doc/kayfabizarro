@@ -65,3 +65,11 @@
 - combined candidate proves Velocity semantic locomotion and free Ground orbit together with zero runtime/page/console errors;
 - artifact `11029226537`, digest `sha256:8aadac4950f6b877cc06451613ad83788be28b47982a847d5c657ae42bf93ce3`;
 - next: one dedicated Ground+Orbit Stage milestone; no merge / Enter-Exit yet.
+
+
+## 2026-09-29 · GROUND-ORBIT-INTEGRATION-01 · PUBLIC VERIFIED
+- published exact tested runtime `9a71c79d...` at dedicated Ground+Orbit Stage route;
+- first publication `cloudflare-live@65c00aed...`: Cloudflare Pages SUCCESS + public Chromium 18/18 PASS;
+- final Hub/metadata `cloudflare-live@0f2e0588...`: Cloudflare Pages SUCCESS + public Chromium 18/18 PASS again;
+- final artifact `11029408390`, digest `sha256:0ec22fc23ce71dd2e6f84b34bb5d0772ba2895f5d84074ba17f50314546e48f5`;
+- public route proves Locomotion + Orbit together; next gate is Georg combined feel, then Enter/Exit Kart if PROCEED.

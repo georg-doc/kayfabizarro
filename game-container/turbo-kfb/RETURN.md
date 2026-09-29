@@ -261,5 +261,31 @@ Combined measured facts:
 - backward + strafe source clips PASS;
 - no root-motion world translation.
 
+## Ground + Orbit public closure
+
+Direct Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-orbit-integration-01/?ground=1&groundFeel=velocity`
+
+Publication:
+- runtime + first Hub card: `cloudflare-live@65c00aed4a9e0250b0850d1b170460d9ea66126e`;
+- final PUBLIC VERIFIED metadata/Hub: `cloudflare-live@0f2e05889189c736d4efc69a0bfaafa0d2b2cd1a`;
+- Cloudflare Pages: **SUCCESS**.
+
+Final public Chromium:
+- run `36559579811`;
+- job `109376914403`;
+- **18/18 PASS**;
+- exact runtime marker `9a71c79d63cd985f0ab622e4309656ab522ccea4` visible;
+- Velocity / Running_B / directional clips / actor-scale Jump PASS;
+- Orbit owner / drag / zoom / C-recenter PASS;
+- public Walk / Sprint / Jump-air / Land PASS;
+- runtime errors 0;
+- page/console errors 0;
+- Hub integrated link PASS;
+- artifact `11029408390`;
+- digest `sha256:0ec22fc23ce71dd2e6f84b34bb5d0772ba2895f5d84074ba17f50314546e48f5`.
+
+Status: **PUBLIC VERIFIED · HUMAN COMBINED FEEL OPEN**.
+
 ## Exactly one current next gate
-Publish this exact tested runtime as one dedicated Hub-linked Ground+Orbit Stage milestone. No merge and no Enter/Exit Kart yet.
+Georg freeplays the integrated Stage and judges only the combined Ground experience: locomotion feel + Orbit usefulness. If this is a PROCEED PASS, Checkpoint C becomes `WALK ⇄ ENTER KART ⇄ DRIVE/DRIFT ⇄ EXIT ⇄ WALK`. No merge before that gate.

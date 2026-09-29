@@ -70,3 +70,26 @@ Digest: `sha256:8aadac4950f6b877cc06451613ad83788be28b47982a847d5c657ae42bf93ce3
 - no root-motion world translation.
 
 No Stage claim in this report until the dedicated public route is deployed and verified.
+
+
+## Ground + Orbit Public Closure
+
+Direct Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-orbit-integration-01/?ground=1&groundFeel=velocity`
+
+Publication:
+- `cloudflare-live@65c00aed4a9e0250b0850d1b170460d9ea66126e`
+- final metadata `cloudflare-live@0f2e05889189c736d4efc69a0bfaafa0d2b2cd1a`
+- Cloudflare Pages: **SUCCESS**
+
+Final public proof:
+- run `36559579811`
+- job `109376914403`
+- **18/18 PASS**
+- artifact `11029408390`
+- digest `sha256:0ec22fc23ce71dd2e6f84b34bb5d0772ba2895f5d84074ba17f50314546e48f5`
+- exact tested runtime marker visible
+- Hub integrated link PASS
+- runtime/page/console errors: 0
+
+Status: **PUBLIC VERIFIED**.
