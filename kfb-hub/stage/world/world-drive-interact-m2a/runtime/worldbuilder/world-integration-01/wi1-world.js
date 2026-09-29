@@ -105,11 +105,48 @@ export async function prepare(id) {
 function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
   const fwd = { x: Math.sin(spawn.heading), z: Math.cos(spawn.heading) }, right = { x: -Math.cos(spawn.heading), z: Math.sin(spawn.heading) };
   const at = (f, r) => [+(spawn.x + fwd.x * f + right.x * r).toFixed(3), null, +(spawn.z + fwd.z * f + right.z * r).toFixed(3)];
-  const S = { city: null, names: null, far: null, plate: null, map: null, ink: null, inkOn: false, inkList: [], inkScan: 0, inkReport: null, sun: null, sunDir: null, getTerrain: () => null, scanRoots: [] };
+  const S = { city: null, names: null, far: null, plate: null, map: null, ink: null, inkOn: false, inkList: [], inkScan: 0, inkReport: null, sun: null, sunDir: null, renderer: null, shadowState: null, shadowPolicyRuns: [], getTerrain: () => null, scanRoots: [] };
   const LOG = [];
   const log = (t) => { LOG.push(t); console.info('[wi1]', t); };
   log('zone · ' + zone.id + ' · ' + zone.counts.buildings + ' buildings · ' + zone.counts.roadParts + ' road parts · seam ' + SEAM.SEAM.version);
   log('spawn · ' + (spawn.road || 'zone centre') + ' · ' + spawn.x.toFixed(1) + ' / ' + spawn.z.toFixed(1) + ' · ' + spawn.d.toFixed(0) + ' m from zone centre · edit tile ' + tile.size + ' m @ ' + (tile.size / tile.seg) + ' m');
+
+  function shadowMaterials(mesh) { return [].concat(mesh && mesh.material || []).filter(Boolean); }
+  function thinShadowCaster(mesh, mats = shadowMaterials(mesh)) {
+    if (mesh && mesh.userData && mesh.userData.petOverlay) return true;
+    if (!mats.length) return false;
+    return mats.every((m) =>
+      m.isShaderMaterial ||
+      m.visible === false ||
+      m.colorWrite === false ||
+      m.depthWrite === false ||
+      (m.transparent && m.opacity < 0.98)
+    );
+  }
+  function applyShadowPolicy(root, { label = root && root.name || 'root', forceSolidCast = true, receive = true } = {}) {
+    const rep = { label, meshes: 0, casters: 0, receivers: 0, thinExcluded: 0, shaderExcluded: 0, transparentExcluded: 0, doubleSideCasters: 0 };
+    if (!root || !root.traverse) return rep;
+    root.traverse((mesh) => {
+      if (!mesh.isMesh) return;
+      rep.meshes++;
+      const mats = shadowMaterials(mesh), thin = thinShadowCaster(mesh, mats);
+      if (thin) {
+        mesh.castShadow = false;
+        rep.thinExcluded++;
+        if (mats.some((m) => m.isShaderMaterial)) rep.shaderExcluded++;
+        if (mats.some((m) => m.transparent && m.opacity < 0.98)) rep.transparentExcluded++;
+      } else if (forceSolidCast) mesh.castShadow = true;
+      if (receive) mesh.receiveShadow = !mats.some((m) => m.isShaderMaterial);
+      if (mesh.castShadow) {
+        rep.casters++;
+        if (mats.some((m) => m.side === THREE.DoubleSide)) rep.doubleSideCasters++;
+      }
+      if (mesh.receiveShadow) rep.receivers++;
+    });
+    S.shadowPolicyRuns.push(rep);
+    if (S.shadowPolicyRuns.length > 12) S.shadowPolicyRuns.shift();
+    return rep;
+  }
 
   /* shadow box = WB-D1 shadowFollow (Georg-accepted shadow fix): edge follows the camera distance (90–400 m),
      centre snaps to whole texels (no crawling edges), normalBias 1.2 texel, tiny depth bias → no light gap
@@ -126,6 +163,18 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
     const a = Math.round(focus.dot(e1) / texel) * texel, b = Math.round(focus.dot(e2) / texel) * texel;
     const f = e1.multiplyScalar(a).addScaledVector(e2, b).addScaledVector(sd, focus.dot(sd));
     S.sun.target.position.copy(f); S.sun.position.copy(f).addScaledVector(sd, SUN_D); S.sun.target.updateMatrixWorld();
+    S.shadowState = {
+      profile: 'KFB_SHARED_SHADOW_CONTACT_V1',
+      halfM: half,
+      texelM: +texel.toFixed(6),
+      normalBiasTexels: 1.2,
+      normalBias: +sh.normalBias.toFixed(6),
+      bias: sh.bias,
+      near: +cam.near.toFixed(3),
+      far: +cam.far.toFixed(3),
+      mapSize: [sh.mapSize.x, sh.mapSize.y],
+      focus: [focus.x, focus.y, focus.z].map((v) => +v.toFixed(3))
+    };
   }
   const W = {
     id, zone, spawn, tile, log: LOG,
@@ -146,6 +195,29 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
       return S.supportReport;
     },
     get landmarks() { return S.landmarks || []; },
+    applyShadowPolicy(root, opts) { return applyShadowPolicy(root, opts); },
+    get shadowReport() {
+      const runs = S.shadowPolicyRuns.slice();
+      const sum = (k) => runs.reduce((n, x) => n + (x[k] || 0), 0);
+      return {
+        schema: 'kfb.shared-shadow-contact/1',
+        profile: 'KFB_SHARED_SHADOW_CONTACT_V1',
+        mapType: S.renderer && S.renderer.shadowMap ? S.renderer.shadowMap.type : null,
+        mapTypeName: S.renderer && S.renderer.shadowMap && S.renderer.shadowMap.type === THREE.PCFSoftShadowMap ? 'PCFSoftShadowMap' : 'other',
+        follow: S.shadowState,
+        policy: {
+          runs: runs.length,
+          labels: runs.map((x) => x.label),
+          meshes: sum('meshes'),
+          casters: sum('casters'),
+          receivers: sum('receivers'),
+          thinExcluded: sum('thinExcluded'),
+          shaderExcluded: sum('shaderExcluded'),
+          transparentExcluded: sum('transparentExcluded'),
+          doubleSideCasters: sum('doubleSideCasters')
+        }
+      };
+    },
     buildingAt(x, z) { return fp.at(x, z); },
 
     /* The WB2 scene document, re-targeted at the zone: same format/version, same owners, same
@@ -179,15 +251,17 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
       fog.near = 140; fog.far = 1100;
       S.sun = sun; S.sunDir = sun.position.clone().normalize();
       sun.shadow.mapSize.set(PLAYABILITY_R1 ? 2048 : 4096, PLAYABILITY_R1 ? 2048 : 4096); S.shHalf = 0;
-      Object.assign(sun.shadow.camera, { left: -34, right: 34, top: 34, bottom: -34, near: 1, far: 260 });
-      /* contact shadow (WB-D1 fix, again): a large bias/normalBias lifts the shadow off the contact → light gap under
-         rocks and feet. Texel 68 m / 4096 = 1.7 cm → normalBias ≈ 1 texel, tiny depth bias. */
-      sun.shadow.camera.updateProjectionMatrix(); sun.shadow.bias = -0.00005; sun.shadow.normalBias = 0.016;
       scene.add(sun.target);
+      /* Canonical contact recipe: configure the fitted/snapped box immediately; do not render even one
+         startup frame with the historical fixed ±34 m / guessed-bias setup. */
+      shadowFollow(controls.target, camera);
     },
 
     async mount({ scene, renderer, getTerrain, heightAt = null }) {
-      S.getTerrain = getTerrain; S.heightAt = heightAt;
+      S.getTerrain = getTerrain; S.heightAt = heightAt; S.renderer = renderer;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.shadowMap.needsUpdate = true;
       const [CC, EG, CITY, NAMES, style, SKYP] = await Promise.all([imp(DONOR.cartoon), imp(DONOR.elastic), import(ROOT + 'wd1-city.js'), import(ROOT + 'wd1-names.js'), fetch(DONOR.cityStyle).then((r) => r.json()), imp(DONOR.sky)]);
       S.skyPresets = SKYP;
       const Ly = CITY.layersFrom(style);
@@ -211,6 +285,9 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
         } catch (e) { log('landmarks unavailable · ' + e.message + ' · landmark OSM parts stay as plain bases'); LMS = []; }
       }
       S.city = CITY.buildCityLayer(zone, { mode: 'elastic', style, CC, EG, ghosts: false, renderer, facade: 'rule-v1', extraBase, lod: CITY_LOD_R3 ? { enabled: true, chunkSizeM: 96, nearM: 120, farM: 150 } : null });
+      /* Preserve the city owner's explicit caster choices (near shells cast; thin detail/far LOD may not),
+         but enforce the shared thin-overlay exclusions if any inherited material changes later. */
+      applyShadowPolicy(S.city.group, { label: 'world-city-preserve', forceSolidCast: false, receive: false });
       if (LMS.length) {
         const g = new THREE.Group(); g.name = 'landmarks (protected owners · wd1-landmark)';
         S.landmarks = [];
@@ -218,7 +295,7 @@ function makeWorld({ id, Z, SEAM, zone, fp, spawn, tile }) {
           g.add(r.lm.holder);
           const v = S.LMK.validatePlacement(r.lm, zone, r.entry), base = S.city[r.key];
           if (base) base.visible = !v.ok;
-          r.lm.holder.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
+          applyShadowPolicy(r.lm.holder, { label: 'landmark:' + r.entry.id, forceSolidCast: true, receive: true });
           S.landmarks.push({ id: r.entry.id, ok: v.ok, offsetM: v.centroidOffsetM, axisErrDeg: v.axisErrDeg, base: base ? (v.ok ? 'hidden (validated)' : 'shown') : 'none' });
           log('landmark · ' + r.entry.id + ' · Δ ' + v.centroidOffsetM + ' m · axis Δ ' + v.axisErrDeg + '° · OSM base ' + (v.ok ? 'hidden' : 'shown'));
         }
