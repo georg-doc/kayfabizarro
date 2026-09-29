@@ -1,0 +1,162 @@
+{
+ "Rig_Medium": {
+  "frames": 32,
+  "donorFootLiftCm": {
+   "l": 4.9,
+   "r": 5.6
+  },
+  "marchFootLiftCm": {
+   "l": 18.4,
+   "r": 19.0
+  },
+  "leftArmSwingDeg": {
+   "donor": 47.5,
+   "march": 84.1
+  },
+  "torsoLeanDeg": {
+   "donor": 2.4,
+   "march": 0.4
+  },
+  "loopPoseDiffDeg": 0.0,
+  "contactsDonor": {
+   "foot.l": {
+    "planted": [
+     [
+      8,
+      24
+     ],
+     [
+      27,
+      28
+     ]
+    ],
+    "maxSlideInPlantCm": 12.4,
+    "maxLiftCm": 4.9
+   },
+   "foot.r": {
+    "planted": [
+     [
+      1,
+      9
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      19,
+      32
+     ]
+    ],
+    "maxSlideInPlantCm": 37.9,
+    "maxLiftCm": 5.6
+   }
+  },
+  "contacts": {
+   "foot.l": {
+    "planted": [
+     [
+      10,
+      20
+     ]
+    ],
+    "maxSlideInPlantCm": 6.8,
+    "maxLiftCm": 18.4
+   },
+   "foot.r": {
+    "planted": [
+     [
+      1,
+      7
+     ],
+     [
+      26,
+      32
+     ]
+    ],
+    "maxSlideInPlantCm": 5.1,
+    "maxLiftCm": 19.0
+   }
+  }
+ },
+ "Rig_Large": {
+  "frames": 32,
+  "donorFootLiftCm": {
+   "l": 12.6,
+   "r": 15.2
+  },
+  "marchFootLiftCm": {
+   "l": 46.4,
+   "r": 49.0
+  },
+  "leftArmSwingDeg": {
+   "donor": 47.5,
+   "march": 84.1
+  },
+  "torsoLeanDeg": {
+   "donor": 5.6,
+   "march": 0.7
+  },
+  "loopPoseDiffDeg": 0.0,
+  "contactsDonor": {
+   "foot.l": {
+    "planted": [
+     [
+      8,
+      23
+     ],
+     [
+      27,
+      28
+     ]
+    ],
+    "maxSlideInPlantCm": 32.0,
+    "maxLiftCm": 12.6
+   },
+   "foot.r": {
+    "planted": [
+     [
+      1,
+      8
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      19,
+      32
+     ]
+    ],
+    "maxSlideInPlantCm": 97.0,
+    "maxLiftCm": 15.2
+   }
+  },
+  "contacts": {
+   "foot.l": {
+    "planted": [
+     [
+      12,
+      19
+     ]
+    ],
+    "maxSlideInPlantCm": 9.3,
+    "maxLiftCm": 46.4
+   },
+   "foot.r": {
+    "planted": [
+     [
+      1,
+      7
+     ],
+     [
+      27,
+      32
+     ]
+    ],
+    "maxSlideInPlantCm": 12.4,
+    "maxLiftCm": 49.0
+   }
+  }
+ }
+}

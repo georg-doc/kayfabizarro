@@ -1,0 +1,380 @@
+{
+ "kfb_action_quad_punch_hop_a": {
+  "Rig_Medium": {
+   "strikeFrame": 20,
+   "limb": "hand.r",
+   "headFront": 0.715,
+   "spacing": 1.49,
+   "reachAtStrike": 0.629,
+   "attackAxisDeg": -97.8,
+   "donorContacts": {
+    "foot.l": 2.9,
+    "foot.r": 4.2
+   },
+   "hopForward": 0.253,
+   "hopIn": [
+    12,
+    19
+   ],
+   "hopBack": [
+    27,
+    35
+   ],
+   "hopLift": 0.07,
+   "fistToFaceAtStrikeCm": 0.0,
+   "endOffsetCm": 0.0,
+   "contacts": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       12
+      ],
+      [
+       19,
+       28
+      ],
+      [
+       34,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 2.9,
+     "maxLiftCm": 6.8
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       12
+      ],
+      [
+       19,
+       28
+      ],
+      [
+       34,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 4.8,
+     "maxLiftCm": 7.0
+    }
+   }
+  },
+  "Rig_Large": {
+   "strikeFrame": 20,
+   "limb": "hand.r",
+   "headFront": 1.111,
+   "spacing": 2.376,
+   "reachAtStrike": 1.614,
+   "attackAxisDeg": -110.3,
+   "donorContacts": {
+    "foot.l": 7.5,
+    "foot.r": 9.1
+   },
+   "hopForward": 0.0,
+   "hopIn": [
+    12,
+    19
+   ],
+   "hopBack": [
+    27,
+    35
+   ],
+   "hopLift": 0.179,
+   "fistToFaceAtStrikeCm": -18.2,
+   "endOffsetCm": 0.0,
+   "contacts": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       12
+      ],
+      [
+       19,
+       28
+      ],
+      [
+       34,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 7.1,
+     "maxLiftCm": 18.7
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       12
+      ],
+      [
+       19,
+       21
+      ],
+      [
+       24,
+       28
+      ],
+      [
+       34,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 4.7,
+     "maxLiftCm": 18.0
+    }
+   }
+  }
+ },
+ "kfb_action_hook_punch_hop_a": {
+  "Rig_Medium": {
+   "strikeFrame": 29,
+   "limb": "hand.r",
+   "headFront": 0.715,
+   "spacing": 1.49,
+   "reachAtStrike": 0.823,
+   "attackAxisDeg": 178.3,
+   "donorContacts": {
+    "foot.l": 3.9,
+    "foot.r": 4.8
+   },
+   "hopForward": 0.059,
+   "hopIn": [
+    21,
+    28
+   ],
+   "hopBack": [
+    36,
+    44
+   ],
+   "hopLift": 0.07,
+   "fistToFaceAtStrikeCm": 0.0,
+   "endOffsetCm": 0.0,
+   "contacts": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       21
+      ],
+      [
+       28,
+       36
+      ],
+      [
+       43,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 3.6,
+     "maxLiftCm": 7.8
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       21
+      ],
+      [
+       51,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 2.2,
+     "maxLiftCm": 9.8
+    }
+   }
+  },
+  "Rig_Large": {
+   "strikeFrame": 29,
+   "limb": "hand.r",
+   "headFront": 1.111,
+   "spacing": 2.376,
+   "reachAtStrike": 2.348,
+   "attackAxisDeg": 176.7,
+   "donorContacts": {
+    "foot.l": 10.9,
+    "foot.r": 12.5
+   },
+   "hopForward": 0.0,
+   "hopIn": [
+    21,
+    28
+   ],
+   "hopBack": [
+    36,
+    44
+   ],
+   "hopLift": 0.179,
+   "fistToFaceAtStrikeCm": -91.6,
+   "endOffsetCm": 0.0,
+   "contacts": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       21
+      ],
+      [
+       28,
+       36
+      ],
+      [
+       43,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 10.9,
+     "maxLiftCm": 22.0
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       21
+      ],
+      [
+       51,
+       66
+      ]
+     ],
+     "maxSlideInPlantCm": 10.8,
+     "maxLiftCm": 27.7
+    }
+   }
+  }
+ },
+ "kfb_action_punching_hop_a": {
+  "Rig_Medium": {
+   "strikeFrame": 22,
+   "limb": "hand.l",
+   "headFront": 0.715,
+   "spacing": 1.49,
+   "reachAtStrike": 0.763,
+   "attackAxisDeg": -61.7,
+   "donorContacts": {
+    "foot.l": 7.7,
+    "foot.r": 10.9
+   },
+   "hopForward": 0.119,
+   "hopIn": [
+    14,
+    21
+   ],
+   "hopBack": [
+    29,
+    37
+   ],
+   "hopLift": 0.07,
+   "fistToFaceAtStrikeCm": 0.0,
+   "endOffsetCm": 0.0,
+   "contacts": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       14
+      ],
+      [
+       21,
+       21
+      ],
+      [
+       36,
+       37
+      ]
+     ],
+     "maxSlideInPlantCm": 0.9,
+     "maxLiftCm": 6.8
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       8
+      ],
+      [
+       10,
+       14
+      ],
+      [
+       21,
+       30
+      ],
+      [
+       36,
+       37
+      ]
+     ],
+     "maxSlideInPlantCm": 9.5,
+     "maxLiftCm": 8.9
+    }
+   }
+  },
+  "Rig_Large": {
+   "strikeFrame": 22,
+   "limb": "hand.l",
+   "headFront": 1.111,
+   "spacing": 2.376,
+   "reachAtStrike": 2.199,
+   "attackAxisDeg": -60.6,
+   "donorContacts": {
+    "foot.l": 16.9,
+    "foot.r": 12.9
+   },
+   "hopForward": 0.0,
+   "hopIn": [
+    14,
+    21
+   ],
+   "hopBack": [
+    29,
+    37
+   ],
+   "hopLift": 0.179,
+   "fistToFaceAtStrikeCm": -76.7,
+   "endOffsetCm": 0.0,
+   "contacts": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       14
+      ],
+      [
+       21,
+       21
+      ],
+      [
+       36,
+       37
+      ]
+     ],
+     "maxSlideInPlantCm": 10.8,
+     "maxLiftCm": 17.7
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       7
+      ],
+      [
+       21,
+       30
+      ],
+      [
+       36,
+       37
+      ]
+     ],
+     "maxSlideInPlantCm": 12.6,
+     "maxLiftCm": 23.9
+    }
+   }
+  }
+ }
+}
