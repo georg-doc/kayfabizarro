@@ -33,6 +33,9 @@ const REF_SPEED = Object.freeze({
 });
 const LEGACY_WALK_SPEED = 1.08;
 const WALK_SPEED = REF_SPEED.Walking_A;
+// Georg TUNE 2026-09-29: normal free-travel W must feel materially faster than source cadence.
+// This is the existing measured technical handoff ceiling: Walking_A at the 1.8x playback cap.
+const TRAVEL_WALK_SPEED = REF_SPEED.Walking_A * 1.8;
 const RUN_SPEED = REF_SPEED.Running_A;
 const SPRINT_SPEED = REF_SPEED.Running_B;
 const HANDOFF_SPEED = 1.108;
@@ -168,8 +171,11 @@ class GroundInput {
 export async function createGroundPlayer({ scene, track } = {}) {
   if (!scene || !track) throw new Error('GroundPlayer requires scene + track');
   const loader=new GLTFLoader();
-  const feelMode = new URLSearchParams(location.search).get('groundFeel') === 'velocity' ? 'velocity' : 'direct';
+  const query = new URLSearchParams(location.search);
+  const feelMode = query.get('groundFeel') === 'velocity' ? 'velocity' : 'direct';
   const enhanced = feelMode === 'velocity';
+  const walkPace = enhanced && query.get('walkPace') === 'travel' ? 'travel' : 'measured';
+  const baseWalkSpeed = walkPace === 'travel' ? TRAVEL_WALK_SPEED : WALK_SPEED;
   const loads=[
     loader.loadAsync(raw(ACTOR)),
     loader.loadAsync(raw(GENERAL)),
@@ -254,8 +260,8 @@ export async function createGroundPlayer({ scene, track } = {}) {
     const jumpV=4*jumpApex/jumpAirTime;
     walk.setParams({
       feelMode:'velocity',
-      speed:WALK_SPEED,
-      sprintMul:SPRINT_SPEED/WALK_SPEED,
+      speed:baseWalkSpeed,
+      sprintMul:SPRINT_SPEED/baseWalkSpeed,
       acceleration:7.5,
       deceleration:11,
       directionResponse:13,
@@ -294,7 +300,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
       const base=1.25;
       walk.setParams({speed:base,sprintMul:cmd.sprint?SPRINT_SPEED/base:1});
     } else {
-      walk.setParams({speed:WALK_SPEED,sprintMul:SPRINT_SPEED/WALK_SPEED});
+      walk.setParams({speed:baseWalkSpeed,sprintMul:SPRINT_SPEED/baseWalkSpeed});
     }
   }
 
@@ -414,7 +420,9 @@ export async function createGroundPlayer({ scene, track } = {}) {
         contacts,
         feelMode,
         enhanced,
-        walkSpeed:enhanced?WALK_SPEED:LEGACY_WALK_SPEED,
+        walkPace,
+        walkSpeed:enhanced?baseWalkSpeed:LEGACY_WALK_SPEED,
+        walkPlaybackRate:enhanced?rateFor(CLIP.walk,baseWalkSpeed):null,
         runSpeed:RUN_SPEED,
         sprintSpeed:enhanced?SPRINT_SPEED:null,
         jump:enhanced?{
