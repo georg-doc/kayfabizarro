@@ -1,7 +1,7 @@
 {
  "schema": "kfb.motion-catalog.v1",
- "version": "2026-09-29",
- "clipCount": 263,
+ "version": "2026-09-29b",
+ "clipCount": 345,
  "fps": 30,
  "units": "metres, glTF Y-up",
  "rigs": [
@@ -287,6 +287,132 @@
    "bytes": 134232,
    "sha256": "751a060f15c0c4f5243ba4753cdfca41f6015c42de1325c1326539d6b2f49b6b",
    "clipCount": 2
+  },
+  "libs/Rig_Medium/KFB_Motion_perf_an01.glb": {
+   "rig": "Rig_Medium",
+   "group": "performance batch AN-PERF-01 (interaction, locomotion)",
+   "bytes": 105396,
+   "sha256": "f9f154e1fb6444930b9841525afff4e778df40a127aa849b0f36530526beb5c4",
+   "clipCount": 3
+  },
+  "libs/Rig_Large/KFB_Motion_perf_an01.glb": {
+   "rig": "Rig_Large",
+   "group": "performance batch AN-PERF-01 (interaction, locomotion)",
+   "bytes": 105468,
+   "sha256": "8d26821bf06db0a2cef97488ea68c7ee553c484580ef21d865eb6b3ae292c976",
+   "clipCount": 3
+  },
+  "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "locomotion",
+   "bytes": 1406180,
+   "sha256": "736fdef8149ba8f979d23100e5f7babbf5ebc024dac0c5c38d814fed45f496ba",
+   "clipCount": 53
+  },
+  "libs/Rig_Large/KFB_Motion_locomotion_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "locomotion",
+   "bytes": 1404716,
+   "sha256": "a0ce8a2f38c998ad8ca2a0751d3c749551cb39e5774c4e7e1b0b7d13a69cf9f8",
+   "clipCount": 53
+  },
+  "libs/Rig_Medium/KFB_Motion_reaction_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "reaction",
+   "bytes": 38068,
+   "sha256": "d92419815830630218c456d5fb9fa00423a5326b52ee8b8be0abd07c95c2d59b",
+   "clipCount": 1
+  },
+  "libs/Rig_Large/KFB_Motion_reaction_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "reaction",
+   "bytes": 38136,
+   "sha256": "965378a598f5819d149aaf7bf6af12b101883deecd4bd5acbe8eb35d8dfb3401",
+   "clipCount": 1
+  },
+  "libs/Rig_Medium/KFB_Motion_interaction_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "interaction",
+   "bytes": 764240,
+   "sha256": "fb9ce3da92fc119a08ba9b8db0193fd90c96b793c234f33b55d5172a36c3dc6d",
+   "clipCount": 12
+  },
+  "libs/Rig_Large/KFB_Motion_interaction_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "interaction",
+   "bytes": 763076,
+   "sha256": "047f1144d4ff07d8c1154a8e03aa72cf60b0b432aa8fa7f062d222ad9e788167",
+   "clipCount": 12
+  },
+  "libs/Rig_Medium/KFB_Motion_talk_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "talk",
+   "bytes": 311100,
+   "sha256": "f8b8cd911193253015a5a7f81a1fb9e65638ccbb9445a3f2eb0c9b835a75ce9e",
+   "clipCount": 1
+  },
+  "libs/Rig_Large/KFB_Motion_talk_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "talk",
+   "bytes": 311172,
+   "sha256": "3d431bf1a6a1ac48ca32e078475767e41814446d87e583949ad1e071f321e0b6",
+   "clipCount": 1
+  },
+  "libs/Rig_Medium/KFB_Motion_gesture_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "gesture",
+   "bytes": 73016,
+   "sha256": "9dae61305e13df7d615f97a4aafafbb3ebe5dbb6a9f6e8ed92a4573d74ab3166",
+   "clipCount": 1
+  },
+  "libs/Rig_Large/KFB_Motion_gesture_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "gesture",
+   "bytes": 73224,
+   "sha256": "b60537c97324b86b94ba82b1282e778d29ed992e45e951cebcdd3f8d3182f609",
+   "clipCount": 1
+  },
+  "libs/Rig_Medium/KFB_Motion_idle_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "idle",
+   "bytes": 443876,
+   "sha256": "7b2e949e74be875b38e14d6c1963951bf7d7c6ee2c4516c87639740b09f5af80",
+   "clipCount": 8
+  },
+  "libs/Rig_Large/KFB_Motion_idle_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "idle",
+   "bytes": 443532,
+   "sha256": "bbd62f68673bd6ad555bfa2b7c870bae8166a7e4dd89e900988c5a0cd40a0eb0",
+   "clipCount": 8
+  },
+  "libs/Rig_Medium/KFB_Motion_action_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "action",
+   "bytes": 66788,
+   "sha256": "0845838f8f7f3d3f256ffb0c88f347e633233f911b765e96b8f931ed73da3348",
+   "clipCount": 1
+  },
+  "libs/Rig_Large/KFB_Motion_action_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "action",
+   "bytes": 66856,
+   "sha256": "f31f616dce55c2c1f327b6dee7f9d583081636e3840b677bb83be8fc6b4e92d8",
+   "clipCount": 1
+  },
+  "libs/Rig_Medium/KFB_Motion_dance_i05.glb": {
+   "rig": "Rig_Medium",
+   "group": "dance",
+   "bytes": 316728,
+   "sha256": "4fa67f961d1b848a722971eab9cf7abd8d85b96e0a1136e3464e726ecb888591",
+   "clipCount": 2
+  },
+  "libs/Rig_Large/KFB_Motion_dance_i05.glb": {
+   "rig": "Rig_Large",
+   "group": "dance",
+   "bytes": 316800,
+   "sha256": "ca45e8bbfe30a2d2be7500b4b38d785c8aad017de2c2393bf68a11b503a60fb9",
+   "clipCount": 2
   }
  },
  "newOptionalFields": [
@@ -305,7 +431,9 @@
   "tags (intake 04)",
   "comment (intake 04: what the clip does)",
   "residentIdeas (intake 04: casting ideas, not decisions)",
-  "events.strike (intake 04: candidate hit frame for fight choreography)"
+  "events.strike (intake 04: candidate hit frame for fight choreography)",
+  "sourcePack (intake 05: pack folder name)",
+  "locomotionSets (top level, intake 05: pack clips grouped as ready-to-blend movement sets)"
  ],
  "rootMotionRule": "rootMotion = travel when max(horizontal hips travel, horizontal root travel) per cycle >= 0.05 m in the Rig_Medium bake (v1 clips keep their v1 value). The runtime strips horizontal translation of rootBone when it wants in-place.",
  "clips": [
@@ -20760,7 +20888,7 @@
   },
   {
    "id": "kfb_locomotion_standing_walk_forward_a",
-   "label_de": "Gehen mit Waffe vor der Brust",
+   "label_de": "Magier: vorwärts gehen (auch: Waffe vor der Brust)",
    "group": "locomotion",
    "rigs": [
     "Rig_Medium",
@@ -20837,13 +20965,14 @@
     "prop": "rifle at the ready (inferred from the hold)"
    },
    "tags": [
-    "walk-style",
+    "magic",
+    "military",
     "prop-hold",
-    "military"
+    "walk-style"
    ],
-   "comment": "Walk with both hands held together in front of the chest and the body turned about 45 degrees, as if carrying a rifle at the ready. Arms barely swing.",
+   "comment": "Caster-stance walk forward from the Magic Locomotion Pack (intake 05 found the identical pack file): both hands held together in front, body turned about 45 degrees. Intake 04 read the hold as a rifle at the ready; both uses work.",
    "residentIdeas": "Armed guard or soldier on patrol; Officer Doppeldenk on duty.",
-   "notes": ""
+   "notes": "Comment corrected in intake 05."
   },
   {
    "id": "kfb_locomotion_happy_walk_a",
@@ -25294,6 +25423,8143 @@
    "comment": "Picking up an object, a variant of kfb_interaction_picking_up_object_a (95 instead of 104 frames).",
    "residentIdeas": "Picking up props, the Brickfish before a throw.",
    "notes": ""
+  },
+  {
+   "id": "kfb_interaction_gift_give_a",
+   "label_de": "Geschenk überreichen",
+   "group": "interaction",
+   "frames": 90,
+   "loop": false,
+   "rootMotion": "in-place",
+   "events": {
+    "offerReady": {
+     "frame": 30
+    },
+    "release": {
+     "frame": 50,
+     "note": "hand the prop to the receiver here"
+    }
+   },
+   "props": {
+    "hands": "both",
+    "prop": "gift box (carried from frame 1, released at 50)"
+   },
+   "variantOf": null,
+   "authoredFrom": [
+    "kfb_idle_breathing_a (legs, torso)",
+    "kfb_locomotion_jogging_with_box_a frame 1 (carry arms)"
+   ],
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    }
+   },
+   "comment": "Authored in Blender (AN-PERF-01): carry pose, arms push the box forward and slightly up (frames 10-38), hold, release at 50, empty arms settle back to idle by 72. Feet stay planted.",
+   "residentIdeas": "Any resident giving a present or handing over an item; pairs with kfb_interaction_gift_receive_a.",
+   "tags": [
+    "gift",
+    "handover",
+    "two-hands",
+    "one-shot"
+   ],
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "durationSec": 3.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf_an01.glb"
+   },
+   "intake": "AN-PERF-01",
+   "sourceFbx": null,
+   "rootBone": "root",
+   "loopPoseDiffDeg": null,
+   "roundTripMaxCm": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   }
+  },
+  {
+   "id": "kfb_interaction_gift_receive_a",
+   "label_de": "Geschenk annehmen",
+   "group": "interaction",
+   "frames": 90,
+   "loop": false,
+   "rootMotion": "in-place",
+   "events": {
+    "reachReady": {
+     "frame": 38
+    },
+    "grab": {
+     "frame": 40,
+     "note": "take the prop from the giver here"
+    },
+    "secured": {
+     "frame": 68
+    }
+   },
+   "props": {
+    "hands": "both",
+    "prop": "gift box (held from frame 40)"
+   },
+   "variantOf": null,
+   "authoredFrom": [
+    "kfb_idle_breathing_a (legs, torso)",
+    "kfb_locomotion_jogging_with_box_a frame 1 (carry arms)"
+   ],
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    }
+   },
+   "comment": "Authored in Blender (AN-PERF-01): idle, both arms reach forward (15-38), grab at 40, pull the box to the chest into the carry pose (45-68), happy head wobble while holding. Ends in the carry pose.",
+   "residentIdeas": "Receiver side of a gift exchange; chain into a carry walk or an unboxing reaction.",
+   "tags": [
+    "gift",
+    "handover",
+    "two-hands",
+    "one-shot"
+   ],
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "durationSec": 3.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf_an01.glb"
+   },
+   "intake": "AN-PERF-01",
+   "sourceFbx": null,
+   "rootBone": "root",
+   "loopPoseDiffDeg": null,
+   "roundTripMaxCm": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   }
+  },
+  {
+   "id": "kfb_locomotion_nutcracker_march_a",
+   "label_de": "Nussknacker-Marsch",
+   "group": "locomotion",
+   "frames": 32,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.144,
+    "Rig_Large": 2.937
+   },
+   "props": {
+    "hands": "right",
+    "prop": "rifle, upright in the right hand (attach at handslot.r, barrel up)"
+   },
+   "variantOf": {
+    "id": "kfb_locomotion_walk_with_briefcase_a",
+    "kind": "authored-style",
+    "note": "same stance frames and travel; high knees, straight swinging left arm, still right arm, upright stiff torso"
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        26,
+        32
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        12,
+        19
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        27,
+        32
+       ]
+      ]
+     }
+    }
+   },
+   "comment": "Authored in Blender (AN-PERF-01) from the briefcase walk: knees lifted only while the foot is in the air, left arm straight with bigger swing, right (rifle) arm held still, torso upright, chest and head steadier. Same travel per cycle as the donor.",
+   "residentIdeas": "Georg: the Nutcracker marching with the rifle in the right hand. Also toy soldiers, guards, parade residents.",
+   "tags": [
+    "walk-style",
+    "march",
+    "carry",
+    "one-hand"
+   ],
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "durationSec": 1.067,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf_an01.glb"
+   },
+   "intake": "AN-PERF-01",
+   "sourceFbx": null,
+   "rootBone": "root",
+   "loopPoseDiffDeg": 0.0,
+   "roundTripMaxCm": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   }
+  },
+  {
+   "id": "kfb_locomotion_ascending_stairs_a",
+   "label_de": "Treppe steigen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 42,
+   "durationSec": 1.4,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.6,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.356,
+    "Rig_Large": 0.913
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        33
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Ascending Stairs.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -7.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "stairs"
+   ],
+   "comment": "Climbing stairs: high knee steps with the body rising about 0.3 m per cycle; 1.4 s loop.",
+   "residentIdeas": "Any resident on stairs, a tower climb in a Card Tower scene.",
+   "notes": "Needs steps under the feet; the root rises with the stairs."
+  },
+  {
+   "id": "kfb_locomotion_old_man_walk_a",
+   "label_de": "Gehen wie ein alter Mann",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 47,
+   "durationSec": 1.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.656,
+    "Rig_Large": 1.683
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        37
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        15
+       ],
+       [
+        30,
+        47
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        37
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        14
+       ],
+       [
+        29,
+        47
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Old Man Walk.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 4.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "slow",
+    "hunched"
+   ],
+   "comment": "Slow hunched shuffle (about 0.42 m/s), strong forward lean, short steps.",
+   "residentIdeas": "Elderly residents, a tired wizard, someone carrying a sack of worries.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_texting_and_walking_a",
+   "label_de": "Gehen und tippen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 100,
+   "durationSec": 3.333,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.2,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.787,
+    "Rig_Large": 7.154
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        26
+       ],
+       [
+        38,
+        59
+       ],
+       [
+        76,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ],
+       [
+        22,
+        42
+       ],
+       [
+        58,
+        75
+       ],
+       [
+        90,
+        100
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        25
+       ],
+       [
+        42,
+        58
+       ],
+       [
+        77,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        22,
+        42
+       ],
+       [
+        59,
+        74
+       ],
+       [
+        91,
+        100
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Texting And Walking.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -1.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "phone"
+   },
+   "tags": [
+    "walk-style",
+    "prop-hold",
+    "phone"
+   ],
+   "comment": "Walking about 0.84 m/s while typing on a phone held in both hands; head down.",
+   "residentIdeas": "Distracted city residents; pairs with a phone prop and a bump-into-a-lamppost gag.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_walking_while_texting_a",
+   "label_de": "Gehen und aufs Handy schauen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 121,
+   "durationSec": 4.033,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.363,
+    "Rig_Large": 6.066
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        33
+       ],
+       [
+        44,
+        73
+       ],
+       [
+        86,
+        113
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        13
+       ],
+       [
+        25,
+        52
+       ],
+       [
+        63,
+        93
+       ],
+       [
+        104,
+        121
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        32
+       ],
+       [
+        45,
+        72
+       ],
+       [
+        89,
+        112
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        13
+       ],
+       [
+        25,
+        51
+       ],
+       [
+        63,
+        64
+       ],
+       [
+        68,
+        92
+       ],
+       [
+        104,
+        106
+       ],
+       [
+        109,
+        121
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walking While Texting.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 2.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "right",
+    "prop": "phone"
+   },
+   "tags": [
+    "walk-style",
+    "prop-hold",
+    "phone"
+   ],
+   "comment": "Slower walk (about 0.59 m/s) looking at a phone held in one hand.",
+   "residentIdeas": "Background city walker; influencer residents.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_walk_backwards_a",
+   "label_de": "Rückwärts gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 117,
+   "durationSec": 3.9,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.193,
+    "Rig_Large": 3.064
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        23
+       ],
+       [
+        30,
+        63
+       ],
+       [
+        68,
+        95
+       ],
+       [
+        99,
+        117
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        39
+       ],
+       [
+        43,
+        74
+       ],
+       [
+        82,
+        107
+       ],
+       [
+        111,
+        117
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        23
+       ],
+       [
+        31,
+        63
+       ],
+       [
+        68,
+        94
+       ],
+       [
+        99,
+        117
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        39
+       ],
+       [
+        44,
+        74
+       ],
+       [
+        82,
+        107
+       ],
+       [
+        112,
+        117
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walk Backwards.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -19.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "backward"
+   ],
+   "comment": "Careful backward walk (about 0.31 m/s), body turned about 20 degrees, looking back over the shoulder.",
+   "residentIdeas": "Backing away from danger, guiding a car into a parking spot, retreating from a brawl.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_walking_o",
+   "label_de": "Gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 26,
+   "durationSec": 0.867,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.545,
+    "Rig_Large": 1.399
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        3
+       ],
+       [
+        10,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        15
+       ],
+       [
+        24,
+        26
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        3
+       ],
+       [
+        9,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        15
+       ],
+       [
+        24,
+        26
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walking (12).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -24.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style"
+   ],
+   "comment": "Short brisk walk cycle (0.9 s, about 0.63 m/s) with the body turned about 25 degrees.",
+   "residentIdeas": "Busy background walker; alternative to walking_c for smaller residents.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_reaction_tripping_a",
+   "label_de": "Stolpern",
+   "group": "reaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 64,
+   "durationSec": 2.133,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 173.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.66,
+    "Rig_Large": 4.26
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        58,
+        64
+       ]
+      ],
+      "foot.r": [
+       [
+        50,
+        52
+       ],
+       [
+        59,
+        64
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        58,
+        64
+       ]
+      ],
+      "foot.r": [
+       [
+        50,
+        52
+       ],
+       [
+        58,
+        64
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Tripping.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -4.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_reaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_reaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "slapstick",
+    "fall",
+    "one-shot"
+   ],
+   "comment": "Walks, trips and falls flat on the face; ends lying down (travels about 1.7 m).",
+   "residentIdeas": "Slapstick: a clumsy resident, the result of a banana peel or a Brickfish thrown at the feet; chain into kfb_reaction_getting_up_a.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_opening_door_outwards_a",
+   "label_de": "Tür nach außen öffnen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 124,
+   "durationSec": 4.133,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.505,
+    "Rig_Large": 3.864
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        76
+       ],
+       [
+        88,
+        115
+       ],
+       [
+        118,
+        118
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        24
+       ],
+       [
+        36,
+        59
+       ],
+       [
+        75,
+        96
+       ],
+       [
+        108,
+        109
+       ],
+       [
+        112,
+        124
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        76
+       ],
+       [
+        88,
+        114
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        24
+       ],
+       [
+        36,
+        59
+       ],
+       [
+        76,
+        96
+       ],
+       [
+        108,
+        108
+       ],
+       [
+        114,
+        124
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Open Door Outwards.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -4.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "right",
+    "prop": "door"
+   },
+   "tags": [
+    "door",
+    "one-shot"
+   ],
+   "comment": "Walks up, pushes a door outwards and walks through (4.1 s, travels 1.5 m).",
+   "residentIdeas": "Leaving a building, entering a shop from inside; pairs with kfb_interaction_opening_door_inwards_a.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_talk_pacing_on_phone_a",
+   "label_de": "Telefonieren und auf und ab gehen",
+   "group": "talk",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 1130,
+   "durationSec": 37.667,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.263,
+    "Rig_Large": 5.808
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        3,
+        24
+       ],
+       [
+        36,
+        56
+       ],
+       [
+        68,
+        90
+       ],
+       [
+        101,
+        132
+       ],
+       [
+        145,
+        171
+       ],
+       [
+        183,
+        210
+       ],
+       [
+        222,
+        253
+       ],
+       [
+        265,
+        361
+       ],
+       [
+        374,
+        410
+       ],
+       [
+        422,
+        456
+       ],
+       [
+        468,
+        512
+       ],
+       [
+        524,
+        578
+       ],
+       [
+        592,
+        631
+       ],
+       [
+        643,
+        679
+       ],
+       [
+        693,
+        742
+       ],
+       [
+        755,
+        797
+       ],
+       [
+        812,
+        848
+       ],
+       [
+        872,
+        925
+       ],
+       [
+        936,
+        989
+       ],
+       [
+        995,
+        1031
+       ],
+       [
+        1042,
+        1085
+       ],
+       [
+        1095,
+        1123
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        21,
+        39
+       ],
+       [
+        53,
+        72
+       ],
+       [
+        84,
+        109
+       ],
+       [
+        118,
+        123
+       ],
+       [
+        125,
+        151
+       ],
+       [
+        165,
+        190
+       ],
+       [
+        203,
+        230
+       ],
+       [
+        243,
+        275
+       ],
+       [
+        284,
+        338
+       ],
+       [
+        351,
+        383
+       ],
+       [
+        397,
+        432
+       ],
+       [
+        445,
+        482
+       ],
+       [
+        496,
+        607
+       ],
+       [
+        619,
+        654
+       ],
+       [
+        668,
+        703
+       ],
+       [
+        717,
+        770
+       ],
+       [
+        785,
+        825
+       ],
+       [
+        837,
+        897
+       ],
+       [
+        911,
+        1007
+       ],
+       [
+        1021,
+        1105
+       ],
+       [
+        1110,
+        1110
+       ],
+       [
+        1117,
+        1130
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        24
+       ],
+       [
+        37,
+        55
+       ],
+       [
+        68,
+        90
+       ],
+       [
+        102,
+        128
+       ],
+       [
+        146,
+        171
+       ],
+       [
+        183,
+        209
+       ],
+       [
+        222,
+        225
+       ],
+       [
+        227,
+        252
+       ],
+       [
+        266,
+        269
+       ],
+       [
+        272,
+        315
+       ],
+       [
+        321,
+        360
+       ],
+       [
+        374,
+        379
+       ],
+       [
+        383,
+        409
+       ],
+       [
+        422,
+        456
+       ],
+       [
+        469,
+        511
+       ],
+       [
+        525,
+        577
+       ],
+       [
+        593,
+        630
+       ],
+       [
+        643,
+        677
+       ],
+       [
+        693,
+        738
+       ],
+       [
+        756,
+        763
+       ],
+       [
+        769,
+        796
+       ],
+       [
+        812,
+        846
+       ],
+       [
+        873,
+        924
+       ],
+       [
+        937,
+        947
+       ],
+       [
+        954,
+        987
+       ],
+       [
+        996,
+        1030
+       ],
+       [
+        1043,
+        1083
+       ],
+       [
+        1095,
+        1099
+       ],
+       [
+        1106,
+        1122
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        21,
+        38
+       ],
+       [
+        53,
+        72
+       ],
+       [
+        84,
+        86
+       ],
+       [
+        88,
+        109
+       ],
+       [
+        119,
+        122
+       ],
+       [
+        126,
+        150
+       ],
+       [
+        165,
+        189
+       ],
+       [
+        203,
+        205
+       ],
+       [
+        208,
+        229
+       ],
+       [
+        244,
+        247
+       ],
+       [
+        251,
+        275
+       ],
+       [
+        284,
+        336
+       ],
+       [
+        351,
+        381
+       ],
+       [
+        397,
+        431
+       ],
+       [
+        445,
+        449
+       ],
+       [
+        453,
+        481
+       ],
+       [
+        496,
+        502
+       ],
+       [
+        505,
+        571
+       ],
+       [
+        575,
+        606
+       ],
+       [
+        620,
+        624
+       ],
+       [
+        628,
+        653
+       ],
+       [
+        669,
+        702
+       ],
+       [
+        718,
+        769
+       ],
+       [
+        786,
+        790
+       ],
+       [
+        796,
+        824
+       ],
+       [
+        837,
+        895
+       ],
+       [
+        911,
+        1006
+       ],
+       [
+        1021,
+        1104
+       ],
+       [
+        1118,
+        1130
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Pacing And Talking On A Phone.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -3.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_talk_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_talk_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "right",
+    "prop": "phone"
+   },
+   "tags": [
+    "talk",
+    "phone",
+    "pacing"
+   ],
+   "comment": "Long phone call (37.7 s): walks back and forth and turns while talking with the phone at the ear; gestures with the free hand.",
+   "residentIdeas": "Resident on an important call, a manager, a worried parent; good background life for a street corner.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_gesture_swatting_bugs_a",
+   "label_de": "Insekten wegschlagen",
+   "group": "gesture",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 201,
+   "durationSec": 6.7,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.19,
+    "Rig_Large": 5.622
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        43
+       ],
+       [
+        61,
+        77
+       ],
+       [
+        102,
+        124
+       ],
+       [
+        138,
+        144
+       ],
+       [
+        160,
+        190
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        15
+       ],
+       [
+        36,
+        65
+       ],
+       [
+        87,
+        104
+       ],
+       [
+        124,
+        138
+       ],
+       [
+        153,
+        170
+       ],
+       [
+        185,
+        201
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        43
+       ],
+       [
+        61,
+        75
+       ],
+       [
+        102,
+        124
+       ],
+       [
+        137,
+        143
+       ],
+       [
+        160,
+        190
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        15
+       ],
+       [
+        36,
+        65
+       ],
+       [
+        87,
+        104
+       ],
+       [
+        124,
+        138
+       ],
+       [
+        152,
+        171
+       ],
+       [
+        185,
+        201
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Swatting Bugs.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 8.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_gesture_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_gesture_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "gesture",
+    "comic"
+   ],
+   "comment": "Walks a few steps while swatting at flies around the head with both hands (6.7 s).",
+   "residentIdeas": "Swamp or farm scenes, a smelly troll, a resident next to the compost heap.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_box_idle_a",
+   "label_de": "Stehen mit Kiste",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 184,
+   "durationSec": 6.133,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.9,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        184
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        184
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        184
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        184
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "box idle.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -12.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "box"
+   },
+   "tags": [
+    "idle",
+    "carry"
+   ],
+   "comment": "Standing idle holding a box in front with both hands, leaning back a little under its weight.",
+   "residentIdeas": "Delivery resident, gift bearer waiting; a rest pose for carry scenes.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_box_turn_a",
+   "label_de": "Mit Kiste umdrehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 47,
+   "durationSec": 1.567,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 136.8,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.266,
+    "Rig_Large": 0.682
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        47
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        12,
+        47
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        47
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        12,
+        47
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "box turn.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -12.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "box"
+   },
+   "tags": [
+    "turn",
+    "carry"
+   ],
+   "comment": "In-place turn of about 135 degrees while holding a box (1.6 s).",
+   "residentIdeas": "Turning around with a parcel; chain between box idle and box walk.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_box_turn_b",
+   "label_de": "Mit Kiste umdrehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 32,
+   "durationSec": 1.067,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 79.5,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.154,
+    "Rig_Large": 0.397
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        32
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        32
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        32
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        32
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "box turn (2).fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -12.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "box"
+   },
+   "tags": [
+    "turn",
+    "carry"
+   ],
+   "comment": "Shorter in-place turn of about 80 degrees while holding a box (1.1 s).",
+   "residentIdeas": "Quick look-around with a parcel.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_box_walk_arc_a",
+   "label_de": "Mit Kiste im Bogen gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 37,
+   "durationSec": 1.233,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 31.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.957,
+    "Rig_Large": 2.457
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        13,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        21,
+        37
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        12,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        21,
+        37
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "box walk arc.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -12.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "box"
+   },
+   "tags": [
+    "walk-style",
+    "carry",
+    "curve"
+   ],
+   "comment": "Walking a curve (about 0.78 m/s) while carrying a box; body leans back.",
+   "residentIdeas": "Delivery routes around corners; not a straight loop (first and last pose differ 31 degrees).",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_holding_idle_a",
+   "label_de": "Stehen mit Last",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 180,
+   "durationSec": 6.0,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.3,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        180
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        180
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        180
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        180
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "holding idle.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -4.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "object held in front"
+   },
+   "tags": [
+    "idle",
+    "carry"
+   ],
+   "comment": "Standing idle holding something in front with both hands.",
+   "residentIdeas": "Waiting with a gift, a pie or the Brickfish.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_holding_turn_left_a",
+   "label_de": "Mit Last nach links drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 31,
+   "durationSec": 1.033,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 172.6,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.216,
+    "Rig_Large": 0.555
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        10,
+        31
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        9,
+        31
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "holding turn left.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -10.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "object held in front"
+   },
+   "tags": [
+    "turn",
+    "carry"
+   ],
+   "comment": "Turn left on the spot of about 170 degrees while holding something in front (1.0 s).",
+   "residentIdeas": "Carry scenes that need a turn; chain with holding idle and walk.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_holding_turn_right_a",
+   "label_de": "Mit Last nach rechts drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 40,
+   "durationSec": 1.333,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 147.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.119,
+    "Rig_Large": 0.306
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        6
+       ],
+       [
+        11,
+        40
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        40
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        6
+       ],
+       [
+        12,
+        40
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        40
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "holding turn right.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -12.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "object held in front"
+   },
+   "tags": [
+    "turn",
+    "carry"
+   ],
+   "comment": "Turn right on the spot of about 150 degrees while holding something in front (1.3 s).",
+   "residentIdeas": "Carry scenes that need a turn.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_holding_walk_c",
+   "label_de": "Gehen mit Last",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 42,
+   "durationSec": 1.4,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 11.3,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.15,
+    "Rig_Large": 2.953
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        6
+       ],
+       [
+        9,
+        29
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ],
+       [
+        25,
+        42
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        3,
+        6
+       ],
+       [
+        9,
+        29
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ],
+       [
+        25,
+        28
+       ],
+       [
+        30,
+        42
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "holding walk.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -11.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_locomotion_holding_walk_a",
+    "kind": "arm-space",
+    "note": "same walk, small pose differences"
+   },
+   "props": {
+    "hands": "both",
+    "prop": "object held in front"
+   },
+   "tags": [
+    "walk-style",
+    "carry"
+   ],
+   "comment": "Carry walk from the Farming Pack; same length as kfb_locomotion_holding_walk_a with only small pose differences (3 degrees).",
+   "residentIdeas": "Carrying crates, gifts, the Brickfish.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_wheelbarrow_idle_a",
+   "label_de": "Stehen mit Schubkarre",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 45,
+   "durationSec": 1.5,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        45
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        45
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        45
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        45
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "wheelbarrow idle.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 1.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "wheelbarrow handles"
+   },
+   "tags": [
+    "idle",
+    "wheelbarrow"
+   ],
+   "comment": "Standing idle holding the handles of a wheelbarrow, bent slightly forward.",
+   "residentIdeas": "Farm and garden residents; building-site worker.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_wheelbarrow_walk_b",
+   "label_de": "Schubkarre schieben",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 29,
+   "durationSec": 0.967,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 13.7,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.07,
+    "Rig_Large": 2.746
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        6
+       ],
+       [
+        18,
+        29
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        4
+       ],
+       [
+        7,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        18,
+        29
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "wheelbarrow walk.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 4.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_locomotion_wheelbarrow_walk_a",
+    "kind": "retimed",
+    "note": "same motion, other Mixamo speed setting"
+   },
+   "props": {
+    "hands": "both",
+    "prop": "wheelbarrow"
+   },
+   "tags": [
+    "walk-style",
+    "wheelbarrow"
+   ],
+   "comment": "Pushing a wheelbarrow (about 1.1 m/s), a retimed variant of kfb_locomotion_wheelbarrow_walk_a (29 instead of 30 frames).",
+   "residentIdeas": "Farm and garden residents; hauling Clay City rubble.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_wheelbarrow_walk_c",
+   "label_de": "Schubkarre schieben",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 29,
+   "durationSec": 0.967,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 13.7,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.07,
+    "Rig_Large": 2.746
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        19
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        16,
+        29
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        19
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        16,
+        29
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "wheelbarrow walk (2).fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 5.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_locomotion_wheelbarrow_walk_b",
+    "kind": "arm-space",
+    "note": "same timing, upright variant"
+   },
+   "props": {
+    "hands": "both",
+    "prop": "wheelbarrow"
+   },
+   "tags": [
+    "walk-style",
+    "wheelbarrow"
+   ],
+   "comment": "Pushing a wheelbarrow, second Farming Pack take: same timing as wheelbarrow_walk_b with less forward lean.",
+   "residentIdeas": "Lighter load, a calmer worker.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_wheelbarrow_walk_turn_a",
+   "label_de": "Schubkarre im Bogen schieben",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 33,
+   "durationSec": 1.1,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 27.6,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.237,
+    "Rig_Large": 3.175
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        23
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        23,
+        33
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        23
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        24,
+        33
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "wheelbarrow walk turn.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 8.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "wheelbarrow"
+   },
+   "tags": [
+    "walk-style",
+    "wheelbarrow",
+    "curve"
+   ],
+   "comment": "Pushing a wheelbarrow through a curve (1.1 s); not a straight loop (first and last pose differ 28 degrees).",
+   "residentIdeas": "Turning a wheelbarrow at the end of a garden path.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_wheelbarrow_walk_turn_b",
+   "label_de": "Schubkarre im Bogen schieben",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 33,
+   "durationSec": 1.1,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 29.9,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.211,
+    "Rig_Large": 3.11
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        23
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        24,
+        33
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        22
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        24,
+        33
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "wheelbarrow walk turn (2).fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 3.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "wheelbarrow"
+   },
+   "tags": [
+    "walk-style",
+    "wheelbarrow",
+    "curve"
+   ],
+   "comment": "Second take of the wheelbarrow curve, more upright.",
+   "residentIdeas": "As wheelbarrow_walk_turn_a.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_wheelbarrow_dump_a",
+   "label_de": "Schubkarre auskippen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 188,
+   "durationSec": 6.267,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        48
+       ],
+       [
+        57,
+        153
+       ],
+       [
+        155,
+        156
+       ],
+       [
+        161,
+        188
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        188
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        48
+       ],
+       [
+        57,
+        153
+       ],
+       [
+        155,
+        157
+       ],
+       [
+        160,
+        188
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        105
+       ],
+       [
+        128,
+        188
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "wheelbarrow dump.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 1.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "wheelbarrow"
+   },
+   "tags": [
+    "wheelbarrow",
+    "one-shot"
+   ],
+   "comment": "Tips the wheelbarrow forward to empty it, then sets it down (6.3 s).",
+   "residentIdeas": "Dumping soil, rubble or a heap of cards; a Clay City building-site gag.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_cow_milking_a",
+   "label_de": "Kuh melken",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 137,
+   "durationSec": 4.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.3,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        137
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        137
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        137
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        137
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "cow milking.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 1.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "farm",
+    "crouch",
+    "loop"
+   ],
+   "comment": "Crouched low, both hands working in front at knee height as if milking (loops).",
+   "residentIdeas": "Farm resident with a cow; any repetitive crouched handwork.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_dig_and_plant_seeds_a",
+   "label_de": "Graben und säen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 166,
+   "durationSec": 5.533,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        166
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        166
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        135
+       ],
+       [
+        141,
+        166
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        136
+       ],
+       [
+        139,
+        166
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "dig and plant seeds.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 1.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "farm",
+    "kneel",
+    "one-shot"
+   ],
+   "comment": "Kneels down, digs a hole with the hands, drops seeds, stands up again (5.5 s).",
+   "residentIdeas": "Gardener residents; planting a card seed in the Card Zone.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_plant_a_plant_a",
+   "label_de": "Pflanze einsetzen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 227,
+   "durationSec": 7.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.8,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        227
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        227
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        227
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        227
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "plant a plant.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 3.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "plant"
+   },
+   "tags": [
+    "farm",
+    "kneel",
+    "one-shot"
+   ],
+   "comment": "Kneels and sets a plant into the ground with both hands, then stands (7.6 s).",
+   "residentIdeas": "Gardener residents; decorating a place in the WorldBuilder.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_plant_tree_a",
+   "label_de": "Baum pflanzen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 273,
+   "durationSec": 9.1,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 8.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        273
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        188
+       ],
+       [
+        197,
+        214
+       ],
+       [
+        224,
+        243
+       ],
+       [
+        254,
+        273
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        273
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        188
+       ],
+       [
+        197,
+        215
+       ],
+       [
+        224,
+        243
+       ],
+       [
+        253,
+        273
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "plant tree.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 3.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "both",
+    "prop": "sapling"
+   },
+   "tags": [
+    "farm",
+    "kneel",
+    "one-shot"
+   ],
+   "comment": "Plants a small tree: kneels, places it, pats the soil and stands (9.1 s).",
+   "residentIdeas": "Tree-planting ceremony, eco residents.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_pull_plant_a",
+   "label_de": "Pflanze herausziehen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 141,
+   "durationSec": 4.7,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 23.5,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        141
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        141
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        141
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        141
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "pull plant.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 3.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "farm",
+    "pull",
+    "one-shot",
+    "comic"
+   ],
+   "comment": "Bends down, grabs a plant and pulls hard, stumbling back as it comes out (4.7 s; not a loop).",
+   "residentIdeas": "Pulling a giant carrot, a stubborn weed, a sword from a stone.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_pull_plant_b",
+   "label_de": "Pflanze herausziehen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 143,
+   "durationSec": 4.767,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        143
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        143
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        143
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        143
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "pull plant (2).fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 1.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "farm",
+    "pull"
+   ],
+   "comment": "Second take of pulling a plant: shorter tug without the stumble (4.8 s, clean loop).",
+   "residentIdeas": "Repeated weeding in the background.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_pick_fruit_b",
+   "label_de": "Obst pflücken",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 240,
+   "durationSec": 8.0,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.8,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        240
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        33
+       ],
+       [
+        38,
+        96
+       ],
+       [
+        127,
+        240
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        240
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        98
+       ],
+       [
+        125,
+        240
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "pick fruit.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 2.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "farm",
+    "reach-up"
+   ],
+   "comment": "Reaches up to pick fruit from a tree with one hand, several times (8.0 s).",
+   "residentIdeas": "Orchard residents; picking a card from a card tree.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_pick_fruit_c",
+   "label_de": "Obst pflücken",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 182,
+   "durationSec": 6.067,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 25.8,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        182
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        182
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        182
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        182
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "pick fruit (2).fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 2.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_interaction_pick_fruit_a",
+    "kind": "retimed",
+    "note": "same motion, other Mixamo speed setting"
+   },
+   "tags": [
+    "farm",
+    "reach-up"
+   ],
+   "comment": "Fruit picking, a retimed variant of kfb_interaction_pick_fruit_a (182 instead of 187 frames).",
+   "residentIdeas": "As pick_fruit_a.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_pick_fruit_d",
+   "label_de": "Obst pflücken",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 214,
+   "durationSec": 7.133,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        214
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        24
+       ],
+       [
+        51,
+        161
+       ],
+       [
+        190,
+        214
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        214
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        28
+       ],
+       [
+        54,
+        160
+       ],
+       [
+        187,
+        214
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "pick fruit (3).fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": 2.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "farm",
+    "crouch",
+    "one-shot"
+   ],
+   "comment": "Picks fruit from the ground: squats down, gathers, stands up (7.1 s).",
+   "residentIdeas": "Collecting mushrooms, coins or dropped cards.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_interaction_watering_a",
+   "label_de": "Gießen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 169,
+   "durationSec": 5.633,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        169
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        169
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        169
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        169
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "watering.fbx",
+   "sourcePack": "Farming Pack",
+   "facingYawDeg": -3.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_interaction_i05.glb"
+   },
+   "intake": "05",
+   "props": {
+    "hands": "right",
+    "prop": "watering can"
+   },
+   "tags": [
+    "farm",
+    "prop-hold"
+   ],
+   "comment": "Watering plants with a can held in one hand, swaying it over the bed (5.6 s).",
+   "residentIdeas": "Gardener residents; a caretaker of the Card Zone garden.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_female_idle_a",
+   "label_de": "Stehen (Female-Paket)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 251,
+   "durationSec": 8.367,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        251
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        251
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        251
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        251
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "idle.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 1.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "idle",
+    "female-pack"
+   ],
+   "comment": "Quiet standing idle with weight shifts (Female Basic Locomotion Pack), 8.4 s loop.",
+   "residentIdeas": "Neutral idle with a lighter posture than kfb_idle_idle_f.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_walking_a",
+   "label_de": "Gehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 30,
+   "durationSec": 1.0,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.103,
+    "Rig_Large": 2.83
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        22
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        22,
+        30
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        21
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        22,
+        30
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "walking.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 4.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "female-pack"
+   ],
+   "comment": "Light walk (about 1.1 m/s) with narrow steps and hip sway.",
+   "residentIdeas": "Graceful or elegant residents; a dancer walking.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_running_a",
+   "label_de": "Rennen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 22,
+   "durationSec": 0.733,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.796,
+    "Rig_Large": 4.609
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        12
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        18,
+        22
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        12
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        18,
+        22
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "running.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": -4.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "female-pack"
+   ],
+   "comment": "Light run (about 2.45 m/s) with forward lean.",
+   "residentIdeas": "Quick residents, a sprint to catch the bus.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_jump_a",
+   "label_de": "Springen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 51,
+   "durationSec": 1.7,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        16
+       ],
+       [
+        33,
+        51
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        39,
+        51
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        16
+       ],
+       [
+        33,
+        51
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        39,
+        51
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "jump.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 1.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "jump",
+    "female-pack",
+    "one-shot"
+   ],
+   "comment": "Jump in place with a crouch before and after (1.7 s).",
+   "residentIdeas": "Joy jump, obstacle hop.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_left_strafe_walk_a",
+   "label_de": "Seitwärts links gehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 29,
+   "durationSec": 0.967,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.239,
+    "Rig_Large": 3.18
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        6
+       ],
+       [
+        8,
+        22
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        19,
+        29
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        22
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        20,
+        21
+       ],
+       [
+        23,
+        29
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "left strafe walk.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 41.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "strafe",
+    "female-pack"
+   ],
+   "comment": "Sidestep walk to the left (about 1.28 m/s), body facing forward.",
+   "residentIdeas": "Sliding past someone in a crowd, a dance side-step.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_right_strafe_walk_a",
+   "label_de": "Seitwärts rechts gehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 29,
+   "durationSec": 0.967,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.237,
+    "Rig_Large": 3.175
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        21
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        19,
+        19
+       ],
+       [
+        21,
+        29
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        21
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        19,
+        19
+       ],
+       [
+        22,
+        29
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "right strafe walk.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": -44.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "strafe",
+    "female-pack"
+   ],
+   "comment": "Sidestep walk to the right (about 1.28 m/s).",
+   "residentIdeas": "As left strafe walk.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_left_strafe_a",
+   "label_de": "Seitwärts links laufen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 21,
+   "durationSec": 0.7,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.64,
+    "Rig_Large": 4.211
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        18,
+        21
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        18,
+        21
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "left strafe.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 57.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "strafe",
+    "run",
+    "female-pack"
+   ],
+   "comment": "Fast sideways run to the left (about 2.3 m/s).",
+   "residentIdeas": "Dodging, a game of tag.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_right_strafe_a",
+   "label_de": "Seitwärts rechts laufen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 21,
+   "durationSec": 0.7,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.64,
+    "Rig_Large": 4.211
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        18,
+        21
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        18,
+        21
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "right strafe.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": -73.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "strafe",
+    "run",
+    "female-pack"
+   ],
+   "comment": "Fast sideways run to the right (about 2.3 m/s).",
+   "residentIdeas": "Dodging, a game of tag.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_left_turn_a",
+   "label_de": "Nach links drehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 35,
+   "durationSec": 1.167,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 91.4,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        35
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        35
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        35
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        35
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "left turn.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 0.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "female-pack"
+   ],
+   "comment": "Turn 90 degrees left on the spot (1.2 s).",
+   "residentIdeas": "Changing direction from idle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_left_turn_b",
+   "label_de": "Nach links drehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 36,
+   "durationSec": 1.2,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        36
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        36
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        36
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        36
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "left turn (2).fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 0.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "female-pack"
+   ],
+   "comment": "Second \"left turn\" from the pack: the body barely turns and start and end pose are equal, so it reads as an idle weight shift.",
+   "residentIdeas": "Probably the Mixamo in-place setting removed the turn; use left_turn_a for a real turn.",
+   "notes": "No measurable rotation (loop difference 0.1 degrees)."
+  },
+  {
+   "id": "kfb_locomotion_female_right_turn_a",
+   "label_de": "Nach rechts drehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 34,
+   "durationSec": 1.133,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 90.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        29
+       ],
+       [
+        31,
+        34
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        34
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        29
+       ],
+       [
+        31,
+        34
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        34
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "right turn.fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 1.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "female-pack"
+   ],
+   "comment": "Turn 90 degrees right on the spot (1.1 s).",
+   "residentIdeas": "Changing direction from idle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_female_right_turn_b",
+   "label_de": "Nach rechts drehen (Female-Paket)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 35,
+   "durationSec": 1.167,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 2.6,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        28
+       ],
+       [
+        31,
+        35
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        35
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        28
+       ],
+       [
+        30,
+        35
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        35
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "right turn (2).fbx",
+   "sourcePack": "Female Basic Locomotion Pack",
+   "facingYawDeg": 1.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "female-pack"
+   ],
+   "comment": "Second \"right turn\" from the pack: barely turns (see female_left_turn_b).",
+   "residentIdeas": "Use right_turn_a for a real turn.",
+   "notes": "No measurable rotation (loop difference 2.6 degrees)."
+  },
+  {
+   "id": "kfb_idle_magic_standing_idle_a",
+   "label_de": "Magier-Stand",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 56,
+   "durationSec": 1.867,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 3.3,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        56
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        56
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        56
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        56
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "standing idle.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -52.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "idle",
+    "magic",
+    "stance"
+   ],
+   "comment": "Spell-caster ready stance: body turned about 50 degrees, hands raised and ready.",
+   "residentIdeas": "Wizards, witches, a mage resident before casting; pairs with kfb_action_casting_spell_a and the fireball.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_walk_back_a",
+   "label_de": "Magier: rückwärts gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 37,
+   "durationSec": 1.233,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.989,
+    "Rig_Large": 2.539
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        11,
+        32
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        13
+       ],
+       [
+        15,
+        16
+       ],
+       [
+        28,
+        37
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        12,
+        33
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        16,
+        16
+       ],
+       [
+        28,
+        37
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Walk Back.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -54.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "magic",
+    "backward"
+   ],
+   "comment": "Caster stance walking backwards (about 0.8 m/s), keeping the hands up.",
+   "residentIdeas": "A mage retreating while facing the enemy.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_walk_left_a",
+   "label_de": "Magier: nach links gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 36,
+   "durationSec": 1.2,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.057,
+    "Rig_Large": 2.712
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        12,
+        27
+       ],
+       [
+        30,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ],
+       [
+        20,
+        22
+       ],
+       [
+        24,
+        36
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        12,
+        16
+       ],
+       [
+        18,
+        25
+       ],
+       [
+        30,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ],
+       [
+        20,
+        22
+       ],
+       [
+        24,
+        36
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Walk Left.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -3.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "strafe",
+    "magic"
+   ],
+   "comment": "Caster stance sidestep to the left (about 0.9 m/s).",
+   "residentIdeas": "Circling an opponent in a magic duel.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_walk_right_a",
+   "label_de": "Magier: nach rechts gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 37,
+   "durationSec": 1.233,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.124,
+    "Rig_Large": 2.886
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        30
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ],
+       [
+        28,
+        37
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        30
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ],
+       [
+        29,
+        37
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Walk Right.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -59.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "strafe",
+    "magic"
+   ],
+   "comment": "Caster stance sidestep to the right (about 0.9 m/s).",
+   "residentIdeas": "Circling an opponent in a magic duel.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_run_forward_a",
+   "label_de": "Magier: vorwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 23,
+   "durationSec": 0.767,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.959,
+    "Rig_Large": 5.029
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        20,
+        23
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        20,
+        23
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Run Forward.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -37.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "magic"
+   ],
+   "comment": "Caster run forward (about 2.55 m/s) with the body turned and hands ready.",
+   "residentIdeas": "A mage charging in.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_run_back_a",
+   "label_de": "Magier: rückwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 20,
+   "durationSec": 0.667,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.402,
+    "Rig_Large": 3.6
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        15
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        19,
+        20
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        15
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        19,
+        20
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Run Back.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -26.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "magic",
+    "backward"
+   ],
+   "comment": "Caster run backwards (about 2.1 m/s).",
+   "residentIdeas": "A quick magical retreat.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_run_left_a",
+   "label_de": "Magier: nach links rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 24,
+   "durationSec": 0.8,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.831,
+    "Rig_Large": 4.7
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        21,
+        24
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        22,
+        24
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Run Left.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": 8.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "strafe",
+    "magic"
+   ],
+   "comment": "Caster run to the left (about 2.3 m/s).",
+   "residentIdeas": "Dodging a fireball.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_run_right_a",
+   "label_de": "Magier: nach rechts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 24,
+   "durationSec": 0.8,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.06,
+    "Rig_Large": 5.288
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        9
+       ],
+       [
+        12,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        20,
+        24
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        20,
+        24
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Run Right.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -58.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "strafe",
+    "magic"
+   ],
+   "comment": "Caster run to the right (about 2.6 m/s).",
+   "residentIdeas": "Dodging a fireball.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_sprint_forward_a",
+   "label_de": "Magier: sprinten",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 18,
+   "durationSec": 0.6,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.178,
+    "Rig_Large": 5.59
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        8
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        16,
+        18
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        8
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        16,
+        18
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Sprint Forward.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -39.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "sprint",
+    "magic"
+   ],
+   "comment": "Caster sprint (about 3.6 m/s), strong forward lean.",
+   "residentIdeas": "Racing to a spell circle; fleeing from a summoned monster.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_turn_left_90_a",
+   "label_de": "Magier: 90° links drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 47,
+   "durationSec": 1.567,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 104.9,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        13
+       ],
+       [
+        23,
+        47
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        39,
+        47
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        14
+       ],
+       [
+        24,
+        47
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        38,
+        47
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Turn Left 90.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -52.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "magic"
+   ],
+   "comment": "Caster stance turn 90 degrees left on the spot.",
+   "residentIdeas": "Facing a new opponent in a duel.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_turn_right_90_a",
+   "label_de": "Magier: 90° rechts drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 44,
+   "durationSec": 1.467,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 93.5,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.062,
+    "Rig_Large": 0.159
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        28
+       ],
+       [
+        34,
+        44
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        44
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        28
+       ],
+       [
+        34,
+        44
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        44
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Turn Right 90.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -52.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "magic"
+   ],
+   "comment": "Caster stance turn 90 degrees right on the spot.",
+   "residentIdeas": "Facing a new opponent in a duel.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_jump_a",
+   "label_de": "Magier: Sprung aus dem Stand",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 72,
+   "durationSec": 2.4,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 48.2,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.077,
+    "Rig_Large": 0.196
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        19
+       ],
+       [
+        39,
+        72
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        19
+       ],
+       [
+        40,
+        72
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        19
+       ],
+       [
+        39,
+        72
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        19
+       ],
+       [
+        40,
+        72
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Jump.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -52.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "jump",
+    "magic",
+    "one-shot"
+   ],
+   "comment": "Jump from the caster stance with a big crouch (2.4 s, one-shot).",
+   "residentIdeas": "A mage leaping onto a rock or a stage.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_jump_running_a",
+   "label_de": "Magier: Sprung im Lauf",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 33,
+   "durationSec": 1.1,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 90.6,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.788,
+    "Rig_Large": 7.157
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        13,
+        13
+       ],
+       [
+        17,
+        18
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        20,
+        24
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        13,
+        13
+       ],
+       [
+        17,
+        18
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        6,
+        6
+       ],
+       [
+        20,
+        23
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Jump Running.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -37.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "jump",
+    "magic",
+    "one-shot",
+    "chain"
+   ],
+   "comment": "Jump while running (takes off, flies about 2.7 m forward); ends in the air (one-shot).",
+   "residentIdeas": "Chain: magic_run_forward -> magic_jump_running -> magic_jump_running_landing -> magic_land_to_idle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_jump_running_landing_a",
+   "label_de": "Magier: Landung im Lauf",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 42,
+   "durationSec": 1.4,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 134.8,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 3.091,
+    "Rig_Large": 7.935
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        13
+       ],
+       [
+        27,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        14,
+        17
+       ],
+       [
+        39,
+        42
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        13
+       ],
+       [
+        27,
+        30
+       ]
+      ],
+      "foot.r": [
+       [
+        14,
+        20
+       ],
+       [
+        39,
+        42
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Jump Running Landing.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -19.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "jump",
+    "land",
+    "magic",
+    "one-shot",
+    "chain"
+   ],
+   "comment": "Landing from the running jump and running on (about 3.1 m).",
+   "residentIdeas": "Second part of the running-jump chain.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_magic_land_to_idle_a",
+   "label_de": "Magier: Landung zum Stand",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 34,
+   "durationSec": 1.133,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 82.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.854,
+    "Rig_Large": 2.191
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        13,
+        34
+       ]
+      ],
+      "foot.r": [
+       [
+        10,
+        34
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        13,
+        34
+       ]
+      ],
+      "foot.r": [
+       [
+        10,
+        34
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Standing Land To Standing Idle.fbx",
+   "sourcePack": "Magic Locomotion Pack",
+   "facingYawDeg": -18.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "land",
+    "magic",
+    "one-shot",
+    "chain"
+   ],
+   "comment": "Landing from a jump into the caster stance (1.1 s).",
+   "residentIdeas": "End of the jump chain; a dramatic landing.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_drunk_idle_a",
+   "label_de": "Betrunken stehen",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 219,
+   "durationSec": 7.3,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 14.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        219
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        219
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        219
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        219
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk idle.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 1.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "idle",
+    "drunk",
+    "comic"
+   ],
+   "comment": "Swaying drunk idle with a stagger step; 7.3 s (first and last pose differ 14 degrees, blend when looping).",
+   "residentIdeas": "Tavern residents, the party after the concert, a sailor ashore.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_drunk_idle_variation_b",
+   "label_de": "Betrunken stehen (Variante)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 120,
+   "durationSec": 4.0,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        120
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        120
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        120
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        120
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk idle variation.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 1.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_idle_drunk_idle_variation_a",
+    "kind": "arm-space",
+    "note": "same motion, small pose differences"
+   },
+   "tags": [
+    "idle",
+    "drunk"
+   ],
+   "comment": "Drunk idle variation from the Male Drunk Pack; same length as kfb_idle_drunk_idle_variation_a with small pose differences.",
+   "residentIdeas": "As drunk idle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_idle_drunk_idle_variation_c",
+   "label_de": "Betrunken stehen (Variante)",
+   "group": "idle",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 154,
+   "durationSec": 5.133,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 12.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        53
+       ],
+       [
+        61,
+        154
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        16,
+        36
+       ],
+       [
+        40,
+        154
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        52
+       ],
+       [
+        61,
+        154
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        12
+       ],
+       [
+        16,
+        35
+       ],
+       [
+        41,
+        154
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk idle variation (2).fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 1.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_idle_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "idle",
+    "drunk",
+    "comic"
+   ],
+   "comment": "Second drunk idle variation: bigger sway and a near fall (5.1 s).",
+   "residentIdeas": "The drunkest guest at the party.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_walk_b",
+   "label_de": "Betrunken gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 91,
+   "durationSec": 3.033,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 5.8,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.769,
+    "Rig_Large": 4.541
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        11,
+        45
+       ],
+       [
+        60,
+        81
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        14
+       ],
+       [
+        47,
+        64
+       ],
+       [
+        74,
+        74
+       ],
+       [
+        80,
+        91
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        2
+       ],
+       [
+        11,
+        34
+       ],
+       [
+        60,
+        81
+       ],
+       [
+        91,
+        91
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        14
+       ],
+       [
+        47,
+        64
+       ],
+       [
+        74,
+        74
+       ],
+       [
+        80,
+        91
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk walk.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 32.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_locomotion_drunk_walk_a",
+    "kind": "arm-space",
+    "note": "same walk, small pose differences"
+   },
+   "tags": [
+    "walk-style",
+    "drunk"
+   ],
+   "comment": "Drunk walk from the Male Drunk Pack; same length as kfb_locomotion_drunk_walk_a with small pose differences; body turned about 30 degrees.",
+   "residentIdeas": "Walking home from the tavern.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_walk_backwards_a",
+   "label_de": "Betrunken rückwärts gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 48,
+   "durationSec": 1.6,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.311,
+    "Rig_Large": 3.365
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        15
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        36,
+        41
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        10,
+        12
+       ],
+       [
+        18,
+        38
+       ],
+       [
+        44,
+        48
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        7
+       ],
+       [
+        9,
+        16
+       ],
+       [
+        20,
+        21
+       ],
+       [
+        36,
+        44
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        10,
+        13
+       ],
+       [
+        18,
+        38
+       ],
+       [
+        44,
+        48
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk walk backwards.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": -15.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "drunk",
+    "backward"
+   ],
+   "comment": "Drunk stagger backwards (about 0.8 m/s), strong backward lean.",
+   "residentIdeas": "Backing away from a bar fight.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_walking_turn_a",
+   "label_de": "Betrunken im Gehen drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 78,
+   "durationSec": 2.6,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 38.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.507,
+    "Rig_Large": 3.868
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        26
+       ],
+       [
+        42,
+        66
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        6
+       ],
+       [
+        22,
+        46
+       ],
+       [
+        71,
+        78
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        26
+       ],
+       [
+        37,
+        65
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        6
+       ],
+       [
+        22,
+        46
+       ],
+       [
+        71,
+        78
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk walking turn.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 38.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "drunk",
+    "curve"
+   ],
+   "comment": "Drunk walk that curves to the side (2.6 s; not a straight loop).",
+   "residentIdeas": "Zig-zagging home.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_turn_a",
+   "label_de": "Betrunken umdrehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 48,
+   "durationSec": 1.6,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 91.7,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        48
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ],
+       [
+        22,
+        48
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        48
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        10
+       ],
+       [
+        22,
+        48
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk turn.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 1.1,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn",
+    "drunk"
+   ],
+   "comment": "Drunk turn of about 90 degrees on the spot with a wobble.",
+   "residentIdeas": "Looking for the door.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_run_forward_a",
+   "label_de": "Betrunken rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 56,
+   "durationSec": 1.867,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 10.6,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 3.237,
+    "Rig_Large": 8.31
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        11
+       ],
+       [
+        36,
+        36
+       ],
+       [
+        39,
+        39
+       ],
+       [
+        41,
+        45
+       ]
+      ],
+      "foot.r": [
+       [
+        22,
+        25
+       ],
+       [
+        31,
+        31
+       ],
+       [
+        52,
+        56
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        12
+       ],
+       [
+        36,
+        44
+       ]
+      ],
+      "foot.r": [
+       [
+        22,
+        22
+       ],
+       [
+        24,
+        26
+       ],
+       [
+        52,
+        54
+       ],
+       [
+        56,
+        56
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk run forward.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": -2.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "drunk",
+    "comic"
+   ],
+   "comment": "Drunk run (about 1.7 m/s) with flailing arms and a big forward lean.",
+   "residentIdeas": "Running after the last bus; chasing a runaway Brickfish.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_run_backward_a",
+   "label_de": "Betrunken rückwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 34,
+   "durationSec": 1.133,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.798,
+    "Rig_Large": 4.616
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        12
+       ],
+       [
+        22,
+        29
+       ],
+       [
+        31,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        14,
+        20
+       ],
+       [
+        30,
+        34
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        13
+       ],
+       [
+        22,
+        29
+       ],
+       [
+        31,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        14,
+        20
+       ],
+       [
+        30,
+        34
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk run backward.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 5.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "drunk",
+    "backward",
+    "comic"
+   ],
+   "comment": "Drunk backwards run (about 1.6 m/s), leaning far back.",
+   "residentIdeas": "Fleeing in panic.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_running_left_turn_a",
+   "label_de": "Betrunken rennen mit Linkskurve",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 46,
+   "durationSec": 1.533,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 89.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.408,
+    "Rig_Large": 6.182
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        12
+       ],
+       [
+        29,
+        36
+       ],
+       [
+        38,
+        42
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        6,
+        7
+       ],
+       [
+        17,
+        26
+       ],
+       [
+        41,
+        46
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        10
+       ],
+       [
+        29,
+        35
+       ],
+       [
+        41,
+        41
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        17,
+        24
+       ],
+       [
+        41,
+        46
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "drunk running left turn.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 6.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "drunk",
+    "curve"
+   ],
+   "comment": "Drunk run curving left by about 90 degrees.",
+   "residentIdeas": "Running around a corner at the party.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_backward_walking_turn_a",
+   "label_de": "Betrunken rückwärts gehen und drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 60,
+   "durationSec": 2.0,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 53.8,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.258,
+    "Rig_Large": 3.229
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        20
+       ],
+       [
+        35,
+        46
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        10,
+        12
+       ],
+       [
+        17,
+        44
+       ],
+       [
+        51,
+        60
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        6
+       ],
+       [
+        8,
+        20
+       ],
+       [
+        35,
+        46
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        11,
+        12
+       ],
+       [
+        17,
+        46
+       ],
+       [
+        51,
+        60
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "backward walking turn.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": 24.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "walk-style",
+    "drunk",
+    "backward",
+    "curve"
+   ],
+   "comment": "Drunk backward walk that curves (2.0 s).",
+   "residentIdeas": "Backing into the crowd.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_drunk_run_backward_arc_right_a",
+   "label_de": "Betrunken rückwärts im Bogen rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 38,
+   "durationSec": 1.267,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 35.6,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.75,
+    "Rig_Large": 4.492
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        16
+       ],
+       [
+        26,
+        32
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        11,
+        14
+       ],
+       [
+        16,
+        27
+       ],
+       [
+        35,
+        38
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        15
+       ],
+       [
+        26,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        6
+       ],
+       [
+        11,
+        14
+       ],
+       [
+        16,
+        27
+       ],
+       [
+        35,
+        38
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "run backward arc right.fbx",
+   "sourcePack": "Male Drunk Pack",
+   "facingYawDeg": -0.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run",
+    "drunk",
+    "backward",
+    "curve"
+   ],
+   "comment": "Drunk backward run curving right.",
+   "residentIdeas": "Comic retreat in a circle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_left_turn_b",
+   "label_de": "Nach links drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 47,
+   "durationSec": 1.567,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 177.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.07,
+    "Rig_Large": 0.179
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        26
+       ],
+       [
+        30,
+        47
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        13,
+        40
+       ],
+       [
+        42,
+        47
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        26
+       ],
+       [
+        30,
+        47
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        12,
+        40
+       ],
+       [
+        42,
+        47
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "left turn.fbx",
+   "sourcePack": "Locomotion Pack",
+   "facingYawDeg": 2.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn"
+   ],
+   "comment": "Turn left on the spot of about 180 degrees (Locomotion Pack, 1.6 s); a different clip from kfb_locomotion_left_turn_a and left_turn_90_a.",
+   "residentIdeas": "Turning around from idle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_right_turn_b",
+   "label_de": "Nach rechts drehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 50,
+   "durationSec": 1.667,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 175.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.08,
+    "Rig_Large": 0.204
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        8
+       ],
+       [
+        13,
+        37
+       ],
+       [
+        41,
+        50
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        30,
+        50
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        9
+       ],
+       [
+        13,
+        37
+       ],
+       [
+        40,
+        50
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        25
+       ],
+       [
+        30,
+        50
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "right turn.fbx",
+   "sourcePack": "Locomotion Pack",
+   "facingYawDeg": -3.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "turn"
+   ],
+   "comment": "Turn right on the spot of about 180 degrees (Locomotion Pack, 1.7 s).",
+   "residentIdeas": "Turning around from idle.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_locomotion_running_d",
+   "label_de": "Rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 22,
+   "durationSec": 0.733,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.085,
+    "Rig_Large": 5.352
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        20,
+        22
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        20,
+        22
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "running.fbx",
+   "sourcePack": "Locomotion Pack",
+   "facingYawDeg": -1.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "run"
+   ],
+   "comment": "Plain run (about 2.8 m/s) from the Locomotion Pack; different from running_a/b/c.",
+   "residentIdeas": "Default run for chases and hurry scenes.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_action_back_flip_to_uppercut_a",
+   "label_de": "Rückwärtssalto mit Uppercut",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 176,
+   "durationSec": 5.867,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 20.2,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.322,
+    "Rig_Large": 0.827
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        129,
+        134
+       ]
+      ],
+      "foot.r": [
+       [
+        138,
+        138
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        130,
+        135
+       ]
+      ],
+      "foot.r": [
+       [
+        138,
+        138
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "back flip to uppercut.fbx",
+   "sourcePack": "Free Test Pack",
+   "facingYawDeg": -46.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_action_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_action_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "fight",
+    "acrobatic",
+    "one-shot"
+   ],
+   "comment": "Back flip that lands into a rising uppercut (5.9 s, body turned about 45 degrees).",
+   "residentIdeas": "Flashy fighter entrance or finisher; KFB wrestling showman.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_gangnam_style_a",
+   "label_de": "Gangnam Style",
+   "group": "dance",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 372,
+   "durationSec": 12.4,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 9.9,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        13
+       ],
+       [
+        28,
+        32
+       ],
+       [
+        53,
+        54
+       ],
+       [
+        71,
+        75
+       ],
+       [
+        80,
+        80
+       ],
+       [
+        96,
+        102
+       ],
+       [
+        109,
+        116
+       ],
+       [
+        120,
+        121
+       ],
+       [
+        136,
+        141
+       ],
+       [
+        149,
+        149
+       ],
+       [
+        177,
+        188
+       ],
+       [
+        206,
+        211
+       ],
+       [
+        220,
+        226
+       ],
+       [
+        231,
+        232
+       ],
+       [
+        244,
+        247
+       ],
+       [
+        257,
+        260
+       ],
+       [
+        270,
+        274
+       ],
+       [
+        283,
+        288
+       ],
+       [
+        291,
+        293
+       ],
+       [
+        307,
+        308
+       ],
+       [
+        320,
+        323
+       ],
+       [
+        335,
+        336
+       ],
+       [
+        353,
+        372
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        20
+       ],
+       [
+        24,
+        26
+       ],
+       [
+        40,
+        40
+       ],
+       [
+        42,
+        46
+       ],
+       [
+        54,
+        63
+       ],
+       [
+        81,
+        89
+       ],
+       [
+        93,
+        96
+       ],
+       [
+        122,
+        128
+       ],
+       [
+        135,
+        136
+       ],
+       [
+        148,
+        158
+       ],
+       [
+        162,
+        176
+       ],
+       [
+        192,
+        201
+       ],
+       [
+        203,
+        206
+       ],
+       [
+        218,
+        220
+       ],
+       [
+        232,
+        240
+       ],
+       [
+        250,
+        251
+       ],
+       [
+        253,
+        253
+       ],
+       [
+        263,
+        266
+       ],
+       [
+        277,
+        280
+       ],
+       [
+        296,
+        303
+       ],
+       [
+        312,
+        316
+       ],
+       [
+        325,
+        332
+       ],
+       [
+        339,
+        372
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        13
+       ],
+       [
+        28,
+        32
+       ],
+       [
+        53,
+        54
+       ],
+       [
+        71,
+        75
+       ],
+       [
+        80,
+        80
+       ],
+       [
+        95,
+        102
+       ],
+       [
+        109,
+        116
+       ],
+       [
+        120,
+        121
+       ],
+       [
+        136,
+        141
+       ],
+       [
+        148,
+        149
+       ],
+       [
+        164,
+        164
+       ],
+       [
+        176,
+        188
+       ],
+       [
+        205,
+        211
+       ],
+       [
+        220,
+        226
+       ],
+       [
+        231,
+        232
+       ],
+       [
+        244,
+        247
+       ],
+       [
+        257,
+        260
+       ],
+       [
+        269,
+        274
+       ],
+       [
+        283,
+        289
+       ],
+       [
+        291,
+        294
+       ],
+       [
+        306,
+        308
+       ],
+       [
+        320,
+        323
+       ],
+       [
+        333,
+        336
+       ],
+       [
+        353,
+        372
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        20
+       ],
+       [
+        25,
+        26
+       ],
+       [
+        40,
+        40
+       ],
+       [
+        42,
+        46
+       ],
+       [
+        55,
+        62
+       ],
+       [
+        81,
+        89
+       ],
+       [
+        94,
+        96
+       ],
+       [
+        122,
+        128
+       ],
+       [
+        135,
+        136
+       ],
+       [
+        148,
+        157
+       ],
+       [
+        162,
+        163
+       ],
+       [
+        165,
+        172
+       ],
+       [
+        174,
+        176
+       ],
+       [
+        192,
+        199
+       ],
+       [
+        203,
+        205
+       ],
+       [
+        218,
+        220
+       ],
+       [
+        232,
+        240
+       ],
+       [
+        250,
+        253
+       ],
+       [
+        263,
+        266
+       ],
+       [
+        277,
+        280
+       ],
+       [
+        296,
+        303
+       ],
+       [
+        313,
+        316
+       ],
+       [
+        325,
+        332
+       ],
+       [
+        339,
+        372
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "gangnam style.fbx",
+   "sourcePack": "Free Test Pack",
+   "facingYawDeg": -3.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_dance_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_dance_i05.glb"
+   },
+   "intake": "05",
+   "tags": [
+    "dance",
+    "party"
+   ],
+   "comment": "The horse-riding dance: bouncing gallop steps with crossed wrists and a lasso arm (12.4 s).",
+   "residentIdeas": "Party residents, the dance floor in Clay City, a band warm-up.",
+   "notes": ""
+  },
+  {
+   "id": "kfb_dance_samba_b",
+   "label_de": "Samba",
+   "group": "dance",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 717,
+   "durationSec": 23.9,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 104.8,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.204,
+    "Rig_Large": 0.524
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        473,
+        475
+       ],
+       [
+        635,
+        642
+       ]
+      ],
+      "foot.r": [
+       [
+        22,
+        31
+       ],
+       [
+        35,
+        36
+       ],
+       [
+        62,
+        63
+       ],
+       [
+        85,
+        88
+       ],
+       [
+        139,
+        144
+       ],
+       [
+        192,
+        194
+       ],
+       [
+        198,
+        202
+       ],
+       [
+        222,
+        224
+       ],
+       [
+        249,
+        252
+       ],
+       [
+        260,
+        261
+       ],
+       [
+        272,
+        274
+       ],
+       [
+        279,
+        279
+       ],
+       [
+        306,
+        307
+       ],
+       [
+        318,
+        318
+       ],
+       [
+        323,
+        323
+       ],
+       [
+        338,
+        340
+       ],
+       [
+        346,
+        349
+       ],
+       [
+        357,
+        357
+       ],
+       [
+        360,
+        361
+       ],
+       [
+        374,
+        378
+       ],
+       [
+        393,
+        397
+       ],
+       [
+        403,
+        404
+       ],
+       [
+        412,
+        415
+       ],
+       [
+        436,
+        440
+       ],
+       [
+        442,
+        447
+       ],
+       [
+        472,
+        474
+       ],
+       [
+        484,
+        486
+       ],
+       [
+        505,
+        507
+       ],
+       [
+        521,
+        522
+       ],
+       [
+        528,
+        528
+       ],
+       [
+        553,
+        556
+       ],
+       [
+        568,
+        570
+       ],
+       [
+        613,
+        619
+       ],
+       [
+        696,
+        696
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        423,
+        423
+       ],
+       [
+        473,
+        476
+       ],
+       [
+        635,
+        643
+       ]
+      ],
+      "foot.r": [
+       [
+        2,
+        7
+       ],
+       [
+        21,
+        37
+       ],
+       [
+        54,
+        64
+       ],
+       [
+        82,
+        90
+       ],
+       [
+        107,
+        118
+       ],
+       [
+        138,
+        145
+       ],
+       [
+        187,
+        196
+       ],
+       [
+        198,
+        202
+       ],
+       [
+        212,
+        213
+       ],
+       [
+        221,
+        224
+       ],
+       [
+        249,
+        254
+       ],
+       [
+        259,
+        261
+       ],
+       [
+        272,
+        274
+       ],
+       [
+        279,
+        281
+       ],
+       [
+        292,
+        292
+       ],
+       [
+        302,
+        302
+       ],
+       [
+        306,
+        314
+       ],
+       [
+        318,
+        318
+       ],
+       [
+        320,
+        324
+       ],
+       [
+        330,
+        332
+       ],
+       [
+        338,
+        340
+       ],
+       [
+        346,
+        349
+       ],
+       [
+        357,
+        357
+       ],
+       [
+        360,
+        361
+       ],
+       [
+        370,
+        378
+       ],
+       [
+        393,
+        399
+       ],
+       [
+        403,
+        404
+       ],
+       [
+        412,
+        415
+       ],
+       [
+        431,
+        431
+       ],
+       [
+        434,
+        440
+       ],
+       [
+        442,
+        447
+       ],
+       [
+        472,
+        474
+       ],
+       [
+        484,
+        486
+       ],
+       [
+        505,
+        507
+       ],
+       [
+        521,
+        522
+       ],
+       [
+        528,
+        528
+       ],
+       [
+        567,
+        573
+       ],
+       [
+        612,
+        619
+       ],
+       [
+        660,
+        669
+       ],
+       [
+        692,
+        698
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "samba dancing.fbx",
+   "sourcePack": "Free Test Pack",
+   "facingYawDeg": 91.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_dance_i05.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_dance_i05.glb"
+   },
+   "intake": "05",
+   "variantOf": {
+    "id": "kfb_dance_samba_a",
+    "kind": "arm-space",
+    "note": "same dance, small pose differences, different start facing"
+   },
+   "tags": [
+    "dance"
+   ],
+   "comment": "Samba from the Free Test Pack: same length as kfb_dance_samba_a with small pose differences, turned about 90 degrees at the start.",
+   "residentIdeas": "As samba_a.",
+   "notes": ""
   }
  ],
  "mergedFromV1": "bestVariant, ledgeHeightM, endsOnTop merged from the published v1 catalogue by Coworker 2026-09-25",
@@ -25301,6 +33567,379 @@
   "01": "33 clips (v1)",
   "02": "146 clips (v2, 2026-09-25)",
   "03": "25 clips (2026-09-28): new groups talk and throw; supplement libraries *_i03.glb for action, locomotion and reaction; v2 files unchanged",
-  "04": "59 clips (2026-09-29): walk styles, fights and reactions; supplement libraries *_i04.glb for locomotion, action, reaction, idle and interaction; all earlier files unchanged. Two exact duplicates of existing clips were not baked: Walk To Stop (1).fbx = kfb_locomotion_walk_to_stop_a, Wheelbarrow Walk (1).fbx = kfb_locomotion_wheelbarrow_walk_a"
+  "04": "59 clips (2026-09-29): walk styles, fights and reactions; supplement libraries *_i04.glb for locomotion, action, reaction, idle and interaction; all earlier files unchanged. Two exact duplicates of existing clips were not baked: Walk To Stop (1).fbx = kfb_locomotion_walk_to_stop_a, Wheelbarrow Walk (1).fbx = kfb_locomotion_wheelbarrow_walk_a",
+  "AN-PERF-01": "3 clips authored in Blender (2026-09-29): gift give / receive, nutcracker march; libs/*/KFB_Motion_perf_an01.glb (folded in from KFB_Motion_Library.catalog.patch_an01.json).",
+  "05": "79 clips (2026-09-29): single clips (stairs, old man, texting walks, tripping, door, phone pacing, bug swatting) and the Farming, Female Basic Locomotion, Magic Locomotion, Male Drunk, Locomotion and Free Test packs; supplement libraries *_i05.glb; all earlier files unchanged. 28 pack clips are exact duplicates of library clips and were not baked (see RETURN_INTAKE_05.md); not animations: Farming Pack/Survivalist, Free Test Pack/skinning test"
+ },
+ "locomotionSets": {
+  "male_basic": {
+   "members": {
+    "idle": "kfb_idle_idle_f",
+    "walk": "kfb_locomotion_walking_c",
+    "run": "kfb_locomotion_running_d",
+    "runAlt": "kfb_locomotion_standard_run_a",
+    "strafeWalkLeft": "kfb_locomotion_left_strafe_walking_a",
+    "strafeWalkRight": "kfb_locomotion_right_strafe_walking_a",
+    "strafeRunLeft": "kfb_locomotion_left_strafe_a",
+    "strafeRunRight": "kfb_locomotion_right_strafe_a",
+    "turnLeft90": "kfb_locomotion_left_turn_90_a",
+    "turnRight90": "kfb_locomotion_right_turn_90_a",
+    "turnLeft180": "kfb_locomotion_left_turn_b",
+    "turnRight180": "kfb_locomotion_right_turn_b",
+    "jump": "kfb_locomotion_jump_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walk": {
+     "Rig_Medium": 1.1,
+     "Rig_Large": 2.82
+    },
+    "run": {
+     "Rig_Medium": 2.84,
+     "Rig_Large": 7.3
+    },
+    "runAlt": {
+     "Rig_Medium": 2.87,
+     "Rig_Large": 7.38
+    },
+    "strafeWalkLeft": {
+     "Rig_Medium": 1.14,
+     "Rig_Large": 2.93
+    },
+    "strafeWalkRight": {
+     "Rig_Medium": 1.14,
+     "Rig_Large": 2.92
+    },
+    "strafeRunLeft": {
+     "Rig_Medium": 2.93,
+     "Rig_Large": 7.52
+    },
+    "strafeRunRight": {
+     "Rig_Medium": 2.79,
+     "Rig_Large": 7.17
+    },
+    "turnLeft90": {
+     "Rig_Medium": 0.01,
+     "Rig_Large": 0.03
+    },
+    "turnRight90": {
+     "Rig_Medium": 0.01,
+     "Rig_Large": 0.04
+    },
+    "turnLeft180": {
+     "Rig_Medium": 0.04,
+     "Rig_Large": 0.11
+    },
+    "turnRight180": {
+     "Rig_Medium": 0.05,
+     "Rig_Large": 0.12
+    },
+    "jump": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "female_basic": {
+   "members": {
+    "idle": "kfb_idle_female_idle_a",
+    "walk": "kfb_locomotion_female_walking_a",
+    "run": "kfb_locomotion_female_running_a",
+    "strafeWalkLeft": "kfb_locomotion_female_left_strafe_walk_a",
+    "strafeWalkRight": "kfb_locomotion_female_right_strafe_walk_a",
+    "strafeRunLeft": "kfb_locomotion_female_left_strafe_a",
+    "strafeRunRight": "kfb_locomotion_female_right_strafe_a",
+    "turnLeft90": "kfb_locomotion_female_left_turn_a",
+    "turnRight90": "kfb_locomotion_female_right_turn_a",
+    "jump": "kfb_locomotion_female_jump_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walk": {
+     "Rig_Medium": 1.1,
+     "Rig_Large": 2.83
+    },
+    "run": {
+     "Rig_Medium": 2.45,
+     "Rig_Large": 6.29
+    },
+    "strafeWalkLeft": {
+     "Rig_Medium": 1.28,
+     "Rig_Large": 3.29
+    },
+    "strafeWalkRight": {
+     "Rig_Medium": 1.28,
+     "Rig_Large": 3.28
+    },
+    "strafeRunLeft": {
+     "Rig_Medium": 2.34,
+     "Rig_Large": 6.02
+    },
+    "strafeRunRight": {
+     "Rig_Medium": 2.34,
+     "Rig_Large": 6.02
+    },
+    "turnLeft90": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "turnRight90": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "jump": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "magic_caster": {
+   "members": {
+    "idle": "kfb_idle_magic_standing_idle_a",
+    "walkForward": "kfb_locomotion_standing_walk_forward_a",
+    "walkBack": "kfb_locomotion_magic_walk_back_a",
+    "walkLeft": "kfb_locomotion_magic_walk_left_a",
+    "walkRight": "kfb_locomotion_magic_walk_right_a",
+    "runForward": "kfb_locomotion_magic_run_forward_a",
+    "runBack": "kfb_locomotion_magic_run_back_a",
+    "runLeft": "kfb_locomotion_magic_run_left_a",
+    "runRight": "kfb_locomotion_magic_run_right_a",
+    "sprint": "kfb_locomotion_magic_sprint_forward_a",
+    "turnLeft90": "kfb_locomotion_magic_turn_left_90_a",
+    "turnRight90": "kfb_locomotion_magic_turn_right_90_a",
+    "jump": "kfb_locomotion_magic_jump_a",
+    "jumpRunning": "kfb_locomotion_magic_jump_running_a",
+    "jumpRunningLanding": "kfb_locomotion_magic_jump_running_landing_a",
+    "landToIdle": "kfb_locomotion_magic_land_to_idle_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walkForward": {
+     "Rig_Medium": 1.1,
+     "Rig_Large": 2.83
+    },
+    "walkBack": {
+     "Rig_Medium": 0.8,
+     "Rig_Large": 2.06
+    },
+    "walkLeft": {
+     "Rig_Medium": 0.88,
+     "Rig_Large": 2.26
+    },
+    "walkRight": {
+     "Rig_Medium": 0.91,
+     "Rig_Large": 2.34
+    },
+    "runForward": {
+     "Rig_Medium": 2.55,
+     "Rig_Large": 6.56
+    },
+    "runBack": {
+     "Rig_Medium": 2.1,
+     "Rig_Large": 5.4
+    },
+    "runLeft": {
+     "Rig_Medium": 2.29,
+     "Rig_Large": 5.88
+    },
+    "runRight": {
+     "Rig_Medium": 2.57,
+     "Rig_Large": 6.61
+    },
+    "sprint": {
+     "Rig_Medium": 3.63,
+     "Rig_Large": 9.32
+    },
+    "turnLeft90": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "turnRight90": {
+     "Rig_Medium": 0.04,
+     "Rig_Large": 0.11
+    },
+    "jump": {
+     "Rig_Medium": 0.03,
+     "Rig_Large": 0.08
+    },
+    "jumpRunning": {
+     "Rig_Medium": 2.53,
+     "Rig_Large": 6.51
+    },
+    "jumpRunningLanding": {
+     "Rig_Medium": 2.21,
+     "Rig_Large": 5.67
+    },
+    "landToIdle": {
+     "Rig_Medium": 0.75,
+     "Rig_Large": 1.93
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "drunk": {
+   "members": {
+    "idle": "kfb_idle_drunk_idle_a",
+    "idleVariation": "kfb_idle_drunk_idle_variation_a",
+    "idleVariation2": "kfb_idle_drunk_idle_variation_c",
+    "walk": "kfb_locomotion_drunk_walk_a",
+    "walkBack": "kfb_locomotion_drunk_walk_backwards_a",
+    "walkTurn": "kfb_locomotion_drunk_walking_turn_a",
+    "turn": "kfb_locomotion_drunk_turn_a",
+    "run": "kfb_locomotion_drunk_run_forward_a",
+    "runBack": "kfb_locomotion_drunk_run_backward_a",
+    "runTurnLeft": "kfb_locomotion_drunk_running_left_turn_a",
+    "walkBackTurn": "kfb_locomotion_drunk_backward_walking_turn_a",
+    "runBackArcRight": "kfb_locomotion_drunk_run_backward_arc_right_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "idleVariation": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "idleVariation2": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walk": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walkBack": {
+     "Rig_Medium": 0.82,
+     "Rig_Large": 2.1
+    },
+    "walkTurn": {
+     "Rig_Medium": 0.58,
+     "Rig_Large": 1.49
+    },
+    "turn": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "run": {
+     "Rig_Medium": 1.73,
+     "Rig_Large": 4.45
+    },
+    "runBack": {
+     "Rig_Medium": 1.59,
+     "Rig_Large": 4.07
+    },
+    "runTurnLeft": {
+     "Rig_Medium": 1.57,
+     "Rig_Large": 4.03
+    },
+    "walkBackTurn": {
+     "Rig_Medium": 0.63,
+     "Rig_Large": 1.61
+    },
+    "runBackArcRight": {
+     "Rig_Medium": 1.38,
+     "Rig_Large": 3.55
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "carry_box": {
+   "members": {
+    "idle": "kfb_idle_box_idle_a",
+    "turn135": "kfb_locomotion_box_turn_a",
+    "turn80": "kfb_locomotion_box_turn_b",
+    "walkArc": "kfb_locomotion_box_walk_arc_a",
+    "walk": "kfb_locomotion_jogging_with_box_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "turn135": {
+     "Rig_Medium": 0.17,
+     "Rig_Large": 0.44
+    },
+    "turn80": {
+     "Rig_Medium": 0.14,
+     "Rig_Large": 0.37
+    },
+    "walkArc": {
+     "Rig_Medium": 0.78,
+     "Rig_Large": 1.99
+    },
+    "walk": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "carry_holding": {
+   "members": {
+    "idle": "kfb_idle_holding_idle_a",
+    "walk": "kfb_locomotion_holding_walk_a",
+    "turnLeft": "kfb_locomotion_holding_turn_left_a",
+    "turnRight": "kfb_locomotion_holding_turn_right_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walk": {
+     "Rig_Medium": 0.82,
+     "Rig_Large": 2.11
+    },
+    "turnLeft": {
+     "Rig_Medium": 0.21,
+     "Rig_Large": 0.54
+    },
+    "turnRight": {
+     "Rig_Medium": 0.09,
+     "Rig_Large": 0.23
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "wheelbarrow": {
+   "members": {
+    "idle": "kfb_idle_wheelbarrow_idle_a",
+    "walk": "kfb_locomotion_wheelbarrow_walk_a",
+    "walkTurn": "kfb_locomotion_wheelbarrow_walk_turn_a",
+    "dump": "kfb_interaction_wheelbarrow_dump_a"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walk": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walkTurn": {
+     "Rig_Medium": 1.12,
+     "Rig_Large": 2.89
+    },
+    "dump": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    }
+   },
+   "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  }
  }
 }
