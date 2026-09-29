@@ -6,7 +6,7 @@ Runtime tests: **NOT APPLICABLE — no runtime changed**
 
 ## Result
 
-**19 / 19 PASS**
+**28 / 28 PASS**
 
 ### Workflow / policy sources
 1. main `skills/chat/START_HERE.md` contains LOOK-TORSION architecture-pass routing.
@@ -36,6 +36,21 @@ Runtime tests: **NOT APPLICABLE — no runtime changed**
 ### Negative/discoverability checks
 18. `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md` is **NOT_FOUND on main** before PR #290 merge — confirms the original stable-path persistence gap.
 19. S5 `START_HERE.md` is **NOT_FOUND on main** but resolves on `georg-doc-patch-2` — confirms the branch-local discoverability gap.
+
+
+
+### WSA Lead postmortem / Graveyard checks
+20. WSA Lead postmortem resolves and is explicitly classified `WSA LEAD FAIL`.
+21. Postmortem contains the fresh-chat Reißleine question.
+22. `skills/chat/START_HERE.md` routes the new postmortem.
+23. Canonical Graveyard parses as v1.7.0, updated 2026-09-29, with **57 graves**.
+24. Graveyard contains `kanon-irgendwo-auf-github` as a large process/WSA-lead persistence incident.
+25. Graveyard entry points back to the exact WSA Lead postmortem source.
+26. `GRAVEYARD.md` header resolves v1.7.0 / 57 graves.
+27. `GRAVEYARD.md` includes the new WSA-Lead Canon-Persistenz-Fail section.
+28. Issue #247 remains OPEN and links the WSA Lead postmortem.
+
+The original 19 source-resolution checks and the additional 9 postmortem/Graveyard checks were executed separately; both batches passed with zero failures.
 
 ## Not claimed
 
