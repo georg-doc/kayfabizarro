@@ -2,6 +2,18 @@
 
 Status: **PLAN / AUSFÜHRBARE DESIGN-BRIEFS**, nicht Implementierungs-PASS. Owner: Georg. Branch: `codex/kfb-production-map-2026-09-29`. Die freigegebene KFB Production Control Site spiegelt diese Karte als Arbeitsoberfläche; dieser öffentliche GitHub-Text ist der für Claude Design abrufbare Handoff. Jede Ausführung prüft vorab den aktuellen GitHub-Stand nach `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` und `FRESH_CHAT_SLICE_PROTOCOL.md`. Kein automatischer Merge/Live.
 
+## Verbindlicher Webchat-Modus · Site-first, keine Deploy-Schleife
+
+Für ChatGPT-Webchats gilt ab 30.09. innerhalb dieser Produktionskarte:
+
+1. Zu Beginn die KFB Production Control Site öffnen und **`kfb_web_read`** benutzen.
+2. Im Chat beziehungsweise dessen eigener Preview arbeiten. Kein GitHub-Commit, PR, Cloudflare-Deploy, Hub-Update oder Stage-Routen-Test während der Arbeitsiteration.
+3. Nach einem echten Ergebnis **`kfb_web_checkpoint`** benutzen. `kind` ist `WIP_CHECKPOINT`, `DECISION`, `TEST_RESULT` oder `READY_FOR_INTEGRATION`; `workflow` trägt die Slice-ID. Body/JSON enthalten Ergebnis, offene Punkte und genau den nächsten Schritt.
+4. Dateien/ZIPs werden einmal in der Production Inbox hochgeladen und nur über Receipt/Metadaten referenziert; kein Base64- oder Datei-für-Datei-GitHub-Stunt.
+5. Nur ein `READY_FOR_INTEGRATION`-Checkpoint beauftragt später Codex/Work mit **einem** gebündelten GitHub-Checkpoint. Stage/Cloudflare erst, wenn ein spielbarer integrierter Meilenstein ausdrücklich eine öffentliche Probe braucht.
+6. Fehlt ein erwartetes Site-Tool, STOP mit `SITE_TOOL_MISSING`; nicht selbstständig auf GitHub/Cloudflare ausweichen.
+
+Die Site ist Arbeits-/Zwischenspeicher. GitHub bleibt Code- und Archiv-SSOT **nach** dem Integrations-Gate. Claude Design kann die privaten Site-Werkzeuge weiterhin nicht vorausgesetzt bekommen und erhält deshalb die öffentliche GitHub-Briefingfassung oder einen hochgeladenen Session Cut.
 ## Wahrheit vor Planung
 
 - **K1/H0 ist das visuelle Gold**, nicht R0A. Erst echter KayKit-Donor, dann pro Haus `clayify` + `clay-soften.v1`, Material/K2-Oberfläche, Fußkontakt, erst danach freigegebene Biegung. Quelle: [K1/H0-Router](https://github.com/georg-doc/kayfabizarro/blob/main/tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md); [Façade-Gold-Kandidat PR #295](https://github.com/georg-doc/kayfabizarro/pull/295). PR #295 ist **nicht abgenommen**: integrierter Schatten-Browsernachweis fehlgeschlagen. Kein globaler Schatten-PASS.
@@ -69,3 +81,29 @@ Erstelle **keine Datenkolonnen**. Gleiche Kamera/Route/Actor und drei Ansichten:
 **Ausführer:** Claude Design für visuelle A/B-Prüfung, High, danach technischer Owner-Review in Travel/World. Ausgang: Travel PR #42. Die nominelle Prüfroute oben ist derzeit kaputt (Router-Fallback), nicht als Probe verwenden.
 
 Zuerst eine tatsächliche öffentliche Prüfseite aus dem Spike herstellen und dann in Isolation testen: lädt der echte ActionFigure, DEM-Boden, stabile Kamera/Depth, WASD/Shift, Kontakt? Den aktuellen Public-Status nicht als PASS ausgeben. Dann dieselbe kurze Route/Actor/geringe Kit-Dichte in zwei Varianten gegenüberstellen: bestehender World/Joyride-Owner und MapLibre als Terrain/Koordinaten/Tile-Streamer. K1/H0/K2-Clay darf als Präsentationsschicht **erst danach** hinzu; ein hübscher Shader beweist keine funktionierende Mobilität. Pro Variante: Startzeit, Frame-Pacing, Draw Calls/Dreiecke, Terrain-Kontakt, Straßeneinpassung, Nah-/Fernbild, Offline-/Tile-Ausfall, ältere Geräte, Lizenz-/Dienstabhängigkeit. Stop, wenn MapLibre den existing Track Core, Race- oder Flight-Movement-Owner verdoppeln müsste. Ergebnis ist eine Entscheidungsnotiz: World-Donor übernehmen / nur Karten- und DEM-Daten nutzen / verwerfen – mit Beleg, kein stiller Owner-Swap.
+
+## Brief F · Combat Arena Clay · spielbar zuerst, Open World danach
+
+**Ausführer:** Claude Design für den visuellen Pass auf der bestehenden Combat Arena; technische Integration anschließend im Owner-Repo `georg-doc/KFB-Combat-Arena`. High. Kein neuer Combat- oder World-Owner.
+
+### Phase F1 · bestehende Arena spielbar im Clay-Look
+
+Arbeite auf dem aktuellen spielbaren Ranged-Loop. Erhalte die bestehenden Besitzer unverändert: Player/Locomotion, Gunfight/Projectile, MobBrain, Damage, Enemy Lifecycle, Rewards und RunFlow. Das Ziel ist kein Combat-Neubau, sondern ein Presentation-Adapter:
+
+- K1/H0-Formensprache und K2-Material-/Reliefprofil auf Actor, Arena, Props und Gegner;
+- gemeinsamer Skydome-, Licht- und Schattenvertrag; kein lokaler Schatten-Sonderfix;
+- gepoolte, seedbare Knet-Partikel für `muzzle`, `projectile_trail`, `hit`, `land`, `ko/kill`, `reward`, `prop_break` und `explosion`;
+- vorhandene Comic-Sterne, Impact-Blasen, Rauch und sonstige Combat-VFX bleiben eine additive zweite Spur statt ersetzt zu werden;
+- Normal-, Low- und Legacy-Fallback: weniger Partikel, kürzere Lebenszeit, vereinfachtes Material, reduzierte Schatten – Gameplay und Trefferlesbarkeit bleiben identisch.
+
+**Beleg:** derselbe 60-Sekunden-Loop vor/nach Adapter (Move → Aim → Shoot → Hit → Kill → Reward), identische Treffer-/Reward-Zählung, sichtbare VFX-Events, keine neuen Gameplay-Owner, sowie echte Frame-/Draw-/Geometrie-Messung oder ausdrücklich `UNBELEGT`. Ergebnis maximal `DESIGN CANDIDATE` bis zur Integration im Combat-Repo.
+
+### Phase F2 · Combat-Vertrag in die Open World übernehmen
+
+Nach F1 wird nicht die Arena-Runtime kopiert. Exportiere einen kleinen Adaptervertrag:
+
+- **World besitzt:** Platzierung, Terrain-/Bodenkontakt, Navigation, Streaming, Spawn-Zonen und Weltkamera.
+- **Combat besitzt:** Targeting, Projectile beziehungsweise AttackLedger, Trefferfenster, Schaden, Gegner-Lifecycle, Rewards und Combat-Events.
+- **Shared Presentation konsumiert:** Actor-/Motion-Profile, Prop-Sockets, Clay-Material und VFX-Rezepte; sie schreibt keine Bewegung und keinen Schaden.
+
+Erster Open-World-Proof bleibt Ranged: ein Spieler, ein Gegner-Cluster, ein Reward, ein klar begrenzter Encounter-Bereich. Melee folgt später. Blender `CHOREO_LAB_01` und Combat PR #7 liefern Choreografie-/Kontaktkandidaten, sind aber ohne Arena-/Runtime-Abnahme kein stiller Melee-PASS.
