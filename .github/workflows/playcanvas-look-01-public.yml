@@ -1,0 +1,37 @@
+name: PlayCanvas LOOK-01 public proof
+on:
+  push:
+    branches: [chatgpt-web/playcanvas-look-01-2026-09-29]
+    paths:
+      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/public-proof.mjs'
+      - '.github/workflows/playcanvas-look-01-public.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/public-proof.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/public-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Public Stage proof
+        run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/public-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playcanvas-look-01-public-proof
+          path: playcanvas-look-01-public-proof
+          retention-days: 14
