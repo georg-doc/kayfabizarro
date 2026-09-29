@@ -2054,3 +2054,23 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-29 · Shared shadow / clay-façade canon routing audit
+
+- Audited current GitHub state against ToolBox Production-03, WB-D2, World Integration r2, LOOK-TORSION, H0/K2 and the current World Core R0A donor.
+- Confirmed the recurring bright shadow/contact fix was implemented/documented but stranded in session-cut paths; the stable path `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md` was missing.
+- Confirmed S5 Building / Façade Clay Adapter is fully present on `georg-doc-patch-2@3232a1070686896833d6b7942fcd631b9fa8cda6`, not on main; main-only search is therefore insufficient.
+- Found one material-version ambiguity: S5 still points at the older H0 material path, while K2 (28.09., ACCEPTED AS BASE) makes `clay-material.v10` + current relief/toolmix the baseline for new stages and keeps accepted H0 frozen on v8.
+- Added stable shared routers for shadow/contact and clay-building/façade resolution and updated the main chat router to read them before rediscovery.
+- No runtime owner, Stage route, public review task or Live surface changed. Issue #247 remains the integrated shared-renderer regression gate.
+
+
+## 2026-09-29 · WSA Lead canon-persistence FAIL postmortem
+
+- Georg classified the recovered persistence/routing gap as another WSA-Lead FAIL and requested a postmortem.
+- Added `skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md`.
+- Root cause: accepted/proven reusable knowledge was treated as persisted because bytes existed somewhere on GitHub, while stable routing, branch/head pointers, precedence and fresh-chat recoverability were incomplete.
+- New closure invariant: reusable acceptance is not persistence-complete until a cold chat can recover stable home/source pin, precedence, consumer scope, open remainder and forbidden rebuilds from the standard router.
+- Added Graveyard entry `kanon-irgendwo-auf-github`; canonical Graveyard advances **v1.6.0 → v1.7.0**, **56 → 57 graves**.
+- Recovery remains docs/routing-only on Draft PR #290; no runtime, Stage or Live change.

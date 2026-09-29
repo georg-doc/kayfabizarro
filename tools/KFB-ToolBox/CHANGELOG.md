@@ -151,3 +151,20 @@ Current READY gate:
 
 ### BOUNDARY
 No PDF conversion, no asset promotion, no Blender integration, no Stage/Live publication and no second asset registry are claimed.
+
+
+## 2026-09-29 · Shared shadow/contact + clay-building routing correction
+
+### AUDIT
+The known shadow/contact solution was present only inside ToolBox / WB-D2 / World Integration session cuts; the stable path already referenced by several design docs, `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md`, did not exist on main. S5 Building/Façade Clay Adapter was also found fully persisted but branch-local on `georg-doc-patch-2@3232a1070686896833d6b7942fcd631b9fa8cda6`, so a main-only search could falsely report it missing.
+
+### ROUTING
+Added:
+- `docs/LESSONS_SHADOWS.md` — fitted/snapped shadow frustum, texel-relative normalBias, thin-overlay casting rule, WB-D2 world-scale contact variant, FACE_NORMALS/contact distinction and regression checks;
+- `docs/CLAY_BUILDING_FACADE_ROUTER.md` — explicit S5/H0/K2/Elastic/WorldBuilder/LOOK-TORSION source-resolution order.
+
+### VERSION CORRECTION
+S5's 2026-09-27 material references predate the accepted K2 2026-09-28 base. New stages use K2 `clay-material.v10` + current relief/toolmix unless a bounded legacy comparison requires the earlier H0 path. Accepted H0 stays on its frozen v8 line.
+
+### BOUNDARY
+No renderer, deformer, WorldBuilder, OSM presenter, track geometry, material runtime, Stage or Live surface changed. This is a documentation/routing repair only; shared integration verification remains open under issue #247.

@@ -1,6 +1,6 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.6.0 · 2026-09-24** · 56 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.7.0 · 2026-09-29** · 57 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
 
 ## Was das ist
 
@@ -48,6 +48,13 @@ Der Tag war ein Konsolidierungstag nach dem Abbruch des ChatGPT-Web-Lead-Chats: 
 ## Folgeentscheidung (WSA, PR #201, 24.09.2026)
 
 Aus diesem Tag folgt: Der Coworker darf künftig Statusdaten aktualisieren, aber keine ungeprüften produktiven Briefings mehr schreiben. Der kompakte Production Desk ist der einzige KFB Hub; nächstes Gate `HUB-CTRL-01`.
+
+## Neu am 29.09.2026 — WSA-Lead Canon-Persistenz-Fail
+
+- *Der Kanon, der nur irgendwo auf GitHub lag* (Large · Process/WSA Lead): Shadow-/Contact- und Clay-Fassaden-Regeln waren technisch vorhanden und teils abgenommen, blieben aber in Session-Cuts bzw. einem branch-lokalen S5-Brief ohne stabile Main-Routing-/Vorrangsschicht. Ein frischer Chat konnte den geltenden Stand deshalb korrekt verfehlen und gelöste Arbeit wieder als offen behandeln.
+- Reißleine: **„Kann ein frischer Chat die abgenommene Regel von START_HERE aus finden?“**
+- Vollständiger Postmortem: `skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md`.
+- Recovery/Canon-Routing: Draft PR #290.
 
 ## Pflegeregel
 
