@@ -129,3 +129,11 @@
 - Public artifact `11043990368`, digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`; screenshots `stage.png`, `hub.png`.
 - Prior 1.10-u/s Walking_A Travel candidate is superseded for human review; old measured profile remains regression/reference only.
 - Exactly one next gate: Georg human two-gear feel. No Enter/Exit Kart before verdict.
+
+
+## 2026-09-29 · GROUND-WALLCLOCK-TIMING-01 · implementation
+- Georg TUNE 3: W=Running_A / Shift=Running_B mapping is correct, but world traversal remains slow/ruckly.
+- Confirmed live timing bug: `frame()` discarded all wall-clock time beyond 1/30 s while deterministic QA used fixed catch-up slices.
+- Replaced live simulation clamp with bounded 1/60-s catch-up slices, max 0.25 s per RAF; render/camera/HUD/audio remain one update per RAF.
+- Running_A / Running_B targets unchanged; no speed retune and no new movement owner.
+- Added explicit slow-frame timing QA plus full Turbo / Ground+Orbit / Two-Gear regression; tests pending.

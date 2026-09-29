@@ -179,6 +179,12 @@ let introTimer = 0;
 let resultsShown = false;
 let time = 0;
 const clock = new THREE.Clock();
+// GROUND-WALLCLOCK-TIMING-01: simulation time must track wall-clock time even when rendering
+// falls below 30 FPS. Catch up in small physics slices; render still happens once per RAF.
+const LIVE_SIM_STEP = 1 / 60;
+const LIVE_MAX_CATCHUP = 0.25;
+const LIVE_VISUAL_DT_MAX = 1 / 30;
+let liveTiming = { rawDt:0, simulatedDt:0, steps:0, droppedDt:0 };
 const NEUTRAL = Object.freeze({ throttle: 0, brake: 0, steer: 0, drift: false, item: false, lookBack: false });
 
 function setState(s) {
@@ -618,41 +624,64 @@ function simulate(w, dt) {
   }
 }
 
+function simulateElapsed(w, elapsed, { step=LIVE_SIM_STEP, maxCatchUp=LIVE_MAX_CATCHUP } = {}) {
+  const rawDt = Math.max(0, Number(elapsed) || 0);
+  step = Math.max(1 / 240, Math.min(1 / 20, Number(step) || LIVE_SIM_STEP));
+  maxCatchUp = Math.max(step, Number(maxCatchUp) || LIVE_MAX_CATCHUP);
+  const budget = Math.min(rawDt, maxCatchUp);
+  let simulatedDt = 0, steps = 0;
+  while (simulatedDt + 1e-9 < budget && steps < 64) {
+    const dt = Math.min(step, budget - simulatedDt);
+    simulate(w, dt);
+    simulatedDt += dt;
+    steps++;
+  }
+  return {
+    rawDt,
+    simulatedDt,
+    steps,
+    droppedDt: Math.max(0, rawDt - simulatedDt),
+  };
+}
+
 function frame() {
   requestAnimationFrame(frame);
   const rawDt = clock.getDelta();
-  const dt = Math.min(rawDt, 1 / 30);
+  const visualDt = Math.min(rawDt, LIVE_VISUAL_DT_MAX);
   safe('menu.update', () => menu.update(rawDt, resultsShown ? 'results' : state));
 
   const w = world;
   if (w) {
     const running = state !== 'paused' && state !== 'loading' && state !== 'boot';
-    if (running) simulate(w, dt);
+    liveTiming = running
+      ? simulateElapsed(w, rawDt)
+      : { rawDt, simulatedDt:0, steps:0, droppedDt:0 };
 
     if ((w.mode === 'race' || w.mode === 'explore') && w.player) {
       const groundMode = w.controlMode === 'ground' && !!w.groundPlayer;
       const cameraTarget = groundMode ? w.groundPlayer : w.player;
       if (state !== 'paused') {
         if (groundMode && w.groundOrbit) {
-          safe('camera.groundOrbit.update', () => w.groundOrbit.update(dt, cameraTarget));
+          safe('camera.groundOrbit.update', () => w.groundOrbit.update(visualDt, cameraTarget));
         } else {
           const mode = groundMode ? 'ground' : state === 'intro' ? 'intro' : state === 'countdown' ? 'countdown' : state === 'finished' ? 'finish' : 'race';
           const lookBack = !groundMode && !!((state === 'racing' || state === 'explore') && playerInput && playerInput.lookBack);
-          safe('camera.update', () => w.chase.update(dt, cameraTarget, { lookBack, mode }));
+          safe('camera.update', () => w.chase.update(visualDt, cameraTarget, { lookBack, mode }));
         }
       }
-      if (w.mode === 'race') safe('hud.update', () => hud.update(dt, { player: w.player, karts: w.karts, race: w.race, itemSystem: w.items, track: w.track, time }));
+      if (w.mode === 'race') safe('hud.update', () => hud.update(visualDt, { player: w.player, karts: w.karts, race: w.race, itemSystem: w.items, track: w.track, time }));
     } else {
-      updateAttractCamera(dt);
+      updateAttractCamera(visualDt);
     }
     const audioPlayer = w.controlMode === 'ground' ? null : w.player;
-    safe('audio.update', () => audio.update(dt, { player: audioPlayer, karts: w.karts, camera }));
+    safe('audio.update', () => audio.update(visualDt, { player: audioPlayer, karts: w.karts, camera }));
   } else {
-    updateAttractCamera(dt);
-    safe('audio.update', () => audio.update(dt, { camera }));
+    liveTiming = { rawDt, simulatedDt:0, steps:0, droppedDt:0 };
+    updateAttractCamera(visualDt);
+    safe('audio.update', () => audio.update(visualDt, { camera }));
   }
 
-  try { composer.render(dt); } catch (e) { report('render', e); }
+  try { composer.render(visualDt); } catch (e) { report('render', e); }
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -697,6 +726,14 @@ window.__game = {
   goToTitle,
   skipIntro: () => beginCountdown(),
   errors: () => [...seenErrors],
+  timing: () => ({ ...liveTiming, simStep:LIVE_SIM_STEP, maxCatchUp:LIVE_MAX_CATCHUP, visualDtMax:LIVE_VISUAL_DT_MAX }),
+  /** Production timing seam: exercise the same bounded catch-up used by the live RAF loop. */
+  advanceFrameElapsed(seconds) {
+    const w = world;
+    if (!w || !(seconds > 0)) return { rawDt:0, simulatedDt:0, steps:0, droppedDt:0 };
+    liveTiming = simulateElapsed(w, seconds);
+    return { ...liveTiming };
+  },
   /** Deterministic test seam: advance gameplay without relying on requestAnimationFrame. */
   advanceBy(seconds, step = 1 / 60) {
     const w = world;

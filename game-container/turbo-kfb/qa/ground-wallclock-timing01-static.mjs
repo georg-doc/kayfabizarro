@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+const src=await fs.readFile(new URL('../app/src/main.js',import.meta.url),'utf8');
+assert.match(src,/const LIVE_SIM_STEP = 1 \/ 60/);
+assert.match(src,/const LIVE_MAX_CATCHUP = 0\.25/);
+assert.match(src,/function simulateElapsed\(w, elapsed/);
+assert.match(src,/simulateElapsed\(w, rawDt\)/);
+assert.match(src,/advanceFrameElapsed\(seconds\)/);
+assert.doesNotMatch(src,/const dt = Math\.min\(rawDt, 1 \/ 30\)/);
+assert.match(src,/composer\.render\(visualDt\)/);
+console.log('RESULT 7/7 PASS');

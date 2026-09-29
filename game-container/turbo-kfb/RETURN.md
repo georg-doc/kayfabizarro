@@ -553,3 +553,30 @@ Binding direction:
 
 ## Exactly one current next gate
 **GROUND-WALLCLOCK-TIMING-01:** repair the live RAF timing path so elapsed wall-clock time is not silently discarded below 30 FPS; prove slow-frame catch-up plus existing Ground+Orbit / Two-Gear regression before republishing the same Stage route. No speed retune until this timing gate is judged.
+
+
+## GROUND-WALLCLOCK-TIMING-01 · implementation checkpoint
+
+Status: **IMPLEMENTED · TESTS PENDING**
+
+Root cause repaired:
+- old live RAF path advanced simulation with `Math.min(rawDt, 1/30)` and silently discarded the rest of elapsed wall-clock time;
+- deterministic `advanceBy()` had masked this because QA already subdivided elapsed time correctly.
+
+Implementation:
+- live elapsed time is now consumed through `simulateElapsed()` in **1/60 s simulation slices**;
+- normal frame catch-up budget is bounded to **0.25 s** to avoid a spiral after a severe stall;
+- camera / HUD / audio / render still update **once per RAF** using the existing bounded visual dt;
+- no Running_A / Running_B speed retune;
+- no movement-owner change;
+- W=Running_A / Shift=Running_B, Jump and Orbit remain unchanged;
+- a production timing seam `advanceFrameElapsed()` exercises the exact same catch-up helper for QA.
+
+Regression plan on the same branch:
+1. timing static;
+2. full Turbo Checkpoint-A (Explore + Race + original Ground);
+3. existing Ground+Orbit regression;
+4. Two-Gear Travel regression;
+5. explicit 15-FPS wall-clock catch-up browser proof.
+
+Exactly one gate: all five evidence layers must pass before the same public Pace-Tune route is republished.
