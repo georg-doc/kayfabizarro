@@ -707,3 +707,34 @@ New QA:
 - `ground-locomotion-profile-consumer01-static.mjs`;
 - `ground-locomotion-profile-consumer01.mjs`;
 - dedicated workflow runs full Turbo + Ground/Orbit regressions before the new Travel proof.
+
+
+### GROUND-LOCOMOTION-PROFILE-CONSUMER-01 · first browser run · Repair 1 diagnosis
+
+Run `36609780664` · job `109547927367`:
+- canonical profile static **16/16 PASS**;
+- integration static **10/10 PASS**;
+- full Turbo baseline **29/29 PASS**;
+- existing Ground+Orbit **27/27 PASS**;
+- dedicated Travel proof reached the canonical owner and then failed at the old assumption “sprint = Running_B”.
+- artifact `11052522886`;
+- digest `sha256:db8d3353e6a967f8463441f5ecc45dbafe43b065d9ce2d0c93c12e7abe852192`.
+
+Observed exact ActionFigure profile:
+- `run` = source `Running_A`, measured `2.455 u/s`;
+- `sprint` = **Running_A playback-rate variant 1.3×**, measured profile world speed `3.192 u/s`;
+- `Running_B` measured **59.6% slower than Running_A** in this exact ActionFigure/measurement path, so the canonical owner correctly rejected it as the faster role.
+
+Cross-check:
+- KCL/Motion Lab historically marked Running_B as `HOLD` rather than a promoted gait;
+- `anim-map.v1.js` treats Running_B as an alternate Run, not an intrinsic Sprint;
+- actor-specific FrizzleBob EarRig evidence can resolve Running_B differently, so this is profile/actor-specific rather than a universal clip label.
+
+Repair 1:
+- **do not force Running_B**;
+- accept the canonical ActionFigure sprint role;
+- raise only the Travel playback safety ceiling from 3.0× to 4.0× so the 9.45-u/s gameplay target can stay synchronized with the resolved Running_A sprint variant;
+- when run→sprint uses the same source clip, record/apply the semantic role transition hint without mounting a second AnimationAction;
+- update QA to prove the actual canonical role decision rather than the old hand-wired Running_B assumption.
+
+This is repair pass **1/2**. If the next repair run fails, only one final repair remains.
