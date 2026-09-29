@@ -36,7 +36,21 @@ Behalte die angenommene Production-05-Shell. Lies K1/H0 und die exakten donor-ba
 
 **Ausführer:** Claude Design Desktop im bestehenden KFB World/Joyride-Projekt, High; **nach** dem P1-Draufsicht-Gate. Kein neuer Runtime-Owner.
 
-Baue einen kleinen spielbaren Mode-Switch-Proof auf **einem** realen Actor und derselben Strecke: zu Fuß (idle/walk/run/sprint/back/strafe/turn/jump/land), Auto (direkter Mode-Button, Enter/Exit, seated/steer/brake/airborne/land), Flug (direkter Button, Start/Steigen/Sinken/Landen). Behalte Joyride Race-v0.8-Fahrphysik und Travel Flight/`carpet.js`; Ground-`walk-controller` schreibt nur Ground-Weltposition. Animiere nach den gemessenen KayKit-/v5-Profilen; Clip-Tempo, Weltgeschwindigkeit und Schrittlänge dürfen nicht auseinanderlaufen. `Running_B` nur bei konkreter Rig-Prüfung, nicht pauschal als Sprint. Kein Root-Motion-Doppeltransport. Gib eine kompakte State-/Transition-Tabelle, drei 20-Sekunden-Spielproben, Kontakt-/Fußrutsch- und Modewechsel-Beweis. Runtime-Promotion in Ground/Race/Travel ist ein **späterer separater Integrations-Gate**, nicht Design-Preview-Automatismus.
+### Verbindliche Klärung 29.09 · Race v0.8, k2/k3 und Actor
+
+- **„Race v0.8“ ist hier keine zusätzliche vierte Physikdatei.** Gemeint sind die übernommenen FLOW-/FEEL-Werte aus KFB Stunt Car Race · Cologne Option C-3. Im Joyride werden sie durch `lab-drive/kfb-drive.k2.js` benutzt. `k2` ergänzt Streckenrahmen, Spurhilfe, Knetbande, Absprung und Landehilfe. Referenz für diesen Proof ist daher **gepinntes k2 mit unveränderten Race-v0.8-FLOW/FEEL-Werten**.
+- **`k3` ist ein ungeprüfter J13-Fork** mit verändertem Verhalten an Sprungkanten. J13 bleibt eingefroren; k3 darf nur separat als Kandidat verglichen werden und ersetzt k2 nicht still.
+- **Auto ist im P1/J14 ein Track-/Parcours-Modus.** k2 ist streckenparametrisch und kein freier Open-World-Autocontroller. Echtes freies Wenden/Einparken wird hier nicht vorgetäuscht. Für die Fahrschule sind Wendestelle und Parktaschen als Track-Core-Bausteine zulässig; geführte Manöver werden als solche bezeichnet. Eine spätere freie Stadtfahrt braucht einen eigenen, ausdrücklich gerouteten Integrationsentscheid.
+- **ActionFigure ist der Mess-/Proof-Actor**, nicht automatisch der endgültige Hero. Vor Auto-PASS Sitzhöhe, Kopf-/Lenkradfreiheit und Maßstab messen.
+- **Ein-/Aussteigen:** Cartoon-Schnitt/Clay-Squash verwenden; keine Stuhl-Clips als angeblich echtes Einsteigen. Als ADAPTABLE/PROCEDURAL kennzeichnen.
+- **Laufen:** nur auf vom Track Core als begehbar gemeldeten Straßen, Rampen und Plätzen. Looping und Skydrive sind Auto-only. Brücke/Tunnel brauchen getrennte Surface-IDs; kein einfaches Höhenfeld darf die Ebenen verwechseln.
+- **Modus-Gates:** Aussteigen nur geparkt, unter 0,5 m/s und auf begehbarer Fläche. Landen nur auf begehbarer Fläche. Ablehnung kurz am Actor anzeigen. Kameraübergabe als eigener State dokumentieren.
+- **Flug:** Für `carpet.js` liegt im Designprojekt derzeit kein verifizierter Pfad/Pin vor. Deshalb **keinen Kugel→Ebene-Adapter erfinden**. Für J14 darf der vorhandene Joyride-Q/E-Flug nur als lokaler DESIGN-CANDIDATE die State-/Kameraübergabe zeigen; er wird nicht zum neuen Flight-Owner. Endgültige Travel-Adoption bleibt HOLD, bis der gepinnte Donor vorliegt.
+- **Sprint:** 1,3× bleibt Kandidat, bis Tempo, Schrittlänge und Fußkontakt seitlich an der ActionFigure gemessen sind. Andernfalls `UNPROVEN`.
+
+Baue darauf einen kleinen Mode-Switch-Proof auf derselben Strecke: zu Fuß (idle/walk/run/sprint/back/strafe/turn/jump/land), Auto (direkter Mode-Button, Cartoon-Enter/Exit, seated/steer/brake/airborne/land) und lokaler Flug-Candidate (direkter Button, Start/Steigen/Sinken/Landen). Ground-`walk-controller` schreibt ausschließlich Ground-Weltposition. Animiere nach den gemessenen KayKit-/v5-Profilen; Clip-Tempo, Weltgeschwindigkeit und Schrittlänge dürfen nicht auseinanderlaufen. `Running_B` nur bei konkreter Rig-Prüfung. Kein Root-Motion-Doppeltransport.
+
+**Beleg:** Zustandsspuren als JSON pro Probe (Modus, Zustand, Clip, Cliptempo, Weltgeschwindigkeit, Fußrutschen, Surface-/Kontakt-Ereignisse), Bildfolgen vorne/seitlich/3⁄4 und drei 20-Sekunden-Proben. Status maximal **DESIGN PROOF · CANDIDATE**. Die vollständige P1-Runde wird vorher einmal gefahren. Runtime-Promotion in Ground/Race/Travel ist ein späterer separater Integrations-Gate.
 
 ## Brief C · Track-Baukasten / Joyride Parcours P1 · laufenden Job präzisieren
 
