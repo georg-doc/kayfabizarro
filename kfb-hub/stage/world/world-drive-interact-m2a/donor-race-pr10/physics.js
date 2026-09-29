@@ -56,7 +56,7 @@ export async function createPhysics(fixture){
   // do not have an axis-aligned declaration suitable for the conservative test.
   const h=yaw/2;let occupied=false;world.updateSceneQueries();
   world.intersectionsWithShape({x:point[0],y:point[1]+.6,z:point[2]},{x:0,y:Math.sin(h),z:0,w:Math.cos(h)},spawnBox,c=>{
-   const s=surfaces.get(c.handle);if(s&&s.id!=='island')occupied=true;return !occupied;
+   const s=surfaces.get(c.handle);if(s&&s.id!=='island'&&s.kind!=='terrain'&&!s.road)occupied=true;return !occupied;
   },RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,undefined,chassis,body);
   return !occupied;
  }
@@ -113,6 +113,27 @@ export async function createPhysics(fixture){
   return snapshot({uy,yaw,slip,groundIds,contacts});
  }
  function snapshot(x={}){const rot=body.rotation(),v=body.linvel();return {tick,run,phase,position:{...body.translation()},rotation:{...rot},velocity:{...v},angularVelocity:{...body.angvel()},speed:vehicle.currentVehicleSpeed(),contacts:Array.from({length:4},(_,i)=>!!vehicle.wheelIsInContact(i)),wheelLengths:Array.from({length:4},(_,i)=>vehicle.wheelSuspensionLength(i)),steer,drifting,airborne:air,up:x.uy??1-2*(rot.x*rot.x+rot.z*rot.z),yaw:x.yaw??0,slip:x.slip??0,groundIds:x.groundIds||[],safe:{p:[...safe.p],yaw:safe.yaw},stuck:{seconds:stuckT,surface:stuckSurface},broken:[...breakables.values()].filter(b=>b.broken).map(b=>b.entry.id),events:events.slice(-12)};}
+ function contactFacts(){
+  const out=[],v=body.linvel(),p=body.translation();
+  world.contactPairsWith(chassis,o=>{
+   const s=surfaces.get(o.handle);if(!s)return;
+   world.contactPair(chassis,o,m=>{
+    if(m.numSolverContacts()<=0)return;
+    const raw=m.normal();let nx=raw.x,ny=raw.y,nz=raw.z;
+    let dot=v.x*nx+v.y*ny+v.z*nz;
+    // Normalize manifold orientation to "surface -> chassis".  This is telemetry only:
+    // it never writes a force, pose or collider.
+    if(dot>0){nx=-nx;ny=-ny;nz=-nz;dot=-dot;}
+    out.push({
+     surface:s.id,kind:s.kind||'solid',
+     normal:{x:nx,y:ny,z:nz},
+     approach:Math.max(0,-dot),
+     position:{x:p.x,y:p.y,z:p.z}
+    });
+   });
+  });
+  return out;
+ }
  // Read-only camera sweep against the same live colliders as the vehicle.
  const cameraBall=new RAPIER.Ball(.35);
  function cameraClearance(from,to){
@@ -122,5 +143,5 @@ export async function createPhysics(fixture){
   const hit=world.castShape(from,{x:0,y:0,z:0,w:1},{x:dx/length,y:dy/length,z:dz/length},cameraBall,0,length,true,RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,undefined,undefined,body);
   return {distance:hit?Math.max(0,hit.time_of_impact-.06):length,blocked:!!hit,surface:hit?surfaces.get(hit.collider.handle)?.id:null};
  }
- return {cameraClearance,step,snapshot,reset,addMesh,meshSurfaces:()=>[...meshes.keys()],wheels,world,body,vehicle,events,params,defaults:PARAMS,dispose(){if(disposed)return;disposed=true;world.removeVehicleController(vehicle);world.free();}};
+ return {cameraClearance,contactFacts,step,snapshot,reset,addMesh,meshSurfaces:()=>[...meshes.keys()],wheels,world,body,chassis,vehicle,events,params,defaults:PARAMS,dispose(){if(disposed)return;disposed=true;world.removeVehicleController(vehicle);world.free();}};
 }
