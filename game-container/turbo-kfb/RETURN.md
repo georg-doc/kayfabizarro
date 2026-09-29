@@ -590,3 +590,21 @@ Baseline preservation:
 - measured Ground+Orbit profile remains **27/27 PASS**
 
 Exactly one next gate: publish this exact runtime to the existing Pace-Tune Stage route, update Hub copy to `Travel 1.8× + Timing`, and require exact public Chromium proof before returning it for Georg freeplay.
+
+
+## GROUND-TRAVEL-PACE-TIMING-01 · publication checkpoint
+
+Status: **SOURCE PASS · CLOUDFLARE WRITE VERIFIED · EXACT PUBLIC PROOF PENDING**
+
+- source handoff before publication: `4eeee4b869fdda344339055767c6ddf224f03c99`;
+- tested runtime remains `ada92c557d3ef24dd18e511b4cff6f18e8b721fc`;
+- Cloudflare mirror write: `cloudflare-live@4035d4a017a55f8f8129639badcfae45ef58c6b1`;
+- exact mirror blobs read back:
+  - `src/main.js` = `046b731860fad73d2be148c3112504130fdcc3c3`;
+  - `src/ground-player.js` = `51dccfd09409ea7fc36883d01a26ee51f8be677d`;
+- Stage marker/DEPLOYMENT/SOURCE/Hub all point to runtime `ada92c55...`;
+- public proof run `36602463818` / job `109522980455` is currently waiting for the exact Cloudflare `DEPLOYMENT.json` revision;
+- **do not claim PUBLIC VERIFIED until that exact wait + Chromium proof succeeds**;
+- no retry/write should occur while this run remains in progress because the intended GitHub write is already present.
+
+Exactly one current gate: finish run `36602463818`. On SUCCESS, persist public evidence and return the direct Stage for Georg freeplay; on FAILURE, inspect its exact log before any repair.
