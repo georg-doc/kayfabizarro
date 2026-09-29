@@ -1,7 +1,7 @@
 # KFB Chat Production · Living Masterplan
 
 Status: CURRENT LEAD PLAN
-Updated: 2026-09-13
+Updated: 2026-09-27
 Owner: Georg / KFB
 
 This document is the durable lead-level plan for the KFB ChatGPT/Astra + Claude Design production line. It is not an implementation SSOT. Project repositories remain authoritative for their code, current branches, tests and returns.
@@ -60,6 +60,41 @@ Each active job/project has one self-contained folder containing its briefing/do
 The older public path `georg-doc/kayfabizarro/travel/wip/travel_globe_wsa/_inbox/` is historical staging only and should not receive new non-public coordination packages.
 
 ## Current priorities
+
+### P0 · World M2A R5 · public playability gate
+
+The fixed Stage now contains the R5 ground/movement/offroad candidate. Public browser, playability and performance proofs pass; the next product gate is Georg's real free-play, not another diagnostic microsite. Clip/feel tuning follows only from observed play.
+
+Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/world/world-drive-interact-m2a/`
+
+### P0b · Clay production system · ToolBox + Resident Atlas + Color/Mood
+
+Current packet: `workflows/KFB_CLAY_TOOLBOX_RESIDENT_COLOR_2026-09-28/START_HERE.md`.
+
+Sequence:
+
+1. extend ToolBox Production-03 with the existing H0/K1/T3 Clay material/profile controls;
+2. use Resident Atlas as the measured Character/Pose/Seat-Fit authoring surface;
+3. prove FrizzleBob Driver + `kart-oobi`, with GothGirl as Rig_Medium countercheck;
+4. export shared Clay Look, Seat Fit and Palette/Mood JSON profiles;
+5. let World/Racer/Combat consume them through owner-preserving adapters.
+
+The color hierarchy is Golden Base → Seed → Biome → Zone/Card → Time/Weather → Interaction Accent. KayKit/Kenney colors are mapped to semantic roles, not globally tinted.
+
+### P0 · T3 Knetstrang → production transitions + Clay VFX
+
+Accepted base: `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 - TUNE/KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27/` on `main@692240b5`.
+
+Current production packet: `workflows/KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27/START_HERE.md`.
+
+Sequence:
+
+1. Blender MCP B0 turns the T3 form language into measured, socketed modules.
+2. Claude Design T4 authors one real-context transition/VFX atlas from GitHub-only sources.
+3. Work integrates both into the actual WorldBuilder/Racer and measures playability/performance.
+4. Only after T4: separate Design jobs add Pit Lane + Track on/off ramps and source-backed Claymation billboards with the existing media/embed engine.
+
+Transitions are layered over distance across track, markings, barrier, pit lane, sidewalk/city and nature. T1/T2 are not reopened as a visual direction. No standalone proxy review gate blocks the integration.
 
 ### P1 · Travel MVP1 Bath Flight
 

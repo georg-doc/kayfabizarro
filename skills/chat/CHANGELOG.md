@@ -1,3 +1,13 @@
+Warning: truncated output (original token count: 31520)
+Total output lines: 2071
+
+## 2026-09-28 · Clay production system + World M2 public gate
+
+- World M2A R5 public playability route and human free-play next gate added to the Living Masterplan.
+- ToolBox Clay Look authoring brief added on top of the existing Production-03 owner.
+- Resident Atlas Character/Pose/Seat-Fit contract added without taking Vehicle/Physics/Camera ownership.
+- Shared OKLCH palette/seed/biome/time/weather/light/mood contract added from existing H0/K1/T3 and Cologne palette donors.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
@@ -969,106 +979,7 @@ Fixed Stage:
 
 Run `35484127790`, public-proof job `106007210838`:
 - **87/87 PASS**;
-- artifact `10596912462`;
-- digest `sha256:d4638aba0e4bd02b690f19cb931c92f99cac020d0af05e5d1124f11003300ca4`;
-- FrizzleBob / GothGirl / Black Knight screenshots;
-- 0 failed resources;
-- 0 page/console errors.
-
-### FINDINGS
-- Medium shared motion facts: 25 bindable General+MovementBasic clips; candidate Walk/Run handoff ~1.108 with a small ~0.016 playback-window gap at the current technical clamp.
-- Large Black Knight: 8 bindable clips in the tested sets; Walk/Run handoff ~1.811 near native rates (~1.02× / ~0.97×); Running_A automatic slip remains high and needs visual review.
-- Running_B stays HOLD on Medium.
-- Large does not inherit Medium clips/timing.
-- Attachments remain source-pinned proposals, not accepted mounts.
-
-`PUBLIC_VERIFIED = YES`.
-
-Exactly one next gate: Georg reviews the three actors and their phase-sync/weight/cadence on the public Stage before any consumer MotionProfile promotion.
-
-
-## 2026-09-20 · EyeRig Batch · four Large profiles accepted + actor-specific lid color
-
-### ACCEPTED LARGE PROFILES
-Georg's reviewed batch from `tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json` at `main@52532aee17f85324a6d04ab53150216f00ac5d89` is now the canonical per-character Large baseline.
-
-Accepted:
-- Monstrosity
-- Black Knight
-- Demon Lord
-- Orc Brute
-
-Canonical copy: `tools/KFB-ToolBox/eye-rig-batch/data/rig-large-reviewed.v1.json`.
-
-### LID COLOR FIX
-The common pink fallback `#b58f83` is no longer persisted for generic actors.
-
-A new source-head sampler reads each loaded actor's own face/head texture around the eye placement. The sampled color becomes the EyeRig base color; existing EyeRig v6 remains the owner that darkens it for lids. Explicit actor colors such as GothGirl remain untouched.
-
-### EVIDENCE
-- implementation `480c5770ef8ef391043b0b93ec3f51b04af7dfef`;
-- evidence `40c2f920a96ea00bf99593610a49a646b2e0873c`;
-- source/Return `e277c3456651d314a01adea046e0105d2a12cdd1`;
-- Stage `e9f97c594bce46607e95928dd349cf081c36783d`;
-- **95/95 PASS**;
-- **4/4 runtime-critical JS syntax PASS**.
-
-### NEXT
-Reload the EyeRig Stage and visually check only the lid colors on the four accepted Large actors.
-
-## 2026-09-20 · MVP integration board and bounded briefs
-
-Added a planning index plus four source-preserving briefings for World/Race/Audio/Traffic, Combat Raid/Open World, ToolBox Cloudflare consolidation and the shared in-scene editor. Each keeps the named runtime/tool owner, requires direct Cloudflare Stage proof, and explicitly blocks placeholder/parallel-engine work and automatic promotion.
-
-
-## 2026-09-21 · Hub UI v2 accepted + ToolBox v2 route audit
-
-### HUMAN ACCEPTANCE
-Georg accepted the public Hub UI v2 Paper/Dark candidate and asked to check it in and use it. PR #141 is retained as design/evidence history but not merged wholesale because it is behind newer Hub content.
-
-### IMPLEMENTATION
-A current-main promotion branch ports the accepted Paper/Dark theme, shareable hash routes and Stage/Live previews onto the latest Hub data. ToolBox becomes a prominent header destination and receives the same v2 presentation grammar.
-
-### TOOLBOX ROUTE AUDIT
-Against the current Cloudflare publication tree: 6 exact public preview routes, 5 missing/blocked routes and 6 source/integration gates. Missing routes no longer pretend to have previews. Vehicle Deformer v2 and KayKit Ranged Calibration are surfaced as real public Stage tools; KCC remains PUBLIC BLOCKED.
-
-### WORLDSURFACE I1A
-Travel branch `wsa/worldsurface-trackpatch-i1-2026-09-20@d9d9d93c286fa52551ee881292a4db426a4cb8fc` is locally green (72/72). B changes 99 host vertices but is coarse; C replaces 380 source triangles with 6,080 refined triangles, with zero measured seam displacement and zero outside-patch mutation. C is technical leader only; Georg's visual B/C/neither gate remains open.
-
-
-## 2026-09-21 · Hub/ToolBox v2 publication checkpoint
-
-Hub UI v2 + ToolBox v2 promotion merged at `dfbbb733b37a3923e4e5a80ff99f9f91209f3aaa`. The exact public files were copied to and read back from `cloudflare-live@cbbae810e6ddb8f282e702d0897bed8566361327`. Direct `kayfabizarro.pages.dev` browser verification is still pending because this session's HTTP viewer cannot access that host; no PUBLIC_VERIFIED claim is made yet.
-
-
-## 2026-09-21 · Hub/ToolBox v2 status consistency refresh
-
-### USER DIRECTION
-Keep the accepted Hub UI v2, use the same design language for ToolBox and make ToolBox prominent in the KFB Hub.
-
-### IMPLEMENTATION
-Retain the accepted Paper/Dark Hub + ToolBox v2 surfaces, remove stale “review Hub UI v2” and “15-card ToolBox” copy, add ToolBox to the Hub fallback and KFB Stage router, and refresh the ToolBox route audit against the current Cloudflare publication tree.
-
-### TESTED RESULT
-**18/18 source/tree checks PASS** on branch `hub/toolbox-v2-status-refresh-2026-09-21` at `ff3b71a386f370da80b2a19cfc242ec9c0a7b00a`. ToolBox truth remains 17 cards = 6 public previews + 5 missing/blocked + 6 source/integration gates. No fake preview is introduced.
-
-### PUBLICATION BOUNDARY
-GitHub/cloudflare-live branch state is not a public browser PASS. Exact `kayfabizarro.pages.dev` URLs must still show the v2 revision before a new PUBLIC_VERIFIED claim.
-
-
-### PUBLICATION SEAL · Hub/ToolBox v2 status refresh
-- PR #153 merged: `dfaafac070747f9543b5eb5a635e2aaa74e57b83`
-- exact Hub/Stage/ToolBox-audit files mirrored to `cloudflare-live@c2185ed4a59bbae0c3610cb35155af1ccb542c00`
-- publication-branch blob readback: PASS
-- direct pages.dev verification: PENDING because both available HTTP paths are blocked in this session; no new PUBLIC_VERIFIED claim.
-
-
-## 2026-09-21 · KLR-KIT-F1 selector regression PASS
-
-- Fresh branch: `chatgpt-web/klr-kit-f1-2026-09-21`, based on frozen KLR-KIT head `e3a06e3451637a8b447192113cab43f3ece84cd8`.
-- Runtime repair stayed bounded to the proven selector seam in Tool + Stage mirror: `$('[data-mode]') → $$('[data-mode]')`.
-- Tested head: `44d595bc60259f4a74da7043df13582f1b5ccd89`.
-- Run `35552848730`, job `106190694773`: **33/33 static + 16/16 ActorRecipe + 2/2 selector + 21/21 isolated browser PASS**.
+- arti…1520 tokens truncated…wser PASS**.
 - Exact browser recipe: `gate-16 = Knight + Rogue Head C + no held item`; 30 clips/core parts retained; 0 failed resources; 0 page/console errors.
 - Artifact `10618729208`, digest `sha256:d2983c413b975f3d00bfbfb87564c5b90e16be4a99deb1bcd29369a4cb335c64`.
 - No F1 runtime was published to Cloudflare; Legacy public Stage remains unverified.
@@ -2054,3 +1965,11 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+# 2026-09-27 · T3 Knetstrang production briefings
+
+- Added `KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27` as the current shared Blender/Claude follow-up packet.
+- Locked T3 as accepted visual base and T1/T2 as rejected visual history.
+- Added one staggered transition grammar for track, markings, barrier, pit lane, curb/sidewalk and nature.
+- Added source-first Blender MCP B0 and GitHub-autarkic Claude Design T4 briefs plus clay-particle VFX profiles.
+- Deferred Pit Lane and Track on/off ramps to a separate post-T4 design job; added a separate source-backed Claymation billboard/embedded-media follow-up.
+- Updated the Living Masterplan with the Blender → Design → Work integration sequence.

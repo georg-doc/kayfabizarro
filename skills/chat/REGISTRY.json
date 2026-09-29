@@ -32,6 +32,63 @@
   ],
   "entries": [
     {
+      "id": "kfb-clay-toolbox-resident-color-2026-09-28",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_CLAY_TOOLBOX_RESIDENT_COLOR_2026-09-28/START_HERE.md",
+      "loadWhen": [
+        "ToolBox clay design",
+        "clay texture options",
+        "Resident Atlas cockpit",
+        "seated vehicle rig",
+        "palette seed biome mood",
+        "KayKit color mapping",
+        "lighting and shader mood"
+      ],
+      "owns": [
+        "Clay Look authoring briefing",
+        "Resident Seat Fit authoring contract",
+        "shared semantic palette and mood contract"
+      ],
+      "doesNotOwn": [
+        "Vehicle physics or wheel contact",
+        "World movement or camera",
+        "Motion Lab clip ownership",
+        "automatic Consumer or Live promotion"
+      ],
+      "note": "Extends existing ToolBox Production-03 and Resident Atlas with H0/K1/T3 material donors, measured Seat Fit profiles and one OKLCH-based color/mood hierarchy."
+    },
+    {
+      "id": "kfb-track-t3-transitions-vfx-2026-09-27",
+      "kind": "workflow",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_TRACK_T3_TRANSITIONS_VFX_2026-09-27/START_HERE.md",
+      "loadWhen": [
+        "T3 Knetstrang",
+        "Blender MCP racetrack",
+        "track city nature transitions",
+        "pit lane",
+        "track ramps and exits",
+        "KFB clay billboards",
+        "clay particle VFX",
+        "fresh Claude Design track chat"
+      ],
+      "owns": [
+        "shared staggered visual transition contract",
+        "Blender MCP B0 production briefing",
+        "Claude Design T4 visual/VFX briefing"
+      ],
+      "doesNotOwn": [
+        "Track Core route or collision",
+        "WorldBuilder movement/camera",
+        "Racer physics",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "T3 is the accepted visual base. Blender owns geometry/sockets/export, Claude Design owns look/readability/VFX presets, and later Work integration adopts both in the real WorldBuilder/Racer."
+    },
+    {
       "id": "session-zip-v1",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
