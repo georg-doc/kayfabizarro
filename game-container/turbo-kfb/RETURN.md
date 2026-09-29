@@ -77,6 +77,27 @@ Judge only:
 ## Deferred
 Cards · Residents · Enter/Exit Kart · Voxel/WFC world · Clay look · Flight.
 
+## Human review · 2026-09-29
+Outcome: **HOST / APPROACH PROCEED · GROUND CONSUMER REPAIR REQUIRED BEFORE C**
+
+Observed in the real Stage:
+- free orbit camera is missing;
+- semantic locomotion states are not wired;
+- current Walk/Run presentation feels like small/tripping steps and the Run tier does not read as a distinct fast state;
+- Jump is far too high and too short horizontally.
+
+Source diagnosis:
+- current Turbo Ground consumer maps only `idle / walk / run / jumpStart / jumpAir / jumpLand`;
+- the existing Rig_Medium consumer profile already defines `walk.fast / sprint / backward / strafe.left / strafe.right / crouch / sneak / crawl` plus explicit transition hints;
+- current consumer ignores `Running_B` sprint and MovementAdvanced directional clips;
+- current Walk controller still derives manual jump from Voxel `autoJumpMax=4.2` + `hopClear=0.55`, producing an apex around 4.75 world units at gravity 30; this is wrong for the Turbo free-roam character;
+- the old Walk controller exposes orbit state/methods, but the Turbo Ground consumer does not wire pointer orbit into the camera.
+
 ## Exactly one next gate
-**Georg motion/feel review of the integrated Stage.**
-If this is a PROCEED PASS, next implementation is Checkpoint C: `WALK ⇄ ENTER KART ⇄ DRIVE ⇄ EXIT ⇄ WALK`.
+**Checkpoint B2 · Locomotion Consumer Repair**
+1. wire the existing semantic Rig_Medium role/state profile instead of the six-state subset;
+2. use source-backed `Running_B` as the sprint tier and MovementAdvanced backward/strafe roles where appropriate;
+3. replace the Voxel-height jump preset with a character-scale/free-roam ballistic jump while retaining the KayKit Jump_Start/Air/Land presentation;
+4. add free pointer orbit as an additive camera adapter without rewriting the donor ChaseCamera.
+
+Do not start Enter/Exit Kart until B2 passes human motion/control review.
