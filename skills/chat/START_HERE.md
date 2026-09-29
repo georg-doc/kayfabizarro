@@ -55,6 +55,13 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-09-29 · ToolBox / Animation Design rebrief · Production-06
+
+Current bounded Claude ToolBox/Animation continuation:
+`workflows/TOOLBOX_ANIMATION_PRODUCTION_06_2026-09-29/START_HERE.md`
+
+Do not execute the earlier A–E mega-brief as one PASS. Preserve Production-05 and create **Production-06**. Current gate is **G1 only**: canonical Motion Library catalog → 345-clip Library View → seven catalog-driven locomotion sets → reusable state player. G2 editor, G3 Clay Stage/Skydome/Grounding and G4 Choreography/VFX remain HOLD until the prior gate closes. Exact Motion, H0/K2/T3, T4 and Skydome refs are pinned in the new SOURCE.json; the 16 Intake-05 GLB paths have already been source-preflighted and do not require another Georg location question.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
