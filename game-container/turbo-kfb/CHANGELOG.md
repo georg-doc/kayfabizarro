@@ -118,3 +118,14 @@
 - Orbit and measured Walking_A comparison profile preserved.
 - artifact `11043426976`, digest `sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f`.
 - next: same Pace-Tune Stage route, refreshed runtime + Hub wording + public proof.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-02 · PUBLIC VERIFIED
+- Same canonical owner / Draft PR #289; no second movement owner and no merge.
+- Exact runtime `4475271b...` published to the existing Pace-Tune route on `cloudflare-live@92335555295ee84eecfd2c3cec9d01ead98533ab`.
+- Public Cloudflare marker gate PASS; public Chromium run `36589579432` / job `109478846810` = **15/15 PASS**.
+- Public behavior: W immediately `Running_A`, settles 2.4786 u/s; Shift immediately `Running_B`, settles 3.0263 u/s; release returns directly to `Running_A`; Orbit retained.
+- 0 runtime/page/console errors; Hub two-gear link PASS.
+- Public artifact `11043990368`, digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`; screenshots `stage.png`, `hub.png`.
+- Prior 1.10-u/s Walking_A Travel candidate is superseded for human review; old measured profile remains regression/reference only.
+- Exactly one next gate: Georg human two-gear feel. No Enter/Exit Kart before verdict.

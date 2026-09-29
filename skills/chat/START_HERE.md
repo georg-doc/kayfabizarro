@@ -1308,3 +1308,26 @@ Current bounded Turbo locomotion candidate:
 This slice owns locomotion feel/state only. Parallel Orbit B2a remains on `chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29`; do not combine the two before their human gates are known.
 
 Exactly one current gate: Georg judges **Walk → Run → Sprint / stop / backward-strafe / moving Jump** feel. No Enter/Exit Kart before that.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-02 · CURRENT HUMAN GATE
+
+The current Turbo Ground human candidate supersedes the earlier 1.10-u/s Walking_A Travel tune.
+
+- owner: existing Turbo Ground / `walk-controller` + existing Ground Orbit adapter;
+- branch: `chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29`;
+- Draft PR: **#289**;
+- tested runtime: `4475271b61e65fae95e5044925b83f2e39c18e6e`;
+- source: **8/8 pace static + 10/10 integration static + 27/27 Ground+Orbit regression + 16/16 Travel two-gear PASS**;
+- public Cloudflare: `cloudflare-live@92335555295ee84eecfd2c3cec9d01ead98533ab`;
+- public Chromium run `36589579432`: **15/15 PASS**, 0 runtime/page/console errors;
+- direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel
+
+Travel forward contract for this gate:
+- **W = Running_A / run**, settled ~2.48 u/s;
+- **Shift = Running_B / sprint**, settled ~3.03 u/s;
+- Shift release returns directly to Running_A;
+- no Walking_A tier in the default Travel forward ladder;
+- Jump, backward/strafe, velocity response and Orbit remain unchanged.
+
+Exactly one current gate: **Georg judges the two-gear W=Running_A / Shift=Running_B travel feel.** No merge and no Enter/Exit Kart before that verdict.

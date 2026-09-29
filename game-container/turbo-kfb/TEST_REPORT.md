@@ -170,3 +170,32 @@ Travel profile:
 - old measured/no-query Walking_A profile retained.
 
 Public Stage for this new runtime: **PENDING** until exact Cloudflare marker + public Chromium PASS.
+
+
+## GROUND-WALK-PACE-TUNE-02 · Public Closure
+
+Direct Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+
+Publication:
+- `cloudflare-live@92335555295ee84eecfd2c3cec9d01ead98533ab`
+- exact runtime marker: `4475271b61e65fae95e5044925b83f2e39c18e6e`
+- Cloudflare marker gate: **PASS**
+
+Public Chromium:
+- run `36589579432`
+- job `109478846810`
+- **15/15 PASS**
+- W immediately `Running_A / run @ 1.5210503972 u/s`
+- W settled `Running_A / run @ 2.4785986456 u/s`
+- Shift immediately `Running_B / sprint @ 2.8159216475 u/s`
+- Shift settled `Running_B / sprint @ 3.0263315488 u/s`
+- Shift release `Running_A / run @ 2.5503960035 u/s`
+- Orbit mounted PASS
+- runtime/page/console errors: **0**
+- Hub two-gear link PASS
+- artifact `11043990368`
+- digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`
+- screenshots: `stage.png`, `hub.png`
+
+Status: **PUBLIC VERIFIED · HUMAN TWO-GEAR FEEL OPEN**.

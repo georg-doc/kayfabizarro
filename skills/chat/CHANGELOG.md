@@ -2067,3 +2067,14 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Final Hub publication metadata: `cloudflare-live@c752cab81b35ca44998a635c544fd05eb1a33b85`.
 - Orbit B2a remains parallel and untouched.
 - Next gate only: Georg locomotion feel. No merge / Enter-Exit / Live promotion implied.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-02 public closure
+- Georg rejected the PUBLIC VERIFIED 1.10-u/s Walking_A Travel tune as still reading like the old slow controller.
+- Same owner / PR #289 was retuned to a two-gear Travel ladder: W = `Running_A`; Shift = `Running_B`; no Walking_A intermediate tier.
+- Source runtime `4475271b...`: **8/8 + 10/10 + 27/27 + 16/16 PASS**, zero errors.
+- Published unchanged dedicated route on `cloudflare-live@92335555295ee84eecfd2c3cec9d01ead98533ab`.
+- Public Chromium run `36589579432` / job `109478846810`: **15/15 PASS**; exact runtime marker, W Running_A, Shift Running_B, Shift release Running_A, Orbit and Hub link all PASS; zero errors.
+- Public artifact `11043990368`, digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`.
+- Direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel
+- Exactly one next gate: Georg human two-gear feel; no merge / Enter-Exit before verdict.

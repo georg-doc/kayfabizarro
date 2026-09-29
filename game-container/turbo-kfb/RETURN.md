@@ -490,3 +490,41 @@ Measured Travel two-gear behavior:
 - measured/no-query `Walking_A @ 0.6109509569 u/s` path still passes inside the 27/27 regression.
 
 Exactly one current next gate: republish the **same** dedicated Pace-Tune Stage with runtime `4475271b...`, update the Hub copy from obsolete “Walking_A 1.8× / ~1.10” wording to **W = Running_A / Shift = Running_B**, and require exact public Chromium proof before returning the link.
+
+
+## GROUND-WALK-PACE-TUNE-02 · PUBLIC VERIFIED closure
+
+Status: **PUBLIC VERIFIED · HUMAN TWO-GEAR FEEL OPEN · DO NOT MERGE**
+
+Owner / exact state:
+- repo: `georg-doc/kayfabizarro`;
+- branch: `chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29`;
+- Draft PR: **#289**;
+- tested runtime/QA head: `4475271b61e65fae95e5044925b83f2e39c18e6e`;
+- source evidence head before this closure: `096f63a32963424d95330f24e5709003d4dd5278`;
+- Cloudflare publication: `cloudflare-live@92335555295ee84eecfd2c3cec9d01ead98533ab`.
+
+Direct human Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+
+Public Chromium:
+- run `36589579432`;
+- job `109478846810`;
+- **15/15 PASS**;
+- exact public runtime marker `4475271b61e65fae95e5044925b83f2e39c18e6e` PASS;
+- W immediately `Running_A / run @ 1.5210503972 u/s`;
+- settled W `Running_A / run @ 2.4785986456 u/s`;
+- Shift immediately `Running_B / sprint @ 2.8159216475 u/s`;
+- settled Shift `Running_B / sprint @ 3.0263315488 u/s`;
+- Shift release returns directly to `Running_A / run @ 2.5503960035 u/s`;
+- Orbit mounted PASS;
+- runtime/page/console errors: **0**;
+- refreshed Hub two-gear link PASS;
+- artifact `11043990368`;
+- digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`;
+- screenshots: `stage.png`, `hub.png`.
+
+The prior ~1.10 u/s `Walking_A` Travel candidate remains additive history only and is superseded for this human gate. The measured/no-query `Walking_A @ 0.6109509569 u/s` profile remains available solely as regression/reference evidence.
+
+## Exactly one current next gate
+**GEORG HUMAN TWO-GEAR FEEL:** on the direct Stage, judge only whether normal W now feels correct as the default `Running_A` travel gear and Shift as `Running_B` Sprint. No merge and no Enter/Exit Kart before this verdict.
