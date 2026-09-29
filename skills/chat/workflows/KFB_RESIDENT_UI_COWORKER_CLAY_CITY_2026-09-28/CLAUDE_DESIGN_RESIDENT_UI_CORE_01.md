@@ -1,446 +1,205 @@
-# Claude Design · RESIDENT-ANIMATION-TOOLBOX-UI-01
+# Claude Design · RESIDENT-ATLAS-S12-01
 
-## Execution Card · verbindlich
+## Execution Card · laufendes Resident-Projekt
 
-- **Owner/Tool:** der bereits laufende Claude Design Desktop Chat; kein Neustart.
-- **Model:** Opus 5.5 High beziehungsweise das stärkste verfügbare Claude-Design-Modell.
-- **Reasoning:** High für den zusammenhängenden UI-/Interaction-Pass; keine High-Reasoning-Zeit für Upload/Sync.
-- **Slice:** ein Session Cut mit gemeinsamem Inline-Editor, Resident Atlas, Animation Library/Choreography und Clay-World-Ansicht.
-- **Öffentliche Arbeitsquelle:** ausschließlich diese GitHub-Datei und die darin verlinkten GitHub-Donoren. Die private GPT Site ist nur Georgs Übersicht und darf niemals Voraussetzung für Claude sein.
-- **Rückgabe:** vollständiger Session Cut als Download/Projektdatei; optional zusätzlich Site/Web-Push, wenn im Chat tatsächlich erreichbar. Kein GitHub-, PR- oder Deployment-Auftrag an Claude Design.
-- **Stop rule:** nur echter Source-/Runtime-Blocker oder zwei fehlgeschlagene Reparaturversuche; dann vollständiges Recovery-Paket statt Rückfragenkette.
+- **Projekt:** der bereits laufende Claude-Design-Chat **KayKit Resident Atlas S12**.
+- **Nicht das ToolBox-/Animation-Studio-Projekt.**
+- **Model:** Opus 5.5 High beziehungsweise stärkstes verfügbares Claude-Design-Modell.
+- **Reasoning:** High für den zusammenhängenden Resident-Atlas-Pass.
+- **Ziel:** Resident Atlas S12 mit ruhigem ToolBox-UI, einem vollständigen 3D-Inline-Editor, Claymation-Diorama, Graveyard-Funktion und Resident-Interaktionen.
+- **Kein Neustart:** im vorhandenen Resident-Atlas-Chat fortsetzen.
+- **Kein GitHub-Auftrag:** vollständigen Session Cut/Download zurückgeben.
+- **Stop rule:** Nur echter Source-/Runtime-Blocker oder zwei fehlgeschlagene Reparaturversuche.
 
-## Bereits entschiedene Rückfragen · nicht erneut fragen
+## Wichtige Korrektur zur Projektgrenze
 
-- **Job A:** Dieser laufende Claude-Design-Chat baut ihn vollständig weiter. Kein frischer Chat.
-- **Pflaster/K2:** mittlere Größenklasse wie Props, mit reduzierter Reliefamplitude; Fugen und Steinform bleiben lesbar.
-- **Pack-Texturen:** als einmal geladene, geteilte Detail-/Maskenquelle behalten und mit KFB-Palette abtönen. `flat clay` nur als Low-End-/Diagnose-Fallback.
-- **T4/M2:** öffentlicher GitHub-Donor auf `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49`. Falls einzelne T4-Dateien im Design-Kontext technisch nicht abrufbar sind, H0 + K2 + T3/T3 v2 verwenden und T4 nur als offen markieren; der UI-/Editor-Job wartet nicht darauf.
-- **Skelett-VFX:** Takt 9 nutzt `prop_break`; zurückkehrende Knochen dürfen bei Bodenkontakt `land` auslösen; das finale Einrasten bleibt `reassemble_complete`.
-- **Ablauf:** kein Human Gate nach einem isolierten Editor-Mikroschritt. Intern Editor/Snap zuerst stabilisieren, danach Resident/Library/Choreography/World/VFX im selben Session Cut fertigstellen.
+Der Resident-Atlas-Job und **KFB ToolBox Production-05 / Animation Studio** sind zwei verschiedene Claude-Design-Projekte.
 
+Dieser Resident-Job baut **nicht**:
 
-## Auftrag
+- die 345-Clip-Animation-Library-Oberfläche;
+- Locomotion-Set-Browser und Motion-State-Studio;
+- die Animation-Studio-Drop-Zone;
+- das komplette ToolBox-Choreography-Lab;
+- ein neues ToolBox-Shell-Artefakt.
 
-Entwirf im bereits laufenden Claude-Design-Chat genau eine integrierbare Neufassung von **Resident Atlas + Animation Lab/Library** im aktuellen, freigegebenen **KFB ToolBox Design**.
+Diese Punkte gehören in das separate öffentliche Briefing:
 
-Beide Bereiche nutzen dieselbe ToolBox-Shell, denselben vollständigen 3D-Inline-Editor und dieselbe Character-/Motion-Auswahl. Dies ist ein UI-/Interaction-Design-Job. Keine neue Runtime, kein neuer Atlas, kein zweites Animation Studio, kein neues ToolBox-Shell-Design und kein GitHub-Job.
+`CLAUDE_DESIGN_TOOLBOX_ANIMATION_STUDIO_V5_01.md`
 
-**Ausführungsentscheidung:** Der bereits laufende Resident-Atlas/Claude-Design-Chat führt Job A weiter. Kein Neustart in einem frischen Chat und kein Human Gate nach einem isolierten Editor-Mikroschritt. Interne Checkpoints sind erwünscht, aber die Abgabe bleibt ein zusammenhängender Session Cut mit Editor, Library/Choreography View und Clay-World-Ansicht. Nur ein echter Source-/Runtime-Blocker oder zwei fehlgeschlagene Reparaturversuche stoppen den Durchgang.
+Der Resident Atlas darf die Motion Library v5 und bestehende Choreography-/Editor-Verträge als Donor konsumieren, aber er übernimmt nicht deren Tool-Designjob.
 
-## Eingabepaket
+## Verbindliche Quellen
 
-Lies zuerst aus dem öffentlichen GitHub-Stand:
+Resident-Source:
 
 1. `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/START_HERE.md`
 2. dort `RETURN.md`, `TEST_REPORT.md`, `SOURCE.json`
-3. `KFB_Resident_Atlas_S11.html#__graveyard`
+3. aktueller `KFB_Resident_Atlas_S12.html#__graveyard`
 4. `lib/edit-layer.js`
 5. `data/graveyard-01.json` und `lib/graveyard.js`
-6. den aktuellen KFB ToolBox Production-05 Session Cut als angenommene Funktions- und Designbasis;
-7. Motion-Library-v5-Branch `georg-doc-patch-3@95a8197c76c2bae4d12bfc867d54debe15ffc1f2`;
-8. dort `media/3D_Assets/Animations/KFB_Motion_Library/RETURN_INTAKE_05.md`;
-9. dort `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json` mit 345 eindeutigen Clips und sieben `locomotionSets`;
-10. Intake 04 bleibt nur als historische Detailquelle für dort eingeführte Strike-/Prop-Kandidaten; Katalogstand und Clipzahl werden vollständig durch Intake 05 ersetzt;
-11. dort `skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/CHOREO_LAB_01_RETURN.md`;
-12. dort `scenes/*.json`, `resolved/*.resolved.json` und die sechs Storyboard-/Graft-Prüfbilder aus `renders/`.
+6. vollständige Halloween-GLBs aus PR #279 @ `10a2c5e29bf752215dadb60b23f07253f63e9d34`
 
-GitHub main ist beim Briefing `51f9bc22596a0d0165f4da9e8e2ea14118466210`. Vor Beginn erneut prüfen.
+Clay-Look:
 
-Der S11-Export ist Content- und Funktionsdonor. Seine UI ist keine akzeptierte Gestaltungsvorlage.
-
-## Clay-Look Source Lock · verbindlich, nicht neu erfinden
-
-Der KFB-Claymation-Look **existiert bereits als Baukasten auf GitHub**. Claude Design darf in diesem Job weder einen vierten Clay-Stil noch ein isoliertes Graveyard-Materialsystem bauen. Lies und verwende die folgende Donor-Kette in dieser Reihenfolge:
-
-1. **H0 Hirnwelt · Art Direction und Weltgrammatik**
+1. H0 Hirnwelt:
    `tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/`
-   Zuerst: `START_HERE.md` → `HANDOVER_WSA.md` → `HOWTO_KFB_3D_Claymation_Diorama_Worldbuilding.md` → `docs/LIVING_CLAY.md`.
-   Visuelle Referenzen: `KFB Hirnwelt H0.dc.html`, `KFB Knetwelt Look-Konzept.dc.html`, `evidence/01-h0.png` bis `04-h0.png`, `ref/claybound/web/`.
-   H0 besitzt die bunt-harmonisch-weirde Diorama-/Hirnwelt-Richtung, die Fassaden-/Fensterrhythmik und die Größenstaffelung von Clay-Spuren.
-2. **K2 Knet-Werkzeuge · akzeptierter Material- und Werkzeugbaukasten**
+2. K2 Knet-Werkzeuge:
    `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/`
-   Zuerst: `START_HERE.md` → `HANDOVER_WSA.md` → `docs/LIVING_CLAY.md`.
-   Ausführbare Quellen: `lab-clay/clay-material.v10.js`, `clay-relief.v4.js`, `clay-tools.v1.js`, `clay-toolmix.v1.js`, `clay-profiles.v2.js`; Prüfoberfläche: `KFB Knet-Werkzeuge K2.dc.html`.
-   Status laut Paket: `ACCEPTED AS BASE`. Verwende diese Profile und Werkzeuge; keine optisch ähnliche Eigenimplementierung.
-3. **T3/T3 v2 · Track-/World-Komposition**
-   `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T3 - TUNE/KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27/` sowie der K2/T3-v2-Ordner oben.
-   Relevante Quellen: `DESIGN_SPEC_T3.md`, `lab-track/KONZEPT_S4_KNETSTRANG.md`, `lab-track/track-look.v3.js` und in K2 `lab-track/track-look.v4.js`.
-   T3 ist `ACCEPTED AS BASE`; T3 v2 zeigt denselben Look auf K2-Material.
-4. **T4/M2 · jüngster Kompositionsdonor, falls im Chat verfügbar**
-   Production-Inbox-Receipt `6d9b0cd8-bc29-4b8b-b41f-5821eef69d21`, 1.433.281 Bytes, SHA-256 `101b7c66edb259520c480a618cf064f25adf0ce4781c9f7e960eb7a13abeb93a`.
-   T4 verfeinert Track, Biome, sparsame Szeneninseln und die Clay-VFX-Sprache. Dazu gehören kleine Knetkügelchen/-flocken für Schritte, Sprünge, Landungen, Reifen, Kollisionen und biomeabhängigen Staub. Fehlt das Paket im Claude-Design-Chat, bleiben H0 + K2 + T3/T3 v2 die verbindliche, vollständig auf GitHub abrufbare Baseline; kein erfundener Ersatz.
+3. T3/T4 für Komposition und Clay-Partikel; T4 auf
+   `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49`
+4. Skydome:
+   `travel/travel-v16/terrain-v16/skydome-shader.js`
 
-   **Aktueller GitHub-Donor:** Das exakte Paket ist inzwischen zusätzlich vollständig auf `coworker/clay-city-mvp-01-2026-09-28@939224c051afb464c553ff6f9b59609503eb1b49` eingecheckt unter `tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T4/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/`. Der laufende Design-Chat liest diese öffentliche Quelle; ein erneuter Upload durch Georg ist nicht nötig.
+H0 bestimmt den Look, K2 Material/Werkzeuge und T3/T4 Welt/VFX. Keine ähnliche Eigeninterpretation.
 
-### Eigentum und Beweis
+Motion-/Interaktionsdonor, nur soweit für Resident-Szenen nötig:
 
-- H0 bestimmt den **Look**, K2 die **Clay-Material-/Werkzeugimplementierung**, T3/T4 die **Track-/World-Komposition**; ToolBox Production-05 bleibt der **UI-Shell-Donor**.
-- Zeige vor Integration mindestens je eine unveränderte Donor-Probe für Terrain/große Architektur, Prop/Mittelgrund und Character/Feindetail.
-- Eine Auswahlbox oder ein Label `Clay` ist kein Beweis. Der Session Cut muss sichtbar dieselben Materialprofile bzw. Module verwenden und sie in `SOURCE.json` mit Pfad und Ref nennen.
-- Die Clay-Schichten müssen einzeln abschaltbar sein, damit Materialkosten, Schatten-/Kantenartefakte und Clipping prüfbar bleiben.
-- T4-VFX werden als eigener schaltbarer Layer übernommen: ereignisgetrieben statt dauernd emittierend, gepoolt, farblich aus Biome/Untergrund abgeleitet und in `low / standard / high` begrenzt. `low` darf nur wenige Kontaktkügelchen zeigen; `off` bleibt als Performance-Fallback.
-- `SPRINT_PATH_BAND_CLAY_01.md` ist derzeit kein auffindbarer GitHub-Source-Lock. Ein lokaler Sprint-Text darf deshalb nicht den vorhandenen H0/K2/T3-Baukasten ersetzen oder still neu definieren.
+`georg-doc-patch-3@95a8197c76c2bae4d12bfc867d54debe15ffc1f2`
 
-### Wegband-Daten · aufnehmen, aber nicht zum UI-Blocker machen
+Der Atlas verwendet daraus ausgewählte Clip-IDs, Resident-Zuordnungen und ChoreographyRecipe-Daten. Er baut nicht den Library View.
 
-Die aktuelle Graveyard-Messung liefert folgende vorläufige Gestaltungsdaten; im Session Cut als `reported / verify against source package` kennzeichnen:
+## Auftrag A · Resident-Atlas-UI bereinigen
 
-- KayKit: `path_A` + `path_B` als dichter Kern, `path_C` als Rand, `path_D` als Saum; gemeldete Flächenanteile B `0.899`, A `0.853`, C `0.629`, D `0.293`;
-- Quaternius: eckige Steine ca. `0.85` für Kern, runde Platten ca. `0.65` für Rand, Einzelsteine für Saum;
-- Quaternius-Höhe `0.17` gegenüber KayKit `0.10`: beim Mischen angleichen;
-- die 13 Quaternius-Kacheln teilen dieselbe ca. 0,8-MB-Textur: genau einmal laden und wiederverwenden;
-- Dateien über die Katalogtabelle adressieren, nicht über fehleranfällige Namen wie `Smal`;
-- Flächenanteil ist die relevante Dichtemetrik, nicht die gezählte Zahl berührender Steine.
+Das aktuelle Graveyard-UI hat mehrere konkurrierende Transformflächen, Kontext-Leaks und zu viel dauerhaft sichtbare Metadaten.
 
-Das Wegband darf als Environment-Beispiel im Graveyard erscheinen. Es ist kein Grund, den Resident-/Animation-UI-Job um einen neuen World- oder Material-Owner zu erweitern.
+Ziel:
 
-### Verbindliche Antworten für Pflaster und Pack-Texturen
+- aktuelle helle ToolBox-Gestaltung;
+- 3D-View als Hauptfläche;
+- ein kompaktes kontextuelles Mini-Menü am ausgewählten Objekt;
+- genau ein einklappbarer Inspektor;
+- keine doppelte Transformpalette;
+- keine langen FOV-/Statusblöcke im Sichtfeld;
+- kein Goth-Girl-, Ghostville- oder anderer Kontext-Leak im Friedhof;
+- kleine Zustandsicons statt großer `PROVEN`-Labels;
+- Narrow View mit Inspektor als Sheet/Drawer.
 
-- Pflaster-/Path-Tiles verwenden in K2 die **mittlere Größenklasse** wie Props, jedoch mit abgesenkter Reliefamplitude, damit Fugen und Steinform lesbar bleiben und die Oberfläche nicht wie grobes Terrain aufbricht.
-- Pack-Texturen bleiben als Detail-/Maskenquelle erhalten, werden einmal geladen, geteilt und durch die KFB-Palette eingefärbt/abgetönt. K2 ersetzt sie im Standardmodus nicht durch flache Vollfarbe.
-- `flat clay` ist nur ein expliziter Low-End-/Diagnose-Fallback. Er darf den Standard-Look nicht still ersetzen.
-- Für die 13 Quaternius-Kacheln wird die gemeinsame Textur genau einmal verwendet; Höhenangleichung und K2-Material bleiben getrennte Schritte.
-- Takt 9 der Skelette emittiert `prop_break`. Rückkehrende Knochen dürfen beim Bodenkontakt `land`-VFX auslösen; das finale Einrasten bleibt als Choreografiephase `reassemble_complete` beschreibbar, ohne einen zweiten Partikelstandard zu erfinden.
+Inhaltliche Halloween-Farben dürfen bleiben; das Werkzeug-Chrome wird nicht schwarz/gelb.
 
-## Negativreferenz · verbindlich
+## Auftrag B · vollständiger gemeinsamer 3D-Editor-Vertrag
 
-Im Graveyard-Edit-Modus konkurrieren derzeit drei Oberflächen für dieselbe Aufgabe:
-
-1. ein großes dunkles Objektfenster links oben;
-2. das schwebende Inline-Mini-Menü am ausgewählten Objekt;
-3. der komplette rechte Bereich `STUDIO · ANFASSER` mit denselben Transform-Funktionen und langen Messlisten.
-
-Zusätzlich steht dort `GOTH GIRL`, obwohl der aktive Kontext Graveyard/Dancing Skeletons ist. Das ist ein Kontext-Leak.
-
-Dieses Muster ist ein **UI FAIL**. Es darf nicht verfeinert oder dekoriert, sondern muss auf eine klare Zuständigkeit reduziert werden.
-
-## Zielbild
-
-### Ein Edit-Owner
-
-Das kleine Inline-Menü am selektierten 3D-Objekt ist der primäre Edit-Owner.
-
-Es enthält konsistent und vollständig:
+Das Inline-Menü enthält konsistent:
 
 - Verschieben;
 - Drehen;
 - Skalieren;
 - Welt/Lokal;
-- Raster an/aus;
+- Raster;
 - Absetzen/Boden;
 - Fokus;
 - Rückgängig/Wiederholen;
 - Auswahl schließen.
 
-Icons brauchen Tooltip und zugänglichen Namen. Keine tool-spezifische Schwundform; dieselbe vollständige Komponente wird in Resident Atlas, ToolBox Studio, Animation Library und später WorldBuilder wiederverwendet.
+Drei unabhängige Snap-Modi:
 
-### Snap-Vertrag · verbindlich und gemeinsam
+- **Grid**
+- **Connector**
+- **Mount**
 
-Der Inline-Editor verwendet in Resident Atlas, Animation Lab, ToolBox Studio und später WorldBuilder exakt dieselben drei Snap-Modi:
+Connector verbindet kompatible Pflaster-, Weg-, Zaun- und Pfeilerkanten. Mount befestigt Props an gemessenen Rig-Ankern. Köpfe selbst sind keine Mount-Props.
 
-1. **Grid** — Position und optional Rotation/Scale auf ein sichtbares, einstellbares Raster rasten.
-2. **Connector** — Kanten und definierte Anschlüsse von Wegen, Pflaster, Zäunen, Pfeilern und modularen Gebäudeteilen verbinden. Der aktive Connector und seine Ausrichtung werden im View gezeigt.
-3. **Mount** — Requisiten an benannte Character-/Rig-Anker wie Hand, Rücken, Kopf-Prop oder Fahrzeug-/Sitz-Socket hängen. **Köpfe selbst sind keine Mount-Props** und werden nicht über diesen Modus ersetzt.
+Abgelehnte Snaps zeigen einen kurzen Grund. Rasterweite, Connector-Toleranz und Mount-Offset liegen im einen Inspektor, nicht in einer weiteren Palette.
 
-Snap ist Teil des gemeinsamen Editor-Kernels, kein Graveyard-Sonderfall. Das Inline-Menü zeigt Modus, aktiv/inaktiv und den aktuellen Zieltyp. Ein abgelehnter Snap wird nicht still ignoriert: Der Inspektor zeigt einen kurzen verständlichen Grund, etwa `kein passender Connector`, `Socket belegt`, `Rig nicht kompatibel` oder `Kollision verhindert Absetzen`. Rasterweite, Connector-Toleranz und Mount-Offset liegen im einklappbaren Inspektor; es entsteht keine vierte schwebende Palette.
+Der Atlas implementiert den Vertrag für Graveyard/Residents. Das separate Animation Studio konsumiert denselben Vertrag später in seinem eigenen Projekt.
 
-### Ein optionaler Inspektor
-
-Ausführliche Zahlen, Pfad, Quelle, Bounds, Transformwerte, Bone-Referenz und Korrekturliste liegen in **einem einklappbaren Inspektor** hinter `i` oder `Details`.
-
-Der Inspektor ist standardmäßig geschlossen und verdeckt den 3D-View nicht. Im offenen Zustand ersetzt er keinen Inline-Control und dupliziert keine primären Buttons.
-
-### Kontext statt Leaks
-
-- Graveyard zeigt `Friedhof`, `Dancing Skeletons`, Actor oder Requisite.
-- Ghostville, Goth Girl oder andere Szenennamen erscheinen nur, wenn genau dieser Kontext aktiv ist.
-- Die rechte Kontextpalette zeigt nur die Einstellungen des aktiven Modus.
-- Moduswechsel Actor/Requisite/View/Edit bleibt sichtbar, aber kompakt.
-
-### Sichtfeld vor Metadaten
-
-- mindestens 70 % der nutzbaren Breite gehören auf Desktop dem 3D-View;
-- keine große Statusplakette wie `PROVEN` im Sichtfeld; ein kleines grünes Häkchen reicht;
-- keine Messdaten-Daueranzeige;
-- keine doppelte Kopfzeile oder zweite Navigation;
-- Narrow View: Inspektor als Sheet/Drawer, Inline-Menü bleibt am Objekt erreichbar.
-
-## ToolBox-Design
-
-Nutze das freigegebene aktuelle ToolBox-Design: helle, ruhige Arbeitsfläche, abgerundete Panels, kompakte Segmente, KFB-Farben und klare Hierarchie. Keine Rückkehr zum schwarzen/gelben Legacy-Graveyard-Chrome. Inhalt kann Halloween-Farbe tragen; das Werkzeug bleibt ToolBox.
-
-## Animation Lab / Library · verbindlicher Umfang
-
-Die Animation Library ist kataloggetrieben. Keine Clip-Liste wird im Interface erneut von Hand gepflegt.
-
-### Library View
-
-- beliebigen verfügbaren Character/Rig auswählen;
-- 345 Clips aus Motion Library v5 laden;
-- Suche sowie Live-Filter für Gruppe, Tags, Loop/One-shot, Props, Varianten, Resident-Ideen und Combat/Reaction;
-- links kompakte animierte Preview-Karten, rechts großer 3D-Preview;
-- Umschaltung zwischen ruhigem Studio und echter Terrain-/World-Umgebung;
-- die Terrain-/World-Ansicht rendert Terrain, aktive Residents, Nebenfiguren und verwendete Props gemeinsam im aktuellen KFB-Claymation-Look; sie ist keine graue Testfläche und kein neutraler GLB-Viewer;
-- keine langen `PROVEN`- oder Statusplaketten im Sichtfeld; kleines Häkchen genügt;
-- Preview-Hintergrund füllt jede Karte vollständig; keine grauen Seitenstreifen;
-- Namen, redaktionelle Tags, Kommentare, Resident-Zuordnung und Signature Moves editierbar;
-- Änderungen als additives JSON exportierbar/importierbar, ohne den kanonischen Katalog im Browser still zu überschreiben.
-
-### Claymation-Prüfkontext · verbindlich
-
-Die technische Studioansicht bleibt für Rig-, Kontakt- und Clipping-Kontrolle verfügbar. Für die visuelle Produktionsbeurteilung ist zusätzlich eine echte Claymation-World-Ansicht Pflicht:
-
-- Gelände, Straßen-/Bodenflächen und Kontaktzone nutzen den aktuellen KFB-Claymation-Material-/Renderansatz; kein Wasserfarben-Hintergrund, keine graue Rasterkachel und kein untexturierter Platzhalterboden;
-- der ausgewählte Character/Resident wird koloriert und mit seinem Claymation-Material gezeigt, nicht als weißes oder neutrales Prüfmodell;
-- mindestens ein weiterer Resident wird in derselben Szene mit demselben Rendervertrag gezeigt, damit Pair-, Talk-, Reaction- und Fight-Clips im räumlichen Kontext prüfbar sind;
-- Requisiten und Attachments werden mit dem passenden Claymation-Look gerendert. Ihre echte Donor-Geometrie und Socket-Zuordnung bleiben erhalten; der Look darf kein Ersatzmodell erfinden;
-- Terrain, Residents und Props teilen eine konsistente Licht-/Schattenrichtung. Bekannte helle Schattenkanten, Banding, Clipping und schwebende Kontakte werden sichtbar markiert statt durch andere Hintergründe kaschiert;
-- Clay-Relief/Texturmaßstab wird nach Größenklasse getrennt: grob für Terrain/große Architektur, mittel für Props, fein für Characters;
-- Studio/World ist ein Darstellungswechsel derselben Auswahl und Animation, kein zweiter Szenen- oder Runtime-Owner;
-- mindestens drei direkt vergleichbare Prüfzustände: Locomotion auf Clay-Terrain, Resident↔Resident-Reaktion und Resident↔Clay-Prop/Attachment.
-- Locomotion, Sprung/Landung und Prop-Kontakt zeigen optional die T4-Clay-Partikelreaktion, ohne die Animation oder Kontaktprüfung zu verdecken.
-
-Der Session Cut muss diese Claymation-World-Ansicht tatsächlich darstellen. Eine bloße Auswahlbox oder ein Label `Clay` ohne gerendertes Terrain, Residents und Props erfüllt den Auftrag nicht.
-
-### Motion-Details und Anpassung
-
-Der Detailbereich nutzt denselben einklappbaren Inspektor wie Resident Atlas und zeigt nur bei Bedarf:
-
-- Dauer, Frames, Loop/One-shot, Root Motion und Travel;
-- `variantOf`, Kommentar und `residentIdeas`;
-- Prop-Anforderung mit Hand/Socket;
-- `events.strike` oder andere Ereignismarker;
-- Abspielgeschwindigkeit, Trim, Mirror und Arm-Space;
-- Actor-/Terrain-Kontakt sowie erkennbare Handgelenk-/Arm-/Kopf-Clipping-Probleme.
-
-Für die 8 Angriffe aus Intake 04 müssen die vorgeschlagenen Strike-Zeitpunkte visuell verschiebbar und prüfbar sein. Sie sind Kandidaten, keine bereits akzeptierten Gameplay-Marker.
-
-### Gemeinsamer Clay-VFX-Eventvertrag
-
-Animation Lab und Resident Atlas zeigen VFX nicht als fest in einen Clip eingebrannte Sonderlösung. Eine Animation/Choreografie liefert ein Ereignis; der gemeinsame Präsentationslayer rendert dazu ein Profil.
-
-Mindestens diese Ereignisklassen müssen im Editor sichtbar, zeitlich verschiebbar und als additives JSON exportierbar sein:
-
-- `footstep`, `jump`, `land`;
-- `brickfish_throw`, `brickfish_hit`, `melee_hit`, `wrestling_impact`;
-- `gift_open`, `gift_burst`, `prop_break`;
-- `vehicle_contact`, `collision`, `explosion`.
-
-Die Basisschicht besteht aus kleinen Knetkügelchen/-flocken. Optionale additive Layer sind Comic-Starburst/Impact-Zeichen, Ring/Flash und Rauch. Combat Arena, Ranged/Melee, Resident/NPC Interactions, World/Track und spätere Geschenk-Interaktionen konsumieren dieselben Eventnamen und Profile; kein Consumer erfindet einen eigenen zweiten Knet-Partikelstandard.
-
-Ein Profil hält mindestens `event`, `effectId`, `originSocket`, `direction`, `surfaceOrBiome`, `paletteSeed`, `intensity`, `lifetime` und `qualityTier`. VFX bleiben reine Präsentation: Hit, Damage, Geschenkzustand oder Kontakt werden niemals aus sichtbaren Partikeln abgeleitet. Der Editor zeigt `off / low / standard / high` und kann Basis-Clay, Comic-Overlay und Rauch einzeln schalten.
-
-### Props, Residents und Choreografie
-
-- Briefcase, Rifle, Bag, Torch, IV Pole, Sword, Pistol und Knife werden über vorhandene Asset-/Attachment-Sockets zugeordnet; die Motion-Dateien enthalten diese Props absichtlich nicht.
-- Ein Prop darf im Preview fehlen, ohne den gesamten Library View zu blockieren; zeige dann einen klaren, kleinen `Prop fehlt`-Status.
-- Resident Atlas wählt aus derselben Library Default Walk, Talk, Idle, Reaction und Signature Move.
-- Varianten mit größerem Armabstand bleiben gezielt für breite Körper filterbar.
-- Sitzende Clips verlangen einen Sitz-/Cockpit-Kontext; sie dürfen nicht als normaler Stand-Loop erscheinen.
-- Paar- und Kampfsequenzen können Attack/Reaction nebeneinander synchronisieren. `kfb_reaction_surprise_uppercut_a` ist die getroffene/KO-Seite, kein Angriff.
-- `walking_n` wird als nicht sauberer Loop markiert; kein automatisches Kaschieren.
-
-### CHOREO LAB 01 · Source Lock und belastbare Grenze
-
-CHOREO LAB 01 ist der aktuelle Donor für die **Interaktionslogik**, aber noch kein fertiger Animation Player.
-
-Bewiesen und zu übernehmen:
-
-- ein additives `kfb.choreo.v0`-Szenenformat mit Actor-, Stage-, Prop-, Track-, Event- und Shot-Daten;
-- drei auf `Rig_Medium`/Raider-Orc geprüfte Sechs-Moment-Storyboards: Geschenk, Streit und Rauferei;
-- sitzende Oberkörpergesten auf stehenden Beinen in den Varianten `upright` und `keep lean`;
-- kopfbasierte Abstandskontrolle, Attack/Reaction-Synchronisation, Re-Aim für verdrehte Clips und Kontinuität von KO zu Aufstehen;
-- vorhandene Motion-Library-Clips bleiben unverändert; Choreografie komponiert sie.
-
-Nicht bewiesen und daher sichtbar als offen zu markieren:
-
-- keine flüssige Wiedergabe, keine Übergänge und kein abspielbarer Zwei-Figuren-Player;
-- nur `Rig_Medium`; `Rig_Large` braucht eigene Kopf-, Reichweiten- und Abstandsmaße;
-- kein echter Give-/Receive-Clip;
-- Strike- und Reaction-Marker bleiben Kandidaten;
-- Speaker Corner ist beschrieben, aber noch nicht gebaut;
-- der bisherige türkise Ring, die einfachen Boxen und der seitliche Reveal sind Platzhalter, keine akzeptierten Geschenk-Assets.
-
-Eine Storyboard-Leiste oder ein `PROVEN`-Label darf diese Grenze nicht als fertige Animation darstellen.
-
-### Modularer ChoreographyRecipe · ein Vertrag, viele Szenen
-
-Der Designpass erweitert `kfb.choreo.v0` kompatibel zu einem editierbaren `ChoreographyRecipe`; er erfindet keine zweite Motion Library. Ein Rezept enthält mindestens:
-
-- `id`, Familie, Variante, Tags, Seed und Qualitätsstufe;
-- Teilnehmerrollen, Rig-Profil und Character-/Resident-IDs;
-- Stage-Anker, Kopfvolumen, Abstand, Blickrichtung und Kontakt-Sockets;
-- Body-Tracks mit Katalog-Clip-IDs, Ganzkörper-/Upper-/Lower-/Arms-Masken, Blend und Timing;
-- Face-Tracks als eigene Actors: Augen, Augenbrauen, Clay-Eyelids, Mund/Gesicht und Emotion-Preset;
-- Prop-Track mit echter Asset-ID, Socket oder Mittelpunkt-Anker, Größe, Sichtbarkeit, Spawn/Despawn und Übergabe;
-- Event-Track für Treffer, Reaktion, Geschenk, Sprache und `Show it / Spin it / Sell it`;
-- VFX-Track ausschließlich über den gemeinsamen Clay-VFX-Vertrag;
-- Phasen `approach → setup → action → reaction → resolve → return`.
-
-Mindestens diese Familien müssen als wiederverwendbare Rezepte statt als hart codierte Einzelszenen erscheinen:
-
-1. Geschenk überreichen und minimal auspacken;
-2. Gespräch, Debatte und Streit;
-3. Rauferei/Wrestling/Faustkampf;
-4. Monolog und Speaker Corner;
-5. Karte oder Objekt erklären;
-6. Booth-/Vendor-Handlungen `Show it`, `Spin it`, `Sell it`;
-7. modulare NPC-Default-Aktivitäten.
-
-Emotion ist keine Kopie der Körperanimation. Dieselbe Geschenk-, Gesprächs- oder Kampfchoreografie kann pro Phase unter anderem `surprised`, `delighted`, `amused`, `grumpy`, `angry`, `disappointed`, `confused` oder `proud` auf Augen, Brauen, Eyelids und Gesicht legen. Damit entstehen Varianten ohne neue Ganzkörperclips.
-
-### Verbindliche KISS-Entscheidungen für den ersten Player
-
-- `upright` ist der Standard für im Stehen verwendete Sitz-Gesten. `keep lean` ist ein phasenweiser Modifier für verschwörerisches Reden, Theke/Bar, Streit oder Betonung.
-- Treffer werden zuerst durch kompatible Clipwahl, kopfbasierten Abstand und einen kurzen Ganzkörper-Schritt/Lunge lesbar gemacht. Eine permanente Unterarmstreckung von 1,6–2,6× ist **kein** Standard.
-- Optionaler Cartoon-Gummiarm ist ein editierbarer Akzent mit sanfter Ein-/Ausblendung und zunächst höchstens ca. 1,15–1,35×. Reicht das nicht, werden Stage-Abstand, Schritt oder Clip gewechselt; der VFX-Burst darf keinen dauerhaften Kontaktfehler kaschieren.
-- Abstand wird pro Rig aus Kopf-/Gesichtsvolumen und nicht allein aus Armlänge bestimmt. Warnungen für Kopf-Clipping und unerreichbaren Kontakt bleiben im Inspector sichtbar.
-
-### Geschenk · reale Props, minimale lesbare Auflösung
-
-- Verwende verifizierte Santa-/Gift-Props aus dem bestehenden Asset-Katalog, pro Rig passend skaliert; keine generische Ersatzbox und kein türkiser Augenring.
-- Ein Geschenk darf für die Übergabe klar zwischen beiden Actors schweben bzw. am gemeinsamen Mittelpunkt verankert sein. Das ist als cartoonige Minimallösung akzeptiert.
-- Beim Event `gift_open` darf die Geschenkbox mit kleinem Clay-Burst verschwinden. Der eigentliche Gegenstand erscheint danach gut lesbar, größer und kameragünstig ausgerichtet. Eine aufwendige Deckel-/Auspackanimation ist für den ersten Player nicht erforderlich.
-- Geschenkreaktionen kombinieren Body-Clip, Face-/Eyes-/Brows-/Eyelids-Preset, Symbol/Sprechblase und `gift_open`/`gift_burst`; sie werden nicht als monolithische Spezialanimation gespeichert.
-
-### Choreography View im Animation Lab
-
-Neben dem Einzelclip-Modus gibt es einen klaren Zwei-/Mehr-Actor-Modus derselben Arbeitsfläche:
-
-- Play, Pause, Scrub, Loop und Phasen-/Eventmarker;
-- Actor/Rig-Auswahl mit `Rig_Medium`- und `Rig_Large`-Fitstatus;
-- Tracks für Body, Face, Prop, Event und VFX; Detailwerte bleiben im einklappbaren Inspector;
-- sichtbarer Wechsel der Emotionsvariante ohne Austausch des Body-Rezepts;
-- JSON Import/Export für `ChoreographyRecipe` und additive Korrekturen;
-- mindestens Geschenk, Debatte und Rauferei müssen wirklich abspielbar sein, nicht nur als Standbildstreifen;
-- Speaker Corner, Kartenerklärung und `Show it / Spin it / Sell it` müssen als auswählbare Rezeptfamilien mit einem kurzen funktionalen Beispiel sichtbar sein.
-
-### Intake / Drop-Zone
-
-Eine kompakte Drop-Zone darf lokale FBX/GLB-Clips zur Vorschau annehmen. Sie ist ein **Preview-/Intake-Eingang**, keine stillschweigende Aufnahme in die kanonische Library. Zeige vor Export klar: Dateiname, erkannter Rig-Typ, Dauer, verfügbare Animationen, notwendige Konvertierung und offene Prop-/Retarget-Fragen.
-
-## Motion Library v5 · Intake 05 · verbindlicher neuer Katalogstand
-
-**Aktiver Source Lock:** `georg-doc-patch-3@95a8197c76c2bae4d12bfc867d54debe15ffc1f2`.
-
-- Katalogversion: `2026-09-29b`;
-- 345 eindeutige Clip-IDs;
-- 79 neue Clips aus Intake 05, auf `Rig_Medium` und `Rig_Large` gebacken;
-- 27 exakte Dubletten wurden bewusst nicht erneut aufgenommen;
-- 16 neue GLB-Libraries und 79 geprüfte Kontaktbögen sind auf GitHub;
-- alle früheren Library-Dateien bleiben byte-identisch;
-- rohe FBX-Dateien bleiben außerhalb des Repositories.
-
-### Locomotion Sets statt loser Clip-Wand
-
-Die ToolBox liest den neuen Top-Level-Block `locomotionSets` direkt aus dem Katalog. Keine zweite, manuell gepflegte Set-Liste.
-
-Pflichtsets:
-
-- `male_basic`;
-- `female_basic`;
-- `magic_caster`;
-- `drunk`;
-- `carry_box`;
-- `carry_holding`;
-- `wheelbarrow`.
-
-Der Library View bietet zusätzlich zur Einzelclip-Suche einen Set-Modus. Er zeigt pro Set die vorhandenen Rollen wie Idle, Walk, Run, Strafe, Turn und Jump, die gemessene Geschwindigkeit je Rig und fehlende Rollen. Der Claymation-World-Preview kann ein Set als Zustandsfolge `idle → start → walk/run → turn → stop` abspielen, ohne neue Clips zu erfinden.
-
-Die spätere Runtime wählt nach Zustand und Bewegungsrichtung, blendet benachbarte Rollen anhand der gemessenen Geschwindigkeit und verwendet Turn-Clips nur bei Richtungswechsel auf der Stelle. Root Speed, sichtbare Schrittlänge und Playback Rate müssen gemeinsam beurteilt werden; eine Animation darf nicht durch beliebiges Beschleunigen von der Spielfigur wegrutschen.
-
-### Intake-05-Mängel sichtbar erhalten
-
-- `female_left_turn_b` und `female_right_turn_b` drehen nicht. Als ungeeignet markieren; standardmäßig die `_a`-Varianten anbieten.
-- `kfb_locomotion_standing_walk_forward_a` ist der Magier-/Caster-Gang, kein Waffen-Walk.
-- Nicht saubere Loops und Kurven werden als solche markiert; kein automatisches Kaschieren.
-- `drunk_idle_a` und `drunk_idle_variation_c` benötigen beim Loopen einen Übergang.
-- Box, Schubkarre, Handy, Gießkanne, Pflanze, Setzling und Tür sind Anforderungen der Clips, aber nicht in den Motion-GLBs enthalten. Im Preview echte Asset-IDs/Sockets verwenden oder kompakt `Prop fehlt` zeigen.
-- Farming-Kniekontakte besitzen kein Ground IK. Der Clay-Terrain-Preview muss Kontaktabweichungen sichtbar machen.
-- `Survivalist.fbx` und die Skinning-Testdatei sind keine Animationen und erscheinen nicht als Clips.
-
-### Neue produktive Filter und Resident-Zuordnung
-
-Ergänze Filter für `locomotionSet`, Richtungsrolle, gemessene Geschwindigkeit, Rig, Prop-Anforderung, sauberer Loop, Kurvenbewegung und One-shot. Resident-Profile können ein komplettes Locomotion Set plus einzelne Overrides für Signature Walk, Idle, Talk, Reaction und Special Move speichern.
-
-Farming, Magic, Drunk, Phone-Pacing, Old-Man-Walk, Texting, Door, Stairs, Tripping und Swatting-Bugs werden als mögliche Resident-/NPC-Aktivitäten auffindbar. Redaktionelle Namen, Tags und Zuordnungen bleiben additive JSON-Daten; der kanonische Katalog wird im Browser nicht still überschrieben.
-
-## Claymation-, Skydome- und Grounding-Gate · auch für Motion v5
-
-Jeder Einzelclip- und Locomotion-Set-Preview muss wahlweise in der bestehenden Claymation-Diorama-Ansicht laufen. Verbindlich bleiben H0 für Art Direction, K2 für Material/Werkzeuge und T4 für Szeneninseln/VFX. Kein neutraler GLB-Viewer als einzige Produktionsansicht.
-
-Skydome-Donor: `travel/travel-v16/terrain-v16/skydome-shader.js`. Mindestens `day / evening / night-space / basic`, mit `off / basic / full` für Performance. Der Dome folgt der Kamera; kein blauer Streifen und kein festes Wasserfarbenbild.
-
-Schatten-/Grounding-Gate:
-
-- sichtbare Oberfläche, Snap-/Fußkontakt und Shadow Receiver verwenden dieselbe finale Oberflächenhöhe;
-- keine versetzte unsichtbare Schattenebene;
-- genau ein Schattenvertrag pro Objekt;
-- keine abgelösten Schattenflecken, vertikalen Streifen, Doppelbilder, Z-Fighting oder schwebenden Kontakte;
-- Prüfungen auf ebenem Clay-Terrain, Hang, Pflaster-/Terrain-Naht und während Walk, Turn, Jump und Land;
-- Beauty, Shadow-off und Receiver-/Kontakt-Diagnose liefern.
-
-Der Motion-v5-Import gilt erst als im Studio integriert, wenn mindestens `female_basic`, `magic_caster`, `drunk` und ein Carry-Set in dieser Claymation-World-Ansicht mit korrektem Grounding abspielbar sind.
-
-## Inhaltsschutz
+## Auftrag C · Graveyard erhalten und sauber weiterbauen
 
 Unverändert erhalten:
 
 - vier Dancing Skeletons;
-- acht Takte Tanz, Takt 9 Zerfall, Takt 10 Zusammensetzen;
-- fliegende Knochen und Kollisionen als schaltbare Szeneoptionen;
+- acht Takte Tanz;
+- Takt 9 Zerfall;
+- Takt 10 Zusammensetzen;
+- fliegende Knochen;
+- Kollisionen mit Grabsteinen, Sarg und Säule;
 - Gate- und Audio-Funktionen;
-- aktuelles Resident-/Motion-/Scene-Ownership;
-- Motion Library v5 mit 263 eindeutigen Clips als aktueller Katalogstand;
-- Intake-04-Metadaten für Varianten, Props, Kommentare, Resident-Ideen und Strike-Kandidaten;
-- vollständiger 3D-Inline-Editor-Vertrag.
+- Diorama-/Inventar-Auswahl;
+- echte Halloween-Modelle.
 
-Keine neue Tanzlogik, kein neues Rigging, keine neuen Halloween-Assets und keine Reparatur des Content-Packs in diesem Job.
+Event-Zuordnung:
 
-Hinweis: Die Aussage des S11-Snapshots `PR #279 defekt` ist überholt. Für vollständige Halloween-GLBs gilt aktuell PR #279 @ `10a2c5e29bf752215dadb60b23f07253f63e9d34`; GitHub erneut prüfen.
+- Zerfall = `prop_break`;
+- zurückkehrende Knochen dürfen `land` auslösen;
+- finales Einrasten = `reassemble_complete`.
+
+## Auftrag D · Wegband und Pflaster
+
+- K2-Größenklasse: mittel wie Props, mit reduzierter Reliefamplitude;
+- Pack-Textur als einmal geladene, geteilte Detail-/Maskenquelle behalten und in KFB-Palette abtönen;
+- `flat clay` nur als Low-End-/Diagnose-Fallback;
+- KayKit A+B als Kern, C als Rand, D als Saum;
+- Quaternius-Höhe an KayKit angleichen;
+- gemeinsame Quaternius-Textur genau einmal laden;
+- `pathBand` besitzt Platzierung und Dichte, nicht Material;
+- manuelle Korrekturen bleiben editierbar und exportierbar.
+
+## Auftrag E · Claymation-Diorama, Skydome und Schatten
+
+Kein grauer Boden und kein neutraler Viewer als Produktionsansicht.
+
+Pflicht:
+
+- H0/K2/T4-Look tatsächlich anwenden;
+- Terrain, Residents und Props im gemeinsamen Claymation-Look;
+- Skydome mit Tag, Abend, Night-Space und Basic;
+- Qualitätsstufen off/basic/full;
+- T4-Clay-Partikel für Footstep, Land, Impact, prop_break und reassemble;
+- Clay-Spuren nach Größenklasse: grob Terrain, mittel Props, fein Characters.
+
+Grounding-/Shadow-Gate:
+
+- sichtbare Oberfläche, Snap-/Fußkontakt und Shadow Receiver verwenden dieselbe finale Oberflächenhöhe;
+- genau ein Schattenvertrag pro Objekt;
+- keine abgelösten Schatten, dunklen Streifen, Doppelschatten, Z-Fighting, schwebenden Füße oder Terrain-Clippings;
+- Prüfung auf flachem Terrain, Hang und Pflaster-/Terrain-Naht;
+- Beauty-, Shadow-off- und Receiver-/Kontakt-Diagnose.
+
+## Auftrag F · Resident-Interaktionen im Atlas
+
+Der Atlas zeigt ausgewählte Resident-Szenen, ohne das Animation Studio nachzubauen:
+
+- Geschenk;
+- Gespräch/Debatte;
+- kurze Rauferei;
+- Speaker Corner oder Monolog;
+- eine Default-Aktivität.
+
+Die Szenen konsumieren exportierte `ChoreographyRecipe`-/Motion-IDs. Im Atlas genügen kompakte Auswahl, Playback und Resident-spezifische Overrides. Tiefes Clip-Tagging, Retargeting, Intake und Set-Authoring bleiben im ToolBox Animation Studio.
+
+Emotionen bleiben modular zu Body-Clips:
+
+- Eyes;
+- Eyebrows;
+- Clay-Eyelids;
+- Mouth/Face;
+- Emotion-Preset.
+
+Clay-VFX konsumiert die gemeinsamen Events und erfindet keinen Resident-Sonderstandard.
 
 ## Abgabe
 
-Liefere ein vollständiges, herunterladbares Session-Paket mit:
+Vollständiger Resident-Atlas-Session-Cut mit:
 
-- interaktivem HTML-Artefakt im aktuellen ToolBox-Design;
+- aktualisiertem interaktivem HTML;
 - Desktop- und Narrow-Ansicht;
-- den vier Zuständen View, Actor, Requisite, Edit;
-- sichtbarem kompletten Inline-Menü;
-- offenem und geschlossenem Inspektor;
-- Library View mit realer 345-Clip-Katalogstruktur, Suche, Filtern, Character-Auswahl und animierten Preview-Karten;
-- mindestens je einem sichtbaren Beispiel für Prop-Attachment, Strike-Marker, Resident-Signature-Move, sitzenden Clip und Paar-/Kampfsequenz;
-- abspielbarem Choreography View für Geschenk, Debatte und Rauferei sowie kurzen Rezeptbeispielen für Speaker Corner, Kartenerklärung und `Show it / Spin it / Sell it`;
-- Emotionsvarianten über Eyes/Eyebrows/Eyelids/Face, ohne Body-Clips zu duplizieren;
-- echten, skalierten Santa-/Gift-Props und der akzeptierten minimalistischen Übergabe/Reveal-Logik;
-- mindestens je einem sichtbaren Clay-VFX-Beispiel für Landung, Brickfish/Combat-Impact und Geschenk-Burst, mit einzeln schaltbarer Basis-/Comic-/Rauchschicht;
-- echter Claymation-World-Ansicht mit gerendertem Terrain, mindestens zwei Residents und mindestens einem verwendeten Prop;
-- JSON Import/Export und lokaler Intake-Drop-Zone;
+- bereinigtem Graveyard-UI;
+- vollständigem Inline-Editor;
+- einem einklappbaren Inspektor;
+- Grid/Connector/Mount;
+- Claymation-Diorama samt Skydome;
+- Grounding-/Shadow-Diagnose;
+- Dancing Skeletons und Wegband;
+- mindestens drei kurze Resident-Interaktionsbeispiele;
+- JSON-Export der Atlas-/Scene-/Editor-Korrekturen;
+- `START_HERE.md`;
 - `RETURN.md` problems first;
-- `SOURCE.json` mit exakten Pins;
+- `SOURCE.json`;
 - `TEST_REPORT.md`;
-- editierbarem Quellstand und Checksummen;
+- Screenshots/Beweisbilder;
+- Checksummen;
 - genau einem nächsten Gate.
 
-Claude Design soll **nicht** committen, pushen, einen PR eröffnen oder den Hub pflegen. Das Paket wird über den KFB Production Inbox Upload oder als vollständiger Download an einen GitHub-fähigen Empfänger zurückgegeben.
+PASS, wenn der Resident Atlas klarer, ruhiger und funktional vollständig ist, der Claymation-Look sichtbar den Donors entspricht und keine Schatten-/Kontaktfehler kaschiert werden.
 
-Bevorzugte Ausführung: Claude Design Desktop, damit das vollständige Session-Paket lokal geladen, getestet und geschlossen exportiert werden kann. Desktop-Nutzung ändert nichts an der GitHub-Grenze: ohne verifizierten Connector keine Push-/PR-Aufträge.
-
-## Prüfung
-
-PASS, wenn Georg in Graveyard Edit sofort erkennt:
-
-1. welches Objekt ausgewählt ist;
-2. wie es verschoben, gedreht, skaliert und abgesetzt wird;
-3. wie Detaildaten ein- und ausgeblendet werden;
-4. dass kein zweites oder drittes Panel dieselbe Aufgabe beansprucht;
-5. dass der 3D-View die Hauptfläche bleibt;
-6. dass Resident Atlas und Animation Lab dieselbe Editor-Komponente verwenden;
-7. dass die 345 Clips auffindbar sind, ohne das Interface mit Metadaten zu überladen;
-8. dass Props, Strike-Marker und Resident-Zuordnungen verständlich bearbeitet und als JSON exportiert werden können;
-9. dass Terrain, Residents und Props in der World-Ansicht sichtbar im gemeinsamen Claymation-Look gerendert werden.
-10. dass Geschenk, Debatte und Rauferei flüssig abspielbar sind und nicht nur aus sechs Standbildern bestehen;
-11. dass dieselbe Choreografie durch modulare Emotions-, Prop- und VFX-Tracks variiert werden kann.
-
-Budget-Stopp: ein Designpass plus ein klar begrenzter UI-TUNE-Pass. Keine dritte Neugestaltung.
+Nicht Teil des PASS-Gates: ein vollständiger 345-Clip-Library-Browser. Dieser wird separat in KFB ToolBox Production-05 gebaut.
