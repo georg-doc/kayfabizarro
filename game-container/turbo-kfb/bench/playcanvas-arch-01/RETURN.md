@@ -129,17 +129,24 @@ Correct architecture direction:
 
 Do not create a primitive replacement world.
 
-## Exactly one next gate
+## Superseded next gate · 2026-09-29
 
-**PC-DONOR-PROFILE-01 · PROFILE THE REAL PLAYCANVAS DONOR**
+Georg rejected primitive/cube benchmarking as a product foundation.
 
-Use the actual exported `KFB Joyride 01` / Vehicle Physics project as the test surface.
+The real donor path is now completed in:
+`game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/RETURN.md`
 
-Required order:
-1. run the untouched donor;
-2. record scene/entity/render/material/light/shadow/physics counts and available runtime stats;
-3. add simple toggles for existing donor groups (terrain / props / shadows / vehicle graphics / physics), without replacing them;
-4. determine which existing donor layer causes the cost;
-5. preserve the good driving feel throughout.
+Result:
+- exact Vehicle Physics public runtime captured;
+- 42 runtime files / 22,054,130 bytes;
+- self-host 11/11 PASS;
+- public KFB Stage 11/11 PASS;
+- `https://kayfabizarro.pages.dev/kfb-hub/stage/playcanvas-donor-01/`
 
-The primitive bench remains archived internal evidence only. It is not the next product surface.
+This primitive bench remains **archived diagnostic evidence only** and is no longer a current human/product gate.
+
+## Exactly one current next gate
+
+**PC-LOOK-01 · TEXTURE / MATERIAL ONLY**
+
+Start from immutable Donor-01. Do not modify physics, camera, controls, collision or geometry yet.
