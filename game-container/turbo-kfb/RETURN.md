@@ -346,3 +346,41 @@ Protected blobs retained from PR #288:
 
 Exactly one next gate:
 Run baseline regression plus tuned Velocity+Orbit browser proof. Do not publish until both pass.
+
+
+## GROUND-WALK-PACE-TUNE-01 · tested result
+
+Tested runtime/QA head:
+`0cdea8f20e217d1696c84eeb604d4a3092f04818`
+
+Actions:
+- run `36586661859`;
+- conclusion: **SUCCESS**;
+- pace static: **10/10 PASS**;
+- unchanged B2 baseline regression: **29/29 PASS**;
+- tuned Velocity + Orbit: **29/29 PASS**;
+- runtime/page/console errors: **0**;
+- artifact `11041624052`;
+- digest `sha256:9f7ba80c52cce5a6750cd547df1a444bb7bb129c43504bedca8a8bdae5f37cab`.
+
+Measured tuned Ground:
+- playable normal Walk target: **1.108 u/s**;
+- settled observed Walk: **1.1071303706 u/s**;
+- Walking_A source reference retained: **0.6109509569 u/s**;
+- Walking_A playback at normal-W target: **1.8×**;
+- start after .12 s: **0.8347705640 u/s** — velocity response remains, no instant snap;
+- Running_A ramp: **2.6774628966 u/s**;
+- Running_B Sprint: **3.0249741469 u/s**;
+- release returns to Walking_A at **1.1101718229 u/s**;
+- backward / strafe source states PASS;
+- jump apex / air / travel unchanged and PASS;
+- Orbit drag / zoom / C-recenter unchanged and PASS;
+- no root-motion world translation.
+
+Interpretation:
+- source cadence remains measurement truth;
+- gameplay traversal pace is now intentionally overdriven;
+- the prior human TUNE is implemented without changing Run/Sprint/Jump/Orbit ownership.
+
+## Exactly one current next gate
+Publish a dedicated `GROUND-WALK-PACE-TUNE-01` Stage candidate for Georg freeplay. Do not replace the slower public comparison until human feel confirms the new pace.

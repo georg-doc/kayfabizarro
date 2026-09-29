@@ -93,3 +93,27 @@ Final public proof:
 - runtime/page/console errors: 0
 
 Status: **PUBLIC VERIFIED**.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-01
+
+Tested runtime/QA head: `0cdea8f20e217d1696c84eeb604d4a3092f04818`
+Run: `36586661859`
+Artifact: `11041624052`
+Digest: `sha256:9f7ba80c52cce5a6750cd547df1a444bb7bb129c43504bedca8a8bdae5f37cab`
+
+### Result
+- pace static: **10/10 PASS**
+- baseline regression: **29/29 PASS**
+- tuned Velocity + Orbit: **29/29 PASS**
+- runtime/page/console errors: **0**
+
+### Tuned Walk
+- game target: 1.108 u/s
+- observed settled: 1.1071303706 u/s
+- source Walking_A reference: 0.6109509569 u/s
+- playback at target: 1.8×
+- start after .12 s: 0.8347705640 u/s
+- release settles back at 1.1101718229 u/s
+
+Run/Sprint, directional states, Jump and Orbit remain PASS.

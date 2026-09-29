@@ -73,3 +73,13 @@
 - final Hub/metadata `cloudflare-live@0f2e0588...`: Cloudflare Pages SUCCESS + public Chromium 18/18 PASS again;
 - final artifact `11029408390`, digest `sha256:0ec22fc23ce71dd2e6f84b34bb5d0772ba2895f5d84074ba17f50314546e48f5`;
 - public route proves Locomotion + Orbit together; next gate is Georg combined feel, then Enter/Exit Kart if PROCEED.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-01 · browser PASS
+- human TUNE implemented: default W no longer locked to conservative Walking_A source speed;
+- reused existing Motion Lab Rig_Medium handoff candidate: **1.108 u/s** gameplay Walk with **1.8× Walking_A** playback;
+- only `ground-player.js` runtime changed;
+- baseline 29/29 PASS; tuned Velocity+Orbit 29/29 PASS; static 10/10 PASS;
+- Run/Sprint/Backward/Strafe/Jump/Orbit preserved;
+- artifact `11041624052`, digest `sha256:9f7ba80c52cce5a6750cd547df1a444bb7bb129c43504bedca8a8bdae5f37cab`;
+- next: separate Stage freeplay; old slower integrated Stage remains comparison.
