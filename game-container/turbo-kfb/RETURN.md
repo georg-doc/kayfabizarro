@@ -344,3 +344,37 @@ QA run:
 
 ## Exactly one current next gate
 Finish run `36581374090`. If regression + tuned Travel-Walk both pass, publish a dedicated pace-tune Stage for Georg feel review. Do not replace the current public Combined baseline before that review.
+
+
+## GROUND-WALK-PACE-TUNE-01 · tested result
+
+Tested runtime/QA head: `d6e9d42149670af290d96fe19dfdc28095f2f337`
+Actions run: `36582612505`
+Artifact: `11040906054`
+Digest: `sha256:ae9e6929c02fcf0357fb7c57228d168a64561f7b9d5f21f152ccd8f1f6a3289e`
+
+Result:
+- Walk-pace static: **6/6 PASS**
+- existing Ground+Orbit regression: **27/27 PASS**
+- Travel-Walk browser: **14/14 PASS**
+- runtime/page/console errors: **0**
+
+Measured Travel-Walk:
+- target: `1.0997117224 u/s`
+- settled: `1.0989688245 u/s`
+- Walking_A playback: `1.8×`
+- 0.84 s travel: `0.94 u`
+- Shift Run tier: `Running_A @ 2.7251 u/s`
+- Shift Sprint tier: `Running_B @ 3.0254 u/s`
+- Shift release: returns to `Walking_A @ 1.1019 u/s`
+- Orbit remains active.
+
+Repair history:
+1. first red run was QA-only: Node assertion referenced browser `window`; runtime checks before that point were green;
+2. after QA repair, the faster starting pace exposed a real state-threshold issue: Shift crossed the old Sprint threshold too quickly and skipped the visible `Running_A` tier;
+3. one product repair moved the Travel-profile Sprint handoff to 96% of Running_B speed; the next exact runtime run passed.
+
+The current 0.611 u/s measured pace remains available when `walkPace=travel` is absent.
+
+## Exactly one current next gate
+Publish a dedicated Pace-Tune Stage using `?ground=1&groundFeel=velocity&walkPace=travel` and ask Georg whether ~1.10 u/s is now enjoyable enough. If still too slow, do **not** keep overdriving Walking_A blindly; the next design choice is normal-W-as-jog/Running_A versus a higher playback cap.

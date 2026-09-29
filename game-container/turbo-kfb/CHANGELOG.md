@@ -81,3 +81,13 @@
 - Added opt-in `walkPace=travel`: Walking_A at existing 1.8× cap, target 1.0997117224 u/s.
 - Preserved measured Walk baseline and all Run/Sprint/Jump/Orbit behavior.
 - Dedicated regression + travel-pace browser proof running on `eb8d5a66...`.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-01 · browser PASS
+- Travel Walk = Walking_A at existing 1.8× playback ceiling, 1.0997117224 u/s target;
+- preserved measured 0.611 baseline as no-query comparison;
+- preserved explicit Running_A tier before Running_B Sprint by Travel-profile handoff tuning;
+- run `36582612505`: static 6/6 + Combined regression 27/27 + Travel-Walk 14/14 PASS;
+- zero runtime/page/console errors;
+- artifact `11040906054`, digest `sha256:ae9e6929c02fcf0357fb7c57228d168a64561f7b9d5f21f152ccd8f1f6a3289e`;
+- next: dedicated human Pace-Tune Stage.
