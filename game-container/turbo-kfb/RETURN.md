@@ -289,3 +289,27 @@ Status: **PUBLIC VERIFIED · HUMAN COMBINED FEEL OPEN**.
 
 ## Exactly one current next gate
 Georg freeplays the integrated Stage and judges only the combined Ground experience: locomotion feel + Orbit usefulness. If this is a PROCEED PASS, Checkpoint C becomes `WALK ⇄ ENTER KART ⇄ DRIVE/DRIFT ⇄ EXIT ⇄ WALK`. No merge before that gate.
+
+
+## Georg human combined-feel review · 2026-09-29
+
+Outcome: **TUNE · APPROACH GOOD · DEFAULT WALK TOO SLOW**
+
+Observed on the public integrated Stage:
+- animation quality is clearly better;
+- combined Ground + Orbit direction is good;
+- **default Walk pace is still much too slow for enjoyable free travel**;
+- traversal takes too long and the actor does not read as dynamic enough at normal W.
+
+Human direction:
+- normal W must be materially faster;
+- it is acceptable to **overdrive animation playback** if needed;
+- do not regress into the previous tiny/tripping-step feel;
+- preserve the improved semantic states, actor-scale Jump and Orbit.
+
+Interpretation:
+- the current `Walking_A @ 0.6109509569 u/s` should be treated as source/reference cadence, **not the final game traversal speed**;
+- next tuning should separate **gameplay travel speed** from **clip source reference speed** and use the best existing Rig_Medium walk role / playback multiplier rather than blindly locking world speed to measured source displacement.
+
+## Exactly one current next gate
+**GROUND-WALK-PACE-TUNE-01:** choose the best existing source-backed Walk tier (Walking_A/B/C and existing profile data), raise normal W to an enjoyable travel pace, keep Run/Sprint hierarchy intact, and prove no obvious foot-slide/tripping regression in the real integrated Ground+Orbit host.
