@@ -384,3 +384,24 @@ Interpretation:
 
 ## Exactly one current next gate
 Publish a dedicated `GROUND-WALK-PACE-TUNE-01` Stage candidate for Georg freeplay. Do not replace the slower public comparison until human feel confirms the new pace.
+
+
+## Reconciliation · duplicate pace tune superseded
+
+GitHub cross-check on 2026-09-29 found that the parallel owner branch
+`chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29`
+already completed and publicly verified the same human TUNE.
+
+Canonical current pace-tune candidate:
+- branch head: `16f3d3f0e3a1081d6748e3f418370c718bb57f9e`
+- tested runtime: `d6e9d42149670af290d96fe19dfdc28095f2f337`
+- Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+- public Chromium: **13/13 PASS**
+- Cloudflare Pages: **SUCCESS**
+- Walking_A playback: **1.8×**
+- public settled Walk: **~1.099 u/s**
+
+This branch's independent 1.108 u/s proof is technically green but is **SUPERSEDED DUPLICATE EVIDENCE** and must not be separately published.
+
+Exactly one next gate:
+Georg judges the canonical public pace-tune Stage. If pace is still too slow, choose default jog/Running_A or a higher playback/travel policy; do not create another duplicate Walk tune.
