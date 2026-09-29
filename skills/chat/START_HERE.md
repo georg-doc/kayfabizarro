@@ -1331,3 +1331,17 @@ Travel forward contract for this gate:
 - Jump, backward/strafe, velocity response and Orbit remain unchanged.
 
 Exactly one current gate: **Georg judges the two-gear W=Running_A / Shift=Running_B travel feel.** No merge and no Enter/Exit Kart before that verdict.
+
+
+## 2026-09-29 · GROUND-WALLCLOCK-TIMING-01 stop-rule recovery
+
+The attempted global Turbo wall-clock catch-up candidate is frozen at `9431a89c8b28c21579f61ae8cdb5e3be197706d5` after two failed repair passes and is **not published**.
+
+- proven issue: old live RAF clamp discards elapsed time above 1/30 s and can create slow-motion world traversal;
+- frozen candidate: `ARCHIVED_FAILED_CANDIDATE`;
+- final run `36593362023`: static gates PASS; Explore/Race/Ground Walk/Run/Stop and Jump Start/Air PASS; legacy landing gate remains red;
+- last accepted/public Two-Gear runtime remains `4475271b61e65fae95e5044925b83f2e39c18e6e`;
+- public route remains https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel;
+- recovery: `skills/chat/workflows/GROUND_WALLCLOCK_TIMING_01_FAILURE_RECOVERY_2026-09-29/`.
+
+Exactly one next gate: **GROUND-WALLCLOCK-TRAVEL-ONLY-01** on a fresh branch from `542eedb91f96b6f718df9e619fb3d3f746b79854`, limiting wall-clock catch-up to the explicit Travel profile and leaving Race/Explore/no-query Ground timing unchanged.

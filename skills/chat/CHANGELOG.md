@@ -2078,3 +2078,13 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Public artifact `11043990368`, digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`.
 - Direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel
 - Exactly one next gate: Georg human two-gear feel; no merge / Enter-Exit before verdict.
+
+
+## 2026-09-29 · GROUND-WALLCLOCK-TIMING-01 stop-rule recovery
+- Georg reported that Two-Gear clips/states were correct but actual world traversal still looked slow/ruckly.
+- Code inspection proved live Turbo discarded wall-clock time over 1/30 s; deterministic QA had masked the issue.
+- Global bounded catch-up candidate reached static PASS and broad Explore/Race/Ground movement PASS, but legacy Ground landing stayed red after two repair passes.
+- Frozen head `9431a89c8b28c21579f61ae8cdb5e3be197706d5`; no Repair 3; no Cloudflare publication.
+- Recovery export: `skills/chat/workflows/GROUND_WALLCLOCK_TIMING_01_FAILURE_RECOVERY_2026-09-29/`.
+- Last public runtime remains `4475271b...`.
+- Next only: fresh Travel-only timing fix from `542eedb9...`.
