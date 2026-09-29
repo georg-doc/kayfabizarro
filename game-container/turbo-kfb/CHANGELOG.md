@@ -129,3 +129,11 @@
 - Public artifact `11043990368`, digest `sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707`; screenshots `stage.png`, `hub.png`.
 - Prior 1.10-u/s Walking_A Travel candidate is superseded for human review; old measured profile remains regression/reference only.
 - Exactly one next gate: Georg human two-gear feel. No Enter/Exit Kart before verdict.
+
+
+## 2026-09-29 · GROUND-TRAVEL-PACE-TIMING-01 · implementation
+- Fresh branch from accepted Two-Gear handoff `542eedb91f96b6f718df9e619fb3d3f746b79854`; failed global timing candidate excluded.
+- Georg TUNE 4 implemented as Travel-only 1.8× cadence/world-speed coupling: Running_A ≈ 4.46 u/s, Running_B ≈ 5.45 u/s.
+- Travel-only wall-clock catch-up added in 1/60-s slices, capped at 0.25 s; Race/Explore/no-query Ground keep old timing path.
+- Added dedicated static and browser timing/cadence proof plus full baseline/Ground+Orbit regression workflow.
+- Tests pending; no public Stage mutation.

@@ -528,3 +528,25 @@ The prior ~1.10 u/s `Walking_A` Travel candidate remains additive history only a
 
 ## Exactly one current next gate
 **GEORG HUMAN TWO-GEAR FEEL:** on the direct Stage, judge only whether normal W now feels correct as the default `Running_A` travel gear and Shift as `Running_B` Sprint. No merge and no Enter/Exit Kart before this verdict.
+
+
+## GROUND-TRAVEL-PACE-TIMING-01 · implementation checkpoint
+
+Status: **IMPLEMENTED ON FRESH CLEAN BASE · TESTS PENDING**
+
+- branch: `chatgpt-web/kfb-ground-travel-pace-timing-01-2026-09-29`;
+- base: last accepted Two-Gear handoff `542eedb91f96b6f718df9e619fb3d3f746b79854`;
+- previous global timing candidate is not in this branch;
+- W remains `Running_A`, Shift remains `Running_B`;
+- Travel cadence multiplier: **1.8×**, applied to both locomotion playback and forward world target speed;
+- target W: **4.4644935006 u/s**;
+- target Shift: **5.4511465643 u/s**;
+- source/reference speeds remain unchanged measurement data;
+- live wall-clock catch-up is scoped only to explicit `walkPace=travel` Ground and uses 1/60-s slices with 0.25-s max catch-up;
+- Race, Explore and no-query Ground retain the original live `Math.min(rawDt,1/30)` path;
+- existing `advanceBy()` remains unchanged;
+- backward/strafe, Jump and Orbit unchanged.
+
+Brief: `game-container/turbo-kfb/GROUND_TRAVEL_PACE_TIMING_01.md`
+
+Exactly one gate: run new static + full baseline + existing Ground/Orbit + dedicated Travel 1.8×/15-FPS browser proof. No Stage publication before all pass.

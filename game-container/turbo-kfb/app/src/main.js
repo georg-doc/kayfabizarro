@@ -179,6 +179,12 @@ let introTimer = 0;
 let resultsShown = false;
 let time = 0;
 const clock = new THREE.Clock();
+// GROUND-TRAVEL-PACE-TIMING-01: keep legacy Race/Explore/no-query timing byte-for-byte.
+// Only the explicit Travel Ground profile catches up elapsed wall-clock time in fixed slices.
+const TRAVEL_TIMING_REQUESTED = new URLSearchParams(location.search).get('walkPace') === 'travel';
+const TRAVEL_SIM_STEP = 1 / 60;
+const TRAVEL_MAX_CATCHUP = 0.25;
+let travelTiming = { rawDt:0, simulatedDt:0, steps:0, droppedDt:0, active:false };
 const NEUTRAL = Object.freeze({ throttle: 0, brake: 0, steer: 0, drift: false, item: false, lookBack: false });
 
 function setState(s) {
@@ -618,6 +624,25 @@ function simulate(w, dt) {
   }
 }
 
+function simulateTravelElapsed(w, elapsed) {
+  const rawDt = Math.max(0, Number(elapsed) || 0);
+  const budget = Math.min(rawDt, TRAVEL_MAX_CATCHUP);
+  let simulatedDt = 0, steps = 0;
+  while (simulatedDt + 1e-9 < budget && steps < 64) {
+    const step = Math.min(TRAVEL_SIM_STEP, budget - simulatedDt);
+    simulate(w, step);
+    simulatedDt += step;
+    steps++;
+  }
+  return {
+    rawDt,
+    simulatedDt,
+    steps,
+    droppedDt: Math.max(0, rawDt - simulatedDt),
+    active:true,
+  };
+}
+
 function frame() {
   requestAnimationFrame(frame);
   const rawDt = clock.getDelta();
@@ -625,34 +650,45 @@ function frame() {
   safe('menu.update', () => menu.update(rawDt, resultsShown ? 'results' : state));
 
   const w = world;
+  let visualDt = dt;
   if (w) {
     const running = state !== 'paused' && state !== 'loading' && state !== 'boot';
-    if (running) simulate(w, dt);
+    const travelGround = running && TRAVEL_TIMING_REQUESTED && w.controlMode === 'ground' && !!w.groundPlayer;
+    if (running) {
+      if (travelGround) {
+        travelTiming = simulateTravelElapsed(w, rawDt);
+        visualDt = Math.min(rawDt, 0.1);
+      } else {
+        travelTiming = { rawDt, simulatedDt:dt, steps:1, droppedDt:Math.max(0,rawDt-dt), active:false };
+        simulate(w, dt);
+      }
+    }
 
     if ((w.mode === 'race' || w.mode === 'explore') && w.player) {
       const groundMode = w.controlMode === 'ground' && !!w.groundPlayer;
       const cameraTarget = groundMode ? w.groundPlayer : w.player;
       if (state !== 'paused') {
         if (groundMode && w.groundOrbit) {
-          safe('camera.groundOrbit.update', () => w.groundOrbit.update(dt, cameraTarget));
+          safe('camera.groundOrbit.update', () => w.groundOrbit.update(visualDt, cameraTarget));
         } else {
           const mode = groundMode ? 'ground' : state === 'intro' ? 'intro' : state === 'countdown' ? 'countdown' : state === 'finished' ? 'finish' : 'race';
           const lookBack = !groundMode && !!((state === 'racing' || state === 'explore') && playerInput && playerInput.lookBack);
-          safe('camera.update', () => w.chase.update(dt, cameraTarget, { lookBack, mode }));
+          safe('camera.update', () => w.chase.update(visualDt, cameraTarget, { lookBack, mode }));
         }
       }
-      if (w.mode === 'race') safe('hud.update', () => hud.update(dt, { player: w.player, karts: w.karts, race: w.race, itemSystem: w.items, track: w.track, time }));
+      if (w.mode === 'race') safe('hud.update', () => hud.update(visualDt, { player: w.player, karts: w.karts, race: w.race, itemSystem: w.items, track: w.track, time }));
     } else {
-      updateAttractCamera(dt);
+      updateAttractCamera(visualDt);
     }
     const audioPlayer = w.controlMode === 'ground' ? null : w.player;
-    safe('audio.update', () => audio.update(dt, { player: audioPlayer, karts: w.karts, camera }));
+    safe('audio.update', () => audio.update(visualDt, { player: audioPlayer, karts: w.karts, camera }));
   } else {
+    travelTiming = { rawDt, simulatedDt:0, steps:0, droppedDt:0, active:false };
     updateAttractCamera(dt);
     safe('audio.update', () => audio.update(dt, { camera }));
   }
 
-  try { composer.render(dt); } catch (e) { report('render', e); }
+  try { composer.render(visualDt); } catch (e) { report('render', e); }
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -697,6 +733,16 @@ window.__game = {
   goToTitle,
   skipIntro: () => beginCountdown(),
   errors: () => [...seenErrors],
+  timing: () => ({ ...travelTiming, simStep:TRAVEL_SIM_STEP, maxCatchUp:TRAVEL_MAX_CATCHUP, travelRequested:TRAVEL_TIMING_REQUESTED }),
+  /** Production Travel timing seam: exact helper used by the live Travel-only RAF branch. */
+  advanceTravelFrame(seconds) {
+    const w = world;
+    const active = !!(w && TRAVEL_TIMING_REQUESTED && w.controlMode === 'ground' && w.groundPlayer);
+    if (!active || !(seconds > 0)) return { rawDt:0, simulatedDt:0, steps:0, droppedDt:0, active:false };
+    travelTiming = simulateTravelElapsed(w, seconds);
+    clock.getDelta();
+    return { ...travelTiming };
+  },
   /** Deterministic test seam: advance gameplay without relying on requestAnimationFrame. */
   advanceBy(seconds, step = 1 / 60) {
     const w = world;

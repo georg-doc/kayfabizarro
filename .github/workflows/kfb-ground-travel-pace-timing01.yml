@@ -1,0 +1,65 @@
+name: KFB Ground Travel Pace Timing 01
+on:
+  push:
+    branches:
+      - chatgpt-web/kfb-ground-travel-pace-timing-01-2026-09-29
+    paths:
+      - 'game-container/turbo-kfb/**'
+      - '.github/workflows/kfb-ground-travel-pace-timing01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Travel pace + timing static
+        run: node game-container/turbo-kfb/qa/ground-travel-pace-timing01-static.mjs
+      - name: Integration static regression
+        run: node game-container/turbo-kfb/qa/ground-orbit-integration01-static.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 --directory . >/tmp/kfb-travel-pace-timing-http.log 2>&1 &
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/app/ >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-travel-pace-timing-http.log
+          exit 1
+      - name: Full Turbo baseline regression
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-baseline
+        run: node game-container/turbo-kfb/qa/checkpoint-a.mjs
+      - name: Existing Ground + Orbit regression
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-ground-orbit
+        run: node game-container/turbo-kfb/qa/ground-orbit-integration01.mjs
+      - name: Travel 1.8x cadence + wall-clock proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-travel-pace-timing
+        run: node game-container/turbo-kfb/qa/ground-travel-pace-timing01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-ground-travel-pace-timing01
+          path: |
+            game-container/turbo-kfb/qa/artifacts-baseline/
+            game-container/turbo-kfb/qa/artifacts-ground-orbit/
+            game-container/turbo-kfb/qa/artifacts-travel-pace-timing/
+          if-no-files-found: warn
