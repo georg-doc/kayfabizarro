@@ -46,7 +46,7 @@ const SPRINT_SPEED = REF_SPEED.Running_B;
 // The ToolBox locomotion owner supplies clip roles + measured cadence; walk-controller still owns world movement.
 const TRAVEL_FORWARD_SPEED = 5.4;
 const TRAVEL_SPRINT_SPEED = 9.45;
-const TRAVEL_RATE_MAX = 3.0;
+const TRAVEL_RATE_MAX = 4.0;
 const PROFILE_OWNER_PATH = '/tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js';
 const PROFILE_CANDIDATE_NAMES = Object.freeze([...new Set(LOCOMOTION_ROLES.flatMap((r) => [r.clip, ...(r.among || [])]).filter(Boolean))]);
 const HANDOFF_SPEED = 1.108;
@@ -311,6 +311,9 @@ export async function createGroundPlayer({ scene, track } = {}) {
     const doSync=walkPace==='travel' ? !!hint?.syncPhase : sync;
     const fadeSec=fade==null ? (hint?.fade??FADE) : fade;
     if(currentName===name) {
+      if(currentRole!==nextRole) {
+        lastTransition={from:currentRole,to:nextRole,fade:fadeSec,syncPhase:doSync,sameClip:true};
+      }
       if((walkPace==='travel'&&role)||REF_SPEED[name]) current.setEffectiveTimeScale(rateFor(name,speed,role));
       currentSemantic=semantic;
       currentRole=nextRole;
