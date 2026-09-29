@@ -2054,3 +2054,18 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-29 · PlayCanvas Vehicle Physics Donor-01 · source-exact baseline
+
+- Georg redirected the PlayCanvas/Joyride lane away from primitive/cube-first reconstruction: first host the real Vehicle Physics fork/donor 1:1, then change textures/materials.
+- User fork truth: `KFB Joyride 01` project 1609943 / scene 2608057 / fork-from 643289; Dropbox project export remains editable provenance.
+- Exact public runtime donor `playcanv.as/apps/BfRjx709/` was captured from the running app: 42 files / 22,054,130 bytes / 0 capture errors, with per-file SHA-256 manifest.
+- Immutable runtime snapshot commit: `8bcbaf1cf60696e12c32d75a12b4fed0a37dfebc`.
+- Self-host parity: run `36604195908` / job `109528909467` · **11/11 PASS**.
+- Public KFB Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/playcanvas-donor-01/`.
+- Public proof: run `36604921730` / job `109531386518` · **11/11 PASS**, 0 page/console/request errors; artifact `11051400015`, digest `sha256:7996aa46bcdadbd359667254a52df09b2d2277d64035393233f5b92bfe4d7f37`.
+- Cloudflare publication commit: `db0fabff71b9bb8943184628b7c7d697ba48cd3b`.
+- Hub repaired: malformed primitive-bench insertion removed; current PlayCanvas card is source-exact Donor-01.
+- Primitive architecture bench remains archived diagnostic evidence only.
+- Exactly one next gate: **PC-LOOK-01 · TEXTURE / MATERIAL ONLY**. Physics, camera, controls, collision and geometry stay locked; T4/TD03 follows later.
