@@ -1,0 +1,481 @@
+{
+  "accepted": 22,
+  "acceptedByProvider": {
+    "aic": 4,
+    "commons": 6,
+    "ia": 6,
+    "met": 6
+  },
+  "assertions": {
+    "acceptanceFloor": "PASS",
+    "boundedDiscovery": "PASS",
+    "compile": "PASS",
+    "creditsFromSidecars": "PASS",
+    "existingSmokeRegression": "4/4 UNCHANGED",
+    "secondRunIdempotence": "PASS",
+    "stalePartialFiles": "0",
+    "storedPayloadSidecarIntegrity": "PASS"
+  },
+  "discovery": {
+    "counts": {
+      "aic": 5,
+      "commons": 6,
+      "ia": 6,
+      "met": 6
+    },
+    "errors": [],
+    "existingSkippedBase": 4,
+    "schema": "kfb.pd-pool-c1-discovery/0.1",
+    "total": 23
+  },
+  "fallbackAttributionRowsAfter": 5,
+  "firstRun": {
+    "counts": {
+      "loaded": 22,
+      "rejected": 1,
+      "unchanged": 0
+    },
+    "generatedAt": "2026-09-28T19:13:32+00:00",
+    "manifest": "tools/public_domain/pd-c1-curated-manifest.jsonl",
+    "results": [
+      {
+        "bytes": 175361,
+        "id": "met-c1-397573",
+        "localPath": "met/c1-397573.jpg",
+        "provider": "met",
+        "sha256": "c50b25b93d77fec5065a43c0a8a57c8371bfe615c3d97f70622d6bdc97694b57",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 96092,
+        "id": "met-c1-358129",
+        "localPath": "met/c1-358129.jpg",
+        "provider": "met",
+        "sha256": "5c50bfaff5ffb9b15e66135c505a0cda4d0644b76de3bf4890a52980b43ba26a",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 275279,
+        "id": "met-c1-337494",
+        "localPath": "met/c1-337494.jpg",
+        "provider": "met",
+        "sha256": "5e3b6b8f2453d13bd7acd9a3f6612f0abc2620fc6eeec2bafaf1e99d9e4b4acf",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 389415,
+        "id": "met-c1-358366",
+        "localPath": "met/c1-358366.jpg",
+        "provider": "met",
+        "sha256": "eab80e324079d61ed8cbe4ec7cb5e1350db47df75bec787c5221197e8c7cf27d",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 131399,
+        "id": "met-c1-53449",
+        "localPath": "met/c1-53449.jpg",
+        "provider": "met",
+        "sha256": "01135f0a03f0ca3316989e19c3f5413bfb4495859ee560b1fdd664628a669fdb",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 107714,
+        "id": "met-c1-267087",
+        "localPath": "met/c1-267087.jpg",
+        "provider": "met",
+        "sha256": "00774d4be6848ce86b9919a7cabecc1b5f197a080c083aa92bcb86d6af704cb6",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 434071,
+        "httpStatus": 200,
+        "id": "aic-c1-4371",
+        "localPath": "aic/c1-4371.jpg",
+        "provider": "aic",
+        "sha256": "51e960e84b42f107dd6f1f272c4a6d9f236d246740291c32c41f64f8e5e77b75",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 705835,
+        "httpStatus": 200,
+        "id": "aic-c1-79936",
+        "localPath": "aic/c1-79936.jpg",
+        "provider": "aic",
+        "sha256": "d053d7066c6b6ecc8546e96427b8f22b543a330c2d6ebcdaf0e71c7cc6b9b2d0",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 1323138,
+        "httpStatus": 200,
+        "id": "aic-c1-21720",
+        "localPath": "aic/c1-21720.jpg",
+        "provider": "aic",
+        "sha256": "67032ad1a43eb9cc52d1e3e0cccceb86dfd61436aade070b983f9c7c41b2897b",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "apiHttpStatus": 200,
+        "bytes": 856335,
+        "httpStatus": 200,
+        "id": "aic-c1-44743",
+        "localPath": "aic/c1-44743.jpg",
+        "provider": "aic",
+        "sha256": "f364dd4f965fcc7a1d85e645e567a075ff9c27bdbb166858ac5a74406e1e56a7",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "id": "aic-c1-7624",
+        "provider": "aic",
+        "reason": "HTTPError: HTTP Error 403: Forbidden",
+        "status": "rejected"
+      },
+      {
+        "bytes": 3270166,
+        "id": "commons-c1-165149574",
+        "localPath": "commons/c1-165149574.png",
+        "provider": "commons",
+        "sha256": "53928ba6ad2701933ff76916a2bc7c5901f7a2efff6f7ff3cae52ab90e838744",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 1429931,
+        "id": "commons-c1-36348494",
+        "localPath": "commons/c1-36348494.jpg",
+        "provider": "commons",
+        "sha256": "e98d999375f21b6bc1981048e0e92967448a924e88b26858f29bcbbef1ad7df5",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 1596707,
+        "id": "commons-c1-14675675",
+        "localPath": "commons/c1-14675675.jpg",
+        "provider": "commons",
+        "sha256": "3bcaa69ead9f9fa11e22db0de4157126e73b3a56e151f270348921770bedee27",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 1388218,
+        "id": "commons-c1-88904300",
+        "localPath": "commons/c1-88904300.jpg",
+        "provider": "commons",
+        "sha256": "c431a4d80ab8aa65a76190c521c56601fe42cb9a02bb1937e1231c447785545b",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 425251,
+        "id": "commons-c1-5812305",
+        "localPath": "commons/c1-5812305.jpg",
+        "provider": "commons",
+        "sha256": "53f542cdc285b05fcd9da6ee75169cb21225207d4b548f3b3ec5cdc12a1b5e73",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 84172,
+        "id": "commons-c1-36438417",
+        "localPath": "commons/c1-36438417.jpg",
+        "provider": "commons",
+        "sha256": "501888aae6356f7ab37abaac2e6ebf23dc67385ff03b5a46f548bf2a3c0db46b",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 8502,
+        "id": "ia-c1-classic_cartoons_201603",
+        "localPath": "ia/c1-classic_cartoons_201603.jpg",
+        "provider": "ia",
+        "sha256": "2431aa20b23d1480f17741c99be0107f7487e952f5d5a74bcd3d3be80c71dcb3",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 8707,
+        "id": "ia-c1-tecnopatia-biliar",
+        "localPath": "ia/c1-tecnopatia-biliar.jpg",
+        "provider": "ia",
+        "sha256": "af5a81b2c90489e3d48ce37ccf322b8cae2fc72dc6c7059f74769eac26a92ae1",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 30230,
+        "id": "ia-c1-the_bamboo_garden_1704.poem_librivox",
+        "localPath": "ia/c1-the_bamboo_garden_1704.poem_librivox.jpg",
+        "provider": "ia",
+        "sha256": "342768d235b7a6bad6cffdcc51d21c1d4e560f66c60962fe53277ec1448e4afa",
+        "status": "loaded",
+        "tier": "free"
+      },
+      {
+        "bytes": 7290,
+        "id": "ia-c1-earlysilentfilms",
+        "localPath": "ia/c1-earlysilentfilms.jpg",
+        "provider": "ia",
+        "sha256": "2eda319159c15815772219585588cd42d6a3ed69d9f7c2e5ef2e435fc2ffd500",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 6455,
+        "id": "ia-c1-thenarcoticstory_50",
+        "localPath": "ia/c1-thenarcoticstory_50.jpg",
+        "provider": "ia",
+        "sha256": "3bfdc7a7da7be49ed4056ecc68b8eacd965c8b467d1c1a91185262a06f1e8d89",
+        "status": "loaded",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 3205,
+        "id": "ia-c1-jackbenny1",
+        "localPath": "ia/c1-jackbenny1.jpg",
+        "provider": "ia",
+        "sha256": "3be19111263171d8e8055915fa0789773ce002ab32872f87f9f78b0ab7c2da9c",
+        "status": "loaded",
+        "tier": "free"
+      }
+    ],
+    "schema": "kfb.pd-pool-run-report/0.1"
+  },
+  "newPayloadBytes": 12753473,
+  "poolRowsAfter": 26,
+  "rejected": 1,
+  "rejectedIds": [
+    "aic-c1-7624"
+  ],
+  "schema": "kfb.pd-pool-c1-test/0.1",
+  "secondRun": {
+    "counts": {
+      "loaded": 0,
+      "rejected": 1,
+      "unchanged": 22
+    },
+    "generatedAt": "2026-09-28T19:13:36+00:00",
+    "manifest": "tools/public_domain/pd-c1-curated-manifest.jsonl",
+    "results": [
+      {
+        "bytes": 175361,
+        "id": "met-c1-397573",
+        "localPath": "met/c1-397573.jpg",
+        "provider": "met",
+        "sha256": "c50b25b93d77fec5065a43c0a8a57c8371bfe615c3d97f70622d6bdc97694b57",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 96092,
+        "id": "met-c1-358129",
+        "localPath": "met/c1-358129.jpg",
+        "provider": "met",
+        "sha256": "5c50bfaff5ffb9b15e66135c505a0cda4d0644b76de3bf4890a52980b43ba26a",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 275279,
+        "id": "met-c1-337494",
+        "localPath": "met/c1-337494.jpg",
+        "provider": "met",
+        "sha256": "5e3b6b8f2453d13bd7acd9a3f6612f0abc2620fc6eeec2bafaf1e99d9e4b4acf",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 389415,
+        "id": "met-c1-358366",
+        "localPath": "met/c1-358366.jpg",
+        "provider": "met",
+        "sha256": "eab80e324079d61ed8cbe4ec7cb5e1350db47df75bec787c5221197e8c7cf27d",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 131399,
+        "id": "met-c1-53449",
+        "localPath": "met/c1-53449.jpg",
+        "provider": "met",
+        "sha256": "01135f0a03f0ca3316989e19c3f5413bfb4495859ee560b1fdd664628a669fdb",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 107714,
+        "id": "met-c1-267087",
+        "localPath": "met/c1-267087.jpg",
+        "provider": "met",
+        "sha256": "00774d4be6848ce86b9919a7cabecc1b5f197a080c083aa92bcb86d6af704cb6",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 434071,
+        "id": "aic-c1-4371",
+        "localPath": "aic/c1-4371.jpg",
+        "provider": "aic",
+        "sha256": "51e960e84b42f107dd6f1f272c4a6d9f236d246740291c32c41f64f8e5e77b75",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 705835,
+        "id": "aic-c1-79936",
+        "localPath": "aic/c1-79936.jpg",
+        "provider": "aic",
+        "sha256": "d053d7066c6b6ecc8546e96427b8f22b543a330c2d6ebcdaf0e71c7cc6b9b2d0",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 1323138,
+        "id": "aic-c1-21720",
+        "localPath": "aic/c1-21720.jpg",
+        "provider": "aic",
+        "sha256": "67032ad1a43eb9cc52d1e3e0cccceb86dfd61436aade070b983f9c7c41b2897b",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 856335,
+        "id": "aic-c1-44743",
+        "localPath": "aic/c1-44743.jpg",
+        "provider": "aic",
+        "sha256": "f364dd4f965fcc7a1d85e645e567a075ff9c27bdbb166858ac5a74406e1e56a7",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "id": "aic-c1-7624",
+        "provider": "aic",
+        "reason": "HTTPError: HTTP Error 403: Forbidden",
+        "status": "rejected"
+      },
+      {
+        "bytes": 3270166,
+        "id": "commons-c1-165149574",
+        "localPath": "commons/c1-165149574.png",
+        "provider": "commons",
+        "sha256": "53928ba6ad2701933ff76916a2bc7c5901f7a2efff6f7ff3cae52ab90e838744",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 1429931,
+        "id": "commons-c1-36348494",
+        "localPath": "commons/c1-36348494.jpg",
+        "provider": "commons",
+        "sha256": "e98d999375f21b6bc1981048e0e92967448a924e88b26858f29bcbbef1ad7df5",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 1596707,
+        "id": "commons-c1-14675675",
+        "localPath": "commons/c1-14675675.jpg",
+        "provider": "commons",
+        "sha256": "3bcaa69ead9f9fa11e22db0de4157126e73b3a56e151f270348921770bedee27",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 1388218,
+        "id": "commons-c1-88904300",
+        "localPath": "commons/c1-88904300.jpg",
+        "provider": "commons",
+        "sha256": "c431a4d80ab8aa65a76190c521c56601fe42cb9a02bb1937e1231c447785545b",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 425251,
+        "id": "commons-c1-5812305",
+        "localPath": "commons/c1-5812305.jpg",
+        "provider": "commons",
+        "sha256": "53f542cdc285b05fcd9da6ee75169cb21225207d4b548f3b3ec5cdc12a1b5e73",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 84172,
+        "id": "commons-c1-36438417",
+        "localPath": "commons/c1-36438417.jpg",
+        "provider": "commons",
+        "sha256": "501888aae6356f7ab37abaac2e6ebf23dc67385ff03b5a46f548bf2a3c0db46b",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 8502,
+        "id": "ia-c1-classic_cartoons_201603",
+        "localPath": "ia/c1-classic_cartoons_201603.jpg",
+        "provider": "ia",
+        "sha256": "2431aa20b23d1480f17741c99be0107f7487e952f5d5a74bcd3d3be80c71dcb3",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 8707,
+        "id": "ia-c1-tecnopatia-biliar",
+        "localPath": "ia/c1-tecnopatia-biliar.jpg",
+        "provider": "ia",
+        "sha256": "af5a81b2c90489e3d48ce37ccf322b8cae2fc72dc6c7059f74769eac26a92ae1",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 30230,
+        "id": "ia-c1-the_bamboo_garden_1704.poem_librivox",
+        "localPath": "ia/c1-the_bamboo_garden_1704.poem_librivox.jpg",
+        "provider": "ia",
+        "sha256": "342768d235b7a6bad6cffdcc51d21c1d4e560f66c60962fe53277ec1448e4afa",
+        "status": "unchanged",
+        "tier": "free"
+      },
+      {
+        "bytes": 7290,
+        "id": "ia-c1-earlysilentfilms",
+        "localPath": "ia/c1-earlysilentfilms.jpg",
+        "provider": "ia",
+        "sha256": "2eda319159c15815772219585588cd42d6a3ed69d9f7c2e5ef2e435fc2ffd500",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 6455,
+        "id": "ia-c1-thenarcoticstory_50",
+        "localPath": "ia/c1-thenarcoticstory_50.jpg",
+        "provider": "ia",
+        "sha256": "3bfdc7a7da7be49ed4056ecc68b8eacd965c8b467d1c1a91185262a06f1e8d89",
+        "status": "unchanged",
+        "tier": "fallback-attribution"
+      },
+      {
+        "bytes": 3205,
+        "id": "ia-c1-jackbenny1",
+        "localPath": "ia/c1-jackbenny1.jpg",
+        "provider": "ia",
+        "sha256": "3be19111263171d8e8055915fa0789773ce002ab32872f87f9f78b0ab7c2da9c",
+        "status": "unchanged",
+        "tier": "free"
+      }
+    ],
+    "schema": "kfb.pd-pool-run-report/0.1"
+  },
+  "sourceHead": "5ba9d609dc11a7f2d7acfbd720ded442f65c438e",
+  "status": "PASS"
+}

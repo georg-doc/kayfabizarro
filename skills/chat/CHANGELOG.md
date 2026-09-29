@@ -1,3 +1,15 @@
+## 2026-09-28 · PD-POOL-C1 frozen after two semantic-discovery repair passes
+
+- Bounded new discovery slice: `chatgpt-web/public-domain-pool-c1-2026-09-28`, Draft PR **#281**; historical `84 free / 6 attribution / 40 rejected` recovery remains separate in Draft PR #251 and was not reconstructed.
+- Reused the hardened current `tools/public_domain/fetch_pool.py` as rights/persistence owner; added only bounded discovery/preview controls and kept Asset Librarian as the sole Registry/discovery owner.
+- Machine runs `36469308353`, `36469998059`, `36470538545` all completed SUCCESS. Final tested implementation head `5ba9d609dc11a7f2d7acfbd720ded442f65c438e`.
+- Final machine candidate: **23 discovered · 22 persisted · Met 6 / AIC 4 / Commons 6 / IA 6 · 1 AIC HTTP-403 reject · 12,753,473 new bytes · 26 branch pool rows · 5 fallback-attribution rows**.
+- Integrity evidence PASS: existing smoke **4/4 unchanged**, second run **22 unchanged / 0 loaded**, no stale `.part`, stored-byte/SHA sidecars valid, `CREDITS.md` matches attribution sidecars.
+- Quality gate nevertheless failed after Repair 2: provider full-text metadata still produced materially misleading query/category matches (for example a 1480–85 perspective diagram under `scientific diagram 18th century`, and IA metadata matches not representing the requested source class).
+- Two-pass stop rule applied: **no Repair 3, no merge, no Registry refresh, no Cloudflare publication**. The permanent Asset Librarian remains the pre-C1 R3 public state.
+- Recovery export: `skills/chat/workflows/PD_POOL_C1_2026-09-28/RECOVERY.md`.
+- Exactly one next gate: **PD-POOL-C2 · fresh branch from current main, small manually reviewed exact object-ID/source-page manifest, then hardened fetcher recheck/download.**
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING

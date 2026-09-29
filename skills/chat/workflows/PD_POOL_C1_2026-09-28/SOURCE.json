@@ -1,0 +1,59 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "PD-POOL-C1",
+  "status": "FROZEN_FAILED_CANDIDATE",
+  "date": "2026-09-28",
+  "owner": "Asset Librarian / Billboard Media",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/public-domain-pool-c1-2026-09-28",
+  "baseMain": "dbc7a6bc2414f3e870ff08053eb62fb67dc9202a",
+  "pullRequest": 281,
+  "pullRequestStatus": "DRAFT_DO_NOT_MERGE",
+  "frozenCandidateContentHead": "253a73a64b2c42653798940140e472dc3e4638e8",
+  "testedImplementationHead": "5ba9d609dc11a7f2d7acfbd720ded442f65c438e",
+  "workflowRuns": [
+    36469308353,
+    36469998059,
+    36470538545
+  ],
+  "historicalRecoveryPr": 251,
+  "historicalDatasetIdentity": "SEPARATE_NOT_RECONSTRUCTED",
+  "discoveryDonor": "tools/KFB-ToolBox/_inbox/KFB Public Domain Pool - 02/",
+  "persistenceOwner": "tools/public_domain/fetch_pool.py",
+  "finalMachineEvidence": {
+    "discovered": 23,
+    "persisted": 22,
+    "rejected": 1,
+    "rejectedIds": [
+      "aic-c1-7624"
+    ],
+    "acceptedByProvider": {
+      "met": 6,
+      "aic": 4,
+      "commons": 6,
+      "ia": 6
+    },
+    "newPayloadBytes": 12753473,
+    "poolRowsAfter": 26,
+    "fallbackAttributionRowsAfter": 5,
+    "smokeRegression": "4/4 UNCHANGED",
+    "secondRun": "0 loaded / 22 unchanged / 1 repeat reject",
+    "stalePartFiles": 0,
+    "sidecarShaIntegrity": "PASS",
+    "creditsFromSidecars": "PASS"
+  },
+  "finalGate": {
+    "gate": "semantic discovery relevance",
+    "outcome": "FAIL_AFTER_REPAIR_2",
+    "thirdRepairAllowed": false,
+    "examples": [
+      "met-c1-337494 dated 1480–85 selected under scientific diagram 18th century",
+      "ia-c1-tecnopatia-biliar dated 2026 selected under Prelinger industrial film",
+      "ia-c1-the_bamboo_garden_1704.poem_librivox selected under public domain music 1920",
+      "ia-c1-classic_cartoons_201603 is a later compilation selected under silent film 1920"
+    ]
+  },
+  "stageRoute": "https://kayfabizarro.pages.dev/asset-librarian/",
+  "stageStatus": "PRE_C1_R3_ONLY_C1_NOT_PUBLISHED",
+  "nextGate": "PD-POOL-C2 · fresh branch from current main; manually reviewed exact provider object-ID/source-page manifest; hardened fetcher only"
+}

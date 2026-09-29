@@ -1,0 +1,108 @@
+{
+  "schema": "kfb.pd-seeds.c1/0.1",
+  "note": "New curated discovery round after historical 84/6/40 recovery could not recover object-level identities. Bounded at 6 candidates/provider and 24 total; existing persisted source IDs are skipped.",
+  "perProviderCap": 6,
+  "totalCap": 24,
+  "categories": [
+    {
+      "id": "alchemy",
+      "sources": [
+        "commons",
+        "met"
+      ],
+      "queries": [
+        "alchemy engraving",
+        "alchemical symbols"
+      ]
+    },
+    {
+      "id": "anatomy",
+      "sources": [
+        "commons",
+        "met"
+      ],
+      "queries": [
+        "Vesalius anatomy",
+        "anatomical engraving"
+      ]
+    },
+    {
+      "id": "science",
+      "sources": [
+        "commons",
+        "met"
+      ],
+      "queries": [
+        "scientific diagram 18th century",
+        "astronomy engraving"
+      ]
+    },
+    {
+      "id": "maps",
+      "sources": [
+        "commons",
+        "met"
+      ],
+      "queries": [
+        "celestial map",
+        "antique world map"
+      ]
+    },
+    {
+      "id": "arthistory",
+      "sources": [
+        "met",
+        "aic"
+      ],
+      "queries": [
+        "Hiroshige",
+        "Hokusai",
+        "Goya etching",
+        "Japanese woodblock print"
+      ]
+    },
+    {
+      "id": "photo",
+      "sources": [
+        "met",
+        "aic"
+      ],
+      "queries": [
+        "daguerreotype portrait",
+        "19th century photograph city"
+      ]
+    },
+    {
+      "id": "silentfilm",
+      "sources": [
+        "ia"
+      ],
+      "queries": [
+        "silent film 1920",
+        "Melies",
+        "silent comedy 1917"
+      ]
+    },
+    {
+      "id": "documentary",
+      "sources": [
+        "ia"
+      ],
+      "queries": [
+        "Prelinger industrial film",
+        "educational film 1950",
+        "newsreel 1944"
+      ]
+    },
+    {
+      "id": "audio",
+      "sources": [
+        "ia"
+      ],
+      "queries": [
+        "public domain music 1920",
+        "old time radio"
+      ]
+    }
+  ]
+}

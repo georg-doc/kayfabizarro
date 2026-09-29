@@ -202,11 +202,14 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
     if provider == "met":
         record_url = f"https://collectionapi.metmuseum.org/public/collection/v1/objects/{sid}"
         d = get_json(record_url)
-        if not d.get("isPublicDomain") or not d.get("primaryImage"):
-            return "reject", "", "", {"reason": "Met API isPublicDomain/primaryImage gate failed", "recordUrl": record_url}
+        prefer_preview = bool(item.get("preferPreview"))
+        image = d.get("primaryImageSmall") if prefer_preview else d.get("primaryImage")
+        image = image or d.get("primaryImage") or d.get("primaryImageSmall")
+        if not d.get("isPublicDomain") or not image:
+            return "reject", "", "", {"reason": "Met API isPublicDomain/image gate failed", "recordUrl": record_url}
         return (
             "free",
-            d["primaryImage"],
+            image,
             "Public Domain · The Met Open Access (API isPublicDomain=true)",
             {
                 "recordUrl": record_url,
@@ -214,6 +217,7 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
                 "creator": d.get("artistDisplayName") or d.get("artistDisplayBio"),
                 "date": d.get("objectDate"),
                 "objectId": d.get("objectID"),
+                "imageVariant": "preview" if prefer_preview and d.get("primaryImageSmall") else "primary",
             },
         )
 
@@ -225,7 +229,8 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
         if d.get("is_public_domain") is not True or not d.get("image_id"):
             return "reject", "", "", {"reason": "AIC API is_public_domain/image_id gate failed", "recordUrl": record_url}
         iiif_base = (payload.get("config") or {}).get("iiif_url") or "https://www.artic.edu/iiif/2"
-        image = f"{iiif_base.rstrip('/')}/{d['image_id']}/full/843,/0/default.jpg"
+        width = max(400, min(int(item.get("previewWidth", 843)), 2000))
+        image = f"{iiif_base.rstrip('/')}/{d['image_id']}/full/{width},/0/default.jpg"
         return (
             "free",
             image,
@@ -237,14 +242,18 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
                 "date": d.get("date_display"),
                 "objectId": d.get("id"),
                 "apiHttpStatus": api_status,
+                "imageWidth": width,
             },
         )
 
     if provider == "commons":
         selector = commons_selector(sid)
+        prefer_preview = bool(item.get("preferPreview"))
+        preview_width = max(400, min(int(item.get("previewWidth", 1600)), 2400))
+        thumb_arg = f"&iiurlwidth={preview_width}" if prefer_preview else ""
         record_url = (
             "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo"
-            "&iiprop=url|extmetadata&" + selector
+            "&iiprop=url|extmetadata" + thumb_arg + "&" + selector
         )
         q = get_json(record_url)
         pages = q.get("query", {}).get("pages", {})
@@ -257,7 +266,9 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
             or ""
         )
         tier = tier_from_commons(license_name)
-        if tier == "reject" or not ii.get("url"):
+        image = ii.get("thumburl") if prefer_preview else ii.get("url")
+        image = image or ii.get("url")
+        if tier == "reject" or not image:
             return "reject", "", "", {
                 "reason": f"Commons license/url gate failed: {license_name!r}",
                 "recordUrl": record_url,
@@ -270,7 +281,7 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
         )
         return (
             tier,
-            ii["url"],
+            image,
             license_name,
             {
                 "recordUrl": record_url,
@@ -278,6 +289,8 @@ def recheck(item: dict) -> tuple[str, str, str, dict]:
                 "creator": re.sub(r"<[^>]+>", "", creator).strip(),
                 "date": re.sub(r"<[^>]+>", "", date).strip(),
                 "pageId": page.get("pageid"),
+                "imageVariant": "preview" if prefer_preview and ii.get("thumburl") else "original",
+                "previewWidth": preview_width if prefer_preview else None,
             },
         )
 

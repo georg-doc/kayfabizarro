@@ -25,6 +25,17 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-09-28 · Public Domain Pool · PD-POOL-C1 FROZEN
+
+Draft PR **#281** on `chatgpt-web/public-domain-pool-c1-2026-09-28` preserves the bounded C1 fill candidate. The final machine gate is green (**22 persisted candidates; Met 6 / AIC 4 / Commons 6 / IA 6; 1 AIC download reject; 4/4 original smoke objects unchanged; second-run idempotence + SHA/sidecar + CREDITS checks PASS**), but the semantic discovery gate still admitted materially misleading source/query matches after the two allowed repair passes.
+
+Therefore C1 is **FROZEN_FAILED_CANDIDATE · DO NOT MERGE · NOT PUBLISHED**. The permanent Librarian route `https://kayfabizarro.pages.dev/asset-librarian/` remains the previously verified R3 surface and does not contain C1.
+
+Recovery: `skills/chat/workflows/PD_POOL_C1_2026-09-28/RECOVERY.md`.
+
+Exactly one next gate: **PD-POOL-C2 · start fresh from current main with a small manually reviewed manifest of exact provider object IDs/source pages, then reuse the hardened `tools/public_domain/fetch_pool.py`; do not run a third C1 semantic-search repair.**
+
+
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
 Binding policy:
