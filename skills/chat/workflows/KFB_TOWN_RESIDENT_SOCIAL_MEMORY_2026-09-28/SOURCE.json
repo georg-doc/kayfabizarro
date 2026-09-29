@@ -1,0 +1,584 @@
+{
+  "schema": "kfb.town-resident-social-memory-source/0.1",
+  "status": "DESIGN_REFERENCE_CANDIDATE_NOT_RUNTIME",
+  "date": "2026-09-28",
+  "owner": "Georg / KFB Town design reference",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/town-resident-social-memory-2026-09-28",
+  "baseHead": "67f28c955b8dfeb10085d9d09c895e004edb6614",
+  "outcome": "Interaction-first Resident life: Lean Memory + POI/AIDA + ChatterBox/Reaction + Dance/Gift cultures + Signature Decks + Resident→Player→Resident Social Card Relay feeding existing Almanac/minigame/King Kayfabulation owners",
+  "reservedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/",
+  "stageStatus": "NOT_DEPLOYED",
+  "sources": [
+    {
+      "id": "ai-town-main",
+      "repository": "georg-doc/ai-town",
+      "ref": "main",
+      "head": "2693ed6973e3461204385c9d11fb3aca4e8e3a7a",
+      "role": "donor only"
+    },
+    {
+      "id": "ai-town-architecture",
+      "repository": "georg-doc/ai-town",
+      "path": "ARCHITECTURE.md",
+      "blobSha": "4c39ed9e7fef79d3c2435d94f804a0bf09b690ef",
+      "facts": [
+        "separate game/agent/UI layers",
+        "small game state",
+        "async agent operations"
+      ]
+    },
+    {
+      "id": "ai-town-memory",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/agent/memory.ts",
+      "blobSha": "25994567b544c0a3e957f6ec6dd73979e7d38d69",
+      "facts": [
+        "conversation summary memory",
+        "top-k vector retrieval",
+        "relevance+recency+importance",
+        "reflection"
+      ]
+    },
+    {
+      "id": "ai-town-memory-schema",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/agent/schema.ts",
+      "blobSha": "480467b6d625acde7b56011e32893fc1645d8a50",
+      "facts": [
+        "relationship/conversation/reflection memory types",
+        "per-player memory index",
+        "vector index"
+      ]
+    },
+    {
+      "id": "ai-town-agent-loop",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/aiTown/agent.ts",
+      "blobSha": "ae49157d5b363e6f51dcf884aa01a499037022fd",
+      "facts": [
+        "conversation cooldowns",
+        "one in-progress operation",
+        "autonomous candidate selection"
+      ]
+    },
+    {
+      "id": "ai-town-agent-ops",
+      "repository": "georg-doc/ai-town",
+      "path": "convex/aiTown/agentOperations.ts",
+      "blobSha": "a8eb89dc4aecfc6b4b05534d6764dad062289e96",
+      "facts": [
+        "async cognition outside game state",
+        "activities/wander/conversation actions"
+      ]
+    },
+    {
+      "id": "kfb-town-living",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "blobSha": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+      "facts": [
+        "Lean Memory",
+        "knowledge provenance",
+        "Triplet/Fluff-o-lect direction",
+        "signature decks"
+      ]
+    },
+    {
+      "id": "kfb-chatterbox-tourbus",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "skills/chat/masterplan/CHATTERBOX_TOURBUS_REUSE_2026-09-14.md",
+      "blobSha": "9025a43f042cf055d19851c9a93a6ddd016e3c36",
+      "facts": [
+        "ChatterBox reuse",
+        "semantic Triplet",
+        "SHOW IT/SPIN IT/SELL IT",
+        "bubble budget"
+      ]
+    },
+    {
+      "id": "kfb-fluff-o-lect",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "skills/chat/town/references/KFB_META_NARRATION_SAMMLUNG_WS0_2026-09-14.md",
+      "blobSha": "9ca3ed0a9987fbb11d0721f5689d6040943403d5",
+      "facts": [
+        "carrying word replaced by Fluff",
+        "meaning from context"
+      ]
+    },
+    {
+      "id": "kfb-brick-fish",
+      "repository": "georg-doc/kayfabizarro",
+      "pullRequest": 254,
+      "branch": "chatgpt-web/kfb-town-prop-throw-pattern-2026-09-27",
+      "head": "79d7c18a8f07b99efe8276211a9cda527ac2f2ea",
+      "status": "OPEN_DRAFT_CANDIDATE",
+      "facts": [
+        "social prop toss",
+        "Brick Fish/Red Herring",
+        "one-retaliation bounded loop"
+      ]
+    },
+    {
+      "id": "kfb-reaction-choreography",
+      "repository": "georg-doc/kayfabizarro",
+      "pullRequest": 256,
+      "branch": "chatgpt-web/toolbox-clay-emanata-v1-2026-09-27",
+      "head": "051b376d717ce54fc7d563b5ce95c3317523d96d",
+      "status": "OPEN_DRAFT_CANDIDATE",
+      "facts": [
+        "semantic reaction events",
+        "clip→body→face→ears→Emanata→recovery",
+        "Brick Fish social.prop_hit context variants"
+      ]
+    },
+    {
+      "id": "kfb-overworld-living-routines",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "overworld/docs/LIVING_CONCEPT_overworld.md",
+      "blobSha": "8f9e3c70c5046ce7b0e63698d500129a27975207",
+      "facts": [
+        "regions have appropriate resources and faction activity",
+        "resources include gold/ore/wood/water",
+        "units perform fishing/mining/chopping/resource transport routines",
+        "player can encounter and interrupt routines"
+      ]
+    },
+    {
+      "id": "kfb-resident-activity-backlog",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "tools/KFB-ToolBox/_handover/RESIDENT_SCENE_MODULES_WSA_2026-09-19/BACKLOG.md",
+      "blobSha": "38323ce5a72c479ca5017d3daa1aa0508494c7ba",
+      "facts": [
+        "source-backed resident activity library candidate",
+        "Hammer/Hammering smithing",
+        "Chop/Chopping",
+        "Dig/Digging",
+        "Pickaxe/Pickaxing",
+        "Saw/Sawing",
+        "Fishing activity"
+      ]
+    },
+    {
+      "id": "kfb-resident-atlas-toy-soldier",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "tools/resident_atlas_s6/data/cast.js",
+      "blobSha": "5e918ae1521e63d121558fb7aff4fd1f8239baec",
+      "facts": [
+        "toy-soldier is Rig_Medium",
+        "ToySoldier rifle attaches to handslot.r",
+        "Present_Base and Present_UnwrappedBase are source-proven reveal states",
+        "existing reveal animation uses anticipation/pop/overshoot/settle",
+        "Idle_B rifle pose is not accepted as a shoulder-rifle stance"
+      ]
+    },
+    {
+      "id": "kfb-motion-registry-rig-medium",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "registry/resources/v1/motions.jsonl",
+      "blobSha": "1f266ab2e9e57db63f5596ba83f616872b502909",
+      "facts": [
+        "Rig_Medium MovementBasic exposes Walking_A and Walking_B",
+        "Rig_Medium MovementAdvanced exposes Running_HoldingRifle",
+        "Running_HoldingRifle is a candidate audition source, not proof of Nutcracker parade posture"
+      ]
+    },
+    {
+      "id": "kfb-motion-library-v2b-dance",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chat/kfb-motion-library-v2b-2026-09-25",
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+      "blobSha": "ea3b467c21cd3302106e706e58ac7a01ef5dd3e4",
+      "facts": [
+        "179 catalogued clips",
+        "24 dance entries",
+        "Rig_Medium and Rig_Large dance libraries",
+        "loop/root-motion/contact metadata support beat-aligned audition and slicing"
+      ]
+    },
+    {
+      "id": "kfb-resident-disco-01",
+      "repository": "georg-doc/kayfabizarro",
+      "ref": "51f9bc22596a0d0165f4da9e8e2ea14118466210",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/data/resident-disco-01.json",
+      "blobSha": "e52ba8d70742760ef35c569b5bbd74bca6583194",
+      "facts": [
+        "one shared music transport and beatPos",
+        "mixed Legacy/Rig_Medium/Rig_Large dance ensemble",
+        "resident-specific dance pairing candidates",
+        "ensemble travel-removal and bounce/roam behavior"
+      ]
+    },
+    {
+      "id": "kfb-resident-orc-band-01",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/resident-band-module-01-2026-09-28",
+      "path": "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/data/resident-band-module-01.json",
+      "blobSha": "f9ac5ca71738562e5fee25e94d97daf255bed235",
+      "facts": [
+        "real measured shared beat clock",
+        "accepted Legacy Orc B orb.bounce donor",
+        "8-beat performance unit",
+        "music-driven local performer choreography"
+      ]
+    },
+    {
+      "id": "kfb-player-meta-strand-m",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/production-architecture-v3-2026-09-24",
+      "path": "skills/chat/workflows/KFB_PRODUCTION_ARCHITECTURE_V3_2026-09-24/PRODUCTION_STRANDS.md",
+      "blobSha": "e4e4bf898ec19e4f0e72f49847eed7f6620f09c5",
+      "facts": [
+        "Player Journey/Meta owns durable cross-mode progression",
+        "candidate domains include inventory, songs/media unlocks, NPC facts and replay/choreography refs",
+        "consumers emit typed semantic events rather than owning global progression"
+      ]
+    },
+    {
+      "id": "kfb-journey-state-donor",
+      "repository": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "path": "overworld/overworld/journey.js",
+      "blobSha": "ad58ef4239254f42a994ada3e729dd820fa1806c",
+      "facts": [
+        "versioned save schema",
+        "JSON export/import",
+        "migrations",
+        "durable semantic journey facts"
+      ]
+    },
+    {
+      "id": "kfb-santa-gifts",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/Santa",
+      "characterPath": "media/3D_Assets/KayKit_Mystery_Series6/Santa/characters/Santa.glb",
+      "characterBlobSha": "df3613f049da5d3bcace5ac2f3fe2523f1886dd5",
+      "presentVariants": {
+        "Present_A": "99181738281fba41b3f91033edbfe8117b2218bf",
+        "Present_B": "a6dc8a52200a90f7c9ee8b98058f7b989fea4db3",
+        "Present_C": "acebb11a6d03f7ae88f2807980f794d55678824f",
+        "Present_D": "61b24f377dc26c16791c2dcbfcacababf23aa4d6",
+        "Present_E": "c90e7c50d75ad193774249d0946ffd93375a4236"
+      },
+      "facts": [
+        "Santa.glb exists as a source character",
+        "five distinct source Present_A-E GLTF variants exist",
+        "the five wrappers share santa_texture.png",
+        "no opened-state counterpart was found in the checked Santa GLTF set"
+      ]
+    },
+    {
+      "id": "kfb-helpers-characters",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters",
+      "characters": {
+        "Helper_A": "c78b9ad7d863e4de8303f7e5b8085139da381289",
+        "Helper_B": "eb4d26eb2804507eef6406d98fa734bb7a8537c6"
+      },
+      "facts": [
+        "Helper_A.glb and Helper_B.glb are present",
+        "future North-Pole/Holiday Resident scene can use the exact helper sources"
+      ]
+    },
+    {
+      "id": "kfb-helpers-workshop-props",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/assets/gltf",
+      "treeSha": "5933c4732c335e1c64bff8cc3ef96abd92407844",
+      "facts": [
+        "verified GLTF props: Candycane, Drawers, Glue_A/B, Hammer, Lamp_Workbench, Toy_Train_Paint, Toy_Train_Wood, Toy_Workbench, Toy_Workbench_decorated",
+        "checked Helper GLTF set contains workshop/toy props but not the Santa Present_A-E models"
+      ]
+    },
+    {
+      "id": "kfb-card-index",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/kfb/index.json",
+      "blobSha": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+      "facts": [
+        "deck/card/page metadata is source-driven rather than one fixed global count",
+        "anti_rules_toolkit = 57 cards / 16 pages",
+        "the_kayfabe_money_trail_9_11 = 60 cards / 15 pages",
+        "big_bad_brain_wrestling = 56 cards / 15 pages"
+      ]
+    },
+    {
+      "id": "kfb-anti-rules-source",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "media/kfb/Anti-Rules_Toolkit_-_ADD_web.pdf.json",
+      "blobSha": "b0230c5ccf5d56b09c8e652b5a37e755ab6c9dc2",
+      "facts": [
+        "deckTitle The Anti-Rules Manifesto",
+        "deckType Meta-rules deck",
+        "structured card fields include num/name/power/lore",
+        "contains authority/rule/improvisation themes usable as authored character lens"
+      ]
+    },
+    {
+      "id": "kfb-freestyle-rules-v18-4",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "Kayfabizarro_Freestyle_Rules_v18-4.md",
+      "blobSha": "38186727f0735a5fb02d25d2cdb052fe641dda4b",
+      "facts": [
+        "card-entry ritual is Name it → Claim it → Power it",
+        "turn grammar is five ordered Story Wrestling steps",
+        "King Kayfabian exists as optional final caller in table rules",
+        "Card powers are performed narratively rather than resolved as dry transactions"
+      ]
+    },
+    {
+      "id": "kfb-overworld-kayfabulation-v23",
+      "repository": "georg-doc/kayfabizarro",
+      "path": "overworld/docs/ChatGPT_Living_Concept_v23.md",
+      "blobSha": "d51b3e8146c90d30e5d9f9ed2b4642e653db69e7",
+      "facts": [
+        "King story set is Actor Card + three Scene Cards + Quest Card",
+        "player assembles Card order/connective logic before Kayfabulation",
+        "collected Scene Cards persist in Fractal Almanac and are not consumed by story use",
+        "King performance and Quest progression are a later synthesis layer"
+      ]
+    }
+  ],
+  "nonGoals": [
+    "port AI Town runtime",
+    "create second NPC database",
+    "create second dialogue engine",
+    "create relationship score meter",
+    "let LLM write movement/reward/combat truth",
+    "deploy Stage before integrated runtime exists"
+  ],
+  "nextGate": "RESIDENT-SOCIAL-MEMORY-01 with bounded POI perception, one source-backed routine interruption/resume, motivation-backed AIDA selection, Lean Memory, ChatterBox/Triplet, Fluff-o-lect and Reaction Choreography",
+  "userDirections": [
+    "Points of Interest include player, NPCs/Residents, Cube Pets, plants/nature, environment/landmarks, resources, props/cards and activity stations.",
+    "Routine activity includes fishing, smithing/hammering, patrol, explore and other role-specific work.",
+    "KFB AIDA gameplay loop for player and NPCs: attention → curiosity/interest → expectation → interaction → reaction → interpret/remember/update → return/resume/retarget.",
+    "Personal goals/motivations drive attention, target selection, routines and non-automatic conflict.",
+    "Toy Soldier working character name is Officer Doppel-Denk; first character proof is gift reveal → rifle march/patrol → resident-specific order/disorder POI interpretation → reaction/retort → clean patrol resume.",
+    "All Residents/characters are music-positive; provide a shared beat-driven Common Bounce plus one learnable Signature Dance Move per Resident, with player discovery/learning stored through Player Journey rather than a second skill inventory.",
+    "Gift-giving is a shared Resident culture mechanic: source-proven wrapped presents can contain real bizarre/satirical props, trigger character-specific reactions, barter/regifting, bounded prank/failure spirals and later reconciliation while preserving Kayfabe and ownership provenance.",
+    "KISS correction: Gift Culture MVP persists meaningful social/emotional receipts, not a durable Resident item economy, barter ledger, per-prop ownership chain or exhaustive gift provenance. Real item tracking is optional future integration only.",
+    "Every Resident may have a Signature Deck or cluster that shapes worldview, ChatterBox language and Card POI salience; a Resident may want missing Cards recovered, confiscated, destroyed, archived or otherwise pursued. Deliberate archetype/deck mismatch is valid.",
+    "Current Card gameplay preference: social Resident interaction is the primary loop. Residents hand the player Cards to present to other Residents through SHOW IT → SPIN IT → SELL IT; Free Roam/Race/Combat/Card Zones are connective travel or exceptional acquisition routes, and King Kayfabian's five-card Kayfabulation is the synthesis layer."
+  ],
+  "userDirection": {
+    "poiClasses": [
+      "player",
+      "resident",
+      "cube-pet",
+      "plant",
+      "environment",
+      "resource",
+      "prop",
+      "card/media",
+      "activity-station",
+      "vehicle",
+      "event",
+      "hazard"
+    ],
+    "addedRoutineRoles": [
+      "patrol",
+      "explore",
+      "inspect",
+      "gather/collect",
+      "carry/deliver",
+      "tend/care",
+      "rehearse/play-music",
+      "rest/socialize",
+      "return-home/return-to-post"
+    ],
+    "aida": [
+      "attention",
+      "curiosity/interest",
+      "expectation",
+      "interaction",
+      "reaction",
+      "interpret/remember/update-thread",
+      "return/resume/retarget"
+    ],
+    "note": "Patrol/explore and the explicit KFB AIDA sequence are Georg's additive 2026-09-28 direction, not retroactively attributed to older donor documents.",
+    "officerDoppelDenk": {
+      "workingName": "Officer Doppel-Denk",
+      "technicalResidentId": "toy-soldier",
+      "routine": "gift reveal → patrol/march → inspect perceived disorder → react → resume",
+      "attentionBias": [
+        "possible_disorder",
+        "public_obstruction",
+        "litter",
+        "noise",
+        "unsafe_horseplay",
+        "unattended_object",
+        "authority_opportunity",
+        "royal_interest"
+      ],
+      "examples": [
+        "Brick Fish exchange",
+        "Tiny Treats pizza slice on ground",
+        "plant/path obstruction"
+      ],
+      "authorityDynamic": "loyal to King K. Fabian, seeks recognition, commonly not taken seriously by other Residents",
+      "animationGate": "audition Running_HoldingRifle plus Walking_A/B before any new Mixamo motion intake"
+    },
+    "residentDanceCulture": {
+      "commonGroove": "dance.common_bounce",
+      "commonBehavior": "beat-driven bounce/hop with optional bounded local circle choreography",
+      "signatureRule": "one authored resident-specific Signature Move or beat-aligned slice",
+      "playerCollection": {
+        "states": [
+          "unknown",
+          "discovered",
+          "learned"
+        ],
+        "owner": "Player Journey / Meta",
+        "provenance": [
+          "teacherResidentId",
+          "sourceEventRef",
+          "method"
+        ],
+        "backpackSlot": false
+      },
+      "groupPattern": "Common Groove between phrase-boundary Signature inserts; one shared transport",
+      "firstDonor": "Legacy Orc B orb.bounce",
+      "animationAuthoringOwner": "existing Animation Studio / Motion Library"
+    },
+    "residentGiftCulture": {
+      "sourceWrappers": [
+        "Santa/Present_A",
+        "Santa/Present_B",
+        "Santa/Present_C",
+        "Santa/Present_D",
+        "Santa/Present_E"
+      ],
+      "revealDonor": "Toy Soldier Present_Base → Present_UnwrappedBase timing grammar",
+      "separation": "wrapperRef != payloadRef",
+      "intents": [
+        "care",
+        "welcome",
+        "celebrate",
+        "thanks",
+        "trade",
+        "reconcile",
+        "tease",
+        "satirical_needling",
+        "prank",
+        "tribute",
+        "apology"
+      ],
+      "ownershipOwner": "KISS baseline: no durable Resident item ownership required; scene prop lifecycle stays with receiving scene. Optional future real inventory transfer may attach externally.",
+      "socialThread": "existing ResidentSocialThread kind=gift with bounded continuation/escalation",
+      "reconciliation": [
+        "replacement gift",
+        "shared food/drink when source-backed",
+        "dance/common bounce",
+        "repair/help",
+        "apology",
+        "return to routine"
+      ],
+      "northPoleFuture": {
+        "actors": [
+          "Santa",
+          "Helper_A",
+          "Helper_B"
+        ],
+        "props": [
+          "Present_A-E",
+          "Candycane",
+          "Toy trains",
+          "Toy Workbench",
+          "Glue",
+          "Hammer",
+          "Lamp",
+          "Drawers"
+        ],
+        "environment": "SOURCE_REQUIRED",
+        "holidayAudio": "SOURCE_REQUIRED"
+      },
+      "memoryPolicy": {
+        "persist": [
+          "meaningful giver/recipient interaction",
+          "intent/meaning tags",
+          "notable outcome",
+          "reconciliation/important callback",
+          "witness provenance only when relevant"
+        ],
+        "doNotPersist": [
+          "routine wrapper instance",
+          "every handoff",
+          "current owner of disposable prop",
+          "resource counts",
+          "full regift chain"
+        ]
+      },
+      "gptSitePersistenceSketch": {
+        "status": "OPTIONAL_ARCHITECTURE_ONLY",
+        "store": "tiny semantic ResidentMemoryReceipt collection if the site runtime exposes reliable persistence",
+        "requiredForVisibleInteraction": false,
+        "itemLedger": false
+      }
+    },
+    "residentSignatureDecks": {
+      "owner": "stable authored Resident identity + existing Card corpus; not Lean Memory and not a new Card database",
+      "profile": [
+        "signatureDeckRef",
+        "stance",
+        "3–7 signatureCardRefs",
+        "worldviewTags",
+        "deckGoal"
+      ],
+      "stanceExamples": [
+        "aligned",
+        "misreads-as-law",
+        "adversarial",
+        "confiscate",
+        "destroy",
+        "archive",
+        "parody"
+      ],
+      "chatterbox": "retrieve current beat + Resident stance + 1–3 relevant Cards + small Lean Memory set; never prompt-dump full deck",
+      "memoryRule": "Deck content is authored knowledge; Lean Memory only stores meaningful card encounters/discussions/promises/returns",
+      "questRule": "reuse existing Card POIs and Player Journey/Almanac collection; do not create a second quest/card inventory owner",
+      "antiGrind": "player may collect full deck but Resident reacts in milestones/batches rather than 56–60 identical deliveries",
+      "playerCardRule": "show/return/confiscate narrative does not need to erase the player's Almanac discovery",
+      "firstCandidate": {
+        "residentId": "toy-soldier",
+        "workingName": "Officer Doppel-Denk",
+        "deckRef": "anti_rules_toolkit",
+        "stance": "OPEN: misreads-as-law | confiscate/destroy | archivist/evidence-locker"
+      }
+    },
+    "residentSocialCardRelay": {
+      "status": "CURRENT_DESIGN_PROPOSAL",
+      "primaryLoop": "Resident A → player → Resident B → SHOW IT → SPIN IT → SELL IT → Reaction/ChatterBox/Lean Memory",
+      "cardEntryRitual": "Freestyle donor remains Name it → Claim it → Power it; do not silently rename it",
+      "signatureDeckRole": "source of Cards/worldview/stance, not universal lost-deck fetch quest",
+      "playerLearning": "player learns a Card by hearing sender framing and actively presenting it to a receiver",
+      "almanac": "Card discovery persists; narrative handoff does not need to consume/remove discovery",
+      "minigames": {
+        "role": "connective tissue / exceptional acquisition / proof",
+        "adapters": [
+          "Free Roam travel",
+          "Race route/event",
+          "Combat/Card Zone missing Card acquisition"
+        ]
+      },
+      "kingSynthesis": "Actor + 3 Scene + Quest five-card Kayfabulation",
+      "antiPostman": "the interaction is the interpretation/pitch, not walk-and-click delivery",
+      "kissPersistence": [
+        "cardRef",
+        "senderResidentId",
+        "recipientId",
+        "show/spin/sell choices",
+        "outcomeTag",
+        "optional responseCardRef",
+        "one meaningful beat ref"
+      ],
+      "noSecondOwners": [
+        "Card inventory",
+        "Quest DB",
+        "Combat",
+        "Race",
+        "Almanac/Journey",
+        "Card corpus"
+      ]
+    }
+  }
+}

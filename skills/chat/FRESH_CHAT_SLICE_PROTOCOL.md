@@ -145,3 +145,27 @@ A successful export is a recovery result, not proof that the failed visual/game 
 ## Paste-ready cold-start request
 
 > Sync from `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` and `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, then recover this project's current GitHub state. Complete only the named slice additively. Keep the existing owners and SSOTs. Update the project Return/changelog and leave the standard compact review packet with exact PR/head, actual tests, visible proof, open items and one next gate.
+
+
+## Spoken shortcut · `KFB WEB PUSH/READ`
+
+Georg may start a fresh production chat with:
+
+> **KFB WEB PUSH/READ — <project or slice> — recover + continue**
+
+Interpret this as the compact form of the current binding Web-first production workflow:
+
+1. read current GitHub `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, this protocol and the named project/slice START/SSOT/Recovery/Return;
+2. GitHub state overrides chat memory;
+3. recover the existing owner, branch/PR, outcome and current next gate rather than creating a replacement owner;
+4. continue in **ChatGPT Web + GitHub by default**; Work/WSA is escalation-only when a concrete capability is missing;
+5. persist meaningful implementation/evidence/decision checkpoints to GitHub before long chat prose;
+6. after **every GitHub write**, fetch the exact branch head and intended file back — this is the **READ** in PUSH/READ;
+7. a timeout means **UNKNOWN**: inspect ref/file first and retry only if the intended write is absent;
+8. do not manufacture a REVIEW.html, Stage page or Georg gate unless a concrete human product decision requires it;
+9. update the existing Return/Recovery/changelog/Hub metadata at handoff and leave exactly one next gate;
+10. do not auto-merge or promote Live without the named human gate.
+
+If the user provides a repo/branch/PR or project name with the shortcut, that target is authoritative. If no target is named and the current chat/project context does not identify one unambiguously, use the router/Recovery to locate the active slice before writing; do not guess a runtime owner.
+
+This phrase is a **natural-language project shortcut**, not a ChatGPT slash command or product UI feature.

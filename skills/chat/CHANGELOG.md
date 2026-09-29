@@ -1,3 +1,157 @@
+## 2026-09-29 · KFB Town · productive Social Card Relay runtime candidate in Travel
+
+### IMPLEMENTATION
+- The interaction-first Social Card Relay design is now consumed by the real `georg-doc/KFB-Travel-Globe` Town host on Draft PR **#40**.
+- Runtime branch: `chatgpt-web/resident-social-card-relay-01-2026-09-29`.
+- Runtime candidate head: `392d2b909afe3d26a25e2f64e3fdae19d1159273`.
+- Existing Caveman sends real Anti-Rules Card 4 / **The Authority Figure** to the player; existing King Kayfabian receives it through selectable **SHOW IT → SPIN IT → SELL IT**.
+- The proof emits existing-owner semantic seams for Card discovery, ChatterBox seed, Reaction intent and one witnessed semantic memory receipt; no second movement/camera/world/Card-inventory/Journey/Combat/Race owner.
+- Georg's parallel Blender MCP gift/brawl/emotional-choreography/clay-particle work remains untouched and is not claimed until source-admitted.
+
+### TESTED RESULT
+- Travel baseline run/job `36498754015 / 109184348867`: **140/140 PASS · build PASS · verify PASS · 0 missing**.
+- Static artifact `11004492242`, digest `sha256:65d52153ef902f87da88ec5c08b1e0cd911a61306e6caec11d2441f532f14cb6`.
+- Browser run/job `36498754082 / 109184348812`: **27 functional Relay assertions PASS**; real pinned Card source loaded; Relay reaches `RESOLVED`; one witnessed receipt; visible King reaction; all semantic seams observed.
+- Browser artifact `11004023875`, digest `sha256:da00d8545b7d28db444c8409505fc61919f97f1d256b90b45f9e70fab9440f98`, with three screenshots.
+- Overall browser workflow is **BLOCKED / not PASS** because the existing Town host emits relative 404 requests for `/town/asset-repo.json`, `/town/globe-v13/auswahl-georg.json` and `/town/globe-v13/flora-auswahl.json`.
+- Two repair passes exhausted; no repair 3. Functional Relay candidate preserved with full Travel Failure Recovery.
+
+### NEXT GATE
+Exactly one: **TOWN-RESOURCE-PATH-01**. Do not modify Social Card Relay. Isolate/fix/retire/classify the existing Town relative resource requests, then rerun the unchanged Relay browser proof.
+
+### PUBLIC
+- Stage: **NOT DEPLOYED**
+- Live: **NOT PROMOTED**
+- human gate: **not requested**
+
+## 2026-09-29 · KFB Town · Interaction-first Social Card Relay + King synthesis
+
+### DESIGN
+- Card gameplay priority is now Resident-first rather than landscape-search-first.
+- Added `RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
+- Preferred loop: Resident A introduces a real Card → player learns/discovers it → player brings/pitches it to Resident B via **SHOW IT → SPIN IT → SELL IT** → B reacts through identity, Signature Deck stance, ChatterBox, Reaction Choreography and Lean Memory.
+- Freestyle `NAME IT → CLAIM IT → POWER IT` remains the separate card-entry ritual; it is not silently renamed into the Town presentation grammar.
+- Signature Decks remain stable worldview/Card-source profiles, but universal lost-Deck search is explicitly downgraded to an optional Resident motive.
+- Player Journey / Almanac remains Card discovery truth; narrative delivery/show/confiscation does not need to consume the discovery.
+- Free Roam/Race serve as connective travel and emergent interruption.
+- Combat/Card Zones/minigames serve as exceptional missing-Card acquisition/proof and keep their existing owners.
+- Existing five-card King Kayfabulation `Actor + 3 Scene + Quest` is the higher-order synthesis/closure layer.
+- Lean Memory stores meaningful relay outcomes/interpretations, not Card-instance inventory transactions.
+- No second Card inventory, Quest database, Card corpus, Combat, Race or Almanac owner is introduced.
+- First Card proof inside `RESIDENT-SOCIAL-MEMORY-01`: one real Resident→Player→Resident relay before default Card-search grind or courier runtime.
+
+### SITE PROCESS
+- Added `SITE_PROCESS_CHECKPOINT_RESIDENT_CARD_RELAY_2026-09-28.json`.
+- Existing KFB Production Control Site target is identified; no second Site is created.
+- This execution surface exposes Site metadata but no direct Site persistence mutation action. Site backend write remains explicitly `PENDING_TOOL_GAP`; no false Site-write claim.
+- GitHub remains the authoritative recovery state.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **27** pinned entries with canonical Freestyle rules and the current Overworld Kayfabulation donor.
+- Current evidence: **27/27 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer · 12/12 Dance · 15/15 Gift · 6/6 Gift KISS · 12/12 Signature Deck · 15/15 Social Card Relay PASS**.
+- Runtime/browser/Stage/Site-backend implementation remain 0.
+
+## 2026-09-28 · KFB Town · Resident Signature Decks / worldview / Card recovery
+
+### DESIGN
+- Extended the existing Town decision that every NPC may have a favourite/signature/catchphrase Deck or a personal selection inside a Deck cluster.
+- Added `RESIDENT_SIGNATURE_DECKS_2026-09-28.md`.
+- Signature Deck content is **stable authored identity/knowledge**, not Lean episodic memory.
+- Resident identity uses `deckRef + stance`, supporting direct fit and deliberate mismatch: aligned, misreads-as-law, archive, confiscate/destroy, parody, etc.
+- ChatterBox retrieval is bounded to current beat + Resident stance + **1–3 relevant Cards** + small Lean Memory context; never full-Deck prompt dumps.
+- Residents may have **3–7 high-salience Signature Cards** inside the broader Deck/cluster.
+- Card recovery/search reuses existing Card POIs and Player Journey/Almanac collection; no second Card inventory or Quest owner.
+- Full Deck collection may remain long-form, but Resident reactions are batched through meaningful Card/milestone visits instead of one courier transaction per Card.
+- Narrative show/return/confiscation does not need to delete the player's Almanac discovery.
+- Card/page counts remain source-driven. Current index examples: Anti-Rules 57/16, 9/11 Money Trail 60/15, Big Bad Brain Wrestling 56/15.
+- Deck content is a character lens, not automatically objective world truth.
+- First candidate mapping is Officer Doppel-Denk × `anti_rules_toolkit`; stance remains intentionally open between `misreads-as-law`, `confiscate/destroy` and `archivist/evidence-locker`.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **25** pinned entries with the current KFB Card index and structured Anti-Rules source.
+- Current evidence: **25/25 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture · 6/6 Gift KISS · 12/12 Signature Deck PASS**.
+- Runtime/browser/Stage remain 0; no final Resident→Deck mapping table, Deck-ChatterBox adapter, Card-recovery runtime or Live promotion was created.
+- START_HERE, Return and Recovery carry the same continuation state.
+- Exactly one integrated gate remains **RESIDENT-SOCIAL-MEMORY-01**; a small first Resident→Deck mapping pass is preparation inside that gate, not a new parallel project.
+
+## 2026-09-28 · SUPERSEDES · Gift Culture KISS baseline / semantic memory only
+
+- Georg clarified that the earlier “barter society” wording is **not** a request for Resident resource management, durable item ownership or a gift-economy ledger.
+- MVP priority is now explicitly **Behavior + Reaction + Animation + Emotional Choreography + compact semantic memory**.
+- Gift props may be scene-local, random/admitted and disposable after the beat.
+- Lean Memory persists only meaningful social content: participants, giver intent/meaning, notable reaction/escalation, reconciliation and relevant witness provenance.
+- Do **not** persist every wrapper instance, handoff, current owner, resource count or regift chain.
+- Player Journey / GPT-Site persistence is optional for compact semantic `ResidentMemoryReceipt` callbacks; the visible gift interaction must work with zero persistence.
+- A later real inventory/provenance system may attach externally if a concrete gameplay need emerges; it is not part of Gift Culture MVP.
+- Current Gift Culture source checks remain **15/15 PASS**; KISS correction checks add **6/6 PASS**. No runtime/browser/Stage claim changes.
+
+## 2026-09-28 · KFB Town · Resident Gift Culture / barter / Kayfabe escalation / reconciliation
+
+### DESIGN
+- Gift-giving is now a third shared Resident culture axis beside Brick Fish play and Dance Culture.
+- Added `RESIDENT_GIFT_CULTURE_2026-09-28.md`.
+- Exact Santa source provides `Santa.glb` plus five real wrapper variants `Present_A–E`.
+- December-2024 Helpers provide `Helper_A/B` and a source-backed toy-workshop prop set for a later North-Pole/Holiday Resident scene.
+- Existing Toy Soldier `Present_Base → Present_UnwrappedBase` remains the strongest current reveal-animation/timing donor; its exact opened geometry is not generalized to Santa wrappers.
+- Gift contract separates **wrapperRef**, **payloadRef** and giver **intent**. Actual ownership transfer remains with current world/inventory owners.
+- Player Journey / Meta owns durable player-facing gift provenance; replay must not duplicate transfers/rewards.
+- Gift intents include care, thanks, trade, reconciliation, tease, satirical needling, prank, tribute and apology without creating a global relationship score.
+- Gift continuity reuses bounded `ResidentSocialThread kind: gift`.
+- Exploding/prank gifts default to social/Kayfabe cartoon violence; Combat owns real damage only when explicitly invoked.
+- Failure Spiral is bounded: **warm/neutral → tease → slapstick → Kayfabe blowout → reconciliation/cooldown/return**.
+- Reconciliation can use replacement gifts, source-backed shared food/drink, Dance/Common Bounce, repair/help, apology or simple return to routine.
+- Future North-Pole scene stays separate and source-first; winter environment and exact Holiday/Jingle-Bells-like audio remain `SOURCE_REQUIRED`.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **23** pinned entries with Santa and Helpers sources.
+- Current evidence: **23/23 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer · 12/12 Dance Culture · 15/15 Gift Culture PASS**.
+- Runtime/browser/Stage remain 0; no Gift game, barter economy, exploding-present runtime, North-Pole Stage or Live promotion was created.
+- START_HERE, Return and Recovery carry the same continuation state.
+- Exactly one integrated next gate remains **RESIDENT-SOCIAL-MEMORY-01**; Gift Culture enters after the basic POI/AIDA/reaction/resume seam and first Dance mappings.
+
+## 2026-09-28 · KFB Town · Shared Resident Dance Culture + collectible Signature Moves
+
+### DESIGN
+- Music/dance is now a shared Resident culture axis alongside Brick Fish social play.
+- Added `RESIDENT_DANCE_CULTURE_2026-09-28.md`.
+- **Common Bounce** is the shared beat-driven groove semantic; accepted Legacy Orc B `orb.bounce` is the first behavioral donor, not a universal clip.
+- Current Motion Library v2b contributes **24 dance entries** across dedicated Rig_Medium/Rig_Large dance libraries.
+- Long dance sources may be reused through beat-aligned **motion slices**, so Resident uniqueness does not require one new FBX per character.
+- Each Resident eventually gets one authored learnable Signature Move mapping; current Resident Disco pairings are the first audition pool, not final assignments.
+- Group choreography uses one song transport: Common Bounce between phrase-boundary Signature inserts, with optional group hits/call-response and bounded local roam.
+- Brick Fish / Reaction Choreography may interrupt dancing; the dancer returns to the active groove on a legal beat/bar instead of generic Idle.
+- Player starts with Common Bounce. Signature Moves progress `UNKNOWN → DISCOVERED → LEARNED/PERFORMABLE`.
+- Durable learned-move ownership stays with **Player Journey / Meta**; teacher/event/method provenance is retained and learned moves do not consume Backpack slots.
+- Learned move identity is semantic across avatar families; incompatible rigs use owner-specific adapters or remain temporarily unperformable without losing the unlock.
+- Learned Signature Moves are reusable social tokens: playing one near its origin Resident may trigger recognize/join/correct/challenge/parody reactions through existing Reaction/Lean-Memory layers; no omniscient recognition.
+- Animation Studio / Motion Library remains the authoring/mapping owner; no second Dance Studio/runtime is introduced.
+
+### SOURCES / EVIDENCE
+- SOURCE manifest expanded to **20** pinned entries with Motion Library v2b, Resident Disco, Orc Band, Player Meta STRAND M and versioned Journey-state donors.
+- Current evidence: **20/20 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer profile checks · 12/12 Dance Culture checks PASS**.
+- Runtime/browser/Stage remain 0; no public Dance review page or Live promotion was created.
+- START_HERE, Return and Recovery carry the same continuation state.
+- Exactly one next integrated gate remains **RESIDENT-SOCIAL-MEMORY-01**, consuming Dance Culture when first Animation Studio mappings are ready.
+
+## 2026-09-28 · KFB Town · Officer Doppel-Denk first resident-specific overlay
+
+### CHARACTER / DESIGN
+- Working character name **Officer Doppel-Denk** is bound to technical Resident source `toy-soldier`; asset ID is not renamed.
+- Existing Toy Soldier gift reveal is reused as a one-time world entrance: closed present → reveal → emerged → patrol.
+- First uniqueness overlay adds resident-specific Attention Bias rather than a new NPC system: perceived disorder, obstruction, litter, noise, unsafe horseplay, unattended objects, authority opportunities and royal-interest cues.
+- First mini-scenario POIs: Brick Fish exchange, Tiny Treats pizza slice on the ground and plant/path obstruction.
+- Social motor is tragicomic authority: eager royal loyalty and recognition-seeking, low actual acceptance by nearby Residents, with retorts/laughter/compliance feeding bounded social outcomes.
+- ChatterBox/Triplets remain language owner; Reaction Choreography remains physical response owner; Lean Memory stores only socially meaningful recurring outcomes.
+- Motion gate updated after Georg's Mixamo review: **`Walk with Briefcase`** is the priority external donor because the right arm already carries a load while the left arm keeps a normal walk swing. It is USER-IDENTIFIED / NOT YET ADMITTED / NOT PINNED. Prefer In Place → Motion Library intake → Rig_Medium retarget → exact rifle attachment/pose fit; world/navigation remains translation owner. `Running_HoldingRifle` plus `Walking_A/B` remain A/B/fallback candidates.
+
+### EVIDENCE / RECOVERY
+- Added `OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md`.
+- SOURCE manifest expanded from 13 to **15** pinned entries with current Resident Atlas Toy Soldier and Motion Registry sources.
+- Current evidence: **15/15 source reads · 1/1 SOURCE parse · 1/1 AIDA contract parse · 20/20 general design invariants · 6/6 Officer profile source checks PASS**.
+- Runtime/browser/Stage remain 0; no public review surface or Live promotion was created.
+- Main router, KFB Hub card, START_HERE, Return and Recovery are updated to the same character checkpoint.
+- Exactly one next gate remains **RESIDENT-SOCIAL-MEMORY-01**, using Officer Doppel-Denk as the preferred first resident-specific overlay inside the real receiving world.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
@@ -2054,3 +2208,80 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-28 · KFB Town · Resident Social Memory / AI Town donor synthesis
+
+Status: **DESIGN REFERENCE CANDIDATE · DOCUMENTED / TESTED · NOT IMPLEMENTED**
+
+Persisted:
+- `skills/chat/town/references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/START_HERE.md`
+- `SOURCE.json`
+- `TEST_REPORT.md`
+- Town `START_HERE.md` and `SESSION_CARD.md` routing.
+
+Donor result:
+- `georg-doc/ai-town@2693ed6973e3461204385c9d11fb3aca4e8e3a7a` is pinned as a **mechanism donor only**;
+- retained mechanisms: compact episodic memory, small top-k retrieval, relevance/recency/importance ranking, cooldowns and asynchronous cognition;
+- no AI Town runtime/Convex requirement, second NPC database or second dialogue engine is adopted.
+
+KFB integration direction:
+- world events create compact witness-specific memory receipts;
+- `witnessed / told / inferred` remain distinct;
+- gifts, promises, Cards, banter, arguments, work and performances may open tiny resumable social threads;
+- ChatterBox / semantic Triplets / selectable retorts remain the language lineage;
+- Fluffolekt / Fluff-o-lect may omit the carrying word only when shared memory or visible context makes meaning recoverable;
+- current Brick Fish PR #254 and Reaction Choreography PR #256 are explicit candidate seams, not promoted runtime truth;
+- world-owned POIs expose player, Residents, Cube Pets, plants/nature, environment, resources, props/Cards and activity stations without creating a second registry;
+- perception is bounded as immediate contact → visible attention field → deliberate local semantic search → remembered/reported target;
+- source-backed Fishing/Hammering/Chop/Dig/Pickaxe/Saw/resource-work joins Georg's patrol/explore/inspect/gather/carry/tend/music/social/rest return-path direction;
+- personal motivations and concrete current goals determine salience and provide the conflict motor without automatically implying hostility or Combat;
+- shared player/NPC KFB AIDA loop: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget;
+- `resident-aida-poi.v0.1.json` is the machine-readable design contract;
+- movement, persistence, POP/rewards, Combat and actor/rig owners remain unchanged.
+
+Actual evidence:
+- source reads: **13/13 PASS**;
+- machine-readable source manifest parse: **1/1 PASS**;
+- machine-readable AIDA/POI contract parse: **1/1 PASS**;
+- design invariant checks: **20/20 PASS**;
+- runtime/browser/Stage tests: **0**, intentionally not claimed.
+
+Workflow:
+- natural-language shortcut `KFB WEB PUSH/READ — <project or slice> — recover + continue` is documented on this branch in `FRESH_CHAT_SLICE_PROTOCOL.md`;
+- Web/GitHub remains default; Work/WSA escalation-only; no proxy review surface for this design slice.
+
+Reserved future Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/` — **NOT DEPLOYED**.
+
+Exactly one later productive gate:
+**RESIDENT-SOCIAL-MEMORY-01** in the real receiving world after relevant current recovery blockers clear. No standalone proxy review page.
+## 2026-09-29 · KFB Town · Resident Epistemic Culture + Base-24 living map
+
+Status: **DESIGN MILESTONE · SITE-FIRST · NOT RUNTIME IMPLEMENTED**
+
+Added:
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_EPISTEMIC_CULTURE_2026-09-29.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md`
+
+Direction:
+- Town is conflict-rich but escalation-poor; long-lived Residents can combine affection, irritation, rivalry and shared history.
+- Shared epistemic method culture uses the existing KFB triad: official story / stated purpose · POSIWID + cui bono · Hanlon's Bizarro-Blödsinn, without forcing shared conclusions.
+- Evidence, Resident perception, interpretation and embodied performance stay separate.
+- Semantic Triplets remain the ChatterBox compression grammar; Fluff-o-lect remains Closure on word level.
+- Jargon, expert language and subcultural/dog-whistle vocabulary are character signals, not truth markers.
+- Base Social Memory starts from authored relationship priors and grows through compact meaningful receipts.
+- Current Resident Atlas session cut contains 27 resident recipes; Base-24 is therefore curated as 24 social identities rather than copied from recipe count.
+- Base-24 v0.1 contains **24/24 rows** and separates Protagonist A/B and Farmer A/B into distinct social identities.
+- Existing archetype direction is preserved: FrizzleBob Herald/Guide · Lorekeeper Mentor · King Kayfabian Ruler · Offica Doppeldenk Threshold Guardian · Trickster/Shadow movable.
+- Added Jung-style drive, social-friction, habitat/routine and Signature-Deck lanes as authoring heuristics.
+- Dialogue presentation direction: clean lightly rounded rectangular speech boxes, separate concise thought treatment, no Claymation/Cavey-outline bubble skin; reuse existing ChatterBox ownership.
+- Resident Interaction MVP target now combines routine → AIDA → speech/choice → optional Card/Gift → Reaction Choreography → optional thought → Lean Memory receipt → resume/retarget.
+
+Evidence:
+- new design docs: **2**;
+- Base-24 roster rows: **24/24**;
+- runtime/browser/Stage/Live changes: **0**.
+
+Existing Social Card Relay recovery remains unchanged at **TOWN-RESOURCE-PATH-01**. Character authoring may continue Site-first; GitHub remains milestone-only.

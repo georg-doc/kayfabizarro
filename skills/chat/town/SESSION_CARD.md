@@ -67,3 +67,45 @@ Der erste integrierte Pass soll bereits wie ein kompletter Geburtstagseinstieg w
 ## Owner-Grenzen
 
 Town bleibt Design-/Meta-Referenz. Travel, Stunt, Combat, ToolBox/Animation Lab, ChatterBox/Journey und Asset Librarian behalten ihre Owner/SSOTs. GitHub-Sync ist Übergabe, keine automatische Annahme oder Implementation.
+
+
+## 2026-09-28 · Resident Social Memory / ChatterBox / Fluff-o-lect
+
+New additive design reference:
+[`references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md`](references/KFB_RESIDENT_SOCIAL_MEMORY_AI_TOWN_2026-09-28.md).
+
+Core direction:
+- Residents keep **small, witness-specific episodic receipts**, not full transcripts or a global omniscient NPC database.
+- Open gifts, promises, Card disputes, banter, work and performances may create tiny resumable **social threads**.
+- `georg-doc/ai-town` donates memory/retrieval/cooldown patterns only; it does not become the KFB runtime.
+- ChatterBox + semantic Triplets + selectable retorts remain the language layer.
+- Fluffolekt / Fluff-o-lect uses shared memory and visible context to carry the omitted word; without recoverable context, speak normally.
+- Brick Fish `social.prop_hit` and the Reaction Choreography candidate provide the physical social-action seam.
+- World state, movement, persistence, POP/rewards, Combat and actor-rig ownership remain unchanged.
+- World-owned **Points of Interest** cover player, Residents/NPCs, Cube Pets, plants/nature, environment/landmarks, resources, props/Cards and activity stations.
+- Routine activity is the default path rather than idle filler: source-backed Fishing, Hammering/smithing, Chop, Dig, Pickaxe and Saw join the current patrol/explore direction.
+- Personal goals/motivations influence what attracts attention and can create non-automatic conflict over resources, stations, promises, space or social priorities.
+- Shared KFB **AIDA** loop for player and NPCs: Attention → Curiosity/Interest → Expectation → Interaction → Reaction → Interpret/Remember → Return/Resume/Retarget.
+
+Recommended later integrated gate:
+**RESIDENT-SOCIAL-MEMORY-01** — two real Residents, one bounded POI sight/range/search loop, one source-backed resumable routine, one motivation-backed AIDA cycle, Brick Fish + one Card/gift context, witness-specific memory, one bounded social thread, later recall, one ChatterBox/Triplet response and one context-valid Fluff-o-lect variant.
+
+Reserved Stage route is `https://kayfabizarro.pages.dev/kfb-hub/stage/town/resident-social-memory-01/`, currently **NOT DEPLOYED**. No proxy human-review page.
+
+
+## 2026-09-29 · Social Card Relay / Resident-first Card gameplay
+
+Current content priority for the later `RESIDENT-SOCIAL-MEMORY-01` proof:
+- one Resident gives/introduces a **real KFB Card** to the player;
+- player carries the Card socially to a second Resident;
+- the receiving interaction is performed through **SHOW IT → SPIN IT → SELL IT** with Monkey-Island-like selectable choices;
+- recipient reaction uses Signature Deck stance, ChatterBox/Triplets, Reaction Choreography and Lean Memory;
+- one meaningful relay receipt may persist; no physical Card-instance ledger is required;
+- Free Roam/Race are connective tissue, while Combat/Card Zones are optional exceptional Card sources;
+- Player Journey/Almanac keeps discovery truth;
+- later King Kayfabian synthesis uses the existing **Actor + 3 Scene + Quest** grammar.
+
+The Signature Deck layer remains character identity. Universal “find my lost Deck” gameplay is no longer the default proposal.
+
+Durable design:
+`../workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SOCIAL_CARD_RELAY_2026-09-28.md`.
