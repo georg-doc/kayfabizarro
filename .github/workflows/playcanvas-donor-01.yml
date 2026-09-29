@@ -1,0 +1,37 @@
+name: PlayCanvas Donor 01 probe
+on:
+  push:
+    branches: [chatgpt-web/playcanvas-donor-01-2026-09-29]
+    paths:
+      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/**'
+      - '.github/workflows/playcanvas-donor-01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/probe.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Probe exact public fork scene
+        run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/probe.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playcanvas-donor-01-probe
+          path: playcanvas-donor-01-probe
+          retention-days: 14
