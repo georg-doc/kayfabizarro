@@ -1,0 +1,43 @@
+name: PlayCanvas Donor 01 mirror
+on:
+  push:
+    branches: [chatgpt-web/playcanvas-donor-01-2026-09-29]
+    paths:
+      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/mirror-public.mjs'
+      - '.github/workflows/playcanvas-donor-01-mirror.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01
+          sparse-checkout-cone-mode: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Capture exact donor runtime
+        run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/mirror-public.mjs
+      - name: Commit donor snapshot
+        run: |
+          git config user.name "KFB Donor Mirror"
+          git config user.email "actions@users.noreply.github.com"
+          git add game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/static
+          git commit -m "vendor(playcanvas): mirror exact Vehicle Physics runtime"
+          git push origin HEAD:chatgpt-web/playcanvas-donor-01-2026-09-29
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playcanvas-donor-01-static
+          path: game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/static
+          retention-days: 14
