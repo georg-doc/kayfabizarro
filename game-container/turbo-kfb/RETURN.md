@@ -676,3 +676,34 @@ Owner meaning:
 - future Race/Flight slices consume these/profile-adjacent facts without moving their physics owners.
 
 Next checkpoint: wire Travel Ground presentation to the stable locomotion owner and remove the Travel-specific hand-wired clip/rate mapping. Preserve measured/no-query regression until the new Travel path is proven.
+
+
+## GROUND-LOCOMOTION-PROFILE-CONSUMER-01 · implementation checkpoint
+
+Status: **IMPLEMENTED · TESTS PENDING**
+
+Runtime change:
+- Travel Ground imports the stable ToolBox `locomotion-profiles.v1.js` owner directly;
+- the owner builds/measures the ActionFigure Rig_Medium profile from the actually loaded KayKit clips;
+- Travel resolves `run`, `sprint`, directional and Jump roles from that profile;
+- phase-sync contact timing and run↔sprint fade hints come from the profile;
+- the former Travel-wide 1.8× cadence constant is removed;
+- profile-derived playback has only a safety ceiling of 3.0×, not a gameplay target.
+
+Gameplay pace remains consumer-owned and source-backed:
+- old Travel Walker donor normal pace = **5.4 u/s**;
+- old Travel Walker donor sprint multiplier = **1.75** → **9.45 u/s**;
+- therefore W / `run` targets 5.4 and Shift / `sprint` targets 9.45;
+- clip playback is derived separately from each measured role speed.
+
+Protected:
+- `walk-controller` remains sole movement writer;
+- Travel wall-clock catch-up unchanged;
+- Orbit unchanged;
+- measured/no-query Ground path unchanged;
+- Race/Explore unchanged.
+
+New QA:
+- `ground-locomotion-profile-consumer01-static.mjs`;
+- `ground-locomotion-profile-consumer01.mjs`;
+- dedicated workflow runs full Turbo + Ground/Orbit regressions before the new Travel proof.
