@@ -1,49 +1,95 @@
 # KFB Container Turbo-01 · Return
 
 Updated: 2026-09-29
-Status: EXPERIMENTAL · CHECKPOINT A SOURCE PASS · STAGE PUBLICATION SOURCE WRITTEN · PUBLIC VERIFICATION OPEN
+Status: EXPERIMENTAL · RECOVERY CHECKED · CHECKPOINT B IMPLEMENTED · BROWSER HARNESS BLOCKED BY rAF TIMING
 
-## Outcome
-The MIT-licensed Turbo Kart Rally runtime is now imported as a KFB container candidate with an additive EXPLORE path.
+## Owner / branch / exact head
+- repo: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/kfb-container-turbo-01-2026-09-29`
+- verified head before this recovery write: `e6c53ddae32f38dcc7fb7d482d29f94a7686843e`
 
-EXPLORE:
+## Upstream host donor
+- `bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c`
+- MIT license retained.
+- protected driving feel files remain donor-exact unless explicitly recorded otherwise.
+
+## Checkpoint A · Explore
+Implemented:
 - one player kart;
 - same upstream Kart controller;
 - same ChaseCamera;
 - same InputController;
-- no race countdown/laps/results loop;
-- race ItemSystem disabled;
-- race progress update bypassed;
-- existing Race remains the regression-control path.
+- no countdown/laps/results requirement;
+- Race ItemSystem off in EXPLORE;
+- Race remains regression control.
 
-## Owner / branch / head
-- repo: `georg-doc/kayfabizarro`
-- branch: `chatgpt-web/kfb-container-turbo-01-2026-09-29`
-- current pre-return head: `435b242564f92fdc3a3ec6b40af91398f7c11168`
+Static/source evidence remains **34/34 PASS**.
 
-## Upstream source
-- `bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c`
-- MIT license retained under `app/LICENSE`.
+## Checkpoint B · Ground consumer
+Implementation commit:
+- `772131720e591df1ca341a73e1a59284ef5dd499`
 
-## Evidence
-- static/source: **34/34 PASS**
-- protected donor files: exact blob identity
-- browser: NOT RUN / NOT CLAIMED
-- public Stage source: `cloudflare-live@aed6a2b6684c21cb7de19d58a00c1ef787ccd23d`
-- target Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/turbo-01/`
-- PUBLIC_VERIFIED: OPEN because current Web environment cannot open pages.dev
+Added:
+- `app/src/ground-player.js`
+- exact existing KFB `walk-controller.js` as Ground movement owner;
+- ActionFigure · Rig_Medium;
+- real KayKit `Idle_A / Walking_A / Running_A / Jump_Start / Jump_Idle / Jump_Land`;
+- Root/Hips world translation stripped;
+- one AnimationMixer;
+- KCL/Motion-Lab playback/phase-sync logic consumed instead of another locomotion lab;
+- hidden Kart is not updated while Ground owns movement;
+- shared Turbo chase camera consumes the Ground target interface.
 
-## Protected
-No changes to upstream:
-- kart driving feel;
-- chase camera;
-- input controller;
-- track implementation;
-- model implementation.
+## Timeout recovery / browser evidence
+Runs 5, 6 and 7 all stop at the same first gameplay assertion:
+- title boot PASS;
+- EXPLORE entry PASS;
+- EXPLORE mode PASS;
+- one player kart PASS;
+- Race items off PASS;
+- input reaches the player: `throttle=1`, `controlsLocked=false`, active input confirmed;
+- observed after a 1.4 s wall-clock wait: `speed=1.220266...`, displacement ≈ `0.04`.
 
-No Ground locomotion, Cards, Residents, Voxel, Clay or Flight yet.
+This is effectively one fixed `1/30 s` simulation step:
+`1.220... × 1/30 ≈ 0.0407`.
+
+Therefore the current red browser gate is **not evidence that Turbo driving is broken**. The headless GitHub browser is not advancing `requestAnimationFrame` reliably during wall-clock waits. This matches the established KFB preview lesson: hidden/headless acceptance must drive simulation with explicit fixed steps, not wait for rAF.
+
+Runs:
+- #5 `53519bac...` FAILURE · same 0.04 displacement
+- #6 `cd00df61...` FAILURE · physical-key diagnostic, same 0.04 displacement
+- #7 `e6c53dda...` FAILURE · exact input trace confirms throttle reaches player
+
+Run 7 artifact:
+- artifact id `11023690122`
+- digest `sha256:7f5ce06f2a409a7a25676596bf1d90389e170a9b4cac5929095a15d52c591c92`
+
+The two post-timeout commits were **QA diagnostics only**, not two gameplay repair passes. The two-repair stop rule has therefore not been consumed on the product implementation.
+
+## Stage
+Checkpoint-A source was mirrored to:
+- `cloudflare-live@aed6a2b6684c21cb7de19d58a00c1ef787ccd23d`
+- target: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/turbo-01/`
+
+Current chat environment still cannot independently open `pages.dev`, so `PUBLIC_VERIFIED` remains OPEN.
+
+Checkpoint B has **not** been promoted to Stage.
+
+## Protected / deferred
+Do not yet add:
+- Cards;
+- Residents;
+- Voxel/WFC/procedural world replacement;
+- Clay styling;
+- Flight;
+- Enter/Exit Kart.
+
+Do not retune `kart.js` or animation clips from the current browser failure.
 
 ## Exactly one next gate
-**Checkpoint B · KFB Ground Consumer**
+Replace wall-clock/rAF timing in the browser proof with a deterministic fixed-step `advanceBy(seconds)` debug seam, without changing Kart/Ground gameplay code. Then rerun:
+1. EXPLORE drive;
+2. Race regression;
+3. Ground `Idle → Walk → Run → Walk → Stop → Jump_Start → Jump_Idle → Land`.
 
-Use the existing KayKit Motion Lab + KCL-M1 results with one real ActionFigure / Rig_Medium in the actual EXPLORE world. No new locomotion lab and no new cadence research.
+Only after that result is known should any product repair be attempted.
