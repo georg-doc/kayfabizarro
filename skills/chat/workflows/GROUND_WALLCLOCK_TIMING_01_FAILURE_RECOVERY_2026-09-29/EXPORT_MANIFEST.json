@@ -1,0 +1,68 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "GROUND-WALLCLOCK-TIMING-01",
+  "exportRevision": "2026-09-29-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29",
+    "pr": 289
+  },
+  "acceptedBase": {
+    "sourceHandoff": "542eedb91f96b6f718df9e619fb3d3f746b79854",
+    "runtime": "4475271b61e65fae95e5044925b83f2e39c18e6e",
+    "publicStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel"
+  },
+  "frozenCandidateHead": "9431a89c8b28c21579f61ae8cdb5e3be197706d5",
+  "entrypoints": [
+    "game-container/turbo-kfb/app/index.html",
+    "game-container/turbo-kfb/app/src/main.js"
+  ],
+  "sourceFiles": [
+    ".github/workflows/kfb-container-walk-pace-tune-01.yml",
+    "game-container/turbo-kfb/CHANGELOG.md",
+    "game-container/turbo-kfb/RETURN.md",
+    "game-container/turbo-kfb/app/src/main.js",
+    "game-container/turbo-kfb/qa/checkpoint-a.mjs",
+    "game-container/turbo-kfb/qa/ground-orbit-integration01.mjs",
+    "game-container/turbo-kfb/qa/ground-wallclock-timing01-static.mjs",
+    "game-container/turbo-kfb/qa/ground-wallclock-timing01.mjs"
+  ],
+  "buildOutputs": [],
+  "dataFiles": [],
+  "assetRefs": [
+    "Existing ActionFigure/KayKit source pins unchanged by this slice."
+  ],
+  "externalDependencies": [
+    "three@0.170.0",
+    "playwright@1.62.1 (CI only)"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "run": 36591956187,
+      "artifact": 11044247238,
+      "digest": "sha256:eaf90c15aeb3853e2cb48868bfd1edb45f0d8af6c510f1ac948cfe3af484ca2d"
+    },
+    {
+      "run": 36592599717,
+      "artifact": 11043959677,
+      "digest": "sha256:112b23abeea1673b8f0ab8c66d16be047f434d4a9016c9a5b6c60b2e801fc6a1"
+    },
+    {
+      "run": 36593362023,
+      "artifact": 11044688869,
+      "digest": "sha256:629aff621427e1a365866e6977fbe5d13a402c2cafad8678e25ae50af1cfb852"
+    }
+  ],
+  "missing": [
+    "No synthetic ZIP: GitHub connector has no archive-packaging action; exact Git commit is the editable source snapshot.",
+    "Final dedicated 15-FPS browser proof skipped by workflow fail-fast."
+  ],
+  "start": {
+    "command": "python3 -m http.server 4173 --directory .",
+    "url": "http://127.0.0.1:4173/game-container/turbo-kfb/app/?ground=1&groundFeel=velocity&walkPace=travel",
+    "notes": "Recovery inspection only; do not promote frozen candidate."
+  },
+  "nextGate": "GROUND-WALLCLOCK-TRAVEL-ONLY-01"
+}
