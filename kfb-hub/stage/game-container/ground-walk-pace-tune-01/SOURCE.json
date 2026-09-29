@@ -1,34 +1,33 @@
 {
   "schema": "kfb.stage-mirror/0.1",
-  "product": "GROUND-WALK-PACE-TUNE-01",
-  "status": "PUBLIC_VERIFIED",
+  "product": "GROUND-WALK-PACE-TUNE-02",
+  "status": "SOURCE_BROWSER_PASS_PUBLIC_PENDING",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29",
-  "runtimeSourceHead": "d6e9d42149670af290d96fe19dfdc28095f2f337",
-  "currentHandoffHead": "16f3d3f0e3a1081d6748e3f418370c718bb57f9e",
+  "runtimeSourceHead": "4475271b61e65fae95e5044925b83f2e39c18e6e",
+  "currentHandoffHead": "096f63a32963424d95330f24e5709003d4dd5278",
   "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel",
   "query": "ground=1&groundFeel=velocity&walkPace=travel",
   "evidence": {
-    "run": 36582612505,
-    "artifact": 11040906054,
-    "digest": "sha256:ae9e6929c02fcf0357fb7c57228d168a64561f7b9d5f21f152ccd8f1f6a3289e",
-    "static": "6/6",
+    "run": 36588655547,
+    "job": 109475640957,
+    "artifact": 11043426976,
+    "digest": "sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f",
+    "paceStatic": "8/8",
+    "integrationStatic": "10/10",
     "regression": "27/27",
-    "travelWalk": "14/14"
+    "travelTwoGear": "16/16",
+    "errors": 0
   },
   "measured": {
-    "walkTarget": 1.0997117224397226,
-    "walkSettled": 1.0989688245295404,
-    "walkPlaybackRate": 1.8,
-    "runTier": 2.725059985338244,
-    "sprintTier": 3.025440772378893
+    "normalWClip": "Running_A",
+    "normalWTarget": 2.4802741670129,
+    "normalWSettled": 2.4785986456399214,
+    "shiftClip": "Running_B",
+    "shiftSettled": 3.026331548770273,
+    "releaseClip": "Running_A",
+    "orbitRetained": true
   },
-  "publicProof": {
-    "run": 36583694971,
-    "job": 109458242652,
-    "checks": "13/13",
-    "artifact": 11040747449,
-    "digest": "sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2"
-  },
-  "cloudflarePages": "SUCCESS"
+  "publicProof": null,
+  "cloudflarePages": "PENDING"
 }

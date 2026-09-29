@@ -1,53 +1,36 @@
-# GROUND-WALK-PACE-TUNE-01 · Stage Test Report
+# GROUND-WALK-PACE-TUNE-02 · Stage Test Report
 
-Status: SOURCE REAL-BROWSER PASS · PUBLIC PROOF PENDING
+Status: **SOURCE REAL-BROWSER PASS · PUBLIC PROOF PENDING**  
 Date: 2026-09-29
 
-Tested runtime head: `d6e9d42149670af290d96fe19dfdc28095f2f337`
-Run: `36582612505`
-Artifact: `11040906054`
-Digest: `sha256:ae9e6929c02fcf0357fb7c57228d168a64561f7b9d5f21f152ccd8f1f6a3289e`
+## Exact tested source
+- runtime head: `4475271b61e65fae95e5044925b83f2e39c18e6e`
+- source handoff: `096f63a32963424d95330f24e5709003d4dd5278`
+- run: `36588655547`
+- job: `109475640957`
+- artifact: `11043426976`
+- digest: `sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f`
 
-- static: **6/6 PASS**
+## Source result
+- pace static: **8/8 PASS**
+- integration static: **10/10 PASS**
 - Ground+Orbit regression: **27/27 PASS**
-- Travel-Walk: **14/14 PASS**
-- errors: 0
+- Travel two-gear: **16/16 PASS**
+- runtime/page/console errors: **0**
 
-Travel-Walk:
-- Walking_A @ **1.8×**
-- target **1.0997117224 u/s**
-- settled **1.0989688245 u/s**
-- Running_A tier **2.7251 u/s**
-- Running_B sprint **3.0254 u/s**
-- release returns to Walking_A **1.1019 u/s**
-- Orbit preserved.
+## Travel two-gear
+- W immediately = `Running_A / run`
+- W target = **2.4802741670 u/s**
+- W after 0.06 s = **1.5210503972 u/s**
+- settled W = **2.4785986456 u/s**
+- Shift immediately = `Running_B / sprint`
+- settled Shift = **3.0263315488 u/s**
+- Shift release = `Running_A / run`
+- Orbit retained
+- measured/no-query Walking_A profile retained as regression/reference only
 
+## Public gate
 Target:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
 
-
-## Public Cloudflare proof
-
-Publication source head:
-`cloudflare-live@20c1858c2f6cdd0b48136eb8295b7c803a5e12f6`
-
-Cloudflare Pages: **SUCCESS**
-
-Public Chromium:
-- run `36583694971`
-- job `109458242652`
-- **13/13 PASS**
-- exact runtime marker `d6e9d42149670af290d96fe19dfdc28095f2f337` PASS
-- Travel pace active
-- Walking_A playback 1.8×
-- public faster Walk ~1.0985 u/s
-- Running_A tier retained
-- Running_B Sprint retained
-- release returns to faster Walking_A
-- Orbit mounted
-- runtime/page/console errors: 0
-- Hub pace-tune link PASS
-- artifact `11040747449`
-- digest `sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2`
-
-Status: **PUBLIC VERIFIED**.
+Do not claim this new runtime PUBLIC_VERIFIED until the exact marker `4475271b61e65fae95e5044925b83f2e39c18e6e` and the refreshed W=Running_A / Shift=Running_B behavior pass public Chromium.

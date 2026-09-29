@@ -1,15 +1,15 @@
 {
   "id": "ground-walk-pace-tune-01",
-  "revision": "d6e9d42149670af290d96fe19dfdc28095f2f337",
+  "revision": "4475271b61e65fae95e5044925b83f2e39c18e6e",
   "route": "/kfb-hub/stage/game-container/ground-walk-pace-tune-01/",
   "defaultTestQuery": "ground=1&groundFeel=velocity&walkPace=travel",
-  "status": "PUBLIC_VERIFIED",
-  "publicationSourceHead": "20c1858c2f6cdd0b48136eb8295b7c803a5e12f6",
-  "publicProof": {
-    "run": 36583694971,
-    "job": 109458242652,
-    "checks": "13/13",
-    "artifact": 11040747449,
-    "digest": "sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2"
+  "status": "PUBLIC_PROOF_PENDING",
+  "publicationSourceHead": "PENDING_THIS_COMMIT",
+  "sourceEvidence": {
+    "run": 36588655547,
+    "job": 109475640957,
+    "checks": "8/8 + 10/10 + 27/27 + 16/16",
+    "artifact": 11043426976,
+    "digest": "sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f"
   }
 }
