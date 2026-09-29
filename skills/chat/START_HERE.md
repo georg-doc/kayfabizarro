@@ -57,6 +57,9 @@ Important source-resolution facts:
 
 A main-only code search is insufficient when the current routed source is explicitly branch-local. Read the exact branch/pin named by the current router/brief before declaring a donor or spec missing.
 
+**WSA Lead incident:** this recovery is also classified as a WSA-Lead persistence/routing FAIL. Read `skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md`. New closure invariant: an accepted reusable result is not persistence-complete until a fresh chat can recover the stable home or exact branch/head, precedence, consumer scope and remaining open work from the standard router without knowing the old session name.
+
+
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
 Knet-Medizin is now routed as a DocCheck project reference under `georg-doc/doccheck/Knet-Medizin Konzept/doccheck-slice/Knet-Medizin/`.
