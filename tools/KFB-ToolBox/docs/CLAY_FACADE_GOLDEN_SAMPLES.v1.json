@@ -1,0 +1,91 @@
+{
+  "schema": "kfb.clay-facade-golden-samples/1.0",
+  "status": "CURRENT_BINDING_GOLDEN_SAMPLES",
+  "date": "2026-09-29",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "arrivalCommit": "440709df3f1cbc9651a97c446e4321caef7e8a38",
+    "root": "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29"
+  },
+  "pipeline": [
+    "load exact KayKit building_X.gltf",
+    "clone per instance",
+    "clayify each mesh with profile=house",
+    "softenGeometry maxEdge=0.18 maxSubdivisions=3 maxTriangles=90000",
+    "Taubin smooth lambda=0.5 mu=-0.53 iterations=8 preserveBorders=true",
+    "normal lump amount=0.018 frequency=1.6",
+    "seedGeometry before material",
+    "clay material with original KayKit color atlas",
+    "foot/scale/place",
+    "only then apply approved height-dependent bend/torsion to roof and body together"
+  ],
+  "samples": [
+    {
+      "id": "FACADE-GOLD-01",
+      "pixel": "screenshots/01-d1-haeuser-nacht.png",
+      "purpose": "primary two-house facade identity; windows, ledges, awnings and rounded seams"
+    },
+    {
+      "id": "FACADE-GOLD-02",
+      "pixel": "screenshots/02-d1-haeuser-a.png",
+      "purpose": "primary daylight massing and softened edges"
+    },
+    {
+      "id": "FACADE-GOLD-03",
+      "pixel": "screenshots/03-d1-haeuser-b.png",
+      "purpose": "secondary house variation; same grammar, different seed"
+    },
+    {
+      "id": "FACADE-GOLD-04",
+      "pixel": "screenshots/04-d1-v3e.png",
+      "purpose": "deformed facade reference after per-house clay pass"
+    },
+    {
+      "id": "FACADE-GOLD-H0",
+      "pixel": "screenshots/05-h0-totale.png",
+      "purpose": "integrated Hirnwelt scale and composition only"
+    }
+  ],
+  "protectedIdentity": [
+    "actual source windows",
+    "doors",
+    "ledges",
+    "awnings",
+    "roof pieces",
+    "authored proportions",
+    "original KayKit palette as color carrier"
+  ],
+  "forbidden": [
+    "generic clay box replacement",
+    "raw donor plus shader only",
+    "bend before per-house clay pass",
+    "one deformation angle for all houses",
+    "facade texture invented over missing geometry",
+    "large global shadow bias",
+    "coplanar overlays hidden with shadow parameters"
+  ],
+  "acceptance": {
+    "isolationRequired": true,
+    "comparisonOrder": [
+      "source donor",
+      "clayified+softened",
+      "approved bend/torsion",
+      "integrated street/world"
+    ],
+    "requiredProof": [
+      "same camera and scale",
+      "source filename and SHA",
+      "pipeline values",
+      "shadow role report",
+      "side-by-side screenshot"
+    ],
+    "failIf": [
+      "identity geometry disappears",
+      "base detaches from ground",
+      "roof and body deform inconsistently",
+      "bright contact halo",
+      "black foliage intersection seam",
+      "visible z-fighting or moire"
+    ]
+  }
+}
