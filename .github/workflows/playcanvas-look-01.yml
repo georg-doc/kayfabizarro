@@ -1,0 +1,50 @@
+name: PlayCanvas LOOK-01 local proof
+on:
+  push:
+    branches: [chatgpt-web/playcanvas-look-01-2026-09-29]
+    paths:
+      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/**'
+      - '.github/workflows/playcanvas-look-01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/verify-look.mjs
+          node --check game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/local-proof.mjs
+      - name: Source delta proof
+        run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/verify-look.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local host
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pc-look-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/static/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pc-look-http.log
+          exit 1
+      - name: Browser proof
+        run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/local-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playcanvas-look-01-local-proof
+          path: playcanvas-look-01-local-proof
+          retention-days: 14
