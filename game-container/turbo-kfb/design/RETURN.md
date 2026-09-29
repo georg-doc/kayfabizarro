@@ -147,13 +147,23 @@ No KFB Hub card is created for this internal source lock. The next meaningful pu
 - Race mode;
 - audio/music.
 
+## Later user decision · 2026-09-29
+
+Georg simplified the sequence again: first put the real PlayCanvas fork/donor on board **1:1**, then change textures/materials before any T4 integration.
+
+That donor gate is now completed and PUBLIC_VERIFIED:
+- owner: `game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/`
+- source-exact runtime mirror: 42 files / 22,054,130 bytes
+- self-host parity: 11/11 PASS
+- public parity: 11/11 PASS
+- Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/playcanvas-donor-01/`
+
+The T4/TD03 source lock remains valid and deferred; it is no longer the immediate next gate.
+
 ## Exactly one current next gate
 
-**PC-T4-01 · DONOR PARITY + ONE REAL T4 SEGMENT**
+**PC-LOOK-01 · TEXTURE / MATERIAL ONLY**
 
-Required order:
-1. untouched PlayCanvas Vehicle Physics donor runs;
-2. one bounded TD03/T4 segment is rendered alone with source range/frame evidence;
-3. only then place that one real segment between simple islands/platforms and attempt traversal.
+Start from immutable Donor-01 and change visual material/texture inputs only.
 
-No replacement track. No visual world redesign before this source-lock gate.
+T4 / TD03 integration follows after this look pass; no replacement track is allowed when that later gate reopens.
