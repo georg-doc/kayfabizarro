@@ -689,6 +689,20 @@ window.__game = {
   goToTitle,
   skipIntro: () => beginCountdown(),
   errors: () => [...seenErrors],
+  /** Deterministic test seam: advance gameplay without relying on requestAnimationFrame. */
+  advanceBy(seconds, step = 1 / 60) {
+    const w = world;
+    if (!w || !(seconds > 0)) return 0;
+    step = Math.max(1 / 240, Math.min(1 / 20, Number(step) || 1 / 60));
+    let elapsed = 0, steps = 0;
+    while (elapsed + 1e-9 < seconds && steps < 20000) {
+      const dt = Math.min(step, seconds - elapsed);
+      simulate(w, dt);
+      elapsed += dt;
+      steps++;
+    }
+    return steps;
+  },
   /** Put the player on its final lap just behind the line; drive on to finish. */
   toFinalLap() {
     const w = world; if (!w || !w.player) return;

@@ -56,7 +56,7 @@ try {
   check('Race item system disabled in Explore', exploreStart.items === false);
 
   await keyEvent(page,'keydown','KeyW','w');
-  await page.waitForTimeout(1400);
+  await page.evaluate(() => window.__game.advanceBy(1.4));
   const exploreMove = await page.evaluate(() => {
     const p = window.__game.world.player;
     const Input = window.__game.mods?.input?.InputController;
@@ -82,13 +82,16 @@ try {
   const raceStart = await page.evaluate(() => ({ karts:window.__game.world.karts.length, player:!!window.__game.world.player }));
   check('Race regression has 8 karts', raceStart.karts === 8, String(raceStart.karts));
   check('Race regression has player', raceStart.player);
-  await page.evaluate(() => window.__game.skipIntro());
-  await waitFor(page, () => window.__game?.state === 'racing', 8000);
+  await page.evaluate(() => {
+    window.__game.skipIntro();
+    window.__game.advanceBy(4.0);
+  });
+  check('Race countdown reaches racing via fixed steps', await page.evaluate(() => window.__game.state === 'racing'), await page.evaluate(() => window.__game.state));
   const racePos0 = await page.evaluate(() => {
     const p=window.__game.world.player.position; return {x:p.x,z:p.z};
   });
   await keyEvent(page,'keydown','KeyW','w');
-  await page.waitForTimeout(1200);
+  await page.evaluate(() => window.__game.advanceBy(1.2));
   const raceMove = await page.evaluate(() => {
     const p=window.__game.world.player; return {x:p.position.x,z:p.position.z,speed:p.speed,state:window.__game.state};
   });
@@ -108,19 +111,19 @@ try {
   check('Ground owns no root-motion translation', g0.rootMotionWorldTranslation === false);
 
   await keyEvent(page,'keydown','KeyW','w');
-  await page.waitForTimeout(900);
+  await page.evaluate(() => window.__game.advanceBy(0.9));
   const gw = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Ground Walk moves', Math.hypot(gw.position.x-g0.position.x, gw.position.z-g0.position.z) > 0.45, JSON.stringify(gw.position));
   check('Ground Walk uses Walking_A', gw.currentAnimation === 'Walking_A', gw.currentAnimation);
 
   await keyEvent(page,'keydown','ShiftLeft','Shift');
-  await page.waitForTimeout(650);
+  await page.evaluate(() => window.__game.advanceBy(0.65));
   const gr = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Ground Run uses Running_A', gr.currentAnimation === 'Running_A', gr.currentAnimation);
   check('Ground Run speed reflects calibrated consumer', gr.speed > 1.8 && gr.speed < 3.2, String(gr.speed));
 
   await keyEvent(page,'keyup','ShiftLeft','Shift');
-  await page.waitForTimeout(450);
+  await page.evaluate(() => window.__game.advanceBy(0.45));
   const gw2 = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Run returns to Walking_A', gw2.currentAnimation === 'Walking_A', gw2.currentAnimation);
 
@@ -130,17 +133,13 @@ try {
   check('Stop returns to Idle_A', gi.currentAnimation === 'Idle_A', gi.currentAnimation);
 
   await keyEvent(page,'keydown','Space',' '); await keyEvent(page,'keyup','Space',' ');
-  await page.waitForTimeout(100);
+  await page.evaluate(() => window.__game.advanceBy(0.10));
   const gjs = await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Jump begins with Jump_Start', gjs.currentAnimation === 'Jump_Start', gjs.currentAnimation);
-  await page.waitForFunction(() => {
-    const r=window.__game?.world?.groundPlayer?.report?.();
-    return r && r.onGround === false && r.currentAnimation === 'Jump_Idle';
-  }, null, {timeout:2500});
+  await page.evaluate(() => window.__game.advanceBy(0.28));
   const gair=await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Air uses Jump_Idle', gair.currentAnimation === 'Jump_Idle' && gair.onGround === false, gair.currentAnimation);
-  await page.waitForFunction(() => window.__game?.world?.groundPlayer?.report?.().onGround === true, null, {timeout:3500});
-  await page.waitForTimeout(350);
+  await page.evaluate(() => window.__game.advanceBy(1.25));
   const gland=await page.evaluate(() => window.__game.world.groundPlayer.report());
   check('Landing recovers to stable ground locomotion', gland.onGround === true && ['Jump_Land','Idle_A'].includes(gland.currentAnimation), gland.currentAnimation);
   await page.screenshot({ path: out + '/checkpoint-b-ground.png', fullPage: true });
