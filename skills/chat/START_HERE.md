@@ -4,6 +4,13 @@ Status: CURRENT ROUTER v0.3
 Date: 2026-09-27
 Owner: Georg / KFB
 
+## 2026-09-27 · Track Look T3 recovery
+
+The rejected T1/T2 track look is frozen. Claude Design must restart from the integrated WorldBuilder/H0 Hirnwelt seam brief, not patch the failed freestanding composition:
+
+- `workflows/KFB_TRACK_LOOK_T3_WORLD_SEAM_2026-09-27/START_HERE.md`
+- `workflows/KFB_TRACK_LOOK_T3_WORLD_SEAM_2026-09-27/CLAUDE_DESIGN_BRIEF.md`
+
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
@@ -1290,4 +1297,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-

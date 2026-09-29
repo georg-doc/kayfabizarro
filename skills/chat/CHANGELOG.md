@@ -1,3 +1,10 @@
+## 2026-09-27 · Track Look T3 World Seam recovery
+
+- Freeze the rejected T1/T2 track look as failure evidence; no repair loop.
+- Replace the standalone/freehand track assignment with one bounded WorldBuilder/H0 Hirnwelt city-street-to-track seam.
+- Make current world scale, OSM route/plots, real façade donors, curb/sidewalk anatomy and player/vehicle scale mandatory visual context.
+- Require exactly three views of one integrated scene and stop after the first visual verdict.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
