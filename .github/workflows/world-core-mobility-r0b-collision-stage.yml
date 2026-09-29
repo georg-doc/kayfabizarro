@@ -1,0 +1,103 @@
+name: World Core Mobility R0B collision Stage proof
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'kfb-hub/stage/world/world-core-mobility-r0b-collision-01/**'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-drive-m2a.mjs'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-m1.mjs'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/world-collision-response.mjs'
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/donor-race-pr10/physics.js'
+      - '.github/workflows/world-core-mobility-r0b-collision-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source ownership and syntax gates
+        run: |
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/donor-race-pr10/physics.js
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/world-collision-response.mjs
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/world-drive-m2a.mjs
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/world-mobility-m1.mjs
+          node kfb-hub/stage/world/world-core-mobility-r0b-collision-01/test-r0b-collision.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start exact branch Stage
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/r0b-stage.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/world/world-core-mobility-r0b-collision-01/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/r0b-stage.log
+          exit 1
+      - name: Chromium vehicle/contact proof
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const {chromium}=require('playwright');
+          (async()=>{
+            const out='r0b-collision-proof';fs.mkdirSync(out,{recursive:true});
+            const result={checks:[],errors:[],httpErrors:[]};
+            const check=(name,pass,details)=>{result.checks.push({name,pass:!!pass,details});if(!pass)throw Error(name+' '+JSON.stringify(details))};
+            const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+            const page=await browser.newPage({viewport:{width:1440,height:900}});
+            page.on('pageerror',e=>result.errors.push(String(e)));
+            page.on('console',m=>{if(m.type()==='error'&&!/favicon/i.test(m.text()))result.errors.push(m.text())});
+            page.on('response',r=>{if(r.status()>=400&&!/favicon/i.test(r.url()))result.httpErrors.push({status:r.status(),url:r.url()})});
+            const url='http://127.0.0.1:4173/kfb-hub/stage/world/world-core-mobility-r0b-collision-01/?autodrive=1';
+            const t0=Date.now();
+            await page.goto(url,{waitUntil:'domcontentloaded',timeout:180000});
+            await page.waitForFunction(()=>window.__KFB_R0B_READY__===true,{},{timeout:180000});
+            await page.waitForTimeout(600);
+            result.bootMs=Date.now()-t0;
+            const snap=await page.evaluate(()=>window.__worldDriveM2A.report());
+            const d=snap.mobility.drive;
+            check('R0B revision marker',await page.evaluate(()=>document.body.dataset.r0bRevision)==='WORLD-CORE-MOBILITY-R0B-COLLISION-01',await page.evaluate(()=>document.body.dataset.r0bRevision));
+            check('Auto mode entered',snap.mobility.mode==='drive',snap.mobility.mode);
+            check('render-heightfield collider',d.terrainContact.kind==='render-heightfield-mesh'&&d.terrainContact.flatProxy===false&&d.terrainContact.triangles>10000,d.terrainContact);
+            check('source kart rig has four measured wheels',d.vehicleRig.wheels===4&&d.vehicleRig.wheelSource!=='none',d.vehicleRig);
+            check('Race maxSpeed remains owner value',d.physicsParams.maxSpeed===27,d.physicsParams);
+            check('Race steerMax remains owner value',Math.abs(d.physicsParams.steerMax-.43)<1e-9,d.physicsParams);
+            check('four wheel contacts at rest',d.contacts===4,{contacts:d.contacts,gap:d.visualGroundGapM,steps:d.preSettledSteps});
+            check('bounded visual ground gap',d.visualGroundGapM!==null&&Math.abs(d.visualGroundGapM)<.22,d.visualGroundGapM);
+            check('building presentation responder installed',d.worldReaction.cityMeshesPatched>0,d.worldReaction);
+            check('authored prop collider/reactor installed',d.reactivePropColliders>=1&&d.worldReaction.reactiveProps>=1,{colliders:d.reactivePropColliders,reaction:d.worldReaction});
+            const before=await page.evaluate(()=>window.__worldDriveM2A.mobility.drive.report().position);
+            await page.keyboard.down('w');await page.waitForTimeout(1800);await page.keyboard.up('w');await page.waitForTimeout(180);
+            const after=await page.evaluate(()=>window.__worldDriveM2A.mobility.drive.report());
+            const moved=Math.hypot(after.position.x-before.x,after.position.z-before.z);
+            check('real drive advances on contact world',moved>1.25,{moved,speedKmh:after.speedKmh,contacts:after.contacts});
+            check('drive keeps at least two wheel contacts',after.contacts>=2,{contacts:after.contacts,gap:after.visualGroundGapM});
+            check('temporary tyre marks emitted',after.worldReaction.temporaryMarks>0,after.worldReaction);
+            check('no page errors',result.errors.length===0,result.errors);
+            check('no failed HTTP assets',result.httpErrors.length===0,result.httpErrors);
+            await page.screenshot({path:out+'/stage.png',fullPage:true});
+            result.status='PASS';result.initial=d;result.afterDrive=after;
+            fs.writeFileSync(out+'/results.json',JSON.stringify(result,null,2)+'\n');
+            console.log(JSON.stringify({status:result.status,checks:result.checks.length,bootMs:result.bootMs,moved,marks:after.worldReaction.temporaryMarks}));
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: world-core-mobility-r0b-collision-proof
+          path: r0b-collision-proof
+          retention-days: 14
