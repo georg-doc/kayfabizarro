@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "RESIDENT-SITE-CONTRACT-01",
+  "date": "2026-09-29",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/resident-site-contract-01-2026-09-29",
+  "base": {
+    "ref": "main",
+    "commit": "09737a8f8fd7f71c979f292322c755d0f2c2168b"
+  },
+  "owner": "Resident Atlas / Resident Scenery Claude Design project",
+  "stage": null,
+  "inputs": [
+    "skills/chat/START_HERE.md",
+    "skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md",
+    "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
+    "skills/chat/PRODUCTIVE_REVIEW_GATE_POLICY.md",
+    "skills/chat/GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md",
+    "skills/chat/ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md",
+    "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/github.md",
+    "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/CHANGELOG.md",
+    "tools/KFB-ToolBox/_inbox/KFB_Resident_Atlas_S9/S40-disco-rotation/docs/RESIDENT_DISCO_CD_01.md",
+    "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_HERE.md"
+  ],
+  "currentUserReportedDelta": {
+    "status": "USER_REPORTED_NOT_YET_IN_GITHUB_SESSION_CUT",
+    "fps": "~50 at 1280x720",
+    "changes": [
+      "ground correction applied every render frame while expensive measurement remains throttled",
+      "about 4 mm ground hysteresis around support-foot changes",
+      "Band/Disco scene-specific grounds disabled in favour of shared host ground",
+      "graveyard host terrain lowered under set floor so open grave remains open"
+    ]
+  },
+  "protectedOwners": [
+    "WorldBuilder terrain engine",
+    "WorldBuilder save/reload",
+    "WorldBuilder OSM/Cologne seam",
+    "Race/Track",
+    "Travel/TinySkies",
+    "Motion Library",
+    "Scene Patch",
+    "Asset Librarian"
+  ],
+  "note": "The user-reported performance/runtime delta must be preserved in the next complete Claude Session Cut before it is treated as repository-proven."
+}
