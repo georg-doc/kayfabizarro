@@ -35,6 +35,7 @@ export async function createPhysics(fixture){
  const wheels=[[-.85,0,1],[.85,0,1],[-.85,0,-1],[.85,0,-1]];
  wheels.forEach((p,i)=>{vehicle.addWheel({x:p[0],y:p[1],z:p[2]},{x:0,y:-1,z:0},{x:-1,y:0,z:0},.4,.42);vehicle.setWheelSuspensionStiffness(i,42);vehicle.setWheelSuspensionCompression(i,4.4);vehicle.setWheelSuspensionRelaxation(i,5);vehicle.setWheelMaxSuspensionForce(i,18000);vehicle.setWheelMaxSuspensionTravel(i,.28);vehicle.setWheelFrictionSlip(i,4.5);vehicle.setWheelSideFrictionStiffness(i,1.8);});
  let tick=0,run=0,sinceReset=0,phase='explore',air=0,settled=0,hadGround=true,ramp=false,hopHeld=false,disposed=false,steer=0,bumperCool=0,flipT=0,safeT=0,drifting=false;
+ let lastIncoming={x:0,y:0,z:0};
  let stuckT=0,stuckAnchor=[...START.p],stuckSurface=null;
  let safe={p:[...START.p],yaw:START.yaw};
  const events=[];let nextEvent=0;
@@ -64,7 +65,7 @@ export async function createPhysics(fixture){
  world.step();world.updateSceneQueries();
  function step(input={}){
   if(disposed)throw Error('Physics disposed');tick++;sinceReset+=STEP;
-  const speed=vehicle.currentVehicleSpeed();const incoming={...body.linvel()};
+  const speed=vehicle.currentVehicleSpeed();const incoming={...body.linvel()};lastIncoming=incoming;
   const slopedContact=Array.from({length:4},(_,i)=>vehicle.wheelIsInContact(i)&&vehicle.wheelContactNormal(i)?.y<.98).some(Boolean);
   const brakeForce=slopedContact?Math.min(params.brake,params.slopeBrakeMax):params.brake;
   drifting=!!input.drift&&Math.abs(speed)>4;
@@ -114,7 +115,7 @@ export async function createPhysics(fixture){
  }
  function snapshot(x={}){const rot=body.rotation(),v=body.linvel();return {tick,run,phase,position:{...body.translation()},rotation:{...rot},velocity:{...v},angularVelocity:{...body.angvel()},speed:vehicle.currentVehicleSpeed(),contacts:Array.from({length:4},(_,i)=>!!vehicle.wheelIsInContact(i)),wheelLengths:Array.from({length:4},(_,i)=>vehicle.wheelSuspensionLength(i)),steer,drifting,airborne:air,up:x.uy??1-2*(rot.x*rot.x+rot.z*rot.z),yaw:x.yaw??0,slip:x.slip??0,groundIds:x.groundIds||[],safe:{p:[...safe.p],yaw:safe.yaw},stuck:{seconds:stuckT,surface:stuckSurface},broken:[...breakables.values()].filter(b=>b.broken).map(b=>b.entry.id),events:events.slice(-12)};}
  function contactFacts(){
-  const out=[],v=body.linvel(),p=body.translation();
+  const out=[],v=lastIncoming,p=body.translation();
   world.contactPairsWith(chassis,o=>{
    const s=surfaces.get(o.handle);if(!s)return;
    world.contactPair(chassis,o,m=>{
