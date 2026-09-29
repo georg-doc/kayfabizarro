@@ -73,3 +73,11 @@
 - final Hub/metadata `cloudflare-live@0f2e0588...`: Cloudflare Pages SUCCESS + public Chromium 18/18 PASS again;
 - final artifact `11029408390`, digest `sha256:0ec22fc23ce71dd2e6f84b34bb5d0772ba2895f5d84074ba17f50314546e48f5`;
 - public route proves Locomotion + Orbit together; next gate is Georg combined feel, then Enter/Exit Kart if PROCEED.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-01 · implementation
+- Georg TUNE persisted: default W was too slow at 0.611 u/s;
+- kept `Walking_A` as the walk source; ToolBox consumer profile records `Walking_B` only +9.8 % and chooses playback-rate variation instead;
+- separated gameplay pace from source cadence: normal W = **1.10 u/s**, `Walking_A` reference remains 0.6109509569 u/s, playback ≈1.80×;
+- Run/Sprint hierarchy, semantic directional clips, Jump and Orbit unchanged;
+- existing Velocity + integrated browser harness updated to assert the new travel pace; tests pending.
