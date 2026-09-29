@@ -108,3 +108,13 @@
 - Travel forward target is now source-backed Running_A speed (~2.4803 u/s); Sprint remains Running_B (~3.028 u/s).
 - Removed the Travel-only Walking_A / walk.fast / threshold ladder; measured/no-query path remains intact.
 - Jump, backward/strafe, velocity response and Orbit unchanged; tests pending.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-02 · source browser PASS
+- exact runtime `4475271b...`; run `36588655547` / job `109475640957`.
+- **8/8 static + 10/10 integration + 27/27 Ground+Orbit regression + 16/16 Travel two-gear PASS**; zero runtime/page/console errors.
+- W immediately selects `Running_A`; settled normal W = 2.4786 u/s.
+- Shift immediately selects `Running_B`; settled Sprint = 3.0263 u/s; release returns directly to `Running_A`.
+- Orbit and measured Walking_A comparison profile preserved.
+- artifact `11043426976`, digest `sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f`.
+- next: same Pace-Tune Stage route, refreshed runtime + Hub wording + public proof.

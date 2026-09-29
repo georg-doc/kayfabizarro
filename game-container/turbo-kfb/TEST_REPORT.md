@@ -142,3 +142,31 @@ Public Chromium:
 - screenshots: `stage.png`, `hub.png`
 
 Status: **PUBLIC VERIFIED · HUMAN PACE FEEL OPEN**.
+
+
+## GROUND-WALK-PACE-TUNE-02
+
+Tested runtime head: `4475271b61e65fae95e5044925b83f2e39c18e6e`  
+Run: `36588655547` · job: `109475640957`  
+Artifact: `11043426976`  
+Digest: `sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f`
+
+- pace static: **8/8 PASS**
+- integration static: **10/10 PASS**
+- Ground+Orbit regression: **27/27 PASS**
+- Travel two-gear: **16/16 PASS**
+- runtime/page/console errors: **0**
+
+Travel profile:
+- W → `Running_A / run`;
+- W target `2.4802741670 u/s`;
+- W at 0.06 s `1.5210503972 u/s`;
+- settled W `2.4785986456 u/s`;
+- Shift → `Running_B / sprint`;
+- Shift at 0.06 s `2.8159216475 u/s`;
+- settled Shift `3.0263315488 u/s`;
+- Shift release → `Running_A / run @ 2.5503960035 u/s`;
+- Orbit retained;
+- old measured/no-query Walking_A profile retained.
+
+Public Stage for this new runtime: **PENDING** until exact Cloudflare marker + public Chromium PASS.
