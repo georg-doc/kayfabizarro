@@ -118,3 +118,27 @@ Travel profile:
 - Orbit retained.
 
 No public Stage claim yet.
+
+
+## GROUND-WALK-PACE-TUNE-01 · Public Closure
+
+Direct Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+
+Publication:
+- `cloudflare-live@20c1858c2f6cdd0b48136eb8295b7c803a5e12f6`
+- Cloudflare Pages: **SUCCESS**
+
+Public Chromium:
+- run `36583694971`
+- job `109458242652`
+- **13/13 PASS**
+- exact runtime marker `d6e9d42149670af290d96fe19dfdc28095f2f337` PASS
+- Travel pace / Walking_A 1.8× / Running_A / Running_B / release-to-Walk / Orbit PASS
+- Hub pace-tune link PASS
+- runtime/page/console errors: **0**
+- artifact `11040747449`
+- digest `sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2`
+- screenshots: `stage.png`, `hub.png`
+
+Status: **PUBLIC VERIFIED · HUMAN PACE FEEL OPEN**.

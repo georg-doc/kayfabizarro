@@ -378,3 +378,49 @@ The current 0.611 u/s measured pace remains available when `walkPace=travel` is 
 
 ## Exactly one current next gate
 Publish a dedicated Pace-Tune Stage using `?ground=1&groundFeel=velocity&walkPace=travel` and ask Georg whether ~1.10 u/s is now enjoyable enough. If still too slow, do **not** keep overdriving Walking_A blindly; the next design choice is normal-W-as-jog/Running_A versus a higher playback cap.
+
+
+## GROUND-WALK-PACE-TUNE-01 · PUBLIC VERIFIED closure
+
+Status: **PUBLIC VERIFIED · HUMAN PACE FEEL OPEN · DO NOT MERGE**
+
+Owner:
+- repo: `georg-doc/kayfabizarro`;
+- branch: `chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29`;
+- Draft PR: **#289**;
+- tested runtime/QA head: `d6e9d42149670af290d96fe19dfdc28095f2f337`;
+- source handoff before this metadata close: `16f3d3f0e3a1081d6748e3f418370c718bb57f9e`.
+
+Direct human Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+
+Public publication:
+- Cloudflare publication source: `cloudflare-live@20c1858c2f6cdd0b48136eb8295b7c803a5e12f6`;
+- Cloudflare Pages: **SUCCESS**;
+- Hub card: `PUBLIC VERIFIED · HUMAN PACE`, linked to the dedicated direct Stage.
+
+Public Chromium:
+- run `36583694971`;
+- job `109458242652`;
+- **13/13 PASS**;
+- exact runtime marker `d6e9d42149670af290d96fe19dfdc28095f2f337` PASS;
+- faster `Walking_A` Travel profile PASS;
+- `Running_A` tier + `Running_B` Sprint + release-to-Walk PASS;
+- Orbit owner mounted PASS;
+- runtime/page/console errors: **0**;
+- Hub dedicated-link check PASS;
+- artifact `11040747449`;
+- digest `sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2`;
+- screenshots: `stage.png`, `hub.png`.
+
+Public measured Travel-Walk remains:
+- target `1.0997117224 u/s`;
+- settled `1.0989688245 u/s`;
+- `Walking_A` playback `1.8×`;
+- `Running_A` tier `2.7251 u/s`;
+- `Running_B` Sprint `3.0254 u/s`;
+- release returns to faster `Walking_A`;
+- measured 0.611 u/s profile remains available without `walkPace=travel`.
+
+## Exactly one current next gate
+**GEORG HUMAN PACE FEEL:** freeplay only the dedicated Pace-Tune Stage and judge whether ~1.10 u/s normal W is lively/enjoyable enough without obvious foot-slide or renewed tiny/tripping-step feel. If TUNE because it is still too slow, the next design choice is normal-W-as-`Running_A`/jog versus deliberately raising the Walk playback ceiling. No merge and no Enter/Exit Kart before this human gate.

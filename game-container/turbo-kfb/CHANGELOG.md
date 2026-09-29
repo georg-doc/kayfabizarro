@@ -91,3 +91,12 @@
 - zero runtime/page/console errors;
 - artifact `11040906054`, digest `sha256:ae9e6929c02fcf0357fb7c57228d168a64561f7b9d5f21f152ccd8f1f6a3289e`;
 - next: dedicated human Pace-Tune Stage.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-01 · PUBLIC VERIFIED
+- Draft PR #289 opened for the dedicated pace owner; no merge requested.
+- Dedicated Cloudflare Stage published at `/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`.
+- Cloudflare Pages SUCCESS from publication source `20c1858c2f6cdd0b48136eb8295b7c803a5e12f6`.
+- Public Chromium run `36583694971` / job `109458242652`: **13/13 PASS**, exact `d6e9d421...` marker, faster Walk + Run/Sprint + release + Orbit + Hub link, zero runtime/page/console errors.
+- Public artifact `11040747449`, digest `sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2`; screenshots `stage.png`, `hub.png`.
+- Exactly one next gate: Georg human pace feel at ~1.10 u/s; no merge / Enter-Exit before verdict.
