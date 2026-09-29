@@ -73,9 +73,9 @@ const textureMapsPreserved=ids.every(id=>{
 
 const checks=[
   ['same runtime file set',fileSetEqual],
-  ['42 donor runtime files',donorFiles.length===42],
-  ['42 look runtime files',lookFiles.length===42],
-  ['41 non-config blobs byte-identical',nonConfig.length===41&&hashMismatches.length===0],
+  ['43 donor static files incl. mirror manifest',donorFiles.length===43],
+  ['43 look static files incl. mirror manifest',lookFiles.length===43],
+  ['42 non-config blobs byte-identical',nonConfig.length===42&&hashMismatches.length===0],
   ['config changed',await sha(path.join(DONOR,'config.json'))!==await sha(path.join(LOOK,'config.json'))],
   ['only six material assets changed',new Set(diffs.map(d=>d.path.match(/^assets\.([0-9]+)/)?.[1]).filter(Boolean)).size===6],
   ['no forbidden config delta',forbiddenDiffs.length===0],
