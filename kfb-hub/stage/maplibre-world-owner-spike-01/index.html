@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB · MapLibre World Owner Spike 01</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@6.11.2/dist/maplibre-gl.css">
+<style>
+html,body,#app,#map,#donor{margin:0;width:100%;height:100%;overflow:hidden;background:#17191b}
+#map,#donor{position:absolute;inset:0}
+#map{display:none}
+#bar{position:absolute;z-index:5;top:12px;left:12px;display:flex;gap:8px;padding:8px;background:rgba(20,20,20,.72);backdrop-filter:blur(6px);border-radius:12px;font:13px/1.2 system-ui,sans-serif;color:#fff}
+button{font:inherit;color:#fff;background:#30343a;border:1px solid #666;border-radius:8px;padding:7px 10px}
+button[aria-pressed=true]{background:#fff;color:#111}
+#status{position:absolute;z-index:5;left:12px;bottom:12px;max-width:min(620px,calc(100vw - 24px));padding:8px 10px;background:rgba(20,20,20,.72);border-radius:10px;color:#fff;font:12px/1.35 system-ui,sans-serif}
+</style>
+</head>
+<body>
+<div id="app">
+  <canvas id="donor"></canvas>
+  <div id="map"></div>
+  <div id="bar">
+    <button id="donorBtn" aria-pressed="true">1 · Donor isolation</button>
+    <button id="worldBtn" aria-pressed="false">2 · MapLibre world</button>
+  </div>
+  <div id="status">Loading source donor…</div>
+</div>
+<script type="module" src="./maplibre-spike.js"></script>
+</body>
+</html>
