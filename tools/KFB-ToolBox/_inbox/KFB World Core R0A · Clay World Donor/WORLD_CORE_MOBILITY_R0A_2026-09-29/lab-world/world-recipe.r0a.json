@@ -1,0 +1,280 @@
+{
+  "schema": "kfb.world-recipe/0.1",
+  "id": "WORLD-CORE-MOBILITY-R0A",
+  "title": "Clay World Visual Donor · one sparse tile",
+  "createdAt": "2026-09-29",
+  "status": "VISUAL_DONOR · design only, no runtime",
+  "receiver": "WORLD-CORE-MOBILITY-R0B (Codex GPT-6 Sol High)",
+  "frame": { "space": "TD03 stream frame, identity transform, metres, right-handed, +Y up, heading 0 -> +Z", "note": "The tile shares the Track Core frame so the T4 piece is placed rigidly, nothing re-solved." },
+  "tile": { "x0": 20, "x1": 360, "z0": -130, "z1": 130, "grid": 1.25, "edgeFade": 14, "background": { "plane": 1600, "y": -0.35, "ringHills": 16 } },
+  "seed": 20260929,
+
+  "biome": {
+    "id": "kfb-claybound-meadow",
+    "seed": 20260929,
+    "source": "T4 canyon preset (lab-track/track-look.v5.js WORLDS.canyon) + transition-profiles.v1.json worldPresets.canyon + road-markings.m2.json colors.worlds.canyon",
+    "palette": {
+      "grass": "#6aae4c", "grassHigh": "#86b957", "slope": "#7b5bb8", "city": "#cbbba8", "walk": "#e7d9c5", "curb": "#b8a58c",
+      "path": "#8c7a60", "water": "#4fb0c6", "bed": "#3e7d46", "strang": "#ef5a22", "roadStreet": "#566680", "roadTrack": "#3d4a60",
+      "markHell": "#f7eedd", "markSignal": "#f2b632", "leaf": ["#1f7a3e", "#2f8a45", "#cdc666"], "trunk": "#8a5a3a", "rock": "#e2d0bc",
+      "cloud": "#f3ead8", "kart": ["#f2b632", "#5983ac", "#e2d0bc"], "bridge": "#b07a4a"
+    },
+    "patchRules": {
+      "grammar": "Knetflecken (kfbBlend, road-markings.m1.js) instead of alpha fades",
+      "slope": { "from": 0.42, "to": 0.72, "colour": "slope", "cell": 2.4 },
+      "city": { "inner": 0, "outer": 9, "colour": "city", "cell": 2.4 },
+      "tint": { "lowFreq": 70, "amp": 0.06, "highTint": "grassHigh", "highFrom": 6, "highTo": 14 }
+    }
+  },
+
+  "sky": {
+    "default": "tiny-tag",
+    "presets": {
+      "tiny-tag": { "source": "TinySkies SkyPresets.ts DAY via travel/wip/travel_globe_wsa/globe-v13/sky-presets.js", "gradient": "vertical dome, stop 0 = zenith, stop 1 = horizon", "fog": "#60ccde", "fogNear": 520, "fogFar": 1700 },
+      "tiny-abend": { "source": "TinySkies EVENING", "fog": "#c07848", "fogNear": 420, "fogFar": 1500 },
+      "claybound": { "source": "H0/T4 flat Claybound sky #96bede", "fog": "#96bede", "fogNear": 700, "fogFar": 1900 }
+    },
+    "light": "H0 how-to §4: sun #fff4e6 2.9 (warm white, never saturated), hemisphere, back light 22 %, ACES, GTAO. Sky colour only tints hemisphere + fog.",
+    "clouds": { "count": 9, "yMin": 128, "yMax": 172, "grammar": "Kugel-in-Kugel, flat underside (H0 §5)" }
+  },
+
+  "material": {
+    "module": "lab-clay/clay-material.v10.js",
+    "relief": "lab-clay/clay-relief.v4.js (tool maps) + clay-relief.v2.js (legacy stroke map)",
+    "toolmix": "lab-clay/clay-toolmix.v1.js",
+    "handK": 3, "hand": 1.5, "tile": 4.8, "printTile": 13.5, "macro": 0.5, "lodK": 0.6, "stroke": 0.7, "mottle": 0.04,
+    "classes": {
+      "terrain":  { "profile": "terrainFg", "scale": 1.1, "toolmix": "terrain", "legacy": 0, "over": { "print": 0, "dent": 0, "gouge": 0, "crack": 0, "stroke": 1, "facet": 1, "crease": 0.6 }, "patch": true },
+      "strang":   { "profile": "house", "scale": 0.6, "toolmix": "strang", "legacy": 0, "over": "QUIET", "patch": "kerb" },
+      "road":     { "profile": "road", "scale": 0.5, "toolmix": null, "legacy": 1, "note": "T2 21:30 road profile, untouched (K2 handover open item 1)" },
+      "walk":     { "profile": "prop", "scale": 0.5, "toolmix": "rock", "legacy": 0, "over": "QUIET" },
+      "curb":     { "profile": "prop", "scale": 0.5, "toolmix": "rock", "legacy": 0, "over": "QUIET" },
+      "house":    { "profile": "house", "scale": 0.6, "toolmix": "house", "legacy": 0, "over": "QUIET", "src": "donor glTF material (texture kept)" },
+      "nature":   { "profile": "nature", "scale": 0.6, "toolmix": "nature", "legacy": 0, "over": { "print": 0.4, "dent": 0 } },
+      "trunk":    { "profile": "nature", "scale": 0.6, "toolmix": "trunk", "legacy": 0 },
+      "rock":     { "profile": "prop", "scale": 0.5, "toolmix": "rock", "legacy": 0, "over": "QUIET" },
+      "cloud":    { "profile": "cloud", "scale": 0.75, "toolmix": "cloud", "legacy": 0 },
+      "water":    { "profile": "water", "scale": 0.9, "toolmix": null, "legacy": 1, "role": "knetbar" },
+      "mark":     { "profile": "water", "scale": 0.9, "toolmix": null, "legacy": 1, "role": "knetbar" },
+      "vehicle":  { "profile": "vehicle", "scale": 0.5, "toolmix": "vehicle", "legacy": 0 }
+    },
+    "QUIET": { "print": 0.3, "dent": 0, "gouge": 0, "crack": 0, "stroke": 1, "facet": 0.9, "crease": 0.5 }
+  },
+
+  "meshTools": {
+    "why": "Georg 29.09.: dents, notches, spatula and modelling traces in the MESH, organic and non-repetitive, to carry the handmade look together with the K2 material tools.",
+    "scaleLogic": "Mesh carries forms >= 2 grid cells (>= 2.5 m); K2 material carries everything under the hand size (1.5 m). Size per stamp follows a power law (many small, few large), multiplied by the class scale.",
+    "cell": 4.2,
+    "distribution": "Worley-style jittered cells (cell 4.2 m), at most one stamp per cell, acceptance = density(low-frequency noise 1/65 m) x class weight. Orientation from a slow direction field (1/90 m), bent downhill on slopes. Seeded, deterministic, no tiling.",
+    "protect": "Amplitude 0 on every protected traversal surface (roads, sidewalks, track core, pads, jump corridor); ramps to 1 over 2.5-7 m. Footpath keeps 25 %.",
+    "classes": {
+      "hill":   { "scale": 1.55, "weights": { "thumb": 0.34, "spatula": 0.38, "notch": 0.12, "pinch": 0.16 }, "density": 0.88 },
+      "meadow": { "scale": 1.0,  "weights": { "thumb": 0.42, "spatula": 0.26, "notch": 0.07, "pinch": 0.25 }, "density": 0.74 },
+      "seam":   { "scale": 0.7,  "weights": { "thumb": 0.18, "spatula": 0.52, "notch": 0.24, "pinch": 0.06 }, "density": 0.66, "note": "2.5-8 m next to protected surfaces: strokes run parallel to the edge like smoothing a seam" }
+    },
+    "stamps": {
+      "thumb":   { "r": [2.0, 5.2], "depth": [0.14, 0.38], "rim": 0.32, "aspect": [0.65, 1.0] },
+      "spatula": { "len": [5.0, 13.0], "w": [1.6, 3.2], "depth": [0.1, 0.24], "ridge": 0.55, "lift": 0.35 },
+      "notch":   { "len": [3.0, 6.0], "w": [1.2, 2.0], "depth": [0.12, 0.28] },
+      "pinch":   { "r": [1.4, 3.0], "h": [0.08, 0.22] }
+    },
+    "clamp": [-0.55, 0.4]
+  },
+
+  "terrain": {
+    "base": { "amp": 1.1, "freq": 0.018, "amp2": 0.35, "freq2": 0.07 },
+    "hills": [
+      { "id": "H1-knetberg", "x": 82, "z": -78, "r": 52, "h": 48, "squash": 0.86, "lean": [0.16, 0.08], "role": "landmark · T4 tunnel mouth, backdrop" },
+      { "id": "H1b-knetberg-lump", "x": 46, "z": -58, "r": 26, "h": 14, "squash": 1.0, "lean": [0, 0] },
+      { "id": "H2-hausberg", "x": 118, "z": 88, "r": 42, "h": 13, "squash": 0.9, "lean": [-0.1, 0.05], "role": "hill house" },
+      { "id": "H3-westbuckel", "x": 40, "z": 30, "r": 34, "h": 7, "squash": 1.0, "lean": [0, 0] },
+      { "id": "H4-stadthuegel", "x": 272, "z": -86, "r": 32, "h": 15, "squash": 0.95, "lean": [0.08, 0], "role": "slope building B07" },
+      { "id": "H5-nordbuckel", "x": 238, "z": 128, "r": 36, "h": 8, "squash": 1.0, "lean": [0, 0] },
+      { "id": "H6-ostbuckel", "x": 352, "z": 112, "r": 26, "h": 6, "squash": 1.0, "lean": [0, 0] }
+    ],
+    "trackRidge": { "under": 1.6, "shoulder": 3.0, "slope": 0.78, "cutSlope": 1.25, "coreLift": 0.35, "note": "Clay ridge carries the elevated T4 deck: no pillars, the strang sinks 0.7 m into the ridge." },
+    "creek": { "id": "knetbach", "pts": [[174, 130], [179, 72], [184, 22], [183, -6], [187, -44], [193, -92], [197, -130]], "w": 8, "bank": 7, "bed": -2.3, "water": -0.95 },
+    "roadFlat": { "blend": 11 },
+    "pads": { "apron": 1.4, "blend": 6 }
+  },
+
+  "track": {
+    "source": "lab-track/data/td03.stream.json (kfb.track-core.stream, TD03)",
+    "sRange": [1316, 1570.37],
+    "transform": "identity",
+    "pieces": "turn_east (CURVE_EASE) -> WIDTH_STEP 18 -> 14.4 -> kicker -> AIR over the Knetbach -> landing -> street_out",
+    "look": "T3/T4 Knetstrang: Kehle + Wulst + Bauch in one colour, road exactly from the stream (road_L..road_R), road profile T2 21:30, Knetflecken track -> street",
+    "kerbTransition": [1508, 1534],
+    "roadBlend": [1516, 1540],
+    "markings": "stream bands (edges, centre, bars) in M2 colours; M2 renderer itself not wired here",
+    "portal": { "s": 1326, "r": 12.8, "tube": 1.9, "cutBack": 8 },
+    "lips": "Querwulst only where the stream breaks for AIR, never at street_out"
+  },
+
+  "roads": [
+    { "id": "R1-hauptstrasse", "kind": "city", "priority": true, "a": [310, -130], "b": [310, 130], "w": 9, "lanes": 2 },
+    { "id": "R2x-t4-anschluss", "kind": "city", "a": [299.42, -5.578], "b": [305.5, -5.578], "w": 14.4, "lanes": 2, "note": "continues TD03 street_out (s 1570.37) to the kerb of R1" },
+    { "id": "R3-ostarm", "kind": "city", "a": [314.5, -5.578], "b": [360, -5.578], "w": 9, "lanes": 2 }
+  ],
+  "junctions": [
+    { "id": "J1", "at": [310, -5.578], "arms": ["R1-N", "R1-S", "R2 (T4 street)", "R3-ostarm"], "rule": "R1 has priority; side arms get Wartelinie 0.6 m behind the dashed edge line of R1 (M2)", "box": { "x0": 305.5, "x1": 314.5, "z0": -12.778, "z1": 1.622 } }
+  ],
+  "sidewalks": [
+    { "id": "W-R1w-S", "a": [304, -130], "b": [304, -13.48], "w": 3 },
+    { "id": "W-R1w-N", "a": [304, 2.32], "b": [304, 130], "w": 3 },
+    { "id": "W-R1e-S", "a": [316, -130], "b": [316, -10.08], "w": 3 },
+    { "id": "W-R1e-N", "a": [316, -1.08], "b": [316, 130], "w": 3 },
+    { "id": "W-R2-S", "a": [258, -14.978], "b": [302.5, -14.978], "w": 3, "roundStart": true },
+    { "id": "W-R2-N", "a": [258, 3.822], "b": [302.5, 3.822], "w": 3, "roundStart": true },
+    { "id": "W-R3-S", "a": [317.5, -11.58], "b": [360, -11.58], "w": 3 },
+    { "id": "W-R3-N", "a": [317.5, 0.42], "b": [360, 0.42], "w": 3 }
+  ],
+  "kerbs": [
+    { "a": [305.5, -130], "b": [305.5, -13.48] }, { "a": [305.5, 2.32], "b": [305.5, 130] },
+    { "a": [314.5, -130], "b": [314.5, -10.08] }, { "a": [314.5, -1.08], "b": [314.5, 130] },
+    { "a": [314.5, -10.08], "b": [360, -10.08] }, { "a": [314.5, -1.08], "b": [360, -1.08] },
+    { "a": [299.2, -13.1], "b": [305.5, -13.1] }, { "a": [299.2, 1.95], "b": [305.5, 1.95] }
+  ],
+  "cityMarkings": {
+    "rules": "M2 DE: white for everything except opposite-direction separation; none of that exists in this tile, so all white.",
+    "items": [
+      { "id": "R1-centre", "kind": "dash", "a": [310, -130], "b": [310, 130], "w": 0.14, "on": 3, "off": 6, "skip": [[-18.8, 7.6], [25, 35]] },
+      { "id": "R1-edge-w", "kind": "line", "a": [305.85, -130], "b": [305.85, 130], "w": 0.12, "dashIn": [[-12.78, 1.62]] },
+      { "id": "R1-edge-e", "kind": "line", "a": [314.15, -130], "b": [314.15, 130], "w": 0.12, "dashIn": [[-10.08, -1.08]] },
+      { "id": "R3-centre", "kind": "dash", "a": [318, -5.578], "b": [360, -5.578], "w": 0.14, "on": 3, "off": 6 },
+      { "id": "R2-wartelinie", "kind": "warte", "a": [305.25, -5.578], "b": [305.25, 1.622], "w": 0.5, "note": "eastbound lane of the T4 street, 0.6 m behind R1 edge line" },
+      { "id": "R3-wartelinie", "kind": "warte", "a": [314.75, -10.078], "b": [314.75, -5.578], "w": 0.5, "note": "westbound lane of R3" },
+      { "id": "Z1-zebra", "kind": "zebra", "at": [310, 30], "along": [0, 1], "len": 4, "across": 9, "stripe": 0.5, "gap": 0.5 }
+    ]
+  },
+  "paths": [
+    { "id": "P-hausberg", "w": 2.6, "pts": [[284, 47], [262, 57], [236, 66], [206, 72], [190, 73.5], [168, 76.5], [152, 80], [138, 84.5], [132.5, 86]], "bridge": { "id": "BR1", "a": [186.5, 73.8], "b": [172.5, 75.8], "w": 3.2 } }
+  ],
+  "plazas": [ { "id": "PL1-platz", "x": 289, "z": 44, "r": 9.5, "link": { "a": [297, 44], "b": [302.6, 44], "w": 5 } } ],
+
+  "donorPin": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@378b209355b13304e3cff656ec0806ca5b89df28/",
+  "donors": [
+    { "id": "kk-A", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_A_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "shop" },
+    { "id": "kk-C", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_C_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "row" },
+    { "id": "kk-D", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_D_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "row · slope" },
+    { "id": "kk-E", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_E_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "shop" },
+    { "id": "kk-F", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_F_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "shop" },
+    { "id": "kk-G", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_G_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "row" },
+    { "id": "kk-H", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/building_H_withoutBase.gltf", "scale": 5.0, "kind": "building", "role": "landmark" },
+    { "id": "ks-c", "pack": "Kenney City Kit Suburban 2.0 (CC0)", "path": "media/3D_Assets/kenney_city-kit-suburban_20/Models/GLB format/building-type-c.glb", "scale": 6.6, "kind": "building", "role": "hill house" },
+    { "id": "tt-house", "pack": "Tiny Treats Homely House 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/house.gltf", "scale": 1.3, "kind": "building", "role": "hill landmark" },
+    { "id": "kk-streetlight", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf", "scale": 5.95, "kind": "prop" },
+    { "id": "kk-hydrant", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/firehydrant.gltf", "scale": 3.49, "kind": "prop" },
+    { "id": "kk-taxi", "pack": "KayKit City Builder Bits 1.0 FREE (CC0)", "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf", "scale": 4.1, "kind": "vehicle", "role": "[I] car socket A" },
+    { "id": "tt-bench", "pack": "Tiny Treats Pretty Park 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bench.gltf", "scale": 0.85, "kind": "prop" },
+    { "id": "tt-trashcan", "pack": "Tiny Treats Pretty Park 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/trashcan.gltf", "scale": 0.8, "kind": "prop" },
+    { "id": "tt-tree", "pack": "Tiny Treats Pretty Park 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/tree_large.gltf", "scale": 1.9, "kind": "prop" },
+    { "id": "tt-bush", "pack": "Tiny Treats Pretty Park 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bush_large.gltf", "scale": 1.7, "kind": "prop" },
+    { "id": "tt-fence", "pack": "Tiny Treats Homely House 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_straight_long.gltf", "scale": 1.0, "kind": "prop" },
+    { "id": "tt-post", "pack": "Tiny Treats Homely House 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/fence_post.gltf", "scale": 1.0, "kind": "prop" },
+    { "id": "tt-mailbox", "pack": "Tiny Treats Homely House 1.0 FREE", "path": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE/Assets/gltf/mailbox.gltf", "scale": 0.65, "kind": "prop" }
+  ],
+
+  "buildings": [
+    { "id": "B01", "donor": "kk-E", "x": 321.9, "z": 26, "face": [-1, 0], "embed": "pad", "sink": 0.35, "skirt": "walk", "rhythm": { "ysc": 1.1, "bend": 0.05, "dir": 40, "twist": 0.06 } },
+    { "id": "B02", "donor": "kk-H", "x": 322.2, "z": 9, "face": [-1, 0], "embed": "pad", "sink": 0.35, "skirt": "walk", "rhythm": { "ysc": 1.38, "bend": -0.07, "dir": 120, "twist": -0.08 }, "landmark": true, "socket": "sign" },
+    { "id": "B03", "donor": "kk-C", "x": 321.6, "z": 62, "face": [-1, 0], "embed": "pad", "sink": 0.35, "skirt": "walk", "rhythm": { "ysc": 0.95, "bend": 0.045, "dir": 300, "twist": 0.05 } },
+    { "id": "B04", "donor": "kk-A", "x": 298.3, "z": 16, "face": [1, 0], "embed": "pad", "sink": 0.35, "skirt": "walk", "rhythm": { "ysc": 1.25, "bend": -0.05, "dir": 200, "twist": 0.07 } },
+    { "id": "B05", "donor": "kk-G", "x": 297.6, "z": 72, "face": [1, 0], "embed": "pad", "sink": 0.35, "skirt": "walk", "rhythm": { "ysc": 1.02, "bend": 0.06, "dir": 80, "twist": -0.05 } },
+    { "id": "B06", "donor": "kk-F", "x": 322.3, "z": -22, "face": [-1, 0], "embed": "pad", "sink": 0.35, "skirt": "walk", "rhythm": { "ysc": 1.18, "bend": -0.04, "dir": 15, "twist": 0.08 } },
+    { "id": "B07", "donor": "kk-D", "x": 297.6, "z": -82, "face": [1, 0], "embed": "slope", "sink": 0.35, "skirt": "grass", "rhythm": { "ysc": 1.3, "bend": 0.06, "dir": 250, "twist": -0.06 }, "note": "cut into the Stadthügel, back and side walls buried" },
+    { "id": "B08", "donor": "tt-house", "x": 118, "z": 90, "face": [0.94, -0.34], "embed": "pad", "sink": 0.3, "skirt": "grass", "rhythm": { "ysc": 1.0, "bend": 0.04, "dir": 60, "twist": 0.04 }, "landmark": true },
+    { "id": "B09", "donor": "ks-c", "x": 150, "z": 100, "face": [0.94, 0.35], "embed": "slope", "sink": 0.3, "skirt": "grass", "rhythm": { "ysc": 1.08, "bend": -0.05, "dir": 160, "twist": 0.05 } }
+  ],
+
+  "props": [
+    { "id": "PR-sl-01", "donor": "kk-streetlight", "x": 315.2, "z": -40, "face": [-1, 0] },
+    { "id": "PR-sl-02", "donor": "kk-streetlight", "x": 315.2, "z": 46, "face": [-1, 0] },
+    { "id": "PR-sl-03", "donor": "kk-streetlight", "x": 315.2, "z": 96, "face": [-1, 0] },
+    { "id": "PR-sl-04", "donor": "kk-streetlight", "x": 304.8, "z": 26, "face": [1, 0] },
+    { "id": "PR-sl-05", "donor": "kk-streetlight", "x": 304.8, "z": -52, "face": [1, 0] },
+    { "id": "PR-sl-06", "donor": "kk-streetlight", "x": 274, "z": 2.7, "face": [0, -1] },
+    { "id": "PR-sl-07", "donor": "kk-streetlight", "x": 274, "z": -13.9, "face": [0, 1] },
+    { "id": "PR-sl-08", "donor": "kk-streetlight", "x": 296, "z": 38, "face": [0.7, -0.7] },
+    { "id": "PR-hy-01", "donor": "kk-hydrant", "x": 303.4, "z": -18.5, "face": [1, 0] },
+    { "id": "PR-hy-02", "donor": "kk-hydrant", "x": 316.6, "z": 16, "face": [-1, 0] },
+    { "id": "PR-be-01", "donor": "tt-bench", "x": 285, "z": 49.5, "face": [0.5, -0.86] },
+    { "id": "PR-tc-01", "donor": "tt-trashcan", "x": 289.5, "z": 51.5, "face": [0, -1] },
+    { "id": "PR-tr-01", "donor": "tt-tree", "x": 282, "z": 39, "face": [0, 1] },
+    { "id": "PR-tr-02", "donor": "tt-tree", "x": 303.9, "z": 54, "face": [1, 0] },
+    { "id": "PR-tr-03", "donor": "tt-tree", "x": 316.1, "z": 78, "face": [-1, 0] },
+    { "id": "PR-tr-04", "donor": "tt-tree", "x": 106, "z": 100, "face": [0, 1] },
+    { "id": "PR-tr-05", "donor": "tt-tree", "x": 130, "z": 101, "face": [0, 1] },
+    { "id": "PR-bu-01", "donor": "tt-bush", "x": 110, "z": 79, "face": [0, -1] },
+    { "id": "PR-bu-02", "donor": "tt-bush", "x": 141, "z": 97, "face": [0, -1] },
+    { "id": "PR-mb-01", "donor": "tt-mailbox", "x": 131.2, "z": 83.4, "face": [1, 0] },
+    { "id": "PR-taxi-A", "donor": "kk-taxi", "x": 306.7, "z": 88, "face": [0, 1], "socket": "car-A" }
+  ],
+  "fences": [
+    { "id": "F1-hausberg", "donor": "tt-fence", "post": "tt-post", "pts": [[103, 99], [103, 79], [131, 79], [131, 82.2]], "gateAfter": [131, 89.2], "pts2": [[131, 89.2], [131, 99]] }
+  ],
+  "clusters": {
+    "grammar": "Rule of Three (T4): tree (anchor) · two bushes (support) · rock (accent); trunk bent, crown Kugel-in-Kugel",
+    "items": [
+      { "id": "C1", "x": 232, "z": 94, "sc": 1.0 }, { "id": "C2", "x": 266, "z": 112, "sc": 0.9 },
+      { "id": "C3", "x": 148, "z": 28, "sc": 1.05 }, { "id": "C4", "x": 222, "z": -96, "sc": 0.95 },
+      { "id": "C5", "x": 150, "z": -58, "sc": 1.1 }, { "id": "C6", "x": 62, "z": 44, "sc": 0.9 },
+      { "id": "C7", "x": 340, "z": 116, "sc": 0.85 }, { "id": "C8", "x": 344, "z": -62, "sc": 0.9 },
+      { "id": "C9", "x": 58, "z": -40, "sc": 1.15 }
+    ],
+    "rocks": [ { "x": 177.5, "z": 42, "sc": 0.8 }, { "x": 191, "z": -30, "sc": 0.9 }, { "x": 188, "z": -70, "sc": 0.7 }, { "x": 181, "z": 101, "sc": 0.75 } ]
+  },
+
+  "sockets": [
+    { "id": "car-A", "kind": "vehicle", "donor": "kk-taxi", "x": 306.7, "z": 88, "yaw": 0, "interact": "[I]", "note": "enter/exit radius 3.2 m; runtime owns input" },
+    { "id": "car-B", "kind": "vehicle", "donor": "kfb-clay-kart (T4 mkKart)", "x": 282, "z": -11.3, "yaw": 90, "interact": "[I]" },
+    { "id": "spawn-walk", "kind": "spawn", "x": 289, "z": 44, "yaw": 250, "note": "plaza, figure scale stand-in 1.85 m" },
+    { "id": "spawn-drive", "kind": "spawn", "x": 236, "z": -8.6, "yaw": 90, "note": "on the T4 landing, heading east into town" },
+    { "id": "spawn-flight", "kind": "spawn", "x": 205, "z": 60, "y": 55, "yaw": 210 },
+    { "id": "sign", "kind": "landmark-sign", "building": "B02", "note": "blank sign socket on the landmark roof edge" }
+  ],
+
+  "masks": {
+    "walk": {
+      "rule": "protected, clear width >= 1.8 m; props only in the outer 0.6 m band next to the kerb or the plaza rim",
+      "strips": ["W-R1w-S", "W-R1w-N", "W-R1e-S", "W-R1e-N", "W-R2-S", "W-R2-N", "W-R3-S", "W-R3-N", "P-hausberg", "Z1-zebra"],
+      "discs": ["PL1-platz"],
+      "free": "meadow terrain with slope < 30 deg (runtime test)"
+    },
+    "drive": {
+      "rule": "protected, no props; T4 piece one-way eastbound, city roads two-way",
+      "roads": ["R1-hauptstrasse", "R2x-t4-anschluss", "R3-ostarm"],
+      "track": { "sRange": [1322, 1570.37], "halfWidth": "stream road_L..road_R" },
+      "offroad": [
+        { "id": "OR-sued", "poly": [[205, -20], [256, -20], [298, -24], [298, -58], [255, -70], [205, -62]] },
+        { "id": "OR-nord", "poly": [[200, 14], [256, 14], [296, 12], [296, 32], [262, 46], [200, 52]] }
+      ]
+    },
+    "flight": { "minClear": 12, "band": [35, 120], "box": { "x0": 20, "x1": 360, "z0": -130, "z1": 130 }, "noFly": [] },
+    "noBuild": [
+      { "id": "JUMP-knetbach", "box": { "x0": 163, "x1": 204, "z0": -14, "z1": 3, "y0": 0, "y1": 26 }, "note": "kicker -> air -> landing corridor" },
+      { "id": "PORTAL", "box": { "x0": 66, "x1": 94, "z0": -54, "z1": -40, "y0": 12, "y1": 30 } }
+    ]
+  },
+
+  "cameras": {
+    "overview": { "pos": [398, 150, 205], "tgt": [200, 2, -8], "fov": 40 },
+    "walk":     { "pos": [301.2, 1.7, 5.4], "tgt": [238, 4.2, -9], "fov": 58, "note": "eye 1.7 m on the T4 street sidewalk" },
+    "walk2":    { "pos": [214, 1.7, 70.5], "tgt": [150, 9, 84], "fov": 58, "note": "eye 1.7 m on the footpath towards the bridge and the hill" },
+    "drive":    { "pos": [224, 3.9, -8.6], "tgt": [306, 1.6, -5], "fov": 62, "note": "chase height 2.4 m above deck, kart on the landing" },
+    "flight":   { "pos": [96, 74, 150], "tgt": [228, 0, -18], "fov": 50 },
+    "portal":   { "pos": [96, 19.5, -8], "tgt": [80, 16, -44], "fov": 50 },
+    "kicker":   { "pos": [196, 10, 64], "tgt": [182, 9, -6], "fov": 46 }
+  },
+
+  "unresolvedRuntime": [
+    "stride-synchronised locomotion (walker, clip timing)",
+    "Walk / Auto / Flight state machine and transitions",
+    "[I] car enter/exit at sockets car-A, car-B (keys to be unified on [I])",
+    "collisions: terrain heightfield, buildings (bent geometry), props, strang, kerbs",
+    "contact shadows and ground contact for figure and vehicles",
+    "vehicle physics on the T4 piece incl. kicker/air/landing",
+    "performance budget, LOD, chunking, browser tests",
+    "TinySkies runtime (day/night cycle, 7-light rig) instead of the donor gradient"
+  ]
+}
