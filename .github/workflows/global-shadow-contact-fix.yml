@@ -1,0 +1,74 @@
+name: Global Shadow Contact Fix
+
+on:
+  push:
+    branches:
+      - chatgpt-web/global-shadow-contact-fix-2026-09-29
+    paths:
+      - 'kfb-hub/stage/world/world-drive-interact-m2a/**'
+      - '.github/workflows/global-shadow-contact-fix.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrated-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Package and ownership proof
+        run: node kfb-hub/stage/world/world-drive-interact-m2a/package-proof-m2a.mjs
+
+      - name: Syntax
+        run: |
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/runtime/worldbuilder/world-integration-01/wi1-world.js
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/runtime/worldbuilder/world-integration-01/wi1-play.js
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/runtime/worldbuilder/wb2-design-01/wb2d-app.js
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/world-drive-m2a.mjs
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/browser-proof-m2a.mjs
+          node --check kfb-hub/stage/world/world-drive-interact-m2a/performance-proof-r4.mjs
+
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local World M2A mirror
+        run: |
+          python3 -m http.server 4176 --bind 127.0.0.1 >/tmp/kfb-shadow-contact-http.log 2>&1 &
+          echo $! >/tmp/kfb-shadow-contact-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4176/kfb-hub/stage/world/world-drive-interact-m2a/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-shadow-contact-http.log
+          exit 1
+
+      - name: Integrated actor prop building drive browser proof
+        env:
+          WORLD_M2A_BASE_URL: http://127.0.0.1:4176/kfb-hub/stage/world/world-drive-interact-m2a/
+          WORLD_M2A_PROOF_DIR: shadow-contact-proof
+        run: node kfb-hub/stage/world/world-drive-interact-m2a/browser-proof-m2a.mjs
+
+      - name: R4 performance regression
+        env:
+          WORLD_M2A_BASE_URL: http://127.0.0.1:4176/kfb-hub/stage/world/world-drive-interact-m2a/
+          WORLD_M2A_R4_METRICS: shadow-contact-r4-metrics.json
+        run: node kfb-hub/stage/world/world-drive-interact-m2a/performance-proof-r4.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: global-shadow-contact-evidence
+          path: |
+            shadow-contact-proof
+            shadow-contact-r4-metrics.json
+            /tmp/kfb-shadow-contact-http.log
+          if-no-files-found: warn
+          retention-days: 14
