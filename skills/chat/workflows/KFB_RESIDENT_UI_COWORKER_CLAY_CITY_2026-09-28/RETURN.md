@@ -2,6 +2,12 @@
 
 Date: 2026-09-29
 
+## Accessibility repair · 2026-09-29
+
+The private GPT Site route was not reachable from Claude and therefore cannot be an executable briefing source. During a later Site-first edit, the public Resident brief was also accidentally truncated after the first K2 paragraph. Both failures are repaired in place: the complete design scope is restored, current-chat/model decisions are explicit, the shared Grid/Connector/Mount Snap contract is added, and all previously open Claude questions are answered inside the public file.
+
+Binding rule going forward: the Site is Georg's cockpit and copy surface; every Claude-facing `STARTKLAR` card must point to a complete public GitHub `.md` or bounded download that was independently opened. Private Site access is never presumed.
+
 ## Result
 
 Two bounded jobs are ready and separated by capability:
