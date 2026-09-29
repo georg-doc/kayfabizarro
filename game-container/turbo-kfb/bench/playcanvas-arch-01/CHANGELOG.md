@@ -40,3 +40,10 @@
 **PC-ARCH-RB01 · REAL-BROWSER DEVICE BASELINE**
 
 Measure the frozen primitive bench in Georg's normal browser before one real GLB or any physics is introduced.
+
+## 2026-09-29 · r3 · user correction · bench is diagnostic only
+- Georg rejected any implication that the primitive cube bench should become the basis for rebuilding KFB.
+- The cube/entity/instancing bench is retained only as internal diagnostic evidence.
+- Product direction is reversed: profile the complete existing PlayCanvas Vehicle Physics donor in place, then subtract/disable existing donor layers to locate cost.
+- Do not create a primitive replacement world.
+- New next gate: **PC-DONOR-PROFILE-01 · PROFILE THE REAL PLAYCANVAS DONOR**.
