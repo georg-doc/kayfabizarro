@@ -1,7 +1,7 @@
 {
   "schema": "kfb.stage-mirror/0.1",
   "product": "GROUND-WALK-PACE-TUNE-01",
-  "status": "STAGE_MIRROR_CANDIDATE",
+  "status": "PUBLIC_VERIFIED",
   "sourceRepo": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29",
   "runtimeSourceHead": "d6e9d42149670af290d96fe19dfdc28095f2f337",
@@ -22,5 +22,13 @@
     "walkPlaybackRate": 1.8,
     "runTier": 2.725059985338244,
     "sprintTier": 3.025440772378893
-  }
+  },
+  "publicProof": {
+    "run": 36583694971,
+    "job": 109458242652,
+    "checks": "13/13",
+    "artifact": 11040747449,
+    "digest": "sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2"
+  },
+  "cloudflarePages": "SUCCESS"
 }
