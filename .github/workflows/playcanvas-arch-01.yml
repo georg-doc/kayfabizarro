@@ -14,6 +14,10 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/bench/playcanvas-arch-01
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
