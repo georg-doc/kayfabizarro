@@ -1,101 +1,111 @@
 # KFB Container Turbo-01 · Return
 
 Updated: 2026-09-29
-Status: EXPERIMENTAL · RECOVERY CHECKED · CHECKPOINT B IMPLEMENTED · BROWSER HARNESS BLOCKED BY rAF TIMING
+Status: **CHECKPOINT B BROWSER PASS · HUMAN MOTION/FEEL GATE**
 
-## Owner / branch / exact head
+## Owner / branch / heads
 - repo: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/kfb-container-turbo-01-2026-09-29`
-- verified head before this recovery write: `e6c53ddae32f38dcc7fb7d482d29f94a7686843e`
+- tested runtime head: `b4c7bb14cb51d6c5515613593b33c0ea0e183e89`
+- Ground implementation head: `772131720e591df1ca341a73e1a59284ef5dd499`
+- upstream host donor: `bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c` · MIT
 
-## Upstream host donor
-- `bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c`
-- MIT license retained.
-- protected driving feel files remain donor-exact unless explicitly recorded otherwise.
-
-## Checkpoint A · Explore
-Implemented:
+## Implemented
+### EXPLORE
 - one player kart;
-- same upstream Kart controller;
-- same ChaseCamera;
-- same InputController;
+- upstream Kart / Input / ChaseCamera feel retained;
 - no countdown/laps/results requirement;
-- Race ItemSystem off in EXPLORE;
+- Race ItemSystem off;
 - Race remains regression control.
 
-Static/source evidence remains **34/34 PASS**.
-
-## Checkpoint B · Ground consumer
-Implementation commit:
-- `772131720e591df1ca341a73e1a59284ef5dd499`
-
-Added:
-- `app/src/ground-player.js`
-- exact existing KFB `walk-controller.js` as Ground movement owner;
-- ActionFigure · Rig_Medium;
-- real KayKit `Idle_A / Walking_A / Running_A / Jump_Start / Jump_Idle / Jump_Land`;
+### WALK
+- real ActionFigure · Rig_Medium;
+- existing KFB `walk-controller.js` is sole Ground movement owner;
+- one AnimationMixer for presentation;
 - Root/Hips world translation stripped;
-- one AnimationMixer;
-- KCL/Motion-Lab playback/phase-sync logic consumed instead of another locomotion lab;
-- hidden Kart is not updated while Ground owns movement;
-- shared Turbo chase camera consumes the Ground target interface.
+- exact clips:
+  `Idle_A · Walking_A · Running_A · Jump_Start · Jump_Idle · Jump_Land`;
+- KCL/Motion-Lab measured Walk/Run mapping and phase-sync logic consumed;
+- hidden kart is not updated while Ground owns movement;
+- Turbo ChaseCamera follows the Ground target interface.
 
-## Timeout recovery / browser evidence
-Runs 5, 6 and 7 all stop at the same first gameplay assertion:
-- title boot PASS;
-- EXPLORE entry PASS;
-- EXPLORE mode PASS;
-- one player kart PASS;
-- Race items off PASS;
-- input reaches the player: `throttle=1`, `controlsLocked=false`, active input confirmed;
-- observed after a 1.4 s wall-clock wait: `speed=1.220266...`, displacement ≈ `0.04`.
+## Browser proof
+GitHub Actions run: `36548532308`
+Artifact: `11023896755`
+Digest: `sha256:c18e1193c79165efdd410337b521d309a646c48e831d9118e4acfeb2568132e0`
 
-This is effectively one fixed `1/30 s` simulation step:
-`1.220... × 1/30 ≈ 0.0407`.
+**29/29 PASS**
+- runtime errors: 0
+- console/page errors: 0
+- EXPLORE drive displacement: 28.91 u
+- EXPLORE speed: 33.23 u/s
+- Race regression: 8 karts, drive displacement 22.51 u
+- Ground Walk: `Walking_A`
+- Ground Run: `Running_A` at measured 2.480274... u/s
+- Run → Walk → Idle transition PASS
+- Jump: `Jump_Start → Jump_Idle → Jump_Land` PASS
 
-Therefore the current red browser gate is **not evidence that Turbo driving is broken**. The headless GitHub browser is not advancing `requestAnimationFrame` reliably during wall-clock waits. This matches the established KFB preview lesson: hidden/headless acceptance must drive simulation with explicit fixed steps, not wait for rAF.
+## Recovery finding
+Runs 5–7 were false-negative QA results caused by headless `requestAnimationFrame` advancing only about one fixed 1/30 s step during a 1.4 s wall-clock wait.
 
-Runs:
-- #5 `53519bac...` FAILURE · same 0.04 displacement
-- #6 `cd00df61...` FAILURE · physical-key diagnostic, same 0.04 displacement
-- #7 `e6c53dda...` FAILURE · exact input trace confirms throttle reaches player
+Run 7 proved input was already correct:
+`throttle=1`, `controlsLocked=false`, speed `1.220266...`, displacement `0.04`.
 
-Run 7 artifact:
-- artifact id `11023690122`
-- digest `sha256:7f5ce06f2a409a7a25676596bf1d90389e170a9b4cac5929095a15d52c591c92`
+The tested runtime adds a deterministic `advanceBy(seconds)` **QA seam only**. Kart/Ground gameplay tuning was not changed to make the test pass.
 
-The two post-timeout commits were **QA diagnostics only**, not two gameplay repair passes. The two-repair stop rule has therefore not been consumed on the product implementation.
+## Stage / Hub
+Published source:
+- `cloudflare-live@563d3c1f1c0ed89bf810ba7448db8e90bf0a30f3`
+- Cloudflare Pages check: **SUCCESS**
+- direct Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/turbo-01/`
+- Hub card updated to `BROWSER 29/29 · HUMAN MOTION GATE`
 
-## Stage
-Checkpoint-A source was mirrored to:
-- `cloudflare-live@aed6a2b6684c21cb7de19d58a00c1ef787ccd23d`
-- target: `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/turbo-01/`
+The current ChatGPT web fetcher cannot open `pages.dev`, so independent in-chat `PUBLIC_VERIFIED` remains OPEN. No claim beyond successful deployment is made.
 
-Current chat environment still cannot independently open `pages.dev`, so `PUBLIC_VERIFIED` remains OPEN.
+## Human gate
+In the real Stage:
+1. click **EXPLORE** briefly to confirm Turbo driving still feels like the donor;
+2. return to title, click **WALK**;
+3. try W, Shift+W, stop, A/D turns and Space.
 
-Checkpoint B has **not** been promoted to Stage.
+Judge only:
+- foot sliding;
+- Walk/Run transition weight;
+- facing/camera;
+- Jump/Land feel.
 
-## Protected / deferred
-Do not yet add:
-- Cards;
-- Residents;
-- Voxel/WFC/procedural world replacement;
-- Clay styling;
-- Flight;
-- Enter/Exit Kart.
+## Deferred
+Cards · Residents · Enter/Exit Kart · Voxel/WFC world · Clay look · Flight.
 
-Do not retune `kart.js` or animation clips from the current browser failure.
+## Human review · 2026-09-29
+Outcome: **HOST / APPROACH PROCEED · GROUND CONSUMER REPAIR REQUIRED BEFORE C**
+
+Observed in the real Stage:
+- free orbit camera is missing;
+- semantic locomotion states are not wired;
+- current Walk/Run presentation feels like small/tripping steps and the Run tier does not read as a distinct fast state;
+- Jump is far too high and too short horizontally.
+
+Source diagnosis:
+- current Turbo Ground consumer maps only `idle / walk / run / jumpStart / jumpAir / jumpLand`;
+- the existing Rig_Medium consumer profile already defines `walk.fast / sprint / backward / strafe.left / strafe.right / crouch / sneak / crawl` plus explicit transition hints;
+- current consumer ignores `Running_B` sprint and MovementAdvanced directional clips;
+- current Walk controller still derives manual jump from Voxel `autoJumpMax=4.2` + `hopClear=0.55`, producing an apex around 4.75 world units at gravity 30; this is wrong for the Turbo free-roam character;
+- the old Walk controller exposes orbit state/methods, but the Turbo Ground consumer does not wire pointer orbit into the camera.
 
 ## Exactly one next gate
-Replace wall-clock/rAF timing in the browser proof with a deterministic fixed-step `advanceBy(seconds)` debug seam, without changing Kart/Ground gameplay code. Then rerun:
-1. EXPLORE drive;
-2. Race regression;
-3. Ground `Idle → Walk → Run → Walk → Stop → Jump_Start → Jump_Idle → Land`.
+**Checkpoint B2 · Locomotion Consumer Repair**
+1. wire the existing semantic Rig_Medium role/state profile instead of the six-state subset;
+2. use source-backed `Running_B` as the sprint tier and MovementAdvanced backward/strafe roles where appropriate;
+3. replace the Voxel-height jump preset with a character-scale/free-roam ballistic jump while retaining the KayKit Jump_Start/Air/Land presentation;
+4. add free pointer orbit as an additive camera adapter without rewriting the donor ChaseCamera.
 
-Only after that result is known should any product repair be attempted.
+Do not start Enter/Exit Kart until B2 passes human motion/control review.
 
 
 ## Parallel slice · GROUND-CONTROLLER-DONOR-01 · implementation checkpoint
+
+
 
 - branch: `chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29`
 - implementation head: `c5613ff80c6ece19bb701fad98d4f9310d9e8a5b`
