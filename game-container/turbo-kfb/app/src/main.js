@@ -71,7 +71,7 @@ const mods = {};
 async function loadModules() {
   const specs = {
     track: './track.js', kart: './kart.js', ai: './ai.js', input: './input.js',
-    items: './items.js', effects: './effects.js', models: './models.js', camera: './camera.js',
+    items: './items.js', effects: './effects.js', models: './models.js', camera: './camera.js', ground: './ground-player.js',
   };
   await Promise.all(Object.entries(specs).map(async ([k, p]) => {
     try { mods[k] = await import(p); } catch (e) { console.error(`[main] failed to load ${p}`, e); }
@@ -135,7 +135,7 @@ const hud = new HUD(uiRoot);
 const menu = new Menu(uiRoot, {
   onStart: (settings) => startRace(settings),
   onResume: () => resume(),
-  onRestart: () => { menu.hideAll(); if (world?.mode === 'explore') startExplore(); else startRace(lastSettings); },
+  onRestart: () => { menu.hideAll(); if (world?.controlMode === 'ground') startGround(); else if (world?.mode === 'explore') startExplore(); else startRace(lastSettings); },
   onQuit: () => goToTitle(),
   onScreen: (s) => { setState(s === 'select' ? 'select' : 'title'); },
 });
@@ -156,6 +156,16 @@ if (pressStart) {
   pressStart.insertAdjacentElement('afterend', exploreButton);
 } else if (menu.titleEl) menu.titleEl.appendChild(exploreButton);
 
+const walkButton = document.createElement('button');
+walkButton.type = 'button';
+walkButton.className = 'btn';
+walkButton.textContent = 'WALK';
+walkButton.setAttribute('aria-label', 'Walk free roam');
+walkButton.style.cssText = 'margin:8px auto 0;display:block;font-size:18px;padding:8px 24px;position:relative;z-index:10;';
+walkButton.addEventListener('pointerdown', (e) => e.stopPropagation());
+walkButton.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); startGround(); });
+if (exploreButton.parentElement) exploreButton.insertAdjacentElement('afterend', walkButton);
+else if (menu.titleEl) menu.titleEl.appendChild(walkButton);
 
 
 // ---------------------------------------------------------------------------------------------
@@ -178,7 +188,7 @@ function setState(s) {
   bus.emit('game:state', { state: s });
 }
 
-const RACE_STATES = new Set(['intro', 'countdown', 'racing', 'finished', 'explore']);
+const RACE_STATES = new Set(['intro', 'countdown', 'racing', 'finished', 'explore', 'ground']);
 
 // ---------------------------------------------------------------------------------------------
 // World lifecycle
@@ -188,7 +198,7 @@ function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = (Math.r
 function buildWorld({ mode, characterIndex = 0, difficulty = 'normal', laps = RACE.laps }) {
   if (!mods.track || !mods.track.createTrack) throw new Error('track.js unavailable');
   if (!mods.kart || !mods.kart.Kart) throw new Error('kart.js unavailable');
-  const w = { mode, difficulty, laps, karts: [], ais: [], playerAI: null, player: null, scene: new THREE.Scene() };
+  const w = { mode, controlMode: mode === 'explore' ? 'kart' : 'race', difficulty, laps, karts: [], ais: [], playerAI: null, player: null, groundPlayer: null, scene: new THREE.Scene() };
   w.track = mods.track.createTrack(w.scene, renderer);
 
   // roster: attract mode = every character in order (kart index == character index)
@@ -244,6 +254,7 @@ function disposeWorld() {
   world = null;
   renderPass.scene = fallbackScene;
   if (!w) return;
+  safe('dispose.ground', () => w.groundPlayer && w.groundPlayer.dispose && w.groundPlayer.dispose());
   safe('dispose.items', () => w.items && w.items.dispose && w.items.dispose());
   safe('dispose.effects', () => w.effects && w.effects.dispose && w.effects.dispose());
   for (const k of w.karts) safe('dispose.kart', () => k.dispose && k.dispose());
@@ -333,6 +344,45 @@ function startExplore(settings = {}) {
     uiRoot.classList.remove('no-world');
     setState('explore');
     safe('camera.snap', () => world.chase.snap(world.player));
+    audio.playMusic('race');
+  }, 40);
+}
+
+function startGround(settings = {}) {
+  const characterIndex = Number.isInteger(settings.characterIndex) ? settings.characterIndex : lastSettings.characterIndex;
+  lastSettings = { ...lastSettings, characterIndex };
+  hud.hide(); hud.hideResults();
+  audio.setPaused(false);
+  audio.stopMusic();
+  resultsShown = false;
+  menu.showLoading('WALK');
+  setState('loading');
+  setTimeout(async () => {
+    disposeWorld();
+    try {
+      world = buildWorld({ mode: 'explore', ...lastSettings });
+      world.controlMode = 'ground';
+      world.race.startImmediately();
+      if (!mods.ground?.createGroundPlayer) throw new Error('ground-player.js unavailable');
+      world.groundPlayer = await mods.ground.createGroundPlayer({ scene: world.scene, track: world.track });
+      if (world.player) {
+        world.player.controlsLocked = true;
+        world.player.input = { ...NEUTRAL };
+        world.player.object3D.visible = false;
+      }
+    } catch (e) {
+      report('buildGround', e);
+      menu.showLoading('WALK FAILED TO LOAD — SEE CONSOLE');
+      setTimeout(goToTitle, 2500);
+      return;
+    }
+    seenErrors.clear();
+    hud.hide();
+    menu.hideAll();
+    audio.setGameplayActive(true);
+    uiRoot.classList.remove('no-world');
+    setState('ground');
+    safe('camera.snap.ground', () => world.chase.snap(world.groundPlayer));
     audio.playMusic('race');
   }, 40);
 }
@@ -450,7 +500,7 @@ window.addEventListener('keydown', (e) => {
   if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code) && state !== 'boot') e.preventDefault();
 });
 canvas.addEventListener('click', () => { if (state === 'intro') beginCountdown(); });
-document.addEventListener('visibilitychange', () => { if (document.hidden && (state === 'racing' || state === 'countdown' || state === 'explore')) pause(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden && (state === 'racing' || state === 'countdown' || state === 'explore' || state === 'ground')) pause(); });
 
 // ---------------------------------------------------------------------------------------------
 // Attract-mode camera (title / select): cinematic orbit around a kart, or around the track centre
@@ -513,10 +563,17 @@ function simulate(w, dt) {
   w.ctx.time = time;
   const racing = w.mode === 'race';
   const interactive = racing || w.mode === 'explore';
+  const groundMode = w.controlMode === 'ground' && !!w.groundPlayer;
   const player = w.player;
+  const controlTarget = groundMode ? w.groundPlayer : player;
 
-  // player input (always drain the controller so edge-triggered presses don't queue up)
-  if (interactive && player) {
+  // Exactly one movement writer per mode.
+  if (groundMode) {
+    playerInput = NEUTRAL;
+    if (player) player.input = { ...NEUTRAL };
+    safe('ground.update', () => w.groundPlayer.update(dt));
+  } else if (interactive && player) {
+    // Kart input (always drain the controller so edge-triggered presses don't queue up).
     let raw = null;
     if (input) raw = safe('input.getInput', () => input.getInput());
     if (input) safe('input.pause', () => input.consumePressed && input.consumePressed('pause'));
@@ -539,15 +596,16 @@ function simulate(w, dt) {
     try { ai.update(dt, w.ctx); } catch (e) { report('ai.update', e); }
   }
   for (let i = 0; i < w.karts.length; i++) {
+    if (groundMode && w.karts[i] === w.player) continue;
     try { w.karts[i].update(dt); } catch (e) { report('kart.update', e); }
   }
-  if (mods.kart && mods.kart.resolveKartCollisions) safe('resolveKartCollisions', () => mods.kart.resolveKartCollisions(w.karts));
+  if (!groundMode && mods.kart && mods.kart.resolveKartCollisions) safe('resolveKartCollisions', () => mods.kart.resolveKartCollisions(w.karts));
   if (w.items) safe('items.update', () => w.items.update(dt, time));
   if (w.mode !== 'explore') safe('race.update', () => w.race.update(dt));
   if (w.effects) safe('effects.update', () => w.effects.update(dt, w.karts));
   safe('track.update', () => w.track.update && w.track.update(dt, time));
   // keep the sun's shadow frustum centred on whatever the camera is following
-  const focus = interactive ? player : (w.karts[attractCam.targetIndex] || w.karts[0]);
+  const focus = interactive ? controlTarget : (w.karts[attractCam.targetIndex] || w.karts[0]);
   if (focus && w.track.setShadowFocus) safe('track.setShadowFocus', () => w.track.setShadowFocus(focus.position));
 
   if (racing && state === 'intro') {
@@ -568,16 +626,19 @@ function frame() {
     if (running) simulate(w, dt);
 
     if ((w.mode === 'race' || w.mode === 'explore') && w.player) {
+      const groundMode = w.controlMode === 'ground' && !!w.groundPlayer;
+      const cameraTarget = groundMode ? w.groundPlayer : w.player;
       if (state !== 'paused') {
-        const mode = state === 'intro' ? 'intro' : state === 'countdown' ? 'countdown' : state === 'finished' ? 'finish' : 'race';
-        const lookBack = !!((state === 'racing' || state === 'explore') && playerInput && playerInput.lookBack);
-        safe('camera.update', () => w.chase.update(dt, w.player, { lookBack, mode }));
+        const mode = groundMode ? 'ground' : state === 'intro' ? 'intro' : state === 'countdown' ? 'countdown' : state === 'finished' ? 'finish' : 'race';
+        const lookBack = !groundMode && !!((state === 'racing' || state === 'explore') && playerInput && playerInput.lookBack);
+        safe('camera.update', () => w.chase.update(dt, cameraTarget, { lookBack, mode }));
       }
       if (w.mode === 'race') safe('hud.update', () => hud.update(dt, { player: w.player, karts: w.karts, race: w.race, itemSystem: w.items, track: w.track, time }));
     } else {
       updateAttractCamera(dt);
     }
-    safe('audio.update', () => audio.update(dt, { player: w.player, karts: w.karts, camera }));
+    const audioPlayer = w.controlMode === 'ground' ? null : w.player;
+    safe('audio.update', () => audio.update(dt, { player: audioPlayer, karts: w.karts, camera }));
   } else {
     updateAttractCamera(dt);
     safe('audio.update', () => audio.update(dt, { camera }));
@@ -600,8 +661,11 @@ async function boot() {
     safe('portraits', () => menu.setPortraitProvider(fn));
     hud.setPortraitProvider(fn);
   }
-  const autoExplore = new URLSearchParams(location.search).get('explore') === '1';
-  if (autoExplore) startExplore();
+  const params = new URLSearchParams(location.search);
+  const autoGround = params.get('ground') === '1';
+  const autoExplore = params.get('explore') === '1';
+  if (autoGround) startGround();
+  else if (autoExplore) startExplore();
   else {
     buildAttract();
     menu.showTitle();
@@ -621,6 +685,7 @@ window.__game = {
   audio, hud, menu, renderer, camera, bus,
   startRace: (s = {}) => startRace({ ...lastSettings, ...s }),
   startExplore: (s = {}) => startExplore(s),
+  startGround: (s = {}) => startGround(s),
   goToTitle,
   skipIntro: () => beginCountdown(),
   errors: () => [...seenErrors],
