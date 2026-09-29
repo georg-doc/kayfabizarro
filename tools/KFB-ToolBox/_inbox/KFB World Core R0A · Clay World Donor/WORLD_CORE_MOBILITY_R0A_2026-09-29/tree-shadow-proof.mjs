@@ -15,17 +15,22 @@ await page.waitForTimeout(800);
 await page.evaluate(()=>window.__treeShadowProof.api.set('pause',true));
 const report=await page.evaluate(()=>window.__treeShadowProof.report());
 let n=0;const ok=(name,v,detail='')=>{if(!v)throw Error('FAIL '+name+(detail?' · '+detail:''));console.log('ok '+(++n)+' - '+name)};
+const writeCanvas=async name=>{
+  const data=await page.evaluate(()=>document.querySelector('canvas').toDataURL('image/png'));
+  fs.writeFileSync(out+'/'+name,Buffer.from(data.split(',')[1],'base64'));
+};
+
 ok('shared shadow profile',report.shadow.profile==='KFB_SHARED_SHADOW_CONTACT_V1_R0A',JSON.stringify(report.shadow));
 ok('PCFSoft shadow map',report.shadow.mapType==='PCFSoftShadowMap',JSON.stringify(report.shadow));
 ok('texel relative normalBias',Math.abs(report.shadow.normalBiasTexels-1.2)<1e-9&&report.shadow.normalBias>0&&report.shadow.normalBias<0.25,JSON.stringify(report.shadow));
 ok('foliage evidence present',report.shadow.foliage.length>0,JSON.stringify(report.shadow.foliage));
 ok('foliage casts world shadow',report.shadow.foliage.every(x=>x.cast),JSON.stringify(report.shadow.foliage));
 ok('foliage does not receive sibling shadow map',report.shadow.foliage.every(x=>!x.receive),JSON.stringify(report.shadow.foliage));
-await page.screenshot({path:out+'/01-shadow-on-ao-on.png',timeout:90000});
+await writeCanvas('01-shadow-on-ao-on.png');
 await page.evaluate(()=>{const a=window.__treeShadowProof.api;a.set('shadows',false);a.set('ao',true);a.frame(2,1/60)});
-await page.waitForTimeout(150);await page.screenshot({path:out+'/02-shadow-off-ao-on.png',timeout:90000});
+await page.waitForTimeout(100);await writeCanvas('02-shadow-off-ao-on.png');
 await page.evaluate(()=>{const a=window.__treeShadowProof.api;a.set('shadows',true);a.set('ao',false);a.frame(2,1/60)});
-await page.waitForTimeout(150);await page.screenshot({path:out+'/03-shadow-on-ao-off.png',timeout:90000});
+await page.waitForTimeout(100);await writeCanvas('03-shadow-on-ao-off.png');
 const known=failed.filter(x=>x.includes('Fingerprints01_3K.png'));
 ok('no page errors',errors.length===0,errors.join(' | '));
 ok('no unexpected failed requests',failed.length===known.length,failed.join(' | '));
