@@ -47,8 +47,13 @@ For any KFB three.js task involving bright shadow/contact seams, shadow clipping
 
 - `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md` — shared fitted/snapped shadow-frustum recipe, texel-relative `normalBias`, overlay casting rule, FACE_NORMALS/contact distinction and integrated verification.
 - `tools/KFB-ToolBox/docs/CLAY_BUILDING_FACADE_ROUTER.md` — S5 / H0 / K2 / Elastic / WorldBuilder / LOOK-TORSION source-resolution order and version overrides.
+- `tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md` — **binding concrete Claymation source**: exact K1/H0 codebase, source screenshots, `clay-soften.v1`, house/façade path, material-version distinction and clay-foliage shadow exception.
+
 
 Important source-resolution facts:
+- Georg re-supplied the exact K1 + H0 codebase on main at `tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/`; any Claude Design/Web/WSA claymation task must read it before improvising a look;
+- K1/H0 house identity is source-model geometry plus `clay-soften.v1` preprocessing plus clay material; later bend/torsion comes after the individual house clay pass;
+- K1/H0 interpenetrating crown blobs are a special shadow topology: foliage may cast world shadow while sibling crown self-shadow receiving is suppressed; a remaining dark seam is AO/topology, not a reason for larger global bias;
 - the full S5 Building / Façade Clay Adapter is branch-local on `georg-doc-patch-2@3232a1070686896833d6b7942fcd631b9fa8cda6`, not on main;
 - S5's 27.09 material references predate the accepted K2 28.09 base; new stages use K2 `clay-material.v10` + current relief/toolmix unless a bounded legacy comparison explicitly requires the old H0 path;
 - H0 remains on its own accepted frozen material line;
