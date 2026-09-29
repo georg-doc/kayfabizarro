@@ -1,4 +1,4 @@
-name: GROUND-WALK-PACE-TUNE-02 public Stage proof
+name: GROUND-TRAVEL-PACE-TIMING-01 public Stage proof
 on:
   push:
     branches: [cloudflare-live]
@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
           URL='https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/DEPLOYMENT.json'
-          WANT='4475271b61e65fae95e5044925b83f2e39c18e6e'
+          WANT='ada92c557d3ef24dd18e511b4cff6f18e8b721fc'
           for i in {1..90}; do
             BODY="$(curl -fsS "$URL" 2>/dev/null || true)"
             if printf '%s' "$BODY" | grep -q "$WANT"; then
@@ -43,13 +43,13 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Public Chromium proof
         run: |
-          mkdir -p ground-walk-pace-tune02-public-evidence
+          mkdir -p ground-travel-pace-timing01-public-evidence
           node --input-type=module <<'NODE'
           import { chromium } from 'playwright';
           import fs from 'node:fs/promises';
           const STAGE='https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel';
           const HUB='https://kayfabizarro.pages.dev/kfb-hub/#briefings';
-          const WANT='4475271b61e65fae95e5044925b83f2e39c18e6e';
+          const WANT='ada92c557d3ef24dd18e511b4cff6f18e8b721fc';
           const checks=[];
           const ok=(name,cond,extra='')=>{checks.push({name,pass:!!cond,extra});if(!cond)throw new Error('FAIL '+name+(extra?' · '+extra:''));console.log('PASS',name,extra);};
           const browser=await chromium.launch({headless:true});
@@ -57,50 +57,74 @@ jobs:
           const errors=[];
           page.on('pageerror',e=>errors.push(String(e)));
           page.on('console',m=>{if(m.type()==='error')errors.push('console: '+m.text())});
-          const key=async(type,code,k)=>page.evaluate(({type,code,k})=>window.dispatchEvent(new KeyboardEvent(type,{code,key:k,bubbles:true,cancelable:true})),{type,code,k});
           try{
             await page.goto(STAGE,{waitUntil:'domcontentloaded',timeout:45000});
             await page.waitForFunction(()=>window.__game?.state==='ground'&&window.__game?.world?.groundPlayer?.ready===true,null,{timeout:45000});
             const meta=await page.locator('meta[name="kfb-source-head"]').getAttribute('content');
             ok('exact runtime marker visible',meta===WANT,meta||'missing');
             const g0=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-            ok('travel profile active',g0.walkPace==='travel',g0.walkPace);
-            ok('normal target is Running_A speed',Math.abs(g0.forwardSpeed-g0.runSpeed)<1e-9&&g0.forwardSpeed>2.47&&g0.forwardSpeed<2.49,JSON.stringify({forward:g0.forwardSpeed,run:g0.runSpeed}));
-            ok('default Travel clip is Running_A',g0.travelDefaultClip==='Running_A',g0.travelDefaultClip);
-            ok('Shift Travel clip is Running_B',g0.travelShiftClip==='Running_B',g0.travelShiftClip);
+            ok('Travel profile active',g0.walkPace==='travel',g0.walkPace);
+            ok('Travel cadence is 1.8x',Math.abs(g0.travelCadence-1.8)<1e-9,String(g0.travelCadence));
+            ok('Running_A target is 4.4645',Math.abs(g0.travelRunSpeed-4.46449350062322)<1e-9,String(g0.travelRunSpeed));
+            ok('Running_B target is 5.4511',Math.abs(g0.travelSprintSpeed-5.451146564260952)<1e-9,String(g0.travelSprintSpeed));
+            ok('Running_A playback target is 1.8x',Math.abs(g0.travelRunPlaybackRate-1.8)<1e-9,String(g0.travelRunPlaybackRate));
+            ok('Running_B playback target is 1.8x',Math.abs(g0.travelSprintPlaybackRate-1.8)<1e-9,String(g0.travelSprintPlaybackRate));
+            ok('two-gear clips retained',g0.travelDefaultClip==='Running_A'&&g0.travelShiftClip==='Running_B',JSON.stringify({w:g0.travelDefaultClip,shift:g0.travelShiftClip}));
             ok('Orbit mounted',await page.evaluate(()=>!!window.__game.world.groundOrbit?.report?.().enabled));
-            await key('keydown','KeyW','w'); await page.evaluate(()=>window.__game.advanceBy(.06));
-            const runStart=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-            ok('public W immediately Running_A',runStart.currentAnimation==='Running_A'&&runStart.semantic==='run'&&runStart.speed>0.8,JSON.stringify({a:runStart.currentAnimation,s:runStart.semantic,v:runStart.speed}));
-            await page.evaluate(()=>window.__game.advanceBy(.78));
-            const run=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-            ok('public W settles Running_A',run.currentAnimation==='Running_A'&&run.semantic==='run'&&run.speed>2.42&&run.speed<2.50,JSON.stringify({a:run.currentAnimation,s:run.semantic,v:run.speed}));
-            await key('keydown','ShiftLeft','Shift'); await page.evaluate(()=>window.__game.advanceBy(.06));
-            const sprintStart=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-            ok('public Shift immediately Running_B',sprintStart.currentAnimation==='Running_B'&&sprintStart.semantic==='sprint',JSON.stringify({a:sprintStart.currentAnimation,s:sprintStart.semantic,v:sprintStart.speed}));
-            await page.evaluate(()=>window.__game.advanceBy(.55));
-            const sprint=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-            ok('public Shift settles Sprint',sprint.currentAnimation==='Running_B'&&sprint.semantic==='sprint'&&sprint.speed>2.95,JSON.stringify({a:sprint.currentAnimation,s:sprint.semantic,v:sprint.speed}));
-            await key('keyup','ShiftLeft','Shift'); await page.evaluate(()=>window.__game.advanceBy(.12));
-            const back=await page.evaluate(()=>window.__game.world.groundPlayer.report());
-            ok('public Shift release returns Running_A',back.currentAnimation==='Running_A'&&back.semantic==='run',JSON.stringify({a:back.currentAnimation,s:back.semantic,v:back.speed}));
-            await key('keyup','KeyW','w');
+
+            const probe=await page.evaluate(()=>{
+              const fire=(type,code,key)=>window.dispatchEvent(new KeyboardEvent(type,{code,key,bubbles:true,cancelable:true}));
+              const report=()=>window.__game.world.groundPlayer.report();
+              const p0=report();
+              fire('keydown','KeyW','w');
+              const runFrames=[];
+              for(let i=0;i<12;i++)runFrames.push(window.__game.advanceTravelFrame(1/15));
+              const run=report();
+              fire('keydown','ShiftLeft','Shift');
+              const sprintFrames=[];
+              for(let i=0;i<9;i++)sprintFrames.push(window.__game.advanceTravelFrame(1/15));
+              const sprint=report();
+              fire('keyup','ShiftLeft','Shift');
+              for(let i=0;i<3;i++)window.__game.advanceTravelFrame(1/15);
+              const released=report();
+              fire('keyup','KeyW','w');
+              return {p0,runFrames,run,sprintFrames,sprint,released};
+            });
+            const runRaw=probe.runFrames.reduce((n,r)=>n+r.rawDt,0);
+            const runSim=probe.runFrames.reduce((n,r)=>n+r.simulatedDt,0);
+            const runDropped=probe.runFrames.reduce((n,r)=>n+r.droppedDt,0);
+            const distance=Math.hypot(probe.run.position.x-probe.p0.position.x,probe.run.position.z-probe.p0.position.z);
+            ok('15 FPS W preserves wall-clock',Math.abs(runRaw-.8)<1e-6&&Math.abs(runSim-.8)<1e-6,JSON.stringify({raw:runRaw,sim:runSim}));
+            ok('15 FPS W drops no ordinary frame time',runDropped<1e-8,String(runDropped));
+            ok('15 FPS W uses four 60Hz slices',probe.runFrames.every(r=>r.active&&r.steps===4),JSON.stringify(probe.runFrames.slice(0,2)));
+            ok('public W remains Running_A',probe.run.currentAnimation==='Running_A'&&probe.run.semantic==='run',JSON.stringify({a:probe.run.currentAnimation,s:probe.run.semantic}));
+            ok('public W settles ~4.46',probe.run.speed>4.42&&probe.run.speed<4.47,String(probe.run.speed));
+            ok('public W playback ~1.8x',probe.run.currentPlaybackRate>1.79&&probe.run.currentPlaybackRate<=1.8,String(probe.run.currentPlaybackRate));
+            ok('public W covers faster synchronized ground',distance>2.6,'distance='+distance.toFixed(2));
+            const sprintRaw=probe.sprintFrames.reduce((n,r)=>n+r.rawDt,0);
+            const sprintSim=probe.sprintFrames.reduce((n,r)=>n+r.simulatedDt,0);
+            ok('public Shift remains Running_B',probe.sprint.currentAnimation==='Running_B'&&probe.sprint.semantic==='sprint',JSON.stringify({a:probe.sprint.currentAnimation,s:probe.sprint.semantic}));
+            ok('public Shift settles ~5.45',probe.sprint.speed>5.40&&probe.sprint.speed<5.46,String(probe.sprint.speed));
+            ok('public Shift playback ~1.8x',probe.sprint.currentPlaybackRate>1.79&&probe.sprint.currentPlaybackRate<=1.8,String(probe.sprint.currentPlaybackRate));
+            ok('15 FPS Shift preserves wall-clock',Math.abs(sprintRaw-.6)<1e-6&&Math.abs(sprintSim-.6)<1e-6,JSON.stringify({raw:sprintRaw,sim:sprintSim}));
+            ok('Shift release returns Running_A',probe.released.currentAnimation==='Running_A'&&probe.released.semantic==='run',JSON.stringify({a:probe.released.currentAnimation,s:probe.released.semantic}));
             ok('runtime errors empty',(await page.evaluate(()=>window.__game.errors())).length===0,JSON.stringify(await page.evaluate(()=>window.__game.errors())));
             ok('page errors empty',errors.length===0,JSON.stringify(errors));
-            await page.screenshot({path:'ground-walk-pace-tune02-public-evidence/stage.png',fullPage:true});
+            await page.screenshot({path:'ground-travel-pace-timing01-public-evidence/stage.png',fullPage:true});
+
             await page.goto(HUB,{waitUntil:'domcontentloaded',timeout:45000});
             const link=page.locator('a[href*="ground-walk-pace-tune-01"]').first();
-            ok('Hub contains two-gear link',await link.count()===1);
-            const href=await link.getAttribute('href');
-            ok('Hub link targets Pace route',String(href||'').includes('/kfb-hub/stage/game-container/ground-walk-pace-tune-01/'),href||'missing');
-            await page.screenshot({path:'ground-walk-pace-tune02-public-evidence/hub.png',fullPage:true});
-            await fs.writeFile('ground-walk-pace-tune02-public-evidence/report.json',JSON.stringify({stage:STAGE,hub:HUB,revision:WANT,checks,errors,runStart,run,sprintStart,sprint,back,testedAt:new Date().toISOString()},null,2));
+            ok('Hub contains Travel 1.8x link',await link.count()===1);
+            const cardText=await page.locator('body').innerText();
+            ok('Hub exposes Travel 1.8x candidate copy',cardText.includes('Ground Travel Pace + Timing-01')&&cardText.includes('1.8×'));
+            await page.screenshot({path:'ground-travel-pace-timing01-public-evidence/hub.png',fullPage:true});
+            await fs.writeFile('ground-travel-pace-timing01-public-evidence/report.json',JSON.stringify({stage:STAGE,hub:HUB,revision:WANT,checks,errors,initial:g0,probe,distance,testedAt:new Date().toISOString()},null,2));
             console.log('RESULT',checks.filter(c=>c.pass).length+'/'+checks.length,'PASS');
           }finally{await browser.close()}
           NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ground-walk-pace-tune02-public-evidence
-          path: ground-walk-pace-tune02-public-evidence/
+          name: ground-travel-pace-timing01-public-evidence
+          path: ground-travel-pace-timing01-public-evidence/
           retention-days: 30

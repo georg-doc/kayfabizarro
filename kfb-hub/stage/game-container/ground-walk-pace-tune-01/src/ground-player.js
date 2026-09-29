@@ -35,9 +35,11 @@ const LEGACY_WALK_SPEED = 1.08;
 const WALK_SPEED = REF_SPEED.Walking_A;
 const RUN_SPEED = REF_SPEED.Running_A;
 const SPRINT_SPEED = REF_SPEED.Running_B;
-// Georg TUNE 2 · 2026-09-29: normal Travel W is the second gear, Running_A.
-// Walking_A remains the measured comparison profile; Shift is the only forward upshift to Running_B.
-const TRAVEL_FORWARD_SPEED = RUN_SPEED;
+// Georg TUNE 4 · 2026-09-29: source reference speed is cadence evidence, not gameplay pace.
+// Travel overdrives BOTH world displacement and clip cadence by the same factor so foot/world sync is retained.
+const TRAVEL_CADENCE = 1.8;
+const TRAVEL_FORWARD_SPEED = RUN_SPEED * TRAVEL_CADENCE;
+const TRAVEL_SPRINT_SPEED = SPRINT_SPEED * TRAVEL_CADENCE;
 const HANDOFF_SPEED = 1.108;
 const SPRINT_HANDOFF = RUN_SPEED * 1.08;
 const RATE_MIN = 0.30;
@@ -176,6 +178,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
   const enhanced = feelMode === 'velocity';
   const walkPace = enhanced && query.get('walkPace') === 'travel' ? 'travel' : 'measured';
   const baseForwardSpeed = walkPace === 'travel' ? TRAVEL_FORWARD_SPEED : WALK_SPEED;
+  const forwardSprintSpeed = walkPace === 'travel' ? TRAVEL_SPRINT_SPEED : SPRINT_SPEED;
   const loads=[
     loader.loadAsync(raw(ACTOR)),
     loader.loadAsync(raw(GENERAL)),
@@ -261,7 +264,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
     walk.setParams({
       feelMode:'velocity',
       speed:baseForwardSpeed,
-      sprintMul:SPRINT_SPEED/baseForwardSpeed,
+      sprintMul:forwardSprintSpeed/baseForwardSpeed,
       acceleration:7.5,
       deceleration:11,
       directionResponse:13,
@@ -300,7 +303,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
       const base=1.25;
       walk.setParams({speed:base,sprintMul:cmd.sprint?SPRINT_SPEED/base:1});
     } else {
-      walk.setParams({speed:baseForwardSpeed,sprintMul:SPRINT_SPEED/baseForwardSpeed});
+      walk.setParams({speed:baseForwardSpeed,sprintMul:forwardSprintSpeed/baseForwardSpeed});
     }
   }
 
@@ -434,6 +437,12 @@ export async function createGroundPlayer({ scene, track } = {}) {
         runPlaybackRate:enhanced?rateFor(CLIP.run,RUN_SPEED):null,
         runSpeed:RUN_SPEED,
         sprintSpeed:enhanced?SPRINT_SPEED:null,
+        travelCadence:walkPace==='travel'?TRAVEL_CADENCE:null,
+        travelRunSpeed:walkPace==='travel'?TRAVEL_FORWARD_SPEED:null,
+        travelSprintSpeed:walkPace==='travel'?TRAVEL_SPRINT_SPEED:null,
+        travelRunPlaybackRate:walkPace==='travel'?rateFor(CLIP.run,TRAVEL_FORWARD_SPEED):null,
+        travelSprintPlaybackRate:walkPace==='travel'?rateFor(CLIP.sprint,TRAVEL_SPRINT_SPEED):null,
+        currentPlaybackRate:current?current.getEffectiveTimeScale():null,
         jump:enhanced?{
           gravity:walk.params.gravity,
           jumpV:walk.params.jumpV,
