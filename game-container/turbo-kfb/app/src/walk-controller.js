@@ -33,11 +33,14 @@
 //               turnRate, crouch, impact, autoHop, blocked, cam:{yawOff,pitch,dist} }
 // ============================================================================
 
+import { DIRECT, VELOCITY, normalizeFeel, stepLocalVelocity } from './ground-feel.js';
+
 export function createWalkController(opts = {}) {
   const THREE = opts.THREE;
   const P = Object.assign({
     speed: 5.4, sprintMul: 1.75, gravity: 30, eyeUp: 1.4,
     turnRate: 2.0,       // A/D turn the walker itself — same feel as the flight yaw
+    feelMode: DIRECT, acceleration: 7.5, deceleration: 11, directionResponse: 13,
     minP: 0.05, maxP: 1.2, minD: 0, maxD: 20,
     stepMax: 1.5,        // rise you can walk straight up (smoothed, no pop)
     autoJumpMax: 4.2,    // one whole cube step — the launch speed is scaled to it
@@ -88,7 +91,8 @@ export function createWalkController(opts = {}) {
   const input = new THREE.Vector2();          // x = strafe, y = forward
   const cam = { yawOff: 0, pitch: 0.42, dist: 9 };
   let vy = 0, onGround = true, facing = 0, heading = 0, moving = false, turnRate = 0;
-  let blocked = false, autoHop = false, hSpeed = 0;
+  let blocked = false, autoHop = false, hSpeed = 0, commandMoving = false, desiredSpeed = 0;
+  const localVelocity = { x: 0, y: 0 };
   let hopWind = 0, hopVy = 0, crouch = 0, impact = 0;
   let bounceIx = 0, travel = 0, floatY = null, floatSig = 0, _px = 0, _pz = 0;
   const forward = new THREE.Vector3(0, 0, 1);
@@ -111,9 +115,7 @@ export function createWalkController(opts = {}) {
 
     let ix = input.x, iy = input.y;
     const len = Math.hypot(ix, iy); if (len > 1) { ix /= len; iy /= len; }
-    moving = Math.hypot(ix, iy) > 0.08;
-    _move.set(0, 0, 0).addScaledVector(_fwd, iy).addScaledVector(_right, ix);
-    if (moving) _move.normalize();
+    commandMoving = Math.hypot(ix, iy) > 0.08;
 
     // --- windup: anticipation ticks first, then the launch releases -----------
     let speedMul = 1;
@@ -126,7 +128,34 @@ export function createWalkController(opts = {}) {
       crouch = Math.max(0, crouch - dt * 8);
     }
 
-    const sp = P.speed * (sprint ? P.sprintMul : 1) * speedMul;
+    const commandedSpeed = P.speed * (sprint ? P.sprintMul : 1) * speedMul;
+    desiredSpeed = commandMoving ? commandedSpeed : 0;
+    let sp = desiredSpeed;
+
+    if (normalizeFeel(P.feelMode) === VELOCITY) {
+      const next = stepLocalVelocity(localVelocity, {
+        x: commandMoving ? ix * commandedSpeed : 0,
+        y: commandMoving ? iy * commandedSpeed : 0,
+      }, dt, {
+        acceleration: P.acceleration,
+        deceleration: P.deceleration,
+        directionResponse: P.directionResponse,
+        snap: .0005,
+      });
+      localVelocity.x = next.x;
+      localVelocity.y = next.y;
+      sp = next.speed;
+      moving = sp > 0.02;
+      _move.set(0, 0, 0);
+      if (moving) _move.addScaledVector(_fwd, localVelocity.y / sp).addScaledVector(_right, localVelocity.x / sp).normalize();
+    } else {
+      moving = commandMoving;
+      localVelocity.x = moving ? ix * sp : 0;
+      localVelocity.y = moving ? iy * sp : 0;
+      _move.set(0, 0, 0).addScaledVector(_fwd, iy).addScaledVector(_right, ix);
+      if (moving) _move.normalize();
+    }
+
     hSpeed = 0;
 
     if (moving) {
@@ -163,6 +192,7 @@ export function createWalkController(opts = {}) {
         else if (darf(pos.x, nz, 0, Math.sign(_move.z))) { pos.z = nz; slid = true; }
         blocked = !slid;
         hSpeed = slid ? sp * 0.7 : 0;
+        if (blocked && normalizeFeel(P.feelMode) === VELOCITY) { localVelocity.x *= .25; localVelocity.y *= .25; }
       }
 
       // --- predictive auto-hop: fire while the ledge is still a steig-time away
@@ -229,7 +259,8 @@ export function createWalkController(opts = {}) {
     jump() { if (onGround && hopWind <= 0) { hopVy = P.jumpV; hopWind = P.windup; bounceIx = 0; floatY = null; } },
     // Ein Höhenwechsel von außen (Rettung aus einer Säule, Plateau): fließend, nie geschnitten.
     floatTo(y) { if (floatY == null || Math.abs(y - floatY) > 0.05) floatY = y; },
-    setParams(p) { Object.assign(P, p || {}); },
+    setParams(p) { Object.assign(P, p || {}); P.feelMode = normalizeFeel(P.feelMode); },
+    setFeelMode(mode) { P.feelMode = normalizeFeel(mode); localVelocity.x = 0; localVelocity.y = 0; },
     /* v25.2d · Der Kameraabstand ist bisher nur relativ verstellbar (`zoom`). Wenn die KÖRPERGRÖSSE
        des Pets sich ändert, muß er absolut mitgehen: derselbe Bildanteil bei dreifacher Figur
        heißt dreifacher Abstand. Ein relatives `zoom(d)` müßte dazu den Istwert kennen — der Aufrufer
@@ -241,7 +272,8 @@ export function createWalkController(opts = {}) {
     reset(x, z, groundY, hdg) {
       pos.set(x || 0, (groundY || 0), z || 0); vy = 0; onGround = true;
       heading = hdg || 0; facing = heading; cam.yawOff = 0;
-      hopWind = 0; crouch = 0; impact = 0; hSpeed = 0;
+      hopWind = 0; crouch = 0; impact = 0; hSpeed = 0; commandMoving = false; desiredSpeed = 0;
+      localVelocity.x = 0; localVelocity.y = 0;
       bounceIx = 0; floatY = null; floatSig = 0; travel = 0; _px = pos.x; _pz = pos.z;
     },
     get eyeUp() { return P.eyeUp; },
@@ -249,6 +281,7 @@ export function createWalkController(opts = {}) {
       return {
         position: pos, facing, heading, forward, onGround, moving, vy, turnRate, cam,
         blocked, autoHop, crouch, impact, speed: hSpeed, sprinting: !!_sprint,
+        feelMode: normalizeFeel(P.feelMode), commandMoving, desiredSpeed, localVelocity: { ...localVelocity },
         travel, float: floatSig, floating: floatSig !== 0, bouncing: bounceIx > 0, bounceIx,
         walkRef: P.speed, runRef: P.speed * P.sprintMul,
       };
