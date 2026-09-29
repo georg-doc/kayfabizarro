@@ -43,5 +43,22 @@ Core decision:
 ## Stage / Hub
 Not published. This is a design/briefing checkpoint, not a human-facing runtime milestone.
 
-## Exactly one next gate
-When the current Locomotion/Flight work settles, hand `CLAUDE_DESIGN_BRIEF_JOYRIDE_WORLD_01.md` to Claude Design for **one** compact Joyride world chunk. No runtime integration until the visual recipe is returned.
+
+## Timeout recovery · Freeform Story/Board World input
+Recovered from chat after timeout and persisted on 2026-09-29.
+
+New user direction:
+- test Claude Design creatively with the real Race/Free-Roam tracks and all available assets;
+- allow BoardGameBits / dominoes / cards as actual world structures;
+- revisit the existing Storytelling/Tactical Map donor as a possible **driveable world form**;
+- allow compressed geography, e.g. a country traversed in ~1–2 minutes with surreal oversized landmarks;
+- consider a mostly 2D/relief game-board world in which local POIs / Residents / stunt pockets rise as physical toys/pop-ups;
+- prioritize performance, travel joy and handmade identity over literal cartographic scale.
+
+Durable brief:
+- `CLAUDE_DESIGN_FREEFORM_JOYRIDE_MAP_TOY_WORLD_01.md`
+
+This is additive to JOYRIDE-WORLD-01, not a replacement World runtime.
+
+## Exactly one current next gate
+**Parallel Claude Design exploration may start now** from the Freeform brief while Locomotion/Orbit integration stays separate. Return one selected visual/recipe candidate; do not integrate it into runtime until the mobility owner is stable.

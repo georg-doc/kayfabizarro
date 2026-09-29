@@ -10,3 +10,12 @@
 - Added performance doctrine and hero/mid/far material tiers.
 - Added Claude Design brief for one compact Joyride world chunk.
 - No runtime, Locomotion, Kart, Camera, Flight, Hub or Stage changes.
+
+
+## 2026-09-29 · v0.2 · Freeform Story/Board World recovery
+- Recovered post-timeout direction: let Claude Design explore a performance-first Joyride world using real tracks/assets with more creative freedom.
+- Reused existing Storytelling/Tactical Map donor instead of inventing a second map/world system.
+- Added driveable-board / compressed-geography / oversized-landmark / pop-up-atlas options.
+- Added BoardGameBits, dominoes and cards as first-class structural vocabulary.
+- Added three-direction exploration (Diorama / Board World / Hybrid Atlas), then one bounded selected 3D chunk + declarative recipe.
+- Runtime/mobility ownership remains untouched.
