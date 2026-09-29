@@ -2257,3 +2257,31 @@ Reserved future Stage route:
 
 Exactly one later productive gate:
 **RESIDENT-SOCIAL-MEMORY-01** in the real receiving world after relevant current recovery blockers clear. No standalone proxy review page.
+## 2026-09-29 · KFB Town · Resident Epistemic Culture + Base-24 living map
+
+Status: **DESIGN MILESTONE · SITE-FIRST · NOT RUNTIME IMPLEMENTED**
+
+Added:
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_EPISTEMIC_CULTURE_2026-09-29.md`
+- `skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md`
+
+Direction:
+- Town is conflict-rich but escalation-poor; long-lived Residents can combine affection, irritation, rivalry and shared history.
+- Shared epistemic method culture uses the existing KFB triad: official story / stated purpose · POSIWID + cui bono · Hanlon's Bizarro-Blödsinn, without forcing shared conclusions.
+- Evidence, Resident perception, interpretation and embodied performance stay separate.
+- Semantic Triplets remain the ChatterBox compression grammar; Fluff-o-lect remains Closure on word level.
+- Jargon, expert language and subcultural/dog-whistle vocabulary are character signals, not truth markers.
+- Base Social Memory starts from authored relationship priors and grows through compact meaningful receipts.
+- Current Resident Atlas session cut contains 27 resident recipes; Base-24 is therefore curated as 24 social identities rather than copied from recipe count.
+- Base-24 v0.1 contains **24/24 rows** and separates Protagonist A/B and Farmer A/B into distinct social identities.
+- Existing archetype direction is preserved: FrizzleBob Herald/Guide · Lorekeeper Mentor · King Kayfabian Ruler · Offica Doppeldenk Threshold Guardian · Trickster/Shadow movable.
+- Added Jung-style drive, social-friction, habitat/routine and Signature-Deck lanes as authoring heuristics.
+- Dialogue presentation direction: clean lightly rounded rectangular speech boxes, separate concise thought treatment, no Claymation/Cavey-outline bubble skin; reuse existing ChatterBox ownership.
+- Resident Interaction MVP target now combines routine → AIDA → speech/choice → optional Card/Gift → Reaction Choreography → optional thought → Lean Memory receipt → resume/retarget.
+
+Evidence:
+- new design docs: **2**;
+- Base-24 roster rows: **24/24**;
+- runtime/browser/Stage/Live changes: **0**.
+
+Existing Social Card Relay recovery remains unchanged at **TOWN-RESOURCE-PATH-01**. Character authoring may continue Site-first; GitHub remains milestone-only.
