@@ -1,6 +1,12 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { createWalkController } from './walk-controller.js';
+import {
+  ROLES as LOCOMOTION_ROLES,
+  measureClip as measureLocomotionClip,
+  buildProfileSet,
+  consumerView,
+} from '/tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js';
 
 const PIN = '29c7500b39d20945f4f8e73fb02fef91a055b02c';
 const ROOT = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/' + PIN + '/';
@@ -35,11 +41,14 @@ const LEGACY_WALK_SPEED = 1.08;
 const WALK_SPEED = REF_SPEED.Walking_A;
 const RUN_SPEED = REF_SPEED.Running_A;
 const SPRINT_SPEED = REF_SPEED.Running_B;
-// Georg TUNE 4 · 2026-09-29: source reference speed is cadence evidence, not gameplay pace.
-// Travel overdrives BOTH world displacement and clip cadence by the same factor so foot/world sync is retained.
-const TRAVEL_CADENCE = 1.8;
-const TRAVEL_FORWARD_SPEED = RUN_SPEED * TRAVEL_CADENCE;
-const TRAVEL_SPRINT_SPEED = SPRINT_SPEED * TRAVEL_CADENCE;
+// Travel gameplay pace is intentionally separate from clip reference speed.
+// Donor: legacy KFB Travel walker used speed 5.4 and sprintMul 1.75 (= 9.45).
+// The ToolBox locomotion owner supplies clip roles + measured cadence; walk-controller still owns world movement.
+const TRAVEL_FORWARD_SPEED = 5.4;
+const TRAVEL_SPRINT_SPEED = 9.45;
+const TRAVEL_RATE_MAX = 3.0;
+const PROFILE_OWNER_PATH = '/tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js';
+const PROFILE_CANDIDATE_NAMES = Object.freeze([...new Set(LOCOMOTION_ROLES.flatMap((r) => [r.clip, ...(r.among || [])]).filter(Boolean))]);
 const HANDOFF_SPEED = 1.108;
 const SPRINT_HANDOFF = RUN_SPEED * 1.08;
 const RATE_MIN = 0.30;
@@ -78,6 +87,16 @@ function findFeet(root) {
   const left = found.find((n) => /\.l$|left/i.test(n.name)) || found.slice().sort((a,b)=>a.position.x-b.position.x)[0] || null;
   const right = found.find((n) => /\.r$|right/i.test(n.name)) || found.find((n)=>n!==left) || null;
   return { left, right };
+}
+function findHips(root) {
+  let exact=null, pelvis=null, rootNode=null;
+  root.traverse((n) => {
+    if (!n.name) return;
+    if (!exact && /^hips$/i.test(n.name)) exact=n;
+    if (!pelvis && /hips|pelvis/i.test(n.name)) pelvis=n;
+    if (!rootNode && /^root$/i.test(n.name)) rootNode=n;
+  });
+  return exact || pelvis || rootNode || root;
 }
 function snapshotTransforms(root) {
   const rows = [];
@@ -222,17 +241,79 @@ export async function createGroundPlayer({ scene, track } = {}) {
     : [CLIP.walk,CLIP.run];
   for (const name of cyclicNames) contacts[name]=measurePrimaryContact(figure,clips[name],feet.left,actorHeight);
 
+  let travelProfileSet=null, travelProfile=null;
+  if (walkPace === 'travel') {
+    const profileClipMap=new Map();
+    for (const name of PROFILE_CANDIDATE_NAMES) {
+      const src=sources.get(name);
+      if (src) profileClipMap.set(name,clips[name]||controllerOwnedClip(figure,src));
+    }
+    const hips=findHips(figure);
+    const profileMixer=new THREE.AnimationMixer(figure);
+    const fwd=new THREE.Vector3(0,0,1), side=new THREE.Vector3(1,0,0);
+    const measure=(clip)=>{
+      const restore=snapshotTransforms(figure);
+      try {
+        return measureLocomotionClip(THREE,{
+          mixer:profileMixer,clip,space:figure,feet:{l:feet.left,r:feet.right},hips,fwd,side,fps:60,
+        });
+      } finally {
+        profileMixer.stopAllAction();
+        try { profileMixer.uncacheClip(clip); } catch {}
+        restore();
+      }
+    };
+    travelProfileSet=buildProfileSet(THREE,{
+      clips:[...profileClipMap].map(([name,clip])=>({name,clip,pack:'KayKit Character Animations 1.1'})),
+      measure,rigFamily:'Rig_Medium',actor:'ActionFigure',actorScale:1,
+    });
+    travelProfile=consumerView(travelProfileSet);
+    for (const role of ['idle','run','sprint','backward','strafe.left','strafe.right','jump.start','jump.air','jump.land']) {
+      if (!travelProfile.roles[role]?.clip) throw new Error('Travel locomotion profile role unresolved: '+role);
+    }
+  }
+  const profileRole=(role)=>travelProfile?.roles?.[role]||null;
+  const clipForRole=(role,fallback)=>profileRole(role)?.clip||fallback;
+  const sourceSpeedForRole=(role)=>{
+    const p=profileRole(role);
+    if (!p || !(p.worldSpeed>0)) return 0;
+    return p.worldSpeed/Math.max(0.001,p.rate||1);
+  };
+  const profileContactPhase=(role,sideName='l')=>{
+    const p=travelProfileSet?.profiles?.[role]?.measured;
+    const spans=p?.contacts?.['foot.'+sideName]?.planted||[];
+    const frames=p?.frames||0;
+    if(!frames||!spans.length)return 0;
+    const phases=spans.map(([a,b])=>(((a+b)/2)-1)/Math.max(1,frames-1));
+    return phases.sort((a,b)=>phaseDistance(a,.25)-phaseDistance(b,.25))[0]||0;
+  };
+  const profileTransition=(fromRole,toRole)=>{
+    if(!travelProfile)return null;
+    return travelProfile.transitions?.[fromRole+'→'+toRole]
+      || (toRole==='jump.start'?travelProfile.transitions?.['any→jump.start']:null)
+      || null;
+  };
+
   const mixer=new THREE.AnimationMixer(figure);
-  let current=null,currentName=null,currentSemantic='idle',landTimer=0,jumpStartTimer=0;
-  function rateFor(name,speed) {
+  let current=null,currentName=null,currentSemantic='idle',currentRole='idle',lastTransition=null,landTimer=0,jumpStartTimer=0;
+  function rateFor(name,speed,role=null) {
+    if(walkPace==='travel'&&role) {
+      const ref=sourceSpeedForRole(role);
+      return ref ? clamp(Math.max(0.001,speed)/ref,RATE_MIN,TRAVEL_RATE_MAX) : 1;
+    }
     const ref=REF_SPEED[name];
     const min=enhanced?RATE_MIN:.45;
     return ref ? clamp(Math.max(0.001,speed)/ref,min,RATE_MAX) : 1;
   }
-  function transition(name, semantic, { sync=false, speed=0, fade=FADE }={}) {
+  function transition(name, semantic, { role=null, sync=false, speed=0, fade=null }={}) {
+    const nextRole=role||semantic;
+    const hint=walkPace==='travel'?profileTransition(currentRole,nextRole):null;
+    const doSync=walkPace==='travel' ? !!hint?.syncPhase : sync;
+    const fadeSec=fade==null ? (hint?.fade??FADE) : fade;
     if(currentName===name) {
-      if(REF_SPEED[name]) current.setEffectiveTimeScale(rateFor(name,speed));
+      if((walkPace==='travel'&&role)||REF_SPEED[name]) current.setEffectiveTimeScale(rateFor(name,speed,role));
       currentSemantic=semantic;
+      currentRole=nextRole;
       return;
     }
     const target=mixer.clipAction(clips[name],figure);
@@ -241,18 +322,19 @@ export async function createGroundPlayer({ scene, track } = {}) {
     target.setLoop(oneShot?THREE.LoopOnce:THREE.LoopRepeat,oneShot?1:Infinity);
     target.clampWhenFinished=oneShot;
     target.setEffectiveWeight(1);
-    target.setEffectiveTimeScale(REF_SPEED[name]?rateFor(name,speed):1);
+    target.setEffectiveTimeScale((walkPace==='travel'&&role)||REF_SPEED[name]?rateFor(name,speed,role):1);
     target.reset();
-    if(sync && current && cyclicNames.includes(currentName) && cyclicNames.includes(name)) {
+    if(doSync && current && cyclicNames.includes(currentName) && cyclicNames.includes(name)) {
       const srcClip=clips[currentName], dstClip=clips[name];
       const srcPhase=wrap01(current.time/Math.max(0.001,srcClip.duration));
-      const srcContact=contacts[currentName]||0;
-      const dstContact=contacts[name]||0;
+      const srcContact=walkPace==='travel'?profileContactPhase(currentRole):contacts[currentName]||0;
+      const dstContact=walkPace==='travel'?profileContactPhase(nextRole):contacts[name]||0;
       target.time=dstClip.duration*wrap01(dstContact+(srcPhase-srcContact));
     }
     target.play();
-    if(current) current.crossFadeTo(target,fade,true);
-    current=target;currentName=name;currentSemantic=semantic;
+    if(current) current.crossFadeTo(target,fadeSec,true);
+    lastTransition={from:currentRole,to:nextRole,fade:fadeSec,syncPhase:doSync};
+    current=target;currentName=name;currentSemantic=semantic;currentRole=nextRole;
   }
 
   const walk=createWalkController({THREE});
@@ -292,7 +374,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
   const velocity=new THREE.Vector3(), prev=new THREE.Vector3();
   const groundNormal=new THREE.Vector3(0,1,0);
   let previousOnGround=true;
-  transition(CLIP.idle,'idle',{fade:0});
+  transition(clipForRole('idle',CLIP.idle),'idle',{role:walkPace==='travel'?'idle':null,fade:0});
 
   function configureEnhancedSpeed(cmd) {
     if (!enhanced) return;
@@ -316,8 +398,8 @@ export async function createGroundPlayer({ scene, track } = {}) {
     };
     if (walkPace === 'travel') {
       return cmd.sprint
-        ? {name:CLIP.sprint,semantic:'sprint'}
-        : {name:CLIP.run,semantic:'run'};
+        ? {name:clipForRole('sprint',CLIP.sprint),semantic:'sprint',role:'sprint'}
+        : {name:clipForRole('run',CLIP.run),semantic:'run',role:'run'};
     }
     if (cmd.sprint) {
       if (st.speed < HANDOFF_SPEED) return {name:CLIP.walk,semantic:'walk.fast'};
@@ -352,7 +434,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
       if(cmd.jump && walk.state.onGround) {
         walk.jump();
         jumpStartTimer=enhanced?0.30:0.24;
-        transition(CLIP.jumpStart,'jumpStart',{fade:0.08});
+        transition(clipForRole('jump.start',CLIP.jumpStart),'jumpStart',{role:walkPace==='travel'?'jump.start':null,fade:walkPace==='travel'?null:0.08});
       }
       walk.setInput(cmd.strafe,cmd.forward);
       walk.update(dt,{turn:cmd.turn,sprint:cmd.sprint},groundHeightAt);
@@ -381,33 +463,36 @@ export async function createGroundPlayer({ scene, track } = {}) {
       api.input.steer=cmd.turn;
 
       if(previousOnGround && !st.onGround && jumpStartTimer<=0.02) {
-        transition(CLIP.jumpAir,'jumpAir',{fade:0.08});
+        transition(clipForRole('jump.air',CLIP.jumpAir),'jumpAir',{role:walkPace==='travel'?'jump.air':null,fade:walkPace==='travel'?null:0.08});
       }
       if(!previousOnGround && st.onGround) {
         landTimer=enhanced?(st.moving?0.12:0.22):0.26;
-        transition(CLIP.jumpLand,'jumpLand',{fade:0.08});
+        transition(clipForRole('jump.land',CLIP.jumpLand),'jumpLand',{role:walkPace==='travel'?'jump.land':null,fade:walkPace==='travel'?null:0.08});
       }
 
       if(jumpStartTimer>0) {
         jumpStartTimer=Math.max(0,jumpStartTimer-dt);
-        if(!st.onGround && jumpStartTimer<=0) transition(CLIP.jumpAir,'jumpAir',{fade:0.08});
+        if(!st.onGround && jumpStartTimer<=0) transition(clipForRole('jump.air',CLIP.jumpAir),'jumpAir',{role:walkPace==='travel'?'jump.air':null,fade:walkPace==='travel'?null:0.08});
       } else if(!st.onGround) {
-        transition(CLIP.jumpAir,'jumpAir',{fade:0.08});
+        transition(clipForRole('jump.air',CLIP.jumpAir),'jumpAir',{role:walkPace==='travel'?'jump.air':null,fade:walkPace==='travel'?null:0.08});
       } else if(landTimer>0) {
         landTimer=Math.max(0,landTimer-dt);
       } else if(st.moving) {
         if (enhanced) {
           const role=enhancedLocomotion(cmd,st);
-          transition(role.name,role.semantic,{sync:true,speed:st.speed});
+          transition(role.name,role.semantic,{role:role.role||null,sync:true,speed:st.speed});
         } else {
           const run=st.sprinting;
           transition(run?CLIP.run:CLIP.walk,run?'run':'walk',{sync:true,speed:st.speed});
         }
       } else {
-        transition(CLIP.idle,'idle',{fade:0.12});
+        transition(clipForRole('idle',CLIP.idle),'idle',{role:walkPace==='travel'?'idle':null,fade:walkPace==='travel'?null:0.12});
       }
 
-      if(current && REF_SPEED[currentName]) current.setEffectiveTimeScale(rateFor(currentName,st.speed));
+      if(current) {
+        if(walkPace==='travel'&&currentRole) current.setEffectiveTimeScale(rateFor(currentName,st.speed,currentRole));
+        else if(REF_SPEED[currentName]) current.setEffectiveTimeScale(rateFor(currentName,st.speed));
+      }
       mixer.update(dt);
       previousOnGround=st.onGround;
       api.currentAnimation=currentName;
@@ -430,19 +515,24 @@ export async function createGroundPlayer({ scene, track } = {}) {
         enhanced,
         walkPace,
         forwardSpeed:enhanced?baseForwardSpeed:LEGACY_WALK_SPEED,
-        travelDefaultClip:walkPace==='travel'?CLIP.run:CLIP.walk,
-        travelShiftClip:walkPace==='travel'?CLIP.sprint:null,
+        travelDefaultClip:walkPace==='travel'?clipForRole('run',CLIP.run):CLIP.walk,
+        travelShiftClip:walkPace==='travel'?clipForRole('sprint',CLIP.sprint):null,
         walkSpeed:enhanced?(walkPace==='travel'?WALK_SPEED:baseForwardSpeed):LEGACY_WALK_SPEED,
         walkPlaybackRate:enhanced?rateFor(CLIP.walk,WALK_SPEED):null,
         runPlaybackRate:enhanced?rateFor(CLIP.run,RUN_SPEED):null,
         runSpeed:RUN_SPEED,
         sprintSpeed:enhanced?SPRINT_SPEED:null,
-        travelCadence:walkPace==='travel'?TRAVEL_CADENCE:null,
+        profileOwner:walkPace==='travel'?PROFILE_OWNER_PATH:null,
+        profileSchema:walkPace==='travel'?travelProfile?.schema:null,
+        profileSource:walkPace==='travel'?travelProfile?.source:null,
+        profileRoles:walkPace==='travel'?Object.fromEntries(Object.entries(travelProfile.roles).map(([k,v])=>[k,{clip:v.clip||null,rate:v.rate||null,worldSpeed:v.worldSpeed||0,sourceBacked:v.sourceBacked??null,variant:v.variant||null}])):null,
         travelRunSpeed:walkPace==='travel'?TRAVEL_FORWARD_SPEED:null,
         travelSprintSpeed:walkPace==='travel'?TRAVEL_SPRINT_SPEED:null,
-        travelRunPlaybackRate:walkPace==='travel'?rateFor(CLIP.run,TRAVEL_FORWARD_SPEED):null,
-        travelSprintPlaybackRate:walkPace==='travel'?rateFor(CLIP.sprint,TRAVEL_SPRINT_SPEED):null,
+        travelRunPlaybackRate:walkPace==='travel'?rateFor(clipForRole('run',CLIP.run),TRAVEL_FORWARD_SPEED,'run'):null,
+        travelSprintPlaybackRate:walkPace==='travel'?rateFor(clipForRole('sprint',CLIP.sprint),TRAVEL_SPRINT_SPEED,'sprint'):null,
         currentPlaybackRate:current?current.getEffectiveTimeScale():null,
+        currentRole:walkPace==='travel'?currentRole:null,
+        lastTransition:walkPace==='travel'?lastTransition:null,
         jump:enhanced?{
           gravity:walk.params.gravity,
           jumpV:walk.params.jumpV,
