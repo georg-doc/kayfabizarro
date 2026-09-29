@@ -137,8 +137,20 @@ try {
   check('page/console errors empty', pageErrors.length === 0, JSON.stringify(pageErrors));
 
   const report = { base:BASE, checks, pageErrors, testedAt:new Date().toISOString() };
-  await fs.writeFile(out + '/checkpoint-a-report.json', JSON.stringify(report,null,2));
+  await fs.writeFile(out + '/checkpoint-report.json', JSON.stringify(report,null,2));
   console.log('RESULT', checks.filter(c=>c.pass).length + '/' + checks.length, 'PASS');
+} catch (error) {
+  const failure = {
+    base: BASE,
+    checks,
+    pageErrors,
+    error: String(error?.stack || error),
+    testedAt: new Date().toISOString(),
+  };
+  await fs.writeFile(out + '/failure.json', JSON.stringify(failure,null,2));
+  try { await page.screenshot({ path: out + '/failure.png', fullPage: true }); } catch {}
+  console.error('BROWSER_PROOF_FAIL', failure.error);
+  throw error;
 } finally {
   await browser.close();
 }
