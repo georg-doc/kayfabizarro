@@ -659,3 +659,20 @@ Binding direction:
 6. Clay/facade/shadow work is explicitly out of this chat and owned by the separate design chat.
 
 Exactly one current implementation gate here: **GROUND-LOCOMOTION-PROFILE-CONSUMER-01**. Cars and Flight are queued follow-up slices only after Ground proves the pattern.
+
+
+## GROUND-LOCOMOTION-PROFILE-CONSUMER-01 · owner checkpoint
+
+Status: **STABLE OWNER PATHS PROMOTED ON CANDIDATE BRANCH · RUNTIME NOT YET CHANGED**
+
+Exact donor blobs promoted byte-identically:
+- `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js` ← session-cut blob `3db9fbd482e6a527c417e79af826138ff28efa33`;
+- `tools/KFB-ToolBox/kfb-lib/anim-map.v1.js` ← session-cut blob `7120f80e25e8a91106441039fb036c059a4d0e0d`.
+
+Owner meaning:
+- `locomotion-profiles.v1.js` owns semantic gait roles, measured clip facts and transition hints; it is not a movement controller;
+- `anim-map.v1.js` owns broader state→clip/procedural mapping, including seated/drive presentation states; it is not vehicle physics;
+- Turbo Ground remains a consumer; `walk-controller` remains sole Ground world-position writer;
+- future Race/Flight slices consume these/profile-adjacent facts without moving their physics owners.
+
+Next checkpoint: wire Travel Ground presentation to the stable locomotion owner and remove the Travel-specific hand-wired clip/rate mapping. Preserve measured/no-query regression until the new Travel path is proven.
