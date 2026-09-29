@@ -1,0 +1,51 @@
+{
+  "schema": "kfb.playcanvas-donor-source/1",
+  "status": "DONOR_LOCKED_RUNTIME_SNAPSHOT",
+  "ownerRepository": "georg-doc/kayfabizarro",
+  "ownerBranch": "chatgpt-web/playcanvas-donor-01-2026-09-29",
+  "userFork": {
+    "projectId": 1609943,
+    "name": "KFB Joyride 01",
+    "forkFrom": 643289,
+    "exportedProjectZip": {
+      "dropboxPath": "/CLAUDE/KFB Joyride 01_2026_9_29-15_8_46.zip",
+      "bytes": 52054796,
+      "dropboxContentHash": "07920bc1a4a6f06c8ec66b229676386f4386618e8fc5a93b8af7e47274d10781"
+    },
+    "sceneId": 2608057
+  },
+  "runtimeDonor": {
+    "publicShare": "https://playcanv.as/p/CxgnAp22/",
+    "publicEntry": "https://playcanv.as/apps/BfRjx709/index.html",
+    "title": "Vehicle Physics",
+    "mirrorManifest": "static/KFB_DONOR_MIRROR.json",
+    "mirroredFiles": 42,
+    "mirroredBytes": 22054130,
+    "captureErrors": 0
+  },
+  "parityBaseline": {
+    "originalProbeRun": 36603881007,
+    "originalProbeJob": 109527828039,
+    "canvas": [
+      1280,
+      720
+    ],
+    "objects": [
+      "Car Physics",
+      "Car Graphics",
+      "Follow Camera",
+      "Light"
+    ],
+    "driveWSeconds": 1.8,
+    "driveDisplacement": 8.996585162084834,
+    "resetKey": "R",
+    "pageErrors": 0,
+    "consoleErrors": 0
+  },
+  "rules": [
+    "Do not retune vehicle physics, camera, controls or reset before donor parity is accepted.",
+    "Do not replace Desert or Buggy before the self-hosted mirror passes.",
+    "First KFB changes after parity are look/material/texture swaps, not architecture replacement.",
+    "Keep this donor snapshot immutable; create later variants additively."
+  ]
+}
