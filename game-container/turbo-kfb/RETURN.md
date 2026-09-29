@@ -633,3 +633,29 @@ Direct human test surface:
 Artifact: `11050371267`.
 
 Exactly one current gate: Georg freeplays the direct Stage and judges only whether cadence + covered distance now feel right. Hub-card repair is non-blocking metadata.
+
+
+## Georg human mobility-profile review · 2026-09-29 · TUNE 5
+
+Outcome: **TUNE · TIMING IMPROVED · PROFILE CONSUMPTION STILL WRONG**
+
+Human result on public Travel 1.8× runtime:
+- normal W feels better but still not good;
+- run/sprint still feel too slow;
+- explicit question: are the KayKit creator / KCL movement-state-animation mapping lessons actually being consumed?
+
+Confirmed architecture finding:
+- KCL-M1 + ToolBox already define KayKit locomotion as semantic roles with measured cadence/contact facts and transition hints;
+- current Turbo Travel consumer uses only a partial hand-wired subset and a shared 1.8× clamp;
+- the stable ToolBox owner path `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js` is currently missing from main; the owner exists only in ToolBox session-cut exports;
+- therefore the consumer is not actually reading one stable canonical profile owner.
+
+Binding direction:
+1. **Ground first:** promote the existing ToolBox locomotion profile to a stable owner path and wire Turbo Ground presentation states to it. `walk-controller` remains the sole world-movement owner.
+2. Do not keep tuning local `Running_A/Running_B` constants as a substitute for the profile owner.
+3. Preserve current wall-clock fix and Orbit.
+4. **Cars later, separate owner:** KFB-Stunt-Car-Race remains physics/steering/drift/jump owner. Existing v0.8 human-accepted driving feel is protected; Vehicle Lab / Box Stop profiles become consumed presentation/vehicle profiles rather than parallel physics constants.
+5. **Flight later, separate owner:** KFB-Travel-Globe remains Flight movement owner (`carpet.js` / Travel mode bridge). ToolBox/vehicle profiles may describe carrier geometry/presentation/capability but must not create second flight physics.
+6. Clay/facade/shadow work is explicitly out of this chat and owned by the separate design chat.
+
+Exactly one current implementation gate here: **GROUND-LOCOMOTION-PROFILE-CONSUMER-01**. Cars and Flight are queued follow-up slices only after Ground proves the pattern.

@@ -50,3 +50,26 @@ Run `36602463818`:
 
 Direct Stage:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-walk-pace-tune-01/?ground=1&groundFeel=velocity&walkPace=travel`
+
+
+## TUNE 5 · canonical profile consumption
+Georg reports the public 1.8× Travel candidate is improved but still wrong: W better/not good; run/sprint too slow.
+
+Root architecture issue:
+- existing KayKit KCL/ToolBox semantic locomotion profile is not a stable runtime dependency yet;
+- Turbo Ground currently hand-wires a subset instead of consuming that owner;
+- stable target owner path: `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`;
+- main currently does not contain that stable file; current source exists in ToolBox session-cut exports.
+
+Resume only with **GROUND-LOCOMOTION-PROFILE-CONSUMER-01**:
+- promote exact existing profile owner without reauthoring its role taxonomy;
+- Ground presentation consumes role/transition facts;
+- walk-controller stays sole movement writer;
+- keep Travel wall-clock fix + Orbit;
+- no further local pace multiplier tuning until profile integration is proven.
+
+Queued after Ground only:
+- **RACE-VEHICLE-PROFILE-CONSUMER-01** in `georg-doc/KFB-Stunt-Car-Race`, protecting v0.8 accepted driving feel;
+- **TRAVEL-FLIGHT-PROFILE-CONSUMER-01** in `georg-doc/KFB-Travel-Globe`, protecting Travel Flight / `carpet.js` movement ownership.
+
+Clay/facade/shadow is explicitly a different chat and out of scope here.
