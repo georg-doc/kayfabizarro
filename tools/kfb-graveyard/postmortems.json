@@ -1,8 +1,8 @@
 {
  "$schema": "kfb-postmortem-graveyard/v1",
- "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session.",
- "version": "1.6.0",
- "updated": "2026-09-24",
+ "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290.",
+ "version": "1.7.0",
+ "updated": "2026-09-29",
  "graves": [
   {
    "id": "webgpu-foundation",
@@ -771,6 +771,25 @@
     "communication"
    ],
    "source": "Session 2026-09-24"
+  },
+  {
+   "id": "kanon-irgendwo-auf-github",
+   "date": "2026-09-29",
+   "who": "process",
+   "size": "large",
+   "stone": "Hier ruht: der Kanon, der nur irgendwo auf GitHub lag",
+   "hover": "WSA Lead ließ abgenommene Shadow-/Contact- und Clay-Fassaden-Regeln in Session-Cuts und einem branch-lokalen S5-Brief liegen. Die Bytes waren da, aber ein frischer Chat konnte von START_HERE aus den geltenden Stand nicht zuverlässig finden und behandelte gelöste Arbeit wieder als offen.",
+   "lesson": "Persistiert ist nicht: irgendwo committed. Persistiert ist: stabil geroutet, gepinnt, mit Vorrang und offenem Rest für den nächsten kalten Chat.",
+   "trigger": "Kann ein frischer Chat die abgenommene Regel von START_HERE aus finden?",
+   "tags": [
+    "wsa-lead",
+    "persistence",
+    "canon",
+    "routing",
+    "fresh-chat",
+    "semantic-data-loss"
+   ],
+   "source": "skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md"
   }
  ]
 }
