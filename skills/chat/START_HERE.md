@@ -1386,3 +1386,14 @@ Exactly one next gate:
 **TOWN-RESOURCE-PATH-01** — isolate the existing Town resource-path owner and resolve/classify those requests before rerunning the unchanged Relay proof.
 
 Do not start ChatterBox/Reaction binding, Blender gift/brawl integration, public Stage or Live promotion until this recovery gate is resolved.
+## 2026-09-29 · Resident character-design checkpoint · Epistemic Culture + Base-24
+
+For ongoing Site-first Resident authoring, read:
+- `workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_EPISTEMIC_CULTURE_2026-09-29.md`
+- `workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md`
+
+The first document records the shared epistemic culture without imposing one ideology: official story / stated purpose · POSIWID + cui bono · Hanlon's Bizarro-Blödsinn; Evidence→Perception→Interpretation→Performance; semantic Triplets; Fluff-o-lect as word-level Closure; bounded jargon/news use; Base Social Memory plus emergent receipts.
+
+The second document is the living **Base-24 v0.1**: exactly 24 social Resident identities curated from the current 27-recipe Resident Atlas plus Town-specific characters. It preserves the earlier Lorekeeper/Mentor, King/Ruler, Offica/Threshold-Guardian and FrizzleBob/Herald directions, adds Jung-style drives and records the clean rectangular speech/thought presentation plus a combined Resident Interaction MVP.
+
+This is design state only. No new ChatterBox, bubble, Lean Memory, runtime, Stage or Live owner is created. The implemented Social Card Relay remains frozen behind `TOWN-RESOURCE-PATH-01`.
