@@ -1,0 +1,20 @@
+{
+  "schema": "kfb.stage-mirror/0.1",
+  "product": "GROUND-CONTROLLER-DONOR-01",
+  "status": "STAGE_MIRROR_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29",
+  "runtimeSourceHead": "ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4",
+  "currentHandoffHead": "86fbfdda4c0e62813c1543dcca9252c5ce2fd8ae",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity",
+  "query": "ground=1&groundFeel=velocity",
+  "evidence": {
+    "run": 36554119832,
+    "job": 109359065140,
+    "static": "16/16",
+    "baselineBrowser": "29/29",
+    "candidateBrowser": "22/22"
+  },
+  "orbitSibling": "chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29",
+  "noOrbitIntegration": true
+}
