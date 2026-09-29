@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "PC-ARCH-01 PlayCanvas Architecture Bench",
+  "exportRevision": "2026-09-29-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/playcanvas-arch-01-2026-09-29",
+  "frozenImplementationHead": "a072514f111ebf6068606fbf06a017f33f617102",
+  "recoveryHead": "a9fa321def8e3e9f63bfa4faf089c7b42f76ea3f",
+  "entrypoints": [
+    "game-container/turbo-kfb/bench/playcanvas-arch-01/index.html"
+  ],
+  "sourceFiles": [
+    {
+      "path": "game-container/turbo-kfb/bench/playcanvas-arch-01/index.html",
+      "role": "browser entry",
+      "blobSha": "1b61b58e00d7d5615df65c2853fff7a8b4f6c447",
+      "bytes": 3207
+    },
+    {
+      "path": "game-container/turbo-kfb/bench/playcanvas-arch-01/style.css",
+      "role": "bench UI styles",
+      "blobSha": "3af2aa642c72c12de98c512d69e07fb81b5448d4",
+      "bytes": 3166
+    },
+    {
+      "path": "game-container/turbo-kfb/bench/playcanvas-arch-01/bench.mjs",
+      "role": "PlayCanvas AppBase architecture bench",
+      "blobSha": "792007b7ace7a6b9b8187d22adc80498680de456",
+      "bytes": 11413
+    },
+    {
+      "path": "game-container/turbo-kfb/bench/playcanvas-arch-01/local-proof.mjs",
+      "role": "Playwright headless proof",
+      "blobSha": "269a8b2308869ce75545d6b94afd2408f882c8a0",
+      "bytes": 4839
+    },
+    {
+      "path": ".github/workflows/playcanvas-arch-01.yml",
+      "role": "scoped CI workflow",
+      "blobSha": "eea27a662e26ecccfec900af2db07da3a865991c",
+      "bytes": 1703
+    }
+  ],
+  "buildOutputs": [],
+  "dataFiles": [],
+  "assetRefs": [],
+  "externalDependencies": [
+    {
+      "name": "PlayCanvas Engine",
+      "version": "2.22.4",
+      "url": "https://cdn.jsdelivr.net/npm/playcanvas@2.22.4/build/playcanvas.mjs",
+      "included": false
+    },
+    {
+      "name": "Playwright",
+      "version": "1.51.1",
+      "scope": "CI only",
+      "included": false
+    }
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "kind": "workflow-run",
+      "id": "36594694953",
+      "result": "FAIL",
+      "note": "initial full-checkout / zero headless telemetry"
+    },
+    {
+      "kind": "workflow-run",
+      "id": "36594838998",
+      "result": "FAIL",
+      "note": "sparse-checkout PASS; browser telemetry still zero"
+    },
+    {
+      "kind": "workflow-run",
+      "id": "36595058236",
+      "result": "FAIL",
+      "note": "render counter advanced 5 frames / 24 samples; AppStats telemetry still zero"
+    }
+  ],
+  "missing": [
+    "representative real-browser metric snapshot",
+    "real-browser screenshot",
+    "KFB asset test",
+    "physics cost test"
+  ],
+  "start": {
+    "command": "python3 -m http.server 4173",
+    "url": "http://127.0.0.1:4173/game-container/turbo-kfb/bench/playcanvas-arch-01/",
+    "notes": "Use a normal WebGL2 browser. The frozen headless SwiftShader telemetry path is not an accepted performance source."
+  }
+}
