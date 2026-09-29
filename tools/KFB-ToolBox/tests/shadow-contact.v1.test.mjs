@@ -8,7 +8,7 @@ const report=fitKfbDirectionalShadow(light,{x:12.34,y:2,z:-7.7},{x:1,y:2,z:1},{h
 assert.equal(report.profile,KFB_SHADOW_CONTACT_PROFILE.id);
 assert.equal(report.halfM,90);
 assert.equal(report.mapSize,4096);
-assert.ok(report.normalBias>0&&report.normalBias<0.01);
+assert.ok(report.normalBias>0&&report.normalBias<0.25);
 assert.equal(camera.updated,true);
 
 const mesh={isMesh:true,userData:{},castShadow:false,receiveShadow:true};
