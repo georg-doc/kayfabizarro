@@ -1,0 +1,68 @@
+name: KFB Container Ground Orbit Integration 01
+
+on:
+  push:
+    branches:
+      - chatgpt-web/kfb-container-ground-orbit-integration-01-2026-09-29
+    paths:
+      - 'game-container/turbo-kfb/**'
+      - '.github/workflows/kfb-container-ground-orbit-integration-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Ground donor static checks
+        run: node game-container/turbo-kfb/qa/ground-controller-donor01-static.mjs
+      - name: Integration static checks
+        run: node game-container/turbo-kfb/qa/ground-orbit-integration01-static.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 --directory . >/tmp/kfb-ground-orbit-http.log 2>&1 &
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/app/ >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-ground-orbit-http.log
+          exit 1
+      - name: B2 regression browser proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-baseline
+        run: node game-container/turbo-kfb/qa/checkpoint-a.mjs
+      - name: Velocity locomotion proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-velocity
+        run: node game-container/turbo-kfb/qa/ground-controller-donor01.mjs
+      - name: Combined Velocity + Orbit proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-ground-orbit
+        run: node game-container/turbo-kfb/qa/ground-orbit-integration01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-container-ground-orbit-integration01
+          path: |
+            game-container/turbo-kfb/qa/artifacts-baseline/
+            game-container/turbo-kfb/qa/artifacts-velocity/
+            game-container/turbo-kfb/qa/artifacts-ground-orbit/
+          if-no-files-found: warn
