@@ -1,0 +1,59 @@
+name: KFB Container Walk Pace Tune 01
+on:
+  push:
+    branches:
+      - chatgpt-web/kfb-container-walk-pace-tune-01-2026-09-29
+    paths:
+      - 'game-container/turbo-kfb/**'
+      - '.github/workflows/kfb-container-walk-pace-tune-01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Walk pace static checks
+        run: node game-container/turbo-kfb/qa/ground-walk-pace-tune01-static.mjs
+      - name: Integration static checks
+        run: node game-container/turbo-kfb/qa/ground-orbit-integration01-static.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 --directory . >/tmp/kfb-walk-pace-http.log 2>&1 &
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/app/ >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-walk-pace-http.log
+          exit 1
+      - name: Existing Ground + Orbit regression
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-regression
+        run: node game-container/turbo-kfb/qa/ground-orbit-integration01.mjs
+      - name: Faster travel Walk proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-walk-pace
+        run: node game-container/turbo-kfb/qa/ground-walk-pace-tune01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-container-walk-pace-tune01
+          path: |
+            game-container/turbo-kfb/qa/artifacts-regression/
+            game-container/turbo-kfb/qa/artifacts-walk-pace/
+          if-no-files-found: warn

@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+const src=await fs.readFile(new URL('../app/src/ground-player.js',import.meta.url),'utf8');
+assert.match(src,/TRAVEL_WALK_SPEED = REF_SPEED\.Walking_A \* 1\.8/);
+assert.match(src,/walkPace/);
+assert.match(src,/baseWalkSpeed/);
+assert.match(src,/walkPlaybackRate/);
+assert.match(src,/speed:baseWalkSpeed/);
+assert.match(src,/sprintMul:SPRINT_SPEED\/baseWalkSpeed/);
+console.log('RESULT 6/6 PASS');
