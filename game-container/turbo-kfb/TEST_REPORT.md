@@ -1,30 +1,41 @@
-# KFB Container Turbo-01 · Checkpoint A Test Report
+# KFB Container Turbo-01 · Browser Test Report
 
-Status: SOURCE / STATIC PASS · PUBLIC STAGE SOURCE WRITTEN · PUBLIC_VERIFIED OPEN
+Tested runtime head: `b4c7bb14cb51d6c5515613593b33c0ea0e183e89`
+Run: `36548532308`
+Artifact: `11023896755`
+Digest: `sha256:c18e1193c79165efdd410337b521d309a646c48e831d9118e4acfeb2568132e0`
 
-## Source
-- branch: `chatgpt-web/kfb-container-turbo-01-2026-09-29`
-- implementation commit: `cf0e66ccb10769511231c318f828ff48c6318f52`
-- QA harness commit: `435b242564f92fdc3a3ec6b40af91398f7c11168`
-- upstream donor: `bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c`
+## Result
+**29/29 PASS**
+- runtime errors: 0
+- page/console errors: 0
 
-## Checks actually run
-- 34/34 source/static checks PASS.
-- 20 protected upstream runtime files retain exact donor blob identities.
-- `kart.js`, `camera.js`, `input.js`, `track.js`, `models.js` are byte-identical to upstream.
-- Only `src/main.js` is changed for the additive EXPLORE route.
-- Modified bootstrap parses after ESM import-line stripping.
-- EXPLORE source contract verified: one player kart, Race items off, Race progress update bypassed, chase camera reused, pause/visibility path present, direct `?explore=1` route present, race-finish guarded to Race.
-- Race mode remains source-intact except the shared bootstrap routing.
+### EXPLORE
+- title + entry + mode + one player kart PASS
+- Race ItemSystem off PASS
+- drive displacement 28.91 u PASS
+- speed 33.23 u/s PASS
 
-## Browser
-A branch-scoped Actions browser harness was added, but no workflow run was created for the branch push. Therefore: **BROWSER PASS NOT CLAIMED**.
+### Race regression
+- 8 karts PASS
+- countdown → racing PASS
+- player drive displacement 22.51 u PASS
+
+### Ground consumer
+- pinned ActionFigure source PASS
+- exact 6 clips PASS
+- starts Idle_A PASS
+- no Root/Hips world translation PASS
+- Walk movement + Walking_A PASS
+- Run + Running_A PASS
+- measured Run consumer speed 2.480274167... PASS
+- Run → Walk PASS
+- Stop → Idle PASS
+- Jump_Start → Jump_Idle → Jump_Land PASS
+
+## QA recovery
+The prior 0.04 u failures were caused by rAF throttling in the headless runner. Deterministic `advanceBy(seconds)` fixed the proof clock without retuning gameplay.
 
 ## Stage
-Publication source written to:
-`cloudflare-live@aed6a2b6684c21cb7de19d58a00c1ef787ccd23d`
-
-Target:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/turbo-01/`
-
-Current Web tool cannot open pages.dev in this session, therefore **PUBLIC_VERIFIED remains OPEN**.
+`cloudflare-live@563d3c1f1c0ed89bf810ba7448db8e90bf0a30f3`
+Cloudflare Pages: SUCCESS.
