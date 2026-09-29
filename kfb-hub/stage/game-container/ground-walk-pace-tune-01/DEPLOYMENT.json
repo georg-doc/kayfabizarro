@@ -3,13 +3,25 @@
   "revision": "4475271b61e65fae95e5044925b83f2e39c18e6e",
   "route": "/kfb-hub/stage/game-container/ground-walk-pace-tune-01/",
   "defaultTestQuery": "ground=1&groundFeel=velocity&walkPace=travel",
-  "status": "PUBLIC_PROOF_PENDING",
-  "publicationSourceHead": "PENDING_THIS_COMMIT",
+  "status": "PUBLIC_VERIFIED",
+  "publicationSourceHead": "92335555295ee84eecfd2c3cec9d01ead98533ab",
+  "sourceHandoffHead": "542eedb91f96b6f718df9e619fb3d3f746b79854",
   "sourceEvidence": {
     "run": 36588655547,
     "job": 109475640957,
     "checks": "8/8 + 10/10 + 27/27 + 16/16",
     "artifact": 11043426976,
     "digest": "sha256:fd09e2adf33efb7c7b70950d3f0b789f40f563158ec84bc2be0177108127601f"
+  },
+  "publicProof": {
+    "run": 36589579432,
+    "job": 109478846810,
+    "checks": "15/15",
+    "artifact": 11043990368,
+    "digest": "sha256:714159ee306220f12aba2443406e992cf11656b8427f06b15a013a19bd4e6707",
+    "screenshots": [
+      "stage.png",
+      "hub.png"
+    ]
   }
 }
