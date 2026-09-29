@@ -101,3 +101,46 @@ Source diagnosis:
 4. add free pointer orbit as an additive camera adapter without rewriting the donor ChaseCamera.
 
 Do not start Enter/Exit Kart until B2 passes human motion/control review.
+
+
+## Parallel slice · B2a Ground Orbit Camera
+Status: **BROWSER PASS · MERGE-READY DONOR · NOT STAGE-PUBLISHED**
+
+Parallel branch:
+- `chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29`
+- implementation commit: `029bc3178bf2e5e83c679ee8b2b478987e110658`
+- tested branch head: `a8df18fdba97cbe3eb8ee1eba0f787c00fe30439`
+
+Scope isolation:
+- added `app/src/ground-orbit-camera.js`;
+- changed only `app/src/main.js` to select that camera owner in WALK;
+- `ground-player.js` unchanged: `0afc832cf4035c72c7c22cb7454d3685de6fa280`;
+- `walk-controller.js` unchanged: `b49dbb8dde4f906d8698f23323d032d645e35194`;
+- donor `camera.js`, Kart and Input remain untouched.
+
+Controls:
+- mouse/pointer drag = free orbit;
+- wheel = zoom;
+- `C` = recenter behind actor;
+- Race/EXPLORE continue using the original Turbo ChaseCamera.
+
+Browser proof:
+- run `36552520869`;
+- artifact `11025615756`;
+- digest `sha256:d5de9175df8af68a881fa4061418fb3955ccaa4d8c6f959f9379882ed60147f1`;
+- **34/34 PASS**, 0 runtime errors, 0 page/console errors;
+- drag changed Orbit yaw by > 0.5 rad and camera position by **7.66 u**;
+- wheel changed target distance from **7.50 → 3.52 u**;
+- `C` recentered to exact actor-back yaw;
+- all prior Explore/Race/Ground checks remain PASS.
+
+QA workflow uses sparse checkout; repository checkout reduced from ~50 s to ~2 s.
+
+This branch is intentionally **not published to the shared Turbo Stage**, because Georg is working on Locomotion B2 in parallel and the shared Stage must not overwrite that work with an orbit-only variant.
+
+## Parallel integration next action
+When Georg's Locomotion B2 branch/candidate is known, transplant only:
+- `ground-orbit-camera.js`;
+- the small WALK camera-owner seam in `main.js`.
+
+Then rerun the combined browser proof before Checkpoint C.

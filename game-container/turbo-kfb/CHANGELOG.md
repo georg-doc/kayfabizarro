@@ -19,3 +19,13 @@
 - run `36548532308`: **29/29 PASS**, zero runtime/console errors;
 - published integrated Explore + Walk candidate to `cloudflare-live@563d3c1f...`;
 - next gate: Georg motion/control feel in the real Stage.
+
+
+## 2026-09-29 · B2a · Ground Orbit Camera · parallel
+- created isolated branch `chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29` from reviewed Turbo candidate;
+- added free Ground orbit: drag, wheel zoom, C recenter;
+- retained original Turbo ChaseCamera for Kart/Race/Explore;
+- did not modify Ground locomotion files;
+- browser run `36552520869`: **34/34 PASS**, zero runtime/console errors;
+- kept shared Stage unchanged while Locomotion B2 proceeds in parallel;
+- next integration: transplant orbit module + main seam onto accepted B2 locomotion candidate.

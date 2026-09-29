@@ -39,3 +39,24 @@ The prior 0.04 u failures were caused by rAF throttling in the headless runner. 
 ## Stage
 `cloudflare-live@563d3c1f1c0ed89bf810ba7448db8e90bf0a30f3`
 Cloudflare Pages: SUCCESS.
+
+
+## Parallel B2a · Ground Orbit Camera
+
+Tested branch head: `a8df18fdba97cbe3eb8ee1eba0f787c00fe30439`
+Run: `36552520869`
+Artifact: `11025615756`
+Digest: `sha256:d5de9175df8af68a881fa4061418fb3955ccaa4d8c6f959f9379882ed60147f1`
+
+### Result
+**34/34 PASS**
+- previous Explore / Race / Ground checks: PASS
+- Ground Orbit owner mounted: PASS
+- pointer drag changes yaw: PASS
+- pointer drag camera displacement: **7.66 u**
+- wheel zoom target distance: **7.50 → 3.52 u**
+- `C` recenter: exact target yaw PASS
+- runtime errors: 0
+- page/console errors: 0
+
+Locomotion implementation files were not modified in this parallel slice.
