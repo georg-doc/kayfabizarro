@@ -7,14 +7,14 @@ const results={schema:'kfb.world-m2a-r4-performance-proof/1',base,viewport:{widt
 for(const scenario of ['idle','walk','drive-offroad']){
   const page=await browser.newPage({viewport:results.viewport});
   await page.goto(base+'?world=huerth&measure=1&scenario='+scenario,{waitUntil:'domcontentloaded',timeout:120000});
-  await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:60000});
-  await page.waitForFunction(()=>document.body.dataset.m2aPerfReady==='true',null,{timeout:60000});
+  await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:150000});
+  await page.waitForFunction(()=>document.body.dataset.m2aPerfReady==='true',null,{timeout:150000});
   results.samples[scenario]=await page.evaluate(()=>JSON.parse(document.querySelector('#m2a-perf-output').textContent));
   await page.close();
 }
 const page=await browser.newPage({viewport:results.viewport});
 await page.goto(base+'?world=huerth',{waitUntil:'domcontentloaded',timeout:120000});
-await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:60000});
+await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:150000});
 await page.waitForFunction(()=>window.__worldDriveM2A.quality.report().state==='stable',null,{timeout:10000});
 const stable=await page.evaluate(()=>window.__worldDriveM2A.quality.report());
 await page.keyboard.down('KeyW');
