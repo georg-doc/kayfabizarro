@@ -4,8 +4,8 @@ import crypto from 'node:crypto';
 
 const HOST='http://127.0.0.1:4173/';
 const DONOR=HOST+'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/static/';
-const LOOK=HOST+'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/static/';
-const MARKER=HOST+'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/variants/pc-look-01/SOURCE.json';
+const LOOK=HOST+'kfb-hub/stage/playcanvas-look-01/';
+const MARKER=HOST+'kfb-hub/stage/playcanvas-look-01/SOURCE.json';
 const OUT='playcanvas-look-01-local-proof';
 await fs.mkdir(OUT,{recursive:true});
 
