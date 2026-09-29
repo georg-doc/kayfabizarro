@@ -599,7 +599,7 @@ export async function boot(canvas, onNote = () => {}) {
     sun.color.set(P.sun[0]); sun.intensity = P.sun[1]; hemi.color.set(P.hemi[0]); hemi.groundColor.set(P.hemi[1]); hemi.intensity = P.hemi[2]; back.color.set(P.back[0]); back.intensity = P.back[1]; renderer.toneMappingExposure = P.expo; };
   setSky(RC.sky.default);
 
-  const st = { cam: 'overview', run: true, chase: false, tools: true };
+  const st = { cam: 'overview', run: true, chase: false, tools: true, paused: false };
   const shot = id => { info.cam = id; if (id === 'chase') { st.chase = true; controls.enabled = false; return; } st.chase = false; controls.enabled = true;
     const v = shots[id] || shots.overview; camera.fov = v.fov; camera.near = id === 'overview' || id === 'flight' ? 0.5 : 0.12; camera.updateProjectionMatrix();
     camera.position.copy(v.pos); controls.target.copy(v.tgt); controls.update(); bench.visible = id.startsWith('donor:'); };
@@ -618,7 +618,7 @@ export async function boot(canvas, onNote = () => {}) {
   const GD = { level: 0, avg: 16, skip: 0, n: 0 }; info.guard = GD;
   const guard = ms => { GD.avg = GD.avg * 0.85 + ms * 0.15; GD.n++; if (GD.n > 12 && GD.avg > 70 && GD.level < 3) { GD.level++; GD.n = 0;
     if (GD.level === 1) renderer.setPixelRatio(1); if (GD.level === 2 && aoPass) aoPass.enabled = false; if (GD.level === 3) { sun.shadow.map?.dispose(); sun.shadow.map = null; sun.shadow.mapSize.set(2048, 2048); } resize(); } };
-  const loop = () => { raf = requestAnimationFrame(loop); if (GD.skip > 0) { GD.skip--; return; } const t1 = performance.now(); step(); const c = performance.now() - t1; guard(c); if (c > 100) GD.skip = Math.min(10, Math.floor(c / 50)); };
+  const loop = () => { raf = requestAnimationFrame(loop); if (st.paused) return; if (GD.skip > 0) { GD.skip--; return; } const t1 = performance.now(); step(); const c = performance.now() - t1; guard(c); if (c > 100) GD.skip = Math.min(10, Math.floor(c / 50)); };
   info.loadMs = Math.round(performance.now() - tBoot);
   raf = requestAnimationFrame(loop);
 
@@ -627,7 +627,7 @@ export async function boot(canvas, onNote = () => {}) {
     SKIES: Object.fromEntries(Object.entries(SKY_PRESETS).map(([k, v]) => [k, v.label])),
     shot, frame(n = 1, dt = 1 / 60) { for (let k = 0; k < n; k++) step(dt); },
     set(k, v) { if (k === 'sky') setSky(v); else if (k === 'masks') maskG.visible = !!v; else if (k === 'vfx') VFX.setQuality(v); else if (k === 'run') st.run = !!v;
-      else if (k === 'ao' && aoPass) aoPass.enabled = !!v; else if (k === 'shadows') sun.castShadow = !!v; else if (k === 'tools') { st.tools = !!v; applyDisp(st.tools); } else if (k === 'grey') canvas.style.filter = v ? 'grayscale(1)' : ''; },
+      else if (k === 'ao' && aoPass) aoPass.enabled = !!v; else if (k === 'shadows') sun.castShadow = !!v; else if (k === 'pause') st.paused = !!v; else if (k === 'tools') { st.tools = !!v; applyDisp(st.tools); } else if (k === 'grey') canvas.style.filter = v ? 'grayscale(1)' : ''; },
     shadowReport() { const foliage = []; scene.traverse(o => { if (o.isMesh && (/^leaf\d/.test(o.name) || o.name === 'spender:nature')) foliage.push({ name: o.name, cast: o.castShadow, receive: o.receiveShadow }); }); return { ...SHADOW.report, mapType: renderer.shadowMap.type === THREE.PCFSoftShadowMap ? 'PCFSoftShadowMap' : renderer.shadowMap.type, foliage }; },
     meshReport() { const out = []; scene.traverse(o => { if (!o.isMesh) return; const g = o.geometry; out.push({ name: o.name || '(ohne Name)', tris: Math.round((g.index ? g.index.count : g.attributes.position.count) / 3), cast: !!o.castShadow, receive: !!o.receiveShadow }); }); return out.sort((a, b) => b.tris - a.tris); },
     dispose() { cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); }
