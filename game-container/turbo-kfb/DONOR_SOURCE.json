@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.donor-source.v1",
+  "candidate": "KFB CONTAINER TURBO-01",
+  "upstream": {
+    "repository": "bridge-mind/turbo-kart-rally",
+    "commit": "c52aca3f10c7995884c316810cac6514daa40e9c",
+    "license": "MIT"
+  },
+  "import": {
+    "scope": "runtime only: index.html + src/*.js + src/styles.css + LICENSE + ARCHITECTURE.md",
+    "exactFiles": [
+      "index.html",
+      "LICENSE",
+      "ARCHITECTURE.md",
+      "src/config.js",
+      "src/events.js",
+      "src/input.js",
+      "src/kart.js",
+      "src/camera.js",
+      "src/track.js",
+      "src/track-textures.js",
+      "src/environment.js",
+      "src/ai.js",
+      "src/audio.js",
+      "src/effects.js",
+      "src/items.js",
+      "src/models.js",
+      "src/hud.js",
+      "src/menu.js",
+      "src/race.js",
+      "src/styles.css"
+    ],
+    "modifiedFiles": [
+      "src/main.js"
+    ],
+    "protectedExact": [
+      "src/kart.js",
+      "src/camera.js",
+      "src/input.js",
+      "src/track.js",
+      "src/track-textures.js",
+      "src/models.js"
+    ]
+  }
+}
