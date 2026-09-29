@@ -1,0 +1,37 @@
+name: PlayCanvas Architecture Bench 01 public proof
+on:
+  push:
+    branches: [chatgpt-web/playcanvas-arch-01-2026-09-29]
+    paths:
+      - 'game-container/turbo-kfb/bench/playcanvas-arch-01/public-proof.mjs'
+      - '.github/workflows/playcanvas-arch-01-public.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/bench/playcanvas-arch-01/public-proof.mjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check game-container/turbo-kfb/bench/playcanvas-arch-01/public-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Public Cloudflare source + browser proof
+        run: node game-container/turbo-kfb/bench/playcanvas-arch-01/public-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playcanvas-arch-01-public-evidence
+          path: playcanvas-arch-01-public-evidence
+          retention-days: 14
