@@ -1,0 +1,84 @@
+{
+  "schema": "kfb.animation-editorial-patch/1",
+  "catalog": {
+    "schema": "kfb.motion-catalog.v1",
+    "version": "2026-09-28",
+    "sourcePath": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+    "contentHash": "RESOLVE_AT_IMPORT"
+  },
+  "characterProfiles": {
+    "frizzlebob-rig-medium": {
+      "actorId": "frizzlebob-rig-medium",
+      "rigFamily": "Rig_Medium",
+      "renderPreset": "kfb-render-r0",
+      "compatibility": "UNVERIFIED",
+      "assignments": {
+        "idle.default": "kfb_idle_breathing_a",
+        "locomotion.walk": null,
+        "locomotion.run": "kfb_locomotion_run_forward_a",
+        "talk.explain": "kfb_talk_talking_a",
+        "react.happy": "kfb_idle_happy_a",
+        "signature.primary": "kfb_action_fireball_a",
+        "vehicle.seated": null
+      }
+    }
+  },
+  "motions": {
+    "kfb_action_fireball_a": {
+      "displayName": "Knet-Feuerball werfen",
+      "tags": ["action", "throw", "magic"],
+      "cluster": "action.throw",
+      "exportEnabled": true,
+      "notes": "Editorial example only; immutable measurements remain in the source catalog.",
+      "preview": {
+        "posterFrame": 42
+      },
+      "actorVerdicts": {
+        "frizzlebob-rig-medium": {
+          "status": "UNVERIFIED",
+          "note": "Must be previewed on the actual actor before promotion."
+        }
+      }
+    },
+    "kfb_dance_house_b": {
+      "displayName": "House-Tanz · Variante B",
+      "tags": ["dance", "house", "variant"],
+      "cluster": "dance.house",
+      "exportEnabled": false,
+      "notes": "Excluded editorially; source clip remains untouched."
+    },
+    "kfb_talk_talking_a": {
+      "displayName": "Reden · ruhig mit beiden Händen",
+      "tags": ["talk", "resident", "variant-a"],
+      "cluster": "talk.explain",
+      "exportEnabled": true,
+      "notes": "Intake 03 example. The immutable ID distinguishes this clip from the other source-labelled Reden variants."
+    },
+    "kfb_throw_run_and_throw_a": {
+      "displayName": "Anlauf und Wurf",
+      "tags": ["throw", "travel", "left-hand", "one-shot"],
+      "cluster": "action.throw",
+      "exportEnabled": true,
+      "notes": "Release candidate frame 53 on hand.l; requires runtime confirmation and must not be inferred as a gameplay loop."
+    }
+  },
+  "localIntakeExample": {
+    "status": "LOCAL_PREVIEW_NOT_REGISTERED",
+    "sourceHash": "LOCAL_SHA256_PLACEHOLDER",
+    "originalFilename": "PRIVATE_LOCAL_ONLY",
+    "detectedRigFamily": "Rig_Medium",
+    "compatibility": "UNVERIFIED",
+    "proposedMotionId": "kfb_talk_explain_candidate_a",
+    "displayName": "Erklärt mit beiden Händen",
+    "correctionPatch": {
+      "shoulderAbductionDeg": {"left": 4, "right": 4},
+      "wristTwistDeg": {"left": -6, "right": 3},
+      "rootMode": "preview-in-place"
+    },
+    "promotion": {
+      "requested": false,
+      "rawFbxIncluded": false,
+      "requiredOutputs": ["runtime-glb", "catalog-entry", "contact-data", "preview-sheet"]
+    }
+  }
+}
