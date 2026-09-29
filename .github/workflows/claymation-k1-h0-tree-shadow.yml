@@ -1,0 +1,71 @@
+name: Claymation K1 H0 Tree Shadow
+
+on:
+  push:
+    branches:
+      - chatgpt-web/claymation-k1-h0-canon-tree-shadow-2026-09-29
+    paths:
+      - 'tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md'
+      - 'tools/KFB-ToolBox/docs/CLAY_BUILDING_FACADE_ROUTER.md'
+      - 'tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md'
+      - 'skills/chat/START_HERE.md'
+      - 'tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/**'
+      - '.github/workflows/claymation-k1-h0-tree-shadow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Static source/canon checks
+        run: |
+          node --check "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-world/clay-world.r0a.js"
+          node --check "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/tree-shadow-proof.mjs"
+          grep -q "KFB_K1_H0_CODEBASE_2026-09-29" tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md
+          grep -q "clay-soften.v1" tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md
+          grep -q "interpenetrating-crown exception" tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md
+          grep -q "KFB_SHARED_SHADOW_CONTACT_V1_R0A" "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-world/clay-world.r0a.js"
+          if grep -q "sun.shadow.normalBias = 0.25" "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-world/clay-world.r0a.js"; then
+            echo "stale fixed normalBias remains"; exit 1
+          fi
+
+      - name: Install Chromium runner
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local repository server
+        run: |
+          python3 -m http.server 4192 --bind 127.0.0.1 >/tmp/kfb-clay-tree-http.log 2>&1 &
+          echo $! >/tmp/kfb-clay-tree-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4192/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/kfb-clay-tree-http.log
+          exit 1
+
+      - name: Tree shadow browser proof
+        env:
+          KFB_BASE_URL: http://127.0.0.1:4192/
+          KFB_TREE_SHADOW_PROOF_DIR: tree-shadow-proof-artifacts
+        run: node "tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/tree-shadow-proof.mjs"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: claymation-k1-h0-tree-shadow-evidence
+          path: |
+            tree-shadow-proof-artifacts
+            /tmp/kfb-clay-tree-http.log
+          if-no-files-found: warn
+          retention-days: 14
