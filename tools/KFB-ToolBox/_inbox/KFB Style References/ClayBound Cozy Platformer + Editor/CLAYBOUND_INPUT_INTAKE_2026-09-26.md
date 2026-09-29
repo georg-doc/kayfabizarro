@@ -36,6 +36,7 @@ Combined size: **68,563,328 B (~65.4 MiB)**.
 - private plugin **KFB Clay Asset Studio v0.1.0**;
 - plugin queue source under `KFB Clay Asset Studio v1 plugin/`;
 - KlayBound / ClayBound POC and technical research already present in this folder.
+- `CLAY_TEXTURE_DONORS_01_2026-09-29.md` — external free/CC0 texture donor research; donor evidence only, no raw asset admission.
 
 ## Production backlog · priority order
 

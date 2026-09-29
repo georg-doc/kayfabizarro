@@ -1194,6 +1194,22 @@ Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
 
 
+## 2026-09-29 · Clay texture donor research 01
+
+Owner remains **KFB ToolBox / ClayBound material exploration**. The bounded research slice `CLAY-TEXTURE-DONORS-01` catalogs free / low-friction external donors for clay, plaster, sculpting artifacts, fabric and paper/cardboard without promoting any raw asset.
+
+- source branch: `chatgpt-web/kfb-clay-texture-donors-01-2026-09-29`;
+- durable catalog: `tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/CLAY_TEXTURE_DONORS_01_2026-09-29.md`;
+- source-contract evidence: **16/16 PASS** at `1a3296d3cabede76c49a8812359780964a05d359`;
+- Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/clay-texture-donors-01/`;
+- preferred CC0 pools: Poly Haven, TextureCan, CGBookcase;
+- EmaceArt/BlenQube remain look-dev donors only until raw redistribution is explicitly cleared;
+- no external texture file has been copied into KFB and no production/material/runtime owner changed.
+
+This research does **not** supersede the current Clay Asset Studio gate. `CLAY-ASSET-01` remains human-review pending; the donor catalog is an additive source pool.
+
+Current next action for this slice: publish/verify the Stage catalog, then continue Round 02 CC0 coverage for cork, foam, rough wood/MDF, paper/fabric and sculpting imperfections.
+
 ## 2026-09-27 · TRAVEL-MODES-01 · Movement Mode Router public human gate
 
 Travel remains owned by private `georg-doc/KFB-Travel-Globe`.
