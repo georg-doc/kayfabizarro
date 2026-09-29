@@ -43,7 +43,7 @@ jobs:
           import { chromium } from 'playwright';
           import fs from 'node:fs/promises';
           const STAGE='https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity';
-          const HUB='https://kayfabizarro.pages.dev/kfb-hub/';
+          const HUB='https://kayfabizarro.pages.dev/kfb-hub/#briefings';
           const WANT='ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4';
           const checks=[];
           const ok=(name,cond,extra='')=>{checks.push({name,pass:!!cond,extra});if(!cond)throw new Error('FAIL '+name+(extra?' · '+extra:''));console.log('PASS',name,extra);};
