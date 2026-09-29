@@ -113,14 +113,33 @@ Unchanged:
 - WorldBuilder
 - Residents / Cards
 
+## User correction · 2026-09-29
+
+The primitive cube bench is **diagnostic evidence only** and must not become a world foundation, asset strategy or new authoring path.
+
+Georg explicitly rejected the implication that KFB should now be rebuilt upward from cubes.
+
+Correct architecture direction:
+- start from the **complete existing PlayCanvas Vehicle Physics donor**;
+- preserve its working vehicle, camera, controls, reset and physics;
+- instrument and decompose that donor in place;
+- measure what the donor already costs;
+- disable/remove donor subsystems and scene groups one at a time to identify cost;
+- only after that, swap in real existing KFB/T4 assets one bounded family at a time.
+
+Do not create a primitive replacement world.
+
 ## Exactly one next gate
 
-**PC-ARCH-RB01 · REAL-BROWSER DEVICE BASELINE**
+**PC-DONOR-PROFILE-01 · PROFILE THE REAL PLAYCANVAS DONOR**
 
-On Georg's normal browser/device:
-1. keep shadows OFF and device pixel ratio OFF;
-2. compare Entities vs Instanced at 100 / 500 / 1000 / 2000;
-3. use `Run sweep` if useful;
-4. record the first real breakpoint before importing one real GLB or enabling physics.
+Use the actual exported `KFB Joyride 01` / Vehicle Physics project as the test surface.
 
-No KFB mesh, T4, Clay material or physics before this baseline.
+Required order:
+1. run the untouched donor;
+2. record scene/entity/render/material/light/shadow/physics counts and available runtime stats;
+3. add simple toggles for existing donor groups (terrain / props / shadows / vehicle graphics / physics), without replacing them;
+4. determine which existing donor layer causes the cost;
+5. preserve the good driving feel throughout.
+
+The primitive bench remains archived internal evidence only. It is not the next product surface.
