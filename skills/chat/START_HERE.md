@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.3
-Date: 2026-09-27
+Date: 2026-09-28
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -40,6 +40,19 @@ Current applications:
 
 Additional hard rule: **no low-fidelity proxy human gates**. If a review artifact is ruckly, simplified, visually unrepresentative, or reproduces known renderer defects such as shadow clipping/banding/light seams, it is internal evidence only and must not become a Georg blocking task.
 
+
+## 2026-09-28 · PDoom / coded-animation one-shot production reference
+
+For autonomous animation, cinematic-short, music-video or animation-prompting work, load:
+`skills/chat/workflows/KFB_PDOOM_ONE_SHOT_REFERENCE_2026-09-28/START_HERE.md`
+
+The reference analyzes John Heibel's PDoom source, its generalized ClaudeAnimationBase successor and the associated public one-shot prompt context. Main portable pattern:
+
+`one human delegation → internal storyboard / build / evidence / Critic / repair → integrated candidate`
+
+Useful additions for KFB cinematic work are **timed viewer reads**, explicit **OUT transition** per shot, keypose evidence before interpolation, deterministic/reproducible capture and contact-sheet / motion-strip / crop / clip QA.
+
+Do not import PDoom's 2D-specific “everything moves” or 12 Hz line-boil behavior as global KFB motion rules. Current KFB semantic motion, stable source geometry, singular owners and no-pseudo-human-gate policy remain binding.
 
 ## 2026-09-27 · DocCheck Knet-Medizin · Cell Forge M1 candidate
 
@@ -93,6 +106,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
+- `workflows/KFB_PDOOM_ONE_SHOT_REFERENCE_2026-09-28/START_HERE.md` — **CURRENT REFERENCE** for autonomous coded-animation production: human one-shot/internal multi-pass, timed viewer reads, explicit shot OUT transitions, deterministic capture, chapter isolation, visual QA ladders and prompt anatomy; does not replace KFB animation/visual canon
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported
