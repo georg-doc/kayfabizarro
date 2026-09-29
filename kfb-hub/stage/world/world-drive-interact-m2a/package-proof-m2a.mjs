@@ -1,7 +1,7 @@
 import fs from 'node:fs';import crypto from 'node:crypto';
 const read=p=>fs.readFileSync(new URL(p,import.meta.url),'utf8'),hash=p=>crypto.createHash('sha256').update(fs.readFileSync(new URL(p,import.meta.url))).digest('hex');
 let n=0;const ok=(name,v)=>{if(!v)throw Error('FAIL '+name);console.log('ok '+(++n)+' - '+name)};
-const index=read('./index.html'),mobility=read('./world-mobility-m1.mjs'),drive=read('./world-drive-m2a.mjs'),ui=read('./world-mobility-ui.mjs'),source=JSON.parse(read('./SOURCE.json'));
+const index=read('./index.html'),mobility=read('./world-mobility-m1.mjs'),drive=read('./world-drive-m2a.mjs'),ui=read('./world-mobility-ui.mjs'),world=read('./runtime/worldbuilder/world-integration-01/wi1-world.js'),play=read('./runtime/worldbuilder/world-integration-01/wi1-play.js'),app=read('./runtime/worldbuilder/wb2-design-01/wb2d-app.js'),source=JSON.parse(read('./SOURCE.json'));
 ok('M2A marker',index.includes('WORLD-DRIVE-INTERACT-M2A'));
 ok('World M1 source pin',index.includes('40037597485436e185f129091be908786925341d'));
 ok('Race PR10 source pin',drive.includes('406cd26f44f22811fe3b3a58776839be7ffb7b2c'));
@@ -28,5 +28,14 @@ ok('R3 city shell LOD remains active in R4',read('./runtime/worldbuilder/world-i
 const quality=read('./adaptive-quality-r4.mjs'),clay=read('./clay-world-m1.mjs');
 ok('R4 adaptive resolution has stable and moving states',quality.includes("state='moving'")&&quality.includes("apply('stable'")&&quality.includes('cssUiNativeResolution:true'));
 ok('R4 clay distance budget keeps far shells simple',clay.includes("id:'far-city-shell'")&&clay.includes('simplifiedFarClay'));
-ok('R4 candidate is not falsely public-verified',source.publicVerified===false&&source.status==='R4_LOCAL_CANDIDATE');
+ok('inherited R4 public-verification metadata is truthful',source.publicVerified===true&&source.status==='R4_PUBLIC_VERIFIED_CANDIDATE');
+ok('shared shadow/contact profile marker',world.includes('KFB_SHARED_SHADOW_CONTACT_V1'));
+ok('shared owner forces PCFSoftShadowMap',world.includes('renderer.shadowMap.type = THREE.PCFSoftShadowMap'));
+ok('startup fixed-frustum guessed bias removed',!world.includes('sun.shadow.normalBias = 0.016')&&!world.includes('left: -34, right: 34'));
+const thinPolicyBody=world.slice(world.indexOf('function thinShadowCaster'),world.indexOf('function applyShadowPolicy'));
+ok('thin overlay policy does not exclude DoubleSide as a class',thinPolicyBody.includes('thinShadowCaster')&&!thinPolicyBody.includes('THREE.DoubleSide')&&world.includes('doubleSideCasters'));
+ok('WB2 actor and prop consume world shadow policy',app.includes("label:'wb2-authoring-actor'")&&app.includes("label:'wb2-authoring-prop'"));
+ok('play actor consumes world shadow policy',play.includes("label: 'world-play-actor'"));
+ok('drive vehicle consumes world shadow policy',drive.includes("label:'world-drive-vehicle'"));
+ok('M2A report exposes shadow/contact state',index.includes('shadow:app.world.shadowReport'));
 console.log('WORLD DRIVE M2A PACKAGE PASS '+n+'/'+n);

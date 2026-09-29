@@ -45,9 +45,10 @@ export const TRANSITIONS = [
   ['loco → idle', 'travel < 0.06 m/s · crossfade 0.22 s · decel coast ≤ 5.5 m/s²']
 ];
 
-export async function makePlay({ scene, camera, dom, groundAt, obstacles, hud, log = () => {} }) {
+export async function makePlay({ scene, camera, dom, groundAt, obstacles, shadowPolicy = null, hud, log = () => {} }) {
   const WC = await import(WALK_URL);
   const actor = await makeActor({ scene, camera, log });
+  if (shadowPolicy) shadowPolicy(actor.holder, { label: 'world-play-actor', forceSolidCast: true, receive: false });
   const prop = (k, d) => { const v = (window.__wb2dProps || {})[k]; return v == null ? d : v; };
   const TUNE = {
     cadence: THREE.MathUtils.clamp(+prop('walkCadence', 1.35), 0.8, 2),

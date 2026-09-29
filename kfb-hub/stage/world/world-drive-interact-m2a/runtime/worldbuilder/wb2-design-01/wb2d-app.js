@@ -702,12 +702,14 @@ async function loadActorModel(animated=true){
   }
   groundModelLocal(model);
   model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  if(WORLD?.applyShadowPolicy)WORLD.applyShadowPolicy(model,{label:'wb2-authoring-actor',forceSolidCast:true,receive:true});
   return model;
 }
 async function loadPropModel(){
   const gltf=await loader.loadAsync(raw(PROP.path,PROP.commit));
   const model=gltf.scene;fitObject(model,PROP.fit);groundModelLocal(model);
   model.traverse(n=>{if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  if(WORLD?.applyShadowPolicy)WORLD.applyShadowPolicy(model,{label:'wb2-authoring-prop',forceSolidCast:true,receive:true});
   return model;
 }
 
@@ -891,7 +893,7 @@ async function showScene(){
 async function initPlay(){
   status('loading player · FrizzleBob graft + KFB Motion Library…');
   const WP=await import('../world-integration-01/wi1-play.js?r1=playability2');
-  PLAY=await WP.makePlay({scene,camera,dom:renderer.domElement,groundAt:(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)),obstacles:()=>[...sceneObjects.values()],hud:E('wiState'),log:t=>WORLD.log.push(t)});
+  PLAY=await WP.makePlay({scene,camera,dom:renderer.domElement,groundAt:(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)),obstacles:()=>[...sceneObjects.values()],shadowPolicy:(root,opts)=>WORLD.applyShadowPolicy(root,opts),hud:E('wiState'),log:t=>WORLD.log.push(t)});
   PLAY.readDoc(sceneDoc);
   const AM=await import('../world-integration-01/wi1-actor.js');
   E('wiMotion').innerHTML=Object.entries(AM.SET_LABEL).map(([k,l])=>'<option value="'+k+'">'+l+'</option>').join('');E('wiMotion').value=PLAY.actor.motionSet;

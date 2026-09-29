@@ -50,7 +50,7 @@ function buildingTriangles(zone,terrainY=0){
   return {vertices:new Float32Array(vertices),indices:new Uint32Array(indices)};
 }
 
-async function loadVehicle(){
+async function loadVehicle(app){
   const encoded=DRIVE_SOURCE.vehiclePath.split('/').map(encodeURIComponent).join('/');
   const url=`https://cdn.jsdelivr.net/gh/${DRIVE_SOURCE.vehicleRepo}@${DRIVE_SOURCE.vehicleCommit}/${encoded}`;
   const gltf=await new GLTFLoader().loadAsync(url),model=gltf.scene;
@@ -59,6 +59,7 @@ async function loadVehicle(){
   box=new THREE.Box3().setFromObject(model);const center=box.getCenter(new THREE.Vector3());
   model.position.x-=center.x;model.position.z-=center.z;model.position.y-=box.min.y+.35;
   model.traverse(n=>{if(/wheel/i.test(n.name)||n.name==='character')n.visible=false;if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  if(app.world?.applyShadowPolicy)app.world.applyShadowPolicy(model,{label:'world-drive-vehicle',forceSolidCast:true,receive:true});
   return {model,box};
 }
 
@@ -95,7 +96,7 @@ export async function createWorldDriveM2A(app){
     const pivot=new THREE.Group(),wheel=new THREE.Mesh(new THREE.CylinderGeometry(.42,.42,.24,16),new THREE.MeshStandardMaterial({color:0x18262d,roughness:.82}));
     wheel.rotation.z=Math.PI/2;pivot.position.set(x,-.4,z);pivot.add(wheel);root.add(pivot);wheelPivots.push({pivot,wheel});
   }
-  const {model,box}=await loadVehicle();shell.add(model);
+  const {model,box}=await loadVehicle(app);shell.add(model);
   const deformer=createDeformer(THREE,{group:root,body:shell,wheels:wheelPivots.map(w=>({steer:w.pivot})),frame:{height:Math.max(1,box.getSize(new THREE.Vector3()).y)}},{profile:{...FALLBACK_PROFILE,id:'KFB_WORLD_M2A_CHILL_LIGHT',squashAmount:.024,pitchResponse:3.2,rollResponse:4.2,driftYawResponse:7,impactResponse:.06,landingSquash:.075}});
 
   const request=()=>({
