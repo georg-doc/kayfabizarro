@@ -1,12 +1,19 @@
 {
   "schema": "kfb.stage-source.v1",
-  "id": "KFB-CONTAINER-TURBO-01-A",
+  "id": "KFB-CONTAINER-TURBO-01-B",
+  "status": "BROWSER_PASS_HUMAN_MOTION_GATE",
   "sourceRepository": "georg-doc/kayfabizarro",
   "sourceBranch": "chatgpt-web/kfb-container-turbo-01-2026-09-29",
-  "sourceHead": "435b242564f92fdc3a3ec6b40af91398f7c11168",
-  "implementationHead": "cf0e66ccb10769511231c318f828ff48c6318f52",
+  "testedSourceHead": "b4c7bb14cb51d6c5515613593b33c0ea0e183e89",
+  "groundImplementationHead": "772131720e591df1ca341a73e1a59284ef5dd499",
+  "recoveryHeadBeforeFixedStep": "94384b34bc578f836f8ad36e19438ffe7d3b5020",
   "upstreamDonor": "bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c",
   "license": "MIT",
-  "staticEvidence": "34/34 PASS",
-  "browserEvidence": "PENDING_PUBLIC_STAGE_VERIFY"
+  "browserRun": 36548532308,
+  "browserArtifact": 11023896755,
+  "artifactDigest": "sha256:c18e1193c79165efdd410337b521d309a646c48e831d9118e4acfeb2568132e0",
+  "tests": "29/29 PASS",
+  "runtimeErrors": 0,
+  "consoleErrors": 0,
+  "humanGate": "Motion/control feel in real integrated EXPLORE/WALK product"
 }
