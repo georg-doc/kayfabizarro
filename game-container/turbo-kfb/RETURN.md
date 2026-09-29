@@ -313,3 +313,36 @@ Interpretation:
 
 ## Exactly one current next gate
 **GROUND-WALK-PACE-TUNE-01:** choose the best existing source-backed Walk tier (Walking_A/B/C and existing profile data), raise normal W to an enjoyable travel pace, keep Run/Sprint hierarchy intact, and prove no obvious foot-slide/tripping regression in the real integrated Ground+Orbit host.
+
+
+## GROUND-WALK-PACE-TUNE-01 · implementation checkpoint
+
+Status: **IMPLEMENTED · TESTS PENDING · NOT STAGE-PUBLISHED**
+
+Owner:
+- branch: `chatgpt-web/kfb-ground-walk-pace-tune-01-2026-09-29`
+- base: public-verified Ground+Orbit PR #288 head `e23492171a72a468736445c6120490f50723fbb3`
+- implementation head: `9bb20993a9b61efb6e6b1021c8efda1611e0228b`
+
+Human TUNE:
+- default W at `0.6109509569 u/s` is too slow for enjoyable traversal;
+- motion may be intentionally overdriven;
+- preserve semantic states, Jump and Orbit.
+
+Implementation:
+- only `app/src/ground-player.js` changed;
+- normal enhanced W target becomes **1.108 u/s**;
+- this reuses the existing Motion Lab Rig_Medium handoff candidate, not a new blind value;
+- `Walking_A` source reference remains `0.6109509569 u/s`;
+- playback at target is capped at the existing **1.8×**, closely matching the new gameplay pace;
+- Run / Running_B Sprint / backward / strafe / Jump / Orbit remain unchanged;
+- no-query legacy/B2 path remains unchanged.
+
+Protected blobs retained from PR #288:
+- `main.js` / Orbit owner unchanged;
+- `walk-controller.js` unchanged;
+- `ground-feel.js` unchanged;
+- `ground-orbit-camera.js` unchanged.
+
+Exactly one next gate:
+Run baseline regression plus tuned Velocity+Orbit browser proof. Do not publish until both pass.
