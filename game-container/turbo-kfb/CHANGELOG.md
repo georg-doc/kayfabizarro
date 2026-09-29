@@ -137,3 +137,12 @@
 - Travel-only wall-clock catch-up added in 1/60-s slices, capped at 0.25 s; Race/Explore/no-query Ground keep old timing path.
 - Added dedicated static and browser timing/cadence proof plus full baseline/Ground+Orbit regression workflow.
 - Tests pending; no public Stage mutation.
+
+
+## 2026-09-29 · GROUND-TRAVEL-PACE-TIMING-01 · source PASS
+- exact runtime `ada92c557d3ef24dd18e511b4cff6f18e8b721fc`; run `36601155065`, job `109518578915`: SUCCESS.
+- 12/12 Travel timing static + 10/10 integration static + 29/29 full Turbo baseline + 27/27 Ground+Orbit + 23/23 Travel cadence/timing PASS; zero errors.
+- Travel W settles 4.4534 u/s at ~1.7955× Running_A playback; Shift settles 5.4401 u/s at ~1.7963× Running_B playback.
+- 15-FPS wall-clock parity proven with zero ordinary-frame time dropped; 0.5-s stall catch-up bounded to 0.25 s.
+- artifact `11048319690`, digest `sha256:5fec8973a084c5c3f5cd4957dea32bb9c7c28bd05ccb7be8eebb027b199d4e28`.
+- Next: publish same Pace-Tune Stage and require exact public Chromium proof.
