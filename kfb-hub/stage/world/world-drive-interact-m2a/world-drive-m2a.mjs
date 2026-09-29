@@ -59,6 +59,7 @@ async function loadVehicle(){
   box=new THREE.Box3().setFromObject(model);const center=box.getCenter(new THREE.Vector3());
   model.position.x-=center.x;model.position.z-=center.z;model.position.y-=box.min.y+.35;
   model.traverse(n=>{if(/wheel/i.test(n.name)||n.name==='character')n.visible=false;if(n.isMesh){n.castShadow=true;n.receiveShadow=true}});
+  if(app.world?.applyShadowPolicy)app.world.applyShadowPolicy(model,{label:'world-drive-vehicle',forceSolidCast:true,receive:true});
   return {model,box};
 }
 
