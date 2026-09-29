@@ -30,7 +30,8 @@
     "scripts"
   ],
   "runtimeDelta": [
-    "config.json material fields only"
+    "config.json material fields only",
+    "public index transport points unchanged runtime resources at Donor-01"
   ],
   "materialAssets": {
     "52417947": "bug_body",
@@ -39,5 +40,17 @@
     "52417952": "bug_props2",
     "52417961": "bug_props1",
     "52418068": "desert"
+  },
+  "stageTransport": {
+    "mode": "same-origin donor wrapper",
+    "lookRoute": "/kfb-hub/stage/playcanvas-look-01/",
+    "donorRuntimeRoot": "/kfb-hub/stage/playcanvas-donor-01/",
+    "lookOwnedFiles": [
+      "index.html",
+      "config.json",
+      "SOURCE.json",
+      "LOOK_PROFILE.json"
+    ],
+    "invariant": "No donor runtime blob is duplicated in the public LOOK route; PlayCanvas engine, scene, scripts, models and texture maps load from immutable Donor-01."
   }
 }
