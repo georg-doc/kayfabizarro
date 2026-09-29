@@ -4,7 +4,7 @@ const root=(process.env.KFB_BASE_URL||'http://127.0.0.1:4192/').replace(/\/?$/,'
 const rel='tools/KFB-ToolBox/_inbox/KFB%20World%20Core%20R0A%20%C2%B7%20Clay%20World%20Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/tree-shadow-proof.html';
 const out=process.env.KFB_TREE_SHADOW_PROOF_DIR||'tree-shadow-proof-artifacts';fs.mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:process.env.KFB_BROWSER_EXECUTABLE||undefined});
-const page=await browser.newPage({viewport:{width:1100,height:820});
+const page=await browser.newPage({viewport:{width:1100,height:820}});
 const errors=[],failed=[];
 page.on('pageerror',e=>errors.push(String(e)));
 page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
