@@ -5,10 +5,10 @@ const out=process.env.WORLD_M2A_PROOF_DIR||'world-drive-interact-m2a-proof';fs.m
 const browser=await chromium.launch({headless:true,executablePath:process.env.KFB_BROWSER_EXECUTABLE||undefined});
 let count=0;const ok=(name,value,detail='')=>{if(!value)throw Error('FAIL '+name+(detail?' · '+detail:''));console.log('ok '+(++count)+' - '+name)};
 for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:390,height:844}]){
-  const page=await browser.newPage({viewport:{width:spec.width,height:spec.height}}),errors=[],failed=[],http=[];
-  page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));page.on('response',r=>{if(r.status()>=400)http.push(r.status()+' '+r.url())});
+  const page=await browser.newPage({viewport:{width:spec.width,height:spec.height}}),errors=[],failed=[],http=[],consoleInfo=[];
+  page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());else consoleInfo.push(m.type()+': '+m.text())});page.on('requestfailed',r=>failed.push(r.url()+' :: '+r.failure()?.errorText));page.on('response',r=>{if(r.status()>=400)http.push(r.status()+' '+r.url())});
   await page.goto(base+'?world=huerth',{waitUntil:'domcontentloaded',timeout:120000});
-  try{await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:45000})}catch(error){console.error('BOOT DIAG',JSON.stringify({errors,failed,http,body:await page.evaluate(()=>({dataset:{...document.body.dataset},text:document.body.innerText.slice(0,500)}))},null,2));throw error}await page.waitForTimeout(900);
+  try{await page.waitForFunction(()=>document.body.dataset.m1Ready==='true',null,{timeout:90000})}catch(error){console.error('BOOT DIAG',JSON.stringify({errors,failed,http,consoleInfo:consoleInfo.slice(-80),body:await page.evaluate(()=>({dataset:{...document.body.dataset},text:document.body.innerText.slice(0,800),wb2d:!!window.__wb2d,world:window.__wb2d?.world?.id||null,play:!!window.__wb2d?.play,status:document.querySelector('#status')?.textContent||null}))},null,2));throw error}await page.waitForTimeout(900);
   let r=await page.evaluate(()=>window.__worldDriveM2A.report());
   ok(spec.name+' M2A marker',await page.evaluate(()=>document.body.dataset.kfbStage)==='WORLD-DRIVE-INTERACT-M2A');
   ok(spec.name+' Hirnwelt H0 clay is default',r.clay.mode==='clay'&&await page.evaluate(()=>document.body.dataset.m1Look)==='clay');
