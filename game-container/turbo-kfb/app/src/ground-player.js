@@ -312,8 +312,9 @@ export async function createGroundPlayer({ scene, track } = {}) {
       semantic:cmd.strafe < 0 ? 'strafe.left' : 'strafe.right',
     };
     if (cmd.sprint) {
+      const sprintHandoff = walkPace === 'travel' ? SPRINT_SPEED * 0.96 : SPRINT_HANDOFF;
       if (st.speed < HANDOFF_SPEED) return {name:CLIP.walk,semantic:'walk.fast'};
-      if (st.speed < SPRINT_HANDOFF) return {name:CLIP.run,semantic:'run'};
+      if (st.speed < sprintHandoff) return {name:CLIP.run,semantic:'run'};
       return {name:CLIP.sprint,semantic:'sprint'};
     }
     return {name:CLIP.walk,semantic:'walk'};
