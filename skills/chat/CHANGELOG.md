@@ -1,3 +1,10 @@
+## 2026-09-28 · Hub-current closure invariant
+
+- upgraded the binding Chat → GitHub → Stage workflow to v1.2;
+- made same-handoff synchronization of the existing accepted Hub part of every slice's Definition of Done;
+- fresh slices now return `HANDOFF_INCOMPLETE · HUB_SYNC_REQUIRED` instead of claiming completion when Hub cards or briefings remain stale;
+- added the current Hub checkpoint for World M2A R5, Track T3/T4 and the honest ToolBox aggregate.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING

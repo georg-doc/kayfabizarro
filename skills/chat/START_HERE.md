@@ -1,7 +1,7 @@
 # KFB Chat Production Router
 
-Status: CURRENT ROUTER v0.3
-Date: 2026-09-27
+Status: CURRENT ROUTER v0.4
+Date: 2026-09-28
 Owner: Georg / KFB
 
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
@@ -19,6 +19,8 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 8. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
 9. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
 10. Record decisions and results additively.
+
+Before declaring a productive slice complete, apply the **Hub-current closure invariant** in `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`: update the existing accepted Hub in the same handoff, replace superseded active cards, expose the exact usable/testable continuation, and keep missing/source-only tools visibly non-playable. If this is not done, return `HANDOFF_INCOMPLETE · HUB_SYNC_REQUIRED`.
 
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
@@ -78,6 +80,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
 - **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
 - **Crash-safe continuation is continuous.** During authorized Web/GitHub production, persist every meaningful implementation/test/decision checkpoint to the existing owner Return/Recovery/WIP surface, read back the exact head/file, then continue or reply. A fresh chat must be able to resume from GitHub alone without transcript reconstruction.
+- **Hub currency is part of Done.** Every productive slice updates the existing accepted Hub and ToolBox aggregate in the same handoff; no superseded gate may remain active and no source-only card may look playable.
 
 ## Status vocabulary
 
@@ -94,6 +97,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
+- `workflows/KFB_HUB_CURRENT_STATE_2026-09-28/START_HERE.md` — current Hub routing correction: World M2A R5, Track T3/T4 and honest ToolBox aggregate state
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
@@ -1290,4 +1294,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-
