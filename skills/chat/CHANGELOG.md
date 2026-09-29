@@ -1,3 +1,11 @@
+## 2026-09-29 · Travel MapLibre World-Owner Spike 01
+
+- Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
+- Existing Ground/Travel movement files and canonical contract were not edited; PlayCanvas is outside this spike.
+- Mirrored candidate to `kfb-hub/stage/maplibre-world-owner-spike-01/` and linked it from the Stage Hub at publication checkpoint `1d23bab59b73a0425cb9de202f2fd6932ed7d0f8`.
+- Public route remains `PUBLIC_UNVERIFIED`: GitHub mirror readback succeeded, but the available web opener returned an internal access error for pages.dev.
+- One next gate: direct Stage browser test of donor identity, terrain loading/contact, WASD/Shift movement, camera/depth stability.
+
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
 ### WORKFLOW HARDENING
