@@ -71,7 +71,7 @@ const mods = {};
 async function loadModules() {
   const specs = {
     track: './track.js', kart: './kart.js', ai: './ai.js', input: './input.js',
-    items: './items.js', effects: './effects.js', models: './models.js', camera: './camera.js', ground: './ground-player.js',
+    items: './items.js', effects: './effects.js', models: './models.js', camera: './camera.js', ground: './ground-player.js', orbit: './ground-orbit-camera.js',
   };
   await Promise.all(Object.entries(specs).map(async ([k, p]) => {
     try { mods[k] = await import(p); } catch (e) { console.error(`[main] failed to load ${p}`, e); }
@@ -198,7 +198,7 @@ function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = (Math.r
 function buildWorld({ mode, characterIndex = 0, difficulty = 'normal', laps = RACE.laps }) {
   if (!mods.track || !mods.track.createTrack) throw new Error('track.js unavailable');
   if (!mods.kart || !mods.kart.Kart) throw new Error('kart.js unavailable');
-  const w = { mode, controlMode: mode === 'explore' ? 'kart' : 'race', difficulty, laps, karts: [], ais: [], playerAI: null, player: null, groundPlayer: null, scene: new THREE.Scene() };
+  const w = { mode, controlMode: mode === 'explore' ? 'kart' : 'race', difficulty, laps, karts: [], ais: [], playerAI: null, player: null, groundPlayer: null, groundOrbit: null, scene: new THREE.Scene() };
   w.track = mods.track.createTrack(w.scene, renderer);
 
   // roster: attract mode = every character in order (kart index == character index)
@@ -254,6 +254,7 @@ function disposeWorld() {
   world = null;
   renderPass.scene = fallbackScene;
   if (!w) return;
+  safe('dispose.groundOrbit', () => w.groundOrbit && w.groundOrbit.dispose && w.groundOrbit.dispose());
   safe('dispose.ground', () => w.groundPlayer && w.groundPlayer.dispose && w.groundPlayer.dispose());
   safe('dispose.items', () => w.items && w.items.dispose && w.items.dispose());
   safe('dispose.effects', () => w.effects && w.effects.dispose && w.effects.dispose());
@@ -365,6 +366,7 @@ function startGround(settings = {}) {
       world.race.startImmediately();
       if (!mods.ground?.createGroundPlayer) throw new Error('ground-player.js unavailable');
       world.groundPlayer = await mods.ground.createGroundPlayer({ scene: world.scene, track: world.track });
+      if (mods.orbit?.GroundOrbitCamera) world.groundOrbit = new mods.orbit.GroundOrbitCamera(camera, canvas);
       if (world.player) {
         world.player.controlsLocked = true;
         world.player.input = { ...NEUTRAL };
@@ -382,7 +384,9 @@ function startGround(settings = {}) {
     audio.setGameplayActive(true);
     uiRoot.classList.remove('no-world');
     setState('ground');
-    safe('camera.snap.ground', () => world.chase.snap(world.groundPlayer));
+    if (world.groundOrbit) safe('camera.snap.groundOrbit', () => world.groundOrbit.snap(world.groundPlayer));
+    else safe('camera.snap.groundFallback', () => world.chase.snap(world.groundPlayer));
+    safe('ground.controls.toast', () => hud.toast('DRAG · ORBIT   WHEEL · ZOOM   C · RECENTER'));
     audio.playMusic('race');
   }, 40);
 }
@@ -629,9 +633,13 @@ function frame() {
       const groundMode = w.controlMode === 'ground' && !!w.groundPlayer;
       const cameraTarget = groundMode ? w.groundPlayer : w.player;
       if (state !== 'paused') {
-        const mode = groundMode ? 'ground' : state === 'intro' ? 'intro' : state === 'countdown' ? 'countdown' : state === 'finished' ? 'finish' : 'race';
-        const lookBack = !groundMode && !!((state === 'racing' || state === 'explore') && playerInput && playerInput.lookBack);
-        safe('camera.update', () => w.chase.update(dt, cameraTarget, { lookBack, mode }));
+        if (groundMode && w.groundOrbit) {
+          safe('camera.groundOrbit.update', () => w.groundOrbit.update(dt, cameraTarget));
+        } else {
+          const mode = groundMode ? 'ground' : state === 'intro' ? 'intro' : state === 'countdown' ? 'countdown' : state === 'finished' ? 'finish' : 'race';
+          const lookBack = !groundMode && !!((state === 'racing' || state === 'explore') && playerInput && playerInput.lookBack);
+          safe('camera.update', () => w.chase.update(dt, cameraTarget, { lookBack, mode }));
+        }
       }
       if (w.mode === 'race') safe('hud.update', () => hud.update(dt, { player: w.player, karts: w.karts, race: w.race, itemSystem: w.items, track: w.track, time }));
     } else {
