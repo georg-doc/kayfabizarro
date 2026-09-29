@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.joyride-drive.recipe.v0",
+  "id": "joyride.j04.kfb-physik",
+  "title": "Joyride J04 · Knet-Strecke fahren · KFB-Fahrphysik",
+  "date": "2026-09-29",
+  "status": "DESIGN/PLAY CANDIDATE · Claude Design · keine Runtime-Ownership",
+  "georgDirection": "T4-Knet-Strecke bleibt das verbindende Element; rollendes Knet-Gelände statt Platten; Kenney nur knetig übersetzt; Tafeln = B0/R0C-Billboard mit KFB-Karte/PD-Quelle; Fahrphysik aus Georgs PlayCanvas-Fork; KayKit-Fahrzeuge zur Wahl. · J03 (Georg 29.09. abends): Performance zuerst; Schatten-Rezept und Fassaden-Vorstufe aus dem Repo übernehmen; Radkontakt messen. · J04: KFB-Fahrphysik statt Fork-Physik, Spurhilfe wie Cologne, Knetgummi-Bande, Tempo halten; weitere Optimierung Ladezeit/Leistung.",
+  "host": {
+    "module": "lab-track/track-look.v5.js",
+    "note": "T4 unverändert als Welt: TD03-Stream, K2-Knete, M2-Markierung, Übergangsatlas, Clay-VFX. Additiv nur: Innenleben lesbar + hooks + Kamera-Modus 'extern'."
+  },
+  "drive": {
+    "donor": "KFB-Stunt-Car-Race · KFB Cologne Race Option C-3/lab-v9/cologne-play.v1.js stepDriver (Race v0.8 FLOW/FEEL, unverändert) + railClamp-Verfahren für die Kamera",
+    "module": "lab-drive/kfb-drive.k1.js",
+    "frame": "Streckenrahmen (s, Querlage, relative Gierung) · Helix/Looping/Überführung eindeutig",
+    "startS": 60,
+    "assist": 0.8,
+    "motorK": 1,
+    "assistNote": "assist 0 = Spender (jede Kurve selbst lenken) · 1 = Strecke nimmt die Kurve ganz mit",
+    "keys": {
+      "gas": [
+        "KeyW",
+        "ArrowUp"
+      ],
+      "brake": [
+        "KeyS",
+        "ArrowDown"
+      ],
+      "left": [
+        "KeyA",
+        "ArrowLeft"
+      ],
+      "right": [
+        "KeyD",
+        "ArrowRight"
+      ],
+      "driftL": [
+        "KeyQ"
+      ],
+      "driftR": [
+        "KeyE"
+      ],
+      "boost": [
+        "ShiftLeft",
+        "ShiftRight"
+      ],
+      "jump": [
+        "Space"
+      ],
+      "reset": [
+        "KeyR"
+      ]
+    },
+    "camera": {
+      "boom": 9,
+      "boomSpeed": 3.4,
+      "height": 3.5,
+      "side": 2.4,
+      "latFollow": 0.6,
+      "follow": 9,
+      "fov": 58,
+      "note": "Wunschlage auf der Strecke, seitlich in den Korridor geklemmt (Cologne railClamp-Verfahren)"
+    },
+    "dropped": "PlayCanvas-Fork/Ammo (Georg 29.09.: Fahrphysik passt nicht). Lesekopien lab-drive/ammo.js und donor-playcanvas/* bleiben als Historie."
+  },
+  "vehicles": {
+    "base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/",
+    "len": 4.3,
+    "material": "K2 Knete · Profil vehicle · Quellfarbe bleibt",
+    "list": [
+      {
+        "id": "sedan",
+        "file": "car_sedan.gltf",
+        "label": "Limousine"
+      },
+      {
+        "id": "hatchback",
+        "file": "car_hatchback.gltf",
+        "label": "Kleinwagen"
+      },
+      {
+        "id": "stationwagon",
+        "file": "car_stationwagon.gltf",
+        "label": "Kombi"
+      },
+      {
+        "id": "taxi",
+        "file": "car_taxi.gltf",
+        "label": "Taxi"
+      },
+      {
+        "id": "police",
+        "file": "car_police.gltf",
+        "label": "Streife"
+      }
+    ]
+  },
+  "terrain": {
+    "kind": "rolling clay heightfield",
+    "material": "T4 M.table (K2 terrainBg) · Weltfarbe folgt dem Preset",
+    "grid": 200,
+    "physicsStep": 2,
+    "flatInside": 28,
+    "riseTo": 115,
+    "base": 3,
+    "amp": 24,
+    "noiseScale": 150,
+    "edge": 34,
+    "edgeDrop": 16,
+    "note": "Bis 28 m um die Strecke bleibt der T4-Tisch exakt (Übergänge, Böschungen, Stadtnähte unverändert). Draußen rollt die Knete. T4-Deko (Bäume, Türme, Hügel) wird aufs Gelände gelegt, nicht neu gebaut."
+  },
+  "billboards": {
+    "owner": "bb-scene.js loadHero + BillboardContent (B0, abgenommen 24.09.) · Körper folgt dem Inhalt wie R0C world-extras fitBody",
+    "donor": "kenney_racing-kit/billboard.glb",
+    "translation": "Körper in K2-Knete Holzton, Pappstrebe hinten, zwei Knet-Sandsäcke; Kenney-Werbung verdeckt",
+    "faceArea": 54,
+    "lateral": 24,
+    "minGapS": 240,
+    "boards": [
+      {
+        "id": "tafel.karte",
+        "content": {
+          "kind": "card",
+          "packId": "embrace_protopia",
+          "n": 12
+        }
+      },
+      {
+        "id": "tafel.pd",
+        "content": {
+          "kind": "pd-still",
+          "id": "aic-24645-great-wave"
+        }
+      },
+      {
+        "id": "tafel.cover",
+        "content": {
+          "kind": "cover",
+          "packId": "forget_utopia",
+          "page": 1
+        }
+      }
+    ],
+    "pd": {
+      "base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/public_domain/",
+      "pool": {
+        "aic-24645-great-wave": {
+          "path": "aic/great-wave-hokusai-1830-33.jpg",
+          "title": "Under the Wave off Kanagawa · Hokusai 1830/33",
+          "rights": "Public Domain · Art Institute of Chicago"
+        },
+        "ia-the-general-1926-tile": {
+          "path": "ia/the-general-1926-item-tile.jpg",
+          "title": "The General (1926) · Internet Archive item tile",
+          "rights": "Public Domain Mark 1.0"
+        }
+      }
+    }
+  },
+  "dropped": [
+    "Kenney Pits-Garage (TANKCO-Werbefläche) · passt nicht",
+    "BoardGameBits-Spielkarten als Tafeln · ersetzt durch B0-Billboard",
+    "Pappaufsteller-Gebäude aus M01 · Idee bleibt, Ausführung wird neu gestaltet (eigener Pass)"
+  ],
+  "open": [
+    "Clay-VFX (Staub, Drift, Landung) noch an T4s Kart-Fahrer, nicht am Spielerauto.",
+    "Bande prallt als Fahrer-Regel; die Bandenmasse selbst wackelt noch nicht mit.",
+    "Looping: die Kamera folgt der Streckennormalen, Georg prüfen ob das zu viel dreht.",
+    "Luftstück am Kicker folgt der Stream-Linie, kein freier Flug."
+  ],
+  "nextGate": "J04-G1 · Georg fährt TD03 mit Spurhilfe 0,8 und 0,4, meldet fps und Fahrgefühl (Tempo, Bande, Kurven).",
+  "lean": {
+    "profile": "leicht",
+    "chunk": {
+      "cell": 140,
+      "minTris": 30000
+    },
+    "shadow": {
+      "r": 60,
+      "size": 2048,
+      "back": 160,
+      "ahead": 14
+    },
+    "lodK": 1.8,
+    "source": {
+      "shadows": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/docs/LESSONS_SHADOWS.md",
+      "measured": "J02: 7,6 Mio. △/Bild · 241 Calls · 2 Mio. △ Szene; größte Massen strang 325k, stuetzen 281k, bordstein 204k, gehweg 200k, Laub 380k"
+    },
+    "t4": {
+      "strangStride": 2,
+      "blobDetail": 1,
+      "relief": 512,
+      "note": "T4-Dichte: Strang+Fahrbahn jede 2. Probe, Kugeln Icosa n+1 statt n+2, Hügel 30×18, Stützen Lathe 14, Bordstein/Gehweg RoundedBox 1 Segment, Knet-Karten 512"
+    }
+  },
+  "facade": {
+    "on": true,
+    "maxEdge": 0.9,
+    "maxLevels": 1,
+    "iters": 6,
+    "lumpM": 0.07,
+    "lumpWaveM": 1.6,
+    "maxTris": 220000,
+    "reliefK": 0.45,
+    "source": "tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/lab-clay/clay-soften.v1.js + HOWTO §1–2 (Vorstufe: unterteilen, verschweißen, Taubin, Beulen)",
+    "note": "T4-Häuser sind gemergt; absolute Maße (m) statt objektrelativ. reliefK < 1 = feinere Knetspur auf Fassaden."
+  }
+}

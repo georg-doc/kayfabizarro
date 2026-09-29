@@ -1,0 +1,278 @@
+{
+  "schema": "kfb.joyride-drive.recipe.v0",
+  "id": "joyride.j03.knetstrecke-leicht",
+  "title": "Joyride J03 · Knet-Strecke fahren · Leicht-Pass",
+  "date": "2026-09-29",
+  "status": "DESIGN/PLAY CANDIDATE · Claude Design · keine Runtime-Ownership",
+  "georgDirection": "T4-Knet-Strecke bleibt das verbindende Element; rollendes Knet-Gelände statt Platten; Kenney nur knetig übersetzt; Tafeln = B0/R0C-Billboard mit KFB-Karte/PD-Quelle; Fahrphysik aus Georgs PlayCanvas-Fork; KayKit-Fahrzeuge zur Wahl. · J03 (Georg 29.09. abends): Performance zuerst; Schatten-Rezept und Fassaden-Vorstufe aus dem Repo übernehmen; Radkontakt messen.",
+  "host": {
+    "module": "lab-track/track-look.v5.js",
+    "note": "T4 unverändert als Welt: TD03-Stream, K2-Knete, M2-Markierung, Übergangsatlas, Clay-VFX. Additiv nur: Innenleben lesbar + hooks + Kamera-Modus 'extern'."
+  },
+  "drive": {
+    "donor": "PlayCanvas-Projekt 'KFB Joyride 01' (Fork von 643289, vehicle.mjs · follow-camera.mjs · action-physics-reset.mjs · scenes.json) · Ammo btRaycastVehicle",
+    "engine": "ammo.js aus dem Fork-Export (lab-drive/ammo.js, zlib) · Darstellung bleibt three.js, kein zweiter Renderer",
+    "gravity": -9.8,
+    "chassis": {
+      "mass": 800,
+      "friction": 0.5,
+      "restitution": 0.5,
+      "capsuleZ": {
+        "r": 0.5,
+        "h": 2.3,
+        "at": [
+          0,
+          0.65,
+          -0.05
+        ]
+      },
+      "box": {
+        "half": [
+          0.5,
+          0.25,
+          0.4
+        ],
+        "at": [
+          0,
+          1.245,
+          -0.14
+        ]
+      }
+    },
+    "wheels": [
+      {
+        "id": "FL",
+        "at": [
+          0.8,
+          0.4,
+          1.2
+        ],
+        "front": true
+      },
+      {
+        "id": "FR",
+        "at": [
+          -0.8,
+          0.4,
+          1.2
+        ],
+        "front": true
+      },
+      {
+        "id": "BL",
+        "at": [
+          0.8,
+          0.4,
+          -1.2
+        ],
+        "front": false
+      },
+      {
+        "id": "BR",
+        "at": [
+          -0.8,
+          0.4,
+          -1.2
+        ],
+        "front": false
+      }
+    ],
+    "wheel": {
+      "radius": 0.4,
+      "suspensionStiffness": 10,
+      "suspensionDamping": 2.3,
+      "suspensionCompression": 4.4,
+      "suspensionRestLength": 0.2,
+      "rollInfluence": 0.2,
+      "frictionSlip": 1000
+    },
+    "engine2": {
+      "maxEngineForce": 2000,
+      "maxBrakingForce": 100,
+      "maxSteering": 0.3,
+      "steerLerp": 0.3
+    },
+    "joyride": {
+      "motorK": 1.6,
+      "boostK": 2.2,
+      "hopImpulse": 5.5,
+      "note": "motorK/boostK/Hüpfer sind KFB-Zusätze über dem Fork; motorK 1 = Fork-Wert"
+    },
+    "camera": {
+      "offset": [
+        0,
+        3.4,
+        -11
+      ],
+      "lerpAmount": 0.99,
+      "fov": 45,
+      "note": "follow-camera.mjs: Offset im gierfreien Rahmen, Lerp 1-(1-a)^dt"
+    },
+    "keys": {
+      "left": [
+        "KeyA",
+        "ArrowLeft"
+      ],
+      "right": [
+        "KeyD",
+        "ArrowRight"
+      ],
+      "fwd": [
+        "KeyW",
+        "ArrowUp"
+      ],
+      "back": [
+        "KeyS",
+        "ArrowDown"
+      ],
+      "boost": [
+        "ShiftLeft",
+        "ShiftRight"
+      ],
+      "hop": [
+        "Space"
+      ],
+      "reset": [
+        "KeyR"
+      ]
+    },
+    "wheelFit": "Räder aus dem Modell gemessen (car_*_wheel_* Knoten): Lage, Radius; Physik-Anschluss daraus; Modell folgt den Radmitten der Physik."
+  },
+  "vehicles": {
+    "base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/",
+    "len": 4.3,
+    "material": "K2 Knete · Profil vehicle · Quellfarbe bleibt",
+    "list": [
+      {
+        "id": "sedan",
+        "file": "car_sedan.gltf",
+        "label": "Limousine"
+      },
+      {
+        "id": "hatchback",
+        "file": "car_hatchback.gltf",
+        "label": "Kleinwagen"
+      },
+      {
+        "id": "stationwagon",
+        "file": "car_stationwagon.gltf",
+        "label": "Kombi"
+      },
+      {
+        "id": "taxi",
+        "file": "car_taxi.gltf",
+        "label": "Taxi"
+      },
+      {
+        "id": "police",
+        "file": "car_police.gltf",
+        "label": "Streife"
+      }
+    ]
+  },
+  "terrain": {
+    "kind": "rolling clay heightfield",
+    "material": "T4 M.table (K2 terrainBg) · Weltfarbe folgt dem Preset",
+    "grid": 200,
+    "physicsStep": 2,
+    "flatInside": 28,
+    "riseTo": 115,
+    "base": 3,
+    "amp": 24,
+    "noiseScale": 150,
+    "edge": 34,
+    "edgeDrop": 16,
+    "note": "Bis 28 m um die Strecke bleibt der T4-Tisch exakt (Übergänge, Böschungen, Stadtnähte unverändert). Draußen rollt die Knete. T4-Deko (Bäume, Türme, Hügel) wird aufs Gelände gelegt, nicht neu gebaut."
+  },
+  "billboards": {
+    "owner": "bb-scene.js loadHero + BillboardContent (B0, abgenommen 24.09.) · Körper folgt dem Inhalt wie R0C world-extras fitBody",
+    "donor": "kenney_racing-kit/billboard.glb",
+    "translation": "Körper in K2-Knete Holzton, Pappstrebe hinten, zwei Knet-Sandsäcke; Kenney-Werbung verdeckt",
+    "faceArea": 54,
+    "lateral": 24,
+    "minGapS": 240,
+    "boards": [
+      {
+        "id": "tafel.karte",
+        "content": {
+          "kind": "card",
+          "packId": "embrace_protopia",
+          "n": 12
+        }
+      },
+      {
+        "id": "tafel.pd",
+        "content": {
+          "kind": "pd-still",
+          "id": "aic-24645-great-wave"
+        }
+      },
+      {
+        "id": "tafel.cover",
+        "content": {
+          "kind": "cover",
+          "packId": "forget_utopia",
+          "page": 1
+        }
+      }
+    ],
+    "pd": {
+      "base": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/public_domain/",
+      "pool": {
+        "aic-24645-great-wave": {
+          "path": "aic/great-wave-hokusai-1830-33.jpg",
+          "title": "Under the Wave off Kanagawa · Hokusai 1830/33",
+          "rights": "Public Domain · Art Institute of Chicago"
+        },
+        "ia-the-general-1926-tile": {
+          "path": "ia/the-general-1926-item-tile.jpg",
+          "title": "The General (1926) · Internet Archive item tile",
+          "rights": "Public Domain Mark 1.0"
+        }
+      }
+    }
+  },
+  "dropped": [
+    "Kenney Pits-Garage (TANKCO-Werbefläche) · passt nicht",
+    "BoardGameBits-Spielkarten als Tafeln · ersetzt durch B0-Billboard",
+    "Pappaufsteller-Gebäude aus M01 · Idee bleibt, Ausführung wird neu gestaltet (eigener Pass)"
+  ],
+  "open": [
+    "Fallback, falls Leicht nicht reicht: Georgs PlayCanvas-Fork als Host (ein Szenen-Export mit T4-Strecke als gebackenem GLB), dann schrittweise Knete/Props zurück.",
+    "Clay-VFX hängen noch an T4s Kart-Fahrer; das Physik-Auto löst noch keine Staub-/Landungs-Ereignisse aus.",
+    "Stadtplatten/Böschungen der T4-Übergänge haben keine Kollision; das Auto fährt dort auf Tischhöhe.",
+    "Looping/Magnetzone sind mit Fork-Physik nicht getunt; wer zu langsam ist, fällt. R setzt zurück.",
+    "M01-Atlas-Idee (Blatt, Pop-ups) als Präsentationsebene über dieser Welt: nicht in diesem Pass."
+  ],
+  "nextGate": "J03-G1 · Georg fährt mit Leicht und Voll je eine Runde auf seiner Maschine und nennt die fps; Urteil Radkontakt und Fassaden.",
+  "lean": {
+    "profile": "leicht",
+    "chunk": {
+      "cell": 140,
+      "minTris": 30000
+    },
+    "shadow": {
+      "r": 60,
+      "size": 2048,
+      "back": 160,
+      "ahead": 14
+    },
+    "lodK": 1.8,
+    "source": {
+      "shadows": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-03/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r2/docs/LESSONS_SHADOWS.md",
+      "measured": "J02: 7,6 Mio. △/Bild · 241 Calls · 2 Mio. △ Szene; größte Massen strang 325k, stuetzen 281k, bordstein 204k, gehweg 200k, Laub 380k"
+    }
+  },
+  "facade": {
+    "on": true,
+    "maxEdge": 0.9,
+    "maxLevels": 1,
+    "iters": 6,
+    "lumpM": 0.07,
+    "lumpWaveM": 1.6,
+    "maxTris": 220000,
+    "reliefK": 0.45,
+    "source": "tools/KFB-ToolBox/_inbox/KFB_CLAYMATION_H0_HIRNWELT_2026-09-27/lab-clay/clay-soften.v1.js + HOWTO §1–2 (Vorstufe: unterteilen, verschweißen, Taubin, Beulen)",
+    "note": "T4-Häuser sind gemergt; absolute Maße (m) statt objektrelativ. reliefK < 1 = feinere Knetspur auf Fassaden."
+  }
+}
