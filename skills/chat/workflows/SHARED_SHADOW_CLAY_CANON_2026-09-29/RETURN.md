@@ -1,7 +1,7 @@
 # RETURN · SHARED-SHADOW-CLAY-CANON-01
 
 Date: 2026-09-29  
-Status: **CANDIDATE · DOCS/ROUTING REPAIR ONLY · RUNTIME UNCHANGED**
+Status: **CANDIDATE · DOCS/ROUTING REPAIR · WSA LEAD FAIL RECORDED · RUNTIME UNCHANGED**
 
 ## Exact source state
 
@@ -9,7 +9,7 @@ Status: **CANDIDATE · DOCS/ROUTING REPAIR ONLY · RUNTIME UNCHANGED**
 - Base: `main@2602ff6c980894405e970d22e45f7db76da0e1a7`
 - Branch: `chatgpt-web/shared-shadow-clay-canon-2026-09-29`
 - Draft PR: **#290 · SHARED-SHADOW-CLAY-CANON-01 · canonical routing repair**
-- Evidence head immediately before this Return commit: `7bbdec70e17f3da98d884dee696be5bded9aa3d4`
+- Evidence head immediately before this Return update: `0ef44c47e4822c34d3f9fc454a8dbe5d9fb09220`
 - S5 source branch/pin: `georg-doc-patch-2@3232a1070686896833d6b7942fcd631b9fa8cda6`
 
 The exact final branch head is verified in PR #290 metadata after the Return commit; this file does not attempt to self-embed its own commit SHA.
@@ -26,6 +26,25 @@ The exact final branch head is verified in PR #290 metadata after the Return com
 8. Current World Core R0A on main is a **visual donor candidate only**. It uses K2 v10 plus `transition-atlas.v1 bend()` for its candidate façade rhythm and does not become a second universal deformation owner.
 9. The R0A design footer points at a nonexistent `export/.../START_HERE.md`; the actual handover exists as the sibling root `START_HERE.md`.
 
+## WSA Lead FAIL / postmortem
+
+Georg requested this incident be recorded as another **WSA Lead FAIL**.
+
+Canonical postmortem:
+`skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md`
+
+Classification:
+- failure owner: WSA Lead / coordination layer;
+- failure class: persistence + routing + precedence;
+- severity: LARGE process failure;
+- key diagnosis: the project confused “committed somewhere” with “recoverable as current canon”.
+
+Canonical Graveyard:
+- `tools/kfb-graveyard/postmortems.json` advanced **v1.6.0 → v1.7.0**;
+- **56 → 57 graves**;
+- new id: `kanon-irgendwo-auf-github`;
+- Reißleine: “Kann ein frischer Chat die abgenommene Regel von START_HERE aus finden?”
+
 ## What changed
 
 - added `tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md`;
@@ -34,13 +53,15 @@ The exact final branch head is verified in PR #290 metadata after the Return com
 - appended `tools/KFB-ToolBox/CHANGELOG.md`;
 - appended `skills/chat/CHANGELOG.md`;
 - added this bounded workflow `START_HERE.md`, `TEST_REPORT.md`, and `RETURN.md`;
+- added the WSA Lead persistence/canon postmortem;
+- updated the canonical Graveyard JSON + Graveyard README with the 57th incident;
 - updated GitHub issue #247 with recovered known-source context while keeping it OPEN.
 
 No runtime source, renderer, deformer, WorldBuilder, OSM presenter, clay material module, Track/Race code or asset was changed.
 
 ## Evidence / tests
 
-- GitHub source-resolution audit: **19 / 19 PASS**
+- GitHub source-resolution + WSA-postmortem audit: **28 / 28 PASS**
 - failed checks: **0**
 - each branch write was read back from the exact branch and compared against base;
 - negative checks explicitly confirmed:
@@ -48,7 +69,7 @@ No runtime source, renderer, deformer, WorldBuilder, OSM presenter, clay materia
   - S5 path absent on main but present at its pinned branch.
 - direct post-audit readback also confirmed the R0A stale footer-path correction in the new router.
 
-Full evidence: `TEST_REPORT.md`.
+Full evidence: `TEST_REPORT.md` (original 19/19 source-resolution checks + 9/9 postmortem/Graveyard checks).
 
 ## Human / public surface
 
@@ -57,7 +78,7 @@ Full evidence: `TEST_REPORT.md`.
 - Direct Stage URL: **NONE**.
 - Live promotion: **NONE**.
 - KFB Hub card/task: **NONE ADDED**. This intentionally follows the no-pseudo-human-gate policy; there is no visual/product decision to review for a documentation repair.
-- Existing runtime gate remains issue **#247 GLOBAL-SHADOW-CONTACT-ARTIFACT-FIX**.
+- Existing runtime gate remains issue **#247 GLOBAL-SHADOW-CONTACT-ARTIFACT-FIX**. Issue #247 also links the WSA Lead postmortem and remains OPEN.
 
 ## Unresolved
 
