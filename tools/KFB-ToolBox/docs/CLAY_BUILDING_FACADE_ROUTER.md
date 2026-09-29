@@ -6,6 +6,27 @@ Purpose: make the already accepted/prepared clay-building rules discoverable acr
 
 ## Resolve sources in this order
 
+### 0 · Binding visual/code reference: K1 + H0 Claymation
+
+Before S5, K2 or a world candidate, read:
+
+`tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md`
+
+Exact source package on main:
+`tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/`
+
+This package contains the missing concrete design/code reference:
+- K1 catalog stage;
+- H0 Hirnwelt stage;
+- façade screenshots;
+- `clayify()`;
+- `clay-soften.v1.js`;
+- v8 material/profiles;
+- K2/v10 reference modules.
+
+For kit houses the binding order is **real source house → K1/H0 clay soften/preprocess → clay surface → later bend/torsion if needed**. A raw donor that is only bent and shaded is not yet a faithful K1/H0 façade adaptation.
+
+
 ### 1 · Source / ownership grammar: S5 Building / Façade Clay Adapter
 
 Prepared S5 exists and is **not on main**.
@@ -94,6 +115,9 @@ Current main source:
 `tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/`
 
 GitHub main currently labels it **CANDIDATE · visual donor only**.
+
+
+**R0A source-fidelity correction · 2026-09-29:** the newly recovered K1/H0 package proves that R0A's current building path is incomplete as a K1/H0 façade reference: R0A bends donor geometry directly and does not run the K1/H0 `clay-soften.v1` per-house preprocessing before bend. Keep R0A as a candidate world composition/performance donor; do not use it as the source for K1/H0 house deformation.
 
 Its recipe uses:
 - K2 v10 clay material/tool mix;
