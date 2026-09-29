@@ -455,3 +455,112 @@ Do not change the Social Card Relay candidate.
 Identify the existing Town/Travel owner of the three relative resource request families, resolve/retire/classify those requests, then rerun the exact unchanged Relay browser proof.
 
 Only after that PASS may the Social Card Relay move to public Stage or the subsequent real ChatterBox/Reaction adapter subgate.
+## Site-first character-design milestone · Resident Epistemic Culture + Base-24 · 2026-09-29
+
+This design strand now has two additive living documents:
+
+- `RESIDENT_EPISTEMIC_CULTURE_2026-09-29.md`
+- `RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md`
+
+### Resident Epistemic Culture
+
+Added the shared-but-not-identical epistemic baseline:
+- KFB Town is conflict-rich but escalation-poor;
+- stable relationships may combine affection, irritation, trust, fascination, rivalry and long shared history;
+- Residents may share a method habit without sharing conclusions;
+- existing KFB triad remains: official story / stated purpose · POSIWID + cui bono · Hanlon's Bizarro-Blödsinn;
+- no Resident owns final truth;
+- each Resident may carry expertise, jargon, blind spots, projection and one current preoccupation;
+- Evidence → Resident Perception → Resident Interpretation → Performance remain separate;
+- existing semantic Triplet / reader-closure lineage remains the dialogue grammar;
+- Fluff-o-lect remains Closure on word level, not a generic cute-word filter;
+- jargon, expert language and subcultural/dog-whistle vocabulary are character evidence, not engine-level truth markers;
+- outside-world/news material remains optional/experimental and must enter as a bounded factual packet before Resident interpretation;
+- Base Social Memory starts with authored relationship priors, then grows through compact meaningful receipts rather than transcript dumps.
+
+### Base-24 living cast map
+
+Current Resident Atlas session cut contains **27 resident recipes**, but recipes are not one-to-one with social identities. The new Base-24 document therefore treats the first game cast as a curation problem.
+
+The v0.1 map contains exactly **24 social Resident rows**, including:
+- King Kayfabian / Paladin;
+- Lorekeeper;
+- Offica / Officer Doppeldenk;
+- Protagonist A + Protagonist B as separate social identities;
+- Goth Girl;
+- Clown;
+- Toy Soldier;
+- Farmer A + Farmer B as separate social identities;
+- Caveman;
+- Witch;
+- Black Knight;
+- Avian Swordsman;
+- Skeleton Warrior / Rogue / Mage / Minion;
+- Vampire;
+- Demon Lord;
+- Orc Brute;
+- Monstrosity;
+- Cleric;
+- The Hiker.
+
+It preserves the existing Town archetype decisions:
+- FrizzleBob = Herald / Guide;
+- Lorekeeper = Mentor;
+- King Kayfabian = Ruler;
+- Offica Doppeldenk = bureaucratic Threshold Guardian;
+- Trickster and Shadow remain movable/relational functions.
+
+The map adds a Jung-style drive axis, source status, social-friction engine, habitat/routine seed and Signature-Deck lane.
+
+### Character-authoring shortcut
+
+For early tests, use a three-vector seed:
+
+```text
+social mask
++ cognitive style
++ comic failure mode
+```
+
+This is a fast characterization seed, not an impersonation system or final biography.
+
+### Dialogue / thought direction
+
+New presentation direction is recorded as a **skin / presentation requirement**, not a second ChatterBox owner:
+- readable rectangular speech boxes;
+- lightly rounded corners;
+- no Claymation bubble treatment;
+- no Cavey/KFB-outline treatment;
+- one active NPC speech box normal, two simultaneous speech boxes soft maximum;
+- separate concise thought treatment for private contradiction, remembered grievance, unsaid retort or current preoccupation;
+- speech changes the social scene; thought changes how the player reads the Resident.
+
+### First integrated Resident Interaction MVP
+
+The living target loop is now:
+
+```text
+routine
+→ POI Attention
+→ Curiosity / Interest
+→ Expectation
+→ interaction
+→ speech / choice beat
+→ optional Card or Gift handoff
+→ embodied Reaction Choreography
+→ optional short thought beat
+→ conditional Lean Memory receipt
+→ resume / retarget
+```
+
+Minimum future proof: two contrasting Residents, real activities, interrupt/resume, one Gift/Card handoff, context-sensitive reaction, speech box, thought box, one meaningful receipt and one later revisit that changes a response.
+
+### Status
+
+- design documents: **2 added**;
+- Base-24 rows: **24/24 present**;
+- runtime changes: **0**;
+- browser/Stage/Live changes: **0**;
+- Social Card Relay recovery gate remains unchanged: **TOWN-RESOURCE-PATH-01**.
+
+The Base-24 character work can continue Site-first while GitHub stays milestone-only.
