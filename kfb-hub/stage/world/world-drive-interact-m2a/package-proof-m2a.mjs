@@ -32,7 +32,8 @@ ok('inherited R4 public-verification metadata is truthful',source.publicVerified
 ok('shared shadow/contact profile marker',world.includes('KFB_SHARED_SHADOW_CONTACT_V1'));
 ok('shared owner forces PCFSoftShadowMap',world.includes('renderer.shadowMap.type = THREE.PCFSoftShadowMap'));
 ok('startup fixed-frustum guessed bias removed',!world.includes('sun.shadow.normalBias = 0.016')&&!world.includes('left: -34, right: 34'));
-ok('thin overlay policy does not exclude DoubleSide as a class',world.includes('thinShadowCaster')&&world.includes('doubleSideCasters')&&!world.includes('m.side === THREE.DoubleSide'));
+const thinPolicyBody=world.slice(world.indexOf('function thinShadowCaster'),world.indexOf('function applyShadowPolicy'));
+ok('thin overlay policy does not exclude DoubleSide as a class',thinPolicyBody.includes('thinShadowCaster')&&!thinPolicyBody.includes('THREE.DoubleSide')&&world.includes('doubleSideCasters'));
 ok('WB2 actor and prop consume world shadow policy',app.includes("label:'wb2-authoring-actor'")&&app.includes("label:'wb2-authoring-prop'"));
 ok('play actor consumes world shadow policy',play.includes("label: 'world-play-actor'"));
 ok('drive vehicle consumes world shadow policy',drive.includes("label:'world-drive-vehicle'"));
