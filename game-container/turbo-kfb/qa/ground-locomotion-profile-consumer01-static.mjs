@@ -19,6 +19,7 @@ assert.match(player,/const TRAVEL_SPRINT_SPEED = 9\.45/);
 assert.match(player,/TRAVEL_RATE_MAX = 4\.0/);
 assert.doesNotMatch(player,/TRAVEL_CADENCE/);
 assert.match(player,/profileTransition\(currentRole,nextRole\)/);
-assert.match(player,/profileContactPhase\(currentRole\)/);\nassert.match(player,/sameClip:true/);
+assert.match(player,/profileContactPhase\(currentRole\)/);
+assert.match(player,/sameClip:true/);
 assert.match(player,/profileOwner:walkPace==='travel'\?PROFILE_OWNER_PATH:null/);
 console.log('RESULT 17/17 PASS');
