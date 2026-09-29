@@ -16,13 +16,34 @@ for(const spec of [{name:'desktop',width:1280,height:820},{name:'narrow',width:3
   ok(spec.name+' clay covers terrain road sidewalk facades roofs',r.clay.layers.medium.includes('terrain/road/sidewalk')&&r.clay.layers.coarse.includes('facades/roofs'));
   ok(spec.name+' R4 adaptive quality active',r.quality.profile==='ADAPTIVE_RESOLUTION_CLAY_DISTANCE_R4'&&r.quality.pixelRatio<=.86&&r.quality.cssUiNativeResolution);
   ok(spec.name+' far city clay is simplified',r.clay.distanceBudget.simplifiedMeshes>0);
+  ok(spec.name+' shared shadow profile active',r.shadow?.profile==='KFB_SHARED_SHADOW_CONTACT_V1'&&r.shadow.mapTypeName==='PCFSoftShadowMap',JSON.stringify(r.shadow));
+  ok(spec.name+' fitted shadow follows canonical texel bias',r.shadow?.follow?.halfM>=90&&r.shadow.follow.halfM<=400&&Math.abs(r.shadow.follow.normalBiasTexels-1.2)<1e-9&&r.shadow.follow.normalBias>0&&r.shadow.follow.bias===-0.00003,JSON.stringify(r.shadow?.follow));
+  ok(spec.name+' shared caster policy reaches integrated roots',r.shadow?.policy?.runs>=4&&r.shadow.policy.labels.includes('world-city-preserve')&&r.shadow.policy.labels.includes('world-play-actor'),JSON.stringify(r.shadow?.policy));
+  ok(spec.name+' solid casters remain after thin-overlay filter',r.shadow?.policy?.casters>0&&r.shadow.policy.meshes>=r.shadow.policy.casters,JSON.stringify(r.shadow?.policy));
   ok(spec.name+' starts Ground beside vehicle',r.mobility.mode==='ground'&&r.mobility.interaction.available);
   ok(spec.name+' exact Race donor pinned',r.mobility.drive.source.raceHead==='406cd26f44f22811fe3b3a58776839be7ffb7b2c');
   ok(spec.name+' no proxy Track',r.mobility.trackProxy===false);
+  await page.evaluate(()=>{
+    const a=window.__worldDriveM2A.app,p=a.play?.position||a.world.spawn,cam=a.camera,ctl=a.controls;
+    ctl.target.set(p.x,p.y+1.0,p.z);cam.position.set(p.x+5.5,p.y+3.2,p.z+5.5);ctl.update();
+    a.world.setSun(35,32);
+  });
+  await page.waitForTimeout(500);
+  await page.screenshot({path:out+'/'+spec.name+'-shadow-actor-prop.png'});
+  await page.evaluate(()=>{
+    const a=window.__worldDriveM2A.app,z=a.world.zone,s=a.world.spawn;
+    const cent=b=>{let x=0,z0=0,n=0;for(const p of b.fp||[]){x+=p.x;z0+=p.z;n++}return n?{x:x/n,z:z0/n}:null};
+    let best=null;for(const b of z.buildings||[]){const q=cent(b);if(!q)continue;const d=Math.hypot(q.x-s.x,q.z-s.z);if(!best||d<best.d)best={...q,d}}
+    if(best){a.controls.target.set(best.x,3,best.z);a.camera.position.set(best.x+14,9,best.z+14);a.controls.update()}
+    a.world.setSun(55,28);
+  });
+  await page.waitForTimeout(500);
+  await page.screenshot({path:out+'/'+spec.name+'-shadow-building-contact.png'});
   const start=r.mobility.drive.position;
   await page.keyboard.press('KeyE');await page.waitForFunction(()=>document.body.dataset.m1Mobility==='drive');
   r=await page.evaluate(()=>window.__worldDriveM2A.report());
   ok(spec.name+' E enters Drive',r.mobility.mode==='drive'&&r.mobility.drive.active);
+  ok(spec.name+' drive vehicle consumes caster policy',r.shadow?.policy?.labels.includes('world-drive-vehicle'),JSON.stringify(r.shadow?.policy));
   ok(spec.name+' Free Roam owns Drive',r.mobility.router.activeMovementOwner==='FREE_ROAM_C0'&&r.mobility.router.activeCameraOwner==='FREE_ROAM_C0');
   await page.keyboard.down('KeyW');await page.waitForTimeout(1700);await page.keyboard.up('KeyW');await page.waitForTimeout(250);
   r=await page.evaluate(()=>window.__worldDriveM2A.report());
