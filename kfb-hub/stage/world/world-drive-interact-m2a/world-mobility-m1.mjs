@@ -53,7 +53,7 @@ export async function mountWorldMobility(app){
     bank:0,pitchTilt:0,boosting:false,climbIn:0,groundM:0
   };
   const camTarget=new THREE.Vector3(),camWant=new THREE.Vector3(),forward=new THREE.Vector3();
-  let cameraLook=new THREE.Vector3(),mode='GROUND',lastY=0,turnSmoothed=0,actorParent='world',drivePulse=0;
+  let cameraLook=new THREE.Vector3(),mode='GROUND',lastY=0,turnSmoothed=0,actorParent='world';
 
   const keydown=e=>{
     if(!play.on)return;
@@ -97,7 +97,7 @@ export async function mountWorldMobility(app){
 
   function enterDrive(){
     if(drive.distanceTo(play.position)>8)throw Error('Das Fahrzeug ist zu weit entfernt');
-    groundActor();drive.root.add(play.actor.holder);play.actor.holder.position.set(0,-.18,-.16);play.actor.holder.rotation.set(0,0,0);play.actor.holder.visible=true;actorParent='drive';drive.setActive(true);drivePulse=.42;
+    groundActor();drive.root.add(play.actor.holder);play.actor.holder.position.set(0,-.18,-.16);play.actor.holder.rotation.set(0,0,0);play.actor.holder.visible=true;actorParent='drive';drive.setActive(true);
     return {mode:'DRIVE',movementOwner:'FREE_ROAM_C0',cameraOwner:'FREE_ROAM_C0',source:DRIVE_SOURCE};
   }
 
@@ -166,7 +166,6 @@ export async function mountWorldMobility(app){
   play.update=dt=>{
     if(mode==='FLIGHT'&&play.on)return flightUpdate(dt);
     if(mode==='DRIVE'&&play.on){
-      if(drivePulse>0){drivePulse=Math.max(0,drivePulse-dt);const q=1-Math.abs(drivePulse/.21-1);drive.root.scale.set(1+.05*q,1-.08*q,1+.05*q)}else drive.root.scale.setScalar(1);
       play.actor.play('idle',1,.18);play.actor.update(dt);
       const state=drive.update(dt);
       // Same focus contract for Drive: presentation follows the actual vehicle,
