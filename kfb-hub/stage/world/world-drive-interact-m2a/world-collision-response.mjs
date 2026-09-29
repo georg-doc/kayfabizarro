@@ -30,7 +30,7 @@ export function collectReactiveProps(sceneObjects){
   const surfaces=[],records=new Map(),values=sceneObjects instanceof Map?[...sceneObjects.values()]:Array.from(sceneObjects||[]);
   let n=0;
   for(const root of values){
-    if(!root?.isObject3D||root.visible===false)continue;
+    if(!root?.isObject3D||root.visible===false||root.userData?.kind!=='prop')continue;
     root.updateMatrixWorld(true);
     const box=new THREE.Box3().setFromObject(root);if(box.isEmpty())continue;
     const size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3()),largest=Math.max(size.x,size.y,size.z);
