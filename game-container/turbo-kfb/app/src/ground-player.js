@@ -33,11 +33,11 @@ const REF_SPEED = Object.freeze({
 });
 const LEGACY_WALK_SPEED = 1.08;
 const WALK_SPEED = REF_SPEED.Walking_A;
-// Georg TUNE 2026-09-29: normal free-travel W must feel materially faster than source cadence.
-// This is the existing measured technical handoff ceiling: Walking_A at the 1.8x playback cap.
-const TRAVEL_WALK_SPEED = REF_SPEED.Walking_A * 1.8;
 const RUN_SPEED = REF_SPEED.Running_A;
 const SPRINT_SPEED = REF_SPEED.Running_B;
+// Georg TUNE 2 · 2026-09-29: normal Travel W is the second gear, Running_A.
+// Walking_A remains the measured comparison profile; Shift is the only forward upshift to Running_B.
+const TRAVEL_FORWARD_SPEED = RUN_SPEED;
 const HANDOFF_SPEED = 1.108;
 const SPRINT_HANDOFF = RUN_SPEED * 1.08;
 const RATE_MIN = 0.30;
@@ -175,7 +175,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
   const feelMode = query.get('groundFeel') === 'velocity' ? 'velocity' : 'direct';
   const enhanced = feelMode === 'velocity';
   const walkPace = enhanced && query.get('walkPace') === 'travel' ? 'travel' : 'measured';
-  const baseWalkSpeed = walkPace === 'travel' ? TRAVEL_WALK_SPEED : WALK_SPEED;
+  const baseForwardSpeed = walkPace === 'travel' ? TRAVEL_FORWARD_SPEED : WALK_SPEED;
   const loads=[
     loader.loadAsync(raw(ACTOR)),
     loader.loadAsync(raw(GENERAL)),
@@ -260,8 +260,8 @@ export async function createGroundPlayer({ scene, track } = {}) {
     const jumpV=4*jumpApex/jumpAirTime;
     walk.setParams({
       feelMode:'velocity',
-      speed:baseWalkSpeed,
-      sprintMul:SPRINT_SPEED/baseWalkSpeed,
+      speed:baseForwardSpeed,
+      sprintMul:SPRINT_SPEED/baseForwardSpeed,
       acceleration:7.5,
       deceleration:11,
       directionResponse:13,
@@ -300,7 +300,7 @@ export async function createGroundPlayer({ scene, track } = {}) {
       const base=1.25;
       walk.setParams({speed:base,sprintMul:cmd.sprint?SPRINT_SPEED/base:1});
     } else {
-      walk.setParams({speed:baseWalkSpeed,sprintMul:SPRINT_SPEED/baseWalkSpeed});
+      walk.setParams({speed:baseForwardSpeed,sprintMul:SPRINT_SPEED/baseForwardSpeed});
     }
   }
 
@@ -311,10 +311,14 @@ export async function createGroundPlayer({ scene, track } = {}) {
       name:cmd.strafe < 0 ? CLIP.strafeLeft : CLIP.strafeRight,
       semantic:cmd.strafe < 0 ? 'strafe.left' : 'strafe.right',
     };
+    if (walkPace === 'travel') {
+      return cmd.sprint
+        ? {name:CLIP.sprint,semantic:'sprint'}
+        : {name:CLIP.run,semantic:'run'};
+    }
     if (cmd.sprint) {
-      const sprintHandoff = walkPace === 'travel' ? SPRINT_SPEED * 0.96 : SPRINT_HANDOFF;
       if (st.speed < HANDOFF_SPEED) return {name:CLIP.walk,semantic:'walk.fast'};
-      if (st.speed < sprintHandoff) return {name:CLIP.run,semantic:'run'};
+      if (st.speed < SPRINT_HANDOFF) return {name:CLIP.run,semantic:'run'};
       return {name:CLIP.sprint,semantic:'sprint'};
     }
     return {name:CLIP.walk,semantic:'walk'};
@@ -422,8 +426,12 @@ export async function createGroundPlayer({ scene, track } = {}) {
         feelMode,
         enhanced,
         walkPace,
-        walkSpeed:enhanced?baseWalkSpeed:LEGACY_WALK_SPEED,
-        walkPlaybackRate:enhanced?rateFor(CLIP.walk,baseWalkSpeed):null,
+        forwardSpeed:enhanced?baseForwardSpeed:LEGACY_WALK_SPEED,
+        travelDefaultClip:walkPace==='travel'?CLIP.run:CLIP.walk,
+        travelShiftClip:walkPace==='travel'?CLIP.sprint:null,
+        walkSpeed:enhanced?(walkPace==='travel'?WALK_SPEED:baseForwardSpeed):LEGACY_WALK_SPEED,
+        walkPlaybackRate:enhanced?rateFor(CLIP.walk,WALK_SPEED):null,
+        runPlaybackRate:enhanced?rateFor(CLIP.run,RUN_SPEED):null,
         runSpeed:RUN_SPEED,
         sprintSpeed:enhanced?SPRINT_SPEED:null,
         jump:enhanced?{

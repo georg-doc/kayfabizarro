@@ -100,3 +100,11 @@
 - Public Chromium run `36583694971` / job `109458242652`: **13/13 PASS**, exact `d6e9d421...` marker, faster Walk + Run/Sprint + release + Orbit + Hub link, zero runtime/page/console errors.
 - Public artifact `11040747449`, digest `sha256:8c1b6f7e9bd53d8637fc814efff2e27ca91beb80629b34d63d7c593ead353fe2`; screenshots `stage.png`, `hub.png`.
 - Exactly one next gate: Georg human pace feel at ~1.10 u/s; no merge / Enter-Exit before verdict.
+
+
+## 2026-09-29 · GROUND-WALK-PACE-TUNE-02 · implementation
+- Georg TUNE 2: 1.10 u/s Walking_A still felt like the old slow controller.
+- Reframed `walkPace=travel` as exactly two forward gears: W = `Running_A`, Shift = `Running_B` Sprint.
+- Travel forward target is now source-backed Running_A speed (~2.4803 u/s); Sprint remains Running_B (~3.028 u/s).
+- Removed the Travel-only Walking_A / walk.fast / threshold ladder; measured/no-query path remains intact.
+- Jump, backward/strafe, velocity response and Orbit unchanged; tests pending.

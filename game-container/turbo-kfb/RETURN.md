@@ -446,3 +446,19 @@ Interpretation:
 
 ## Exactly one current next gate
 **GROUND-WALK-PACE-TUNE-02:** implement the two-gear Travel ladder on this same owner branch, prove normal W = Running_A and Shift = Running_B in the integrated Ground+Orbit host, then republish the same dedicated Pace-Tune Stage for Georg feel review. No Enter/Exit Kart before this gate.
+
+
+## GROUND-WALK-PACE-TUNE-02 · implementation checkpoint
+
+Status: **IMPLEMENTED · TESTS PENDING**
+
+- same canonical pace owner / PR #289; no new locomotion branch or runtime owner;
+- `walkPace=travel` is now a two-gear forward profile:
+  - **W → Running_A / run**, target = source-backed `Running_A` reference (~2.4803 u/s);
+  - **Shift+W → Running_B / sprint**, target ~3.028 u/s;
+- Travel W selects `Running_A` immediately from Idle; it no longer waits for a Walk/Fast/Run threshold;
+- Shift selects `Running_B` immediately; release returns directly to `Running_A`;
+- measured/no-query profile still keeps `Walking_A` and the prior semantic ramp for comparison;
+- backward/strafe, actor-scale Jump, velocity response and Orbit are unchanged.
+
+Exactly one current gate: run the existing Ground+Orbit regression plus the dedicated Travel two-gear browser proof. Republish the same Stage route only after both pass.
