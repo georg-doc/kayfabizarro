@@ -1,0 +1,46 @@
+name: PlayCanvas Donor 01 self-host parity
+on:
+  push:
+    branches: [chatgpt-web/playcanvas-donor-01-2026-09-29]
+    paths:
+      - 'game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/local-proof.mjs'
+      - '.github/workflows/playcanvas-donor-01-parity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/local-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local donor host
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pc-donor-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/static/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pc-donor-http.log
+          exit 1
+      - name: Self-hosted donor parity
+        run: node game-container/turbo-kfb/donors/playcanvas-vehicle-physics-01/local-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playcanvas-donor-01-local-parity
+          path: playcanvas-donor-01-local-proof
+          retention-days: 14
