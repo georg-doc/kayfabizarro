@@ -1,0 +1,57 @@
+name: KFB Container Ground Controller Donor 01
+
+on:
+  push:
+    branches:
+      - chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29
+    paths:
+      - 'game-container/turbo-kfb/**'
+      - '.github/workflows/kfb-container-ground-controller-donor-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static donor checks
+        run: node game-container/turbo-kfb/qa/ground-controller-donor01-static.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.62.1
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 --directory . >/tmp/kfb-ground-donor-http.log 2>&1 &
+          echo $! >/tmp/kfb-ground-donor-http.pid
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/game-container/turbo-kfb/app/ >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-ground-donor-http.log
+          exit 1
+      - name: B2 regression browser proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-baseline
+        run: node game-container/turbo-kfb/qa/checkpoint-a.mjs
+      - name: Velocity candidate browser proof
+        env:
+          BASE_URL: http://127.0.0.1:4173/game-container/turbo-kfb/app/
+          ARTIFACT_DIR: game-container/turbo-kfb/qa/artifacts-ground-donor01
+        run: node game-container/turbo-kfb/qa/ground-controller-donor01.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-container-ground-controller-donor01
+          path: |
+            game-container/turbo-kfb/qa/artifacts-baseline/
+            game-container/turbo-kfb/qa/artifacts-ground-donor01/
+          if-no-files-found: warn
