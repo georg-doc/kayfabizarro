@@ -1,0 +1,59 @@
+{
+  "schema": "kfb.ground-controller-donor01.turbo/1",
+  "status": "REAL_BROWSER_PASS_HUMAN_FEEL_OPEN",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29",
+  "baseHead": "b4c7bb14cb51d6c5515613593b33c0ea0e183e89",
+  "testedHead": "ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4",
+  "siblingOrbitBranch": "chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29",
+  "externalBehaviorReference": {
+    "repo": "NafisRayan/3D-Game-Template-Ultimate",
+    "commit": "afe15865eafc86fbe1aab017d926ad3820b9a56b",
+    "license": "NO_SPECIFIC_LICENSE_DECLARED",
+    "sourceCopied": false
+  },
+  "candidate": {
+    "query": "ground=1&groundFeel=velocity",
+    "oneMovementOwner": "walk-controller",
+    "clips": [
+      "Idle_A",
+      "Walking_A",
+      "Running_A",
+      "Running_B",
+      "Walking_Backwards",
+      "Running_Strafe_Left",
+      "Running_Strafe_Right",
+      "Jump_Start",
+      "Jump_Idle",
+      "Jump_Land"
+    ],
+    "walkSpeed": 0.610950956910957,
+    "runObserved": 2.5867839514839654,
+    "sprintObserved": 3.024085161843267,
+    "jump": {
+      "apex": 1.2075871706086714,
+      "nominalAirTime": 0.78,
+      "horizontalTravelObserved": 3.9
+    }
+  },
+  "evidence": {
+    "run": 36554119832,
+    "job": 109359065140,
+    "checks": {
+      "static": "16/16",
+      "baselineBrowser": "29/29",
+      "candidateBrowser": "22/22"
+    },
+    "errors": {
+      "runtime": 0,
+      "pageConsole": 0
+    },
+    "artifact": 11027300966,
+    "artifactSha256": "67d77fd0dfb136824674e737adc575b569590aa410b6ce45dfd96cf17ceab9c0"
+  },
+  "stage": {
+    "status": "NOT_YET_PUBLISHED",
+    "planned": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/"
+  },
+  "nextGate": "PUBLISH_DEDICATED_STAGE_THEN_HUMAN_LOCOMOTION_FEEL"
+}

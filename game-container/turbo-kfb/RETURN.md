@@ -116,3 +116,42 @@ Implementation:
 Status: **IMPLEMENTED · TESTS/BROWSER PENDING**.
 
 Exactly one current gate: extend the existing real Turbo browser harness to prove legacy B2 regression plus the opt-in candidate's speed ramp, semantic states and bounded jump.
+
+
+## GROUND-CONTROLLER-DONOR-01 · tested result
+
+Tested implementation/evidence head: `ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4`
+
+GitHub Actions:
+- run: `36554119832`
+- job: `109359065140`
+- conclusion: **SUCCESS**
+- static clean-room/state checks: **16/16 PASS**
+- unchanged B2 real-browser regression: **29/29 PASS**
+- opt-in Velocity/semantic-state real-browser proof: **22/22 PASS**
+- runtime error collector: **0**
+- page/console errors: **0**
+- artifact: `11027300966`
+- digest: `sha256:67d77fd0dfb136824674e737adc575b569590aa410b6ce45dfd96cf17ceab9c0`
+
+Measured candidate behavior in the real Turbo world:
+- Walk target/reference: `0.6109509569 u/s`
+- after 0.12 s start: `0.4602923058 u/s` — acceleration instead of instant snap
+- settled Walk: `0.6109509569 u/s`
+- Shift ramp after 0.16 s: `Running_A / run @ 2.5867839515 u/s`
+- settled top tier: `Running_B / sprint @ 3.0240851618 u/s`
+- release returns to `Walking_A / walk @ 0.6136849006 u/s`
+- backward: `Walking_Backwards / backward` PASS
+- Q strafe: `Running_Strafe_Left / strafe.left` PASS
+- theoretical actor-scale jump: apex `1.2075871706 u`, nominal air time `0.78 s`
+- sprint-jump observed horizontal travel: `3.90 u`
+- jump sequence: `Jump_Start → Jump_Idle → Running_B` after landing
+
+Baseline preservation on the same branch:
+- EXPLORE drive displacement: `28.91 u`
+- Race regression: 8 karts, drive displacement `22.51 u`
+- old no-query Ground still binds the exact six B2 clips and uses `Running_A @ 2.4802741670 u/s`.
+
+Status: **TECHNICAL + REAL-BROWSER PASS · HUMAN FEEL REVIEW NOT YET PUBLISHED**.
+
+Next gate: publish one dedicated direct Stage route for the real candidate, linked from KFB Hub, then human freeplay compares locomotion feel only. Orbit B2a remains a separate sibling and is not merged into this branch.
