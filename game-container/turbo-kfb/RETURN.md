@@ -214,7 +214,7 @@ No merge. No Enter/Exit Kart. No Orbit decision in this gate.
 
 ## Integrated slice · GROUND-ORBIT-INTEGRATION-01
 
-Status: **IMPLEMENTED · CI RUNNING · NOT STAGE-PUBLISHED**
+Status: **REAL-BROWSER PASS · 29/29 + 22/22 + 27/27 · STAGE PUBLICATION NEXT**
 
 Owner:
 - repo: `georg-doc/kayfabizarro`
@@ -239,15 +239,27 @@ Runtime ownership:
 - no Enter/Exit Kart and no second movement owner added.
 
 QA:
-- workflow run `36557928700` is currently running on exact QA head `9a71c79d...`;
+- workflow run `36557928700` on exact runtime/QA head `9a71c79d63cd985f0ab622e4309656ab522ccea4`: **SUCCESS**;
 - static Locomotion donor: **16/16 PASS**;
 - static integration seam: **10/10 PASS**;
-- pending in the same run:
-  1. B2 browser regression;
-  2. Velocity Locomotion browser proof;
-  3. combined Velocity + Orbit browser proof.
+- B2 browser regression: **29/29 PASS**;
+- Velocity Locomotion browser proof: **22/22 PASS**;
+- combined Velocity + Orbit browser proof: **27/27 PASS**;
+- runtime/page/console errors: **0**;
+- artifact: `11029226537`;
+- digest: `sha256:8aadac4950f6b877cc06451613ad83788be28b47982a847d5c657ae42bf93ce3`.
 
-No Stage/Hub publication until the combined browser proof passes.
+Combined measured facts:
+- Orbit drag camera displacement: **7.66 u**;
+- Orbit wheel zoom: **7.50 → 3.52 u** target distance;
+- C recenter: exact actor-back yaw;
+- Walk: **0.6109509569 u/s**;
+- Running_A ramp: **2.5867839515 u/s**;
+- Running_B sprint: **3.0240851618 u/s**;
+- jump apex: **1.2075871706 u**;
+- sprint-jump travel: **3.90 u**;
+- backward + strafe source clips PASS;
+- no root-motion world translation.
 
 ## Exactly one current next gate
-Finish workflow `36557928700`. If green, record evidence and publish one integrated Ground+Orbit Stage milestone; if red, repair only the concrete combined regression.
+Publish this exact tested runtime as one dedicated Hub-linked Ground+Orbit Stage milestone. No merge and no Enter/Exit Kart yet.

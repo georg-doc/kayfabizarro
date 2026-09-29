@@ -39,3 +39,34 @@ The prior 0.04 u failures were caused by rAF throttling in the headless runner. 
 ## Stage
 `cloudflare-live@563d3c1f1c0ed89bf810ba7448db8e90bf0a30f3`
 Cloudflare Pages: SUCCESS.
+
+
+## 2026-09-29 · GROUND-ORBIT-INTEGRATION-01
+
+Tested runtime/QA head: `9a71c79d63cd985f0ab622e4309656ab522ccea4`
+Actions run: `36557928700`
+Artifact: `11029226537`
+Digest: `sha256:8aadac4950f6b877cc06451613ad83788be28b47982a847d5c657ae42bf93ce3`
+
+### Result
+- Locomotion donor static: **16/16 PASS**
+- Orbit integration static: **10/10 PASS**
+- B2 browser regression: **29/29 PASS**
+- Velocity locomotion: **22/22 PASS**
+- Combined Velocity + Orbit: **27/27 PASS**
+- runtime errors: **0**
+- page/console errors: **0**
+
+### Combined Ground facts
+- exact semantic source clips include `Running_B`, `Walking_Backwards`, `Running_Strafe_Left/Right`;
+- Walk = 0.6109509569 u/s;
+- Running_A ramp = 2.5867839515 u/s;
+- Running_B sprint = 3.0240851618 u/s;
+- jump apex = 1.2075871706 u; nominal air = .78 s; sprint-jump travel = 3.90 u;
+- Orbit mounted with drag / wheel zoom / C recenter;
+- drag moved camera 7.66 u;
+- zoom target distance 7.50 → 3.52 u;
+- recenter yaw diff = 0;
+- no root-motion world translation.
+
+No Stage claim in this report until the dedicated public route is deployed and verified.

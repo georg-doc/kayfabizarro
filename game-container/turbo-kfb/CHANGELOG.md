@@ -55,3 +55,13 @@
 - Final Hub badge source: `cloudflare-live@c752cab81b35ca44998a635c544fd05eb1a33b85` · PUBLIC VERIFIED · HUMAN FEEL.
 - Orbit B2a remains a separate sibling slice.
 - Next and only gate: Georg locomotion feel in the real dedicated Stage.
+
+
+## 2026-09-29 · GROUND-ORBIT-INTEGRATION-01 · real-browser PASS
+- branched from public-verified GROUND-CONTROLLER-DONOR-01 handoff `8016b925...`;
+- transplanted exact tested Orbit B2a module + main camera-owner seam;
+- retained #287 ground-player / walk-controller / ground-feel blobs unchanged;
+- run `36557928700`: static **16/16 + 10/10**, browser **29/29 + 22/22 + 27/27 PASS**;
+- combined candidate proves Velocity semantic locomotion and free Ground orbit together with zero runtime/page/console errors;
+- artifact `11029226537`, digest `sha256:8aadac4950f6b877cc06451613ad83788be28b47982a847d5c657ae42bf93ce3`;
+- next: one dedicated Ground+Orbit Stage milestone; no merge / Enter-Exit yet.
