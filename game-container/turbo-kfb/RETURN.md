@@ -93,3 +93,26 @@ Replace wall-clock/rAF timing in the browser proof with a deterministic fixed-st
 3. Ground `Idle → Walk → Run → Walk → Stop → Jump_Start → Jump_Idle → Land`.
 
 Only after that result is known should any product repair be attempted.
+
+
+## Parallel slice · GROUND-CONTROLLER-DONOR-01 · implementation checkpoint
+
+- branch: `chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29`
+- implementation head: `c5613ff80c6ece19bb701fad98d4f9310d9e8a5b`
+- base: shared B2 browser-pass head `b4c7bb14cb51d6c5515613593b33c0ea0e183e89`
+- Orbit B2a runs separately on `chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29`; this slice does not edit `ground-orbit-camera.js` or camera integration.
+- external `NafisRayan/3D-Game-Template-Ultimate` is behavior-only evidence; its repository declares no specific license and no source code is copied.
+
+Implementation:
+- `ground-feel.js` adds opt-in velocity response/damping;
+- `walk-controller.js` keeps `direct` as default and exposes `velocity` inside the same movement owner;
+- `ground-player.js` activates the candidate only with `?groundFeel=velocity`;
+- candidate consumes existing Rig_Medium roles: `Walking_A`, `Running_A`, `Running_B`, `Walking_Backwards`, `Running_Strafe_Left/Right`, plus Jump Start/Air/Land;
+- candidate Walk returns to measured Walking_A speed instead of the B2 1.08 u/s near-max playback-rate compromise;
+- Shift ramps `walk.fast → run → sprint` rather than snapping directly to one Run state;
+- candidate jump is actor-scale ballistic, disables inherited Gummiball bounce and keeps KayKit Jump Start/Air/Land presentation;
+- no-query B2 path remains the regression control.
+
+Status: **IMPLEMENTED · TESTS/BROWSER PENDING**.
+
+Exactly one current gate: extend the existing real Turbo browser harness to prove legacy B2 regression plus the opt-in candidate's speed ramp, semantic states and bounded jump.
