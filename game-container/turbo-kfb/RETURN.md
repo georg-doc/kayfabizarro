@@ -1,11 +1,11 @@
 # KFB Container Turbo-01 · Return
 
 Updated: 2026-09-29
-Status: **CHECKPOINT B BROWSER PASS · HUMAN MOTION/FEEL GATE**
+Status: **GROUND-CONTROLLER-DONOR-01 · PUBLIC VERIFIED · HUMAN LOCOMOTION FEEL GATE · ORBIT SEPARATE**
 
 ## Owner / branch / heads
 - repo: `georg-doc/kayfabizarro`
-- branch: `chatgpt-web/kfb-container-turbo-01-2026-09-29`
+- branch: `chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29`
 - tested runtime head: `b4c7bb14cb51d6c5515613593b33c0ea0e183e89`
 - Ground implementation head: `772131720e591df1ca341a73e1a59284ef5dd499`
 - upstream host donor: `bridge-mind/turbo-kart-rally@c52aca3f10c7995884c316810cac6514daa40e9c` · MIT
@@ -165,3 +165,48 @@ Baseline preservation on the same branch:
 Status: **TECHNICAL + REAL-BROWSER PASS · HUMAN FEEL REVIEW NOT YET PUBLISHED**.
 
 Next gate: publish one dedicated direct Stage route for the real candidate, linked from KFB Hub, then human freeplay compares locomotion feel only. Orbit B2a remains a separate sibling and is not merged into this branch.
+
+
+## GROUND-CONTROLLER-DONOR-01 · PUBLIC VERIFIED closure
+
+Direct human Stage:
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity
+
+Public publication:
+- first publication commit: `cloudflare-live@2551ce49532ac705f160448562c95e7b6ba05efb`;
+- public-proof Repair 1 commit: `cloudflare-live@ae38fd29993151b655c668bd5776d0f042d2dd27`;
+- final Hub metadata commit: `cloudflare-live@c752cab81b35ca44998a635c544fd05eb1a33b85`;
+- Cloudflare Pages deployment of the runtime revision: SUCCESS;
+- exact public marker `ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4` observed before Chromium.
+
+Public Chromium:
+- run `36556353970`;
+- job `109366329677`;
+- **13/13 PASS**;
+- exact runtime marker PASS;
+- velocity candidate PASS;
+- `Running_B` Sprint PASS;
+- MovementAdvanced directional bindings PASS;
+- public Walk / Sprint / Jump-Air / Land PASS;
+- runtime errors 0;
+- page/console errors 0;
+- Hub `#briefings` contains the dedicated candidate link PASS;
+- artifact `11027623437`;
+- digest `sha256:9bc0088bedce00591e9ddb2b6ab2fd2541bd59a70d5f3f8b469be3976d248211`;
+- screenshots: `stage.png`, `hub.png`.
+
+Public proof history:
+- first public run `36556038270` proved every Stage/runtime check but failed only because QA searched the default **Heute** Hub view for a Briefing card;
+- Repair 1 changed the QA route to `#briefings`; no runtime, locomotion, Stage or Hub-card content repair was required;
+- Repair 1 PASS closed the publication gate.
+
+Parallel boundary remains binding:
+- Orbit B2a: `chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29`;
+- this locomotion slice does not contain `ground-orbit-camera.js`;
+- no merge between sibling candidates is implied.
+
+### Exactly one next gate
+
+**GEORG HUMAN LOCOMOTION FEEL:** use the direct Stage and judge whether Walk → Run → Sprint, stop/release, backward/strafe and moving Jump now read as intentional full-body locomotion rather than tripping/small steps.
+
+No merge. No Enter/Exit Kart. No Orbit decision in this gate.

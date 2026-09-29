@@ -1,6 +1,6 @@
 # GROUND-CONTROLLER-DONOR-01 · Test Report
 
-**Status:** REAL-BROWSER PASS · HUMAN FEEL OPEN  
+**Status:** PUBLIC VERIFIED · HUMAN FEEL OPEN  
 **Date:** 2026-09-29
 
 ## Source
@@ -53,7 +53,34 @@ Measured checks:
 - no Orbit-camera integration
 - no Enter/Exit Kart
 - no merge / Live promotion
-- no public Stage yet
+- public Stage is verified; human feel remains open
 
 ## Next gate
 Publish the exact candidate to a dedicated KFB Stage route and ask one freeplay question: **does Walk/Run/Sprint/Jump now read as intentional full-body locomotion rather than tripping/small steps?**
+
+
+## Public Cloudflare proof
+
+Direct route:
+https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity
+
+Publication:
+- `cloudflare-live@2551ce49532ac705f160448562c95e7b6ba05efb` runtime + Hub link;
+- `cloudflare-live@ae38fd29993151b655c668bd5776d0f042d2dd27` QA-only Hub-route correction;
+- exact deployed runtime marker: `ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4`.
+
+Final public proof:
+- run `36556353970`;
+- job `109366329677`;
+- **13/13 PASS**;
+- 0 runtime errors;
+- 0 page/console errors;
+- Hub dedicated link PASS;
+- artifact `11027623437`;
+- digest `sha256:9bc0088bedce00591e9ddb2b6ab2fd2541bd59a70d5f3f8b469be3976d248211`;
+- screenshots `stage.png` and `hub.png`.
+
+Repair accounting:
+- Public proof attempt 1: Stage/runtime PASS; Hub-link assertion FAIL because QA opened default Heute view.
+- Repair 1: QA opens `#briefings`; **PASS**.
+- No product/runtime repair consumed.

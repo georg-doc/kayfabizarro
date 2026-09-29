@@ -1,6 +1,6 @@
 {
   "schema": "kfb.ground-controller-donor01.turbo/1",
-  "status": "REAL_BROWSER_PASS_HUMAN_FEEL_OPEN",
+  "status": "PUBLIC_VERIFIED_HUMAN_FEEL_OPEN",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29",
   "baseHead": "b4c7bb14cb51d6c5515613593b33c0ea0e183e89",
@@ -52,8 +52,30 @@
     "artifactSha256": "67d77fd0dfb136824674e737adc575b569590aa410b6ce45dfd96cf17ceab9c0"
   },
   "stage": {
-    "status": "NOT_YET_PUBLISHED",
-    "planned": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/"
+    "status": "PUBLIC_VERIFIED",
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity",
+    "runtimePublicationCommit": "2551ce49532ac705f160448562c95e7b6ba05efb",
+    "qaRepairCommit": "ae38fd29993151b655c668bd5776d0f042d2dd27",
+    "finalHubMetadataCommit": "c752cab81b35ca44998a635c544fd05eb1a33b85",
+    "exactRuntimeMarker": "ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4",
+    "publicProof": {
+      "run": 36556353970,
+      "job": 109366329677,
+      "checks": "13/13 PASS",
+      "runtimeErrors": 0,
+      "pageConsoleErrors": 0,
+      "artifact": 11027623437,
+      "artifactSha256": "9bc0088bedce00591e9ddb2b6ab2fd2541bd59a70d5f3f8b469be3976d248211",
+      "screenshots": [
+        "stage.png",
+        "hub.png"
+      ]
+    },
+    "repairHistory": {
+      "firstRun": 36556038270,
+      "failure": "QA searched default Heute view; all Stage/runtime assertions passed",
+      "repairPassesUsed": 1
+    }
   },
-  "nextGate": "PUBLISH_DEDICATED_STAGE_THEN_HUMAN_LOCOMOTION_FEEL"
+  "nextGate": "GEORG_HUMAN_LOCOMOTION_FEEL"
 }

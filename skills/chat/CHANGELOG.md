@@ -2054,3 +2054,16 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Two repairs exhausted; no repair 3. Recovery head: `6b08636e552f39ac5f00d0216adcf70fa40f80c6`.
 - No public Stage or human review task.
 - Next only: WB-ZONE-CROP-PARITY-01 diagnostic exact 369-id rule.
+
+
+## 2026-09-29 · GROUND-CONTROLLER-DONOR-01 · PUBLIC VERIFIED
+
+- Turbo Ground locomotion sibling candidate is Draft PR **#287** on `chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29`.
+- Existing `walk-controller` remains the single Ground movement owner.
+- Candidate adds opt-in velocity response, measured Walking_A pace, Running_A→Running_B sprint tier, MovementAdvanced backward/strafe and actor-scale Jump; no external unlicensed source code copied.
+- Source evidence: **16/16 static + 29/29 B2 regression + 22/22 candidate + 22/22 Stage mirror PASS**.
+- Public Cloudflare proof: run `36556353970` / job `109366329677` = **13/13 PASS**, 0 runtime/page errors; Hub link PASS.
+- Direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity
+- Final Hub publication metadata: `cloudflare-live@c752cab81b35ca44998a635c544fd05eb1a33b85`.
+- Orbit B2a remains parallel and untouched.
+- Next gate only: Georg locomotion feel. No merge / Enter-Exit / Live promotion implied.

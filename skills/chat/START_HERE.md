@@ -1291,3 +1291,20 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-09-29 · GROUND-CONTROLLER-DONOR-01 · CURRENT HUMAN GATE
+
+Current bounded Turbo locomotion candidate:
+- owner: existing Turbo Ground / `walk-controller`;
+- branch: `chatgpt-web/kfb-container-ground-controller-donor-01-2026-09-29`;
+- Draft PR: **#287**;
+- tested runtime: `ee1abb9fe6736fe4cf6926846f7d298f9d22b9e4`;
+- source Stage mirror: `e91db771783419a881d861f533ec28ad7ec0c2b9`;
+- public Cloudflare proof: run `36556353970`, **13/13 PASS**, 0 runtime/page errors;
+- Hub: PUBLIC VERIFIED · HUMAN FEEL;
+- direct Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity
+
+This slice owns locomotion feel/state only. Parallel Orbit B2a remains on `chatgpt-web/kfb-container-turbo-orbit-01-2026-09-29`; do not combine the two before their human gates are known.
+
+Exactly one current gate: Georg judges **Walk → Run → Sprint / stop / backward-strafe / moving Jump** feel. No Enter/Exit Kart before that.

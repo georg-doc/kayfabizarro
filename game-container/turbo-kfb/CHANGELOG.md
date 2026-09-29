@@ -42,3 +42,16 @@
 - zero runtime/page/console errors;
 - artifact `11027300966`, digest `sha256:67d77fd0dfb136824674e737adc575b569590aa410b6ce45dfd96cf17ceab9c0`;
 - next: dedicated Hub-linked Stage route for human locomotion feel only; Orbit B2a remains separate.
+
+
+## 2026-09-29 · GROUND-CONTROLLER-DONOR-01 · PUBLIC VERIFIED
+- Stage mirror on source head `e91db771…`: static 16/16 + B2 regression 29/29 + candidate 22/22 + Stage mirror 22/22 PASS.
+- Published dedicated route at `/kfb-hub/stage/game-container/ground-controller-donor-01/?ground=1&groundFeel=velocity`.
+- Cloudflare runtime publication `2551ce4953…`; exact marker appeared and Cloudflare Pages deploy succeeded.
+- Public proof attempt 1: every Stage/runtime assertion PASS; Hub lookup alone failed because QA opened Heute instead of Briefings.
+- Repair 1 `ae38fd2999…`: QA-only route correction to `#briefings`.
+- Final public run `36556353970` / job `109366329677`: **13/13 PASS**, 0 runtime errors, 0 page/console errors, Hub link PASS.
+- Public artifact `11027623437` · `sha256:9bc0088bedce00591e9ddb2b6ab2fd2541bd59a70d5f3f8b469be3976d248211`.
+- Final Hub badge source: `cloudflare-live@c752cab81b35ca44998a635c544fd05eb1a33b85` · PUBLIC VERIFIED · HUMAN FEEL.
+- Orbit B2a remains a separate sibling slice.
+- Next and only gate: Georg locomotion feel in the real dedicated Stage.
