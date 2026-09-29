@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.stage-mirror/0.1",
+  "product": "GROUND-ORBIT-INTEGRATION-01",
+  "status": "STAGE_MIRROR_CANDIDATE",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceBranch": "chatgpt-web/kfb-container-ground-orbit-integration-01-2026-09-29",
+  "runtimeSourceHead": "9a71c79d63cd985f0ab622e4309656ab522ccea4",
+  "currentHandoffHead": "2de6b06f918666a43e449941887f5b54e7d4d7f3",
+  "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/game-container/ground-orbit-integration-01/?ground=1&groundFeel=velocity",
+  "query": "ground=1&groundFeel=velocity",
+  "evidence": {
+    "run": 36557928700,
+    "artifact": 11029226537,
+    "digest": "sha256:8aadac4950f6b877cc06451613ad83788be28b47982a847d5c657ae42bf93ce3",
+    "staticLocomotion": "16/16",
+    "staticIntegration": "10/10",
+    "baselineBrowser": "29/29",
+    "velocityBrowser": "22/22",
+    "combinedBrowser": "27/27"
+  },
+  "donors": {
+    "locomotion": "GROUND-CONTROLLER-DONOR-01",
+    "orbit": "B2a Ground Orbit Camera"
+  }
+}
