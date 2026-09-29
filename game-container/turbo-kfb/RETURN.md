@@ -580,3 +580,21 @@ Regression plan on the same branch:
 5. explicit 15-FPS wall-clock catch-up browser proof.
 
 Exactly one gate: all five evidence layers must pass before the same public Pace-Tune route is republished.
+
+
+### GROUND-WALLCLOCK-TIMING-01 · Repair 1
+First browser run `36591956187`:
+- timing static **7/7 PASS** before repair;
+- full Turbo baseline passed Explore, Race and Ground Walk/Run/Stop;
+- it failed only on the narrow QA expectation `advanceBy(0.10) → Jump_Start`: observed `Jump_Idle`.
+
+Diagnosis:
+- after deterministic `advanceBy()`, the next live RAF correctly caught up the wall-clock time spent executing the helper, effectively advancing that QA interval twice;
+- this is a test-clock collision introduced by the corrected live wall-clock behavior, not a runtime locomotion regression.
+
+Repair 1:
+- deterministic `advanceBy()` and `advanceFrameElapsed()` reset the Three clock after consuming manual simulation time;
+- live RAF production behavior is unchanged;
+- wall-clock catch-up implementation and Two-Gear speeds are unchanged.
+
+Next: rerun the full five-layer gate. This is repair pass 1 of max 2.

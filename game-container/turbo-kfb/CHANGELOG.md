@@ -137,3 +137,9 @@
 - Replaced live simulation clamp with bounded 1/60-s catch-up slices, max 0.25 s per RAF; render/camera/HUD/audio remain one update per RAF.
 - Running_A / Running_B targets unchanged; no speed retune and no new movement owner.
 - Added explicit slow-frame timing QA plus full Turbo / Ground+Orbit / Two-Gear regression; tests pending.
+
+
+## 2026-09-29 · GROUND-WALLCLOCK-TIMING-01 · Repair 1
+- first run `36591956187`: static timing PASS; Explore/Race/Ground Walk/Run/Stop baseline PASS; narrow Jump_Start timing assertion failed because corrected live RAF catch-up double-counted wall time after deterministic `advanceBy()`.
+- Repair is QA-clock isolation only: manual simulation helpers reset `THREE.Clock` after consuming their interval.
+- Production RAF catch-up, W=Running_A / Shift=Running_B and all speed targets unchanged.

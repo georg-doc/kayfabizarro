@@ -8,4 +8,6 @@ assert.match(src,/simulateElapsed\(w, rawDt\)/);
 assert.match(src,/advanceFrameElapsed\(seconds\)/);
 assert.doesNotMatch(src,/const dt = Math\.min\(rawDt, 1 \/ 30\)/);
 assert.match(src,/composer\.render\(visualDt\)/);
-console.log('RESULT 7/7 PASS');
+assert.match(src,/advanceFrameElapsed\(seconds\)[\s\S]*clock\.getDelta\(\)/);
+assert.match(src,/advanceBy\(seconds, step = 1 \/ 60\)[\s\S]*clock\.getDelta\(\)/);
+console.log('RESULT 9/9 PASS');

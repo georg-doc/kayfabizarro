@@ -732,6 +732,9 @@ window.__game = {
     const w = world;
     if (!w || !(seconds > 0)) return { rawDt:0, simulatedDt:0, steps:0, droppedDt:0 };
     liveTiming = simulateElapsed(w, seconds);
+    // Manual QA already consumed this interval; do not let the next RAF catch up the
+    // wall-clock time spent inside the deterministic helper a second time.
+    clock.getDelta();
     return { ...liveTiming };
   },
   /** Deterministic test seam: advance gameplay without relying on requestAnimationFrame. */
@@ -746,6 +749,9 @@ window.__game = {
       elapsed += dt;
       steps++;
     }
+    // Deterministic QA owns the simulated interval; reset the live clock so RAF does
+    // not count the helper's execution time again on the next rendered frame.
+    clock.getDelta();
     return steps;
   },
   /** Put the player on its final lap just behind the line; drive on to finish. */
