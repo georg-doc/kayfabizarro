@@ -1,0 +1,71 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "TOOLBOX-ANIMATION-PRODUCTION-06",
+  "date": "2026-09-29",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/toolbox-animation-production-06-rebrief-2026-09-29",
+  "base": {
+    "ref": "main",
+    "commit": "09737a8f8fd7f71c979f292322c755d0f2c2168b"
+  },
+  "owner": "KFB ToolBox / Animation Studio Claude Design project",
+  "predecessor": {
+    "project": "KFB ToolBox Production-05",
+    "instruction": "duplicate to Production-06; do not overwrite Production-05",
+    "priorMegaBrief": {
+      "path": "skills/chat/workflows/KFB_RESIDENT_UI_COWORKER_CLAY_CITY_2026-09-28/CLAUDE_DESIGN_TOOLBOX_ANIMATION_STUDIO_V5_01.md",
+      "ref": "c78f6f00439e876958db8149311d7266503f7b59"
+    }
+  },
+  "pins": {
+    "motionAndChoreo": "95a8197c76c2bae4d12bfc867d54debe15ffc1f2",
+    "clayH0K2T3AndSkydome": "c78f6f00439e876958db8149311d7266503f7b59",
+    "t4": "939224c051afb464c553ff6f9b59609503eb1b49"
+  },
+  "verified": {
+    "motionCatalog": {
+      "version": "2026-09-29b",
+      "clipCount": 345,
+      "rigs": [
+        "Rig_Medium",
+        "Rig_Large"
+      ],
+      "locomotionSetCount": 7,
+      "catalogBlob": "c0a449a63924550c35b39acb907d169dbcc313c0"
+    },
+    "intake05GlbPaths": {
+      "count": 16,
+      "result": "16/16 PATHS EXIST AT PIN",
+      "caveat": "GitHub connector text wrapper returns UnicodeDecodeError for binary GLBs on most paths; this proves path/file retrieval reached binary data but is not a browser/Claude runtime decode test."
+    },
+    "clayDonorPaths": {
+      "H0": {
+        "ok": true,
+        "blob": "c27016f9e0e9a2d6e21701b0a3d4078fabc224c1"
+      },
+      "K2": {
+        "ok": true,
+        "blob": "6352c3729d35ba9649cb21ba28b23d0045b15512"
+      },
+      "T3": {
+        "ok": true,
+        "blob": "012c5af744be3665d19280de2bc75891fe05ef9a"
+      },
+      "T4": {
+        "ok": true,
+        "blob": "852e1be768dc78d5fe76189fe8ca67111a42249c"
+      },
+      "skydome": {
+        "ok": true,
+        "blob": "f747574d42835ffec335443dadc481f077e5dc2f"
+      }
+    },
+    "choreoReturn": {
+      "path": "skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/CHOREO_LAB_01_RETURN.md",
+      "ref": "95a8197c76c2bae4d12bfc867d54debe15ffc1f2",
+      "blob": "f4a3551ee92e570bad20a8b04ddac299d35c1c7c",
+      "boundary": "storyboards/contracts, not finished animation playback"
+    }
+  },
+  "stage": null
+}
