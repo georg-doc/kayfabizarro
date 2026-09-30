@@ -4,10 +4,17 @@ Status: PLAN / nicht integriert · 2026-09-30 · Owner: WSA/Web Lead · Basis: [
 ## Kernentscheidung
 Das nächste integrierte Spielziel ist **ein** freier, persistenter Bewegungs-Loop in derselben Welt: Ground → echtes Race-Drive → Ground → echtes Travel-Flight → Ground. Nicht aus J14 eine neue Engine bauen. Der Loop erhält anschließend Track Core/Clay/Sky und einen begrenzten Combat-Encounter. Jede Stufe bleibt rücknehmbar und behält genau einen Schreiber pro Bewegung/Schaden/Rendering.
 
+### Verbindlicher Input-Kanon
+- **Space** = Jump/Hop. Ein einzelner Space-Druck bleibt in allen Bewegungsmodi die Sprung-/Hop-Aktion.
+- **I** = kontextuelles **Interact** für NPC, Car Enter/Exit, Prop und vergleichbare Weltinteraktionen.
+- **Nur in Ground-Travel:** ein zweiter Space-Druck als Double-Space wechselt Ground → echtes Travel-Flight (WoW-artig). Das ist ein Travel-Mode-Handoff, **kein** Interact.
+- Double-Space darf im Drive-Modus keinen Flight-Wechsel auslösen; dort bleibt Space Hop. Der genaue Double-Tap-Zeitrahmen gehört dem Travel/Input-Owner und wird nicht im Plan hartkodiert.
+- Der spätere J14-Design-Abzweig „Space = Enter/Exit“ ist damit nicht kanonisch; dessen 20/20-Probe belegt nur diese temporäre falsche Key-Policy.
+
 ## Abhängigkeitsfolge
 1. **Lock:** exakte Owner-Heads, Datei-/Blob-Pins, `INTEGRATION_LOCK.json`; geänderte Branches erneut lesen. J14, S15, P06, H13 und R0B als Donors/Candidates markieren.
-2. **Ground ↔ Drive:** PR #294-Profil + `walk-controller` bleiben Ground; Race übernimmt Auto-Weltposition/Kontakt. Ein atomarer Mode-Handoff übergibt Transform, Heading, Oberfläche und Kamera; I Enter/Exit, Space Jump. Fehler rollt zurück. Zuerst nur Roundtrip und Reverse/Brake/Steer auf realer Kontaktgeometrie.
-3. **Flight:** Travel PR #43/`carpet.js`/`camera-rig.js` übernimmt Flug und Kamera. J14-Jump ist keine Flight-Quelle. Ground↔Flight↔Ground mit Reload/Persistenz und ohne Teleport/Heading-Verlust.
+2. **Ground ↔ Drive:** PR #294-Profil + `walk-controller` bleiben Ground; Race übernimmt Auto-Weltposition/Kontakt. Ein atomarer Mode-Handoff übergibt Transform, Heading, Oberfläche und Kamera; I Enter/Exit, Space Hop. Fehler rollt zurück. Zuerst nur Roundtrip und Reverse/Brake/Steer auf realer Kontaktgeometrie.
+3. **Flight:** Travel PR #43/`carpet.js`/`camera-rig.js` übernimmt Flug und Kamera. J14-Jump ist keine Flight-Quelle. Ground↔Flight↔Ground mit Reload/Persistenz und ohne Teleport/Heading-Verlust; der Ground→Flight-Einstieg folgt dem Double-Space-Travel-Contract.
 4. **Track/World/Look:** Track Core baut Fahrfläche aus einem Rezept; WFC/Hex liefert Verteilung und Assets, niemals Fahrphysik. K1/H0-Fassaden, K2-Material, T4-Props, TinySkies und geteilter Shadow-Contact kommen als separate Präsentationsmodule nach echten Donor-Isolationen. Sparse A/B gegen dieselbe Route; Performance nur mit gemessenem Frame-Pacing/Draw/Geometry/Startzeit beurteilen. MapLibre bleibt A/B Terrain-/Koordinatendonor, kein stiller World-Swap.
 5. **Combat:** Combat-Owner CA2/KayKit ZIP binär prüfen, den unveränderten 60-s-Loop mit HUD und KayKit-Actor auf direkter Stage beweisen. Danach ein Ranged-Encounter als World-Adapter; Melee erst nach Resident/Blender-Paired-Clip-Nachweis.
 6. **Persistenz/Abnahme:** erst eine neue direkte `kayfabizarro.pages.dev`-Prüfroute mit verifiziertem Build; kein Merge/Live vor Georgs benanntem Gate.
