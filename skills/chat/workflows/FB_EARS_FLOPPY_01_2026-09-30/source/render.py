@@ -4,7 +4,9 @@ import bpy, numpy as np, math, json, glb
 from mathutils import Matrix, Vector, Quaternion, Euler
 from sim import *
 bpy.ops.wm.read_factory_settings(use_empty=True)
-bpy.ops.import_scene.gltf(filepath='/tmp/fbe/FB_TEMPLATE_LOOK_v5.glb')
+import os
+GLB=os.environ.get('GLB','/tmp/fbr/FB_TEMPLATE_LOOK_v5b.glb'); VIEW=os.environ.get('VIEW','side'); ONLY=os.environ.get('ONLY','')
+bpy.ops.import_scene.gltf(filepath=GLB)
 for n in ('Icosphere',):
     if n in bpy.data.objects: bpy.data.objects[n].hide_render=True
 A=bpy.data.objects['Rig']
@@ -64,7 +66,7 @@ if hasattr(ims,'media_type'): ims.media_type='IMAGE'
 ims.file_format='PNG'
 def shot(tgt,view='side'):
     cam.data.lens=50
-    cam.location=tgt+(Vector((4.0,0.0,0.15)) if view=='side' else Vector((5.6,-4.6,0.6)))
+    cam.location=tgt+(Vector((4.0,0.0,0.15)) if view=='side' else Vector((2.9,-2.9,0.5)))
     cam.rotation_mode='QUATERNION'; cam.rotation_quaternion=(tgt-cam.location).to_track_quat('-Z','Y')
     p='/tmp/fbr/_t.png'; sc.render.filepath=p; bpy.ops.render.render(write_still=True)
     im=bpy.data.images.load(p,check_existing=False); a=np.array(im.pixels[:],dtype=np.float32).reshape(im.size[1],im.size[0],4); bpy.data.images.remove(im); return a
@@ -76,6 +78,7 @@ COLS=[('idle bob','kfb_idle_idle_b',1,None,'maxabs'),('bent over','kfb_action_li
 cache={}
 rows=[]
 for cn,e in CFG.items():
+    if ONLY and not cn.startswith(ONLY) or (not ONLY and cn.startswith('today')): continue
     row=[]
     for title,cid,loops,wind,when in COLS:
         if cid not in cache:
@@ -90,7 +93,7 @@ for cn,e in CFG.items():
         pose_body(G[i],Rc); pose_ears([oL[i],oR[i]]); bpy.context.view_layer.update()
         hh=A.matrix_world@A.pose.bones['head'].head; ht=A.matrix_world@A.pose.bones['ear.l.1'].head
         c=(hh+ht)/2
-        row.append(shot(Vector((0,c.y,c.z+0.2))))
+        row.append(shot(Vector((0,c.y,c.z+0.2)),VIEW))
         print(cn[:8],title,'frame',i,'tipL',round(math.degrees(oL[i,:,0].sum()),1))
     rows.append(np.concatenate(row,axis=1))
-save(rows,'/tmp/fbr/ears_side.png')
+save(rows,f'/tmp/fbr/ears_{VIEW}_{os.path.basename(GLB)[:-4]}_{ONLY or "presets"}.png')

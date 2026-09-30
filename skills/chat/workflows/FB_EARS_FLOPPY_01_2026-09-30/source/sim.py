@@ -27,7 +27,7 @@ def params(e):
     d=e.get('dangle',1); k=e.get('stiff',1)/max(0.05,d*d); dm=e.get('damp',1)
     return dict(stiffness=[x*k for x in D['stiffness']],damping=[x*dm*math.sqrt(k) for x in D['damping']],maxDeg=[x*e.get('limit',1) for x in D['maxDeg']],
                 inertia=D['inertia']*e.get('inertia',1),spin=D['spin']*e.get('spin',1),wind=D['wind']*e.get('wind',1),flutter=D['flutter']*e.get('wind',1),
-                gravity=e.get('gravity',0),sagFrom=e.get('sagFrom',0),bob=e.get('bob',0),bobHz=e.get('bobHz',0.6),substep=1/120)
+                gravity=e.get('gravity',0),sagFrom=e.get('sagFrom',0),sagShare=e.get('sagShare'),maxFwd=e.get('maxFwd'),maxBack=e.get('maxBack'),maxRoll=e.get('maxRoll'),bob=e.get('bob',0),bobHz=e.get('bobHz',0.6),substep=1/120)
 def simulate(P,Q,e,wind_world=None,side=1,dt=1/FPS,seed=0.0):
     """returns per frame: pitch/roll of each bone (rad), tip pitch sum. wind_world: fn(i)-> np.array (Blender world, m/s air velocity rel. character)."""
     p=params(e); M=side
@@ -60,13 +60,17 @@ def simulate(P,Q,e,wind_world=None,side=1,dt=1/FPS,seed=0.0):
                 if p['gravity']:
                     s0=math.sin(math.radians(p['sagFrom']))   # proposed dead zone: no sag while the head leans less than sagFrom
                     dz=lambda v: math.copysign(max(0.0,abs(v)-s0)/(1-s0),v)
-                    tx+=dz(downL[2])*p['gravity']*0.8*g; tz+=-dz(downL[0])*p['gravity']*0.8*M*g
+                    gs=g if not p['sagShare'] else 4.8*p['sagShare'][j]   # proposed: root-heavy sag -> the ear swings at the root and stays straight
+                    tx+=dz(downL[2])*p['gravity']*0.8*gs; tz+=-dz(downL[0])*p['gravity']*0.8*M*gs
                 if p['bob']:   # proposed: idle bob (not in ear-dangle.v1 today)
                     tx+=p['bob']/4.8*math.radians(1)*g*(math.sin(2*math.pi*p['bobHz']*t+(0.9 if M<0 else 0))+0.35*math.sin(2*math.pi*p['bobHz']*2.37*t+1.3))
                 k=p['stiffness'][j]; c=p['damping'][j]
                 s['vx']+=(k*(tx-s['x'])-c*s['vx'])*h; s['x']+=s['vx']*h
                 s['vz']+=(k*(tz-s['z'])-c*s['vz'])*h; s['z']+=s['vz']*h
-                lim=math.radians(p['maxDeg'][j]); s['x']=max(-lim,min(lim,s['x'])); s['z']=max(-lim,min(lim,s['z']))
+                if p['maxFwd']:   # proposed asymmetric per-bone limits (clean deformation envelope of FB_TEMPLATE_LOOK_v5b)
+                    s['x']=max(-math.radians(p['maxBack'][j]),min(math.radians(p['maxFwd'][j]),s['x'])); lr=math.radians(p['maxRoll'][j]); s['z']=max(-lr,min(lr,s['z']))
+                else:
+                    lim=math.radians(p['maxDeg'][j]); s['x']=max(-lim,min(lim,s['x'])); s['z']=max(-lim,min(lim,s['z']))
         out.append([(s['x'],s['z']) for s in S])
     return np.array(out)
 def head_pitch_deg(Q):
