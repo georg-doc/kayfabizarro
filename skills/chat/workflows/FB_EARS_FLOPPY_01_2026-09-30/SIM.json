@@ -1,0 +1,217 @@
+{
+ "idle \u00b7 idle_b (10 s)": {
+  "clip": "kfb_idle_idle_b",
+  "headPitchDeg": [
+   21.1,
+   24.1
+  ],
+  "today (Georg: Floppy preset, gravity 0, no wind input)": {
+   "tipPitchDeg": {
+    "min": -1.7,
+    "max": 1.9,
+    "mean": 0.0,
+    "p2p": 3.6
+   },
+   "rollP2pDeg": 0.6
+  },
+  "A \u00b7 Perky": {
+   "tipPitchDeg": {
+    "min": -5.1,
+    "max": 5.1,
+    "mean": -0.0,
+    "p2p": 10.3
+   },
+   "rollP2pDeg": 0.6
+  },
+  "B \u00b7 Floppy": {
+   "tipPitchDeg": {
+    "min": -6.9,
+    "max": 7.2,
+    "mean": 0.0,
+    "p2p": 14.1
+   },
+   "rollP2pDeg": 0.6
+  },
+  "C \u00b7 Rag": {
+   "tipPitchDeg": {
+    "min": -7.9,
+    "max": 8.1,
+    "mean": 0.2,
+    "p2p": 16.0
+   },
+   "rollP2pDeg": 0.7
+  }
+ },
+ "bend over \u00b7 lifting (deadlift)": {
+  "clip": "kfb_action_lifting_a",
+  "headPitchDeg": [
+   -3.3,
+   97.4
+  ],
+  "today (Georg: Floppy preset, gravity 0, no wind input)": {
+   "tipPitchDeg": {
+    "min": -45.4,
+    "max": 57.9,
+    "mean": 1.5,
+    "p2p": 103.3
+   },
+   "rollP2pDeg": 14.7
+  },
+  "A \u00b7 Perky": {
+   "tipPitchDeg": {
+    "min": -37.3,
+    "max": 97.1,
+    "mean": 9.4,
+    "p2p": 134.5
+   },
+   "rollP2pDeg": 19.1
+  },
+  "B \u00b7 Floppy": {
+   "tipPitchDeg": {
+    "min": -30.4,
+    "max": 136.2,
+    "mean": 14.5,
+    "p2p": 166.6
+   },
+   "rollP2pDeg": 23.9
+  },
+  "C \u00b7 Rag": {
+   "tipPitchDeg": {
+    "min": -31.0,
+    "max": 148.0,
+    "mean": 16.9,
+    "p2p": 179.0
+   },
+   "rollP2pDeg": 28.3
+  }
+ },
+ "walk 1.4 m/s \u00b7 wind fed": {
+  "clip": "kfb_locomotion_walking_a",
+  "headPitchDeg": [
+   10.8,
+   12.2
+  ],
+  "today (Georg: Floppy preset, gravity 0, no wind input)": {
+   "tipPitchDeg": {
+    "min": -1.5,
+    "max": 2.3,
+    "mean": 0.3,
+    "p2p": 3.8
+   },
+   "rollP2pDeg": 17.5
+  },
+  "A \u00b7 Perky": {
+   "tipPitchDeg": {
+    "min": -8.3,
+    "max": 2.8,
+    "mean": -2.6,
+    "p2p": 11.1
+   },
+   "rollP2pDeg": 22.6
+  },
+  "B \u00b7 Floppy": {
+   "tipPitchDeg": {
+    "min": -11.3,
+    "max": 3.9,
+    "mean": -3.9,
+    "p2p": 15.2
+   },
+   "rollP2pDeg": 17.2
+  },
+  "C \u00b7 Rag": {
+   "tipPitchDeg": {
+    "min": -13.1,
+    "max": 2.9,
+    "mean": -5.1,
+    "p2p": 15.9
+   },
+   "rollP2pDeg": 17.0
+  }
+ },
+ "racer 12 m/s \u00b7 wind fed": {
+  "clip": "kfb_idle_idle_b",
+  "headPitchDeg": [
+   21.1,
+   24.1
+  ],
+  "today (Georg: Floppy preset, gravity 0, no wind input)": {
+   "tipPitchDeg": {
+    "min": -1.7,
+    "max": 1.9,
+    "mean": 0.0,
+    "p2p": 3.6
+   },
+   "rollP2pDeg": 0.6
+  },
+  "A \u00b7 Perky": {
+   "tipPitchDeg": {
+    "min": -32.4,
+    "max": -9.0,
+    "mean": -21.6,
+    "p2p": 23.3
+   },
+   "rollP2pDeg": 9.7
+  },
+  "B \u00b7 Floppy": {
+   "tipPitchDeg": {
+    "min": -45.1,
+    "max": -20.0,
+    "mean": -32.3,
+    "p2p": 25.2
+   },
+   "rollP2pDeg": 8.2
+  },
+  "C \u00b7 Rag": {
+   "tipPitchDeg": {
+    "min": -55.8,
+    "max": -23.9,
+    "mean": -42.9,
+    "p2p": 31.9
+   },
+   "rollP2pDeg": 7.0
+  }
+ },
+ "jump + landing": {
+  "clip": "kfb_locomotion_jump_a",
+  "headPitchDeg": [
+   1.8,
+   48.6
+  ],
+  "today (Georg: Floppy preset, gravity 0, no wind input)": {
+   "tipPitchDeg": {
+    "min": -30.0,
+    "max": 28.5,
+    "mean": 9.7,
+    "p2p": 58.5
+   },
+   "rollP2pDeg": 18.8
+  },
+  "A \u00b7 Perky": {
+   "tipPitchDeg": {
+    "min": -29.7,
+    "max": 73.9,
+    "mean": 17.7,
+    "p2p": 103.5
+   },
+   "rollP2pDeg": 23.8
+  },
+  "B \u00b7 Floppy": {
+   "tipPitchDeg": {
+    "min": -22.4,
+    "max": 61.4,
+    "mean": 22.9,
+    "p2p": 83.8
+   },
+   "rollP2pDeg": 17.9
+  },
+  "C \u00b7 Rag": {
+   "tipPitchDeg": {
+    "min": -20.7,
+    "max": 56.1,
+    "mean": 28.6,
+    "p2p": 76.8
+   },
+   "rollP2pDeg": 16.8
+  }
+ }
+}
