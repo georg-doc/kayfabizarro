@@ -1342,3 +1342,19 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-09-30 · KFB Production Control · Claude plugin v0.1
+
+Current bounded candidate: Draft PR **#299** on `chatgpt-web/kfb-claude-production-control-plugin-01-2026-09-30`.
+
+- plugin root: `skills/chat/plugins/kfb-production-control/`;
+- purpose: one crash-safe KFB recovery/checkpoint/session-cut protocol for Claude Code/Cowork, Blender MCP authoring lanes and Claude Design handoffs;
+- implementation/test head: `6c51df529fd8e076e2ba55b7fa4c4d0ac1d0857a`;
+- evidence: **26/26 static/source PASS**, **7/7 implementation files read back**, Production Control artifact save/read/SHA probe PASS;
+- status: **EXPERIMENTAL · MCP_BINDING_PENDING**;
+- the exact externally reachable Production Control MCP URL/auth handshake has not been guessed from the Site URL;
+- `claude plugin validate` is `NOT_RUN` because the Claude CLI is unavailable in the current Web executor;
+- no Stage/Cloudflare/Hub review card is created for this infrastructure-only gate; do not manufacture a human acceptance surface.
+
+Exactly one next gate: **CLAUDE-PC-MCP-01** — expose or identify the exact remote Production Control MCP endpoint/auth contract, then run `claude plugin validate` and a fresh-session `recover → checkpoint → artifact upload → Return → recover` proof.

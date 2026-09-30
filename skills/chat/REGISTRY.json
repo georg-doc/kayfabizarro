@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-09-30",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -817,6 +817,32 @@
       ],
       "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
       "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    },
+    {
+      "id": "kfb-production-control-claude-plugin",
+      "kind": "plugin-tool",
+      "status": "EXPERIMENTAL",
+      "version": "0.1.0",
+      "path": "skills/chat/plugins/kfb-production-control/",
+      "workflow": "KFB-CLAUDE-PRODUCTION-CONTROL-PLUGIN-01",
+      "branch": "chatgpt-web/kfb-claude-production-control-plugin-01-2026-09-30",
+      "pr": 299,
+      "testedImplementationHead": "6c51df529fd8e076e2ba55b7fa4c4d0ac1d0857a",
+      "transportStatus": "MCP_BINDING_PENDING",
+      "surfaces": [
+        "Claude Code/Cowork",
+        "Blender MCP authoring",
+        "Claude Design handoff"
+      ],
+      "doesNotOwn": [
+        "project/runtime SSOT",
+        "game movement/physics/camera",
+        "GitHub merge",
+        "Cloudflare Stage/Live"
+      ],
+      "tests": "26/26 static/source PASS; 7/7 files read back; Production Control 113-byte artifact save/read/SHA probe PASS; Claude plugin validate NOT_RUN",
+      "hubStatus": "NO_CHANGE_REQUIRED_NO_HUMAN_STAGE",
+      "nextGate": "CLAUDE-PC-MCP-01 · exact remote Production Control MCP endpoint/auth + Claude validate + fresh-session E2E"
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
