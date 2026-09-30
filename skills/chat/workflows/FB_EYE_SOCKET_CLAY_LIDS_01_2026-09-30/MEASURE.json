@@ -1,0 +1,102 @@
+{
+ "schema": "kfb.fb-eye-socket-measure/0.1",
+ "model": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5.glb @ 19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+ "pet": "frizzlebob-earrig-v5 (Georg export 2026-09-30)",
+ "units": "Blender metres, Z up, face looks along -Y; three.js = (x, z, -y)",
+ "headHalfHeightU": 0.4707,
+ "eyeRadiusR": 0.12,
+ "depthK": 0.24,
+ "eyes": {
+  "L": {
+   "surfaceHit": [
+    0.2142,
+    -0.393,
+    1.7854
+   ],
+   "normal": [
+    0.4732,
+    -0.8584,
+    0.1981
+   ],
+   "normalYawOutDeg": 28.9,
+   "normalPitchUpDeg": 11.4,
+   "current": {
+    "eyeCentre": [
+     0.2142,
+     -0.3642,
+     1.7854
+    ],
+    "cornerSignedDistToHeadM": [
+     0.0511,
+     -0.0726
+    ],
+    "cornerNames": [
+     "toward +x",
+     "toward -x"
+    ]
+   },
+   "proposed": {
+    "eyeCentre": [
+     0.2005,
+     -0.3682,
+     1.7797
+    ],
+    "hinge": [
+     0.8758,
+     0.4827,
+     -0.0
+    ],
+    "cornerSignedDistToHeadM": [
+     -0.0104,
+     -0.0098
+    ]
+   }
+  },
+  "R": {
+   "surfaceHit": [
+    -0.2142,
+    -0.3931,
+    1.7854
+   ],
+   "normal": [
+    -0.4719,
+    -0.8589,
+    0.199
+   ],
+   "normalYawOutDeg": 28.8,
+   "normalPitchUpDeg": 11.5,
+   "current": {
+    "eyeCentre": [
+     -0.2142,
+     -0.3643,
+     1.7854
+    ],
+    "cornerSignedDistToHeadM": [
+     -0.0726,
+     0.0511
+    ],
+    "cornerNames": [
+     "toward +x",
+     "toward -x"
+    ]
+   },
+   "proposed": {
+    "eyeCentre": [
+     -0.2006,
+     -0.3684,
+     1.7796
+    ],
+    "hinge": [
+     0.8764,
+     -0.4815,
+     0.0
+    ],
+    "cornerSignedDistToHeadM": [
+     -0.0099,
+     -0.0103
+    ]
+   }
+  }
+ },
+ "note": "cornerSignedDistToHeadM: + outside the head, - inside. current = ToolBox today (straight view axis, splay 0); proposed = socket frame from the head normal."
+}
