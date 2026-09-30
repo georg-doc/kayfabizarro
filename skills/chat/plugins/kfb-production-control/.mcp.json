@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kfb-production-control": {
+      "type": "http",
+      "url": "${user_config.production_control_mcp_url}"
+    }
+  }
+}
