@@ -1,4 +1,4 @@
-# FB-EYES-LIDS-02 · Surface seat by default, one mirrored turn, lids: hinge | slide × round | cut
+# FB-EYES-LIDS-02 · Surface seat by default, one mirrored turn, level lids, lids: hinge | slide × round | cut
 
 Status: **BUILD INSTRUCTION FOR KFB TOOLBOX STUDIO (Claude Design, Rigging / FaceHost) · reference built in Blender on the real model**
 Date: 2026-09-30
@@ -14,6 +14,7 @@ Georg, 30.09:
 - Hinge is the better default.
 - Keep the "two half-sphere caps sliding up and down" as an option for other characters.
 - A thick claymation lid with a hard-cut edge (Wallace & Gromit) as a future option; round fits FrizzleBob and the standard characters. Build it into the construction now.
+- (Review of the first renders, 30.09) The lids must be level by default, not tipped outward.
 
 ## 1 · What is wrong today (read in the code, measured on the model)
 
@@ -28,7 +29,8 @@ Georg, 30.09:
    - But `EYE_DEF.socket` in `face-mount.v1.js` is still `'legacy'`. Only the P06 actor loader injects `'surface'` for entries without the field. Every other host that mounts the face (P05, Cube Pets, Resident Atlas) still gets the straight-ahead legacy seat.
 2. **Two independent turn sliders.** `eye.turnL` and `eye.turnR` are separate. To turn both eyes further out, Georg has to set each one and keep them equal by hand.
 3. **The clay lids default to `glide`, and `on: false`.** Georg's export carries exactly that. Glide builds each lid edge with `glideRim()`: the front edge is blended to a fixed back latitude (−0.35) by a smoothstep over the longitude, and the convex term uses `max(0, cos lon)`. That gives the S-bend and the kink at ±90° longitude, i.e. an irregular rim. Hinge (LIDS-01) does not have this.
-4. **No sliding lid and no hard lid edge exist.** `fold` is a rigid clamshell (it rotates, it does not slide). The lid lip is always the half-round bead.
+4. **The lids tip with the eye oval.** `socketEyes()` rotates the whole eye group about `n` by the oval tilt (`−sx · tilt`; Georg's value −25°). The lid shells hang in that group, so their hinge line and edges tip by 25°, outer corners down. The oval tilt is meant to shape the eyeball; the lid line should stay level unless an emote slants it.
+5. **No sliding lid and no hard lid edge exist.** `fold` is a rigid clamshell (it rotates, it does not slide). The lid lip is always the half-round bead.
 
 ## 2 · Changes
 
@@ -61,7 +63,7 @@ clayLids.lip:  'round' (default) | 'cut'
 
 #### Hinge (default, unchanged from LIDS-01)
 
-Keep `hingePositions()`. Only the lip ring becomes switchable (§2.4).
+Keep `hingePositions()`. Only the lip ring (§2.5) and the level frame (§2.4) change.
 
 #### Slide (new): the lid edge is a constant latitude that moves up and down
 
@@ -84,7 +86,16 @@ In the same socket frame `(h, v, n)`, unit sphere, then oval-scaled × R + C, as
 - **Lower lid:** gap + 0.006, thickness × 0.93, bead × 0.8, as the hinge.
 - **Topology is fixed.** Write `slidePositions(o, theta, lower, out)` as a twin of `hingePositions()`, and wrap the index buffer in the longitude direction (row 71 connects to row 0).
 
-### 2.4 Lip profile (both mechanisms)
+### 2.4 Lids stay level: `clayLids.tilt: 'level' (default) | 'follow'`
+
+- `'level'`: the lid hinge (hinge) or the latitude axis (slide) is the **untilted** socket frame `(h0, v0, n)`: `h0 = normalize(up × n)`, horizontal. Only the emote slant rotates the lids (`−sx · slant · 0.85` about `n`, as today).
+- The lids still hug the oval eyeball: build a lid point `p` in the level frame, express it in the tilted eyeball frame, then oval-scale it. In the eye group's local space: `p_local = S_oval · Rz(counter-tilt) · Rz(slant) · p`, where the counter-tilt is exactly the inverse of the tilt `socketEyes()` put on the group.
+  - In practice: the lid node's `rotation.z` = counter-tilt + slant term. If the oval scale sits on a node above the lid node, nothing else changes. If not, apply `S_oval` in the lid positions.
+- `'follow'` reproduces the first-draft behaviour (lids tip with the oval), kept for characters that want slanted lids at rest.
+- The same applies to the rigid EyeRig shells when they are shown (`clayLids.on = false`): counter-rotate `e._lids` by the oval tilt.
+- Measured with `'level'`: the hinge corners now sit equally deep in the head, within −1.0 … −1.3 cm over all states (with the tilt: −1.1 … −1.9 cm), and all other checks in §3 are unchanged.
+
+### 2.5 Lip profile (both mechanisms)
 
 The ring per row runs: outer surface (back → margin), lip, inner surface (margin → back). Only the lip part changes.
 
@@ -115,13 +126,13 @@ The ring per row runs: outer surface (back → margin), lip, inner surface (marg
 | Check | hinge + round | hinge + cut | slide + round | slide + cut |
 |---|---|---|---|---|
 | Upper/lower corner gap, all 6 states | 0 | 0 | no corners | no corners |
-| Corner signed distance to the head | −1.9 … −1.1 cm (inside) | same | — | — |
+| Corner signed distance to the head | −1.3 … −1.0 cm (inside) | same | — | — |
 | Rim latitude spread, all 6 states | — | — | < 1e-5° | < 1e-5° |
-| Rim at the eye sides (±90°), signed distance to the head | — | — | −2.5 … −1.0 cm (inside) | same |
+| Rim at the eye sides (±90°), signed distance to the head | — | — | −2.3 … −0.9 cm (inside) | same |
 | Sclera pixels when closed (front / ¾) | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
 
 - The front rim of the slide varies in height by 0.02 R (2.4 mm). That comes from the gap melt towards the sides; the latitude itself is constant.
-- Pupils keep the free gaze of LIDS-01: the rest gaze is head-forward and does not turn with the socket.
+- All renders use `tilt = 'level'`. Pupils keep the free gaze of LIDS-01: the rest gaze is head-forward and does not turn with the socket.
 - Brows, nose and the painted mouth are hidden in the renders.
 
 ## 4 · Acceptance (machine checks in the ToolBox)
@@ -137,6 +148,7 @@ The ring per row runs: outer surface (back → margin), lip, inner surface (marg
 7. **Cut edge is hard:** the vertex normals on either side of the chamfer differ by > 35°. On `round`, no two neighbouring lip normals differ by > 20°.
 8. **Legacy unchanged:** `mech` glide and fold build exactly as today, and so does Georg's saved FrizzleBob entry until he presses the button.
 9. **Untouched:** ears, brows, nose and mouth do not change.
+10. **Level lids:** with `tilt = 'level'` and slant 0, the hinge axis (or the slide's latitude axis) of each eye is horizontal within 0.5° in world space, for any `eye.oval.tilt`. With `'follow'` it tips by the oval tilt.
 
 ## 5 · Notes for Georg's look review (observations, not decisions)
 
@@ -146,4 +158,4 @@ The ring per row runs: outer surface (back → margin), lip, inner surface (marg
 
 ## Exactly one next gate
 
-**ToolBox Studio: implement §2.1–2.4, run acceptance 1–9 on `frizzlebob-earrig-v5`, then Georg judges the four combinations.**
+**ToolBox Studio: implement §2.1–2.5, run acceptance 1–10 on `frizzlebob-earrig-v5`, then Georg judges the four combinations.**

@@ -1,5 +1,6 @@
 {
  "model": "FB_TEMPLATE_LOOK_v5.glb",
+ "lidTilt": "level",
  "units": "m, deg; R = eyeball radius",
  "R": 0.12,
  "U": 0.4707,
@@ -90,11 +91,10 @@
     "front": 0,
     "three_q": 0
    },
-   "neutralScleraPxFront": 7849,
    "maxCornerGapR": 0.0,
    "cornerSdistRangeM": [
-    -0.0191,
-    -0.0105
+    -0.0128,
+    -0.01
    ]
   },
   "hinge+cut": {
@@ -102,11 +102,10 @@
     "front": 0,
     "three_q": 0
    },
-   "neutralScleraPxFront": 8122,
    "maxCornerGapR": 0.0,
    "cornerSdistRangeM": [
-    -0.0191,
-    -0.0105
+    -0.0128,
+    -0.01
    ]
   },
   "slide+round": {
@@ -114,12 +113,11 @@
     "front": 0,
     "three_q": 0
    },
-   "neutralScleraPxFront": 7789,
    "maxRimLatSpreadDeg": 5e-06,
-   "maxFrontRimYSpread": 0.02029,
+   "maxFrontRimYSpreadR": 0.02029,
    "rimSideSdistRangeM": [
-    -0.0249,
-    -0.0102
+    -0.0225,
+    -0.0093
    ]
   },
   "slide+cut": {
@@ -127,12 +125,11 @@
     "front": 0,
     "three_q": 0
    },
-   "neutralScleraPxFront": 8265,
    "maxRimLatSpreadDeg": 5e-06,
-   "maxFrontRimYSpread": 0.02029,
+   "maxFrontRimYSpreadR": 0.02029,
    "rimSideSdistRangeM": [
-    -0.0249,
-    -0.0102
+    -0.0225,
+    -0.0093
    ]
   }
  }
