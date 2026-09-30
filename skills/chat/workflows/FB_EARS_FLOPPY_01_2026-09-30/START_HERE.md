@@ -94,7 +94,7 @@ if (P.bob) tx += (P.bob / 4.8) * (Math.PI / 180) * g * (Math.sin(2 * Math.PI * P
   - Each joint's rotation spreads over a whole segment, so the ear bends as an arc.
   - At most 2 joints per vertex, weights sum to 1.
   - Script: `source/reweight.py`.
-- **ToolBox:** point `EAR.fig` to `glb/FB_TEMPLATE_LOOK_v5b.glb`. v5 stays in the repo for comparison.
+- **ToolBox:** point `EAR.fig` to `glb/FB_TEMPLATE_LOOK_v5b.glb`. v5b is on branch `georg-doc-patch-3` at commit `23615cffb515d03d2b6a0164b896dd08e3bc1bed`. The current `EAR.pin` (`19088b14`, PR #214) does not contain it, so load the figure from that commit, or copy v5b into the PR #214 lane. v5 stays at its pin for comparison.
 - **Note:** the smoother weights only look clean together with the root-heavy sag (§2.1 b). With v5b and today's tip-heavy sag, the ear still folds at large angles. With v5 and root-heavy sag, the ear root stretches up to 2–4× (`AUDIT.json`).
 
 ### 2.3 ToolBox (Rigging › Ears and Animation Lab › Ears)
