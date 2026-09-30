@@ -44,3 +44,10 @@ Georg decides the look and the order. **Owner** = who builds it. **Gate** = what
 | Brute hitting Raider high | Punches, kicks and the hammer miss above. Idea: crouch or lean variants. |
 | `brow.turn` follow (29° ≈ 0.64) | Georg's call. |
 | Repo-wide `facingYawDeg` consumer check | See HANDOVER open item 2. |
+
+## Asset intake to evaluate (Georg 30.09; in Dropbox `BLENDER MCP/_inbox`, not on GitHub yet)
+
+| Item | Where | Licence (as stated by the source) | Evaluate for | Then |
+|---|---|---|---|---|
+| Screaming Brain Studios **Tiny Texture Pack 1, 2, 3** (240 textures × 3 sizes = 720) | `_inbox/Textures/` (zip/rar, several sizes; https://screamingbrainstudios.itch.io/tiny-texture-pack-3, plus packs 1 and 2) | CC0 / public domain (itch page); check the licence file inside the archives | Clay/stylised surfaces for props, terrain, the track kit, and the ToolBox clay look (R3) | Unpack; dedupe across sizes (keep one size per use, check the GitHub folder limits: < 100 files and < 25 MB per upload); add an asset-registry entry; push to `media/` |
+| Atomic Realm **Modular Roads · Base** (free: 27 models + source .blend; full pack $5) | `_inbox/[FREE] Modular Roads - Base/` (https://atomicrealm.itch.io/modular-roads) | Read the licence in the download or on the itch page before any push | Template for, or a replacement of parts of, our track/road kit (Track Core / RKIT): piece grammar, sockets, dimensions against our deck and kerb rules | Blender check of pieces and scale against the Track Core contract; decide template vs. replacement vs. buying the full pack (Georg) |
