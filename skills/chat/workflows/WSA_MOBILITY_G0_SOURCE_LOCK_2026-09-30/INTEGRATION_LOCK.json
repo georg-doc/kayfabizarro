@@ -1,0 +1,125 @@
+{
+  "schema": "kfb.mobility.integration-lock.v1",
+  "id": "WSA-MOBILITY-INTEGRATION-R3-G0",
+  "date": "2026-09-30",
+  "status": "G0_SOURCE_LOCK_COMPLETE",
+  "owner": "KFB WSA Mobility Integration",
+  "outcome": "Lock exact source owners and donors before Ground-to-Drive implementation",
+  "receiver": {
+    "repo": "georg-doc/kayfabizarro",
+    "baseHead": "aa6fd68a4c4d96495f416c8f42a4df1d6b3e04c3",
+    "branch": "codex/wsa-mobility-g0-source-lock-2026-09-30",
+    "futureStageRoute": "/kfb-hub/stage/world/wsa-mobility-integration-01/",
+    "runtimeStatus": "NOT_CREATED_IN_G0"
+  },
+  "planning": {
+    "repo": "georg-doc/kayfabizarro",
+    "head": "34f2791ac051fbb59f1848fef816a52bccd142ad",
+    "pullRequest": 297,
+    "files": [
+      {"path": "skills/chat/workflows/KFB_PRODUCTION_MAP_2026-09-29/WSA_RECON_R2_2026-09-30.md", "gitBlob": "891d507b4d64bf989fb14706345f1f306b848a45"},
+      {"path": "skills/chat/workflows/KFB_PRODUCTION_MAP_2026-09-29/WSA_INTEGRATION_PLAN_R2_2026-09-30.md", "gitBlob": "2bc5dec53c6e26138703588f66e68f9197b21c57"},
+      {"path": "skills/chat/workflows/KFB_PRODUCTION_MAP_2026-09-29/WSA_EXECUTION_CARDS_R2_2026-09-30.md", "gitBlob": "77e9031a71bdb80d8a9162592d02860c185faadc"}
+    ]
+  },
+  "owners": {
+    "ground": {
+      "repo": "georg-doc/kayfabizarro",
+      "pullRequest": 294,
+      "head": "faf1902e06ada7a56b84660c66da11f7f784d90d",
+      "testedRuntimeHead": "904889a10abe05e93bfac81451afc080d246bd81",
+      "worldPositionWriter": "game-container/turbo-kfb/app/src/walk-controller.js",
+      "files": [
+        {"path": "tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js", "gitBlob": "3db9fbd482e6a527c417e79af826138ff28efa33"},
+        {"path": "tools/KFB-ToolBox/kfb-lib/anim-map.v1.js", "gitBlob": "7120f80e25e8a91106441039fb036c059a4d0e0d"},
+        {"path": "game-container/turbo-kfb/app/src/walk-controller.js", "gitBlob": "18dd999be52981122b011487286e99db1ad00455"},
+        {"path": "game-container/turbo-kfb/app/src/ground-player.js", "gitBlob": "7b44e63c5ad68eb657938a04065ac81eb91d7644"},
+        {"path": "game-container/turbo-kfb/app/src/ground-feel.js", "gitBlob": "0001dbe9e9a5e9e111b1587d7374e0f551c0132b"},
+        {"path": "game-container/turbo-kfb/app/src/ground-orbit-camera.js", "gitBlob": "c05eddbf33bffb8fa0dc63b3a9ce4fa6d6c43e51"}
+      ],
+      "acceptedFacts": {
+        "walkTargetMetersPerSecond": 5.4,
+        "sprintTargetMetersPerSecond": 9.45,
+        "runClip": "Running_A",
+        "sprintVariant": "Running_A@1.3",
+        "positionWriterCount": 1
+      }
+    },
+    "drive": {
+      "repo": "georg-doc/KFB-Stunt-Car-Race",
+      "head": "df1e35b5692273e8a48eaa219697c927e2c39faa",
+      "recovery": "RECOVERY.md",
+      "feel": {
+        "humanStatus": "TRACK_LAB_V0_8_FEEL_ACCEPTED",
+        "path": "ChatGPT_web/track-environment-lab/host/RACE_FEEL_V08_CONFIG.json",
+        "gitBlob": "38afec4b9eafab0934a82c5b751cca5e5d7c6f83",
+        "sha256": "2d82083c747d323e7f1d6417b8456bf3f500ef4ef2a1f101548f47c053c2b968"
+      },
+      "trackHost": {
+        "path": "ChatGPT_web/track-environment-lab/host/feel-lab-v08.mjs",
+        "gitBlob": "53300a70878b4972806b48f996922a09e29542c0",
+        "sha256": "652bb5d18e0644d4afc7cd2231043a7ef7d9fa77d96f3b28935f8ddee66b2bda"
+      },
+      "contactCandidate": {
+        "status": "FR_S04_02_TECHNICAL_PASS_HUMAN_FEEL_OPEN",
+        "sourceCandidate": "a7a48a8c6e1589a18134aa619e2be22d79124c32",
+        "returnPath": "ChatGPT_web/free-roam/RETURN.md",
+        "physics": {"path": "ChatGPT_web/free-roam/site/physics.js", "gitBlob": "c14483b0fbd77e9aab335d72be48011fe1ac7b84", "sha256": "098510dd9d4daad5cbdda8c9a5d41e97237711500f82635938c1f02311211929"},
+        "intent": {"path": "ChatGPT_web/free-roam/site/drive-intent.mjs", "gitBlob": "57ae25c318f1a5977abdddcea99ab7da8e5b0482", "sha256": "8b2e60c41a52457451999f18556e3f0e0ee0121f6df2b37ebbb7ef57bc2fd0a9"},
+        "world": {"path": "ChatGPT_web/free-roam/site/world.js", "gitBlob": "2cfe241a333363e13c1062c5de579f0a8d108d39", "sha256": "d5bbfba3080ccf52fb18b2fb956957cf214635a1b2c5f94ae60b1a195151f26b"}
+      },
+      "boundary": "Race owns driving feel, steering, drift, jump/hop, physical contact and vehicle pose. G1 consumes these; it does not retune them."
+    },
+    "modeBridge": {
+      "owner": "new bounded receiver adapter in G1",
+      "inputs": {"interact": "KeyI", "groundJump": "Space", "driveJump": "Space", "futureGroundToFlight": "double Space", "driveToFlight": "DISALLOWED"},
+      "statesInG1": ["GROUND", "ENTERING_DRIVE", "DRIVE", "EXITING_DRIVE"],
+      "transformContract": ["worldPosition", "heading", "groundNormal", "parkedVehicleTransform"]
+    }
+  },
+  "donors": {
+    "vehicleVisual": {
+      "decision": "KAYKIT_ONLY",
+      "repo": "georg-doc/kayfabizarro",
+      "head": "aa6fd68a4c4d96495f416c8f42a4df1d6b3e04c3",
+      "gltf": {"path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_hatchback.gltf", "gitBlob": "0a01d2ab394731ae5d568cb607f8b880d5be4478", "sha256": "e38be3dbdfbc95b0e794fc5c8164b2ff658b2dc5049b51d38179d16a9432b4f3"},
+      "bin": {"path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_hatchback.bin", "gitBlob": "bc3fab7c8cf250a7c016765713aaa587ce42dcca", "sha256": "e7756d8a44553ef75091bb4baa41388bcb1a1b44388008a3e670d05cb12f4c5f"},
+      "texture": {"path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/citybits_texture.png", "gitBlob": "ffffc8998d30b32bdfa6761f33c87bcdfd0ba07f", "sha256": "6d2d9a5a13bce32209cd8c04572ab170504d68f34b1519165c9b0c41871e235b"},
+      "sourceInspection": {"nodes": ["car_hatchback_wheel_front_left", "car_hatchback_wheel_front_right", "car_hatchback_wheel_rear_left", "car_hatchback_wheel_rear_right", "car_hatchback"], "animations": 0, "skins": 0, "builtInOccupant": false}
+    },
+    "j14": {
+      "classification": "STATE_CHOREOGRAPHY_PADS_AND_P1A_TRACK_DONOR_ONLY",
+      "repo": "georg-doc/kayfabizarro",
+      "head": "aa6fd68a4c4d96495f416c8f42a4df1d6b3e04c3",
+      "root": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1",
+      "files": {"start": "d063a6fe962fd16a07c3be72d302e0f1aa411c0d", "current": "a035b96e748b408b5c2d0ae09a2903465caa82d7", "return": "07c2c45507365651ad2101d6cf2ff9e38b4d9d43", "test": "877a6afb4981b79c44a126586280f31cc301316f", "source": "0252187122f8a99eff1b3063b176703edb6c03b5", "trackCore": "1bcf7ad3a384a57d7caf83488c436f4c4835346f", "streamToThree": "183950aa687a85e4e841e6d8c752ab22042f20b0", "p1Recipes": "878b2a1328e6520aef9a0ace7f5cda96212997db"},
+      "p1aStream": {
+        "parts": ["91bfa0d261c38c59fa3c1abf4209689e599b85b2", "ccce8ce833b5dfbf85ab4f91f4c32d163166d722", "392e3fa01351c3a709699d4e60d5392197b193ab", "9e8a973e6e6a84a51e6f0fda0cd13982cf2db426", "495d6a98f6165faa2a6505320612d3b534bacc64", "41ae8c46ba8fdf128663d72c0b2abfc5ca42a487"],
+        "combinedBytes": 10350274,
+        "combinedSha256": "4258c08f702cca3be77dde66d80ac66d5c65d760a48e51b088d005143cc5be09"
+      },
+      "rejectedAuthority": ["drive physics", "Ground position writing", "Flight owner", "input policy"]
+    },
+    "j15": {
+      "classification": "DEFERRED_AFTER_G3_P1B_AND_TC1_DESIGN_DONOR",
+      "repo": "georg-doc/kayfabizarro",
+      "head": "aa6fd68a4c4d96495f416c8f42a4df1d6b3e04c3",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J15_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1.zip",
+      "gitBlob": "3a8228baab9836455ae18965d58bbb020778cc98",
+      "size": 13316447,
+      "sha256": "fb554997d8645ff95729d71df725a65a62343d56116875a52bcc9291d59157b9",
+      "p1bStreamSha256": "a89e260bbc8645ab1bf1f8b4cee4b05e392e3253ffae2f1499977c17253aec4f",
+      "rejectedAuthority": ["drive physics", "Ground position writing", "input policy", "G0 or G1 runtime"]
+    }
+  },
+  "forbidden": {
+    "runtimeSources": ["OSM", "R0B", "R6", "M2A", "wb2d-app.js", "Kenney vehicle meshes", "J14 k2/k2b/k3 drive loops", "J14 Flight candidate", "J15 travel-mode input policy"],
+    "actionsInG0": ["runtime implementation", "Cloudflare deployment", "Stage promotion", "physics retune", "Hex/WFC world changes", "merge"]
+  },
+  "nextGate": {
+    "id": "G1_GROUND_DRIVE_GROUND",
+    "startCondition": "G0 lock tests pass and branch read-back is exact",
+    "scope": "One actor, one KayKit car_hatchback, one P1a parking pad, enter/drive/park/exit, same world transform round-trip",
+    "nonScope": ["Flight", "J15 P1b/TC1", "Hex islands", "Clay look", "Residents", "Combat", "audio", "vehicle deformation"]
+  }
+}
