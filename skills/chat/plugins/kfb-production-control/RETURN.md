@@ -93,3 +93,15 @@ Expose or identify the exact Production Control remote MCP endpoint/auth contrac
 5. start a fresh session and recover the same owner/head/next gate from durable state.
 
 No redesign, no second persistence system and no Stage/Live work before this gate passes.
+
+
+## Endpoint discovery probe · 2026-09-30
+
+Additional evidence after the initial Return:
+
+- ChatGPT app permissions resolve `asdk_app_sites_dc4cf548624c8191b2cf51f4c2ee854e` as **KFB Production Control**.
+- Plugin Creator inspection of that id fails with `TypeMismatchError: expected Plugin, got AppsSDKApp`. Therefore the existing control plane is an Apps SDK/Site app, not an editable Plugin Creator package whose server config can be read through that interface.
+- Direct web discovery for the Site root, `/mcp`, `/.well-known/oauth-protected-resource` and `/.well-known/oauth-authorization-server` is unavailable from the current web executor.
+- A repository-runtime HTTP probe cannot resolve the `chatgpt.site` hostname from this sandbox, so it cannot establish the endpoint independently.
+
+Conclusion: **MCP_BINDING_PENDING is confirmed as a backend/exposure gate, not a missing Claude plugin file.** No endpoint or auth scheme was guessed.
