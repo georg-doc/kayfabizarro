@@ -1,0 +1,112 @@
+{
+ "at": "2026-09-30T04:21:01Z",
+ "actor": "frizzlebob-earrig-v5",
+ "status": "PASS",
+ "rows": [
+  {
+   "id": "5 Legacy unchanged",
+   "ok": true,
+   "info": "placement = unwrapped EyeRig build (max Δ 5.6e-17, float noise of the live head matrix) · pupil pivot on the eye as before"
+  },
+  {
+   "id": "1 Corners in the head",
+   "ok": true,
+   "info": "L out -0.099 R · in -0.089 R · R out -0.101 R · in -0.090 R (skin CharacterTemplate_Head)"
+  },
+  {
+   "id": "2 Shared corners",
+   "ok": true,
+   "info": "max corner gap 0.00e+0 R over open / neutral / half / closed / angry / sad"
+  },
+  {
+   "id": "3 Closed means closed",
+   "ok": true,
+   "info": "0 sclera/pupil rays of 2836 (front + ¾, both eyes, closure 1)"
+  },
+  {
+   "id": "4 Pupil never clips",
+   "ok": true,
+   "info": "min clearance pupil → inner lid 0.0043 R (gap 0.043, 9×9 gaze grid ±track)"
+  },
+  {
+   "id": "6 Mirror",
+   "ok": true,
+   "info": "normal Δ 0.098° · hinge Δ 0.082° · L 28.8° out / 11.5° up · R 28.9° / 11.4°"
+  },
+  {
+   "id": "7 Untouched (ears, brows, nose, mouth)",
+   "ok": true,
+   "info": "eyeFrame Δ 1.7e-16 · brow Δ 1.1e-16 · nose Δ 2.2e-16 · mouth Δ 1.1e-16 · ears outside the eye rig"
+  }
+ ],
+ "socket": {
+  "R": 0.11369984731078148,
+  "U": 0.44588175415992737,
+  "eyes": [
+   {
+    "sx": -1,
+    "n": [
+     -0.47186,
+     0.19902,
+     0.85891
+    ],
+    "hinge": [
+     -0.87645,
+     0,
+     -0.4815
+    ],
+    "C": [
+     -0.19,
+     0.0882,
+     0.34896
+    ],
+    "yawOutDeg": 28.78,
+    "pitchUpDeg": 11.48
+   },
+   {
+    "sx": 1,
+    "n": [
+     0.47318,
+     0.19807,
+     0.85841
+    ],
+    "hinge": [
+     0.87576,
+     0,
+     -0.48275
+    ],
+    "C": [
+     0.18996,
+     0.08823,
+     0.34885
+    ],
+    "yawOutDeg": 28.87,
+    "pitchUpDeg": 11.42
+   }
+  ]
+ },
+ "blenderMeasure": {
+  "normalYawOutDeg": [
+   28.9,
+   28.8
+  ],
+  "normalPitchUpDeg": [
+   11.4,
+   11.5
+  ],
+  "hinge_blender": [
+   [
+    0.8758,
+    0.4827,
+    0
+   ],
+   [
+    0.8764,
+    -0.4815,
+    0
+   ]
+  ],
+  "note": "three = (x, z, -y) of Blender"
+ },
+ "firstRuns": "runs 1+2 (03:5x UTC) reported 5 FAIL on a last-bit float difference (0.37058290932738175 vs …818); test 5 now compares with tolerance 1e-9 R, run 3 PASS"
+}
