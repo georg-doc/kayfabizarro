@@ -24,6 +24,24 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
+## 2026-09-30 · WSA Mobility Integration R3 · G0 source lock
+
+The first productive mobility integration is now gated by a strict source lock under:
+
+`skills/chat/workflows/WSA_MOBILITY_G0_SOURCE_LOCK_2026-09-30/`
+
+Read its `START_HERE.md` and `INTEGRATION_LOCK.json` before touching Ground↔Drive. The locked direction is:
+
+- Ground = PR #294 tested consumer and sole `walk-controller` position writer;
+- Drive feel = Race Track Lab v0.8; physical contact candidate = Free Roam FR-S04-02;
+- vehicle visual = KayKit `car_hatchback.gltf`, never the Kenney Racer;
+- J14 = P1a/pads/choreography donor only;
+- J15 = deferred P1b/TC1 donor after G3;
+- OSM/R0B/R6/M2A/`wb2d-app.js` and parallel J14/J15 drive loops are excluded;
+- Hex/WFC island design is a separate lane and is not modified by G0/G1.
+
+G0 creates no runtime or Stage. Its one next gate is the bounded **G1 Ground → Drive → Ground** loop using `I` for enter/exit and preserving each mode owner's jump semantics.
+
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
@@ -1341,4 +1359,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-

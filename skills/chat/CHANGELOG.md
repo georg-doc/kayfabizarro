@@ -2090,3 +2090,10 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Cars queued separately in `georg-doc/KFB-Stunt-Car-Race`: preserve human-accepted v0.8 Race feel; consume Vehicle Lab / Box Stop profile facts without moving steering/drift/jump/contact ownership.
 - Flight queued separately in `georg-doc/KFB-Travel-Globe`: preserve Travel Flight / `carpet.js` movement ownership; consume carrier/profile facts without creating second flight physics.
 - Clay/facade/shadow remains explicitly outside this mobility lane.
+## 2026-09-30 · WSA Mobility Integration R3 G0 source lock
+
+- Added an exact owner/donor lock for the first Ground → Drive → Ground loop.
+- Preserved Ground PR #294, Race v0.8 feel and FR-S04-02 contact ownership without merging their movement loops.
+- Locked the KayKit hatchback and explicitly excluded the Kenney Racer and legacy OSM/world runtimes.
+- Limited J14 to P1a/pads/choreography and deferred J15 P1b/TC1 to G3+.
+- Left Hex/WFC island design, runtime, Stage, Cloudflare and Live untouched.

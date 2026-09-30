@@ -1,8 +1,11 @@
 # WSA Mobility Integration R3 · G0 Source Lock
 
-Status: **G0_SOURCE_LOCK_COMPLETE**  
-Date: 2026-09-30  
-Owner: KFB WSA Mobility Integration  
+Status: **G0_SOURCE_LOCK_COMPLETE**
+
+Date: 2026-09-30
+
+Owner: KFB WSA Mobility Integration
+
 Receiver branch: `codex/wsa-mobility-g0-source-lock-2026-09-30`
 
 ## What G0 is
