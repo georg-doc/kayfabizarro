@@ -1,0 +1,137 @@
+{
+ "id": "FB-CAR-01.vehicle-seat-contract",
+ "version": "0.1",
+ "date": "2026-09-30",
+ "units": "Car GLB native units (KFB_CVP1_cabrio.glb, scale 1). Character values in KayKit rig units. World metres = rig units x 0.616 (scale A).",
+ "vehicle": {
+  "asset": "media/3D_Assets/Vehicles/KFB_CVP1/KFB_CVP1_cabrio.glb",
+  "carScaleVsRig": 1.8,
+  "forward": "+Y (Blender) = -Z (three.js)",
+  "groundZ": -0.4425,
+  "roof": {
+   "animation": "C4D Animation Take",
+   "openFrame": 52,
+   "closedFrame": 0,
+   "state": "open"
+  },
+  "sideWindows": {
+   "nodes": [
+    "Window.2 (left door)",
+    "Window (right door)"
+   ],
+   "state": "hidden (rolled down) for the hop"
+  },
+  "doors": "closed during the hop"
+ },
+ "driverSeat": {
+  "hipsSocket": [
+   -0.3758,
+   -0.0196,
+   0.0184
+  ],
+  "seatForwardOffsetRig": 0.1,
+  "note": "FB sits 0.10 rig units further forward than the seat centre + 0.12*carScale so its arms reach the wheel",
+  "facingYawDeg": 0
+ },
+ "steeringWheel": {
+  "centre": [
+   -0.3802,
+   0.248,
+   0.2582
+  ],
+  "radius": 0.1773,
+  "axis": [
+   -0.0,
+   0.9818,
+   -0.1901
+  ],
+  "up": [
+   -0.0,
+   0.1901,
+   0.9818
+  ],
+  "rotateNode": "SteeringWheel",
+  "ratio": 8.0,
+  "maxDeg": 120
+ },
+ "hands": {
+  "ik": "2-bone IK on upperarm/lowerarm, target = grip point on the rim, pole outward-down",
+  "grips": {
+   "hand.l": "10 o'clock (-60 deg)",
+   "hand.r": "2 o'clock (+60 deg)"
+  },
+  "gripInsetAlongAxis": -0.02,
+  "gripsParentedTo": "Torus (rim), so hands follow steering"
+ },
+ "feet": {
+  "pedals": "not reached: right toe is 0.26 rig units short of the gas pedal; legs hang (look decision open)"
+ },
+ "ears": {
+  "closedCar": "back 75 + out 45-60 (VEHICLE-INTAKE-01)",
+  "cabrioOpen": "free; FB-EARS-FLOPPY-01 'B Floppy' with wind = -vehicle velocity (m/s)"
+ },
+ "hop": {
+  "fps": 30,
+  "marks": {
+   "standIn": [
+    1,
+    20
+   ],
+   "crouchIn": [
+    21,
+    32
+   ],
+   "hopIn": [
+    33,
+    52
+   ],
+   "landIn": [
+    53,
+    62
+   ],
+   "drive": [
+    63,
+    213
+   ],
+   "dipOut": [
+    214,
+    223
+   ],
+   "hopOut": [
+    224,
+    243
+   ],
+   "landOut": [
+    244,
+    255
+   ],
+   "standOut": [
+    256,
+    275
+   ]
+  },
+  "standOutsideX": -1.5278,
+  "standHipsZ": -0.224,
+  "peakHipsZRig": 1.25,
+  "path": "quadratic Bezier hips path, control point 0.15 behind the midpoint, apex so the lowest FB vertex clears the door top",
+  "yaw": "+90 -> 180 deg during flight (turn to face forward), ease in/out",
+  "poses": "stand -> crouch (45% towards seated) -> seated pose held in flight (tuck) -> land with 0.07 dip; IK influence 0 in flight, eases to 1 over the landing",
+  "exit": "mirror: dip in seat, fly out to the left, land facing away (-X), rise to stand"
+ },
+ "drive": {
+  "clip": "kfb_interaction_driving_a (Rig_Medium, looped, 151 frames)",
+  "lean": "spine+chest roll 0.5*lean, head counter-roll 0.3*lean, lean = clamp(-0.02*lateralAccel, +-0.35 rad)",
+  "bounce": "hips offset from a spring on vertical acceleration (k 60, c 7)",
+  "carBodyRoll": "-0.012*lateralAccel rad"
+ },
+ "testTrack": {
+  "shape": "ellipse a 24, b 16 rig units, hump 0.9",
+  "speedKmh": 25,
+  "lapSeconds": 11.34
+ },
+ "measuredFindings": [
+  "Mixamo entering/exiting clips do not fit FB in the cabrio at x1.8: door sill is about 2x FB's hip height; after 2 repair passes FB still passed through side wall, door and seat -> replaced by the hop (Georg 30.09).",
+  "Side windows reach 2.53 (scaled) and block the hop; roll them down (hide) in the cabrio.",
+  "Interior mirror sits in front of FB's mouth."
+ ]
+}
