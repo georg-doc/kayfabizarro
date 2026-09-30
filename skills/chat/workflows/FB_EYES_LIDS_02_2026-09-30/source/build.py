@@ -4,6 +4,8 @@ import bpy, bmesh, numpy as np, math, json
 from mathutils import Vector, Matrix
 from mathutils.bvhtree import BVHTree
 OUT='/tmp/fbl/'
+import sys
+LID_TILT=sys.argv[-1] if sys.argv[-1] in ('level','follow') else 'level'   # level: hinge stays horizontal; follow: lids take the oval tilt (v1 renders)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 bpy.ops.import_scene.gltf(filepath='/tmp/fbe/FB_TEMPLATE_LOOK_v5.glb')
 for n in ('FB_Eye_L','FB_Eye_R','FB_Mouth_Smile','Icosphere','Grid','Carl_Brow_L','Carl_Brow_R'):
@@ -48,9 +50,10 @@ def socket(dx,dy,turn_deg=0.0,fine=(0.0,0.0)):
         Rn=Matrix.Rotation(math.radians(sx*OV['tilt']),3,n)
         h=(Rn@h0).normalized(); v=(Rn@v0).normalized()
         yaw=math.degrees(math.atan2(n.x*sx,-n.y)); pitch=math.degrees(math.asin(n.z))
-        E.append(dict(sx=sx,S=S,n=n,C=S-n*R*K,F=Matrix((h,v,n)).transposed(),yaw=yaw,pitch=pitch))
+        E.append(dict(sx=sx,S=S,n=n,C=S-n*R*K,F=Matrix((h,v,n)).transposed(),FL=Matrix((h0,v0,n)).transposed(),yaw=yaw,pitch=pitch))
     return E
 def to_world(p,E):
+    if 'lid' in E: p=E['F'].transposed()@(E['lid']@p)   # lid frame -> eyeball (oval) frame, so the lid still hugs the oval ball
     return E['C']+E['F']@(Vector((p.x*OV['w'],p.y*OV['h'],p.z*OV['d']))*R)
 
 # ---- 2 · lid cross-section (lip profile), shared by both mechanisms ----
@@ -128,7 +131,7 @@ def build(EYES,mech,lip,cu,cl,slant,mask=False):
     M_W.diffuse_color=(0,1,0,1) if mask else (0.95,0.93,0.88,1)
     rep=[]
     for E in EYES:
-        Rs=Matrix.Rotation(-E['sx']*slant*0.85,3,E['n']); Es=dict(E); Es['F']=Rs@E['F']
+        Rs=Matrix.Rotation(-E['sx']*slant*0.85,3,E['n']); Es=dict(E); Es['lid']=Rs@(E['FL'] if LID_TILT=='level' else E['F'])
         tu,tl=angles(mech,cu,cl)
         Pu=dict(BASE,**LIP[lip]); Pl=dict(Pu); Pl['gap']+=0.006; Pl['t']*=0.93; Pl['bead']*=0.8; Pl['curve']=BASE['curveLo']
         up=lid_rows(mech,lip,tu,cu,False,Pu); lw=lid_rows(mech,lip,tl,cl,True,Pl)
