@@ -1,3 +1,11 @@
+## 2026-10-01 · Billboard island · Clay r2 verified intake
+
+- Preserved incoming `KFB_WORLD_BILLBOARD_CLAY01…r2` without edits; 35/35 source checksums match, 1,368,114 bytes per Dropbox metadata.
+- Recorded Georg's TUNE/ready feedback and expanded GO scope (large PD image/video pool, triplets, island palette/signature, simpler body, compact handoffs).
+- Reproducibly extracted the actual body/palette/anchor source, excluding the sample shader/island/content/scheduler. Applied one explicit generated-line repair: actual foot count instead of fixed four.
+- Reproduced the old two-post grounding defect and passed 20/20 unit tests. No receiving-runtime integration, WebGL/FPS claim, public Stage, merge or Live promotion at this checkpoint.
+- Current cursor: `workflows/WSA_BILLBOARD_ISLAND_INTEGRATION_01/START_HERE.md` + `RETURN.md`, branch `work/billboard-island-integration-01-2026-10-01`.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

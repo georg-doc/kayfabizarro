@@ -1342,3 +1342,26 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+## 2026-10-01 · Current Billboard island integration · Clay r2 intake
+
+Current execution cursor:
+`skills/chat/workflows/WSA_BILLBOARD_ISLAND_INTEGRATION_01/START_HERE.md`
+and its `RETURN.md`, branch `work/billboard-island-integration-01-2026-10-01`.
+
+Georg: **GO**; Clay design r2 is **TUNE, ready**. r1 is retained history,
+not the current design input. Existing B1/B2a remain media surface/front-rear
+owners; H13/H14 remain content/effect donor. B2b-P1 remains archived failed.
+
+r2 source intake: 35/35 checksum entries verified; source folder 1.37MB.
+Body-only geometry/palette/anchor extraction is source-hash locked. One donor
+bug reproduced and repaired in the generated seam: two-post styles were
+dividing their terrain-height sum by four. 20/20 executed unit tests PASS.
+No copied sample material, sample island, content painter or scheduler.
+
+The rich PD image/video pool, SHOW/SPIN/SELL variety, island palette signature,
+lazy bounded media cache, and compact pinned-source handoffs are required by
+the current brief. They are not yet implemented by this intake checkpoint.
+
+One next productive step: receiving-owner integration on the reduced island
+test, then actual visible 0/1/4/8/16 performance. No new public route, merge or
+Live promotion has occurred. Do not advertise intake as a playable milestone.
