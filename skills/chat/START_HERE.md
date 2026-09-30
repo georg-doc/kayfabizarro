@@ -7,6 +7,10 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## Aktueller WSA-Integrationsplan · 2026-09-30
+
+Für cross-project Recon und nächste Jobs zuerst [WSA Recon R2](workflows/KFB_PRODUCTION_MAP_2026-09-29/WSA_RECON_R2_2026-09-30.md), [Integrationsplan](workflows/KFB_PRODUCTION_MAP_2026-09-29/WSA_INTEGRATION_PLAN_R2_2026-09-30.md) und [Jobkarten](workflows/KFB_PRODUCTION_MAP_2026-09-29/WSA_EXECUTION_CARDS_R2_2026-09-30.md) lesen. Motion v6/370 auf PR #275; dessen Titel v4 ist veraltet. Laufende Designprojekte erhalten Deltas, keine Neustarts. Dies ist ein Plan, kein Runtime-/Stage-PASS.
+
 ## Start order
 
 1. Read `REGISTRY.json`.

@@ -1,6 +1,6 @@
-# KFB · Produktionskarte 2026-09-29 · Claude Design zuerst
+# KFB · Produktionskarte 2026-09-29 · historischer Design-Ausgangsstand
 
-Status: **PLAN / AUSFÜHRBARE DESIGN-BRIEFS**, nicht Implementierungs-PASS. Owner: Georg. Branch: `codex/kfb-production-map-2026-09-29`. Die freigegebene KFB Production Control Site spiegelt diese Karte als Arbeitsoberfläche; dieser öffentliche GitHub-Text ist der für Claude Design abrufbare Handoff. Jede Ausführung prüft vorab den aktuellen GitHub-Stand nach `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` und `FRESH_CHAT_SLICE_PROTOCOL.md`. Kein automatischer Merge/Live.
+Status: **HISTORISCHER 29.09.-AUSGANGSSTAND**. Aktueller WSA-Stand: [Recon R2](./WSA_RECON_R2_2026-09-30.md), [Integrationsplan](./WSA_INTEGRATION_PLAN_R2_2026-09-30.md), [Jobkarten](./WSA_EXECUTION_CARDS_R2_2026-09-30.md). V5/345 und andere ältere Zahlen unten sind überholt; nicht als Startbrief verwenden. Keine Runtime-Abnahme. Owner: Georg. Branch: `codex/kfb-production-map-2026-09-29`. Die freigegebene KFB Production Control Site spiegelt diese Karte als Arbeitsoberfläche; dieser öffentliche GitHub-Text ist der für Claude Design abrufbare Handoff. Jede Ausführung prüft vorab den aktuellen GitHub-Stand nach `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` und `FRESH_CHAT_SLICE_PROTOCOL.md`. Kein automatischer Merge/Live.
 
 ## Verbindlicher Webchat-Modus · Site-first, keine Deploy-Schleife
 
