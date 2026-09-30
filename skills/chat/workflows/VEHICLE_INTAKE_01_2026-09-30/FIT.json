@@ -1,0 +1,544 @@
+{
+ "clip": "kfb_interaction_driving_a",
+ "frame": 75,
+ "chars": {
+  "kaykit_raider": {
+   "seatedHeightM": 2.306,
+   "earTopAboveSeatM": null,
+   "halfWidthM": 0.646
+  },
+  "frizzlebob": {
+   "seatedHeightM": 1.93,
+   "earTopAboveSeatM": 2.728,
+   "halfWidthM": 0.504
+  }
+ },
+ "cars": {
+  "sedan": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.359,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.151,
+     "headClearM": -0.848,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 105,
+      "Interior": 98,
+      "Door": 48,
+      "Glass": 132
+     }
+    },
+    "last": {
+     "carScale": 1.6,
+     "cushionZ": -0.241,
+     "headClearM": 0.027,
+     "earClearM": null,
+     "hits": {
+      "Glass": 10
+     }
+    },
+    "fit": {
+     "carScale": 1.8,
+     "cushionZ": -0.271,
+     "headClearM": 0.318,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.151,
+     "headClearM": -0.472,
+     "earClearM": -1.652,
+     "hits": {
+      "CarMesh": 235,
+      "Interior": 240,
+      "Door": 76,
+      "Window": 36,
+      "Glass": 271
+     }
+    },
+    "last": {
+     "carScale": 1.4,
+     "cushionZ": -0.211,
+     "headClearM": 0.111,
+     "earClearM": -0.688,
+     "hits": {
+      "Glass": 38
+     }
+    },
+    "fit": {
+     "carScale": 1.5,
+     "cushionZ": -0.226,
+     "headClearM": 0.257,
+     "earClearM": -0.542,
+     "hits": {}
+    }
+   }
+  },
+  "hatchback": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.359,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.048,
+     "headClearM": -1.138,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 90,
+      "Interior": 115,
+      "Door": 95,
+      "Window": 501
+     }
+    },
+    "last": {
+     "carScale": 1.8,
+     "cushionZ": -0.086,
+     "headClearM": 0.195,
+     "earClearM": null,
+     "hits": {
+      "Window": 31
+     }
+    },
+    "fit": {
+     "carScale": 2.0,
+     "cushionZ": -0.096,
+     "headClearM": 0.496,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.048,
+     "headClearM": -0.518,
+     "earClearM": -2.05,
+     "hits": {
+      "CarMesh": 168,
+      "Interior": 206,
+      "Door": 86,
+      "Window": 650
+     }
+    },
+    "last": {
+     "carScale": 1.6,
+     "cushionZ": -0.077,
+     "headClearM": 0.329,
+     "earClearM": -0.951,
+     "hits": {
+      "Interior": 40,
+      "Door": 68,
+      "Window": 234
+     }
+    },
+    "fit": {
+     "carScale": 1.8,
+     "cushionZ": -0.086,
+     "headClearM": 0.611,
+     "earClearM": -0.585,
+     "hits": {}
+    }
+   }
+  },
+  "estate": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.359,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.016,
+     "headClearM": -0.787,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 73,
+      "Interior": 146,
+      "Torus": 39,
+      "Door": 38,
+      "Window": 91
+     }
+    },
+    "last": {
+     "carScale": 1.5,
+     "cushionZ": -0.025,
+     "headClearM": -0.028,
+     "earClearM": null,
+     "hits": {
+      "Interior": 4
+     }
+    },
+    "fit": {
+     "carScale": 1.6,
+     "cushionZ": -0.026,
+     "headClearM": 0.124,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.016,
+     "headClearM": -0.411,
+     "earClearM": -1.43,
+     "hits": {
+      "CarMesh": 215,
+      "Interior": 280,
+      "Torus": 42,
+      "Door": 60,
+      "Window": 267
+     }
+    },
+    "last": {
+     "carScale": 1.3,
+     "cushionZ": -0.021,
+     "headClearM": 0.045,
+     "earClearM": -0.754,
+     "hits": {
+      "Window": 40
+     }
+    },
+    "fit": {
+     "carScale": 1.4,
+     "cushionZ": -0.023,
+     "headClearM": 0.197,
+     "earClearM": -0.602,
+     "hits": {}
+    }
+   }
+  },
+  "cabrio": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.383,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.093,
+     "headClearM": -1.819,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 46,
+      "Interior": 145,
+      "Steering": 20,
+      "Torus": 44,
+      "Window": 70,
+      "WIndow": 43,
+      "Top": 68,
+      "Glass": 56
+     }
+    },
+    "last": {
+     "carScale": 1.6,
+     "cushionZ": -0.148,
+     "headClearM": null,
+     "earClearM": null,
+     "hits": {
+      "Top": 12
+     }
+    },
+    "fit": {
+     "carScale": 1.8,
+     "cushionZ": -0.167,
+     "headClearM": null,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.093,
+     "headClearM": null,
+     "earClearM": -1.367,
+     "hits": {
+      "CarMesh": 87,
+      "Interior": 154,
+      "Torus": 14,
+      "Window": 142,
+      "WIndow": 46,
+      "Top": 166,
+      "Glass": 22
+     }
+    },
+    "last": {
+     "carScale": 1.5,
+     "cushionZ": -0.139,
+     "headClearM": null,
+     "earClearM": 96.411,
+     "hits": {
+      "Top": 26
+     }
+    },
+    "fit": {
+     "carScale": 1.6,
+     "cushionZ": -0.148,
+     "headClearM": null,
+     "earClearM": 96.42,
+     "hits": {}
+    }
+   }
+  },
+  "sportster": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.274,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.07,
+     "headClearM": -1.98,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 20,
+      "Interior": 38,
+      "Dash": 48,
+      "Door": 70,
+      "Window": 455
+     }
+    },
+    "last": {
+     "carScale": 2.0,
+     "cushionZ": -0.139,
+     "headClearM": null,
+     "earClearM": null,
+     "hits": {
+      "Window": 38
+     }
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": -0.07,
+     "headClearM": null,
+     "earClearM": -2.358,
+     "hits": {
+      "CarMesh": 30,
+      "Interior": 41,
+      "Dash": 40,
+      "Door": 44,
+      "Window": 567
+     }
+    },
+    "last": {
+     "carScale": 1.8,
+     "cushionZ": -0.125,
+     "headClearM": null,
+     "earClearM": -0.782,
+     "hits": {
+      "Window": 188
+     }
+    },
+    "fit": {
+     "carScale": 2.0,
+     "cushionZ": -0.139,
+     "headClearM": null,
+     "earClearM": -0.388,
+     "hits": {}
+    }
+   }
+  },
+  "pickup": {
+   "driverSeat": "Seat",
+   "steeringX": -0.447,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": 0.028,
+     "headClearM": null,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 111,
+      "Interior": 117,
+      "Door": 81,
+      "Window": 270
+     }
+    },
+    "last": {
+     "carScale": 1.6,
+     "cushionZ": 0.045,
+     "headClearM": -1.904,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 22,
+      "Interior": 23,
+      "Window": 5
+     }
+    },
+    "fit": {
+     "carScale": 1.8,
+     "cushionZ": 0.05,
+     "headClearM": 0.163,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": 0.028,
+     "headClearM": -0.558,
+     "earClearM": -1.357,
+     "hits": {
+      "CarMesh": 199,
+      "Interior": 171,
+      "Window": 212
+     }
+    },
+    "last": {
+     "carScale": 1.4,
+     "cushionZ": 0.039,
+     "headClearM": -0.01,
+     "earClearM": -0.809,
+     "hits": {
+      "Interior": 238
+     }
+    },
+    "fit": {
+     "carScale": 1.5,
+     "cushionZ": 0.042,
+     "headClearM": 0.127,
+     "earClearM": -0.672,
+     "hits": {}
+    }
+   }
+  },
+  "transporter": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.564,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": 0.283,
+     "headClearM": -0.501,
+     "earClearM": null,
+     "hits": {
+      "CarMesh": 49,
+      "Interior": 61,
+      "Door": 12,
+      "Window": 170
+     }
+    },
+    "last": {
+     "carScale": 1.4,
+     "cushionZ": 0.396,
+     "headClearM": 0.221,
+     "earClearM": null,
+     "hits": {
+      "Window": 12
+     }
+    },
+    "fit": {
+     "carScale": 1.5,
+     "cushionZ": 0.424,
+     "headClearM": 0.402,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": 0.283,
+     "headClearM": -0.125,
+     "earClearM": -0.922,
+     "hits": {
+      "CarMesh": 236,
+      "Interior": 290,
+      "Door": 62,
+      "Window": 230
+     }
+    },
+    "last": {
+     "carScale": 1.2,
+     "cushionZ": 0.34,
+     "headClearM": 0.236,
+     "earClearM": -0.561,
+     "hits": {
+      "Window": 22
+     }
+    },
+    "fit": {
+     "carScale": 1.3,
+     "cushionZ": 0.368,
+     "headClearM": 0.417,
+     "earClearM": -0.381,
+     "hits": {}
+    }
+   }
+  },
+  "truck": {
+   "driverSeat": "SeatL",
+   "steeringX": -0.434,
+   "kaykit_raider": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": 0.099,
+     "headClearM": -1.308,
+     "earClearM": null,
+     "hits": {
+      "Interior": 119,
+      "Dash": 7,
+      "Steering": 7,
+      "Torus": 44,
+      "Door": 19,
+      "Window": 137,
+      "Glass": 62
+     }
+    },
+    "last": {
+     "carScale": 1.5,
+     "cushionZ": 0.148,
+     "headClearM": -0.065,
+     "earClearM": null,
+     "hits": {
+      "Interior": 16
+     }
+    },
+    "fit": {
+     "carScale": 1.6,
+     "cushionZ": 0.158,
+     "headClearM": 0.088,
+     "earClearM": null,
+     "hits": {}
+    }
+   },
+   "frizzlebob": {
+    "at1": {
+     "carScale": 1.0,
+     "cushionZ": 0.099,
+     "headClearM": -0.415,
+     "earClearM": -1.214,
+     "hits": {
+      "Interior": 314,
+      "Dash": 5,
+      "Steering": 9,
+      "Torus": 42,
+      "Door": 53,
+      "Window": 176,
+      "Glass": 138
+     }
+    },
+    "last": {
+     "carScale": 1.4,
+     "cushionZ": 0.139,
+     "headClearM": 0.191,
+     "earClearM": -0.606,
+     "hits": {
+      "Torus": 12
+     }
+    },
+    "fit": {
+     "carScale": 1.5,
+     "cushionZ": 0.148,
+     "headClearM": 0.343,
+     "earClearM": -0.455,
+     "hits": {}
+    }
+   }
+  }
+ }
+}
