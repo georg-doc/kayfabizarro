@@ -15,7 +15,7 @@ permissions:
 jobs:
   gothgirl-source-isolation:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout KFB candidate
@@ -57,6 +57,34 @@ jobs:
           set -o pipefail
           npm test -- --run src/retarget/bone-automap/KfbKayKitCompatibility.test.ts --reporter=verbose             | tee "${GITHUB_WORKSPACE}/m2m-kfb-retarget-p0-vitest.txt"
 
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start exact donor app
+        env:
+          SANDBOX_URL: ci
+        run: |
+          cd donor/mesh2motion
+          npm run dev -- --host 127.0.0.1 --port 4173 > "${GITHUB_WORKSPACE}/m2m-vite.log" 2>&1 &
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:4173/retarget/index.html >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat "${GITHUB_WORKSPACE}/m2m-vite.log"
+          exit 1
+
+      - name: Run real browser retarget and GLB export
+        env:
+          KFB_REPO: ${{ github.workspace }}
+          M2M_URL: http://127.0.0.1:4173/retarget/index.html
+        run: |
+          mkdir -p m2m-kfb-browser-evidence
+          node skills/chat/workflows/M2M_KFB_RETARGET_P0_2026-10-01/qa/browser-retarget.mjs             | tee m2m-kfb-browser-evidence/browser-log.txt
+
       - name: Upload evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -65,4 +93,6 @@ jobs:
           path: |
             m2m-kfb-retarget-p0-result.json
             m2m-kfb-retarget-p0-vitest.txt
+            m2m-vite.log
+            m2m-kfb-browser-evidence/
           if-no-files-found: warn
