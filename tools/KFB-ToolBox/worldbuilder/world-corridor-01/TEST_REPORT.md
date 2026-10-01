@@ -87,6 +87,58 @@ headless Chrome on GitHub Ubuntu with SwiftShader WebGL.
 Interpretation:
 the hosted software-rendered runner is not accepted as an absolute product-performance authority for this scene. The candidate is preserved; no third repair pass is allowed.
 
+
+## Representative hardware baseline · Georg / Apple M1 Max
+
+Two visible 10 s Chrome measurements were supplied from the exact WC1 candidate.
+
+### Run A · instanced signature
+- 28.7 fps
+- mean 34.8 ms
+- p95 55.3 ms
+- p99 64.3 ms
+- max 91.4 ms
+- 179 draw calls
+- 414,758 triangles
+- 89 geometries
+- 15 textures
+- 82 batches
+
+### Run B · individual-mesh signature
+- 29.0 fps
+- mean 34.53 ms
+- p95 50.1 ms
+- p99 62.1 ms
+- max 75.0 ms
+- 868 draw calls
+- 403,264 triangles
+- 459 geometries
+- 15 textures
+- 82 batches
+
+Shared world facts:
+414 items · 158 cells · 54 clouds · 5 billboards · 2,516 m route · 0 crossings · pixel ratio 1.5 · Apple M1 Max / Metal.
+
+### Interpretation
+
+R2C source code proves:
+- mode **B** uses `THREE.InstancedMesh`;
+- mode **A** builds individual `THREE.Mesh` objects.
+
+The probe version did not persist `info.mode`, so mode labels are inferred from the unmistakable runtime signature rather than explicitly recorded. The 179-call/89-geometry run matches B; the 868-call/459-geometry run matches A.
+
+Observed delta A→B measurement:
+- draw calls: +384.9%;
+- geometries: +415.7%;
+- triangles: −2.8%;
+- fps: +1.0%;
+- mean frame time: −0.8%.
+
+Therefore Hex instancing / draw-call count is **not the dominant frame-time limiter** for this current scene on this hardware. The baseline itself is already about 34.5–34.8 ms/frame, so adding Track Core before decomposing the current cost would confound the result.
+
+Evidence:
+`evidence/WC1_GPU_BASELINE_2026-10-01.json`.
+
 ## What is NOT claimed
 
 - no representative GPU FPS baseline;
@@ -104,4 +156,4 @@ Read:
 
 ## Exactly one next gate
 
-**WC1-GPU-BASELINE:** run the existing instrumented R2C candidate unchanged in a visible Chromium browser on representative hardware and save the probe result. No design/runtime tuning belongs in that gate.
+**WC1-COST-SPLIT:** on the same preserved B/instanced candidate, measure existing toggles only: default, clay shader off, clouds off, shadows off, and reduced render pixel ratio. No new Track/Vehicle/Billboard/SKY runtime is added in this diagnostic.
