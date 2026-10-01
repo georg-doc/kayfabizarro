@@ -63,7 +63,7 @@ Protected owners:
 - Billboard uses the existing scheduler / LOD / baked-image provider seam;
 - SKY3 is an EnvironmentHost donor inside the host frame loop, not a second renderer.
 
-Do not route this work back through WSA planning. The current next gate is **WC1-BASELINE**: exact island-source rehome into the WorldBuilder owner plus a tiny performance probe and source-parity baseline. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
+Do not route this work back through WSA planning. WC1 source rehome is **10/10 byte-identical PASS**. GitHub/SwiftShader absolute FPS was stopped after two attempts and is not a product-performance authority. The current next gate is **WC1-GPU-BASELINE**: run the unchanged instrumented island candidate on representative visible Chromium/GPU hardware and save the probe result. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
 
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
 
