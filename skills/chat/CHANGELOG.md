@@ -2090,3 +2090,10 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Cars queued separately in `georg-doc/KFB-Stunt-Car-Race`: preserve human-accepted v0.8 Race feel; consume Vehicle Lab / Box Stop profile facts without moving steering/drift/jump/contact ownership.
 - Flight queued separately in `georg-doc/KFB-Travel-Globe`: preserve Travel Flight / `carpet.js` movement ownership; consume carrier/profile facts without creating second flight physics.
 - Clay/facade/shadow remains explicitly outside this mobility lane.
+
+## 2026-10-01 · SimBlood CAL-P00 routing sync
+- Synced the DocCheck SimBlood Zellbaukasten platelet source-prep checkpoint from `georg-doc/doccheck@7035fec27c43eab2312ea63781521a359ccac24b`.
+- CAL-P00 result: 6 Acevedo/PBC KEEP references, 1 HOLD (`PLATELET_13337`), `SOURCE_GAP` not triggered, 12/12 repository-native validation PASS.
+- Added KFB Hub navigation to the source-locked CAL-P00 manifest/evidence without creating a new runtime or Stage.
+- Exactly one next platelet gate: **CLAUDE_DESIGN_CAL-P01**.
+

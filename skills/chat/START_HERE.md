@@ -1342,3 +1342,19 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+## 2026-10-01 · DocCheck SimBlood · CAL-P00 platelet reference batch
+
+Current SimBlood source-prep checkpoint is verified on `georg-doc/doccheck@7035fec27c43eab2312ea63781521a359ccac24b`.
+
+- owner: **SimBlood Zellbaukasten**
+- workflow: `DC-SIMBLOOD-HYBRID-01`
+- slice: `CAL-P00`
+- result: **6 source-locked KEEP platelet references + 1 HOLD**
+- `SOURCE_GAP`: not triggered
+- batch manifest: `sim-blood/assets/reference-board/PLATELET_REFERENCE_BATCH_CAL_P00_v0.1.json`
+- evidence: `sim-blood/docs/evidence/CAL_P00_PLATELET_REFERENCE_BATCH_PREP_2026-10-01.md`
+- boundary: source prep only; no renderer tuning, extraction, runtime injection or Cell Forge work
+- exactly one next gate: **CLAUDE_DESIGN_CAL-P01** — platelet batch calibration against the six KEEP references
+
+No new Stage is required for CAL-P00; GitHub is the source/evidence surface for this technical checkpoint.
+
