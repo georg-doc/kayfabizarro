@@ -482,6 +482,42 @@ Evidence des verworfenen Laufs:
 Nächster Schritt:
 **Fairen Retest ausführen und zusätzlich visuell sagen: Clay002 oder Derek RGB.**
 
+## Visual verdict · Original Clay best, Clay002 scale wrong
+
+Georg's visual review is now the primary direction:
+
+- **Original procedural Clay = clearly best-looking reference**.
+- **Derek RGB = okay as a lightweight alternative**.
+- **Clay002 as currently applied = rejected because the pattern repeats visibly**.
+
+This does **not** reject the Clay002 source texture.
+
+Verified source:
+- Clay002 diffuse = 1024×1024;
+- Clay002 roughness = 1024×1024.
+
+The bad test deliberately downsampled to 512² and projected at scale 0.62, which means a world repeat period of only ~1.61 m. That explains the wallpaper effect on large island surfaces.
+
+Correction:
+- restore Clay002 to 1024²;
+- keep one global texture;
+- keep one triplanar shader;
+- test only physical repeat periods **6 m / 9 m / 12 m**;
+- do not add multi-sample anti-repeat logic unless those simple scales still fail.
+
+Artifact:
+`KFB_Clay002_Massstab_Doppelklick.html`
+
+SHA-256:
+`722061456925e362837b9c0bf65c64441e63d9ae82d326628c987aba883821db`
+
+This is a visual scale-selection step only. No performance JSON is required.
+
+Read:
+`clay-perf/CLAY002_SCALE_CORRECTION_2026-10-02.md`.
+
+The latest Derek retest remains non-representative for absolute performance because Clay-off itself was ~6.6 fps / 151 ms and the render signature changed materially. The visual judgment from that run remains valid.
+
 ## No further integration yet
 
 Not started:
