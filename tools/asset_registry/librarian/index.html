@@ -155,6 +155,12 @@
             <button id="resetCamera" class="quiet small-button" type="button">Reset</button><button id="fitCamera" class="quiet small-button" type="button">Fit</button>
             <label class="inline-check"><input id="wireframeToggle" type="checkbox"> Wireframe</label><label class="inline-check"><input id="autoplayToggle" type="checkbox" checked> Autoplay</label>
             <label class="clip-control">Embedded clip <select id="clipSelect"><option value="">No embedded clips</option></select></label>
+            <div id="motionTransport" class="motion-transport" hidden>
+              <button id="motionPlayPause" class="quiet small-button" type="button">Pause</button>
+              <label>Speed <select id="motionSpeed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+              <label class="inline-check"><input id="motionLoop" type="checkbox" checked> Loop</label>
+              <label class="motion-scrub"><input id="motionScrub" type="range" min="0" max="1" step="0.001" value="0"><span id="motionTime">0:00 / 0:00</span></label>
+            </div>
           </div>
           <canvas id="previewCanvas" hidden></canvas>
           <div id="imagePreview" class="image-preview" hidden><img id="imagePreviewImg" alt="Selected asset preview"><div id="imageMeta" class="preview-meta"></div></div>
