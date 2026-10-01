@@ -1,0 +1,89 @@
+{
+  "schema": "kfb.resident-chat-poc/1",
+  "status": "DETERMINISTIC_KERNEL_TESTED",
+  "date": "2026-10-01",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/resident-chat-poc-01-2026-10-01",
+  "baseMain": "5e42cb6c29bf0f323db0f780454542d04834d4f4",
+  "testedKernelHead": "83dc10a567835aa0e509b11b85cbd882389c579d",
+  "evidenceHead": "8c43e23ac1b9cd2d36a1176e6836837db390cff0",
+  "runtimeOwners": {
+    "when": "overworld/overworld-v13_2026-08-12/overworld-v13/mob-ai.js",
+    "what": "overworld/overworld-v13_2026-08-12/overworld-v13/chatter-2d.js",
+    "layout": "overworld/overworld-v13_2026-08-12/overworld-v13/bubble-layout.js",
+    "interactiveBubble": "overworld/overworld-v13_2026-08-12/overworld-v13/bubble-ts.js",
+    "residentTruth": "Resident Atlas / current cast",
+    "memoryTruth": "Journey/session event stream"
+  },
+  "donorBlobs": {
+    "chatter2d": "5817807624d6df7430ad399be763e1fa3385ac8b",
+    "mobAi": "a6f2127aaf243e08afa8b031e9445541633544a4",
+    "bubbleLayout": "e84bbe454badddfbdaa64018e7e70de269a38a79",
+    "bubbleTs": "c1a00182ba502419491cbf895bc269588554b566",
+    "residentAtlasCast": "dc62757ead4ba13906c3e5b6cf2f22d239a6f6b9",
+    "townLiving": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+    "glossary": "86fae5704b0ea68c1b978b5c81f3fce9fabef2c7",
+    "chatterLiving": "d51b3e8146c90d30e5d9f9ed2b4642e653db69e7",
+    "chatterReuse": "9025a43f042cf055d19851c9a93a6ddd016e3c36",
+    "npcCardSpecRecipe": "e9b2aea0abc1bcb151fbc8cf5a08f7a6ae36689b",
+    "npcCardSpecReturn": "9e3456ab1ed563a8b672970acaa5248217de15df"
+  },
+  "siteArtifacts": {
+    "designV01": {
+      "recordId": "9c26cf06-7ce8-4a2d-a046-e985883430be",
+      "fileId": "6fe6786e-8a8a-4bb3-b42e-e6e025ac2896",
+      "sha256": "f465ed190ea4e5d18fca35231d5790527dbef704cf970591a42423e2779e8495"
+    },
+    "authoringV01": {
+      "recordId": "dc045d35-e254-49c7-a2f0-68b43b8c1e8c",
+      "fileId": "e6b01777-b367-4734-ac6e-be74ce82f2de",
+      "sha256": "16ec0549ab4e385e50812b37f51404e06b6572dca2763361a5206ba42fa49979"
+    },
+    "chatterTripletsV02": {
+      "recordId": "de2d4e95-edf0-4614-9aff-6301ed55b79a",
+      "fileId": "96e29a72-4a77-4028-9777-a861fd17a1f1",
+      "sha256": "a6d864ad4fc72fcb1918db67074800385c5cb6c87131ebe2582467b2d2fd1b5a"
+    },
+    "poolV01": {
+      "recordId": "b4f59292-5e4e-4912-b330-eeb569f20063",
+      "fileId": "0d7d3aea-b1a6-43f0-a65f-c327145c5191",
+      "sha256": "cac0333d9ea973d2dd727d57bd67314c60789dfc70d04d8e91d5ff9783f81136"
+    },
+    "attitudeV03": {
+      "recordId": "ea1b7c50-adfc-4423-ac2e-4d8827b38ae7",
+      "fileId": "197960da-0e1d-4986-a61f-d485639e6ff2",
+      "sha256": "35d5398ed396419f37233fcfcf954c41f2a2823ddbc8e2144f79012106c3276b"
+    },
+    "contractV02": {
+      "recordId": "b1d61f0e-173c-4fe1-ac7d-882bf1b6640b",
+      "fileId": "1469e6ad-3316-46ff-a74f-4c77937e4404",
+      "sha256": "bb749c32fbc7850957f9b2e15496da4d7abba6bd5fe025dd27609f48b9abc674"
+    },
+    "residentProfilesV01": {
+      "recordId": "625f759b-8ea4-4ec2-ae5a-f0ec48c5c3fa",
+      "fileId": "dcbbde71-c62c-4331-9fd6-cab7178b6187",
+      "sha256": "96d201b766bf84b7b3a725f4ae8d55b376fb3e0fe0e456e75ad7241773daa16f"
+    },
+    "implementationBriefV01": {
+      "recordId": "37c6d88b-654e-451d-bb6c-def4925d7fce",
+      "fileId": "51be8b4f-ebc0-4c70-8cd9-9e1d76594f76",
+      "sha256": "1f09f29cb7cb7252e9ecf41b2a52de5a4e152eba2d867f534c76a29908e95fc0"
+    }
+  },
+  "exactTestedBlobs": {
+    "adapter": "bc3cf5194747bcb71b2b93bcfdec349c9db710f2",
+    "tests": "9af4260f24ab5eeec3656066c38c7962c5208fc9"
+  },
+  "tests": {
+    "node": "v22.16.0",
+    "kernel": "25/25",
+    "regressions": "4/4",
+    "total": "29/29",
+    "fail": 0
+  },
+  "stage": "NOT_REQUIRED_NOT_PUBLISHED",
+  "llm": false,
+  "tts": false,
+  "browserIntegration": false,
+  "nextGate": "RESIDENT-CHAT-PRESENTATION-01"
+}
