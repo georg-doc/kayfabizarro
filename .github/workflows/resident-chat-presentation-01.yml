@@ -50,6 +50,7 @@ jobs:
             KFB Comic Card Deck Viewer v4 (WS0)/kfb-viewer.js
             KFB Comic Card Deck Viewer v4 (WS0)/decks/deck_b_dystopia.json
             media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf
+            media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
@@ -60,9 +61,10 @@ jobs:
           set -euo pipefail
           DONOR='tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24'
           cp 'KFB Comic Card Deck Viewer v4 (WS0)/kfb-viewer.js' "$DONOR/kfb-viewer.js"
-          mkdir -p "$DONOR/pdfs" "$DONOR/decks"
+          mkdir -p "$DONOR/pdfs" "$DONOR/decks" "$DONOR/npc-card-spec-01/motion"
           cp 'media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf' "$DONOR/pdfs/deck_b_dystopia.pdf"
           cp 'KFB Comic Card Deck Viewer v4 (WS0)/decks/deck_b_dystopia.json' "$DONOR/decks/deck_b_dystopia.json"
+          cp 'media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb' "$DONOR/npc-card-spec-01/motion/KFB_Motion_Library_Rig_Medium.glb"
       - name: Install Playwright
         run: |
           npm install --no-save playwright@1.55.0
