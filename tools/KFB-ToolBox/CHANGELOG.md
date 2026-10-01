@@ -1,5 +1,22 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-01 · WC1 baseline source rehome + CI stop
+
+### IMPLEMENTATION
+Rehomed the current R2C island source under the existing WorldBuilder owner. The preserved source entry and nine dependencies are **10/10 byte-identical** to the current Claude inbox source. Added one separate instrumented entry plus an observer-only performance probe.
+
+### TESTED
+- source/owner intake: **13/13 PASS**;
+- exact rehome parity: **10/10 PASS**;
+- GitHub browser boot reaches live R2C + probe;
+- hosted SwiftShader absolute performance gate stopped after two attempts.
+
+### STOP / RECOVERY
+Run 36861843836 passed parity + boot but sampled fewer than 30 frames in 3.5 s under hosted SwiftShader. Per stop rule, no third CI tuning pass. Candidate and artifact 11161609956 are preserved in `worldbuilder/world-corridor-01/FAILURE_RECOVERY_WC1_BASELINE.md`.
+
+### NEXT
+**WC1-GPU-BASELINE** — same unchanged candidate on representative visible Chromium/GPU hardware. After that measurement, Track Core adapter is the first additive performance delta.
+
 ## 2026-10-01 · WorldBuilder Floating-Island corridor intake
 
 ### SOURCE INTAKE
