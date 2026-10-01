@@ -146,6 +146,16 @@ Current K1 sources:
 
 Use profile `nature`. Preserve groups supplied by a pack; do not replace an authored tree/rock cluster with random scattering. Interpenetrating clay blobs require the proven contact/AO treatment so no bright ring appears between them.
 
+### Clouds and skydome environment
+
+Read `KFB_SKYDOME_ENVIRONMENT_SSOT_WIP.md` before editing clouds, sky shells, day/night, weather, Aurora, God Rays, Lens Flare or the Card-Spindle.
+
+The canonical cloud-anatomy donor is:
+
+`media/3D_Assets/KFB/Clouds by Jarlan Perez - b3Kia9N2fS2.glb`
+
+It defines the base silhouette and lobe anatomy for later clay variants. It is a pinned source donor, not yet a Golden Sample. Show the unchanged donor first; derive a compact deterministic family from its anatomy; do not replace it with generic sphere clusters. The sky/environment layer retains one shared `EnvironmentHost` and does not create a second lighting, clock, fog or weather owner.
+
 ### Props and street furniture
 
 Current K1 Golden candidates:

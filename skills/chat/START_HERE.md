@@ -152,6 +152,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
 - `tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md` — **CURRENT SHARED CLAY STYLE SSOT**; mandatory for clay geometry, materials, deformation, palettes, shadows/contact and all building/terrain/prop/character/vehicle consumers
 - `tools/KFB-ToolBox/docs/KFB_CLAY_GOLDEN_SAMPLE_MATRIX.md` — fixed Golden/reference/candidate matrix and comparison gates across asset families
+- `tools/KFB-ToolBox/docs/KFB_SKYDOME_ENVIRONMENT_SSOT_WIP.md` — **CURRENT SHARED ENVIRONMENT WIP**: one EnvironmentHost, TinySkies/Travel/Card-Spindle shells, shared weather/atmosphere and pinned Jarlan cloud anatomy
 - `workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md` — lean Hub UI brief for desktop, split-screen and mobile
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules

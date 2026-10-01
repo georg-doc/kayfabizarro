@@ -13,6 +13,8 @@ This matrix distinguishes accepted pixel references from implementation baseline
 | Terrain | H0 brain-world overview/close | `05-h0-totale.png`, `07-h0-gelaende-nah.png` | H0 geometry/bake as visual reference; receiving world owns terrain | **GOLDEN** | near/traversal/far and silhouette/contact |
 | Track/terrain palette | Joyride/World transition atlas | existing T4/Joyride clay-patch transitions | `transition-atlas.v1.js`, caller palette/seed | **CURRENT DONOR** | same seed across zone transition |
 | Nature | K1 tree, bush, rock | K1 catalogue | `nature` profile + contact AO | **GOLDEN SUPPORT** | source/candidate close-up; no bright blob seam |
+| Cloud anatomy | Jarlan Perez cloud GLB, blob `acd9d653…` | unchanged donor silhouette | compact prebaked clay family; shared geometry/instances | **SOURCE DONOR · TUNE** | donor isolation + front/side/3/4 + near/mid/far + 0/4/12/24 cost |
+| Skydome environment | TinySkies Gradient + Travel Skydome + Combat Card-Spindle | pinned source-isolation gates E0–E2 | one `EnvironmentHost`, one active shell | **WIP CONTRACT** | E0–E4 hot-switch, atmosphere and leak proof |
 | Street props | streetlight, trafficlight_A, firehydrant, bench | K1 catalogue | `prop` profile | **GOLDEN SUPPORT** | same scale/light, near and traversal view |
 | Character Rig_Large | Black Knight | K1 catalogue | character-safe material, preserve skin/rig | **SURFACE REFERENCE** | neutral + motion A/B |
 | Character Rig_Medium | Farmer A | K1 catalogue | character-safe material, preserve skin/rig | **SURFACE REFERENCE** | neutral + motion A/B |
