@@ -263,7 +263,7 @@
       "decision": "Clay002 512 advances as performance candidate; visual acceptance still open."
     },
     "derekComparison": {
-      "status": "FAIR_RETEST_READY_AFTER_INVALID_COMPARATOR",
+      "status": "PERF_NONREPRESENTATIVE_VISUAL_JUDGMENT_VALID",
       "invalidEvidence": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_DEREK_COMPARISON_INVALID_2026-10-01.json",
       "correction": {
         "architecture": "SEPARATE_SHADER_PROGRAM_PER_LOOK",
@@ -274,8 +274,36 @@
           "sha256": "aafa067e05f669679ee50e8c32d0798ef16551f7510fde2d893d2cc9d2305394"
         }
       },
-      "note": "The 5–6 fps combined Derek run is invalid for performance decisions because even Clay-off was bound to the oversized comparator shader."
+      "note": "The 5–6 fps combined Derek run is invalid for performance decisions because even Clay-off was bound to the oversized comparator shader.",
+      "latestNonrepresentativeEvidence": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_DEREK_FAIR_RETEST_NONREPRESENTATIVE_2026-10-02.json"
+    },
+    "visualDecision": {
+      "proceduralClay": "CLEAR_BEST_VISUAL_REFERENCE",
+      "derekRgb": "OK_LIGHTWEIGHT_FALLBACK",
+      "Clay002CurrentApplication": "REJECTED_VISIBLE_REPETITION",
+      "Clay002SourceRejected": false,
+      "cause": "Current test used 512 downsample and world repeat period ~1.61 m; source Clay002 is 1024x1024."
+    },
+    "clay002ScaleCorrection": {
+      "status": "VISUAL_SCALE_TEST_READY",
+      "sourceResolution": 1024,
+      "sourceBlobs": {
+        "diffuse": "8e7dc121cbf97154b6c67674998bb3d7c5abcd89",
+        "roughness": "7c879ace8ef221531e9fa715063997364b5d13b3"
+      },
+      "rejectedRepeatM": 1.6129,
+      "testRepeatM": [
+        6,
+        9,
+        12
+      ],
+      "artifact": {
+        "name": "KFB_Clay002_Massstab_Doppelklick.html",
+        "sha256": "722061456925e362837b9c0bf65c64441e63d9ae82d326628c987aba883821db"
+      },
+      "document": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/CLAY002_SCALE_CORRECTION_2026-10-02.md",
+      "rule": "Do not add multi-sample anti-repeat until simple physical scale correction is visually tested."
     }
   },
-  "nextActionPlainLanguage": "Korrigierte Doppelklick-Datei öffnen, „Clay002 vs Derek FAIR messen“ ausführen, JSON zurückgeben und visuell Clay002 oder Derek bevorzugen."
+  "nextActionPlainLanguage": "Clay002 in Originalauflösung 1024² bei 6 m / 9 m / 12 m Weltmaß visuell vergleichen; nur den besten Maßstab oder 'keiner' zurückmelden."
 }
