@@ -1,5 +1,20 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-02 · Clay002 vs Derek comparator corrected
+
+- First combined Clay002/Derek run is rejected for performance decisions: even Clay-off collapsed to 6.2 fps / 160.4 ms while scene geometry/calls stayed unchanged.
+- Root cause: Clay002 and Derek were dynamic branches inside the already-large v10 Clay fragment shader, so every mode inherited comparator shader complexity.
+- Invalid evidence preserved at `world-corridor-01/evidence/WC1_DEREK_COMPARISON_INVALID_2026-10-01.json`.
+- Restored pure procedural Clay diagnostic shader.
+- Added `lightweight-materials.v1.js` with separate dedicated shader programs for:
+  - Plain / no Clay;
+  - Global Clay Lite;
+  - Derek RGB.
+- The healthy prior Global Clay Lite result remains valid: Clay002 512 = 92.1 fps / 10.85 ms vs Clay-off 89.6 fps / 11.16 ms.
+- New fair local artifact: `KFB_Clay002_vs_Derek_Fair_Doppelklick.html`, SHA-256 `aafa067e05f669679ee50e8c32d0798ef16551f7510fde2d893d2cc9d2305394`.
+- Local extracted ES-module syntax check PASS.
+- Next: run **Clay002 vs Derek FAIR messen**, return JSON and visual preference.
+
 ## 2026-10-01 · Global Clay Lite 512 ready for local comparison
 
 - Implemented one lightweight shared-texture material candidate in the existing World Corridor diagnostic lane.
