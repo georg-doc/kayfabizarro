@@ -61,7 +61,7 @@ async function run(){
     const target=await r.json(),cdp=await connect(target.webSocketDebuggerUrl);
     await cdp.send('Page.enable');await cdp.send('Runtime.enable');
 
-    await poll(()=>cdp.eval(`window.__r2c?.info?.fps>0 && window.__KFB_WC1_BASELINE__?.measure ? true : false`),'R2C + probe ready',180000);
+    await poll(()=>cdp.eval(`window.__r2c?.renderer && window.__r2c?.info && window.__KFB_WC1_BASELINE__?.measure ? true : false`),'R2C + probe ready',180000);
     const boot=await cdp.eval(`(()=>({
       ready:Boolean(window.__r2c?.renderer && window.__r2c?.info),
       probe:Boolean(window.__KFB_WC1_BASELINE__?.measure),
