@@ -9,43 +9,34 @@ const browser=await chromium.launch({
   args:['--use-gl=swiftshader','--enable-webgl','--ignore-gpu-blocklist']
 });
 const page=await browser.newPage({viewport:{width:1440,height:900}});
-const consoleErrors=[],pageErrors=[],requestFailures=[],httpErrors=[];
+const consoleErrors=[],pageErrors=[];
 page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text());});
 page.on('pageerror',e=>pageErrors.push(String(e)));
-page.on('requestfailed',r=>requestFailures.push({url:r.url(),error:r.failure()?.errorText||'unknown'}));
-page.on('response',r=>{if(r.status()>=400)httpErrors.push({url:r.url(),status:r.status()});});
 
-await fs.mkdir('procedural-props-wc1-evidence',{recursive:true});
-
-let gotoError=null;
-try{
-  await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
-}catch(e){gotoError=String(e);}
+await page.goto(url,{waitUntil:'networkidle',timeout:120000});
 
 let ready=false;
-for(let i=0;i<120;i++){
-  ready=await page.evaluate(()=>window.__KFB_PROC_WC1?.ready===true).catch(()=>false);
-  if(ready)break;
-  await page.waitForTimeout(1000);
-}
+try {
+  await page.waitForFunction(
+    ()=>window.__KFB_PROC_WC1?.ready===true || !!window.__KFB_PROC_WC1_ERROR,
+    null,
+    {timeout:120000}
+  );
+  ready=await page.evaluate(()=>window.__KFB_PROC_WC1?.ready===true);
+} catch (_) {}
 
-const snapshot=await page.evaluate(()=>({
-  ready:window.__KFB_PROC_WC1?.ready===true,
-  proc:window.__KFB_PROC_WC1??null,
-  documentReady:document.readyState,
-  note:document.querySelector('#note')?.textContent??'',
-  stats:document.querySelector('#stats')?.textContent??'',
-  canvasCount:document.querySelectorAll('canvas').length,
-  bodyText:document.body?.innerText?.slice(0,3000)??'',
-  resources:performance.getEntriesByType('resource').slice(-80).map(e=>({name:e.name,duration:e.duration,transferSize:e.transferSize||0}))
-})).catch(e=>({evaluateError:String(e)}));
+const diagnostic=await page.evaluate(()=>({
+  state:window.__KFB_PROC_WC1||null,
+  error:window.__KFB_PROC_WC1_ERROR||null,
+  progress:window.__KFB_PROC_WC1_PROGRESS||null,
+  note:document.querySelector('#note')?.textContent||'',
+  stats:document.querySelector('#stats')?.textContent||''
+}));
 
-await page.screenshot({path:'procedural-props-wc1-evidence/integration-wc1-clay002.png'});
-
-const state=snapshot.proc;
 const problems=[];
-if(gotoError)problems.push('gotoError');
-if(!ready)problems.push('ready timeout');
+const state=diagnostic.state;
+if(!ready)problems.push('integration-not-ready');
+if(diagnostic.error)problems.push('integration-page-error');
 if(ready){
   if(!/Clay002/.test(state?.clayLook||''))problems.push('Clay002 not active');
   if(state?.secondRenderer!==false)problems.push('second renderer introduced');
@@ -60,9 +51,11 @@ if(ready){
 if(consoleErrors.length)problems.push('consoleErrors='+consoleErrors.length);
 if(pageErrors.length)problems.push('pageErrors='+pageErrors.length);
 
-const evidence={url,ready,gotoError,snapshot,consoleErrors,pageErrors,requestFailures,httpErrors,problems};
-await fs.writeFile('procedural-props-wc1-evidence/integration-wc1-clay002.json',JSON.stringify(evidence,null,2));
+await fs.mkdir('procedural-props-wc1-evidence',{recursive:true});
+await page.screenshot({path:'procedural-props-wc1-evidence/integration-wc1-clay002.png'});
+await fs.writeFile('procedural-props-wc1-evidence/integration-wc1-clay002.json',
+  JSON.stringify({url,ready,diagnostic,consoleErrors,pageErrors,problems},null,2));
 await browser.close();
 
-console.log(JSON.stringify(evidence,null,2));
+console.log(JSON.stringify({ready,diagnostic,consoleErrors,pageErrors,problems},null,2));
 if(problems.length)process.exit(1);
