@@ -23,6 +23,7 @@ import { mergeGeometries, mergeVertices } from 'three/addons/utils/BufferGeometr
 import { makeClayRelief } from '../baseline-source/lab-clay/clay-relief.v2.js';
 import { makeClayUniforms, makeClayMaterial, seedGeometry, PROFILES, makePrintTexture } from './clay-material.v10-partsdiag.js';
 import { makeGlobalClayPack } from './global-clay-pack.v1.js';
+import { makeDerekRgbTexture } from './derek-rgb-pack.v1.js';
 import { makeShadowFollow } from '../baseline-source/lab-world/shadow-fit.v1.js';
 import { makeToolReliefs } from '../baseline-source/lab-clay/clay-relief.v4.js';
 import { TOOLMIX } from '../baseline-source/lab-clay/clay-toolmix.v1.js';
@@ -403,6 +404,7 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
   tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.magFilter = THREE.LinearFilter; tex.minFilter = THREE.LinearMipmapLinearFilter; tex.generateMipmaps = true; tex.needsUpdate = true;
   const U = makeClayUniforms(THREE, tex); U.uClayMottle.value = 0.05;
   let globalClayTexture = null, globalClayMeta = null;
+  let derekTexture = null, derekMeta = null;
   const _st = window.setTimeout, mc = new MessageChannel(), mq = []; mc.port1.onmessage = () => { const f = mq.shift(); f && f(); };
   window.setTimeout = (f, d, ...a) => (d ? _st(f, d, ...a) : (mq.push(() => f(...a)), mc.port2.postMessage(0), 0));
   let trl; try { trl = await makeToolReliefs({ size: 1024, seed: 41, onStep: s => onNote('Werkzeug ' + s + ' …') }); } finally { window.setTimeout = _st; mc.port1.close(); }
@@ -627,22 +629,36 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
     globalClayTexture = built.texture; globalClayMeta = built.meta;
     globalClayTexture.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
     U.uClayLiteTex.value = globalClayTexture;
+    U.uDerekOn.value = 0;
     U.uClayLiteOn.value = 1;
     U.uClayOn.value = 1;
     info.clayLook = 'Global Clay Lite · ' + donor + ' · ' + size + '²';
     return globalClayMeta;
   }
+  async function setDerekRgb(size = 512) {
+    if (!derekTexture || derekMeta?.size !== size) {
+      const built = await makeDerekRgbTexture(THREE, { size });
+      if (derekTexture && derekTexture !== built.texture) derekTexture.dispose();
+      derekTexture = built.texture; derekMeta = built.meta;
+      derekTexture.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+    }
+    U.uDerekTex.value = derekTexture;
+    U.uDerekOn.value = 1; U.uClayLiteOn.value = 0; U.uClayOn.value = 1;
+    info.clayLook = 'Derek RGB · ' + size + '²';
+    return derekMeta;
+  }
   function setProceduralClay() {
-    U.uClayLiteOn.value = 0; U.uClayOn.value = 1;
+    U.uDerekOn.value = 0; U.uClayLiteOn.value = 0; U.uClayOn.value = 1;
     info.clayLook = 'Procedural Clay · K1 parity';
   }
   function setClayOff() {
-    U.uClayLiteOn.value = 0; U.uClayOn.value = 0;
+    U.uDerekOn.value = 0; U.uClayLiteOn.value = 0; U.uClayOn.value = 0;
     info.clayLook = 'Clay off';
   }
 
   return { info, U, renderer, sun, get batches() { return batches; }, get world() { return W; },
-    get globalClayMeta() { return globalClayMeta; }, setGlobalClayLite, setProceduralClay, setClayOff,
+    get globalClayMeta() { return globalClayMeta; }, get derekMeta() { return derekMeta; },
+    setGlobalClayLite, setDerekRgb, setProceduralClay, setClayOff,
     shot, bench, onPick(cb) { pickCb = cb; },
     set(k, v) { if (k === 'mode') { st.mode = v === 'A' ? 'A' : 'B'; build(); }
       else if (k === 'fugen') { st.fugen = v; build(); } else if (k === 'muster') { st.muster = v; build(); } else if (k === 'kachel') { st.kachel = v; build(); }
@@ -651,5 +667,5 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
       else if (k === 'grid') grid.visible = !!v; else if (k === 'labels') showLabels = !!v; else if (k === 'sky') setSky(v);
       else if (k === 'clouds') content.children.forEach(o => { if (/^Wolke/.test(o.name || '')) o.visible = !!v; });
       else if (k === 'inset') { inset = +v || 0; resize(); } },
-    dispose() { alive = false; clearInterval(iv); ro.disconnect(); controls.dispose(); if (globalClayTexture) globalClayTexture.dispose(); renderer.dispose(); lab.remove(); } };
+    dispose() { alive = false; clearInterval(iv); ro.disconnect(); controls.dispose(); if (globalClayTexture) globalClayTexture.dispose(); if (derekTexture) derekTexture.dispose(); renderer.dispose(); lab.remove(); } };
 }
