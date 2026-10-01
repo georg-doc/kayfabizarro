@@ -1,5 +1,24 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-01 · WorldBuilder Floating-Island corridor intake
+
+### SOURCE INTAKE
+Accepted two current Claude Design exports as integration inputs:
+- Hex/Floating-Island + route-layout source under `_inbox/KFB World Core R2C · Hex-Archipel Katalog/`;
+- Skydome / EnvironmentHost source under `_inbox/KFB Skydome Gates SKY3/`.
+
+### ROUTING
+Opened `tools/KFB-ToolBox/worldbuilder/world-corridor-01/` under the existing WorldBuilder owner. WB2 stays the scene/terrain authoring host. Track Core 0.12 stays the only route-frame/slot/check owner; R2C route generation is layout/input only. Existing Race/Ground movement owners, Billboard scheduler/LOD and EnvironmentHost single-loop boundary remain protected.
+
+### EVIDENCE
+Source/owner intake checks: **13/13 PASS**. The island module is real source code, SKY3 modules and manifest resolve at exact blobs, WB2 source pin resolves, Track Core v0.12 snapshot resolves, and the current Billboard scheduler/provider seam is present.
+
+### BOUNDARY
+No WorldBuilder runtime rehome, Track adapter, vehicle, billboard, SKY3 integration, streaming stress, Stage, merge or Live promotion is claimed yet. Inbox source folders remain unarchived until the receiving WorldBuilder owner actually imports and pins the accepted parts.
+
+### NEXT
+**WC1-BASELINE** — rehome the exact current island source into the WorldBuilder owner, add only a tiny performance probe, and establish parity + GPU baseline before adding Track / vehicle / billboards / sky / streaming.
+
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
