@@ -46,6 +46,32 @@ Keep authored hero assets:
 
 Procedural props are an additive world-dressing strategy, not a universal replacement of authored assets.
 
+## Material correction · clay_floor_001 advances
+
+Georg's follow-up visual review of `KFB_Clay002_Massstab_Doppelklick.html` changes the material diagnosis but **not** the accepted prop geometry:
+
+1. **clay_floor_001 = best-looking state in that review**;
+2. **current procedural Clay = second**, but looks comparatively buggy in the direct switch;
+3. **Clay002 at 6 m / 9 m / 12 m = no convincing clay texture**, mostly tonal/shading variation.
+
+Derek RGB was not newly ranked in this specific scale review and remains an open lightweight comparator.
+
+The simple "Clay002 is only projected too small" hypothesis is therefore closed. Increasing the repeat period did not restore material identity.
+
+Relevant implementation fact:
+the current Global Clay Lite pack does **not** display donor diffuse RGB as a surface texture. It derives luminance gradients + centred value variation + roughness while keeping the source object's colour authoritative. Clay002 can therefore collapse to mostly relief/shading under this packing semantics.
+
+Decision:
+- do not spend the next pass on Clay002 anti-repeat, instance phase or orientation variation;
+- keep Clay002 only as a negative/control state;
+- advance `clay_floor_001` as the first lightweight texture candidate;
+- keep current procedural Clay, Derek RGB and Neutral as direct comparators;
+- preserve the accepted procedural tree/prop geometry unchanged.
+
+The returned Derek-comparison JSON is persisted as
+`../evidence/WC1_DEREK_COMPARISON_NONREPRESENTATIVE_2026-10-01T23-32-47.json`.
+Its absolute frame times are **not** performance authority because even Clay-off measured ~141 ms; it is retained as diagnostic evidence only.
+
 ## Evidence
 
 Human local review:
@@ -65,15 +91,18 @@ Site Production Control:
 
 ## Exactly one next gate
 
-**MATERIAL ISOLATION · SAME GEOMETRY**
+**MATERIAL ISOLATION · SAME GEOMETRY · CLAY_FLOOR FIRST**
 
-Hold the procedural geometry fixed and compare:
-1. Clay002;
-2. Derek RGB;
-3. Neutral / Clay off.
+Hold the accepted procedural geometry fixed and compare:
+1. `clay_floor_001`;
+2. current procedural Clay;
+3. Derek RGB;
+4. Neutral / Clay off.
+
+Clay002 remains available only as a negative/control state.
 
 Decision after that:
-- if Neutral/Derek removes the generic/repetitive defect, repair/replace Clay002 treatment;
-- if the defect survives without Clay002, investigate instance-aware coordinate/normal handling.
+- choose the material family that preserves the accepted tree/prop forms without the generic/repetitive defect;
+- only investigate instance-aware phase/orientation if the defect survives on a material that is otherwise visually preferred.
 
 No geometry redesign in this gate.
