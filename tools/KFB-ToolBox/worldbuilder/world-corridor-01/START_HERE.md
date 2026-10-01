@@ -147,9 +147,14 @@ The measurement is local only. No Cloudflare, Stage publication, GitHub Pages, r
 
 ## Exactly one next gate
 
-**WC1-GPU-BASELINE:** run the preserved instrumented R2C candidate unchanged on representative visible Chromium/GPU hardware and save one probe result. Source parity is already 10/10 PASS; do not tune the candidate before this measurement. After that, Track Core adapter is the first additive delta.
+**WC1-COST-SPLIT:** run the preserved instrumented R2C candidate unchanged on representative visible Chromium/GPU hardware and save one probe result. Source parity is already 10/10 PASS; do not tune the candidate before this measurement. After that, Track Core adapter is the first additive delta.
 
 
 ## WC1 stop-rule note
 
-GitHub/SwiftShader absolute performance was stopped after two passes. Source rehome is 10/10 byte-identical PASS. Read `FAILURE_RECOVERY_WC1_BASELINE.md`; do not tune the hosted-runner threshold and do not add Track/SKY/Billboard until `WC1-GPU-BASELINE` is captured on representative hardware.
+GitHub/SwiftShader absolute performance was stopped after two passes. Source rehome is 10/10 byte-identical PASS. Read `FAILURE_RECOVERY_WC1_BASELINE.md`; do not tune the hosted-runner threshold and do not add Track/SKY/Billboard until `WC1-COST-SPLIT` is captured on representative hardware.
+
+
+## 2026-10-01 · M1 Max baseline measured
+
+Two visible 10 s measurements are persisted in `evidence/WC1_GPU_BASELINE_2026-10-01.json`: ~29 fps in both the InstancedMesh signature (179 calls / 89 geometries) and individual-mesh signature (868 calls / 459 geometries). Nearly 5× draw-call/geometry growth produced no material frame-time penalty. Therefore Hex instancing is not the dominant current bottleneck. Current next gate: `WC1-COST-SPLIT` using only existing clay/cloud/shadow/pixel-ratio toggles before Track Core integration.
