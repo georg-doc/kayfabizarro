@@ -1,48 +1,107 @@
-# World Corridor 01 · Intake Test Report
+# World Corridor 01 · Test Report
 
-Status: **SOURCE INTAKE PASS · RUNTIME NOT STARTED**
+Status: **SOURCE REHOME PASS · BROWSER BOOT PASS · ABSOLUTE CI PERFORMANCE NOT ACCEPTED**
 Date: 2026-10-01
 
-This report verifies source identity and owner routing only. It is not a browser/GPU integration PASS.
+## Intake / owner checks
 
-## Static/source checks
+**13 / 13 PASS**
 
-**13/13 PASS**
+The current island and SKY3 cuts are pinned under the existing WorldBuilder route while WB2, Track Core, Race/Ground, Billboard and Environment owner boundaries remain protected.
 
-1. current intake commit contains both named Claude cuts;
-2. R2C `START_HERE.md` exists and names R2C as current source object;
-3. R2C active HTML exists;
-4. `hex-archipel.r2c.js` is real source code (~84 kB), not an empty placeholder;
-5. R2C Return is present and explicitly marks GPU performance unproven;
-6. SKY3 `START_HERE.md` exists;
-7. SKY3 manifest exists with source blob inventory;
-8. `env-host.v3.js` exists at the manifest blob;
-9. `cloud-family.v3.js` exists and remains TUNE;
-10. `spindle-sky.v5.js` exists as the 0.3-candidate source;
-11. accepted WB2 source object resolves at exact pin `8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e`;
-12. current Track Core owner review resolves at head `3232a1070686896833d6b7942fcd631b9fa8cda6`, with a verified main-side `kfb.track-core/0.12` snapshot;
-13. current Billboard cut exposes `BillboardScheduler` from the existing frame owner and the baked/static-provider boundary.
+## Exact source rehome
 
-## Decisions proven by source
+**10 / 10 BYTE-IDENTICAL PASS**
 
-- WorldBuilder remains receiving host.
-- R2C is island/layout intake, not a replacement WorldBuilder.
-- Track Core remains frame/slot/check owner; R2C does not become a second track core.
-- EnvironmentHost v3 must be ticked from the receiving host loop; no second renderer/timer/fog owner.
-- Billboard updates are scheduler-owned and corridor content begins with baked/static images; no runtime PDF rendering.
-- SKY3 cloud cost must be measured again inside the full corridor; isolated preview numbers are not accepted as product performance.
+Compared directly in GitHub Actions between:
+- Claude inbox source: `_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01/`
+- WorldBuilder rehome: `worldbuilder/world-corridor-01/baseline-source/`
 
-## Not run / not claimed
+Exact files:
+- R2C HTML;
+- support.js;
+- hex-archipel.r2c.js;
+- shadow-fit.v1.js;
+- sky-core.r0a.js;
+- clay-relief.v2.js;
+- clay-material.v10.js;
+- clay-profiles.v2.js;
+- clay-relief.v4.js;
+- clay-toolmix.v1.js.
 
-- no R2C GPU benchmark on Georg's machine;
-- no R2C → Track Core adapter;
-- no vehicle;
-- no billboard integration;
+The preserved source HTML remains exact. The separate WC1 Baseline HTML differs only by the additive `performance-probe.js` module tag.
+
+## Performance probe contract
+
+Probe schema:
+`kfb.world-corridor.performance/0.1`
+
+Counters:
+- fps;
+- mean / p95 / p99 / max frame ms;
+- draw calls;
+- triangles;
+- geometries;
+- textures;
+- shader programs;
+- batch count;
+- world items / cells;
+- clouds;
+- billboards;
+- track length / crossings;
+- build / load time;
+- canvas size / pixel ratio;
+- WebGL renderer facts.
+
+The probe observes the existing R2C loop; it owns no renderer, timer, camera or world state.
+
+## GitHub browser gate
+
+### Run 1 · FAIL · harness only
+Run: `36861649207`
+
+Cause:
+test harness shadowed the built-in `URL` constructor before the browser test.
+
+Product/runtime conclusion:
+**NONE**.
+
+### Run 2 · STOP
+Run: `36861843836`
+Job: `110367697722`
+Evidence artifact: `11161609956`
+
+PASS before stop:
+- checkout;
+- JavaScript syntax;
+- exact 10/10 source parity;
+- R2C boot;
+- performance probe ready.
+
+Failure:
+`Error: too few measured frames`
+
+Environment:
+headless Chrome on GitHub Ubuntu with SwiftShader WebGL.
+
+Interpretation:
+the hosted software-rendered runner is not accepted as an absolute product-performance authority for this scene. The candidate is preserved; no third repair pass is allowed.
+
+## What is NOT claimed
+
+- no representative GPU FPS baseline;
+- no Track Core integration;
+- no Vehicle integration;
+- no Billboard integration;
 - no SKY3 integration;
-- no WorldBuilder rehome/parity run;
-- no streaming test;
-- no Stage/public browser test.
+- no streaming / 150-island stress result;
+- no Stage/public acceptance.
 
-## Next gate
+## Recovery
 
-**WC1-BASELINE:** exact R2C source rehome under the WorldBuilder owner + tiny performance probe + parity/baseline proof only.
+Read:
+`FAILURE_RECOVERY_WC1_BASELINE.md`
+
+## Exactly one next gate
+
+**WC1-GPU-BASELINE:** run the existing instrumented R2C candidate unchanged in a visible Chromium browser on representative hardware and save the probe result. No design/runtime tuning belongs in that gate.
