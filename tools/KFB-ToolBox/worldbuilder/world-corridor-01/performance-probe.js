@@ -382,16 +382,75 @@ export async function measureGlobalClayLite({
   return result;
 }
 
+
+export async function measureDerekComparison({
+  warmupMs = 900,
+  sampleMs = 4000,
+} = {}) {
+  const api = await waitForR2C();
+  if (!api.setGlobalClayLite || !api.setDerekRgb || !api.setProceduralClay || !api.setClayOff) {
+    throw new Error('Materialvergleich braucht die aktuelle WorldBuilder-Diagnoseversion.');
+  }
+  if (document.visibilityState !== 'visible') throw new Error('Bitte den Chrome-Tab während der Messung sichtbar lassen.');
+  const rows = [];
+  const measure = async (label, extra = {}) => {
+    const row = await measureWorldCorridorBaseline({ warmupMs, sampleMs, label });
+    Object.assign(row, extra);
+    rows.push(row);
+    return row;
+  };
+  try {
+    api.set('mode', 'B');
+
+    api.setProceduralClay();
+    await measure('PROCEDURAL_CLAY_REFERENCE', { look: 'procedural' });
+
+    const clay = await api.setGlobalClayLite('Clay002', 512);
+    await measure('GLOBAL_CLAY_Clay002_512', { look: 'global-clay-lite', globalClay: clay });
+
+    const derek = await api.setDerekRgb(512);
+    await measure('DEREK_RGB_512', { look: 'derek-rgb', derek });
+
+    api.setClayOff();
+    await measure('CLAY_OFF_REFERENCE', { look: 'clay-off' });
+  } finally {
+    api.setProceduralClay();
+  }
+
+  const base = rows[0]?.meanFrameMs || 0;
+  const result = {
+    schema: 'kfb.world-corridor.derek-comparison/0.1',
+    measuredAt: new Date().toISOString(),
+    rows,
+    deltasFromProcedural: Object.fromEntries(rows.slice(1).map((r) => [
+      r.label,
+      {
+        fps: r.fps,
+        meanFrameMs: r.meanFrameMs,
+        savedMs: round(base - r.meanFrameMs),
+        savedPct: base ? round((base - r.meanFrameMs) / base * 100, 1) : 0,
+      }
+    ])),
+    note: 'One-texture comparison: Clay002 packed RGBA vs pinned WorldDesign Lab Derek RGB tile, both at 512².'
+  };
+  window.__KFB_WC1_BASELINE__.derekComparison = result;
+  window.__KFB_WC1_BASELINE__.last = result;
+  window.dispatchEvent(new CustomEvent('kfb-wc1-derek-comparison-result', { detail: result }));
+  return result;
+}
+
 window.__KFB_WC1_BASELINE__ = {
   schema: 'kfb.world-corridor.performance-probe/0.1',
   measure: measureWorldCorridorBaseline,
   measureCostSplit: measureWorldCorridorCostSplit,
   measureClayParts,
   measureGlobalClayLite,
+  measureDerekComparison,
   last: null,
   costSplit: null,
   clayParts: null,
   globalClayLite: null,
+  derekComparison: null,
 };
 
 
@@ -411,7 +470,7 @@ function downloadJson(result) {
   const blob = new Blob([JSON.stringify(result, null, 2) + '\n'], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  const stem = result?.schema?.includes('global-clay-lite') ? 'kfb-global-clay-lite' : result?.schema?.includes('clay-parts') ? 'kfb-clay-bausteine' : result?.schema?.includes('cost-split') ? 'kfb-wc1-cost-split' : 'kfb-wc1-gpu-baseline';
+  const stem = result?.schema?.includes('derek-comparison') ? 'kfb-clay002-vs-derek' : result?.schema?.includes('global-clay-lite') ? 'kfb-global-clay-lite' : result?.schema?.includes('clay-parts') ? 'kfb-clay-bausteine' : result?.schema?.includes('cost-split') ? 'kfb-wc1-cost-split' : 'kfb-wc1-gpu-baseline';
   a.download = `${stem}-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
   document.body.appendChild(a);
   a.click();
@@ -437,11 +496,13 @@ function mountBaselinePanel() {
     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
       <button data-role="measure" type="button">Measure 10s</button>\n      <button data-role="costsplit" type="button">Measure cost split</button>\n      <button data-role="clayparts" type="button">Clay-Bausteine messen</button>
       <button data-role="globalclay" type="button">Globale Textur messen</button>
+      <button data-role="derekcompare" type="button">Clay002 vs Derek messen</button>
       <button data-role="copy" type="button" disabled>Copy JSON</button>
       <button data-role="download" type="button" disabled>Download JSON</button>
       <button data-role="showproc" type="button">Zeige aktuelles Clay</button>
       <button data-role="showa" type="button">Zeige Clay002</button>
       <button data-role="showb" type="button">Zeige clay_floor</button>
+      <button data-role="showderek" type="button">Zeige Derek RGB</button>
       <button data-role="showoff" type="button">Zeige Clay aus</button>
       <button data-role="hide" type="button">Hide</button>
     </div>
@@ -456,9 +517,11 @@ function mountBaselinePanel() {
   const costSplit = panel.querySelector('[data-role="costsplit"]');
   const clayParts = panel.querySelector('[data-role="clayparts"]');
   const globalClay = panel.querySelector('[data-role="globalclay"]');
+  const derekCompare = panel.querySelector('[data-role="derekcompare"]');
   const showProc = panel.querySelector('[data-role="showproc"]');
   const showA = panel.querySelector('[data-role="showa"]');
   const showB = panel.querySelector('[data-role="showb"]');
+  const showDerek = panel.querySelector('[data-role="showderek"]');
   const showOff = panel.querySelector('[data-role="showoff"]');
   const copy = panel.querySelector('[data-role="copy"]');
   const download = panel.querySelector('[data-role="download"]');
@@ -534,6 +597,24 @@ function mountBaselinePanel() {
       measure.disabled = false; costSplit.disabled = false; clayParts.disabled = false; globalClay.disabled = false;
     }
   };
+
+  derekCompare.onclick = async () => {
+    measure.disabled = true; costSplit.disabled = true; clayParts.disabled = true; globalClay.disabled = true; derekCompare.disabled = true; copy.disabled = true; download.disabled = true;
+    state.textContent = 'Clay002 vs Derek…';
+    result.textContent = 'Vier Durchläufe: aktuelles Clay · Clay002 512² · Derek RGB 512² · Clay aus. Bitte Tab sichtbar lassen.';
+    try {
+      const suite = await measureDerekComparison({ warmupMs: 900, sampleMs: 4000 });
+      result.textContent = suite.rows.map((r) => `${r.label}: ${r.fps} fps · ${r.meanFrameMs} ms · ${r.textures} textures`).join('\n');
+      state.textContent = 'Clay002 vs Derek gemessen';
+      copy.disabled = false; download.disabled = false;
+    } catch (err) {
+      state.textContent = 'fehlgeschlagen';
+      result.textContent = String(err?.message || err);
+    } finally {
+      measure.disabled = false; costSplit.disabled = false; clayParts.disabled = false; globalClay.disabled = false; derekCompare.disabled = false;
+    }
+  };
+
   const showLook = async (fn, label) => {
     state.textContent = label + '…';
     try { await fn(); state.textContent = label; }
@@ -542,6 +623,7 @@ function mountBaselinePanel() {
   showProc.onclick = () => showLook(async () => { const a = await waitForR2C(); a.setProceduralClay(); }, 'aktuelles Clay');
   showA.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('Clay002', 512); }, 'Clay002 512²');
   showB.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('clay_floor_001', 512); }, 'clay_floor 512²');
+  showDerek.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setDerekRgb(512); }, 'Derek RGB 512²');
   showOff.onclick = () => showLook(async () => { const a = await waitForR2C(); a.setClayOff(); }, 'Clay aus');
 
   copy.onclick = async () => {
