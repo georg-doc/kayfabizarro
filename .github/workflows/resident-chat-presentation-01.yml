@@ -1,0 +1,38 @@
+name: resident-chat-presentation-01
+
+on:
+  pull_request:
+    paths:
+      - 'skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/**'
+      - 'tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/**'
+      - '.github/workflows/resident-chat-presentation-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  presentation-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01
+            skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/src/resident-chatter-adapter.v0.1.mjs
+            tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/npc-card-spec-01/resident-card-speculation.recipe.json
+            tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/npc-card-spec-01/resident-scene.mjs
+            tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/NPC Card Speculation Scene.dc.html
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check semantic provider
+        run: node --check skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/donor-semantic-provider.mjs
+      - name: Syntax check donor runner
+        run: node --check "tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/npc-card-spec-01/resident-scene.mjs"
+      - name: Syntax check tests
+        run: node --check skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/test/presentation-provider.test.mjs
+      - name: Run deterministic presentation parity tests
+        run: node --test skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/test/presentation-provider.test.mjs
