@@ -1,0 +1,42 @@
+name: KFB World Corridor Baseline
+
+on:
+  pull_request:
+    paths:
+      - "tools/KFB-ToolBox/worldbuilder/world-corridor-01/**"
+      - ".github/scripts/world-corridor-wc1-baseline-smoke.mjs"
+      - ".github/workflows/world-corridor-baseline.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wc1-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Show runtime
+        run: |
+          node --version
+          python3 --version
+          command -v google-chrome-stable || command -v google-chrome || command -v chromium
+
+      - name: Check probe and smoke syntax
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/performance-probe.js
+          node --check .github/scripts/world-corridor-wc1-baseline-smoke.mjs
+
+      - name: Run WC1 exact-parity and browser baseline
+        run: node .github/scripts/world-corridor-wc1-baseline-smoke.mjs
+
+      - name: Upload WC1 evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: kfb-world-corridor-wc1-baseline
+          path: artifacts/world-corridor/wc1-baseline/
+          if-no-files-found: warn
