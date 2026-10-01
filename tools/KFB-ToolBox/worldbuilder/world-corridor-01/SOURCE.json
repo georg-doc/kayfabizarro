@@ -1,0 +1,74 @@
+{
+  "schema": "kfb.world-corridor-source.v1",
+  "workflow": "WORLD-CORRIDOR-01",
+  "date": "2026-10-01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/world-corridor-01-2026-10-01",
+  "intakeMain": "901328352530fb14c19391876b2cb28beffb48bd",
+  "receivingOwner": {
+    "name": "KFB WorldBuilder / ToolBox world owner",
+    "acceptedHost": {
+      "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html",
+      "ref": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+      "blob": "188d5b46e34407c3800edeb2b896d3cf0cf93925"
+    }
+  },
+  "islandIntake": {
+    "status": "ACCEPTED_INTAKE_NOT_SSOT",
+    "root": "tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01",
+    "startHereBlob": "68f3321c86498ab90a3bae12e0700449b70878bd",
+    "returnBlob": "c69c0e3b77823ccbddbc73187d472968f4fef358",
+    "sourceObject": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01/KFB World Core R2C · Hex-Archipel Katalog.dc.html",
+      "blob": "b3a12372edccb220f1aaf68d22741d8afb1b81ed"
+    },
+    "islandModule": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01/lab-world/hex-archipel.r2c.js",
+      "blob": "197035998a2a4988d24beb2c71f8fded617139b2"
+    },
+    "role": "visual island + island route-layout donor; not WorldBuilder SSOT and not Track Core"
+  },
+  "environmentIntake": {
+    "status": "ACCEPTED_INTAKE_CANDIDATE",
+    "root": "tools/KFB-ToolBox/_inbox/KFB Skydome Gates SKY3/KFB_SKYDOME_SKY3_SESSION_CUT_2026-10-01_r1",
+    "startHereBlob": "e52cfc1f714da0b83282866381824b8544eead9e",
+    "manifestBlob": "ad2fbdcae25a777c44156627f316998b1a737097",
+    "envHost": {
+      "path": "lab-sky/env-host.v3.js",
+      "blob": "70579123889d86b1b8a39748ee6ede4d0bcaad98"
+    },
+    "clouds": {
+      "path": "lab-sky/cloud-family.v3.js",
+      "blob": "07eeadb9a5606fa331e82b216a3d54fad2a3517c",
+      "status": "TUNE"
+    },
+    "spindle": {
+      "path": "lab-sky/spindle-sky.v5.js",
+      "blob": "2cddca0cfe6547944ce28bdd0c34cae6a313bbde",
+      "status": "CANDIDATE"
+    },
+    "role": "single EnvironmentHost donor; must run inside the receiving host frame loop"
+  },
+  "trackOwner": {
+    "ownerBranch": "georg-doc-patch-2",
+    "ownerHead": "3232a1070686896833d6b7942fcd631b9fa8cda6",
+    "review": "Track Core · flexible transitions / Clothoids / agent execution briefs",
+    "verifiedSnapshot": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/core/track-core.v012.mjs",
+      "blob": "1bcf7ad3a384a57d7caf83488c436f4c4835346f",
+      "version": "kfb.track-core/0.12"
+    },
+    "rule": "R2C buildTrack is input/layout only; consumers do not create a second frame/slot/check core"
+  },
+  "billboardDonor": {
+    "root": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1",
+    "handoverBlob": "068237f53eb652ba4c08127672bafb5472a778ce",
+    "schedulerModule": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/briefd/billboard-clay.js",
+      "blob": "751b69099ceaad0c1cb2147dc38e6a538840a8a4"
+    },
+    "rule": "scheduler/LOD + baked/static image provider; no runtime PDF rendering in corridor frame loop"
+  },
+  "stageRoute": null,
+  "nextGate": "WC1-BASELINE"
+}
