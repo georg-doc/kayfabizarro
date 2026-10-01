@@ -1,0 +1,76 @@
+{
+  "schema": "kfb.resident-chat-presentation/1",
+  "workflow": "RESIDENT-CHAT-PRESENTATION-01",
+  "date": "2026-10-01",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/resident-chat-presentation-01-2026-10-01",
+  "pullRequest": 306,
+  "stackedBase": {
+    "branch": "chatgpt-web/resident-chat-poc-01-2026-10-01",
+    "pullRequest": 305,
+    "head": "5b595a075b789f683ef0871f8c24d95e96416449",
+    "adapterBlob": "bc3cf5194747bcb71b2b93bcfdec349c9db710f2",
+    "kernelTests": "29/29 PASS"
+  },
+  "donor": {
+    "name": "NPC-CARD-SPEC-01",
+    "returnBlob": "9e3456ab1ed563a8b672970acaa5248217de15df",
+    "recipe": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/npc-card-spec-01/resident-card-speculation.recipe.json",
+      "blob": "e9b2aea0abc1bcb151fbc8cf5a08f7a6ae36689b",
+      "status": "UNCHANGED"
+    },
+    "actors": ["FrizzleBob Driver Graft", "GothGirl"],
+    "card": "The Doomsday Clock",
+    "isolationLanes": ["scene", "actor-a", "actor-b", "mouths"],
+    "owners": ["EyeRig x2", "PetMouth x2", "mixer x2", "existing bubble drawer", "existing renderer/camera", "existing Card owner"]
+  },
+  "implementation": {
+    "provider": {
+      "path": "skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/donor-semantic-provider.mjs",
+      "blob": "b407aa724bd21b440a76961cefe07957a6be9113"
+    },
+    "runner": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/npc-card-spec-01/resident-scene.mjs",
+      "blob": "2fe796111c8d14afc7c3620c35676759225c723b"
+    },
+    "host": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/NPC Card Speculation Scene.dc.html",
+      "blob": "beedba387ee05ab3c43856e41b78aa75ccf5a21b"
+    },
+    "tests": {
+      "path": "skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/test/presentation-provider.test.mjs",
+      "blob": "05314fd8868e45b06a7b4a869acda3c62896ff7d"
+    },
+    "workflow": {
+      "path": ".github/workflows/resident-chat-presentation-01.yml",
+      "blob": "3342a42b8f53694aeb1a1a868ea90aa149618939"
+    }
+  },
+  "mapping": {
+    "observation": "subject",
+    "interpretation": "connector",
+    "counter": "reframe",
+    "implication": "reframe"
+  },
+  "repairHistory": {
+    "run1": 36854545942,
+    "result": "9/14 PASS",
+    "cause": "staged donor Triplets were evaluated under ordinary ambient ChatterBox word budget",
+    "repair": "event.performanceMode=true",
+    "repairPasses": 1
+  },
+  "testedEvidence": {
+    "head": "0bf02e9a311046d2730927b3cbf19634c87cbf3a",
+    "run": 36854642474,
+    "job": 110344123565,
+    "result": "14/14 PASS",
+    "fail": 0
+  },
+  "public": {
+    "browser": "NOT_TESTED",
+    "stage": "NOT_DEPLOYED",
+    "live": "NOT_PROMOTED"
+  },
+  "nextGate": "visible browser verification of existing fixture on stacked candidate"
+}
