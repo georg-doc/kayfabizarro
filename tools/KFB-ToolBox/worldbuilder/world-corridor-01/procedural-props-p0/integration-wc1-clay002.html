@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WC1 · Procedural Props P0B · Clay002 Integration</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#14130f;color:#f0ece2;font:13px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#stage{position:fixed;inset:0}
+canvas{display:block;width:100%;height:100%}
+#labels{position:fixed;inset:0;pointer-events:none}
+#hud{position:fixed;left:14px;top:14px;z-index:5;max-width:470px;background:#171610e8;border:1px solid #514a35;border-radius:8px;padding:10px 12px}
+#hud b{display:block;margin-bottom:4px}
+#hud code,#stats{font:11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;color:#ddd4bb}
+#note{margin-top:5px;color:#d8c27a}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="stage"><canvas id="c"></canvas></div>
+<div id="labels"></div>
+<div id="hud">
+  <b>WC1 · soft procedural props P0B · Clay002 Lite</b>
+  Existing WC1 renderer/world owner. Diagnostic add-on only; no second renderer.
+  <div id="stats">booting…</div>
+  <div id="note"></div>
+  <code>Hivebound pattern donor @ be10166e44f3d89db922ebb90671c10b89cd3e62</code>
+</div>
+<script type="module">
+import { boot } from '../clay-perf/hex-archipel.r2c-partsdiag.js';
+import { mountProceduralPropsP0B } from './procedural-props-p0b.mjs';
+
+const canvas=document.querySelector('#c');
+const labels=document.querySelector('#labels');
+const note=document.querySelector('#note');
+const statsEl=document.querySelector('#stats');
+const api=await boot(canvas,labels,t=>note.textContent=t||'',{view:'burg',mode:'B'});
+await api.setGlobalClayLite('Clay002',512);
+api.shot('burg',true);
+
+const props=mountProceduralPropsP0B(api,{islandId:'burg'});
+const frames=async(n=5)=>{for(let i=0;i<n;i++) await new Promise(r=>requestAnimationFrame(()=>r()));};
+
+props.setVisible(false); await frames(8);
+const base={calls:api.info.calls,triangles:api.info.tris,geometries:api.info.geoms,textures:api.info.tex,programs:api.info.progs};
+props.setVisible(true); await frames(8);
+const withProps={calls:api.info.calls,triangles:api.info.tris,geometries:api.info.geoms,textures:api.info.tex,programs:api.info.progs};
+const delta={
+  calls:withProps.calls-base.calls,
+  triangles:withProps.triangles-base.triangles,
+  geometries:withProps.geometries-base.geometries,
+  textures:withProps.textures-base.textures,
+  programs:withProps.programs-base.programs
+};
+statsEl.textContent=
+  `Clay002 512 · +${delta.calls} calls · +${delta.triangles.toLocaleString()} tris · `+
+  `tufts ${props.counts.tufts} · pebbles ${props.counts.pebbles} · trees ${props.counts.trees}`;
+
+window.__KFB_PROC_WC1={
+  ready:true,
+  clayLook:api.info.clayLook,
+  clayMeta:api.globalClayMeta,
+  donorHead:'be10166e44f3d89db922ebb90671c10b89cd3e62',
+  counts:props.counts,
+  estimatedTriangles:props.estimatedTriangles,
+  base,withProps,delta,
+  sourceOwner:'WC1 existing renderer/world owner',
+  secondRenderer:false
+};
+window.dispatchEvent(new Event('kfbProcWc1Ready'));
+</script>
+</body>
+</html>
