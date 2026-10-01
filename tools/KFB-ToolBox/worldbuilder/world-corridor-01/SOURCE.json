@@ -196,7 +196,7 @@
     "decision": "No immediate rebake. Finish WC1-CLAY-PERF-01, pin optimized procedural settings, then align any final baked candidate."
   },
   "materialStrategy": {
-    "status": "GLOBAL_TEXTURE_FIRST",
+    "status": "GLOBAL_CLAY_LITE_512_READY_FOR_LOCAL_MEASUREMENT",
     "document": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/MATERIAL_STRATEGY_2026-10-01.md",
     "nextPlainLanguage": "Build and measure one 512x512 Global Clay Lite texture in the current island scene.",
     "initialClayDonors": [
@@ -216,7 +216,24 @@
       "MEASURED_TWO_WAY_BLEND_ONLY_IF_NEEDED"
     ],
     "blendRule": "One material texture per object/zone by default; max two-way blend until measured evidence justifies more.",
-    "visualReference": "K1/H0 Clay remains visual reference and possible near/hero treatment, not mandatory global implementation."
+    "visualReference": "K1/H0 Clay remains visual reference and possible near/hero treatment, not mandatory global implementation.",
+    "globalClayLite": {
+      "packBuilder": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/global-clay-pack.v1.js",
+      "shaderPath": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/clay-material.v10-partsdiag.js",
+      "worldPath": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/hex-archipel.r2c-partsdiag.js",
+      "testDoc": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/GLOBAL_CLAY_LITE_512_TEST.md",
+      "size": 512,
+      "activeGpuTextures": 1,
+      "estimatedMipBytes": 1398101,
+      "donors": [
+        "Clay002",
+        "clay_floor_001"
+      ],
+      "localArtifact": {
+        "name": "KFB_Global_Clay_Lite_Doppelklick.html",
+        "sha256": "30bc4ff8e9a39479169301e9a6b198e00a185af402108badfd3e4c481374e81e"
+      }
+    }
   },
-  "nextActionPlainLanguage": "Eine globale 512²-Clay-Textur aus Clay002 oder clay_floor_001 bauen und in derselben Inselwelt messen."
+  "nextActionPlainLanguage": "Doppelklick-HTML in Chrome öffnen, „Globale Textur messen“ ausführen und das JSON zurückgeben."
 }
