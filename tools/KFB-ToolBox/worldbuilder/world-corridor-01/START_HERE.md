@@ -282,3 +282,25 @@ Nächster Schritt für Georg:
 
 Read:
 `clay-perf/DEREK_RGB_512_TEST.md`
+
+
+## 2026-10-02 · Clay002 vs Derek · fairer Retest
+
+Der erste kombinierte Derek-Lauf war kein valider Performancevergleich, weil selbst "Clay aus" an einem aufgeblähten Vergleichs-Shader hing und auf 6.2 fps / 160.4 ms fiel.
+
+Deshalb jetzt getrennt:
+- aktueller Clay = reiner v10-Shader;
+- Clay002 = eigener kleiner Triplanar-Shader;
+- Derek RGB = eigener kleiner RGB-Triplanar-Shader;
+- Clay aus = normales Material ohne Clay-Code.
+
+Neue Datei:
+`KFB_Clay002_vs_Derek_Fair_Doppelklick.html`
+
+SHA-256:
+`aafa067e05f669679ee50e8c32d0798ef16551f7510fde2d893d2cc9d2305394`
+
+Plain-language next action:
+**„Clay002 vs Derek FAIR messen“ ausführen, JSON zurückgeben und visuell Clay002 oder Derek bevorzugen.**
+
+Der frühere gesunde Clay002-512-Lauf bleibt gültig; nur der erste kombinierte Derek-Lauf ist verworfen.
