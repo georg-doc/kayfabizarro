@@ -2,13 +2,12 @@
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
-ROOT="$(cd "$HERE/../../../.." && pwd)"
 PORT="${KFB_WC1_PORT:-8772}"
-PAGE="/tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source/KFB%20World%20Core%20R2C%20%C2%B7%20WC1%20Baseline.dc.html"
+PAGE="/baseline-source/KFB%20World%20Core%20R2C%20%C2%B7%20WC1%20Baseline.dc.html"
 URL="http://127.0.0.1:${PORT}${PAGE}"
 LOG="${TMPDIR:-/tmp}/kfb-wc1-baseline-server.log"
 
-cd "$ROOT"
+cd "$HERE"
 
 if command -v python3 >/dev/null 2>&1; then
   python3 -m http.server "$PORT" --bind 127.0.0.1 >"$LOG" 2>&1 &
