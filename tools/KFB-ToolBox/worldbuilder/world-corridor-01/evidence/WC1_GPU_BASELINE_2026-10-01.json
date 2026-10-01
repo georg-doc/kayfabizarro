@@ -1,0 +1,84 @@
+{
+  "schema": "kfb.world-corridor.gpu-baseline-evidence/0.1",
+  "date": "2026-10-01",
+  "device": {
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+    "hardwareConcurrency": 10,
+    "deviceMemoryGB": 32,
+    "devicePixelRatio": 2,
+    "browser": "Chrome 154"
+  },
+  "source": {
+    "owner": "KFB WorldBuilder",
+    "gate": "WC1-BASELINE",
+    "visualSource": "World Core R2C exact rehome",
+    "canvas": {
+      "cssW": 1303,
+      "cssH": 653,
+      "pixelRatio": 1.5
+    }
+  },
+  "runs": [
+    {
+      "measuredAt": "2026-10-01T13:18:51.182Z",
+      "fps": 28.7,
+      "meanFrameMs": 34.8,
+      "p95FrameMs": 55.3,
+      "p99FrameMs": 64.3,
+      "maxFrameMs": 91.4,
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89,
+      "textures": 15,
+      "programs": 15,
+      "batches": 82,
+      "worldItems": 414,
+      "worldCells": 158,
+      "clouds": 54,
+      "billboards": 5,
+      "trackLengthM": 2516,
+      "trackCrossings": 0,
+      "trackRelax": "5 / Inseln 500",
+      "buildMs": 31,
+      "loadMs": 6390
+    },
+    {
+      "measuredAt": "2026-10-01T13:19:38.688Z",
+      "fps": 29,
+      "meanFrameMs": 34.53,
+      "p95FrameMs": 50.1,
+      "p99FrameMs": 62.1,
+      "maxFrameMs": 75,
+      "drawCalls": 868,
+      "triangles": 403264,
+      "geometries": 459,
+      "textures": 15,
+      "programs": 16,
+      "batches": 82,
+      "worldItems": 414,
+      "worldCells": 158,
+      "clouds": 54,
+      "billboards": 5,
+      "trackLengthM": 2516,
+      "trackCrossings": 0,
+      "trackRelax": "5 / Inseln 500",
+      "buildMs": 18,
+      "loadMs": 6390
+    }
+  ],
+  "comparison": {
+    "fpsDeltaPct": 1.05,
+    "meanFrameMsDeltaPct": -0.78,
+    "drawCallsDeltaPct": 384.92,
+    "geometriesDeltaPct": 415.73,
+    "trianglesDeltaPct": -2.77,
+    "interpretation": [
+      "R2C source code maps mode B to InstancedMesh batching and mode A to individual Mesh construction.",
+      "The 179-call/89-geometry run matches the instanced B signature; the 868-call/459-geometry run matches the individual-mesh A signature.",
+      "Nearly fivefold draw-call/geometry growth with unchanged ~29 fps means draw-call count / Hex instancing is not the dominant frame-time limiter in this scene on this M1 Max.",
+      "Do not add Track Core yet; isolate shader/fill/shadow/cloud costs using existing toggles on the same preserved candidate."
+    ],
+    "confidence": "HIGH_SIGNATURE_MATCH_MODE_NOT_EXPLICITLY_RECORDED_IN_PROBE"
+  },
+  "nextGate": "WC1-COST-SPLIT"
+}
