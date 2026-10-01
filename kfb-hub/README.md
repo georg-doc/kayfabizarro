@@ -1,6 +1,8 @@
 # KFB Production Hub
 
-**Permanent URL:** https://kayfabizarro.pages.dev/kfb-hub/
+**Current human Hub owner:** https://kfb-production-control.frizzlebob.chatgpt.site/
+
+**Compatibility entrypoint:** https://kayfabizarro.pages.dev/kfb-hub/ — root only; after the entrypoint migration it forwards to the current Hub owner. Child Stage/review/asset routes remain on `kayfabizarro.pages.dev`.
 
 Human-facing navigator for the wider KFB production scope. It is deliberately **not** a new SSOT.
 
