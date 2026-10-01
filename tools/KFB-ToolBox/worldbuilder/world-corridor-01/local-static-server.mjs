@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE=path.dirname(fileURLToPath(import.meta.url));
-const ROOT=path.resolve(HERE,'../../../..');
+const ROOT=HERE;
 const PORT=Number(process.env.KFB_WC1_PORT || process.argv[2] || 8772);
 const MIME={
   '.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8',
