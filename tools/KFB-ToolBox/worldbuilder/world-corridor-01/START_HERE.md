@@ -282,3 +282,19 @@ Nächster Schritt für Georg:
 
 Read:
 `clay-perf/DEREK_RGB_512_TEST.md`
+
+
+## 2026-10-01 · Experimental procedural-props P0B lane · frozen
+
+A stacked experimental lane tested Hivebound-style asset-light soft procedural props without replacing WC1 owners.
+
+Read:
+`procedural-props-p0/RETURN.md`
+`procedural-props-p0/FAILURE_RECOVERY.md`
+`procedural-props-p0/SOURCE.json`
+
+Draft PR #311 / branch `chatgpt-web/wc1-procedural-props-p0-2026-10-01`.
+P0 and P0B source-isolation are browser PASS. The integrated candidate proved WC1 boot → Clay002 → prop mount, but the hosted SwiftShader frame-delta gate was stopped after two repair passes. It is **not** a current WorldBuilder integration PASS and must not displace the parent Clay002-vs-Derek material gate.
+
+Exactly one continuation if this experiment is resumed:
+fresh slice from frozen candidate `94443824e6b13f38c611defd06dacedd7c6d0faa` → visible local Chrome WC1 + Clay002 + P0B proof with local Measure / Copy JSON.
