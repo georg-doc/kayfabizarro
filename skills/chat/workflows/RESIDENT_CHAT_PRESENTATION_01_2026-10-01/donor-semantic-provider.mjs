@@ -124,6 +124,7 @@ export function createDonorSemanticLineProvider({ recipe }) {
         knowledgeTags: ['CARD_PRESENT', 'DOOMSDAY_CLOCK'],
         cardTags: ['PUBLIC_TIMER', 'JUDGMENT'],
         tags: ['CARD_PRESENT', 'PRESENTATION_FIXTURE'],
+        performanceMode: true,
       },
       provenanceRefs: ['NPC-CARD-SPEC-01', recipe.id, 'variant:' + normalized],
       rng: rngForVariant(normalized, rows.length),
