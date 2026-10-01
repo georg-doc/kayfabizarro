@@ -233,7 +233,35 @@
         "name": "KFB_Global_Clay_Lite_Doppelklick.html",
         "sha256": "30bc4ff8e9a39479169301e9a6b198e00a185af402108badfd3e4c481374e81e"
       }
+    },
+    "globalClayLiteResult": {
+      "status": "PERFORMANCE_PASS_VISUAL_OPEN",
+      "evidence": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_GLOBAL_CLAY_LITE_512_2026-10-01.json",
+      "preferredPerformanceDonor": "Clay002",
+      "procedural": {
+        "fps": 36.1,
+        "meanFrameMs": 27.73
+      },
+      "Clay002_512": {
+        "fps": 92.1,
+        "meanFrameMs": 10.85,
+        "p95FrameMs": 17.5,
+        "estimatedMipBytes": 1398101
+      },
+      "clay_floor_001_512": {
+        "fps": 77,
+        "meanFrameMs": 12.99,
+        "p95FrameMs": 25,
+        "p99FrameMs": 133.3,
+        "estimatedMipBytes": 1398101
+      },
+      "clayOff": {
+        "fps": 89.6,
+        "meanFrameMs": 11.16,
+        "p95FrameMs": 17.4
+      },
+      "decision": "Clay002 512 advances as performance candidate; visual acceptance still open."
     }
   },
-  "nextActionPlainLanguage": "Doppelklick-HTML in Chrome öffnen, „Globale Textur messen“ ausführen und das JSON zurückgeben."
+  "nextActionPlainLanguage": "Clay002 512 direkt gegen Derek RGB auf derselben Inselwelt vergleichen: Bildwirkung und Framezeit."
 }
