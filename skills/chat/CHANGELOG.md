@@ -1,3 +1,24 @@
+## 2026-09-30 · KFB Production Control · Claude plugin v0.1
+
+### IMPLEMENTATION
+- Added private Claude plugin candidate at `skills/chat/plugins/kfb-production-control/` on Draft PR **#299**.
+- Uses current Claude plugin layout: manifest + `.mcp.json` + namespaced skills `control`, `recover`, `checkin`, `session-cut`.
+- Remote Production Control is configured as HTTP MCP through required user config; the browser Site URL is not silently treated as the MCP endpoint.
+- Claude Design and Blender/Cowork share the same durable checkpoint/session-cut grammar; no second runtime or design-only owner was created.
+
+### TESTED RESULT
+- implementation/test head `6c51df529fd8e076e2ba55b7fa4c4d0ac1d0857a`;
+- **26/26** static/source checks PASS;
+- **7/7** intended implementation files fetched back from the exact branch;
+- Production Control artifact save/read/SHA probe PASS: **113 bytes**, SHA-256 `9d1001c260ed511d37be3b6fbc3e44c67a05fb0448932ee704fa6e46f6f0af54`;
+- `claude plugin validate`: **NOT_RUN · CLAUDE_CLI_UNAVAILABLE**;
+- external Claude → Production Control connection: **MCP_BINDING_PENDING**.
+
+### ROUTING
+No Stage/Cloudflare/Hub card: this is an infrastructure transport gate with no meaningful human product decision. Do not create a pseudo-human review surface.
+
+Exactly one next gate: **CLAUDE-PC-MCP-01** — identify/expose exact remote MCP URL/auth, run Claude validator, then fresh-session recover → checkpoint → artifact upload → Return → recover.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

@@ -1,0 +1,17 @@
+{
+  "name": "kfb-production-control",
+  "displayName": "KFB Production Control",
+  "version": "0.2.0",
+  "description": "Crash-safe KFB production recovery, checkpoints, session cuts and handoffs across Claude Code/Cowork, Blender MCP and Claude Design.",
+  "author": {
+    "name": "KFB / Georg"
+  },
+  "repository": "https://github.com/georg-doc/kayfabizarro",
+  "defaultEnabled": true,
+  "metadata": {
+    "workflow": "KFB-CLAUDE-PRODUCTION-CONTROL-PLUGIN-01",
+    "router": "skills/chat/START_HERE.md",
+    "status": "MCP_ENDPOINT_BOUND · CLAUDE_SMOKE_PENDING",
+    "mcpEndpoint": "https://kfb-production-control.frizzlebob.chatgpt.site/mcp"
+  }
+}

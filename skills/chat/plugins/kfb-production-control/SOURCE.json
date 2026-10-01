@@ -1,0 +1,55 @@
+{
+  "schema": "kfb.claude-production-control-plugin/0.1",
+  "project": "KFB Production Control",
+  "slice": "KFB-CLAUDE-PRODUCTION-CONTROL-PLUGIN-01",
+  "status": "EXPERIMENTAL",
+  "version": "0.1.0",
+  "owner": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "chatgpt-web/kfb-claude-production-control-plugin-01-2026-09-30",
+    "pr": 299,
+    "testedImplementationHead": "6c51df529fd8e076e2ba55b7fa4c4d0ac1d0857a"
+  },
+  "pluginRoot": "skills/chat/plugins/kfb-production-control",
+  "canonicalRouter": [
+    "skills/chat/START_HERE.md",
+    "skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md",
+    "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md"
+  ],
+  "canonicalSessionCut": "skills/session_ZIP_v1.md",
+  "productionControl": {
+    "workflow": "KFB-CLAUDE-PRODUCTION-CONTROL-PLUGIN-01",
+    "transport": "remote HTTP MCP",
+    "endpoint": null,
+    "endpointStatus": "MCP_BINDING_PENDING",
+    "browserSite": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+    "note": "Browser Site URL is not assumed to be the MCP endpoint."
+  },
+  "evidence": {
+    "staticChecks": {
+      "passed": 26,
+      "total": 26
+    },
+    "implementationFilesReadBack": {
+      "passed": 7,
+      "total": 7
+    },
+    "backendArtifactProbe": {
+      "status": "PASS",
+      "bytes": 113,
+      "sha256": "9d1001c260ed511d37be3b6fbc3e44c67a05fb0448932ee704fa6e46f6f0af54",
+      "recordId": "0ee9cd76-93b6-4ba0-a677-e4c6c2a7cfd6",
+      "fileId": "28a3027a-0c71-48a2-a1d9-fb533a54c1e6"
+    },
+    "claudePluginValidate": "NOT_RUN_CLAUDE_CLI_UNAVAILABLE"
+  },
+  "stage": null,
+  "hubStatus": "NO_CHANGE_REQUIRED_NO_HUMAN_STAGE",
+  "protectedBoundaries": [
+    "project/runtime SSOT remains owner",
+    "Blender MCP remains authoring-only unless explicitly promoted",
+    "no automatic GitHub merge",
+    "no automatic Cloudflare Stage/Live"
+  ],
+  "nextGate": "CLAUDE-PC-MCP-01 · exact remote Production Control MCP endpoint/auth + Claude validate + fresh-session E2E"
+}
