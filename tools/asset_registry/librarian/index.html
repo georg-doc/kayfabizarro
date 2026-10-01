@@ -67,11 +67,15 @@
             <button id="listViewButton" class="quiet" type="button">List</button>
           </div>
         </div>
+        <div class="browse-row" aria-label="Browse source collections">
+          <label>Family<select id="sourceFamilyFilter" aria-label="Source family"><option value="">All source families</option></select></label>
+          <label>Pack<select id="packFilter" aria-label="Pack"><option value="">All packs</option></select></label>
+          <label>Collection<select id="collectionFilter" aria-label="Collection" disabled><option value="">Choose a pack first</option></select></label>
+          <span class="browse-hint">Browse uses existing Registry pack/collection facts; free-text search stays independent.</span>
+        </div>
 
         <div id="advancedFilters" class="advanced-filters" hidden>
           <div class="filter-grid">
-            <label>Pack<select id="packFilter"><option value="">All packs</option></select></label>
-            <label>Collection<select id="collectionFilter"><option value="">All collections</option></select></label>
             <details id="typeFilter" class="multi-filter"><summary>Type <span id="typeFilterSummary">All types</span></summary><div id="typeFilterOptions" class="multi-filter-options">
               <label class="multi-check"><input type="checkbox" value="character"><span>Character</span></label>
               <label class="multi-check"><input type="checkbox" value="weapon"><span>Weapon</span></label>
@@ -123,6 +127,9 @@
           <option value="WIP">WIP</option>
           <option value="WIP_CONFIG">WIP config</option>
           <option value="DOCUMENTED_REFERENCE">Documented reference</option>
+        </select>
+        <select id="motionPreviewActorFilter" aria-label="Motion preview actor" hidden>
+          <option value="">Preview actor…</option>
         </select>
       </section>
       <section class="results panel resource-results">
