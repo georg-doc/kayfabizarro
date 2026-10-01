@@ -1,0 +1,98 @@
+{
+  "schema": "kfb.resident-chat-ensemble-source/0.2",
+  "id": "RESIDENT-CHAT-ENSEMBLE-01B",
+  "status": "FRESH_SOURCE_ISOLATION_ATTEMPT",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/resident-chat-ensemble-01b-2026-10-01",
+  "recoveryBase": {
+    "workflow": "RESIDENT-CHAT-ENSEMBLE-01",
+    "pr": 308,
+    "head": "6585217636fb37331b7f9e673ac1ef8dd0ba35c8"
+  },
+  "presentationBase": {
+    "workflow": "RESIDENT-CHAT-PRESENTATION-01",
+    "pr": 306,
+    "head": "ba38ed7b9dd9ec0cb3373cbe0ea6ad06a45fa4ff"
+  },
+  "protectedOwners": {
+    "residentSource": "Resident Atlas S15",
+    "chatterWhen": "host / mob behavior",
+    "chatterWhat": "ChatterBox semantic content",
+    "presentation": "existing bubble / mouth / gaze / animation owners",
+    "memory": "Journey / Resident Social Memory"
+  },
+  "resolvedReferenceContract": {
+    "decisionDate": "2026-10-01",
+    "optionalField": "recipe.reference.src",
+    "rule": "declared promo/reference requests are non-blocking; actor/set/rig/runtime requests remain source-critical",
+    "copyReferenceAssetsForQa": false,
+    "replacementPromoArt": false
+  },
+  "atlas": {
+    "return": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/RETURN.md",
+      "blob": "64670df2c39d65c63242ef7fc1f7d7e57dc5023b"
+    },
+    "cast": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/data/cast.js",
+      "blob": "dc62757ead4ba13906c3e5b6cf2f22d239a6f6b9"
+    },
+    "host": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/KFB_Resident_Atlas_S15.html",
+      "blob": "de83d09dd21b944b01ce4a8bf477289521a6cabb"
+    },
+    "loader": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lib/atlas.js",
+      "blob": "9c54869db0c208c019fe87e356c625cdaf5c35fd",
+      "exports": ["buildVignette", "arrange"]
+    },
+    "selectionContract": {
+      "route": "#<residentId>",
+      "runtime": "window.__atlas.show(id) / window.__atlas.cur()",
+      "sourceIsolationOwner": "KFB_Resident_Atlas_S15.html"
+    }
+  },
+  "residents": [
+    {
+      "residentId": "lorekeeper",
+      "actorId": "lorekeeper",
+      "rigFamily": "Rig_Medium",
+      "pose": "Idle_A",
+      "expectedSourceFragments": ["Lorekeeper.glb", "Lorekeeper_Tome.gltf", "Lorekeeper_Staff.gltf"]
+    },
+    {
+      "residentId": "goth-girl",
+      "actorId": "gothgirl",
+      "rigFamily": "Rig_Medium",
+      "pose": "Sit_Chair_Idle",
+      "expectedSourceFragments": ["GothGirl.glb", "GothGirl_Stool.gltf", "GothGirl_Speaker.gltf", "GothGirl_MicStand.gltf"]
+    },
+    {
+      "residentId": "clown",
+      "actorId": "clown",
+      "rigFamily": "Rig_Medium",
+      "pose": "Idle_B",
+      "expectedSourceFragments": ["Clown.glb", "circus_podium.gltf", "clown_hammer.gltf", "juggling_pin_blue.gltf"]
+    },
+    {
+      "residentId": "witch",
+      "actorId": "witch",
+      "rigFamily": "Rig_Medium",
+      "pose": "Holding_B",
+      "expectedSourceFragments": ["Witch.glb", "Table_Small.gltf", "Potionstation_decorated.gltf", "Broom.gltf", "Basket_Mushrooms.gltf", "Cauldron.gltf", "Mortar.gltf"]
+    }
+  ],
+  "sourceIsolationAcceptance": [
+    "each resident is selected through the existing S15 Atlas source owner",
+    "window.__atlas.cur().recipe.residentId matches the requested resident",
+    "exactly one visible vignette:<residentId> root exists",
+    "the source-backed actor exists and is visible",
+    "expected actor/prop source fragments remain in the recipe",
+    "rig family and pose match the pinned source contract",
+    "no STOP/error panel, page error, console error, source-critical HTTP error or source-critical failed request",
+    "a failing request matching only recipe.reference.src is recorded as optional reference evidence and is non-blocking",
+    "one screenshot per resident is captured"
+  ],
+  "integrationDeferred": true,
+  "nextGate": "4/4 headed browser source-isolation PASS before any ensemble chat integration"
+}
