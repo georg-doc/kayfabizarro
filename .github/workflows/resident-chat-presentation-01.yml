@@ -36,3 +36,59 @@ jobs:
         run: node --check skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/test/presentation-provider.test.mjs
       - name: Run deterministic presentation parity tests
         run: node --test skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/test/presentation-provider.test.mjs
+
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01
+            skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/src/resident-chatter-adapter.v0.1.mjs
+            tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/**
+            KFB Comic Card Deck Viewer v4 (WS0)/kfb-viewer.js
+            KFB Comic Card Deck Viewer v4 (WS0)/decks/deck_b_dystopia.json
+            media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconstruct historical Card aliases from canonical sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          DONOR='tools/KFB-ToolBox/_inbox/KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24'
+          cp 'KFB Comic Card Deck Viewer v4 (WS0)/kfb-viewer.js' "$DONOR/kfb-viewer.js"
+          mkdir -p "$DONOR/pdfs" "$DONOR/decks"
+          cp 'media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf' "$DONOR/pdfs/deck_b_dystopia.pdf"
+          cp 'KFB Comic Card Deck Viewer v4 (WS0)/decks/deck_b_dystopia.json' "$DONOR/decks/deck_b_dystopia.json"
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local HTTP server
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/resident-chat-http.log 2>&1 &
+          echo $! >/tmp/resident-chat-http.pid
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 0.5
+          done
+          cat /tmp/resident-chat-http.log
+          exit 1
+      - name: Run headed browser fixture proof
+        env:
+          KFB_BROWSER_BASE: http://127.0.0.1:4173
+        run: xvfb-run -a node skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/qa/browser-fixture.mjs
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resident-chat-presentation-browser-proof
+          path: skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/evidence/browser/
+          if-no-files-found: warn
