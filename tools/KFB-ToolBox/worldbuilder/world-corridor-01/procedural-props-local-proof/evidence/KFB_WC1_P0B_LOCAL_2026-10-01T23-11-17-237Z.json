@@ -1,0 +1,53 @@
+{
+  "schema": "kfb.wc1-procedural-props-local-review.v1",
+  "capturedAt": "2026-10-01T23:11:12.492Z",
+  "status": "LOCAL_REVIEW_NOT_PUBLIC",
+  "source": {
+    "repository": "georg-doc/kayfabizarro",
+    "frozenRuntimeHead": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+    "recoveryDocumentationHead": "a26389d53df8c3328e62c98b13684986259d02ae",
+    "hiveboundDonorHead": "be10166e44f3d89db922ebb90671c10b89cd3e62",
+    "material": "Global Clay Lite · Clay002 · 512"
+  },
+  "environment": {
+    "visibilityState": "visible",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "devicePixelRatio": 2,
+    "canvas": {"width": 1303, "height": 691},
+    "rendererPixelRatio": 1.5,
+    "gpu": {
+      "webgl": "WebGL2",
+      "vendor": "Google Inc. (Apple)",
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+      "maxTextureSize": 16384
+    }
+  },
+  "mounted": {
+    "counts": {"tufts": 0, "pebbles": 7, "trees": 11, "meshInstances": 29},
+    "estimatedTriangles": 22328,
+    "clayMeta": {
+      "donor": "Clay002",
+      "size": 512,
+      "packedChannels": "RG relief-gradient · B roughness · A centred value variation",
+      "baseBytes": 1048576,
+      "estimatedMipBytes": 1398101
+    }
+  },
+  "measurements": {
+    "off": {
+      "label": "props-off", "frames": 27, "elapsedMs": 6153.899999976158,
+      "fps": 4.478057518161015, "meanFrameMs": 223.3111111111109,
+      "p95FrameMs": 336.6999999999971, "p99FrameMs": 367.20000000001164, "maxFrameMs": 367.20000000001164,
+      "renderer": {"fps":5,"calls":81,"triangles":366660,"geometries":93,"textures":16,"programs":19}
+    },
+    "on": {
+      "label": "props-on", "frames": 30, "elapsedMs": 6250.200000047684,
+      "fps": 5.007511266900351, "meanFrameMs": 199.7,
+      "p95FrameMs":319.8999999999942,"p99FrameMs":416.5,"maxFrameMs":416.5,
+      "renderer":{"fps":5,"calls":87,"triangles":411316,"geometries":93,"textures":16,"programs":19}
+    }
+  },
+  "delta":{"meanFrameMs":-23.611,"meanFramePct":-10.57,"calls":6,"triangles":44656,"geometries":0,"textures":0,"programs":0},
+  "visualJudgement":"undecided",
+  "runtimeErrors":[]
+}
