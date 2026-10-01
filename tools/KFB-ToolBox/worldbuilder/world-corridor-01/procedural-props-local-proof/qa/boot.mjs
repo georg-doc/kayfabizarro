@@ -1,7 +1,11 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
-const url='http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_LOCAL_REVIEW.html';
+const file=path.resolve('tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_LOCAL_REVIEW.html');
+const url=pathToFileURL(file).href;
+
 const browser=await chromium.launch({headless:true,args:['--use-gl=swiftshader','--enable-webgl','--ignore-gpu-blocklist']});
 const page=await browser.newPage({viewport:{width:1440,height:900}});
 const consoleErrors=[],pageErrors=[];
@@ -22,7 +26,7 @@ const unexpectedConsole=consoleErrors.filter(x=>!x.includes('404'));
 if(unexpectedConsole.length)problems.push('unexpected consoleErrors='+unexpectedConsole.length);
 
 await fs.mkdir('local-proof-evidence',{recursive:true});
-await fs.writeFile('local-proof-evidence/boot.json',JSON.stringify({url,state,consoleErrors,pageErrors,problems},null,2));
-console.log(JSON.stringify({state,consoleErrors,pageErrors,problems},null,2));
+await fs.writeFile('local-proof-evidence/file-boot.json',JSON.stringify({url,state,consoleErrors,pageErrors,problems},null,2));
+console.log(JSON.stringify({url,state,consoleErrors,pageErrors,problems},null,2));
 await browser.close();
 if(problems.length)process.exit(1);
