@@ -1,3 +1,11 @@
+## 2026-10-01 · Production Hub entrypoint compatibility redirect
+
+- The historical root entrypoint `https://kayfabizarro.pages.dev/kfb-hub/` now redirects to the current KFB Production Control Hub.
+- Only `kfb-hub/index.html` changes. All child Stage, review, ToolBox, World, Combat and asset routes remain on `kayfabizarro.pages.dev` and are not redirected.
+- Production Control continues to render the accepted Hub UX through its pinned `hub-approved` runtime route, so the current Hub UI is preserved without a root-to-root iframe loop.
+- Active Production-Control briefing cards now expose absolute clickable links plus execution surface, model and reasoning; copied prompts include the same metadata.
+- Next gate: merge the redirect PR and verify both the legacy entrypoint redirect and the Production-Control Hub UI in a real browser.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
