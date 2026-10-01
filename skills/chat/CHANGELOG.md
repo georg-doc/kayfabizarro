@@ -1,3 +1,12 @@
+## 2026-10-01 · Asset Librarian · Collections + Motion Preview · frozen partial candidate
+
+- Product core implemented on the existing Asset Librarian: visible Family → Pack → Collection browse from existing Registry facts; KayKit shortcut no longer injects text into free search; Tiny Treats/KayKit/Kenney/Quaternius source-family browsing is presentation-only and does not create a second taxonomy.
+- Motion library gained a real Preview Actor route using the existing Three.js / `AnimationMixer` / `playExternalClip()` binding path; Animation Lab / ToolBox remains final compatibility and authoring owner.
+- Existing Registry owner checks and Librarian v1–v1.7 browser/WebGL regressions remained PASS throughout.
+- v1.8 evidence proved KayKit family browsing, Tiny Treats = 8 packs, Bubbly Bathroom → Assets = 86 candidates, and animated Motion-on-Actor progression through binding plus Speed/Pause controls.
+- Optional new Scrub control failed after two focused repair passes (`36847139747`, `36847711079`); stop rule reached. No third repair.
+- Frozen Draft #304 / branch `chatgpt-web/asset-librarian-collections-motion-preview-2026-10-01`; failure recovery lives under `tools/asset_registry/librarian/_handover/ASSET_LIBRARIAN_COLLECTIONS_MOTION_2026-10-01/FAILURE_RECOVERY.md`.
+- Exactly one next gate: `ASSET-LIBRARIAN-COLLECTIONS-MOTION-SALVAGE-01` on a fresh branch — port only green collections browse + animated Motion-on-Actor preview, omit the new transport bar, then rerun v1–v1.7 + reduced v1.8 browser smoke.
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
