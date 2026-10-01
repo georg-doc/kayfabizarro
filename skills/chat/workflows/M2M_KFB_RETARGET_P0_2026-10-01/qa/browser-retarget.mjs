@@ -60,11 +60,6 @@ await page.waitForFunction(() => {
   return button instanceof HTMLButtonElement && !button.disabled
 }, null, { timeout: 10_000 })
 
-const canvas = page.locator('canvas').first()
-await canvas.hover()
-await page.mouse.wheel(0, 600)
-await page.waitForTimeout(300)
-
 await page.screenshot({
   path: resolve(outDir, '01-gothgirl-source-isolation.png'),
   fullPage: false
