@@ -2097,3 +2097,10 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Added KFB Hub navigation to the source-locked CAL-P00 manifest/evidence without creating a new runtime or Stage.
 - Exactly one next platelet gate: **CLAUDE_DESIGN_CAL-P01**.
 
+
+
+## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
+- Recorded Combat Draft PR #11 / `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb` as `ARCHIVED_FAILED_CANDIDATE` after the two-repair stop.
+- Retained proven Settings/source/boot work for Driver v4 ↔ FB v5b + Ear v5; 80/80 repo PASS and 24/29 second browser gate.
+- Did not create the planned v5 Stage route. Existing public Combat C-MVP-A-R2 remains current.
+- Routed exactly one next gate: `FB-V5-RANGED-INPUT-PROBE-01`.

@@ -87,3 +87,19 @@ Exactly one next gate for the Legacy lane:
 
 After that gate, start **CA2-LEGACY-01R** only.
 
+
+
+## WEB-COMBAT-FB-PLAYER-01 recovery · 2026-10-01
+
+A stacked FrizzleBob player-presentation candidate is preserved on the Combat owner:
+
+- Draft PR #11 · branch `chatgpt-web/combat-fb-player-v5-2026-10-01`
+- frozen recovery head: `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`
+- classification: **ARCHIVED_FAILED_CANDIDATE**
+- Settings implementation retained: `Driver v4` and `FB v5b + Ear v5`
+- source/boot/owner/Settings evidence passes; repository suite **80/80 PASS**; browser pass 2 **24/29 PASS**
+- ranged input remains **UNPROVEN**: the QA pointer probe produced 0 shots; integrated headless screenshots also timed out
+- no v5 Stage route was created; the existing public C-MVP-A-R2 / Driver-v4 Stage remains the public Combat baseline
+- full recovery: `slices/combat-fb-player-v5/START_HERE.md` in Combat PR #11
+
+Exactly one next gate: **FB-V5-RANGED-INPUT-PROBE-01** — instrument identical real-pointer delivery on Driver v4 and v5b before any further full-browser rerun. No third repair of the frozen acceptance gate.
