@@ -70,7 +70,7 @@
     "rule": "scheduler/LOD + baked/static image provider; no runtime PDF rendering in corridor frame loop"
   },
   "stageRoute": null,
-  "nextGate": "WC1-GPU-BASELINE",
+  "nextGate": "WC1-COST-SPLIT",
   "wc1Baseline": {
     "rehomeRoot": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source",
     "parity": "10/10 BYTE_IDENTICAL_PASS",
@@ -83,5 +83,30 @@
       "authority": "NOT_PRODUCT_PERFORMANCE_AUTHORITY"
     },
     "recovery": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/FAILURE_RECOVERY_WC1_BASELINE.md"
+  },
+  "wc1GpuBaseline": {
+    "status": "MEASURED",
+    "evidence": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_GPU_BASELINE_2026-10-01.json",
+    "hardware": "Apple M1 Max",
+    "runs": [
+      {
+        "signature": "INSTANCED_B_INFERRED",
+        "fps": 28.7,
+        "meanFrameMs": 34.8,
+        "drawCalls": 179,
+        "triangles": 414758,
+        "geometries": 89
+      },
+      {
+        "signature": "INDIVIDUAL_A_INFERRED",
+        "fps": 29,
+        "meanFrameMs": 34.53,
+        "drawCalls": 868,
+        "triangles": 403264,
+        "geometries": 459
+      }
+    ],
+    "conclusion": "Draw-call / Hex-instancing count is not the dominant current frame-time limiter; isolate existing clay/cloud/shadow/fill cost before Track Core integration.",
+    "modeRecordingGap": "Probe did not serialize info.mode; A/B mapping is inferred from R2C source/runtime signature."
   }
 }
