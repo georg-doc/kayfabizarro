@@ -134,7 +134,7 @@ Not started:
 - actor / resident runtime;
 - 4 → 150 logical-island streaming stress.
 
-Those remain blocked only by the representative GPU baseline, not by another architecture discussion.
+They remain intentionally held behind `WC1-CLAY-PERF-01`; the representative GPU baseline and cost split are complete.
 
 ## Local GPU baseline packaging
 
@@ -149,7 +149,7 @@ The repository may retain local-server/CLI helpers for developers, but local per
 No Stage was published in this slice.
 No merge or Live promotion occurred.
 
-A Stage is justified next only if required to execute the unchanged instrumented candidate on representative browser/GPU hardware.
+No Stage is required for the current Clay performance work. Public Stage remains reserved for a meaningful integrated milestone or genuine cross-device/public verification.
 
 ## Exactly one next gate
 
