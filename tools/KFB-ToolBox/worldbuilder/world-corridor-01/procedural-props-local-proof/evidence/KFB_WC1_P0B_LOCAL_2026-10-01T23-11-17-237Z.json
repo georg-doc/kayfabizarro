@@ -13,7 +13,10 @@
     "visibilityState": "visible",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
     "devicePixelRatio": 2,
-    "canvas": {"width": 1303, "height": 691},
+    "canvas": {
+      "width": 1303,
+      "height": 691
+    },
     "rendererPixelRatio": 1.5,
     "gpu": {
       "webgl": "WebGL2",
@@ -23,31 +26,77 @@
     }
   },
   "mounted": {
-    "counts": {"tufts": 0, "pebbles": 7, "trees": 11, "meshInstances": 29},
+    "counts": {
+      "tufts": 0,
+      "pebbles": 7,
+      "trees": 11,
+      "meshInstances": 29
+    },
     "estimatedTriangles": 22328,
     "clayMeta": {
       "donor": "Clay002",
       "size": 512,
       "packedChannels": "RG relief-gradient · B roughness · A centred value variation",
       "baseBytes": 1048576,
-      "estimatedMipBytes": 1398101
+      "estimatedMipBytes": 1398101,
+      "source": {
+        "label": "Clay002",
+        "diffuse": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@1360c73944cd56c4f1980c5ac6552ba320c04a59/media/3D_Assets/Textures/Clay002/Clay002_diffuse.jpg",
+        "roughness": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@1360c73944cd56c4f1980c5ac6552ba320c04a59/media/3D_Assets/Textures/Clay002/Clay002_roughness.jpg",
+        "blobs": {
+          "diffuse": "8e7dc121cbf97154b6c67674998bb3d7c5abcd89",
+          "roughness": "7c879ace8ef221531e9fa715063997364b5d13b3"
+        }
+      }
     }
   },
   "measurements": {
     "off": {
-      "label": "props-off", "frames": 27, "elapsedMs": 6153.899999976158,
-      "fps": 4.478057518161015, "meanFrameMs": 223.3111111111109,
-      "p95FrameMs": 336.6999999999971, "p99FrameMs": 367.20000000001164, "maxFrameMs": 367.20000000001164,
-      "renderer": {"fps":5,"calls":81,"triangles":366660,"geometries":93,"textures":16,"programs":19}
+      "label": "props-off",
+      "frames": 27,
+      "elapsedMs": 6153.899999976158,
+      "fps": 4.478057518161015,
+      "meanFrameMs": 223.3111111111109,
+      "p95FrameMs": 336.6999999999971,
+      "p99FrameMs": 367.20000000001164,
+      "maxFrameMs": 367.20000000001164,
+      "renderer": {
+        "fps": 5,
+        "calls": 81,
+        "triangles": 366660,
+        "geometries": 93,
+        "textures": 16,
+        "programs": 19
+      }
     },
     "on": {
-      "label": "props-on", "frames": 30, "elapsedMs": 6250.200000047684,
-      "fps": 5.007511266900351, "meanFrameMs": 199.7,
-      "p95FrameMs":319.8999999999942,"p99FrameMs":416.5,"maxFrameMs":416.5,
-      "renderer":{"fps":5,"calls":87,"triangles":411316,"geometries":93,"textures":16,"programs":19}
+      "label": "props-on",
+      "frames": 30,
+      "elapsedMs": 6250.200000047684,
+      "fps": 5.007511266900351,
+      "meanFrameMs": 199.7,
+      "p95FrameMs": 319.8999999999942,
+      "p99FrameMs": 416.5,
+      "maxFrameMs": 416.5,
+      "renderer": {
+        "fps": 5,
+        "calls": 87,
+        "triangles": 411316,
+        "geometries": 93,
+        "textures": 16,
+        "programs": 19
+      }
     }
   },
-  "delta":{"meanFrameMs":-23.611,"meanFramePct":-10.57,"calls":6,"triangles":44656,"geometries":0,"textures":0,"programs":0},
-  "visualJudgement":"undecided",
-  "runtimeErrors":[]
+  "delta": {
+    "meanFrameMs": -23.611,
+    "meanFramePct": -10.57,
+    "calls": 6,
+    "triangles": 44656,
+    "geometries": 0,
+    "textures": 0,
+    "programs": 0
+  },
+  "visualJudgement": "undecided",
+  "runtimeErrors": []
 }
