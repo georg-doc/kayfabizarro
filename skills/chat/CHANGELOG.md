@@ -1,3 +1,16 @@
+## 2026-10-01 · Resident Chat Presentation · headed browser PASS
+
+- Stacked Draft PR **#306** / `chatgpt-web/resident-chat-presentation-01-2026-10-01` keeps deterministic kernel PR #305 and the exact NPC-CARD-SPEC-01 actor/Card/presentation owners.
+- Source/parity suite remains **14/14 PASS**.
+- Headed Chromium browser proof is **PASS** on implementation head `7204b91eb340c615d7e0db45560f6d2c8d0b6d7a`.
+- GitHub Actions run/jobs: `36858274598 / 110355897991 / 110355898424` = **SUCCESS / SUCCESS**.
+- Evidence artifact **11160566742**, digest `sha256:ce47e8b3e8b772dbed399006144dc0fa73a8c7a225e1906b4488cf2a73cade44`, contains five screenshots + JSON report.
+- Browser report: **0 runtime errors · 0 HTTP errors · 0 request failures**; shared-pool provider active; EyeRig ×2, Mouth ×2, Mixer ×2; Motion Library **33 clips**; real **The Doomsday Clock** Card.
+- Visible proof covers scene variants 0/1 and exact `actor-a / actor-b / mouths` isolation lanes with asserted talk states and existing bubble output.
+- Browser repair stayed within the stop rule: harness-only initial failure, Repair Pass 1 exposed opaque resource-console 404s, Repair Pass 2 restored the current canonical Motion-Library alias in CI and switched QA to exact HTTP URL/status validation; **no third repair**.
+- Stage remains **NOT DEPLOYED**; Live **NOT PROMOTED**; older donor mouth/face TUNE remains open/deferred and is not human-accepted.
+- Exactly one next gate: **RESIDENT-CHAT-ENSEMBLE-01** — source-isolate Lorekeeper, Goth Girl, Clown and Witch from current Resident sources, then load the four real Residents into one deterministic shared-Triplet ChatterBox ensemble with baseline Attitude/current Affect and 1-normal/2-soft-max speech budget. No live LLM yet.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
