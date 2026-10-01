@@ -269,5 +269,16 @@ Lokale Datei:
 `KFB_Global_Clay_Lite_Doppelklick.html`
 SHA-256 `30bc4ff8e9a39479169301e9a6b198e00a185af402108badfd3e4c481374e81e`.
 
+Ergebnis:
+- Clay002 512: **92.1 fps / 10.85 ms**;
+- clay_floor_001 512: **77.0 fps / 12.99 ms**;
+- procedural Clay: **36.1 fps / 27.73 ms**;
+- Clay off: **89.6 fps / 11.16 ms**.
+
+Damit ist Global Clay Lite performance-seitig bestätigt; **Clay002** geht als Performance-Kandidat weiter. Visuell ist noch nichts entschieden.
+
 Nächster Schritt für Georg:
-**Datei in Chrome öffnen → „Globale Textur messen“ → Download JSON → JSON zurück in den Chat.**
+**`KFB_Clay002_vs_Derek_Doppelklick.html` öffnen → Clay002 und Derek visuell umschalten → „Clay002 vs Derek messen“ → JSON zurückgeben und kurz sagen, welcher Look besser wirkt.**
+
+Read:
+`clay-perf/DEREK_RGB_512_TEST.md`
