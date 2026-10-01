@@ -157,5 +157,42 @@
       "GATEKEEPER_BYPASS",
       "CLOUDFLARE_FOR_LOCAL_MEASUREMENT"
     ]
+  },
+  "blenderP0A": {
+    "status": "DELIVERED_REFERENCE_NOT_WC1_PARITY",
+    "pr": 309,
+    "branch": "blender-mcp/clay-perf-p0a-2026-10-01",
+    "head": "93af8caef6a85caa1f7fd70a59abb46edf85f0a4",
+    "root": "tools/KFB-ToolBox/_inbox/KFB_CLAY_PERF_P0A_BLENDER_2026-10-01",
+    "role": "K2_STAGE_BAKED_LITE mechanism/reference; not yet WC1_PARITY_BAKED_LITE",
+    "confirmedScale": 1.9393941075348804,
+    "p0aGlobals": {
+      "toolOn": 1,
+      "legacyStroke": 0,
+      "mottle": 0.04,
+      "macro": 0.5,
+      "lodK": 0.6,
+      "stroke": 0.7,
+      "hand": 0.5,
+      "tile": 1.6,
+      "printTile": 4.5
+    },
+    "wc1ParityGlobals": {
+      "toolOn": 0,
+      "legacyStroke": 1,
+      "mottle": 0.05,
+      "macro": 0.5,
+      "lodK": 1,
+      "stroke": 0.55,
+      "hand": 0.5,
+      "tile": 1.6,
+      "printTile": 4.5,
+      "printOn": 1,
+      "hexK": 3,
+      "hexRot": 1,
+      "hexFlow": 0,
+      "facetSoft": 0
+    },
+    "decision": "No immediate rebake. Finish WC1-CLAY-PERF-01, pin optimized procedural settings, then align any final baked candidate."
   }
 }
