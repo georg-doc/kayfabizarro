@@ -28,6 +28,8 @@ jobs:
       - name: Check local baseline helpers
         run: |
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/performance-probe.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/clay-material.v10-partsdiag.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/hex-archipel.r2c-partsdiag.js
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/local-static-server.mjs
           node --check .github/scripts/world-corridor-wc1-baseline-smoke.mjs
           bash -n tools/KFB-ToolBox/worldbuilder/world-corridor-01/run-local-gpu-baseline.sh
