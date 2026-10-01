@@ -24,12 +24,7 @@ jobs:
         run: |
           npm install --no-save playwright@1.48.2
           npx playwright install --with-deps chromium
-      - name: Start static server
-        run: |
-          python3 -m http.server 4173 >/tmp/kfb-local-proof-http.log 2>&1 &
-          sleep 2
-          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_LOCAL_REVIEW.html >/dev/null
-      - name: Browser boot and source-pin proof
+      - name: Direct file boot and source-pin proof
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/boot.mjs
       - uses: actions/upload-artifact@v4
         if: always()
