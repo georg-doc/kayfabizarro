@@ -57,9 +57,13 @@ async function run(){
     await ev(cdp,`document.getElementById('resourcePrimaryAction').innerText.includes('Preview on KayKit Driver Host')`,'actor preview action');
     await cdp.eval(`[...document.querySelectorAll('#resourcePrimaryAction button')].find(b=>b.textContent.startsWith('Preview on ')).click();true`);
     const playback=await ev(cdp,`(()=>{const path=document.getElementById('detailPath')?.textContent;const status=document.getElementById('previewStatus')?.textContent||'';const transport=document.getElementById('motionTransport');return path===${JSON.stringify(DRIVER)}&&status.includes(${JSON.stringify(CLIP)})&&status.includes('tracks bound')&&!transport.hidden?{status}:false;})()`,'motion on actor',120000);
-    await cdp.eval(`(()=>{const s=document.getElementById('motionSpeed');s.value='0.5';s.dispatchEvent(new Event('change',{bubbles:true}));document.getElementById('motionPlayPause').click();const scrub=document.getElementById('motionScrub');scrub.value='0.5';scrub.dispatchEvent(new Event('input',{bubbles:true}));return true;})()`);
-    const transport=await ev(cdp,`(()=>{const play=document.getElementById('motionPlayPause').textContent;const speed=document.getElementById('motionSpeed').value;const scrub=Number(document.getElementById('motionScrub').value);return play==='Play'&&speed==='0.5'&&scrub>0.49&&scrub<0.51?{play,speed,scrub}:false;})()`,'motion transport');
-    result.checks.motionPreview={...playback,transport};
+    await cdp.eval(`(()=>{const s=document.getElementById('motionSpeed');s.value='0.5';s.dispatchEvent(new Event('change',{bubbles:true}));return true;})()`);
+    const speedState=await ev(cdp,`(()=>{const state=window.KFBAssetLibrarianV18.motionTransportState();const value=document.getElementById('motionSpeed').value;return state&&Math.abs(state.speed-.5)<.001&&value==='0.5'?{state,value}:false;})()`,'motion speed');
+    await cdp.eval(`document.getElementById('motionPlayPause').click();true`);
+    const pauseState=await ev(cdp,`(()=>{const state=window.KFBAssetLibrarianV18.motionTransportState();const label=document.getElementById('motionPlayPause').textContent;return state?.paused===true&&label==='Play'?{state,label}:false;})()`,'motion pause');
+    await cdp.eval(`(()=>{const scrub=document.getElementById('motionScrub');scrub.value='0.5';scrub.dispatchEvent(new Event('input',{bubbles:true}));return true;})()`);
+    const scrubState=await ev(cdp,`(()=>{const state=window.KFBAssetLibrarianV18.motionTransportState();const value=Number(document.getElementById('motionScrub').value);return state?.paused===true&&state.progress>.49&&state.progress<.51&&value>.49&&value<.51?{state,value}:false;})()`,'motion scrub');
+    result.checks.motionPreview={...playback,transport:{speed:speedState,pause:pauseState,scrub:scrubState}};
     await screenshot(cdp,'02-motion-preview');
 
     result.consoleErrors=cdp.errors;result.runtimeExceptions=cdp.exceptions;
