@@ -4,6 +4,12 @@ Status: CURRENT ROUTER v0.4
 Date: 2026-09-29
 Owner: Georg / KFB
 
+## 2026-10-01 · Hub entrypoint migration
+
+The current production Hub owner is `https://kfb-production-control.frizzlebob.chatgpt.site/`. The historical public entrypoint `https://kayfabizarro.pages.dev/kfb-hub/` is retained only as a compatibility URL and redirects to that owner. Stage, review and asset routes below `/kfb-hub/` remain on `kayfabizarro.pages.dev`; do not rewrite or redirect those child routes.
+
+Every active briefing must expose a clickable absolute Production-Control URL and name the responsible execution surface, model and reasoning level. Copy-ready prompts must include the same URL and execution metadata; a chat must not infer its lane from old session names.
+
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
@@ -1341,4 +1347,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-
