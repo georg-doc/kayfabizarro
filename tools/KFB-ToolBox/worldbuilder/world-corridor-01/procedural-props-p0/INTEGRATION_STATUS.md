@@ -40,3 +40,22 @@ Harness/diagnostic only:
 - do not redesign props, retune Clay002, change WB2/Track/physics owners or add a second renderer.
 
 If a concrete source/runtime defect is then proven, Repair Pass 2 may fix only that defect. If the same gate still cannot progress after Repair Pass 2, freeze/export per protocol.
+
+
+## Repair Pass 1 result
+
+Tested head: `41cf46de07803c2b63a41a23ea2bf8b63a814acb`
+Run: `36910471186`
+Job: `110531561900`
+
+P0 and P0B isolation remained PASS.
+
+The integration diagnostic still did not close because the QA harness attempted a WebGL page screenshot **before writing the diagnostic JSON**. The screenshot itself timed out after 30 s under the continuously-rendering SwiftShader page. This is classified **QA_HARNESS_EVIDENCE_ORDER**, not a proven product/source defect.
+
+## Repair Pass 2 boundary · last allowed pass
+
+- write diagnostic JSON and print progress/errors before any screenshot;
+- only attempt screenshot after readiness and make screenshot failure non-blocking;
+- do not change procedural geometry, Clay002 parameters, WC1 renderer/world owner, or runtime architecture.
+
+If the integration still cannot prove readiness in Repair Pass 2, freeze the candidate and create the full failure-recovery export. No third repair.
