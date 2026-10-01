@@ -1,3 +1,13 @@
+## 2026-10-02 · WC1 procedural props PROCEED + clay_floor material correction
+
+- Georg accepted the Hivebound-inspired soft procedural props/tree direction; trees are explicitly positive. Geometry/style grammar is preserved and authored Resident/KayKit/FrizzleBob hero assets remain protected.
+- The material complaint remains TUNE only.
+- Follow-up review of `KFB_Clay002_Massstab_Doppelklick.html`: `clay_floor_001` looks best; current procedural Clay is second but comparatively buggy; Clay002 at 6/9/12 m still reads mostly as shading instead of convincing clay texture.
+- The "Clay002 only needs a larger repeat" hypothesis is closed. Global Clay Lite derives donor diffuse into luminance-gradient/value channels while source colour remains authoritative; Clay002 can lose visible material identity under this packing semantics.
+- Draft PR #313 keeps the accepted frozen P0B geometry and updates `KFB_WC1_P0B_MATERIAL_REVIEW.html` to compare `clay_floor_001` / current Clay / Derek RGB / Clay002 negative control / Neutral.
+- Returned Derek comparison JSON is persisted as diagnostic-only evidence because Clay-off itself measured ~141 ms in that run; no absolute performance conclusion is taken from it.
+- Exactly one next gate: **MATERIAL ISOLATION · SAME GEOMETRY · CLAY_FLOOR FIRST**. No anti-repeat/instance-phase work until a visually preferred material still proves that it needs it.
+
 ## 2026-10-01 · Representative local GPU evidence workflow
 
 - Georg requested that the successful no-Terminal performance-measurement path be recoverable by other chats.
