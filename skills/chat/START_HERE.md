@@ -43,6 +43,28 @@ Additional hard rule: **no low-fidelity proxy human gates**. If a review artifac
 
 
 
+## 2026-10-01 · CURRENT WORLDBUILDER INTEGRATION · Floating Islands + Track + Sky
+
+The current productive WorldBuilder integration route is:
+
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/START_HERE.md`
+
+Current branch:
+`chatgpt-web/world-corridor-01-2026-10-01`
+
+Source intake accepted from the current Claude Design exports:
+- Floating / Hex Islands + route-layout source;
+- Skydome / EnvironmentHost source.
+
+Protected owners:
+- WB2 remains the WorldBuilder terrain / scene-authoring host;
+- Track Core 0.12 remains the sole route-frame / slot / check owner;
+- Race / Ground retain movement and physics ownership;
+- Billboard uses the existing scheduler / LOD / baked-image provider seam;
+- SKY3 is an EnvironmentHost donor inside the host frame loop, not a second renderer.
+
+Do not route this work back through WSA planning. The current next gate is **WC1-BASELINE**: exact island-source rehome into the WorldBuilder owner plus a tiny performance probe and source-parity baseline. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
+
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
 
 Current persistence correction: source-backed movement/vehicle knowledge must exist under a stable owner path and be consumed by the runtime; a measured donor or loaded asset is not enough if the active consumer still carries local parallel mappings.
