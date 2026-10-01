@@ -1,0 +1,75 @@
+{
+  "schema": "kfb.wc1-procedural-props-p0.source.v1",
+  "date": "2026-10-01",
+  "status": "ARCHIVED_FAILED_INTEGRATION_GATE_SOURCE_ISOLATION_PASS",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-props-p0-2026-10-01",
+  "pr": 311,
+  "base": {
+    "branch": "chatgpt-web/world-corridor-01-2026-10-01",
+    "headAtSliceStart": "1eeba2c573c8ff764cc8151ac92b241811e8bab2"
+  },
+  "frozenCandidateHead": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+  "donors": {
+    "hivebound": {
+      "repo": "zernonia/hivebound",
+      "head": "be10166e44f3d89db922ebb90671c10b89cd3e62",
+      "license": "MIT",
+      "role": "procedural soft-form geometry / instancing pattern donor"
+    },
+    "mascotStyleGallery": {
+      "repo": "henrik-thevibe/Claude-Mascot-Style-Gallery",
+      "head": "0c7f2de521dd49eb402b01db9e6b9cb4c6d0c603",
+      "license": "MIT",
+      "role": "workflow/style-adapter pattern donor only"
+    }
+  },
+  "sourceIsolation": {
+    "p0": {
+      "result": "PASS",
+      "run": 36906220603,
+      "job": 110517315973,
+      "instances": 48,
+      "drawCalls": 7,
+      "triangles": 6826
+    },
+    "p0b": {
+      "result": "PASS",
+      "run": 36907603447,
+      "job": 110521959500,
+      "instances": 48,
+      "drawCalls": 7,
+      "triangles": 40354
+    }
+  },
+  "integratedGate": {
+    "result": "STOPPED_AFTER_TWO_REPAIR_PASSES",
+    "lastRun": 36911209819,
+    "lastJob": 110534004159,
+    "artifact": {
+      "id": 11186513330,
+      "digest": "sha256:8395f3a3e4f2d495ed685eb020105e948b85a5f6a66bafbcafce20a7fa2bc096"
+    },
+    "provenThrough": "WC1 boot -> Clay002 activation -> P0B prop mount",
+    "lastProgress": "prop-mount-done",
+    "burgEligibleCounts": {
+      "tufts": 0,
+      "pebbles": 7,
+      "trees": 11,
+      "meshInstances": 29
+    },
+    "blocker": "hosted SwiftShader frame-driven post-mount delta sampling did not complete"
+  },
+  "protectedOwners": [
+    "WB2/WC1 renderer-world owner",
+    "Track Core",
+    "Race/Ground movement",
+    "Resident/KayKit/FrizzleBob authored hero assets",
+    "current Clay002 Global Clay Lite material path"
+  ],
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "nextGate": "FRESH SLICE: visible local Chrome WC1 + Clay002 + P0B proof from frozen candidate with local Measure / Copy JSON; no hosted-SwiftShader frame acceptance"
+}
