@@ -32,6 +32,13 @@ jobs:
           node --check .github/scripts/world-corridor-wc1-baseline-smoke.mjs
           bash -n tools/KFB-ToolBox/worldbuilder/world-corridor-01/run-local-gpu-baseline.sh
 
+      - name: Upload local GPU baseline pack
+        uses: actions/upload-artifact@v6
+        with:
+          name: kfb-world-corridor-wc1-local-gpu-baseline
+          path: tools/KFB-ToolBox/worldbuilder/world-corridor-01/
+          if-no-files-found: error
+
       - name: Run WC1 exact-parity and browser boot
         run: node .github/scripts/world-corridor-wc1-baseline-smoke.mjs
 
@@ -42,11 +49,3 @@ jobs:
           name: kfb-world-corridor-wc1-source-parity-boot
           path: artifacts/world-corridor/wc1-baseline/
           if-no-files-found: warn
-
-      - name: Upload local GPU baseline pack
-        if: success()
-        uses: actions/upload-artifact@v6
-        with:
-          name: kfb-world-corridor-wc1-local-gpu-baseline
-          path: tools/KFB-ToolBox/worldbuilder/world-corridor-01/
-          if-no-files-found: error
