@@ -42,3 +42,11 @@ jobs:
           name: kfb-world-corridor-wc1-source-parity-boot
           path: artifacts/world-corridor/wc1-baseline/
           if-no-files-found: warn
+
+      - name: Upload local GPU baseline pack
+        if: success()
+        uses: actions/upload-artifact@v6
+        with:
+          name: kfb-world-corridor-wc1-local-gpu-baseline
+          path: tools/KFB-ToolBox/worldbuilder/world-corridor-01/
+          if-no-files-found: error
