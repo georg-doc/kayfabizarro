@@ -139,7 +139,11 @@ export function makeClayUniforms(THREE, reliefTex) {
     // Global Clay Lite: off by default. One packed shared texture, source colour stays authoritative.
     uClayLiteTex: { value: reliefTex }, uClayLiteOn: { value: 0 },
     uClayLiteScale: { value: 0.62 }, uClayLiteBump: { value: 0.42 },
-    uClayLiteColor: { value: 0.22 }, uClayLiteRough: { value: 0.55 }
+    uClayLiteColor: { value: 0.22 }, uClayLiteRough: { value: 0.55 },
+    // WorldDesign Lab Derek RGB core: one shared tile; palette comes from source colour.
+    uDerekTex: { value: reliefTex }, uDerekOn: { value: 0 },
+    uDerekScale: { value: 0.32 }, uDerekBlend: { value: 6.0 },
+    uDerekSpread: { value: 0.32 }, uDerekHue: { value: 0.14 }, uDerekRoughBias: { value: 0.10 }
   };
 }
 
@@ -167,7 +171,18 @@ uniform float uClayToolGain[6], uClayTK[6], uClayTS[6], uClayTC[6], uClayLeg;
 uniform float uClayPerfRelief, uClayPerfMarks, uClayPerfPrint, uClayPerfFacet, uClayPerfMottle;
 uniform sampler2D uClayLiteTex;
 uniform float uClayLiteOn, uClayLiteScale, uClayLiteBump, uClayLiteColor, uClayLiteRough;
+uniform sampler2D uDerekTex;
+uniform float uDerekOn, uDerekScale, uDerekBlend, uDerekSpread, uDerekHue, uDerekRoughBias;
 uniform sampler2D uClayToolA, uClayToolB, uClayToolC;
+
+vec3 kfbDerekHue(vec3 c, float a){
+  mat3 toY = mat3(0.299, 0.596, 0.211, 0.587, -0.274, -0.523, 0.114, -0.322, 0.312);
+  mat3 toR = mat3(1.0, 1.0, 1.0, 0.956, -0.272, -1.106, 0.621, -0.647, 1.703);
+  vec3 y = toY * c;
+  float cs = cos(a), sn = sin(a);
+  y.yz = vec2(y.y * cs - y.z * sn, y.y * sn + y.z * cs);
+  return max(toR * y, 0.0);
+}
 varying vec3 vClayP;
 varying vec3 vClayN;
 varying vec3 vClaySeed;
@@ -362,7 +377,22 @@ if (uClayOn > 0.5 && uClayK > 0.0) {
   float sc = length(modelMatrix[0].xyz);
   vec3 n0 = normalize(vClayN);
   vec3 P = vClayP * sc + vClaySeed * 37.0;   // Weltmaß, am Objekt, je Objekt versetzt
-  if (uClayLiteOn > 0.5) {
+  if (uDerekOn > 0.5) {
+    vec3 wd = pow(abs(n0), vec3(uDerekBlend)); wd /= max(wd.x + wd.y + wd.z, 1e-5);
+    vec3 Pd = vClayP * sc;
+    vec3 dx = texture2D(uDerekTex, Pd.zy * uDerekScale).rgb;
+    vec3 dy = texture2D(uDerekTex, Pd.xz * uDerekScale).rgb;
+    vec3 dz = texture2D(uDerekTex, Pd.xy * uDerekScale).rgb;
+    vec3 mask = max(dx * wd.x + dy * wd.y + dz * wd.z, 0.0);
+    mask /= max(mask.r + mask.g + mask.b, 1e-3);
+    vec3 src = diffuseColor.rgb;
+    vec3 c1 = src;
+    vec3 c2 = kfbDerekHue(src * (1.0 - uDerekSpread * 0.7), uDerekHue * 1.6);
+    vec3 c3 = min(kfbDerekHue(src * (1.0 + uDerekSpread)
+      + uDerekSpread * 0.16 * (normalize(src + 0.02) * 0.6 + 0.4), -uDerekHue * 1.6), 1.0);
+    diffuseColor.rgb = mask.r * c1 + mask.g * c2 + mask.b * c3;
+    roughnessFactor = clamp(roughnessFactor + uDerekRoughBias, 0.04, 1.0);
+  } else if (uClayLiteOn > 0.5) {
     vec3 wl = pow(abs(n0), vec3(4.0)); wl /= max(wl.x + wl.y + wl.z, 1e-5);
     vec4 lx = texture2D(uClayLiteTex, P.zy * uClayLiteScale);
     vec4 ly = texture2D(uClayLiteTex, P.xz * uClayLiteScale);
