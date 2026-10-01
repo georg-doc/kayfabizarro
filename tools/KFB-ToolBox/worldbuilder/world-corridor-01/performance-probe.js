@@ -326,14 +326,72 @@ export async function measureClayParts({
   return result;
 }
 
+
+export async function measureGlobalClayLite({
+  warmupMs = 900,
+  sampleMs = 4000,
+} = {}) {
+  const api = await waitForR2C();
+  if (!api.setGlobalClayLite || !api.setProceduralClay || !api.setClayOff) {
+    throw new Error('Global-Clay-Test braucht die neue WorldBuilder-Diagnoseversion.');
+  }
+  if (document.visibilityState !== 'visible') throw new Error('Bitte den Chrome-Tab während der Messung sichtbar lassen.');
+  const rows = [];
+  const measure = async (label, extra = {}) => {
+    const row = await measureWorldCorridorBaseline({ warmupMs, sampleMs, label });
+    Object.assign(row, extra);
+    rows.push(row);
+    return row;
+  };
+  try {
+    api.set('mode', 'B');
+    api.setProceduralClay();
+    await measure('PROCEDURAL_CLAY_REFERENCE', { look: 'procedural' });
+
+    const a = await api.setGlobalClayLite('Clay002', 512);
+    await measure('GLOBAL_CLAY_Clay002_512', { look: 'global-clay-lite', globalClay: a });
+
+    const b = await api.setGlobalClayLite('clay_floor_001', 512);
+    await measure('GLOBAL_CLAY_clay_floor_001_512', { look: 'global-clay-lite', globalClay: b });
+
+    api.setClayOff();
+    await measure('CLAY_OFF_REFERENCE', { look: 'clay-off' });
+  } finally {
+    api.setProceduralClay();
+  }
+
+  const base = rows[0]?.meanFrameMs || 0;
+  const result = {
+    schema: 'kfb.world-corridor.global-clay-lite/0.1',
+    measuredAt: new Date().toISOString(),
+    rows,
+    deltasFromProcedural: Object.fromEntries(rows.slice(1).map((r) => [
+      r.label,
+      {
+        fps: r.fps,
+        meanFrameMs: r.meanFrameMs,
+        savedMs: round(base - r.meanFrameMs),
+        savedPct: base ? round((base - r.meanFrameMs) / base * 100, 1) : 0,
+      }
+    ])),
+    note: 'Global Clay Lite uses one 512² packed shared RGBA texture at a time; source asset colour remains authoritative.'
+  };
+  window.__KFB_WC1_BASELINE__.globalClayLite = result;
+  window.__KFB_WC1_BASELINE__.last = result;
+  window.dispatchEvent(new CustomEvent('kfb-wc1-global-clay-result', { detail: result }));
+  return result;
+}
+
 window.__KFB_WC1_BASELINE__ = {
   schema: 'kfb.world-corridor.performance-probe/0.1',
   measure: measureWorldCorridorBaseline,
   measureCostSplit: measureWorldCorridorCostSplit,
   measureClayParts,
+  measureGlobalClayLite,
   last: null,
   costSplit: null,
   clayParts: null,
+  globalClayLite: null,
 };
 
 
@@ -353,7 +411,8 @@ function downloadJson(result) {
   const blob = new Blob([JSON.stringify(result, null, 2) + '\n'], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `kfb-wc1-gpu-baseline-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
+  const stem = result?.schema?.includes('global-clay-lite') ? 'kfb-global-clay-lite' : result?.schema?.includes('clay-parts') ? 'kfb-clay-bausteine' : result?.schema?.includes('cost-split') ? 'kfb-wc1-cost-split' : 'kfb-wc1-gpu-baseline';
+  a.download = `${stem}-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
   document.body.appendChild(a);
   a.click();
   a.remove();
@@ -377,8 +436,13 @@ function mountBaselinePanel() {
     </div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
       <button data-role="measure" type="button">Measure 10s</button>\n      <button data-role="costsplit" type="button">Measure cost split</button>\n      <button data-role="clayparts" type="button">Clay-Bausteine messen</button>
+      <button data-role="globalclay" type="button">Globale Textur messen</button>
       <button data-role="copy" type="button" disabled>Copy JSON</button>
       <button data-role="download" type="button" disabled>Download JSON</button>
+      <button data-role="showproc" type="button">Zeige aktuelles Clay</button>
+      <button data-role="showa" type="button">Zeige Clay002</button>
+      <button data-role="showb" type="button">Zeige clay_floor</button>
+      <button data-role="showoff" type="button">Zeige Clay aus</button>
       <button data-role="hide" type="button">Hide</button>
     </div>
     <pre data-role="result" style="white-space:pre-wrap;margin:0;max-height:210px;overflow:auto;color:#d9d2bd">Keep this tab visible during measurement.</pre>
@@ -391,6 +455,11 @@ function mountBaselinePanel() {
   const measure = panel.querySelector('[data-role="measure"]');
   const costSplit = panel.querySelector('[data-role="costsplit"]');
   const clayParts = panel.querySelector('[data-role="clayparts"]');
+  const globalClay = panel.querySelector('[data-role="globalclay"]');
+  const showProc = panel.querySelector('[data-role="showproc"]');
+  const showA = panel.querySelector('[data-role="showa"]');
+  const showB = panel.querySelector('[data-role="showb"]');
+  const showOff = panel.querySelector('[data-role="showoff"]');
   const copy = panel.querySelector('[data-role="copy"]');
   const download = panel.querySelector('[data-role="download"]');
 
@@ -448,6 +517,33 @@ function mountBaselinePanel() {
       measure.disabled = false; costSplit.disabled = false; clayParts.disabled = false;
     }
   };
+
+  globalClay.onclick = async () => {
+    measure.disabled = true; costSplit.disabled = true; clayParts.disabled = true; globalClay.disabled = true; copy.disabled = true; download.disabled = true;
+    state.textContent = 'Globale Textur…';
+    result.textContent = 'Vier Durchläufe: aktuelles Clay · Clay002 512² · clay_floor_001 512² · Clay aus. Bitte Tab sichtbar lassen.';
+    try {
+      const suite = await measureGlobalClayLite({ warmupMs: 900, sampleMs: 4000 });
+      result.textContent = suite.rows.map((r) => `${r.label}: ${r.fps} fps · ${r.meanFrameMs} ms · ${r.textures} textures`).join('\n');
+      state.textContent = 'Globale Textur gemessen';
+      copy.disabled = false; download.disabled = false;
+    } catch (err) {
+      state.textContent = 'fehlgeschlagen';
+      result.textContent = String(err?.message || err);
+    } finally {
+      measure.disabled = false; costSplit.disabled = false; clayParts.disabled = false; globalClay.disabled = false;
+    }
+  };
+  const showLook = async (fn, label) => {
+    state.textContent = label + '…';
+    try { await fn(); state.textContent = label; }
+    catch (err) { state.textContent = 'fehlgeschlagen'; result.textContent = String(err?.message || err); }
+  };
+  showProc.onclick = () => showLook(async () => { const a = await waitForR2C(); a.setProceduralClay(); }, 'aktuelles Clay');
+  showA.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('Clay002', 512); }, 'Clay002 512²');
+  showB.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('clay_floor_001', 512); }, 'clay_floor 512²');
+  showOff.onclick = () => showLook(async () => { const a = await waitForR2C(); a.setClayOff(); }, 'Clay aus');
+
   copy.onclick = async () => {
     if (!window.__KFB_WC1_BASELINE__.last) return;
     await navigator.clipboard.writeText(JSON.stringify(window.__KFB_WC1_BASELINE__.last, null, 2));
