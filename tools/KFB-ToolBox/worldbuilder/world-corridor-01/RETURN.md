@@ -123,6 +123,63 @@ This rule is persisted in:
 
 The old terminal helper may remain as developer fallback but is **not** the default Georg-facing workflow.
 
+## Blender P0A intake · PR #309
+
+Blender P0A is delivered on Draft PR **#309** / branch `blender-mcp/clay-perf-p0a-2026-10-01` / head `93af8caef6a85caa1f7fd70a59abb46edf85f0a4`.
+
+Accepted as:
+**successful source-proven offline bake mechanism proof / K2_STAGE_BAKED_LITE reference**.
+
+Delivered:
+- one softened building_A derivative;
+- one geometry + four deterministic baked detail variants;
+- UV0 preserved, dedicated KFB_CLAY_UV / TEXCOORD_1;
+- normal + roughness maps;
+- matched source / K1 / v10 / baked evidence;
+- Blender source and reproducible scripts;
+- 9/9 source-pin PASS;
+- 1024² baked result is suitable for mid/far only; near detail is 29–59% of v10 depending on view.
+
+Confirmed scale:
+`3.2 / 1.65 = 1.939394...` → **×1.9394** for the locked K1 building height.
+
+### Parameter mismatch that must not be hidden
+
+P0A used:
+- ToolOn 1;
+- LegacyStroke 0;
+- Mottle 0.04;
+- Macro 0.5;
+- LodK 0.6;
+- Stroke 0.7;
+- Hand 0.5;
+- Tile 1.6;
+- PrintTile 4.5.
+
+The currently measured WC1 **parity** path uses:
+- ToolOn **0**;
+- LegacyStroke **1**;
+- Mottle **0.05**;
+- Macro **0.5**;
+- LodK **1.0**;
+- Stroke **0.55**;
+- Hand **0.5**;
+- Tile **1.6**;
+- PrintTile **4.5**;
+- PrintOn **1**, additionally gated by `lodNear > 0`;
+- HexK 3 / HexRot 1 / HexFlow 0 / FacetSoft 0;
+- house profile with `legacy: 1`, no active TOOLMIX.
+
+Therefore PR #309 is **not yet a WC1_PARITY_BAKED_LITE replacement**. It remains valid mechanism evidence and a K2-stage baked reference.
+
+PR #309 received a GitHub review comment with the exact correction. No rebake is requested yet.
+
+Current order:
+1. finish `WC1-CLAY-PERF-01` on the parity procedural path;
+2. pin the optimized procedural shader/settings;
+3. compare SOURCE → K2_PROC_OPT → PR #309 K2_STAGE_BAKED_LITE as mechanism/reference;
+4. only if baked remains useful, generate the final baked derivative from the exact aligned shader/settings.
+
 ## No further integration yet
 
 Not started:
