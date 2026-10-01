@@ -1,127 +1,73 @@
-# BRIEF · CLAUDE-PC-MCP-01 · expose KFB Production Control to Claude
+# BRIEF · CLAUDE-PC-MCP-01 · verify KFB Production Control in Claude
 
-Status: **READY FOR BACKEND / WSA EXECUTION**
-Date: 2026-09-30
-Owner: existing KFB Production Control Apps SDK/Site backend
-Consumer: `skills/chat/plugins/kfb-production-control/`
+Status: **CLOUD ENDPOINT EXPOSED · PLUGIN BOUND · REAL CLAUDE SMOKE PENDING**  
+Date: 2026-10-01  
+Owner: existing KFB Production Control Site backend  
+Consumer: `skills/chat/plugins/kfb-production-control/`  
 Candidate: Draft PR #299 · branch `chatgpt-web/kfb-claude-production-control-plugin-01-2026-09-30`
-
-## Goal
-
-Expose the **existing** KFB Production Control capabilities through one authenticated remote HTTP MCP endpoint that Claude Code/Cowork can connect to.
-
-Do not create a second persistence store, second workflow service or replacement Production Control app.
 
 ## Proven current state
 
-- KFB Production Control is an **AppsSDKApp**.
-- Current ChatGPT tool contract is working and backend artifact persistence has been probed successfully.
-- Claude plugin candidate is already packaged and source-tested.
-- The only missing seam is an externally consumable MCP endpoint/auth contract.
-- The public browser Site URL must not be assumed to be the MCP endpoint.
+- The existing KFB Production Control Site is MCP-enabled.
+- Exact streamable HTTP endpoint: `https://kfb-production-control.frizzlebob.chatgpt.site/mcp`.
+- OAuth resource: the same endpoint; Sites owns OAuth and authenticated identity headers.
+- The endpoint uses the same D1/R2 storage and per-user isolation as Production Control.
+- Eleven tools are exposed: read, checkpoint, direct save, HTTPS import, chunked upload begin/chunk/finish/abort, artifact read, deterministic chunk read and temporary private link.
+- The Claude plugin is bound directly to this URL; it no longer asks Georg to locate or type an endpoint.
+- Existing ChatGPT/Codex Production Control access remains operational.
 
-## Required remote MCP capability
+Do not create a second persistence store, workflow service or Production Control app.
 
-Expose the existing operations, preserving behavior and limits:
+## Remaining goal
 
-- `kfb_web_read`
-- `kfb_web_checkpoint`
-- `kfb_web_artifact_save`
-- `kfb_web_artifact_import`
-- `kfb_web_upload_begin`
-- `kfb_web_upload_chunk`
-- `kfb_web_upload_finish`
-- `kfb_web_upload_abort`
-- `kfb_web_artifact_read`
-- `kfb_web_artifact_link`
+Prove the existing endpoint from a real Claude Code/Cowork environment. Claude Design alone is not the transport-test host.
 
-Backend names may remain `kfb_web_*`. Do not rename the current ChatGPT contract merely for Claude.
+## Transport and auth rules
 
-## Transport / auth
-
-Target a standard **remote HTTP MCP** connection compatible with current Claude Code.
-
-Requirements:
-
-1. one explicit HTTPS MCP URL;
-2. authenticated per user; no anonymous write path;
-3. prefer supported OAuth/discovery for remote MCP when available;
-4. no bearer token, cookie or signed capability URL committed to GitHub;
-5. private artifact capability links remain short-lived and must not be published;
-6. current authenticated user isolation must remain intact;
-7. existing ChatGPT Production Control integration must continue to work.
-
-If the Apps SDK hosting layer cannot expose the existing internal tool surface directly, add the thinnest adapter in front of the **same** backend/storage/authorization logic. Do not duplicate D1/R2 state.
-
-## Plugin binding
-
-The Claude plugin already expects:
-
-```json
-{
-  "mcpServers": {
-    "kfb-production-control": {
-      "type": "http",
-      "url": "${user_config.production_control_mcp_url}"
-    }
-  }
-}
-```
-
-Therefore backend delivery is simply the exact MCP URL + supported auth flow. No secret belongs in the plugin repository.
+1. Use the exact endpoint above.
+2. Complete the supported OAuth flow; do not add repository tokens.
+3. No bearer token, cookie or signed capability URL goes into GitHub.
+4. Keep user isolation and private artifact access intact.
+5. Do not weaken the Site audience or add anonymous writes.
+6. Do not rename or duplicate the current `kfb_web_*` contract.
 
 ## Disposable smoke workflow
 
-Use a new disposable workflow:
+Use exactly:
 
 `KFB-CLAUDE-PC-MCP-SMOKE-01`
 
-From a real Claude Code/Cowork environment:
+1. Run `claude plugin validate skills/chat/plugins/kfb-production-control`.
+2. Load the plugin from this branch.
+3. Confirm discovery of all eleven tools.
+4. Authenticate to the remote MCP.
+5. Recover the disposable workflow.
+6. Persist one `WIP_CHECKPOINT`.
+7. Save a deterministic small UTF-8 artifact and verify bytes/SHA-256 after readback.
+8. Save a binary artifact larger than 256 KB, read it through cursor/chunk reads and verify the whole-file SHA.
+9. Persist one `RETURN` with artifact IDs, SHAs and exactly one next gate.
+10. Start a fresh Claude session and recover the same Return/artifacts without pasted context.
+11. Confirm ChatGPT-side Production Control still reads/writes the owner's records.
 
-1. run `claude plugin validate skills/chat/plugins/kfb-production-control`;
-2. load plugin and set `production_control_mcp_url`;
-3. inspect `/mcp` and complete authentication;
-4. invoke `/kfb-production-control:recover KFB-CLAUDE-PC-MCP-SMOKE-01`;
-5. persist one `WIP_CHECKPOINT`;
-6. save one deterministic small text artifact with expected SHA-256;
-7. read the artifact back and verify bytes/SHA;
-8. persist one `RETURN` containing artifact id/SHA and one next gate;
-9. start a **fresh Claude session**;
-10. recover the same workflow and prove the fresh session sees the Return/artifact and exact next gate without pasted chat context.
+## PASS requires
 
-## Acceptance
+- real Claude plugin validation;
+- OAuth connection;
+- eleven-tool discovery;
+- read/checkpoint/direct artifact and chunked binary readback;
+- exact hashes;
+- fresh-session recovery;
+- no cross-user access;
+- unchanged ChatGPT/Codex access.
 
-PASS only when all are true:
+## Evidence
 
-- `claude plugin validate` passes in the real Claude environment;
-- remote MCP is connected/authenticated;
-- read works;
-- checkpoint write works;
-- artifact save/read/SHA works;
-- Return works;
-- fresh-session recovery works;
-- ChatGPT-side Production Control remains operational;
-- no cross-user record/artifact access;
-- no Stage/Cloudflare/Hub product page was required.
-
-## Evidence to return
-
-- exact backend revision/deployment identifier;
-- exact MCP endpoint **location** (URL may be stored in protected operational config if policy requires; do not put credentials in GitHub);
-- auth mode;
-- Claude version/environment;
-- validator output;
-- tool list observed through `/mcp`;
-- smoke workflow record ids;
-- artifact id, byte size and SHA-256;
-- fresh-session recovery transcript/result summary;
-- failures left visible;
-- exactly one next gate.
+Return Claude version/environment, plugin validator output, endpoint (never credentials), auth mode, observed tool list, record/file IDs, byte sizes, SHAs and the fresh-session recovery result.
 
 ## Stop rule
 
-If two focused backend/transport attempts fail on the same seam, stop and export the failure state. Do not build a parallel Production Control service.
+After two focused failures on the same Claude OAuth/transport seam, stop and export the evidence. Do not build a parallel service.
 
-## No Stage / Live work
+## No product Stage
 
-This is infrastructure transport. Do not create a Cloudflare Stage or KFB Hub human gate merely to prove MCP connectivity.
+This is infrastructure transport. Do not create a KFB game Stage, GitHub mirror or Cloudflare fallback to prove it.
