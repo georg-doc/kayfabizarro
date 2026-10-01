@@ -135,7 +135,11 @@ export function makeClayUniforms(THREE, reliefTex) {
     uClayToolOn: { value: 0 }, uClayLegacyStroke: { value: 1 }, uClayZone: { value: 6.0 }, uClayToolGain: { value: [1, 1, 1, 1, 1, 1] },
     // WC1 diagnostic-only feature switches. Defaults preserve v10 pixels.
     uClayPerfRelief: { value: 1 }, uClayPerfMarks: { value: 1 }, uClayPerfPrint: { value: 1 },
-    uClayPerfFacet: { value: 1 }, uClayPerfMottle: { value: 1 }
+    uClayPerfFacet: { value: 1 }, uClayPerfMottle: { value: 1 },
+    // Global Clay Lite: off by default. One packed shared texture, source colour stays authoritative.
+    uClayLiteTex: { value: reliefTex }, uClayLiteOn: { value: 0 },
+    uClayLiteScale: { value: 0.62 }, uClayLiteBump: { value: 0.42 },
+    uClayLiteColor: { value: 0.22 }, uClayLiteRough: { value: 0.55 }
   };
 }
 
@@ -161,6 +165,8 @@ uniform vec3 uClayMsz;           // Zellgröße Kerbe, Riss, Druckstelle (Welt)
 uniform float uClayHexK, uClayHexRot, uClayHexFlow, uClayFacetSoft, uClayToolOn, uClayLegacyStroke, uClayZone;
 uniform float uClayToolGain[6], uClayTK[6], uClayTS[6], uClayTC[6], uClayLeg;
 uniform float uClayPerfRelief, uClayPerfMarks, uClayPerfPrint, uClayPerfFacet, uClayPerfMottle;
+uniform sampler2D uClayLiteTex;
+uniform float uClayLiteOn, uClayLiteScale, uClayLiteBump, uClayLiteColor, uClayLiteRough;
 uniform sampler2D uClayToolA, uClayToolB, uClayToolC;
 varying vec3 vClayP;
 varying vec3 vClayN;
@@ -356,6 +362,23 @@ if (uClayOn > 0.5 && uClayK > 0.0) {
   float sc = length(modelMatrix[0].xyz);
   vec3 n0 = normalize(vClayN);
   vec3 P = vClayP * sc + vClaySeed * 37.0;   // Weltmaß, am Objekt, je Objekt versetzt
+  if (uClayLiteOn > 0.5) {
+    vec3 wl = pow(abs(n0), vec3(4.0)); wl /= max(wl.x + wl.y + wl.z, 1e-5);
+    vec4 lx = texture2D(uClayLiteTex, P.zy * uClayLiteScale);
+    vec4 ly = texture2D(uClayLiteTex, P.xz * uClayLiteScale);
+    vec4 lz = texture2D(uClayLiteTex, P.xy * uClayLiteScale);
+    vec4 lt = lx * wl.x + ly * wl.y + lz * wl.z;
+    vec2 gx = lx.rg * 2.0 - 1.0, gy = ly.rg * 2.0 - 1.0, gz = lz.rg * 2.0 - 1.0;
+    vec3 gl = wl.x * vec3(0.0, gx.y, gx.x)
+            + wl.y * vec3(gy.x, 0.0, gy.y)
+            + wl.z * vec3(gz.x, gz.y, 0.0);
+    gl -= n0 * dot(gl, n0);
+    vec3 dNl = normalize(n0 - gl * uClayLiteBump) - n0;
+    vec3 dVl = (viewMatrix * vec4(mat3(modelMatrix) * dNl / sc, 0.0)).xyz;
+    normal = normalize(normal + dVl * faceDirection);
+    roughnessFactor = clamp(mix(roughnessFactor, lt.b, uClayLiteRough), 0.25, 1.0);
+    diffuseColor.rgb *= clamp(1.0 + ((lt.a - 0.5) * 2.0) * uClayLiteColor, 0.72, 1.28);
+  } else {
   float hand = uClayObj > 0.0 ? mix(1.0, uClayObj / 1.2, uClayHandMix) : 1.0;
   float jit = 0.8 + 0.4 * fract(vClaySeed.x * 7.13 + vClaySeed.z);
   float vs = uClayS * hand * jit;                 // Maßstab je Material, gestreut je Objekt
@@ -472,6 +495,7 @@ if (uClayOn > 0.5 && uClayK > 0.0) {
   vec3 dN = normalize(n0 - g) - n0;
   vec3 dV = (viewMatrix * vec4(mat3(modelMatrix) * dN / sc, 0.0)).xyz;
   normal = normalize(normal + dV * faceDirection);
+  }
 }
 `;
 
