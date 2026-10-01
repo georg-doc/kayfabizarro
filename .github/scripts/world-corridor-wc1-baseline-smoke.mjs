@@ -6,7 +6,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 const ROOT=process.cwd();
 const BASE='http://127.0.0.1:8772/';
 const REL='tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source/KFB World Core R2C · WC1 Baseline.dc.html';
-const TEST_TEST_URL=new globalThis.URL(REL,BASE).href;
+const TEST_URL=new globalThis.URL(REL,BASE).href;
 const OUT=path.join(ROOT,'artifacts','world-corridor','wc1-baseline');
 const SRC='tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01';
 const DST='tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source';
