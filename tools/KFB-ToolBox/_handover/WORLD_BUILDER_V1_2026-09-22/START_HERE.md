@@ -3,6 +3,27 @@
 Status: **PREPARED · WEB FIRST · CLAUDE DESIGN AFTER TECHNICAL PREFLIGHT · WORK ESCALATION ONLY**
 Owner: existing KFB World / Travel / ToolBox owners; no new universal runtime owner.
 
+## CURRENT INTEGRATION ROUTE · WORLD CORRIDOR 01 · 2026-10-01
+
+The accepted WB2 terrain/object editor remains the WorldBuilder host. The current integration intake is now pinned at:
+
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/START_HERE.md`
+
+Current branch:
+`chatgpt-web/world-corridor-01-2026-10-01`
+
+Accepted intake:
+- Claude World Core R2C Hex-Archipel = island/layout donor;
+- Claude SKY3 = EnvironmentHost / sky donor;
+- Track Core 0.12 remains the sole track-frame/slot/check owner;
+- current Billboard scheduler/LOD cut remains the media donor;
+- Race / Ground movement owners remain protected.
+
+Exactly one next gate:
+**WC1-BASELINE** — exact R2C source rehome + tiny performance probe + parity/baseline proof. No Track/SKY/Billboard integration before that baseline is measured.
+
+The older P0/P1/P2 execution history below remains useful provenance but is not the current integration gate.
+
 ## CURRENT OVERRIDE · TERRAIN-FIRST RESET · 2026-09-23
 
 The FLAT/SPHERE/TORUS Hex projection proof is retained only as research evidence.
