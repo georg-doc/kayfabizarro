@@ -1,6 +1,6 @@
 # KFB WorldBuilder · World Corridor 01
 
-Status: **ACTIVE INTEGRATION BRANCH · INTAKE ACCEPTED · RUNTIME INTEGRATION NOT STARTED**
+Status: **WC1 SOURCE REHOME COMPLETE · GPU BASELINE GATE OPEN · RUNTIME INTEGRATION NOT STARTED**
 Date: 2026-10-01
 Owner: existing KFB WorldBuilder / ToolBox world owner
 Branch: `chatgpt-web/world-corridor-01-2026-10-01`
@@ -128,4 +128,9 @@ No separate dashboard is required. Use a compact debug line / existing HUD and m
 
 ## Exactly one next gate
 
-**WC1-BASELINE:** rehome the exact R2C source object under this WorldBuilder owner without visual/semantic redesign, add only the small performance probe, and prove source parity + baseline measurements before Track Core or SKY3 is integrated.
+**WC1-GPU-BASELINE:** run the preserved instrumented R2C candidate unchanged on representative visible Chromium/GPU hardware and save one probe result. Source parity is already 10/10 PASS; do not tune the candidate before this measurement. After that, Track Core adapter is the first additive delta.
+
+
+## WC1 stop-rule note
+
+GitHub/SwiftShader absolute performance was stopped after two passes. Source rehome is 10/10 byte-identical PASS. Read `FAILURE_RECOVERY_WC1_BASELINE.md`; do not tune the hosted-runner threshold and do not add Track/SKY/Billboard until `WC1-GPU-BASELINE` is captured on representative hardware.
