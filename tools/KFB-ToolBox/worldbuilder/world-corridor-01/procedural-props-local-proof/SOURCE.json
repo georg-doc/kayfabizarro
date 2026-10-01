@@ -1,6 +1,6 @@
 {
   "schema": "kfb.wc1-procedural-props-local-proof.v1",
-  "date": "2026-10-01",
+  "date": "2026-10-02",
   "owner": "KFB WorldBuilder / World Corridor 01",
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/wc1-procedural-props-local-proof-2026-10-01",
@@ -37,5 +37,35 @@
   "stage": null,
   "merged": false,
   "live": false,
-  "nextGate": "GEORG_LOCAL_VISIBLE_RESULT"
+  "nextGate": "MATERIAL_ISOLATION_SAME_GEOMETRY_CLAY002_VS_DEREK_VS_NEUTRAL",
+  "humanDecision": {
+    "proceduralPropsTrees": "PROCEED",
+    "geometryStyle": "PROCEED",
+    "trees": "POSITIVE_EXPLICIT",
+    "materialTexture": "TUNE",
+    "siteCheckpoint": "e072b8e2-498a-460b-94e7-88b930f5336f",
+    "decisionFile": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/DECISION_PROCEDURAL_PROPS_PROCEED_2026-10-02.md"
+  },
+  "localEvidence": {
+    "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/evidence/KFB_WC1_P0B_LOCAL_2026-10-01T23-11-17-237Z.json",
+    "gpu": "Apple M1 Max / WebGL2",
+    "mounted": {
+      "tufts": 0,
+      "pebbles": 7,
+      "trees": 11
+    },
+    "renderDelta": {
+      "calls": 6,
+      "triangles": 44656,
+      "geometries": 0,
+      "textures": 0,
+      "programs": 0
+    },
+    "frameDeltaAuthority": false
+  },
+  "materialDiagnosis": {
+    "issue": "generic/repetitive/somewhat buggy shared material treatment",
+    "likelyMechanism": "shared Clay002 512 + object-space triplanar + family-shared claySeed phase on InstancedMesh",
+    "preserveGeometry": true
+  }
 }
