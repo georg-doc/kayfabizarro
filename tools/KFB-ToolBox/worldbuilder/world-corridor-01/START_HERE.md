@@ -143,6 +143,24 @@ Cloudflare Stage is not needed for this local hardware gate.
 
 The repository CLI/server helpers remain developer fallback only.
 
+## Parallel Blender lane · GitHub only
+
+Blender P0A is allowed to run in parallel with the Web Clay-performance gate.
+
+Read:
+`CLAY_PERF_P0A_GITHUB_HANDOFF_2026-10-01.md`
+
+Blender return channel:
+- repo: `georg-doc/kayfabizarro`;
+- base: `d78009c2de75b85a20060485cb591282aaf3cf54`;
+- branch: `blender-mcp/clay-perf-p0a-2026-10-01`;
+- return folder: `tools/KFB-ToolBox/_inbox/KFB_CLAY_PERF_P0A_BLENDER_2026-10-01/`;
+- Draft PR to `main`, no merge.
+
+No Site / Production Control / Cloudflare dependency is required for Blender P0A.
+
+This parallel lane does not change the World Corridor next gate below.
+
 ## Exactly one next gate
 
 **WC1-CLAY-PERF-01:** profile the active K1-parity K2/v10 Clay fragment path using bounded feature toggles on the same exact source/camera, then optimize only what can preserve the locked K1/H0 Golden appearance. Do not add Track/Vehicle/Billboard/SKY runtime in this gate.
