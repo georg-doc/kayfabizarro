@@ -19,8 +19,10 @@ Accepted intake:
 - current Billboard scheduler/LOD cut remains the media donor;
 - Race / Ground movement owners remain protected.
 
+WC1 source rehome is now **10/10 byte-identical PASS**. Hosted GitHub/SwiftShader absolute performance was stopped after two attempts and is not a product-performance authority.
+
 Exactly one next gate:
-**WC1-BASELINE** — exact R2C source rehome + tiny performance probe + parity/baseline proof. No Track/SKY/Billboard integration before that baseline is measured.
+**WC1-GPU-BASELINE** — run the unchanged instrumented R2C candidate on representative visible Chromium/GPU hardware and save the probe result. No Track/SKY/Billboard integration before that measurement.
 
 The older P0/P1/P2 execution history below remains useful provenance but is not the current integration gate.
 
