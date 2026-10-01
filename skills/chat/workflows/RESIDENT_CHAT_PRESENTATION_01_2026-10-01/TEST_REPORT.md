@@ -1,7 +1,7 @@
 # TEST REPORT · RESIDENT-CHAT-PRESENTATION-01
 
 Date: 2026-10-01  
-Status: **SOURCE/PRESENTATION PARITY PASS · BROWSER VISUAL STILL OPEN**
+Status: **SOURCE/PRESENTATION PARITY PASS · HEADED BROWSER PASS**
 
 ## Scope
 
@@ -144,31 +144,90 @@ Checks:
 - no second timing or bubble engine is introduced;
 - no LLM/TTS/persistence is introduced.
 
+## Headed browser verification
+
+Final tested implementation head:
+`7204b91eb340c615d7e0db45560f6d2c8d0b6d7a`
+
+GitHub Actions:
+- run: **36858274598**
+- parity job: **110355897991 · SUCCESS**
+- browser job: **110355898424 · SUCCESS**
+
+Artifact:
+- id: **11160566742**
+- digest: `sha256:ce47e8b3e8b772dbed399006144dc0fa73a8c7a225e1906b4488cf2a73cade44`
+- files: five PNG screenshots + `browser-proof.json`
+
+Browser report assertions:
+- `result = PASS`
+- `errors = []`
+- `httpErrors = []`
+- `requestFailures = []`
+- active semantic source matches RESIDENT-CHAT-POC-01 deterministic adapter
+- shared pool entries = **4**
+- A variants = **2**
+- B variants = **2**
+- EyeRig owners = **2**
+- Mouth owners = **2**
+- Mixers = **2**
+- Motion Library = **33 clips**
+- Card = **The Doomsday Clock**
+- scene variant 0 = bubble visible + B talking
+- scene variant 1 = bubble visible + B talking
+- actor-a = A visible / B hidden / A talking
+- actor-b = A hidden / B visible / B talking
+- mouths = both visible / alternating talk state
+
+The browser job used a real headed Chromium process under Xvfb. The document remained visible (`document.hidden === false`).
+
+### Browser repair sequence
+
+Browser attempt 1:
+- QA harness failed before scene validation because local constant `URL` shadowed the URL constructor.
+
+Repair Pass 1:
+- QA-only rename to `HOST_URL`.
+- scene rendered and emitted all five screenshots;
+- gate still failed on two opaque Chromium generic 404 console messages;
+- evidence already proved provider/owners/variants/isolation/talk.
+
+Repair Pass 2:
+- restored the donor's historical local Motion-Library alias from the current canonical repo source in the CI workspace;
+- QA now records exact non-OK HTTP responses and ignores only opaque duplicate console resource messages;
+- final browser run PASS with **0 HTTP errors** and Motion Library **33 clips** loaded.
+
+No third repair pass was used.
+
+## What is proven
+
+**PASS**
+- deterministic shared-pool output supplies the exact existing donor text;
+- source parity remains 14/14;
+- provider imports and scene mounts in a real browser;
+- both scene variants render;
+- existing bubble appears while the selected speaker talks;
+- actor-a / actor-b / mouths source-isolation views render and expose the intended talk state;
+- canonical Motion Library loads instead of the historical fallback;
+- no essential HTTP or request failure remains;
+- original donor recipe is still unchanged;
+- no live LLM, reward or persistence path exists.
+
 ## What is not proven
 
-**OPEN**
-- provider import and scene mount in a real visible browser;
-- mouth movement visibly corresponds to provider-selected lines;
-- gaze/bubble timing visibly remains correct in both variants;
-- `actor-a / actor-b / mouths` isolation views on the new stacked branch;
-- public Stage;
-- human visual acceptance.
+**OPEN / DEFERRED**
+- Georg/human acceptance of the older donor mouth/face look;
+- four-Resident ensemble;
+- player-to-Resident interaction in that ensemble;
+- live LLM generation;
+- TTS/audio;
+- persistent runtime Lean Memory;
+- public Stage / Live.
 
-The older donor's visible mouth/face TUNE list remains open and is not silently accepted by this source-level PASS.
+The visible donor TUNE history remains open but does not block the next semantic/ensemble slice.
 
 ## Exactly one next gate
 
-**VISIBLE BROWSER FIXTURE VERIFICATION**
+**RESIDENT-CHAT-ENSEMBLE-01**
 
-Open the existing NPC-CARD-SPEC-01 host from the stacked presentation branch in a real browser and verify:
-
-- scene variant 0;
-- scene variant 1;
-- actor-a isolation;
-- actor-b isolation;
-- mouths isolation;
-- `semanticReport()` shows the shared-pool provider active;
-- existing mouth/gaze/bubble behavior remains visible;
-- no page/runtime error.
-
-Only after that is a public Stage/human surface worth creating.
+Source-isolate Lorekeeper, Goth Girl, Clown and Witch from current Resident sources, then load the four real Residents into one deterministic ChatterBox ensemble with shared Triplets, Attitude/Affect and 1-normal/2-soft-max speech budget. No live LLM yet.
