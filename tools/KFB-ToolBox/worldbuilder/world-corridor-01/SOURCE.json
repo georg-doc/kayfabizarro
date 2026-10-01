@@ -70,7 +70,7 @@
     "rule": "scheduler/LOD + baked/static image provider; no runtime PDF rendering in corridor frame loop"
   },
   "stageRoute": null,
-  "nextGate": "WC1-CLAY-PERF-01",
+  "nextGate": "MATERIAL_ISOLATION_SAME_GEOMETRY_CLAY_FLOOR_FIRST",
   "wc1Baseline": {
     "rehomeRoot": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source",
     "parity": "10/10 BYTE_IDENTICAL_PASS",
@@ -196,9 +196,9 @@
     "decision": "No immediate rebake. Finish WC1-CLAY-PERF-01, pin optimized procedural settings, then align any final baked candidate."
   },
   "materialStrategy": {
-    "status": "GLOBAL_CLAY_LITE_512_READY_FOR_LOCAL_MEASUREMENT",
+    "status": "VISUAL_MATERIAL_ORDER_CORRECTED_CLAY_FLOOR_FIRST",
     "document": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/MATERIAL_STRATEGY_2026-10-01.md",
-    "nextPlainLanguage": "Build and measure one 512x512 Global Clay Lite texture in the current island scene.",
+    "nextPlainLanguage": "Accepted procedural trees/props unverändert lassen und auf derselben Geometrie clay_floor_001 gegen aktuelles Clay, Derek RGB und Neutral vergleichen; Clay002 nur als Negativkontrolle.",
     "initialClayDonors": [
       "media/3D_Assets/Textures/Clay002/",
       "media/3D_Assets/Textures/clay_floor_001/"
@@ -260,7 +260,13 @@
         "meanFrameMs": 11.16,
         "p95FrameMs": 17.4
       },
-      "decision": "Clay002 512 advances as performance candidate; visual acceptance still open."
+      "decision": "Clay002 remains a performance-path datapoint but no longer leads visually. clay_floor_001 advances as first lightweight visual candidate; same-geometry material isolation decides production direction.",
+      "visualVerdict": {
+        "clay_floor_001": "BEST_IN_SCALE_REVIEW",
+        "proceduralClay": "SECOND_BUT_COMPARATIVELY_BUGGY",
+        "Clay002": "REJECT_CURRENT_PACK_SEMANTICS_AT_6_9_12M",
+        "DerekRGB": "OPEN_NOT_RE_RANKED_IN_SCALE_REVIEW"
+      }
     },
     "derekComparison": {
       "status": "READY_FOR_LOCAL_VISUAL_AND_GPU_COMPARISON",
@@ -275,7 +281,44 @@
         "name": "KFB_Clay002_vs_Derek_Doppelklick.html",
         "sha256": "347663621a2a75d93755813a95916af6e43e63d3a530a357ca52bb7d0748a175"
       }
+    },
+    "clay002ScaleCorrection": {
+      "status": "SCALE_ONLY_HYPOTHESIS_CLOSED",
+      "testedRepeatM": [
+        6,
+        9,
+        12
+      ],
+      "result": "NO_CONVINCING_CLAY_TEXTURE_MOSTLY_SHADING",
+      "next": "DO_NOT_ADD_ANTI_REPEAT_OR_INSTANCE_PHASE_YET"
+    },
+    "currentMaterialReview": {
+      "branch": "chatgpt-web/wc1-procedural-props-local-proof-2026-10-01",
+      "pr": 313,
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_MATERIAL_REVIEW.html",
+      "implementationHead": "42671b14167ee1872f0f75ce2f2edd57af24e235",
+      "frozenRuntimeHead": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+      "candidates": [
+        "clay_floor_001",
+        "current procedural Clay",
+        "Derek RGB",
+        "Neutral / Clay off"
+      ],
+      "negativeControl": "Clay002",
+      "geometry": "PRESERVE_ACCEPTED_P0B"
     }
   },
-  "nextActionPlainLanguage": "Clay002 und Derek RGB in der Doppelklick-HTML visuell vergleichen, „Clay002 vs Derek messen“ ausführen, JSON zurückgeben und den bevorzugten Look nennen."
+  "nextActionPlainLanguage": "Accepted procedural trees/props unverändert lassen und auf derselben Geometrie clay_floor_001 gegen aktuelles Clay, Derek RGB und Neutral vergleichen; Clay002 nur als Negativkontrolle.",
+  "proceduralProps": {
+    "status": "HUMAN_PROCEED_GEOMETRY_STYLE_MATERIAL_TUNE",
+    "branch": "chatgpt-web/wc1-procedural-props-local-proof-2026-10-01",
+    "pr": 313,
+    "decision": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/DECISION_PROCEDURAL_PROPS_PROCEED_2026-10-02.md",
+    "return": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/RETURN.md",
+    "source": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/SOURCE.json",
+    "frozenRuntimeHead": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+    "trees": "POSITIVE_EXPLICIT",
+    "preserveGeometry": true,
+    "authoredHeroAssetsProtected": true
+  }
 }
