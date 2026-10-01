@@ -474,3 +474,27 @@ No Stage is required for the current Clay performance work. Public Stage remains
 **WC1-CLAY-PERF-01**
 
 Profile the active K1-parity K2/v10 Clay fragment path on the same exact world/camera, then implement only the smallest performance change that preserves the locked K1/H0 visual Golden. Track Core remains the first additive integration delta after Clay performance is brought into a usable budget.
+
+
+## Experimental procedural props P0B · stopped integration lane
+
+Draft PR #311 tested Hivebound-style asset-light soft props.
+
+Proven:
+- P0 isolation browser PASS;
+- P0B soft-form isolation browser PASS;
+- integrated candidate reached WC1 boot → Clay002 activation → P0B prop mount.
+
+Not proven:
+- completed integrated browser gate;
+- representative local performance;
+- KFB visual acceptance.
+
+The GitHub/SwiftShader post-mount frame-delta gate was stopped after two repair passes. Frozen candidate: `94443824e6b13f38c611defd06dacedd7c6d0faa`.
+
+Full return/recovery:
+- `procedural-props-p0/RETURN.md`
+- `procedural-props-p0/FAILURE_RECOVERY.md`
+- `procedural-props-p0/SOURCE.json`
+
+This experiment does not change the parent WC1 next material action (Clay002 vs Derek).
