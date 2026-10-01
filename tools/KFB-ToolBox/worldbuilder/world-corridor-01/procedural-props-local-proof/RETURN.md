@@ -69,6 +69,35 @@ Current Global Clay Lite path:
 
 This is a plausible technical explanation for the observed repetitive/generic material character.
 
+## Material follow-up · clay_floor_001
+
+Follow-up human review on the parent WC1 material comparator supersedes the earlier assumption that Clay002 mainly needed a larger world repeat.
+
+Visual result:
+- **clay_floor_001 = best**;
+- **current procedural Clay = second**, but comparatively buggy in the direct switch;
+- Clay002 6 / 9 / 12 m still reads mostly as shading rather than a convincing clay texture;
+- Derek remains open because it was not newly ranked in that specific scale review.
+
+Technical refinement:
+Global Clay Lite packs donor diffuse into luminance-gradient/value channels and keeps source object colour authoritative. Therefore the next useful question is **which donor/material family survives this lightweight semantics**, not whether Clay002 gets another anti-repeat pass.
+
+Updated material review:
+`KFB_WC1_P0B_MATERIAL_REVIEW.html`
+now exposes the same frozen geometry with:
+- clay_floor_001;
+- current procedural Clay;
+- Derek RGB;
+- Clay002 negative control;
+- Neutral.
+
+Implementation checkpoint:
+`42671b14167ee1872f0f75ce2f2edd57af24e235`.
+
+Nonrepresentative diagnostic JSON retained:
+`../evidence/WC1_DEREK_COMPARISON_NONREPRESENTATIVE_2026-10-01T23-32-47.json`.
+Do not use its absolute fps/frame-time values as a performance verdict.
+
 ## Protected owners
 
 Unchanged:
@@ -79,13 +108,14 @@ Unchanged:
 
 ## Exactly one next gate
 
-**MATERIAL ISOLATION · SAME GEOMETRY**
+**MATERIAL ISOLATION · SAME GEOMETRY · CLAY_FLOOR FIRST**
 
-Hold the accepted procedural geometry fixed and compare:
-1. Clay002;
-2. Derek RGB;
-3. Neutral / Clay off.
+Hold the accepted tree/prop geometry fixed and compare:
+1. clay_floor_001;
+2. current procedural Clay;
+3. Derek RGB;
+4. Neutral / Clay off.
 
-Then decide whether Clay002 needs instance-aware phase/orientation variation or should be replaced for these props.
+Clay002 remains available only as a negative/control state. Do not add instance-aware phase/orientation until a visually preferred material still proves that it needs it.
 
 No tree/prop geometry redesign in this gate.
