@@ -1,0 +1,44 @@
+{
+  "schema": "kfb.world-corridor.invalid-comparison/0.1",
+  "date": "2026-10-01",
+  "sourceUpload": {
+    "file": "kfb-clay002-vs-derek-2026-10-01T23-03-02-651Z.json",
+    "sha256": "c8a45bc088e411b0f9c52cb2b416876d785b92b98b12fe29b77ce60bba6e3f2a"
+  },
+  "observed": {
+    "procedural": {
+      "fps": 5.5,
+      "meanFrameMs": 182.8
+    },
+    "Clay002_512": {
+      "fps": 5.7,
+      "meanFrameMs": 174.1
+    },
+    "DerekRGB_512": {
+      "fps": 5.9,
+      "meanFrameMs": 169.37
+    },
+    "clayOff": {
+      "fps": 6.2,
+      "meanFrameMs": 160.4
+    },
+    "scene": {
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89,
+      "pixelRatio": 1.5
+    }
+  },
+  "invalidReason": [
+    "Clay-off collapsed from ~90 fps / ~11 ms in the previous healthy run to 6.2 fps / 160.4 ms while scene geometry/calls remained the same.",
+    "The comparator had Clay002 and Derek implemented as dynamic branches inside the already-large v10 Clay fragment shader.",
+    "Therefore all modes, including clay-off, were bound to an oversized comparison shader and the run does not isolate material cost."
+  ],
+  "correctiveAction": [
+    "Restore the procedural reference shader to the pure Clay-parts diagnostic state.",
+    "Move Plain, Global Clay Lite and Derek RGB to separate dedicated MeshPhysicalMaterial shader programs.",
+    "Repeat the same four-state local Chrome test."
+  ],
+  "classification": "INVALID_FOR_PERFORMANCE_DECISION",
+  "note": "The earlier healthy Global Clay Lite result remains valid; only this combined Derek-comparator run is rejected."
+}
