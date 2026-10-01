@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><script type="importmap">{"imports":{"three":"/nm/three/build/three.module.js","three/addons/":"/nm/three/examples/jsm/"}}</script></head><body><script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const L = new GLTFLoader();
+window.check = async (fig, rig) => {
+  const lib = await L.loadAsync(`/src/${rig}_General.glb`);
+  const clip = lib.animations.find(a => a.name === 'Idle_A');
+  const out = { clip: clip && clip.name, libTracks: clip ? clip.tracks.length : 0 };
+  for (const [k, url] of [['orig', `/src/${fig}.glb`], ['noEyes', `/out/${fig}_NoEyes.glb`]]) {
+    const g = await L.loadAsync(url); const root = g.scene;
+    let bound = 0; const miss = [];
+    for (const t of clip.tracks) { const pb = THREE.PropertyBinding.create(root, t.name); pb.bind(); if (pb.node && pb.targetObject) bound++; else miss.push(t.name); }
+    const mixer = new THREE.AnimationMixer(root); mixer.clipAction(clip).play(); mixer.update(0.5); root.updateMatrixWorld(true);
+    const r = { bound: bound + '/' + clip.tracks.length, miss: miss.slice(0, 5) };
+    let bones = 0; root.traverse(o => { if (o.isBone) bones++; });
+    r.bones = bones;
+    const al = root.getObjectByName('eye_anchorl'), ar = root.getObjectByName('eye_anchorr'), hd = root.getObjectByName('head');
+    if (al) { r.anchorParent = al.parent.name; r.anchorNames = [al.name, al.userData.name, ar.name, ar.userData.name]; r.anchorL_idle = al.getWorldPosition(new THREE.Vector3()).toArray().map(v => +v.toFixed(4)); r.anchorR_idle = ar.getWorldPosition(new THREE.Vector3()).toArray().map(v => +v.toFixed(4)); r.anchorScale = al.getWorldScale(new THREE.Vector3()).toArray().map(v => +v.toFixed(4)); }
+    // bind pose world pos of anchors
+    mixer.stopAllAction(); root.traverse(o => { if (o.isSkinnedMesh) o.skeleton.pose(); }); root.updateMatrixWorld(true);
+    if (al) { r.anchorL_bind = al.getWorldPosition(new THREE.Vector3()).toArray().map(v => +v.toFixed(4)); const z = new THREE.Vector3(0, 0, 1).transformDirection(al.matrixWorld); r.anchorL_zAxis = z.toArray().map(v => +v.toFixed(3)); r.anchorL_yAxis = new THREE.Vector3(0,1,0).transformDirection(al.matrixWorld).toArray().map(v => +v.toFixed(3)); r.anchorR_zAxis = new THREE.Vector3(0,0,1).transformDirection(ar.matrixWorld).toArray().map(v => +v.toFixed(3)); r.anchorR_bind = ar.getWorldPosition(new THREE.Vector3()).toArray().map(v => +v.toFixed(4)); }
+    out[k] = r;
+  }
+  return out;
+};
+window.__ready = true;
+</script></body></html>
