@@ -56,6 +56,7 @@ export async function measureWorldCorridorBaseline({
   const result = {
     schema: 'kfb.world-corridor.performance/0.1',
     label,
+    mode: info.mode || null,
     measuredAt: new Date().toISOString(),
     visibility: document.visibilityState,
     frames: sorted.length,
@@ -114,10 +115,94 @@ export async function measureWorldCorridorBaseline({
   return result;
 }
 
+
+export async function measureWorldCorridorCostSplit({
+  warmupMs = 900,
+  sampleMs = 4000,
+} = {}) {
+  const api = await waitForR2C();
+  if (document.visibilityState !== 'visible') {
+    throw new Error(`WC1 cost split requires a visible document; got ${document.visibilityState}.`);
+  }
+
+  const renderer = api.renderer;
+  const canvas = renderer.domElement;
+  const original = {
+    mode: api.info?.mode || 'B',
+    clayOn: Number(api.U?.uClayOn?.value ?? 1),
+    shadows: Boolean(api.sun?.castShadow),
+    pixelRatio: Number(renderer.getPixelRatio?.() || 1),
+  };
+  const rows = [];
+
+  const resizeAt = (ratio) => {
+    renderer.setPixelRatio(ratio);
+    renderer.setSize(canvas.clientWidth || 1, canvas.clientHeight || 1, false);
+  };
+  const measure = async (label) => {
+    const row = await measureWorldCorridorBaseline({ warmupMs, sampleMs, label });
+    rows.push(row);
+    return row;
+  };
+
+  try {
+    api.set('mode', 'B');
+    api.set('clouds', true);
+    api.set('shadows', true);
+    if (api.U?.uClayOn) api.U.uClayOn.value = 1;
+    resizeAt(original.pixelRatio);
+    await measure('B_DEFAULT');
+
+    if (api.U?.uClayOn) api.U.uClayOn.value = 0;
+    await measure('B_CLAY_OFF');
+    if (api.U?.uClayOn) api.U.uClayOn.value = 1;
+
+    api.set('clouds', false);
+    await measure('B_CLOUDS_OFF');
+    api.set('clouds', true);
+
+    api.set('shadows', false);
+    await measure('B_SHADOWS_OFF');
+    api.set('shadows', true);
+
+    resizeAt(1);
+    await measure('B_PIXEL_RATIO_1');
+  } finally {
+    resizeAt(original.pixelRatio);
+    if (api.U?.uClayOn) api.U.uClayOn.value = original.clayOn;
+    api.set('clouds', true);
+    api.set('shadows', original.shadows);
+    api.set('mode', original.mode);
+  }
+
+  const base = rows[0]?.meanFrameMs || 0;
+  const result = {
+    schema: 'kfb.world-corridor.cost-split/0.1',
+    measuredAt: new Date().toISOString(),
+    device: rows[0]?.device || null,
+    canvas: rows[0]?.canvas || null,
+    rows,
+    deltasFromDefault: Object.fromEntries(rows.slice(1).map((row) => [
+      row.label,
+      {
+        meanFrameMs: row.meanFrameMs,
+        deltaMs: round(row.meanFrameMs - base),
+        deltaPct: base ? round((row.meanFrameMs - base) / base * 100, 1) : 0,
+        fps: row.fps,
+      },
+    ])),
+  };
+  window.__KFB_WC1_BASELINE__.costSplit = result;
+  window.dispatchEvent(new CustomEvent('kfb-wc1-cost-split-result', { detail: result }));
+  return result;
+}
+
 window.__KFB_WC1_BASELINE__ = {
   schema: 'kfb.world-corridor.performance-probe/0.1',
   measure: measureWorldCorridorBaseline,
+  measureCostSplit: measureWorldCorridorCostSplit,
   last: null,
+  costSplit: null,
 };
 
 
@@ -160,7 +245,7 @@ function mountBaselinePanel() {
       <span data-role="state" style="margin-left:auto;color:#a99f80">ready</span>
     </div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
-      <button data-role="measure" type="button">Measure 10s</button>
+      <button data-role="measure" type="button">Measure 10s</button>\n      <button data-role="costsplit" type="button">Measure cost split</button>
       <button data-role="copy" type="button" disabled>Copy JSON</button>
       <button data-role="download" type="button" disabled>Download JSON</button>
       <button data-role="hide" type="button">Hide</button>
@@ -173,6 +258,7 @@ function mountBaselinePanel() {
   const state = panel.querySelector('[data-role="state"]');
   const result = panel.querySelector('[data-role="result"]');
   const measure = panel.querySelector('[data-role="measure"]');
+  const costSplit = panel.querySelector('[data-role="costsplit"]');
   const copy = panel.querySelector('[data-role="copy"]');
   const download = panel.querySelector('[data-role="download"]');
 
@@ -191,6 +277,25 @@ function mountBaselinePanel() {
       result.textContent = String(err?.message || err);
     } finally {
       measure.disabled = false;
+    }
+  };
+
+  costSplit.onclick = async () => {
+    measure.disabled = true; costSplit.disabled = true; copy.disabled = true; download.disabled = true;
+    state.textContent = 'cost split…';
+    result.textContent = 'Five automatic passes: default · clay off · clouds off · shadows off · pixel ratio 1. Keep this tab visible.';
+    try {
+      const suite = await measureWorldCorridorCostSplit({ warmupMs: 900, sampleMs: 4000 });
+      const lines = suite.rows.map((r) => `${r.label}: ${r.fps} fps · ${r.meanFrameMs} ms · ${r.drawCalls} calls · ${Math.round(r.triangles/1000)}k tris`);
+      result.textContent = lines.join('\n');
+      state.textContent = 'cost split measured';
+      window.__KFB_WC1_BASELINE__.last = suite;
+      copy.disabled = false; download.disabled = false;
+    } catch (err) {
+      state.textContent = 'failed';
+      result.textContent = String(err?.message || err);
+    } finally {
+      measure.disabled = false; costSplit.disabled = false;
     }
   };
   copy.onclick = async () => {
