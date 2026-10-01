@@ -60,6 +60,11 @@ await page.waitForFunction(() => {
   return button instanceof HTMLButtonElement && !button.disabled
 }, null, { timeout: 10_000 })
 
+const canvas = page.locator('canvas').first()
+await canvas.hover()
+await page.mouse.wheel(0, 600)
+await page.waitForTimeout(300)
+
 await page.screenshot({
   path: resolve(outDir, '01-gothgirl-source-isolation.png'),
   fullPage: false
@@ -110,6 +115,19 @@ for (const animation of glb.json.animations || []) {
     }
   }
 }
+const normalizedAnimatedNodeNames = new Set(
+  [...animatedNodeNames].map(normalizeBoneName)
+)
+
+const expectedDrivenBones = [
+  'root', 'hips',
+  'upperlegl', 'lowerlegl', 'footl', 'toesl',
+  'upperlegr', 'lowerlegr', 'footr', 'toesr',
+  'spine', 'chest', 'head',
+  'upperarml', 'lowerarml', 'wristl', 'handl', 'handslotl',
+  'upperarmr', 'lowerarmr', 'wristr', 'handr', 'handslotr'
+]
+const missingDrivenBones = expectedDrivenBones.filter(name => !normalizedAnimatedNodeNames.has(name))
 
 const report = {
   donorHead: '79f3f61a9852ef70234a5a4a7c13ed87f7a71833',
@@ -131,7 +149,12 @@ const report = {
     channels: (glb.json.animations || []).reduce((n, a) => n + (a.channels?.length || 0), 0),
     skins: glb.json.skins?.length || 0,
     meshes: glb.json.meshes?.length || 0,
-    animatedNodeNames: [...animatedNodeNames].sort()
+    images: glb.json.images?.length || 0,
+    textures: glb.json.textures?.length || 0,
+    materials: glb.json.materials?.length || 0,
+    animatedNodeNames: [...animatedNodeNames].sort(),
+    normalizedAnimatedNodeNames: [...normalizedAnimatedNodeNames].sort(),
+    missingDrivenBones
   },
   errors: {
     pageErrors,
@@ -140,22 +163,29 @@ const report = {
   }
 }
 
+writeFileSync(resolve(outDir, 'browser-result.json'), JSON.stringify(report, null, 2) + '\n')
+console.log(JSON.stringify(report, null, 2))
+
 if (report.ui.canvasCount < 1) throw new Error('No Three.js canvas found')
 if (report.export.animations !== 1) throw new Error(`Expected one exported animation, got ${report.export.animations}`)
-if (report.export.channels < 20) throw new Error(`Expected >=20 animation channels, got ${report.export.channels}`)
+if (report.export.channels !== 24) throw new Error(`Expected 24 animation channels, got ${report.export.channels}`)
 if (report.export.skins < 1) throw new Error('Exported GLB has no skin')
-if (!animatedNodeNames.has('hips')) throw new Error('Exported animation does not drive hips')
-if (!animatedNodeNames.has('wrist.l') || !animatedNodeNames.has('wrist.r')) {
-  throw new Error('Exported animation does not drive both KayKit wrists')
+if (report.export.meshes !== 6) throw new Error(`Expected 6 GothGirl meshes, got ${report.export.meshes}`)
+if (report.export.images < 1 || report.export.textures < 1 || report.export.materials < 1) {
+  throw new Error('Exported GLB did not preserve embedded material/texture data')
+}
+if (missingDrivenBones.length > 0) {
+  throw new Error(`Exported animation misses KayKit driven bones: ${missingDrivenBones.join(', ')}`)
 }
 if (pageErrors.length > 0) throw new Error(`Page errors: ${pageErrors.join(' | ')}`)
 if (consoleErrors.length > 0) throw new Error(`Console errors: ${consoleErrors.join(' | ')}`)
 if (failedRequests.length > 0) throw new Error(`Failed local requests: ${JSON.stringify(failedRequests)}`)
 
-writeFileSync(resolve(outDir, 'browser-result.json'), JSON.stringify(report, null, 2) + '\n')
-console.log(JSON.stringify(report, null, 2))
-
 await browser.close()
+
+function normalizeBoneName (name) {
+  return String(name).toLowerCase().replace(/[^a-z0-9]/g, '')
+}
 
 function parseGlb (path) {
   const data = readFileSync(path)

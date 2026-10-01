@@ -82,6 +82,7 @@ jobs:
           KFB_REPO: ${{ github.workspace }}
           M2M_URL: http://127.0.0.1:4173/retarget/index.html
         run: |
+          set -o pipefail
           mkdir -p m2m-kfb-browser-evidence
           node skills/chat/workflows/M2M_KFB_RETARGET_P0_2026-10-01/qa/browser-retarget.mjs             | tee m2m-kfb-browser-evidence/browser-log.txt
 
