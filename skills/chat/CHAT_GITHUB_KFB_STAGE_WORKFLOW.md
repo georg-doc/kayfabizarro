@@ -124,6 +124,27 @@ Only move to KFB Stage when the candidate is a meaningful integrated milestone w
 
 Local preview does not replace the final public Stage gate when a slice requires `PUBLIC_VERIFIED`.
 
+## 4B. Representative local GPU performance gate
+
+When a browser/WebGL/3D decision depends on real frame-time or GPU cost, hosted CI, Claude preview software rendering and hidden/throttled iframes are **not** absolute product-performance authorities.
+
+Preferred KFB path:
+
+1. freeze/pin the exact candidate first and prove source parity;
+2. keep CI responsible for syntax, source parity and browser boot only;
+3. create a **single self-contained double-click HTML** for the representative local browser whenever practical;
+4. do not require Georg to use Terminal, a local server, an unsigned macOS app or Gatekeeper bypass when a plain HTML can perform the measurement;
+5. run in a visible Chrome/Chromium tab on representative hardware;
+6. expose one-click measurement and one-click **Download JSON / Copy JSON**;
+7. record at minimum: visible/hidden state, browser, GPU renderer, DPR, canvas size, renderer pixel ratio, fps, mean/p95/p99/max frame ms, draw calls, triangles, geometries, textures/programs and the named feature state;
+8. for diagnosis, prefer automatic **cost-split A/B passes** on the same source object and camera rather than separate proxy scenes;
+9. persist the returned JSON in the receiving owner Return/evidence before changing the candidate;
+10. use Cloudflare Stage only when public/cross-device access is itself required. It is not needed merely to measure local hardware.
+
+For macOS specifically: if an unsigned helper app triggers Gatekeeper, do not ask Georg to weaken security settings. Fall back to a normal HTML file opened in Chrome.
+
+The performance comparison must preserve source/camera/world state and change one bounded factor at a time. A large change in calls/triangles without a corresponding frame-time change is evidence against that factor being the dominant bottleneck; do not optimize it by assumption.
+
 ## 5. Keep Hub and main current
 
 Every new current brief, Stage candidate, human gate or Georg to-do updates:
