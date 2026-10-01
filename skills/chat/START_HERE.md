@@ -1342,3 +1342,21 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-10-01 · Resident Chat PoC · deterministic ChatterBox kernel
+
+Current bounded candidate:
+- workflow: **RESIDENT-CHAT-POC-01**;
+- branch: `chatgpt-web/resident-chat-poc-01-2026-10-01`;
+- tested semantic-kernel head: `83dc10a567835aa0e509b11b85cbd882389c579d`;
+- evidence report commit: `8c43e23ac1b9cd2d36a1176e6836837db390cff0`;
+- result: Node `29/29 PASS` = 25 kernel checks + 4 authoring regressions;
+- one shared KFB Semantic Triplet pool; Residents contribute signature weights, knowledge/provenance constraints and baseline Attitude/current Affect — not private phrase databases;
+- **ChatterBox remains the speech/content/presentation route. Do not create a second dialogue/timing engine.** Host/mob behavior owns when; ChatterBox content owns what; bubble owners own visible presentation; Resident Atlas owns character/set/rig truth.
+- no live LLM, TTS, Resident 3D mount or Stage/public result is claimed.
+
+Durable handoff lives under:
+`skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/`
+
+Exactly one next gate: **RESIDENT-CHAT-PRESENTATION-01** — mount deterministic shared-pool output into the existing NPC-CARD-SPEC-01 presentation seam without replacing its actors, mouths, gaze, bubbles, renderer or camera. Re-fetch the current candidate branch head before work.
