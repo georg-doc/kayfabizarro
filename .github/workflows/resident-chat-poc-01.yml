@@ -1,0 +1,27 @@
+name: resident-chat-poc-01
+
+on:
+  pull_request:
+    paths:
+      - 'skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/**'
+      - '.github/workflows/resident-chat-poc-01.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-kernel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check adapter
+        run: node --check skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/src/resident-chatter-adapter.v0.1.mjs
+      - name: Syntax check tests
+        run: node --check skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/test/resident-chatter-adapter.test.mjs
+      - name: Run deterministic kernel tests
+        run: node --test skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/test/resident-chatter-adapter.test.mjs
