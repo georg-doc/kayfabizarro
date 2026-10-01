@@ -1344,19 +1344,28 @@ Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b0
 
 
 
-## 2026-10-01 · Resident Chat PoC · deterministic ChatterBox kernel
+## 2026-10-01 · Resident Chat PoC · deterministic ChatterBox kernel + presentation seam
 
-Current bounded candidate:
+Kernel baseline:
 - workflow: **RESIDENT-CHAT-POC-01**;
-- branch: `chatgpt-web/resident-chat-poc-01-2026-10-01`;
-- tested semantic-kernel head: `83dc10a567835aa0e509b11b85cbd882389c579d`;
-- evidence report commit: `8c43e23ac1b9cd2d36a1176e6836837db390cff0`;
-- result: Node `29/29 PASS` = 25 kernel checks + 4 authoring regressions;
-- one shared KFB Semantic Triplet pool; Residents contribute signature weights, knowledge/provenance constraints and baseline Attitude/current Affect — not private phrase databases;
+- Draft PR **#305**, branch `chatgpt-web/resident-chat-poc-01-2026-10-01`;
+- final kernel handoff head: `5b595a075b789f683ef0871f8c24d95e96416449`;
+- result: **29/29 PASS** = 25 kernel checks + 4 authoring regressions;
+- one shared KFB Semantic Triplet pool; Residents contribute signature weights, knowledge/provenance constraints and baseline Attitude/current Affect — not private phrase databases.
+
+Current stacked presentation candidate:
+- workflow: **RESIDENT-CHAT-PRESENTATION-01**;
+- Draft PR **#306**, branch `chatgpt-web/resident-chat-presentation-01-2026-10-01`, stacked on PR #305;
+- exact NPC-CARD-SPEC-01 donor recipe blob `e9b2aea0abc1bcb151fbc8cf5a08f7a6ae36689b` remains unchanged;
+- shared-pool output now feeds the existing FrizzleBob + GothGirl + Doomsday Clock presentation seam through an optional `lineProvider`;
+- Repair Pass 1 classified the existing 26 s donor scene correctly as explicit ChatterBox performance mode; normal ambient limits were not weakened;
+- source/integration result: **14/14 PASS**, GitHub Actions run `36854642474`, job `110344123565`;
+- existing `scene / actor-a / actor-b / mouths` isolation lanes and actor/mouth/gaze/bubble/Card/render owners remain intact;
 - **ChatterBox remains the speech/content/presentation route. Do not create a second dialogue/timing engine.** Host/mob behavior owns when; ChatterBox content owns what; bubble owners own visible presentation; Resident Atlas owns character/set/rig truth.
-- no live LLM, TTS, Resident 3D mount or Stage/public result is claimed.
+- browser/3D verification on the stacked branch is still **OPEN**; no Stage, Live, LLM, TTS or human visual acceptance is claimed.
 
-Durable handoff lives under:
-`skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/`
+Durable handoffs:
+- kernel: `skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/RETURN.md`
+- presentation: `skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/RETURN.md`
 
-Exactly one next gate: **RESIDENT-CHAT-PRESENTATION-01** — mount deterministic shared-pool output into the existing NPC-CARD-SPEC-01 presentation seam without replacing its actors, mouths, gaze, bubbles, renderer or camera. Re-fetch the current candidate branch head before work.
+Exactly one next gate: **VISIBLE BROWSER FIXTURE VERIFICATION** — run the existing NPC-CARD-SPEC-01 host from PR #306 and visibly verify scene variants 0/1 plus actor-a, actor-b and mouths isolation with `semanticReport()` confirming the shared-pool provider. Only after that consider a public Stage/human review surface.
