@@ -1,7 +1,7 @@
 # RETURN · RESIDENT-CHAT-PRESENTATION-01
 
 Date: 2026-10-01  
-Status: **SOURCE INTEGRATION PASS · 14/14 · BROWSER VISUAL OPEN · DRAFT STACKED PR**
+Status: **SOURCE INTEGRATION PASS · 14/14 · HEADED BROWSER PASS · DRAFT STACKED PR**
 
 ## Repository / branch / PR
 
@@ -9,7 +9,7 @@ Status: **SOURCE INTEGRATION PASS · 14/14 · BROWSER VISUAL OPEN · DRAFT STACK
 - Branch: `chatgpt-web/resident-chat-presentation-01-2026-10-01`
 - Draft PR: **#306**
 - Stacked base: PR #305 / `chatgpt-web/resident-chat-poc-01-2026-10-01@5b595a075b789f683ef0871f8c24d95e96416449`
-- Handoff metadata head immediately before this Return write: `97ee0d8785fc90301c752107ddaff259ed853ac9`
+- Browser-tested implementation head: `7204b91eb340c615d7e0db45560f6d2c8d0b6d7a`
 - Stage: **NOT DEPLOYED**
 - Live: **NOT PROMOTED**
 - Human acceptance: **NOT REQUESTED**
@@ -204,38 +204,96 @@ The automated suite proves:
 - source-isolation modes are intact;
 - actor/face/Card owner boundaries are intact.
 
+## Headed browser proof
+
+Exact tested implementation head:
+
+`7204b91eb340c615d7e0db45560f6d2c8d0b6d7a`
+
+GitHub Actions:
+- workflow: `resident-chat-presentation-01`
+- run: **36858274598**
+- presentation-parity job: **110355897991 · SUCCESS**
+- browser-proof job: **110355898424 · SUCCESS**
+- Resource Registry run: **36858274601 · SUCCESS**
+
+Browser evidence artifact:
+- artifact id: **11160566742**
+- name: `resident-chat-presentation-browser-proof`
+- size: **1,601,902 bytes**
+- digest: `sha256:ce47e8b3e8b772dbed399006144dc0fa73a8c7a225e1906b4488cf2a73cade44`
+- contents: `browser-proof.json` + five PNG screenshots.
+
+Final browser report:
+- result: **PASS**
+- runtime/page errors: **0**
+- essential HTTP errors: **0**
+- request failures: **0**
+- semantic provider: **ACTIVE**
+- shared donor pool entries: **4**
+- EyeRig owners: **2**
+- Mouth owners: **2**
+- Mixers: **2**
+- Motion Library: **KFB_Motion_Library_Rig_Medium.glb · 33 clips**
+- Card: **The Doomsday Clock**
+- scene variant 0: visible bubble + GothGirl talking
+- scene variant 1: visible bubble + GothGirl talking
+- `actor-a`: A visible / B hidden / A talking
+- `actor-b`: A hidden / B visible / B talking
+- `mouths`: both visible / alternating talk state
+
+The five screenshots prove the actual donor objects in isolation as well as the two scene variants. This is automated browser evidence, not Georg acceptance.
+
+### Browser repair history
+
+Initial browser attempt:
+- failed in QA harness before scene validation because the harness constant `URL` shadowed the global URL constructor.
+- scene/runtime not implicated.
+
+Repair Pass 1:
+- harness-only rename to `HOST_URL`.
+- scene rendered fully and produced all five screenshots.
+- gate still failed because Chromium emitted two opaque generic 404 console lines.
+- artifact `11160370107` proved provider, Card, owners, variants, isolation lanes and talk states were already working.
+- donor report showed the documented KayKit-idle fallback because the historical local Motion-Library alias was intentionally absent from the Scene package.
+
+Repair Pass 2:
+- restored the historical Motion-Library alias **in CI only** from the current canonical KFB Motion Library;
+- changed QA to validate exact HTTP response URL/status instead of treating Chromium's opaque generic resource-console line as proof of an essential failure;
+- did not modify donor recipe, actor, mouth, gaze, bubble, Card, camera, renderer or beat timing;
+- final run **PASS**.
+
 ## What remains unproven
 
-**BROWSER / VISUAL OPEN**
+**OPEN / DEFERRED**
 
-- provider import in a real visible browser;
-- actual mouth movement from provider-selected lines;
-- actual gaze and bubble timing in both variants;
-- visible `actor-a`, `actor-b`, `mouths` isolation on this stacked branch;
-- page/runtime errors;
-- Stage/public deployment;
-- human visual acceptance.
+- human visual acceptance of the older NPC-CARD-SPEC-01 mouth/face look;
+- four-Resident ensemble loading;
+- player interaction in the four-Resident ensemble;
+- live LLM generation;
+- TTS/audio;
+- persistent runtime Lean Memory integration;
+- public Stage / Live promotion.
 
-No visual PASS is claimed.
+The donor's older mouth/face TUNE list remains visible history. It is not a blocker for the next semantic/ensemble proof and is not silently marked accepted.
+
+No Stage was manufactured for this technical browser gate.
 
 ## Exactly one next gate
 
-**VISIBLE BROWSER FIXTURE VERIFICATION**
+**RESIDENT-CHAT-ENSEMBLE-01**
 
-Run the existing NPC-CARD-SPEC-01 host from the stacked branch in a real visible browser.
+Build the first four-Resident deterministic ensemble with:
 
-Require:
+1. exact current source-object isolation for **Lorekeeper, Goth Girl, Clown and Witch** before integration;
+2. the four real source-backed Residents loaded in one scene;
+3. the tested shared KFB Semantic Triplet Pool / ResidentProfile weighting;
+4. baseline Attitude + transient Affect;
+5. one active speaker normally, two soft maximum for reply/interjection;
+6. one bounded NPC↔NPC micro-conversation and one player-targeted interaction seam;
+7. existing mouth/gaze/bubble/animation owners only where source-supported;
+8. no live LLM yet.
 
-1. scene variant 0 visible;
-2. scene variant 1 visible;
-3. actor-a isolation visible;
-4. actor-b isolation visible;
-5. mouths isolation visible;
-6. `semanticReport()` confirms shared-pool provider active;
-7. mouth + gaze + bubble behavior visibly follows selected lines;
-8. no page/runtime error.
-
-Only after that should this become a public KFB Stage/human review surface.
-
-No live LLM yet.  
+Do not create a second ChatterBox, memory, animation, camera, movement or reward owner.  
+No public Stage until the four-Resident result is a meaningful human-review milestone.  
 No auto-merge.
