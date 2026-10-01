@@ -125,3 +125,186 @@ If that final repair fails on the same gate, STOP, preserve the candidate and wr
 ## Exactly one next action
 
 **SOURCE-ISOLATION REPAIR PASS 2:** quarantine non-transported Atlas promo GIF requests in QA only, then rerun 4/4 Lorekeeper / Goth Girl / Clown / Witch source isolation.
+
+
+---
+
+# FINAL FAILURE RECOVERY · source-isolation gate stopped
+
+## Stop condition reached
+
+The final allowed repair pass for the same source-isolation gate also failed.
+
+Per KFB production protocol:
+- **STOP**
+- preserve the candidate
+- no third repair
+- no four-Resident integration
+- no Stage
+- no merge
+
+Final repair head under test:
+
+`896976e29c8b1b04242532ec07151c8bf6796530`
+
+GitHub Actions:
+- workflow: `resident-chat-ensemble-01`
+- run: **36871119073**
+- job: **110398834167 · source-isolation**
+- run number: **6**
+- result: **FAILURE**
+
+Final evidence artifact:
+- id: **11167250587**
+- name: `resident-chat-ensemble-source-isolation`
+- size: **425255 bytes**
+- digest: `sha256:a1709cad904512c6e93a7c99ecc594dbf60e5844fb0432da4d924054121cc3b9`
+- files:
+  - `source-isolation.json`
+  - `source-lorekeeper.png`
+  - `source-goth-girl.png`
+
+## Final proven source-object state
+
+### Lorekeeper · PASS
+
+Fully isolated and screenshot captured.
+
+- exactly one visible root: `vignette:lorekeeper`
+- actor visible: PASS
+- Rig_Medium
+- Idle_A
+- nodes: **3**
+  - tome
+  - lorekeeper
+  - staff
+- exact source fragments present:
+  - `Lorekeeper.glb`
+  - `Lorekeeper_Tome.gltf`
+  - `Lorekeeper_Staff.gltf`
+- Atlas QA: `ok`
+- page errors: 0
+- console errors: 0
+- essential HTTP errors after promo-GIF quarantine: 0
+- request failures: 0
+
+### Goth Girl · PASS
+
+Fully isolated and screenshot captured.
+
+- exactly one visible root: `vignette:goth-girl`
+- actor visible: PASS
+- Rig_Medium
+- Sit_Chair_Idle
+- nodes: **5**
+  - stool
+  - gothgirl
+  - speaker
+  - micstand
+  - microphone
+- expected actor/stool/speaker/mic-stand sources present
+- page errors: 0
+- console errors: 0
+- essential HTTP errors: 0
+- request failures: 0
+
+### Clown · SOURCE OBJECT PASS / gate blocked after proof
+
+The actual Clown source object loaded successfully before the gate failed on a reference-art image.
+
+Proven:
+- selected recipe: `clown`
+- exactly one visible root: `vignette:clown`
+- actor present: PASS
+- actor visible: PASS
+- Rig_Medium
+- Idle_B
+- nodes: **21**
+- Atlas QA class: `ok`
+- Atlas QA text: `21 Objekte geladen · alle Pfade auflösbar`
+- actor/source fragments include:
+  - `Clown.glb`
+  - `circus_podium.gltf`
+  - `clown_hammer.gltf`
+  - `juggling_pin_blue.gltf`
+  - plus the full existing circus/balloon/prop set
+
+Blocking HTTP line after the 3D source proof:
+
+`media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/artwork.png → HTTP 404`
+
+Current GitHub read proves this file **does exist on main**:
+
+- path: `media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/artwork.png`
+- blob: `c7535f9b283752b89369f6d0daa0e2b2a63f741b`
+
+The current Resident Atlas cast marks it explicitly as:
+
+`reference ... label: KayKit Clown · Promo-Artwork`
+
+Historical Atlas Return also classifies `media/.../Clown/artwork.png` under **Referenzbilder**.
+
+### Why it 404s in CI
+
+The current ensemble workflow sparse-checkout contains only:
+
+- `skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01_2026-10-01`
+- the transported S15 session-cut directory
+
+It does **not** checkout the external `media/3D_Assets/.../Clown/artwork.png` path.
+
+Therefore this is a **CI transport / reference-art dependency mismatch**, not a missing Clown actor/set/rig source.
+
+### Witch · NOT REACHED
+
+The test aborts after Clown's reference-art assertion, so Witch has no final-pass screenshot/proof yet.
+
+Do not infer Witch PASS.
+
+## Repair history for this gate
+
+1. Source-isolation attempt exposed non-transported Atlas reference assets.
+2. Recovery classified `ref/atlas/*.gif` as optional promo/reference material. The actual Lorekeeper source object was already proven.
+3. Final repair pass quarantined only those known non-transported promo GIF requests.
+4. Final pass progressed through Lorekeeper + Goth Girl and loaded Clown's complete 21-node source vignette.
+5. Gate then failed on Clown `artwork.png`, which is also reference art but exists outside the sparse checkout.
+6. **Repair budget exhausted. No third repair.**
+
+## Preserved candidate
+
+Repository:
+`georg-doc/kayfabizarro`
+
+Branch:
+`chatgpt-web/resident-chat-ensemble-01-2026-10-01`
+
+Draft PR:
+**#308**
+
+Preserved final implementation/QA head:
+`896976e29c8b1b04242532ec07151c8bf6796530`
+
+Recovery checkpoint commit containing this document follows that head.
+
+No four-Resident ensemble runtime was created.
+
+## Unresolved
+
+- Witch source isolation still unproven in the final run.
+- Atlas source-isolation CI currently conflates real source dependencies with optional reference/promo art.
+- Current sparse checkout is insufficient to reproduce every Atlas reference image used by the host.
+- Do not continue by adding one more ad-hoc exclusion for Clown artwork; that would be repair pass 3.
+- A receiving owner must make one coherent decision about **reference-asset transport vs reference-asset QA classification** before a new 4/4 attempt.
+
+## Exactly one next gate
+
+**RESIDENT-ATLAS-ISOLATION-TRANSPORT-01**
+
+At the Resident Atlas / source-isolation owner level, define one reproducible rule:
+
+- either transport the Atlas-declared reference assets required by the host into the browser proof checkout,
+- or formally separate optional reference/promo assets from actor/set/rig source-critical HTTP assertions.
+
+Then start a fresh bounded 4/4 source-isolation attempt from the preserved PR #308 candidate.
+
+Do not continue ensemble integration until that owner-level transport/classification gate is resolved.
