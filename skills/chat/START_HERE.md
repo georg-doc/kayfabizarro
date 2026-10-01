@@ -63,9 +63,9 @@ Protected owners:
 - Billboard uses the existing scheduler / LOD / baked-image provider seam;
 - SKY3 is an EnvironmentHost donor inside the host frame loop, not a second renderer.
 
-M1 Max baseline + cost split are measured. Hex instancing is not the dominant limiter. Mode B default is ~30 fps / 33 ms; Clay off is ~90 fps / 11 ms (−66.4% frame time), clouds off −12%, shadows off no useful gain, pixel ratio 1.0 −22.5%. `WC1-CLAY-PERF-01` now targets the K2/v10 Clay fragment path under the locked K1/H0 Golden contract before Track Core integration.
+M1 Max baseline + cost split are measured. Hex instancing is not the dominant limiter. The heavy procedural Clay path is the main cost, but **Global Clay Lite · Clay002 512** has already measured at 92.1 fps / 10.85 ms versus Clay-off 89.6 fps / 11.16 ms in the healthy local run. The production question is therefore no longer "make v10 win at all costs"; it is "which lightweight material still looks most KFB".
 
-Do not route this work back through WSA planning. WC1 source rehome is **10/10 byte-identical PASS**. GitHub/SwiftShader absolute FPS was stopped after two attempts and is not a product-performance authority. The current next gate is **WC1-CLAY-PERF-01**: profile and optimize the active K1-parity K2/v10 Clay fragment path on the exact preserved island scene while preserving the locked K1/H0 Golden appearance. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
+Do not route this work back through WSA planning. WC1 source rehome is **10/10 byte-identical PASS**. GitHub/SwiftShader absolute FPS is not a product-performance authority. Current plain-language next action: run the corrected **Clay002 vs Derek RGB** local comparison. Each lightweight look now has its own dedicated shader; the first combined Derek run is explicitly invalid because the comparator shader itself collapsed even Clay-off performance. Track, vehicle, billboards, sky and streaming remain held until the world-material direction is selected.
 
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
 
