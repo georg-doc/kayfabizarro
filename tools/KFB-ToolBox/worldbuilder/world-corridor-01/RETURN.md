@@ -180,6 +180,40 @@ Current order:
 3. compare SOURCE → K2_PROC_OPT → PR #309 K2_STAGE_BAKED_LITE as mechanism/reference;
 4. only if baked remains useful, generate the final baked derivative from the exact aligned shader/settings.
 
+## Clay shader component test ready
+
+Plain-language purpose:
+**measure which parts of the Clay shader are actually expensive before changing the look.**
+
+The diagnostic derivative keeps the exact island world and adds only feature switches to a copy of the v10 material. The original baseline source remains untouched.
+
+Automatic local passes:
+- current Clay;
+- base relief off;
+- dents / gouges / cracks off;
+- fingerprints off;
+- facets / creases off;
+- mottle / colour noise off;
+- base relief only;
+- Clay fully off;
+- Clay on/off at renderer pixel ratio 1.0;
+- Clay on/off at renderer pixel ratio 0.5.
+
+This directly addresses the Blender return's open question about how much Clay cost scales with pixel count.
+
+Georg-facing artifact:
+`KFB_Clay_Bausteine_Test_Doppelklick.html`
+SHA-256 `384ddabe1977b4b959f4e6c78508eb7a3142e2c75226e2e7d8f94aaf82d2c754`.
+
+Use: open in Chrome → click **Clay-Bausteine messen** → Download JSON → return JSON to Web chat.
+
+No Terminal / server / app / Cloudflare.
+
+GitHub diagnostic sources:
+`clay-perf/clay-material.v10-partsdiag.js`
+`clay-perf/hex-archipel.r2c-partsdiag.js`
+`clay-perf/README.md`
+
 ## No further integration yet
 
 Not started:
