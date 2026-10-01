@@ -197,12 +197,143 @@ export async function measureWorldCorridorCostSplit({
   return result;
 }
 
+
+export async function measureClayParts({
+  warmupMs = 700,
+  sampleMs = 3000,
+} = {}) {
+  const api = await waitForR2C();
+  const U = api.U || {};
+  const required = ['uClayPerfRelief','uClayPerfMarks','uClayPerfPrint','uClayPerfFacet','uClayPerfMottle'];
+  const missing = required.filter((k) => !U[k]);
+  if (missing.length) throw new Error('Clay-Bausteine-Test braucht die Diagnose-Version des Shaders: ' + missing.join(', '));
+  if (document.visibilityState !== 'visible') throw new Error('Bitte den Chrome-Tab während der Messung sichtbar lassen.');
+
+  const renderer = api.renderer;
+  const canvas = renderer.domElement;
+  const original = {
+    mode: api.info?.mode || 'B',
+    clayOn: Number(U.uClayOn?.value ?? 1),
+    pixelRatio: Number(renderer.getPixelRatio?.() || 1),
+    flags: Object.fromEntries(required.map((k) => [k, Number(U[k].value ?? 1)])),
+  };
+  const rows = [];
+  const resizeAt = (ratio) => {
+    renderer.setPixelRatio(ratio);
+    renderer.setSize(canvas.clientWidth || 1, canvas.clientHeight || 1, false);
+  };
+  const flags = (state = {}) => {
+    for (const k of required) U[k].value = state[k] ?? 1;
+  };
+  const measure = async (label, extra = {}) => {
+    const row = await measureWorldCorridorBaseline({ warmupMs, sampleMs, label });
+    row.clayParts = Object.fromEntries(required.map((k) => [k, Number(U[k].value)]));
+    row.testPixelRatio = Number(renderer.getPixelRatio?.() || 0);
+    Object.assign(row, extra);
+    rows.push(row);
+    return row;
+  };
+
+  try {
+    api.set('mode', 'B');
+    if (U.uClayOn) U.uClayOn.value = 1;
+    resizeAt(original.pixelRatio);
+    flags();
+
+    await measure('CLAY_DEFAULT');
+
+    flags({uClayPerfRelief:0});
+    await measure('BASE_RELIEF_OFF');
+
+    flags({uClayPerfMarks:0});
+    await measure('DENTS_GOUGES_CRACKS_OFF');
+
+    flags({uClayPerfPrint:0});
+    await measure('FINGERPRINTS_OFF');
+
+    flags({uClayPerfFacet:0});
+    await measure('FACETS_CREASES_OFF');
+
+    flags({uClayPerfMottle:0});
+    await measure('MOTTLE_OFF');
+
+    flags({uClayPerfMarks:0,uClayPerfPrint:0,uClayPerfFacet:0,uClayPerfMottle:0});
+    await measure('BASE_RELIEF_ONLY');
+
+    flags();
+    if (U.uClayOn) U.uClayOn.value = 0;
+    await measure('CLAY_OFF_PR_ORIGINAL');
+
+    if (U.uClayOn) U.uClayOn.value = 1;
+    resizeAt(1.0);
+    await measure('CLAY_ON_PR_1_0');
+    if (U.uClayOn) U.uClayOn.value = 0;
+    await measure('CLAY_OFF_PR_1_0');
+
+    if (U.uClayOn) U.uClayOn.value = 1;
+    resizeAt(0.5);
+    await measure('CLAY_ON_PR_0_5');
+    if (U.uClayOn) U.uClayOn.value = 0;
+    await measure('CLAY_OFF_PR_0_5');
+  } finally {
+    resizeAt(original.pixelRatio);
+    if (U.uClayOn) U.uClayOn.value = original.clayOn;
+    for (const [k,v] of Object.entries(original.flags)) U[k].value = v;
+    api.set('mode', original.mode);
+  }
+
+  const byLabel = Object.fromEntries(rows.map((r) => [r.label, r]));
+  const base = byLabel.CLAY_DEFAULT?.meanFrameMs || 0;
+  const clayOff = byLabel.CLAY_OFF_PR_ORIGINAL?.meanFrameMs || 0;
+  const result = {
+    schema: 'kfb.world-corridor.clay-parts/0.1',
+    measuredAt: new Date().toISOString(),
+    hardware: rows[0]?.renderer || null,
+    device: rows[0]?.device || null,
+    originalPixelRatio: original.pixelRatio,
+    rows,
+    savingsFromDefault: Object.fromEntries(rows.slice(1,8).map((r) => [
+      r.label,
+      {
+        fps: r.fps,
+        meanFrameMs: r.meanFrameMs,
+        savedMs: round(base - r.meanFrameMs),
+        savedPct: base ? round((base - r.meanFrameMs) / base * 100, 1) : 0,
+      }
+    ])),
+    clayCostAtOriginalPixelRatioMs: round(base - clayOff),
+    pixelRatioPairs: {
+      original: {
+        ratio: original.pixelRatio,
+        onMs: byLabel.CLAY_DEFAULT?.meanFrameMs || null,
+        offMs: byLabel.CLAY_OFF_PR_ORIGINAL?.meanFrameMs || null,
+      },
+      ratio1: {
+        ratio: 1,
+        onMs: byLabel.CLAY_ON_PR_1_0?.meanFrameMs || null,
+        offMs: byLabel.CLAY_OFF_PR_1_0?.meanFrameMs || null,
+      },
+      ratio05: {
+        ratio: 0.5,
+        onMs: byLabel.CLAY_ON_PR_0_5?.meanFrameMs || null,
+        offMs: byLabel.CLAY_OFF_PR_0_5?.meanFrameMs || null,
+      },
+    },
+  };
+  window.__KFB_WC1_BASELINE__.clayParts = result;
+  window.__KFB_WC1_BASELINE__.last = result;
+  window.dispatchEvent(new CustomEvent('kfb-wc1-clay-parts-result', { detail: result }));
+  return result;
+}
+
 window.__KFB_WC1_BASELINE__ = {
   schema: 'kfb.world-corridor.performance-probe/0.1',
   measure: measureWorldCorridorBaseline,
   measureCostSplit: measureWorldCorridorCostSplit,
+  measureClayParts,
   last: null,
   costSplit: null,
+  clayParts: null,
 };
 
 
@@ -245,7 +376,7 @@ function mountBaselinePanel() {
       <span data-role="state" style="margin-left:auto;color:#a99f80">ready</span>
     </div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
-      <button data-role="measure" type="button">Measure 10s</button>\n      <button data-role="costsplit" type="button">Measure cost split</button>
+      <button data-role="measure" type="button">Measure 10s</button>\n      <button data-role="costsplit" type="button">Measure cost split</button>\n      <button data-role="clayparts" type="button">Clay-Bausteine messen</button>
       <button data-role="copy" type="button" disabled>Copy JSON</button>
       <button data-role="download" type="button" disabled>Download JSON</button>
       <button data-role="hide" type="button">Hide</button>
@@ -259,6 +390,7 @@ function mountBaselinePanel() {
   const result = panel.querySelector('[data-role="result"]');
   const measure = panel.querySelector('[data-role="measure"]');
   const costSplit = panel.querySelector('[data-role="costsplit"]');
+  const clayParts = panel.querySelector('[data-role="clayparts"]');
   const copy = panel.querySelector('[data-role="copy"]');
   const download = panel.querySelector('[data-role="download"]');
 
@@ -296,6 +428,24 @@ function mountBaselinePanel() {
       result.textContent = String(err?.message || err);
     } finally {
       measure.disabled = false; costSplit.disabled = false;
+    }
+  };
+
+  clayParts.onclick = async () => {
+    measure.disabled = true; costSplit.disabled = true; clayParts.disabled = true; copy.disabled = true; download.disabled = true;
+    state.textContent = 'Clay-Bausteine…';
+    result.textContent = 'Automatische Messung: Grundrelief · Dellen/Kerben/Risse · Fingerabdrücke · Facetten/Falten · Farbunruhe · Auflösung. Bitte Tab sichtbar lassen.';
+    try {
+      const suite = await measureClayParts({ warmupMs: 700, sampleMs: 3000 });
+      const lines = suite.rows.map((r) => `${r.label}: ${r.fps} fps · ${r.meanFrameMs} ms`);
+      result.textContent = lines.join('\n');
+      state.textContent = 'Clay-Bausteine gemessen';
+      copy.disabled = false; download.disabled = false;
+    } catch (err) {
+      state.textContent = 'fehlgeschlagen';
+      result.textContent = String(err?.message || err);
+    } finally {
+      measure.disabled = false; costSplit.disabled = false; clayParts.disabled = false;
     }
   };
   copy.onclick = async () => {
