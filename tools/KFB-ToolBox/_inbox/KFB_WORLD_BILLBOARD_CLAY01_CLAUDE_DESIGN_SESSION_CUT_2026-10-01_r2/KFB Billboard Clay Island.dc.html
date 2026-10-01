@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<style>
+@font-face{font-family:KFBDisplay;src:url("fonts/CCClobberinTime-Krackle.otf")}
+@font-face{font-family:KFBHand;src:url("fonts/Baby_Eliot.ttf")}
+html,body{margin:0;height:100%;overflow:hidden;background:#1f1a14;color:#1f1a14;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:#3e6a83}a:hover{color:#c2412c}
+</style>
+</helmet>
+<div style="display:flex;flex-direction:column;height:100vh;width:100%">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:9px 14px;background:#f3ead3;border-bottom:4px solid #1f1a14">
+    <div style="display:flex;flex-direction:column;gap:1px;min-width:0">
+      <div style="font-size:11px;letter-spacing:.1em;color:#3a342a;font-weight:700">CD-ISLAND-BILLBOARD-CLAY-01 · DESIGN_DONOR_APPROVED_TUNE · Varianten PROPOSED</div>
+      <div style="font-size:19px;font-weight:800;line-height:1.1">Knet-Billboard auf der Insel</div>
+    </div>
+    <div style="flex:1 1 auto"></div>
+    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+      <sc-for list="{{ sceneBtns }}" as="b" hint-placeholder-count="2">
+        <button onClick="{{ b.run }}" style="font:inherit;font-size:13px;font-weight:700;padding:6px 10px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:{{ b.bg }};color:{{ b.fg }};box-shadow:2px 2px 0 rgba(31,26,20,.3)" style-active="transform:translateY(2px);box-shadow:none">{{ b.label }}</button>
+      </sc-for>
+      <span style="width:8px"></span>
+      <sc-for list="{{ styleBtns }}" as="b" hint-placeholder-count="3">
+        <button onClick="{{ b.run }}" style="font:inherit;font-size:13px;font-weight:700;padding:6px 10px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:{{ b.bg }};color:{{ b.fg }};box-shadow:2px 2px 0 rgba(31,26,20,.3)" style-active="transform:translateY(2px);box-shadow:none">{{ b.label }}</button>
+      </sc-for>
+      <button onClick="{{ cornerBtn.run }}" style="font:inherit;font-size:13px;font-weight:700;padding:6px 10px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:{{ cornerBtn.bg }};color:{{ cornerBtn.fg }};box-shadow:2px 2px 0 rgba(31,26,20,.3)" style-active="transform:translateY(2px);box-shadow:none">{{ cornerBtn.label }}</button>
+      <span style="width:8px"></span>
+      <sc-for list="{{ countBtns }}" as="b" hint-placeholder-count="4">
+        <button onClick="{{ b.run }}" style="font:inherit;font-size:13px;font-weight:700;padding:6px 10px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:{{ b.bg }};color:{{ b.fg }};box-shadow:2px 2px 0 rgba(31,26,20,.3)" style-active="transform:translateY(2px);box-shadow:none">{{ b.label }}</button>
+      </sc-for>
+      <span style="width:8px"></span>
+      <button onClick="{{ measure }}" style="font:inherit;font-size:13px;font-weight:700;padding:6px 11px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:#b8361f;color:#f3ead3;box-shadow:2px 2px 0 rgba(31,26,20,.3)" style-active="transform:translateY(2px);box-shadow:none">Messlauf 0 · 1 · 4 · 8 · 16</button>
+      <button onClick="{{ dlResults }}" style="font:inherit;font-size:13px;font-weight:600;padding:6px 10px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:#fffaf0;box-shadow:2px 2px 0 rgba(31,26,20,.3)" style-active="transform:translateY(2px);box-shadow:none">Messwerte .json</button>
+    </div>
+  </div>
+
+  <div style="display:flex;flex:1 1 auto;min-height:0">
+    <div style="position:relative;flex:1 1 auto;min-width:0;background:#b9cfdc">
+      <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+      <div style="position:absolute;left:12px;top:12px;display:flex;flex-direction:column;gap:6px;pointer-events:none;max-width:calc(100% - 24px)">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:#f3ead3;border:2px solid #1f1a14;padding:6px 10px;box-shadow:2px 3px 0 rgba(31,26,20,.35)">{{ liveLine }}</div>
+        <sc-if value="{{ isMeasuring }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:13px;font-weight:700;color:#f3ead3;background:#b8361f;border:2px solid #1f1a14;padding:6px 10px;align-self:flex-start">{{ measureLine }}</div>
+        </sc-if>
+      </div>
+      <div style="position:absolute;left:12px;right:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ viewBtns }}" as="b" hint-placeholder-count="7">
+          <button onClick="{{ b.run }}" style="font:inherit;font-size:13px;font-weight:700;padding:6px 10px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:{{ b.bg }};color:{{ b.fg }};box-shadow:2px 2px 0 rgba(31,26,20,.35)" style-active="transform:translateY(2px);box-shadow:none">{{ b.label }}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ booting }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(243,234,211,.88)">
+          <div style="font-size:17px;font-weight:600;padding:14px 18px;border:3px solid #1f1a14;background:#f3ead3;transform:rotate(-1deg)">{{ bootNote }}</div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="flex:0 0 470px;max-width:50vw;overflow:auto;background:#ece1c0;border-left:4px solid #1f1a14;box-sizing:border-box;padding:14px 14px 40px;display:flex;flex-direction:column;gap:14px">
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:10px 12px;box-shadow:3px 4px 0 rgba(31,26,20,.25);display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:14px;font-weight:800">Messwerte · Insel {{ seedLabel }}</div>
+        <div style="overflow:auto">
+          <table style="border-collapse:collapse;table-layout:fixed;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;width:100%">
+            <thead><tr style="background:#dfcd9e">
+              <th style="width:15%;text-align:left;padding:3px 3px;border:1px solid #1f1a14">Stufe</th><th style="padding:3px 3px;border:1px solid #1f1a14">FPS</th><th style="padding:3px 3px;border:1px solid #1f1a14">p95</th><th style="padding:3px 3px;border:1px solid #1f1a14">Draw</th><th style="padding:3px 3px;border:1px solid #1f1a14">△</th><th style="padding:3px 3px;border:1px solid #1f1a14">MB</th><th style="padding:3px 3px;border:1px solid #1f1a14">Lad.</th><th style="padding:3px 3px;border:1px solid #1f1a14">sicht.</th><th style="padding:3px 3px;border:1px solid #1f1a14">Upd/s</th>
+            </tr></thead>
+            <tbody>
+              <sc-for list="{{ rows }}" as="r" hint-placeholder-count="0">
+                <tr><td style="padding:3px 3px;border:1px solid #1f1a14;font-weight:700">{{ r.n }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.fps }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.p95 }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.calls }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.tris }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.tex }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.load }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.vis }}</td><td style="text-align:right;padding:3px 3px;border:1px solid #1f1a14">{{ r.upd }}</td></tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <div style="font-size:12px;line-height:1.45;color:#3a342a;white-space:pre-wrap">{{ tableNote }}</div>
+      </div>
+
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:10px 12px;box-shadow:3px 4px 0 rgba(31,26,20,.25);display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:14px;font-weight:800">Prüfprotokoll · erstes Billboard</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;line-height:1.55;white-space:pre-wrap">{{ checksText }}</div>
+      </div>
+
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:10px 12px;box-shadow:3px 4px 0 rgba(31,26,20,.25);display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:14px;font-weight:800">Inhalte · nur gebackene GitHub-Bilder</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;line-height:1.55;white-space:pre-wrap">{{ assetText }}</div>
+      </div>
+
+      <div style="background:#fffaf0;border:3px solid #1f1a14;padding:10px 12px;box-shadow:3px 4px 0 rgba(31,26,20,.25);display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:8px"><div style="font-size:14px;font-weight:800;flex:1 1 auto">billboard.embed-spec.v1.json</div>
+          <button onClick="{{ dlSpec }}" style="font:inherit;font-size:12px;font-weight:600;padding:4px 8px;cursor:pointer;border:2px solid #1f1a14;border-radius:0;background:#f3ead3" style-active="transform:translateY(2px)">laden</button></div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.45;white-space:pre;overflow:auto;max-height:340px;background:#f3ead3;border:2px solid #1f1a14;padding:8px">{{ specText }}</div>
+      </div>
+
+      <div style="font-size:12px;line-height:1.5;color:#3a342a;white-space:pre-wrap;padding:0 2px">{{ notes }}</div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1400,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  canvasRef = React.createRef();
+  state = { snap: null, booting: true, bootNote: 'Insel, Billboard und gebackene Bilder laden …' };
+  componentDidMount() { this.boot(); }
+  componentWillUnmount() { this.api && this.api.dispose(); }
+  async boot() {
+    try {
+      const mod = await import('./briefd/billboard-stage.js');
+      this.api = await mod.boot(this.canvasRef.current, {}, snap => this.setState({ snap, booting: false }));
+      window.__bb = this.api;
+    } catch (e) { console.error(e); this.setState({ bootNote: 'Fehler: ' + String(e.message).replace(/[^\x20-\x7e\u00a0-\u024f]/g, '').slice(0, 160) }); }
+  }
+  save(name, txt) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt], { type: 'application/json' })); a.download = name; a.click(); }
+  renderVals() {
+    const S = this.state, s = S.snap, api = this.api, T = (s && s.table) || {};
+    const btn = (label, on, run) => ({ label, run, bg: on ? '#1f1a14' : '#f3ead3', fg: on ? '#f3ead3' : '#1f1a14' });
+    const sceneBtns = [['island', 'Insel'], ['neutral', 'Prüfszene']].map(([k, l]) => btn(l, s && s.scene === k, () => api && api.setScene(k)));
+    const styleBtns = [['highway', 'Highway'], ['plain', 'Plain'], ['tv', 'Cartoon-TV']].map(([k, l]) => btn(l, s && s.style === k, () => api && api.setStyle(k)));
+    const cOn = !!(s && s.cornerOn), cornerBtn = { ...btn(cOn ? 'Innenecken rund' : 'Innenecken eckig', cOn, () => api && api.setCorner(!cOn)) };
+    const countBtns = [1, 4, 8, 16].map(n => btn(n + '×', s && s.count === n, () => api && api.setCount(n)));
+    const viewBtns = [['nah', 'Nah'], ['mittel', 'Mittel'], ['fern', 'Fern'], ['rueck', 'Rückseite'], ['boden', 'Bodenanschluss'], ['ausricht', 'Ausrichtung 1:1'], ['schraeg', 'Schräg'], ['gesamt', 'Gesamt']].map(([k, l]) => btn(l, s && s.view === k, () => api && api.setView(k)));
+    const f = (v, d = 1) => v == null ? '–' : Number(v).toFixed(d).replace('.', ',');
+    const K = n => n == null ? '–' : n >= 1e6 ? (n / 1e6).toFixed(2).replace('.', ',') + ' Mio' : n >= 1000 ? Math.round(n / 1000) + 'k' : String(n);
+    const rows = ['orbit', 'drive'].flatMap(p => [0, 1, 4, 8, 16].filter(n => T[p + n]).map(n => T[p + n])).map(r => { const n = r.n; return { n: (n === 0 ? 'Basis' : n + '×') + (r.path === 'drive' ? ' F' : ' Ü'), fps: r.timingValid ? f(r.medFps, 0) : '–', p95: r.timingValid ? f(r.p95Ms) : '–', calls: r.calls, tris: K(r.tris), tex: f(r.texMB), load: r.timingValid ? r.buildMs : '–', vis: f(r.visMean) + '/' + n, upd: f(r.updPerS) }; });
+    const L = s && s.live, c = s && s.checks, m = s && s.measuring;
+    const liveLine = !s ? 'lädt …' : `${s.scene === 'island' ? 'Insel' : 'Prüfszene'} · ${s.count}× · ${L.fps != null ? L.fps + ' fps' : 'fps –'} · ${L.calls} Draw · ${K(L.tris)} △ · sichtbar ${L.visible} (nah ${L.lods.near} · mittel ${L.lods.mid} · fern ${L.lods.far}) · ${L.updPerS} Updates/s`;
+    const base = T.orbit0, d16 = T.orbit16;
+    const tableNote = !rows.length ? 'Noch nicht gemessen. „Messlauf“ fährt Basis, 1, 4, 8, 16 nacheinander (je 180 Bilder, GPU-synchron; Ü = Kreisfahrt um die Insel, F = Fahrt auf der Straße). Der Tab muss sichtbar sein.' :
+      `Gerät: ${s.gpu} · Pixeldichte ${s.dpr} · Bildfläche ${s.canvas}.\nFPS = 1000 / Median der Bildzeit, GPU-synchron gemessen (kein vsync-Deckel). Draw/△ enthalten den Schattendurchgang. MB = Textur (Bildflächen-Canvas 1024×512 inkl. Mipmaps), geteilte Quellbilder liegen nicht auf der GPU. Lad. = Aufbau + erster Malvorgang + erstes Bild. sicht. = sichtbare Billboards, Mittel über die Fahrt.` + (base && d16 && base.timingValid && d16.timingValid ? `\nBasis → 16×: ${d16.calls - base.calls >= 0 ? '+' : ''}${d16.calls - base.calls} Draw, ${f(d16.medMs - base.medMs, 2)} ms Bildzeit.` : '\nZeitwerte „–“: Tab war beim Messen verborgen, der Browser drosselt dann CPU/GPU. Draw, Dreiecke, Textur, sichtbar und Updates/s gelten trotzdem. Zeiten: Tab sichtbar lassen und „Messlauf“ drücken.');
+    const checksText = !c ? '–' : [
+      `Körperstil: ${c.styleLabel} · Innenecken ${c.corner > 0 ? 'r ' + f(c.corner, 2) + ' m · Bildverlust ' + f(c.cornerLossPct, 2) + ' %' : 'eckig'} · Fläche: ${c.faceGeo}`,
+      `Bildfläche Welt: ${f(c.faceWorld[0], 3)} × ${f(c.faceWorld[1], 3)} m → Verhältnis ${f(c.faceAspect, 4)} (Soll 2,0000)`,
+      `Canvas ${c.canvasPx[0]}×${c.canvasPx[1]} px · ${f(c.texelPerM)} Texel/m`,
+      `Bildmaterial: ${c.faceMaterial}`, `Seitigkeit: ${c.faceSide}`,
+      `Vorderseite zeigt zur Straße/Mitte: ${f(c.frontDotInward, 3)} (> 0 = ja)`,
+      `Körper: ${c.bodyTris} △ · ${c.bodies} Instanz(en) teilen Geometrie: ${c.bodiesShareGeometry ? 'ja' : 'nein'} · Material: ${c.bodiesShareMaterial ? 'ja' : 'nein'}`,
+      `Boden: Fuß-Spreizung ${f(c.ground.spread, 2)} m · max. Fußabweichung ${f(c.ground.footDeltaMax, 2)} m (Sockel deckt ≤ 0,9 m) · Gelände ragt ins Bildfeld: ${f(Math.abs(c.ground.frontClearance), 2)} m`,
+      `Auto-Versatz: t ${c.nudge.dt >= 0 ? '+' : ''}${c.nudge.dt} · ${f(c.nudge.dOff, 1)} m nach außen`,
+      `Kollision: ${c.colliders} Zylinder (Daten, keine Physik) · Palette ${c.palette}`,
+      `Pose: x ${f(c.pose.x, 1)} · y ${f(c.pose.y, 1)} · z ${f(c.pose.z, 1)} · Gier ${f(c.pose.yawDeg, 0)}°`].join('\n');
+    const assetText = !s ? '–' : `Pin ${s.spec.contentAsset.pin.slice(0, 12)}\n` + s.pool.ok.map(x => `✓ ${x.path.replace('media/', '')}  ${x.w}×${x.h}  [${x.origin}]`).join('\n') + (s.pool.skipped.length ? '\nAusgelassen:\n' + s.pool.skipped.map(x => '– ' + x.path + ' (' + x.why + ')').join('\n') : '') + '\n' + s.spec.contentAsset.omitted.map(x => '– ' + x.path.replace('media/', '') + ' (' + x.why + ')').join('\n') + `\nLadezeit Bilder: ${s.pool.ms} ms`;
+    return {
+      canvasRef: this.canvasRef, booting: S.booting, bootNote: S.bootNote, sceneBtns, styleBtns, cornerBtn, countBtns, viewBtns, rows, tableNote, checksText, assetText, liveLine,
+      isMeasuring: !!m, measureLine: m ? `Messung ${m.n === 0 ? 'Basis' : m.n + '×'} ${m.path === 'drive' ? 'Fahrt' : 'Überblick'} · ${m.phase} …` : '',
+      seedLabel: s ? `${s.seed} · ${s.biome}` : '–',
+      measure: () => api && api.measureAll(), dlResults: () => api && this.save('billboard-messung.json', JSON.stringify(api.results, null, 1)),
+      dlSpec: () => api && this.save('billboard.embed-spec.v1.json', JSON.stringify(api.spec, null, 2)),
+      specText: s ? JSON.stringify(s.spec, null, 2) : '',
+      notes: (s && s.style === 'plain') ? 'Plain (PROPOSED): flache Tafel mit Fasenrahmen, Rückplatte, zwei Kantpfosten mit einem Querriegel, flacher Fußkragen statt Knethügel. Keine Leuchten, kein Laufsteg, keine Leiter. Eine Geometrie, ein Material, Bildfläche ungelit.' :
+        (s && s.style === 'tv') ? 'Cartoon-TV flach (PROPOSED): gerundetes Gehäuse, helle Lünette um die Bildröhre, Knopfleiste mit zwei Drehknöpfen und Lautsprecherschlitzen, Hasenohr-Antenne, flacher Rückdeckel, zwei Standsäulen mit Kragen. Bildfläche 12 × 6 m, Innenradius 1,1 m.' :
+        'Körper: Rahmen mit Fase, Rückplatte, konische Pfosten, Rück-A-Rahmen mit X-Verband, Leiter und Podest, Laufsteg mit Geländer, Gesims mit Krone und drei Strahlern. Eine verschmolzene Geometrie, Farben als Vertexfarbe, ein Material für alle Instanzen.\nBildfläche: ungelit, nicht durch den Knet-Shader verformt. Inhalte wechseln hart (Stop-Motion) im Takt der Entfernungsstufe; außerhalb des Blickfelds und über 260 m ruht alles.'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

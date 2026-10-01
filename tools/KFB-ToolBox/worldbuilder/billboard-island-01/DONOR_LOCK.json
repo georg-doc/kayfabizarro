@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.billboard-body-donor-lock/1",
+  "source": "tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r2/briefd/billboard-clay.js",
+  "sourceSha256": "7d225a768a82b611b3bc303f88e44101437e1772f4b0a209701896254b58665d",
+  "outputSha256": "1b60dd634953cc8cd34ba06909e72527691b9bd49df0d48037797537c69f9b21",
+  "approval": "GEORG_TUNE_READY_2026-10-01",
+  "seam": "resolveAnchor: foot height sum / feet.length instead of / 4",
+  "excluded": [
+    "makeClayFamily",
+    "loadContent",
+    "paintFace",
+    "Billboard",
+    "BillboardScheduler",
+    "buildIsland"
+  ],
+  "owners": {
+    "surface": "B1",
+    "videoFrontRear": "B2a",
+    "mediaRecipe": "H13/H14",
+    "material": "canonical KFB prop/signage profile",
+    "terrain": "receiving island owner"
+  }
+}

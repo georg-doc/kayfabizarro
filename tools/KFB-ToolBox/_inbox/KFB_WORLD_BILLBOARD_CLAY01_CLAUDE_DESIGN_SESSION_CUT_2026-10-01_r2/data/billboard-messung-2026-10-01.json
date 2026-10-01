@@ -1,0 +1,36 @@
+{
+  "schema": "kfb.billboard-bench/v1",
+  "job": "CD-ISLAND-BILLBOARD-CLAY-01",
+  "status": "TESTED (Struktur) · NOT_TESTED (Zeiten im sichtbaren Tab)",
+  "at": "2026-09-30T22:42:31Z",
+  "sourceCommit": "6df3410473ae32b8f75d992e0d534e49a9dc3ca0",
+  "contentPin": "f3acaaeb98530dd9ffb7d200d61956891e738336",
+  "island": { "seed": "kfb-insel-1", "biome": "Moos-Insel" },
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max)",
+  "dpr": 2,
+  "canvas": "462x444",
+  "method": "Tab war beim Lauf verborgen: 60 statt 180 Bilder je Stufe, Bildzeiten nur indikativ (Browser drosselt). Draw Calls, Dreiecke, Textur, sichtbar und Updates/s sind unabhaengig davon gueltig. Sichtbarer Lauf: Button 'Messlauf' in KFB Billboard Clay Island.dc.html, danach 'Messwerte .json'.",
+  "paths": { "orbit": "Kreis um die Insel, r 82 m, Hoehe 34 m, Blick auf die Mitte", "drive": "Fahrt einmal um die Strasse, Augenhoehe +2,6 m, Blick 0,14 rad voraus, FOV 62" },
+  "columns": ["path", "n", "drawCalls", "triangles", "texMB", "visibleMean", "visibleMax", "updatesPerS", "indicativeMedMs", "indicativeP95Ms", "buildMs"],
+  "rows": [
+    ["orbit", 0, 5, 82148, 0, 0, 0, 0, 5.0, 17.5, 7],
+    ["orbit", 1, 8, 95734, 2.7, 1, 1, 6.4, 4.8, 12.4, 28],
+    ["orbit", 4, 17, 136492, 10.7, 4, 4, 16.7, 3.6, 13.5, 50],
+    ["orbit", 8, 29, 190836, 21.3, 8, 8, 27.4, 5.0, 14.2, 23],
+    ["orbit", 16, 53, 299524, 42.7, 16, 16, 60.0, 5.3, 21.5, 32],
+    ["drive", 0, 5, 82148, 0, 0, 0, 0, 4.5, 13.2, 24],
+    ["drive", 1, 6, 88940, 2.7, 0.4, 1, 3.6, 2.2, 12.4, 18],
+    ["drive", 4, 11, 116110, 10.7, 1.1, 2, 16.8, 6.9, 16.8, 30],
+    ["drive", 8, 17, 150072, 21.3, 2.1, 5, 29.9, 8.1, 17.7, 24],
+    ["drive", 16, 28, 217994, 42.7, 4.2, 9, 62.2, 6.1, 19.5, 35]
+  ],
+  "coldStartMs": { "spec": 196, "renderer": 208, "bakedImages4": 774, "island": 845, "firstBillboardIncludingShaderCompile": 899 },
+  "checks": {
+    "faceWorld_m": [12, 6], "aspect": 2, "canvasPx": [1024, 512], "texelPerM": 85.3,
+    "faceMaterial": "MeshBasicMaterial, ungelit, toneMapped=false, kein Clay-Shader",
+    "frontDotInward": 1, "bodyTrianglesPerBillboard": 6792, "sharedGeometry": true, "sharedMaterial": true,
+    "uniqueGeometriesWithBillboard": 7, "programsWithBillboards": 5, "programsBaseline": 4,
+    "hero": { "x": 36.26, "y": 0.35, "z": 14.36, "yawDeg": -111.6, "footSpread_m": 0.267, "footDeltaMax_m": 0.158, "terrainIntrudesFaceField_m": 0, "autoNudge": { "t": 0.03, "offsetM": 0 } }
+  },
+  "perBillboardCost": { "drawCalls": 3, "note": "Schattendurchgang Koerper + Hauptdurchgang Koerper + Bildflaeche", "triangles": "rund 13,6k (Koerper 2x 6792 + Bildflaeche 2)", "textureMB": 2.7 }
+}
