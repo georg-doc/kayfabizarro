@@ -399,6 +399,48 @@ No product-performance result is claimed until Georg returns the local JSON.
 Read:
 `clay-perf/GLOBAL_CLAY_LITE_512_TEST.md`.
 
+## Global Clay Lite 512 · representative result
+
+The local M1 Max / Chrome comparison is complete.
+
+Same scene / mode B:
+- procedural Clay: **36.1 fps · 27.73 ms**;
+- Global Clay Lite · **Clay002 512**: **92.1 fps · 10.85 ms**;
+- Global Clay Lite · clay_floor_001 512: **77.0 fps · 12.99 ms**;
+- Clay off: **89.6 fps · 11.16 ms**.
+
+Interpretation:
+- Global Clay Lite is performance-viable.
+- Clay002 512 is effectively at Clay-off mean-frame cost within this measurement sequence.
+- clay_floor_001 remains fast, but has worse mean/p95 and large p99 spikes in this run.
+- **Clay002 512 advances as performance candidate; visual acceptance remains open.**
+
+Evidence:
+`evidence/WC1_GLOBAL_CLAY_LITE_512_2026-10-01.json`.
+
+## Clay002 vs Derek · next local comparison ready
+
+The next fair one-texture comparison is ready:
+
+- current procedural Clay;
+- Clay002 512;
+- WorldDesign Lab Derek RGB reference tile 512;
+- Clay off.
+
+Derek comparator deliberately includes only the one-RGB-tile triplanar palette core. Ink, cel, morph and extra grain/bump are not included yet.
+
+Artifact:
+`KFB_Clay002_vs_Derek_Doppelklick.html`
+
+SHA-256:
+`347663621a2a75d93755813a95916af6e43e63d3a530a357ca52bb7d0748a175`
+
+Static ES-module syntax:
+**PASS**.
+
+Read:
+`clay-perf/DEREK_RGB_512_TEST.md`.
+
 ## No further integration yet
 
 Not started:
