@@ -1,5 +1,24 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-01 · WC1 cost split identifies Clay fragment bottleneck
+
+### MEASURED · APPLE M1 MAX
+Same exact World Core R2C mode-B scene, visible Chrome:
+- default: 30.3 fps / 32.96 ms;
+- Clay off: 90.2 fps / 11.09 ms (**−66.4% mean frame time**) with unchanged 179 calls / 414,758 triangles;
+- clouds off: 34.5 fps / 28.99 ms (**−12.0%**);
+- shadows off: 29.5 fps / 33.91 ms despite calls/triangles roughly halving;
+- pixel ratio 1.0: 39.1 fps / 25.54 ms (**−22.5%**).
+
+### CONCLUSION
+Hex instancing, draw-call count and shadow geometry are not the current dominant limiter. The active K1-parity K2/v10 Clay material/fragment path plus pixel footprint is the primary measured bottleneck; clouds are secondary.
+
+### CLAY BOUNDARY
+Do not remove or replace the accepted KFB Clay look. PR #301 / `work/clay-style-ssot-2026-10-01` remains visual authority: K1/H0 v8 is Golden; K2/v10 may be optimized only with locked Golden parity.
+
+### NEXT
+`WC1-CLAY-PERF-01` — bounded feature-cost decomposition and smallest Golden-preserving Clay shader/LOD optimization before Track Core integration.
+
 ## 2026-10-01 · WC1 baseline source rehome + CI stop
 
 ### IMPLEMENTATION
