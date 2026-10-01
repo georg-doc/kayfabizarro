@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Procedural Props P0B · Soft Form Source Isolation</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#d8d0bb;color:#2a251d;font:13px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+canvas{display:block}
+#label{position:fixed;left:16px;top:16px;z-index:2;background:#f3eddded;border:1px solid #817764;padding:10px 12px;border-radius:8px;max-width:470px}
+#label b{display:block;font-size:14px;margin-bottom:3px}
+#label code{font:11px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace}
+#legend{position:fixed;right:16px;top:16px;z-index:2;background:#f3eddded;border:1px solid #817764;padding:10px 12px;border-radius:8px;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="label"><b>KFB Procedural Props P0B · soft-form source isolation</b>
+Second donor proof after OP clarification: cozy / smooth stylized 3D, soft rounded forms, not low-poly. Generated geometry + deterministic seed + merged family geometry + InstancedMesh + cheap baked vertex shading.<br>
+<code>donor: zernonia/hivebound@be10166e44f3d89db922ebb90671c10b89cd3e62 · MIT</code></div>
+<div id="legend">left · SOFT TUFT<br>middle · PEBBLE CLUSTER<br>right · SOFT TREE<br><span id="stats">booting…</span></div>
+<script type="module">
+import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const DONOR = {
+  repo:'zernonia/hivebound',
+  head:'be10166e44f3d89db922ebb90671c10b89cd3e62',
+  license:'MIT',
+  visualBrief:'cozy, cute, relaxing; smooth stylized 3D; soft rounded forms; not low-poly',
+  patterns:[
+    'bent tapered grass cylinders',
+    'scaled sphere pebble clusters',
+    'lathe trunk with root flare',
+    'overlapping smooth blob crowns',
+    'merged geometry + InstancedMesh + per-instance tint'
+  ]
+};
+
+function mulberry32(a){return function(){let t=a+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
+const smoothstep=(a,b,x)=>{const t=THREE.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
+const underShade=(bottom,top,dark=.74)=>(_x,y)=>dark+(1-dark)*smoothstep(bottom,top,y);
+
+function paint(g,color,tint=1,shade=null){
+  if(g.getAttribute('uv')) g.deleteAttribute('uv');
+  const p=g.getAttribute('position'), c=new THREE.Color(color);
+  const cols=new Float32Array(p.count*3), mask=new Float32Array(p.count);
+  for(let i=0;i<p.count;i++){
+    const k=shade?shade(p.getX(i),p.getY(i),p.getZ(i)):1;
+    cols[i*3]=c.r*k; cols[i*3+1]=c.g*k; cols[i*3+2]=c.b*k; mask[i]=tint;
+  }
+  g.setAttribute('color',new THREE.BufferAttribute(cols,3));
+  g.setAttribute('tint',new THREE.BufferAttribute(mask,1));
+  return g;
+}
+function merge(parts){
+  const indexed=parts.every(p=>p.index);
+  const list=indexed?parts:parts.map(p=>p.index?p.toNonIndexed():p);
+  const g=mergeGeometries(list,false);
+  for(const p of new Set([...parts,...list])) if(p!==g) p.dispose();
+  return g;
+}
+function paintedMaterial(){
+  const m=new THREE.MeshStandardMaterial({color:'#ffffff',roughness:.82,metalness:0,vertexColors:true});
+  m.onBeforeCompile=(shader)=>{
+    shader.vertexShader=shader.vertexShader
+      .replace('#include <color_pars_vertex>','#include <color_pars_vertex>\nattribute float tint;')
+      .replace('vColor.rgb *= instanceColor.rgb;','vColor.rgb *= mix(vec3(1.0), instanceColor.rgb, tint);');
+  };
+  m.customProgramCacheKey=()=> 'kfb-proc-soft-tint-v1';
+  return m;
+}
+function lathe(pts,segments=12){return new THREE.LatheGeometry(pts.map(([r,y])=>new THREE.Vector2(r,y)),segments);}
+function trunkGeometry(height=.9,base=.12,top=.075,roots=4,segments=12){
+  const g=lathe([[base*1.5,0],[base*1.08,height*.07],[base*.86,height*.22],[(base*.86+top)/2,height*.6],[top,height]],segments);
+  const p=g.getAttribute('position');
+  for(let i=0;i<p.count;i++){
+    const x=p.getX(i),z=p.getZ(i),flare=Math.max(0,1-p.getY(i)/(height*.3));
+    const lobe=1+.28*flare*Math.max(0,Math.cos(roots*Math.atan2(x,z)))**2;
+    p.setXYZ(i,x*lobe,p.getY(i),z*lobe);
+  }
+  g.computeVertexNormals();
+  return g;
+}
+function blob(x,y,z,r,color,tint=1,squash=1,ws=18,hs=12,dark=.74){
+  const g=new THREE.SphereGeometry(r,ws,hs);
+  g.scale(1,squash,1);
+  paint(g,color,tint,underShade(-r*squash,r*squash*.55,dark));
+  g.translate(x,y,z);
+  return g;
+}
+function softTuftGeometry(){
+  const parts=[];
+  const blades=[
+    [0.3,.01,.62,.12,1.1],[1.4,.05,.48,.45,1],[2.5,.05,.55,.35,1.05],
+    [3.6,.06,.38,.55,.9],[4.6,.05,.46,.4,1],[5.5,.06,.34,.6,.85]
+  ];
+  for(const [a,d,h,lean,w] of blades){
+    const g=new THREE.CylinderGeometry(.014*w,.052*w,h,6,4,true);
+    g.scale(.48,1,1);
+    g.translate(0,h/2,0);
+    const p=g.getAttribute('position');
+    for(let i=0;i<p.count;i++){
+      const t=p.getY(i)/h;
+      p.setX(i,p.getX(i)+lean*h*t*t);
+    }
+    g.computeVertexNormals();
+    paint(g,'#ffffff',1,underShade(0,h,.7));
+    g.rotateY(-a);
+    g.translate(Math.cos(a)*d,0,Math.sin(a)*d);
+    parts.push(g);
+  }
+  return merge(parts);
+}
+function pebbleClusterGeometry(){
+  const big=new THREE.SphereGeometry(.43,16,10);
+  big.scale(1,.58,.82);
+  paint(big,'#ffffff',1,underShade(-.25,.25,.78));
+  big.translate(-.07,.25,0);
+  const small=new THREE.SphereGeometry(.24,14,9);
+  small.scale(1,.72,.88);
+  paint(small,'#eee7de',1,underShade(-.14,.18,.8));
+  small.translate(.37,.14,.16);
+  return merge([big,small]);
+}
+function softTreeGeometry(){
+  const trunk=trunkGeometry(1.18,.14,.085,5,14);
+  paint(trunk,'#8d6a4c',0,underShade(0,.8,.76));
+  return merge([
+    trunk,
+    blob(0,1.46,0,.58,'#ffffff',1,.92,20,13,.7),
+    blob(-.34,1.24,-.12,.38,'#dce7d1',1,1,18,12,.72),
+    blob(.18,1.82,.1,.36,'#eef2d7',1,1,18,12,.74),
+    blob(.34,1.32,.08,.32,'#e8edd7',1,.96,16,11,.73)
+  ]);
+}
+
+function makeFamily(scene,name,geometry,count,origin,palette,seed){
+  const mesh=new THREE.InstancedMesh(geometry,paintedMaterial(),count);
+  mesh.name=name; mesh.castShadow=true; mesh.receiveShadow=true;
+  const rng=mulberry32(seed),m=new THREE.Matrix4(),p=new THREE.Vector3(),q=new THREE.Quaternion(),s=new THREE.Vector3(),col=new THREE.Color();
+  const up=new THREE.Vector3(0,1,0);
+  for(let i=0;i<count;i++){
+    const gx=i%4,gz=Math.floor(i/4);
+    p.set(origin.x+(gx-1.5)*1.1+(rng()-.5)*.16,0,origin.z+(gz-1.5)*1.1+(rng()-.5)*.16);
+    q.setFromAxisAngle(up,rng()*Math.PI*2);
+    const k=.82+rng()*.38;
+    s.set(k,.9+rng()*.22,k);
+    m.compose(p,q,s); mesh.setMatrixAt(i,m);
+    col.set(palette[Math.floor(rng()*palette.length)]); mesh.setColorAt(i,col);
+  }
+  mesh.instanceMatrix.needsUpdate=true;
+  if(mesh.instanceColor) mesh.instanceColor.needsUpdate=true;
+  scene.add(mesh); return mesh;
+}
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#d8d0bb');
+scene.fog=new THREE.Fog('#d8d0bb',14,23);
+const camera=new THREE.PerspectiveCamera(38,innerWidth/innerHeight,.1,100);
+camera.position.set(8.7,6.2,11.3); camera.lookAt(0,1.05,-.15);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5)); renderer.setSize(innerWidth,innerHeight);
+renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputColorSpace=THREE.SRGBColorSpace; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.07;
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight('#fff7e3','#777463',2.25));
+const sun=new THREE.DirectionalLight('#ffe9c6',3.2); sun.position.set(5,9,6); sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024); sun.shadow.camera.left=-11; sun.shadow.camera.right=11; sun.shadow.camera.top=8; sun.shadow.camera.bottom=-8; scene.add(sun);
+
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(26,15),new THREE.MeshStandardMaterial({color:'#c7bca3',roughness:.98}));
+ground.rotation.x=-Math.PI/2; ground.position.y=-.02; ground.receiveShadow=true; scene.add(ground);
+const pedestalMat=new THREE.MeshStandardMaterial({color:'#e6dfce',roughness:.92});
+for(const x of [-5,0,5]){
+  const p=new THREE.Mesh(new THREE.CylinderGeometry(2.15,2.25,.12,24),pedestalMat);
+  p.position.set(x,.04,0); p.receiveShadow=true; scene.add(p);
+}
+
+const tuft=makeFamily(scene,'SOFT_TUFT',softTuftGeometry(),16,new THREE.Vector3(-5,0,0),
+  ['#7f9d5c','#91ad67','#a8b977','#6f8f52'],1101);
+const pebble=makeFamily(scene,'PEBBLE',pebbleClusterGeometry(),16,new THREE.Vector3(0,0,0),
+  ['#8f8779','#a79e8c','#b7ae9b','#7d756a'],1202);
+const tree=makeFamily(scene,'SOFT_TREE',softTreeGeometry(),16,new THREE.Vector3(5,0,0),
+  ['#76985f','#89a96b','#668a55','#9aae76'],1303);
+
+let frames=0; const started=performance.now();
+function render(){frames++; renderer.render(scene,camera); requestAnimationFrame(render);} render();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+setTimeout(()=>{
+  const elapsed=performance.now()-started,info=renderer.info.render;
+  const stats={families:3,instances:{tuft:tuft.count,pebble:pebble.count,tree:tree.count},totalInstances:48,calls:info.calls,triangles:info.triangles,fpsWarmup:frames*1000/elapsed,renderer:renderer.capabilities.isWebGL2?'WebGL2':'WebGL1'};
+  document.querySelector('#stats').textContent=`3 families · 48 inst. · ${stats.calls} calls · ${stats.triangles.toLocaleString()} tris`;
+  window.__KFB_PROC_P0B={ready:true,donor:DONOR,stats}; window.dispatchEvent(new Event('kfbProcP0BReady'));
+},900);
+</script>
+</body>
+</html>
