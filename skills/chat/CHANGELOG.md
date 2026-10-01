@@ -1,3 +1,15 @@
+## 2026-10-01 · Representative local GPU evidence workflow
+
+- Georg requested that the successful no-Terminal performance-measurement path be recoverable by other chats.
+- Added a binding local-hardware performance rule to `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md §4B` and `FRESH_CHAT_SLICE_PROTOCOL.md §4A`.
+- For browser/WebGL performance decisions, hosted CI / SwiftShader / hidden Claude preview FPS is not an absolute product-performance authority.
+- Preferred Georg-facing package is a **single self-contained double-click HTML** opened in visible Chrome on representative hardware.
+- The page should provide one-click Measure / automatic same-scene cost split plus Copy JSON / Download JSON and record GPU/browser/DPR/canvas/pixel ratio, fps, mean/p95/p99/max frame time, calls, triangles, geometries, textures/programs and active feature state.
+- CI remains source-parity / syntax / boot evidence unless it runs on representative hardware.
+- Do not require Terminal, a local server, an unsigned macOS app or Gatekeeper bypass when plain HTML can do the measurement.
+- Cloudflare Stage is not required solely for local hardware performance measurement.
+- World Corridor 01 is the first proven example: M1 Max baseline + automatic cost split identified Clay material/fragment work as the dominant bottleneck.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
