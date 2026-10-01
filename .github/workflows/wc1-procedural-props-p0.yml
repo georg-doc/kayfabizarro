@@ -6,13 +6,14 @@ on:
       - chatgpt-web/wc1-procedural-props-p0-2026-10-01
     paths:
       - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/**'
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/hex-archipel.r2c-partsdiag.js'
       - '.github/workflows/wc1-procedural-props-p0.yml'
   workflow_dispatch:
 
 jobs:
   source-isolation:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
 
@@ -24,6 +25,9 @@ jobs:
         run: |
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation-soft.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/integration-wc1-clay002.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/procedural-props-p0b.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/hex-archipel.r2c-partsdiag.js
 
       - name: Install Playwright
         run: |
@@ -37,12 +41,16 @@ jobs:
           sleep 2
           curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/source-isolation.html >/dev/null
           curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/source-isolation-soft.html >/dev/null
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/integration-wc1-clay002.html >/dev/null
 
       - name: Browser P0 source-isolation proof
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
 
       - name: Browser P0B soft-form proof
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation-soft.mjs
+
+      - name: Browser WC1 + Clay002 integration proof
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/integration-wc1-clay002.mjs
 
       - uses: actions/upload-artifact@v4
         if: always()
@@ -51,4 +59,5 @@ jobs:
           path: |
             procedural-props-p0-evidence/
             procedural-props-p0b-evidence/
+            procedural-props-wc1-evidence/
           if-no-files-found: error
