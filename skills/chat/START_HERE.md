@@ -1357,15 +1357,20 @@ Current stacked presentation candidate:
 - workflow: **RESIDENT-CHAT-PRESENTATION-01**;
 - Draft PR **#306**, branch `chatgpt-web/resident-chat-presentation-01-2026-10-01`, stacked on PR #305;
 - exact NPC-CARD-SPEC-01 donor recipe blob `e9b2aea0abc1bcb151fbc8cf5a08f7a6ae36689b` remains unchanged;
-- shared-pool output now feeds the existing FrizzleBob + GothGirl + Doomsday Clock presentation seam through an optional `lineProvider`;
-- Repair Pass 1 classified the existing 26 s donor scene correctly as explicit ChatterBox performance mode; normal ambient limits were not weakened;
-- source/integration result: **14/14 PASS**, GitHub Actions run `36854642474`, job `110344123565`;
-- existing `scene / actor-a / actor-b / mouths` isolation lanes and actor/mouth/gaze/bubble/Card/render owners remain intact;
+- shared-pool output feeds the existing FrizzleBob + GothGirl + Doomsday Clock presentation seam through an optional `lineProvider`;
+- source/integration parity remains **14/14 PASS**;
+- headed Chromium browser proof is **PASS** on implementation head `7204b91eb340c615d7e0db45560f6d2c8d0b6d7a`;
+- browser run/jobs: `36858274598 / 110355897991 / 110355898424` = SUCCESS;
+- evidence artifact **11160566742**, digest `sha256:ce47e8b3e8b772dbed399006144dc0fa73a8c7a225e1906b4488cf2a73cade44`;
+- browser report: **0 runtime errors · 0 HTTP errors · 0 request failures**;
+- existing `scene / actor-a / actor-b / mouths` isolation lanes visibly pass;
+- EyeRig ×2, Mouth ×2, Mixer ×2, Motion Library 33 clips and real **The Doomsday Clock** Card are proven on the browser path;
 - **ChatterBox remains the speech/content/presentation route. Do not create a second dialogue/timing engine.** Host/mob behavior owns when; ChatterBox content owns what; bubble owners own visible presentation; Resident Atlas owns character/set/rig truth.
-- browser/3D verification on the stacked branch is still **OPEN**; no Stage, Live, LLM, TTS or human visual acceptance is claimed.
+- older donor mouth/face visual TUNE remains open/deferred; automated browser PASS is not human acceptance.
+- Stage: **NOT DEPLOYED**; Live: **NOT PROMOTED**; live LLM/TTS/persistent memory: **NOT ADDED**.
 
 Durable handoffs:
 - kernel: `skills/chat/workflows/RESIDENT_CHAT_POC_01_2026-10-01/RETURN.md`
 - presentation: `skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/RETURN.md`
 
-Exactly one next gate: **VISIBLE BROWSER FIXTURE VERIFICATION** — run the existing NPC-CARD-SPEC-01 host from PR #306 and visibly verify scene variants 0/1 plus actor-a, actor-b and mouths isolation with `semanticReport()` confirming the shared-pool provider. Only after that consider a public Stage/human review surface.
+Exactly one next gate: **RESIDENT-CHAT-ENSEMBLE-01** — first show the exact current Lorekeeper, Goth Girl, Clown and Witch source objects in isolation; then load those four real Residents in one deterministic ChatterBox scene using the tested shared Triplet Pool, baseline Attitude/current Affect and one-normal/two-soft-max speaker budget. No live LLM yet and no Stage until the four-Resident result is a meaningful human-review milestone.
