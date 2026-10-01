@@ -214,6 +214,75 @@ GitHub diagnostic sources:
 `clay-perf/hex-archipel.r2c-partsdiag.js`
 `clay-perf/README.md`
 
+## Clay component measurement · representative M1 Max
+
+The one-click Clay component test returned valid local Chrome evidence.
+
+Same-sequence baseline:
+- current Clay: **24.0 fps · 41.67 ms**;
+- Clay fully off: **92.9 fps · 10.76 ms**.
+
+Largest isolated measured savings:
+- base relief off: **9.96 ms / 23.9%**;
+- facets + creases off: **8.78 ms / 21.1%**;
+- dents + gouges + cracks off: **6.19 ms / 14.9%**;
+- fingerprints off: **5.88 ms / 14.1%**;
+- mottle / colour noise off: **3.92 ms / 9.4%**.
+
+Base-relief-only scene:
+**51.3 fps · 19.51 ms**.
+
+Component savings are not additive; GPU branches and scheduling interact. The ranking is used to decide where to optimize first, not to sum a theoretical total.
+
+Pixel-ratio comparison:
+- ratio 1.5: Clay on 41.67 ms / off 10.76 ms → Clay cost ~30.91 ms;
+- ratio 1.0: Clay on 30.01 ms / off 10.76 ms → Clay cost ~19.25 ms;
+- ratio 0.5: Clay on 22.12 ms / off 11.06 ms → Clay cost ~11.06 ms.
+
+Interpretation:
+- Clay is strongly pixel-dependent;
+- but it does not scale like pure fill-rate;
+- expensive per-fragment structure remains significant even at low pixel ratio;
+- the first optimization should therefore skip/fade invisible relief/facet/mark work by distance/pixel footprint while preserving the near look.
+
+Absolute fps varied from earlier runs, so same-sequence relative deltas are the primary evidence.
+
+Evidence:
+`evidence/WC1_CLAY_PARTS_2026-10-01.json`.
+
+## Existing non-Clay / hybrid look options are now back in scope
+
+KFB WorldDesign Lab v1 was already built as a look-comparison donor and the older WorldBuilder brief explicitly intended its procedural cartoon surface for world ground.
+
+It was **not** part of the current active Clay GPU comparison. That omission is now recorded.
+
+Important existing donor:
+**Derek RGB triplanar**:
+- one painted RGB tile;
+- triplanar world-space projection;
+- RGB channels select three colours derived from each source material's colour;
+- no per-asset repainting or UV dependency for this layer;
+- the tuned Derek preset has no procedural Clay, grain, bump, macro-value modulation or stochastic breakup.
+
+Other existing options:
+- RGB TRIPLANAR;
+- COMBINED;
+- TERRAIN · COMBINED REF;
+- NORMALEN-LOOK;
+- RAUHEITS-LOOK;
+- Paper / Cardboard / Felt / Stone / Plaster / Ground / Wood material families.
+
+These are fallback/hybrid donors, not new runtime owners.
+
+Full routing note:
+`clay-perf/WORLDDESIGN_LAB_FALLBACK_HYBRID.md`.
+
+Plain-language order:
+1. make the current Clay shader cheaper without changing the near look;
+2. remeasure it;
+3. measure Derek RGB triplanar as the first cheaper non-Clay comparator;
+4. compare the Blender baked-lite path afterwards if still useful.
+
 ## No further integration yet
 
 Not started:
