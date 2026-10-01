@@ -36,6 +36,11 @@ const context = await browser.newContext({
 });
 
 function essentialUrl(url) {
+  // Resident Atlas promo/reference GIFs are optional review aids, not actor/set/rig truth.
+  // The transported session cut intentionally omits >2 MB ref/atlas GIFs while retaining
+  // the exact actor/prop source recipes. Do not turn those known reference-only 404s into
+  // a source-isolation blocker.
+  if (/\/ref\/atlas\/[^/?#]+\.gif(?:[?#]|$)/i.test(url)) return false;
   return (
     url.startsWith(BASE) ||
     /raw\.githubusercontent\.com|unpkg\.com|cdn\.jsdelivr\.net|cdnjs\.cloudflare\.com/i.test(url)
