@@ -62,6 +62,27 @@ Therefore it is neither evidence that R2C is performant nor evidence that it is 
 
 The previously observed ~56 fps / 71 calls / ~354k triangles remains contextual user-device evidence, not this gate's measured result.
 
+
+## Representative GPU result · Georg / Apple M1 Max
+
+WC1-GPU-BASELINE is now **MEASURED** on visible Chrome / Apple M1 Max.
+
+Two 10 s samples:
+- instanced signature: **28.7 fps · 34.8 ms mean · 179 calls · 414,758 triangles · 89 geometries**;
+- individual-mesh signature: **29.0 fps · 34.53 ms mean · 868 calls · 403,264 triangles · 459 geometries**.
+
+Both runs share:
+414 world items · 158 cells · 54 clouds · 5 billboards · 2,516 m route · 0 crossings · pixel ratio 1.5.
+
+Source interpretation:
+R2C mode B uses InstancedMesh; mode A uses individual Mesh objects. The current probe did not serialize mode, so the mapping is inferred from the runtime signature with high confidence.
+
+Key result:
+**~5× more calls/geometries did not materially change frame time.** Hex instancing is therefore not the main limiting factor in this current scene on the measured hardware. The current baseline is already ~34.5–34.8 ms/frame, so the next step is to decompose existing shader/fill/shadow/cloud cost before adding Track Core.
+
+Evidence:
+`evidence/WC1_GPU_BASELINE_2026-10-01.json`.
+
 ## No further integration yet
 
 Not started:
@@ -100,10 +121,6 @@ A Stage is justified next only if required to execute the unchanged instrumented
 
 ## Exactly one next gate
 
-**WC1-GPU-BASELINE**
+**WC1-COST-SPLIT**
 
-Run the preserved instrumented R2C candidate unchanged in a visible Chromium browser on representative hardware and save one `window.__KFB_WC1_BASELINE__.measure()` result.
-
-No geometry, material, Track, vehicle, Billboard or SKY change belongs in that gate.
-
-After that single measurement, continue directly with **Track Core adapter as the first additive performance delta**.
+Use only existing toggles on the preserved instanced/B candidate to measure: default, clay shader off, clouds off, shadows off, and reduced render pixel ratio. No new Track, vehicle, Billboard or SKY runtime is added yet. After the dominant current cost is identified, continue with Track Core as the first additive integration delta.
