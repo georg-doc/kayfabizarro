@@ -308,3 +308,45 @@ At the Resident Atlas / source-isolation owner level, define one reproducible ru
 Then start a fresh bounded 4/4 source-isolation attempt from the preserved PR #308 candidate.
 
 Do not continue ensemble integration until that owner-level transport/classification gate is resolved.
+
+
+---
+
+# GEORG DECISION · reference/promo images are NON-BLOCKING · 2026-10-01
+
+Decision:
+- Resident source acceptance is about the **actual 3D Resident object and its source-backed scene parts**.
+- Required for source isolation:
+  - actor/model;
+  - relevant props/set objects;
+  - rig family;
+  - pose / animation source where part of the resident recipe;
+  - source paths / provenance;
+  - visible isolated vignette.
+- NOT required for source acceptance:
+  - promo GIFs;
+  - pack artwork PNGs;
+  - human-facing reference images;
+  - decorative thumbnails / key art.
+
+Reference/promo images may still be used as optional:
+- authoring orientation;
+- visual comparison;
+- placeholder/fallback illustration when no 3D view is available.
+
+But their absence or transport failure must **not** fail actor/set/rig source isolation when the real 3D source object is proven.
+
+This resolves:
+**RESIDENT-ATLAS-ISOLATION-TRANSPORT-01**
+
+Resolved contract:
+**FORMALLY SEPARATE OPTIONAL REFERENCE/PROMO ASSETS FROM ACTOR/SET/RIG SOURCE-CRITICAL HTTP ASSERTIONS.**
+
+Do not copy large reference GIFs or artwork into runtime/browser proof solely to satisfy source-isolation CI.
+Do not create replacement promo art.
+Do not treat reference-image 404s as runtime/source failures.
+
+The stopped PR #308 remains preserved as recovery evidence and is not repaired further.
+
+Exactly one next gate:
+**RESIDENT-CHAT-ENSEMBLE-01B · fresh 4/4 source isolation under the resolved source-critical contract**, starting from the preserved PR #308 state but as a new bounded attempt. Only after Lorekeeper / Goth Girl / Clown / Witch all pass actual 3D source isolation may four-Resident integration begin.
