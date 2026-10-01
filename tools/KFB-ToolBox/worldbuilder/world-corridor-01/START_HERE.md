@@ -196,3 +196,28 @@ Mode B baseline: 30.3 fps / 32.96 ms. Clay off: 90.2 fps / 11.09 ms (**−66.4% 
 Conclusion: Clay fragment/material work + pixel footprint are the dominant current bottleneck. Hex instancing is not. Evidence: `evidence/WC1_COST_SPLIT_2026-10-01.json`.
 
 Current Clay authority is PR #301 / `work/clay-style-ssot-2026-10-01`: K1/H0 v8 visual Golden; K2/v10 implementation baseline only with Golden parity.
+
+
+## 2026-10-01 · Clay component costs + WorldDesign fallback
+
+Representative local Chrome measurement shows the largest isolated Clay costs are:
+- base relief: ~9.96 ms;
+- facets/creases: ~8.78 ms;
+- dents/gouges/cracks: ~6.19 ms;
+- fingerprints: ~5.88 ms;
+- mottle: ~3.92 ms.
+
+Pixel-ratio pairs confirm Clay is strongly pixel-dependent but not pure fill-rate.
+
+Existing fallback/hybrid donors from **KFB WorldDesign Lab v1** are now explicitly back in scope:
+- Derek single RGB-tile triplanar;
+- RGB TRIPLANAR;
+- COMBINED;
+- TERRAIN · COMBINED REF;
+- Normal/Roughness looks.
+
+Read:
+`clay-perf/WORLDDESIGN_LAB_FALLBACK_HYBRID.md`
+
+Plain-language next action:
+**make distant Clay cheaper first without changing the near look; then measure Derek RGB triplanar as the first non-Clay comparator.**
