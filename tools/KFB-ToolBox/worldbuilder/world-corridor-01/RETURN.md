@@ -1,100 +1,93 @@
 # WorldBuilder · Floating-Island Corridor · Return
 
-Status: **SOURCE CHECK-IN COMPLETE · INTEGRATION READY · RUNTIME NOT STARTED · NO STAGE**
+Status: **WC1 SOURCE REHOME COMPLETE · 10/10 PARITY PASS · GPU BASELINE STILL OPEN · NO STAGE**
 Date: 2026-10-01
 
 ## Result
 
-The two current Claude Design exports are now recoverable from the existing WorldBuilder owner instead of living only as inbox/session state:
+The current Claude Design Floating / Hex Island source is now rehomed under the existing WorldBuilder owner without visual or semantic redesign.
 
-- **Floating / Hex Islands + route-layout** accepted as an island/layout donor;
-- **Skydome / EnvironmentHost** accepted as an environment donor.
+Preserved exact source:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source/KFB World Core R2C · Hex-Archipel Katalog.dc.html`
 
-The check-in does not promote either inbox folder into a new runtime owner.
+Instrumented entry:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source/KFB World Core R2C · WC1 Baseline.dc.html`
 
-## Existing owners retained
+Additive probe:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/performance-probe.js`
 
-- **WorldBuilder / WB2** — scene document, terrain/surface authoring, object edit, save/reload and receiving host.
-- **Track Core 0.12** — sole RouteRecipe → samples → frames → slots → checks owner.
-- **Race / current drive runtime** — driving/contact/steering/drift/jump physics.
-- **Ground** — walk movement owner.
-- **Billboard scheduler / LOD** — billboard update cadence; baked/static image provider first.
-- **EnvironmentHost v3** — candidate sky/weather layer called from the WorldBuilder host loop; no second renderer/timer/fog owner.
+The original rehome remains byte-identical and is not edited by the probe.
 
-R2C island `buildTrack()` is retained only as route-layout/input evidence. It is not promoted to a second Track Core.
+## Source / owner status
 
-## Source identity
+- WB2 remains WorldBuilder terrain / scene-authoring host.
+- Track Core 0.12 remains sole track frame / slot / check owner.
+- R2C remains island + route-layout input, not a second Track Core.
+- Race / Ground movement owners remain unchanged.
+- Billboard and SKY3 remain queued donors, not yet integrated.
 
-Repository: `georg-doc/kayfabizarro`  
-Branch: `chatgpt-web/world-corridor-01-2026-10-01`  
-Intake main source commit: `901328352530fb14c19391876b2cb28beffb48bd`  
-Verified implementation/evidence head before this Return: `0cde75dee8b4a7c7fd3a2835ef945753a8832287`.
+## Actual evidence
 
-Source manifest:
-`tools/KFB-ToolBox/worldbuilder/world-corridor-01/SOURCE.json`
+### Intake
+**13 / 13 PASS** source + owner routing checks.
 
-## Actual checks
+### Rehome
+**10 / 10 BYTE-IDENTICAL PASS**:
+R2C HTML, support, island module, shadow, sky core and five Clay dependencies are exact copies of the current Claude inbox source.
 
-**13 / 13 source + owner checks PASS.**
+### Instrumentation
+The instrumented HTML differs from the exact source only by one additive module tag for `performance-probe.js`.
 
-Verified:
-- both Claude cuts exist on current source commit;
-- active island HTML and real ~84 kB island module exist;
-- island Return explicitly preserves the unresolved GPU baseline;
-- SKY3 manifest, EnvironmentHost v3, cloud v3 and spindle candidate resolve;
-- exact accepted WB2 host source resolves;
-- Track Core owner/head and `kfb.track-core/0.12` snapshot resolve;
-- existing Billboard scheduler / provider seam resolves.
+Probe records:
+fps, mean/p95/p99/max frame time, calls, triangles, geometries, textures, programs, batches, world items/cells, clouds, billboards, track length/crossings, build/load time and WebGL facts.
 
-This is not a runtime/browser/GPU integration PASS.
+### Browser
+The GitHub browser environment reached the live R2C scene and the performance probe.
 
-## Performance evidence retained
+Hosted-runner absolute performance is **not accepted**:
+- Run `36861649207`: harness bug before browser execution.
+- Run `36861843836`: parity + boot PASS; stopped at `too few measured frames` under SwiftShader.
+- evidence artifact `11161609956`.
 
-Current island export reports that R2C has more batches than the earlier comparison and **does not have a reliable R2C GPU baseline yet**.
+Per stop rule, no third repair/tuning pass is allowed on this CI performance gate.
 
-SKY3 isolated preview evidence shows cloud cost depends strongly on LOD:
-- 4 clouds: about 2.4 ms in the v3 preview;
-- 12 clouds: about 3.2 ms;
-- 24 clouds: about 7.2 ms;
-- 24 all-near: about 19.0 ms / 282k triangles.
+Full recovery:
+`FAILURE_RECOVERY_WC1_BASELINE.md`.
 
-These are donor-preview measurements only. They must be remeasured inside the actual corridor before an architectural decision.
+## Why this is not a product-performance verdict
 
-## Runtime path now fixed
+The second run proves the scene boots and the probe works, but the hosted GitHub runner uses software WebGL and delivered too few frames for the fixed sample assumption.
 
-The productive sequence is:
+Therefore it is neither evidence that R2C is performant nor evidence that it is too slow on Georg's GPU.
 
-1. exact island-source baseline;
-2. Track Core adapter;
-3. chunked track colliders + one vehicle;
-4. cached/static billboards;
-5. EnvironmentHost / cloud series;
-6. representative near-island actor/assets;
-7. streaming stress at 4 → 12 → 24 → 48 → 150 **logical** islands.
+The previously observed ~56 fps / 71 calls / ~354k triangles remains contextual user-device evidence, not this gate's measured result.
 
-150 full-detail islands are explicitly not an acceptance target.
+## No further integration yet
 
-Track / Flight / Portal remains a product decision **after** measured combined performance, not before.
+Not started:
+- R2C → Track Core adapter;
+- chunked colliders;
+- vehicle / physics;
+- Billboard scheduler + cached content;
+- SKY3 EnvironmentHost;
+- actor / resident runtime;
+- 4 → 150 logical-island streaming stress.
 
-## Inbox lifecycle
-
-The two source cuts stay in `_inbox/` for now as pinned provenance. Do not archive or delete them until their accepted modules have been rehomed and parity-proven inside the WorldBuilder owner.
+Those remain blocked only by the representative GPU baseline, not by another architecture discussion.
 
 ## Public / Stage
 
-Stage: **NONE**.  
-No merge, Cloudflare deployment, public browser claim or Live promotion was performed.
+No Stage was published in this slice.
+No merge or Live promotion occurred.
 
-## Unresolved
-
-- R2C baseline on representative real GPU;
-- island-layout → Track Core adapter;
-- looping behavior under the real drive owner;
-- exact Near / Mid / Far island budget;
-- SKY3 cloud budget in the combined scene;
-- billboard cost inside the combined scene;
-- streaming unload/leak behavior after traversal.
+A Stage is justified next only if required to execute the unchanged instrumented candidate on representative browser/GPU hardware.
 
 ## Exactly one next gate
 
-**WC1-BASELINE:** rehome the exact current island source under the WorldBuilder owner, add only the tiny shared performance probe, and prove visual/source parity + baseline numbers. Do not add Track, vehicle, billboards or SKY3 before the baseline is recorded.
+**WC1-GPU-BASELINE**
+
+Run the preserved instrumented R2C candidate unchanged in a visible Chromium browser on representative hardware and save one `window.__KFB_WC1_BASELINE__.measure()` result.
+
+No geometry, material, Track, vehicle, Billboard or SKY change belongs in that gate.
+
+After that single measurement, continue directly with **Track Core adapter as the first additive performance delta**.
