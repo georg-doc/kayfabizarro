@@ -369,6 +369,8 @@ function createBubbles({ overlay, shapes }) {
 /* ── Mount ───────────────────────────────────────────────────────────────────────────────── */
 export async function mountResidentScene(o) {
   const { THREE, GLTFLoader, parent, camera, overlay, recipe, getCardCanvas } = o;
+  const lineProvider = typeof o.lineProvider === 'function' ? o.lineProvider : null;
+  const semanticSource = o.semanticSource || (lineProvider ? 'external lineProvider' : 'recipe.triplets');
   const base = o.base || new URL('./', import.meta.url).href;
   const log = o.log || ((s) => console.info('[resident-scene] ' + s));
   const P = recipe.pins, RIGS = 'https://cdn.jsdelivr.net/gh/' + P.repo + '@' + P.rigs + '/' + P.rigsPath;
@@ -411,7 +413,14 @@ export async function mountResidentScene(o) {
   const end = (beats.find((b) => b.do === 'end') || beats[beats.length - 1]).at;
   const S = { t: 0, playing: true, variant: 0, fired: 0, label: 'idle', review: 'scene', ended: false, clock: 0, talkUntil: { A: 0, B: 0 }, gazeUntil: { A: 0, B: 0 }, reviewT: 0 };
   const talkDur = (text) => clamp(0.6 + text.split(/\s+/).length * T.talkSecondsPerWord, T.talkMin, T.talkMax);
-  const lineOf = (slot, key) => { const pool = recipe.triplets[slot]; return (pool[S.variant % pool.length] || pool[0])[key]; };
+  const lineOf = (slot, key) => {
+    if (lineProvider) {
+      const provided = lineProvider({ slot, key, variant: S.variant, recipe });
+      if (provided != null && String(provided).trim()) return String(provided);
+    }
+    const pool = recipe.triplets[slot];
+    return (pool[S.variant % pool.length] || pool[0])[key];
+  };
 
   function targetPoint(key, from) {
     if (key === 'card') return card.focus();
@@ -512,7 +521,7 @@ export async function mountResidentScene(o) {
     },
     report() {
       let meshes = 0; root.traverse((n) => { if (n.isMesh) meshes++; });
-      return { schema: SCHEMA, recipe: recipe.id, root: { name: root.name, position: root.position.toArray().map((v) => +v.toFixed(2)), yawDeg: +(root.rotation.y / D2R).toFixed(1), children: root.children.map((c) => c.name), meshes, baseplate: 'none' },
+      return { schema: SCHEMA, recipe: recipe.id, semanticSource, root: { name: root.name, position: root.position.toArray().map((v) => +v.toFixed(2)), yawDeg: +(root.rotation.y / D2R).toFixed(1), children: root.children.map((c) => c.name), meshes, baseplate: 'none' },
         owners: { eyeRigs: 2, mouths: 2, mixers: 2, motion: clips ? recipe.motion.library.split('/').pop() + ' · ' + clips.length + ' clips' : 'KayKit idle', bubbleDrawer: 'bubble-shaper.v2 paintBubble' },
         A: A.report(), B: B.report(), card: { owner: recipe.card.owner, deck: recipe.card.deck, index: recipe.card.index, name: recipe.card.name, px: cardCanvas.width + '×' + cardCanvas.height } };
     },
