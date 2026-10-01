@@ -241,3 +241,33 @@ Reihenfolge:
 
 Der volle prozedurale Clay-Look bleibt visuelle Referenz und möglicher Nahbereichs-Look, aber nicht automatisch die globale technische Lösung.
 
+
+
+## 2026-10-01 · Global Clay Lite 512 · lokaler Vergleich bereit
+
+In normalem Deutsch:
+**Die kleine globale Clay-Textur ist gebaut. Jetzt vergleichen wir sie lokal mit dem bisherigen Clay-Look.**
+
+Test:
+- aktueller prozeduraler Clay-Look;
+- `Clay002` als eine globale 512²-Textur;
+- `clay_floor_001` als eine globale 512²-Textur;
+- Clay komplett aus.
+
+Technik:
+- genau eine aktive gepackte RGBA-Textur;
+- triplanar X/Y/Z;
+- Quellfarben bleiben erhalten;
+- 512² zuerst;
+- geschätzter GPU-Speicher inkl. Mipmaps ca. 1.33 MiB;
+- Original-/Baseline-Quellen bleiben unangetastet.
+
+Read:
+`clay-perf/GLOBAL_CLAY_LITE_512_TEST.md`
+
+Lokale Datei:
+`KFB_Global_Clay_Lite_Doppelklick.html`
+SHA-256 `30bc4ff8e9a39479169301e9a6b198e00a185af402108badfd3e4c481374e81e`.
+
+Nächster Schritt für Georg:
+**Datei in Chrome öffnen → „Globale Textur messen“ → Download JSON → JSON zurück in den Chat.**
