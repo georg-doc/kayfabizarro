@@ -1,0 +1,46 @@
+name: WC1 Procedural Props P0
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wc1-procedural-props-p0-2026-10-01
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/**'
+      - '.github/workflows/wc1-procedural-props-p0.yml'
+  workflow_dispatch:
+
+jobs:
+  source-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Static syntax
+        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-proc-p0-http.log 2>&1 &
+          echo $! > /tmp/kfb-proc-p0-http.pid
+          sleep 2
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/source-isolation.html >/dev/null
+
+      - name: Browser source-isolation proof
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-procedural-props-p0-evidence
+          path: procedural-props-p0-evidence/
+          if-no-files-found: error
