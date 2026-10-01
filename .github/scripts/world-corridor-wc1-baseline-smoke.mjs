@@ -6,7 +6,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 const ROOT=process.cwd();
 const BASE='http://127.0.0.1:8772/';
 const REL='tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source/KFB World Core R2C · WC1 Baseline.dc.html';
-const URL=new URL(REL,BASE).href;
+const TEST_TEST_URL=new globalThis.URL(REL,BASE).href;
 const OUT=path.join(ROOT,'artifacts','world-corridor','wc1-baseline');
 const SRC='tools/KFB-ToolBox/_inbox/KFB World Core R2C · Hex-Archipel Katalog/WORLD_CORE_R2C_2026-10-01';
 const DST='tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source';
@@ -53,11 +53,11 @@ async function run(){
   const port=9230;
   const browser=spawn(exe,['--headless=new','--no-sandbox','--disable-dev-shm-usage','--enable-webgl','--ignore-gpu-blocklist','--use-angle=swiftshader','--enable-unsafe-swiftshader',`--remote-debugging-port=${port}`,`--user-data-dir=/tmp/kfb-wc1-${process.pid}`,'--window-size=1600,900','about:blank'],{stdio:['ignore','ignore','pipe']});
   let stderr='';browser.stderr.on('data',c=>stderr+=c.toString());
-  const result={schema:'kfb.world-corridor.wc1-baseline-smoke/0.1',url:URL,parity,result:'FAIL'};
+  const result={schema:'kfb.world-corridor.wc1-baseline-smoke/0.1',url:TEST_URL,parity,result:'FAIL'};
   try{
-    await poll(async()=>{try{return (await fetch(URL)).ok;}catch{return false;}},'server');
+    await poll(async()=>{try{return (await fetch(TEST_URL)).ok;}catch{return false;}},'server');
     const version=await poll(async()=>{try{const r=await fetch(`http://127.0.0.1:${port}/json/version`);return r.ok?await r.json():false;}catch{return false;}},'chrome');
-    const r=await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(URL)}`,{method:'PUT'});
+    const r=await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(TEST_URL)}`,{method:'PUT'});
     const target=await r.json(),cdp=await connect(target.webSocketDebuggerUrl);
     await cdp.send('Page.enable');await cdp.send('Runtime.enable');
 
