@@ -1,0 +1,41 @@
+{
+  "schema": "kfb.wc1-procedural-props-local-proof.v1",
+  "date": "2026-10-01",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-props-local-proof-2026-10-01",
+  "pr": 313,
+  "implementationHead": "c5926ba110f002be9a72a96b58680faf488e974e",
+  "reviewArtifact": {
+    "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_LOCAL_REVIEW.html",
+    "sha256": "7950487a5ca7d30b4449d5e4dbc4a66ae746bcfb22a828d2fee947e51649993e",
+    "mode": "DIRECT_FILE_ZERO_INSTALL"
+  },
+  "runtimeSource": {
+    "frozenHead": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+    "material": "Global Clay Lite · Clay002 · 512",
+    "placement": {
+      "tufts": 0,
+      "pebbles": 7,
+      "trees": 11
+    }
+  },
+  "donors": {
+    "hivebound": "be10166e44f3d89db922ebb90671c10b89cd3e62",
+    "reviewHarness": "threejs-focus-review-v1"
+  },
+  "tests": {
+    "run": 36914864960,
+    "job": 110546226193,
+    "result": "DIRECT_FILE_BOOT_PASS",
+    "artifact": {
+      "id": 11189536955,
+      "digest": "sha256:413daa83819accced85ea138c88a85348f03591a15af67ce573b1f72b6a60343"
+    },
+    "performanceAuthority": false
+  },
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "nextGate": "GEORG_LOCAL_VISIBLE_RESULT"
+}
