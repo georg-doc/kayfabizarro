@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.world-corridor.nonrepresentative-run/0.1",
+  "date": "2026-10-02",
+  "sourceUpload": {
+    "file": "kfb-clay002-vs-derek-2026-10-01T23-17-41-611Z.json"
+  },
+  "observed": {
+    "procedural": {
+      "fps": 5.7,
+      "meanFrameMs": 174.4
+    },
+    "Clay002_512": {
+      "fps": 5.7,
+      "meanFrameMs": 174.27
+    },
+    "DerekRGB_512": {
+      "fps": 6.6,
+      "meanFrameMs": 151.6
+    },
+    "clayOff": {
+      "fps": 6.6,
+      "meanFrameMs": 151.03
+    },
+    "drawCalls": 81,
+    "triangles": 366660,
+    "geometries": 42,
+    "programs": 30,
+    "pixelRatio": 1.5
+  },
+  "comparisonToHealthyRun": {
+    "healthyClayOff": {
+      "fps": 89.6,
+      "meanFrameMs": 11.16,
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89
+    },
+    "healthyClay002": {
+      "fps": 92.1,
+      "meanFrameMs": 10.85
+    },
+    "note": "Latest retest changed render signature materially and clay-off collapsed, so it is not representative performance evidence."
+  },
+  "userVisualJudgment": {
+    "proceduralClay": "CLEARLY_BEST",
+    "DerekRGB": "OK",
+    "Clay002CurrentApplication": "REJECTED_VISIBLE_REPETITION",
+    "interpretation": "Clay002 source is not rejected; its current 512/triplanar scale/application is."
+  },
+  "sourceTextureFacts": {
+    "Clay002Diffuse": {
+      "width": 1024,
+      "height": 1024,
+      "blob": "8e7dc121cbf97154b6c67674998bb3d7c5abcd89"
+    },
+    "Clay002Roughness": {
+      "width": 1024,
+      "height": 1024,
+      "blob": "7c879ace8ef221531e9fa715063997364b5d13b3"
+    },
+    "currentTestDownsample": 512,
+    "currentWorldScale": 0.62,
+    "approximateRepeatPeriodM": 1.6129
+  },
+  "classification": "NONREPRESENTATIVE_PERF_VISUAL_JUDGMENT_VALID",
+  "nextPlainLanguage": "Keep original procedural Clay for near/hero; repair Clay002 only as a mid/far anti-repeat one-texture option; retain Derek as acceptable light fallback."
+}
