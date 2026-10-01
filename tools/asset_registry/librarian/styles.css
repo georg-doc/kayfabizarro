@@ -15,3 +15,12 @@ button,.button-link{border:1px solid var(--line);border-radius:8px;padding:8px 1
 .selection-summary{justify-content:space-between;margin-bottom:8px}.tray-items{display:grid;gap:6px;margin:8px 0 14px}.tray-chip{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:10px}.tray-chip button{border:0;background:transparent;padding:2px}.tray-chip .open-selected{text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.handoff-stack{display:grid;gap:10px;padding-top:12px;border-top:1px solid #e2dacb}.consumer-boundary{padding:9px 10px;border-left:3px solid var(--accent);background:var(--paper-2);border-radius:0 7px 7px 0;color:#4f4a42;font-size:10px;line-height:1.45}.consumer-boundary ul{margin:5px 0 0;padding-left:16px}footer{padding:12px 3px 3px;color:var(--muted);font-size:9px}.loading{opacity:.58;pointer-events:none}
 @media(max-width:900px){.app-shell{padding:10px}.topbar{align-items:flex-start}.status-stack{display:none}.search-row{grid-template-columns:1fr auto auto}.global-search{grid-column:1/-1}.kind-filter{min-width:110px}.filter-grid{grid-template-columns:repeat(2,1fr)}.result-list.gallery-view{grid-template-columns:repeat(2,minmax(0,1fr))}.result-thumb{height:150px}}
 @media(max-width:560px){.topbar{display:grid}.top-actions{justify-content:space-between}.search-row{grid-template-columns:1fr 1fr}.global-search{grid-column:1/-1}.view-toggle{grid-column:1/-1}.filter-grid{grid-template-columns:1fr}.result-list.gallery-view{grid-template-columns:1fr}.drawer{width:100vw}.result-thumb{height:210px}}
+
+/* v1.8 daily browse: visible Registry hierarchy, not a second taxonomy. */
+.browse-row{display:grid;grid-template-columns:minmax(140px,.7fr) minmax(220px,1.2fr) minmax(220px,1.2fr) minmax(180px,1fr);gap:8px;align-items:end;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)}
+.browse-row label{display:grid;gap:4px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.browse-row select{width:100%;min-width:0}
+.browse-hint{align-self:center;color:var(--muted);font-size:9px;line-height:1.4}
+#motionPreviewActorFilter{min-width:190px}
+@media(max-width:900px){.browse-row{grid-template-columns:1fr 1fr}.browse-hint{grid-column:1/-1}}
+@media(max-width:560px){.browse-row{grid-template-columns:1fr}}
