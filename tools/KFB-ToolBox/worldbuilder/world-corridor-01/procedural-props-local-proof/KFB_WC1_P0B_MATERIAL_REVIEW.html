@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>KFB WC1 · Procedural Props P0B · Material Review</title>
+<style>
+  :root{color-scheme:dark}
+  html,body{margin:0;height:100%;overflow:hidden;background:#17150f;color:#f3efe5;font:12px/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  #c{display:block;width:100%;height:100%;touch-action:none;background:#17150f}
+  #labels{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+  .panel{position:fixed;z-index:10;background:rgba(21,19,14,.86);backdrop-filter:blur(8px);border:1px solid rgba(255,245,220,.16);box-shadow:0 8px 30px rgba(0,0,0,.35);border-radius:12px}
+  #info{left:12px;top:12px;max-width:min(650px,calc(100vw - 24px));padding:11px 13px}
+  #controls{left:12px;bottom:12px;right:12px;padding:9px 10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  #legend{right:12px;top:12px;padding:10px 12px;min-width:220px;max-width:320px}
+  h1{font:700 14px/1.2 system-ui,sans-serif;margin:0 0 6px;letter-spacing:.04em}
+  .sub{color:#c9bea8}.ok{color:#8bd6a3}.warn{color:#efc46c}.bad{color:#ff8c82}.muted{color:#968c78}.small{font-size:11px}
+  button,label{font:700 11px/1 system-ui,sans-serif}
+  button{border:1px solid rgba(255,245,220,.15);background:#2d2920;color:#f3efe5;border-radius:999px;padding:7px 10px;cursor:pointer}
+  button:hover{background:#3a3428} button.active{background:#655836;border-color:#c7aa5e}
+  button:disabled{opacity:.45;cursor:default}
+  label{display:inline-flex;align-items:center;gap:5px;color:#ded3bd;cursor:pointer}
+  input{accent-color:#d8bb67}
+  .row{margin:3px 0}
+  #status{margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,245,220,.12)}
+  #measureState{min-width:240px}
+  #jsonPreview{display:none;white-space:pre-wrap;max-height:220px;overflow:auto;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,245,220,.12)}
+  .sep{width:1px;height:22px;background:rgba(255,245,220,.14);margin:0 2px}
+  @media(max-width:800px){#legend{top:auto;bottom:88px;right:12px}.hideMobile{display:none}}
+</style>
+<script type="importmap">
+{
+  "imports":{
+    "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="labels"></div>
+
+<div id="info" class="panel">
+  <h1>WC1 · PROCEDURAL PROPS P0B · MATERIAL ISOLATION</h1>
+  <div class="sub">HTML REVIEW · NOT PUBLIC · frozen runtime <b>94443824e6b…</b> · same geometry · material only</div>
+  <div class="small" style="margin-top:6px">
+    Real WC1 scene + existing renderer/material owner. Same frozen procedural geometry throughout.
+    Compare only the shared material treatment: Clay002 vs Derek RGB vs Neutral.
+  </div>
+  <div id="status"><span class="warn">Boot:</span> loading pinned runtime…</div>
+  <div id="jsonPreview"></div>
+</div>
+
+<div id="legend" class="panel hideMobile">
+  <div class="row"><b>Review target</b></div>
+  <div class="row">soft procedural tree / pebble / tuft grammar</div>
+  <div class="row">same Burg placement from frozen candidate</div>
+  <div class="row">material: <span id="materialLabel">Clay002</span></div>
+  <div class="small muted" style="margin-top:7px">
+    Drag: orbit · wheel/pinch: zoom<br>
+    Human question: which material preserves the cool generated forms without making the world generic, repetitive or buggy?
+  </div>
+  <div id="live" class="small" style="margin-top:8px">renderer stats pending…</div>
+</div>
+
+<div id="controls" class="panel">
+  <button data-view="burg" class="active">Burg</button>
+  <button data-view="kosmos">Kosmos</button>
+  <button data-view="raster">Top</button>
+  <button data-view="horizont">Horizon</button>
+  <span class="sep"></span>
+  <button class="material active" data-material="clay002">Clay002</button>
+  <button class="material" data-material="derek">Derek RGB</button>
+  <button class="material" data-material="neutral">Neutral</button>
+  <span class="sep"></span>
+  <label><input id="props" type="checkbox" checked>procedural props</label>
+  <label><input id="labelsToggle" type="checkbox" checked>labels</label>
+  <label><input id="grid" type="checkbox">grid</label>
+  <span class="sep"></span>
+  <button id="measure" disabled>Measure A/B</button>
+  <button id="copy" disabled>Copy JSON</button>
+  <button id="download" disabled>Download JSON</button>
+  <span class="sep"></span>
+  <button class="judge" data-judge="fits">Fits</button>
+  <button class="judge" data-judge="too-generic">Too generic</button>
+  <button class="judge" data-judge="undecided">Undecided</button>
+  <span id="measureState" class="small muted">booting…</span>
+</div>
+
+<script type="module">
+'use strict';
+
+const SOURCE_PIN='94443824e6b13f38c611defd06dacedd7c6d0faa';
+const DOC_HEAD='a26389d53df8c3328e62c98b13684986259d02ae';
+const HIVEBOUND_PIN='be10166e44f3d89db922ebb90671c10b89cd3e62';
+const WC1_URL='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+SOURCE_PIN+'/tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/hex-archipel.r2c-partsdiag.js';
+const P0B_URL='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+SOURCE_PIN+'/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/procedural-props-p0b.mjs';
+
+const $=s=>document.querySelector(s);
+const status=$('#status'), live=$('#live'), measureState=$('#measureState');
+const measureBtn=$('#measure'), copyBtn=$('#copy'), downloadBtn=$('#download');
+const jsonPreview=$('#jsonPreview');
+let api=null, props=null, lastResult=null, visualJudgement='undecided', materialMode='clay002';
+let runtimeErrors=[];
+
+window.addEventListener('error',e=>runtimeErrors.push(String(e.error?.stack||e.message||e.error||'error')));
+window.addEventListener('unhandledrejection',e=>runtimeErrors.push(String(e.reason?.stack||e.reason||'unhandled rejection')));
+
+function setStatus(kind,text){
+  status.innerHTML='<span class="'+kind+'">'+(kind==='ok'?'Ready:':kind==='bad'?'Error:':'Boot:')+'</span> '+text;
+}
+function fmt(n,d=1){return Number.isFinite(n)?Number(n).toFixed(d):'—'}
+function pct(a,b){return b?((a-b)/b*100):0}
+
+function gpuInfo(){
+  if(!api?.renderer) return {};
+  const gl=api.renderer.getContext();
+  const ext=gl.getExtension('WEBGL_debug_renderer_info');
+  return {
+    webgl:api.renderer.capabilities.isWebGL2?'WebGL2':'WebGL1',
+    vendor:ext?gl.getParameter(ext.UNMASKED_VENDOR_WEBGL):gl.getParameter(gl.VENDOR),
+    renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),
+    maxTextureSize:gl.getParameter(gl.MAX_TEXTURE_SIZE)
+  };
+}
+
+function currentCounters(){
+  return {
+    fps:api?.info?.fps??null,
+    calls:api?.info?.calls??null,
+    triangles:api?.info?.tris??null,
+    geometries:api?.info?.geoms??null,
+    textures:api?.info?.tex??null,
+    programs:api?.info?.progs??null
+  };
+}
+
+function summaryLine(){
+  if(!api||!props) return;
+  const c=currentCounters();
+  live.innerHTML=
+    'mount · tufts <b>'+props.counts.tufts+'</b> · pebbles <b>'+props.counts.pebbles+'</b> · trees <b>'+props.counts.trees+
+    '</b><br>material · <b>'+materialMode+'</b><br>live · '+fmt(c.fps,0)+' fps · '+c.calls+' calls · '+Number(c.triangles||0).toLocaleString()+' tris';
+}
+setInterval(summaryLine,800);
+
+function percentile(sorted,q){
+  if(!sorted.length)return null;
+  return sorted[Math.min(sorted.length-1,Math.floor(sorted.length*q))];
+}
+async function sample(label,seconds=6){
+  measureState.textContent=label+' · measuring visible frames…';
+  const gaps=[];
+  let prev=null;
+  const start=performance.now();
+  await new Promise(resolve=>{
+    const tick=t=>{
+      if(prev!=null)gaps.push(t-prev);
+      prev=t;
+      if(t-start>=seconds*1000)resolve(); else requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  gaps.sort((a,b)=>a-b);
+  const mean=gaps.reduce((s,x)=>s+x,0)/Math.max(1,gaps.length);
+  return {
+    label,
+    frames:gaps.length,
+    elapsedMs:performance.now()-start,
+    fps:mean?1000/mean:null,
+    meanFrameMs:mean||null,
+    p95FrameMs:percentile(gaps,.95),
+    p99FrameMs:percentile(gaps,.99),
+    maxFrameMs:gaps.length?gaps[gaps.length-1]:null,
+    renderer:currentCounters()
+  };
+}
+async function settle(ms=900){
+  const t0=performance.now();
+  await new Promise(resolve=>{
+    const tick=t=>t-t0>=ms?resolve():requestAnimationFrame(tick);
+    requestAnimationFrame(tick);
+  });
+}
+async function runMeasure(){
+  if(!api||!props)return;
+  measureBtn.disabled=true; copyBtn.disabled=true; downloadBtn.disabled=true;
+  const prior=props.group.visible;
+  try{
+    api.shot('burg',true);
+    props.setVisible(false);
+    $('#props').checked=false;
+    await settle();
+    const off=await sample('props-off');
+
+    props.setVisible(true);
+    $('#props').checked=true;
+    await settle();
+    const on=await sample('props-on');
+
+    const gl=gpuInfo();
+    lastResult={
+      schema:'kfb.wc1-procedural-props-local-review.v1',
+      capturedAt:new Date().toISOString(),
+      status:'LOCAL_REVIEW_NOT_PUBLIC',
+      source:{
+        repository:'georg-doc/kayfabizarro',
+        frozenRuntimeHead:SOURCE_PIN,
+        recoveryDocumentationHead:DOC_HEAD,
+        hiveboundDonorHead:HIVEBOUND_PIN,
+        material:'Global Clay Lite · Clay002 · 512'
+      },
+      environment:{
+        visibilityState:document.visibilityState,
+        userAgent:navigator.userAgent,
+        devicePixelRatio:window.devicePixelRatio,
+        canvas:{width:$('#c').clientWidth,height:$('#c').clientHeight},
+        rendererPixelRatio:api.renderer.getPixelRatio(),
+        gpu:gl
+      },
+      mounted:{
+        counts:{...props.counts},
+        estimatedTriangles:props.estimatedTriangles,
+        clayMeta:api.globalClayMeta||null
+      },
+      measurements:{off,on},
+      materialMode,
+      delta:{
+        meanFrameMs:+(on.meanFrameMs-off.meanFrameMs).toFixed(3),
+        meanFramePct:+pct(on.meanFrameMs,off.meanFrameMs).toFixed(2),
+        calls:(on.renderer.calls??0)-(off.renderer.calls??0),
+        triangles:(on.renderer.triangles??0)-(off.renderer.triangles??0),
+        geometries:(on.renderer.geometries??0)-(off.renderer.geometries??0),
+        textures:(on.renderer.textures??0)-(off.renderer.textures??0),
+        programs:(on.renderer.programs??0)-(off.renderer.programs??0)
+      },
+      visualJudgement,
+      runtimeErrors:[...runtimeErrors]
+    };
+    jsonPreview.style.display='block';
+    jsonPreview.textContent=
+      'A/B result · props '+fmt(off.meanFrameMs,2)+' → '+fmt(on.meanFrameMs,2)+' ms · Δ '+
+      (lastResult.delta.meanFrameMs>=0?'+':'')+lastResult.delta.meanFrameMs+' ms ('+
+      (lastResult.delta.meanFramePct>=0?'+':'')+lastResult.delta.meanFramePct+'%)\n'+
+      'calls Δ '+lastResult.delta.calls+' · tris Δ '+lastResult.delta.triangles.toLocaleString()+
+      ' · judgement '+visualJudgement;
+    measureState.textContent='measurement complete · Copy JSON or Download JSON';
+    copyBtn.disabled=false; downloadBtn.disabled=false;
+  }catch(err){
+    runtimeErrors.push(String(err?.stack||err));
+    measureState.textContent='measurement failed · '+String(err?.message||err);
+  }finally{
+    props.setVisible(true);
+    $('#props').checked=true;
+    measureBtn.disabled=false;
+  }
+}
+
+function getJson(){
+  if(!lastResult)return '';
+  lastResult.visualJudgement=visualJudgement;
+  lastResult.runtimeErrors=[...runtimeErrors];
+  return JSON.stringify(lastResult,null,2);
+}
+async function copyJson(){
+  const text=getJson(); if(!text)return;
+  try{
+    await navigator.clipboard.writeText(text);
+    measureState.textContent='JSON copied';
+  }catch{
+    const ta=document.createElement('textarea');
+    ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();
+    measureState.textContent='JSON copied';
+  }
+}
+function downloadJson(){
+  const text=getJson();if(!text)return;
+  const blob=new Blob([text],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='KFB_WC1_P0B_LOCAL_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+measureBtn.onclick=runMeasure;copyBtn.onclick=copyJson;downloadBtn.onclick=downloadJson;
+
+async function setMaterial(mode){
+  if(!api)return;
+  materialMode=mode;
+  measureState.textContent='switching material…';
+  try{
+    if(mode==='clay002') await api.setGlobalClayLite('Clay002',512);
+    else if(mode==='derek') await api.setDerekRgb(512);
+    else api.setClayOff();
+    document.querySelectorAll('.material').forEach(x=>x.classList.toggle('active',x.dataset.material===mode));
+    $('#materialLabel').textContent=mode==='clay002'?'Clay002':mode==='derek'?'Derek RGB':'Neutral / Clay off';
+    if(lastResult) lastResult.materialMode=materialMode;
+    measureState.textContent='material '+$('#materialLabel').textContent+' · inspect visually';
+    summaryLine();
+    window.__KFB_LOCAL_REVIEW.materialMode=materialMode;
+    window.__KFB_LOCAL_REVIEW.clayLook=api.info.clayLook;
+  }catch(err){
+    runtimeErrors.push(String(err?.stack||err));
+    measureState.textContent='material switch failed · '+String(err?.message||err);
+  }
+}
+document.querySelectorAll('.material').forEach(b=>b.onclick=()=>setMaterial(b.dataset.material));
+
+document.querySelectorAll('.judge').forEach(b=>b.onclick=()=>{
+  visualJudgement=b.dataset.judge;
+  document.querySelectorAll('.judge').forEach(x=>x.classList.toggle('active',x===b));
+  if(lastResult)lastResult.visualJudgement=visualJudgement;
+});
+document.querySelector('.judge[data-judge="undecided"]').classList.add('active');
+
+document.querySelectorAll('button[data-view]').forEach(b=>b.onclick=()=>{
+  if(!api)return;
+  api.shot(b.dataset.view,false);
+  document.querySelectorAll('button[data-view]').forEach(x=>x.classList.toggle('active',x===b));
+});
+$('#props').onchange=e=>props?.setVisible(e.target.checked);
+$('#labelsToggle').onchange=e=>api?.set('labels',e.target.checked);
+$('#grid').onchange=e=>api?.set('grid',e.target.checked);
+
+async function boot(){
+  try{
+    setStatus('warn','loading exact frozen WC1 and P0B modules…');
+    const [wc1,p0b]=await Promise.all([import(WC1_URL),import(P0B_URL)]);
+    setStatus('warn','building WC1 scene…');
+    api=await wc1.boot($('#c'),$('#labels'),t=>{
+      if(t)measureState.textContent=t;
+    },{view:'burg',mode:'B'});
+
+    setStatus('warn','applying Clay002 512…');
+    await api.setGlobalClayLite('Clay002',512);
+    api.shot('burg',true);
+
+    setStatus('warn','mounting frozen P0B grammar…');
+    props=p0b.mountProceduralPropsP0B(api,{islandId:'burg'});
+    props.setVisible(true);
+
+    const g=gpuInfo();
+    setStatus('ok',
+      'mounted '+props.counts.trees+' trees · '+props.counts.pebbles+' pebbles · '+props.counts.tufts+
+      ' tufts · '+g.webgl+' · compare Clay002 / Derek RGB / Neutral');
+    measureState.textContent='ready · switch material and inspect same geometry';
+    measureBtn.disabled=false;
+    summaryLine();
+
+    window.__KFB_LOCAL_REVIEW={
+      ready:true,
+      sourcePin:SOURCE_PIN,
+      documentationHead:DOC_HEAD,
+      clayLook:api.info.clayLook,
+      materialMode,
+      counts:{...props.counts},
+      estimatedTriangles:props.estimatedTriangles,
+      secondRenderer:false,
+      owner:'WC1 existing renderer/world owner'
+    };
+    window.dispatchEvent(new Event('kfbLocalReviewReady'));
+  }catch(err){
+    runtimeErrors.push(String(err?.stack||err));
+    setStatus('bad',String(err?.message||err));
+    measureState.textContent='boot failed';
+    window.__KFB_LOCAL_REVIEW={ready:false,error:String(err?.stack||err),sourcePin:SOURCE_PIN};
+    console.error(err);
+  }
+}
+boot();
+</script>
+</body>
+</html>
