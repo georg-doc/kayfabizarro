@@ -19,13 +19,17 @@ jobs:
         with:
           node-version: '22'
       - name: Static QA syntax
-        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/boot.mjs
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/boot.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/material.mjs
       - name: Install Playwright
         run: |
           npm install --no-save playwright@1.48.2
           npx playwright install --with-deps chromium
       - name: Direct file boot and source-pin proof
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/boot.mjs
+      - name: Direct file material-switch proof
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/material.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
