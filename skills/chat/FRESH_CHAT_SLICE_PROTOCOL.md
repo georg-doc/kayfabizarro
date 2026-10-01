@@ -101,6 +101,23 @@ Run the narrow static/integration checks first. If the slice changes a visible b
 
 Never convert an automated PASS into Georg acceptance. Leave failures and untested paths visible.
 
+## 4A. Local representative performance evidence
+
+If a fresh slice needs real browser/WebGL performance rather than correctness-only evidence:
+
+- do not treat hosted CI, software WebGL, hidden/throttled preview iframes or Claude Design FPS as authoritative product performance;
+- freeze the exact source candidate first;
+- prefer a **single self-contained HTML** that Georg can open in Chrome by double-click, with no Terminal/CLI/server requirement when technically possible;
+- avoid unsigned helper apps on macOS when a normal HTML can do the job; do not ask Georg to bypass Gatekeeper;
+- add one-click **Measure** and **Download JSON / Copy JSON** controls;
+- persist the result JSON into the receiving owner's evidence/Return before tuning;
+- capture GPU/browser/DPR/canvas/pixel ratio plus fps, mean/p95/p99/max frame time, calls, triangles, geometries, textures/programs and the active feature/mode;
+- use automatic same-scene A/B or cost-split passes to isolate one factor at a time;
+- keep CI to source parity, syntax and browser boot unless the runner itself is representative hardware;
+- do not publish Cloudflare Stage solely for a local hardware measurement.
+
+This local performance path is technical evidence, not a new product surface or human acceptance page.
+
 ## 5. Leave a compact review packet
 
 The repository/PR must let tomorrow's Work session review without replaying the chat:
