@@ -107,6 +107,15 @@ class Component extends DCLogic {
     const base = new URL('npc-card-spec-01/', location.href).href;
     const recipe = await (await fetch(base + 'resident-card-speculation.recipe.json')).json();
     const { mountResidentScene } = await import(base + 'resident-scene.mjs');
+    let semanticProvider = null;
+    try {
+      const semanticUrl = new URL('../../../../../skills/chat/workflows/RESIDENT_CHAT_PRESENTATION_01_2026-10-01/donor-semantic-provider.mjs', location.href).href;
+      const { createDonorSemanticLineProvider } = await import(semanticUrl);
+      semanticProvider = createDonorSemanticLineProvider({ recipe });
+      this.log('semantic provider · ' + semanticProvider.source);
+    } catch (e) {
+      this.log('semantic provider unavailable · recipe.triplets fallback · ' + e.message);
+    }
     for (let i = 0; i < 200 && !window.KayfabizarroViewer; i++) await new Promise((r) => setTimeout(r, 50));
     if (!window.KayfabizarroViewer) throw new Error('kfb-viewer.js (Card owner) not loaded');
     try { await Promise.all([document.fonts.load("600 22px 'Shantell Sans'"), document.fonts.load("italic 400 15px 'Shantell Sans'")]); } catch (e) {}
@@ -150,11 +159,12 @@ class Component extends DCLogic {
       return deck.getCardCanvas(slot.index, slot.px || 1100);
     };
     this.log('mounting actors via graft-mount + EYE_RIG_BATCH …');
-    const s = this.scene = await mountResidentScene({ THREE, GLTFLoader, parent: scene, camera, overlay: this.overlayRef.current, recipe, getCardCanvas, base, log: (m) => this.log(m) });
+    const s = this.scene = await mountResidentScene({ THREE, GLTFLoader, parent: scene, camera, overlay: this.overlayRef.current, recipe, getCardCanvas, base, lineProvider: semanticProvider && semanticProvider.line, semanticSource: semanticProvider ? semanticProvider.source : 'recipe.triplets', log: (m) => this.log(m) });
     if (this._dead) { s.dispose(); return; }
     this.applyRoot();
     /* Host seam for agents/review tools: seek(t) replays the beat clock deterministically to t. */
     window.NPCCardSpecScene = { scene: s, camera, renderer, THREE, world: scene,
+      semanticReport: () => semanticProvider ? semanticProvider.report() : ({ source: 'recipe.triplets fallback' }),
       seek: (t, variant) => { s.restart(variant ?? +(this.props.variant || 0)); const st = 1 / 30; for (let x = 0; x < t; x += st) { this.updateCamera(st); s.update(st, camera, this.vw, this.vh); } renderer.render(scene, camera); return s.state(); } };
     if (this.props.variant) s.restart(+this.props.variant);
     if (this.props.view && this.props.view !== 'scene') s.setReview(this.props.view);
