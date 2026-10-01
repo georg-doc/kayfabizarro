@@ -317,8 +317,20 @@ Interpretation:
 - keep authored Residents/KayKit/FrizzleBob hero assets;
 - procedural props remain an additive scalable world-dressing strategy.
 
+Follow-up material verdict from `KFB_Clay002_Massstab_Doppelklick.html`:
+- **clay_floor_001 = best-looking state**;
+- current procedural Clay = second, but comparatively buggy in the direct switch;
+- Clay002 at 6 / 9 / 12 m still reads mostly as shading rather than a convincing clay texture;
+- Derek RGB remains open because that scale review did not re-rank it.
+
+This closes the "Clay002 only needs a larger repeat" hypothesis. The current Global Clay Lite pack keeps source-object colour authoritative and derives donor diffuse mainly into relief/value channels, so Clay002 can lose visible material identity. Do **not** spend the next pass on anti-repeat or instance-phase work.
+
 Current exact continuation:
-**MATERIAL ISOLATION · SAME GEOMETRY** — compare Clay002 / Derek RGB / Neutral on the same frozen P0B geometry, then decide whether Clay002 needs instance-aware phase/orientation variation or replacement.
+**MATERIAL ISOLATION · SAME GEOMETRY · CLAY_FLOOR FIRST** — compare `clay_floor_001` / current procedural Clay / Derek RGB / Neutral on the same frozen P0B geometry. Keep Clay002 only as a negative control. Geometry stays unchanged.
+
+Updated review harness:
+`procedural-props-local-proof/KFB_WC1_P0B_MATERIAL_REVIEW.html`
+implementation checkpoint `42671b14167ee1872f0f75ce2f2edd57af24e235`.
 
 Site checkpoint:
-`WORLD-CORRIDOR-01 / e072b8e2-498a-460b-94e7-88b930f5336f`.
+`WORLD-CORRIDOR-01 / e072b8e2-498a-460b-94e7-88b930f5336f` remains the PROCEED decision anchor; a follow-up material checkpoint records the corrected candidate order.
