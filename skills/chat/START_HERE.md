@@ -150,6 +150,8 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
+- `tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md` — **CURRENT SHARED CLAY STYLE SSOT**; mandatory for clay geometry, materials, deformation, palettes, shadows/contact and all building/terrain/prop/character/vehicle consumers
+- `tools/KFB-ToolBox/docs/KFB_CLAY_GOLDEN_SAMPLE_MATRIX.md` — fixed Golden/reference/candidate matrix and comparison gates across asset families
 - `workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md` — lean Hub UI brief for desktop, split-screen and mobile
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
@@ -1341,4 +1343,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-
