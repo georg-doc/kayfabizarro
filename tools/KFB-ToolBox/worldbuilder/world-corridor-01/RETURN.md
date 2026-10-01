@@ -441,6 +441,40 @@ Static ES-module syntax:
 Read:
 `clay-perf/DEREK_RGB_512_TEST.md`.
 
+## 2026-10-02 · Props PROCEED + material correction
+
+The parallel Hivebound-inspired procedural-props lane is now a **HUMAN PROCEED** for geometry/style grammar:
+- preserve the soft procedural tree/pebble forms;
+- trees are explicitly a positive direction;
+- authored Residents/KayKit/FrizzleBob hero assets remain authored;
+- current material treatment remains TUNE.
+
+Follow-up review of `KFB_Clay002_Massstab_Doppelklick.html` changes the material order:
+1. **clay_floor_001 = best**;
+2. current procedural Clay = second, but comparatively buggy;
+3. Clay002 at 6 / 9 / 12 m still fails to read as convincing clay texture and mostly produces tonal/shading variation.
+
+Derek RGB remains an open comparator; it was not newly ranked by that scale review.
+
+The previous "Clay002 only needs a larger repeat / instance-phase repair" hypothesis is therefore not the next implementation target. The lightweight pack derives donor diffuse into relief/value channels while preserving source object colour, which can erase Clay002's visible material identity.
+
+Current integrated review harness on Draft PR #313:
+`procedural-props-local-proof/KFB_WC1_P0B_MATERIAL_REVIEW.html`
+
+Same frozen runtime/geometry, material-only switches:
+- clay_floor_001;
+- current procedural Clay;
+- Derek RGB;
+- Clay002 negative control;
+- Neutral / Clay off.
+
+Implementation checkpoint:
+`42671b14167ee1872f0f75ce2f2edd57af24e235`.
+
+Returned diagnostic JSON is persisted at:
+`evidence/WC1_DEREK_COMPARISON_NONREPRESENTATIVE_2026-10-01T23-32-47.json`.
+Its absolute performance numbers are not authoritative because Clay-off itself measured 141.36 ms.
+
 ## No further integration yet
 
 Not started:
@@ -471,9 +505,17 @@ No Stage is required for the current Clay performance work. Public Stage remains
 
 ## Exactly one next gate
 
-**WC1-CLAY-PERF-01**
+**MATERIAL ISOLATION · SAME GEOMETRY · CLAY_FLOOR FIRST**
 
-Profile the active K1-parity K2/v10 Clay fragment path on the same exact world/camera, then implement only the smallest performance change that preserves the locked K1/H0 visual Golden. Track Core remains the first additive integration delta after Clay performance is brought into a usable budget.
+On the accepted frozen P0B tree/prop geometry, compare:
+1. clay_floor_001;
+2. current procedural Clay;
+3. Derek RGB;
+4. Neutral / Clay off.
+
+Clay002 remains only as a negative/control state. Do not alter the accepted prop geometry and do not add anti-repeat/instance-phase complexity unless a visually preferred material still proves that it needs it.
+
+Track Core / Vehicle / Billboard / SKY integration remains held until this world-material choice is resolved.
 
 
 ## Experimental procedural props P0B · stopped integration lane
