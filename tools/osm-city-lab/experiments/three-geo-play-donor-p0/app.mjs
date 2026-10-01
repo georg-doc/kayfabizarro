@@ -128,7 +128,7 @@ function snapshot() {
   };
 }
 
-const api = Object.freeze({snapshot:snapshot,setMode:setMode,toggleStream:toggleStream,reset:resetView,originQuery:function(){if(!geo)return null;const ll=geo.worldToLatLon(0,0);return {lat:ll.lat,lon:ll.lon,height:geo.getHeightAt(0,0),roundtrip:geo.latLonToWorld(ll.lat,ll.lon)};}});
+const api = Object.freeze({snapshot:snapshot,setMode:setMode,toggleStream:toggleStream,reset:resetView,originQuery:function(){if(!geo)return null;const ll=geo.worldToLatLon(0,0);return {lat:ll.lat,lon:ll.lon,height:geo.getHeightAt(0,0),roundtrip:geo.latLonToWorld(ll.lat,ll.lon)};},projectLatLon:function(lat,lon){return geo?geo.latLonToWorld(lat,lon):null;}});
 window.__KFB_THREE_GEO_P0__ = api;
 
 function fatal(error) {
