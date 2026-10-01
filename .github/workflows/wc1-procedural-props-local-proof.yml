@@ -1,0 +1,39 @@
+name: WC1 Procedural Props Local Proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wc1-procedural-props-local-proof-2026-10-01
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/**'
+      - '.github/workflows/wc1-procedural-props-local-proof.yml'
+  workflow_dispatch:
+
+jobs:
+  boot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static QA syntax
+        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/boot.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-local-proof-http.log 2>&1 &
+          sleep 2
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_LOCAL_REVIEW.html >/dev/null
+      - name: Browser boot and source-pin proof
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/boot.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-procedural-props-local-proof-evidence
+          path: local-proof-evidence/
+          if-no-files-found: error
