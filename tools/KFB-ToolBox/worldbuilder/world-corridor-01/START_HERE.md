@@ -126,6 +126,25 @@ After 2–3 minutes traversal, unloaded geometry / textures / mixers must fall a
 
 No separate dashboard is required. Use a compact debug line / existing HUD and machine-readable sample output.
 
+## Local GPU baseline · no Cloudflare
+
+Use the standalone folder `world-corridor-01/`.
+
+From that folder/package:
+
+```bash
+bash run-local-gpu-baseline.sh
+```
+
+The helper starts a local HTTP server on `127.0.0.1:8772`, opens the unchanged instrumented R2C candidate in Google Chrome when available, and keeps the server alive until Enter is pressed in the terminal.
+
+In the page:
+1. keep the Chrome tab visible;
+2. click **Measure 10s**;
+3. use **Copy JSON** or **Download JSON**.
+
+The measurement is local only. No Cloudflare, Stage publication, GitHub Pages, raw-CDN preview or Work/WSA step is required.
+
 ## Exactly one next gate
 
 **WC1-GPU-BASELINE:** run the preserved instrumented R2C candidate unchanged on representative visible Chromium/GPU hardware and save one probe result. Source parity is already 10/10 PASS; do not tune the candidate before this measurement. After that, Track Core adapter is the first additive delta.
