@@ -70,7 +70,7 @@
     "rule": "scheduler/LOD + baked/static image provider; no runtime PDF rendering in corridor frame loop"
   },
   "stageRoute": null,
-  "nextGate": "WC1-COST-SPLIT",
+  "nextGate": "WC1-CLAY-PERF-01",
   "wc1Baseline": {
     "rehomeRoot": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source",
     "parity": "10/10 BYTE_IDENTICAL_PASS",
@@ -108,5 +108,54 @@
     ],
     "conclusion": "Draw-call / Hex-instancing count is not the dominant current frame-time limiter; isolate existing clay/cloud/shadow/fill cost before Track Core integration.",
     "modeRecordingGap": "Probe did not serialize info.mode; A/B mapping is inferred from R2C source/runtime signature."
+  },
+  "wc1CostSplit": {
+    "status": "MEASURED",
+    "evidence": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_COST_SPLIT_2026-10-01.json",
+    "baseline": {
+      "mode": "B",
+      "fps": 29.4,
+      "meanFrameMs": 34.05,
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89,
+      "pixelRatio": 1.5
+    },
+    "default": {
+      "fps": 30.3,
+      "meanFrameMs": 32.96
+    },
+    "clayOff": {
+      "fps": 90.2,
+      "meanFrameMs": 11.09,
+      "deltaPct": -66.4
+    },
+    "cloudsOff": {
+      "fps": 34.5,
+      "meanFrameMs": 28.99,
+      "deltaPct": -12
+    },
+    "shadowsOff": {
+      "fps": 29.5,
+      "meanFrameMs": 33.91,
+      "deltaPct": 2.9
+    },
+    "pixelRatio1": {
+      "fps": 39.1,
+      "meanFrameMs": 25.54,
+      "deltaPct": -22.5
+    },
+    "conclusion": "Clay material/fragment work and pixel footprint are the dominant current costs; clouds secondary; shadows/Hex draw-call count are not primary limiters in this scene."
+  },
+  "performanceEvidenceRule": {
+    "authority": "VISIBLE_LOCAL_REPRESENTATIVE_GPU",
+    "userFacingFormat": "SELF_CONTAINED_DOUBLE_CLICK_HTML",
+    "ciRole": "SOURCE_PARITY_SYNTAX_BOOT_ONLY",
+    "avoid": [
+      "TERMINAL_REQUIRED",
+      "UNSIGNED_MACOS_APP",
+      "GATEKEEPER_BYPASS",
+      "CLOUDFLARE_FOR_LOCAL_MEASUREMENT"
+    ]
   }
 }
