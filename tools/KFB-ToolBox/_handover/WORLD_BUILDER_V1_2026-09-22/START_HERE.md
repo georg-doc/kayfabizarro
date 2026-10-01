@@ -22,9 +22,9 @@ Accepted intake:
 WC1 source rehome is now **10/10 byte-identical PASS**. Hosted GitHub/SwiftShader absolute performance was stopped after two attempts and is not a product-performance authority.
 
 Exactly one next gate:
-**WC1-COST-SPLIT** — run the unchanged instrumented R2C candidate on representative visible Chromium/GPU hardware and save the probe result. No Track/SKY/Billboard integration before that measurement.
+**WC1-CLAY-PERF-01** — run the unchanged instrumented R2C candidate on representative visible Chromium/GPU hardware and save the probe result. No Track/SKY/Billboard integration before that measurement.
 
-M1 Max hardware baseline is now measured: ~29 fps in both the instanced and individual-mesh signatures despite ~5× draw-call/geometry difference. Hex instancing is therefore not the dominant current limiter. `WC1-COST-SPLIT` isolates existing clay/cloud/shadow/fill cost before Track Core is added.
+M1 Max baseline + cost split are now measured. Clay off removes 66.4% of default mean frame time with identical geometry/calls; clouds are secondary (12%), shadows do not materially help, and pixel ratio reduction helps 22.5%. Hex instancing is not the dominant limiter. `WC1-CLAY-PERF-01` now profiles/optimizes the active K2/v10 Clay fragment path under the K1/H0 Golden contract before Track Core is added.
 
 The older P0/P1/P2 execution history below remains useful provenance but is not the current integration gate.
 
