@@ -441,6 +441,47 @@ Static ES-module syntax:
 Read:
 `clay-perf/DEREK_RGB_512_TEST.md`.
 
+## Clay002 vs Derek · erster Lauf verworfen, fairer Retest bereit
+
+Der erste kombinierte Clay002-vs-Derek-Lauf ist **ungültig für eine Performanceentscheidung**.
+
+Gemessen wurde zwar:
+- procedural Clay: 5.5 fps / 182.8 ms;
+- Clay002 512: 5.7 fps / 174.1 ms;
+- Derek RGB 512: 5.9 fps / 169.37 ms;
+- Clay off: 6.2 fps / 160.4 ms.
+
+Aber: Schon **Clay aus** brach damit von zuvor ~90 fps / ~11 ms auf 6.2 fps / 160.4 ms ein, obwohl Calls/Geometrie gleich blieben.
+
+Ursache:
+Clay002 und Derek waren als dynamische Zweige in denselben bereits großen v10-Fragmentshader eingebaut. Dadurch hing auch der "aus"-Zustand an einem übergroßen Vergleichsprogramm.
+
+Folge:
+- diese 5–6-fps-Werte werden **nicht** für Look- oder Performanceentscheidungen benutzt;
+- der frühere gesunde Global-Clay-Lite-Lauf bleibt gültig;
+- der Test ist technisch korrigiert.
+
+Korrektur:
+- procedural Clay = wieder reiner v10/Clay-Bausteine-Shader;
+- Clay002 = eigener kleiner Shader;
+- Derek RGB = eigener kleiner Shader;
+- Clay aus = normales Material ohne Clay-Code.
+
+Neue Datei:
+`KFB_Clay002_vs_Derek_Fair_Doppelklick.html`
+
+SHA-256:
+`aafa067e05f669679ee50e8c32d0798ef16551f7510fde2d893d2cc9d2305394`
+
+Lokaler Modul-Syntaxcheck:
+**PASS**.
+
+Evidence des verworfenen Laufs:
+`evidence/WC1_DEREK_COMPARISON_INVALID_2026-10-01.json`.
+
+Nächster Schritt:
+**Fairen Retest ausführen und zusätzlich visuell sagen: Clay002 oder Derek RGB.**
+
 ## No further integration yet
 
 Not started:
