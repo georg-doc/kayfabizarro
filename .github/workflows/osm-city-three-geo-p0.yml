@@ -20,6 +20,10 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab/experiments/three-geo-play-donor-p0
+            kfb-hub/stage/osm-city-three-geo-p0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
