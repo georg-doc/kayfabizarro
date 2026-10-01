@@ -1,0 +1,36 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "name": "KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1",
+ "createdAt": "2026-10-01T00:48:48.463Z",
+ "entry": "KFB ToolBox Production-08.dc.html",
+ "fileCount": 57,
+ "bytes": 2111157,
+ "inventory": {
+  "EXPORTED": "55 files + EXPORT_MANIFEST.json + CHECKSUMS.sha256",
+  "PINNED_REMOTE": [
+   "georg-doc/kayfabizarro @ PIN 8922d4b1 · EAR 19088b14 (+ v5b GLB 23615cff) · MAIN b64d7edc · ML 032c9d50 · ML3 4fa08271 · STOCK b97b5ac5 · LEG 10a7fdce · BRUTE 891eadf0 · hair eabc8725"
+  ],
+  "UNPINNED_REMOTE": [
+   "kfb-lib/pet-library.v6.js PET_BASE = raw.githubusercontent.com/georg-doc/kayfabizarro/main/ (inherited)",
+   "SRC.editLayer v1 fallback via jsd(@PIN)"
+  ],
+  "CDN_EXTERNAL": [
+   "unpkg three@0.160.0 (+ examples/jsm)",
+   "Google Fonts: Space Grotesk, IBM Plex Mono"
+  ],
+  "LOCAL_NOT_EXPORTED": [
+   "kfb-lib/clay/Fingerprints01_3K.png (> 2 MB)",
+   "Production-01…07, Stage-First *, VFX review",
+   "kfb-lib: body-surface.v1, pet-eye-rig/other files outside the entry closure"
+  ],
+  "REPLAY_DEPENDENCY_MISSING": [
+   "K2 clay fingerprint option needs Fingerprints01_3K.png"
+  ],
+  "RELATIVE_PATH_RISK": [
+   "file:// breaks ES module imports of the entry → serve over HTTP",
+   "standalone HTML does not boot (FAIL)"
+  ]
+ },
+ "CLEAN_RUN": "ZIP re-read in JS: every entry present, CRC matches, SHA-256 matches CHECKSUMS (see TEST_REPORT); browser run of the unpacked entry NOT_RUN; zipcheck.py NOT_RUN",
+ "secretScan": "no tokens / signed URLs found (entry + changed libs, regex scan)"
+}
