@@ -334,6 +334,71 @@ These are donor candidates, not automatic production approvals.
 
 **Build and measure Global Clay Lite from the existing pool before doing more complex material mixing.**
 
+## Global Clay Lite 512 · implementation ready
+
+The first lightweight one-texture material candidate is now implemented for local comparison.
+
+Human-facing purpose:
+**test whether one small shared Clay texture can keep enough of the handmade look at a fraction of the shader complexity.**
+
+### Candidate
+
+One active 512×512 RGBA texture:
+- R/G = derived relief direction;
+- B = donor roughness;
+- A = centred material/value variation.
+
+Runtime:
+- triplanar world-space projection on X/Y/Z;
+- source asset colour remains authoritative;
+- one active material pack at a time;
+- no per-object texture copies.
+
+Estimated texture memory:
+- 1,048,576 bytes base RGBA8;
+- ~1.33 MiB including mipmaps.
+
+### Donors compared
+
+Only:
+- `Clay002`;
+- `clay_floor_001`.
+
+Both are existing KFB texture-pool donors. No new visual asset was invented.
+
+### Code
+
+- `clay-perf/global-clay-pack.v1.js`;
+- `clay-perf/clay-material.v10-partsdiag.js`;
+- `clay-perf/hex-archipel.r2c-partsdiag.js`;
+- `performance-probe.js`.
+
+The preserved baseline source remains unchanged.
+
+### Local comparison
+
+Artifact:
+`KFB_Global_Clay_Lite_Doppelklick.html`
+
+SHA-256:
+`30bc4ff8e9a39479169301e9a6b198e00a185af402108badfd3e4c481374e81e`
+
+Static proof:
+extracted ES module → `node --check` PASS.
+
+Automatic local sequence:
+1. current procedural Clay;
+2. Global Clay Lite · Clay002 · 512²;
+3. Global Clay Lite · clay_floor_001 · 512²;
+4. Clay off.
+
+Manual buttons allow direct visual switching between the same four states.
+
+No product-performance result is claimed until Georg returns the local JSON.
+
+Read:
+`clay-perf/GLOBAL_CLAY_LITE_512_TEST.md`.
+
 ## No further integration yet
 
 Not started:
