@@ -1,6 +1,6 @@
 # World Corridor 01 · Test Report
 
-Status: **SOURCE REHOME PASS · BROWSER BOOT PASS · ABSOLUTE CI PERFORMANCE NOT ACCEPTED**
+Status: **SOURCE REHOME PASS · M1 MAX GPU BASELINE + COST SPLIT MEASURED · CLAY BOTTLENECK IDENTIFIED**
 Date: 2026-10-01
 
 ## Intake / owner checks
@@ -139,9 +139,52 @@ Therefore Hex instancing / draw-call count is **not the dominant frame-time limi
 Evidence:
 `evidence/WC1_GPU_BASELINE_2026-10-01.json`.
 
+## WC1 cost split · same B/instanced source
+
+A new mode-recording baseline confirms the measured runtime is mode **B**:
+- 29.4 fps;
+- mean 34.05 ms;
+- p95 53.7 ms;
+- 179 calls;
+- 414,758 triangles;
+- 89 geometries.
+
+Automatic same-scene cost split:
+
+| Pass | FPS | Mean ms | Δ mean vs default | Calls | Triangles |
+|---|---:|---:|---:|---:|---:|
+| B_DEFAULT | 30.3 | 32.96 | — | 179 | 414,758 |
+| B_CLAY_OFF | 90.2 | 11.09 | **−66.4%** | 179 | 414,758 |
+| B_CLOUDS_OFF | 34.5 | 28.99 | −12.0% | 164 | 402,470 |
+| B_SHADOWS_OFF | 29.5 | 33.91 | +2.9% (noise / no gain) | 94 | 212,712 |
+| B_PIXEL_RATIO_1 | 39.1 | 25.54 | −22.5% | 179 | 414,758 |
+
+### Interpretation
+
+1. **Clay fragment/material work is the dominant measured cost.**
+   Turning Clay off leaves geometry, calls and world state unchanged but removes about **21.87 ms** from the mean frame time.
+
+2. **Pixel cost matters.**
+   Pixel ratio 1.0 improves mean frame time by 22.5% without changing geometry/calls, consistent with a fill/fragment-heavy bottleneck.
+
+3. **Clouds are secondary.**
+   Removing 54 clouds saves about 3.97 ms / 12%.
+
+4. **Shadows are not the primary limiter here.**
+   Disabling shadows roughly halves draw calls/triangles, yet mean frame time does not improve. Do not spend the next optimization pass on shadow geometry by assumption.
+
+5. Together with the earlier A/B mesh result, **Hex instancing is not the current performance blocker**.
+
+The active parity path already has K2 tools disabled and uses the accepted K1-parity settings. Therefore the next diagnostic must decompose the active v10 fragment path itself — legacy relief/stroke/grain, fingerprints where enabled, facets/creases/mottle and distance/pixel-footprint fading — while preserving the K1/H0 Golden appearance.
+
+Evidence:
+`evidence/WC1_COST_SPLIT_2026-10-01.json`.
+
+Clay style authority:
+`work/clay-style-ssot-2026-10-01` / PR #301 — K1/H0 v8 is visual Golden; K2/v10 is implementation baseline only when Golden parity is preserved.
+
 ## What is NOT claimed
 
-- no representative GPU FPS baseline;
 - no Track Core integration;
 - no Vehicle integration;
 - no Billboard integration;
@@ -156,4 +199,4 @@ Read:
 
 ## Exactly one next gate
 
-**WC1-COST-SPLIT:** on the same preserved B/instanced candidate, measure existing toggles only: default, clay shader off, clouds off, shadows off, and reduced render pixel ratio. No new Track/Vehicle/Billboard/SKY runtime is added in this diagnostic.
+**WC1-CLAY-PERF-01:** profile the active K1-parity K2/v10 Clay fragment path on the same source/camera with bounded feature toggles, then implement the smallest shader/LOD optimization that preserves the locked K1/H0 Golden result. No Track/Vehicle/Billboard/SKY integration belongs in that gate.
