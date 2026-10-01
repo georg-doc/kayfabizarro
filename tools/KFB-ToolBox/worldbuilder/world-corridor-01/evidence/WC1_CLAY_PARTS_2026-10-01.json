@@ -1,0 +1,98 @@
+{
+  "schema": "kfb.world-corridor.clay-parts-evidence/0.1",
+  "date": "2026-10-01",
+  "sourceUpload": {
+    "file": "kfb-clay-bausteine-2026-10-01T15-29-03-643Z.json",
+    "sha256": "31309e583d11ef3dfa5380002d37e1ccd8bfb565b886bf6fffc5e8c75f3ab46b"
+  },
+  "hardware": "Apple M1 Max / Chrome 154 / visible tab",
+  "baseline": {
+    "pixelRatio": 1.5,
+    "fps": 24,
+    "meanFrameMs": 41.67,
+    "drawCalls": 179,
+    "triangles": 414758
+  },
+  "componentSavings": [
+    {
+      "component": "base relief",
+      "offLabel": "BASE_RELIEF_OFF",
+      "fps": 31.5,
+      "meanFrameMs": 31.71,
+      "savedMs": 9.96,
+      "savedPct": 23.9
+    },
+    {
+      "component": "facets + creases",
+      "offLabel": "FACETS_CREASES_OFF",
+      "fps": 30.4,
+      "meanFrameMs": 32.89,
+      "savedMs": 8.78,
+      "savedPct": 21.1
+    },
+    {
+      "component": "dents + gouges + cracks",
+      "offLabel": "DENTS_GOUGES_CRACKS_OFF",
+      "fps": 28.2,
+      "meanFrameMs": 35.48,
+      "savedMs": 6.19,
+      "savedPct": 14.9
+    },
+    {
+      "component": "fingerprints",
+      "offLabel": "FINGERPRINTS_OFF",
+      "fps": 27.9,
+      "meanFrameMs": 35.79,
+      "savedMs": 5.88,
+      "savedPct": 14.1
+    },
+    {
+      "component": "mottle / colour noise",
+      "offLabel": "MOTTLE_OFF",
+      "fps": 26.5,
+      "meanFrameMs": 37.75,
+      "savedMs": 3.92,
+      "savedPct": 9.4
+    }
+  ],
+  "combined": {
+    "baseReliefOnly": {
+      "fps": 51.3,
+      "meanFrameMs": 19.51
+    },
+    "clayOff": {
+      "fps": 92.9,
+      "meanFrameMs": 10.76
+    },
+    "note": "Component savings are not additive; branches and GPU scheduling interact."
+  },
+  "pixelRatioPairs": [
+    {
+      "ratio": 1.5,
+      "clayOnMs": 41.67,
+      "clayOffMs": 10.76,
+      "clayCostMs": 30.91
+    },
+    {
+      "ratio": 1,
+      "clayOnMs": 30.01,
+      "clayOffMs": 10.76,
+      "clayCostMs": 19.25
+    },
+    {
+      "ratio": 0.5,
+      "clayOnMs": 22.12,
+      "clayOffMs": 11.06,
+      "clayCostMs": 11.06
+    }
+  ],
+  "conclusions": [
+    "Base relief and facets/creases are the two largest isolated measured Clay costs.",
+    "Fingerprints and dents/gouges/cracks are meaningful secondary costs.",
+    "Mottle is smaller but still measurable.",
+    "Clay-off scene cost stays near 11 ms across pixel ratios, while Clay-on cost falls strongly as resolution drops.",
+    "Clay cost is therefore substantially pixel-dependent but not pure fill-rate; distance gating and shader simplification remain necessary.",
+    "Absolute default fps varied from earlier runs, so use same-sequence relative deltas as the primary evidence."
+  ],
+  "nextPlainLanguage": "Make distant Clay cheaper first: fade/skip invisible relief, facets and marks while keeping the near look unchanged."
+}
