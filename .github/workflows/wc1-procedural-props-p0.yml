@@ -21,7 +21,9 @@ jobs:
           node-version: '22'
 
       - name: Static syntax
-        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation-soft.mjs
 
       - name: Install Playwright
         run: |
@@ -34,13 +36,19 @@ jobs:
           echo $! > /tmp/kfb-proc-p0-http.pid
           sleep 2
           curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/source-isolation.html >/dev/null
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/source-isolation-soft.html >/dev/null
 
-      - name: Browser source-isolation proof
+      - name: Browser P0 source-isolation proof
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation.mjs
+
+      - name: Browser P0B soft-form proof
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-p0/qa/source-isolation-soft.mjs
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: wc1-procedural-props-p0-evidence
-          path: procedural-props-p0-evidence/
+          path: |
+            procedural-props-p0-evidence/
+            procedural-props-p0b-evidence/
           if-no-files-found: error
