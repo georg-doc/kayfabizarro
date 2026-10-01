@@ -16,6 +16,19 @@ Apply after `skills/chat/PRODUCTION_SOP.md`.
 - A screenshot-only handoff is insufficient after a failed pass. Preserve the failed code and mark it `ARCHIVED_FAILED_CANDIDATE`; do not polish history or silently rebuild the same foundation.
 
 
+## Control-plane portability · binding
+
+An active Production-Control briefing URL is a human convenience link, never Claude's only executable source.
+
+Before Claude Design starts an ACTIVE / READY briefing, it must also receive one of:
+- exact GitHub `repository + immutable 40-character head + path`; or
+- a complete self-contained copy-ready prompt.
+
+The portable source must name the existing owner, bounded outcome, protected boundaries, done-when checks and return target. If only a `chatgpt.site` briefing exists and Claude cannot read it, classify the briefing `SOURCE_FALLBACK_REQUIRED`; do not reconstruct the task from old chat memory or invent a replacement design.
+
+Current machine-checkable contract:
+`skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/briefing-contract.v1.mjs`.
+
 ## Export routing · current
 
 For a full Claude Design handoff/session cut, use:

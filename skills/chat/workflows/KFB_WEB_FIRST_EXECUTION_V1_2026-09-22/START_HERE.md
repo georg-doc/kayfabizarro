@@ -115,6 +115,23 @@ If #2 has no concrete answer:
 
 ---
 
+## 2A · Production-Control briefing gate
+
+Active Production-Control briefs use the machine-checkable contract at:
+`skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/briefing-contract.v1.mjs`.
+
+Binding consequences:
+- every ACTIVE / READY brief has a portable GitHub or complete copy-text fallback;
+- Claude Design may not depend on a Site-only brief;
+- Work/WSA may be selected only when `workEscalation.missingCapability` is concrete and the prepared source, forbidden changes, success check and stop condition are present;
+- no missing capability means route the task back to Web/GitHub or Claude Design.
+
+Production-Control connector recovery is also bounded while the known broad-read server failure remains open:
+- prefer exact `workflow` reads;
+- use `limit <= 20`;
+- do not treat a failed `limit:100` call as missing project state;
+- GitHub/project SSOT remains authoritative.
+
 ## 3 · Minimal-Work contract
 
 The ideal Work job is:

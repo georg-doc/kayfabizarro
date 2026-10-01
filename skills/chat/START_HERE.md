@@ -10,6 +10,8 @@ The current production Hub owner is `https://kfb-production-control.frizzlebob.c
 
 Every active briefing must expose a clickable absolute Production-Control URL and name the responsible execution surface, model and reasoning level. Copy-ready prompts must include the same URL and execution metadata; a chat must not infer its lane from old session names.
 
+Control-plane recovery rule: active briefings also require a portable GitHub/self-contained fallback, Claude may not depend on a Site-only brief, Work/WSA requires a concrete missing-capability escalation record, and authenticated Production-Control recovery reads prefer exact workflow + `limit <= 20` while the known broad-read server defect remains open. See `skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/START_HERE.md`.
+
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 

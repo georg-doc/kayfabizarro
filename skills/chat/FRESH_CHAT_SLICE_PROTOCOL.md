@@ -5,7 +5,7 @@ Date: 2026-09-19
 Owner: Georg / KFB
 Purpose: cold starts, parallel web chats, bounded modules and POCs
 
-Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
+Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`. It helps a chat finish one useful slice independently and hand it back for a compact receiving-owner / Web review. Work/WSA is used only after the explicit missing-capability escalation test. It does not create a new owner, SSOT, runtime, architecture or merge right.
 
 ## 1. Recover before changing anything
 
@@ -47,7 +47,7 @@ For `MINOR / QUARANTINABLE`: one diagnostic pass maximum, then quarantine/defer 
 
 Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`.
 
-A fresh chat should normally finish by making the capability usable in its real receiving owner, not by creating a separate review artifact. Technical checks, contract tables, measurement pages and ownership diagnostics are evidence for agents/WSA unless a concrete human product decision depends on them.
+A fresh chat should normally finish by making the capability usable in its real receiving owner, not by creating a separate review artifact. Technical checks, contract tables, measurement pages and ownership diagnostics are evidence for agents/receiving owners unless a concrete human product decision depends on them.
 
 Before naming a human gate, state the exact decision Georg can make. If no meaningful decision exists, keep testing automated/internal and continue to the next productive integration.
 
@@ -72,7 +72,7 @@ For any slice already authorized to write GitHub state, closure is not complete 
 In particular, after Georg gives PASS / TUNE / FAIL or asks to “check this in”, “secure this” or continue:
 1. update the owner Return / review record / next gate first;
 2. verify the exact branch head and intended file;
-3. add any required WSA / Work planning note;
+3. add a Work/WSA escalation note only when the missing-capability test is actually satisfied; otherwise add none;
 4. only then send the compact chat summary.
 
 Do not spend a separate user turn producing paste-ready GitHub text when this chat already has the GitHub connector and permission to persist it.
@@ -103,7 +103,7 @@ Never convert an automated PASS into Georg acceptance. Leave failures and untest
 
 ## 5. Leave a compact review packet
 
-The repository/PR must let tomorrow's Work session review without replaying the chat:
+The repository/PR must let tomorrow's receiving owner or Web chat review without replaying the chat:
 
 - repository, branch/PR and exact head;
 - one-sentence goal and actual result;
