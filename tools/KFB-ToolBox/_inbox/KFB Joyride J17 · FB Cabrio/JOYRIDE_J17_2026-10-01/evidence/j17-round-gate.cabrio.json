@@ -1,0 +1,95 @@
+{
+ "schema": "kfb.j17.round-gate/0.1",
+ "route": {
+  "stream": "lab-track/data/p1b.v2.stream.json",
+  "id": "P1_B_STADT_FINALE",
+  "fingerprint": "d42aa57e",
+  "closed": true
+ },
+ "note": "Headless wie J16: kfb-drive.k2b.js, derselbe Stream, 1/60 s, Start s = 60, W + Shift, Spurhilfe 1. Einziger Unterschied zwischen den Läufen: halfWidth (Bandenabstand) aus der Fahrzeugbreite. Referenz J15/J16: 91,60 s. runsFullL: bis Strecke L gefahren (Methode J16 = 91,60 s); runs: bis zur Rundennaht.",
+ "runs": [
+  {
+   "label": "proxy (FLOW.proxyHalfWidth, J16-Referenz?)",
+   "halfWidth": 1.08,
+   "lapComplete": true,
+   "lapTime_s": 90.37,
+   "airTime_s": 5.15,
+   "maxSpeed_ms": 49,
+   "events": {
+    "takeoff": 7,
+    "land": 7
+   },
+   "wallHits": 0
+  },
+  {
+   "label": "cabrio (Maßstab A, Breite inkl. Außenspiegel 2,78 m)",
+   "halfWidth": 1.3889681642965193,
+   "lapComplete": true,
+   "lapTime_s": 90.37,
+   "airTime_s": 5.15,
+   "maxSpeed_ms": 49,
+   "events": {
+    "takeoff": 7,
+    "land": 7
+   },
+   "wallHits": 0
+  },
+  {
+   "label": "cabrio Karosserie ohne Spiegel (2,22 m)",
+   "halfWidth": 1.1095,
+   "lapComplete": true,
+   "lapTime_s": 90.37,
+   "airTime_s": 5.15,
+   "maxSpeed_ms": 49,
+   "events": {
+    "takeoff": 7,
+    "land": 7
+   },
+   "wallHits": 0
+  }
+ ],
+ "runsFullL": [
+  {
+   "label": "Referenz proxyHalfWidth 1,08",
+   "halfWidth": 1.08,
+   "lapComplete": true,
+   "lapTime_s": 91.6,
+   "distance_m": 4392.7,
+   "L": 4392.5,
+   "airTime_s": 5.15,
+   "events": {
+    "takeoff": 7,
+    "land": 7
+   },
+   "wallHits": 0
+  },
+  {
+   "label": "Cabrio Maßstab A · halfW aus Box inkl. Außenspiegel (J10-Regel)",
+   "halfWidth": 1.389,
+   "lapComplete": true,
+   "lapTime_s": 91.6,
+   "distance_m": 4392.7,
+   "L": 4392.5,
+   "airTime_s": 5.15,
+   "events": {
+    "takeoff": 7,
+    "land": 7
+   },
+   "wallHits": 0
+  },
+  {
+   "label": "Cabrio Karosserie ohne Spiegel",
+   "halfWidth": 1.1095,
+   "lapComplete": true,
+   "lapTime_s": 91.6,
+   "distance_m": 4392.7,
+   "L": 4392.5,
+   "airTime_s": 5.15,
+   "events": {
+    "takeoff": 7,
+    "land": 7
+   },
+   "wallHits": 0
+  }
+ ]
+}
