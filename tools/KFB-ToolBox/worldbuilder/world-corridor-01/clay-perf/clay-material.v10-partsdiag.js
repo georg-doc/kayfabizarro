@@ -77,7 +77,7 @@
  * sondern genau einmal multipliziert — sonst geht der Y-Flip von GLTFLoader verloren.
  */
 
-import { PROFILES } from './clay-profiles.v2.js';
+import { PROFILES } from '../baseline-source/lab-clay/clay-profiles.v2.js';
 export { PROFILES };
 export const TOOL_ORDER = ['fan', 'smear', 'crease', 'dent', 'thumb', 'roll'];
 
