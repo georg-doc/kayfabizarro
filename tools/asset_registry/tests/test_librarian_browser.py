@@ -9,7 +9,7 @@ LIB = ROOT / "tools/asset_registry/librarian"
 class LibrarianBrowserContractTests(unittest.TestCase):
     def test_required_browser_files_exist(self):
         for name in (
-            "index.html", "styles.css", "resources.css", "animation-sources.css", "app.js", "state.js", "registry.js",
+            "index.html", "styles.css", "resources.css", "animation-sources.css", "app.js", "state.js", "registry.js", "browse-families.js",
             "search.js", "render.js", "selection.js", "preview.js", "preview3d.js", "framing3d.js",
             "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js", "README.md",
         ):
@@ -25,7 +25,7 @@ class LibrarianBrowserContractTests(unittest.TestCase):
             "productionTabs", "assetWorkspace", "resourceWorkspace", "resourceSearch",
             "resourceActorFilter", "resourceStatusFilter", "resourceList", "resourceDetailPanel",
             "resourcePreviewWrap", "resourcePreviewCanvas", "resourcePreviewStatus",
-            "registryModeSelect", "kaykitPreset", "animationSources",
+            "registryModeSelect", "kaykitPreset", "sourceFamilyFilter", "motionPreviewActorFilter", "motionTransport", "motionPlayPause", "motionSpeed", "motionLoop", "motionScrub", "animationSources",
         ):
             self.assertIn(f'id="{control_id}"', html, control_id)
         self.assertIn("No embedded clips", html)
@@ -35,7 +35,7 @@ class LibrarianBrowserContractTests(unittest.TestCase):
 
     def test_browser_reuses_generated_registries_read_only(self):
         js = "\n".join((LIB / name).read_text(encoding="utf-8") for name in (
-            "app.js", "state.js", "registry.js", "search.js", "render.js", "selection.js",
+            "app.js", "state.js", "registry.js", "browse-families.js", "search.js", "render.js", "selection.js",
             "preview.js", "preview3d.js", "framing3d.js", "thumb3d.js", "resources-ui.js", "rig-preview.js", "animation-sources.js",
         ))
         self.assertIn("../../../registry/assets/v1", js)
@@ -107,6 +107,22 @@ class LibrarianBrowserContractTests(unittest.TestCase):
         self.assertTrue(expected.issubset(profiles))
         for consumer_id in expected:
             self.assertEqual(profiles[consumer_id]["selectionStatus"], "candidate-only")
+
+    def test_v18_collection_browse_and_motion_preview_contract(self):
+        app = (LIB / "app.js").read_text(encoding="utf-8")
+        registry = (LIB / "registry.js").read_text(encoding="utf-8")
+        families = (LIB / "browse-families.js").read_text(encoding="utf-8")
+        preview = (LIB / "preview3d.js").read_text(encoding="utf-8")
+        resources = (LIB / "resources-ui.js").read_text(encoding="utf-8")
+        self.assertIn("sourceFamilyFilter", app)
+        self.assertIn("configureBrowseHierarchy", registry)
+        self.assertIn("tiny-treats", families)
+        self.assertIn("kaykit", families)
+        self.assertNotIn("$('searchInput').value = 'KayKit'", app)
+        self.assertIn("previewMotionOnActor", app)
+        self.assertIn("Animated actor preview measures actual track binding", resources)
+        for token in ("setMotionPaused", "setMotionSpeed", "setMotionLoop", "scrubMotion"):
+            self.assertIn(token, preview)
 
     def test_v15_keeps_runtime_aliases_for_regression_smoke(self):
         js = (LIB / "app.js").read_text(encoding="utf-8")
