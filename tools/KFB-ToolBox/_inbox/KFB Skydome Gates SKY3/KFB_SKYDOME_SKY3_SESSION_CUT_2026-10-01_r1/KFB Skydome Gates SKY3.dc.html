@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#cfccc4;color:#1f2022;font:13px/1.45 'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7a4d0d}a:hover{color:#b8781c}
+canvas{display:block}
+button,select{font:inherit}
+.kfb-scroll{scrollbar-width:none}.kfb-scroll::-webkit-scrollbar{display:none}
+details>summary{list-style:none}details>summary::-webkit-details-marker{display:none}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.184.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.184.0/examples/jsm/"}}
+</script>
+<script type="module">
+import { bootGates } from './lab-sky/sky-gates.v3.js?r=4';
+window.__KFB_SKY3 = { bootGates };
+window.dispatchEvent(new Event('kfbSky3Ready'));
+</script>
+</helmet>
+
+<div style="position:relative;display:flex;flex-direction:column;height:100vh;min-width:0">
+  <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <header style="flex:none;height:50px;display:flex;align-items:center;gap:8px;padding:0 8px 0 0;background:#efece6;border-bottom:1px solid #c9c5bc;min-width:0">
+      <div style="flex:none;font:600 12px/1 'IBM Plex Mono',monospace;margin:0 0 0 12px;color:#5c6065;letter-spacing:.04em">SKY3</div>
+      <div class="kfb-scroll" style="flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 28px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 28px),transparent 100%);padding-right:28px">
+        <div title="Gate" style="display:flex;gap:2px;padding:2px;background:#e3e0d9;border-radius:8px;flex:none">
+          <sc-for list="{{ gates }}" as="b" hint-placeholder-count="5">
+            <button onClick="{{ b.pick }}" title="{{ b.title }}" style="height:26px;border:0;border-radius:6px;padding:0 9px;cursor:pointer;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap;background:{{ b.bg }};color:{{ b.fg }};box-shadow:{{ b.sh }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div title="Tageszeit (ein Schreiber: day-night.js)" style="display:flex;gap:2px;padding:2px;background:#e3e0d9;border-radius:8px;flex:none">
+          <sc-for list="{{ times }}" as="b" hint-placeholder-count="4">
+            <button onClick="{{ b.pick }}" style="height:26px;border:0;border-radius:6px;padding:0 9px;cursor:pointer;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap;background:{{ b.bg }};color:{{ b.fg }};box-shadow:{{ b.sh }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div title="Wetter" style="display:flex;gap:2px;padding:2px;background:#e3e0d9;border-radius:8px;flex:none">
+          <sc-for list="{{ weathers }}" as="b" hint-placeholder-count="2">
+            <button onClick="{{ b.pick }}" style="height:26px;border:0;border-radius:6px;padding:0 9px;cursor:pointer;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap;background:{{ b.bg }};color:{{ b.fg }};box-shadow:{{ b.sh }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+        <div title="Aktive Himmelsschale (genau eine)" style="display:flex;gap:2px;padding:2px;background:#e3e0d9;border-radius:8px;flex:none">
+          <sc-for list="{{ shells }}" as="b" hint-placeholder-count="3">
+            <button onClick="{{ b.pick }}" style="height:26px;border:0;border-radius:6px;padding:0 9px;cursor:pointer;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap;background:{{ b.bg }};color:{{ b.fg }};box-shadow:{{ b.sh }}">{{ b.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:none;display:flex;align-items:center;gap:4px;padding-left:8px;border-left:1px solid #c9c5bc">
+        <button onClick="{{ tgPal }}" title="Paletten · Stimmung, Wolken, Planeten, Spindel-Enden" aria-pressed="{{ palOn }}" style="width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid {{ palLine }};background:{{ palBg }};color:{{ palFg }}">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10"></path><path d="M18 6h2"></path><circle cx="16" cy="6" r="2"></circle><path d="M4 12h4"></path><path d="M12 12h8"></path><circle cx="10" cy="12" r="2"></circle><path d="M4 18h12"></path><path d="M20 18h0"></path><circle cx="18" cy="18" r="2"></circle></svg>
+        </button>
+        <button onClick="{{ tgHud }}" title="Messwerte · fps, Dreiecke, Uhr, Schalen" aria-pressed="{{ hudOn }}" style="width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid {{ hudLine }};background:{{ hudBg }};color:{{ hudFg }}">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg>
+        </button>
+        <button onClick="{{ tgPanel }}" title="Details · Donor, Host, Proben, Ergebnisse" aria-pressed="{{ panelOn }}" style="width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid {{ panelLine }};background:{{ panelBg }};color:{{ panelFg }}">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M15 4v16"></path></svg>
+        </button>
+        <button onClick="{{ goClean }}" title="Nur Ansicht · Escape zurück" style="width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;border:1px solid #c9c5bc;background:#f6f4ef;color:#1f2022">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>
+        </button>
+        <a href="KFB Hex-Kosmos HX1 Sky.dc.html" title="E4 · HX1 integriert" style="height:30px;padding:0 10px;display:flex;align-items:center;gap:6px;background:#1f2022;color:#f6f4ef;border-radius:6px;text-decoration:none;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap">E4<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+      </div>
+    </header>
+  </sc-if>
+
+  <div style="position:relative;flex:1 1 auto;min-height:0;min-width:0;background:#dedbd4">
+    <div ref="{{ boxRef }}" style="position:absolute;inset:0"></div>
+
+    <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;left:10px;top:10px;z-index:6;display:flex;flex-direction:column;align-items:flex-start;gap:6px;max-width:{{ leftMax }};pointer-events:none">
+        <sc-if value="{{ caption }}" hint-placeholder-val="{{ false }}"><div style="pointer-events:auto;font:11px/1.4 'IBM Plex Mono',monospace;color:#1f2022;background:#efece6e8;border:1px solid #c9c5bc;border-radius:6px;padding:5px 8px;max-width:100%">{{ caption }}</div></sc-if>
+        <sc-if value="{{ palOn }}" hint-placeholder-val="{{ false }}">
+          <div style="pointer-events:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:6px;background:#efece6;border:1px solid #c9c5bc;border-radius:10px;box-shadow:0 6px 24px rgba(31,32,34,.10);max-width:100%">
+            <sc-for list="{{ palGroups }}" as="pg" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:6px;min-width:0">
+                <span style="font:11px/1 'IBM Plex Mono',monospace;color:#5c6065;white-space:nowrap">{{ pg.label }}</span>
+                <div style="display:flex;gap:2px;padding:2px;background:#e3e0d9;border-radius:8px">
+                  <sc-for list="{{ pg.items }}" as="b" hint-placeholder-count="3">
+                    <button onClick="{{ b.pick }}" title="{{ b.title }}" style="height:24px;border:0;border-radius:6px;padding:0 8px;cursor:pointer;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap;background:{{ b.bg }};color:{{ b.fg }};box-shadow:{{ b.sh }}">{{ b.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ hudOn }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <sc-for list="{{ chips }}" as="c" hint-placeholder-count="5">
+              <div title="{{ c.title }}" style="pointer-events:auto;display:flex;align-items:center;gap:5px;height:24px;padding:0 8px;font:11px/1 'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;border-radius:6px;white-space:nowrap;background:{{ c.bg }};border:1px solid {{ c.line }};color:{{ c.fg }}">
+                <span style="opacity:.75">{{ c.k }}</span><span>{{ c.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+
+      <div class="kfb-scroll" style="position:absolute;left:{{ toolLeft }};bottom:12px;transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:4px;flex-wrap:nowrap;overflow-x:auto;background:#1f2022;color:#f6f4ef;border-radius:10px;padding:6px;box-shadow:0 6px 24px rgba(31,32,34,.18);max-width:{{ leftMax }}">
+        <sc-for list="{{ tools }}" as="b" hint-placeholder-count="6">
+          <button onClick="{{ b.pick }}" title="{{ b.title }}" style="flex:none;height:30px;padding:0 10px;border-radius:6px;cursor:pointer;font:500 12px/1 'Space Grotesk',sans-serif;white-space:nowrap;border:1px solid {{ b.line }};background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ panelVisible }}" hint-placeholder-val="{{ false }}">
+      <aside style="position:absolute;right:8px;top:8px;bottom:8px;width:min(360px,calc(100% - 16px));z-index:20;display:flex;flex-direction:column;background:#efece6;border:1px solid #c9c5bc;border-radius:12px;box-shadow:0 8px 28px rgba(31,32,34,.16);overflow:hidden">
+        <div style="flex:none;display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #c9c5bc">
+          <b style="font-weight:600;font-size:14px;margin-right:auto">Details</b>
+          <button onClick="{{ tgPanel }}" title="Details schließen" style="width:26px;height:26px;padding:0;display:flex;align-items:center;justify-content:center;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;color:#1f2022;cursor:pointer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6 6 18"></path></svg>
+          </button>
+        </div>
+        <div style="flex:1 1 auto;overflow:auto;padding:0 0 18px">
+          <sc-for list="{{ sections }}" as="s" hint-placeholder-count="4">
+            <details open="{{ s.open }}" style="border-bottom:1px solid #dedbd4">
+              <summary style="font:600 11px/1 'Space Grotesk',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#5c6065;padding:12px 14px;cursor:pointer">{{ s.title }}</summary>
+              <div style="padding:0 14px 14px;display:flex;flex-direction:column;gap:6px">
+                <div>
+                  <sc-for list="{{ s.rows }}" as="kv" hint-placeholder-count="3">
+                    <div style="display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px solid #dedbd4;font:11px/1.45 'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums">
+                      <span style="color:#5c6065;flex:none;max-width:48%">{{ kv.k }}</span><span style="text-align:right;word-break:break-word;color:{{ kv.c }}">{{ kv.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ s.text }}" hint-placeholder-val="{{ false }}"><div style="font:11px/1.5 'IBM Plex Mono',monospace;color:#1f2022;background:#f6f4ef;border:1px solid #c9c5bc;border-radius:6px;padding:7px 9px;white-space:pre-wrap;word-break:break-word">{{ s.text }}</div></sc-if>
+              </div>
+            </details>
+          </sc-for>
+        </div>
+      </aside>
+    </sc-if>
+
+    <sc-if value="{{ clean }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ exitClean }}" title="Escape" style="position:absolute;right:12px;top:12px;z-index:9;height:30px;padding:0 10px;border:1px solid #c9c5bc;border-radius:6px;background:#f6f4ef;color:#1f2022;cursor:pointer;opacity:.55;font:500 12px/1 'Space Grotesk',sans-serif" style-hover="opacity:1">Ansicht verlassen</button>
+    </sc-if>
+
+    <sc-if value="{{ busy }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#dedbd4e6;pointer-events:none;padding:20px;text-align:center">
+        <div style="font:600 12px/1 'IBM Plex Mono',monospace;color:#5c6065;letter-spacing:.04em">SKY3</div>
+        <div style="font:12px/1.4 'IBM Plex Mono',monospace;color:#1f2022">{{ busyText }}</div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  boxRef = React.createRef();
+  state = { gate: 'E0', st: null, note: 'Lädt …', booting: true, ui: (() => { try { return Object.assign({ pal: false, hud: false, panel: false, clean: false }, JSON.parse(localStorage.getItem('kfb.sky3.ui') || '{}'), { clean: false }); } catch (e) { return { pal: false, hud: false, panel: false, clean: false }; } })() };
+  componentDidMount() {
+    this.onKey = e => { if (e.key === 'Escape' && this.state.ui.clean) this.setUi({ clean: false }); };
+    window.addEventListener('keydown', this.onKey);
+    const go = async () => {
+      if (this.api || !this.boxRef.current) return;
+      try {
+        let last = 0;
+        this.api = await window.__KFB_SKY3.bootGates(this.boxRef.current, { onNote: n => this.setState({ note: n }), onState: st => { const t = performance.now(); if (t - last > 700 || st.busy !== (this.state.st && this.state.st.busy)) { last = t; this.setState({ st, gate: st.gate || this.state.gate }); } } });
+        this.setState({ booting: false, note: '' }); await this.api.setGate('E0');
+      } catch (e) { console.error(e); this.setState({ note: 'Fehler: ' + e.message }); }
+    };
+    if (window.__KFB_SKY3) go(); else window.addEventListener('kfbSky3Ready', go, { once: true });
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); this.api && this.api.dispose(); }
+  setUi(p) { const ui = { ...this.state.ui, ...p }; this.setState({ ui }); try { localStorage.setItem('kfb.sky3.ui', JSON.stringify({ pal: ui.pal, hud: ui.hud, panel: ui.panel })); } catch (e) {} }
+  renderVals() {
+    const S = this.state, st = S.st, api = this.api, P = st && st.probe, ui = S.ui;
+    const seg = (on, label, pick, title = '') => ({ label, title, pick, bg: on ? '#fffdf8' : 'transparent', fg: on ? '#1f2022' : '#5c6065', sh: on ? '0 1px 2px rgba(31,32,34,.14)' : 'none' });
+    const tb = (label, pick, title = '', on = false) => ({ label, title, pick, bg: on ? '#f6f4ef' : 'transparent', fg: on ? '#1f2022' : '#f6f4ef', line: on ? '#f6f4ef' : '#5c6065' });
+    const ico = on => ({ bg: on ? '#1f2022' : '#f6f4ef', fg: on ? '#f6f4ef' : '#1f2022', line: on ? '#1f2022' : '#c9c5bc' });
+    const G = [['E0', 'E0 Donor | Knete', 'Jarlan-Wolke unverändert gegen Knet-Kandidat, gleiche Kamera und Licht'], ['E1', 'E1 Travel', 'Travel-Skydome prozedural + statisch'], ['E2', 'E2 Spindel', 'Card-Spindle mit auslaufenden Trichtern und End-Shadern'], ['E3', 'E3 Familie', 'Clay-Wolkenfamilie v3: 13 Varianten, 6 Archetypen; v1 zum Vergleich; Lebenszyklus, Feldmessung'], ['P', 'Planeten', 'Quaternius Ultimate Space Kit · 11 Planeten, Original und Knete']];
+    const gate = st && st.gate || S.gate;
+    const gates = G.map(([id, l, t]) => seg(gate === id, l, () => { this.setState({ gate: id }); api && api.setGate(id); }, t));
+    const tm = P && P.time;
+    const times = [['day', 'Day'], ['evening', 'Evening'], ['night', 'Night'], ['auto', 'Auto']].map(([id, l]) => seg(tm === id, l, () => api && api.setTime(id)));
+    const weathers = [['clear', 'Clear'], ['rain', 'Rain']].map(([id, l]) => seg(P && P.weather === id, l, () => api && api.setWeather(id)));
+    const shells = [['tiny', 'TinySkies'], ['travel', 'Travel'], ['spindle', 'Spindle']].map(([id, l]) => seg(P && P.shell === id, l, () => api && api.setShell(id)));
+    const E = st && st.ends || {}, setE = p => api && api.setEnds(p);
+    const endGroups = [
+      { label: 'Spindel unten', items: [['lava', 'Lava'], ['saeure', 'Säure'], ['bubblegum', 'Bubblegum'], ['wirbel', 'Wirbel']].map(([v, l]) => seg(E.unten === v, l, () => setE({ unten: v }))) },
+      { label: 'oben', items: [['himmel', 'Himmel'], ['bubblegum', 'Bubblegum'], ['aurora', 'Aurora'], ['abendrot', 'Abendrot']].map(([v, l]) => seg(E.oben === v, l, () => setE({ oben: v }))) },
+      { label: 'Palette', items: [['shader', 'Shader'], ['canyon', 'Canyon'], ['bucht', 'Bucht'], ['otown', 'O-Town'], ['deck', 'Deck']].map(([v, l]) => seg(E.palUnten === v, l, () => setE({ palUnten: v, palOben: v }), v === 'shader' ? 'Vorgabe je Shader' : v === 'deck' ? 'Mittelwert der Kartenmotive + Kartenkanon Gold/Rot' : 'Welt-Rollen aus Joyride J15 WORLDS')) },
+      { label: 'Saat', items: [[1, '1'], [2, '2'], [3, '3'], [4, '4']].map(([v, l]) => seg(E.seed === v, l, () => setE({ seed: v }), 'stabile Saat: Farbton ±9°')) }
+    ];
+    const palGroups = [
+      { label: 'Stimmung', items: [['verdant', 'Verdant'], ['molten', 'Molten'], ['frost', 'Frost'], ['bone', 'Bone']].map(([id, l]) => seg(P && P.mood === id, l, () => api && api.setMood(id))) },
+      { label: 'Wolken', items: [[0, 'Aus'], [4, '4'], [12, '12'], [24, '24']].map(([n, l]) => seg(st && st.skyClouds === n, l, () => api && api.setSkyClouds(n), n ? n + ' Knetwolken um die Kamera (E1, E2)' : 'keine Himmelswolken')) },
+      { label: 'Planeten', items: [['off', 'Aus'], ['original', 'Original'], ['clay', 'Knete']].map(([m, l]) => seg(st && st.planetMode === m, l, () => api && api.setPlanets(m), m === 'clay' ? 'K1-Vorstufe + K2-Material, Atlasfarben bleiben' : '')) },
+      { label: 'Anzahl', items: [[3, '3'], [6, '6']].map(([n, l]) => seg(st && st.planetSet === n, l, () => api && api.setPlanets(st && st.planetMode !== 'off' ? st.planetMode : 'original', n))) },
+    ].concat(endGroups);
+    const A = fn => () => api && fn(api);
+    let tools = [];
+    if (gate === 'E0') tools = [['front', 'Front'], ['side', 'Seite'], ['tq', '3/4'], ['top', 'Oben'], ['under', 'Unten']].map(([id, l]) => tb(l, A(a => a.view(id)), '', st && st.view === id)).concat([tb('Drahtgitter', A(a => a.toggle('wire')), 'Kanten von Donor und Kandidat', st && st.wire), tb('Lappen färben', A(a => a.toggle('lobes')), 'Diagnose: Klon mit Lappenfarbe', st && st.lobes), tb('AO ' + (st && st.aoOn ? 'an' : 'aus'), A(a => a.toggle('aoOn')), 'Kehlen-AO zwischen den Lappen')]);
+    if (gate === 'E1') tools = [['S', 'Prozedural S'], ['A', 'Prozedural A'], ['space', 'Space'], ['watercolor', 'Statisch Aquarell'], ['night', 'Statisch Nacht']].map(([id, l]) => tb(l, A(a => a.travelVariant(id)))).concat([tb('Nahtprobe', A(a => a.seamProbe()), 'Spaltensprung am Horizont')]);
+    if (gate === 'E2') tools = [['front', 'Innen'], ['top', 'Blick nach oben'], ['under', 'Blick nach unten'], ['out', 'Außen']].map(([id, l]) => tb(l, A(a => a.spindleView(id)))).concat([['lava', 'Lava'], ['saeure', 'Säure'], ['bubblegum', 'Bubblegum']].map(([v, l]) => tb('↓ ' + l, A(a => a.setEnds({ unten: v })), 'Grund-Shader unten', E.unten === v)), [['himmel', 'Himmel'], ['aurora', 'Aurora'], ['abendrot', 'Abendrot']].map(([v, l]) => tb('↑ ' + l, A(a => a.setEnds({ oben: v })), 'Himmels-Shader oben', E.oben === v)));
+    if (gate === 'E3') tools = [['front', 'Front'], ['tq', '3/4'], ['top', 'Oben']].map(([id, l]) => tb(l, A(a => a.view(id)), '', st && st.view === id)).concat([tb('AO ' + (st && st.aoOn ? 'an' : 'aus'), A(a => a.toggle('aoOn'))), tb('Lebenszyklus ×10', A(a => a.lifecycle(10)), 'Spindel mount/dispose'), tb('Schalen-Leak ×10', A(a => a.leak(10)), 'TinySkies → Travel → Spindle → TinySkies'), tb('Feld v1 / v2 messen', A(a => a.fieldTest()), '0/4/12/24, dieselbe Kamera')]);
+    if (gate === 'P') tools = [tb('Himmel: Original', A(a => a.setPlanets('original')), '', st && st.planetMode === 'original'), tb('Himmel: Knete', A(a => a.setPlanets('clay')), '', st && st.planetMode === 'clay'), tb('Himmel: aus', A(a => a.setPlanets('off')), '', st && st.planetMode === 'off')];
+    const chips = st ? [
+      { k: 'Gate', v: gate, title: 'aktives Gate', bg: '#efece6e8', line: '#c9c5bc', fg: '#1f2022' },
+      { k: 'Uhr', v: P ? P.clock : '–', title: 'day-night.js, einzige Zeit', bg: '#efece6e8', line: '#c9c5bc', fg: '#1f2022' },
+      { k: 'Schalen opak', v: P ? String(P.opaqueShells) : '–', title: 'muss ≤ 1 sein', bg: P && P.opaqueShells > 1 ? '#a33d3d' : '#4d6b55', line: P && P.opaqueShells > 1 ? '#a33d3d' : '#4d6b55', fg: '#f6f4ef' },
+      { k: '', v: st.perf.fps + ' fps · ' + Math.round(st.perf.tris / 1000) + 'k △ · ' + st.perf.calls + ' Calls', title: 'Vorschau, nicht Georgs Gerät', bg: '#efece6e8', line: '#c9c5bc', fg: '#1f2022' }
+    ].concat(st.skyField ? [{ k: 'Wolken', v: st.skyField.n + ' · LOD ' + st.skyField.lod, title: 'near/mid/far', bg: '#efece6e8', line: '#c9c5bc', fg: '#1f2022' }] : []) : [];
+    const kv = (k, v, c = '#1f2022') => ({ k, v: v == null || v === '' ? '–' : String(v), c });
+    const OK = '#4d6b55', BAD = '#a33d3d';
+    const sections = [];
+    const inv = st && st.inventory, F = st && st.family;
+    if (inv) sections.push({ title: 'Donor · Jarlan Perez Wolke', open: gate === 'E0', rows: [kv('Pfad', 'media/3D_Assets/KFB/Clouds by Jarlan Perez - b3Kia9N2fS2.glb'), kv('Git-Blob (SHA-1)', inv.sha.slice(0, 12) + ' ' + (inv.sha === 'acd9d653f31f249d0bcf11a8b6311594a9d6e153' ? '= Pin' : '≠ Pin'), inv.sha === 'acd9d653f31f249d0bcf11a8b6311594a9d6e153' ? OK : BAD), kv('Größe', inv.bytes + ' B', inv.bytes === 201576 ? OK : BAD), kv('Geladen aus', inv.from), kv('Vertices / △', inv.verts + ' / ' + inv.tris), kv('Maße (B × H × T)', inv.bbox.size.join(' × ')), kv('Lappen', inv.lobes.length + ' Schalen · ' + inv.lobes.map(l => l.tris).join(' '))], text: 'Links: Donor unverändert (neutrales Material). Rechts: Knet-Kandidat v2 aus der größten Donor-Wolke (V0), dieselben Lappen als ein geschlossenes Stück. Status: TUNE, bis Georg das Bild abnimmt.' });
+    if (F) sections.push({ title: 'Clay-Wolkenfamilie v3', open: gate === 'E3' || gate === 'E0', rows: [kv('Version', F.version), kv('Archetypen', [...new Set(F.variants.map(v => v.arch))].join(' · ')), kv('Bake', F.bakeMs + ' ms · AO ' + (F.ao ? 'an' : 'aus')), kv('Feld', 'smin ' + F.params.k + ' · Tisch ' + F.params.flat + ' · Beulen ' + F.params.lump + ' @ ' + F.params.lumpF), kv('Zellen near / mid / far', F.params.cells.join(' / ') + ' je Breite'), kv('△ near / mid / far (Σ)', F.totals.trisNear + ' / ' + F.totals.trisMid + ' / ' + F.totals.trisFar), ...F.variants.map(v => kv('V' + v.id + ' ' + (v.arch || ''), v.lobes + ' Lappen · ' + v.tris.join('/') + ' △' + (v.mirror ? ' · gespiegelt' : '')))], text: 'Material: clay-material.v10, Profil cloud ungedämpft (v1 lief mit QUIET: Abdruck 0,3, Druckstelle 0). Handmaß 0,2 · Kachel 0,64 · Abdruck 1,8 je Wolkenbreite (Golden-Verhältnis 0,5 : 1,6 : 4,5).' });
+    if (P) sections.push({ title: 'EnvironmentHost', open: gate === 'E1', rows: [kv('Uhr', P.clock), kv('Nacht / Tag', P.night + ' / ' + P.day), kv('Wetter', P.weather + ' · ' + P.rain), kv('Schale', P.shell), kv('Opake Schalen', P.opaqueShells, P.opaqueShells <= 1 ? OK : BAD), kv('Nebel', P.fog ? P.fog.near + ' – ' + P.fog.far + ' ' + P.fog.color : null), kv('Sonne', P.sun.intensity + ' ' + P.sun.color), kv('Aurora / God Rays', P.aurora + ' / ' + P.godrays), kv('Lens Flare', P.flare && P.flare.deckung + ' @ ' + (P.flare.ort || []).join(','), P.flare && P.flare.sichtbar ? OK : '#5c6065'), kv('Stimmung', P.mood + ' · Versatz ' + P.himmelTon)] });
+    if (P && P.shellProbe && P.shellProbe.tor) { const sp = P.shellProbe; sections.push({ title: 'Card-Spindle · Probe', open: gate === 'E2', rows: [kv('Vertrag', sp.contract), kv('Boden C29', sp.tor.pass ? 'bestanden' : 'durchgefallen', sp.tor.pass ? OK : BAD), kv('Karten', sp.himmel.belegt + ' / ' + sp.himmel.motive), ...(sp.enden ? ['unten', 'oben'].map(w => kv('Ende ' + w, sp.enden[w].shader + ' · ' + sp.enden[w].palette + ' · Nebel ' + sp.enden[w].fog + ' · L ' + sp.enden[w].L + ' · r ' + sp.enden[w].rEnd)) : []), kv('Dreiecke · Materialien', sp.tris + ' · ' + sp.materials)], text: 'Mantel = himmel.v4 unverändert. Enden: auslaufende Trichter (Tangente stetig an der Mantelkante, laufen als dünne Röhre aus), Karten werden zum Ende winkeltreu kleiner und laufen in die Nebelfarbe der End-Palette; am Ende klein der Grund- bzw. Himmels-Shader. Deckung (eigene Probe):\n' + sp.tor.text }); }
+    const pl = P && P.planets;
+    if (pl) sections.push({ title: 'Planeten · im Himmel', open: gate === 'P', rows: [kv('Modus', pl.mode + (pl.ids.length ? ' · ' + pl.ids.join(', ') : '')), kv('Abstand', Math.round(pl.distance) + ' u, folgt der Kamera'), kv('Fehler', pl.error, pl.error ? BAD : OK), ...pl.items.map(it => kv(it.id, 'Az ' + it.az + '° · Höhe ' + it.el + '° · ' + it.deg + '° · ' + it.tris + ' △'))] });
+    if (st && st.planetInv && st.planetInv.length) sections.push({ title: 'Planeten · Inventar (Quaternius)', open: gate === 'P', rows: st.planetInv.map(p => p.err ? kv(p.id, p.err, BAD) : kv(p.id, p.tris + ' △ · r ' + p.r + ' · ' + p.bytes + ' B · ' + p.sha.slice(0, 10) + ' · ' + p.from + (p.clay ? ' · Knete ' + p.clay : ''))), text: 'media/3D_Assets/SciFI_Ultimate Space Kit_Quaternius/Environment/GLTF/Planet_1–11.gltf · CC0. Oben Original (Quaternius-Material), unten Knete (softenGeometry + clay-material.v10, Profil nature, Atlasfarben bleiben).' });
+    const R = st && st.results || {};
+    if (R.field) sections.push({ title: 'Ergebnis · Feld v1 / v2', open: true, rows: R.field.map(r => kv(r.fam + ' · ' + r.clouds, r.tris + ' △ · ' + r.calls + ' Calls · ' + r.ms + ' ms · LOD ' + r.lod)), text: 'Vorschau-Messung, gleiche Kamera, CPU-Zeit je Bild mit gl.finish(). v1 = 18 sich durchdringende Hüllen je Wolke (Überzeichnung), v2 = ein geschlossenes Stück je Wolke. Georgs Gerät ist nicht gemessen.' });
+    if (R.lifecycle) { const L = R.lifecycle; sections.push({ title: 'Ergebnis · Spindel-Lebenszyklus', open: true, rows: [kv('Zyklen', L.cycles), kv('C29 in allen Zyklen', L.allPass ? 'ja' : 'nein', L.allPass ? OK : BAD), kv('Δ Objekte / Mat / Geo', [L.delta.objects, L.delta.materials, L.delta.geometries].join(' / '), L.ok ? OK : BAD), kv('Δ GPU-Geo / Texturen', L.delta.gpuGeoms + ' / ' + L.delta.gpuTextures, L.ok ? OK : BAD)] }); }
+    if (R.leak) { const L = R.leak; sections.push({ title: 'Ergebnis · Schalen-Leak', open: true, rows: [kv('Zyklen', L.cycles + ' · ' + L.order), kv('Δ Objekte / Mat / Geo', [L.delta.objects, L.delta.materials, L.delta.geometries].join(' / '), L.ok ? OK : BAD), kv('Δ GPU-Geo / Texturen', L.delta.gpuGeoms + ' / ' + L.delta.gpuTextures, L.ok ? OK : BAD)] }); }
+    if (R.seam) sections.push({ title: 'Ergebnis · Nahtprobe', open: true, rows: Object.entries(R.seam).map(([k, v]) => kv(k, v.mitte + ' · ' + v.median + ' · ' + v.maxGesamt)) });
+    const ip = ico(ui.pal), ih = ico(ui.hud), ipn = ico(ui.panel);
+    return { boxRef: this.boxRef, gates, times, weathers, shells, palGroups, tools, chips, sections,
+      caption: gate === 'E0' ? 'Links: Donor unverändert (Quelle, Low-Poly, absichtlich kantig) · rechts: Knet-Wolke V0' : gate === 'E3' ? 'Oben links Donor unverändert · Reihe 1–2: V0–V12 (Donor ×3, Kumulus, Stratus, Puff, Turm, Kette je ×2) · Reihe 3: V3 near/mid/far · Donor · v1 alt · v3' : '',
+      showChrome: !ui.clean, leftMax: ui.panel ? 'max(calc(100% - 20px - 376px), min(300px, calc(100% - 20px)))' : 'calc(100% - 20px)', toolLeft: ui.panel ? 'min(50%, max(calc((100% - 376px) / 2), 160px))' : '50%', clean: !!ui.clean, palOn: !!ui.pal, hudOn: !!ui.hud, panelOn: !!ui.panel, panelVisible: !!ui.panel && !ui.clean,
+      palBg: ip.bg, palFg: ip.fg, palLine: ip.line, hudBg: ih.bg, hudFg: ih.fg, hudLine: ih.line, panelBg: ipn.bg, panelFg: ipn.fg, panelLine: ipn.line,
+      tgPal: () => this.setUi({ pal: !ui.pal }), tgHud: () => this.setUi({ hud: !ui.hud }), tgPanel: () => this.setUi({ panel: !ui.panel }), goClean: () => this.setUi({ clean: true }), exitClean: () => this.setUi({ clean: false }),
+      busy: !!(S.note || (st && st.busy) || S.booting), busyText: S.note || (st && st.busy) || 'Lädt …' };
+  }
+}
+
+</script>
+</body>
+</html>
