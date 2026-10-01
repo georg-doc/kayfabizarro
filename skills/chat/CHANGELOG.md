@@ -1,3 +1,12 @@
+## 2026-10-01 · KFB-CONTROL-PLANE-RECOVERY-01
+
+- Added a portable active-briefing contract and no-dependency validator: Claude Design briefs require immutable GitHub or complete copy-text fallback; Work/WSA briefs require a concrete missing-capability escalation record.
+- Production-Control recovery reads now route workflow-first with `limit <= 20` while the observed broad `limit:100` server/query failure remains explicitly unresolved.
+- Removed routine Fresh-Chat → Work review wording from the current Fresh Chat protocol and Registry.
+- Corrected the Hub README so Production Control is the current human Hub owner and the old Cloudflare root is compatibility-only; child Stage/review/asset routes remain unchanged.
+- Tests: briefing contract **13/13 PASS**; router consistency **8/8 PASS**; exact-workflow Production-Control checkpoint/readback **1/1 PASS**.
+- Prepared, but did not start, one bounded Work escalation for the inaccessible Production-Control backend query. No Stage, merge, Live promotion or backend-fix claim.
+
 ## 2026-10-01 · Production Hub entrypoint compatibility redirect
 
 - The historical root entrypoint `https://kayfabizarro.pages.dev/kfb-hub/` now redirects to the current KFB Production Control Hub.
