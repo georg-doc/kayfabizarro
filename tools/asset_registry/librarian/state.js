@@ -15,7 +15,7 @@ function storedSelection() {
 function storedRegistryMode() { return localStorage.getItem(STORAGE_REGISTRY_MODE) === 'canonical' ? 'canonical' : 'live'; }
 function storedBrowseMode() { return localStorage.getItem(STORAGE_BROWSE_MODE) === 'all' ? 'all' : 'primary'; }
 export const state = {
-  manifest:null, packs:[], profiles:{}, rigSummary:null, catalog:null, catalogById:null, rigById:null,
+  manifest:null, packs:[], packById:new Map(), packFamilyById:new Map(), profiles:{}, rigSummary:null, catalog:null, catalogById:null, rigById:null,
   problems:null, problemsByAsset:new Map(), selected:new Set(storedSelection()), active:null, lastResults:[],
   viewMode: localStorage.getItem(STORAGE_VIEW) === 'list' ? 'list' : 'gallery',
   registryMode: storedRegistryMode(),
@@ -28,7 +28,7 @@ export function persistSelection(){localStorage.setItem(STORAGE_SELECTION,JSON.s
 export function registryBase(){return state.registryBase || CANONICAL_REGISTRY_BASE;}
 export function setBrowseMode(mode){state.browseMode=mode==='all'?'all':'primary';localStorage.setItem(STORAGE_BROWSE_MODE,state.browseMode);}
 export function resetRegistryCaches(){
-  state.manifest=null; state.packs=[]; state.rigSummary=null; state.catalog=null; state.catalogById=null; state.rigById=null;
+  state.manifest=null; state.packs=[]; state.packById=new Map(); state.packFamilyById=new Map(); state.rigSummary=null; state.catalog=null; state.catalogById=null; state.rigById=null;
   state.problems=null; state.problemsByAsset=new Map(); state.active=null; state.lastResults=[]; state.resultVisibleLimit=RESULT_LIMIT;
 }
 export function setRegistryMode(mode){
