@@ -82,6 +82,9 @@ Ear sweep in the seated pose: total back 0–90° (root-heavy shares 0.65 / 0.25
 
 ## 7 · Files
 
+- `BRIEF_DESIGN_J18.md`: the build brief for Design (checkable acceptance).
+- `VEHICLE_SEAT_CONTRACT.v0.2.json`: contract with the wheel shift and the rule changes above (v0.1 stays in FB_CAR_01).
+- `HANDOVER_WSA.md`: camera owner question, contract location, router writeback.
 - `wheel_reach.jpg`: as delivered vs wheel 0.10 closer (passenger view + top view, frame 140).
 - `source/`:
   - `reach.py`: reach ratios;
