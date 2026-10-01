@@ -29,7 +29,7 @@ try{
   for(let i=0;i<90;i++){
     source=await page.evaluate(()=>window.__KFB_THREE_GEO_P0__.snapshot());
     if(source.fatal) throw new Error(source.fatal);
-    if(source.ready && source.tiles.ready>0 && source.source) break;
+    if(source.ready && source.tiles.ready>0 && source.tiles.loading===0 && source.tiles.rebuilding===0 && source.source) break;
     await sleep(1000);
   }
   pass('build marker',source.build==='KFB-THREE-GEO-P0-20261001',source.build);
