@@ -44,7 +44,10 @@
     "loader": {
       "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lib/atlas.js",
       "blob": "9c54869db0c208c019fe87e356c625cdaf5c35fd",
-      "exports": ["buildVignette", "arrange"]
+      "exports": [
+        "buildVignette",
+        "arrange"
+      ]
     },
     "selectionContract": {
       "route": "#<residentId>",
@@ -58,28 +61,50 @@
       "actorId": "lorekeeper",
       "rigFamily": "Rig_Medium",
       "pose": "Idle_A",
-      "expectedSourceFragments": ["Lorekeeper.glb", "Lorekeeper_Tome.gltf", "Lorekeeper_Staff.gltf"]
+      "expectedSourceFragments": [
+        "Lorekeeper.glb",
+        "Lorekeeper_Tome.gltf",
+        "Lorekeeper_Staff.gltf"
+      ]
     },
     {
       "residentId": "goth-girl",
       "actorId": "gothgirl",
       "rigFamily": "Rig_Medium",
       "pose": "Sit_Chair_Idle",
-      "expectedSourceFragments": ["GothGirl.glb", "GothGirl_Stool.gltf", "GothGirl_Speaker.gltf", "GothGirl_MicStand.gltf"]
+      "expectedSourceFragments": [
+        "GothGirl.glb",
+        "GothGirl_Stool.gltf",
+        "GothGirl_Speaker.gltf",
+        "GothGirl_MicStand.gltf"
+      ]
     },
     {
       "residentId": "clown",
       "actorId": "clown",
       "rigFamily": "Rig_Medium",
       "pose": "Idle_B",
-      "expectedSourceFragments": ["Clown.glb", "circus_podium.gltf", "clown_hammer.gltf", "juggling_pin_blue.gltf"]
+      "expectedSourceFragments": [
+        "Clown.glb",
+        "circus_podium.gltf",
+        "clown_hammer.gltf",
+        "juggling_pin_blue.gltf"
+      ]
     },
     {
       "residentId": "witch",
       "actorId": "witch",
       "rigFamily": "Rig_Medium",
       "pose": "Holding_B",
-      "expectedSourceFragments": ["Witch.glb", "Table_Small.gltf", "Potionstation_decorated.gltf", "Broom.gltf", "Basket_Mushrooms.gltf", "Cauldron.gltf", "Mortar.gltf"]
+      "expectedSourceFragments": [
+        "Witch.glb",
+        "Table_Small.gltf",
+        "Potionstation_decorated.gltf",
+        "Broom.gltf",
+        "Basket_Mushrooms.gltf",
+        "Cauldron.gltf",
+        "Mortar.gltf"
+      ]
     }
   ],
   "sourceIsolationAcceptance": [
@@ -94,5 +119,36 @@
     "one screenshot per resident is captured"
   ],
   "integrationDeferred": true,
-  "nextGate": "4/4 headed browser source-isolation PASS before any ensemble chat integration"
+  "nextGate": "4/4 headed browser source-isolation PASS before any ensemble chat integration",
+  "integration": {
+    "status": "IMPLEMENTED_UNTESTED",
+    "routeHash": "#__residentchat",
+    "members": [
+      "lorekeeper",
+      "goth-girl",
+      "clown",
+      "witch"
+    ],
+    "sceneOwner": "Resident Atlas S15 __ensemble + arrange()",
+    "rendererCameraOwner": "Resident Atlas S15",
+    "semanticOwner": "resident-chatter-adapter.v0.1.mjs",
+    "bubbleOwner": "NPC-CARD-SPEC-01 resident-scene.mjs#createBubbles",
+    "timingScope": "bounded proof choreography only; production WHEN remains mob-ai / host",
+    "maxVisibleBubbles": 2,
+    "liveLLM": false,
+    "sourceArtifacts": {
+      "residentProfiles": {
+        "fileId": "dcbbde71-c62c-4331-9fd6-cab7178b6187",
+        "sha256": "96d201b766bf84b7b3a725f4ae8d55b376fb3e0fe0e456e75ad7241773daa16f"
+      },
+      "semanticTripletPool": {
+        "fileId": "0d7d3aea-b1a6-43f0-a65f-c327145c5191",
+        "sha256": "cac0333d9ea973d2dd727d57bd67314c60789dfc70d04d8e91d5ff9783f81136"
+      },
+      "semanticTripletContract": {
+        "fileId": "1469e6ad-3316-46ff-a74f-4c77937e4404",
+        "sha256": "bb749c32fbc7850957f9b2e15496da4d7abba6bd5fe025dd27609f48b9abc674"
+      }
+    }
+  }
 }

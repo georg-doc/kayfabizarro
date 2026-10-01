@@ -281,7 +281,7 @@ async function mountCard({ THREE, slot, canvas, log }) {
 }
 
 /* ── Bubbles · Podcast v5 shaper/ink, placed in the world above the speaker ──────────────────── */
-function createBubbles({ overlay, shapes }) {
+export function createBubbles({ overlay, shapes }) {
   const bank = {}; (shapes.shapes || []).forEach((s) => { bank[s.name] = s; });
   const live = [];
   const meas = document.createElement('canvas').getContext('2d');

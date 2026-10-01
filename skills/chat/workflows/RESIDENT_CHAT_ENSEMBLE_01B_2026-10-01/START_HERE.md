@@ -1,6 +1,6 @@
 # START HERE · RESIDENT-CHAT-ENSEMBLE-01B · 2026-10-01
 
-Status: IMPLEMENTATION CANDIDATE · FRESH SOURCE-ISOLATION ATTEMPT
+Status: IMPLEMENTATION CANDIDATE · SOURCE GATE PASS · FOUR-RESIDENT ENSEMBLE INTEGRATION
 
 ## Bounded slice
 
@@ -30,6 +30,28 @@ This is a fresh bounded attempt. Do not modify or reopen stopped PR #308.
 - Stage: NOT REQUIRED for this technical source gate
 - Live: NOT PROMOTED
 
+## Source gate result
+
+PASS at `6f4548771a6586f16085eccec5cc917fca0f6a09`.
+
+- Lorekeeper / Goth Girl / Clown / Witch: 4/4 source isolation.
+- 40 source nodes total.
+- 0 source-critical page / console / HTTP / request failures.
+- one screenshot per Resident.
+- optional promo/reference misses remained non-blocking.
+
+## Integration phase
+
+- S15 remains renderer/camera/scene owner.
+- The existing S15 `__ensemble` + `arrange()` path is reused through one optional subset seam.
+- The tested Resident Chatter kernel remains semantic selector/validator.
+- Existing NPC-CARD-SPEC-01 `createBubbles` remains visible bubble owner.
+- Site-authored ResidentProfile v0.1 + shared Triplet Pool v0.1 are copied by exact artifact checksum and normalized to the tested v0.2 kernel contract.
+- No live LLM.
+- No replacement mouth/gaze system. Source animation remains; mouth/gaze stay absent where S15 does not own them.
+- One bounded 2-turn NPC↔NPC proof plus one explicit player-targeted interaction API seam.
+- One visible speaker normally, two bubbles soft maximum.
+
 ## Exactly one next gate
 
-Run the unchanged four-Resident source-isolation sequence under the resolved optional-reference classification. Only a 4/4 PASS may unlock the deterministic four-Resident ensemble integration.
+Headed browser proof of the four-source Resident Chat ensemble: exact 4 S15 members, deterministic 2-turn micro-conversation, ≤2 visible bubbles, player-targeted seam, donor bubble owner, source animation retained, and 0 source-critical runtime errors.

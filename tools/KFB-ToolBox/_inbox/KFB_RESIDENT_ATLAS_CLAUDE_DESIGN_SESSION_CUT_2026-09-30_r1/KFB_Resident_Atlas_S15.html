@@ -1083,6 +1083,23 @@ async function show(id) {
   facts(v); qa(v); fillClips(v); applyLayers(); mountPuppet(v); renderCheck(); renderBatch();
 }
 
+async function showEnsembleSubset(ids) {
+  const requested = Array.from(new Set((ids || []).map(String)));
+  const known = requested.filter((id) => RESIDENTS.some((resident) => resident.residentId === id));
+  if (!known.length || known.length !== requested.length) {
+    throw new Error('Resident subset contains unknown or empty ids');
+  }
+  const priorMembers = ENSEMBLE.members;
+  try {
+    ENSEMBLE.members = known;
+    who.value = '__ensemble';
+    await show('__ensemble');
+    return cur;
+  } finally {
+    ENSEMBLE.members = priorMembers;
+  }
+}
+
 /* ---------- views & layers ---------- */
 const press = (b, on) => b.setAttribute('aria-pressed', String(on));
 /* manualCamera escape hatch: Box3 is unreliable for a skinned mesh whose rest-pose vertex
@@ -2908,7 +2925,18 @@ const start = fromHash() || RESIDENTS[0].residentId;
 who.value = start;
 await show(start);
 
-window.__atlas = { V, ST, PUP, EDIT, IK, ENV, band: () => BAND, disco: () => DISCO, built, cur: () => cur, measured, show };
+window.__atlas = { V, ST, PUP, EDIT, IK, ENV, band: () => BAND, disco: () => DISCO, built, cur: () => cur, measured, show, showEnsembleSubset };
+
+if (decodeURIComponent(location.hash.replace(/^#/, '')) === '__residentchat') {
+  try {
+    const mod = await import('/skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/src/resident-chat-ensemble-browser.mjs');
+    window.__residentChat = await mod.mountResidentChatEnsemble({ atlas: window.__atlas, stage: $('stage') });
+  } catch (error) {
+    console.error('[resident-chat-ensemble-01b]', error);
+    $('qa').className = 'bad';
+    $('qa').textContent = 'Resident Chat STOP · ' + String(error && error.message || error);
+  }
+}
 
 /* ====================================================================
    S10 · BEARBEITEN — ein Modus, ein Dock im Bild
