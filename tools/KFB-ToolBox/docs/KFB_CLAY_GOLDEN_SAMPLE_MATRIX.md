@@ -22,7 +22,9 @@ This matrix distinguishes accepted pixel references from implementation baseline
 | Vehicle surface | KayKit taxi + police | K1 catalogue | `vehicle` profile | **SURFACE REFERENCE** | source/candidate with wheels/contact unchanged |
 | Vehicle gameplay | KFB_CVP1_cabrio | Joyride J17 | J17 scale/seat/physics owners | **CURRENT GAMEPLAY DONOR** | clay surface + drive, no rig/physics rewrite |
 | Clay particles | Resident/ToolBox particle profiles | isolated event evidence | existing clay-vfx/event consumers | **CANDIDATE** | land/impact/prop_break/drift sheet + gameplay proof |
-| Billboard body | WORLD_BILLBOARD_CLAY01 r2 | current Tune design | B1/B2a surface/fit owners + r2 body donor | **TUNE DONOR** | island placement + 0/1/4/8/16 measurement |
+| Billboard Clay body | WORLD_BILLBOARD_CLAY01 r2 Plain | current Tune design | B1/B2a surface/fit owners + r2 physical donor | **TUNE DONOR** | source/front/3-4/back/contact + island 0/1/4/8/16 |
+| Billboard cardboard standee | first production standee | none yet | shared FaceSocket + B1/B2a responsive content | **WIP CONTRACT** | source/front/3-4/back + near/mid/far |
+| Billboard mapped 3D carrier | one verified existing model/screen | none yet | named mesh/UV/decal socket; no local engine | **WIP CONTRACT** | unchanged model + safe-area mapping + rear proof |
 
 ## Fixed façade comparison contract
 

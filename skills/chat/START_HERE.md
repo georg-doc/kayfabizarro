@@ -20,6 +20,15 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 9. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
 10. Record decisions and results additively.
 
+Shared visual/runtime SSOTs currently include:
+
+- `tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md`;
+- `tools/KFB-ToolBox/docs/KFB_SKYDOME_ENVIRONMENT_SSOT_WIP.md`;
+- `tools/KFB-ToolBox/docs/KFB_BILLBOARD_CONTENT_ENGINE_SSOT_WIP.md`;
+- `tools/KFB-ToolBox/docs/KFB_BILLBOARD_3D_PRESENTATION_SSOT_WIP.md`.
+
+For Billboards, read both Billboard documents: content/engine and physical 3D presentation are deliberately separate owners.
+
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.

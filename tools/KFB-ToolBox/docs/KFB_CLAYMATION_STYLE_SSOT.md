@@ -167,6 +167,15 @@ Current K1 Golden candidates:
 
 Use profile `prop`. Golden intent is readable source identity with softened edges and restrained hand marks. Small props must not inherit terrain-scale fingerprints or building-scale lump deformation.
 
+### Billboards and cardboard standees
+
+Read both companion contracts before editing a Billboard:
+
+- `KFB_BILLBOARD_CONTENT_ENGINE_SSOT_WIP.md` for content sources, SHOW/SPIN/SELL rotation, responsive composition, cache and playback;
+- `KFB_BILLBOARD_3D_PRESENTATION_SSOT_WIP.md` for physical Clay bodies, face sockets, mappings onto 3D models and cardboard standees.
+
+The existing B1/B2a runtime remains the only media/scheduler owner. Clay adaptation changes the physical carrier and its materials; it does not create another Billboard engine. The current r2 Plain body is a TUNE donor, not yet a Golden Sample.
+
 ### Characters
 
 Current surface references in K1:
