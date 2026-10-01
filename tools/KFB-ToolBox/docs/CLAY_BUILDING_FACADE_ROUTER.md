@@ -4,6 +4,15 @@ Status: **CURRENT SHARED ROUTER · NO NEW RUNTIME OWNER**
 Date: 2026-09-29  
 Purpose: make the already accepted/prepared clay-building rules discoverable across WorldBuilder, OSM City, Track/World design and Claude Design.
 
+## Read the style SSOT first
+
+Before resolving any building source below, read:
+
+- `tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md`;
+- `tools/KFB-ToolBox/docs/KFB_CLAY_GOLDEN_SAMPLE_MATRIX.md`.
+
+This file remains the building/source router. It is not the cross-family visual SSOT. The SSOT locks the K1/H0 Golden comparison and explains when K2/v10 may be used in new stages.
+
 ## Resolve sources in this order
 
 ### 1 · Source / ownership grammar: S5 Building / Façade Clay Adapter

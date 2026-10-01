@@ -20,6 +20,15 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 9. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
 10. Record decisions and results additively.
 
+Shared visual/runtime SSOTs currently include:
+
+- `tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md`;
+- `tools/KFB-ToolBox/docs/KFB_SKYDOME_ENVIRONMENT_SSOT_WIP.md`;
+- `tools/KFB-ToolBox/docs/KFB_BILLBOARD_CONTENT_ENGINE_SSOT_WIP.md`;
+- `tools/KFB-ToolBox/docs/KFB_BILLBOARD_3D_PRESENTATION_SSOT_WIP.md`.
+
+For Billboards, read both Billboard documents: content/engine and physical 3D presentation are deliberately separate owners.
+
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
@@ -150,6 +159,9 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `WEB_PROJECT_FOLDER_INSTRUCTIONS.md` — copy-ready instruction text for Web project folders
 - `templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md` — stop/export/post-mortem template after repeated visual or kit failures
 - `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` — mandatory donor-first and every-pixel-pays-rent rules for visual briefs
+- `tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md` — **CURRENT SHARED CLAY STYLE SSOT**; mandatory for clay geometry, materials, deformation, palettes, shadows/contact and all building/terrain/prop/character/vehicle consumers
+- `tools/KFB-ToolBox/docs/KFB_CLAY_GOLDEN_SAMPLE_MATRIX.md` — fixed Golden/reference/candidate matrix and comparison gates across asset families
+- `tools/KFB-ToolBox/docs/KFB_SKYDOME_ENVIRONMENT_SSOT_WIP.md` — **CURRENT SHARED ENVIRONMENT WIP**: one EnvironmentHost, TinySkies/Travel/Card-Spindle shells, shared weather/atmosphere and pinned Jarlan cloud anatomy
 - `workflows/KFB_HUB_UI_V2_2026-09-19/CLAUDE_DESIGN_BRIEF.md` — lean Hub UI brief for desktop, split-screen and mobile
 - `SYNC_PROTOCOL.md` — shared GitHub-based chat/agent synchronization
 - `INBOX_PROTOCOL.md` — shared cross-project intake/staging rules
@@ -1341,4 +1353,3 @@ Durable handoff:
 `skills/chat/workflows/WB_ZONE_CROP_PARITY_01_2026-09-27/RETURN.md` on PR #255.
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
-
