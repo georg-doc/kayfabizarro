@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { $ } from './state.js';
 import { visibleMeshBounds, framePerspectiveCamera, projectedBounds } from './framing3d.js';
 let renderer,scene,camera,controls,clock,root,mixer,bounds,token=0,motionToken=0,clips=[];
-let externalState=null,activeAction=null,activeClip=null;
+let externalState=null,activeAction=null,activeClip=null,manualScrubProgress=null;
 function fmtTime(seconds){
   const s=Math.max(0,Number(seconds)||0),m=Math.floor(s/60),r=Math.floor(s%60);
   return `${m}:${String(r).padStart(2,'0')}`;
@@ -16,12 +16,14 @@ function syncMotionTransport(){
   if(!ready)return;
   const duration=Math.max(.0001,Number(activeClip.duration)||0);
   const scrub=$('motionScrub'),time=$('motionTime'),play=$('motionPlayPause');
-  if(scrub&&!scrub.matches(':active'))scrub.value=String(Math.min(1,Math.max(0,(activeAction.time||0)/duration)));
-  if(time)time.textContent=`${fmtTime(activeAction.time||0)} / ${fmtTime(duration)}`;
+  const progress=manualScrubProgress==null?Math.min(1,Math.max(0,(activeAction.time||0)/duration)):manualScrubProgress;
+  const shownTime=duration*progress;
+  if(scrub&&!scrub.matches(':active'))scrub.value=String(progress);
+  if(time)time.textContent=`${fmtTime(shownTime)} / ${fmtTime(duration)}`;
   if(play)play.textContent=activeAction.paused?'Play':'Pause';
 }
 function configureAction(action,clip){
-  activeAction=action;activeClip=clip;
+  activeAction=action;activeClip=clip;manualScrubProgress=null;
   const speed=Number($('motionSpeed')?.value||1);
   const loop=$('motionLoop')?.checked!==false;
   action.timeScale=Number.isFinite(speed)&&speed>0?speed:1;
@@ -34,6 +36,7 @@ function configureAction(action,clip){
 export function setMotionPaused(paused){
   if(!activeAction)return false;
   activeAction.paused=Boolean(paused);
+  if(!activeAction.paused)manualScrubProgress=null;
   if($('motionPlayPause'))$('motionPlayPause').textContent=activeAction.paused?'Play':'Pause';
   syncMotionTransport();return true;
 }
@@ -55,14 +58,16 @@ export function setMotionLoop(loop){
 export function scrubMotion(progress){
   if(!activeAction||!activeClip)return false;
   const p=Math.min(1,Math.max(0,Number(progress)||0));
-  activeAction.paused=true;activeAction.time=(Number(activeClip.duration)||0)*p;
+  const duration=Number(activeClip.duration)||0;
+  activeAction.paused=true;activeAction.time=duration*p;manualScrubProgress=p;
   if($('motionScrub'))$('motionScrub').value=String(p);
   if($('motionPlayPause'))$('motionPlayPause').textContent='Play';
-  mixer?.update(0);syncMotionTransport();return true;
+  syncMotionTransport();return true;
 }
 export function motionTransportState(){
   const duration=Number(activeClip?.duration)||0;
-  return activeAction&&activeClip?{paused:Boolean(activeAction.paused),speed:Number(activeAction.timeScale)||1,loop:activeAction.loop===THREE.LoopRepeat,time:Number(activeAction.time)||0,duration,progress:duration?Math.min(1,Math.max(0,(Number(activeAction.time)||0)/duration)):0}:null;
+  const progress=manualScrubProgress==null?(duration?Math.min(1,Math.max(0,(Number(activeAction?.time)||0)/duration)):0):manualScrubProgress;
+  return activeAction&&activeClip?{paused:Boolean(activeAction.paused),speed:Number(activeAction.timeScale)||1,loop:activeAction.loop===THREE.LoopRepeat,time:duration*progress,duration,progress}:null;
 }
 
 function init() {
@@ -75,7 +80,7 @@ function init() {
 }
 function disposeTree(node){node?.traverse((o)=>{o.geometry?.dispose?.();for(const m of (Array.isArray(o.material)?o.material:[o.material]).filter(Boolean)){for(const v of Object.values(m))if(v?.isTexture)v.dispose?.();m.dispose?.();}});}
 export function clear3D() {
-  motionToken+=1; mixer=null; clips=[]; bounds=null; externalState=null; activeAction=null; activeClip=null;
+  motionToken+=1; mixer=null; clips=[]; bounds=null; externalState=null; activeAction=null; activeClip=null; manualScrubProgress=null;
   if(root&&scene){scene.remove(root);disposeTree(root);} root=null;
   if($('motionTransport'))$('motionTransport').hidden=true; if($('motionScrub'))$('motionScrub').value='0'; if($('motionTime'))$('motionTime').textContent='0:00 / 0:00';
   $('previewCanvas').hidden=true; $('threeControls').hidden=true; $('clipSelect').replaceChildren(new Option('No embedded clips','')); $('wireframeToggle').checked=false;
