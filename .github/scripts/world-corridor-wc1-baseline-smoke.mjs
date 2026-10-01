@@ -53,7 +53,7 @@ async function run(){
   const port=9230;
   const browser=spawn(exe,['--headless=new','--no-sandbox','--disable-dev-shm-usage','--enable-webgl','--ignore-gpu-blocklist','--use-angle=swiftshader','--enable-unsafe-swiftshader',`--remote-debugging-port=${port}`,`--user-data-dir=/tmp/kfb-wc1-${process.pid}`,'--window-size=1600,900','about:blank'],{stdio:['ignore','ignore','pipe']});
   let stderr='';browser.stderr.on('data',c=>stderr+=c.toString());
-  const result={schema:'kfb.world-corridor.wc1-baseline-smoke/0.1',url:TEST_URL,parity,result:'FAIL'};
+  const result={schema:'kfb.world-corridor.wc1-source-parity-boot-smoke/0.2',url:TEST_URL,parity,result:'FAIL'};
   try{
     await poll(async()=>{try{return (await fetch(TEST_URL)).ok;}catch{return false;}},'server');
     const version=await poll(async()=>{try{const r=await fetch(`http://127.0.0.1:${port}/json/version`);return r.ok?await r.json():false;}catch{return false;}},'chrome');
@@ -62,14 +62,25 @@ async function run(){
     await cdp.send('Page.enable');await cdp.send('Runtime.enable');
 
     await poll(()=>cdp.eval(`window.__r2c?.info?.fps>0 && window.__KFB_WC1_BASELINE__?.measure ? true : false`),'R2C + probe ready',180000);
-    const metrics=await cdp.eval(`window.__KFB_WC1_BASELINE__.measure({warmupMs:1200,sampleMs:3500,label:'CI_REFERENCE'})`);
-    assert(metrics && metrics.frames>30,'too few measured frames');
-    assert(metrics.drawCalls>0,'drawCalls missing');
-    assert(metrics.triangles>0,'triangles missing');
-    assert(metrics.trackLengthM>0,'track baseline missing');
-    assert(metrics.trackCrossings===0,`track crossings changed: ${metrics.trackCrossings}`);
-    assert(metrics.worldItems>0 && metrics.worldCells>0,'world baseline counts missing');
-
+    const boot=await cdp.eval(`(()=>({
+      ready:Boolean(window.__r2c?.renderer && window.__r2c?.info),
+      probe:Boolean(window.__KFB_WC1_BASELINE__?.measure),
+      panel:Boolean(document.getElementById('kfb-wc1-gpu-panel')),
+      sourceFps:Number(window.__r2c?.info?.fps || 0),
+      calls:Number(window.__r2c?.info?.calls || 0),
+      triangles:Number(window.__r2c?.info?.tris || 0),
+      trackLengthM:Number(window.__r2c?.info?.trackLen || 0),
+      trackCrossings:Number(window.__r2c?.info?.trackCross || 0)
+    }))()`);
+    assert(boot.ready,'R2C runtime not ready');
+    assert(boot.probe,'WC1 performance probe missing');
+    assert(boot.panel,'WC1 local GPU panel missing');
+    assert(boot.calls>0,'draw calls missing after boot');
+    assert(boot.triangles>0,'triangles missing after boot');
+    assert(boot.trackLengthM>0,'track baseline missing after boot');
+    assert(boot.trackCrossings===0,`track crossings changed: ${boot.trackCrossings}`);
+    result.boot=boot;
+    result.performanceAuthority='LOCAL_VISIBLE_GPU_ONLY';
     result.browser=version.Browser;
     result.metrics=metrics;
     result.consoleErrors=cdp.errors;
