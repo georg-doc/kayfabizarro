@@ -3,7 +3,7 @@ import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics, refreshMu
 import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
-import { fitCamera, setWireframe, playClip, animationState } from './preview.js';
+import { fitCamera, setWireframe, playClip, animationState, setMotionPaused, setMotionSpeed, setMotionLoop, scrubMotion } from './preview.js';
 import { playExternalClip } from './preview3d.js';
 import { initProductionResources } from './resources-ui.js';
 
@@ -193,6 +193,10 @@ $('autoplayToggle').onchange = (event) => {
   else if (mixer) { mixer.stopAllAction(); $('previewStatus').textContent = `${loadedAnimations.length} clip(s) · paused`; }
 };
 $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $('autoplayToggle').checked = true; playClip(Number(event.target.value)); };
+$('motionPlayPause').onclick = () => { const current=animationState(); setMotionPaused(!current.paused); };
+$('motionSpeed').onchange = (event) => setMotionSpeed(event.target.value);
+$('motionLoop').onchange = (event) => setMotionLoop(event.target.checked);
+$('motionScrub').oninput = (event) => setMotionPaused(true) && scrubMotion(event.target.value);
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
