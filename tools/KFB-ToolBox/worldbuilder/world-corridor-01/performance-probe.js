@@ -500,7 +500,9 @@ function mountBaselinePanel() {
       <button data-role="copy" type="button" disabled>Copy JSON</button>
       <button data-role="download" type="button" disabled>Download JSON</button>
       <button data-role="showproc" type="button">Zeige aktuelles Clay</button>
-      <button data-role="showa" type="button">Zeige Clay002</button>
+      <button data-role="showa6" type="button">Clay002 · 6 m</button>
+      <button data-role="showa9" type="button">Clay002 · 9 m</button>
+      <button data-role="showa12" type="button">Clay002 · 12 m</button>
       <button data-role="showb" type="button">Zeige clay_floor</button>
       <button data-role="showderek" type="button">Zeige Derek RGB</button>
       <button data-role="showoff" type="button">Zeige Clay aus</button>
@@ -519,7 +521,9 @@ function mountBaselinePanel() {
   const globalClay = panel.querySelector('[data-role="globalclay"]');
   const derekCompare = panel.querySelector('[data-role="derekcompare"]');
   const showProc = panel.querySelector('[data-role="showproc"]');
-  const showA = panel.querySelector('[data-role="showa"]');
+  const showA6 = panel.querySelector('[data-role="showa6"]');
+  const showA9 = panel.querySelector('[data-role="showa9"]');
+  const showA12 = panel.querySelector('[data-role="showa12"]');
   const showB = panel.querySelector('[data-role="showb"]');
   const showDerek = panel.querySelector('[data-role="showderek"]');
   const showOff = panel.querySelector('[data-role="showoff"]');
@@ -601,7 +605,7 @@ function mountBaselinePanel() {
   derekCompare.onclick = async () => {
     measure.disabled = true; costSplit.disabled = true; clayParts.disabled = true; globalClay.disabled = true; derekCompare.disabled = true; copy.disabled = true; download.disabled = true;
     state.textContent = 'Clay002 vs Derek…';
-    result.textContent = 'Vier Durchläufe: aktuelles Clay · Clay002 512² · Derek RGB 512² · Clay aus. Bitte Tab sichtbar lassen.';
+    result.textContent = 'Performance-Vergleich ist aktuell pausiert. Nutze zuerst die visuellen Buttons Clay002 6/9/12 m, aktuelles Clay und Derek.';
     try {
       const suite = await measureDerekComparison({ warmupMs: 900, sampleMs: 4000 });
       result.textContent = suite.rows.map((r) => `${r.label}: ${r.fps} fps · ${r.meanFrameMs} ms · ${r.textures} textures`).join('\n');
@@ -621,8 +625,10 @@ function mountBaselinePanel() {
     catch (err) { state.textContent = 'fehlgeschlagen'; result.textContent = String(err?.message || err); }
   };
   showProc.onclick = () => showLook(async () => { const a = await waitForR2C(); a.setProceduralClay(); }, 'aktuelles Clay');
-  showA.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('Clay002', 512); }, 'Clay002 512²');
-  showB.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('clay_floor_001', 512); }, 'clay_floor 512²');
+  showA6.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('Clay002', 1024, 6); }, 'Clay002 1024² · 6 m');
+  showA9.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('Clay002', 1024, 9); }, 'Clay002 1024² · 9 m');
+  showA12.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('Clay002', 1024, 12); }, 'Clay002 1024² · 12 m');
+  showB.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setGlobalClayLite('clay_floor_001', 512, 9); }, 'clay_floor 512² · 9 m');
   showDerek.onclick = () => showLook(async () => { const a = await waitForR2C(); await a.setDerekRgb(512); }, 'Derek RGB 512²');
   showOff.onclick = () => showLook(async () => { const a = await waitForR2C(); a.setClayOff(); }, 'Clay aus');
 
