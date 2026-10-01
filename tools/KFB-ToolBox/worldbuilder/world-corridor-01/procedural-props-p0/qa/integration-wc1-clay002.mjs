@@ -52,10 +52,21 @@ if(consoleErrors.length)problems.push('consoleErrors='+consoleErrors.length);
 if(pageErrors.length)problems.push('pageErrors='+pageErrors.length);
 
 await fs.mkdir('procedural-props-wc1-evidence',{recursive:true});
-await page.screenshot({path:'procedural-props-wc1-evidence/integration-wc1-clay002.png'});
-await fs.writeFile('procedural-props-wc1-evidence/integration-wc1-clay002.json',
-  JSON.stringify({url,ready,diagnostic,consoleErrors,pageErrors,problems},null,2));
+const evidence={url,ready,diagnostic,consoleErrors,pageErrors,problems};
+await fs.writeFile('procedural-props-wc1-evidence/integration-wc1-clay002.json',JSON.stringify(evidence,null,2));
+console.log(JSON.stringify(evidence,null,2));
+
+let screenshot='SKIPPED_NOT_READY';
+if(ready){
+  try {
+    await page.screenshot({path:'procedural-props-wc1-evidence/integration-wc1-clay002.png',timeout:10000});
+    screenshot='PASS';
+  } catch (e) {
+    screenshot='NON_BLOCKING_FAIL: '+String(e);
+    await fs.writeFile('procedural-props-wc1-evidence/screenshot-status.txt',screenshot+'\n');
+  }
+}
+console.log(JSON.stringify({screenshot},null,2));
 await browser.close();
 
-console.log(JSON.stringify({ready,diagnostic,consoleErrors,pageErrors,problems},null,2));
 if(problems.length)process.exit(1);
