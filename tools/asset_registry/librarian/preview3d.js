@@ -33,23 +33,36 @@ function configureAction(action,clip){
 }
 export function setMotionPaused(paused){
   if(!activeAction)return false;
-  activeAction.paused=Boolean(paused);syncMotionTransport();return true;
+  activeAction.paused=Boolean(paused);
+  if($('motionPlayPause'))$('motionPlayPause').textContent=activeAction.paused?'Play':'Pause';
+  syncMotionTransport();return true;
 }
 export function setMotionSpeed(speed){
   if(!activeAction)return false;
   const value=Number(speed);if(!Number.isFinite(value)||value<=0)return false;
-  activeAction.timeScale=value;syncMotionTransport();return true;
+  activeAction.timeScale=value;
+  if($('motionSpeed'))$('motionSpeed').value=String(value);
+  syncMotionTransport();return true;
 }
 export function setMotionLoop(loop){
   if(!activeAction)return false;
-  activeAction.setLoop(loop?THREE.LoopRepeat:THREE.LoopOnce,loop?Infinity:1);
-  activeAction.clampWhenFinished=!loop;syncMotionTransport();return true;
+  const enabled=Boolean(loop);
+  activeAction.setLoop(enabled?THREE.LoopRepeat:THREE.LoopOnce,enabled?Infinity:1);
+  activeAction.clampWhenFinished=!enabled;
+  if($('motionLoop'))$('motionLoop').checked=enabled;
+  syncMotionTransport();return true;
 }
 export function scrubMotion(progress){
   if(!activeAction||!activeClip)return false;
   const p=Math.min(1,Math.max(0,Number(progress)||0));
   activeAction.paused=true;activeAction.time=(Number(activeClip.duration)||0)*p;
+  if($('motionScrub'))$('motionScrub').value=String(p);
+  if($('motionPlayPause'))$('motionPlayPause').textContent='Play';
   mixer?.update(0);syncMotionTransport();return true;
+}
+export function motionTransportState(){
+  const duration=Number(activeClip?.duration)||0;
+  return activeAction&&activeClip?{paused:Boolean(activeAction.paused),speed:Number(activeAction.timeScale)||1,loop:activeAction.loop===THREE.LoopRepeat,time:Number(activeAction.time)||0,duration,progress:duration?Math.min(1,Math.max(0,(Number(activeAction.time)||0)/duration)):0}:null;
 }
 
 function init() {
