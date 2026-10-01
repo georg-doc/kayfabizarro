@@ -153,6 +153,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
 - **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
 - **Crash-safe continuation is continuous.** During authorized Web/GitHub production, persist every meaningful implementation/test/decision checkpoint to the existing owner Return/Recovery/WIP surface, read back the exact head/file, then continue or reply. A fresh chat must be able to resume from GitHub alone without transcript reconstruction.
+- **Representative browser/GPU performance is local-hardware evidence.** Apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md §4B`: freeze/pin the candidate, use CI for parity/boot, and prefer a self-contained double-click HTML with one-click JSON measurement over Terminal, unsigned apps or Cloudflare. Hosted SwiftShader/hidden preview FPS is not an absolute product-performance authority.
 
 ## Status vocabulary
 
