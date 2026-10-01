@@ -657,6 +657,8 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
   }
 
   return { info, U, renderer, sun, get batches() { return batches; }, get world() { return W; },
+    addDiagnosticObject(o) { content.add(o); return o; },
+    removeDiagnosticObject(o) { if (o?.parent === content) content.remove(o); },
     get globalClayMeta() { return globalClayMeta; }, get derekMeta() { return derekMeta; },
     setGlobalClayLite, setDerekRgb, setProceduralClay, setClayOff,
     shot, bench, onPick(cb) { pickCb = cb; },
