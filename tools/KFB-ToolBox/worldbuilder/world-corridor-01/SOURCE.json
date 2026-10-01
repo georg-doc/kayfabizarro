@@ -194,5 +194,29 @@
       "facetSoft": 0
     },
     "decision": "No immediate rebake. Finish WC1-CLAY-PERF-01, pin optimized procedural settings, then align any final baked candidate."
-  }
+  },
+  "materialStrategy": {
+    "status": "GLOBAL_TEXTURE_FIRST",
+    "document": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/MATERIAL_STRATEGY_2026-10-01.md",
+    "nextPlainLanguage": "Build and measure one 512x512 Global Clay Lite texture in the current island scene.",
+    "initialClayDonors": [
+      "media/3D_Assets/Textures/Clay002/",
+      "media/3D_Assets/Textures/clay_floor_001/"
+    ],
+    "laterMaterialFamilies": [
+      "media/3D_Assets/Textures/Plaster001/",
+      "media/3D_Assets/Textures/Fabric048/",
+      "media/3D_Assets/Textures/Wood036/"
+    ],
+    "sequence": [
+      "GLOBAL_CLAY_LITE_512",
+      "GLOBAL_CLAY_LITE_1024_ONLY_IF_NEEDED",
+      "DEREK_RGB_TRIPLANAR",
+      "DIY_MATERIAL_FAMILIES",
+      "MEASURED_TWO_WAY_BLEND_ONLY_IF_NEEDED"
+    ],
+    "blendRule": "One material texture per object/zone by default; max two-way blend until measured evidence justifies more.",
+    "visualReference": "K1/H0 Clay remains visual reference and possible near/hero treatment, not mandatory global implementation."
+  },
+  "nextActionPlainLanguage": "Eine globale 512²-Clay-Textur aus Clay002 oder clay_floor_001 bauen und in derselben Inselwelt messen."
 }
