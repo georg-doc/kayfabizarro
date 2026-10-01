@@ -3,7 +3,7 @@ import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics, refreshMu
 import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
-import { fitCamera, setWireframe, playClip, animationState, setMotionPaused, setMotionSpeed, setMotionLoop, scrubMotion } from './preview.js';
+import { fitCamera, setWireframe, playClip, animationState, setMotionPaused, setMotionSpeed, setMotionLoop, scrubMotion, motionTransportState } from './preview.js';
 import { playExternalClip } from './preview3d.js';
 import { initProductionResources } from './resources-ui.js';
 
@@ -196,7 +196,7 @@ $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $
 $('motionPlayPause').onclick = () => { const current=animationState(); setMotionPaused(!current.paused); };
 $('motionSpeed').onchange = (event) => setMotionSpeed(event.target.value);
 $('motionLoop').onchange = (event) => setMotionLoop(event.target.checked);
-$('motionScrub').oninput = (event) => setMotionPaused(true) && scrubMotion(event.target.value);
+$('motionScrub').oninput = (event) => { setMotionPaused(true); scrubMotion(event.target.value); };
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
@@ -206,6 +206,6 @@ window.KFBAssetLibrarianV13 = publicApi;
 window.KFBAssetLibrarianV14 = publicApi;
 window.KFBAssetLibrarianV15 = publicApi;
 window.KFBAssetLibrarianV17 = { ...publicApi, version:'1.7', loadMore:()=>{state.resultVisibleLimit+=RESULT_LIMIT;return runSearch({resetLimit:false});} };
-window.KFBAssetLibrarianV18 = { ...publicApi, version:'1.8', loadMore:()=>{state.resultVisibleLimit+=RESULT_LIMIT;return runSearch({resetLimit:false});} };
+window.KFBAssetLibrarianV18 = { ...publicApi, version:'1.8', loadMore:()=>{state.resultVisibleLimit+=RESULT_LIMIT;return runSearch({resetLimit:false});}, motionTransportState };
 updateSelectionUI(); bootstrap();
 setInterval(pollLiveRegistry, 90_000);
