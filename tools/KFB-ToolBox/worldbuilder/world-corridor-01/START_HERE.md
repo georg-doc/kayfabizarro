@@ -221,3 +221,23 @@ Read:
 
 Plain-language next action:
 **make distant Clay cheaper first without changing the near look; then measure Derek RGB triplanar as the first non-Clay comparator.**
+
+
+## 2026-10-01 · Materialstrategie · globale Textur zuerst
+
+Plain-language decision:
+**Wir testen jetzt zuerst eine einzige kleine globale Clay-Textur.**
+
+Read:
+`clay-perf/MATERIAL_STRATEGY_2026-10-01.md`
+
+Reihenfolge:
+1. `Clay002` gegen `clay_floor_001` als einzige zwei Clay-Spender;
+2. eine 512² Global-Clay-Lite-Basis auswählen und triplanar in derselben Inselwelt messen;
+3. nur wenn 512² sichtbar nicht reicht: 1024²;
+4. danach Derek RGB als zweite Ein-Textur-Variante messen;
+5. erst danach DIY-Materialfamilien Clay / Plaster / Fabric / Wood;
+6. Textur-Blends standardmäßig höchstens 2-fach und nur dort, wo sie sichtbar nötig sind.
+
+Der volle prozedurale Clay-Look bleibt visuelle Referenz und möglicher Nahbereichs-Look, aber nicht automatisch die globale technische Lösung.
+
