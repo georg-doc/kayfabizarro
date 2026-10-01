@@ -20,6 +20,7 @@ const report = {
   owners: null,
   captures: [],
   errors: [],
+  httpErrors: [],
   requestFailures: [],
 };
 
@@ -47,8 +48,24 @@ page.on('pageerror', (error) => {
 page.on('console', (message) => {
   if (message.type() !== 'error') return;
   const text = message.text();
+  // Chromium emits an opaque console line for any 4xx resource. The response
+  // listener below owns URL/status validation; do not double-count that line.
+  if (/^Failed to load resource:/i.test(text)) return;
   if (/favicon/i.test(text)) return;
   report.errors.push({ type: 'console', message: text });
+});
+
+page.on('response', (response) => {
+  const status = response.status();
+  if (status < 400) return;
+  const url = response.url();
+  if (/\/favicon(?:\.ico)?(?:\?|$)/i.test(url)) return;
+  if (/fonts\.googleapis\.com|fonts\.gstatic\.com/i.test(url)) return;
+  const essential =
+    url.startsWith(BASE) ||
+    /cdn\.jsdelivr\.net|raw\.githubusercontent\.com|cdnjs\.cloudflare\.com/i.test(url);
+  if (!essential) return;
+  report.httpErrors.push({ url, status });
 });
 
 page.on('requestfailed', (request) => {
@@ -212,6 +229,9 @@ try {
   const stopText = await page.locator('body').innerText();
   assert.doesNotMatch(stopText, /STOP\s*·/i, 'host rendered STOP error panel');
 
+  if (report.httpErrors.length) {
+    throw new Error('essential HTTP errors: ' + JSON.stringify(report.httpErrors, null, 2));
+  }
   if (report.requestFailures.length) {
     throw new Error('essential request failures: ' + JSON.stringify(report.requestFailures, null, 2));
   }
