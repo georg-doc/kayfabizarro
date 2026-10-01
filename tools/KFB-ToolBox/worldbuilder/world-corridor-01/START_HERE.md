@@ -304,3 +304,27 @@ Plain-language next action:
 **„Clay002 vs Derek FAIR messen“ ausführen, JSON zurückgeben und visuell Clay002 oder Derek bevorzugen.**
 
 Der frühere gesunde Clay002-512-Lauf bleibt gültig; nur der erste kombinierte Derek-Lauf ist verworfen.
+
+
+## 2026-10-02 · Clay002-Maßstab statt neue Shader-Tricks
+
+Georgs visuelles Urteil:
+- **Original Clay klar am besten**;
+- **Derek okay**;
+- Clay002 in der bisherigen Anwendung schlecht, weil das Muster sichtbar repetitiv ist.
+
+Korrektur:
+- Clay002-Quelle ist 1024², also nicht intrinsisch zu klein;
+- bisherige Weltprojektion wiederholte ungefähr alle 1.61 m;
+- neuer visueller Test nutzt 1024² und nur drei physische Wiederholgrößen: **6 m / 9 m / 12 m**;
+- keine zweite Textur und kein Anti-Repetition-Blend, bevor diese einfache Skalierung geprüft ist.
+
+Artifact:
+`KFB_Clay002_Massstab_Doppelklick.html`
+SHA-256 `722061456925e362837b9c0bf65c64441e63d9ae82d326628c987aba883821db`.
+
+Plain-language next action:
+**Nur 6 m / 9 m / 12 m / keiner auswählen. Keine Performance-Messung nötig.**
+
+Read:
+`clay-perf/CLAY002_SCALE_CORRECTION_2026-10-02.md`
