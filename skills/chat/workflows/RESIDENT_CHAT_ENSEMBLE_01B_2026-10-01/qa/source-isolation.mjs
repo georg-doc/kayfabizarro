@@ -209,12 +209,10 @@ try {
     assert.deepEqual(item.requestFailures, [], 'source-critical request failures');
 
     const screenshot = path.join(OUT, 'source-' + expected.residentId + '.png');
-    const stage = page.locator('#stage');
-    if (await stage.count()) {
-      await stage.screenshot({ path: screenshot });
-    } else {
-      await page.screenshot({ path: screenshot, fullPage: true });
-    }
+    // The Atlas canvas renders continuously. Element screenshots wait for layout stability
+    // and can time out even after every source assertion already passed. Capture the fixed
+    // review viewport instead; the selected Resident remains the only visible vignette.
+    await page.screenshot({ path: screenshot, fullPage: false });
     item.screenshot = path.basename(screenshot);
     await page.close();
   }
