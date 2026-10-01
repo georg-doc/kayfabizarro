@@ -1,21 +1,24 @@
 # KFB Production Control · Claude Plugin
 
-Status: **EXPERIMENTAL v0.1.0**  
+Status: **v0.2.0 · CLOUD MCP BOUND · REAL CLAUDE SMOKE PENDING**  
 Workflow: `KFB-CLAUDE-PRODUCTION-CONTROL-PLUGIN-01`  
 Owner: KFB production-routing layer. This plugin does not become a game/runtime owner.
 
 ## Purpose
 
-One shared production protocol for:
-
-- Claude Code / Cowork;
-- Blender MCP authoring lanes;
-- Claude Design handoffs;
-- recovery after context loss;
-- durable KFB Production Control checkpoints;
-- session-cut ZIP intake.
+One shared production protocol for Claude Code/Cowork, Blender MCP authoring lanes, Claude Design handoffs, recovery after context loss, durable checkpoints and compact session-cut intake.
 
 GitHub/project SSOT remains authoritative for implementation facts. Production Control is the durable cross-agent working ledger and artifact inbox.
+
+## Bound remote MCP
+
+Exact streamable-HTTP endpoint:
+
+`https://kfb-production-control.frizzlebob.chatgpt.site/mcp`
+
+The endpoint is provisioned by the existing KFB Production Control Site and uses the same D1/R2 storage and per-user isolation as the Hub. Sites owns OAuth at the hosting boundary. No token, cookie or signed capability URL is stored in this repository.
+
+The plugin's `.mcp.json` already contains the endpoint; no URL guessing or user-supplied endpoint is required.
 
 ## Plugin skills
 
@@ -34,13 +37,9 @@ From a checkout containing this directory:
 claude --plugin-dir skills/chat/plugins/kfb-production-control
 ```
 
-Configure `production_control_mcp_url` with the **exact remote MCP endpoint** for KFB Production Control, then inspect `/mcp`.
+Then allow the OAuth connection for `kfb-production-control` and inspect `/mcp`. Do not substitute the browser root URL for the endpoint above.
 
-Do not guess the endpoint from the public Site URL. Authentication stays with the Production Control service (prefer remote MCP OAuth); no bearer token is stored in this plugin.
-
-## Required Production Control tool contract
-
-The connected MCP server must expose these current operations (backend names may retain the existing `kfb_web_*` prefix):
+## Current Production Control tool contract
 
 - `kfb_web_read`
 - `kfb_web_checkpoint`
@@ -51,22 +50,19 @@ The connected MCP server must expose these current operations (backend names may
 - `kfb_web_upload_finish`
 - `kfb_web_upload_abort`
 - `kfb_web_artifact_read`
+- `kfb_web_artifact_read_chunk`
 - `kfb_web_artifact_link`
 
-Provider-neutral aliases are allowed later, but the plugin must not require a backend rename.
+## Claude Design and Blender MCP
 
-## Claude Design
+Claude Design may consume the same briefs and Returns, but the real transport smoke belongs in Claude Code/Cowork because it must load a remote MCP plugin and prove fresh-session recovery.
 
-Use the same protocol. If a Design canvas cannot load the plugin components directly, use Claude Code/Cowork + Design Sync or load the canonical KFB skill/brief into Design. The return path stays Production Control; do not create a Design-only check-in format.
+Blender MCP remains an authoring lane unless the named project explicitly grants more ownership. Check-ins preserve source files/scripts where permitted, exports, evidence, tests and one next gate. No automatic runtime merge or Stage/Live promotion.
 
-## Blender MCP
+## Remaining acceptance gate
 
-Blender MCP remains an authoring lane unless the named project explicitly grants more ownership. Check-ins preserve source `.blend`/scripts where permitted, generated exports, evidence, actual audits/tests and one next gate. No automatic runtime merge or Stage/Live promotion.
+The cloud endpoint and plugin binding are no longer missing. Full PASS still requires one real Claude Code/Cowork run:
 
-## Current acceptance gate
+`RECOVER -> CHECKPOINT -> ARTIFACT UPLOAD -> RETURN -> FRESH SESSION RECOVERY`
 
-The package structure and static contracts can be checked in GitHub. Full PASS requires a real Claude environment with the exact Production Control remote MCP endpoint:
-
-`RECOVER -> CHECKPOINT -> ARTIFACT UPLOAD -> RETURN -> FRESH SESSION RECOVERY`.
-
-Until that endpoint/auth path is verified, transport status is `MCP_BINDING_PENDING`, not PASS.
+Until that passes, status is `CLOUD_MCP_BOUND · CLAUDE_SMOKE_PENDING`, not transport failure and not full acceptance.
