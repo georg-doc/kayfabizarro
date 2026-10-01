@@ -1,5 +1,32 @@
 # Changelog · additive
 
+## 2026-10-01 · Three-geo-play P0 native streaming donor
+
+### IMPLEMENTATION
+- Added isolated donor proof under `experiments/three-geo-play-donor-p0/`.
+- Pinned `lorenzoMezza/Three-geo-play@78a6b822261929a54f731dd08a972cf7b0a11500` / `lm-three-geo-play@2.2.0`.
+- Tested against existing KFB `three@0.160.0`; no second Three runtime introduced.
+- Added reserved Stage package `/kfb-hub/stage/osm-city-three-geo-p0/`; it is not public-verified.
+- Added local Chromium proof workflow and durable evidence JSON.
+
+### TESTED RESULT
+- run `36917324517` / job `110554381199`: **18/18 PASS**.
+- SOURCE: 21/21 tiles ready, 0 failed, 253 calls, 668,626 triangles, 252 geometries.
+- KFB MATERIAL: same 253 calls / 668,626 triangles / 252 geometries; presentation-only restyle.
+- stream turnover: loads 21→26, unloads 0→5; final 21 ready / 0 loading / 0 failed.
+- workers: 2 active / 0 fallback.
+- City Lab seam requires `z` sign flip; after `city.z = -threeGeo.z`, NE Ehrenfeld probe differs by ~8.6 mm northing and ~0 m easting.
+- zero browser console/page errors.
+- SwiftShader FPS is functional evidence only, not Georg-GPU performance acceptance.
+
+### DECISION
+Three-geo-play is a **technical donor PASS** as an optional streaming shell. Deterministic City Lab remains authoritative for authored hero zones, OSM identity/provenance and consumer recipes.
+
+### NEXT GATE
+`THREE-GEO-PLAY-P0B` — prove one shared seam/deformation/presentation adapter across one streamed building and one City Lab building before any Town/Travel-wide integration.
+
+---
+
 ## 2026-09-20 · Dom / Zentrum reusable OSM dataset
 
 ### DATA
