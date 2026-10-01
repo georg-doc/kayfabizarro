@@ -63,9 +63,9 @@ Protected owners:
 - Billboard uses the existing scheduler / LOD / baked-image provider seam;
 - SKY3 is an EnvironmentHost donor inside the host frame loop, not a second renderer.
 
-M1 Max baseline is measured: ~29 fps in both instanced and individual-mesh R2C signatures despite ~5× draw-call/geometry difference. Hex instancing is not the dominant current limiter; `WC1-COST-SPLIT` isolates existing clay/cloud/shadow/fill cost before Track Core integration.
+M1 Max baseline + cost split are measured. Hex instancing is not the dominant limiter. Mode B default is ~30 fps / 33 ms; Clay off is ~90 fps / 11 ms (−66.4% frame time), clouds off −12%, shadows off no useful gain, pixel ratio 1.0 −22.5%. `WC1-CLAY-PERF-01` now targets the K2/v10 Clay fragment path under the locked K1/H0 Golden contract before Track Core integration.
 
-Do not route this work back through WSA planning. WC1 source rehome is **10/10 byte-identical PASS**. GitHub/SwiftShader absolute FPS was stopped after two attempts and is not a product-performance authority. The current next gate is **WC1-COST-SPLIT**: run the unchanged instrumented island candidate on representative visible Chromium/GPU hardware and save the probe result. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
+Do not route this work back through WSA planning. WC1 source rehome is **10/10 byte-identical PASS**. GitHub/SwiftShader absolute FPS was stopped after two attempts and is not a product-performance authority. The current next gate is **WC1-CLAY-PERF-01**: profile and optimize the active K1-parity K2/v10 Clay fragment path on the exact preserved island scene while preserving the locked K1/H0 Golden appearance. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
 
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
 
