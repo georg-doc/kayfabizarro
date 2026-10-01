@@ -44,6 +44,18 @@ try{
   const coordOk=query && Math.abs(query.lat-50.949425)<0.00001 && Math.abs(query.lon-6.9175)<0.00001 && Math.abs(query.roundtrip.x)<0.01 && Math.abs(query.roundtrip.z)<0.01;
   pass('coordinate roundtrip',coordOk,JSON.stringify(query));
 
+  const seamRaw=await page.evaluate(()=>window.__KFB_THREE_GEO_P0__.projectLatLon(50.95210,6.92220));
+  const R=6378137;
+  const lat0=50.949425,lon0=6.9175;
+  const seamCity={
+    x:R*((6.92220-lon0)*Math.PI/180)*Math.cos(lat0*Math.PI/180),
+    z:R*((50.95210-lat0)*Math.PI/180)
+  };
+  const seamMapped={x:seamRaw.x,z:-seamRaw.z};
+  pass('seam axis requires z flip',seamRaw.z<0 && seamCity.z>0,JSON.stringify({raw:seamRaw,city:seamCity}));
+  pass('seam east alignment under 2cm',Math.abs(seamMapped.x-seamCity.x)<0.02,JSON.stringify({mapped:seamMapped,city:seamCity}));
+  pass('seam north alignment under 2cm',Math.abs(seamMapped.z-seamCity.z)<0.02,JSON.stringify({mapped:seamMapped,city:seamCity}));
+
   await page.evaluate(()=>window.__KFB_THREE_GEO_P0__.setMode('kfb'));
   await sleep(2500);
   const kfb=await page.evaluate(()=>window.__KFB_THREE_GEO_P0__.snapshot());
