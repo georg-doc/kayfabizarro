@@ -70,5 +70,18 @@
     "rule": "scheduler/LOD + baked/static image provider; no runtime PDF rendering in corridor frame loop"
   },
   "stageRoute": null,
-  "nextGate": "WC1-BASELINE"
+  "nextGate": "WC1-GPU-BASELINE",
+  "wc1Baseline": {
+    "rehomeRoot": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source",
+    "parity": "10/10 BYTE_IDENTICAL_PASS",
+    "probe": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/performance-probe.js",
+    "instrumentedEntry": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/baseline-source/KFB World Core R2C · WC1 Baseline.dc.html",
+    "ci": {
+      "run1": "36861649207 HARNESS_FAIL",
+      "run2": "36861843836 PARITY_BOOT_PASS_ABSOLUTE_PERF_STOP",
+      "artifact": 11161609956,
+      "authority": "NOT_PRODUCT_PERFORMANCE_AUTHORITY"
+    },
+    "recovery": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/FAILURE_RECOVERY_WC1_BASELINE.md"
+  }
 }
