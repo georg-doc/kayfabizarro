@@ -28,19 +28,29 @@ canvas{display:block;width:100%;height:100%}
   <div id="note"></div>
   <code>Hivebound pattern donor @ be10166e44f3d89db922ebb90671c10b89cd3e62</code>
 </div>
+<script>window.__KFB_PROC_WC1_PROGRESS={step:'html-loaded',at:performance.now()};</script>
 <script type="module">
 import { boot } from '../clay-perf/hex-archipel.r2c-partsdiag.js';
 import { mountProceduralPropsP0B } from './procedural-props-p0b.mjs';
 
+const mark=(step,extra={})=>{window.__KFB_PROC_WC1_PROGRESS={step,at:performance.now(),...extra};};
 const canvas=document.querySelector('#c');
 const labels=document.querySelector('#labels');
 const note=document.querySelector('#note');
 const statsEl=document.querySelector('#stats');
-const api=await boot(canvas,labels,t=>note.textContent=t||'',{view:'burg',mode:'B'});
+try {
+mark('module-start');
+mark('wc1-boot-start');
+const api=await boot(canvas,labels,t=>{note.textContent=t||'';mark('wc1-boot-note',{note:t||''});},{view:'burg',mode:'B'});
+mark('wc1-boot-done',{info:{calls:api.info.calls,tris:api.info.tris,errors:[...(api.info.errors||[])]}});
+mark('clay002-start');
 await api.setGlobalClayLite('Clay002',512);
+mark('clay002-done',{clayLook:api.info.clayLook});
 api.shot('burg',true);
 
+mark('prop-mount-start');
 const props=mountProceduralPropsP0B(api,{islandId:'burg'});
+mark('prop-mount-done',{counts:props.counts});
 const frames=async(n=5)=>{for(let i=0;i<n;i++) await new Promise(r=>requestAnimationFrame(()=>r()));};
 
 props.setVisible(false); await frames(8);
@@ -69,7 +79,16 @@ window.__KFB_PROC_WC1={
   sourceOwner:'WC1 existing renderer/world owner',
   secondRenderer:false
 };
+mark('ready',{delta,counts:props.counts});
 window.dispatchEvent(new Event('kfbProcWc1Ready'));
+} catch (error) {
+  const message=error?.stack||String(error);
+  window.__KFB_PROC_WC1_ERROR={message,progress:window.__KFB_PROC_WC1_PROGRESS};
+  mark('error',{message});
+  note.textContent='ERROR · '+message.split('\n')[0];
+  console.error(error);
+  window.dispatchEvent(new Event('kfbProcWc1Error'));
+}
 </script>
 </body>
 </html>
