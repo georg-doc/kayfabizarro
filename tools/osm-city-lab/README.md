@@ -143,3 +143,20 @@ City Lab owns geodata normalization, city geometry, styling and export only.
 Map data © OpenStreetMap contributors, ODbL 1.0. Exact bbox, query, endpoint, OSM base timestamp and SHA-256 live in each dataset’s `PROVENANCE.json`.
 
 See `START_HERE.md`, `docs/CARTOON_MASSING.md`, `docs/PRESENTATION_S1C.md`, `docs/LANDMARK_OVERRIDES.md`, `docs/CORRIDOR_EHRENFELD_HUERTH.md`, `docs/CORRIDOR_PROMOTION_RETURN_2026-09-19.md`, the remaining `docs/`, and `evidence/`.
+
+
+## Experimental native vector-tile streaming · 2026-10-01
+
+`THREE-GEO-PLAY-DONOR-P0` tested `lorenzoMezza/Three-geo-play@78a6b822...` / package 2.2.0 as an **optional streaming shell**, not a replacement City Lab pipeline.
+
+Local browser proof at tested head `72b26440...` is **18/18 PASS**:
+- existing KFB Three r160 is compatible;
+- SOURCE reaches 21/21 ready tiles with 0 failures;
+- KFB material-only mode preserves the exact SOURCE draw/triangle/geometry counts;
+- the movement probe performs real tile turnover (21→26 loads, 0→5 unloads);
+- two geometry workers are active with no fallback;
+- City Lab ↔ Three-geo seam is metric-compatible after the required `z` sign flip (< 0.02 m error in the Ehrenfeld probe).
+
+Public Stage is still pending and must not be inferred from the branch files.
+
+Read `docs/THREE_GEO_PLAY_DONOR_P0_RETURN_2026-10-01.md`. Next gate is `THREE-GEO-PLAY-P0B`, limited to one streamed building + one City Lab building through the existing shared KFB presentation/deformation stack.
