@@ -1,4 +1,4 @@
-name: KFB World Corridor Baseline
+name: KFB World Corridor Source Parity + Boot
 
 on:
   pull_request:
@@ -25,18 +25,20 @@ jobs:
           python3 --version
           command -v google-chrome-stable || command -v google-chrome || command -v chromium
 
-      - name: Check probe and smoke syntax
+      - name: Check local baseline helpers
         run: |
           node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/performance-probe.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/local-static-server.mjs
           node --check .github/scripts/world-corridor-wc1-baseline-smoke.mjs
+          bash -n tools/KFB-ToolBox/worldbuilder/world-corridor-01/run-local-gpu-baseline.sh
 
-      - name: Run WC1 exact-parity and browser baseline
+      - name: Run WC1 exact-parity and browser boot
         run: node .github/scripts/world-corridor-wc1-baseline-smoke.mjs
 
       - name: Upload WC1 evidence
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: kfb-world-corridor-wc1-baseline
+          name: kfb-world-corridor-wc1-source-parity-boot
           path: artifacts/world-corridor/wc1-baseline/
           if-no-files-found: warn
