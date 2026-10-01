@@ -19,6 +19,15 @@ const context = await browser.newContext({
   viewport: { width: 1200, height: 800 },
   acceptDownloads: true
 })
+await context.addInitScript(() => {
+  const originalIsTypeSupported = MediaRecorder.isTypeSupported.bind(MediaRecorder)
+  Object.defineProperty(MediaRecorder, 'isTypeSupported', {
+    configurable: true,
+    value: (mimeType) => String(mimeType).toLowerCase().startsWith('video/mp4')
+      ? false
+      : originalIsTypeSupported(mimeType)
+  })
+})
 const page = await context.newPage()
 
 const pageErrors = []
@@ -110,8 +119,11 @@ if (download.suggestedFilename() !== 'animation-previews.zip') {
 if (videoEntries.length !== 2) {
   throw new Error(`Expected exactly 2 theme preview clips, got ${videoEntries.length}`)
 }
-if (extensions.length !== 1 || !['webm', 'mp4'].includes(extensions[0])) {
-  throw new Error(`Unexpected clip extensions: ${extensions.join(', ')}`)
+if (extensions.length !== 1 || extensions[0] !== 'webm') {
+  throw new Error(`Expected stable WebM fallback clips, got: ${extensions.join(', ')}`)
+}
+if (!report.recorder.infoMessages.some(message => /Using WebM preview recorder/i.test(message))) {
+  throw new Error('Mesh2Motion did not select its WebM fallback recorder')
 }
 if (videoEntries.some(entry => entry.compressedSize < 1000 || entry.uncompressedSize < 1000)) {
   throw new Error('One or more recorded preview clips are implausibly small')
