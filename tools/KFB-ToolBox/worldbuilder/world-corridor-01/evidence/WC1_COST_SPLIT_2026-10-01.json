@@ -1,0 +1,119 @@
+{
+  "schema": "kfb.world-corridor.cost-split-evidence/0.1",
+  "date": "2026-10-01",
+  "sourceUploads": {
+    "gpuBaseline": {
+      "file": "kfb-wc1-gpu-baseline-2026-10-01T13-30-09-699Z.json",
+      "sha256": "ec055478ff0d8daaafdb7cbb9c5a3eeed46a01484217410d8324510d3797113a"
+    },
+    "costSplit": {
+      "file": "kfb-wc1-cost-split-2026-10-01T13-31-05-724Z.json",
+      "sha256": "d149ecc2966aa51328d94836ebe9d8c2397e26c7b95c1b8da253262ff29b9f30"
+    }
+  },
+  "hardware": {
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+    "hardwareConcurrency": 10,
+    "deviceMemoryGB": 32,
+    "devicePixelRatio": 2,
+    "browser": "Chrome 154"
+  },
+  "baseline": {
+    "mode": "B",
+    "fps": 29.4,
+    "meanFrameMs": 34.05,
+    "p95FrameMs": 53.7,
+    "p99FrameMs": 60.8,
+    "maxFrameMs": 74.7,
+    "drawCalls": 179,
+    "triangles": 414758,
+    "geometries": 89,
+    "textures": 15,
+    "programs": 15,
+    "batches": 82,
+    "canvas": {
+      "cssW": 1303,
+      "cssH": 653,
+      "pixelRatio": 1.5
+    }
+  },
+  "costSplit": [
+    {
+      "label": "B_DEFAULT",
+      "fps": 30.3,
+      "meanFrameMs": 32.96,
+      "p95FrameMs": 49.8,
+      "p99FrameMs": 60.2,
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89,
+      "pixelRatio": 1.5
+    },
+    {
+      "label": "B_CLAY_OFF",
+      "fps": 90.2,
+      "meanFrameMs": 11.09,
+      "p95FrameMs": 20.8,
+      "p99FrameMs": 50,
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89,
+      "pixelRatio": 1.5,
+      "deltaFrameMs": -21.87,
+      "deltaPct": -66.4
+    },
+    {
+      "label": "B_CLOUDS_OFF",
+      "fps": 34.5,
+      "meanFrameMs": 28.99,
+      "p95FrameMs": 45.7,
+      "p99FrameMs": 62.7,
+      "drawCalls": 164,
+      "triangles": 402470,
+      "geometries": 89,
+      "pixelRatio": 1.5,
+      "deltaFrameMs": -3.97,
+      "deltaPct": -12
+    },
+    {
+      "label": "B_SHADOWS_OFF",
+      "fps": 29.5,
+      "meanFrameMs": 33.91,
+      "p95FrameMs": 50.7,
+      "p99FrameMs": 69,
+      "drawCalls": 94,
+      "triangles": 212712,
+      "geometries": 89,
+      "pixelRatio": 1.5,
+      "deltaFrameMs": 0.95,
+      "deltaPct": 2.9
+    },
+    {
+      "label": "B_PIXEL_RATIO_1",
+      "fps": 39.1,
+      "meanFrameMs": 25.54,
+      "p95FrameMs": 41.6,
+      "p99FrameMs": 43.6,
+      "drawCalls": 179,
+      "triangles": 414758,
+      "geometries": 89,
+      "pixelRatio": 1,
+      "deltaFrameMs": -7.42,
+      "deltaPct": -22.5
+    }
+  ],
+  "conclusions": [
+    "Clay shading is the dominant measured cost: disabling clay reduces mean frame time by 66.4% with identical geometry/draw-call counts.",
+    "Clouds are a secondary cost at about 12% of default mean frame time in this scene.",
+    "Disabling shadows halves calls/triangles but does not improve mean frame time; shadow geometry/draw-call work is not the dominant limiter here.",
+    "Reducing renderer pixel ratio from 1.5 to 1.0 improves mean frame time by 22.5%, consistent with substantial pixel/fragment cost.",
+    "Combined with the earlier instanced-vs-individual result, current optimization priority is clay fragment/material work and distance/pixel-footprint policy, not Hex instancing."
+  ],
+  "clayContract": {
+    "ssotRef": "work/clay-style-ssot-2026-10-01",
+    "visualGolden": "K1/H0 v8",
+    "implementationBaseline": "K2/v10 subject to Golden parity",
+    "rule": "Do not replace or visually degrade the accepted clay look; optimize with locked Golden A/B evidence."
+  },
+  "nextGate": "WC1-CLAY-PERF-01"
+}
