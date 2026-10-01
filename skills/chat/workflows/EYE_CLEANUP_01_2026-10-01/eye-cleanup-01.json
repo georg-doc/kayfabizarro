@@ -1,0 +1,485 @@
+{
+ "schema": "kfb.eye-cleanup/0.1-candidate",
+ "date": "2026-10-01",
+ "job": "EYE-CLEANUP-01",
+ "lane": "Blender MCP / Coworker",
+ "tool": "Blender 5.0.1 (bpy) + three.js 0.160 GLTFLoader check",
+ "coordinates": "glTF / three.js: Y up, figure root space, bind pose, source asset units",
+ "anchorAxes": "local +Z = outward surface normal (verified in three.js), local +Y = head up, local +X = Y x Z; uniform scale = eye radius",
+ "anchorParent": "joint node \"head\" (glTF child). three.js GLTFLoader sanitises names: eye_anchorl / eye_anchorr (object.userData.name keeps eye_anchor.l / eye_anchor.r)",
+ "colours": "sRGB hex from the source texture (cross-checked with PIL). skin = median of the shell the cap sits on, ring 0.6-1.8 r, lower half only (no brows/hair)",
+ "figures": [
+  {
+   "id": "mummy_a",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A.glb@9248211a831d20f5d6cc665af90a2b38759a4609",
+   "out": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A_NoEyes.glb",
+   "class": "island",
+   "removed": [
+    "Mummy_A_Head: 2 eye-cap islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#111618",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      -0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1294,
+      0.1304
+     ],
+     "eyeColor": "#e3e8ea",
+     "surround": "#111618",
+     "surroundSamples": 12,
+     "uvRect": [
+      0.4394,
+      0.8336,
+      0.4562,
+      0.9711
+     ],
+     "faces": 66
+    },
+    "r": {
+     "pos": [
+      -0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      -0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1294,
+      0.1304
+     ],
+     "eyeColor": "#e3e8ea",
+     "surround": "#12181a",
+     "surroundSamples": 9,
+     "uvRect": [
+      0.4394,
+      0.8336,
+      0.4562,
+      0.9711
+     ],
+     "faces": 66
+    }
+   },
+   "mirrorDelta": [
+    0.0,
+    1e-05,
+    0.0
+   ],
+   "rig": "Rig_Medium",
+   "bones": 23,
+   "bindCheck": "Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "jointOrderSame": true,
+    "ibmMaxDelta": 8.344650268554688e-07,
+    "meshNamesSame": true,
+    "materialNamesSame": true,
+    "tris": [
+     5214,
+     5082
+    ],
+    "headChildren": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ]
+   },
+   "notes": "Eyes = two white cap islands on a black face slit. Only the caps were removed; the black slit (36-face island, part of the face) stays, so the eye rig will sit inside a black band. \"skin\" is that slit (#111618), not the bandage. Brief guess \"island\": confirmed."
+  },
+  {
+   "id": "mummy_b",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.glb@9248211a831d20f5d6cc665af90a2b38759a4609",
+   "out": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B_NoEyes.glb",
+   "class": "island",
+   "removed": [
+    "Mummy_B_Head: 2 eye-cap islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f6bd99",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      -0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1294,
+      0.1304
+     ],
+     "eyeColor": "#1c2427",
+     "surround": "#f6bd99",
+     "surroundSamples": 12,
+     "uvRect": [
+      0.3144,
+      0.8336,
+      0.3312,
+      0.9711
+     ],
+     "faces": 66
+    },
+    "r": {
+     "pos": [
+      -0.2023,
+      1.6052,
+      0.417
+     ],
+     "normal": [
+      -0.367,
+      -0.0056,
+      0.9302
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1294,
+      0.1304
+     ],
+     "eyeColor": "#1c2427",
+     "surround": "#f6bf9b",
+     "surroundSamples": 9,
+     "uvRect": [
+      0.3144,
+      0.8336,
+      0.3312,
+      0.9711
+     ],
+     "faces": 66
+    }
+   },
+   "mirrorDelta": [
+    0.0,
+    1e-05,
+    0.0
+   ],
+   "rig": "Rig_Medium",
+   "bones": 23,
+   "bindCheck": "Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "jointOrderSame": true,
+    "ibmMaxDelta": 8.344650268554688e-07,
+    "meshNamesSame": true,
+    "materialNamesSame": true,
+    "tris": [
+     5716,
+     5584
+    ],
+    "headChildren": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ]
+   },
+   "notes": "Brief guessed \"texture\"; measured: island. Two dark cap islands (the same 66-face cap as Mummy_A, other palette cell) on the skin patch. The single brow (right side of the face only) is untouched."
+  },
+  {
+   "id": "orc_brute",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute_NoEyes.glb",
+   "class": "island",
+   "removed": [
+    "OrcBrute_Head: 2 eye-cap islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#82c061",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.165,
+      3.5063,
+      0.6275
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0556
+    },
+    "r": {
+     "pos": [
+      -0.165,
+      3.5063,
+      0.6275
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0556
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.165,
+      3.5063,
+      0.6275
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0556,
+     "extent": [
+      0.1106,
+      0.1117
+     ],
+     "eyeColor": "#12181a",
+     "surround": "#82c061",
+     "surroundSamples": 27,
+     "uvRect": [
+      0.3116,
+      0.8151,
+      0.3285,
+      0.9526
+     ],
+     "faces": 66
+    },
+    "r": {
+     "pos": [
+      -0.165,
+      3.5063,
+      0.6275
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0556,
+     "extent": [
+      0.1106,
+      0.1117
+     ],
+     "eyeColor": "#12181a",
+     "surround": "#82c061",
+     "surroundSamples": 30,
+     "uvRect": [
+      0.3116,
+      0.8151,
+      0.3285,
+      0.9526
+     ],
+     "faces": 66
+    }
+   },
+   "mirrorDelta": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rig": "Rig_Large",
+   "bones": 23,
+   "bindCheck": "Idle_A 52/52 (original 52/52)",
+   "glbCompare": {
+    "jointOrderSame": true,
+    "ibmMaxDelta": 1.430511474609375e-06,
+    "meshNamesSame": true,
+    "materialNamesSame": true,
+    "tris": [
+     12314,
+     12182
+    ],
+    "headChildren": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ]
+   },
+   "notes": "Two dark cap islands under the brow islands; brows, tusks and war paint untouched. Mirror deviation 0."
+  },
+  {
+   "id": "witch",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch_NoEyes.glb",
+   "class": "island",
+   "removed": [
+    "Witch_Head: 2 eye-cap islands, 138 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f5bb96",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1918,
+      1.6119,
+      0.441
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727
+    },
+    "r": {
+     "pos": [
+      -0.1918,
+      1.6119,
+      0.441
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1918,
+      1.6119,
+      0.441
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727,
+     "extent": [
+      0.16,
+      0.1308
+     ],
+     "eyeColor": "#1d2629",
+     "surround": "#f5bb96",
+     "surroundSamples": 9,
+     "uvRect": [
+      0.2867,
+      0.8836,
+      0.3162,
+      0.9492
+     ],
+     "faces": 69
+    },
+    "r": {
+     "pos": [
+      -0.1918,
+      1.6119,
+      0.441
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072,
+     "extent": [
+      0.1294,
+      0.1585
+     ],
+     "eyeColor": "#1d2629",
+     "surround": "#f6bd98",
+     "surroundSamples": 12,
+     "uvRect": [
+      0.2867,
+      0.8836,
+      0.3162,
+      0.9492
+     ],
+     "faces": 69
+    }
+   },
+   "mirrorDelta": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rig": "Rig_Medium",
+   "bones": 23,
+   "bindCheck": "Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "jointOrderSame": true,
+    "ibmMaxDelta": 8.344650268554688e-07,
+    "meshNamesSame": true,
+    "materialNamesSame": true,
+    "tris": [
+     6210,
+     6072
+    ],
+    "headChildren": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ]
+   },
+   "notes": "Two dark cap islands (69 faces) behind the separate glasses mesh (Witch_Glasses, white glass at 20 % opacity). Glasses untouched; the eye rig will be seen through the lenses."
+  }
+ ]
+}
