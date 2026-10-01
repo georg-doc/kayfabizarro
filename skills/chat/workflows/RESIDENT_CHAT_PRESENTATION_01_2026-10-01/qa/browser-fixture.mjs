@@ -6,7 +6,7 @@ import { chromium } from 'playwright';
 
 const BASE = process.env.KFB_BROWSER_BASE || 'http://127.0.0.1:4173';
 const HOST_PATH = '/tools/KFB-ToolBox/_inbox/KFB%20Resident%20Card%20Speculation%20Scene/npc-card-spec-01_2026-09-24/NPC%20Card%20Speculation%20Scene.dc.html';
-const URL = BASE + HOST_PATH;
+const HOST_URL = BASE + HOST_PATH;
 const OUT = process.env.KFB_BROWSER_OUT ||
   fileURLToPath(new URL('../evidence/browser/', import.meta.url));
 
@@ -14,7 +14,7 @@ await fs.mkdir(OUT, { recursive: true });
 
 const report = {
   schema: 'kfb.resident-chat-presentation-browser-proof/0.1',
-  url: URL,
+  url: HOST_URL,
   viewport: { width: 1280, height: 720 },
   semantic: null,
   owners: null,
@@ -186,7 +186,7 @@ async function captureIsolation(mode, name) {
 }
 
 try {
-  await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 120_000 });
+  await page.goto(HOST_URL, { waitUntil: 'domcontentloaded', timeout: 120_000 });
 
   await page.waitForFunction(() => {
     return !!(
