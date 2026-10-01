@@ -82,7 +82,6 @@ async function run(){
     result.boot=boot;
     result.performanceAuthority='LOCAL_VISIBLE_GPU_ONLY';
     result.browser=version.Browser;
-    result.metrics=metrics;
     result.consoleErrors=cdp.errors;
     result.runtimeExceptions=cdp.exceptions;
     assert(!cdp.errors.length,`console errors: ${cdp.errors.join(' | ')}`);
