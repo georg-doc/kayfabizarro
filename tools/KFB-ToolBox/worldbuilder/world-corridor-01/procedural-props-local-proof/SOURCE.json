@@ -37,7 +37,7 @@
   "stage": null,
   "merged": false,
   "live": false,
-  "nextGate": "MATERIAL_ISOLATION_SAME_GEOMETRY_CLAY002_VS_DEREK_VS_NEUTRAL",
+  "nextGate": "MATERIAL_ISOLATION_SAME_GEOMETRY_CLAY_FLOOR_CURRENT_CLAY_DEREK_NEUTRAL",
   "humanDecision": {
     "proceduralPropsTrees": "PROCEED",
     "geometryStyle": "PROCEED",
@@ -65,7 +65,44 @@
   },
   "materialDiagnosis": {
     "issue": "generic/repetitive/somewhat buggy shared material treatment",
-    "likelyMechanism": "shared Clay002 512 + object-space triplanar + family-shared claySeed phase on InstancedMesh",
-    "preserveGeometry": true
+    "previousHypothesis": "shared Clay002 512 + object-space triplanar + family-shared claySeed phase on InstancedMesh",
+    "correction": "Clay002 6/9/12 m still failed visually; scale-only and anti-repeat-first hypotheses are not the next action.",
+    "packSemantics": "Global Clay Lite derives luminance gradients + centred value variation + roughness from donor textures while preserving source object colour.",
+    "preserveGeometry": true,
+    "instancePhaseWork": "DEFER_UNTIL_VISUALLY_PREFERRED_MATERIAL_STILL_NEEDS_IT"
+  },
+  "worldMaterialVisualVerdict": {
+    "sourceReview": "KFB_Clay002_Massstab_Doppelklick.html",
+    "human": "Georg",
+    "ranking": [
+      "clay_floor_001",
+      "current procedural Clay",
+      "Clay002 scale variants"
+    ],
+    "notes": {
+      "clay_floor_001": "BEST",
+      "currentProceduralClay": "SECOND_BUT_COMPARATIVELY_BUGGY",
+      "Clay002_6_9_12m": "FAIL_MATERIAL_IDENTITY_MOSTLY_SHADING",
+      "DerekRGB": "NOT_RE_RANKED_IN_THIS_SCALE_REVIEW"
+    },
+    "performanceJson": {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_DEREK_COMPARISON_NONREPRESENTATIVE_2026-10-01T23-32-47.json",
+      "authority": false,
+      "reason": "Clay-off itself measured 141.36 ms; retain as diagnostic only."
+    }
+  },
+  "materialReview": {
+    "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/KFB_WC1_P0B_MATERIAL_REVIEW.html",
+    "implementationHead": "42671b14167ee1872f0f75ce2f2edd57af24e235",
+    "frozenRuntimeHead": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+    "geometry": "UNCHANGED_FROZEN_P0B",
+    "candidates": [
+      "clay_floor_001",
+      "current procedural Clay",
+      "Derek RGB",
+      "Neutral / Clay off"
+    ],
+    "negativeControl": "Clay002",
+    "staticModuleSyntax": "PASS"
   }
 }
