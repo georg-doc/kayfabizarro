@@ -298,3 +298,27 @@ P0 and P0B source-isolation are browser PASS. The integrated candidate proved WC
 
 Exactly one continuation if this experiment is resumed:
 fresh slice from frozen candidate `94443824e6b13f38c611defd06dacedd7c6d0faa` → visible local Chrome WC1 + Clay002 + P0B proof with local Measure / Copy JSON.
+
+
+## 2026-10-02 · Procedural Props / Trees · HUMAN PROCEED
+
+Georg has explicitly decided to **continue the procedural props/tree direction** after the local visible P0B review.
+
+Read:
+- `procedural-props-local-proof/DECISION_PROCEDURAL_PROPS_PROCEED_2026-10-02.md`
+- `procedural-props-local-proof/RETURN.md`
+- `procedural-props-local-proof/SOURCE.json`
+
+Interpretation:
+- procedural geometry/style grammar = **PROCEED**;
+- trees are a specifically positive result;
+- current material/texture treatment = **TUNE** because it reads generic, repetitive and somewhat buggy;
+- do **not** redesign the tree/prop geometry from this feedback;
+- keep authored Residents/KayKit/FrizzleBob hero assets;
+- procedural props remain an additive scalable world-dressing strategy.
+
+Current exact continuation:
+**MATERIAL ISOLATION · SAME GEOMETRY** — compare Clay002 / Derek RGB / Neutral on the same frozen P0B geometry, then decide whether Clay002 needs instance-aware phase/orientation variation or replacement.
+
+Site checkpoint:
+`WORLD-CORRIDOR-01 / e072b8e2-498a-460b-94e7-88b930f5336f`.
