@@ -2090,3 +2090,14 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Cars queued separately in `georg-doc/KFB-Stunt-Car-Race`: preserve human-accepted v0.8 Race feel; consume Vehicle Lab / Box Stop profile facts without moving steering/drift/jump/contact ownership.
 - Flight queued separately in `georg-doc/KFB-Travel-Globe`: preserve Travel Flight / `carpet.js` movement ownership; consume carrier/profile facts without creating second flight physics.
 - Clay/facade/shadow remains explicitly outside this mobility lane.
+
+
+## 2026-10-01 · RESIDENT-CHAT-POC-01 · deterministic ChatterBox kernel
+
+- Bounded source-only Resident conversation kernel on branch `chatgpt-web/resident-chat-poc-01-2026-10-01`; no merge, LLM, TTS, 3D integration or Stage publication.
+- Existing owners retained: `mob-ai.js` / host decides **when**; ChatterBox content decides **what**; bubble-layout/bubble-ts own visible presentation; Resident Atlas remains character/set/rig donor.
+- Added pure `resident-chatter-adapter.v0.1.mjs`: one shared Semantic Triplet pool, per-Resident signature weighting, knowledge/provenance filter, baseline Attitude + transient Affect weighting, BINGO/BONGO/BOGGLE/BLÖDSINN operators, authored Fluff-o-lect targets, borrowed-signature provenance and deterministic silence.
+- Exact tested blobs: adapter `bc3cf5194747bcb71b2b93bcfdec349c9db710f2`; tests `9af4260f24ab5eeec3656066c38c7962c5208fc9`.
+- Node v22.16.0: syntax 2/2 PASS; kernel T01–T25 = **25/25 PASS**; authoring regressions R01–R04 = **4/4 PASS**; total **29/29**, 0 failures.
+- Tested kernel head: `83dc10a567835aa0e509b11b85cbd882389c579d`; evidence report commit: `8c43e23ac1b9cd2d36a1176e6836837db390cff0`.
+- Exactly one next gate: **RESIDENT-CHAT-PRESENTATION-01** — feed deterministic adapter output into one isolated existing NPC-CARD-SPEC-01 presentation fixture, replacing only its local fixed Triplet recipe; no live LLM yet.
