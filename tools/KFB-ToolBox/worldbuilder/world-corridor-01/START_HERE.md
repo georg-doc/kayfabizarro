@@ -161,6 +161,19 @@ No Site / Production Control / Cloudflare dependency is required for Blender P0A
 
 This parallel lane does not change the World Corridor next gate below.
 
+P0A return is now present on Draft PR #309 / `93af8caef6a85caa1f7fd70a59abb46edf85f0a4`.
+
+Intake classification:
+- **PASS as offline bake mechanism / K2_STAGE_BAKED_LITE reference**;
+- scale `3.2 / 1.65 = 1.939394...` confirmed;
+- **not parameter-identical to the current WC1 parity shader**.
+
+P0A used Tools 1 / Legacy 0 / Mottle .04 / LodK .6 / Stroke .7.
+Current WC1 parity uses Tools 0 / Legacy 1 / Mottle .05 / LodK 1.0 / Stroke .55 plus PrintOn 1 and parity fingerprint LOD gating.
+
+Do not request an immediate rebake. Finish `WC1-CLAY-PERF-01`, pin the optimized procedural state, then decide whether the final baked candidate should be regenerated from that exact state.
+
+
 ## Exactly one next gate
 
 **WC1-CLAY-PERF-01:** profile the active K1-parity K2/v10 Clay fragment path using bounded feature toggles on the same exact source/camera, then optimize only what can preserve the locked K1/H0 Golden appearance. Do not add Track/Vehicle/Billboard/SKY runtime in this gate.
