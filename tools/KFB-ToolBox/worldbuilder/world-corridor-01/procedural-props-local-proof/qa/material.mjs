@@ -18,7 +18,7 @@ const states=[];
 states.push(await get());
 
 for (const mode of ['derek','neutral','clay002']) {
-  await page.click('.material[data-material="'+mode+'"]');
+  await page.evaluate(m=>document.querySelector('.material[data-material="'+m+'"]')?.click(),mode);
   await page.waitForFunction(m=>window.__KFB_LOCAL_REVIEW?.materialMode===m,mode,{timeout:60000});
   states.push(await get());
 }
