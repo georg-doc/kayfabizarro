@@ -442,7 +442,7 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
 
   // ---------- Faire Vergleichsmaterialien: jedes Look-Ziel hat seinen eigenen kleinen Shader ----------
   const liteShared = {
-    texture: { value: tex }, scale: { value: 0.62 }, bump: { value: 0.42 },
+    texture: { value: tex }, scale: { value: 1 / 9 }, bump: { value: 0.42 },
     color: { value: 0.22 }, rough: { value: 0.55 }
   };
   const derekShared = {
@@ -670,15 +670,22 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
     finally { U.uClayOn.value = 1; renderer.setPixelRatio(pr0); resize(); st.mode = keep; build(); camera.position.copy(cam.p); controls.target.copy(cam.t); if (cam.ch) { chase = cam.ch; } paused = false; }
     return out; }
 
-  async function setGlobalClayLite(donor = 'Clay002', size = 512) {
+  async function setGlobalClayLite(donor = 'Clay002', size = 1024, repeatM = 9) {
     const built = await makeGlobalClayPack(THREE, { donor, size });
     if (globalClayTexture && globalClayTexture !== built.texture) globalClayTexture.dispose();
-    globalClayTexture = built.texture; globalClayMeta = built.meta;
+    globalClayTexture = built.texture; globalClayMeta = { ...built.meta, repeatM };
     globalClayTexture.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
     liteShared.texture.value = globalClayTexture;
+    liteShared.scale.value = 1 / Math.max(0.5, repeatM);
     switchAllMaterials('lite');
-    info.clayLook = 'Global Clay Lite · ' + donor + ' · ' + size + '²';
+    info.clayLook = 'Global Clay Lite · ' + donor + ' · ' + size + '² · ' + repeatM + ' m';
     return globalClayMeta;
+  }
+  function setGlobalClayRepeat(repeatM = 9) {
+    liteShared.scale.value = 1 / Math.max(0.5, repeatM);
+    if (globalClayMeta) globalClayMeta = { ...globalClayMeta, repeatM };
+    if (activeMaterialLook === 'lite') info.clayLook = 'Global Clay Lite · Clay002 · 1024² · ' + repeatM + ' m';
+    return repeatM;
   }
   async function setDerekRgb(size = 512) {
     if (!derekTexture || derekMeta?.size !== size) {
@@ -703,7 +710,7 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
 
   return { info, U, renderer, sun, get batches() { return batches; }, get world() { return W; },
     get globalClayMeta() { return globalClayMeta; }, get derekMeta() { return derekMeta; },
-    setGlobalClayLite, setDerekRgb, setProceduralClay, setClayOff,
+    setGlobalClayLite, setGlobalClayRepeat, setDerekRgb, setProceduralClay, setClayOff,
     shot, bench, onPick(cb) { pickCb = cb; },
     set(k, v) { if (k === 'mode') { st.mode = v === 'A' ? 'A' : 'B'; build(); }
       else if (k === 'fugen') { st.fugen = v; build(); } else if (k === 'muster') { st.muster = v; build(); } else if (k === 'kachel') { st.kachel = v; build(); }
