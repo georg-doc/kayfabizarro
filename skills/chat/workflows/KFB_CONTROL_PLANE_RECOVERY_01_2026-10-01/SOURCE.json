@@ -1,0 +1,31 @@
+{
+  "workflow": "KFB-CONTROL-PLANE-RECOVERY-01",
+  "date": "2026-10-01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-control-plane-recovery-01-2026-10-01",
+  "base": {
+    "source": "current Hub entrypoint migration candidate",
+    "head": "e067e958674685b577ce19cb4e46f9b856bd57f4"
+  },
+  "owner": "KFB production routing; Production Control remains navigator/checkpoint, not project SSOT",
+  "stageRoute": null,
+  "stageReason": "technical control-plane recovery; no human Stage decision",
+  "implementation": [
+    "skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/briefing-contract.v1.mjs",
+    "skills/chat/adapters/claude-design.md",
+    "skills/chat/workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md",
+    "skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md",
+    "skills/chat/REGISTRY.json",
+    "skills/chat/START_HERE.md",
+    "kfb-hub/README.md"
+  ],
+  "evidence": [
+    "skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/briefing-contract.test.mjs",
+    "skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/TEST_REPORT.md"
+  ],
+  "unresolved": [
+    "Production-Control server broad read limit:100 failure is not fixed by this repository slice",
+    "Production-Control briefing generator/UI has not yet adopted briefing-contract.v1.mjs"
+  ],
+  "preparedEscalation": "skills/chat/workflows/KFB_CONTROL_PLANE_RECOVERY_01_2026-10-01/WORK_ESCALATION_BACKEND_READ.md"
+}
