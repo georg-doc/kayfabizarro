@@ -154,6 +154,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
 - **Crash-safe continuation is continuous.** During authorized Web/GitHub production, persist every meaningful implementation/test/decision checkpoint to the existing owner Return/Recovery/WIP surface, read back the exact head/file, then continue or reply. A fresh chat must be able to resume from GitHub alone without transcript reconstruction.
 - **Representative browser/GPU performance is local-hardware evidence.** Apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md §4B`: freeze/pin the candidate, use CI for parity/boot, and prefer a self-contained double-click HTML with one-click JSON measurement over Terminal, unsigned apps or Cloudflare. Hosted SwiftShader/hidden preview FPS is not an absolute product-performance authority.
+- **Human-facing names first.** In chat with Georg, lead with the plain-language task/result (for example “Clay-Shader schlanker machen” or “Track in die Inselwelt einsetzen”). Internal gate/slice IDs belong second, in parentheses when useful for recovery. Do not make Georg decode branch names, acronyms or slice labels to understand what happens next.
 
 ## Status vocabulary
 
