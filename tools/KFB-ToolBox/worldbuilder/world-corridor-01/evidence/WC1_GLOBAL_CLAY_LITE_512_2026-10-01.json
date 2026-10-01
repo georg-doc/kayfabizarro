@@ -1,0 +1,83 @@
+{
+  "schema": "kfb.world-corridor.global-clay-lite-evidence/0.1",
+  "date": "2026-10-01",
+  "sourceUpload": {
+    "file": "kfb-wc1-gpu-baseline-2026-10-01T17-38-57-164Z.json",
+    "sha256": "28d38edf35f174a5e0cbf08bcb2ff3d2aeeac1ef3315730f97db54b4926c6545"
+  },
+  "hardware": "Apple M1 Max / Chrome 154 / visible tab",
+  "scene": {
+    "mode": "B",
+    "drawCalls": 179,
+    "triangles": 414758,
+    "geometries": 89,
+    "worldItems": 414,
+    "worldCells": 158,
+    "clouds": 54,
+    "billboards": 5,
+    "trackLengthM": 2516,
+    "pixelRatio": 1.5
+  },
+  "runs": [
+    {
+      "label": "PROCEDURAL_CLAY_REFERENCE",
+      "fps": 36.1,
+      "meanFrameMs": 27.73,
+      "p95FrameMs": 42.4,
+      "p99FrameMs": 47.6,
+      "textures": 15
+    },
+    {
+      "label": "GLOBAL_CLAY_Clay002_512",
+      "fps": 92.1,
+      "meanFrameMs": 10.85,
+      "p95FrameMs": 17.5,
+      "p99FrameMs": 42.1,
+      "textures": 16,
+      "estimatedMipBytes": 1398101
+    },
+    {
+      "label": "GLOBAL_CLAY_clay_floor_001_512",
+      "fps": 77,
+      "meanFrameMs": 12.99,
+      "p95FrameMs": 25,
+      "p99FrameMs": 133.3,
+      "textures": 16,
+      "estimatedMipBytes": 1398101
+    },
+    {
+      "label": "CLAY_OFF_REFERENCE",
+      "fps": 89.6,
+      "meanFrameMs": 11.16,
+      "p95FrameMs": 17.4,
+      "p99FrameMs": 65.9,
+      "textures": 16
+    }
+  ],
+  "deltasFromProcedural": {
+    "Clay002_512": {
+      "savedMs": 16.88,
+      "savedPct": 60.9
+    },
+    "clay_floor_001_512": {
+      "savedMs": 14.74,
+      "savedPct": 53.2
+    },
+    "clayOff": {
+      "savedMs": 16.57,
+      "savedPct": 59.8
+    }
+  },
+  "conclusions": [
+    "Global Clay Lite is performance-viable in this scene.",
+    "Clay002 512 is effectively at clay-off mean-frame cost within this single measurement sequence.",
+    "clay_floor_001 512 is still much faster than procedural Clay but has higher mean/p95 and large p99 spikes in this run.",
+    "Performance alone does not choose the visual winner; Clay002 is the performance candidate for the next visual/runtime comparison.",
+    "The next comparator is the existing WorldDesign Lab Derek single-RGB-tile triplanar look on the same scene."
+  ],
+  "classification": {
+    "Clay002_512": "PERFORMANCE_PASS_VISUAL_OPEN",
+    "clay_floor_001_512": "PERFORMANCE_PASS_SECONDARY_VISUAL_OPEN"
+  },
+  "nextPlainLanguage": "Compare Clay002 512 directly with Derek RGB on the same island scene; judge both image and frame time."
+}
