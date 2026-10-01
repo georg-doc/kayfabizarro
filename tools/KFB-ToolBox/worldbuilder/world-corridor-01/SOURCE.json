@@ -263,19 +263,19 @@
       "decision": "Clay002 512 advances as performance candidate; visual acceptance still open."
     },
     "derekComparison": {
-      "status": "READY_FOR_LOCAL_VISUAL_AND_GPU_COMPARISON",
-      "testDoc": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/DEREK_RGB_512_TEST.md",
-      "derekSource": {
-        "ref": "9248211a831d20f5d6cc665af90a2b38759a4609",
-        "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/textures/derek-rgb-ref.png",
-        "blob": "9548595806461ede898c3c9de09a6905c20cc2ff",
-        "size": 512
+      "status": "FAIR_RETEST_READY_AFTER_INVALID_COMPARATOR",
+      "invalidEvidence": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/evidence/WC1_DEREK_COMPARISON_INVALID_2026-10-01.json",
+      "correction": {
+        "architecture": "SEPARATE_SHADER_PROGRAM_PER_LOOK",
+        "plainModule": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/lightweight-materials.v1.js",
+        "proceduralReference": "pure Clay-parts diagnostic shader restored",
+        "fairArtifact": {
+          "name": "KFB_Clay002_vs_Derek_Fair_Doppelklick.html",
+          "sha256": "aafa067e05f669679ee50e8c32d0798ef16551f7510fde2d893d2cc9d2305394"
+        }
       },
-      "artifact": {
-        "name": "KFB_Clay002_vs_Derek_Doppelklick.html",
-        "sha256": "347663621a2a75d93755813a95916af6e43e63d3a530a357ca52bb7d0748a175"
-      }
+      "note": "The 5–6 fps combined Derek run is invalid for performance decisions because even Clay-off was bound to the oversized comparator shader."
     }
   },
-  "nextActionPlainLanguage": "Clay002 und Derek RGB in der Doppelklick-HTML visuell vergleichen, „Clay002 vs Derek messen“ ausführen, JSON zurückgeben und den bevorzugten Look nennen."
+  "nextActionPlainLanguage": "Korrigierte Doppelklick-Datei öffnen, „Clay002 vs Derek FAIR messen“ ausführen, JSON zurückgeben und visuell Clay002 oder Derek bevorzugen."
 }
