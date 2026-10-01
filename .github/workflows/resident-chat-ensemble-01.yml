@@ -1,0 +1,66 @@
+name: resident-chat-ensemble-01
+
+on:
+  push:
+    branches:
+      - chatgpt-web/resident-chat-ensemble-01-2026-10-01
+  pull_request:
+    paths:
+      - 'skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01_2026-10-01/**'
+      - 'tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/**'
+      - '.github/workflows/resident-chat-ensemble-01.yml'
+
+jobs:
+  source-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01_2026-10-01
+            tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/**
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify pinned source blobs in current checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          git_hash () { git hash-object "$1"; }
+          test "$(git_hash 'tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/RETURN.md')" = '64670df2c39d65c63242ef7fc1f7d7e57dc5023b'
+          test "$(git_hash 'tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/data/cast.js')" = 'dc62757ead4ba13906c3e5b6cf2f22d239a6f6b9'
+          test "$(git_hash 'tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/KFB_Resident_Atlas_S15.html')" = 'de83d09dd21b944b01ce4a8bf477289521a6cabb'
+          test "$(git_hash 'tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lib/atlas.js')" = '9c54869db0c208c019fe87e356c625cdaf5c35fd'
+      - name: Syntax check source-isolation QA
+        run: node --check skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01_2026-10-01/qa/source-isolation.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local HTTP server
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/resident-ensemble-http.log 2>&1 &
+          echo $! >/tmp/resident-ensemble-http.pid
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 0.5
+          done
+          cat /tmp/resident-ensemble-http.log
+          exit 1
+      - name: Run four-Resident headed source isolation
+        env:
+          KFB_BROWSER_BASE: http://127.0.0.1:4173
+        run: xvfb-run -a node skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01_2026-10-01/qa/source-isolation.mjs
+      - name: Upload source-isolation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resident-chat-ensemble-source-isolation
+          path: skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01_2026-10-01/evidence/source-isolation/
+          if-no-files-found: warn
