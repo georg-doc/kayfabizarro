@@ -1,5 +1,18 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-01 · Global Clay Lite 512 ready for local comparison
+
+- Implemented one lightweight shared-texture material candidate in the existing World Corridor diagnostic lane.
+- Reuses only existing KFB donors `Clay002` and `clay_floor_001`; no new texture family.
+- Each donor is converted at runtime into one 512² packed RGBA texture: relief direction + roughness + value variation.
+- Runtime projection is triplanar X/Y/Z while original asset colour remains authoritative.
+- Estimated active texture cost: ~1.33 MiB including mipmaps.
+- Added `global-clay-pack.v1.js`, lightweight shader branch, donor-switch API and automatic local comparison.
+- User-facing artifact: `KFB_Global_Clay_Lite_Doppelklick.html`, SHA-256 `30bc4ff8e9a39479169301e9a6b198e00a185af402108badfd3e4c481374e81e`; extracted module syntax PASS.
+- Automatic comparison: current procedural Clay → Clay002 512 → clay_floor_001 512 → Clay off.
+- No performance or visual winner claimed until representative M1 Max JSON returns.
+- Plain-language next action: Georg runs **Globale Textur messen** and returns the JSON.
+
 ## 2026-10-01 · Blender P0A delivered · intake corrected against WC1 parity
 
 ### BLENDER RETURN
