@@ -75,6 +75,22 @@ Not started:
 
 Those remain blocked only by the representative GPU baseline, not by another architecture discussion.
 
+## Local GPU baseline pack
+
+No Cloudflare or public Stage is required for the current hardware measurement.
+
+Standalone artifact:
+- name: `kfb-world-corridor-wc1-local-gpu-baseline`;
+- artifact id: `11163194027`;
+- source head: `4123c3155de7e18b2de4c28a63ace0d11316bf21`;
+- digest: `sha256:4f15c12e6ef68c5d5554df16d972b74536a20ba2af488a876b52379db0d6855d`;
+- 19 files; contains exact baseline source, performance probe, dependency-free local server and `run-local-gpu-baseline.sh`.
+
+Local use:
+`bash run-local-gpu-baseline.sh` → visible Chrome → **Measure 10s** → **Copy JSON** / **Download JSON**.
+
+CI is now limited to source parity + browser boot. Absolute FPS is local-visible-GPU evidence only.
+
 ## Public / Stage
 
 No Stage was published in this slice.
