@@ -6,6 +6,8 @@
 
 ## Exact state
 
+- draft PR: **#314** · `https://github.com/georg-doc/kayfabizarro/pull/314`
+- PR state at handoff: **OPEN · DRAFT · NOT MERGED**
 - repository: `georg-doc/kayfabizarro`
 - branch: `chatgpt-web/osm-city-three-geo-donor-p0-2026-10-01`
 - base main: `1c9c9706764ce41ce1282f60e358195afed207e5`
