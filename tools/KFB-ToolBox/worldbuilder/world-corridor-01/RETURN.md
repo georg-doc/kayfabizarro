@@ -283,6 +283,57 @@ Plain-language order:
 3. measure Derek RGB triplanar as the first cheaper non-Clay comparator;
 4. compare the Blender baked-lite path afterwards if still useful.
 
+## Material strategy · global texture first
+
+Current product decision in plain language:
+
+**Do not assume the current procedural Clay shader must be the production solution. Test one small global texture first.**
+
+Strategy document:
+`clay-perf/MATERIAL_STRATEGY_2026-10-01.md`
+
+### Order
+
+1. **Global Clay Lite**
+   - only `Clay002` and `clay_floor_001` are compared as initial donors;
+   - select one;
+   - first runtime test uses one 512² global triplanar texture;
+   - 1024² is tested only if 512² visibly fails.
+
+2. **Derek RGB**
+   - one RGB tile;
+   - triplanar world projection;
+   - three tones derived from each source material colour;
+   - no separate per-asset repainting.
+
+3. **DIY Material Mix**
+   - same lightweight shader core;
+   - material families: Clay / Plaster / Fabric / Wood;
+   - one material texture per object/zone by default;
+   - 2-way blends only where visibly useful;
+   - 3–4-way blending is deferred until a measured need exists.
+
+### Existing verified donor examples
+
+- Clay: `media/3D_Assets/Textures/Clay002/`
+- Clay: `media/3D_Assets/Textures/clay_floor_001/`
+- Plaster: `media/3D_Assets/Textures/Plaster001/`
+- Fabric: `media/3D_Assets/Textures/Fabric048/`
+- Wood: `media/3D_Assets/Textures/Wood036/`
+
+These are donor candidates, not automatic production approvals.
+
+### Intended hybrid
+
+- near / hero: optimized procedural Clay where visible detail matters;
+- mid: compare Global Clay Lite / Derek / Blender baked-lite;
+- far: Global Clay Lite or Derek;
+- terrain: compare Global Clay Lite / Derek / WorldDesign `TERRAIN · COMBINED REF`.
+
+### Exact next practical action
+
+**Build and measure Global Clay Lite from the existing pool before doing more complex material mixing.**
+
 ## No further integration yet
 
 Not started:
