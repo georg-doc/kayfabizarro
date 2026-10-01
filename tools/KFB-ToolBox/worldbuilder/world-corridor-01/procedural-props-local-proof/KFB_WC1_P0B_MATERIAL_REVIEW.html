@@ -46,7 +46,7 @@
   <div class="sub">HTML REVIEW · NOT PUBLIC · frozen runtime <b>94443824e6b…</b> · same geometry · material only</div>
   <div class="small" style="margin-top:6px">
     Real WC1 scene + existing renderer/material owner. Same frozen procedural geometry throughout.
-    Compare only the shared material treatment: Clay002 vs Derek RGB vs Neutral.
+    Compare only the shared material treatment: clay_floor_001 vs current procedural Clay vs Derek RGB vs Clay002 negative control vs Neutral.
   </div>
   <div id="status"><span class="warn">Boot:</span> loading pinned runtime…</div>
   <div id="jsonPreview"></div>
@@ -56,7 +56,7 @@
   <div class="row"><b>Review target</b></div>
   <div class="row">soft procedural tree / pebble / tuft grammar</div>
   <div class="row">same Burg placement from frozen candidate</div>
-  <div class="row">material: <span id="materialLabel">Clay002</span></div>
+  <div class="row">material: <span id="materialLabel">clay_floor_001</span></div>
   <div class="small muted" style="margin-top:7px">
     Drag: orbit · wheel/pinch: zoom<br>
     Human question: which material preserves the cool generated forms without making the world generic, repetitive or buggy?
@@ -70,8 +70,10 @@
   <button data-view="raster">Top</button>
   <button data-view="horizont">Horizon</button>
   <span class="sep"></span>
-  <button class="material active" data-material="clay002">Clay002</button>
+  <button class="material active" data-material="clayfloor">clay_floor</button>
+  <button class="material" data-material="procedural">Current Clay</button>
   <button class="material" data-material="derek">Derek RGB</button>
+  <button class="material" data-material="clay002">Clay002</button>
   <button class="material" data-material="neutral">Neutral</button>
   <span class="sep"></span>
   <label><input id="props" type="checkbox" checked>procedural props</label>
@@ -101,7 +103,7 @@ const $=s=>document.querySelector(s);
 const status=$('#status'), live=$('#live'), measureState=$('#measureState');
 const measureBtn=$('#measure'), copyBtn=$('#copy'), downloadBtn=$('#download');
 const jsonPreview=$('#jsonPreview');
-let api=null, props=null, lastResult=null, visualJudgement='undecided', materialMode='clay002';
+let api=null, props=null, lastResult=null, visualJudgement='undecided', materialMode='clayfloor';
 let runtimeErrors=[];
 
 window.addEventListener('error',e=>runtimeErrors.push(String(e.error?.stack||e.message||e.error||'error')));
@@ -209,7 +211,8 @@ async function runMeasure(){
         frozenRuntimeHead:SOURCE_PIN,
         recoveryDocumentationHead:DOC_HEAD,
         hiveboundDonorHead:HIVEBOUND_PIN,
-        material:'Global Clay Lite · Clay002 · 512'
+        materialMode,
+        clayLook:api.info.clayLook
       },
       environment:{
         visibilityState:document.visibilityState,
@@ -290,11 +293,13 @@ async function setMaterial(mode){
   materialMode=mode;
   measureState.textContent='switching material…';
   try{
-    if(mode==='clay002') await api.setGlobalClayLite('Clay002',512);
+    if(mode==='clayfloor') await api.setGlobalClayLite('clay_floor_001',512);
+    else if(mode==='procedural') api.setProceduralClay();
     else if(mode==='derek') await api.setDerekRgb(512);
+    else if(mode==='clay002') await api.setGlobalClayLite('Clay002',512);
     else api.setClayOff();
     document.querySelectorAll('.material').forEach(x=>x.classList.toggle('active',x.dataset.material===mode));
-    $('#materialLabel').textContent=mode==='clay002'?'Clay002':mode==='derek'?'Derek RGB':'Neutral / Clay off';
+    $('#materialLabel').textContent=mode==='clayfloor'?'clay_floor_001':mode==='procedural'?'Current procedural Clay':mode==='derek'?'Derek RGB':mode==='clay002'?'Clay002':'Neutral / Clay off';
     if(lastResult) lastResult.materialMode=materialMode;
     measureState.textContent='material '+$('#materialLabel').textContent+' · inspect visually';
     summaryLine();
@@ -332,8 +337,8 @@ async function boot(){
       if(t)measureState.textContent=t;
     },{view:'burg',mode:'B'});
 
-    setStatus('warn','applying Clay002 512…');
-    await api.setGlobalClayLite('Clay002',512);
+    setStatus('warn','applying clay_floor_001 512…');
+    await api.setGlobalClayLite('clay_floor_001',512);
     api.shot('burg',true);
 
     setStatus('warn','mounting frozen P0B grammar…');
@@ -343,7 +348,7 @@ async function boot(){
     const g=gpuInfo();
     setStatus('ok',
       'mounted '+props.counts.trees+' trees · '+props.counts.pebbles+' pebbles · '+props.counts.tufts+
-      ' tufts · '+g.webgl+' · compare Clay002 / Derek RGB / Neutral');
+      ' tufts · '+g.webgl+' · compare clay_floor / current Clay / Derek RGB / Clay002 / Neutral');
     measureState.textContent='ready · switch material and inspect same geometry';
     measureBtn.disabled=false;
     summaryLine();
