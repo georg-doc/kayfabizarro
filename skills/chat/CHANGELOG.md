@@ -2101,3 +2101,16 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Node v22.16.0: syntax 2/2 PASS; kernel T01–T25 = **25/25 PASS**; authoring regressions R01–R04 = **4/4 PASS**; total **29/29**, 0 failures.
 - Tested kernel head: `83dc10a567835aa0e509b11b85cbd882389c579d`; evidence report commit: `8c43e23ac1b9cd2d36a1176e6836837db390cff0`.
 - Exactly one next gate: **RESIDENT-CHAT-PRESENTATION-01** — feed deterministic adapter output into one isolated existing NPC-CARD-SPEC-01 presentation fixture, replacing only its local fixed Triplet recipe; no live LLM yet.
+
+## 2026-10-01 · RESIDENT-CHAT-PRESENTATION-01 · shared-pool output into NPC-CARD-SPEC-01
+
+- Stacked Draft PR **#306** on deterministic kernel PR #305; no merge, LLM, TTS, Stage or Live promotion.
+- Exact NPC-CARD-SPEC-01 donor recipe blob `e9b2aea0abc1bcb151fbc8cf5a08f7a6ae36689b` remains unchanged; FrizzleBob Driver Graft, GothGirl, real Doomsday Clock Card, EyeRig ×2, PetMouth ×2, mixers, bubble drawer, renderer/camera and `scene / actor-a / actor-b / mouths` isolation lanes remain the donor-owned presentation source.
+- Added an optional synchronous `lineProvider` seam to the existing runner plus donor-derived shared-pool provider; without provider the exact local `recipe.triplets` path remains the fallback.
+- The donor's A0/A1/B0/B1 text is converted at runtime into one shared semantic pool and selected through the exact tested PR #305 adapter; no replacement dialogue is authored for this parity slice.
+- Mapping is `observation ← Subject`, `interpretation ← Connector`, `counter/implication ← Reframe`.
+- Initial CI was **9/14 PASS** because the staged ~26 s donor performance was correctly rejected under the ordinary ambient ChatterBox word budget. Repair Pass 1 only marked the existing scene `performanceMode:true`; normal ambient limits were not weakened.
+- Final source/integration CI on head `0bf02e9a311046d2730927b3cbf19634c87cbf3a`: GitHub Actions run `36854642474`, job `110344123565`, **14/14 PASS**, 0 failures.
+- Browser/3D verification on the stacked branch remains **OPEN**; no visual PASS, Stage/public result or human acceptance is claimed.
+- Exactly one next gate: **VISIBLE BROWSER FIXTURE VERIFICATION** of scene variants 0/1 plus actor-a, actor-b and mouths, with `semanticReport()` confirming the shared-pool provider before any Stage/human review.
+
