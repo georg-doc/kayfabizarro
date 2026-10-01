@@ -84,6 +84,42 @@ Binding rule: record the absence once per stable environment. Do not probe for
 unless Georg states that it was installed. Continue directly with repository-
 native checks, as the KFB instructions already require.
 
+## Incident 3 · incorrect Hex performance conclusion
+
+I treated the HX screenshot's 4.5 million triangles / 693 calls / 6 fps as
+evidence against the Hex approach itself. That conclusion was not supported.
+
+The reported implementation used separately copied, smoothed and deformed tile
+meshes. That is not a valid benchmark of GPU instancing. True instancing shares
+one low-poly geometry per tile type and varies transform, color and clay seed per
+instance. It reduces draw calls and geometry memory, although it does not erase
+the triangles processed for every visible instance.
+
+The correct architectural distinction is:
+
+1. low-poly Hex cells grouped by tile type in `InstancedMesh` batches;
+2. a small number of authored terrain forms for hills, rocks and canyons;
+3. clay microdetail in the shared shader/material, not per-tile subdivision;
+4. one continuous stylized island underside derived from the outer footprint,
+   not one visible lower column per Hex.
+
+Hex may remain visible where it supports the design, or act only as an invisible
+placement/traversal/WFC grid elsewhere. It must not be rejected for performance
+until a controlled A/B test compares the same camera, islands, track, lighting
+and shadows:
+
+- A: current individually smoothed/deformed copies;
+- B: one shared low-poly geometry per tile type, true instancing, per-instance
+  transforms/colors/seeds, shared canonical clay material, no unique tile mesh.
+
+Record triangles, draw calls, geometry count, texture count, visible-tab FPS and
+GPU memory where genuinely available. If B remains slow, inspect track, strand,
+shadows, outlines and props separately. Do not attribute the result to Hex by
+association.
+
+Impact: my earlier recommendation could have discarded a useful modular/WFC
+world structure before testing the actual intended rendering architecture.
+
 ## Binding Definition of Done
 
 The slice is not complete, and must not be described as complete, until all are
@@ -110,6 +146,8 @@ not converted to PASS because the architecture supports them.
 - A checkpoint is a comma, not a full stop. Persist it, verify it, then continue.
 - No implementation until current owner/donor sources are locked and known
   legacy sources explicitly rejected.
+- Do not reject an architectural primitive from a benchmark that does not
+  implement that primitive's defining optimization.
 - A loaded URL is not donor proof. Show the isolated donor output first.
 - No handoff language while the current agent has capability and authorization.
 - If the product result cannot be completed, report **INCOMPLETE / INTERRUPTED**,
