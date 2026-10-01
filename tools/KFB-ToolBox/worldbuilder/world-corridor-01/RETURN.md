@@ -1,6 +1,6 @@
 # WorldBuilder · Floating-Island Corridor · Return
 
-Status: **WC1 SOURCE REHOME COMPLETE · 10/10 PARITY PASS · GPU BASELINE STILL OPEN · NO STAGE**
+Status: **WC1 GPU BASELINE + COST SPLIT MEASURED · CLAY BOTTLENECK IDENTIFIED · NO STAGE**
 Date: 2026-10-01
 
 ## Result
@@ -83,6 +83,46 @@ Key result:
 Evidence:
 `evidence/WC1_GPU_BASELINE_2026-10-01.json`.
 
+## Cost split result · dominant bottleneck found
+
+The same visible M1 Max / Chrome candidate was measured automatically in mode B:
+
+- **Default:** 30.3 fps · 32.96 ms.
+- **Clay off:** 90.2 fps · 11.09 ms · **66.4% less frame time** with the same 179 calls / 414,758 triangles.
+- **Clouds off:** 34.5 fps · 28.99 ms · 12.0% less frame time.
+- **Shadows off:** 29.5 fps · 33.91 ms; despite 94 calls / 212,712 triangles there is no useful frame-time gain.
+- **Pixel ratio 1.0:** 39.1 fps · 25.54 ms · 22.5% less frame time.
+
+This closes the earlier uncertainty:
+
+**The present performance problem is dominated by the Clay material/fragment path and pixel footprint, not Hex instancing, draw-call count or shadow geometry.**
+
+Do not remove the KFB Clay look. The current shared Clay SSOT on PR #301 locks K1/H0 v8 as visual Golden and K2/v10 as the new-stage implementation baseline only when it reproduces that Golden. Performance work must therefore optimize/fade/bake the current path while proving locked visual parity.
+
+Clouds remain a secondary budget item and will be revisited after the Clay path is under control.
+
+Evidence:
+`evidence/WC1_COST_SPLIT_2026-10-01.json`.
+
+## Reusable measurement lesson
+
+The successful Georg-facing path is now the KFB default for similar local WebGL performance gates:
+
+- exact candidate first;
+- single self-contained **double-click HTML**;
+- visible Chrome on representative hardware;
+- one-click automatic A/B/cost-split;
+- one-click JSON export;
+- CI only for source parity / syntax / boot;
+- no Terminal, unsigned macOS app, Gatekeeper bypass or Cloudflare unless genuinely required.
+
+This rule is persisted in:
+- `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md §4B`;
+- `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md §4A`;
+- the central Chat router hard rules.
+
+The old terminal helper may remain as developer fallback but is **not** the default Georg-facing workflow.
+
 ## No further integration yet
 
 Not started:
@@ -96,21 +136,13 @@ Not started:
 
 Those remain blocked only by the representative GPU baseline, not by another architecture discussion.
 
-## Local GPU baseline pack
+## Local GPU baseline packaging
 
-No Cloudflare or public Stage is required for the current hardware measurement.
+No Cloudflare or public Stage is required for representative hardware measurement.
 
-Standalone artifact:
-- name: `kfb-world-corridor-wc1-local-gpu-baseline`;
-- artifact id: `11163194027`;
-- source head: `4123c3155de7e18b2de4c28a63ace0d11316bf21`;
-- digest: `sha256:4f15c12e6ef68c5d5554df16d972b74536a20ba2af488a876b52379db0d6855d`;
-- 19 files; contains exact baseline source, performance probe, dependency-free local server and `run-local-gpu-baseline.sh`.
+The successful Georg-facing format is a **single self-contained HTML opened directly in Chrome**. It requires no Terminal/local server. An earlier unsigned macOS helper app was rejected by Gatekeeper and is not the recommended path.
 
-Local use:
-`bash run-local-gpu-baseline.sh` → visible Chrome → **Measure 10s** → **Copy JSON** / **Download JSON**.
-
-CI is now limited to source parity + browser boot. Absolute FPS is local-visible-GPU evidence only.
+The repository may retain local-server/CLI helpers for developers, but local performance acceptance uses visible Chrome + exported JSON.
 
 ## Public / Stage
 
@@ -121,6 +153,6 @@ A Stage is justified next only if required to execute the unchanged instrumented
 
 ## Exactly one next gate
 
-**WC1-COST-SPLIT**
+**WC1-CLAY-PERF-01**
 
-Use only existing toggles on the preserved instanced/B candidate to measure: default, clay shader off, clouds off, shadows off, and reduced render pixel ratio. No new Track, vehicle, Billboard or SKY runtime is added yet. After the dominant current cost is identified, continue with Track Core as the first additive integration delta.
+Profile the active K1-parity K2/v10 Clay fragment path on the same exact world/camera, then implement only the smallest performance change that preserves the locked K1/H0 visual Golden. Track Core remains the first additive integration delta after Clay performance is brought into a usable budget.
