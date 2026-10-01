@@ -85,10 +85,22 @@ export async function measureWorldCorridorBaseline({
       cssH: Number(renderer?.domElement?.clientHeight || 0),
       pixelRatio: Number(renderer?.getPixelRatio?.() || 0),
     },
-    renderer: {
-      webglVersion: gl ? String(gl.getParameter(gl.VERSION) || '') : null,
-      renderer: gl ? String(gl.getParameter(gl.RENDERER) || '') : null,
-      vendor: gl ? String(gl.getParameter(gl.VENDOR) || '') : null,
+    renderer: (() => {
+      if (!gl) return { webglVersion: null, renderer: null, vendor: null, unmaskedRenderer: null, unmaskedVendor: null };
+      const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+      return {
+        webglVersion: String(gl.getParameter(gl.VERSION) || ''),
+        renderer: String(gl.getParameter(gl.RENDERER) || ''),
+        vendor: String(gl.getParameter(gl.VENDOR) || ''),
+        unmaskedRenderer: dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) || '') : null,
+        unmaskedVendor: dbg ? String(gl.getParameter(dbg.UNMASKED_VENDOR_WEBGL) || '') : null,
+      };
+    })(),
+    device: {
+      userAgent: navigator.userAgent,
+      hardwareConcurrency: navigator.hardwareConcurrency || null,
+      deviceMemoryGB: navigator.deviceMemory || null,
+      devicePixelRatio: window.devicePixelRatio || 1,
     },
     source: {
       owner: 'KFB WorldBuilder',
@@ -107,3 +119,93 @@ window.__KFB_WC1_BASELINE__ = {
   measure: measureWorldCorridorBaseline,
   last: null,
 };
+
+
+function formatResult(r) {
+  if (!r) return 'No measurement yet.';
+  const tris = Number(r.triangles || 0);
+  return [
+    `${r.fps} fps · mean ${r.meanFrameMs} ms · p95 ${r.p95FrameMs} ms · p99 ${r.p99FrameMs} ms`,
+    `${r.drawCalls} calls · ${Math.round(tris / 1000)}k triangles · ${r.geometries} geoms · ${r.textures} textures · ${r.batches} batches`,
+    `${r.worldCells} cells · ${r.worldItems} items · ${r.clouds} clouds · ${r.billboards} billboards · track ${r.trackLengthM} m · crossings ${r.trackCrossings}`,
+    `canvas ${r.canvas.cssW}×${r.canvas.cssH} @${r.canvas.pixelRatio}x`,
+    r.renderer.unmaskedRenderer || r.renderer.renderer || 'GPU renderer unavailable',
+  ].join('\n');
+}
+
+function downloadJson(result) {
+  const blob = new Blob([JSON.stringify(result, null, 2) + '\n'], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `kfb-wc1-gpu-baseline-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function mountBaselinePanel() {
+  if (document.getElementById('kfb-wc1-gpu-panel')) return;
+  const panel = document.createElement('section');
+  panel.id = 'kfb-wc1-gpu-panel';
+  panel.style.cssText = [
+    'position:fixed','right:12px','bottom:12px','z-index:2147483000','width:min(430px,calc(100vw - 24px))',
+    'background:rgba(20,19,15,.94)','color:#f0ece2','border:1px solid #4d4736','border-radius:9px',
+    'box-shadow:0 10px 30px rgba(0,0,0,.35)','padding:10px','font:11px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace',
+    'backdrop-filter:blur(7px)'
+  ].join(';');
+  panel.innerHTML = `
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+      <strong style="font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase">WC1 · GPU Baseline</strong>
+      <span data-role="state" style="margin-left:auto;color:#a99f80">ready</span>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+      <button data-role="measure" type="button">Measure 10s</button>
+      <button data-role="copy" type="button" disabled>Copy JSON</button>
+      <button data-role="download" type="button" disabled>Download JSON</button>
+      <button data-role="hide" type="button">Hide</button>
+    </div>
+    <pre data-role="result" style="white-space:pre-wrap;margin:0;max-height:210px;overflow:auto;color:#d9d2bd">Keep this tab visible during measurement.</pre>
+  `;
+  for (const b of panel.querySelectorAll('button')) {
+    b.style.cssText='background:#29261d;color:#f0ece2;border:1px solid #514b39;border-radius:5px;padding:5px 8px;font:600 10px/1 ui-sans-serif,system-ui,sans-serif;cursor:pointer';
+  }
+  const state = panel.querySelector('[data-role="state"]');
+  const result = panel.querySelector('[data-role="result"]');
+  const measure = panel.querySelector('[data-role="measure"]');
+  const copy = panel.querySelector('[data-role="copy"]');
+  const download = panel.querySelector('[data-role="download"]');
+
+  measure.onclick = async () => {
+    measure.disabled = true; copy.disabled = true; download.disabled = true;
+    state.textContent = 'measuring…';
+    result.textContent = 'Warm-up 2 s, then 10 s visible-frame sample. Keep this tab in front.';
+    try {
+      const r = await measureWorldCorridorBaseline({ warmupMs: 2000, sampleMs: 10000, label: 'GEORG_GPU_BASELINE' });
+      result.textContent = formatResult(r);
+      const gpu = r.renderer.unmaskedRenderer || r.renderer.renderer || '';
+      state.textContent = /swiftshader|llvmpipe|software/i.test(gpu) ? 'software renderer' : 'measured';
+      copy.disabled = false; download.disabled = false;
+    } catch (err) {
+      state.textContent = 'failed';
+      result.textContent = String(err?.message || err);
+    } finally {
+      measure.disabled = false;
+    }
+  };
+  copy.onclick = async () => {
+    if (!window.__KFB_WC1_BASELINE__.last) return;
+    await navigator.clipboard.writeText(JSON.stringify(window.__KFB_WC1_BASELINE__.last, null, 2));
+    state.textContent = 'copied';
+  };
+  download.onclick = () => window.__KFB_WC1_BASELINE__.last && downloadJson(window.__KFB_WC1_BASELINE__.last);
+  panel.querySelector('[data-role="hide"]').onclick = () => { panel.style.display = 'none'; };
+  document.body.appendChild(panel);
+  window.__KFB_WC1_BASELINE__.showPanel = () => { panel.style.display = ''; };
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mountBaselinePanel, { once: true });
+} else {
+  mountBaselinePanel();
+}
