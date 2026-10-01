@@ -1,5 +1,28 @@
 # KFB ToolBox · additives Changelog
 
+## 2026-10-01 · Blender P0A delivered · intake corrected against WC1 parity
+
+### BLENDER RETURN
+Draft PR #309 / `blender-mcp/clay-perf-p0a-2026-10-01@93af8caef6a85caa1f7fd70a59abb46edf85f0a4` delivers one source-proven building_A baked-lite family with UV1, normal/roughness maps, four deterministic variants, Blender source/scripts and QA.
+
+### ACCEPTED
+- source-pin gate 9/9 PASS;
+- scale `3.2 / 1.65 = 1.939394...` confirmed;
+- 1024² bake is useful as mid/far reference; near detail remains procedural/hybrid;
+- PR #309 is accepted as **K2_STAGE_BAKED_LITE mechanism/reference**, not runtime performance proof.
+
+### PARAMETER CORRECTION
+P0A baked K2-stage globals:
+Tools 1 · Legacy 0 · Mottle .04 · Macro .5 · LodK .6 · Stroke .7.
+
+Current measured WC1 parity path:
+Tools 0 · Legacy 1 · Mottle .05 · Macro .5 · LodK 1.0 · Stroke .55 · PrintOn 1 + near LOD gate · HexK 3 · HexRot 1 · HexFlow 0 · FacetSoft 0.
+
+Therefore P0A is **not yet WC1_PARITY_BAKED_LITE**. No immediate rebake requested.
+
+### NEXT
+Finish `WC1-CLAY-PERF-01`, pin the optimized procedural shader/settings, then align the final baked candidate only if the baked path still wins the runtime comparison.
+
 ## 2026-10-01 · WC1 cost split identifies Clay fragment bottleneck
 
 ### MEASURED · APPLE M1 MAX
