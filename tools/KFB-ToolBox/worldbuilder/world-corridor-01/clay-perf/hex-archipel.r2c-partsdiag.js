@@ -22,6 +22,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mergeGeometries, mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 import { makeClayRelief } from '../baseline-source/lab-clay/clay-relief.v2.js';
 import { makeClayUniforms, makeClayMaterial, seedGeometry, PROFILES, makePrintTexture } from './clay-material.v10-partsdiag.js';
+import { makeGlobalClayPack } from './global-clay-pack.v1.js';
 import { makeShadowFollow } from '../baseline-source/lab-world/shadow-fit.v1.js';
 import { makeToolReliefs } from '../baseline-source/lab-clay/clay-relief.v4.js';
 import { TOOLMIX } from '../baseline-source/lab-clay/clay-toolmix.v1.js';
@@ -401,6 +402,7 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
   const rel = makeClayRelief({ size: 1024, seed: 31 }), tex = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat);
   tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.magFilter = THREE.LinearFilter; tex.minFilter = THREE.LinearMipmapLinearFilter; tex.generateMipmaps = true; tex.needsUpdate = true;
   const U = makeClayUniforms(THREE, tex); U.uClayMottle.value = 0.05;
+  let globalClayTexture = null, globalClayMeta = null;
   const _st = window.setTimeout, mc = new MessageChannel(), mq = []; mc.port1.onmessage = () => { const f = mq.shift(); f && f(); };
   window.setTimeout = (f, d, ...a) => (d ? _st(f, d, ...a) : (mq.push(() => f(...a)), mc.port2.postMessage(0), 0));
   let trl; try { trl = await makeToolReliefs({ size: 1024, seed: 41, onStep: s => onNote('Werkzeug ' + s + ' …') }); } finally { window.setTimeout = _st; mc.port1.close(); }
@@ -417,7 +419,9 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
   U.uClayHand.value = 0.5 * K; U.uClayTile.value = 1.6 * K; U.uClayPrintTile.value = 4.5 * K;
   const clay = (color, pkey, mix, over = {}, vc = false) => { const m = makeClayMaterial(THREE, U, { src: new THREE.MeshStandardMaterial({ color, vertexColors: vc, side: THREE.DoubleSide }), profile: PAR ? { ...prof(pkey, {}), legacy: 1 } : { ...prof(pkey, over), tools: TOOLMIX[mix], legacy: 0 } });
     m.side = THREE.DoubleSide; const ob = m.onBeforeCompile, ck = m.customProgramCacheKey;
-    m.onBeforeCompile = (sh, r) => { ob(sh, r); if (PAR) sh.fragmentShader = sh.fragmentShader.replace('if (uClayPrintOn > 0.5) {', 'if (uClayPrintOn > 0.5 && lodNear > 0.0) {'); sh.vertexShader = sh.vertexShader.replace('vClayP = position; vClayN = normal;', '\n#ifdef USE_INSTANCING\n vClayP = (instanceMatrix * vec4(position, 1.0)).xyz; vClayN = mat3(instanceMatrix) * normal;\n#else\n vClayP = position; vClayN = normal;\n#endif\n'); };
+    m.onBeforeCompile = (sh, r) => { ob(sh, r); if (PAR) sh.fragmentShader = sh.fragmentShader
+      .replace('if (uClayPrintOn > 0.5) {', 'if (uClayPrintOn > 0.5 && lodNear > 0.0) {')
+      .replace('if (uClayPerfPrint > 0.5 && uClayPrintOn > 0.5) {', 'if (uClayPerfPrint > 0.5 && uClayPrintOn > 0.5 && lodNear > 0.0) {'); sh.vertexShader = sh.vertexShader.replace('vClayP = position; vClayN = normal;', '\n#ifdef USE_INSTANCING\n vClayP = (instanceMatrix * vec4(position, 1.0)).xyz; vClayN = mat3(instanceMatrix) * normal;\n#else\n vClayP = position; vClayN = normal;\n#endif\n'); };
     m.customProgramCacheKey = () => ck() + (PAR ? '-r2a-par' : '-r2a'); MATS.push(m); return m; };
   const GROUND = { print: 0, dent: 0, gouge: 0, crack: 0, stroke: 1, facet: 1, crease: 0.6 };
   const MAT = {
@@ -617,7 +621,29 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
     finally { U.uClayOn.value = 1; renderer.setPixelRatio(pr0); resize(); st.mode = keep; build(); camera.position.copy(cam.p); controls.target.copy(cam.t); if (cam.ch) { chase = cam.ch; } paused = false; }
     return out; }
 
-  return { info, U, renderer, sun, get batches() { return batches; }, get world() { return W; }, shot, bench, onPick(cb) { pickCb = cb; },
+  async function setGlobalClayLite(donor = 'Clay002', size = 512) {
+    const built = await makeGlobalClayPack(THREE, { donor, size });
+    if (globalClayTexture && globalClayTexture !== built.texture) globalClayTexture.dispose();
+    globalClayTexture = built.texture; globalClayMeta = built.meta;
+    globalClayTexture.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+    U.uClayLiteTex.value = globalClayTexture;
+    U.uClayLiteOn.value = 1;
+    U.uClayOn.value = 1;
+    info.clayLook = 'Global Clay Lite · ' + donor + ' · ' + size + '²';
+    return globalClayMeta;
+  }
+  function setProceduralClay() {
+    U.uClayLiteOn.value = 0; U.uClayOn.value = 1;
+    info.clayLook = 'Procedural Clay · K1 parity';
+  }
+  function setClayOff() {
+    U.uClayLiteOn.value = 0; U.uClayOn.value = 0;
+    info.clayLook = 'Clay off';
+  }
+
+  return { info, U, renderer, sun, get batches() { return batches; }, get world() { return W; },
+    get globalClayMeta() { return globalClayMeta; }, setGlobalClayLite, setProceduralClay, setClayOff,
+    shot, bench, onPick(cb) { pickCb = cb; },
     set(k, v) { if (k === 'mode') { st.mode = v === 'A' ? 'A' : 'B'; build(); }
       else if (k === 'fugen') { st.fugen = v; build(); } else if (k === 'muster') { st.muster = v; build(); } else if (k === 'kachel') { st.kachel = v; build(); }
       else if (k === 'seed') { seed = +v | 0; regen(); }
@@ -625,5 +651,5 @@ export async function boot(canvas, labelHost, onNote = () => {}, opts = {}) {
       else if (k === 'grid') grid.visible = !!v; else if (k === 'labels') showLabels = !!v; else if (k === 'sky') setSky(v);
       else if (k === 'clouds') content.children.forEach(o => { if (/^Wolke/.test(o.name || '')) o.visible = !!v; });
       else if (k === 'inset') { inset = +v || 0; resize(); } },
-    dispose() { alive = false; clearInterval(iv); ro.disconnect(); controls.dispose(); renderer.dispose(); lab.remove(); } };
+    dispose() { alive = false; clearInterval(iv); ro.disconnect(); controls.dispose(); if (globalClayTexture) globalClayTexture.dispose(); renderer.dispose(); lab.remove(); } };
 }
