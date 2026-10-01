@@ -63,9 +63,19 @@ Protected owners:
 - Billboard uses the existing scheduler / LOD / baked-image provider seam;
 - SKY3 is an EnvironmentHost donor inside the host frame loop, not a second renderer.
 
-M1 Max baseline + cost split are measured. Hex instancing is not the dominant limiter. Mode B default is ~30 fps / 33 ms; Clay off is ~90 fps / 11 ms (−66.4% frame time), clouds off −12%, shadows off no useful gain, pixel ratio 1.0 −22.5%. `WC1-CLAY-PERF-01` now targets the K2/v10 Clay fragment path under the locked K1/H0 Golden contract before Track Core integration.
+M1 Max baseline + cost split are measured. Hex instancing is not the dominant limiter. Mode B default is ~30 fps / 33 ms; Clay off is ~90 fps / 11 ms (−66.4% frame time). The lightweight Global Clay path is technically viable, but the material decision has moved on from raw speed.
 
-Do not route this work back through WSA planning. WC1 source rehome is **10/10 byte-identical PASS**. GitHub/SwiftShader absolute FPS was stopped after two attempts and is not a product-performance authority. The current next gate is **WC1-CLAY-PERF-01**: profile and optimize the active K1-parity K2/v10 Clay fragment path on the exact preserved island scene while preserving the locked K1/H0 Golden appearance. Track, vehicle, billboards, sky and streaming are added only after that baseline, one measured delta at a time.
+Current human direction:
+- Hivebound-inspired procedural props/trees = **PROCEED** on Draft PR #313 / `chatgpt-web/wc1-procedural-props-local-proof-2026-10-01`; preserve the accepted soft tree/pebble geometry;
+- authored Residents/KayKit/FrizzleBob hero assets remain authored;
+- material treatment = **TUNE**;
+- follow-up scale review: **clay_floor_001 looks best**, current procedural Clay second but comparatively buggy, Clay002 at 6/9/12 m still reads mostly as shading rather than convincing clay texture;
+- Derek RGB remains an open comparator because that scale review did not re-rank it.
+
+Technical correction: Global Clay Lite derives donor diffuse into luminance-gradient/value channels while preserving source-object colour. Therefore Clay002's material identity can disappear under the current pack semantics; do not spend the next pass on anti-repeat or per-instance phase/orientation.
+
+Current next gate:
+**MATERIAL ISOLATION · SAME GEOMETRY · CLAY_FLOOR FIRST** — on the frozen accepted P0B geometry compare `clay_floor_001` / current procedural Clay / Derek RGB / Neutral. Keep Clay002 only as a negative control. Track, vehicle, billboards, sky and streaming remain held until this world-material choice is resolved.
 
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
 
