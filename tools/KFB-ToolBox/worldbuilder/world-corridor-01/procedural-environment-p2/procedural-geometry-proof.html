@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Environment P2 · Procedural Geometry Proof</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#d7cfbb;color:#29251d;font:12px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+canvas{display:block}
+.panel{position:fixed;z-index:2;background:#f3eddded;border:1px solid #817764;padding:10px 12px;border-radius:8px}
+#info{left:14px;top:14px;max-width:720px}
+#legend{right:14px;top:14px;max-width:460px;font:11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+.row{margin:2px 0}.muted{color:#6f6657}
+code{font:10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="info" class="panel">
+  <b>ENVIRONMENT FAMILY P2 · PROCEDURAL SOURCE-DERIVED GEOMETRY PROOF</b><br>
+  Seven geometry-only generated objects, derived only after exact authored donor isolation.<br>
+  Neutral display materials only · no Clay/material decision · no WC1 placement integration.<br>
+  <code>owner: KFB WorldBuilder / World Corridor 01 · PR #316</code>
+</div>
+<div id="legend" class="panel">
+  <div class="row">1 · SOFT_LOG_SEPARATOR</div>
+  <div class="row">2 · SOFT_LOG_STACK3</div>
+  <div class="row">3 · SOFT_STUMP_ROUND</div>
+  <div class="row">4 · SOFT_STUMP_DETAILED</div>
+  <div class="row">5 · SOFT_MUSHROOM_NORMAL</div>
+  <div class="row">6 · SOFT_MUSHROOM_GROUP3</div>
+  <div class="row">7 · SOFT_GRASS_TUFT</div>
+  <div id="stats" class="row muted">booting…</div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import {
+  P2_SOURCE,
+  P2_ROLES,
+  p2GeometrySet,
+  geometryFacts
+} from './environment-family-p2.mjs';
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#d7cfbb');
+scene.fog=new THREE.Fog('#d7cfbb',21,34);
+
+const camera=new THREE.PerspectiveCamera(36,innerWidth/innerHeight,.05,100);
+camera.position.set(13.2,7.4,16.8);
+camera.lookAt(0,1.0,0);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.setSize(innerWidth,innerHeight);
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.04;
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight('#fff6e3','#777264',2.3));
+const sun=new THREE.DirectionalLight('#ffe8c3',3.15);
+sun.position.set(6,10,7);
+sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024);
+sun.shadow.camera.left=-18;
+sun.shadow.camera.right=18;
+sun.shadow.camera.top=10;
+sun.shadow.camera.bottom=-8;
+scene.add(sun);
+
+const ground=new THREE.Mesh(
+  new THREE.PlaneGeometry(28,10),
+  new THREE.MeshStandardMaterial({color:'#c6baa0',roughness:.98})
+);
+ground.rotation.x=-Math.PI/2;
+ground.receiveShadow=true;
+scene.add(ground);
+
+const pedestalMat=new THREE.MeshStandardMaterial({color:'#e9e2d2',roughness:.95});
+const neutralMats={
+  log:new THREE.MeshStandardMaterial({color:'#957d61',roughness:.9}),
+  stump:new THREE.MeshStandardMaterial({color:'#8f7358',roughness:.9}),
+  mushroom:new THREE.MeshStandardMaterial({color:'#b48773',roughness:.9}),
+  grass:new THREE.MeshStandardMaterial({color:'#789759',roughness:.9})
+};
+
+const xs=[-9,-6,-3,0,3,6,9];
+const displayScale={
+  SOFT_LOG_SEPARATOR:3.6,
+  SOFT_LOG_STACK3:3.4,
+  SOFT_STUMP_ROUND:7.0,
+  SOFT_STUMP_DETAILED:6.5,
+  SOFT_MUSHROOM_NORMAL:8.0,
+  SOFT_MUSHROOM_GROUP3:6.7,
+  SOFT_GRASS_TUFT:2.4
+};
+
+const entries=p2GeometrySet().map(([name,geo],i)=>{
+  const family=name.includes('LOG')?'log':name.includes('STUMP')?'stump':name.includes('MUSHROOM')?'mushroom':'grass';
+
+  const p=new THREE.Mesh(
+    new THREE.CylinderGeometry(1.35,1.45,.1,28),
+    pedestalMat
+  );
+  p.position.set(xs[i],.03,0);
+  p.receiveShadow=true;
+  scene.add(p);
+
+  const mesh=new THREE.Mesh(geo,neutralMats[family]);
+  mesh.name=name;
+  mesh.position.set(xs[i],.08,0);
+  mesh.scale.setScalar(displayScale[name]||1);
+  mesh.castShadow=mesh.receiveShadow=true;
+  scene.add(mesh);
+
+  return {name,family,geo,mesh};
+});
+
+let frames=0,start=performance.now();
+function render(){
+  frames++;
+  renderer.render(scene,camera);
+  requestAnimationFrame(render);
+}
+render();
+
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
+setTimeout(()=>{
+  const objects=entries.map(e=>({
+    name:e.name,
+    family:e.family,
+    role:P2_ROLES[e.name],
+    ...geometryFacts(e.geo)
+  }));
+
+  const stats={
+    objects:objects.length,
+    calls:renderer.info.render.calls,
+    triangles:renderer.info.render.triangles,
+    renderer:renderer.capabilities.isWebGL2?'WebGL2':'WebGL1',
+    fpsWarmup:frames*1000/(performance.now()-start)
+  };
+
+  document.querySelector('#stats').textContent=
+    objects.length+' objects · '+stats.calls+' calls · '+stats.triangles.toLocaleString()+' tris';
+
+  window.__KFB_ENV_P2_PROC={
+    ready:true,
+    geometryModule:'environment-family-p2.mjs',
+    source:P2_SOURCE,
+    objects,
+    stats,
+    materialDecision:false,
+    displayMaterial:'neutral-only',
+    textureCountExpected:0,
+    worldIntegrated:false,
+    buildingImplemented:false
+  };
+  window.dispatchEvent(new Event('kfbEnvP2ProcReady'));
+},900);
+</script>
+</body>
+</html>
