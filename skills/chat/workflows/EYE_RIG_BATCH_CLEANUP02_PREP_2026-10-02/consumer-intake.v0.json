@@ -83,7 +83,14 @@
     "implementation": "REUSE_EXISTING_BROW_RIG_V2",
     "timing": "AFTER_EYE_PROFILE_VISUAL_APPROVAL",
     "data": "COMPANION_BROW_EXPORT_NOT_EYE_PROFILE_SCHEMA_MUTATION",
-    "reason": "BrowRig already anchors to eyeFrame(); eye calibration remains stable while brows become independently riggable later."
+    "reason": "BrowRig already anchors to eyeFrame(); eye calibration remains stable while brows become independently riggable later.",
+    "activation": {
+      "sourceBrowSuppressionRequired": true,
+      "method": "NON_DESTRUCTIVE_PER_ACTOR_HIDE_OR_MASK",
+      "guard": "BrowRig enabled => authored/source brow hidden or masked; BrowRig disabled => authored/source brow remains visible.",
+      "timing": "Implement only with the future BrowRig consumer proof, after isolated donor review.",
+      "prohibition": "Do not destructively delete source brows in the Eye-Cleanup/EyeRig intake."
+    }
   },
   "consumers": {
     "toolbox": {
