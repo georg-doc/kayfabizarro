@@ -1,0 +1,1201 @@
+{
+ "schema": "kfb.hex-scenelet-recipe/0.1-candidate",
+ "id": "SCENELET_2CELL",
+ "title": "Beach to uphill road (coast + sloped road, directed height relation)",
+ "handoffHead": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+ "units": "hex-native (tile 2.0 flat-to-flat); WC1 cell would be ×8.66",
+ "frame": "three.js, y up; cell centres odd-r: x = col·2 + (row odd ? 1 : 0), z = row·1.732",
+ "cells": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "key": "hex|hex_coast_B",
+   "rotTurns": 0,
+   "rotYDegThree": 0,
+   "level": 0,
+   "kindsAfterRotation": "swwsgg"
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "key": "hex|hex_road_A_sloped_high",
+   "rotTurns": 0,
+   "rotYDegThree": 0,
+   "level": 0,
+   "kindsAfterRotation": "sggsgg"
+  }
+ ],
+ "props": [
+  {
+   "role": "leader",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    -0.05,
+    -0.55
+   ],
+   "yawDegThree": 15,
+   "tier": "L",
+   "required": true,
+   "density": "LOW",
+   "procedural": "T3_ACCENT_ROCK",
+   "sourceWorld": "T3",
+   "scale": 0.08,
+   "paletteRole": "rock",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.447,
+     0.356
+    ],
+    "z": [
+     -0.992,
+     -0.117
+    ]
+   }
+  },
+  {
+   "role": "companion",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    0.45,
+    -0.62
+   ],
+   "yawDegThree": 70,
+   "tier": "M",
+   "required": false,
+   "density": "TARGET",
+   "procedural": "K1_BOULDER",
+   "sourceWorld": "K1",
+   "scale": 0.248,
+   "paletteRole": "rock",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     0.297,
+     0.597
+    ],
+    "z": [
+     -0.767,
+     -0.471
+    ]
+   }
+  },
+  {
+   "role": "companion",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    -0.62,
+    -0.1
+   ],
+   "yawDegThree": 10,
+   "tier": "S",
+   "required": false,
+   "density": "TARGET",
+   "procedural": "P0B_PEBBLE",
+   "sourceWorld": "P0B",
+   "scale": 0.242,
+   "paletteRole": "rock",
+   "support": {
+    "deckY": -0.1,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.739,
+     -0.469
+    ],
+    "z": [
+     -0.182,
+     -0.013
+    ]
+   }
+  },
+  {
+   "role": "ground",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    -0.45,
+    -0.62
+   ],
+   "yawDegThree": 40,
+   "tier": "S",
+   "required": false,
+   "density": "MAX",
+   "procedural": "SOFT_GRASS_TUFT",
+   "sourceWorld": "P2",
+   "scale": 0.5,
+   "paletteRole": "grass",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.507,
+     -0.39
+    ],
+    "z": [
+     -0.697,
+     -0.558
+    ]
+   }
+  },
+  {
+   "role": "separator",
+   "source": "procedural",
+   "cell": [
+    1,
+    0
+   ],
+   "offset_three": [
+    0.0,
+    -0.42
+   ],
+   "yawDegThree": 90,
+   "tier": "M",
+   "required": true,
+   "density": "LOW",
+   "procedural": "SOFT_LOG_SEPARATOR",
+   "sourceWorld": "P2",
+   "scale": 0.5,
+   "paletteRole": "wood",
+   "support": {
+    "deckY": 1.0,
+    "onCell": "1,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     1.822,
+     2.178
+    ],
+    "z": [
+     -0.489,
+     -0.361
+    ]
+   }
+  },
+  {
+   "role": "detail",
+   "source": "procedural",
+   "cell": [
+    1,
+    0
+   ],
+   "offset_three": [
+    0.45,
+    -0.58
+   ],
+   "yawDegThree": 0,
+   "tier": "S",
+   "required": false,
+   "density": "TARGET",
+   "procedural": "SOFT_STUMP_ROUND",
+   "sourceWorld": "P2",
+   "scale": 0.5,
+   "paletteRole": "wood",
+   "support": {
+    "deckY": 1.0,
+    "onCell": "1,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     2.358,
+     2.543
+    ],
+    "z": [
+     -0.673,
+     -0.487
+    ]
+   }
+  },
+  {
+   "role": "detail",
+   "source": "procedural",
+   "cell": [
+    1,
+    0
+   ],
+   "offset_three": [
+    0.52,
+    -0.72
+   ],
+   "yawDegThree": 0,
+   "tier": "S",
+   "required": false,
+   "density": "MAX",
+   "procedural": "SOFT_MUSHROOM_NORMAL",
+   "sourceWorld": "P2",
+   "scale": 0.5,
+   "paletteRole": "mush",
+   "support": {
+    "deckY": 1.0,
+    "onCell": "1,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     2.474,
+     2.566
+    ],
+    "z": [
+     -0.766,
+     -0.674
+    ]
+   }
+  },
+  {
+   "role": "ground",
+   "source": "procedural",
+   "cell": [
+    1,
+    0
+   ],
+   "offset_three": [
+    0.35,
+    0.62
+   ],
+   "yawDegThree": 120,
+   "tier": "S",
+   "required": false,
+   "density": "MAX",
+   "procedural": "SOFT_GRASS_TUFT",
+   "sourceWorld": "P2",
+   "scale": 0.4,
+   "paletteRole": "grass",
+   "support": {
+    "deckY": 1.0,
+    "onCell": "1,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     2.288,
+     2.421
+    ],
+    "z": [
+     0.566,
+     0.685
+    ]
+   }
+  }
+ ],
+ "densityProfiles": {
+  "LOW": {
+   "propIndices": [
+    0,
+    4
+   ],
+   "count": 2
+  },
+  "TARGET": {
+   "propIndices": [
+    0,
+    1,
+    2,
+    4,
+    5
+   ],
+   "count": 5
+  },
+  "MAX": {
+   "propIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "count": 8
+  }
+ },
+ "residentAnchors": [
+  {
+   "id": "beach_lookout",
+   "kind": "resident-idle",
+   "cell": [
+    0,
+    0
+   ],
+   "xyz_three": [
+    -0.55,
+    -0.1277,
+    0.15
+   ],
+   "facingYawDegThree": 180,
+   "clearOfPropFootprints": true
+  },
+  {
+   "id": "road_foot",
+   "kind": "path-node",
+   "cell": [
+    1,
+    0
+   ],
+   "xyz_three": [
+    1.25,
+    0.1907,
+    -0.0
+   ],
+   "facingYawDegThree": -90,
+   "clearOfPropFootprints": true
+  },
+  {
+   "id": "road_top",
+   "kind": "path-node",
+   "cell": [
+    1,
+    0
+   ],
+   "xyz_three": [
+    2.75,
+    0.9257,
+    -0.0
+   ],
+   "facingYawDegThree": -90,
+   "clearOfPropFootprints": true
+  }
+ ],
+ "walkRing": {
+  "method": "24 samples per cell on a circle r = 0.72 around the cell centre, deck height by downward ray (tiles only); a sample is blocked when it lies within 0.08 of a prop ground footprint (prop vertices less than 0.25 above its base) of that density profile",
+  "samples": [
+   {
+    "xyz_three": [
+     0.72,
+     -0.1,
+     -0.0
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.695,
+     -0.0,
+     -0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.624,
+     -0.0,
+     -0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.509,
+     -0.0,
+     -0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.36,
+     -0.0,
+     -0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.186,
+     0.0,
+     -0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.0,
+     0.0,
+     -0.72
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.186,
+     -0.0,
+     -0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.36,
+     0.0,
+     -0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.509,
+     0.0,
+     -0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.624,
+     0.0,
+     -0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.695,
+     -0.029,
+     -0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.72,
+     -0.1,
+     -0.0
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.695,
+     -0.107,
+     0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.624,
+     -0.171,
+     0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.509,
+     -0.2,
+     0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.36,
+     -0.2,
+     0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.186,
+     -0.2,
+     0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.0,
+     -0.2,
+     0.72
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.186,
+     -0.2,
+     0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.36,
+     -0.2,
+     0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.509,
+     -0.2,
+     0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.624,
+     -0.2,
+     0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.695,
+     -0.182,
+     0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.72,
+     0.923,
+     -0.0
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.695,
+     0.918,
+     -0.186
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.624,
+     1.0,
+     -0.36
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.509,
+     1.0,
+     -0.509
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.36,
+     1.0,
+     -0.624
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.186,
+     1.0,
+     -0.695
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.0,
+     1.0,
+     -0.72
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.814,
+     0.814,
+     -0.695
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.64,
+     0.64,
+     -0.624
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.491,
+     0.491,
+     -0.509
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.376,
+     0.377,
+     -0.36
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.305,
+     0.238,
+     -0.186
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.28,
+     0.216,
+     -0.0
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.305,
+     0.238,
+     0.186
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.376,
+     0.377,
+     0.36
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.491,
+     0.491,
+     0.509
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.64,
+     0.64,
+     0.624
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     1.814,
+     0.814,
+     0.695
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.0,
+     1.0,
+     0.72
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.186,
+     1.0,
+     0.695
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.36,
+     1.0,
+     0.624
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.509,
+     1.0,
+     0.509
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.624,
+     1.0,
+     0.36
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     2.695,
+     0.918,
+     0.186
+    ],
+    "cell": "1,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   }
+  ],
+  "freePerProfile": {
+   "LOW": 42,
+   "TARGET": 37,
+   "MAX": 36
+  },
+  "total": 48,
+  "void": 0
+ },
+ "seams": [
+  {
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    1,
+    0
+   ],
+   "dir": 0,
+   "classA": "s",
+   "classB": "s",
+   "classMatch": true,
+   "deckStepAlongEdge": [
+    0.199,
+    0.094,
+    0.09,
+    0.004,
+    0.05
+   ],
+   "maxStep": 0.199
+  }
+ ],
+ "openEdges": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 1,
+   "class": "w",
+   "deckY": -0.2
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 2,
+   "class": "w",
+   "deckY": -0.2
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 3,
+   "class": "s",
+   "deckY": -0.1
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 4,
+   "class": "g",
+   "deckY": -0.0
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 5,
+   "class": "g",
+   "deckY": 0.0
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "dir": 0,
+   "class": "s",
+   "deckY": 0.9432
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "dir": 1,
+   "class": "g",
+   "deckY": 1.0
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "dir": 2,
+   "class": "g",
+   "deckY": 0.535
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "dir": 4,
+   "class": "g",
+   "deckY": 0.535
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "dir": 5,
+   "class": "g",
+   "deckY": 1.0
+  }
+ ],
+ "groupingRules": [
+  "one leader + smaller companions (Travel v25: companions 0.62 / 0.44)",
+  "T3 Rule of Three where a tree is present: tree anchor, two bushes support, one rock accent",
+  "grass as 3–5 blade tufts (P2 tuft already 3–5 blades)",
+  "mushrooms as family patch or stump detail",
+  "rock size tiers S/M/L"
+ ],
+ "notBaked": "semantic recipe; rebuild from keys, cells, rotations and offsets. The .blend is only a preview of it."
+}

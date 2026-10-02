@@ -1,0 +1,85 @@
+{
+ "schema": "kfb.hex-blender-material-bench/0.1-candidate",
+ "handoffHead": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+ "comparison": [
+  "neutral source material (control)",
+  "clay_floor_001 via Global Clay Lite semantics at WC1 cell scale (×8.66)",
+  "same at hex-native scale (×1)"
+ ],
+ "donorMaps": {
+  "diffuse": "d889ddd32d38ef9fac55ea802e47da73cbd77deb",
+  "roughness": "4d5b3e7634e532111c7608156f4a49b6b18d2ffb",
+  "normalUsed": false,
+  "aoUsed": false,
+  "reason": "Global Clay Lite only reads diffuse + roughness (global-clay-pack.v1.js)"
+ },
+ "semanticsSource": {
+  "pack": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/global-clay-pack.v1.js@94443824 (blob df35f5f3…)",
+  "shader": "clay-material.v10-partsdiag.js@94443824 uClayLite branch (blob 45bafa1f…)",
+  "uniforms": {
+   "uClayLiteScale": 0.62,
+   "uClayLiteBump": 0.42,
+   "uClayLiteColor": 0.22,
+   "uClayLiteRough": 0.55
+  },
+  "packSize": 512
+ },
+ "blenderImplementation": {
+  "packedTexture": "rebuilt in numpy from the pinned maps with the same formula (RG gradient, B roughness, A centred value); resize uses PIL bilinear instead of canvas high-quality smoothing",
+  "triplanar": "object-space, weights |n|^4 normalised, same as shader",
+  "colour": "base × clamp(1 + (A−0.5)·2·0.22, 0.72, 1.28) — source colour stays authoritative",
+  "roughness": "clamp(mix(source, B, 0.55), 0.25, 1)",
+  "relief": "APPROXIMATION: Blender Bump node on the A channel (which is linear in donor luminance) with distance set to give the same slope as the shader RG gradient × 0.42; not the shader code itself",
+  "worldScale": "the shader multiplies object coordinates by object scale; here coordinates are multiplied by 8.66 (WC1 cell flat-to-flat 17.32 / KayKit 2.0) or 1.0"
+ },
+ "counts": {
+  "neutral": {
+   "materials": [
+    "KFB_proc_shared",
+    "hexagons_medieval"
+   ],
+   "materialCount": 2,
+   "images": [
+    "hexagons_medieval"
+   ],
+   "imageCount": 1
+  },
+  "clayfloor_ws8.66": {
+   "materials": [
+    "KFB_proc_shared",
+    "hexagons_medieval"
+   ],
+   "materialCount": 2,
+   "images": [
+    "hexagons_medieval",
+    "lite_A.png",
+    "lite_B.png"
+   ],
+   "imageCount": 3
+  },
+  "clayfloor_ws1": {
+   "materials": [
+    "KFB_proc_shared",
+    "hexagons_medieval"
+   ],
+   "materialCount": 2,
+   "images": [
+    "hexagons_medieval",
+    "lite_A.png",
+    "lite_B.png"
+   ],
+   "imageCount": 3
+  }
+ },
+ "findings": [
+  "Hexagon pack: all 221 files use one material and one atlas image. With duplicate import materials merged, the whole pack plus Clay Lite is 1 material + 1 atlas + 1 packed 512² texture (2 single-channel PNGs in the Blender approximation).",
+  "Procedural P1/P2 props have no material owner; in the bench one shared material with per-object colour covers all 12 families (2 materials total in the scene).",
+  "Source identity survives: base colours come from the atlas / object colour; clay only modulates value ±22 % and roughness. Blue roofs, timber frames and road/sand/water boundaries stay readable in both scales (evidence/mat_*).",
+  "At WC1 cell scale (×8.66) the clay pattern is fine and subtle at tile distance; at hex-native scale (×1) it reads clearly as clay on the large grass decks and becomes blotchy on small parts (chimney). Pattern density is therefore tied to the world scale decision.",
+  "Builder pack would need 4–5 flat materials per object to each receive the same Clay Lite nodes (or a palette merge) — another reason it stays SKIP/OPTIONAL.",
+  "No performance statement: Blender cannot measure the browser fragment cost."
+ ],
+ "evidence": [
+  "evidence/04_material_bench.jpg"
+ ]
+}

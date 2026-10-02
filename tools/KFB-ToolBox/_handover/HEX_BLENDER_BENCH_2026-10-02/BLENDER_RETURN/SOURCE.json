@@ -1,0 +1,63 @@
+{
+ "schema": "kfb.hex-blender-source/0.1-candidate",
+ "repo": "georg-doc/kayfabizarro",
+ "handoff": {
+  "pr": 317,
+  "branch": "chatgpt-web/hex-blender-handoff-2026-10-02",
+  "head": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+  "startHere": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/START_HERE.md"
+ },
+ "workingBranch": "blender-mcp/hex-blender-bench-2026-10-02",
+ "returnFolder": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/",
+ "pinsVerified": {
+  "method": "git hash-object on the checked-out files vs SOURCE_MANIFEST.json blobs",
+  "result": "9/9 match",
+  "files": [
+   "clay_floor_001 diffuse/normal/roughness/ao",
+   "environment-family-p1.mjs",
+   "environment-family-p2.mjs",
+   "P2_TEST_REPORT.md",
+   "P2_PROCEDURAL_TRANSFER_SPEC",
+   "GOLDEN_DEFORMATION_DONOR_EXTRACTION"
+  ]
+ },
+ "packs": {
+  "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+  "driftToHandoffHead": "none (git diff of both extracted roots is empty)",
+  "models": 447,
+  "perModelBlob": "asset_inventory.json rows[].blob (from the browser catalog)",
+  "licence": "both packs CC0 (License.txt read)"
+ },
+ "browserCatalog": {
+  "file": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/data/HEX_BROWSER_MEASUREMENTS.json",
+  "status": "15/15 PASS (copied)",
+  "canonicalJoinedSha256": "b16117fb45ae141adce0cc9c6beb0fdf7de24069f79a8845861c766c15ba2b21"
+ },
+ "hexGrid": {
+  "path": "tools/world_atlas/source/lib/hex-grid.js",
+  "blob": "c6bb12c28d32ea6f51ea2c63db9475eaecc5754f",
+  "used": "edge order, rotKinds, rotDeg, coast ground truth"
+ },
+ "clayLiteSemantics": {
+  "ref": "94443824e6b13f38c611defd06dacedd7c6d0faa",
+  "files": {
+   "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/global-clay-pack.v1.js": "df35f5f30825fd7e54e8780cc7f1fece5233d7bc",
+   "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/clay-material.v10-partsdiag.js": "45bafa1ff38f2ac3966ba813d00fb9a99fa57886",
+   "tools/KFB-ToolBox/worldbuilder/world-corridor-01/clay-perf/hex-archipel.r2c-partsdiag.js": "f1b88cd46537779bd2a1af2cbac41c40a3ee2423"
+  },
+  "why": "KFB_WC1_P0B_MATERIAL_REVIEW.html calls setGlobalClayLite(\"clay_floor_001\",512) from these files; read via raw.githubusercontent at that pin"
+ },
+ "tools": {
+  "blender": "5.0.1 bpy module, headless, EEVEE, in the Coworker cloud workspace",
+  "three": "0.160.0 (node, P1/P2 geometry)",
+  "python": "3.11 numpy Pillow"
+ },
+ "notUsed": [
+  "KFB Production Control",
+  "Builder/Hexagon zip archives (extracted roots used)",
+  "clay_floor_001 normal and ao maps (Clay Lite reads diffuse + roughness only)"
+ ],
+ "notCommitted": [
+  "the rebuilt Clay Lite pack PNG (derived from a repo texture; reproducible with source/pack.py)"
+ ]
+}

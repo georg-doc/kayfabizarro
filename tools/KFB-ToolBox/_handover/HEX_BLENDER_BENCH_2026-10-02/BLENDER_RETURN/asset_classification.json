@@ -1,0 +1,1048 @@
+{
+ "schema": "kfb.hex-blender-classification/0.1-candidate",
+ "handoffHead": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+ "classes": [
+  "USE",
+  "PREPARE",
+  "OPTIONAL",
+  "SKIP"
+ ],
+ "summary": {
+  "USE": 95,
+  "PREPARE": 10,
+  "OPTIONAL": 96,
+  "SKIP": 246
+ },
+ "families": [
+  {
+   "family": "hex.base.grass_water",
+   "class": "USE",
+   "reason": "The ground and sea cells the coast solver and every scenelet stand on: 36 / 20 tris, one atlas material, deck y = 0 (measured).",
+   "count": 2,
+   "trisRange": [
+    24,
+    36
+   ],
+   "members": [
+    "hex|hex_grass",
+    "hex|hex_water"
+   ]
+  },
+  {
+   "family": "hex.base.sloped",
+   "class": "PREPARE",
+   "reason": "Only height-changing ground cells, but the browser catalog records them as gggggg with no level: Blender measured low edge 3, high edges 0/1/5 (y 1.0 or 0.5) and mid edges 2/4 (0.535 / 0.275). A level/slope field must be added to the catalog before they can be placed by a solver.",
+   "count": 2,
+   "trisRange": [
+    34,
+    34
+   ],
+   "members": [
+    "hex|hex_grass_sloped_high",
+    "hex|hex_grass_sloped_low"
+   ]
+  },
+  {
+   "family": "hex.base.grass_bottom",
+   "class": "OPTIONAL",
+   "reason": "Under-fill piece for stacked or raised cells (browser edge class ??????, no deck). Only needed once level-1 terrain is used.",
+   "count": 1,
+   "trisRange": [
+    20,
+    20
+   ],
+   "members": [
+    "hex|hex_grass_bottom"
+   ]
+  },
+  {
+   "family": "hex.roads",
+   "class": "USE",
+   "reason": "Complete set: the 13 shapes are all non-empty edge subsets of a hexagon, 58–264 tris, edge classes 13/13 known and re-measured.",
+   "count": 13,
+   "trisRange": [
+    58,
+    264
+   ],
+   "members": [
+    "hex|hex_road_A",
+    "hex|hex_road_B",
+    "hex|hex_road_C",
+    "hex|hex_road_D",
+    "hex|hex_road_E",
+    "hex|hex_road_F",
+    "hex|hex_road_G",
+    "hex|hex_road_H",
+    "hex|hex_road_I",
+    "hex|hex_road_J",
+    "hex|hex_road_K",
+    "hex|hex_road_L",
+    "hex|hex_road_M"
+   ]
+  },
+  {
+   "family": "hex.roads.sloped",
+   "class": "PREPARE",
+   "reason": "Same height gap as the sloped grass. Also measured: the low end of _sloped_high sits at y 0.05 while flat road and coast sand sit at 0.00 / -0.05, so the seam to a flat cell has a 4–9 cm step in native units (×8.66 ≈ 35–80 cm at WC1 cell size).",
+   "count": 2,
+   "trisRange": [
+    98,
+    102
+   ],
+   "members": [
+    "hex|hex_road_A_sloped_high",
+    "hex|hex_road_A_sloped_low"
+   ]
+  },
+  {
+   "family": "hex.coast",
+   "class": "USE",
+   "reason": "The island outline: hex-grid solveCoast uses exactly these five; water-centroid check in Blender reproduces the documented 88.7° for coast_B (edges 1,2).",
+   "count": 5,
+   "trisRange": [
+    72,
+    106
+   ],
+   "members": [
+    "hex|hex_coast_A",
+    "hex|hex_coast_B",
+    "hex|hex_coast_C",
+    "hex|hex_coast_D",
+    "hex|hex_coast_E"
+   ]
+  },
+  {
+   "family": "hex.coast.waterless",
+   "class": "SKIP",
+   "reason": "Three of five are off-grid in the browser run (excluded) and all need a separate water surface; the watered coast set already covers the role.",
+   "count": 5,
+   "trisRange": [
+    72,
+    104
+   ],
+   "members": [
+    "hex|hex_coast_A_waterless",
+    "hex|hex_coast_B_waterless",
+    "hex|hex_coast_C_waterless",
+    "hex|hex_coast_D_waterless",
+    "hex|hex_coast_E_waterless"
+   ]
+  },
+  {
+   "family": "hex.rivers",
+   "class": "OPTIONAL",
+   "reason": "Complete river vocabulary (no source tile), 82–384 tris; not needed for a first island ring, useful once inland water is wanted.",
+   "count": 15,
+   "trisRange": [
+    82,
+    384
+   ],
+   "members": [
+    "hex|hex_river_A",
+    "hex|hex_river_A_curvy",
+    "hex|hex_river_B",
+    "hex|hex_river_C",
+    "hex|hex_river_D",
+    "hex|hex_river_E",
+    "hex|hex_river_F",
+    "hex|hex_river_G",
+    "hex|hex_river_H",
+    "hex|hex_river_I",
+    "hex|hex_river_J",
+    "hex|hex_river_K",
+    "hex|hex_river_L",
+    "hex|hex_river_crossing_A",
+    "hex|hex_river_crossing_B"
+   ]
+  },
+  {
+   "family": "hex.rivers.waterless",
+   "class": "SKIP",
+   "reason": "14 of these 15 are only partially classified in the browser run and hex_river_L_waterless has no deck surface (UNPROVEN/SKIP per brief); the watered versions carry the same role.",
+   "count": 15,
+   "trisRange": [
+    52,
+    204
+   ],
+   "members": [
+    "hex|hex_river_A_curvy_waterless",
+    "hex|hex_river_A_waterless",
+    "hex|hex_river_B_waterless",
+    "hex|hex_river_C_waterless",
+    "hex|hex_river_D_waterless",
+    "hex|hex_river_E_waterless",
+    "hex|hex_river_F_waterless",
+    "hex|hex_river_G_waterless",
+    "hex|hex_river_H_waterless",
+    "hex|hex_river_I_waterless",
+    "hex|hex_river_J_waterless",
+    "hex|hex_river_K_waterless",
+    "hex|hex_river_L_waterless",
+    "hex|hex_river_crossing_A_waterless",
+    "hex|hex_river_crossing_B_waterless"
+   ]
+  },
+  {
+   "family": "hex.buildings.normal",
+   "class": "USE",
+   "reason": "Ordinary village buildings that fit inside one cell (0.65–1.80 wide). Each type has one geometry in four colourways (vertex-identical, only UVs move on the shared atlas), so one mesh per type plus a palette choice covers 24 files.",
+   "count": 24,
+   "trisRange": [
+    726,
+    3125
+   ],
+   "members": [
+    "hex|building_blacksmith_blue",
+    "hex|building_home_A_blue",
+    "hex|building_home_B_blue",
+    "hex|building_market_blue",
+    "hex|building_tavern_blue",
+    "hex|building_well_blue",
+    "hex|building_blacksmith_green",
+    "hex|building_home_A_green",
+    "hex|building_home_B_green",
+    "hex|building_market_green",
+    "hex|building_tavern_green",
+    "hex|building_well_green",
+    "hex|building_blacksmith_red",
+    "hex|building_home_A_red",
+    "hex|building_home_B_red",
+    "hex|building_market_red",
+    "hex|building_tavern_red",
+    "hex|building_well_red",
+    "hex|building_blacksmith_yellow",
+    "hex|building_home_A_yellow",
+    "hex|building_home_B_yellow",
+    "hex|building_market_yellow",
+    "hex|building_tavern_yellow",
+    "hex|building_well_yellow"
+   ]
+  },
+  {
+   "family": "hex.buildings.landmark",
+   "class": "USE",
+   "reason": "Landmark silhouettes for scenelet focus. Windmill, watermill and lumbermill ship moving parts as separate meshes (fan, wheel, saw), so they can animate without re-authoring.",
+   "count": 20,
+   "trisRange": [
+    1126,
+    3170
+   ],
+   "members": [
+    "hex|building_church_blue",
+    "hex|building_lumbermill_blue",
+    "hex|building_mine_blue",
+    "hex|building_watermill_blue",
+    "hex|building_windmill_blue",
+    "hex|building_church_green",
+    "hex|building_lumbermill_green",
+    "hex|building_mine_green",
+    "hex|building_watermill_green",
+    "hex|building_windmill_green",
+    "hex|building_church_red",
+    "hex|building_lumbermill_red",
+    "hex|building_mine_red",
+    "hex|building_watermill_red",
+    "hex|building_windmill_red",
+    "hex|building_church_yellow",
+    "hex|building_lumbermill_yellow",
+    "hex|building_mine_yellow",
+    "hex|building_watermill_yellow",
+    "hex|building_windmill_yellow"
+   ]
+  },
+  {
+   "family": "hex.buildings.military",
+   "class": "OPTIONAL",
+   "reason": "Strong silhouettes but a military role; the castle is 3.98 tall and 5,659 tris (largest file). Keep for a Burg/King island, not the default village kit.",
+   "count": 28,
+   "trisRange": [
+    1538,
+    5659
+   ],
+   "members": [
+    "hex|building_archeryrange_blue",
+    "hex|building_barracks_blue",
+    "hex|building_castle_blue",
+    "hex|building_tower_A_blue",
+    "hex|building_tower_B_blue",
+    "hex|building_tower_base_blue",
+    "hex|building_tower_catapult_blue",
+    "hex|building_archeryrange_green",
+    "hex|building_barracks_green",
+    "hex|building_castle_green",
+    "hex|building_tower_A_green",
+    "hex|building_tower_B_green",
+    "hex|building_tower_base_green",
+    "hex|building_tower_catapult_green",
+    "hex|building_archeryrange_red",
+    "hex|building_barracks_red",
+    "hex|building_castle_red",
+    "hex|building_tower_A_red",
+    "hex|building_tower_B_red",
+    "hex|building_tower_base_red",
+    "hex|building_tower_catapult_red",
+    "hex|building_archeryrange_yellow",
+    "hex|building_barracks_yellow",
+    "hex|building_castle_yellow",
+    "hex|building_tower_A_yellow",
+    "hex|building_tower_B_yellow",
+    "hex|building_tower_base_yellow",
+    "hex|building_tower_catapult_yellow"
+   ]
+  },
+  {
+   "family": "hex.buildings.neutral.walls",
+   "class": "OPTIONAL",
+   "reason": "Edge/separator pieces sized to the hex side (1.15 or 2.0 long); useful for plazas, but they need edge sockets that the catalog does not record yet.",
+   "count": 11,
+   "trisRange": [
+    212,
+    820
+   ],
+   "members": [
+    "hex|fence_stone_straight",
+    "hex|fence_stone_straight_gate",
+    "hex|fence_wood_straight",
+    "hex|fence_wood_straight_gate",
+    "hex|wall_corner_A_gate",
+    "hex|wall_corner_A_inside",
+    "hex|wall_corner_A_outside",
+    "hex|wall_corner_B_inside",
+    "hex|wall_corner_B_outside",
+    "hex|wall_straight",
+    "hex|wall_straight_gate"
+   ]
+  },
+  {
+   "family": "hex.buildings.neutral.construction",
+   "class": "OPTIONAL",
+   "reason": "Construction and ground-overlay states (dirt, grain field); good for a build-up story, not core.",
+   "count": 7,
+   "trisRange": [
+    160,
+    2672
+   ],
+   "members": [
+    "hex|building_destroyed",
+    "hex|building_dirt",
+    "hex|building_grain",
+    "hex|building_scaffolding",
+    "hex|building_stage_A",
+    "hex|building_stage_B",
+    "hex|building_stage_C"
+   ]
+  },
+  {
+   "family": "hex.buildings.neutral.bridges",
+   "class": "OPTIONAL",
+   "reason": "Only meaningful with rivers.",
+   "count": 2,
+   "trisRange": [
+    604,
+    604
+   ],
+   "members": [
+    "hex|building_bridge_A",
+    "hex|building_bridge_B"
+   ]
+  },
+  {
+   "family": "hex.projectile",
+   "class": "SKIP",
+   "reason": "Gameplay projectile, no environment role.",
+   "count": 1,
+   "trisRange": [
+    140,
+    140
+   ],
+   "members": [
+    "hex|projectile_catapult"
+   ]
+  },
+  {
+   "family": "hex.nature.hills_mountains",
+   "class": "USE",
+   "reason": "Terrain massing without a procedural equivalent (60–480 tris). They own the island silhouette hierarchy.",
+   "count": 12,
+   "trisRange": [
+    60,
+    480
+   ],
+   "members": [
+    "hex|hill_single_A",
+    "hex|hill_single_B",
+    "hex|hill_single_C",
+    "hex|hills_A",
+    "hex|hills_B",
+    "hex|hills_C",
+    "hex|mountain_A",
+    "hex|mountain_A_grass",
+    "hex|mountain_B",
+    "hex|mountain_B_grass",
+    "hex|mountain_C",
+    "hex|mountain_C_grass"
+   ]
+  },
+  {
+   "family": "hex.nature.hills_mountains_trees",
+   "class": "PREPARE",
+   "reason": "Same massing with faceted low-poly pines baked in; prefer the bare version plus procedural trees so the forest style stays one language.",
+   "count": 6,
+   "trisRange": [
+    406,
+    750
+   ],
+   "members": [
+    "hex|hills_A_trees",
+    "hex|hills_B_trees",
+    "hex|hills_C_trees",
+    "hex|mountain_A_grass_trees",
+    "hex|mountain_B_grass_trees",
+    "hex|mountain_C_grass_trees"
+   ]
+  },
+  {
+   "family": "hex.nature.forest_mass",
+   "class": "OPTIONAL",
+   "reason": "Whole-cell pine clumps (432–1,540 tris). Cheap far-background mass, but faceted pines contradict the soft P0B tree; keep only as distant filler if Web finds the procedural tree too costly in bulk.",
+   "count": 6,
+   "trisRange": [
+    432,
+    1540
+   ],
+   "members": [
+    "hex|trees_A_large",
+    "hex|trees_A_medium",
+    "hex|trees_A_small",
+    "hex|trees_B_large",
+    "hex|trees_B_medium",
+    "hex|trees_B_small"
+   ]
+  },
+  {
+   "family": "hex.nature.single_trees",
+   "class": "SKIP",
+   "reason": "Faceted cone pines (50 / 220 tris). The role is covered by the human-positive P0B soft tree; the Golden extraction rules out faceted low-poly as the target language.",
+   "count": 2,
+   "trisRange": [
+    50,
+    220
+   ],
+   "members": [
+    "hex|tree_single_A",
+    "hex|tree_single_B"
+   ]
+  },
+  {
+   "family": "hex.nature.stumps",
+   "class": "OPTIONAL",
+   "reason": "Authored stumps; P2 SOFT_STUMP_ROUND/DETAILED cover the soft version. Keep the cut-forest fields (trees_*_cut) as a lumbermill story beat.",
+   "count": 4,
+   "trisRange": [
+    16,
+    288
+   ],
+   "members": [
+    "hex|tree_single_A_cut",
+    "hex|tree_single_B_cut",
+    "hex|trees_A_cut",
+    "hex|trees_B_cut"
+   ]
+  },
+  {
+   "family": "hex.nature.rocks",
+   "class": "SKIP",
+   "reason": "Faceted 18–71 tri rocks; P1 pebble / K1 boulder / T3 accent rock cover small/medium/large with rounded forms.",
+   "count": 5,
+   "trisRange": [
+    18,
+    71
+   ],
+   "members": [
+    "hex|rock_single_A",
+    "hex|rock_single_B",
+    "hex|rock_single_C",
+    "hex|rock_single_D",
+    "hex|rock_single_E"
+   ]
+  },
+  {
+   "family": "hex.nature.water_plants",
+   "class": "OPTIONAL",
+   "reason": "Small shoreline detail with no procedural equivalent; cheap (66–338 tris).",
+   "count": 5,
+   "trisRange": [
+    66,
+    338
+   ],
+   "members": [
+    "hex|waterlily_A",
+    "hex|waterlily_B",
+    "hex|waterplant_A",
+    "hex|waterplant_B",
+    "hex|waterplant_C"
+   ]
+  },
+  {
+   "family": "hex.nature.clouds",
+   "class": "OPTIONAL",
+   "reason": "Sky dressing; not a ground role.",
+   "count": 2,
+   "trisRange": [
+    366,
+    672
+   ],
+   "members": [
+    "hex|cloud_big",
+    "hex|cloud_small"
+   ]
+  },
+  {
+   "family": "hex.props.resident",
+   "class": "USE",
+   "reason": "Small authored props that make resident anchors readable (42–522 tris, one atlas material). No procedural family exists for them.",
+   "count": 19,
+   "trisRange": [
+    42,
+    522
+   ],
+   "members": [
+    "hex|barrel",
+    "hex|bucket_arrows",
+    "hex|bucket_empty",
+    "hex|bucket_water",
+    "hex|crate_A_big",
+    "hex|crate_A_small",
+    "hex|crate_B_big",
+    "hex|crate_B_small",
+    "hex|crate_long_A",
+    "hex|crate_long_B",
+    "hex|crate_long_C",
+    "hex|crate_long_empty",
+    "hex|crate_open",
+    "hex|pallet",
+    "hex|resource_lumber",
+    "hex|resource_stone",
+    "hex|sack",
+    "hex|tent",
+    "hex|wheelbarrow"
+   ]
+  },
+  {
+   "family": "hex.props.flags_military",
+   "class": "OPTIONAL",
+   "reason": "Faction/military dressing.",
+   "count": 7,
+   "trisRange": [
+    42,
+    156
+   ],
+   "members": [
+    "hex|flag_blue",
+    "hex|flag_green",
+    "hex|flag_red",
+    "hex|flag_yellow",
+    "hex|ladder",
+    "hex|target",
+    "hex|weaponrack"
+   ]
+  },
+  {
+   "family": "builder.tiles.hex",
+   "class": "SKIP",
+   "reason": "A second ground language: flat-colour multi-material, earth sides, and the deck sits at y = +1 (Hexagon pack: 0), so every mix needs a -1 offset. 3 rows partial and 9 off-grid in the browser run.",
+   "count": 128,
+   "trisRange": [
+    44,
+    664
+   ],
+   "members": [
+    "builder|hex_forest",
+    "builder|hex_forest_detail",
+    "builder|hex_forest_roadA",
+    "builder|hex_forest_roadA_detail",
+    "builder|hex_forest_roadB",
+    "builder|hex_forest_roadB_detail",
+    "builder|hex_forest_roadC",
+    "builder|hex_forest_roadC_detail",
+    "builder|hex_forest_roadD",
+    "builder|hex_forest_roadD_detail",
+    "builder|hex_forest_roadE",
+    "builder|hex_forest_roadE_detail",
+    "builder|hex_forest_roadF",
+    "builder|hex_forest_roadF_detail",
+    "builder|hex_forest_roadG",
+    "builder|hex_forest_roadG_detail",
+    "builder|hex_forest_roadH",
+    "builder|hex_forest_roadH_detail",
+    "builder|hex_forest_roadI",
+    "builder|hex_forest_roadI_detail",
+    "builder|hex_forest_roadJ",
+    "builder|hex_forest_roadJ_detail",
+    "builder|hex_forest_roadK",
+    "builder|hex_forest_roadK_detail",
+    "builder|hex_forest_roadL",
+    "builder|hex_forest_roadL_detail",
+    "builder|hex_forest_roadM",
+    "builder|hex_forest_roadM_detail",
+    "builder|hex_forest_transitionA",
+    "builder|hex_forest_transitionB",
+    "builder|hex_forest_waterA",
+    "builder|hex_forest_waterA_detail",
+    "builder|hex_forest_waterA_empty",
+    "builder|hex_forest_waterB",
+    "builder|hex_forest_waterB_detail",
+    "builder|hex_forest_waterB_empty",
+    "builder|hex_forest_waterC",
+    "builder|hex_forest_waterC_detail",
+    "builder|hex_forest_waterC_empty",
+    "builder|hex_forest_waterD",
+    "builder|hex_forest_waterD_detail",
+    "builder|hex_forest_waterD_empty",
+    "builder|hex_rock",
+    "builder|hex_rock_detail",
+    "builder|hex_rock_roadA",
+    "builder|hex_rock_roadA_detail",
+    "builder|hex_rock_roadB",
+    "builder|hex_rock_roadB_detail",
+    "builder|hex_rock_roadC",
+    "builder|hex_rock_roadC_detail",
+    "builder|hex_rock_roadD",
+    "builder|hex_rock_roadD_detail",
+    "builder|hex_rock_roadE",
+    "builder|hex_rock_roadE_detail",
+    "builder|hex_rock_roadF",
+    "builder|hex_rock_roadF_detail",
+    "builder|hex_rock_roadG",
+    "builder|hex_rock_roadG_detail",
+    "builder|hex_rock_roadH",
+    "builder|hex_rock_roadH_detail",
+    "builder|hex_rock_roadI",
+    "builder|hex_rock_roadI_detail",
+    "builder|hex_rock_roadJ",
+    "builder|hex_rock_roadJ_detail",
+    "builder|hex_rock_roadK",
+    "builder|hex_rock_roadK_detail",
+    "builder|hex_rock_roadL",
+    "builder|hex_rock_roadL_detail",
+    "builder|hex_rock_roadM",
+    "builder|hex_rock_roadM_detail",
+    "builder|hex_rock_transitionA",
+    "builder|hex_rock_transitionB",
+    "builder|hex_rock_waterA",
+    "builder|hex_rock_waterA_detail",
+    "builder|hex_rock_waterA_empty",
+    "builder|hex_rock_waterB",
+    "builder|hex_rock_waterB_detail",
+    "builder|hex_rock_waterB_empty",
+    "builder|hex_rock_waterC",
+    "builder|hex_rock_waterC_detail",
+    "builder|hex_rock_waterC_empty",
+    "builder|hex_rock_waterD",
+    "builder|hex_rock_waterD_detail",
+    "builder|hex_rock_waterD_empty",
+    "builder|hex_sand",
+    "builder|hex_sand_detail",
+    "builder|hex_sand_roadA",
+    "builder|hex_sand_roadA_detail",
+    "builder|hex_sand_roadB",
+    "builder|hex_sand_roadB_detail",
+    "builder|hex_sand_roadC",
+    "builder|hex_sand_roadC_detail",
+    "builder|hex_sand_roadD",
+    "builder|hex_sand_roadD_detail",
+    "builder|hex_sand_roadE",
+    "builder|hex_sand_roadE_detail",
+    "builder|hex_sand_roadF",
+    "builder|hex_sand_roadF_detail",
+    "builder|hex_sand_roadG",
+    "builder|hex_sand_roadG_detail",
+    "builder|hex_sand_roadH",
+    "builder|hex_sand_roadH_detail",
+    "builder|hex_sand_roadI",
+    "builder|hex_sand_roadI_detail",
+    "builder|hex_sand_roadJ",
+    "builder|hex_sand_roadJ_detail",
+    "builder|hex_sand_roadK",
+    "builder|hex_sand_roadK_detail",
+    "builder|hex_sand_roadL",
+    "builder|hex_sand_roadL_detail",
+    "builder|hex_sand_roadM",
+    "builder|hex_sand_roadM_detail",
+    "builder|hex_sand_transitionA",
+    "builder|hex_sand_transitionB",
+    "builder|hex_sand_waterA",
+    "builder|hex_sand_waterA_detail",
+    "builder|hex_sand_waterA_empty",
+    "builder|hex_sand_waterB",
+    "builder|hex_sand_waterB_detail",
+    "builder|hex_sand_waterB_empty",
+    "builder|hex_sand_waterC",
+    "builder|hex_sand_waterC_detail",
+    "builder|hex_sand_waterC_empty",
+    "builder|hex_sand_waterD",
+    "builder|hex_sand_waterD_detail",
+    "builder|hex_sand_waterD_empty",
+    "builder|hex_water",
+    "builder|hex_water_detail"
+   ]
+  },
+  {
+   "family": "builder.tiles.square",
+   "class": "SKIP",
+   "reason": "Square grid; outside the hex topology owner (all excluded off-grid in the browser run).",
+   "count": 68,
+   "trisRange": [
+    2,
+    328
+   ],
+   "members": [
+    "builder|square_forest",
+    "builder|square_forest_detail",
+    "builder|square_forest_roadA",
+    "builder|square_forest_roadA_detail",
+    "builder|square_forest_roadB",
+    "builder|square_forest_roadB_detail",
+    "builder|square_forest_roadC",
+    "builder|square_forest_roadC_detail",
+    "builder|square_forest_roadD",
+    "builder|square_forest_roadD_detail",
+    "builder|square_forest_roadE",
+    "builder|square_forest_roadE_detail",
+    "builder|square_forest_waterInnerCorner",
+    "builder|square_forest_waterInnerCorner_empty",
+    "builder|square_forest_waterInnerCorner_noSides",
+    "builder|square_forest_waterOuterCorner",
+    "builder|square_forest_waterOuterCorner_empty",
+    "builder|square_forest_waterOuterCorner_noSides",
+    "builder|square_forest_waterStraight",
+    "builder|square_forest_waterStraight_empty",
+    "builder|square_forest_waterStraight_noSides",
+    "builder|square_rock",
+    "builder|square_rock_detail",
+    "builder|square_rock_roadA",
+    "builder|square_rock_roadA_detail",
+    "builder|square_rock_roadB",
+    "builder|square_rock_roadB_detail",
+    "builder|square_rock_roadC",
+    "builder|square_rock_roadC_detail",
+    "builder|square_rock_roadD",
+    "builder|square_rock_roadD_detail",
+    "builder|square_rock_roadE",
+    "builder|square_rock_roadE_detail",
+    "builder|square_rock_waterInnerCorner",
+    "builder|square_rock_waterInnerCorner_empty",
+    "builder|square_rock_waterInnerCorner_noSides",
+    "builder|square_rock_waterOuterCorner",
+    "builder|square_rock_waterOuterCorner_empty",
+    "builder|square_rock_waterOuterCorner_noSides",
+    "builder|square_rock_waterStraight",
+    "builder|square_rock_waterStraight_empty",
+    "builder|square_rock_waterStraight_noSides",
+    "builder|square_sand",
+    "builder|square_sand_detail",
+    "builder|square_sand_roadA",
+    "builder|square_sand_roadA_detail",
+    "builder|square_sand_roadB",
+    "builder|square_sand_roadB_detail",
+    "builder|square_sand_roadC",
+    "builder|square_sand_roadC_detail",
+    "builder|square_sand_roadD",
+    "builder|square_sand_roadD_detail",
+    "builder|square_sand_roadE",
+    "builder|square_sand_roadE_detail",
+    "builder|square_sand_waterInnerCorner",
+    "builder|square_sand_waterInnerCorner_empty",
+    "builder|square_sand_waterInnerCorner_noSides",
+    "builder|square_sand_waterOuterCorner",
+    "builder|square_sand_waterOuterCorner_empty",
+    "builder|square_sand_waterOuterCorner_noSides",
+    "builder|square_sand_waterStraight",
+    "builder|square_sand_waterStraight_empty",
+    "builder|square_sand_waterStraight_noSides",
+    "builder|square_water",
+    "builder|square_water_detail",
+    "builder|square_water_detail_empty",
+    "builder|square_water_detail_noSides",
+    "builder|square_water_empty"
+   ]
+  },
+  {
+   "family": "builder.objects.buildings",
+   "class": "OPTIONAL",
+   "reason": "Same roles as Hexagon buildings in a different flat-colour style (4–5 materials each). Useful as a comparison seed, not to mix into one island.",
+   "count": 8,
+   "trisRange": [
+    906,
+    2270
+   ],
+   "members": [
+    "builder|farm_plot",
+    "builder|house",
+    "builder|lumbermill",
+    "builder|market",
+    "builder|mill",
+    "builder|mine",
+    "builder|watermill",
+    "builder|well"
+   ]
+  },
+  {
+   "family": "builder.objects.military",
+   "class": "SKIP",
+   "reason": "Duplicates Hexagon roles in the other style.",
+   "count": 12,
+   "trisRange": [
+    252,
+    2231
+   ],
+   "members": [
+    "builder|archeryrange",
+    "builder|barracks",
+    "builder|bridge",
+    "builder|bridge_roofed",
+    "builder|castle",
+    "builder|wall_corner",
+    "builder|wall_gate",
+    "builder|wall_gate_closed",
+    "builder|wall_hexCornerA",
+    "builder|wall_hexCornerB",
+    "builder|wall_straight",
+    "builder|watchtower"
+   ]
+  },
+  {
+   "family": "builder.objects.nature",
+   "class": "SKIP",
+   "reason": "Rounded flat-colour trees and rocks in a third look; procedural P0B/P1 already own rounded nature.",
+   "count": 10,
+   "trisRange": [
+    287,
+    2900
+   ],
+   "members": [
+    "builder|detail_forestA",
+    "builder|detail_forestB",
+    "builder|detail_hill",
+    "builder|detail_rocks",
+    "builder|detail_rocks_small",
+    "builder|detail_treeA",
+    "builder|detail_treeB",
+    "builder|detail_treeC",
+    "builder|forest",
+    "builder|mountain"
+   ]
+  }
+ ],
+ "environmentRoles": [
+  {
+   "role": "ground cell / coast ring / roads",
+   "path": "authored asset",
+   "sources": [
+    "hex.base.grass_water",
+    "hex.coast",
+    "hex.roads"
+   ],
+   "why": "Topology lives in these tiles (edge classes measured 15/15 in browser); no procedural ground exists."
+  },
+  {
+   "role": "height change",
+   "path": "authored asset, PREPARE",
+   "sources": [
+    "hex.base.sloped",
+    "hex.roads.sloped"
+   ],
+   "why": "Only authored slope exists; needs a level field in the catalog first (see BLENDER_MEASUREMENTS slopes)."
+  },
+  {
+   "role": "hills / mountains",
+   "path": "authored asset",
+   "sources": [
+    "hex.nature.hills_mountains"
+   ],
+   "why": "Massing silhouette with no procedural equivalent; cheap (60–480 tris)."
+  },
+  {
+   "role": "tree",
+   "path": "procedural family (P0B soft tree); authored forest clumps only as optional far filler",
+   "sources": [
+    "P0B_TREE",
+    "hex.nature.forest_mass"
+   ],
+   "why": "Golden extraction: P0B tree is human-positive; KayKit pines are faceted cones. Cost check for bulk procedural trees is a browser question."
+  },
+  {
+   "role": "bush",
+   "path": "procedural family (T3 2–3 lobe bush)",
+   "sources": [
+    "T3_BUSH"
+   ],
+   "why": "Hexagon pack has no bush."
+  },
+  {
+   "role": "rocks small / medium / large",
+   "path": "procedural family (P0B pebble · K1 boulder · T3 accent rock)",
+   "sources": [
+    "P0B_PEBBLE",
+    "K1_BOULDER",
+    "T3_ACCENT_ROCK"
+   ],
+   "why": "KayKit rocks are faceted 18–71 tri shards; the rounded rock family is source-proven in P1."
+  },
+  {
+   "role": "logs / stumps",
+   "path": "authored hero + procedural background siblings",
+   "sources": [
+    "hex|resource_lumber",
+    "hex.nature.stumps",
+    "SOFT_LOG_SEPARATOR",
+    "SOFT_LOG_STACK3",
+    "SOFT_STUMP_ROUND",
+    "SOFT_STUMP_DETAILED"
+   ],
+   "why": "resource_lumber and cut-forest fields tell the lumbermill story; P2 soft logs/stumps are the scattered siblings."
+  },
+  {
+   "role": "mushrooms",
+   "path": "procedural family",
+   "sources": [
+    "SOFT_MUSHROOM_NORMAL",
+    "SOFT_MUSHROOM_GROUP3"
+   ],
+   "why": "Not in the Hexagon pack."
+  },
+  {
+   "role": "grass tufts",
+   "path": "procedural family",
+   "sources": [
+    "SOFT_GRASS_TUFT"
+   ],
+   "why": "Not in the Hexagon pack; 3–5 blade cluster rule already built in."
+  },
+  {
+   "role": "shore plants",
+   "path": "authored asset, optional",
+   "sources": [
+    "hex.nature.water_plants"
+   ],
+   "why": "Cheap, no procedural equivalent."
+  },
+  {
+   "role": "resident props (barrels, crates, sacks, lumber, tent)",
+   "path": "authored asset",
+   "sources": [
+    "hex.props.resident"
+   ],
+   "why": "Readable small props, one shared material."
+  },
+  {
+   "role": "buildings",
+   "path": "authored asset now; selected seeds feed the later procedural building family",
+   "sources": [
+    "hex.buildings.normal",
+    "hex.buildings.landmark"
+   ],
+   "why": "B0 procedural buildings are not implemented; authored buildings stay the placeable truth."
+  },
+  {
+   "role": "clouds",
+   "path": "optional / deferred",
+   "sources": [
+    "hex.nature.clouds"
+   ],
+   "why": "Sky dressing, no ground role."
+  }
+ ],
+ "buildingSeeds": [
+  {
+   "key": "hex|building_home_A_blue",
+   "colourways": [
+    "blue",
+    "green",
+    "red",
+    "yellow"
+   ],
+   "why": "Plainest normal house: one storey, gable roof, chimney, door, two side windows; 1,011 tris; 0.79 × 0.93 × 0.85.",
+   "structure": {
+    "meshes": 1,
+    "looseParts": 281,
+    "distinctVertexHeights": 50,
+    "faceClass": {
+     "wall": 445,
+     "roofSlope": 450,
+     "up": 67,
+     "down": 49
+    },
+    "materials": [
+     "hexagons_medieval"
+    ]
+   },
+   "lineageFit": "Clean body-under-roof split gives the Elastic Grotesque body field and the roof-inherits-top-ring rule a clear target. But the body is kit-bashed from 281 loose parts with few vertical rings: per Cartoon-Verbieger it must use one object-normalised frame for all parts, and with < 4 meaningful Y rings it falls back to lean/taper unless walls are re-meshed. FACADE_RULE has nothing to read (windows are separate boxes, not wall regions)."
+  },
+  {
+   "key": "hex|building_home_B_blue",
+   "colourways": [
+    "blue",
+    "green",
+    "red",
+    "yellow"
+   ],
+   "why": "Two-storey timber-frame townhouse on a stone plinth with a dormer; 1,393 tris; 0.88 × 1.28 × 1.10. The height makes LOOK-TORSION (height-dependent) meaningful.",
+   "structure": {
+    "meshes": 1,
+    "looseParts": 475,
+    "distinctVertexHeights": 93,
+    "faceClass": {
+     "wall": 685,
+     "roofSlope": 616,
+     "up": 71,
+     "down": 21
+    },
+    "materials": [
+     "hexagons_medieval"
+    ]
+   },
+   "lineageFit": "Plinth / body / roof are three readable bands, matching the anchored-base + torsion-over-height rule. Same kit-bash caveat (475 loose parts)."
+  },
+  {
+   "key": "hex|building_tavern_blue",
+   "colourways": [
+    "blue",
+    "green",
+    "red",
+    "yellow"
+   ],
+   "why": "Larger social building with stairs and a big barrel sign; 2,992 tris; 1.17 × 1.40 × 1.33. Seed for a \"hero normal building\" where a sub-part (the barrel sign) can carry stronger deformation than the body (LandmarkElastic principle).",
+   "structure": {
+    "meshes": 1,
+    "looseParts": 973,
+    "distinctVertexHeights": 118,
+    "faceClass": {
+     "wall": 1441,
+     "roofSlope": 1233,
+     "up": 171,
+     "down": 147
+    },
+    "materials": [
+     "hexagons_medieval"
+    ]
+   },
+   "lineageFit": "Multi-volume massing; 973 loose parts. Good for the role-dependent magnitude rule, hardest to deform as one shell."
+  }
+ ],
+ "buildingSeedRejects": [
+  {
+   "key": "builder|house",
+   "why": "Same role as home_A in the flat-colour Builder style (5 materials, earth plinth); comparison only, mixing two styles."
+  },
+  {
+   "key": "hex|building_church_blue",
+   "why": "Landmark, not a normal building."
+  },
+  {
+   "key": "hex|building_well_blue",
+   "why": "Too small to carry building deformation; stays an authored social prop."
+  }
+ ],
+ "note": "No numerical quality score. Classes are for a first island/village kit; OPTIONAL means kept, not loaded by default."
+}

@@ -1,0 +1,1530 @@
+{
+ "schema": "kfb.hex-blender-measurements/0.1-candidate",
+ "handoffHead": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+ "environment": {
+  "blender": "5.0.1 (bpy, headless, EEVEE)",
+  "where": "Coworker cloud workspace, not the local Blender MCP app (see RETURN)",
+  "three": "0.160.0 under node for P1/P2 geometry"
+ },
+ "browserAgreement": {
+  "S0LoadedRows": 230,
+  "matchTrisSizeMin": 230,
+  "mismatch": 0,
+  "tolerance": 0.002,
+  "newlyMeasuredByBlender": 217
+ },
+ "grid": {
+  "tileFlatToFlat": 2.0,
+  "tilePointToPoint": 2.3094,
+  "pointyTop": true,
+  "hexagonDeckY": 0.0,
+  "builderDeckY": 1.0,
+  "note": "Builder hex tiles have body 0..1 and deck +1; Hexagon tiles have deck 0 and body hanging to -1. Mixing needs a -1 offset."
+ },
+ "fiveDonors": [
+  {
+   "key": "hex|hex_grass",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/base/hex_grass.gltf",
+   "blob": "b2a4608f8935afbbc3261dd71af015900d8ec925",
+   "agreement": "MATCH_BROWSER_S0",
+   "blender": {
+    "tris": 36,
+    "verts": 70,
+    "meshObjects": 1,
+    "meshNames": [
+     "hex_grass"
+    ],
+    "materials": [
+     "hexagons_medieval"
+    ],
+    "images": [
+     "hexagons_medieval.png"
+    ],
+    "uvLayers": [
+     "UVMap"
+    ],
+    "vertexColors": false,
+    "min_three": [
+     -1.0,
+     -1.0,
+     -1.1547
+    ],
+    "max_three": [
+     1.0,
+     0.0,
+     1.1547
+    ],
+    "size_three": [
+     2.0,
+     1.0,
+     2.3094
+    ],
+    "rootOrigin_three": [
+     0.0,
+     0.0,
+     -0.0
+    ],
+    "empties": []
+   },
+   "topologyKinds": "gggggg",
+   "topologyStatus": "KNOWN_TABLE",
+   "deckLevels_threeY_topVertexCounts": [
+    [
+     -0.05,
+     24
+    ],
+    [
+     -1.0,
+     23
+    ],
+    [
+     0.0,
+     23
+    ]
+   ],
+   "visualEdgeCheck": "PASS (top render with edge labels 0..5 agrees with catalog kinds)"
+  },
+  {
+   "key": "hex|hex_road_B",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/roads/hex_road_B.gltf",
+   "blob": "bd8e8310406699564bd5a6778b4108a2fe02774b",
+   "agreement": "MATCH_BROWSER_S0",
+   "blender": {
+    "tris": 118,
+    "verts": 175,
+    "meshObjects": 1,
+    "meshNames": [
+     "hex_road_B"
+    ],
+    "materials": [
+     "hexagons_medieval"
+    ],
+    "images": [
+     "hexagons_medieval.png"
+    ],
+    "uvLayers": [
+     "UVMap"
+    ],
+    "vertexColors": false,
+    "min_three": [
+     -1.0,
+     -1.0,
+     -1.1547
+    ],
+    "max_three": [
+     1.0,
+     0.0,
+     1.1547
+    ],
+    "size_three": [
+     2.0,
+     1.0,
+     2.3094
+    ],
+    "rootOrigin_three": [
+     0.0,
+     0.0,
+     -0.0
+    ],
+    "empties": []
+   },
+   "topologyKinds": "gggsgs",
+   "topologyStatus": "KNOWN_TABLE",
+   "deckLevels_threeY_topVertexCounts": [
+    [
+     -0.05,
+     94
+    ],
+    [
+     0.0,
+     50
+    ],
+    [
+     -1.0,
+     31
+    ]
+   ],
+   "visualEdgeCheck": "PASS (top render with edge labels 0..5 agrees with catalog kinds)"
+  },
+  {
+   "key": "hex|hex_coast_B",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/coast/hex_coast_B.gltf",
+   "blob": "5b7eede8f6fb6157e8e658a25bc743269ffd9dab",
+   "agreement": "MATCH_BROWSER_S0",
+   "blender": {
+    "tris": 98,
+    "verts": 151,
+    "meshObjects": 1,
+    "meshNames": [
+     "hex_coast_B"
+    ],
+    "materials": [
+     "hexagons_medieval"
+    ],
+    "images": [
+     "hexagons_medieval.png"
+    ],
+    "uvLayers": [
+     "UVMap"
+    ],
+    "vertexColors": false,
+    "min_three": [
+     -1.0,
+     -1.0,
+     -1.1547
+    ],
+    "max_three": [
+     1.0,
+     0.0,
+     1.1547
+    ],
+    "size_three": [
+     2.0,
+     1.0,
+     2.3094
+    ],
+    "rootOrigin_three": [
+     0.0,
+     0.0,
+     -0.0
+    ],
+    "empties": []
+   },
+   "topologyKinds": "swwsgg",
+   "topologyStatus": "KNOWN_TABLE",
+   "deckLevels_threeY_topVertexCounts": [
+    [
+     -0.1,
+     39
+    ],
+    [
+     -0.05,
+     34
+    ],
+    [
+     -1.0,
+     31
+    ],
+    [
+     0.0,
+     26
+    ],
+    [
+     -0.2,
+     21
+    ]
+   ],
+   "waterCentroidDeg": 88.7,
+   "visualEdgeCheck": "PASS (top render with edge labels 0..5 agrees with catalog kinds)"
+  },
+  {
+   "key": "hex|hex_road_A_sloped_high",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/tiles/roads/hex_road_A_sloped_high.gltf",
+   "blob": "b4bcda39f29a7c375bce49069e713626b6fd8b21",
+   "agreement": "MATCH_BROWSER_S0",
+   "blender": {
+    "tris": 98,
+    "verts": 155,
+    "meshObjects": 1,
+    "meshNames": [
+     "hex_road_A_sloped_high"
+    ],
+    "materials": [
+     "hexagons_medieval"
+    ],
+    "images": [
+     "hexagons_medieval.png"
+    ],
+    "uvLayers": [
+     "UVMap"
+    ],
+    "vertexColors": false,
+    "min_three": [
+     -1.0,
+     -1.0,
+     -1.1547
+    ],
+    "max_three": [
+     1.0,
+     1.0,
+     1.1547
+    ],
+    "size_three": [
+     2.0,
+     2.0,
+     2.3094
+    ],
+    "rootOrigin_three": [
+     0.0,
+     0.0,
+     -0.0
+    ],
+    "empties": []
+   },
+   "topologyKinds": "sggsgg",
+   "topologyStatus": "MEASURED_S1",
+   "deckLevels_threeY_topVertexCounts": [
+    [
+     -1.0,
+     31
+    ],
+    [
+     0.946,
+     30
+    ],
+    [
+     1.0,
+     26
+    ],
+    [
+     -0.054,
+     16
+    ],
+    [
+     -0.05,
+     8
+    ],
+    [
+     0.035,
+     8
+    ]
+   ],
+   "visualEdgeCheck": "PASS (top render with edge labels 0..5 agrees with catalog kinds)"
+  },
+  {
+   "key": "hex|building_windmill_blue",
+   "path": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/gltf/buildings/blue/building_windmill_blue.gltf",
+   "blob": "e06dbffe42909541c9b918b8116f7eafea944135",
+   "agreement": "NEW_BLENDER_ONLY (browser S0 deferred)",
+   "blender": {
+    "tris": 2653,
+    "verts": 3930,
+    "meshObjects": 3,
+    "meshNames": [
+     "building_windmill_blue",
+     "building_windmill_top_blue",
+     "building_windmill_top_fan_blue"
+    ],
+    "materials": [
+     "hexagons_medieval"
+    ],
+    "images": [
+     "hexagons_medieval.png"
+    ],
+    "uvLayers": [
+     "UVMap"
+    ],
+    "vertexColors": false,
+    "min_three": [
+     -0.5579,
+     -0.0,
+     -0.3789
+    ],
+    "max_three": [
+     0.5679,
+     1.4579,
+     0.4376
+    ],
+    "size_three": [
+     1.1258,
+     1.4579,
+     0.8165
+    ],
+    "rootOrigin_three": [
+     0.0,
+     0.0,
+     -0.0
+    ],
+    "empties": []
+   },
+   "topologyKinds": null,
+   "topologyStatus": null,
+   "deckLevels_threeY_topVertexCounts": [
+    [
+     -0.0,
+     184
+    ],
+    [
+     0.327,
+     113
+    ],
+    [
+     0.38,
+     104
+    ],
+    [
+     0.168,
+     92
+    ],
+    [
+     0.028,
+     86
+    ],
+    [
+     0.864,
+     72
+    ]
+   ],
+   "visualEdgeCheck": "n/a (not a tile)"
+  }
+ ],
+ "slopes": {
+  "method": "downward ray at r = 0.9 toward each edge midpoint and at the centre; unrotated tile",
+  "edgeOrder": "0 E, 1 SE, 2 SW, 3 W, 4 NW, 5 NE (hex-grid.js DIRS)",
+  "rows": {
+   "hex|hex_grass_sloped_high": {
+    "edgeMid0to5": [
+     1.0,
+     1.0,
+     0.55,
+     0.1,
+     0.55,
+     1.0
+    ],
+    "centre": 1.0
+   },
+   "hex|hex_grass_sloped_low": {
+    "edgeMid0to5": [
+     0.5,
+     0.5,
+     0.275,
+     0.05,
+     0.275,
+     0.5
+    ],
+    "centre": 0.5
+   },
+   "hex|hex_road_A_sloped_high": {
+    "edgeMid0to5": [
+     0.94,
+     1.0,
+     0.55,
+     0.05,
+     0.55,
+     1.0
+    ],
+    "centre": 0.683
+   },
+   "hex|hex_road_A_sloped_low": {
+    "edgeMid0to5": [
+     0.45,
+     0.5,
+     0.275,
+     0.0,
+     0.275,
+     0.5
+    ],
+    "centre": 0.337
+   }
+  },
+  "finding": "Every sloped tile rises from edge 3 (low) to edges 0/1/5 (high); edges 2 and 4 sit at mid height. The browser catalog stores these tiles as gggggg/sggsgg without any level, so a solver cannot place them correctly yet."
+ },
+ "colourVariants": {
+  "archeryrange": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "barracks": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "blacksmith": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "castle": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "church": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "home_A": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "home_B": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "lumbermill": {
+   "geomIdentical": true,
+   "uvDistinct": 4,
+   "note": "first hash compared parts in different order; per-part vertex count, transform and coordinate sum are identical"
+  },
+  "market": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "mine": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "tavern": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "tower_A": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "tower_B": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "tower_base": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "tower_catapult": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "watermill": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "well": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  },
+  "windmill": {
+   "geomIdentical": true,
+   "uvDistinct": 4
+  }
+ },
+ "buildingStructure": {
+  "hex|building_home_A_blue": {
+   "meshes": 1,
+   "looseParts": 281,
+   "largestParts": [
+    {
+     "faces": 22,
+     "zMin": 0.119,
+     "zMax": 0.294,
+     "w": 0.07,
+     "d": 0.14
+    },
+    {
+     "faces": 22,
+     "zMin": 0.119,
+     "zMax": 0.294,
+     "w": 0.07,
+     "d": 0.14
+    },
+    {
+     "faces": 22,
+     "zMin": 0.119,
+     "zMax": 0.294,
+     "w": 0.07,
+     "d": 0.14
+    },
+    {
+     "faces": 22,
+     "zMin": 0.119,
+     "zMax": 0.294,
+     "w": 0.07,
+     "d": 0.14
+    },
+    {
+     "faces": 18,
+     "zMin": 0.0,
+     "zMax": 0.0,
+     "w": 0.49,
+     "d": 0.63
+    },
+    {
+     "faces": 18,
+     "zMin": 0.449,
+     "zMax": 0.594,
+     "w": 0.14,
+     "d": 0.0
+    }
+   ],
+   "faceClass": {
+    "wall": 445,
+    "roofSlope": 450,
+    "up": 67,
+    "down": 49
+   },
+   "areaClass": {
+    "wall": 2.281,
+    "roofSlope": 1.936,
+    "up": 0.46,
+    "down": 0.406
+   },
+   "distinctVertexHeights": 50,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_home_B_blue": {
+   "meshes": 1,
+   "looseParts": 475,
+   "largestParts": [
+    {
+     "faces": 34,
+     "zMin": 0.756,
+     "zMax": 0.77,
+     "w": 0.77,
+     "d": 0.63
+    },
+    {
+     "faces": 22,
+     "zMin": 0.329,
+     "zMax": 0.504,
+     "w": 0.14,
+     "d": 0.07
+    },
+    {
+     "faces": 22,
+     "zMin": 0.329,
+     "zMax": 0.504,
+     "w": 0.14,
+     "d": 0.07
+    },
+    {
+     "faces": 22,
+     "zMin": 0.329,
+     "zMax": 0.504,
+     "w": 0.07,
+     "d": 0.14
+    },
+    {
+     "faces": 18,
+     "zMin": 0.919,
+     "zMax": 1.064,
+     "w": 0.14,
+     "d": 0.0
+    },
+    {
+     "faces": 16,
+     "zMin": 0.546,
+     "zMax": 0.56,
+     "w": 0.77,
+     "d": 0.63
+    }
+   ],
+   "faceClass": {
+    "wall": 685,
+    "roofSlope": 616,
+    "up": 71,
+    "down": 21
+   },
+   "areaClass": {
+    "wall": 4.261,
+    "roofSlope": 2.574,
+    "up": 1.602,
+    "down": 0.732
+   },
+   "distinctVertexHeights": 93,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_tavern_blue": {
+   "meshes": 1,
+   "looseParts": 973,
+   "largestParts": [
+    {
+     "faces": 40,
+     "zMin": 0.497,
+     "zMax": 0.814,
+     "w": 0.819,
+     "d": 0.91
+    },
+    {
+     "faces": 26,
+     "zMin": 0.251,
+     "zMax": 0.27,
+     "w": 0.174,
+     "d": 0.134
+    },
+    {
+     "faces": 26,
+     "zMin": 0.209,
+     "zMax": 0.23,
+     "w": 0.174,
+     "d": 0.134
+    },
+    {
+     "faces": 26,
+     "zMin": 0.294,
+     "zMax": 0.311,
+     "w": 0.142,
+     "d": 0.11
+    },
+    {
+     "faces": 26,
+     "zMin": 0.259,
+     "zMax": 0.279,
+     "w": 0.142,
+     "d": 0.11
+    },
+    {
+     "faces": 24,
+     "zMin": 0.674,
+     "zMax": 1.165,
+     "w": 0.505,
+     "d": 0.084
+    }
+   ],
+   "faceClass": {
+    "wall": 1441,
+    "roofSlope": 1233,
+    "up": 171,
+    "down": 147
+   },
+   "areaClass": {
+    "wall": 7.092,
+    "roofSlope": 3.997,
+    "up": 1.893,
+    "down": 1.598
+   },
+   "distinctVertexHeights": 118,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_church_blue": {
+   "meshes": 1,
+   "looseParts": 474,
+   "largestParts": [
+    {
+     "faces": 22,
+     "zMin": 0.105,
+     "zMax": 0.28,
+     "w": 0.14,
+     "d": 0.07
+    },
+    {
+     "faces": 22,
+     "zMin": 0.105,
+     "zMax": 0.28,
+     "w": 0.14,
+     "d": 0.07
+    },
+    {
+     "faces": 22,
+     "zMin": 0.455,
+     "zMax": 0.63,
+     "w": 0.14,
+     "d": 0.07
+    },
+    {
+     "faces": 22,
+     "zMin": 0.686,
+     "zMax": 0.861,
+     "w": 0.14,
+     "d": 0.07
+    },
+    {
+     "faces": 18,
+     "zMin": 0.0,
+     "zMax": 0.0,
+     "w": 0.7,
+     "d": 0.84
+    },
+    {
+     "faces": 18,
+     "zMin": 0.098,
+     "zMax": 0.243,
+     "w": 0.0,
+     "d": 0.14
+    }
+   ],
+   "faceClass": {
+    "wall": 747,
+    "roofSlope": 688,
+    "up": 81,
+    "down": 85
+   },
+   "areaClass": {
+    "wall": 4.47,
+    "roofSlope": 3.898,
+    "up": 1.105,
+    "down": 0.887
+   },
+   "distinctVertexHeights": 84,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_blacksmith_blue": {
+   "meshes": 1,
+   "looseParts": 613,
+   "largestParts": [
+    {
+     "faces": 192,
+     "zMin": 0.21,
+     "zMax": 0.614,
+     "w": 0.7,
+     "d": 0.683
+    },
+    {
+     "faces": 36,
+     "zMin": 0.21,
+     "zMax": 0.21,
+     "w": 0.769,
+     "d": 0.75
+    },
+    {
+     "faces": 36,
+     "zMin": 0.0,
+     "zMax": 0.175,
+     "w": 0.84,
+     "d": 0.819
+    },
+    {
+     "faces": 36,
+     "zMin": 0.175,
+     "zMax": 0.21,
+     "w": 0.84,
+     "d": 0.819
+    },
+    {
+     "faces": 28,
+     "zMin": 0.614,
+     "zMax": 0.84,
+     "w": 0.21,
+     "d": 0.21
+    },
+    {
+     "faces": 22,
+     "zMin": 0.119,
+     "zMax": 0.294,
+     "w": 0.14,
+     "d": 0.07
+    }
+   ],
+   "faceClass": {
+    "wall": 829,
+    "roofSlope": 1207,
+    "up": 237,
+    "down": 137
+   },
+   "areaClass": {
+    "wall": 3.1,
+    "roofSlope": 2.168,
+    "up": 0.704,
+    "down": 1.011
+   },
+   "distinctVertexHeights": 66,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_well_blue": {
+   "meshes": 1,
+   "looseParts": 251,
+   "largestParts": [
+    {
+     "faces": 24,
+     "zMin": -0.0,
+     "zMax": 0.117,
+     "w": 0.388,
+     "d": 0.388
+    },
+    {
+     "faces": 18,
+     "zMin": 0.56,
+     "zMax": 0.56,
+     "w": 0.546,
+     "d": 0.42
+    },
+    {
+     "faces": 16,
+     "zMin": 0.21,
+     "zMax": 0.56,
+     "w": 0.0,
+     "d": 0.603
+    },
+    {
+     "faces": 16,
+     "zMin": 0.21,
+     "zMax": 0.56,
+     "w": 0.0,
+     "d": 0.603
+    },
+    {
+     "faces": 16,
+     "zMin": 0.21,
+     "zMax": 0.56,
+     "w": 0.0,
+     "d": 0.603
+    },
+    {
+     "faces": 16,
+     "zMin": 0.21,
+     "zMax": 0.56,
+     "w": 0.001,
+     "d": 0.603
+    }
+   ],
+   "faceClass": {
+    "wall": 297,
+    "roofSlope": 309,
+    "up": 80,
+    "down": 40
+   },
+   "areaClass": {
+    "wall": 0.966,
+    "roofSlope": 1.291,
+    "up": 0.277,
+    "down": 0.219
+   },
+   "distinctVertexHeights": 31,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_market_blue": {
+   "meshes": 1,
+   "looseParts": 780,
+   "largestParts": [
+    {
+     "faces": 80,
+     "zMin": 0.063,
+     "zMax": 0.111,
+     "w": 0.049,
+     "d": 0.048
+    },
+    {
+     "faces": 80,
+     "zMin": 0.072,
+     "zMax": 0.122,
+     "w": 0.049,
+     "d": 0.049
+    },
+    {
+     "faces": 80,
+     "zMin": 0.069,
+     "zMax": 0.133,
+     "w": 0.063,
+     "d": 0.063
+    },
+    {
+     "faces": 80,
+     "zMin": 0.068,
+     "zMax": 0.117,
+     "w": 0.049,
+     "d": 0.049
+    },
+    {
+     "faces": 80,
+     "zMin": 0.083,
+     "zMax": 0.132,
+     "w": 0.048,
+     "d": 0.05
+    },
+    {
+     "faces": 80,
+     "zMin": 0.063,
+     "zMax": 0.111,
+     "w": 0.05,
+     "d": 0.048
+    }
+   ],
+   "faceClass": {
+    "wall": 1345,
+    "roofSlope": 1241,
+    "up": 353,
+    "down": 186
+   },
+   "areaClass": {
+    "wall": 6.534,
+    "roofSlope": 2.0,
+    "up": 2.397,
+    "down": 2.179
+   },
+   "distinctVertexHeights": 73,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "hex|building_windmill_blue": {
+   "meshes": 3,
+   "looseParts": 744,
+   "largestParts": [
+    {
+     "faces": 32,
+     "zMin": 0.274,
+     "zMax": 0.327,
+     "w": 0.758,
+     "d": 0.758
+    },
+    {
+     "faces": 32,
+     "zMin": 0.0,
+     "zMax": 0.02,
+     "w": 0.124,
+     "d": 0.144
+    },
+    {
+     "faces": 32,
+     "zMin": 0.106,
+     "zMax": 0.141,
+     "w": 0.118,
+     "d": 0.097
+    },
+    {
+     "faces": 32,
+     "zMin": 0.071,
+     "zMax": 0.11,
+     "w": 0.114,
+     "d": 0.116
+    },
+    {
+     "faces": 32,
+     "zMin": 0.008,
+     "zMax": 0.062,
+     "w": 0.132,
+     "d": 0.109
+    },
+    {
+     "faces": 24,
+     "zMin": 1.102,
+     "zMax": 1.102,
+     "w": 0.633,
+     "d": 0.633
+    }
+   ],
+   "faceClass": {
+    "wall": 1197,
+    "roofSlope": 946,
+    "up": 293,
+    "down": 217
+   },
+   "areaClass": {
+    "wall": 3.264,
+    "roofSlope": 1.623,
+    "up": 1.063,
+    "down": 1.101
+   },
+   "distinctVertexHeights": 94,
+   "materials": [
+    "hexagons_medieval"
+   ]
+  },
+  "builder|house": {
+   "meshes": 1,
+   "looseParts": 212,
+   "largestParts": [
+    {
+     "faces": 64,
+     "zMin": -0.009,
+     "zMax": 0.007,
+     "w": 1.202,
+     "d": 1.255
+    },
+    {
+     "faces": 50,
+     "zMin": 0.044,
+     "zMax": 0.899,
+     "w": 0.279,
+     "d": 0.084
+    },
+    {
+     "faces": 48,
+     "zMin": 0.899,
+     "zMax": 0.905,
+     "w": 0.185,
+     "d": 0.252
+    },
+    {
+     "faces": 46,
+     "zMin": 0.044,
+     "zMax": 0.899,
+     "w": 0.062,
+     "d": 0.322
+    },
+    {
+     "faces": 38,
+     "zMin": 0.047,
+     "zMax": 0.066,
+     "w": 0.958,
+     "d": 0.932
+    },
+    {
+     "faces": 32,
+     "zMin": 0.337,
+     "zMax": 0.899,
+     "w": 0.195,
+     "d": 0.041
+    }
+   ],
+   "faceClass": {
+    "wall": 648,
+    "roofSlope": 727,
+    "up": 259,
+    "down": 32
+   },
+   "areaClass": {
+    "wall": 4.418,
+    "roofSlope": 3.51,
+    "up": 3.203,
+    "down": 0.665
+   },
+   "distinctVertexHeights": 59,
+   "materials": [
+    "Beige",
+    "Brown",
+    "BrownDark",
+    "Stone",
+    "White"
+   ]
+  },
+  "builder|market": {
+   "meshes": 1,
+   "looseParts": 456,
+   "largestParts": [
+    {
+     "faces": 64,
+     "zMin": 0.003,
+     "zMax": 0.014,
+     "w": 0.252,
+     "d": 0.244
+    },
+    {
+     "faces": 46,
+     "zMin": 0.18,
+     "zMax": 0.23,
+     "w": 0.339,
+     "d": 0.207
+    },
+    {
+     "faces": 44,
+     "zMin": -0.009,
+     "zMax": 0.007,
+     "w": 1.264,
+     "d": 1.02
+    },
+    {
+     "faces": 32,
+     "zMin": 0.047,
+     "zMax": 0.066,
+     "w": 1.462,
+     "d": 0.956
+    },
+    {
+     "faces": 32,
+     "zMin": 0.061,
+     "zMax": 0.372,
+     "w": 0.27,
+     "d": 0.01
+    },
+    {
+     "faces": 32,
+     "zMin": -0.001,
+     "zMax": 0.186,
+     "w": 0.183,
+     "d": 0.04
+    }
+   ],
+   "faceClass": {
+    "wall": 809,
+    "roofSlope": 716,
+    "up": 291,
+    "down": 108
+   },
+   "areaClass": {
+    "wall": 4.328,
+    "roofSlope": 2.701,
+    "up": 4.223,
+    "down": 1.546
+   },
+   "distinctVertexHeights": 66,
+   "materials": [
+    "Beige",
+    "Brown",
+    "BrownDark",
+    "Stone",
+    "White"
+   ]
+  },
+  "builder|well": {
+   "meshes": 1,
+   "looseParts": 170,
+   "largestParts": [
+    {
+     "faces": 64,
+     "zMin": 0.258,
+     "zMax": 0.263,
+     "w": 0.444,
+     "d": 0.444
+    },
+    {
+     "faces": 46,
+     "zMin": 0.061,
+     "zMax": 0.065,
+     "w": 0.597,
+     "d": 0.597
+    },
+    {
+     "faces": 40,
+     "zMin": 0.34,
+     "zMax": 0.342,
+     "w": 0.094,
+     "d": 0.099
+    },
+    {
+     "faces": 34,
+     "zMin": -0.002,
+     "zMax": 0.008,
+     "w": 1.018,
+     "d": 1.018
+    },
+    {
+     "faces": 32,
+     "zMin": 0.191,
+     "zMax": 0.2,
+     "w": 0.444,
+     "d": 0.444
+    },
+    {
+     "faces": 26,
+     "zMin": 0.565,
+     "zMax": 0.735,
+     "w": 0.605,
+     "d": 0.515
+    }
+   ],
+   "faceClass": {
+    "wall": 418,
+    "roofSlope": 528,
+    "up": 242,
+    "down": 64
+   },
+   "areaClass": {
+    "wall": 1.054,
+    "roofSlope": 0.972,
+    "up": 1.257,
+    "down": 0.14
+   },
+   "distinctVertexHeights": 45,
+   "materials": [
+    "Beige",
+    "Brown",
+    "BrownDark",
+    "Stone",
+    "StoneDark",
+    "Water"
+   ]
+  },
+  "builder|mill": {
+   "meshes": 2,
+   "looseParts": 434,
+   "largestParts": [
+    {
+     "faces": 46,
+     "zMin": -0.003,
+     "zMax": 0.133,
+     "w": 0.045,
+     "d": 0.253
+    },
+    {
+     "faces": 44,
+     "zMin": 0.045,
+     "zMax": 0.145,
+     "w": 0.504,
+     "d": 0.694
+    },
+    {
+     "faces": 43,
+     "zMin": 0.045,
+     "zMax": 0.145,
+     "w": 0.519,
+     "d": 0.504
+    },
+    {
+     "faces": 43,
+     "zMin": -0.007,
+     "zMax": 0.059,
+     "w": 0.626,
+     "d": 0.608
+    },
+    {
+     "faces": 42,
+     "zMin": -0.021,
+     "zMax": 0.113,
+     "w": 0.152,
+     "d": 0.203
+    },
+    {
+     "faces": 42,
+     "zMin": -0.026,
+     "zMax": 0.051,
+     "w": 0.278,
+     "d": 0.291
+    }
+   ],
+   "faceClass": {
+    "wall": 1014,
+    "roofSlope": 892,
+    "up": 245,
+    "down": 119
+   },
+   "areaClass": {
+    "wall": 4.834,
+    "roofSlope": 2.687,
+    "up": 2.614,
+    "down": 1.171
+   },
+   "distinctVertexHeights": 93,
+   "materials": [
+    "Beige",
+    "Brown",
+    "BrownDark",
+    "Stone",
+    "White"
+   ]
+  }
+ },
+ "proceduralControls": {
+  "facts": [
+   {
+    "id": "P0B_TREE",
+    "module": "environment-family-p1.mjs",
+    "attrs": [
+     "position",
+     "uv",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 1067,
+     "triangles": 1704,
+     "bounds": [
+      1.3767428398132324,
+      2.180000066757202,
+      1.15154230594635
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "P0B_PEBBLE",
+    "module": "environment-family-p1.mjs",
+    "attrs": [
+     "position",
+     "normal",
+     "uv"
+    ],
+    "facts": {
+     "vertices": 337,
+     "triangles": 512,
+     "bounds": [
+      1.1063538789749146,
+      0.5322000086307526,
+      0.7153766453266144
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "K1_BOULDER",
+    "module": "environment-family-p1.mjs",
+    "attrs": [
+     "position",
+     "normal",
+     "uv"
+    ],
+    "facts": {
+     "vertices": 2160,
+     "triangles": 720,
+     "bounds": [
+      1.0907726287841797,
+      0.9678190052509308,
+      1.130260705947876
+     ]
+    },
+    "indexed": false
+   },
+   {
+    "id": "T3_ACCENT_ROCK",
+    "module": "environment-family-p1.mjs",
+    "attrs": [
+     "position",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 362,
+     "triangles": 720,
+     "bounds": [
+      9.460058212280273,
+      6.245020389556885,
+      10.20155954360962
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "T3_BUSH",
+    "module": "environment-family-p1.mjs",
+    "attrs": [
+     "position",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 1086,
+     "triangles": 2160,
+     "bounds": [
+      7.263822078704834,
+      4.387342691421509,
+      6.790323495864868
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_LOG_SEPARATOR",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "normal",
+     "uv"
+    ],
+    "facts": {
+     "vertices": 373,
+     "triangles": 456,
+     "bounds": [
+      0.25439009070396423,
+      0.17344991862773895,
+      0.7099999785423279
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_LOG_STACK3",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "normal",
+     "uv"
+    ],
+    "facts": {
+     "vertices": 813,
+     "triangles": 1080,
+     "bounds": [
+      0.4663874953985214,
+      0.30646730586886406,
+      0.6815999746322632
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_STUMP_ROUND",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "uv",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 290,
+     "triangles": 504,
+     "bounds": [
+      0.3700000047683716,
+      0.20600000023841858,
+      0.3700000047683716
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_STUMP_DETAILED",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "uv",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 596,
+     "triangles": 792,
+     "bounds": [
+      0.38999998569488525,
+      0.20600000023841858,
+      0.38999998569488525
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_MUSHROOM_NORMAL",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "uv",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 358,
+     "triangles": 592,
+     "bounds": [
+      0.18400000035762787,
+      0.19629999995231628,
+      0.18400000035762787
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_MUSHROOM_GROUP3",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "uv",
+     "normal"
+    ],
+    "facts": {
+     "vertices": 1074,
+     "triangles": 1776,
+     "bounds": [
+      0.3006499707698822,
+      0.2316340059041977,
+      0.280767597258091
+     ]
+    },
+    "indexed": true
+   },
+   {
+    "id": "SOFT_GRASS_TUFT",
+    "module": "environment-family-p2.mjs",
+    "attrs": [
+     "position",
+     "normal",
+     "uv"
+    ],
+    "facts": {
+     "vertices": 270,
+     "triangles": 400,
+     "bounds": [
+      0.3156387209892273,
+      0.779999976158142,
+      0.4457707554101944
+     ]
+    },
+    "indexed": true
+   }
+  ],
+  "p1ReportedFactsReproduced": "5/5 exact (vertices, triangles, bounds) vs ENVIRONMENT_FAMILY_P1_TEST_REPORT",
+  "nativeUnits": "P0B/K1 ≈ WC1 metres; T3 objects use the historical T3 world (accent rock 9.46 wide); P2 uses KayKit Forest units",
+  "k1BoulderNonIndexed": "K1_BOULDER is non-indexed (2,160 vertices = 3 × 720 triangles), so it renders faceted unless vertices are merged; kept as-is in the bench",
+  "scaleHypothesesForHexNative": {
+   "P0B": 0.55,
+   "K1": 0.4,
+   "T3": 0.08,
+   "P2": 0.5
+  },
+  "scaleBasis": "P0B tree height matched to KayKit tree_single height (1.20 / 2.18 = 0.55); K1, T3 and P2 factors chosen by eye to sit in the hex size bands (rock tiers below the tree, P2 stump below the KayKit cut stump). Not source-derived; see RETURN."
+ },
+ "hexAtlas": {
+  "image": "hexagons_medieval.png",
+  "blob": "14cdc253646e4dba3cb7a267a6f7399b78ba2231",
+  "copiesInPack": 14,
+  "note": "all 221 Hexagon files reference one image and one material name"
+ }
+}

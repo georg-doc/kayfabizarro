@@ -1,0 +1,780 @@
+{
+ "schema": "kfb.hex-scenelet-recipe/0.1-candidate",
+ "id": "SCENELET_1CELL",
+ "title": "Rule-of-Three clearing on one grass cell",
+ "handoffHead": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+ "units": "hex-native (tile 2.0 flat-to-flat); WC1 cell would be ×8.66",
+ "frame": "three.js, y up; cell centres odd-r: x = col·2 + (row odd ? 1 : 0), z = row·1.732",
+ "cells": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "key": "hex|hex_grass",
+   "rotTurns": 0,
+   "rotYDegThree": 0,
+   "level": 0,
+   "kindsAfterRotation": "gggggg"
+  }
+ ],
+ "props": [
+  {
+   "role": "leader",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    0.12,
+    -0.3
+   ],
+   "yawDegThree": 20,
+   "tier": "L",
+   "required": true,
+   "density": "LOW",
+   "procedural": "P0B_TREE",
+   "sourceWorld": "P0B",
+   "scale": 0.55,
+   "paletteRole": "foliage",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     0.001,
+     0.261
+    ],
+    "z": [
+     -0.427,
+     -0.161
+    ]
+   }
+  },
+  {
+   "role": "support",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    -0.42,
+    -0.05
+   ],
+   "yawDegThree": 0,
+   "tier": "M",
+   "required": false,
+   "density": "TARGET",
+   "procedural": "T3_BUSH",
+   "sourceWorld": "T3",
+   "scale": 0.08,
+   "paletteRole": "foliage",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.648,
+     -0.067
+    ],
+    "z": [
+     -0.289,
+     0.254
+    ]
+   }
+  },
+  {
+   "role": "support",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    0.55,
+    -0.0
+   ],
+   "yawDegThree": 130,
+   "tier": "S",
+   "required": false,
+   "density": "TARGET",
+   "procedural": "T3_BUSH",
+   "sourceWorld": "T3",
+   "scale": 0.0496,
+   "paletteRole": "foliage",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     0.333,
+     0.721
+    ],
+    "z": [
+     -0.182,
+     0.138
+    ]
+   }
+  },
+  {
+   "role": "accent",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    -0.25,
+    0.45
+   ],
+   "yawDegThree": 35,
+   "tier": "M",
+   "required": true,
+   "density": "LOW",
+   "procedural": "K1_BOULDER",
+   "sourceWorld": "K1",
+   "scale": 0.4,
+   "paletteRole": "rock",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.503,
+     -0.001
+    ],
+    "z": [
+     0.202,
+     0.708
+    ]
+   }
+  },
+  {
+   "role": "ground",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    0.35,
+    0.42
+   ],
+   "yawDegThree": 10,
+   "tier": "S",
+   "required": false,
+   "density": "TARGET",
+   "procedural": "SOFT_GRASS_TUFT",
+   "sourceWorld": "P2",
+   "scale": 0.5,
+   "paletteRole": "grass",
+   "support": {
+    "deckY": -0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     0.294,
+     0.388
+    ],
+    "z": [
+     0.347,
+     0.498
+    ]
+   }
+  },
+  {
+   "role": "ground",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    -0.62,
+    0.25
+   ],
+   "yawDegThree": 200,
+   "tier": "S",
+   "required": false,
+   "density": "MAX",
+   "procedural": "SOFT_GRASS_TUFT",
+   "sourceWorld": "P2",
+   "scale": 0.4,
+   "paletteRole": "grass",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.667,
+     -0.562
+    ],
+    "z": [
+     0.171,
+     0.311
+    ]
+   }
+  },
+  {
+   "role": "detail",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    0.3,
+    -0.52
+   ],
+   "yawDegThree": 60,
+   "tier": "S",
+   "required": false,
+   "density": "MAX",
+   "procedural": "SOFT_MUSHROOM_GROUP3",
+   "sourceWorld": "P2",
+   "scale": 0.5,
+   "paletteRole": "mush",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     0.223,
+     0.378
+    ],
+    "z": [
+     -0.601,
+     -0.452
+    ]
+   }
+  },
+  {
+   "role": "accent-small",
+   "source": "procedural",
+   "cell": [
+    0,
+    0
+   ],
+   "offset_three": [
+    0.05,
+    0.62
+   ],
+   "yawDegThree": 80,
+   "tier": "S",
+   "required": false,
+   "density": "MAX",
+   "procedural": "P0B_PEBBLE",
+   "sourceWorld": "P0B",
+   "scale": 0.275,
+   "paletteRole": "rock",
+   "support": {
+    "deckY": 0.0,
+    "onCell": "0,0",
+    "deckNormalTilt": 0.0
+   },
+   "groundFootprint_three": {
+    "x": [
+     -0.049,
+     0.168
+    ],
+    "z": [
+     0.463,
+     0.755
+    ]
+   }
+  }
+ ],
+ "densityProfiles": {
+  "LOW": {
+   "propIndices": [
+    0,
+    3
+   ],
+   "count": 2
+  },
+  "TARGET": {
+   "propIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "count": 5
+  },
+  "MAX": {
+   "propIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "count": 8
+  }
+ },
+ "residentAnchors": [
+  {
+   "id": "rest_under_tree",
+   "kind": "resident-idle",
+   "cell": [
+    0,
+    0
+   ],
+   "xyz_three": [
+    0.08,
+    0.0,
+    0.18
+   ],
+   "facingYawDegThree": 200,
+   "clearOfPropFootprints": true
+  },
+  {
+   "id": "look_out",
+   "kind": "resident-idle",
+   "cell": [
+    0,
+    0
+   ],
+   "xyz_three": [
+    0.62,
+    0.0,
+    0.55
+   ],
+   "facingYawDegThree": -30,
+   "clearOfPropFootprints": true
+  }
+ ],
+ "walkRing": {
+  "method": "24 samples per cell on a circle r = 0.72 around the cell centre, deck height by downward ray (tiles only); a sample is blocked when it lies within 0.08 of a prop ground footprint (prop vertices less than 0.25 above its base) of that density profile",
+  "samples": [
+   {
+    "xyz_three": [
+     0.72,
+     0.0,
+     -0.0
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.695,
+     0.0,
+     -0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.624,
+     0.0,
+     -0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.509,
+     0.0,
+     -0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.36,
+     0.0,
+     -0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.186,
+     0.0,
+     -0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.0,
+     0.0,
+     -0.72
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.186,
+     0.0,
+     -0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.36,
+     0.0,
+     -0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.509,
+     0.0,
+     -0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.624,
+     0.0,
+     -0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.695,
+     0.0,
+     -0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.72,
+     0.0,
+     -0.0
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.695,
+     0.0,
+     0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.624,
+     0.0,
+     0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.509,
+     -0.0,
+     0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.36,
+     0.0,
+     0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.186,
+     0.0,
+     0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     -0.0,
+     -0.0,
+     0.72
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": true,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.186,
+     -0.0,
+     0.695
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": true
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.36,
+     0.0,
+     0.624
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.509,
+     -0.0,
+     0.509
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.624,
+     0.0,
+     0.36
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": false,
+     "MAX": false
+    },
+    "void": false
+   },
+   {
+    "xyz_three": [
+     0.695,
+     0.0,
+     0.186
+    ],
+    "cell": "0,0",
+    "blockedAt": {
+     "LOW": false,
+     "TARGET": true,
+     "MAX": true
+    },
+    "void": false
+   }
+  ],
+  "freePerProfile": {
+   "LOW": 20,
+   "TARGET": 13,
+   "MAX": 10
+  },
+  "total": 24,
+  "void": 0
+ },
+ "seams": [],
+ "openEdges": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 0,
+   "class": "g",
+   "deckY": 0.0
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 1,
+   "class": "g",
+   "deckY": -0.0
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 2,
+   "class": "g",
+   "deckY": -0.0
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 3,
+   "class": "g",
+   "deckY": 0.0
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 4,
+   "class": "g",
+   "deckY": 0.0
+  },
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "dir": 5,
+   "class": "g",
+   "deckY": 0.0
+  }
+ ],
+ "groupingRules": [
+  "one leader + smaller companions (Travel v25: companions 0.62 / 0.44)",
+  "T3 Rule of Three where a tree is present: tree anchor, two bushes support, one rock accent",
+  "grass as 3–5 blade tufts (P2 tuft already 3–5 blades)",
+  "mushrooms as family patch or stump detail",
+  "rock size tiers S/M/L"
+ ],
+ "notBaked": "semantic recipe; rebuild from keys, cells, rotations and offsets. The .blend is only a preview of it."
+}

@@ -1,0 +1,824 @@
+{
+ "schema": "kfb.hex-blender-sockets-support/0.1-candidate",
+ "handoffHead": "f4f3fdbb0925653c8c76d21313416fa49a6ffb3a",
+ "frame": "three.js (y up), hex-native units, odd-r cells, edge order 0 E … 5 NE",
+ "scenelets": {
+  "SCENELET_1CELL": {
+   "openEdges": [
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 0,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 1,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 2,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 3,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 4,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 5,
+     "class": "g",
+     "deckY": 0.0
+    }
+   ],
+   "seams": [],
+   "propSupports": [
+    {
+     "prop": "P0B_TREE",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "T3_BUSH",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "T3_BUSH",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "K1_BOULDER",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_GRASS_TUFT",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": -0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_GRASS_TUFT",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_MUSHROOM_GROUP3",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "P0B_PEBBLE",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    }
+   ],
+   "anchors": [
+    {
+     "id": "rest_under_tree",
+     "kind": "resident-idle",
+     "cell": [
+      0,
+      0
+     ],
+     "xyz_three": [
+      0.08,
+      0.0,
+      0.18
+     ],
+     "facingYawDegThree": 200
+    },
+    {
+     "id": "look_out",
+     "kind": "resident-idle",
+     "cell": [
+      0,
+      0
+     ],
+     "xyz_three": [
+      0.62,
+      0.0,
+      0.55
+     ],
+     "facingYawDegThree": -30
+    }
+   ]
+  },
+  "SCENELET_2CELL": {
+   "openEdges": [
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 1,
+     "class": "w",
+     "deckY": -0.2
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 2,
+     "class": "w",
+     "deckY": -0.2
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 3,
+     "class": "s",
+     "deckY": -0.1
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 4,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 5,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 0,
+     "class": "s",
+     "deckY": 0.9432
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 1,
+     "class": "g",
+     "deckY": 1.0
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 2,
+     "class": "g",
+     "deckY": 0.535
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 4,
+     "class": "g",
+     "deckY": 0.535
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 5,
+     "class": "g",
+     "deckY": 1.0
+    }
+   ],
+   "seams": [
+    {
+     "a": [
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0
+     ],
+     "dir": 0,
+     "classA": "s",
+     "classB": "s",
+     "classMatch": true,
+     "deckStepAlongEdge": [
+      0.199,
+      0.094,
+      0.09,
+      0.004,
+      0.05
+     ],
+     "maxStep": 0.199
+    }
+   ],
+   "propSupports": [
+    {
+     "prop": "T3_ACCENT_ROCK",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "K1_BOULDER",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "P0B_PEBBLE",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": -0.1,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_GRASS_TUFT",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_LOG_SEPARATOR",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": 1.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_STUMP_ROUND",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": 1.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_MUSHROOM_NORMAL",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": 1.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_GRASS_TUFT",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": 1.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    }
+   ],
+   "anchors": [
+    {
+     "id": "beach_lookout",
+     "kind": "resident-idle",
+     "cell": [
+      0,
+      0
+     ],
+     "xyz_three": [
+      -0.55,
+      -0.1277,
+      0.15
+     ],
+     "facingYawDegThree": 180
+    },
+    {
+     "id": "road_foot",
+     "kind": "path-node",
+     "cell": [
+      1,
+      0
+     ],
+     "xyz_three": [
+      1.25,
+      0.1907,
+      -0.0
+     ],
+     "facingYawDegThree": -90
+    },
+    {
+     "id": "road_top",
+     "kind": "path-node",
+     "cell": [
+      1,
+      0
+     ],
+     "xyz_three": [
+      2.75,
+      0.9257,
+      -0.0
+     ],
+     "facingYawDegThree": -90
+    }
+   ]
+  },
+  "SCENELET_3CELL": {
+   "openEdges": [
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 2,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 3,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 4,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      0
+     ],
+     "dir": 5,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 0,
+     "class": "s",
+     "deckY": -0.05
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 1,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 4,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      1,
+      0
+     ],
+     "dir": 5,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      1
+     ],
+     "dir": 0,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      0,
+      1
+     ],
+     "dir": 1,
+     "class": "g",
+     "deckY": 0.0
+    },
+    {
+     "cell": [
+      0,
+      1
+     ],
+     "dir": 2,
+     "class": "g",
+     "deckY": -0.0
+    },
+    {
+     "cell": [
+      0,
+      1
+     ],
+     "dir": 3,
+     "class": "g",
+     "deckY": 0.0
+    }
+   ],
+   "seams": [
+    {
+     "a": [
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0
+     ],
+     "dir": 0,
+     "classA": "g",
+     "classB": "g",
+     "classMatch": true,
+     "deckStepAlongEdge": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "maxStep": 0.0
+    },
+    {
+     "a": [
+      0,
+      0
+     ],
+     "b": [
+      0,
+      1
+     ],
+     "dir": 1,
+     "classA": "g",
+     "classB": "g",
+     "classMatch": true,
+     "deckStepAlongEdge": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "maxStep": 0.0
+    },
+    {
+     "a": [
+      1,
+      0
+     ],
+     "b": [
+      0,
+      1
+     ],
+     "dir": 2,
+     "classA": "g",
+     "classB": "g",
+     "classMatch": true,
+     "deckStepAlongEdge": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "maxStep": 0.0
+    }
+   ],
+   "propSupports": [
+    {
+     "prop": "hex|building_tavern_blue",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "hex|building_well_blue",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": -0.05,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "hex|building_home_A_blue",
+     "cell": [
+      0,
+      1
+     ],
+     "deckY": 0.0,
+     "onCell": "0,1",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "hex|barrel",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "hex|crate_A_big",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": -0.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "hex|sack",
+     "cell": [
+      1,
+      0
+     ],
+     "deckY": -0.0,
+     "onCell": "1,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "P0B_TREE",
+     "cell": [
+      0,
+      1
+     ],
+     "deckY": 0.0,
+     "onCell": "0,1",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "T3_BUSH",
+     "cell": [
+      0,
+      1
+     ],
+     "deckY": 0.0,
+     "onCell": "0,1",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "P0B_PEBBLE",
+     "cell": [
+      0,
+      1
+     ],
+     "deckY": 0.0,
+     "onCell": "0,1",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_MUSHROOM_GROUP3",
+     "cell": [
+      0,
+      1
+     ],
+     "deckY": 0.0,
+     "onCell": "0,1",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_GRASS_TUFT",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    },
+    {
+     "prop": "SOFT_LOG_STACK3",
+     "cell": [
+      0,
+      0
+     ],
+     "deckY": 0.0,
+     "onCell": "0,0",
+     "deckNormalTilt": 0.0
+    }
+   ],
+   "anchors": [
+    {
+     "id": "tavern_door",
+     "kind": "building-door",
+     "cell": [
+      0,
+      0
+     ],
+     "xyz_three": [
+      0.735,
+      0.0,
+      0.0
+     ],
+     "facingYawDegThree": 270
+    },
+    {
+     "id": "home_door",
+     "kind": "building-door",
+     "cell": [
+      0,
+      1
+     ],
+     "xyz_three": [
+      1.372,
+      0.0,
+      1.223
+     ],
+     "facingYawDegThree": 330
+    },
+    {
+     "id": "gather_1",
+     "kind": "social-spot",
+     "cell": [
+      1,
+      0
+     ],
+     "xyz_three": [
+      2.05,
+      0.0,
+      0.55
+     ],
+     "facingYawDegThree": 90
+    },
+    {
+     "id": "gather_2",
+     "kind": "social-spot",
+     "cell": [
+      1,
+      0
+     ],
+     "xyz_three": [
+      2.55,
+      -0.0,
+      -0.3
+     ],
+     "facingYawDegThree": 210
+    },
+    {
+     "id": "gather_3",
+     "kind": "social-spot",
+     "cell": [
+      1,
+      0
+     ],
+     "xyz_three": [
+      1.55,
+      -0.0,
+      0.25
+     ],
+     "facingYawDegThree": 330
+    }
+   ]
+  }
+ },
+ "tileSupportRules": [
+  {
+   "tiles": [
+    "hex|hex_grass_sloped_high",
+    "hex|hex_road_A_sloped_high"
+   ],
+   "rule": "edge 3 low (y≈0.05–0.10), edges 0/1/5 high (y 1.0), edges 2/4 mid (y≈0.54). Needs level-1 neighbours on 0/1/5 or accepts an exposed cliff; side neighbours on 2/4 cannot be flat at either level."
+  },
+  {
+   "tiles": [
+    "hex|hex_grass_sloped_low",
+    "hex|hex_road_A_sloped_low"
+   ],
+   "rule": "same axis, half height (high 0.5, mid ≈0.28, low 0.0–0.05)."
+  },
+  {
+   "tiles": [
+    "builder|*"
+   ],
+   "rule": "deck at +1: subtract 1 to sit next to Hexagon tiles."
+  },
+  {
+   "tiles": [
+    "hex|building_*"
+   ],
+   "rule": "origin at footprint centre, base y 0, front faces +Z (three) / −Y (Blender); stands on a deck at y = 0 without snapping."
+  }
+ ]
+}
