@@ -15,6 +15,7 @@ Primary result:
 Broader source result:
 - **25** character texture families with ≥2 source palettes.
 - **56** exact source appearance files.
+- repository-wide follow-up across other top-level KayKit packs found **0 additional multi-texture character families** under the same rule; Driver `car_texture` is excluded as vehicle-only.
 - canonical Resident Atlas S6 explicitly completes only **2** palette families today: Cleric and Ultra Turbo Hero Man.
 - complete missing/partial matrix is persisted in:
   - `data/character-variant-requirements.v1.json`
@@ -25,6 +26,7 @@ Broader source result:
 - repo: `georg-doc/kayfabizarro`
 - source main: `7600fa9e29d396eaa9c5a11532e63cdad7689e75`
 - branch: `chatgpt-web/resident-character-variant-coverage-2026-10-03`
+- review PR: **Draft #330**
 - Batch EyeRig owner: Draft PR #104
 - EyeRig cross-owner registration comment: `5962642420`
 
