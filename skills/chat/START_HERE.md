@@ -1378,3 +1378,34 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-10-02 · CURRENT WORLDBUILDER FORM/ENVIRONMENT RECOVERY · P2 → BUILDING B0
+
+The procedural environment FORM/DEFORMATION lane is crash-safe and separate from the parallel Clay/material lane.
+
+Canonical recovery:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/RECOVERY.md`
+
+Current lane:
+- repo `georg-doc/kayfabizarro`
+- branch `chatgpt-web/wc1-procedural-environment-p2-2026-10-02`
+- Draft PR #316
+- P2 result **SOURCE_DERIVED_GEOMETRY_PASS**
+- 13/13 exact authored donors proven in isolation
+- 7/7 source-derived procedural transfers proven
+- no Stage / merge / Live
+- material/Clay remains separate
+
+Do not ask Georg to reconstruct the old chat.
+
+Current FORM/ENVIRONMENT next gate:
+**PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**
+
+Building source priority remains:
+`Golden/deformed samples → Elastic Grotesque Clay V2 → City Cartoon/Grotesque → LandmarkElastic → LOOK-TORSION → FACADE_RULE v1 → KayKit/K-Kid identity`
+
+Style grading remains:
+`Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis`.
+
+Do not restart generic prop ideation or write a freehand “wonky house” prompt.
