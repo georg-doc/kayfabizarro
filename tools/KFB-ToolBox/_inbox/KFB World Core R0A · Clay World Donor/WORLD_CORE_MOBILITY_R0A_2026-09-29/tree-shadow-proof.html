@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB R0A Tree Shadow Proof</title>
+<style>html,body,canvas{margin:0;width:100%;height:100%;overflow:hidden;background:#9fc7df}canvas{display:block}</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script type="module">
+import * as THREE from 'three';
+import {boot} from './lab-world/clay-world.r0a.js?r=tree-shadow-proof-1';
+const api=await boot(document.querySelector('#c'),()=>{});
+api.set('run',false);api.set('ao',true);api.set('shadows',true);
+const foliage=[];
+api.scene.traverse(o=>{if(o.isMesh&&(/^leaf\d/.test(o.name)||o.name==='spender:nature'))foliage.push(o)});
+if(!foliage.length)throw Error('no foliage mesh');
+const cluster=api.recipe.clusters.items[0],sc=cluster.sc||1,ground=api.GH(cluster.x,cluster.z);
+const center=new THREE.Vector3(cluster.x,ground+9.5*sc,cluster.z),radius=10.5*sc;
+api.controls.target.copy(center);
+api.camera.position.set(center.x+radius*1.85,center.y+radius*0.35,center.z+radius*2.1);
+api.camera.near=0.12;api.camera.far=9000;api.camera.updateProjectionMatrix();api.controls.update();
+api.frame(3,1/60);
+window.__treeShadowProof={
+  api,
+  report:()=>({shadow:api.shadowReport(),center:center.toArray(),radius,target:'cluster:'+cluster.id,errors:api.info.errors.slice()})
+};
+document.body.dataset.treeShadowReady='true';
+</script>
+</body>
+</html>

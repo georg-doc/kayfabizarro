@@ -336,6 +336,30 @@ No runtime was changed.
 **Severity:** LARGE process failure because it reopens solved work across multiple consumers and forces Georg to repeat prior decisions.  
 **Runtime status:** unchanged by the postmortem.
 
+## 15A · 2026-09-29 second confirmation · exact K1/H0 visual source was not routed
+
+Later the same day Georg had to re-supply the complete K1 + H0 Claymation codebase because Claude Design reported it had no usable façade/style references.
+
+New source arrival:
+`tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/`
+at `main@440709df3f1cbc9651a97c446e4321caef7e8a38`.
+
+This strengthens the original diagnosis:
+
+- the missing knowledge was not merely a few numeric settings;
+- the exact K1/H0 house preprocessing path, source screenshots, `clay-soften.v1`, façade identity and tree construction grammar were not available through the standard routed front door;
+- downstream Design could therefore load a later clay/world candidate and still legally reconstruct the wrong style;
+- the R0A candidate itself proved the danger: it bent raw building donor geometry and added clay surface treatment, while the recovered K1/H0 source requires per-house clay softening/preprocessing before later bend;
+- its overlapping tree crowns also exposed a source-specific foliage shadow topology that a generic global shadow fix could not solve.
+
+Recovery now routes the exact package through:
+- `tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md`;
+- `skills/chat/START_HERE.md`;
+- `skills/chat/adapters/claude-design.md`;
+- `skills/chat/REGISTRY.json`.
+
+**Additional lesson:** a stable high-level “clay style” brief is insufficient when the accepted look depends on executable source grammar. The front door must point to the actual code + screenshots, not just prose describing the look.
+
 ## 16 · Reißleine
 
 Before closing any accepted reusable KFB result, ask:

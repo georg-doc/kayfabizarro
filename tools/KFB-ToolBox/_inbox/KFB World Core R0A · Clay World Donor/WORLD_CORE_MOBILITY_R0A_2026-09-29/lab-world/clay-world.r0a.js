@@ -100,15 +100,33 @@ export async function boot(canvas, onNote = () => {}) {
 
   // ---------- Licht (H0 §4) + Himmel ----------
   const sun = new THREE.DirectionalLight('#fff4e6', 2.9); sun.castShadow = true; sun.shadow.mapSize.set(4096, 4096);
-  sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.25; scene.add(sun, sun.target);
+  sun.shadow.bias = -0.00003; sun.shadow.normalBias = 0; scene.add(sun, sun.target);
+  const SHADOW = { profile: 'KFB_SHARED_SHADOW_CONTACT_V1_R0A', dir: new THREE.Vector3(), half: 0, mapX: 0, report: null };
   const hemi = new THREE.HemisphereLight('#eef4fa', '#9a8a78', 1.05); scene.add(hemi);
   const back = new THREE.DirectionalLight('#ffe6d6', 0.6); scene.add(back);
   const SKY = makeSkyDome(THREE); scene.add(SKY.mesh);
   const CX = (TILE.x0 + TILE.x1) / 2, CZ = (TILE.z0 + TILE.z1) / 2;
   { const el = 42 * Math.PI / 180, az = 128 * Math.PI / 180, d = new THREE.Vector3(Math.cos(el) * Math.sin(az), Math.sin(el), Math.cos(el) * Math.cos(az));
-    sun.position.set(CX, 0, CZ).addScaledVector(d, 420); sun.target.position.set(CX, 0, CZ);
-    Object.assign(sun.shadow.camera, { left: -240, right: 240, top: 240, bottom: -240, near: 40, far: 900 }); sun.shadow.camera.updateProjectionMatrix();
+    SHADOW.dir.copy(d).normalize();
+    sun.position.set(CX, 0, CZ).addScaledVector(d, 700); sun.target.position.set(CX, 0, CZ);
     back.position.set(CX, 0, CZ).addScaledVector(new THREE.Vector3(-d.x, 0.45, -d.z), 300); }
+  const shadowFollow = (focus, forcedHalf = null) => {
+    const sh = sun.shadow, cam = sh.camera, SUN_D = 700;
+    const dist = camera.position.distanceTo(focus);
+    const half = forcedHalf == null ? THREE.MathUtils.clamp(Math.round(dist * 1.6 / 10) * 10, 90, 260) : forcedHalf;
+    const texel = 2 * half / Math.max(1, sh.mapSize.x);
+    if (half !== SHADOW.half || sh.mapSize.x !== SHADOW.mapX) {
+      SHADOW.half = half; SHADOW.mapX = sh.mapSize.x;
+      Object.assign(cam, { left: -half, right: half, top: half, bottom: -half, near: SUN_D - Math.max(half * 1.2, 380), far: SUN_D + half * 1.2 + 80 });
+      cam.updateProjectionMatrix();
+      sh.normalBias = texel * 1.2; sh.bias = -0.00003;
+    }
+    const sd = SHADOW.dir, e1 = new THREE.Vector3(0, 1, 0).cross(sd).normalize(), e2 = sd.clone().cross(e1).normalize();
+    const a = Math.round(focus.dot(e1) / texel) * texel, b = Math.round(focus.dot(e2) / texel) * texel;
+    const f = e1.multiplyScalar(a).addScaledVector(e2, b).addScaledVector(sd, focus.dot(sd));
+    sun.target.position.copy(f); sun.position.copy(f).addScaledVector(sd, SUN_D); sun.target.updateMatrixWorld();
+    SHADOW.report = { profile: SHADOW.profile, halfM: half, texelM: +texel.toFixed(5), normalBias: +sh.normalBias.toFixed(5), normalBiasTexels: 1.2, bias: sh.bias, mapSize: [sh.mapSize.x, sh.mapSize.y], focus: focus.toArray().map(v => +v.toFixed(2)) };
+  };
 
   // ---------- Materialien je Klasse (Rezept material.classes) ----------
   const M = {};
@@ -431,7 +449,8 @@ export async function boot(canvas, onNote = () => {}) {
   const place = (g, pos, fwd, yaw = 0) => { const Zv = new THREE.Vector3(fwd[0], 0, fwd[2]).normalize().applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw), Y = new THREE.Vector3(0, 1, 0), X = new THREE.Vector3().crossVectors(Y, Zv);
     g.applyMatrix4(new THREE.Matrix4().makeBasis(X, Y, Zv).setPosition(pos[0], pos[1], pos[2])); return g; };
   const famMat = {}, mkSrc = (d, cls) => { const key = (d.mat ? d.mat.uuid : d.id) + '|' + cls; if (famMat[key]) return famMat[key];
-    return (famMat[key] = makeClayMaterial(THREE, U, { src: d.mat, profile: { ...prof(cls === 'trunk' || cls === 'nature' ? 'nature' : 'house', 0.6, cls === 'house' ? QUIET : { print: 0.3, dent: 0 }), tools: TOOLMIX[cls], legacy: 0 } })); };
+    const m = makeClayMaterial(THREE, U, { src: d.mat, profile: { ...prof(cls === 'trunk' || cls === 'nature' ? 'nature' : 'house', 0.6, cls === 'house' ? QUIET : { print: 0.3, dent: 0 }), tools: TOOLMIX[cls], legacy: 0 } });
+    m.userData.kfbClayClass = cls; return (famMat[key] = m); };
   const dBins = new Map(); const dPut = (mat, g, seed) => { seedGeometry(THREE, g, seed); if (!dBins.has(mat)) dBins.set(mat, []); dBins.get(mat).push(g); };
   const skirts = { walk: [], grass: [] };
   for (const b of FP) { const d = DON[b.donor], rh = b.rhythm, dirA = rh.dir * Math.PI / 180;
@@ -465,7 +484,8 @@ export async function boot(canvas, onNote = () => {}) {
         place(g, [x, GH(x, z) - 0.12, z], [-s.tz, 0, s.tx], (h1(m * 3 + k) - 0.5) * 0.05); dPut(mkSrc(d, 'trunk'), g, 5500 + info.fence); info.fence++;
         if (dp) { const pg = dp.g.clone(); pg.scale(FS, FS, FS); const px = line[k][0] + s.tx * m * len, pz = line[k][1] + s.tz * m * len; place(pg, [px, GH(px, pz) - 0.12, pz], [-s.tz, 0, s.tx]); dPut(mkSrc(dp, 'trunk'), pg, 5600 + info.fence); } }
       if (dp) { const pg = dp.g.clone(); pg.scale(FS, FS, FS); const e = line[k + 1]; place(pg, [e[0], GH(e[0], e[1]) - 0.12, e[1]], [-s.tz, 0, s.tx]); dPut(mkSrc(dp, 'trunk'), pg, 5700 + info.fence); } } }
-  for (const [mat, list] of dBins) addMesh(bakeKeep(list.map(g => (g.index ? g.toNonIndexed() : g))), mat, { name: 'spender' });
+  for (const [mat, list] of dBins) { const cls = mat.userData?.kfbClayClass || 'prop';
+    addMesh(bakeKeep(list.map(g => (g.index ? g.toNonIndexed() : g))), mat, { name: 'spender:' + cls, recv: cls !== 'nature' }); }
 
   // ---------- Dreiergruppen, Felsen, Wolken (T4-Grammatik, Detail je Masse reduziert) ----------
   const blob = (r, detail = 3, lumpK = 0.12, seed = 1) => { let g = new THREE.IcosahedronGeometry(r, detail); g.deleteAttribute('normal'); g.deleteAttribute('uv'); g = mergeVertices(g); const p = g.attributes.position, v = new THREE.Vector3();
@@ -488,7 +508,10 @@ export async function boot(canvas, onNote = () => {}) {
   RC.clusters.rocks.forEach((r, n) => rock(r.x, r.z, r.sc, 6800 + n));
   { const RCl = rng(RC.seed + 21), C = RC.sky.clouds; for (let n = 0; n < C.count; n++) { const x = TILE.x0 - 60 + RCl() * (TILE.x1 - TILE.x0 + 120), z = TILE.z0 - 60 + RCl() * (TILE.z1 - TILE.z0 + 120), y = C.yMin + RCl() * (C.yMax - C.yMin), sc = 7 + RCl() * 7, k = 4 + Math.floor(RCl() * 3);
     for (let j = 0; j < k; j++) { const r = sc * (0.6 + RCl() * 0.55) * (j === 0 ? 1.3 : 1), g = blob(r, 3, 0.07, n * 10 + j); g.scale(1, 0.82, 1); g.translate(x + (j - k / 2) * sc * 0.95, y + (RCl() - 0.2) * sc * 0.4, z + (RCl() - 0.5) * sc * 0.8); put('cloud', g, 3000 + n * 10 + j); } } }
-  for (const [key, list] of Object.entries(bins)) addMesh(bakeKeep(list.map(g => { if (g.attributes.uv) g.deleteAttribute('uv'); return g.index ? g.toNonIndexed() : g; })), M[key], { name: key, cast: key !== 'cloud' && !key.startsWith('bg'), recv: key !== 'cloud' });
+  for (const [key, list] of Object.entries(bins)) {
+    const foliage = key.startsWith('leaf');
+    addMesh(bakeKeep(list.map(g => { if (g.attributes.uv) g.deleteAttribute('uv'); return g.index ? g.toNonIndexed() : g; })), M[key], { name: key, cast: key !== 'cloud' && !key.startsWith('bg'), recv: key !== 'cloud' && !foliage });
+  }
 
   // ---------- Karts (T4 mkKart), Maßfigur ----------
   const mkKart = ci => { const g = new THREE.Group(), body = new THREE.Group(); g.add(body);
@@ -576,7 +599,7 @@ export async function boot(canvas, onNote = () => {}) {
     sun.color.set(P.sun[0]); sun.intensity = P.sun[1]; hemi.color.set(P.hemi[0]); hemi.groundColor.set(P.hemi[1]); hemi.intensity = P.hemi[2]; back.color.set(P.back[0]); back.intensity = P.back[1]; renderer.toneMappingExposure = P.expo; };
   setSky(RC.sky.default);
 
-  const st = { cam: 'overview', run: true, chase: false, tools: true };
+  const st = { cam: 'overview', run: true, chase: false, tools: true, paused: false };
   const shot = id => { info.cam = id; if (id === 'chase') { st.chase = true; controls.enabled = false; return; } st.chase = false; controls.enabled = true;
     const v = shots[id] || shots.overview; camera.fov = v.fov; camera.near = id === 'overview' || id === 'flight' ? 0.5 : 0.12; camera.updateProjectionMatrix();
     camera.position.copy(v.pos); controls.target.copy(v.tgt); controls.update(); bench.visible = id.startsWith('donor:'); };
@@ -589,21 +612,24 @@ export async function boot(canvas, onNote = () => {}) {
     if (st.chase) { const a1 = at(demo.s - 11), b1 = at(demo.s + 12), p = a1.p.clone().addScaledVector(a1.U, 4.4).addScaledVector(a1.R, demo.lat * 0.6), t = b1.p.clone().addScaledVector(b1.U, 1).addScaledVector(b1.R, demo.lat * 0.4);
       if (!cInit) { cP.copy(p); cT.copy(t); cInit = true; } cP.lerp(p, 0.2); cT.lerp(t, 0.2); camera.up.set(0, 1, 0); camera.position.copy(cP); camera.lookAt(cT); } else { cInit = false; controls.update(); }
     SKY.mesh.position.copy(camera.position); VFX.update(dt);
+    const shFocus = st.chase ? cT.clone().addScaledVector(a.U, 70) : controls.target;
+    shadowFollow(shFocus, st.chase ? 150 : null);
     renderer.info.reset(); composer.render(); info.calls = renderer.info.render.calls; info.frameTris = renderer.info.render.triangles; frames++; if (now - fpsT > 1000) { info.fps = Math.round(frames * 1000 / (now - fpsT)); frames = 0; fpsT = now; } };
   const GD = { level: 0, avg: 16, skip: 0, n: 0 }; info.guard = GD;
   const guard = ms => { GD.avg = GD.avg * 0.85 + ms * 0.15; GD.n++; if (GD.n > 12 && GD.avg > 70 && GD.level < 3) { GD.level++; GD.n = 0;
     if (GD.level === 1) renderer.setPixelRatio(1); if (GD.level === 2 && aoPass) aoPass.enabled = false; if (GD.level === 3) { sun.shadow.map?.dispose(); sun.shadow.map = null; sun.shadow.mapSize.set(2048, 2048); } resize(); } };
-  const loop = () => { raf = requestAnimationFrame(loop); if (GD.skip > 0) { GD.skip--; return; } const t1 = performance.now(); step(); const c = performance.now() - t1; guard(c); if (c > 100) GD.skip = Math.min(10, Math.floor(c / 50)); };
+  const loop = () => { raf = requestAnimationFrame(loop); if (st.paused) return; if (GD.skip > 0) { GD.skip--; return; } const t1 = performance.now(); step(); const c = performance.now() - t1; guard(c); if (c > 100) GD.skip = Math.min(10, Math.floor(c / 50)); };
   info.loadMs = Math.round(performance.now() - tBoot);
   raf = requestAnimationFrame(loop);
 
   return {
-    info, recipe: RC, shots, benchShots, scene, renderer, GH,
+    info, recipe: RC, shots, benchShots, scene, renderer, camera, controls, GH,
     SKIES: Object.fromEntries(Object.entries(SKY_PRESETS).map(([k, v]) => [k, v.label])),
     shot, frame(n = 1, dt = 1 / 60) { for (let k = 0; k < n; k++) step(dt); },
     set(k, v) { if (k === 'sky') setSky(v); else if (k === 'masks') maskG.visible = !!v; else if (k === 'vfx') VFX.setQuality(v); else if (k === 'run') st.run = !!v;
-      else if (k === 'ao' && aoPass) aoPass.enabled = !!v; else if (k === 'tools') { st.tools = !!v; applyDisp(st.tools); } else if (k === 'grey') canvas.style.filter = v ? 'grayscale(1)' : ''; },
-    meshReport() { const out = []; scene.traverse(o => { if (!o.isMesh) return; const g = o.geometry; out.push({ name: o.name || '(ohne Name)', tris: Math.round((g.index ? g.index.count : g.attributes.position.count) / 3) }); }); return out.sort((a, b) => b.tris - a.tris); },
+      else if (k === 'ao' && aoPass) aoPass.enabled = !!v; else if (k === 'shadows') sun.castShadow = !!v; else if (k === 'pause') st.paused = !!v; else if (k === 'tools') { st.tools = !!v; applyDisp(st.tools); } else if (k === 'grey') canvas.style.filter = v ? 'grayscale(1)' : ''; },
+    shadowReport() { const foliage = []; scene.traverse(o => { if (o.isMesh && (/^leaf\d/.test(o.name) || o.name === 'spender:nature')) foliage.push({ name: o.name, cast: o.castShadow, receive: o.receiveShadow }); }); return { ...SHADOW.report, mapType: renderer.shadowMap.type === THREE.PCFSoftShadowMap ? 'PCFSoftShadowMap' : renderer.shadowMap.type, foliage }; },
+    meshReport() { const out = []; scene.traverse(o => { if (!o.isMesh) return; const g = o.geometry; out.push({ name: o.name || '(ohne Name)', tris: Math.round((g.index ? g.index.count : g.attributes.position.count) / 3), cast: !!o.castShadow, receive: !!o.receiveShadow }); }); return out.sort((a, b) => b.tris - a.tris); },
     dispose() { cancelAnimationFrame(raf); ro.disconnect(); controls.dispose(); renderer.dispose(); }
   };
 }

@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-09-29",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -61,6 +61,41 @@
         "next-day Work review"
       ],
       "note": "Bounded autonomous execution and compact review-packet contract. It never grants new implementation ownership or automatic merge authority."
+    },
+    {
+      "id": "kfb-claymation-k1-h0-reference",
+      "kind": "shared-visual-code-reference",
+      "status": "CURRENT_REFERENCE",
+      "version": "2026-09-29",
+      "path": "tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md",
+      "sourcePackage": "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/",
+      "sourceArrivalCommit": "440709df3f1cbc9651a97c446e4321caef7e8a38",
+      "loadWhen": [
+        "KFB Claymation",
+        "Knetwelt",
+        "Knetgummi",
+        "clay houses",
+        "clay facade",
+        "clay façades",
+        "clay trees",
+        "clay nature",
+        "Hirnwelt",
+        "Knet-Katalog"
+      ],
+      "owns": [
+        "shared routing to exact K1/H0 code and screenshots",
+        "K1/H0 house clay-preprocess/source-identity grammar",
+        "clay foliage shadow-topology exception"
+      ],
+      "doesNotOwn": [
+        "WorldBuilder runtime",
+        "OSM geography",
+        "Track Core",
+        "Race physics",
+        "automatic material-version migration",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "Binding source-first reference. K1/H0 uses real donor geometry plus clay-soften preprocessing plus clay surface; later bend/torsion follows the per-house clay pass. Interpenetrating crown blobs require foliage-specific shadow handling rather than larger global bias."
     },
     {
       "id": "kfb-clay-asset-studio",

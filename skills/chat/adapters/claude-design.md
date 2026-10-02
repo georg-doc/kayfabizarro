@@ -8,6 +8,8 @@ Apply after `skills/chat/PRODUCTION_SOP.md`.
 - Exports must name source revision, inputs, outputs, measured values and unresolved visual gates.
 - Separate design proposal from measured configuration.
 - When working on actor/rig/look, read the current FrankenStein Studio node first.
+- When working on **KFB Claymation / Knetwelt / clay houses / façades / nature**, first read `tools/KFB-ToolBox/docs/CLAYMATION_K1_H0_REFERENCE.md` and the exact K1/H0 package it pins. Do not reconstruct the style from a later world candidate, a generic clay shader or memory. Source screenshots + `clay-soften.v1` + actual donor geometry are mandatory evidence.
+
 - When working on motion/animation, also load `skills/kfb-cartoon-animation_v2.md` unless the registry supersedes it.
 - Return configuration/manifests/measurements that runtime owners can consume. Do not silently duplicate runtime movement, physics or world ownership.
 
