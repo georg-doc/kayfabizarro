@@ -1,0 +1,373 @@
+{
+  "schema": "kfb.pets/1",
+  "version": 1,
+  "meta": {
+    "exportedBy": "KFB ToolBox Production-02 · Rigging",
+    "exportedAt": "2026-09-26T18:30:32.906Z",
+    "fields": "eye · brow · nose · moustache · mouth · color use the graft-mount.v1 names; parts + original are face-mount.v1 fields"
+  },
+  "eyeRig": {
+    "anchorDefault": {
+      "dx": 0.345,
+      "dy": -0.1,
+      "ring": 0.3,
+      "track": 0.1
+    },
+    "pupilSize": 0.4,
+    "inset": 0,
+    "lidFit": 0.9,
+    "converge": 0,
+    "lids": {
+      "upper": true,
+      "lower": true
+    },
+    "eyelidColor": "base-darkened",
+    "pupilStyles": [
+      "matte-cute",
+      "glossy-googly"
+    ],
+    "gloss": {
+      "matte-cute": 0.1,
+      "glossy-googly": 0.85
+    },
+    "fx": [
+      "none",
+      "spiral",
+      "heart"
+    ],
+    "blink": {
+      "minGap": 2.5,
+      "maxGap": 6.5,
+      "dur": 0.12
+    },
+    "recolorDefault": "#f2c93c",
+    "note": "KORR v2 (Feedback FEEDBACK_v1_to_v2.md): glossy-googly = GROESSERE + GLAENZENDE Pupillen (NICHT herausstehende Kugeln ueber den Lidern!) via pupilSize + gloss, gleiche Geometrie. pupilSize = Default-Pupillengroesse (Slider). inset = Augen tiefer in den Koerper (Slider). lidFit = wie eng die Lider die Eyeballs umschliessen (kleiner Sicherheitsabstand ok; Pupille MUSS innerhalb bleiben = KEIN Clipping). eyelidColor = abgedunkelte Base-Color des Pets. track = Pupillen-Blickwanderung (in v1 unklar/unsichtbar -> klar labeln oder streichen)."
+  },
+  "face": {
+    "_reiter": "Gesicht",
+    "eye": {
+      "dx": 0.345,
+      "dy": -0.1,
+      "ring": 0.3,
+      "track": 0.1,
+      "inset": 0,
+      "lidFit": 0.9,
+      "converge": 0,
+      "lids": {
+        "upper": true,
+        "lower": true
+      },
+      "eyelidColor": "base-darkened",
+      "recolorDefault": "#f2c93c",
+      "blink": {
+        "minGap": 2.5,
+        "maxGap": 6.5,
+        "dur": 0.12
+      },
+      "fx": [
+        "none",
+        "spiral",
+        "heart"
+      ],
+      "note": "KORR v2 (Feedback FEEDBACK_v1_to_v2.md): glossy-googly = GROESSERE + GLAENZENDE Pupillen (NICHT herausstehende Kugeln ueber den Lidern!) via pupilSize + gloss, gleiche Geometrie. pupilSize = Default-Pupillengroesse (Slider). inset = Augen tiefer in den Koerper (Slider). lidFit = wie eng die Lider die Eyeballs umschliessen (kleiner Sicherheitsabstand ok; Pupille MUSS innerhalb bleiben = KEIN Clipping). eyelidColor = abgedunkelte Base-Color des Pets. track = Pupillen-Blickwanderung (in v1 unklar/unsichtbar -> klar labeln oder streichen)."
+    },
+    "pupil": {
+      "form": "googly",
+      "forms": [
+        "googly",
+        "cap",
+        "flach"
+      ],
+      "gloss": 0.85,
+      "glossPresets": {
+        "matte-cute": 0.1,
+        "glossy-googly": 0.85
+      },
+      "size": 0.4,
+      "note": "form = Geometrie (Rig _capAngle). gloss = Oberflaeche. Frueher als pupilStyles vermischt."
+    },
+    "emotes": {
+      "neutral": {
+        "lidUpper": -0.4,
+        "lidLower": 0,
+        "slant": 0,
+        "pupil": "normal",
+        "gaze": [
+          0,
+          0
+        ]
+      },
+      "happy": {
+        "lidUpper": 0,
+        "lidLower": 0.3,
+        "slant": 0,
+        "pupil": "normal",
+        "gaze": [
+          0,
+          0
+        ]
+      },
+      "angry": {
+        "lidUpper": 0.25,
+        "lidLower": 0.1,
+        "slant": -0.4,
+        "pupil": "normal",
+        "gaze": [
+          0,
+          0
+        ]
+      },
+      "sad": {
+        "lidUpper": 0.15,
+        "lidLower": 0.05,
+        "slant": 0.35,
+        "pupil": "normal",
+        "gaze": [
+          0,
+          -0.85
+        ]
+      },
+      "surprised": {
+        "lidUpper": -0.2,
+        "lidLower": -0.1,
+        "slant": 0,
+        "pupil": "wide",
+        "gaze": [
+          0,
+          0
+        ]
+      },
+      "thinking": {
+        "lidUpper": 0.4,
+        "lidLower": 0,
+        "slant": 0.05,
+        "pupil": "normal",
+        "gaze": [
+          0.9,
+          0.2
+        ]
+      }
+    },
+    "emoteNote": "Werte 0..1 (Lid = geschlossen-Anteil; negativ = weiter geoeffnet). slant negativ = down-in (angry), positiv = up-out (sad). Der Editor tunt die exakten Werte live; die IDs sind das STABILE Vokabular, das die Apps triggern. Keine Muender - Augen/Lider tragen die Emotion.",
+    "drift": {
+      "speed": 0.09,
+      "tremor": 0.045,
+      "tremorHz": 5,
+      "pair": [
+        "neutral",
+        "thinking"
+      ]
+    },
+    "react": {
+      "smoothTime": 0.16,
+      "hardTime": 0.03,
+      "hold": 1.5
+    },
+    "mouth": {
+      "src": "FrizzelBob-Mouth_01 (GitHub raw, 12 Viseme + Smile/Neutral)",
+      "size": 0.44,
+      "dy": -0.52,
+      "rate": 1,
+      "restMap": {
+        "neutral": "neutral",
+        "happy": "smile",
+        "angry": "s",
+        "sad": "m",
+        "surprised": "oh",
+        "thinking": "woo"
+      },
+      "_note": "Globaler Rueckfall. Pro Pet gewinnt pets[].mouth aus dem v9-Export."
+    },
+    "geometrie": {
+      "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
+      "stripEyes": true,
+      "eyeShell": {
+        "rule": "Im body-Mesh: getrennte Schalen (connected components). Genommen wird das Paar mit zPlane, minTris und gespiegelten X-Bereichen. Ergibt bei allen 24 Pets exakt 2 Schalen.",
+        "zPlane": 0.635,
+        "zTolerance": 0.002,
+        "minTris": 25,
+        "symmetricPair": true,
+        "verified": "24 von 24 Pets, 2026-07-16, Dreiecke je Auge 25 bis 57",
+        "doNotMatch": "Nasenloecher von cow, hog, pig liegen bei Z=0.835 mit je 2 Dreiecken. Mittige Schalen (Mund, Nase) spannen X ueber Null und sind kein Paar. Beide fallen durch minTris bzw. symmetricPair."
+      },
+      "stripSnout": {
+        "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
+        "perPet": {}
+      },
+      "facet": false
+    },
+    "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
+    "stripEyes": true,
+    "eyeShell": {
+      "rule": "Im body-Mesh: getrennte Schalen (connected components). Genommen wird das Paar mit zPlane, minTris und gespiegelten X-Bereichen. Ergibt bei allen 24 Pets exakt 2 Schalen.",
+      "zPlane": 0.635,
+      "zTolerance": 0.002,
+      "minTris": 25,
+      "symmetricPair": true,
+      "verified": "24 von 24 Pets, 2026-07-16, Dreiecke je Auge 25 bis 57",
+      "doNotMatch": "Nasenloecher von cow, hog, pig liegen bei Z=0.835 mit je 2 Dreiecken. Mittige Schalen (Mund, Nase) spannen X ueber Null und sind kein Paar. Beide fallen durch minTris bzw. symmetricPair."
+    },
+    "stripSnout": {
+      "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
+      "perPet": {}
+    },
+    "facet": false
+  },
+  "mouth": {
+    "src": "FrizzelBob-Mouth_01 (GitHub raw)"
+  },
+  "pets": [
+    {
+      "id": "frizzlebob-earrig-v5",
+      "name": "FrizzleBob · Ear Rig v5",
+      "kind": "biped",
+      "module": "FaceHost",
+      "variant": "earrig-v5",
+      "source": {
+        "glb": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5.glb",
+        "commit": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+        "reader": "kfb-lib/face-mount.v1.js#mountFace",
+        "head": "head"
+      },
+      "color": "#f2c93c",
+      "eye": {
+        "anchor": {
+          "dx": 0.495,
+          "dy": 0.02,
+          "ring": 0.23,
+          "track": 0.1
+        },
+        "pupilStyle": "matte-cute",
+        "pupilSize": 0.08,
+        "gloss": 0.85,
+        "lidFit": 0.9,
+        "inset": 0,
+        "converge": 0,
+        "splay": 0,
+        "lashes": {
+          "length": 0,
+          "density": 6,
+          "width": 1
+        },
+        "oval": {
+          "w": 1,
+          "h": 1.12,
+          "d": 0.98,
+          "tilt": -25
+        },
+        "sclera": null,
+        "pupil": null
+      },
+      "brow": {
+        "enabled": true,
+        "mask": 0.35,
+        "thickness": 1,
+        "length": 0.6,
+        "taper": 0.85,
+        "height": 0.3,
+        "x": 0,
+        "y": 0,
+        "tiltLeft": 0,
+        "tiltRight": 0,
+        "bendLeft": 0,
+        "bendRight": 0,
+        "follow": 0.85,
+        "lift": 0.3,
+        "symmetric": true,
+        "solid": true,
+        "round": 1,
+        "even": true,
+        "cap": 0.8,
+        "color": "#17130f"
+      },
+      "nose": {
+        "enabled": true,
+        "size": 0.9,
+        "height": 0.55,
+        "depth": 0.1,
+        "x": 0,
+        "bulb": 0.85,
+        "droop": 0.45,
+        "gloss": 0.55,
+        "color": "#e96049",
+        "wide": 1,
+        "tall": 1
+      },
+      "moustache": {
+        "enabled": false,
+        "style": "walrus",
+        "mask": 0,
+        "thickness": 1.8,
+        "length": 0.7,
+        "taper": 0.55,
+        "height": 0.35,
+        "x": 0,
+        "y": 0,
+        "sag": 0.5,
+        "curlLeft": 0,
+        "curlRight": 0,
+        "bendLeft": 0,
+        "bendRight": 0,
+        "follow": 0.8,
+        "lift": 0.75,
+        "color": "#17130f"
+      },
+      "mouth": {
+        "size": 0.44,
+        "dy": -0.681,
+        "sx": 1,
+        "dx": -0.032,
+        "tilt": 0,
+        "rot": 0,
+        "bend": 0,
+        "set": "male",
+        "lift": 0.03,
+        "wrap": 1,
+        "onTop": false
+      },
+      "original": {
+        "brows": {
+          "scale": 1,
+          "spread": 0.004,
+          "lift": 0.178,
+          "depth": -0.016,
+          "tilt": -8
+        },
+        "nose": {
+          "scale": 1.22,
+          "spread": 0,
+          "lift": 0.16,
+          "depth": -0.032,
+          "tilt": 0
+        },
+        "mouth": {
+          "scale": 1,
+          "spread": 0,
+          "lift": 0.068,
+          "depth": -0.178,
+          "tilt": 0
+        }
+      },
+      "parts": {
+        "eyes": "rig",
+        "brows": "original",
+        "nose": "original",
+        "mouth": "original"
+      },
+      "hair": {
+        "schema": "kfb.hair-tufts/0.1",
+        "source": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eabc87255ee3da6283f9d438390454d70e9d2e55/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf",
+        "on": true,
+        "pick": "three",
+        "size": 0.82,
+        "height": -0.054,
+        "depth": 0.008,
+        "spread": 0,
+        "lean": 0,
+        "tilt": 0,
+        "color": null,
+        "rough": 0.62
+      }
+    }
+  ]
+}
