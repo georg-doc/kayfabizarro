@@ -593,3 +593,45 @@ Current next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**
 
 Consume the current real owner of `kfb-facade-rule-v1`; do not clone or reimplement `facadeSpecs()`.
+
+
+## 2026-10-02 · Procedural Building B2 PASS → B3 Real Owner Rehome
+
+Canonical recovery:
+`procedural-building-b2/RECOVERY.md`
+
+B2 branch / PR:
+- `chatgpt-web/wc1-procedural-building-b2-2026-10-02`
+- Draft PR #323
+
+B2 result:
+**EXISTING_FACADE_OWNER_INTEGRATION_PASS**
+
+Existing owner consumed directly:
+- `wd1-city.js::buildCityLayer()`
+- owner blob `c11b6f7156eaee808fe4689ee406f9b3480b6f0b`
+- façade rule `kfb-facade-rule-v1`
+
+Real context:
+- 700 Hürth buildings
+- 164 roads
+- 22 landuse
+- real party-wall / road semantics retained
+
+Final tested head:
+`99a390d3b828fc132528a65e3cff52d165299990`
+
+Run/job:
+`37043662315 / 110959643486`
+
+Artifact:
+`11243896554`
+digest `sha256:4591394170e0fe8d03f068e055be5c020ec0bb72a037ed8a5bfcd02cb1933bd8`
+
+Important recovery finding:
+the active World Integration r2 presenter still exists only in the pinned Session Cut / WB-D2 tree. The router-referenced stable path `tools/KFB-ToolBox/worldbuilder/world-integration-01/` is absent on this branch.
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**
+
+Rehome existing behavior first. Do not fork it.
