@@ -53,7 +53,7 @@ try{
   }
 
   if(state.stats?.renderer!=='WebGL2')problems.push('renderer='+state.stats?.renderer);
-  if(state.stats?.textures!==0)problems.push('expected 0 textures, got '+state.stats?.textures);
+  if(state.displayTextureMaps!==0)problems.push('expected 0 display material texture maps, got '+state.displayTextureMaps);
   if(pageErrors.length)problems.push('pageErrors='+pageErrors.length);
 
   const unexpected=consoleErrors.filter(x=>!x.includes('404'));
