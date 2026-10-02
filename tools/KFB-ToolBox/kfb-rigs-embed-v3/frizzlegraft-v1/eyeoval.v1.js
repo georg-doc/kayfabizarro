@@ -39,32 +39,26 @@ function rotateXY(v, rx, ry) {
   const x1=v[0], y1=v[1]*cx-v[2]*sx, z1=v[1]*sx+v[2]*cx;
   return [x1*cy+z1*sy, y1, -x1*sy+z1*cy];
 }
-function seatRootForSample(g, v, axes, pupilRadius) {
-  const [ax,ay,az]=axes;
-  const A=(g[0]*g[0])/(ax*ax)+(g[1]*g[1])/(ay*ay)+(g[2]*g[2])/(az*az);
-  const B=(g[0]*v[0]*pupilRadius)/(ax*ax)+(g[1]*v[1]*pupilRadius)/(ay*ay)+(g[2]*v[2]*pupilRadius)/(az*az);
-  const C=(v[0]*v[0]*pupilRadius*pupilRadius)/(ax*ax)+(v[1]*v[1]*pupilRadius*pupilRadius)/(ay*ay)+(v[2]*v[2]*pupilRadius*pupilRadius)/(az*az);
-  const disc=Math.max(0,B*B-A*(C-1));
-  return A>1e-12 ? (-B+Math.sqrt(disc))/A : 0;
-}
-
-/** Pure numeric helper: translation along gaze that keeps sampled pupil-cap points outside the ellipsoid. */
+/** Pure numeric helper: seat the whole pupil cap in front of the ellipsoid tangent plane.
+ *  Because the ellipsoid is convex, every cap point in front of that plane is outside the sclera.
+ *  This avoids the partial "swallowed pupil" failure without scaling the pupil itself. */
 export function pupilSeatDelta({ R, w=1, h=1, d=1, rx=0, ry=0, cap=0.35, clearance=0.006 }={}) {
   R=Math.max(0,num(R,0)); w=Math.max(.001,num(w,1)); h=Math.max(.001,num(h,1)); d=Math.max(.001,num(d,1));
-  if(!R)return {delta:0,dir:[0,0,1],samples:0};
-  const g=rotateXY([0,0,1],rx,ry), axes=[R*w,R*h,R*d], pupilRadius=R*1.004;
-  const dirs=[g];
-  for(const theta of [cap*.5,cap]){
-    const st=Math.sin(theta),ct=Math.cos(theta);
-    for(let i=0;i<12;i++){
-      const phi=i*Math.PI/6;
-      dirs.push(rotateXY([st*Math.cos(phi),st*Math.sin(phi),ct],rx,ry));
-    }
-  }
-  let delta=-Infinity;
-  for(const v of dirs) delta=Math.max(delta,seatRootForSample(g,v,axes,pupilRadius));
-  delta += R*Math.max(0,num(clearance,.006));
-  return {delta,dir:g,samples:dirs.length};
+  if(!R)return {delta:0,dir:[0,0,1],planeNormal:[0,0,1],cap};
+  const g=rotateXY([0,0,1],rx,ry), axes=[R*w,R*h,R*d];
+  const inv=Math.sqrt((g[0]*g[0])/(axes[0]*axes[0])+(g[1]*g[1])/(axes[1]*axes[1])+(g[2]*g[2])/(axes[2]*axes[2]));
+  const t=1/Math.max(inv,1e-12);
+  const q=[g[0]*t,g[1]*t,g[2]*t];
+  const n0=[q[0]/(axes[0]*axes[0]),q[1]/(axes[1]*axes[1]),q[2]/(axes[2]*axes[2])];
+  const nn=Math.max(Math.hypot(n0[0],n0[1],n0[2]),1e-12);
+  const n=[n0[0]/nn,n0[1]/nn,n0[2]/nn];
+  const plane=n[0]*q[0]+n[1]*q[1]+n[2]*q[2];
+  const ng=Math.max(1e-9,n[0]*g[0]+n[1]*g[1]+n[2]*g[2]);
+  const alpha=Math.acos(Math.max(-1,Math.min(1,ng)));
+  const minCapDot=Math.cos(Math.min(Math.PI,alpha+Math.max(0,num(cap,.35))));
+  const pupilRadius=R*1.004;
+  const delta=(plane-pupilRadius*minCapDot)/ng + R*Math.max(0,num(clearance,.006));
+  return {delta,dir:g,planeNormal:n,plane,cap,alpha};
 }
 
 /** Re-seat pupils after gaze rotation. Size remains independent; only the pivot position changes. */
@@ -77,7 +71,7 @@ export function seatPupils(rig,p) {
     const rx=num(e._pivot.rotation?.x,0),ry=num(e._pivot.rotation?.y,0);
     const seat=pupilSeatDelta({R,w:q.w,h:q.h,d:q.d,rx,ry,cap});
     e._pivot.position.set(seat.dir[0]*seat.delta,seat.dir[1]*seat.delta,seat.dir[2]*seat.delta);
-    rows.push({sx:e._sx,delta:seat.delta,dir:seat.dir,samples:seat.samples});
+    rows.push({sx:e._sx,delta:seat.delta,dir:seat.dir,planeNormal:seat.planeNormal,cap:seat.cap});
   }
   return {status:'OK',rows,pupilScaleIndependent:true};
 }
