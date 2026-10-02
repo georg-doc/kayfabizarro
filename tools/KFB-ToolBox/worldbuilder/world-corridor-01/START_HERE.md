@@ -351,3 +351,22 @@ Skewed cartoon perspective is a combination of **geometry deformation + presenta
 
 Current next gate:
 **GOLDEN DEFORMATION DONOR EXTRACTION**.
+
+
+## 2026-10-02 · Procedural World style axis · Polly × Rocko × Metropolis
+
+User-named design axis:
+**Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis**.
+
+Read:
+`procedural-props-local-proof/STYLE_AXIS_POLLY_ROCKO_METROPOLIS_2026-10-02.md`
+
+Use as three separate grading axes, not a vague style blend:
+- Polly = designed graphic/perspective distortion;
+- Rocko = characterful everyday cartoon architecture / wonky object language;
+- Metropolis = urban hierarchy / monumental massing / stacked city drama.
+
+This axis calibrates the existing proven deformation owners; it does not replace them.
+
+Current next gate remains:
+**GOLDEN DEFORMATION DONOR EXTRACTION**.
