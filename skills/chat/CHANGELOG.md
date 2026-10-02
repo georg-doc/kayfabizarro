@@ -8,6 +8,14 @@
 
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
+## Resident Site Contract 01 rebrief · 2026-09-29
+
+- Added `workflows/RESIDENT_SITE_CONTRACT_01_2026-09-29/` for the Resident/Scenery Claude lane.
+- Preserves the current ~50 fps / grounding / unified-host-ground / open-grave fixes as **user-reported pending complete Session Cut evidence** rather than silently promoting them to repository PASS.
+- Corrects ownership: Actor consumes host ground; Site Module declares footprint/grade/blend/cutout requirements; WorldBuilder alone deforms terrain.
+- First mandatory site cutout is the Graveyard open grave. WorldBuilder consumption is deferred to a later separate Web slice.
+- No runtime, Stage or Live change in this rebrief.
+
 ### WORKFLOW HARDENING
 - Georg explicitly requires authorized Web/GitHub production to persist **throughout the slice**, not only at final closure, because chat timeouts must not strand the latest production truth in prose.
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` now has a continuous checkpoint rule.
