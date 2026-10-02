@@ -2,7 +2,7 @@
   "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
   "owner": "KFB ToolBox / Rigging",
   "rigClass": "Rig_Medium",
-  "revisionPolicy": "existing actors retain prior source pins; Mystery monthly coverage extension added 2026-10-02 pins main@2c92dd13cbc379ad3a6028144b8976bb3d6a840d + exact GLB blobs; donor modules independently pinned",
+  "revisionPolicy": "existing actors retain prior source pins; Mystery monthly coverage extension added 2026-10-02 pins main@2c92dd13cbc379ad3a6028144b8976bb3d6a840d + exact GLB blobs; donor modules independently pinned; 2026-10-02 Mystery container extras add Mummy A/B and a virtual Paladin palette-B King authoring variant; physical monthly coverage remains separately counted",
   "sourceEvidence": [
     "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-asset-handoff-animation-lab (2).json",
     "tools/resident_atlas_s6/data/cast.js",
@@ -13,7 +13,7 @@
     "tools/asset_registry/librarian/_handover/KAYKIT_REFERENCE_ATLAS_2026-09-15/KAYKIT_PACK_COVERAGE_MATRIX.md",
     "tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (1).json"
   ],
-  "actorCount": 52,
+  "actorCount": 55,
   "actors": [
     {
       "id": "gothgirl",
@@ -881,6 +881,69 @@
       },
       "faceColor": null,
       "reviewGroup": "medium-mystery-coverage"
+    },
+    {
+      "id": "mummy-a",
+      "label": "Mummy A",
+      "initials": "M1",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A.glb",
+      "blob": "f844b3da5d7a27e61f29a4d251b6140840f493cc",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-container-extra+direct-glb",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-mystery-extra",
+      "rigEvidence": "direct GLB JSON: skin Rig_Medium · 23 joints · 0 embedded animations"
+    },
+    {
+      "id": "mummy-b",
+      "label": "Mummy B",
+      "initials": "M2",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.glb",
+      "blob": "539552ecf8bade98f624bcaa18c5a420082f7c90",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-container-extra+direct-glb",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-mystery-extra",
+      "rigEvidence": "direct GLB JSON: skin Rig_Medium · 23 joints · 0 embedded animations"
+    },
+    {
+      "id": "paladin-king",
+      "label": "Paladin · King (Light B)",
+      "initials": "PK",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb",
+      "blob": "9c6189759277fc999136f3759eac0d0e1b65ced1",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-paladin-palette-variant",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-mystery-appearance",
+      "geometrySourceActorId": "paladin",
+      "appearanceVariant": "B",
+      "kingCandidate": true,
+      "textureOverride": {
+        "variant": "B",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+        "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+        "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+        "role": "Georg light/blonde King candidate"
+      }
     }
   ]
 }

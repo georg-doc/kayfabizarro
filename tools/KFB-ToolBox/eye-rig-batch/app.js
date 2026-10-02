@@ -34,6 +34,27 @@ const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/
 const CLEANUP02_REVIEW_URL = './data/cleanup02-review.v0.json';
 const CLEANUP02_ANCHORS_URL = './data/cleanup02-anchors.v0.json';
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
+function sourceAssetUrl(ref,fallbackRevision){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${ref?.revision||fallbackRevision}/${ref?.path||''}`); }
+async function applyActorTextureOverride(figure,actor){
+  const ref=actor?.textureOverride;
+  if(!figure||!ref?.path)return null;
+  const texture=await new THREE.TextureLoader().loadAsync(sourceAssetUrl(ref,actor.revision));
+  texture.flipY=false;
+  if(THREE.SRGBColorSpace) texture.colorSpace=THREE.SRGBColorSpace;
+  texture.needsUpdate=true;
+  let meshes=0,materials=0;
+  figure.traverse((node)=>{
+    if(!node?.isMesh)return;
+    meshes++;
+    const mats=Array.isArray(node.material)?node.material:[node.material];
+    for(const mat of mats){
+      if(!mat?.map)continue;
+      mat.map=texture; mat.needsUpdate=true; materials++;
+    }
+  });
+  if(!materials){ texture.dispose?.(); throw new Error(`texture override matched 0 mapped materials · ${actor.id}`); }
+  return {status:'OK',path:ref.path,revision:ref.revision||actor.revision,blob:ref.blob||null,variant:ref.variant||null,meshes,materials};
+}
 function classConfig(rigClass=state.rigClass){ return CLASS_CONFIG[rigClass] || CLASS_CONFIG.Rig_Medium; }
 const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0';
 const $ = (q) => document.querySelector(q);
@@ -47,7 +68,7 @@ const state = {
   profile:null, profiles:{}, approvedProfiles:{}, pendingImport:null,
   currentActor:null, currentActorId:null, currentActorByClass:{}, rosterFilter:'all', switching:false, loader:null,
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
-  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null,
+  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null, textureOverrideReport:null,
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
@@ -298,7 +319,7 @@ function updateActorAudit() {
   $('#sourceCleanup').textContent=state.cleanupReady ? (state.cleanup.report?.removalMode||'candidate') : 'manual / unsupported';
   $('#sourcePath').textContent=a.path.split('/').pop();
   const info=$('#actorTechHint');
-  if(info) info.textContent=`${a.provenance} · ${a.path}`;
+  if(info) info.textContent=`${a.provenance} · ${a.path}${a.textureOverride?` · texture ${a.textureOverride.variant||a.textureOverride.path.split('/').pop()}`:''}`;
   renderCleanup02Issue();
 }
 function storeCurrentProfile() {
@@ -724,7 +745,7 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.currentAction?.stop?.(); state.currentAction=null;
     state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
     if(state.figure?.parent) state.figure.parent.remove(state.figure);
-    state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null; state.sourceAnchorSeed=null;
+    state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null; state.sourceAnchorSeed=null; state.textureOverrideReport=null;
     state.currentActor=actor; state.currentActorId=actor.id; state.currentActorByClass[state.rigClass]=actor.id; state.profile=ensureProfile(actor);
     state.sourceReady=state.cleanupReady=state.hostReady=state.eyeReady=false;
     gate('#gateSource','pending');gate('#gateCleanup','pending');gate('#gateHost','pending');gate('#gateEye','pending');
@@ -732,6 +753,8 @@ async function loadActor(actorId,{preserve=true}={}) {
 
     const gltf=await state.loader.loadAsync(actorUrl(actor));
     const figure=gltf.scene; state.figure=figure; state.stageRoot.add(figure);
+    state.textureOverrideReport=await applyActorTextureOverride(figure,actor);
+    if(state.textureOverrideReport) log(`${actor.label} texture override · ${state.textureOverrideReport.variant||state.textureOverrideReport.path} · ${state.textureOverrideReport.materials} mapped materials`);
     const norm=normalizeActor(figure); figure.visible=false; state.sourceReady=true; gate('#gateSource','pass');
     log(`${actor.label} loaded · ${norm.sourceHeight} → ${norm.normalizedHeight} high`);
 
@@ -912,7 +935,7 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),
       controlSemantics:{spacing:'x-only',height:'y-only',eyeSize:'size-only-centre-locked',inset:'depth-only',splay:'orientation-plus-surface-seat',lidFit:'lids-only',oval:'shape-only',pupilSize:'pupil-only',track:'gaze-amplitude-only',converge:'pupil-aim-only',gloss:'material-only'},
       eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };

@@ -45,10 +45,10 @@ check('inheritance-class-character-session',JSON.stringify(medium.inheritance?.o
 check('deferred-feature-backlog',backlog.includes('top / bottom eye contour')&&backlog.includes('Mouth Batch')&&backlog.includes('Vehicle EyeRig')&&backlog.includes('headlight'));
 check('corrected-cleanup-status-accepted',app.includes("'SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE'"));
 check('qa-four-key-views',html.includes('id="qaCaptureBtn"')&&app.includes("['front','three-left','three-right','side-right']")&&app.includes("-qa-front-3q-side.png")&&app.includes("state.currentActorId||'actor'")&&qa.includes('Front')&&qa.includes('¾ L')&&qa.includes('¾ R')&&qa.includes('Side'));
-check('medium-actor-catalog-52',actors.actorCount===52&&actors.actors?.length===52);
-check('medium-actor-catalog-unique',new Set(actors.actors.map((a)=>a.id)).size===52);
+check('medium-actor-catalog-55',actors.actorCount===55&&actors.actors?.length===55);
+check('medium-actor-catalog-unique',new Set(actors.actors.map((a)=>a.id)).size===55);
 check('medium-actor-catalog-rig-boundary',actors.actors.every((a)=>a.rigClass==='Rig_Medium'&&a.jointCount===23));
-check('medium-actor-catalog-diverse',['gothgirl','clown','farmer-b','lorekeeper','skeleton-warrior','magical-girl','driver','mannequin-medium','adventurer-barbarian','adventurer-knight','adventurer-mage','adventurer-ranger','adventurer-rogue','adventurer-rogue-hooded','paladin','paladin-helmet','orc-raider','combat-mech','marksman','hoarder','survivalist'].every((id)=>actors.actors.some((a)=>a.id===id)));
+check('medium-actor-catalog-diverse',['gothgirl','clown','farmer-b','lorekeeper','skeleton-warrior','magical-girl','driver','mannequin-medium','adventurer-barbarian','adventurer-knight','adventurer-mage','adventurer-ranger','adventurer-rogue','adventurer-rogue-hooded','paladin','paladin-helmet','paladin-king','mummy-a','mummy-b','orc-raider','combat-mech','marksman','hoarder','survivalist'].every((id)=>actors.actors.some((a)=>a.id===id)));
 check('medium-mystery-coverage-19',actors.actors.filter((a)=>a.reviewGroup==='medium-mystery-coverage').length===19);
 check('medium-adventurers-six',actors.actors.filter((a)=>a.reviewGroup==='medium-adventurers').length===6&&['adventurer-barbarian','adventurer-knight','adventurer-mage','adventurer-ranger','adventurer-rogue','adventurer-rogue-hooded'].every((id)=>actors.actors.some((a)=>a.id===id)));
 check('medium-adventurers-pinned',actors.actors.filter((a)=>a.reviewGroup==='medium-adventurers').every((a)=>a.packId==='kaykit-adventurers-2-0-free'&&a.revision==='f9dd7a64c4ae0907b8752717861eba065e557d9d'&&typeof a.blob==='string'&&a.blob.length===40));
@@ -118,6 +118,11 @@ check('mystery-monthly-coverage-49',mysteryCoverage.status==='CATALOG_COMPLETE_P
 check('mystery-monthly-path-unique',new Set(mysteryCoverage.actors.map((a)=>a.path)).size===49);
 check('paladin-both-models',mysteryCoverage.actors.some((a)=>a.id==='paladin')&&mysteryCoverage.actors.some((a)=>a.id==='paladin-helmet'));
 check('paladin-king-palette',mysteryCoverage.paladin?.embeddedPalette==='A'&&mysteryCoverage.paladin?.kingCandidatePalette==='B'&&mysteryCoverage.actors.filter((a)=>a.id==='paladin'||a.id==='paladin-helmet').every((a)=>a.appearanceVariants?.some((v)=>v.id==='B')));
+check('paladin-king-visible-actor',actors.actors.find((a)=>a.id==='paladin-king')?.textureOverride?.blob==='eb45816ada5c84bc91abc0225e3b25f5998accc1'&&mysteryCoverage.paladin?.workbenchKingActorId==='paladin-king'&&mysteryCoverage.paladin?.kingPaletteVisible===true);
+check('texture-override-runtime',app.includes('async function applyActorTextureOverride')&&app.includes('new THREE.TextureLoader().loadAsync')&&app.includes('texture.flipY=false')&&app.includes('mat.map=texture')&&app.includes('state.textureOverrideReport=await applyActorTextureOverride'));
+check('mystery-container-53-classified',mysteryCoverage.containerCoverage?.status==='ALL_53_GLBS_CLASSIFIED'&&mysteryCoverage.containerCoverage?.counts?.candidateGlbs===53&&mysteryCoverage.containerCoverage?.counts?.supportedPhysicalTotal===51);
+check('mystery-container-mummies',actors.actors.filter((a)=>a.reviewGroup==='medium-mystery-extra').length===2&&['mummy-a','mummy-b'].every((id)=>actors.actors.some((a)=>a.id===id&&a.rigClass==='Rig_Medium'&&a.jointCount===23)));
+check('mystery-container-custom-explicit',mysteryCoverage.containerCoverage?.customOrTemplateUnsupported?.some((a)=>a.id==='santa'&&a.jointCount===41)&&mysteryCoverage.containerCoverage?.customOrTemplateUnsupported?.some((a)=>a.id==='character-template'&&a.jointCount===41));
 check('mystery-clanker-large-evidence',mysteryCoverage.actors.find((a)=>a.id==='clanker')?.rigClass==='Rig_Large'&&String(mysteryCoverage.actors.find((a)=>a.id==='clanker')?.rigEvidence||'').includes('Rig_Large string x10'));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
