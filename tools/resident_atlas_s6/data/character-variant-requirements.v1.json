@@ -642,5 +642,11 @@
       "id": "hiker",
       "evidence": "Newer unpromoted Resident Atlas inbox cuts already instantiate hiker_texture_b.png; canonical tools/resident_atlas_s6 does not."
     }
-  ]
+  ],
+  "scopeAudit": {
+    "mysterySeriesFamilies": 25,
+    "mysterySeriesAppearanceFiles": 56,
+    "otherKayKitTopLevelMultiTextureCharacterFamiliesDetected": 0,
+    "note": "Repository-wide KayKit texture-family scan found no additional top-level KayKit character packs with >=2 texture palettes under the same naming rule. Vehicle-only car_texture in Driver is excluded from character counts."
+  }
 }
