@@ -1,48 +1,38 @@
-# RETURN · KFB-NARRATIVE-CORE-RECON-01
+# RETURN · KFB-NARRATIVE-CORE-RECON-01 (reoriented 2026-10-02)
 
-- Executor: Claude Coworker (Opus 5.5), 2026-10-02
-- Repo / branch: `georg-doc/kayfabizarro` · `coworker/kfb-narrative-core-recon-01-2026-10-02` (from `main`)
+- Executor: Claude Coworker (Opus 5.5)
+- Repo / branch: `georg-doc/kayfabizarro` · `coworker/kfb-narrative-core-recon-01-2026-10-02`
 - Folder: `skills/chat/workflows/KFB_NARRATIVE_CORE_RECON_01_2026-10-02/`
-- No PR opened, nothing merged, no deploy, no engine built, no UI touched. The Clay City branch is not involved.
+- No PR, no merge, no deploy, no runtime built.
+
+## What changed after Georg's review
+
+1. **Centre of gravity.** The Kayfabulation table simulation is a later King Kayfabian minigame. The core is Residents with a lean character system, Cards as world artefacts, the player bringing a Card, Residents speculating from their Signature-Deck knowledge, memory in Resident Social Memory (PR #272 line). → `RECON_REORIENTATION_2026-10-02.md`
+2. **Speech invariants made explicit.** Semantic Triplets from the shared pool as default, Monkey-Island selectable lines, English in-world, no Claude-written sample dialogue in any brief. → reorientation §2, ledger D-17, repeated in every slice
+3. **Tell-as-Actor rule** kept for the later minigame (ledger C-01).
+4. **CritEngine status corrected** (content adopted per Living-Doc v0.9; files not split; ledger C-02).
+5. **Decision page withdrawn** (`KFB_SIM01_ENTSCHEIDUNGEN.html` is now a notice).
 
 ## Files
 
-| File | Content |
+| File | State |
 |---|---|
-| `SOURCE_MAP.md` | about 40 sources with path, status, owner, role; Resident PRs #305/#306/#308/#310 (+ #272) with exact heads, I/O, determinism, second-owner check |
-| `CANON_DELTA_LEDGER.md` | 16 deltas (9 required + 7 found), none resolved silently; stop-rule check |
-| `NARRATIVE_RUNTIME_ARCHITECTURE.md` | 6 axes, 10 layers with one owner each, turn data flow, typed interfaces, owner write table, donor mapping, culture-mechanics map |
-| `KFB_SIM_EVENT_SCHEMA.json` | JSON Schema 2020-12 proposal `kfb.sim-event/0.1`, 37 event types |
-| `PRODUCTIVE_SLICES.md` | S0 decisions → S1 SIM-01 → S2 QA bridge, S3 persona pin, S4 memory owner, S5 table→Resident bridge, S6 Culture Director |
-| `OPEN_DECISIONS_FOR_GEORG.md` | 13 questions (German), 6 of them block SIM-01 |
+| `RECON_REORIENTATION_2026-10-02.md` | **new**, the current entry point |
+| `RESIDENT_LEAN_CHARACTER_CARD.md` | **new**, contract proposal for the lean character system (pointer-based, no dialogue) |
+| `resident-lean-card.v0.1.schema.json` | **new**, JSON Schema 2020-12 |
+| `residents/lorekeeper.card.json`, `residents/officer-doppel-denk.card.json` | **new**, first two cards, only source-backed values, everything else `OPEN` / `CONFLICT` |
+| `PRODUCTIVE_SLICES.md` | **rewritten**, Resident-first (R0 to R6) |
+| `OPEN_DECISIONS_FOR_GEORG.md` | **rewritten**, 6 short authoring questions |
+| `SOURCE_MAP.md`, `CANON_DELTA_LEDGER.md` | inventory, ledger extended (C-01 to C-03, D-17, D-18) |
+| `NARRATIVE_RUNTIME_ARCHITECTURE.md` | still valid for owners/layers; its Game Director layer is deferred to R6 |
+| `KFB_SIM_EVENT_SCHEMA.json` | parked draft for the R6 minigame |
 
 ## Checks
 
-- Every source named in the brief was found and opened. One adjacent folder (Mnemosyne Quill 3.1) is 0-byte Dropbox placeholders, so it is marked UNAVAILABLE.
-- CritEngine is listed as **PLANNED / INCOMPLETE**: `engine/`, `matrix/`, `archetypes/` and `schema/` contain only README files (checked by listing).
-- Event schema: meta-schema valid (jsonschema 4.23, Draft 2020-12). 6 of 6 valid sample events pass, and 4 of 4 invalid ones are rejected (verdict +3, call "BONGO" in the rules enum, seat 7, unknown type).
-- The term "KFV Validation" is not used as a concept anywhere in these outputs (only this check mentions it).
-
-## Answers to the success criteria
-
-1. **What exists:**
-   - public rules
-   - deck SSOT
-   - Simulator v0.8
-   - **Gameplay Engine v2** (multi-seat, King, NDJSON, memory). The brief did not name it, but it is the closest match.
-   - NIE theory and formats
-   - NOS/AOS method
-   - Hunky & Dory LLM flow
-   - deterministic Resident Triplet kernel (#305) with card-scene seam (#306)
-   - two memory designs
-2. **What is canon:** the public #kfb rules, the deck SSOT for card content, and Layer Zero as the style floor. The NIE freestyle rules are LEGACY for rules.
-3. **What is only donor or candidate:**
-   - Donors: Simulator v0.8, Gameplay Engine v2, #305
-   - Candidates: Sprint-01 persona YAMLs, #306, #310, #272
-   - Planned: CritEngine
-4. **Next build:** `KFB-KAYFABULATION-SIM-01`. It is a deterministic Game Director built from both donors, with Hunky, Dory and FrizzleBob, 1–6 seats and an event log.
-5. **Path onwards:** SIM-01 events go to the Resident card scene (#306 seam) for embodiment. From there a Culture Director produces world intents (start with gifts), which the existing runtime owners execute. Memory receipts go to the memory owner Georg chooses.
+- Lean-card schema is meta-valid (Draft 2020-12). Both cards validate with 0 errors. Two broken variants are rejected: SOURCE without value or source, and a language owner other than ChatterBox.
+- No Claude-written dialogue line in any remaining file. The Doppel-Denk profile's illustrative lines (marked "not canon" in its source) are deliberately not copied.
+- Every SOURCE/DESIGN value names its file: #272 docs @`992ea989`, #310 QA @`7c6522fb`.
 
 ## Exactly one next gate
 
-**S0 · KFB-NARRATIVE-DECISIONS-01**: Georg answers the six SIM-01 blockers in `OPEN_DECISIONS_FOR_GEORG.md` (G-02, G-06, G-04, G-11, G-12, G-01). After that, SIM-01 may start.
+**R0 · RESIDENT-CARDS-AUTHORING-01.** Georg answers the six questions in `OPEN_DECISIONS_FOR_GEORG.md`: Doppel-Denk's actor and deck stance, the Lorekeeper's deck, optional dark-secret directions, and the first Card to carry. After that, R1 (contract intake by the Resident lane) and R2 (first Social Card Relay = #272's `RESIDENT-SOCIAL-MEMORY-01`).

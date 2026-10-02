@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.pages.dev/schemas/resident-lean-card/0.1",
+  "title": "KFB Resident Lean Character Card (proposal 0.1)",
+  "description": "Stable Resident identity as pointers + authored facts. Every field is {v, src, status}. No dialogue lines allowed anywhere (speech comes from the shared Triplet pool via ChatterBox). In-world strings are English.",
+  "type": "object",
+  "required": ["schema", "residentId", "identity", "body", "drives", "mind", "cards", "speech", "memory"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "kfb.resident-lean-card/0.1" },
+    "residentId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "displayName": { "$ref": "#/$defs/f" }, "workingName": { "$ref": "#/$defs/f" }, "title": { "$ref": "#/$defs/f" } }
+    },
+    "body": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "atlasRecipeId": { "$ref": "#/$defs/f" }, "actorId": { "$ref": "#/$defs/f" }, "rigFamily": { "$ref": "#/$defs/f" }, "props": { "$ref": "#/$defs/f" }, "defaultPose": { "$ref": "#/$defs/f" } }
+    },
+    "place": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "home": { "$ref": "#/$defs/f" }, "habitat": { "$ref": "#/$defs/f" }, "pois": { "$ref": "#/$defs/f" } }
+    },
+    "routine": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "routineSeeds": { "$ref": "#/$defs/f" }, "resumeBehaviour": { "$ref": "#/$defs/f" } }
+    },
+    "drives": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "jungDrive": { "$ref": "#/$defs/f" }, "journeyFunction": { "$ref": "#/$defs/f" }, "motivations": { "$ref": "#/$defs/f" },
+        "desire": { "$ref": "#/$defs/f" }, "blindSpot": { "$ref": "#/$defs/f" }, "tragicomicContradiction": { "$ref": "#/$defs/f" },
+        "darkSecret": { "$ref": "#/$defs/f" }, "backstoryRef": { "$ref": "#/$defs/f" }
+      }
+    },
+    "mind": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "personalityShortcut": { "$ref": "#/$defs/f", "description": "socialMask + cognitiveStyle + comicFailureMode (Base-24 §7)" },
+        "epistemicLens": { "$ref": "#/$defs/f" }, "attentionBias": { "$ref": "#/$defs/f" }, "expectationTendencies": { "$ref": "#/$defs/f" }
+      }
+    },
+    "cards": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "signatureDeckRef": { "$ref": "#/$defs/f" }, "deckLane": { "$ref": "#/$defs/f" },
+        "stance": { "$ref": "#/$defs/f", "description": "aligned|devoted|curious|collector|archivist|misreads-as-law|adversarial|confiscate|destroy|parody|obsessed (Signature Decks §4)" },
+        "signatureCardRefs": { "$ref": "#/$defs/f" }, "worldviewTags": { "$ref": "#/$defs/f" }, "deckGoal": { "$ref": "#/$defs/f" },
+        "lovedCardRefs": { "$ref": "#/$defs/f" }, "hatedCardRefs": { "$ref": "#/$defs/f" }
+      }
+    },
+    "speech": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "languageOwner": { "const": "ChatterBox + shared Triplet pool" },
+        "signatureTripletRefs": { "$ref": "#/$defs/f" }, "relationBias": { "$ref": "#/$defs/f" },
+        "register": { "$ref": "#/$defs/f", "description": "Tags only (e.g. clipped, procedural). Never sentences." },
+        "fluffOlectTolerance": { "$ref": "#/$defs/f" }, "thoughtStyle": { "$ref": "#/$defs/f" }
+      }
+    },
+    "moves": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "signatureMoves": { "$ref": "#/$defs/f" }, "reactionIntents": { "$ref": "#/$defs/f" } }
+    },
+    "culture": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "giftResponse": { "$ref": "#/$defs/f" }, "brickFishResponse": { "$ref": "#/$defs/f" }, "danceResponse": { "$ref": "#/$defs/f" }, "fightResponse": { "$ref": "#/$defs/f" } }
+    },
+    "relations": { "$ref": "#/$defs/f" },
+    "memory": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "owner": { "const": "KFB Town Resident Social Memory" }, "salienceKeep": { "$ref": "#/$defs/f" }, "salienceSkip": { "$ref": "#/$defs/f" }, "memorySeeds": { "$ref": "#/$defs/f" } }
+    },
+    "openQuestions": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "f": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "v": { "description": "value: string, array or object; absent when status is OPEN" },
+        "src": { "type": "string", "description": "file/blob the value comes from" },
+        "status": { "enum": ["SOURCE", "DESIGN", "OPEN", "CONFLICT"] },
+        "note": { "type": "string" }
+      },
+      "allOf": [
+        { "if": { "properties": { "status": { "enum": ["SOURCE", "DESIGN"] } } }, "then": { "required": ["v", "src"] } }
+      ]
+    }
+  }
+}

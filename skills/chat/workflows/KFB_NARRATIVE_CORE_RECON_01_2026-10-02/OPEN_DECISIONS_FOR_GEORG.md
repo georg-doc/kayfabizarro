@@ -1,58 +1,26 @@
-# Offene Entscheidungen für Georg · KFB-NARRATIVE-CORE-RECON-01
+# Offene Entscheidungen für Georg · Stand 02.10. (neu ausgerichtet)
 
-**Stand 02.10. nach Georgs Antwort:** G-02 entschieden (Gameplay-Engine als Basis, zusammen mit v0.8). G-06 und G-04 entschieden (Persönlichkeit aus dem CritEngine-YAML, Sprint-01 dort übernommen; nicht zentral). Offen für SIM-01: G-11, G-12, G-01. Interaktive Erklärung: `KFB_SIM01_ENTSCHEIDUNGEN.html`.
+Die Fragen zur Kartenrunde (King-Minispiel) sind vertagt, bis das Minispiel dran ist. Entschieden hast du:
+- Gameplay-Engine + Simulator v0.8 sind die Vorlagen für dieses spätere Minispiel.
+- Das Gedächtnis gehört ins Bewohnergedächtnis.
+- Die Persönlichkeiten von Hunky und Dory sind gerade nicht wichtig.
 
-Nur Fragen, die sich nicht aus den Quellen ableiten lassen. Zu jeder steht meine Empfehlung. **Fett** = blockiert den ersten Bau (SIM-01).
+Für den ersten echten Schritt fehlen nur Autoren-Entscheidungen zu den zwei Bewohnern. Agenten dürfen sie nicht erfinden. Grundlage sind die Karten unter `residents/`.
 
-## Blockiert SIM-01
+## Officer Doppel-Denk
 
-**G-02 · Welche Spender?**
-Der Brief nennt nur Simulator v0.8. Es gibt aber zwei echte Vorlagen:
-- **Gameplay-Engine (Juni):** kann schon 1–6 Plätze, den wechselnden King, Quest Fail, Zurufe und ein Protokoll pro Zug.
-- **Simulator v0.8:** liefert Kartenkorpus, Match Card, Finale und Optik.
+1. **Welche Figur?** Sein Profil nutzt den Spielzeugsoldaten (`toy-soldier`). Die Base-24-Liste führt den Spielzeugsoldaten als eigenen Bewohner und Doppel-Denks Figur als offen.
+2. **Wie steht er zum Anti-Rules-Deck?** Drei Varianten liegen im Entwurf:
+   - **A:** Er hält die Anti-Regeln für Gesetz und setzt sie wörtlich durch.
+   - **B:** Er will das Deck beschlagnahmen und vernichten. Dafür muss er es studieren und übernimmt dabei langsam seine Sprache.
+   - **C:** Er sammelt es als Beweismittel für Unordnung.
+3. **Dunkles Geheimnis und tragikomische Vorgeschichte:** Ein Satz Richtung reicht. Optional für den ersten Test.
 
-Empfehlung: beide nutzen, mit fester Zuordnung (Architektur §6). Sonst bauen wir die Mehrspieler-Runde neu, die es schon gibt.
+## Lorekeeper
 
-**G-06 · Woher kommen Hunky, Dory und FrizzleBob für SIM-01?**
-CritEngine ist leer. Die einzigen ausgearbeiteten Profile liegen im Sprint-01-Paket des Comic-Creators und sind nicht abgenommen.
+4. **Welches Signature Deck?** Bekannt ist nur die Richtung: Beweise, Geschichte, Erkenntnis, Karten, Gedächtnis.
+5. **Dunkles Geheimnis und tragikomische Vorgeschichte:** ein Satz Richtung, optional.
 
-Empfehlung: Sprint-01-Profile als markierte Zwischenlösung (`canon:false`) anheften. Parallel liefert CritEngine die drei Profile sauber nach (Slice S3).
+## Für den ersten Kartenbotengang
 
-**G-04 · Welche Fassung von Hunky und Dory gilt?**
-Es gibt vier Fassungen:
-
-| Quelle | Hunky | Dory |
-|---|---|---|
-| CritEngine | Senex | Puer |
-| Cancel-This-Planet-YAML | Realitäts-Hausmeister | Moral-Inquisitorin und Archivarin |
-| Mnemosyne/H&D-Flow | nihilistischer Technokrat | empathische Saboteurin |
-| Sprint-01 | blaues Stielaugen-Alien | rot-orangener Blob |
-
-Empfehlung: eine Kurzantwort von dir, welche Stimme am Tisch spielt. Die Optik aus Sprint-01 kann daneben stehen bleiben.
-
-**G-11 · Wer besitzt das Gedächtnis?**
-Es gibt zwei Entwürfe:
-- `crit_memory.py`: läuft schon, merkt sich pro Figur Karten, King-Haltung und Zurufe.
-- PR #272: Bewohner-Gedächtnis mit sozialen Fäden und AIDA, nur als Entwurf.
-
-Empfehlung: SIM-01 schreibt nur Quittungen und keinen eigenen Speicher. Später übernimmt #272 die Rolle als Besitzer, `crit_memory.py` bleibt die Tisch-Auswertung, die daraus liest.
-
-**G-12 · Darf SIM-01 überhaupt ein LLM benutzen?**
-Die Regeln laufen ohne LLM. Nur der Erzähltext simulierter Plätze braucht Sprache.
-
-Empfehlung: Standard ohne LLM, mit Vorlagen aus Kartentext und Figurenstimme. Ein LLM nur als abschaltbarer Zusatz, der außerhalb des Spielablaufs läuft und im Replay nie neu gefragt wird.
-
-**G-01 · Bleibt das Vier-Lesarten-Finale?**
-Plan, Humbug, Auszahlung und Blödsinn plus Bleistift-Zeile aus v0.8 gibt es in den Regeln nicht. Empfehlung: als optionale „Nachschau“ nach dem regulären Finale behalten. Es ersetzt das Finale nicht.
-
-## Später entscheiden
-
-- **G-03 · „Beat“:** Ein Zug hat 5 Beats nach den Regeln. Die 8 Simulator-Beats heißen künftig „Story-Panels“. Kurz bestätigen.
-- **G-05 · NPC Norman:** Sitzt er am Tisch oder reagiert er nur? In CritEngine ist er „NPC“, im Sprint-01-Paket ein vollwertiger achter Pol.
-- **G-07 · Advisory Council und Roundtable:** Als Linsen und Ausgabeformate nutzen, nicht als Spielfiguren? Empfehlung: ja.
-- **G-08 · Alte Regeln in der NIE:** Die alte Freestyle-Regeldatei (M50) widerspricht der Regelseite: 8 Schritte, HUMBUG, Quest-Würfel startet bei 3. Bekommt sie einen Vermerk „ersetzt durch #kfb“?
-- **G-09 · Zwei Regeldetails:**
-  - Gibt es beim Finale-Zug ein King-Urteil?
-  - Gilt +2 höchstens einmal pro Episode? Das steht in der Gameplay-Engine, aber nicht auf der Regelseite.
-- **G-10 · Zuruf-Namen bei den Bewohnern:** PR #305 nutzt BINGO, BONGO, BOGGLE und BLÖDSINN mit anderer Bedeutung als die Regeln. Umbenennen, etwa in „Anschluss“, „Halten“, „Kippen“ und „Kollision“, oder die doppelte Bedeutung bewusst stehen lassen?
-- **G-13 · Ort des neuen Moduls:** Vorschlag `tools/kfb-kayfabulation-sim/` im kayfabizarro-Repo. Oder lieber neben dem Simulator in Dropbox?
+6. **Welche echte Karte soll der Lorekeeper dir mitgeben, die du zu Doppel-Denk bringst?** Am stärksten wirkt eine Karte, die zu Doppel-Denks Deck quer steht oder darauf antwortet.

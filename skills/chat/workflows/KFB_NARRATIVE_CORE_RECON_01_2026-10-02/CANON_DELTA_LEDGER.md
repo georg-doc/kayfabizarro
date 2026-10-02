@@ -159,7 +159,7 @@ Default for SIM-01: deterministic rules engine; sim-seat Tell from a pluggable `
 ### C-01 · Telling is done AS the Actor card (recon error, now a rule test)
 
 Georg: the player never narrates as himself. PUB beat 3: "Speak as your Actor, first person, you don't play your Actor, you are them." The persona at the seat (Hunky, Dory, FrizzleBob, human) is the **performer**; the **Actor card** is the speaker. The persona only shapes *how* the card is played (cadence, humour vector, stance).
-The recon's own demo violated this ("Ich bin Lord Hunky …"), and so do stored GM runs (`crit_memory.json` best line: "I am FrizzleBob, and the Correct Nonsense …"). The GM tell frame "I am [actor], …" is correct, but generated text drifted.
+The recon's own demo violated this (its invented sample had the persona speak as itself; that page is withdrawn), and so do stored GM runs (`crit_memory.json` best line: "I am FrizzleBob, and the Correct Nonsense …"). The GM tell frame "I am [actor], …" is correct, but generated text drifted.
 Consequence for SIM-01: hard rule test: `story_told.speaker` = the seat's current Actor card; a tell that names the persona as the first-person speaker is rejected. The event schema already carries `actor` on `story_told`.
 
 ### C-02 · CritEngine status was under-reported (D-06 / D-07 corrected)
@@ -171,3 +171,12 @@ The Living-Doc also already names this exact use case: "Im Gameplay-Mode wählt 
 ### C-03 · Decisions taken by Georg (2026-10-02)
 
 G-02: Gameplay Engine is the base, together with Simulator v0.8. G-06/G-04: personality from the CritEngine YAML (Sprint-01, adopted), not central for SIM-01. Already recorded in project memory (July): "one engine, two surfaces; the Simulator consumes the engine contract, does not fork it" (Run-Spec `{deck, players[], cardPool, mode}`).
+
+
+### D-17 · Speech invariants that drifted out of the first pass (2026-10-02)
+
+Georg: semantic Triplets are the default speech (shared pool, #305 kernel, Town J-13), the player interaction is Monkey-Island selectable lines with collectible retorts (Town J-13/J-14, Card Relay §5–6), everything in-world is English (WS1 A3/A5), and Claude-written sample dialogue must never be handed on in briefs (it reads as canon and drifts). The first pass ignored the Triplet/Monkey-Island grammar in its architecture prose and put invented German lines into the decision page. Correction: the decision page is withdrawn; every remaining recon artefact references only real `tripletId`s, real Card refs or real source quotes; `RECON_REORIENTATION_2026-10-02.md` §2 lists the invariants; `PRODUCTIVE_SLICES.md` repeats them for every slice.
+
+### D-18 · Centre of gravity (2026-10-02)
+
+The first pass made the Kayfabulation table simulation the core. Georg: it is a later King Kayfabian minigame. The core is Residents with a lean character system, Cards as world artefacts, the player bringing Cards, Residents speculating from their Signature-Deck knowledge, memory in Resident Social Memory. This matches PR #272 (Social Card Relay, Signature Decks, Base-24 Lean Character Card). See `RECON_REORIENTATION_2026-10-02.md`.
