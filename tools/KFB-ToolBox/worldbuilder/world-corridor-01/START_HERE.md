@@ -334,3 +334,20 @@ implementation checkpoint `42671b14167ee1872f0f75ce2f2edd57af24e235`.
 
 Site checkpoint:
 `WORLD-CORRIDOR-01 / e072b8e2-498a-460b-94e7-88b930f5336f` remains the PROCEED decision anchor; a follow-up material checkpoint records the corrected candidate order.
+
+
+## 2026-10-02 · Procedural Environment · USE WHAT WORKS deformation routing
+
+Before any procedural-building or environment shape-language brief, read:
+
+`procedural-props-local-proof/USE_WHAT_WORKS_DEFORMATION_ROUTING_2026-10-02.md`
+
+Do **not** use the reduced P0B proof deformation as the building baseline.
+
+Source priority:
+`Golden/deformed samples → Elastic Grotesque → City Grotesque → LandmarkElastic → LOOK-TORSION → FACADE_RULE v1 → KayKit/K-Kid → approved P0B props/trees → Hivebound cozy/rounded constraint`.
+
+Skewed cartoon perspective is a combination of **geometry deformation + presentation lens/camera**; preserve that separation.
+
+Current next gate:
+**GOLDEN DEFORMATION DONOR EXTRACTION**.
