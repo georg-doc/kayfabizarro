@@ -473,3 +473,27 @@ Grade against:
 `Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis`.
 
 No generic “wonky house” prompt and no material decision in B0.
+
+
+## 2026-10-02 · Crash-safe procedural-environment recovery
+
+For the completed P2 FORM/ENVIRONMENT lane, read first:
+
+`procedural-environment-p2/RECOVERY.md`
+
+Then:
+- `procedural-environment-p2/SOURCE.json`
+- `procedural-environment-p2/RETURN.md`
+- `procedural-environment-p2/P2_TEST_REPORT.md`
+
+Current state:
+- Draft PR #316;
+- P2 = **SOURCE_DERIVED_GEOMETRY_PASS**;
+- nature vocabulary covers tree / rocks / bush / log / stump / mushroom / grass;
+- material/Clay remains a separate parallel lane;
+- no Stage / merge / Live.
+
+Current FORM/ENVIRONMENT next gate:
+**PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**.
+
+Do not restart small-prop ideation and do not ask Georg to reconstruct the old thread.
