@@ -503,6 +503,13 @@ async function ensureK2Clay() {
 
 async function setWorldLook({ accent, seed } = {}) {
   if (!physicalBodyRoot) throw new Error('physical billboard donor body unavailable');
+
+  // Measure the exact current B1-fitted source state immediately before K2 adaptation.
+  // H13 may already have changed the accepted content-fit scale and panel material by now.
+  const preAdaptBox = vecBox(physicalBodyRoot);
+  const preAdaptPanelMaterialUuid = panelMesh?.material?.uuid || null;
+  report.worldLook.sourceBox = preAdaptBox;
+
   const U = await ensureK2Clay();
   const color = String(accent || '#ffb27a');
   const worldSeed = Number.isFinite(Number(seed)) ? Number(seed) : 1985738440;
@@ -547,8 +554,9 @@ async function setWorldLook({ accent, seed } = {}) {
   report.worldLook.clayMaterials = clayMaterials;
   report.worldLook.sourceMaterialsPreserved = preserved;
   report.worldLook.adaptedBox = vecBox(physicalBodyRoot);
-  report.worldLook.geometryUnchanged = sameBox(report.worldLook.sourceBox, report.worldLook.adaptedBox);
-  report.worldLook.contentPlaneUntouched = !!panelMesh && panelMesh.material.uuid === worldLookSourcePanelMaterialUuid;
+  report.worldLook.geometryUnchanged = sameBox(preAdaptBox, report.worldLook.adaptedBox);
+  report.worldLook.contentPlaneUntouched =
+    !!panelMesh && !!preAdaptPanelMaterialUuid && panelMesh.material.uuid === preAdaptPanelMaterialUuid;
   return structuredClone(report.worldLook);
 }
 
