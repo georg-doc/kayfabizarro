@@ -1,0 +1,53 @@
+{
+  "schema": "kfb.billboard-context-worldlook-failure-recovery/1",
+  "status": "FAILURE_RECOVERY",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/billboard-context-worldlook-01-2026-10-02",
+  "base": "174be3e64e029b441ee8d1bdc84b4e378a530713",
+  "implementationHead": "7f08630bdd593a585dbec8a38e2e5bd2c99edf59",
+  "repairHead": "804a75f6d18c0ff3ecba47bb3e275a4a47f17fc7",
+  "source": {
+    "consumerTestedHead": "ffda55d76c89e69e18f036d3929613d2839d4e0e",
+    "zoneKey": "forget_utopia#7",
+    "accent": "#ffb27a",
+    "worldSeed": 1985738440,
+    "biome": "fractured",
+    "k2": {
+      "material": "d994a9b656131be3b7a13d45edcb4253d34f3620",
+      "profiles": "af57b88ae382a36514f9fa50beed5ab6ca18647a",
+      "reliefV2": "2bb843d29e9f2571f87d9e6210f34240b1a0a1a9",
+      "reliefV5": "1dfd171e08b14f996601189a7f2c108101f84132",
+      "toolmix": "b9a039ccfb90ea04910db3cf05928817d92e9399"
+    }
+  },
+  "attempts": [
+    {
+      "run": 37047686935,
+      "job": 110973056364,
+      "artifact": 11244483951,
+      "digest": "sha256:553a7c69e3485a2390ff48c427e306f1d57cd55cc54278688422a09dc724a6c3",
+      "checks": "11/13 PASS",
+      "failure": "invalid pre/post proof timing + screenshot timeout"
+    },
+    {
+      "run": 37050667691,
+      "job": 110982972706,
+      "artifact": 11246921214,
+      "digest": "sha256:e0f2b89eda8c54439228c8aedf39f94d2075e624356f0a2ce05f30df769b8dd7",
+      "checks": "13/13 PASS",
+      "firstPartyFailures": 0,
+      "failure": "adapted WebGL screenshot timeout"
+    }
+  ],
+  "technicalCandidate": {
+    "bodyMeshes": 4,
+    "clayMaterials": 4,
+    "sourceMaterialsPreserved": true,
+    "geometryUnchanged": true,
+    "contentPlaneUntouched": true,
+    "h13Live": true,
+    "k2BuildMs": 8784
+  },
+  "visualAcceptance": false,
+  "nextGate": "WORLDLOOK-VISUAL-CAPTURE-01"
+}
