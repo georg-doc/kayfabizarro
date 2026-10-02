@@ -155,6 +155,7 @@ function center(group){
 }
 
 async function show(i){
+  pick.value=String(i);
   clearStages();
   status.textContent='building lane…';
   const entry=corpus.lanes[i];
