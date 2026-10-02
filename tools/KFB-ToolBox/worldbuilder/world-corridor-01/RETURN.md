@@ -639,3 +639,32 @@ Grade with:
 No material decision and no generic random-building generator.
 
 The existing material next gate elsewhere in this Return remains a separate parallel lane.
+
+
+## 2026-10-02 · Hex / Procedural convergence → Blender handoff
+
+The Hex browser catalog and the completed procedural Environment P1/P2 line are now reconciled into one **self-contained GitHub handoff for Claude Coworker + Blender MCP**.
+
+Handoff:
+- Draft PR #317;
+- branch `chatgpt-web/hex-blender-handoff-2026-10-02`;
+- folder `tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/`.
+
+Important recovery correction:
+- Claude/Blender does **not** need KFB Production Control;
+- the verified Hex browser measurements are copied into the handoff under `data/`;
+- KayKit source packs remain at their exact pinned repository paths;
+- current P1/P2 procedural modules and the Golden building-deformation extraction are available in the same checkout.
+
+Current material direction carried into the bench:
+- `clay_floor_001` = current preferred lightweight/global Clay comparison;
+- heavy procedural Clay = Near/Hero reference, not presumed global runtime solution;
+- Derek RGB = comparator;
+- Clay002 = negative/control for this lane.
+
+The Blender bench must compare authored Hex/KayKit modules with the already-proven procedural environment families, select 1–3 authored normal-building seeds for the next building-family spec, and author only bounded 1/2/3-cell semantic scenelets.
+
+Blender remains measurement/preparation/authoring only. Browser/Web retains runtime/performance authority.
+
+Exactly one next action:
+**Claude Coworker + local Blender MCP executes the handoff from PR #317.**
