@@ -370,3 +370,45 @@ This axis calibrates the existing proven deformation owners; it does not replace
 
 Current next gate remains:
 **GOLDEN DEFORMATION DONOR EXTRACTION**.
+
+
+## 2026-10-02 · Form/Environment lane · Golden extraction + P1 PASS
+
+This is a **separate lane from the parallel WC1 material choice**. Do not let its next action overwrite or block the material thread.
+
+Read in order:
+- `procedural-props-local-proof/USE_WHAT_WORKS_DEFORMATION_ROUTING_2026-10-02.md`
+- `procedural-props-local-proof/STYLE_AXIS_POLLY_ROCKO_METROPOLIS_2026-10-02.md`
+- `procedural-props-local-proof/GOLDEN_DEFORMATION_DONOR_EXTRACTION_2026-10-02.md`
+- `procedural-props-local-proof/ENVIRONMENT_FAMILY_P1_ROCKS_BUSHES_SPEC_2026-10-02.md`
+- `procedural-props-local-proof/ENVIRONMENT_FAMILY_P1_TEST_REPORT.md`
+
+P1 result:
+**SOURCE_DERIVED_GEOMETRY_PASS**.
+
+Reusable geometry-only module:
+`procedural-props-local-proof/environment-family-p1.mjs`
+
+Verified families:
+- approved P0B tree positive control;
+- P0B pebble cluster;
+- K1 Golden organic boulder;
+- T3 Knetstrang accent rock;
+- T3 Knetstrang 2–3 lobe bush.
+
+Repair Pass 1 only changed internal QA transport from direct `file://` to localhost so the modular ES import could load. Geometry stayed unchanged.
+
+PASS evidence:
+- tested head `b56f77165b82113757c222b1cfb80ed350553215`;
+- run `36959777774`;
+- job `110690683930`;
+- artifact `11207815421`;
+- digest `sha256:95bc5a84d5d01e9ba1bf2dc10c56e8913aa04384906e162187616909d913e8c8`;
+- 5/5 objects;
+- 0 console errors;
+- 0 page errors.
+
+Current FORM/ENVIRONMENT next gate:
+**ENVIRONMENT FAMILY P2 · EXISTING PROP VOCABULARY EXTRACTION** — recover logs / stumps / mushrooms / grass / markers only from already-existing KFB/KayKit donors before generating anything new.
+
+Material/Clay work remains owned by its parallel lane.
