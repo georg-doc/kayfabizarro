@@ -10,16 +10,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  source-object-isolation:
+  p2-evidence:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Static QA syntax
-        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/qa/source-object-isolation.mjs
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/qa/source-object-isolation.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/qa/procedural-geometry-proof.mjs
       - name: Install Playwright
         run: |
           npm install --no-save playwright@1.48.2
@@ -29,11 +32,21 @@ jobs:
           python3 -m http.server 4173 >/tmp/kfb-env-p2-http.log 2>&1 &
           sleep 2
           curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/source-object-isolation.html >/dev/null
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/procedural-geometry-proof.html >/dev/null
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs >/dev/null
       - name: Exact source-object isolation
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/qa/source-object-isolation.mjs
+      - name: Procedural source-derived geometry proof
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/qa/procedural-geometry-proof.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: wc1-environment-family-p2-evidence
+          name: wc1-environment-family-p2-source-evidence
           path: environment-family-p2-evidence/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-environment-family-p2-proc-evidence
+          path: environment-family-p2-proc-evidence/
           if-no-files-found: error
