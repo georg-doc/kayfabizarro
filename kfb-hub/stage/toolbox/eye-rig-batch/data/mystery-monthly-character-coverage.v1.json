@@ -23,7 +23,9 @@
     "paletteBlobs": {
       "A": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
       "B": "eb45816ada5c84bc91abc0225e3b25f5998accc1"
-    }
+    },
+    "workbenchKingActorId": "paladin-king",
+    "kingPaletteVisible": true
   },
   "actors": [
     {
@@ -644,5 +646,74 @@
       "rigEvidence": "source Clanker.fbx: Rig_Large string x10, Rig_Medium x0",
       "appearanceVariants": null
     }
-  ]
+  ],
+  "containerCoverage": {
+    "status": "ALL_53_GLBS_CLASSIFIED",
+    "definition": "53 non-animation, non-asset GLB candidates in media/3D_Assets/KayKit_Mystery_Series6 at main@2c92dd13...; monthly physical coverage remains the existing 49.",
+    "counts": {
+      "candidateGlbs": 53,
+      "monthlyPhysical": 49,
+      "supportedNonMonthlyExtras": 2,
+      "customOrTemplateUnsupported": 2,
+      "supportedPhysicalTotal": 51,
+      "virtualWorkbenchAppearanceVariants": 1
+    },
+    "supportedNonMonthlyExtras": [
+      {
+        "id": "mummy-a",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A.glb",
+        "blob": "f844b3da5d7a27e61f29a4d251b6140840f493cc",
+        "rigClass": "Rig_Medium",
+        "jointCount": 23,
+        "evidence": "direct GLB JSON: skin Rig_Medium · 23 joints · 0 embedded animations"
+      },
+      {
+        "id": "mummy-b",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.glb",
+        "blob": "539552ecf8bade98f624bcaa18c5a420082f7c90",
+        "rigClass": "Rig_Medium",
+        "jointCount": 23,
+        "evidence": "direct GLB JSON: skin Rig_Medium · 23 joints · 0 embedded animations"
+      }
+    ],
+    "customOrTemplateUnsupported": [
+      {
+        "id": "santa",
+        "label": "Santa",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/Santa/characters/Santa.glb",
+        "blob": "df3613f049da5d3bcace5ac2f3fe2523f1886dd5",
+        "skinName": "Rig",
+        "jointCount": 41,
+        "animationCount": 95,
+        "evidence": "Asset Registry rigfacts blob 23e93cf956c01414a5fdeaaf9c39f63f2219a4a7",
+        "status": "UNSUPPORTED_CURRENT_MEDIUM_LARGE_WORKBENCH",
+        "reason": "custom 41-joint embedded-animation rig; do not mislabel as Rig_Medium or Rig_Large"
+      },
+      {
+        "id": "character-template",
+        "label": "CharacterTemplate",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/CharacterTemplate/gltf/CharacterTemplate.glb",
+        "blob": "eea184bb7928c2e075a8da98d9d37228bf96d642",
+        "skinName": "Rig",
+        "jointCount": 41,
+        "animationCount": 95,
+        "evidence": "Asset Registry rigfacts blob 23e93cf956c01414a5fdeaaf9c39f63f2219a4a7",
+        "status": "EXCLUDED_TEMPLATE_CUSTOM_RIG",
+        "reason": "template/source rig, not a normal Medium/Large character roster entry"
+      }
+    ],
+    "virtualWorkbenchAppearanceVariants": [
+      {
+        "id": "paladin-king",
+        "geometrySourceActorId": "paladin",
+        "palette": "B",
+        "modelPath": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb",
+        "modelBlob": "9c6189759277fc999136f3759eac0d0e1b65ced1",
+        "texturePath": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+        "textureBlob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+        "role": "light/blonde King candidate",
+        "countedAsPhysicalMonthlyGlb": false
+      }
+    ]
+  }
 }
