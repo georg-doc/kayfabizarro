@@ -690,3 +690,28 @@ Current next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS** — measure the full 22-building Hürth V2 fixture and derive bounded siblings from observed source distributions only.
 
 No material decision, no generic random-city generator.
+
+
+## 2026-10-02 · Procedural Building B1 COMPLETE
+
+Separate FORM/ENVIRONMENT lane; material remains parallel.
+
+Canonical recovery:
+`procedural-building-b1/RECOVERY.md`
+
+B1 is **SOURCE_BOUNDED_SIBLINGS_PASS** on Draft PR #322.
+
+Final tested head:
+`191f79bed81e2e5a0b5486033532b9f0b32335a7`
+
+Final evidence:
+- run/job `37041339236 / 110951929252`
+- artifact `11241588200`
+- digest `sha256:213cce3bcc928d21fe95b01d767bea508d9f75acb7e49433b2dd5a46d2e32e95`
+
+Sibling generator remained unchanged through its single evidence-only repair.
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**
+
+Use the current real `kfb-facade-rule-v1` presenter; no second façade system.
