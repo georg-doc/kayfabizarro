@@ -148,3 +148,18 @@ B0 should specify:
 No material decision.
 No generic “wonky house” prompt.
 No universal random city generator.
+
+
+## Crash-safe recovery
+
+Canonical recovery entry:
+`RECOVERY.md`
+
+A fresh chat should read `RECOVERY.md` first instead of reconstructing this conversation.
+
+Current site anchors:
+- P2 exact source objects PASS: `e73b2e77-23a2-4dea-a744-4b455dee2e59`
+- P2 final source-derived geometry PASS: `d3a82471-38ad-43ce-bbba-a6f657760678`
+
+The next FORM/ENVIRONMENT gate remains:
+**PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**.
