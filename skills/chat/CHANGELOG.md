@@ -7,7 +7,8 @@
 - Asset Registry run `37055714664` / job `110999795387` passed the current **46/46** test suite plus Registry build/validate, rigfacts build/validate and Librarian candidate-handoff smoke.
 - Review branch `chatgpt-web/kaykit-snow-festive-intake-2026-10-02` preserves the exact generated Registry refresh and adds recovery/evidence only.
 - R2D continuous islands, Travel, Race, Residents and all runtime owners remain unchanged. No Stage or Live claim.
-- Next gate: **REGISTRY-REVIEW-01** — existing Asset Librarian browser regression on the review PR, then review the complete generated Registry refresh.
+- PR tested head `395a54bd16f15fb6538d81cba8fa9cc0ffd937d8`: Asset Registry run `37056997870` **SUCCESS**, **46/46** tests + build/validate/rigfacts/handoff PASS; Asset Librarian Browser run `37056997697` **SUCCESS**, **6/6** retained WebGL suites PASS; artifact `11249225118`, digest `sha256:246dfd3cd3fd1ca26c3f315e10565435293449b40ef3684c617d11ceee4025a6`.
+- Next gate: **REGISTRY-CANONICAL-REFRESH-01** — review Draft PR #329 as the complete generated Registry refresh and merge only with Georg's named gate.
 
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
