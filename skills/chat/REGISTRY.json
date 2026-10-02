@@ -127,30 +127,45 @@
         "a replacement asset registry",
         "automatic merge or Live promotion"
       ],
-      "note": "AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED by Georg. AUDIO-SEED-01 is PUBLIC_VERIFIED on Draft PR #325 and awaits GEORG_AUDIO_SEED_LISTEN_01. Travel/Race/Combat/Boxel retain runtime ownership; no external generation service is required by the procedural candidate.",
+      "note": "AUDIO-CAL-01 remains PUBLIC_VERIFIED/HUMAN_ACCEPTED. AUDIO-SEED-01 received Georg feedback; r2 fixes rain/noise and high chime fatigue and is 35/35 source + 35/35 browser green on Draft PR #325. r2 was written exactly to cloudflare-live@34d1dc4, but Pages is still IN_PROGRESS and the first exact-route r2 proof failed only at the v0.2 marker while publication was pending. Do not call r2 public/live until the unchanged exact-route proof passes.",
       "humanResult": "PASS",
       "audioSeed01": {
-        "status": "PUBLIC_VERIFIED_HUMAN_LISTENING_PENDING",
+        "status": "HUMAN_REPAIR_R2_SOURCE_BROWSER_PASS_PUBLIC_PENDING",
         "repository": "georg-doc/kayfabizarro",
         "branch": "chatgpt-web/audio-seed-01-2026-10-02",
         "draftPR": 325,
-        "implementationHead": "b566e272493864dc9bb0cd27f8e2d7574be061d0",
-        "publicProofSourceHead": "a9758734c7ec2d2311c88a2d313c293e02254f4c",
-        "publicationBranch": "cloudflare-live",
-        "publicationHead": "62c7124faadbd27dd96b667465e93351fe5a6c8a",
-        "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/",
+        "repairImplementationHead": "eddfd84c37bdb5faf4f222c992bc5cf89fec6604",
+        "currentSourceHead": "02c74a72b1320a67f995f8f86c5d71089c2f1b90",
+        "humanFeedback": {
+          "positive": "broad soundbed direction",
+          "repair": [
+            "rain sounded like water/noise",
+            "high xylophone/cartoon chime quickly fatiguing"
+          ]
+        },
         "tests": {
-          "deterministicSource": "34/34 PASS",
-          "branchChromiumWebAudio": "33/33 PASS",
-          "publicChromiumWebAudio": "33/33 PASS"
+          "deterministicSource": "35/35 PASS",
+          "branchChromiumWebAudio": "35/35 PASS",
+          "run": 37052602108,
+          "job": 110989403830,
+          "artifact": 11246418871,
+          "digest": "sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d"
         },
-        "publicProof": {
-          "run": 37045888652,
-          "job": 110967091484,
-          "artifact": 11244059091,
-          "digest": "sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8"
+        "publication": {
+          "branch": "cloudflare-live",
+          "head": "34d1dc408719ebc77351a13e1ca6557b62c315ab",
+          "pagesCheck": 110990617688,
+          "pagesStatus": "IN_PROGRESS"
         },
-        "nextGate": "GEORG_AUDIO_SEED_LISTEN_01"
+        "firstPublicAttempt": {
+          "run": 37053177990,
+          "job": 110991313066,
+          "result": "FAIL_STAGE_MARKER_4_OF_4_WHILE_PAGES_IN_PROGRESS",
+          "artifact": 11246834657,
+          "digest": "sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105"
+        },
+        "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/",
+        "nextGate": "After Pages SUCCESS, rerun unchanged r2 public proof; then GEORG_AUDIO_SEED_RELISTEN_R2"
       }
     },
     {

@@ -1,22 +1,44 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
-## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 · 2026-10-02
+## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 · HUMAN REPAIR r2 · 2026-10-02
 
-**Result:** PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Result:** HUMAN FEEDBACK RECEIVED · r2 SOURCE/BROWSER PASS · r2 PUBLIC PENDING  
 **Repo / branch / PR:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
-**Implementation head:** `b566e272493864dc9bb0cd27f8e2d7574be061d0`  
-**Evidence head:** `6f9dc8089b12d438eca0a84c8664024de6b3b5aa`  
-**Public-proof source head:** `a9758734c7ec2d2311c88a2d313c293e02254f4c`  
-**Cloudflare publication:** `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a`  
+**Repair implementation:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
+**Current source head:** `02c74a72b1320a67f995f8f86c5d71089c2f1b90`  
+**r2 publication:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`  
 **Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
 
-Tests: deterministic/source **34/34 PASS**; branch Chromium/WebAudio **33/33 PASS** (run `37045038692`, job `110964247965`, artifact `11243804164`, digest `sha256:614a7b0311eaf75cb709f9bc4dbc65614f0b3c6deb3b56ea5ea96a2feef710a3`); public exact-route Chromium/WebAudio **33/33 PASS on first attempt** (run `37045888652`, job `110967091484`, artifact `11244059091`, digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`). Desktop + mobile screenshots are in the proof artifacts.
+Human feedback:
+- broad soundbed direction: positive;
+- rain: rejected in v0.1 as water/noise-like;
+- high xylophone/cartoon motif chime: rejected as quickly fatiguing.
 
-Scope retained: real FORGET / IGNORE / EMBRACE Deck JSON; Travel semantic/seed donor; deterministic grammar/family/pitch/motif; WORLD/ROAD; speed density/subdivision; Night/Rain/Psychedelic/Shadow; one AudioContext; AUDIO-CAL voice focus. No Suno/ElevenLabs runtime dependency.
+Repair:
+- bright octave overtone removed;
+- motif moved down and softened;
+- G3 motif/answer density reduced;
+- secondary answer events reduced;
+- rain hiss/bed greatly reduced;
+- deterministic stereo droplet/splash transients added.
 
-Deferred: human sonic quality/fatigue; broader authentic instrument source bank; real Race telemetry; long-session fractal listening.
+r2 evidence:
+- deterministic/source: **35/35 PASS**;
+- Chromium/WebAudio: **35/35 PASS**;
+- run/job: `37052602108 / 110989403830`;
+- proof artifact: `11246418871`;
+- proof digest: `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
 
-**Exactly one next gate:** `GEORG_AUDIO_SEED_LISTEN_01`. No merge or Live promotion.
+Public state:
+- six r2 Stage blobs verified byte-for-byte on `cloudflare-live@34d1dc4…`;
+- Cloudflare Pages check `110990617688`: **IN_PROGRESS**;
+- public attempt `37053177990 / 110991313066`: four marker-only failures while Pages remained in progress;
+- failed proof artifact `11246834657`, digest `sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105`;
+- therefore r2 is **NOT YET PUBLIC_VERIFIED** and the public route must be treated as the older v0.1 until exact v0.2 proof passes.
+
+Reddit/WebAudioFont references are documented as later donors, not incorporated into r2.
+
+**Exactly one next gate:** after Pages check SUCCESS, rerun unchanged public proof for build `AUDIO-SEED-01-v0.2`. No runtime changes, no new instrument dependency, no merge or Live promotion.
 
 **Date:** 2026-09-24  
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED  

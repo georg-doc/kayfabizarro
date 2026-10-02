@@ -1,7 +1,45 @@
 # AUDIO-SEED-01 · TEST REPORT
 
+## CURRENT OVERRIDE · HUMAN REPAIR r2 · 2026-10-02
+
+**Current status:** r2 SOURCE/BROWSER PASS · r2 PUBLIC PENDING  
+**Repair head:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
+**Current source head:** `02c74a72b1320a67f995f8f86c5d71089c2f1b90`  
+**r2 publication write:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`
+
+Human v0.1 feedback:
+- broad soundbed was promising;
+- rain sounded like water/noise, not rain;
+- high xylophone/cartoon-like chime became quickly fatiguing.
+
+Repair r2:
+- removes octave-bright overtone;
+- lowers/softens motif register and gain;
+- reduces G3 and secondary answer density;
+- reduces continuous rain noise;
+- adds deterministic stochastic stereo droplet/splash transients.
+
+r2 branch QA:
+- deterministic/source: **35/35 PASS**;
+- Chromium/WebAudio: **35/35 PASS**;
+- run/job: `37052602108 / 110989403830`;
+- artifact: `11246418871`;
+- digest: `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
+
+Public r2 state:
+- all six r2 Stage blobs match on `cloudflare-live@34d1dc4…`;
+- Cloudflare Pages check `110990617688`: **IN_PROGRESS**;
+- public proof `37053177990 / 110991313066`: **FAIL at Stage marker 4/4 while Pages pending**;
+- artifact `11246834657`;
+- digest `sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105`;
+- no behavioral r2 assertion failed because none ran after the stale marker.
+
+The older v0.1 PUBLIC_VERIFIED evidence below remains historical. It must not be used to claim r2 is public.
+
+**Exactly one next gate:** Cloudflare Pages SUCCESS → rerun unchanged exact public proof for `AUDIO-SEED-01-v0.2`. Only then ask Georg for `GEORG_AUDIO_SEED_RELISTEN_R2`.
+
 **Date:** 2026-10-02  
-**Status:** PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Status:** HISTORICAL v0.1 PUBLIC_VERIFIED · CURRENT r2 PUBLIC PENDING  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `chatgpt-web/audio-seed-01-2026-10-02`  
 **Draft PR:** #325  

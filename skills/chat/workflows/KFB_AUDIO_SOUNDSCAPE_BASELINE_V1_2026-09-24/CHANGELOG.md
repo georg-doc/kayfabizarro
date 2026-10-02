@@ -1,5 +1,20 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-02 · AUDIO-SEED-01 human repair r2
+
+- Georg liked the broad v0.1 soundbed but rejected two details: rain sounded like water/noise; high xylophone/cartoon-like chime became quickly fatiguing.
+- Confirmed causes: +12/+19-semitone motif/answer register, extra octave overtone, dense G3 event cadence, and single filtered-noise rain loop.
+- Repair implementation `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`:
+  - warm/lower motif voice, bright octave overtone removed;
+  - G3 motif/answer and secondary-answer density reduced;
+  - continuous rain noise reduced to a low bed;
+  - deterministic stochastic stereo droplet/splash transients added.
+- r2 QA: **35/35 deterministic/source + 35/35 Chromium/WebAudio PASS**; run/job `37052602108 / 110989403830`; artifact `11246418871`; digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
+- r2 mirrored exactly to `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`; Pages check `110990617688` remains **IN_PROGRESS**.
+- First r2 public proof `37053177990` failed only at v0.2 Stage marker on all four attempts while Pages was still in progress; no behavior assertions ran.
+- Reddit donor addendum recorded separately: FLY × COMPOSE supports motion→bounded musical parameter mapping; WebAudioFont-style sampled playback is a later timbre-quality donor, not part of r2.
+- Current gate: wait for Pages SUCCESS, then rerun unchanged public proof. No second runtime repair.
+
 ## 2026-10-02 · AUDIO-SEED-01 · Deck-seeded procedural soundscape
 
 - Draft PR #325 on `chatgpt-web/audio-seed-01-2026-10-02`; implementation `b566e272493864dc9bb0cd27f8e2d7574be061d0`.
