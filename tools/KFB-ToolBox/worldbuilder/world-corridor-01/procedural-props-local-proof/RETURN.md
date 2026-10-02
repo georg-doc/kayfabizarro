@@ -139,3 +139,61 @@ P0B trees/props remain approved as procedural family-generation donors, not as t
 
 Exactly one current next gate is now:
 **GOLDEN DEFORMATION DONOR EXTRACTION** — source-backed donor sheet first; Claude building brief only after that.
+
+
+## 2026-10-02 · Golden extraction + Environment Family P1
+
+The **form/deformation lane** is now explicitly separated from the parallel material lane.
+
+Completed source-backed routing:
+- `USE_WHAT_WORKS_DEFORMATION_ROUTING_2026-10-02.md`;
+- `STYLE_AXIS_POLLY_ROCKO_METROPOLIS_2026-10-02.md`;
+- `GOLDEN_DEFORMATION_DONOR_EXTRACTION_2026-10-02.md`.
+
+Completed Environment Family P1:
+- source-derived spec: `ENVIRONMENT_FAMILY_P1_ROCKS_BUSHES_SPEC_2026-10-02.md`;
+- reusable geometry-only module: `environment-family-p1.mjs`;
+- internal source-isolation surface: `environment-family-p1-source-isolation.html`;
+- test report: `ENVIRONMENT_FAMILY_P1_TEST_REPORT.md`.
+
+P1 classification:
+**SOURCE_DERIVED_GEOMETRY_PASS**
+
+Verified donor roles:
+- P0B tree = positive control;
+- P0B pebble = small rounded cluster;
+- K1 Golden rock = medium organic boulder;
+- T3 Knetstrang rock = large accent mass;
+- T3 Knetstrang bush = 2–3 lobe low cushion bush;
+- KayKit Forest remains authored scale/variation corpus.
+
+Modular Repair Pass 1:
+- first modular direct-`file://` test timed out because the internal HTML imports a neighboring ES module;
+- transport-only repair switched internal QA to localhost;
+- no geometry/material/runtime-owner change.
+
+PASS:
+- tested head `b56f77165b82113757c222b1cfb80ed350553215`;
+- run `36959777774`;
+- job `110690683930`;
+- evidence artifact `11207815421`;
+- digest `sha256:95bc5a84d5d01e9ba1bf2dc10c56e8913aa04384906e162187616909d913e8c8`;
+- 5/5 objects;
+- 0 console errors;
+- 0 page errors;
+- 0 QA problems.
+
+The geometry module intentionally owns no material, renderer, placement, or frame loop.
+
+### Parallel material lane
+
+Material/Clay evaluation remains a separate parallel concern and is not advanced by this P1 result. P1 does not select Clay002, clay_floor_001, Derek, procedural Clay or any replacement material.
+
+### Exactly one next gate for the FORM/ENVIRONMENT lane
+
+**ENVIRONMENT FAMILY P2 · EXISTING PROP VOCABULARY EXTRACTION**
+
+Recover the next already-existing prop families before creating any new ones, prioritizing logs / stumps / mushrooms / grass / markers only where real KFB/KayKit donors exist.
+
+No material arbitration.
+No procedural-building implementation yet.
