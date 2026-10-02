@@ -715,3 +715,27 @@ Current next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**
 
 Use the current real `kfb-facade-rule-v1` presenter; no second façade system.
+
+
+## 2026-10-02 · Procedural Building B2 COMPLETE
+
+Canonical recovery:
+`procedural-building-b2/RECOVERY.md`
+
+B2 is **EXISTING_FACADE_OWNER_INTEGRATION_PASS** on Draft PR #323.
+
+Final tested head:
+`99a390d3b828fc132528a65e3cff52d165299990`
+
+Final evidence:
+- run/job `37043662315 / 110959643486`
+- artifact `11243896554`
+- digest `sha256:4591394170e0fe8d03f068e055be5c020ec0bb72a037ed8a5bfcd02cb1933bd8`
+
+The B1 siblings were rendered by the real existing `kfb-facade-rule-v1` owner in the real 700-building Hürth context.
+
+Current unresolved owner issue:
+the active r2 presenter has not yet been rehomed to the stable WorldBuilder path.
+
+Next gate:
+**PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**.
