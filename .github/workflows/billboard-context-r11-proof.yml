@@ -64,7 +64,7 @@ jobs:
 
           const raw = 'http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/h13/KFB Billboard Kaleidoscope H13.dc.html';
           const url = encodeURI(raw);
-          const report = { url, checks: [], pageErrors: [] };
+          const report = { url, checks: [], pageErrors: [], consoleErrors: [], requestFailures: [], httpErrors: [], boot: {} };
           const check = (name, pass, detail=null) => {
             report.checks.push({ name, pass: !!pass, detail });
             if (!pass) process.exitCode = 1;
