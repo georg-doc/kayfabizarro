@@ -39,7 +39,9 @@ Current bounded asset-ingest lane: **ASSET-INTAKE-SNOW-FESTIVE-01** under the ex
 
 Do not build a second KayKit catalog. `registry/assets/v1` remains the generated discovery owner; Asset Librarian remains the read-only consumer. The historical `media/3D_Assets/CATALOG/` is legacy reference only. R2D continuous-island work remains separate: Snow hex assets may be future donors, but this intake does not reinstate visible hex terrain or alter any runtime owner.
 
-Exactly one current intake gate: **REGISTRY-REVIEW-01** — Asset Librarian PR browser regression, then review the complete generated Registry refresh. No Stage is required for the technical intake itself.
+PR regressions on tested head `395a54bd16f15fb6538d81cba8fa9cc0ffd937d8` are green: Asset Registry run `37056997870` and all **46/46** tests/build/validation steps PASS; Asset Librarian browser run `37056997697` passed **6/6** retained WebGL suites with evidence artifact `11249225118`.
+
+Exactly one current intake gate: **REGISTRY-CANONICAL-REFRESH-01** — review Draft PR #329 as the complete generated Registry refresh and merge only with Georg's named gate. No Stage is required for the technical intake itself.
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
