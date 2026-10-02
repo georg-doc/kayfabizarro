@@ -1,0 +1,42 @@
+name: WC1 Procedural Building B2
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wc1-procedural-building-b2-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/**'
+      - '.github/workflows/wc1-procedural-building-b2.yml'
+  workflow_dispatch:
+
+jobs:
+  existing-facade-owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/building-facade-b2.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/qa/source-isolation.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start internal static server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-building-b2-http.log 2>&1 &
+          sleep 2
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/source-isolation.html >/dev/null
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/building-facade-b2.mjs >/dev/null
+      - name: Existing facade owner integration
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/qa/source-isolation.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-procedural-building-b2-evidence
+          path: building-b2-evidence/
+          if-no-files-found: error
