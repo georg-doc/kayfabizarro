@@ -44,4 +44,4 @@
 
 ## Exactly one next gate
 
-**R0 · RESIDENT-CARDS-AUTHORING-01 (revised).** Georg sends the list with base info and the first regular Residents, plus the Rolodex and any further repos. The six questions in `OPEN_DECISIONS_FOR_GEORG.md` are superseded where they concern Lorekeeper and Doppel-Denk (special roles). After that, R1 (contract rewrite on the clamp field set + intake) and R2 (first Social Card Relay = #272's `RESIDENT-SOCIAL-MEMORY-01`) with two regular, archetypally contrary Residents.
+**R0 · RESIDENT-CARDS-AUTHORING-01 (revised).** Georg sends the list with base info and the first regular Residents, plus any further repos (the Rolodex is optional, not a gate). WSA feedback: `RETURN_WSA.md`. The six questions in `OPEN_DECISIONS_FOR_GEORG.md` are superseded where they concern Lorekeeper and Doppel-Denk (special roles). After that, R1 (contract rewrite on the clamp field set + intake) and R2 (first Social Card Relay = #272's `RESIDENT-SOCIAL-MEMORY-01`) with two regular, archetypally contrary Residents.

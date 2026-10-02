@@ -88,6 +88,6 @@ Blind A/B/C read by Georg on the same Card and pair: pool-only · rule-composed 
 ## 4 · Open
 
 1. Koan reading (§2 tension): confirm "open gap yes, motivational aphorism no".
-2. The Rolodex with reveal-card examples: physical, in Hürth, comes later. An earlier Gemini chat about it is recorded and assessed as DONOR in `ROLODEX_GEMINI_DONOR_2026-10-02.md` (take: tri-cut flip-book UI, archetype weights, gift-shifted weights; reject as default: LLM expanding the triplet into free prose).
+2. The Rolodex with reveal-card examples: physical, in Hürth, comes later; per Georg only one example with a strong philosophy focus, **not a gate**. An earlier Gemini chat about it is recorded and assessed as DONOR in `ROLODEX_GEMINI_DONOR_2026-10-02.md` (take: tri-cut flip-book UI, archetype weights, gift-shifted weights; reject as default: LLM expanding the triplet into free prose).
 3. The existing Fluffolekt definition / word list (`NEEDS_SOURCE`).
 4. Relation set for the connector: A6 relations only, or A6 plus the social exchanges from the research note.

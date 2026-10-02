@@ -1,7 +1,7 @@
 # Rolodex · Gemini chat as DONOR · 2026-10-02
 
 - Source: an earlier Gemini chat Georg pasted into the session on 2026-10-02 ("hier erstmal gemini damals dazu").
-- Status: **DONOR**, not canon. The physical Rolodex ("Rolo-Deck") is in Hürth; Georg brings it later. Character list also later.
+- Status: **DONOR**, not canon. The physical Rolodex ("Rolo-Deck") is in Hürth; Georg brings it later. Georg: it is only one example with a strong philosophy focus and unlikely to add much → **not a gate**. Character list also later.
 - **The example fragments, NPC names and example dialogue in the Gemini chat are not copied here and must not be reused** (invariant D-17; they also conflict with Town §12.1, see below).
 - Companion to `TRIPLET_DIALOGUE_RULE_NOTE_2026-10-02.md`.
 
