@@ -1,0 +1,43 @@
+{
+  "schema": "kfb.billboard-context-r11-source/0.1",
+  "id": "BILLBOARD-CONTEXT-R11-2026-10-02",
+  "date": "2026-10-02",
+  "owner": "KFB ToolBox / Billboard Media Residency",
+  "branch": "chatgpt-web/billboard-context-r11-2026-10-02",
+  "baseB2a": {
+    "pr": 199,
+    "branch": "chatgpt-web/billboard-b2a-css3d-2026-09-24",
+    "head": "07da4adfd1de293d03682d1af90a01df2a1eba19",
+    "status": "HUMAN_ACCEPTED"
+  },
+  "h13Donor": {
+    "sourcePath": "tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/KFB Billboard Kaleidoscope H13.dc.html",
+    "htmlBlob": "46670cfa5c62c3aea6aa3840d301fc7a35723407",
+    "supportBlob": "6ca00e36551a5e172311990a3eaebffb581d3d0b",
+    "cardCropsBlob": "f91ee4a85c879c43de9d19cb1c09998b230553aa",
+    "status": "CURRENT_FROZEN_DESIGN_REFERENCE",
+    "surface": "1024x512",
+    "propSeam": "__dcSetProps(rootName, overrides)"
+  },
+  "h456": {
+    "recipeSha256": "50fc5853f2ecdd3916c67db0789a332bf8ae1afbe2da30a78d872ad87082e6c8",
+    "status": "VERIFIED_INTEGRATION_SEAM"
+  },
+  "proofContext": {
+    "packId": "forget_utopia",
+    "islandId": null,
+    "residentId": null,
+    "note": "Town has no current canonical island->resident->deck table in GitHub. The adapter accepts these fields but this proof binds only the verified deck."
+  },
+  "plannedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-context-r11/",
+  "stageStatus": "NOT_PUBLISHED",
+  "protected": [
+    "B0 billboard body",
+    "B1 measured face/content-fit",
+    "B2a inline CSS3D video/front-rear semantics",
+    "H13 source bytes",
+    "existing card/PDF owner",
+    "existing audio owner",
+    "existing world/look owner"
+  ]
+}
