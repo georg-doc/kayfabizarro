@@ -72,21 +72,29 @@ B2 ist als bestehender-Fassaden-Owner-Pass abgeschlossen. Seine geprüfte Build-
 
 Diese Arbeit zeigt technisch aus echten Spendern abgeleitete Geometrie. Die visuellen Formen der Stümpfe und Pilze sind aber weiterhin **TUNE** und nicht als fertige Designs freigegeben. In R2D dürfen sie nicht als fertige Produktionsfamilie eingesetzt werden.
 
-### 7. Materialkandidat aus R2C: clay_floor_001
+### 7. clay_floor_001 · vorhandene Texturdateien und R2C-Material getrennt prüfen
 
-[R2C-RETURN mit dem Befund zu clay_floor_001](https://github.com/georg-doc/kayfabizarro/blob/927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f/tools/KFB-ToolBox/_inbox/KFB%20World%20Core%20R2C%20%C2%B7%20Hex-Archipel%20Katalog/WORLD_CORE_R2C_2026-10-01/docs/RETURN.md)
+[R2C-RETURN mit der Materialnennung](https://github.com/georg-doc/kayfabizarro/blob/927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f/tools/KFB-ToolBox/_inbox/KFB%20World%20Core%20R2C%20%C2%B7%20Hex-Archipel%20Katalog/WORLD_CORE_R2C_2026-10-01/docs/RETURN.md) benennt `clay_floor_001` als gemeinsames Modellmaterial des Hexagon-Packs. Das ist nicht automatisch dasselbe wie die eigenständigen Texturdateien gleichen Namens.
 
-Die R2C-Rückgabe benennt `clay_floor_001` als gemeinsames Material der Hexagon-Pack-Modelle. Behandle es als **Materialkandidaten**, bis das echte Quellmodell und seine Material-/Bildreferenzen isoliert gezeigt wurden. Erfinde keine separate Texturdatei oder URI.
+Der Texturkatalog auf dem geprüften GitHub-Stand führt den Satz separat: [Texture registry shard, gepinnt auf 927a1b4](https://github.com/georg-doc/kayfabizarro/blob/927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f/registry/assets/v1/packs/textures.json). Die vier Originalbilder stammen aus Asset-Commit `378b209355b13304e3cff656ec0806ca5b89df28):
 
-Zeige in R2D nebeneinander:
+- [Diffuse / Grundfarbe · 115.628 B](https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Textures/clay_floor_001/clay_floor_001_diffuse.jpg)
+- [Normalen · 72.654 B](https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Textures/clay_floor_001/clay_floor_001_normal.jpg)
+- [Rauheit · 121.553 B](https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Textures/clay_floor_001/clay_floor_001_roughness.jpg)
+- [Umgebungslicht / AO · 66.066 B](https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Textures/clay_floor_001/clay_floor_001_ao.jpg)
 
-1. echtes, unverändertes KayKit-Quellmodell mit seinem ursprünglichen `clay_floor_001`;
-2. dasselbe Quellmodell mit H0/K1 Golden Material;
-3. dasselbe Modell mit dem R2C/K2 Materialweg;
-4. falls es eine eigenständige Texturdatei gibt, diese als unveränderte Quelle und als kontrollierte Clay-Variante.
+Diese Dateien sind klein genug zum direkten Test, müssen aber nicht in den Handoff kopiert werden. Lade sie anhand der festen GitHub-URLs.
 
-Gleiche Kamera, Licht, Maßstab und Oberfläche. Entscheide keine Textur allein nach Dateiname oder Polygonzahl. Das Bildurteil bleibt Georgs Gate.
+Vergleiche am selben echten KayKit-Quellmodell, derselben Kamera, demselben Maßstab und Licht:
 
+1. unverändertes R2C-Quellmodell samt ursprünglichem Modellmaterial;
+2. H0/K1-Golden-Material;
+3. R2C/K2-Materialweg;
+4. den registrierten clay_floor_001-Textursatz als eigene Alternative;
+5. falls R2C sein Material aus genau diesem Textursatz erzeugt: diese Provenienz anhand des Modell-/Material-URIs belegen, nicht vermuten.
+
+Zeige die Map-Kanäle getrennt und den zusammengesetzten Look. Ältere Terrain-Messungen zu clay_floor_001 deuteten auf wenig Relief-Detail hin; behandle das nur als Hinweis aus einem anderen Einsatz, nicht als vorweggenommenes Urteil über die R2C-Inseloberfläche. Der Textursatz ist ein expliziter Vergleichskandidat, kein bereits freigegebener Golden-Look. Georg entscheidet nach den direkten Bildern.
+    
 ## Arbeitsfolge
 
 ### Schritt 1 · Quellen verifizieren, noch nichts gestalten
