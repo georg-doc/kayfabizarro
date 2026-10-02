@@ -266,5 +266,16 @@
     "stageMirrorHead": "4a311c20f220d81b43a3a396dedf6a18e6cf1d49",
     "publicVerified": false,
     "cleanup02Review": "data/cleanup02-review.v0.json"
+  },
+  "sourceAnchorPlacement": {
+    "status": "SOURCE_IMPLEMENTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "implementationHead": "9547a2071d40dac003bb8f9a1625dc34d29705ab",
+    "data": "tools/KFB-ToolBox/eye-rig-batch/data/cleanup02-anchors.v0.json",
+    "exactPathMatches": 19,
+    "autoEligible": 15,
+    "focusedChecks": "24/24 PASS",
+    "stageMirrorHead": "ed327cbc38ee6ed7e3312619d91374fd8ffa62b5",
+    "publicVerified": false,
+    "humanGate": "Clown: Use Cleanup02 source anchors, then verify centre + inset"
   }
 }
