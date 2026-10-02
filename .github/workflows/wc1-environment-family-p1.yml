@@ -22,12 +22,20 @@ jobs:
         with:
           node-version: '22'
       - name: Static QA syntax
-        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/environment-family-p1.mjs
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/environment-family-p1.mjs
       - name: Install Playwright
         run: |
           npm install --no-save playwright@1.48.2
           npx playwright install --with-deps chromium
-      - name: Direct-file source isolation
+      - name: Start internal static server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-env-p1-http.log 2>&1 &
+          sleep 2
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1-source-isolation.html >/dev/null
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs >/dev/null
+      - name: Modular source isolation
         run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/environment-family-p1.mjs
       - uses: actions/upload-artifact@v4
         if: always()
