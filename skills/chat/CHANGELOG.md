@@ -8,6 +8,16 @@
 
 ## 2026-09-27 · Continuous crash-safe GitHub checkpoints + WB-ZONE crop parity PASS
 
+## ToolBox / Animation Production-06 rebrief · 2026-09-29
+
+- Added `workflows/TOOLBOX_ANIMATION_PRODUCTION_06_2026-09-29/`.
+- Supersedes the prior all-at-once A–E execution shape while preserving its useful source research.
+- Production-05 is protected; new Claude work starts as Production-06.
+- Current gate is G1 only: canonical 345-clip catalog, seven locomotion-set views and reusable state player.
+- G2 editor, G3 Clay Stage/Skydome/Grounding and G4 Choreography/VFX are sequential HOLD gates.
+- Exact source refs are split correctly across Motion/Choreo, H0/K2/T3/Skydome and T4.
+- Source preflight: 16/16 Intake-05 GLB paths exist; 5/5 Clay/Skydome donor paths resolve. No runtime/Stage/Live change.
+
 ### WORKFLOW HARDENING
 - Georg explicitly requires authorized Web/GitHub production to persist **throughout the slice**, not only at final closure, because chat timeouts must not strand the latest production truth in prose.
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` now has a continuous checkpoint rule.
