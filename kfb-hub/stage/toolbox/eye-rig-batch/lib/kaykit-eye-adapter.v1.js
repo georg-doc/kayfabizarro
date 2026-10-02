@@ -8,6 +8,69 @@ function clone(v) { return JSON.parse(JSON.stringify(v)); }
 function colorHex(THREE, value) {
   try { return '#' + new THREE.Color(value).getHexString(); } catch { return null; }
 }
+const finite = (v) => Number.isFinite(+v);
+
+export function deriveSourceAnchorSeed({ THREE, figure, faceHost, anchors } = {}) {
+  const body=faceHost?.box;
+  if(!THREE||!figure||!body||!anchors?.l?.pos||!anchors?.r?.pos) return {status:'UNSUPPORTED',reason:'source anchors / FaceHost missing'};
+  figure.updateMatrixWorld(true); faceHost.inner?.updateMatrixWorld?.(true); body.updateMatrixWorld(true);
+  if(!body.geometry.boundingBox) body.geometry.computeBoundingBox();
+  const size=body.geometry.boundingBox.getSize(new THREE.Vector3());
+  const U=size.y/2;
+  if(!(U>1e-6)) return {status:'UNSUPPORTED',reason:'FaceHost unit invalid'};
+
+  const rootToBody=(pos)=>{
+    const p=new THREE.Vector3(...pos);
+    figure.localToWorld(p);
+    return body.worldToLocal(p);
+  };
+  const radiusToBody=(a)=>{
+    if(!finite(a?.r)) return null;
+    const p0=new THREE.Vector3(...a.pos), p1=new THREE.Vector3(a.pos[0]+(+a.r),a.pos[1],a.pos[2]);
+    figure.localToWorld(p0); figure.localToWorld(p1);
+    body.worldToLocal(p0); body.worldToLocal(p1);
+    return p0.distanceTo(p1);
+  };
+  const L=rootToBody(anchors.l.pos), R=rootToBody(anchors.r.pos);
+  const lr=radiusToBody(anchors.l), rr=radiusToBody(anchors.r);
+  if(!(lr>0)||!(rr>0)) return {status:'UNSUPPORTED',reason:'source eye radius invalid'};
+
+  const dx=(Math.abs(L.x)+Math.abs(R.x))/(2*U);
+  const dy=(L.y+R.y)/(2*U);
+  const ring=(lr+rr)/(2*U);
+  if(![dx,dy,ring].every(finite)||!(ring>1e-6)) return {status:'UNSUPPORTED',reason:'derived anchor invalid'};
+
+  const ray=new THREE.Raycaster(); ray.layers.enableAll();
+  const fitAt=(x,y)=>{
+    const oW=body.localToWorld(new THREE.Vector3(x,y,U*3.5));
+    const dW=new THREE.Vector3(0,0,-1).transformDirection(body.matrixWorld).normalize();
+    ray.set(oW,dW);
+    const hit=ray.intersectObject(body,false)[0];
+    return hit?body.worldToLocal(hit.point.clone()).z:null;
+  };
+  const zL=fitAt(L.x,L.y), zR=fitAt(R.x,R.y);
+  if(!finite(zL)||!finite(zR)) return {status:'UNSUPPORTED',reason:'source eye xy falls outside FaceHost surface'};
+  const eyeR=U*ring;
+  const inset=((((zL-L.z)+(zR-R.z))/2)/eyeR-0.24)/1.15;
+  if(!finite(inset)) return {status:'UNSUPPORTED',reason:'derived inset invalid'};
+
+  const round=(v)=>+v.toFixed(6);
+  return {
+    status:'OK',
+    source:'cleanup02-root-eye-anchors',
+    anchor:{dx:round(dx),dy:round(dy),ring:round(ring)},
+    eye:{inset:round(inset)},
+    faceHostUnit:round(U),
+    targets:{left:[L.x,L.y,L.z].map(round),right:[R.x,R.y,R.z].map(round)},
+    surfaceZ:[round(zL),round(zR)],
+    sourceRadius:[round(lr),round(rr)],
+    asymmetry:{
+      x:round(Math.abs(Math.abs(L.x)-Math.abs(R.x))/U),
+      y:round(Math.abs(L.y-R.y)/U),
+      z:round(Math.abs(L.z-R.z)/U)
+    }
+  };
+}
 
 export async function mountKayKitEyes({
   THREE,

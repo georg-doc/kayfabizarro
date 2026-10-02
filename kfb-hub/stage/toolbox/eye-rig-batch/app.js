@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { mountKayKitEyes } from './lib/kaykit-eye-adapter.v1.js';
+import { mountKayKitEyes, deriveSourceAnchorSeed } from './lib/kaykit-eye-adapter.v1.js';
 import { prepareMediumActorCleanup } from './lib/medium-source-eye-cleanup.v1.js';
 import { sampleActorFaceColor } from './lib/face-color-sampler.v1.js';
 
@@ -32,6 +32,7 @@ const CLASS_CONFIG = {
 };
 const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
 const CLEANUP02_REVIEW_URL = './data/cleanup02-review.v0.json';
+const CLEANUP02_ANCHORS_URL = './data/cleanup02-anchors.v0.json';
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
 function classConfig(rigClass=state.rigClass){ return CLASS_CONFIG[rigClass] || CLASS_CONFIG.Rig_Medium; }
 const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0';
@@ -46,7 +47,7 @@ const state = {
   profile:null, profiles:{}, approvedProfiles:{}, pendingImport:null,
   currentActor:null, currentActorId:null, currentActorByClass:{}, rosterFilter:'all', switching:false, loader:null,
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
-  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null,
+  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null,
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
@@ -69,6 +70,54 @@ function setLoading(show, detail=null) {
   el.setAttribute('aria-hidden',show?'false':'true');
 }
 function cleanup02Issue(actorId){ return actorId ? state.cleanup02Review?.actorIssues?.[actorId] || null : null; }
+function sourceAnchorRecord(actorId){ return actorId ? state.cleanup02Anchors?.actors?.[actorId] || null : null; }
+function expandPlacementRange(key,v){
+  const input=$(`[data-param="${key}"]`); v=+v;
+  if(!input||!Number.isFinite(v))return;
+  const min=+input.min,max=+input.max,span=Math.max(.1,max-min);
+  if(v<min)input.min=String(Math.floor((v-span*.25)*1000)/1000);
+  if(v>max)input.max=String(Math.ceil((v+span*.25)*1000)/1000);
+}
+function currentPlacementCandidate(){
+  if(state.sourceAnchorSeed?.status==='OK') return {
+    kind:'cleanup02-source-anchors',
+    label:'Cleanup02 source anchors',
+    anchor:state.sourceAnchorSeed.anchor,
+    inset:state.sourceAnchorSeed.eye?.inset,
+    evidence:state.sourceAnchorSeed
+  };
+  const m=state.cleanup?.report?.sourceMeasuredSeed?.anchorCandidate;
+  if(m) return {kind:'source-measured',label:'Measured source geometry',anchor:m,inset:null,evidence:state.cleanup.report.sourceMeasuredSeed};
+  return null;
+}
+function applyPlacementCandidate(candidate,{auto=false,syncUi=true}={}){
+  if(!candidate||!state.profile?.eye||!state.eyes)return false;
+  const a=candidate.anchor||{};
+  const patch={};
+  for(const k of ['dx','dy','ring']) if(Number.isFinite(+a[k])) patch[k]=+a[k];
+  state.profile.eye.anchor={...state.profile.eye.anchor,...patch};
+  if(Number.isFinite(+candidate.inset)) state.profile.eye.inset=+candidate.inset;
+  state.profile.inheritance={...(state.profile.inheritance||{}),placementSource:candidate.kind,placementAutoApplied:!!auto};
+  state.profile.evidence={...(state.profile.evidence||{}),sourcePlacement:clone(candidate.evidence||candidate)};
+  state.profile.status='AUTO_CANDIDATE';
+  if(!auto)state.profile.reviewState='ADJUSTED';
+  state.eyes.setAnchor(patch);
+  if(Number.isFinite(+candidate.inset))state.eyes.setEye({inset:+candidate.inset});
+  state.profiles[state.profile.actorId]=clone(state.profile);
+  if(syncUi){bindUiFromProfile();save();renderRoster();renderReport();refreshPlacementSourceUi();}
+  log(`${candidate.label} ${auto?'auto-applied':'applied'} · dx ${value(patch.dx)} · dy ${value(patch.dy)} · ring ${value(patch.ring)}${Number.isFinite(+candidate.inset)?` · inset ${value(candidate.inset)}`:''}`);
+  return true;
+}
+function refreshPlacementSourceUi(){
+  const btn=$('#useMeasuredBtn'),hint=$('#measuredSeedHint'); if(!btn||!hint)return;
+  const c=currentPlacementCandidate();
+  if(!c){btn.disabled=true;btn.textContent='Use source-eye baseline';hint.textContent='No verified per-actor source-eye placement available for this actor.';return;}
+  for(const k of ['dx','dy','ring'])expandPlacementRange(k,c.anchor?.[k]);
+  if(Number.isFinite(+c.inset))expandPlacementRange('inset',c.inset);
+  btn.disabled=false;
+  btn.textContent=c.kind==='cleanup02-source-anchors'?'Use Cleanup02 source anchors':'Use measured source baseline';
+  hint.textContent=`${c.label} · dx ${value(c.anchor?.dx)} · dy ${value(c.anchor?.dy)} · ring ${value(c.anchor?.ring)}${Number.isFinite(+c.inset)?` · inset ${value(c.inset)}`:''} · current approved/manual profile is never overwritten automatically`;
+}
 function renderCleanup02Issue() {
   const badge=$('#cleanup02Badge'), note=$('#cleanup02Issue'), summary=$('#cleanup02Summary');
   if(!badge||!note||!summary)return;
@@ -293,11 +342,11 @@ function updateClassUi() {
   const hint=$('#classStatusHint');
   if(hint) hint.textContent=state.rigClass==='Rig_Large'
     ? (hasAcceptedClassDefault('Rig_Large') ? 'Large default set from Monstrosity · review the other Large actors' : 'No Large default yet · tune Monstrosity, then Set as Large default')
-    : 'Medium default set · review and save character overrides';
+    : 'Medium style default set · per-actor source placement is used when available';
   const seedHint=$('#mediumSeedHint');
   if(seedHint) seedHint.textContent=state.rigClass==='Rig_Large'
     ? (hasAcceptedClassDefault('Rig_Large') ? 'Rig_Large default active · source measurement remains optional' : 'Large calibration start only · tune Monstrosity before setting the class default')
-    : 'Rig_Medium authoring default active · source measurement remains suggestion only';
+    : 'Rig_Medium style default active · Cleanup02 placement anchors override position for fresh matched actors';
   $$('[data-rig-class]').forEach((b)=>b.classList.toggle('active',b.dataset.rigClass===state.rigClass));
   const promote=$('#promoteClassDefaultBtn');
   if(promote){
@@ -381,6 +430,7 @@ function bindUiFromProfile() {
     ovalW:oval.w, ovalH:oval.h, ovalD:oval.d, ovalTilt:oval.tilt,
     wander:state.profile.life.wander, tremor:state.profile.life.tremor, a:state.profile.kinetics.a||0, c:state.profile.kinetics.c||0, j:state.profile.kinetics.j||0 };
   for (const [k,v] of Object.entries(values)) {
+    if(['dx','dy','ring','inset'].includes(k)) expandPlacementRange(k,v);
     const input = $(`[data-param="${k}"]`); if (input) input.value = v;
     const out = $(`[data-out="${k}"]`); if (out) out.value = value(v);
   }
@@ -394,6 +444,7 @@ function bindUiFromProfile() {
   setTrackingMode(e.trackingMode || 'life', false);
   updateBatchUi();
   setReviewStatus(state.profile.status || 'AUTO_CANDIDATE');
+  refreshPlacementSourceUi();
 }
 
 function applyProfileToRig(profile) {
@@ -459,7 +510,10 @@ function wireProfileIo() {
     const actor=state.currentActor;if(!actor)return;
     state.profile=applyAuthoringDefaultToProfile(makeActorProfile(actor),{markSession:false});
     state.profile.reviewState='UNREVIEWED';state.profiles[actor.id]=clone(state.profile);
-    applyProfileToRig(state.profile);save();renderRoster();log(`reset ${actor.label} to ${state.rigClass} class start`);
+    applyProfileToRig(state.profile);
+    const rec=sourceAnchorRecord(actor.id), c=currentPlacementCandidate();
+    if(rec?.autoApply&&c?.kind==='cleanup02-source-anchors') applyPlacementCandidate(c,{auto:true,syncUi:true});
+    save();renderRoster();log(`reset ${actor.label} to ${rec?.autoApply?'source-anchor':'class'} start`);
   };
   $('#exportBtn').onclick=exportCharacter;
   $('#exportBatchBtn').onclick=exportBatch;
@@ -670,7 +724,7 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.currentAction?.stop?.(); state.currentAction=null;
     state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
     if(state.figure?.parent) state.figure.parent.remove(state.figure);
-    state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null;
+    state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null; state.sourceAnchorSeed=null;
     state.currentActor=actor; state.currentActorId=actor.id; state.currentActorByClass[state.rigClass]=actor.id; state.profile=ensureProfile(actor);
     state.sourceReady=state.cleanupReady=state.hostReady=state.eyeReady=false;
     gate('#gateSource','pending');gate('#gateCleanup','pending');gate('#gateHost','pending');gate('#gateEye','pending');
@@ -690,6 +744,15 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.mixer=new THREE.AnimationMixer(figure);
     const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:window.__EYE_RIG_CONTRACT,camera:window.__EYE_RIG_BATCH.camera,log});
     state.eyes=eyes;
+    const anchorRec=sourceAnchorRecord(actor.id);
+    if(anchorRec?.anchors){
+      state.sourceAnchorSeed=deriveSourceAnchorSeed({THREE,figure,faceHost:eyes.faceHost,anchors:anchorRec.anchors});
+      state.sourceAnchorSeed={...state.sourceAnchorSeed,actorId:actor.id,cleanupId:anchorRec.cleanupId,autoApply:!!anchorRec.autoApply};
+      state.profile.evidence={...(state.profile.evidence||{}),cleanup02SourceAnchorSeed:clone(state.sourceAnchorSeed)};
+      if(state.sourceAnchorSeed.status==='OK'&&anchorRec.autoApply&&state.profile.reviewState==='UNREVIEWED'){
+        applyPlacementCandidate({kind:'cleanup02-source-anchors',label:'Cleanup02 source anchors',anchor:state.sourceAnchorSeed.anchor,inset:state.sourceAnchorSeed.eye?.inset,evidence:state.sourceAnchorSeed},{auto:true,syncUi:false});
+      }
+    }
     if(needsAutoFaceColor(state.profile)){
       const faceColor=sampleActorFaceColor({
         THREE,figure,faceHost:eyes.faceHost,anchor:state.profile.eye?.anchor,
@@ -779,29 +842,15 @@ function wireRuntimeControls(camera,controls,renderer) {
     else if(['a','c','j'].includes(k)){state.profile.kinetics[k]=v; state.eyes.setKinetics({[k]:v});}
     state.profile.status='AUTO_CANDIDATE'; state.profile.reviewState='ADJUSTED'; state.profiles[state.profile.actorId]=clone(state.profile); save(); renderRoster();
   });
-  const measured=state.cleanup?.report?.sourceMeasuredSeed?.anchorCandidate;
-  const measuredBtn=$('#useMeasuredBtn'), measuredHint=$('#measuredSeedHint');
-  if(measuredBtn&&measuredHint&&measured){
-    for(const k of ['dx','dy','ring']){
-      const input=$(`[data-param="${k}"]`), v=+measured[k];
-      if(input&&Number.isFinite(v)){ if(v<+input.min)input.min=String(v); if(v>+input.max)input.max=String(v); }
-    }
-    measuredHint.textContent=`Measured source suggestion · dx ${value(measured.dx)} · dy ${value(measured.dy)} · ring ${value(measured.ring)} · never auto-applied`;
-    measuredBtn.disabled=false;
-    measuredBtn.onclick=()=>{
-      state.profile.eye.anchor={...state.profile.eye.anchor,dx:measured.dx,dy:measured.dy,ring:measured.ring};
-      state.profile.status='AUTO_CANDIDATE';
-      state.eyes.setAnchor({dx:measured.dx,dy:measured.dy,ring:measured.ring});
-      bindUiFromProfile(); save(); renderReport();
-      log(`source-measured suggestion applied explicitly · dx ${measured.dx} · dy ${measured.dy} · ring ${measured.ring}`);
-    };
-  }
+  const measuredBtn=$('#useMeasuredBtn');
+  if(measuredBtn) measuredBtn.onclick=()=>{ const c=currentPlacementCandidate(); if(c)applyPlacementCandidate(c,{auto:false,syncUi:true}); };
+  refreshPlacementSourceUi();
   $('#captureBtn').onclick=()=>{ renderer.render(window.__EYE_RIG_BATCH.scene,camera); const a=document.createElement('a'); a.href=renderer.domElement.toDataURL('image/png'); a.download=`${state.currentActorId||'actor'}-${state.currentView}-${state.currentMotion}.png`; a.click(); };
   $('#qaCaptureBtn').onclick=()=>captureQaContactSheet(renderer,camera,controls);
 }
 
 async function boot() {
-  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review]=await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review,cleanup02Anchors]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
@@ -809,13 +858,15 @@ async function boot() {
     fetch(CLASS_CONFIG.Rig_Large.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`large catalog ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.reviewedUrl).then((r)=>{if(!r.ok)throw new Error(`large reviewed ${r.status}`);return r.json();}),
     fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();}),
-    fetch(CLEANUP02_REVIEW_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 review ${r.status}`);return r.json();})
+    fetch(CLEANUP02_REVIEW_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 review ${r.status}`);return r.json();}),
+    fetch(CLEANUP02_ANCHORS_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 anchors ${r.status}`);return r.json();})
   ]);
   state.seed=seed;
   state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed};
   state.catalogs={Rig_Medium:mediumCatalog.actors||[],Rig_Large:largeCatalog.actors||[]};
   window.__EYE_RIG_CONTRACT=contract;
   state.cleanup02Review=cleanup02Review;
+  state.cleanup02Anchors=cleanup02Anchors;
 
   const saved=readSaved();
   if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
@@ -850,7 +901,7 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
   wireProfileIo();wireRuntimeControls(camera,controls,renderer);wireRoster();
