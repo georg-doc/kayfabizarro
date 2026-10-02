@@ -99,6 +99,14 @@ const displayScale={
   SOFT_GRASS_TUFT:2.4
 };
 
+const materialTextureSlots=[
+  'map','normalMap','roughnessMap','metalnessMap','aoMap','emissiveMap','alphaMap',
+  'bumpMap','displacementMap','lightMap','envMap'
+];
+const displayTextureMaps=Object.values(neutralMats).reduce((sum,m)=>
+  sum+materialTextureSlots.reduce((n,k)=>n+(m[k]?.isTexture?1:0),0),0
+);
+
 const entries=p2GeometrySet().map(([name,geo],i)=>{
   const family=name.includes('LOG')?'log':name.includes('STUMP')?'stump':name.includes('MUSHROOM')?'mushroom':'grass';
 
@@ -163,7 +171,8 @@ setTimeout(()=>{
     stats,
     materialDecision:false,
     displayMaterial:'neutral-only',
-    textureCountExpected:0,
+    displayTextureMaps,
+    rendererTextureCountIncludesShadowMaps:true,
     worldIntegrated:false,
     buildingImplemented:false
   };
