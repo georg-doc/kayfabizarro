@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>probe</title></head>
+<body style="font:13px ui-monospace,monospace;background:#111;color:#eee;padding:16px;white-space:pre-wrap;">
+<div id="out">probing…</div>
+<script type="module">
+const PIN='2ff8b350beefe02912bbff6eeeead3882e583d08';
+const RAW=p=>'https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+PIN+'/'+p.split('/').map(encodeURIComponent).join('/');
+const targets=[
+ ['normalized.json','tools/osm-city-lab/data/dom-zentrum-v0/normalized.json'],
+ ['car_hatchback.gltf','media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_hatchback.gltf'],
+ ['car_hatchback.bin','media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_hatchback.bin'],
+ ['kenney billboard.glb','media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb'],
+ ['kenney camera.glb','media/3D_Assets/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb'],
+ ['media/kfb/index.json','media/kfb/index.json'],
+];
+const out=document.getElementById('out');
+const lines=[];
+for(const [label,p] of targets){
+  const url=RAW(p);
+  try{
+    const r=await fetch(url);
+    let extra='';
+    if(r.ok){
+      const buf=await r.arrayBuffer();
+      extra=' bytes='+buf.byteLength;
+      if(label==='normalized.json'){
+        const j=JSON.parse(new TextDecoder().decode(buf));
+        extra+=' keys='+Object.keys(j).join(',');
+        if(j.buildings)extra+=' buildings='+j.buildings.length+' sample='+JSON.stringify(j.buildings[0]).slice(0,240);
+      }
+      if(label==='media/kfb/index.json'){
+        const j=JSON.parse(new TextDecoder().decode(buf));
+        extra+=' top='+JSON.stringify(Object.keys(j)).slice(0,200);
+      }
+    }
+    lines.push(`${r.ok?'OK ':'FAIL'} ${r.status} ${label}${extra}`);
+  }catch(e){lines.push(`ERR  ${label}  ${e.message}`);}
+  out.textContent=lines.join('\n');
+}
+window.__probe=lines;
+</script>
+</body></html>
