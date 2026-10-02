@@ -1,3 +1,11 @@
+
+## 2026-10-02 · EyeRig follow-ups from Control R2
+
+- **Per-eye visibility** — Survivalist eyepatch is the concrete first use case; allow L/R EyeRig visibility without deleting the underlying eye profile.
+- **Per-eye position / asymmetry** — decide whether L/R placement belongs in Batch EyeRig or should remain a 3D Editor / Studio authoring concern. Do not fork EyeRig owner fields casually.
+- **Studio numeric edit parity** — the Batch workbench now supports click-to-edit numeric readouts; port the same interaction to the separate FrankenStein/Pet Studio UI only in that owner's own slice.
+- **Original-eye cleanup** — Orc Raider and other newly rostered Mystery actors still need later verified NoEyes/Blender cleanup before consumer promotion.
+
 # Batch EyeRig · Deferred Feature Backlog · 2026-09-19
 
 Status: **BACKLOG ONLY · NOT CURRENT SLICE**  
