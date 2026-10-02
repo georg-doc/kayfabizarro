@@ -104,3 +104,18 @@ Mirror the repaired adapter + 52/8 catalogs + 49-character coverage manifest to 
 1. Oval Width/Height while pupil size remains unchanged;
 2. both Paladin model variants;
 3. representative newly added Mystery Medium and Large characters.
+
+## Final addendum · visible King + whole-container inventory
+
+The first coverage pass correctly completed the **49 monthly physical GLBs**, but palette B was initially metadata-only and non-monthly container extras were intentionally outside that count.
+
+This addendum closes those ambiguities without rewriting the 49/49 monthly claim:
+
+- visible workbench actor `paladin-king` uses `Paladin.glb` geometry + exact `paladin_texture_B.png` override;
+- Mummy A + B are added as directly verified Rig_Medium actors;
+- Santa and CharacterTemplate are explicitly classified from generated Registry rigfacts as 41-joint custom `Rig` sources and are not falsely inserted into Medium/Large;
+- full source-container candidate GLB accounting is **53/53 classified**;
+- current catalogs are **55 Medium / 8 Large**;
+- the virtual King palette actor is not counted as an additional physical monthly GLB.
+
+Focused implementation contract: **22/22 PASS** in addition to the independent **7/7 EyeOval behavior PASS**.

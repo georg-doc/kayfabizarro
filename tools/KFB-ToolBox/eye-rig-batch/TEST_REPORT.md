@@ -855,3 +855,46 @@ Georg identifies **palette B as the light/blonde King candidate**. The EyeRig ca
 ### Remaining gate
 
 The 23 added Mystery characters are roster-available for batch authoring. They are not thereby visually approved and do not all have Blender NoEyes/anchor evidence yet.
+
+## 2026-10-02 · FINAL FOCUSED EVIDENCE · KING VISIBLE + FULL CONTAINER CLASSIFICATION
+
+Implementation head tested:
+`491be1e6c05332371a3d671079d8588f6a7b949c`
+
+### Oval / pupil behavior
+Independent synthetic EyeOval behavior proof: **7/7 PASS**.
+
+- root scale remains 1×1×1;
+- sclera follows oval W/H/D;
+- lids follow oval W/H/D;
+- pupil pivot remains 1×1×1;
+- Depth only re-seats the pupil in local Z;
+- mirrored Tilt remains correct;
+- report records `pupil 1×1×1`.
+
+Canonical shared owner and current FrankenStein Studio 16 snapshot are the same blob:
+`9a559f789fb9dd1d7fb45e0c73ae2b246ef40c55`.
+
+### Coverage / King runtime
+Focused contract: **22/22 PASS**.
+
+- Medium catalog = **55/55**, IDs unique, all `Rig_Medium` / 23 joints;
+- Large catalog = **8/8**;
+- monthly physical Mystery coverage remains **49/49 = 41 Medium + 8 Large** with unique physical paths;
+- full Mystery source-container candidate GLBs = **53/53 classified**;
+- supported physical character GLBs = **51** (49 monthly + Mummy A/B);
+- Mummy A/B direct GLB parse = `Rig_Medium`, 23 joints, 0 embedded clips;
+- Santa = custom skin `Rig`, 41 joints, 95 embedded clips → explicit unsupported current Medium/Large workbench;
+- CharacterTemplate = custom/template skin `Rig`, 41 joints, 95 embedded clips → explicit template exclusion;
+- physical Paladin + Paladin Helmet present;
+- both Paladin GLBs reference/embed palette A;
+- palette A and B are both **1024×1024**;
+- `paladin-king` is now a visible authoring actor using exact palette-B texture override;
+- texture override runs before source-eye cleanup / face-color sampling;
+- latest Georg batch resolves **33/33 IDs + 33/33 exact source paths**;
+- static contract includes the new 55/53/King guards.
+
+Palette B:
+`eb45816ada5c84bc91abc0225e3b25f5998accc1`.
+
+No full historical static-suite claim is added here; current acceptance evidence is the explicit focused contract above.
