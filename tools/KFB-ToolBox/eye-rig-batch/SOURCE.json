@@ -370,5 +370,53 @@
     "owner": "Asset Librarian",
     "runtimeChangedInThisSlice": false,
     "nextGate": "KAYKIT_CHARACTER_AVAILABILITY_AUDIT_01"
+  },
+  "latestMediumBatch": {
+    "path": "tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (1).json",
+    "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+    "blob": "0ed0a157389e469ce8b6623bd4542ee49cd31a28",
+    "profiles": 33,
+    "selected": 33,
+    "reviewStates": {
+      "ADJUSTED": 30,
+      "ADJUSTED_APPROVED": 2,
+      "UNREVIEWED": 1
+    },
+    "exactCatalogResolution": "33/33"
+  },
+  "ovalPupilIsolation": {
+    "status": "IMPLEMENTED_SHARED_OWNER_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "sharedCommit": "ed59390ce105e0e47a5ecdcc2b87bc91222f54cb",
+    "sharedBlob": "9a559f789fb9dd1d7fb45e0c73ae2b246ef40c55",
+    "studioSnapshotSameBlob": true,
+    "batchAdapterPinCommit": "0542a9020e8eb7144d62aaff73fe8c64a7b7469a",
+    "behaviorChecks": "7/7 PASS"
+  },
+  "mysteryMonthlyCoverage": {
+    "status": "49_OF_49_CATALOG_COMPLETE_PROFILE_REVIEW_OPEN",
+    "catalogCommit": "f12a063b456cf7105bd3792ddf5b6daa404762a0",
+    "palettePinCommit": "7165a7c0087ceee57d6269ecf2b1fdf3f35c6931",
+    "manifest": "data/mystery-monthly-character-coverage.v1.json",
+    "counts": {
+      "total": 49,
+      "Rig_Medium": 41,
+      "Rig_Large": 8
+    },
+    "batchCatalogs": {
+      "Rig_Medium": 52,
+      "Rig_Large": 8,
+      "total": 60
+    },
+    "paladin": {
+      "models": [
+        "Paladin.glb",
+        "Paladin_with_Helmet.glb"
+      ],
+      "kingCandidatePalette": "B",
+      "paletteBBlob": "eb45816ada5c84bc91abc0225e3b25f5998accc1"
+    },
+    "focusedChecks": "26/26 PASS",
+    "stageMirrorHead": "8627efb436bbba9e1fec09aad7598892f9eab4d1",
+    "publicVerified": false
   }
 }

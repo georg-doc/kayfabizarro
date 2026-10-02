@@ -1,3 +1,14 @@
+## 2026-10-02 · EyeRig · Mystery 49/49 + Oval/Pupil isolation
+
+- Latest Georg batch pinned: `eye-rig-medium.batch (1).json` · blob `0ed0a157…` · 33/33 exact actor/source resolution.
+- Fixed shared EyeOval owner: W/H/D now deform sclera + lids **without scaling pupils**; canonical ToolBox and current FrankenStein Studio snapshot are the same repaired blob `9a559f78…`.
+- EyeOval behavior proof: **7/7 PASS**; focused source/catalog/adapter proof: **26/26 PASS**.
+- Batch catalogs now expose **52 Rig_Medium + 8 Rig_Large** actors.
+- Owned monthly Mystery Series 4–7 coverage is **49/49 physical character GLBs** = 41 Medium + 8 Large.
+- Added both Paladin model variants. Palette B is pinned as Georg's light/blonde **King** candidate; calibration remains geometry-based.
+- Stage mirror: `cloudflare-live@8627efb436bbba9e1fec09aad7598892f9eab4d1`; exact mirror readback PASS, public browser verification remains open.
+- Human gate: Oval pupil isolation + Paladins + representative new Mystery Medium/Large actors.
+
 ## 2026-10-02 · EyeRig Medium +6 Adventurers / KayKit availability follow-up
 
 - EyeRig PR #104 Medium roster expanded **27 → 33** with all six `KayKit_Adventurers_2.0_FREE` characters: Barbarian, Knight, Mage, Ranger, Rogue, Rogue Hooded.

@@ -686,3 +686,139 @@ A complete all-KayKit / all-consumer availability PASS is **not yet claimed**. T
 
 Exactly one next gate:
 **KAYKIT_CHARACTER_AVAILABILITY_AUDIT_01 · Asset Librarian owner** — fix the Mannequin pack-wide filter and produce a cross-surface character coverage matrix before continuing Large/Legacy expansion.
+
+## 2026-10-02 · EYE-RIG-MYSTERY-COVERAGE-OVAL-01 · RETURN
+
+Status: **READY_FOR_HUMAN_REVIEW · SOURCE IMPLEMENTED · STAGE MIRRORED · PUBLIC_VERIFIED OPEN**
+
+### Exact source state
+
+- Repo: `georg-doc/kayfabizarro`
+- Branch: `toolbox/eye-rig-batch-2026-09-18`
+- Draft PR: **#104**
+- Tested source/evidence head before Return: `2b876b25582bd73ce8ce6263b3d40598a9757d56`
+- Latest Georg Medium batch input: `tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (1).json`
+- Batch input pin: `main@2c92dd13cbc379ad3a6028144b8976bb3d6a840d` · blob `0ed0a157389e469ce8b6623bd4542ee49cd31a28`
+
+No merge, auto-merge or Live promotion was performed.
+
+### 1 · Eye shape / oval no longer scales pupils
+
+Shared owner repair:
+`ed59390ce105e0e47a5ecdcc2b87bc91222f54cb`
+
+The previous EyeOval implementation scaled the entire EyeRig eye root, including the pupil pivot.
+
+Now:
+- eye root remains 1×1×1;
+- sclera receives W/H/D;
+- lids receive W/H/D;
+- pupil pivot remains 1×1×1;
+- oval Depth moves the pupil pivot only in local Z to remain on the deformed eye front;
+- mirrored oval Tilt remains on the eye root.
+
+The canonical ToolBox EyeOval module and the current FrankenStein Studio 16 snapshot read back as the same blob:
+`9a559f789fb9dd1d7fb45e0c73ae2b246ef40c55`
+
+Batch adapter pin:
+`0542a9020e8eb7144d62aaff73fe8c64a7b7469a`
+
+Direct synthetic EyeOval behavior: **7/7 PASS**.
+
+### 2 · Mystery monthly character coverage
+
+Inventory source:
+`tools/asset_registry/librarian/_handover/KAYKIT_REFERENCE_ATLAS_2026-09-15/KAYKIT_PACK_COVERAGE_MATRIX.md`
+
+Scope:
+owned monthly Mystery Series 4 + 5 + 6 + current Series 7 physical character GLBs.
+
+Added this slice:
+- **19 Rig_Medium**
+- **4 Rig_Large**
+
+Current EyeRig catalogs:
+- **52 Medium**
+- **8 Large**
+- **60 total Batch actors**
+
+Mystery monthly coverage:
+- **49/49 physical monthly character GLBs**
+- **41 Rig_Medium**
+- **8 Rig_Large**
+
+Coverage manifest:
+`data/mystery-monthly-character-coverage.v1.json`
+
+Non-monthly extras such as Santa, Mummy and CharacterTemplate are not silently counted in the 49/49 monthly claim.
+
+### 3 · Paladin
+
+Both physical model variants are now available:
+- `Paladin.glb`
+- `Paladin_with_Helmet.glb`
+
+Both are direct-inspected `Rig_Medium`, 23 joints.
+
+Both source GLBs embed palette A. Both palette files are pinned:
+- A · `d3e67d9902caa5a75927ad2e0fdcd3e2f162da34`
+- B · `eb45816ada5c84bc91abc0225e3b25f5998accc1`
+
+Per Georg, **palette B is the light/blonde King candidate**. EyeRig tuning remains tied to the model/eye geometry; no duplicate fake skeleton is created solely for the palette.
+
+### 4 · Latest Georg batch preserved
+
+The new 33-profile batch resolves exactly against the expanded Medium catalog:
+- 33/33 actor IDs present;
+- 33/33 source paths exact;
+- 30 ADJUSTED;
+- 2 ADJUSTED_APPROVED: `mannequin-medium`, `adventurer-rogue-hooded`;
+- 1 UNREVIEWED: `gothgirl`.
+
+It remains authoring evidence; it does not auto-approve the newly added Mystery actors.
+
+### Evidence
+
+Focused source/catalog/adapter checks: **26/26 PASS**.  
+Direct EyeOval behavior: **7/7 PASS**.  
+Latest batch identity/source mapping: **33/33 exact**.
+
+The expanded static test contract is persisted at `d685f23d447193d4ea84034aafefb7f4af78f19c`. A complete in-process run of every historical fixture was not completed because Code Mode reached its tool-call ceiling while materializing the full fixture set; that attempt made no repository write.
+
+Evidence doc:
+`docs/MYSTERY_COVERAGE_OVAL_PUPIL_2026-10-02.md`
+
+### Stage
+
+Stage mirror:
+`cloudflare-live@8627efb436bbba9e1fec09aad7598892f9eab4d1`
+
+Exact mirror readback:
+- adapter uses repaired EyeOval pin;
+- Medium = 52;
+- Large = 8;
+- Mystery monthly = 49 / 41 Medium / 8 Large;
+- KFB ToolBox Hub card updated.
+
+Human route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+`PUBLIC_VERIFIED` remains OPEN: GitHub deployment status is currently pending and the current web tooling has not visibly opened the new pages.dev revision.
+
+### Unresolved
+
+- Newly added Mystery actors are roster-available, not visually approved.
+- Most new entries still use provisional runtime source-eye cleanup until later Blender/NoEyes + anchor work.
+- Palette B is pinned for the King Paladin but the EyeRig actor entry does not create a duplicate skin-specific skeleton.
+- Large/Legacy profile review remains a later gate.
+- Existing Asset Librarian Mannequin projection bug remains owned by the separate availability audit.
+
+### Exactly one next gate
+
+**GEORG_EYERIG_MYSTERY_OVAL_VIS_01**
+
+On the direct Stage:
+1. check Oval Width/Height across a large range and confirm pupil size does not change;
+2. inspect Paladin + Paladin Helmet;
+3. sample several newly added Mystery Medium actors and at least Clanker / FrostGolem / 4GTN on Large;
+4. stop for Georg acceptance before any profile promotion, Blender cleanup batch, merge or Live promotion.
