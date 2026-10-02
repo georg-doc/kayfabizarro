@@ -1,0 +1,87 @@
+{
+  "schema": "kfb.hex-blender-handoff/1",
+  "repo": "georg-doc/kayfabizarro",
+  "handoffBaseCommit": "9ff8c9df3aa0230faa8c9b7d9afe10f7cff47b86",
+  "productionControlRequired": false,
+  "hexBrowser": {
+    "status": "PASS_15_OF_15",
+    "localBundle": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/data/HEX_BROWSER_MEASUREMENTS.json",
+    "localTestReport": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/data/HEX_BROWSER_TEST_REPORT.md",
+    "localReturn": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/data/HEX_BROWSER_RETURN.md",
+    "canonicalJoinedSha256": "b16117fb45ae141adce0cc9c6beb0fdf7de24069f79a8845861c766c15ba2b21"
+  },
+  "authoredPacks": {
+    "hexagon": {
+      "extractedRoot": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE/",
+      "archive": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE 2.zip",
+      "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "archiveBlob": "afdc4bf6855c0d4f61c77b6b3a2ea0e9c2f1659d"
+    },
+    "builder": {
+      "extractedRoot": "media/3D_Assets/KayKit Medieval Builder Pack 1.0/",
+      "archive": "media/3D_Assets/KayKit Medieval Builder Pack 1.0.zip",
+      "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "archiveBlob": "7e98c37f22e0fad1a36f5d888caf6f5ad3ab574c"
+    }
+  },
+  "universalMaterialCandidate": {
+    "id": "clay_floor_001",
+    "decision": "CURRENT_VISUAL_PREFERENCE_LIGHTWEIGHT_GLOBAL_CANDIDATE",
+    "files": [
+      {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_diffuse.jpg",
+        "blob": "d889ddd32d38ef9fac55ea802e47da73cbd77deb"
+      },
+      {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_normal.jpg",
+        "blob": "59092c601272f265e7e96cbae3f9d753be47b6a6"
+      },
+      {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_roughness.jpg",
+        "blob": "4d5b3e7634e532111c7608156f4a49b6b18d2ffb"
+      },
+      {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_ao.jpg",
+        "blob": "d9dfd359223a3b8f2a3a6035adbf9cbd37244c01"
+      }
+    ],
+    "negativeControl": "Clay002",
+    "comparator": "Derek RGB"
+  },
+  "proceduralEnvironment": {
+    "ref": "9ff8c9df3aa0230faa8c9b7d9afe10f7cff47b86",
+    "p1Module": {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
+      "blob": "e64ed265882b973235cef04251073840e0231e72"
+    },
+    "p2Module": {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs",
+      "blob": "b036b34b37cac1926550a58fe5bceae0c2478523"
+    },
+    "p2Report": {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/P2_TEST_REPORT.md",
+      "blob": "c98560e4eb72fdd612b63ddb2c91355c88ef51ea"
+    },
+    "p2TransferSpec": {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/P2_PROCEDURAL_TRANSFER_SPEC_2026-10-02.md",
+      "blob": "d6d9b4ab900d8dcaff24414754cd3415a9b2a76b"
+    }
+  },
+  "proceduralBuildings": {
+    "status": "SPEC_NEXT_NOT_IMPLEMENTED",
+    "goldenExtraction": {
+      "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/GOLDEN_DEFORMATION_DONOR_EXTRACTION_2026-10-02.md",
+      "blob": "ad86f8e3ce1c873ea01f55dfe93a58a6c5d3d247"
+    },
+    "router": "tools/KFB-ToolBox/docs/CLAY_BUILDING_FACADE_ROUTER.md",
+    "shadowRouter": "tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md",
+    "fullS5AdapterRef": "georg-doc-patch-2@3232a1070686896833d6b7942fcd631b9fa8cda6"
+  },
+  "ownership": {
+    "world": "existing WorldBuilder owner",
+    "topology": "final Hex browser catalog / existing hex-grid truth",
+    "material": "existing shared WorldBuilder/material path",
+    "movement": "unchanged",
+    "blender": "measurement + preparation + scenelet authoring only"
+  }
+}
