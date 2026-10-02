@@ -119,3 +119,23 @@ Hold the accepted tree/prop geometry fixed and compare:
 Clay002 remains available only as a negative/control state. Do not add instance-aware phase/orientation until a visually preferred material still proves that it needs it.
 
 No tree/prop geometry redesign in this gate.
+
+
+## 2026-10-02 · deformation-lineage correction
+
+Do not derive future procedural buildings from the reduced P0B proof deformation.
+
+Binding routing:
+`USE_WHAT_WORKS_DEFORMATION_ROUTING_2026-10-02.md`
+
+Recovered proven lineage:
+- Elastic Grotesque Clay V2;
+- City Cartoon/Grotesque;
+- LandmarkElastic;
+- LOOK-TORSION architecture semantics;
+- FACADE_RULE v1.
+
+P0B trees/props remain approved as procedural family-generation donors, not as the authoritative building deformer.
+
+Exactly one current next gate is now:
+**GOLDEN DEFORMATION DONOR EXTRACTION** — source-backed donor sheet first; Claude building brief only after that.
