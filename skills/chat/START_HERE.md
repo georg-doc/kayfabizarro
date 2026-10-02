@@ -1409,3 +1409,41 @@ Style grading remains:
 `Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis`.
 
 Do not restart generic prop ideation or write a freehand “wonky house” prompt.
+
+
+## 2026-10-02 · CURRENT WORLDBUILDER FORM/ENVIRONMENT · BUILDING B0 PASS
+
+Canonical recovery:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b0/RECOVERY.md`
+
+Current branch:
+`chatgpt-web/wc1-procedural-building-b0-2026-10-02`
+
+Draft PR:
+#319
+
+B0 result:
+**GOLDEN FAMILY SOURCE ISOLATION PASS**
+
+Binding ordinary-building geometry:
+`Elastic Grotesque Clay V2 @0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+
+Exact Golden controls:
+- `way/371401529` flat
+- `way/371401492` gabled
+- `way/371401475` hipped
+
+Final tested head:
+`86d5512fdf40b5fc9a2f83b2be6ff6666e82f062`
+
+Final run/job:
+`37034478056 / 110929154453`
+
+All three prove V2/B0 body + roof parity and anchored bases. Raw KayKit `building_A` is only a cartoon-DNA side donor, not deformation owner.
+
+Material/Clay remains separate.
+
+Exactly one next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS**
+
+Measure the full pinned 22-building Hürth V2 corpus first; only then derive bounded siblings. No generic “wonky house” prompt and no universal random-building generator.
