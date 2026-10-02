@@ -1,0 +1,123 @@
+{
+  "schema": "kfb.city-furniture.source-proof.v0",
+  "id": "OSM-CITY-FURNITURE-R0-SOURCE",
+  "date": "2026-09-26",
+  "owner": "tools/osm-city-lab presentation",
+  "base": {
+    "repo": "georg-doc/kayfabizarro",
+    "commit": "388e90875a0b28b9241f126f26ba44456419e43d"
+  },
+  "protectedBoundary": [
+    "OSM normalized source geometry",
+    "S2 collision/export geometry",
+    "World/Terrain height ownership",
+    "Race/Free-Roam movement and vehicle physics",
+    "Asset Registry source identity"
+  ],
+  "packs": {
+    "kaykitCityBuilderBits": {
+      "registry": "registry/assets/v1/packs/kaykit-city-builder-bits-1-0-free.json",
+      "packRoot": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE",
+      "registryAssetCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "license": "CC0 · Kay Lousberg",
+      "licenseEvidence": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/License.txt"
+    },
+    "kenneyCityKitRoads": {
+      "registry": "registry/assets/v1/packs/kenney-city-kit-roads.json",
+      "packRoot": "media/3D_Assets/kenney_city-kit-roads",
+      "registryAssetCommit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "license": "CC0 · Kenney",
+      "licenseEvidence": "tools/world_atlas/source/scenes/city-block.js"
+    }
+  },
+  "donors": [
+    {
+      "id": "kk-streetlight",
+      "label": "KayKit · Streetlight",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/streetlight.gltf",
+      "role": "USE_R0",
+      "reason": "characteristic curb lighting; existing World Atlas donor"
+    },
+    {
+      "id": "kk-traffic-a",
+      "label": "KayKit · Trafficlight A",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_A.gltf",
+      "role": "USE_R0",
+      "reason": "short mast signal candidate"
+    },
+    {
+      "id": "kk-traffic-b",
+      "label": "KayKit · Trafficlight B",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_B.gltf",
+      "role": "USE_R0",
+      "reason": "tall mast signal candidate"
+    },
+    {
+      "id": "kk-traffic-c",
+      "label": "KayKit · Trafficlight C",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_C.gltf",
+      "role": "USE_R0",
+      "reason": "cantilever / wide-road signal candidate"
+    },
+    {
+      "id": "kk-bench",
+      "label": "KayKit · Bench",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/bench.gltf",
+      "role": "USE_R0_SPARSE",
+      "reason": "low-cost sidewalk life"
+    },
+    {
+      "id": "kk-hydrant",
+      "label": "KayKit · Fire hydrant",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/firehydrant.gltf",
+      "role": "USE_R0_SPARSE",
+      "reason": "small curb landmark"
+    },
+    {
+      "id": "kk-dumpster",
+      "label": "KayKit · Dumpster",
+      "pack": "kaykitCityBuilderBits",
+      "path": "/media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/dumpster.gltf",
+      "role": "USE_R0_SPARSE",
+      "reason": "service-side urban detail; avoid main junctions"
+    },
+    {
+      "id": "kenney-sign-empty",
+      "label": "Kenney · Empty road sign carrier",
+      "pack": "kenneyCityKitRoads",
+      "path": "/media/3D_Assets/kenney_city-kit-roads/Models/GLB format/road-sign-empty.glb",
+      "role": "FIT_CHECK_R1",
+      "reason": "candidate replacement for generic generated sign pole while preserving OSM text board"
+    },
+    {
+      "id": "kenney-sign-street",
+      "label": "Kenney · Street sign",
+      "pack": "kenneyCityKitRoads",
+      "path": "/media/3D_Assets/kenney_city-kit-roads/Models/GLB format/road-sign-street.glb",
+      "role": "FIT_CHECK_R1",
+      "reason": "existing City Lab documented candidate"
+    },
+    {
+      "id": "kenney-sign-stop",
+      "label": "Kenney · Stop sign",
+      "pack": "kenneyCityKitRoads",
+      "path": "/media/3D_Assets/kenney_city-kit-roads/Models/GLB format/road-sign-stop.glb",
+      "role": "DRIVING_SCHOOL_FUTURE",
+      "reason": "authored teaching scenario; never infer real stop control without source semantics"
+    },
+    {
+      "id": "kenney-sign-warning",
+      "label": "Kenney · Warning sign",
+      "pack": "kenneyCityKitRoads",
+      "path": "/media/3D_Assets/kenney_city-kit-roads/Models/GLB format/road-sign-warning.glb",
+      "role": "DRIVING_SCHOOL_FUTURE",
+      "reason": "authored teaching scenario"
+    }
+  ]
+}
