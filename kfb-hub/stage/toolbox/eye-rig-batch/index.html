@@ -179,12 +179,12 @@
       <details open>
         <summary>Placement</summary>
         <div class="control-grid">
-          <label>Spacing <output data-out="dx"></output><input data-param="dx" type="range" min="0" max="1.5" step="0.005"></label>
-          <label>Height <output data-out="dy"></output><input data-param="dy" type="range" min="-2" max="1.5" step="0.005"></label>
-          <label>Eye size (ring) <output data-out="ring"></output><input data-param="ring" type="range" min="0.02" max="1.2" step="0.005"></label>
-          <label>Inset <output data-out="inset"></output><input data-param="inset" type="range" min="-1.5" max="6" step="0.01"></label>
+          <label>Spacing <output data-out="dx"></output><input data-param="dx" data-expand="true" type="range" min="-0.5" max="1.8" step="0.005"></label>
+          <label>Height <output data-out="dy"></output><input data-param="dy" data-expand="true" type="range" min="-2.5" max="2" step="0.005"></label>
+          <label>Eye size (ring) <output data-out="ring"></output><input data-param="ring" data-expand="true" type="range" min="0.01" max="1.5" step="0.005"></label>
+          <label>Inset <output data-out="inset"></output><input data-param="inset" data-expand="true" type="range" min="-2" max="8" step="0.01"></label>
           <label>Splay <output data-out="splay"></output><input data-param="splay" type="range" min="0" max="1" step="0.01"></label>
-          <label>Lid fit <output data-out="lidFit"></output><input data-param="lidFit" type="range" min="0.5" max="1" step="0.01"></label>
+          <label>Lid fit <output data-out="lidFit"></output><input data-param="lidFit" type="range" min="0" max="1" step="0.01"></label>
         </div>
         <button id="useMeasuredBtn" type="button" class="wide-action quiet" disabled>Use source-eye baseline</button>
         <div id="measuredSeedHint" class="micro-status">Per-actor source-eye placement appears after source / FaceHost analysis.</div>
@@ -195,10 +195,10 @@
       <details open>
         <summary>Eye shape / oval</summary>
         <div class="control-grid">
-          <label>Width <output data-out="ovalW"></output><input data-param="ovalW" type="range" min="0.2" max="3" step="0.01"></label>
-          <label>Height <output data-out="ovalH"></output><input data-param="ovalH" type="range" min="0.2" max="3" step="0.01"></label>
-          <label>Depth <output data-out="ovalD"></output><input data-param="ovalD" type="range" min="0.2" max="3" step="0.01"></label>
-          <label>Inward tilt <output data-out="ovalTilt"></output><input data-param="ovalTilt" type="range" min="-75" max="75" step="0.5"></label>
+          <label>Width <output data-out="ovalW"></output><input data-param="ovalW" data-expand="true" type="range" min="0.1" max="4" step="0.01"></label>
+          <label>Height <output data-out="ovalH"></output><input data-param="ovalH" data-expand="true" type="range" min="0.1" max="4" step="0.01"></label>
+          <label>Depth <output data-out="ovalD"></output><input data-param="ovalD" data-expand="true" type="range" min="0.1" max="4" step="0.01"></label>
+          <label>Inward tilt <output data-out="ovalTilt"></output><input data-param="ovalTilt" data-expand="true" type="range" min="-90" max="90" step="0.5"></label>
         </div>
         <div class="micro-status">Reuses Frankensteining donor <code>eyeoval.v1.js</code>. Top/bottom contour shaping remains backlog.</div>
       </details>
@@ -206,9 +206,9 @@
       <details open>
         <summary>Pupil / gaze</summary>
         <div class="control-grid">
-          <label>Pupil size <output data-out="pupilSize"></output><input data-param="pupilSize" type="range" min="0.1" max="1" step="0.01"></label>
-          <label>Gaze drift <output data-out="track"></output><input data-param="track" type="range" min="0.01" max="0.35" step="0.005"></label>
-          <label>Converge <output data-out="converge"></output><input data-param="converge" type="range" min="-0.5" max="0.5" step="0.01"></label>
+          <label>Pupil size <output data-out="pupilSize"></output><input data-param="pupilSize" type="range" min="0" max="1" step="0.01"></label>
+          <label>Gaze drift <output data-out="track"></output><input data-param="track" data-expand="true" type="range" min="0" max="1.5" step="0.005"></label>
+          <label>Converge <output data-out="converge"></output><input data-param="converge" data-expand="true" type="range" min="-2" max="3" step="0.01"></label>
           <label>Gloss <output data-out="gloss"></output><input data-param="gloss" type="range" min="0" max="1" step="0.01"></label>
         </div>
         <span class="eyebrow mode-label">PUPIL TRACKING</span>
@@ -251,9 +251,9 @@
         <div class="control-grid">
           <label>Wander <output data-out="wander"></output><input data-param="wander" type="range" min="0" max="1" step="0.01"></label>
           <label>Tremor <output data-out="tremor"></output><input data-param="tremor" type="range" min="0" max="1" step="0.01"></label>
-          <label>Accel / brake <output data-out="a"></output><input data-param="a" type="range" min="-1" max="1" step="0.01"></label>
-          <label>Curve <output data-out="c"></output><input data-param="c" type="range" min="-1" max="1" step="0.01"></label>
-          <label>Drop <output data-out="j"></output><input data-param="j" type="range" min="0" max="1" step="0.01"></label>
+          <label>Accel / brake <output data-out="a"></output><input data-param="a" type="range" min="-1.5" max="1.5" step="0.01"></label>
+          <label>Curve <output data-out="c"></output><input data-param="c" type="range" min="-1.5" max="1.5" step="0.01"></label>
+          <label>Drop <output data-out="j"></output><input data-param="j" type="range" min="-1.5" max="1.5" step="0.01"></label>
         </div>
         <label class="switchline block">
           <input id="kineticsToggle" type="checkbox">

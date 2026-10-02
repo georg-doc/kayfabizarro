@@ -43,12 +43,15 @@ async function applyActorTextureOverride(figure,actor){
   if(THREE.SRGBColorSpace) texture.colorSpace=THREE.SRGBColorSpace;
   texture.needsUpdate=true;
   let meshes=0,materials=0;
+  const materialNames=new Set((ref.materialNames||[]).map((x)=>String(x)));
   figure.traverse((node)=>{
     if(!node?.isMesh)return;
     meshes++;
     const mats=Array.isArray(node.material)?node.material:[node.material];
     for(const mat of mats){
-      if(!mat?.map)continue;
+      if(!mat)continue;
+      const named=materialNames.size&&materialNames.has(String(mat.name||''));
+      if(!mat.map&&!named)continue;
       mat.map=texture; mat.needsUpdate=true; materials++;
     }
   });
@@ -92,12 +95,41 @@ function setLoading(show, detail=null) {
 }
 function cleanup02Issue(actorId){ return actorId ? state.cleanup02Review?.actorIssues?.[actorId] || null : null; }
 function sourceAnchorRecord(actorId){ return actorId ? state.cleanup02Anchors?.actors?.[actorId] || null : null; }
-function expandPlacementRange(key,v){
-  const input=$(`[data-param="${key}"]`); v=+v;
-  if(!input||!Number.isFinite(v))return;
-  const min=+input.min,max=+input.max,span=Math.max(.1,max-min);
-  if(v<min)input.min=String(Math.floor((v-span*.25)*1000)/1000);
-  if(v>max)input.max=String(Math.ceil((v+span*.25)*1000)/1000);
+function expandNumericRange(input,v){
+  v=+v;if(!input||!Number.isFinite(v))return;
+  const min=+input.min,max=+input.max,span=Math.max(.1,max-min),pad=Math.max(.01,span*.18);
+  if(v<min)input.min=String(Math.floor((v-pad)*1000)/1000);
+  if(v>max)input.max=String(Math.ceil((v+pad)*1000)/1000);
+}
+function expandPlacementRange(key,v){ expandNumericRange($(`[data-param="${key}"]`),v); }
+function finishInlineNumberEdit(out,{cancel=false}={}){
+  if(!out||out.dataset.editing!=='1')return;
+  const key=out.dataset.out,input=$(`[data-param="${key}"]`),original=out.dataset.original||'';
+  out.dataset.editing='0';out.contentEditable='false';out.classList.remove('editing');
+  if(cancel||!input){out.value=original;return;}
+  const raw=String(out.textContent||'').trim().replace(',','.'),v=Number(raw);
+  if(!Number.isFinite(v)){out.value=original;return;}
+  if(input.dataset.expand==='true')expandNumericRange(input,v);
+  input.value=String(v);
+  input.dispatchEvent(new Event('input',{bubbles:true}));
+}
+function beginInlineNumberEdit(out){
+  if(!out||out.dataset.editing==='1')return;
+  out.dataset.editing='1';out.dataset.original=String(out.value||out.textContent||'');
+  out.contentEditable='true';out.classList.add('editing');out.focus();
+  const sel=window.getSelection?.(),range=document.createRange?.();
+  if(sel&&range){range.selectNodeContents(out);sel.removeAllRanges();sel.addRange(range);}
+}
+function initInlineNumberEditors(){
+  $('output[data-out]').forEach((out)=>{
+    out.tabIndex=0;out.title='Click value to type directly';
+    out.onclick=()=>beginInlineNumberEdit(out);
+    out.onkeydown=(ev)=>{
+      if(ev.key==='Enter'){ev.preventDefault();finishInlineNumberEdit(out);}
+      else if(ev.key==='Escape'){ev.preventDefault();finishInlineNumberEdit(out,{cancel:true});out.blur();}
+    };
+    out.onblur=()=>finishInlineNumberEdit(out);
+  });
 }
 function currentPlacementCandidate(){
   if(state.sourceAnchorSeed?.status==='OK') return {
@@ -451,7 +483,7 @@ function bindUiFromProfile() {
     ovalW:oval.w, ovalH:oval.h, ovalD:oval.d, ovalTilt:oval.tilt,
     wander:state.profile.life.wander, tremor:state.profile.life.tremor, a:state.profile.kinetics.a||0, c:state.profile.kinetics.c||0, j:state.profile.kinetics.j||0 };
   for (const [k,v] of Object.entries(values)) {
-    if(['dx','dy','ring','inset'].includes(k)) expandPlacementRange(k,v);
+    const range=$(`[data-param="${k}"]`); if(range?.dataset.expand==='true') expandNumericRange(range,v);
     const input = $(`[data-param="${k}"]`); if (input) input.value = v;
     const out = $(`[data-out="${k}"]`); if (out) out.value = value(v);
   }
@@ -876,6 +908,7 @@ function wireRuntimeControls(camera,controls,renderer) {
     else if(['a','c','j'].includes(k)){state.profile.kinetics[k]=v; state.eyes.setKinetics({[k]:v});}
     state.profile.status='AUTO_CANDIDATE'; state.profile.reviewState='ADJUSTED'; state.profiles[state.profile.actorId]=clone(state.profile); save(); renderRoster();
   });
+  initInlineNumberEditors();
   const measuredBtn=$('#useMeasuredBtn');
   if(measuredBtn) measuredBtn.onclick=()=>{ const c=currentPlacementCandidate(); if(c)applyPlacementCandidate(c,{auto:false,syncUi:true}); };
   refreshPlacementSourceUi();
