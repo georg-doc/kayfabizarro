@@ -25,6 +25,22 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-10-02 · KayKit Snow + Festive asset intake
+
+Current bounded asset-ingest lane: **ASSET-INTAKE-SNOW-FESTIVE-01** under the existing Asset Registry / Asset Librarian owner.
+
+- source main: `7600fa9e29d396eaa9c5a11532e63cdad7689e75`;
+- generated Registry owner head: `bot/asset-registry-update@b211fde4a558dcfa8b1f745e1dbf4af0221b49f1`;
+- review branch: `chatgpt-web/kaykit-snow-festive-intake-2026-10-02`;
+- Recovery/Return: `tools/asset_registry/_handover/KAYKIT_SNOW_FESTIVE_INTAKE_2026-10-02/RETURN.md`;
+- Snow pack: **79 assets**, 57 embedded GLB + 21 FBX; explicit source `License.txt` says CC0;
+- Festive Mini-Pack: **48 assets**, including embedded `character_santa.gltf`; no license file is present in the uploaded pack root, so downstream license remains unresolved;
+- source-commit Registry run `37055714664` / job `110999795387`: **46/46 tests PASS** plus build/validate, rigfacts and Librarian handoff smoke PASS.
+
+Do not build a second KayKit catalog. `registry/assets/v1` remains the generated discovery owner; Asset Librarian remains the read-only consumer. The historical `media/3D_Assets/CATALOG/` is legacy reference only. R2D continuous-island work remains separate: Snow hex assets may be future donors, but this intake does not reinstate visible hex terrain or alter any runtime owner.
+
+Exactly one current intake gate: **REGISTRY-REVIEW-01** — Asset Librarian PR browser regression, then review the complete generated Registry refresh. No Stage is required for the technical intake itself.
+
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
 Binding policy:
