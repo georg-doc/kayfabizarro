@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.osm-city.travel-receiver-window-proposals.v0",
+  "status": "PROPOSAL_EVIDENCE_NOT_RUNTIME_ACCEPTANCE",
+  "date": "2026-09-18",
+  "assumptions": {
+    "physicsMetreMapping": "PROPOSAL: 1 City metre ~= 1 local physics unit for first receiver calibration",
+    "travelUnitsPerPhysicsUnit": 0.01,
+    "travelGlobeRadius": 5,
+    "source": "current FR-S04 bounded local Travel contact experiment; must be re-measured in receiver",
+    "maxUpDeltaProposalDeg": 3
+  },
+  "windows": [
+    {
+      "cityId": "ehrenfeld-v0",
+      "kind": "ENTER_EXIT_MICRO",
+      "sourceAnchors": {
+        "foot": {
+          "x": -26.919,
+          "y": 0,
+          "z": -54.754
+        },
+        "park": {
+          "x": -22.201,
+          "y": 0,
+          "z": -47.326
+        }
+      },
+      "footToParkM": 8.799699,
+      "proposedCenterM": {
+        "x": -24.56,
+        "y": 0,
+        "z": -51.04
+      },
+      "safetyMarginM": 6,
+      "proposedRadiusM": 10.39985,
+      "provisionalTravelRadius": 0.1039985,
+      "estimatedUpDeltaDeg": 1.191735,
+      "within3DegProposal": true,
+      "includes": [
+        "walk approach",
+        "parked vehicle",
+        "enter/exit transaction"
+      ],
+      "excludes": [
+        "current global intersection anchor",
+        "current global road-terrain anchor",
+        "full city"
+      ]
+    },
+    {
+      "cityId": "huerth-v0",
+      "kind": "ENTER_EXIT_MICRO",
+      "sourceAnchors": {
+        "foot": {
+          "x": 46.098,
+          "y": 0,
+          "z": 1.848
+        },
+        "park": {
+          "x": 53.47,
+          "y": 0,
+          "z": -6.046
+        }
+      },
+      "footToParkM": 10.801001,
+      "proposedCenterM": {
+        "x": 49.784,
+        "y": 0,
+        "z": -2.099
+      },
+      "safetyMarginM": 6,
+      "proposedRadiusM": 11.4005,
+      "provisionalTravelRadius": 0.114005,
+      "estimatedUpDeltaDeg": 1.306401,
+      "within3DegProposal": true,
+      "includes": [
+        "walk approach",
+        "parked vehicle",
+        "enter/exit transaction"
+      ],
+      "excludes": [
+        "current global intersection anchor",
+        "current global road-terrain anchor",
+        "full city"
+      ]
+    }
+  ],
+  "rules": [
+    "These numbers only size the first receiver window; they do not validate vehicle contact or spherical mapping.",
+    "Receiver must measure actual local-up/contact error on baked Travel geometry before promotion.",
+    "Do not silently enlarge the window to include distant city anchors.",
+    "Use the same Race Slice-04 solver; no new movement engine."
+  ]
+}
