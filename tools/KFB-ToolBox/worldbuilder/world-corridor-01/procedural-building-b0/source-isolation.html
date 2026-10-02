@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Building B0 · Golden Source Isolation</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;height:100%;overflow:hidden;background:#181711;color:#f1ead9;font:12px/1.42 ui-monospace,SFMono-Regular,Menlo,monospace}
+canvas{display:block;width:100%;height:100%}
+.panel{position:fixed;z-index:3;background:#201e17e8;border:1px solid #645c4c;border-radius:10px;box-shadow:0 8px 28px #0007}
+#info{left:12px;top:12px;max-width:720px;padding:10px 12px}
+#meta{right:12px;top:12px;max-width:420px;padding:10px 12px}
+#controls{left:12px;right:12px;bottom:12px;padding:9px 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+select{background:#302c22;color:#f1ead9;border:1px solid #766b56;border-radius:7px;padding:7px 9px}
+.legend{position:fixed;left:0;right:0;bottom:58px;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);pointer-events:none}
+.legend div{text-align:center;font:700 11px system-ui,sans-serif;text-shadow:0 1px 3px #000;padding:5px}
+.ok{color:#8be0ad}.warn{color:#f3c66a}.muted{color:#a59a83}
+code{font-size:10px}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="info" class="panel">
+  <b>PROCEDURAL BUILDING B0 · GOLDEN SOURCE ISOLATION</b><br>
+  Same real Hürth source → Clean Source → accepted Elastic V2 → B0 no-regression wrapper.<br>
+  Raw KayKit <code>building_A</code> is shown separately as cartoon-proportion/source-identity donor only.<br>
+  Neutral Hürth display materials · no Clay/material decision · no WC1 integration.
+</div>
+<div id="meta" class="panel"><span class="warn">loading…</span></div>
+<div class="legend">
+  <div>CLEAN SOURCE</div>
+  <div>ACCEPTED V2</div>
+  <div>B0 PARITY WRAPPER</div>
+  <div>KAYKIT building_A · RAW SIDE DONOR</div>
+</div>
+<div id="controls" class="panel">
+  <span>Golden control</span>
+  <select id="pick"></select>
+  <span id="status" class="muted">booting…</span>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {
+  B0_SOURCE,
+  B0_GOLDENS,
+  loadB0Source,
+  buildCleanSource,
+  buildAcceptedV2,
+  buildB0Candidate,
+  geometryFacts,
+  parityFacts
+} from './building-family-b0.mjs';
+
+const $=s=>document.querySelector(s);
+const pick=$('#pick'),status=$('#status'),meta=$('#meta');
+
+for(const [i,g] of B0_GOLDENS.entries()){
+  const o=document.createElement('option');
+  o.value=i;
+  o.textContent=g.role+' · '+g.id.replace('way/','')+' · '+g.heightM.toFixed(2)+'m · '+g.roof;
+  pick.appendChild(o);
+}
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#29271f');
+scene.fog=new THREE.Fog('#29271f',28,46);
+
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.05,100);
+camera.position.set(0,7.4,26);
+camera.lookAt(0,2.5,0);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.03;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+document.body.prepend(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight('#fff6df','#58564c',2.25));
+const sun=new THREE.DirectionalLight('#ffe4bf',3.1);
+sun.position.set(8,12,9);
+sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024);
+sun.shadow.camera.left=-22;sun.shadow.camera.right=22;sun.shadow.camera.top=14;sun.shadow.camera.bottom=-10;
+scene.add(sun);
+
+const ground=new THREE.Mesh(
+  new THREE.PlaneGeometry(34,11),
+  new THREE.MeshStandardMaterial({color:'#696253',roughness:.98})
+);
+ground.rotation.x=-Math.PI/2;
+ground.receiveShadow=true;
+scene.add(ground);
+
+const bodyMat=new THREE.MeshStandardMaterial({color:'#d6a96c',roughness:.9,metalness:0});
+const roofMat=new THREE.MeshStandardMaterial({color:'#78645b',roughness:.94,metalness:0});
+const cleanMat=new THREE.MeshStandardMaterial({color:'#bdb7a8',roughness:.92,metalness:0,flatShading:false});
+const pedestalMat=new THREE.MeshStandardMaterial({color:'#3f3a31',roughness:.98});
+
+const stageXs=[-10.5,-3.5,3.5,10.5];
+let stageGroups=[];
+let source=null,buildingA=null,buildingAFacts=null;
+
+function clearStages(){
+  for(const g of stageGroups)scene.remove(g);
+  stageGroups=[];
+}
+function newStage(x){
+  const g=new THREE.Group();g.position.x=x;scene.add(g);stageGroups.push(g);
+  const p=new THREE.Mesh(new THREE.CylinderGeometry(2.45,2.6,.12,32),pedestalMat);
+  p.position.y=.03;p.receiveShadow=true;g.add(p);
+  return g;
+}
+function addMesh(group,geo,mat){
+  const m=new THREE.Mesh(geo,mat);
+  m.castShadow=m.receiveShadow=true;
+  group.add(m);
+  return m;
+}
+function rawGroupBounds(group){
+  group.updateWorldMatrix(true,true);
+  return new THREE.Box3().setFromObject(group);
+}
+function normalizeTriplet(groups){
+  let max=0;
+  for(const g of groups){
+    const b=rawGroupBounds(g),s=b.getSize(new THREE.Vector3());
+    max=Math.max(max,s.x,s.y,s.z);
+  }
+  const scale=4.4/Math.max(max,.001);
+  for(const g of groups){
+    g.scale.setScalar(scale);
+    g.updateWorldMatrix(true,true);
+    const b=rawGroupBounds(g),c=b.getCenter(new THREE.Vector3());
+    g.position.x-=c.x-g.position.x;
+    g.position.z-=c.z;
+    g.position.y-=b.min.y;
+  }
+  return scale;
+}
+function normalizeSingle(group,target=4.2){
+  group.updateWorldMatrix(true,true);
+  const b=rawGroupBounds(group),s=b.getSize(new THREE.Vector3());
+  const scale=target/Math.max(s.x,s.y,s.z,.001);
+  group.scale.setScalar(scale);
+  group.updateWorldMatrix(true,true);
+  const q=rawGroupBounds(group),c=q.getCenter(new THREE.Vector3());
+  group.position.x-=c.x-group.position.x;
+  group.position.z-=c.z;
+  group.position.y-=q.min.y;
+  return scale;
+}
+function groupFromBuild(stage,build,mode){
+  const inner=new THREE.Group();stage.add(inner);
+  addMesh(inner,build.body,mode==='clean'?cleanMat:bodyMat);
+  if(build.roof)addMesh(inner,build.roof,roofMat);
+  return inner;
+}
+
+async function loadBuildingA(){
+  const url=
+    'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+
+    B0_SOURCE.kaykitSideDonor.head+'/'+
+    B0_SOURCE.kaykitSideDonor.path;
+  const gltf=await new GLTFLoader().loadAsync(url);
+  const root=gltf.scene;
+  root.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+  root.updateWorldMatrix(true,true);
+  const b=new THREE.Box3().setFromObject(root),s=b.getSize(new THREE.Vector3());
+  buildingAFacts={
+    url,
+    rawBounds:[s.x,s.y,s.z],
+    originalMaterials:true,
+    materialAdapted:false,
+    deformed:false,
+    fallbackUsed:false
+  };
+  return root;
+}
+
+async function show(index){
+  clearStages();
+  status.textContent='building…';
+  const building=source.golden[index];
+  const control=B0_GOLDENS[index];
+
+  const cleanStage=newStage(stageXs[0]);
+  const acceptedStage=newStage(stageXs[1]);
+  const b0Stage=newStage(stageXs[2]);
+  const kayStage=newStage(stageXs[3]);
+
+  const clean=buildCleanSource(building);
+  const accepted=buildAcceptedV2(building,source.anchor);
+  const candidate=buildB0Candidate(building,source.anchor);
+
+  const innerClean=groupFromBuild(cleanStage,clean,'clean');
+  const innerAccepted=groupFromBuild(acceptedStage,accepted,'accepted');
+  const innerB0=groupFromBuild(b0Stage,candidate,'b0');
+
+  const displayScale=normalizeTriplet([innerClean,innerAccepted,innerB0]);
+
+  const rawA=buildingA.clone(true);
+  rawA.traverse(o=>{
+    if(o.isMesh&&o.material){
+      o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();
+      o.castShadow=o.receiveShadow=true;
+    }
+  });
+  kayStage.add(rawA);
+  const buildingADisplayScale=normalizeSingle(rawA,4.0);
+
+  const parity=parityFacts(building,source.anchor);
+  const cleanFacts=geometryFacts(clean.body);
+
+  const state={
+    ready:true,
+    sourcePin:B0_SOURCE.elastic.head,
+    selectedRole:control.role,
+    selectedId:building.id,
+    sourceHeightM:building.heightM,
+    sourceRoof:building.roof,
+    sourceFootprint:building.footprint,
+    fixtureCount:source.fixture.length,
+    fixtureAnchor:source.anchor,
+    clean:cleanFacts,
+    parity,
+    b0FamilyId:B0_SOURCE.familyId,
+    facadeRuleId:B0_SOURCE.facade.id,
+    facadeRendered:B0_SOURCE.facade.renderedInB0Isolation,
+    facadeReason:B0_SOURCE.facade.reason,
+    displayScale,
+    buildingA:{...buildingAFacts,displayScale:buildingADisplayScale},
+    materialDecision:false,
+    rendererCount:1,
+    worldIntegrated:false
+  };
+  window.__KFB_BUILDING_B0=state;
+  meta.innerHTML=
+    '<b>'+control.role+'</b><br>'+
+    building.id+' · '+building.heightM.toFixed(2)+' m · '+building.roof.type+'<br>'+
+    'Body parity: <span class="'+(parity.bodyParity?'ok':'warn')+'">'+parity.bodyParity+'</span><br>'+
+    'Roof parity: <span class="'+(parity.roofParity?'ok':'warn')+'">'+parity.roofParity+'</span><br>'+
+    'Base anchored: <span class="'+(parity.baseAnchored?'ok':'warn')+'">'+parity.baseAnchored+'</span><br>'+
+    'Facade owner: '+state.facadeRuleId+' · rendered here: '+state.facadeRendered+'<br>'+
+    'building_A: exact raw source · original materials';
+  status.textContent='ready · '+control.role+' · V2/B0 geometry parity';
+  window.dispatchEvent(new CustomEvent('kfbBuildingB0Ready',{detail:state}));
+  return state;
+}
+
+window.__KFB_BUILDING_B0_API={
+  controls:B0_GOLDENS,
+  async show(i){return await show(Number(i));}
+};
+
+pick.onchange=()=>show(Number(pick.value));
+
+function render(){renderer.render(scene,camera);requestAnimationFrame(render);}
+render();
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
+(async()=>{
+  try{
+    source=await loadB0Source();
+    buildingA=await loadBuildingA();
+    await show(0);
+  }catch(err){
+    console.error(err);
+    status.textContent='ERROR · '+String(err?.message||err);
+    window.__KFB_BUILDING_B0={ready:false,error:String(err?.stack||err)};
+  }
+})();
+</script>
+</body>
+</html>
