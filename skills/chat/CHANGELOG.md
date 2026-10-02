@@ -2160,3 +2160,18 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - 3/3 topology PASS, 3/3 area/aspect PASS, 3/3 height/roof PASS, 3/3 V2 build/base PASS, 3/3 visual evidence PASS, 0 console/page/QA errors.
 - Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b1/RECOVERY.md`.
 - Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**. Reuse the current real `kfb-facade-rule-v1` owner; do not create a second façade implementation.
+
+
+## 2026-10-02 · WC1 Procedural Building B2 · existing facade owner PASS
+
+- Completed Draft PR #323 / branch `chatgpt-web/wc1-procedural-building-b2-2026-10-02`.
+- Consumed the actual r2 `wd1-city.js::buildCityLayer()` owner; did not copy `facadeSpecs()`.
+- Real seam/fixture context: 700 Hürth buildings, 164 roads, 22 landuse.
+- Full presenter result: 7,376 details, 6,672 windows, 434 doors, 946 party-wall edges, 700 FACE_NORMALS shells.
+- Siblings: compact 19 windows/1 door; ordinary-notched 34/1 with 3 party edges and 0 party details; large-complex 28/1 with 2 party edges and 0 party details.
+- All sibling doors use a real road-aware eligible edge; all have multi-floor windows.
+- Final tested head `99a390d3b828fc132528a65e3cff52d165299990`; run/job `37043662315 / 110959643486`; artifact `11243896554`; digest `sha256:4591394170e0fe8d03f068e055be5c020ec0bb72a037ed8a5bfcd02cb1933bd8`.
+- 0 console errors / 0 page errors / 0 QA problems.
+- Recovery finding: active r2 World Integration presenter remains in the Session Cut; the router-referenced stable `world-integration-01/` path is absent on the current branch.
+- Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/RECOVERY.md`.
+- Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**.
