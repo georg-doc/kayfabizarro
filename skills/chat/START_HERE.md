@@ -1378,3 +1378,26 @@ Durable handoff:
 
 Exactly one next gate: **fresh WB-ZONE-SEAM-01 restart on a new branch from `6b08636e...`**, changing only the baked-building crop selector to the proven serialized-vertex mean, then rerunning seam → World r2 static → Hürth/Cologne browser → WB2 baseline. Do not resume PR #252 itself.
 
+
+
+## 2026-10-02 · Hex World Blender handoff
+
+Current productive Hex/World next step is **Claude Coworker + local Blender MCP**, after the genuine Hex browser measurement passed 15/15.
+
+Use the self-contained GitHub handoff:
+`tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/START_HERE.md`
+
+Current handoff branch / Draft PR:
+- `chatgpt-web/hex-blender-handoff-2026-10-02`
+- PR #317
+
+Important: Claude/Blender must **not depend on KFB Production Control access**. The verified Hex browser measurements are copied into the handoff, and all large source assets are referenced at exact pinned repository paths.
+
+The same handoff also carries the current parallel World truth:
+- Procedural Environment P1/P2 PASS;
+- `clay_floor_001` as current lightweight/global material preference for comparison;
+- heavy procedural Clay as Near/Hero reference;
+- procedural building implementation still queued behind source-derived Golden family specification;
+- existing biome/grouping evidence reused, no new placement owner.
+
+Blender owns source measurement, asset preparation and bounded scenelet authoring only. Browser/Web owns runtime/performance claims.
