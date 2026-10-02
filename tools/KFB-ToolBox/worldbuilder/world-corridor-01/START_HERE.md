@@ -551,3 +551,45 @@ Current FORM/ENVIRONMENT next gate:
 **PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS**
 
 Use the full existing 22-building Hürth V2 fixture as the measured family corpus before generating any siblings. Do not invent arbitrary footprints, roofs or universal style sliders.
+
+
+## 2026-10-02 · Procedural Building B1 PASS → B2 Existing Facade Owner
+
+Canonical recovery:
+`procedural-building-b1/RECOVERY.md`
+
+B1 branch / PR:
+- `chatgpt-web/wc1-procedural-building-b1-2026-10-02`
+- Draft PR #322
+
+B1 result:
+**SOURCE_BOUNDED_SIBLINGS_PASS**
+
+Three source-bounded sibling lanes:
+- compact-simple: `371401529 → 371401477`
+- ordinary-notched: `371401481 → 371401497`
+- large-complex: `371401488 → 371401495`
+
+Final tested head:
+`191f79bed81e2e5a0b5486033532b9f0b32335a7`
+
+Final run/job:
+`37041339236 / 110951929252`
+
+Evidence:
+`11241588200`
+digest `sha256:213cce3bcc928d21fe95b01d767bea508d9f75acb7e49433b2dd5a46d2e32e95`
+
+Verified:
+- source topology preserved 3/3;
+- target area/aspect source-envelope match 3/3;
+- source height/roof/roof-height match 3/3;
+- accepted V2 body/roof builds 3/3;
+- anchored base 3/3;
+- separated/labeled evidence 3/3;
+- 0 console/page/QA errors.
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**
+
+Consume the current real owner of `kfb-facade-rule-v1`; do not clone or reimplement `facadeSpecs()`.
