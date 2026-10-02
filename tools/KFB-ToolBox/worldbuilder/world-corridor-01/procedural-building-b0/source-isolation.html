@@ -129,34 +129,46 @@ function rawGroupBounds(group){
   group.updateWorldMatrix(true,true);
   return new THREE.Box3().setFromObject(group);
 }
+function unscaledBoundsInParent(group){
+  group.position.set(0,0,0);
+  group.scale.set(1,1,1);
+  group.updateWorldMatrix(true,true);
+  const worldBox=rawGroupBounds(group);
+  const invParent=new THREE.Matrix4().copy(group.parent.matrixWorld).invert();
+  const min=worldBox.min.clone().applyMatrix4(invParent);
+  const max=worldBox.max.clone().applyMatrix4(invParent);
+  return new THREE.Box3(min,max);
+}
+function placeCenteredInStage(group,scale,bounds){
+  const center=bounds.getCenter(new THREE.Vector3());
+  group.scale.setScalar(scale);
+  group.position.set(
+    -center.x*scale,
+    -bounds.min.y*scale,
+    -center.z*scale
+  );
+  group.updateWorldMatrix(true,true);
+}
 function normalizeTriplet(groups){
+  const bounds=groups.map(unscaledBoundsInParent);
   let max=0;
-  for(const g of groups){
-    const b=rawGroupBounds(g),s=b.getSize(new THREE.Vector3());
+  for(const b of bounds){
+    const s=b.getSize(new THREE.Vector3());
     max=Math.max(max,s.x,s.y,s.z);
   }
   const scale=4.4/Math.max(max,.001);
-  for(const g of groups){
-    g.scale.setScalar(scale);
-    g.updateWorldMatrix(true,true);
-    const b=rawGroupBounds(g),c=b.getCenter(new THREE.Vector3());
-    g.position.x-=c.x-g.position.x;
-    g.position.z-=c.z;
-    g.position.y-=b.min.y;
-  }
+  groups.forEach((g,i)=>placeCenteredInStage(g,scale,bounds[i]));
   return scale;
 }
 function normalizeSingle(group,target=4.2){
-  group.updateWorldMatrix(true,true);
-  const b=rawGroupBounds(group),s=b.getSize(new THREE.Vector3());
+  const b=unscaledBoundsInParent(group),s=b.getSize(new THREE.Vector3());
   const scale=target/Math.max(s.x,s.y,s.z,.001);
-  group.scale.setScalar(scale);
-  group.updateWorldMatrix(true,true);
-  const q=rawGroupBounds(group),c=q.getCenter(new THREE.Vector3());
-  group.position.x-=c.x-group.position.x;
-  group.position.z-=c.z;
-  group.position.y-=q.min.y;
+  placeCenteredInStage(group,scale,b);
   return scale;
+}
+function stageCenter(group){
+  const b=rawGroupBounds(group),c=b.getCenter(new THREE.Vector3());
+  return [c.x,c.y,c.z];
 }
 function groupFromBuild(stage,build,mode){
   const inner=new THREE.Group();stage.add(inner);
@@ -238,6 +250,13 @@ async function show(index){
     facadeReason:B0_SOURCE.facade.reason,
     displayScale,
     buildingA:{...buildingAFacts,displayScale:buildingADisplayScale},
+    stageCenters:{
+      clean:stageCenter(innerClean),
+      accepted:stageCenter(innerAccepted),
+      b0:stageCenter(innerB0),
+      kaykit:stageCenter(rawA)
+    },
+    expectedStageX:[...stageXs],
     materialDecision:false,
     rendererCount:1,
     worldIntegrated:false
