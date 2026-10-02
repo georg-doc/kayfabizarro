@@ -1,0 +1,1515 @@
+{
+  "schema": "kfb.eye-rig-consumer-intake/0.1-candidate",
+  "date": "2026-10-02",
+  "workflow": "EYE-RIG-BATCH-CLEANUP02-01",
+  "owner": "KFB ToolBox / Rigging",
+  "status": "PREPARED_NOT_INTEGRATED",
+  "outcome": "Source-pinned NoEyes intake for the existing EyeRig batch, routable to Resident Atlas and Combat Arena without moving runtime ownership.",
+  "sourceOfTruth": {
+    "prepBase": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "head": "1c9c9706764ce41ce1282f60e358195afed207e5"
+    },
+    "cleanup": {
+      "repo": "georg-doc/kayfabizarro",
+      "branch": "georg-doc-patch-3",
+      "head": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "returnPath": "skills/chat/workflows/EYE_CLEANUP_02_2026-10-02/RETURN.md",
+      "dataPath": "skills/chat/workflows/EYE_CLEANUP_02_2026-10-02/eye-cleanup-02.json",
+      "contactSheetPath": "skills/chat/workflows/EYE_CLEANUP_02_2026-10-02/eye-cleanup-02_contact.png",
+      "noEyesRoot": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/",
+      "counts": {
+        "done": 26,
+        "none": 5,
+        "blocked": 0
+      },
+      "entries": 31
+    },
+    "eyeRig": {
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 104,
+      "branch": "toolbox/eye-rig-batch-2026-09-18",
+      "head": "e277c3456651d314a01adea046e0105d2a12cdd1",
+      "implementation": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "batchRoot": "tools/KFB-ToolBox/eye-rig-batch/",
+      "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/"
+    },
+    "browRig": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "main",
+      "head": "1c9c9706764ce41ce1282f60e358195afed207e5",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+      "blob": "ccc91a7f48adbf999ed33ca1708bbe5d1c738d0f",
+      "class": "BrowRig",
+      "anchorSeam": "eyeFrame()",
+      "exportSchema": "kfb.brow-experiment/0.2",
+      "controls": [
+        "enabled",
+        "mask",
+        "thickness",
+        "length",
+        "taper",
+        "height",
+        "x",
+        "y",
+        "tiltLeft",
+        "tiltRight",
+        "bendLeft",
+        "bendRight",
+        "follow",
+        "lift",
+        "symmetric",
+        "solid",
+        "round",
+        "even",
+        "cap",
+        "color",
+        "points"
+      ],
+      "expressions": [
+        "neutral",
+        "skeptical",
+        "angry",
+        "worried",
+        "surprised",
+        "tired",
+        "critical-angry"
+      ]
+    }
+  },
+  "browPolicy": {
+    "sourceBrows": "PRESERVE_IF_PRESENT",
+    "implementation": "REUSE_EXISTING_BROW_RIG_V2",
+    "timing": "AFTER_EYE_PROFILE_VISUAL_APPROVAL",
+    "data": "COMPANION_BROW_EXPORT_NOT_EYE_PROFILE_SCHEMA_MUTATION",
+    "reason": "BrowRig already anchors to eyeFrame(); eye calibration remains stable while brows become independently riggable later."
+  },
+  "consumers": {
+    "toolbox": {
+      "role": "CALIBRATION_AND_PROFILE_OWNER",
+      "consume": "NoEyes candidate + anchors -> existing EyeRig v6 -> approved eye profile; later existing BrowRig v2 companion.",
+      "mustNot": "Create a second EyeRig/BrowRig or silently approve cleanup."
+    },
+    "residentAtlas": {
+      "role": "CONSUMER_RECIPE_OWNER",
+      "consume": "Only after source-object isolation and ToolBox profile approval; recipe may reference exact NoEyes source + eye profile + later brow companion.",
+      "protected": [
+        "data/cast.js remains unchanged in this prep slice",
+        "current Resident scenes/settings remain owned by Resident Atlas"
+      ],
+      "precondition": "Pin the exact current Atlas recipe/source before any cast.js edit; EYE-CLEANUP-02 did not read cast.js."
+    },
+    "combatArena": {
+      "role": "COMBAT_RUNTIME_CONSUMER",
+      "consume": "Opt-in approved eye/brow presentation only; actor movement, AI, targeting, damage, lifecycle and rewards remain Combat-owned.",
+      "protected": [
+        "no Combat runtime write in prep",
+        "no mapping of Medium clips onto Legacy",
+        "no player/enemy owner replacement"
+      ],
+      "currentCaution": "Skeleton Warrior cleanup is HUMAN_DECISION_REQUIRED because the source Glow eye mesh was removed; do not silently replace the productive Combat actor."
+    }
+  },
+  "reviewPolicy": {
+    "sourceFirst": "Before integration show the actual pinned NoEyes object in isolation, Front + 3/4, against the contact-sheet row.",
+    "doneMeans": "cleanup candidate only, not EyeRig visual approval",
+    "noneMeans": "use original source; no NoEyes derivative",
+    "specialHumanDecision": [
+      "warrior",
+      "rogue",
+      "mage",
+      "pete"
+    ],
+    "noAutomaticConsumerRewrite": true
+  },
+  "figures": [
+    {
+      "id": "gothgirl",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/GothGirl_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2055,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f8d3be",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eyes = two dark 69-face caps (same cap as Witch, PASS in charge 01). Brows (72-face islands) and the face shell untouched. Texture B: island removal is mesh-only, so it holds for the B skin too."
+    },
+    {
+      "id": "clown",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Clown_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2151,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2151,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#e8eced",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps only. Blue eyeshadow (88-face islands) and white face paint untouched. skin = white paint; behind the eye is the blue shadow (#76bbde)."
+    },
+    {
+      "id": "soldier",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ToySoldier_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#edaea1",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps only; rosy cheeks and moustache untouched."
+    },
+    {
+      "id": "farmer_a",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Farmer_A_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f6c19d",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps only; brows and beard untouched."
+    },
+    {
+      "id": "farmer_b",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Farmer_B_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2056,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f6bf9b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eyes = 69-face caps. The 108-face pair are brows, kept; freckle islands kept."
+    },
+    {
+      "id": "caveman",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Caveman_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#e1a385",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps only; 108-face brows kept."
+    },
+    {
+      "id": "lorekeeper",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Lorekeeper_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2031,
+            1.6059,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2042,
+            1.6059,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f5bc97",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "GLASSES_PRESERVED"
+      ],
+      "notes": "Eye caps behind the glasses mesh; glasses kept (eye rig will be seen through the lenses)."
+    },
+    {
+      "id": "knight",
+      "cleanupStatus": "none",
+      "cleanupClass": "none",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": null,
+      "rigClass": "UNRESOLVED_FROM_CLEANUP",
+      "bones": 23,
+      "anchorParent": null,
+      "anchors": null,
+      "skin": null,
+      "bindCheck": null,
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "NOT_REQUIRED",
+      "eyeRigIntake": "SOURCE_EYE_CLEANUP_NOT_NEEDED",
+      "flags": [],
+      "notes": "Closed visor helmet, no visible eyes, no eye islands in the head."
+    },
+    {
+      "id": "avian",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/AvianSwordsman_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2172,
+            1.6376,
+            0.326
+          ],
+          "normal": [
+            0.7978,
+            -0.2034,
+            0.5676
+          ],
+          "r": 0.0827
+        },
+        "r": {
+          "pos": [
+            -0.2172,
+            1.6376,
+            0.326
+          ],
+          "normal": [
+            -0.7978,
+            -0.2034,
+            0.5676
+          ],
+          "r": 0.0827
+        }
+      },
+      "skin": "#2473b3",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "SIDE_EYE_NORMALS"
+      ],
+      "notes": "Bird eyes sit on the sides of the head: anchor normals point strongly sideways (L +Z = (0.80, -0.20, 0.57)). Not forced to mirror."
+    },
+    {
+      "id": "warrior",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Warrior_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            -0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#d19d6b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "flags": [
+        "SKELETON_GLOW_EYE_MESH_REMOVED",
+        "ORIGINAL_BRIEF_EXPECTED_NONE"
+      ],
+      "notes": "Skeleton: the glowing eyes are a separate mesh Skeleton_Warrior_Eyes (2 islands, material Glow). Removing them empties that mesh, so the NoEyes file has no Skeleton_Warrior_Eyes mesh and no Glow material (the only list difference). Sockets now show the dark cavity (#583d35); skin = bone around the socket. Brief expected none; eyes were visible, so done. Georg decides."
+    },
+    {
+      "id": "rogue",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Rogue_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            -0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#a77c57",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "flags": [
+        "SKELETON_GLOW_EYE_MESH_REMOVED",
+        "ORIGINAL_BRIEF_EXPECTED_NONE"
+      ],
+      "notes": "As warrior (Skeleton_Rogue_Eyes + Glow removed)."
+    },
+    {
+      "id": "mage",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Mage_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            -0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#5c4138",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "flags": [
+        "SKELETON_GLOW_EYE_MESH_REMOVED",
+        "ORIGINAL_BRIEF_EXPECTED_NONE"
+      ],
+      "notes": "As warrior (Skeleton_Mage_Eyes + Glow removed)."
+    },
+    {
+      "id": "demon",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/DemonLord_NoEyes.glb",
+      "rigClass": "Rig_Large",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1597,
+            3.5592,
+            0.6713
+          ],
+          "normal": [
+            0.4152,
+            -0.3489,
+            0.8402
+          ],
+          "r": 0.0633
+        },
+        "r": {
+          "pos": [
+            -0.1597,
+            3.5592,
+            0.6713
+          ],
+          "normal": [
+            -0.4152,
+            -0.3489,
+            0.8402
+          ],
+          "r": 0.0634
+        }
+      },
+      "skin": "#c43642",
+      "bindCheck": "Rig_Large:Idle_A 52/52 (original 52/52)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Small eye caps above the snout; anchors tilt downward (normal y -0.35)."
+    },
+    {
+      "id": "monster",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Monstrosity_NoEyes.glb",
+      "rigClass": "Rig_Large",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1634,
+            3.5034,
+            0.6046
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.055
+        },
+        "r": {
+          "pos": [
+            -0.1634,
+            3.5034,
+            0.6046
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.055
+        }
+      },
+      "skin": "#7da6a4",
+      "bindCheck": "Rig_Large:Idle_A 52/52 (original 52/52)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps are mirrored exactly although the face is asymmetric; surround differs per side: L #7da6a4 (stitched patch), R #c8bda9."
+    },
+    {
+      "id": "orcA",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf",
+        "revision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/character_orcA_NoEyes.glb",
+      "rigClass": "Unskinned",
+      "bones": 0,
+      "anchorParent": "node:character_orcAHead",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.3011,
+            1.1209,
+            0.4492
+          ],
+          "normal": [
+            0.5709,
+            -0.0003,
+            0.821
+          ],
+          "r": 0.0719
+        },
+        "r": {
+          "pos": [
+            -0.3011,
+            1.1209,
+            0.4492
+          ],
+          "normal": [
+            -0.5713,
+            -0.0003,
+            0.8208
+          ],
+          "r": 0.0721
+        }
+      },
+      "skin": "#6db335",
+      "bindCheck": "n/a (no skin)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "LEGACY_UNSKINNED_NODE_ANCHOR",
+        "SOURCE_PIN_10A7FDCE"
+      ],
+      "notes": "Legacy, no skin/armature: anchors are children of node character_orcAHead. No separate _eyes node in this file version; eyes are 66-face islands in the head mesh. The left eye sits in the red war-paint stripe (L surround #b65d29); skin given = R side #6db335. Source only found at 10a7fdce, not at 891eadf."
+    },
+    {
+      "id": "orcB",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf",
+        "revision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/character_orcB_NoEyes.glb",
+      "rigClass": "Unskinned",
+      "bones": 0,
+      "anchorParent": "node:character_orcBHead",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.3016,
+            1.1251,
+            0.4489
+          ],
+          "normal": [
+            0.5711,
+            -0.0003,
+            0.8209
+          ],
+          "r": 0.0697
+        },
+        "r": {
+          "pos": [
+            -0.3016,
+            1.1251,
+            0.4489
+          ],
+          "normal": [
+            -0.5714,
+            -0.0003,
+            0.8207
+          ],
+          "r": 0.0695
+        }
+      },
+      "skin": "#6db335",
+      "bindCheck": "n/a (no skin)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "LEGACY_UNSKINNED_NODE_ANCHOR",
+        "SOURCE_PIN_10A7FDCE"
+      ],
+      "notes": "As orcA (node character_orcBHead)."
+    },
+    {
+      "id": "hero",
+      "cleanupStatus": "none",
+      "cleanupClass": "none",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": null,
+      "rigClass": "UNRESOLVED_FROM_CLEANUP",
+      "bones": 23,
+      "anchorParent": null,
+      "anchors": null,
+      "skin": null,
+      "bindCheck": null,
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "NOT_REQUIRED",
+      "eyeRigIntake": "SOURCE_EYE_CLEANUP_NOT_NEEDED",
+      "flags": [],
+      "notes": "Visor helmet, no eyes."
+    },
+    {
+      "id": "cleric",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Cleric_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2056,
+            1.6115,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.6115,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f6bf9b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eyes = 69-face caps; 108-face brows kept. One file for cleric and cleric_dark."
+    },
+    {
+      "id": "creepy",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Animatronic_Creepy_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.222,
+            1.5026,
+            0.4467
+          ],
+          "normal": [
+            0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.0546
+        },
+        "r": {
+          "pos": [
+            -0.2105,
+            1.6052,
+            0.449
+          ],
+          "normal": [
+            -0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#65b767",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "INTENTIONAL_ASYMMETRIC_EYE_ANCHORS"
+      ],
+      "notes": "Asymmetric on purpose: R eye = 66-face cap in the socket; L eye = 76-face dangling eye about 10 cm lower and 7 cm forward. Both removed, anchors not mirrored. The L cap normal pointed backward, so the L anchor normal is mirrored from R. L surround = green damage patch (#65b767). The metal bolt next to the L eye is kept."
+    },
+    {
+      "id": "normal",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Animatronic_Normal_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2105,
+            1.6052,
+            0.449
+          ],
+          "normal": [
+            0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.2105,
+            1.6052,
+            0.449
+          ],
+          "normal": [
+            -0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#9b5a45",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps only; brows kept."
+    },
+    {
+      "id": "figure",
+      "cleanupStatus": "done",
+      "cleanupClass": "texture",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ActionFigure_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1851,
+            1.6259,
+            0.4167
+          ],
+          "normal": [
+            0.3823,
+            0.0436,
+            0.923
+          ],
+          "r": 0.0655
+        },
+        "r": {
+          "pos": [
+            -0.1874,
+            1.6256,
+            0.4157
+          ],
+          "normal": [
+            -0.3823,
+            0.0436,
+            0.923
+          ],
+          "r": 0.0654
+        }
+      },
+      "skin": "#f2bb98",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "TEXTURE_EYE_CLEANUP",
+        "FAINT_OLD_OVAL_OUTLINE_POSSIBLE"
+      ],
+      "notes": "TEXTURE: eyes are painted in actionfigure_faces.png (4-expression atlas). In a copy, the two open eyes of head A (top-left) and head B (top-right) were filled with the row median of the surrounding skin; brows, nose, mouth and the closed-eye/laugh expressions (bottom half) untouched. A faint outline of the old oval stays visible up close. Image name kept: actionfigure_faces."
+    },
+    {
+      "id": "figure_headB",
+      "cleanupStatus": "done",
+      "cleanupClass": "texture",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/assets/gltf/ActionFigure_Head_B.gltf",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ActionFigure_Head_B_NoEyes.glb",
+      "rigClass": "Unskinned",
+      "bones": 0,
+      "anchorParent": "node:ActionFigure_Head_B",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.185,
+            0.41,
+            0.4167
+          ],
+          "normal": [
+            0.3823,
+            0.0436,
+            0.923
+          ],
+          "r": 0.048
+        },
+        "r": {
+          "pos": [
+            -0.1873,
+            0.41,
+            0.4158
+          ],
+          "normal": [
+            -0.3823,
+            0.0436,
+            0.923
+          ],
+          "r": 0.048
+        }
+      },
+      "skin": "#f3bc99",
+      "bindCheck": "n/a (no skin)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "TEXTURE_EYE_CLEANUP",
+        "FAINT_OLD_OVAL_OUTLINE_POSSIBLE",
+        "UNSKINNED_NODE_ANCHOR"
+      ],
+      "notes": "Swap head ActionFigure_Head_B.gltf: same painted-texture copy. No skin; anchors are children of the root node ActionFigure_Head_B."
+    },
+    {
+      "id": "marksman",
+      "cleanupStatus": "none",
+      "cleanupClass": "none",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2026 - Marksman/Marksman.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": null,
+      "rigClass": "UNRESOLVED_FROM_CLEANUP",
+      "bones": 23,
+      "anchorParent": null,
+      "anchors": null,
+      "skin": null,
+      "bindCheck": null,
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "NOT_REQUIRED",
+      "eyeRigIntake": "SOURCE_EYE_CLEANUP_NOT_NEEDED",
+      "flags": [],
+      "notes": "Eyes exist (66-face caps) but are fully covered by night-vision goggles and face net: not visible, so none, no file."
+    },
+    {
+      "id": "hoarder",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/Hoarder.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Hoarder_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2056,
+            1.6115,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.6115,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f6c19d",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eyes = 69-face caps. The blue face mask sits right under the eyes (ring median #597a96); skin given = surface behind the eye #f6c19d."
+    },
+    {
+      "id": "plant",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/PlantWarrior.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/PlantWarrior_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2095,
+            1.6052,
+            0.373
+          ],
+          "normal": [
+            0.318,
+            -0.0051,
+            0.9481
+          ],
+          "r": 0.0648
+        },
+        "r": {
+          "pos": [
+            -0.2095,
+            1.6052,
+            0.373
+          ],
+          "normal": [
+            -0.318,
+            -0.0051,
+            0.9481
+          ],
+          "r": 0.0648
+        }
+      },
+      "skin": "#030505",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "White eye caps on a black face (like Mummy_A); skin = the black face."
+    },
+    {
+      "id": "gtn",
+      "cleanupStatus": "none",
+      "cleanupClass": "none",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": null,
+      "rigClass": "UNRESOLVED_FROM_CLEANUP",
+      "bones": 23,
+      "anchorParent": null,
+      "anchors": null,
+      "skin": null,
+      "bindCheck": null,
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "NOT_REQUIRED",
+      "eyeRigIntake": "SOURCE_EYE_CLEANUP_NOT_NEEDED",
+      "flags": [],
+      "notes": "Robot with a lens/display, no eyes."
+    },
+    {
+      "id": "gtn_forgotten",
+      "cleanupStatus": "none",
+      "cleanupClass": "none",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": null,
+      "rigClass": "UNRESOLVED_FROM_CLEANUP",
+      "bones": 23,
+      "anchorParent": null,
+      "anchors": null,
+      "skin": null,
+      "bindCheck": null,
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "NOT_REQUIRED",
+      "eyeRigIntake": "SOURCE_EYE_CLEANUP_NOT_NEEDED",
+      "flags": [],
+      "notes": "As gtn."
+    },
+    {
+      "id": "hiker",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Hiker_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2151,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2151,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f5b891",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps only."
+    },
+    {
+      "id": "prot_a",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Protagonist_A_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1918,
+            1.612,
+            0.4411
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.1918,
+            1.612,
+            0.4411
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f5bd98",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [
+        "GLASSES_PRESERVED"
+      ],
+      "notes": "Eyes = 69-face caps behind glasses; glasses kept."
+    },
+    {
+      "id": "prot_b",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_B.glb",
+        "revision": "891eadf01e218f5fc21387e64cea1fec8332c5b6"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Protagonist_B_NoEyes.glb",
+      "rigClass": "Rig_Medium",
+      "bones": 23,
+      "anchorParent": "bone:head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f6bf9b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "flags": [],
+      "notes": "Eye caps; 94-face brows kept."
+    },
+    {
+      "id": "pete",
+      "cleanupStatus": "done",
+      "cleanupClass": "island",
+      "source": {
+        "path": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb",
+        "revision": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0"
+      },
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/KayKit_AnimatedCharacter_v1.2_NoEyes.glb",
+      "rigClass": "Rig_Legacy",
+      "bones": 6,
+      "anchorParent": "bone:Head",
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2923,
+            1.1102,
+            0.4502
+          ],
+          "normal": [
+            0.571,
+            -0.0003,
+            0.8209
+          ],
+          "r": 0.0738
+        },
+        "r": {
+          "pos": [
+            -0.2923,
+            1.1102,
+            0.4502
+          ],
+          "normal": [
+            -0.5713,
+            -0.0003,
+            0.8207
+          ],
+          "r": 0.0738
+        }
+      },
+      "skin": "#ffa60a",
+      "bindCheck": "own:Idle 16/16 (original 16/16)",
+      "sourceBrows": "PRESERVE_IF_PRESENT",
+      "cleanupAcceptance": "CONTACT_SHEET_REVIEW_PENDING",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "flags": [
+        "PROTOTYPE_PETE_RAISED_EYE_BUMPS_REMOVED",
+        "ORIGINAL_BRIEF_EXPECTED_NONE",
+        "LEGACY_6_BONE"
+      ],
+      "notes": "Prototype puppet: eyes are two raised 66-face bumps in body colour. Removed; anchors on bone Head (6-bone legacy rig). Bind check with its own Idle clip. Brief expected none; Georg decides."
+    }
+  ]
+}
