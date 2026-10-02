@@ -822,3 +822,111 @@ On the direct Stage:
 2. inspect Paladin + Paladin Helmet;
 3. sample several newly added Mystery Medium actors and at least Clanker / FrostGolem / 4GTN on Large;
 4. stop for Georg acceptance before any profile promotion, Blender cleanup batch, merge or Live promotion.
+
+## 2026-10-02 · EYE-RIG-MYSTERY-COVERAGE-OVAL-01 · FINAL ADDENDUM
+
+Status: **READY_FOR_HUMAN_REVIEW · STAGE MIRRORED · PUBLIC_VERIFIED OPEN**
+
+### Exact tested state
+
+- Implementation head: `491be1e6c05332371a3d671079d8588f6a7b949c`
+- Evidence head before Return metadata: `1214c36c84f000d0cf22d1dd5858e125c3c97314`
+- Stage mirror: `cloudflare-live@c42e8cbf2e31d39b7ca6d851e0525254c2009664`
+- Latest Georg batch input: `tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (1).json`
+- Batch blob: `0ed0a157389e469ce8b6623bd4542ee49cd31a28`
+
+### Mini-step 1 · Oval / pupil
+
+Shared `eyeoval.v1.js` now shapes sclera + lids without scaling the pupil pivot.
+
+Independent behavior proof: **7/7 PASS**.
+
+- root unit scale
+- sclera W/H/D
+- lids W/H/D
+- pupil scale 1×1×1
+- Depth only re-seats pupil in local Z
+- mirrored Tilt preserved
+- report marks pupil 1×1×1
+
+Shared ToolBox + current FrankenStein Studio 16 snapshot blob:
+`9a559f789fb9dd1d7fb45e0c73ae2b246ef40c55`
+
+### Mini-step 2 · Mystery coverage
+
+Current EyeRig catalogs:
+- **55 Rig_Medium**
+- **8 Rig_Large**
+- **63 visible Batch actors total**
+
+Monthly physical Mystery coverage remains:
+- **49/49**
+- **41 Medium**
+- **8 Large**
+
+Whole historical Mystery source-container GLB classification:
+- **53/53 candidate GLBs classified**
+- **51 supported physical character GLBs**
+- Mummy A/B added as direct-verified `Rig_Medium` / 23 joints
+- Santa explicitly classified as custom `Rig` / 41 joints / 95 embedded animations and **not falsely put into Medium/Large**
+- CharacterTemplate explicitly classified as custom/template `Rig` / 41 joints / 95 embedded animations
+
+### Paladin / King
+
+Available physical model entries:
+- `Paladin.glb`
+- `Paladin_with_Helmet.glb`
+
+Both physical GLBs use palette A.
+
+Visible additional authoring entry:
+- `paladin-king` = Paladin geometry + exact `paladin_texture_B.png`
+- palette B blob `eb45816ada5c84bc91abc0225e3b25f5998accc1`
+- A/B texture dimensions both 1024×1024
+- texture override runs before source-eye cleanup and face-color sampling
+
+Thus the light/blonde King is now actually visible in the workbench, not metadata-only.
+
+### Current tests
+
+- Oval behavior: **7/7 PASS**
+- final focused coverage/runtime contract: **22/22 PASS**
+- latest Georg batch mapping: **33/33 IDs + 33/33 exact source paths**
+- previous monthly source/catalog contract remains **26/26 PASS**
+
+The historical full static suite is not re-labeled as current; focused evidence above is the current acceptance proof.
+
+### Stage
+
+Exact mirrored files read back on:
+`cloudflare-live@c42e8cbf2e31d39b7ca6d851e0525254c2009664`
+
+Readback confirms:
+- texture-override runtime present
+- Medium 55
+- Large 8
+- 53/53 container classification
+- ToolBox Hub card updated
+
+Human route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+### Unresolved
+
+- newly added Mystery actors are roster-available, not visually approved;
+- most new entries still need later Blender NoEyes/anchor cleanup before consumer promotion;
+- Santa remains a custom-rig special case outside the current Medium/Large workbench;
+- CharacterTemplate remains explicitly a template/custom-rig source;
+- Asset Librarian Mannequin projection bug remains a separate owner issue;
+- no merge / no Live promotion.
+
+### Exactly one next gate
+
+**GEORG_EYERIG_MYSTERY_OVAL_VIS_02**
+
+On the direct Stage:
+1. verify Oval Width/Height does not resize pupils;
+2. inspect Paladin, Paladin Helmet and visible light/blonde `Paladin · King (Light B)`;
+3. inspect Mummy A/B;
+4. sample several newly added Mystery Medium and Large actors;
+5. stop for Georg approval before profile promotion or the next Blender cleanup batch.

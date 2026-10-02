@@ -390,10 +390,12 @@
     "sharedBlob": "9a559f789fb9dd1d7fb45e0c73ae2b246ef40c55",
     "studioSnapshotSameBlob": true,
     "batchAdapterPinCommit": "0542a9020e8eb7144d62aaff73fe8c64a7b7469a",
-    "behaviorChecks": "7/7 PASS"
+    "behaviorChecks": "7/7 PASS",
+    "stageMirrorHead": "c42e8cbf2e31d39b7ca6d851e0525254c2009664",
+    "publicVerified": false
   },
   "mysteryMonthlyCoverage": {
-    "status": "49_OF_49_CATALOG_COMPLETE_PROFILE_REVIEW_OPEN",
+    "status": "MONTHLY_49_OF_49_PLUS_CONTAINER_53_CLASSIFIED_HUMAN_REVIEW",
     "catalogCommit": "f12a063b456cf7105bd3792ddf5b6daa404762a0",
     "palettePinCommit": "7165a7c0087ceee57d6269ecf2b1fdf3f35c6931",
     "manifest": "data/mystery-monthly-character-coverage.v1.json",
@@ -403,20 +405,37 @@
       "Rig_Large": 8
     },
     "batchCatalogs": {
-      "Rig_Medium": 52,
+      "Rig_Medium": 55,
       "Rig_Large": 8,
-      "total": 60
+      "total": 63
     },
     "paladin": {
       "models": [
         "Paladin.glb",
         "Paladin_with_Helmet.glb"
       ],
+      "kingActorId": "paladin-king",
       "kingCandidatePalette": "B",
-      "paletteBBlob": "eb45816ada5c84bc91abc0225e3b25f5998accc1"
+      "paletteBBlob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+      "visibleTextureOverride": true
     },
     "focusedChecks": "26/26 PASS",
-    "stageMirrorHead": "8627efb436bbba9e1fec09aad7598892f9eab4d1",
-    "publicVerified": false
+    "stageMirrorHead": "c42e8cbf2e31d39b7ca6d851e0525254c2009664",
+    "publicVerified": false,
+    "containerCoverage": {
+      "candidateGlbs": 53,
+      "supportedPhysicalTotal": 51,
+      "supportedNonMonthlyExtras": [
+        "mummy-a",
+        "mummy-b"
+      ],
+      "customUnsupported": [
+        "santa",
+        "character-template"
+      ]
+    },
+    "currentFocusedChecks": "22/22 PASS",
+    "ovalBehaviorChecks": "7/7 PASS",
+    "latestBatchMapping": "33/33 ids + 33/33 paths"
   }
 }

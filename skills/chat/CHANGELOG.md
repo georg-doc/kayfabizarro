@@ -1,3 +1,14 @@
+## 2026-10-02 · EyeRig Mystery coverage + pupil-independent oval · final
+
+- PR #104: Eye shape / oval now deforms sclera+lids while pupil scale remains independent; **7/7 behavior PASS**.
+- Current catalogs: **55 Medium + 8 Large = 63 visible Batch actors**.
+- Monthly physical Mystery coverage remains **49/49 = 41 Medium + 8 Large**.
+- Whole historical Mystery source-container GLB inventory: **53/53 classified**; Mummy A/B added as Medium; Santa + CharacterTemplate explicitly classified as 41-joint custom/template sources rather than mislabelled.
+- Paladin physical models remain; new visible `paladin-king` authoring actor loads exact palette B (`eb45816a…`) before cleanup/face-color sampling.
+- Final focused contract **22/22 PASS**; latest Georg batch maps **33/33 IDs + 33/33 exact paths**.
+- Stage mirror: `cloudflare-live@c42e8cbf2e31d39b7ca6d851e0525254c2009664`.
+- Human gate: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`; public verification remains open until direct visible check.
+
 ## 2026-10-02 · EyeRig · Mystery 49/49 + Oval/Pupil isolation
 
 - Latest Georg batch pinned: `eye-rig-medium.batch (1).json` · blob `0ed0a157…` · 33/33 exact actor/source resolution.
