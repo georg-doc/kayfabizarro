@@ -1,0 +1,96 @@
+{
+  "schema": "kfb.wc1-procedural-building-b0.source.v1",
+  "date": "2026-10-02",
+  "status": "B0_GOLDEN_FAMILY_SOURCE_ISOLATION_PASS",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-building-b0-2026-10-02",
+  "pr": 319,
+  "base": {
+    "branch": "chatgpt-web/wc1-procedural-environment-p2-2026-10-02",
+    "head": "b36e79cfc3bf927fd975ced7f2e9961ba8e930ab"
+  },
+  "testedHead": "86d5512fdf40b5fc9a2f83b2be6ff6666e82f062",
+  "elastic": {
+    "head": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+    "moduleBlob": "75c3d794b9341a7074038594b467f91d153486c6"
+  },
+  "facade": {
+    "id": "kfb-facade-rule-v1",
+    "sourceBlob": "c11b6f7156eaee808fe4689ee406f9b3480b6f0b",
+    "clonedInIsolation": false
+  },
+  "goldens": [
+    {
+      "role": "compact-flat",
+      "id": "way/371401529",
+      "heightM": 10.13,
+      "roof": "flat",
+      "bodyHash": "852d0622",
+      "roofHash": "aace587c"
+    },
+    {
+      "role": "larger-gable",
+      "id": "way/371401492",
+      "heightM": 12.46,
+      "roof": "gabled-hint",
+      "bodyHash": "f9a30346",
+      "roofHash": "56ab2bad"
+    },
+    {
+      "role": "compact-hip",
+      "id": "way/371401475",
+      "heightM": 12.19,
+      "roof": "hipped-hint",
+      "bodyHash": "0f0d0b3c",
+      "roofHash": "87803dcb"
+    }
+  ],
+  "kaykitSideDonor": {
+    "head": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+    "object": "building_A",
+    "rawBounds": [
+      2,
+      1.6499998569488525,
+      2
+    ],
+    "originalMaterials": true,
+    "deformed": false,
+    "materialAdapted": false,
+    "fallbackUsed": false
+  },
+  "finalTest": {
+    "run": 37034478056,
+    "job": 110929154453,
+    "artifact": {
+      "id": 11238965649,
+      "sizeBytes": 376753,
+      "digest": "sha256:b867700e2974c2392391195cc57cee6c267b85acd0ee41172b6c34f274776650"
+    },
+    "bodyParity": "3/3",
+    "roofParity": "3/3",
+    "baseAnchored": "3/3",
+    "stageSeparation": "3/3",
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "qaProblems": 0
+  },
+  "repairs": [
+    {
+      "pass": 1,
+      "classification": "SOURCE_TRANSPORT_QA",
+      "geometryChanged": false
+    },
+    {
+      "pass": 2,
+      "classification": "VISUAL_EVIDENCE_LAYOUT",
+      "geometryChanged": false
+    }
+  ],
+  "materialDecision": false,
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "recoveryFile": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b0/RECOVERY.md",
+  "nextGate": "PROCEDURAL_BUILDING_B1_GOLDEN_FAMILY_SIBLINGS"
+}
