@@ -28,7 +28,7 @@ try{
   });
 
   await page.goto(base,{waitUntil:'networkidle',timeout:90000});
-  check('stage marker',await page.evaluate(()=>document.documentElement.dataset.kfbBuild==='AUDIO-SEED-01-v0.1'));
+  check('stage marker',await page.evaluate(()=>document.documentElement.dataset.kfbBuild==='AUDIO-SEED-01-v0.2'));
   check('runtime export',await page.evaluate(()=>!!window.__KFB_AUDIO_SEED__));
   check('three real deck controls',(await page.locator('.deck-button').count())===3);
 
@@ -73,9 +73,12 @@ try{
     window.__KFB_AUDIO_SEED__.setTransform('night',.8);
     window.__KFB_AUDIO_SEED__.setTransform('rain',.75);
   });
+  await page.waitForTimeout(650);
   const weather=await page.evaluate(()=>window.__KFB_AUDIO_SEED__.snapshot());
   check('weather preserves identity',weather.identity.identitySignature===world.identity.identitySignature);
   check('rain becomes active',weather.runtime.effectiveRain>.3,weather.runtime);
+  check('rain uses stochastic droplet events',weather.rainDrops>0,{rainDrops:weather.rainDrops});
+  check('warm motif / rain repair revision',weather.timbreRevision==='warm-motif-r2+stochastic-rain-r2',weather.timbreRevision);
 
   await page.evaluate(()=>{
     window.__KFB_AUDIO_SEED__.setTransform('psychedelic',.7);

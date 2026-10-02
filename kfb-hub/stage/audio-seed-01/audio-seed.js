@@ -19,6 +19,8 @@ let manifest=null;
 let ctx=null;
 let timer=null;
 let nextStepTime=0;
+let nextRainTime=0;
+let rainCounter=0;
 let noiseBuffer=null;
 
 const nodes={};
@@ -34,6 +36,7 @@ const state={
   identity:null,
   timelineStep:0,
   restartCount:0,
+  rainDrops:0,
   errors:[],
   context:{
     mode:'world',
@@ -142,14 +145,19 @@ function buildGraph(){
   const rain=ctx.createBufferSource();
   rain.buffer=noiseBuffer;
   rain.loop=true;
-  const rainFilter=ctx.createBiquadFilter();
-  rainFilter.type='bandpass';
-  rainFilter.frequency.value=3600;
-  rainFilter.Q.value=.35;
+  const rainHigh=ctx.createBiquadFilter();
+  rainHigh.type='highpass';
+  rainHigh.frequency.value=850;
+  rainHigh.Q.value=.2;
+  const rainLow=ctx.createBiquadFilter();
+  rainLow.type='lowpass';
+  rainLow.frequency.value=6200;
+  rainLow.Q.value=.15;
   nodes.rainGain=ctx.createGain();
   nodes.rainGain.gain.value=.0001;
-  rain.connect(rainFilter);
-  rainFilter.connect(nodes.rainGain);
+  rain.connect(rainHigh);
+  rainHigh.connect(rainLow);
+  rainLow.connect(nodes.rainGain);
   nodes.rainGain.connect(nodes.ambienceGain);
   rain.start();
   nodes.rainSource=rain;
@@ -157,14 +165,14 @@ function buildGraph(){
 
 function midiHz(n){return 440*Math.pow(2,(n-69)/12);}
 
-function playTone(midi,t,dur,gain=.08,type='sine',detune=0){
+function playTone(midi,t,dur,gain=.08,type='sine',detune=0,attack=.012){
   const osc=trackSource(ctx.createOscillator());
   const g=ctx.createGain();
   osc.type=type;
   osc.frequency.setValueAtTime(Math.max(20,midiHz(midi)),t);
   osc.detune.value=detune;
   g.gain.setValueAtTime(.0001,t);
-  g.gain.linearRampToValueAtTime(gain,t+.012);
+  g.gain.linearRampToValueAtTime(gain,t+attack);
   g.gain.exponentialRampToValueAtTime(.0001,t+Math.max(.06,dur));
   osc.connect(g);
   g.connect(nodes.musicGain);
@@ -173,8 +181,9 @@ function playTone(midi,t,dur,gain=.08,type='sine',detune=0){
 }
 
 function playPluck(midi,t,gain=.08,detune=0){
-  playTone(midi,t,.48,gain,'triangle',detune);
-  playTone(midi+12,t,.12,gain*.13,'sine',detune+3);
+  // Warm, low-register motif voice: no bright octave ping.
+  playTone(midi,t,.72,gain*.72,'sine',detune,.024);
+  playTone(midi-12,t,.52,gain*.24,'triangle',detune-4,.030);
 }
 
 function playChord(root,t,gain=.035,dur=.7){
@@ -192,6 +201,53 @@ function playKick(t,gain=.11){
   g.gain.exponentialRampToValueAtTime(.0001,t+.18);
   osc.connect(g);g.connect(nodes.musicGain);
   osc.start(t);osc.stop(t+.2);
+}
+
+function rainRand(index,salt=0){
+  let x=(parseInt(state.identity?.identitySignature||'4b4642',16)^Math.imul(index+1,0x9e3779b1)^salt)|0;
+  x^=x<<13;x^=x>>>17;x^=x<<5;
+  return (x>>>0)/4294967296;
+}
+
+function playRainDrop(t,intensity,index){
+  const r1=rainRand(index,0x51f15e);
+  const r2=rainRand(index,0x2c1b3c);
+  const r3=rainRand(index,0x71a4d9);
+  const r4=rainRand(index,0x0f73aa);
+  const dur=.018+r2*.038;
+  const src=trackSource(ctx.createBufferSource());
+  src.buffer=noiseBuffer;
+  const f=ctx.createBiquadFilter();
+  f.type='bandpass';
+  f.frequency.value=700+Math.pow(r1,1.7)*4200;
+  f.Q.value=.5+r2*.8;
+  const pan=ctx.createStereoPanner();
+  pan.pan.value=-.85+r3*1.7;
+  const g=ctx.createGain();
+  const peak=(.004+.013*intensity)*(.5+r4*.5);
+  g.gain.setValueAtTime(.0001,t);
+  g.gain.linearRampToValueAtTime(peak,t+.0025);
+  g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  src.connect(f);f.connect(pan);pan.connect(g);g.connect(nodes.ambienceGain);
+  src.start(t,rainRand(index,0x41d8be)*.88,dur+.01);
+}
+
+function scheduleRain(horizon){
+  if(!ctx||!state.identity)return;
+  const rt=currentRuntime();
+  const intensity=rt.effectiveRain;
+  if(intensity<.025){
+    nextRainTime=Math.max(nextRainTime,ctx.currentTime+.06);
+    return;
+  }
+  if(!nextRainTime||nextRainTime<ctx.currentTime-.1)nextRainTime=ctx.currentTime+.015;
+  while(nextRainTime<horizon){
+    playRainDrop(nextRainTime,intensity,rainCounter);
+    state.rainDrops++;
+    const spacing=(.24-intensity*.14)*(.62+rainRand(rainCounter,0x3bb41d)*.88);
+    nextRainTime+=Math.max(.055,spacing);
+    rainCounter++;
+  }
 }
 
 function playNoiseHit(t,dur,gain,freq,type='bandpass'){
@@ -212,8 +268,8 @@ function playEvent(ev,t,rt){
   const detune=ev.altered?(rt.effectiveShadow>.4?24:12):0;
   const a=ev.accent;
   if(ev.type==='bass')playTone(base,t,.28,.075*a,'sine',detune);
-  else if(ev.type==='motif')playPluck(base+12,t,.065*a,detune);
-  else if(ev.type==='answer')playPluck(base+19,t,.045*a,-detune);
+  else if(ev.type==='motif')playPluck(base,t,.052*a,detune);
+  else if(ev.type==='answer')playPluck(base+7,t,.032*a,-detune);
   else if(ev.type==='chord')playChord(base,t,.030*a,.55);
   else if(ev.type==='pad')playChord(state.identity.rootMidi,t,.027*a,1.8);
   else if(ev.type==='guitar'){
@@ -232,12 +288,15 @@ function updateAudioParams(){
   setParam(nodes.musicFilter.frequency,rt.cutoff,.22);
   setParam(nodes.delayWet.gain,rt.delayWet,.22);
   setParam(nodes.delayFeedback.gain,rt.delayFeedback,.22);
-  setParam(nodes.rainGain.gain,.20*rt.effectiveRain,.30);
+  // Continuous bed stays quiet; discrete stochastic droplets carry the rain identity.
+  setParam(nodes.rainGain.gain,.034*rt.effectiveRain,.30);
 }
 
 function scheduler(){
   if(!ctx||ctx.state!=='running'||!state.identity)return;
-  while(nextStepTime<ctx.currentTime+.32){
+  const horizon=ctx.currentTime+.32;
+  scheduleRain(horizon);
+  while(nextStepTime<horizon){
     const rt=currentRuntime();
     const events=eventsForStep(state.identity,state.context,state.timelineStep);
     for(const ev of events)playEvent(ev,nextStepTime,rt);
@@ -277,6 +336,9 @@ function restartSameSeed(){
   if(state.ready&&ctx){
     killVoices();
     state.timelineStep=0;
+    rainCounter=0;
+    state.rainDrops=0;
+    nextRainTime=ctx.currentTime+.03;
     nextStepTime=ctx.currentTime+.08;
   }else{
     state.timelineStep=0;
@@ -399,6 +461,8 @@ function snapshot(){
     contextCount:state.contextCount,
     timelineStep:state.timelineStep,
     restartCount:state.restartCount,
+    rainDrops:state.rainDrops,
+    timbreRevision:'warm-motif-r2+stochastic-rain-r2',
     activeVoices:activeSources.size,
     errors:[...state.errors]
   };

@@ -250,8 +250,12 @@ export function eventsForStep(identity,context,step){
     if((r.mode==='road'||r.density>.52)&&[0,8].includes(pos))push('kick',0,.72);
     if((r.mode==='road'||r.density>.58)&&[4,12].includes(pos))push('snare',0,.46);
   }else if(identity.primary==='G3'){
-    if(pos%2===0&&rAt(identity,'g3-motif',step)<r.density+.28)push('motif',motifDegree(identity,step),.56);
-    if([4,12].includes(pos)&&rAt(identity,'g3-answer',step)<.62)push('answer',motifDegree(identity,step,2),.36);
+    const g3Steps=r.mode==='road'
+      ? (r.subdivisionLevel===2?[0,3,6,8,11,14]:[0,4,8,12])
+      : [0,5,10,14];
+    const g3Chance=r.mode==='road' ? .30+r.density*.42 : .24+r.density*.24;
+    if(g3Steps.includes(pos)&&rAt(identity,'g3-motif',step)<g3Chance)push('motif',motifDegree(identity,step),r.mode==='road'?.38:.28);
+    if([6,14].includes(pos)&&rAt(identity,'g3-answer',step)<.18+r.density*.18)push('answer',motifDegree(identity,step,2),.20);
     if(r.mode==='road'&&[0,8].includes(pos))push('bass',motifDegree(identity,step)-12,.48);
   }else if(identity.primary==='G5'){
     if(pos===0)push('pad',0,.38);
@@ -277,8 +281,9 @@ export function eventsForStep(identity,context,step){
   if(r.mode==='road'&&r.subdivisionLevel>=1&&pos%2===0)push('hat',0,r.subdivisionLevel===2?.26:.18);
   if(r.mode==='road'&&r.subdivisionLevel===2&&pos%2===1&&rAt(identity,'fast-hat',step)<.70)push('hat',0,.13);
 
-  if(identity.secondary&&[6,14].includes(pos)&&rAt(identity,'secondary',step)<identity.secondaryWeight+.08){
-    push('answer',motifDegree(identity,step,3),.24+identity.secondaryWeight*.34);
+  const secondarySlots=r.mode==='road'?[6,14]:[14];
+  if(identity.secondary&&secondarySlots.includes(pos)&&rAt(identity,'secondary',step)<.04+identity.secondaryWeight*.55){
+    push('answer',motifDegree(identity,step,3),.16+identity.secondaryWeight*.22);
   }
   return out;
 }
