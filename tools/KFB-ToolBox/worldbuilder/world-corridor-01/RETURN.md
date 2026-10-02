@@ -660,3 +660,33 @@ Current next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**.
 
 The material/Clay next gate elsewhere in this Return remains an independent parallel lane.
+
+
+## 2026-10-02 · Procedural Building B0 COMPLETE
+
+Separate FORM/ENVIRONMENT lane; material remains parallel.
+
+Canonical recovery:
+`procedural-building-b0/RECOVERY.md`
+
+B0 is **GOLDEN FAMILY SOURCE ISOLATION PASS** on Draft PR #319.
+
+Final tested head:
+`86d5512fdf40b5fc9a2f83b2be6ff6666e82f062`
+
+Final evidence:
+- run/job `37034478056 / 110929154453`
+- artifact `11238965649`
+- digest `sha256:b867700e2974c2392391195cc57cee6c267b85acd0ee41172b6c34f274776650`
+
+Golden controls:
+- flat `way/371401529`
+- gable `way/371401492`
+- hip `way/371401475`
+
+All three preserve exact accepted V2 body/roof hashes and anchored bases.
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS** — measure the full 22-building Hürth V2 fixture and derive bounded siblings from observed source distributions only.
+
+No material decision, no generic random-city generator.
