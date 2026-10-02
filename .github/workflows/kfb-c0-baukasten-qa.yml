@@ -1,0 +1,56 @@
+name: KFB C0 Baukasten Browser QA
+
+on:
+  push:
+    branches:
+      - 'chatgpt-web/baukasten-c0-2026-09-19'
+    paths:
+      - 'kfb-hub/stage/minigames/baukasten-c0/**'
+      - '.github/scripts/kfb-c0-baukasten-smoke.mjs'
+      - '.github/workflows/kfb-c0-baukasten-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  browser-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium harness
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve branch and run C0 browser proof
+        run: |
+          python3 -m http.server 8777 --bind 127.0.0.1 > /tmp/kfb-c0-http.log 2>&1 &
+          echo $! > /tmp/kfb-c0-http.pid
+          sleep 2
+          node .github/scripts/kfb-c0-baukasten-smoke.mjs
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kfb-c0-baukasten-browser-proof
+          path: skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_CATALOG_2026-09-19
+          retention-days: 90
+      - name: Persist passing screenshots and reports on branch
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_CATALOG_2026-09-19/SOURCE.json
+          git add skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_CATALOG_2026-09-19/TEST_REPORT.md
+          git add skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_CATALOG_2026-09-19/browser-report.json
+          git add skills/chat/workflows/KFB_MODULAR_MINIGAME_HUB_2026-09-19/C0_CATALOG_2026-09-19/screenshots/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'C0: persist browser evidence [skip ci]'
+          git push origin HEAD:${GITHUB_REF_NAME}
