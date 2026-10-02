@@ -635,3 +635,41 @@ Current next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**
 
 Rehome existing behavior first. Do not fork it.
+
+
+## 2026-10-02 · Procedural Building B3 PASS → B4 Real-World Deformation Matrix
+
+Canonical recovery:
+`procedural-building-b3/RECOVERY.md`
+
+B3 branch / PR:
+- `chatgpt-web/wc1-procedural-building-b3-2026-10-02`
+- Draft PR #327
+
+B3 result:
+**STABLE_OWNER_REHOME_AND_WORLDBUILDER_CONSUMER_PASS**
+
+Rehome:
+- r2 export manifest `requiredToStart`: 26 files
+- exact Git-blob parity: **26/26**
+- rehome commit `3afc04245a9120e4fb7fe9284f32ec62c0eae896`
+
+Real stable WB2 consumer:
+- tested head `8bcfa5853d908a2ed497ce63837879a14c967d86`
+- run/job `37051696896 / 110986394871`
+- artifact `11246857239`
+- digest `sha256:c44fae26421fd849e012f3a60ac932feafb312ee333391762b115f69bd91b9c0`
+- 700 buildings / 164 roads / 700 support records
+- `kfb-facade-rule-v1`
+- 6,672 windows / 434 doors
+- all three B1 siblings present in the real WorldBuilder
+- one renderer
+- stable terrain/edit owners
+- 0 console/page/QA problems.
+
+Screenshot is valid boot/consumer evidence but **not** style acceptance because the default camera is too close to a foreground wall.
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B4 · REAL-WORLD DEFORMATION DESIGN MATRIX**
+
+Stop adding infrastructure. Use the stable WorldBuilder plus existing deformation donors to create a controlled design comparison.
