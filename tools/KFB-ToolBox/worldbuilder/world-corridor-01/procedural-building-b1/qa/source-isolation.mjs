@@ -38,6 +38,9 @@ try{
     if(state.lane?.id!==e.id)problems.push(e.id+': lane id '+state.lane?.id);
     if(state.lane?.topologyId!==e.topology)problems.push(e.id+': topology donor '+state.lane?.topologyId);
     if(state.lane?.envelopeId!==e.envelope)problems.push(e.id+': envelope donor '+state.lane?.envelopeId);
+    const visiblePick=await page.$eval('#pick',el=>({value:el.value,text:el.options[el.selectedIndex]?.textContent||''}));
+    if(visiblePick.value!==String(i))problems.push(e.id+': visible selector value '+visiblePick.value+' expected '+i);
+    if(!visiblePick.text.includes(e.id))problems.push(e.id+': visible selector text '+visiblePick.text);
 
     if(f?.topology?.corners!==e.corners)problems.push(e.id+': topology corners '+f?.topology?.corners);
     if(f?.sibling?.corners!==e.corners)problems.push(e.id+': sibling corners '+f?.sibling?.corners);
