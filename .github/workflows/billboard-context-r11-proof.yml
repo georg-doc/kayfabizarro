@@ -7,6 +7,12 @@ on:
     paths:
       - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/**'
       - '.github/workflows/billboard-context-r11-proof.yml'
+  pull_request:
+    branches:
+      - chatgpt-web/billboard-b2a-css3d-2026-09-24
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/**'
+      - '.github/workflows/billboard-context-r11-proof.yml'
   workflow_dispatch:
 
 permissions:
