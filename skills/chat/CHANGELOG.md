@@ -2143,3 +2143,20 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - 3/3 body parity PASS, 3/3 roof parity PASS, 3/3 anchored-base PASS, 3/3 four-stage source-isolation PASS, 0 console/page/QA problems.
 - Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b0/RECOVERY.md`.
 - Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS** — measure the full 22-building Hürth V2 fixture before deriving any synthetic siblings.
+
+
+## 2026-10-02 · WC1 Procedural Building B1 · source-bounded siblings PASS
+
+- Completed Draft PR #322 / branch `chatgpt-web/wc1-procedural-building-b1-2026-10-02`.
+- Measured the full accepted 22-building Hürth V2 fixture before generation.
+- Proven sibling lanes:
+  - compact-simple `371401529 → 371401477`;
+  - ordinary-notched `371401481 → 371401497`;
+  - large-complex `371401488 → 371401495`.
+- Generator preserves donor corner topology and uses only source-observed envelope area/aspect/height/roof-height before handing the sibling to the existing Elastic V2 owner.
+- Initial run `37040704935` was machine-green; manual evidence review found only stale visible selector text on screenshots 2/3.
+- Repair Pass 1 synchronized the selector + added visible-selector QA. Generator blob stayed `9d45280f6497b109856254a4d71f017b8e41ff21`.
+- Final tested head `191f79bed81e2e5a0b5486033532b9f0b32335a7`; run/job `37041339236 / 110951929252`; artifact `11241588200`; digest `sha256:213cce3bcc928d21fe95b01d767bea508d9f75acb7e49433b2dd5a46d2e32e95`.
+- 3/3 topology PASS, 3/3 area/aspect PASS, 3/3 height/roof PASS, 3/3 V2 build/base PASS, 3/3 visual evidence PASS, 0 console/page/QA errors.
+- Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b1/RECOVERY.md`.
+- Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**. Reuse the current real `kfb-facade-rule-v1` owner; do not create a second façade implementation.
