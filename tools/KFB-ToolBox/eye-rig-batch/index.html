@@ -179,25 +179,25 @@
       <details open>
         <summary>Placement</summary>
         <div class="control-grid">
-          <label>Spacing <output data-out="dx"></output><input data-param="dx" type="range" min="0.12" max="0.65" step="0.005"></label>
-          <label>Vertical <output data-out="dy"></output><input data-param="dy" type="range" min="-0.45" max="0.35" step="0.005"></label>
-          <label>Eye size <output data-out="ring"></output><input data-param="ring" type="range" min="0.12" max="0.5" step="0.005"></label>
-          <label>Inset <output data-out="inset"></output><input data-param="inset" type="range" min="-0.2" max="0.9" step="0.01"></label>
+          <label>Spacing <output data-out="dx"></output><input data-param="dx" type="range" min="0" max="1.5" step="0.005"></label>
+          <label>Vertical <output data-out="dy"></output><input data-param="dy" type="range" min="-2" max="1.5" step="0.005"></label>
+          <label>Eye size <output data-out="ring"></output><input data-param="ring" type="range" min="0.02" max="1.2" step="0.005"></label>
+          <label>Inset <output data-out="inset"></output><input data-param="inset" type="range" min="-1.5" max="6" step="0.01"></label>
           <label>Splay <output data-out="splay"></output><input data-param="splay" type="range" min="0" max="1" step="0.01"></label>
           <label>Lid fit <output data-out="lidFit"></output><input data-param="lidFit" type="range" min="0.5" max="1" step="0.01"></label>
         </div>
-        <button id="useMeasuredBtn" type="button" class="wide-action quiet" disabled>Use source-measured baseline</button>
-        <div id="measuredSeedHint" class="micro-status">Measured baseline appears after source / FaceHost analysis.</div>
-        <div id="mediumSeedHint" class="micro-status">Rig_Medium authoring default loaded; source measurement remains suggestion only.</div>
+        <button id="useMeasuredBtn" type="button" class="wide-action quiet" disabled>Use source-eye baseline</button>
+        <div id="measuredSeedHint" class="micro-status">Per-actor source-eye placement appears after source / FaceHost analysis.</div>
+        <div id="mediumSeedHint" class="micro-status">Rig_Medium style default loaded; matched actors use their own source-eye placement.</div>
       </details>
 
       <details open>
         <summary>Eye shape / oval</summary>
         <div class="control-grid">
-          <label>Width <output data-out="ovalW"></output><input data-param="ovalW" type="range" min="0.55" max="1.6" step="0.01"></label>
-          <label>Height <output data-out="ovalH"></output><input data-param="ovalH" type="range" min="0.55" max="1.6" step="0.01"></label>
-          <label>Depth <output data-out="ovalD"></output><input data-param="ovalD" type="range" min="0.55" max="1.6" step="0.01"></label>
-          <label>Inward tilt <output data-out="ovalTilt"></output><input data-param="ovalTilt" type="range" min="-30" max="30" step="0.5"></label>
+          <label>Width <output data-out="ovalW"></output><input data-param="ovalW" type="range" min="0.2" max="3" step="0.01"></label>
+          <label>Height <output data-out="ovalH"></output><input data-param="ovalH" type="range" min="0.2" max="3" step="0.01"></label>
+          <label>Depth <output data-out="ovalD"></output><input data-param="ovalD" type="range" min="0.2" max="3" step="0.01"></label>
+          <label>Inward tilt <output data-out="ovalTilt"></output><input data-param="ovalTilt" type="range" min="-75" max="75" step="0.5"></label>
         </div>
         <div class="micro-status">Reuses Frankensteining donor <code>eyeoval.v1.js</code>. Top/bottom contour shaping remains backlog.</div>
       </details>
