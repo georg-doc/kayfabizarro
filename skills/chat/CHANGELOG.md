@@ -2112,3 +2112,17 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Cars queued separately in `georg-doc/KFB-Stunt-Car-Race`: preserve human-accepted v0.8 Race feel; consume Vehicle Lab / Box Stop profile facts without moving steering/drift/jump/contact ownership.
 - Flight queued separately in `georg-doc/KFB-Travel-Globe`: preserve Travel Flight / `carpet.js` movement ownership; consume carrier/profile facts without creating second flight physics.
 - Clay/facade/shadow remains explicitly outside this mobility lane.
+
+
+## 2026-10-02 · WC1 procedural environment P2 recovery-complete
+
+- Closed the separate FORM/ENVIRONMENT P2 lane on Draft PR #316 / branch `chatgpt-web/wc1-procedural-environment-p2-2026-10-02`.
+- Added canonical crash-safe recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/RECOVERY.md`.
+- P2 exact source-object proof: 13/13 authored donors PASS; source pin `a5fefb273b274e40b3a1e642788c87113fa6ea27`; original materials; no KFB deformation/material adaptation/fallback.
+- P2 procedural transfer: 7/7 source-derived geometry roles PASS at tested head `5f2a4444feed8f38883499de2a044f0e9e8b36eb`.
+- Final run/job `37012562325 / 110855562506`; source evidence artifact `11228612568` digest `sha256:3d7d60220fdae97466b503c2237161c5d5f28f7f2fb754572d48482ebfaf0826`; procedural evidence artifact `11228413648` digest `sha256:162562b8da803cf4e9ae5d2a54b91036d59d84f6ee3382e23e2f6424ed108df9`.
+- Repair Pass 1 changed only QA semantics: renderer memory counted the shadow map; display materials had 0 texture maps. Geometry stayed unchanged.
+- Production Control anchors: P2 exact source objects `e73b2e77-23a2-4dea-a744-4b455dee2e59`; P2 final geometry PASS `d3a82471-38ad-43ce-bbba-a6f657760678`.
+- Nature/prop vocabulary is now intentionally considered broad enough to move on: tree, rocks, bush, logs, stumps, mushrooms, grass.
+- Parallel Clay/material lane remains independent.
+- Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**. Use Golden/deformed samples and the existing Elastic/Grotesque/Landmark/Torsion/FACADE lineage; grade with Polly × Rocko × Metropolis. No generic random-building generator.
