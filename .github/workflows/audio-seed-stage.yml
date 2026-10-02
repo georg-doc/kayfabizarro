@@ -1,0 +1,59 @@
+name: AUDIO-SEED-01 branch QA
+
+on:
+  push:
+    branches:
+      - 'chatgpt-web/audio-seed-01-2026-10-02'
+    paths:
+      - 'kfb-hub/stage/audio-seed-01/**'
+      - '.github/workflows/audio-seed-stage.yml'
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/audio-seed-01/**'
+      - '.github/workflows/audio-seed-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate deterministic Audio DNA
+        run: node kfb-hub/stage/audio-seed-01/validate.mjs
+
+      - name: Syntax check AUDIO-SEED modules
+        run: |
+          node --check kfb-hub/stage/audio-seed-01/audio-seed-core.js
+          node --check kfb-hub/stage/audio-seed-01/audio-seed.js
+          node --check kfb-hub/stage/audio-seed-01/qa.mjs
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Start repository HTTP preview
+        run: |
+          python3 -m http.server 4173 > /tmp/audio-seed-http.log 2>&1 &
+          echo $! > /tmp/audio-seed-http.pid
+          sleep 2
+
+      - name: Run AUDIO-SEED-01 browser QA
+        run: node kfb-hub/stage/audio-seed-01/qa.mjs
+
+      - name: Upload AUDIO-SEED-01 proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-seed-01-proof
+          path: audio-seed-proof/
+          retention-days: 14
