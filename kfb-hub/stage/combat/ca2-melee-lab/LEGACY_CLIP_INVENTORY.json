@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.combat.legacy-clip-inventory/0.1-candidate",
+  "status": "SOURCE_ENUMERATED",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "commit": "10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+    "glb": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb",
+    "singleAnimationsFolder": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/fbx/Single Animations"
+  },
+  "count": 30,
+  "names": [
+    "Attack(1h)",
+    "AttackCombo",
+    "AttackSpinning",
+    "Basepose",
+    "Block",
+    "Cheer",
+    "Climbing",
+    "Dance",
+    "DashBack",
+    "DashFront",
+    "DashLeft",
+    "DashRight",
+    "Defeat",
+    "HeavyAttack",
+    "Hop",
+    "Idle",
+    "Interact",
+    "Jump",
+    "LayingDownIdle",
+    "PickUp",
+    "Roll",
+    "Run",
+    "Shoot(1h)",
+    "Shoot(2h)",
+    "Shoot(2h)Bow",
+    "Shooting(1h)",
+    "Shooting(2h)",
+    "Throw",
+    "Walk",
+    "Wave"
+  ],
+  "semanticCandidate": {
+    "idle": "Idle",
+    "move": {
+      "walk": "Walk",
+      "run": "Run"
+    },
+    "guard": "Block",
+    "attack": "Attack(1h)",
+    "hit": null,
+    "defeat": "Defeat",
+    "recover": null
+  },
+  "warning": "Resident Atlas reports Attack(1h) and HeavyAttack are not weapon-clear for Orc Warband; both can pass head/ground. Combat attack remains HOLD until actor+weapon visual proof."
+}

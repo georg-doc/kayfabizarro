@@ -1,0 +1,47 @@
+{
+  "schema": "kfb.ca2-04-stage-source/0.1",
+  "status": "BRANCH_BROWSER_REPAIR1",
+  "owner": "georg-doc/KFB-Combat-Arena",
+  "implementationPr": 7,
+  "implementationBranch": "chatgpt-web/ca2-04-melee-vfx-sfx-2026-09-20",
+  "implementationHead": "6df5d4cd3b5e17bacb32438beac528a37c943bb0",
+  "implementationBase": "954f2db7484dc566e468e5ce89b0d95940d97537",
+  "publicSourceRepo": "georg-doc/kayfabizarro",
+  "publicSourceBase": "e95f7291cae15f5f0d5f441a5ddd6fecc4e0243c",
+  "publicSourceBranch": "chatgpt-web/ca2-04-melee-stage-2026-09-20",
+  "route": "/kfb-hub/stage/combat/ca2-melee-lab/",
+  "intendedUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-melee-lab/",
+  "mirror": {
+    "driverAdapter": {
+      "sourceRepo": "georg-doc/KFB-Combat-Arena",
+      "sourceHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
+      "sourcePath": "combat-arena-v2/frizzlebob-driver-adapter.v2.js"
+    },
+    "contact": {
+      "sourceRepo": "georg-doc/KFB-Combat-Arena",
+      "sourceHead": "d00e8b1e2b78dc415e3435317a227e06ff1189f6",
+      "sourcePath": "slices/ca2-melee-lab/contact.v1.js"
+    },
+    "trails": {
+      "sourceRepo": "georg-doc/KFB-Combat-Arena",
+      "sourceHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
+      "sourcePath": "modules/kfb-fx-trails.js"
+    },
+    "sprites": {
+      "sourceRepo": "georg-doc/KFB-Combat-Arena",
+      "sourceHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
+      "sourcePath": "modules/kfb-fx-sprites.js"
+    },
+    "atlas": {
+      "sourceRepo": "georg-doc/KFB-Combat-Arena",
+      "sourceHead": "954f2db7484dc566e468e5ce89b0d95940d97537",
+      "sourcePath": "modules/kfb-combat-atlas.js"
+    }
+  },
+  "claims": {
+    "publicVerified": false,
+    "humanAccepted": false,
+    "audioAccepted": false,
+    "arenaRuntimePromoted": false
+  }
+}
