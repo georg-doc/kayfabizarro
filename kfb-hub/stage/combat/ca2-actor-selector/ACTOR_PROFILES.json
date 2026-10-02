@@ -1,0 +1,68 @@
+{
+  "schema": "kfb.combat.actor-profile-set/0.1-candidate",
+  "date": "2026-09-20",
+  "status": "POC_ONLY_NOT_ARENA_ENABLED",
+  "profiles": [
+    {
+      "schema": "kfb.combat.actor-profile/0.1-candidate",
+      "id": "frizzlebob-driver",
+      "label": "FrizzleBob · Driver Graft",
+      "status": "candidate",
+      "adapterKind": "driver-graft",
+      "rigFamily": "Rig_Medium",
+      "renderMode": "graft",
+      "sources": {
+        "model": {"repo":"georg-doc/kayfabizarro","commit":"bdaea0648f27c0f16e0a737bfba237eb54dd4cbb","path":"media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb"},
+        "graftReader": {"repo":"georg-doc/kayfabizarro","commit":"bdaea0648f27c0f16e0a737bfba237eb54dd4cbb","path":"tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js"},
+        "graftContract": {"repo":"georg-doc/kayfabizarro","commit":"bdaea0648f27c0f16e0a737bfba237eb54dd4cbb","path":"tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json"},
+        "motionEvidence": {"path":"kfb-hub/stage/toolbox/kaykit-motion-lab-v1/MEASURED_ACTOR_PROFILES.json","checks":"87/87 PASS"}
+      },
+      "owners": {"world":"arena-player","mixer":"actor-host","face":"graft-reader","ground":"arena-player","combat":"arena-gunfight"},
+      "actions": {"idle":"Idle_A","walk":"Walking_A","run":"Running_A","jump":"Jump_Full_Short","aim":null,"fire":null,"hit":"Hit_A","defeat":"Death_A"},
+      "weaponProfile": null,
+      "capabilities": ["locomotion-proven","ranged-primary-pending"],
+      "gates": {"asset":true,"clips":true,"face":true,"ground":false,"muzzle":false},
+      "notes": ["Default only inside this isolated POC.","Arena ground/freeplay and visible ranged muzzle chain remain open."]
+    },
+    {
+      "schema": "kfb.combat.actor-profile/0.1-candidate",
+      "id": "gothgirl",
+      "label": "GothGirl",
+      "status": "hold",
+      "adapterKind": "kaykit-medium",
+      "rigFamily": "Rig_Medium",
+      "renderMode": "direct",
+      "sources": {
+        "model": {"repo":"georg-doc/kayfabizarro","commit":"bdaea0648f27c0f16e0a737bfba237eb54dd4cbb","path":"media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb"},
+        "motionEvidence": {"path":"kfb-hub/stage/toolbox/kaykit-motion-lab-v1/MEASURED_ACTOR_PROFILES.json","checks":"87/87 PASS"}
+      },
+      "owners": {"world":"arena-player","mixer":"actor-host","face":"external-owner-pending","ground":"arena-player","combat":"arena-gunfight"},
+      "actions": {"idle":"Idle_A","walk":"Walking_A","run":"Running_A","jump":"Jump_Full_Short","aim":null,"fire":null,"hit":"Hit_A","defeat":"Death_A"},
+      "weaponProfile": null,
+      "capabilities": ["locomotion-proven","ranged-primary-pending"],
+      "gates": {"asset":true,"clips":true,"face":false,"ground":false,"muzzle":false},
+      "notes": ["Motion Lab proves direct Rig_Medium locomotion only.","Productive face owner, gun grip and muzzle remain open."]
+    },
+    {
+      "schema": "kfb.combat.actor-profile/0.1-candidate",
+      "id": "legacy-frizzlebob-v5a",
+      "label": "Legacy FrizzleBob · current Arena",
+      "status": "candidate",
+      "adapterKind": "legacy-v5a",
+      "rigFamily": "legacy",
+      "renderMode": "source-only",
+      "sources": {
+        "model": {"repo":"georg-doc/KFB-Combat-Arena","commit":"f6a59ad15b9ffcf3164b0ab013f223962b63f61f","path":"assets/models/FrizzleBob_Yellow_Gun.gltf"},
+        "actor": {"repo":"georg-doc/KFB-Combat-Arena","commit":"f6a59ad15b9ffcf3164b0ab013f223962b63f61f","path":"combat-arena-v1/frizzlebob.v1.js"},
+        "ownerMap": {"repo":"georg-doc/KFB-Combat-Arena","commit":"f6a59ad15b9ffcf3164b0ab013f223962b63f61f","path":"_handover/C0_REENTRY/OWNER_MAP.md"}
+      },
+      "owners": {"world":"arena-player","mixer":"legacy-actor","face":"legacy-eye-mouth","ground":"arena-player-plus-known-legacy-groundkeep-conflict","combat":"arena-gunfight"},
+      "actions": {"idle":null,"walk":null,"run":null,"jump":null,"aim":null,"fire":null,"hit":null,"defeat":null},
+      "weaponProfile": "current-arena-gun-node-contract-not-normalized",
+      "capabilities": ["current-runtime-proven","profile-normalization-pending"],
+      "gates": {"asset":true,"clips":false,"face":true,"ground":false,"muzzle":true},
+      "notes": ["The current Arena actor remains available; CA2-01 does not copy its private runtime asset into the shared Stage.","No substitute geometry is shown. Exact action normalization belongs to CA2-00/WSA integration."]
+    }
+  ],
+  "holdRoster": ["clown","witch","lorekeeper","caveman","avian-swordsman","skeleton-warrior","skeleton-rogue","skeleton-mage"]
+}

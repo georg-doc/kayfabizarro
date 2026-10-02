@@ -1,0 +1,110 @@
+name: Combat CA2 Actor Selector branch proof
+on:
+  push:
+    branches:
+      - 'chatgpt-web/ca2-01-actor-selector-2026-09-20'
+    paths:
+      - 'kfb-hub/stage/combat/**'
+      - '.github/workflows/combat-ca2-actor-selector.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  branch-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and JSON
+        run: |
+          node --check kfb-hub/stage/combat/ca2-actor-selector/selector.mjs
+          node --check kfb-hub/stage/combat/ca2-actor-selector/proof.mjs
+          node -e "JSON.parse(require('fs').readFileSync('kfb-hub/stage/combat/ca2-actor-selector/ACTOR_PROFILES.json','utf8'));JSON.parse(require('fs').readFileSync('kfb-hub/stage/combat/ca2-actor-selector/SOURCE.json','utf8'));console.log('JSON PASS')"
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Serve exact branch
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ca2-http.log 2>&1 &
+          echo $! >/tmp/ca2-http.pid
+          for i in {1..30}; do
+            curl -fsS http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-actor-selector/SOURCE.json >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/ca2-http.log
+          exit 1
+      - name: Browser proof
+        env:
+          CA2_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/combat/ca2-actor-selector/
+          CA2_SOURCE_HEAD: 64638a5818d7b7a75c0a96edd8777580669dcfa3
+          CA2_PROOF_DIR: combat-ca2-selector-evidence
+        run: node kfb-hub/stage/combat/ca2-actor-selector/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combat-ca2-actor-selector-evidence
+          path: combat-ca2-selector-evidence
+          retention-days: 14
+
+  public-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Wait for exact Cloudflare candidate
+        env:
+          CA2_PUBLIC_BASE: https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-actor-selector/
+          CA2_SOURCE_HEAD: 64638a5818d7b7a75c0a96edd8777580669dcfa3
+        run: |
+          node <<'NODE'
+          const base=process.env.CA2_PUBLIC_BASE;
+          const expected=process.env.CA2_SOURCE_HEAD;
+          let last=null;
+          for(let i=0;i<120;i++){
+            try{
+              const r=await fetch(base+'SOURCE.json?proof='+Date.now(),{cache:'no-store'});
+              const t=await r.text();
+              let j=null;try{j=JSON.parse(t)}catch{}
+              last={status:r.status,head:j?.implementationHead||null,preview:t.slice(0,100)};
+              if(r.ok&&j?.implementationHead===expected){
+                console.log('PUBLIC MARKER PASS',base,expected);
+                process.exit(0);
+              }
+            }catch(e){last={error:String(e)}}
+            await new Promise(r=>setTimeout(r,3000));
+          }
+          console.error('PUBLIC MARKER FAIL',JSON.stringify(last));
+          process.exit(1);
+          NODE
+      - name: Verify public Stage navigation
+        run: |
+          node <<'NODE'
+          const stage=await fetch('https://kayfabizarro.pages.dev/kfb-hub/stage/?proof='+Date.now(),{cache:'no-store'}).then(r=>r.text());
+          const combat=await fetch('https://kayfabizarro.pages.dev/kfb-hub/stage/combat/?proof='+Date.now(),{cache:'no-store'}).then(r=>r.text());
+          if(!stage.includes('Combat Arena · Web Stage')||!stage.includes('./combat/ca2-actor-selector/')) throw Error('Stage navigator missing Combat link');
+          if(!combat.includes('Combat Arena · Web Stage')||!combat.includes('./ca2-actor-selector/')) throw Error('Combat Web Stage landing missing selector link');
+          console.log('PUBLIC NAV PASS');
+          NODE
+      - name: Exact public browser proof
+        env:
+          CA2_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/combat/ca2-actor-selector/
+          CA2_SOURCE_HEAD: 64638a5818d7b7a75c0a96edd8777580669dcfa3
+          CA2_PROOF_DIR: combat-ca2-selector-public-evidence
+        run: node kfb-hub/stage/combat/ca2-actor-selector/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combat-ca2-actor-selector-public-evidence
+          path: combat-ca2-selector-public-evidence
+          retention-days: 14
