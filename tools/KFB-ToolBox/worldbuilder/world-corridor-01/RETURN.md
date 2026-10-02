@@ -540,3 +540,37 @@ Full return/recovery:
 - `procedural-props-p0/SOURCE.json`
 
 This experiment does not change the parent WC1 next material action (Clay002 vs Derek).
+
+
+## 2026-10-02 · Separate Form/Environment lane · P1 source-derived PASS
+
+The procedural environment **shape/deformation** lane is now explicitly separated from the parallel material lane.
+
+Binding design recovery:
+- existing deformation lineage restored under **Use what works**;
+- style grading axis = **Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis**;
+- P0B tree remains a human-positive procedural-family donor, not the building deformation authority.
+
+Completed:
+- Golden deformation donor extraction;
+- source-derived Rocks + Bushes P1 specification;
+- reusable geometry-only module `procedural-props-local-proof/environment-family-p1.mjs`;
+- internal source-isolation PASS.
+
+P1 verified:
+- P0B tree;
+- P0B pebble;
+- K1 Golden boulder;
+- T3 accent rock;
+- T3 bush;
+- run `36959777774` / job `110690683930`;
+- artifact `11207815421`;
+- digest `sha256:95bc5a84d5d01e9ba1bf2dc10c56e8913aa04384906e162187616909d913e8c8`;
+- 0 console errors / 0 page errors / 0 QA problems.
+
+The first modular QA attempt failed only because direct `file://` cannot serve the neighboring ES module reliably. Repair Pass 1 changed internal QA transport to localhost; geometry was unchanged.
+
+Form/Environment next action:
+**ENVIRONMENT FAMILY P2 · EXISTING PROP VOCABULARY EXTRACTION**.
+
+The existing material next gate above remains a separate parallel lane and is not superseded by this form work.
