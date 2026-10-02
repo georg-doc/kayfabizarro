@@ -68,6 +68,27 @@ try{
       problems.push(e.id+': building_A bounds invalid');
     }
 
+    const expectedX=state.expectedStageX||[-10.5,-3.5,3.5,10.5];
+    const centers=[
+      state.stageCenters?.clean,
+      state.stageCenters?.accepted,
+      state.stageCenters?.b0,
+      state.stageCenters?.kaykit
+    ];
+    centers.forEach((p,k)=>{
+      if(!Array.isArray(p)||p.length!==3||p.some(v=>!Number.isFinite(v))){
+        problems.push(e.id+': invalid stage center '+k);
+        return;
+      }
+      if(Math.abs(p[0]-expectedX[k])>.05)problems.push(e.id+': stage '+k+' x='+p[0]+' expected '+expectedX[k]);
+      if(Math.abs(p[2])>.05)problems.push(e.id+': stage '+k+' z='+p[2]+' expected 0');
+    });
+    for(let k=1;k<centers.length;k++){
+      if(Array.isArray(centers[k-1])&&Array.isArray(centers[k])&&Math.abs(centers[k][0]-centers[k-1][0])<6){
+        problems.push(e.id+': stages '+(k-1)+'/'+k+' not visually separated');
+      }
+    }
+
     const corners=(state.sourceFootprint||[]).length;
     if(corners!==5)problems.push(e.id+': source footprint serialized corners '+corners+' expected 5 including closure');
 
