@@ -412,3 +412,64 @@ Current FORM/ENVIRONMENT next gate:
 **ENVIRONMENT FAMILY P2 · EXISTING PROP VOCABULARY EXTRACTION** — recover logs / stumps / mushrooms / grass / markers only from already-existing KFB/KayKit donors before generating anything new.
 
 Material/Clay work remains owned by its parallel lane.
+
+
+## 2026-10-02 · Form/Environment lane · P2 PASS · move to Building B0
+
+The procedural nature/prop vocabulary is now broad enough to stop adding new small-prop families before the building lane.
+
+Read:
+- `procedural-environment-p2/P2_EXISTING_PROP_VOCABULARY_EXTRACTION_2026-10-02.md`
+- `procedural-environment-p2/P2_SOURCE_OBJECT_ISOLATION_TEST_REPORT.md`
+- `procedural-environment-p2/P2_PROCEDURAL_TRANSFER_SPEC_2026-10-02.md`
+- `procedural-environment-p2/P2_TEST_REPORT.md`
+- `procedural-environment-p2/RETURN.md`
+- `procedural-environment-p2/SOURCE.json`
+
+P2 branch / PR:
+- branch `chatgpt-web/wc1-procedural-environment-p2-2026-10-02`
+- Draft PR #316
+
+Exact donor proof:
+- 13/13 authored source objects loaded from source pin `a5fefb273b274e40b3a1e642788c87113fa6ea27`;
+- original materials, no deformation, no fallback;
+- `stump_oldTall` retained as explicit outlier / negative control.
+
+Procedural transfer PASS:
+- `SOFT_LOG_SEPARATOR`
+- `SOFT_LOG_STACK3`
+- `SOFT_STUMP_ROUND`
+- `SOFT_STUMP_DETAILED`
+- `SOFT_MUSHROOM_NORMAL`
+- `SOFT_MUSHROOM_GROUP3`
+- `SOFT_GRASS_TUFT`
+
+Final test:
+- tested head `5f2a4444feed8f38883499de2a044f0e9e8b36eb`;
+- run `37012562325`;
+- job `110855562506`;
+- source artifact `11228612568`;
+- source digest `sha256:3d7d60220fdae97466b503c2237161c5d5f28f7f2fb754572d48482ebfaf0826`;
+- procedural artifact `11228413648`;
+- procedural digest `sha256:162562b8da803cf4e9ae5d2a54b91036d59d84f6ee3382e23e2f6424ed108df9`;
+- 13/13 source donors PASS;
+- 7/7 procedural geometries PASS;
+- 0 display-material texture maps;
+- 0 console errors;
+- 0 page errors;
+- 0 QA problems.
+
+Repair Pass 1 corrected only the QA metric: renderer memory counted one shadow-map texture; geometry and display materials were unchanged.
+
+Material/Clay remains a separate parallel lane and is not superseded.
+
+Current FORM/ENVIRONMENT next gate:
+**PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**
+
+Use only:
+`Golden/deformed samples → Elastic Grotesque → City Grotesque → LandmarkElastic → LOOK-TORSION → FACADE_RULE v1 → KayKit/K-Kid identity`
+
+Grade against:
+`Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis`.
+
+No generic “wonky house” prompt and no material decision in B0.
