@@ -2126,3 +2126,20 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Nature/prop vocabulary is now intentionally considered broad enough to move on: tree, rocks, bush, logs, stumps, mushrooms, grass.
 - Parallel Clay/material lane remains independent.
 - Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**. Use Golden/deformed samples and the existing Elastic/Grotesque/Landmark/Torsion/FACADE lineage; grade with Polly × Rocko × Metropolis. No generic random-building generator.
+
+
+## 2026-10-02 · WC1 Procedural Building B0 · Golden source-isolation PASS
+
+- Started a separate FORM/ENVIRONMENT building slice on Draft PR #319 / branch `chatgpt-web/wc1-procedural-building-b0-2026-10-02`.
+- Added source-derived `B0_GOLDEN_FAMILY_SPEC_2026-10-02.md`.
+- Selected three exact ordinary controls already pinned by the accepted Hürth V2 viewer: `way/371401529` flat, `way/371401492` gabled, `way/371401475` hipped.
+- B0 implementation is deliberately a no-regression wrapper around `buildElasticShell` / `buildElasticRoof` from `elastic-grotesque-clay.mjs@0c59e92d`; no second building deformer.
+- `kfb-facade-rule-v1` remains the normal-building façade owner and is not cloned into the isolation viewer.
+- Raw KayKit `building_A@2ff8b350` is shown separately as cartoon proportion/source-identity donor only.
+- Initial browser run failed before geometry due to `building_A.gltf → building_A.bin` jsDelivr relative-dependency transport.
+- Repair Pass 1 reused the already-proven pinned raw-GitHub transport. Machine parity passed, but screenshot review found overlapping stages caused by viewer-centering math.
+- Repair Pass 2 changed only stage centering + separation assertions. B0 geometry module stayed byte-identical.
+- Final tested head `86d5512fdf40b5fc9a2f83b2be6ff6666e82f062`; run/job `37034478056 / 110929154453`; evidence artifact `11238965649`; digest `sha256:b867700e2974c2392391195cc57cee6c267b85acd0ee41172b6c34f274776650`.
+- 3/3 body parity PASS, 3/3 roof parity PASS, 3/3 anchored-base PASS, 3/3 four-stage source-isolation PASS, 0 console/page/QA problems.
+- Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b0/RECOVERY.md`.
+- Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS** — measure the full 22-building Hürth V2 fixture before deriving any synthetic siblings.
