@@ -1,0 +1,95 @@
+{
+  "schema": "kfb.wc1-procedural-building-b2.source.v1",
+  "date": "2026-10-02",
+  "status": "B2_EXISTING_FACADE_OWNER_INTEGRATION_PASS",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-building-b2-2026-10-02",
+  "pr": 323,
+  "base": {
+    "branch": "chatgpt-web/wc1-procedural-building-b1-2026-10-02",
+    "head": "8a397f2b9fd1b439643007ee7db9b600b9461585"
+  },
+  "testedHead": "99a390d3b828fc132528a65e3cff52d165299990",
+  "facadeOwner": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/wd1-city.js",
+    "blob": "c11b6f7156eaee808fe4689ee406f9b3480b6f0b",
+    "export": "buildCityLayer",
+    "rule": "kfb-facade-rule-v1",
+    "modified": false
+  },
+  "seam": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/wd1-seam.js",
+    "blob": "95c6bfa04a4dd2106039db600b1e826ef48f4490"
+  },
+  "fixture": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/fixtures/huerth-crop-v0.json",
+    "blob": "c242f09421a72249edb9c9ba8e431532666ab321",
+    "buildings": 700,
+    "roads": 164,
+    "landuse": 22
+  },
+  "presenterFacts": {
+    "buildings": 700,
+    "details": 7376,
+    "windows": 6672,
+    "doors": 434,
+    "partyEdges": 946,
+    "bare": 2,
+    "wallNormalsOnly": 700
+  },
+  "siblings": [
+    {
+      "lane": "compact-simple",
+      "details": 20,
+      "doors": 1,
+      "windows": 19,
+      "partyEdges": 0,
+      "partyDetails": 0,
+      "roadDistanceM": 0.8354052663835634,
+      "multiFloor": true
+    },
+    {
+      "lane": "ordinary-notched",
+      "details": 35,
+      "doors": 1,
+      "windows": 34,
+      "partyEdges": 3,
+      "partyDetails": 0,
+      "roadDistanceM": 14.307776650204328,
+      "multiFloor": true
+    },
+    {
+      "lane": "large-complex",
+      "details": 29,
+      "doors": 1,
+      "windows": 28,
+      "partyEdges": 2,
+      "partyDetails": 0,
+      "roadDistanceM": 8.848970787404287,
+      "multiFloor": true
+    }
+  ],
+  "finalTest": {
+    "run": 37043662315,
+    "job": 110959643486,
+    "artifact": {
+      "id": 11243896554,
+      "digest": "sha256:4591394170e0fe8d03f068e055be5c020ec0bb72a037ed8a5bfcd02cb1933bd8"
+    },
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "qaProblems": 0
+  },
+  "ownerRecoveryFinding": {
+    "stableExpectedPath": "tools/KFB-ToolBox/worldbuilder/world-integration-01/",
+    "presentOnBranch": false,
+    "action": "REHOME_EXISTING_OWNER_BEFORE_REAL_WORLDBUILDER_CONSUMER"
+  },
+  "materialDecision": false,
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "recoveryFile": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/RECOVERY.md",
+  "nextGate": "PROCEDURAL_BUILDING_B3_REAL_OWNER_REHOME_WORLDBUILDER_CONSUMER"
+}
