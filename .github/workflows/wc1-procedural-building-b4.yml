@@ -1,0 +1,39 @@
+name: WC1 Procedural Building B4
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wc1-procedural-building-b4-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b4/**'
+      - '.github/workflows/wc1-procedural-building-b4.yml'
+  workflow_dispatch:
+
+jobs:
+  real-world-perspective-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax
+        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b4/qa/perspective-matrix.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start internal static server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-building-b4-http.log 2>&1 &
+          sleep 2
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html?world=huerth-b1 >/dev/null
+      - name: Real WorldBuilder perspective matrix
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b4/qa/perspective-matrix.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-procedural-building-b4-evidence
+          path: building-b4-evidence/
+          if-no-files-found: error
