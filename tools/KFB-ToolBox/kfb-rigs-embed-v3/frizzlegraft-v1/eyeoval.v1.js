@@ -12,7 +12,7 @@
  * GEMESSEN AM RIG, bevor eine Zeile entstand: die Bildschleife des Rigs (`update`) schreibt je Bild
  * `e._pivot.rotation` (Pupille), `e._lids.rotation.z` (Schrägstellung der Lider), `e._up/_lo
  * .rotation.x` (Lidschluss) — **`e.scale` und `e.rotation.z` rührt sie nicht an**. Deshalb bleiben
- * beide stehen, ohne dass etwas je Bild nachgezogen werden müsste.
+ * diese stehen, ohne dass etwas je Bild nachgezogen werden müsste. Die Pupille bleibt absichtlich unskaliert.
  * `build()` baut die Augen NEU (jeder Farbwechsel, jeder Pupillenstil ruft sie) — deshalb hängt
  * `attach()` sich EINMAL an `build` und legt die Verzerrung danach wieder auf.
  *
@@ -42,13 +42,27 @@ export function applyOval(rig, p) {
   const rows = [];
   rig.eyes.forEach((e, i) => {
     const sx = e._sx != null ? e._sx : (i === 0 ? -1 : 1);   // Rig-Vertrag: Index 0 ist links
-    e.scale.set(w, h, d);
+    /* Georg 02.10.: OVAL ≠ PUPILLE.
+       Früher wurde die komplette Augengruppe `e` skaliert. Darunter hängt aber auch `e._pivot`
+       mit der Pupille — Width/Height/Depth verzerrten deshalb ungewollt die Pupille.
+       Jetzt bleiben Eye-Root und Pupillen-Pivot bei Scale 1. Nur die weiße Schale (direktes Mesh)
+       und die Lid-Gruppe werden ovalisiert. Die Pupille bleibt kreisförmig / in ihrer eigenen
+       `pupilSize`-Semantik. Bei Depth wandert ihr Pivot nur entlang Z bis an die verformte
+       Vorderfläche: Lage folgt dem Auge, Größe nicht. */
+    e.scale.set(1, 1, 1);
+    const sclera = e.__kfbOvalSclera || (e.__kfbOvalSclera = (e.children || []).find((c) => c && c.isMesh) || null);
+    if (sclera && sclera.scale) sclera.scale.set(w, h, d);
+    if (e._lids && e._lids.scale) e._lids.scale.set(w, h, d);
+    if (e._pivot) {
+      if (e._pivot.scale) e._pivot.scale.set(1, 1, 1);
+      if (e._pivot.position) e._pivot.position.z = (rig._R || 0) * (d - 1);
+    }
     /* Die Neigung ist SPIEGELGLEICH: ein positiver Regler kippt beide Ovale mit der Oberkante nach
        innen. Ohne die Spiegelung stünden beide Augen parallel schräg — das ist »müde«, nicht
        »Cartoon«. Der Splay des Rigs sitzt auf `rotation.y` und bleibt unberührt. */
     e.rotation.z = -sx * t * DEG;
     rows.push((sx < 0 ? 'links' : 'rechts') + ' ' + w.toFixed(2) + '×' + h.toFixed(2) + '×' + d.toFixed(2)
-      + ' · ' + (e.rotation.z / DEG).toFixed(1) + '°');
+      + ' · pupil 1×1×1 · ' + (e.rotation.z / DEG).toFixed(1) + '°');
   });
   return { status: 'OK', w, h, d, tilt: t, rows, round: w === 1 && h === 1 && d === 1 && t === 0 };
 }
