@@ -117,7 +117,7 @@ jobs:
             check('source object not yet adapted', source.r11.worldLook?.applied === false, source.r11.worldLook);
             check('source H13 live', source.r11.mode === 'hyper' && source.r11.h13?.ready, source.r11.h13);
             check('real WorldContext accent available', source.consumer.worldContext?.accent === '#ffb27a', source.consumer.worldContext);
-            await page.screenshot({path:'artifacts/billboard-context-worldlook-01/01-source-body.png',fullPage:true});
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/01-source-body.png',timeout:90000});
 
             const adapted=await page.evaluate(async () => {
               const c=window.__consumer01.snapshot();
@@ -135,15 +135,15 @@ jobs:
             check('content plane untouched', adapted.worldLook?.contentPlaneUntouched === true, adapted.worldLook);
             check('ambient H13 still live', adapted.mode === 'hyper' && adapted.h13?.ready, {mode:adapted.mode,h13:adapted.h13});
             check('exact K2 material blob pinned', adapted.worldLook?.k2?.materialBlob === 'd994a9b656131be3b7a13d45edcb4253d34f3620', adapted.worldLook?.k2);
-            await page.screenshot({path:'artifacts/billboard-context-worldlook-01/02-k2-accent-front.png',fullPage:true});
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/02-k2-accent-front.png',timeout:90000});
 
             await page.evaluate(() => window.__r11.setView('RIGHT34'));
             await page.waitForTimeout(900);
-            await page.screenshot({path:'artifacts/billboard-context-worldlook-01/03-k2-accent-right34.png',fullPage:true});
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/03-k2-accent-right34.png',timeout:90000});
 
             await page.evaluate(() => window.__r11.setView('BACK'));
             await page.waitForTimeout(900);
-            await page.screenshot({path:'artifacts/billboard-context-worldlook-01/04-k2-accent-back.png',fullPage:true});
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/04-k2-accent-back.png',timeout:90000});
 
             const shaderErrors=report.consoleErrors.filter(x=>/shader|webglprogram|validate_status/i.test(x));
             check('no shader compile errors',shaderErrors.length===0,shaderErrors);
