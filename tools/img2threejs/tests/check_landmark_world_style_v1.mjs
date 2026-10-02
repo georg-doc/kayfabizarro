@@ -4,7 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {buildLandmark} from '../landmarks/pilot-02/geometry.mjs';
 import {shapeAsset} from '../landmarks/pilot-03/deform.mjs';
 import {bandRigLandmark} from '../landmarks/pilot-05/band-rig.mjs';
-import {resolveLandmarkColours,resolveTravelBiomeFloor,worldStyleReport} from '../styles/landmark-world-style.mjs';
+import {resolveLandmarkColours,resolveTravelBiomeFloor,worldStyleReport,hexToOklch} from '../styles/landmark-world-style.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const profiles=JSON.parse(readFileSync(root+'styles/landmark-style-profiles.v1.json','utf8'));
@@ -33,10 +33,11 @@ for(const id of current){
     for(let biomeIndex=0;biomeIndex<4;biomeIndex++){
       const col=resolveLandmarkColours(id,profiles,snapshot,{environment:'travel',mood,biomeIndex,timeOfDay:'day'});
       ok(id+'.'+mood+'.'+biomeIndex+'.hex',Object.values(col).every(hex),col);
+      // 2026-09-24 (Georg): landmarks are colourful by KFB seed; the grey identity look is wrong.
+      // Identity keeps only the per-zone lightness (OKLCH L); hue + chroma come from the seed role.
       for(const zone of Object.keys(col)){
-        const a=hsl(rgb(profiles.profiles[id].identityPalette[zone])),b=hsl(rgb(col[zone]));
-        ok(id+'.'+mood+'.'+biomeIndex+'.'+zone+'.sat-preserved',Math.abs(a[1]-b[1])<.015,[a[1],b[1]]);
-        ok(id+'.'+mood+'.'+biomeIndex+'.'+zone+'.light-preserved',Math.abs(a[2]-b[2])<.006,[a[2],b[2]]);
+        const a=hexToOklch(profiles.profiles[id].identityPalette[zone]),b=hexToOklch(col[zone]);
+        ok(id+'.'+mood+'.'+biomeIndex+'.'+zone+'.oklch-light-preserved',Math.abs(a[0]-b[0])<.012,[a[0],b[0]]);
       }
     }
   }
@@ -68,7 +69,7 @@ for(const time of ['day','evening','night']){
 ok('sky.day.exact.sun',snapshot.skyPresets.day.sun==='#fff0d0'&&snapshot.skyPresets.day.sunIntensity===5);
 ok('sky.day.exact.hemi',snapshot.skyPresets.day.hemiSky==='#80ccdd'&&snapshot.skyPresets.day.hemiGround==='#66aa44'&&snapshot.skyPresets.day.hemiIntensity===1.75);
 
-const viewer=readFileSync(root+'landmarks/pilot-06/viewer.mjs','utf8').replace(/^import .*?;\s*$/gm,'').replace(/\bexport\s+(?=(const|function|async function))/g,'');
+const viewer=readFileSync(root+'landmarks/pilot-06/viewer.mjs','utf8').replace(/^import[\s\S]*?from\s*['"][^'"]+['"];?[ \t]*$/gm,'').replace(/\bexport\s+(?=(const|function|async function))/g,'');
 try{new Function(viewer);ok('viewer.syntax',true);}catch(e){ok('viewer.syntax',false,String(e));}
 const html=readFileSync(root+'landmarks/pilot-06/index.html','utf8');
 ok('index.grotesque-selected',html.includes('<option value="city-grotesque" selected>'));
