@@ -1,6 +1,6 @@
 # RETURN · ASSET-INTAKE-SNOW-FESTIVE-01
 
-Status: **REGISTRY-GENERATED · SOURCE/CI VERIFIED · REVIEW BRANCH · NO RUNTIME ADOPTION**
+Status: **REGISTRY-GENERATED · SOURCE/CI VERIFIED · PR REGRESSIONS PASS · REVIEW/NO MERGE**
 
 ## Outcome
 
@@ -35,6 +35,16 @@ Two new KayKit source packs uploaded by Georg are now represented through the ex
 ## Tests / evidence
 
 See `TEST_REPORT.md`.
+
+Exact PR tested head: `395a54bd16f15fb6538d81cba8fa9cc0ffd937d8`.
+
+PR regressions:
+- Asset Registry run `37056997870` / job `111004031351`: **SUCCESS**
+- current Registry/Librarian unit/regression inventory: **46/46 PASS**
+- Asset Librarian Browser run `37056997697` / job `111004031381`: **SUCCESS**
+- retained browser/WebGL suites: **6/6 PASS** (base, v1.3, v1.4, v1.5, v1.6, v1.7)
+- browser evidence artifact `11249225118`
+- digest `sha256:246dfd3cd3fd1ca26c3f315e10565435293449b40ef3684c617d11ceee4025a6`
 
 Source-commit Asset Registry workflow:
 - run `37055714664`
@@ -72,4 +82,4 @@ No merge or Live promotion is authorized.
 
 ## Exactly one next gate
 
-**REGISTRY-REVIEW-01** — run the existing Asset Librarian browser regression on the review PR, then review/merge the complete generated Registry refresh if green. No world/runtime integration before that catalog gate.
+**REGISTRY-CANONICAL-REFRESH-01** — review Draft PR #329 as the complete current generated Registry refresh and merge only with Georg's named gate. The technical Registry/Librarian regressions are already green. No world/runtime integration before canonical Registry review.
