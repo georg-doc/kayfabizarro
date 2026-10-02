@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.billboard-context-consumer-proof/0.1",
+  "status": "PASS",
+  "workflow": "BILLBOARD-CONTEXT-CONSUMER-01",
+  "testedHead": "ffda55d76c89e69e18f036d3929613d2839d4e0e",
+  "run": 37045278414,
+  "job": 110965053212,
+  "artifact": 11244073528,
+  "artifactDigest": "sha256:5d5a27d96053b0f9e1506c9ac8f223abf8743ba6c84ec45a09bda713ae1d7b61",
+  "checks": "16/16 PASS",
+  "pageErrors": 0,
+  "firstPartyFailures": 0,
+  "zone": {
+    "key": "forget_utopia#7",
+    "seed": 3870442924
+  },
+  "deck": {
+    "packId": "forget_utopia",
+    "title": "Forget Utopia",
+    "role": "FORGET"
+  },
+  "card": {
+    "cardNumber": 7,
+    "cardName": "The Moving Launch Date"
+  },
+  "semanticVector": {
+    "power": 0.71208579398226,
+    "lore": 0.40769861015172576,
+    "name": 0.31247616794146593,
+    "chaos": 0.8258084059310611,
+    "wonder": 0.14872198645956813,
+    "threat": 0.036337996032088996,
+    "humor": 0.07607255132403225,
+    "melancholy": 0.24365279968362302
+  },
+  "worldContext": {
+    "storyMode": "heroic",
+    "biome": "fractured",
+    "accent": "#ffb27a",
+    "seed": 1985738440,
+    "audio": {
+      "bpm": 118,
+      "energyBias": 0.5390760334725492,
+      "modeName": "HEROIC"
+    }
+  },
+  "r11Context": {
+    "packId": "forget_utopia",
+    "selectedCard": 7,
+    "paletteSource": "CARDS",
+    "islandId": null,
+    "residentId": null
+  },
+  "physicalBillboardTint": "NOT_IMPLEMENTED",
+  "nextGate": "BILLBOARD-CONTEXT-WORLDLOOK-01"
+}

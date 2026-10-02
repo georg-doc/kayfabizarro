@@ -1,0 +1,157 @@
+name: Billboard Context Consumer 01 Proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/billboard-context-consumer-r11-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/consumer-travel.html'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/travel-context-adapter.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_CONSUMER_01_2026-10-02/**'
+      - '.github/workflows/billboard-context-consumer-01-proof.yml'
+  pull_request:
+    branches:
+      - chatgpt-web/billboard-context-r11-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/consumer-travel.html'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/travel-context-adapter.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_CONSUMER_01_2026-10-02/**'
+      - '.github/workflows/billboard-context-consumer-01-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  consumer-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify locked source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD:travel/KFB\ Travel\ Combat\ v25/terrain-v25/world-context.js)" = "478e8cb4a53ea15e5c51833fa30554224e581815"
+          test "$(git rev-parse HEAD:travel/KFB\ Travel\ Combat\ v25/terrain-v25/zone-ring.js)" = "881b33ca76a375d43e5c6630464904d4dbf935ba"
+          test "$(git rev-parse HEAD:media/kfb/index.json)" = "af276a8b941a84a6b1856b9897dca196d1b7760a"
+          test "$(git rev-parse HEAD:media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json)" = "362fe54ddb0a945a5a8006a585ead75cf4bec37a"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/billboard-context-consumer-01
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/consumer01-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-context-consumer-01/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url = 'http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/consumer-travel.html?state=idle&packId=forget_utopia&card=7';
+          const report = { url, checks: [], pageErrors: [], firstPartyFailures: [], externalNoise: [] };
+          const check = (name, pass, detail=null) => {
+            report.checks.push({ name, pass: !!pass, detail });
+            if (!pass) process.exitCode = 1;
+          };
+
+          const browser = await chromium.launch({
+            headless: true,
+            args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
+          });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+
+          page.on('pageerror', e => report.pageErrors.push(String(e)));
+          page.on('requestfailed', req => {
+            const item = { url: req.url(), error: req.failure()?.errorText || 'unknown' };
+            if (req.url().startsWith('http://127.0.0.1:4173/')) report.firstPartyFailures.push(item);
+            else report.externalNoise.push(item);
+          });
+          page.on('response', res => {
+            if (res.status() < 400) return;
+            const item = { url: res.url(), status: res.status() };
+            if (res.url().startsWith('http://127.0.0.1:4173/')) report.firstPartyFailures.push(item);
+            else report.externalNoise.push(item);
+          });
+
+          try {
+            const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+            check('consumer page HTTP', !!response && response.ok(), response?.status());
+
+            await page.waitForFunction(() =>
+              window.__consumer01?.snapshot?.()?.ready &&
+              window.__r11?.snapshot?.()?.ready,
+              {}, { timeout: 150000 }
+            );
+
+            const c = await page.evaluate(() => window.__consumer01.snapshot());
+            const r11 = await page.evaluate(() => window.__r11.snapshot());
+
+            check('real Travel zone key', c.zone?.key === 'forget_utopia#7', c.zone);
+            check('Travel zone seed present', Number.isInteger(c.zone?.seed), c.zone?.seed);
+            check('canonical deck role', c.deck?.role === 'FORGET', c.deck);
+            check('real card #7', c.card?.cardNumber === 7 && c.card?.cardName === 'The Moving Launch Date', c.card);
+            check('semantic vector 8 dimensions', c.semanticVector && Object.keys(c.semanticVector).length === 8, c.semanticVector);
+            check('card palette from Travel owner', Array.isArray(c.cardPalette) && c.cardPalette.length === 3, c.cardPalette);
+            check('WorldContext provenance', c.worldContext?.palette?.length === 3 && c.worldContext?.accent && Number.isInteger(c.worldContext?.seed), c.worldContext);
+            check('WorldContext audio present', Number.isFinite(c.worldContext?.audio?.bpm), c.worldContext?.audio);
+            check('R11 receives pack/card', r11.context?.packId === 'forget_utopia' && Number(r11.context?.selectedCard) === 7, r11.context);
+            check('no invented resident/island', r11.context?.residentId == null && r11.context?.islandId == null, r11.context);
+            check('physical tint honestly unimplemented', c.physicalBillboardTint?.status === 'NOT_IMPLEMENTED', c.physicalBillboardTint);
+            check('ambient H13 retained', r11.mode === 'hyper' && r11.h13?.ready, { mode:r11.mode, h13:r11.h13 });
+
+            await page.screenshot({ path: 'artifacts/billboard-context-consumer-01/01-consumer-ambient.png', fullPage: true });
+
+            // Consumer-01 proves only the NEW Travel -> R11 binding.
+            // CARD/COVER/MEDIA rendering is already protected by R11's 15/15 browser evidence
+            // for the same forget_utopia#7 context and is intentionally not repeated here.
+            check('upstream R11 tested head pinned', c.source?.upstreamR11TestedHead === '3f55466dfc34157241774cabd9d56c67189a2469', c.source);
+            check('no page errors', report.pageErrors.length === 0, report.pageErrors);
+            check('no first-party failures', report.firstPartyFailures.length === 0, report.firstPartyFailures);
+
+            fs.writeFileSync(
+              'artifacts/billboard-context-consumer-01/consumer-context.json',
+              JSON.stringify(c, null, 2) + '\n'
+            );
+          } catch (e) {
+            report.pageErrors.push(String(e?.stack || e));
+            process.exitCode = 1;
+          } finally {
+            report.status = process.exitCode ? 'FAIL' : 'PASS';
+            report.passed = report.checks.filter(x => x.pass).length;
+            report.total = report.checks.length;
+            fs.writeFileSync(
+              'artifacts/billboard-context-consumer-01/report.json',
+              JSON.stringify(report, null, 2) + '\n'
+            );
+            console.log(JSON.stringify({
+              status: report.status,
+              checks: report.passed + '/' + report.total,
+              pageErrors: report.pageErrors.length,
+              firstPartyFailures: report.firstPartyFailures.length,
+              externalNoise: report.externalNoise.length
+            }, null, 2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-context-consumer-01/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-context-consumer-01
+          path: artifacts/billboard-context-consumer-01
+          retention-days: 90

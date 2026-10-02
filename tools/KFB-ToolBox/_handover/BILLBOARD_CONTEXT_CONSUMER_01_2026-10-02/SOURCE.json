@@ -1,0 +1,34 @@
+{
+  "schema": "kfb.billboard-context-consumer/0.1",
+  "id": "BILLBOARD-CONTEXT-CONSUMER-01-2026-10-02",
+  "owner": "Travel v25 WorldContext consumer -> Billboard Media Residency R11",
+  "branch": "chatgpt-web/billboard-context-consumer-r11-2026-10-02",
+  "baseR11": "57119fc46948bdfe21e56a67020e3e1f8fcf87d2",
+  "upstreamR11Tested": "3f55466dfc34157241774cabd9d56c67189a2469",
+  "proof": {
+    "packId": "forget_utopia",
+    "cardNumber": 7,
+    "zoneKey": "forget_utopia#7",
+    "islandId": null,
+    "residentId": null
+  },
+  "sources": {
+    "travelSprint": "776390f62e5e291948b6fb37a28789ee95b04133",
+    "worldContext": "478e8cb4a53ea15e5c51833fa30554224e581815",
+    "zoneRing": "881b33ca76a375d43e5c6630464904d4dbf935ba",
+    "deckRegistry": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+    "cardJson": "362fe54ddb0a945a5a8006a585ead75cf4bec37a"
+  },
+  "ownership": {
+    "zoneIdentity": "Travel zone-ring",
+    "worldSemanticsPalette": "Travel world-context",
+    "presentation": "Billboard Context R11",
+    "hypernormalizationAudio": "H13",
+    "inlineMedia": "B2a",
+    "physicalBodyTint": "NOT_IMPLEMENTED — existing World/Look owner seam required"
+  },
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-context-consumer-01/",
+    "status": "NOT_PUBLISHED"
+  }
+}
