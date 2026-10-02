@@ -1,3 +1,18 @@
+# 2026-10-03 · Character Variant Coverage registration
+
+Status: **SOURCE AUDIT REGISTERED · NO RUNTIME PROMOTION**
+
+- New machine-readable requirement SSOT: `data/character-variant-requirements.v1.json`.
+- Human audit: `docs/CHARACTER_VARIANT_COVERAGE_2026-10-03.md`.
+- Current Mystery-Series source contains **25 character texture families / 56 source appearances** with ≥2 palettes.
+- Canonical S6 explicitly completes only **2** palette families today: Cleric and Ultra Turbo Hero Man.
+- **Magical Girl A/B/C/D are now a binding Resident Atlas requirement**. They are not yet implemented/published.
+- Existing Batch EyeRig PR #104 is the cross-owner. Its Paladin A/B setup remains the pattern: palette B is the light/blonde **King** candidate, same geometry profile, no duplicate skeleton.
+- The broader missing-variant matrix is registered; no mass-cast expansion is performed in this slice.
+- Next gate: **MAGICAL-GIRL-VARIANTS-01** — one shared MagicalGirl geometry, four source appearances A/B/C/D in Resident Atlas + existing Batch EyeRig workbench, then visual review.
+
+---
+
 # KFB Town Resident Atlas · RETURN
 
 **Stand:** 2026-09-17 · Sprint S32 · **21 Residents**, drei Rig-Klassen (Rig_Medium, Rig_Large, Rig_Legacy), zwei Farbvarianten
