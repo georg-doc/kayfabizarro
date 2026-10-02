@@ -300,5 +300,44 @@
     "maxSeatError": 8.881784197001252e-16,
     "stageMirrorHead": "0f3fa194746c7eabbf15d590a18532ecb42332c1",
     "publicVerified": false
+  },
+  "mediumBaselineDecision": {
+    "date": "2026-10-02",
+    "input": {
+      "path": "tools/KFB-ToolBox/_inbox/eye-rig-medium.batch.json",
+      "blob": "8497c52f6e585c4dc27899881e27c8750e458fd4",
+      "selectedActors": 27
+    },
+    "status": "GEORG_PROCEED_WITH_EXCEPTIONS",
+    "defaultEyeRigOff": [
+      "driver",
+      "ultra-turbo-hero-man"
+    ],
+    "cleanupRequiredBeforeConsumer": [
+      "animatronic-normal",
+      "animatronic-creepy"
+    ],
+    "nonBlocking": [
+      "caveman-pair-centre-asymmetry"
+    ],
+    "brows": "DEFER_AUTHORED_BROW_EXTRACTION",
+    "expansion": {
+      "adventurersMedium": [
+        "Barbarian",
+        "Knight",
+        "Mage",
+        "Ranger",
+        "Rogue",
+        "Rogue_Hooded"
+      ],
+      "rigLarge": [
+        "Monstrosity",
+        "Black Knight",
+        "Demon Lord",
+        "Orc Brute"
+      ],
+      "legacyPrimaryCharacters": 13
+    },
+    "nextGate": "ADVENTURERS_RIG_MEDIUM_EXTENSION_01"
   }
 }

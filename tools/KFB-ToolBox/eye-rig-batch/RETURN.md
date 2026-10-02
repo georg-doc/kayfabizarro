@@ -713,3 +713,76 @@ Human route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
 
 Next productive gate: Georg checks Eye size over a large range on Clown while watching the eye centre, then tests Inset / Height / Spacing independently and one Splay motion.
+
+## 2026-10-02 · MEDIUM BASELINE DECISION + COVERAGE EXPANSION
+
+Georg accepts the current uploaded Medium authoring batch as a **usable baseline with explicit exceptions**, not as universal visual perfection.
+
+Input:
+- `tools/KFB-ToolBox/_inbox/eye-rig-medium.batch.json`
+- main blob `8497c52f6e585c4dc27899881e27c8750e458fd4`
+- 27 selected actors
+
+### Medium policy
+
+**Keep as baseline**
+- the current per-character EyeRig tuning is retained as authoring data.
+
+**Default EyeRig OFF / exclude from consumer use**
+- `driver` — sunglasses already own the eye read;
+- `ultra-turbo-hero-man` — EyeRig on the visor was exploratory only.
+
+**Keep profile, but source cleanup remains unresolved**
+- Animatronic Normal / Creepy — Georg still sees original-eye geometry; one source eye can protrude in front of EyeRig. Treat this as a source-cleanup/layering issue. Final consumer use must prefer a verified NoEyes/cleanup source; do not distort EyeRig to compensate.
+
+**Non-blocking**
+- Caveman — slight left/right nose-distance asymmetry. Cleanup02 source evidence itself has an off-centre pair in FaceHost coordinates. Preserve as a known small character-specific mismatch; do not reopen the full Medium batch solely for this.
+
+### Brows
+
+DEFER authored-brow extraction/animation.
+
+For now:
+- preserve source brows;
+- no giant brow library;
+- missing/unusable brows may later use the existing BrowRig v2.
+
+Future brow pass begins with classification:
+`NONE / SEPARATE_MESH / EMBEDDED_OR_TEXTURE`.
+Only then decide which authored brows are worth Blender separation and animation adaptation.
+
+### Coverage expansion order
+
+1. **Adventurers 2.0 FREE · Rig_Medium extension**
+   - Barbarian
+   - Knight
+   - Mage
+   - Ranger
+   - Rogue
+   - Rogue_Hooded
+   - pack includes Rig_Medium General + MovementBasic.
+
+2. **Rig_Large**
+   - Monstrosity
+   - Black Knight
+   - Demon Lord
+   - Orc Brute
+
+3. **Legacy · characters only**
+   - Skeleton pack: 8 character variants (Archer/Mage/Minion/Warrior + broken variants)
+   - Spooktober: Jack + Witch
+   - Orc Warband: Orc A + Orc B
+   - Character Animations 1.2: Prototype Pete, with the animated GLB preferred over duplicate static representation
+   - **13 primary character candidates** total under this interpretation.
+
+Legacy props/Dungeon models are explicitly not EyeRig roster items.
+
+### Pipeline correction
+
+Do not use runtime eye stripping as final source truth.
+
+Preferred sequence for new coverage:
+`exact source → verified/Blender NoEyes cleanup + anchors when required → EyeRig profile authoring → consumer reference`.
+
+Exactly one next gate:
+**ADVENTURERS_RIG_MEDIUM_EXTENSION_01** — add and prepare the six Adventurers only. Large and Legacy remain separate following slices.
