@@ -1,5 +1,30 @@
 # Changelog · KFB Asset Librarian
 
+## KayKit Snow + Festive source intake · 2026-10-02
+
+Status: **REGISTRY-GENERATED · SOURCE/CI VERIFIED · REVIEW PENDING**
+
+### Decision
+- Reuse the existing Asset Registry / Asset Librarian owner for both new KayKit packs; do not create a second catalog.
+- Keep R2D continuous-island design separate. Snow hex assets are donor candidates, not a reversal to visible hex terrain.
+- Keep all downstream runtime suitability candidate-only.
+- Preserve license truth exactly: Snow carries an explicit CC0 source license; Festive has no license file in the uploaded pack root and remains unresolved for downstream vendoring.
+
+### Generated result
+- source main: `7600fa9e29d396eaa9c5a11532e63cdad7689e75`
+- Registry bot head: `b211fde4a558dcfa8b1f745e1dbf4af0221b49f1`
+- Snow: **79 assets** · 78 models · 57 GLB · 21 FBX
+- Festive: **48 assets** · 46 models · 22 GLB · 1 glTF · 23 FBX · Santa included
+- generated Registry: **15,119 assets / 122 packs**
+- accumulated Registry delta: **351 added**, 0 removed, 0 moved
+
+### Tested result
+Asset Registry run `37055714664`, job `110999795387`: **SUCCESS**.
+Current suite inventory is **46 tests** and the test step passed; Registry build/validate, rigfacts build/validate, Librarian syntax and candidate-handoff smoke all passed.
+
+### Recovery
+`tools/asset_registry/_handover/KAYKIT_SNOW_FESTIVE_INTAKE_2026-10-02/RETURN.md`
+
 ## v1.6 Town Workbench · 2026-09-15
 
 ### Decision
