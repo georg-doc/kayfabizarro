@@ -2,11 +2,11 @@
 
 Date: 2026-10-02  
 Branch: `chatgpt-web/eye-rig-cleanup02-consumer-prep-2026-10-02`  
-Scope: source/manifest contract only. No runtime, browser, Combat, Resident Atlas or Cloudflare mutation was executed.
+Scope: source/manifest + routing metadata contract. No EyeRig consumer runtime, browser or Cloudflare mutation was executed.
 
 ## Result
 
-**22/22 PASS · 0 FAIL**
+**28/28 PASS · 0 FAIL**
 
 1. **PASS** · `manifest-schema` · kfb.eye-rig-consumer-intake/0.1-candidate
 2. **PASS** · `entry-count` · 31
@@ -30,6 +30,12 @@ Scope: source/manifest contract only. No runtime, browser, Combat, Resident Atla
 20. **PASS** · `skeleton-glow-exceptions-explicit` · warrior + rogue + mage
 21. **PASS** · `pete-exception-explicit` · pete
 22. **PASS** · `stage-not-republished` · PREPARED_NOT_INTEGRATED
+23. **PASS** · `registry-json-and-route` · registered
+24. **PASS** · `registry-evidence-head` · a4a3232a58e66973eca1f5586f9d0e2cbd2b5177
+25. **PASS** · `main-hub-card` · eyerig-cleanup02-prep
+26. **PASS** · `toolbox-hub-card` · EyeRig card updated
+27. **PASS** · `changelog-current` · 2026-10-02 entry
+28. **PASS** · `hub-no-false-publication-claim` · explicit no-publication text
 
 ## What this proves
 
@@ -38,7 +44,8 @@ Scope: source/manifest contract only. No runtime, browser, Combat, Resident Atla
 - all four human-decision exceptions are quarantined rather than silently treated as approved;
 - source brows are preserved in the intake contract;
 - the future brow layer is the **existing** `BrowRig v2`, anchored through `eyeFrame()`, with its existing companion export schema;
-- ToolBox / Resident Atlas / Combat roles remain separate.
+- ToolBox / Resident Atlas / Combat roles remain separate;
+- Registry, additive changelog, main Hub source and ToolBox Hub source all expose the prep without claiming a new public deployment.
 
 ## Not tested / not claimed
 
