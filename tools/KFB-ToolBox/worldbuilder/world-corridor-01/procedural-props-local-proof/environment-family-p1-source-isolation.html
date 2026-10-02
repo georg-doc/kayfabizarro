@@ -6,12 +6,9 @@
 <title>KFB Environment Family P1 · Source Isolation</title>
 <style>
 html,body{margin:0;height:100%;overflow:hidden;background:#d8d0bb;color:#2a251d;font:12px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-canvas{display:block}
-.panel{position:fixed;z-index:2;background:#f3eddded;border:1px solid #817764;padding:10px 12px;border-radius:8px}
-#info{left:14px;top:14px;max-width:660px}
-#legend{right:14px;top:14px;max-width:390px;font:11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
-b{font-size:13px} code{font:10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace}
-.row{margin:2px 0}.muted{color:#6f6657}
+canvas{display:block}.panel{position:fixed;z-index:2;background:#f3eddded;border:1px solid #817764;padding:10px 12px;border-radius:8px}
+#info{left:14px;top:14px;max-width:660px}#legend{right:14px;top:14px;max-width:390px;font:11px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}
+b{font-size:13px}code{font:10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace}.row{margin:2px 0}.muted{color:#6f6657}
 </style>
 <script type="importmap">
 {"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
@@ -21,8 +18,8 @@ b{font-size:13px} code{font:10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospac
 <div id="info" class="panel">
   <b>ENVIRONMENT FAMILY P1 · SOURCE ISOLATION</b><br>
   Internal evidence only · form/geometry, not material review.<br>
-  Positive control = approved P0B tree. Rocks/bush reproduce existing KFB donor equations/ranges.<br>
-  <code>branch: chatgpt-web/wc1-procedural-props-local-proof-2026-10-01</code>
+  Geometry comes from the shared P1 module; positive control is the approved P0B tree.<br>
+  <code>Use what works · no new freehand nature grammar</code>
 </div>
 <div id="legend" class="panel">
   <div class="row">1 · TREE · P0B positive control</div>
@@ -34,101 +31,109 @@ b{font-size:13px} code{font:10px/1.35 ui-monospace,SFMono-Regular,Menlo,monospac
 </div>
 <script type="module">
 import * as THREE from 'three';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import {
+  SOURCE_PROVENANCE,
+  buildP0BTreeGeometry,
+  buildP0BPebbleGeometry,
+  buildK1BoulderGeometry,
+  buildT3AccentRockGeometry,
+  buildT3BushGeometry,
+  geometryFacts
+} from './environment-family-p1.mjs';
 
-const SOURCES={
-  tree:{path:'procedural-props-p0/procedural-props-p0b.mjs',pin:'94443824e6b13f38c611defd06dacedd7c6d0faa',blob:'0174e27c2ada67753f5e29161e4973087cf04d8e'},
-  pebble:{path:'procedural-props-p0/procedural-props-p0b.mjs',pin:'94443824e6b13f38c611defd06dacedd7c6d0faa',blob:'0174e27c2ada67753f5e29161e4973087cf04d8e'},
-  k1rock:{path:'KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-catalog.v5.js',blob:'1cb40e45dc4d2ca20a554e4315b68f9331af4152'},
-  t3:{path:'KFB_TRACK_LOOK_S4_T3_KNETSTRANG_2026-09-27/lab-track/track-look.v3.js',blob:'a4be0b0fb8a8c5e7b8589495c71015d30de7a5f2'}
-};
-
-function rng(seed){let a=seed>>>0;return()=>{a|=0;a=(a+0x6D2B79F5)|0;let t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296;};}
-const smoothstep=(a,b,x)=>{const t=THREE.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
-const underShade=(bottom,top,dark=.74)=>(_x,y)=>dark+(1-dark)*smoothstep(bottom,top,y);
-
-function paint(g,color,shade=null){
-  if(g.getAttribute('uv'))g.deleteAttribute('uv');
-  const p=g.getAttribute('position'),c=new THREE.Color(color),arr=new Float32Array(p.count*3);
-  for(let i=0;i<p.count;i++){const k=shade?shade(p.getX(i),p.getY(i),p.getZ(i)):1;arr[i*3]=c.r*k;arr[i*3+1]=c.g*k;arr[i*3+2]=c.b*k;}
-  g.setAttribute('color',new THREE.BufferAttribute(arr,3));return g;
-}
-function merge(parts){
-  const indexed=parts.every(p=>p.index),list=indexed?parts:parts.map(p=>p.index?p.toNonIndexed():p);
-  const g=mergeGeometries(list,false);for(const p of new Set([...parts,...list]))if(p!==g)p.dispose();g.computeVertexNormals();return g;
-}
-function mat(){return new THREE.MeshStandardMaterial({color:'#ffffff',roughness:.9,metalness:0,vertexColors:true});}
-function lathe(pts,segments=12){return new THREE.LatheGeometry(pts.map(([r,y])=>new THREE.Vector2(r,y)),segments);}
-function trunkGeometry(height=.9,base=.12,top=.075,roots=4,segments=12){
-  const g=lathe([[base*1.5,0],[base*1.08,height*.07],[base*.86,height*.22],[(base*.86+top)/2,height*.6],[top,height]],segments);
-  const p=g.getAttribute('position');
-  for(let i=0;i<p.count;i++){const x=p.getX(i),z=p.getZ(i),flare=Math.max(0,1-p.getY(i)/(height*.3));const lobe=1+.28*flare*Math.max(0,Math.cos(roots*Math.atan2(x,z)))**2;p.setXYZ(i,x*lobe,p.getY(i),z*lobe);}
-  g.computeVertexNormals();return g;
-}
-function sphereBlob(x,y,z,r,color,squash=1,ws=18,hs=12,dark=.74){
-  const g=new THREE.SphereGeometry(r,ws,hs);g.scale(1,squash,1);paint(g,color,underShade(-r*squash,r*squash*.55,dark));g.translate(x,y,z);return g;
-}
-function p0bTree(){
-  const trunk=trunkGeometry(1.18,.14,.085,5,14);paint(trunk,'#8d6a4c',underShade(0,.8,.76));
-  return merge([
-    trunk,
-    sphereBlob(0,1.46,0,.58,'#79a85e',.92,20,13,.7),
-    sphereBlob(-.34,1.24,-.12,.38,'#89b36b',1,18,12,.72),
-    sphereBlob(.18,1.82,.1,.36,'#98bd74',1,18,12,.74),
-    sphereBlob(.34,1.32,.08,.32,'#6f9d55',.96,16,11,.73)
-  ]);
-}
-function p0bPebble(){
-  const a=new THREE.SphereGeometry(.43,16,10);a.scale(1,.58,.82);paint(a,'#9a8c7a',underShade(-.25,.25,.78));a.translate(-.07,.25,0);
-  const b=new THREE.SphereGeometry(.24,14,9);b.scale(1,.72,.88);paint(b,'#b3a28d',underShade(-.14,.18,.8));b.translate(.37,.14,.16);
-  return merge([a,b]);
-}
-function k1Rock(){
-  const g=new THREE.IcosahedronGeometry(.6,5),p=g.getAttribute('position'),v=new THREE.Vector3();
-  for(let i=0;i<p.count;i++){v.fromBufferAttribute(p,i).normalize();const k=1+.16*Math.sin(v.x*3.1+1)*Math.cos(v.z*2.7)+.07*Math.sin(v.y*6.3+v.x*4.1);v.multiplyScalar(.6*k);v.y*=.68;p.setXYZ(i,v.x,v.y+.3,v.z);}
-  g.computeVertexNormals();paint(g,'#968b79',underShade(0,.6,.79));return g;
-}
-function t3Blob(r,detail=3,lumpK=.12,seed=1,color='#968b79'){
-  let g=new THREE.IcosahedronGeometry(r,detail+2);g.deleteAttribute('normal');g.deleteAttribute('uv');g=mergeGeometries([g.toNonIndexed()],false);
-  const p=g.getAttribute('position'),v=new THREE.Vector3();
-  for(let i=0;i<p.count;i++){v.fromBufferAttribute(p,i);const n=v.clone().normalize();const f=1+lumpK*(Math.sin(n.x*3.1+seed)*Math.sin(n.y*2.7+seed*1.7)*Math.sin(n.z*3.3+seed*.3));v.copy(n.multiplyScalar(r*f));p.setXYZ(i,v.x,v.y,v.z);}
-  g.computeVertexNormals();paint(g,color,underShade(-r,r*.55,.78));return g;
-}
-function t3AccentRock(){
-  const R=rng(1701),r=2.2+R()*2.0,g=t3Blob(r,3,.25,1701,'#8e806c');g.scale(1,.62,1.1);g.rotateY(R()*3);g.translate(0,r*.2,0);return g;
-}
-function t3Bush(){
-  const R=rng(1801),n=2+Math.floor(R()*2),parts=[];
-  for(let k=0;k<n;k++){const r=2+R()*1.4,g=t3Blob(r,3,.12,1801+k,k%2?'#789f5c':'#88ad68');g.scale(1,.78,1);g.translate((R()-.5)*r*1.6,r*.35,(R()-.5)*r*1.6);parts.push(g);}
-  return merge(parts);
-}
-
-const objects=[
-  {name:'P0B_TREE',geo:p0bTree(),x:-8,scale:2.25,source:'tree'},
-  {name:'P0B_PEBBLE',geo:p0bPebble(),x:-4,scale:3.1,source:'pebble'},
-  {name:'K1_BOULDER',geo:k1Rock(),x:0,scale:3.2,source:'k1rock'},
-  {name:'T3_ACCENT_ROCK',geo:t3AccentRock(),x:4,scale:.72,source:'t3'},
-  {name:'T3_BUSH',geo:t3Bush(),x:8,scale:.7,source:'t3'}
+const entries=[
+  {name:'P0B_TREE',geo:buildP0BTreeGeometry(),x:-8,scale:2.25,color:'#7fa563',source:'p0b'},
+  {name:'P0B_PEBBLE',geo:buildP0BPebbleGeometry(),x:-4,scale:3.1,color:'#a0917d',source:'p0b'},
+  {name:'K1_BOULDER',geo:buildK1BoulderGeometry(),x:0,scale:3.2,color:'#938775',source:'k1Rock'},
+  {name:'T3_ACCENT_ROCK',geo:buildT3AccentRockGeometry(1701),x:4,scale:.72,color:'#887966',source:'t3'},
+  {name:'T3_BUSH',geo:buildT3BushGeometry(1801),x:8,scale:.7,color:'#7f9f61',source:'t3'}
 ];
 
-const scene=new THREE.Scene();scene.background=new THREE.Color('#d8d0bb');scene.fog=new THREE.Fog('#d8d0bb',22,36);
-const camera=new THREE.PerspectiveCamera(34,innerWidth/innerHeight,.1,100);camera.position.set(13,9.5,20);camera.lookAt(0,1.8,0);
-const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;document.body.appendChild(renderer.domElement);
-scene.add(new THREE.HemisphereLight('#fff7e3','#777463',2.2));const sun=new THREE.DirectionalLight('#ffe9c6',3.0);sun.position.set(7,12,9);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-16;sun.shadow.camera.right=16;sun.shadow.camera.top=11;sun.shadow.camera.bottom=-9;scene.add(sun);
-const ground=new THREE.Mesh(new THREE.PlaneGeometry(30,12),new THREE.MeshStandardMaterial({color:'#c7bca3',roughness:.98}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#d8d0bb');
+scene.fog=new THREE.Fog('#d8d0bb',22,36);
+
+const camera=new THREE.PerspectiveCamera(34,innerWidth/innerHeight,.1,100);
+camera.position.set(13,9.5,20);
+camera.lookAt(0,1.8,0);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.setSize(innerWidth,innerHeight);
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.05;
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight('#fff7e3','#777463',2.2));
+const sun=new THREE.DirectionalLight('#ffe9c6',3.0);
+sun.position.set(7,12,9);
+sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024);
+sun.shadow.camera.left=-16;
+sun.shadow.camera.right=16;
+sun.shadow.camera.top=11;
+sun.shadow.camera.bottom=-9;
+scene.add(sun);
+
+const ground=new THREE.Mesh(
+  new THREE.PlaneGeometry(30,12),
+  new THREE.MeshStandardMaterial({color:'#c7bca3',roughness:.98})
+);
+ground.rotation.x=-Math.PI/2;
+ground.receiveShadow=true;
+scene.add(ground);
+
 const pedestalMat=new THREE.MeshStandardMaterial({color:'#e7dfcc',roughness:.95});
-for(const o of objects){
-  const p=new THREE.Mesh(new THREE.CylinderGeometry(1.7,1.8,.12,28),pedestalMat);p.position.set(o.x,.04,0);p.receiveShadow=true;scene.add(p);
-  const m=new THREE.Mesh(o.geo,mat());m.name=o.name;m.position.set(o.x,.1,0);m.scale.setScalar(o.scale);m.castShadow=m.receiveShadow=true;scene.add(m);o.mesh=m;
+for(const e of entries){
+  const p=new THREE.Mesh(new THREE.CylinderGeometry(1.7,1.8,.12,28),pedestalMat);
+  p.position.set(e.x,.04,0);
+  p.receiveShadow=true;
+  scene.add(p);
+
+  const mesh=new THREE.Mesh(
+    e.geo,
+    new THREE.MeshStandardMaterial({color:e.color,roughness:.9,metalness:0})
+  );
+  mesh.name=e.name;
+  mesh.position.set(e.x,.1,0);
+  mesh.scale.setScalar(e.scale);
+  mesh.castShadow=mesh.receiveShadow=true;
+  scene.add(mesh);
+  e.mesh=mesh;
 }
+
 let frames=0,start=performance.now();
-function render(){frames++;renderer.render(scene,camera);requestAnimationFrame(render);}render();
-addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+function render(){frames++;renderer.render(scene,camera);requestAnimationFrame(render);}
+render();
+
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
 setTimeout(()=>{
-  const infos=objects.map(o=>{o.geo.computeBoundingBox();const b=o.geo.boundingBox,s=new THREE.Vector3();b.getSize(s);return{name:o.name,source:o.source,vertices:o.geo.getAttribute('position').count,triangles:o.geo.index?o.geo.index.count/3:o.geo.getAttribute('position').count/3,bounds:[s.x,s.y,s.z]};});
-  const stats={objects:objects.length,calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,renderer:renderer.capabilities.isWebGL2?'WebGL2':'WebGL1',fpsWarmup:frames*1000/(performance.now()-start)};
+  const objects=entries.map(e=>({name:e.name,source:e.source,...geometryFacts(e.geo)}));
+  const stats={
+    objects:objects.length,
+    calls:renderer.info.render.calls,
+    triangles:renderer.info.render.triangles,
+    renderer:renderer.capabilities.isWebGL2?'WebGL2':'WebGL1',
+    fpsWarmup:frames*1000/(performance.now()-start)
+  };
   document.querySelector('#stats').textContent='5 objects · '+stats.calls+' calls · '+stats.triangles.toLocaleString()+' tris';
-  window.__KFB_ENV_P1={ready:true,sources:SOURCES,objects:infos,stats,noMaterialDecision:true,positiveControl:'P0B_TREE'};
+  window.__KFB_ENV_P1={
+    ready:true,
+    sources:SOURCE_PROVENANCE,
+    objects,
+    stats,
+    geometryModule:'environment-family-p1.mjs',
+    noMaterialDecision:true,
+    positiveControl:'P0B_TREE'
+  };
   window.dispatchEvent(new Event('kfbEnvP1Ready'));
 },900);
 </script>
