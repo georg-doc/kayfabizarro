@@ -255,5 +255,16 @@
     "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
     "behavior": "sample actor head/face texture near eye host; EyeRig v6 darkens sampled base",
     "gothGirl": "explicit face color remains authoritative"
+  },
+  "loadingOverlayRepair": {
+    "status": "SOURCE_FIXED_STAGE_MIRRORED_PUBLIC_VERIFY_OPEN",
+    "implementationHead": "ac9d63631d528800afbc39db6eb066755c150a7c",
+    "testHead": "be5ca51377f4db4493b551bdb3d2e87457335b43",
+    "evidenceDoc": "docs/LOADING_OVERLAY_CLEANUP02_NOTES_2026-10-02.md",
+    "focusedChecks": "22/22 PASS",
+    "loadingBehavior": "8/8 PASS",
+    "stageMirrorHead": "4a311c20f220d81b43a3a396dedf6a18e6cf1d49",
+    "publicVerified": false,
+    "cleanup02Review": "data/cleanup02-review.v0.json"
   }
 }

@@ -549,3 +549,38 @@ Tests: **95/95 PASS**; runtime-critical JS syntax **4/4 PASS**.
 Stage: `e9f97c594bce46607e95928dd349cf081c36783d`.
 
 Next: reload the Stage and visually check the four Large lid colors.
+
+## 2026-10-02 · LOADING OVERLAY REPAIR + EYE-CLEANUP-02 NOTES
+
+Georg reported that the actor was visibly loaded while the central `Loading actor…` overlay stayed on top.
+
+Repair:
+- explicit `setLoading(show, detail)` owner;
+- `.loading-card[hidden], .loading-card.is-hidden { display:none!important; }`;
+- success and failure paths both release the blocking overlay;
+- failures remain visible in status/report text instead of trapping the stage.
+
+Cleanup02 visibility:
+- new `data/cleanup02-review.v0.json`;
+- new **Cleanup notes** roster filter;
+- selected-actor EYE-CLEANUP-02 panel;
+- Skeleton Warrior/Rogue/Mage show `HUMAN_DECISION_REQUIRED` because their NoEyes derivatives remove the separate Glow eye object/material;
+- Prototype Pete is called out as the fourth human-decision case but remains Legacy/off-roster;
+- Action Figure texture cleanup, Creepy asymmetry, Avian side-eye normals, glasses and Monster patched-face notes are visible where relevant.
+
+Evidence:
+- source implementation head `ac9d63631d528800afbc39db6eb066755c150a7c`;
+- test-contract head `be5ca51377f4db4493b551bdb3d2e87457335b43`;
+- focused source/contract checks **22/22 PASS**;
+- direct `setLoading()` behavior checks **8/8 PASS**;
+- app syntax parse PASS;
+- prior 95/95 suite remains historical; full expanded Node suite not rerun in this environment.
+
+Stage mirror:
+- `cloudflare-live@4a311c20f220d81b43a3a396dedf6a18e6cf1d49`;
+- exact mirror file readback PASS;
+- GitHub deployment status currently pending / no public-browser verification available;
+- therefore **PUBLIC_VERIFIED remains OPEN**.
+
+Human route remains:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
