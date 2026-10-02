@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Environment P2 · Exact Source Object Isolation</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;height:100%;overflow:hidden;background:#191812;color:#f1ead8;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+canvas{display:block;width:100%;height:100%}
+.panel{position:fixed;z-index:2;background:#1f1d17e8;border:1px solid #625b4b;border-radius:10px;padding:10px 12px;box-shadow:0 8px 24px #0007}
+#info{left:12px;top:12px;max-width:680px}
+#controls{left:12px;right:12px;bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#meta{right:12px;top:12px;max-width:420px}
+button,select{background:#302c22;color:#f1ead8;border:1px solid #756b56;border-radius:7px;padding:7px 9px;font:11px system-ui,sans-serif}
+button{cursor:pointer}.ok{color:#8be0ac}.warn{color:#f1c76a}.muted{color:#a59a83}
+b{font-family:system-ui,sans-serif}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="info" class="panel">
+  <b>ENVIRONMENT FAMILY P2 · EXACT SOURCE OBJECT ISOLATION</b><br>
+  Actual authored donor geometry + original donor materials. No deformation, no KFB material adaptation.<br>
+  Uniform display scale is presentation-only; raw loaded bounds are measured before scaling.<br>
+  <span class="muted">Internal evidence · no Stage · not a human blocking gate.</span>
+</div>
+<div id="meta" class="panel"><span class="warn">loading…</span></div>
+<div id="controls" class="panel">
+  <button id="prev">← Previous</button>
+  <select id="pick"></select>
+  <button id="next">Next →</button>
+  <span id="status" class="muted">booting…</span>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const PIN='a5fefb273b274e40b3a1e642788c87113fa6ea27';
+const ROOT='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+PIN+'/';
+const KENNEY='media/3D_Assets/kenney_nature-kit/Models/GLTF%20format/';
+const KAYKIT='media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/';
+
+const DONORS=[
+  {family:'log',name:'log',path:KENNEY+'log.glb',raw:[.234,.173,.710],role:'long low separator'},
+  {family:'log',name:'log_large',path:KENNEY+'log_large.glb',raw:[1,.417,.549],role:'heavy single log'},
+  {family:'log',name:'log_stack',path:KENNEY+'log_stack.glb',raw:[.425,.346,.710],role:'authored grouped logs'},
+
+  {family:'stump',name:'stump_old',path:KENNEY+'stump_old.glb',raw:[.357,.266,.371],role:'forest remnant'},
+  {family:'stump',name:'stump_round',path:KENNEY+'stump_round.glb',raw:[.321,.206,.371],role:'rounded baseline'},
+  {family:'stump',name:'stump_roundDetailed',path:KENNEY+'stump_roundDetailed.glb',raw:[.357,.206,.371],role:'rounded detailed baseline'},
+  {family:'stump-negative',name:'stump_oldTall',path:KENNEY+'stump_oldTall.glb',raw:[.357,.666,.371],role:'EXPLICIT OUTLIER / negative control'},
+
+  {family:'mushroom',name:'mushroom_red',path:KENNEY+'mushroom_red.glb',raw:[.174,.203,.201],role:'normal single'},
+  {family:'mushroom',name:'mushroom_redTall',path:KENNEY+'mushroom_redTall.glb',raw:[.124,.250,.143],role:'tall narrow single'},
+  {family:'mushroom',name:'mushroom_redGroup',path:KENNEY+'mushroom_redGroup.glb',raw:[.270,.250,.254],role:'precomposed group'},
+  {family:'mushroom',name:'mushroom_tanGroup',path:KENNEY+'mushroom_tanGroup.glb',raw:[.270,.250,.254],role:'second cap/color group'},
+
+  {family:'grass',name:'Grass_1_A_Color1',path:KAYKIT+'Grass_1_A_Color1.gltf',raw:[.339,.559,.152],role:'KayKit grass family 1'},
+  {family:'grass',name:'Grass_2_A_Color1',path:KAYKIT+'Grass_2_A_Color1.gltf',raw:null,role:'KayKit grass family 2'}
+];
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#2c2a22');
+const camera=new THREE.PerspectiveCamera(34,innerWidth/innerHeight,.01,100);
+camera.position.set(4.2,3.2,6.3);
+camera.lookAt(0,1,0);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.05;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+document.body.prepend(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight('#fff8e8','#5b584e',2.4));
+const sun=new THREE.DirectionalLight('#ffe9c7',3.2);
+sun.position.set(5,8,6);
+sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024);
+scene.add(sun);
+
+const floor=new THREE.Mesh(new THREE.CircleGeometry(2.25,48),new THREE.MeshStandardMaterial({color:'#696354',roughness:.98}));
+floor.rotation.x=-Math.PI/2;
+floor.receiveShadow=true;
+scene.add(floor);
+
+const ruler=new THREE.GridHelper(5,10,'#978d77','#514d43');
+ruler.position.y=.002;
+scene.add(ruler);
+
+const loader=new GLTFLoader();
+let current=null,index=0;
+const cache=new Map();
+const pick=document.querySelector('#pick'),meta=document.querySelector('#meta'),status=document.querySelector('#status');
+
+for(const [i,d] of DONORS.entries()){
+  const o=document.createElement('option');
+  o.value=i;o.textContent=(d.family==='stump-negative'?'⚠ ':'')+d.family+' · '+d.name;
+  pick.appendChild(o);
+}
+
+function disposeObject(o){
+  if(!o)return;
+  scene.remove(o);
+}
+
+async function loadDonor(i){
+  index=(i+DONORS.length)%DONORS.length;
+  const d=DONORS[index];
+  pick.value=String(index);
+  status.textContent='loading '+d.name+'…';
+
+  let result=cache.get(d.name);
+  if(!result){
+    const gltf=await loader.loadAsync(ROOT+d.path);
+    const root=gltf.scene;
+    root.updateWorldMatrix(true,true);
+    const rawBox=new THREE.Box3().setFromObject(root);
+    const rawSize=rawBox.getSize(new THREE.Vector3());
+    const rawCenter=rawBox.getCenter(new THREE.Vector3());
+    const clone=root;
+    clone.traverse(o=>{
+      if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}
+    });
+    result={root:clone,rawSize:[rawSize.x,rawSize.y,rawSize.z],rawCenter:[rawCenter.x,rawCenter.y,rawCenter.z]};
+    cache.set(d.name,result);
+  }
+
+  disposeObject(current);
+  const root=result.root;
+  const rawSize=new THREE.Vector3(...result.rawSize);
+  const max=Math.max(rawSize.x,rawSize.y,rawSize.z);
+  const scale=2.2/Math.max(max,.001);
+  root.scale.setScalar(scale);
+  root.updateWorldMatrix(true,true);
+  const box=new THREE.Box3().setFromObject(root);
+  const center=box.getCenter(new THREE.Vector3());
+  root.position.x-=center.x;
+  root.position.z-=center.z;
+  root.position.y-=box.min.y;
+  root.updateWorldMatrix(true,true);
+  scene.add(root);
+  current=root;
+
+  meta.innerHTML=
+    '<b>'+d.name+'</b><br>'+
+    'family: '+d.family+'<br>'+
+    'role: '+d.role+'<br>'+
+    'source pin: '+PIN.slice(0,12)+'…<br>'+
+    'raw loaded bounds: '+result.rawSize.map(v=>v.toFixed(3)).join(' × ')+'<br>'+
+    (d.raw?'catalog bounds: '+d.raw.map(v=>v.toFixed(3)).join(' × ')+'<br>':'')+
+    'display-only uniform scale: ×'+scale.toFixed(3)+'<br>'+
+    '<span class="'+(d.family==='stump-negative'?'warn':'ok')+'">'+
+      (d.family==='stump-negative'?'negative/outlier donor':'exact authored donor loaded')+
+    '</span>';
+
+  status.textContent='ready · '+d.name;
+  const state={
+    ready:true,
+    pin:PIN,
+    index,
+    donor:{...d,url:ROOT+d.path},
+    rawLoadedBounds:result.rawSize,
+    displayScale:scale,
+    originalMaterials:true,
+    deformed:false,
+    materialAdapted:false,
+    fallbackUsed:false
+  };
+  window.__KFB_ENV_P2=state;
+  window.dispatchEvent(new CustomEvent('kfbEnvP2DonorReady',{detail:state}));
+  return state;
+}
+
+window.__KFB_ENV_P2_API={
+  donors:DONORS.map(d=>({...d,url:ROOT+d.path})),
+  async load(i){return await loadDonor(Number(i));}
+};
+
+document.querySelector('#prev').onclick=()=>loadDonor(index-1);
+document.querySelector('#next').onclick=()=>loadDonor(index+1);
+pick.onchange=()=>loadDonor(Number(pick.value));
+
+function render(){renderer.render(scene,camera);requestAnimationFrame(render);}
+render();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+
+loadDonor(0).catch(err=>{
+  console.error(err);
+  status.textContent='ERROR · '+String(err?.message||err);
+  window.__KFB_ENV_P2={ready:false,error:String(err?.stack||err),pin:PIN};
+});
+</script>
+</body>
+</html>
