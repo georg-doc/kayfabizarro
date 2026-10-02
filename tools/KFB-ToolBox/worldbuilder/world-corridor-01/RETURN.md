@@ -639,3 +639,24 @@ Grade with:
 No material decision and no generic random-building generator.
 
 The existing material next gate elsewhere in this Return remains a separate parallel lane.
+
+
+## 2026-10-02 · Procedural Environment crash-safe recovery
+
+The completed FORM/ENVIRONMENT P2 lane now has a canonical recovery entry:
+
+`procedural-environment-p2/RECOVERY.md`
+
+Current lane:
+- branch `chatgpt-web/wc1-procedural-environment-p2-2026-10-02`
+- Draft PR #316
+- P2 result: **SOURCE_DERIVED_GEOMETRY_PASS**
+- tested procedural head: `5f2a4444feed8f38883499de2a044f0e9e8b36eb`
+- final P2 Site checkpoint: `d3a82471-38ad-43ce-bbba-a6f657760678`
+
+Fresh chats recover there first; no transcript reconstruction.
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**.
+
+The material/Clay next gate elsewhere in this Return remains an independent parallel lane.
