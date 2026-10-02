@@ -65,3 +65,65 @@ Do not change:
 - roof logic;
 - facade authority;
 - display/material decision.
+
+
+## Repair Pass 1 result · machine PASS, visual evidence layout FAIL
+
+Repair Pass 1 head:
+`5496bba829138a2507e33fccf96fa99769098e4f`
+
+Run/job:
+`37033679788 / 110926503919`
+
+Machine result:
+**PASS**
+
+Evidence artifact:
+- id `11237983944`
+- digest `sha256:76400b1ae18756dd28e60d00ed942c3dbdd501cbb206a5f52a2c44c37c594ea3`
+
+Proven for all three Golden controls:
+- exact source pin;
+- exact ids/heights/roof types;
+- 22-building fixture anchor;
+- B0 body hash = accepted V2 body hash;
+- B0 roof hash = accepted V2 roof hash;
+- base anchored;
+- facade owner id = `kfb-facade-rule-v1`;
+- one renderer;
+- no material decision;
+- raw `building_A` loaded with original materials, no deformation/adaptation/fallback.
+
+Hashes:
+- compact-flat `way/371401529`: body `852d0622`, roof `aace587c`
+- larger-gable `way/371401492`: body `f9a30346`, roof `56ab2bad`
+- compact-hip `way/371401475`: body `0f0d0b3c`, roof `87803dcb`
+
+Raw `building_A` bounds:
+`2 × 1.6499998569 × 2`.
+
+### Visual evidence defect
+
+Manual screenshot inspection found that the source-isolation viewer's normalization code cancels the parent stage offsets.
+
+Result:
+the Clean / V2 / B0 Hürth objects overlap around the centre and are obscured by the raw KayKit donor.
+
+Classification:
+**VISUAL_EVIDENCE_LAYOUT_FAIL · NOT GEOMETRY**
+
+The machine parity result remains valid, but source-isolation visual evidence is not acceptable yet.
+
+## Repair Pass 2 boundary · last allowed pass for this gate
+
+Change only:
+- stage/local centering math in `source-isolation.html`;
+- expose/assert four separated stage centres in QA.
+
+Do not change:
+- `building-family-b0.mjs`;
+- Golden source ids;
+- Elastic donor pin;
+- body/roof geometry;
+- facade owner;
+- materials/design.
