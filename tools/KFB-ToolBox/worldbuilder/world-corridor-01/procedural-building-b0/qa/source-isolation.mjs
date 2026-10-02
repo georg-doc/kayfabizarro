@@ -22,7 +22,7 @@ page.on('pageerror',e=>pageErrors.push(String(e)));
 
 const states=[],problems=[];
 try{
-  await page.goto(url,{waitUntil:'networkidle',timeout:120000});
+  await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
   await page.waitForFunction(()=>window.__KFB_BUILDING_B0?.ready===true,null,{timeout:120000});
 
   const controls=await page.evaluate(()=>window.__KFB_BUILDING_B0_API?.controls||[]);
