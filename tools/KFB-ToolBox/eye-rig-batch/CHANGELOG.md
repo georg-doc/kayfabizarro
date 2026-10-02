@@ -484,3 +484,45 @@ Human route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
 
 For Georg's currently adjusted Clown profile: reload, then click **Use Cleanup02 source anchors** (or Reset) so the preserved local manual profile is intentionally replaced by the new measured baseline.
+
+## 2026-10-02 · CONTROL SEMANTICS / STUDIO PARITY R1 · RETURN
+
+Georg reported that **Eye size** was not a single-purpose control: increasing `ring` also pushed the eye farther into the head.
+
+Root cause is the shared EyeRig-v6 seating equation:
+
+`C = surface - R * (0.24 + inset * 1.15)` with `R = U * ring`.
+
+The Batch workbench now keeps the same EyeRig owner/profile fields but adds a Studio-style semantic adapter:
+
+- **Spacing** → X placement only;
+- **Height** → Y placement only;
+- **Eye size (ring)** → size only; centre/depth stays fixed by compensating the radius-relative inset coefficient;
+- **Inset** → depth only;
+- **Gaze drift** → amplitude only and no rebuild;
+- Pupil size / Converge / Gloss / Lid fit / Oval retain their named visual responsibility;
+- **Splay** remains the deliberate exception: orientation changes and the eye follows the curved surface.
+
+Studio donor comparison:
+- Pet Studio v12 Face/Eyes UI blob `90ec845ba09f7ed8a76124bb5b5b905a5e9ad82f`;
+- newer ToolBox/Studio face adapter blob `5424bff3f9924587fa3d321138eb8b44915b6550` demonstrates the same owner-preserving adapter pattern.
+
+Implementation: `7d8198f43580c5e2725e59ec5c15c19aaed04c7c`  
+Evidence: `6355718fe7e0a6f78b18e35a4ef598d4ac6ccb7f`
+
+Focused evidence:
+- **16/16 PASS**
+- ring/depth invariant **252/252 PASS**
+- maximum numeric seat error `8.881784197001252e-16`
+- app syntax PASS
+- adapter syntax PASS
+
+Stage mirror:
+`cloudflare-live@0f3fa194746c7eabbf15d590a18532ecb42332c1`
+
+Exact mirror file readback PASS. Direct public verification remains OPEN because the current web opener cannot access the pages.dev route and GitHub deployment status is pending.
+
+Human route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Next productive gate: Georg checks Eye size over a large range on Clown while watching the eye centre, then tests Inset / Height / Spacing independently and one Splay motion.

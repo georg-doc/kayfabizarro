@@ -1,3 +1,13 @@
+## 2026-10-02 · EyeRig Batch · Studio-parity control semantics
+
+- PR #104 / `toolbox/eye-rig-batch-2026-09-18`: repaired a control leak where Eye size/ring also changed eye seating depth.
+- Shared EyeRig v6 remains owner; Batch adapter now compensates radius-relative inset so **Eye size changes size only and preserves eye centre**.
+- Gaze drift now updates amplitude without rebuilding the rig. Spacing=X, Height=Y, Inset=depth; Splay remains intentional surface-following orientation.
+- Studio references read before repair: Pet Studio v12 controls blob `90ec845b`; newer face-mount adapter blob `5424bff3`.
+- Evidence: **16/16 focused PASS + 252/252 numeric seat-invariant PASS**, max error `8.88e-16`.
+- Stage mirror: `cloudflare-live@0f3fa194746c7eabbf15d590a18532ecb42332c1`; exact source readback PASS, public browser verification still open.
+- Human route remains `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`.
+
 # KFB Chat Production Router · additive changelog
 
 ## 2026-09-19 · Claude Design failure recovery + export

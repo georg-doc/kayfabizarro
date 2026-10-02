@@ -277,5 +277,28 @@
     "stageMirrorHead": "ed327cbc38ee6ed7e3312619d91374fd8ffa62b5",
     "publicVerified": false,
     "humanGate": "Clown: Use Cleanup02 source anchors, then verify centre + inset"
+  },
+  "controlSemantics": {
+    "status": "IMPLEMENTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "implementationHead": "7d8198f43580c5e2725e59ec5c15c19aaed04c7c",
+    "evidenceHead": "6355718fe7e0a6f78b18e35a4ef598d4ac6ccb7f",
+    "doc": "docs/CONTROL_SEMANTICS_STUDIO_PARITY_2026-10-02.md",
+    "studioDonors": {
+      "petStudioV12Blob": "90ec845ba09f7ed8a76124bb5b5b905a5e9ad82f",
+      "faceMountBlob": "5424bff3f9924587fa3d321138eb8b44915b6550"
+    },
+    "semantics": {
+      "spacing": "x-only",
+      "height": "y-only",
+      "eyeSize": "size-only-centre-locked",
+      "inset": "depth-only",
+      "gazeDrift": "amplitude-only-no-rebuild",
+      "splay": "orientation-plus-surface-seat"
+    },
+    "focusedChecks": "16/16 PASS",
+    "numericInvariant": "252/252 PASS",
+    "maxSeatError": 8.881784197001252e-16,
+    "stageMirrorHead": "0f3fa194746c7eabbf15d590a18532ecb42332c1",
+    "publicVerified": false
   }
 }
