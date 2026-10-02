@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.pages.dev/schemas/kfb-sim-event/0.1",
+  "title": "KFB Sim Event (proposal 0.1)",
+  "description": "PROPOSAL from KFB-NARRATIVE-CORE-RECON-01 (2026-10-02). One append-only event per line (NDJSON). Writer: Kayfabulation Game Director for table events; Culture Director for world intents; memory owner (open decision G-11) consumes memory_receipt. Rules follow the public #kfb canon; socialCall uses public semantics, tripletOperator (#305) is a separate presentation enum (ledger D-11). Successor of the GM_PROTOCOL v2 NDJSON line, not a replacement of the deck SSOT.",
+  "type": "object",
+  "required": ["schema", "sessionId", "seq", "type", "at", "payload"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "kfb.sim-event/0.1" },
+    "sessionId": { "type": "string", "minLength": 1 },
+    "seq": { "type": "integer", "minimum": 0, "description": "Strictly increasing per session; replay = fold over seq order." },
+    "type": { "$ref": "#/$defs/eventType" },
+    "at": { "type": "string", "format": "date-time" },
+    "episode": { "type": "integer", "minimum": 1 },
+    "turn": { "type": "integer", "minimum": 0 },
+    "seat": { "$ref": "#/$defs/seatId" },
+    "origin": {
+      "type": "object",
+      "description": "Who produced the content of this event. Replays never call providers again.",
+      "required": ["controller"],
+      "additionalProperties": false,
+      "properties": {
+        "controller": { "enum": ["human", "sim", "director", "culture", "runtime"] },
+        "provider": { "type": "string", "description": "e.g. decision:disposition-v1, tell:template-v1, tell:llm:<model>" },
+        "rngDraw": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "causedBy": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "description": "seq numbers this event reacts to" },
+    "payload": { "type": "object" }
+  },
+  "allOf": [
+    { "if": { "properties": { "type": { "const": "session_started" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/sessionStarted" } } } },
+    { "if": { "properties": { "type": { "const": "seat_configured" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/seatConfigured" } } } },
+    { "if": { "properties": { "type": { "const": "seat_controller_changed" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/seatControllerChanged" } } } },
+    { "if": { "properties": { "type": { "const": "story_mode_rolled" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/storyModeRolled" } } } },
+    { "if": { "properties": { "type": { "const": "card_dealt" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/cardMove" } } } },
+    { "if": { "properties": { "type": { "const": "card_drawn" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/cardMove" } } } },
+    { "if": { "properties": { "type": { "const": "card_played" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/cardPlayed" } } } },
+    { "if": { "properties": { "type": { "enum": ["card_shown", "card_spun", "card_sold"] } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/ritualStep" } } } },
+    { "if": { "properties": { "type": { "const": "story_told" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/storyTold" } } } },
+    { "if": { "properties": { "type": { "const": "story_beat" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/storyBeat" } } } },
+    { "if": { "properties": { "type": { "const": "social_call" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/socialCallEvent" } } } },
+    { "if": { "properties": { "type": { "const": "verdict" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/verdict" } } } },
+    { "if": { "properties": { "type": { "const": "quest_changed" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/questChanged" } } } },
+    { "if": { "properties": { "type": { "const": "finale_told" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/finaleTold" } } } },
+    { "if": { "properties": { "type": { "const": "after_show" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/afterShow" } } } },
+    { "if": { "properties": { "type": { "enum": ["gift_offer", "gift_open", "dance_invite", "debate", "throw_prop", "brawl", "monologue", "work_activity", "recognize"] } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/worldIntent" } } } },
+    { "if": { "properties": { "type": { "const": "intent_resolved" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/intentResolved" } } } },
+    { "if": { "properties": { "type": { "const": "intent_rejected" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/intentRejected" } } } },
+    { "if": { "properties": { "type": { "const": "memory_receipt" } } }, "then": { "properties": { "payload": { "$ref": "#/$defs/memoryReceipt" } } } }
+  ],
+  "$defs": {
+    "eventType": {
+      "enum": [
+        "session_started", "seat_configured", "seat_controller_changed",
+        "actor_revealed", "quest_revealed",
+        "turn_started", "story_mode_rolled", "card_dealt", "card_drawn", "card_played",
+        "card_shown", "card_spun", "card_sold",
+        "story_told", "story_beat",
+        "social_call", "verdict", "quest_changed", "king_passed",
+        "finale_armed", "finale_told", "quest_failed", "stage_cleared", "after_show",
+        "gift_offer", "gift_open", "dance_invite", "debate", "throw_prop", "brawl", "monologue", "work_activity", "recognize",
+        "intent_resolved", "intent_rejected",
+        "memory_receipt", "session_ended"
+      ]
+    },
+    "seatId": { "type": "integer", "minimum": 1, "maximum": 6 },
+    "storyMode": { "enum": ["TRAGIC", "COMIC", "ABSURD", "HEROIC", "MYSTICAL", "FORBIDDEN"] },
+    "socialCall": { "enum": ["KAYFABINGO", "KAYFABOGGLE", "KAYFABONGO", "BLOEDSINN"], "description": "Public #kfb semantics only." },
+    "tripletOperator": { "enum": ["BINGO", "BONGO", "BOGGLE", "BLOEDSINN"], "description": "PR #305 presentation semantics only; never interpreted as a social call." },
+    "cardRef": {
+      "type": "object",
+      "required": ["deckId", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "deckId": { "type": "string" },
+        "title": { "type": "string", "description": "Exact card title as in the deck SSOT." },
+        "source": { "enum": ["deck-ssot", "bundle-v1.4", "diy"] }
+      }
+    },
+    "slot": { "enum": [1, 2, 3] },
+    "sessionStarted": {
+      "type": "object",
+      "required": ["rulesetId", "rngSeed", "deckIds", "seats"],
+      "properties": {
+        "rulesetId": { "const": "kfb-public-2026-10" },
+        "rngSeed": { "type": "string" },
+        "deckIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "seats": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "options": {
+          "type": "object",
+          "properties": {
+            "safeFloor": { "type": "boolean", "default": false },
+            "trophyRule": { "type": "boolean", "default": false },
+            "afterShowFourReadings": { "type": "boolean", "default": false }
+          }
+        },
+        "matchCard": { "type": "object", "description": "Optional Simulator v0.8 Match Card snapshot used as seed." },
+        "seed": { "type": "object", "description": "Optional Tafel / dossier reference; never rules." }
+      }
+    },
+    "seatConfigured": {
+      "type": "object",
+      "required": ["seat", "controller"],
+      "properties": {
+        "seat": { "$ref": "#/$defs/seatId" },
+        "controller": { "enum": ["human", "sim", "empty"] },
+        "personaId": { "type": "string" },
+        "personaSource": { "type": "string", "description": "e.g. sprint01-yaml@<path> (canon:false)" },
+        "personaCanon": { "type": "boolean" }
+      }
+    },
+    "seatControllerChanged": {
+      "type": "object",
+      "required": ["seat", "from", "to"],
+      "properties": {
+        "seat": { "$ref": "#/$defs/seatId" },
+        "from": { "enum": ["human", "sim", "empty"] },
+        "to": { "enum": ["human", "sim", "empty"] }
+      }
+    },
+    "storyModeRolled": {
+      "type": "object",
+      "required": ["face", "mode"],
+      "properties": { "face": { "type": "integer", "minimum": 1, "maximum": 6 }, "mode": { "$ref": "#/$defs/storyMode" } }
+    },
+    "cardMove": {
+      "type": "object",
+      "required": ["card"],
+      "properties": { "card": { "$ref": "#/$defs/cardRef" }, "handSize": { "type": "integer", "minimum": 0 }, "reason": { "enum": ["deal", "draw-back", "kayfabingo-bonus"] } }
+    },
+    "cardPlayed": {
+      "type": "object",
+      "required": ["card", "as"],
+      "properties": {
+        "card": { "$ref": "#/$defs/cardRef" },
+        "as": { "enum": ["ACTOR", "SCENE", "QUEST", "ACTOR_SWITCH"] },
+        "slot": { "$ref": "#/$defs/slot" },
+        "replaced": { "$ref": "#/$defs/cardRef" }
+      }
+    },
+    "ritualStep": {
+      "type": "object",
+      "required": ["card", "text"],
+      "properties": {
+        "card": { "$ref": "#/$defs/cardRef" },
+        "text": { "type": "string" },
+        "mode": { "$ref": "#/$defs/storyMode" },
+        "performable": { "type": "boolean", "description": "GM v2 card-QA flag: did Sell it deliver a concrete action?" }
+      }
+    },
+    "storyTold": {
+      "type": "object",
+      "required": ["text", "mode", "stageRefs"],
+      "properties": {
+        "text": { "type": "string" },
+        "mode": { "$ref": "#/$defs/storyMode" },
+        "actor": { "$ref": "#/$defs/cardRef" },
+        "stageRefs": { "type": "array", "items": { "$ref": "#/$defs/cardRef" }, "maxItems": 3 },
+        "quest": { "$ref": "#/$defs/cardRef" },
+        "layerZero": { "type": "object", "properties": { "pass": { "type": "boolean" }, "hits": { "type": "array", "items": { "type": "string" } } } }
+      }
+    },
+    "storyBeat": {
+      "type": "object",
+      "required": ["index", "text", "speaker"],
+      "description": "A comic panel inside a told story (Simulator v0.8 beat p/sp/m), not a turn step.",
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "text": { "type": "string" },
+        "speaker": { "type": "string" },
+        "mode": { "$ref": "#/$defs/storyMode" },
+        "cardRef": { "$ref": "#/$defs/cardRef" }
+      }
+    },
+    "socialCallEvent": {
+      "type": "object",
+      "required": ["by", "call"],
+      "properties": {
+        "by": { "$ref": "#/$defs/seatId" },
+        "call": { "$ref": "#/$defs/socialCall" },
+        "target": { "$ref": "#/$defs/seatId" },
+        "question": { "type": "string", "description": "KayfaBOGGLE question" },
+        "answer": { "type": "string" }
+      }
+    },
+    "verdict": {
+      "type": "object",
+      "required": ["king", "delta", "dieBefore", "dieAfter"],
+      "properties": {
+        "king": { "$ref": "#/$defs/seatId" },
+        "delta": { "enum": [2, 1, 0, -1, null], "description": "null on a Finale turn if no verdict applies (open decision G-09)" },
+        "bloedsinnUpheld": { "type": "boolean" },
+        "dieBefore": { "type": "integer", "minimum": 0, "maximum": 6 },
+        "dieAfter": { "type": "integer", "minimum": 0, "maximum": 6 },
+        "line": { "type": "string" }
+      }
+    },
+    "questChanged": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["revealed", "framed", "die-moved", "finale-armed", "resolved", "failed", "replaced"] },
+        "quest": { "$ref": "#/$defs/cardRef" },
+        "frame": { "type": "object", "properties": { "six": { "type": "string" }, "one": { "type": "string" } } },
+        "die": { "type": "integer", "minimum": 0, "maximum": 6 }
+      }
+    },
+    "finaleTold": {
+      "type": "object",
+      "required": ["teller", "text"],
+      "properties": { "teller": { "$ref": "#/$defs/seatId" }, "text": { "type": "string" }, "trophy": { "$ref": "#/$defs/cardRef" }, "keptScenes": { "type": "array", "items": { "$ref": "#/$defs/cardRef" } } }
+    },
+    "afterShow": {
+      "type": "object",
+      "description": "Optional Simulator v0.8 four readings; synthesis stays the player's pencil.",
+      "properties": {
+        "plan": { "type": "string" }, "humbug": { "type": "string" }, "payout": { "type": "string" }, "bloedsinn": { "type": "string" },
+        "playerSynthesis": { "type": ["string", "null"] }
+      }
+    },
+    "worldIntent": {
+      "type": "object",
+      "required": ["actorId", "reason", "ttlMs"],
+      "description": "Proposed by the Culture Director; executed only by the deterministic runtime owner after validation.",
+      "properties": {
+        "actorId": { "type": "string", "description": "seat:<n>, persona:<id> or resident:<id>" },
+        "targetId": { "type": "string" },
+        "propId": { "type": "string", "description": "e.g. brick-fish, gift:<cardRef>" },
+        "place": { "type": "string", "description": "POI id: smithy, mine, bar, market, speakers-corner, table" },
+        "activity": { "type": "string", "description": "for work_activity" },
+        "intensity": { "enum": ["low", "mid", "high"] },
+        "tripletOperator": { "$ref": "#/$defs/tripletOperator" },
+        "reason": { "type": "array", "items": { "type": "integer" }, "minItems": 1, "description": "seq of table/world events that justify the intent" },
+        "ttlMs": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "intentResolved": {
+      "type": "object",
+      "required": ["intentSeq", "runtimeOwner", "outcome"],
+      "properties": {
+        "intentSeq": { "type": "integer" }, "runtimeOwner": { "type": "string" },
+        "outcome": { "enum": ["done", "interrupted", "partial"] },
+        "emotion": { "enum": ["joy", "surprise", "disappointment", "anger", "embarrassment", "moved", "bored", "neutral"] }
+      }
+    },
+    "intentRejected": {
+      "type": "object",
+      "required": ["intentSeq", "reason"],
+      "properties": { "intentSeq": { "type": "integer" }, "reason": { "type": "string" } }
+    },
+    "memoryReceipt": {
+      "type": "object",
+      "required": ["subjectId", "kind", "refs", "summary"],
+      "description": "Bounded, append-only receipt. Writes no store by itself; the memory owner (G-11) ingests it.",
+      "properties": {
+        "subjectId": { "type": "string" },
+        "aboutId": { "type": "string" },
+        "kind": { "enum": ["card-could-not-hold", "signature-win", "king-stance", "call-thrown", "call-received", "gift", "dance", "debate", "brawl", "recognized", "work", "finale", "quest-failed"] },
+        "refs": { "type": "array", "items": { "type": "integer" }, "minItems": 1 },
+        "summary": { "type": "string", "maxLength": 240 },
+        "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+        "blindQaSafe": { "type": "boolean", "description": "false = must not be injected into blind-QA cold reads (GM firewall)" }
+      }
+    }
+  }
+}
