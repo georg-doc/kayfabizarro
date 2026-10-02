@@ -68,6 +68,7 @@
         <button class="filter" type="button" data-roster-filter="unreviewed">Unreviewed</button>
         <button class="filter" type="button" data-roster-filter="adjusted">Adjusted</button>
         <button class="filter" type="button" data-roster-filter="unsupported">Unsupported</button>
+        <button class="filter" type="button" data-roster-filter="cleanup-issue">Cleanup notes</button>
       </div>
       <div id="rosterStats" class="micro-status">Loading actor catalog…</div>
       <div id="actorList" class="actor-list" aria-label="EyeRig actors"></div>
@@ -83,6 +84,15 @@
           <div><dt>Cleanup</dt><dd id="sourceCleanup">—</dd></div>
         </dl>
         <div id="actorTechHint" class="micro-status"></div>
+      </section>
+
+      <section class="audit-block">
+        <div class="issue-head">
+          <span class="eyebrow">EYE-CLEANUP-02</span>
+          <span id="cleanup02Badge" class="badge pending">LOADING</span>
+        </div>
+        <div id="cleanup02Issue" class="cleanup-issue-note">Loading Cleanup02 review notes…</div>
+        <div id="cleanup02Summary" class="micro-status">Source-pinned cleanup review data loading…</div>
       </section>
 
       <section class="audit-block">
@@ -118,7 +128,7 @@
       </div>
 
       <div id="stage" class="stage" tabindex="0" aria-label="3D EyeRig review stage">
-        <div class="loading-card" id="loadingCard">
+        <div class="loading-card" id="loadingCard" aria-live="polite" aria-hidden="false">
           <span class="spinner"></span>
           <strong>Loading actor…</strong>
           <small id="loadingDetail">Pinned repository revision 5650b6c…</small>
