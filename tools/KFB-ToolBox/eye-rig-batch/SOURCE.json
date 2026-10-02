@@ -437,5 +437,55 @@
     "currentFocusedChecks": "22/22 PASS",
     "ovalBehaviorChecks": "7/7 PASS",
     "latestBatchMapping": "33/33 ids + 33/33 paths"
+  },
+  "controlR2": {
+    "status": "SOURCE_TESTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "pupilSeating": {
+      "ownerCommit": "2bfbe0d2d73aeb5f2fc3af5b11983dc099016792",
+      "blob": "90c5e44b17bbb59b1cc26dc5dc943f1091cd5b3b",
+      "method": "ELLIPSOID_TANGENT_PLANE_CAP_GUARANTEE",
+      "stress": {
+        "cases": 3125,
+        "inside": 0,
+        "worstF": 1.0397125325424128
+      }
+    },
+    "controls": {
+      "implementation": "9927bdd1fee790e28b583f3ac614e2044df06630",
+      "converge": [
+        -2,
+        3
+      ],
+      "track": [
+        0,
+        1.5
+      ],
+      "pupilSize": [
+        0,
+        1
+      ],
+      "inlineNumericEdit": true,
+      "storageKey": "kfb.toolbox.eye-rig-batch.v0",
+      "savedProfilesPreserved": true
+    },
+    "orcRaider": {
+      "glbBlob": "875c648a9d01929bff06fcb9de54416ae32da1f7",
+      "material": "orc_texture_A",
+      "textureBlob": "2035dea050702373c5d2d3c9c49a3381c93b1122",
+      "namedMaterialOverride": true
+    },
+    "evidence": {
+      "focused": "15/15 PASS",
+      "commit": "c518d1154f6e25f11ea67ed2a1f374eb1a5322d6"
+    },
+    "stageMirrorHead": "7fc4e208cb956a74cfa8ab409f9eed74eb2ef69c",
+    "publicVerified": false,
+    "deferred": [
+      "PER_EYE_POSITION",
+      "PER_EYE_VISIBILITY_SURVIVALIST",
+      "STUDIO_INLINE_NUMERIC_PARITY",
+      "BLENDER_NOEYES_NEW_ROSTER"
+    ],
+    "nextGate": "GEORG_EYERIG_CONTROL_R2_VIS_01"
   }
 }

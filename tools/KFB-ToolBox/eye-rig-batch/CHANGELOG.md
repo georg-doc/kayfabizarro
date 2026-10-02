@@ -930,3 +930,99 @@ On the direct Stage:
 3. inspect Mummy A/B;
 4. sample several newly added Mystery Medium and Large actors;
 5. stop for Georg approval before profile promotion or the next Blender cleanup batch.
+
+## 2026-10-02 · EYE-RIG-BATCH-CONTROL-R2-01 · RETURN
+
+Status: **READY_FOR_HUMAN_REVIEW · SOURCE TESTED · STAGE MIRRORED · PUBLIC_VERIFIED OPEN**
+
+### User feedback addressed
+
+1. **Pupil clipping on oval eyes**
+   - pupil remains independent in size;
+   - seating is now recomputed after every gaze update against the tangent plane of the current eye ellipsoid;
+   - this prevents the independent pupil cap from being swallowed by strongly deformed sclera.
+
+2. **Slider limits / cross-eye**
+   - Converge widened to **-2 … 3** and can expand further around directly typed values;
+   - Gaze drift **0 … 1.5**;
+   - flexible placement and Oval controls can expand around entered values;
+   - Pupil size now exposes **0 … 1**, matching the owner clamp;
+   - Lid fit exposes **0 … 1**;
+   - kinetics A/C/J expose **-1.5 … 1.5**.
+
+3. **Direct numeric entry**
+   - click any numeric output in the EyeRig Batch workbench;
+   - type exact value;
+   - Enter / blur commits;
+   - Escape cancels.
+   - This is implemented in the Batch owner only. Separate FrankenStein/Pet Studio UI parity remains a later owner slice.
+
+4. **Orc Raider texture**
+   - source GLB blob `875c648a9d01929bff06fcb9de54416ae32da1f7` contains material `orc_texture_A` but zero image/texture records;
+   - exact source texture `orc_texture_A.png` blob `2035dea050702373c5d2d3c9c49a3381c93b1122`;
+   - actor now uses a named-material texture override so a source material with no existing `map` can still receive its exact source texture.
+
+### Persistence
+
+Browser storage key remains:
+
+`kfb.toolbox.eye-rig-batch.v0`
+
+Existing `profiles` persistence remains unchanged. No storage clear/remove/reset was introduced.
+
+Therefore saved numeric authoring profiles remain available across the new build. A visual result can intentionally change where rendering semantics were fixed (notably pupil seating), but the stored values are not silently discarded.
+
+### Evidence
+
+Implementation:
+- robust shared EyeOval tangent-plane seating: `2bfbe0d2d73aeb5f2fc3af5b11983dc099016792`
+- Batch controls / inline edit / Orc texture: `9927bdd1fee790e28b583f3ac614e2044df06630`
+- evidence checkpoint: `c518d1154f6e25f11ea67ed2a1f374eb1a5322d6`
+
+Focused checks: **15/15 PASS**.
+
+Pupil stress:
+- **3,125** combinations;
+- **0** sampled cap points inside ellipsoid;
+- worst sampled ellipsoid `F=1.0397125325424128`.
+
+Shared ToolBox EyeOval + current FrankenStein Studio snapshot blob:
+`90c5e44b17bbb59b1cc26dc5dc943f1091cd5b3b`.
+
+### Stage
+
+Mirror:
+`cloudflare-live@7fc4e208cb956a74cfa8ab409f9eed74eb2ef69c`
+
+Exact Stage file readback PASS:
+- inline editor runtime present;
+- widened Converge range present;
+- Orc exact texture contract present;
+- repaired EyeOval pin present;
+- ToolBox Stage Hub card updated.
+
+Human route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+GitHub deployment status is currently pending; direct public-browser proof is therefore not claimed.
+
+### Deferred
+
+- independent L/R eye placement controls;
+- per-eye visibility, with Survivalist eyepatch as first concrete case;
+- decision whether those belong in Batch EyeRig or 3D Editor;
+- same click-to-edit numeric UX in the separate FrankenStein/Pet Studio UI;
+- later Blender/NoEyes cleanup for newly rostered characters.
+
+### Exactly one next gate
+
+**GEORG_EYERIG_CONTROL_R2_VIS_01**
+
+On the direct Stage:
+1. distort Oval W/H and move gaze; pupil must remain fully visible and unchanged in size;
+2. test strong positive Converge for inward cross-eye;
+3. click a numeric value and type `1`;
+4. inspect Orc Raider source texture;
+5. reload and confirm existing saved profiles remain.
+
+Stop before any profile promotion, per-eye feature work, Blender cleanup, merge or Live promotion.
