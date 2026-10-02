@@ -1,0 +1,102 @@
+{
+  "schema": "kfb.eye-cleanup-review/0.1-candidate",
+  "date": "2026-10-02",
+  "source": {
+    "cleanupJob": "EYE-CLEANUP-02",
+    "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+    "prepPr": 315,
+    "prepHead": "eef621f92b29ba8d45395a1c8aab28bc75ca35a7"
+  },
+  "summary": {
+    "entries": 31,
+    "done": 26,
+    "none": 5,
+    "blocked": 0,
+    "humanDecisionTotal": 4,
+    "humanDecisionInCurrentRoster": 3,
+    "currentRosterNotes": 9,
+    "offRosterSummary": "Prototype Pete decision; Legacy Orc A/B node-host anchors; Action Figure Head B separate"
+  },
+  "actorIssues": {
+    "skeleton-warrior": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "shortLabel": "CLEANUP DECISION",
+      "title": "NoEyes removes the glowing eye object",
+      "detail": "Skeleton_Warrior_Eyes and its Glow material disappear in the derivative; sockets remain dark. Compare original vs NoEyes before approving this actor.",
+      "sourceId": "warrior",
+      "noEyes": "Skeleton_Warrior_NoEyes.glb"
+    },
+    "skeleton-rogue": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "shortLabel": "CLEANUP DECISION",
+      "title": "NoEyes removes the glowing eye object",
+      "detail": "Skeleton_Rogue_Eyes and its Glow material disappear in the derivative; sockets remain dark. Compare original vs NoEyes before approving this actor.",
+      "sourceId": "rogue",
+      "noEyes": "Skeleton_Rogue_NoEyes.glb"
+    },
+    "skeleton-mage": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "shortLabel": "CLEANUP DECISION",
+      "title": "NoEyes removes the glowing eye object",
+      "detail": "Skeleton_Mage_Eyes and its Glow material disappear in the derivative; sockets remain dark. Compare original vs NoEyes before approving this actor.",
+      "sourceId": "mage",
+      "noEyes": "Skeleton_Mage_NoEyes.glb"
+    },
+    "action-figure": {
+      "status": "CHECK_CLEANUP",
+      "shortLabel": "TEXTURE CLEANUP",
+      "title": "Eyes were removed in the face texture, not as geometry",
+      "detail": "Open-eye regions were filled with surrounding skin while brows, nose, mouth and lower atlas expressions were preserved. A faint old oval edge can remain up close.",
+      "sourceId": "figure",
+      "noEyes": "ActionFigure_NoEyes.glb"
+    },
+    "animatronic-creepy": {
+      "status": "CHECK_CLEANUP",
+      "shortLabel": "ASYMMETRIC",
+      "title": "Eye anchors are intentionally asymmetric",
+      "detail": "The left source eye hangs lower and farther forward. Anchors preserve those source positions rather than forcing a mirrored pair.",
+      "sourceId": "creepy",
+      "noEyes": "Animatronic_Creepy_NoEyes.glb"
+    },
+    "avian": {
+      "status": "CHECK_CLEANUP",
+      "shortLabel": "SIDE-EYE HOST",
+      "title": "Avian eye normals point strongly sideways",
+      "detail": "This follows the source anatomy. Do not force a front-facing mirrored normal during EyeRig calibration.",
+      "sourceId": "avian",
+      "noEyes": "AvianSwordsman_NoEyes.glb"
+    },
+    "lorekeeper": {
+      "status": "CHECK_CLEANUP",
+      "shortLabel": "GLASSES KEPT",
+      "title": "Glasses remain over the EyeRig",
+      "detail": "Source eyes are removed but the glasses stay. Judge the EyeRig through the lenses in Front and 3/4.",
+      "sourceId": "lorekeeper",
+      "noEyes": "Lorekeeper_NoEyes.glb"
+    },
+    "protagonist-a": {
+      "status": "CHECK_CLEANUP",
+      "shortLabel": "GLASSES KEPT",
+      "title": "Glasses remain over the EyeRig",
+      "detail": "Source eyes are removed but the glasses stay. Judge the EyeRig through the lenses in Front and 3/4.",
+      "sourceId": "prot_a",
+      "noEyes": "Protagonist_A_NoEyes.glb"
+    },
+    "monster": {
+      "status": "CHECK_CLEANUP",
+      "shortLabel": "PATCHED FACE",
+      "title": "Left and right eye surroundings differ",
+      "detail": "The stitched face patch produces different per-eye surrounding colors; keep per-eye cleanup evidence instead of forcing one shared skin sample.",
+      "sourceId": "monster",
+      "noEyes": "Monster_NoEyes.glb"
+    }
+  },
+  "externalIssues": [
+    {
+      "id": "prototype-pete",
+      "status": "HUMAN_DECISION_REQUIRED",
+      "title": "Prototype Pete is Legacy/off-roster",
+      "detail": "Raised eye bumps were removed although the cleanup brief expected none. Decide original vs NoEyes before Legacy EyeRig use."
+    }
+  ]
+}

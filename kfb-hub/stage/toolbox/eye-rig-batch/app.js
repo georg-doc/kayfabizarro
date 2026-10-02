@@ -31,6 +31,7 @@ const CLASS_CONFIG = {
   }
 };
 const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
+const CLEANUP02_REVIEW_URL = './data/cleanup02-review.v0.json';
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
 function classConfig(rigClass=state.rigClass){ return CLASS_CONFIG[rigClass] || CLASS_CONFIG.Rig_Medium; }
 const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0';
@@ -45,7 +46,7 @@ const state = {
   profile:null, profiles:{}, approvedProfiles:{}, pendingImport:null,
   currentActor:null, currentActorId:null, currentActorByClass:{}, rosterFilter:'all', switching:false, loader:null,
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
-  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false,
+  componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null,
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
@@ -60,6 +61,31 @@ function log(msg) {
 }
 function setBadge(el, text, kind) { el.textContent = text; el.className = `badge ${kind}`; }
 function gate(id, status) { const el = $(id); el.className = `gate ${status}`; }
+function setLoading(show, detail=null) {
+  const el=$('#loadingCard'); if(!el)return;
+  const d=$('#loadingDetail'); if(detail!=null&&d)d.textContent=detail;
+  el.hidden=!show;
+  el.classList.toggle('is-hidden',!show);
+  el.setAttribute('aria-hidden',show?'false':'true');
+}
+function cleanup02Issue(actorId){ return actorId ? state.cleanup02Review?.actorIssues?.[actorId] || null : null; }
+function renderCleanup02Issue() {
+  const badge=$('#cleanup02Badge'), note=$('#cleanup02Issue'), summary=$('#cleanup02Summary');
+  if(!badge||!note||!summary)return;
+  const issue=cleanup02Issue(state.currentActorId);
+  if(issue){
+    const human=issue.status==='HUMAN_DECISION_REQUIRED';
+    setBadge(badge,human?'HUMAN DECISION':'CHECK CLEANUP',human?'candidate':'candidate');
+    note.textContent=`${issue.title} — ${issue.detail}`;
+    note.className=`cleanup-issue-note ${human?'decision':'note'}`;
+  }else{
+    setBadge(badge,'CLEAR','pass');
+    note.textContent=state.currentActor ? 'No special EYE-CLEANUP-02 exception recorded for this actor.' : 'Select an actor to see EYE-CLEANUP-02 review notes.';
+    note.className='cleanup-issue-note clear';
+  }
+  const s=state.cleanup02Review?.summary;
+  summary.textContent=s ? `${s.currentRosterNotes} roster notes · ${s.humanDecisionTotal} human decisions total · off-roster: ${s.offRosterSummary}` : 'Cleanup02 review-note data loading…';
+}
 function sourceRef() {
   return { repo:'georg-doc/kayfabizarro', path:state.currentActor?.path || state.profile?.source?.path, revision:state.currentActor?.revision || state.profile?.source?.revision };
 }
@@ -183,16 +209,17 @@ function renderRoster() {
     if(filter==='unreviewed') return rs==='UNREVIEWED';
     if(filter==='adjusted') return rs==='ADJUSTED'||rs==='ADJUSTED_APPROVED';
     if(filter==='unsupported') return rs==='UNSUPPORTED';
+    if(filter==='cleanup-issue') return !!cleanup02Issue(a.id);
     return true;
   });
   const list=$('#actorList');
   if(list) list.innerHTML=visible.map((a)=>{
-    const rs=currentReviewState(a.id), current=a.id===state.currentActorId, checked=state.selectedActors.has(a.id);
+    const rs=currentReviewState(a.id), current=a.id===state.currentActorId, checked=state.selectedActors.has(a.id), issue=cleanup02Issue(a.id);
     return `<div class="actor-row ${current?'current':''}" data-row-id="${a.id}">
       <input class="actor-select" data-select-id="${a.id}" type="checkbox" ${checked?'checked':''} aria-label="Select ${a.label}">
-      <button class="actor-card ${current?'selected':''}" data-actor-id="${a.id}" type="button">
+      <button class="actor-card ${current?'selected':''} ${issue?'has-cleanup-issue':''}" data-actor-id="${a.id}" type="button">
         <span class="actor-icon">${a.initials||a.label.slice(0,2).toUpperCase()}</span>
-        <span class="actor-copy"><strong>${a.label}</strong><small>${a.rigClass} · ${rs.replaceAll('_',' ')}</small></span>
+        <span class="actor-copy"><strong>${a.label}</strong><small>${a.rigClass} · ${rs.replaceAll('_',' ')}</small>${issue?`<small class="actor-alert">${issue.shortLabel}</small>`:''}</span>
         <span class="dot ${reviewClass(rs)}" title="${rs}"></span>
       </button>
     </div>`;
@@ -223,6 +250,7 @@ function updateActorAudit() {
   $('#sourcePath').textContent=a.path.split('/').pop();
   const info=$('#actorTechHint');
   if(info) info.textContent=`${a.provenance} · ${a.path}`;
+  renderCleanup02Issue();
 }
 function storeCurrentProfile() {
   if(!state.profile?.actorId) return;
@@ -636,10 +664,9 @@ function wireComponentDiagnostic(camera,controls) {
 async function loadActor(actorId,{preserve=true}={}) {
   const actor=actorById(actorId); if(!actor||state.switching)return false;
   state.switching=true;
-  const loading=$('#loadingCard');
   try{
     if(preserve) storeCurrentProfile();
-    if(loading){loading.hidden=false;$('#loadingDetail').textContent=`Loading ${actor.label}…`;}
+    setLoading(true,`Loading ${actor.label}…`);
     state.currentAction?.stop?.(); state.currentAction=null;
     state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
     if(state.figure?.parent) state.figure.parent.remove(state.figure);
@@ -691,13 +718,13 @@ async function loadActor(actorId,{preserve=true}={}) {
     bindUiFromProfile(); setView('front',window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls); poseBind();
     wireComponentDiagnostic(window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls);
     updateActorAudit(); renderRoster(); save();
-    if(loading)loading.hidden=true;
+    setLoading(false);
     setBadge($('#bootBadge'),state.sourceReady&&state.hostReady&&state.eyeReady?'READY':'CHECK',state.sourceReady&&state.hostReady&&state.eyeReady?'pass':'candidate');
     return true;
   }catch(err){
     console.error(err); log(`actor load failed · ${actor.label} · ${err.message}`);
     const p=ensureProfile(actor); p.status='UNSUPPORTED'; p.reviewState='UNSUPPORTED'; p.technicalNote=`load failed: ${err.message}`; state.profiles[actor.id]=clone(p); state.profile=p;
-    renderRoster(); save(); if(loading){loading.hidden=false;$('#loadingDetail').textContent=`Unsupported · ${err.message}`;}
+    renderRoster(); save(); setLoading(false); const info=$('#actorTechHint'); if(info)info.textContent=`Unsupported · ${err.message}`;
     setBadge($('#bootBadge'),'CHECK','candidate'); return false;
   }finally{ state.switching=false; }
 }
@@ -774,19 +801,21 @@ function wireRuntimeControls(camera,controls,renderer) {
 }
 
 async function boot() {
-  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract]=await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.seedUrl).then((r)=>{if(!r.ok)throw new Error(`large seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`large catalog ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Large.reviewedUrl).then((r)=>{if(!r.ok)throw new Error(`large reviewed ${r.status}`);return r.json();}),
-    fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();})
+    fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();}),
+    fetch(CLEANUP02_REVIEW_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 review ${r.status}`);return r.json();})
   ]);
   state.seed=seed;
   state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed};
   state.catalogs={Rig_Medium:mediumCatalog.actors||[],Rig_Large:largeCatalog.actors||[]};
   window.__EYE_RIG_CONTRACT=contract;
+  state.cleanup02Review=cleanup02Review;
 
   const saved=readSaved();
   if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
@@ -821,7 +850,7 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
   wireProfileIo();wireRuntimeControls(camera,controls,renderer);wireRoster();
@@ -839,5 +868,5 @@ async function boot() {
 }
 
 boot().catch((err)=>{
-  bootError=err; console.error(err); setBadge($('#bootBadge'),'FAIL','fail'); $('#loadingDetail').textContent=err.message; gate('#gateSource',state.sourceReady?'pass':'fail'); renderReport(); window.__EYE_RIG_BATCH={state,error:err,report:()=>({error:err.message,gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady}})};
+  bootError=err; console.error(err); setLoading(false); setBadge($('#bootBadge'),'FAIL','fail'); const info=$('#actorTechHint'); if(info)info.textContent=`Boot failed · ${err.message}`; gate('#gateSource',state.sourceReady?'pass':'fail'); renderReport(); window.__EYE_RIG_BATCH={state,error:err,report:()=>({error:err.message,gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady}})};
 });
