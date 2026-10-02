@@ -1,0 +1,74 @@
+{
+  "schema": "kfb.asset-intake-source.v1",
+  "slice": "ASSET-INTAKE-SNOW-FESTIVE-01",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "repository": "georg-doc/kayfabizarro",
+  "sourceMain": {
+    "head": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+    "snowUploadCommit": "ab65e8c46ca3c07db4294214a63384975fb7d0d9",
+    "festiveUploadCommit": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+  },
+  "generatedRegistry": {
+    "sourceBranch": "bot/asset-registry-update",
+    "head": "b211fde4a558dcfa8b1f745e1dbf4af0221b49f1",
+    "sourceCommit": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+    "totalAssets": 15119,
+    "totalPacks": 122,
+    "accumulatedDeltaAdded": 351
+  },
+  "packs": {
+    "snow": {
+      "packId": "kaykit-medieval-snow-biome",
+      "root": "media/3D_Assets/Kaykit_Medieval Snow Biome",
+      "assetCount": 79,
+      "models": 78,
+      "images": 1,
+      "formats": {
+        "glb": 57,
+        "fbx": 21,
+        "png": 1
+      },
+      "dependencies": {
+        "embedded": 57,
+        "unresolved": 21
+      },
+      "license": {
+        "status": "EXPLICIT_SOURCE_FILE",
+        "file": "media/3D_Assets/Kaykit_Medieval Snow Biome/License.txt",
+        "value": "CC0"
+      }
+    },
+    "festive": {
+      "packId": "kaykit-festive-mini-pack",
+      "root": "media/3D_Assets/Kaykit_Festive Mini-Pack",
+      "assetCount": 48,
+      "models": 46,
+      "images": 2,
+      "formats": {
+        "glb": 22,
+        "gltf": 1,
+        "fbx": 23,
+        "png": 2
+      },
+      "dependencies": {
+        "embedded": 23,
+        "unresolved": 23
+      },
+      "santa": [
+        "media/3D_Assets/Kaykit_Festive Mini-Pack/character/gltf/character_santa.gltf",
+        "media/3D_Assets/Kaykit_Festive Mini-Pack/character/fbx/character_santa.fbx"
+      ],
+      "license": {
+        "status": "UNRESOLVED_NO_LICENSE_FILE_IN_UPLOADED_PACK",
+        "value": null
+      }
+    }
+  },
+  "boundaries": [
+    "tracked source files remain asset truth",
+    "registry/assets/v1 is generated/reviewed discovery truth",
+    "Asset Librarian remains read-only discovery/candidate handoff",
+    "no R2D, Travel, Race, Resident or other runtime adoption in this slice",
+    "historical media/3D_Assets/CATALOG is not the current Registry owner"
+  ]
+}
