@@ -1,0 +1,81 @@
+{
+  "schema": "kfb.wc1-procedural-building-b3.source.v1",
+  "date": "2026-10-02",
+  "status": "B3_STABLE_OWNER_REHOME_AND_WORLDBUILDER_CONSUMER_PASS",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-building-b3-2026-10-02",
+  "pr": 327,
+  "base": {
+    "branch": "chatgpt-web/wc1-procedural-building-b2-2026-10-02",
+    "head": "69c9c7f54cb1c048105f5aa822593c8976727959"
+  },
+  "rehome": {
+    "source": "KFB_WORLD_INTEGRATION_01_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r2/EXPORT_MANIFEST.json",
+    "requiredToStart": 26,
+    "exactBlobParity": "26/26",
+    "commit": "3afc04245a9120e4fb7fe9284f32ec62c0eae896",
+    "behaviorChanged": false
+  },
+  "consumerFixture": {
+    "path": "fixtures/huerth-b1-siblings-v0.json",
+    "blob": "1452f44920239e870091b1803c0d2bd183679881",
+    "buildings": 700,
+    "replacements": 3,
+    "zoneId": "huerth-b1-siblings-v0",
+    "worldProfile": "huerth-b1"
+  },
+  "testedHead": "8bcfa5853d908a2ed497ce63837879a14c967d86",
+  "finalTest": {
+    "run": 37051696896,
+    "job": 110986394871,
+    "artifact": {
+      "id": 11246857239,
+      "digest": "sha256:c44fae26421fd849e012f3a60ac932feafb312ee333391762b115f69bd91b9c0"
+    },
+    "world": {
+      "buildings": 700,
+      "roads": 164,
+      "landuse": 22,
+      "supportRecords": 700,
+      "facadeRule": "kfb-facade-rule-v1",
+      "windows": 6672,
+      "doors": 434,
+      "partyEdges": 946,
+      "wallNormalsOnly": 700
+    },
+    "siblings": [
+      {
+        "id": "b1/compact-simple/371401529-to-371401477",
+        "details": 20,
+        "doors": 1,
+        "windows": 19
+      },
+      {
+        "id": "b1/ordinary-notched/371401481-to-371401497",
+        "details": 35,
+        "doors": 1,
+        "windows": 34
+      },
+      {
+        "id": "b1/large-complex/371401488-to-371401495",
+        "details": 29,
+        "doors": 1,
+        "windows": 28
+      }
+    ],
+    "terrainOwner": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js",
+    "editOwner": "tools/KFB-ToolBox/lib/edit-layer.js",
+    "rendererCount": 1,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "qaProblems": 0
+  },
+  "screenshotClassification": "BOOT_CONSUMER_PASS_NOT_STYLE_ACCEPTANCE",
+  "materialDecision": false,
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "recoveryFile": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b3/RECOVERY.md",
+  "nextGate": "PROCEDURAL_BUILDING_B4_REAL_WORLD_DEFORMATION_DESIGN_MATRIX"
+}
