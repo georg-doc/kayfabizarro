@@ -574,3 +574,68 @@ Form/Environment next action:
 **ENVIRONMENT FAMILY P2 · EXISTING PROP VOCABULARY EXTRACTION**.
 
 The existing material next gate above remains a separate parallel lane and is not superseded by this form work.
+
+
+## 2026-10-02 · Form/Environment lane · P2 COMPLETE
+
+Separate from the material/Clay lane.
+
+P2 outcome:
+**SOURCE_DERIVED_GEOMETRY_PASS**
+
+Branch / PR:
+- `chatgpt-web/wc1-procedural-environment-p2-2026-10-02`
+- Draft PR #316
+
+Exact authored donor isolation:
+- 13/13 PASS;
+- source pin `a5fefb273b274e40b3a1e642788c87113fa6ea27`;
+- source-object run `36960716414` / job `110693565332`;
+- 13 screenshots + state evidence;
+- `stump_oldTall` remains explicit negative/outlier.
+
+Procedural transfer:
+- geometry-only module `procedural-environment-p2/environment-family-p2.mjs`;
+- seven generated roles: log separator, log stack3, stump round, stump detailed, mushroom normal, mushroom group3, grass tuft;
+- no material owner, renderer owner, placement owner or frame loop added.
+
+Final PASS after one QA-only repair:
+- tested head `5f2a4444feed8f38883499de2a044f0e9e8b36eb`;
+- run `37012562325`;
+- job `110855562506`;
+- source artifact `11228612568`, digest `sha256:3d7d60220fdae97466b503c2237161c5d5f28f7f2fb754572d48482ebfaf0826`;
+- procedural artifact `11228413648`, digest `sha256:162562b8da803cf4e9ae5d2a54b91036d59d84f6ee3382e23e2f6424ed108df9`;
+- 13/13 source donors PASS;
+- 7/7 generated geometries PASS;
+- 0 display-material texture maps;
+- 0 console errors;
+- 0 page errors;
+- 0 QA problems.
+
+Repair Pass 1 corrected only a false QA assumption: renderer memory counted the shadow map as one texture. Display materials were texture-free and geometry was unchanged.
+
+Site recovery / P2 source-object checkpoint:
+`WORLD-CORRIDOR-01 / e73b2e77-23a2-4dea-a744-4b455dee2e59`.
+
+Full P2 handoff:
+- `procedural-environment-p2/RETURN.md`
+- `procedural-environment-p2/SOURCE.json`
+- `procedural-environment-p2/P2_TEST_REPORT.md`
+
+The form/environment lane has enough procedural nature vocabulary to move on rather than inventing further small props.
+
+### Exactly one next FORM/ENVIRONMENT gate
+
+**PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**
+
+Start with one normal everyday low-rise building family from actual accepted/deformed KFB donors.
+
+Use the existing building lineage:
+`Golden/deformed samples → Elastic Grotesque → City Grotesque → LandmarkElastic → LOOK-TORSION → FACADE_RULE v1 → KayKit/K-Kid identity`.
+
+Grade with:
+`Polly & Her Pals × Rocko's Modern Life × Fritz Lang / Metropolis`.
+
+No material decision and no generic random-building generator.
+
+The existing material next gate elsewhere in this Return remains a separate parallel lane.
