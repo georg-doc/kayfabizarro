@@ -76,7 +76,7 @@ Diese Arbeit zeigt technisch aus echten Spendern abgeleitete Geometrie. Die visu
 
 [R2C-RETURN mit der Materialnennung](https://github.com/georg-doc/kayfabizarro/blob/927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f/tools/KFB-ToolBox/_inbox/KFB%20World%20Core%20R2C%20%C2%B7%20Hex-Archipel%20Katalog/WORLD_CORE_R2C_2026-10-01/docs/RETURN.md) benennt `clay_floor_001` als gemeinsames Modellmaterial des Hexagon-Packs. Das ist nicht automatisch dasselbe wie die eigenständigen Texturdateien gleichen Namens.
 
-Der Texturkatalog auf dem geprüften GitHub-Stand führt den Satz separat: [Texture registry shard, gepinnt auf 927a1b4](https://github.com/georg-doc/kayfabizarro/blob/927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f/registry/assets/v1/packs/textures.json). Die vier Originalbilder stammen aus Asset-Commit `378b209355b13304e3cff656ec0806ca5b89df28):
+Der Texturkatalog auf dem geprüften GitHub-Stand führt den Satz separat: [Texture registry shard, gepinnt auf 927a1b4](https://github.com/georg-doc/kayfabizarro/blob/927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f/registry/assets/v1/packs/textures.json). Die vier Originalbilder stammen aus Asset-Commit `378b209355b13304e3cff656ec0806ca5b89df28`:
 
 - [Diffuse / Grundfarbe · 115.628 B](https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Textures/clay_floor_001/clay_floor_001_diffuse.jpg)
 - [Normalen · 72.654 B](https://github.com/georg-doc/kayfabizarro/blob/378b209355b13304e3cff656ec0806ca5b89df28/media/3D_Assets/Textures/clay_floor_001/clay_floor_001_normal.jpg)
@@ -94,7 +94,7 @@ Vergleiche am selben echten KayKit-Quellmodell, derselben Kamera, demselben Maß
 5. falls R2C sein Material aus genau diesem Textursatz erzeugt: diese Provenienz anhand des Modell-/Material-URIs belegen, nicht vermuten.
 
 Zeige die Map-Kanäle getrennt und den zusammengesetzten Look. Ältere Terrain-Messungen zu clay_floor_001 deuteten auf wenig Relief-Detail hin; behandle das nur als Hinweis aus einem anderen Einsatz, nicht als vorweggenommenes Urteil über die R2C-Inseloberfläche. Der Textursatz ist ein expliziter Vergleichskandidat, kein bereits freigegebener Golden-Look. Georg entscheidet nach den direkten Bildern.
-    
+
 ## Arbeitsfolge
 
 ### Schritt 1 · Quellen verifizieren, noch nichts gestalten
