@@ -1,5 +1,6 @@
 # KFB img2threejs · Arbeitsbereich
 
+**Current candidate:** [Grounding + World Look + Grotesque OSM v2](docs/GROUNDING_WORLDLOOK_GROTESQUE_V2_RETURN_2026-09-20.md) · draft PR #118 · 25/25 source + 15/15 browser PASS  
 **Stand:** 2026-09-19 · **Owner:** Georg / KFB  
 **WSA Review Package:** [Landmarks · full handoff + backlog](docs/WSA_REVIEW_PACKAGE_LANDMARKS_2026-09-19.md)  
 **Aktueller Return:** [Grotesque World Style Bridge v1](docs/LANDMARK_WORLD_STYLE_V1_RETURN_2026-09-19.md)  

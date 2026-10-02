@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-build="KFB-GROUND-WORLD-GROTESQUE-V2-20260920">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Grounding + World Look + Grotesque OSM v2</title>
+<style>
+:root{font-family:system-ui,sans-serif;background:#d2dde0;color:#302d33}*{box-sizing:border-box}body{margin:0}.app{height:100dvh;display:grid;grid-template-rows:auto 1fr auto}.bar{background:#f2ede4;border-bottom:2px solid #39343d;padding:10px 14px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}.brand{font-size:14px;font-weight:800;margin-right:6px}.tag{display:block;font-size:10px;font-weight:400;letter-spacing:.08em;color:#6b625d}select,button{font:inherit;font-size:12px;background:#fffaf2;color:#39343d;border:1px solid #a79d94;border-radius:6px;padding:7px 9px}button{cursor:pointer}button:hover{background:#e8d2a2}label{font-size:11px;display:flex;align-items:center;gap:4px}.stage{min-height:0}canvas{display:block;width:100%;height:100%;touch-action:none}.foot{background:#f2ede4;border-top:1px solid #b6aea5;padding:8px 14px;display:grid;gap:5px}.row{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}h1{font:500 20px Georgia,serif;margin:0}#note,#status,.small{font-size:11px;line-height:1.45;color:#555}.small a{color:#355f6b}.error{color:#97372d!important}@media(max-width:800px){.brand{width:100%}.bar{padding:7px;gap:5px}.foot{padding:7px 9px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body><main class="app">
+<header class="bar">
+  <div class="brand">KFB GROUND / WORLD / CITY<span class="tag">PILOT 09 · TINYSKIES SURFACE · GROTESQUE OSM v2</span></div>
+  <select id="cityLook" aria-label="City look">
+    <option value="v2" selected>Grotesque v2 · cubist</option>
+    <option value="legacy">Legacy · card-stack A/B</option>
+  </select>
+  <select id="terrainMode" aria-label="Terrain">
+    <option value="tiny" selected>Tiny Surface · simplex</option>
+    <option value="flat">Flat ground · debug</option>
+  </select>
+  <select id="domPalette" aria-label="Cathedral palette">
+    <option value="harmonic" selected>Dom · city-harmonic</option>
+    <option value="identity">Dom · identity palette</option>
+  </select>
+  <label><input id="details" type="checkbox" checked> windows / doors</label>
+  <label><input id="wire" type="checkbox"> wire</label>
+  <button id="reset">Reset view</button>
+</header>
+<section id="stage" class="stage"><canvas id="view"></canvas></section>
+<footer class="foot">
+  <div class="row"><h1 id="title">Grounding + World Look + Grotesque OSM v2</h1><span id="note">Loading…</span></div>
+  <div id="status">Loading current Hürth/OSM and donor sources…</div>
+  <div class="small">No round Cathedral base, no plaza plate. Tiny Surface uses the TinySkies/Travel simplex recurrence on a staggered triangular local mesh. Grotesque v2 keeps OSM footprints but uses fewer chunky semantic floor bands plus sparse windows and a street-facing door code. <a href="SLICE.md">Slice</a> · <a href="../../docs/COLOGNE_DOM_CITY_SPRINT_POC_2026-09-20.md">Next Cologne sprint</a></div>
+</footer>
+</main>
+<script type="module">
+const timer=setTimeout(()=>document.querySelector('#status').textContent='Still loading. Check Three.js/CDN and source paths.',12000);
+try{const {boot}=await import('./viewer.mjs');await boot();clearTimeout(timer);}
+catch(error){clearTimeout(timer);const s=document.querySelector('#status');s.textContent='Viewer could not start: '+error.message;s.classList.add('error');window.__KFB_GROUND_WORLD_GROTESQUE_V2__={ready:false,error:String(error)};console.error(error);}
+</script>
+</body></html>
