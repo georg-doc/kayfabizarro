@@ -537,7 +537,18 @@
         "mode": "auto-mirrored-front-pair"
       },
       "faceColor": null,
-      "reviewGroup": "medium-mystery-coverage"
+      "reviewGroup": "medium-mystery-coverage",
+      "textureOverride": {
+        "variant": "A",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/textures/orc_texture_A.png",
+        "blob": "2035dea050702373c5d2d3c9c49a3381c93b1122",
+        "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+        "role": "source material texture missing from GLB image table",
+        "materialNames": [
+          "orc_texture_A"
+        ]
+      },
+      "textureEvidence": "OrcRaider.glb JSON has material orc_texture_A but zero images/textures; exact source PNG override required."
     },
     {
       "id": "combat-mech",

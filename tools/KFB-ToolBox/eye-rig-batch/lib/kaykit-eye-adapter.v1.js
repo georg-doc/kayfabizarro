@@ -1,6 +1,6 @@
 import { buildFaceHost } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/facehost.v1.js';
 import { EyeRig } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@5650b6c54d8789b20ea80abe857688173d506d3b/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js';
-import { attach as attachEyeOval, applyOval as applyEyeOval, detach as detachEyeOval, DEFAULTS as EYE_OVAL_DEFAULTS } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@ed59390ce105e0e47a5ecdcc2b87bc91222f54cb/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js';
+import { attach as attachEyeOval, applyOval as applyEyeOval, detach as detachEyeOval, DEFAULTS as EYE_OVAL_DEFAULTS } from 'https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@2bfbe0d2d73aeb5f2fc3af5b11983dc099016792/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js';
 
 export const ADAPTER_SCHEMA = 'kfb.kaykit-eye-adapter/0.1-candidate';
 

@@ -37,7 +37,7 @@ check('gothgirl-authoring-seed',seed.eye?.anchor?.dx===0.295&&seed.eye?.anchor?.
 check('lids-face-base-darkened',seed.eye?.baseColor==='#e6cbc3'&&seed.eye?.lidColorMode==='face-base-darkened'&&adapter.includes('baseColor,')&&adapter.includes('setBaseColor(hex)'));
 check('legacy-default-migration',app.includes('isLegacyUntunedProfile')&&app.includes('state.savedLegacyDefault')&&app.includes('applyAuthoringDefaultToProfile(state.profile'));
 check('eyeoval-donor-reuse',adapter.includes('frizzlegraft-v1/eyeoval.v1.js')&&adapter.includes('attachEyeOval')&&adapter.includes('setOval(patch)')&&['ovalW','ovalH','ovalD','ovalTilt'].every((k)=>html.includes(`data-param="${k}"`)));
-check('eyeoval-pupil-isolation-pin',adapter.includes('@ed59390ce105e0e47a5ecdcc2b87bc91222f54cb/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js'));
+check('eyeoval-pupil-isolation-pin',adapter.includes('@2bfbe0d2d73aeb5f2fc3af5b11983dc099016792/tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/eyeoval.v1.js'));
 check('pupil-tracking-modes',['life','pointer','fixed'].every((k)=>html.includes(`data-tracking-mode="${k}"`))&&app.includes('function setTrackingMode')&&!html.includes('id="gazeFollowToggle"'));
 check('persistent-batchbar',['batchImportBtn','batchExportCharacterBtn','batchExportBatchBtn','batchApplySelectedBtn','batchResetBtn','batchApproveBtn'].every((id)=>html.includes(`id="${id}"`)));
 check('batch-import-export-v02',app.includes('kfb.eye-profile-batch/0.2-candidate')&&app.includes('rigClass:state.rigClass')&&app.includes('classDefault:clone(seed?.authoringDefault||null)')&&app.includes('selectedActorIds:ids')&&app.includes('profiles'));
@@ -124,5 +124,11 @@ check('mystery-container-53-classified',mysteryCoverage.containerCoverage?.statu
 check('mystery-container-mummies',actors.actors.filter((a)=>a.reviewGroup==='medium-mystery-extra').length===2&&['mummy-a','mummy-b'].every((id)=>actors.actors.some((a)=>a.id===id&&a.rigClass==='Rig_Medium'&&a.jointCount===23)));
 check('mystery-container-custom-explicit',mysteryCoverage.containerCoverage?.customOrTemplateUnsupported?.some((a)=>a.id==='santa'&&a.jointCount===41)&&mysteryCoverage.containerCoverage?.customOrTemplateUnsupported?.some((a)=>a.id==='character-template'&&a.jointCount===41));
 check('mystery-clanker-large-evidence',mysteryCoverage.actors.find((a)=>a.id==='clanker')?.rigClass==='Rig_Large'&&String(mysteryCoverage.actors.find((a)=>a.id==='clanker')?.rigEvidence||'').includes('Rig_Large string x10'));
+check('inline-number-editors',app.includes('function initInlineNumberEditors')&&app.includes('Click value to type directly')&&app.includes("ev.key==='Enter'")&&app.includes("ev.key==='Escape'"));
+check('inline-number-preserves-storage-key',app.includes("const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0'")&&app.includes('profiles:state.profiles'));
+check('converge-range-expanded',html.includes('data-param="converge" data-expand="true" type="range" min="-2" max="3"'));
+check('flexible-ranges-expand',app.includes('function expandNumericRange')&&html.includes('data-param="track" data-expand="true"')&&html.includes('data-param="ovalW" data-expand="true"'));
+check('orc-raider-texture-source',actors.actors.find((a)=>a.id==='orc-raider')?.textureOverride?.blob==='2035dea050702373c5d2d3c9c49a3381c93b1122'&&actors.actors.find((a)=>a.id==='orc-raider')?.textureOverride?.materialNames?.includes('orc_texture_A'));
+check('named-material-texture-override',app.includes('const materialNames=new Set')&&app.includes("materialNames.has(String(mat.name||''))")&&app.includes('if(!mat.map&&!named)continue'));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
