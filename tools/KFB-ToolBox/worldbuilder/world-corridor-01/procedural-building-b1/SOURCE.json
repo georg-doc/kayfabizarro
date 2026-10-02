@@ -1,0 +1,100 @@
+{
+  "schema": "kfb.wc1-procedural-building-b1.source.v1",
+  "date": "2026-10-02",
+  "status": "B1_SOURCE_BOUNDED_SIBLINGS_PASS",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-building-b1-2026-10-02",
+  "pr": 322,
+  "base": {
+    "branch": "chatgpt-web/wc1-procedural-building-b0-2026-10-02",
+    "head": "d2834b94492a972513b58053f7c80b374b97d7b5"
+  },
+  "testedHead": "191f79bed81e2e5a0b5486033532b9f0b32335a7",
+  "corpus": {
+    "count": 22,
+    "sourcePin": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc",
+    "normalizedBlob": "936a5d990d2f394ae2bccbb4607d0821ca67a191"
+  },
+  "lanes": [
+    {
+      "id": "compact-simple",
+      "topologyId": "way/371401529",
+      "envelopeId": "way/371401477",
+      "siblingId": "b1/compact-simple/371401529-to-371401477",
+      "corners": 4,
+      "targetAreaM2": 71.8449195,
+      "targetAspect": 1.7165709598031154,
+      "heightM": 12.23,
+      "roof": "flat",
+      "longScale": 1.1629610789695093,
+      "shortScale": 1.0174727762501796
+    },
+    {
+      "id": "ordinary-notched",
+      "topologyId": "way/371401481",
+      "envelopeId": "way/371401497",
+      "siblingId": "b1/ordinary-notched/371401481-to-371401497",
+      "corners": 7,
+      "targetAreaM2": 154.1704709999999,
+      "targetAspect": 1.2097941012799107,
+      "heightM": 12.56,
+      "roof": "hipped-hint",
+      "longScale": 1.048635863685021,
+      "shortScale": 1.2700748765704435
+    },
+    {
+      "id": "large-complex",
+      "topologyId": "way/371401488",
+      "envelopeId": "way/371401495",
+      "siblingId": "b1/large-complex/371401488-to-371401495",
+      "corners": 9,
+      "targetAreaM2": 210.85958799999986,
+      "targetAspect": 1.1277365064755764,
+      "heightM": 12.6,
+      "roof": "flat",
+      "longScale": 0.9562689963954937,
+      "shortScale": 1.4026212329085146
+    }
+  ],
+  "generator": {
+    "file": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b1/building-family-b1.mjs",
+    "blob": "9d45280f6497b109856254a4d71f017b8e41ff21",
+    "topologyMutation": false,
+    "newRoofGrammar": false,
+    "elasticParameterLayer": false
+  },
+  "facade": {
+    "id": "kfb-facade-rule-v1",
+    "clonedInB1": false
+  },
+  "finalTest": {
+    "run": 37041339236,
+    "job": 110951929252,
+    "artifact": {
+      "id": 11241588200,
+      "digest": "sha256:213cce3bcc928d21fe95b01d767bea508d9f75acb7e49433b2dd5a46d2e32e95"
+    },
+    "topology": "3/3",
+    "areaAspect": "3/3",
+    "roofHeight": "3/3",
+    "baseAnchored": "3/3",
+    "stageEvidence": "3/3",
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "qaProblems": 0
+  },
+  "repairs": [
+    {
+      "pass": 1,
+      "classification": "VISUAL_EVIDENCE_LABEL_ONLY",
+      "geometryChanged": false
+    }
+  ],
+  "materialDecision": false,
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "recoveryFile": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b1/RECOVERY.md",
+  "nextGate": "PROCEDURAL_BUILDING_B2_EXISTING_FACADE_OWNER_INTEGRATION"
+}
