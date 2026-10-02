@@ -1194,6 +1194,41 @@ Exactly one current gate:
 **CLAY-ASSET-01 · Smooth matte clay seamless texture → source + 3×3 repeat evidence → Georg review.**
 
 
+## 2026-09-27 · KFB ToolBox · Clay Emanata v1 concept / Claude Design queue
+
+Current bounded concept slice:
+`tools/KFB-ToolBox/_handover/CLAY_EMANATA_V1_2026-09-27/START_HERE.md`
+
+Owner: **KFB ToolBox**. The proposal adds no second emotion/runtime owner: consumer state remains authoritative; current Face/EyeRig/brow/mouth/body acting provides the primary emotional read; Clay Emanata are a short-lived 3D presentation layer.
+
+Prepared catalog:
+- **19 reusable 3D clay Emanata families**;
+- **18 named acting presets** composed from existing face/body channels plus optional Emanata;
+- semantic anchors for eyes / temples / head;
+- one active Emanata family per actor by default;
+- shared geometry/materials, pooling/instancing, stable seeded handmade variation;
+- no dirty facial cast-shadows.
+
+Additive **Resident Reaction Choreography** is now part of the same slice:
+- **18 core semantic in-game event recipes**;
+- **16 semantic animation-clip roles**;
+- one event coordinates source-backed animation clip → body/Parts-as-Actors → EyeRig/brows → mouth/active Viseme → Ear Dangle → Emanata → recovery;
+- one existing mixer remains authoritative; reaction root motion is consumer-owned/locked by default;
+- current Pet `react-positive/react-negative`, Production semantic reaction pads, KFB Motion Library holds and Resident Atlas bone-subtree clip layering are source evidence;
+- missing one-shot clips remain `SOURCE_REQUIRED` or use existing procedural parts/pose fallback, never a hidden invented clip.
+- **Brick Fish / Red Herring is included as `social.prop_hit`**: default NPC reaction is physical BONK/recoil followed by `heart` Emanata; buddy-banter, argument and Kayfabe-performance can override the presentation, while real harm must be emitted as `damage.*` by the consumer. Heart Emanata is visual punctuation, not relationship state.
+
+First Claude Design integrated proof after the current ToolBox Recovery gate now covers:
+**surprise · social.positive · damage.light · speech.emphasis during Talk · jump.land**, with tears/hearts/shock and the wider Emanata grammar available where semantically appropriate. Exact current face, repo-exact 2D Emanata donor and an exact ClayBound reference must each be shown in isolation before integration.
+
+Current blocker: the newest Production-02 Return still sets **RECOVERY-01 before any further Studio expansion**. Therefore this is a ready next slice, not an implementation or Stage claim.
+
+Reserved Stage route, **NOT DEPLOYED**:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-emanata-v1/`
+
+Exactly one next gate:
+**close/clear ToolBox RECOVERY-01 → run the combined Reaction Choreography + Clay Emanata proof with source-backed animation clips.**
+
 ## 2026-09-27 · TRAVEL-MODES-01 · Movement Mode Router public human gate
 
 Travel remains owned by private `georg-doc/KFB-Travel-Globe`.

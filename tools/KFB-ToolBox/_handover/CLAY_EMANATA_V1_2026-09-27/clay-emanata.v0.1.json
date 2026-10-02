@@ -1,0 +1,500 @@
+{
+  "schema": "kfb.clay-emanata/0.1-proposal",
+  "status": "PROPOSAL",
+  "owner": "KFB ToolBox",
+  "date": "2026-09-27",
+  "runtimeRule": "decorative-read-only",
+  "maxActiveFamiliesPerActor": 1,
+  "plannedStageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/clay-emanata-v1/",
+  "stageStatus": "NOT_DEPLOYED",
+  "blockedBy": [
+    "ToolBox RECOVERY-01"
+  ],
+  "sourceDonors": {
+    "currentFace": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/KFB ToolBox Production-02.dc.html",
+      "clayLids": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/kfb-lib/clay-lids.v1.js",
+      "clayLidsSchema": "kfb.clay-lids/0.2"
+    },
+    "emanata2d": {
+      "path": "media/2D_Assets/KFB_Custom/KFB_Emanata_ChatGPT Image 12. Aug. 2026, 16_41_34.png",
+      "blobSha": "bfcd4780e8d31363eb2ac771909cf800911d9c35",
+      "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28"
+    },
+    "claybound": {
+      "root": "tools/KFB-ToolBox/_inbox/KFB Style References/ClayBound Cozy Platformer + Editor/",
+      "rule": "pin-and-show-one-exact-reference-in-isolation-before-integration"
+    }
+  },
+  "anchors": [
+    "head_top",
+    "head_left",
+    "head_right",
+    "temple_L",
+    "temple_R",
+    "eye_L_under",
+    "eye_R_under",
+    "mouth",
+    "actor_center"
+  ],
+  "materials": {
+    "tears_sweat": "cool-sky-cyan-clay",
+    "hearts": "warm-red-pink-clay",
+    "anger_pain": "red-orange-clay",
+    "joy_idea": "warm-yellow-cream-clay",
+    "confusion": "purple-blue-violet-clay",
+    "gloom": "muted-blue-charcoal-clay",
+    "sleep": "pale-blue-lavender-clay"
+  },
+  "renderRules": {
+    "physical3d": true,
+    "stableSeededImperfection": true,
+    "cameraLegibilityRoot": true,
+    "flatSpriteDefault": false,
+    "castActorFaceShadow": false,
+    "perFrameGeometryRandomization": false,
+    "sharedGeometryMaterials": true,
+    "poolInstances": true
+  },
+  "families": [
+    {
+      "id": "tear_bead",
+      "meaning": [
+        "sadness",
+        "moved"
+      ],
+      "anchor": [
+        "eye_L_under",
+        "eye_R_under"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "well-detach-stretch-fall-clear"
+    },
+    {
+      "id": "tear_burst",
+      "meaning": [
+        "crying",
+        "laughing-hard"
+      ],
+      "anchor": [
+        "eye_L_under",
+        "eye_R_under"
+      ],
+      "instances": [
+        2,
+        4
+      ],
+      "motion": "well-burst-arc-fall-clear"
+    },
+    {
+      "id": "heart",
+      "meaning": [
+        "love",
+        "affection",
+        "delight"
+      ],
+      "anchor": [
+        "head_top"
+      ],
+      "instances": [
+        1,
+        3
+      ],
+      "motion": "pop-overshoot-pulse-rise-clear"
+    },
+    {
+      "id": "broken_heart",
+      "meaning": [
+        "hurt",
+        "rejection"
+      ],
+      "anchor": [
+        "head_top"
+      ],
+      "instances": [
+        2,
+        2
+      ],
+      "motion": "pop-split-drift-clear"
+    },
+    {
+      "id": "sweat_drop",
+      "meaning": [
+        "unease",
+        "awkwardness"
+      ],
+      "anchor": [
+        "temple_L",
+        "temple_R"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "form-hold-slide-drop-clear"
+    },
+    {
+      "id": "panic_sweat",
+      "meaning": [
+        "panic",
+        "frantic-effort"
+      ],
+      "anchor": [
+        "temple_L",
+        "temple_R",
+        "head_left",
+        "head_right"
+      ],
+      "instances": [
+        2,
+        4
+      ],
+      "motion": "pop-burst-arc-clear"
+    },
+    {
+      "id": "anger_knot",
+      "meaning": [
+        "irritation",
+        "anger"
+      ],
+      "anchor": [
+        "temple_L",
+        "temple_R"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "pop-throb-recover"
+    },
+    {
+      "id": "anger_spikes",
+      "meaning": [
+        "rage",
+        "pain",
+        "intensity"
+      ],
+      "anchor": [
+        "head_left",
+        "head_right",
+        "head_top"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "flare-hold-retract"
+    },
+    {
+      "id": "shock_rays",
+      "meaning": [
+        "surprise",
+        "shock"
+      ],
+      "anchor": [
+        "head_top",
+        "actor_center"
+      ],
+      "instances": [
+        4,
+        8
+      ],
+      "motion": "expand-flash-hold-retract"
+    },
+    {
+      "id": "question",
+      "meaning": [
+        "confusion"
+      ],
+      "anchor": [
+        "head_top",
+        "head_left",
+        "head_right"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "pop-sway-recover"
+    },
+    {
+      "id": "exclamation",
+      "meaning": [
+        "alarm",
+        "realization"
+      ],
+      "anchor": [
+        "head_top"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "snap-up-settle-recover"
+    },
+    {
+      "id": "confusion_spiral",
+      "meaning": [
+        "bewilderment"
+      ],
+      "anchor": [
+        "head_left",
+        "head_right"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "pop-wobble-orbit-recover"
+    },
+    {
+      "id": "sparkle",
+      "meaning": [
+        "joy",
+        "pride",
+        "charm"
+      ],
+      "anchor": [
+        "head_top",
+        "head_left",
+        "head_right"
+      ],
+      "instances": [
+        1,
+        3
+      ],
+      "motion": "pop-twinkle-clear"
+    },
+    {
+      "id": "dizzy_stars",
+      "meaning": [
+        "stunned",
+        "dizzy"
+      ],
+      "anchor": [
+        "head_top",
+        "actor_center"
+      ],
+      "instances": [
+        2,
+        4
+      ],
+      "motion": "appear-orbit-sink-clear"
+    },
+    {
+      "id": "unease_ticks",
+      "meaning": [
+        "suspicion",
+        "tension"
+      ],
+      "anchor": [
+        "temple_L",
+        "temple_R"
+      ],
+      "instances": [
+        2,
+        3
+      ],
+      "motion": "pop-pulse-recover"
+    },
+    {
+      "id": "gloom_lines",
+      "meaning": [
+        "dejection",
+        "dread"
+      ],
+      "anchor": [
+        "head_top"
+      ],
+      "instances": [
+        3,
+        5
+      ],
+      "motion": "appear-sink-clear"
+    },
+    {
+      "id": "steam_puff",
+      "meaning": [
+        "anger",
+        "exertion"
+      ],
+      "anchor": [
+        "head_left",
+        "head_right",
+        "mouth"
+      ],
+      "instances": [
+        2,
+        3
+      ],
+      "motion": "expand-separate-drift-clear"
+    },
+    {
+      "id": "sleep_z",
+      "meaning": [
+        "sleep",
+        "doze"
+      ],
+      "anchor": [
+        "head_top"
+      ],
+      "instances": [
+        1,
+        3
+      ],
+      "motion": "pop-float-up-clear"
+    },
+    {
+      "id": "idea_spark",
+      "meaning": [
+        "insight",
+        "eureka"
+      ],
+      "anchor": [
+        "head_top"
+      ],
+      "instances": [
+        1,
+        1
+      ],
+      "motion": "quick-bloom-hold-clear"
+    }
+  ],
+  "presets": [
+    {
+      "id": "neutral",
+      "face": "neutral",
+      "body": "living-micro-motion",
+      "emanata": null
+    },
+    {
+      "id": "happy",
+      "face": "soft-open-eyes+relaxed-raised-brows+smile",
+      "body": "light-lift",
+      "emanata": "sparkle",
+      "optional": true
+    },
+    {
+      "id": "affectionate",
+      "face": "soft-eyes+smile",
+      "body": "head-lean",
+      "emanata": "heart"
+    },
+    {
+      "id": "angry",
+      "face": "narrowed-lids+brows-down-in+grimace",
+      "body": "forward-lean",
+      "emanata": [
+        "anger_knot",
+        "anger_spikes"
+      ]
+    },
+    {
+      "id": "confused",
+      "face": "asymmetric-brows+gaze-shift+small-mouth",
+      "body": "head-tilt",
+      "emanata": [
+        "question",
+        "confusion_spiral"
+      ]
+    },
+    {
+      "id": "suspicious",
+      "face": "narrow-eyes+one-brow",
+      "body": "still",
+      "emanata": "unease_ticks",
+      "optional": true
+    },
+    {
+      "id": "shocked",
+      "face": "wide-eyes+high-brows+open-mouth",
+      "body": "recoil",
+      "emanata": "shock_rays"
+    },
+    {
+      "id": "sad",
+      "face": "inner-brows-up+drooped-lids+mouth-down",
+      "body": "sink",
+      "emanata": "tear_bead"
+    },
+    {
+      "id": "crying",
+      "face": "sad-strong",
+      "body": "shoulder-rhythm",
+      "emanata": "tear_burst"
+    },
+    {
+      "id": "smug",
+      "face": "half-lids+brow-offset+smirk",
+      "body": "small-lean",
+      "emanata": "sparkle",
+      "optional": true
+    },
+    {
+      "id": "panicked",
+      "face": "wide-eyes+high-brows+grimace-open-mouth",
+      "body": "recoil",
+      "emanata": "panic_sweat"
+    },
+    {
+      "id": "thinking",
+      "face": "gaze-up-side+brow-asymmetry+pursed-mouth",
+      "body": "head-tilt",
+      "emanata": [
+        "question",
+        "idea_spark"
+      ]
+    },
+    {
+      "id": "dizzy",
+      "face": "unfocused-gaze",
+      "body": "post-impact-settle",
+      "emanata": "dizzy_stars"
+    },
+    {
+      "id": "sleepy",
+      "face": "heavy-lids+relaxed-brows",
+      "body": "head-droop",
+      "emanata": "sleep_z"
+    },
+    {
+      "id": "embarrassed",
+      "face": "gaze-avoidance+blush-face-channel",
+      "body": "small-withdrawal",
+      "emanata": "sweat_drop",
+      "optional": true
+    },
+    {
+      "id": "hurt",
+      "face": "flinch+squeezed-eyes",
+      "body": "recoil",
+      "emanata": [
+        "anger_spikes",
+        "dizzy_stars"
+      ]
+    },
+    {
+      "id": "relieved",
+      "face": "release-brows-jaw",
+      "body": "shoulder-release",
+      "emanata": "sweat_drop",
+      "optional": true
+    },
+    {
+      "id": "inspired",
+      "face": "bright-open-eyes+head-lift",
+      "body": "lift",
+      "emanata": "idea_spark"
+    }
+  ],
+  "firstProofFamilies": [
+    "tear_bead",
+    "tear_burst",
+    "heart",
+    "shock_rays"
+  ],
+  "nextGate": "Close or clear ToolBox RECOVERY-01, then implement the integrated three-family proof on the real current Resident face/acting system."
+}

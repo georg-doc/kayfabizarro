@@ -1,0 +1,588 @@
+{
+  "schema": "kfb.reaction-choreography/0.1-proposal",
+  "status": "PROPOSAL_AFTER_RECOVERY_01",
+  "owner": "KFB ToolBox acting authoring",
+  "runtimeAuthority": "consumer/game-state",
+  "invariant": {
+    "oneMixerPerActor": true,
+    "oneFaceOwnerPerActor": true,
+    "oneEarSecondaryMotionOwnerPerActor": true,
+    "bodyShapeIsMorphologyNotReactionAnimator": true,
+    "maxActiveEmanataFamiliesPerActor": 1,
+    "reactionRootMotionDefault": "consumer-owned",
+    "brickFishDefaultIsSocialNotDamage": true,
+    "heartEmanataIsNotRelationshipState": true
+  },
+  "sourceOwners": {
+    "eyeRig": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "blobSha": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26",
+      "api": [
+        "applyEmote",
+        "blinkNow",
+        "setKinetics",
+        "setLife",
+        "update"
+      ]
+    },
+    "face": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/kfb-lib/face-mount.v1.js",
+      "blobSha": "583807bd63413954c1d36d7e032c61961007f667",
+      "api": [
+        "browReact",
+        "browLife",
+        "set",
+        "update"
+      ],
+      "mouthPolicy": "active Talk/Viseme retains mouth ownership"
+    },
+    "bodyShape": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-02-2/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-27_r1/kfb-lib/body-shape.v1.js",
+      "blobSha": "60f2a57f4f9b846fbbf73edb05646db9a0f143ba",
+      "role": "persistent morphology; update after mixer; not reaction motion"
+    },
+    "earDangle": {
+      "path": "tools/KFB-ToolBox/ear-rig/ear-dangle.v1.js",
+      "pr": 214,
+      "headSha": "19088b142c6a7e7626f27fba8e80caf6ab2437c1",
+      "blobSha": "6bb4531a2f5ad47d0c5eccde6cd97951a95a28c9",
+      "api": [
+        "setPose",
+        "impulse",
+        "reset",
+        "update"
+      ]
+    },
+    "poseRig": {
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v13/pose-rig.v1.js",
+      "blobSha": "a418fe550d66afea51dd95cf3229a13a343e1957",
+      "role": "existing post-mixer pose owner / blend seam"
+    },
+    "motionLibrary": {
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+      "blobSha": "694d797702d126e71a724eab137197bf2a8e6914"
+    },
+    "subtreeLayering": {
+      "path": "tools/resident_atlas_s6/github.md",
+      "fact": "S6 proves clip layering along a bone subtree (Sit_Chair_Idle + Waving)"
+    }
+  },
+  "updateOrder": [
+    "consumer-root",
+    "animation-mixer-base-plus-reaction-layer",
+    "body-shape-update",
+    "pose-and-parts-additive-accents",
+    "finalize-head-body-world-transforms",
+    "ear-secondary-chain-update",
+    "face-eyes-brows-mouth-viseme-update",
+    "resolve-emanata-anchors",
+    "emanata-update",
+    "render"
+  ],
+  "intensityBands": [
+    {
+      "min": 0,
+      "max": 0.3,
+      "id": "micro",
+      "policy": [
+        "face",
+        "optional-ear",
+        "no-full-body-clip",
+        "normally-no-emanata"
+      ]
+    },
+    {
+      "min": 0.3,
+      "max": 0.7,
+      "id": "readable",
+      "policy": [
+        "face",
+        "body-or-reaction-clip",
+        "ear-follow-through",
+        "optional-one-emanata-family"
+      ]
+    },
+    {
+      "min": 0.7,
+      "max": 1,
+      "id": "strong",
+      "policy": [
+        "face",
+        "source-backed-strong-clip-or-body-accent",
+        "strong-secondary-motion",
+        "one-emanata-family",
+        "optional-one-semantic-sfx"
+      ]
+    }
+  ],
+  "priority": [
+    "defeat",
+    "knockdown",
+    "damage.heavy",
+    "damage.light",
+    "collision.bump",
+    "threat.alert",
+    "surprise",
+    "success",
+    "failure",
+    "pickup.reward",
+    "social.prop_hit",
+    "social.positive",
+    "social.negative",
+    "speech.emphasis",
+    "attention.notice"
+  ],
+  "clipRoles": [
+    "react.social_prop_hit",
+    "react.positive",
+    "react.negative",
+    "react.surprise",
+    "react.alert",
+    "react.hit.light",
+    "react.hit.heavy",
+    "react.bump",
+    "react.reward",
+    "react.victory",
+    "react.failure",
+    "react.knockdown",
+    "react.recover",
+    "react.speech_emphasis",
+    "react.jump_takeoff",
+    "react.jump_land"
+  ],
+  "clipFallbackOrder": [
+    "actor-specific-source-backed",
+    "compatible-generic-source-backed",
+    "source-backed-subtree-clip",
+    "procedural-body-parts-via-existing-owner",
+    "face-ears-emanata-only",
+    "no-reaction"
+  ],
+  "coreEvents": [
+    {
+      "id": "attention.notice",
+      "clipRole": null,
+      "clipLayer": "head-neck",
+      "face": [
+        "gaze-target",
+        "brow-small-lift"
+      ],
+      "mouth": "unchanged",
+      "ears": "orient-mild-lag",
+      "emanata": null,
+      "recovery": "attention-hold"
+    },
+    {
+      "id": "speech.emphasis",
+      "clipRole": "react.speech_emphasis",
+      "clipLayer": "upper-body",
+      "face": [
+        "brow-react",
+        "gaze-accent"
+      ],
+      "mouth": "defer-to-active-viseme",
+      "ears": "follow-head-35-80ms",
+      "emanata": "semantic-only",
+      "recovery": "speech-base"
+    },
+    {
+      "id": "social.positive",
+      "clipRole": "react.positive",
+      "clipLayer": "upper-body",
+      "face": [
+        "soft-open-eyes",
+        "relaxed-raised-brows",
+        "smile-rest"
+      ],
+      "mouth": "smile-if-free",
+      "ears": "perk-overshoot",
+      "emanata": [
+        "heart",
+        "sparkle"
+      ],
+      "recovery": "previous-base"
+    },
+    {
+      "id": "social.negative",
+      "clipRole": "react.negative",
+      "clipLayer": "upper-body",
+      "face": [
+        "gaze-away",
+        "negative-brow"
+      ],
+      "mouth": "downturn-or-grimace-if-free",
+      "ears": "droop-back",
+      "emanata": [
+        "gloom_lines",
+        "sweat_drop",
+        "tear_bead"
+      ],
+      "recovery": "previous-or-negative-hold"
+    },
+    {
+      "id": "social.prop_hit",
+      "meaning": "non-damaging social projectile contact; Brick Fish is canonical Town default",
+      "clipRole": "react.social_prop_hit",
+      "clipFallbackRole": "react.hit.light",
+      "clipLayer": "full-body",
+      "face": [
+        "impact-blink-or-squeeze",
+        "refocus-source",
+        "context-resolved-social-read"
+      ],
+      "mouth": "context-resolved-if-free; defer-to-active-viseme",
+      "ears": "directional-impact-impulse-then-context-pose",
+      "emanata": [
+        "heart"
+      ],
+      "emanataDefaultForNpcBrickFish": "heart",
+      "recovery": "previous-social-or-locomotion-state",
+      "timing": {
+        "impactMs": 0,
+        "heartDelayMs": [
+          80,
+          180
+        ],
+        "rule": "physical impact must read before heart appears"
+      },
+      "ownership": {
+        "collisionTruth": "prop/world interaction owner",
+        "damageTruth": "consumer/combat owner",
+        "reactionPerformance": "Reaction Choreography",
+        "dialogue": "existing ChatterBox/Triplet/Kayfabulation owner",
+        "retaliation": "social interaction owner"
+      },
+      "contextVariants": {
+        "default_friendly": {
+          "body": "readable-short-recoil-quick-recovery",
+          "face": "blink-then-soften-refocus",
+          "emanata": "heart",
+          "dialogueCue": null
+        },
+        "affectionate": {
+          "body": "lighter-recoil-playful-overshoot",
+          "face": "soft-eyes-smile-if-free",
+          "emanata": "heart",
+          "dialogueCue": "optional-existing-social-line"
+        },
+        "buddy_banter": {
+          "body": "recoil-then-counter-ready",
+          "face": "side-eye-smug-or-amused",
+          "emanataByBeat": [
+            "heart",
+            "sparkle"
+          ],
+          "dialogueCue": "buddy-banter"
+        },
+        "argument": {
+          "body": "sharper-recoil-hold-toward-source",
+          "face": "negative-brow-glare",
+          "emanataByBeat": [
+            "anger_knot",
+            "anger_spikes",
+            null
+          ],
+          "dialogueCue": "argument-response"
+        },
+        "kayfabe_performance": {
+          "body": "consumer-authorized-exaggerated-sell",
+          "face": "showmanship-refocus-partner-or-audience",
+          "emanataByBeat": [
+            "dizzy_stars",
+            "anger_spikes",
+            "heart"
+          ],
+          "dialogueCue": "kayfabe-sell-or-buddy-banter",
+          "note": "large physical sell does not imply hostility or real damage"
+        },
+        "hostile_or_real_harm": {
+          "remapTo": [
+            "damage.light",
+            "damage.heavy"
+          ],
+          "note": "do not remain on social.prop_hit"
+        }
+      }
+    },
+    {
+      "id": "surprise",
+      "clipRole": "react.surprise",
+      "clipLayer": "full-body",
+      "face": [
+        "wide-eyes",
+        "high-brows"
+      ],
+      "mouth": "O-or-open-if-free",
+      "ears": "fast-perk-outward-throw",
+      "emanata": [
+        "shock_rays"
+      ],
+      "recovery": "previous-base"
+    },
+    {
+      "id": "threat.alert",
+      "clipRole": "react.alert",
+      "clipLayer": "full-body",
+      "face": [
+        "wide-target-eyes",
+        "tense-brows"
+      ],
+      "mouth": "open-or-grimace-if-free",
+      "ears": "back-out-directional",
+      "emanata": [
+        "unease_ticks",
+        "panic_sweat"
+      ],
+      "recovery": "consumer-state"
+    },
+    {
+      "id": "damage.light",
+      "clipRole": "react.hit.light",
+      "clipLayer": "full-body",
+      "face": [
+        "quick-squeeze-or-blink",
+        "negative-brow"
+      ],
+      "mouth": "grimace-if-free",
+      "ears": "directional-impulse",
+      "emanata": [
+        "anger_spikes"
+      ],
+      "recovery": "previous-locomotion"
+    },
+    {
+      "id": "damage.heavy",
+      "clipRole": "react.hit.heavy",
+      "clipLayer": "full-body",
+      "face": [
+        "squeeze-then-unfocused",
+        "strong-brow"
+      ],
+      "mouth": "speech-owner-may-cancel-then-gasp-grimace",
+      "ears": "strong-impulse-long-settle",
+      "emanata": [
+        "dizzy_stars",
+        "anger_spikes"
+      ],
+      "recovery": "consumer-injured-or-previous-state"
+    },
+    {
+      "id": "collision.bump",
+      "clipRole": "react.bump",
+      "clipLayer": "full-body",
+      "face": [
+        "blink"
+      ],
+      "mouth": "unchanged",
+      "ears": "short-impulse",
+      "emanata": null,
+      "recovery": "previous-base"
+    },
+    {
+      "id": "jump.takeoff",
+      "clipRole": "react.jump_takeoff",
+      "clipLayer": "full-body",
+      "face": [
+        "intent-gaze"
+      ],
+      "mouth": "unchanged",
+      "ears": "takeoff-lag-impulse",
+      "emanata": null,
+      "recovery": "air-state"
+    },
+    {
+      "id": "jump.land",
+      "clipRole": "react.jump_land",
+      "clipLayer": "full-body",
+      "face": [
+        "post-contact-blink"
+      ],
+      "mouth": "unchanged",
+      "ears": "landing-forward-down-impulse",
+      "emanata": null,
+      "recovery": "current-locomotion"
+    },
+    {
+      "id": "pickup.reward",
+      "clipRole": "react.reward",
+      "clipLayer": "upper-body",
+      "face": [
+        "look-at-object",
+        "brighten"
+      ],
+      "mouth": "smile-if-free",
+      "ears": "perk",
+      "emanata": [
+        "sparkle",
+        "heart"
+      ],
+      "recovery": "previous-base"
+    },
+    {
+      "id": "success",
+      "clipRole": "react.victory",
+      "clipLayer": "full-body",
+      "face": [
+        "happy-open"
+      ],
+      "mouth": "smile-if-free",
+      "ears": "upbeat-bounce",
+      "emanata": [
+        "sparkle",
+        "heart"
+      ],
+      "recovery": "happy-hold-or-previous-base"
+    },
+    {
+      "id": "failure",
+      "clipRole": "react.failure",
+      "clipLayer": "full-body",
+      "face": [
+        "gaze-down-away",
+        "sad-or-rejected-brow"
+      ],
+      "mouth": "downturn-if-free",
+      "ears": "droop",
+      "emanata": [
+        "gloom_lines",
+        "sweat_drop"
+      ],
+      "recovery": "failure-hold-or-previous-base"
+    },
+    {
+      "id": "knockdown",
+      "clipRole": "react.knockdown",
+      "clipLayer": "full-body",
+      "face": [
+        "impact-squeeze"
+      ],
+      "mouth": "speech-owner-cancel-if-required",
+      "ears": "strong-impulse",
+      "emanata": [
+        "dizzy_stars"
+      ],
+      "recovery": "downed-state"
+    },
+    {
+      "id": "recover",
+      "clipRole": "react.recover",
+      "clipLayer": "full-body",
+      "face": [
+        "refocus",
+        "neutralize"
+      ],
+      "mouth": "neutral-rest-if-free",
+      "ears": "settle",
+      "emanata": null,
+      "recovery": "current-consumer-state"
+    },
+    {
+      "id": "defeat",
+      "clipRole": "react.failure",
+      "clipLayer": "full-body",
+      "face": [
+        "defeat"
+      ],
+      "mouth": "rest-defeat-if-free",
+      "ears": "droop-settle",
+      "emanata": [
+        "gloom_lines"
+      ],
+      "recovery": "terminal-hold"
+    }
+  ],
+  "currentClipEvidence": {
+    "petLibrary": [
+      "react-positive",
+      "react-negative",
+      "celebrate",
+      "talk"
+    ],
+    "productionSemanticPads": {
+      "positive": "react.cheer -> cheer|wave|yes|victory|interact source-backed candidates",
+      "negative": "react.neg -> no|hit|death|sad|defeat|lose source-backed candidates"
+    },
+    "motionLibraryStateHolds": [
+      "kfb_idle_happy_a",
+      "kfb_idle_laughing_a",
+      "kfb_idle_sad_a",
+      "kfb_idle_rejected_a",
+      "kfb_idle_injured_a",
+      "kfb_idle_defeat_a",
+      "kfb_locomotion_sad_walk_a"
+    ]
+  },
+  "firstIntegratedProof": [
+    "surprise",
+    "social.positive",
+    "damage.light",
+    "speech.emphasis",
+    "jump.land"
+  ],
+  "blockedBy": "ToolBox RECOVERY-01",
+  "nextGate": "After RECOVERY-01, implement combined Reaction Choreography + Clay Emanata proof on the real current Resident, including source-backed animation clips.",
+  "contextPolicy": {
+    "authority": "consumer/game-state provides relationship/dramaturgy; choreography never infers hostility from contact alone",
+    "fields": {
+      "sourcePropId": "optional asset/prop identity",
+      "targetKind": [
+        "npc",
+        "player",
+        "other"
+      ],
+      "relationshipTone": [
+        "neutral",
+        "affectionate",
+        "buddy-banter",
+        "argument",
+        "hostile"
+      ],
+      "sceneMode": [
+        "ambient",
+        "social-play",
+        "kayfabe-performance",
+        "combat"
+      ],
+      "dramaticBeat": [
+        "setup",
+        "escalation",
+        "sell",
+        "reversal",
+        "reconciliation"
+      ],
+      "harmMode": [
+        "social",
+        "staged",
+        "real"
+      ]
+    },
+    "brickFishNpcDefault": {
+      "semantic": "social.prop_hit",
+      "harmMode": "social",
+      "emanata": "heart",
+      "meaning": "Krazy Kat-style inversion: physical bonk first, affection read second",
+      "note": "Heart is transient visual Emanata only; never relationship points, affection meter, reward currency or UI state."
+    },
+    "realHarmRule": "consumer must emit damage.light or damage.heavy; social.prop_hit never creates HP damage/aggro by itself"
+  },
+  "brickFishIntegration": {
+    "townSource": {
+      "pr": 254,
+      "branch": "chatgpt-web/kfb-town-prop-throw-pattern-2026-09-27",
+      "headSha": "79d7c18a8f07b99efe8276211a9cda527ac2f2ea",
+      "path": "skills/chat/town/references/KFB_PROP_TOSS_BRICK_FISH_2026-09-27.md",
+      "blobSha": "99205974c8fcc08ef41e6f66edcdd495f5e81cef"
+    },
+    "townEncounterSource": {
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "blobSha": "a1bb4ec94aaa5a6d0b694b4fcc4409e8f7573a61",
+      "facts": [
+        "encounters emit semantic beats while animation and text choose independently",
+        "friendly-by-default / aggro only after someone starts"
+      ]
+    },
+    "visualProofStatus": "DEFERRED_UNTIL_SOURCE_PROVEN_BRICK_FISH_ASSET",
+    "doesNotBlockFirstIntegratedProof": true,
+    "dialogueBoundary": "Reaction Choreography may emit a banter/argument/kayfabe cue but never generates dialogue."
+  }
+}
