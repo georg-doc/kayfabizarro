@@ -1,0 +1,117 @@
+name: Scene Patch Stage Mirror QA
+
+on:
+  push:
+    branches: ['toolbox/scene-patch-adapter-v1-2026-09-20']
+    paths:
+      - 'kfb-hub/stage/toolbox/scene-patch-v1/**'
+      - '.github/workflows/scene-patch-stage-mirror-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/toolbox/scene-patch-v1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Start repository server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/kfb-scene-patch-stage.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/scene-patch-v1/ >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/kfb-scene-patch-stage.log
+          exit 1
+
+      - name: Browser proof · isolated Stage mirror
+        run: |
+          mkdir -p scene-patch-stage-proof
+          cat > scene-patch-stage-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const marker='KFB_SCENE_PATCH_V1_2026_09_20';
+          const url='http://127.0.0.1:4173/kfb-hub/stage/toolbox/scene-patch-v1/?host=resident';
+          const report={url,checks:[],errors:[]};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1;};
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1280,height:820}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error')report.errors.push('console: '+m.text());});
+
+          try{
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+            check('stage root HTTP 200',!!response&&response.ok(),response?.status());
+            check('stage root build marker',await page.getAttribute('body','data-build')===marker,await page.getAttribute('body','data-build'));
+
+            await page.waitForFunction(()=>document.getElementById('hostFrame')?.contentWindow?.__residentScenePatch?.session?.stats?.().registered===10,{}, {timeout:120000});
+            let frame=page.frames().find(f=>/\/resident\/$/.test(f.url()));
+            check('resident mirror frame resolved',!!frame,frame?.url());
+            if(!frame)throw new Error('resident frame missing');
+            check('resident mirror build marker',await frame.getAttribute('body','data-stage-build')===marker,await frame.getAttribute('body','data-stage-build'));
+            const residentState=await frame.evaluate(()=>{
+              const a=window.__residentScenePatch;
+              return {registered:a.session.stats().registered,source:a.session.source,editable:a.editableNodes().length};
+            });
+            check('resident mirror shared adapter ready',residentState.registered===10&&residentState.editable===10,residentState);
+            check('resident mirror canonical source identity',residentState.source?.sourceRef==='tools/resident_atlas/scenes/caveman-cave-camp.json',residentState.source);
+            await frame.click('#editor');
+            const residentEditor=await frame.evaluate(()=>{
+              const a=window.__residentScenePatch,n=a.editableNodes()[0];a.edit.select(n);a.edit.follow();
+              return {on:a.edit.on,menu:!document.getElementById('editMenu').hidden,dock:!document.getElementById('patchDock').hidden};
+            });
+            check('resident mirror editor opens on real prop',residentEditor.on&&residentEditor.menu&&residentEditor.dock,residentEditor);
+            await page.screenshot({path:'scene-patch-stage-proof/resident-stage.png',fullPage:true});
+
+            await page.click('button[data-host="dungeon"]');
+            await page.waitForFunction(()=>document.getElementById('hostFrame')?.contentWindow?.__dungeonScenePatch?.session?.stats?.().registered>0,{}, {timeout:180000});
+            frame=page.frames().find(f=>/\/dungeon\/$/.test(f.url()));
+            check('dungeon mirror frame resolved',!!frame,frame?.url());
+            if(!frame)throw new Error('dungeon frame missing');
+            check('dungeon mirror build marker',await frame.getAttribute('body','data-stage-build')===marker,await frame.getAttribute('body','data-stage-build'));
+            const dungeonState=await frame.evaluate(()=>{
+              const a=window.__dungeonScenePatch;
+              return {registered:a.session.stats().registered,source:a.session.source,layers:[...new Set(a.editableNodes().map(n=>n.userData.scenePatchRecord?.layer))]};
+            });
+            check('dungeon mirror shared adapter ready',dungeonState.registered>0&&dungeonState.layers.length===1&&dungeonState.layers[0]==='candle',dungeonState);
+            check('dungeon mirror canonical host source',dungeonState.source?.sourceRef==='tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html',dungeonState.source);
+            await frame.click('#editor');
+            const dungeonEditor=await frame.evaluate(()=>{
+              const a=window.__dungeonScenePatch,n=a.editableNodes()[0];a.edit.select(n);a.edit.follow();
+              return {on:a.edit.on,menu:!document.getElementById('editMenu').hidden,dock:!document.getElementById('patchDock').hidden};
+            });
+            check('dungeon mirror editor opens on real candle',dungeonEditor.on&&dungeonEditor.menu&&dungeonEditor.dock,dungeonEditor);
+            await page.screenshot({path:'scene-patch-stage-proof/dungeon-stage.png',fullPage:true});
+          }catch(e){
+            report.errors.push(String(e?.stack||e));process.exitCode=1;
+          }finally{
+            check('no page/console errors',report.errors.length===0,report.errors);
+            fs.writeFileSync('scene-patch-stage-proof/report.json',JSON.stringify(report,null,2));
+            await browser.close();
+          }
+          JS
+          node scene-patch-stage-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene-patch-stage-mirror-proof
+          path: scene-patch-stage-proof
+          retention-days: 90
