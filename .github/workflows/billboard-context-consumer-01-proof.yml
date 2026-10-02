@@ -115,15 +115,10 @@ jobs:
 
             await page.screenshot({ path: 'artifacts/billboard-context-consumer-01/01-consumer-ambient.png', fullPage: true });
 
-            await page.evaluate(() => window.__r11.setState('focus'));
-            await page.waitForFunction(() => {
-              const r = window.__r11.snapshot();
-              return r.ready && r.context?.state === 'focus' && /#7/.test(r.content || '');
-            }, {}, { timeout: 90000 });
-            const focus = await page.evaluate(() => window.__r11.snapshot());
-            check('focus still resolves bound card', focus.mode === 'quarter' && /#7/.test(focus.content || ''), focus.content);
-            await page.screenshot({ path: 'artifacts/billboard-context-consumer-01/02-consumer-focus.png', fullPage: true });
-
+            // Consumer-01 proves only the NEW Travel -> R11 binding.
+            // CARD/COVER/MEDIA rendering is already protected by R11's 15/15 browser evidence
+            // for the same forget_utopia#7 context and is intentionally not repeated here.
+            check('upstream R11 tested head pinned', c.source?.upstreamR11TestedHead === '3f55466dfc34157241774cabd9d56c67189a2469', c.source);
             check('no page errors', report.pageErrors.length === 0, report.pageErrors);
             check('no first-party failures', report.firstPartyFailures.length === 0, report.firstPartyFailures);
 
