@@ -1,3 +1,14 @@
+## 2026-10-02 · EyeRig Control R2 · pupil seating + exact values + Orc texture
+
+- PR #104: independent pupils are now re-seated against the deformed eye ellipsoid after gaze updates instead of using a Depth-only offset.
+- Stress proof: **3,125/3,125** tested oval/gaze combinations keep the sampled pupil cap outside the sclera; worst `F=1.0397`.
+- Controls: Converge **-2…3**, Gaze drift **0…1.5**, flexible ranges auto-expand around direct values; numeric readouts are click-to-edit with Enter/blur commit and Escape cancel.
+- Browser persistence remains `kfb.toolbox.eye-rig-batch.v0`; stored profiles are not cleared or silently reset.
+- Orc Raider source GLB contains material `orc_texture_A` but no image/texture table. The workbench now applies exact `orc_texture_A.png` blob `2035dea0…` to that named material.
+- Focused checks: **15/15 PASS**.
+- Stage mirror: `cloudflare-live@7fc4e208cb956a74cfa8ab409f9eed74eb2ef69c`; exact readback PASS, deployment/public visual verification still open.
+- Deferred: per-eye L/R authoring, Survivalist one-eye visibility, and separate FrankenStein/Pet Studio click-to-edit parity.
+
 ## 2026-10-02 · EyeRig Mystery coverage + pupil-independent oval · final
 
 - PR #104: Eye shape / oval now deforms sclera+lids while pupil scale remains independent; **7/7 behavior PASS**.
