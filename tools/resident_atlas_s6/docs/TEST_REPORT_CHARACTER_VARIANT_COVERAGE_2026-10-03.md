@@ -12,6 +12,8 @@ Cross-owner: Batch EyeRig PR #104
 
 - registered character texture families: **25**
 - registered source appearance files: **56**
+- other top-level KayKit multi-texture character families detected by repository-wide follow-up scan: **0**
+- Driver `car_texture` pair excluded from character count as vehicle-only palette
 - exact appearance paths present in pinned Git tree: **56/56 PASS**
 - appearance blob-SHA matches against pinned Git tree: **56/56 PASS**
 - missing registered appearance paths: **0**
