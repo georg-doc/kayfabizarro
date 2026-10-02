@@ -2,14 +2,16 @@
   "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
   "owner": "KFB ToolBox / Rigging",
   "rigClass": "Rig_Medium",
-  "revisionPolicy": "actor paths pinned to recovered main at catalog creation; donor modules remain independently pinned",
+  "revisionPolicy": "existing actors retain recovered source revisions; Adventurers extension added 2026-10-02 pins main@f9dd7a64c4ae0907b8752717861eba065e557d9d plus exact GLB blobs; donor modules remain independently pinned",
   "sourceEvidence": [
     "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-asset-handoff-animation-lab (2).json",
     "tools/resident_atlas_s6/data/cast.js",
     "registry/resources/v1/resources.jsonl",
-    "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-biped.v1.js"
+    "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-biped.v1.js",
+    "registry/assets/v1/packs/kaykit-adventurers-2-0-free.json",
+    "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/"
   ],
-  "actorCount": 27,
+  "actorCount": 33,
   "actors": [
     {
       "id": "gothgirl",
@@ -415,6 +417,108 @@
       },
       "faceColor": null,
       "reviewGroup": "medium"
+    },
+    {
+      "id": "adventurer-barbarian",
+      "label": "Barbarian",
+      "initials": "BA",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+      "blob": "d06efc99d5fe8541a31affdd0a25d0c519980c89",
+      "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-adventurers-2.0-free+asset-registry",
+      "packId": "kaykit-adventurers-2-0-free",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-adventurers"
+    },
+    {
+      "id": "adventurer-knight",
+      "label": "Knight",
+      "initials": "KN",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb",
+      "blob": "793ac234dcc0509222b073a314d2ab5f18551797",
+      "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-adventurers-2.0-free+asset-registry",
+      "packId": "kaykit-adventurers-2-0-free",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-adventurers"
+    },
+    {
+      "id": "adventurer-mage",
+      "label": "Mage",
+      "initials": "MA",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb",
+      "blob": "66eac745c7d4360e463bf4c4e5e117e4c0c58b1e",
+      "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-adventurers-2.0-free+asset-registry",
+      "packId": "kaykit-adventurers-2-0-free",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-adventurers"
+    },
+    {
+      "id": "adventurer-ranger",
+      "label": "Ranger",
+      "initials": "RA",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb",
+      "blob": "8edaf04430036130c3a7fcb6767049aac3c3f3a7",
+      "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-adventurers-2.0-free+asset-registry",
+      "packId": "kaykit-adventurers-2-0-free",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-adventurers"
+    },
+    {
+      "id": "adventurer-rogue",
+      "label": "Rogue",
+      "initials": "RO",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb",
+      "blob": "6f28b937ec57b06815240fbf4106c58e76a74c0c",
+      "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-adventurers-2.0-free+asset-registry",
+      "packId": "kaykit-adventurers-2-0-free",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-adventurers"
+    },
+    {
+      "id": "adventurer-rogue-hooded",
+      "label": "Rogue Hooded",
+      "initials": "RH",
+      "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb",
+      "blob": "7063f6cbca7fd2445c9b804a9f157c11c0e7b0f2",
+      "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "provenance": "kaykit-adventurers-2.0-free+asset-registry",
+      "packId": "kaykit-adventurers-2-0-free",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "medium-adventurers"
     }
   ]
 }
