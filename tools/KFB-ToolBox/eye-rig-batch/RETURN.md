@@ -786,3 +786,90 @@ Preferred sequence for new coverage:
 
 Exactly one next gate:
 **ADVENTURERS_RIG_MEDIUM_EXTENSION_01** — add and prepare the six Adventurers only. Large and Legacy remain separate following slices.
+
+## 2026-10-02 · ADVENTURERS_RIG_MEDIUM_EXTENSION_01 · RETURN
+
+Status: **IMPLEMENTED · 12/12 FOCUSED PASS · STAGE MIRRORED · PUBLIC VERIFY OPEN**
+
+### Result
+
+The existing `Rig_Medium` EyeRig roster now contains **33 actors** instead of 27.
+
+Added from `KayKit_Adventurers_2.0_FREE`:
+
+- Barbarian
+- Knight
+- Mage
+- Ranger
+- Rogue
+- Rogue Hooded
+
+All six were inspected directly from their GLBs at `main@f9dd7a64c4ae0907b8752717861eba065e557d9d`:
+
+- one skin;
+- skin name `Rig_Medium`;
+- 23 joints;
+- zero embedded animations;
+- exact GLB blobs pinned in the catalog.
+
+The Adventurers pack itself supplies `Rig_Medium_General.glb` and `Rig_Medium_MovementBasic.glb`.
+
+These six are **authoring roster entries**. They do not yet have Blender-verified NoEyes derivatives/source anchors; their runtime cleanup remains provisional `auto-mirrored-front-pair` until a later cleanup pass.
+
+### Tests
+
+Focused extension checks: **12/12 PASS**.
+
+- 33/33 catalog count;
+- 33 unique IDs;
+- 6/6 Adventurers present;
+- 6/6 Rig_Medium;
+- 6/6 jointCount 23;
+- 6/6 exact GLB blobs;
+- 6/6 current-main revision pins;
+- 6/6 provisional cleanup records;
+- 6/6 Adventurers pack-registry presence;
+- static test contract updated from 27 → 33;
+- six-specific test contract added;
+- existing roster sentinels preserved.
+
+Evidence:
+`docs/ADVENTURERS_RIG_MEDIUM_EXTENSION_2026-10-02.md`
+
+### Stage
+
+Mirrored catalog + ToolBox Hub card:
+
+`cloudflare-live@dac15d6ec55bed733aff5d55adfe438d29cb0ec5`
+
+Exact mirror readback:
+- actorCount = **33**
+- all six Adventurers present.
+
+Human route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+No PUBLIC_VERIFIED claim is made until that direct route is opened on the new revision.
+
+### Asset Librarian availability finding
+
+Georg reported that Mannequin was available in EyeRig but not in the Asset Librarian character view.
+
+Confirmed source facts:
+
+- `Mannequin_Medium.glb` exists in `registry/assets/v1/packs/kaykit-character-animations-1-1.json`;
+- `Mannequin_Large.glb` is also present there;
+- the six new Adventurers are present in `registry/assets/v1/packs/kaykit-adventurers-2-0-free.json`.
+
+Confirmed Town-workbench projection bug:
+
+`tools/asset_registry/librarian/town-workbench.js#isAnimationSource`
+
+currently treats the **entire** `kaykit-character-animations-1-1` pack as animation-source content. `isCharacter()` rejects animation sources, so the Mannequin character models are excluded from the Town Character lane even though their asset records exist.
+
+This slice does **not** modify Asset Librarian runtime ownership.
+
+A complete all-KayKit / all-consumer availability PASS is **not yet claimed**. The next owner audit must compare KayKit character source inventory against Asset Registry canonical/live projection, Librarian character lane, EyeRig catalogs and named downstream character selectors.
+
+Exactly one next gate:
+**KAYKIT_CHARACTER_AVAILABILITY_AUDIT_01 · Asset Librarian owner** — fix the Mannequin pack-wide filter and produce a cross-surface character coverage matrix before continuing Large/Legacy expansion.

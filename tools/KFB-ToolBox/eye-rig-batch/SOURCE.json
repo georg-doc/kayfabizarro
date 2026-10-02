@@ -339,5 +339,36 @@
       "legacyPrimaryCharacters": 13
     },
     "nextGate": "ADVENTURERS_RIG_MEDIUM_EXTENSION_01"
+  },
+  "adventurersMediumExtension": {
+    "status": "IMPLEMENTED_STAGE_MIRRORED_PUBLIC_VERIFY_OPEN",
+    "implementationCommit": "2ae26d602689819d2dba693e8b9eea8b0a13d4c0",
+    "testContractCommit": "908d8ed3d99f4cf2f796f719bf586cb55a727292",
+    "evidenceCommit": "e3c2505c13a2e5cd58312838162fe9984d5e6e8f",
+    "actorCountBefore": 27,
+    "actorCountAfter": 33,
+    "added": [
+      "Barbarian",
+      "Knight",
+      "Mage",
+      "Ranger",
+      "Rogue",
+      "Rogue Hooded"
+    ],
+    "focusedChecks": "12/12 PASS",
+    "stageMirrorHead": "dac15d6ec55bed733aff5d55adfe438d29cb0ec5",
+    "publicVerified": false
+  },
+  "kaykitCharacterAvailabilityAudit": {
+    "status": "OPEN_CONFIRMED_MANNEQUIN_PROJECTION_BUG",
+    "confirmed": {
+      "mannequinMediumRegistry": true,
+      "mannequinLargeRegistry": true,
+      "adventurersRegistry": "6/6",
+      "librarianTownCause": "isAnimationSource excludes entire kaykit-character-animations-1-1 pack"
+    },
+    "owner": "Asset Librarian",
+    "runtimeChangedInThisSlice": false,
+    "nextGate": "KAYKIT_CHARACTER_AVAILABILITY_AUDIT_01"
   }
 }

@@ -1,3 +1,12 @@
+## 2026-10-02 · EyeRig Medium +6 Adventurers / KayKit availability follow-up
+
+- EyeRig PR #104 Medium roster expanded **27 → 33** with all six `KayKit_Adventurers_2.0_FREE` characters: Barbarian, Knight, Mage, Ranger, Rogue, Rogue Hooded.
+- Direct GLB inspection: all six = `Rig_Medium`, 23 joints, 0 embedded clips; exact blobs pinned.
+- Focused extension evidence: **12/12 PASS**.
+- Stage mirror: `cloudflare-live@dac15d6ec55bed733aff5d55adfe438d29cb0ec5` · 33 actors read back.
+- Cross-tool finding: Mannequin Medium/Large exist in Asset Registry, but Librarian Town `isAnimationSource()` excludes the entire `kaykit-character-animations-1-1` pack, hiding the character models from the Character lane.
+- No duplicate Registry asset should be created. Next gate is an Asset Librarian-owned all-KayKit character availability audit/fix.
+
 ## 2026-10-02 · EyeRig Batch · Studio-parity control semantics
 
 - PR #104 / `toolbox/eye-rig-batch-2026-09-18`: repaired a control leak where Eye size/ring also changed eye seating depth.
