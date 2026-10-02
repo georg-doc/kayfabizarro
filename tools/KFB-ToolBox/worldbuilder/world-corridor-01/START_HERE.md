@@ -497,3 +497,57 @@ Current FORM/ENVIRONMENT next gate:
 **PROCEDURAL BUILDING B0 · GOLDEN FAMILY SPEC**.
 
 Do not restart small-prop ideation and do not ask Georg to reconstruct the old thread.
+
+
+## 2026-10-02 · Procedural Building B0 PASS → B1 Golden Family Siblings
+
+Canonical recovery:
+`procedural-building-b0/RECOVERY.md`
+
+B0 branch / PR:
+- `chatgpt-web/wc1-procedural-building-b0-2026-10-02`
+- Draft PR #319
+
+B0 result:
+**GOLDEN FAMILY SOURCE ISOLATION PASS**
+
+Three exact Hürth V2 controls:
+- `way/371401529` · compact flat · 10.13 m
+- `way/371401492` · larger gable · 12.46 m
+- `way/371401475` · compact hip · 12.19 m
+
+Binding V2 source:
+`elastic-grotesque-clay.mjs@0c59e92d9d8688f5a88cd309ae8891dcd174c2fc`
+
+Final tested head:
+`86d5512fdf40b5fc9a2f83b2be6ff6666e82f062`
+
+Final run/job:
+`37034478056 / 110929154453`
+
+Evidence:
+`11238965649`
+digest `sha256:b867700e2974c2392391195cc57cee6c267b85acd0ee41172b6c34f274776650`
+
+Verified for all three:
+- exact V2 source;
+- body hash parity;
+- roof hash parity;
+- anchored base;
+- four separated source-isolation stages;
+- raw KayKit `building_A` side donor with original materials;
+- one renderer;
+- no material decision;
+- no world integration.
+
+Repair history:
+- Repair 1 = source transport / QA only;
+- Repair 2 = visual evidence stage layout only;
+- B0 geometry module remained unchanged.
+
+Material/Clay remains a separate parallel lane.
+
+Current FORM/ENVIRONMENT next gate:
+**PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS**
+
+Use the full existing 22-building Hürth V2 fixture as the measured family corpus before generating any siblings. Do not invent arbitrary footprints, roofs or universal style sliders.
