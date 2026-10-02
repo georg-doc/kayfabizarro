@@ -1,5 +1,7 @@
 # Offene Entscheidungen für Georg · KFB-NARRATIVE-CORE-RECON-01
 
+**Stand 02.10. nach Georgs Antwort:** G-02 entschieden (Gameplay-Engine als Basis, zusammen mit v0.8). G-06 und G-04 entschieden (Persönlichkeit aus dem CritEngine-YAML, Sprint-01 dort übernommen; nicht zentral). Offen für SIM-01: G-11, G-12, G-01. Interaktive Erklärung: `KFB_SIM01_ENTSCHEIDUNGEN.html`.
+
 Nur Fragen, die sich nicht aus den Quellen ableiten lassen. Zu jeder steht meine Empfehlung. **Fett** = blockiert den ersten Bau (SIM-01).
 
 ## Blockiert SIM-01

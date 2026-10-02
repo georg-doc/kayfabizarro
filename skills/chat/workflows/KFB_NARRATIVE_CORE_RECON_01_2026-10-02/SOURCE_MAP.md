@@ -68,7 +68,10 @@ Root `CLAUDE/CritEngine/`.
 
 | Source | Status | Role | Read |
 |---|---|---|---|
-| `CLAUDE.md` | **PLANNED / INCOMPLETE** | Declares SSOT for engine.js v2.x, 8 archetype YAMLs, 8×8 conflict matrix, resolver | Read |
+| `CLAUDE.md` | **CONTENT ADOPTED, FILES NOT SPLIT, RESOLVER NOT BUILT** (corrected 02.10., see ledger C-02) | Declares SSOT for engine.js v2.x, 8 archetype YAMLs, 8×8 conflict matrix, resolver | Read |
+| `livedocs/main-chat-v0_1.html` (Living-Doc v0.9, 2026-05-27) | **CANON-SUPPORT (decision log of CritEngine)** | Sprint-01 adopted, cast locked to 8 poles, 6 conflict axes, Sprint-02 pending (split, tier/masks/ctp_voice_anchor, visual fixes); gameplay-sandbox use case with `gameplay.*` YAML layer | Read (added 02.10.) |
+| `inbox/frizzlecrit-matrix-handover-v1_2.html` | DONOR | 7×7 matrix + YAML-v3 proposal, engine/hub status | Skim (added 02.10.) |
+| `inbox/BRIEFING_2026-05-23_kfr-bizarro-gameplay-sandbox.md` | CANON-SUPPORT (use case) | "1–6 FrizzleCrits sit/play/interact", Crits as visible actors in the rules runtime | Skim (added 02.10.) |
 | `decisions/00_BOOT_2026-05-23.md` | adopted decision | "Daten vor Code"; v2.0 deterministic resolver, v2.1 LLM variant | Read |
 | `archetypes/`, `matrix/`, `engine/`, `schema/` | **EMPTY except README.md** (verified by listing) | — | Read |
 | `archetypes/README.md` cast | PLANNED | FrizzleBob (Trickster), Hunky (Senex), Dory (Puer), Mr Shark, Hobbes, Dr Checkov, Roboto, Norm (+ reserve Löwe) | Read |
@@ -77,7 +80,7 @@ Root `CLAUDE/CritEngine/`.
 | `inbox/REVISION_NOTE_for_CritEngine_Sprint_02_v0_2.md` | CANDIDATE (review) | Accepts Sprint-01 runtime formula `trigger → failure_spiral → speech → destabilize partner → repair → re-entry`, `repair_affinities`, `symbolic_neighbors`; lists 3 visual drifts to revise | Skim |
 | `inbox/CLAUDE_HANDOVER_StoryRunner_v3_0.md` | DONOR (pattern) | Next.js/Genkit runner: YAML world bundles + JSON logic bundles, graceful-coercion normaliser, deterministic audit scorer | Skim |
 | `_legacy/POINTERS.md` | LEGACY index | 8 copies of v1 `engine.js` (sprite/walk physics, not narrative) | Read |
-| Sprint-01 YAML bundle | `CLAUDE/FractalAlmanacComicCreator/sprints/CritEngine-Sprint-01/frizzlecrits_final_canonical_yaml_bundle_v_0_1.md` + 18 phase files | **CANDIDATE** (self-titled "final canonical", not moved into `archetypes/`, revision note open) | Skim (ids + FrizzleBob profile) |
+| Sprint-01 YAML bundle | `CLAUDE/FractalAlmanacComicCreator/sprints/CritEngine-Sprint-01/frizzlecrits_final_canonical_yaml_bundle_v_0_1.md` + 18 phase files | **ADOPTED content** per Living-Doc v0.9 (not yet split into `archetypes/`, visual drifts pending) | Skim (ids, FrizzleBob, Hunky, Dory) |
 
 ## 6 · FrizzleCrits and Hunky & Dory
 

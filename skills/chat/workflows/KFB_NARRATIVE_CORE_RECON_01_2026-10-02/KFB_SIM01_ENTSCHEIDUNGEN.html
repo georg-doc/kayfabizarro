@@ -95,6 +95,7 @@ details summary{cursor:pointer;font:700 14px "Trebuchet MS",sans-serif;color:var
 <div class="wrap">
 <div class="kicker">KFB-NARRATIVE-CORE-RECON-01 · Entscheidungshilfe</div>
 <h1>Bevor wir die digitale Kartenrunde bauen: sechs Fragen, in Ruhe erklärt</h1>
+<div class="box" style="border-color:var(--ok)"><b>Stand 02.10. nach deiner Antwort:</b> Drei Fragen sind entschieden (Vorlagen, Figurenquelle, Hunky &amp; Dory, grün markiert). Offen sind noch <b>Gedächtnis, KI-Sprache und Finale</b>. Der Beispielzug ist korrigiert: Erzählt wird als die Actor-Karte, nicht als die Figur.</div>
 <p class="lead">Kein Fachchinesisch. Zuerst siehst du, <b>was</b> gebaut werden soll und wie ein Zug darin aussieht. Dann kommen die sechs Fragen, jede mit Beispiel, Vergleich, Folgen und meiner Empfehlung. Am Ende kopierst du deine Antworten mit einem Klick.</p>
 
 <!-- WORUM GEHT ES -->
@@ -119,6 +120,7 @@ details summary{cursor:pointer;font:700 14px "Trebuchet MS",sans-serif;color:var
   </div>
   <div class="steps" id="stepbtns"></div>
   <div class="narr" id="narr"></div>
+  <div class="why" style="margin-top:10px"><b>Regel, die das Programm hart prüfen wird:</b> Erzählt wird immer <b>als die Actor-Karte</b>, in der Ich-Form. Die Figur am Platz (Hunky, Dory, FrizzleBob oder du) ist der <i>Spieler</i>, nicht die Rolle. Sie bestimmt nur, <i>wie</i> die Karte gespielt wird. Ein Satz wie „Ich bin Lord Hunky …“ wäre ein Regelbruch. Übrigens: Auch in den alten Testrunden der Gameplay-Engine steht so ein Fehler („I am FrizzleBob, and the Correct Nonsense …“), deshalb wird das ein fester Test.</div>
 </div>
 
 <!-- DECISIONS -->
@@ -139,19 +141,19 @@ details summary{cursor:pointer;font:700 14px "Trebuchet MS",sans-serif;color:var
 
 <script>
 /* ---------- demo turn ---------- */
-const SEATS=[{n:1,who:'Du',p:'Mensch'},{n:2,who:'Lord Hunky',p:'simuliert'},{n:3,who:'Lady Dory',p:'simuliert'},{n:4,who:'Uncle FrizzleBob',p:'simuliert'}];
+const SEATS=[{n:1,who:'Du',p:'Mensch',a:'(deine Actor-Karte)'},{n:2,who:'Lord Hunky',p:'simuliert',a:'THE SPECULATOR'},{n:3,who:'Lady Dory',p:'simuliert',a:'THE HIGH PRIEST OF MONEY MAGIC'},{n:4,who:'Uncle FrizzleBob',p:'simuliert',a:'(seine Actor-Karte)'}];
 const STEPS=[
- {k:'1 · Stimmung würfeln',die:2,active:2,king:3,slot:null,t:'<b>Hunky ist dran.</b> Er würfelt den Story-Mode-Würfel: <b>4 = Heroic</b> („Spiel den Höhepunkt“). Egal ob es zu ihm passt, er muss es durchziehen. Der Quest-Würfel steht auf 2.'},
- {k:'2 · Karte spielen',die:2,active:2,king:3,slot:'THE SPECULATOR',t:'Hunky legt <b>THE SPECULATOR</b> auf den freien Bühnenplatz 3 und macht das Karten-Ritual: <b>Show it</b> (zeigen), <b>Spin it</b> (kurze Vorgeschichte), <b>Sell it</b> (verkaufen, als wäre es das Echteste im Raum).<br><i>„Dies ist der Spekulant. Er wettet gegen alles, was ihr für sicher haltet. Und er ist pünktlich.“</i>'},
- {k:'3 · Geschichte erzählen',die:2,active:2,king:3,slot:'THE SPECULATOR',t:'Hunky erzählt in der Ich-Form und muss alle drei Bühnenkarten einweben und auf die Quest zulaufen:<br><i>„Ich bin Lord Hunky, und ich habe das Geld nicht gedruckt, ich habe es getippt. Aber dann kam der Notfall, pünktlich zur Antwort, die ich schon vorbereitet hatte. Also setze ich alles auf den Spekulanten: Wer gegen die Ordnung wettet, finanziert sie am Ende.“</i>'},
- {k:'4 · Karte nachziehen',die:2,active:2,king:3,slot:'THE SPECULATOR',t:'Hunky zieht eine Karte vom Stapel, damit er wieder 3 auf der Hand hat. Das passiert automatisch.'},
- {k:'5 · Urteil des Kings',die:3,active:2,king:3,slot:'THE SPECULATOR',t:'<b>Dory ist King</b>, weil sie links von Hunky sitzt. Sie entscheidet: Hat er es verkauft? <b>+1 (Push)</b>. Der Quest-Würfel geht auf 3.<br><i>„Verkauft. Aber ich habe gesehen, wie du dabei gelächelt hast.“</i><br>Danach wandert die Krone: <b>Dory ist als Nächstes dran</b>, FrizzleBob wird King. Hätte jemand <b>BLÖDSINN!</b> gerufen und Dory hätte zugestimmt, bliebe der Würfel stehen.'}
+ {k:'1 · Stimmung würfeln',die:2,active:2,king:3,slot:null,t:'<b>Hunky ist dran.</b> Seine Actor-Karte (seit dem Setup offen vor ihm) ist <b>THE SPECULATOR</b>. Er würfelt den Story-Mode-Würfel: <b>4 = Heroic</b> („Spiel den Höhepunkt“). Egal ob es passt, er muss es durchziehen. Der Quest-Würfel steht auf 2.'},
+ {k:'2 · Karte spielen',die:2,active:2,king:3,slot:"Big Ben's Bong",t:'Hunky legt die Scene-Karte <b>Big Ben\'s Bong</b> auf den freien Bühnenplatz 3 und macht das Karten-Ritual: <b>Show it</b> (zeigen: Name und Bild), <b>Spin it</b> (kurze Vorgeschichte, gefärbt vom Modus), <b>Sell it</b> (verkaufen, als wäre es das Echteste im Raum).<br><i>„Das ist der Glockenturm. Er schlägt nicht die Stunde, er schlägt die Rechnung. Und wer unter ihm steht, hört den Gong als Letzter.“</i>'},
+ {k:'3 · Geschichte erzählen',die:2,active:2,king:3,slot:"Big Ben's Bong",t:'<b>Hunky erzählt nicht als Hunky.</b> Er spricht in der Ich-Form <b>als seine Actor-Karte, der Spekulant</b>, und webt alle drei Bühnenkarten ein (Finger-Regel: auf jede zeigen), im Modus Heroic, bis zum Stoß Richtung Quest:<br><i>„Ich bin der Spekulant. Euer Geld wird nicht gedruckt, es wird getippt [zeigt auf Fiat Conjuring], also tippe ich mit. Aber pünktlich kommt der Notfall, genau wenn die Antwort schon fertig ist [The Manufactured Emergency]. Also stelle ich mich unter den Glockenturm und warte auf den Gong [Big Ben\'s Bong]: Wer länger irrational bleibt, als ich zahlungsfähig bin, verliert. Heute nicht ich.“</i><br><span class="small">Was <b>Hunky</b> als Figur beisteuert, ist nur das <b>Wie</b>: kurze Sätze, Tagesordnungs-Ton, trockener System-Humor. Das <b>Wer</b> ist die Karte.</span>'},
+ {k:'4 · Karte nachziehen',die:2,active:2,king:3,slot:"Big Ben's Bong",t:'Hunky zieht eine Karte vom Stapel, damit er wieder 3 auf der Hand hat. Das passiert automatisch.'},
+ {k:'5 · Urteil des Kings',die:3,active:2,king:3,slot:"Big Ben's Bong",t:'<b>Dory ist King</b>, weil sie links von Hunky sitzt. Sie entscheidet: Hat er es verkauft? <b>+1 (Push)</b>. Der Quest-Würfel geht auf 3.<br><i>„Verkauft. Aber der Spekulant hat dabei auf die Uhr geschaut, nicht auf den Gong.“</i><br>Danach wandert die Krone: <b>Dory ist als Nächstes dran</b> (sie erzählt dann als ihre Actor-Karte, der High Priest of Money Magic), FrizzleBob wird King. Hätte jemand <b>BLÖDSINN!</b> gerufen und Dory hätte zugestimmt, bliebe der Würfel stehen.'}
 ];
 let step=0;
 function drawDemo(){
   const s=STEPS[step];
-  document.getElementById('seats').innerHTML=SEATS.map(x=>`<div class="seat ${x.n===s.active?'active':''} ${x.n===s.king?'king':''}"><b>Platz ${x.n}: ${x.who}</b><span class="who">${x.p}</span>${x.n===s.active?'<div class="small" style="margin-top:6px">ist am Zug</div>':''}</div>`).join('');
-  document.getElementById('slot3').innerHTML='<b>Bühne 3</b>'+(s.slot?s.slot+'<br><span class="small">„Irrational longer than you are solvent.“</span>':'<span class="small">noch leer</span>');
+  document.getElementById('seats').innerHTML=SEATS.map(x=>`<div class="seat ${x.n===s.active?'active':''} ${x.n===s.king?'king':''}"><b>Platz ${x.n}: ${x.who}</b><span class="who">${x.p}</span><div class="small" style="margin-top:4px">Actor: <span class="mono">${x.a}</span></div>${x.n===s.active?'<div class="small" style="margin-top:4px;color:var(--accent)">ist am Zug</div>':''}</div>`).join('');
+  document.getElementById('slot3').innerHTML='<b>Bühne 3</b>'+(s.slot?s.slot+'<br><span class="small">„It\'s not the fall that kills the villain; it\'s the impalement on the minute hand.“</span>':'<span class="small">noch leer</span>');
   document.getElementById('die').innerHTML='Quest-Würfel '+[1,2,3,4,5,6].map(i=>`<span class="${i===s.die?'on':''}">${i}</span>`).join('');
   document.getElementById('stepbtns').innerHTML=STEPS.map((x,i)=>`<button class="${i===step?'on':''}" data-i="${i}">${x.k}</button>`).join('');
   document.getElementById('narr').innerHTML=s.t;
@@ -161,7 +163,7 @@ drawDemo();
 
 /* ---------- decisions ---------- */
 const D=[
-{id:'G-02',short:'Vorlagen',title:'Aus welchen vorhandenen Programmen bauen wir die Runde?',
+{id:'G-02',short:'Vorlagen',preset:'A',decided:'Georg, 02.10.: Die Gameplay-Engine ist weiter, sie ist die Basis. Gern beide zusammen, wie vorgeschlagen.',title:'Aus welchen vorhandenen Programmen bauen wir die Runde?',
  q:'Es gibt schon zwei Programme, die Teile davon können. Welches nehmen wir als Grundlage?',
  why:'Wenn wir das falsche wählen, bauen wir etwas nach, das es schon gibt. Das kostet Wochen und Tokens.',
  body:`<table class="compare"><tr><th></th><th>Simulator v0.8 (Juli)</th><th>Gameplay-Engine (Juni)</th></tr>
@@ -178,12 +180,12 @@ const D=[
   {k:'B',t:'Nur Simulator v0.8',plus:['eine einzige Codebasis, sieht sofort gut aus'],minus:['Mehrspieler, King, Würfeln pro Zug, Scheitern und Zurufe müssen neu gebaut werden','dabei existiert das schon in der Gameplay-Engine']},
   {k:'C',t:'Nur Gameplay-Engine',plus:['Regeln stimmen schon fast'],minus:['Oberfläche, Kartenkorpus und Finale müssen neu gebaut werden']}
  ]},
-{id:'G-06',short:'Figurenquelle',title:'Woher bekommen Hunky, Dory und FrizzleBob ihre Persönlichkeit?',
+{id:'G-06',short:'Figurenquelle',preset:'A',decided:'Georg, 02.10.: Die Persönlichkeit kommt aus dem YAML. Laut CritEngine-LivDoc v0.9 ist das Sprint-01-Paket dort schon übernommen; offen ist nur das Aufteilen in einzelne Dateien und drei Optik-Korrekturen.',title:'Woher bekommen Hunky, Dory und FrizzleBob ihre Persönlichkeit?',
  q:'Eine simulierte Figur braucht ein Profil: wie sie redet, was sie will, was sie wütend macht, wie streng sie als King urteilt. Woher nehmen wir das für den ersten Bau?',
- why:'Eigentlich soll CritEngine diese Profile liefern. Der Ordner ist aber <b>leer</b> (nur README-Dateien). Wir brauchen eine Zwischenlösung oder müssen warten.',
+ why:'CritEngine liefert diese Profile. Der Inhalt ist dort beschlossen (Living-Doc v0.9 vom 27.05.: Sprint-01-Paket übernommen, 8 Figuren, 6 Konfliktachsen). Nur die einzelnen YAML-Dateien sind noch nicht in den Ordner <span class="mono">archetypes/</span> ausgelagert.',
  body:`<div class="grid g2">
- <div class="voice"><h4>Sprint-01-Paket (Mai, ChatGPT)</h4><div class="src">FractalAlmanacComicCreator/sprints/CritEngine-Sprint-01</div><p class="small">8 ausgearbeitete Figuren mit Ängsten, Bedürfnissen, „Abwärtsspirale“, Versöhnungsweg und Sprechweise. Beispiel Hunky: <i>Angst vor Entropie und unkontrolliertem Menschenverhalten; Abwärtsspirale: Instabilität → Überkontrolle → Gefühle unterdrücken → entmenschlichen; Humor: trockene System-Absurdität.</i> Noch nicht abgenommen, eine Korrekturliste ist offen.</p></div>
- <div class="voice"><h4>CritEngine</h4><div class="src">CLAUDE/CritEngine/archetypes</div><p class="small">Soll die offizielle Quelle werden. Heute: leer. Kein Termin, wann die Profile kommen.</p></div>
+ <div class="voice"><h4>Sprint-01-Paket (Mai, ChatGPT)</h4><div class="src">FractalAlmanacComicCreator/sprints/CritEngine-Sprint-01</div><p class="small">8 ausgearbeitete Figuren mit Ängsten, Bedürfnissen, „Abwärtsspirale“, Versöhnungsweg und Sprechweise. Beispiel Hunky: <i>Angst vor Entropie und unkontrolliertem Menschenverhalten; Abwärtsspirale: Instabilität → Überkontrolle → Gefühle unterdrücken → entmenschlichen; Humor: trockene System-Absurdität.</i> Laut CritEngine-Living-Doc v0.9 übernommen; drei Optik-Korrekturen und das Aufteilen in Einzeldateien stehen noch aus.</p></div>
+ <div class="voice"><h4>CritEngine</h4><div class="src">CLAUDE/CritEngine/archetypes</div><p class="small">Die offizielle Quelle. Beschlüsse und Besetzung im Living-Doc v0.9; die Ordner <span class="mono">archetypes/</span>, <span class="mono">matrix/</span> und <span class="mono">engine/</span> sind noch leer.</p></div>
  <div class="voice"><h4>Gameplay-Engine-Besetzung</h4><div class="src">gameplay_simulation/engine/kfb_roster_players.yaml</div><p class="small">Hat FrizzleBob und fünf A.I.-Spieler mit Spielverhalten (wie oft sie den Actor wechseln, wie streng als King). Hunky und Dory fehlen.</p></div>
  <div class="voice"><h4>Cancel-This-Planet-Datei</h4><div class="src">CritEngine/inbox/HUNKY_DORY_CtP-YAML</div><p class="small">Sehr ausgearbeitet, aber aus einem anderen Projekt (mit GodGPT und MephistoBro). Nicht für KFB geprüft.</p></div></div>`,
  opts:[
@@ -191,7 +193,7 @@ const D=[
   {k:'B',t:'Warten, bis CritEngine die drei Profile fertig hat',plus:['von Anfang an die offizielle Quelle'],minus:['der Bau steht, bis CritEngine liefert, Termin offen']},
   {k:'C',t:'Erst mal nur FrizzleBob und die A.I.-Spieler, Hunky und Dory später',plus:['sofort startklar mit vorhandener Besetzung'],minus:['Hunky und Dory, die du ausdrücklich willst, fehlen in Version 1']}
  ]},
-{id:'G-04',short:'Hunky & Dory',title:'Welcher Hunky und welche Dory sitzen am Tisch?',
+{id:'G-04',short:'Hunky & Dory',preset:'4',decided:'Georg, 02.10.: Aus dem YAML (Sprint-01, von CritEngine übernommen), Optik nach CritEngine-Korrektur (Hunky blaues Stielaugen-Alien, Dory rot-orangener Blob). Für SIM-01 nicht zentral.',title:'Welcher Hunky und welche Dory sitzen am Tisch?',
  q:'Es gibt vier Fassungen der beiden, und sie widersprechen sich. Welche Stimme soll in der Runde spielen?',
  why:'Ohne Entscheidung mischt das Programm zufällig. Dann redet Hunky mal wie ein Hausmeister, mal wie ein müder Nihilist, und Dory mal höfisch, mal naiv. Das zerstört die Figuren.',
  body:`<p class="small">Die Charakterzüge stammen aus den Quellen. Die kursiven Beispielsätze habe ich zur Veranschaulichung formuliert, damit du den Unterschied hörst. Sie stehen so nirgendwo.</p>
@@ -219,9 +221,9 @@ const D=[
 {id:'G-12',short:'KI-Sprache',title:'Wer schreibt die Sätze der simulierten Figuren?',
  q:'Die Spielregeln (würfeln, King, Quest-Würfel) braucht keine KI, das rechnet das Programm. Aber wenn Hunky seine Geschichte erzählt, braucht es Sätze. Woher kommen die?',
  why:'Eine KI (LLM) klingt lebendig, kostet aber Geld und Zeit, braucht einen Zugang und macht jede Runde anders. Ohne KI ist es kostenlos, sofort und jede Wiederholung identisch, klingt aber steifer.',
- body:`<p>Beispiel: Hunky spielt <b>THE SPECULATOR</b> (Kartentext: „Irrational longer than you are solvent.“).</p>
- <div class="grid g2"><div class="voice"><h4>Ohne KI (Vorlage aus Kartentext + Figurenstimme)</h4><div class="say">„Ich bin Lord Hunky. Der Spekulant. Irrational länger, als ihr zahlungsfähig seid. Also: vertagt.“<small>so ungefähr, von mir skizziert</small></div></div>
- <div class="voice"><h4>Mit KI</h4><div class="say">„Ich bin Lord Hunky, und ich habe das Geld nicht gedruckt, ich habe es getippt. Aber dann kam der Notfall, pünktlich zur Antwort …“<small>so ungefähr, von mir skizziert</small></div></div></div>
+ body:`<p>Beispiel: Hunky erzählt als seine Actor-Karte <b>THE SPECULATOR</b> (Kartentext: „Irrational longer than you are solvent.“).</p>
+ <div class="grid g2"><div class="voice"><h4>Ohne KI (Vorlage aus Kartentext + Figurenstimme)</h4><div class="say">„Ich bin der Spekulant. Irrational länger, als ihr zahlungsfähig seid. Der Gong schlägt. Also: Tagesordnungspunkt erledigt.“<small>so ungefähr, von mir skizziert: Kartentext + Hunkys knapper Ton</small></div></div>
+ <div class="voice"><h4>Mit KI</h4><div class="say">„Ich bin der Spekulant. Euer Geld wird nicht gedruckt, es wird getippt, also tippe ich mit. Aber pünktlich kommt der Notfall …“<small>so ungefähr, von mir skizziert (wie im Beispielzug oben)</small></div></div></div>
  <p class="small">In jedem Fall gilt: Die KI darf nie selbst würfeln, Figuren bewegen oder Dinge in der Welt auslösen. Sie schlägt nur Text vor, das Programm prüft und entscheidet.</p>`,
  opts:[
   {k:'A',t:'Standard ohne KI, KI als Schalter zum Zuschalten',rec:true,plus:['läuft kostenlos und sofort','mit Schalter klingt es lebendig, wenn du willst','Wiederholungen einer Runde nutzen den gespeicherten Text und fragen die KI nicht erneut'],minus:['ohne Schalter klingen die Figuren eher hölzern']},
@@ -245,8 +247,9 @@ const D=[
  ]}
 ];
 const state={}; const notes={};
+D.forEach(d=>{if(d.preset)state[d.id]=d.preset});
 const dec=document.getElementById('decisions');
-dec.innerHTML=D.map((d,i)=>`<div class="box dec" id="${d.id}"><div class="kicker">Frage ${i+1} von 6 · ${d.id} · ${d.short}</div><h2>${d.title}</h2><p class="q">${d.q}</p><div class="why"><b>Warum das wichtig ist:</b> ${d.why}</div>${d.body}<h3>Deine Wahl</h3><div class="grid ${d.opts.length>3?'g3':'g3'}">${d.opts.map(o=>`<button class="opt" data-d="${d.id}" data-o="${o.k}"><span class="t">${o.k}) ${o.t}</span>${o.rec?'<span class="pill grn rec">Empfehlung</span>':''}${o.plus||o.minus?`<ul>${(o.plus||[]).map(p=>`<li class="plus">+ ${p}</li>`).join('')}${(o.minus||[]).map(p=>`<li class="minus">− ${p}</li>`).join('')}</ul>`:''}</button>`).join('')}</div><textarea data-note="${d.id}" placeholder="Optional: Notiz, Einwand oder eigene Idee zu dieser Frage …"></textarea></div>`).join('');
+dec.innerHTML=D.map((d,i)=>`<div class="box dec" id="${d.id}"><div class="kicker">Frage ${i+1} von 6 · ${d.id} · ${d.short}</div><h2>${d.title}</h2><p class="q">${d.q}</p>${d.decided?`<div class="why" style="background:#e6f0da;border-color:var(--ok)"><b>Schon entschieden:</b> ${d.decided}</div>`:''}<div class="why"><b>Warum das wichtig ist:</b> ${d.why}</div>${d.body}<h3>Deine Wahl</h3><div class="grid ${d.opts.length>3?'g3':'g3'}">${d.opts.map(o=>`<button class="opt${d.preset===o.k?' sel':''}" data-d="${d.id}" data-o="${o.k}"><span class="t">${o.k}) ${o.t}</span>${o.rec?'<span class="pill grn rec">Empfehlung</span>':''}${o.plus||o.minus?`<ul>${(o.plus||[]).map(p=>`<li class="plus">+ ${p}</li>`).join('')}${(o.minus||[]).map(p=>`<li class="minus">− ${p}</li>`).join('')}</ul>`:''}</button>`).join('')}</div><textarea data-note="${d.id}" placeholder="Optional: Notiz, Einwand oder eigene Idee zu dieser Frage …"></textarea></div>`).join('');
 dec.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;state[b.dataset.d]=b.dataset.o;dec.querySelectorAll(`.opt[data-d="${b.dataset.d}"]`).forEach(x=>x.classList.toggle('sel',x===b));render()});
 dec.addEventListener('input',e=>{const t=e.target.closest('textarea');if(!t)return;notes[t.dataset.note]=t.value;render()});
 function render(){

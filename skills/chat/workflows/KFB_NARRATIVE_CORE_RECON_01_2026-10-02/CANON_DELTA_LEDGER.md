@@ -153,3 +153,21 @@ Default for SIM-01: deterministic rules engine; sim-seat Tell from a pluggable `
 | A second narrative, dialogue or memory owner would arise | **Not in the recon.** Risk points named: D-11 (dialogue), D-13 (memory). The architecture keeps one owner per concern. |
 | Scope creep into Open World | **No.** World PRs only noted. |
 | Two failed repair passes | n/a (no build) |
+
+## D · Corrections after Georg's review (2026-10-02)
+
+### C-01 · Telling is done AS the Actor card (recon error, now a rule test)
+
+Georg: the player never narrates as himself. PUB beat 3: "Speak as your Actor, first person, you don't play your Actor, you are them." The persona at the seat (Hunky, Dory, FrizzleBob, human) is the **performer**; the **Actor card** is the speaker. The persona only shapes *how* the card is played (cadence, humour vector, stance).
+The recon's own demo violated this ("Ich bin Lord Hunky …"), and so do stored GM runs (`crit_memory.json` best line: "I am FrizzleBob, and the Correct Nonsense …"). The GM tell frame "I am [actor], …" is correct, but generated text drifted.
+Consequence for SIM-01: hard rule test: `story_told.speaker` = the seat's current Actor card; a tell that names the persona as the first-person speaker is rejected. The event schema already carries `actor` on `story_told`.
+
+### C-02 · CritEngine status was under-reported (D-06 / D-07 corrected)
+
+The recon read only the folders. The CritEngine Living-Doc `livedocs/main-chat-v0_1.html` (v0.9, 2026-05-27) records: decision `04_BIBLE_ANCHOR` (Crit-Engine handover v0.1 = canonical SSOT for schema and cast, cast locked to 8 poles), H&D consolidation resolved 2026-05-26, **ChatGPT Sprint-01 bundle adopted** (runtime formula, `repair_affinities`, `symbolic_neighbors`, title as functional role), six conflict axes incl. Lord Hunky ↔ Lady Dory "Control vs. Intuition · toxic_marriage · fluff_incident_guilt", CtP kept as `ctp_voice_anchor`. Pending Sprint-02: split the bundle into `archetypes/*.yaml`, add `tier`/`masks`/`ctp_voice_anchor`, fix visuals (Hunky blue stalk-eyed alien `#4a8aba`, Dory red/orange blob `#c44a4a`).
+Corrected status: **CritEngine = content adopted, files not yet split, resolver not built.** Persona source for SIM-01 = the adopted Sprint-01 YAML (Georg, 02.10.). The four Hunky/Dory versions in D-07 are not equal rivals: Sprint-01 is adopted, CtP is the voice anchor, HDT/M66 is the older Mnemosyne-app characterisation.
+The Living-Doc also already names this exact use case: "Im Gameplay-Mode wählt der Spieler einzelne oder mehrere Crits aus dem 8-Pole-Roster als Sim-Player", with a planned `gameplay.*` layer per crit YAML (`inbox/BRIEFING_2026-05-23_kfr-bizarro-gameplay-sandbox.md`).
+
+### C-03 · Decisions taken by Georg (2026-10-02)
+
+G-02: Gameplay Engine is the base, together with Simulator v0.8. G-06/G-04: personality from the CritEngine YAML (Sprint-01, adopted), not central for SIM-01. Already recorded in project memory (July): "one engine, two surfaces; the Simulator consumes the engine contract, does not fork it" (Run-Spec `{deck, players[], cardPool, mode}`).
