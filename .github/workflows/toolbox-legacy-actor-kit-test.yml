@@ -1,0 +1,61 @@
+name: ToolBox Legacy Actor Kit KLR-KIT-01
+on:
+  push:
+    branches:
+      - chatgpt-web/toolbox-legacy-rpg-rigging-2026-09-21
+    paths:
+      - 'tools/KFB-ToolBox/legacy-rpg-rigging/**'
+      - 'kfb-hub/stage/toolbox/legacy-rpg-rigging/**'
+      - '.github/workflows/toolbox-legacy-actor-kit-test.yml'
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/legacy-rpg-rigging/**'
+      - 'kfb-hub/stage/toolbox/legacy-rpg-rigging/**'
+      - '.github/workflows/toolbox-legacy-actor-kit-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actor-kit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/KFB-ToolBox/legacy-rpg-rigging
+            kfb-hub/stage/toolbox/legacy-rpg-rigging
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recipe/static contracts
+        run: |
+          node --experimental-vm-modules tools/KFB-ToolBox/legacy-rpg-rigging/tests/static-check.mjs
+          node tools/KFB-ToolBox/legacy-rpg-rigging/tests/actor-recipe.test.mjs
+          node --check tools/KFB-ToolBox/legacy-rpg-rigging/app.js
+          node --check tools/KFB-ToolBox/legacy-rpg-rigging/lib/legacy-actor-recipe.v1.js
+          node --check tools/KFB-ToolBox/legacy-rpg-rigging/kit-proof.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Start local Stage mirror
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/legacy-kit-http.log 2>&1 &
+          echo $! > /tmp/legacy-kit-http.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/legacy-rpg-rigging/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/legacy-kit-http.log
+          exit 1
+      - name: KLR-KIT-01 browser proof
+        env:
+          KLR_KIT_PROOF_DIR: legacy-actor-kit-evidence
+        run: node tools/KFB-ToolBox/legacy-rpg-rigging/kit-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: klr-kit-01-evidence
+          path: legacy-actor-kit-evidence
+          retention-days: 14
