@@ -106,6 +106,14 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-10-02 · AUDIO-SEED-01 current follow-up
+
+- Draft PR #325 · branch `chatgpt-web/audio-seed-01-2026-10-02`.
+- PUBLIC_VERIFIED Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`.
+- Evidence: **34/34** deterministic/source · **33/33** branch Chromium/WebAudio · **33/33** public exact-route Chromium/WebAudio.
+- Current gate: `GEORG_AUDIO_SEED_LISTEN_01` only. Do not wire real Race telemetry, expand the instrument source bank, merge or promote Live before that listening decision.
+- Suno/ElevenLabs remain optional authoring-time source for gaps; the Stage/runtime has zero external generation dependency.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
@@ -143,7 +151,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
-- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
+- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED + HUMAN_ACCEPTED; AUDIO-SEED-01 is PUBLIC_VERIFIED on Draft PR #325 with `GEORG_AUDIO_SEED_LISTEN_01` pending; Travel/Race/Combat/Boxel keep runtime ownership
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported

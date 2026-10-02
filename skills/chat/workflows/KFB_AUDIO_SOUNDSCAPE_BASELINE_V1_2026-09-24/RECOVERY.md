@@ -1,5 +1,24 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
+## CURRENT RECOVERY OVERRIDE · AUDIO-SEED-01 · 2026-10-02
+
+Resume here before older AUDIO-CAL checkpoints.
+
+- owner: KFB Audio & Soundscape Baseline v1;
+- source: `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`;
+- implementation `b566e272493864dc9bb0cd27f8e2d7574be061d0`; evidence `6f9dc8089b12d438eca0a84c8664024de6b3b5aa`; public-proof source `a9758734c7ec2d2311c88a2d313c293e02254f4c`;
+- publication `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a`;
+- Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`;
+- deterministic/source **34/34 PASS**;
+- branch Chromium/WebAudio **33/33 PASS**;
+- public exact-route Chromium/WebAudio **33/33 PASS on first attempt**;
+- public run/job `37045888652 / 110967091484`;
+- public artifact/digest `11244059091` / `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`;
+- human listening **PENDING**;
+- external Suno/ElevenLabs runtime dependency **NONE**.
+
+Do not rebuild Card semantics; reuse Travel `cardSemanticVector()`, `joinSeeds()`, `mulberry32()`. Do not wire full Race telemetry or broaden the source bank before `GEORG_AUDIO_SEED_LISTEN_01`.
+
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED · RECOVERABLE  
 **Date:** 2026-09-24  
 **Repo:** `georg-doc/kayfabizarro`  

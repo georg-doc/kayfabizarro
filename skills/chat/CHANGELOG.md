@@ -1,3 +1,15 @@
+## 2026-10-02 · AUDIO-SEED-01 public procedural soundscape candidate
+
+- Existing KFB Audio & Soundscape Baseline remains owner; no universal replacement audio engine.
+- Draft PR #325 / `chatgpt-web/audio-seed-01-2026-10-02`: real FORGET / IGNORE / EMBRACE Deck JSON drives deterministic musical identities through existing Travel `cardSemanticVector()` + seed helpers.
+- Source/deterministic QA **34/34 PASS**; branch Chromium/WebAudio **33/33 PASS**.
+- Cloudflare publication `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a` · Pages SUCCESS.
+- Exact public Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/` · public Chromium/WebAudio **33/33 PASS on first attempt**.
+- Public proof `37045888652 / 110967091484`; artifact `11244059091`; digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`.
+- WORLD → ROAD preserves identity; speed changes density/subdivision more than BPM; Night/Rain/Psychedelic/Shadow are transforms.
+- No Suno / ElevenLabs / external audio API is required at runtime.
+- **Next gate: GEORG_AUDIO_SEED_LISTEN_01.** No merge, full Race telemetry integration or Live promotion.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

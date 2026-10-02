@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-10-02",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -127,8 +127,31 @@
         "a replacement asset registry",
         "automatic merge or Live promotion"
       ],
-      "note": "AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED by Georg. Current mix/ducking direction is an accepted calibration reference. Remaining work is curation plus later owner-specific adoption; PR #205 still contains unmerged P0 implementation/test files.",
-      "humanResult": "PASS"
+      "note": "AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED by Georg. AUDIO-SEED-01 is PUBLIC_VERIFIED on Draft PR #325 and awaits GEORG_AUDIO_SEED_LISTEN_01. Travel/Race/Combat/Boxel retain runtime ownership; no external generation service is required by the procedural candidate.",
+      "humanResult": "PASS",
+      "audioSeed01": {
+        "status": "PUBLIC_VERIFIED_HUMAN_LISTENING_PENDING",
+        "repository": "georg-doc/kayfabizarro",
+        "branch": "chatgpt-web/audio-seed-01-2026-10-02",
+        "draftPR": 325,
+        "implementationHead": "b566e272493864dc9bb0cd27f8e2d7574be061d0",
+        "publicProofSourceHead": "a9758734c7ec2d2311c88a2d313c293e02254f4c",
+        "publicationBranch": "cloudflare-live",
+        "publicationHead": "62c7124faadbd27dd96b667465e93351fe5a6c8a",
+        "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/",
+        "tests": {
+          "deterministicSource": "34/34 PASS",
+          "branchChromiumWebAudio": "33/33 PASS",
+          "publicChromiumWebAudio": "33/33 PASS"
+        },
+        "publicProof": {
+          "run": 37045888652,
+          "job": 110967091484,
+          "artifact": 11244059091,
+          "digest": "sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8"
+        },
+        "nextGate": "GEORG_AUDIO_SEED_LISTEN_01"
+      }
     },
     {
       "id": "claude-design-failure-recovery",

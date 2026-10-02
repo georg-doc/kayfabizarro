@@ -1,6 +1,6 @@
 # KFB Audio & Soundscape Baseline v1 · START HERE
 
-**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED  
+**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED · AUDIO-SEED-01 PUBLIC_VERIFIED / HUMAN PENDING  
 **Date:** 2026-09-24  
 **Owner:** existing WSA / KFB integration lead  
 **Executing lane:** Fresh Web + GitHub, GPT-5.6 Sol, Medium/High reasoning  
@@ -10,6 +10,22 @@
 **Runtime promotion:** NONE in this slice
 
 GitHub state overrides this document whenever a named source ref advances.
+
+
+## CURRENT FOLLOW-UP OVERRIDE · AUDIO-SEED-01 · 2026-10-02
+
+**Status:** PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Source:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
+**Implementation:** `b566e272493864dc9bb0cd27f8e2d7574be061d0`  
+**Public-proof source:** `a9758734c7ec2d2311c88a2d313c293e02254f4c`  
+**Publication:** `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a`  
+**Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
+
+AUDIO-SEED-01 is an additive deck-seeded procedural soundscape lab under this existing baseline. It reuses Travel `cardSemanticVector()` + deterministic seed helpers; no second Card analyzer or universal audio runtime is introduced.
+
+Evidence: deterministic/source **34/34 PASS** · branch Chromium/WebAudio **33/33 PASS** · public exact-route Chromium/WebAudio **33/33 PASS on attempt 1**. Public run/job `37045888652 / 110967091484`; artifact `11244059091`; digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`.
+
+**Exactly one next gate:** `GEORG_AUDIO_SEED_LISTEN_01` — judge FORGET / IGNORE / EMBRACE for pleasantness, distinction and identity continuity through WORLD → ROAD, speed, Night, Rain, Psychedelic and Shadow. No real Race-telemetry integration, wider instrument-bank expansion, merge or Live promotion before that decision.
 
 
 ## HUMAN LISTENING RESULT · PASS

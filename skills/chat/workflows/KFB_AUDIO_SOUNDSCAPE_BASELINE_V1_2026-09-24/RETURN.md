@@ -1,5 +1,23 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
+## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 · 2026-10-02
+
+**Result:** PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Repo / branch / PR:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
+**Implementation head:** `b566e272493864dc9bb0cd27f8e2d7574be061d0`  
+**Evidence head:** `6f9dc8089b12d438eca0a84c8664024de6b3b5aa`  
+**Public-proof source head:** `a9758734c7ec2d2311c88a2d313c293e02254f4c`  
+**Cloudflare publication:** `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a`  
+**Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
+
+Tests: deterministic/source **34/34 PASS**; branch Chromium/WebAudio **33/33 PASS** (run `37045038692`, job `110964247965`, artifact `11243804164`, digest `sha256:614a7b0311eaf75cb709f9bc4dbc65614f0b3c6deb3b56ea5ea96a2feef710a3`); public exact-route Chromium/WebAudio **33/33 PASS on first attempt** (run `37045888652`, job `110967091484`, artifact `11244059091`, digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`). Desktop + mobile screenshots are in the proof artifacts.
+
+Scope retained: real FORGET / IGNORE / EMBRACE Deck JSON; Travel semantic/seed donor; deterministic grammar/family/pitch/motif; WORLD/ROAD; speed density/subdivision; Night/Rain/Psychedelic/Shadow; one AudioContext; AUDIO-CAL voice focus. No Suno/ElevenLabs runtime dependency.
+
+Deferred: human sonic quality/fatigue; broader authentic instrument source bank; real Race telemetry; long-session fractal listening.
+
+**Exactly one next gate:** `GEORG_AUDIO_SEED_LISTEN_01`. No merge or Live promotion.
+
 **Date:** 2026-09-24  
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED  
 **Owner:** existing WSA / KFB integration lead  

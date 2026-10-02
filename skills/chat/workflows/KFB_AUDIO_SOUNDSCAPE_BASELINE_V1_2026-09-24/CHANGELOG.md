@@ -1,5 +1,18 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-02 · AUDIO-SEED-01 · Deck-seeded procedural soundscape
+
+- Draft PR #325 on `chatgpt-web/audio-seed-01-2026-10-02`; implementation `b566e272493864dc9bb0cd27f8e2d7574be061d0`.
+- Reuses existing Travel Card semantics/seed helpers; no second analyzer/audio owner.
+- Real FORGET / IGNORE / EMBRACE inputs, 56 cards each; deterministic identities `858680da / d0074ab4 / 058bdca1`.
+- WORLD → ROAD preserves identity; speed raises density/subdivision with max +7 BPM; Night/Rain/Psychedelic/Shadow are transforms.
+- No Suno/ElevenLabs/external API dependency in runtime.
+- **34/34** deterministic/source + **33/33** branch Chromium/WebAudio PASS.
+- `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a` Pages SUCCESS; exact Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/` passed public Chromium/WebAudio **33/33 on attempt 1**.
+- Public proof `37045888652 / 110967091484`; artifact `11244059091`; digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`.
+- Status: **PUBLIC_VERIFIED · HUMAN LISTENING PENDING**.
+- Next: `GEORG_AUDIO_SEED_LISTEN_01`; no merge or Live promotion.
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;
