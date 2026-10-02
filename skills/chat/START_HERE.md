@@ -1500,3 +1500,25 @@ Exactly one next gate:
 **PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**
 
 Rehome the proven owner; do not create a second presenter.
+
+
+## 2026-10-02 · CURRENT WORLDBUILDER FORM/ENVIRONMENT · BUILDING B3 PASS
+
+Canonical recovery:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b3/RECOVERY.md`
+
+Current branch:
+`chatgpt-web/wc1-procedural-building-b3-2026-10-02`
+
+Draft PR:
+#327
+
+B3 result:
+**STABLE_OWNER_REHOME_AND_WORLDBUILDER_CONSUMER_PASS**
+
+The missing stable r2 World Integration / WB2 owner block is now rehomed exactly from the authoritative export manifest (26/26 blob parity). The derived `huerth-b1` zone boots through the real stable WB2 consumer with the same Elastic V2 + `kfb-facade-rule-v1` chain.
+
+Exactly one next gate:
+**PROCEDURAL BUILDING B4 · REAL-WORLD DEFORMATION DESIGN MATRIX**
+
+Return to design. Do not expand infrastructure or invent a new random building grammar.
