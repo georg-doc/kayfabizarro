@@ -1,0 +1,342 @@
+{
+ "schema": "kfb.resident-lean-card/0.1",
+ "residentId": "officer-doppel-denk",
+ "identity": {
+  "workingName": {
+   "v": "Officer Doppel-Denk",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 header",
+   "status": "SOURCE",
+   "note": "Base-24 also spells 'Offica / Officer Doppeldenk'"
+  },
+  "displayName": {
+   "status": "OPEN",
+   "note": "final player-facing name open per skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §18"
+  },
+  "title": {
+   "status": "OPEN"
+  }
+ },
+ "body": {
+  "atlasRecipeId": {
+   "v": "toy-soldier",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 header vs skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #03/#08",
+   "status": "CONFLICT",
+   "note": "Profile uses toy-soldier; Base-24 lists Doppeldenk as actor open and Toy Soldier as a separate Resident"
+  },
+  "actorId": {
+   "v": "ToySoldier.glb",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §2",
+   "status": "CONFLICT",
+   "note": "see atlasRecipeId conflict"
+  },
+  "rigFamily": {
+   "v": "Rig_Medium",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §2",
+   "status": "SOURCE"
+  },
+  "props": {
+   "v": [
+    "ToySoldier_Rifle.gltf @ handslot.r",
+    "ToySoldier_Trumpet.gltf @ handslot.l",
+    "Present_Base.gltf",
+    "Present_UnwrappedBase.gltf"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §2",
+   "status": "SOURCE"
+  },
+  "defaultPose": {
+   "v": "Idle_B (rifle sits sideways: caveat)",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §2",
+   "status": "SOURCE"
+  }
+ },
+ "place": {
+  "habitat": {
+   "v": "checkpoint / desk / files / inspections",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #03",
+   "status": "CONFLICT",
+   "note": "profile instead: gift-box reveal + patrol route (skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §3-4)"
+  },
+  "home": {
+   "status": "OPEN"
+  },
+  "pois": {
+   "v": [
+    "patrol markers",
+    "royal POI"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §4, §7",
+   "status": "DESIGN"
+  }
+ },
+ "routine": {
+  "routineSeeds": {
+   "v": [
+    "emerge from present",
+    "patrol",
+    "investigate disorder candidate",
+    "admonish / inspect",
+    "resume route"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §4",
+   "status": "DESIGN"
+  },
+  "resumeBehaviour": {
+   "v": "returns to duty after humiliation; never generic idle",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §1, §4",
+   "status": "DESIGN"
+  }
+ },
+ "drives": {
+  "jungDrive": {
+   "v": "Ruler-shadow + Everyperson",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #03",
+   "status": "DESIGN"
+  },
+  "journeyFunction": {
+   "v": "Threshold Guardian",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §2",
+   "status": "DESIGN"
+  },
+  "motivations": {
+   "v": [
+    "duty / patrol",
+    "authority display",
+    "royal loyalty",
+    "recognition",
+    "order-making",
+    "status preservation"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §7",
+   "status": "DESIGN"
+  },
+  "desire": {
+   "v": "proof that his office matters",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §7 recognition",
+   "status": "DESIGN"
+  },
+  "blindSpot": {
+   "v": "overestimates his own legitimacy",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §1",
+   "status": "DESIGN"
+  },
+  "tragicomicContradiction": {
+   "v": "tiny authority interpreted as cosmic mandate; procedural confidence survives contradiction",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #03",
+   "status": "DESIGN"
+  },
+  "darkSecret": {
+   "status": "OPEN",
+   "note": "Georg / authoring"
+  },
+  "backstoryRef": {
+   "status": "OPEN",
+   "note": "Georg / authoring"
+  }
+ },
+ "mind": {
+  "personalityShortcut": {
+   "status": "OPEN",
+   "note": "Base-24 §7 shortcut not authored for him"
+  },
+  "epistemicLens": {
+   "v": "order / duty / authority",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §12",
+   "status": "DESIGN"
+  },
+  "attentionBias": {
+   "v": [
+    "possible_disorder",
+    "public_obstruction",
+    "litter",
+    "noise",
+    "unsafe_horseplay",
+    "improper_use",
+    "queue_or_line_violation",
+    "unattended_object",
+    "unauthorized_gathering",
+    "authority_opportunity",
+    "royal_interest",
+    "repeat_offender_memory"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §5",
+   "status": "DESIGN",
+   "note": "subjective classifier, not world truth"
+  },
+  "expectationTendencies": {
+   "v": "misapplied perception / false positives are part of the character",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §6",
+   "status": "DESIGN"
+  }
+ },
+ "cards": {
+  "signatureDeckRef": {
+   "v": "anti_rules_toolkit",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SIGNATURE_DECKS_2026-09-28.md@992ea989 §6",
+   "status": "DESIGN",
+   "note": "candidate, not assigned"
+  },
+  "deckLane": {
+   "v": [
+    "bureaucracy",
+    "censorship",
+    "doublespeak",
+    "official narratives"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #03",
+   "status": "DESIGN"
+  },
+  "stance": {
+   "status": "OPEN",
+   "note": "A misreads-as-law | B confiscate/destroy | C archivist/evidence locker (skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_SIGNATURE_DECKS_2026-09-28.md@992ea989 §6)"
+  },
+  "signatureCardRefs": {
+   "status": "OPEN"
+  },
+  "worldviewTags": {
+   "status": "OPEN"
+  },
+  "deckGoal": {
+   "status": "OPEN",
+   "note": "depends on stance"
+  },
+  "lovedCardRefs": {
+   "status": "OPEN"
+  },
+  "hatedCardRefs": {
+   "status": "OPEN"
+  }
+ },
+ "speech": {
+  "languageOwner": "ChatterBox + shared Triplet pool",
+  "signatureTripletRefs": {
+   "status": "OPEN",
+   "note": "pool not read in this recon"
+  },
+  "relationBias": {
+   "status": "OPEN"
+  },
+  "register": {
+   "v": [
+    "short concrete observation",
+    "officious interpretation",
+    "command or authority claim",
+    "leaves room for retort"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §12 preferred shape",
+   "status": "DESIGN",
+   "note": "tags only; DD §12 also lists illustrative lines marked 'not canon' which are deliberately NOT copied"
+  },
+  "fluffOlectTolerance": {
+   "status": "OPEN"
+  },
+  "thoughtStyle": {
+   "status": "OPEN"
+  }
+ },
+ "moves": {
+  "signatureMoves": {
+   "v": [
+    {
+     "clipRef": "Mixamo 'Walk with Briefcase' (priority candidate, not admitted)",
+     "use": "patrol march with shoulder rifle"
+    },
+    {
+     "clipRef": "Running_HoldingRifle / Walking_A / Walking_B",
+     "use": "comparison / fallback"
+    }
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §15",
+   "status": "DESIGN"
+  },
+  "reactionIntents": {
+   "v": [
+    "notice_disorder",
+    "inspect",
+    "halt_and_point",
+    "reprimand",
+    "request_compliance",
+    "invoke_royal_authority",
+    "confiscation_attempt",
+    "receive_retort",
+    "authority_deflated",
+    "recover_composure",
+    "write_off_as_warning",
+    "resume_patrol",
+    "rare_real_help"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §9",
+   "status": "DESIGN"
+  }
+ },
+ "culture": {
+  "giftResponse": {
+   "v": "gift-box is his entrance state (reveal once per world)",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §3, §14",
+   "status": "DESIGN"
+  },
+  "brickFishResponse": {
+   "v": "interrupts Brick Fish exchanges as unsafe_horseplay",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §8.1",
+   "status": "DESIGN"
+  },
+  "danceResponse": {
+   "v": "may read dancing in the wrong place as noise / unauthorized_gathering",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §5",
+   "status": "DESIGN"
+  },
+  "fightResponse": {
+   "v": "not a combat guard by default",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §1",
+   "status": "DESIGN"
+  }
+ },
+ "relations": {
+  "v": [
+   {
+    "residentId": "king-kayfabian",
+    "tone": "willing subordinate, loyalty without intimacy"
+   },
+   {
+    "residentId": "*",
+    "tone": "low fear, low obedience, high retort opportunity"
+   }
+  ],
+  "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §11",
+  "status": "DESIGN"
+ },
+ "memory": {
+  "owner": "KFB Town Resident Social Memory",
+  "salienceKeep": {
+   "v": [
+    "repeated authority challenges",
+    "unexpected compliance",
+    "Brick Fish banter thread",
+    "false-violation baiting",
+    "King praise/rebuke",
+    "recurring nuisance object provenance"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §13",
+   "status": "DESIGN"
+  },
+  "salienceSkip": {
+   "v": [
+    "every litter inspection",
+    "every plant admonition",
+    "every patrol marker",
+    "every ignored command"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/OFFICER_DOPPEL_DENK_RESIDENT_PROFILE_2026-09-28.md@992ea989 §13",
+   "status": "DESIGN"
+  },
+  "memorySeeds": {
+   "status": "OPEN"
+  }
+ },
+ "openQuestions": [
+  "Actor: toy-soldier (profile) or separate actor (Base-24)?",
+  "Deck stance A/B/C for Anti-Rules.",
+  "Dark secret and tragicomic backstory (Georg).",
+  "Final player-facing name."
+ ]
+}

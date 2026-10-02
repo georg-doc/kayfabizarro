@@ -1,0 +1,234 @@
+{
+ "schema": "kfb.resident-lean-card/0.1",
+ "residentId": "lorekeeper",
+ "identity": {
+  "displayName": {
+   "status": "OPEN",
+   "note": "player-facing name not decided"
+  },
+  "workingName": {
+   "v": "Lorekeeper",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02",
+   "status": "SOURCE"
+  },
+  "title": {
+   "status": "OPEN"
+  }
+ },
+ "body": {
+  "atlasRecipeId": {
+   "v": "lorekeeper",
+   "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/qa/ensemble-browser.mjs@7c6522fb (PR #310)",
+   "status": "SOURCE"
+  },
+  "actorId": {
+   "v": "lorekeeper",
+   "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/qa/ensemble-browser.mjs@7c6522fb (PR #310)",
+   "status": "SOURCE"
+  },
+  "rigFamily": {
+   "v": "Rig_Medium",
+   "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/qa/ensemble-browser.mjs@7c6522fb (PR #310)",
+   "status": "SOURCE"
+  },
+  "defaultPose": {
+   "v": "Idle_A",
+   "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/qa/ensemble-browser.mjs@7c6522fb (PR #310)",
+   "status": "SOURCE"
+  },
+  "props": {
+   "v": [
+    "lectern",
+    "tome"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02 habitat",
+   "status": "DESIGN"
+  }
+ },
+ "place": {
+  "habitat": {
+   "v": "lectern / tome / archive",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02",
+   "status": "DESIGN"
+  },
+  "home": {
+   "status": "OPEN"
+  },
+  "pois": {
+   "status": "OPEN"
+  }
+ },
+ "routine": {
+  "routineSeeds": {
+   "v": [
+    "archive",
+    "record"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02",
+   "status": "DESIGN"
+  },
+  "resumeBehaviour": {
+   "status": "OPEN"
+  }
+ },
+ "drives": {
+  "jungDrive": {
+   "v": "Sage + Caregiver",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02",
+   "status": "DESIGN"
+  },
+  "journeyFunction": {
+   "v": "Mentor",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §2 + §4 #02",
+   "status": "DESIGN"
+  },
+  "motivations": {
+   "status": "OPEN"
+  },
+  "desire": {
+   "status": "OPEN"
+  },
+  "blindSpot": {
+   "v": "mistakes documentation for understanding",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §7",
+   "status": "DESIGN"
+  },
+  "tragicomicContradiction": {
+   "v": "records everything, but archived knowledge always lags lived reality",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02 social friction engine",
+   "status": "DESIGN"
+  },
+  "darkSecret": {
+   "status": "OPEN",
+   "note": "Georg / authoring"
+  },
+  "backstoryRef": {
+   "status": "OPEN",
+   "note": "Georg / authoring"
+  }
+ },
+ "mind": {
+  "personalityShortcut": {
+   "v": {
+    "socialMask": "quiet archivist",
+    "cognitiveStyle": "evidence-first pattern keeper",
+    "comicFailureMode": "mistakes documentation for understanding"
+   },
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §7",
+   "status": "DESIGN"
+  },
+  "epistemicLens": {
+   "v": "archive / evidence",
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02 deck lane",
+   "status": "DESIGN",
+   "note": "see RESIDENT_EPISTEMIC_CULTURE_2026-09-29.md (not read in this recon)"
+  },
+  "attentionBias": {
+   "status": "OPEN"
+  },
+  "expectationTendencies": {
+   "status": "OPEN"
+  }
+ },
+ "cards": {
+  "deckLane": {
+   "v": [
+    "evidence",
+    "history",
+    "epistemology",
+    "maps",
+    "memory"
+   ],
+   "src": "skills/chat/workflows/KFB_TOWN_RESIDENT_SOCIAL_MEMORY_2026-09-28/RESIDENT_BASE24_ARCHETYPE_MAP_2026-09-29.md@992ea989 §4 #02",
+   "status": "DESIGN"
+  },
+  "signatureDeckRef": {
+   "status": "OPEN",
+   "note": "no deck assigned in any source"
+  },
+  "stance": {
+   "status": "OPEN"
+  },
+  "signatureCardRefs": {
+   "status": "OPEN",
+   "note": "3-7 per Signature Decks §11"
+  },
+  "worldviewTags": {
+   "status": "OPEN"
+  },
+  "deckGoal": {
+   "status": "OPEN"
+  },
+  "lovedCardRefs": {
+   "status": "OPEN"
+  },
+  "hatedCardRefs": {
+   "status": "OPEN"
+  }
+ },
+ "speech": {
+  "languageOwner": "ChatterBox + shared Triplet pool",
+  "signatureTripletRefs": {
+   "v": [
+    "lorekeeper.provenance.02"
+   ],
+   "src": "skills/chat/workflows/RESIDENT_CHAT_ENSEMBLE_01B_2026-10-01/qa/ensemble-browser.mjs@7c6522fb (PR #310)",
+   "status": "SOURCE",
+   "note": "id seen in QA expectations; pool file itself not read in this recon"
+  },
+  "relationBias": {
+   "status": "OPEN"
+  },
+  "register": {
+   "status": "OPEN"
+  },
+  "fluffOlectTolerance": {
+   "status": "OPEN"
+  },
+  "thoughtStyle": {
+   "status": "OPEN"
+  }
+ },
+ "moves": {
+  "signatureMoves": {
+   "status": "OPEN",
+   "note": "Motion Library refs to be chosen"
+  },
+  "reactionIntents": {
+   "status": "OPEN"
+  }
+ },
+ "culture": {
+  "giftResponse": {
+   "status": "OPEN"
+  },
+  "brickFishResponse": {
+   "status": "OPEN"
+  },
+  "danceResponse": {
+   "status": "OPEN"
+  },
+  "fightResponse": {
+   "status": "OPEN"
+  }
+ },
+ "relations": {
+  "status": "OPEN"
+ },
+ "memory": {
+  "owner": "KFB Town Resident Social Memory",
+  "salienceKeep": {
+   "status": "OPEN"
+  },
+  "salienceSkip": {
+   "status": "OPEN"
+  },
+  "memorySeeds": {
+   "status": "OPEN"
+  }
+ },
+ "openQuestions": [
+  "Which Signature Deck (lane known: evidence/history/epistemology/maps/memory)?",
+  "Dark secret and tragicomic backstory (Georg)."
+ ]
+}
