@@ -1,0 +1,36 @@
+name: WC1 Environment Family P1
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wc1-procedural-props-local-proof-2026-10-01
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1-source-isolation.html'
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/environment-family-p1.mjs'
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/ENVIRONMENT_FAMILY_P1_ROCKS_BUSHES_SPEC_2026-10-02.md'
+      - '.github/workflows/wc1-environment-family-p1.yml'
+  workflow_dispatch:
+
+jobs:
+  source-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static QA syntax
+        run: node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/environment-family-p1.mjs
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Direct-file source isolation
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/qa/environment-family-p1.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-environment-family-p1-evidence
+          path: environment-family-p1-evidence/
+          if-no-files-found: error
