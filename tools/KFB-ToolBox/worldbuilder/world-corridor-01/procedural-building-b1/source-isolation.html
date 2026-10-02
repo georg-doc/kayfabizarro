@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Building B1 · Golden Family Siblings</title>
+<style>
+:root{color-scheme:dark}
+html,body{margin:0;height:100%;overflow:hidden;background:#191812;color:#f1ead9;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+canvas{display:block;width:100%;height:100%}
+.panel{position:fixed;z-index:3;background:#211f18e8;border:1px solid #645c4c;border-radius:10px;box-shadow:0 8px 28px #0007}
+#info{left:12px;top:12px;max-width:720px;padding:10px 12px}
+#meta{right:12px;top:12px;max-width:470px;padding:10px 12px}
+#controls{left:12px;right:12px;bottom:12px;padding:9px 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+select{background:#302c22;color:#f1ead9;border:1px solid #766b56;border-radius:7px;padding:7px 9px}
+.legend{position:fixed;left:0;right:0;bottom:58px;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);pointer-events:none}
+.legend div{text-align:center;font:700 11px system-ui,sans-serif;text-shadow:0 1px 3px #000;padding:5px}
+.ok{color:#8be0ad}.warn{color:#f3c66a}.muted{color:#a59a83}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="info" class="panel">
+  <b>PROCEDURAL BUILDING B1 · THREE-LANE GOLDEN SIBLINGS</b><br>
+  Real topology donor → one source-bounded synthetic sibling → real envelope donor.<br>
+  All three use the accepted Elastic V2 owner. No topology mutation, no new roof grammar, no material decision.
+</div>
+<div id="meta" class="panel"><span class="warn">loading…</span></div>
+<div class="legend">
+  <div>REAL TOPOLOGY DONOR · V2</div>
+  <div>SOURCE-BOUNDED SIBLING · V2</div>
+  <div>REAL ENVELOPE DONOR · V2</div>
+</div>
+<div id="controls" class="panel">
+  <span>Lane</span>
+  <select id="pick"></select>
+  <span id="status" class="muted">booting…</span>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import {
+  B1_SOURCE,
+  B1_LANES,
+  loadB1Corpus,
+  siblingFacts
+} from './building-family-b1.mjs';
+import { buildAcceptedV2 } from '../procedural-building-b0/building-family-b0.mjs';
+
+const $=s=>document.querySelector(s);
+const pick=$('#pick'),status=$('#status'),meta=$('#meta');
+
+for(const [i,l] of B1_LANES.entries()){
+  const o=document.createElement('option');
+  o.value=i;
+  o.textContent=l.id+' · '+l.topologyId.replace('way/','')+' → '+l.envelopeId.replace('way/','');
+  pick.appendChild(o);
+}
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#29271f');
+scene.fog=new THREE.Fog('#29271f',24,42);
+
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.05,100);
+camera.position.set(0,7.2,24);
+camera.lookAt(0,2.4,0);
+
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.04;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+document.body.prepend(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight('#fff5df','#57544a',2.25));
+const sun=new THREE.DirectionalLight('#ffe3bb',3.1);
+sun.position.set(7,11,8);
+sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024);
+sun.shadow.camera.left=-18;sun.shadow.camera.right=18;sun.shadow.camera.top=13;sun.shadow.camera.bottom=-9;
+scene.add(sun);
+
+const ground=new THREE.Mesh(
+  new THREE.PlaneGeometry(27,10),
+  new THREE.MeshStandardMaterial({color:'#686153',roughness:.98})
+);
+ground.rotation.x=-Math.PI/2;
+ground.receiveShadow=true;
+scene.add(ground);
+
+const mats={
+  topology:new THREE.MeshStandardMaterial({color:'#aaa699',roughness:.92}),
+  sibling:new THREE.MeshStandardMaterial({color:'#d7a65c',roughness:.9}),
+  envelope:new THREE.MeshStandardMaterial({color:'#7fa0ae',roughness:.92}),
+  roof:new THREE.MeshStandardMaterial({color:'#765f58',roughness:.95}),
+  pedestal:new THREE.MeshStandardMaterial({color:'#403a31',roughness:.98})
+};
+
+const stageXs=[-7,0,7];
+let stageGroups=[];
+let corpus=null;
+
+function clearStages(){
+  for(const g of stageGroups)scene.remove(g);
+  stageGroups=[];
+}
+function newStage(x){
+  const g=new THREE.Group();g.position.x=x;scene.add(g);stageGroups.push(g);
+  const p=new THREE.Mesh(new THREE.CylinderGeometry(2.5,2.65,.12,32),mats.pedestal);
+  p.position.y=.03;p.receiveShadow=true;g.add(p);
+  return g;
+}
+function addBuild(stage,build,bodyMat){
+  const inner=new THREE.Group();stage.add(inner);
+  const body=new THREE.Mesh(build.body,bodyMat);body.castShadow=body.receiveShadow=true;inner.add(body);
+  const roof=new THREE.Mesh(build.roof,mats.roof);roof.castShadow=roof.receiveShadow=true;inner.add(roof);
+  return inner;
+}
+function localBounds(group){
+  group.position.set(0,0,0);group.scale.set(1,1,1);
+  group.updateWorldMatrix(true,true);
+  const world=new THREE.Box3().setFromObject(group);
+  const inv=new THREE.Matrix4().copy(group.parent.matrixWorld).invert();
+  return new THREE.Box3(
+    world.min.clone().applyMatrix4(inv),
+    world.max.clone().applyMatrix4(inv)
+  );
+}
+function place(group,scale,b){
+  const c=b.getCenter(new THREE.Vector3());
+  group.scale.setScalar(scale);
+  group.position.set(-c.x*scale,-b.min.y*scale,-c.z*scale);
+  group.updateWorldMatrix(true,true);
+}
+function normalizeTriplet(groups){
+  const bs=groups.map(localBounds);
+  let max=0;
+  for(const b of bs){
+    const s=b.getSize(new THREE.Vector3());
+    max=Math.max(max,s.x,s.y,s.z);
+  }
+  const scale=4.3/Math.max(max,.001);
+  groups.forEach((g,i)=>place(g,scale,bs[i]));
+  return scale;
+}
+function center(group){
+  group.updateWorldMatrix(true,true);
+  const c=new THREE.Box3().setFromObject(group).getCenter(new THREE.Vector3());
+  return [c.x,c.y,c.z];
+}
+
+async function show(i){
+  clearStages();
+  status.textContent='building lane…';
+  const entry=corpus.lanes[i];
+
+  const topologyBuild=buildAcceptedV2(entry.topology,corpus.anchor);
+  const siblingBuild=buildAcceptedV2(entry.sibling,corpus.anchor);
+  const envelopeBuild=buildAcceptedV2(entry.envelope,corpus.anchor);
+
+  const a=addBuild(newStage(stageXs[0]),topologyBuild,mats.topology);
+  const b=addBuild(newStage(stageXs[1]),siblingBuild,mats.sibling);
+  const c=addBuild(newStage(stageXs[2]),envelopeBuild,mats.envelope);
+  const displayScale=normalizeTriplet([a,b,c]);
+
+  const facts=siblingFacts(entry,corpus.anchor);
+  const state={
+    ready:true,
+    sourcePin:B1_SOURCE.elastic.head,
+    corpusCount:B1_SOURCE.corpusCount,
+    lane:entry.lane,
+    facts,
+    siblingId:entry.sibling.id,
+    expectedStageX:[...stageXs],
+    stageCenters:{topology:center(a),sibling:center(b),envelope:center(c)},
+    displayScale,
+    facadeRuleId:B1_SOURCE.facade.id,
+    facadeRendered:false,
+    materialDecision:false,
+    rendererCount:1,
+    worldIntegrated:false
+  };
+  window.__KFB_BUILDING_B1=state;
+
+  const areaErr=Math.abs(facts.targetAreaErrorPct);
+  const aspectErr=Math.abs(facts.targetAspectErrorPct);
+  meta.innerHTML=
+    '<b>'+entry.lane.id+'</b><br>'+
+    'topology: '+entry.topology.id+' · '+facts.topology.corners+' corners · '+facts.topology.areaM2.toFixed(2)+' m²<br>'+
+    'sibling: '+entry.sibling.id+' · '+facts.sibling.areaM2.toFixed(2)+' m² · '+facts.sibling.heightM.toFixed(2)+' m<br>'+
+    'envelope: '+entry.envelope.id+' · '+facts.envelope.areaM2.toFixed(2)+' m²<br>'+
+    'area error: <span class="'+(areaErr<.1?'ok':'warn')+'">'+facts.targetAreaErrorPct.toFixed(4)+'%</span><br>'+
+    'aspect error: <span class="'+(aspectErr<.1?'ok':'warn')+'">'+facts.targetAspectErrorPct.toFixed(4)+'%</span><br>'+
+    'topology preserved: <span class="'+(facts.topologyPreserved?'ok':'warn')+'">'+facts.topologyPreserved+'</span><br>'+
+    'roof/height match: '+facts.roofMatch+' / '+facts.heightMatch+' · base anchored: '+facts.baseAnchored;
+
+  status.textContent='ready · '+entry.lane.id;
+  window.dispatchEvent(new CustomEvent('kfbBuildingB1Ready',{detail:state}));
+  return state;
+}
+
+window.__KFB_BUILDING_B1_API={
+  lanes:B1_LANES,
+  async show(i){return await show(Number(i));}
+};
+pick.onchange=()=>show(Number(pick.value));
+
+function render(){renderer.render(scene,camera);requestAnimationFrame(render);}
+render();
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
+(async()=>{
+  try{
+    corpus=await loadB1Corpus();
+    await show(0);
+  }catch(err){
+    console.error(err);
+    status.textContent='ERROR · '+String(err?.message||err);
+    window.__KFB_BUILDING_B1={ready:false,error:String(err?.stack||err)};
+  }
+})();
+</script>
+</body>
+</html>
