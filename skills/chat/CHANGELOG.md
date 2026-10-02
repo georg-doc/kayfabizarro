@@ -2175,3 +2175,18 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Recovery finding: active r2 World Integration presenter remains in the Session Cut; the router-referenced stable `world-integration-01/` path is absent on the current branch.
 - Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/RECOVERY.md`.
 - Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**.
+
+
+## 2026-10-02 · WC1 Procedural Building B3 · stable owner rehome + real WB2 PASS
+
+- Rehomed the authoritative WORLD-INTEGRATION-01 r2 `requiredToStart` export set to its manifest target paths on Draft PR #327.
+- Rehome commit `3afc04245a9120e4fb7fe9284f32ec62c0eae896`: **26/26 exact Git-blob parity**, no owner behavior change.
+- Stable paths now exist for `world-integration-01`, `wb2-design-01`, `wb2-terrain-sculpt-01`, edit-layer and shared `wd1-*`/fixture files.
+- Added derived `fixtures/huerth-b1-siblings-v0.json`: original 700-building Hürth fixture with exactly three proven B1 donor records replaced; geography/roads/context otherwise unchanged.
+- Added additive stable world profile `huerth-b1`; no presenter/facade rewrite.
+- Real stable WB2 consumer test at `WORLD_INTEGRATION_01_SOURCE.html?world=huerth-b1` passed.
+- Tested head `8bcfa5853d908a2ed497ce63837879a14c967d86`; run/job `37051696896 / 110986394871`; artifact `11246857239`; digest `sha256:c44fae26421fd849e012f3a60ac932feafb312ee333391762b115f69bd91b9c0`.
+- Real state: 700 buildings, 164 roads, 700 support records, FACADE_RULE v1, 6,672 windows, 434 doors, one renderer, original terrain/edit owners, all three B1 sibling ids present, old donor ids absent, 0 QA problems.
+- Screenshot classified **boot/consumer evidence only**, not visual-style acceptance.
+- Canonical recovery: `tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b3/RECOVERY.md`.
+- Exactly one next FORM/ENVIRONMENT gate: **PROCEDURAL BUILDING B4 · REAL-WORLD DEFORMATION DESIGN MATRIX**.
