@@ -12,6 +12,7 @@
      rotation, so the road set is COMPLETE: every hex network is buildable. Rivers ship 12 (no
      single-edge source), coast tiles carry a sand beach on some edges and water on others. */
 import * as THREE from 'three';
+import { compareVerticalEdges } from './hex-levels.mjs';
 
 export function hexMetrics(size) {
   const W = size[0];                 // flat-to-flat, along x
@@ -283,6 +284,15 @@ export function auditTileFit(list, opts = {}) {
       const theirs = n ? (n.open >> ((d + 3) % 6)) & 1 : 0;
       if (mine && !theirs && !outside(t.col, t.row, d)) bad.push({ cell: [t.col, t.row], a: t.a, dir: d, why: 'offen ins Leere' });
       else if (!mine && theirs) bad.push({ cell: [t.col, t.row], a: t.a, dir: d, why: 'Nachbar offen, hier zu' });
+      // Additive height guard: legacy flat-only calls are unchanged. Catalog consumers
+      // pass verticalTopology/topology + rotTurns/level, or opt into requireVertical.
+      if (n && (opts.requireVertical || t.verticalTopology || n.verticalTopology)) {
+        const vertical = compareVerticalEdges(t, n, d, {
+          transition: opts.transitionFor?.(t, n, d),
+        });
+        if (!vertical.safeToPlace) bad.push({ cell: [t.col, t.row], a: t.a, dir: d,
+          why: 'Höhenanschluss nicht freigegeben', vertical });
+      }
     }
   }
   return { checked: list.length * 6, bad, clean: bad.length === 0 };

@@ -20977,6 +20977,47 @@
           ],
           "symmetry": 1,
           "rotationLocked": false
+        },
+        "verticalTopology": {
+          "schema": "kfb.hex-vertical-topology/0.1-candidate",
+          "units": "hex-native",
+          "frame": "three.js-y-up",
+          "tileFlatToFlat": 2,
+          "edgeDeckY": [
+            1,
+            1,
+            0.55,
+            0.1,
+            0.55,
+            1
+          ],
+          "levelLow": 0.1,
+          "levelHigh": 1,
+          "slopeAxisLowEdge": 3,
+          "centerDeckY": 1,
+          "source": {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+            "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/BLENDER_MEASUREMENTS.json",
+            "blobSha": "0236b4e1594089beb5fec0e29c96fdbda7e23af6",
+            "asset": {
+              "repo": "georg-doc/kayfabizarro",
+              "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+              "blobSha": "08f88dc13291f32fb60cbdea94695fce9e482cd1"
+            },
+            "measurementKey": "hex|hex_grass_sloped_high"
+          },
+          "confidence": "MEASURED_BLENDER_MIDPOINTS",
+          "sampling": {
+            "radius": 0.9,
+            "method": "downward-ray",
+            "coverage": "six-inset-midpoints-and-centre"
+          },
+          "fullEdgeProfilesMeasured": false,
+          "rotationalSymmetry": 6,
+          "admission": "PREPARE",
+          "contractStatus": "PASS_ADDITIVE_DATA",
+          "reason": "Inset midpoint heights identify level conflicts but do not prove full-edge contact."
         }
       },
       {
@@ -21033,6 +21074,47 @@
           ],
           "symmetry": 1,
           "rotationLocked": false
+        },
+        "verticalTopology": {
+          "schema": "kfb.hex-vertical-topology/0.1-candidate",
+          "units": "hex-native",
+          "frame": "three.js-y-up",
+          "tileFlatToFlat": 2,
+          "edgeDeckY": [
+            0.5,
+            0.5,
+            0.275,
+            0.05,
+            0.275,
+            0.5
+          ],
+          "levelLow": 0.05,
+          "levelHigh": 0.5,
+          "slopeAxisLowEdge": 3,
+          "centerDeckY": 0.5,
+          "source": {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+            "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/BLENDER_MEASUREMENTS.json",
+            "blobSha": "0236b4e1594089beb5fec0e29c96fdbda7e23af6",
+            "asset": {
+              "repo": "georg-doc/kayfabizarro",
+              "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+              "blobSha": "0f6ce1c91a490b6ea4c3a8c8eb3d7972cbcd2b92"
+            },
+            "measurementKey": "hex|hex_grass_sloped_low"
+          },
+          "confidence": "MEASURED_BLENDER_MIDPOINTS",
+          "sampling": {
+            "radius": 0.9,
+            "method": "downward-ray",
+            "coverage": "six-inset-midpoints-and-centre"
+          },
+          "fullEdgeProfilesMeasured": false,
+          "rotationalSymmetry": 6,
+          "admission": "PREPARE",
+          "contractStatus": "PASS_ADDITIVE_DATA",
+          "reason": "Inset midpoint heights identify level conflicts but do not prove full-edge contact."
         }
       },
       {
@@ -23670,6 +23752,47 @@
           ],
           "symmetry": 3,
           "rotationLocked": true
+        },
+        "verticalTopology": {
+          "schema": "kfb.hex-vertical-topology/0.1-candidate",
+          "units": "hex-native",
+          "frame": "three.js-y-up",
+          "tileFlatToFlat": 2,
+          "edgeDeckY": [
+            0.94,
+            1,
+            0.55,
+            0.05,
+            0.55,
+            1
+          ],
+          "levelLow": 0.05,
+          "levelHigh": 1,
+          "slopeAxisLowEdge": 3,
+          "centerDeckY": 0.683,
+          "source": {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+            "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/BLENDER_MEASUREMENTS.json",
+            "blobSha": "0236b4e1594089beb5fec0e29c96fdbda7e23af6",
+            "asset": {
+              "repo": "georg-doc/kayfabizarro",
+              "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+              "blobSha": "b4bcda39f29a7c375bce49069e713626b6fd8b21"
+            },
+            "measurementKey": "hex|hex_road_A_sloped_high"
+          },
+          "confidence": "MEASURED_BLENDER_MIDPOINTS",
+          "sampling": {
+            "radius": 0.9,
+            "method": "downward-ray",
+            "coverage": "six-inset-midpoints-and-centre"
+          },
+          "fullEdgeProfilesMeasured": false,
+          "rotationalSymmetry": 6,
+          "admission": "PREPARE",
+          "contractStatus": "PASS_ADDITIVE_DATA",
+          "reason": "Inset midpoint heights identify level conflicts but do not prove full-edge contact."
         }
       },
       {
@@ -23726,6 +23849,47 @@
           ],
           "symmetry": 3,
           "rotationLocked": true
+        },
+        "verticalTopology": {
+          "schema": "kfb.hex-vertical-topology/0.1-candidate",
+          "units": "hex-native",
+          "frame": "three.js-y-up",
+          "tileFlatToFlat": 2,
+          "edgeDeckY": [
+            0.45,
+            0.5,
+            0.275,
+            0,
+            0.275,
+            0.5
+          ],
+          "levelLow": 0,
+          "levelHigh": 0.5,
+          "slopeAxisLowEdge": 3,
+          "centerDeckY": 0.337,
+          "source": {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+            "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/BLENDER_MEASUREMENTS.json",
+            "blobSha": "0236b4e1594089beb5fec0e29c96fdbda7e23af6",
+            "asset": {
+              "repo": "georg-doc/kayfabizarro",
+              "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+              "blobSha": "0a0cbf853838ec15ee841380a10bf912a3179806"
+            },
+            "measurementKey": "hex|hex_road_A_sloped_low"
+          },
+          "confidence": "MEASURED_BLENDER_MIDPOINTS",
+          "sampling": {
+            "radius": 0.9,
+            "method": "downward-ray",
+            "coverage": "six-inset-midpoints-and-centre"
+          },
+          "fullEdgeProfilesMeasured": false,
+          "rotationalSymmetry": 6,
+          "admission": "PREPARE",
+          "contractStatus": "PASS_ADDITIVE_DATA",
+          "reason": "Inset midpoint heights identify level conflicts but do not prove full-edge contact."
         }
       },
       {
@@ -34232,6 +34396,19 @@
           ]
         }
       }
+    },
+    "verticalContract": {
+      "schema": "kfb.hex-vertical-topology/0.1-candidate",
+      "status": "CANDIDATE",
+      "scaleDecision": "A_LOGICAL_HEX",
+      "tolerance": 0.002,
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "commit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+        "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/BLENDER_MEASUREMENTS.json",
+        "blobSha": "0236b4e1594089beb5fec0e29c96fdbda7e23af6"
+      },
+      "policy": "Height compatibility is additional to edge classes; missing/full-edge-unproven data never grants placement."
     }
   }
 }

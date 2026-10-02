@@ -1,0 +1,43 @@
+{
+  "schema": "kfb.hex-level-seam-report/0.1-candidate",
+  "scaleDecision": "A_LOGICAL_HEX",
+  "contractStatus": "PASS_ADDITIVE_DATA",
+  "productionAdmission": "PREPARE_FULL_EDGE_BROWSER_CHECK",
+  "seams": [
+    {
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        1,
+        0
+      ],
+      "dir": 0,
+      "classA": "s",
+      "classB": "s",
+      "classMatch": true,
+      "deckStepAlongEdge": [
+        0.199,
+        0.094,
+        0.09,
+        0.004,
+        0.05
+      ],
+      "maxStep": 0.199,
+      "units": "hex-native",
+      "source": {
+        "repo": "georg-doc/kayfabizarro",
+        "commit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+        "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/BLENDER_RETURN/SCENELET_RECIPE_2CELL.json"
+      },
+      "status": "TRANSITION_REQUIRED",
+      "safeToTraverse": false,
+      "centreStep": 0.09,
+      "recommendation": "MEASURED_TRANSITION_WITH_COLLISION_SURFACE",
+      "treatment": "One local transition fitted to the five measured gaps. A visual skirt alone does not close the traversal step. No global tile shift.",
+      "geometryChanged": false,
+      "evidenceScope": "five seam probes, 0.04 inside either tile; not a full continuous edge proof"
+    }
+  ]
+}
