@@ -739,3 +739,29 @@ the active r2 presenter has not yet been rehomed to the stable WorldBuilder path
 
 Next gate:
 **PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**.
+
+
+## 2026-10-02 · Procedural Building B3 COMPLETE
+
+Canonical recovery:
+`procedural-building-b3/RECOVERY.md`
+
+B3 is **STABLE_OWNER_REHOME_AND_WORLDBUILDER_CONSUMER_PASS** on Draft PR #327.
+
+Proven:
+- 26/26 byte-identical required r2 export files rehomed;
+- stable WB2 / World Integration / terrain-sculpt / edit owners now exist;
+- derived `huerth-b1` zone boots in the real stable WorldBuilder;
+- B1 siblings retain real Elastic V2 + FACADE_RULE v1 output.
+
+Tested head:
+`8bcfa5853d908a2ed497ce63837879a14c967d86`
+
+Evidence:
+`11246857239`
+`sha256:c44fae26421fd849e012f3a60ac932feafb312ee333391762b115f69bd91b9c0`
+
+Current next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B4 · REAL-WORLD DEFORMATION DESIGN MATRIX**.
+
+Material/Clay remains separate.
