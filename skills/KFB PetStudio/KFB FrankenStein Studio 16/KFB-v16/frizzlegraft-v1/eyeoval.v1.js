@@ -34,57 +34,96 @@ export const FIELDS = [
 const DEG = Math.PI / 180;
 const num = (v, d) => (typeof v === 'number' && isFinite(v) ? v : d);
 
-/** Legt Verzerrung und Neigung auf ein gebautes Rig. Rückgabe ist ein Bericht, keine Behauptung. */
+function rotateXY(v, rx, ry) {
+  const cx=Math.cos(rx), sx=Math.sin(rx), cy=Math.cos(ry), sy=Math.sin(ry);
+  const x1=v[0], y1=v[1]*cx-v[2]*sx, z1=v[1]*sx+v[2]*cx;
+  return [x1*cy+z1*sy, y1, -x1*sy+z1*cy];
+}
+function seatRootForSample(g, v, axes, pupilRadius) {
+  const [ax,ay,az]=axes;
+  const A=(g[0]*g[0])/(ax*ax)+(g[1]*g[1])/(ay*ay)+(g[2]*g[2])/(az*az);
+  const B=(g[0]*v[0]*pupilRadius)/(ax*ax)+(g[1]*v[1]*pupilRadius)/(ay*ay)+(g[2]*v[2]*pupilRadius)/(az*az);
+  const C=(v[0]*v[0]*pupilRadius*pupilRadius)/(ax*ax)+(v[1]*v[1]*pupilRadius*pupilRadius)/(ay*ay)+(v[2]*v[2]*pupilRadius*pupilRadius)/(az*az);
+  const disc=Math.max(0,B*B-A*(C-1));
+  return A>1e-12 ? (-B+Math.sqrt(disc))/A : 0;
+}
+
+/** Pure numeric helper: translation along gaze that keeps sampled pupil-cap points outside the ellipsoid. */
+export function pupilSeatDelta({ R, w=1, h=1, d=1, rx=0, ry=0, cap=0.35, clearance=0.006 }={}) {
+  R=Math.max(0,num(R,0)); w=Math.max(.001,num(w,1)); h=Math.max(.001,num(h,1)); d=Math.max(.001,num(d,1));
+  if(!R)return {delta:0,dir:[0,0,1],samples:0};
+  const g=rotateXY([0,0,1],rx,ry), axes=[R*w,R*h,R*d], pupilRadius=R*1.004;
+  const dirs=[g];
+  for(const theta of [cap*.5,cap]){
+    const st=Math.sin(theta),ct=Math.cos(theta);
+    for(let i=0;i<12;i++){
+      const phi=i*Math.PI/6;
+      dirs.push(rotateXY([st*Math.cos(phi),st*Math.sin(phi),ct],rx,ry));
+    }
+  }
+  let delta=-Infinity;
+  for(const v of dirs) delta=Math.max(delta,seatRootForSample(g,v,axes,pupilRadius));
+  delta += R*Math.max(0,num(clearance,.006));
+  return {delta,dir:g,samples:dirs.length};
+}
+
+/** Re-seat pupils after gaze rotation. Size remains independent; only the pivot position changes. */
+export function seatPupils(rig,p) {
+  if(!rig||!Array.isArray(rig.eyes)||!rig.eyes.length)return {status:'KEIN_RIG'};
+  const q={...DEFAULTS,...(p||{})},R=num(rig._R,0),cap=num(rig._puAng,.35),rows=[];
+  for(const e of rig.eyes){
+    if(!e?._pivot?.position)continue;
+    if(e._pivot.scale)e._pivot.scale.set(1,1,1);
+    const rx=num(e._pivot.rotation?.x,0),ry=num(e._pivot.rotation?.y,0);
+    const seat=pupilSeatDelta({R,w:q.w,h:q.h,d:q.d,rx,ry,cap});
+    e._pivot.position.set(seat.dir[0]*seat.delta,seat.dir[1]*seat.delta,seat.dir[2]*seat.delta);
+    rows.push({sx:e._sx,delta:seat.delta,dir:seat.dir,samples:seat.samples});
+  }
+  return {status:'OK',rows,pupilScaleIndependent:true};
+}
+
+/** Legt Verzerrung und Neigung auf ein gebautes Rig. Pupillen bleiben größenunabhängig. */
 export function applyOval(rig, p) {
   if (!rig || !Array.isArray(rig.eyes) || !rig.eyes.length) return { status: 'KEIN_RIG' };
   const q = { ...DEFAULTS, ...(p || {}) };
-  const w = num(q.w, 1), h = num(q.h, 1), d = num(q.d, 1), t = num(q.tilt, 0);
+  const w = Math.max(.001,num(q.w,1)), h = Math.max(.001,num(q.h,1)), d = Math.max(.001,num(q.d,1)), t = num(q.tilt,0);
   const rows = [];
   rig.eyes.forEach((e, i) => {
-    const sx = e._sx != null ? e._sx : (i === 0 ? -1 : 1);   // Rig-Vertrag: Index 0 ist links
-    /* Georg 02.10.: OVAL ≠ PUPILLE.
-       Früher wurde die komplette Augengruppe `e` skaliert. Darunter hängt aber auch `e._pivot`
-       mit der Pupille — Width/Height/Depth verzerrten deshalb ungewollt die Pupille.
-       Jetzt bleiben Eye-Root und Pupillen-Pivot bei Scale 1. Nur die weiße Schale (direktes Mesh)
-       und die Lid-Gruppe werden ovalisiert. Die Pupille bleibt kreisförmig / in ihrer eigenen
-       `pupilSize`-Semantik. Bei Depth wandert ihr Pivot nur entlang Z bis an die verformte
-       Vorderfläche: Lage folgt dem Auge, Größe nicht. */
-    e.scale.set(1, 1, 1);
-    const sclera = e.__kfbOvalSclera || (e.__kfbOvalSclera = (e.children || []).find((c) => c && c.isMesh) || null);
-    if (sclera && sclera.scale) sclera.scale.set(w, h, d);
-    if (e._lids && e._lids.scale) e._lids.scale.set(w, h, d);
-    if (e._pivot) {
-      if (e._pivot.scale) e._pivot.scale.set(1, 1, 1);
-      if (e._pivot.position) e._pivot.position.z = (rig._R || 0) * (d - 1);
-    }
-    /* Die Neigung ist SPIEGELGLEICH: ein positiver Regler kippt beide Ovale mit der Oberkante nach
-       innen. Ohne die Spiegelung stünden beide Augen parallel schräg — das ist »müde«, nicht
-       »Cartoon«. Der Splay des Rigs sitzt auf `rotation.y` und bleibt unberührt. */
-    e.rotation.z = -sx * t * DEG;
-    rows.push((sx < 0 ? 'links' : 'rechts') + ' ' + w.toFixed(2) + '×' + h.toFixed(2) + '×' + d.toFixed(2)
-      + ' · pupil 1×1×1 · ' + (e.rotation.z / DEG).toFixed(1) + '°');
+    const sx = e._sx != null ? e._sx : (i === 0 ? -1 : 1);
+    e.scale.set(1,1,1);
+    const sclera=e.__kfbOvalSclera||(e.__kfbOvalSclera=(e.children||[]).find((c)=>c&&c.isMesh)||null);
+    if(sclera?.scale)sclera.scale.set(w,h,d);
+    if(e._lids?.scale)e._lids.scale.set(w,h,d);
+    if(e._pivot?.scale)e._pivot.scale.set(1,1,1);
+    e.rotation.z=-sx*t*DEG;
+    rows.push((sx<0?'links':'rechts')+' '+w.toFixed(2)+'×'+h.toFixed(2)+'×'+d.toFixed(2)+' · pupil 1×1×1 · '+(e.rotation.z/DEG).toFixed(1)+'°');
   });
-  return { status: 'OK', w, h, d, tilt: t, rows, round: w === 1 && h === 1 && d === 1 && t === 0 };
+  const seating=seatPupils(rig,q);
+  return {status:'OK',w,h,d,tilt:t,rows,seating,pupilScaleIndependent:true,round:w===1&&h===1&&d===1&&t===0};
 }
 
 /**
- * Einmal ans Rig hängen. `get()` liefert die aktuellen Werte — so gilt auch nach einem `build()`
- * (Farbwechsel, Pupillenstil, Anker) wieder der eingestellte Stand, ohne dass der Aufrufer davon
- * wissen muss.
+ * Einmal ans Rig hängen. Form wird nach build() und Pupillensitz nach jedem update() erneuert.
  */
 export function attach(rig, get) {
   if (!rig) return { status: 'KEIN_RIG' };
-  rig.__kfbOvalGet = get;
-  if (!rig.__kfbOvalPatched) {
-    const base = rig.build.bind(rig);
-    rig.build = function (...a) {
-      const r = base(...a);
-      try { applyOval(rig, rig.__kfbOvalGet ? rig.__kfbOvalGet() : null); } catch (e) { console.warn('[eyeoval]', e && e.message); }
+  rig.__kfbOvalGet=get;
+  if(!rig.__kfbOvalPatched){
+    const baseBuild=rig.build.bind(rig);
+    rig.build=function(...a){
+      const r=baseBuild(...a);
+      try{applyOval(rig,rig.__kfbOvalGet?rig.__kfbOvalGet():null);}catch(e){console.warn('[eyeoval]',e&&e.message);}
       return r;
     };
-    rig.__kfbOvalPatched = true;
+    const baseUpdate=rig.update.bind(rig);
+    rig.update=function(...a){
+      const r=baseUpdate(...a);
+      try{seatPupils(rig,rig.__kfbOvalGet?rig.__kfbOvalGet():null);}catch(e){console.warn('[eyeoval-seat]',e&&e.message);}
+      return r;
+    };
+    rig.__kfbOvalPatched=true;
   }
-  return applyOval(rig, get ? get() : null);
+  return applyOval(rig,get?get():null);
 }
 
 export function detach(rig) {
@@ -93,4 +132,4 @@ export function detach(rig) {
   applyOval(rig, DEFAULTS);
 }
 
-export default { SCHEMA, DEFAULTS, FIELDS, applyOval, attach, detach };
+export default { SCHEMA, DEFAULTS, FIELDS, pupilSeatDelta, seatPupils, applyOval, attach, detach };
