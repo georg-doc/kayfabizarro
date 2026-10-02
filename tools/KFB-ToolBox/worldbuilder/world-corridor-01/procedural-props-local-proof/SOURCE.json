@@ -37,7 +37,7 @@
   "stage": null,
   "merged": false,
   "live": false,
-  "nextGate": "MATERIAL_ISOLATION_SAME_GEOMETRY_CLAY_FLOOR_CURRENT_CLAY_DEREK_NEUTRAL",
+  "nextGate": "FORM_ENVIRONMENT_LANE: ENVIRONMENT_FAMILY_P2_EXISTING_PROP_VOCABULARY_EXTRACTION; parallel material lane remains separate",
   "humanDecision": {
     "proceduralPropsTrees": "PROCEED",
     "geometryStyle": "PROCEED",
@@ -104,5 +104,55 @@
     ],
     "negativeControl": "Clay002",
     "staticModuleSyntax": "PASS"
+  },
+  "formEnvironmentLane": {
+    "status": "ENVIRONMENT_FAMILY_P1_SOURCE_DERIVED_GEOMETRY_PASS",
+    "materialThread": "SEPARATE_NOT_OWNED_BY_THIS_LANE",
+    "useWhatWorks": {
+      "routingFile": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/USE_WHAT_WORKS_DEFORMATION_ROUTING_2026-10-02.md",
+      "siteCheckpoint": "748f9fbc-c863-43c1-8f93-9b2118879766",
+      "primaryBuildingLineage": [
+        "Elastic Grotesque Clay V2",
+        "City Cartoon/Grotesque",
+        "LandmarkElastic",
+        "LOOK-TORSION",
+        "FACADE_RULE v1"
+      ]
+    },
+    "styleAxis": {
+      "file": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/STYLE_AXIS_POLLY_ROCKO_METROPOLIS_2026-10-02.md",
+      "siteCheckpoint": "6e00f28e-ea81-4015-9f9c-3817ebef105e",
+      "polly": "DESIGNED_GRAPHIC_PERSPECTIVE_DISTORTION",
+      "rocko": "EVERYDAY_WONKY_CARTOON_WORLD",
+      "metropolis": "URBAN_HIERARCHY_MONUMENTAL_MASSING"
+    },
+    "goldenExtraction": {
+      "file": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/GOLDEN_DEFORMATION_DONOR_EXTRACTION_2026-10-02.md",
+      "result": "COMPLETE_SOURCE_BACKED"
+    },
+    "environmentFamilyP1": {
+      "spec": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/ENVIRONMENT_FAMILY_P1_ROCKS_BUSHES_SPEC_2026-10-02.md",
+      "module": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
+      "sourceIsolation": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1-source-isolation.html",
+      "testReport": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/ENVIRONMENT_FAMILY_P1_TEST_REPORT.md",
+      "result": "PASS",
+      "testedHead": "b56f77165b82113757c222b1cfb80ed350553215",
+      "run": 36959777774,
+      "job": 110690683930,
+      "artifact": {
+        "id": 11207815421,
+        "digest": "sha256:95bc5a84d5d01e9ba1bf2dc10c56e8913aa04384906e162187616909d913e8c8"
+      },
+      "objects": [
+        "P0B_TREE",
+        "P0B_PEBBLE",
+        "K1_BOULDER",
+        "T3_ACCENT_ROCK",
+        "T3_BUSH"
+      ],
+      "geometryOnly": true,
+      "materialDecision": false
+    },
+    "nextGate": "ENVIRONMENT_FAMILY_P2_EXISTING_PROP_VOCABULARY_EXTRACTION"
   }
 }
