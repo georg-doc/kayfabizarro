@@ -1,0 +1,35 @@
+{
+  "schema": "kfb.billboard-context-worldlook/0.1",
+  "id": "BILLBOARD-CONTEXT-WORLDLOOK-01-2026-10-02",
+  "branch": "chatgpt-web/billboard-context-worldlook-01-2026-10-02",
+  "baseConsumer": "174be3e64e029b441ee8d1bdc84b4e378a530713",
+  "upstreamConsumerTested": "ffda55d76c89e69e18f036d3929613d2839d4e0e",
+  "proofContext": {
+    "zoneKey": "forget_utopia#7",
+    "worldAccent": "#ffb27a",
+    "worldSeed": 1985738440,
+    "biome": "fractured"
+  },
+  "k2": {
+    "material": "d994a9b656131be3b7a13d45edcb4253d34f3620",
+    "profiles": "af57b88ae382a36514f9fa50beed5ab6ca18647a",
+    "reliefLegacy": "2bb843d29e9f2571f87d9e6210f34240b1a0a1a9",
+    "reliefTools": "1dfd171e08b14f996601189a7f2c108101f84132",
+    "toolmix": "b9a039ccfb90ea04910db3cf05928817d92e9399",
+    "integrationDonor": "fc31353ede12696717fa4943200f89e4b7eb67a0",
+    "profile": "prop + TOOLMIX.vehicle",
+    "worldFactor": 3
+  },
+  "boundary": {
+    "physicalBody": "K2 adapted",
+    "contentPlane": "UNCHANGED Billboard owner",
+    "h13": "UNCHANGED",
+    "b2a": "UNCHANGED",
+    "wdLookShaderStack": "NOT USED — onBeforeCompile collision",
+    "paletteMapping": "NONE — consume WorldContext accent verbatim"
+  },
+  "stage": {
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-context-worldlook-01/",
+    "status": "NOT_PUBLISHED"
+  }
+}

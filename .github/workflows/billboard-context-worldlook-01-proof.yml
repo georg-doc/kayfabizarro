@@ -1,0 +1,173 @@
+name: Billboard Context WorldLook 01 Proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/billboard-context-worldlook-01-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/bb-worldlook-boot.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-travel.html'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-context-adapter.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-k2/**'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_WORLDLOOK_01_2026-10-02/**'
+      - '.github/workflows/billboard-context-worldlook-01-proof.yml'
+  pull_request:
+    branches:
+      - chatgpt-web/billboard-context-consumer-r11-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/bb-worldlook-boot.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-travel.html'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-context-adapter.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-k2/**'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_WORLDLOOK_01_2026-10-02/**'
+      - '.github/workflows/billboard-context-worldlook-01-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  worldlook-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify exact K2 donor bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          K='tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-k2'
+          test "$(git rev-parse HEAD:"$K/clay-material.v10.js")" = "d994a9b656131be3b7a13d45edcb4253d34f3620"
+          test "$(git rev-parse HEAD:"$K/clay-profiles.v2.js")" = "af57b88ae382a36514f9fa50beed5ab6ca18647a"
+          test "$(git rev-parse HEAD:"$K/clay-relief.v2.js")" = "2bb843d29e9f2571f87d9e6210f34240b1a0a1a9"
+          test "$(git rev-parse HEAD:"$K/clay-relief.v5.js")" = "1dfd171e08b14f996601189a7f2c108101f84132"
+          test "$(git rev-parse HEAD:"$K/clay-toolmix.v1.js")" = "b9a039ccfb90ea04910db3cf05928817d92e9399"
+
+      - name: Verify protected upstream files unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          R='tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02'
+          test "$(git rev-parse HEAD:"$R/bb-context-boot.js")" = "03c7841f66a192e13de40c23e262767eaa4ee6bd"
+          test "$(git rev-parse HEAD:"$R/travel-context-adapter.js")" = "34adc79e3e4d5281e12b48c5ac71c862d09e646b"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Donor-before-after browser proof
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/billboard-context-worldlook-01
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/worldlook01-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-context-worldlook-01/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const url = 'http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-travel.html?state=idle&packId=forget_utopia&card=7&worldLook=off';
+          const report = { url, checks: [], pageErrors: [], consoleErrors: [], firstPartyFailures: [], externalNoise: [] };
+          const check = (name, pass, detail=null) => {
+            report.checks.push({ name, pass: !!pass, detail });
+            if (!pass) process.exitCode = 1;
+          };
+
+          const browser = await chromium.launch({
+            headless: true,
+            args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
+          });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+          page.on('pageerror', e => report.pageErrors.push(String(e)));
+          page.on('console', m => { if (m.type() === 'error') report.consoleErrors.push(m.text()); });
+          page.on('requestfailed', req => {
+            const item={url:req.url(),error:req.failure()?.errorText||'unknown'};
+            if(req.url().startsWith('http://127.0.0.1:4173/')) report.firstPartyFailures.push(item); else report.externalNoise.push(item);
+          });
+          page.on('response', res => {
+            if(res.status()<400) return;
+            const item={url:res.url(),status:res.status()};
+            if(res.url().startsWith('http://127.0.0.1:4173/')) report.firstPartyFailures.push(item); else report.externalNoise.push(item);
+          });
+
+          try {
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('candidate HTTP',!!response&&response.ok(),response?.status());
+            await page.waitForFunction(() =>
+              window.__consumer01?.snapshot?.()?.ready &&
+              window.__worldlook01?.snapshot?.()?.ready &&
+              window.__r11?.snapshot?.()?.ready,
+              {}, {timeout:150000}
+            );
+
+            const source=await page.evaluate(() => ({
+              consumer:window.__consumer01.snapshot(),
+              worldlook:window.__worldlook01.snapshot(),
+              r11:window.__r11.snapshot()
+            }));
+            check('source object not yet adapted', source.r11.worldLook?.applied === false, source.r11.worldLook);
+            check('source H13 live', source.r11.mode === 'hyper' && source.r11.h13?.ready, source.r11.h13);
+            check('real WorldContext accent available', source.consumer.worldContext?.accent === '#ffb27a', source.consumer.worldContext);
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/01-source-body.png',timeout:90000});
+
+            const adapted=await page.evaluate(async () => {
+              const c=window.__consumer01.snapshot();
+              await window.__r11.setWorldLook({accent:c.worldContext.accent,seed:c.worldContext.seed});
+              return window.__r11.snapshot();
+            });
+            await page.waitForTimeout(1800);
+
+            check('K2 body adaptation applied', adapted.worldLook?.applied === true, adapted.worldLook);
+            check('WorldContext accent consumed verbatim', adapted.worldLook?.accent === '#ffb27a', adapted.worldLook);
+            check('WorldContext seed consumed', adapted.worldLook?.seed === 1985738440, adapted.worldLook);
+            check('body meshes adapted', adapted.worldLook?.bodyMeshes > 0 && adapted.worldLook?.clayMaterials > 0, adapted.worldLook);
+            check('source materials retained', adapted.worldLook?.sourceMaterialsPreserved === true, adapted.worldLook);
+            check('geometry bounds unchanged', adapted.worldLook?.geometryUnchanged === true, {source:adapted.worldLook?.sourceBox,adapted:adapted.worldLook?.adaptedBox});
+            check('content plane untouched', adapted.worldLook?.contentPlaneUntouched === true, adapted.worldLook);
+            check('ambient H13 still live', adapted.mode === 'hyper' && adapted.h13?.ready, {mode:adapted.mode,h13:adapted.h13});
+            check('exact K2 material blob pinned', adapted.worldLook?.k2?.materialBlob === 'd994a9b656131be3b7a13d45edcb4253d34f3620', adapted.worldLook?.k2);
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/02-k2-accent-front.png',timeout:90000});
+
+            await page.evaluate(() => window.__r11.setView('RIGHT34'));
+            await page.waitForTimeout(900);
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/03-k2-accent-right34.png',timeout:90000});
+
+            await page.evaluate(() => window.__r11.setView('BACK'));
+            await page.waitForTimeout(900);
+            await page.locator('body > canvas').first().screenshot({path:'artifacts/billboard-context-worldlook-01/04-k2-accent-back.png',timeout:90000});
+
+            const shaderErrors=report.consoleErrors.filter(x=>/shader|webglprogram|validate_status/i.test(x));
+            check('no shader compile errors',shaderErrors.length===0,shaderErrors);
+            check('no page errors',report.pageErrors.length===0,report.pageErrors);
+            check('no first-party failures',report.firstPartyFailures.length===0,report.firstPartyFailures);
+
+            fs.writeFileSync('artifacts/billboard-context-worldlook-01/worldlook.json',JSON.stringify(adapted,null,2)+'\n');
+          } catch(e) {
+            report.pageErrors.push(String(e?.stack||e));
+            process.exitCode=1;
+          } finally {
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-context-worldlook-01/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({status:report.status,checks:report.passed+'/'+report.total,pageErrors:report.pageErrors.length,firstPartyFailures:report.firstPartyFailures.length,consoleErrors:report.consoleErrors.length,externalNoise:report.externalNoise.length},null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-context-worldlook-01/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-context-worldlook-01
+          path: artifacts/billboard-context-worldlook-01
+          retention-days: 90
