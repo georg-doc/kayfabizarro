@@ -54,7 +54,7 @@ Resident Atlas itself does **not** yet carry Paladin/King in the canonical S6 ca
 
 ## Source-wide character palette audit
 
-The current Mystery-Series source tree contains **25 character texture families** with at least two source palettes, totaling **56 source appearance files**. Current canonical S6 explicitly completes only **2** palette families: Cleric and Ultra Turbo Hero Man.
+The current Mystery-Series source tree contains **25 character texture families** with at least two source palettes, totaling **56 source appearance files**. A repository-wide follow-up scan of the other top-level KayKit packs found **0 additional multi-texture character families** under the same source-file rule. `car_texture` in the Driver pack is deliberately excluded because it is a vehicle palette, not a character appearance. Current canonical S6 explicitly completes only **2** palette families: Cleric and Ultra Turbo Hero Man.
 
 | Character | Source palettes | Canonical Resident Atlas | Missing / not explicit | Batch EyeRig |
 |---|---|---|---|---|
