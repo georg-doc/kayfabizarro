@@ -23,6 +23,7 @@ const DONOR = {
 };
 export const ZONES = {
   huerth: { fixture: 'fixtures/huerth-crop-v0.json', label: 'Hürth' },
+  'huerth-b1': { fixture: 'fixtures/huerth-b1-siblings-v0.json', label: 'Hürth · B1 siblings' },
   alstaedten: { fixture: 'fixtures/huerth-alstaedten-v0.json', label: 'Hürth-Alstädten' },
   /* Cologne ordinary stock gets the SAME presenter rules; Dom + Hbf stay protected landmark owners (wd1-landmark),
      their OSM parts route to plain landmark bases (no facade grammar), hidden once the landmark validates. */
