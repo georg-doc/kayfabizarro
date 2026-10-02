@@ -44,10 +44,12 @@ check('inheritance-class-character-session',JSON.stringify(medium.inheritance?.o
 check('deferred-feature-backlog',backlog.includes('top / bottom eye contour')&&backlog.includes('Mouth Batch')&&backlog.includes('Vehicle EyeRig')&&backlog.includes('headlight'));
 check('corrected-cleanup-status-accepted',app.includes("'SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE'"));
 check('qa-four-key-views',html.includes('id="qaCaptureBtn"')&&app.includes("['front','three-left','three-right','side-right']")&&app.includes("-qa-front-3q-side.png")&&app.includes("state.currentActorId||'actor'")&&qa.includes('Front')&&qa.includes('¾ L')&&qa.includes('¾ R')&&qa.includes('Side'));
-check('medium-actor-catalog-27',actors.actorCount===27&&actors.actors?.length===27);
-check('medium-actor-catalog-unique',new Set(actors.actors.map((a)=>a.id)).size===27);
+check('medium-actor-catalog-33',actors.actorCount===33&&actors.actors?.length===33);
+check('medium-actor-catalog-unique',new Set(actors.actors.map((a)=>a.id)).size===33);
 check('medium-actor-catalog-rig-boundary',actors.actors.every((a)=>a.rigClass==='Rig_Medium'&&a.jointCount===23));
-check('medium-actor-catalog-diverse',['gothgirl','clown','farmer-b','lorekeeper','skeleton-warrior','magical-girl','driver','mannequin-medium'].every((id)=>actors.actors.some((a)=>a.id===id)));
+check('medium-actor-catalog-diverse',['gothgirl','clown','farmer-b','lorekeeper','skeleton-warrior','magical-girl','driver','mannequin-medium','adventurer-barbarian','adventurer-knight','adventurer-mage','adventurer-ranger','adventurer-rogue','adventurer-rogue-hooded'].every((id)=>actors.actors.some((a)=>a.id===id)));
+check('medium-adventurers-six',actors.actors.filter((a)=>a.reviewGroup==='medium-adventurers').length===6&&['adventurer-barbarian','adventurer-knight','adventurer-mage','adventurer-ranger','adventurer-rogue','adventurer-rogue-hooded'].every((id)=>actors.actors.some((a)=>a.id===id)));
+check('medium-adventurers-pinned',actors.actors.filter((a)=>a.reviewGroup==='medium-adventurers').every((a)=>a.packId==='kaykit-adventurers-2-0-free'&&a.revision==='f9dd7a64c4ae0907b8752717861eba065e557d9d'&&typeof a.blob==='string'&&a.blob.length===40));
 check('medium-actor-gothgirl-exact-cleanup',actors.actors.find((a)=>a.id==='gothgirl')?.cleanup?.mode==='verified-components');
 check('medium-generic-cleanup-donor',mediumCleanup.includes('donoreyes.v1.js')&&mediumCleanup.includes('findDonorEyes')&&mediumCleanup.includes('stripDonorEyes'));
 check('medium-generic-cleanup-fail-closed',mediumCleanup.includes("status:'HUMAN_REQUIRED'")&&mediumCleanup.includes('no head-named indexed skinned mesh')&&mediumCleanup.includes('no mirrored front eye pair'));
