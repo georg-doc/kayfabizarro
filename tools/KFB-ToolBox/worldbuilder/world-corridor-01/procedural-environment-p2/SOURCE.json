@@ -1,0 +1,113 @@
+{
+  "schema": "kfb.wc1-procedural-environment-p2.source.v1",
+  "date": "2026-10-02",
+  "status": "P2_SOURCE_DERIVED_GEOMETRY_PASS",
+  "owner": "KFB WorldBuilder / World Corridor 01",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/wc1-procedural-environment-p2-2026-10-02",
+  "pr": 316,
+  "base": {
+    "branch": "chatgpt-web/wc1-procedural-props-local-proof-2026-10-01",
+    "head": "a5fefb273b274e40b3a1e642788c87113fa6ea27"
+  },
+  "sourceObjectProof": {
+    "sourcePin": "a5fefb273b274e40b3a1e642788c87113fa6ea27",
+    "run": 36960716414,
+    "job": 110693565332,
+    "artifact": {
+      "id": 11207717976,
+      "digest": "sha256:9a430ac22b91bdcc66b04b8dcfe10089de66088b617734bb65b457dfa4c8dd17",
+      "files": 14,
+      "donorScreenshots": 13
+    },
+    "result": "13_OF_13_EXACT_SOURCE_DONORS_PASS",
+    "assertions": {
+      "originalMaterials": true,
+      "deformed": false,
+      "materialAdapted": false,
+      "fallbackUsed": false,
+      "qaProblems": 0
+    }
+  },
+  "proceduralTransfer": {
+    "spec": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/P2_PROCEDURAL_TRANSFER_SPEC_2026-10-02.md",
+    "module": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs",
+    "viewer": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/procedural-geometry-proof.html",
+    "testedHead": "5f2a4444feed8f38883499de2a044f0e9e8b36eb",
+    "run": 37012562325,
+    "job": 110855562506,
+    "sourceArtifact": {
+      "id": 11228612568,
+      "digest": "sha256:3d7d60220fdae97466b503c2237161c5d5f28f7f2fb754572d48482ebfaf0826"
+    },
+    "proceduralArtifact": {
+      "id": 11228413648,
+      "digest": "sha256:162562b8da803cf4e9ae5d2a54b91036d59d84f6ee3382e23e2f6424ed108df9"
+    },
+    "objects": [
+      "SOFT_LOG_SEPARATOR",
+      "SOFT_LOG_STACK3",
+      "SOFT_STUMP_ROUND",
+      "SOFT_STUMP_DETAILED",
+      "SOFT_MUSHROOM_NORMAL",
+      "SOFT_MUSHROOM_GROUP3",
+      "SOFT_GRASS_TUFT"
+    ],
+    "result": "7_OF_7_SOURCE_DERIVED_GEOMETRIES_PASS",
+    "facts": {
+      "webgl": "WebGL2",
+      "renderCallsInternalViewer": 15,
+      "trianglesInternalViewer": 6386,
+      "displayTextureMaps": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "qaProblems": 0
+    },
+    "performanceAuthority": false
+  },
+  "repairHistory": [
+    {
+      "pass": 1,
+      "classification": "QA_METRIC_ERROR_ONLY",
+      "issue": "renderer texture count included one shadow-map texture",
+      "repair": "assert display material texture slots instead of renderer memory texture count",
+      "geometryChanged": false
+    }
+  ],
+  "sourceTruth": {
+    "kaykitForestMissingFamilies": [
+      "stumps",
+      "mushrooms",
+      "flowers"
+    ],
+    "kenneyBridgeExisting": true,
+    "stumpOldTall": "EXPLICIT_OUTLIER_NEGATIVE_CONTROL",
+    "buildingDeformationAuthority": false
+  },
+  "protectedOwners": [
+    "WB2 / WC1 renderer + world",
+    "Track Core",
+    "Race/Ground movement",
+    "authored Resident/KayKit/FrizzleBob hero assets",
+    "parallel Material/Clay lane"
+  ],
+  "styleAxis": [
+    "Polly & Her Pals / designed graphic-perspective distortion",
+    "Rocko's Modern Life / everyday cartoon-world personality",
+    "Fritz Lang / Metropolis / urban hierarchy and massing"
+  ],
+  "buildingLineage": [
+    "Golden/deformed samples",
+    "Elastic Grotesque Clay V2",
+    "City Cartoon/Grotesque",
+    "LandmarkElastic",
+    "LOOK-TORSION",
+    "FACADE_RULE v1",
+    "KayKit/K-Kid identity"
+  ],
+  "stage": null,
+  "merged": false,
+  "live": false,
+  "siteCheckpointSourceObjects": "e73b2e77-23a2-4dea-a744-4b455dee2e59",
+  "nextGate": "PROCEDURAL_BUILDING_B0_GOLDEN_FAMILY_SPEC"
+}
