@@ -111,9 +111,9 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - Draft PR #325 · branch `chatgpt-web/audio-seed-01-2026-10-02`.
 - Georg's first v0.1 listen liked the broad bed but rejected rain-as-noise and the high xylophone/cartoon chime.
 - Human repair r2 at `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`: **35/35 deterministic/source + 35/35 Chromium/WebAudio PASS**.
-- r2 publication write: `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`; Pages check remains **IN_PROGRESS**, so r2 is not yet PUBLIC_VERIFIED.
-- First r2 public proof failed marker-only while Pages was still in progress; no behavioral assertion failed.
-- Current gate: after Pages SUCCESS, rerun unchanged exact public proof. Only then ask for `GEORG_AUDIO_SEED_RELISTEN_R2`.
+- r2 publication: `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`; Cloudflare Pages check `110994861443` **SUCCESS**.
+- Exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**; public artifact `11248750257`, digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`.
+- Current gate: `GEORG_AUDIO_SEED_RELISTEN_R2` — rain realism + chime-fatigue repair, while confirming the rest of the bed still works.
 - Reddit/WebAudioFont references are research donors only; no new dependency before the r2 listening decision.
 
 ## Hard rules
@@ -153,7 +153,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
-- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED + HUMAN_ACCEPTED; AUDIO-SEED-01 r2 is source/browser green after Georg feedback; r2 public verification is pending on Cloudflare Pages; Travel/Race/Combat/Boxel keep runtime ownership
+- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED + HUMAN_ACCEPTED; AUDIO-SEED-01 r2 is PUBLIC_VERIFIED after Georg feedback; `GEORG_AUDIO_SEED_RELISTEN_R2` is the current gate; Travel/Race/Combat/Boxel keep runtime ownership
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported

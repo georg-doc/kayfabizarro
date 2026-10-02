@@ -2,10 +2,10 @@
 
 ## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 · HUMAN REPAIR r2 · 2026-10-02
 
-**Result:** HUMAN FEEDBACK RECEIVED · r2 SOURCE/BROWSER PASS · r2 PUBLIC PENDING  
+**Result:** HUMAN FEEDBACK RECEIVED · r2 PUBLIC_VERIFIED · HUMAN RELISTEN PENDING  
 **Repo / branch / PR:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
 **Repair implementation:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
-**Current source head:** `02c74a72b1320a67f995f8f86c5d71089c2f1b90`  
+**Public-proof source head:** `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`  
 **r2 publication:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`  
 **Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
 
@@ -30,15 +30,16 @@ r2 evidence:
 - proof digest: `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
 
 Public state:
-- six r2 Stage blobs verified byte-for-byte on `cloudflare-live@34d1dc4…`;
-- Cloudflare Pages check `110990617688`: **IN_PROGRESS**;
-- public attempt `37053177990 / 110991313066`: four marker-only failures while Pages remained in progress;
-- failed proof artifact `11246834657`, digest `sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105`;
-- therefore r2 is **NOT YET PUBLIC_VERIFIED** and the public route must be treated as the older v0.1 until exact v0.2 proof passes.
+- six r2 Stage blobs verified byte-for-byte on `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`;
+- Cloudflare Pages check `110994861443`: **SUCCESS**;
+- exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
+- public artifact `11248750257`, digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
+- r2 is therefore **PUBLIC_VERIFIED** on the fixed direct Stage route.
+- historical timing attempt `37053177990` remains recorded but is superseded.
 
 Reddit/WebAudioFont references are documented as later donors, not incorporated into r2.
 
-**Exactly one next gate:** after Pages check SUCCESS, rerun unchanged public proof for build `AUDIO-SEED-01-v0.2`. No runtime changes, no new instrument dependency, no merge or Live promotion.
+**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2`. Judge rain realism, absence of the fatiguing high chime, and whether the otherwise promising soundbed remains intact. No new instrument dependency, real Race telemetry, merge or Live promotion before that decision.
 
 **Date:** 2026-09-24  
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED  

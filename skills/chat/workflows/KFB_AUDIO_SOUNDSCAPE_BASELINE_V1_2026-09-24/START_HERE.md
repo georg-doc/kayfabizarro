@@ -1,6 +1,6 @@
 # KFB Audio & Soundscape Baseline v1 · START HERE
 
-**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED · AUDIO-SEED-01 r2 SOURCE/BROWSER PASS / PUBLIC PENDING  
+**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED · AUDIO-SEED-01 r2 PUBLIC_VERIFIED / HUMAN RELISTEN  
 **Date:** 2026-09-24  
 **Owner:** existing WSA / KFB integration lead  
 **Executing lane:** Fresh Web + GitHub, GPT-5.6 Sol, Medium/High reasoning  
@@ -14,10 +14,10 @@ GitHub state overrides this document whenever a named source ref advances.
 
 ## CURRENT FOLLOW-UP OVERRIDE · AUDIO-SEED-01 · 2026-10-02
 
-**Status:** HUMAN FEEDBACK RECEIVED · REPAIR r2 SOURCE/BROWSER PASS · r2 PUBLIC PENDING  
+**Status:** HUMAN FEEDBACK RECEIVED · REPAIR r2 PUBLIC_VERIFIED · HUMAN RELISTEN PENDING  
 **Source:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
 **Repair implementation:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
-**Current source head:** `02c74a72b1320a67f995f8f86c5d71089c2f1b90`  
+**Public-proof source head:** `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`  
 **r2 publication write:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`  
 **Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
 
@@ -39,11 +39,17 @@ Repair r2:
 
 Evidence at repair head: deterministic/source **35/35 PASS** · Chromium/WebAudio **35/35 PASS** · run/job `37052602108 / 110989403830` · artifact `11246418871` · digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
 
-Publication state is deliberately **not** called live: all six r2 Stage blobs were read back exactly on `cloudflare-live@34d1dc4…`, but the Cloudflare Pages check `110990617688` remains `IN_PROGRESS`. Public proof `37053177990 / 110991313066` failed all four attempts only at the expected v0.2 Stage marker while Pages was still in progress; artifact `11246834657`, digest `sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105`. No behavioral audio assertions ran and no runtime repair follows from this timing failure.
+Publication is now complete and independently verified:
+- Cloudflare Pages check `110994861443`: **SUCCESS** for `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`;
+- exact public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
+- public artifact `11248750257`, digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
+- external runtime/API dependency remains zero.
+
+The earlier marker-only run `37053177990` remains timing evidence from before Pages completed, not a runtime defect.
 
 Reddit donor follow-up is recorded separately. In particular FLY × COMPOSE reinforces bounded movement→music modulation, and sample-based WebAudioFont-style playback is a promising later instrument-quality donor. Do not add those dependencies before r2 is re-listened.
 
-**Exactly one next gate:** wait for the existing Cloudflare Pages check on `34d1dc4…` to resolve **SUCCESS**, then rerun the unchanged exact public proof. Only after r2 is PUBLIC_VERIFIED does `GEORG_AUDIO_SEED_RELISTEN_R2` open.
+**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2` — re-listen specifically for rain realism and removal of the fatiguing high chime, while confirming the rest of the soundbed still works. No new instrument dependency, telemetry expansion, merge or Live promotion before that decision.
 
 
 ## HUMAN LISTENING RESULT · PASS

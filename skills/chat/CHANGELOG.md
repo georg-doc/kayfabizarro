@@ -3,10 +3,11 @@
 - Georg's first v0.1 listen liked the broad bed but identified two concrete defects: rain read as water/noise and the high xylophone/cartoon-like motif became annoying quickly.
 - Repair `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`: removes bright octave overtone, lowers/softens motif, reduces G3/answer density, lowers rain noise bed and adds deterministic stereo droplet/splash transients.
 - r2 branch evidence: **35/35 deterministic/source + 35/35 Chromium/WebAudio PASS**; run/job `37052602108 / 110989403830`; artifact `11246418871`; digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
-- r2 publication write verified at `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`, but Cloudflare Pages check `110990617688` remains **IN_PROGRESS**.
-- Exact-route r2 proof `37053177990` failed all four attempts only at the v0.2 build marker while Pages was still pending; no behavioral test ran. r2 therefore remains **PUBLIC PENDING**, not live.
+- r2 publication `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab` reached Cloudflare Pages **SUCCESS** at check `110994861443`.
+- Exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**; artifact `11248750257`; digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`.
+- Earlier public run `37053177990` is retained as pre-deploy marker-timing evidence and is superseded.
 - Reddit follow-up supports the existing architecture: FLY × COMPOSE maps flight to bounded pitch-range/note-direction changes; sample-based WebAudioFont-style playback is a later instrument-quality donor, not part of r2.
-- Next gate: Pages SUCCESS → unchanged exact r2 public proof. No second runtime repair.
+- **r2 PUBLIC_VERIFIED**. Next gate: `GEORG_AUDIO_SEED_RELISTEN_R2`.
 
 ## 2026-10-02 · AUDIO-SEED-01 public procedural soundscape candidate
 

@@ -7,14 +7,15 @@ Resume here before older AUDIO-SEED/AUDIO-CAL checkpoints.
 - owner: KFB Audio & Soundscape Baseline v1;
 - source branch: `chatgpt-web/audio-seed-01-2026-10-02`; Draft PR `#325`;
 - repair implementation: `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`;
-- current source head: `02c74a72b1320a67f995f8f86c5d71089c2f1b90`;
+- public-proof source head: `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`;
 - r2 source/browser: **35/35 + 35/35 PASS**;
 - r2 proof: run/job `37052602108 / 110989403830`; artifact `11246418871`; digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`;
 - publication write: `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`, all six r2 Stage blobs verified;
-- Cloudflare Pages check `110990617688`: **IN_PROGRESS**;
+- Cloudflare Pages check `110994861443`: **SUCCESS**;
 - exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`;
-- first r2 public attempt `37053177990 / 110991313066`: **FAIL at Stage marker 4/4** while Pages still in progress; no behavior assertions ran;
-- failed public artifact `11246834657` / `sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105`.
+- exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
+- public artifact `11248750257` / `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
+- historical pre-deploy marker run `37053177990` is timing evidence only and is superseded.
 
 Human feedback that triggered r2:
 - keep the rest of the soundbed;
@@ -26,9 +27,9 @@ Repair details:
 - reduce G3 and answer density/gain;
 - quiet continuous rain bed + deterministic stochastic stereo droplet transients.
 
-Do not repair runtime again while publication remains unknown. Timeout/in-progress means UNKNOWN, not failure of the candidate. Do not add WebAudioFont/Suno/ElevenLabs or Race telemetry before r2 re-listen.
+Do not add WebAudioFont/Suno/ElevenLabs or Race telemetry before r2 re-listen.
 
-**Exactly one next gate:** wait for Pages check SUCCESS, then rerun unchanged exact public proof. After PUBLIC_VERIFIED, gate becomes `GEORG_AUDIO_SEED_RELISTEN_R2`.
+**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2`.
 
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED · RECOVERABLE  
 **Date:** 2026-09-24  

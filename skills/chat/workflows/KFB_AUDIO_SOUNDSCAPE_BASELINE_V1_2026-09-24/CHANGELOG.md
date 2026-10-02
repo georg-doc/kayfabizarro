@@ -13,7 +13,8 @@
 - r2 mirrored exactly to `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`; Pages check `110990617688` remains **IN_PROGRESS**.
 - First r2 public proof `37053177990` failed only at v0.2 Stage marker on all four attempts while Pages was still in progress; no behavior assertions ran.
 - Reddit donor addendum recorded separately: FLY × COMPOSE supports motion→bounded musical parameter mapping; WebAudioFont-style sampled playback is a later timbre-quality donor, not part of r2.
-- Current gate: wait for Pages SUCCESS, then rerun unchanged public proof. No second runtime repair.
+- r2 PUBLIC VERIFIED after Pages completion: Cloudflare check `110994861443` SUCCESS; exact public run/job `37054592017 / 110996053918` **35/35 PASS on attempt 1**; artifact `11248750257`; digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`.
+- **r2 PUBLIC VERIFIED**; next gate `GEORG_AUDIO_SEED_RELISTEN_R2`. No second runtime repair before human re-listen.
 
 ## 2026-10-02 · AUDIO-SEED-01 · Deck-seeded procedural soundscape
 

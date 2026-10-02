@@ -2,9 +2,9 @@
 
 ## CURRENT OVERRIDE · HUMAN REPAIR r2 · 2026-10-02
 
-**Current status:** r2 SOURCE/BROWSER PASS · r2 PUBLIC PENDING  
+**Current status:** r2 PUBLIC_VERIFIED · HUMAN RELISTEN PENDING  
 **Repair head:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
-**Current source head:** `02c74a72b1320a67f995f8f86c5d71089c2f1b90`  
+**Public-proof source head:** `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`  
 **r2 publication write:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`
 
 Human v0.1 feedback:
@@ -27,19 +27,20 @@ r2 branch QA:
 - digest: `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
 
 Public r2 state:
-- all six r2 Stage blobs match on `cloudflare-live@34d1dc4…`;
-- Cloudflare Pages check `110990617688`: **IN_PROGRESS**;
-- public proof `37053177990 / 110991313066`: **FAIL at Stage marker 4/4 while Pages pending**;
-- artifact `11246834657`;
-- digest `sha256:149fb1a5990172cf6cc4329e6f26cc37c79ffe11a41bec01192f2a0fef4fd105`;
-- no behavioral r2 assertion failed because none ran after the stale marker.
+- all six r2 Stage blobs match on `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`;
+- Cloudflare Pages check `110994861443`: **SUCCESS**;
+- exact public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
+- public artifact `11248750257`;
+- digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
+- external runtime/API requests remain zero.
+- earlier run `37053177990` is preserved as pre-deploy marker timing evidence only.
 
-The older v0.1 PUBLIC_VERIFIED evidence below remains historical. It must not be used to claim r2 is public.
+The older v0.1 PUBLIC_VERIFIED evidence below remains historical.
 
-**Exactly one next gate:** Cloudflare Pages SUCCESS → rerun unchanged exact public proof for `AUDIO-SEED-01-v0.2`. Only then ask Georg for `GEORG_AUDIO_SEED_RELISTEN_R2`.
+**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2` — re-listen specifically for rain realism and removal of the fatiguing high chime, and confirm the rest of the soundbed remains intact.
 
 **Date:** 2026-10-02  
-**Status:** HISTORICAL v0.1 PUBLIC_VERIFIED · CURRENT r2 PUBLIC PENDING  
+**Status:** r2 PUBLIC_VERIFIED · HUMAN RELISTEN PENDING  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `chatgpt-web/audio-seed-01-2026-10-02`  
 **Draft PR:** #325  
