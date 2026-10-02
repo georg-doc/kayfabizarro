@@ -1,0 +1,64 @@
+name: WC1 Procedural Building B3
+
+on:
+  push:
+    branches:
+      - chatgpt-web/wc1-procedural-building-b3-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/**'
+      - 'tools/KFB-ToolBox/lib/edit-layer.js'
+      - 'wd1-*.js'
+      - 'w0-ink.js'
+      - 'wd-sky.js'
+      - 'wd-donors.js'
+      - 'wd-registry.js'
+      - 'fixtures/**'
+      - 'tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b3/**'
+      - '.github/workflows/wc1-procedural-building-b3.yml'
+  workflow_dispatch:
+
+jobs:
+  stable-owner-worldbuilder-consumer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-world.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-play.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-selftest.js
+          node --check tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b3/qa/worldbuilder-consumer.mjs
+          node -e "JSON.parse(require('fs').readFileSync('fixtures/huerth-b1-siblings-v0.json','utf8'))"
+      - name: Rehome blob parity
+        run: |
+          test "$(git hash-object tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-actor.js)" = "cfed8f02d887d8636263e0d0715cf7cbfea4d7f0"
+          test "$(git hash-object tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-play.js)" = "0cc488c744748d003ba46c279f1e8daf0ed1be4d"
+          test "$(git hash-object tools/KFB-ToolBox/worldbuilder/world-integration-01/wi1-selftest.js)" = "f7de96897e82449be4a1c5f4ee12ddbef66e909d"
+          test "$(git hash-object tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js)" = "45f3e9a331e4383c0830d8420fb40ab0f9b59a45"
+          test "$(git hash-object wd1-city.js)" = "c11b6f7156eaee808fe4689ee406f9b3480b6f0b"
+          test "$(git hash-object wd1-seam.js)" = "95c6bfa04a4dd2106039db600b1e826ef48f4490"
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start internal static server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-building-b3-http.log 2>&1 &
+          sleep 2
+          curl -f http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/world-integration-01/WORLD_INTEGRATION_01_SOURCE.html?world=huerth-b1 >/dev/null
+      - name: Real WorldBuilder consumer
+        run: node tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b3/qa/worldbuilder-consumer.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wc1-procedural-building-b3-evidence
+          path: building-b3-evidence/
+          if-no-files-found: error
