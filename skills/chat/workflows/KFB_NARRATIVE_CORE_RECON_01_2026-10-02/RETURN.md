@@ -33,6 +33,15 @@
 - No Claude-written dialogue line in any remaining file. The Doppel-Denk profile's illustrative lines (marked "not canon" in its source) are deliberately not copied.
 - Every SOURCE/DESIGN value names its file: #272 docs @`992ea989`, #310 QA @`7c6522fb`.
 
+## Update later on 2026-10-02 (Georg)
+
+- **Lorekeeper and Officer Doppel-Denk are special meta roles**, not regular Residents for the first Card Relay. Lorekeeper: meta-archivist with the overview of all decks, mentor on his island. Doppel-Denk: patrolling comic relief who wants order and sees Cards as unrest; his stance to the Anti-Rules deck is handled globally, not per deck. Their two card files stay as drafts and will be re-labelled in the contract rewrite.
+- **Character system:** high-level clamps in the Hunky & Dory shape (clamp, core question, hidden goal, fears, contradiction, failure loop, triggers, escalation) as a blueprint, prefilled heuristically from archetypes, Residents archetypally contrary, each with its own weighting of the shared Triplet pool. LLM calls wanted for testing on the site.
+- **Research first:** `NPC_SOCIAL_MODEL_RESEARCH_2026-10-02.md` (AI Town and successors, social physics, Slice of Life, SPASM). Proposal: symbolic social state decides, LLM only speaks, one call per speaker from one shared log.
+- **Triplet as dialogue rule + Fluffolekt:** `TRIPLET_DIALOGUE_RULE_NOTE_2026-10-02.md`.
+- Hosting idea (Georg, not decided): publish as a GPT Site with LLM calls, login and backend.
+- Georg will send a list with base info and the first characters. Then: rewrite the lean card contract on the clamp field set, add the first Residents.
+
 ## Exactly one next gate
 
-**R0 · RESIDENT-CARDS-AUTHORING-01.** Georg answers the six questions in `OPEN_DECISIONS_FOR_GEORG.md`: Doppel-Denk's actor and deck stance, the Lorekeeper's deck, optional dark-secret directions, and the first Card to carry. After that, R1 (contract intake by the Resident lane) and R2 (first Social Card Relay = #272's `RESIDENT-SOCIAL-MEMORY-01`).
+**R0 · RESIDENT-CARDS-AUTHORING-01 (revised).** Georg sends the list with base info and the first regular Residents, plus the Rolodex and any further repos. The six questions in `OPEN_DECISIONS_FOR_GEORG.md` are superseded where they concern Lorekeeper and Doppel-Denk (special roles). After that, R1 (contract rewrite on the clamp field set + intake) and R2 (first Social Card Relay = #272's `RESIDENT-SOCIAL-MEMORY-01`) with two regular, archetypally contrary Residents.
