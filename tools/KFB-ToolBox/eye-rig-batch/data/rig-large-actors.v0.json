@@ -1,0 +1,78 @@
+{
+  "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+  "owner": "KFB ToolBox / Rigging",
+  "rigClass": "Rig_Large",
+  "revisionPolicy": "actor paths pinned to recovered main at catalog creation",
+  "sourceEvidence": [
+    "tools/resident_atlas_s6/docs/ATLAS_NEXT_SLICES.md",
+    "tools/resident_atlas_s6/data/cast.js",
+    "tools/resident_atlas_s6/tools/orc-monstrosity-probe.html"
+  ],
+  "actorCount": 4,
+  "actors": [
+    {
+      "id": "monstrosity",
+      "label": "Monstrosity",
+      "initials": "MO",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "ff8e7d74026b808a3bedeab4bece830df116a4bc",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas+large-probe",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "black-knight",
+      "label": "Black Knight",
+      "initials": "BK",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "demon-lord",
+      "label": "Demon Lord",
+      "initials": "DL",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "7dfc03c272e77c1cdcd488bf3b396f6600faa440",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "orc-brute",
+      "label": "Orc Brute",
+      "initials": "OB",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "1b56aac3d98cc978bd1311ddc61f1260a870494d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas+large-probe",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    }
+  ]
+}

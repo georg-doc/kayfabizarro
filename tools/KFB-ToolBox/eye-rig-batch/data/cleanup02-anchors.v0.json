@@ -1,0 +1,843 @@
+{
+  "schema": "kfb.cleanup02-source-anchors/0.1-candidate",
+  "date": "2026-10-02",
+  "source": {
+    "prepPr": 315,
+    "prepHead": "eef621f92b29ba8d45395a1c8aab28bc75ca35a7",
+    "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+    "matchPolicy": "EXACT_SOURCE_PATH_ONLY"
+  },
+  "policy": {
+    "purpose": "Per-actor EyeRig placement baseline from original KayKit eye centres.",
+    "transform": "cleanup root/bind-pose anchor -> loaded figure world -> measured FaceHost local",
+    "derive": [
+      "dx",
+      "dy",
+      "ring",
+      "inset"
+    ],
+    "autoApply": "Only READY_FOR_PROFILE_CALIBRATION + symmetric + profile UNREVIEWED. Approved or adjusted profiles are preserved.",
+    "manualAction": "Use source anchors remains available for any matched actor.",
+    "noOwnerChange": true
+  },
+  "actorCount": 19,
+  "actors": {
+    "gothgirl": {
+      "actorId": "gothgirl",
+      "label": "GothGirl",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "gothgirl",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/GothGirl_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2055,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f8d3be",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "clown": {
+      "actorId": "clown",
+      "label": "Clown",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "clown",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Clown_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2151,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2151,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#e8eced",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "toy-soldier": {
+      "actorId": "toy-soldier",
+      "label": "Toy Soldier",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "soldier",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ToySoldier_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#edaea1",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "farmer-a": {
+      "actorId": "farmer-a",
+      "label": "Farmer A",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "farmer_a",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Farmer_A_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f6c19d",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "farmer-b": {
+      "actorId": "farmer-b",
+      "label": "Farmer B",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "farmer_b",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Farmer_B_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2056,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.612,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f6bf9b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "caveman": {
+      "actorId": "caveman",
+      "label": "Caveman",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "caveman",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Caveman_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#e1a385",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "lorekeeper": {
+      "actorId": "lorekeeper",
+      "label": "Lorekeeper",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "lorekeeper",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Lorekeeper_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2031,
+            1.6059,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2042,
+            1.6059,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f5bc97",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "avian": {
+      "actorId": "avian",
+      "label": "Avian Swordsman",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "avian",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/AvianSwordsman_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2172,
+            1.6376,
+            0.326
+          ],
+          "normal": [
+            0.7978,
+            -0.2034,
+            0.5676
+          ],
+          "r": 0.0827
+        },
+        "r": {
+          "pos": [
+            -0.2172,
+            1.6376,
+            0.326
+          ],
+          "normal": [
+            -0.7978,
+            -0.2034,
+            0.5676
+          ],
+          "r": 0.0827
+        }
+      },
+      "skin": "#2473b3",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "skeleton-warrior": {
+      "actorId": "skeleton-warrior",
+      "label": "Skeleton Warrior",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "warrior",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Warrior_NoEyes.glb",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "autoApply": false,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            -0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#d19d6b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "skeleton-rogue": {
+      "actorId": "skeleton-rogue",
+      "label": "Skeleton Rogue",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "rogue",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Rogue_NoEyes.glb",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "autoApply": false,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            -0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#a77c57",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "skeleton-mage": {
+      "actorId": "skeleton-mage",
+      "label": "Skeleton Mage",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "mage",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Mage_NoEyes.glb",
+      "eyeRigIntake": "HUMAN_DECISION_REQUIRED",
+      "autoApply": false,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.1875,
+            1.6409,
+            0.292
+          ],
+          "normal": [
+            -0.2509,
+            -0.0003,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#5c4138",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "cleric": {
+      "actorId": "cleric",
+      "label": "Cleric",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "cleric",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Cleric_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2056,
+            1.6115,
+            0.4308
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.2056,
+            1.6115,
+            0.4308
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f6bf9b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "animatronic-creepy": {
+      "actorId": "animatronic-creepy",
+      "label": "Animatronic Creepy",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "creepy",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Animatronic_Creepy_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": false,
+      "asymmetric": true,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.222,
+            1.5026,
+            0.4467
+          ],
+          "normal": [
+            0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.0546
+        },
+        "r": {
+          "pos": [
+            -0.2105,
+            1.6052,
+            0.449
+          ],
+          "normal": [
+            -0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#65b767",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "animatronic-normal": {
+      "actorId": "animatronic-normal",
+      "label": "Animatronic Normal",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "normal",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Animatronic_Normal_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2105,
+            1.6052,
+            0.449
+          ],
+          "normal": [
+            0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.065
+        },
+        "r": {
+          "pos": [
+            -0.2105,
+            1.6052,
+            0.449
+          ],
+          "normal": [
+            -0.2509,
+            -0.0056,
+            0.968
+          ],
+          "r": 0.065
+        }
+      },
+      "skin": "#9b5a45",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "action-figure": {
+      "actorId": "action-figure",
+      "label": "Action Figure",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "figure",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ActionFigure_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1851,
+            1.6259,
+            0.4167
+          ],
+          "normal": [
+            0.3823,
+            0.0436,
+            0.923
+          ],
+          "r": 0.0655
+        },
+        "r": {
+          "pos": [
+            -0.1874,
+            1.6256,
+            0.4157
+          ],
+          "normal": [
+            -0.3823,
+            0.0436,
+            0.923
+          ],
+          "r": 0.0654
+        }
+      },
+      "skin": "#f2bb98",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "protagonist-a": {
+      "actorId": "protagonist-a",
+      "label": "Protagonist A",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "prot_a",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Protagonist_A_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1918,
+            1.612,
+            0.4411
+          ],
+          "normal": [
+            0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.0727
+        },
+        "r": {
+          "pos": [
+            -0.1918,
+            1.612,
+            0.4411
+          ],
+          "normal": [
+            -0.4409,
+            0.0052,
+            0.8975
+          ],
+          "r": 0.072
+        }
+      },
+      "skin": "#f5bd98",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "protagonist-b": {
+      "actorId": "protagonist-b",
+      "label": "Protagonist B",
+      "rigClass": "Rig_Medium",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_B.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "prot_b",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Protagonist_B_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        },
+        "r": {
+          "pos": [
+            -0.2036,
+            1.6064,
+            0.435
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.0649
+        }
+      },
+      "skin": "#f6bf9b",
+      "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)"
+    },
+    "monstrosity": {
+      "actorId": "monstrosity",
+      "label": "Monstrosity",
+      "rigClass": "Rig_Large",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "monster",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Monstrosity_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1634,
+            3.5034,
+            0.6046
+          ],
+          "normal": [
+            0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.055
+        },
+        "r": {
+          "pos": [
+            -0.1634,
+            3.5034,
+            0.6046
+          ],
+          "normal": [
+            -0.4152,
+            -0.0003,
+            0.9097
+          ],
+          "r": 0.055
+        }
+      },
+      "skin": "#7da6a4",
+      "bindCheck": "Rig_Large:Idle_A 52/52 (original 52/52)"
+    },
+    "demon-lord": {
+      "actorId": "demon-lord",
+      "label": "Demon Lord",
+      "rigClass": "Rig_Large",
+      "sourcePath": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "sourceRevision": "891eadf01e218f5fc21387e64cea1fec8332c5b6",
+      "cleanupId": "demon",
+      "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
+      "noEyesPath": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/DemonLord_NoEyes.glb",
+      "eyeRigIntake": "READY_FOR_PROFILE_CALIBRATION",
+      "autoApply": true,
+      "asymmetric": false,
+      "anchors": {
+        "l": {
+          "pos": [
+            0.1597,
+            3.5592,
+            0.6713
+          ],
+          "normal": [
+            0.4152,
+            -0.3489,
+            0.8402
+          ],
+          "r": 0.0633
+        },
+        "r": {
+          "pos": [
+            -0.1597,
+            3.5592,
+            0.6713
+          ],
+          "normal": [
+            -0.4152,
+            -0.3489,
+            0.8402
+          ],
+          "r": 0.0634
+        }
+      },
+      "skin": "#c43642",
+      "bindCheck": "Rig_Large:Idle_A 52/52 (original 52/52)"
+    }
+  }
+}

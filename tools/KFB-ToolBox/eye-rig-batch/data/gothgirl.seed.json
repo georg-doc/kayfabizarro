@@ -1,0 +1,134 @@
+{
+  "schema": "kfb.eye-profile/0.1-candidate",
+  "actorId": "gothgirl",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b"
+  },
+  "rigClass": "Rig_Medium",
+  "faceHost": {
+    "status": "PENDING_RUNTIME_MEASURE",
+    "headBone": null,
+    "headSize": null,
+    "facingSource": null
+  },
+  "sourceFace": {
+    "headMesh": "GothGirl_Head",
+    "expectedConnectedComponents": 12,
+    "connectedComponents": null,
+    "eyeComponents": [
+      2,
+      3
+    ],
+    "pairConfidence": 1,
+    "femaleOuterLashCandidate": "eye-assembly-or-texture; exact lash sub-identity not separated in v0",
+    "removalMode": "mesh-components",
+    "guard": "apply only when connectedComponents === 12",
+    "status": "SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE",
+    "componentIdentity": {
+      "0": "head-face-shell",
+      "1": "nose",
+      "2": "eye-x-positive",
+      "3": "eye-x-negative",
+      "4": "ear-x-positive",
+      "5": "ear-x-negative",
+      "6": "side-accessory-x-negative",
+      "7": "side-accessory-x-positive-lower",
+      "8": "side-accessory-x-positive-upper",
+      "9": "hair",
+      "10": "brow-x-negative",
+      "11": "brow-x-positive"
+    },
+    "identityEvidence": "docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md",
+    "faceColor": "#e6cbc3",
+    "faceColorSource": "tools/KFB-ToolBox/_inbox/KFB Elisa B-Day Reference+Mockups/kfb-pet-gothgirl.json#pets[gothgirl].color"
+  },
+  "eyeRigSource": {
+    "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "expressionSource": {
+    "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+    "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+  },
+  "eye": {
+    "anchor": {
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15
+    },
+    "pupilStyle": "matte-cute",
+    "pupilSize": 0.34,
+    "gloss": 0.1,
+    "inset": 0.4,
+    "lidFit": 0.9,
+    "converge": 0.18,
+    "splay": 0,
+    "baseColor": "#e6cbc3",
+    "lidColorMode": "face-base-darkened",
+    "trackingMode": "life",
+    "fixedGaze": [
+      0,
+      0
+    ],
+    "oval": {
+      "w": 1,
+      "h": 1,
+      "d": 1,
+      "tilt": 0
+    }
+  },
+  "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+  },
+  "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+  },
+  "kinetics": {
+    "enabled": false,
+    "gain": 1,
+    "a": 0,
+    "c": 0,
+    "j": 0
+  },
+  "status": "AUTO_CANDIDATE",
+  "evidence": {
+    "camera": "front",
+    "motionClip": "T-Pose",
+    "sourceEyeCleanupVisuallyAccepted": false,
+    "eyeProfileVisuallyApproved": false,
+    "visualReference": "user screenshot 2026-09-19 21:46 CEST"
+  },
+  "calibration": {
+    "schema": "kfb.eye-medium-calibration/0.1-candidate",
+    "classSeed": "./rig-medium-default.v0.json",
+    "authoringDefaultSource": "Georg screenshot / browser tuning 2026-09-19",
+    "authoringDefault": {
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15,
+      "pupilSize": 0.34,
+      "inset": 0.4,
+      "lidFit": 0.9,
+      "converge": 0.18,
+      "splay": 0,
+      "gloss": 0.1
+    },
+    "sourceMeasuredPlacementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+    "inheritance": [
+      "rigClass",
+      "character",
+      "session"
+    ],
+    "status": "AUTHORING_DEFAULT_REFERENCE"
+  }
+}
