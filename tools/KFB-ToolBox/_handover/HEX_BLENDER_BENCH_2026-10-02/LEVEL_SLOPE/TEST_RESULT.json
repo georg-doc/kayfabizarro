@@ -1,0 +1,19 @@
+{
+  "schema": "kfb.hex-level-slope-test-result/0.1",
+  "status": "ADDITIVE_CONTRACT_PASS_BROWSER_EDGE_GATE_PENDING",
+  "testedImplementationCommit": "26d6a5b22a4c3f32cc1ef2f14346a71ea1e74fc3",
+  "testedTree": "8036a02290f7fd149440922c70e86dc6009d1905",
+  "sourceCommit": "fe45e3fbafec9180cd41a15ae824ee55af74e084",
+  "reviewUrl": "https://github.com/georg-doc/kayfabizarro/pull/320",
+  "tests": { "passed": 50, "total": 50, "failed": 0, "skipped": 0, "runner": "node:test", "node": "24.19.0" },
+  "exactGitHubReadback": { "passed": 6, "total": 6 },
+  "historicalBrowserFacts": { "passed": 15, "total": 15, "rerun": false, "unchanged": true },
+  "catalogBundleSha256": "59097ac85653c5ce6356a188d5ac4374d3f661271d6e7fd98aa2187b0f44db53",
+  "scaleDecision": "A_LOGICAL_HEX",
+  "slopeAdmission": "PREPARE",
+  "seam": { "centreStep": 0.09, "maxMeasuredStep": 0.199, "units": "hex-native", "status": "TRANSITION_REQUIRED", "geometryChanged": false },
+  "browserWebGL": "NOT_RUN_THIS_SLICE",
+  "fps": "NOT_MEASURED",
+  "stage": "NOT_CREATED_BY_BRIEF",
+  "merged": false
+}

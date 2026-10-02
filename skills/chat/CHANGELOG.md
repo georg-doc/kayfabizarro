@@ -2112,3 +2112,13 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Cars queued separately in `georg-doc/KFB-Stunt-Car-Race`: preserve human-accepted v0.8 Race feel; consume Vehicle Lab / Box Stop profile facts without moving steering/drift/jump/contact ownership.
 - Flight queued separately in `georg-doc/KFB-Travel-Globe`: preserve Travel Flight / `carpet.js` movement ownership; consume carrier/profile facts without creating second flight physics.
 - Clay/facade/shadow remains explicitly outside this mobility lane.
+## 2026-10-02 · Gemessene Rampenhöhen im Insel-Katalog
+
+- Gewählt: logischer Hex-Maßstab A. Keine pauschale Vergrößerung auf Weltmeter.
+- Vier Hangkacheln additiv um originale Blender-Kantenhöhen, Mittelpunkt, Rampenrichtung, Messquelle und Einheiten ergänzt.
+- Bestehender `auditTileFit` erhält einen zusätzlichen Höhenschutz; kein zweiter Solver, Renderer, Material- oder Skalierungsowner.
+- Kantenfarben und alle ursprünglichen 447 Modell-/256 Katalogeinträge sowie 15/15 historische Browser-Messfakten unverändert.
+- 50/50 lokale Daten-/Topologieprüfungen PASS. Sechs Implementationsdateien auf GitHub exakt zurückgelesen.
+- Strand-Rampe bleibt `TRANSITION_REQUIRED` (0.09 Mitte, 0.199 größter Messpunkt); keine Geometrie verschoben. Kantenmitten-Proben sind keine volle Nahtfreigabe; alle vier Hangkacheln bleiben PREPARE.
+- Verständliche Sprache, Entscheidungen direkt im Hub/Chat und kompakte nächste Schritte als globale Kommunikationsregel aufgenommen.
+- Draft [Prüfänderung](https://github.com/georg-doc/kayfabizarro/pull/320), gestapelt auf der Blender-Rückgabe. Kein Merge/Stage/Live; parallele Hub-Syntaxreparatur unangetastet.

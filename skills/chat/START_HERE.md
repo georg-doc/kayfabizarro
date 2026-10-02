@@ -4,6 +4,15 @@ Status: CURRENT ROUTER v0.4
 Date: 2026-09-29
 Owner: Georg / KFB
 
+## Verbindliche Kommunikation · Georg · 2026-10-02
+
+- Entscheidungen direkt im Chat und Hub erklären, nicht als Markdown-Datei zum Zusammensuchen auslagern.
+- Klar und laienverständlich schreiben. Jede technische Aussage bekommt ihren Zweck und Kontext.
+- Sichtbare Aufträge nach ihrem Ergebnis benennen. Kryptische Auftragskennungen, GitHub-Nummern und Messdatenkolonnen gehören in Quellnachweise, nicht in die Hauptkommunikation.
+- Interne Verträge, reproduzierbare Tests und technische Dokumentation bleiben präzise; verständliche Sprache ersetzt keine Nachweise.
+- Jeden Turn mit kompakten nächsten Schritten abschließen. Keine erneute Frage zu einer bereits getroffenen Entscheidung.
+- Diese Vorgabe ist bereits zentral in Production Control unter `KFB-GLOBAL-WORKING-RULES` gespeichert. Sie gilt unabhängig vom Merge dieses Router-Checkpoints.
+
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
@@ -1401,3 +1410,15 @@ The same handoff also carries the current parallel World truth:
 - existing biome/grouping evidence reused, no new placement owner.
 
 Blender owns source measurement, asset preparation and bounded scenelet authoring only. Browser/Web owns runtime/performance claims.
+
+## 2026-10-02 · Insel-Baukasten: Höhenanschlüsse ergänzt, Maßstab gewählt
+
+Georg wählt **A: Miniszenen behalten den logischen Hex-Maßstab**. Kein pauschales ×8.66 auf Weltmeter. Die von Blender nach Augenmaß gewählten Prop-Adapter bleiben Kandidaten.
+
+Die gemessenen Rampenhöhen und ein zusätzlicher Schutz in der bestehenden Anschlussprüfung liegen als ungemergter Kandidat auf `wsa/hex-catalog-level-slope-2026-10-02`, [Prüfänderung](https://github.com/georg-doc/kayfabizarro/pull/320).
+
+Technischer Einstieg: `tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/LEVEL_SLOPE/RETURN.md`.
+
+Die vorherigen Browser-Messungen bleiben erhalten. Die Höhenlogik hat 50 lokale Prüfungen bestanden; vollständige Kantenkontakte und Spielbarkeit sind damit noch nicht im Browser belegt. Die Strand-Rampen-Stufe braucht einen kleinen gemessenen Übergang, nicht das Verschieben der ganzen Kachel. Die Hub-Syntaxreparatur läuft separat; diese Änderung greift sie nicht an.
+
+Nächster Schritt: vollständige Kantenprofile im bestehenden Browser-Messwerkzeug ergänzen, dann die kleinen Insel-Szenen im gewählten Maßstab testen.

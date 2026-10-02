@@ -32,6 +32,22 @@
   ],
   "entries": [
     {
+      "id": "hex-catalog-level-slope-01",
+      "title": "Insel-Baukasten: Rampenhöhen und Höhenanschlüsse",
+      "kind": "workflow",
+      "status": "EXPERIMENTAL",
+      "path": "tools/KFB-ToolBox/_handover/HEX_BLENDER_BENCH_2026-10-02/LEVEL_SLOPE/RETURN.md",
+      "branch": "wsa/hex-catalog-level-slope-2026-10-02",
+      "reviewUrl": "https://github.com/georg-doc/kayfabizarro/pull/320",
+      "executor": "Codex / WSA",
+      "model": "GPT-6.1 Sol",
+      "reasoning": "high",
+      "owner": "existing Hex catalog / tools/world_atlas/source/lib/hex-grid.js",
+      "scaleDecision": "A_LOGICAL_HEX",
+      "loadWhen": ["Hex ramp placement", "tile edge heights", "Hex scenelet browser bench"],
+      "next": "Complete measured edge profiles in existing browser owner; keep slope tiles PREPARE meanwhile."
+    },
+    {
       "id": "session-zip-v1",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
