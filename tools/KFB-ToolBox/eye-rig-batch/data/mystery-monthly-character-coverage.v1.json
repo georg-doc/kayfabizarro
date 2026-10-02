@@ -19,7 +19,11 @@
     "embeddedPalette": "A",
     "additionalPalette": "B",
     "kingCandidatePalette": "B",
-    "note": "Palette B is Georg's light/blonde King candidate. EyeRig profile is geometry-based; no duplicate skeleton invented for palette B."
+    "note": "Palette B is Georg's light/blonde King candidate. EyeRig profile is geometry-based; no duplicate skeleton invented for palette B.",
+    "paletteBlobs": {
+      "A": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+      "B": "eb45816ada5c84bc91abc0225e3b25f5998accc1"
+    }
   },
   "actors": [
     {
@@ -324,11 +328,15 @@
         {
           "id": "A",
           "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_A.png",
+          "blob": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
           "role": "embedded/default"
         },
         {
           "id": "B",
           "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+          "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
           "role": "Georg: light/blonde King candidate"
         }
       ]
@@ -347,11 +355,15 @@
         {
           "id": "A",
           "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_A.png",
+          "blob": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
           "role": "embedded/default"
         },
         {
           "id": "B",
           "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+          "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
           "role": "Georg: light/blonde King candidate"
         }
       ]
