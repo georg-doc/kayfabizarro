@@ -1,3 +1,16 @@
+## 2026-10-03 · Character appearance coverage
+
+Before adding or reviewing a KayKit character with more than one source appearance, read:
+
+- `data/character-variant-requirements.v1.json`
+- `docs/CHARACTER_VARIANT_COVERAGE_2026-10-03.md`
+
+Current binding requirement: **Magical Girl must expose A/B/C/D** in Resident Atlas. Batch EyeRig stays owned by Draft PR #104; reuse its Paladin A/B pattern, including light/blonde B as the King precedent. Do not duplicate geometry/skeletons for texture-only variants.
+
+The coverage audit currently finds **25 character texture families / 56 source appearances** in `KayKit_Mystery_Series6`. Canonical S6 explicitly completes only Cleric and Ultra Turbo Hero Man. Newer inbox/session cuts are donor evidence only until promoted.
+
+Exactly one next variant gate: **MAGICAL-GIRL-VARIANTS-01**.
+
 # RECOVERY · Startpunkt für einen neuen Chat oder Entwickler
 
 ## In zwei Minuten arbeitsfähig
