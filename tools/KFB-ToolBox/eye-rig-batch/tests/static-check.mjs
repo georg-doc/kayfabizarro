@@ -103,5 +103,11 @@ check('source-anchor-dynamic-button',app.includes('function refreshPlacementSour
 check('placement-ranges-expanded',html.includes('data-param="dy" type="range" min="-2" max="1.5"')&&html.includes('data-param="ring" type="range" min="0.02" max="1.2"')&&html.includes('data-param="inset" type="range" min="-1.5" max="6"'));
 check('placement-range-auto-expands',app.includes('function expandPlacementRange')&&app.includes("['dx','dy','ring','inset'].includes(k)"));
 check('monster-mapping-corrected',cleanup02Review.mappingCorrection?.includes("Rig_Large actor 'monstrosity'")&&cleanup02Review.actorIssues?.monstrosity&&!cleanup02Review.actorIssues?.monster);
+check('ring-depth-compensation-helper',adapter.includes('export function compensateInsetForRing')&&adapter.includes('oldSeat=oldRing*(SEAT_BASE+oldInset*SEAT_GAIN)')&&adapter.includes('oldSeat/newRing'));
+check('ring-size-centre-lock-runtime',adapter.includes('setRingPreserveCenter(newRing)')&&app.includes('state.eyes.setRingPreserveCenter(v)')&&app.includes("state.profile.eye.inset=+r.inset"));
+check('track-no-rebuild-runtime',adapter.includes('setTrack(track)')&&adapter.includes('rig.anchor.track=track')&&adapter.includes('rig._max=U*track')&&app.includes("state.eyes.setTrack(v)"));
+check('studio-parity-control-labels',html.includes('>Height <output data-out="dy"')&&html.includes('>Eye size (ring) <output data-out="ring"')&&html.includes('>Gaze drift <output data-out="track"'));
+check('control-semantics-hint',html.includes('Eye size changes size only (centre locked)')&&html.includes('Splay rotates and re-seats on the surface'));
+check('control-semantics-report',app.includes("eyeSize:'size-only-centre-locked'")&&app.includes("inset:'depth-only'")&&app.includes("track:'gaze-amplitude-only'"));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);

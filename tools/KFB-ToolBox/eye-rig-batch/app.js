@@ -832,7 +832,18 @@ function wireRuntimeControls(camera,controls,renderer) {
   $('#kineticsToggle').onchange=(e)=>{ state.profile.kinetics.enabled=e.target.checked; state.eyes.setKinetics({enabled:e.target.checked}); };
   $$('[data-param]').forEach((input)=> input.oninput=()=>{
     const k=input.dataset.param, v=+input.value; const out=$(`[data-out="${k}"]`); if(out)out.value=value(v);
-    if(['dx','dy','ring','track'].includes(k)){state.profile.eye.anchor[k]=v; state.eyes.setAnchor({[k]:v});}
+    if(['dx','dy'].includes(k)){state.profile.eye.anchor[k]=v; state.eyes.setAnchor({[k]:v});}
+    else if(k==='ring'){
+      const r=state.eyes.setRingPreserveCenter(v);
+      state.profile.eye.anchor.ring=v;
+      if(r?.status==='OK'&&Number.isFinite(+r.inset)){
+        state.profile.eye.inset=+r.inset;
+        expandPlacementRange('inset',r.inset);
+        const ii=$('[data-param="inset"]'),io=$('[data-out="inset"]');
+        if(ii)ii.value=r.inset;if(io)io.value=value(r.inset);
+      }
+    }
+    else if(k==='track'){state.profile.eye.anchor.track=v; state.eyes.setTrack(v);}
     else if(['pupilSize','gloss','inset','lidFit','converge','splay'].includes(k)){state.profile.eye[k]=v; state.eyes.setEye({[k]:v});}
     else if(['ovalW','ovalH','ovalD','ovalTilt'].includes(k)){
       const map={ovalW:'w',ovalH:'h',ovalD:'d',ovalTilt:'tilt'}, ok=map[k];
@@ -901,7 +912,9 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),
+      controlSemantics:{spacing:'x-only',height:'y-only',eyeSize:'size-only-centre-locked',inset:'depth-only',splay:'orientation-plus-surface-seat',lidFit:'lids-only',oval:'shape-only',pupilSize:'pupil-only',track:'gaze-amplitude-only',converge:'pupil-aim-only',gloss:'material-only'},
+      eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
   wireProfileIo();wireRuntimeControls(camera,controls,renderer);wireRoster();
