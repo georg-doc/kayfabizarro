@@ -1,0 +1,317 @@
+name: Billboard Context R11 Proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/billboard-context-r11-2026-10-02
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/**'
+      - '.github/workflows/billboard-context-r11-proof.yml'
+  pull_request:
+    branches:
+      - chatgpt-web/billboard-b2a-css3d-2026-09-24
+    paths:
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/**'
+      - '.github/workflows/billboard-context-r11-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  donor-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify exact H13 donor bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT='tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/h13'
+          SRC='tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30'
+          git show origin/main:"$SRC/KFB Billboard Kaleidoscope H13.dc.html" > /tmp/h13-main.html
+          git show origin/main:"$SRC/support.js" > /tmp/h13-support.js
+          git show origin/main:"$SRC/data/h6-card-crops.json" > /tmp/h13-crops.json
+          cmp "$ROOT/KFB Billboard Kaleidoscope H13.dc.html" /tmp/h13-main.html
+          cmp "$ROOT/support.js" /tmp/h13-support.js
+          cmp "$ROOT/data/h6-card-crops.json" /tmp/h13-crops.json
+          echo '3/3 donor files byte-identical'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Show H13 source object in isolation
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/billboard-context-r11-donor
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/r11-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-context-r11-donor/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const raw = 'http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/h13/KFB Billboard Kaleidoscope H13.dc.html';
+          const url = encodeURI(raw);
+          const report = { url, checks: [], pageErrors: [], consoleErrors: [], requestFailures: [], httpErrors: [], boot: {} };
+          const check = (name, pass, detail=null) => {
+            report.checks.push({ name, pass: !!pass, detail });
+            if (!pass) process.exitCode = 1;
+          };
+
+          const browser = await chromium.launch({
+            headless: true,
+            args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
+          });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+          page.on('pageerror', e => report.pageErrors.push(String(e)));
+
+          try {
+            const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+            check('local H13 HTTP', !!response && response.ok(), response?.status());
+            await page.waitForFunction(() =>
+              typeof window.__dcRootName === 'function' &&
+              typeof window.__dcSetProps === 'function',
+              {}, { timeout: 90000 }
+            );
+            const meta = await page.evaluate(() => {
+              const root = window.__dcRootName();
+              const entry = window.__dcRegistry?.[root];
+              return {
+                root,
+                palOptions: entry?.propsMeta?.palSource?.options || [],
+                palDefault: entry?.propsMeta?.palSource?.default || null,
+                kfbShareDefault: entry?.propsMeta?.kfbShare?.default ?? null
+              };
+            });
+            check('H13 root booted', !!meta.root, meta.root);
+            check('existing CARDS palette prop', meta.palOptions.includes('CARDS'), meta);
+            check('existing KFB share prop', typeof meta.kfbShareDefault === 'number', meta);
+
+            const face = page.locator('canvas[width="1024"][height="512"]').first();
+            await face.waitFor({ state: 'visible', timeout: 90000 });
+            await page.waitForTimeout(5000);
+            const box = await face.boundingBox();
+            check('H13 1024x512 face visible', !!box && box.width > 300 && box.height > 150, box);
+
+            await face.screenshot({ path: 'artifacts/billboard-context-r11-donor/01-h13-source-isolated.png' });
+            const before = fs.statSync('artifacts/billboard-context-r11-donor/01-h13-source-isolated.png').size;
+            check('source screenshot has content bytes', before > 10000, before);
+
+            await page.evaluate(() => {
+              const root = window.__dcRootName();
+              window.__dcSetProps(root, { palSource: 'CARDS', kfbShare: 1 });
+            });
+            await page.waitForTimeout(2500);
+            await face.screenshot({ path: 'artifacts/billboard-context-r11-donor/02-h13-cards-prop.png' });
+            const after = fs.statSync('artifacts/billboard-context-r11-donor/02-h13-cards-prop.png').size;
+            check('H13 survives existing prop override', after > 10000, after);
+            check('no page errors', report.pageErrors.length === 0, report.pageErrors);
+          } catch (e) {
+            report.pageErrors.push(String(e?.stack || e));
+            process.exitCode = 1;
+          } finally {
+            try {
+              await page.screenshot({ path: 'artifacts/billboard-context-r11-integration/00-final-page.png', fullPage: true });
+            } catch (_) {}
+            report.status = process.exitCode ? 'FAIL' : 'PASS';
+            report.passed = report.checks.filter(x => x.pass).length;
+            report.total = report.checks.length;
+            fs.writeFileSync(
+              'artifacts/billboard-context-r11-donor/report.json',
+              JSON.stringify(report, null, 2) + '\n'
+            );
+            console.log(JSON.stringify({
+              status: report.status,
+              checks: report.passed + '/' + report.total,
+              pageErrors: report.pageErrors.length,
+              consoleErrors: report.consoleErrors.length,
+              requestFailures: report.requestFailures.length,
+              httpErrors: report.httpErrors.length,
+              boot: report.boot
+            }, null, 2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-context-r11-donor/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-context-r11-h13-donor
+          path: artifacts/billboard-context-r11-donor
+          retention-days: 90
+
+
+  integration:
+    needs: donor-isolation
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Context-router browser proof
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/billboard-context-r11-integration
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/r11-integration-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-context-r11-integration/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const root = 'http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/';
+          const url = root + 'index.html?state=idle&packId=forget_utopia&card=7';
+          const report = { url, checks: [], pageErrors: [], consoleErrors: [], requestFailures: [], httpErrors: [], boot: {}, shots: [] };
+          const check = (name, pass, detail=null) => {
+            report.checks.push({ name, pass: !!pass, detail });
+            if (!pass) process.exitCode = 1;
+          };
+          const browser = await chromium.launch({
+            headless: true,
+            args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
+          });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+          page.on('pageerror', e => report.pageErrors.push(String(e)));
+          page.on('console', m => {
+            if (m.type() === 'error') report.consoleErrors.push(m.text());
+          });
+          page.on('requestfailed', req => report.requestFailures.push({
+            url: req.url(),
+            error: req.failure()?.errorText || 'unknown'
+          }));
+          page.on('response', res => {
+            if (res.status() >= 400) report.httpErrors.push({ url: res.url(), status: res.status() });
+          });
+
+          async function snap(state, file) {
+            await page.evaluate(s => window.__r11.setState(s), state);
+            await page.waitForFunction(s => {
+              const r = window.__r11?.snapshot();
+              return r?.ready && r?.context?.state === s;
+            }, state, { timeout: 90000 });
+            await page.waitForTimeout(1200);
+            const s = await page.evaluate(() => window.__r11.snapshot());
+            await page.screenshot({ path: 'artifacts/billboard-context-r11-integration/' + file, fullPage: true });
+            report.shots.push({ state, file, snapshot: s });
+            return s;
+          }
+
+          try {
+            const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+            check('candidate HTTP', !!response && response.ok(), response?.status());
+
+            try {
+              await page.waitForFunction(() => !!window.__r11, {}, { timeout: 20000 });
+              report.boot.module = 'PASS';
+            } catch (e) {
+              report.boot.module = 'FAIL';
+              report.boot.scripts = await page.evaluate(() =>
+                [...document.scripts].map(s => ({ src: s.src, type: s.type }))
+              );
+              throw new Error('R11_MODULE_BOOT_TIMEOUT');
+            }
+
+            try {
+              await page.waitForFunction(() => {
+                const r = window.__r11?.snapshot?.();
+                return !!r?.sourceFace;
+              }, {}, { timeout: 60000 });
+              report.boot.hero = 'PASS';
+            } catch (e) {
+              report.boot.hero = 'FAIL';
+              report.boot.snapshot = await page.evaluate(() => window.__r11?.snapshot?.() || null);
+              throw new Error('R11_HERO_MOUNT_TIMEOUT');
+            }
+
+            try {
+              await page.waitForFunction(() => window.__r11?.snapshot?.()?.ready, {}, { timeout: 90000 });
+              report.boot.initialReady = 'PASS';
+            } catch (e) {
+              report.boot.initialReady = 'FAIL';
+              report.boot.snapshot = await page.evaluate(() => window.__r11?.snapshot?.() || null);
+              throw new Error('R11_INITIAL_READY_TIMEOUT');
+            }
+
+            const idle = await snap('idle', '01-idle-h13.png');
+            check('idle uses real H13', idle.mode === 'hyper' && idle.h13?.ready, idle);
+            check('context pack bound', idle.context?.packId === 'forget_utopia', idle.context);
+            check('no invented island/resident binding', idle.context?.islandId == null && idle.context?.residentId == null, idle.context);
+            check('H13 face is 1024x512', idle.h13?.face?.width === 1024 && idle.h13?.face?.height === 512, idle.h13);
+            check('H13 prop seam retained', idle.h13?.propSeam === '__dcSetProps', idle.h13);
+
+            const approach = await snap('approach', '02-approach-cover.png');
+            check('approach uses real cover', approach.mode === 'cover' && /cover page 1/i.test(approach.content || ''), approach.content);
+
+            const focus = await snap('focus', '03-focus-card.png');
+            check('focus uses selected card', focus.mode === 'quarter' && /#7/.test(focus.content || ''), focus.content);
+
+            const interact = await snap('interact', '04-interact-card.png');
+            check('interact holds selected card', interact.mode === 'quarter' && interact.ready, interact.content);
+
+            const mediaFront = await snap('media', '05-media-front.png');
+            check('media uses B2a CSS3D iframe', mediaFront.mode === 'video' && mediaFront.dom?.iframeSrc?.includes('youtube-nocookie.com'), mediaFront.dom);
+            check('media front visible', mediaFront.css3d?.frontFacing === true && mediaFront.dom?.objectVisible === true, mediaFront.css3d);
+            check('no modal', mediaFront.dom?.modalElementExists === false, mediaFront.dom);
+
+            await page.evaluate(() => window.__r11.setView('BACK'));
+            await page.waitForTimeout(800);
+            const mediaBack = await page.evaluate(() => window.__r11.snapshot());
+            await page.screenshot({ path: 'artifacts/billboard-context-r11-integration/06-media-back.png', fullPage: true });
+            check('B2a rear cull retained', mediaBack.css3d?.frontFacing === false && mediaBack.dom?.objectVisible === false, mediaBack.css3d);
+
+            await page.evaluate(() => window.__r11.setView('FRONT'));
+            const returned = await snap('idle', '07-return-idle.png');
+            check('return restores ambient H13', returned.mode === 'hyper' && returned.h13?.ready, returned);
+            check('no page errors', report.pageErrors.length === 0, report.pageErrors);
+          } catch (e) {
+            report.pageErrors.push(String(e?.stack || e));
+            process.exitCode = 1;
+          } finally {
+            report.status = process.exitCode ? 'FAIL' : 'PASS';
+            report.passed = report.checks.filter(x => x.pass).length;
+            report.total = report.checks.length;
+            fs.writeFileSync(
+              'artifacts/billboard-context-r11-integration/report.json',
+              JSON.stringify(report, null, 2) + '\n'
+            );
+            console.log(JSON.stringify({
+              status: report.status,
+              checks: report.passed + '/' + report.total,
+              pageErrors: report.pageErrors.length
+            }, null, 2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-context-r11-integration/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-context-r11-integration
+          path: artifacts/billboard-context-r11-integration
+          retention-days: 90

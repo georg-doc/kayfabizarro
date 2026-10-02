@@ -218,3 +218,30 @@ Current next gate:
 - first gate is source-object isolation + same-camera before/after front/3/4/side/rear comparison;
 - B3 is **PREPARED / NOT STARTED**;
 - Georg asked to run **B2b Living Mockup / Collage research first**.
+
+
+## 2026-10-02 · Context R11 · local browser integration PASS
+
+A bounded contextual router is now proven on Draft PR **#321** / branch `chatgpt-web/billboard-context-r11-2026-10-02`, stacked on accepted B2a.
+
+State sequence:
+`AMBIENT/H13 -> APPROACH/COVER -> FOCUS|INTERACT/CARD -> MEDIA/B2a -> AMBIENT/H13`.
+
+Important boundaries:
+- H13 remains frozen and supplies its real 1024×512 face through its existing runtime;
+- `palSource=CARDS` is passed through H13's existing `__dcSetProps` seam;
+- H13 retains its existing audio/Analyser/song-form owner;
+- B1 content-fit and B2a front/rear CSS3D semantics remain unchanged;
+- no island/resident mapping was invented; the proof binds only `forget_utopia` card #7.
+
+Evidence:
+- H13 donor isolation **8/8 PASS**, artifact `11238619910`;
+- integrated browser run `37040526951`: **15/15 PASS**, artifact `11242258055`;
+- media rear cull retained;
+- no page errors / no first-party failed requests.
+- H13's external Wikimedia film fallback still emits expected failed variant probes; these are non-blocking donor behavior.
+
+Status: **LOCAL_BROWSER_INTEGRATION_PASS · DRAFT / UNMERGED · NOT PUBLIC STAGE**.
+
+Exactly one next gate:
+**BILLBOARD-CONTEXT-CONSUMER-01** — one real Town/Travel island context supplies its existing island/resident/deck/world-palette values to this router. Do not create a parallel mapping table or palette runtime.
