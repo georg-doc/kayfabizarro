@@ -44,3 +44,25 @@
 - Browser/WebGL execution of P0.2: NOT YET CLAIMED.
 - Cloudflare public deployment: NOT YET VERIFIED.
 - Georg visual acceptance: OPEN.
+
+
+## 2026-09-19 · WSA handoff / review check-in
+
+### DECISION
+- WSA / Race remains integration lead.
+- Map Board stays a non-owning presentation/story donor.
+- No Race/Travel movement, physics, collision, camera, persistence, Card or OSM City owner is replaced.
+
+### IMPLEMENTATION
+- Added `HANDOFF_WSA_2026-09-19.md` with exact source pins, owner map, protected boundaries, tested status and the complete ordered backlog.
+- Added `RETURN_WSA_2026-09-19.md` as the compact recovery/check-in return.
+- README and Recovery now route the next reviewer through the WSA package.
+
+### TESTED RESULT
+- No new runtime/browser PASS is claimed by this documentation-only handoff.
+- Existing static/source PASS is preserved.
+- Current real-browser P0.2 proof, exact Cloudflare deployment and Georg visual acceptance remain OPEN.
+
+### OPEN
+- First gate: run the existing P0.2 public proof against `p0.2-r7-solid-country-tiles`.
+- Exactly one WSA review question is recorded in the handoff document.
