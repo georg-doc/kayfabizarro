@@ -1447,3 +1447,31 @@ Exactly one next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B1 · GOLDEN FAMILY SIBLINGS**
 
 Measure the full pinned 22-building Hürth V2 corpus first; only then derive bounded siblings. No generic “wonky house” prompt and no universal random-building generator.
+
+
+## 2026-10-02 · CURRENT WORLDBUILDER FORM/ENVIRONMENT · BUILDING B1 PASS
+
+Canonical recovery:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b1/RECOVERY.md`
+
+Current branch:
+`chatgpt-web/wc1-procedural-building-b1-2026-10-02`
+
+Draft PR:
+#322
+
+B1 result:
+**SOURCE_BOUNDED_SIBLINGS_PASS**
+
+Three real-topology / real-envelope sibling lanes are proven through the accepted Elastic V2 owner, without topology mutation, new roof grammar or material coupling.
+
+Final tested head:
+`191f79bed81e2e5a0b5486033532b9f0b32335a7`
+
+Final run/job:
+`37041339236 / 110951929252`
+
+Exactly one next FORM/ENVIRONMENT gate:
+**PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**
+
+Do not copy `FACADE_RULE v1` / `facadeSpecs()` into a new parallel presenter. Feed the B1 siblings through the existing real owner.
