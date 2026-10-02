@@ -5,7 +5,8 @@
     "cleanupJob": "EYE-CLEANUP-02",
     "cleanupHead": "1820a1c034e9741acedb4d8ba3118cbd1fc776ba",
     "prepPr": 315,
-    "prepHead": "eef621f92b29ba8d45395a1c8aab28bc75ca35a7"
+    "prepHead": "eef621f92b29ba8d45395a1c8aab28bc75ca35a7",
+    "pathMatching": "EXACT_SOURCE_PATH_ONLY"
   },
   "summary": {
     "entries": 31,
@@ -82,7 +83,7 @@
       "sourceId": "prot_a",
       "noEyes": "Protagonist_A_NoEyes.glb"
     },
-    "monster": {
+    "monstrosity": {
       "status": "CHECK_CLEANUP",
       "shortLabel": "PATCHED FACE",
       "title": "Left and right eye surroundings differ",
@@ -98,5 +99,6 @@
       "title": "Prototype Pete is Legacy/off-roster",
       "detail": "Raised eye bumps were removed although the cleanup brief expected none. Decide original vs NoEyes before Legacy EyeRig use."
     }
-  ]
+  ],
+  "mappingCorrection": "Cleanup02 id 'monster' maps to Rig_Large actor 'monstrosity'; Medium 'monster' / Monster Costume has no Cleanup02 anchor entry."
 }
