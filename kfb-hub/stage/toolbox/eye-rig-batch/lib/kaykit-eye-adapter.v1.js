@@ -9,6 +9,14 @@ function colorHex(THREE, value) {
   try { return '#' + new THREE.Color(value).getHexString(); } catch { return null; }
 }
 const finite = (v) => Number.isFinite(+v);
+const SEAT_BASE = 0.24, SEAT_GAIN = 1.15;
+
+export function compensateInsetForRing(oldRing, oldInset, newRing) {
+  oldRing=+oldRing; oldInset=+oldInset; newRing=+newRing;
+  if(!finite(oldRing)||!finite(oldInset)||!finite(newRing)||oldRing<=0||newRing<=0) return oldInset;
+  const oldSeat=oldRing*(SEAT_BASE+oldInset*SEAT_GAIN);
+  return (oldSeat/newRing-SEAT_BASE)/SEAT_GAIN;
+}
 
 export function deriveSourceAnchorSeed({ THREE, figure, faceHost, anchors } = {}) {
   const body=faceHost?.box;
@@ -132,6 +140,22 @@ export async function mountKayKitEyes({
     setPointer(nx, ny) { rig.pointTo(nx, ny); },
     setVisible(on) { api.visible = !!on; if (rig.rig) rig.rig.visible = api.visible; },
     setAnchor(patch) { rig.setAnchor(patch); api.setVisible(api.visible); },
+    setRingPreserveCenter(newRing) {
+      const oldRing=+rig.anchor.ring, oldInset=+rig.inset, ring=+newRing;
+      if(!finite(ring)||ring<=0) return {status:'UNSUPPORTED',reason:'ring must be > 0'};
+      const inset=compensateInsetForRing(oldRing,oldInset,ring);
+      rig.inset=inset;
+      rig.setAnchor({ring});
+      api.setVisible(api.visible);
+      return {status:'OK',ring,inset,seatInvariant:oldRing*(SEAT_BASE+oldInset*SEAT_GAIN)};
+    },
+    setTrack(track) {
+      track=+track; if(!finite(track)) return {status:'UNSUPPORTED',reason:'track must be finite'};
+      rig.anchor.track=track;
+      const frame=rig.eyeFrame(), U=frame?.unit || (rig._R/(rig.anchor.ring||1));
+      rig._max=U*track;
+      return {status:'OK',track,max:rig._max};
+    },
     setEye(patch) { rig.setEye(patch); api.setVisible(api.visible); },
     setPupilStyle(style) { rig.setPupilStyle(style); api.setVisible(api.visible); },
     setBaseColor(hex) { rig.setBaseColor(hex); api.setVisible(api.visible); },
