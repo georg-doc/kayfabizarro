@@ -8,6 +8,26 @@ Dieses Dokument ist für einen frischen Chat geschrieben. Es enthält, was der n
 
 ---
 
+## P0 · MAGICAL-GIRL-VARIANTS-01 · vier Source-Appearances
+
+**Neu registriert 2026-10-03.**
+
+Ein `MagicalGirl.glb`, vier echte Source-Texturen **A/B/C/D**. Alle vier werden im Resident Atlas gebraucht. Keine vier Skeletons, keine vier kopierten GLBs.
+
+Erster Gate:
+1. A/B/C/D als vier auswählbare/vergleichbare Appearance-Instanzen aus derselben Geometrie;
+2. bestehende `skin`-Mechanik wiederverwenden;
+3. Batch EyeRig PR #104 konsumiert dieselbe Geometrie und stellt A/B/C/D als Appearance-Varianten bereit;
+4. alle vier im direkten Review zeigen;
+5. erst danach den restlichen 25-Familien-Backlog abarbeiten.
+
+Source-/Lückenmatrix:
+`data/character-variant-requirements.v1.json`
+und
+`docs/CHARACTER_VARIANT_COVERAGE_2026-10-03.md`.
+
+Paladin-Präzedenz: A/B sind im EyeRig bereits registriert; B = heller/blonder King-Kandidat.
+
 ## Die vier Regeln, die alles tragen
 
 1. **Identität zuerst.** `handslot`-Bones sind authored Befestigungspunkte. Eine Requisite mit Identitäts-Transform sitzt richtig — in jeder Pose. Erst wenn sie sichtbar nicht sitzt, wird gerechnet.
