@@ -1475,3 +1475,28 @@ Exactly one next FORM/ENVIRONMENT gate:
 **PROCEDURAL BUILDING B2 · EXISTING FACADE OWNER INTEGRATION**
 
 Do not copy `FACADE_RULE v1` / `facadeSpecs()` into a new parallel presenter. Feed the B1 siblings through the existing real owner.
+
+
+## 2026-10-02 · CURRENT WORLDBUILDER FORM/ENVIRONMENT · BUILDING B2 PASS
+
+Canonical recovery:
+`tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-building-b2/RECOVERY.md`
+
+Current branch:
+`chatgpt-web/wc1-procedural-building-b2-2026-10-02`
+
+Draft PR:
+#323
+
+B2 result:
+**EXISTING_FACADE_OWNER_INTEGRATION_PASS**
+
+The B1 siblings now consume the actual shared `wd1-city.js::buildCityLayer()` / `kfb-facade-rule-v1` owner in the real frozen Hürth context.
+
+Important correction:
+the stable router path `tools/KFB-ToolBox/worldbuilder/world-integration-01/` is missing on this branch; active behavior remains in the pinned r2 Session Cut.
+
+Exactly one next gate:
+**PROCEDURAL BUILDING B3 · REAL OWNER REHOME + WORLDBUILDER CONSUMER**
+
+Rehome the proven owner; do not create a second presenter.
