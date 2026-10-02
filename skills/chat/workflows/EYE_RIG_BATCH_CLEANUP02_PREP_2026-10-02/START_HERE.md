@@ -53,6 +53,8 @@ Later controllable brows reuse the existing `BrowRig` from `brow-rig.v2.js`:
 
 This slice does **not** invent a second brow system and does **not** mutate `kfb.eye-profile/0.1-candidate`. Brow state remains a companion export until an actual consumer proof warrants a broader contract.
 
+Activation guard: source brows are preserved now for reversibility. When `BrowRig` is enabled later, the authored/source brow must be hidden or masked **non-destructively per actor**; when BrowRig is disabled, the source brow remains visible. Do not pre-delete brows during Eye-Cleanup/EyeRig intake.
+
 ## Consumer boundaries
 
 **ToolBox** calibrates and approves EyeRig/BrowRig presentation profiles.
