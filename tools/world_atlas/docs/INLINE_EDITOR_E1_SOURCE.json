@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.world-atlas.inline-detail-editor-e1/0.1",
+  "date": "2026-09-20",
+  "status": "FROZEN_CANDIDATE_STATIC_PASS_BROWSER_PROOF_HARNESS_BLOCKED",
+  "owner": "World Atlas / Dungeon S13.2",
+  "donor": {
+    "intakePr": 120,
+    "sourceRoot": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/",
+    "contract": "docs/EDITOR_LAYER.md",
+    "host": "KayKit_Room_Study_S21.html"
+  },
+  "implementation": {
+    "file": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+    "editableLayers": [
+      "torch",
+      "candle"
+    ],
+    "protectedLayers": [
+      "floor",
+      "wall",
+      "corner",
+      "stair",
+      "seams"
+    ],
+    "patchSchema": "kfb.dungeon-detail-patch/0.1",
+    "localScratch": "kfb-s132-detail-edits-v1"
+  },
+  "behavior": [
+    "click editable prop while Editor is enabled",
+    "move with 0.1 translation snap or rotate Y with 15 degree snap",
+    "candle may snap back to generated floor height",
+    "edited transform mutates current placement record for Recipe JSON export",
+    "local scratch restores the patch after a deterministic rebuild",
+    "stored patch is ignored when asset identity no longer matches"
+  ],
+  "tests": {
+    "staticContract": "20/20 PASS",
+    "browser": "NOT_TESTED · QA harness failed twice before application assertion",
+    "publicStage": "NOT_PUBLISHED",
+    "georgAcceptance": "OPEN",
+    "browserAttempts": [
+      {
+        "run": 35487119077,
+        "job": 106015440253,
+        "result": "HARNESS_TIMEOUT_AFTER_PAGE_WEBGL_LOAD"
+      },
+      {
+        "run": 35487373804,
+        "job": 106016124834,
+        "result": "HARNESS_NODE22_AMBIGUOUS_MODULE_SYNTAX_BEFORE_CDP_POLL"
+      }
+    ]
+  },
+  "nextGate": "Fresh QA-only slice proves unchanged ?e1proof=1 candidate with one valid CDP module system; no third repair in E1.",
+  "recovery": "tools/world_atlas/docs/INLINE_EDITOR_E1_FAILURE_RECOVERY_2026-09-20/START_HERE.md"
+}

@@ -7,6 +7,7 @@
 {"imports":{
  "three":"https://unpkg.com/three@0.184.0/build/three.module.js",
  "three/addons/controls/OrbitControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+ "three/addons/controls/TransformControls.js":"https://unpkg.com/three@0.184.0/examples/jsm/controls/TransformControls.js",
  "three/addons/loaders/GLTFLoader.js":"https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
 }}
 </script>
@@ -55,6 +56,11 @@
   /* Nur noch das Ergebnis eines Klicks liegt auf der Szene. Alle Kennzahlen stehen in der Leiste. */
   #pick{position:absolute;left:10px;bottom:10px;font:10px/1.55 ui-monospace,monospace;
     background:#120e18e0;border:1px solid #3b2f4d;padding:6px 8px;border-radius:6px;display:none;max-width:52%}
+  #objmenu{position:absolute;z-index:12;display:none;gap:4px;transform:translate(-50%,-100%);
+    background:#120e18ee;border:1px solid #5a4672;border-radius:7px;padding:4px;box-shadow:0 8px 22px #0008}
+  #objmenu button{min-width:28px;padding:6px 7px}
+  #objmenu button[disabled]{opacity:.35;cursor:not-allowed}
+  #app.clean #objmenu{display:none!important}
 
   aside{border-left:1px solid #2a2135;background:#161020;overflow:auto;padding:0 0 24px}
   @media (max-width:1100px){
@@ -99,12 +105,19 @@
     <select id="lvl" title="Ebenen"><option value="both">beide Ebenen</option><option value="0">nur unten</option><option value="1">nur oben</option></select>
     <div class="spacer"></div>
     <button id="top">Draufsicht</button>
+    <button id="editor" aria-pressed="false" title="Detail-Editor · nur Fackeln/Kerzen">Editor</button>
     <button id="clean">Nur Ansicht</button>
     <button id="panel" aria-pressed="false" title="Leiste (Werkzeuge, Prüfungen, Notizen)">☰</button>
   </header>
   <div id="stage">
     <canvas id="c"></canvas>
     <div id="pick"></div>
+    <div id="objmenu" aria-label="Detail-Editor">
+      <button data-edit="translate" title="Verschieben · G">✥</button>
+      <button data-edit="rotate" title="Drehen · R">⟳</button>
+      <button data-edit="floor" title="Auf Boden absetzen">⬓</button>
+      <button data-edit="close" title="Auswahl schließen · Esc">✕</button>
+    </div>
     <button id="exitClean" title="Escape">Ansicht verlassen</button>
   </div>
   <aside>
@@ -117,6 +130,19 @@
         <button id="ov" aria-pressed="false">Fugen</button>
         <button id="exp">Recipe JSON</button>
         <a href="KayKit_Dungeon_Model_S13.html"><button>← Modell S13</button></a>
+      </div>
+    </details>
+    <details id="editBox">
+      <summary>Editor · Detail-Patch</summary>
+      <div class="body">
+        <p class="note">E1 bearbeitet nur <code>torch</code>/<code>candle</code>. Architektur bleibt Generator-Eigentum.
+        Handkorrekturen sind Ablage + Patch; <code>Recipe JSON</code> exportiert die sichtbaren Transformwerte.</p>
+        <div id="editPatch" class="mono">— noch nichts geändert</div>
+        <div class="tools" style="margin-top:6px">
+          <button id="copyEditPatch">Patch kopieren</button>
+          <button id="rebuildEditPatch">Neu bauen</button>
+          <button id="resetEditPatch">Alles zurück</button>
+        </div>
       </div>
     </details>
     <details>
@@ -201,6 +227,7 @@
 
 <script type="module">
 import * as THREE from 'three';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { buildScene, makeViewer, measure, measured, loadAsset, repairTextures } from './lib/kit-lab.js';
 import { generate, layout, collectTris, planScan, wallFrame, cornerFrame, stairFrame, openingScan, cellId }
   from './lib/dungeon-grid.js';
@@ -410,6 +437,246 @@ document.getElementById('facts').innerHTML = [
 /* ---------- Zustand ---------- */
 let model = null, root = null, placements = [], step = 3, levelView = 'both', overlay = false;
 let seamLines = null, lastProbe = null, flameNodes = [];
+
+/* ---------- E1 · S21 Inline Detail Editor ----------
+   Zweiter realer Host fuer die S21-Interaktion. Absichtlich NUR Detail-Props:
+   Architektur (floor/wall/corner/stair/seams) bleibt vollstaendig Generator-Eigentum.
+   Noch KEIN lib/edit-layer.js: erst dieser zweite Host beweist, was wirklich gemeinsam ist. */
+const editBtn = document.getElementById('editor');
+const editMenu = document.getElementById('objmenu');
+const editPatchEl = document.getElementById('editPatch');
+const editBox = document.getElementById('editBox');
+const editRay = new THREE.Raycaster();
+const editGizmo = new TransformControls(V.camera, V.renderer.domElement);
+const editGizmoHelper = editGizmo.getHelper ? editGizmo.getHelper() : editGizmo;
+V.scene.add(editGizmoHelper);
+editGizmo.setTranslationSnap(0.1);
+editGizmo.setRotationSnap(THREE.MathUtils.degToRad(15));
+let editOn = false, editNode = null, editMode = 'translate';
+const editPatches = new Map();
+const EDIT_STORE = 'kfb-s132-detail-edits-v1';
+
+function editAllowed(rec) {
+  return !!rec && (rec.layer === 'torch' || rec.layer === 'candle');
+}
+function editId(rec) {
+  if (!editAllowed(rec)) return null;
+  if (rec.layer === 'torch') return ['torch', rec.level, rec.seam, rec.a].join('|');
+  return ['candle', rec.level, (rec.cell || []).join(','), (rec.corner || []).join(','), rec.a].join('|');
+}
+function editScopeKey() {
+  const density = document.getElementById('dens').value;
+  return ['s13.2', model?.seed || document.getElementById('seed').value.trim() || 'A1',
+    model?.grid || document.getElementById('grid').value, density].join('|');
+}
+function editReadAll() {
+  try { return JSON.parse(localStorage.getItem(EDIT_STORE) || '{}'); }
+  catch (e) { return {}; }
+}
+function editWriteScope() {
+  const all = editReadAll(), scope = editScopeKey(), doc = {};
+  for (const [id, p] of editPatches) doc[id] = p;
+  if (Object.keys(doc).length) all[scope] = doc; else delete all[scope];
+  localStorage.setItem(EDIT_STORE, JSON.stringify(all));
+}
+function editPatchDoc() {
+  return {
+    schema: 'kfb.dungeon-detail-patch/0.1',
+    owner: 'World Atlas / S13.2 detail placement',
+    seed: model?.seed || null,
+    grid: model?.grid || null,
+    density: +(document.getElementById('dens').value) / 100,
+    edits: [...editPatches.values()]
+  };
+}
+function editRenderPatch() {
+  editPatchEl.textContent = editPatches.size
+    ? JSON.stringify(editPatchDoc(), null, 2)
+    : '— noch nichts geändert';
+}
+function editRecord(node) {
+  return node?.userData?.recipe || null;
+}
+function editTopNode(obj) {
+  let n = obj;
+  while (n && n.parent && n.parent !== root) n = n.parent;
+  return n && n.parent === root ? n : null;
+}
+function editSetMode(mode) {
+  editMode = mode;
+  editGizmo.setMode(mode);
+  editGizmo.showX = mode === 'translate';
+  editGizmo.showY = true;
+  editGizmo.showZ = mode === 'translate';
+}
+function editMenuPlace() {
+  if (!editOn || !editNode || !editNode.visible) { editMenu.style.display = 'none'; return; }
+  const b = new THREE.Box3().setFromObject(editNode);
+  const p = new THREE.Vector3((b.min.x + b.max.x) / 2, b.max.y, (b.min.z + b.max.z) / 2).project(V.camera);
+  const r = V.renderer.domElement.getBoundingClientRect();
+  const s = document.getElementById('stage').getBoundingClientRect();
+  editMenu.style.display = 'flex';
+  editMenu.style.left = (r.left - s.left + (p.x * 0.5 + 0.5) * r.width) + 'px';
+  editMenu.style.top = Math.max(36, r.top - s.top + (-p.y * 0.5 + 0.5) * r.height - 10) + 'px';
+  const floor = editMenu.querySelector('[data-edit="floor"]');
+  if (floor) floor.disabled = editRecord(editNode)?.layer !== 'candle';
+}
+function editSelect(node) {
+  if (!editOn || !node || !editAllowed(editRecord(node))) {
+    editGizmo.detach();
+    editNode = null;
+    editMenu.style.display = 'none';
+    return;
+  }
+  editNode = node;
+  editSetMode(editMode);
+  editGizmo.attach(node);
+  editMenuPlace();
+}
+function editCommit(node = editNode) {
+  const rec = editRecord(node), id = editId(rec);
+  if (!node || !id) return;
+  const rot = ((THREE.MathUtils.radToDeg(node.rotation.y) % 360) + 360) % 360;
+  rec.p = node.position.toArray().map((v) => +v.toFixed(3));
+  rec.r = +rot.toFixed(2);
+  const patch = { id, a: rec.a, layer: rec.layer, p: [...rec.p], r: rec.r };
+  editPatches.set(id, patch);
+  editWriteScope();
+  editRenderPatch();
+  editMenuPlace();
+}
+function editApplyStored() {
+  editPatches.clear();
+  const stored = editReadAll()[editScopeKey()] || {};
+  let restored = 0;
+  for (const node of root?.children || []) {
+    const rec = editRecord(node), id = editId(rec), patch = id ? stored[id] : null;
+    if (!patch || patch.a !== rec.a || !Array.isArray(patch.p)) continue;
+    node.position.fromArray(patch.p);
+    node.rotation.y = THREE.MathUtils.degToRad(+patch.r || 0);
+    node.updateMatrixWorld(true);
+    rec.p = [...patch.p];
+    rec.r = +patch.r || 0;
+    editPatches.set(id, patch);
+    restored++;
+  }
+  editRenderPatch();
+  return restored;
+}
+function editDropToFloor() {
+  const rec = editRecord(editNode);
+  if (!editNode || rec?.layer !== 'candle') return;
+  const nm = rec.a.split(':')[1], b = box[nm];
+  if (!b) return;
+  editNode.position.y = rec.level * HUB - b.min[1];
+  editNode.updateMatrixWorld(true);
+  editCommit(editNode);
+}
+async function editReset() {
+  const all = editReadAll();
+  delete all[editScopeKey()];
+  localStorage.setItem(EDIT_STORE, JSON.stringify(all));
+  editPatches.clear();
+  editSelect(null);
+  editRenderPatch();
+  build.keepCam = true;
+  await build();
+}
+async function editRebuild() {
+  editSelect(null);
+  build.keepCam = true;
+  await build();
+}
+function editPick(e) {
+  if (!editOn || !root || editGizmo.dragging) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  editRay.setFromCamera(new THREE.Vector2(
+    ((e.clientX - r.left) / r.width) * 2 - 1,
+    -((e.clientY - r.top) / r.height) * 2 + 1
+  ), V.camera);
+  const hit = editRay.intersectObject(root, true).filter((h) => h.object.visible)[0];
+  editSelect(hit ? editTopNode(hit.object) : null);
+}
+editGizmo.addEventListener('dragging-changed', (e) => {
+  V.controls.enabled = !e.value;
+  if (!e.value) editCommit();
+});
+editGizmo.addEventListener('change', editMenuPlace);
+editBtn.onclick = () => {
+  editOn = !editOn;
+  editBtn.setAttribute('aria-pressed', String(editOn));
+  editBox.open = editOn || editBox.open;
+  if (!editOn) editSelect(null);
+  say(editOn ? 'Editor E1 · nur Fackeln/Kerzen auswählbar' : 'Editor aus · Generator bleibt unverändert');
+};
+editMenu.onclick = (e) => {
+  const action = e.target.closest('button')?.dataset.edit;
+  if (action === 'translate' || action === 'rotate') editSetMode(action);
+  if (action === 'floor') editDropToFloor();
+  if (action === 'close') editSelect(null);
+};
+document.getElementById('copyEditPatch').onclick = async () => {
+  const value = JSON.stringify(editPatchDoc(), null, 2);
+  try { await navigator.clipboard.writeText(value); say('Detail-Patch kopiert'); }
+  catch (e) { say('Clipboard nicht verfügbar · Patch steht in der Leiste'); }
+};
+document.getElementById('resetEditPatch').onclick = editReset;
+document.getElementById('rebuildEditPatch').onclick = editRebuild;
+document.getElementById('c').addEventListener('pointerup', editPick);
+addEventListener('keydown', (e) => {
+  if (!editOn || /INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName || '')) return;
+  if (e.key.toLowerCase() === 'g') editSetMode('translate');
+  if (e.key.toLowerCase() === 'r') editSetMode('rotate');
+  if (e.key === 'Escape') editSelect(null);
+});
+setInterval(editMenuPlace, 90);
+editSetMode('translate');
+editRenderPatch();
+
+async function editSelfProof() {
+  if (new URLSearchParams(location.search).get('e1proof') !== '1') return null;
+  const marker = document.createElement('div');
+  marker.id = 'e1Proof';
+  marker.style.cssText = 'position:fixed;left:8px;top:46px;z-index:50;padding:6px 8px;border-radius:5px;background:#17231d;color:#9be2b1;font:11px ui-monospace,monospace';
+  marker.textContent = 'E1 proof · running';
+  document.body.append(marker);
+  try {
+    const all = editReadAll();
+    delete all[editScopeKey()];
+    localStorage.setItem(EDIT_STORE, JSON.stringify(all));
+    editPatches.clear();
+    editRenderPatch();
+
+    const node = root?.children.find((n) => editAllowed(editRecord(n)));
+    if (!node) throw new Error('no editable detail fixture');
+    const rec = editRecord(node), id = editId(rec);
+    const before = node.position.toArray().map((v) => +v.toFixed(3));
+    node.position.x = +(node.position.x + 0.1).toFixed(3);
+    node.updateMatrixWorld(true);
+    editCommit(node);
+    const expected = [...editPatches.get(id).p];
+
+    editSelect(null);
+    build.keepCam = true;
+    await build();
+
+    const restored = root?.children.find((n) => editId(editRecord(n)) === id);
+    if (!restored) throw new Error('edited fixture missing after rebuild');
+    const got = restored.position.toArray().map((v) => +v.toFixed(3));
+    const same = expected.every((v, i) => Math.abs(v - got[i]) < 0.001);
+    const patch = editPatchDoc();
+    const ok = same && patch.edits.length === 1 && Math.abs(expected[0] - before[0] - 0.1) < 0.001;
+    document.documentElement.dataset.e1Proof = ok ? 'pass' : 'fail';
+    marker.textContent = ok ? 'E1 proof · PASS' : 'E1 proof · FAIL';
+    window.__E1_PROOF = { ok, id, before, expected, got, patch };
+    return window.__E1_PROOF;
+  } catch (e) {
+    document.documentElement.dataset.e1Proof = 'fail';
+    marker.textContent = 'E1 proof · FAIL · ' + e.message;
+    window.__E1_PROOF = { ok: false, error: e.message };
+    return window.__E1_PROOF;
+  }
+}
 
 /* Flache Prüffarben. MeshBasicMaterial ignoriert Licht — die Probe soll Geometrie lesen, nicht
    Beleuchtung. Und das Renderziel bekommt SRGBColorSpace: ohne das liefert readRenderTargetPixels
@@ -813,6 +1080,7 @@ async function build() {
   const keepCam = build.keepCam;
   const camWas = keepCam ? [V.camera.position.clone(), V.controls.target.clone()] : null;
   build.keepCam = false;
+  editSelect(null);
   placements = layout(model, kit);
   const node = await buildScene(placements, (d, t) => { say(`baue ${d}/${t}`); }, { concurrency: 6 });
   if (root) V.scene.remove(root);
@@ -833,6 +1101,7 @@ async function build() {
     n.traverse((o) => { if (o.isMesh && o.name === h) drop.push(o); });
   }
   for (const o of drop) { o.removeFromParent(); leaves++; }
+  const restoredEdits = editApplyStored();
   buildSeamLines();
   applyView();
   const fit = rig.fitShadow(root);
@@ -962,7 +1231,8 @@ async function build() {
     + `Durchdringungen ${fp.real.length}` + (fails ? ` · ${fails} GATES ROT` : ' · alle Gates grün');
 
   say(`Saat ${model.seed} · Feld ${model.grid}×${model.grid} · ${model.cells.size} Zellen · `
-    + `${placements.length} Teile · Ebenenabstand ${f2(HUB)} · Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]}`);
+    + `${placements.length} Teile · Ebenenabstand ${f2(HUB)} · Schritt ${['Räume', 'Gänge', 'Wände', 'Alles'][step]}`
+    + (restoredEdits ? ` · Editor ${restoredEdits} Patch${restoredEdits === 1 ? '' : 'es'}` : ''));
   drawPlans();
 }
 
@@ -1068,6 +1338,7 @@ document.getElementById('c').addEventListener('pointerup', (e) => {
 });
 
 await regen();
+await editSelfProof();
 /* Eigener Takt nur für das Licht: der Pool wandert zu den nächsten Lichtquellen und flackert.
    Gezeichnet wird weiter von makeViewer — zwei Renderschleifen wären zwei Wahrheiten. */
 function flicker(t) {
@@ -1088,7 +1359,16 @@ function flicker(t) {
    und makeViewer zeichnet ohnehin selbst. */
 setInterval(() => flicker(performance.now() / 1000), 70);
 window.__s132 = { V, kit, frame, box, rig, get model() { return model; }, get root() { return root; },
-  get placements() { return placements; }, get probe() { return lastProbe; }, regen, cellId, measured };
+  get placements() { return placements; }, get probe() { return lastProbe; }, regen, cellId, measured,
+  editor: {
+    get enabled() { return editOn; },
+    get editableCount() { return root ? root.children.filter((n) => editAllowed(editRecord(n))).length : 0; },
+    get patch() { return editPatchDoc(); },
+    enable(on = true) { if (editOn !== !!on) editBtn.click(); return editOn; },
+    selectFirst() { const n = root?.children.find((x) => editAllowed(editRecord(x))) || null; editSelect(n); return editId(editRecord(n)); },
+    reset: editReset, rebuild: editRebuild
+  }
+};
 </script>
 </body>
 </html>

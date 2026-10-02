@@ -4,6 +4,32 @@ Nur Zuwachs. Ältere Einträge bleiben stehen.
 
 ---
 
+## E1 Recovery · 2026-09-20 · Browser proof frozen after two harness failures
+
+**STATIC RESULT UNCHANGED:** 20/20 PASS.
+
+**BROWSER ATTEMPT 1:** run `35487119077` / job `106015440253`. The real page reached Chrome/WebGL, but the combined dump-DOM/virtual-time command never terminated because the generator owns continuous render/timer loops; outer timeout exit 124.
+
+**BROWSER ATTEMPT 2:** run `35487373804` / job `106016124834`. Chrome remote debugging started, but the Node 22 CDP script failed before polling the application because CommonJS `require()` and top-level `await` were mixed.
+
+**CLASSIFICATION:** editor browser behavior remains `NOT_TESTED`, not failed. Candidate frozen; browser workflow removed; full recovery under `docs/INLINE_EDITOR_E1_FAILURE_RECOVERY_2026-09-20/`.
+
+**NEXT GATE:** separate QA-only slice, unchanged E1 candidate, valid minimal CDP harness. No third repair in this slice and no E2/E3/E4 implementation before proof.
+
+---
+
+## E1 · 2026-09-20 · S21 Inline Detail Editor im Dungeon Generator
+
+**IMPLEMENTATION:** `KayKit_Dungeon_Generator_S13_2.html` ist der zweite reale Host für die S21-Editorinteraktion. Bearbeitbar sind bewusst nur `torch` und `candle`; BSP, Böden, Wände, Ecken, Treppe und Fugen bleiben Generator-Eigentum.
+
+**INTERACTION:** TransformControls, 0,1-Translation, 15°-Y-Rotation, objektgebundenes Mini-Menü, candle-only Bodenabsetzen, lokaler Scratch und `kfb.dungeon-detail-patch/0.1`. Die sichtbaren Transformwerte schreiben zurück in den aktuellen Placement-Record, daher enthält der bestehende Recipe-JSON-Export die Korrektur.
+
+**TESTED RESULT:** 20/20 statische/vertragliche Checks PASS. Browser-Roundtrip ist noch offen; deshalb keine Extraktion zu `lib/edit-layer.js` und keine Resident/Stage/Platformer-Weitergabe.
+
+**NEXT GATE:** Seed A1 → Editor → Detail verschieben/drehen → Patch → Neu bauen → identische Position wiederhergestellt.
+
+---
+
 ## S13.3 · 2026-09-17 · Licht · und die Balkonkante ist eine Brüstung, keine Wand
 
 Vorlage: die drei KayKit-Promobilder (`uploads/`). Neu: **`lib/dungeon-light.js`**, verdrahtet in
