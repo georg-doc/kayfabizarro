@@ -122,6 +122,9 @@ jobs:
             report.pageErrors.push(String(e?.stack || e));
             process.exitCode = 1;
           } finally {
+            try {
+              await page.screenshot({ path: 'artifacts/billboard-context-r11-integration/00-final-page.png', fullPage: true });
+            } catch (_) {}
             report.status = process.exitCode ? 'FAIL' : 'PASS';
             report.passed = report.checks.filter(x => x.pass).length;
             report.total = report.checks.length;
@@ -132,7 +135,11 @@ jobs:
             console.log(JSON.stringify({
               status: report.status,
               checks: report.passed + '/' + report.total,
-              pageErrors: report.pageErrors.length
+              pageErrors: report.pageErrors.length,
+              consoleErrors: report.consoleErrors.length,
+              requestFailures: report.requestFailures.length,
+              httpErrors: report.httpErrors.length,
+              boot: report.boot
             }, null, 2));
             await browser.close();
           }
@@ -179,7 +186,7 @@ jobs:
 
           const root = 'http://127.0.0.1:4173/tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/';
           const url = root + 'index.html?state=idle&packId=forget_utopia&card=7';
-          const report = { url, checks: [], pageErrors: [], shots: [] };
+          const report = { url, checks: [], pageErrors: [], consoleErrors: [], requestFailures: [], httpErrors: [], boot: {}, shots: [] };
           const check = (name, pass, detail=null) => {
             report.checks.push({ name, pass: !!pass, detail });
             if (!pass) process.exitCode = 1;
@@ -190,6 +197,16 @@ jobs:
           });
           const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
           page.on('pageerror', e => report.pageErrors.push(String(e)));
+          page.on('console', m => {
+            if (m.type() === 'error') report.consoleErrors.push(m.text());
+          });
+          page.on('requestfailed', req => report.requestFailures.push({
+            url: req.url(),
+            error: req.failure()?.errorText || 'unknown'
+          }));
+          page.on('response', res => {
+            if (res.status() >= 400) report.httpErrors.push({ url: res.url(), status: res.status() });
+          });
 
           async function snap(state, file) {
             await page.evaluate(s => window.__r11.setState(s), state);
@@ -207,7 +224,38 @@ jobs:
           try {
             const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
             check('candidate HTTP', !!response && response.ok(), response?.status());
-            await page.waitForFunction(() => window.__r11?.snapshot()?.ready, {}, { timeout: 90000 });
+
+            try {
+              await page.waitForFunction(() => !!window.__r11, {}, { timeout: 20000 });
+              report.boot.module = 'PASS';
+            } catch (e) {
+              report.boot.module = 'FAIL';
+              report.boot.scripts = await page.evaluate(() =>
+                [...document.scripts].map(s => ({ src: s.src, type: s.type }))
+              );
+              throw new Error('R11_MODULE_BOOT_TIMEOUT');
+            }
+
+            try {
+              await page.waitForFunction(() => {
+                const r = window.__r11?.snapshot?.();
+                return !!r?.sourceFace;
+              }, {}, { timeout: 60000 });
+              report.boot.hero = 'PASS';
+            } catch (e) {
+              report.boot.hero = 'FAIL';
+              report.boot.snapshot = await page.evaluate(() => window.__r11?.snapshot?.() || null);
+              throw new Error('R11_HERO_MOUNT_TIMEOUT');
+            }
+
+            try {
+              await page.waitForFunction(() => window.__r11?.snapshot?.()?.ready, {}, { timeout: 90000 });
+              report.boot.initialReady = 'PASS';
+            } catch (e) {
+              report.boot.initialReady = 'FAIL';
+              report.boot.snapshot = await page.evaluate(() => window.__r11?.snapshot?.() || null);
+              throw new Error('R11_INITIAL_READY_TIMEOUT');
+            }
 
             const idle = await snap('idle', '01-idle-h13.png');
             check('idle uses real H13', idle.mode === 'hyper' && idle.h13?.ready, idle);
