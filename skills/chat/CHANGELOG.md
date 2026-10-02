@@ -5,7 +5,7 @@
 - Contract evidence: **22/22 PASS** at `a4a3232a58e66973eca1f5586f9d0e2cbd2b5177`.
 - ToolBox remains the EyeRig calibration/profile owner; Resident Atlas and Combat Arena remain consumers and were not modified.
 - Skeleton Warrior/Rogue/Mage plus Prototype Pete remain `HUMAN_DECISION_REQUIRED`; Action Figure texture cleanup, unskinned Legacy Orc anchors, Creepy asymmetry, Avian side-eye normals and retained glasses remain explicit.
-- Eyebrows are now directionally pinned to the **existing** `brow-rig.v2.js` / `BrowRig` donor through `eyeFrame()`. Source brows remain preserved; no second brow system and no EyeProfile schema mutation were introduced.
+- Eyebrows are now directionally pinned to the **existing** `brow-rig.v2.js` / `BrowRig` donor through `eyeFrame()`. Source brows remain preserved; future BrowRig activation must hide/mask authored brows non-destructively per actor to prevent doubles; no second brow system and no EyeProfile schema mutation were introduced.
 - Existing human surface remains `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`; this prep did **not** deploy or claim a new Stage revision.
 - Next gate: ToolBox source-isolation + EyeRig profile review of the pinned cleanup candidates; quarantine the four human-decision cases until Georg chooses.
 
