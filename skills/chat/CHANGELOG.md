@@ -1,3 +1,14 @@
+## 2026-10-02 · EYE-RIG-BATCH-CLEANUP02-01 · cross-consumer prep
+
+- Created a clean prep branch from `main@1c9c9706764ce41ce1282f60e358195afed207e5`; the EYE-CLEANUP-02 source remains pinned separately at `georg-doc-patch-3@1820a1c034e9741acedb4d8ba3118cbd1fc776ba`.
+- Normalized all **31** cleanup entries into one intake manifest: **26 done · 5 none · 0 blocked**. Verified **26/26** NoEyes GLBs exist at the pinned cleanup head.
+- Contract evidence: **22/22 PASS** at `a4a3232a58e66973eca1f5586f9d0e2cbd2b5177`.
+- ToolBox remains the EyeRig calibration/profile owner; Resident Atlas and Combat Arena remain consumers and were not modified.
+- Skeleton Warrior/Rogue/Mage plus Prototype Pete remain `HUMAN_DECISION_REQUIRED`; Action Figure texture cleanup, unskinned Legacy Orc anchors, Creepy asymmetry, Avian side-eye normals and retained glasses remain explicit.
+- Eyebrows are now directionally pinned to the **existing** `brow-rig.v2.js` / `BrowRig` donor through `eyeFrame()`. Source brows remain preserved; future BrowRig activation must hide/mask authored brows non-destructively per actor to prevent doubles; no second brow system and no EyeProfile schema mutation were introduced.
+- Existing human surface remains `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`; this prep did **not** deploy or claim a new Stage revision.
+- Next gate: ToolBox source-isolation + EyeRig profile review of the pinned cleanup candidates; quarantine the four human-decision cases until Georg chooses.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
