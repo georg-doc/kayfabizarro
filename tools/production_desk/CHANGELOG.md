@@ -1,3 +1,20 @@
+## 2026-10-03 · VFX Contact Impact 01 · KayKit native review
+
+Status: **LOOK_AT · LOCAL BROWSER VERIFIED · NO CLOUDFLARE**
+
+- Replaced the human-rejected Air-Gap micro-fixture with a new integrated contact→impact candidate.
+- Authored motion is original KayKit Character Animations 1.1 only: `Melee_1H_Attack_Stab`; Mixamo/procedural reach remain forbidden.
+- Contact owner is visible mounted Blade mesh → visible Driver/Frizzlebob mesh distance, not the old thick capsule trigger.
+- Tested body gap: `0.0800 u`; runtime visible contact trigger: `0.03217 u <= 0.035 u`.
+- Impact stack: existing TrailFx Blade ribbon + existing SpriteFx star/splat + released 1 DROP + 2 BALL + 5 CHIP clay response + existing HitReact.
+- Arena source/build: **127/127 PASS**; build + re-home PASS.
+- Native visible-contact browser run `37147562875` PASS.
+- Integrated impact browser run `37147562880` PASS; artifact `11282422108`.
+- KFB Production Control review ZIP: `cb971d46-7a3b-4363-beea-36df72b70607`.
+- Miss control: same KayKit clip → `near_miss`, 0 damage / 0 impact VFX / 0 clay.
+- Existing `vfx-sfx` lane reused and now points to Draft PR #15 / `95c69f380f9ec18904d7a8a9f742f316e0beb78b`.
+- No Cloudflare, Stage, merge, productive Arena promotion or Live claim.
+
 ## 2026-10-03 · VFX Consumer Fixture 01 · Site/Chat review
 
 Status: **LOOK_AT · LOCAL BROWSER VERIFIED · NO CLOUDFLARE**
