@@ -400,3 +400,13 @@ Next:
 - Stage mirror: `cloudflare-live@26a17e973f7548f8df39cdcf1270352acc402858`;
 - current gate: `KLR-EYE-VIS-01`.
 
+## 2026-10-03 · Legacy review UI contrast repair
+
+- screenshot exposed dark-on-dark text in header, roster cards and toolbar;
+- root cause: Legacy dark surfaces inherited shared light-theme `--ink` / unresolved dark-surface tokens;
+- fixed only Legacy dark-shell selectors;
+- right light review panel intentionally unchanged;
+- focused contrast/readback **8/8 PASS**;
+- review app + HTML unchanged;
+- Stage CSS mirror: `cloudflare-live@db823766370df932cc8134f21691036924a7d12c`.
+
