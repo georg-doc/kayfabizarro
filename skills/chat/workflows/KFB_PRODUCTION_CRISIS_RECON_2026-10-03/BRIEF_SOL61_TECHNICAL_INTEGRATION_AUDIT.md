@@ -1,8 +1,8 @@
 # Brief · KFB technical integration and playability audit
 
-Executor: **Codex/Work · GPT-6.1 Sol · High reasoning**  
-Mode: **read-only**  
-Owner: Georg / KFB  
+Executor: **Codex/Work · GPT-6.1 Sol · High reasoning**
+Mode: **read-only**
+Owner: Georg / KFB
 Return language: German, plain language first
 
 ## Start message
@@ -101,4 +101,3 @@ Georg can read the first page and understand:
 - which four playable results come next;
 - who builds each one;
 - what he must decide before work restarts.
-

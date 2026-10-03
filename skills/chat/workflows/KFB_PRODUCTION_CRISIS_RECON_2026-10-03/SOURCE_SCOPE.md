@@ -48,4 +48,3 @@ The main report is written for Georg, not for another engineer. Technical identi
 - what they must not change;
 - what Georg needs to do, or `nothing`;
 - what visible or playable result follows.
-

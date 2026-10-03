@@ -1,8 +1,8 @@
 # Brief · KFB repository, SSOT and production-process audit
 
-Executor: **Claude Code · Opus 5.5 · High reasoning**  
-Mode: **read-only**  
-Owner: Georg / KFB  
+Executor: **Claude Code · Opus 5.5 · High reasoning**
+Mode: **read-only**
+Owner: Georg / KFB
 Return language: German, plain language first
 
 ## Start message
@@ -94,4 +94,3 @@ Follow `COMMON_RETURN_SCHEMA.md` and add:
 ## Done when
 
 A fresh ChatGPT, Claude, Blender or Design session can be given one GitHub start link and can identify the current owner, source, task, protected boundaries, expected return and stop condition without asking Georg to find files.
-

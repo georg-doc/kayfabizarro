@@ -49,4 +49,3 @@ Do not ask Georg to choose between hashes, branch names, libraries or implementa
 - Do not create a replacement owner or SSOT.
 - If two sources conflict, report the conflict and its product impact.
 - If a source cannot be accessed, mark it unknown; do not reconstruct it from chat memory.
-

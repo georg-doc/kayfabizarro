@@ -1,8 +1,8 @@
 # KFB Production Crisis Recon
 
-Status: **ACTIVE · READ-ONLY CRISIS REVIEW**  
-Date: 2026-10-03  
-Product owner: Georg  
+Status: **ACTIVE · READ-ONLY CRISIS REVIEW**
+Date: 2026-10-03
+Product owner: Georg
 Purpose: establish one trustworthy production baseline before any further integration, merge or deployment.
 
 ## What this does
@@ -57,20 +57,20 @@ Already-running bounded design, Blender or research jobs may finish and return e
 
 ### Job A · technical integration audit
 
-File: `BRIEF_SOL61_TECHNICAL_INTEGRATION_AUDIT.md`  
-Executor: Codex/Work, `gpt-6.1-sol`, reasoning `high`  
+File: `BRIEF_SOL61_TECHNICAL_INTEGRATION_AUDIT.md`
+Executor: Codex/Work, `gpt-6.1-sol`, reasoning `high`
 Result: a plain-language map of what works, what owns what, what is blocked and the minimum safe path to playable Travel, Combat, Environment and Town slices.
 
 ### Job B · repository and process audit
 
-File: `BRIEF_CLAUDE_CODE_REPOSITORY_PROCESS_AUDIT.md`  
-Executor: Claude Code, Opus 5.5, reasoning `high`  
+File: `BRIEF_CLAUDE_CODE_REPOSITORY_PROCESS_AUDIT.md`
+Executor: Claude Code, Opus 5.5, reasoning `high`
 Result: a plain-language disposition of open work, SSOT conflicts, branch/merge hygiene and a reliable handoff/check-in system for ChatGPT, Claude, Blender and Claude Design.
 
 ### Job C · reconciliation
 
-File: `BRIEF_RECONCILIATION_AND_RECOVERY_PLAN.md`  
-Executor: Codex/Work, `gpt-6.1-sol`, reasoning `high`, only after A and B are complete  
+File: `BRIEF_RECONCILIATION_AND_RECOVERY_PLAN.md`
+Executor: Codex/Work, `gpt-6.1-sol`, reasoning `high`, only after A and B are complete
 Result: one proposed recovery baseline, one merge/extraction order, one SSOT repair plan and four bounded playable production briefs. Georg approves this before implementation starts.
 
 ## Georg's action now
@@ -86,4 +86,3 @@ The next visible result is not another test world. It is one short control docum
 - which work must be extracted, archived or repaired;
 - who does the next task;
 - what Georg will be able to play after each of the next four production slices.
-
