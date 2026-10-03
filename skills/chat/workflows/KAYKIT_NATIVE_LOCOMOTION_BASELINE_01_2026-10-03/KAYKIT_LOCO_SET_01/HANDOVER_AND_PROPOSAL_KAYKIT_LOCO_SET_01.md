@@ -180,3 +180,29 @@ The weapon node sits under `handslot.r` (§4).
 - **Partly affected.** The contact sheets of the native baseline (`RETURN/sheets/`): poses were sampled at 1.25× the labelled frame number. Each sheet still shows the clip's own poses, but the "fN" labels are off.
 - **Fix.** `bpy.context.scene.render.fps = 30` before `import_scene.gltf`, and render frame f for time f/30. The corrected videos are `KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4` and `KAYKIT_LOCO_WEAPONS_02.mp4`; they replace 01 as the visual reference (01 is kept, additive).
 - **Rule for every runtime and tool.** Sample clips in seconds. Never assume a frame rate from the file.
+
+## 10. Update 03: Georg's tuning pass on video 02 (`KAYKIT_LOCO_WEAPONS_03.mp4`) — supersedes the carry grips in §8
+
+Georg accepts video 02 in principle and asked for two corrections. Both are applied in video 03.
+
+1. **Pistol carry.**
+   - What was wrong: in video 02 the barrel was forced to point forward the whole time. That twisted the gun in the hand while the arm swung.
+   - The rule now: when carried, the pistol stays fixed in the hand and points along the extended forearm, the way a person runs with a pistol. Strictly forward is only for aiming.
+   - So we keep two separate modes: run with the weapon in hand (carry grip) and run and aim (aim grip, aim clip).
+2. **Rifle staff carry.**
+   - What was wrong: the rifle was rolled 180° about its long axis, so the bayonet sat on top.
+   - The fix: the rifle's top (sights) now points up and the bayonet sits under the barrel. Muzzle direction and hand position are unchanged.
+
+| Grip (weapon node local rotation under `handslot.r`, glTF, x,y,z,w) | Target | Fit over the cycle |
+|---|---|---|
+| Pistol carry · walk `(0.17625, 0.46044, 0.46650, 0.73438)` | barrel along forearm (lowerarm→wrist), top up | mean 11.7°, max 17.1° (wrist bend) |
+| Pistol carry · run `(0.21411, 0.58285, 0.12783, 0.77337)` | same | mean 27.3°, max 47.5°: the wrist bends a lot in Running_A, the gun stays fixed in the hand by design |
+| Pistol aim `(0.01303, 0.87145, 0.02287, 0.48978)` | unchanged from §8 | — |
+| Rifle staff · walk `(-0.54364, 0.44898, 0.54451, 0.45429)` | muzzle forward-up 70° from vertical, sights up, bayonet under the barrel | mean 4.9°, max 7.7° |
+| Rifle staff · run `(-0.28074, 0.71433, 0.40093, 0.50018)` | same | mean 4.8°, max 8.9° |
+| Rifle staff · sprint `(-0.37473, 0.59965, 0.37473, 0.59965)` | same | mean 28°, max 46°; still open (§8) |
+| Rifle aim `(0.02406, 0.36505, 0.01135, 0.93061)` | unchanged from §8 | — |
+
+The values are also in `grips2.json`; the script that computes them is `grip3.py`. Runtime rule from §8 still holds: slerp walk ↔ run carry grip with the leg-blend weight.
+
+Status: Georg wants this checked in as the WSA handover, then the next steps planned together. Video 03 + this handover are the reference; nothing is merged.
