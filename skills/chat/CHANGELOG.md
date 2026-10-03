@@ -323,3 +323,30 @@ Focused repair checks: **13/13 PASS**. Boot repair, Clay K1, Control R2 and the 
 ### STAGE / ROUTING
 Stage mirror `cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`; source/stage app blob match. Exactly one gate: `GEORG_EYERIG_WHEEL_ZOOM_VIS_02`. After PASS resume Neutral ↔ Clay K1 review. No merge or Live promotion.
 
+## 2026-10-03 · EyeRig Batch · human acceptance and next slice
+
+### HUMAN ACCEPTANCE
+Georg confirmed the current EyeRig Stage **works**. The accepted runtime app blob is `5635b28496af0e06cfe7f60a01b23e5612bad6e1`, still present unchanged in the later concurrent `cloudflare-live@26bb3926bde5a2e1e519409d182a62b654cfba71`.
+
+Closed:
+- boot/roster repair;
+- Rig_Large switching;
+- bounded wheel zoom v2;
+- Neutral / Clay K1 view for continuation.
+
+### NEXT SLICE
+`EYE_RIG_PER_EYE_CONTROL_01`
+
+Bounded outcome:
+- preserve mirrored paired eyes as the default/backward-compatible mode;
+- optional independent L/R position offsets;
+- explicit per-eye visibility;
+- first concrete proof: Survivalist eyepatch / one-eye-off;
+- existing 40-profile browser data must load unchanged;
+- no automatic profile reset or schema-wide migration;
+- no second EyeRig runtime owner.
+
+Later: Farmers palette mapping, unresolved Blender/NoEyes cleanup, separate Studio numeric-parity, then consumer/profile promotion.
+
+No merge or Live promotion.
+
