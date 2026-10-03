@@ -10,16 +10,17 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 ## Start order
 
 1. Read `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. It governs every user-facing update and every handoff.
-2. Read `REGISTRY.json`.
-3. Read `LIVING_MASTERPLAN.md` only when cross-project sequencing or current lead intent matters.
-4. Identify the current project or tool node.
-5. Read the referenced project SSOT / START / RETURN files.
-6. If the task points to a shared intake package, apply `INBOX_PROTOCOL.md` before treating anything there as current truth.
-7. Load only the current skills required for the task.
-8. Apply the provider adapter only after the provider-neutral SOP.
-9. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
-10. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
-11. Record decisions and results additively.
+2. Read `KFB_PRODUCTION_CONTROL_CONTRACT.md`. It governs source reconciliation, branches, timeouts and MVP claims.
+3. Read `REGISTRY.json`.
+4. Read `LIVING_MASTERPLAN.md` only when cross-project sequencing or current lead intent matters.
+5. Identify the current project or tool node.
+6. Read the referenced project SSOT / START / RETURN files.
+7. If the task points to a shared intake package, apply `INBOX_PROTOCOL.md` before treating anything there as current truth.
+8. Load only the current skills required for the task.
+9. Apply the provider adapter only after the provider-neutral SOP.
+10. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
+11. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
+12. Record decisions and results additively.
 
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
@@ -163,6 +164,7 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `PLAIN_LANGUAGE_HANDOFF_STANDARD.md` — binding plain-language phase, executor, user action and complete handoff format
+- `KFB_PRODUCTION_CONTROL_CONTRACT.md` — binding source reconciliation, SSOT, branch, timeout, publication and playable-MVP rules
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery

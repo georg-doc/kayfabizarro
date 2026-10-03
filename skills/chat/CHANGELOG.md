@@ -2139,3 +2139,10 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - PR numbers, hashes, branch names, run IDs, test counters and slice/gate labels are relegated to a final technical evidence block.
 - Cross-tool work must include a self-contained copy-ready start message and direct GitHub source; a Site-only link is insufficient.
 - Corrected the animation route: the mixed browser freeplay is an archived human fail, no ActionFigure locomotion runtime is currently accepted, and the next work is an original-KayKit isolated Blender review before any new runtime integration.
+
+# 2026-10-03 · Lead briefing/control failure postmortem + binding production contract
+
+- Added a detailed Lead-owned postmortem for the repeated briefing drift, stale-source use, specialist-context loss, branch sprawl, timeout loops and non-playable technical candidates.
+- Added `KFB_PRODUCTION_CONTROL_CONTRACT.md` as the binding preflight for current-source reconciliation, one-owner/one-candidate discipline, timeout handling, publication and MVP claims.
+- The corrected Coworker/Blender review on the KayKit-native branch supersedes the original baseline brief: Mannequin first, all eight Rig_Medium files, honest gaps, creator-reference scan and pictures-first return.
+- No new browser/world locomotion integration is allowed before Georg reviews the native KayKit visual return.
