@@ -576,3 +576,99 @@ No Legacy profile is visually approved automatically.
 
 Next gate:
 **KLR-EYE-VIS-01 · human review of all 17 Legacy profiles; Skull manual placement required.**
+
+## 2026-10-03 · CURRENT RETURN · LEGACY 17-HEAD VISUAL REVIEW READY
+
+Status: **TECHNICAL LEGACY BASE RETAINED · REVIEW UI IMPLEMENTED · STAGE MIRRORED · HUMAN REVIEW OPEN**
+
+### Owner
+
+- repo: `georg-doc/kayfabizarro`
+- branch: `chatgpt-web/legacy-eye-batch-17-2026-09-21`
+- Draft PR: **#162 · OPEN · UNMERGED**
+- review UI implementation: `85e332b84f83b0e527c0272999e6e97bd56f7a7a`
+- static review-contract update: `27392d5e2fbe171d4186a7b74ff3c96b46ca0a54`
+- evidence: `df4cd3c112458faf3657521c53885a093a9be7e0`
+
+### Legacy profile base remains unchanged
+
+- 17/17 persisted Legacy profiles
+- 16 `MEASURED_CANDIDATE`
+- Skull = `HUMAN_REQUIRED`
+- 4 body families × default/A/B/C + Skull
+- no shared Legacy class default
+- EyeRig v6 remains the eye runtime owner
+- EyeOval remains the shape helper
+- source assets remain unchanged
+
+Historical proven evidence remains:
+- **24/24 static + 247/247 browser/WebGL PASS** automatic source-first lane
+- **30/30 static/profile + 215/215 browser/WebGL PASS** persisted-profile reconstruction
+- zero failed resources / page-console errors in those proven runs
+
+### Review UI added
+
+The Stage now supports the actual `KLR-EYE-VIS-01` workflow:
+
+- selecting a head automatically source-isolates then mounts its reviewed or persisted profile;
+- Front / ¾ L / ¾ R;
+- source-eye show/hide comparison;
+- four minimal tune controls:
+  - X spacing
+  - Y height
+  - Eye size
+  - Inset
+- Approve
+- Adjusted approve
+- Reject
+- Next review
+- local review progress persistence:
+  `kfb.toolbox.eye-rig-legacy-review.v1`
+- export:
+  `eye-rig-legacy.review.json`
+
+The Legacy adapter only adds thin forwarding methods to existing EyeRig v6:
+`setAnchor()` / `setEye()`.
+No second eye owner is introduced.
+
+### New focused evidence
+
+**17/17 PASS** readback contract.
+
+Expanded `legacy-eye-static-check.mjs`: **38 assertions persisted**.
+
+No Actions run exists for the new review-UI head. Therefore the 38 assertions are **NOT_RUN** on this head and are not misreported as CI PASS.
+
+### Stage
+
+Exact review UI mirror:
+`cloudflare-live@26a17e973f7548f8df39cdcf1270352acc402858`
+
+Runtime blobs:
+- app: `4c0b1663a3bd72698e1d31fb9cfaeebb9ba0f098`
+- index: `ba3f1b6a1e3c9f67394f0c50be887ceac1b09a5c`
+- styles: `e32a739ca35a8cd5c37d949836cc63d9d347ecbb`
+- adapter: `fce918e5a43a840fe1ef5424e3c549473a956b2e`
+
+Direct review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
+
+The current browser tool still cannot open `pages.dev`; `PUBLIC_VERIFIED` remains **OPEN** until Georg opens the route.
+
+### Exactly one next gate
+
+**KLR-EYE-VIS-01 · review all 17 Legacy heads**
+
+For each:
+1. Front;
+2. ¾ L / ¾ R;
+3. optionally toggle source eyes to judge cleanup separately;
+4. if placement is good → Approve;
+5. if not → tune X/Y/size/inset → Adjusted approve;
+6. if unusable → Reject.
+
+Skull:
+manual placement or leave unsupported.
+
+Only accepted/adjusted profiles become consumer-ready.
+
