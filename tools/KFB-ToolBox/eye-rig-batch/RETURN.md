@@ -1317,3 +1317,51 @@ On the direct Stage:
 
 No profile promotion, Farmers mapping guess, per-eye feature work, merge or Live promotion before this gate.
 
+## 2026-10-03 · CURRENT RETURN · BOOT REPAIR
+
+Status: **SOURCE FIXED · STAGE MIRRORED · POST-REPAIR HUMAN VERIFY OPEN**
+
+Georg reported two coupled Stage symptoms:
+- roster stuck at `Loading actor catalog…`;
+- `Large` click inactive.
+
+Root cause is proven in source: `initInlineNumberEditors()` used the single-element helper `$()` and then called `.forEach()`. That exception occurred inside `wireRuntimeControls()` before `wireRoster()`, so the same boot abort both left stale loading text and prevented the Medium/Large handlers from being installed.
+
+Repair:
+- `$$('output[data-out]').forEach(...)`;
+- roster/class handlers are now wired **before** runtime-control initialization;
+- visible boot progress now reports catalogs → profiles → 3D stage → controls/motion → first actor → ready;
+- failures now show exact `Boot failed · <message>` text in the visible roster/audit area.
+
+Focused regression: **6/6 PASS**.
+Full historical static suite: **NOT RERUN** in this repair.
+
+Current source evidence:
+- selector/runtime fix: `da5e4cd0025b0f7e3dd3300f740dd0afc174959f`;
+- regression assertion: `6238fd0a2e98d5ba820b2b645ec1ad8e9353f46b`;
+- repaired app blob: `48674bd29ac54f70243f3132c18671a0d570e29c`;
+- detailed evidence: `TEST_REPORT.md#2026-10-03--eye-rig-batch-boot-repair-01`.
+
+Stage mirror:
+`cloudflare-live@d2cbc94ddde4d7c281a492db350119005f22e153`
+
+Exact Stage `app.js` blob matches source app blob.
+The same Stage commit updates the ToolBox card and actual `hub-ui-v2` EyeRig task.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Post-repair `PUBLIC_VERIFIED` remains **OPEN** because this environment cannot open `pages.dev`.
+
+### Exactly one current next gate
+
+**GEORG_EYERIG_BOOT_REPAIR_VIS_01**
+
+Reload the direct Stage and check only:
+1. loading progresses and roster appears;
+2. `Large` loads the Large roster;
+3. switch back to `Medium`;
+4. if it still fails, copy the newly visible exact boot/progress message.
+
+After PASS, resume the existing Control R2 + Magical Girl/Driver palette visual gate. No merge or Live promotion.
+
