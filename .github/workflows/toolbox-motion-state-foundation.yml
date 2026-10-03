@@ -45,3 +45,5 @@ jobs:
         run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs
       - name: Measurement reconciliation tests
         run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/reconcile-measurements.test.mjs
+      - name: Motion Lab owner integration tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-owner-integration.test.mjs
