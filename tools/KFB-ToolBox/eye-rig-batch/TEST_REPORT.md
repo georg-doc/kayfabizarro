@@ -1184,3 +1184,86 @@ Reload the direct Stage and check only:
 
 After PASS, resume the already-open Control R2 + Magic Girl/Driver appearance review; do not create another implementation fork.
 
+## 2026-10-03 · EYE_RIG_VIEW_COMFORT_CLAY_01
+
+Human input:
+- boot repair confirmed working;
+- mouse-wheel zoom was much too sensitive;
+- requested a Resident-Atlas-like clay/floor view or the performance-optimized claymation SSOT.
+
+### Donor proof
+
+Reused, not rebuilt:
+- Resident Atlas S15 K1/H0 module source:
+  `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lib/clay-k1.js`
+  source blob `4712a6527921c180847afa4dd77788041351860b`;
+- copied EyeRig-local donor blob is exactly the same: `4712a6527921c180847afa4dd77788041351860b`;
+- S15 `clay-soften.v1.js` source blob `fef287f244661ebc985dfc6fc47857af94b6223b`;
+- copied EyeRig-local donor blob is exactly the same: `fef287f244661ebc985dfc6fc47857af94b6223b`.
+
+K1 budget retained explicitly:
+- per mesh: **4,000 tris**;
+- max subdivision levels: **2**;
+- total added-triangle budget: **160,000**;
+- skinned meshes use K1's no-subdivision smoothing path;
+- GTAO is **not enabled** in EyeRig view mode.
+
+Floor source pinned to `main@74f7a690fbec88cf98ce0936f31b72ad3f1148f5`:
+- `clay_floor_001_diffuse.jpg` blob `d889ddd32d38ef9fac55ea802e47da73cbd77deb`;
+- `clay_floor_001_normal.jpg` blob `59092c601272f265e7e96cbae3f9d753be47b6a6`;
+- `clay_floor_001_roughness.jpg` blob `4d5b3e7634e532111c7608156f4a49b6b18d2ffb`.
+
+### Implementation
+
+Implementation head:
+`f40937f50f7d61fdcd50f24c25658c113b389ad0`.
+
+Zoom:
+- Orbit `zoomSpeed = 0.28`;
+- `minDistance = 0.8`;
+- `maxDistance = 14`;
+- no camera owner replacement.
+
+Stage look:
+- toolbar switch: `Neutral | Clay K1`;
+- `Clay K1` = exact K1/H0 geometry form + existing `clay_floor_001` diffuse/normal/roughness;
+- AO/K2 intentionally not enabled in this authoring view;
+- K1 is reversible via `revert()`;
+- actor switch reverts previous K1 geometry before disposal;
+- EyeRig group + FaceHost debug mesh are marked `noClay`;
+- palette/source sampling still happens before K1 presentation;
+- `stageLook` is additive persistence under the existing storage namespace.
+
+### Focused readback checks
+
+**15/15 PASS**
+
+1. app syntax;
+2. static-check syntax;
+3. K1 donor byte identity;
+4. clay-soften donor byte identity;
+5. slower wheel zoom;
+6. Neutral/Clay K1 UI;
+7. explicit K1 budget;
+8. reversible apply/revert;
+9. EyeRig excluded from clay deformation;
+10. pinned clay-floor source;
+11. AO intentionally off;
+12. boot repair retained;
+13. roster wiring still precedes runtime controls;
+14. 25-family / 56-appearance palette layer retained;
+15. Control R2 Converge contract retained.
+
+### Test limitation
+
+Attempted repository-native Node run from an isolated container, but the checkout could not start because the environment could not resolve `github.com`.
+This is an **environment/network limitation**, not a test failure.
+
+Therefore:
+- focused readback checks: **15/15 PASS**;
+- full historical static suite for this head: **NOT_RUN**;
+- browser visual/performance check: **OPEN**.
+
+Exactly one next gate after Stage publication:
+`GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`.
+
