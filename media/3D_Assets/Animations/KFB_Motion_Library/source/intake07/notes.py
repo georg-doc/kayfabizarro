@@ -1,0 +1,30 @@
+# per-clip notes for intake 07 (English). Speeds: natural no-slip speed on Rig_Medium (rig units, m/s), see LOCOMOTION_LADDER_01 method.
+V = lambda i, kind, note: {'id': i, 'kind': kind, 'note': note}
+G = 'gait-ladder'
+N = {
+ 'kfb_locomotion_jogging_a': dict(c='Relaxed jog, arms low, long 2.6 s cycle (1.35 m/s).', r='Slow jog rung between walk and jog; a resident jogging in the park.', t=['jog', G]),
+ 'kfb_locomotion_jog_forward_a': dict(c='Clean forward jog with a short flight phase (1.76 m/s, 0.83 s loop).', r='Jog rung of the gait ladder.', t=['jog', G]),
+ 'kfb_locomotion_jog_forward_diagonal_a': dict(c='Jog moving diagonally forward-left (about 45 deg) while facing forward (1.86 m/s).', r='Blend partner for diagonal input (8-way locomotion).', t=['jog', 'diagonal', G]),
+ 'kfb_locomotion_slow_run_a': dict(c='Slow run, feet stay close to the ground (2.13 m/s, 0.73 s loop).', r='Easy-run rung between jog and run.', t=['run', G]),
+ 'kfb_locomotion_medium_run_a': dict(c='Medium run with a short flight phase (3.18 m/s, 0.57 s loop).', r='Run rung of the gait ladder.', t=['run', G]),
+ 'kfb_locomotion_running_e': dict(c='Fast athletic run, strong arm swing (4.03 m/s).', r='Sprint alternative.', t=['run', 'fast']),
+ 'kfb_locomotion_running_f': dict(c='Light jog-run with small steps (1.90 m/s).', r='Alternative jog / easy run.', t=['run', 'jog']),
+ 'kfb_locomotion_run_forward_c': dict(c='Forward run, slightly turned shoulders (3.47 m/s).', r='Alternative run.', t=['run']),
+ 'kfb_locomotion_fast_run_a': dict(c='Fast run (3.85 m/s, 0.53 s loop).', r='Sprint alternative, less forward lean than sprint_a.', t=['run', 'fast', G]),
+ 'kfb_locomotion_sprint_a': dict(c='Full sprint with a strong forward lean (4.20 m/s, 0.53 s loop).', r='Sprint rung of the gait ladder; chases and escapes.', t=['sprint', G]),
+ 'kfb_locomotion_idle_to_sprint_a': dict(c='Explosive start from standing into a sprint (0.8 s, one-shot, travels about 1 m).', r='Sprint start from idle.', t=['sprint', 'start', 'one-shot', G]),
+ 'kfb_locomotion_sprint_turn_a': dict(c='Sprint that brakes and turns about 60 deg to the right (1.0 s, one-shot).', r='Sharp turn while sprinting.', t=['sprint', 'turn', 'one-shot']),
+ 'kfb_locomotion_start_walking_a': dict(c='From standing, starts walking forward (2.9 s, one-shot, travels about 1.4 m).', r='Walk start from idle.', t=['walk', 'start', 'one-shot', G]),
+ 'kfb_locomotion_female_start_walking_a': dict(c='Female-style walk start from standing (1.9 s, one-shot).', r='Shorter walk start; female ladder later.', t=['walk', 'start', 'one-shot', 'female', G]),
+ 'kfb_locomotion_female_stop_walking_a': dict(c='Female-style stop from walking to standing (1.3 s, one-shot, no end turn).', r='Shorter walk stop than stop_walking_a.', t=['walk', 'stop', 'one-shot', 'female', G]),
+ 'kfb_locomotion_female_stop_and_start_walking_a': dict(c='Female walk that stops, pauses and walks on (3.7 s, loops).', r='Window shopping, hesitating resident.', t=['walk', 'female']),
+ 'kfb_locomotion_walking_backwards_a': dict(c='Plain backward walk (0.54 m/s, 1.4 s loop).', r='Alternative walkBack.', t=['walk', 'backward', G]),
+ 'kfb_locomotion_slow_jog_backwards_a': dict(c='Slow backward jog; the root moves about twice as fast as the planted feet (1.17 vs 0.53 m/s) - check foot sliding.', r='Backward jog rung (HOLD until checked).', t=['jog', 'backward', G], n='Root travel and foot speed disagree by 121 %; judge in the review scene.'),
+ 'kfb_locomotion_running_backward_a': dict(c='Backward run (2.16 m/s, 0.63 s loop).', r='Run-back rung.', t=['run', 'backward', G]),
+ 'kfb_locomotion_strafe_a': dict(c='Side run to the right, body facing forward (2.63 m/s, clean loop).', r='Strafe-run right; replaces right_strafe_a (not a clean loop).', t=['run', 'strafe', G]),
+ 'kfb_locomotion_change_direction_a': dict(c='Runs, plants, turns about 180 deg and runs back (2.5 s, one-shot).', r='Turn-around while running.', t=['run', 'turn', 'one-shot']),
+ 'kfb_locomotion_running_right_turn_a': dict(c='Run that curves about 36 deg to the right (0.77 s, one-shot).', r='Running turn.', t=['run', 'turn', 'one-shot']),
+ 'kfb_locomotion_walking_p': dict(c='Casual walk (0.57 m/s), not a clean loop (13.7 deg).', r='Slow stroll.', t=['walk']),
+ 'kfb_locomotion_jump_b': dict(c='Big forward jump that repeats (lands and takes off again; hips rise about 0.7 m; 2.8 m per jump).', r='Leaping run, hopping over gaps.', t=['jump', 'airborne']),
+ 'kfb_locomotion_jumping_a': dict(c='Single jump from standing: crouch, jump forward about 3 m, land (1.2 s, one-shot).', r='Full jump for both rigs (Rig_Large has no split jump).', t=['jump', 'one-shot', G]),
+}

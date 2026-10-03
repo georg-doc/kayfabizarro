@@ -1,0 +1,64 @@
+name: ToolBox Motion State Foundation
+on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/kfb-lib/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/*test.mjs'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_*'
+      - 'tools/KFB-ToolBox/docs/MOTION_PROFILE_ROUTER.md'
+      - 'tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/**'
+      - '.github/workflows/toolbox-motion-state-foundation.yml'
+  push:
+    branches:
+      - chatgpt-web/motion-ssot-convergence-2026-10-03
+    paths:
+      - 'tools/KFB-ToolBox/kfb-lib/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/*test.mjs'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_*'
+      - 'tools/KFB-ToolBox/docs/MOTION_PROFILE_ROUTER.md'
+      - 'tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/**'
+      - '.github/workflows/toolbox-motion-state-foundation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: JavaScript syntax
+        run: |
+          node --check tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js
+          node --check tools/KFB-ToolBox/kfb-lib/anim-map.v1.js
+          node --check tools/KFB-ToolBox/kfb-lib/motion-state-machine.v1.js
+          node --check tools/KFB-ToolBox/kfb-lib/locomotion-ladder-profile.v1.js
+          node --check tools/KFB-ToolBox/kaykit-motion-lab-v1/reconcile-measurements.mjs
+      - name: JSON contracts
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kfb-lib/MOTION_STATE_CONTRACT.v1.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kfb-lib/BLENDER_MEASUREMENT_INTAKE.schema.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_MEASUREMENT_INTAKE.template.json','utf8'))"
+          node -e "const x=JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json','utf8')); if(x.schema!=='kfb.locomotion-ladder/0.2-candidate') process.exit(1)"
+          node -e "const x=JSON.parse(require('fs').readFileSync('media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json','utf8')); if(x.schema!=='kfb.motion-catalog.v1'||x.clipCount!==395) process.exit(1)"
+      - name: State machine tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs
+      - name: Measurement reconciliation tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/reconcile-measurements.test.mjs
+      - name: Ladder 02 central-owner integration tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/ladder-02-integration.test.mjs
+      - name: Motion Lab owner integration tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-owner-integration.test.mjs
+      - name: Exact Ladder 02 reconciliation smoke
+        run: |
+          node tools/KFB-ToolBox/kaykit-motion-lab-v1/reconcile-measurements.mjs \
+            tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/KCL_M1_MEASURED_PROFILE_CANDIDATE.json \
+            tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json \
+            /tmp/ladder02-reconciliation.json
+          node -e "const x=require('/tmp/ladder02-reconciliation.json'); if(!x.ladderForwardProfile?.technicalForwardReady||x.ladderForwardProfile?.humanAccepted!==false) process.exit(1)"

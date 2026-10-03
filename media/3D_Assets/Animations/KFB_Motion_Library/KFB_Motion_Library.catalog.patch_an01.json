@@ -1,0 +1,289 @@
+{
+ "schema": "kfb.motion-catalog.v1/patch",
+ "batch": "AN-PERF-01",
+ "date": "2026-09-29",
+ "base": "KFB_Motion_Library.catalog.json (263 clips, intake 04)",
+ "apply": "append clips[] to catalogue.clips and libraries{} to catalogue.libraries; clipCount 263 -> 266. Nothing existing changes.",
+ "libraries": {
+  "libs/Rig_Medium/KFB_Motion_perf_an01.glb": {
+   "rig": "Rig_Medium",
+   "group": "performance batch AN-PERF-01 (interaction, locomotion)",
+   "bytes": 105396,
+   "sha256": "f9f154e1fb6444930b9841525afff4e778df40a127aa849b0f36530526beb5c4",
+   "clipCount": 3
+  },
+  "libs/Rig_Large/KFB_Motion_perf_an01.glb": {
+   "rig": "Rig_Large",
+   "group": "performance batch AN-PERF-01 (interaction, locomotion)",
+   "bytes": 105468,
+   "sha256": "8d26821bf06db0a2cef97488ea68c7ee553c484580ef21d865eb6b3ae292c976",
+   "clipCount": 3
+  }
+ },
+ "clips": [
+  {
+   "id": "kfb_interaction_gift_give_a",
+   "label_de": "Geschenk überreichen",
+   "group": "interaction",
+   "frames": 90,
+   "loop": false,
+   "rootMotion": "in-place",
+   "events": {
+    "offerReady": {
+     "frame": 30
+    },
+    "release": {
+     "frame": 50,
+     "note": "hand the prop to the receiver here"
+    }
+   },
+   "props": {
+    "hands": "both",
+    "prop": "gift box (carried from frame 1, released at 50)"
+   },
+   "variantOf": null,
+   "authoredFrom": [
+    "kfb_idle_breathing_a (legs, torso)",
+    "kfb_locomotion_jogging_with_box_a frame 1 (carry arms)"
+   ],
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    }
+   },
+   "comment": "Authored in Blender (AN-PERF-01): carry pose, arms push the box forward and slightly up (frames 10-38), hold, release at 50, empty arms settle back to idle by 72. Feet stay planted.",
+   "residentIdeas": "Any resident giving a present or handing over an item; pairs with kfb_interaction_gift_receive_a.",
+   "tags": [
+    "gift",
+    "handover",
+    "two-hands",
+    "one-shot"
+   ],
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "durationSec": 3.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf_an01.glb"
+   },
+   "intake": "AN-PERF-01",
+   "sourceFbx": null,
+   "rootBone": "root",
+   "loopPoseDiffDeg": null,
+   "roundTripMaxCm": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   }
+  },
+  {
+   "id": "kfb_interaction_gift_receive_a",
+   "label_de": "Geschenk annehmen",
+   "group": "interaction",
+   "frames": 90,
+   "loop": false,
+   "rootMotion": "in-place",
+   "events": {
+    "reachReady": {
+     "frame": 38
+    },
+    "grab": {
+     "frame": 40,
+     "note": "take the prop from the giver here"
+    },
+    "secured": {
+     "frame": 68
+    }
+   },
+   "props": {
+    "hands": "both",
+    "prop": "gift box (held from frame 40)"
+   },
+   "variantOf": null,
+   "authoredFrom": [
+    "kfb_idle_breathing_a (legs, torso)",
+    "kfb_locomotion_jogging_with_box_a frame 1 (carry arms)"
+   ],
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        90
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        90
+       ]
+      ]
+     }
+    }
+   },
+   "comment": "Authored in Blender (AN-PERF-01): idle, both arms reach forward (15-38), grab at 40, pull the box to the chest into the carry pose (45-68), happy head wobble while holding. Ends in the carry pose.",
+   "residentIdeas": "Receiver side of a gift exchange; chain into a carry walk or an unboxing reaction.",
+   "tags": [
+    "gift",
+    "handover",
+    "two-hands",
+    "one-shot"
+   ],
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "durationSec": 3.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf_an01.glb"
+   },
+   "intake": "AN-PERF-01",
+   "sourceFbx": null,
+   "rootBone": "root",
+   "loopPoseDiffDeg": null,
+   "roundTripMaxCm": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   }
+  },
+  {
+   "id": "kfb_locomotion_nutcracker_march_a",
+   "label_de": "Nussknacker-Marsch",
+   "group": "locomotion",
+   "frames": 32,
+   "loop": true,
+   "rootMotion": "travel",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.144,
+    "Rig_Large": 2.937
+   },
+   "props": {
+    "hands": "right",
+    "prop": "rifle, upright in the right hand (attach at handslot.r, barrel up)"
+   },
+   "variantOf": {
+    "id": "kfb_locomotion_walk_with_briefcase_a",
+    "kind": "authored-style",
+    "note": "same stance frames and travel; high knees, straight swinging left arm, still right arm, upright stiff torso"
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        26,
+        32
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        12,
+        19
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        27,
+        32
+       ]
+      ]
+     }
+    }
+   },
+   "comment": "Authored in Blender (AN-PERF-01) from the briefcase walk: knees lifted only while the foot is in the air, left arm straight with bigger swing, right (rifle) arm held still, torso upright, chest and head steadier. Same travel per cycle as the donor.",
+   "residentIdeas": "Georg: the Nutcracker marching with the rifle in the right hand. Also toy soldiers, guards, parade residents.",
+   "tags": [
+    "walk-style",
+    "march",
+    "carry",
+    "one-hand"
+   ],
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "fps": 30.0,
+   "durationSec": 1.067,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_perf_an01.glb"
+   },
+   "intake": "AN-PERF-01",
+   "sourceFbx": null,
+   "rootBone": "root",
+   "loopPoseDiffDeg": 0.0,
+   "roundTripMaxCm": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "ACTIONFIGURE-MOTION-FREEPLAY-01",
+  "exportRevision": "2026-10-03-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "humanVerdict": "TOTAL_FAIL",
+  "entrypoints": [
+    "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html"
+  ],
+  "sourceFiles": [
+    {
+      "path": "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html",
+      "role": "failed browser candidate",
+      "testedHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+      "status": "ARCHIVED_FAILED"
+    },
+    {
+      "path": "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/browser-proof.mjs",
+      "role": "technical browser proof",
+      "status": "REUSE_DIAGNOSTIC_ONLY"
+    },
+    {
+      "path": "tools/KFB-ToolBox/kfb-lib/motion-state-machine.v1.js",
+      "role": "central semantic state owner",
+      "status": "NEEDS_ISOLATED_TEST"
+    },
+    {
+      "path": "tools/KFB-ToolBox/kfb-lib/locomotion-ladder-profile.v1.js",
+      "role": "mixed Ladder-02 adapter",
+      "status": "REJECTED_AS_PRIMARY_ACTIONFIGURE_MAPPING"
+    },
+    {
+      "path": "tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js",
+      "role": "canonical KayKit-native profile",
+      "blob": "3db9fbd482e6a527c417e79af826138ff28efa33",
+      "status": "REUSE_CANDIDATE_PRIMARY"
+    }
+  ],
+  "buildOutputs": [
+    {
+      "source": "GitHub Actions",
+      "run": 37125874478,
+      "artifactId": 11275251740,
+      "digest": "sha256:bc6b663622137cc08e0a7e73cf318f77d9b0bf75336da0bd5de657106adeb236",
+      "technicalResult": "SUCCESS",
+      "productResult": "HUMAN_FAIL"
+    }
+  ],
+  "dataFiles": [
+    "tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json",
+    "tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/KCL_M1_MEASURED_PROFILE_CANDIDATE.json",
+    "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/j14-locomotion-profile.ActionFigure.json"
+  ],
+  "assetRefs": [
+    {
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "blob": "4785276defdb929cb397954eb74b76aecb84486b",
+      "status": "REUSE_CANDIDATE"
+    },
+    {
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+      "commit": "b97b5ac55df2724fae623992433685583eece51e",
+      "blob": "5d16cb6815fc8371705147188813f851c10ba26a",
+      "status": "PRIMARY_NATIVE_SOURCE"
+    },
+    {
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "commit": "b97b5ac55df2724fae623992433685583eece51e",
+      "blob": "98e965e886ec539e80f8984a77a29b0c1c02e5e5",
+      "status": "PRIMARY_NATIVE_SOURCE"
+    },
+    {
+      "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementAdvanced.glb",
+      "commit": "b97b5ac55df2724fae623992433685583eece51e",
+      "blob": "f3ea309627f3ad76b92b85877ebc46f945cd4f1d",
+      "status": "PRIMARY_NATIVE_SOURCE"
+    }
+  ],
+  "externalDependencies": [
+    "three.js 0.160.0 used by failed browser candidate",
+    "KFB Production Control Site mirror (review convenience only)"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/TEST_REPORT.md",
+    "skills/chat/workflows/KAYKIT_NATIVE_LOCOMOTION_BASELINE_01_2026-10-03/FAILURE_RECOVERY.md"
+  ],
+  "missing": [
+    "human-screen recording of failed freeplay",
+    "Blender-native baseline result (next gate)"
+  ],
+  "start": {
+    "command": null,
+    "url": null,
+    "notes": "Do not restart this failed candidate. Review source only for recovery evidence."
+  },
+  "nextGate": "KAYKIT-NATIVE-BLENDER-BASELINE-01"
+}

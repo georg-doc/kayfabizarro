@@ -1363,3 +1363,89 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · Current Motion SSOT · Ladder 02 convergence PASS
+
+Current 3D Animation/Motion owner:
+- Draft PR **#333**
+- branch `chatgpt-web/motion-ssot-convergence-2026-10-03`
+- tested head `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`
+
+Current facts:
+- complete Motion Library v7 = **395 clips**;
+- Ladder 02 forward technical ladder = **walk → jog → run.easy → run → sprint**;
+- exact-head Motion Foundation = **26/26 Node tests PASS**, syntax/JSON/reconcile smoke PASS;
+- Production Resource Registry + Asset Registry Refresh PASS;
+- look choices remain HUMAN_OPEN; known backward/strafe/left-turn/run-stop gaps remain explicit.
+
+PR #336 is donor/history, not a second active Motion owner.
+
+Exactly one next Motion gate:
+**neutral ActionFigure / Rig_Medium freeplay with WASD + Shift + Space → Georg visual/freeplay PASS.**
+
+After PASS, the same central owner docks into procedural World **#332**. Do not use Travel Globe as the neutral Motion test host.
+
+Recovery:
+`tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/START_HERE.md`
+
+No Stage/Live publication belongs to this technical convergence checkpoint.
+
+
+## 2026-10-03 · Motion ActionFigure freeplay · SITE REVIEW READY
+
+Current Motion owner remains Draft PR #333.
+
+Tested implementation:
+`f1ce90d31a18973fa981bc982309c4bb01b204b8`
+
+Result:
+- original ActionFigure donor on neutral ground;
+- WASD / Shift / Space;
+- central Motion owner only;
+- Jog A/B, Run A/B, Sprint A/B;
+- real Chromium PASS;
+- Motion Foundation 27/27 PASS;
+- exact HTML mirrored to KFB Production Control Site.
+
+Human route for this gate is intentionally **private Site review**, not Cloudflare Stage.
+The expiring capability URL stays in chat only.
+
+### Who acts now?
+**Georg:** open the Site review, play briefly, return Jog A/B · Run A/B · Sprint A/B and any visible issue.
+
+### Who acts after that?
+**ChatGPT Web/GitHub:** persist Georg's selection and integrate the same Motion owner into procedural World #332.
+
+Do not send Georg back to Travel Globe or ask him to interpret PR/CI metadata.
+
+
+## 2026-10-03 · Motion freeplay HUMAN FAIL · KayKit-native reset
+
+The ActionFigure mixed Ladder-02 browser freeplay is **ARCHIVED_FAILED_CANDIDATE** after Georg's TOTAL FAIL.
+
+Technical browser PASS does not override human motion quality.
+
+Failure observations:
+- step-length mismatch;
+- jitter/wobble;
+- arm/torso collision/tight pose;
+- dirty transitions;
+- bad jump;
+- jerky timing.
+
+Binding correction:
+**ActionFigure/Rig_Medium uses original KayKit Character Animations 1.1 as primary locomotion source.**
+The existing `locomotion-profiles.v1.js` already encoded this rule.
+Mixamo / KFB Motion Library is later gap-fill only.
+
+Current Motion next gate:
+`KAYKIT-NATIVE-BLENDER-BASELINE-01`
+
+Next executor:
+**Coworker / Blender MCP**
+
+Georg:
+**Du musst jetzt nichts tun.**
+
+No browser rebuild, World docking or Travel use until the native Blender baseline is reviewed.

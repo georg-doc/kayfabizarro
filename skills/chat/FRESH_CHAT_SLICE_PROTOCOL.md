@@ -145,3 +145,19 @@ A successful export is a recovery result, not proof that the failed visual/game 
 ## Paste-ready cold-start request
 
 > Sync from `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` and `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, then recover this project's current GitHub state. Complete only the named slice additively. Keep the existing owners and SSOTs. Update the project Return/changelog and leave the standard compact review packet with exact PR/head, actual tests, visible proof, open items and one next gate.
+
+
+## 8. Plain-language continuation contract
+
+Do not leave Georg with a sentence like "next gate = X" unless the same handoff also says who executes X and what Georg is expected to do.
+
+Required closure block:
+
+- **Nächster Ausführender:** exact person/agent/owner.
+- **Was passiert jetzt:** one concrete action.
+- **Deine Aufgabe:** either one simple human action or **"Du musst jetzt nichts tun."**
+- **Danach bekommst du:** the exact review surface/result.
+
+If the next executor is this chat, keep working and return only when there is either a usable result for Georg or a real blocker requiring his decision.
+
+Technical metadata follows this block; it never replaces it.

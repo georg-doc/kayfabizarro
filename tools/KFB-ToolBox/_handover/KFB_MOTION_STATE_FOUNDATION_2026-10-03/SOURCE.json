@@ -1,0 +1,138 @@
+{
+  "schema": "kfb.motion-state-foundation-source/1",
+  "date": "2026-10-03",
+  "owner": "KFB ToolBox / Animation-Motion authoring",
+  "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+  "base": {
+    "pr": 127,
+    "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6"
+  },
+  "exactDonors": {
+    "locomotionProfiles": {
+      "pr": 294,
+      "blob": "3db9fbd482e6a527c417e79af826138ff28efa33"
+    },
+    "animMap": {
+      "pr": 294,
+      "blob": "7120f80e25e8a91106441039fb036c059a4d0e0d"
+    },
+    "measuredActorProfiles": {
+      "pr": 127,
+      "blob": "f7a0675e1ed175a5895a15b7320c1fd5258a94e9"
+    },
+    "profileProposals": {
+      "pr": 127,
+      "blob": "6b9253119139754b1e07002f9ada05194f9f46e3"
+    },
+    "creatorResearch": {
+      "pr": 107,
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "blob": "78ecdbef75a220d589f546651318629a133af0b0"
+    },
+    "motionLibraryV6": {
+      "source": "Dropbox",
+      "returnFile": "RETURN_INTAKE_06.md",
+      "catalogFile": "KFB_Motion_Library.catalog.json",
+      "version": "2026-09-30",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 370,
+      "locomotionGroupClips": 148,
+      "verifiedByThisChat": true,
+      "status": "SUPERSEDED_BY_V7_IN_CURRENT_CANDIDATE"
+    },
+    "blenderLadderBrief": {
+      "branch": "coworker/locomotion-ladder-01-brief-2026-10-03",
+      "path": "skills/chat/workflows/LOCOMOTION_LADDER_01_2026-10-03/BRIEF_BLENDER_LOCOMOTION_LADDER_01.md",
+      "blob": "746cd98e7185907cc18a95112a235e4bfbbdfd8f",
+      "output": "LOCOMOTION_LADDER_01.json"
+    },
+    "blenderLadderReturn": {
+      "pr": 334,
+      "head": "4c3744d427ddda9441f66d7f56c8deedc568090c",
+      "ladderBlob": "aa089a25157b057fd2456b8305f2ce97f3858972",
+      "returnBlob": "565aa5327a3597189b53ac664a576b120055ba22",
+      "reviewPlanBlob": "8eef67369a208182bd7f470bd9ec87113033121b",
+      "status": "INTAKED_EXACT_BYTES_HUMAN_VISUAL_REVIEW_OPEN"
+    },
+    "motionLibraryV7": {
+      "sourcePr": 336,
+      "sourceHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "sourceTree": "ca6218cc0d79f9e75f1ffccc2715f60cecf0e2bb",
+      "catalogBlob": "7f333d0a1809ff5b299263a5e2ec21a29dba723c",
+      "version": "2026-10-03",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 395,
+      "intake07Added": 25,
+      "duplicatesRejected": 16,
+      "status": "SUPPLEMENTARY_LIBRARY_NOT_PRIMARY_LOCOMOTION"
+    },
+    "blenderLadder02": {
+      "sourcePr": 336,
+      "sourceHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "ladderBlob": "59f49e9952b0d266c7cd435e85de601bd9da94f1",
+      "returnBlob": "839c2f68bfcf67d3cc3e036fb433d36b122a689d",
+      "reviewPlanBlob": "b1eb3ae84521a7a717b00a064cd1cc2ca66818eb",
+      "reviewScriptBlob": "23696665e048d965ea5fbdb4a447857e20334558",
+      "status": "ARCHIVED_GAP_DONOR_NOT_PRIMARY"
+    }
+  },
+  "protected": [
+    "consumer physics",
+    "world movement",
+    "camera",
+    "terrain/collision",
+    "Combat rules",
+    "Resident/EyeRig owners"
+  ],
+  "parallelBlenderMeasurement": true,
+  "currentPr": 333,
+  "cleanBase": "main",
+  "currentTestedHead": "aaf7f899caee381ede876a50276e0a3d2aaeb6c8",
+  "nextGate": "KAYKIT-NATIVE-BLENDER-BASELINE-01: Coworker/Blender reviews original KayKit Character Animations 1.1 Rig_Medium on the real ActionFigure; no Mixamo, no controller, no transitions yet.",
+  "currentTestedImplementationHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+  "actionFigureFreeplay": {
+    "status": "ARCHIVED_FAILED_CANDIDATE",
+    "path": "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html",
+    "sourceActorPath": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "sourceActorBlob": "4785276defdb929cb397954eb74b76aecb84486b",
+    "testedHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+    "browserRun": 37125874478,
+    "browserJob": 111210930976,
+    "browserArtifact": 11275251740,
+    "browserArtifactDigest": "sha256:bc6b663622137cc08e0a7e73cf318f77d9b0bf75336da0bd5de657106adeb236",
+    "motionFoundationRun": 37125874493,
+    "nodeTests": {
+      "total": 27,
+      "pass": 27,
+      "fail": 0
+    },
+    "siteMirror": {
+      "classification": "CLOSED_REVIEW_ARTIFACT_AFTER_HUMAN_FAIL",
+      "recordId": "c51be993-57e7-44c0-b821-1176dc965923",
+      "fileId": "c3588833-b1c3-4392-8582-1f80a2c55eed",
+      "fileSha256": "ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad",
+      "urlPolicy": "expiring private URL delivered in chat only"
+    },
+    "controls": [
+      "W",
+      "A",
+      "S",
+      "D",
+      "Shift",
+      "Space"
+    ],
+    "humanDecision": [
+      "Jog A/B",
+      "Run A/B",
+      "Sprint A/B"
+    ],
+    "humanVerdict": "TOTAL_FAIL"
+  },
+  "currentStatus": "HUMAN_FAIL_MIXED_LADDER_ARCHIVED_KAYKIT_NATIVE_RESTART",
+  "sourcePriority": {
+    "primary": "KayKit Character Animations 1.1 native rig family",
+    "supplementary": "KFB Motion Library / Mixamo only after proven native gap",
+    "canonicalProfileBlob": "3db9fbd482e6a527c417e79af826138ff28efa33",
+    "joyrideJ14NativeProfileBlob": "f88522de6a6b087d9ff4d609e8ad0238072a848c"
+  }
+}

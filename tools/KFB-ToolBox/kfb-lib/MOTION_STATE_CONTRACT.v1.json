@@ -1,0 +1,223 @@
+{
+  "schema": "kfb.motion-state-contract/1",
+  "date": "2026-10-03",
+  "owner": "KFB ToolBox / Animation-Motion authoring",
+  "status": "HUMAN_FAIL_LADDER_02_PRIMARY_SELECTION_ARCHIVED_KAYKIT_NATIVE_RESTART",
+  "sourceLineage": {
+    "motionLab": {
+      "pr": 127,
+      "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6",
+      "status": "PUBLIC_VERIFIED_87_87_HUMAN_OPEN"
+    },
+    "locomotionProfiles": {
+      "pr": 294,
+      "blob": "3db9fbd482e6a527c417e79af826138ff28efa33",
+      "status": "CANONICAL_PRIMARY_SOURCE_POLICY_RESTORED"
+    },
+    "animMap": {
+      "pr": 294,
+      "blob": "7120f80e25e8a91106441039fb036c059a4d0e0d",
+      "status": "SOURCE_PASS_CANDIDATE"
+    },
+    "creatorResearch": {
+      "pr": 107,
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "blob": "78ecdbef75a220d589f546651318629a133af0b0"
+    },
+    "motionLabMeasurements": {
+      "blob": "f7a0675e1ed175a5895a15b7320c1fd5258a94e9"
+    },
+    "motionLibraryV6": {
+      "source": "Dropbox",
+      "path": "/CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/MOTION_LIB_v6/KFB_Motion_Library.catalog.json",
+      "version": "2026-09-30",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 370,
+      "locomotionGroupClips": 148,
+      "verifiedOn": "2026-10-03",
+      "note": "Private source reference only; catalogue bytes are not copied into this public branch.",
+      "status": "SUPERSEDED_BY_V7_IN_CURRENT_CANDIDATE"
+    },
+    "blenderLadder": {
+      "donorPr": 336,
+      "donorBranch": "blender-mcp/locomotion-ladder-02-2026-10-03",
+      "donorHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "evidencePath": "tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json",
+      "evidenceBlob": "59f49e9952b0d266c7cd435e85de601bd9da94f1",
+      "schema": "kfb.locomotion-ladder/0.2-candidate",
+      "status": "ARCHIVED_GAP_DONOR_NOT_PRIMARY_LOCOMOTION"
+    },
+    "motionLibraryV7": {
+      "source": "GitHub + Dropbox verified donor",
+      "donorPr": 336,
+      "donorHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "tree": "ca6218cc0d79f9e75f1ffccc2715f60cecf0e2bb",
+      "catalogBlob": "7f333d0a1809ff5b299263a5e2ec21a29dba723c",
+      "version": "2026-10-03",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 395,
+      "intake07Added": 25,
+      "intake07DuplicatesRejected": 16,
+      "status": "SUPPLEMENTARY_VARIANT_ACTION_LIBRARY_NOT_PRIMARY_LOCOMOTION"
+    },
+    "joyrideJ14NativeActionFigure": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/j14-locomotion-profile.ActionFigure.json",
+      "blob": "f88522de6a6b087d9ff4d609e8ad0238072a848c",
+      "sourcePack": "KayKit Character Animations 1.1",
+      "sourceCommit": "b97b5ac55df2724fae623992433685583eece51e",
+      "actor": "ActionFigure / Rig_Medium",
+      "rigCompatibility": "23/23",
+      "status": "PRIMARY_NATIVE_DONOR_MEASUREMENTS_UNPROVEN_FOR_FINAL_RUNTIME"
+    }
+  },
+  "responsibility": {
+    "owns": [
+      "semantic animation state",
+      "clip role mapping",
+      "rig-family motion facts",
+      "foot/contact phases",
+      "playback-rate policy",
+      "phase-aware transition profile",
+      "animation-relative event markers",
+      "actor-specific motion review/override"
+    ],
+    "doesNotOwn": [
+      "input",
+      "world position",
+      "world velocity integration",
+      "acceleration physics",
+      "terrain/collision",
+      "camera",
+      "damage/ammo",
+      "jump trajectory"
+    ]
+  },
+  "consumerInput": [
+    "actualSpeed",
+    "localForwardSpeed",
+    "localSideSpeed",
+    "grounded",
+    "verticalVelocity",
+    "sprintIntent",
+    "jumpPhase"
+  ],
+  "ownerOutput": [
+    "semanticState",
+    "presentationState",
+    "role",
+    "clip",
+    "playbackRate",
+    "phase-aware transition metadata"
+  ],
+  "semanticStates": [
+    "idle",
+    "start",
+    "walk",
+    "walk.fast",
+    "jog",
+    "run.easy",
+    "run",
+    "sprint",
+    "stop",
+    "backward",
+    "strafe.left",
+    "strafe.right",
+    "turn",
+    "jump.start",
+    "jump.air",
+    "jump.land"
+  ],
+  "rules": [
+    "State is chosen from actual movement facts, never number keys or local consumer clip tables.",
+    "Playback rate is actualSpeed / measured referenceSpeed and is only valid inside an approved clip range.",
+    "Adjacent gait hysteresis derives from overlap in measured/approved speed windows; a gap remains explicitly flagged.",
+    "Walk/run/sprint transitions preserve gait phase/contact where source evidence exists.",
+    "Start/stop may be transition semantics without dedicated clips; no clip name is invented.",
+    "Missing measurements remain unresolved and block final prototype acceptance rather than being guessed.",
+    "Consumer runtimes may not fork clip maps or locomotion state graphs.",
+    "Motion Library v6 provides a broad candidate pool, but semantic gait selection remains unresolved until exact ladder measurement and Georg visual review.",
+    "Legacy KCL/Motion Lab same-clip measurements remain independent cross-check evidence and are not silently overwritten by Ladder 02.",
+    "For ActionFigure/Rig_Medium, KayKit Character Animations 1.1 is the canonical primary locomotion source.",
+    "The canonical locomotion-profiles.v1 rule is binding: Mixamo / KFB Motion Library is the variant/action layer and may not overwrite an existing KayKit-native locomotion role.",
+    "A native-source gap remains visible until the native baseline is visually and mechanically reviewed; a gap is not permission to pre-emptively replace the whole gait family.",
+    "No new browser/game locomotion prototype may be built until KAYKIT-NATIVE-BLENDER-BASELINE-01 passes isolated actor review.",
+    "LOCOMOTION_LADDER_02 remains archived evidence for later gap-fill candidates only; its mixed-source five-rung ladder is not an accepted primary ActionFigure gait family.",
+    "Automated state/boot tests do not constitute motion-quality acceptance; Georg HUMAN FAIL overrides prior browser technical PASS."
+  ],
+  "currentRigMediumEvidence": {
+    "measurementStatus": "KAYKIT_NATIVE_BASELINE_RESTART_REQUIRED",
+    "humanAccepted": false,
+    "previousCandidate": {
+      "status": "ARCHIVED_FAILED_CANDIDATE",
+      "name": "ACTIONFIGURE-MOTION-FREEPLAY-01 / mixed Ladder 02",
+      "userVerdict": "HUMAN_FAIL",
+      "observedFailures": [
+        "step length mismatch",
+        "visible wobble/jitter during locomotion",
+        "arm pose too tight / arms intersecting or pressed into torso",
+        "unclean gait transitions",
+        "unclean jump behaviour",
+        "animation timing reads jerky"
+      ]
+    },
+    "primarySource": {
+      "pack": "KayKit Character Animations 1.1",
+      "commit": "b97b5ac55df2724fae623992433685583eece51e",
+      "rigFamily": "Rig_Medium",
+      "actor": "ActionFigure",
+      "canonicalProfileBlob": "3db9fbd482e6a527c417e79af826138ff28efa33",
+      "j14MeasurementBlob": "f88522de6a6b087d9ff4d609e8ad0238072a848c"
+    },
+    "knownNativeRoles": {
+      "idle": "Idle_A",
+      "walk": [
+        "Walking_A",
+        "Walking_B",
+        "Walking_C"
+      ],
+      "run": [
+        "Running_A",
+        "Running_B"
+      ],
+      "backward": "Walking_Backwards",
+      "strafeLeft": "Running_Strafe_Left",
+      "strafeRight": "Running_Strafe_Right",
+      "jump": [
+        "Jump_Start",
+        "Jump_Idle",
+        "Jump_Land"
+      ],
+      "crouch": "Crouching",
+      "sneak": "Sneaking",
+      "crawl": "Crawling"
+    },
+    "speedCalibrationStatus": "UNRESOLVED_UNTIL_BLENDER_NATIVE_BASELINE",
+    "mixamoPolicy": "SUPPLEMENTARY_ONLY_AFTER_EXPLICIT_NATIVE_GAP"
+  },
+  "prototypeGate": {
+    "status": "BLOCKED_BY_HUMAN_FAIL",
+    "blockedPrototype": "ACTIONFIGURE-MOTION-FREEPLAY-01",
+    "nextGate": "KAYKIT-NATIVE-BLENDER-BASELINE-01",
+    "purpose": "Review original KayKit Rig_Medium clips on the real ActionFigure in Blender before any controller, crossfade graph, runtime speed ladder or Mixamo gap-fill is attempted.",
+    "nextExecutor": "Coworker / Blender MCP",
+    "georgActionNow": "NONE",
+    "afterPass": "Only then define native baseline roles and proceed to a separate transition-quality gate."
+  },
+  "sourcePriority": [
+    {
+      "priority": 1,
+      "source": "KayKit Character Animations 1.1 / native rig family",
+      "policy": "For ActionFigure/Rig_Medium, use General + MovementBasic + MovementAdvanced first. Existing native role clips must not be replaced by Mixamo/KFB Motion Library."
+    },
+    {
+      "priority": 2,
+      "source": "KayKit-native playback/semantic variants",
+      "policy": "Only after isolated Blender review proves pose, loop, contact and stride quality on the actual actor."
+    },
+    {
+      "priority": 3,
+      "source": "KFB Motion Library / Mixamo-derived clips",
+      "policy": "Gap-fill only. A missing native role must be explicitly demonstrated before a supplementary clip is admitted, and that clip must be retargeted/pose-reviewed in Blender before runtime use."
+    }
+  ]
+}

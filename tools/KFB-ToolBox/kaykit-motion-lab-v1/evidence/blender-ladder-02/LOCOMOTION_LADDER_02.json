@@ -1,0 +1,3059 @@
+{
+ "schema": "kfb.locomotion-ladder/0.2-candidate",
+ "id": "LOCOMOTION_LADDER_02",
+ "date": "2026-10-03",
+ "supersedes": "LOCOMOTION_LADDER_01 kfb_ladder_v1 (Georg 03.10: strike_foward_jog_a is a hop, not a jog)",
+ "schemaNote": "ladders[rig].rungs[] = one clip per gait rung with natural speed, cycle, foot phases, loop quality, slip; *Bands[] = neighbour handoffs with playback rates and phase offsets. Speeds are in each rig's own bake scale plus \"world\" = one common factor for all rigs. rungs[].alternatives[] = other measured clips for the same rung (Georg picks the look).",
+ "units": {
+  "length": "metres",
+  "time": "seconds",
+  "fps": 30,
+  "frame": "glTF Y-up, characters face +Z",
+  "rigHeightM": {
+   "Rig_Medium": 2.204,
+   "Rig_Large": 3.981,
+   "source": "KayKit mannequin mesh height (the v6 catalogue note says ~1.9 m for Rig_Medium; that is not the mesh top)"
+  },
+  "worldScaleFactor": 0.6806,
+  "worldScaleRule": "Georg 30.09: KayKit proportions, one factor for all rigs, Rig_Medium = 1.5 m -> 1.5/2.204"
+ },
+ "method": {
+  "evaluator": "own glTF evaluator (numpy) on the exact library/KayKit GLBs; cross-checked against Blender 5.0 import (same foot positions, feet stay on footprint markers in the review scene)",
+  "cycle": "first to last key; library loops repeat the first pose as last key, so the cycle is frames-1. The v6 catalogue durationSec counts that duplicated frame, so catalogue speeds read ~3 % low.",
+  "naturalSpeed": "root-motion clips: hips travel per cycle / cycle time. In-place clips: median backward speed of the planted heel/toe in the body frame (= the ground speed at which the feet do not slide).",
+  "contacts": "a heel (foot bone) or toe joint is planted while within 1.2 % of rig height above its own lowest point; footDownPhase = first frame of each contact / cycle",
+  "slip": "max horizontal creep of a planted joint while played at natural speed; joint counts as planted only while also slower than max(0.15 m/s scaled, 25 % of speed). Threshold PASS <= 2.0 % of rig height (stated by this lane, research: Holden contact rules).",
+  "handoff": "geometric mean of neighbour speeds (equal stretch both sides); playbackRateWindow = band edges / natural speed; flag when outside 0.75..1.25",
+  "phaseOffset": "(leftFootDownPhase of target - of source) mod 1: start the target clip at source normalized time + offset so the same foot is down"
+ },
+ "motionLabV1Comparison": {
+  "note": "Stop rule check. Same clip, different definition: Motion Lab v1 uses the ankle only and a wide contact window (min + max(1.2 % height, 22 % of foot height range)), which pulls the median down. Re-running its exact method here gives 0.648 / 2.702 (Medium) and 1.747 / 2.590 (Large) against its reported 0.611 / 2.480 / 1.772 / 1.850. Medium and Large walk agree within 10 %; Large Running_A does not (40 %), reason unknown (Motion Lab measured the Black Knight actor). The ladder uses the strict no-slip speed.",
+  "Rig_Medium": {
+   "Walking_A": {
+    "motionLab": 0.611,
+    "labMethodHere": 0.648,
+    "strictHere": 0.71
+   },
+   "Running_A": {
+    "motionLab": 2.48,
+    "labMethodHere": 2.702,
+    "strictHere": 3.3
+   }
+  },
+  "Rig_Large": {
+   "Walking_A": {
+    "motionLab": 1.772,
+    "labMethodHere": 1.747,
+    "strictHere": 2.09
+   },
+   "Running_A": {
+    "motionLab": 1.85,
+    "labMethodHere": 2.59,
+    "strictHere": 4.39
+   }
+  }
+ },
+ "intake": "Motion Library intake 07 (2026-10-03): 25 new locomotion clips in libs/*/KFB_Motion_locomotion_i07.glb; 16 of the 41 staged FBX were (near) duplicates and were not baked.",
+ "ladders": {
+  "kfb_ladder_v2": {
+   "family": "KFB Motion Library (Mixamo locomotion retargeted to KayKit rigs, intakes 01-07) + KayKit split jump on Rig_Medium",
+   "Rig_Medium": {
+    "rungs": [
+     {
+      "rung": "idle",
+      "clip": "kfb_idle_idle_f",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_idle.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.2,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 8.2,
+      "frames": 247,
+      "cycleFrames": 246,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.0,
+       "world": 0.0
+      },
+      "stanceFootSpeedMs": 0.0,
+      "rootTravelSpeedMs": 0.0,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.001,
+       "world": 0.001
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -94.0,
+      "travelYawDeg": null,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 0.1,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      }
+     },
+     {
+      "rung": "walkStart",
+      "clip": "kfb_locomotion_start_walking_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 34.9,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 2.9333,
+      "frames": 89,
+      "cycleFrames": 89,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.466,
+       "world": 0.317
+      },
+      "stanceFootSpeedMs": 0.465,
+      "rootTravelSpeedMs": 0.466,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.367,
+       "world": 0.93
+      },
+      "leftFootDownPhase": 0.9888,
+      "rightFootDownPhase": 0.764,
+      "forwardYawDeg": -94.4,
+      "travelYawDeg": -90.2,
+      "travelYawDegGltfMeasured": -0.2,
+      "hipsYawDeltaDeg": 10.4,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "2.9 s; female_start_walking_a (1.9 s) is the shorter option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_female_start_walking_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 0.637,
+         "world": 0.434
+        },
+        "slipPctHeight": 3.06
+       }
+      ]
+     },
+     {
+      "rung": "walk",
+      "clip": "kfb_locomotion_walking_c",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0333,
+      "frames": 32,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 1.135,
+       "world": 0.773
+      },
+      "stanceFootSpeedMs": 1.137,
+      "rootTravelSpeedMs": 1.135,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.173,
+       "world": 0.799
+      },
+      "leftFootDownPhase": 0.2581,
+      "rightFootDownPhase": 0.6774,
+      "forwardYawDeg": -91.7,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 2.16,
+       "pctHeight": 0.98,
+       "verdict": "PASS"
+      },
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 1.413,
+        "world": 0.962
+       },
+       "playbackRateWindow": [
+        null,
+        1.245
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "jog",
+      "clip": "kfb_locomotion_jog_forward_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.8333,
+      "frames": 26,
+      "cycleFrames": 25,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 1.76,
+       "world": 1.198
+      },
+      "stanceFootSpeedMs": 1.69,
+      "rootTravelSpeedMs": 1.76,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.466,
+       "world": 0.998
+      },
+      "leftFootDownPhase": 0.2,
+      "rightFootDownPhase": 0.76,
+      "forwardYawDeg": -87.9,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.16,
+      "slip": {
+       "cm": 1.8,
+       "pctHeight": 0.82,
+       "verdict": "PASS"
+      },
+      "note": "Replaces strike_foward_jog_a (a hop, rejected by Georg 03.10). jogging_a (1.35 m/s) is the calmer option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_jogging_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 1.345,
+         "world": 0.916
+        },
+        "slipPctHeight": 1.12
+       },
+       {
+        "clip": "kfb_locomotion_running_f",
+        "naturalSpeedMs": {
+         "Rig_Medium": 1.904,
+         "world": 1.296
+        },
+        "slipPctHeight": 0.56
+       },
+       {
+        "clip": "kfb_locomotion_strike_foward_jog_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 1.633,
+         "world": 1.111
+        },
+        "slipPctHeight": 0.99
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 1.413,
+        "world": 0.962
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 1.936,
+        "world": 1.318
+       },
+       "playbackRateWindow": [
+        0.803,
+        1.1
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "runEasy",
+      "clip": "kfb_locomotion_slow_run_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.7333,
+      "frames": 23,
+      "cycleFrames": 22,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 2.13,
+       "world": 1.449
+      },
+      "stanceFootSpeedMs": 1.932,
+      "rootTravelSpeedMs": 2.13,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.562,
+       "world": 1.063
+      },
+      "leftFootDownPhase": 0.0909,
+      "rightFootDownPhase": 0.5909,
+      "forwardYawDeg": -90.2,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 3.24,
+       "pctHeight": 1.47,
+       "verdict": "PASS"
+      },
+      "note": "running_a (2.03 m/s) is the option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_running_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 2.029,
+         "world": 1.381
+        },
+        "slipPctHeight": 1.69
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 1.936,
+        "world": 1.318
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 2.602,
+        "world": 1.771
+       },
+       "playbackRateWindow": [
+        0.909,
+        1.222
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "run",
+      "clip": "kfb_locomotion_medium_run_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.5667,
+      "frames": 18,
+      "cycleFrames": 17,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 3.179,
+       "world": 2.164
+      },
+      "stanceFootSpeedMs": 2.843,
+      "rootTravelSpeedMs": 3.179,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.802,
+       "world": 1.226
+      },
+      "leftFootDownPhase": 0.2941,
+      "rightFootDownPhase": 0.7647,
+      "forwardYawDeg": -92.3,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.118,
+      "slip": {
+       "cm": 2.96,
+       "pctHeight": 1.34,
+       "verdict": "PASS"
+      },
+      "note": "Replaces running_d (slip HOLD).",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_running_d",
+        "naturalSpeedMs": {
+         "Rig_Medium": 2.978,
+         "world": 2.027
+        },
+        "slipPctHeight": 2.5
+       },
+       {
+        "clip": "kfb_locomotion_run_forward_c",
+        "naturalSpeedMs": {
+         "Rig_Medium": 3.474,
+         "world": 2.365
+        },
+        "slipPctHeight": 1.36
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 2.602,
+        "world": 1.771
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 3.653,
+        "world": 2.486
+       },
+       "playbackRateWindow": [
+        0.818,
+        1.149
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "sprint",
+      "clip": "kfb_locomotion_sprint_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.5333,
+      "frames": 17,
+      "cycleFrames": 16,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 4.198,
+       "world": 2.857
+      },
+      "stanceFootSpeedMs": 3.785,
+      "rootTravelSpeedMs": 4.198,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 2.239,
+       "world": 1.524
+      },
+      "leftFootDownPhase": 0.3125,
+      "rightFootDownPhase": 0.8125,
+      "forwardYawDeg": -94.1,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.312,
+      "slip": {
+       "cm": 2.49,
+       "pctHeight": 1.13,
+       "verdict": "PASS"
+      },
+      "note": "fast_run_a (3.85) and running_e (4.03) are options with less forward lean.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_fast_run_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 3.85,
+         "world": 2.62
+        },
+        "slipPctHeight": 1.43
+       },
+       {
+        "clip": "kfb_locomotion_running_e",
+        "naturalSpeedMs": {
+         "Rig_Medium": 4.028,
+         "world": 2.741
+        },
+        "slipPctHeight": 1.78
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 3.653,
+        "world": 2.486
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 5.038,
+        "world": 3.428
+       },
+       "playbackRateWindow": [
+        0.87,
+        1.2
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "sprintStart",
+      "clip": "kfb_locomotion_idle_to_sprint_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 138.5,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.8,
+      "frames": 25,
+      "cycleFrames": 25,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 1.293,
+       "world": 0.88
+      },
+      "stanceFootSpeedMs": 1.294,
+      "rootTravelSpeedMs": 1.293,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.035,
+       "world": 0.704
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.8,
+      "forwardYawDeg": -121.3,
+      "travelYawDeg": -89.4,
+      "travelYawDegGltfMeasured": 0.6,
+      "hipsYawDeltaDeg": 33.3,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "From standing straight into the sprint."
+     },
+     {
+      "rung": "walkStop",
+      "clip": "kfb_locomotion_female_stop_walking_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 38.4,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.3333,
+      "frames": 41,
+      "cycleFrames": 41,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.769,
+       "world": 0.524
+      },
+      "stanceFootSpeedMs": 0.75,
+      "rootTravelSpeedMs": 0.769,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.026,
+       "world": 0.698
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -91.8,
+      "travelYawDeg": -91.5,
+      "travelYawDegGltfMeasured": -1.5,
+      "hipsYawDeltaDeg": 0.9,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "1.3 s, no end turn; stop_walking_a (3.0 s, ~10 deg turn) is the option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_stop_walking_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 0.269,
+         "world": 0.183
+        },
+        "slipPctHeight": 4.06
+       }
+      ]
+     },
+     {
+      "rung": "runStop",
+      "clip": "kfb_locomotion_run_to_stop_a",
+      "family": "library",
+      "sourcePack": "Action Adventure Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 98.5,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.9,
+      "frames": 28,
+      "cycleFrames": 28,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.668,
+       "world": 0.454
+      },
+      "stanceFootSpeedMs": 0.668,
+      "rootTravelSpeedMs": 0.668,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.601,
+       "world": 0.409
+      },
+      "leftFootDownPhase": 0.1786,
+      "rightFootDownPhase": 0.5,
+      "forwardYawDeg": -84.6,
+      "travelYawDeg": -89.3,
+      "travelYawDegGltfMeasured": 0.7,
+      "hipsYawDeltaDeg": -45.0,
+      "airborneFrac": 0.036,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "0.93 s; ends with the hips turned ~45 deg. Still the only run stop."
+     },
+     {
+      "rung": "walkBack",
+      "clip": "kfb_locomotion_walk_backward_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.2333,
+      "frames": 38,
+      "cycleFrames": 37,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.557,
+       "world": 0.379
+      },
+      "stanceFootSpeedMs": 0.535,
+      "rootTravelSpeedMs": 0.557,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.687,
+       "world": 0.468
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.9459,
+      "forwardYawDeg": -90.1,
+      "travelYawDeg": 90.0,
+      "travelYawDegGltfMeasured": -180.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 1.2,
+       "pctHeight": 0.54,
+       "verdict": "PASS"
+      },
+      "note": "walking_backwards_a (0.54 m/s) is the option (body turned ~40 deg).",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_walking_backwards_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 0.545,
+         "world": 0.371
+        },
+        "slipPctHeight": 1.09
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 0.806,
+        "world": 0.549
+       },
+       "playbackRateWindow": [
+        null,
+        1.447
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "jogBack",
+      "clip": "kfb_locomotion_slow_jog_backwards_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.7333,
+      "frames": 23,
+      "cycleFrames": 22,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 1.166,
+       "world": 0.793
+      },
+      "stanceFootSpeedMs": 0.527,
+      "rootTravelSpeedMs": 1.166,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.855,
+       "world": 0.582
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -108.1,
+      "travelYawDeg": 90.0,
+      "travelYawDegGltfMeasured": -180.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 2.02,
+       "pctHeight": 0.92,
+       "verdict": "PASS"
+      },
+      "note": "HOLD: root travels about twice as fast as the planted feet; judge in the review scene.",
+      "alternatives": [],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 0.806,
+        "world": 0.549
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 1.586,
+        "world": 1.079
+       },
+       "playbackRateWindow": [
+        0.691,
+        1.36
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "runBack",
+      "clip": "kfb_locomotion_running_backward_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.6333,
+      "frames": 20,
+      "cycleFrames": 19,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 2.156,
+       "world": 1.468
+      },
+      "stanceFootSpeedMs": 2.03,
+      "rootTravelSpeedMs": 2.156,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.366,
+       "world": 0.929
+      },
+      "leftFootDownPhase": 0.3158,
+      "rightFootDownPhase": 0.7895,
+      "forwardYawDeg": -85.5,
+      "travelYawDeg": 90.0,
+      "travelYawDegGltfMeasured": -180.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.053,
+      "slip": {
+       "cm": 2.34,
+       "pctHeight": 1.06,
+       "verdict": "PASS"
+      },
+      "note": "run_backward_a (1.33 m/s) is the slower option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_run_backward_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 1.334,
+         "world": 0.908
+        },
+        "slipPctHeight": 0.31
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 1.586,
+        "world": 1.079
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 2.587,
+        "world": 1.761
+       },
+       "playbackRateWindow": [
+        0.736,
+        1.2
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeWalkL",
+      "clip": "kfb_locomotion_left_strafe_walking_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0333,
+      "frames": 32,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 1.178,
+       "world": 0.802
+      },
+      "stanceFootSpeedMs": 1.176,
+      "rootTravelSpeedMs": 1.178,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.217,
+       "world": 0.829
+      },
+      "leftFootDownPhase": 0.0323,
+      "rightFootDownPhase": 0.6774,
+      "forwardYawDeg": -31.1,
+      "travelYawDeg": 0.0,
+      "travelYawDegGltfMeasured": 90.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 1.84,
+       "pctHeight": 0.83,
+       "verdict": "PASS"
+      },
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 1.904,
+        "world": 1.296
+       },
+       "playbackRateWindow": [
+        null,
+        1.616
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeWalkR",
+      "clip": "kfb_locomotion_right_strafe_walking_b",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i04.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0333,
+      "frames": 32,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 1.178,
+       "world": 0.802
+      },
+      "stanceFootSpeedMs": 1.171,
+      "rootTravelSpeedMs": 1.178,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.218,
+       "world": 0.829
+      },
+      "leftFootDownPhase": 0.9677,
+      "rightFootDownPhase": 0.4516,
+      "forwardYawDeg": -148.9,
+      "travelYawDeg": 180.0,
+      "travelYawDegGltfMeasured": -90.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 1.74,
+       "pctHeight": 0.79,
+       "verdict": "PASS"
+      },
+      "note": "right_strafe_walking_a is not a clean loop (15.6 deg); _b is.",
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 1.76,
+        "world": 1.198
+       },
+       "playbackRateWindow": [
+        null,
+        1.494
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeRunL",
+      "clip": "kfb_locomotion_left_strafe_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.6667,
+      "frames": 21,
+      "cycleFrames": 20,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 3.076,
+       "world": 2.094
+      },
+      "stanceFootSpeedMs": 2.927,
+      "rootTravelSpeedMs": 3.076,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 2.051,
+       "world": 1.396
+      },
+      "leftFootDownPhase": 0.4,
+      "rightFootDownPhase": 0.9,
+      "forwardYawDeg": -22.0,
+      "travelYawDeg": 0.0,
+      "travelYawDegGltfMeasured": 90.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.45,
+      "slip": {
+       "cm": 4.45,
+       "pctHeight": 2.02,
+       "verdict": "HOLD"
+      },
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 1.904,
+        "world": 1.296
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 3.691,
+        "world": 2.512
+       },
+       "playbackRateWindow": [
+        0.619,
+        1.2
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeRunR",
+      "clip": "kfb_locomotion_strafe_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.6333,
+      "frames": 20,
+      "cycleFrames": 19,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 2.631,
+       "world": 1.791
+      },
+      "stanceFootSpeedMs": 2.592,
+      "rootTravelSpeedMs": 2.631,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 1.666,
+       "world": 1.134
+      },
+      "leftFootDownPhase": 0.7895,
+      "rightFootDownPhase": 0.3158,
+      "forwardYawDeg": -149.6,
+      "travelYawDeg": -180.0,
+      "travelYawDegGltfMeasured": -90.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.053,
+      "slip": {
+       "cm": 4.11,
+       "pctHeight": 1.86,
+       "verdict": "PASS"
+      },
+      "note": "Replaces right_strafe_a (loop 21 deg). Body turned ~60 deg to the travel line, like the KayKit strafe.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_right_strafe_a",
+        "naturalSpeedMs": {
+         "Rig_Medium": 2.932,
+         "world": 1.995
+        },
+        "slipPctHeight": 0.62
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Medium": 1.76,
+        "world": 1.198
+       },
+       "speedMaxMs": {
+        "Rig_Medium": 3.157,
+        "world": 2.149
+       },
+       "playbackRateWindow": [
+        0.669,
+        1.2
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "turnInPlaceL90",
+      "clip": "kfb_locomotion_left_turn_90_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 90.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.9333,
+      "frames": 29,
+      "cycleFrames": 29,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.013,
+       "world": 0.009
+      },
+      "stanceFootSpeedMs": 0.013,
+      "rootTravelSpeedMs": 0.013,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.012,
+       "world": 0.008
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -95.2,
+      "travelYawDeg": -56.9,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 90.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      }
+     },
+     {
+      "rung": "turnInPlaceR90",
+      "clip": "kfb_locomotion_right_turn_90_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 102.8,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.9333,
+      "frames": 29,
+      "cycleFrames": 29,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.02,
+       "world": 0.014
+      },
+      "stanceFootSpeedMs": 0.02,
+      "rootTravelSpeedMs": 0.015,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.019,
+       "world": 0.013
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -82.6,
+      "travelYawDeg": -138.0,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": -102.6,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Turns 102.6 deg, not 90."
+     },
+     {
+      "rung": "turnInPlaceL180",
+      "clip": "kfb_locomotion_left_turn_b",
+      "family": "library",
+      "sourcePack": "Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 177.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.5333,
+      "frames": 47,
+      "cycleFrames": 47,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.013,
+       "world": 0.009
+      },
+      "stanceFootSpeedMs": 0.013,
+      "rootTravelSpeedMs": 0.016,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.02,
+       "world": 0.014
+      },
+      "leftFootDownPhase": 0.617,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -89.0,
+      "travelYawDeg": -48.5,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 168.4,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Turns 168 deg."
+     },
+     {
+      "rung": "turnInPlaceR180",
+      "clip": "kfb_locomotion_right_turn_b",
+      "family": "library",
+      "sourcePack": "Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 175.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.6333,
+      "frames": 50,
+      "cycleFrames": 50,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.013,
+       "world": 0.009
+      },
+      "stanceFootSpeedMs": 0.013,
+      "rootTravelSpeedMs": 0.011,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.02,
+       "world": 0.014
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.58,
+      "forwardYawDeg": -94.3,
+      "travelYawDeg": -130.0,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": -175.1,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Turns 175 deg."
+     },
+     {
+      "rung": "runTurnR",
+      "clip": "kfb_locomotion_running_right_turn_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 35.7,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.7667,
+      "frames": 24,
+      "cycleFrames": 24,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 2.814,
+       "world": 1.915
+      },
+      "stanceFootSpeedMs": 2.704,
+      "rootTravelSpeedMs": 2.814,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 2.158,
+       "world": 1.469
+      },
+      "leftFootDownPhase": 0.2917,
+      "rightFootDownPhase": 0.75,
+      "forwardYawDeg": -91.8,
+      "travelYawDeg": -100.7,
+      "travelYawDegGltfMeasured": -10.7,
+      "hipsYawDeltaDeg": -35.7,
+      "airborneFrac": 0.292,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Curves ~36 deg right while running."
+     },
+     {
+      "rung": "sprintTurnR",
+      "clip": "kfb_locomotion_sprint_turn_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 59.5,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0,
+      "frames": 31,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 3.713,
+       "world": 2.527
+      },
+      "stanceFootSpeedMs": 3.489,
+      "rootTravelSpeedMs": 3.713,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 3.713,
+       "world": 2.527
+      },
+      "leftFootDownPhase": 0.1613,
+      "rightFootDownPhase": 0.9355,
+      "forwardYawDeg": -92.8,
+      "travelYawDeg": -104.9,
+      "travelYawDegGltfMeasured": -14.9,
+      "hipsYawDeltaDeg": -59.5,
+      "airborneFrac": 0.097,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Brakes and turns ~60 deg right."
+     },
+     {
+      "rung": "runTurn180",
+      "clip": "kfb_locomotion_change_direction_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 176.2,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 2.5,
+      "frames": 76,
+      "cycleFrames": 76,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.21,
+       "world": 0.143
+      },
+      "stanceFootSpeedMs": 0.083,
+      "rootTravelSpeedMs": 0.21,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.524,
+       "world": 0.357
+      },
+      "leftFootDownPhase": 0.0789,
+      "rightFootDownPhase": 0.9342,
+      "forwardYawDeg": -98.2,
+      "travelYawDeg": -93.1,
+      "travelYawDegGltfMeasured": -3.1,
+      "hipsYawDeltaDeg": -176.2,
+      "airborneFrac": 0.092,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Plants and runs back (~176 deg)."
+     },
+     {
+      "rung": "jumpFull",
+      "clip": "kfb_locomotion_jumping_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 103.9,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.2,
+      "frames": 37,
+      "cycleFrames": 37,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Medium": 2.471,
+       "world": 1.682
+      },
+      "stanceFootSpeedMs": 2.42,
+      "rootTravelSpeedMs": 2.471,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 2.965,
+       "world": 2.018
+      },
+      "leftFootDownPhase": 0.7027,
+      "rightFootDownPhase": 0.8378,
+      "forwardYawDeg": -94.8,
+      "travelYawDeg": -89.9,
+      "travelYawDegGltfMeasured": 0.1,
+      "hipsYawDeltaDeg": 1.8,
+      "airborneFrac": 0.568,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Library full jump, available on both rigs."
+     },
+     {
+      "rung": "jumpStart",
+      "clip": "Jump_Start",
+      "family": "kaykit",
+      "sourcePack": "KayKit Character Animations 1.1",
+      "library": "KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 75.16,
+      "loopPoseDiffSource": "measured (max of 10 bone rotations, first vs last frame)",
+      "durationSec": 0.6,
+      "frames": 19,
+      "cycleFrames": 19,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.003,
+       "world": 0.002
+      },
+      "stanceFootSpeedMs": 0.003,
+      "rootTravelSpeedMs": 0.0,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.002,
+       "world": 0.001
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": null,
+      "travelYawDeg": null,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.474,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "KayKit family (the only split jump); Rig_Medium only."
+     },
+     {
+      "rung": "jumpAir",
+      "clip": "Jump_Idle",
+      "family": "kaykit",
+      "sourcePack": "KayKit Character Animations 1.1",
+      "library": "KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "measured (max of 10 bone rotations, first vs last frame)",
+      "durationSec": 1.0667,
+      "frames": 33,
+      "cycleFrames": 32,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.0,
+       "world": 0.0
+      },
+      "stanceFootSpeedMs": 0.0,
+      "rootTravelSpeedMs": 0.0,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.0,
+       "world": 0.0
+      },
+      "leftFootDownPhase": 0.375,
+      "rightFootDownPhase": 0.2188,
+      "forwardYawDeg": null,
+      "travelYawDeg": null,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.406,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "KayKit family."
+     },
+     {
+      "rung": "jumpLand",
+      "clip": "Jump_Land",
+      "family": "kaykit",
+      "sourcePack": "KayKit Character Animations 1.1",
+      "library": "KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 75.16,
+      "loopPoseDiffSource": "measured (max of 10 bone rotations, first vs last frame)",
+      "durationSec": 0.6667,
+      "frames": 21,
+      "cycleFrames": 21,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Medium": 0.0,
+       "world": 0.0
+      },
+      "stanceFootSpeedMs": 0.0,
+      "rootTravelSpeedMs": 0.0,
+      "strideLengthPerCycleM": {
+       "Rig_Medium": 0.0,
+       "world": 0.0
+      },
+      "leftFootDownPhase": 0.2857,
+      "rightFootDownPhase": 0.2381,
+      "forwardYawDeg": null,
+      "travelYawDeg": null,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.238,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "KayKit family."
+     }
+    ],
+    "forwardBands": [
+     {
+      "from": "walk",
+      "to": "jog",
+      "handoffSpeedMs": {
+       "Rig_Medium": 1.413,
+       "world": 0.962
+      },
+      "fromRateAtHandoff": 1.245,
+      "toRateAtHandoff": 0.803,
+      "stretchFlag": false,
+      "phaseOffset": 0.9419,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "jog",
+      "to": "runEasy",
+      "handoffSpeedMs": {
+       "Rig_Medium": 1.936,
+       "world": 1.318
+      },
+      "fromRateAtHandoff": 1.1,
+      "toRateAtHandoff": 0.909,
+      "stretchFlag": false,
+      "phaseOffset": 0.8909,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "runEasy",
+      "to": "run",
+      "handoffSpeedMs": {
+       "Rig_Medium": 2.602,
+       "world": 1.771
+      },
+      "fromRateAtHandoff": 1.222,
+      "toRateAtHandoff": 0.819,
+      "stretchFlag": false,
+      "phaseOffset": 0.2032,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "run",
+      "to": "sprint",
+      "handoffSpeedMs": {
+       "Rig_Medium": 3.653,
+       "world": 2.486
+      },
+      "fromRateAtHandoff": 1.149,
+      "toRateAtHandoff": 0.87,
+      "stretchFlag": false,
+      "phaseOffset": 0.0184,
+      "sameFootAlignable": true
+     }
+    ],
+    "backwardBands": [
+     {
+      "from": "walkBack",
+      "to": "jogBack",
+      "handoffSpeedMs": {
+       "Rig_Medium": 0.806,
+       "world": 0.548
+      },
+      "fromRateAtHandoff": 1.447,
+      "toRateAtHandoff": 0.691,
+      "stretchFlag": true,
+      "phaseOffset": 0,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "jogBack",
+      "to": "runBack",
+      "handoffSpeedMs": {
+       "Rig_Medium": 1.586,
+       "world": 1.079
+      },
+      "fromRateAtHandoff": 1.36,
+      "toRateAtHandoff": 0.735,
+      "stretchFlag": true,
+      "phaseOffset": 0.3158,
+      "sameFootAlignable": true
+     }
+    ],
+    "strafeLeftBands": [
+     {
+      "from": "strafeWalkL",
+      "to": "strafeRunL",
+      "handoffSpeedMs": {
+       "Rig_Medium": 1.904,
+       "world": 1.296
+      },
+      "fromRateAtHandoff": 1.616,
+      "toRateAtHandoff": 0.619,
+      "stretchFlag": true,
+      "phaseOffset": 0.3677,
+      "sameFootAlignable": true
+     }
+    ],
+    "strafeRightBands": [
+     {
+      "from": "strafeWalkR",
+      "to": "strafeRunR",
+      "handoffSpeedMs": {
+       "Rig_Medium": 1.76,
+       "world": 1.198
+      },
+      "fromRateAtHandoff": 1.494,
+      "toRateAtHandoff": 0.669,
+      "stretchFlag": true,
+      "phaseOffset": 0.8218,
+      "sameFootAlignable": true
+     }
+    ]
+   },
+   "Rig_Large": {
+    "rungs": [
+     {
+      "rung": "idle",
+      "clip": "kfb_idle_idle_f",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_idle.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.2,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 8.2,
+      "frames": 247,
+      "cycleFrames": 246,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Large": 0.0,
+       "world": 0.0
+      },
+      "stanceFootSpeedMs": 0.0,
+      "rootTravelSpeedMs": 0.0,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 0.002,
+       "world": 0.002
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -94.0,
+      "travelYawDeg": null,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": 0.1,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      }
+     },
+     {
+      "rung": "walkStart",
+      "clip": "kfb_locomotion_start_walking_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 34.9,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 2.9333,
+      "frames": 89,
+      "cycleFrames": 89,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 1.196,
+       "world": 0.814
+      },
+      "stanceFootSpeedMs": 1.193,
+      "rootTravelSpeedMs": 1.196,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 3.508,
+       "world": 2.387
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.7753,
+      "forwardYawDeg": -94.4,
+      "travelYawDeg": -90.2,
+      "travelYawDegGltfMeasured": -0.2,
+      "hipsYawDeltaDeg": 10.4,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "2.9 s; female_start_walking_a (1.9 s) is the shorter option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_female_start_walking_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 1.636,
+         "world": 1.114
+        },
+        "slipPctHeight": 4.41
+       }
+      ]
+     },
+     {
+      "rung": "walk",
+      "clip": "kfb_locomotion_walking_c",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0333,
+      "frames": 32,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 2.915,
+       "world": 1.984
+      },
+      "stanceFootSpeedMs": 2.88,
+      "rootTravelSpeedMs": 2.915,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 3.012,
+       "world": 2.05
+      },
+      "leftFootDownPhase": 0.2903,
+      "rightFootDownPhase": 0.7097,
+      "forwardYawDeg": -91.7,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": -0.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 2.99,
+       "pctHeight": 0.75,
+       "verdict": "PASS"
+      },
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Large": 3.629,
+        "world": 2.47
+       },
+       "playbackRateWindow": [
+        null,
+        1.245
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "jog",
+      "clip": "kfb_locomotion_jog_forward_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.8333,
+      "frames": 26,
+      "cycleFrames": 25,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 4.517,
+       "world": 3.074
+      },
+      "stanceFootSpeedMs": 4.237,
+      "rootTravelSpeedMs": 4.517,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 3.764,
+       "world": 2.562
+      },
+      "leftFootDownPhase": 0.28,
+      "rightFootDownPhase": 0.8,
+      "forwardYawDeg": -87.9,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.32,
+      "slip": {
+       "cm": 7.07,
+       "pctHeight": 1.78,
+       "verdict": "PASS"
+      },
+      "note": "Replaces strike_foward_jog_a (a hop, rejected by Georg 03.10). jogging_a (1.35 m/s) is the calmer option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_jogging_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 3.453,
+         "world": 2.35
+        },
+        "slipPctHeight": 2.35
+       },
+       {
+        "clip": "kfb_locomotion_running_f",
+        "naturalSpeedMs": {
+         "Rig_Large": 4.888,
+         "world": 3.327
+        },
+        "slipPctHeight": 2.48
+       },
+       {
+        "clip": "kfb_locomotion_strike_foward_jog_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 4.191,
+         "world": 2.852
+        },
+        "slipPctHeight": 1.5
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 3.629,
+        "world": 2.47
+       },
+       "speedMaxMs": {
+        "Rig_Large": 4.969,
+        "world": 3.382
+       },
+       "playbackRateWindow": [
+        0.803,
+        1.1
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "runEasy",
+      "clip": "kfb_locomotion_slow_run_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.7333,
+      "frames": 23,
+      "cycleFrames": 22,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 5.467,
+       "world": 3.721
+      },
+      "stanceFootSpeedMs": 4.682,
+      "rootTravelSpeedMs": 5.467,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 4.009,
+       "world": 2.728
+      },
+      "leftFootDownPhase": 0.1364,
+      "rightFootDownPhase": 0.5909,
+      "forwardYawDeg": -90.2,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 6.8,
+       "pctHeight": 1.71,
+       "verdict": "PASS"
+      },
+      "note": "running_a (2.03 m/s) is the option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_running_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 5.209,
+         "world": 3.545
+        },
+        "slipPctHeight": 1.59
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 4.969,
+        "world": 3.382
+       },
+       "speedMaxMs": {
+        "Rig_Large": 6.68,
+        "world": 4.546
+       },
+       "playbackRateWindow": [
+        0.909,
+        1.222
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "run",
+      "clip": "kfb_locomotion_medium_run_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.5667,
+      "frames": 18,
+      "cycleFrames": 17,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 8.161,
+       "world": 5.554
+      },
+      "stanceFootSpeedMs": 7.403,
+      "rootTravelSpeedMs": 8.161,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 4.625,
+       "world": 3.148
+      },
+      "leftFootDownPhase": 0.2941,
+      "rightFootDownPhase": 0.8235,
+      "forwardYawDeg": -92.3,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": 0.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.294,
+      "slip": {
+       "cm": 5.22,
+       "pctHeight": 1.31,
+       "verdict": "PASS"
+      },
+      "note": "Replaces running_d (slip HOLD).",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_running_d",
+        "naturalSpeedMs": {
+         "Rig_Large": 7.646,
+         "world": 5.203
+        },
+        "slipPctHeight": 3.06
+       },
+       {
+        "clip": "kfb_locomotion_run_forward_c",
+        "naturalSpeedMs": {
+         "Rig_Large": 8.919,
+         "world": 6.07
+        },
+        "slipPctHeight": 1.66
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 6.68,
+        "world": 4.546
+       },
+       "speedMaxMs": {
+        "Rig_Large": 9.378,
+        "world": 6.382
+       },
+       "playbackRateWindow": [
+        0.819,
+        1.149
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "sprint",
+      "clip": "kfb_locomotion_sprint_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.5333,
+      "frames": 17,
+      "cycleFrames": 16,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 10.777,
+       "world": 7.334
+      },
+      "stanceFootSpeedMs": 10.084,
+      "rootTravelSpeedMs": 10.777,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 5.747,
+       "world": 3.911
+      },
+      "leftFootDownPhase": 0.3125,
+      "rightFootDownPhase": 0.8125,
+      "forwardYawDeg": -94.1,
+      "travelYawDeg": -90.0,
+      "travelYawDegGltfMeasured": -0.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.375,
+      "slip": {
+       "cm": 7.1,
+       "pctHeight": 1.78,
+       "verdict": "PASS"
+      },
+      "note": "fast_run_a (3.85) and running_e (4.03) are options with less forward lean.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_fast_run_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 9.883,
+         "world": 6.726
+        },
+        "slipPctHeight": 1.99
+       },
+       {
+        "clip": "kfb_locomotion_running_e",
+        "naturalSpeedMs": {
+         "Rig_Large": 10.339,
+         "world": 7.037
+        },
+        "slipPctHeight": 2.39
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 9.378,
+        "world": 6.382
+       },
+       "speedMaxMs": {
+        "Rig_Large": 12.932,
+        "world": 8.802
+       },
+       "playbackRateWindow": [
+        0.87,
+        1.2
+       ],
+       "needsMoreThan25pct": false
+      }
+     },
+     {
+      "rung": "sprintStart",
+      "clip": "kfb_locomotion_idle_to_sprint_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 138.5,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.8,
+      "frames": 25,
+      "cycleFrames": 25,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 3.32,
+       "world": 2.26
+      },
+      "stanceFootSpeedMs": 3.408,
+      "rootTravelSpeedMs": 3.32,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 2.656,
+       "world": 1.808
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.8,
+      "forwardYawDeg": -121.3,
+      "travelYawDeg": -89.4,
+      "travelYawDegGltfMeasured": 0.6,
+      "hipsYawDeltaDeg": 33.3,
+      "airborneFrac": 0.24,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "From standing straight into the sprint."
+     },
+     {
+      "rung": "walkStop",
+      "clip": "kfb_locomotion_female_stop_walking_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 38.4,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.3333,
+      "frames": 41,
+      "cycleFrames": 41,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 1.975,
+       "world": 1.344
+      },
+      "stanceFootSpeedMs": 1.894,
+      "rootTravelSpeedMs": 1.975,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 2.633,
+       "world": 1.792
+      },
+      "leftFootDownPhase": 0.561,
+      "rightFootDownPhase": 0.7561,
+      "forwardYawDeg": -91.8,
+      "travelYawDeg": -91.5,
+      "travelYawDegGltfMeasured": -1.5,
+      "hipsYawDeltaDeg": 0.9,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "1.3 s, no end turn; stop_walking_a (3.0 s, ~10 deg turn) is the option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_stop_walking_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 0.69,
+         "world": 0.469
+        },
+        "slipPctHeight": 5.32
+       }
+      ]
+     },
+     {
+      "rung": "runStop",
+      "clip": "kfb_locomotion_run_to_stop_a",
+      "family": "library",
+      "sourcePack": "Action Adventure Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 98.5,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.9,
+      "frames": 28,
+      "cycleFrames": 28,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 1.714,
+       "world": 1.166
+      },
+      "stanceFootSpeedMs": 1.718,
+      "rootTravelSpeedMs": 1.714,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 1.542,
+       "world": 1.05
+      },
+      "leftFootDownPhase": 0.2143,
+      "rightFootDownPhase": 0.5,
+      "forwardYawDeg": -84.6,
+      "travelYawDeg": -89.3,
+      "travelYawDegGltfMeasured": 0.7,
+      "hipsYawDeltaDeg": -45.0,
+      "airborneFrac": 0.036,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "0.93 s; ends with the hips turned ~45 deg. Still the only run stop."
+     },
+     {
+      "rung": "walkBack",
+      "clip": "kfb_locomotion_walk_backward_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.2333,
+      "frames": 38,
+      "cycleFrames": 37,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 1.431,
+       "world": 0.974
+      },
+      "stanceFootSpeedMs": 1.421,
+      "rootTravelSpeedMs": 1.431,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 1.764,
+       "world": 1.201
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.1351,
+      "forwardYawDeg": -90.1,
+      "travelYawDeg": 90.0,
+      "travelYawDegGltfMeasured": 180.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 2.25,
+       "pctHeight": 0.57,
+       "verdict": "PASS"
+      },
+      "note": "walking_backwards_a (0.54 m/s) is the option (body turned ~40 deg).",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_walking_backwards_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 1.398,
+         "world": 0.951
+        },
+        "slipPctHeight": 1.82
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Large": 2.069,
+        "world": 1.408
+       },
+       "playbackRateWindow": [
+        null,
+        1.446
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "jogBack",
+      "clip": "kfb_locomotion_slow_jog_backwards_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.7333,
+      "frames": 23,
+      "cycleFrames": 22,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 2.992,
+       "world": 2.036
+      },
+      "stanceFootSpeedMs": 2.203,
+      "rootTravelSpeedMs": 2.992,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 2.194,
+       "world": 1.493
+      },
+      "leftFootDownPhase": 0.3182,
+      "rightFootDownPhase": 0.7273,
+      "forwardYawDeg": -108.1,
+      "travelYawDeg": 90.0,
+      "travelYawDegGltfMeasured": 180.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 3.35,
+       "pctHeight": 0.84,
+       "verdict": "PASS"
+      },
+      "note": "HOLD: root travels about twice as fast as the planted feet; judge in the review scene.",
+      "alternatives": [],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 2.069,
+        "world": 1.408
+       },
+       "speedMaxMs": {
+        "Rig_Large": 4.07,
+        "world": 2.77
+       },
+       "playbackRateWindow": [
+        0.692,
+        1.36
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "runBack",
+      "clip": "kfb_locomotion_running_backward_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.6333,
+      "frames": 20,
+      "cycleFrames": 19,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 5.536,
+       "world": 3.767
+      },
+      "stanceFootSpeedMs": 5.477,
+      "rootTravelSpeedMs": 5.536,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 3.506,
+       "world": 2.386
+      },
+      "leftFootDownPhase": 0.3684,
+      "rightFootDownPhase": 0.8421,
+      "forwardYawDeg": -85.5,
+      "travelYawDeg": 90.0,
+      "travelYawDegGltfMeasured": 180.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.211,
+      "slip": {
+       "cm": 5.38,
+       "pctHeight": 1.35,
+       "verdict": "PASS"
+      },
+      "note": "run_backward_a (1.33 m/s) is the slower option.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_run_backward_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 3.424,
+         "world": 2.33
+        },
+        "slipPctHeight": 1.57
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 4.07,
+        "world": 2.77
+       },
+       "speedMaxMs": {
+        "Rig_Large": 6.643,
+        "world": 4.521
+       },
+       "playbackRateWindow": [
+        0.735,
+        1.2
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeWalkL",
+      "clip": "kfb_locomotion_left_strafe_walking_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0333,
+      "frames": 32,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 3.025,
+       "world": 2.058
+      },
+      "stanceFootSpeedMs": 2.954,
+      "rootTravelSpeedMs": 3.025,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 3.125,
+       "world": 2.127
+      },
+      "leftFootDownPhase": 0.0323,
+      "rightFootDownPhase": 0.7742,
+      "forwardYawDeg": -31.1,
+      "travelYawDeg": 0.0,
+      "travelYawDegGltfMeasured": 90.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 7.06,
+       "pctHeight": 1.77,
+       "verdict": "PASS"
+      },
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Large": 4.887,
+        "world": 3.326
+       },
+       "playbackRateWindow": [
+        null,
+        1.616
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeWalkR",
+      "clip": "kfb_locomotion_right_strafe_walking_b",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i04.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0333,
+      "frames": 32,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 3.025,
+       "world": 2.059
+      },
+      "stanceFootSpeedMs": 2.949,
+      "rootTravelSpeedMs": 3.025,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 3.126,
+       "world": 2.127
+      },
+      "leftFootDownPhase": 0.2258,
+      "rightFootDownPhase": 0.6774,
+      "forwardYawDeg": -148.9,
+      "travelYawDeg": 180.0,
+      "travelYawDegGltfMeasured": -90.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "cm": 7.04,
+       "pctHeight": 1.77,
+       "verdict": "PASS"
+      },
+      "note": "right_strafe_walking_a is not a clean loop (15.6 deg); _b is.",
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 0.0,
+        "world": 0.0
+       },
+       "speedMaxMs": {
+        "Rig_Large": 4.52,
+        "world": 3.076
+       },
+       "playbackRateWindow": [
+        null,
+        1.494
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeRunL",
+      "clip": "kfb_locomotion_left_strafe_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.6667,
+      "frames": 21,
+      "cycleFrames": 20,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 7.896,
+       "world": 5.374
+      },
+      "stanceFootSpeedMs": 7.56,
+      "rootTravelSpeedMs": 7.896,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 5.265,
+       "world": 3.583
+      },
+      "leftFootDownPhase": 0.4,
+      "rightFootDownPhase": 0.9,
+      "forwardYawDeg": -22.0,
+      "travelYawDeg": 0.0,
+      "travelYawDegGltfMeasured": 90.0,
+      "hipsYawDeltaDeg": 0.0,
+      "airborneFrac": 0.5,
+      "slip": {
+       "cm": 8.96,
+       "pctHeight": 2.25,
+       "verdict": "HOLD"
+      },
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 4.887,
+        "world": 3.326
+       },
+       "speedMaxMs": {
+        "Rig_Large": 9.475,
+        "world": 6.449
+       },
+       "playbackRateWindow": [
+        0.619,
+        1.2
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "strafeRunR",
+      "clip": "kfb_locomotion_strafe_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "loop",
+      "loop": true,
+      "loopPoseDiffDeg": 0.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.6333,
+      "frames": 20,
+      "cycleFrames": 19,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 6.754,
+       "world": 4.597
+      },
+      "stanceFootSpeedMs": 6.565,
+      "rootTravelSpeedMs": 6.754,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 4.278,
+       "world": 2.911
+      },
+      "leftFootDownPhase": 0.8421,
+      "rightFootDownPhase": 0.3158,
+      "forwardYawDeg": -149.6,
+      "travelYawDeg": -180.0,
+      "travelYawDegGltfMeasured": -90.0,
+      "hipsYawDeltaDeg": -0.0,
+      "airborneFrac": 0.211,
+      "slip": {
+       "cm": 11.98,
+       "pctHeight": 3.01,
+       "verdict": "HOLD"
+      },
+      "note": "Replaces right_strafe_a (loop 21 deg). Body turned ~60 deg to the travel line, like the KayKit strafe.",
+      "alternatives": [
+       {
+        "clip": "kfb_locomotion_right_strafe_a",
+        "naturalSpeedMs": {
+         "Rig_Large": 7.526,
+         "world": 5.122
+        },
+        "slipPctHeight": 0.87
+       }
+      ],
+      "band": {
+       "speedMinMs": {
+        "Rig_Large": 4.52,
+        "world": 3.076
+       },
+       "speedMaxMs": {
+        "Rig_Large": 8.105,
+        "world": 5.516
+       },
+       "playbackRateWindow": [
+        0.669,
+        1.2
+       ],
+       "needsMoreThan25pct": true
+      }
+     },
+     {
+      "rung": "turnInPlaceL90",
+      "clip": "kfb_locomotion_left_turn_90_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 90.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.9333,
+      "frames": 29,
+      "cycleFrames": 29,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Large": 0.075,
+       "world": 0.051
+      },
+      "stanceFootSpeedMs": 0.075,
+      "rootTravelSpeedMs": 0.034,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 0.07,
+       "world": 0.048
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -95.2,
+      "travelYawDeg": -56.9,
+      "travelYawDegGltfMeasured": -102.2,
+      "hipsYawDeltaDeg": 90.0,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      }
+     },
+     {
+      "rung": "turnInPlaceR90",
+      "clip": "kfb_locomotion_right_turn_90_a",
+      "family": "library",
+      "sourcePack": "Male Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 102.8,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.9333,
+      "frames": 29,
+      "cycleFrames": 29,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Large": 0.075,
+       "world": 0.051
+      },
+      "stanceFootSpeedMs": 0.075,
+      "rootTravelSpeedMs": 0.04,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 0.07,
+       "world": 0.048
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -82.6,
+      "travelYawDeg": -138.0,
+      "travelYawDegGltfMeasured": -55.1,
+      "hipsYawDeltaDeg": -102.6,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Turns 102.6 deg, not 90."
+     },
+     {
+      "rung": "turnInPlaceL180",
+      "clip": "kfb_locomotion_left_turn_b",
+      "family": "library",
+      "sourcePack": "Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i05.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 177.0,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.5333,
+      "frames": 47,
+      "cycleFrames": 47,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Large": 0.136,
+       "world": 0.093
+      },
+      "stanceFootSpeedMs": 0.136,
+      "rootTravelSpeedMs": 0.041,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 0.209,
+       "world": 0.142
+      },
+      "leftFootDownPhase": 0.6383,
+      "rightFootDownPhase": 0.0,
+      "forwardYawDeg": -89.0,
+      "travelYawDeg": -48.5,
+      "travelYawDegGltfMeasured": -33.2,
+      "hipsYawDeltaDeg": 168.4,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Turns 168 deg."
+     },
+     {
+      "rung": "turnInPlaceR180",
+      "clip": "kfb_locomotion_right_turn_b",
+      "family": "library",
+      "sourcePack": "Locomotion Pack",
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i05.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 175.1,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.6333,
+      "frames": 50,
+      "cycleFrames": 50,
+      "fps": 30,
+      "rootMotion": "in-place",
+      "speedSource": "stanceFeet",
+      "naturalSpeedMs": {
+       "Rig_Large": 0.038,
+       "world": 0.026
+      },
+      "stanceFootSpeedMs": 0.038,
+      "rootTravelSpeedMs": 0.029,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 0.063,
+       "world": 0.043
+      },
+      "leftFootDownPhase": 0.0,
+      "rightFootDownPhase": 0.6,
+      "forwardYawDeg": -94.3,
+      "travelYawDeg": -130.0,
+      "travelYawDegGltfMeasured": null,
+      "hipsYawDeltaDeg": -175.1,
+      "airborneFrac": 0.0,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Turns 175 deg."
+     },
+     {
+      "rung": "runTurnR",
+      "clip": "kfb_locomotion_running_right_turn_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 35.7,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 0.7667,
+      "frames": 24,
+      "cycleFrames": 24,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 7.224,
+       "world": 4.917
+      },
+      "stanceFootSpeedMs": 6.747,
+      "rootTravelSpeedMs": 7.224,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 5.539,
+       "world": 3.77
+      },
+      "leftFootDownPhase": 0.3333,
+      "rightFootDownPhase": 0.75,
+      "forwardYawDeg": -91.8,
+      "travelYawDeg": -100.7,
+      "travelYawDegGltfMeasured": -10.7,
+      "hipsYawDeltaDeg": -35.7,
+      "airborneFrac": 0.417,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Curves ~36 deg right while running."
+     },
+     {
+      "rung": "sprintTurnR",
+      "clip": "kfb_locomotion_sprint_turn_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 59.5,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.0,
+      "frames": 31,
+      "cycleFrames": 31,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 9.532,
+       "world": 6.487
+      },
+      "stanceFootSpeedMs": 9.08,
+      "rootTravelSpeedMs": 9.532,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 9.532,
+       "world": 6.487
+      },
+      "leftFootDownPhase": 0.1935,
+      "rightFootDownPhase": 0.9355,
+      "forwardYawDeg": -92.8,
+      "travelYawDeg": -104.9,
+      "travelYawDegGltfMeasured": -14.9,
+      "hipsYawDeltaDeg": -59.5,
+      "airborneFrac": 0.258,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Brakes and turns ~60 deg right."
+     },
+     {
+      "rung": "runTurn180",
+      "clip": "kfb_locomotion_change_direction_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 176.2,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 2.5,
+      "frames": 76,
+      "cycleFrames": 76,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 0.538,
+       "world": 0.366
+      },
+      "stanceFootSpeedMs": 0.136,
+      "rootTravelSpeedMs": 0.538,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 1.345,
+       "world": 0.916
+      },
+      "leftFootDownPhase": 0.0789,
+      "rightFootDownPhase": 0.9474,
+      "forwardYawDeg": -98.2,
+      "travelYawDeg": -93.1,
+      "travelYawDegGltfMeasured": -3.1,
+      "hipsYawDeltaDeg": -176.2,
+      "airborneFrac": 0.316,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Plants and runs back (~176 deg)."
+     },
+     {
+      "rung": "jumpFull",
+      "clip": "kfb_locomotion_jumping_a",
+      "family": "library",
+      "sourcePack": null,
+      "library": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+      "kind": "oneshot",
+      "loop": false,
+      "loopPoseDiffDeg": 103.9,
+      "loopPoseDiffSource": "catalog v7",
+      "durationSec": 1.2,
+      "frames": 37,
+      "cycleFrames": 37,
+      "fps": 30,
+      "rootMotion": "travel",
+      "speedSource": "rootTravel",
+      "naturalSpeedMs": {
+       "Rig_Large": 6.343,
+       "world": 4.317
+      },
+      "stanceFootSpeedMs": 6.42,
+      "rootTravelSpeedMs": 6.343,
+      "strideLengthPerCycleM": {
+       "Rig_Large": 7.612,
+       "world": 5.181
+      },
+      "leftFootDownPhase": 0.7027,
+      "rightFootDownPhase": 0.8649,
+      "forwardYawDeg": -94.8,
+      "travelYawDeg": -89.9,
+      "travelYawDegGltfMeasured": 0.1,
+      "hipsYawDeltaDeg": 1.8,
+      "airborneFrac": 0.595,
+      "slip": {
+       "verdict": "n/a",
+       "why": "not a travelling loop (turn, stop, start or jump): judged visually"
+      },
+      "note": "Library full jump, available on both rigs."
+     },
+     {
+      "rung": "jumpStart",
+      "clip": null,
+      "status": "GAP",
+      "note": "GAP: KayKit split jump does not exist for Rig_Large; use jumpFull."
+     },
+     {
+      "rung": "jumpAir",
+      "clip": null,
+      "status": "GAP",
+      "note": "GAP: KayKit split jump does not exist for Rig_Large; use jumpFull."
+     },
+     {
+      "rung": "jumpLand",
+      "clip": null,
+      "status": "GAP",
+      "note": "GAP: KayKit split jump does not exist for Rig_Large; use jumpFull."
+     }
+    ],
+    "forwardBands": [
+     {
+      "from": "walk",
+      "to": "jog",
+      "handoffSpeedMs": {
+       "Rig_Large": 3.629,
+       "world": 2.47
+      },
+      "fromRateAtHandoff": 1.245,
+      "toRateAtHandoff": 0.803,
+      "stretchFlag": false,
+      "phaseOffset": 0.9897,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "jog",
+      "to": "runEasy",
+      "handoffSpeedMs": {
+       "Rig_Large": 4.969,
+       "world": 3.382
+      },
+      "fromRateAtHandoff": 1.1,
+      "toRateAtHandoff": 0.909,
+      "stretchFlag": false,
+      "phaseOffset": 0.8564,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "runEasy",
+      "to": "run",
+      "handoffSpeedMs": {
+       "Rig_Large": 6.68,
+       "world": 4.546
+      },
+      "fromRateAtHandoff": 1.222,
+      "toRateAtHandoff": 0.818,
+      "stretchFlag": false,
+      "phaseOffset": 0.1577,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "run",
+      "to": "sprint",
+      "handoffSpeedMs": {
+       "Rig_Large": 9.378,
+       "world": 6.383
+      },
+      "fromRateAtHandoff": 1.149,
+      "toRateAtHandoff": 0.87,
+      "stretchFlag": false,
+      "phaseOffset": 0.0184,
+      "sameFootAlignable": true
+     }
+    ],
+    "backwardBands": [
+     {
+      "from": "walkBack",
+      "to": "jogBack",
+      "handoffSpeedMs": {
+       "Rig_Large": 2.069,
+       "world": 1.408
+      },
+      "fromRateAtHandoff": 1.446,
+      "toRateAtHandoff": 0.692,
+      "stretchFlag": true,
+      "phaseOffset": 0.3182,
+      "sameFootAlignable": true
+     },
+     {
+      "from": "jogBack",
+      "to": "runBack",
+      "handoffSpeedMs": {
+       "Rig_Large": 4.07,
+       "world": 2.77
+      },
+      "fromRateAtHandoff": 1.36,
+      "toRateAtHandoff": 0.735,
+      "stretchFlag": true,
+      "phaseOffset": 0.0502,
+      "sameFootAlignable": true
+     }
+    ],
+    "strafeLeftBands": [
+     {
+      "from": "strafeWalkL",
+      "to": "strafeRunL",
+      "handoffSpeedMs": {
+       "Rig_Large": 4.887,
+       "world": 3.326
+      },
+      "fromRateAtHandoff": 1.616,
+      "toRateAtHandoff": 0.619,
+      "stretchFlag": true,
+      "phaseOffset": 0.3677,
+      "sameFootAlignable": true
+     }
+    ],
+    "strafeRightBands": [
+     {
+      "from": "strafeWalkR",
+      "to": "strafeRunR",
+      "handoffSpeedMs": {
+       "Rig_Large": 4.52,
+       "world": 3.076
+      },
+      "fromRateAtHandoff": 1.494,
+      "toRateAtHandoff": 0.669,
+      "stretchFlag": true,
+      "phaseOffset": 0.6163,
+      "sameFootAlignable": true
+     }
+    ]
+   }
+  }
+ },
+ "unchanged": "kfb_ladder_kaykit_v1 (KayKit only, no jog) stays as in LOCOMOTION_LADDER_01.json",
+ "gaps": [
+  {
+   "rung": "jogStrafeL/R",
+   "need": "side jog between strafe walk 1.18 and strafe run 2.6-3.1 m/s on Rig_Medium (handoff now needs 1.5-1.6x / 0.62-0.67x)",
+   "mixamoSearch": [
+    "Jog Strafe Left",
+    "Jog Strafe Right"
+   ],
+   "verifiedName": false
+  },
+  {
+   "rung": "jogBack",
+   "need": "slow_jog_backwards_a is HOLD (root 1.17 vs feet 0.53 m/s), and walkBack -> jogBack still needs 1.45x; a clean backward jog around 0.8-1.0 m/s would close it",
+   "mixamoSearch": [
+    "Jog Backward",
+    "Slow Jog Backwards"
+   ],
+   "verifiedName": false
+  },
+  {
+   "rung": "strafeRunL",
+   "need": "left_strafe_a slips 2.0 % (HOLD); a clean left partner of strafe_a",
+   "mixamoSearch": [
+    "Strafe (with Mixamo Mirror on)"
+   ],
+   "verifiedName": false
+  },
+  {
+   "rung": "runTurnL / sprintTurnL",
+   "need": "only right-hand running turns exist",
+   "mixamoSearch": [
+    "Running Left Turn",
+    "Sprint Turn (with Mixamo Mirror on)"
+   ],
+   "verifiedName": false
+  },
+  {
+   "rung": "runStop (option)",
+   "need": "run_to_stop_a ends with the hips turned ~45 deg",
+   "mixamoSearch": [
+    "Run To Stop",
+    "Running Stop"
+   ],
+   "verifiedName": false
+  },
+  {
+   "rung": "jumpStart/Air/Land on Rig_Large",
+   "need": "split jump for Rig_Large; jumpFull (jumping_a) works on both rigs",
+   "mixamoSearch": [
+    "jumping up, falling idle, hard landing (Action Adventure Pack, already in _inbox)"
+   ],
+   "verifiedName": true
+  }
+ ],
+ "notInThisJob": [
+  "no controller/state machine",
+  "no motion edits (no mirroring)",
+  "no downloads"
+ ]
+}

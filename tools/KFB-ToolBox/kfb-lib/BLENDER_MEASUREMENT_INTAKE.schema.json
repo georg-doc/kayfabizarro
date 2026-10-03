@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.motion-blender-measurements/1",
+  "title": "KFB Blender Motion Measurement Intake",
+  "type": "object",
+  "required": [
+    "schema",
+    "source",
+    "rigFamily",
+    "actor",
+    "clips"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.motion-blender-measurements/1"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "repo",
+        "commit",
+        "animationLibrary"
+      ],
+      "properties": {
+        "repo": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "animationLibrary": {
+          "type": "string"
+        },
+        "blenderVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "measurementMethod": {
+          "type": "string"
+        }
+      }
+    },
+    "rigFamily": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "clips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "clip",
+          "status"
+        ],
+        "properties": {
+          "clip": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "MEASURED",
+              "UNAVAILABLE",
+              "FAILED_MEASUREMENT"
+            ]
+          },
+          "duration": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "referenceSpeed": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "slipBody": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rootMotionPolicy": {
+            "enum": [
+              "in-place",
+              "baked",
+              "unknown",
+              null
+            ]
+          },
+          "playbackRangeApproved": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "contacts": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "left": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              },
+              "right": {
+                "type": [
+                  "array",
+                  "null"
+                ]
+              }
+            }
+          },
+          "plantedIntervals": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "eventMarkers": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
