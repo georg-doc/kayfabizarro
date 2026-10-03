@@ -7,6 +7,8 @@ Purpose: cold starts, parallel web chats, bounded modules and POCs
 
 Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`. It helps a chat finish one useful slice independently and hand it back for a compact Work review. It does not create a new owner, SSOT, runtime, architecture or merge right.
 
+All user-facing updates and handoffs also follow `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. Repository identifiers are evidence for executing chats, not Georg's operating instructions.
+
 ## 1. Recover before changing anything
 
 1. Read `START_HERE.md`, `REGISTRY.json` and the relevant router changelog delta.
@@ -116,6 +118,21 @@ The repository/PR must let tomorrow's Work session review without replaying the 
 - exactly one recommended next productive step or, only when genuinely necessary, one human gate.
 
 A chat link is optional convenience, not the evidence store.
+
+### 5A. Give Georg an actual operating instruction
+
+Before the technical review packet, state in ordinary language:
+
+- what works now;
+- what failed or is still not built;
+- who acts next;
+- exactly what that executor does;
+- what Georg must do, or `nothing`;
+- what visible/playable result comes after it.
+
+If another chat/tool acts next, provide a complete copy-ready start message with executor, model/reasoning where applicable, direct GitHub source, read-first file, expected return and stop condition. Do not send Georg away to collect files or decode PR/hash/slice names.
+
+Finish with at most five compact next steps. Put repository, branch, PR, commit, run IDs and test counters afterward under `Technischer Nachweis — nur für die ausführenden Chats`.
 
 ## 6. Stop conditions
 

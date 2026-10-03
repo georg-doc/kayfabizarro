@@ -58,16 +58,16 @@ It preserves the former KFB motion/VFX/ink/audio/camera doctrine and adds progre
 No Cloudflare Stage was created.
 No Live runtime was promoted.
 
-This slice changes method/documentation routing rather than a new playable visual surface. The existing ActionFigure freeplay under Motion PR #333 remains the correct visual surface for gait-look decisions.
+This slice changes method/documentation routing rather than a new playable visual surface. The former mixed-source ActionFigure freeplay failed Georg's later human motion review and is archived as evidence only. It is not the current gait-look surface.
 
 ## Unresolved / deferred
 
-- Motion PR #333 still owns its stale prototype-status metadata in `MOTION_STATE_CONTRACT.v1.json`; newer Motion Recovery/Return supersede that status text.
-- Georg's Jog/Run/Sprint A/B look choice remains a separate Motion-owner gate, not a blocker for this skill.
+- No ActionFigure locomotion runtime is currently human-accepted.
+- The next product review is the original KayKit Character Animations 1.1 family on the real ActionFigure in Blender, without Mixamo or a game controller.
 - This Return records the merged product head `818488a6b498b5710e593fdb185440e76707d6b7`; the later main metadata-closure commit only updates Return/changelog/source evidence and does not change the skill package.
 
-## Exactly one next gate
+## Exactly one next task
 
-**APPLY_CANONICAL_SKILL_ON_NEXT_BOUNDED_ANIMATION_SLICE**
+**Coworker / Blender MCP reviews the original KayKit locomotion family and returns a visual KEEP/HOLD/REJECT table.**
 
-All new KFB animation/motion work should load `skills/kfb-cartoon-animation/SKILL.md` and then the current project/runtime SSOT.
+All new KFB animation/motion work should load `skills/kfb-cartoon-animation/SKILL.md` and then `references/kfb-integration-current-ssot.md` before the current project/runtime SSOT.

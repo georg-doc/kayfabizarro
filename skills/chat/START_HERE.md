@@ -9,16 +9,17 @@ It does not replace project SSOTs, current tools, or canonical skills. It tells 
 
 ## Start order
 
-1. Read `REGISTRY.json`.
-2. Read `LIVING_MASTERPLAN.md` only when cross-project sequencing or current lead intent matters.
-3. Identify the current project or tool node.
-4. Read the referenced project SSOT / START / RETURN files.
-5. If the task points to a shared intake package, apply `INBOX_PROTOCOL.md` before treating anything there as current truth.
-6. Load only the current skills required for the task.
-7. Apply the provider adapter only after the provider-neutral SOP.
-8. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
-9. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
-10. Record decisions and results additively.
+1. Read `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. It governs every user-facing update and every handoff.
+2. Read `REGISTRY.json`.
+3. Read `LIVING_MASTERPLAN.md` only when cross-project sequencing or current lead intent matters.
+4. Identify the current project or tool node.
+5. Read the referenced project SSOT / START / RETURN files.
+6. If the task points to a shared intake package, apply `INBOX_PROTOCOL.md` before treating anything there as current truth.
+7. Load only the current skills required for the task.
+8. Apply the provider adapter only after the provider-neutral SOP.
+9. For a bounded fresh-chat/module/POC slice, also apply `FRESH_CHAT_SLICE_PROTOCOL.md`.
+10. For every Web/Claude/Codex delivery, apply `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` before writing or publishing.
+11. Record decisions and results additively.
 
 For meta-narrative/cross-module ideation, especially KFB Town, use the registry entries for `kfb-meta-compendium-v1` and `kfb-town`. The Meta Compendium is an index, not a canon/implementation SSOT; Town has its own living document under `town/`.
 
@@ -44,6 +45,8 @@ Additional hard rule: **no low-fidelity proxy human gates**. If a review artifac
 
 
 ## 2026-09-29 · Mobility profile owner routing · Ground → Cars → Flight
+
+**Ground routing override, 2026-10-03:** the browser locomotion candidate produced from the mixed Motion-Library/Mixamo ladder failed Georg's motion review and is archived. It is not a playable MVP and not an integration base. Current Ground work first reviews the original KayKit Character Animations 1.1 clips on the real ActionFigure in Blender. See `skills/kfb-cartoon-animation/references/kfb-integration-current-ssot.md` for the plain-language current phase. Cars and Flight remain waiting; do not start another World/Travel integration before the native Ground family is accepted.
 
 Current persistence correction: source-backed movement/vehicle knowledge must exist under a stable owner path and be consumed by the runtime; a measured donor or loaded asset is not enough if the active consumer still carries local parallel mappings.
 
@@ -116,7 +119,9 @@ The current shared animation/motion method owner is now the portable Agent-Skill
 
 The folder keeps the existing cartoon-motion/VFX doctrine and adds progressive-disclosure references for 3D body mechanics, Walk/Jog/Run/Sprint, starts/stops/pivots, Travel Modes, Blender authoring/export, runtime blending/IK/warping, controller normalization, acting/facial/secondary motion, retargeting and evidence.
 
-For KFB runtime facts, the skill remains a **method owner only**. Current project SSOT/Recovery wins; specifically the active 3D locomotion owner remains Motion Draft PR #333 and consumers may not fork local gait/state tables.
+For KFB runtime facts, the skill remains a **method owner only**. Current project SSOT/Recovery wins and consumers may not fork local gait/state tables.
+
+**Current override, 2026-10-03:** the former mixed-source browser candidate failed Georg's human motion review and is archived. The current task is the original-KayKit Blender review prepared under the descriptive workflow `KAYKIT-NATIVE-LOCOMOTION-BASELINE-01`. It is prepared but not yet run. Read the skill's `references/kfb-integration-current-ssot.md`; do not route Georg back to the failed A/B browser prototype.
 
 Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing evals before GitHub packaging. The GitHub package static check passed 8/8 after a test-counter-only repair. No Runtime, Stage or Live promotion is implied by this skill packaging.
 
@@ -143,6 +148,7 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - **Gate severity must be proportional to product impact.** Optional actors/assets/axes/attachments/shaders may not block an MVP unless they are the named acceptance target. Apply `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md`: ask Georg when cheap clarification beats another diagnostic pass; quarantine minor issues; protect Work/Claude budget.
 - **Do not manufacture human gates.** Apply `PRODUCTIVE_REVIEW_GATE_POLICY.md`: technical diagnostics are evidence, not automatic Georg acceptance surfaces; review the real integrated product when possible.
 - **Crash-safe continuation is continuous.** During authorized Web/GitHub production, persist every meaningful implementation/test/decision checkpoint to the existing owner Return/Recovery/WIP surface, read back the exact head/file, then continue or reply. A fresh chat must be able to resume from GitHub alone without transcript reconstruction.
+- **Klartext is mandatory.** Apply `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`: lead with product reality, name the next executor and task, give Georg one direct action, and relegate hashes/PRs/runs/test columns to a final technical evidence block.
 
 ## Status vocabulary
 
@@ -156,6 +162,7 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - `town/START_HERE.md` + `town/LIVING_KFB_TOWN.md` — current KFB Town ideation home
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
+- `PLAIN_LANGUAGE_HANDOFF_STANDARD.md` — binding plain-language phase, executor, user action and complete handoff format
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
 - `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery

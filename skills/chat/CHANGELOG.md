@@ -2132,3 +2132,10 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Motion PR #333 remains a separate runtime owner and was not modified;
 - no Stage/Live runtime promotion;
 - next use: load the canonical folder skill for the next bounded animation slice.
+# 2026-10-03 · Global Klartext handoff standard + Motion phase correction
+
+- Added `PLAIN_LANGUAGE_HANDOFF_STANDARD.md` as a binding rule for every KFB chat, briefing, Return, Recovery, Hub card and cross-tool handoff.
+- User-facing updates must now start with product reality, name the next executor and concrete task, give Georg one direct action (or `nothing`) and state the next visible/playable result.
+- PR numbers, hashes, branch names, run IDs, test counters and slice/gate labels are relegated to a final technical evidence block.
+- Cross-tool work must include a self-contained copy-ready start message and direct GitHub source; a Site-only link is insufficient.
+- Corrected the animation route: the mixed browser freeplay is an archived human fail, no ActionFigure locomotion runtime is currently accepted, and the next work is an original-KayKit isolated Blender review before any new runtime integration.

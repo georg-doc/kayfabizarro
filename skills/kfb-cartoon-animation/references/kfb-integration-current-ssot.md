@@ -1,133 +1,74 @@
-# KFB Current SSOT Integration
+# KFB Animation · aktueller Arbeitsstand
 
 Status date: 2026-10-03
-This file is a routing reference. Current GitHub project state always wins.
+This file is the plain-language KFB routing reference for the portable animation skill. Current GitHub project state still wins.
 
-## Doctrine owner
+## Was ist der Stand?
 
-Current donor on main:
-`skills/kfb-cartoon-animation_v2.md`
+The general animation method is available at `skills/kfb-cartoon-animation/SKILL.md`.
 
-The portable folder skill is a refactor/promotion of that doctrine, not a competing second animation doctrine.
+The last playable browser motion test failed Georg's human review. Although automated checks could load clips and move the actor, the result had wrong step length, visible wobble/jitter, poor arm clearance, dirty gait changes and an unconvincing jump.
 
-## Current 3D Motion owner
+That browser candidate is frozen as **failed evidence**. It is not the KFB locomotion baseline, not a playable MVP and must not be integrated into World, Travel, Combat or Residents.
 
-Repository:
-`georg-doc/kayfabizarro`
+There is currently **no human-accepted ActionFigure locomotion runtime**.
 
-Draft PR:
-`#333`
+## Was bedeutet „Blender Baseline“?
 
-Branch:
-`chatgpt-web/motion-ssot-convergence-2026-10-03`
+It is a simple quality comparison before game integration:
 
-Current branch head observed during Site Draft:
-`811855edc2a9aa1365cb3318bbd01d0c8f5b2d1e`
+- the real KayKit ActionFigure;
+- the original KayKit Character Animations 1.1 clips;
+- normal playback speed;
+- a plain grid and consistent cameras;
+- no game controller, no world, no Mixamo and no visual effects.
 
-Owner:
-KFB ToolBox / Animation-Motion authoring.
+Blender shows whether the source animations themselves look clean on the actual character: feet, step length, arms, loop seam and jump poses. It does **not** build the game movement yet.
 
-Consumers later include World, Travel, Combat and Residents; they must not fork local gait tables/state graphs.
+## Wer macht jetzt was?
 
-## Current proven runtime state
+**Next executor:** Coworker / Blender MCP.
 
-Motion Library v7:
-395 clips.
+**Task:** create the isolated native KayKit comparison package and classify each original clip as:
 
-Technical forward ladder:
-`walk → jog → run.easy → run → sprint`
+- keep;
+- hold for repair;
+- reject.
 
-Central contract consumes actual motion facts and owns:
-- semantic animation state;
-- clip role mapping;
-- rig-family motion facts;
-- foot/contact phases;
-- playback-rate policy;
-- phase-aware transition profile;
-- animation-relative markers;
-- actor-specific motion review/override.
+The output is a review scene/contact sheet plus a short table. No runtime integration is allowed in this pass.
 
-It explicitly does not own:
-- input;
-- world position;
-- velocity integration;
-- acceleration physics;
-- terrain/collision;
-- camera;
-- damage/ammo;
-- jump trajectory.
+## Was muss Georg tun?
 
-## ActionFigure neutral freeplay
+Paste this one message into the Coworker / Blender MCP chat:
 
-The prototype is already implemented and browser-proven.
+> Bitte führe den GitHub-Auftrag „KAYKIT-NATIVE-LOCOMOTION-BASELINE-01“ vollständig aus. Nutze die echte ActionFigure und ausschließlich die originalen KayKit Character Animations 1.1 bei normalem Tempo. Gib mir Bilder und eine leicht verständliche KEEP/HOLD/REJECT-Tabelle zurück. Kein Mixamo, kein Browser-Controller und keine Weltintegration.
 
-Current tested implementation head from Recovery/Return:
-`f1ce90d31a18973fa981bc982309c4bb01b204b8`
+Georg does not need to supply clip names, paths, measurements or repository identifiers.
 
-Evidence:
-- ActionFigure Motion Freeplay CI SUCCESS;
-- Motion Foundation 27/27 PASS;
-- Resource Registry PASS;
-- Asset Registry Refresh PASS;
-- real Chromium proved idle, forward run, sprint, reverse, jump and Jog/Run/Sprint A/B selector switching;
-- 0 console errors;
-- 0 page errors.
+## Was passiert danach?
 
-Classification:
-SITE REVIEW READY · NOT PUBLIC STAGE · HUMAN LOOK DECISION OPEN.
+1. Georg judges the native KayKit clips visually.
+2. Blender cleans only the accepted family and prepares starts, stops, gait changes and jump sequencing.
+3. Codex/WSA integrates that accepted family into one simple playable world test.
+4. Only after walking/running works cleanly do Drive and Combat join the test.
 
-## Human-open product choices
+## Binding source priority
 
-Jog:
-`jog_forward_a` vs `jogging_a`
+For ActionFigure / Rig_Medium:
 
-Run:
-`medium_run_a` vs `running_d`
+1. original KayKit Character Animations 1.1;
+2. accepted native KayKit variants;
+3. Mixamo / KFB Motion Library only for a proven missing role.
 
-Sprint:
-`sprint_a` vs `fast_run_a`
+Mixamo may not overwrite an available and accepted native KayKit role.
 
-Known directional gaps remain explicit:
-- side jog missing;
-- backward jog HOLD;
-- left strafe run HOLD;
-- left running turns missing;
-- run stop ends about 45° turned.
+Consumers must not create their own gait tables or animation state machines.
 
-## Status metadata drift
+## Technischer Nachweis — nur für die ausführenden Chats
 
-The current `MOTION_STATE_CONTRACT.v1.json` still contains older status text listing the neutral ActionFigure prototype as unresolved/to be built.
-
-Newer Recovery/Return sections prove that prototype is already implemented and browser-passed.
-
-Interpretation:
-- runtime ownership/rules in the contract remain current;
-- prototype gate/status fields in that JSON are stale metadata;
-- do not re-open the already-completed technical build gate;
-- current human gate is the A/B visual/freeplay choice.
-
-This skill does not silently edit PR #333 to fix that metadata drift. Record it for the owning Motion branch.
-
-## KFB execution rule
-
-For KFB implementation:
-1. read current `skills/chat/START_HERE.md`;
-2. read current project Recovery/Return;
-3. fetch current owner PR/head;
-4. read this routing reference only as an index;
-5. use source-backed current files;
-6. preserve one movement writer and one motion-state owner.
-
-## Do not
-
-- create a Travel-local or Combat-local locomotion graph;
-- hard-code gait thresholds in a consumer;
-- copy stale prototype status from the contract;
-- mark current clip choices HUMAN_ACCEPTED before Georg chooses them;
-- use Travel Globe as the neutral gait-validation host.
-
-## Current next product gate in Motion owner
-
-Georg visual/freeplay selection of Jog A/B, Run A/B and Sprint A/B.
-
-After that decision, ChatGPT/GitHub records the accepted look choices and the same Motion owner can dock into procedural World #332.
+- Current prepared workflow: `skills/chat/workflows/KAYKIT_NATIVE_LOCOMOTION_BASELINE_01_2026-10-03/`
+- Current prepared draft: PR `#344`, branch `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`
+- Read first: `START_HERE.md`, then `BRIEF_BLENDER_KAYKIT_NATIVE_BASELINE_01.md`
+- Failed archived browser lineage: PR `#333`; mixed Ladder lineage: PR `#336`
+- Canonical native mapping donor: `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`
+- Later runtime consumer: current procedural World candidate, only after native motion acceptance
