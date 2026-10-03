@@ -82,7 +82,7 @@ const state = {
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
   componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null, textureOverrideReport:null,
   appearanceManifest:null, appearanceByActor:{},
-  stageLook:'neutral', clayK1:null, ground:null, neutralGroundMaterial:null, clayGroundMaterial:null, clayFloorLoad:null,
+  stageLook:'neutral', clayK1:null, ground:null, neutralGroundMaterial:null, clayGroundMaterial:null, clayFloorLoad:null, wheelZoom:null,
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
@@ -157,6 +157,55 @@ async function setStageLook(mode,{persist=true}={}){
   syncStageLookUi();
   if(persist)save();
   renderReport();
+}
+function createBoundedWheelZoom(camera,controls,domElement,{minDistance=1.6,maxDistance=8,step=0.12,gestureIn=0.65,gestureOut=0.85,gestureGapMs=160}={}){
+  controls.enableZoom=false;
+  controls.minDistance=minDistance;
+  controls.maxDistance=maxDistance;
+  const v=new THREE.Vector3();
+  let targetDistance=THREE.MathUtils.clamp(camera.position.distanceTo(controls.target),minDistance,maxDistance);
+  let gestureStartDistance=targetDistance;
+  let lastWheelAt=-Infinity;
+  let wheelEvents=0;
+  const syncToCamera=()=>{
+    targetDistance=THREE.MathUtils.clamp(camera.position.distanceTo(controls.target),minDistance,maxDistance);
+    gestureStartDistance=targetDistance;
+    lastWheelAt=-Infinity;
+  };
+  const onWheel=(event)=>{
+    event.preventDefault();
+    const dir=Math.sign(event.deltaY);
+    if(!dir)return;
+    const now=performance.now();
+    const current=THREE.MathUtils.clamp(camera.position.distanceTo(controls.target),minDistance,maxDistance);
+    if(now-lastWheelAt>gestureGapMs){
+      gestureStartDistance=current;
+      targetDistance=current;
+    }
+    lastWheelAt=now;
+    wheelEvents++;
+    const distanceScale=THREE.MathUtils.clamp(current/5.25,0.65,1.25);
+    const proposed=targetDistance + dir*step*distanceScale;
+    const gestureMin=Math.max(minDistance,gestureStartDistance-gestureIn);
+    const gestureMax=Math.min(maxDistance,gestureStartDistance+gestureOut);
+    targetDistance=THREE.MathUtils.clamp(proposed,gestureMin,gestureMax);
+  };
+  domElement.addEventListener('wheel',onWheel,{passive:false,capture:true});
+  return {
+    update(dt){
+      v.copy(camera.position).sub(controls.target);
+      const current=v.length();
+      if(!(current>1e-6))return;
+      const desired=THREE.MathUtils.clamp(targetDistance,minDistance,maxDistance);
+      const damped=THREE.MathUtils.damp(current,desired,14,Math.min(.05,Math.max(0,dt||0)));
+      const frameStep=THREE.MathUtils.clamp(damped-current,-0.09,0.09);
+      const next=THREE.MathUtils.clamp(current+frameStep,minDistance,maxDistance);
+      camera.position.copy(controls.target).add(v.normalize().multiplyScalar(next));
+    },
+    syncToCamera,
+    dispose(){domElement.removeEventListener('wheel',onWheel,{capture:true});},
+    report(){return {owner:'OrbitControls bounded-wheel input adapter',nativeZoom:false,minDistance,maxDistance,step,gestureIn,gestureOut,gestureGapMs,targetDistance:+targetDistance.toFixed(3),wheelEvents};}
+  };
 }
 function appearanceFamily(actorId){ return actorId ? state.appearanceManifest?.families?.find((f)=>f.actorIds?.includes(actorId)) || null : null; }
 function appearanceSelection(actor){
@@ -762,7 +811,8 @@ function configureRenderer() {
   stage.prepend(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xd8d2c8);
   const camera = new THREE.PerspectiveCamera(28, 1, .01, 100);
-  const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.dampingFactor=.08; controls.zoomSpeed=.28; controls.minDistance=.8; controls.maxDistance=14; controls.target.set(0,1.35,0);
+  const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.dampingFactor=.08; controls.target.set(0,1.35,0);
+  state.wheelZoom=createBoundedWheelZoom(camera,controls,renderer.domElement,{minDistance:1.6,maxDistance:8,step:0.12,gestureIn:0.65,gestureOut:0.85,gestureGapMs:160});
   scene.add(new THREE.HemisphereLight(0xffffff,0x6c6973,2.1));
   const key = new THREE.DirectionalLight(0xffffff,2.5); key.position.set(3.4,5.8,4.2); key.castShadow=true; scene.add(key);
   const fill = new THREE.DirectionalLight(0xffdeda,1.2); fill.position.set(-4,2.6,2.2); scene.add(fill);
@@ -798,7 +848,7 @@ function setView(name, camera, controls) {
   if(name==='side-left') p=new THREE.Vector3(-R,1.5,0);
   if(name==='side-right') p=new THREE.Vector3(R,1.5,0);
   if(name==='face') { p=new THREE.Vector3(0,2.14,2.15); t.set(0,2.12,0); }
-  camera.position.copy(p); controls.target.copy(t); controls.update(); $('#viewBadge').textContent=name.replace('-',' ');
+  camera.position.copy(p); controls.target.copy(t); controls.update(); state.wheelZoom?.syncToCamera?.(); $('#viewBadge').textContent=name.replace('-',' ');
   $$('.tool[data-view]').forEach((b)=>b.classList.toggle('active',b.dataset.view===name));
 }
 
@@ -1093,7 +1143,7 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),appearance:{family:appearanceFamily(state.currentActorId)?.id||null,variant:appearanceSelection(actorById(state.currentActorId))},stageLook:state.stageLook,clay:state.clayK1?.state||null,
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),appearance:{family:appearanceFamily(state.currentActorId)?.id||null,variant:appearanceSelection(actorById(state.currentActorId))},stageLook:state.stageLook,clay:state.clayK1?.state||null,wheelZoom:state.wheelZoom?.report?.()||null,
       controlSemantics:{spacing:'x-only',height:'y-only',eyeSize:'size-only-centre-locked',inset:'depth-only',splay:'orientation-plus-surface-seat',lidFit:'lids-only',oval:'shape-only',pupilSize:'pupil-only',track:'gaze-amplitude-only',converge:'pupil-aim-only',gloss:'material-only'},
       eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
@@ -1113,7 +1163,7 @@ async function boot() {
   setLoading(false);
 
   let last=performance.now();
-  function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);controls.update();renderer.render(scene,camera);requestAnimationFrame(frame);}
+  function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);controls.update();state.wheelZoom?.update(dt);renderer.render(scene,camera);requestAnimationFrame(frame);}
   requestAnimationFrame(frame);renderReport();
 }
 
