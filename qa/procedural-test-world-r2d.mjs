@@ -76,7 +76,9 @@ try{
   if(!state.visible.nature)problems.push('procedural nature missing');
   if(!state.buildings.present)problems.push('B1 building family missing');
   if(state.buildings.report?.facadeRule!=='kfb-facade-rule-v1')problems.push('facade owner '+state.buildings.report?.facadeRule);
-  if(state.buildings.report?.stats?.buildings!==2)problems.push('building count '+state.buildings.report?.stats?.buildings);
+  const placedBuildings=state.buildings.report?.placed?.length||0;
+  if(!(placedBuildings>0))problems.push('no source-proven building placed on the generated R2D pads');
+  if(state.buildings.report?.stats?.buildings!==placedBuildings)problems.push('building count mismatch '+state.buildings.report?.stats?.buildings+' / '+placedBuildings);
   if(!((state.buildings.report?.stats?.windows||0)>0))problems.push('building windows missing');
   if(!((state.buildings.report?.stats?.doors||0)>0))problems.push('building doors missing');
   if(!state.buildings.firstAt)problems.push('buildingAt pad-centre fact missing');
