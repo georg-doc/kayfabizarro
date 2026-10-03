@@ -1,6 +1,6 @@
 # AUDIO-ARRANGE-01 · RECOVERY
 
-**Status:** DESIGN READY · IMPLEMENTATION NOT STARTED  
+**Status:** STOPPED AFTER TWO QA REPAIR PASSES · FAILURE EXPORT IS CURRENT  
 **Owner:** KFB Audio & Soundscape Baseline v1  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `chatgpt-web/audio-arrange-01-2026-10-03`  
@@ -48,3 +48,15 @@ Suno credits are optional escalation only.
 Implement the fixed 64-bar AUDIO-ARRANGE-01 session with no seed/Markov generalization.
 
 Do not create a public Stage until the source/browser candidate is a meaningful musical milestone.
+
+
+## CURRENT OVERRIDE · DONOR SOURCE DRIFT
+
+Do not resume implementation on this branch.
+
+The branch predates the user-supplied Cyclical Warmth / Loping Groove donor upload. Current main `eadebbb7…` is 3 commits ahead of branch base `74f7a690…` and contains all 10 donor files that are absent from this branch snapshot.
+
+Read `FAILURE_RECOVERY.md` before any further action.
+
+Exactly one next gate:
+**AUDIO-ARRANGE-01-DONOR-REBASE · fresh branch from current main.**
