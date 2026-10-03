@@ -133,3 +133,47 @@ Status:
 **SITE REVIEW · NOT PUBLIC STAGE · HUMAN LOOK DECISION OPEN**.
 
 Cloudflare is not required for this review. Travel Globe is not the host.
+
+
+## Checkpoint 7 · Georg HUMAN FAIL / source-priority reset
+
+The previous Checkpoint 6 technical PASS did not become product acceptance.
+
+Georg classified the neutral ActionFigure freeplay as **TOTAL FAIL**.
+
+Observed failures:
+- wrong step length;
+- locomotion jitter/wobble;
+- arms too tight / inside torso;
+- unclean transitions;
+- unclean jump;
+- jerky timing.
+
+The mixed Ladder-02 primary gait family is therefore rejected for ActionFigure.
+
+### Conceptual correction
+
+The canonical native policy is restored:
+**KayKit Character Animations 1.1 first.**
+Mixamo / KFB Motion Library is supplementary only after a native role is proven missing.
+
+The earlier browser prototype remains preserved as `ARCHIVED_FAILED_CANDIDATE`.
+No Repair 3.
+
+### Who acts now?
+
+**Coworker / Blender MCP**
+
+### What happens now?
+
+Run `KAYKIT-NATIVE-BLENDER-BASELINE-01`:
+exact ActionFigure + original KayKit Rig_Medium clips only, native rate, neutral grid, KEEP/HOLD/REJECT.
+
+### Georg
+
+**Du musst jetzt nichts tun.**
+
+### What Georg receives next
+
+A Blender-native review scene/package and clip-quality table.
+No new browser prototype before this passes.

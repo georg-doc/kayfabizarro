@@ -1,0 +1,84 @@
+{
+  "schema": "kfb.kaykit-native-locomotion-baseline/1",
+  "date": "2026-10-03",
+  "status": "PREPARED",
+  "owner": "KFB ToolBox / Animation-Motion authoring",
+  "nextExecutor": "Coworker / Blender MCP",
+  "parentOwner": {
+    "pr": 333,
+    "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+    "failedHandoffHead": "811855edc2a9aa1365cb3318bbd01d0c8f5b2d1e"
+  },
+  "failedCandidate": {
+    "id": "ACTIONFIGURE-MOTION-FREEPLAY-01",
+    "status": "ARCHIVED_FAILED_CANDIDATE",
+    "testedImplementationHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+    "humanVerdict": "TOTAL_FAIL"
+  },
+  "actor": {
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "blob": "4785276defdb929cb397954eb74b76aecb84486b",
+    "rigFamily": "Rig_Medium"
+  },
+  "primaryAnimationSource": {
+    "pack": "KayKit Character Animations 1.1",
+    "commit": "b97b5ac55df2724fae623992433685583eece51e",
+    "files": [
+      {
+        "name": "Rig_Medium_General.glb",
+        "blob": "5d16cb6815fc8371705147188813f851c10ba26a"
+      },
+      {
+        "name": "Rig_Medium_MovementBasic.glb",
+        "blob": "98e965e886ec539e80f8984a77a29b0c1c02e5e5"
+      },
+      {
+        "name": "Rig_Medium_MovementAdvanced.glb",
+        "blob": "f3ea309627f3ad76b92b85877ebc46f945cd4f1d"
+      }
+    ]
+  },
+  "nativeDonors": {
+    "canonicalProfile": {
+      "path": "tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js",
+      "blob": "3db9fbd482e6a527c417e79af826138ff28efa33"
+    },
+    "joyrideJ14": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/j14-locomotion-profile.ActionFigure.json",
+      "blob": "f88522de6a6b087d9ff4d609e8ad0238072a848c"
+    },
+    "kclM1": {
+      "path": "tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/KCL_M1_MEASURED_PROFILE_CANDIDATE.json"
+    }
+  },
+  "sourcePolicy": [
+    "KayKit native first",
+    "native gaps remain explicit",
+    "Mixamo / KFB Motion Library only after proven native gap",
+    "supplementary clips require Blender retarget/pose review before runtime"
+  ],
+  "knownCandidates": [
+    "Idle_A",
+    "Walking_A",
+    "Walking_B",
+    "Walking_C",
+    "Running_A",
+    "Running_B",
+    "Walking_Backwards",
+    "Running_Strafe_Left",
+    "Running_Strafe_Right",
+    "Jump_Start",
+    "Jump_Idle",
+    "Jump_Land"
+  ],
+  "forbiddenThisGate": [
+    "Mixamo",
+    "KFB Motion Library locomotion",
+    "browser controller",
+    "world integration",
+    "Travel Globe",
+    "transition graph",
+    "runtime jump trajectory"
+  ],
+  "nextGate": "KAYKIT-NATIVE-BLENDER-BASELINE-01"
+}

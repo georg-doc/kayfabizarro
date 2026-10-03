@@ -82,3 +82,43 @@ Tested implementation head:
 
 Review:
 **SITE REVIEW · NOT PUBLIC STAGE**
+
+
+## CURRENT OVERRIDE · HUMAN FAIL / KAYKIT-NATIVE RESTART
+
+The prior mixed Ladder-02 ActionFigure freeplay is no longer a review candidate.
+
+**Product verdict: TOTAL FAIL.**
+Technical browser PASS is retained as evidence only.
+
+### Binding source priority
+
+For ActionFigure / Rig_Medium:
+1. **KayKit Character Animations 1.1 native clips first**
+2. native KayKit variants / playback only after isolated review
+3. Mixamo / KFB Motion Library only for an explicitly proven gap
+
+This restores the existing canonical rule in `locomotion-profiles.v1.js` blob `3db9fbd482e6a527c417e79af826138ff28efa33`.
+
+### Current next gate
+
+**KAYKIT-NATIVE-BLENDER-BASELINE-01**
+
+Next executor:
+**Coworker / Blender MCP**
+
+Task:
+show the real ActionFigure with original KayKit General / MovementBasic / MovementAdvanced locomotion clips at native rate on a neutral grid; measure and classify each as KEEP_NATIVE / HOLD_NATIVE / REJECT_NATIVE.
+
+No Mixamo.
+No browser controller.
+No gait transitions yet.
+No runtime jump trajectory.
+No World / Travel integration.
+
+### Georg
+
+**Du musst jetzt nichts tun.**
+
+Next human-facing result:
+one Blender review package + native clip quality table.

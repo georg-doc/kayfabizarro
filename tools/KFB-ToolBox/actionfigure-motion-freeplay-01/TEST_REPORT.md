@@ -60,3 +60,24 @@ Same candidate:
 - repair 2: resolver corrected; full browser gate PASS.
 
 No repair 3.
+
+
+## HUMAN REVIEW OVERRIDE · 2026-10-03
+
+Georg classified the entire prototype as **TOTAL FAIL**.
+
+Observed:
+- wrong step length;
+- visible wobble / jitter;
+- arms too tight / inside or pressed into torso;
+- transitions not clean;
+- jump behaviour not clean;
+- animation timing itself jerky.
+
+Therefore:
+- prior Chromium SUCCESS remains only a technical automation result;
+- product acceptance = FAIL;
+- candidate status = `ARCHIVED_FAILED_CANDIDATE`;
+- no further repair pass on this foundation;
+- mixed Ladder-02 primary gait selection is rejected;
+- next gate = `KAYKIT-NATIVE-BLENDER-BASELINE-01`.

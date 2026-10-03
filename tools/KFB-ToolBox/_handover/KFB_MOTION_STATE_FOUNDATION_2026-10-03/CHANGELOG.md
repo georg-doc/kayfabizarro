@@ -40,3 +40,14 @@
 - exact tested HTML mirrored to KFB Production Control Site, SHA-256 `ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad`;
 - review transport = SITE REVIEW, not public Cloudflare Stage;
 - mandatory human-guidance rule added: every Return names next executor, concrete action, Georg's task, and what he receives next.
+
+
+### Human FAIL · mixed Ladder-02 ActionFigure approach archived
+- Georg classified the ActionFigure freeplay as TOTAL FAIL, not TUNE.
+- Failure observations: step-length mismatch, jitter/wobble, arms pressed into/inside torso, dirty transitions, bad jump behaviour and jerky animation timing.
+- Browser PASS remains technical evidence only and is explicitly overridden by human motion-quality FAIL.
+- Proven conceptual regression: the active mixed Ladder-02 gait family violated the existing canonical `locomotion-profiles.v1.js` source-priority rule.
+- Restored source policy: KayKit Character Animations 1.1 native roles first; Motion Library/Mixamo only for later proven gaps.
+- Ladder 02 and Motion Library v7 remain reusable donors, but not the ActionFigure primary locomotion family.
+- New next gate: `KAYKIT-NATIVE-BLENDER-BASELINE-01`.
+- No Repair 3 on the failed browser foundation.

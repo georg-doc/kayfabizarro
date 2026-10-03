@@ -192,3 +192,29 @@ Exact tested HTML Site mirror:
 
 Status:
 **BROWSER PASS · SITE REVIEW READY · HUMAN LOOK OPEN**.
+
+
+## HUMAN REVIEW OVERRIDE · 2026-10-03
+
+The technical ActionFigure browser gate passed, but Georg's actual freeplay review is **TOTAL FAIL**.
+
+This changes product status, not the historical automation result.
+
+Observed human failures:
+- step-length mismatch;
+- locomotion jitter/wobble;
+- arms too tight / inside torso;
+- unclean transitions;
+- unclean jump behaviour;
+- jerky animation timing.
+
+Final classification:
+- browser automation: PASS (historical evidence)
+- motion product candidate: FAIL
+- candidate: `ARCHIVED_FAILED_CANDIDATE`
+- mixed Ladder-02 primary gait family: REJECTED
+- Repair 3: forbidden
+- next test surface: Blender-native KayKit baseline only
+
+Next gate:
+`KAYKIT-NATIVE-BLENDER-BASELINE-01`.

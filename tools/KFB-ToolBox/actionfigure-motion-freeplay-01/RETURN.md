@@ -94,3 +94,34 @@ Named browser gate used exactly two repair passes:
 2. Motion-Library shorthand-path resolver fix.
 
 Repair 2 passed. No Repair 3.
+
+
+## HUMAN REVIEW · FINAL OVERRIDE
+
+Status is now **ARCHIVED_FAILED_CANDIDATE · TOTAL FAIL**.
+
+Georg's review supersedes the earlier technical browser PASS.
+
+Do not ask for Jog/Run/Sprint A/B choices from this prototype.
+Do not repair this browser foundation further.
+
+Primary observed failures:
+- stride/step length mismatch;
+- strong visible jitter/wobble;
+- arms too close to / inside torso;
+- unclean transitions;
+- unclean jump;
+- jerky animation timing.
+
+Conceptual correction:
+KayKit Character Animations 1.1 native Rig_Medium clips are primary for ActionFigure.
+Mixamo/KFB Motion Library is supplementary gap-fill only.
+
+Next executor:
+**Coworker / Blender MCP**
+
+Next gate:
+**KAYKIT-NATIVE-BLENDER-BASELINE-01**
+
+Georg:
+**Du musst jetzt nichts tun.**

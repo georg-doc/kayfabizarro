@@ -2,7 +2,7 @@
   "schema": "kfb.motion-state-contract/1",
   "date": "2026-10-03",
   "owner": "KFB ToolBox / Animation-Motion authoring",
-  "status": "FOUNDATION_IMPLEMENTATION_LADDER_02_TECHNICAL_FORWARD_READY_HUMAN_OPEN",
+  "status": "HUMAN_FAIL_LADDER_02_PRIMARY_SELECTION_ARCHIVED_KAYKIT_NATIVE_RESTART",
   "sourceLineage": {
     "motionLab": {
       "pr": 127,
@@ -12,7 +12,7 @@
     "locomotionProfiles": {
       "pr": 294,
       "blob": "3db9fbd482e6a527c417e79af826138ff28efa33",
-      "status": "SOURCE_PASS_CANDIDATE"
+      "status": "CANONICAL_PRIMARY_SOURCE_POLICY_RESTORED"
     },
     "animMap": {
       "pr": 294,
@@ -45,7 +45,7 @@
       "evidencePath": "tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json",
       "evidenceBlob": "59f49e9952b0d266c7cd435e85de601bd9da94f1",
       "schema": "kfb.locomotion-ladder/0.2-candidate",
-      "status": "TECHNICAL_FORWARD_READY_HUMAN_LOOK_OPEN"
+      "status": "ARCHIVED_GAP_DONOR_NOT_PRIMARY_LOCOMOTION"
     },
     "motionLibraryV7": {
       "source": "GitHub + Dropbox verified donor",
@@ -58,7 +58,16 @@
       "totalClips": 395,
       "intake07Added": 25,
       "intake07DuplicatesRejected": 16,
-      "status": "CENTRAL_CANDIDATE_SOURCE_CLOSURE_VERIFIED"
+      "status": "SUPPLEMENTARY_VARIANT_ACTION_LIBRARY_NOT_PRIMARY_LOCOMOTION"
+    },
+    "joyrideJ14NativeActionFigure": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/j14-locomotion-profile.ActionFigure.json",
+      "blob": "f88522de6a6b087d9ff4d609e8ad0238072a848c",
+      "sourcePack": "KayKit Character Animations 1.1",
+      "sourceCommit": "b97b5ac55df2724fae623992433685583eece51e",
+      "actor": "ActionFigure / Rig_Medium",
+      "rigCompatibility": "23/23",
+      "status": "PRIMARY_NATIVE_DONOR_MEASUREMENTS_UNPROVEN_FOR_FINAL_RUNTIME"
     }
   },
   "responsibility": {
@@ -127,78 +136,88 @@
     "Missing measurements remain unresolved and block final prototype acceptance rather than being guessed.",
     "Consumer runtimes may not fork clip maps or locomotion state graphs.",
     "Motion Library v6 provides a broad candidate pool, but semantic gait selection remains unresolved until exact ladder measurement and Georg visual review.",
-    "LOCOMOTION_LADDER_02 is the current technical forward-ladder evidence; PR #333 is the only owner that may adapt it for consumers.",
-    "The technical forward ladder is walk → jog → run.easy → run → sprint. Its handoffs are derived from measured Ladder 02 rate windows, never consumer-local speed thresholds.",
-    "Ladder 02 selected clips remain HUMAN_LOOK_OPEN; technical selection does not imply Georg visual acceptance.",
-    "Legacy KCL/Motion Lab same-clip measurements remain independent cross-check evidence and are not silently overwritten by Ladder 02."
+    "Legacy KCL/Motion Lab same-clip measurements remain independent cross-check evidence and are not silently overwritten by Ladder 02.",
+    "For ActionFigure/Rig_Medium, KayKit Character Animations 1.1 is the canonical primary locomotion source.",
+    "The canonical locomotion-profiles.v1 rule is binding: Mixamo / KFB Motion Library is the variant/action layer and may not overwrite an existing KayKit-native locomotion role.",
+    "A native-source gap remains visible until the native baseline is visually and mechanically reviewed; a gap is not permission to pre-emptively replace the whole gait family.",
+    "No new browser/game locomotion prototype may be built until KAYKIT-NATIVE-BLENDER-BASELINE-01 passes isolated actor review.",
+    "LOCOMOTION_LADDER_02 remains archived evidence for later gap-fill candidates only; its mixed-source five-rung ladder is not an accepted primary ActionFigure gait family.",
+    "Automated state/boot tests do not constitute motion-quality acceptance; Georg HUMAN FAIL overrides prior browser technical PASS."
   ],
   "currentRigMediumEvidence": {
-    "measurementStatus": "LADDER_02_TECHNICAL_FORWARD_READY_HUMAN_LOOK_OPEN",
-    "speedSpace": "world",
-    "forwardOrder": [
-      "walk",
-      "jog",
-      "run.easy",
-      "run",
-      "sprint"
-    ],
-    "selectedClips": {
-      "walk": "kfb_locomotion_walking_c",
-      "jog": "kfb_locomotion_jog_forward_a",
-      "run.easy": "kfb_locomotion_slow_run_a",
-      "run": "kfb_locomotion_medium_run_a",
-      "sprint": "kfb_locomotion_sprint_a"
-    },
-    "worldReferenceSpeed": {
-      "walk": 0.773,
-      "jog": 1.198,
-      "run.easy": 1.45,
-      "run": 2.164,
-      "sprint": 2.857
-    },
-    "handoffWorldSpeed": {
-      "walk→jog": 0.962,
-      "jog→run.easy": 1.318,
-      "run.easy→run": 1.771,
-      "run→sprint": 2.486
-    },
-    "technicalForwardReady": true,
+    "measurementStatus": "KAYKIT_NATIVE_BASELINE_RESTART_REQUIRED",
     "humanAccepted": false,
-    "lookChoicesOpen": {
-      "jog": [
-        "kfb_locomotion_jog_forward_a",
-        "kfb_locomotion_jogging_a"
-      ],
-      "run": [
-        "kfb_locomotion_medium_run_a",
-        "kfb_locomotion_running_d"
-      ],
-      "sprint": [
-        "kfb_locomotion_sprint_a",
-        "kfb_locomotion_fast_run_a"
+    "previousCandidate": {
+      "status": "ARCHIVED_FAILED_CANDIDATE",
+      "name": "ACTIONFIGURE-MOTION-FREEPLAY-01 / mixed Ladder 02",
+      "userVerdict": "HUMAN_FAIL",
+      "observedFailures": [
+        "step length mismatch",
+        "visible wobble/jitter during locomotion",
+        "arm pose too tight / arms intersecting or pressed into torso",
+        "unclean gait transitions",
+        "unclean jump behaviour",
+        "animation timing reads jerky"
       ]
     },
-    "unresolved": [
-      "human visual choice for jog/run/sprint",
-      "side jog missing",
-      "backward jog technical HOLD from root/feet mismatch",
-      "left strafe run HOLD",
-      "left running turns missing",
-      "run stop ends with approximately 45 degree turn",
-      "neutral ActionFigure WASD+Shift+Space prototype",
-      "Georg visual/freeplay acceptance"
-    ]
+    "primarySource": {
+      "pack": "KayKit Character Animations 1.1",
+      "commit": "b97b5ac55df2724fae623992433685583eece51e",
+      "rigFamily": "Rig_Medium",
+      "actor": "ActionFigure",
+      "canonicalProfileBlob": "3db9fbd482e6a527c417e79af826138ff28efa33",
+      "j14MeasurementBlob": "f88522de6a6b087d9ff4d609e8ad0238072a848c"
+    },
+    "knownNativeRoles": {
+      "idle": "Idle_A",
+      "walk": [
+        "Walking_A",
+        "Walking_B",
+        "Walking_C"
+      ],
+      "run": [
+        "Running_A",
+        "Running_B"
+      ],
+      "backward": "Walking_Backwards",
+      "strafeLeft": "Running_Strafe_Left",
+      "strafeRight": "Running_Strafe_Right",
+      "jump": [
+        "Jump_Start",
+        "Jump_Idle",
+        "Jump_Land"
+      ],
+      "crouch": "Crouching",
+      "sneak": "Sneaking",
+      "crawl": "Crawling"
+    },
+    "speedCalibrationStatus": "UNRESOLVED_UNTIL_BLENDER_NATIVE_BASELINE",
+    "mixamoPolicy": "SUPPLEMENTARY_ONLY_AFTER_EXPLICIT_NATIVE_GAP"
   },
   "prototypeGate": {
-    "actor": "ActionFigure / Rig_Medium",
-    "controls": "WASD + Shift + Space",
-    "environment": "neutral ground",
-    "ui": "normal play view; diagnostics hidden/internal",
-    "purpose": "Visual/freeplay validation of the central Ladder 02 candidate before any World/Travel/Combat/Resident consumer integration.",
-    "blockedUntil": [
-      "Ladder 02 central profile adapter and exact evidence integration pass CI"
-    ],
-    "humanGate": "Georg visual/freeplay PASS",
-    "afterPass": "Dock the same central owner into procedural World #332; do not use Travel Globe as the test host."
-  }
+    "status": "BLOCKED_BY_HUMAN_FAIL",
+    "blockedPrototype": "ACTIONFIGURE-MOTION-FREEPLAY-01",
+    "nextGate": "KAYKIT-NATIVE-BLENDER-BASELINE-01",
+    "purpose": "Review original KayKit Rig_Medium clips on the real ActionFigure in Blender before any controller, crossfade graph, runtime speed ladder or Mixamo gap-fill is attempted.",
+    "nextExecutor": "Coworker / Blender MCP",
+    "georgActionNow": "NONE",
+    "afterPass": "Only then define native baseline roles and proceed to a separate transition-quality gate."
+  },
+  "sourcePriority": [
+    {
+      "priority": 1,
+      "source": "KayKit Character Animations 1.1 / native rig family",
+      "policy": "For ActionFigure/Rig_Medium, use General + MovementBasic + MovementAdvanced first. Existing native role clips must not be replaced by Mixamo/KFB Motion Library."
+    },
+    {
+      "priority": 2,
+      "source": "KayKit-native playback/semantic variants",
+      "policy": "Only after isolated Blender review proves pose, loop, contact and stride quality on the actual actor."
+    },
+    {
+      "priority": 3,
+      "source": "KFB Motion Library / Mixamo-derived clips",
+      "policy": "Gap-fill only. A missing native role must be explicitly demonstrated before a supplementary clip is admitted, and that clip must be retargeted/pose-reviewed in Blender before runtime use."
+    }
+  ]
 }

@@ -2126,3 +2126,13 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Exact tested HTML mirrored to KFB Production Control Site; private URL deliberately not committed.
 - Review classification = SITE REVIEW / NOT PUBLIC STAGE; Cloudflare deferred.
 - Human guidance contract is now binding: next executor + concrete action + Georg task + next delivered result must be stated plainly.
+
+
+## 2026-10-03 · Motion HUMAN FAIL / KayKit-native source-priority reset
+- Georg classified ACTIONFIGURE-MOTION-FREEPLAY-01 as TOTAL FAIL despite technical Chromium PASS.
+- Observed failures: step length, jitter/wobble, arm/torso pose, transitions, jump and animation timing.
+- Candidate is frozen as `ARCHIVED_FAILED_CANDIDATE`; no Repair 3.
+- Root conceptual regression recorded: mixed Ladder-02/Mixamo-derived locomotion was promoted over the existing native KayKit role owner.
+- Restored canonical priority from `locomotion-profiles.v1.js`: KayKit Character Animations 1.1 first; Mixamo/KFB Motion Library only as later gap-fill.
+- New gate `KAYKIT-NATIVE-BLENDER-BASELINE-01`: original ActionFigure + original KayKit Rig_Medium clips only, no controller, no transitions, no Mixamo.
+- Next executor = Coworker / Blender MCP; Georg has no action until the Blender native review returns.

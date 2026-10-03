@@ -203,3 +203,53 @@ Open the private Site link delivered in chat and test WASD / Shift / Space plus 
 After Georg replies with the preferred variants, ChatGPT Web/GitHub acts next and records those choices before integrating the same Motion owner into procedural World #332.
 
 Cloudflare publication is deferred. Travel Globe remains excluded.
+
+
+## HUMAN FAIL OVERRIDE · 2026-10-03
+
+This section supersedes the earlier "ActionFigure freeplay current" section.
+
+The browser candidate is frozen:
+`ARCHIVED_FAILED_CANDIDATE`.
+
+Georg's observed failure:
+- step length mismatch;
+- jitter/wobble;
+- arms pressed into/inside body;
+- dirty transitions;
+- jump mismatch;
+- jerky animation timing.
+
+### Proven source-policy regression
+
+The current branch already contains the canonical KayKit-native profile:
+`tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`
+blob `3db9fbd482e6a527c417e79af826138ff28efa33`.
+
+Its rule is explicit:
+KayKit Character Animations 1.1 is the native role owner; Mixamo / KFB Motion Library is the variant/action layer and must not overwrite those roles.
+
+The mixed Ladder-02 forward family violated that policy.
+
+### Recovery donors
+
+- ActionFigure source blob `4785276defdb929cb397954eb74b76aecb84486b`
+- KayKit Character Animations 1.1 @ `b97b5ac55df2724fae623992433685583eece51e`
+- General GLB `5d16cb6815fc8371705147188813f851c10ba26a`
+- MovementBasic GLB `98e965e886ec539e80f8984a77a29b0c1c02e5e5`
+- MovementAdvanced GLB `f3ea309627f3ad76b92b85877ebc46f945cd4f1d`
+- J14 native ActionFigure profile blob `f88522de6a6b087d9ff4d609e8ad0238072a848c`
+- KCL-M1 remains independent measurement evidence
+
+Ladder 02 / Motion Library v7 are retained only as later gap-fill donors.
+
+### Current continuation
+
+Read:
+`skills/chat/workflows/KAYKIT_NATIVE_LOCOMOTION_BASELINE_01_2026-10-03/START_HERE.md`
+
+Next executor:
+**Coworker / Blender MCP**
+
+Georg:
+**Du musst jetzt nichts tun.**

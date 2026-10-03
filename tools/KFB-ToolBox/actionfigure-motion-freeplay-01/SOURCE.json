@@ -34,7 +34,17 @@
   },
   "reviewSurface": {
     "primary": "KFB Production Control Site artifact mirror",
-    "cloudflare": "DEFER_UNTIL_DURABLE_WORLD_OR_HUB_MILESTONE"
+    "cloudflare": "DEFER_UNTIL_DURABLE_WORLD_OR_HUB_MILESTONE",
+    "status": "CLOSED_AFTER_HUMAN_FAIL"
   },
-  "userInstruction": "Open one Site link; move with WASD; hold Shift; press Space; choose Jog A/B, Run A/B, Sprint A/B. No GitHub or deployment action required from Georg."
+  "userInstruction": "Open one Site link; move with WASD; hold Shift; press Space; choose Jog A/B, Run A/B, Sprint A/B. No GitHub or deployment action required from Georg.",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "humanVerdict": "TOTAL_FAIL",
+  "failureClass": "FOUNDATION_AND_SOURCE_PRIORITY_FAILURE",
+  "sourcePriorityFailure": {
+    "canonicalRule": "KayKit Character Animations 1.1 native roles first; Mixamo/KFB Motion Library variant layer only",
+    "violatedBy": "mixed Ladder-02 Motion Library/Mixamo-derived primary gait family",
+    "recovery": "KAYKIT-NATIVE-BLENDER-BASELINE-01"
+  },
+  "nextGate": "KAYKIT-NATIVE-BLENDER-BASELINE-01"
 }

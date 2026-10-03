@@ -1418,3 +1418,34 @@ The expiring capability URL stays in chat only.
 **ChatGPT Web/GitHub:** persist Georg's selection and integrate the same Motion owner into procedural World #332.
 
 Do not send Georg back to Travel Globe or ask him to interpret PR/CI metadata.
+
+
+## 2026-10-03 · Motion freeplay HUMAN FAIL · KayKit-native reset
+
+The ActionFigure mixed Ladder-02 browser freeplay is **ARCHIVED_FAILED_CANDIDATE** after Georg's TOTAL FAIL.
+
+Technical browser PASS does not override human motion quality.
+
+Failure observations:
+- step-length mismatch;
+- jitter/wobble;
+- arm/torso collision/tight pose;
+- dirty transitions;
+- bad jump;
+- jerky timing.
+
+Binding correction:
+**ActionFigure/Rig_Medium uses original KayKit Character Animations 1.1 as primary locomotion source.**
+The existing `locomotion-profiles.v1.js` already encoded this rule.
+Mixamo / KFB Motion Library is later gap-fill only.
+
+Current Motion next gate:
+`KAYKIT-NATIVE-BLENDER-BASELINE-01`
+
+Next executor:
+**Coworker / Blender MCP**
+
+Georg:
+**Du musst jetzt nichts tun.**
+
+No browser rebuild, World docking or Travel use until the native Blender baseline is reviewed.
