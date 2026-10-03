@@ -980,3 +980,68 @@ Not implemented in Control R2:
 - Survivalist eyepatch → one EyeRig eye hidden;
 - deciding whether those controls belong in Batch EyeRig vs the 3D Editor;
 - same click-to-edit numeric UX in the separate FrankenStein/Pet Studio UI owner.
+
+## 2026-10-03 · EYE-RIG-BATCH-RECOVERY-BATCH2-01
+
+Recovery input:
+- Dropbox: `/Mac/Downloads/eye-rig-medium.batch (2).json`
+- Dropbox modified: `2026-10-02T17:35:03Z`
+- GitHub intake commit: `a346a219a54e53f690d1ff840363aff8d8729e58`
+- intake blob: `9e6f10068160cd2c66ee33660f7b1d927273524b`
+- exact Dropbox → GitHub text readback: **PASS**
+
+Batch contract:
+- batch schema: `kfb.eye-profile-batch/0.2-candidate`;
+- profile count: **40**;
+- selected actor ids: **40**;
+- profile/selected set equality: **40/40 PASS**;
+- duplicate profile ids: **0**;
+- profile schema: `kfb.eye-profile/0.1-candidate` for **40/40**;
+- rig class: `Rig_Medium` for **40/40**.
+
+Drift check against the previously registered 33-profile export:
+- previous profiles found: **33/33**;
+- changed previous profiles in source / eye / blink / life / kinetics / status-review fields: **0**;
+- preserved previous profiles: **33/33 PASS**;
+- added profiles: **7**.
+
+Added actors:
+- `paladin-king`
+- `mummy-a`
+- `mummy-b`
+- `survivalist`
+- `hoarder`
+- `space-ranger-flight`
+- `combat-mech`
+
+Current Medium-roster resolution for additions: **7/7 PASS**.
+Exact source-path resolution at stored revision `2c92dd13cbc379ad3a6028144b8976bb3d6a840d`: **7/7 PASS**.
+
+Source blobs:
+- paladin-king / `Paladin.glb`: `9c6189759277fc999136f3759eac0d0e1b65ced1`
+- mummy-a / `Mummy_A.glb`: `f844b3da5d7a27e61f29a4d251b6140840f493cc`
+- mummy-b / `Mummy_B.glb`: `539552ecf8bade98f624bcaa18c5a420082f7c90`
+- survivalist / `Survivalist.glb`: `5105ebebab09e198df906827774aee43b7a9d4c4`
+- hoarder / `Hoarder.glb`: `9d8f4369933dbdb761bb33871bb3880975f93c29`
+- space-ranger-flight / `SpaceRanger_FlightMode.glb`: `f93bb54ac3a3242e0007d39b25aa6a6010a8be0a`
+- combat-mech / `CombatMech.glb`: `143381c33c0476631e9707f35466501c5de1f8fa`
+
+Review-state distribution in the recovered export:
+- `ADJUSTED`: **37**
+- `ADJUSTED_APPROVED`: **2**
+- `UNREVIEWED`: **1**
+
+CI/status note for intake head `a346a219a54e53f690d1ff840363aff8d8729e58`:
+- GitHub Actions workflow runs attached to this commit: **0**;
+- combined status contexts attached to this commit: **0**;
+- therefore no CI_PASS claim is made for this recovery-data-only checkpoint.
+
+Boundary:
+- runtime code changed: **NO**;
+- EyeRig Control R2 behavior changed: **NO**;
+- Stage mirror changed: **NO**;
+- public Stage verification: still **OPEN**;
+- existing browser storage key/profile semantics remain unchanged.
+
+Exactly one product gate remains:
+`GEORG_EYERIG_CONTROL_R2_VIS_01`.
