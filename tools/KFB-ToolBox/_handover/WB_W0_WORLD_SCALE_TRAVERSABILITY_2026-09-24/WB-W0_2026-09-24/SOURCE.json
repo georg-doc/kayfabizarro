@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.worldbuilder.source/1",
+  "slice": "WB-W0 · World Scale + Traversability Proof",
+  "date": "2026-09-24",
+  "status": "CANDIDATE · 10/10 gates PASS in preview · human review pending",
+  "decisions": "Georg 2026-09-24: globe overview own scale + ENU region 1u=1m · Köln dom-zentrum-v0 · route 18,0 STANDARD · Kenney billboard B0 · slopes spawn 3° / route 10° / walk 30° lowered by ramp test",
+  "donors": [
+    { "what": "route truth", "path": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-route.v1.js", "ref": "main", "use": "CONTROL_POINTS[0..2] via buildRoute(), TRACK_WIDTH.STANDARD" },
+    { "what": "cross-section + colours", "path": "…/lab-v9/cologne-track.v1.js (crossPoint u 1,0/1,30/1,46) · …/lab-v9/option-c-style.v1.js (C)", "ref": "main" },
+    { "what": "Kenney factor path", "path": "…/Option C-2/docs/RETURN.md (roadStart × 16,434 → 20,7 m)", "ref": "main" },
+    { "what": "ENU origin", "path": "tools/osm-city-lab/data/dom-zentrum-v0/SOURCE_SPEC.json", "value": "50.942 N · 6.96225 E" },
+    { "what": "player controller (unchanged)", "path": "travel/KFB Travel Combat v25/terrain-v25/walk-controller.js", "ref": "main" },
+    { "what": "terrain noise + formula", "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html", "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e", "license": "ZyFou/ProceduralTerrains@f58a8ddb MIT subset" },
+    { "what": "terrain line", "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md", "use": "continuous terrain, biome blending, slope/height rules, local erosion" },
+    { "what": "sky/light", "path": "travel/wip/travel_globe_wsa/globe-v13/sky-presets.js", "ref": "main", "use": "DAY preset, buildLightRig, paintRadialSky" },
+    { "what": "landmark", "path": "media/3D_Assets/kenney_racing-kit/Models/GLTF format/billboard.glb via bb-scene.js loadHero/renderCardQuarter (B0 accepted)", "card": "forget_utopia #7" },
+    { "what": "character + eyes + clips", "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb · eye-rig-batch/lib (cloudflare-live) · rig-medium-default.v0.json · KayKit_Character_Animations_1.1 Rig_Medium General/MovementBasic", "loader": "tools/resident_atlas_s6/lib/atlas.js" },
+    { "what": "measured assets", "registry": "registry/assets/v1/packs/*.json", "assets": ["kaykit-restaurant-bits door_A", "kaykit-dungeon-pack wall_doorway(_door)", "tiny-treats-homely-house house(+house_door)", "kenney-racing-kit roadStart, billboard", "kaykit-forest-nature Tree_1_A_Color1, Rock_3_E_Color1", "tiny-treats-pretty-park street_lantern"], "assetCommit": "378b209355b13304e3cff656ec0806ca5b89df28" },
+    { "what": "ink", "path": "wd-ink.js (WorldDesign Lab) + W0 fade delta" },
+    { "what": "globe land mask", "external": "world-atlas@2.0.2 land-50m.json (Natural Earth) + topojson-client@3.1.0" },
+    { "what": "not used (frozen)", "refs": ["PR #194 Hürth/Elastic", "returns/WORLDBUILDER_V1_2026-09-24/code"] }
+  ]
+}

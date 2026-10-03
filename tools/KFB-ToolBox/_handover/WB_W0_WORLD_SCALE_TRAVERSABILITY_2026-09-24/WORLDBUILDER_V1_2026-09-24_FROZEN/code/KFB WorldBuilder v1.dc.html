@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8" />
+<title>KFB WorldBuilder v1 · Planet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+html,body{margin:0;padding:0;height:100%;background:#0c0a12;overflow:hidden}
+a{color:#ffd9a0}
+a:hover{color:#ffe9c6}
+input[type=range]{height:14px}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="./wb1-boot.js"></script>
+</helmet>
+<div data-screen-label="WorldBuilder v1" style="position:fixed;inset:0;background:#0c0a12;z-index:-1"></div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;start&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ORBIT&quot;,&quot;GROUND&quot;],&quot;default&quot;:&quot;ORBIT&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Start&quot;,&quot;label&quot;:&quot;Camera at page load&quot;},&quot;ink&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Start&quot;,&quot;label&quot;:&quot;KFB ink outline at load&quot;},&quot;tile&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;REF&quot;,&quot;GENERATOR&quot;],&quot;default&quot;:&quot;REF&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Start&quot;,&quot;label&quot;:&quot;Ground macro tile (Derek ref / wd-macro generator)&quot;}}">
+class Component extends DCLogic {
+  push() {
+    window.__wbProps = {
+      start: this.props.start ?? 'ORBIT',
+      ink: this.props.ink ?? true,
+      tile: this.props.tile ?? 'REF'
+    };
+  }
+  componentDidMount() { this.push(); }
+  componentDidUpdate() { this.push(); }
+  renderVals() { this.push(); return {}; }
+}
+</script>
+</body>
+</html>
