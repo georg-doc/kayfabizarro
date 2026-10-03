@@ -39,7 +39,7 @@ GitHub durable architecture:
 - `WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
 - `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
 
-Production Control contains the full additive MVP ledger through v1.8.
+Production Control contains the full additive MVP ledger through v2.0.
 
 ## B · HARD pre-One-Shot gates
 
@@ -50,7 +50,7 @@ Current facts:
 - World candidate PR #332 head: `e58d0ea4b97debbf8d0053d710612033b7e52908`;
 - latest browser-proven WB2 runtime head: `a18846cf8128e3e1facb0b51be0e6aff873d1244`;
 - comparing #332 head to current main shows a real divergence:
-  - main side ahead by 40 commits;
+  - main side ahead by 54 commits at the 2026-10-04 recheck;
   - #332 side carries 17 commits not in main;
   - common merge base `74f7a690fbec88cf98ce0936f31b72ad3f1148f5`;
   - comparison spans hundreds of changed files, including new audio/source work.
