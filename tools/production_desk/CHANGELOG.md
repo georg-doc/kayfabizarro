@@ -643,3 +643,14 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Next gate is one neutral ActionFigure WASD+Shift+Space freeplay surface, then Georg visual PASS, then procedural World #332.
 - Travel is explicitly not the neutral Motion test host.
 - No root Hub regeneration, Cloudflare publication, merge or Live promotion is claimed by this source sync.
+
+
+## ActionFigure Motion Freeplay Site review ready · 2026-10-03
+- Motion lane moved from CAN_START to LOOK_AT.
+- Current Motion handoff: PR #333 @ `811855edc2a9aa1365cb3318bbd01d0c8f5b2d1e`; tested implementation head `f1ce90d31a18973fa981bc982309c4bb01b204b8`.
+- Real Chromium freeplay PASS: Run, Sprint, Backward, Jump, Jog/Run/Sprint A/B; 0 console/page errors.
+- Motion Foundation 27/27 PASS; both registry workflows PASS.
+- Exact tested HTML is mirrored privately on KFB Production Control Site.
+- The expiring Site capability URL is intentionally not stored in Hub/GitHub; Georg receives it in chat.
+- Georg's only action: open the Site review and return Jog A/B · Run A/B · Sprint A/B plus any visible issue.
+- Cloudflare/root-Hub publication is deliberately deferred; this is SITE REVIEW, not PUBLIC STAGE.
