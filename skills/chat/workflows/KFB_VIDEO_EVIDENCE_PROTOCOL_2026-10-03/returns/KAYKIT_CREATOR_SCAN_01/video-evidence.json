@@ -1,0 +1,111 @@
+{
+  "jobId": "KAYKIT_CREATOR_SCAN_01",
+  "status": "SOURCE_BLOCKED",
+  "sources": [
+    {
+      "videoId": "4p7QaOd8SHE",
+      "title": "Using KayKit Characters In Godot (Detailed version)",
+      "creator": "Kay Lousberg",
+      "url": "https://www.youtube.com/watch?v=4p7QaOd8SHE",
+      "published": null,
+      "durationSeconds": null,
+      "versionContext": null,
+      "access": "BLOCKED"
+    },
+    {
+      "videoId": "rwst5GnUU7s",
+      "title": "How to use KayKit Character Animations in Unity and Godot",
+      "creator": "Kay Lousberg",
+      "url": "https://www.youtube.com/watch?v=rwst5GnUU7s",
+      "published": "2022-02-07",
+      "durationSeconds": null,
+      "versionContext": "Public metadata places this tutorial in 2022; do not treat it as Character Animations 1.1 visual evidence.",
+      "access": "BLOCKED"
+    },
+    {
+      "videoId": "T1KNCtAqJ7A",
+      "title": "KayKit – Animations – Overview Set 1",
+      "creator": "Kay Lousberg",
+      "url": "https://www.youtube.com/watch?v=T1KNCtAqJ7A",
+      "published": null,
+      "durationSeconds": null,
+      "versionContext": "SOURCE_BLOCKED: older set versus Character Animations 1.1 was not visually verified.",
+      "access": "BLOCKED"
+    }
+  ],
+  "moments": [
+    {
+      "videoId": "4p7QaOd8SHE",
+      "timestampSeconds": 0,
+      "timestampUrl": "https://www.youtube.com/watch?v=4p7QaOd8SHE&t=0s",
+      "topic": "visual-access",
+      "phase": null,
+      "evidenceClass": "SOURCE_BLOCKED",
+      "observation": "No compliant original-video frame/UI access after two visual access paths; no visual claim recorded.",
+      "clipNamesVisible": [],
+      "settingsVisible": [],
+      "stillFile": null,
+      "blenderComparison": null
+    },
+    {
+      "videoId": "rwst5GnUU7s",
+      "timestampSeconds": 0,
+      "timestampUrl": "https://www.youtube.com/watch?v=rwst5GnUU7s&t=0s",
+      "topic": "visual-access",
+      "phase": null,
+      "evidenceClass": "SOURCE_BLOCKED",
+      "observation": "Metadata/description was reachable, but no compliant original-video frame/UI stream was available; no visual claim recorded.",
+      "clipNamesVisible": [],
+      "settingsVisible": [],
+      "stillFile": null,
+      "blenderComparison": null
+    },
+    {
+      "videoId": "T1KNCtAqJ7A",
+      "timestampSeconds": 0,
+      "timestampUrl": "https://www.youtube.com/watch?v=T1KNCtAqJ7A&t=0s",
+      "topic": "visual-access",
+      "phase": null,
+      "evidenceClass": "SOURCE_BLOCKED",
+      "observation": "No compliant original-video frame/UI access; the older-set versus Character Animations 1.1 version check therefore remains unresolved.",
+      "clipNamesVisible": [],
+      "settingsVisible": [],
+      "stillFile": null,
+      "blenderComparison": null
+    }
+  ],
+  "topics": [
+    {
+      "name": "Native gait",
+      "coverage": "SOURCE_BLOCKED",
+      "plainSummary": "Idle, Walking_A/B/C and Running_A/B could not be visually inspected."
+    },
+    {
+      "name": "Transitions",
+      "coverage": "SOURCE_BLOCKED",
+      "plainSummary": "Idle/Walk/Run state changes, blend method, thresholds and start/stop/turn handling could not be visually inspected."
+    },
+    {
+      "name": "Jump",
+      "coverage": "SOURCE_BLOCKED",
+      "plainSummary": "Jump chain, air-time handling and ground-motion timing could not be visually inspected."
+    },
+    {
+      "name": "Other movement",
+      "coverage": "SOURCE_BLOCKED",
+      "plainSummary": "Backwards, strafe, sneak, crouch, crawl, dodge and ranged movement could not be classified as shown or not shown."
+    },
+    {
+      "name": "Import and rig",
+      "coverage": "SOURCE_BLOCKED",
+      "plainSummary": "Readable scale, skeleton/retarget, root-motion/in-place and engine settings were unavailable."
+    }
+  ],
+  "nextExecutor": "ChatGPT Web/Work with reliable visual video access",
+  "nextTask": "Re-open only the three original Kay Lousberg videos, capture decisive visible frames and timestamps, populate SEEN/NOT_SHOWN evidence, then hand the completed visual return to Blender MCP.",
+  "unresolved": [
+    "All requested visual gait, transition, jump, secondary-movement and import/rig evidence.",
+    "Whether KayKit – Animations – Overview Set 1 visibly represents the older set or Character Animations 1.1.",
+    "Contact sheets and timestamped Blender comparison moments; intentionally not fabricated while frames are blocked."
+  ]
+}
