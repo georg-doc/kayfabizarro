@@ -100,58 +100,44 @@ No merge and no deployment occurred.
 - third-video version classification by visible evidence;
 - timestamped Blender comparison rows.
 
-## Immediate continuation plan · minimal manual evidence
+## Immediate continuation plan · Chrome extension visual scan
 
-The scan does **not** wait passively. If Georg wants to unblock it now, the lowest-effort fallback is to provide a **small set of screenshots or short screen-recorded excerpts** from the original Kay Lousberg videos. ChatGPT then performs all evidence classification, contact-sheet assembly, timestamps table and Blender comparison planning.
+Manual screenshots are **not** the required path.
 
-### Priority source
+Primary executor: **Claude in Chrome** on the original YouTube tabs.
 
-The official current KayKit Character Animations 1.1 page directly links the 2025 detailed Godot tutorial `4p7QaOd8SHE` and a current quick tutorial. The detailed video's public chapter index gives the high-value windows:
+Reason: Anthropic's current official Claude-in-Chrome documentation states that the extension uses the Chrome debugger permission to control the browser and take screenshots, and that Claude takes screenshots of the active tabs it works in to understand visible page content. This satisfies the visual-evidence requirement in principle; transcript/DOM text remains navigation aid only.
 
-- `27:37` — State Machines
-- `31:10` — Animation Transitions
-- `34:14` — In game
-- `34:54` — Animation Timing
-- `42:35` — Mannequin Character
+Secondary official route: **ChatGPT in Chrome / Codex Chrome extension**. OpenAI's current official extension can use open tabs as context and control the browser. Use it if Claude in Chrome fails the same visual gate.
 
-Optional technical context if needed:
-- `04:57` — Import Animations
-- `06:15` — Animation Library
-- `10:49` — Rig_Large Characters
-- `17:35` — Ranged Weapons
-- `37:11–40:50` — External Animations / Retargeting / KayKit animations on retargeted rig
+### Required execution behavior
 
-### Minimal capture request
+1. Open each original Kay Lousberg YouTube video in Chrome.
+2. Run the scan from the Claude/ChatGPT Chrome side panel, not from a text-only web search.
+3. Seek/pause the player at relevant moments.
+4. Inspect the actual visible video frame and any readable UI.
+5. Record exact YouTube timecode + original URL for every claim.
+6. Classify claims as `SEEN`, `SAID`, `INFERRED`, `NOT_SHOWN` or `SOURCE_BLOCKED`.
+7. Use transcript/description only to find candidate moments.
+8. Do not use replacement creators or general Godot/Unity knowledge.
+9. If the extension cannot visually inspect a video after two attempts, preserve that source as `SOURCE_BLOCKED`.
 
-Preferred: **five short screen recordings**, roughly 20–40 seconds around the five high-value chapter points above, with the YouTube timecode visible.
+### Read-first / durable source
 
-Alternative: **10–15 screenshots total**, distributed across those same windows. No polishing or annotation is required.
+Use the existing GitHub return root:
+`skills/chat/workflows/KFB_VIDEO_EVIDENCE_PROTOCOL_2026-10-03/returns/KAYKIT_CREATOR_SCAN_01/`
 
-For each screenshot/excerpt ChatGPT will:
-- read the visible timecode/UI;
-- classify `SEEN` / `SAID` / `INFERRED`;
-- identify visible clip/state names when readable;
-- extract gait/transition/jump/Mannequin observations;
-- build the contact sheets;
-- create exact Blender comparison rows.
-
-### Lower-priority sources
-
-The 2022 tutorial `rwst5GnUU7s` belongs to the old legacy animation line (the old page is now explicitly labelled Legacy and its 1.2 pack is for the older character style). It is retained as historical/version evidence, but Georg does **not** need to capture it first.
-
-`T1KNCtAqJ7A` remains useful mainly to classify whether the old Overview Set 1 belongs to that legacy line. A few identifying frames are sufficient; it does not need a full manual scan before the current 2025 detailed tutorial is processed.
-
-This manual-evidence fallback does not authorize downloading or re-uploading complete videos.
+The Chrome-extension executor continues this return; it does not create a new motion owner, runtime, branch family or deployment.
 
 ## Decision update · 2026-10-03
 
 Georg does **not** approve installing an unfamiliar third-party plugin merely to unblock this scan without first knowing the provider/service, possible costs and requested rights/permissions.
 
 Therefore:
-- no plugin installation is part of the current user action;
-- vidIQ remains only an optional future route to evaluate separately;
-- the GitHub return stays parked and complete as a SOURCE_BLOCKED recovery state;
-- no additional workaround loop is required now.
+- no unrelated third-party video-analysis plugin is part of the workflow;
+- vidIQ remains only an optional/unapproved research option and is not needed;
+- the approved continuation route is the official Claude-in-Chrome or ChatGPT-in-Chrome browser extension;
+- the SOURCE_BLOCKED return is resumed through that Chrome visual route rather than manual screenshot collection.
 
 ## Exactly one next gate
 
