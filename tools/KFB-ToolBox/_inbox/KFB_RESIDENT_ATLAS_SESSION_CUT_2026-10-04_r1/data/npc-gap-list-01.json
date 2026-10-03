@@ -1,0 +1,195 @@
+{
+  "schema": "kfb.npc-gap-list/0.1-candidate",
+  "date": "2026-10-01",
+  "source": {
+    "residents": "data/cast.js RESIDENTS (27 Einträge, residentId gezählt)",
+    "packs": "registry/assets/v1/packs/index.json → kaykit-mystery-series6.collections (Snapshot-Datum unbekannt)",
+    "rule": "Ordner in der Registry ist kein Beleg für Modelle. Vor Bau je Kandidat per Inhaltssuche (glb/gltf, skin) zählen (Regel S28)."
+  },
+  "mysteryHave": [
+    "lorekeeper",
+    "orc-brute",
+    "cleric",
+    "monstrosity",
+    "plant-warrior",
+    "toy-soldier",
+    "gtn",
+    "hoarder",
+    "avian-swordsman",
+    "marksman",
+    "farmers",
+    "clown",
+    "hiker",
+    "protagonists",
+    "black-knight",
+    "witch",
+    "animatronic",
+    "action-figure",
+    "caveman",
+    "demon-lord",
+    "goth-girl",
+    "hero-man"
+  ],
+  "mysteryMissing": [
+    {
+      "id": "orc-raider",
+      "folder": "1 - July 2023 - Orc Raider",
+      "files": 20,
+      "note": "läuft als Fight-Figur, hat aber keine Resident-Vignette",
+      "eyeProfile": null
+    },
+    {
+      "id": "monster-costume",
+      "folder": "3 - September 2023 - Monster Costume",
+      "files": 20,
+      "note": "Handoff: Monster.glb, 23 Joints",
+      "eyeProfile": "monster · ADJUSTED (eye-rig-medium.batch-1)"
+    },
+    {
+      "id": "werewolf",
+      "folder": "4 - October 2023 - Werewolf",
+      "files": 38,
+      "note": "Handoff: Werewolf_Wolf.glb; Mensch/Wolf-Fassungen prüfen",
+      "eyeProfile": "werewolf-wolf · ADJUSTED (eye-rig-medium.batch-1)"
+    },
+    {
+      "id": "driver",
+      "folder": "2 - August 2023 - Driver",
+      "files": 17,
+      "eyeProfile": "driver · ADJUSTED (eye-rig-medium.batch-1)"
+    },
+    {
+      "id": "space-ranger",
+      "folder": "7 - January 2024 - Space Ranger",
+      "files": 34,
+      "eyeProfile": null
+    },
+    {
+      "id": "ninja",
+      "folder": "8 - February 2024 - Ninja",
+      "files": 22,
+      "note": "Handoff: Ninja.glb, 23 Joints",
+      "eyeProfile": "ninja · ADJUSTED (eye-rig-medium.batch-1)"
+    },
+    {
+      "id": "survivalist",
+      "folder": "9 - March 2024 - Survivalist",
+      "files": 35,
+      "eyeProfile": null
+    },
+    {
+      "id": "paladin",
+      "folder": "10 - April 2024 - Paladin",
+      "files": 32,
+      "eyeProfile": null
+    },
+    {
+      "id": "combat-mech",
+      "folder": "1 - July 2024 - Combat Mech",
+      "files": 21,
+      "note": "gemessen: Rig_Medium, 23 Joints, Flügel als starre Meshes am chest; Axt + Minigun (Lauf eigene Node)",
+      "eyeProfile": null,
+      "status": "GEBAUT S16b · combat-mech + combat-mech-alt"
+    },
+    {
+      "id": "robot",
+      "folder": "12 - June 2024 - Robot",
+      "files": 20,
+      "eyeProfile": null
+    },
+    {
+      "id": "superhero",
+      "folder": "2 - August 2024 - Superhero",
+      "files": 25,
+      "note": "nicht verwechseln mit UltraTurboHeroMan (hero-man)",
+      "eyeProfile": null
+    },
+    {
+      "id": "vampire",
+      "folder": "4 - October 2024 - Vampire",
+      "files": 35,
+      "note": "Handoff: Vampire.glb, 23 Joints",
+      "eyeProfile": "vampire · ADJUSTED (eye-rig-medium.batch-1)"
+    },
+    {
+      "id": "helpers",
+      "folder": "6 - December 2024 - Helpers",
+      "files": 54,
+      "note": "Gruppe, größtes offenes Set",
+      "eyeProfile": null
+    },
+    {
+      "id": "frost-golem",
+      "folder": "7 - January 2025 - FrostGolem",
+      "files": 19,
+      "note": "Rig-Klasse unbekannt, evtl. Rig_Large",
+      "eyeProfile": null
+    },
+    {
+      "id": "clanker",
+      "folder": "9 - March 2025 - Clanker",
+      "files": 8,
+      "eyeProfile": null
+    },
+    {
+      "id": "tiefling",
+      "folder": "12 - June 2025 - Tiefling",
+      "files": 21,
+      "eyeProfile": null
+    },
+    {
+      "id": "magical-girl",
+      "folder": "11 - May 2026 - Magical Girl",
+      "files": 7,
+      "note": "Handoff: MagicalGirl.glb, 23 Joints",
+      "eyeProfile": "magical-girl · ADJUSTED (eye-rig-medium.batch-1)"
+    },
+    {
+      "id": "capsule-carl",
+      "folder": "CapsuleCarl",
+      "files": 15,
+      "eyeProfile": null
+    },
+    {
+      "id": "santa",
+      "folder": "Santa",
+      "files": 8,
+      "eyeProfile": null
+    }
+  ],
+  "otherSources": [
+    {
+      "pack": "kaykit-adventurers-2-0-free",
+      "characters": 11,
+      "note": "Dateizahl in Characters/, nicht Figurenzahl"
+    },
+    {
+      "pack": "kaykit-skeletons",
+      "characters": 5,
+      "note": "Warrior/Rogue/Mage sind Residents; Skeleton_Minion nur in der Disco"
+    },
+    {
+      "pack": "kaykit-character-animations-1-1",
+      "characters": 3,
+      "note": "Mannequin"
+    },
+    {
+      "pack": "scifi-ultimate-space-kit-quaternius",
+      "characters": 12,
+      "note": "Quaternius, eigenes Rig"
+    },
+    {
+      "pack": "monsterpack-quaternius",
+      "characters": 96,
+      "note": "Big/Blob/Flying/CuteCubes, eher Mobs als NPCs"
+    },
+    {
+      "pack": "KayKit Mystery Series 7",
+      "characters": null,
+      "note": "PACK_GAPS nennt S7 'indexiert', die Registry kennt es nicht. Erst klären."
+    }
+  ],
+  "promoStatus": "Lokal liegen nur artwork/contents/promo.png für Clown, Black Knight, Animatronic, Witch, Action Figure, Caveman, DemonLord, GothGirl. Für die 19 offenen nicht geprüft.",
+  "updated": "2026-10-03",
+  "eyeBatch": "data/eye-rig/ · Large 4 ADJUSTED_APPROVED · Medium 2 ADJUSTED_APPROVED + 30 ADJUSTED + 1 UNREVIEWED"
+}

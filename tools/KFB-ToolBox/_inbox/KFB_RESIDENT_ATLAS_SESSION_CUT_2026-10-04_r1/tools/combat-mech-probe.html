@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Combat Mech · Sonde</title>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.184.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.184.0/examples/jsm/"}}</script>
+<style>body{font:12px/1.4 ui-monospace,monospace;background:#f3f1ec;color:#222;margin:16px}pre{white-space:pre-wrap}</style>
+</head><body><pre id="out">Sonde läuft …</pre>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const out = document.getElementById('out'); const L = []; const log = (...a) => { L.push(a.join(' ')); out.textContent = L.join('\n'); console.log(a.join(' ')); };
+const REPO = 'georg-doc/kayfabizarro', REF = 'main';
+const DIR = 'media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/';
+const raw = (p) => `https://raw.githubusercontent.com/${REPO}/${REF}/${p.split('/').map(encodeURIComponent).join('/')}`;
+window.__probe = { files: [], models: {} };
+const tfetch = (u, ms = 9000) => { const c = new AbortController(); setTimeout(() => c.abort(), ms); return fetch(u, { signal: c.signal }); };
+async function walk(sub) {
+  const u = `https://api.github.com/repos/${REPO}/contents/${(DIR + sub).replace(/\/$/, '').split('/').map(encodeURIComponent).join('/')}?ref=${REF}`;
+  const r = await tfetch(u); const j = await r.json();
+  if (!Array.isArray(j)) { log('API', r.status, JSON.stringify(j).slice(0, 160)); return; }
+  for (const e of j) {
+    if (e.type === 'dir') { if (!/fbx|obj/i.test(e.name)) await walk(sub + e.name + '/'); }
+    else { window.__probe.files.push(sub + e.name + ' · ' + e.size); log('  ', sub + e.name, e.size); }
+  }
+}
+try {
+  const r = await tfetch(raw('registry/assets/v1/packs/kaykit-mystery-series6.json'), 20000);
+  const txt = await r.text(); log('SHARD', r.status, txt.length);
+  const j = JSON.parse(txt);
+  const seen = new Set();
+  const visit = (o) => { if (!o || typeof o !== 'object') return; if (Array.isArray(o)) return o.forEach(visit); for (const v of Object.values(o)) { if (typeof v === 'string' && v.includes('Combat Mech/') && !seen.has(v)) { seen.add(v); } else visit(v); } };
+  visit(j);
+  for (const p of seen) { const s = p.slice(p.indexOf('Combat Mech/') + 12); window.__probe.files.push(s); log('  ', s); }
+  const a0 = JSON.stringify(j).indexOf('Combat Mech/'); log('SAMPLE', JSON.stringify(j).slice(a0 - 400, a0 + 600));
+} catch (e) { log('SHARD ERR', e.message); }
+const loader = new GLTFLoader();
+const models = (window.__probe.files || []).map((f) => f.split(' · ')[0]).filter((f) => /\.(glb|gltf)$/i.test(f) && !/fbx|obj/.test(f));
+for (const f of models) {
+  try {
+    const g = await loader.loadAsync(raw(DIR + f));
+    const box = new THREE.Box3().setFromObject(g.scene), s = box.getSize(new THREE.Vector3());
+    const nodes = [], skins = new Set(), mats = new Set(); let bones = [];
+    g.scene.traverse((o) => { if (!o.isBone) nodes.push((o.isSkinnedMesh ? 'S:' : o.isMesh ? 'M:' : '') + o.name); if (o.isSkinnedMesh) { skins.add(o.skeleton.bones.length); bones = o.skeleton.bones.map((b) => b.name); } if (o.material) mats.add(o.material.name + (o.material.map ? '[map]' : '')); });
+    const rec = { size: s.toArray().map((v) => +v.toFixed(3)), min: box.min.toArray().map((v) => +v.toFixed(3)), nodes, skins: [...skins], mats: [...mats], clips: g.animations.map((c) => c.name), bones };
+    window.__probe.models[f] = rec;
+    log('\nMODEL', f, JSON.stringify({ size: rec.size, min: rec.min, skins: rec.skins, mats: rec.mats, clips: rec.clips.length + ':' + rec.clips.slice(0, 12).join(',') }));
+    log('  nodes', nodes.join(' | '));
+    if (bones.length) log('  bones', bones.join(','));
+  } catch (e) { log('MODEL ERR', f, e.message); }
+}
+log('\nFERTIG');
+window.__probe.done = true;
+</script></body></html>

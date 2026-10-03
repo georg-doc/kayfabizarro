@@ -1,0 +1,38 @@
+{
+ "schema": "kfb.claude-design-session-cut/1",
+ "project": "KFB_Resident_Atlas",
+ "exportedAt": "2026-10-04",
+ "entry": "KFB_Resident_Atlas_S16.html",
+ "sourceRevision": null,
+ "sourceRevisionNote": "Claude-Design-Workspace, kein Git-Arbeitsverzeichnis. Nicht geraten.",
+ "githubPush": "NOT_PERFORMED",
+ "githubRead": {
+  "repo": "georg-doc/kayfabizarro",
+  "main": "71394636ecec (gelesen 2026-10-03T22:21Z, kurz)",
+  "eyeRigBatch": "kfb-hub/stage/toolbox/eye-rig-batch @ cloudflare-live",
+  "donors": {
+   "donoreyes.v1.js": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "eyeoval.v1.js": "2bfbe0d2d73aeb5f2fc3af5b11983dc099016792",
+   "face-color-sampler.v1.js": "cloudflare-live (blob 7155595290f8)"
+  },
+  "combatMech": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d"
+ },
+ "cdnExternal": [
+  "https://unpkg.com/three@0.184.0"
+ ],
+ "unpinnedRemote": [
+  "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/*_NoEyes.glb @ georg-doc-patch-3",
+  "graft-mount Leser-Assets @ raw main",
+  "KayKit_Mixed_Bag_1_FREE @ main",
+  "skeletons commit main"
+ ],
+ "localNotExported": [
+  "uploads/*.png, ref/atlas/*.gif (nur Referenz-Überblendung)",
+  "KFB_Resident_Atlas_S5–S15 (Messbasen, im Projekt)"
+ ],
+ "voiceInputUncertain": [
+  "„fahrversion\" → als Varianten gelesen",
+  "„Dieter\" → als GitHub gelesen",
+  "„MWp\" → als MVP gelesen"
+ ]
+}
