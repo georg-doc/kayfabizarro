@@ -1,0 +1,78 @@
+name: OSM City Three-geo-play P0
+
+on:
+  push:
+    branches:
+      - main
+      - chatgpt-web/osm-city-three-geo-donor-p0-2026-10-01
+    paths:
+      - 'tools/osm-city-lab/experiments/three-geo-play-donor-p0/**'
+      - 'kfb-hub/stage/osm-city-three-geo-p0/**'
+      - '.github/workflows/osm-city-three-geo-p0.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/osm-city-lab/experiments/three-geo-play-donor-p0
+            kfb-hub/stage/osm-city-three-geo-p0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check tools/osm-city-lab/experiments/three-geo-play-donor-p0/app.mjs
+          node --check tools/osm-city-lab/experiments/three-geo-play-donor-p0/browser-proof.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local Stage
+        run: |
+          python3 -m http.server 4173 > /tmp/tgp0-http.log 2>&1 &
+          sleep 2
+      - name: Source / KFB material / stream browser proof
+        env:
+          TGP0_BASE_URL: http://127.0.0.1:4173/kfb-hub/stage/osm-city-three-geo-p0/
+          TGP0_PROOF_DIR: three-geo-p0-local-proof
+        run: node tools/osm-city-lab/experiments/three-geo-play-donor-p0/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-geo-p0-local-proof
+          path: three-geo-p0-local-proof
+          retention-days: 14
+
+  public-cloudflare:
+    if: github.ref == 'refs/heads/main'
+    needs: local-browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Exact Cloudflare Stage proof
+        env:
+          TGP0_BASE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/osm-city-three-geo-p0/
+          TGP0_PROOF_DIR: three-geo-p0-public-proof
+        run: node tools/osm-city-lab/experiments/three-geo-play-donor-p0/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: three-geo-p0-public-proof
+          path: three-geo-p0-public-proof
+          retention-days: 14

@@ -1,0 +1,142 @@
+{
+  "schema": "kfb.osm-city.three-geo-play-donor-p0.evidence.v1",
+  "date": "2026-10-01",
+  "status": "LOCAL_BROWSER_PASS_PUBLIC_STAGE_PENDING",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/osm-city-three-geo-donor-p0-2026-10-01",
+  "testedHead": "72b26440c135d6aec15426a64fd08172831963be",
+  "workflow": {
+    "runId": 36917324517,
+    "jobId": 110554381199,
+    "artifactId": 11190960336,
+    "result": "18/18 PASS"
+  },
+  "donor": {
+    "repo": "lorenzoMezza/Three-geo-play",
+    "commit": "78a6b822261929a54f731dd08a972cf7b0a11500",
+    "package": "lm-three-geo-play@2.2.0",
+    "license": "MIT"
+  },
+  "runtime": {
+    "three": "0.160.0",
+    "origin": {
+      "lat": 50.949425,
+      "lon": 6.9175
+    },
+    "zoom": 14,
+    "renderDistance": 2,
+    "tileSource": "OpenFreeMap",
+    "browser": "Playwright Chromium / SwiftShader"
+  },
+  "source": {
+    "tiles": {
+      "total": 21,
+      "ready": 21,
+      "loading": 0,
+      "failed": 0,
+      "rebuilding": 0
+    },
+    "events": {
+      "load": 21,
+      "unload": 0,
+      "sourceError": 0
+    },
+    "workers": {
+      "starts": 2,
+      "fallbacks": 0
+    },
+    "renderer": {
+      "calls": 253,
+      "triangles": 668626,
+      "geometries": 252,
+      "textures": 0
+    },
+    "perf": {
+      "fps": 16.01708489054978,
+      "p95Ms": 100,
+      "note": "SwiftShader functional evidence only; not Georg-GPU performance acceptance"
+    }
+  },
+  "kfbMaterial": {
+    "tiles": {
+      "total": 21,
+      "ready": 21,
+      "loading": 0,
+      "failed": 0,
+      "rebuilding": 0
+    },
+    "renderer": {
+      "calls": 253,
+      "triangles": 668626,
+      "geometries": 252,
+      "textures": 0
+    },
+    "proof": "same geometry/draw-call counts as SOURCE; palette/material-only restyle"
+  },
+  "streaming": {
+    "before": {
+      "load": 21,
+      "unload": 0
+    },
+    "after": {
+      "load": 26,
+      "unload": 5
+    },
+    "tilesFinal": {
+      "total": 21,
+      "ready": 21,
+      "loading": 0,
+      "failed": 0,
+      "rebuilding": 0
+    },
+    "workers": {
+      "starts": 2,
+      "fallbacks": 0
+    },
+    "renderer": {
+      "calls": 232,
+      "triangles": 643452,
+      "geometries": 238,
+      "textures": 0
+    }
+  },
+  "seam": {
+    "cityLabAxes": {
+      "x": "east",
+      "z": "north"
+    },
+    "threeGeoAxesObserved": {
+      "x": "east",
+      "z": "south"
+    },
+    "adapter": "city.x = threeGeo.x; city.z = -threeGeo.z",
+    "testPoint": {
+      "lat": 50.9521,
+      "lon": 6.9222
+    },
+    "rawThreeGeo": {
+      "x": 329.62022089811046,
+      "z": -297.7882069797436
+    },
+    "cityLabENU": {
+      "x": 329.6202208980694,
+      "z": 297.7796378724004
+    },
+    "mappedDeltaM": {
+      "x": 4.1e-11,
+      "z": 0.0085691073432
+    },
+    "acceptance": "east and north alignment < 0.02 m"
+  },
+  "screenshots": [
+    "source.png",
+    "kfb-material.png",
+    "stream.png"
+  ],
+  "consoleErrors": 0,
+  "publicStage": {
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/osm-city-three-geo-p0/",
+    "status": "PENDING_NOT_VERIFIED"
+  },
+  "decision": "TECHNICAL_DONOR_GO_FOR_P0B_SEAM_DEFORMATION_PROBE"
+}

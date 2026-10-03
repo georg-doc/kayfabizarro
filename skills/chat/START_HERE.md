@@ -1386,3 +1386,20 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-01 · OSM City · Three-geo-play streaming donor P0
+
+Current bounded candidate is on `chatgpt-web/osm-city-three-geo-donor-p0-2026-10-01`.
+
+- owner remains `tools/osm-city-lab/`;
+- donor: `lorenzoMezza/Three-geo-play@78a6b822261929a54f731dd08a972cf7b0a11500` / 2.2.0;
+- result: **TECHNICAL DONOR PASS · local Chromium 18/18 · public Stage pending**;
+- existing KFB Three r160 is compatible; no second Three runtime was introduced;
+- donor is an optional vector-tile streaming shell only; cached City Lab OSM/identity/provenance/hero geometry and Travel/Race/Ground owners stay unchanged;
+- required coordinate seam is `city.x = threeGeo.x; city.z = -threeGeo.z`; current Ehrenfeld probe is within 0.02 m after mapping;
+- durable Return: `tools/osm-city-lab/docs/THREE_GEO_PLAY_DONOR_P0_RETURN_2026-10-01.md`;
+- exact evidence: `tools/osm-city-lab/evidence/three-geo-play-donor-p0/RESULT_2026-10-01.json`;
+- reserved, **not yet public-verified** Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/osm-city-three-geo-p0/`.
+
+Exactly one next gate: **THREE-GEO-PLAY-P0B** — prove one streamed building and one deterministic City Lab building through one shared existing KFB seam/deformation/presentation adapter before any Town/Travel-wide integration.

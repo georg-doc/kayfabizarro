@@ -22,3 +22,21 @@
 - **PUBLIC DEPLOYMENT:** never infer from a GitHub file existing.
 - **GEORG ACCEPTANCE:** separate human gate.
 - **OPEN:** Travel/Free-Roam receiver integration and browser visual acceptance.
+
+
+## 2026-10-01 · optional native streaming shell
+
+Current experimental donor: `THREE-GEO-PLAY-DONOR-P0`.
+
+Read:
+- `docs/THREE_GEO_PLAY_DONOR_P0_RETURN_2026-10-01.md`
+- `evidence/three-geo-play-donor-p0/RESULT_2026-10-01.json`
+- `experiments/three-geo-play-donor-p0/README.md`
+
+P0 is **TECHNICAL DONOR PASS · local Chromium 18/18 · public Stage pending**.
+
+Three-geo-play is an optional vector-tile streaming shell only. It does not replace cached OSM, normalized City Lab geometry, source identity/provenance, consumer recipes or movement/collision owners.
+
+Required seam: City Lab is `x=east,z=north`; Three-geo-play is `x=east,z=south`. Use `city.x=threeGeo.x; city.z=-threeGeo.z`. Current Ehrenfeld seam proof is < 0.02 m after that mapping.
+
+Next gate: `THREE-GEO-PLAY-P0B` — one streamed building + one City Lab building through one shared existing KFB presentation/deformation adapter. No Town/Travel-wide integration before that gate.
