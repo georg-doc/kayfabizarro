@@ -18,3 +18,27 @@
 .legacy-review-actions .reject{border-color:#79423d}
 .export-review{width:100%;margin-top:6px}
 @media(max-width:900px){.legacy-toolbar{height:auto;flex-wrap:wrap}.legacy-toolbar-review{min-height:48px}}
+
+/* Legacy dark-shell color isolation.
+   Base Batch EyeRig is a light theme (--ink=#211b18, --panel=#fbf8f3).
+   These selectors sit on dark Legacy surfaces and therefore must not inherit
+   the light-theme foreground/background tokens. Keep the right review panel light. */
+.legacy-top{color:#f3ede2}
+.legacy-top h1{color:#f3ede2}
+.legacy-top .kicker{color:#aaa096}
+.legacy-status{color:#aaa096}
+.legacy-status .badge{color:#f0e8dd;border-color:#665d54;background:#171512}
+.legacy-head{color:#f3ede2;border-color:#514940;background:#181613}
+.legacy-head strong{color:#f3ede2}
+.legacy-head small{color:#aaa096}
+.legacy-head .state{color:#aaa096}
+.legacy-head.mounted .state{color:#8fc7af}
+.legacy-head.active{border-color:#c9bbad;background:#2a251f}
+.legacy-stage-wrap{color:#eee7dd}
+.legacy-toolbar{color:#eee7dd;border-bottom-color:#49423a}
+.legacy-toolbar button{border-color:#595047;background:#1a1815;color:#eee7dd}
+.legacy-toolbar button:hover{background:#29251f}
+.legacy-toolbar button.active{border-color:#c7b8a8;background:#4a4034;color:#fff}
+.legacy-toolbar .toolbar-label,.review-count{color:#aaa096}
+#loading{color:#f3ede2;border-color:#595047;background:#141210e8}
+.legacy-stage-label>*{color:#eee7dd;border-color:#595047;background:#12100ee8}
