@@ -44,13 +44,12 @@ Browser evidence:
 - artifact `11263101899`;
 - digest `sha256:74ab7902535bb67aa64fcb5b3f728424c9ce4ba9a87d0ea63cb18176f4d4661b`.
 
-## Source-test note
+## Source-test proof
 
-Runtime/source suite was green on parent implementation head:
-`59cf97ae81bf3bf1ed549ac7ad2236728c611090`.
-
-The current head changed only QA semantics after that source PASS.
-Exact-head source workflow `37092514330` remained stuck in checkout; do not claim it as completed.
+Exact runtime/browser head:
+- workflow `37092514330`;
+- job `111115656754`;
+- result **PASS**.
 
 ## Motion boundary
 

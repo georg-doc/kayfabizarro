@@ -58,9 +58,10 @@ Exact runtime/browser head:
 - result **PASS**.
 
 ### Source suite
-- runtime/source code passed on parent implementation head `59cf97ae81bf3bf1ed549ac7ad2236728c611090`;
-- current head only changed the QA expectation after that source PASS;
-- the exact-head source workflow `37092514330` remained stuck in checkout and is therefore not counted as a new PASS.
+Exact runtime/browser head:
+- workflow `37092514330`
+- job `111115656754`
+- result **PASS**.
 
 ## Building integration repair history
 

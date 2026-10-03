@@ -32,7 +32,8 @@
 - seed 3 browser result: 1 placed building, 14 windows, 1 door;
 - exact runtime head `a18846cf8128e3e1facb0b51be0e6aff873d1244`: Chromium PASS, 0 console/page/QA errors;
 - Resource Registry PASS;
-- source workflow on exact QA-only head remained stuck in checkout and is not claimed as a new PASS.
+- exact runtime/browser head source workflow `37092514330` / job `111115656754` later completed PASS;
+- Resource Registry workflow `37092514368` PASS.
 
 ### Travel regression conclusion
 - Travel main/default product line stayed stale while later features accumulated on stacked branches;
