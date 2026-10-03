@@ -46,7 +46,7 @@ From the research (AI Town, Generative Agents, Lyfe, Humanoid Agents, Concordia,
 - **Adjust next time:** the brief centred on the table simulation and on CritEngine/NIE as narrative engines. The real centre was Residents and Cards (#272 line), which already had most of the design. **Check #272 and the Town living doc first** for any NPC or dialogue brief.
 - **Speech invariants were missing from the brief** and got lost in the first pass (Triplets, Monkey Island, English, no sample dialogue). They are now in §3 above.
 - **CritEngine status:** not empty. Its Living-Doc v0.9 records the Sprint-01 content as adopted; the files are just not split into `archetypes/` yet (ledger C-02). For Resident work it is a donor for conflict axes, not the owner.
-- **Still open from the ledger:** #305 operator names BINGO/BONGO/BOGGLE/BLOEDSINN carry different meanings from the public social calls (D-11, G-10). Keep the two enums separate until Georg decides.
+- **Corrected:** the earlier claim that #305 gives BINGO/BONGO/BOGGLE/BLOEDSINN a different meaning from the public social calls (D-11) was wrong; see §7.6.
 
 ## 6 · What WSA should and should not brief now
 
@@ -65,7 +65,7 @@ From the research (AI Town, Generative Agents, Lyfe, Humanoid Agents, Concordia,
 3. **Koans and haikus are allowed forms; they are not calendar sayings.** Calendar sayings / motivational aphorisms are never wanted. (Town §12.1 "Motivationskoans" means the motivational aphorism, not the koan form.)
 4. **First tests without Fluffolekt.** Fluffolekt stays a later layer.
 5. There is no Resident list yet. **Do not put decisions to Georg in .md files**; ask in chat, with enough context that he can decide without opening files.
-6. #305 operator naming (G-10): still open. Georg needs the context explained in chat before deciding.
+6. #305 operator naming (G-10): **closed, no rename.** The four social calls are the player's Monkey-Island answer options in the Resident chat (three standard reactions + BLÖDSINN as reject/cancel) and general social reactions everywhere; they link no Card. #305 already uses them that way: the call is an input that shapes which Triplet the Resident answers with. The earlier "double meaning" finding (ledger D-11) was wrong and is corrected there.
 
 ## 8 · Files in this folder
 
