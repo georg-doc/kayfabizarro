@@ -47,6 +47,8 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_MEASUREMENT_INTAKE.template.json','utf8'))"
           node -e "const x=JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json','utf8')); if(x.schema!=='kfb.locomotion-ladder/0.2-candidate') process.exit(1)"
           node -e "const x=JSON.parse(require('fs').readFileSync('media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json','utf8')); if(x.schema!=='kfb.motion-catalog.v1'||x.clipCount!==395) process.exit(1)"
+      - name: Native source priority guard
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/native-source-priority.test.mjs
       - name: State machine tests
         run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs
       - name: Measurement reconciliation tests
