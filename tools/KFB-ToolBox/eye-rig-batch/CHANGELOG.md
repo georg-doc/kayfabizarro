@@ -1055,3 +1055,18 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - Stage mirrored at `cloudflare-live@d2cbc94ddde4d7c281a492db350119005f22e153`;
 - current gate: `GEORG_EYERIG_BOOT_REPAIR_VIS_01`.
 
+## 2026-10-03 · View comfort + Clay K1
+
+- Georg accepted the prior boot repair;
+- reduced Orbit mouse-wheel zoom sensitivity to `0.28` with the existing OrbitControls owner;
+- added reversible `Neutral | Clay K1` Stage view;
+- copied Resident Atlas S15 `clay-k1.js` and `clay-soften.v1.js` byte-identically rather than rewriting clay deformation;
+- retained K1 budgets: 4k tris/mesh, max 2 levels, 160k total added tris, cache, no-subdivision skinned path;
+- EyeRig + FaceHost are excluded from K1 deformation;
+- floor uses pinned `clay_floor_001` diffuse/normal/roughness;
+- GTAO/K2 intentionally remains off in this authoring view;
+- focused checks: **15/15 PASS**;
+- full historical static suite: **NOT_RUN** due container DNS failure before checkout;
+- Stage mirror: `cloudflare-live@6406774131723288b757fd676e6d7be3f08b1123`;
+- current gate: `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`.
+
