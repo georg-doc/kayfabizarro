@@ -1,14 +1,19 @@
 {
   "schema": "kfb.procedural-test-world/1",
   "date": "2026-10-03",
-  "status": "CANDIDATE_R2D_BODY_WATER_NATURE_NO_LOCOMOTION",
+  "status": "CANDIDATE_R2D_BODY_WATER_NATURE_BROWSER_PASS_NO_LOCOMOTION",
   "owner": "KFB WorldBuilder",
-  "baseMain": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+  "baseMain": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+  "current": {
+    "pr": 332,
+    "branch": "chatgpt-web/procedural-test-world-01-2026-10-03",
+    "implementationHead": "0335ade26741cf1df4920a723045c25de4fa2a82"
+  },
   "provenWorldDonor": {
     "pr": 327,
+    "status": "CLOSED_DONOR_CONVERGED_INTO_332",
     "testedHead": "8bcfa5853d908a2ed497ce63837879a14c967d86",
     "rehomeParity": "26/26",
-    "zone": "huerth-b1",
     "facts": {
       "buildings": 700,
       "roads": 164,
@@ -24,17 +29,20 @@
     "camera": "wide",
     "cardSystem": false,
     "travelHost": false,
-    "profile": "r2d3"
+    "profile": "r2d3",
+    "rendererOwner": "WB2",
+    "legacyPlayerLoaded": false
   },
   "proceduralDesign": {
-    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain from B3",
+    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain; presentation next",
     "natureModules": [
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs"
     ],
-    "natureMountStatus": "SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED",
+    "natureMountStatus": "SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED",
     "designBrief": {
       "pr": 328,
+      "status": "CLOSED_DESIGN_BRIEF_ADOPTED_BY_332",
       "role": "R2D continuous clay island direction"
     },
     "materialDirection": {
@@ -61,18 +69,27 @@
     "seed": 3,
     "biome": "burg",
     "shape": "frei",
-    "integration": "source-derived plan + height/mask + Track Core road in WB2; no R2D renderer/camera/loop",
+    "integration": "source-derived plan/height/mask + visible body/water + P1/P2 nature + Track Core inside WB2; no R2D renderer/camera/loop",
+    "presentation": {
+      "depth": 25.4,
+      "bodyVertices": 14400,
+      "underside": true,
+      "pond": true,
+      "creek": true,
+      "waterfall": true,
+      "nature": {
+        "centres": 3,
+        "trees": 6,
+        "bushes": 6,
+        "boulders": 3,
+        "edgeRocks": 5,
+        "p2Details": 4
+      }
+    },
     "presentationDeferred": [
       "current building-family/facade presentation",
       "final Clay/material adoption",
       "waterfall droplets/secondary FX polish"
-    ],
-    "presentation": {
-      "underside": "SOURCE_DERIVED_R2D_BODY_MOUNTED",
-      "pond": "SOURCE_DERIVED_WATER_MOUNTED",
-      "creek": "SOURCE_DERIVED_WATER_MOUNTED",
-      "waterfall": "SOURCE_DERIVED_STATIC_RIBBON_MOUNTED",
-      "nature": "P1_P2_SOURCE_PROVEN_GROUPING_MOUNTED"
-    }
+    ]
   }
 }

@@ -2,87 +2,83 @@
 
 ## Human intent
 
-Stop using old Travel Globe as the routine locomotion test environment.
+Build the modern KFB world in parallel and stop forcing Georg back into the legacy Travel Globe for product testing.
 
-Prepare a current procedural KFB world in parallel with Locomotion and Resident work.
+## Current owner
 
-## Current lane
+KFB WorldBuilder
 
 Repo:
 `georg-doc/kayfabizarro`
 
 Draft PR:
-#332
+**#332**
 
 Branch:
 `chatgpt-web/procedural-test-world-01-2026-10-03`
 
-Implementation head proven by CI:
-`4418c0a59808e7cca183535537bee1b086e2d84a`
+Latest tested implementation head:
+`0335ade26741cf1df4920a723045c25de4fa2a82`
 
-## Proven state
+## Proven current state
 
-- stable B3 WorldBuilder owner set rehomed;
-- Hürth-B1 procedural building zone present;
-- WB2 terrain/edit owners retained;
-- old wi1-play disabled in dedicated test-world entry;
-- Travel/card host absent from that entry;
-- wide initial edit camera;
-- P1/P2 procedural nature modules present;
-- source CI PASS;
-- resource registry PASS.
+- clean current-main convergence;
+- WB2 remains the only renderer/world/edit owner;
+- R2D seed 3 / free island form;
+- source-derived top + floating underside;
+- Track Core road;
+- pond, creek, waterfall;
+- P1/P2 source-proven procedural nature grouping;
+- no legacy `wi1-play`;
+- no Travel Globe/card host;
+- one renderer/canvas;
+- source 7/7 PASS;
+- registry PASS;
+- real Chromium PASS;
+- 0 console/page/QA errors.
 
-## Travel regression conclusion
-
-Travel's card regressions were primarily host/lifecycle coupling:
-- huge serial deck startup could leave white cards;
-- Ground suppressed the Flight sky update path that also pumped PDF card artwork;
-- host changed repeatedly while card adapter itself stayed unchanged;
-- tests protected owner/source code more than visible integrated card presentation.
-
-Travel remains a named later consumer/donor, not the neutral test world.
+Browser evidence:
+- run 37087496103 / job 111100703199;
+- artifact 11261420332;
+- digest `sha256:9cef3575443ff99ca7b1144f9cc59e2c3af8ad5db238b81f93749b7ff9a8d9e0`.
 
 ## Motion boundary
 
-Do not attach old `wi1-play`.
-
 Current Motion owner:
-PR #331.
+**PR #333**.
 
-Only attach the new central Motion consumer after:
-- Blender ladder reconciliation;
-- neutral ActionFigure prototype;
-- Georg visual PASS.
+No Player is attached here until:
+1. Blender ladder is reconciled;
+2. neutral ActionFigure prototype works;
+3. Georg gives visual/freeplay PASS.
+
+Do not revive Travel-local locomotion.
+
+## Travel regression rule
+
+Travel stays a later Flight/card consumer and historical donor.
+
+Do not use Travel as the default neutral locomotion test host again.
+
+## GitHub routing
+
+Read first:
+`skills/chat/CURRENT_ACTIVE_BRANCHES_2026-10-03.md`
+
+CURRENT:
+- Motion #333
+- World #332
+- Residents #330 / #315 + narrative recon
+
+Closed PRs remain reachable donor/history evidence; closing did not delete branches.
 
 ## Exactly one next world action
 
-Add bounded procedural nature dressing + continuous-island form seam in the same WorldBuilder owner.
+Use the existing current WorldBuilder building/facade owner on the R2D building pads.
 
-No new world owner.
-No Travel host.
-No locomotion fork.
-
-
-## R2D v0 current direction
-
-Visual playground donor:
-`tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/`
-on main `74f7a690...`.
-
-Current adapter:
-- `r2d-island-core.v1.js`
-- `world-integration-01/r2d-world.js`
-
-Rules:
-- WB2 remains renderer/world/edit owner;
-- no standalone R2D boot inside WB2;
-- no legacy wi1-play;
-- Motion SSOT attaches only after its neutral visual PASS.
-
-Exactly one next world action:
-migrate the R2D floating underside + pond/creek/waterfall presentation into the same WB2 owner, then add source-proven R2D nature grouping.
-
-The R2D heightfield/Track-Core adapter itself is browser PASS:
-run 37085949746 · artifact 11260662426 · digest sha256:d4cc01bf63aec7c6c273bc5416738de26a8c881fc31dad88e3a3f15d9b74a13a.
-
-No locomotion integration until Motion SSOT neutral prototype receives Georg visual PASS.
+Preserve:
+- R2D body/water;
+- Track Core;
+- P1/P2 nature;
+- one WB2 owner;
+- no Player.

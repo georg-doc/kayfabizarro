@@ -24,6 +24,24 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
+## 2026-10-03 · CURRENT ACTIVE ROUTE · Motion + Procedural World + Residents
+
+For current KFB production routing, read:
+`skills/chat/CURRENT_ACTIVE_BRANCHES_2026-10-03.md`
+
+Current implementation entry points:
+- **Motion / Locomotion:** PR #333 · clean current-main convergence · KFB ToolBox Animation/Motion SSOT.
+- **World:** PR #332 · Procedural Test World · R2D in WB2 · current-main clean convergence.
+- **Residents:** PR #330 appearance variants + PR #315 EyeRig consumer prep + Coworker narrative recon branch.
+
+Travel Globe is legacy donor/consumer evidence, **not** the default neutral player test host.
+The Hex visible-world line is donor/asset evidence, not the current open-world runtime.
+
+Hard routing rule:
+after a short donor chain, cut a clean convergence branch from current `main`.
+Do not continue product work on arbitrary old stacked PRs merely because they contain a useful donor.
+
+
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 

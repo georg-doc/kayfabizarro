@@ -2,9 +2,8 @@
 
 Purpose: one human-readable routing page so open Draft PRs do not look like equal current products.
 
-## ACTIVE · Motion / Locomotion
+## CURRENT · Motion / Locomotion
 
-### Current
 PR #333 · **[CURRENT MOTION SSOT] clean current-main convergence**
 
 Owner:
@@ -12,113 +11,115 @@ KFB ToolBox / Animation-Motion authoring.
 
 Use for:
 - semantic locomotion states;
-- clip/profile truth;
+- source-backed clip/profile truth;
 - measured contacts/speeds/phases;
-- central state machine;
-- measurement reconciliation.
+- central motion state machine;
+- KCL / Motion Library / Blender measurement reconciliation.
 
 Parallel Blender measurement:
 `coworker/locomotion-ladder-01-brief-2026-10-03`
 → expected output `LOCOMOTION_LADDER_01.json`.
 
-### Donor/history
-- PR #127 · Motion Lab v1 donor base.
-- PR #294 · Ground locomotion profile consumer donor.
+Closed donor history:
+#127, #294, #331.
 
-Do not start new consumer locomotion work from either donor.
-Travel/Combat integrate only after the central neutral prototype receives Georg visual PASS.
+Do not build a consumer-local locomotion state machine.
 
 ---
 
-## ACTIVE · World
+## CURRENT · World
 
-### Current technical candidate
-PR #332 · **[CURRENT WORLD CANDIDATE] Procedural Test World 01 · R2D in WB2**
+PR #332 · **[CURRENT WORLD] Procedural Test World · R2D in WB2**
 
 Base:
-current `main`.
+current main.
 
-Purpose:
-- future default KFB movement/combat test world;
-- R2D v0 source-derived island height/masks + Track Core road are now browser PASS inside WB2;
-- no Travel Globe dependency;
-- no card lifecycle;
-- old `wi1-play` locomotion detached;
-- stable WorldBuilder terrain/edit/presenter owners retained.
+Current tested implementation:
+`0335ade26741cf1df4920a723045c25de4fa2a82`
 
-Source donor:
-PR #327 · B3 stable WorldBuilder consumer PASS.
+Browser-proven in one WB2 owner:
+- R2D continuous island top;
+- floating underside;
+- Track Core road;
+- pond;
+- creek;
+- waterfall;
+- source-proven P1/P2 nature groups;
+- no Travel/card host;
+- no legacy player.
 
-Design direction:
-PR #328 · R2D continuous clay islands.
+This is the future movement/Drive/Combat integration host after those owners are proven.
 
-### World donor/history stack
-Do not start fresh work from:
-- #307 World Corridor stack base
-- #311 P0 procedural props frozen proof
-- #313 local procedural-props donor
-- #316 procedural environment P2 donor
-- #319 building B0
-- #322 building B1
-- #323 building B2
+Closed World donor/history:
+#307, #311, #313, #316, #319, #322, #323, #327.
+R2D design brief #328 is closed as adopted direction.
+Branches remain available as evidence.
 
-These remain evidence/donors only.
-Their useful result is converged into #327 and now the clean current-main candidate #332.
-
-### Rule going forward
-After a short donor chain, cut a clean convergence branch from current `main`.
-Do not keep extending 6–10 stacked Draft PRs as the product branch.
+Current next World task:
+existing current building/facade family on R2D building pads.
 
 ---
 
-## ACTIVE · Residents
+## CURRENT · Residents
 
 Parallel and independent:
-- PR #330 · character appearance variants
-- PR #315 · EyeRig Cleanup02 / consumer prep
-- Coworker narrative recon branch:
-  `coworker/kfb-narrative-core-recon-01-2026-10-02`
+- PR #330 · character appearance variants;
+- PR #315 · EyeRig Cleanup02 / consumer prep;
+- Coworker narrative recon:
+  `coworker/kfb-narrative-core-recon-01-2026-10-02`.
 
-Resident/Narrative work does not wait for locomotion unless a feature directly consumes the final player locomotion owner.
+Resident Chat implementation PRs #305/#306/#308/#310 are closed donor history.
+Their code/evidence remains available.
 
-Resident Chat PRs #305/#306/#308/#310 remain useful implementation/donor history; the Coworker recon governs the current narrative interpretation.
+Island World and Residents do not wait for Locomotion unless a specific feature directly consumes the final player motion owner.
 
 ---
 
-## LEGACY / FROZEN · Travel as test host
+## LEGACY / LATER CONSUMER · Travel Globe
 
-Travel Globe remains a donor for:
+Travel remains useful for:
 - Flight behavior;
 - card/sky history;
-- specific Travel mechanics.
+- named Travel mechanics.
 
-It is **not** the default neutral locomotion test world anymore.
+It is **not** the neutral player test world.
 
-Relevant history:
-- Travel PR #43 · large recovery host
-- #44 · frozen Mobility Playground candidate
-- #45 · frozen headless input probe
+Closed Travel recovery/history:
+#39, #41, #43, #44, #45.
 
-Why:
-the old Travel host combines world, card presentation, Ground/Flight and multiple integration layers. Host changes repeatedly caused unrelated presentation regressions.
+Reason:
+the old host mixed world, cards, Ground, Flight and repeated integration changes. Parallel branch divergence plus host lifecycle changes caused visible presentation regressions even when the card-start module itself stayed unchanged.
 
-See:
+Read:
 `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/TRAVEL_REGRESSION_ANALYSIS.md`.
+
+---
+
+## HEX · asset/topology evidence only
+
+Visible Hex-island reconstruction is not the current open-world route.
+
+Closed but retained donor evidence:
+#317, #318, #320.
+
+Measured Hex/catalog facts remain reusable where useful.
 
 ---
 
 ## Working rule
 
-New implementation starts from one of:
+New product implementation starts from:
 1. current main, or
-2. the explicitly named current candidate above.
+2. the explicitly named CURRENT candidate above.
 
-Never start from an arbitrary older stacked PR because it happens to contain a donor.
+After a short donor chain, cut a clean convergence from current main.
 
-Status words:
-- **CURRENT** = start here.
-- **DONOR/HISTORY** = read/reuse facts, do not continue product work here.
-- **FROZEN** = recovery/evidence only.
-- **DESIGN BRIEF** = direction, not runtime owner.
+Do not extend long stacked Draft-PR chains as the product branch.
+
+Status:
+- CURRENT = continue here;
+- DONOR/HISTORY = reuse facts/code, do not continue product work;
+- FROZEN = recovery evidence only;
+- DESIGN BRIEF = direction, not runtime owner.
 
 No automatic merge or Live promotion.

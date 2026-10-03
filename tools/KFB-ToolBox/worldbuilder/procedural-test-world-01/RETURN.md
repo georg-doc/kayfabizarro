@@ -1,68 +1,93 @@
 # RETURN · Procedural Test World 01
 
-Status: **CLEAN WORLD CANDIDATE · SOURCE/CI PASS · NOT STAGE**
+Status: **CURRENT WORLD CANDIDATE · R2D BODY/WATER/NATURE BROWSER PASS · NO PLAYER · NOT STAGE**
 
-## What changed
+## Human result
 
-A new clean WorldBuilder branch now exists independently of the old Travel Globe.
+The old Travel Globe is no longer needed as the routine movement/combat test environment.
 
-It:
-- starts from current main rather than the old Travel recovery chain;
-- rehomes the proven B3 WorldBuilder owner set;
-- opens the Hürth-B1 procedural-building world directly;
-- uses a wider initial camera;
-- does not initialize the legacy `wi1-play` locomotion;
-- has no Travel-card startup dependency;
-- carries the source-proven P1/P2 procedural nature modules for the next dressing pass.
+PR #332 now contains a clean WorldBuilder host based on current main with:
+- continuous R2D island surface;
+- visible floating underside;
+- Track Core road;
+- pond;
+- creek;
+- waterfall;
+- source-proven procedural nature groups from P1/P2;
+- no Travel/card startup;
+- no legacy `wi1-play`;
+- no local locomotion state machine.
 
-## Why this matters
+This is the world that the central Motion owner can later attach to after its neutral ActionFigure prototype receives Georg visual PASS.
 
-Future locomotion review no longer needs to happen inside the historical Travel host.
+## Current implementation proof
 
-The finished central Motion SSOT can later attach here as a named consumer.
+Tested implementation head:
+`0335ade26741cf1df4920a723045c25de4fa2a82`
 
-## Current proof
+Source tests:
+- **7/7 PASS**
+- run 37087496100
+- job 111100703113
 
-Implementation head:
-`4418c0a59808e7cca183535537bee1b086e2d84a`
+Resource Registry:
+- **PASS**
+- run 37087496086
+- job 111100703115
 
-- Procedural Test World source CI PASS.
-- KFB resource-registry CI PASS.
-- clean PR diff contains only intended world/test files.
+Real Chromium / WB2:
+- **PASS**
+- run 37087496103
+- job 111100703199
+- artifact 11261420332
+- digest `sha256:9cef3575443ff99ca7b1144f9cc59e2c3af8ad5db238b81f93749b7ff9a8d9e0`
 
-## Open
+Browser facts:
+- one WB2 renderer/canvas;
+- R2D body depth 25.4;
+- 14,400 body vertices;
+- underside present;
+- pond / creek / waterfall present;
+- nature groups: 3 centres, 6 trees, 6 bushes, 3 boulders, 5 edge rocks, 4 P2 detail groups;
+- Track Core road present;
+- legacy player absent;
+- Travel Globe absent;
+- card-start absent;
+- 0 console errors;
+- 0 page errors;
+- 0 QA problems.
 
-The world is not yet a final continuous island.
-Current runtime world is the proven Hürth procedural-building context.
-P1/P2 nature dressing and R2D continuous-island form are next world work.
+## Travel regression conclusion
 
-## Next
+The card module itself was not repeatedly rewritten. The regression amplifier was the old host:
+- locomotion iterations kept changing `wb0.js` / lifecycle around the card system;
+- newer card/Town/presentation work lived on parallel branches while later Mobility work continued from an older Travel recovery host;
+- Ground also suppressed a Flight sky-update path that had been pumping PDF card artwork;
+- source/owner tests did not prove the final visible card presentation after each host change.
 
-Add a bounded source-proven procedural nature cluster and continuous-island terrain/form seam in this same WorldBuilder owner.
+Rule now:
+**do not use a legacy or stale host as the default product-integration test world.**
 
-No Locomotion/Drive/Combat work in that world gate.
+Travel remains a later consumer/donor for Flight/cards, not the neutral world.
 
+## GitHub cleanup
 
-## R2D adoption checkpoint · 2026-10-03
+Closed as donor/history, branches preserved:
+- Motion donors #127, #294, #331;
+- World stack #307, #311, #313, #316, #319, #322, #323, #327 and design brief #328;
+- Resident chat donors #305, #306, #308, #310;
+- Hex handoff/bench/ramp donors #317, #318, #320;
+- Travel legacy/recovery Mobility PRs #39, #41, #43, #44, #45 in KFB-Travel-Globe.
 
-Claude Design R2D v0 on current main is now the visual donor for the playground.
+Current clean entry points:
+- Motion: PR #333.
+- World: PR #332.
+- Residents: #330 / #315 + Coworker narrative recon.
 
-Implemented:
-- pure source-derived R2D plan/height/mask module;
-- WB2 R2D provider;
-- Track Core road mounted through existing WB2 scene;
-- test-world entry switched from Hürth-B1 to R2D seed #3;
-- no R2D renderer/camera/frame-loop imported.
+## Exactly one next world action
 
-Not yet full visual parity:
-underside body, water surfaces/waterfall, nature grouping and current building owner remain next world presentation work.
+Mount the **existing current building/facade family** onto the R2D building pads inside this same WB2 world.
 
-
-## Browser proof
-The R2D→WB2 adapter now has real Chromium proof on head `57759ca9...`.
-
-Therefore the future locomotion playground no longer needs Hürth or Travel as its visual host.
-
-Current visual boundary:
-R2D shape/height/masks + Track Core road are integrated.
-Floating underside, water presentation, waterfall, source nature grouping and current building-family presentation are still additive world work.
+Do not add Player/Drive/Combat yet.
+Do not create another world owner.
+Do not publish Stage yet.
