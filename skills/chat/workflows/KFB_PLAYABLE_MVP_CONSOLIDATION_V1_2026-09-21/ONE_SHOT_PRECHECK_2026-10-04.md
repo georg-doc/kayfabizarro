@@ -37,6 +37,7 @@ Only close seams that the final integrated loop depends on.
 GitHub durable architecture:
 - `SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
 - `WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
+- `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
 
 Production Control contains the full additive MVP ledger through v1.8.
 
@@ -74,6 +75,9 @@ After clean convergence:
 - three real Track-Core ROAD_BRIDGE connections;
 - stable world IDs / anchor IDs;
 - four World Recipe fixtures;
+- Utopia/Dystopia/Protopia recipes resolve canonical `forget_utopia` / `ignore_dystopia` / `embrace_protopia` deck IDs;
+- one small reviewed Card seed set per satellite;
+- derived biome/Resident/media tags remain traceable to canonical Card refs;
 - validation report;
 - no Player/Drive yet.
 
@@ -216,6 +220,22 @@ Lock before One-Shot:
 - otherwise preserve original/source eyes or an explicitly named safe fallback;
 - never silently promote ADJUSTED/UNREVIEWED to accepted;
 - only principal MVP Residents need a source-clean visual result.
+
+### P1-6 · DECK / CHATTER SOURCE LOCK
+
+Current source contract:
+`DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
+
+Before One-Shot:
+- keep PDF/Card crop as visual truth;
+- keep deck JSON as semantic source;
+- bind Utopia/Dystopia/Protopia Residents to deck-backed `WORLD_KNOWLEDGE_PROFILE` / `RESIDENT_KNOWLEDGE_PROFILE`;
+- reuse the existing ChatterBox semantic Triplet grammar rather than inventing another dialogue engine;
+- use canonical Card refs for Billboard → dialogue → Almanac continuity;
+- prove one shared neutral event framed distinctly by one Resident per future island;
+- expose the selected Card/deck refs in evidence/debug output.
+
+This can ride inside `WORLD-MULTI-ISLAND-CORRIDOR-01` / `DECK-WORLD-SEED-01`; it is not a separate runtime owner.
 
 ## D · Useful donors to PIN, not “integrate everything”
 
