@@ -1,7 +1,7 @@
 {
   "schema": "kfb.procedural-test-world/1",
   "date": "2026-10-03",
-  "status": "CANDIDATE_WORLD_READY_NO_LOCOMOTION",
+  "status": "CANDIDATE_R2D_HEIGHTFIELD_WORLD_NO_LOCOMOTION",
   "owner": "KFB WorldBuilder",
   "baseMain": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
   "provenWorldDonor": {
@@ -23,7 +23,8 @@
     "play": false,
     "camera": "wide",
     "cardSystem": false,
-    "travelHost": false
+    "travelHost": false,
+    "profile": "r2d3"
   },
   "proceduralDesign": {
     "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain from B3",
@@ -52,5 +53,21 @@
     "stable procedural-world development surface independent of Travel Globe",
     "future locomotion/Drive/Combat integration host after their owners are proven",
     "world design and Resident placement can evolve in parallel now"
-  ]
+  ],
+  "r2d": {
+    "sourceMain": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+    "donorPath": "tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/KFB_R2D_v0/island.js",
+    "donorBlob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d",
+    "seed": 3,
+    "biome": "burg",
+    "shape": "frei",
+    "integration": "source-derived plan + height/mask + Track Core road in WB2; no R2D renderer/camera/loop",
+    "presentationDeferred": [
+      "full underside mesh",
+      "pond/creek water surfaces",
+      "waterfall particles",
+      "R2D nature placement",
+      "B2 facade replacement"
+    ]
+  }
 }

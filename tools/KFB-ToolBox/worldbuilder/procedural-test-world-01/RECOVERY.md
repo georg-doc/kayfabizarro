@@ -61,3 +61,23 @@ Add bounded procedural nature dressing + continuous-island form seam in the same
 No new world owner.
 No Travel host.
 No locomotion fork.
+
+
+## R2D v0 current direction
+
+Visual playground donor:
+`tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/`
+on main `74f7a690...`.
+
+Current adapter:
+- `r2d-island-core.v1.js`
+- `world-integration-01/r2d-world.js`
+
+Rules:
+- WB2 remains renderer/world/edit owner;
+- no standalone R2D boot inside WB2;
+- no legacy wi1-play;
+- Motion SSOT attaches only after its neutral visual PASS.
+
+Exactly one next world action:
+browser-prove the R2D heightfield/Track-Core adapter, then migrate the floating underside + water presentation into the same WB2 owner.

@@ -41,3 +41,18 @@ P1/P2 nature dressing and R2D continuous-island form are next world work.
 Add a bounded source-proven procedural nature cluster and continuous-island terrain/form seam in this same WorldBuilder owner.
 
 No Locomotion/Drive/Combat work in that world gate.
+
+
+## R2D adoption checkpoint · 2026-10-03
+
+Claude Design R2D v0 on current main is now the visual donor for the playground.
+
+Implemented:
+- pure source-derived R2D plan/height/mask module;
+- WB2 R2D provider;
+- Track Core road mounted through existing WB2 scene;
+- test-world entry switched from Hürth-B1 to R2D seed #3;
+- no R2D renderer/camera/frame-loop imported.
+
+Not yet full visual parity:
+underside body, water surfaces/waterfall, nature grouping and current building owner remain next world presentation work.

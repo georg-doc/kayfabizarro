@@ -8,7 +8,7 @@ It exists so future movement/combat testing does **not** require the old Travel 
 
 ## Current behavior
 
-- boots directly into Hürth B1 procedural-building world;
+- boots directly into the source-derived R2D island #3 heightfield inside WB2;
 - 700-building stable WorldBuilder consumer donor;
 - wider initial camera;
 - terrain/edit owners retained;
@@ -45,3 +45,13 @@ The old Travel Globe remains donor/history for specific Flight/card behaviors, n
 
 This branch is source/CI preparation only.
 Do not give Georg a Cloudflare test URL until the world branch has real browser proof and a meaningful integrated review state.
+
+
+## R2D v0 donor adopted · 2026-10-03
+
+Read `R2D_INTEGRATION.md`.
+
+The Claude Design R2D v0 island is now the visual/world-shape donor for this test-world lane.
+The first adapter consumes its exact plan/height/mask logic and Track Core road without booting the donor renderer.
+
+Hürth/B3 remains technical WorldBuilder recovery/donor evidence, not the intended playground appearance.

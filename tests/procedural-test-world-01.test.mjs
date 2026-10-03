@@ -21,10 +21,10 @@ test('legacy play owner is disabled only for this host profile',()=>{
   assert.match(app,/locomotion intentionally detached/);
 });
 
-test('test world boots current B3 procedural building zone',()=>{
-  assert.match(html,/world:'huerth-b1'/);
-  assert.equal(profile.provenWorldDonor.pr,327);
-  assert.equal(profile.provenWorldDonor.facts.buildings,700);
+test('test world boots source-derived R2D island profile',()=>{
+  assert.match(html,/world:'r2d3'/);
+  assert.equal(profile.r2d.seed,3);
+  assert.equal(profile.r2d.donorBlob,'6952697d7d3c9cd159ac3fdd924f24fa333c904d');
 });
 
 test('future motion dock points to central Motion SSOT, not wi1-play',()=>{
@@ -35,4 +35,18 @@ test('future motion dock points to central Motion SSOT, not wi1-play',()=>{
 test('source-proven procedural nature families are routed without claiming placement',()=>{
   assert.equal(profile.proceduralDesign.natureModules.length,2);
   assert.equal(profile.proceduralDesign.natureMountStatus,'AVAILABLE_NOT_YET_PLACED_IN_WORLD');
+});
+
+
+test('R2D integration consumes pure source-derived world data and does not create a second renderer owner',()=>{
+  const core=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js',import.meta.url),'utf8');
+  const adapter=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js',import.meta.url),'utf8');
+  assert.match(core,/donorBlob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'/);
+  assert.match(core,/export function planIsland/);
+  assert.match(core,/export function fields/);
+  assert.doesNotMatch(core,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame/);
+  assert.doesNotMatch(adapter,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame/);
+  assert.match(adapter,/ST\.buildTrack\(THREE,P\.stream/);
+  assert.match(app,/WORLD_ID\.startsWith\('r2d'\)/);
+  assert.match(app,/WORLD\.baseHeightAt/);
 });
