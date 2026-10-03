@@ -1,0 +1,133 @@
+# KayKit locomotion set: status, handover and integration proposal
+
+Coworker (Blender MCP), 2026-10-03. For WSA and for the next Coworker run. Georg decides what is built.
+Branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03` (PR #344). Nothing is merged.
+
+## 1. Decisions Georg made today (binding)
+
+| # | Decision |
+|---|---|
+| D1 | KayKit Character Animations 1.1 is the only source for the basic set. Mixamo and the Motion Library are additive only, for proven gaps. |
+| D2 | Walk = `Walking_B`, run = `Running_A`, sprint = `Running_B`. Walking_A and Walking_C remain as calmer variants. |
+| D3 | No separate jog clip. The jog is the speed blend between Walking_B and Running_A (see the reference video). |
+| D4 | Quaternius UAL 1+2 is parked as a reserve (on GitHub under `media/3D_Assets/Quaternius_Universal_Animation_Library/`). It is not needed for the basic set. |
+| D5 | Order of work: (1) basic set on Rig_Medium → (2) sword, pistol and rifle carry/aim on walk and run → (3) transfer to Rig_Large → (4) a bounce/squash-and-stretch layer for the legacy characters. |
+| D6 | The review actor is the KayKit Mannequin; FrizzleBob v5 is the second actor. |
+
+## 2. What exists and has been checked
+
+| File | What it shows | Where |
+|---|---|---|
+| `KAYKIT_LOCO_RAMP_01_walk_run_sprint.mp4` | idle → walk → run → sprint → walk → idle, then the same at half speed. KayKit clips only. | GitHub (this folder) + Dropbox `BLENDER MCP/KAYKIT_LOCO_SET_01/` |
+| `KAYKIT_LOCO_WEAPONS_01.mp4` | sword, pistol and rifle on walk, run and sprint, carrying and aiming | same |
+| `KAYKIT_LOCO_RAMP_01_Mannequin_Medium.glb`, `KAYKIT_LOCO_WEAPONS_01_Mannequin_Medium.glb` | the baked test animations (each one clip) | Dropbox |
+| `ramp.py`, `compose.py` | the scripts that build them (blend logic below) | GitHub + Dropbox |
+| `ramp_slip.json` | foot creep per segment of the ramp | GitHub + Dropbox |
+| `../RETURN/` | the native baseline: all clips measured, contact sheets, KEEP/HOLD verdicts | GitHub |
+
+Georg's verdict on the ramp video: "looks great, finally usable". This is the visual reference for the runtime.
+
+## 3. The locomotion recipe (what the runtime must reproduce)
+
+One speed parameter drives everything. There are no state jumps between walk, run and sprint, only weights.
+
+| Anchor | Clip | Speed (m/s, rig units) | Cycle T (s) | Left-foot-down phase |
+|---|---|---|---|---|
+| idle | Idle_A | 0 | 1.067 | — |
+| walk | Walking_B | 0.980 | 1.067 | 0.000 |
+| run | Running_A | 3.303 | 0.800 | 0.0833 |
+| sprint | Running_B | 5.255 | 0.800 | 0.125 |
+
+Rules, all checkable:
+
+1. **Weights.** Between two neighbouring anchors, the weights are linear in speed. At most two clips are active at once.
+2. **One shared phase (0..1).** Each clip samples at `t = ((phase + leftFootDownPhase) mod 1) · T`. This makes the left foot land at the same moment in both clips. Without this alignment the blend looks like stumbling.
+3. **Phase rate.** `Σ wᵢ/Tᵢ / Σ wᵢ` over the active locomotion clips. Idle runs on its own clock.
+4. **Root speed equals the speed parameter.** The character moves at exactly the blended speed. The clips are in place, so this is what keeps the feet planted.
+5. **Blend local rotations (slerp) and local translations (lerp) of every bone.** Translations matter: the KayKit clips animate bone translations (hips bob, etc.). Blending rotations only gives the wrong leg length and visible sliding. This was a real bug in my first test.
+
+Measured foot creep in the ramp (max per contact; PASS ≤ 4.4 cm = 2 % of height):
+
+| Segment | Max creep |
+|---|---|
+| walk ↔ run blend | 2.9 cm |
+| run | 0.5 cm |
+| run ↔ sprint blend | 3.6 cm |
+| sprint | 3.4 cm |
+| walk | 4.9–6.5 cm (heel-to-toe roll of Walking_B, not a slide; my contact test counts the roll) |
+| idle → walk start | 10 cm |
+| walk → idle stop | **19 cm** (last step before standing) |
+
+Starting and stopping are the weak spots. Neither KayKit nor Quaternius has start or stop clips. Proposed fix: shorter blend windows, and stop on a foot contact (wait for the next left- or right-foot-down phase before blending to idle). Turn in place and strafe walk are still open. They are not needed for the first slice.
+
+## 4. Weapons (what the weapon video shows)
+
+- **The weapon sits on a `handslot.r` node under `hand.r`.** This is the KayKit convention, copied from KayKit Adventurers: translation `(0, 0.0961, -0.0575)`, rotation quaternion `(0, 0, 0.7071, 0.7071)`. Mirror it for the left hand: `(0, 0, -0.7071, 0.7071)`.
+- **The Mannequin GLB has no handslot nodes.** I add them in the test GLB. The runtime must add them, or use the GLB I deliver.
+- **Weapon files used:**
+  - sword: `KayKit_Adventurers_2.0_FREE/Assets/gltf/sword_1handed.gltf`
+  - pistol: `KayKit_Mystery_Series6/UltraTurboHeroMan/.../UltraTurboHeroMan_Blaster.gltf`
+  - rifle: `KayKit_Mystery_Series6/6 - Toy Soldier/.../ToySoldier_Rifle.gltf`
+
+  All three attach with identity on handslot.r; no extra rotation is needed.
+- **Layering = upper-body mask.** The legs come from walk, run or sprint. These bones come from the weapon clip: `spine, chest, head, upperarm.*, lowerarm.*, wrist.*, hand.*`.
+  - pistol aim: upper body from `Ranged_1H_Aiming`
+  - rifle carry: upper body from `Running_HoldingRifle`, phase-synced to the legs
+  - rifle aim: upper body from `Ranged_2H_Aiming`
+  - rifle sprint: native `Running_HoldingRifle`
+  - sword: no upper-body clip; the normal arm swing carries the sword
+- **Three.js note:** `AnimationMixer` has no bone masks. Split each clip's tracks by bone name into a "lower" clip and an "upper" clip, then play both. The split clips are deterministic, so I can deliver them pre-split in the GLB.
+- **Open defects:** see §7.
+
+## 5. Rig_Large transfer (next Coworker step, facts already checked)
+
+- Rig_Large has **the same 23 bone names** as Rig_Medium, in a different order. Clips transfer by bone name: copy local rotations.
+- Proportions differ:
+
+  | | Rig_Medium | Rig_Large |
+  |---|---|---|
+  | hips height | 0.406 | 1.041 |
+  | thigh | 0.227 | 0.569 |
+  | shin | 0.149 | 0.413 |
+
+  So hips translation and root speed are scaled by about 2.6 (leg-length ratio). Speeds and phases are measured again on Large rather than assumed.
+- Built-in check: Rig_Large has native `Walking_A` and `Running_A`. The transferred Medium versions must match them in speed (±10 %) and slip. If they don't, the transfer method is wrong.
+
+## 6. Proposal for the WSA integration slice
+
+**Slice name (proposal):** `KFB-LOCO-SLICE-01`: one playable character with KayKit locomotion and weapon carry in the KFB world.
+
+**Split of work:**
+
+| Owner | Delivers | Must not |
+|---|---|---|
+| Coworker | One canonical GLB per rig: `KFB_KAYKIT_LOCO_SET_01_Rig_Medium.glb` / `_Rig_Large.glb` with all needed clips, handslot nodes and pre-split upper/lower clips. One `loco_set.json` with the table from §3 (clip, speed, T, phase offset, mask) and the weapon table. Reference videos per rig. Measured numbers. | build runtime or controller code |
+| WSA | Runtime: input → speed parameter → blend per §3, weapon switch, camera. Capture a side-view video in the same framing as the reference. | re-pick or re-time clips; average conflicting numbers; reorder priorities; mix sources. A conflict is reported, not solved silently. |
+| Georg | Look decisions; accepts the slice by comparing the runtime capture with the reference video | — |
+
+**Acceptance conditions (all must hold):**
+
+1. All clips come from `KFB_KAYKIT_LOCO_SET_01_*.glb`, and only KayKit clips are referenced.
+2. Speed thresholds, phase offsets and masks are read from `loco_set.json`, not hard-coded differently.
+3. Steady walk, run and sprint: foot creep ≤ 4.4 cm on Medium. The runtime capture shows no visible sliding against the reference video.
+4. A ramp of 0 → 5.26 → 0 m/s shows no pose pop, no T-pose frame and no double-step at the walk/run boundary.
+5. Weapon switch (none / sword / pistol / rifle) keeps the legs unchanged, and the weapon stays in the hand in every frame.
+6. Rig_Medium and Rig_Large use the same code path; only the JSON and GLB differ.
+7. Every deviation from the reference is listed in the return, with a video frame.
+
+**Not in this slice:** turn in place, strafe walk, start/stop clips, jump integration, combat attacks, the legacy bounce layer, travel modes.
+
+## 7. Weapon video findings (Coworker review, Georg has not judged yet)
+
+| Segment | Verdict | Finding |
+|---|---|---|
+| Sword · walk | OK | Blade forward at hip height, swings with the arm. |
+| Sword · run | **DEFECT** | The Running_A arm swing lifts the hand to chest/face height, and the blade sweeps up in front of the face (video 2.5–5.0 s, every arm swing). A run with a sword needs a calmer sword arm. KayKit has no 1H sword-hold clip. Options: (a) reduce the right-arm swing (partial upper-body weight), (b) use the sword arm from `Melee_Blocking` or `Melee_2H_Idle` as the upper layer, (c) accept it. Georg decides the look. |
+| Sword · sprint | OK | Blade stays mostly horizontal. |
+| Pistol · walk/run, arms free | **DEFECT** | With a normal arm swing, the muzzle swings across and into the chest. Proposal: the pistol is holstered when not aiming. When drawn, it always uses the `Ranged_1H_Aiming` upper body. |
+| Pistol aim · walk/run | OK | The arm points forward; legs and upper body read as one movement. |
+| Rifle · walk/run (upper body from `Running_HoldingRifle`) | OK | The rifle is held across the body and the arms stay calm. Recommended carry pose. |
+| Rifle · sprint (native) | OK | Same legs as Running_B. |
+| Rifle aim · walk/run (`Ranged_2H_Aiming`) | OK | The rifle points forward. The upper body rides on the hip sway of the walk; acceptable at walk speed, slightly wobbly at run speed. |
+
+Weapon orientation: all three models point their long axis along handslot +Z (sword along +Y). With identity attachment they are correct; checked in a straight side view, because a 3/4 view makes a forward-pointing barrel look like it points down.
