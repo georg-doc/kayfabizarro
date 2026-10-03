@@ -25,3 +25,12 @@ tests on this exact branch, then measurement reconciliation.
 
 Parallel work:
 Island World and Residents/EyeRigs remain active and independent.
+
+
+## Checkpoint 2
+The authoring tool now consumes the central state owner itself.
+
+No local automatic speed-band state machine remains in Motion Lab.
+
+Next:
+independent ActionFigure full-role browser measurement using the canonical locomotion-profile owner, then reconcile with Blender MCP measurements.
