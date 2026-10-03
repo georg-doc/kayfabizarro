@@ -1,8 +1,8 @@
 # AUDIO-ARRANGE-01 DONOR REBASE · TEST REPORT
 
-**Status:** PASS · PUBLIC STAGE PENDING  
-**Tested head:** `3d85d7e2aa103ab0bb2b388c678584d9ece19484`  
-**Run / job:** `37093077519 / 111117349198`
+**Status:** PUBLIC_VERIFIED · HUMAN A/B PENDING  
+**Tested head:** `e7e55078208a031207a67299d54015f67aa78a29`  
+**Run / job:** `37093867717 / 111119683066`
 
 ## Source validation
 
@@ -18,7 +18,7 @@ Proves:
 
 ## Chromium / WebAudio
 
-**24/24 PASS**
+**25/25 PASS**
 
 Proves:
 - one AudioContext;
@@ -29,6 +29,7 @@ Proves:
 - exact sample-synchronous scheduling for reconstruction and arrangement;
 - Cyclical master/stem timeline compatibility;
 - fixed form gain map;
+- A/B mode gain calibration;
 - SPACE reduced;
 - PSY wet path increased;
 - no page/console errors;
@@ -52,11 +53,22 @@ Proves:
 
 ## Evidence
 
-Artifact:
-- ID `11262876991`
-- size 307,312 bytes
-- digest `sha256:e08c061ac8f580d469b07586c52dd8c52db3fa94dc191e3f77d71f951077df19`
+Source artifact:
+- ID `11263208942`
+- digest `sha256:b22361501dc0db8ab08d773a5e73b6d3e721ea82e9d3589c27bad6ae8c4b0a22`
 - contains `results.json` + desktop screenshot.
+
+## Public exact-route proof
+
+- Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/`
+- publication: `cloudflare-live@9761d68b83da0e8c091fe22e9edbb8d00054a9c7`
+- Cloudflare Pages check `111120414788`: **SUCCESS**
+- public run/job: `37094037185 / 111120175674`
+- exact public Chromium/WebAudio: **25/25 PASS**
+- passed on retry attempt 3
+- artifact: `11262928219`
+- digest: `sha256:d8dbdff3eb862d23402cdc3dd90670ef68388712651c3bc53dd3ca3d7024de3c`
+- external runtime requests: **0**
 
 ## Not proven
 
@@ -70,4 +82,4 @@ Those are human listening decisions.
 
 ## Next gate
 
-Public exact-route A/B listening only.
+**GEORG_AUDIO_ARRANGE_AB_01** — human musical A/B only.
