@@ -1,3 +1,26 @@
+## 2026-10-04 · CURRENT OVERRIDE · Resident Atlas / Site-native MVP
+
+The older foundation text below is historical planning context and must not override current routing.
+
+Current receiving world is **KFB WorldBuilder / WB2** on Draft PR #332, not the old Travel/TinySkies neutral host. Travel remains a later Flight/card consumer/donor.
+
+Current Resident MVP intake:
+`WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
+
+Source package:
+`tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/`
+
+MVP planning now explicitly includes:
+- Resident-set placement + Save/Reload in WB2;
+- shared 3D In-Place Editor reuse;
+- Asset Librarian Resident/scenelet search;
+- Orc Band as a placeable performance module;
+- Resident Disco as a placeable performance module;
+- Wrestling / Show Ring as a placeable Town module, while full rope physics/Fight Sandbox completion stays non-blocking;
+- Site/God-Mode placement and Lean-Memory/NPC-continuity seams.
+
+Exactly one current WSA gate from this intake is **WSA-RES-SET-01**: prove Mummy + Combat Mech + Clown through `kfb.resident-set/0.1` into the current WB2 scene document, terrain grounding, shared object editor, Save and Reload. Do not start Band/Disco/Wrestling packaging as a second integration slice before that seam is proven.
+
 # KFB playable MVP consolidation · Astra execution brief v1
 
 Status: **PLANNING READY · DO NOT START UNTIL CURRENT HUMAN GATES ARE LOCKED**  
