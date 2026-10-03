@@ -568,3 +568,106 @@ Persisted run `35662264764` / job `106539992446`:
 - digest `sha256:e7a8b41d8172c621aef3c1250d95c2e938db58cac761b83459fbe026cf8d8ba1`
 
 No public Stage proof in this slice yet.
+
+## 2026-10-03 · KLR-EYE-VIS-01 REVIEW UI
+
+Goal:
+make the already-proven 17/17 Rig_Legacy EyeRig profile set practically reviewable without rebuilding Legacy assembly or introducing a second eye runtime.
+
+### Implementation
+
+Review UI implementation:
+`85e332b84f83b0e527c0272999e6e97bd56f7a7a`
+
+Static review-contract update:
+`27392d5e2fbe171d4186a7b74ff3c96b46ca0a54`
+
+Changed runtime:
+- `legacy/index.html`
+- `legacy/app.js`
+- `legacy/styles.css`
+- `lib/legacy-eye-adapter.v1.js`
+
+Added:
+- Front / ¾ L / ¾ R views;
+- source-eyes shown/hidden cleanup comparison;
+- minimal X spacing / Y height / Eye size / Inset tuning;
+- Approve / Adjusted approve / Reject;
+- local review persistence under `kfb.toolbox.eye-rig-legacy-review.v1`;
+- automatic remount of reviewed profile or existing persisted profile when a head is selected;
+- Next review;
+- review JSON export.
+
+EyeRig v6 remains the eye owner. The Legacy adapter only forwards `setAnchor()` and `setEye()` to the existing EyeRig instance.
+
+### Existing Legacy evidence retained
+
+No Legacy profile or source inventory was regenerated.
+
+Historical proven base remains:
+- automatic source-first static: **24/24 PASS**;
+- automatic source-first browser/WebGL: **247/247 PASS**;
+- persisted-profile static/profile: **30/30 PASS**;
+- persisted-profile browser/WebGL: **215/215 PASS**;
+- 17/17 exact profile identity;
+- 16 MEASURED_CANDIDATE;
+- Skull HUMAN_REQUIRED;
+- 0 failed resources / page-console errors in the proven browser runs.
+
+### New focused readback
+
+**17/17 PASS**
+
+Checks:
+1. app syntax;
+2. adapter syntax;
+3. catalog count 17;
+4. persisted profile count 17;
+5. 16 measured + 1 human-required;
+6. Skull is human-required;
+7. source-first hard precondition retained;
+8. EyeRig v6 / EyeOval ownership retained;
+9. minimal tuning adapter API;
+10. Front + ¾ views;
+11. source-eye cleanup comparison;
+12. four placement tuning controls;
+13. approve / adjusted approve / reject actions;
+14. additive local review persistence;
+15. source identity of all 17 persisted profiles unchanged;
+16. selected head remounts reviewed/persisted profile;
+17. review JSON export.
+
+Expanded repository static contract now contains **38 assertions**.
+
+GitHub Actions runs for head `27392d5e2fbe171d4186a7b74ff3c96b46ca0a54`: **none**.
+
+Therefore:
+- new focused readback: **17/17 PASS**;
+- expanded 38-assertion suite: **PERSISTED · NOT_RUN**;
+- historical 247/247 + 215/215 runtime evidence remains historical and is not relabeled as current review-UI CI.
+
+### Stage
+
+Stage mirror:
+`cloudflare-live@26a17e973f7548f8df39cdcf1270352acc402858`
+
+Exact Stage readback:
+- legacy app blob `4c0b1663a3bd72698e1d31fb9cfaeebb9ba0f098`;
+- legacy index blob `ba3f1b6a1e3c9f67394f0c50be887ceac1b09a5c`;
+- legacy styles blob `e32a739ca35a8cd5c37d949836cc63d9d347ecbb`;
+- legacy adapter blob `fce918e5a43a840fe1ef5424e3c549473a956b2e`.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
+
+Current browser tool cannot open `pages.dev`; `PUBLIC_VERIFIED` therefore remains **OPEN** until human-visible confirmation.
+
+### Next gate
+
+**KLR-EYE-VIS-01 · Georg review of all 17 Legacy heads**
+
+For each head:
+Front → ¾ L / ¾ R → optionally show source eyes → tune only if needed → Approve / Adjusted approve / Reject.
+
+Skull: manually tune or leave unsupported.
+
