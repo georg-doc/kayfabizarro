@@ -350,3 +350,25 @@ Later: Farmers palette mapping, unresolved Blender/NoEyes cleanup, separate Stud
 
 No merge or Live promotion.
 
+## 2026-10-03 · EyeRig roadmap correction · Legacy review next
+
+Georg reprioritized correctly: per-eye/eyepatch controls are a detail, while Legacy coverage is the next major EyeRig expansion.
+
+Current Legacy owner already exists:
+- Draft PR #162;
+- branch `chatgpt-web/legacy-eye-batch-17-2026-09-21`;
+- 17/17 persisted Legacy profiles;
+- 16 MEASURED_CANDIDATE;
+- Skull HUMAN_REQUIRED;
+- automatic source-first browser/WebGL **247/247 PASS**;
+- persisted-profile reconstruction **215/215 PASS**.
+
+Current next gate is therefore:
+`KLR-EYE-VIS-01 · 17-head human visual review`
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
+
+Per-eye / Survivalist remains documented but deferred until after Legacy visual acceptance.
+No merge or Live promotion.
+
