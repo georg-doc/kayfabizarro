@@ -131,6 +131,20 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - Exactly one next gate: `KFB_SIGNATURE_THEME_GENERATION_01` — generate 2–4 masters, human-select winner, then stem only the winner.
 - No automatic merge or consumer integration.
 
+## 2026-10-03 · KFB Jukebox Music Graph direction
+
+- AUDIO-STEM-BED-02 R2 remains **HUMAN_ACCEPTED**.
+- Georg decided to retain **all authored songs** in the KFB Jukebox rather than choose only one winner.
+- Current RoadTrip-v2 source inventory on main: **42 master MP3s / 12 paired stem families**.
+- Newly added paired families: Beetle-Wrestling Entrance 01 (118 BPM), Beetle-Wrestling Entrance (119 BPM), Surf Groove 3min (100 BPM).
+- Beetle-Wrestling Entrance 01 is a longer alternate, not a replacement.
+- One additional Jazz track is still being authored and is a later additive intake, not a blocker.
+- Canonical catalog owner stays `media/3D_Assets/Sounds/jukebox.json`; Travel already consumes it RAW-first.
+- Proposed model: catalog ≠ unlock state; NPC/biome discovery writes lean track receipts; Fractal Almanac can surface music memories; auto-radio uses seeded weighted selection; biome/resident soundscapes reference masters/ambience/stings; no arbitrary cross-song stem mixing.
+- Architecture note: `skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_JUKEBOX_MUSIC_GRAPH_v1.md`.
+- Exactly one next implementation gate: `KFB_JUKEBOX_CATALOG_01`.
+- No Stage required for the catalog-only slice; no auto-merge.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.

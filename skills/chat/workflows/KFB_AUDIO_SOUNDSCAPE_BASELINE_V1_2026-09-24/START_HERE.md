@@ -217,3 +217,16 @@ Historical technical browser evidence: 8/8 PASS at `1adbdba8c17b7ef4f1f987197b48
 ## Stop condition
 
 Do not implement AUDIO-CAL-01 in this baseline slice. This slice closes when the audit, architecture, Recovery/Return, additive changelog and KFB Hub/router pointers are persisted on the branch and handed to WSA.
+
+## CURRENT FOLLOW-UP · KFB Jukebox Music Graph · 2026-10-03
+
+Georg's current direction is to retain all authored songs through the canonical Jukebox.
+
+- Current RoadTrip-v2 inventory on main: 42 masters / 12 paired stem families.
+- Jukebox remains catalog/audio-selection owner; do not create a replacement player.
+- Catalog state and player unlock/discovery state remain separate.
+- Lean Memory stores compact track receipts; Fractal Almanac may surface music memories.
+- Auto-radio should be seeded/deterministic and context-weighted.
+- Resident/biome soundscapes reference tracks + ambience/stings rather than owning another AudioContext.
+- Cross-song pitched stem mixing is off by default.
+- Next implementation gate: `KFB_JUKEBOX_CATALOG_01`.

@@ -823,7 +823,7 @@
     {
       "id": "kfb-audio-stem-bed-02-mood-pool-2026-10-03",
       "kind": "workflow",
-      "status": "HUMAN_ACCEPTED",
+      "status": "HUMAN_ACCEPTED_JUKEBOX_EXPANSION_NEXT",
       "version": "0.1",
       "path": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/START_HERE.md",
       "recovery": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/RECOVERY.md",
@@ -857,8 +857,8 @@
         "cross-song pitched stem mixing",
         "Live promotion"
       ],
-      "nextGate": "KFB_SIGNATURE_THEME_GENERATION_01",
-      "note": "R2 HUMAN_ACCEPTED. Cyclical remains stem-certified; four new donors master-safe. Signature-theme generation is next."
+      "nextGate": "KFB_JUKEBOX_CATALOG_01",
+      "note": "R2 HUMAN_ACCEPTED. Georg keeps all songs. Next: extend canonical Jukebox catalog for 42 RoadTrip-v2 masters / 12 stem families, then seeded context selection + memory bridge in later owner-safe slices."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

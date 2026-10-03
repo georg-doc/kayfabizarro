@@ -139,3 +139,11 @@ Public Stage publication is still pending at this checkpoint. No public or human
 - Acceptance covers the current mix/ducking direction, not blanket approval of every raw sound asset.
 - Remaining audio backlog: crowd/weather/traffic/friction source-bank curation, character voice-profile metadata, and later owner-specific adoption.
 - No PR merge or automatic consumer integration performed.
+
+## 2026-10-03 · Jukebox Music Graph direction
+
+- Georg decided to retain all authored songs.
+- current RoadTrip-v2 source census: 42 masters / 12 paired stem families.
+- added three paired families: Beetle-Wrestling Entrance 01, Beetle-Wrestling Entrance, Surf Groove 3min.
+- canonical Jukebox stays owner; later Jazz upload uses the same intake.
+- next gate: `KFB_JUKEBOX_CATALOG_01`.
