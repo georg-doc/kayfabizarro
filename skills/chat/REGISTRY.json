@@ -380,7 +380,7 @@
       "sharedEyeRigProtocol": "tools/2D Animation Studio/shared/eye-rig/eye-rig-protocol.v1.json",
       "sharedEyeRigBridge": "tools/2D Animation Studio/shared/eye-rig/toolbox-bridge.v1.json",
       "toolboxEyeRigBatch": "tools/KFB-ToolBox/_handover/EYE_RIG_BATCH_2026-09-18/START_HERE.md",
-      "toolboxEyeRigBatchStatus": "HUMAN_ACCEPTED_VIEW_WHEEL_READY_NEXT_SLICE",
+      "toolboxEyeRigBatchStatus": "HUMAN_ACCEPTED_NEXT_PER_EYE_CONTROL",
       "toolboxEyeRigBatchSourceHead": "59ad5e5860a4a30582ca2a1b05c6e3514430c191",
       "toolboxEyeRigBatchControlSemantics": "16/16 PASS · 252/252 ring-depth invariant · Eye size centre-locked",
       "toolboxEyeRigBatchControlSemanticsStage": "0f3fa194746c7eabbf15d590a18532ecb42332c1",
@@ -418,7 +418,13 @@
       "toolboxEyeRigBatchHumanAcceptance": "2026-10-03 · Georg: das klappt alles · accepted app blob 5635b28496af0e06cfe7f60a01b23e5612bad6e1",
       "toolboxEyeRigBatchClosedGates": "BOOT_REPAIR_VIS_01 · WHEEL_ZOOM_VIS_02 · VIEW_COMFORT_CLAY_VIS_01",
       "toolboxEyeRigBatchNextOutcome": "Mirrored default + optional L/R offsets + per-eye visibility · first proof Survivalist eyepatch",
-      "toolboxEyeRigBatchNextCompatibility": "40-profile browser data loads unchanged · same localStorage namespace · no reset"
+      "toolboxEyeRigBatchNextCompatibility": "40-profile browser data loads unchanged · same localStorage namespace · no reset",
+      "toolboxEyeRigBatchAcceptedRuntimeBlob": "5635b28496af0e06cfe7f60a01b23e5612bad6e1",
+      "toolboxEyeRigBatchAcceptedRuntimeStillCurrent": true,
+      "toolboxEyeRigBatchNextBrief": "tools/KFB-ToolBox/eye-rig-batch/docs/PER_EYE_CONTROL_BRIEF_2026-10-03.md",
+      "toolboxEyeRigBatchNextBriefBlob": "c298c126ba3a9abdfe3fa578be770ed5ca5d3582",
+      "toolboxEyeRigBatchPublicHubHead": "5f9030e84073f890bf4680db673640cfceed5f13",
+      "toolboxEyeRigBatchNextHumanGate": "GEORG_EYERIG_PER_EYE_SURVIVALIST_VIS_01"
     },
     {
       "id": "animation-lab",
