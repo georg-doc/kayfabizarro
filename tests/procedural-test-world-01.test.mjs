@@ -6,6 +6,7 @@ const root=new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/'
 const html=fs.readFileSync(new URL('PROCEDURAL_TEST_WORLD_01_SOURCE.html',root),'utf8');
 const profile=JSON.parse(fs.readFileSync(new URL('WORLD_PROFILE.json',root),'utf8'));
 const app=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js',import.meta.url),'utf8');
+const adapterSource=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js',import.meta.url),'utf8');
 
 test('procedural test world uses stable WorldBuilder and no Travel host',()=>{
   assert.match(html,/\.\.\/wb2-design-01\/wb2d-app\.js/);
@@ -62,5 +63,5 @@ test('R2D presentation adds floating body water and source-proven nature without
   assert.match(presentation,/environment-family-p1\.mjs/);
   assert.match(presentation,/environment-family-p2\.mjs/);
   assert.doesNotMatch(presentation,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame|setAnimationLoop/);
-  assert.match(adapter,/mountR2DPresentation/);
+  assert.match(adapterSource,/mountR2DPresentation/);
 });
