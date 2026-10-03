@@ -1,0 +1,720 @@
+{
+  "schema": "kfb.eye-rig-appearance-variants/0.1-candidate",
+  "owner": "KFB ToolBox / Rigging",
+  "source": {
+    "owner": "Resident Atlas",
+    "pr": 330,
+    "branch": "chatgpt-web/resident-character-variant-coverage-2026-10-03",
+    "head": "49263809ded4efb40e1ed078cd7153db79c02f14",
+    "path": "tools/resident_atlas_s6/data/character-variant-requirements.v1.json",
+    "blob": "909fe854265c9d9f49e59cdee99d27ca6808cc63",
+    "sourceRevision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+  },
+  "policy": {
+    "geometryProfile": "One EyeRig geometry profile per actor geometry. Palette choice is separate appearance state.",
+    "persistence": "Same localStorage namespace; appearanceByActor is additive and does not reset profiles.",
+    "visualCheck": "Each selectable source appearance can be loaded with the same geometry profile so face/lid color can be checked.",
+    "sourceGates": "Do not invent palette-to-geometry mappings when the source audit marks them open."
+  },
+  "counts": {
+    "families": 25,
+    "sourceAppearanceVariants": 56,
+    "mappedGeometryActors": 31,
+    "runtimeSelectableFamilies": 24,
+    "sourceGatedFamilies": 1
+  },
+  "families": [
+    {
+      "id": "orc-raider",
+      "label": "Orc Raider",
+      "sourceFolder": "1 - July 2023 - Orc Raider",
+      "textureFamily": "orc_texture",
+      "actorIds": [
+        "orc-raider"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/textures/orc_texture_A.png",
+          "blob": "2035dea050702373c5d2d3c9c49a3381c93b1122",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/textures/orc_texture_B.png",
+          "blob": "10a21d6e6b5bb90cf7a7f566112abe6c9f4406dd",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "combat-mech",
+      "label": "Combat Mech",
+      "sourceFolder": "1 - July 2024 - Combat Mech",
+      "textureFamily": "combatmech_texture",
+      "actorIds": [
+        "combat-mech"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/textures/combatmech_texture.png",
+          "blob": "ae88a47d5414ef6b3b2bd9c336d113e6a6536013",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/textures/combatmech_texture_alt.png",
+          "blob": "047709e0ef308571f457afa61443997f69ec4ac5",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "paladin",
+      "label": "Paladin",
+      "sourceFolder": "10 - April 2024 - Paladin",
+      "textureFamily": "paladin_texture",
+      "actorIds": [
+        "paladin",
+        "paladin-helmet"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_A.png",
+          "blob": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+          "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "hiker",
+      "label": "Hiker",
+      "sourceFolder": "11 - May 2025 - Hiker",
+      "textureFamily": "hiker_texture",
+      "actorIds": [
+        "hiker"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/textures/hiker_texture.png",
+          "blob": "ce586ad32a6ded653ef4fa94f8f63bf614a1b6fb",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/textures/hiker_texture_b.png",
+          "blob": "c548358cb7ffd0922b9e24864ca2c20558e352b1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "magical-girl",
+      "label": "Magical Girl",
+      "sourceFolder": "11 - May 2026 - Magical Girl",
+      "textureFamily": "magical_girl_texture",
+      "actorIds": [
+        "magical-girl"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_A.png",
+          "blob": "9f927362ccd0c58159d7442489965052935a6b7e",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_B.png",
+          "blob": "7692a6d3730df7c29e5901b5a1ad9f84b1045e6d",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "C",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_C.png",
+          "blob": "fde6e26edad7a1ce77241b50a83504a9f556a565",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "D",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_D.png",
+          "blob": "903ef0385f25598d00eeaadc54fc3f17c02e4364",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "robot",
+      "label": "Robot",
+      "sourceFolder": "12 - June 2024 - Robot",
+      "textureFamily": "robot_texture",
+      "actorIds": [
+        "robot-one",
+        "robot-two"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/textures/robot_texture.png",
+          "blob": "06989c6361189eb4a0de33c20ba5d465998c99c5",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/textures/robot_texture_alt.png",
+          "blob": "d4e348681f8e05303c5201d9a6baf030ce2487ec",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "tiefling",
+      "label": "Tiefling",
+      "sourceFolder": "12 - June 2025 - Tiefling",
+      "textureFamily": "tiefling_texture",
+      "actorIds": [
+        "tiefling"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2025 - Tiefling/textures/tiefling_texture.png",
+          "blob": "e94797d1bd8f9a3a9d714479b951286f495a7f71",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2025 - Tiefling/textures/tiefling_texture_b.png",
+          "blob": "9606604cbab71ac27e2adab45103cfdad3d4b016",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "farmers",
+      "label": "Farmers",
+      "sourceFolder": "12 - June 2026 - Farmers",
+      "textureFamily": "farmer_texture",
+      "actorIds": [
+        "farmer-a",
+        "farmer-b"
+      ],
+      "runtimeSelectable": false,
+      "mappingStatus": "SOURCE_MAPPING_OPEN",
+      "note": "Farmer A/B geometry exists, but exact texture A/B → model mapping is not source-proven yet; variants are registered but switching stays disabled.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/farmer_texture_A.png",
+          "blob": "dd70e3553875406da15fe0229c49103acc98ad1a",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/farmer_texture_B.png",
+          "blob": "0818c10c7b74336ee4646f2c8f2877f8c8121cea",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "driver",
+      "label": "Driver",
+      "sourceFolder": "2 - August 2023 - Driver",
+      "textureFamily": "driver_texture",
+      "actorIds": [
+        "driver"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/textures/driver_texture.png",
+          "blob": "764d0ccf8461270cfa9b5c752ee65fcd78f2720d",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/textures/driver_texture_B.png",
+          "blob": "984239a51d309e906297d68c5802c7b0b5a1677b",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "superhero",
+      "label": "Superhero",
+      "sourceFolder": "2 - August 2024 - Superhero",
+      "textureFamily": "superhero_texture",
+      "actorIds": [
+        "superhero"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2024 - Superhero/textures/superhero_texture.png",
+          "blob": "b313879ba3ac1a6860a8fbb1eb65c239c806021e",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2024 - Superhero/textures/superhero_texture_alt.png",
+          "blob": "15ff469435aa1fee4c6c5c4caebe3da445fd3d73",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "orc-brute",
+      "label": "Orc Brute",
+      "sourceFolder": "2 - August 2025 - Orc Brute",
+      "textureFamily": "orcbrute_texture",
+      "actorIds": [
+        "orc-brute"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/orcbrute_texture_A.png",
+          "blob": "cb5ff752ffa2f0f538d04c5c45e96925ff7f2b6b",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/orcbrute_texture_B.png",
+          "blob": "21d7a06bc175adbbaf69d9d864f0bf3ecab8bea7",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "monster-costume",
+      "label": "Monster Costume",
+      "sourceFolder": "3 - September 2023 - Monster Costume",
+      "textureFamily": "monstercostume_texture",
+      "actorIds": [
+        "monster",
+        "monster-costume-alt"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_A.png",
+          "blob": "450b6c5a3cf9299110efe6d6fc4c5a5bd1a54e44",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_B.png",
+          "blob": "6a5d6a69af62a593c276e5a718a4d797a878a4b6",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "C",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_C.png",
+          "blob": "d3911c6fe4e01b42fb3a348eaf5aabad745d3473",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "D",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_D.png",
+          "blob": "be14e0b41e1bd12fde6b4c50f0901e9ed19417e1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "black-knight",
+      "label": "Black Knight",
+      "sourceFolder": "3 - September 2024 - Black Knight",
+      "textureFamily": "blackknight_texture",
+      "actorIds": [
+        "black-knight"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/textures/blackknight_texture.png",
+          "blob": "16768c4e5e9d1cde861518adcf28a10394d9ea42",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/textures/blackknight_texture_alt.png",
+          "blob": "c018f7ab39b3d61766f4bf4abe67ad232b89f262",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "cleric",
+      "label": "Cleric",
+      "sourceFolder": "3 - September 2025 - Cleric",
+      "textureFamily": "cleric_texture",
+      "actorIds": [
+        "cleric"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/cleric_texture.png",
+          "blob": "b1b94c92e8374d19ff79e0a9bcf585fc8114e6d1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/cleric_texture_B.png",
+          "blob": "bdae7497454af9901d6e66fdb19ef79d5e999736",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "werewolf",
+      "label": "Werewolf",
+      "sourceFolder": "4 - October 2023 - Werewolf",
+      "textureFamily": "werewolf",
+      "actorIds": [
+        "werewolf-wolf",
+        "werewolf-man"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/textures/werewolf_A.png",
+          "blob": "d2ff4319e166784cbe6cdc62c9ec7829d4dcc1c4",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/textures/werewolf_B.png",
+          "blob": "ce6068196a65b83c4a3797a3283ebb5abea84593",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "monstrosity",
+      "label": "Monstrosity",
+      "sourceFolder": "4 - October 2025 - Monstrosity",
+      "textureFamily": "monstrosity_texture",
+      "actorIds": [
+        "monstrosity"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/monstrosity_texture_A.png",
+          "blob": "28387431c1984fe4c70a42d0a06aea509f8315e6",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/monstrosity_texture_B.png",
+          "blob": "d8c1c04957f1f50c36970eb8f51b9eb59a399067",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "animatronic",
+      "label": "Animatronic",
+      "sourceFolder": "5 - November 2023 - Animatronic",
+      "textureFamily": "animatronic",
+      "actorIds": [
+        "animatronic-creepy",
+        "animatronic-normal"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/textures/animatronic_A.png",
+          "blob": "bee0f7f426ba1ae589b9dda1e2d360d935cf7d81",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/textures/animatronic_B.png",
+          "blob": "bf5375c26ab6e80f66bfa591829b04617d498be2",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "witch",
+      "label": "Witch",
+      "sourceFolder": "5 - November 2024 - Witch",
+      "textureFamily": "witch_texture",
+      "actorIds": [
+        "witch"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/textures/witch_texture_A.png",
+          "blob": "8014ae73314e609421cc45e76a04dc8c84ac7aa5",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/textures/witch_texture_B.png",
+          "blob": "2a9717ef94802fbb732c089d8311fe5cd1d270ff",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "plant-warrior",
+      "label": "Plant Warrior",
+      "sourceFolder": "5 - November 2025 - Plant Warrior",
+      "textureFamily": "plantcreatures_texture",
+      "actorIds": [
+        "plant-warrior"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/plantcreatures_texture.png",
+          "blob": "ef75cb04932642569d15a215d3ac136bbe8c95c9",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/plantcreatures_texture_B.png",
+          "blob": "34dc1a5fcfdd0206a07fae78b8976c41daa443b0",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "ninja",
+      "label": "Ninja",
+      "sourceFolder": "8 - February 2024 - Ninja",
+      "textureFamily": "ninja_texture",
+      "actorIds": [
+        "ninja"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_A.png",
+          "blob": "2829550ff523e04ddb2fc311cacebd806f35e794",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_B.png",
+          "blob": "3ad750fd904f765b50e8db0e8af13623053bf60e",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "C",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_C.png",
+          "blob": "371656267bf0ff144885bb79f324cceeeefb8f1e",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "D",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_D.png",
+          "blob": "3372a9cdf067420d9b875e61702eb79e0822e61c",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "hoarder",
+      "label": "Hoarder",
+      "sourceFolder": "8 - February 2026 - Hoarder",
+      "textureFamily": "hoarder_texture",
+      "actorIds": [
+        "hoarder"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/hoarder_texture.png",
+          "blob": "716fa6e3afaddebe786925bba1049f8d1e2644c1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/hoarder_texture_B.png",
+          "blob": "5613322b8d6926fcef9cb6c1c2219fbd83bb0cd1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "clanker",
+      "label": "Clanker",
+      "sourceFolder": "9 - March 2025 - Clanker",
+      "textureFamily": "clanker_texture",
+      "actorIds": [
+        "clanker"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/textures/clanker_texture.png",
+          "blob": "5a753d7d63b1041bddca96baa5091524c8041dc1",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/textures/clanker_texture_alt.png",
+          "blob": "62286c86c5c340319270e8ae64d55a8cb1d709a9",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "avian-swordsman",
+      "label": "Avian Swordsman",
+      "sourceFolder": "9 - March 2026 - Avian Swordsman",
+      "textureFamily": "avianswordsman_texture",
+      "actorIds": [
+        "avian"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/avianswordsman_texture.png",
+          "blob": "c0c081e8684456631c21ea6c612418fb5df191a4",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/avianswordsman_texture_B.png",
+          "blob": "10925c06b4725e42f4a0bfb55b05796603a71c70",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "goth-girl",
+      "label": "Goth Girl",
+      "sourceFolder": "GothGirl",
+      "textureFamily": "gothgirl_texture",
+      "actorIds": [
+        "gothgirl"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/textures/gothgirl_texture.png",
+          "blob": "a977d07571b967f0a7ead7f0603f297ec0a52bca",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/textures/gothgirl_texture_b.png",
+          "blob": "2de24d42a5461cd938b93d62ca528dee03dd7368",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    },
+    {
+      "id": "ultra-turbo-hero-man",
+      "label": "Ultra Turbo Hero Man",
+      "sourceFolder": "UltraTurboHeroMan",
+      "textureFamily": "ultraturboheroman_texture",
+      "actorIds": [
+        "ultra-turbo-hero-man"
+      ],
+      "runtimeSelectable": true,
+      "mappingStatus": "SOURCE_PATHS_VERIFIED",
+      "note": "Shared geometry EyeRig profile; appearance texture may be switched independently.",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/textures/ultraturboheroman_texture_A.png",
+          "blob": "784a668a689a249ceeefa99c2815148cd2b9a912",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/textures/ultraturboheroman_texture_B.png",
+          "blob": "81f1af9263587855d87a899a4cca9b6fece04630",
+          "revision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
+        }
+      ]
+    }
+  ]
+}
