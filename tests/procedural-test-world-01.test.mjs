@@ -35,7 +35,7 @@ test('future motion dock points to central Motion SSOT, not wi1-play',()=>{
 
 test('source-proven procedural nature families are routed without claiming placement',()=>{
   assert.equal(profile.proceduralDesign.natureModules.length,2);
-  assert.equal(profile.proceduralDesign.natureMountStatus,'SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED');
+  assert.equal(profile.proceduralDesign.natureMountStatus,'SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED');
 });
 
 
@@ -64,4 +64,26 @@ test('R2D presentation adds floating body water and source-proven nature without
   assert.match(presentation,/environment-family-p2\.mjs/);
   assert.doesNotMatch(presentation,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame|setAnimationLoop/);
   assert.match(adapterSource,/mountR2DPresentation/);
+});
+
+
+test('R2D building pads consume exact B1 donors through the existing facade owner',()=>{
+  const b=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js',import.meta.url),'utf8');
+  assert.match(b,/fixtureBlob:'1452f44920239e870091b1803c0d2bd183679881'/);
+  assert.match(b,/b1\/compact-simple\/371401529-to-371401477/);
+  assert.match(b,/b1\/ordinary-notched\/371401481-to-371401497/);
+  assert.match(b,/b1\/large-complex\/371401488-to-371401495/);
+  assert.match(b,/CITY\.buildCityLayer\(zone/);
+  assert.match(b,/kfb-facade-rule-v1/);
+  assert.doesNotMatch(b,/new THREE\.BoxGeometry|new THREE\.ShapeGeometry|WebGLRenderer|requestAnimationFrame/);
+  assert.match(adapterSource,/mountR2DBuildings/);
+});
+
+test('R2D building adapter exposes support and collision facts without enabling a Player',()=>{
+  const b=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js',import.meta.url),'utf8');
+  assert.match(b,/city\.support\?\.apply/);
+  assert.match(b,/const at=\(x,z\)=>/);
+  assert.match(adapterSource,/solidAt\(x,z\)/);
+  assert.match(adapterSource,/buildingAt\(x,z\)/);
+  assert.equal(profile.world.play,false);
 });

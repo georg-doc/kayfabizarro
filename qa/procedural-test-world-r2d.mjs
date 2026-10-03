@@ -23,6 +23,7 @@ try{
     const A=window.__wb2d,W=A.world;
     const resources=performance.getEntriesByType('resource').map(r=>r.name);
     const road=A.scene.getObjectByName('R2D Track Core road');
+    const buildingGroup=A.scene.getObjectByName('R2D B1 building family · kfb-facade-rule-v1');
     const c=W.spawn;
     const samples=[
       [c.x,c.z],
@@ -36,6 +37,11 @@ try{
       terrain:{name:A.terrain?.name,vertices:A.terrain?.geometry?.attributes?.position?.count||0},
       road:{present:!!road,meshCount:road?road.children.length:0},
       presentation:W.presentationReport||null,
+      buildings:{
+        present:!!buildingGroup,
+        report:W.buildingReport||null,
+        firstAt:W.buildingReport?.placed?.[0]?W.buildingAt?.(W.buildingReport.placed[0].x,W.buildingReport.placed[0].z):null
+      },
       visible:{
         top:!!A.scene.getObjectByName('R2D continuous island top'),
         underside:!!A.scene.getObjectByName('R2D floating island underside'),
@@ -68,6 +74,12 @@ try{
   if(!state.visible.creek)problems.push('creek missing');
   if(!state.visible.waterfall)problems.push('waterfall missing');
   if(!state.visible.nature)problems.push('procedural nature missing');
+  if(!state.buildings.present)problems.push('B1 building family missing');
+  if(state.buildings.report?.facadeRule!=='kfb-facade-rule-v1')problems.push('facade owner '+state.buildings.report?.facadeRule);
+  if(state.buildings.report?.stats?.buildings!==2)problems.push('building count '+state.buildings.report?.stats?.buildings);
+  if(!((state.buildings.report?.stats?.windows||0)>0))problems.push('building windows missing');
+  if(!((state.buildings.report?.stats?.doors||0)>0))problems.push('building doors missing');
+  if(!state.buildings.firstAt)problems.push('buildingAt pad-centre fact missing');
   if(!state.presentation?.underside)problems.push('presentation report underside false');
   if(!(state.presentation?.nature?.trees>0))problems.push('presentation nature tree count missing');
   if(!state.playIsNull)problems.push('legacy play unexpectedly active');

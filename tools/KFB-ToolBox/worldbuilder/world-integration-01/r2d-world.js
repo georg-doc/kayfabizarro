@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { makeIslandCore } from '../procedural-test-world-01/r2d-island-core.v1.js';
 import { mountR2DPresentation } from '../procedural-test-world-01/r2d-presentation.v1.js';
+import { mountR2DBuildings } from '../procedural-test-world-01/r2d-buildings.v1.js';
 
 const TRACK_PIN='64d8597c3dad1dc9814c794d4a566d589e1e1a25';
 const R2C_PIN='927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f';
@@ -38,7 +39,7 @@ function makeWorld({id,Z,TC,ST,R2C,core}){
   const maxR=Math.max(...P.edgeR),spawn=chooseSpawn(P);
   const tile={cx:+P.c0[0].toFixed(3),cz:+P.c0[1].toFixed(3),size:Math.ceil(maxR*2+28),seg:256};
   const group=new THREE.Group();group.name='R2D WorldBuilder presentation';
-  let presentation=null;
+  let presentation=null,buildings=null;
   const zone={id:'r2d-island-'+Z.seed,status:'SOURCE_DERIVED_R2D_V0',
     counts:{buildings:P.pads.length,roadParts:1,landuse:1},
     provenance:{source:'R2D v0 Claude Design donor',commit:'74f7a690fbec88cf98ce0936f31b72ad3f1148f5',blob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'}};
@@ -50,29 +51,37 @@ function makeWorld({id,Z,TC,ST,R2C,core}){
   };
   const W={
     id,zone,spawn,tile,log:[],docId:'r2d-world-'+Z.seed,storageKey:'kfb-r2d-world.'+Z.seed,
-    SKY_MODES:[['day','Day']],skyMode:'day',city:null,supportReport:null,landmarks:[],
+    SKY_MODES:[['day','Day']],skyMode:'day',landmarks:[],
     get inkOn(){return false},get inkReport(){return null},get namesOn(){return false},
     get presentationReport(){return presentation?.report||null},
+    get buildingReport(){return buildings?.report||null},
+    get city(){return buildings?.city||null},
+    get supportReport(){return buildings?.report?.support||null},
     baseHeightAt,
     maskAt:(x,z)=>inside(x,z)?F.maskAt(x,z):'under',
     groundAt(x,z,terrainHeight){return P.roadDist(x,z)<=P.hw+.2?Math.max(terrainHeight,P.roadY):terrainHeight},
-    solidAt(){return 0},buildingAt(){return null},
+    solidAt(x,z){return buildings?.at(x,z)?.height||0},
+    buildingAt(x,z){return buildings?.at(x,z)||null},
     patchDoc(doc){
       doc.id=W.docId;
       doc.terrain={seed:Z.seed,height:10,macroScale:3.2,detail:.55,tile:{...tile},sculpt:{version:1,strokes:[]}};
       doc.objects=[];
       doc.world={format:'kfb.r2d.world-ref/1',provider:PROVIDER,seed:Z.seed,biome:Z.biome,shape:Z.shape,source:zone.provenance,
         player:{position:[+spawn.x.toFixed(3),0,+spawn.z.toFixed(3)],heading:+spawn.heading.toFixed(5)}};
-      doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7)};
+      doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),
+        buildings:'B1 sibling donors → wd1-city.js / kfb-facade-rule-v1'};
       return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},
-    async mount({scene}){
+    async mount({scene,renderer}){
       const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});
       const road=ST.buildTrack(THREE,P.stream,mat);road.name='R2D Track Core road';
       road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
-      group.add(road);scene.add(group);
+      group.add(road);
+      buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});
+      scene.add(group);
       W.log.push('R2D road · '+(TC.CORE_VERSION||'Track Core')+' · '+P.stream.samples.length+' samples');
+      W.log.push('R2D buildings · '+buildings.report.stats.buildings+' · '+buildings.report.facadeRule+' · B1 source family');
     },
     dressTerrain(mesh){
       const pos=mesh.geometry.getAttribute('position'),colors=mesh.geometry.getAttribute('color');
@@ -83,7 +92,7 @@ function makeWorld({id,Z,TC,ST,R2C,core}){
       colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;
       if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal});
     },
-    onTerrain(){return null},
+    onTerrain(){return buildings?.report?.support||null},
     frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},
     tick(){},render(){return false},setVisible(v){group.visible=!!v},setInk(){},setNames(){},setScanRoots(){},
     async setSky(v){W.skyMode=v;return v}
