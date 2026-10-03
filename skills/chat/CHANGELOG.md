@@ -2171,3 +2171,12 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Corrected the blocked scan Return: no plugin installation is required from Georg.
 - vidIQ is retained only as an `OPTIONAL / UNAPPROVED` future route and must be evaluated separately before any recommendation to connect it.
 - The current authoritative action is to leave the SOURCE_BLOCKED return parked until an already approved or separately reviewed visual-video capability is available.
+
+
+# 2026-10-03 · KayKit Creator scan · Chrome-extension route selected
+
+- Georg rejected the manual-screenshot fallback; the visual scan must continue through an official Claude/ChatGPT Chrome extension route.
+- Primary route: Claude in Chrome, because Anthropic's current documentation explicitly states that the extension can take screenshots of active tabs and uses them as visual context while controlling the browser.
+- Secondary route: ChatGPT in Chrome / Codex Chrome extension, which can use open Chrome tabs as context and control the browser.
+- Manual screenshot collection is no longer the requested workflow.
+- No third-party video-analysis plugin is required.
