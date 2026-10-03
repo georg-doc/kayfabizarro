@@ -21,12 +21,20 @@
     <div id="headList"></div>
   </aside>
   <section class="legacy-stage-wrap">
-    <div class="legacy-toolbar">
+    <div class="legacy-toolbar legacy-toolbar-main">
       <button id="sourceBtn">Source isolate</button>
-      <button id="mountBtn">Measure + mount EyeRig v6</button>
-      <button id="persistedBtn">Mount saved profile</button>
-      <button id="nextBtn">Next unmounted</button>
+      <button id="persistedBtn">Review saved profile</button>
+      <button id="mountBtn">Re-measure</button>
+      <button id="nextBtn">Next review</button>
       <button id="blinkBtn">Blink</button>
+    </div>
+    <div class="legacy-toolbar legacy-toolbar-review">
+      <span class="toolbar-label">VIEW</span>
+      <button data-view="front" class="active">Front</button>
+      <button data-view="three-left">¾ L</button>
+      <button data-view="three-right">¾ R</button>
+      <button id="sourceEyesBtn">Source eyes · hidden</button>
+      <span class="toolbar-label review-count" id="reviewCount">0/17 reviewed</span>
     </div>
     <div id="stage">
       <div id="loading" hidden>Loading exact source…</div>
@@ -40,7 +48,21 @@
       <div><dt>Measurement</dt><dd id="measurementStatus">—</dd></div>
       <div><dt>Profile</dt><dd id="profileStatus">—</dd></div>
       <div><dt>Source eyes</dt><dd id="cleanupStatus">—</dd></div>
+      <div><dt>Review</dt><dd id="reviewStatus">UNREVIEWED</dd></div>
     </dl>
+    <section class="legacy-tune">
+      <h3>Eye placement</h3>
+      <label>X spacing <input data-tune="dx" type="range" min="0.15" max="0.8" step="0.005"><output data-out="dx">—</output></label>
+      <label>Y height <input data-tune="dy" type="range" min="-0.5" max="0.4" step="0.005"><output data-out="dy">—</output></label>
+      <label>Eye size <input data-tune="ring" type="range" min="0.06" max="0.28" step="0.002"><output data-out="ring">—</output></label>
+      <label>Inset <input data-tune="inset" type="range" min="-0.2" max="0.65" step="0.005"><output data-out="inset">—</output></label>
+      <div class="legacy-review-actions">
+        <button data-review="APPROVED" class="approve">Approve</button>
+        <button data-review="ADJUSTED_APPROVED">Adjusted approve</button>
+        <button data-review="REJECTED" class="reject">Reject</button>
+      </div>
+      <button id="exportReviewBtn" class="export-review">Export review JSON</button>
+    </section>
     <pre id="report">Booting…</pre>
   </aside>
 </main>

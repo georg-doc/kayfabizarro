@@ -115,6 +115,8 @@ export function mountLegacyEyeProfile({THREE,faceHost,profile,log=()=>{}}={}){
     faceHost,
     profile,
     update(dt){rig.update(dt);},
+    setAnchor(patch){rig.setAnchor(patch);},
+    setEye(patch){rig.setEye(patch);},
     blinkNow(){rig.blinkNow();},
     eyeFrame(){return rig.eyeFrame();},
     report(){
