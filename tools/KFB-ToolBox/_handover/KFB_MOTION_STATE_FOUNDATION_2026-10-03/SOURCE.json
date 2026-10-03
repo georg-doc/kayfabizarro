@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.motion-state-foundation-source/1",
+  "date": "2026-10-03",
+  "owner": "KFB ToolBox / Animation-Motion authoring",
+  "branch": "chatgpt-web/kfb-animation-motion-ssot-2026-10-03",
+  "base": {
+    "pr": 127,
+    "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6"
+  },
+  "exactDonors": {
+    "locomotionProfiles": {
+      "pr": 294,
+      "blob": "3db9fbd482e6a527c417e79af826138ff28efa33"
+    },
+    "animMap": {
+      "pr": 294,
+      "blob": "7120f80e25e8a91106441039fb036c059a4d0e0d"
+    },
+    "measuredActorProfiles": {
+      "pr": 127,
+      "blob": "f7a0675e1ed175a5895a15b7320c1fd5258a94e9"
+    },
+    "profileProposals": {
+      "pr": 127,
+      "blob": "6b9253119139754b1e07002f9ada05194f9f46e3"
+    },
+    "creatorResearch": {
+      "pr": 107,
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "blob": "78ecdbef75a220d589f546651318629a133af0b0"
+    }
+  },
+  "protected": [
+    "consumer physics",
+    "world movement",
+    "camera",
+    "terrain/collision",
+    "Combat rules",
+    "Resident/EyeRig owners"
+  ],
+  "parallelBlenderMeasurement": true
+}
