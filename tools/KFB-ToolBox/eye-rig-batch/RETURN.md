@@ -1680,3 +1680,53 @@ Bounded outcome:
 First human gate after implementation:
 `GEORG_EYERIG_PER_EYE_SURVIVALIST_VIS_01`.
 
+## 2026-10-03 · PRIORITY CORRECTION · LEGACY BEFORE PER-EYE DETAIL
+
+Georg correctly reprioritized the roadmap: **Legacy character coverage is the next major EyeRig step; per-eye/eyepatch controls are a later detail slice.**
+
+Current Legacy truth already exists and must be reused rather than rebuilt:
+
+- Draft PR: **#162**
+- branch: `chatgpt-web/legacy-eye-batch-17-2026-09-21`
+- current PR head: `7b1b52a60d64c9dc710514a59d1a7365f8a168e7`
+- persisted-profile tested head: `91cca48809fb8a86c8ea7a8326eb6637fa89a066`
+- **17/17 Legacy head profiles persisted**
+- **16 MEASURED_CANDIDATE**
+- **1 HUMAN_REQUIRED: Skull**
+- automatic source-first browser/WebGL: **247/247 PASS**
+- persisted-profile reconstruction: **215/215 PASS**
+- zero failed resources / zero browser-console errors in both proven runs
+- existing profile schemas and EyeRig v6 owner retained
+- no shared Legacy class default invented
+
+17 head identities:
+- Barbarian default / A / B / C
+- Knight default / A / B / C
+- Mage default / A / B / C
+- Rogue default / A / B / C
+- Skull
+
+Direct Legacy review route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/`
+
+### Correct next gate
+
+**KLR-EYE-VIS-01 · 17-head human visual review**
+
+Review all 17 in Front + 3/4:
+1. approve / adjust / reject each profile;
+2. judge EyeRig placement separately from source-eye cleanup;
+3. manually place Skull or leave unsupported;
+4. only accepted/adjusted profiles become Combat-/consumer-ready.
+
+### Per-eye status
+
+`EYE_RIG_PER_EYE_CONTROL_01` is **DEFERRED_DETAIL_AFTER_LEGACY**.
+
+The brief remains preserved at:
+`docs/PER_EYE_CONTROL_BRIEF_2026-10-03.md`
+
+Use it later for asymmetric cases such as Survivalist eyepatch, but it is no longer the current production gate.
+
+No merge or Live promotion.
+
