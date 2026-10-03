@@ -126,7 +126,7 @@
   },
   "visualReview": {
     "status": "VIEW_WHEEL_HUMAN_ACCEPTED",
-    "nextGate": "EYE_RIG_PER_EYE_CONTROL_01"
+    "nextGate": "KLR-EYE-VIS-01"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -651,6 +651,32 @@
       "Neutral/Clay K1 view",
       "Clay K1 continuation boundary"
     ],
-    "nextSlice": "EYE_RIG_PER_EYE_CONTROL_01"
+    "nextSlice": "KLR-EYE-VIS-01"
+  },
+  "currentNext": {
+    "status": "LEGACY_VISUAL_REVIEW_NEXT",
+    "gate": "KLR-EYE-VIS-01",
+    "reason": "Legacy coverage is the next major EyeRig expansion; per-eye eyepatch controls are a later detail.",
+    "owner": {
+      "pr": 162,
+      "branch": "chatgpt-web/legacy-eye-batch-17-2026-09-21",
+      "head": "7b1b52a60d64c9dc710514a59d1a7365f8a168e7",
+      "testedProfileHead": "91cca48809fb8a86c8ea7a8326eb6637fa89a066"
+    },
+    "legacy": {
+      "profiles": "17/17 persisted",
+      "measuredCandidates": 16,
+      "humanRequired": [
+        "Skull"
+      ],
+      "automaticBrowser": "247/247 PASS",
+      "persistedRemount": "215/215 PASS",
+      "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/"
+    },
+    "deferredDetail": {
+      "id": "EYE_RIG_PER_EYE_CONTROL_01",
+      "status": "DEFERRED_DETAIL_AFTER_LEGACY",
+      "brief": "tools/KFB-ToolBox/eye-rig-batch/docs/PER_EYE_CONTROL_BRIEF_2026-10-03.md"
+    }
   }
 }
