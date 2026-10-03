@@ -60,6 +60,27 @@ Publication source now contains an absolute direct Stage URL at:
 
 The public-proof workflow is extended in the metadata checkpoint to verify the public Hub carries the exact AUDIO-STEM-BED-02 card + direct URL. Record that follow-up run here after it completes.
 
+## Combined public Stage + Hub proof
+
+After the Hub direct-link workflow check was added:
+
+- run `37132531736`
+- job `111230330130`
+- conclusion: **SUCCESS**
+- exact Stage QA: **18/18 PASS**
+- Hub URL: `https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/`
+- Hub HTTP: **200**
+- `audio-stem-bed-02-2026-10-03` card present: **true**
+- exact Stage URL present: **true**
+- artifact: `11277367768`
+- digest: `sha256:1d2e0616148e232af0f9cd36f695245de86fc1656196399d3c6f9a9d88b3770c`
+
+This is the current public acceptance-surface proof.
+
+## Legacy Hub source-sync recovery
+
+The public Hub itself passed. A separate optional attempt to mirror the card into the older branch-side `kfb-hub/index.html` source hit two object-boundary repair failures and was stopped under the two-pass rule. That file is restored to its pre-attempt valid content. Evidence and salvage map are in `FAILURE_RECOVERY_HUB_SOURCE_SYNC.md`.
+
 ## Human evidence
 
 Not yet accepted. Automated audio execution cannot substitute for Georg's listening judgment.

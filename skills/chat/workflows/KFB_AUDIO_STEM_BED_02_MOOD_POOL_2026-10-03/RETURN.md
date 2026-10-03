@@ -29,6 +29,18 @@ The runtime preserves one AudioContext and starts each selected donor's stem fam
 - public proof: run `37131567389` / job `111227551183` / artifact `11276703064`;
 - public route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/`.
 
+## Public Hub proof
+
+Run `37132531736` / job `111230330130`:
+- Stage browser/WebAudio: **18/18 PASS**;
+- Hub HTTP: **200**;
+- Mood Pool card: **present**;
+- direct `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/` URL: **present**;
+- artifact `11277367768`;
+- digest `sha256:1d2e0616148e232af0f9cd36f695245de86fc1656196399d3c6f9a9d88b3770c`.
+
+The optional mirror into legacy branch source `kfb-hub/index.html` was rolled back after two failed boundary repairs. This does not affect the verified current public Hub (`hub-ui-v2`). See `FAILURE_RECOVERY_HUB_SOURCE_SYNC.md`.
+
 ## Signature theme
 
 `BEETLE RUMBLE` is prepared as a separate KFB signature-theme Suno authoring brief. This slice does not claim generated signature audio.
@@ -39,7 +51,7 @@ No note generator, phrase slicer, time-stretcher, cross-song pitched stem mixer,
 
 ## Unresolved
 
-Human listening remains the only acceptance gap. Signature-theme audio and consumer semantics are deferred until after that.
+Human listening remains the product acceptance gap. Signature-theme audio and consumer semantics are deferred until after that. The abandoned legacy-Hub source mirror is documented separately and is not the current public Hub owner.
 
 ## Exactly one next gate
 

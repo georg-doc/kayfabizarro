@@ -1,0 +1,76 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "AUDIO-STEM-BED-02 legacy Hub source sync",
+  "exportRevision": "2026-10-03-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "scope": "optional branch-side kfb-hub/index.html mirror only; audio runtime and current public Hub unaffected",
+  "entrypoints": [
+    "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
+    "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
+  ],
+  "sourceFiles": [
+    {
+      "path": "kfb-hub/index.html",
+      "role": "failed optional mirror target",
+      "restoredFrom": "9433a901a83c043b2c5de235d65394facd8f9846"
+    },
+    {
+      "path": "kfb-hub/stage/audio-stem-bed-02/",
+      "role": "validated audio candidate",
+      "status": "PASS"
+    },
+    {
+      "path": "kfb-hub/stage/hub-ui-v2/index.html",
+      "role": "current public Hub owner",
+      "ref": "cloudflare-live@26bb3926bde5a2e1e519409d182a62b654cfba71",
+      "status": "PASS"
+    }
+  ],
+  "buildOutputs": [],
+  "dataFiles": [
+    "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/SOURCE.json"
+  ],
+  "assetRefs": [
+    "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/ (44 runtime stems referenced by SOURCE.json)"
+  ],
+  "externalDependencies": [
+    "Playwright 1.51.1 for CI proof"
+  ],
+  "browserStateExports": [],
+  "evidence": [
+    {
+      "type": "failed_commit",
+      "ref": "257f9b45d426d989dd8eb34e5857f49c86580e99",
+      "result": "malformed previous-card boundary"
+    },
+    {
+      "type": "failed_commit",
+      "ref": "4700cefdb436ae90fa1f1167fca37bc8727d6259",
+      "result": "duplicated next opening brace"
+    },
+    {
+      "type": "public_proof",
+      "run": 37132531736,
+      "job": 111230330130,
+      "artifact": 11277367768,
+      "digest": "sha256:1d2e0616148e232af0f9cd36f695245de86fc1656196399d3c6f9a9d88b3770c",
+      "result": "PASS"
+    }
+  ],
+  "missing": [
+    "No ZIP: Git-native immutable commits are the complete editable export for this source-only failure."
+  ],
+  "start": {
+    "command": null,
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
+    "notes": "Use START_HERE.md for audio recovery. Do not resume the legacy Hub splice in this slice."
+  },
+  "salvage": {
+    "audioRuntime": "REUSE_CANDIDATE",
+    "publicStage": "REUSE_CANDIDATE",
+    "publicHubCard": "REUSE_CANDIDATE",
+    "legacyHubEdits": "ARCHIVED_FAILED",
+    "spliceMethod": "REJECTED_FOUNDATION"
+  },
+  "nextGate": "GEORG_AUDIO_STEM_BED_02"
+}

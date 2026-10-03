@@ -55,6 +55,20 @@ Last proven runtime/public-proof head before closure metadata:
 
 The first public proof run `37131286308` failed during the publication window; the unchanged retry passed after the Stage became available. It is retained as deployment-timing evidence, not reclassified as a runtime defect.
 
+## Latest public Stage + Hub proof
+
+Workflow run `37132531736` / job `111230330130` proved both acceptance surfaces in one run:
+
+- exact Stage: **18/18 PASS**;
+- public Hub: HTTP **200**;
+- AUDIO-STEM-BED-02 card present: **true**;
+- exact direct Stage URL present in public Hub: **true**;
+- public proof artifact: `11277367768`;
+- digest: `sha256:1d2e0616148e232af0f9cd36f695245de86fc1656196399d3c6f9a9d88b3770c`.
+
+Hub route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/`
+
 ## Signature identity
 
 `KFB_SIGNATURE_THEME_SUNO_PROMPT_v1.md` defines **BEETLE RUMBLE** as a separate reusable KFB signature-theme authoring target.
@@ -68,6 +82,7 @@ Current state: **PROMPT ONLY**. No signature-theme master/stems are promoted by 
 - No cross-song harmonic compatibility is assumed.
 - No real Deck/weather/Race telemetry integration is added.
 - No automatic merge or Live promotion.
+- Legacy `kfb-hub/index.html` source sync was abandoned after two failed boundary-repair attempts and rolled back; the current public Hub owner is `kfb-hub/stage/hub-ui-v2/index.html` on `cloudflare-live`, which is publicly verified.
 
 ## Exactly one next gate
 

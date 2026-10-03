@@ -73,12 +73,20 @@
       "digest": "sha256:ffe70cc10635cdd942dd83cf0c7936dfdd3d545d844764434da653046d9e1410"
     },
     "publicStage": {
-      "run": 37131567389,
-      "job": 111227551183,
+      "run": 37132531736,
+      "job": 111230330130,
       "pass": 18,
       "total": 18,
-      "artifact": 11276703064,
-      "digest": "sha256:cc9c6ce56367086b6d69f2dd257eb3807f3d7f049ed6f48d12fabee68ce9cea0"
+      "artifact": 11277367768,
+      "digest": "sha256:1d2e0616148e232af0f9cd36f695245de86fc1656196399d3c6f9a9d88b3770c"
+    },
+    "publicHub": {
+      "run": 37132531736,
+      "job": 111230330130,
+      "http": 200,
+      "cardPresent": true,
+      "directStageUrlPresent": true,
+      "hubRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
     }
   },
   "protectedBoundaries": [
@@ -90,5 +98,16 @@
     "no automatic merge",
     "no Live promotion"
   ],
-  "nextGate": "GEORG_AUDIO_STEM_BED_02"
+  "nextGate": "GEORG_AUDIO_STEM_BED_02",
+  "legacyHubSourceSync": {
+    "status": "ARCHIVED_FAILED_ATTEMPT",
+    "affectedPath": "kfb-hub/index.html",
+    "currentPublicHubAffected": false,
+    "failedCommits": [
+      "257f9b45d426d989dd8eb34e5857f49c86580e99",
+      "4700cefdb436ae90fa1f1167fca37bc8727d6259"
+    ],
+    "recovery": "restore affected path from 9433a901a83c043b2c5de235d65394facd8f9846 and stop repair loop",
+    "export": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/FAILURE_RECOVERY_EXPORT.json"
+  }
 }
