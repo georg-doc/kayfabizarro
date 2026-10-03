@@ -516,6 +516,29 @@
       "STUDIO_INLINE_NUMERIC_PARITY",
       "BLENDER_NOEYES_NEW_ROSTER"
     ],
-    "nextGate": "GEORG_EYERIG_CONTROL_R2_VIS_01"
+    "nextGate": "GEORG_EYERIG_BOOT_REPAIR_VIS_01"
+  },
+  "bootRepair": {
+    "status": "SOURCE_FIXED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "userObserved": [
+      "Loading actor catalog remained",
+      "Large click inactive"
+    ],
+    "cause": "initInlineNumberEditors used single-query $() then called .forEach; exception occurred in wireRuntimeControls before wireRoster",
+    "repair": {
+      "progressCommit": "0a0cf8f6b20560541bcfe2af0a035d5e77e9de73",
+      "selectorCommit": "da5e4cd0025b0f7e3dd3300f740dd0afc174959f",
+      "testAssertionCommit": "6238fd0a2e98d5ba820b2b645ec1ad8e9353f46b",
+      "appBlob": "48674bd29ac54f70243f3132c18671a0d570e29c",
+      "selector": "$$('output[data-out]').forEach",
+      "rosterWiredBeforeRuntimeControls": true,
+      "visibleBootProgress": true,
+      "visibleBootFailure": true
+    },
+    "focusedChecks": "6/6 PASS",
+    "fullHistoricalSuite": "NOT_RERUN",
+    "stageMirrorHead": "d2cbc94ddde4d7c281a492db350119005f22e153",
+    "publicVerified": false,
+    "nextGate": "GEORG_EYERIG_BOOT_REPAIR_VIS_01"
   }
 }
