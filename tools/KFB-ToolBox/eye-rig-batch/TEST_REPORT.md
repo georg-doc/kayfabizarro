@@ -1102,3 +1102,85 @@ Appearance is deliberately separate from eye geometry:
 
 No browser/public visual PASS is claimed by these static/readback checks.
 
+## 2026-10-03 · EYE-RIG-BATCH-BOOT-REPAIR-01
+
+Observed human symptom before repair:
+- Stage remained at `Loading actor catalog…`;
+- no useful progress/error feedback appeared in the roster;
+- clicking `Large` did nothing.
+
+### Proven cause
+
+`initInlineNumberEditors()` called:
+
+`$('output[data-out]').forEach(...)`
+
+but `$()` is the single-element query helper. The resulting Element has no `.forEach()`, so boot threw during `wireRuntimeControls()`.
+
+At that revision `wireRoster()` ran only after `wireRuntimeControls()`. Therefore the same exception also prevented the Medium/Large click handlers from being installed.
+
+### Repair
+
+Runtime source:
+- fixed selector: `$$('output[data-out]').forEach(...)`;
+- exact old single-query line count: **0**;
+- exact corrected multi-query line count: **1**;
+- `wireRoster()` now runs before runtime-control initialization so roster/class navigation is no longer coupled to the inline-number editor;
+- new `setBootProgress()` updates the roster/loading UI through:
+  - catalogs + source contracts;
+  - catalogs loaded / profile restore;
+  - 3D stage;
+  - controls / motion;
+  - first actor;
+  - ready;
+- boot failure now writes the exact `Boot failed · <message>` into the visible roster/audit area instead of leaving the original loading copy unchanged.
+
+Source repair commits:
+- progress / wiring checkpoint: `0a0cf8f6b20560541bcfe2af0a035d5e77e9de73`;
+- exact selector repair: `da5e4cd0025b0f7e3dd3300f740dd0afc174959f`;
+- regression assertion correction: `6238fd0a2e98d5ba820b2b645ec1ad8e9353f46b`.
+
+Current repaired app blob:
+`48674bd29ac54f70243f3132c18671a0d570e29c`.
+
+### Focused regression
+
+**6/6 PASS**
+- app syntax;
+- corrected `$$` selector / no exact old `$` line;
+- visible boot progress + fail-visible message;
+- roster wired before runtime controls;
+- static regression contract contains the corrected expectations;
+- 25-family / 56-appearance palette layer retained.
+
+This is a focused repair gate; the full historical static suite was **not rerun** here.
+
+### Stage
+
+Exact repaired app mirrored to:
+`cloudflare-live@d2cbc94ddde4d7c281a492db350119005f22e153`
+
+Stage app blob matches source app blob exactly:
+`48674bd29ac54f70243f3132c18671a0d570e29c`.
+
+The same Stage commit also updates:
+- ToolBox Stage card;
+- actual public `hub-ui-v2` EyeRig todo.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+The current web opener cannot access `pages.dev`, therefore post-repair `PUBLIC_VERIFIED` remains **OPEN**.
+
+### Exactly one next gate
+
+**GEORG_EYERIG_BOOT_REPAIR_VIS_01**
+
+Reload the direct Stage and check only:
+1. loading copy advances beyond `Loading actor catalog…` and the actor roster appears;
+2. click `Large` → Large roster appears;
+3. click back to `Medium`;
+4. if anything fails, report the now-visible exact `Boot failed · …` / progress text.
+
+After PASS, resume the already-open Control R2 + Magic Girl/Driver appearance review; do not create another implementation fork.
+
