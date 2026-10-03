@@ -26,6 +26,23 @@
     },
     "motionLabMeasurements": {
       "blob": "f7a0675e1ed175a5895a15b7320c1fd5258a94e9"
+    },
+    "motionLibraryV6": {
+      "source": "Dropbox",
+      "path": "/CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/MOTION_LIB_v6/KFB_Motion_Library.catalog.json",
+      "version": "2026-09-30",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 370,
+      "locomotionGroupClips": 148,
+      "verifiedOn": "2026-10-03",
+      "note": "Private source reference only; catalogue bytes are not copied into this public branch."
+    },
+    "blenderLadder": {
+      "branch": "coworker/locomotion-ladder-01-brief-2026-10-03",
+      "briefPath": "skills/chat/workflows/LOCOMOTION_LADDER_01_2026-10-03/BRIEF_BLENDER_LOCOMOTION_LADDER_01.md",
+      "briefBlob": "746cd98e7185907cc18a95112a235e4bfbbdfd8f",
+      "output": "LOCOMOTION_LADDER_01.json",
+      "status": "MEASUREMENT_IN_PROGRESS_EXTERNAL_LANE"
     }
   },
   "responsibility": {
@@ -90,7 +107,9 @@
     "Walk/run/sprint transitions preserve gait phase/contact where source evidence exists.",
     "Start/stop may be transition semantics without dedicated clips; no clip name is invented.",
     "Missing measurements remain unresolved and block final prototype acceptance rather than being guessed.",
-    "Consumer runtimes may not fork clip maps or locomotion state graphs."
+    "Consumer runtimes may not fork clip maps or locomotion state graphs.",
+    "LOCOMOTION_LADDER_01.json is the active Blender measurement input; no second Blender measurement schema may silently become authoritative.",
+    "Motion Library v6 provides a broad candidate pool, but semantic gait selection remains unresolved until exact ladder measurement and Georg visual review."
   ],
   "currentRigMediumEvidence": {
     "measurementStatus": "TECHNICAL_CANDIDATE_HUMAN_OPEN",
