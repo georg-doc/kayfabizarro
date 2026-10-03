@@ -1,6 +1,7 @@
 # RETURN · KAYKIT-NATIVE-LOCOMOTION-BASELINE-01
 
 Status: **CURRENT NEXT SLICE · PREPARED FOR BLENDER · NOT RUN**
+Draft PR: **#344**
 Branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`
 
 ## Nächster Ausführender

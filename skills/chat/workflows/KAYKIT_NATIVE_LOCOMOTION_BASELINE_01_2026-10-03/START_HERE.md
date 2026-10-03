@@ -4,6 +4,7 @@ Status: **PREPARED · NO RUNTIME · NO MIXAMO**
 Date: 2026-10-03
 Owner: KFB ToolBox / Animation-Motion authoring
 Next executor: **Coworker / Blender MCP**
+Draft PR: **#344**
 Branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`
 Parent recovery: PR #333 @ `18c56bcec5b9f6aab7a6dca71479421a65e8e9ca`
 
