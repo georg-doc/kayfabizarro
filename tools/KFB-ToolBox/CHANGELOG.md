@@ -2,6 +2,21 @@
 
 Alte Einträge bleiben unverändert. Korrekturen als neue CORRECTION/SUPERSEDES-Einträge mit Bezug ergänzen. Aktuelle Momentaufnahme im MASTERPLAN/Return, Geschichte hier.
 
+## 2026-09-29 · Clay texture donor research 01
+
+### RESEARCH PERSISTED
+Added `CLAY_TEXTURE_DONORS_01_2026-09-29.md` plus Stage catalog `kfb-hub/stage/clay-texture-donors-01/` for free / low-friction clay, plaster, sculpting-artifact, fabric and paper/cardboard texture donors.
+
+### SOURCE / LICENSE ROUTING
+Preferred CC0 pools are Poly Haven, TextureCan and CGBookcase. EmaceArt Plasticine and BlenQube modelling-clay packs are retained as look-dev donors only until raw redistribution is explicitly cleared. No external raw texture was copied into KFB.
+
+### EVIDENCE
+Static Stage source contract: **16/16 PASS** at `1a3296d3cabede76c49a8812359780964a05d359`. This does not prove public Cloudflare deployment, donor seamlessness/PBR quality, license permanence, KFB acceptance or production admission.
+
+### BOUNDARY / NEXT
+K2 material/relief/toolmix, Clay Asset Studio, Blender and Asset Librarian ownership is unchanged. Publish/verify the Stage route, then continue Round 02 CC0 coverage; `CLAY-ASSET-01` remains separately human-review pending.
+
+
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
 ### SOURCE VERIFIED
