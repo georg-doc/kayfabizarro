@@ -1544,3 +1544,53 @@ Test one notch, a longer wheel/trackpad gesture, Face view and Large. The camera
 
 After PASS, resume the existing Neutral ↔ Clay K1 review.
 
+## 2026-10-03 · HUMAN PASS · VIEW COMFORT + WHEEL REPAIR 02
+
+Georg confirmed: **"das klappt alles."**
+
+Accepted on the direct EyeRig Stage:
+- actor roster / Rig_Large switching remains functional;
+- bounded wheel zoom no longer jumps to extreme positions;
+- the current view-comfort / Clay K1 Stage is accepted for continuation.
+
+Accepted runtime identity:
+- source implementation app blob: `5635b28496af0e06cfe7f60a01b23e5612bad6e1`;
+- originally mirrored in `cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`;
+- still present unchanged in the current later `cloudflare-live` head when this acceptance was recorded;
+- Clay K1 donor remains exact blob `4712a6527921c180847afa4dd77788041351860b`.
+
+Closed human gates:
+- `GEORG_EYERIG_BOOT_REPAIR_VIS_01` · PASS;
+- `GEORG_EYERIG_WHEEL_ZOOM_VIS_02` · PASS;
+- `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01` · PASS for continuation.
+
+No merge or Live promotion is implied by this acceptance. PR #104 remains the working EyeRig owner.
+
+### Next EyeRig slice
+
+**EYE_RIG_PER_EYE_CONTROL_01**
+
+Reason:
+the highest-value remaining authoring gap is already known from prior review:
+- current placement is still fundamentally paired/mirrored;
+- some actors require independent left/right placement;
+- Survivalist / eyepatch is the concrete first case requiring per-eye visibility.
+
+Bounded outcome:
+1. keep the current mirrored pair as the default/backward-compatible mode;
+2. add optional independent L/R position offsets without rewriting EyeRig ownership;
+3. add per-eye visibility `left/right`;
+4. first proof = Survivalist eyepatch / one-eye-off;
+5. existing 40-profile browser data must load unchanged;
+6. no automatic migration/reset of old profiles;
+7. then review whether any other actors genuinely need asymmetric eye authoring.
+
+Deferred until after that proof:
+- Farmers A/B exact texture → Farmer_A/Farmer_B mapping;
+- Blender/NoEyes cleanup batch for unresolved source-eye actors;
+- separate FrankenStein/Pet Studio inline-number parity;
+- profile promotion / consumer rollout.
+
+Exactly one next gate:
+`EYE_RIG_PER_EYE_CONTROL_01`.
+
