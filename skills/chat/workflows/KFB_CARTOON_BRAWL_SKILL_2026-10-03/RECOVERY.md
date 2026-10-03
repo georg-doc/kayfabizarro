@@ -1,6 +1,6 @@
 # KFB Cartoon Brawl Skill · Recovery
 
-Status: **CANONICAL_DRAFT_READY · CONSUMER PROOF PENDING**
+Status: **CONSUMER_PROVEN_DRAFT · FIRST SWORD CONSUMER PASS**
 Date: 2026-10-03
 Workflow: `KFB-CARTOON-BRAWL-SKILL-01`
 
@@ -81,7 +81,7 @@ Do not manufacture a proxy Stage to "review the skill". The next useful proof is
 
 ## Unresolved
 
-- no real consumer has yet executed this skill end-to-end;
+- first real Sword consumer passed technically on Combat Draft PR #12; no productive runtime promotion was made;
 - no claim that every existing KFB melee animation passes self-clearance;
 - no claim that every weapon has a promoted canonical grip profile;
 - Brickfish is a deliberate simplification option, not an adopted universal weapon decision;
@@ -99,19 +99,19 @@ Do not manufacture a proxy Stage to "review the skill". The next useful proof is
 8. current PR #342 head;
 9. receiving Combat SSOT / current Return before any consumer work.
 
+## First consumer result
+
+Combat owner:
+
+- repo: `georg-doc/KFB-Combat-Arena`
+- Draft PR: **#12**
+- exact closure head: `fb40fac9d108b4719d06d47af394731edd233620`
+- final CI: **106/106 PASS**
+- browser Stab spacing proof: run `37129956150` / job `111222921868` / artifact `11276313336`
+- productive Arena attack remains unchanged.
+
 ## Exactly one next gate
 
-**BRAWL-SKILL-CONSUMER-01**
+**BRAWL-CLUB-BRICKFISH-01**
 
-Apply the skill to one real Combat Arena melee consumer and prove, in the existing Combat owners:
-
-1. exact source object / weapon basis;
-2. neutral grip;
-3. full-clip self-clearance;
-4. valid active + swept contact;
-5. explicit miss;
-6. per-swing target dedupe;
-7. one confirmed reaction + impact;
-8. clean recovery.
-
-Do not expand to multiple weapon families until that consumer proof is complete.
+Create one blunt/improvised profile on the proven 1H core. Use Chop as the first ordinary Bonk baseline and evaluate Jump Chop as heavy. If the Brickfish stretches for reach, the authoritative impact-head/contact proxy must follow the same deformed fish-head transform.
