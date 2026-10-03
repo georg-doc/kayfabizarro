@@ -1,6 +1,6 @@
 # KFB Cartoon Brawl Skill · Recovery
 
-Status: **CONSUMER_PROVEN_DRAFT · FIRST SWORD CONSUMER PASS**
+Status: **MULTI_CONSUMER_PROVEN_DRAFT · SWORD + BRICKFISH ORDINARY PASS**
 Date: 2026-10-03
 Workflow: `KFB-CARTOON-BRAWL-SKILL-01`
 
@@ -81,10 +81,10 @@ Do not manufacture a proxy Stage to "review the skill". The next useful proof is
 
 ## Unresolved
 
-- first real Sword consumer passed technically on Combat Draft PR #12; no productive runtime promotion was made;
+- Sword consumer passed technically on Combat Draft PR #12 and ordinary Brickfish Bonk passed on stacked Draft PR #17; no productive runtime promotion was made;
 - no claim that every existing KFB melee animation passes self-clearance;
 - no claim that every weapon has a promoted canonical grip profile;
-- Brickfish is a deliberate simplification option, not an adopted universal weapon decision;
+- ordinary Brickfish is now a proven blunt/improvised consumer, but it is not an adopted universal weapon decision and its Heavy variant remains separately unproven;
 - no public/browser gameplay acceptance is claimed.
 
 ## Resume order
@@ -99,19 +99,31 @@ Do not manufacture a proxy Stage to "review the skill". The next useful proof is
 8. current PR #342 head;
 9. receiving Combat SSOT / current Return before any consumer work.
 
-## First consumer result
+## Proven consumer results
 
-Combat owner:
+### Sword
 
 - repo: `georg-doc/KFB-Combat-Arena`
 - Draft PR: **#12**
-- exact closure head: `fb40fac9d108b4719d06d47af394731edd233620`
+- closure head: `fb40fac9d108b4719d06d47af394731edd233620`
 - final CI: **106/106 PASS**
-- browser Stab spacing proof: run `37129956150` / job `111222921868` / artifact `11276313336`
-- productive Arena attack remains unchanged.
+- browser Stab spacing proof: `37129956150 / 111222921868` · artifact `11276313336`
+- productive Arena attack unchanged.
+
+### Brickfish ordinary Bonk
+
+- stacked Draft PR: **#17**
+- closure head: `e391536fb8307a11ccd09dd6f0b04a7e2110542d`
+- closure CI: **122/122 PASS** · build 244 · re-home 172/66/routes PASS
+- final browser proof: `37148495692 / 111277236973` · artifact `11282867552`
+- exact donor: `animal-fish.glb`
+- clip: `Melee_1H_Attack_Chop`
+- measured deformation: **30° tail-pivot whip / stretch 1.00**
+- hit/miss/recovery PASS; productive Arena attack unchanged.
+
 
 ## Exactly one next gate
 
-**BRAWL-CLUB-BRICKFISH-01**
+**BRAWL-BRICKFISH-HEAVY-01**
 
-Create one blunt/improvised profile on the proven 1H core. Use Chop as the first ordinary Bonk baseline and evaluate Jump Chop as heavy. If the Brickfish stretches for reach, the authoritative impact-head/contact proxy must follow the same deformed fish-head transform.
+Reuse the proven Brickfish source/mount/contact architecture with native `Melee_1H_Attack_Jump_Chop`. Independently measure self-clearance, spatial path and required cartoon deformation; do not inherit the ordinary Bonk's 30° whip by assumption.
