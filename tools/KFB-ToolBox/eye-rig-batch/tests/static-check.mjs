@@ -141,7 +141,11 @@ check('appearance-blobs-pinned',appearanceVariants.families.every((f)=>f.variant
 check('appearance-farmers-source-gated',appearanceVariants.families.find((f)=>f.id==='farmers')?.runtimeSelectable===false&&appearanceVariants.families.find((f)=>f.id==='farmers')?.mappingStatus==='SOURCE_MAPPING_OPEN');
 check('appearance-selector-runtime',html.includes('id="appearanceSelect"')&&html.includes('id="appearanceHint"')&&app.includes('function effectiveActor')&&app.includes('function setAppearanceVariant')&&app.includes('appearanceByActor:state.appearanceByActor')&&app.includes('APPEARANCE_VARIANTS_URL'));
 check('appearance-shared-profile-key',app.includes('const baseActor=actorById(actorId),actor=effectiveActor(baseActor)')&&app.includes('state.profiles[state.profile.actorId]')&&!appearanceVariants.families.some((f)=>f.actorIds.includes('paladin-king')));
-check('orbit-zoom-slower',app.includes('controls.zoomSpeed=.28')&&app.includes('controls.minDistance=.8')&&app.includes('controls.maxDistance=14'));
+check('bounded-wheel-zoom-owner',app.includes('function createBoundedWheelZoom')&&app.includes('controls.enableZoom=false')&&app.includes('minDistance:1.6')&&app.includes('maxDistance:8'));
+check('bounded-wheel-gesture-cap',app.includes('step:0.12')&&app.includes('gestureIn:0.65')&&app.includes('gestureOut:0.85')&&app.includes('gestureGapMs:160'));
+check('bounded-wheel-frame-smoothing',app.includes('THREE.MathUtils.damp(current,desired,14')&&app.includes('THREE.MathUtils.clamp(damped-current,-0.09,0.09)'));
+check('bounded-wheel-preset-resync',app.includes('state.wheelZoom?.syncToCamera?.()'));
+check('bounded-wheel-runtime-report',app.includes("owner:'OrbitControls bounded-wheel input adapter'")&&app.includes('nativeZoom:false'));
 check('clay-view-switch-ui',html.includes('data-stage-look="neutral"')&&html.includes('data-stage-look="clay"')&&html.includes('id="lookBadge"'));
 check('clay-k1-donor-reuse',app.includes("import { makeK1 } from './lib/clay-k1.js'")&&app.includes('perMeshTris:4000')&&app.includes('maxLevels:2')&&app.includes('budgetTris:160000'));
 check('clay-k1-reversible',app.includes('state.clayK1?.revert?.()')&&app.includes('state.clayK1.apply(state.figure)')&&app.includes('stageLook:state.stageLook'));
