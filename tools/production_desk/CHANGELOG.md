@@ -1,3 +1,17 @@
+## 2026-10-03 · VFX Language Skill v1 source sync
+
+Status: **SOURCE METADATA UPDATED · NO PUBLICATION CLAIM**
+
+- Reused the existing `vfx-sfx` lane; no second VFX/Hub lane was created.
+- Lane now points to Draft PR #347 / `chatgpt-web/kfb-vfx-language-skill-01-2026-10-03`.
+- Pinned final VFX source head: `f5fc6ac030fcbbaea3cef41a9da8b4b3a0855c94`.
+- Skill result: provider-/engine-neutral semantic VFX authoring reference; existing Combat, Travel/TinySkies and Clay runtime owners remain intact.
+- Evidence: 71/71 skill semantic/content PASS + 16/16 routing/recovery PASS.
+- Lane bucket: `CAN_START`.
+- Next productive gate: `VFX-CONSUMER-FIXTURE-01` in one real existing Combat or Racer consumer.
+- No VFX Stage was published; no generated root Hub or Cloudflare publication is claimed by this source sync.
+- No Georg review task was manufactured for a documentation/research-only milestone.
+
 ## 2026-09-26 · Clay texture made non-blocking
 
 ## 2026-09-27 · Decision sync 00:44 + active production updates
