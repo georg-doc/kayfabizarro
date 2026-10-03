@@ -70,14 +70,17 @@ Additional hard rule: **no low-fidelity proxy human gates**. If a review artifac
 
 Current persistence correction: source-backed movement/vehicle knowledge must exist under a stable owner path and be consumed by the runtime; a measured donor or loaded asset is not enough if the active consumer still carries local parallel mappings.
 
-### Ground · current gate
-- current candidate branch: `chatgpt-web/kfb-ground-travel-pace-timing-01-2026-09-29`;
-- current recovery/decision head: `c211dd2f3cdb82a1a1db274f49a0f14e12902b33`;
-- next gate: **GROUND-LOCOMOTION-PROFILE-CONSUMER-01**;
-- existing KCL-M1 / ToolBox semantic locomotion profile is the presentation-state owner;
-- target stable owner path: `tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js`;
-- current defect: that stable path is missing from main, while session-cut copies exist; Turbo Ground hand-wires only a subset;
-- protected owner: `walk-controller` remains the only Ground world-movement writer; Orbit and Travel wall-clock repair remain separate retained behavior.
+### Ground · current gate · 2026-10-04 correction
+- current Motion owner: Draft PR **#344** · `[CURRENT MOTION SSOT] KayKit-native locomotion Blender baseline`;
+- branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`;
+- current observed PR head: `15ec6142f5f892717440fa88bb2ed67ece508c16`;
+- current branch Return still says **PREPARED FOR BLENDER · NOT RUN**;
+- next gate: **KAYKIT-NATIVE-BLENDER-BASELINE-01**;
+- exact actor: ActionFigure / Rig_Medium;
+- exact primary animation source: KayKit Character Animations 1.1 @ `b97b5ac55df2724fae623992433685583eece51e`;
+- original KayKit clips remain primary; Mixamo / KFB Motion Library only after a native-source gap is proven;
+- PR #333 is closed recovery/history and its failed mixed browser candidate must not be revived;
+- protected runtime rule remains: one central Ground movement owner; no World/Travel consumer-local locomotion state machine.
 
 ### Cars · queued after Ground pattern proves
 - owner repo: `georg-doc/KFB-Stunt-Car-Race`;
