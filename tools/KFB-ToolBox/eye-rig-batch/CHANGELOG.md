@@ -1070,3 +1070,18 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - Stage mirror: `cloudflare-live@6406774131723288b757fd676e6d7be3f08b1123`;
 - current gate: `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`.
 
+## 2026-10-03 · Wheel zoom repair 02
+
+- first `zoomSpeed=.28` comfort pass rejected by human test: wheel still jumped to extremes;
+- native OrbitControls wheel zoom disabled;
+- added bounded/smoothed wheel input adapter against the same Orbit target;
+- safe distance 1.6–8.0;
+- fixed step 0.12/event;
+- gesture cap 0.65 inward / 0.85 outward;
+- 160 ms gesture reset;
+- damp factor 14; max 0.09 camera units/frame;
+- presets re-sync wheel target;
+- focused checks **13/13 PASS**;
+- Stage `cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`;
+- current gate `GEORG_EYERIG_WHEEL_ZOOM_VIS_02`.
+
