@@ -1,0 +1,90 @@
+{
+  "schema": "kfb.audio-arrange/0.1",
+  "date": "2026-10-03",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "branch": "chatgpt-web/audio-arrange-01-2026-10-03",
+  "base": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+  "status": "DESIGN_READY_IMPLEMENTATION_NOT_STARTED",
+  "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/",
+  "previous": {
+    "workflow": "AUDIO-SEED-01",
+    "disposition": "TECHNICAL_DONOR_ONLY_HUMAN_REJECTED_MUSICAL_RENDERER",
+    "sourceBranch": "chatgpt-web/audio-seed-01-2026-10-02",
+    "pr": 325
+  },
+  "externalLibraries": {
+    "tone": {
+      "repo": "Tonejs/Tone.js",
+      "version": "15.5.44",
+      "license": "MIT",
+      "role": "preferred transport/sampler/effects"
+    },
+    "scribbletune": {
+      "repo": "scribbletune/scribbletune",
+      "version": "5.5.5",
+      "license": "MIT",
+      "role": "pattern/chord/phrase/MIDI helper"
+    },
+    "totalSerialism": {
+      "repo": "tmhglnd/total-serialism",
+      "version": "2.10.4",
+      "license": "MIT",
+      "role": "later optional phrase-level algorithmic transforms"
+    },
+    "webAudioFont": {
+      "repo": "surikov/webaudiofont",
+      "version": "3.0.04",
+      "license": "GPL-3.0-or-later",
+      "advertisedInstrumentCount": "about 2000",
+      "role": "internal timbre/sequencing research donor only pending license/provenance review"
+    },
+    "webAudioFontsDeploy": {
+      "repo": "WebAudioFonts/deploy-template",
+      "version": "1.0.0",
+      "license": "MIT",
+      "role": "candidate self-hosted SF2-to-JSON pipeline; source fonts require separate license audit"
+    }
+  },
+  "kfbDonors": {
+    "vanMetronomeStems": {
+      "sourcePin": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "files": {
+        "drums": "7092e01528000d24e3ee30094eae72bcbb78ec09",
+        "bass": "accd3e2fdb395e19814805e15294de8ff474f52a",
+        "guitar": "1ffd052a00bdd82c8da3af9e582b9fbe33a9d54c",
+        "synth": "25a1fe5029adc8e74a6cdb3624d1f864b0a997a1",
+        "other": "7b8dcf1b1ed0c715046021ee795d1f25bc3ada88"
+      }
+    },
+    "rubbishGroove": {
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+      "blob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+      "bpm": 100,
+      "phaseOffset": 0.465,
+      "beatsPerBar": 4
+    },
+    "roadTripPromptPack": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/SUNO_V6_PROMPTS_02_2026-09-19.md"
+  },
+  "firstProof": {
+    "workingTitle": "KFB Motorik Funk Mirage",
+    "bpmTarget": 90,
+    "bars": 64,
+    "rhythmSoundClasses": 3,
+    "rhythmPatterns": 3,
+    "melodyPool": [
+      "D",
+      "F",
+      "G",
+      "A",
+      "C"
+    ],
+    "bassPhrases": 2,
+    "hookFamilies": 1,
+    "styleTraits": [
+      "CAN: hypnotic human repetition",
+      "Yello: sparse cinematic sound design",
+      "electro-funk: bass/drum pocket"
+    ]
+  },
+  "nextGate": "AUDIO-ARRANGE-01 · One Good Island First"
+}
