@@ -1,14 +1,14 @@
 # AUDIO-ARRANGE-01 DONOR REBASE · START HERE
 
-**Status:** SOURCE / CHROMIUM / WEBAUDIO PASS · PUBLIC STAGE PENDING  
+**Status:** PUBLIC_VERIFIED · HUMAN A/B LISTENING PENDING  
 **Date:** 2026-10-03  
 **Owner:** KFB Audio & Soundscape Baseline v1  
 **Repo:** `georg-doc/kayfabizarro`  
 **Branch:** `chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03`  
 **Draft PR:** `#339`  
 **Base:** `eadebbb7ce90612630a9b3b166dd3ae1cad7b0d2`  
-**Tested head:** `3d85d7e2aa103ab0bb2b388c678584d9ece19484`  
-**Reserved Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/`
+**Tested head:** `e7e55078208a031207a67299d54015f67aa78a29`  
+**Direct Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/`
 
 ## Why this branch exists
 
@@ -19,15 +19,13 @@ This fresh branch starts after those files arrived on main and brings the donor 
 ## Current proof
 
 GitHub Actions:
-- run `37093077519`;
-- job `111117349198`;
-- **SUCCESS**.
-
-Checks:
+- source run/job `37093867717 / 111119683066`: **SUCCESS**;
 - exact source/donor validation: **29/29 PASS**;
-- Chromium/WebAudio donor bench: **24/24 PASS**;
-- proof artifact: `11262876991`;
-- digest: `sha256:e08c061ac8f580d469b07586c52dd8c52db3fa94dc191e3f77d71f951077df19`.
+- Chromium/WebAudio donor bench: **25/25 PASS**;
+- source proof artifact: `11263208942`;
+- source digest: `sha256:b22361501dc0db8ab08d773a5e73b6d3e721ea82e9d3589c27bad6ae8c4b0a22`.
+
+A/B mode gains are level-calibrated in v0.2: master 0.68 · reconstruction 0.73 · KFB arrangement 0.90. Musical source/form is otherwise unchanged.
 
 ## Measured donor facts
 
@@ -72,8 +70,19 @@ The 64-bar form covers about **202.1 s**, leaving the donor's existing tail outs
 
 Loping Groove stems remain deferred until a concrete musical gap is proven.
 
+## Public verification
+
+- publication: `cloudflare-live@9761d68b83da0e8c091fe22e9edbb8d00054a9c7`;
+- Cloudflare Pages check `111120414788`: **SUCCESS**;
+- public proof source: `5e58f4bc706ebcd5cc23a9bd277e0289e18ab85b`;
+- public run/job: `37094037185 / 111120175674`;
+- exact public Chromium/WebAudio: **25/25 PASS**;
+- passed on retry attempt 3 after deployment timing;
+- public artifact: `11262928219`;
+- public digest: `sha256:d8dbdff3eb862d23402cdc3dd90670ef68388712651c3bc53dd3ca3d7024de3c`.
+
 ## One next gate
 
-Publish this unchanged candidate to `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/`, verify the exact public route, then Georg compares master vs reconstruction vs KFB arrangement.
+**GEORG_AUDIO_ARRANGE_AB_01** — compare CYCLICAL MASTER / LOPING MASTER / STEM RECONSTRUCT / KFB ARRANGE.
 
-No WebAudioFont replacement, new Suno generation, Deck logic, weather or Race telemetry before this A/B.
+No WebAudioFont replacement, new stem extraction, Deck logic, weather or Race telemetry before this A/B.

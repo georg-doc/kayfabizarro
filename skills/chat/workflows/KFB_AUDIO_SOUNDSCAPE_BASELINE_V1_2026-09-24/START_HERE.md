@@ -23,11 +23,11 @@ Draft PR #339 / branch `chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03`.
 
 Current proof:
 - 29/29 source PASS;
-- 24/24 Chromium/WebAudio PASS;
+- 25/25 Chromium/WebAudio PASS;
 - eight Cyclical stems = exactly 214.128 s each, duration spread 0;
 - sample-synchronous scheduling confirmed.
 
-Next gate is public exact-route donor A/B only. No Deck, weather, Race telemetry or WebAudioFont replacement before Georg hears master vs reconstruction vs KFB arrangement.
+Exact Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/` is PUBLIC_VERIFIED 25/25. Current gate is `GEORG_AUDIO_ARRANGE_AB_01`. No Deck, weather, Race telemetry or WebAudioFont replacement before Georg hears master vs reconstruction vs KFB arrangement.
 
 ## HUMAN LISTENING RESULT · PASS
 

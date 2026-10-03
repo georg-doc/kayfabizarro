@@ -4,9 +4,10 @@
 
 - Current musical child moved to `KFB_AUDIO_ARRANGE_01_DONOR_REBASE_2026-10-03` / Draft PR #339.
 - PR #337 remains failure-recovery evidence only.
-- Source/browser proof: **29/29 + 24/24 PASS** at `3d85d7e2...`.
+- Source/browser proof: **29/29 + 25/25 PASS** at `e7e550782...`.
 - All eight Cyclical 76-BPM stems decode at exactly 214.128 s and sample-synchronous start.
-- Public Stage A/B is the next gate; no wider proceduralization yet.
+- Public exact Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/` is **25/25 PUBLIC_VERIFIED** via `37094037185 / 111120175674`.
+- Current gate: `GEORG_AUDIO_ARRANGE_AB_01`; no wider proceduralization yet.
 
 ## 2026-09-24 · Baseline audit
 
