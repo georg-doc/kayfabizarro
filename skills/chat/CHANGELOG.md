@@ -280,3 +280,17 @@ Focused readback contract **20/20 PASS**; variant source identity **56/56 exact 
 ### STAGE / ROUTING
 Stage mirror `cloudflare-live@479c4e91967565b583c76ed0c6ea07433c5b28ce` contains the new selector/manifest and updated ToolBox card. Direct pages.dev verification is still OPEN because the current opener cannot access the route; no Live claim. One current human gate: `GEORG_EYERIG_CONTROL_R2_VARIANTS_VIS_01`. No merge/promotion.
 
+## 2026-10-03 · EyeRig Batch · Stage boot repair
+
+### OBSERVED
+Human Stage test exposed a real boot blocker: `Loading actor catalog…` never advanced and the Large class button was inert.
+
+### PROVEN CAUSE / IMPLEMENTATION
+The inline-number editor initialized a single `querySelector` result as if it were a list: `$('output[data-out]').forEach(...)`. The exception occurred before roster/class event wiring. Repair changes that call to the existing multi-query helper `$$`, wires roster/class navigation first, and adds visible boot progress / exact failure text.
+
+### TESTED RESULT
+Focused repair regression: **6/6 PASS**. Existing 25-family / 56-appearance palette layer retained. Full historical suite not rerun in this repair.
+
+### STAGE / ROUTING
+Exact repaired app mirrored at `cloudflare-live@d2cbc94ddde4d7c281a492db350119005f22e153`; ToolBox Stage card and actual public Hub task updated. Public browser verification remains OPEN in this environment. Exactly one current gate: `GEORG_EYERIG_BOOT_REPAIR_VIS_01`. After that passes, resume Control R2 + appearance review.
+
