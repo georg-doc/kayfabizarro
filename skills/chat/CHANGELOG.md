@@ -294,3 +294,18 @@ Focused repair regression: **6/6 PASS**. Existing 25-family / 56-appearance pale
 ### STAGE / ROUTING
 Exact repaired app mirrored at `cloudflare-live@d2cbc94ddde4d7c281a492db350119005f22e153`; ToolBox Stage card and actual public Hub task updated. Public browser verification remains OPEN in this environment. Exactly one current gate: `GEORG_EYERIG_BOOT_REPAIR_VIS_01`. After that passes, resume Control R2 + appearance review.
 
+
+## 2026-10-03 · EyeRig Batch · view comfort + Clay K1
+
+### HUMAN PASS
+Georg confirms the prior EyeRig boot repair works: roster loads and Rig_Large switching responds.
+
+### IMPLEMENTATION
+The existing OrbitControls owner now uses a substantially slower wheel zoom (`zoomSpeed=.28`; bounded distance .8–14). A reversible `Neutral | Clay K1` authoring view reuses the exact Resident Atlas S15 K1/H0 donor, not a new clay implementation. `clay-k1.js` and `clay-soften.v1.js` are byte-identical donor copies. K1 keeps its 4k-tris/mesh, 2-level, 160k-added-tris performance budget and cache; EyeRig/FaceHost are excluded from deformation. The floor reuses pinned `clay_floor_001` diffuse/normal/roughness. GTAO/K2 stays off.
+
+### TESTED RESULT
+Focused source/readback contract: **15/15 PASS**. Full historical Node suite is `NOT_RUN`: the isolated test container could not resolve github.com before checkout. This is not relabeled as PASS or FAIL.
+
+### STAGE / ROUTING
+Exact Stage mirror: `cloudflare-live@6406774131723288b757fd676e6d7be3f08b1123`; app/index/K1/soften plus ToolBox and public Hub routing read back successfully. Direct pages.dev visibility remains unverified in the current tool environment. Exactly one gate: `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`. No merge or Live promotion.
+
