@@ -71,3 +71,32 @@ BLENDER_RECONCILIATION = OPEN
 NEUTRAL_ACTIONFIGURE_PROTOTYPE = NOT YET CLAIMED
 TRAVEL/COMBAT INTEGRATION = NOT STARTED
 HUMAN MOTION ACCEPTANCE = OPEN
+
+
+## Checkpoint 2 · Reconciler + Motion Lab SSOT integration
+
+Current tested head:
+`3b712d03a8cc9e1fa19bc6bc1d7f1156127ee949`
+
+Workflow:
+- ToolBox Motion State Foundation
+- run 37082360527
+- job 111085430050
+- result PASS
+
+Now green together:
+- central state-machine tests;
+- measurement reconciler tests;
+- Motion Lab owner-integration tests.
+
+Motion Lab change:
+- removed local `speedBandProposal()` threshold owner;
+- auto-state now delegates to `kfb-lib/motion-state-machine.v1.js`;
+- UI labels measured-window hysteresis as SSOT-owned;
+- snapshot exposes central motion-state owner.
+
+Measurement reconciliation:
+- exact KCL-M1 evidence blob pinned byte-identically;
+- Blender and KCL values are compared side-by-side;
+- no arbitrary tolerance silently selects a winner;
+- differing measurements remain UNRESOLVED until explicit resolution.
