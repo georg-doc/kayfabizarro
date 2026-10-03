@@ -1365,3 +1365,21 @@ Reload the direct Stage and check only:
 
 After PASS, resume the existing Control R2 + Magical Girl/Driver palette visual gate. No merge or Live promotion.
 
+## 2026-10-03 · HUMAN PASS · BOOT REPAIR
+
+Georg verified the repaired Stage:
+- actor catalog / roster loads;
+- `Large` switch works.
+
+Therefore `GEORG_EYERIG_BOOT_REPAIR_VIS_01` is **HUMAN_ACCEPTED / PASS** and is closed.
+
+New feedback for the next bounded display/comfort slice:
+- mouse-wheel Orbit zoom is much too sensitive;
+- add a reversible clay presentation view, preferably reusing the proven Resident Atlas / K1-H0 performance clay path and existing `clay_floor_001` source instead of inventing a new material owner.
+
+Next implementation slice:
+`EYE_RIG_VIEW_COMFORT_CLAY_01`.
+
+Protected boundary:
+Control R2, source palettes, saved EyeRig profiles, actor catalogs, EyeRig owner and repaired boot flow remain unchanged.
+
