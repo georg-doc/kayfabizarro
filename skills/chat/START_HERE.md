@@ -1363,3 +1363,19 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+## 2026-10-03 · KFB Cartoon Brawl skill v1
+
+For melee combat, weapon choreography, hit/hurt/contact geometry, sword/club/staff/shield/2H combat, paired takedowns, crowd brawls or Mixamo/motion-library melee intake, load:
+
+- `skills/kfb-cartoon-animation_v2.md` first for the general KFB motion/VFX grammar;
+- `skills/kfb-cartoon-brawl_v1.md` for the specialized melee contract;
+- the receiving project's current SSOT/Return before any implementation.
+
+The Brawl skill is a **CURRENT_REFERENCE · canonical-draft**. It does not create a shared combat runtime: Combat Arena and every other consumer retain movement, physics, damage, targeting and gameplay ownership. Weapon/attachment corrections remain with the current attachment/actor owner and are consumed only after source-proven promotion.
+
+Research/recovery home:
+`skills/chat/workflows/KFB_CARTOON_BRAWL_SKILL_2026-10-03/`.
+
+This documentation/skill milestone has **no public Stage and no Hub action card**: there is no Georg-facing product decision to manufacture here. The next meaningful proof belongs in a real consumer adoption slice.
+
