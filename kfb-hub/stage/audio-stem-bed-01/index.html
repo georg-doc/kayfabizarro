@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-kfb-build="AUDIO-STEM-BED-01-v0.1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Audio Stem Bed 01</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">KFB AUDIO · ADAPTIVE SUNO STEM BED</div>
+    <h1>AUDIO-STEM-BED-01</h1>
+    <p>Cyclical Warmth · 76 BPM · authored music, runtime arrangement</p>
+  </div>
+  <div class="badge">ONE AUDIO CONTEXT<br>EIGHT PHASE-LOCKED STEMS</div>
+</header>
+
+<section class="panel">
+  <div class="transport">
+    <button id="load">LOAD AUDIO</button>
+    <button id="playMaster" disabled>MASTER REFERENCE</button>
+    <button id="playStemBed" disabled>ADAPTIVE STEM BED</button>
+    <button id="stop" class="secondary" disabled>STOP</button>
+    <button id="reset" class="secondary" disabled>RESET MIX</button>
+  </div>
+
+  <div class="now">
+    <div><span>MODE</span><b id="mode">IDLE</b></div>
+    <div><span>BAR</span><b id="bar">—</b></div>
+    <div><span>TIME</span><b id="time">0:00</b></div>
+    <div><span>CONTEXT</span><b id="ctxState">neutral</b></div>
+  </div>
+
+  <div class="controls">
+    <label><span>ACTIVITY</span><input id="activity" type="range" min="0" max="1" step=".01" value=".35"><output>35%</output></label>
+    <label><span>ROAD-LIFT</span><input id="roadLift" type="range" min="0" max="1" step=".01" value="0"><output>0%</output></label>
+    <label><span>NIGHT</span><input id="night" type="range" min="0" max="1" step=".01" value="0"><output>0%</output></label>
+    <label class="voice"><span>VOICE FOCUS</span><button id="voiceFocus" class="toggle" aria-pressed="false">OFF</button></label>
+  </div>
+
+  <h2>Runtime stem weights</h2>
+  <div class="lanes" id="lanes"></div>
+</section>
+
+<details class="panel">
+  <summary>Diagnostics</summary>
+  <pre id="diag">Not loaded.</pre>
+</details>
+
+<p class="note">This is deliberately not a music generator. The musical performance stays Suno-authored; KFB only reshapes the mix for gameplay context while all stems keep the same timeline.</p>
+</main>
+<script type="module" src="./stem-bed.js"></script>
+</body>
+</html>
