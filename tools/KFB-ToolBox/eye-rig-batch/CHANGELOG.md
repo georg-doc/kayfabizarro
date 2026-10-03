@@ -1097,3 +1097,15 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - next EyeRig slice: `EYE_RIG_PER_EYE_CONTROL_01`;
 - no merge / no Live promotion.
 
+## 2026-10-03 · Roadmap correction · Legacy next
+
+- product priority corrected after Georg review: Legacy coverage is the next major EyeRig step;
+- do **not** build per-eye eyepatch controls before Legacy review;
+- reuse existing Draft PR #162 / branch `chatgpt-web/legacy-eye-batch-17-2026-09-21`;
+- 17/17 persisted Legacy profiles already exist;
+- 16 are `MEASURED_CANDIDATE`; Skull is `HUMAN_REQUIRED`;
+- proven automatic browser/WebGL: **247/247 PASS**;
+- proven persisted-profile remount: **215/215 PASS**;
+- current gate: `KLR-EYE-VIS-01` · Front + 3/4 review of all 17 heads;
+- per-eye/Survivalist work remains preserved but is `DEFERRED_DETAIL_AFTER_LEGACY`.
+
