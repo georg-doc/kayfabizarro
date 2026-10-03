@@ -58,14 +58,14 @@ From the research (AI Town, Generative Agents, Lyfe, Humanoid Agents, Concordia,
 
 **Rolodex:** physical, comes later. Georg: it is only one example with a strong philosophy focus and unlikely to add much. **Not a gate.** The Gemini chat about it is recorded as DONOR.
 
-## 7 · Open decisions for Georg (consolidated)
+## 7 · Georg's answers (2026-10-03)
 
-1. Direction "symbolic state decides, LLM only speaks" — or may the LLM also pick the social exchange in tests?
-2. First set of social exchanges (proposal: speculate, contradict, dismiss, claim, pass-on, gift).
-3. Koan reading: open gap anchored in a Card yes, motivational aphorism no.
-4. Existing Fluffolekt definition / word list (to locate, not to invent).
-5. The first regular Residents (his list).
-6. #305 operator naming (G-10).
+1. **The LLM may also choose the social exchange** in tests (not only voice it). The social state still applies the effects; the LLM never writes POP or rewards.
+2. **First exchange set accepted:** speculate, contradict, dismiss, claim, pass-on, gift.
+3. **Koans and haikus are allowed forms; they are not calendar sayings.** Calendar sayings / motivational aphorisms are never wanted. (Town §12.1 "Motivationskoans" means the motivational aphorism, not the koan form.)
+4. **First tests without Fluffolekt.** Fluffolekt stays a later layer.
+5. There is no Resident list yet. **Do not put decisions to Georg in .md files**; ask in chat, with enough context that he can decide without opening files.
+6. #305 operator naming (G-10): still open. Georg needs the context explained in chat before deciding.
 
 ## 8 · Files in this folder
 

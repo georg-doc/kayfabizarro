@@ -34,7 +34,9 @@ Georg has a **Rolodex** where this was worked through with reveal cards (Aufdeck
 | WS1 A2 / A6 | Grammar `fragment → turn → gap → player closure`; closure relations BECAUSE / BUT / SO / THEN / MEANWHILE / AGAIN, anti-closure AND THEN. Read together with D36: these are **relations**, not words that must be printed. |
 | Base-24 Archetype Map §8 | Lean Character Card already lists Triplet flavour and a Fluff-o-lect field per Resident. |
 
-**One tension to settle (Georg):** "koan / Zen-like" (now) vs. "no motivational koans" (§12.1). Proposed reading: allowed is the **open-gap** form, anchored in a concrete Card and situation, whose relation the player completes. Rejected stays the **motivational aphorism**: generic, self-help tone, true anywhere and about nothing.
+**Settled by Georg 2026-10-03:** koans and haikus are allowed forms and are not calendar sayings; calendar sayings are never wanted. First tests run **without Fluffolekt**; §3.2 stays as a later layer. The LLM may also choose the social exchange in tests.
+
+**Original wording of the tension (kept for history):** "koan / Zen-like" (now) vs. "no motivational koans" (§12.1). Proposed reading: allowed is the **open-gap** form, anchored in a concrete Card and situation, whose relation the player completes. Rejected stays the **motivational aphorism**: generic, self-help tone, true anywhere and about nothing.
 
 ---
 
