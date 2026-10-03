@@ -1,0 +1,72 @@
+{
+  "assetCount": 1,
+  "assets": [
+    {
+      "assetId": "media/public_domain/met/bathing-suit-1890-95.jpg",
+      "folder": "media/public_domain/met",
+      "format": "jpg",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "license": "Public Domain · The Met Open Access (API isPublicDomain=true)",
+      "name": "Bathing suit",
+      "packId": "met",
+      "packRoot": "media/public_domain/met",
+      "path": "media/public_domain/met/bathing-suit-1890-95.jpg",
+      "provenance": {
+        "displayName": "explicit-sidecar",
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural",
+        "rights": "explicit-sidecar"
+      },
+      "rightsEvidence": {
+        "bytes": 258743,
+        "mode": "explicit-sidecar",
+        "provider": "met",
+        "retrievedAt": "2026-09-27T01:34:54+00:00",
+        "sha256": "8d4696259a2fa664da351e6f619a8808ca129c1bd45e4d0f80e87381c151917c",
+        "sidecarPath": "media/public_domain/met/bathing-suit-1890-95.jpg.license.json",
+        "sourceFacts": {
+          "objectId": 86434
+        },
+        "sourceFileUrl": "https://images.metmuseum.org/CRDImages/ci/original/1975.227.6_F.jpg",
+        "sourceId": 86434,
+        "sourcePage": "https://www.metmuseum.org/art/collection/search/86434",
+        "sourceRecordUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/86434",
+        "tier": "free"
+      },
+      "root": "media/public_domain",
+      "sizeBytes": 258743,
+      "source": {
+        "blobSha": "358373ce6296230ba3b71da9c5180bdced7c5275",
+        "commit": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/public_domain/met/bathing-suit-1890-95.jpg",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/7600fa9e29d396eaa9c5a11532e63cdad7689e75/media/public_domain/met/bathing-suit-1890-95.jpg",
+        "repo": "georg-doc/kayfabizarro"
+      },
+      "tags": [
+        "fashion",
+        "1890s",
+        "public-domain",
+        "smoke-test"
+      ]
+    }
+  ],
+  "collections": [],
+  "dependencyStatus": {},
+  "displayName": "met",
+  "formats": {
+    "jpg": 1
+  },
+  "kinds": {
+    "image-2d": 1
+  },
+  "packId": "met",
+  "provenance": "generated-structural",
+  "root": "media/public_domain/met",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/met.json"
+}

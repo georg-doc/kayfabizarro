@@ -1,9 +1,9 @@
 {
   "counts": {
-    "DUPLICATE_NAME": 672,
+    "DUPLICATE_NAME": 673,
     "MISSING_REFERENCED_FILE": 339,
-    "UNRESOLVED_FBX_DEPENDENCY": 305,
-    "UNRESOLVED_MODEL_DEPENDENCY": 89
+    "UNRESOLVED_FBX_DEPENDENCY": 361,
+    "UNRESOLVED_MODEL_DEPENDENCY": 92
   },
   "problems": [
     {
@@ -3412,6 +3412,20 @@
         "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/fbx/GothGirl_Stool.fbx"
       ],
       "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:GothGirl:model-3d:fbx:gothgirl_stool",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "KayKit Mummy",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "mummy_texture",
+      "packId": "kaykit-mystery-series6",
+      "paths": [
+        "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/mummy_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/gltf/mummy_texture.png",
+        "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/textures/mummy_texture.png"
+      ],
+      "problemId": "DUPLICATE_NAME:kaykit-mystery-series6:KayKit Mummy:image-2d:png:mummy_texture",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -13938,6 +13952,78 @@
       "type": "UNRESOLVED_FBX_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/Animations/fbx/Rig_Medium/Rig_Medium_MovementBasic.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/Animations/fbx/Rig_Medium/Rig_Medium_MovementBasic.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/ankh.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/ankh.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_A.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_A.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_A_gold.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_A_gold.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_B.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_B.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_B_gold.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/pot_B_gold.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/sarcophagus.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/sarcophagus.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/toiletpaper_A.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/toiletpaper_A.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/toiletpaper_B.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/assets/fbx/toiletpaper_B.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx",
       "detail": "dependency parsing not implemented for .fbx",
       "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/Animations/fbx/Rig_Medium/Rig_Medium_General.fbx:dependency parsing not implemented for .fbx",
@@ -13977,6 +14063,270 @@
       "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.fbx",
       "detail": "dependency parsing not implemented for .fbx",
       "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/armchair.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/armchair.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/candyCaneA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/candyCaneA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/candyCaneB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/candyCaneB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftC.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftC.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftD.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftD.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftE.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftE.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftF.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftF.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftG.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/giftG.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateMugA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateMugA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateMugB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/hotChocolateMugB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/sackA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/sackA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/sackB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/sackB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/snowman.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/snowman.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/table.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/table.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_christmas.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_christmas.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_snow_low.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_snow_low.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_snow_medium.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_snow_medium.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_snow_tall.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/assets/fbx/tree_snow_tall.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Festive Mini-Pack/character/fbx/character_santa.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Festive Mini-Pack/character/fbx/character_santa.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_detail.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_detail.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadA.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadA.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadA_detail.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadA_detail.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadB.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadB.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadB_detail.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadB_detail.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadC.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadC.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadC_detail.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadC_detail.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadD.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadD.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadD_detail.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadD_detail.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadE.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadE.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadE_detail.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_roadE_detail.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterInnerCorner.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterInnerCorner.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterInnerCorner_empty.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterInnerCorner_empty.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterInnerCorner_noSides.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterInnerCorner_noSides.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterOuterCorner.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterOuterCorner.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterOuterCorner_empty.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterOuterCorner_empty.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterOuterCorner_noSides.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterOuterCorner_noSides.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterStraight.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterStraight.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterStraight_empty.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterStraight_empty.fbx:dependency parsing not implemented for .fbx",
+      "type": "UNRESOLVED_FBX_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterStraight_noSides.fbx",
+      "detail": "dependency parsing not implemented for .fbx",
+      "problemId": "UNRESOLVED_FBX_DEPENDENCY:media/3D_Assets/Kaykit_Medieval Snow Biome/Models/tiles/square/fbx/square_snow_waterStraight_noSides.fbx:dependency parsing not implemented for .fbx",
       "type": "UNRESOLVED_FBX_DEPENDENCY"
     },
     {
@@ -14496,6 +14846,24 @@
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/SOURCE/Mummy_A_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/SOURCE/Mummy_A_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/SOURCE/Mummy_Assets_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/SOURCE/Mummy_Assets_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/SOURCE/Mummy_B_Source.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/SOURCE/Mummy_B_Source.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/SOURCE/UltraTurboHeroMan_Assets_Source.blend",
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/SOURCE/UltraTurboHeroMan_Assets_Source.blend:dependency parsing not implemented for .blend",
@@ -14515,5 +14883,5 @@
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "378b209355b13304e3cff656ec0806ca5b89df28"
+  "sourceCommit": "7600fa9e29d396eaa9c5a11532e63cdad7689e75"
 }

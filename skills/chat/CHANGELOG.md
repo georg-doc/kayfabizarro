@@ -1,3 +1,15 @@
+## 2026-10-02 · ASSET-INTAKE-SNOW-FESTIVE-01
+
+- Georg uploaded `Kaykit_Medieval Snow Biome` at `ab65e8c46ca3c07db4294214a63384975fb7d0d9` and `Kaykit_Festive Mini-Pack` at `7600fa9e29d396eaa9c5a11532e63cdad7689e75`.
+- The existing Asset Registry workflow consumed both without a new catalog owner and produced `bot/asset-registry-update@b211fde4a558dcfa8b1f745e1dbf4af0221b49f1`, sourced exactly from `main@7600fa9`.
+- Generated pack facts: Snow **79 assets** / 78 models / 57 embedded GLB / 21 FBX; Festive **48 assets** / 46 models / Santa glTF+FBX.
+- Snow's tracked source license is CC0. The Festive upload contains no license file at pack root; no license was inferred.
+- Asset Registry run `37055714664` / job `110999795387` passed the current **46/46** test suite plus Registry build/validate, rigfacts build/validate and Librarian candidate-handoff smoke.
+- Review branch `chatgpt-web/kaykit-snow-festive-intake-2026-10-02` preserves the exact generated Registry refresh and adds recovery/evidence only.
+- R2D continuous islands, Travel, Race, Residents and all runtime owners remain unchanged. No Stage or Live claim.
+- PR tested head `395a54bd16f15fb6538d81cba8fa9cc0ffd937d8`: Asset Registry run `37056997870` **SUCCESS**, **46/46** tests + build/validate/rigfacts/handoff PASS; Asset Librarian Browser run `37056997697` **SUCCESS**, **6/6** retained WebGL suites PASS; artifact `11249225118`, digest `sha256:246dfd3cd3fd1ca26c3f315e10565435293449b40ef3684c617d11ceee4025a6`.
+- Next gate: **REGISTRY-CANONICAL-REFRESH-01** — review Draft PR #329 as the complete generated Registry refresh and merge only with Georg's named gate.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

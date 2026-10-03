@@ -36,7 +36,48 @@
     "shard": "packs/3d-assets-loose.json"
   },
   {
-    "assetCount": 1668,
+    "assetCount": 1,
+    "collections": [],
+    "dependencyStatus": {},
+    "displayName": "aic",
+    "formats": {
+      "jpg": 1
+    },
+    "kinds": {
+      "image-2d": 1
+    },
+    "packId": "aic",
+    "provenance": "generated-structural",
+    "root": "media/public_domain/aic",
+    "shard": "packs/aic.json"
+  },
+  {
+    "assetCount": 35,
+    "collections": [
+      {
+        "assetCount": 35,
+        "path": "KFB_Motion_Library"
+      }
+    ],
+    "dependencyStatus": {
+      "embedded": 2
+    },
+    "displayName": "Animations",
+    "formats": {
+      "glb": 2,
+      "jpg": 33
+    },
+    "kinds": {
+      "image-2d": 33,
+      "model-3d": 2
+    },
+    "packId": "animations",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/Animations",
+    "shard": "packs/animations.json"
+  },
+  {
+    "assetCount": 1687,
     "collections": [
       {
         "assetCount": 24,
@@ -73,6 +114,10 @@
       {
         "assetCount": 24,
         "path": "Items"
+      },
+      {
+        "assetCount": 19,
+        "path": "KFB Racer"
       },
       {
         "assetCount": 7,
@@ -154,12 +199,12 @@
     "dependencyStatus": {},
     "displayName": "Audio",
     "formats": {
-      "mp3": 16,
+      "mp3": 30,
       "ogg": 765,
-      "wav": 887
+      "wav": 892
     },
     "kinds": {
-      "audio": 1668
+      "audio": 1687
     },
     "packId": "audio",
     "provenance": "generated-structural",
@@ -215,6 +260,22 @@
     "provenance": "generated-structural",
     "root": "media/3D_Assets/Bubbly_Bathroom_Tiny_Treats_1-1",
     "shard": "packs/bubbly-bathroom-tiny-treats-1-1.json"
+  },
+  {
+    "assetCount": 1,
+    "collections": [],
+    "dependencyStatus": {},
+    "displayName": "commons",
+    "formats": {
+      "svg": 1
+    },
+    "kinds": {
+      "image-2d": 1
+    },
+    "packId": "commons",
+    "provenance": "generated-structural",
+    "root": "media/public_domain/commons",
+    "shard": "packs/commons.json"
   },
   {
     "assetCount": 6,
@@ -1000,6 +1061,22 @@
     "shard": "packs/humanbasemeshes.json"
   },
   {
+    "assetCount": 1,
+    "collections": [],
+    "dependencyStatus": {},
+    "displayName": "ia",
+    "formats": {
+      "jpg": 1
+    },
+    "kinds": {
+      "image-2d": 1
+    },
+    "packId": "ia",
+    "provenance": "generated-structural",
+    "root": "media/public_domain/ia",
+    "shard": "packs/ia.json"
+  },
+  {
     "assetCount": 63,
     "collections": [
       {
@@ -1213,6 +1290,38 @@
     "shard": "packs/kaykit-fantasyweaponsbits-1-0-free.json"
   },
   {
+    "assetCount": 48,
+    "collections": [
+      {
+        "assetCount": 44,
+        "path": "assets"
+      },
+      {
+        "assetCount": 2,
+        "path": "character"
+      }
+    ],
+    "dependencyStatus": {
+      "embedded": 23,
+      "unresolved": 23
+    },
+    "displayName": "Kaykit_Festive Mini-Pack",
+    "formats": {
+      "fbx": 23,
+      "glb": 22,
+      "gltf": 1,
+      "png": 2
+    },
+    "kinds": {
+      "image-2d": 2,
+      "model-3d": 46
+    },
+    "packId": "kaykit-festive-mini-pack",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/Kaykit_Festive Mini-Pack",
+    "shard": "packs/kaykit-festive-mini-pack.json"
+  },
+  {
     "assetCount": 109,
     "collections": [
       {
@@ -1271,25 +1380,25 @@
     "shard": "packs/kaykit-furniture-bits-1-0-free.json"
   },
   {
-    "assetCount": 40,
+    "assetCount": 67,
     "collections": [
       {
-        "assetCount": 38,
+        "assetCount": 65,
         "path": "Assets"
       }
     ],
     "dependencyStatus": {
-      "complete": 35,
+      "complete": 62,
       "missing": 1
     },
     "displayName": "KayKit_HalloweenBits",
     "formats": {
-      "gltf": 36,
+      "gltf": 63,
       "png": 4
     },
     "kinds": {
       "image-2d": 4,
-      "model-3d": 36
+      "model-3d": 63
     },
     "packId": "kaykit-halloweenbits",
     "provenance": "generated-structural",
@@ -1407,6 +1516,33 @@
     "shard": "packs/kaykit-medieval-hexagon-pack-1-0-free.json"
   },
   {
+    "assetCount": 79,
+    "collections": [
+      {
+        "assetCount": 78,
+        "path": "Models"
+      }
+    ],
+    "dependencyStatus": {
+      "embedded": 57,
+      "unresolved": 21
+    },
+    "displayName": "Kaykit_Medieval Snow Biome",
+    "formats": {
+      "fbx": 21,
+      "glb": 57,
+      "png": 1
+    },
+    "kinds": {
+      "image-2d": 1,
+      "model-3d": 78
+    },
+    "packId": "kaykit-medieval-snow-biome",
+    "provenance": "generated-structural",
+    "root": "media/3D_Assets/Kaykit_Medieval Snow Biome",
+    "shard": "packs/kaykit-medieval-snow-biome.json"
+  },
+  {
     "assetCount": 47,
     "collections": [
       {
@@ -1436,7 +1572,7 @@
     "shard": "packs/kaykit-mixed-bag-1-free.json"
   },
   {
-    "assetCount": 916,
+    "assetCount": 948,
     "collections": [
       {
         "assetCount": 20,
@@ -1615,6 +1751,10 @@
         "path": "GothGirl"
       },
       {
+        "assetCount": 32,
+        "path": "KayKit Mummy"
+      },
+      {
         "assetCount": 8,
         "path": "Santa"
       },
@@ -1624,22 +1764,22 @@
       }
     ],
     "dependencyStatus": {
-      "complete": 263,
-      "embedded": 82,
-      "unresolved": 303
+      "complete": 271,
+      "embedded": 86,
+      "unresolved": 318
     },
     "displayName": "KayKit_Mystery_Series6",
     "formats": {
-      "blend": 61,
-      "fbx": 242,
-      "glb": 82,
-      "gltf": 146,
+      "blend": 64,
+      "fbx": 254,
+      "glb": 86,
+      "gltf": 154,
       "obj": 117,
-      "png": 268
+      "png": 273
     },
     "kinds": {
-      "image-2d": 268,
-      "model-3d": 648
+      "image-2d": 273,
+      "model-3d": 675
     },
     "packId": "kaykit-mystery-series6",
     "provenance": "generated-structural",
@@ -2574,20 +2714,20 @@
     "shard": "packs/kenney-ui-pack-adventure.json"
   },
   {
-    "assetCount": 94,
+    "assetCount": 185,
     "collections": [],
     "dependencyStatus": {
-      "embedded": 82
+      "embedded": 173
     },
     "displayName": "KFB",
     "formats": {
-      "glb": 82,
+      "glb": 173,
       "jpg": 9,
       "png": 3
     },
     "kinds": {
       "image-2d": 12,
-      "model-3d": 82
+      "model-3d": 173
     },
     "packId": "kfb",
     "provenance": "generated-structural",
@@ -2899,6 +3039,22 @@
     "shard": "packs/kings-and-pigs.json"
   },
   {
+    "assetCount": 1,
+    "collections": [],
+    "dependencyStatus": {},
+    "displayName": "met",
+    "formats": {
+      "jpg": 1
+    },
+    "kinds": {
+      "image-2d": 1
+    },
+    "packId": "met",
+    "provenance": "generated-structural",
+    "root": "media/public_domain/met",
+    "shard": "packs/met.json"
+  },
+  {
     "assetCount": 99,
     "collections": [
       {
@@ -3154,10 +3310,10 @@
     "shard": "packs/scifi-ultimate-space-kit-quaternius.json"
   },
   {
-    "assetCount": 35,
+    "assetCount": 51,
     "collections": [
       {
-        "assetCount": 14,
+        "assetCount": 30,
         "path": "KFB RoadTrip JukeBox v2"
       },
       {
@@ -3172,10 +3328,10 @@
     "dependencyStatus": {},
     "displayName": "Sounds",
     "formats": {
-      "mp3": 35
+      "mp3": 51
     },
     "kinds": {
-      "audio": 35
+      "audio": 51
     },
     "packId": "sounds",
     "provenance": "generated-structural",
