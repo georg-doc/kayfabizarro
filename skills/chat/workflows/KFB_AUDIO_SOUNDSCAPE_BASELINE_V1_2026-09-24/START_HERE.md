@@ -12,6 +12,28 @@
 GitHub state overrides this document whenever a named source ref advances.
 
 
+## CURRENT FOLLOW-UP · AUDIO-STEM-BED-01 · 2026-10-03
+
+AUDIO-CAL-01 remains the accepted mix/ducking reference.
+
+Current additive music proof:
+`skills/chat/workflows/KFB_AUDIO_STEM_BED_01_2026-10-03/START_HERE.md`
+
+Draft PR #341 · `chatgpt-web/audio-stem-bed-01-2026-10-03`.
+
+Public:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-01/`
+
+Evidence:
+- 22/22 source PASS;
+- 19/19 branch Chromium/WebAudio PASS;
+- 19/19 exact public PASS.
+
+This proves the adaptive stem-bed technique only and does not replace Travel/Race/Combat runtime ownership.
+
+Next gate:
+**GEORG_AUDIO_STEM_BED_01**.
+
 ## HUMAN LISTENING RESULT · PASS
 
 Georg reviewed AUDIO-CAL-01 on 2026-09-24 and reported: **“klingt sehr gut soweit. passt.”**

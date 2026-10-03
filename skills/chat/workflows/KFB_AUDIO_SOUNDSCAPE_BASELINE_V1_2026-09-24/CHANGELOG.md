@@ -1,5 +1,14 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-STEM-BED-01 child
+
+- Added first PUBLIC_VERIFIED adaptive Suno stem-bed child on Draft PR #341.
+- Cyclical Warmth 76 BPM / 8 phase-locked stems.
+- Activity / Road-Lift / Night / Voice Focus only; authored timeline is preserved.
+- 22/22 source + 19/19 branch browser + 19/19 public exact-route PASS.
+- Four emotional RPG Suno donor prompts prepared for later pool expansion.
+- Human listening gate remains open; no automatic consumer integration.
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;

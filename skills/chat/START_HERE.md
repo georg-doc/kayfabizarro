@@ -106,6 +106,17 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-10-03 · AUDIO-STEM-BED-01 current
+
+- Draft PR #341 · branch `chatgpt-web/audio-stem-bed-01-2026-10-03`.
+- PUBLIC_VERIFIED route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-01/`.
+- Architecture: Suno-authored music remains Ground Truth; KFB runs eight phase-locked stems and modulates weights only.
+- Controls: Activity / Road-Lift / Night / Voice Focus.
+- Evidence: **22/22 source PASS · 19/19 branch Chromium/WebAudio PASS · 19/19 public exact-route PASS**.
+- Emotional RPG donor prompts live at `workflows/KFB_AUDIO_STEM_BED_01_2026-10-03/SUNO_EMOTIONAL_RPG_DONORS_v1.md`.
+- Next gate: `GEORG_AUDIO_STEM_BED_01`.
+- Do not add Deck/weather/real Race integration, cross-song pitched-stem mixing, merge or Live promotion before listening.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.

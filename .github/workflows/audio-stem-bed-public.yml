@@ -1,0 +1,44 @@
+name: AUDIO-STEM-BED-01 public Stage proof
+
+on:
+  push:
+    branches: ['chatgpt-web/audio-stem-bed-01-2026-10-03']
+    paths: ['.github/workflows/audio-stem-bed-public.yml']
+  workflow_dispatch:
+
+permissions: {contents: read}
+
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/audio-stem-bed-01
+            .github/workflows/audio-stem-bed-public.yml
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Install Playwright
+        run: npm install --no-save playwright@1.51.1 && npx playwright install --with-deps chromium
+      - name: Exercise exact Cloudflare Stage
+        env:
+          STEM_BED_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-01/
+          STEM_BED_PROOF: audio-stem-bed-public-proof
+        run: |
+          ok=0
+          for attempt in 1 2 3 4; do
+            echo "Public Stage attempt $attempt"
+            rm -rf "$STEM_BED_PROOF"
+            if node kfb-hub/stage/audio-stem-bed-01/qa.mjs; then
+              ok=1
+              break
+            fi
+            if [ "$attempt" -lt 4 ]; then sleep 30; fi
+          done
+          test "$ok" = 1
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: {name: audio-stem-bed-01-public-proof, path: audio-stem-bed-public-proof/, retention-days: 14}
