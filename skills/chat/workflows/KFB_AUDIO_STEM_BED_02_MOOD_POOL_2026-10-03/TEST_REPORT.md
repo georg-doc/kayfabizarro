@@ -86,3 +86,36 @@ The public Hub itself passed. A separate optional attempt to mirror the card int
 Not yet accepted. Automated audio execution cannot substitute for Georg's listening judgment.
 
 **Next gate:** `GEORG_AUDIO_STEM_BED_02`.
+
+## R2 master-ground-truth repair
+
+### Final branch head
+
+- head `9555fd0e45edb99804bb9b477f662b210723d308`
+- run `37135402751`
+- job `111238803148`
+- **31/31 PASS**
+- artifact `11278327849`
+- digest `sha256:6abdd70abe4df4a1ede81bd25d90ab9600942dca39ed34f96780d0bc7ef2a0d1`
+
+Buant Groove proof:
+- original master loaded: **true**;
+- runtime policy: `master-safe`;
+- active game-bed sources: **1**;
+- loaded stem sources: **0**;
+- errors: **0**.
+
+This proves R2 cannot reproduce the rejected Buant stem-remix path.
+
+### Public R2
+
+- publication: `cloudflare-live@b2c9521c446db334f36797d7aa94482c09495fb8`;
+- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/`;
+- run `37135399619` / job `111238793524`;
+- attempts 1–2 saw the pre-deployment page;
+- unchanged attempt 3: **31/31 PASS**;
+- public Hub: HTTP 200 / card present / direct URL present;
+- artifact `11278332936`;
+- digest `sha256:d9bd422d6285168aaa480baa36ee454ca5e87a8bac9e8bfa9b3ff2a34f3483c0`.
+
+Automated proof establishes source/runtime/publication identity. Musical acceptance remains Georg's listening gate.

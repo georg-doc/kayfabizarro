@@ -5,11 +5,12 @@
   "repository": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03",
   "pullRequest": 346,
-  "lastProvenRuntimePublicHead": "9433a901a83c043b2c5de235d65394facd8f9846",
+  "lastProvenRuntimePublicHead": "9555fd0e45edb99804bb9b477f662b210723d308",
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
   "publication": {
-    "stageCommit": "9d541e79fa7dc10ef5b80ce08b8d3b25d9d1e327",
-    "hubDirectLinkCommit": "26bb3926bde5a2e1e519409d182a62b654cfba71",
+    "stageCommit": "b2c9521c446db334f36797d7aa94482c09495fb8",
+    "hubCommit": "b2c9521c446db334f36797d7aa94482c09495fb8",
+    "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
     "hubRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
   },
   "donors": [
@@ -87,6 +88,26 @@
       "cardPresent": true,
       "directStageUrlPresent": true,
       "hubRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
+    },
+    "r2Branch": {
+      "run": 37135402751,
+      "job": 111238803148,
+      "pass": 31,
+      "total": 31,
+      "artifact": 11278327849,
+      "digest": "sha256:6abdd70abe4df4a1ede81bd25d90ab9600942dca39ed34f96780d0bc7ef2a0d1"
+    },
+    "r2Public": {
+      "run": 37135399619,
+      "job": 111238793524,
+      "pass": 31,
+      "total": 31,
+      "attempt": 3,
+      "artifact": 11278332936,
+      "digest": "sha256:d9bd422d6285168aaa480baa36ee454ca5e87a8bac9e8bfa9b3ff2a34f3483c0",
+      "hubHttp": 200,
+      "hubCard": true,
+      "directStageUrl": true
     }
   },
   "protectedBoundaries": [
@@ -98,7 +119,7 @@
     "no automatic merge",
     "no Live promotion"
   ],
-  "nextGate": "GEORG_AUDIO_STEM_BED_02",
+  "nextGate": "GEORG_AUDIO_STEM_BED_02_R2",
   "legacyHubSourceSync": {
     "status": "ARCHIVED_FAILED_ATTEMPT",
     "affectedPath": "kfb-hub/index.html",
@@ -109,5 +130,19 @@
     ],
     "recovery": "restore affected path from 9433a901a83c043b2c5de235d65394facd8f9846 and stop repair loop",
     "export": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/FAILURE_RECOVERY_EXPORT.json"
+  },
+  "status": "R2_PUBLIC_VERIFIED_HUMAN_RETEST_PENDING",
+  "runtimeSourceStemCount": 50,
+  "runtimePolicies": {
+    "neutral": "stem-certified",
+    "awe": "master-safe",
+    "sunshine": "master-safe",
+    "grief": "master-safe",
+    "boss": "master-safe"
+  },
+  "previousHumanResult": {
+    "status": "FAIL",
+    "scope": "superseded v0.1 universal stem mix",
+    "finding": "Buant Groove lost original musical identity and sounded ploppy/buggy"
   }
 }

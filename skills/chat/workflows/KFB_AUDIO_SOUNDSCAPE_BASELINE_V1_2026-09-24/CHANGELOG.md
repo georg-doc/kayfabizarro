@@ -1,5 +1,14 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-STEM-BED-02 R2 correction
+
+- recorded Georg HUMAN FAIL for the v0.1 generalized stem pool;
+- corrected new donors to MASTER-SAFE original-master playback;
+- retained Cyclical Warmth as the only currently stem-certified donor;
+- R2 branch 31/31 PASS; public attempt 3 31/31 PASS;
+- exact Stage remains human-retest only; no consumer integration or merge.
+
+
 ## 2026-10-03 · AUDIO-STEM-BED-02 child
 
 - Added PUBLIC_VERIFIED five-donor adaptive Suno mood-pool candidate on Draft PR #346.

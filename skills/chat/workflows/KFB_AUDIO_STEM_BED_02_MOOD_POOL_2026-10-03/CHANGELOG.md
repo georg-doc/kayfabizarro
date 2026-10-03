@@ -45,3 +45,17 @@
 - sample-level MP3 master↔stem correlation is rejected as a certification metric for this purpose;
 - R1 was not published;
 - repair pass 2 pivots to MASTER GROUND TRUTH for the four new donors; only human-accepted Cyclical Warmth keeps active stem adaptation.
+
+## 2026-10-03 · R2 master-ground-truth repair
+
+- stopped trying to universalize the Cyclical Warmth gain matrix;
+- Cyclical Warmth remains the single `stem-certified` donor;
+- Awe / Buant / Dorian / Stalking changed to `master-safe`;
+- MASTER-SAFE donors play the exact uploaded master and do not decode stems at runtime;
+- 50 source stems remain inventoried for later donor-specific certification;
+- added bounded master-level Activity / Road / Night / Voice processing;
+- R2 branch final head `9555fd0e45edb99804bb9b477f662b210723d308`: **31/31 PASS**;
+- copied the four missing master blobs to `cloudflare-live@b2c9521c446db334f36797d7aa94482c09495fb8` and verified exact SHAs;
+- public R2 proof run `37135399619`: attempt 3 **31/31 PASS**, Hub HTTP 200 + card/direct URL PASS;
+- current gate: `GEORG_AUDIO_STEM_BED_02_R2`;
+- BEETLE RUMBLE signature-theme brief remains prepared but audio generation/promotion stays after the repaired bed gate.

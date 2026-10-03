@@ -1,6 +1,6 @@
 # AUDIO-STEM-BED-02 · START HERE
 
-**Status:** HUMAN FAIL · TECHNICAL DIAGNOSIS OPEN  
+**Status:** R2 PUBLIC_VERIFIED · HUMAN RETEST PENDING  
 **Date:** 2026-10-03  
 **Owner:** KFB Audio & Soundscape Baseline v1  
 **Repo:** `georg-doc/kayfabizarro`  
@@ -83,6 +83,58 @@ Current state: **PROMPT ONLY**. No signature-theme master/stems are promoted by 
 - No real Deck/weather/Race telemetry integration is added.
 - No automatic merge or Live promotion.
 - Legacy `kfb-hub/index.html` source sync was abandoned after two failed boundary-repair attempts and rolled back; the current public Hub owner is `kfb-hub/stage/hub-ui-v2/index.html` on `cloudflare-live`, which is publicly verified.
+
+## R2 repair · PUBLIC_VERIFIED · HUMAN RETEST PENDING
+
+R2 deliberately stops generalizing the Cyclical stem recipe to every song.
+
+Runtime policy:
+- **Cyclical Warmth** — `stem-certified`; retains the already-heard AUDIO-STEM-BED-01 adaptive stem path.
+- **Awe Before Drama** — `master-safe`.
+- **Buant Groove** — `master-safe`.
+- **Dorian Rests** — `master-safe`.
+- **Stalking Groove** — `master-safe`.
+
+For the four new donors, the actual game bed is now the byte-identical uploaded **original master**. Their 42 source stems remain in the donor library but are not decoded or used at runtime until each donor passes its own listening certification.
+
+Adaptive controls on MASTER-SAFE donors are bounded master-level processing only:
+- Activity: small presence change;
+- Road-Lift: small low-shelf/presence lift;
+- Night: bounded low-pass/presence change;
+- Voice Focus: global master duck.
+
+### Evidence
+
+Final R2 branch head before metadata close:
+`9555fd0e45edb99804bb9b477f662b210723d308`
+
+Branch:
+- run `37135402751`
+- job `111238803148`
+- **31/31 PASS**
+- Buant snapshot: `runtimePolicy=master-safe`, `mode=master-safe`, `starts=1`, `loadedStemCount=0`, `masterLoaded=true`
+- artifact `11278327849`
+- digest `sha256:6abdd70abe4df4a1ede81bd25d90ab9600942dca39ed34f96780d0bc7ef2a0d1`
+
+Publication:
+- `cloudflare-live@b2c9521c446db334f36797d7aa94482c09495fb8`
+- exact original master blobs for Awe / Buant / Dorian / Stalking copied from `main` and SHA-verified.
+
+Public:
+- run `37135399619`
+- job `111238793524`
+- attempts 1–2: deployment window, R2 marker not yet visible
+- attempt 3: **31/31 PASS**
+- public Hub: HTTP **200**, card present, direct Stage URL present
+- artifact `11278332936`
+- digest `sha256:d9bd422d6285168aaa480baa36ee454ca5e87a8bac9e8bfa9b3ff2a34f3483c0`
+
+Direct retest:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/`
+
+The previous human FAIL remains valid for the superseded v0.1 stem-pool mix. R2 is a repair candidate, **not yet HUMAN_ACCEPTED**.
+
+**Exactly one next gate:** `GEORG_AUDIO_STEM_BED_02_R2` — test Buant Groove first: MASTER REFERENCE vs PLAY GAME BED must preserve the original song identity; then spot-check Awe / Dorian / Stalking and the retained Cyclical stem path.
 
 ## HUMAN LISTENING RESULT · FAIL · 2026-10-03
 

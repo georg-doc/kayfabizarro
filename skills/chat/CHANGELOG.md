@@ -1,5 +1,14 @@
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
+## 2026-10-03 · AUDIO-STEM-BED-02 R2 repair
+
+- Georg rejected v0.1 after Buant Groove lost the original melody/identity and sounded ploppy/buggy.
+- Root architecture correction: do not generalize one donor's stem balance across songs.
+- R2 keeps Cyclical Warmth as the only stem-certified donor; the four new donors now use exact original masters as Ground Truth.
+- R2 branch `9555fd0e45edb99804bb9b477f662b210723d308`: **31/31 PASS**.
+- Public `cloudflare-live@b2c9521c446db334f36797d7aa94482c09495fb8`; exact Stage run `37135399619` attempt 3 **31/31 PASS**.
+- Human retest remains open; no merge/consumer integration.
+
 ## 2026-10-03 · AUDIO-STEM-BED-02 mood pool
 
 - recovered interrupted audio continuation as Draft PR #346 on `chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03`;

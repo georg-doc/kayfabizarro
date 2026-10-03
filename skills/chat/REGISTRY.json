@@ -823,7 +823,7 @@
     {
       "id": "kfb-audio-stem-bed-02-mood-pool-2026-10-03",
       "kind": "workflow",
-      "status": "PUBLIC_VERIFIED_HUMAN_LISTENING_PENDING",
+      "status": "R2_PUBLIC_VERIFIED_HUMAN_RETEST_PENDING",
       "version": "0.1",
       "path": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/START_HERE.md",
       "recovery": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/RECOVERY.md",
@@ -857,8 +857,8 @@
         "cross-song pitched stem mixing",
         "Live promotion"
       ],
-      "nextGate": "GEORG_AUDIO_STEM_BED_02",
-      "note": "PUBLIC_VERIFIED Stage. 14/14 donor census; 100/100 exact source; 18/18 current-head Chromium/WebAudio; 18/18 exact public Stage. Human listening remains pending."
+      "nextGate": "GEORG_AUDIO_STEM_BED_02_R2",
+      "note": "v0.1 HUMAN FAIL on musical fidelity. R2: Cyclical stem-certified; four new donors master-safe. Final branch 31/31 PASS; public attempt 3 31/31 PASS; human retest pending."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"
