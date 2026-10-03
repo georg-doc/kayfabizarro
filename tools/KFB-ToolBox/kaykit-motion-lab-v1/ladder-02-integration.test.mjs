@@ -23,6 +23,7 @@ test('Ladder 02 becomes the exact five-rung technical forward profile',()=>{
   assert.equal(profile.states['run.easy'].clip,'kfb_locomotion_slow_run_a');
   assert.equal(profile.states.run.clip,'kfb_locomotion_medium_run_a');
   assert.equal(profile.states.sprint.clip,'kfb_locomotion_sprint_a');
+  assert.equal(profile.states.backward.clip,'kfb_locomotion_walk_backward_a');
   assert.equal(profile.technicalForwardReady,true);
   assert.equal(profile.humanAccepted,false);
 });
@@ -86,4 +87,11 @@ test('forward evidence is technically ready but whole-character prototype health
   assert.ok(h.missing.includes('backward'));
   assert.ok(h.missing.includes('strafe.left'));
   assert.ok(h.missing.includes('strafe.right'));
+});
+
+
+test('neutral freeplay gets source-backed reverse without inventing a second consumer mapping',()=>{
+  assert.equal(profile.states.backward.sourceRung,'walkBack');
+  assert.equal(profile.states.backward.sourceEvidence,'LOCOMOTION_LADDER_02');
+  assert.ok(profile.states.backward.referenceSpeed>0);
 });

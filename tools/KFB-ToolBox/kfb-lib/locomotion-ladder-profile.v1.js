@@ -107,6 +107,7 @@ export function buildForwardProfileFromLadder(ladder, {
     idle: stateFromRung(rows.get('idle'), 'idle', rigFamily, speedSpace, null),
     start: stateFromRung(rows.get('walkStart'), 'start', rigFamily, speedSpace, null),
     stop: stateFromRung(rows.get('walkStop'), 'stop', rigFamily, speedSpace, null),
+    backward: stateFromRung(rows.get('walkBack'), 'backward', rigFamily, speedSpace, [0.75, 1.25]),
   };
 
   for (const [rung, state] of Object.entries(FORWARD_RUNG_STATE)) {
