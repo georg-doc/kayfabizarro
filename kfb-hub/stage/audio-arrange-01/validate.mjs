@@ -8,7 +8,7 @@ const checks=[];
 const check=(name,ok,detail=null)=>{checks.push({name,ok:!!ok,detail});if(!ok)throw new Error(name+': '+JSON.stringify(detail));};
 
 try{
-  check('build marker',spec.build==='AUDIO-ARRANGE-01-DONOR-BENCH-v0.1',spec.build);
+  check('build marker',spec.build==='AUDIO-ARRANGE-01-DONOR-BENCH-v0.2',spec.build);
   check('branch-only status',spec.publicStage===false);
   check('bpm normalized',spec.bpm===76,spec.bpm);
   check('4/4',spec.beatsPerBar===4);
