@@ -2104,3 +2104,15 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Retained proven Settings/source/boot work for Driver v4 ↔ FB v5b + Ear v5; 80/80 repo PASS and 24/29 second browser gate.
 - Did not create the planned v5 Stage route. Existing public Combat C-MVP-A-R2 remains current.
 - Routed exactly one next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+## 2026-10-03 · KFB Cartoon Brawl skill v1
+- Opened bounded workflow `KFB-CARTOON-BRAWL-SKILL-01` on `chatgpt-web/kfb-cartoon-brawl-skill-01-2026-10-03`; Draft PR **#342**.
+- Added `skills/kfb-cartoon-brawl_v1.md` as `CURRENT_REFERENCE · canonical-draft`, specializing `skills/kfb-cartoon-animation_v2.md` without creating a shared combat runtime.
+- Research spine: **40 unique HTTPS sources**, **42 evidence rows**, plus a separate 17-section weapon/transition/clearance taxonomy.
+- Skill covers unarmed, 1H blade/blunt, shield+1H, 2H, polearm/staff and improvised/Brickfish profiles; canonical grip/basis, full-clip self-clearance, swept contact, per-swing ledger, input buffer/branch/cancel, root-motion/warp ownership, unsynced vs paired choreography, crowd scheduling and confirmed-contact VFX/SFX/hitstop.
+- Reused current KFB Combat Arena CA2 donors conceptually: real 1H clip, authored hand slot, swept contact, AttackLedger and spacing/forced-contact diagnostics. Combat runtime was not modified.
+- Updated central Registry/router and Combat consumer routing; Combat remains its own implementation SSOT.
+- Final structured documentation/routing gate: **75/75 PASS**; evidence in `skills/chat/workflows/KFB_CARTOON_BRAWL_SKILL_2026-10-03/TEST_EVIDENCE.md`.
+- No standalone Stage and no Hub action card were created: this is a shared-skill milestone with no Georg-facing product decision; HUB-CTRL remains the generated Hub owner and was not hand-edited.
+- Exactly one next gate: **BRAWL-SKILL-CONSUMER-01** — prove the skill on one real Combat Arena melee consumer before broader weapon expansion.
+
