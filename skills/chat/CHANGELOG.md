@@ -309,3 +309,17 @@ Focused source/readback contract: **15/15 PASS**. Full historical Node suite is 
 ### STAGE / ROUTING
 Exact Stage mirror: `cloudflare-live@6406774131723288b757fd676e6d7be3f08b1123`; app/index/K1/soften plus ToolBox and public Hub routing read back successfully. Direct pages.dev visibility remains unverified in the current tool environment. Exactly one gate: `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`. No merge or Live promotion.
 
+## 2026-10-03 · EyeRig Batch · wheel zoom repair 02
+
+### HUMAN FEEDBACK
+The first comfort pass (`zoomSpeed=.28`) still jumped to extreme near/far camera positions.
+
+### IMPLEMENTATION
+Native OrbitControls wheel zoom is disabled. OrbitControls remains the orbit/target/rotation owner; a bounded wheel-input adapter controls only distance to that same target. Absolute distance is 1.6–8.0, base step 0.12/event, one gesture is capped to 0.65 inward / 0.85 outward, reset after 160 ms idle, damp factor 14, max physical movement 0.09 units/frame. Camera presets re-sync the wheel target.
+
+### TESTED RESULT
+Focused repair checks: **13/13 PASS**. Boot repair, Clay K1, Control R2 and the 25-family/56-appearance palette layer remain retained.
+
+### STAGE / ROUTING
+Stage mirror `cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`; source/stage app blob match. Exactly one gate: `GEORG_EYERIG_WHEEL_ZOOM_VIS_02`. After PASS resume Neutral ↔ Clay K1 review. No merge or Live promotion.
+
