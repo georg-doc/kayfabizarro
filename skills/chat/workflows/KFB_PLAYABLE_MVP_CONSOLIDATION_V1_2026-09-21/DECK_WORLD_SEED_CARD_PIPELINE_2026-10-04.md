@@ -291,3 +291,135 @@ This can be folded into `WORLD-MULTI-ISLAND-CORRIDOR-01`; it does not require a 
 - Playmation/Clay SSOT remains the 3D look owner.
 - No didactic score or forced ideological route.
 - No Stage/Live publication for this planning checkpoint.
+
+
+## 14 · Fractal semantic spine · Deck → Card → Biome → Resident → Triplet
+
+The same authored source should project at several scales instead of being copied into disconnected systems.
+
+### DECK scale · WORLD_KNOWLEDGE_PROFILE
+A deck defines the broad semantic prior for one satellite world:
+- canonical `deckId`;
+- world / island identity;
+- worldview/concept weights;
+- biome and terrain cues;
+- architecture / prop / institution cues;
+- light / palette / weather cues;
+- audio / performance context cues;
+- Resident archetype / occupation affinities;
+- Billboard/media pool;
+- ChatterBox register bias.
+
+This is a **profile/reference layer**, not another dialogue or world runtime.
+
+### CARD scale · CARD_SEMANTIC_SEED
+Every Card can act as a local semantic seed inside its parent deck:
+- `cardRef = deckId + cardNumber`;
+- `cardName`;
+- `power`;
+- `lore`;
+- `grade`;
+- `artworkPrompt`;
+- derived concept tags;
+- possible POI / prop / activity / Resident affinities;
+- possible Billboard/media use;
+- possible Triplet relation hooks.
+
+A Card seed may influence a local POI, Resident encounter, micro-biome, prop cluster or media surface without creating a new global biome class for every Card.
+
+### BIOME / POI scale · projection, not duplicate truth
+The world can derive authored presentation from the deck/card layer:
+- island/zone palette and light;
+- terrain mood;
+- architecture families;
+- source-proven asset search terms;
+- local prop/activity density;
+- Resident cast weighting;
+- Billboard Card selection;
+- ambient audio/performance context.
+
+Derived fields remain reproducible caches. They point back to the source deck/card refs.
+
+### RESIDENT scale · RESIDENT_KNOWLEDGE_PROFILE
+A Resident does not own a private copy of the deck. It references:
+- `primaryDeckId`;
+- optional secondary/counterpoint deck weights;
+- `signatureCardRefs[]`;
+- known/encountered Card refs;
+- profession/archetype/personality filters;
+- local POI/world facts;
+- social/Lean-Memory facts;
+- current activity/context;
+- per-topic salience weights.
+
+This means two Residents in the same island can share world knowledge while remaining clearly different.
+
+Example:
+- Utopia residents share the `forget_utopia` semantic field, but a robot, bureaucrat and skeptical maintenance worker weight different Cards and motifs.
+- Dystopia residents share `ignore_dystopia`, while Demon Lord, exhausted worker and alarm-pundit voice different parts of the same deck.
+- Protopia residents share `embrace_protopia`, while Lawkeeper/Lorekeeper, Farmer and maker/repair Resident weight different practical concepts.
+
+## 15 · ChatterBox / semantic Triplet binding
+
+Reuse the existing ChatterBox/Overworld lineage. Do not build a second dialogue grammar.
+
+Current donor rules retained:
+- semantic upstream supplies content;
+- faction/worldview + Resident identity filter it;
+- ChatterBox owns speaker/timing/presentation budget;
+- Bubble/Emote/TTS is output;
+- Card has content priority ahead of generic faction chatter when contextually relevant;
+- the player supplies closure rather than the NPC over-explaining the final beat.
+
+For a Card/deck-backed Resident, Triplet generation should resolve from weighted source refs rather than free-floating generic prose.
+
+Recommended semantic assembly:
+1. **SUBJECT / SHOW IT** — concrete local thing: visible Card, object, event, Resident action, Billboard motif or world fact.
+2. **CONNECTOR / SPIN IT** — relation selected from Card `power/lore`, deck concepts and current situation.
+3. **REFRAME / SELL IT** — Resident-specific worldview/personality/social relation supplies the angle; leave enough semantic gap for player closure.
+
+The three fields can be expressed as one short utterance, three beats, a Card sequence or an encounter arc. They are roles, not mandatory three-sentence output.
+
+### Weighted source order
+The runtime/content selector may use a normalized weighting layer such as:
+
+`visible/recent Card → immediate local situation → Resident signature Cards → primary deck/worldview → relationship/social memory → local history → broader world context`
+
+Exact numeric weights remain implementation data and must be tested in the real consumer. Do not hard-code historical ChatterBox constants as new universal defaults.
+
+### Distinguishability requirement
+A valid Resident voice test should demonstrate that:
+- identical local event + different `primaryDeckId` produces materially different semantic framing;
+- identical deck + different Resident profile produces materially different emphasis/register;
+- the selected Card refs are inspectable in evidence/debug output;
+- no output invents a Card title/concept that is absent from the source JSON unless explicitly marked generated association.
+
+## 16 · Billboards, NPCs and Almanac share the same Card identity
+
+A Billboard, Resident utterance and Almanac entry may all refer to the same canonical `cardRef`.
+
+Example chain:
+`cardRef → Billboard shows actual PDF art → Resident Triplet discusses its semantic concepts → Player acquires Card → Almanac records provenance`.
+
+This is the preferred fractal relationship:
+- **Deck** = macro-world semantic field;
+- **Card** = micro-world / encounter seed;
+- **Biome/POI** = spatial projection;
+- **Resident worldview** = social projection;
+- **Triplet** = sentence/beat projection;
+- **Billboard** = media projection;
+- **Almanac** = memory/provenance projection.
+
+No layer rewrites the Card into a separate source object.
+
+## 17 · One-Shot fixture consequence
+
+Extend `DECK-WORLD-SEED-01` with one small ChatterBox proof:
+- one canonical Card from each future deck;
+- one Resident profile per future island;
+- one shared neutral local event/interaction;
+- source resolver returns the Card/deck refs used;
+- each Resident produces a short semantic Triplet/beat that is distinguishable by world knowledge;
+- the same Card can be rendered on a Billboard/Viewer and acquired into the Almanac by the same canonical identity.
+
+This is a source/contract proof. It does not require open-ended LLM society simulation.
