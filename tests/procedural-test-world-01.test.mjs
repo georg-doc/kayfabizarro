@@ -1,0 +1,38 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+
+const root=new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/',import.meta.url);
+const html=fs.readFileSync(new URL('PROCEDURAL_TEST_WORLD_01_SOURCE.html',root),'utf8');
+const profile=JSON.parse(fs.readFileSync(new URL('WORLD_PROFILE.json',root),'utf8'));
+const app=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js',import.meta.url),'utf8');
+
+test('procedural test world uses stable WorldBuilder and no Travel host',()=>{
+  assert.match(html,/\.\.\/wb2-design-01\/wb2d-app\.js/);
+  assert.doesNotMatch(html,/travel|globe-v13|card-start/i);
+  assert.equal(profile.world.travelHost,false);
+  assert.equal(profile.world.cardSystem,false);
+});
+
+test('legacy play owner is disabled only for this host profile',()=>{
+  assert.match(html,/play:false/);
+  assert.match(app,/const PLAY_ENABLED=/);
+  assert.match(app,/if\(PLAY_ENABLED\)\{/);
+  assert.match(app,/locomotion intentionally detached/);
+});
+
+test('test world boots current B3 procedural building zone',()=>{
+  assert.match(html,/world:'huerth-b1'/);
+  assert.equal(profile.provenWorldDonor.pr,327);
+  assert.equal(profile.provenWorldDonor.facts.buildings,700);
+});
+
+test('future motion dock points to central Motion SSOT, not wi1-play',()=>{
+  assert.equal(profile.futureMotionDock.pr,331);
+  assert.equal(profile.futureMotionDock.legacyWi1Play,'DISABLED_IN_THIS_ENTRY');
+});
+
+test('source-proven procedural nature families are routed without claiming placement',()=>{
+  assert.equal(profile.proceduralDesign.natureModules.length,2);
+  assert.equal(profile.proceduralDesign.natureMountStatus,'AVAILABLE_NOT_YET_PLACED_IN_WORLD');
+});
