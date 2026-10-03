@@ -70,7 +70,7 @@ prove which original KayKit Rig_Medium locomotion clips look and measure cleanly
 
 ### Georg
 
-**Du musst jetzt nichts tun.**
+**Deine einzige Aufgabe:** Coworker / Blender öffnen und ihm genau den vorbereiteten PR-#344-Auftrag geben. Du musst keine Animationsnamen, Parameter, Pfade oder technischen Entscheidungen ergänzen.
 
 ### What Georg receives next
 

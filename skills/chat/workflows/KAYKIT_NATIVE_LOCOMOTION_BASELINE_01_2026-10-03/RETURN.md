@@ -18,7 +18,10 @@ No transition tuning.
 
 ## Deine Aufgabe
 
-**Du musst jetzt nichts tun.**
+Öffne Coworker / Blender und sage nur:
+**„Bitte führe KAYKIT-NATIVE-BLENDER-BASELINE-01 aus PR #344 vollständig nach START_HERE und Blender-Brief aus.“**
+
+Keine weiteren technischen Angaben von Georg.
 
 ## Danach bekommst du
 
