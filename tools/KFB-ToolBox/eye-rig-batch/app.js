@@ -169,7 +169,7 @@ function beginInlineNumberEdit(out){
   if(sel&&range){range.selectNodeContents(out);sel.removeAllRanges();sel.addRange(range);}
 }
 function initInlineNumberEditors(){
-  $('output[data-out]').forEach((out)=>{
+  $$('output[data-out]').forEach((out)=>{
     out.tabIndex=0;out.title='Click value to type directly';
     out.onclick=()=>beginInlineNumberEdit(out);
     out.onkeydown=(ev)=>{
