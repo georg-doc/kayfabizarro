@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { clone as cloneSkeleton } from 'three/addons/utils/SkeletonUtils.js';
+import { createMotionStateMachine, profileHealth, SCHEMA as MOTION_STATE_SCHEMA } from '../kfb-lib/motion-state-machine.v1.js';
 
 const PIN='bdaea0648f27c0f16e0a737bfba237eb54dd4cbb';
 const RAW='https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+PIN+'/';
@@ -82,6 +83,7 @@ const ROOT_MOTION=/^(root|hips)$/i;
 const FOOT_RE=/foot/i;
 const FOOT_EXCLUDE=/target|pole|ik/i;
 let lanes=[],clips={},profiles={},available=[],currentActor=null,currentSemantic='idle',loadToken=0,error=null,sourceReport=null;
+let motionMachine=null,lastAutoDecision=null;
 
 function nodeNames(root){const s=new Set();root.traverse(n=>{if(n.name)s.add(n.name)});return s}
 function trackInfo(track){try{return THREE.PropertyBinding.parseTrackName(track.name)}catch{return null}}
@@ -198,7 +200,7 @@ function clearLanes(){
     try{lane.dispose?.()}catch{}
     scene.remove(lane.holder,lane.markers.left,lane.markers.right);
   }
-  lanes=[];clips={};profiles={};available=[];sourceReport=null;
+  lanes=[];clips={};profiles={};available=[];sourceReport=null;motionMachine=null;lastAutoDecision=null;
 }
 function actorHeight(root){const b=new THREE.Box3().setFromObject(root),s=b.getSize(new THREE.Vector3());return s.y}
 function groundHolder(holder){holder.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(holder);if(Number.isFinite(b.min.y))holder.position.y-=b.min.y;holder.updateMatrixWorld(true)}
@@ -317,15 +319,56 @@ function goSemantic(next){
   for(let i=0;i<lanes.length;i++)transitionLane(lanes[i],from,target,locomotion?(i===0?'naive':'sync'):'naive',syncFoot.value);
   currentSemantic=next;
 }
-function speedBandProposal(){
-  const w=profiles.Walking_A?.referenceSpeedAbs,r=profiles.Running_A?.referenceSpeedAbs,d=Number(desiredSpeed.value);
-  if(!w||!r)return'idle';
-  const idleExit=w*.25,idleEnter=w*.15,runEnter=(w+r)/2,runExit=runEnter*.82;
-  if(!hysteresis.checked)return d<idleExit?'idle':d<runEnter?'walk':'run';
-  if(currentSemantic==='idle')return d>idleExit?'walk':'idle';
-  if(currentSemantic==='walk'){if(d<idleEnter)return'idle';if(d>runEnter)return'run';return'walk'}
-  if(currentSemantic==='run')return d<runExit?'walk':'run';
-  return'walk';
+function labStateProfile(){
+  const technicalRange=[0.45,1.8]; // existing Motion Lab technical candidate; not a final product range.
+  const measured=(clip,role)=>profiles[clip]?{
+    role,clip,status:'MEASURED_TECHNICAL_CANDIDATE',
+    referenceSpeed:profiles[clip].referenceSpeedAbs,
+    playbackRange:technicalRange
+  }:{role,clip:null,status:'PENDING_SOURCE'};
+  return{
+    preferredPhaseFoot:syncFoot.value,
+    warpDuringGaitCrossfade:document.getElementById('warp').checked,
+    forwardOrder:['walk','run'],
+    transitions:{
+      'walk→run':{fade:Number(fade.value),syncPhase:true},
+      'run→walk':{fade:Number(fade.value),syncPhase:true}
+    },
+    states:{
+      idle:{role:'idle',clip:clips.Idle_A?'Idle_A':null,status:clips.Idle_A?'SOURCE':'PENDING_SOURCE'},
+      start:{role:'start',clip:null,status:'TRANSITION_ONLY'},
+      walk:measured('Walking_A','walk'),
+      'walk.fast':{role:'walk.fast',clip:null,status:'PENDING_SOURCE'},
+      run:measured('Running_A','run'),
+      sprint:{role:'sprint',clip:null,status:'PENDING_SOURCE'},
+      stop:{role:'stop',clip:null,status:'TRANSITION_ONLY'},
+      backward:{role:'backward',clip:null,status:'PENDING_SOURCE'},
+      'strafe.left':{role:'strafe.left',clip:null,status:'PENDING_SOURCE'},
+      'strafe.right':{role:'strafe.right',clip:null,status:'PENDING_SOURCE'},
+      turn:{role:'turn',clip:null,status:'PENDING_SOURCE'},
+      'jump.start':{role:'jump.start',clip:null,status:'PENDING_SOURCE'},
+      'jump.air':{role:'jump.air',clip:null,status:'PENDING_SOURCE'},
+      'jump.land':{role:'jump.land',clip:null,status:'PENDING_SOURCE'}
+    }
+  };
+}
+function applyCentralAutoState(){
+  const profile=labStateProfile();
+  motionMachine=createMotionStateMachine(profile);
+  motionMachine.reset(currentSemantic);
+  const d=Number(desiredSpeed.value);
+  lastAutoDecision=motionMachine.update({
+    actualSpeed:d,
+    localForwardSpeed:d,
+    localSideSpeed:0,
+    grounded:true,
+    sprintIntent:false
+  });
+  const target=lastAutoDecision.presentationState;
+  if(['idle','walk','run'].includes(target))goSemantic(target);
+  metrics.textContent+='\n\nSSOT AUTO '+lastAutoDecision.semanticState+' → '+target+
+    ' · '+MOTION_STATE_SCHEMA+'\nhealth '+JSON.stringify(profileHealth(profile));
+  return lastAutoDecision;
 }
 function updateMarkers(lane){for(const side of ['left','right'])if(lane.feet?.[side])lane.feet[side].getWorldPosition(lane.markers[side].position)}
 async function loadActor(id){
@@ -367,11 +410,11 @@ fade.oninput=()=>fadeOut.textContent=Number(fade.value).toFixed(2);
 desiredSpeed.oninput=()=>speedOut.textContent=Number(desiredSpeed.value).toFixed(2);
 document.getElementById('transition').onclick=runAB;
 document.getElementById('playSource').onclick=playSource;
-document.getElementById('applyAuto').onclick=()=>goSemantic(speedBandProposal());
+document.getElementById('applyAuto').onclick=()=>applyCentralAutoState();
 for(const b of document.querySelectorAll('[data-state]'))b.onclick=()=>goSemantic(b.dataset.state);
 
 window.__KFB_TOOLBOX_MOTION_LAB__={
-  version:'0.1-candidate',
+  version:'0.2-ssot-candidate',
   ready:false,error:null,
   sourcePin:PIN,
   selectActor:async(id)=>{if(!ACTORS[id])throw Error('unknown actor '+id);actorSel.value=id;window.__KFB_TOOLBOX_MOTION_LAB__.ready=false;await loadActor(id)},
@@ -381,8 +424,9 @@ window.__KFB_TOOLBOX_MOTION_LAB__={
     actor:currentActor?.id||null,label:currentActor?.label||null,rig:currentActor?.rig||null,adapter:currentActor?.adapter||null,
     available:[...available],profiles:JSON.parse(JSON.stringify(profiles)),sourceReport,
     semantic:currentSemantic,
-    transition:{source:sourceSel.value,target:targetSel.value,foot:syncFoot.value,fade:Number(fade.value),warp:document.getElementById('warp').checked,desiredSpeed:Number(desiredSpeed.value),speedMatch:speedMatch.checked,hysteresis:hysteresis.checked,handoff:handoffSpeedCandidate()},
-    ownership:{movementPhysics:'consumer',mixer:'one-per-visual-host',registry:'read-only',face:currentActor?.id==='frizzlebob'?'graft-reader':'external-owner'},
+    transition:{source:sourceSel.value,target:targetSel.value,foot:syncFoot.value,fade:Number(fade.value),warp:document.getElementById('warp').checked,desiredSpeed:Number(desiredSpeed.value),speedMatch:speedMatch.checked,hysteresisOwner:MOTION_STATE_SCHEMA,handoff:handoffSpeedCandidate()},
+    stateMachine:{schema:MOTION_STATE_SCHEMA,lastAutoDecision,health:profileHealth(labStateProfile())},
+    ownership:{movementPhysics:'consumer',motionState:'kfb-lib/motion-state-machine.v1.js',mixer:'one-per-visual-host',registry:'read-only',face:currentActor?.id==='frizzlebob'?'graft-reader':'external-owner'},
     attachmentProposal:currentActor?.attachment||null
   })
 };
