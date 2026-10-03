@@ -2146,3 +2146,11 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Added `KFB_PRODUCTION_CONTROL_CONTRACT.md` as the binding preflight for current-source reconciliation, one-owner/one-candidate discipline, timeout handling, publication and MVP claims.
 - The corrected Coworker/Blender review on the KayKit-native branch supersedes the original baseline brief: Mannequin first, all eight Rig_Medium files, honest gaps, creator-reference scan and pictures-first return.
 - No new browser/world locomotion integration is allowed before Georg reviews the native KayKit visual return.
+
+# 2026-10-03 · Production crisis recon prepared
+
+- Froze broad integration, merge cleanup and runtime promotion until the current product/repository state is independently audited and reconciled.
+- Added a self-contained Sol 6.1 High technical/playability audit brief and a separate Claude Code / Opus 5.5 High repository/SSOT/process audit brief.
+- Both audits are read-only, use the same current-source scope and return schema, and may not merge, deploy, close branches, repair code or invent owners.
+- Added a reconciliation brief that produces one owner map, pull-request disposition, SSOT repair plan, Georg decision packet and four bounded playable MVP packets.
+- Recorded the current high-risk symptoms: stale central planning files, branch/PR sprawl, branch-local canon, uncertain timeout writes, large session-cut transfers and technical harnesses misrepresented as MVP progress.

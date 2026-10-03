@@ -7,6 +7,14 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## 2026-10-03 · CRISIS REVIEW FREEZE
+
+Broad integration, merge cleanup and new runtime slices are temporarily frozen while two independent read-only audits establish the actual product and repository state. Start here:
+
+- `workflows/KFB_PRODUCTION_CRISIS_RECON_2026-10-03/START_HERE.md`
+
+Sol 6.1 High audits technical integration and playability. Claude Code / Opus 5.5 High independently audits branches, pull requests, SSOT conflicts and the production process. Neither audit may merge, deploy, repair or create a replacement owner. Implementation resumes only after their returns are reconciled and Georg approves the recovery plan.
+
 ## Start order
 
 1. Read `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. It governs every user-facing update and every handoff.
