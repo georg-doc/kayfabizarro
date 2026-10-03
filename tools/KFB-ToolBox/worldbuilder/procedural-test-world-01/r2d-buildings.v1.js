@@ -95,7 +95,8 @@ function makeZone(plan,donors){
     counts:{buildings:buildings.length,roads:roadLine.length?1:0,landuse:0},
     buildings,
     roads:roadLine.length?[{id:'r2d-track-core-facade-context',cls:'residential',w:6,drive:true,name:'R2D Track Core',bridge:null,tunnel:null,layer:0,area:false,line:roadLine}]:[],
-    landuse:[],water:[],waterLines:[],railways:[],landmark:null,heroes:null,hbf:null,trackCorridorConflicts:[]
+    landuse:[],water:[],waterLines:[],railways:[],landmark:null,heroes:null,hbf:null,
+    conflicts:new Set(),trackCorridorConflicts:[]
   };
 }
 
