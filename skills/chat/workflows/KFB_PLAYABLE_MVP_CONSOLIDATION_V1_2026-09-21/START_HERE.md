@@ -7,6 +7,14 @@ Current receiving world is **KFB WorldBuilder / WB2** on Draft PR #332, not the 
 Current Resident MVP intake:
 `WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
 
+Current Site/God Mode/Lean Memory architecture:
+`SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
+
+Current pre-One-Shot audit:
+`ONE_SHOT_PRECHECK_2026-10-04.md`
+
+**Do not start the final One-Shot from PR #332 directly.** The precheck records current main ↔ #332 divergence and requires a clean World convergence base first. The final WSA/Codex One-Shot starts only after the preflight gates listed there are closed and one frozen integration lock pins exact owners/refs.
+
 Source package:
 `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/`
 
