@@ -40,6 +40,14 @@ ok(app.includes('buildLegacyFaceHost')&&app.includes('measureLegacyEyeCandidates
 ok(app.includes('setLegacySourceEyeVisibility')&&app.includes("measurement.status==='MEASURED_CANDIDATE'"),'source-eye hiding only follows measured candidate');
 ok(app.includes('profile.evidence.eyeProfileVisuallyApproved')===false,'app does not hardcode visual approval');
 ok(html.includes('Exact KayKit Dungeon 1.0 head source first'),'source-first rule visible');
+ok(html.includes('data-view="front"')&&html.includes('data-view="three-left"')&&html.includes('data-view="three-right"'),'Front + 3/4 review views present');
+ok(html.includes('id="sourceEyesBtn"')&&app.includes('setLegacySourceEyeVisibility(state.headPart,state.sourceEyesVisible)'),'source-eye cleanup comparison control present');
+ok(['dx','dy','ring','inset'].every(k=>html.includes(`data-tune="${k}"`))&&app.includes('function applyTune'),'minimal placement tuning exposes X/Y/size/inset');
+ok(['APPROVED','ADJUSTED_APPROVED','REJECTED'].every(s=>html.includes(`data-review="${s}"`))&&app.includes('function setReviewState'),'approve / adjusted approve / reject workflow present');
+ok(app.includes("REVIEW_KEY='kfb.toolbox.eye-rig-legacy-review.v1'")&&app.includes('localStorage.setItem(REVIEW_KEY'),'review progress persists additively');
+ok(app.includes("const profile=state.reviews[id]?.profile||state.persistedById.get(id)")&&app.includes('mountCandidate(id,{profileOverride:profile})'),'head selection remounts reviewed or persisted profile');
+ok(adapter.includes('setAnchor(patch){rig.setAnchor(patch);}')&&adapter.includes('setEye(patch){rig.setEye(patch);}'),'adapter forwards tuning to existing EyeRig v6');
+ok(html.includes('id="exportReviewBtn"')&&app.includes("eye-rig-legacy.review.json"),'review JSON export present');
 ok(!app.includes('localStorage.clear'),'no shared storage destruction');
 for(const f of ['legacy/app.js','lib/legacy-eye-adapter.v1.js']){
   try{new vm.SourceTextModule(read(f));ok(true,f+' module parses')}catch(e){console.error(e);ok(false,f+' module parses')}
