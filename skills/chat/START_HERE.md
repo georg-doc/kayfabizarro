@@ -1363,3 +1363,15 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · Current convergence map
+
+Read `CURRENT_ACTIVE_BRANCHES_2026-10-03.md` before starting new KFB Motion, World, Resident or Travel integration work.
+
+Current headline routing:
+- Motion/Locomotion SSOT candidate = PR #331.
+- Clean procedural test-world candidate = PR #332.
+- Travel Globe mobility recovery PRs are legacy/frozen test-host history, not the default future locomotion world.
+- Island World and Residents/EyeRig continue in parallel.
+- WSA/Work only when a concrete capability gap makes it worthwhile.
