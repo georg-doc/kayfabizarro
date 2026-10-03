@@ -1,0 +1,144 @@
+{
+  "schema": "kfb.vfx-language-source/1",
+  "date": "2026-10-03",
+  "workflow": "KFB-VFX-LANGUAGE-SKILL-01",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "chatgpt-web/kfb-vfx-language-skill-01-2026-10-03",
+    "pr": 347,
+    "base": "main"
+  },
+  "primary": {
+    "path": "skills/kfb-cartoon-vfx_v1.md",
+    "blob": "49578e9459ebad994a4a0c928e5c9b0f7cbe302d",
+    "status": "canonical-draft"
+  },
+  "evidence": {
+    "workflowStart": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/START_HERE.md",
+    "researchMatrix": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/RESEARCH_SOURCE_MATRIX.md",
+    "testReport": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/TEST_REPORT.md",
+    "recovery": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/RECOVERY.md"
+  },
+  "donors": {
+    "combat": {
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "files": [
+        {
+          "path": "modules/kfb-vfx-recipes.js",
+          "blob": "5b1ac585517d50617295e46cc4618b4108a4a7ad"
+        },
+        {
+          "path": "modules/kfb-hit-response.js",
+          "blob": "996aaed9a86967b05c273cbe133bef300f66b348"
+        },
+        {
+          "path": "modules/kfb-fx-sprites.js",
+          "blob": "df009798a09780ecd7d0341d1346aae69f517752"
+        },
+        {
+          "path": "modules/kfb-fx-trails.js",
+          "blob": "1589475df73ffe9135c9b11a14cbb9febae5d4c7"
+        },
+        {
+          "path": "modules/kfb-combat-cues.js",
+          "blob": "ef612cdec4fd369c0e62cc4daac34aa2126095b4"
+        },
+        {
+          "path": "modules/kfb-fx-flame.js",
+          "blob": "03c492de881f5cc7c60ef3059e915bcb7919dbdb"
+        }
+      ]
+    },
+    "travel": {
+      "repo": "georg-doc/kayfabizarro",
+      "files": [
+        {
+          "path": "travel/travel-v16/terrain-v16/speed-lines.js",
+          "blob": "c0ee910790ad1dc4dad30219b2482ae8469f69c7"
+        },
+        {
+          "path": "travel/KFB Travel Globe v13-1/globe-v13/drift-smoke.js",
+          "blob": "f032e948db167b709fd95bf2323ce89f6aa8c617"
+        },
+        {
+          "path": "travel/KFB Travel Globe v13-1/globe-v13/impact-dust.js",
+          "blob": "e898918ee7d78b7782e535ec8abd60b77e83a75f"
+        },
+        {
+          "path": "travel/KFB Travel Globe v13-1/globe-v13/carpet-wake.js",
+          "blob": "12cce260080a1b0ba26e6f21b9e2373af4b63141"
+        },
+        {
+          "path": "travel/KFB Travel Globe v13-1/globe-v13/post-radial.js",
+          "blob": "9b00b785cc80bfadb13934d4c8304b13542c5d83"
+        },
+        {
+          "path": "travel/KFB Travel Globe v13-1/globe-v13/contrails.js",
+          "blob": null
+        }
+      ]
+    },
+    "clay": {
+      "repo": "georg-doc/kayfabizarro",
+      "ref": "coworker/clay-city-mvp-01-2026-09-28",
+      "files": [
+        {
+          "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T4/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/lab-vfx/clay-vfx.v1.js",
+          "blob": "4aa7bb3bdf195ccaf3041a33d8819113b2aa01d3"
+        },
+        {
+          "path": "tools/KFB-ToolBox/_inbox/KFB Knet-Strecke T4/KFB_TRACK_T4_M2_CLAUDE_DESIGN_SESSION_CUT_2026-09-28_r1/lab-vfx/clay-particle-profiles.v1.json",
+          "blob": "506d3489345aeb1eadbbabd71cc7d1431a6b7945"
+        }
+      ],
+      "boundary": "Architecture donor only; reduced donor material does not replace current KFB K2/clay look owner."
+    },
+    "tinySkies": {
+      "repo": "dannylimanseta/tinyskies",
+      "ref": "2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6",
+      "files": [
+        {
+          "path": "client/src/game/CarpetLeaves.ts",
+          "blob": "9c6b68e74865f3cc3dc687edffa3b19412ce8f00"
+        },
+        {
+          "path": "client/src/game/CarpetWake.ts",
+          "blob": "89d1d1cd69244ccf6db50a67c16568574711ef7a"
+        },
+        {
+          "path": "client/src/game/CarpetDriftSmoke.ts",
+          "blob": "ca57d9df2eb530744c2e0ea392beb7c044064d0f"
+        },
+        {
+          "path": "client/src/game/SpeedLines.ts",
+          "blob": "4fbb6c74d90c448d49f30669dfb6730bd26c317a"
+        }
+      ]
+    }
+  },
+  "tests": {
+    "skill": {
+      "passed": 71,
+      "total": 71,
+      "failed": 0
+    },
+    "routingRecovery": {
+      "passed": 16,
+      "total": 16,
+      "failed": 0
+    }
+  },
+  "publication": {
+    "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/vfx-language-skill-01/",
+    "stageStatus": "NOT_DEPLOYED",
+    "publicVerified": false,
+    "humanAccepted": false,
+    "live": false
+  },
+  "boundaries": [
+    "No second global VFX runtime owner.",
+    "Gameplay/physics/collision/contact remain authoritative.",
+    "Current Combat, Travel and clay renderer owners are reused.",
+    "No automatic merge or Live promotion."
+  ]
+}
