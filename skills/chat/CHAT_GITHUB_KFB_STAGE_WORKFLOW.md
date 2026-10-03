@@ -178,3 +178,33 @@ For minor/quarantinable defects: one diagnostic pass maximum, then quarantine/de
 If Georg can resolve an ambiguity in one answer or screenshot, ask instead of spending multiple repair turns.
 
 Work/WSA budget is reserved for cross-repo integration, packaging, deployment and hard runtime seams — not prolonged optional-asset diagnosis or repeated parameter tuning.
+
+
+## 10. Human guidance contract · mandatory
+
+A production Return is incomplete if it ends on an abstract gate name that Georg must interpret.
+
+Every user-facing handoff must answer these four questions in plain language near the top:
+
+1. **Who acts next?** Name the executor: ChatGPT Web/GitHub, Coworker/Blender, Claude Design, Georg, or another exact owner.
+2. **What happens next?** State the concrete operation, not only the gate label.
+3. **Does Georg have to do anything now?** If no, say exactly: **"Du musst jetzt nichts tun."**
+4. **What will Georg receive next?** For example: one playable link, one A/B image, one Blender scene, or one short decision question.
+
+If ChatGPT is the next executor and the work is authorized and feasible in the current session, continue the work instead of returning a meta-handoff.
+
+Commit hashes, PR numbers and workflow runs are evidence for the Return, not instructions Georg must decode.
+
+### Site review transport
+
+When Georg explicitly requests a ChatGPT Site, or Cloudflare publication friction would add no value to the current product decision, a Site may be used as the primary **private human review transport**.
+
+Label it:
+**SITE REVIEW · NOT PUBLIC STAGE**
+
+Rules:
+- GitHub remains source/evidence truth;
+- the Site must mirror the exact tested candidate, not rebuild it independently;
+- give Georg one direct review action and no deployment/debugging chores;
+- do not claim Cloudflare/public verification from a Site review;
+- publish to `kayfabizarro.pages.dev` later only when the named milestone actually requires a durable/public KFB Stage.
