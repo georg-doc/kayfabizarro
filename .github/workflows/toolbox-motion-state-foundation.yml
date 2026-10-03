@@ -43,3 +43,5 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_MEASUREMENT_INTAKE.template.json','utf8'))"
       - name: State machine tests
         run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs
+      - name: Measurement reconciliation tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/reconcile-measurements.test.mjs
