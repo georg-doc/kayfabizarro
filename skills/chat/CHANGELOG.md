@@ -1,3 +1,22 @@
+## 2026-10-04 · One-Shot preparation fixtures expanded
+
+### CURRENT PREP
+- Extended the current One-Shot precheck with deterministic preparation fixtures rather than new runtime scope.
+- Added: Golden Fixture Pack, stable ID namespace, machine-readable source/owner manifest, input-mode arbitration, quarantine/feature-flag matrix, machine-readable acceptance fixture, performance observability, four-island biography fixture and deck-semantic fixture.
+- Explicitly blocks preflight scope creep into galaxy/planet runtime, infinite streaming, one-biome-per-Card, open-ended LLM society simulation, full Fight Sandbox, complete Combat, all EyeRig variants, all Organ attractions and premature Flight.
+- Refreshed current source facts: World PR #332 is now 54 commits behind current main / 17 commits ahead of the shared merge base; Production Control planning ledger is current through v2.0.
+- Refreshed current Motion router head to PR #344 @ `779c68b2c71609e86710a8bd9fe05ffc6913014f`; its Return remains PREPARED FOR BLENDER / NOT RUN.
+
+### PRODUCT PRIORITY
+The highest-leverage extra preparation before WSA is now:
+1. freeze one Golden Journey content fixture;
+2. freeze stable IDs + source manifest;
+3. write the machine-readable acceptance fixture;
+4. reconcile current Jukebox / Playmation / Librarian source locks;
+5. then execute the existing P0 convergence, world, Motion, Resident, Site and Lean-Memory gates.
+
+No Runtime, Stage or Live promotion.
+
 ## 2026-10-04 · Deck world-seed / Resident knowledge / Triplet binding
 
 ### SOURCE LOCK
