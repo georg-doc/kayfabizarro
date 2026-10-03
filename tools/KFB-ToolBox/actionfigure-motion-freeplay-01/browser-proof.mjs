@@ -9,7 +9,17 @@ const consoleErrors=[],pageErrors=[];
 page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
 page.on('pageerror',e=>pageErrors.push(String(e)));
 await page.goto(target,{waitUntil:'domcontentloaded',timeout:60000});
-await page.waitForFunction(()=>document.querySelector('#stage')?.dataset.ready==='1',null,{timeout:90000});
+try{
+  await page.waitForFunction(()=>document.querySelector('#stage')?.dataset.ready==='1',null,{timeout:90000});
+}catch(err){
+  const diagnostic=await page.evaluate(()=>({
+    ready:document.querySelector('#stage')?.dataset.ready||null,
+    state:document.querySelector('#state')?.textContent||null,
+    error:document.querySelector('#error')?.textContent||null
+  })).catch(()=>null);
+  console.error(JSON.stringify({diagnostic,consoleErrors,pageErrors},null,2));
+  throw err;
+}
 
 const initial=await page.evaluate(()=>window.__KFB_FREEPLAY__.snapshot());
 assert.equal(initial.ready,true);

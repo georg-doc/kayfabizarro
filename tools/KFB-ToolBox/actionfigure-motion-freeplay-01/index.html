@@ -226,7 +226,7 @@ async function init(){
     import(url(OWNER.state)),
     fetch(url(OWNER.ladder)).then(r=>{if(!r.ok)throw Error('ladder '+r.status);return r.json()}),
     fetch(url(OWNER.catalog)).then(r=>{if(!r.ok)throw Error('catalog '+r.status);return r.json()}),
-    loader.loadAsync(url(ACTOR)
+    loader.loadAsync(url(ACTOR))
   ]);
   ladder=ladderData;catalog=catalogData;
   profile=buildForwardProfileFromLadder(ladder,{rigFamily:'Rig_Medium',speedSpace:'world'});
