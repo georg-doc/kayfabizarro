@@ -1,7 +1,7 @@
 # AUDIO-STEM-BED-02 · RETURN
 
 **Date:** 2026-10-03  
-**Status:** R2 PUBLIC_VERIFIED · HUMAN RETEST PENDING  
+**Status:** R2 HUMAN_ACCEPTED  
 **Repo / branch / PR:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03` · Draft PR #346
 
 ## Result
@@ -103,7 +103,21 @@ Direct retest:
 
 The previous human FAIL remains valid for the superseded v0.1 stem-pool mix. R2 is a repair candidate, **not yet HUMAN_ACCEPTED**.
 
-**Exactly one next gate:** `GEORG_AUDIO_STEM_BED_02_R2` — test Buant Groove first: MASTER REFERENCE vs PLAY GAME BED must preserve the original song identity; then spot-check Awe / Dorian / Stalking and the retained Cyclical stem path.
+**Exactly one next gate:** `KFB_SIGNATURE_THEME_GENERATION_01` — test Buant Groove first: MASTER REFERENCE vs PLAY GAME BED must preserve the original song identity; then spot-check Awe / Dorian / Stalking and the retained Cyclical stem path.
+
+## HUMAN LISTENING RESULT · R2 PASS · 2026-10-03
+
+Georg reviewed the repaired public R2 and accepted it: **“das hört sich jetzt alles besser an, können wir so nehmen.”**
+
+Interpretation:
+- R2 is **HUMAN_ACCEPTED** for the current five-donor music-bed architecture;
+- the earlier v0.1 HUMAN FAIL remains retained as historical evidence;
+- `Cyclical Warmth` stays the only currently stem-certified donor;
+- Awe / Buant / Dorian / Stalking remain master-safe; their stems stay source inventory until separately certified;
+- no automatic merge or consumer integration is implied.
+
+Exactly one next gate:
+**KFB_SIGNATURE_THEME_GENERATION_01** — generate and audition the new signature-theme master from the v2 Suno prompt before pulling stems.
 
 ## HUMAN LISTENING RESULT · FAIL · 2026-10-03
 

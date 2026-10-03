@@ -119,7 +119,7 @@
     "no automatic merge",
     "no Live promotion"
   ],
-  "nextGate": "GEORG_AUDIO_STEM_BED_02_R2",
+  "nextGate": "KFB_SIGNATURE_THEME_GENERATION_01",
   "legacyHubSourceSync": {
     "status": "ARCHIVED_FAILED_ATTEMPT",
     "affectedPath": "kfb-hub/index.html",
@@ -131,7 +131,7 @@
     "recovery": "restore affected path from 9433a901a83c043b2c5de235d65394facd8f9846 and stop repair loop",
     "export": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/FAILURE_RECOVERY_EXPORT.json"
   },
-  "status": "R2_PUBLIC_VERIFIED_HUMAN_RETEST_PENDING",
+  "status": "R2_HUMAN_ACCEPTED",
   "runtimeSourceStemCount": 50,
   "runtimePolicies": {
     "neutral": "stem-certified",
@@ -144,5 +144,11 @@
     "status": "FAIL",
     "scope": "superseded v0.1 universal stem mix",
     "finding": "Buant Groove lost original musical identity and sounded ploppy/buggy"
-  }
+  },
+  "humanAcceptance": {
+    "date": "2026-10-03",
+    "result": "PASS",
+    "note": "das hört sich jetzt alles besser an, können wir so nehmen"
+  },
+  "signaturePromptV2": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md"
 }

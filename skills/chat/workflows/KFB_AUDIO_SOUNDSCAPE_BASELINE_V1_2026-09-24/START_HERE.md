@@ -20,11 +20,10 @@ Current R2 correction:
 - Cyclical Warmth retains the previously accepted stem-adaptive path.
 - Awe Before Drama / Buant Groove / Dorian Rests / Stalking Groove use their original uploaded masters as Ground Truth.
 - Their stems remain source inventory pending donor-specific certification.
-- R2 branch final: **31/31 PASS** at `9555fd0e45edb99804bb9b477f662b210723d308`.
-- Public Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/` · run `37135399619`, attempt 3 **31/31 PASS**.
-- Publication: `cloudflare-live@b2c9521c446db334f36797d7aa94482c09495fb8`.
-- Next gate: **GEORG_AUDIO_STEM_BED_02_R2** human retest.
-- No broad owner integration or merge before that retest.
+- R2 is now **HUMAN_ACCEPTED** by Georg on 2026-10-03.
+- Signature-theme v2 prompt is prepared at `skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md`.
+- Next gate: **KFB_SIGNATURE_THEME_GENERATION_01** — master generation/selection only; stems after human selection.
+- No automatic consumer integration or merge.
 
 ## HUMAN LISTENING RESULT · PASS
 

@@ -120,19 +120,16 @@ For KFB runtime facts, the skill remains a **method owner only**. Current projec
 
 Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing evals before GitHub packaging. The GitHub package static check passed 8/8 after a test-counter-only repair. No Runtime, Stage or Live promotion is implied by this skill packaging.
 
-## 2026-10-03 · AUDIO-STEM-BED-02 R2 current
+## 2026-10-03 · AUDIO-STEM-BED-02 R2 HUMAN_ACCEPTED
 
 - Draft PR #346 · branch `chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03`.
-- Previous v0.1 universal stem-pool result: **HUMAN FAIL**; Buant Groove lost its musical identity.
-- Current R2 Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/` · **PUBLIC_VERIFIED · HUMAN RETEST PENDING**.
-- Runtime rule: `Cyclical Warmth` remains `stem-certified`; Awe / Buant / Dorian / Stalking are `master-safe` and play their byte-identical uploaded masters.
-- Their 42 stems remain source inventory only until donor-specific listening certification.
-- Final R2 branch evidence: **31/31 PASS** at `9555fd0e45edb99804bb9b477f662b210723d308`.
-- Public R2: run `37135399619`, attempt 3 **31/31 PASS**; Hub HTTP 200 + direct link PASS.
-- Publication: `cloudflare-live@b2c9521c446db334f36797d7aa94482c09495fb8`.
-- `BEETLE RUMBLE` signature-theme prompt remains prepared; no signature audio promoted before R2 listening.
-- Exactly one next gate: `GEORG_AUDIO_STEM_BED_02_R2`.
-- No merge or consumer integration before human retest.
+- Superseded v0.1 universal stem-pool result remains **HUMAN FAIL**.
+- Current R2: **HUMAN_ACCEPTED** by Georg on 2026-10-03.
+- Cyclical Warmth remains `stem-certified`; Awe / Buant / Dorian / Stalking remain `master-safe`.
+- Public Stage: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/
+- Signature-theme v2 prompt: `skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md`.
+- Exactly one next gate: `KFB_SIGNATURE_THEME_GENERATION_01` — generate 2–4 masters, human-select winner, then stem only the winner.
+- No automatic merge or consumer integration.
 
 ## Hard rules
 

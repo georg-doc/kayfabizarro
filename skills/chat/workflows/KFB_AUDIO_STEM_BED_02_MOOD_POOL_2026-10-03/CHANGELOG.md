@@ -59,3 +59,11 @@
 - public R2 proof run `37135399619`: attempt 3 **31/31 PASS**, Hub HTTP 200 + card/direct URL PASS;
 - current gate: `GEORG_AUDIO_STEM_BED_02_R2`;
 - BEETLE RUMBLE signature-theme brief remains prepared but audio generation/promotion stays after the repaired bed gate.
+
+## 2026-10-03 · R2 HUMAN PASS
+
+- Georg accepted the repaired R2 after listening: “das hört sich jetzt alles besser an, können wir so nehmen.”
+- R2 status is now `HUMAN_ACCEPTED`.
+- Earlier v0.1 HUMAN FAIL remains preserved as history.
+- Cyclical Warmth remains stem-certified; Awe / Buant / Dorian / Stalking remain master-safe.
+- Next gate: `KFB_SIGNATURE_THEME_GENERATION_01`.
