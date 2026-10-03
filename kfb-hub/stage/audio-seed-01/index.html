@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-kfb-build="AUDIO-SEED-01-v0.2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Audio Seed Lab · AUDIO-SEED-01</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-deck="FORGET" data-mode="world">
+<main class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">KFB Soundscape · Deck-Seeded Procedural Lab</div>
+    <h1>AUDIO-SEED-01</h1>
+  </div>
+  <div class="status">ONE AUDIO CONTEXT<br>DECK IDENTITY · CONTEXT TRANSFORMS</div>
+</header>
+
+<section class="deck-tabs" aria-label="Real KFB deck inputs">
+  <button class="deck-button active" data-deck="FORGET"><b>FORGET</b><span>Forget Utopia</span></button>
+  <button class="deck-button" data-deck="IGNORE"><b>IGNORE</b><span>Anatomy of a Trap</span></button>
+  <button class="deck-button" data-deck="EMBRACE"><b>EMBRACE</b><span>Protopia Sketchbook</span></button>
+</section>
+
+<section class="stage">
+  <div class="identity-head">
+    <div>
+      <span class="kicker" id="deckRole">FORGET</span>
+      <h2 id="deckTitle">Forget Utopia</h2>
+      <p id="deckSummary">Loading real Deck JSON and current WorldContext semantics…</p>
+    </div>
+    <div class="seed-box"><span>IDENTITY</span><b id="identitySignature">—</b></div>
+  </div>
+
+  <div class="transport">
+    <button id="startAudio">START AUDIO</button>
+    <button id="restartSeed" class="secondary">RESTART SAME SEED</button>
+    <button id="modeToggle" class="secondary">WORLD → ROAD</button>
+    <button id="speak" class="secondary">VOICE FOCUS</button>
+  </div>
+
+  <div class="identity-grid">
+    <article><span>PRIMARY</span><strong id="primaryGrammar">—</strong></article>
+    <article><span>SECONDARY</span><strong id="secondaryGrammar">—</strong></article>
+    <article><span>FAMILIES</span><strong id="families">—</strong></article>
+    <article><span>PITCH / MOTIF</span><strong id="pitchMotif">—</strong></article>
+  </div>
+
+  <div class="controls">
+    <label><span>SPEED</span><input id="speed" type="range" min="0" max="1" step=".01" value=".35"><output>35%</output></label>
+    <label><span>NIGHT</span><input id="night" type="range" min="0" max="1" step=".01" value="0"><output>0%</output></label>
+    <label><span>RAIN</span><input id="rain" type="range" min="0" max="1" step=".01" value="0"><output>0%</output></label>
+    <label><span>PSYCHEDELIC</span><input id="psychedelic" type="range" min="0" max="1" step=".01" value="0"><output>0%</output></label>
+    <label><span>SHADOW</span><input id="shadow" type="range" min="0" max="1" step=".01" value="0"><output>0%</output></label>
+  </div>
+
+  <div class="semantic">
+    <div class="semantic-title">CURRENT TRAVEL CARD-SEMANTIC BASELINE · 56 REAL CARDS</div>
+    <div id="semanticBars" class="semantic-bars"></div>
+  </div>
+
+  <div class="readout">
+    <div id="audioStatus">AUDIO STOPPED</div>
+    <div id="modeStatus">WORLD · 0 SUBDIV</div>
+    <div id="tempoStatus">— BPM</div>
+    <div id="contextStatus">Context none · 0 owner</div>
+  </div>
+</section>
+
+<details>
+  <summary>Diagnostics / deterministic state</summary>
+  <pre id="diagnostics"></pre>
+</details>
+
+<p class="source-note">Human repair r2: the bright octave-pluck chime is removed/softened, G3 motif density is lower, and rain now uses a quiet air bed plus deterministic droplet transients instead of dominant hiss. Suno/ElevenLabs remain optional authoring-time sources; no external audio API is called here. Real KFB deck JSON feeds the existing Travel <code>cardSemanticVector()</code>; audio does not invent a parallel card-analysis owner.</p>
+</main>
+<script type="module" src="./audio-seed.js"></script>
+</body>
+</html>

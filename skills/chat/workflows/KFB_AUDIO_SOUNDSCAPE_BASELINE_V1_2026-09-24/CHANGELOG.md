@@ -1,5 +1,44 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-SEED-01 r2 musicality FAIL → AUDIO-ARRANGE-01
+
+- Georg rejected r2 as the musical renderer despite technical/public PASS.
+- Failure: repetitive dark "plom/plom/plom", insufficient phrase/form/soundscape quality; rain still reads as rushing water/noise; Reddit references sound materially more musical.
+- Preserve seed/context/mix infrastructure; freeze note-by-note oscillator/pluck renderer and synthetic-rain direction as technical donors only.
+- Pivot to phrase/arrangement-first architecture: 2–8 bar musical blocks, minute-scale section graph, curated/Markov transitions, sample/multisample instruments, optional authored stems.
+- Candidate stack: Tone.js + Scribbletune; optional Total Serialism for bounded higher-level mutation.
+- Realistic weather will use convincing recorded/generated sources with procedural mix/density/spatial control rather than noise synthesis.
+- Next gate: **AUDIO-ARRANGE-01 · One Good Island First** — one 2–4 minute cozy/psychedelic KFB bed must sound good before seeds/weather/Race generalization.
+
+## 2026-10-02 · AUDIO-SEED-01 human repair r2
+
+- Georg liked the broad v0.1 soundbed but rejected two details: rain sounded like water/noise; high xylophone/cartoon-like chime became quickly fatiguing.
+- Confirmed causes: +12/+19-semitone motif/answer register, extra octave overtone, dense G3 event cadence, and single filtered-noise rain loop.
+- Repair implementation `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`:
+  - warm/lower motif voice, bright octave overtone removed;
+  - G3 motif/answer and secondary-answer density reduced;
+  - continuous rain noise reduced to a low bed;
+  - deterministic stochastic stereo droplet/splash transients added.
+- r2 QA: **35/35 deterministic/source + 35/35 Chromium/WebAudio PASS**; run/job `37052602108 / 110989403830`; artifact `11246418871`; digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
+- r2 mirrored exactly to `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`; Pages check `110990617688` remains **IN_PROGRESS**.
+- First r2 public proof `37053177990` failed only at v0.2 Stage marker on all four attempts while Pages was still in progress; no behavior assertions ran.
+- Reddit donor addendum recorded separately: FLY × COMPOSE supports motion→bounded musical parameter mapping; WebAudioFont-style sampled playback is a later timbre-quality donor, not part of r2.
+- r2 PUBLIC VERIFIED after Pages completion: Cloudflare check `110994861443` SUCCESS; exact public run/job `37054592017 / 110996053918` **35/35 PASS on attempt 1**; artifact `11248750257`; digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`.
+- **r2 PUBLIC VERIFIED**; next gate `GEORG_AUDIO_SEED_RELISTEN_R2`. No second runtime repair before human re-listen.
+
+## 2026-10-02 · AUDIO-SEED-01 · Deck-seeded procedural soundscape
+
+- Draft PR #325 on `chatgpt-web/audio-seed-01-2026-10-02`; implementation `b566e272493864dc9bb0cd27f8e2d7574be061d0`.
+- Reuses existing Travel Card semantics/seed helpers; no second analyzer/audio owner.
+- Real FORGET / IGNORE / EMBRACE inputs, 56 cards each; deterministic identities `858680da / d0074ab4 / 058bdca1`.
+- WORLD → ROAD preserves identity; speed raises density/subdivision with max +7 BPM; Night/Rain/Psychedelic/Shadow are transforms.
+- No Suno/ElevenLabs/external API dependency in runtime.
+- **34/34** deterministic/source + **33/33** branch Chromium/WebAudio PASS.
+- `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a` Pages SUCCESS; exact Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/` passed public Chromium/WebAudio **33/33 on attempt 1**.
+- Public proof `37045888652 / 110967091484`; artifact `11244059091`; digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`.
+- Status: **PUBLIC_VERIFIED · HUMAN LISTENING PENDING**.
+- Next: `GEORG_AUDIO_SEED_LISTEN_01`; no merge or Live promotion.
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;

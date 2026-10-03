@@ -1,3 +1,36 @@
+## 2026-10-03 · AUDIO-SEED-01 musicality FAIL → AUDIO-ARRANGE-01
+
+- Georg rejected AUDIO-SEED r2 as the musical renderer despite technical/public PASS.
+- Failure: repetitive darker "plom/plom/plom", weak musical phrase/form and soundscape quality; rain remains rushing-water/noise-like; Reddit references are materially more convincing.
+- Preserve deterministic seed/context/mix infrastructure; freeze current note-event/pluck renderer and synthetic-rain direction as technical donors only.
+- New architecture: phrase/block arrangement, minute-scale form graph, curated/Markov transitions, sample/multisample instruments and optional authored stems/beds.
+- Candidate implementation stack: Tone.js + Scribbletune; optional Total Serialism for bounded Markov/Euclidean/L-system transforms.
+- Realistic weather should use convincing recorded/generated source beds and events with procedural density/spatial/filter control rather than white-noise synthesis.
+- **Next gate: AUDIO-ARRANGE-01 · One Good Island First**. One genuinely musical 2–4 minute cozy/psychedelic island bed must pass before Deck triads, weather, full palette or real Race telemetry.
+
+## 2026-10-02 · AUDIO-SEED-01 human repair r2
+
+- Georg's first v0.1 listen liked the broad bed but identified two concrete defects: rain read as water/noise and the high xylophone/cartoon-like motif became annoying quickly.
+- Repair `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`: removes bright octave overtone, lowers/softens motif, reduces G3/answer density, lowers rain noise bed and adds deterministic stereo droplet/splash transients.
+- r2 branch evidence: **35/35 deterministic/source + 35/35 Chromium/WebAudio PASS**; run/job `37052602108 / 110989403830`; artifact `11246418871`; digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
+- r2 publication `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab` reached Cloudflare Pages **SUCCESS** at check `110994861443`.
+- Exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**; artifact `11248750257`; digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`.
+- Earlier public run `37053177990` is retained as pre-deploy marker-timing evidence and is superseded.
+- Reddit follow-up supports the existing architecture: FLY × COMPOSE maps flight to bounded pitch-range/note-direction changes; sample-based WebAudioFont-style playback is a later instrument-quality donor, not part of r2.
+- **r2 PUBLIC_VERIFIED**. Next gate: `GEORG_AUDIO_SEED_RELISTEN_R2`.
+
+## 2026-10-02 · AUDIO-SEED-01 public procedural soundscape candidate
+
+- Existing KFB Audio & Soundscape Baseline remains owner; no universal replacement audio engine.
+- Draft PR #325 / `chatgpt-web/audio-seed-01-2026-10-02`: real FORGET / IGNORE / EMBRACE Deck JSON drives deterministic musical identities through existing Travel `cardSemanticVector()` + seed helpers.
+- Source/deterministic QA **34/34 PASS**; branch Chromium/WebAudio **33/33 PASS**.
+- Cloudflare publication `cloudflare-live@62c7124faadbd27dd96b667465e93351fe5a6c8a` · Pages SUCCESS.
+- Exact public Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/` · public Chromium/WebAudio **33/33 PASS on first attempt**.
+- Public proof `37045888652 / 110967091484`; artifact `11244059091`; digest `sha256:945f1ee23f8c60d969f40fb2943ffcf0480b59108b9ad943b11bc851979693c8`.
+- WORLD → ROAD preserves identity; speed changes density/subdivision more than BPM; Night/Rain/Psychedelic/Shadow are transforms.
+- No Suno / ElevenLabs / external audio API is required at runtime.
+- **Next gate: GEORG_AUDIO_SEED_LISTEN_01.** No merge, full Race telemetry integration or Live promotion.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

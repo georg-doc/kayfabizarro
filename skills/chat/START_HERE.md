@@ -106,6 +106,16 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-10-03 · AUDIO-SEED-01 musicality FAIL → AUDIO-ARRANGE-01
+
+- Draft PR #325 / branch `chatgpt-web/audio-seed-01-2026-10-02` remains the technical AUDIO-SEED evidence line.
+- Georg rejected r2 as the musical renderer: repetitive dark "plom/plom/plom", insufficient musical phrase/form/soundscape quality, and rain still reads as rushing water/noise.
+- Technical PASS is retained only for seed/context/mix infrastructure. The note-by-note oscillator/pluck renderer and synthetic rain are frozen as **TECHNICAL DONOR ONLY**.
+- Do not spend another pass micro-tuning those voices.
+- Architecture pivot: phrase/block arrangement with 2–8 bar musical units, minute-scale section form, curated/Markov transitions, sample/multisample instruments and optional authored stems/beds.
+- First candidates: Tone.js + Scribbletune; Total Serialism only for bounded higher-level mutation. Suno/ElevenLabs remain optional authoring-time source, not runtime dependencies.
+- **Exactly one next gate: AUDIO-ARRANGE-01 · One Good Island First** — prove one genuinely musical 2–4 minute cozy/psychedelic world bed before Deck triads, weather or real Race telemetry.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
@@ -143,7 +153,7 @@ Do not add a second cell family before Georg reviews the single M1-N candidate.
 - `RECOVERY_PATH.md` — deterministic recovery after chat/context failure
 - `FRESH_CHAT_SLICE_PROTOCOL.md` — bounded cold-start work and compact next-day review packet
 - `workflows/KFB_WEB_FIRST_EXECUTION_V1_2026-09-22/START_HERE.md` — **CURRENT DEFAULT EXECUTION LANE**: Web/GitHub + Claude Design + local preview first; Work/WSA only by explicit capability escalation
-- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED; remaining work is source-bank/voice-profile curation and later owner-specific adoption
+- `workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/START_HERE.md` — **CURRENT AUDIO/SOUNDSCAPE BASELINE**: AUDIO-CAL-01 is PUBLIC_VERIFIED + HUMAN_ACCEPTED; AUDIO-SEED-01 r2 is PUBLIC_VERIFIED after Georg feedback; `GEORG_AUDIO_SEED_RELISTEN_R2` is the current gate; Travel/Race/Combat/Boxel keep runtime ownership
 - `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` — binding Chat → GitHub → Cloudflare Stage → Hub delivery and timeout recovery
 - `GATE_PROPORTIONALITY_TOKEN_BUDGET_PROTOCOL.md` — binding cross-project rule preventing minor details from consuming MVP / Work / Claude budget
 - `PRODUCTIVE_REVIEW_GATE_POLICY.md` — binding rule against pseudo-human gates; productive owner integration first, Proceed Pass supported

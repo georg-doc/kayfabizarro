@@ -1,5 +1,45 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
+## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 r2 MUSICALITY FAIL · 2026-10-03
+
+**Human result:** **FAIL AS MUSICAL RENDERER**  
+**Technical status:** r2 remains PUBLIC_VERIFIED evidence  
+**Repo / branch / PR:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
+**Technical Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
+
+Georg's r2 result:
+- still not convincing musically;
+- repetitive darker "plom/plom/plom";
+- not yet a convincing soundscape / musical bed;
+- rain still sounds like rushing water/noise;
+- external Reddit examples are noticeably more musical.
+
+What survives:
+- deterministic Deck/Island seeds and same-seed reproducibility;
+- Travel semantic donor;
+- Audio DNA/context metadata;
+- one AudioContext + mix/ducking;
+- WORLD/ROAD and bounded speed modulation;
+- Night/Psychedelic/Shadow concepts as later transforms.
+
+What is frozen/rejected:
+- current note-by-note oscillator/pluck renderer as primary music engine;
+- current motif-event cadence as the identity carrier;
+- pure synthetic filtered-noise/droplet rain as the target weather renderer;
+- further micro-tuning of this renderer before a better arrangement architecture exists.
+
+New direction:
+- phrase/block level composition;
+- section/form graph over minutes;
+- curated Markov transitions between compatible 2–8 bar phrases;
+- sample/multisample instruments or authored stems for actual timbre;
+- Tone.js + Scribbletune as first implementation candidates; Total Serialism only for bounded high-level mutation;
+- Suno and ElevenLabs remain optional **authoring-time** source for stems/MIDI/weather assets, not runtime dependencies.
+
+**Exactly one next gate:** `AUDIO-ARRANGE-01 · One Good Island First`.
+
+Prove one genuinely musical 2–4 minute cozy/psychedelic KFB bed before generalizing to Deck seeds, weather or real Race telemetry. No merge or Live promotion.
+
 **Date:** 2026-09-24  
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED  
 **Owner:** existing WSA / KFB integration lead  

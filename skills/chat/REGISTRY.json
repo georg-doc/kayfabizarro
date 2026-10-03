@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-10-03",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -127,8 +127,49 @@
         "a replacement asset registry",
         "automatic merge or Live promotion"
       ],
-      "note": "AUDIO-CAL-01 is PUBLIC_VERIFIED and HUMAN_ACCEPTED by Georg. Current mix/ducking direction is an accepted calibration reference. Remaining work is curation plus later owner-specific adoption; PR #205 still contains unmerged P0 implementation/test files.",
-      "humanResult": "PASS"
+      "note": "AUDIO-CAL-01 remains PUBLIC_VERIFIED/HUMAN_ACCEPTED. AUDIO-SEED-01 r2 is technically PUBLIC_VERIFIED but HUMAN_REJECTED as the musical renderer on 2026-10-03: repetitive dark plom/plom/plom, weak phrase/form/soundscape quality, rain still water/noise-like. Retain seed/context/mix infrastructure; freeze note-by-note oscillator/pluck music and synthetic rain as technical donors. Next gate: AUDIO-ARRANGE-01 · One Good Island First.",
+      "humanResult": "AUDIO-CAL PASS · AUDIO-SEED r2 MUSICALITY FAIL",
+      "audioSeed01": {
+        "status": "TECHNICALLY_PUBLIC_VERIFIED_HUMAN_REJECTED_MUSICAL_RENDERER",
+        "repository": "georg-doc/kayfabizarro",
+        "branch": "chatgpt-web/audio-seed-01-2026-10-02",
+        "draftPR": 325,
+        "technicalStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/",
+        "humanFeedback": {
+          "result": "FAIL",
+          "reasons": [
+            "repetitive dark plom/plom/plom",
+            "not a convincing musical bed/soundscape",
+            "rain still reads as rushing water/noise",
+            "Reddit examples materially more musical"
+          ]
+        },
+        "retain": [
+          "one AudioContext",
+          "Travel cardSemanticVector semantic donor",
+          "deterministic seed/context infrastructure",
+          "WORLD/ROAD and bounded speed modulation",
+          "context transform data model",
+          "AUDIO-CAL ducking"
+        ],
+        "freeze": [
+          "note-by-note oscillator/pluck musical renderer",
+          "current motif event cadence",
+          "synthetic rain as target weather source"
+        ],
+        "pivot": {
+          "id": "AUDIO-ARRANGE-01",
+          "title": "One Good Island First",
+          "architecture": "phrase/block arrangement + sampled/multisample instruments + optional authored stems",
+          "candidates": [
+            "Tone.js",
+            "Scribbletune",
+            "optional Total Serialism"
+          ],
+          "acceptance": "Would Georg willingly leave the 2–4 minute cozy/psychedelic island bed playing for several minutes?"
+        },
+        "nextGate": "AUDIO-ARRANGE-01 · One Good Island First"
+      }
     },
     {
       "id": "claude-design-failure-recovery",

@@ -1,5 +1,50 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
+## CURRENT RECOVERY OVERRIDE · AUDIO-SEED-01 MUSICALITY FAIL / AUDIO-ARRANGE-01 · 2026-10-03
+
+Resume here before older AUDIO-SEED/AUDIO-CAL checkpoints.
+
+Current decision:
+- AUDIO-SEED-01 r2 is technically green/public but **HUMAN_REJECTED_AS_MUSICAL_RENDERER**;
+- do not continue tuning its oscillator/pluck composition;
+- preserve it as a technical donor for seeds/context/mix only.
+
+Human failure reasons:
+- repetitive dark "plom/plom/plom";
+- lacks convincing musical phrase/form and soundscape quality;
+- rain still reads as rushing water/noise;
+- Reddit reference projects sound materially more musical.
+
+Retain:
+- one AudioContext;
+- Travel `cardSemanticVector()`;
+- deterministic seeds;
+- WORLD/ROAD + bounded speed modulation;
+- context transform data model;
+- AUDIO-CAL ducking.
+
+Freeze:
+- note-event renderer;
+- pluck/oscillator timbres as main musical voices;
+- synthetic rain as target weather source.
+
+New architecture:
+- section/form graph;
+- 2–8 bar musical phrase blocks;
+- curated compatible transitions / Markov weighting;
+- sample/multisample instrument sources;
+- optional stem/bed layers;
+- context reshapes arrangement rather than generating raw notes.
+
+Candidate stack:
+- Tone.js + Scribbletune;
+- optional Total Serialism for high-level sequence/Markov/Euclidean transforms;
+- Suno stems/MIDI and ElevenLabs weather/SFX may be used only as authoring-time source if needed.
+
+**Exactly one next gate:** `AUDIO-ARRANGE-01 · One Good Island First`.
+
+No Deck triad, rain, Shadow, full Race telemetry or huge instrument palette until one 2–4 minute cozy/psychedelic island bed passes Georg's musicality test.
+
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED · RECOVERABLE  
 **Date:** 2026-09-24  
 **Repo:** `georg-doc/kayfabizarro`  
