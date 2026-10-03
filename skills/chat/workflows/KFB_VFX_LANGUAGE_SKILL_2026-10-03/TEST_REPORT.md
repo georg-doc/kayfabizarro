@@ -174,3 +174,34 @@ Complete routing/handoff metadata:
 - update current KFB Hub source metadata without publishing a fake Stage;
 - open draft PR;
 - write final Return.
+
+
+## Post-routing verification
+
+Verified on branch head:
+- ea663fe039d578679c8c628dab006d50686d644e
+
+Routing/recovery checks:
+- 16/16 PASS
+- 0 failed
+
+Covered:
+- skill front matter and canonical-draft status;
+- semantic contact truth states;
+- BALL / DROP / CHIP / RIBBON vocabulary;
+- transition-concealment section;
+- water/boat section;
+- comic typography section;
+- LLM authoring workflow;
+- QA gates;
+- research matrix durability;
+- test report durability;
+- RECOVERY timeout gate closed;
+- REGISTRY.json parse + CURRENT_REFERENCE entry;
+- START_HERE router entry;
+- additive CHANGELOG entry;
+- no false public/human acceptance claim.
+
+Combined documented checks for this slice:
+- skill semantic/content validation: 71/71 PASS;
+- routing/recovery validation: 16/16 PASS.
