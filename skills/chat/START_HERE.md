@@ -1377,5 +1377,5 @@ The Brawl skill is a **CURRENT_REFERENCE · canonical-draft**. It does not creat
 Research/recovery home:
 `skills/chat/workflows/KFB_CARTOON_BRAWL_SKILL_2026-10-03/`.
 
-This documentation/skill milestone has **no public Stage and no Hub action card**: there is no Georg-facing product decision to manufacture here. The next meaningful proof belongs in a real consumer adoption slice.
+This documentation/skill milestone has **no public Stage and no Hub action card**: there is no Georg-facing product decision to manufacture here. First real consumer proof is now complete on Combat Draft PR #12 (`fb40fac9d108b4719d06d47af394731edd233620`): primary Sword source is KayKit Rig_Medium CombatMelee, Stab passes the real 0.12 u non-overlap hit/miss gate, and productive Arena runtime remains unchanged. Exactly one next productive gate: **BRAWL-CLUB-BRICKFISH-01**.
 
