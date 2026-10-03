@@ -133,6 +133,7 @@ import { buildSections } from './settings-schema.js';
 import { createTravelInput } from './travel-input.js';
 import { createTravelStage } from './travel-stage.js';
 import { createPropScatter } from './prop-scatter.js';
+import { createBillboardContextWorld } from './billboard-context-world.v1.js';
 // v24 · A · Import (EINBAU §3). Der Kampf ist EIN Eingang; alles Weitere steht in combat-host.js.
 import { createCombatHost } from './combat-host.js';
 
@@ -1143,6 +1144,18 @@ async function start(stage) {
       ringDerive('deck ' + packId);
     }).catch((e) => { deckFill.fehler.push(packId + ': ' + (e && e.message || e)); });
   }
+
+  // BILLBOARD-CONTEXT-REAL-WORLD-01 · additive Travel consumer.
+  // Disabled by default; no scene/DOM mutation unless ?billboardWorld=1.
+  const billboardWorld = createBillboardContextWorld({
+    THREE, scene, renderer, camera, academy, ring,
+    groundAt: (x, z) => safeGroundAt(x, z, 8),
+    enabled: new URLSearchParams(location.search).get('billboardWorld') === '1',
+    target: { packId: 'forget_utopia', n: 1 },
+  });
+  if (billboardWorld.enabled) billboardWorld.start().catch((e) => {
+    console.warn('[billboard-real-world-01] mount failed', e);
+  });
   // Kartenbilder: EINS zur Zeit, nächstgelegen zuerst (Pacer-Regel aus S23). `artBusy` verhindert,
   // dass dieselbe Karte doppelt in der Schlange steht.
   let deckArtT = 0;
@@ -2080,7 +2093,7 @@ async function start(stage) {
   // entschied, wann das Bild der Karte gehört — jetzt entscheidet das Fenster `hideWin` auf dem
   // Fortschritt der Regie, und Verdeckung und Bänder lesen denselben Faktor.
   let last = performance.now(), synthPhase = 0, synthBeat = 0, lastChunkX = 1e9, lastChunkZ = 1e9, walkBobT = 0, boostPulse = 0, wasGrounded = true, lastStep = 0, rollWasActive = false, aglNow = 30;
-  window.__travelPOC = { combat, budget, renderer, scene, camera, flight, walk, rig, petKin, petFace, terrain, sky, heat, hud, dice, lines, post, trails, lighting, petShadow, audio, skyCards, cardReg, auto, academy, colors, rollWorld, applyPalette, rippleColor, props, loadProps, saveParams, rollParams, collectParams, colors, rollWorld, applyPalette, ring, narrator, narrLLM, promptReg, jRoute, jump, live, dock, arrival, glyphs, cardTitle, journey, noteField, search, camRig, flyToCard, flyRoute, get focusCard() { return focusCard; }, get lastPass() { return lastPass; }, get wc() { return wc; }, get settings() { return settings; }, get story() { return story; }, get mode() { return curMode(); }, setMode: (m) => requestMode(m, 'debug'), get modeOwner() { return modeOwner; }, get contracts() { return contracts; }, get events() { return EV; }, get mgr() { return mgr; }, get pet() { return pet; }, get boostPulse() { return boostPulse; } };
+  window.__travelPOC = { combat, budget, renderer, scene, camera, flight, walk, rig, billboardWorld, petKin, petFace, terrain, sky, heat, hud, dice, lines, post, trails, lighting, petShadow, audio, skyCards, cardReg, auto, academy, colors, rollWorld, applyPalette, rippleColor, props, loadProps, saveParams, rollParams, collectParams, colors, rollWorld, applyPalette, ring, narrator, narrLLM, promptReg, jRoute, jump, live, dock, arrival, glyphs, cardTitle, journey, noteField, search, camRig, flyToCard, flyRoute, get focusCard() { return focusCard; }, get lastPass() { return lastPass; }, get wc() { return wc; }, get settings() { return settings; }, get story() { return story; }, get mode() { return curMode(); }, setMode: (m) => requestMode(m, 'debug'), get modeOwner() { return modeOwner; }, get contracts() { return contracts; }, get events() { return EV; }, get mgr() { return mgr; }, get pet() { return pet; }, get boostPulse() { return boostPulse; } };
   /* ═══ v25.2r · FPSPROBE — DIE ZAHL, DIE SEIT v24 OFFEN IST ═══════════════════════════════
      `props.report().drawCalls` sagt 57 (v25: 26 → 38 Modelle). Was das KOSTET, stand nirgends.
      Also messen — und zwar bei 1920×1080, weil die Frage genau so gestellt war: der Rahmen im
@@ -3034,6 +3047,7 @@ async function start(stage) {
       // Fahrzeug-Schritt: sie zu lösen heißt, `st`/`h` als Frame-Werte zu führen — eigener Slice.
       ['vehicle', (dt) => (isWalk() ? stepWalk(dt) : stepFly(dt))],
       ['world', stepWorld],
+      ['billboard', (dt) => billboardWorld.update(dt)],
       ['render', stepRender],
     ],
   });
