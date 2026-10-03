@@ -11,9 +11,9 @@
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "e9f97c594bce46607e95928dd349cf081c36783d",
-    "status": "PUBLISHED_LARGE_REVIEWED_PROFILES_AUTO_LID_COLOR",
-    "correctedPublicProof": "NOT_RUN · connector push did not trigger Actions; exact pages.dev route inaccessible from current web tool",
+    "publicationCommit": "6406774131723288b757fd676e6d7be3f08b1123",
+    "status": "PUBLISHED_VIEW_COMFORT_CLAY_HUMAN_VERIFY_OPEN",
+    "correctedPublicProof": "OPEN · exact mirror readback PASS; current tool cannot visibly open pages.dev",
     "historicalPublicProof": {
       "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
       "runId": 35460179569,
@@ -125,8 +125,8 @@
     "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
-    "status": "LARGE_ACCEPTED_LID_COLOR_VISUAL_CHECK",
-    "nextGate": "Reload Stage and check that the four Large actors keep Georg's accepted profiles and no longer share the pink lid fallback."
+    "status": "VIEW_COMFORT_CLAY_HUMAN_VERIFY_OPEN",
+    "nextGate": "GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -540,5 +540,69 @@
     "stageMirrorHead": "d2cbc94ddde4d7c281a492db350119005f22e153",
     "publicVerified": false,
     "nextGate": "GEORG_EYERIG_BOOT_REPAIR_VIS_01"
+  },
+  "viewComfortClay": {
+    "status": "SOURCE_TESTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "humanInput": {
+      "bootRepair": "HUMAN_ACCEPTED_PASS",
+      "wheelZoom": "TOO_SENSITIVE",
+      "request": "Resident Atlas clay_floor / performance claymation view"
+    },
+    "implementation": {
+      "head": "f40937f50f7d61fdcd50f24c25658c113b389ad0",
+      "evidenceHead": "9cb0217695bbca42f711326f333a6dac243d3232",
+      "zoomSpeed": 0.28,
+      "minDistance": 0.8,
+      "maxDistance": 14,
+      "modes": [
+        "neutral",
+        "clay"
+      ],
+      "stageLookPersistence": "additive under kfb.toolbox.eye-rig-batch.v0",
+      "eyeRigExcludedFromClay": true,
+      "faceHostExcludedFromClay": true,
+      "aoEnabled": false
+    },
+    "k1Donor": {
+      "source": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lib/clay-k1.js",
+      "sourceRevision": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+      "sourceBlob": "4712a6527921c180847afa4dd77788041351860b",
+      "localPath": "tools/KFB-ToolBox/eye-rig-batch/lib/clay-k1.js",
+      "localBlob": "4712a6527921c180847afa4dd77788041351860b",
+      "softenSourceBlob": "fef287f244661ebc985dfc6fc47857af94b6223b",
+      "softenLocalBlob": "fef287f244661ebc985dfc6fc47857af94b6223b",
+      "byteIdentical": true,
+      "budget": {
+        "perMeshTris": 4000,
+        "maxLevels": 2,
+        "budgetTris": 160000
+      },
+      "skinnedPolicy": "no-subdivision smoothing",
+      "reversible": true
+    },
+    "clayFloor": {
+      "sourceRevision": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
+      "diffuse": {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_diffuse.jpg",
+        "blob": "d889ddd32d38ef9fac55ea802e47da73cbd77deb"
+      },
+      "normal": {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_normal.jpg",
+        "blob": "59092c601272f265e7e96cbae3f9d753be47b6a6"
+      },
+      "roughness": {
+        "path": "media/3D_Assets/Textures/clay_floor_001/clay_floor_001_roughness.jpg",
+        "blob": "4d5b3e7634e532111c7608156f4a49b6b18d2ffb"
+      }
+    },
+    "tests": {
+      "focused": "15/15 PASS",
+      "fullHistoricalStaticSuite": "NOT_RUN · isolated container could not resolve github.com before checkout",
+      "browserVisualPerformance": "OPEN"
+    },
+    "stageMirrorHead": "6406774131723288b757fd676e6d7be3f08b1123",
+    "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
+    "publicVerified": false,
+    "nextGate": "GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01"
   }
 }
