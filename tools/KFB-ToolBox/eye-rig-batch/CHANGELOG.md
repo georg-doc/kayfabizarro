@@ -1043,3 +1043,15 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - Stage mirror: `cloudflare-live@479c4e91967565b583c76ed0c6ea07433c5b28ce`, exact file readback PASS, public browser verification still OPEN;
 - one current gate: `GEORG_EYERIG_CONTROL_R2_VARIANTS_VIS_01`.
 
+## 2026-10-03 · Boot repair after Stage feedback
+
+- observed: roster remained at `Loading actor catalog…`; Large button was inactive;
+- proven cause: `initInlineNumberEditors()` used `$()` then `.forEach()`, throwing before `wireRoster()`;
+- fixed to `$$('output[data-out]').forEach(...)`;
+- moved roster/class wiring before runtime-control initialization;
+- added visible boot progress and exact visible boot-failure text;
+- focused regression **6/6 PASS**;
+- palette layer remains intact at 25 families / 56 appearances;
+- Stage mirrored at `cloudflare-live@d2cbc94ddde4d7c281a492db350119005f22e153`;
+- current gate: `GEORG_EYERIG_BOOT_REPAIR_VIS_01`.
+
