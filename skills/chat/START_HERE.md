@@ -33,8 +33,9 @@ Playable-MVP architecture now also has durable GitHub contracts for the Site-nat
 
 - `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
 - `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_PRECHECK_2026-10-04.md`
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
 
-The precheck is binding preparation guidance for the final One-Shot. Key correction: current WB2 PR #332 and current main are materially diverged, so the final WSA/Codex integration must first create a clean convergence base from then-current main rather than stacking directly on #332. Site-only planning is no longer the only copy of the v1.5–v1.7 architecture.
+The precheck is binding preparation guidance for the final One-Shot. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. Key correction: current WB2 PR #332 and current main are materially diverged, so the final WSA/Codex integration must first create a clean convergence base from then-current main rather than stacking directly on #332. Site-only planning is no longer the only copy of the v1.5–v1.7 architecture.
 
 ## 2026-10-04 · Resident Atlas → playable MVP / WSA routing
 
