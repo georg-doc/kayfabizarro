@@ -2,7 +2,7 @@
   "schema": "kfb.motion-state-foundation-source/1",
   "date": "2026-10-03",
   "owner": "KFB ToolBox / Animation-Motion authoring",
-  "branch": "chatgpt-web/kfb-animation-motion-ssot-2026-10-03",
+  "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
   "base": {
     "pr": 127,
     "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6"
@@ -44,6 +44,14 @@
       "path": "skills/chat/workflows/LOCOMOTION_LADDER_01_2026-10-03/BRIEF_BLENDER_LOCOMOTION_LADDER_01.md",
       "blob": "746cd98e7185907cc18a95112a235e4bfbbdfd8f",
       "output": "LOCOMOTION_LADDER_01.json"
+    },
+    "blenderLadderReturn": {
+      "pr": 334,
+      "head": "4c3744d427ddda9441f66d7f56c8deedc568090c",
+      "ladderBlob": "aa089a25157b057fd2456b8305f2ce97f3858972",
+      "returnBlob": "565aa5327a3597189b53ac664a576b120055ba22",
+      "reviewPlanBlob": "8eef67369a208182bd7f470bd9ec87113033121b",
+      "status": "INTAKED_EXACT_BYTES_HUMAN_VISUAL_REVIEW_OPEN"
     }
   },
   "protected": [
@@ -54,5 +62,7 @@
     "Combat rules",
     "Resident/EyeRig owners"
   ],
-  "parallelBlenderMeasurement": true
+  "parallelBlenderMeasurement": true,
+  "currentPr": 333,
+  "cleanBase": "main"
 }
