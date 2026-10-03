@@ -2116,3 +2116,14 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - No standalone Stage and no Hub action card were created: this is a shared-skill milestone with no Georg-facing product decision; HUB-CTRL remains the generated Hub owner and was not hand-edited.
 - Exactly one next gate: **BRAWL-SKILL-CONSUMER-01** — prove the skill on one real Combat Arena melee consumer before broader weapon expansion.
 
+## 2026-10-03 · KFB Cartoon Brawl first consumer proof
+- Synced the first real `kfb-cartoon-brawl_v1` consumer from `georg-doc/KFB-Combat-Arena` Draft PR #12.
+- Exact Combat closure head: `fb40fac9d108b4719d06d47af394731edd233620`; final owner CI **106/106 PASS**, build 236, re-home 172/66/routes PASS.
+- Primary Sword source is KayKit Character Animations 1.1 · Rig_Medium CombatMelee, not Mixamo.
+- Measured five native 1H clips with full-clip owner self-clearance: Chop PASS; Jump Chop PASS; Stab PASS; Diagonal NEAR; Horizontal FAIL as-is.
+- Real Stab proof preserved 0.12 u non-overlap body gap and produced exactly one hit / one damage intent / one VFX / one SFX; deterministic miss produced 0/0/0/0.
+- Browser run `37129956150` / job `111222921868` PASS; artifact `11276313336`; no production Sword promotion.
+- Shared skill remains `CURRENT_REFERENCE · canonical-draft`; this consumer proof improves confidence but does not auto-promote a global combat runtime.
+- No public Stage or Hub action card added. HUB-CTRL remains Hub owner.
+- Exactly one next productive gate: **BRAWL-CLUB-BRICKFISH-01**.
+
