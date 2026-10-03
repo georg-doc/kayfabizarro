@@ -119,7 +119,7 @@
     "no automatic merge",
     "no Live promotion"
   ],
-  "nextGate": "KFB_SIGNATURE_THEME_GENERATION_01",
+  "nextGate": "KFB_JUKEBOX_CATALOG_01",
   "legacyHubSourceSync": {
     "status": "ARCHIVED_FAILED_ATTEMPT",
     "affectedPath": "kfb-hub/index.html",
@@ -150,5 +150,36 @@
     "result": "PASS",
     "note": "das hört sich jetzt alles besser an, können wir so nehmen"
   },
-  "signaturePromptV2": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md"
+  "signaturePromptV2": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md",
+  "jukeboxDecision": {
+    "date": "2026-10-03",
+    "allSongsRetained": true,
+    "roadTripV2Masters": 42,
+    "pairedStemFamilies": 12,
+    "newFamilies": [
+      {
+        "id": "beetle-wrestling-entrance-01",
+        "title": "Beetle-Wrestling Entrance 01",
+        "bpm": 118,
+        "stemCount": 11,
+        "role": "extended alternate"
+      },
+      {
+        "id": "beetle-wrestling-entrance",
+        "title": "Beetle-Wrestling Entrance",
+        "bpm": 119,
+        "stemCount": 10,
+        "role": "signature/theme candidate"
+      },
+      {
+        "id": "surf-groove-3min",
+        "title": "Surf Groove 3min",
+        "bpm": 100,
+        "stemCount": 11,
+        "role": "road/radio/style-pool"
+      }
+    ],
+    "jazzTrack": "pending Suno intake",
+    "architectureDoc": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_JUKEBOX_MUSIC_GRAPH_v1.md"
+  }
 }

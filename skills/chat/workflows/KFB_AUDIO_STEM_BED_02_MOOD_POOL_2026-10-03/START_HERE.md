@@ -181,3 +181,21 @@ Listen across Neutral / Awe / Sunshine / Grief / Boss and the retained presets.
 Decision question:
 
 **Do the five authored donor families give useful emotional/gameplay range while the runtime controls remain musical rather than sounding like a generic remix?**
+
+## 2026-10-03 · Georg decision · keep all songs / Jukebox-first
+
+Georg decided to keep all authored songs rather than pick one winner. Three new master+stem families are now present on `main`: Beetle-Wrestling Entrance 01 (118 BPM), Beetle-Wrestling Entrance (119 BPM), and Surf Groove 3min (100 BPM). The longer `Entrance 01` is a deliberate alternate. A further Jazz track is still in Suno and can enter later without blocking.
+
+Architecture proposal is persisted in `KFB_JUKEBOX_MUSIC_GRAPH_v1.md`.
+
+Direction:
+- Jukebox is canonical catalog/collection owner;
+- all masters are retained;
+- unlock/discovery is separate state;
+- Lean Memory records compact track provenance and Fractal Almanac can surface music memories;
+- biome/resident profiles bias selection and add ambience/stings;
+- seeded/random radio selection is deterministic/replayable;
+- master tracks are style references;
+- no arbitrary cross-song stem mixing.
+
+Exactly one next implementation gate: `KFB_JUKEBOX_CATALOG_01`.

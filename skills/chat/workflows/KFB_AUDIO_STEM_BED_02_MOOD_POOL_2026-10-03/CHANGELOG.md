@@ -67,3 +67,13 @@
 - Earlier v0.1 HUMAN FAIL remains preserved as history.
 - Cyclical Warmth remains stem-certified; Awe / Buant / Dorian / Stalking remain master-safe.
 - Next gate: `KFB_SIGNATURE_THEME_GENERATION_01`.
+
+## 2026-10-03 · Jukebox-first music graph decision
+
+- Georg decided to retain all authored songs in the Jukebox rather than selecting only one signature winner.
+- current RoadTrip-v2 inventory on main: 42 masters / 12 paired stem families.
+- new paired families: Beetle-Wrestling Entrance 01 (118 BPM), Beetle-Wrestling Entrance (119 BPM), Surf Groove 3min (100 BPM).
+- Entrance 01 is retained as a longer alternate.
+- Jazz track still in Suno is deferred intake, not a blocker.
+- added `KFB_JUKEBOX_MUSIC_GRAPH_v1.md`.
+- next implementation gate: `KFB_JUKEBOX_CATALOG_01`.
