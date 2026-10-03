@@ -7,6 +7,10 @@ Owner: Georg / KFB
 This folder is the current LLM production routing layer for ChatGPT/Astra and Claude Design.
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
+## 2026-10-03 · Visual video-evidence routing
+
+For visual analysis of creator/tutorial videos, use `workflows/KFB_VIDEO_EVIDENCE_PROTOCOL_2026-10-03/START_HERE.md`. It requires actual frame inspection, separates visible facts from transcript/audio/inference, keeps the GitHub return small and does not authorize runtime integration. The first bounded job covers the original KayKit creator videos and hands precise comparison moments to Blender MCP.
+
 ## Start order
 
 1. Read `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. It governs every user-facing update and every handoff.

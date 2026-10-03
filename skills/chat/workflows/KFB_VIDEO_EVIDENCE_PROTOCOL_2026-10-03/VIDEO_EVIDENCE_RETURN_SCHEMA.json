@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kfb:video-evidence-return:v1",
+  "title": "KFB Video Evidence Return v1",
+  "type": "object",
+  "required": ["jobId", "status", "sources", "moments", "topics", "nextExecutor"],
+  "properties": {
+    "jobId": { "type": "string" },
+    "status": { "enum": ["COMPLETE", "PARTIAL", "SOURCE_BLOCKED"] },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["videoId", "title", "creator", "url", "access"],
+        "properties": {
+          "videoId": { "type": "string" },
+          "title": { "type": "string" },
+          "creator": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "published": { "type": ["string", "null"] },
+          "durationSeconds": { "type": ["number", "null"] },
+          "versionContext": { "type": ["string", "null"] },
+          "access": { "enum": ["FULL", "PARTIAL", "BLOCKED"] }
+        }
+      }
+    },
+    "moments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["videoId", "timestampSeconds", "topic", "evidenceClass", "observation", "timestampUrl"],
+        "properties": {
+          "videoId": { "type": "string" },
+          "timestampSeconds": { "type": "number", "minimum": 0 },
+          "timestampUrl": { "type": "string", "format": "uri" },
+          "topic": { "type": "string" },
+          "phase": { "type": ["string", "null"] },
+          "evidenceClass": { "enum": ["SEEN", "SAID", "INFERRED", "NOT_SHOWN", "SOURCE_BLOCKED"] },
+          "observation": { "type": "string" },
+          "clipNamesVisible": { "type": "array", "items": { "type": "string" } },
+          "settingsVisible": { "type": "array", "items": { "type": "string" } },
+          "stillFile": { "type": ["string", "null"] },
+          "blenderComparison": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "coverage"],
+        "properties": {
+          "name": { "type": "string" },
+          "coverage": { "enum": ["SHOWN", "PARTIAL", "NOT_SHOWN", "SOURCE_BLOCKED"] },
+          "plainSummary": { "type": "string" }
+        }
+      }
+    },
+    "nextExecutor": { "type": "string" },
+    "nextTask": { "type": "string" },
+    "unresolved": { "type": "array", "items": { "type": "string" } }
+  }
+}

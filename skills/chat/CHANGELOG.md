@@ -2146,3 +2146,10 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Added `KFB_PRODUCTION_CONTROL_CONTRACT.md` as the binding preflight for current-source reconciliation, one-owner/one-candidate discipline, timeout handling, publication and MVP claims.
 - The corrected Coworker/Blender review on the KayKit-native branch supersedes the original baseline brief: Mannequin first, all eight Rig_Medium files, honest gaps, creator-reference scan and pictures-first return.
 - No new browser/world locomotion integration is allowed before Georg reviews the native KayKit visual return.
+
+# 2026-10-03 · Visual video-evidence workflow prepared
+
+- Converted the Coworker/Blender KayKit video-scan proposal into a reusable visual-evidence workflow for browser-capable Web/Work chats.
+- Transcripts are now explicitly navigation aids only; product claims require frame/UI inspection and are classified as `SEEN`, `SAID`, `INFERRED`, `NOT_SHOWN` or `SOURCE_BLOCKED`.
+- Added a bounded KayKit Creator scan for gait, transitions, jump, secondary movement and import/rig settings, with direct original sources and a Blender comparison handoff.
+- GitHub keeps the small canonical findings/JSON/contact sheets; no full video, large ZIP, mandatory Dropbox shuttle or Cloudflare deployment is allowed.
