@@ -2153,3 +2153,13 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Transcripts are now explicitly navigation aids only; product claims require frame/UI inspection and are classified as `SEEN`, `SAID`, `INFERRED`, `NOT_SHOWN` or `SOURCE_BLOCKED`.
 - Added a bounded KayKit Creator scan for gait, transitions, jump, secondary movement and import/rig settings, with direct original sources and a Blender comparison handoff.
 - GitHub keeps the small canonical findings/JSON/contact sheets; no full video, large ZIP, mandatory Dropbox shuttle or Cloudflare deployment is allowed.
+
+
+# 2026-10-03 · KayKit Creator visual scan 01 · SOURCE_BLOCKED
+
+- Executed the bounded `KAYKIT_CREATOR_SCAN_01` against the three required original Kay Lousberg video URLs.
+- The available executor could reach source metadata/index information but could not obtain actual original-video frames/UI through either the normal video source path or an independent browser/storyboard frame path.
+- Per the two-attempt stop rule, the result is preserved as `SOURCE_BLOCKED` rather than converting transcripts, descriptions or search metadata into visual claims.
+- Recorded `SEEN=0`, no substitute creator sources, no `NOT_SHOWN` claims without viewing, and no placeholder contact sheets.
+- Next productive action is a visual-video-capable Web/Work continuation on the same original sources; only a completed visual return hands timestamped comparison moments to Blender MCP.
+- No runtime, animation, controller, PR #344, main, Stage, Cloudflare or Live state changed.
