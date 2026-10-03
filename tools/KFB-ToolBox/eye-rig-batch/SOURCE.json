@@ -12,8 +12,8 @@
     "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
     "publicationCommit": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
-    "status": "PUBLISHED_WHEEL_ZOOM_REPAIR_02_HUMAN_VERIFY_OPEN",
-    "correctedPublicProof": "OPEN · exact mirror readback PASS; current tool cannot visibly open pages.dev",
+    "status": "PUBLIC_STAGE_HUMAN_ACCEPTED_VIEW_WHEEL",
+    "correctedPublicProof": "HUMAN PASS on direct EyeRig Stage; accepted app blob remains present at later cloudflare-live head 26bb3926bde5a2e1e519409d182a62b654cfba71",
     "historicalPublicProof": {
       "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
       "runId": 35460179569,
@@ -125,8 +125,8 @@
     "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
-    "status": "WHEEL_ZOOM_REPAIR_02_HUMAN_VERIFY_OPEN",
-    "nextGate": "GEORG_EYERIG_WHEEL_ZOOM_VIS_02"
+    "status": "VIEW_WHEEL_HUMAN_ACCEPTED",
+    "nextGate": "EYE_RIG_PER_EYE_CONTROL_01"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -542,7 +542,7 @@
     "nextGate": "GEORG_EYERIG_BOOT_REPAIR_VIS_01"
   },
   "viewComfortClay": {
-    "status": "WHEEL_REPAIR_02_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "status": "HUMAN_ACCEPTED_PASS",
     "humanInput": {
       "bootRepair": "HUMAN_ACCEPTED_PASS",
       "wheelZoom": "TOO_SENSITIVE",
@@ -602,11 +602,11 @@
     },
     "stageMirrorHead": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
     "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
-    "publicVerified": false,
-    "nextGate": "GEORG_EYERIG_WHEEL_ZOOM_VIS_02"
+    "publicVerified": true,
+    "nextGate": "EYE_RIG_PER_EYE_CONTROL_01"
   },
   "wheelZoomRepair02": {
-    "status": "SOURCE_TESTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "status": "HUMAN_ACCEPTED_PASS",
     "userObserved": "zoomSpeed-only pass still jumped to extreme camera positions",
     "implementationHead": "797e5a81bbcdc339282ea1873363dd6804d9bd31",
     "evidenceHead": "83d913eb102e49e83828cd0d183bf6045615bcc6",
@@ -626,7 +626,31 @@
     },
     "focusedChecks": "13/13 PASS",
     "stageMirrorHead": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
-    "publicVerified": false,
-    "nextGate": "GEORG_EYERIG_WHEEL_ZOOM_VIS_02"
+    "publicVerified": true,
+    "nextGate": "EYE_RIG_PER_EYE_CONTROL_01"
+  },
+  "humanAcceptance20261003": {
+    "status": "HUMAN_ACCEPTED_STAGE",
+    "acceptedBy": "Georg",
+    "feedback": "das klappt alles",
+    "closedGates": [
+      "GEORG_EYERIG_BOOT_REPAIR_VIS_01",
+      "GEORG_EYERIG_WHEEL_ZOOM_VIS_02",
+      "GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01"
+    ],
+    "acceptedRuntime": {
+      "appBlob": "5635b28496af0e06cfe7f60a01b23e5612bad6e1",
+      "originalWheelStageHead": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
+      "currentCloudflareHeadAtAcceptance": "26bb3926bde5a2e1e519409d182a62b654cfba71",
+      "unchangedInCurrentCloudflareHead": true
+    },
+    "acceptedFeatures": [
+      "actor roster boot",
+      "Rig_Large switch",
+      "bounded wheel zoom",
+      "Neutral/Clay K1 view",
+      "Clay K1 continuation boundary"
+    ],
+    "nextSlice": "EYE_RIG_PER_EYE_CONTROL_01"
   }
 }
