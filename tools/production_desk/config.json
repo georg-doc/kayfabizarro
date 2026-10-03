@@ -14,6 +14,27 @@
   },
   "lanes": [
     {
+      "id": "motion-ssot-actionfigure-01",
+      "bucket": "CAN_START",
+      "title": "Motion SSOT · ActionFigure Freeplay · NEXT",
+      "what": "Der zentrale Motion-Owner #333 hat Motion Library v7 (395 Clips) und Ladder 02 technisch konvergiert. Die Vorwärtsleiter walk → jog → run.easy → run → sprint ist im zentralen State-Owner grün; die Look-Auswahl für Jog/Run/Sprint bleibt bewusst HUMAN_OPEN. Travel ist kein neutrales Testgelände mehr.",
+      "provider": "ToolBox Animation/Motion · PR #333",
+      "yourAction": "",
+      "waitingFor": "Einen neutralen ActionFigure / Rig_Medium Freeplay-Prototyp mit WASD + Shift + Space auf demselben zentralen Owner bauen; danach Georg Visual/Freeplay PASS. Erst anschließend in Procedural World #332 docken.",
+      "questions": [],
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 333,
+      "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+      "expectedHead": "92e3ea5e1c06cf9184915e69f5679df4673034e8",
+      "brief": {
+        "label": "Motion SSOT · Current Return",
+        "path": "tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/START_HERE.md",
+        "ref": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+        "pasteReady": false
+      },
+      "review": null
+    },
+    {
       "id": "rollercoaster-v11-blender-logic",
       "bucket": "RUNNING",
       "title": "Rollercoaster v11 · Blender-Logikdonor",

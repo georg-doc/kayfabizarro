@@ -632,3 +632,14 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - Routed Legacy Rogue/Crossbow source proof to PR #10 and melee contact work to the later separate PR #7 lane.
 - Added `tools/production_desk/briefings/COMBAT_MVP_NEXT_2026-09-27.md`.
 - No gameplay, Stage payload, merge or Live promotion changed.
+
+
+## Motion SSOT Ladder 02 source sync · 2026-10-03
+- Added source-only Hub lane `motion-ssot-actionfigure-01`.
+- Current Motion owner: Draft PR #333 / `chatgpt-web/motion-ssot-convergence-2026-10-03`.
+- Handoff head: `92e3ea5e1c06cf9184915e69f5679df4673034e8`; tested implementation head: `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`.
+- Motion Library v7 closure = 395 clips; Ladder 02 forward technical order = walk → jog → run.easy → run → sprint.
+- Lane points to the existing Motion Return; `review: null` because no ActionFigure Stage exists yet.
+- Next gate is one neutral ActionFigure WASD+Shift+Space freeplay surface, then Georg visual PASS, then procedural World #332.
+- Travel is explicitly not the neutral Motion test host.
+- No root Hub regeneration, Cloudflare publication, merge or Live promotion is claimed by this source sync.
