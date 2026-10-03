@@ -340,22 +340,22 @@
     {
       "id": "vfx-sfx",
       "bucket": "LOOK_AT",
-      "title": "VFX Consumer Fixture 01 · Combat · REVIEW",
-      "what": "Der gemeinsame VFX-Vertrag läuft jetzt in einem echten KayKit-Sword-Consumer: der bestehende Stab-Kontakt bleibt Gameplay-Wahrheit, Blade-Ribbon und SpriteFx bleiben Owner. Neu ist nur der semantische confirmed_target/near_miss-Layer plus ein gebundener Clay-Impact aus 1 DROP + 2 BALL + 5 CHIP.",
-      "provider": "ChatGPT Web · Combat Draft PR #13",
-      "yourAction": "Bitte den Review über KFB Production Control / das aktuelle Chat-HTML ansehen und nur den Impact beantworten: PASS / TUNE / FAIL. Zu beurteilen sind Größe, Fächerung, Richtung und Timing/Lesbarkeit; finales K2-Material ist noch nicht Teil dieses Gates.",
+      "title": "VFX Contact Impact 01 · KayKit Stab · REVIEW",
+      "what": "Der verworfene Air-Gap-Fixture ist ersetzt. Der neue Review benutzt ausschließlich den originalen KayKit Character Animations 1.1 Clip Melee_1H_Attack_Stab. Bei 0,08 u Körperabstand wird der Impact erst ausgelöst, wenn echte montierte Blade-Meshpunkte die sichtbare Frizzlebob-Geometrie innerhalb 0,035 u erreichen. Danach folgen bestehender Blade-Ribbon, Star/Splat und 1 DROP + 2 BALL + 5 CHIP als freigesetzte Clay-Fragmente.",
+      "provider": "ChatGPT Web · KFB-Combat-Arena Draft PR #15",
+      "yourAction": "Bitte den integrierten Beat über KFB Production Control oder das aktuelle Chat-HTML ansehen und PASS / TUNE / FAIL geben. Entscheidend: sichtbarer KayKit-Schwertkontakt zuerst, dann Impact-Punctuation und freigesetzte Fragmente. Finales K2-Material ist noch nicht Teil dieses Gates.",
       "waitingFor": "",
       "questions": [
-        "Liest der kompakte terracottafarbene Clay-Burst als guter Cartoon-Impact, oder soll er kleiner/größer, breiter/enger bzw. schneller/langsamer werden?"
+        "Liest der gesamte Beat jetzt als echter Schwertkontakt mit anschließendem Cartoon-Impact, oder muss Kontaktpunkt/Timing/Impact-Größe noch getuned werden?"
       ],
       "repo": "georg-doc/KFB-Combat-Arena",
-      "pr": 13,
-      "branch": "chatgpt-web/vfx-consumer-fixture-01-combat-2026-10-03",
-      "expectedHead": "a8082d74bcf46965c412d83273e488dcd74fcd58",
+      "pr": 15,
+      "branch": "chatgpt-web/vfx-contact-impact-01-kaykit-2026-10-03",
+      "expectedHead": "95c69f380f9ec18904d7a8a9f742f316e0beb78b",
       "brief": {
-        "label": "VFX Consumer Fixture 01 · Source / Review Contract",
-        "path": "slices/ca2-melee-lab/VFX_CONSUMER_FIXTURE_01.md",
-        "ref": "chatgpt-web/vfx-consumer-fixture-01-combat-2026-10-03",
+        "label": "VFX Contact Impact 01 · KayKit native integrated beat",
+        "path": "slices/ca2-melee-lab/VFX_CONTACT_IMPACT_01.md",
+        "ref": "chatgpt-web/vfx-contact-impact-01-kaykit-2026-10-03",
         "pasteReady": false
       },
       "review": null
