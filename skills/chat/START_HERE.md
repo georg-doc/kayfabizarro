@@ -25,6 +25,22 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-10-03 · Resident character appearance variants
+
+Current bounded coordination slice: **RESIDENT-VARIANT-COVERAGE-01** under the existing Resident Atlas owner.
+
+- source pin: `main@7600fa9e29d396eaa9c5a11532e63cdad7689e75`;
+- machine matrix: `tools/resident_atlas_s6/data/character-variant-requirements.v1.json`;
+- human audit: `tools/resident_atlas_s6/docs/CHARACTER_VARIANT_COVERAGE_2026-10-03.md`;
+- source result: **25 character texture families / 56 source appearances** with ≥2 palettes in `KayKit_Mystery_Series6`;
+- canonical S6 explicitly completes only Cleric base+B and Ultra Turbo Hero Man A+B;
+- **Magical Girl A/B/C/D are all required** in Resident Atlas;
+- Batch EyeRig owner remains Draft PR #104. Paladin A/B is the precedent; light/blonde palette B remains the **King** candidate;
+- texture-only variants reuse one geometry/EyeRig profile; no duplicate skeletons.
+
+No runtime/Stage promotion is claimed by this registration. Exactly one next gate: **MAGICAL-GIRL-VARIANTS-01** — four source appearances over one MagicalGirl geometry in Resident Atlas + existing Batch EyeRig, followed by visual review.
+
+
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
 Binding policy:

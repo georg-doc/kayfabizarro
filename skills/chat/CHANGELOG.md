@@ -1,3 +1,14 @@
+## 2026-10-03 · RESIDENT-VARIANT-COVERAGE-01
+
+- Registered a source-backed Resident Atlas appearance matrix from current `main@7600fa9e29d396eaa9c5a11532e63cdad7689e75`.
+- Current Mystery-Series source audit: **25 character texture families / 56 source appearance files** with ≥2 palettes.
+- **Magical Girl A/B/C/D** are now a binding Resident Atlas requirement over one shared `MagicalGirl.glb`; no duplicate geometry/skeletons.
+- Existing Batch EyeRig Draft PR #104 was registered as cross-owner via PR comment `5962642420`. It already contains the correct Paladin precedent: A/B palettes, virtual `paladin-king`, palette B = light/blonde King candidate.
+- Canonical Resident Atlas S6 explicitly completes only Cleric base+B and Ultra Turbo Hero Man A+B as palette families. Current resident-side missing/partial variants and non-resident source families are listed in `tools/resident_atlas_s6/docs/CHARACTER_VARIANT_COVERAGE_2026-10-03.md`.
+- Hiker B exists in newer unpromoted inbox/session cuts and is recorded as donor evidence only.
+- No Resident runtime, EyeRig implementation, Stage, merge or Live promotion in this registration slice.
+- Exactly one next gate: **MAGICAL-GIRL-VARIANTS-01**.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

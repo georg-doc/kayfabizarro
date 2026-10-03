@@ -1,0 +1,652 @@
+{
+  "schema": "kfb.resident-character-variant-requirements/1",
+  "date": "2026-10-03",
+  "owner": "Resident Atlas",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceRevision": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
+  "sourceRoot": "media/3D_Assets/KayKit_Mystery_Series6/",
+  "canonicalAtlas": "tools/resident_atlas_s6/",
+  "eyeRigOwner": {
+    "pr": 104,
+    "branch": "toolbox/eye-rig-batch-2026-09-18",
+    "observedHead": "656d6d335070c27827ccf5a7fb4629b124303292"
+  },
+  "rules": {
+    "paletteVariant": "Same source geometry with alternate source texture/palette is one geometry identity with multiple appearance variants; do not invent duplicate skeletons.",
+    "eyeRig": "Reuse the geometry EyeRig profile unless geometry differs. Each appearance variant must still be selectable and visually checked because face/lid color sampling can change.",
+    "resident": "When Georg marks a source family required, each named source appearance must be available as a Resident Atlas variant; candidate-only until visual acceptance.",
+    "sourceTruth": "Paths and blob SHAs below are source facts. Runtime suitability is downstream."
+  },
+  "requiredNow": {
+    "magicalGirl": {
+      "geometry": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/MagicalGirl.glb",
+      "geometryBlob": "30fc1d37fc0f2a02d15ab1a052557462b8b27a32",
+      "variants": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "residentAtlasRequirement": "ALL_FOUR_REQUIRED",
+      "batchEyeRigRequirement": "ALL_FOUR_SELECTABLE_SHARED_GEOMETRY_PROFILE",
+      "status": "REGISTERED_REQUIREMENT_IMPLEMENTATION_OPEN"
+    },
+    "paladinPrecedent": {
+      "variants": [
+        "A",
+        "B"
+      ],
+      "kingVariant": "B",
+      "kingLabel": "Paladin · King (Light B)",
+      "residentAtlasStatus": "NOT_YET_RESIDENT",
+      "batchEyeRigStatus": "ALREADY_REGISTERED_ON_PR_104"
+    }
+  },
+  "counts": {
+    "characterTextureFamilies": 25,
+    "sourceAppearanceVariants": 56,
+    "canonicalAtlasExplicitCompleteFamilies": 2
+  },
+  "families": [
+    {
+      "id": "orc-raider",
+      "label": "Orc Raider",
+      "sourceFolder": "1 - July 2023 - Orc Raider",
+      "textureFamily": "orc_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/textures/orc_texture_A.png",
+          "blob": "2035dea050702373c5d2d3c9c49a3381c93b1122"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/textures/orc_texture_B.png",
+          "blob": "10a21d6e6b5bb90cf7a7f566112abe6c9f4406dd"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_A_OVERRIDE_B_MISSING"
+    },
+    {
+      "id": "combat-mech",
+      "label": "Combat Mech",
+      "sourceFolder": "1 - July 2024 - Combat Mech",
+      "textureFamily": "combatmech_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/textures/combatmech_texture.png",
+          "blob": "ae88a47d5414ef6b3b2bd9c336d113e6a6536013"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/textures/combatmech_texture_alt.png",
+          "blob": "047709e0ef308571f457afa61443997f69ec4ac5"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_ALT_MISSING"
+    },
+    {
+      "id": "paladin",
+      "label": "Paladin",
+      "sourceFolder": "10 - April 2024 - Paladin",
+      "textureFamily": "paladin_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_A.png",
+          "blob": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+          "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_COMPLETE_A_B_KING_B"
+    },
+    {
+      "id": "hiker",
+      "label": "Hiker",
+      "sourceFolder": "11 - May 2025 - Hiker",
+      "textureFamily": "hiker_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/textures/hiker_texture.png",
+          "blob": "ce586ad32a6ded653ef4fa94f8f63bf614a1b6fb"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/textures/hiker_texture_b.png",
+          "blob": "c548358cb7ffd0922b9e24864ca2c20558e352b1"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_PROMOTED_S6_CANDIDATE_B_EXISTS_IN_INBOX",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "magical-girl",
+      "label": "Magical Girl",
+      "sourceFolder": "11 - May 2026 - Magical Girl",
+      "textureFamily": "magical_girl_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_A.png",
+          "blob": "9f927362ccd0c58159d7442489965052935a6b7e"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_B.png",
+          "blob": "7692a6d3730df7c29e5901b5a1ad9f84b1045e6d"
+        },
+        {
+          "variant": "C",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_C.png",
+          "blob": "fde6e26edad7a1ce77241b50a83504a9f556a565"
+        },
+        {
+          "variant": "D",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/magical_girl_texture_D.png",
+          "blob": "903ef0385f25598d00eeaadc54fc3f17c02e4364"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "REQUIRED_ALL_A_B_C_D_NOT_YET_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_REQUIRE_A_B_C_D"
+    },
+    {
+      "id": "robot",
+      "label": "Robot",
+      "sourceFolder": "12 - June 2024 - Robot",
+      "textureFamily": "robot_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/textures/robot_texture.png",
+          "blob": "06989c6361189eb4a0de33c20ba5d465998c99c5"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/textures/robot_texture_alt.png",
+          "blob": "d4e348681f8e05303c5201d9a6baf030ce2487ec"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_ALT_MISSING"
+    },
+    {
+      "id": "tiefling",
+      "label": "Tiefling",
+      "sourceFolder": "12 - June 2025 - Tiefling",
+      "textureFamily": "tiefling_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2025 - Tiefling/textures/tiefling_texture.png",
+          "blob": "e94797d1bd8f9a3a9d714479b951286f495a7f71"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2025 - Tiefling/textures/tiefling_texture_b.png",
+          "blob": "9606604cbab71ac27e2adab45103cfdad3d4b016"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "farmers",
+      "label": "Farmers",
+      "sourceFolder": "12 - June 2026 - Farmers",
+      "textureFamily": "farmer_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/farmer_texture_A.png",
+          "blob": "dd70e3553875406da15fe0229c49103acc98ad1a"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/farmer_texture_B.png",
+          "blob": "0818c10c7b74336ee4646f2c8f2877f8c8121cea"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "PARTIAL_TWO_MODELS_PRESENT_PALETTE_MAPPING_NOT_EXPLICIT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ACTORS_A_B_PALETTE_MAPPING_NOT_EXPLICIT"
+    },
+    {
+      "id": "driver",
+      "label": "Driver",
+      "sourceFolder": "2 - August 2023 - Driver",
+      "textureFamily": "driver_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/textures/driver_texture.png",
+          "blob": "764d0ccf8461270cfa9b5c752ee65fcd78f2720d"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/textures/driver_texture_B.png",
+          "blob": "984239a51d309e906297d68c5802c7b0b5a1677b"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "superhero",
+      "label": "Superhero",
+      "sourceFolder": "2 - August 2024 - Superhero",
+      "textureFamily": "superhero_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2024 - Superhero/textures/superhero_texture.png",
+          "blob": "b313879ba3ac1a6860a8fbb1eb65c239c806021e"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2024 - Superhero/textures/superhero_texture_alt.png",
+          "blob": "15ff469435aa1fee4c6c5c4caebe3da445fd3d73"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_ALT_MISSING"
+    },
+    {
+      "id": "orc-brute",
+      "label": "Orc Brute",
+      "sourceFolder": "2 - August 2025 - Orc Brute",
+      "textureFamily": "orcbrute_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/orcbrute_texture_A.png",
+          "blob": "cb5ff752ffa2f0f538d04c5c45e96925ff7f2b6b"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/orcbrute_texture_B.png",
+          "blob": "21d7a06bc175adbbaf69d9d864f0bf3ecab8bea7"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_A_ONLY_B_MISSING",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "monster-costume",
+      "label": "Monster Costume",
+      "sourceFolder": "3 - September 2023 - Monster Costume",
+      "textureFamily": "monstercostume_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_A.png",
+          "blob": "450b6c5a3cf9299110efe6d6fc4c5a5bd1a54e44"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_B.png",
+          "blob": "6a5d6a69af62a593c276e5a718a4d797a878a4b6"
+        },
+        {
+          "variant": "C",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_C.png",
+          "blob": "d3911c6fe4e01b42fb3a348eaf5aabad745d3473"
+        },
+        {
+          "variant": "D",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/textures/monstercostume_texture_D.png",
+          "blob": "be14e0b41e1bd12fde6b4c50f0901e9ed19417e1"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_C_D_MISSING"
+    },
+    {
+      "id": "black-knight",
+      "label": "Black Knight",
+      "sourceFolder": "3 - September 2024 - Black Knight",
+      "textureFamily": "blackknight_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/textures/blackknight_texture.png",
+          "blob": "16768c4e5e9d1cde861518adcf28a10394d9ea42"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/textures/blackknight_texture_alt.png",
+          "blob": "c018f7ab39b3d61766f4bf4abe67ad232b89f262"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_BASE_ONLY_ALT_MISSING",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_ALT_MISSING"
+    },
+    {
+      "id": "cleric",
+      "label": "Cleric",
+      "sourceFolder": "3 - September 2025 - Cleric",
+      "textureFamily": "cleric_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/cleric_texture.png",
+          "blob": "b1b94c92e8374d19ff79e0a9bcf585fc8114e6d1"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/cleric_texture_B.png",
+          "blob": "bdae7497454af9901d6e66fdb19ef79d5e999736"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_COMPLETE_BASE_B",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_NOT_REGISTERED_AS_APPEARANCE"
+    },
+    {
+      "id": "werewolf",
+      "label": "Werewolf",
+      "sourceFolder": "4 - October 2023 - Werewolf",
+      "textureFamily": "werewolf",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/textures/werewolf_A.png",
+          "blob": "d2ff4319e166784cbe6cdc62c9ec7829d4dcc1c4"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/textures/werewolf_B.png",
+          "blob": "ce6068196a65b83c4a3797a3283ebb5abea84593"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_STATES_PRESENT_PALETTE_B_NOT_REGISTERED"
+    },
+    {
+      "id": "monstrosity",
+      "label": "Monstrosity",
+      "sourceFolder": "4 - October 2025 - Monstrosity",
+      "textureFamily": "monstrosity_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/monstrosity_texture_A.png",
+          "blob": "28387431c1984fe4c70a42d0a06aea509f8315e6"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/monstrosity_texture_B.png",
+          "blob": "d8c1c04957f1f50c36970eb8f51b9eb59a399067"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_A_ONLY_B_MISSING",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "animatronic",
+      "label": "Animatronic",
+      "sourceFolder": "5 - November 2023 - Animatronic",
+      "textureFamily": "animatronic",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/textures/animatronic_A.png",
+          "blob": "bee0f7f426ba1ae589b9dda1e2d360d935cf7d81"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/textures/animatronic_B.png",
+          "blob": "bf5375c26ab6e80f66bfa591829b04617d498be2"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "PARTIAL_CREEPY_NORMAL_MODELS_B_EMBEDDED_A_NOT_EXPLICIT_SKIN",
+      "batchEyeRigStatus": "EYE_GEOMETRY_STATES_PRESENT_APPEARANCE_VARIANTS_NOT_REGISTERED"
+    },
+    {
+      "id": "witch",
+      "label": "Witch",
+      "sourceFolder": "5 - November 2024 - Witch",
+      "textureFamily": "witch_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/textures/witch_texture_A.png",
+          "blob": "8014ae73314e609421cc45e76a04dc8c84ac7aa5"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/textures/witch_texture_B.png",
+          "blob": "2a9717ef94802fbb732c089d8311fe5cd1d270ff"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_A_ONLY_B_MISSING",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "plant-warrior",
+      "label": "Plant Warrior",
+      "sourceFolder": "5 - November 2025 - Plant Warrior",
+      "textureFamily": "plantcreatures_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/plantcreatures_texture.png",
+          "blob": "ef75cb04932642569d15a215d3ac136bbe8c95c9"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/plantcreatures_texture_B.png",
+          "blob": "34dc1a5fcfdd0206a07fae78b8976c41daa443b0"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "ninja",
+      "label": "Ninja",
+      "sourceFolder": "8 - February 2024 - Ninja",
+      "textureFamily": "ninja_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_A.png",
+          "blob": "2829550ff523e04ddb2fc311cacebd806f35e794"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_B.png",
+          "blob": "3ad750fd904f765b50e8db0e8af13623053bf60e"
+        },
+        {
+          "variant": "C",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_C.png",
+          "blob": "371656267bf0ff144885bb79f324cceeeefb8f1e"
+        },
+        {
+          "variant": "D",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/texture/ninja_texture_D.png",
+          "blob": "3372a9cdf067420d9b875e61702eb79e0822e61c"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_C_D_MISSING"
+    },
+    {
+      "id": "hoarder",
+      "label": "Hoarder",
+      "sourceFolder": "8 - February 2026 - Hoarder",
+      "textureFamily": "hoarder_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/hoarder_texture.png",
+          "blob": "716fa6e3afaddebe786925bba1049f8d1e2644c1"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/hoarder_texture_B.png",
+          "blob": "5613322b8d6926fcef9cb6c1c2219fbd83bb0cd1"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "clanker",
+      "label": "Clanker",
+      "sourceFolder": "9 - March 2025 - Clanker",
+      "textureFamily": "clanker_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/textures/clanker_texture.png",
+          "blob": "5a753d7d63b1041bddca96baa5091524c8041dc1"
+        },
+        {
+          "variant": "ALT",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/textures/clanker_texture_alt.png",
+          "blob": "62286c86c5c340319270e8ae64d55a8cb1d709a9"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "NOT_RESIDENT",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_ALT_MISSING"
+    },
+    {
+      "id": "avian-swordsman",
+      "label": "Avian Swordsman",
+      "sourceFolder": "9 - March 2026 - Avian Swordsman",
+      "textureFamily": "avianswordsman_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/avianswordsman_texture.png",
+          "blob": "c0c081e8684456631c21ea6c612418fb5df191a4"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/avianswordsman_texture_B.png",
+          "blob": "10925c06b4725e42f4a0bfb55b05796603a71c70"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_BASE_ONLY_B_MISSING",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "goth-girl",
+      "label": "Goth Girl",
+      "sourceFolder": "GothGirl",
+      "textureFamily": "gothgirl_texture",
+      "variants": [
+        {
+          "variant": "BASE",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/textures/gothgirl_texture.png",
+          "blob": "a977d07571b967f0a7ead7f0603f297ec0a52bca"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/textures/gothgirl_texture_b.png",
+          "blob": "2de24d42a5461cd938b93d62ca528dee03dd7368"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_BASE_ONLY_B_MISSING",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_MISSING"
+    },
+    {
+      "id": "ultra-turbo-hero-man",
+      "label": "Ultra Turbo Hero Man",
+      "sourceFolder": "UltraTurboHeroMan",
+      "textureFamily": "ultraturboheroman_texture",
+      "variants": [
+        {
+          "variant": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/textures/ultraturboheroman_texture_A.png",
+          "blob": "784a668a689a249ceeefa99c2815148cd2b9a912"
+        },
+        {
+          "variant": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/textures/ultraturboheroman_texture_B.png",
+          "blob": "81f1af9263587855d87a899a4cca9b6fece04630"
+        }
+      ],
+      "canonicalResidentAtlasStatus": "ATLAS_COMPLETE_A_B",
+      "batchEyeRigStatus": "EYE_GEOMETRY_ONLY_B_NOT_REGISTERED_AS_APPEARANCE"
+    }
+  ],
+  "nonTextureAppearanceCases": [
+    {
+      "id": "protagonists",
+      "sourceFolder": "10 - April 2025 - Protagonists",
+      "kind": "TWO_MODELS_SHARED_TEXTURE_UV_VARIANT",
+      "models": [
+        "Protagonist_A.glb",
+        "Protagonist_B.glb"
+      ],
+      "note": "Color difference is encoded through UV/model variation on shared protagonist_texture.png; audit separately from texture swaps."
+    },
+    {
+      "id": "paladin-geometry",
+      "sourceFolder": "10 - April 2024 - Paladin",
+      "kind": "MODEL_VARIANT",
+      "models": [
+        "Paladin.glb",
+        "Paladin_with_Helmet.glb"
+      ]
+    },
+    {
+      "id": "werewolf-geometry",
+      "sourceFolder": "4 - October 2023 - Werewolf",
+      "kind": "MODEL_STATE_VARIANT",
+      "models": [
+        "Werewolf_Man.glb",
+        "Werewolf_Wolf.glb"
+      ]
+    },
+    {
+      "id": "animatronic-geometry",
+      "sourceFolder": "5 - November 2023 - Animatronic",
+      "kind": "MODEL_STATE_VARIANT",
+      "models": [
+        "Animatronic_Normal.glb",
+        "Animatronic_Creepy.glb"
+      ]
+    },
+    {
+      "id": "farmers-geometry",
+      "sourceFolder": "12 - June 2026 - Farmers",
+      "kind": "TWO_CHARACTER_MODELS",
+      "models": [
+        "Farmer_A.glb",
+        "Farmer_B.glb"
+      ],
+      "note": "Do not collapse Farmer A/B into a palette-only distinction; they are separate character models."
+    },
+    {
+      "id": "robot-geometry",
+      "sourceFolder": "12 - June 2024 - Robot",
+      "kind": "TWO_CHARACTER_MODELS",
+      "models": [
+        "Robot_One.glb",
+        "Robot_Two.glb"
+      ]
+    }
+  ],
+  "candidateHistoryNotes": [
+    {
+      "id": "hiker",
+      "evidence": "Newer unpromoted Resident Atlas inbox cuts already instantiate hiker_texture_b.png; canonical tools/resident_atlas_s6 does not."
+    }
+  ],
+  "scopeAudit": {
+    "mysterySeriesFamilies": 25,
+    "mysterySeriesAppearanceFiles": 56,
+    "otherKayKitTopLevelMultiTextureCharacterFamiliesDetected": 0,
+    "note": "Repository-wide KayKit texture-family scan found no additional top-level KayKit character packs with >=2 texture palettes under the same naming rule. Vehicle-only car_texture in Driver is excluded from character counts."
+  }
+}

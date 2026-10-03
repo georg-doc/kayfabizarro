@@ -1,3 +1,16 @@
+## 2026-10-03 · Character appearance coverage audit
+
+- Registered **Magical Girl A/B/C/D** as a required four-appearance Resident family over one shared `MagicalGirl.glb` geometry.
+- Registered the same A/B/C/D requirement with the existing Batch EyeRig owner; texture-only variants share geometry calibration and must not create duplicate skeletons.
+- Preserved existing Paladin precedent: A/B palettes already registered in EyeRig PR #104; light/blonde B is the King candidate.
+- Added source-backed audit `data/character-variant-requirements.v1.json` + `docs/CHARACTER_VARIANT_COVERAGE_2026-10-03.md`.
+- Audit result: **25 character texture families / 56 source appearances** in the current Mystery-Series source tree.
+- Canonical S6 explicitly completes only **Cleric base+B** and **Ultra Turbo Hero Man A+B** as texture/palette families.
+- Missing/partial variants for current S6 residents are now explicitly listed (Goth Girl, Witch, Black Knight, Avian Swordsman, Orc Brute, Monstrosity, Farmers mapping, Animatronic palette mapping).
+- Newer inbox/session-cut variant work remains donor evidence, not promoted S6 truth.
+- No cast/runtime/public Stage change in this slice.
+- Next gate: **MAGICAL-GIRL-VARIANTS-01**.
+
 # KFB Kit Lab · Changelog (additiv)
 
 Nur Zuwachs. Ältere Einträge bleiben stehen.
