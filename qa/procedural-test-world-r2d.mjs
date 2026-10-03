@@ -35,6 +35,15 @@ try{
       doc:{format:A.doc?.format,version:A.doc?.version,id:A.doc?.id,world:A.doc?.world},
       terrain:{name:A.terrain?.name,vertices:A.terrain?.geometry?.attributes?.position?.count||0},
       road:{present:!!road,meshCount:road?road.children.length:0},
+      presentation:W.presentationReport||null,
+      visible:{
+        top:!!A.scene.getObjectByName('R2D continuous island top'),
+        underside:!!A.scene.getObjectByName('R2D floating island underside'),
+        pond:!!A.scene.getObjectByName('R2D pond'),
+        creek:!!A.scene.getObjectByName('R2D creek'),
+        waterfall:!!A.scene.getObjectByName('R2D waterfall'),
+        nature:!!A.scene.getObjectByName('R2D source-proven procedural nature')
+      },
       playIsNull:A.play==null,
       rendererCanvasCount:document.querySelectorAll('#wb2d canvas').length,
       samples,
@@ -53,6 +62,14 @@ try{
   if(!state.terrain.name?.includes('R2D'))problems.push('terrain not R2D');
   if(!(state.terrain.vertices>1000))problems.push('terrain vertices '+state.terrain.vertices);
   if(!state.road.present)problems.push('Track Core road missing');
+  if(!state.visible.top)problems.push('continuous island top missing');
+  if(!state.visible.underside)problems.push('floating underside missing');
+  if(!state.visible.pond)problems.push('pond missing');
+  if(!state.visible.creek)problems.push('creek missing');
+  if(!state.visible.waterfall)problems.push('waterfall missing');
+  if(!state.visible.nature)problems.push('procedural nature missing');
+  if(!state.presentation?.underside)problems.push('presentation report underside false');
+  if(!(state.presentation?.nature?.trees>0))problems.push('presentation nature tree count missing');
   if(!state.playIsNull)problems.push('legacy play unexpectedly active');
   if(state.loadedLegacy.wi1Play)problems.push('wi1-play loaded');
   if(state.loadedLegacy.travelGlobe)problems.push('Travel Globe loaded');

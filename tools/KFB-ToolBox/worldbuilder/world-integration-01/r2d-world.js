@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { makeIslandCore } from '../procedural-test-world-01/r2d-island-core.v1.js';
+import { mountR2DPresentation } from '../procedural-test-world-01/r2d-presentation.v1.js';
 
 const TRACK_PIN='64d8597c3dad1dc9814c794d4a566d589e1e1a25';
 const R2C_PIN='927a1b4bd2d1de6cf0479414e2e8ac1cb9d6509f';
@@ -37,6 +38,7 @@ function makeWorld({id,Z,TC,ST,R2C,core}){
   const maxR=Math.max(...P.edgeR),spawn=chooseSpawn(P);
   const tile={cx:+P.c0[0].toFixed(3),cz:+P.c0[1].toFixed(3),size:Math.ceil(maxR*2+28),seg:256};
   const group=new THREE.Group();group.name='R2D WorldBuilder presentation';
+  let presentation=null;
   const zone={id:'r2d-island-'+Z.seed,status:'SOURCE_DERIVED_R2D_V0',
     counts:{buildings:P.pads.length,roadParts:1,landuse:1},
     provenance:{source:'R2D v0 Claude Design donor',commit:'74f7a690fbec88cf98ce0936f31b72ad3f1148f5',blob:'6952697d7d3c9cd159ac3fdd924f24fa333c904d'}};
@@ -50,6 +52,7 @@ function makeWorld({id,Z,TC,ST,R2C,core}){
     id,zone,spawn,tile,log:[],docId:'r2d-world-'+Z.seed,storageKey:'kfb-r2d-world.'+Z.seed,
     SKY_MODES:[['day','Day']],skyMode:'day',city:null,supportReport:null,landmarks:[],
     get inkOn(){return false},get inkReport(){return null},get namesOn(){return false},
+    get presentationReport(){return presentation?.report||null},
     baseHeightAt,
     maskAt:(x,z)=>inside(x,z)?F.maskAt(x,z):'under',
     groundAt(x,z,terrainHeight){return P.roadDist(x,z)<=P.hw+.2?Math.max(terrainHeight,P.roadY):terrainHeight},
@@ -78,6 +81,7 @@ function makeWorld({id,Z,TC,ST,R2C,core}){
         under:new THREE.Color(pal.rock||'#6b6f78'),road:new THREE.Color(pal.paved)};
       for(let i=0;i<pos.count;i++){const m=W.maskAt(pos.getX(i),pos.getZ(i)),col=C[m]||C.veg;colors.setXYZ(i,col.r,col.g,col.b)}
       colors.needsUpdate=true;mesh.material.vertexColors=true;mesh.material.needsUpdate=true;mesh.name='R2D source-derived heightfield · seed '+Z.seed;
+      if(!presentation)presentation=mountR2DPresentation({group,supportTerrain:mesh,plan:P,field:F,palette:pal});
     },
     onTerrain(){return null},
     frameEdit(camera,controls){controls.target.set(P.c0[0],1.5,P.c0[1]);camera.position.set(P.c0[0]+maxR*1.15,Math.max(18,maxR*.55),P.c0[1]+maxR*1.45);controls.update()},

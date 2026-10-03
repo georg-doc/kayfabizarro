@@ -1,7 +1,7 @@
 {
   "schema": "kfb.procedural-test-world/1",
   "date": "2026-10-03",
-  "status": "CANDIDATE_R2D_HEIGHTFIELD_WORLD_NO_LOCOMOTION",
+  "status": "CANDIDATE_R2D_BODY_WATER_NATURE_NO_LOCOMOTION",
   "owner": "KFB WorldBuilder",
   "baseMain": "7600fa9e29d396eaa9c5a11532e63cdad7689e75",
   "provenWorldDonor": {
@@ -32,7 +32,7 @@
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs"
     ],
-    "natureMountStatus": "AVAILABLE_NOT_YET_PLACED_IN_WORLD",
+    "natureMountStatus": "SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED",
     "designBrief": {
       "pr": 328,
       "role": "R2D continuous clay island direction"
@@ -45,7 +45,7 @@
   },
   "futureMotionDock": {
     "owner": "KFB ToolBox / Animation-Motion SSOT",
-    "pr": 331,
+    "pr": 333,
     "rule": "attach only after neutral ActionFigure prototype + Georg visual PASS",
     "legacyWi1Play": "DISABLED_IN_THIS_ENTRY"
   },
@@ -63,11 +63,16 @@
     "shape": "frei",
     "integration": "source-derived plan + height/mask + Track Core road in WB2; no R2D renderer/camera/loop",
     "presentationDeferred": [
-      "full underside mesh",
-      "pond/creek water surfaces",
-      "waterfall particles",
-      "R2D nature placement",
-      "B2 facade replacement"
-    ]
+      "current building-family/facade presentation",
+      "final Clay/material adoption",
+      "waterfall droplets/secondary FX polish"
+    ],
+    "presentation": {
+      "underside": "SOURCE_DERIVED_R2D_BODY_MOUNTED",
+      "pond": "SOURCE_DERIVED_WATER_MOUNTED",
+      "creek": "SOURCE_DERIVED_WATER_MOUNTED",
+      "waterfall": "SOURCE_DERIVED_STATIC_RIBBON_MOUNTED",
+      "nature": "P1_P2_SOURCE_PROVEN_GROUPING_MOUNTED"
+    }
   }
 }

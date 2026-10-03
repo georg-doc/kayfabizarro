@@ -28,13 +28,13 @@ test('test world boots source-derived R2D island profile',()=>{
 });
 
 test('future motion dock points to central Motion SSOT, not wi1-play',()=>{
-  assert.equal(profile.futureMotionDock.pr,331);
+  assert.equal(profile.futureMotionDock.pr,333);
   assert.equal(profile.futureMotionDock.legacyWi1Play,'DISABLED_IN_THIS_ENTRY');
 });
 
 test('source-proven procedural nature families are routed without claiming placement',()=>{
   assert.equal(profile.proceduralDesign.natureModules.length,2);
-  assert.equal(profile.proceduralDesign.natureMountStatus,'AVAILABLE_NOT_YET_PLACED_IN_WORLD');
+  assert.equal(profile.proceduralDesign.natureMountStatus,'SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED');
 });
 
 
@@ -49,4 +49,18 @@ test('R2D integration consumes pure source-derived world data and does not creat
   assert.match(adapter,/ST\.buildTrack\(THREE,P\.stream/);
   assert.match(app,/WORLD_ID\.startsWith\('r2d'\)/);
   assert.match(app,/WORLD\.baseHeightAt/);
+});
+
+
+test('R2D presentation adds floating body water and source-proven nature without a second renderer',()=>{
+  const presentation=fs.readFileSync(new URL('../tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js',import.meta.url),'utf8');
+  assert.match(presentation,/buildIslandBody/);
+  assert.match(presentation,/R2D floating island underside/);
+  assert.match(presentation,/R2D pond/);
+  assert.match(presentation,/R2D creek/);
+  assert.match(presentation,/R2D waterfall/);
+  assert.match(presentation,/environment-family-p1\.mjs/);
+  assert.match(presentation,/environment-family-p2\.mjs/);
+  assert.doesNotMatch(presentation,/WebGLRenderer|new THREE\.Scene|requestAnimationFrame|setAnimationLoop/);
+  assert.match(adapter,/mountR2DPresentation/);
 });
