@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-10-03",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -817,6 +817,38 @@
       ],
       "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
       "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    },
+    {
+      "id": "kfb-audio-arrange-01-donor-rebase-2026-10-03",
+      "kind": "workflow",
+      "status": "SOURCE_BROWSER_PASS_PUBLIC_PENDING",
+      "version": "1.0",
+      "path": "skills/chat/workflows/KFB_AUDIO_ARRANGE_01_DONOR_REBASE_2026-10-03/START_HERE.md",
+      "recovery": "skills/chat/workflows/KFB_AUDIO_ARRANGE_01_DONOR_REBASE_2026-10-03/RECOVERY.md",
+      "return": "skills/chat/workflows/KFB_AUDIO_ARRANGE_01_DONOR_REBASE_2026-10-03/RETURN.md",
+      "loadWhen": [
+        "AUDIO-ARRANGE",
+        "procedural music",
+        "Cyclical Warmth",
+        "Loping Groove",
+        "Suno stems",
+        "One Good Island",
+        "Yello",
+        "CAN",
+        "electro-funk"
+      ],
+      "owns": [
+        "Cyclical/Loping donor A/B bench",
+        "64-bar stem arrangement proof",
+        "Suno donor prompt pack"
+      ],
+      "doesNotOwn": [
+        "Travel/Race/Combat runtime",
+        "universal audio runtime",
+        "automatic Suno generation",
+        "Live promotion"
+      ],
+      "note": "Fresh recovery branch after PR #337 source drift. 29/29 source + 24/24 Chromium/WebAudio PASS; eight 76-BPM stems decode at identical 214.128 s. Public donor A/B Stage is the next gate."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

@@ -1,3 +1,15 @@
+## 2026-10-03 · AUDIO-ARRANGE donor rebase PASS
+
+- Fresh recovery Draft PR #339 from current main resolves PR #337's donor source drift.
+- Exact Cyclical Warmth + Loping Groove masters and eight Cyclical 76-BPM stems are present.
+- Tested head `3d85d7e2aa103ab0bb2b388c678584d9ece19484`: **29/29 source PASS + 24/24 Chromium/WebAudio PASS**.
+- All eight stems decode as 44.1-kHz stereo, exactly **214.128 s** each, duration spread **0**, and are scheduled sample-synchronously.
+- Cyclical master decodes to 213.2 s; Loping master 204.0 s.
+- Donor bench compares exact masters, exact stem reconstruction and one fixed 64-bar KFB arrangement over the same performances.
+- Proof artifact `11262876991`, digest `sha256:e08c061ac8f580d469b07586c52dd8c52db3fa94dc191e3f77d71f951077df19`.
+- Suno donor prompt pack added; only winning masters should get stem extraction.
+- Next gate: publish unchanged donor bench to the fixed Cloudflare Stage and run human A/B.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

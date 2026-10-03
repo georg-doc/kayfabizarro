@@ -1,0 +1,59 @@
+{
+  "schema": "kfb.audio-arrange-donor-rebase/1",
+  "date": "2026-10-03",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03",
+  "draftPR": 339,
+  "base": "eadebbb7ce90612630a9b3b166dd3ae1cad7b0d2",
+  "testedHead": "3d85d7e2aa103ab0bb2b388c678584d9ece19484",
+  "status": "SOURCE_BROWSER_PASS_PUBLIC_PENDING",
+  "stage": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/",
+  "stageStatus": "NOT_PUBLISHED",
+  "previous": {
+    "pr": 337,
+    "status": "STOPPED_SOURCE_DRIFT",
+    "preservedHead": "9ab27c31409f95255e317ed4c1ac10f415b208fc"
+  },
+  "qa": {
+    "run": 37093077519,
+    "job": 111117349198,
+    "source": "29/29 PASS",
+    "chromiumWebAudio": "24/24 PASS",
+    "artifact": 11262876991,
+    "digest": "sha256:e08c061ac8f580d469b07586c52dd8c52db3fa94dc191e3f77d71f951077df19"
+  },
+  "measured": {
+    "bpm": 76,
+    "beatsPerBar": 4,
+    "barSeconds": 3.1578947368421053,
+    "stems": {
+      "durationSeconds": 214.128,
+      "durationSpreadSeconds": 0,
+      "sampleRate": 44100,
+      "channels": 2,
+      "onsetSeconds": {
+        "drums": 0.48,
+        "bass": 0.48,
+        "guitar": 0.12,
+        "keyboard": 0.12,
+        "percussion": 1.26,
+        "strings": 76.32,
+        "synth": 0.56,
+        "brass": 70.56
+      }
+    },
+    "masters": {
+      "cyclical": {
+        "durationSeconds": 213.2,
+        "onsetSeconds": 0.08
+      },
+      "loping": {
+        "durationSeconds": 204,
+        "onsetSeconds": 0.04
+      }
+    },
+    "first64BarsSeconds": 202.10526315789474
+  },
+  "nextGate": "Publish unchanged donor bench to exact Cloudflare Stage and run human MASTER / STEM RECONSTRUCT / KFB ARRANGE A/B."
+}

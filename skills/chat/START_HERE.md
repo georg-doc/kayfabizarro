@@ -106,6 +106,17 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-10-03 · AUDIO-ARRANGE-01 donor rebase current
+
+- Current audio arrangement candidate: Draft PR #339 · `chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03`.
+- Previous PR #337 is recovery evidence only; it stopped because the donor audio files landed on main after its branch was cut.
+- Source parity is now resolved: exact Cyclical Warmth + Loping Groove masters and eight 76-BPM Cyclical stems are present on the current branch.
+- QA at `3d85d7e2aa103ab0bb2b388c678584d9ece19484`: **29/29 source PASS + 24/24 Chromium/WebAudio PASS**.
+- Eight stems decode to exactly **214.128 s** each with duration spread 0 and exact sample-synchronous scheduling.
+- Current musical gate is the real donor A/B: CYCLICAL MASTER / LOPING MASTER / STEM RECONSTRUCT / KFB ARRANGE.
+- Suno prompt pack is at `workflows/KFB_AUDIO_ARRANGE_01_DONOR_REBASE_2026-10-03/SUNO_DONOR_PROMPTS.md`; stems are pulled only from winning masters.
+- Fixed Stage route: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/` — public verification still pending at this metadata checkpoint.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.

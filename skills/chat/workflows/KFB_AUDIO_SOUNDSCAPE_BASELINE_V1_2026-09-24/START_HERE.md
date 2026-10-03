@@ -12,6 +12,23 @@
 GitHub state overrides this document whenever a named source ref advances.
 
 
+## CURRENT FOLLOW-UP · AUDIO-ARRANGE DONOR REBASE · 2026-10-03
+
+AUDIO-CAL-01 remains the accepted mix/ducking reference.
+
+Current musical follow-up:
+`skills/chat/workflows/KFB_AUDIO_ARRANGE_01_DONOR_REBASE_2026-10-03/START_HERE.md`
+
+Draft PR #339 / branch `chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03`.
+
+Current proof:
+- 29/29 source PASS;
+- 24/24 Chromium/WebAudio PASS;
+- eight Cyclical stems = exactly 214.128 s each, duration spread 0;
+- sample-synchronous scheduling confirmed.
+
+Next gate is public exact-route donor A/B only. No Deck, weather, Race telemetry or WebAudioFont replacement before Georg hears master vs reconstruction vs KFB arrangement.
+
 ## HUMAN LISTENING RESULT · PASS
 
 Georg reviewed AUDIO-CAL-01 on 2026-09-24 and reported: **“klingt sehr gut soweit. passt.”**
