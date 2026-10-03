@@ -68,3 +68,33 @@ existing KCL/Three.js facts + Blender intake
 without silently preferring either measurement source.
 
 Then use that reconciled profile for the neutral ActionFigure prototype.
+
+
+## Blender lane alignment · 2026-10-03
+
+Active Blender measurement job is NOT the earlier local template.
+
+Use:
+- branch `coworker/locomotion-ladder-01-brief-2026-10-03`
+- brief blob `746cd98e7185907cc18a95112a235e4bfbbdfd8f`
+- incoming artifact `LOCOMOTION_LADDER_01.json`
+
+Motion Library v6 was independently checked from Dropbox by this chat:
+- catalogue schema `kfb.motion-catalog.v1`
+- version `2026-09-30`
+- 370 total clips
+- 148 clips in group `locomotion`
+- existing locomotion sets include male_basic, female_basic, magic_caster, drunk, carry_box, carry_holding and wheelbarrow.
+
+The private Dropbox catalogue is not copied into this public branch.
+
+### Updated next action
+
+Do NOT invent a second Blender schema or preselect a gait ladder.
+
+Wait for the actual GitHub-delivered `LOCOMOTION_LADDER_01.json`, inspect its real schema, then run the existing measurement reconciler against:
+1. KCL/Three.js measurements;
+2. Motion Library v6 facts;
+3. Blender ladder measurements.
+
+Every disagreement remains visible and unresolved until an explicit decision.
