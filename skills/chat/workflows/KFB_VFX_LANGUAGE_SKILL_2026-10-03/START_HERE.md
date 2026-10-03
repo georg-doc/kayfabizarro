@@ -108,26 +108,35 @@ For donor integration:
 
 Implementation:
 - skills/kfb-cartoon-vfx_v1.md
-- first implementation commit: 2df4d17299cc1b11d0254ff10de1c18814368fae
-- first skill blob: 49578e9459ebad994a4a0c928e5c9b0f7cbe302d
+- verified skill blob: 49578e9459ebad994a4a0c928e5c9b0f7cbe302d
+- Draft PR: #347
+- branch: chatgpt-web/kfb-vfx-language-skill-01-2026-10-03
 
-Validation:
-- semantic/content architecture lint: 71/71 passed
-- no failed checks
+Evidence:
+- RESEARCH_SOURCE_MATRIX.md is durable on GitHub.
+- TEST_REPORT.md records 71/71 skill validation plus 16/16 routing/recovery validation.
+- RECOVERY.md closes the earlier ReadTimeout/UNKNOWN write and proves the matrix landed exactly once.
+- SOURCE.json pins the KFB Combat, Travel, clay and Tiny Skies donors.
+
+Routing:
+- skills/chat/REGISTRY.json registers kfb-cartoon-vfx as CURRENT_REFERENCE.
+- skills/chat/START_HERE.md routes VFX work to this skill/workflow.
+- skills/chat/CHANGELOG.md has the additive 2026-10-03 VFX v1 entry.
+
+Publication:
+- reserved Stage route: https://kayfabizarro.pages.dev/kfb-hub/stage/vfx-language-skill-01/
+- status: NOT_DEPLOYED / NOT REQUIRED for this documentation-research closure
+- no PUBLIC_VERIFIED, HUMAN_ACCEPTED or Live claim.
 
 Site persistence:
-- Research Ledger 01 saved
-- Research Ledger 02 saved
-- implementation checkpoint saved
+- research ledgers, recovery, test/evidence and routing checkpoints are saved under workflow KFB-VFX-LANGUAGE-SKILL-01.
 
 ## Next work in this slice
 
-1. persist research source matrix in GitHub;
-2. persist test/evidence report;
-3. route the skill from chat START_HERE / registry;
-4. append changelog;
-5. inspect/update KFB Hub metadata only through its current owner path;
-6. open a PR;
-7. write final Return and Site RETURN checkpoint.
+1. write final RETURN.md on PR #347;
+2. update the existing Hub `vfx-sfx` lane on HUB-CTRL PR #202 to point at the finished skill source instead of the obsolete local-review wording;
+3. save the final Site RETURN checkpoint.
+
+After that, this documentation/research slice is closed. Runtime adoption belongs to a later bounded consumer fixture using its existing owner.
 
 No merge and no Live promotion without the named human gate.
