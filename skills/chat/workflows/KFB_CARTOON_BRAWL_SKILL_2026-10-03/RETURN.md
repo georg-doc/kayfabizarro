@@ -1,6 +1,6 @@
 # KFB Cartoon Brawl Skill · Return
 
-Status: **READY_FOR_INTEGRATION · CANONICAL DRAFT**
+Status: **CONSUMER_PROVEN_DRAFT · FIRST CONSUMER PASS**
 Date: 2026-10-03
 Workflow: `KFB-CARTOON-BRAWL-SKILL-01`
 
@@ -146,3 +146,26 @@ Use one real Combat Arena melee consumer to validate the skill itself:
 7. clean recovery.
 
 Only after that consumer proof should the skill move from `canonical-draft` toward a stronger accepted/canonical status or expand broadly across weapon families.
+
+
+## Consumer proof addendum · 2026-10-03
+
+The first real consumer is now complete.
+
+Combat source:
+
+- repo: `georg-doc/KFB-Combat-Arena`
+- Draft PR: **#12**
+- branch: `chatgpt-web/brawl-skill-consumer-01-sword-2026-10-03`
+- closure head: `fb40fac9d108b4719d06d47af394731edd233620`
+- final CI: `37130587598 / 111224735535` · **106/106 PASS** · build 236 · re-home 172/66/routes PASS
+- browser runtime head: `7ce3c45a1122fb8b4b31daed18259b282e02dadc`
+- browser run/job: `37129956150 / 111222921868` · PASS
+- artifact: `11276313336`
+- no production Sword promotion.
+
+The consumer established that the Sword source is the primary KayKit Rig_Medium CombatMelee pool, not Mixamo, and classified the five native 1H attacks.
+
+Exactly one next productive gate:
+
+**BRAWL-CLUB-BRICKFISH-01**
