@@ -114,23 +114,6 @@ jobs:
               {}, {timeout:210000}
             );
 
-            const state=await page.evaluate(() => {
-              const t=window.__travelPOC;
-              const b=t.billboardWorld;
-              const card=b.targetCard;
-              return {
-                billboard:b.snapshot(),
-                managerOrder:t.mgr.order,
-                sameScene:b.group.parent===t.scene,
-                targetData:card ? {
-                  kind:card.data.kind,packId:card.data.packId,n:card.data.n,title:card.data.title,role:card.data.role||null
-                }:null,
-                ringZone:card ? t.ring.zoneOf(card):null,
-                cardWorld:card ? (()=>{const p=new window.__travelPOC.scene.constructor.prototype.constructor.Vector3?.()})() : null
-              };
-            }).catch(() => null);
-
-            // Re-read without trying to manufacture THREE from scene.constructor.
             const s=await page.evaluate(() => {
               const t=window.__travelPOC, b=t.billboardWorld, card=b.targetCard;
               const cp={x:0,y:0,z:0};
