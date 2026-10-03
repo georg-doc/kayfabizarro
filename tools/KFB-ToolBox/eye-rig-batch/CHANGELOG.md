@@ -382,3 +382,21 @@ No shared Legacy class default is inferred. No visual approval is automated.
 
 Next:
 `KLR-EYE-VIS-01`.
+
+## 2026-10-03 · Legacy 17-head review UI
+
+- retained existing PR #162 Legacy 17/17 technical base;
+- added Front / ¾ L / ¾ R views;
+- added source-eye show/hide cleanup comparison;
+- added minimal X/Y/size/inset tuning;
+- added Approve / Adjusted approve / Reject;
+- added local review persistence under `kfb.toolbox.eye-rig-legacy-review.v1`;
+- selecting a head now source-isolates and then mounts its reviewed or persisted profile;
+- added Next review and JSON export;
+- Legacy adapter only forwards tuning into existing EyeRig v6;
+- focused readback **17/17 PASS**;
+- expanded static contract: **38 assertions persisted · NOT_RUN** on new head because no Actions run was created;
+- historical **247/247 + 215/215** browser evidence remains the proven Legacy runtime base;
+- Stage mirror: `cloudflare-live@26a17e973f7548f8df39cdcf1270352acc402858`;
+- current gate: `KLR-EYE-VIS-01`.
+
