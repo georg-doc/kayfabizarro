@@ -13,6 +13,9 @@ Current Site/God Mode/Lean Memory architecture:
 Current pre-One-Shot audit:
 `ONE_SHOT_PRECHECK_2026-10-04.md`
 
+Current deck-driven world / Resident / ChatterBox / Card pipeline contract:
+`DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
+
 **Do not start the final One-Shot from PR #332 directly.** The precheck records current main ↔ #332 divergence and requires a clean World convergence base first. The final WSA/Codex One-Shot starts only after the preflight gates listed there are closed and one frozen integration lock pins exact owners/refs.
 
 Source package:
@@ -25,7 +28,10 @@ MVP planning now explicitly includes:
 - Orc Band as a placeable performance module;
 - Resident Disco as a placeable performance module;
 - Wrestling / Show Ring as a placeable Town module, while full rope physics/Fight Sandbox completion stays non-blocking;
-- Site/God-Mode placement and Lean-Memory/NPC-continuity seams.
+- Site/God-Mode placement and Lean-Memory/NPC-continuity seams;
+- deck-backed World Knowledge / Resident Knowledge profiles for Utopia, Dystopia and Protopia;
+- existing ChatterBox semantic Triplet grammar bound to canonical Card/deck refs;
+- Billboard → Resident dialogue → Almanac identity continuity through the existing Card pipeline.
 
 Exactly one current WSA gate from this intake is **WSA-RES-SET-01**: prove Mummy + Combat Mech + Clown through `kfb.resident-set/0.1` into the current WB2 scene document, terrain grounding, shared object editor, Save and Reload. Do not start Band/Disco/Wrestling packaging as a second integration slice before that seam is proven.
 
