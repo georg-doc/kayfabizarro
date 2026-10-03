@@ -18,6 +18,8 @@ export const SEMANTIC_STATES = Object.freeze([
   'start',
   'walk',
   'walk.fast',
+  'jog',
+  'run.easy',
   'run',
   'sprint',
   'stop',
@@ -30,7 +32,7 @@ export const SEMANTIC_STATES = Object.freeze([
   'jump.land',
 ]);
 
-const GAIT_STATES = new Set(['walk','walk.fast','run','sprint','backward','strafe.left','strafe.right']);
+const GAIT_STATES = new Set(['walk','walk.fast','jog','run.easy','run','sprint','backward','strafe.left','strafe.right']);
 
 const finitePositive = (v) => Number.isFinite(v) && v > 0;
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
@@ -176,8 +178,10 @@ function transitionMeta(profile, from, to) {
     phaseSync: gait ? explicit?.syncPhase !== false : !!explicit?.syncPhase,
     preferredFoot: profile?.preferredPhaseFoot || 'left',
     crossfadeSeconds: Number.isFinite(explicit?.fade) ? explicit.fade : null,
+    phaseOffset: Number.isFinite(explicit?.phaseOffset) ? explicit.phaseOffset : null,
+    sameFootAlignable: typeof explicit?.sameFootAlignable === 'boolean' ? explicit.sameFootAlignable : null,
     warp: gait ? profile?.warpDuringGaitCrossfade !== false : false,
-    evidence: explicit ? 'PROFILE' : (gait ? 'GAIT_DEFAULT_PHASE_SYNC' : 'NO_EXPLICIT_TRANSITION_PROFILE'),
+    evidence: explicit?.evidence || (explicit ? 'PROFILE' : (gait ? 'GAIT_DEFAULT_PHASE_SYNC' : 'NO_EXPLICIT_TRANSITION_PROFILE')),
   };
 }
 
@@ -254,13 +258,25 @@ export function createMotionStateMachine(profile) {
 }
 
 export function profileHealth(profile) {
-  const missing = SEMANTIC_STATES.filter((s) => !available(profile, s) && !['start','stop','turn'].includes(s));
+  const forwardRequired = profile?.forwardOrder || ['walk','walk.fast','run','sprint'];
+  const required = [...new Set([
+    'idle',
+    ...forwardRequired,
+    'backward',
+    'strafe.left',
+    'strafe.right',
+    'jump.start',
+    'jump.air',
+    'jump.land',
+  ])];
+  const missing = required.filter((s) => !available(profile, s));
   const pendingMeasurements = Object.entries(profile.states || {})
     .filter(([,p]) => p && /PENDING|UNMEASURED|HUMAN_OPEN/.test(String(p.measurementStatus || p.status || '')))
     .map(([s]) => s);
   const bands = compileForwardBands(profile);
   return {
     schema: SCHEMA + '#health',
+    required,
     missing,
     pendingMeasurements,
     forwardBands: bands,

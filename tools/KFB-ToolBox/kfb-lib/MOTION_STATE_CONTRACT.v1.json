@@ -2,7 +2,7 @@
   "schema": "kfb.motion-state-contract/1",
   "date": "2026-10-03",
   "owner": "KFB ToolBox / Animation-Motion authoring",
-  "status": "FOUNDATION_IMPLEMENTATION_MEASUREMENT_OPEN",
+  "status": "FOUNDATION_IMPLEMENTATION_LADDER_02_TECHNICAL_FORWARD_READY_HUMAN_OPEN",
   "sourceLineage": {
     "motionLab": {
       "pr": 127,
@@ -35,14 +35,30 @@
       "totalClips": 370,
       "locomotionGroupClips": 148,
       "verifiedOn": "2026-10-03",
-      "note": "Private source reference only; catalogue bytes are not copied into this public branch."
+      "note": "Private source reference only; catalogue bytes are not copied into this public branch.",
+      "status": "SUPERSEDED_BY_V7_IN_CURRENT_CANDIDATE"
     },
     "blenderLadder": {
-      "branch": "coworker/locomotion-ladder-01-brief-2026-10-03",
-      "briefPath": "skills/chat/workflows/LOCOMOTION_LADDER_01_2026-10-03/BRIEF_BLENDER_LOCOMOTION_LADDER_01.md",
-      "briefBlob": "746cd98e7185907cc18a95112a235e4bfbbdfd8f",
-      "output": "LOCOMOTION_LADDER_01.json",
-      "status": "MEASUREMENT_IN_PROGRESS_EXTERNAL_LANE"
+      "donorPr": 336,
+      "donorBranch": "blender-mcp/locomotion-ladder-02-2026-10-03",
+      "donorHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "evidencePath": "tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json",
+      "evidenceBlob": "59f49e9952b0d266c7cd435e85de601bd9da94f1",
+      "schema": "kfb.locomotion-ladder/0.2-candidate",
+      "status": "TECHNICAL_FORWARD_READY_HUMAN_LOOK_OPEN"
+    },
+    "motionLibraryV7": {
+      "source": "GitHub + Dropbox verified donor",
+      "donorPr": 336,
+      "donorHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "tree": "ca6218cc0d79f9e75f1ffccc2715f60cecf0e2bb",
+      "catalogBlob": "7f333d0a1809ff5b299263a5e2ec21a29dba723c",
+      "version": "2026-10-03",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 395,
+      "intake07Added": 25,
+      "intake07DuplicatesRejected": 16,
+      "status": "CENTRAL_CANDIDATE_SOURCE_CLOSURE_VERIFIED"
     }
   },
   "responsibility": {
@@ -89,6 +105,8 @@
     "start",
     "walk",
     "walk.fast",
+    "jog",
+    "run.easy",
     "run",
     "sprint",
     "stop",
@@ -108,35 +126,67 @@
     "Start/stop may be transition semantics without dedicated clips; no clip name is invented.",
     "Missing measurements remain unresolved and block final prototype acceptance rather than being guessed.",
     "Consumer runtimes may not fork clip maps or locomotion state graphs.",
-    "LOCOMOTION_LADDER_01.json is the active Blender measurement input; no second Blender measurement schema may silently become authoritative.",
-    "Motion Library v6 provides a broad candidate pool, but semantic gait selection remains unresolved until exact ladder measurement and Georg visual review."
+    "Motion Library v6 provides a broad candidate pool, but semantic gait selection remains unresolved until exact ladder measurement and Georg visual review.",
+    "LOCOMOTION_LADDER_02 is the current technical forward-ladder evidence; PR #333 is the only owner that may adapt it for consumers.",
+    "The technical forward ladder is walk → jog → run.easy → run → sprint. Its handoffs are derived from measured Ladder 02 rate windows, never consumer-local speed thresholds.",
+    "Ladder 02 selected clips remain HUMAN_LOOK_OPEN; technical selection does not imply Georg visual acceptance.",
+    "Legacy KCL/Motion Lab same-clip measurements remain independent cross-check evidence and are not silently overwritten by Ladder 02."
   ],
   "currentRigMediumEvidence": {
-    "measurementStatus": "TECHNICAL_CANDIDATE_HUMAN_OPEN",
-    "walkingA": {
-      "duration": 1.0666667222976685,
-      "referenceSpeed": 0.610950956910957,
-      "slipBody": 0.013229703955890515
-    },
-    "runningA": {
-      "duration": 0.800000011920929,
-      "referenceSpeed": 2.480274167012876,
-      "slipBody": 0.06360108910820435
-    },
-    "technicalPlaybackRange": [
-      0.45,
-      1.8
+    "measurementStatus": "LADDER_02_TECHNICAL_FORWARD_READY_HUMAN_LOOK_OPEN",
+    "speedSpace": "world",
+    "forwardOrder": [
+      "walk",
+      "jog",
+      "run.easy",
+      "run",
+      "sprint"
     ],
-    "measuredWalkRunGapApprox": 0.016,
+    "selectedClips": {
+      "walk": "kfb_locomotion_walking_c",
+      "jog": "kfb_locomotion_jog_forward_a",
+      "run.easy": "kfb_locomotion_slow_run_a",
+      "run": "kfb_locomotion_medium_run_a",
+      "sprint": "kfb_locomotion_sprint_a"
+    },
+    "worldReferenceSpeed": {
+      "walk": 0.773,
+      "jog": 1.198,
+      "run.easy": 1.45,
+      "run": 2.164,
+      "sprint": 2.857
+    },
+    "handoffWorldSpeed": {
+      "walk→jog": 0.962,
+      "jog→run.easy": 1.318,
+      "run.easy→run": 1.771,
+      "run→sprint": 2.486
+    },
+    "technicalForwardReady": true,
+    "humanAccepted": false,
+    "lookChoicesOpen": {
+      "jog": [
+        "kfb_locomotion_jog_forward_a",
+        "kfb_locomotion_jogging_a"
+      ],
+      "run": [
+        "kfb_locomotion_medium_run_a",
+        "kfb_locomotion_running_d"
+      ],
+      "sprint": [
+        "kfb_locomotion_sprint_a",
+        "kfb_locomotion_fast_run_a"
+      ]
+    },
     "unresolved": [
-      "approved playback ranges",
-      "Walking_A/B/C semantic choice",
-      "jog/fast-walk accepted source",
-      "sprint accepted source/rate",
-      "backward/strafe Blender cross-check",
-      "jump Blender cross-check",
-      "turn policy",
-      "human visual acceptance"
+      "human visual choice for jog/run/sprint",
+      "side jog missing",
+      "backward jog technical HOLD from root/feet mismatch",
+      "left strafe run HOLD",
+      "left running turns missing",
+      "run stop ends with approximately 45 degree turn",
+      "neutral ActionFigure WASD+Shift+Space prototype",
+      "Georg visual/freeplay acceptance"
     ]
   },
   "prototypeGate": {
@@ -144,9 +194,11 @@
     "controls": "WASD + Shift + Space",
     "environment": "neutral ground",
     "ui": "normal play view; diagnostics hidden/internal",
+    "purpose": "Visual/freeplay validation of the central Ladder 02 candidate before any World/Travel/Combat/Resident consumer integration.",
     "blockedUntil": [
-      "measurement intake reconciled",
-      "required semantic states have measured or explicitly transition-only evidence"
-    ]
+      "Ladder 02 central profile adapter and exact evidence integration pass CI"
+    ],
+    "humanGate": "Georg visual/freeplay PASS",
+    "afterPass": "Dock the same central owner into procedural World #332; do not use Travel Globe as the test host."
   }
 }
