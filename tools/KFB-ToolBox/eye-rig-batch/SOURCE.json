@@ -11,8 +11,8 @@
     "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "componentEvidenceUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/docs/source-components-0-11.html",
     "publicationBranch": "cloudflare-live",
-    "publicationCommit": "6406774131723288b757fd676e6d7be3f08b1123",
-    "status": "PUBLISHED_VIEW_COMFORT_CLAY_HUMAN_VERIFY_OPEN",
+    "publicationCommit": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
+    "status": "PUBLISHED_WHEEL_ZOOM_REPAIR_02_HUMAN_VERIFY_OPEN",
     "correctedPublicProof": "OPEN · exact mirror readback PASS; current tool cannot visibly open pages.dev",
     "historicalPublicProof": {
       "status": "PASS_HISTORICAL_PRE_IDENTITY_CORRECTION",
@@ -125,8 +125,8 @@
     "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
-    "status": "VIEW_COMFORT_CLAY_HUMAN_VERIFY_OPEN",
-    "nextGate": "GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01"
+    "status": "WHEEL_ZOOM_REPAIR_02_HUMAN_VERIFY_OPEN",
+    "nextGate": "GEORG_EYERIG_WHEEL_ZOOM_VIS_02"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -542,7 +542,7 @@
     "nextGate": "GEORG_EYERIG_BOOT_REPAIR_VIS_01"
   },
   "viewComfortClay": {
-    "status": "SOURCE_TESTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "status": "WHEEL_REPAIR_02_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
     "humanInput": {
       "bootRepair": "HUMAN_ACCEPTED_PASS",
       "wheelZoom": "TOO_SENSITIVE",
@@ -600,9 +600,33 @@
       "fullHistoricalStaticSuite": "NOT_RUN · isolated container could not resolve github.com before checkout",
       "browserVisualPerformance": "OPEN"
     },
-    "stageMirrorHead": "6406774131723288b757fd676e6d7be3f08b1123",
+    "stageMirrorHead": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
     "stageUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/",
     "publicVerified": false,
-    "nextGate": "GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01"
+    "nextGate": "GEORG_EYERIG_WHEEL_ZOOM_VIS_02"
+  },
+  "wheelZoomRepair02": {
+    "status": "SOURCE_TESTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
+    "userObserved": "zoomSpeed-only pass still jumped to extreme camera positions",
+    "implementationHead": "797e5a81bbcdc339282ea1873363dd6804d9bd31",
+    "evidenceHead": "83d913eb102e49e83828cd0d183bf6045615bcc6",
+    "appBlob": "5635b28496af0e06cfe7f60a01b23e5612bad6e1",
+    "owner": "OrbitControls remains orbit/target/rotation owner; native wheel zoom disabled",
+    "contract": {
+      "nativeZoom": false,
+      "minDistance": 1.6,
+      "maxDistance": 8,
+      "stepPerEvent": 0.12,
+      "gestureIn": 0.65,
+      "gestureOut": 0.85,
+      "gestureGapMs": 160,
+      "damping": 14,
+      "maxFrameStep": 0.09,
+      "presetResync": true
+    },
+    "focusedChecks": "13/13 PASS",
+    "stageMirrorHead": "888a57cfe820890fa2ac3a86f991d05a58834ee3",
+    "publicVerified": false,
+    "nextGate": "GEORG_EYERIG_WHEEL_ZOOM_VIS_02"
   }
 }
