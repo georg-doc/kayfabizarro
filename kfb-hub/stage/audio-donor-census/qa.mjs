@@ -5,7 +5,7 @@ const result={status:'UNKNOWN',checks:[],errors:[]};const check=(n,o,d=null)=>{r
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']});let page;
 try{
  const c=await browser.newContext({viewport:{width:1200,height:800}});page=await c.newPage();page.on('pageerror',e=>result.errors.push(String(e)));
- await page.goto(base,{waitUntil:'networkidle',timeout:90000});await page.click('#run');await page.waitForFunction(()=>!!window.__KFB_DONOR_CENSUS_RESULT__,{timeout:240000});
+ await page.goto(base,{waitUntil:'networkidle',timeout:90000});await page.click('#run');await page.waitForFunction(()=>!!window.__KFB_DONOR_CENSUS_RESULT__,undefined,{timeout:240000});
  const s=await page.evaluate(()=>window.__KFB_DONOR_CENSUS_RESULT__);
  check('five donors',Object.keys(s.donors).length===5,Object.keys(s.donors));
  for(const [id,d] of Object.entries(s.donors)){
