@@ -1,12 +1,12 @@
 {
   "schema": "kfb.audio-stem-bed-pool/0.3",
-  "build": "AUDIO-STEM-BED-02-R1",
+  "build": "AUDIO-STEM-BED-02-R2",
   "date": "2026-10-03",
   "owner": "KFB Audio & Soundscape Baseline v1",
-  "status": "REPAIR_CANDIDATE",
+  "status": "MASTER_GROUND_TRUTH_REPAIR_CANDIDATE",
   "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
-  "reconstructionPolicy": "all-stems-unity-master-matched",
-  "controlsPolicy": "neutral reconstruction first; adaptive controls are bounded deltas around unity",
+  "reconstructionPolicy": "master-ground-truth; stems require donor-specific listening certification",
+  "controlsPolicy": "Cyclical Warmth uses the previously heard stem-adaptive path. New donors keep their original master and receive only bounded master-safe processing.",
   "donors": [
     {
       "id": "neutral",
@@ -14,7 +14,7 @@
       "mood": "NEUTRAL_WORLD",
       "bpm": 76,
       "defaults": {
-        "activity": 0,
+        "activity": 0.35,
         "roadLift": 0,
         "night": 0
       },
@@ -81,7 +81,8 @@
           1731524,
           "music"
         ]
-      ]
+      ],
+      "runtimePolicy": "stem-certified"
     },
     {
       "id": "awe",
@@ -163,7 +164,8 @@
           1369076,
           "music"
         ]
-      ]
+      ],
+      "runtimePolicy": "master-safe"
     },
     {
       "id": "sunshine",
@@ -252,7 +254,8 @@
           1669964,
           "music"
         ]
-      ]
+      ],
+      "runtimePolicy": "master-safe"
     },
     {
       "id": "grief",
@@ -355,7 +358,8 @@
           950996,
           "music"
         ]
-      ]
+      ],
+      "runtimePolicy": "master-safe"
     },
     {
       "id": "boss",
@@ -451,9 +455,10 @@
           1732364,
           "music"
         ]
-      ]
+      ],
+      "runtimePolicy": "master-safe"
     }
   ],
   "pendingSignatureTheme": "BEETLE RUMBLE / KFB Signature Theme",
-  "note": "R1 repair after human FAIL: neutral playback reconstructs every available stem including instrumental material misclassified by Suno as vocal residuals. Adaptation starts from unity and only applies bounded deltas."
+  "note": "R2 after human FAIL: the four new donors play their original uploaded masters as Ground Truth. Their stems remain source inventory only until individually listening-certified. Cyclical Warmth alone keeps the already accepted stem-adaptive path."
 }
