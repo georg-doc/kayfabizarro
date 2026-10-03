@@ -1,3 +1,13 @@
+## 2026-10-03 · AUDIO-SEED-01 musicality FAIL → AUDIO-ARRANGE-01
+
+- Georg rejected AUDIO-SEED r2 as the musical renderer despite technical/public PASS.
+- Failure: repetitive darker "plom/plom/plom", weak musical phrase/form and soundscape quality; rain remains rushing-water/noise-like; Reddit references are materially more convincing.
+- Preserve deterministic seed/context/mix infrastructure; freeze current note-event/pluck renderer and synthetic-rain direction as technical donors only.
+- New architecture: phrase/block arrangement, minute-scale form graph, curated/Markov transitions, sample/multisample instruments and optional authored stems/beds.
+- Candidate implementation stack: Tone.js + Scribbletune; optional Total Serialism for bounded Markov/Euclidean/L-system transforms.
+- Realistic weather should use convincing recorded/generated source beds and events with procedural density/spatial/filter control rather than white-noise synthesis.
+- **Next gate: AUDIO-ARRANGE-01 · One Good Island First**. One genuinely musical 2–4 minute cozy/psychedelic island bed must pass before Deck triads, weather, full palette or real Race telemetry.
+
 ## 2026-10-02 · AUDIO-SEED-01 human repair r2
 
 - Georg's first v0.1 listen liked the broad bed but identified two concrete defects: rain read as water/noise and the high xylophone/cartoon-like motif became annoying quickly.

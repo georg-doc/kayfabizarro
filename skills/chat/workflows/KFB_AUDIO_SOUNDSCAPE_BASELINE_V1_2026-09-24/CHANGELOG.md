@@ -1,5 +1,15 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-SEED-01 r2 musicality FAIL → AUDIO-ARRANGE-01
+
+- Georg rejected r2 as the musical renderer despite technical/public PASS.
+- Failure: repetitive dark "plom/plom/plom", insufficient phrase/form/soundscape quality; rain still reads as rushing water/noise; Reddit references sound materially more musical.
+- Preserve seed/context/mix infrastructure; freeze note-by-note oscillator/pluck renderer and synthetic-rain direction as technical donors only.
+- Pivot to phrase/arrangement-first architecture: 2–8 bar musical blocks, minute-scale section graph, curated/Markov transitions, sample/multisample instruments, optional authored stems.
+- Candidate stack: Tone.js + Scribbletune; optional Total Serialism for bounded higher-level mutation.
+- Realistic weather will use convincing recorded/generated sources with procedural mix/density/spatial control rather than noise synthesis.
+- Next gate: **AUDIO-ARRANGE-01 · One Good Island First** — one 2–4 minute cozy/psychedelic KFB bed must sound good before seeds/weather/Race generalization.
+
 ## 2026-10-02 · AUDIO-SEED-01 human repair r2
 
 - Georg liked the broad v0.1 soundbed but rejected two details: rain sounded like water/noise; high xylophone/cartoon-like chime became quickly fatiguing.

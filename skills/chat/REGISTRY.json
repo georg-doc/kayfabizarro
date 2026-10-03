@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -127,59 +127,48 @@
         "a replacement asset registry",
         "automatic merge or Live promotion"
       ],
-      "note": "AUDIO-CAL-01 remains PUBLIC_VERIFIED/HUMAN_ACCEPTED. AUDIO-SEED-01 r2 is PUBLIC_VERIFIED after Georg's first listen flagged rain-as-noise and a fatiguing high chime. Repair r2 is 35/35 source + 35/35 branch browser green and 35/35 exact public Chromium/WebAudio green. Current gate is GEORG_AUDIO_SEED_RELISTEN_R2. Do not add new instrument dependencies or Race telemetry before that decision.",
-      "humanResult": "PASS",
+      "note": "AUDIO-CAL-01 remains PUBLIC_VERIFIED/HUMAN_ACCEPTED. AUDIO-SEED-01 r2 is technically PUBLIC_VERIFIED but HUMAN_REJECTED as the musical renderer on 2026-10-03: repetitive dark plom/plom/plom, weak phrase/form/soundscape quality, rain still water/noise-like. Retain seed/context/mix infrastructure; freeze note-by-note oscillator/pluck music and synthetic rain as technical donors. Next gate: AUDIO-ARRANGE-01 · One Good Island First.",
+      "humanResult": "AUDIO-CAL PASS · AUDIO-SEED r2 MUSICALITY FAIL",
       "audioSeed01": {
-        "status": "R2_PUBLIC_VERIFIED_HUMAN_RELISTEN_PENDING",
+        "status": "TECHNICALLY_PUBLIC_VERIFIED_HUMAN_REJECTED_MUSICAL_RENDERER",
         "repository": "georg-doc/kayfabizarro",
         "branch": "chatgpt-web/audio-seed-01-2026-10-02",
         "draftPR": 325,
-        "repairImplementationHead": "eddfd84c37bdb5faf4f222c992bc5cf89fec6604",
-        "publicProofSourceHead": "3d8777b1a0657fa3757caeac2d442cb7d01ea8bd",
+        "technicalStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/",
         "humanFeedback": {
-          "positive": "broad soundbed direction",
-          "repaired": [
-            "rain sounded like water/noise",
-            "high xylophone/cartoon chime quickly fatiguing"
+          "result": "FAIL",
+          "reasons": [
+            "repetitive dark plom/plom/plom",
+            "not a convincing musical bed/soundscape",
+            "rain still reads as rushing water/noise",
+            "Reddit examples materially more musical"
           ]
         },
-        "tests": {
-          "repairBranch": {
-            "deterministicSource": "35/35 PASS",
-            "browserWebAudio": "35/35 PASS",
-            "run": 37052602108,
-            "job": 110989403830,
-            "artifact": 11246418871,
-            "digest": "sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d"
-          },
-          "finalSourceHeadBeforeReturn": {
-            "browserWebAudio": "35/35 PASS",
-            "run": 37054599119,
-            "job": 110996076752,
-            "artifact": 11247696922,
-            "digest": "sha256:37e5c552e3d820960fb8c5fb4dfe9cb17e36e8116339b031929d378e3699c849"
-          },
-          "public": {
-            "browserWebAudio": "35/35 PASS attempt 1",
-            "run": 37054592017,
-            "job": 110996053918,
-            "artifact": 11248750257,
-            "digest": "sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428"
-          }
+        "retain": [
+          "one AudioContext",
+          "Travel cardSemanticVector semantic donor",
+          "deterministic seed/context infrastructure",
+          "WORLD/ROAD and bounded speed modulation",
+          "context transform data model",
+          "AUDIO-CAL ducking"
+        ],
+        "freeze": [
+          "note-by-note oscillator/pluck musical renderer",
+          "current motif event cadence",
+          "synthetic rain as target weather source"
+        ],
+        "pivot": {
+          "id": "AUDIO-ARRANGE-01",
+          "title": "One Good Island First",
+          "architecture": "phrase/block arrangement + sampled/multisample instruments + optional authored stems",
+          "candidates": [
+            "Tone.js",
+            "Scribbletune",
+            "optional Total Serialism"
+          ],
+          "acceptance": "Would Georg willingly leave the 2–4 minute cozy/psychedelic island bed playing for several minutes?"
         },
-        "publication": {
-          "branch": "cloudflare-live",
-          "head": "34d1dc408719ebc77351a13e1ca6557b62c315ab",
-          "pagesCheck": 110994861443,
-          "pagesStatus": "SUCCESS"
-        },
-        "historicalTimingFailure": {
-          "run": 37053177990,
-          "artifact": 11246834657,
-          "note": "v0.2 marker absent while Pages still deploying; superseded"
-        },
-        "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/",
-        "nextGate": "GEORG_AUDIO_SEED_RELISTEN_R2"
+        "nextGate": "AUDIO-ARRANGE-01 · One Good Island First"
       }
     },
     {

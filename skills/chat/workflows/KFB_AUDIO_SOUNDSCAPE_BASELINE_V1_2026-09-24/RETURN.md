@@ -1,45 +1,44 @@
 # KFB Audio & Soundscape Baseline v1 · RETURN
 
-## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 · HUMAN REPAIR r2 · 2026-10-02
+## CURRENT RETURN OVERRIDE · AUDIO-SEED-01 r2 MUSICALITY FAIL · 2026-10-03
 
-**Result:** HUMAN FEEDBACK RECEIVED · r2 PUBLIC_VERIFIED · HUMAN RELISTEN PENDING  
+**Human result:** **FAIL AS MUSICAL RENDERER**  
+**Technical status:** r2 remains PUBLIC_VERIFIED evidence  
 **Repo / branch / PR:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
-**Repair implementation:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
-**Public-proof source head:** `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`  
-**r2 publication:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`  
-**Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
+**Technical Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
 
-Human feedback:
-- broad soundbed direction: positive;
-- rain: rejected in v0.1 as water/noise-like;
-- high xylophone/cartoon motif chime: rejected as quickly fatiguing.
+Georg's r2 result:
+- still not convincing musically;
+- repetitive darker "plom/plom/plom";
+- not yet a convincing soundscape / musical bed;
+- rain still sounds like rushing water/noise;
+- external Reddit examples are noticeably more musical.
 
-Repair:
-- bright octave overtone removed;
-- motif moved down and softened;
-- G3 motif/answer density reduced;
-- secondary answer events reduced;
-- rain hiss/bed greatly reduced;
-- deterministic stereo droplet/splash transients added.
+What survives:
+- deterministic Deck/Island seeds and same-seed reproducibility;
+- Travel semantic donor;
+- Audio DNA/context metadata;
+- one AudioContext + mix/ducking;
+- WORLD/ROAD and bounded speed modulation;
+- Night/Psychedelic/Shadow concepts as later transforms.
 
-r2 evidence:
-- deterministic/source: **35/35 PASS**;
-- Chromium/WebAudio: **35/35 PASS**;
-- run/job: `37052602108 / 110989403830`;
-- proof artifact: `11246418871`;
-- proof digest: `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
+What is frozen/rejected:
+- current note-by-note oscillator/pluck renderer as primary music engine;
+- current motif-event cadence as the identity carrier;
+- pure synthetic filtered-noise/droplet rain as the target weather renderer;
+- further micro-tuning of this renderer before a better arrangement architecture exists.
 
-Public state:
-- six r2 Stage blobs verified byte-for-byte on `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`;
-- Cloudflare Pages check `110994861443`: **SUCCESS**;
-- exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
-- public artifact `11248750257`, digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
-- r2 is therefore **PUBLIC_VERIFIED** on the fixed direct Stage route.
-- historical timing attempt `37053177990` remains recorded but is superseded.
+New direction:
+- phrase/block level composition;
+- section/form graph over minutes;
+- curated Markov transitions between compatible 2–8 bar phrases;
+- sample/multisample instruments or authored stems for actual timbre;
+- Tone.js + Scribbletune as first implementation candidates; Total Serialism only for bounded high-level mutation;
+- Suno and ElevenLabs remain optional **authoring-time** source for stems/MIDI/weather assets, not runtime dependencies.
 
-Reddit/WebAudioFont references are documented as later donors, not incorporated into r2.
+**Exactly one next gate:** `AUDIO-ARRANGE-01 · One Good Island First`.
 
-**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2`. Judge rain realism, absence of the fatiguing high chime, and whether the otherwise promising soundbed remains intact. No new instrument dependency, real Race telemetry, merge or Live promotion before that decision.
+Prove one genuinely musical 2–4 minute cozy/psychedelic KFB bed before generalizing to Deck seeds, weather or real Race telemetry. No merge or Live promotion.
 
 **Date:** 2026-09-24  
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED  

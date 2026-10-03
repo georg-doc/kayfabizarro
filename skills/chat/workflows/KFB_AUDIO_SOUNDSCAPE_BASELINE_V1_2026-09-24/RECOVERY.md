@@ -1,35 +1,49 @@
 # KFB Audio & Soundscape Baseline v1 · RECOVERY
 
-## CURRENT RECOVERY OVERRIDE · AUDIO-SEED-01 r2 · 2026-10-02
+## CURRENT RECOVERY OVERRIDE · AUDIO-SEED-01 MUSICALITY FAIL / AUDIO-ARRANGE-01 · 2026-10-03
 
 Resume here before older AUDIO-SEED/AUDIO-CAL checkpoints.
 
-- owner: KFB Audio & Soundscape Baseline v1;
-- source branch: `chatgpt-web/audio-seed-01-2026-10-02`; Draft PR `#325`;
-- repair implementation: `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`;
-- public-proof source head: `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`;
-- r2 source/browser: **35/35 + 35/35 PASS**;
-- r2 proof: run/job `37052602108 / 110989403830`; artifact `11246418871`; digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`;
-- publication write: `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`, all six r2 Stage blobs verified;
-- Cloudflare Pages check `110994861443`: **SUCCESS**;
-- exact Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`;
-- exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
-- public artifact `11248750257` / `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
-- historical pre-deploy marker run `37053177990` is timing evidence only and is superseded.
+Current decision:
+- AUDIO-SEED-01 r2 is technically green/public but **HUMAN_REJECTED_AS_MUSICAL_RENDERER**;
+- do not continue tuning its oscillator/pluck composition;
+- preserve it as a technical donor for seeds/context/mix only.
 
-Human feedback that triggered r2:
-- keep the rest of the soundbed;
-- remove/soften the high xylophone/cartoon-like chime;
-- make rain read as rain, not water/noise.
+Human failure reasons:
+- repetitive dark "plom/plom/plom";
+- lacks convincing musical phrase/form and soundscape quality;
+- rain still reads as rushing water/noise;
+- Reddit reference projects sound materially more musical.
 
-Repair details:
-- remove +12 overtone; lower/soften motif register;
-- reduce G3 and answer density/gain;
-- quiet continuous rain bed + deterministic stochastic stereo droplet transients.
+Retain:
+- one AudioContext;
+- Travel `cardSemanticVector()`;
+- deterministic seeds;
+- WORLD/ROAD + bounded speed modulation;
+- context transform data model;
+- AUDIO-CAL ducking.
 
-Do not add WebAudioFont/Suno/ElevenLabs or Race telemetry before r2 re-listen.
+Freeze:
+- note-event renderer;
+- pluck/oscillator timbres as main musical voices;
+- synthetic rain as target weather source.
 
-**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2`.
+New architecture:
+- section/form graph;
+- 2–8 bar musical phrase blocks;
+- curated compatible transitions / Markov weighting;
+- sample/multisample instrument sources;
+- optional stem/bed layers;
+- context reshapes arrangement rather than generating raw notes.
+
+Candidate stack:
+- Tone.js + Scribbletune;
+- optional Total Serialism for high-level sequence/Markov/Euclidean transforms;
+- Suno stems/MIDI and ElevenLabs weather/SFX may be used only as authoring-time source if needed.
+
+**Exactly one next gate:** `AUDIO-ARRANGE-01 · One Good Island First`.
+
+No Deck triad, rain, Shadow, full Race telemetry or huge instrument palette until one 2–4 minute cozy/psychedelic island bed passes Georg's musicality test.
 
 **Status:** AUDIO-CAL-01 HUMAN_ACCEPTED · RECOVERABLE  
 **Date:** 2026-09-24  

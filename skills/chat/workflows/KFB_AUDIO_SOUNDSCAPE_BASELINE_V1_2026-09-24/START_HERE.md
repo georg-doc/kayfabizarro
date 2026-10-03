@@ -1,6 +1,6 @@
 # KFB Audio & Soundscape Baseline v1 · START HERE
 
-**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED · AUDIO-SEED-01 r2 PUBLIC_VERIFIED / HUMAN RELISTEN  
+**Status:** CURRENT REFERENCE · AUDIO-CAL-01 HUMAN_ACCEPTED · AUDIO-SEED-01 MUSICALITY FAIL / AUDIO-ARRANGE-01 NEXT  
 **Date:** 2026-09-24  
 **Owner:** existing WSA / KFB integration lead  
 **Executing lane:** Fresh Web + GitHub, GPT-5.6 Sol, Medium/High reasoning  
@@ -12,44 +12,42 @@
 GitHub state overrides this document whenever a named source ref advances.
 
 
-## CURRENT FOLLOW-UP OVERRIDE · AUDIO-SEED-01 · 2026-10-02
+## CURRENT FOLLOW-UP OVERRIDE · AUDIO-SEED-01 MUSICALITY FAIL / ARRANGEMENT PIVOT · 2026-10-03
 
-**Status:** HUMAN FEEDBACK RECEIVED · REPAIR r2 PUBLIC_VERIFIED · HUMAN RELISTEN PENDING  
+**Status:** r2 TECHNICALLY PUBLIC_VERIFIED · HUMAN REJECTED AS MUSICAL RENDERER  
 **Source:** `georg-doc/kayfabizarro` · `chatgpt-web/audio-seed-01-2026-10-02` · Draft PR `#325`  
-**Repair implementation:** `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`  
-**Public-proof source head:** `3d8777b1a0657fa3757caeac2d442cb7d01ea8bd`  
-**r2 publication write:** `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`  
-**Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
+**r2 technical Stage:** `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-seed-01/`
 
-Georg's first public listen accepted the broad soundbed direction but identified two concrete defects:
-- rain sounded like water/noise rather than rain;
-- the high xylophone/cartoon-like motif chime became annoying very quickly.
+Georg's second listening result supersedes the r2 re-listen gate:
 
-Confirmed code causes:
-- motif played one octave high, answer higher again, plus a bright octave overtone;
-- G3 Interlocking emitted motif/answer notes too frequently;
-- rain was dominated by one looped filtered white-noise band.
+- the result is still not musically convincing;
+- it reads as repetitive darker "plom / plom / plom" rather than a real Klangteppich / soundscape;
+- the Reddit references heard by Georg are materially more musical;
+- rain still reads as rushing water/noise rather than convincing rain.
 
-Repair r2:
-- removes the bright octave overtone and lowers/softens the motif voice;
-- reduces G3 and secondary-answer density/gain;
-- leaves only a quiet continuous rain-air bed;
-- adds deterministic short stereo droplet/splash transients;
-- preserves Deck identity, grammar, seed and the rest of the accepted soundbed.
+Decision:
+- **AUDIO-SEED-01 r2 = HUMAN_REJECTED_AS_MUSICAL_RENDERER**;
+- keep its technical infrastructure as donors only: one AudioContext, deterministic seeds, Travel `cardSemanticVector()`, WORLD/ROAD context, bounded speed modulation, context transforms and AUDIO-CAL ducking;
+- freeze the current note-by-note oscillator/pluck renderer and synthetic rain as technical evidence, not musical direction;
+- do not spend another pass polishing individual pluck notes.
 
-Evidence at repair head: deterministic/source **35/35 PASS** · Chromium/WebAudio **35/35 PASS** · run/job `37052602108 / 110989403830` · artifact `11246418871` · digest `sha256:51c1bf4204f35213559b3bcc2a64119aed154f177687146d31ab1f9edfe9be2d`.
+Architecture pivot:
+`Deck/Island DNA → form/section state → phrase/block selection → arrangement/orchestration → sampled/multisample or authored-stem playback → context modulation → mix/SFX`.
 
-Publication is now complete and independently verified:
-- Cloudflare Pages check `110994861443`: **SUCCESS** for `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`;
-- exact public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**;
-- public artifact `11248750257`, digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`;
-- external runtime/API dependency remains zero.
+Preferred technical candidates:
+- **Tone.js** for transport, synchronized scheduling, sampler/multisample playback and effects;
+- **Scribbletune** for patterns, chords/progressions, phrase clips and MIDI experiments;
+- **Total Serialism** only as an optional higher-level Markov/Euclidean/L-system/sequence-mutation donor;
+- Strudel and WebAudioFont-style systems remain research references, not automatic dependencies.
 
-The earlier marker-only run `37053177990` remains timing evidence from before Pages completed, not a runtime defect.
+Sound-source decision:
+- stop treating "zero audio files" as a virtue;
+- use a hybrid of real/sample-based instrument timbres, short MIDI/phrase blocks, optional authored stems/beds and procedural WebAudio mainly for pads/sub/FX/modulation;
+- realistic weather should use convincing recorded/generated source beds + procedural density/spatial/filter control rather than pure noise synthesis.
 
-Reddit donor follow-up is recorded separately. In particular FLY × COMPOSE reinforces bounded movement→music modulation, and sample-based WebAudioFont-style playback is a promising later instrument-quality donor. Do not add those dependencies before r2 is re-listened.
+**Exactly one next gate:** `AUDIO-ARRANGE-01 · One Good Island First`.
 
-**Exactly one next gate:** `GEORG_AUDIO_SEED_RELISTEN_R2` — re-listen specifically for rain realism and removal of the fatiguing high chime, while confirming the rest of the soundbed still works. No new instrument dependency, telemetry expansion, merge or Live promotion before that decision.
+Build one genuinely musical 2–4 minute evolving cozy/psychedelic KFB world bed first. No FORGET/IGNORE/EMBRACE comparison, rain/weather, Shadow, full Race telemetry, giant instrument catalog or external-service runtime dependency in this gate. Acceptance question: **Would Georg willingly leave this playing as background world music for several minutes?**
 
 
 ## HUMAN LISTENING RESULT · PASS

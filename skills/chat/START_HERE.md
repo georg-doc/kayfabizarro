@@ -106,15 +106,15 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
-## 2026-10-02 · AUDIO-SEED-01 current follow-up
+## 2026-10-03 · AUDIO-SEED-01 musicality FAIL → AUDIO-ARRANGE-01
 
-- Draft PR #325 · branch `chatgpt-web/audio-seed-01-2026-10-02`.
-- Georg's first v0.1 listen liked the broad bed but rejected rain-as-noise and the high xylophone/cartoon chime.
-- Human repair r2 at `eddfd84c37bdb5faf4f222c992bc5cf89fec6604`: **35/35 deterministic/source + 35/35 Chromium/WebAudio PASS**.
-- r2 publication: `cloudflare-live@34d1dc408719ebc77351a13e1ca6557b62c315ab`; Cloudflare Pages check `110994861443` **SUCCESS**.
-- Exact r2 public proof `37054592017 / 110996053918`: **35/35 PASS on attempt 1**; public artifact `11248750257`, digest `sha256:15002dd89b5d7ac2415af3e3dbbe7c2785904bb450d0d27fc02282a2dd044428`.
-- Current gate: `GEORG_AUDIO_SEED_RELISTEN_R2` — rain realism + chime-fatigue repair, while confirming the rest of the bed still works.
-- Reddit/WebAudioFont references are research donors only; no new dependency before the r2 listening decision.
+- Draft PR #325 / branch `chatgpt-web/audio-seed-01-2026-10-02` remains the technical AUDIO-SEED evidence line.
+- Georg rejected r2 as the musical renderer: repetitive dark "plom/plom/plom", insufficient musical phrase/form/soundscape quality, and rain still reads as rushing water/noise.
+- Technical PASS is retained only for seed/context/mix infrastructure. The note-by-note oscillator/pluck renderer and synthetic rain are frozen as **TECHNICAL DONOR ONLY**.
+- Do not spend another pass micro-tuning those voices.
+- Architecture pivot: phrase/block arrangement with 2–8 bar musical units, minute-scale section form, curated/Markov transitions, sample/multisample instruments and optional authored stems/beds.
+- First candidates: Tone.js + Scribbletune; Total Serialism only for bounded higher-level mutation. Suno/ElevenLabs remain optional authoring-time source, not runtime dependencies.
+- **Exactly one next gate: AUDIO-ARRANGE-01 · One Good Island First** — prove one genuinely musical 2–4 minute cozy/psychedelic world bed before Deck triads, weather or real Race telemetry.
 
 ## Hard rules
 
