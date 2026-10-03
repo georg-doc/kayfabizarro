@@ -106,6 +106,16 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-10-03 · AUDIO-ARRANGE-01 · One Good Island First
+
+- Current audio follow-up branch: `chatgpt-web/audio-arrange-01-2026-10-03`.
+- AUDIO-SEED-01 remains technical donor only after Georg's musicality FAIL; do not resume its note-by-note oscillator/pluck renderer.
+- New direction: fixed phrase/arrangement-first 64-bar KFB island bed; CAN-style hypnotic human repetition + Yello-style sparse cinematic sound design + electro-funk pocket.
+- First-proof guardrails: 3 rhythm sound classes, 3 rhythm patterns, pentatonic hook core, repetition, silence, scale-safe ±7/±2-class recalls, sample/multisample timbres.
+- Preferred implementation candidates: Tone.js + Scribbletune; Total Serialism later/optional.
+- WebAudioFont is an internal timbre/sequencing donor only until GPL/preset provenance is explicitly cleared. MIT WebAudioFonts SF2→JSON tooling is a possible self-hosted path with separately licensed fonts.
+- **Exactly one next gate:** implement `AUDIO-ARRANGE-01 · One Good Island First`; do not create Stage until it is a meaningful musical milestone.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.

@@ -1,3 +1,14 @@
+## 2026-10-03 · AUDIO-ARRANGE-01 design ready
+
+- New clean branch `chatgpt-web/audio-arrange-01-2026-10-03` from current main; AUDIO-SEED renderer is not carried forward.
+- One Good Island First contract: 64 bars / ~3 min, groove-led, 3 rhythm sound classes, 3 continuous patterns, two bass phrases, pentatonic hook core, explicit silence and sparse sound-design events.
+- Musical direction: CAN-derived hypnotic human repetition + Yello-derived sparse production/sound design + electro-funk pocket; trait extraction only.
+- Tone.js 15.5.44 and Scribbletune 5.5.5 are MIT candidates; Total Serialism 2.10.4 is later/optional.
+- Surikov WebAudioFont 3.0.04 is verified sample-based, GM-compatible and advertises about 2000 instruments; GPL-3.0-or-later → internal audition/research only until license/provenance review.
+- WebAudioFonts/deploy-template is MIT and offers SF2→JSON self-hosting; actual SoundFont licenses remain separate.
+- Exact existing KFB donors pinned: Van Metronome Drums/Bass/Guitar/Synth/Other stems; Rubbish Groove at 100 BPM / phase 0.465; RoadTrip prompt vocabulary.
+- No runtime or Stage created. Next gate: implement the fixed session; human question is whether Georg would willingly leave it playing for several minutes.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

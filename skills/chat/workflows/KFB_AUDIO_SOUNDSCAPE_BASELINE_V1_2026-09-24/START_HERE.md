@@ -12,6 +12,21 @@
 GitHub state overrides this document whenever a named source ref advances.
 
 
+## CURRENT FOLLOW-UP · AUDIO-ARRANGE-01 · 2026-10-03
+
+AUDIO-CAL-01 remains the accepted mix/ducking reference.
+
+The current musical follow-up is now:
+`skills/chat/workflows/KFB_AUDIO_ARRANGE_01_2026-10-03/START_HERE.md`
+
+AUDIO-SEED-01 is retained only as technical seed/context evidence after Georg rejected its musical renderer. Do not resume note-by-note pluck/oscillator repair.
+
+Current branch:
+`chatgpt-web/audio-arrange-01-2026-10-03`
+
+Current next gate:
+**AUDIO-ARRANGE-01 · One Good Island First** — one fixed 64-bar / 2–4 minute groove-led KFB world bed must become genuinely pleasant before procedural generalization.
+
 ## HUMAN LISTENING RESULT · PASS
 
 Georg reviewed AUDIO-CAL-01 on 2026-09-24 and reported: **“klingt sehr gut soweit. passt.”**

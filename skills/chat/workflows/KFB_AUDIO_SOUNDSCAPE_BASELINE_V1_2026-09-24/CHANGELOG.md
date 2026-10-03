@@ -1,5 +1,13 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-ARRANGE-01 child slice
+
+- Current musical follow-up moved to `KFB_AUDIO_ARRANGE_01_2026-10-03`.
+- AUDIO-SEED note renderer is not continued after human musicality FAIL.
+- One Good Island First: fixed 64-bar groove-led session, rhythm/pocket before melody, real/sample-based timbres.
+- WebAudioFont is research-only due GPL until cleared; permissive/self-hosted sample route preferred for public candidate.
+- No Stage yet; next gate is implementation of the fixed session.
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;
