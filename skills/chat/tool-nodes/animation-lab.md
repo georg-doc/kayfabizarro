@@ -14,9 +14,9 @@ FrankenStein Studio decides/measures actor, look, rig/static pose and exports co
 
 ## Load with
 
-`skills/kfb-cartoon-animation_v2.md`
+`skills/kfb-cartoon-animation/SKILL.md`
 
-This skill currently declares version 2.0 and `canonical-draft`; it provides the KFB motion, staging, VFX and recovery grammar and should be treated as a current reference unless the registry supersedes it.
+This portable folder skill is the current shared animation/motion method reference. It preserves the former v2 doctrine and adds progressive-disclosure 3D/game-animation references; current project/runtime SSOTs still win.
 
 ## Promotion gate
 

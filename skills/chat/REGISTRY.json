@@ -271,7 +271,7 @@
       "status": "CURRENT_REFERENCE",
       "version": "2.0",
       "declaredStatus": "canonical-draft",
-      "path": "skills/kfb-cartoon-animation_v2.md",
+      "path": "skills/kfb-cartoon-animation/SKILL.md",
       "loadWhen": [
         "animation",
         "procedural acting",
@@ -286,7 +286,9 @@
         "stunt-car-race",
         "combat-arena",
         "wissens-pilli"
-      ]
+      ],
+      "legacyPath": "skills/kfb-cartoon-animation_v2.md",
+      "note": "Portable Agent-Skills folder; v2 path remains compatibility entry. Project/runtime SSOTs override generic method examples."
     },
     {
       "id": "production-inbox",
@@ -478,7 +480,7 @@
       "inbox": "tools/2D Animation Studio/_inbox/",
       "toolNode": "skills/chat/tool-nodes/2d-animation-studio.md",
       "loadWith": [
-        "skills/kfb-cartoon-animation_v2.md"
+        "skills/kfb-cartoon-animation/SKILL.md"
       ],
       "firstLab": "tools/2D Animation Studio/labs/eumel-rig-lab/",
       "owns": [
@@ -619,7 +621,7 @@
       "status": "UNVERIFIED",
       "toolNode": "skills/chat/tool-nodes/animation-lab.md",
       "loadWith": [
-        "skills/kfb-cartoon-animation_v2.md"
+        "skills/kfb-cartoon-animation/SKILL.md"
       ],
       "note": "Current implementation SSOT/site must be pinned before this node may be promoted to CURRENT_TOOL. FrankenStein Studio decides actor/look/static pose; Animation Lab plays/audits clips and animation behavior."
     },

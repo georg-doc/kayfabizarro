@@ -106,6 +106,20 @@ Planned Stage route is reserved but **NOT DEPLOYED**:
 
 Do not add a second cell family before Georg reviews the single M1-N candidate.
 
+## 2026-10-03 · Portable KFB Cartoon Animation skill
+
+The current shared animation/motion method owner is now the portable Agent-Skills folder:
+
+- canonical entry: `skills/kfb-cartoon-animation/SKILL.md`;
+- legacy compatibility path: `skills/kfb-cartoon-animation_v2.md`;
+- full former v2 source is preserved byte-identically at `skills/kfb-cartoon-animation/references/legacy-v2-full.md`.
+
+The folder keeps the existing cartoon-motion/VFX doctrine and adds progressive-disclosure references for 3D body mechanics, Walk/Jog/Run/Sprint, starts/stops/pivots, Travel Modes, Blender authoring/export, runtime blending/IK/warping, controller normalization, acting/facial/secondary motion, retargeting and evidence.
+
+For KFB runtime facts, the skill remains a **method owner only**. Current project SSOT/Recovery wins; specifically the active 3D locomotion owner remains Motion Draft PR #333 and consumers may not fork local gait/state tables.
+
+Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing evals before GitHub packaging. The GitHub package static check passed 8/8 after a test-counter-only repair. No Runtime, Stage or Live promotion is implied by this skill packaging.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
@@ -204,7 +218,7 @@ Status: **ONBOARDING PREPARED · WORLD REVIEW PENDING · EXECUTION NOT STARTED**
 
 ## 2026-09-18 · 2D Animation Studio
 
-Georg established a current tool lane at `tools/2D Animation Studio/` for browser-first 2D/2.5D cutout rigs, pivot hierarchies, cartoon deformation/motion calibration and reusable animation modules for mini-games. Load it with `skills/kfb-cartoon-animation_v2.md`.
+Georg established a current tool lane at `tools/2D Animation Studio/` for browser-first 2D/2.5D cutout rigs, pivot hierarchies, cartoon deformation/motion calibration and reusable animation modules for mini-games. Load it with `skills/kfb-cartoon-animation/SKILL.md`.
 
 The first lab is DocCheck Eumel. The current measured/traced Eumel package is **provisional donor evidence** only. Georg will provide the DocCheck AD Illustrator source in the tool-local `_inbox/doccheck-ad-ai-source/`; that intake remains input until classified, measured and explicitly accepted into the tool's canonical asset library. The tool-local inbox does not replace the central production inbox contract.
 

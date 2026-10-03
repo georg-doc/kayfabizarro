@@ -12,7 +12,7 @@ Browser-first 2D/2.5D cutout rig authoring, pivot/part hierarchy, cartoon deform
 
 ## Load with
 
-`skills/kfb-cartoon-animation_v2.md`
+`skills/kfb-cartoon-animation/SKILL.md`
 
 ## First lab
 

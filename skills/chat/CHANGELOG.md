@@ -2104,3 +2104,31 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Retained proven Settings/source/boot work for Driver v4 ↔ FB v5b + Ear v5; 80/80 repo PASS and 24/29 second browser gate.
 - Did not create the planned v5 Stage route. Existing public Combat C-MVP-A-R2 remains current.
 - Routed exactly one next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · Portable KFB Cartoon Animation skill candidate
+
+### CURRENT_REFERENCE CANDIDATE · Draft PR #343
+The shared animation/motion method has been repackaged from the single-file `skills/kfb-cartoon-animation_v2.md` donor into the portable progressive-disclosure entry `skills/kfb-cartoon-animation/SKILL.md` on branch `chatgpt-web/kfb-cartoon-animation-skill-v3-2026-10-03`.
+
+- former v2 source preserved byte-identically at `skills/kfb-cartoon-animation/references/legacy-v2-full.md`;
+- old v2 path remains a compatibility entry;
+- adds 3D body mechanics, Walk/Jog/Run/Sprint, transition/foot-contact doctrine, Travel Modes, Blender authoring/export, runtime blend/IK/warping, controller normalization, acting/facial/secondary motion, retarget/library and validation references;
+- Site contradiction/gap audit PASS and document-routing eval **10/10 PASS**;
+- GitHub package static **8/8 PASS** after a test-counter-only repair;
+- active router/registry/Animation Lab/2D Studio/Claude/Living Masterplan/Hub candidate routing points to the folder skill;
+- Motion PR #333 remains the separate runtime locomotion owner and was not modified;
+- no Stage/Live promotion or merge.
+
+
+## 2026-10-03 · KFB Cartoon Animation skill PR #343 merged
+
+### CURRENT_REFERENCE · MAIN
+Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-animation/SKILL.md` package and its current router/Registry/Animation Lab/2D Studio/Claude/Living Masterplan/Hub routing are now on main at merge commit `818488a6b498b5710e593fdb185440e76707d6b7`.
+
+- former v2 content remains byte-identical under `references/legacy-v2-full.md`;
+- old `skills/kfb-cartoon-animation_v2.md` remains a compatibility entry;
+- Site eval 10/10 PASS; package static 8/8 PASS;
+- Motion PR #333 remains a separate runtime owner and was not modified;
+- no Stage/Live runtime promotion;
+- next use: load the canonical folder skill for the next bounded animation slice.
