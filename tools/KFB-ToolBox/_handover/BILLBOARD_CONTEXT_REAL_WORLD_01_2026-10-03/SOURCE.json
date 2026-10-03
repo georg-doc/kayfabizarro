@@ -1,0 +1,48 @@
+{
+  "schema": "kfb.billboard-context-real-world/0.1",
+  "id": "BILLBOARD-CONTEXT-REAL-WORLD-01-2026-10-03",
+  "owner": "KFB Travel Combat v25 runner",
+  "branch": "chatgpt-web/billboard-context-real-world-01-2026-10-03",
+  "base": "f86c2ca2572ed31141e4d85399ecc0d19f4ed172",
+  "target": {
+    "packId": "forget_utopia",
+    "cardNumber": 1,
+    "cardName": "The Glossy Horizon",
+    "positionOwner": "academy.cards holder / zone-ring",
+    "groundOwner": "Travel safeGroundAt",
+    "orientationOwner": "Academy center"
+  },
+  "travelPins": {
+    "dc": "f57e5f57b92bdcd168ff4d40cf83dc40bacf875e",
+    "runnerBase": "5926ebe22786550d6e29c693c48c836121d7f88b",
+    "worldContext": "478e8cb4a53ea15e5c51833fa30554224e581815",
+    "zoneRing": "881b33ca76a375d43e5c6630464904d4dbf935ba",
+    "academyDeck": "1323bee18fe7c43adcfe41ee168cc696b8ac590b",
+    "academyCards": "aa7219721819daa2aecf5d9720cf1e0ca447e90e",
+    "manager": "5b4124d503f600d76f8546195f8c68f2d85fb580"
+  },
+  "billboardPins": {
+    "bbScene": "235b062f9d575a49a4c98d8be57d04d43acc2213",
+    "worldlookBoot": "4b1c746674d0ad896a3ca6bbb2585dc37e77a1f7",
+    "k2Material": "d994a9b656131be3b7a13d45edcb4253d34f3620",
+    "h13Html": "46670cfa5c62c3aea6aa3840d301fc7a35723407"
+  },
+  "gate": "?billboardWorld=1",
+  "defaultPathMutation": false,
+  "runtimeOwners": {
+    "renderer": "Travel",
+    "scene": "Travel",
+    "camera": "Travel",
+    "frame": "Travel createTravelManager",
+    "zone": "Travel zone-ring",
+    "physicalBody": "Kenney donor + K2",
+    "ambientSurface": "H13"
+  },
+  "excluded": [
+    "CSS3D media in real world",
+    "Resident mapping",
+    "new island registry",
+    "new frame loop",
+    "new renderer"
+  ]
+}

@@ -1,0 +1,214 @@
+name: Billboard Context Real World 01 Proof
+
+on:
+  push:
+    branches:
+      - chatgpt-web/billboard-context-real-world-01-2026-10-03
+    paths:
+      - 'travel/KFB Travel Combat v25/terrain-v25/travel-poc.js'
+      - 'travel/KFB Travel Combat v25/terrain-v25/billboard-context-world.v1.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_REAL_WORLD_01_2026-10-03/**'
+      - '.github/workflows/billboard-context-real-world-01-proof.yml'
+  pull_request:
+    branches:
+      - chatgpt-web/worldlook-visual-capture-01-2026-10-03
+    paths:
+      - 'travel/KFB Travel Combat v25/terrain-v25/travel-poc.js'
+      - 'travel/KFB Travel Combat v25/terrain-v25/billboard-context-world.v1.js'
+      - 'tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_REAL_WORLD_01_2026-10-03/**'
+      - '.github/workflows/billboard-context-real-world-01-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  real-world-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify protected receiving owner + donor pins
+        shell: bash
+        run: |
+          set -euo pipefail
+          T='travel/KFB Travel Combat v25/terrain-v25'
+          test "$(git rev-parse HEAD:travel/KFB\ Travel\ Combat\ v25/KFB\ Travel\ Combat\ v25.dc.html)" = "f57e5f57b92bdcd168ff4d40cf83dc40bacf875e"
+          test "$(git rev-parse HEAD:"$T/world-context.js")" = "478e8cb4a53ea15e5c51833fa30554224e581815"
+          test "$(git rev-parse HEAD:"$T/zone-ring.js")" = "881b33ca76a375d43e5c6630464904d4dbf935ba"
+          test "$(git rev-parse HEAD:"$T/academy-deck.js")" = "1323bee18fe7c43adcfe41ee168cc696b8ac590b"
+          test "$(git rev-parse HEAD:"$T/academy-cards.js")" = "aa7219721819daa2aecf5d9720cf1e0ca447e90e"
+          test "$(git rev-parse HEAD:"$T/travel-manager.js")" = "5b4124d503f600d76f8546195f8c68f2d85fb580"
+          test "$(git rev-parse HEAD:tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/bb-scene.js)" = "235b062f9d575a49a4c98d8be57d04d43acc2213"
+          test "$(git rev-parse HEAD:tools/KFB-ToolBox/_handover/BILLBOARD_CONTEXT_R11_2026-10-02/worldlook-k2/clay-material.v10.js)" = "d994a9b656131be3b7a13d45edcb4253d34f3620"
+
+      - name: Static owner-gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          T='travel/KFB Travel Combat v25/terrain-v25'
+          grep -F "enabled: new URLSearchParams(location.search).get('billboardWorld') === '1'" "$T/travel-poc.js"
+          grep -F "['billboard', (dt) => billboardWorld.update(dt)]" "$T/travel-poc.js"
+          ! grep -E "requestAnimationFrame|setAnimationLoop" "$T/billboard-context-world.v1.js"
+          grep -F "packId: 'forget_utopia', n: 1" "$T/travel-poc.js"
+          grep -F "ring.zoneOf(card)" "$T/billboard-context-world.v1.js"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Browser proof in actual Travel v25
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/billboard-context-real-world-01
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/real-world-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          cat > artifacts/billboard-context-real-world-01/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import { chromium } from 'playwright';
+
+          const base = 'http://127.0.0.1:4173/travel/KFB%20Travel%20Combat%20v25/KFB%20Travel%20Combat%20v25.dc.html';
+          const url = base + '?billboardWorld=1&combat=0&tacho=0';
+          const report = { url, checks: [], pageErrors: [], consoleErrors: [], firstPartyFailures: [], externalNoise: [], capture: null };
+          const check = (name, pass, detail=null) => {
+            report.checks.push({ name, pass: !!pass, detail });
+            if (!pass) process.exitCode = 1;
+          };
+
+          const browser = await chromium.launch({
+            headless: true,
+            args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']
+          });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+          page.on('pageerror', e => report.pageErrors.push(String(e)));
+          page.on('console', m => { if (m.type() === 'error') report.consoleErrors.push(m.text()); });
+          page.on('requestfailed', req => {
+            const item={url:req.url(),error:req.failure()?.errorText||'unknown'};
+            if(req.url().startsWith('http://127.0.0.1:4173/')) report.firstPartyFailures.push(item); else report.externalNoise.push(item);
+          });
+          page.on('response', res => {
+            if(res.status()<400) return;
+            const item={url:res.url(),status:res.status()};
+            if(res.url().startsWith('http://127.0.0.1:4173/')) report.firstPartyFailures.push(item); else report.externalNoise.push(item);
+          });
+
+          try {
+            const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:90000});
+            check('Travel v25 HTTP',!!response&&response.ok(),response?.status());
+
+            await page.waitForFunction(() =>
+              window.__travelPOC?.billboardWorld?.ready &&
+              window.__travelPOC?.billboardWorld?.report?.ready,
+              {}, {timeout:210000}
+            );
+
+            const state=await page.evaluate(() => {
+              const t=window.__travelPOC;
+              const b=t.billboardWorld;
+              const card=b.targetCard;
+              return {
+                billboard:b.snapshot(),
+                managerOrder:t.mgr.order,
+                sameScene:b.group.parent===t.scene,
+                targetData:card ? {
+                  kind:card.data.kind,packId:card.data.packId,n:card.data.n,title:card.data.title,role:card.data.role||null
+                }:null,
+                ringZone:card ? t.ring.zoneOf(card):null,
+                cardWorld:card ? (()=>{const p=new window.__travelPOC.scene.constructor.prototype.constructor.Vector3?.()})() : null
+              };
+            }).catch(() => null);
+
+            // Re-read without trying to manufacture THREE from scene.constructor.
+            const s=await page.evaluate(() => {
+              const t=window.__travelPOC, b=t.billboardWorld, card=b.targetCard;
+              const cp={x:0,y:0,z:0};
+              if(card){
+                const p=card.holder.position.clone();
+                card.holder.getWorldPosition(p);
+                cp.x=p.x;cp.y=p.y;cp.z=p.z;
+              }
+              return {
+                billboard:b.snapshot(),
+                managerOrder:t.mgr.order,
+                sameScene:b.group.parent===t.scene,
+                targetData:card?{kind:card.data.kind,packId:card.data.packId,n:card.data.n,title:card.data.title,role:card.data.role||null}:null,
+                ringZone:card?t.ring.zoneOf(card):null,
+                cardWorld:cp,
+                rendererCanvasParent:!!t.renderer.domElement.parentNode
+              };
+            });
+
+            check('same Travel scene owner',s.sameScene===true,s.sameScene);
+            check('Travel manager owns billboard step',s.managerOrder.includes('billboard') && s.managerOrder.indexOf('billboard') < s.managerOrder.indexOf('render'),s.managerOrder);
+            check('real Academy card',s.targetData?.kind==='kfbcard' && s.targetData?.packId==='forget_utopia' && s.targetData?.n===1 && s.targetData?.title==='The Glossy Horizon',s.targetData);
+            check('real ring zone',!!s.ringZone && Number.isInteger(s.ringZone.seed) && !!s.ringZone.mode && !!s.ringZone.biome && !!s.ringZone.level,s.ringZone);
+            check('billboard records same ring seed',s.billboard.zone?.seed===s.ringZone?.seed,{billboard:s.billboard.zone,ring:s.ringZone});
+            check('body K2 adapted',s.billboard.body?.meshes>0 && s.billboard.body?.clayMaterials>0,s.billboard.body);
+            check('H13 live face',s.billboard.content?.h13Ready===true && s.billboard.content?.face?.width===1024 && s.billboard.content?.face?.height===512,s.billboard.content);
+            check('no second renderer',s.billboard.separateRenderer===false,s.billboard);
+            check('no second camera',s.billboard.separateCamera===false,s.billboard);
+            check('no second rAF',s.billboard.separateRaf===false,s.billboard);
+            check('real placement recorded',Array.isArray(s.billboard.placement?.billboardWorld) && s.billboard.placement.billboardWorld.length===3,s.billboard.placement);
+
+            // Evidence view only: stop the existing Travel manager, use the SAME Travel camera/renderer,
+            // render one deterministic view of the real mounted object, then restore manager ownership.
+            const cap=await page.evaluate(() => {
+              const t=window.__travelPOC, b=t.billboardWorld;
+              t.mgr.stop();
+              const p=b.group.position;
+              t.camera.position.set(p.x+10,p.y+6,p.z+14);
+              t.camera.lookAt(p.x,p.y+2,p.z);
+              t.camera.updateMatrixWorld(true);
+              t.mgr.runStep('billboard',1/60);
+              t.mgr.runStep('render',1/60);
+              const canvas=t.renderer.domElement;
+              return {
+                png:canvas.toDataURL('image/png'),
+                width:canvas.width,height:canvas.height,
+                billboard:b.snapshot()
+              };
+            });
+            const buf=Buffer.from(cap.png.split(',')[1],'base64');
+            const file='artifacts/billboard-context-real-world-01/01-real-travel-zone.png';
+            fs.writeFileSync(file,buf);
+            const sha256=crypto.createHash('sha256').update(buf).digest('hex');
+            report.capture={file,bytes:buf.length,sha256,width:cap.width,height:cap.height};
+            check('real-world framebuffer nontrivial',buf.length>100000,report.capture);
+
+            await page.evaluate(() => window.__travelPOC.mgr.start());
+
+            check('no page errors',report.pageErrors.length===0,report.pageErrors);
+            check('no first-party failures',report.firstPartyFailures.length===0,report.firstPartyFailures);
+            fs.writeFileSync('artifacts/billboard-context-real-world-01/world.json',JSON.stringify(s,null,2)+'\n');
+          } catch(e) {
+            report.pageErrors.push(String(e?.stack||e));
+            process.exitCode=1;
+          } finally {
+            report.status=process.exitCode?'FAIL':'PASS';
+            report.passed=report.checks.filter(x=>x.pass).length;
+            report.total=report.checks.length;
+            fs.writeFileSync('artifacts/billboard-context-real-world-01/report.json',JSON.stringify(report,null,2)+'\n');
+            console.log(JSON.stringify({status:report.status,checks:report.passed+'/'+report.total,capture:report.capture,pageErrors:report.pageErrors.length,firstPartyFailures:report.firstPartyFailures.length,externalNoise:report.externalNoise.length},null,2));
+            await browser.close();
+          }
+          JS
+          node artifacts/billboard-context-real-world-01/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: billboard-context-real-world-01
+          path: artifacts/billboard-context-real-world-01
+          retention-days: 90
