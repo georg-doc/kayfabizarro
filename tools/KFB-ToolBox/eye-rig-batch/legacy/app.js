@@ -8,8 +8,8 @@ import {makeLegacyEyeProfile,mountLegacyEyeProfile} from '../lib/legacy-eye-adap
 const $=(q)=>document.querySelector(q);
 const loader=new GLTFLoader();
 const state={
-  catalog:null,seed:null,persisted:null,persistedById:new Map(),selectedId:null,sourceSeen:new Set(),profiles:{},
-  sourceNode:null,actor:null,headPart:null,faceHost:null,eyes:null,mixer:null,
+  catalog:null,seed:null,persisted:null,persistedById:new Map(),selectedId:null,sourceSeen:new Set(),profiles:{},reviews:{},
+  sourceNode:null,actor:null,headPart:null,faceHost:null,eyes:null,mixer:null,sourceEyesVisible:false,currentView:'front',
   scene:null,camera:null,renderer:null,controls:null,clock:new THREE.Clock()
 };
 
@@ -18,6 +18,14 @@ const sourceUrl=(path)=>url(state.catalog.source.partsRevision,path);
 const rigUrl=()=>url(state.catalog.source.rigRevision,state.catalog.source.rigPath);
 const actorById=(id)=>state.catalog.actors.find((a)=>a.id===id);
 const bodyById=(id)=>state.catalog.bodies[id];
+const REVIEW_KEY='kfb.toolbox.eye-rig-legacy-review.v1';
+const clone=(v)=>JSON.parse(JSON.stringify(v));
+function readReviews(){try{return JSON.parse(localStorage.getItem(REVIEW_KEY)||'{}')||{};}catch{return {};}}
+function saveReviews(){try{localStorage.setItem(REVIEW_KEY,JSON.stringify(state.reviews));}catch{}}
+function reviewOf(id){return state.reviews[id]||{state:'UNREVIEWED'};}
+function reviewedCount(){return state.catalog?.actors?.filter((a)=>reviewOf(a.id).state!=='UNREVIEWED').length||0;}
+function updateReviewCount(){const el=$('#reviewCount');if(el)el.textContent=`${reviewedCount()}/${state.catalog?.headCount||17} reviewed`;}
+function currentRoot(){return state.actor?.root||state.sourceNode||null;}
 
 function setLoading(on,text='Loading exact source…'){const el=$('#loading');el.hidden=!on;el.textContent=text;}
 function setMode(mode,actor){
@@ -29,13 +37,16 @@ function setMode(mode,actor){
 function updateProgress(){
   const n=Object.keys(state.profiles).length;
   $('#progress').textContent=`${n}/${state.catalog?.headCount||17} mounted`;
+  updateReviewCount();
 }
 function renderRoster(){
   const root=$('#headList');
   root.innerHTML=state.catalog.actors.map((a)=>{
     const p=state.profiles[a.id];
-    const cls=[a.id===state.selectedId?'active':'',p?'mounted':'',p?.status?.includes('HUMAN_REQUIRED')?'human':''].filter(Boolean).join(' ');
-    const status=p?(p.status.includes('HUMAN_REQUIRED')?'HUMAN REQUIRED':'AUTO CANDIDATE'):(state.sourceSeen.has(a.id)?'SOURCE SEEN':'UNREVIEWED');
+    const rv=reviewOf(a.id),rs=rv.state||'UNREVIEWED';
+    const cls=[a.id===state.selectedId?'active':'',p?'mounted':'',p?.status?.includes('HUMAN_REQUIRED')?'human':'',rs==='APPROVED'?'approved':'',rs==='ADJUSTED_APPROVED'?'adjusted':'',rs==='REJECTED'?'rejected':''].filter(Boolean).join(' ');
+    const tech=p?(p.status.includes('HUMAN_REQUIRED')?'HUMAN REQUIRED':'AUTO CANDIDATE'):(state.sourceSeen.has(a.id)?'SOURCE SEEN':'UNMOUNTED');
+    const status=rs==='UNREVIEWED'?tech:rs.replaceAll('_',' ');
     return `<button class="legacy-head ${cls}" data-head="${a.id}"><strong>${a.label}</strong><span class="state">${status}</span><small>${a.kind} · host ${a.hostBodyId}</small></button>`;
   }).join('');
 }
@@ -45,8 +56,10 @@ function renderReport(actor,extra={}){
   $('#sourcePath').textContent=actor?.sourcePath||'—';
   $('#measurementStatus').textContent=p?.sourceFace?.status||extra.measurement||'—';
   $('#profileStatus').textContent=p?.status||'—';
-  $('#cleanupStatus').textContent=extra.cleanup??(p?.sourceFace?.sourceEyeCleanupVisuallyAccepted?'visually accepted':'not visually accepted');
-  $('#report').textContent=JSON.stringify(p||extra,null,2);
+  $('#cleanupStatus').textContent=extra.cleanup??(state.sourceEyesVisible?'shown for cleanup check':(p?.sourceFace?.sourceEyeCleanupVisuallyAccepted?'visually accepted':'hidden / not yet accepted'));
+  $('#reviewStatus').textContent=reviewOf(actor?.id).state||'UNREVIEWED';
+  $('#report').textContent=JSON.stringify({profile:p||null,review:reviewOf(actor?.id),extra},null,2);
+  syncTuneUi();
   renderRoster();updateProgress();
 }
 
@@ -78,6 +91,56 @@ function frame(root){
   const size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3()),r=Math.max(size.x,size.y,size.z)||1;
   state.controls.target.copy(center);state.camera.position.copy(center).add(new THREE.Vector3(0,.18,1).normalize().multiplyScalar(r*2.8));
   state.camera.near=Math.max(.01,r/100);state.camera.far=Math.max(50,r*30);state.camera.updateProjectionMatrix();state.controls.update();
+}
+function setView(name){
+  const root=currentRoot();if(!root)return;
+  root.updateMatrixWorld(true);
+  const box=new THREE.Box3().setFromObject(root);if(box.isEmpty())return;
+  const center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),r=Math.max(size.x,size.y,size.z)||1;
+  let dir=new THREE.Vector3(0,.1,1);
+  if(name==='three-left')dir.set(-.72,.12,.72);
+  if(name==='three-right')dir.set(.72,.12,.72);
+  state.currentView=name;state.controls.target.copy(center);state.camera.position.copy(center).add(dir.normalize().multiplyScalar(r*2.8));
+  state.camera.near=Math.max(.01,r/100);state.camera.far=Math.max(50,r*30);state.camera.updateProjectionMatrix();state.controls.update();
+  document.querySelectorAll('[data-view]').forEach((b)=>b.classList.toggle('active',b.dataset.view===name));
+}
+function syncTuneUi(){
+  const p=state.profiles[state.selectedId]||state.persistedById.get(state.selectedId);const eye=p?.eye;
+  document.querySelectorAll('[data-tune]').forEach((input)=>{
+    const k=input.dataset.tune;const v=k==='inset'?eye?.inset:eye?.anchor?.[k];
+    input.disabled=!state.eyes||!Number.isFinite(+v);
+    if(Number.isFinite(+v)){input.value=v;const out=document.querySelector(`[data-out="${k}"]`);if(out)out.value=(+v).toFixed(3);}
+  });
+}
+function applyTune(key,value){
+  const p=state.profiles[state.selectedId];if(!p||!state.eyes)return;
+  value=+value;if(!Number.isFinite(value))return;
+  if(key==='inset'){p.eye.inset=value;state.eyes.setEye({inset:value});}
+  else {p.eye.anchor={...(p.eye.anchor||{}),[key]:value};state.eyes.setAnchor({[key]:value});}
+  p.status='ADJUSTED_CANDIDATE';p.reviewState='ADJUSTED';p.inheritance={...(p.inheritance||{}),sessionAdjusted:true};
+  state.reviews[state.selectedId]={...(reviewOf(state.selectedId)),state:'UNREVIEWED',adjusted:true,profile:clone(p),updatedAt:new Date().toISOString()};
+  saveReviews();renderReport(actorById(state.selectedId),{cleanup:state.sourceEyesVisible?'shown for cleanup check':'hidden'});
+}
+function setReviewState(reviewState){
+  const p=state.profiles[state.selectedId];if(!p)return;
+  const adjusted=!!reviewOf(state.selectedId).adjusted||p.reviewState==='ADJUSTED';
+  const finalState=reviewState==='APPROVED'&&adjusted?'ADJUSTED_APPROVED':reviewState;
+  p.reviewState=finalState;
+  p.status=finalState==='REJECTED'?'REJECTED':finalState;
+  p.evidence={...(p.evidence||{}),eyeProfileVisuallyApproved:finalState==='APPROVED'||finalState==='ADJUSTED_APPROVED'};
+  state.reviews[state.selectedId]={state:finalState,adjusted,profile:clone(p),updatedAt:new Date().toISOString()};
+  saveReviews();renderReport(actorById(state.selectedId),{cleanup:state.sourceEyesVisible?'shown for cleanup check':'hidden'});
+}
+function setSourceEyesVisible(on){
+  state.sourceEyesVisible=!!on;
+  if(state.headPart)setLegacySourceEyeVisibility(state.headPart,state.sourceEyesVisible);
+  const b=$('#sourceEyesBtn');if(b)b.textContent=`Source eyes · ${state.sourceEyesVisible?'shown':'hidden'}`;
+  renderReport(actorById(state.selectedId),{cleanup:state.sourceEyesVisible?'shown for cleanup check':'hidden'});
+}
+function nextReview(){return state.catalog.actors.find((a)=>reviewOf(a.id).state==='UNREVIEWED')||null;}
+function exportReview(){
+  const payload={schema:'kfb.eye-profile-batch/0.2-candidate',owner:'KFB ToolBox / Rigging · Legacy human review',rigClass:'Rig_Legacy',generatedAt:new Date().toISOString(),reviewKey:REVIEW_KEY,profiles:state.catalog.actors.map((a)=>state.reviews[a.id]?.profile).filter(Boolean),reviews:clone(state.reviews)};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='eye-rig-legacy.review.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),0);
 }
 function normalizeRoot(root,{scaleTo=2.25}={}){
   root.updateMatrixWorld(true);let box=new THREE.Box3().setFromObject(root);if(box.isEmpty())return;
@@ -149,7 +212,7 @@ async function mountCandidate(id=state.selectedId,{profileOverride=null}={}){
     if(!profile.evidence.automatedMountPassed)throw new Error('EyeRig eyeFrame missing after mount');
 
     state.mixer=new THREE.AnimationMixer(assembled.root);playClip(assembled,state.mixer,'Idle');
-    state.profiles[actor.id]=profile;frame(assembled.root);setMode('mounted',actor);
+    state.profiles[actor.id]=profile;state.sourceEyesVisible=false;frame(assembled.root);setView(state.currentView);setMode('mounted',actor);
     document.documentElement.dataset.legacyEyeProfileStatus=profile.status;
     document.documentElement.dataset.legacyEyeMeasurementStatus=measurement.status;
     document.documentElement.dataset.legacyEyeMounted='true';
@@ -160,7 +223,13 @@ async function mountCandidate(id=state.selectedId,{profileOverride=null}={}){
   }finally{setLoading(false);}
 }
 
-function select(id){state.selectedId=id;renderRoster();return sourceIsolate(id);}
+async function select(id){
+  state.selectedId=id;renderRoster();
+  await sourceIsolate(id);
+  const profile=state.reviews[id]?.profile||state.persistedById.get(id);
+  if(profile)return mountCandidate(id,{profileOverride:profile});
+  return true;
+}
 function nextUnmounted(){return state.catalog.actors.find((a)=>!state.profiles[a.id])||null;}
 
 async function boot(){
@@ -169,14 +238,19 @@ async function boot(){
     fetch('../data/rig-legacy-default.v0.json').then(r=>{if(!r.ok)throw new Error('legacy seed '+r.status);return r.json();}),
     fetch('../data/rig-legacy-auto.v1.json').then(r=>{if(!r.ok)throw new Error('legacy persisted profiles '+r.status);return r.json();})
   ]);
-  state.catalog=catalog;state.seed=seed;state.persisted=persisted;state.persistedById=new Map((persisted.profiles||[]).map(p=>[p.actorId,p]));state.selectedId=catalog.actors[0].id;
+  state.catalog=catalog;state.seed=seed;state.persisted=persisted;state.persistedById=new Map((persisted.profiles||[]).map(p=>[p.actorId,p]));state.reviews=readReviews();state.selectedId=catalog.actors[0].id;
   initThree();renderRoster();updateProgress();
   $('#headList').onclick=(e)=>{const b=e.target.closest('[data-head]');if(b)select(b.dataset.head).catch(console.error);};
   $('#sourceBtn').onclick=()=>sourceIsolate().catch(console.error);
   $('#mountBtn').onclick=()=>mountCandidate().catch(console.error);
   $('#persistedBtn').onclick=()=>window.__KLR_EYE_BATCH__.mountPersisted(state.selectedId).catch(console.error);
-  $('#nextBtn').onclick=()=>{const a=nextUnmounted();if(a)select(a.id).catch(console.error);};
+  $('#nextBtn').onclick=()=>{const a=nextReview();if(a)select(a.id).catch(console.error);};
   $('#blinkBtn').onclick=()=>state.eyes?.blinkNow();
+  document.querySelectorAll('[data-view]').forEach((b)=>b.onclick=()=>setView(b.dataset.view));
+  $('#sourceEyesBtn').onclick=()=>setSourceEyesVisible(!state.sourceEyesVisible);
+  document.querySelectorAll('[data-tune]').forEach((input)=>input.oninput=()=>applyTune(input.dataset.tune,input.value));
+  document.querySelectorAll('[data-review]').forEach((b)=>b.onclick=()=>setReviewState(b.dataset.review));
+  $('#exportReviewBtn').onclick=exportReview;
   window.__KLR_EYE_BATCH__={
     source:sourceIsolate,
     mount:mountCandidate,
@@ -195,11 +269,12 @@ async function boot(){
       mounted:Object.keys(state.profiles),
       persistedCount:state.persisted?.profiles?.length||0,
       profiles:JSON.parse(JSON.stringify(state.profiles)),
+      reviews:clone(state.reviews),reviewed:reviewedCount(),currentView:state.currentView,sourceEyesVisible:state.sourceEyesVisible,
       mode:document.documentElement.dataset.legacyEyeMode||null
     })
   };
   $('#bootBadge').textContent='READY';$('#bootBadge').className='badge ok';
-  await sourceIsolate(state.selectedId);
+  await select(state.selectedId);
 }
 
 boot().catch((err)=>{$('#bootBadge').textContent='BOOT FAIL';$('#report').textContent=err.stack||err.message;console.error(err);});
