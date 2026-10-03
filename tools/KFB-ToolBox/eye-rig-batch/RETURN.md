@@ -1383,3 +1383,112 @@ Next implementation slice:
 Protected boundary:
 Control R2, source palettes, saved EyeRig profiles, actor catalogs, EyeRig owner and repaired boot flow remain unchanged.
 
+## 2026-10-03 · CURRENT RETURN · VIEW COMFORT / CLAY K1
+
+Status: **BOOT REPAIR HUMAN PASS · VIEW SLICE SOURCE TESTED · STAGE MIRRORED · HUMAN VISUAL/PERF GATE OPEN**
+
+### Human input
+
+The prior boot repair is accepted by Georg: roster loads and Rig_Large switching works.
+
+New bounded feedback:
+- mouse-wheel Orbit zoom was much too sensitive;
+- requested a Resident-Atlas-like clay-floor / optimized claymation presentation mode.
+
+### Implementation
+
+Implementation commit:
+`f40937f50f7d61fdcd50f24c25658c113b389ad0`
+
+Evidence checkpoint:
+`9cb0217695bbca42f711326f333a6dac243d3232`
+
+#### Orbit comfort
+
+Existing OrbitControls owner retained:
+- `zoomSpeed = 0.28`;
+- `minDistance = 0.8`;
+- `maxDistance = 14`.
+
+No new camera owner or wheel handler was introduced.
+
+#### Neutral ↔ Clay K1 view
+
+A reversible toolbar view switch was added:
+
+`Neutral | Clay K1`
+
+Clay geometry donor is the exact Resident Atlas S15 K1/H0 implementation:
+- `lib/clay-k1.js` source/copy blob: `4712a6527921c180847afa4dd77788041351860b`;
+- `clay-soften.v1.js` source/copy blob: `fef287f244661ebc985dfc6fc47857af94b6223b`.
+
+The copied modules are byte-identical to the verified donor.
+
+Performance contract retained:
+- max **4,000 tris per mesh**;
+- max **2** subdivision levels;
+- total added-triangle budget **160,000**;
+- skinned meshes use the K1 no-subdivision smoothing path;
+- geometry cache retained;
+- apply/revert is reversible.
+
+EyeRig and FaceHost diagnostic meshes are explicitly marked `noClay`. The view may soften the KayKit actor body, but must not alter the authored EyeRig geometry/pupils.
+
+Clay floor reuses the existing source maps pinned at `main@74f7a690fbec88cf98ce0936f31b72ad3f1148f5`:
+- diffuse `d889ddd32d38ef9fac55ea802e47da73cbd77deb`;
+- normal `59092c601272f265e7e96cbae3f9d753be47b6a6`;
+- roughness `4d5b3e7634e532111c7608156f4a49b6b18d2ffb`.
+
+GTAO/K2 is intentionally **OFF** in this EyeRig authoring view. This is the lightweight K1 form/floor comparison, not another clay renderer owner.
+
+`stageLook` persists additively inside the existing `kfb.toolbox.eye-rig-batch.v0` namespace. Existing EyeRig profiles and palette choices are not reset.
+
+### Tests
+
+Focused source/readback checks: **15/15 PASS**.
+
+Includes donor byte identity, JS syntax, slower zoom, view UI, explicit K1 budget, reversible apply/revert, EyeRig exclusion, pinned floor, AO-off boundary, boot-repair retention, roster wiring order, palette layer retention and Control R2 retention.
+
+Full historical Node static suite: **NOT_RUN** because the isolated test container could not resolve `github.com` before checkout. This is recorded as an environment limitation, not a PASS or FAIL.
+
+### Stage
+
+Exact Stage mirror:
+`cloudflare-live@6406774131723288b757fd676e6d7be3f08b1123`
+
+Readback PASS for:
+- repaired/current `app.js`;
+- current `index.html`;
+- byte-identical `lib/clay-k1.js`;
+- byte-identical `lib/clay/clay-soften.v1.js`;
+- ToolBox Stage card;
+- actual public `hub-ui-v2` EyeRig task.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Current environment still cannot visibly open `pages.dev`, therefore `PUBLIC_VERIFIED` remains **OPEN**.
+
+### Unresolved
+
+- human wheel-feel check on desktop;
+- human Neutral ↔ Clay K1 comparison on Medium and Large;
+- verify Clay K1 does not visually distort EyeRig itself;
+- judge clay-floor scale/contrast and K1 runtime cost on Georg's browser;
+- Farmers exact A/B texture → Farmer_A/Farmer_B mapping remains source-gated;
+- per-eye placement/visibility remains deferred.
+
+### Exactly one current next gate
+
+**GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01**
+
+On the direct Stage:
+1. test mouse-wheel zoom on Medium and Large;
+2. switch `Neutral ↔ Clay K1`;
+3. confirm actor body gets the K1 clay form while EyeRig/pupils keep their authored shape;
+4. inspect the `clay_floor_001` floor;
+5. change actors / switch Medium ↔ Large while Clay is active, then return to Neutral;
+6. report any visible lag, geometry artifact or floor-scale problem.
+
+No AO/K2 enablement, profile promotion, merge or Live promotion before this gate.
+
