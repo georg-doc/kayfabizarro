@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>KFB · Scholle v7 · Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#17191c;color:#e6e3dc;font-family:"IBM Plex Sans",system-ui,sans-serif}
+a{color:#f2c879}a:hover{color:#ffe0a3}
+*{box-sizing:border-box}
+canvas{display:block}
+</style>
+</helmet>
+<div data-screen-label="Scholle v7 Bank" style="position:relative;width:100%;height:100vh;display:flex;flex-direction:column;overflow:hidden">
+  <div style="flex:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 12px;background:#1d2024;border-bottom:1px solid #33383f">
+    <div style="display:flex;flex-direction:column;gap:2px;min-width:0;margin-right:8px">
+      <div style="font-weight:600;font-size:14px">KFB · Scholle v7 · Bank</div>
+      <div style="font:400 11px/1.3 'IBM Plex Mono',monospace;color:#9aa1a9">8 Benchmarks nachgestellt · ein Mesh je Insel · Ø 40 m · Kachel antippen = groß + drehen</div>
+    </div>
+    <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center">
+      <div style="font:500 11px/1 'IBM Plex Mono',monospace;color:#9aa1a9;margin-right:2px">KNETE</div>
+      <sc-for list="{{ softBtns }}" as="b" hint-placeholder-count="4">
+        <button onClick="{{ b.go }}" style="font:500 12px/1 'IBM Plex Sans',sans-serif;padding:8px 10px;border-radius:4px;border:1px solid #3a4048;cursor:pointer;background:{{ b.bg }};color:{{ b.fg }}">{{ b.label }}</button>
+      </sc-for>
+    </div>
+    <button onClick="{{ toggleSpin }}" style="font:500 12px/1 'IBM Plex Sans',sans-serif;padding:8px 10px;border-radius:4px;border:1px solid #3a4048;cursor:pointer;background:#24282d;color:#e6e3dc">{{ spinLabel }}</button>
+    <button onClick="{{ toggleRef }}" style="font:500 12px/1 'IBM Plex Sans',sans-serif;padding:8px 10px;border-radius:4px;border:1px solid #3a4048;cursor:pointer;background:#24282d;color:#e6e3dc">{{ refLabel }}</button>
+    <div style="flex:1"></div>
+    <sc-if value="{{ focused }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ unfocus }}" style="font:500 12px/1 'IBM Plex Sans',sans-serif;padding:8px 10px;border-radius:4px;border:1px solid #f2c879;cursor:pointer;background:#f2c879;color:#17191c">Zurück zur Übersicht</button>
+    </sc-if>
+  </div>
+  <div style="position:relative;flex:1;min-height:0">
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div ref="{{ gridRef }}" style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:2px;visibility:{{ gridVis }}">
+      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="8">
+        <div onClick="{{ t.go }}" data-tile="1" style="position:relative;cursor:zoom-in;border:1px solid #33383f;min-width:0;min-height:0">
+          <div style="position:absolute;left:0;right:0;bottom:0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:4px 8px;background:rgba(23,25,28,.78);pointer-events:none">
+            <div style="font-weight:600;font-size:12px;color:#f0ece4">{{ t.label }}</div>
+            <div style="font:400 10px/1.4 'IBM Plex Mono',monospace;color:#c9c5bd">{{ t.line }}</div>
+          </div>
+          <sc-if value="{{ t.showRef }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ t.ref }}" alt="{{ t.label }}" style="position:absolute;right:4px;top:4px;width:26%;max-width:180px;aspect-ratio:16/9;object-fit:cover;border:1px solid #4a515a;border-radius:3px;pointer-events:none"></img>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <sc-if value="{{ focused }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:6px;pointer-events:none;width:min(300px,32%)">
+        <div style="font-weight:600;font-size:16px">{{ focusLabel }}</div>
+        <div style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#c9c5bd;white-space:pre-line;background:rgba(23,25,28,.72);padding:6px 8px;border-radius:3px">{{ focusStats }}</div>
+        <img src="{{ focusRef }}" alt="{{ focusLabel }}" style="width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid #4a515a;border-radius:3px"></img>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;soft&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [0, 1, 2, 3], &quot;default&quot;: 2, &quot;tsType&quot;: &quot;number&quot;}}">
+class Component extends DCLogic {
+  canvasRef = React.createRef();
+  gridRef = React.createRef();
+  state = { presets: [], infos: [], soft: this.props.soft ?? 2, spin: true, showRef: true, focus: -1 };
+  async componentDidMount() {
+    const M = await import('./KFB_R2D_v0/scholle-bench.js');
+    const tiles = () => this.gridRef.current ? [...this.gridRef.current.querySelectorAll('[data-tile]')] : [];
+    this.api = M.boot(this.canvasRef.current, tiles, { soft: this.state.soft });
+    window.__scholle = this.api;
+    this.setState({ presets: M.PRESETS, infos: this.api.infos() });
+  }
+  componentWillUnmount() { this.api && this.api.dispose(); }
+  fmt(i, pr) { return i ? `Tiefe/Ø ${i.ratio} (Ziel ${pr.depth}) · Blick ${Math.round(Math.asin(pr.elev) * 180 / Math.PI)}°\nZacken ${i.zack} · Spitze ${i.off} % neben Mitte\n${i.facets} Facetten → ${i.tris.toLocaleString('de-DE')} △ · ${i.ms} ms` : ''; }
+  line(i, pr) { return i && i.sil ? `Oberseite ${i.sil.top}/${i.sil.topT} · Körper ${i.sil.body}/${i.sil.bodyT} · Profil Δ ${i.sil.err} · Blick ${i.sil.elev}°${i.sil.est ? ' · Ziel ' + i.sil.est : ''}` : ''; }
+  renderVals() {
+    const S = this.state, btn = (on, label, go) => ({ label, go, bg: on ? '#f2c879' : '#24282d', fg: on ? '#17191c' : '#e6e3dc' });
+    const softBtns = [[0, 'Facetten'], [1, 'weich 1'], [2, 'weich 2'], [3, 'weich 3']].map(([v, l]) => btn(S.soft === v, l, () => { this.setState({ soft: v }); if (this.api) { this.api.setSoft(v); this.setState({ infos: this.api.infos() }); } }));
+    const tiles = S.presets.map((pr, k) => ({ label: pr.id + ' · ' + pr.label, ref: pr.ref, showRef: S.showRef, line: this.line(S.infos[k], pr), go: () => { this.setState({ focus: k }); this.api && this.api.setFocus(k); } }));
+    const f = S.focus >= 0 ? S.presets[S.focus] : null;
+    return { canvasRef: this.canvasRef, gridRef: this.gridRef, softBtns, tiles, gridVis: S.focus >= 0 ? 'hidden' : 'visible',
+      spinLabel: S.spin ? 'Drehen aus' : 'Drehen an', toggleSpin: () => { const v = !S.spin; this.setState({ spin: v }); this.api && this.api.setSpin(v); },
+      refLabel: S.showRef ? 'Benchmark aus' : 'Benchmark an', toggleRef: () => this.setState({ showRef: !S.showRef }),
+      focused: S.focus >= 0, unfocus: () => { this.setState({ focus: -1 }); this.api && this.api.setFocus(-1); },
+      focusLabel: f ? f.id + ' · ' + f.label : '', focusRef: f ? f.ref : '', focusStats: f ? this.fmt(S.infos[S.focus], f) : '' };
+  }
+}
+</script>
+</body>
+</html>
