@@ -95,6 +95,11 @@ function setLoading(show, detail=null) {
   el.classList.toggle('is-hidden',!show);
   el.setAttribute('aria-hidden',show?'false':'true');
 }
+function setBootProgress(message,{loading=true,kind='pending'}={}) {
+  const stats=$('#rosterStats'); if(stats)stats.textContent=message;
+  if(loading)setLoading(true,message);
+  const badge=$('#bootBadge'); if(badge)setBadge(badge,kind==='fail'?'FAIL':kind==='pass'?'READY':'BOOT',kind);
+}
 function appearanceFamily(actorId){ return actorId ? state.appearanceManifest?.families?.find((f)=>f.actorIds?.includes(actorId)) || null : null; }
 function appearanceSelection(actor){
   const family=appearanceFamily(actor?.id); if(!family)return null;
@@ -962,6 +967,7 @@ function wireRuntimeControls(camera,controls,renderer) {
 }
 
 async function boot() {
+  setBootProgress('Loading catalogs + source contracts…');
   const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review,cleanup02Anchors,appearanceManifest]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
@@ -981,6 +987,7 @@ async function boot() {
   state.cleanup02Review=cleanup02Review;
   state.cleanup02Anchors=cleanup02Anchors;
   state.appearanceManifest=appearanceManifest;
+  setBootProgress(`Catalogs loaded · ${mediumCatalog.actors?.length||0} Medium / ${largeCatalog.actors?.length||0} Large · restoring profiles…`);
 
   const saved=readSaved();
   if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
@@ -1013,6 +1020,7 @@ async function boot() {
     state.rigClass=oldClass;state.catalog=oldCatalog;
   }
 
+  setBootProgress('Profiles restored · preparing 3D stage…');
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
@@ -1021,14 +1029,19 @@ async function boot() {
       eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
-  wireProfileIo();wireAppearanceControl();wireRuntimeControls(camera,controls,renderer);wireRoster();
+  wireRoster();
+  wireProfileIo();wireAppearanceControl();wireRuntimeControls(camera,controls,renderer);
   updateClassUi();renderRoster();
+  setBootProgress(`Controls ready · loading ${classConfig().label} motion…`);
   await loadMotion(state.loader);
 
   const cfg=classConfig();
   const first=actorById(state.currentActorByClass[state.rigClass])||actorById(cfg.defaultActor)||state.catalog[0];
   if(!first)throw new Error(`no actors in ${state.rigClass} catalog`);
+  setBootProgress(`Motion ready · loading ${first.label}…`);
   await loadActor(first.id,{preserve:false});
+  setBootProgress(`Ready · ${state.catalog.length} ${classConfig().label} actors`,{loading:false,kind:'pass'});
+  setLoading(false);
 
   let last=performance.now();
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);controls.update();renderer.render(scene,camera);requestAnimationFrame(frame);}
@@ -1036,5 +1049,5 @@ async function boot() {
 }
 
 boot().catch((err)=>{
-  bootError=err; console.error(err); setLoading(false); setBadge($('#bootBadge'),'FAIL','fail'); const info=$('#actorTechHint'); if(info)info.textContent=`Boot failed · ${err.message}`; gate('#gateSource',state.sourceReady?'pass':'fail'); renderReport(); window.__EYE_RIG_BATCH={state,error:err,report:()=>({error:err.message,gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady}})};
+  bootError=err; console.error(err); setLoading(false); setBootProgress(`Boot failed · ${err.message}`,{loading:false,kind:'fail'}); const info=$('#actorTechHint'); if(info)info.textContent=`Boot failed · ${err.message}`; gate('#gateSource',state.sourceReady?'pass':'fail'); renderReport(); window.__EYE_RIG_BATCH={state,error:err,report:()=>({error:err.message,gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady}})};
 });

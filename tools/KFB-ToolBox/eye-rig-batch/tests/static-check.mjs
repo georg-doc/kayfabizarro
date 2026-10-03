@@ -124,7 +124,9 @@ check('mystery-container-53-classified',mysteryCoverage.containerCoverage?.statu
 check('mystery-container-mummies',actors.actors.filter((a)=>a.reviewGroup==='medium-mystery-extra').length===2&&['mummy-a','mummy-b'].every((id)=>actors.actors.some((a)=>a.id===id&&a.rigClass==='Rig_Medium'&&a.jointCount===23)));
 check('mystery-container-custom-explicit',mysteryCoverage.containerCoverage?.customOrTemplateUnsupported?.some((a)=>a.id==='santa'&&a.jointCount===41)&&mysteryCoverage.containerCoverage?.customOrTemplateUnsupported?.some((a)=>a.id==='character-template'&&a.jointCount===41));
 check('mystery-clanker-large-evidence',mysteryCoverage.actors.find((a)=>a.id==='clanker')?.rigClass==='Rig_Large'&&String(mysteryCoverage.actors.find((a)=>a.id==='clanker')?.rigEvidence||'').includes('Rig_Large string x10'));
-check('inline-number-editors',app.includes('function initInlineNumberEditors')&&app.includes('Click value to type directly')&&app.includes("ev.key==='Enter'")&&app.includes("ev.key==='Escape'"));
+check('inline-number-editors',app.includes("$('output[data-out]').forEach")&&app.includes('Click value to type directly')&&app.includes("ev.key==='Enter'")&&app.includes("ev.key==='Escape'"));
+check('boot-progress-visible',app.includes('function setBootProgress')&&app.includes('Loading catalogs + source contracts')&&app.includes('Controls ready · loading')&&app.includes('Boot failed ·'));
+check('roster-wired-before-control-init',app.indexOf('wireRoster();')<app.indexOf('wireRuntimeControls(camera,controls,renderer)'));
 check('inline-number-preserves-storage-key',app.includes("const STORAGE_KEY = 'kfb.toolbox.eye-rig-batch.v0'")&&app.includes('profiles:state.profiles'));
 check('converge-range-expanded',html.includes('data-param="converge" data-expand="true" type="range" min="-2" max="3"'));
 check('flexible-ranges-expand',app.includes('function expandNumericRange')&&html.includes('data-param="track" data-expand="true"')&&html.includes('data-param="ovalW" data-expand="true"'));
