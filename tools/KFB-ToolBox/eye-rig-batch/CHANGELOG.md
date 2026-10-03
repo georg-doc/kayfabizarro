@@ -1026,3 +1026,20 @@ On the direct Stage:
 5. reload and confirm existing saved profiles remain.
 
 Stop before any profile promotion, per-eye feature work, Blender cleanup, merge or Live promotion.
+
+## 2026-10-03 · Source palette variants
+
+- recovered 40-profile Medium batch remains the current authoring intake; previous **33/33** profiles are preserved;
+- reused Resident Variant SSOT PR #330: **25** multi-texture character families / **56** source appearances;
+- added `data/appearance-variants.v1.json` and a compact **Appearance / source palette** selector;
+- palette selection reuses the same geometry-owned EyeRig profile rather than duplicating actors/skeletons;
+- Magical Girl exposes **A/B/C/D**;
+- Driver exposes **BASE/B**;
+- Paladin King remains the fixed B precedent;
+- other audited palette families are registered through the same manifest;
+- Farmers A/B are registered but switching is source-gated until exact palette-to-model mapping is proven;
+- persistence remains under `kfb.toolbox.eye-rig-batch.v0` with additive `appearanceByActor`;
+- focused readback checks: **20/20 PASS**, including **56/56** exact path/blob/revision match to PR #330;
+- Stage mirror: `cloudflare-live@479c4e91967565b583c76ed0c6ea07433c5b28ce`, exact file readback PASS, public browser verification still OPEN;
+- one current gate: `GEORG_EYERIG_CONTROL_R2_VARIANTS_VIS_01`.
+
