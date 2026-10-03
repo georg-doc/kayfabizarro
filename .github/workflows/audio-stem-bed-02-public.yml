@@ -1,0 +1,92 @@
+name: AUDIO-STEM-BED-02 public Stage proof
+# R2 public proof after master-ground-truth publication b2c9521c446db334f36797d7aa94482c09495fb8
+
+on:
+  push:
+    branches:
+      - 'chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03'
+    paths:
+      - '.github/workflows/audio-stem-bed-02-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/audio-stem-bed-02
+            .github/workflows/audio-stem-bed-02-public.yml
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Exercise exact Cloudflare Stage
+        env:
+          MOOD_POOL_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/
+        run: |
+          ok=0
+          for attempt in 1 2 3 4; do
+            echo "Public Stage attempt $attempt"
+            rm -rf audio-stem-bed-02-proof
+            if node kfb-hub/stage/audio-stem-bed-02/qa.mjs; then
+              ok=1
+              break
+            fi
+            if [ "$attempt" -lt 4 ]; then sleep 30; fi
+          done
+          test "$ok" = 1
+
+      - name: Verify public Hub direct link
+        env:
+          HUB_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/
+          STAGE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage();
+            let proof={status:'FAIL',hub:process.env.HUB_URL,stage:process.env.STAGE_URL,attempts:[]};
+            try{
+              for(let attempt=1;attempt<=4;attempt++){
+                let row={attempt};
+                try{
+                  const r=await page.goto(process.env.HUB_URL,{waitUntil:'networkidle',timeout:90000});
+                  row.http=r&&r.status();
+                  const html=await page.content();
+                  row.hasCard=html.includes('audio-stem-bed-02-2026-10-03');
+                  row.hasDirectUrl=html.includes(process.env.STAGE_URL);
+                  proof.attempts.push(row);
+                  if(row.http===200&&row.hasCard&&row.hasDirectUrl){proof.status='PASS';break;}
+                }catch(e){row.error=String(e);proof.attempts.push(row);}
+                if(attempt<4)await new Promise(r=>setTimeout(r,30000));
+              }
+              fs.mkdirSync('audio-stem-bed-02-proof',{recursive:true});
+              fs.writeFileSync('audio-stem-bed-02-proof/hub-link.json',JSON.stringify(proof,null,2));
+              console.log(JSON.stringify(proof));
+              if(proof.status!=='PASS')process.exitCode=1;
+            }finally{await browser.close();}
+          })();
+          NODE
+
+      - name: Upload public proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-stem-bed-02-public-proof
+          path: audio-stem-bed-02-proof/
+          retention-days: 14

@@ -1,0 +1,185 @@
+{
+  "schema": "kfb.audio-stem-bed-02/0.1",
+  "date": "2026-10-03",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03",
+  "pullRequest": 346,
+  "lastProvenRuntimePublicHead": "9555fd0e45edb99804bb9b477f662b210723d308",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
+  "publication": {
+    "stageCommit": "b2c9521c446db334f36797d7aa94482c09495fb8",
+    "hubCommit": "b2c9521c446db334f36797d7aa94482c09495fb8",
+    "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
+    "hubRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
+  },
+  "donors": [
+    {
+      "id": "neutral",
+      "title": "Cyclical Warmth",
+      "mood": "NEUTRAL_WORLD",
+      "bpm": 76,
+      "stemCount": 8
+    },
+    {
+      "id": "awe",
+      "title": "Awe Before Drama",
+      "mood": "AWE_REVELATION",
+      "bpm": 82,
+      "stemCount": 9
+    },
+    {
+      "id": "sunshine",
+      "title": "Buant Groove",
+      "mood": "SUNSHINE_FESTIVAL",
+      "bpm": 105,
+      "stemCount": 8
+    },
+    {
+      "id": "grief",
+      "title": "Dorian Rests",
+      "mood": "GRIEF_LOSS",
+      "bpm": 66,
+      "stemCount": 10
+    },
+    {
+      "id": "boss",
+      "title": "Stalking Groove",
+      "mood": "DARK_BOSS_COMBAT",
+      "bpm": 107,
+      "stemCount": 9
+    }
+  ],
+  "runtimeStemCount": 44,
+  "runtime": "kfb-hub/stage/audio-stem-bed-02/mood-pool.js",
+  "sourceContract": "kfb-hub/stage/audio-stem-bed-02/SOURCE.json",
+  "signaturePrompt": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v1.md",
+  "tests": {
+    "census": {
+      "run": 37130168026,
+      "job": 111223533180,
+      "pass": 14,
+      "total": 14
+    },
+    "source": {
+      "pass": 100,
+      "total": 100
+    },
+    "branchBrowser": {
+      "run": 37131569261,
+      "job": 111227557364,
+      "pass": 18,
+      "total": 18,
+      "artifact": 11276942436,
+      "digest": "sha256:ffe70cc10635cdd942dd83cf0c7936dfdd3d545d844764434da653046d9e1410"
+    },
+    "publicStage": {
+      "run": 37132531736,
+      "job": 111230330130,
+      "pass": 18,
+      "total": 18,
+      "artifact": 11277367768,
+      "digest": "sha256:1d2e0616148e232af0f9cd36f695245de86fc1656196399d3c6f9a9d88b3770c"
+    },
+    "publicHub": {
+      "run": 37132531736,
+      "job": 111230330130,
+      "http": 200,
+      "cardPresent": true,
+      "directStageUrlPresent": true,
+      "hubRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
+    },
+    "r2Branch": {
+      "run": 37135402751,
+      "job": 111238803148,
+      "pass": 31,
+      "total": 31,
+      "artifact": 11278327849,
+      "digest": "sha256:6abdd70abe4df4a1ede81bd25d90ab9600942dca39ed34f96780d0bc7ef2a0d1"
+    },
+    "r2Public": {
+      "run": 37135399619,
+      "job": 111238793524,
+      "pass": 31,
+      "total": 31,
+      "attempt": 3,
+      "artifact": 11278332936,
+      "digest": "sha256:d9bd422d6285168aaa480baa36ee454ca5e87a8bac9e8bfa9b3ff2a34f3483c0",
+      "hubHttp": 200,
+      "hubCard": true,
+      "directStageUrl": true
+    }
+  },
+  "protectedBoundaries": [
+    "no note generation",
+    "no phrase slicing",
+    "no time-stretch",
+    "no pitched cross-song stem mixing",
+    "no consumer gameplay ownership",
+    "no automatic merge",
+    "no Live promotion"
+  ],
+  "nextGate": "KFB_JUKEBOX_CATALOG_01",
+  "legacyHubSourceSync": {
+    "status": "ARCHIVED_FAILED_ATTEMPT",
+    "affectedPath": "kfb-hub/index.html",
+    "currentPublicHubAffected": false,
+    "failedCommits": [
+      "257f9b45d426d989dd8eb34e5857f49c86580e99",
+      "4700cefdb436ae90fa1f1167fca37bc8727d6259"
+    ],
+    "recovery": "restore affected path from 9433a901a83c043b2c5de235d65394facd8f9846 and stop repair loop",
+    "export": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/FAILURE_RECOVERY_EXPORT.json"
+  },
+  "status": "R2_HUMAN_ACCEPTED",
+  "runtimeSourceStemCount": 50,
+  "runtimePolicies": {
+    "neutral": "stem-certified",
+    "awe": "master-safe",
+    "sunshine": "master-safe",
+    "grief": "master-safe",
+    "boss": "master-safe"
+  },
+  "previousHumanResult": {
+    "status": "FAIL",
+    "scope": "superseded v0.1 universal stem mix",
+    "finding": "Buant Groove lost original musical identity and sounded ploppy/buggy"
+  },
+  "humanAcceptance": {
+    "date": "2026-10-03",
+    "result": "PASS",
+    "note": "das hört sich jetzt alles besser an, können wir so nehmen"
+  },
+  "signaturePromptV2": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md",
+  "jukeboxDecision": {
+    "date": "2026-10-03",
+    "allSongsRetained": true,
+    "roadTripV2Masters": 42,
+    "pairedStemFamilies": 12,
+    "newFamilies": [
+      {
+        "id": "beetle-wrestling-entrance-01",
+        "title": "Beetle-Wrestling Entrance 01",
+        "bpm": 118,
+        "stemCount": 11,
+        "role": "extended alternate"
+      },
+      {
+        "id": "beetle-wrestling-entrance",
+        "title": "Beetle-Wrestling Entrance",
+        "bpm": 119,
+        "stemCount": 10,
+        "role": "signature/theme candidate"
+      },
+      {
+        "id": "surf-groove-3min",
+        "title": "Surf Groove 3min",
+        "bpm": 100,
+        "stemCount": 11,
+        "role": "road/radio/style-pool"
+      }
+    ],
+    "jazzTrack": "pending Suno intake",
+    "architectureDoc": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_JUKEBOX_MUSIC_GRAPH_v1.md"
+  }
+}

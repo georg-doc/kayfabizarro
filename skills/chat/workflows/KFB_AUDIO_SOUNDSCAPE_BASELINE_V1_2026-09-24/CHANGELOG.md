@@ -1,5 +1,32 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-STEM-BED-02 R2 HUMAN PASS
+
+- Georg accepted the repaired R2 after listening.
+- Current five-donor architecture is HUMAN_ACCEPTED; v0.1 FAIL remains historical evidence.
+- Signature-theme generation is the next audio gate; v2 prompt prepared.
+
+
+## 2026-10-03 · AUDIO-STEM-BED-02 R2 correction
+
+- recorded Georg HUMAN FAIL for the v0.1 generalized stem pool;
+- corrected new donors to MASTER-SAFE original-master playback;
+- retained Cyclical Warmth as the only currently stem-certified donor;
+- R2 branch 31/31 PASS; public attempt 3 31/31 PASS;
+- exact Stage remains human-retest only; no consumer integration or merge.
+
+
+## 2026-10-03 · AUDIO-STEM-BED-02 child
+
+- Added PUBLIC_VERIFIED five-donor adaptive Suno mood-pool candidate on Draft PR #346.
+- Donors: Neutral 76 / Awe 82 / Sunshine 105 / Grief 66 / Boss 107 BPM.
+- Runtime roster: **44 stems** after excluding vocal separation residuals.
+- Retained one AudioContext and Activity / Road-Lift / Night / Voice Focus controls.
+- Evidence: **14/14 census · 100/100 source · 18/18 current-head browser · 18/18 exact public Stage**.
+- Added `BEETLE RUMBLE` signature-theme authoring prompt; audio generation/export remains pending.
+- Human listening gate remains open; no automatic consumer integration, merge or Live promotion.
+
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;
@@ -112,3 +139,11 @@ Public Stage publication is still pending at this checkpoint. No public or human
 - Acceptance covers the current mix/ducking direction, not blanket approval of every raw sound asset.
 - Remaining audio backlog: crowd/weather/traffic/friction source-bank curation, character voice-profile metadata, and later owner-specific adoption.
 - No PR merge or automatic consumer integration performed.
+
+## 2026-10-03 · Jukebox Music Graph direction
+
+- Georg decided to retain all authored songs.
+- current RoadTrip-v2 source census: 42 masters / 12 paired stem families.
+- added three paired families: Beetle-Wrestling Entrance 01, Beetle-Wrestling Entrance, Surf Groove 3min.
+- canonical Jukebox stays owner; later Jazz upload uses the same intake.
+- next gate: `KFB_JUKEBOX_CATALOG_01`.

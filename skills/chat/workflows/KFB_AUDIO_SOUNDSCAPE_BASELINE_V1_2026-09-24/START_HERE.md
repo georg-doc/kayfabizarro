@@ -12,6 +12,19 @@
 GitHub state overrides this document whenever a named source ref advances.
 
 
+## CURRENT FOLLOW-UP · AUDIO-STEM-BED-02 R2 · 2026-10-03
+
+The first five-donor universal stem mix was **HUMAN FAIL** on musical fidelity, especially Buant Groove.
+
+Current R2 correction:
+- Cyclical Warmth retains the previously accepted stem-adaptive path.
+- Awe Before Drama / Buant Groove / Dorian Rests / Stalking Groove use their original uploaded masters as Ground Truth.
+- Their stems remain source inventory pending donor-specific certification.
+- R2 is now **HUMAN_ACCEPTED** by Georg on 2026-10-03.
+- Signature-theme v2 prompt is prepared at `skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md`.
+- Next gate: **KFB_SIGNATURE_THEME_GENERATION_01** — master generation/selection only; stems after human selection.
+- No automatic consumer integration or merge.
+
 ## HUMAN LISTENING RESULT · PASS
 
 Georg reviewed AUDIO-CAL-01 on 2026-09-24 and reported: **“klingt sehr gut soweit. passt.”**
@@ -204,3 +217,16 @@ Historical technical browser evidence: 8/8 PASS at `1adbdba8c17b7ef4f1f987197b48
 ## Stop condition
 
 Do not implement AUDIO-CAL-01 in this baseline slice. This slice closes when the audit, architecture, Recovery/Return, additive changelog and KFB Hub/router pointers are persisted on the branch and handed to WSA.
+
+## CURRENT FOLLOW-UP · KFB Jukebox Music Graph · 2026-10-03
+
+Georg's current direction is to retain all authored songs through the canonical Jukebox.
+
+- Current RoadTrip-v2 inventory on main: 42 masters / 12 paired stem families.
+- Jukebox remains catalog/audio-selection owner; do not create a replacement player.
+- Catalog state and player unlock/discovery state remain separate.
+- Lean Memory stores compact track receipts; Fractal Almanac may surface music memories.
+- Auto-radio should be seeded/deterministic and context-weighted.
+- Resident/biome soundscapes reference tracks + ambience/stings rather than owning another AudioContext.
+- Cross-song pitched stem mixing is off by default.
+- Next implementation gate: `KFB_JUKEBOX_CATALOG_01`.
