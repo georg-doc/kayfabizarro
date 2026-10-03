@@ -1,3 +1,20 @@
+## 2026-10-04 · Site/God Mode/Lean Memory GitHub persistence + One-Shot precheck
+
+### ARCHITECTURE PERSISTENCE
+- Materialized Production-Control MVP v1.5–v1.7 into GitHub at `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`.
+- Added `ONE_SHOT_PRECHECK_2026-10-04.md` with hard preflight gates, high-value cheap prework, donor-only lanes, product questions and final acceptance script.
+- Site-only context is no longer the sole durable source for Stage/Live manifests, God Mode Scene Composer and Lean Memory/Fractal Almanac architecture.
+
+### CURRENT RISK FINDINGS
+- World PR #332 is materially diverged from current main (common merge base `74f7a690...`); final One-Shot must start from a clean current-main convergence base, not directly on #332.
+- Motion routing in `START_HERE.md` was stale and is corrected to current PR #344 / `KAYKIT-NATIVE-BLENDER-BASELINE-01`; current Return remains PREPARED / NOT RUN.
+- current main Jukebox catalog is still the older 2026-07-18 small catalog despite the larger current authored song pool; `KFB_JUKEBOX_CATALOG_01` is pre-One-Shot P1.
+- Clay Style SSOT / Golden Matrix remain branch-pinned on PR #301, not main; final integration lock must pin or reconcile them.
+- Asset Librarian PR #304 remains a frozen partial candidate; only the proven Family→Pack→Collection + Motion preview core should be salvaged.
+
+### NEXT
+Do not start the final One-Shot yet. Close the P0 gates in `ONE_SHOT_PRECHECK_2026-10-04.md`, then freeze one exact ONE-SHOT-INTEGRATION-LOCK.
+
 ## 2026-10-04 · Resident Atlas S16 → playable MVP / WSA intake
 
 ### SOURCE
