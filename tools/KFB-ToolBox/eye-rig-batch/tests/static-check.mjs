@@ -1,6 +1,6 @@
 import fs from 'node:fs'; import path from 'node:path';
 const root=path.resolve(process.argv[2]||'.');
-const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','lib/medium-source-eye-cleanup.v1.js','lib/face-color-sampler.v1.js','data/gothgirl.seed.json','data/rig-medium-default.v0.json','data/rig-medium-actors.v0.json','data/rig-large-default.v0.json','data/rig-large-actors.v0.json','data/rig-large-reviewed.v1.json','data/cleanup02-review.v0.json','data/cleanup02-anchors.v0.json','data/mystery-monthly-character-coverage.v1.json','data/appearance-variants.v1.json','docs/SOURCE_AUDIT.md','docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md','docs/source-components-0-11.html','docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md','docs/BATCH_FEATURE_BACKLOG_2026-09-19.md','docs/RIG_LARGE_MONSTROSITY_CALIBRATION_2026-09-19.md'];
+const files=['index.html','styles.css','app.js','lib/kaykit-eye-adapter.v1.js','lib/source-face-cleanup.v1.js','lib/medium-source-eye-cleanup.v1.js','lib/face-color-sampler.v1.js','lib/clay-k1.js','lib/clay/clay-soften.v1.js','data/gothgirl.seed.json','data/rig-medium-default.v0.json','data/rig-medium-actors.v0.json','data/rig-large-default.v0.json','data/rig-large-actors.v0.json','data/rig-large-reviewed.v1.json','data/cleanup02-review.v0.json','data/cleanup02-anchors.v0.json','data/mystery-monthly-character-coverage.v1.json','data/appearance-variants.v1.json','docs/SOURCE_AUDIT.md','docs/SOURCE_COMPONENT_IDENTITY_2026-09-19.md','docs/source-components-0-11.html','docs/QA_EYE_CALIBRATION_LOOP_2026-09-19.md','docs/BATCH_FEATURE_BACKLOG_2026-09-19.md','docs/RIG_LARGE_MONSTROSITY_CALIBRATION_2026-09-19.md'];
 let pass=0, fail=0; const results=[];
 function check(name,ok,detail=''){(ok?pass++:fail++);results.push({name,status:ok?'PASS':'FAIL',detail});}
 for(const f of files)check(`file:${f}`,fs.existsSync(path.join(root,f)),fs.existsSync(path.join(root,f))?'present':'missing');
@@ -141,5 +141,12 @@ check('appearance-blobs-pinned',appearanceVariants.families.every((f)=>f.variant
 check('appearance-farmers-source-gated',appearanceVariants.families.find((f)=>f.id==='farmers')?.runtimeSelectable===false&&appearanceVariants.families.find((f)=>f.id==='farmers')?.mappingStatus==='SOURCE_MAPPING_OPEN');
 check('appearance-selector-runtime',html.includes('id="appearanceSelect"')&&html.includes('id="appearanceHint"')&&app.includes('function effectiveActor')&&app.includes('function setAppearanceVariant')&&app.includes('appearanceByActor:state.appearanceByActor')&&app.includes('APPEARANCE_VARIANTS_URL'));
 check('appearance-shared-profile-key',app.includes('const baseActor=actorById(actorId),actor=effectiveActor(baseActor)')&&app.includes('state.profiles[state.profile.actorId]')&&!appearanceVariants.families.some((f)=>f.actorIds.includes('paladin-king')));
+check('orbit-zoom-slower',app.includes('controls.zoomSpeed=.28')&&app.includes('controls.minDistance=.8')&&app.includes('controls.maxDistance=14'));
+check('clay-view-switch-ui',html.includes('data-stage-look="neutral"')&&html.includes('data-stage-look="clay"')&&html.includes('id="lookBadge"'));
+check('clay-k1-donor-reuse',app.includes("import { makeK1 } from './lib/clay-k1.js'")&&app.includes('perMeshTris:4000')&&app.includes('maxLevels:2')&&app.includes('budgetTris:160000'));
+check('clay-k1-reversible',app.includes('state.clayK1?.revert?.()')&&app.includes('state.clayK1.apply(state.figure)')&&app.includes('stageLook:state.stageLook'));
+check('clay-excludes-eye-rig',app.includes('markNoClay(eyes.rig?.rig)')&&app.includes('markNoClay(eyes.faceHost?.box)'));
+check('clay-floor-pinned-source',app.includes("CLAY_SOURCE_PIN = '74f7a690fbec88cf98ce0936f31b72ad3f1148f5'")&&app.includes('clay_floor_001_diffuse.jpg')&&app.includes('clay_floor_001_normal.jpg')&&app.includes('clay_floor_001_roughness.jpg'));
+check('clay-ao-off-in-eyerig-view',!app.includes('.setAO(true)')&&!app.includes('setAO(true'));
 check('no-global-schema-promotion',!app.includes('kfb.eye-profile/1'));
 console.log(JSON.stringify({pass,fail,total:pass+fail,results},null,2)); if(fail)process.exit(1);
