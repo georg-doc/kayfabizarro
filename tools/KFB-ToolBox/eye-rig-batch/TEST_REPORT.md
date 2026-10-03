@@ -1267,3 +1267,82 @@ Therefore:
 Exactly one next gate after Stage publication:
 `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`.
 
+## 2026-10-03 · EYE_RIG_WHEEL_ZOOM_REPAIR_02
+
+Human feedback:
+- first comfort pass still jumped to extreme camera positions.
+
+### Cause / decision
+
+Changing only OrbitControls `zoomSpeed` does not sufficiently bound high-frequency mouse-wheel / trackpad event bursts.
+The native Orbit wheel zoom path is now disabled entirely:
+`controls.enableZoom = false`.
+
+OrbitControls remains the single orbit/target/rotation owner.
+A bounded wheel input adapter changes only camera distance to that same Orbit target.
+
+### Repair
+
+Implementation head:
+`797e5a81bbcdc339282ea1873363dd6804d9bd31`
+
+App blob:
+`5635b28496af0e06cfe7f60a01b23e5612bad6e1`
+
+Wheel contract:
+- safe absolute distance: **1.6 … 8.0**;
+- fixed base step/event: **0.12**;
+- one gesture may move inward at most **0.65** from its start;
+- one gesture may move outward at most **0.85** from its start;
+- new gesture after **160 ms** gap;
+- target distance is damped with factor **14**;
+- physical camera movement capped to **0.09 units/frame**;
+- Front / ¾ / Side / Face presets re-sync the wheel target immediately.
+
+### Focused regression
+
+**13/13 PASS**
+
+Covers:
+- runtime syntax;
+- test syntax;
+- native Orbit wheel disabled;
+- absolute safe distance range;
+- fixed small wheel step;
+- per-gesture bounds;
+- frame smoothing;
+- preset re-sync;
+- runtime wheel report;
+- boot repair retained;
+- Clay K1 donor retained;
+- 25-family / 56-appearance palette layer retained;
+- static regression contract updated.
+
+### Stage
+
+Exact Stage mirror:
+`cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`
+
+Stage app blob:
+`5635b28496af0e06cfe7f60a01b23e5612bad6e1`
+
+Exact source ↔ Stage app readback: **PASS**.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+Public browser verification remains **OPEN** in this environment.
+
+### Exactly one next gate
+
+**GEORG_EYERIG_WHEEL_ZOOM_VIS_02**
+
+Check only:
+1. one normal mouse-wheel notch;
+2. one longer wheel spin / trackpad swipe;
+3. Front → Face → wheel;
+4. Large → wheel;
+5. verify camera no longer shoots to minimum/maximum extremes.
+
+After PASS, resume the already-open Neutral ↔ Clay K1 visual review.
+
