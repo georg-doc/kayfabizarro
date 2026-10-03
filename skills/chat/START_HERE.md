@@ -1377,5 +1377,5 @@ The Brawl skill is a **CURRENT_REFERENCE · canonical-draft**. It does not creat
 Research/recovery home:
 `skills/chat/workflows/KFB_CARTOON_BRAWL_SKILL_2026-10-03/`.
 
-This documentation/skill milestone has **no public Stage and no Hub action card**: there is no Georg-facing product decision to manufacture here. First real consumer proof is now complete on Combat Draft PR #12 (`fb40fac9d108b4719d06d47af394731edd233620`): primary Sword source is KayKit Rig_Medium CombatMelee, Stab passes the real 0.12 u non-overlap hit/miss gate, and productive Arena runtime remains unchanged. Exactly one next productive gate: **BRAWL-CLUB-BRICKFISH-01**.
+This documentation/skill milestone has **no public Stage and no Hub action card**: there is no Georg-facing product decision to manufacture here. Two real Combat consumers are now technically proven without productive Arena promotion: Sword on Draft PR #12 (`fb40fac9d108b4719d06d47af394731edd233620`) and ordinary Brickfish Bonk on stacked Draft PR #17 (`e391536fb8307a11ccd09dd6f0b04a7e2110542d`). Brickfish reuses the exact KFB `animal-fish.glb` donor, visible tail grip, existing KayKit Chop/contact/AttackLedger core, and a measured 30° tail-pivot whip with stretch 1.00. Exactly one next productive gate: **BRAWL-BRICKFISH-HEAVY-01** using native `Melee_1H_Attack_Jump_Chop` with independent measurement.
 
