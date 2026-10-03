@@ -27,6 +27,15 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-10-04 · Site / God Mode / Lean Memory + One-Shot precheck
+
+Playable-MVP architecture now also has durable GitHub contracts for the Site-native Stage/Live world, God Mode Scene Composer and Lean Memory/Fractal Almanac persistence:
+
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md`
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_PRECHECK_2026-10-04.md`
+
+The precheck is binding preparation guidance for the final One-Shot. Key correction: current WB2 PR #332 and current main are materially diverged, so the final WSA/Codex integration must first create a clean convergence base from then-current main rather than stacking directly on #332. Site-only planning is no longer the only copy of the v1.5–v1.7 architecture.
+
 ## 2026-10-04 · Resident Atlas → playable MVP / WSA routing
 
 Current Resident-Atlas source package for MVP/WSA intake:
