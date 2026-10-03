@@ -22,6 +22,12 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/audio-arrange-01
+            media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2
+            .github/workflows/audio-arrange-stage.yml
+          sparse-checkout-cone-mode: false
 
       - uses: actions/setup-node@v4
         with:
