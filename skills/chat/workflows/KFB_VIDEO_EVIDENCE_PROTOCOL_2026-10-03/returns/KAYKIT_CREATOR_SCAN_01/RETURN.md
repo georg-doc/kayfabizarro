@@ -22,9 +22,9 @@ Durable result now preserved:
 
 ## Wer macht jetzt was?
 
-**Next executor:** ChatGPT Web/Work with **reliable visual access to the original YouTube frames**.
+**Next executor:** a later ChatGPT Web/Work route with **reliable visual access to the original YouTube frames**, using an already approved capability or a separately reviewed optional service.
 
-It continues this same bounded scan. It must not restart motion design or replace the sources.
+It continues this same bounded scan. It must not restart motion design or replace the sources. No third-party plugin is required by this Return.
 
 ### Copy-ready start message
 
@@ -32,7 +32,11 @@ It continues this same bounded scan. It must not restart motion design or replac
 
 ## Was musst du tun?
 
-Connect/start a Web/Work route that can actually expose YouTube video frames. Nothing else needs to be reconstructed or uploaded manually.
+**Nichts installieren.**
+
+The blocked scan remains safely parked in GitHub until a trustworthy visual-video route is available in an already approved environment.
+
+A third-party video-analysis plugin such as vidIQ is **OPTIONAL / UNAPPROVED** only. It must not be treated as a required next step unless provider identity, pricing/plan requirements, requested permissions/data access and relevant usage/privacy terms have first been checked and Georg explicitly chooses to use it.
 
 ## Was passiert danach?
 
@@ -95,6 +99,16 @@ No merge and no deployment occurred.
 - actual reference stills/contact sheets;
 - third-video version classification by visible evidence;
 - timestamped Blender comparison rows.
+
+## Decision update · 2026-10-03
+
+Georg does **not** approve installing an unfamiliar third-party plugin merely to unblock this scan without first knowing the provider/service, possible costs and requested rights/permissions.
+
+Therefore:
+- no plugin installation is part of the current user action;
+- vidIQ remains only an optional future route to evaluate separately;
+- the GitHub return stays parked and complete as a SOURCE_BLOCKED recovery state;
+- no additional workaround loop is required now.
 
 ## Exactly one next gate
 
