@@ -12,6 +12,30 @@
 GitHub state overrides this document whenever a named source ref advances.
 
 
+## CURRENT FOLLOW-UP · AUDIO-STEM-BED-02 · 2026-10-03
+
+AUDIO-CAL-01 remains the HUMAN_ACCEPTED shared mix/ducking reference. The current additive music proof is:
+
+`skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/START_HERE.md`
+
+Draft PR #346 · `chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03`.
+
+Public Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/`
+
+Current proven result:
+- five source-backed mood donors / 44 runtime stems;
+- one AudioContext and phase-locked starts inside each selected donor;
+- donor census **14/14 PASS**;
+- exact source validator **100/100 PASS**;
+- current-head Chromium/WebAudio **18/18 PASS**;
+- exact Cloudflare Stage **18/18 PASS**.
+
+This is an adaptive music child of the baseline. It does not replace Travel/Race/Combat runtime ownership and does not authorize cross-song pitched stem mixing.
+
+Exactly one next gate:
+**GEORG_AUDIO_STEM_BED_02** — human listening across Neutral / Awe / Sunshine / Grief / Boss.
+
 ## HUMAN LISTENING RESULT · PASS
 
 Georg reviewed AUDIO-CAL-01 on 2026-09-24 and reported: **“klingt sehr gut soweit. passt.”**

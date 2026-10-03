@@ -1,5 +1,18 @@
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
+## 2026-10-03 · AUDIO-STEM-BED-02 mood pool
+
+- recovered interrupted audio continuation as Draft PR #346 on `chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03`;
+- registered five authored mood families: Cyclical Warmth 76 BPM, Awe Before Drama 82 BPM, Buant Groove 105 BPM, Dorian Rests 66 BPM and Stalking Groove 107 BPM;
+- runtime pool uses 44 non-vocal-residual stems and one AudioContext; donor timelines remain native and phase-locked per selected family;
+- retained Activity / Road-Lift / Night / Voice Focus controls; no note generation, slicing, time-stretch or pitched cross-song mixing;
+- donor census **14/14 PASS**; exact source validator **100/100 PASS**; current-head Chromium/WebAudio **18/18 PASS**;
+- exact public Stage `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/` **18/18 PASS**;
+- publication candidate mirrored to `cloudflare-live@9d541e79fa7dc10ef5b80ce08b8d3b25d9d1e327`; direct Hub URL fixed at `cloudflare-live@26bb3926bde5a2e1e519409d182a62b654cfba71`;
+- added `BEETLE RUMBLE` signature-theme Suno authoring brief; no signature audio promoted;
+- next gate `GEORG_AUDIO_STEM_BED_02`; no merge or Live promotion.
+
+
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
 - Existing Ground/Travel movement files and canonical contract were not edited; PlayCanvas is outside this spike.
 - Mirrored candidate to `kfb-hub/stage/maplibre-world-owner-spike-01/` and linked it from the Stage Hub at publication checkpoint `1d23bab59b73a0425cb9de202f2fd6932ed7d0f8`.

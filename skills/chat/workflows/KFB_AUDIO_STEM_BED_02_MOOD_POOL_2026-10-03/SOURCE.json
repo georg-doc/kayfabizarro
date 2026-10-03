@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.audio-stem-bed-02/0.1",
+  "date": "2026-10-03",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/audio-stem-bed-02-mood-pool-2026-10-03",
+  "pullRequest": 346,
+  "lastProvenRuntimePublicHead": "9433a901a83c043b2c5de235d65394facd8f9846",
+  "stageRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
+  "publication": {
+    "stageCommit": "9d541e79fa7dc10ef5b80ce08b8d3b25d9d1e327",
+    "hubDirectLinkCommit": "26bb3926bde5a2e1e519409d182a62b654cfba71",
+    "hubRoute": "https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/"
+  },
+  "donors": [
+    {
+      "id": "neutral",
+      "title": "Cyclical Warmth",
+      "mood": "NEUTRAL_WORLD",
+      "bpm": 76,
+      "stemCount": 8
+    },
+    {
+      "id": "awe",
+      "title": "Awe Before Drama",
+      "mood": "AWE_REVELATION",
+      "bpm": 82,
+      "stemCount": 9
+    },
+    {
+      "id": "sunshine",
+      "title": "Buant Groove",
+      "mood": "SUNSHINE_FESTIVAL",
+      "bpm": 105,
+      "stemCount": 8
+    },
+    {
+      "id": "grief",
+      "title": "Dorian Rests",
+      "mood": "GRIEF_LOSS",
+      "bpm": 66,
+      "stemCount": 10
+    },
+    {
+      "id": "boss",
+      "title": "Stalking Groove",
+      "mood": "DARK_BOSS_COMBAT",
+      "bpm": 107,
+      "stemCount": 9
+    }
+  ],
+  "runtimeStemCount": 44,
+  "runtime": "kfb-hub/stage/audio-stem-bed-02/mood-pool.js",
+  "sourceContract": "kfb-hub/stage/audio-stem-bed-02/SOURCE.json",
+  "signaturePrompt": "skills/chat/workflows/KFB_AUDIO_STEM_BED_02_MOOD_POOL_2026-10-03/KFB_SIGNATURE_THEME_SUNO_PROMPT_v1.md",
+  "tests": {
+    "census": {
+      "run": 37130168026,
+      "job": 111223533180,
+      "pass": 14,
+      "total": 14
+    },
+    "source": {
+      "pass": 100,
+      "total": 100
+    },
+    "branchBrowser": {
+      "run": 37131569261,
+      "job": 111227557364,
+      "pass": 18,
+      "total": 18,
+      "artifact": 11276942436,
+      "digest": "sha256:ffe70cc10635cdd942dd83cf0c7936dfdd3d545d844764434da653046d9e1410"
+    },
+    "publicStage": {
+      "run": 37131567389,
+      "job": 111227551183,
+      "pass": 18,
+      "total": 18,
+      "artifact": 11276703064,
+      "digest": "sha256:cc9c6ce56367086b6d69f2dd257eb3807f3d7f049ed6f48d12fabee68ce9cea0"
+    }
+  },
+  "protectedBoundaries": [
+    "no note generation",
+    "no phrase slicing",
+    "no time-stretch",
+    "no pitched cross-song stem mixing",
+    "no consumer gameplay ownership",
+    "no automatic merge",
+    "no Live promotion"
+  ],
+  "nextGate": "GEORG_AUDIO_STEM_BED_02"
+}

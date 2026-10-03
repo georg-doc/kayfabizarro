@@ -49,6 +49,40 @@ jobs:
           done
           test "$ok" = 1
 
+      - name: Verify public Hub direct link
+        env:
+          HUB_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/
+          STAGE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage();
+            let proof={status:'FAIL',hub:process.env.HUB_URL,stage:process.env.STAGE_URL,attempts:[]};
+            try{
+              for(let attempt=1;attempt<=4;attempt++){
+                let row={attempt};
+                try{
+                  const r=await page.goto(process.env.HUB_URL,{waitUntil:'networkidle',timeout:90000});
+                  row.http=r&&r.status();
+                  const html=await page.content();
+                  row.hasCard=html.includes('audio-stem-bed-02-2026-10-03');
+                  row.hasDirectUrl=html.includes(process.env.STAGE_URL);
+                  proof.attempts.push(row);
+                  if(row.http===200&&row.hasCard&&row.hasDirectUrl){proof.status='PASS';break;}
+                }catch(e){row.error=String(e);proof.attempts.push(row);}
+                if(attempt<4)await new Promise(r=>setTimeout(r,30000));
+              }
+              fs.mkdirSync('audio-stem-bed-02-proof',{recursive:true});
+              fs.writeFileSync('audio-stem-bed-02-proof/hub-link.json',JSON.stringify(proof,null,2));
+              console.log(JSON.stringify(proof));
+              if(proof.status!=='PASS')process.exitCode=1;
+            }finally{await browser.close();}
+          })();
+          NODE
+
       - name: Upload public proof
         if: always()
         uses: actions/upload-artifact@v4

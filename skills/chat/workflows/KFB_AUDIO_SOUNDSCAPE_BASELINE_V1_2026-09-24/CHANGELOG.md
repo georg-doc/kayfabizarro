@@ -1,5 +1,16 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-03 · AUDIO-STEM-BED-02 child
+
+- Added PUBLIC_VERIFIED five-donor adaptive Suno mood-pool candidate on Draft PR #346.
+- Donors: Neutral 76 / Awe 82 / Sunshine 105 / Grief 66 / Boss 107 BPM.
+- Runtime roster: **44 stems** after excluding vocal separation residuals.
+- Retained one AudioContext and Activity / Road-Lift / Night / Voice Focus controls.
+- Evidence: **14/14 census · 100/100 source · 18/18 current-head browser · 18/18 exact public Stage**.
+- Added `BEETLE RUMBLE` signature-theme authoring prompt; audio generation/export remains pending.
+- Human listening gate remains open; no automatic consumer integration, merge or Live promotion.
+
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;
