@@ -80,4 +80,9 @@ Rules:
 - Motion SSOT attaches only after its neutral visual PASS.
 
 Exactly one next world action:
-browser-prove the R2D heightfield/Track-Core adapter, then migrate the floating underside + water presentation into the same WB2 owner.
+migrate the R2D floating underside + pond/creek/waterfall presentation into the same WB2 owner, then add source-proven R2D nature grouping.
+
+The R2D heightfield/Track-Core adapter itself is browser PASS:
+run 37085949746 · artifact 11260662426 · digest sha256:d4cc01bf63aec7c6c273bc5416738de26a8c881fc31dad88e3a3f15d9b74a13a.
+
+No locomotion integration until Motion SSOT neutral prototype receives Georg visual PASS.

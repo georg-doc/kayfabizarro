@@ -64,3 +64,43 @@ KFB Production Resource Registry R0.1:
 ## Next world gate
 
 Mount a small bounded P1/P2 procedural nature cluster into this clean WorldBuilder candidate and prepare the continuous-island terrain/form seam without introducing a second world or placement owner.
+
+
+## R2D WB2 browser proof · PASS
+
+Exact head:
+`57759ca9a3183cc91b2261cbceb635c1e71092cf`
+
+Workflow:
+`Procedural Test World R2D Browser`
+
+Run/job:
+`37085949746 / 111096180446`
+
+Result:
+**SUCCESS**
+
+Evidence artifact:
+- id `11260662426`
+- size 132,126 bytes
+- digest `sha256:d4cc01bf63aec7c6c273bc5416738de26a8c881fc31dad88e3a3f15d9b74a13a`
+
+Browser facts:
+- world id `r2d3`
+- zone id `r2d-island-3`
+- status `SOURCE_DERIVED_R2D_V0`
+- document format `kfb-worldbuilder-scene`
+- provider `kfb.r2d-worldbuilder-adapter/1`
+- terrain `R2D source-derived heightfield · seed 3`
+- Track Core road present
+- legacy play = null
+- `wi1-play.js` not loaded
+- Travel Globe not loaded
+- card-start not loaded
+- one WB2 canvas/renderer
+- 0 console errors
+- 0 page errors
+- 0 QA problems
+
+This proves the source-derived R2D heightfield/Track-Core adapter boots inside the real WB2 owner.
+It does not yet prove full standalone-R2D presentation parity.

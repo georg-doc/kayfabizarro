@@ -56,3 +56,13 @@ Implemented:
 
 Not yet full visual parity:
 underside body, water surfaces/waterfall, nature grouping and current building owner remain next world presentation work.
+
+
+## Browser proof
+The R2D→WB2 adapter now has real Chromium proof on head `57759ca9...`.
+
+Therefore the future locomotion playground no longer needs Hürth or Travel as its visual host.
+
+Current visual boundary:
+R2D shape/height/masks + Track Core road are integrated.
+Floating underside, water presentation, waterfall, source nature grouping and current building-family presentation are still additive world work.

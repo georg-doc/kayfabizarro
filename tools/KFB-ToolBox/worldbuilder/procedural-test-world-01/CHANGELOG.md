@@ -13,3 +13,9 @@
 - added source CI;
 - implementation head 4418c0a...: Procedural Test World workflow PASS and registry PASS;
 - no Stage, merge or Live promotion.
+
+- adopted Claude Design R2D v0 as visual/world-shape donor;
+- extracted exact source-derived R2D island plan/height/mask core with no renderer/camera/loop;
+- added WB2 R2D provider and Track Core road;
+- dedicated Chromium proof PASS on head 57759ca9...;
+- verified legacy wi1-play, Travel Globe and card-start were not loaded.

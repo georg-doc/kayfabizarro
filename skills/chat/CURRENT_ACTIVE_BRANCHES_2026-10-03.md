@@ -5,7 +5,7 @@ Purpose: one human-readable routing page so open Draft PRs do not look like equa
 ## ACTIVE · Motion / Locomotion
 
 ### Current
-PR #331 · **[CURRENT MOTION SSOT] Animation/Motion locomotion foundation**
+PR #333 · **[CURRENT MOTION SSOT] clean current-main convergence**
 
 Owner:
 KFB ToolBox / Animation-Motion authoring.
@@ -33,13 +33,14 @@ Travel/Combat integrate only after the central neutral prototype receives Georg 
 ## ACTIVE · World
 
 ### Current technical candidate
-PR #332 · **[CURRENT WORLD CANDIDATE] Procedural Test World 01**
+PR #332 · **[CURRENT WORLD CANDIDATE] Procedural Test World 01 · R2D in WB2**
 
 Base:
 current `main`.
 
 Purpose:
 - future default KFB movement/combat test world;
+- R2D v0 source-derived island height/masks + Track Core road are now browser PASS inside WB2;
 - no Travel Globe dependency;
 - no card lifecycle;
 - old `wi1-play` locomotion detached;
