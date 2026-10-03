@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-10-03",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -287,6 +287,47 @@
         "combat-arena",
         "wissens-pilli"
       ]
+    },
+    {
+      "id": "kfb-cartoon-brawl",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "declaredStatus": "canonical-draft",
+      "path": "skills/kfb-cartoon-brawl_v1.md",
+      "dependsOn": [
+        "kfb-cartoon-animation"
+      ],
+      "research": [
+        "skills/chat/workflows/KFB_CARTOON_BRAWL_SKILL_2026-10-03/RESEARCH_SOURCE_MATRIX.md",
+        "skills/chat/workflows/KFB_CARTOON_BRAWL_SKILL_2026-10-03/RESEARCH_BLOCK_B_WEAPON_TRANSITIONS.md"
+      ],
+      "loadWhen": [
+        "melee combat",
+        "cartoon brawl",
+        "weapon choreography",
+        "sword club staff or shield combat",
+        "hitbox hurtbox or swept melee contact",
+        "combat animation",
+        "paired takedown or grapple",
+        "crowd brawl",
+        "Mixamo or motion-library melee"
+      ],
+      "consumers": [
+        "combat-arena",
+        "kfb-town",
+        "future KFB minigames"
+      ],
+      "doesNotOwn": [
+        "consumer runtime movement",
+        "physics",
+        "damage or health",
+        "target selection",
+        "actor or rig truth",
+        "attachment-owner measurements",
+        "automatic Stage or Live promotion"
+      ],
+      "note": "Shared source-backed melee/choreography skill. Specializes kfb-cartoon-animation v2; Combat Arena and other consumers retain runtime ownership."
     },
     {
       "id": "production-inbox",

@@ -1,7 +1,7 @@
 # Consumer · Combat Arena ChatGPT Web
 
 Status: CURRENT CONSUMER SYNC
-Updated: 2026-09-13
+Updated: 2026-10-03
 
 Project implementation SSOT: `georg-doc/KFB-Combat-Arena`
 Local chat entry: `ChatGPT_web/START_HERE.md`
@@ -30,7 +30,8 @@ The current Combat task/slice must always be read from Combat's own `WSA_START.m
 Load only when relevant. Examples:
 
 - shared production/evidence rules through this router;
-- `skills/kfb-cartoon-animation_v2.md` for motion/animation/VFX work;
+- `skills/kfb-cartoon-animation_v2.md` for general motion/animation/VFX work;
+- `skills/kfb-cartoon-brawl_v1.md` for melee, weapon choreography, hit/contact windows, reactions, combos, paired interactions and crowd-brawl work;
 - Asset Librarian for discovery, while Combat remains responsible for final asset suitability.
 
 ## Return rule
