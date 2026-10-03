@@ -2104,3 +2104,15 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - Retained proven Settings/source/boot work for Driver v4 ↔ FB v5b + Ear v5; 80/80 repo PASS and 24/29 second browser gate.
 - Did not create the planned v5 Stage route. Existing public Combat C-MVP-A-R2 remains current.
 - Routed exactly one next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · Motion SSOT Ladder 02 convergence
+- Current Motion owner stays Draft PR #333 / `chatgpt-web/motion-ssot-convergence-2026-10-03`.
+- Full verified Motion Library v7 donor tree from PR #336 is converged into #333: 395 clips; Intake 07 +25, 16 duplicates rejected.
+- Ladder 02 exact evidence is now inside the central Motion owner.
+- Central profile/state owner supports the measured five-rung forward ladder `walk → jog → run.easy → run → sprint` and retains phase/handoff evidence.
+- Exact technical head `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`: 26/26 Node tests, syntax/JSON/reconcile smoke, Production Resource Registry and Asset Registry Refresh all PASS.
+- KCL `Walking_A`/`Running_A` deltas stay unresolved; no source silently wins.
+- No Stage, merge or Live promotion.
+- PR #336 becomes donor/history rather than a parallel current line.
+- Next gate: neutral ActionFigure WASD+Shift+Space freeplay; after Georg visual PASS, dock the same owner into procedural World #332, not Travel.

@@ -1363,3 +1363,30 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · Current Motion SSOT · Ladder 02 convergence PASS
+
+Current 3D Animation/Motion owner:
+- Draft PR **#333**
+- branch `chatgpt-web/motion-ssot-convergence-2026-10-03`
+- tested head `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`
+
+Current facts:
+- complete Motion Library v7 = **395 clips**;
+- Ladder 02 forward technical ladder = **walk → jog → run.easy → run → sprint**;
+- exact-head Motion Foundation = **26/26 Node tests PASS**, syntax/JSON/reconcile smoke PASS;
+- Production Resource Registry + Asset Registry Refresh PASS;
+- look choices remain HUMAN_OPEN; known backward/strafe/left-turn/run-stop gaps remain explicit.
+
+PR #336 is donor/history, not a second active Motion owner.
+
+Exactly one next Motion gate:
+**neutral ActionFigure / Rig_Medium freeplay with WASD + Shift + Space → Georg visual/freeplay PASS.**
+
+After PASS, the same central owner docks into procedural World **#332**. Do not use Travel Globe as the neutral Motion test host.
+
+Recovery:
+`tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/START_HERE.md`
+
+No Stage/Live publication belongs to this technical convergence checkpoint.

@@ -22,7 +22,7 @@ Draft PR:
 #333
 
 Current tested head:
-aa0166f166c303443a74c7bbae1b84f181fa0900
+aaf7f899caee381ede876a50276e0a3d2aaeb6c8
 
 ## What is proven
 
@@ -126,3 +126,54 @@ Reconcile the delivered ladder against KCL/Three.js and Motion Library facts, pr
 Then build the clean neutral ActionFigure prototype from the explicitly resolved profile only.
 
 Do not integrate Travel/Combat/Residents before that prototype passes Georg visually.
+
+
+## Ladder 02 convergence · CURRENT · 2026-10-03
+
+This section supersedes the earlier Ladder 01 / Motion Library v6 next-action notes above.
+
+### Exact current state
+
+- PR #333 / `chatgpt-web/motion-ssot-convergence-2026-10-03`
+- tested head `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`
+- Motion Library v7 donor subtree `ca6218cc0d79f9e75f1ffccc2715f60cecf0e2bb`
+- catalogue blob `7f333d0a1809ff5b299263a5e2ec21a29dba723c`
+- 395 clips
+- Ladder 02 evidence blob `59f49e9952b0d266c7cd435e85de601bd9da94f1`
+
+PR #336 is now a donor/evidence line, not a second current Motion owner.
+
+### Proven
+
+Forward technical ladder:
+`walk → jog → run.easy → run → sprint`
+
+Selected technical candidates:
+- walk `kfb_locomotion_walking_c`
+- jog `kfb_locomotion_jog_forward_a`
+- run.easy `kfb_locomotion_slow_run_a`
+- run `kfb_locomotion_medium_run_a`
+- sprint `kfb_locomotion_sprint_a`
+
+The adapter derives exact shared handoff boundaries from measured handoff speed / measured natural speed. It does not use the rounded display rates as runtime truth.
+
+CI:
+- ToolBox Motion State Foundation run `37094212032` / job `111120689860` · SUCCESS
+- 26/26 Node tests PASS
+- JavaScript syntax PASS
+- JSON contracts PASS
+- exact Ladder 02 reconcile smoke PASS
+- Production Resource Registry run `37094211990` · SUCCESS
+- Asset Registry Refresh run `37094211962` · SUCCESS
+
+### Deliberately unresolved
+
+The KCL same-clip cross-check for `Walking_A` and `Running_A` remains 2/2 unresolved because the methods produce different speeds. No source wins silently. This does **not** block the independently measured Ladder 02 forward technical candidate.
+
+Human visual choice remains open for jog/run/sprint. Directional gaps remain as recorded in Ladder 02.
+
+### Exactly one next action
+
+Build the neutral ActionFigure freeplay prototype on PR #333's central owner and use that real moving character to choose/accept the look.
+
+Do not return to Travel Globe as a test host. After Georg PASS, integrate the same owner into procedural World #332.

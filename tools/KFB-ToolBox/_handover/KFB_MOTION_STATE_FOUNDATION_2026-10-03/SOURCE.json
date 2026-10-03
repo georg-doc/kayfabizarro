@@ -37,7 +37,8 @@
       "schema": "kfb.motion-catalog.v1",
       "totalClips": 370,
       "locomotionGroupClips": 148,
-      "verifiedByThisChat": true
+      "verifiedByThisChat": true,
+      "status": "SUPERSEDED_BY_V7_IN_CURRENT_CANDIDATE"
     },
     "blenderLadderBrief": {
       "branch": "coworker/locomotion-ladder-01-brief-2026-10-03",
@@ -52,6 +53,27 @@
       "returnBlob": "565aa5327a3597189b53ac664a576b120055ba22",
       "reviewPlanBlob": "8eef67369a208182bd7f470bd9ec87113033121b",
       "status": "INTAKED_EXACT_BYTES_HUMAN_VISUAL_REVIEW_OPEN"
+    },
+    "motionLibraryV7": {
+      "sourcePr": 336,
+      "sourceHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "sourceTree": "ca6218cc0d79f9e75f1ffccc2715f60cecf0e2bb",
+      "catalogBlob": "7f333d0a1809ff5b299263a5e2ec21a29dba723c",
+      "version": "2026-10-03",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 395,
+      "intake07Added": 25,
+      "duplicatesRejected": 16,
+      "status": "CENTRAL_CANDIDATE_SOURCE_CLOSURE_VERIFIED"
+    },
+    "blenderLadder02": {
+      "sourcePr": 336,
+      "sourceHead": "42c734eeaedcf1b8ed29f854b48c265e4eef4e13",
+      "ladderBlob": "59f49e9952b0d266c7cd435e85de601bd9da94f1",
+      "returnBlob": "839c2f68bfcf67d3cc3e036fb433d36b122a689d",
+      "reviewPlanBlob": "b1eb3ae84521a7a717b00a064cd1cc2ca66818eb",
+      "reviewScriptBlob": "23696665e048d965ea5fbdb4a447857e20334558",
+      "status": "CENTRAL_EVIDENCE_INTAKED_TECHNICAL_FORWARD_READY_HUMAN_LOOK_OPEN"
     }
   },
   "protected": [
@@ -64,5 +86,7 @@
   ],
   "parallelBlenderMeasurement": true,
   "currentPr": 333,
-  "cleanBase": "main"
+  "cleanBase": "main",
+  "currentTestedHead": "aaf7f899caee381ede876a50276e0a3d2aaeb6c8",
+  "nextGate": "Neutral ActionFigure / Rig_Medium WASD+Shift+Space freeplay on central owner; Georg visual PASS; then procedural World #332."
 }

@@ -100,3 +100,56 @@ Measurement reconciliation:
 - Blender and KCL values are compared side-by-side;
 - no arbitrary tolerance silently selects a winner;
 - differing measurements remain UNRESOLVED until explicit resolution.
+
+
+## Checkpoint 3 · Ladder 02 central convergence
+
+Repository: georg-doc/kayfabizarro
+Draft PR: #333
+Branch: `chatgpt-web/motion-ssot-convergence-2026-10-03`
+Tested head: `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`
+
+### Motion Foundation workflow
+
+Run: `37094212032`
+Job: `111120689860`
+Conclusion: **SUCCESS**
+
+Steps:
+- JavaScript syntax: PASS
+- JSON contracts: PASS
+- State machine tests: **9/9 PASS**
+- Measurement reconciliation tests: **6/6 PASS**
+- Ladder 02 central-owner integration tests: **6/6 PASS**
+- Motion Lab owner integration tests: **5/5 PASS**
+- Exact Ladder 02 reconciliation smoke: PASS
+
+Total Node tests: **26/26 PASS · 0 fail**.
+
+Smoke output:
+- exact same-clip cross-check unresolved: 2 (`Walking_A`, `Running_A`);
+- same-clip `readyForProfile=false` by design;
+- Ladder forward order: `walk, jog, run.easy, run, sprint`;
+- `technicalForwardReady=true`;
+- `humanAccepted=false`.
+
+### Repository owner checks
+
+- KFB Production Resource Registry R0.1 · run `37094211990` · **SUCCESS**
+- Refresh KFB Asset Registry · run `37094211962` · **SUCCESS**
+
+### Repair note
+
+Before this final run, the adapter was corrected to derive handoff playback boundaries from the measured handoff speed divided by each measured natural speed. This avoids creating tiny artificial gaps from the donor JSON's rounded three-decimal display-rate fields.
+
+Final accepted technical head is the repaired head above. No second repair was required.
+
+### Product status
+
+- FOUNDATION_CORE = PASS
+- MOTION_LIBRARY_V7_CLOSURE = PASS
+- LADDER_02_FORWARD_TECHNICAL = PASS
+- HUMAN_LOOK_SELECTION = OPEN
+- NEUTRAL_ACTIONFIGURE_PROTOTYPE = NEXT
+- WORLD #332 CONSUMER INTEGRATION = AFTER HUMAN PASS
+- TRAVEL HOST USE = FORBIDDEN FOR THIS PROTOTYPE
