@@ -1,3 +1,23 @@
+## 2026-10-04 · Deck world-seed / Resident knowledge / Triplet binding
+
+### SOURCE LOCK
+- Added `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md` as the current MVP contract for the Hannover future-deck layer.
+- Canonical future-world mapping: Utopia → `forget_utopia`; Dystopia → `ignore_dystopia`; Protopia → `embrace_protopia`.
+- PDF/Card crop remains visual truth; per-Card JSON (`cardName`, `power`, `lore`, `grade`, `artworkPrompt`) is the semantic source layer.
+
+### WORLD / RESIDENT / CHATTER DECISION
+- Decks now define `WORLD_KNOWLEDGE_PROFILE` priors for biome, architecture, light/palette, media, Residents and ChatterBox register bias.
+- Cards define `CARD_SEMANTIC_SEED` refs for POI/micro-biome/Resident/media/Triplet projections.
+- Residents consume deck/card refs through `RESIDENT_KNOWLEDGE_PROFILE`; they do not clone full deck JSONs into NPC memory.
+- Existing ChatterBox semantic Triplet lineage is reused: Subject/SHOW IT → Connector/SPIN IT → Reframe/SELL IT, with player closure.
+- Preferred source order stays Card/context first, then Resident/worldview/social/local-history context; exact numeric weights remain consumer-test data.
+- Billboard, Resident dialogue and Fractal Almanac can share one canonical `deckId + cardNumber` identity.
+
+### PRE-ONE-SHOT
+- `WORLD-MULTI-ISLAND-CORRIDOR-01` now includes canonical deck resolution and reviewed Card seed sets for the three satellite worlds.
+- Added `DECK-WORLD-SEED-01` / Deck-Chatter source-lock proof: one Resident per future island, one neutral event, inspectable deck/Card refs, distinguishable semantic framing, no second dialogue/Card/world owner.
+- No Runtime, Stage or Live promotion.
+
 ## 2026-10-04 · Site/God Mode/Lean Memory GitHub persistence + One-Shot precheck
 
 ### ARCHITECTURE PERSISTENCE
