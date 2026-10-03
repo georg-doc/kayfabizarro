@@ -1,0 +1,90 @@
+{
+  "schema":"kfb.audio-stem-bed-pool/0.2",
+  "build":"AUDIO-STEM-BED-02-v0.1",
+  "date":"2026-10-03",
+  "owner":"KFB Audio & Soundscape Baseline v1",
+  "status":"IMPLEMENTATION_CANDIDATE",
+  "stageRoute":"https://kayfabizarro.pages.dev/kfb-hub/stage/audio-stem-bed-02/",
+  "donors":[
+    {
+      "id":"neutral","title":"Cyclical Warmth","mood":"NEUTRAL_WORLD","bpm":76,
+      "defaults":{"activity":0.35,"roadLift":0,"night":0},
+      "stems":[
+        ["drums","0 Drums.mp3","39525692c33c738aafa519661773fbd78c1fb21a",4354916],
+        ["bass","1 Bass.mp3","32b5ceae7b973f43055f46bbded3db19d4b13ade",3252740],
+        ["guitar","2 Guitar.mp3","9e3b0b83e5a237465e4ee5cc2661011916518419",2854004],
+        ["keyboard","3 Keyboard.mp3","38b44f8fca9af07cdea5aca1ccddd651856885d7",3836900],
+        ["percussion","4 Percussion.mp3","f4aa370df2b08979fc861b1168cdf29104dec4ac",4563980],
+        ["strings","5 Strings.mp3","a26456d848b4cd44b587f1176758c6743f8d5f9a",1452572],
+        ["synth","6 Synth.mp3","1736f60264d25ff74f753cba36261b8d3f203f20",3918932],
+        ["brass","7 Brass.mp3","54828793df169cedea834745a6f6c2611d10b28b",1731524]
+      ],
+      "stemDir":"Cyclical Warmth Stems (76BPM)"
+    },
+    {
+      "id":"awe","title":"Awe Before Drama","mood":"AWE_REVELATION","bpm":82,
+      "defaults":{"activity":0.28,"roadLift":0,"night":0.22},
+      "stemDir":"Awe Before Drama Stems (82BPM)",
+      "stems":[
+        ["drums","0 Drums.mp3","ea8a5b25403bfd79d07a41481d410ffc54606287",4739036],
+        ["bass","1 Bass.mp3","a1f2ebf5effe6e9f509b3689d80807696077fa52",3967316],
+        ["guitar","2 Guitar.mp3","db76cb96a91269acdbabdb402ded33a4e9c0f8fe",3127292],
+        ["keyboard","3 Keyboard.mp3","a6e5946d157f86895eedd994defa49d858cd5f6a",4255820],
+        ["strings","4 Strings.mp3","0560339c4cbc17f339a4fef9c2ee07bfd0e5f102",1638116],
+        ["synth","5 Synth.mp3","38104a60696f9aec80a26e46609c46506a817968",4165700],
+        ["other","6 Other.mp3","d6bfe497cf35802c6e129d856deb5f3c63582a97",4354148],
+        ["brass","7 Brass.mp3","788b24654a8967dbd01778b92ea7636a19ff8737",1510988],
+        ["woodwinds","8 Woodwinds.mp3","0e0351c3b55bb4bb393df5be2b37eab5541254a8",1369076]
+      ]
+    },
+    {
+      "id":"sunshine","title":"Buant Groove","mood":"SUNSHINE_FESTIVAL","bpm":105,
+      "defaults":{"activity":0.74,"roadLift":0.20,"night":0},
+      "stemDir":"Buant Groove Stems (105BPM)",
+      "stems":[
+        ["drums","2 Drums.mp3","969dff9ee23ff5bb083a39f6b45e91adbfab036f",5198420],
+        ["bass","3 Bass.mp3","86a3ffad81b47ea482e55e39c7d047050cb472ef",3273668],
+        ["guitar","4 Guitar.mp3","da1198148403dcb6dcd2901b466c8054c9e969f9",3954428],
+        ["keyboard","5 Keyboard.mp3","95885bed6a1b913fed4240bf7eac587cb30caf1d",4001588],
+        ["percussion","6 Percussion.mp3","5511da826c992006297acb31f2d94b415da724d0",5224892],
+        ["synth","7 Synth.mp3","efe12a0de94cb3524638e9cf58e4e81dad1b5cef",4299092],
+        ["other","8 Other.mp3","c1f340ebeff07f9b9658e7d7b53d642652522ab2",2526116],
+        ["brass","9 Brass.mp3","0f6e1e8953d79837fbc9fbf8c541a73d2bf736a3",1669964]
+      ]
+    },
+    {
+      "id":"grief","title":"Dorian Rests","mood":"GRIEF_LOSS","bpm":66,
+      "defaults":{"activity":0.12,"roadLift":0,"night":0.42},
+      "stemDir":"Dorian Rests Stems (66BPM)",
+      "stems":[
+        ["drums","2 Drums.mp3","dbaea933e1e6f6f0d98127b3dacaf58888f2a181",4071428],
+        ["bass","3 Bass.mp3","0125227d3fe7447cdf4f3dfab1fcaeafc6a9e10e",3363260],
+        ["guitar","4 Guitar.mp3","5c2112b8496d353736962b6194347a23019752ca",2230604],
+        ["keyboard","5 Keyboard.mp3","21dd2f28fb860ba0e2ea24307b01d4c00749e14d",3744116],
+        ["percussion","6 Percussion.mp3","4e29112529cb1a7105562b713d811b797a0120fd",3566612],
+        ["strings","7 Strings.mp3","ab32982dfdbc95eaa7f5582e86b595ec1f522f97",2677052],
+        ["synth","8 Synth.mp3","97acfe198438fb9fa1ee6b677067504eea7f76b0",3806852],
+        ["other","9 Other.mp3","76175050a1e5e4d3499b0f4e3afec279ddb58540",1721828],
+        ["brass","10 Brass.mp3","270231a88dcefda13196394b192e97dd470bae42",1393388],
+        ["woodwinds","11 Woodwinds.mp3","f75c49e1ecfcccbcc98e75965c96721f3017c97c",950996]
+      ]
+    },
+    {
+      "id":"boss","title":"Stalking Groove","mood":"DARK_BOSS_COMBAT","bpm":107,
+      "defaults":{"activity":0.88,"roadLift":0.30,"night":0.32},
+      "stemDir":"Stalking Groove Stems (107BPM)",
+      "stems":[
+        ["drums","2 Drums.mp3","7582d7554bda4c63d49f6fdcd9ff87ab9908660f",2605604],
+        ["bass","3 Bass.mp3","e9d4aa27a944d9ce94ac1edb9a2ba9fc3e2ede04",2274860],
+        ["guitar","4 Guitar.mp3","62cf07aec136f3083097b13bef847bfdf1bc1169",1670204],
+        ["keyboard","5 Keyboard.mp3","f655c0073d3133d538c4af4fcd75ca6652009b68",2545220],
+        ["percussion","6 Percussion.mp3","1ce4e2d4653e80516605363098c8b7f0825d3475",2287124],
+        ["strings","7 Strings.mp3","fb65ad3c11198cbfca4ac6c87caa23aaaad43841",832124],
+        ["synth","8 Synth.mp3","0f6893029a5f31fa59d5d285b010d55ae465aa07",2513636],
+        ["other","9 Other.mp3","0af8689f76173aaed1fe64812a836638229eb4c9",2110340],
+        ["brass","10 Brass.mp3","ffe54ff18b2160c6e5d594e63af69ddedfa1d867",1732364]
+      ]
+    }
+  ],
+  "pendingSignatureTheme":"BEETLE RUMBLE / KFB Signature Theme"
+}
