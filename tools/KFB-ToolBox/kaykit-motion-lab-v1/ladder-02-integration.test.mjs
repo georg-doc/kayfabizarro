@@ -80,11 +80,11 @@ test('old KCL same-clip values remain an unresolved cross-check, not an automati
   assert.equal(report.readyForProfile,false);
 });
 
-test('forward evidence is technically ready but whole-character prototype health stays blocked by directional gaps',()=>{
+test('forward evidence plus reverse are ready while whole-character health stays blocked by strafe gaps',()=>{
   const h=profileHealth(profile);
   assert.equal(profile.technicalForwardReady,true);
   assert.equal(h.readyForPrototype,false);
-  assert.ok(h.missing.includes('backward'));
+  assert.equal(h.missing.includes('backward'),false);
   assert.ok(h.missing.includes('strafe.left'));
   assert.ok(h.missing.includes('strafe.right'));
 });
