@@ -3,7 +3,7 @@ name: AUDIO-ARRANGE-01 donor bench QA
 on:
   push:
     branches:
-      - 'chatgpt-web/audio-arrange-01-2026-10-03'
+      - 'chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03'
     paths:
       - 'kfb-hub/stage/audio-arrange-01/**'
       - '.github/workflows/audio-arrange-stage.yml'
