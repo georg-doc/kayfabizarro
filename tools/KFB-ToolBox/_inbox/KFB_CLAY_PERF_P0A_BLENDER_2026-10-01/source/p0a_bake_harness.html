@@ -1,0 +1,210 @@
+<!doctype html><html><head><meta charset="utf-8"><title>P0A bake harness</title>
+<script type="importmap">{"imports":{"three":"/nm/three/build/three.module.js","three/addons/":"/nm/three/examples/jsm/"}}</script>
+<style>html,body{margin:0;background:#222}canvas{display:block}</style></head><body>
+<canvas id="c" width="1280" height="900"></canvas>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+import { softenGeometry } from '/src/k1h0/lab-clay/clay-soften.v1.js';
+import * as C8 from '/src/k1h0/lab-clay/clay-material.v8.js';
+import { makeClayRelief as relief8 } from '/src/k1h0/lab-clay/clay-relief.v2.js';
+import * as C10 from '/src/k2/lab-clay/clay-material.v10.js';
+import { makeClayRelief as relief2 } from '/src/k2/lab-clay/clay-relief.v2.js';
+import { makeToolReliefs } from '/src/k2/lab-clay/clay-relief.v4.js';
+import { TOOLMIX } from '/src/k2/lab-clay/clay-toolmix.v1.js';
+
+const H = { log: [] };
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(1280, 900, false);
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const loader = new GLTFLoader();
+const SCALE = 3.2 / 1.6499998569488525;   // K1 prop('building_A', {height: 3.2})
+H.SCALE = SCALE;
+
+const tex = (d, n = 1024) => { const t = new THREE.DataTexture(d, n, n, THREE.RGBAFormat); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.magFilter = THREE.LinearFilter; t.minFilter = THREE.LinearMipmapLinearFilter; t.generateMipmaps = true; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); t.needsUpdate = true; return t; };
+
+H.init = async () => {
+  // v8 / K1 golden uniforms (K1: relief seed 11, defaults = Hand 0.5, tile 1.6, print 4.5)
+  const r8 = relief8({ size: 1024, seed: 11 });
+  H.U8 = C8.makeClayUniforms(THREE, tex(r8.data));
+  // v10 / K2 uniforms (K2 stage: relief seed 31, tools seed 41, ToolOn 1, legacy 0, mottle .04, macro .5, lodK .6, stroke .7) at K1 scale
+  const r2 = relief2({ size: 1024, seed: 31 }); const relT = tex(r2.data);
+  const tools = await makeToolReliefs({ size: 1024, seed: 41 });
+  H.U10 = C10.makeClayUniforms(THREE, relT);
+  [H.U10.uClayToolA.value, H.U10.uClayToolB.value, H.U10.uClayToolC.value] = tools.maps.map(m => tex(m));
+  Object.assign(H.U10, {}); const U = H.U10;
+  U.uClayToolOn.value = 1; U.uClayLegacyStroke.value = 0; U.uClayMottle.value = 0.04; U.uClayMacro.value = 0.5; U.uClayLodK.value = 0.6; U.uClayStroke.value = 0.7;
+  U.uClayHand.value = 0.5; U.uClayTile.value = 1.6; U.uClayPrintTile.value = 4.5;
+  let printT = null;
+  try { printT = await C8.makePrintTexture(THREE, '/src/ext/Fingerprints01_3K.png', 2048); } catch (e) { H.log.push('print ' + e); }
+  for (const UU of [H.U8, H.U10]) { UU.uClayPrint.value = printT || relT; UU.uClayPrintOn.value = printT ? 1 : 0; }
+  H.U8.uClayPrint.value = printT || H.U8.uClayRelief.value;
+  H.printOn = !!printT;
+  H.src = await loader.loadAsync('/src/donor/building_A.gltf');
+  H.low = await loader.loadAsync('/work/building_A__uv1_lowpoly.glb');
+  return { print: !!printT, tools: tools.ms };
+};
+
+// exact clay-soften.v1 with K1 defaults; KFB_CLAY_UV rides through in the colour attribute (soften keeps position/uv/color)
+H.soften = () => {
+  let m = null; H.low.scene.traverse(o => { if (o.isMesh && !m) m = o; });
+  const g0 = m.geometry.clone();
+  const uv1 = g0.attributes.uv1; if (!uv1) throw new Error('no uv1 on low-poly');
+  const col = new Float32Array(uv1.count * 3); for (let i = 0; i < uv1.count; i++) { col[i * 3] = uv1.getX(i); col[i * 3 + 1] = uv1.getY(i); }
+  g0.setAttribute('color', new THREE.BufferAttribute(col, 3)); g0.deleteAttribute('uv1');
+  const t0 = performance.now();
+  const r = softenGeometry(THREE, g0, {});
+  const g = r.geometry, c = g.attributes.color, u = new Float32Array(c.count * 2);
+  for (let i = 0; i < c.count; i++) { u[i * 2] = c.getX(i); u[i * 2 + 1] = c.getY(i); }
+  g.setAttribute('uv1', new THREE.BufferAttribute(u, 2)); g.deleteAttribute('color');
+  H.soft = g;
+  // reference soften without the uv1 rider, to prove positions are identical
+  let ms = null; H.src.scene.traverse(o => { if (o.isMesh && !ms) ms = o; });
+  const ref = softenGeometry(THREE, ms.geometry.clone(), {}).geometry;
+  let maxd = 0; const same = ref.attributes.position.count === g.attributes.position.count;
+  H.posDelta = null;
+  g.computeBoundingBox();
+  return { levels: r.levels, tris: r.tris, welded: r.welded, fixed: r.fixed, ms: Math.round(performance.now() - t0), refTris: ref.attributes.position.count / 3, sameCount: same,
+    bbox: [g.boundingBox.min.toArray(), g.boundingBox.max.toArray()] };
+};
+
+H.compareRef = () => {   // compare the soften of the Blender low-poly copy with soften of the pinned glTF (sorted vertex positions)
+  let ms = null; H.src.scene.traverse(o => { if (o.isMesh && !ms) ms = o; });
+  const ref = softenGeometry(THREE, ms.geometry.clone(), {}).geometry;
+  const key = g => { const p = g.attributes.position.array, a = []; for (let i = 0; i < p.length; i += 3) a.push([p[i], p[i + 1], p[i + 2]]); a.sort((x, y) => x[0] - y[0] || x[1] - y[1] || x[2] - y[2]); return a; };
+  const A = key(ref), B = key(H.soft); let maxd = 0;
+  if (A.length !== B.length) return { refVerts: A.length, softVerts: B.length };
+  for (let i = 0; i < A.length; i++) maxd = Math.max(maxd, Math.abs(A[i][0] - B[i][0]), Math.abs(A[i][1] - B[i][1]), Math.abs(A[i][2] - B[i][2]));
+  return { verts: A.length, maxAbsDelta: maxd };
+};
+
+H.exportSoft = async () => {
+  let g = H.soft.clone(); if (g.attributes.claySeed) g.deleteAttribute('claySeed'); const nv0 = g.attributes.position.count; g = mergeVertices(g, 1e-6); H.mergeInfo = { before: nv0, after: g.attributes.position.count, indices: g.index.count };
+  const mesh = new THREE.Mesh(g, new THREE.MeshStandardMaterial()); mesh.name = 'building_A__kfb_clay_p0a';
+  const ex = new GLTFExporter();
+  const buf = await ex.parseAsync(mesh, { binary: true });
+  const b = new Uint8Array(buf); let s = ''; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+  return btoa(s);
+};
+H.getMerge = () => H.mergeInfo;
+
+// ---------- materials ----------
+const v10House = () => { const m = C10.makeClayMaterial(THREE, H.U10, { src: H.srcMat, profile: { ...C10.PROFILES.house, tools: TOOLMIX.house, legacy: 0 } }); return m; };
+const v8House = () => C8.makeClayMaterial(THREE, H.U8, { src: H.srcMat, profile: 'house' });
+
+// ---------- bake ----------
+const BAKE_VS = `
+attribute vec2 uv1;
+`;
+H.bake = async (seed, N = 1024, mode = 'midfar') => {
+  let ms = null; H.src.scene.traverse(o => { if (o.isMesh && !ms) ms = o; }); H.srcMat = ms.material;
+  const g = C10.seedGeometry(THREE, H.soft.clone(), seed);
+  const m = v10House(); m.side = THREE.DoubleSide;
+  const prevOBC = m.onBeforeCompile;
+  m.onBeforeCompile = (sh, r) => {
+    prevOBC(sh, r);
+    sh.uniforms.uBakeOut = { value: 0 };
+    sh.vertexShader = sh.vertexShader.replace('void main() {', 'attribute vec2 kfbBakeUV;\nvoid main() {')
+      .replace('#include <fog_vertex>', '#include <fog_vertex>\n gl_Position = vec4(kfbBakeUV * 2.0 - 1.0, 0.0, 1.0);');
+    sh.fragmentShader = 'uniform int uBakeOut;\n' + sh.fragmentShader
+      .replace('#include <normal_fragment_maps>', 'vec3 kfbBase = diffuseColor.rgb;\n#include <normal_fragment_maps>')
+      .replace('#include <dithering_fragment>', `#include <dithering_fragment>
+  {
+    float fd = gl_FrontFacing ? 1.0 : -1.0;
+    vec3 nV = normal * fd;
+    mat3 M3 = mat3(modelMatrix); float scl = length(M3[0]);
+    vec3 nO = normalize(transpose(M3) * (transpose(mat3(viewMatrix)) * nV) / scl);
+    vec3 N0 = normalize(vClayN);
+    vec3 q0 = dFdx(vClayP), q1 = dFdy(vClayP); vec2 st0 = dFdx(vKfbUV), st1 = dFdy(vKfbUV);
+    vec3 q1p = cross(q1, N0), q0p = cross(N0, q0);
+    vec3 T = q1p * st0.x + q0p * st1.x, B = q1p * st0.y + q0p * st1.y;
+    float det = dot(N0, cross(q0, q1)); float sg = det < 0.0 ? -1.0 : 1.0; T *= sg; B *= sg;
+    float dm = max(dot(T, T), dot(B, B)); float s = dm == 0.0 ? 0.0 : inversesqrt(dm); T *= s; B *= s;
+    vec3 ts = inverse(mat3(T, B, N0)) * nO;
+    if (uBakeOut == 0) gl_FragColor = vec4(ts, 1.0);
+    else if (uBakeOut == 1) gl_FragColor = vec4(roughnessFactor, nO.x, nO.y, 1.0);
+    else gl_FragColor = vec4(diffuseColor.rgb / max(kfbBase, vec3(1e-4)), 1.0);
+  }`);
+    sh.vertexShader = sh.vertexShader.replace('void main() {', 'varying vec2 vKfbUV;\nvoid main() {\n vKfbUV = kfbBakeUV;');
+    sh.fragmentShader = 'varying vec2 vKfbUV;\n' + sh.fragmentShader;
+    m.userData.bakeSh = sh;
+  };
+  m.customProgramCacheKey = () => 'kfb-p0a-bake';
+  g.setAttribute('kfbBakeUV', g.attributes.uv1.clone());
+  const mesh = new THREE.Mesh(g, m); mesh.scale.setScalar(SCALE); mesh.frustumCulled = false;
+  const scene = new THREE.Scene(); scene.add(mesh);
+  const cam = new THREE.PerspectiveCamera(34, 1, 0.05, 100); cam.position.set(0, 3, 8); cam.lookAt(0, 1.5, 0);
+  // mid/far only: near microdetail stays procedural in Web
+  const U = H.U10, keep = { p: U.uClayPrintOn.value, c: U.uClayCrack.value, g: U.uClayGrain.value };
+  if (mode === 'midfar') { U.uClayPrintOn.value = 0; U.uClayCrack.value = 0; U.uClayGrain.value = 0; }
+  const rt = new THREE.WebGLRenderTarget(N, N, { type: THREE.FloatType, format: THREE.RGBAFormat, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter });
+  const out = {};
+  const prevTM = renderer.toneMapping, prevCS = renderer.outputColorSpace;
+  renderer.toneMapping = THREE.NoToneMapping; renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+  for (const [k, id] of [['normal', 0], ['rough', 1], ['tint', 2]]) {
+    renderer.setRenderTarget(rt); renderer.setClearColor(0x000000, 0); renderer.clear();
+    renderer.compile(scene, cam);
+    if (m.userData.bakeSh) m.userData.bakeSh.uniforms.uBakeOut.value = id;
+    renderer.render(scene, cam);
+    const px = new Float32Array(N * N * 4); renderer.readRenderTargetPixels(rt, 0, 0, N, N, px);
+    const b = new Uint8Array(px.buffer); let s = ''; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+    out[k] = btoa(s);
+  }
+  renderer.setRenderTarget(null); renderer.toneMapping = prevTM; renderer.outputColorSpace = prevCS;
+  U.uClayPrintOn.value = keep.p; U.uClayCrack.value = keep.c; U.uClayGrain.value = keep.g;
+  rt.dispose();
+  return { N, seed, mode, ...out };
+};
+
+// ---------- matched views (K1 'day' light) ----------
+const MOOD = { sun: '#fff4e6', sunI: 2.9, el: 32, az: -38, hemiS: '#d6e8f6', hemiG: '#d9a27a', hemiI: 0.95, sky: '#96bede' };
+const stage = () => {
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(MOOD.sky);
+  const el = THREE.MathUtils.degToRad(MOOD.el), az = THREE.MathUtils.degToRad(MOOD.az);
+  const sun = new THREE.DirectionalLight(MOOD.sun, MOOD.sunI); sun.position.set(Math.sin(az) * Math.cos(el) * 60, Math.sin(el) * 60, Math.cos(az) * Math.cos(el) * 60);
+  sun.castShadow = true; sun.shadow.mapSize.set(4096, 4096); Object.assign(sun.shadow.camera, { left: -8, right: 8, top: 8, bottom: -8, near: 20, far: 110 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.03;
+  const fill = new THREE.DirectionalLight('#ffe6d6', MOOD.sunI * 0.15); fill.position.copy(sun.position).multiplyScalar(-1).setY(20);
+  scene.add(sun, sun.target, fill, new THREE.HemisphereLight(MOOD.hemiS, MOOD.hemiG, MOOD.hemiI));
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.MeshStandardMaterial({ color: '#cdbfae', roughness: 0.95 })); ground.rotation.x = -Math.PI / 2; ground.position.y = -0.002; ground.receiveShadow = true; scene.add(ground);
+  return scene;
+};
+H.views = {
+  facade6m: { d: 6.0, el: 30, az: 28, ty: 1.6 },
+  closeFacade: { d: 2.4, el: 12, az: 20, ty: 2.1 },
+  roof: { d: 2.6, el: 55, az: 35, ty: 3.0 },
+  base: { d: 2.2, el: 8, az: -30, ty: 0.45 }
+};
+H.render = async (variant, viewKey, opt = {}) => {
+  const scene = stage();
+  let ms = null; H.src.scene.traverse(o => { if (o.isMesh && !ms) ms = o; }); H.srcMat = ms.material;
+  let obj;
+  if (variant === 'source') { obj = new THREE.Mesh(ms.geometry, ms.material); }
+  else if (variant === 'k1v8') { obj = new THREE.Mesh(C8.seedGeometry(THREE, H.soft.clone(), opt.seed ?? 101), v8House()); }
+  else if (variant === 'k2v10' || variant === 'k2v10midfar') {
+    obj = new THREE.Mesh(C10.seedGeometry(THREE, H.soft.clone(), opt.seed ?? 101), v10House());
+  }
+  else if (variant === 'baked') { const gl = await loader.loadAsync(opt.url); gl.scene.traverse(o => { if (o.isMesh) obj = o; }); obj = obj.clone(); H.bakedMat = obj.material;
+    if (opt.tag) { const tl = new THREE.TextureLoader(); const ld = async f => { const t = await tl.loadAsync('/out/building_A__kfb-clay-k2-' + f + '-' + opt.tag + '.png'); t.flipY = false; t.channel = 1; t.colorSpace = THREE.NoColorSpace; return t; };
+      obj.material = obj.material.clone(); obj.material.normalMap = await ld('normal'); obj.material.roughnessMap = obj.material.metalnessMap = await ld('roughness'); obj.material.needsUpdate = true; }
+    H.bakedInfo = { normalScale: obj.material.normalScale.toArray(), sheen: obj.material.sheen, sheenColor: obj.material.sheenColor.toArray(), rough: obj.material.roughness, nmChannel: obj.material.normalMap && obj.material.normalMap.channel, side: obj.material.side, tangent: !!obj.geometry.attributes.tangent }; }
+  const U = H.U10, keep = { p: U.uClayPrintOn.value, c: U.uClayCrack.value, g: U.uClayGrain.value };
+  if (variant === 'k2v10midfar') { U.uClayPrintOn.value = 0; U.uClayCrack.value = 0; U.uClayGrain.value = 0; }
+  obj.scale.setScalar(SCALE); obj.castShadow = obj.receiveShadow = true;
+  if (opt.wire) { obj.material = new THREE.MeshBasicMaterial({ color: '#222', wireframe: true }); scene.background = new THREE.Color('#f4f1ea'); }
+  scene.add(obj);
+  const v = H.views[viewKey], el = THREE.MathUtils.degToRad(v.el), az = THREE.MathUtils.degToRad(v.az);
+  const cam = new THREE.PerspectiveCamera(34, 1280 / 900, 0.05, 200);
+  const t = new THREE.Vector3(0, v.ty, 0);
+  cam.position.set(t.x + Math.sin(az) * Math.cos(el) * v.d, t.y + Math.sin(el) * v.d, t.z + Math.cos(az) * Math.cos(el) * v.d); cam.lookAt(t);
+  renderer.setRenderTarget(null); renderer.render(scene, cam); renderer.render(scene, cam);
+  const url = canvas.toDataURL('image/png');
+  U.uClayPrintOn.value = keep.p; U.uClayCrack.value = keep.c; U.uClayGrain.value = keep.g;
+  const info = { calls: renderer.info.render.calls, tris: renderer.info.render.triangles, baked: variant === 'baked' ? H.bakedInfo : undefined };
+  return { url, info };
+};
+window.H = H; window.__ready = true;
+</script></body></html>

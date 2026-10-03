@@ -1,0 +1,276 @@
+{
+ "schema": "kfb.clay-perf.p0a.source/1",
+ "date": "2026-10-01",
+ "gate": "CLAY-PERF-P0A",
+ "lane": "Blender MCP / Coworker",
+ "handoff": {
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/world-corridor-01-2026-10-01",
+  "head": "bcb49d241e1a3ee7c0d7e51c273bcf4802bb43bd",
+  "path": "tools/KFB-ToolBox/worldbuilder/world-corridor-01/CLAY_PERF_P0A_GITHUB_HANDOFF_2026-10-01.md"
+ },
+ "base": "d78009c2de75b85a20060485cb591282aaf3cf54",
+ "pins_verified_git_blob": {
+  "building_A.gltf": {
+   "ref": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+   "blob": "71c203c264e37be2e8529459e99d077c4b22b1e4",
+   "match": true
+  },
+  "building_A.bin": {
+   "ref": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+   "blob": "bdada5abd0bf5d5e42d22b9fad38b5cb49e24efd",
+   "match": true
+  },
+  "citybits_texture.png": {
+   "ref": "2ff8b350beefe02912bbff6eeeead3882e583d08",
+   "blob": "ffffc8998d30b32bdfa6761f33c87bcdfd0ba07f",
+   "match": true
+  },
+  "LIVING_CLAY.md": {
+   "ref": "d78009c",
+   "blob": "9f321f5c6b9beae29bd9838712f9d04ff5e6f7e0",
+   "match": true
+  },
+  "clay-material.v10.js": {
+   "ref": "d78009c",
+   "blob": "d994a9b656131be3b7a13d45edcb4253d34f3620",
+   "match": true
+  },
+  "clay-toolmix.v1.js": {
+   "ref": "d78009c",
+   "blob": "b9a039ccfb90ea04910db3cf05928817d92e9399",
+   "match": true
+  },
+  "Fingerprints01_3K.png": {
+   "ref": "d78009c",
+   "blob": "8f157141a00c8a2b1e29fe90facc407eae3ada58",
+   "match": true
+  },
+  "KFB_CLAYMATION_STYLE_SSOT.md": {
+   "ref": "d7760278d2b271c61ce5dd177aa4111068291a57",
+   "blob": "435b9ca51ce23b1d8c36c7cc89c65c2b1e03b65a",
+   "match": true
+  },
+  "KFB_CLAY_GOLDEN_SAMPLE_MATRIX.md": {
+   "ref": "d7760278d2b271c61ce5dd177aa4111068291a57",
+   "blob": "5d37512ed6583c1f0f005397fe0721dbbfb8bae5",
+   "match": true
+  }
+ },
+ "modules_used": {
+  "soften": "tools/KFB-ToolBox/_inbox/KFB Knet-Katalog K1 + Hirnwelt Claymation Reference/KFB_K1_H0_CODEBASE_2026-09-29/lab-clay/clay-soften.v1.js @ d78009c (K1 defaults: maxEdge 0.18, 3 levels, maxTris 90000, Taubin 0.5/-0.53 x8, lump 0.018/1.6)",
+  "golden": "K1_H0_CODEBASE lab-clay/clay-material.v8.js + clay-relief.v2.js (seed 11), profile house, K1 uniform defaults",
+  "k2": "K2 lab-clay/clay-material.v10.js + clay-relief.v2.js (seed 31) + clay-relief.v4.js (tools seed 41) + clay-toolmix.v1.js house + clay-profiles.v2.js house, legacy 0",
+  "three": "0.160.0 (npm)"
+ },
+ "v10_globals_used": {
+  "uClayToolOn": 1,
+  "uClayLegacyStroke": 0,
+  "uClayMottle": 0.04,
+  "uClayMacro": 0.5,
+  "uClayLodK": 0.6,
+  "uClayStroke": 0.7,
+  "uClayHand": 0.5,
+  "uClayTile": 1.6,
+  "uClayPrintTile": 4.5,
+  "note": "K2 stage values, but Hand/Tile/PrintTile at the K1 Golden scale (K2 stage uses x3 for its track world). Assumption, see RETURN."
+ },
+ "bake": {
+  "method": "exact v10 fragment code rendered in UV space (gl_Position = KFB_CLAY_UV) in three.js 0.160, headless Chromium/SwiftShader, float render target, 1024^2",
+  "midfarOnly": {
+   "uClayPrintOn": 0,
+   "uClayCrack": 0,
+   "uClayGrain": 0
+  },
+  "objectScale": 1.9393941075348804,
+  "objectScaleNote": "K1 prop('building_A',{height:3.2}); v10 detail size is world-scale bound",
+  "seeds": {
+   "v1": 101,
+   "v2": 102,
+   "v3": 103,
+   "v4": 104
+  },
+  "seedNote": "C10.seedGeometry(seed) -> claySeed attribute, as K1 clayify",
+  "normalEncoding": "tangent space in the three.js derivative tangent frame (getTangentFrame on TEXCOORD_1, no TANGENT attribute), y stored negated for GLTFLoader normalScale.y=-1, direction normalised",
+  "roughness": "glTF metallicRoughness: G = absolute roughness after v10 (base 0.98 x oil/cavity/dent), B = 0 metal",
+  "dilation": "nearest covered texel (scipy EDT), up to 24 px, beyond = flat"
+ },
+ "source_facts": {
+  "blender": "5.0.1",
+  "object": "building_A",
+  "mesh": "Cube.938",
+  "materials": [
+   "citybits_texture"
+  ],
+  "material_slots": 1,
+  "vertices": 1392,
+  "polygons": 828,
+  "triangles": 828,
+  "uv_maps": [
+   "UVMap"
+  ],
+  "bounds_blender_zup": {
+   "min": [
+    -1.0,
+    -1.0,
+    0.0
+   ],
+   "max": [
+    1.0,
+    1.0,
+    1.6499998569488525
+   ]
+  },
+  "origin": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "rotation": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "scale": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "children": [],
+  "custom_props": {},
+  "empties": []
+ },
+ "uv1": {
+  "uv1_area_fraction": 0.447,
+  "texels_covered_1024": 469383,
+  "texels_overlap_1024": 0,
+  "name": "KFB_CLAY_UV",
+  "gltf": "TEXCOORD_1",
+  "three": "uv1 / texture.channel = 1",
+  "texel_cm_at_K1_scale": {
+   "mean": 1.41,
+   "p5": 0.74,
+   "p50": 1.41,
+   "p95": 3.17
+  }
+ },
+ "candidate": {
+  "glb": "building_A__kfb-clay-k2-baked-p0a.glb",
+  "triangles": 52992,
+  "vertices": 32669,
+  "bounds_native_yup": {
+   "min": [
+    -1.03167,
+    -0.03193,
+    -1.00776
+   ],
+   "max": [
+    1.0115,
+    1.67261,
+    1.02763
+   ]
+  },
+  "origin": [
+   0,
+   0,
+   0
+  ],
+  "material": "citybits_texture on TEXCOORD_0 (unchanged) + normal v1 + metallicRoughness v1 on TEXCOORD_1 + KHR_materials_sheen (0.12 x #fff1e0, roughness 0.85)"
+ },
+ "map_stats": {
+  "v1": {
+   "seed": 101,
+   "coverage": 0.4467334747314453,
+   "rough": [
+    0.7063351225852966,
+    0.9800000190734863,
+    0.9800000190734863
+   ],
+   "tint": [
+    0.6625912374258042,
+    0.9983210861682892,
+    1.0231892669200897
+   ]
+  },
+  "v2": {
+   "seed": 102,
+   "coverage": 0.4467334747314453,
+   "rough": [
+    0.7035104924440384,
+    0.9800000190734863,
+    0.9800000190734863
+   ],
+   "tint": [
+    0.6639529645442963,
+    1.0036190748214722,
+    1.0265265727043151
+   ]
+  },
+  "v3": {
+   "seed": 103,
+   "coverage": 0.4467334747314453,
+   "rough": [
+    0.7122191852331161,
+    0.9800000190734863,
+    0.9800000190734863
+   ],
+   "tint": [
+    0.6642635065317154,
+    0.9989733099937439,
+    1.022577008008957
+   ]
+  },
+  "v4": {
+   "seed": 104,
+   "coverage": 0.4467334747314453,
+   "rough": [
+    0.7040422922372818,
+    0.9800000190734863,
+    0.9800000190734863
+   ],
+   "tint": [
+    0.6582546758651734,
+    0.9923589825630188,
+    1.0166855669021606
+   ]
+  }
+ },
+ "pixel_metrics": {
+  "facade6m": {
+   "MAE_baked_vs_k1v8": 0.0184,
+   "MAE_baked_vs_k2v10": 0.0109,
+   "MAE_baked_vs_k2v10midfar": 0.0105,
+   "detail_std_k1v8": 0.0339,
+   "detail_std_k2v10": 0.0372,
+   "detail_std_k2v10midfar": 0.0369,
+   "detail_std_baked": 0.0316
+  },
+  "closeFacade": {
+   "MAE_baked_vs_k1v8": 0.0388,
+   "MAE_baked_vs_k2v10": 0.0314,
+   "MAE_baked_vs_k2v10midfar": 0.029,
+   "detail_std_k1v8": 0.0348,
+   "detail_std_k2v10": 0.0415,
+   "detail_std_k2v10midfar": 0.04,
+   "detail_std_baked": 0.0235
+  },
+  "roof": {
+   "MAE_baked_vs_k1v8": 0.0409,
+   "MAE_baked_vs_k2v10": 0.0267,
+   "MAE_baked_vs_k2v10midfar": 0.0246,
+   "detail_std_k1v8": 0.026,
+   "detail_std_k2v10": 0.0324,
+   "detail_std_k2v10midfar": 0.0305,
+   "detail_std_baked": 0.0088
+  },
+  "base": {
+   "MAE_baked_vs_k1v8": 0.0277,
+   "MAE_baked_vs_k2v10": 0.0329,
+   "MAE_baked_vs_k2v10midfar": 0.031,
+   "detail_std_k1v8": 0.0204,
+   "detail_std_k2v10": 0.0297,
+   "detail_std_k2v10midfar": 0.0277,
+   "detail_std_baked": 0.0141
+  }
+ }
+}

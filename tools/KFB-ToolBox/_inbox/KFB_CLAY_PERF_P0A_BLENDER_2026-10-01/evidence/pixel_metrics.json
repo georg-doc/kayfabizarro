@@ -1,0 +1,38 @@
+{
+ "facade6m": {
+  "MAE_baked_vs_k1v8": 0.0184,
+  "MAE_baked_vs_k2v10": 0.0109,
+  "MAE_baked_vs_k2v10midfar": 0.0105,
+  "detail_std_k1v8": 0.0339,
+  "detail_std_k2v10": 0.0372,
+  "detail_std_k2v10midfar": 0.0369,
+  "detail_std_baked": 0.0316
+ },
+ "closeFacade": {
+  "MAE_baked_vs_k1v8": 0.0388,
+  "MAE_baked_vs_k2v10": 0.0314,
+  "MAE_baked_vs_k2v10midfar": 0.029,
+  "detail_std_k1v8": 0.0348,
+  "detail_std_k2v10": 0.0415,
+  "detail_std_k2v10midfar": 0.04,
+  "detail_std_baked": 0.0235
+ },
+ "roof": {
+  "MAE_baked_vs_k1v8": 0.0409,
+  "MAE_baked_vs_k2v10": 0.0267,
+  "MAE_baked_vs_k2v10midfar": 0.0246,
+  "detail_std_k1v8": 0.026,
+  "detail_std_k2v10": 0.0324,
+  "detail_std_k2v10midfar": 0.0305,
+  "detail_std_baked": 0.0088
+ },
+ "base": {
+  "MAE_baked_vs_k1v8": 0.0277,
+  "MAE_baked_vs_k2v10": 0.0329,
+  "MAE_baked_vs_k2v10midfar": 0.031,
+  "detail_std_k1v8": 0.0204,
+  "detail_std_k2v10": 0.0297,
+  "detail_std_k2v10midfar": 0.0277,
+  "detail_std_baked": 0.0141
+ }
+}
