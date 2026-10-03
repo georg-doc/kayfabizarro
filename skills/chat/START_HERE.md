@@ -1377,3 +1377,23 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · KFB Cartoon VFX semantic skill
+
+For KFB work involving combat impacts, clay particles, weapon trails, landing/skid feedback, racer dust/drift/scrape/boost, vehicle enter/exit concealment, flight speed lines/contrails/near-ground disturbance, water wake/splash, fire/smoke or comic onomatopoeia, load:
+
+- `skills/kfb-cartoon-vfx_v1.md` — provider-neutral, engine-neutral VFX semantic/authoring skill.
+- `skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/START_HERE.md` — bounded slice owner/recovery.
+- `skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/RESEARCH_SOURCE_MATRIX.md` — direct KFB/upstream research evidence.
+- `skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/TEST_REPORT.md` — 71/71 semantic/content validation and recovery evidence.
+
+Routing rules:
+- gameplay/physics/collision/contact truth remains upstream; VFX consumes it and must not create a second owner;
+- reuse current KFB Combat, Travel/TinySkies and clay-particle renderers before creating a new renderer;
+- primary KFB clay particle syllables are BALL / DROP / CHIP, with RIBBON / RING-SHEET / MASK-SPRITE / GLYPH / SCREEN as specialized peer primitives;
+- distinguish confirmed target/world contact, bounce, scrape and near miss;
+- comic typography is a first-class VFX feedback channel, not generic UI text;
+- donor source objects/frames must be inspected in isolation before integration; numbered filenames are not animation proof.
+
+Current skill state: canonical-draft / CURRENT_REFERENCE on branch `chatgpt-web/kfb-vfx-language-skill-01-2026-10-03`. No new global VFX runtime owner, Stage publication, Live promotion or Georg visual acceptance is implied by the documentation/research checkpoint.
