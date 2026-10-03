@@ -2163,3 +2163,11 @@ Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-a
 - Recorded `SEEN=0`, no substitute creator sources, no `NOT_SHOWN` claims without viewing, and no placeholder contact sheets.
 - Next productive action is a visual-video-capable Web/Work continuation on the same original sources; only a completed visual return hands timestamped comparison moments to Blender MCP.
 - No runtime, animation, controller, PR #344, main, Stage, Cloudflare or Live state changed.
+
+
+# 2026-10-03 · KayKit Creator scan · plugin requirement removed
+
+- Georg declined to install an unfamiliar third-party video-analysis plugin without prior clarity on provider/service, possible costs, permissions/data access and relevant terms.
+- Corrected the blocked scan Return: no plugin installation is required from Georg.
+- vidIQ is retained only as an `OPTIONAL / UNAPPROVED` future route and must be evaluated separately before any recommendation to connect it.
+- The current authoritative action is to leave the SOURCE_BLOCKED return parked until an already approved or separately reviewed visual-video capability is available.
