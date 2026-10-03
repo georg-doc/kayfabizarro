@@ -1045,3 +1045,60 @@ Boundary:
 
 Exactly one product gate remains:
 `GEORG_EYERIG_CONTROL_R2_VIS_01`.
+
+## 2026-10-03 · EYE-RIG-BATCH-VARIANTS-01
+
+Goal:
+register the already-audited KayKit character palette families inside the existing EyeRig workbench without duplicating geometry rigs or creating a second appearance owner.
+
+Implementation head before evidence commit:
+`d6c9d28d0861c1e29fa23f2a9cc6fc9094456c48`.
+
+Source owner:
+- Resident Atlas variant SSOT: PR #330 / `character-variant-requirements.v1.json`;
+- source revision pinned there: `7600fa9e29d396eaa9c5a11532e63cdad7689e75`;
+- EyeRig remains KFB ToolBox / Rigging PR #104.
+
+### Focused readback checks
+
+**20/20 PASS**
+
+- app JavaScript syntax parse: PASS;
+- static-check JavaScript syntax parse: PASS;
+- appearance manifest schema: PASS;
+- texture families: **25/25**;
+- source appearance variants: **56/56**;
+- manifest variant/path/blob/revision exact match against PR #330 SSOT: **56/56**;
+- every family maps to at least one current EyeRig geometry actor: **25/25**;
+- mapped actor ids resolve in current Medium/Large catalogs: PASS;
+- unique mapped geometry actors: **31**;
+- Magical Girl: **A / B / C / D** registered on shared `magical-girl` geometry;
+- Driver: **BASE / B** registered on shared `driver` geometry;
+- Paladin King precedent remains fixed B and is not duplicated by the generic palette manifest;
+- Farmers: A/B source appearances registered, runtime switch intentionally source-gated because exact A/B texture → Farmer_A/Farmer_B mapping remains unproven;
+- Appearance selector UI present;
+- appearance manifest runtime loading present;
+- palette switch reuses the existing `applyActorTextureOverride()` owner;
+- actor loading uses an effective appearance wrapper while EyeRig profile storage remains keyed by the original geometry actor id;
+- LocalStorage key remains `kfb.toolbox.eye-rig-batch.v0`;
+- `appearanceByActor` is an additive field; no profile clear/reset/migration;
+- actor catalogs remain **55 Medium / 8 Large**.
+
+### Source / architecture boundary
+
+Appearance is deliberately separate from eye geometry:
+- no duplicate skeleton actor is invented for Magic Girl A/B/C/D, Driver B, etc.;
+- one existing geometry actor keeps one EyeRig geometry profile;
+- the selected palette is applied as an immutable source texture override;
+- switching palettes reloads the same geometry and lets the existing face-color/lid-color path resample against that appearance;
+- existing browser profile values remain intact.
+
+### Current coverage
+
+- **24/25** texture families are runtime-selectable;
+- **1/25** is registered but source-gated: Farmers;
+- **56** source appearance textures are represented in the manifest;
+- **31** current EyeRig geometry actors expose those families.
+
+No browser/public visual PASS is claimed by these static/readback checks.
+
