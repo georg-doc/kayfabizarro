@@ -125,8 +125,8 @@
     "loaderFocused": "8/8 PASS"
   },
   "visualReview": {
-    "status": "LARGE_ACCEPTED_LID_COLOR_VISUAL_CHECK",
-    "nextGate": "Reload Stage and check that the four Large actors keep Georg's accepted profiles and no longer share the pink lid fallback."
+    "status": "LEGACY_17_HEAD_REVIEW_READY",
+    "nextGate": "KLR-EYE-VIS-01"
   },
   "currentEvidenceHead": "40c2f920a96ea00bf99593610a49a646b2e0873c",
   "calibrationCheckpoint": "6f7d7988849cf0c74a6551a33ee422d8584c87c2",
@@ -255,5 +255,31 @@
     "sampler": "tools/KFB-ToolBox/eye-rig-batch/lib/face-color-sampler.v1.js",
     "behavior": "sample actor head/face texture near eye host; EyeRig v6 darkens sampled base",
     "gothGirl": "explicit face color remains authoritative"
+  },
+  "legacyVisualReview": {
+    "status": "STAGE_MIRRORED_HUMAN_REVIEW_OPEN",
+    "implementationHead": "85e332b84f83b0e527c0272999e6e97bd56f7a7a",
+    "staticContractHead": "27392d5e2fbe171d4186a7b74ff3c96b46ca0a54",
+    "evidenceHead": "df4cd3c112458faf3657521c53885a093a9be7e0",
+    "stageHead": "26a17e973f7548f8df39cdcf1270352acc402858",
+    "route": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/legacy/",
+    "publicVerified": false,
+    "focusedChecks": "17/17 PASS",
+    "expandedStaticContract": "38 assertions persisted · NOT_RUN on new head · no Actions run",
+    "historicalEvidence": {
+      "automaticSourceFirst": "24/24 static · 247/247 browser/WebGL PASS",
+      "persistedProfiles": "30/30 static/profile · 215/215 browser/WebGL PASS"
+    },
+    "reviewUi": [
+      "Front / 3/4 L / 3/4 R",
+      "source-eye show/hide comparison",
+      "X spacing / Y height / Eye size / Inset tuning",
+      "Approve / Adjusted approve / Reject",
+      "local review persistence",
+      "Next review",
+      "JSON export"
+    ],
+    "reviewStorageKey": "kfb.toolbox.eye-rig-legacy-review.v1",
+    "nextGate": "KLR-EYE-VIS-01"
   }
 }
