@@ -339,21 +339,23 @@
     },
     {
       "id": "vfx-sfx",
-      "bucket": "CAN_START",
-      "title": "VFX Language Skill v1 · READY → Consumer Fixture",
-      "what": "Der gemeinsame KFB-VFX-Skill v1 ist als provider-/engine-neutrale Semantik- und Authoring-Referenz fertig: Gameplay-Wahrheit → Event → Rezept → Hierarchie → Anker → Timing → Clay/Ribbon/Glyph/Screen-Primitive → vorhandener Renderer. Combat-, Travel/TinySkies- und Clay-Owner bleiben erhalten; es entsteht kein zweiter globaler VFX-Runtime-Owner.",
-      "provider": "ChatGPT Web · KFB shared VFX reference · Draft PR #347",
-      "yourAction": "",
-      "waitingFor": "Nächster produktiver Schritt ist VFX-CONSUMER-FIXTURE-01: genau ein realer Combat- oder Racer-Consumer beweist den Vertrag mit seinem bestehenden Runtime-Owner, echten Pool/Draw-Call/Cleanup-Stats und Browserbild.",
-      "questions": [],
-      "repo": "georg-doc/kayfabizarro",
-      "pr": 347,
-      "branch": "chatgpt-web/kfb-vfx-language-skill-01-2026-10-03",
-      "expectedHead": "f5fc6ac030fcbbaea3cef41a9da8b4b3a0855c94",
+      "bucket": "LOOK_AT",
+      "title": "VFX Consumer Fixture 01 · Combat · REVIEW",
+      "what": "Der gemeinsame VFX-Vertrag läuft jetzt in einem echten KayKit-Sword-Consumer: der bestehende Stab-Kontakt bleibt Gameplay-Wahrheit, Blade-Ribbon und SpriteFx bleiben Owner. Neu ist nur der semantische confirmed_target/near_miss-Layer plus ein gebundener Clay-Impact aus 1 DROP + 2 BALL + 5 CHIP.",
+      "provider": "ChatGPT Web · Combat Draft PR #13",
+      "yourAction": "Bitte den Review über KFB Production Control / das aktuelle Chat-HTML ansehen und nur den Impact beantworten: PASS / TUNE / FAIL. Zu beurteilen sind Größe, Fächerung, Richtung und Timing/Lesbarkeit; finales K2-Material ist noch nicht Teil dieses Gates.",
+      "waitingFor": "",
+      "questions": [
+        "Liest der kompakte terracottafarbene Clay-Burst als guter Cartoon-Impact, oder soll er kleiner/größer, breiter/enger bzw. schneller/langsamer werden?"
+      ],
+      "repo": "georg-doc/KFB-Combat-Arena",
+      "pr": 13,
+      "branch": "chatgpt-web/vfx-consumer-fixture-01-combat-2026-10-03",
+      "expectedHead": "a8082d74bcf46965c412d83273e488dcd74fcd58",
       "brief": {
-        "label": "KFB VFX Language Skill · START HERE",
-        "path": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/START_HERE.md",
-        "ref": "chatgpt-web/kfb-vfx-language-skill-01-2026-10-03",
+        "label": "VFX Consumer Fixture 01 · Source / Review Contract",
+        "path": "slices/ca2-melee-lab/VFX_CONSUMER_FIXTURE_01.md",
+        "ref": "chatgpt-web/vfx-consumer-fixture-01-combat-2026-10-03",
         "pasteReady": false
       },
       "review": null
