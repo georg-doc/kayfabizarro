@@ -271,7 +271,8 @@ const QUERY=new URLSearchParams(location.search);
 const WORLD_ID=QUERY.get('world')||HOST_PROPS.world||'';
 const PLAY_ENABLED=QUERY.get('play')!=='0'&&HOST_PROPS.play!==false;
 const TEST_CAMERA=(QUERY.get('camera')||HOST_PROPS.camera||'')==='wide';
-const WI=WORLD_ID?await import('../world-integration-01/wi1-world.js'):null;
+const WORLD_PROVIDER=WORLD_ID?(WORLD_ID.startsWith('r2d')?'../world-integration-01/r2d-world.js':'../world-integration-01/wi1-world.js'):null;
+const WI=WORLD_PROVIDER?await import(WORLD_PROVIDER):null;
 const WORLD=WI?await WI.prepare(WORLD_ID):null;
 let PLAY=null;
 
@@ -735,7 +736,7 @@ function terrainHeightAt(x,z,t=sceneDoc.terrain){
   const ox=seedDomainOffset(t.seed),oz=seedDomainOffset(t.seed^0x51f15e);
   const macro=fbm2((x+ox)*(.13/t.macroScale),(z+oz)*(.13/t.macroScale),5,.5,2.0);
   const fine=fbm2((x-ox*.37)*(.55*t.detail),(z+oz*.29)*(.55*t.detail),3,.5,2.13);
-  const base=(macro-.5)*t.height+(fine-.5)*t.height*.18;
+  const base=WORLD&&typeof WORLD.baseHeightAt==='function'?WORLD.baseHeightAt(x,z):(macro-.5)*t.height+(fine-.5)*t.height*.18;
   return base+sculptDeltaAt(x,z,t.sculpt);
 }
 function terrainSignature(){
