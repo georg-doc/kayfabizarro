@@ -1,0 +1,1758 @@
+{
+ "schema": "kfb.fight-cartoon-contact/0.2",
+ "version": "2026-09-30",
+ "catalogVersion": "2026-09-29b",
+ "replaces": "fight/KFB_Fight_Combos.json (0.1, exact mesh contact) for the Fight Sandbox; 0.1 stays for reference",
+ "idea": "Nobody touches. Fighters keep their heads and bodies apart; the hit is sold by hit-stop, squash, a clay puff at the impact point and knockback away from the attacker.",
+ "rigs": {
+  "Rig_Medium": {
+   "scaleToMedium": 1.0,
+   "headSphere": {
+    "bone": "head",
+    "offsetInBoneSpace": [
+     0.011,
+     0.369,
+     0.039
+    ],
+    "radiusM": 0.511,
+    "centerHeightInStanceM": 1.429
+   },
+   "bodyCapsule": {
+    "from": "hips",
+    "to": "head (neck joint)",
+    "radiusM": 0.397
+   },
+   "note": "measured on the Orc mesh in kfb_action_boxing_a frame 1: head sphere = half the mean head width, resting on the chin (hair crest ignored); body capsule radius = half the mean torso width (arms excluded)"
+  },
+  "Rig_Large": {
+   "scaleToMedium": 2.568,
+   "headSphere": {
+    "bone": "head",
+    "offsetInBoneSpace": [
+     -0.015,
+     0.145,
+     0.307
+    ],
+    "radiusM": 0.466,
+    "centerHeightInStanceM": 2.945
+   },
+   "bodyCapsule": {
+    "from": "hips",
+    "to": "head (neck joint)",
+    "radiusM": 0.863
+   },
+   "note": "measured on the Orc mesh in kfb_action_boxing_a frame 1: head sphere = half the mean head width, resting on the chin (hair crest ignored); body capsule radius = half the mean torso width (arms excluded)"
+  }
+ },
+ "runtimeRules": {
+  "coordinates": "Blender metres, Z up, yaw counter-clockwise from +X; three.js position = (x, z, -y), rotation.y = yaw. Positions are relative to the rig node (neutralise the library node offset once per actor).",
+  "stance": "Both fighters idle in kfb_action_boxing_a.",
+  "placement": "Attacker at the arena anchor, no extra rotation. Defender in stance, rotated by defenderStanceYawDeg, hips at attacker.hipsAtContact + hipsDistanceM along attackAxisYawDeg (from table[attack|attackerRig|defenderRig]).",
+  "separation": "Every frame: if head spheres or body capsules (see rigs; head sphere = head bone matrix x offsetInBoneSpace) come closer than 5 cm x the smaller rig scale, push the defender back along the attack axis. This is the only collision check.",
+  "impact": "When the attacker clip reaches its contactFrame: freeze both actors 4 frames (hit-stop), squash the defender (scale 1.1 wide / 0.9 high over 6 frames, back to 1), spawn the clay puff at impactPuffAt (attacker clip space) sized about 0.25 m x defender scale, optional small camera nudge.",
+  "reaction": "After the hit-stop, the defender plays the reaction starting at the reaction impactFrame (the frames before it are skipped). Rotate the defender about its hips so the reaction knocks it away from the attacker: defenderYaw = attackAxisYawDeg - reactions[r].byRig[rig].knockbackYawInClipDeg. The turn happens inside the puff, which hides the snap.",
+  "readability": "visualGapM is how far the strike stops short of the defender. Up to about 0.15 m x defender scale the puff sells it; larger gaps (mostly Brute hitting Raider high) will look like a miss."
+ },
+ "reactions": {
+  "kfb_reaction_taking_punch_a": {
+   "knockbackRelDeg": -130,
+   "knockbackSource": "head recoil (in place)",
+   "facesAttacker": true,
+   "hitFrom": "front",
+   "impactFrame": 10,
+   "frames": 171,
+   "endsLying": false,
+   "endFace": "standing",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -138.9,
+     "knockbackYawInClipDeg": 91.1
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -138.9,
+     "knockbackYawInClipDeg": 91.1
+    }
+   }
+  },
+  "kfb_reaction_receiving_an_uppercut_a": {
+   "knockbackRelDeg": -134,
+   "knockbackSource": "hips travel 0.77 m",
+   "facesAttacker": true,
+   "hitFrom": "front",
+   "impactFrame": 7,
+   "frames": 51,
+   "endsLying": false,
+   "endFace": "standing",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -135.9,
+     "knockbackYawInClipDeg": 90.1
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -135.9,
+     "knockbackYawInClipDeg": 90.1
+    }
+   }
+  },
+  "kfb_reaction_surprise_uppercut_a": {
+   "knockbackRelDeg": 3,
+   "knockbackSource": "hips travel 1.48 m; the clip starts turned away from the hit",
+   "facesAttacker": false,
+   "hitFrom": "behind",
+   "impactFrame": 13,
+   "frames": 106,
+   "endsLying": true,
+   "endFace": "up",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -105.2,
+     "knockbackYawInClipDeg": -102.2
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -105.2,
+     "knockbackYawInClipDeg": -102.2
+    }
+   }
+  },
+  "kfb_reaction_reaction_a": {
+   "knockbackRelDeg": -90,
+   "knockbackSource": "judged by eye: turns to its right; in place",
+   "facesAttacker": false,
+   "hitFrom": "left",
+   "impactFrame": 4,
+   "frames": 67,
+   "endsLying": false,
+   "endFace": "standing",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -145.5,
+     "knockbackYawInClipDeg": 124.5
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -145.5,
+     "knockbackYawInClipDeg": 124.5
+    }
+   }
+  },
+  "kfb_reaction_standing_react_small_from_right_a": {
+   "knockbackRelDeg": 90,
+   "knockbackSource": "from the clip name (hit from the right, sways left); very small motion",
+   "facesAttacker": false,
+   "hitFrom": "right",
+   "impactFrame": 6,
+   "frames": 31,
+   "endsLying": false,
+   "endFace": "standing",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -148.3,
+     "knockbackYawInClipDeg": -58.3
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -148.3,
+     "knockbackYawInClipDeg": -58.3
+    }
+   }
+  },
+  "kfb_reaction_shoved_reaction_with_spin_a": {
+   "knockbackRelDeg": 16,
+   "knockbackSource": "hips travel 1.54 m (shoved from behind)",
+   "facesAttacker": false,
+   "hitFrom": "behind",
+   "impactFrame": 39,
+   "frames": 137,
+   "endsLying": false,
+   "endFace": "standing",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -94.8,
+     "knockbackYawInClipDeg": -78.8
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -94.8,
+     "knockbackYawInClipDeg": -78.8
+    }
+   }
+  },
+  "kfb_reaction_death_from_the_front_a": {
+   "knockbackRelDeg": 73,
+   "knockbackSource": "hips travel 0.40 m, folds forward-left",
+   "facesAttacker": false,
+   "hitFrom": "right",
+   "impactFrame": 6,
+   "frames": 104,
+   "endsLying": true,
+   "endFace": "side",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -144.7,
+     "knockbackYawInClipDeg": -71.7
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -144.7,
+     "knockbackYawInClipDeg": -71.7
+    }
+   }
+  },
+  "kfb_reaction_standing_death_left_01_a": {
+   "knockbackRelDeg": 164,
+   "knockbackSource": "hips travel 0.48 m, falls backward",
+   "facesAttacker": true,
+   "hitFrom": "front",
+   "impactFrame": 3,
+   "frames": 69,
+   "endsLying": true,
+   "endFace": "up",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -151.9,
+     "knockbackYawInClipDeg": 12.1
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -151.9,
+     "knockbackYawInClipDeg": 12.1
+    }
+   }
+  },
+  "kfb_reaction_fall_flat_a": {
+   "knockbackRelDeg": 2,
+   "knockbackSource": "hips travel 1.95 m, falls forward on the face",
+   "facesAttacker": false,
+   "hitFrom": "behind",
+   "impactFrame": 3,
+   "frames": 77,
+   "endsLying": true,
+   "endFace": "down",
+   "byRig": {
+    "Rig_Medium": {
+     "startFacingYawDeg": -90.8,
+     "knockbackYawInClipDeg": -88.8
+    },
+    "Rig_Large": {
+     "startFacingYawDeg": -90.8,
+     "knockbackYawInClipDeg": -88.8
+    }
+   }
+  }
+ },
+ "attacks": {
+  "kfb_action_punching_a": {
+   "Rig_Medium": {
+    "limb": "handslot.r",
+    "contactFrame": 37,
+    "hipsAtContact": [
+     -0.029,
+     -0.015,
+     0.277
+    ],
+    "limbAtContact": [
+     -0.059,
+     -0.929,
+     0.966
+    ],
+    "frames": 45,
+    "source": "measured peak limb speed relative to hips"
+   },
+   "Rig_Large": {
+    "limb": "handslot.r",
+    "contactFrame": 37,
+    "hipsAtContact": [
+     -0.076,
+     -0.038,
+     0.71
+    ],
+    "limbAtContact": [
+     -0.43,
+     -2.488,
+     2.263
+    ],
+    "frames": 45,
+    "source": "measured peak limb speed relative to hips"
+   }
+  },
+  "kfb_action_punching_b": {
+   "Rig_Medium": {
+    "limb": "handslot.l",
+    "contactFrame": 23,
+    "hipsAtContact": [
+     0.003,
+     -0.041,
+     0.292
+    ],
+    "limbAtContact": [
+     0.103,
+     -0.819,
+     1.213
+    ],
+    "frames": 37,
+    "source": "catalog events.strike"
+   },
+   "Rig_Large": {
+    "limb": "handslot.l",
+    "contactFrame": 23,
+    "hipsAtContact": [
+     0.008,
+     -0.105,
+     0.749
+    ],
+    "limbAtContact": [
+     0.38,
+     -2.325,
+     2.896
+    ],
+    "frames": 37,
+    "source": "catalog events.strike"
+   }
+  },
+  "kfb_action_hook_punch_a": {
+   "Rig_Medium": {
+    "limb": "handslot.r",
+    "contactFrame": 31,
+    "hipsAtContact": [
+     -0.017,
+     0.004,
+     0.321
+    ],
+    "limbAtContact": [
+     -0.604,
+     -0.782,
+     1.131
+    ],
+    "frames": 64,
+    "source": "measured peak limb speed relative to hips"
+   },
+   "Rig_Large": {
+    "limb": "handslot.r",
+    "contactFrame": 30,
+    "hipsAtContact": [
+     -0.033,
+     0.013,
+     0.823
+    ],
+    "limbAtContact": [
+     -2.249,
+     -1.463,
+     2.573
+    ],
+    "frames": 64,
+    "source": "measured peak limb speed relative to hips"
+   }
+  },
+  "kfb_action_hook_punch_b": {
+   "Rig_Medium": {
+    "limb": "handslot.r",
+    "contactFrame": 31,
+    "hipsAtContact": [
+     -0.014,
+     0.001,
+     0.324
+    ],
+    "limbAtContact": [
+     -0.686,
+     -0.684,
+     1.07
+    ],
+    "frames": 66,
+    "source": "catalog events.strike"
+   },
+   "Rig_Large": {
+    "limb": "handslot.r",
+    "contactFrame": 31,
+    "hipsAtContact": [
+     -0.035,
+     0.003,
+     0.832
+    ],
+    "limbAtContact": [
+     -2.024,
+     -1.648,
+     2.522
+    ],
+    "frames": 66,
+    "source": "catalog events.strike"
+   }
+  },
+  "kfb_action_quad_punch_a": {
+   "Rig_Medium": {
+    "limb": "handslot.r",
+    "contactFrame": 22,
+    "hipsAtContact": [
+     -0.033,
+     -0.002,
+     0.308
+    ],
+    "limbAtContact": [
+     -0.037,
+     -0.754,
+     1.19
+    ],
+    "frames": 66,
+    "source": "catalog events.strike"
+   },
+   "Rig_Large": {
+    "limb": "handslot.r",
+    "contactFrame": 22,
+    "hipsAtContact": [
+     -0.085,
+     -0.006,
+     0.791
+    ],
+    "limbAtContact": [
+     -0.423,
+     -1.925,
+     2.889
+    ],
+    "frames": 66,
+    "source": "catalog events.strike"
+   }
+  },
+  "kfb_action_fist_fight_a_a": {
+   "Rig_Medium": {
+    "limb": "handslot.l",
+    "contactFrame": 82,
+    "hipsAtContact": [
+     0.04,
+     -0.013,
+     0.293
+    ],
+    "limbAtContact": [
+     0.097,
+     -0.921,
+     0.94
+    ],
+    "frames": 141,
+    "source": "catalog events.strike"
+   },
+   "Rig_Large": {
+    "limb": "handslot.l",
+    "contactFrame": 82,
+    "hipsAtContact": [
+     0.102,
+     -0.034,
+     0.751
+    ],
+    "limbAtContact": [
+     0.227,
+     -2.601,
+     2.122
+    ],
+    "frames": 141,
+    "source": "catalog events.strike"
+   }
+  },
+  "kfb_action_fist_fight_b_a": {
+   "Rig_Medium": {
+    "limb": "handslot.l",
+    "contactFrame": 90,
+    "hipsAtContact": [
+     0.266,
+     -0.262,
+     0.139
+    ],
+    "limbAtContact": [
+     -0.076,
+     -1.265,
+     0.685
+    ],
+    "frames": 141,
+    "source": "measured peak limb speed relative to hips"
+   },
+   "Rig_Large": {
+    "limb": "handslot.l",
+    "contactFrame": 90,
+    "hipsAtContact": [
+     0.684,
+     -0.672,
+     0.358
+    ],
+    "limbAtContact": [
+     -0.131,
+     -3.449,
+     1.487
+    ],
+    "frames": 141,
+    "source": "measured peak limb speed relative to hips"
+   }
+  },
+  "kfb_action_fist_fight_b_b": {
+   "Rig_Medium": {
+    "limb": "handslot.l",
+    "contactFrame": 90,
+    "hipsAtContact": [
+     0.266,
+     -0.262,
+     0.139
+    ],
+    "limbAtContact": [
+     -0.074,
+     -1.264,
+     0.648
+    ],
+    "frames": 141,
+    "source": "catalog events.strike"
+   },
+   "Rig_Large": {
+    "limb": "handslot.l",
+    "contactFrame": 90,
+    "hipsAtContact": [
+     0.684,
+     -0.672,
+     0.358
+    ],
+    "limbAtContact": [
+     -0.127,
+     -3.447,
+     1.4
+    ],
+    "frames": 141,
+    "source": "catalog events.strike"
+   }
+  },
+  "kfb_action_mutant_swiping_a": {
+   "Rig_Medium": {
+    "limb": "handslot.l",
+    "contactFrame": 42,
+    "hipsAtContact": [
+     0.007,
+     -0.431,
+     0.183
+    ],
+    "limbAtContact": [
+     -0.746,
+     -1.22,
+     0.483
+    ],
+    "frames": 81,
+    "source": "catalog events.strike"
+   },
+   "Rig_Large": {
+    "limb": "handslot.l",
+    "contactFrame": 42,
+    "hipsAtContact": [
+     0.017,
+     -1.107,
+     0.47
+    ],
+    "limbAtContact": [
+     -1.88,
+     -3.323,
+     0.929
+    ],
+    "frames": 81,
+    "source": "catalog events.strike"
+   }
+  },
+  "kfb_action_back_flip_to_uppercut_a": {
+   "Rig_Medium": {
+    "limb": "handslot.r",
+    "contactFrame": 122,
+    "hipsAtContact": [
+     -0.058,
+     -0.787,
+     0.286
+    ],
+    "limbAtContact": [
+     0.02,
+     -0.944,
+     1.542
+    ],
+    "frames": 176,
+    "source": "highest hand after the landing (frames 70-150)"
+   },
+   "Rig_Large": {
+    "limb": "handslot.r",
+    "contactFrame": 122,
+    "hipsAtContact": [
+     -0.148,
+     -2.019,
+     0.735
+    ],
+    "limbAtContact": [
+     0.242,
+     -2.715,
+     3.748
+    ],
+    "frames": 176,
+    "source": "highest hand after the landing (frames 70-150)"
+   }
+  },
+  "kfb_action_headbutt_a": {
+   "Rig_Medium": {
+    "limb": "head",
+    "contactFrame": 23,
+    "hipsAtContact": [
+     0.081,
+     -0.359,
+     0.222
+    ],
+    "limbAtContact": [
+     -0.005,
+     -0.778,
+     0.88
+    ],
+    "frames": 64,
+    "source": "measured peak limb speed relative to hips"
+   },
+   "Rig_Large": {
+    "limb": "head",
+    "contactFrame": 24,
+    "hipsAtContact": [
+     0.208,
+     -0.93,
+     0.576
+    ],
+    "limbAtContact": [
+     -0.087,
+     -2.288,
+     2.181
+    ],
+    "frames": 64,
+    "source": "measured peak limb speed relative to hips"
+   }
+  },
+  "kfb_action_headbutt_b": {
+   "Rig_Medium": {
+    "limb": "head",
+    "contactFrame": 20,
+    "hipsAtContact": [
+     0.088,
+     -0.448,
+     0.217
+    ],
+    "limbAtContact": [
+     0.006,
+     -0.877,
+     0.869
+    ],
+    "frames": 54,
+    "source": "measured peak limb speed relative to hips"
+   },
+   "Rig_Large": {
+    "limb": "head",
+    "contactFrame": 20,
+    "hipsAtContact": [
+     0.226,
+     -1.149,
+     0.558
+    ],
+    "limbAtContact": [
+     -0.029,
+     -2.531,
+     2.146
+    ],
+    "frames": 54,
+    "source": "measured peak limb speed relative to hips"
+   }
+  },
+  "kfb_action_illegal_knee_a": {
+   "Rig_Medium": {
+    "limb": "lowerleg.r",
+    "contactFrame": 17,
+    "hipsAtContact": [
+     0.022,
+     -0.246,
+     0.385
+    ],
+    "limbAtContact": [
+     -0.258,
+     -0.306,
+     0.363
+    ],
+    "frames": 69,
+    "source": "measured peak limb speed relative to hips"
+   },
+   "Rig_Large": {
+    "limb": "lowerleg.r",
+    "contactFrame": 18,
+    "hipsAtContact": [
+     0.058,
+     -0.732,
+     1.052
+    ],
+    "limbAtContact": [
+     -0.519,
+     -1.035,
+     1.079
+    ],
+    "frames": 69,
+    "source": "measured peak limb speed relative to hips"
+   }
+  },
+  "kfb_action_kicking_a": {
+   "Rig_Medium": {
+    "limb": "toes.r",
+    "contactFrame": 53,
+    "hipsAtContact": [
+     -0.113,
+     -1.322,
+     0.645
+    ],
+    "limbAtContact": [
+     0.141,
+     -1.764,
+     1.035
+    ],
+    "frames": 103,
+    "source": "frame of the highest toe"
+   },
+   "Rig_Large": {
+    "limb": "toes.r",
+    "contactFrame": 53,
+    "hipsAtContact": [
+     -0.29,
+     -3.394,
+     1.657
+    ],
+    "limbAtContact": [
+     0.315,
+     -4.444,
+     2.56
+    ],
+    "frames": 103,
+    "source": "frame of the highest toe"
+   }
+  },
+  "kfb_action_flying_kick_a": {
+   "Rig_Medium": {
+    "limb": "toes.l",
+    "contactFrame": 16,
+    "hipsAtContact": [
+     -0.014,
+     -1.002,
+     0.754
+    ],
+    "limbAtContact": [
+     -0.006,
+     -1.51,
+     1.092
+    ],
+    "frames": 46,
+    "source": "frame of the highest toe"
+   },
+   "Rig_Large": {
+    "limb": "toes.l",
+    "contactFrame": 16,
+    "hipsAtContact": [
+     -0.035,
+     -2.573,
+     1.935
+    ],
+    "limbAtContact": [
+     0.023,
+     -3.8,
+     2.671
+    ],
+    "frames": 46,
+    "source": "frame of the highest toe"
+   }
+  },
+  "kfb_action_inside_crescent_kick_a": {
+   "Rig_Medium": {
+    "limb": "toes.r",
+    "contactFrame": 44,
+    "hipsAtContact": [
+     0.038,
+     -0.032,
+     0.695
+    ],
+    "limbAtContact": [
+     0.447,
+     -0.194,
+     1.162
+    ],
+    "frames": 81,
+    "source": "frame of the highest toe"
+   },
+   "Rig_Large": {
+    "limb": "toes.r",
+    "contactFrame": 44,
+    "hipsAtContact": [
+     0.098,
+     -0.082,
+     1.783
+    ],
+    "limbAtContact": [
+     1.083,
+     -0.459,
+     2.865
+    ],
+    "frames": 81,
+    "source": "frame of the highest toe"
+   }
+  },
+  "kfb_action_sword_and_shield_attack_a": {
+   "Rig_Medium": {
+    "limb": "handslot.r",
+    "contactFrame": 19,
+    "hipsAtContact": [
+     0.536,
+     -1.108,
+     0.268
+    ],
+    "limbAtContact": [
+     0.035,
+     -1.863,
+     0.76
+    ],
+    "frames": 40,
+    "source": "measured peak right-hand speed; a hand prop (club, pan, sign) carries the hit"
+   },
+   "Rig_Large": {
+    "limb": "handslot.r",
+    "contactFrame": 19,
+    "hipsAtContact": [
+     1.375,
+     -2.845,
+     0.689
+    ],
+    "limbAtContact": [
+     -0.161,
+     -4.835,
+     1.735
+    ],
+    "frames": 40,
+    "source": "measured peak right-hand speed; a hand prop (club, pan, sign) carries the hit"
+   }
+  }
+ },
+ "table": {
+  "kfb_action_punching_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.63,
+   "visualGapM": 0.107,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.057,
+    -0.964,
+    1.006
+   ],
+   "attackAxisYawDeg": -91.9,
+   "defenderStanceYawDeg": 216.8,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_punching_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.875,
+   "visualGapM": 0.019,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.059,
+    -0.938,
+    0.968
+   ],
+   "attackAxisYawDeg": -91.9,
+   "defenderStanceYawDeg": 216.8,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_punching_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.9,
+   "visualGapM": 0.704,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.384,
+    -2.236,
+    2.021
+   ],
+   "attackAxisYawDeg": -98.2,
+   "defenderStanceYawDeg": 210.4,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_punching_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.724,
+   "visualGapM": 0.016,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.43,
+    -2.496,
+    2.265
+   ],
+   "attackAxisYawDeg": -98.2,
+   "defenderStanceYawDeg": 210.4,
+   "limitedBy": "limb"
+  },
+  "kfb_action_punching_b|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.56,
+   "visualGapM": 0.005,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.103,
+    -0.821,
+    1.214
+   ],
+   "attackAxisYawDeg": -82.7,
+   "defenderStanceYawDeg": 226.0,
+   "limitedBy": "limb"
+  },
+  "kfb_action_punching_b|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.798,
+   "visualGapM": 0.016,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.104,
+    -0.827,
+    1.215
+   ],
+   "attackAxisYawDeg": -82.7,
+   "defenderStanceYawDeg": 226.0,
+   "limitedBy": "limb"
+  },
+  "kfb_action_punching_b|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.772,
+   "visualGapM": 1.154,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.347,
+    -2.054,
+    2.387
+   ],
+   "attackAxisYawDeg": -80.5,
+   "defenderStanceYawDeg": 228.2,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_punching_b|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.621,
+   "visualGapM": 0.014,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.382,
+    -2.332,
+    2.896
+   ],
+   "attackAxisYawDeg": -80.5,
+   "defenderStanceYawDeg": 228.2,
+   "limitedBy": "limb"
+  },
+  "kfb_action_hook_punch_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.79,
+   "visualGapM": 0.073,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.621,
+    -0.808,
+    1.15
+   ],
+   "attackAxisYawDeg": -126.8,
+   "defenderStanceYawDeg": 181.9,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_hook_punch_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 2.029,
+   "visualGapM": 0.068,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.623,
+    -0.809,
+    1.138
+   ],
+   "attackAxisYawDeg": -126.8,
+   "defenderStanceYawDeg": 181.9,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_hook_punch_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.952,
+   "visualGapM": 1.021,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -1.96,
+    -1.284,
+    2.192
+   ],
+   "attackAxisYawDeg": -146.3,
+   "defenderStanceYawDeg": 162.3,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_hook_punch_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.98,
+   "visualGapM": 0.016,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -2.255,
+    -1.468,
+    2.575
+   ],
+   "attackAxisYawDeg": -146.3,
+   "defenderStanceYawDeg": 162.3,
+   "limitedBy": "limb"
+  },
+  "kfb_action_hook_punch_b|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.77,
+   "visualGapM": 0.108,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.714,
+    -0.717,
+    1.101
+   ],
+   "attackAxisYawDeg": -134.5,
+   "defenderStanceYawDeg": 174.2,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_hook_punch_b|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 2.029,
+   "visualGapM": 0.102,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.72,
+    -0.72,
+    1.081
+   ],
+   "attackAxisYawDeg": -134.5,
+   "defenderStanceYawDeg": 174.2,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_hook_punch_b|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 2.003,
+   "visualGapM": 0.899,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -1.799,
+    -1.475,
+    2.173
+   ],
+   "attackAxisYawDeg": -140.3,
+   "defenderStanceYawDeg": 168.3,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_hook_punch_b|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.878,
+   "visualGapM": 0.003,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -2.025,
+    -1.649,
+    2.522
+   ],
+   "attackAxisYawDeg": -140.3,
+   "defenderStanceYawDeg": 168.3,
+   "limitedBy": "limb"
+  },
+  "kfb_action_quad_punch_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.67,
+   "visualGapM": 0.145,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.034,
+    -0.822,
+    1.216
+   ],
+   "attackAxisYawDeg": -90.3,
+   "defenderStanceYawDeg": 218.3,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_quad_punch_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.926,
+   "visualGapM": 0.178,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.035,
+    -0.841,
+    1.21
+   ],
+   "attackAxisYawDeg": -90.3,
+   "defenderStanceYawDeg": 218.3,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_quad_punch_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.9,
+   "visualGapM": 0.992,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.391,
+    -1.811,
+    2.407
+   ],
+   "attackAxisYawDeg": -100.0,
+   "defenderStanceYawDeg": 208.7,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_quad_punch_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.313,
+   "visualGapM": 0.009,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.423,
+    -1.929,
+    2.889
+   ],
+   "attackAxisYawDeg": -100.0,
+   "defenderStanceYawDeg": 208.7,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_a_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.64,
+   "visualGapM": 0.136,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.103,
+    -0.965,
+    0.991
+   ],
+   "attackAxisYawDeg": -86.4,
+   "defenderStanceYawDeg": 222.2,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_fist_fight_a_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.9,
+   "visualGapM": 0.054,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.099,
+    -0.947,
+    0.946
+   ],
+   "attackAxisYawDeg": -86.4,
+   "defenderStanceYawDeg": 222.2,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_fist_fight_a_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.926,
+   "visualGapM": 0.667,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.224,
+    -2.331,
+    1.926
+   ],
+   "attackAxisYawDeg": -87.2,
+   "defenderStanceYawDeg": 221.4,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_fist_fight_a_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.775,
+   "visualGapM": 0.004,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.227,
+    -2.603,
+    2.122
+   ],
+   "attackAxisYawDeg": -87.2,
+   "defenderStanceYawDeg": 221.4,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_b_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.54,
+   "visualGapM": 0.006,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.077,
+    -1.268,
+    0.685
+   ],
+   "attackAxisYawDeg": -108.8,
+   "defenderStanceYawDeg": 199.8,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_b_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.952,
+   "visualGapM": 0.014,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.078,
+    -1.272,
+    0.687
+   ],
+   "attackAxisYawDeg": -108.8,
+   "defenderStanceYawDeg": 199.8,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_b_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 2.003,
+   "visualGapM": 0.69,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.025,
+    -3.121,
+    1.47
+   ],
+   "attackAxisYawDeg": -106.4,
+   "defenderStanceYawDeg": 202.3,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_fist_fight_b_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.955,
+   "visualGapM": 0.002,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.131,
+    -3.45,
+    1.487
+   ],
+   "attackAxisYawDeg": -106.4,
+   "defenderStanceYawDeg": 202.3,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_b_b|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.53,
+   "visualGapM": 0.004,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.075,
+    -1.266,
+    0.648
+   ],
+   "attackAxisYawDeg": -108.7,
+   "defenderStanceYawDeg": 199.9,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_b_b|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.952,
+   "visualGapM": 0.024,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.078,
+    -1.275,
+    0.651
+   ],
+   "attackAxisYawDeg": -108.7,
+   "defenderStanceYawDeg": 199.9,
+   "limitedBy": "limb"
+  },
+  "kfb_action_fist_fight_b_b|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 2.003,
+   "visualGapM": 0.68,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.026,
+    -3.137,
+    1.304
+   ],
+   "attackAxisYawDeg": -106.3,
+   "defenderStanceYawDeg": 202.4,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_fist_fight_b_b|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.955,
+   "visualGapM": 0.024,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.13,
+    -3.459,
+    1.403
+   ],
+   "attackAxisYawDeg": -106.3,
+   "defenderStanceYawDeg": 202.4,
+   "limitedBy": "limb"
+  },
+  "kfb_action_mutant_swiping_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.77,
+   "visualGapM": 0.237,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.825,
+    -1.306,
+    0.504
+   ],
+   "attackAxisYawDeg": -133.7,
+   "defenderStanceYawDeg": 175.0,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_mutant_swiping_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 2.106,
+   "visualGapM": 0.179,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.806,
+    -1.283,
+    0.503
+   ],
+   "attackAxisYawDeg": -133.7,
+   "defenderStanceYawDeg": 175.0,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_mutant_swiping_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 2.44,
+   "visualGapM": 0.187,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -1.818,
+    -3.255,
+    0.913
+   ],
+   "attackAxisYawDeg": -130.6,
+   "defenderStanceYawDeg": 178.1,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_mutant_swiping_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.852,
+   "visualGapM": 0.002,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -1.881,
+    -3.324,
+    0.929
+   ],
+   "attackAxisYawDeg": -130.6,
+   "defenderStanceYawDeg": 178.1,
+   "limitedBy": "limb"
+  },
+  "kfb_action_back_flip_to_uppercut_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 0.98,
+   "visualGapM": 0.182,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.091,
+    -0.89,
+    1.527
+   ],
+   "attackAxisYawDeg": 19.3,
+   "defenderStanceYawDeg": -32.0,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_back_flip_to_uppercut_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.258,
+   "visualGapM": 0.184,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.097,
+    -0.897,
+    1.561
+   ],
+   "attackAxisYawDeg": 19.3,
+   "defenderStanceYawDeg": -32.0,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_back_flip_to_uppercut_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.644,
+   "visualGapM": 1.87,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.357,
+    -2.893,
+    2.837
+   ],
+   "attackAxisYawDeg": -60.7,
+   "defenderStanceYawDeg": 247.9,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_back_flip_to_uppercut_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 1.977,
+   "visualGapM": 0.218,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.284,
+    -2.77,
+    3.664
+   ],
+   "attackAxisYawDeg": -60.7,
+   "defenderStanceYawDeg": 247.9,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_headbutt_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 2.07,
+   "visualGapM": 0.05,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.151,
+    -1.604,
+    1.227
+   ],
+   "attackAxisYawDeg": -101.6,
+   "defenderStanceYawDeg": 207.1,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_headbutt_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 2.311,
+   "visualGapM": 0.062,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.163,
+    -1.634,
+    1.146
+   ],
+   "attackAxisYawDeg": -101.6,
+   "defenderStanceYawDeg": 207.1,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_headbutt_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 2.928,
+   "visualGapM": 0.143,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.269,
+    -2.997,
+    1.723
+   ],
+   "attackAxisYawDeg": -102.3,
+   "defenderStanceYawDeg": 206.4,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_headbutt_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.621,
+   "visualGapM": 0.308,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.298,
+    -3.136,
+    2.129
+   ],
+   "attackAxisYawDeg": -102.3,
+   "defenderStanceYawDeg": 206.4,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_headbutt_b|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 2.08,
+   "visualGapM": 0.055,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.133,
+    -1.706,
+    1.218
+   ],
+   "attackAxisYawDeg": -100.8,
+   "defenderStanceYawDeg": 207.8,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_headbutt_b|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 2.311,
+   "visualGapM": 0.055,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.145,
+    -1.733,
+    1.127
+   ],
+   "attackAxisYawDeg": -100.8,
+   "defenderStanceYawDeg": 207.8,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_headbutt_b|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 2.953,
+   "visualGapM": 0.143,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.2,
+    -3.245,
+    1.706
+   ],
+   "attackAxisYawDeg": -100.5,
+   "defenderStanceYawDeg": 208.2,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_headbutt_b|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.647,
+   "visualGapM": 0.333,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.227,
+    -3.388,
+    2.098
+   ],
+   "attackAxisYawDeg": -100.5,
+   "defenderStanceYawDeg": 208.2,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_illegal_knee_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 0.88,
+   "visualGapM": 0.424,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.202,
+    -0.508,
+    0.395
+   ],
+   "attackAxisYawDeg": -94.7,
+   "defenderStanceYawDeg": 214.0,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_illegal_knee_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.284,
+   "visualGapM": 0.42,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.229,
+    -0.505,
+    0.421
+   ],
+   "attackAxisYawDeg": -94.7,
+   "defenderStanceYawDeg": 214.0,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_illegal_knee_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.695,
+   "visualGapM": 0.778,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.337,
+    -1.362,
+    1.185
+   ],
+   "attackAxisYawDeg": -90.4,
+   "defenderStanceYawDeg": 218.3,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_illegal_knee_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 1.977,
+   "visualGapM": 0.8,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.376,
+    -1.401,
+    1.156
+   ],
+   "attackAxisYawDeg": -90.4,
+   "defenderStanceYawDeg": 218.3,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_kicking_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.15,
+   "visualGapM": 0.006,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.142,
+    -1.765,
+    1.037
+   ],
+   "attackAxisYawDeg": -60.1,
+   "defenderStanceYawDeg": 248.5,
+   "limitedBy": "limb"
+  },
+  "kfb_action_kicking_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.489,
+   "visualGapM": 0.023,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.147,
+    -1.773,
+    1.038
+   ],
+   "attackAxisYawDeg": -60.1,
+   "defenderStanceYawDeg": 248.5,
+   "limitedBy": "limb"
+  },
+  "kfb_action_kicking_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.721,
+   "visualGapM": 0.639,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.351,
+    -4.488,
+    2.246
+   ],
+   "attackAxisYawDeg": -60.0,
+   "defenderStanceYawDeg": 248.6,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_kicking_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 2.517,
+   "visualGapM": 0.007,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.317,
+    -4.447,
+    2.561
+   ],
+   "attackAxisYawDeg": -60.0,
+   "defenderStanceYawDeg": 248.6,
+   "limitedBy": "limb"
+  },
+  "kfb_action_flying_kick_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.2,
+   "visualGapM": 0.001,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.006,
+    -1.51,
+    1.092
+   ],
+   "attackAxisYawDeg": -89.1,
+   "defenderStanceYawDeg": 219.6,
+   "limitedBy": "limb"
+  },
+  "kfb_action_flying_kick_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.489,
+   "visualGapM": 0.012,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.006,
+    -1.516,
+    1.093
+   ],
+   "attackAxisYawDeg": -89.1,
+   "defenderStanceYawDeg": 219.6,
+   "limitedBy": "limb"
+  },
+  "kfb_action_flying_kick_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.644,
+   "visualGapM": 0.736,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.035,
+    -3.831,
+    2.304
+   ],
+   "attackAxisYawDeg": -87.3,
+   "defenderStanceYawDeg": 221.4,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_flying_kick_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 2.568,
+   "visualGapM": 0.016,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.024,
+    -3.808,
+    2.673
+   ],
+   "attackAxisYawDeg": -87.3,
+   "defenderStanceYawDeg": 221.4,
+   "limitedBy": "limb"
+  },
+  "kfb_action_inside_crescent_kick_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.58,
+   "visualGapM": 0.364,
+   "hitZone": "head",
+   "impactPuffAt": [
+    0.611,
+    -0.251,
+    1.217
+   ],
+   "attackAxisYawDeg": -21.6,
+   "defenderStanceYawDeg": 287.0,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_inside_crescent_kick_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.977,
+   "visualGapM": 0.539,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.693,
+    -0.285,
+    1.221
+   ],
+   "attackAxisYawDeg": -21.6,
+   "defenderStanceYawDeg": 287.0,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_inside_crescent_kick_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.695,
+   "visualGapM": 0.964,
+   "hitZone": "head",
+   "impactPuffAt": [
+    1.188,
+    -0.487,
+    2.396
+   ],
+   "attackAxisYawDeg": -20.9,
+   "defenderStanceYawDeg": 287.7,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_inside_crescent_kick_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 2.619,
+   "visualGapM": 0.209,
+   "hitZone": "body",
+   "impactPuffAt": [
+    1.183,
+    -0.488,
+    2.87
+   ],
+   "attackAxisYawDeg": -20.9,
+   "defenderStanceYawDeg": 287.7,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_sword_and_shield_attack_a|Rig_Medium|Rig_Medium": {
+   "hipsDistanceM": 1.66,
+   "visualGapM": 0.262,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.033,
+    -1.973,
+    0.783
+   ],
+   "attackAxisYawDeg": -123.6,
+   "defenderStanceYawDeg": 185.1,
+   "limitedBy": "head spheres"
+  },
+  "kfb_action_sword_and_shield_attack_a|Rig_Medium|Rig_Large": {
+   "hipsDistanceM": 1.9,
+   "visualGapM": 0.098,
+   "hitZone": "body",
+   "impactPuffAt": [
+    0.009,
+    -1.903,
+    0.771
+   ],
+   "attackAxisYawDeg": -123.6,
+   "defenderStanceYawDeg": 185.1,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_sword_and_shield_attack_a|Rig_Large|Rig_Medium": {
+   "hipsDistanceM": 1.926,
+   "visualGapM": 0.436,
+   "hitZone": "head",
+   "impactPuffAt": [
+    -0.029,
+    -4.677,
+    1.664
+   ],
+   "attackAxisYawDeg": -127.7,
+   "defenderStanceYawDeg": 181.0,
+   "limitedBy": "bodies"
+  },
+  "kfb_action_sword_and_shield_attack_a|Rig_Large|Rig_Large": {
+   "hipsDistanceM": 3.647,
+   "visualGapM": 0.018,
+   "hitZone": "body",
+   "impactPuffAt": [
+    -0.166,
+    -4.842,
+    1.737
+   ],
+   "attackAxisYawDeg": -127.7,
+   "defenderStanceYawDeg": 181.0,
+   "limitedBy": "limb"
+  }
+ },
+ "proofSet": [
+  {
+   "id": "headbutt",
+   "attacker": "kfb_action_headbutt_a",
+   "defender": "kfb_reaction_taking_punch_a",
+   "then": {
+    "defender": "kfb_reaction_dizzy_idle_a"
+   }
+  },
+  {
+   "id": "kick_knockdown",
+   "attacker": "kfb_action_kicking_a",
+   "defender": "kfb_reaction_standing_death_left_01_a",
+   "then": {
+    "attacker": "kfb_gesture_taunt_a"
+   },
+   "note": "the defender ends face up; getting_up starts face down, so skip the get-up or accept the pose jump"
+  },
+  {
+   "id": "flying_kick",
+   "attacker": "kfb_action_flying_kick_a",
+   "defender": "kfb_reaction_receiving_an_uppercut_a"
+  },
+  {
+   "id": "prop_hit",
+   "attacker": "kfb_action_sword_and_shield_attack_a",
+   "defender": "kfb_reaction_reaction_a",
+   "prop": "any hand prop in handslot.r (club, pan, sign); the prop, not the hand, meets the puff"
+  },
+  {
+   "id": "dust_cloud_brawl",
+   "recipe": [
+    "both fighters run into each other; at contact spawn a large clay cloud that hides both",
+    "inside the cloud loop kfb_action_fist_fight_a_a and kfb_reaction_taking_punch_a; let a hand, foot or prop poke out now and then",
+    "move the cloud about 2 m over 2-3 s",
+    "eject one fighter with kfb_reaction_fall_flat_a (face down, then kfb_reaction_getting_up_a fits), the other stays in kfb_reaction_dizzy_idle_a as the cloud dissolves"
+   ],
+   "note": "needs no staging data; works for every rig pairing"
+  },
+  {
+   "id": "shoulder_throw",
+   "attacker": "kfb_throw_shoulder_aggressor_a",
+   "defender": "kfb_throw_shoulder_victim_a",
+   "pairings": [
+    "Rig_Large|Rig_Large"
+   ],
+   "staging": "both actors at the same origin, no rotation, start together",
+   "note": "Raider pairs clash heads and mixed sizes do not grab: use the dust cloud there"
+  }
+ ],
+ "reactionChoice": "Reactions with hitFrom \"front\" keep the defender facing the attacker. \"behind\" reactions (fall_flat, shoved_spin, surprise_uppercut) turn the defender away at impact (hidden in the puff) and read as a sucker punch or a hit after a spin.",
+ "unusable": {
+  "kfb_action_hurricane_kick_a": "source FBX and library clip animate only the root (spin + travel); every body bone is frozen in one pose"
+ }
+}
