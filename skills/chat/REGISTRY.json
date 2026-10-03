@@ -1,6 +1,6 @@
 {
   "schema": "kfb.chat-registry/0.1",
-  "updated": "2026-09-27",
+  "updated": "2026-10-03",
   "owner": "Georg / KFB",
   "router": "skills/chat/START_HERE.md",
   "livingMasterplan": "skills/chat/LIVING_MASTERPLAN.md",
@@ -289,6 +289,45 @@
       ],
       "legacyPath": "skills/kfb-cartoon-animation_v2.md",
       "note": "Portable Agent-Skills folder; v2 path remains compatibility entry. Project/runtime SSOTs override generic method examples."
+    },
+    {
+      "id": "kfb-cartoon-vfx",
+      "kind": "skill",
+      "status": "CURRENT_REFERENCE",
+      "version": "1.0",
+      "declaredStatus": "canonical-draft",
+      "path": "skills/kfb-cartoon-vfx_v1.md",
+      "workflow": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/START_HERE.md",
+      "research": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/RESEARCH_SOURCE_MATRIX.md",
+      "testReport": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/TEST_REPORT.md",
+      "loadWhen": [
+        "KFB visual effects",
+        "VFX",
+        "clay particles",
+        "impact effects",
+        "weapon trails",
+        "drift smoke or racer effects",
+        "flight speed lines or near-ground effects",
+        "water wake or splash",
+        "comic onomatopoeia",
+        "transition concealment"
+      ],
+      "consumers": [
+        "combat-arena",
+        "travel-globe",
+        "stunt-car-race",
+        "animation-lab",
+        "world / interaction consumers"
+      ],
+      "doesNotOwn": [
+        "gameplay or physics truth",
+        "collision or damage",
+        "actor / rig / weapon attachments",
+        "camera ownership",
+        "current KFB clay material owner",
+        "consumer-specific VFX runtimes"
+      ],
+      "note": "Provider-neutral and engine-neutral semantic VFX skill. Standardizes truth → event → recipe → hierarchy → anchors → timing → clay/ribbon/glyph/screen primitives → existing pooled renderers. Reuses verified Combat, Travel/TinySkies and clay-particle donors without creating a second global runtime owner. Documentation/research checkpoint validated 71/71; no Stage or human visual acceptance claimed."
     },
     {
       "id": "production-inbox",

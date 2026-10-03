@@ -1,3 +1,20 @@
+## 2026-10-03 · KFB Cartoon VFX semantic skill v1
+
+### CURRENT_REFERENCE
+- Added `skills/kfb-cartoon-vfx_v1.md` as the provider-neutral / engine-neutral VFX semantic and authoring skill for Combat, locomotion, Racer, flight, water, transition concealment, fire/smoke and comic typography.
+- Core contract is **truth → semantic event → recipe → hierarchy → anchors → timing → primitives → style adapter → existing pooled renderer → proof**.
+- Primary KFB clay particle vocabulary is BALL / DROP / CHIP; continuous motion uses RIBBON; ground/water/AOE can use RING/SHEET; MASK/SPRITE, GLYPH and SCREEN remain specialized peer channels.
+- Confirmed target/world contact, bounce, scrape and near miss are separate truth states. Existing gameplay/physics/collision/camera owners remain authoritative.
+- Existing KFB Combat, Travel/TinySkies and clay-particle implementations are retained as donors/consumer owners; no second global VFX runtime was introduced.
+- Research evidence is durable in `skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/RESEARCH_SOURCE_MATRIX.md`.
+- Direct upstream Tiny Skies proof pins `CarpetLeaves.ts`, `CarpetWake.ts`, `CarpetDriftSmoke.ts` and `SpeedLines.ts` at commit `2659a5cc987d7e4a4c5aa7e79c86a1626ad75df6`.
+- Skill semantic/content validation: **71/71 PASS · 0 fail**.
+- A timed-out research-matrix write was later recovered as present; the VFX branch was then converged with current main without changing the three existing VFX blobs.
+- Documentation/research checkpoint only: no VFX runtime fixture, Cloudflare Stage, Live promotion or Georg visual acceptance is claimed.
+
+### NEXT
+Register the current skill source in the Hub/Production Desk metadata without publishing a fake Stage. Runtime adoption should happen later in bounded consumer slices that reuse current owners.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
