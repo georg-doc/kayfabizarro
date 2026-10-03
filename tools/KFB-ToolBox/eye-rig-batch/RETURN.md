@@ -1492,3 +1492,55 @@ On the direct Stage:
 
 No AO/K2 enablement, profile promotion, merge or Live promotion before this gate.
 
+## 2026-10-03 · CURRENT RETURN · WHEEL ZOOM REPAIR 02
+
+Status: **SOURCE FIXED · 13/13 FOCUSED PASS · STAGE MIRRORED · HUMAN VERIFY OPEN**
+
+Georg reports the first comfort pass still jumps to extreme positions.
+
+The previous `zoomSpeed=.28` adjustment is therefore superseded for wheel input.
+
+### Repair
+
+Native OrbitControls wheel zoom is disabled:
+`controls.enableZoom=false`.
+
+OrbitControls still owns orbit rotation, target and camera interaction. A bounded wheel-input adapter only changes distance to the same target.
+
+Contract:
+- absolute distance **1.6–8.0**;
+- base step/event **0.12**;
+- one gesture capped to **0.65 inward / 0.85 outward** from gesture start;
+- gesture resets after **160 ms** idle;
+- distance target damped by **14**;
+- physical movement capped to **0.09 units/frame**;
+- camera presets re-sync the target distance.
+
+Implementation:
+`797e5a81bbcdc339282ea1873363dd6804d9bd31`
+
+App blob:
+`5635b28496af0e06cfe7f60a01b23e5612bad6e1`
+
+Focused regression:
+**13/13 PASS**.
+
+Boot repair, Clay K1, Control R2, 40-profile recovery and 25-family/56-appearance palette layer remain intact.
+
+### Stage
+
+`cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`
+
+Exact source ↔ Stage app blob: **PASS**.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+### Exactly one current gate
+
+**GEORG_EYERIG_WHEEL_ZOOM_VIS_02**
+
+Test one notch, a longer wheel/trackpad gesture, Face view and Large. The camera must no longer jump straight to near/far extremes.
+
+After PASS, resume the existing Neutral ↔ Clay K1 review.
+
