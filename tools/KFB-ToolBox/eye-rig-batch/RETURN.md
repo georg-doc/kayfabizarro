@@ -1594,3 +1594,89 @@ Deferred until after that proof:
 Exactly one next gate:
 `EYE_RIG_PER_EYE_CONTROL_01`.
 
+## 2026-10-03 · FINAL HANDOFF · HUMAN-ACCEPTED VIEW/WHEEL SLICE
+
+Status: **HUMAN ACCEPTED · CHECKED IN · READY NEXT SLICE**
+
+### Exact owner
+
+- repo: `georg-doc/kayfabizarro`
+- branch: `toolbox/eye-rig-batch-2026-09-18`
+- Draft PR: **#104 · OPEN · UNMERGED**
+- metadata parent before this final Return: `8e7b90a735519aeff7a15e77bc4c128c2b933315`
+
+### Accepted runtime
+
+Human feedback:
+**"das klappt alles."**
+
+Accepted Stage behavior:
+- actor catalog / roster boot;
+- Rig_Large switching;
+- bounded wheel zoom v2;
+- Neutral / Clay K1 view.
+
+Accepted app blob:
+`5635b28496af0e06cfe7f60a01b23e5612bad6e1`
+
+Original wheel-repair Stage:
+`cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`
+
+The same accepted app blob was re-read unchanged at later concurrent Cloudflare heads before closing this handoff.
+
+Current public Hub routing metadata:
+`cloudflare-live@5f9030e84073f890bf4680db673640cfceed5f13`
+
+Direct Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+### Evidence
+
+Focused technical evidence retained:
+- boot repair: **6/6 PASS**;
+- Clay/view comfort slice: **15/15 PASS**;
+- bounded wheel repair v2: **13/13 PASS**;
+- human browser acceptance: **PASS**;
+- screenshots supplied in this acceptance turn: **0**;
+- formal browser proof artifact: **none**; human direct-Stage acceptance is the acceptance evidence.
+
+No new runtime code was written after the accepted wheel revision.
+
+### Durable surfaces updated
+
+- `SOURCE.json`
+- `RETURN.md`
+- EyeRig `CHANGELOG.md`
+- central `skills/chat/CHANGELOG.md`
+- `skills/chat/REGISTRY.json`
+- `kfb-hub/index.html`
+- public ToolBox Stage Hub card
+- public `hub-ui-v2` task
+- next-slice brief:
+  `docs/PER_EYE_CONTROL_BRIEF_2026-10-03.md`
+
+### Current unresolved items
+
+1. independent L/R eye authoring;
+2. per-eye visibility, with Survivalist eyepatch as first proof;
+3. Farmers exact A/B texture → Farmer_A/Farmer_B mapping;
+4. unresolved Blender/NoEyes cleanup for selected actors;
+5. separate FrankenStein/Pet Studio inline-number parity;
+6. later approved-profile / consumer promotion.
+
+### Exactly one next slice
+
+**EYE_RIG_PER_EYE_CONTROL_01**
+
+Bounded outcome:
+- mirrored pair stays default and backward-compatible;
+- optional L/R position deltas;
+- left/right visibility;
+- existing 40-profile browser data loads unchanged;
+- first proof = Survivalist eyepatch / one-eye-off;
+- no second EyeRig owner;
+- no merge / no Live promotion.
+
+First human gate after implementation:
+`GEORG_EYERIG_PER_EYE_SURVIVALIST_VIS_01`.
+
