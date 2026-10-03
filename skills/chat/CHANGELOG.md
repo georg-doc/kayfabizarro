@@ -1,3 +1,21 @@
+## 2026-10-04 · Resident Atlas S16 → playable MVP / WSA intake
+
+### SOURCE
+- Current source package is on main: `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/`.
+- Package status remains **DESIGN CANDIDATE**, not Georg-accepted runtime.
+- S16 currently carries 29 Resident entries, Batch-EyeRig support, Orc Band, Resident Disco, parked Fight Sandbox 02 and the documented 3D-Inline-Editor path.
+
+### MVP / WSA DECISION
+- Added stable intake brief: `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`.
+- WB2 remains receiving world owner; Atlas remains Resident source/authoring donor.
+- Playable MVP planning now explicitly retains Resident-set placement + Save/Reload, the shared 3D In-Place Editor, Asset Librarian Resident/scenelet search, Orc Band, Resident Disco and a Wrestling/Show Ring module.
+- Wrestling/Fight donor is included as Town show/arena surface and later hook; full Fight Sandbox completion, rope collision and rope rebound are **not MVP blockers**.
+- Band and Disco must converge on the canonical/shared Jukebox/song-transport seam rather than preserve separate music transports.
+- No third Editor, no second Asset Librarian/Registry and no second Resident recipe truth.
+
+### NEXT GATE
+Exactly one Resident integration gate: **WSA-RES-SET-01** — prove Mummy + Combat Mech + Clown through `kfb.resident-set/0.1` into current WB2 terrain placement, shared editor, Save and Reload before packaging Band/Disco/Wrestling as the next scenelet slice.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.
