@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en" data-kfb-build="AUDIO-STEM-BED-02-v0.1">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KFB Audio Stem Bed 02</title><link rel="stylesheet" href="./style.css"><link rel="icon" href="data:,"></head>
+<html lang="en" data-kfb-build="AUDIO-STEM-BED-02-R1">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KFB Audio Stem Bed 02 R1</title><link rel="stylesheet" href="./style.css"><link rel="icon" href="data:,"></head>
 <body><main class="wrap">
-<header><div><div class="eyebrow">KFB AUDIO · MOOD STEM POOL</div><h1>AUDIO-STEM-BED-02</h1><p>Authored Suno donors · phase-locked stems · context-controlled mix</p></div><div class="badge">5 DONORS<br>NO NOTE GENERATION</div></header>
+<header><div><div class="eyebrow">KFB AUDIO · MASTER-FAITHFUL MOOD STEM POOL</div><h1>AUDIO-STEM-BED-02 · R1</h1><p>Master first · all stems at unity · adaptive controls as bounded deltas</p></div><div class="badge">5 DONORS<br>MASTER ↔ STEM A/B</div></header>
 <section class="panel">
   <div class="donors" id="donors"></div>
-  <div class="transport"><button id="load">LOAD SELECTED</button><button id="play" disabled>PLAY STEM BED</button><button id="stop" class="secondary" disabled>STOP</button><button id="reset" class="secondary" disabled>RESET MIX</button></div>
+  <div class="transport"><button id="load">LOAD SELECTED</button><button id="playMaster" disabled>MASTER REFERENCE</button><button id="play" disabled>ADAPTIVE STEM BED</button><button id="stop" class="secondary" disabled>STOP</button><button id="reset" class="secondary" disabled>RESET = ORIGINAL MIX</button></div>
   <div class="now"><div><span>DONOR</span><b id="donorName">—</b></div><div><span>MOOD</span><b id="mood">—</b></div><div><span>BPM</span><b id="bpm">—</b></div><div><span>MODE</span><b id="mode">IDLE</b></div></div>
-  <div class="presets"><button data-preset="calm">CALM</button><button data-preset="active">ACTIVE</button><button data-preset="road">ROAD</button><button data-preset="night">NIGHT</button><button data-preset="voice">VOICE</button></div>
+  <div class="presets"><button data-preset="neutral">ORIGINAL</button><button data-preset="calm">CALM</button><button data-preset="active">ACTIVE</button><button data-preset="road">ROAD</button><button data-preset="night">NIGHT</button><button data-preset="voice">VOICE</button></div>
   <div class="controls">
     <label><span>ACTIVITY</span><input id="activity" type="range" min="0" max="1" step=".01"><output></output></label>
     <label><span>ROAD-LIFT</span><input id="roadLift" type="range" min="0" max="1" step=".01"><output></output></label>
     <label><span>NIGHT</span><input id="night" type="range" min="0" max="1" step=".01"><output></output></label>
     <label><span>VOICE FOCUS</span><button id="voiceFocus" class="toggle" aria-pressed="false">OFF</button></label>
   </div>
-  <h2>Stem weights</h2><div class="lanes" id="lanes"></div>
+  <h2>Stem reconstruction / adaptive deltas</h2><div class="lanes" id="lanes"></div>
 </section>
-<details class="panel"><summary>Diagnostics</summary><pre id="diag"></pre></details>
-<p class="note">Donor changes stop/fade the current family before the next donor starts from its own timeline. Cross-song pitched stem mixing is deliberately disabled.</p>
+<details class="panel" open><summary>Master reconstruction diagnostics</summary><pre id="diag"></pre></details>
+<p class="note">R1 repair: ORIGINAL means every available Suno stem plays at unity relative gain. Files labelled “Lead/Backing Vocals” in instrumental donors are treated as separation residuals and kept in the reconstruction because they may contain misclassified melodic material. Activity/Road/Night/Voice only make bounded changes around that original balance.</p>
 </main><script type="module" src="./mood-pool.js"></script></body></html>
