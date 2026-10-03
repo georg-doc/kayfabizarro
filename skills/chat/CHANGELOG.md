@@ -1,3 +1,24 @@
+## 2026-10-03 · AUDIO-ARRANGE donor A/B PUBLIC_VERIFIED
+
+- Draft PR #339 / `chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03`.
+- Level-matched v0.2 tested at `e7e55078208a031207a67299d54015f67aa78a29`: **29/29 source + 25/25 Chromium/WebAudio PASS**.
+- Cyclical eight-stem timeline remains exact: 214.128 s each, duration spread 0.
+- Published to `cloudflare-live@9761d68b83da0e8c091fe22e9edbb8d00054a9c7`; Cloudflare Pages check `111120414788` SUCCESS.
+- Exact public `https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/` passed **25/25** via `37094037185 / 111120175674`, artifact `11262928219`, digest `sha256:d8dbdff3eb862d23402cdc3dd90670ef68388712651c3bc53dd3ca3d7024de3c`.
+- Human gate: `GEORG_AUDIO_ARRANGE_AB_01` only. No Loping stem extraction, WebAudioFont replacement, Deck/weather/Race expansion before that decision.
+
+## 2026-10-03 · AUDIO-ARRANGE donor rebase PASS
+
+- Fresh recovery Draft PR #339 from current main resolves PR #337's donor source drift.
+- Exact Cyclical Warmth + Loping Groove masters and eight Cyclical 76-BPM stems are present.
+- Tested head `3d85d7e2aa103ab0bb2b388c678584d9ece19484`: **29/29 source PASS + 24/24 Chromium/WebAudio PASS**.
+- All eight stems decode as 44.1-kHz stereo, exactly **214.128 s** each, duration spread **0**, and are scheduled sample-synchronously.
+- Cyclical master decodes to 213.2 s; Loping master 204.0 s.
+- Donor bench compares exact masters, exact stem reconstruction and one fixed 64-bar KFB arrangement over the same performances.
+- Proof artifact `11262876991`, digest `sha256:e08c061ac8f580d469b07586c52dd8c52db3fa94dc191e3f77d71f951077df19`.
+- Suno donor prompt pack added; only winning masters should get stem extraction.
+- Next gate: publish unchanged donor bench to the fixed Cloudflare Stage and run human A/B.
+
 ## 2026-09-29 · Travel MapLibre World-Owner Spike 01
 
 - Added bounded Travel/WorldBuilder candidate on Draft PR #42: MapLibre owns map/world coordinates, camera, tile streaming and DEM terrain; existing ActionFigure source donor is shown first in isolation and then reused in a Three.js custom 3D layer.

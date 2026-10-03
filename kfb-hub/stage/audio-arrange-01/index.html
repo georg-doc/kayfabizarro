@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-kfb-build="AUDIO-ARRANGE-01-DONOR-BENCH-v0.2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Audio Arrange · Donor Bench</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">KFB AUDIO · INTERNAL DONOR BENCH</div>
+    <h1>One Good Island First</h1>
+    <p>Cyclical Warmth / Loping Groove · master → stems → fixed 64-bar KFB arrangement</p>
+  </div>
+  <div class="badge">BRANCH-LOCAL<br>NO PUBLIC STAGE</div>
+</header>
+
+<section class="panel">
+  <div class="transport">
+    <button id="load">LOAD AUDIO</button>
+    <button data-play="master:cyclical" disabled>CYCLICAL MASTER</button>
+    <button data-play="master:loping" disabled>LOPING MASTER</button>
+    <button data-play="stems:reconstruct" disabled>STEM RECONSTRUCT</button>
+    <button data-play="stems:arrange" disabled>KFB ARRANGE</button>
+    <button id="stop" class="secondary" disabled>STOP</button>
+  </div>
+
+  <div class="now">
+    <div><span>MODE</span><b id="mode">IDLE</b></div>
+    <div><span>SECTION</span><b id="section">—</b></div>
+    <div><span>BAR</span><b id="bar">—</b></div>
+    <div><span>TIME</span><b id="time">0:00</b></div>
+  </div>
+
+  <div class="form" id="form"></div>
+
+  <h2>Stem lanes</h2>
+  <div class="lanes" id="lanes"></div>
+</section>
+
+<details class="panel diagnostics">
+  <summary>Decode / alignment diagnostics</summary>
+  <pre id="diag">Not loaded.</pre>
+</details>
+
+<p class="note">This bench does not compose new notes. It tests whether KFB can preserve musicality while rearranging already musical, BPM-normalized stem performances. A/B modes are level-calibrated to avoid a loudness bias.</p>
+</main>
+<script type="module" src="./arrange-bench.js"></script>
+</body>
+</html>
