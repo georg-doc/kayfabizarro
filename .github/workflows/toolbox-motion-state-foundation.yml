@@ -1,5 +1,13 @@
 name: ToolBox Motion State Foundation
 on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/kfb-lib/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_*'
+      - 'tools/KFB-ToolBox/docs/MOTION_PROFILE_ROUTER.md'
+      - 'tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/**'
+      - '.github/workflows/toolbox-motion-state-foundation.yml'
   push:
     branches:
       - chatgpt-web/kfb-animation-motion-ssot-2026-10-03
