@@ -36,3 +36,12 @@
 - Immediate diagnosis target: compare donor master against complete Suno stem reconstruction including the two files labelled Lead Vocals / Backing Vocals, then against the current weighted runtime mix.
 - No merge, consumer integration or signature-theme follow-up before this is understood.
 - next gate: `AUDIO-STEM-BED-02-R1_MASTER_RECONSTRUCTION`.
+
+## 2026-10-03 · R1 diagnosis not promoted
+
+- repair head `3163bc68f7cfcaf357702c16025d044c905a29cc` restored all 50 available stems and neutral unity gains;
+- QA run `37135022508` passed source/syntax but failed browser diagnosis at 39 checks;
+- artifact `11278097681`, digest `sha256:5a40710bb6bd4bd6ca8f62be47932d5e36c7048fbab1aa280fbfda465159fcad`;
+- sample-level MP3 master↔stem correlation is rejected as a certification metric for this purpose;
+- R1 was not published;
+- repair pass 2 pivots to MASTER GROUND TRUTH for the four new donors; only human-accepted Cyclical Warmth keeps active stem adaptation.

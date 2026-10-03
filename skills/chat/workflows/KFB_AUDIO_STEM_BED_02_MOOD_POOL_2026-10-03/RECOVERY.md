@@ -58,6 +58,24 @@ Full export:
 
 The **current public Hub is unaffected** and is verified at `https://kayfabizarro.pages.dev/kfb-hub/stage/hub-ui-v2/` with the exact direct Stage link.
 
+## R1 diagnosis · NOT PROMOTED
+
+Repair head `3163bc68f7cfcaf357702c16025d044c905a29cc` restored all 50 available stems and changed neutral stem gains to unity.
+
+Branch QA run `37135022508`:
+- exact source/syntax steps: PASS;
+- browser diagnosis: **FAIL at 39 checks**;
+- artifact: `11278097681`;
+- digest: `sha256:5a40710bb6bd4bd6ca8f62be47932d5e36c7048fbab1aa280fbfda465159fcad`.
+
+The failure was diagnostic: sample-level master↔MP3-stem correlation is not a reliable certification metric, and the Buant all-stem result did not beat the old weighted result under that metric. R1 is therefore **not published** and is not treated as the musical fix.
+
+Architecture pivot for repair pass 2:
+- original uploaded masters are Ground Truth for the four new donors;
+- `Cyclical Warmth` alone keeps the previously heard stem-adaptive path;
+- Awe / Buant / Dorian / Stalking run MASTER-SAFE until each stem family is individually listening-certified;
+- their stems remain available as source/donor material, not active replacement mixes.
+
 ## Unresolved / deferred
 
 - human listening across all five mood donors;
