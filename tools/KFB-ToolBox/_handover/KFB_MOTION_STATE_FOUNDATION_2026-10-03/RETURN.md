@@ -45,3 +45,19 @@ Independently verified from Dropbox:
 - no old 33-clip main catalogue is promoted as v6 truth.
 
 The Motion SSOT will consume `LOCOMOTION_LADDER_01.json` when it arrives; it will not duplicate Blender measurement work.
+
+
+## Checkpoint 4 · Blender ladder intaked into current #333
+PR #334 measurement return is now stored byte-identically inside the current Motion SSOT evidence tree.
+
+No gait ladder was silently promoted.
+
+Current evidence says:
+- the old KayKit-only Walk/Run gap is real;
+- Motion Library provides useful jog/run intermediates;
+- sprint remains a gap in the proposed default family;
+- backward/strafe still require review;
+- Motion Lab and Blender disagree materially on some same-clip values.
+
+Next:
+reconcile facts → explicit candidate profile → clean neutral ActionFigure prototype → Georg visual PASS.
