@@ -1,9 +1,10 @@
 import { LIVE_REGISTRY_BASE, PROFILES_URL, RESULT_LIMIT, $, state, fetchJSON, option, setBusy, showError, persistSelection, registryBase, setRegistryMode, setBrowseMode } from './state.js';
-import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics, refreshMultiFilterSummaries } from './registry.js';
+import { ensureCatalog, ensureRigFacts, ensureProblems, renderMetrics, refreshMultiFilterSummaries, configureBrowseHierarchy, refreshPackOptions, refreshCollectionOptions } from './registry.js';
 import { searchRegistry } from './search.js';
 import { setResultView, renderResults, showDetail, closeDetail } from './render.js';
 import { updateSelectionUI, renderConsumerBoundary, buildHandoff, copyText, downloadJSON } from './selection.js';
-import { fitCamera, setWireframe, playClip, animationState } from './preview.js';
+import { fitCamera, setWireframe, playClip, animationState, setMotionPaused, setMotionSpeed, setMotionLoop, scrubMotion, motionTransportState } from './preview.js';
+import { playExternalClip } from './preview3d.js';
 import { initProductionResources } from './resources-ui.js';
 
 let productionUi;
@@ -44,7 +45,8 @@ export async function runSearch({ resetLimit=true } = {}) {
 }
 function clearMultiChecks(id){for(const input of $(id)?.querySelectorAll('input[type="checkbox"]')||[])input.checked=false;}
 function resetFilters() {
-  for (const id of ['searchInput','kindFilter','packFilter','collectionFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter']) if($(id))$(id).value = '';
+  for (const id of ['searchInput','sourceFamilyFilter','kindFilter','packFilter','collectionFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter']) if($(id))$(id).value = '';
+  refreshPackOptions();
   clearMultiChecks('typeFilterOptions'); clearMultiChecks('formatFilterOptions');
   setBrowseMode('primary'); $('browseModeFilter').value='primary'; refreshMultiFilterSummaries();
   state.resultVisibleLimit=RESULT_LIMIT; state.lastResults = [];
@@ -67,7 +69,7 @@ function toggleTechnical() {
 }
 function hasMultiSelection(id){return Boolean($(id)?.querySelector('input[type="checkbox"]:checked'));}
 function hasSearchIntent() {
-  const base=['searchInput','kindFilter','packFilter','collectionFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter'].some((id) => String($(id)?.value || '').trim());
+  const base=['searchInput','sourceFamilyFilter','kindFilter','packFilter','collectionFilter','dependencyFilter','problemFilter','rigFilter','animatedFilter','clipFilter','jointFilter'].some((id) => String($(id)?.value || '').trim());
   return base || hasMultiSelection('typeFilterOptions') || hasMultiSelection('formatFilterOptions') || state.browseMode==='all';
 }
 function formatSourceLine(manifest) {
@@ -93,10 +95,10 @@ async function loadRegistry(mode = state.registryMode, { rerun = false, allowFal
     ]);
     if (token !== registryLoadToken) return;
     state.manifest = manifest; state.packs = packs; state.profiles = profileDoc.profiles || {}; state.rigSummary = rigSummary;
+    configureBrowseHierarchy(packs);
     $('registryStatus').classList.remove('error');
     $('registryStatus').textContent = 'Registry ready';
     $('sourceCommit').textContent = formatSourceLine(manifest);
-    $('packFilter').replaceChildren(option('', 'All packs'), ...packs.map((pack) => option(pack.packId, pack.packId)));
     $('consumerSelect').replaceChildren(...Object.entries(state.profiles).map(([id, profile]) => option(id, profile.displayName || id)));
     renderMetrics(); renderConsumerBoundary(); setResultView(state.viewMode); updateSelectionUI(); setBusy(false);
     if (rerun && hasSearchIntent()) await runSearch();
@@ -136,17 +138,33 @@ async function openAssetFromResource(assetId, clipName = null) {
   playClip(Number(match.value));
 }
 
+async function previewMotionOnActor(row, actor) {
+  await ensureCatalog();
+  const actorAsset=(actor?.assets || []).find((asset)=>asset.exists && asset.assetId)?.assetId;
+  if(!actorAsset)throw new Error('Selected preview actor has no loadable body asset.');
+  const source=state.catalogById?.get(row?.sourceAssetId);
+  if(!source)throw new Error('Motion source asset is not present in the Asset Registry.');
+  await productionUi.activateProductionTab('assets');
+  await showDetail(actorAsset);
+  const result=await playExternalClip(source,row.clipName,row.clipIndex || 0);
+  if(!result)throw new Error('Motion preview did not start.');
+  return result;
+}
+
 async function bootstrap() { $('browseModeFilter').value=state.browseMode; refreshMultiFilterSummaries(); await loadRegistry(state.registryMode, { allowFallback:true }); }
 
-productionUi = initProductionResources({ showAsset: openAssetFromResource });
+productionUi = initProductionResources({ showAsset: openAssetFromResource, previewMotion: previewMotionOnActor });
 // Town v1.6 remains a compatibility module and may set its historical visible version during module init.
 // v1.7 is the current shell version after all dependency initializers have run.
-document.title='KFB Asset Librarian v1.7';
-const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibleVersion.textContent='v1.7';
+document.title='KFB Asset Librarian v1.8';
+const visibleVersion=document.querySelector('h1 span'); if(visibleVersion)visibleVersion.textContent='v1.8';
 
 $('searchButton').onclick = () => runSearch().catch(showError);
 $('searchInput').onkeydown = (event) => { if (event.key === 'Enter') runSearch().catch(showError); };
-$('kaykitPreset').onclick = () => { $('searchInput').value = 'KayKit'; $('kindFilter').value = ''; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
+$('kaykitPreset').onclick = () => { $('searchInput').value = ''; $('sourceFamilyFilter').value = 'kaykit'; $('packFilter').value=''; refreshPackOptions(); $('kindFilter').value = ''; setBrowseMode('primary'); $('browseModeFilter').value='primary'; setResultView('gallery'); runSearch().catch(showError); };
+$('sourceFamilyFilter').onchange = () => { $('packFilter').value=''; refreshPackOptions(); if(hasSearchIntent())runSearch().catch(showError); };
+$('packFilter').onchange = () => { $('collectionFilter').value=''; refreshCollectionOptions(); if(hasSearchIntent())runSearch().catch(showError); };
+$('collectionFilter').onchange = () => { if(hasSearchIntent())runSearch().catch(showError); };
 $('browseModeFilter').onchange = (event) => { setBrowseMode(event.target.value); if(hasSearchIntent())runSearch().catch(showError); };
 $('loadMoreButton').onclick = () => { state.resultVisibleLimit += RESULT_LIMIT; runSearch({resetLimit:false}).catch(showError); };
 $('resetButton').onclick = resetFilters;
@@ -175,6 +193,10 @@ $('autoplayToggle').onchange = (event) => {
   else if (mixer) { mixer.stopAllAction(); $('previewStatus').textContent = `${loadedAnimations.length} clip(s) · paused`; }
 };
 $('clipSelect').onchange = (event) => { if (event.target.value === '') return; $('autoplayToggle').checked = true; playClip(Number(event.target.value)); };
+$('motionPlayPause').onclick = () => { const current=animationState(); setMotionPaused(!current.paused); };
+$('motionSpeed').onchange = (event) => setMotionSpeed(event.target.value);
+$('motionLoop').onchange = (event) => setMotionLoop(event.target.checked);
+$('motionScrub').oninput = (event) => { setMotionPaused(true); scrubMotion(event.target.value); };
 document.addEventListener('kfb-open-asset', (event) => showDetail(event.detail).catch(showError));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
 
@@ -184,5 +206,6 @@ window.KFBAssetLibrarianV13 = publicApi;
 window.KFBAssetLibrarianV14 = publicApi;
 window.KFBAssetLibrarianV15 = publicApi;
 window.KFBAssetLibrarianV17 = { ...publicApi, version:'1.7', loadMore:()=>{state.resultVisibleLimit+=RESULT_LIMIT;return runSearch({resetLimit:false});} };
+window.KFBAssetLibrarianV18 = { ...publicApi, version:'1.8', loadMore:()=>{state.resultVisibleLimit+=RESULT_LIMIT;return runSearch({resetLimit:false});}, motionTransportState };
 updateSelectionUI(); bootstrap();
 setInterval(pollLiveRegistry, 90_000);

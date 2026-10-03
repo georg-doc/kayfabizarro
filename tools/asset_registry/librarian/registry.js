@@ -1,5 +1,6 @@
 import { registryBase, $, state, fetchJSON, fetchJSONL, option, setBusy } from './state.js';
 import { ASSET_TYPES } from './asset-types.js';
+import { visibleSourceFamilies, sourceFamilyForPack, packLabel, collectionLabel } from './browse-families.js';
 
 function checkboxOption(value,label) {
   const row=document.createElement('label'); row.className='multi-check';
@@ -21,6 +22,39 @@ function populateMultiFilters(formats) {
   refreshMultiFilterSummaries();
 }
 
+export function refreshCollectionOptions() {
+  const select=$('collectionFilter');
+  if(!select)return;
+  const pack=state.packById.get($('packFilter')?.value || '');
+  const previous=select.value;
+  const collections=pack?.collections || [];
+  select.replaceChildren(option('',pack?'All collections':'Choose a pack first'),...collections.map((row)=>option(row.path,collectionLabel(row))));
+  select.disabled=!pack;
+  if(collections.some((row)=>row.path===previous))select.value=previous;
+}
+export function refreshPackOptions() {
+  const select=$('packFilter');
+  if(!select)return;
+  const family=$('sourceFamilyFilter')?.value || '';
+  const previous=select.value;
+  const packs=state.packs.filter((pack)=>!family || state.packFamilyById.get(pack.packId)===family).sort((a,b)=>String(a.displayName||a.packId).localeCompare(String(b.displayName||b.packId)));
+  select.replaceChildren(option('',family?'All packs in family':'All packs'),...packs.map((pack)=>option(pack.packId,packLabel(pack))));
+  if(packs.some((pack)=>pack.packId===previous))select.value=previous;
+  refreshCollectionOptions();
+}
+export function configureBrowseHierarchy(packs=state.packs) {
+  state.packById=new Map(packs.map((pack)=>[pack.packId,pack]));
+  state.packFamilyById=new Map(packs.map((pack)=>[pack.packId,sourceFamilyForPack(pack)]));
+  const family=$('sourceFamilyFilter');
+  if(family){
+    const previous=family.value;
+    const rows=visibleSourceFamilies(packs);
+    family.replaceChildren(option('','All source families'),...rows.map((row)=>option(row.id,`${row.label} · ${row.packCount} packs`)));
+    if(rows.some((row)=>row.id===previous))family.value=previous;
+  }
+  refreshPackOptions();
+}
+
 export async function ensureCatalog() {
   if (state.catalog) return state.catalog;
   setBusy(true, 'Loading catalog…');
@@ -28,9 +62,7 @@ export async function ensureCatalog() {
     state.catalog = await fetchJSONL(`${registryBase()}/catalog.jsonl`);
     state.catalogById = new Map(state.catalog.map((r) => [r.assetId, r]));
     const formats = [...new Set(state.catalog.map((r) => r.format).filter(Boolean))].sort();
-    const collections = [...new Set(state.catalog.map((r) => r.collectionPath).filter(Boolean))].sort((a,b) => a.localeCompare(b));
     populateMultiFilters(formats);
-    $('collectionFilter').replaceChildren(option('', 'All collections'), ...collections.map((v) => option(v,v)));
     return state.catalog;
   } finally { setBusy(false); }
 }

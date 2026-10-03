@@ -11,6 +11,8 @@ const cache = { manifest:null, actors:null, configs:null, motions:null, fx:null 
 let currentTab = 'assets';
 let currentRows = [];
 let showAssetCallback = null;
+let previewMotionCallback = null;
+let currentResource = null;
 
 async function json(url) {
   const response = await fetch(url, { cache:'no-store' });
@@ -46,6 +48,10 @@ function openResourceDetail() {
   $('selectionTray').classList.remove('open'); $('selectionTray').setAttribute('aria-hidden','true');
   $('resourceDetailPanel').classList.add('open'); $('resourceDetailPanel').setAttribute('aria-hidden','false'); $('drawerBackdrop').hidden=false;
 }
+function selectedMotionPreviewActor() {
+  const id=$('motionPreviewActorFilter')?.value || '';
+  return id ? (cache.actors || []).find((row)=>row.actorId===id) || null : null;
+}
 function resourceSummary(row) {
   if (row.kind === 'actor') { const asset=row.assets?.[0]; return `${row.actorKind || 'actor'} · ${row.motionCount || 0} linked motions${asset ? ` · ${asset.format || 'asset'} body` : ''}`; }
   if (row.kind === 'motion') return `${row.motionType || 'motion'}${row.animationSet ? ` · ${row.animationSet}` : ''}${row.trigger ? ` · trigger ${row.trigger}` : ''}`;
@@ -55,6 +61,7 @@ function resourceSummary(row) {
 function actionButton(label, handler, primary=true) { const button=document.createElement('button'); button.type='button'; button.className=primary?'primary':'quiet'; button.textContent=label; button.onclick=handler; return button; }
 function linkButton(label, href) { const a=document.createElement('a'); a.className='button-link quiet'; a.textContent=label; a.href=href; a.target='_blank'; a.rel='noreferrer'; return a; }
 async function showResource(row) {
+  currentResource=row;
   openResourceDetail();
   $('resourceDetailKind').textContent=row.kind;
   $('resourceDetailName').textContent=row.displayName || row.actorId || row.resourceId;
@@ -68,7 +75,12 @@ async function showResource(row) {
   const actions=$('resourcePrimaryAction'); actions.replaceChildren();
   if (row.kind === 'actor' && row.assets?.[0]?.exists && showAssetCallback) actions.append(actionButton('Open body asset',()=>showAssetCallback(row.assets[0].assetId)));
   if (row.kind === 'motion' && row.motionType === 'embedded-clip' && row.sourceAssetId && showAssetCallback) {
-    actions.append(actionButton(`Preview source clip · ${row.clipName || 'clip'}`,()=>showAssetCallback(row.sourceAssetId,row.clipName)));
+    const previewActor=selectedMotionPreviewActor();
+    if(previewActor && previewMotionCallback){
+      actions.append(actionButton(`Preview on ${previewActor.displayName || previewActor.actorId}`,()=>previewMotionCallback(row,previewActor)));
+      const actorNote=document.createElement('p'); actorNote.className='small-note'; actorNote.textContent='Animated actor preview measures actual track binding. It remains preview evidence; Animation Lab / ToolBox owns final compatibility.'; actions.append(actorNote);
+    }
+    actions.append(actionButton(`Preview source clip · ${row.clipName || 'clip'}`,()=>showAssetCallback(row.sourceAssetId,row.clipName),!previewActor));
     const note=document.createElement('p'); note.className='small-note'; note.textContent='Source-clip preview only. This does not prove retarget or actor compatibility.'; actions.append(note);
   } else if (row.kind === 'motion' && row.executionStatus === 'OWNER_RUNTIME_REQUIRED') {
     const note=document.createElement('p'); note.className='warning-box'; note.textContent='Configured KFB motion. Playback belongs to its owner runtime; Librarian does not fake execution.'; actions.append(note);
@@ -107,19 +119,26 @@ function renderResources() {
 async function fillActorFilter() {
   const actors=await ensureActors(), select=$('resourceActorFilter'), previous=select.value;
   select.replaceChildren(option('','All actors / scopes'),option('kfb-pets','KFB Pets · custom motion/FX scope'),...actors.map((a)=>option(a.actorId,a.displayName || a.actorId))); select.value=previous;
+  const preview=$('motionPreviewActorFilter');
+  if(preview){
+    const prior=preview.value;
+    const playable=actors.filter((actor)=>(actor.assets||[]).some((asset)=>asset.exists && asset.assetId));
+    preview.replaceChildren(option('','Preview actor…'),...playable.map((actor)=>option(actor.actorId,actor.displayName || actor.actorId)));
+    if(playable.some((actor)=>actor.actorId===prior))preview.value=prior;
+  }
 }
 export async function activateProductionTab(tab) {
   currentTab=tab;
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.classList.toggle('active',button.dataset.libraryTab===tab));
-  const assets=tab==='assets'; $('assetWorkspace').hidden=!assets; $('resourceWorkspace').hidden=assets; closeResourceDetail();
+  const assets=tab==='assets'; $('assetWorkspace').hidden=!assets; $('resourceWorkspace').hidden=assets; if($('motionPreviewActorFilter'))$('motionPreviewActorFilter').hidden=tab!=='motions'; closeResourceDetail();
   if (assets) return;
   try {
     const manifest=await ensureManifest(); $('resourceRevision').textContent=manifest.resourceRegistryRevision || 'R0'; await fillActorFilter(); currentRows=await ensureRows(tab); $('resourceEyebrow').textContent=tab; renderResources();
   } catch (error) { $('resourceMeta').textContent=`Resource Registry unavailable: ${error.message}`; $('resourceMeta').classList.add('error'); }
 }
-export function initProductionResources({ showAsset }) {
-  showAssetCallback=showAsset;
+export function initProductionResources({ showAsset, previewMotion }) {
+  showAssetCallback=showAsset; previewMotionCallback=previewMotion || null;
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.onclick=()=>activateProductionTab(button.dataset.libraryTab));
-  $('resourceSearch').oninput=renderResources; $('resourceActorFilter').onchange=renderResources; $('resourceStatusFilter').onchange=renderResources; $('resourceDetailClose').onclick=closeResourceDetail;
+  $('resourceSearch').oninput=renderResources; $('resourceActorFilter').onchange=renderResources; $('resourceStatusFilter').onchange=renderResources; if($('motionPreviewActorFilter'))$('motionPreviewActorFilter').onchange=()=>{ if(currentResource?.kind==='motion')showResource(currentResource); }; $('resourceDetailClose').onclick=closeResourceDetail;
   return { activateProductionTab, closeResourceDetail };
 }

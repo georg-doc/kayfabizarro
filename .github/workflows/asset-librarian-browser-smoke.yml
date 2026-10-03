@@ -15,6 +15,7 @@ on:
       - ".github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.6-town-workbench-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.8-collections-motion-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   push:
     branches:
@@ -32,6 +33,7 @@ on:
       - ".github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.6-town-workbench-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs"
+      - ".github/scripts/asset-librarian-v1.8-collections-motion-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   workflow_dispatch:
 
@@ -63,6 +65,7 @@ jobs:
           node --check tools/asset_registry/librarian/app.js
           node --check tools/asset_registry/librarian/state.js
           node --check tools/asset_registry/librarian/registry.js
+          node --check tools/asset_registry/librarian/browse-families.js
           node --check tools/asset_registry/librarian/search.js
           node --check tools/asset_registry/librarian/render.js
           node --check tools/asset_registry/librarian/asset-types.js
@@ -79,6 +82,7 @@ jobs:
           node --check .github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs
           node --check .github/scripts/asset-librarian-v1.6-town-workbench-smoke.mjs
           node --check .github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs
+          node --check .github/scripts/asset-librarian-v1.8-collections-motion-smoke.mjs
 
       - name: Run existing Asset Librarian / WebGL regression smoke
         run: node .github/scripts/asset-librarian-browser-smoke.mjs
@@ -97,6 +101,9 @@ jobs:
 
       - name: Run v1.7 browse pagination and multiselect filter smoke
         run: node .github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs
+
+      - name: Run v1.8 collection browse and motion preview smoke
+        run: node .github/scripts/asset-librarian-v1.8-collections-motion-smoke.mjs
 
       - name: Upload browser evidence
         if: always()

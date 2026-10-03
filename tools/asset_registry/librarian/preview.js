@@ -1,6 +1,6 @@
 import { $, formatBytes, formatDuration } from './state.js';
 import { clear3D, render3D } from './preview3d.js';
-export { fitCamera, setWireframe, playClip, animationState } from './preview3d.js';
+export { fitCamera, setWireframe, playClip, animationState, setMotionPaused, setMotionSpeed, setMotionLoop, scrubMotion, motionTransportState } from './preview3d.js';
 function resetMedia(){const a=$('audioPlayer');a.pause();a.removeAttribute('src');a.load();$('imagePreviewImg').removeAttribute('src');$('imagePreview').hidden=true;$('audioPreview').hidden=true;$('dataPreview').hidden=true;}
 export function clearPreview(){clear3D();resetMedia();}
 function renderImage(record){$('imagePreview').hidden=false;$('previewTitle').textContent='Image / texture preview';$('previewStatus').textContent='Loading…';const img=$('imagePreviewImg');img.onload=()=>{$('previewStatus').textContent='Loaded';$('imageMeta').textContent=`${img.naturalWidth} × ${img.naturalHeight}px · ${record.format}`;};img.onerror=()=>{$('previewStatus').textContent='Preview failed';};img.src=record.source?.rawPinned||record.source?.rawLatest||'';}

@@ -10,7 +10,7 @@ export function readFilters() {
   const multiFormats=checkedValues('formatFilterOptions');
   const legacyFormat=String($('formatFilter')?.value||'').trim();
   return {
-    query: $('searchInput').value.trim(), kind: $('kindFilter').value, pack: $('packFilter').value,
+    query: $('searchInput').value.trim(), family: $('sourceFamilyFilter')?.value || '', kind: $('kindFilter').value, pack: $('packFilter').value,
     collection: $('collectionFilter').value, formats: multiFormats.length?multiFormats:(legacyFormat?[legacyFormat]:[]), types: checkedValues('typeFilterOptions'),
     dependencyStatus: $('dependencyFilter').value, problemType: $('problemFilter').value,
     rigged: $('rigFilter').value, animated: $('animatedFilter').value,
@@ -42,7 +42,7 @@ function tri(value, wanted) {
 export function applyFilters(records, filters, visibleLimit=state.resultVisibleLimit) {
   const scored = [];
   for (const record of records) {
-    if (filters.kind && record.kind !== filters.kind || filters.pack && record.packId !== filters.pack || filters.collection && record.collectionPath !== filters.collection || filters.formats.length && !filters.formats.includes(record.format) || filters.dependencyStatus && record.dependencyStatus !== filters.dependencyStatus) continue;
+    if (filters.family && state.packFamilyById.get(record.packId) !== filters.family || filters.kind && record.kind !== filters.kind || filters.pack && record.packId !== filters.pack || filters.collection && record.collectionPath !== filters.collection || filters.formats.length && !filters.formats.includes(record.format) || filters.dependencyStatus && record.dependencyStatus !== filters.dependencyStatus) continue;
     const type=classifyAsset(record); record.assetType=type;
     if (filters.types.length && !filters.types.includes(type)) continue;
     if (filters.problemType) {
