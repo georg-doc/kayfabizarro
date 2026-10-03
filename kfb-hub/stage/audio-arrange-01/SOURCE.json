@@ -1,0 +1,130 @@
+{
+  "schema": "kfb.audio-arrange-donor-bench/0.1",
+  "build": "AUDIO-ARRANGE-01-DONOR-BENCH-v0.1",
+  "date": "2026-10-03",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "status": "INTERNAL_BRANCH_CANDIDATE",
+  "publicStage": false,
+  "bpm": 76,
+  "beatsPerBar": 4,
+  "totalBars": 64,
+  "masters": [
+    {
+      "id": "cyclical",
+      "title": "Cyclical Warmth",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth.mp3",
+      "sha": "0f544bd7e51b6b0f86f3996daa0a66b8d8be27ce",
+      "size": 4917339,
+      "role": "primary musical ground truth"
+    },
+    {
+      "id": "loping",
+      "title": "Loping Groove",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove.mp3",
+      "sha": "04d08d460e0339504802fd9f77544a92661e2d54",
+      "size": 4986803,
+      "role": "secondary master reference"
+    }
+  ],
+  "stems": [
+    {
+      "id": "drums",
+      "label": "Drums",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/0 Drums.mp3",
+      "sha": "39525692c33c738aafa519661773fbd78c1fb21a",
+      "size": 4354916
+    },
+    {
+      "id": "bass",
+      "label": "Bass",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/1 Bass.mp3",
+      "sha": "32b5ceae7b973f43055f46bbded3db19d4b13ade",
+      "size": 3252740
+    },
+    {
+      "id": "guitar",
+      "label": "Guitar",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/2 Guitar.mp3",
+      "sha": "9e3b0b83e5a237465e4ee5cc2661011916518419",
+      "size": 2854004
+    },
+    {
+      "id": "keyboard",
+      "label": "Keyboard",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/3 Keyboard.mp3",
+      "sha": "38b44f8fca9af07cdea5aca1ccddd651856885d7",
+      "size": 3836900
+    },
+    {
+      "id": "percussion",
+      "label": "Percussion",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/4 Percussion.mp3",
+      "sha": "f4aa370df2b08979fc861b1168cdf29104dec4ac",
+      "size": 4563980
+    },
+    {
+      "id": "strings",
+      "label": "Strings",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/5 Strings.mp3",
+      "sha": "a26456d848b4cd44b587f1176758c6743f8d5f9a",
+      "size": 1452572
+    },
+    {
+      "id": "synth",
+      "label": "Synth",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/6 Synth.mp3",
+      "sha": "1736f60264d25ff74f753cba36261b8d3f203f20",
+      "size": 3918932
+    },
+    {
+      "id": "brass",
+      "label": "Brass",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/7 Brass.mp3",
+      "sha": "54828793df169cedea834745a6f6c2611d10b28b",
+      "size": 1731524
+    }
+  ],
+  "sections": [
+    {
+      "id": "OPEN",
+      "fromBar": 0,
+      "toBar": 8
+    },
+    {
+      "id": "A",
+      "fromBar": 8,
+      "toBar": 16
+    },
+    {
+      "id": "APRIME",
+      "fromBar": 16,
+      "toBar": 24
+    },
+    {
+      "id": "B",
+      "fromBar": 24,
+      "toBar": 32
+    },
+    {
+      "id": "SPACE",
+      "fromBar": 32,
+      "toBar": 40
+    },
+    {
+      "id": "ARETURN",
+      "fromBar": 40,
+      "toBar": 48
+    },
+    {
+      "id": "PSY",
+      "fromBar": 48,
+      "toBar": 56
+    },
+    {
+      "id": "RECOVERY",
+      "fromBar": 56,
+      "toBar": 64
+    }
+  ],
+  "note": "Branch-local donor bench only. It compares masters, exact aligned stems and one fixed stem-arrangement form. No public Stage claim."
+}

@@ -1,0 +1,57 @@
+name: AUDIO-ARRANGE-01 donor bench QA
+
+on:
+  push:
+    branches:
+      - 'chatgpt-web/audio-arrange-01-2026-10-03'
+    paths:
+      - 'kfb-hub/stage/audio-arrange-01/**'
+      - '.github/workflows/audio-arrange-stage.yml'
+  pull_request:
+    paths:
+      - 'kfb-hub/stage/audio-arrange-01/**'
+      - '.github/workflows/audio-arrange-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate exact donor files
+        run: node kfb-hub/stage/audio-arrange-01/validate.mjs
+
+      - name: Syntax check bench
+        run: |
+          node --check kfb-hub/stage/audio-arrange-01/arrange-bench.js
+          node --check kfb-hub/stage/audio-arrange-01/qa.mjs
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Start repository preview
+        run: |
+          python3 -m http.server 4173 > /tmp/audio-arrange-http.log 2>&1 &
+          sleep 2
+
+      - name: Run donor bench browser QA
+        run: node kfb-hub/stage/audio-arrange-01/qa.mjs
+
+      - name: Upload proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-arrange-01-donor-bench-proof
+          path: audio-arrange-proof/
+          retention-days: 14
