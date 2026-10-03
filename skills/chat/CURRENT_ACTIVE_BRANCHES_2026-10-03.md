@@ -34,8 +34,8 @@ PR #332 · **[CURRENT WORLD] Procedural Test World · R2D in WB2**
 Base:
 current main.
 
-Current tested implementation:
-`0335ade26741cf1df4920a723045c25de4fa2a82`
+Current tested runtime/browser implementation:
+`a18846cf8128e3e1facb0b51be0e6aff873d1244`
 
 Browser-proven in one WB2 owner:
 - R2D continuous island top;
@@ -45,6 +45,8 @@ Browser-proven in one WB2 owner:
 - creek;
 - waterfall;
 - source-proven P1/P2 nature groups;
+- existing B1 / kfb-facade-rule-v1 building family on generated R2D pads;
+- seed-3 result: 1 placed building, 14 windows, 1 door;
 - no Travel/card host;
 - no legacy player.
 
@@ -56,7 +58,7 @@ R2D design brief #328 is closed as adopted direction.
 Branches remain available as evidence.
 
 Current next World task:
-existing current building/facade family on R2D building pads.
+extend the same proven world into a small multi-island R2D / Track-Core corridor. Keep Player/Drive/Combat detached until their own owners are proven.
 
 ---
 
