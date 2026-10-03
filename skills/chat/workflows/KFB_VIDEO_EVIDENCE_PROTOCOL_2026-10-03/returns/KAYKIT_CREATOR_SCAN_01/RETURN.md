@@ -100,6 +100,49 @@ No merge and no deployment occurred.
 - third-video version classification by visible evidence;
 - timestamped Blender comparison rows.
 
+## Immediate continuation plan · minimal manual evidence
+
+The scan does **not** wait passively. If Georg wants to unblock it now, the lowest-effort fallback is to provide a **small set of screenshots or short screen-recorded excerpts** from the original Kay Lousberg videos. ChatGPT then performs all evidence classification, contact-sheet assembly, timestamps table and Blender comparison planning.
+
+### Priority source
+
+The official current KayKit Character Animations 1.1 page directly links the 2025 detailed Godot tutorial `4p7QaOd8SHE` and a current quick tutorial. The detailed video's public chapter index gives the high-value windows:
+
+- `27:37` — State Machines
+- `31:10` — Animation Transitions
+- `34:14` — In game
+- `34:54` — Animation Timing
+- `42:35` — Mannequin Character
+
+Optional technical context if needed:
+- `04:57` — Import Animations
+- `06:15` — Animation Library
+- `10:49` — Rig_Large Characters
+- `17:35` — Ranged Weapons
+- `37:11–40:50` — External Animations / Retargeting / KayKit animations on retargeted rig
+
+### Minimal capture request
+
+Preferred: **five short screen recordings**, roughly 20–40 seconds around the five high-value chapter points above, with the YouTube timecode visible.
+
+Alternative: **10–15 screenshots total**, distributed across those same windows. No polishing or annotation is required.
+
+For each screenshot/excerpt ChatGPT will:
+- read the visible timecode/UI;
+- classify `SEEN` / `SAID` / `INFERRED`;
+- identify visible clip/state names when readable;
+- extract gait/transition/jump/Mannequin observations;
+- build the contact sheets;
+- create exact Blender comparison rows.
+
+### Lower-priority sources
+
+The 2022 tutorial `rwst5GnUU7s` belongs to the old legacy animation line (the old page is now explicitly labelled Legacy and its 1.2 pack is for the older character style). It is retained as historical/version evidence, but Georg does **not** need to capture it first.
+
+`T1KNCtAqJ7A` remains useful mainly to classify whether the old Overview Set 1 belongs to that legacy line. A few identifying frames are sufficient; it does not need a full manual scan before the current 2025 detailed tutorial is processed.
+
+This manual-evidence fallback does not authorize downloading or re-uploading complete videos.
+
 ## Decision update · 2026-10-03
 
 Georg does **not** approve installing an unfamiliar third-party plugin merely to unblock this scan without first knowing the provider/service, possible costs and requested rights/permissions.
