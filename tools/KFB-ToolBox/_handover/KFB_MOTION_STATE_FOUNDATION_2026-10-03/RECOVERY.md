@@ -16,10 +16,10 @@ Repository:
 georg-doc/kayfabizarro
 
 Branch:
-chatgpt-web/kfb-animation-motion-ssot-2026-10-03
+chatgpt-web/motion-ssot-convergence-2026-10-03
 
 Draft PR:
-#331
+#333
 
 Current tested head:
 aa0166f166c303443a74c7bbae1b84f181fa0900
@@ -98,3 +98,31 @@ Wait for the actual GitHub-delivered `LOCOMOTION_LADDER_01.json`, inspect its re
 3. Blender ladder measurements.
 
 Every disagreement remains visible and unresolved until an explicit decision.
+
+
+## Blender ladder delivered · 2026-10-03
+
+PR #334 delivered the requested measurement/data return and has now been copied byte-identically into the current Motion SSOT evidence folder.
+
+Exact intake:
+- `evidence/blender-ladder/LOCOMOTION_LADDER_01.json`
+  - blob `aa089a25157b057fd2456b8305f2ce97f3858972`
+- `evidence/blender-ladder/RETURN.md`
+  - blob `565aa5327a3597189b53ac664a576b120055ba22`
+- `evidence/blender-ladder/KFB_LOCOMOTION_LADDER_01_review_plan.json`
+  - blob `8eef67369a208182bd7f470bd9ec87113033121b`
+
+Key measured findings:
+- KayKit-only Walk→Run has a large no-slip gap;
+- Blender candidate ladder uses walk → jog → runEasy → run;
+- no accepted clean sprint source yet;
+- backward/strafe still need large stretch and remain review items;
+- several same-clip measurements differ >10% from Motion Lab v1 and stay unresolved;
+- no ladder is HUMAN_ACCEPTED yet.
+
+### Current next action
+
+Reconcile the delivered ladder against KCL/Three.js and Motion Library facts, preserving all conflicts.
+Then build the clean neutral ActionFigure prototype from the explicitly resolved profile only.
+
+Do not integrate Travel/Combat/Residents before that prototype passes Georg visually.
