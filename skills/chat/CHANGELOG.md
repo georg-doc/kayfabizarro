@@ -2127,3 +2127,15 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - No public Stage or Hub action card added. HUB-CTRL remains Hub owner.
 - Exactly one next productive gate: **BRAWL-CLUB-BRICKFISH-01**.
 
+## 2026-10-03 · KFB Cartoon Brawl Brickfish ordinary consumer proof
+- Synced the second real `kfb-cartoon-brawl_v1` consumer from `georg-doc/KFB-Combat-Arena` stacked Draft PR **#17**.
+- Exact Combat closure head: `e391536fb8307a11ccd09dd6f0b04a7e2110542d`; closure-head CI **122/122 PASS**, build 244, re-home 172/66/routes PASS.
+- Reused exact KFB `animal-fish.glb` donor. Source-isolation proof corrected the initial head/tail sign hypothesis: visible face/head = −X, tail/grip = +X.
+- Neutral tail mount at authored `handslot.r` passes full-clip Chop owner-clearance with zero visible tail↔grip error.
+- Tested Georg's stretch hypothesis rather than assuming it: axial stretch 1.0–1.7 stayed clear but could not solve the lateral Chop miss; excess stretch was rejected.
+- Repair pass 1 added a bounded weapon-side tail-pivot whip. A 28-pair calibration selected **30° whip / stretch 1.00** as the minimum-cost PASS.
+- Real runtime proof at unchanged 0.12 u body gap: exactly 1 damage intent / 1 VFX / 1 SFX; deterministic miss 0/0/0; target recovers Idle; whip returns 0°; stretch returns 1; visible head↔impactHead and visible tail↔grip remain synchronized.
+- Browser run `37148495692` / job `111277236973` PASS; artifact `11282867552`; digest `70669dc21ebea6296189927ef0e35db243ace572a32cd29296982d0b8cb63ac9`.
+- Productive Arena punch mapping remains unchanged. No public Stage, Hub action card, merge or Live promotion.
+- Exactly one next productive gate: **BRAWL-BRICKFISH-HEAVY-01** using native `Melee_1H_Attack_Jump_Chop`, independently measured.
+
