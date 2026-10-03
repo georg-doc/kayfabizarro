@@ -33,6 +33,7 @@ const CLASS_CONFIG = {
 const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json';
 const CLEANUP02_REVIEW_URL = './data/cleanup02-review.v0.json';
 const CLEANUP02_ANCHORS_URL = './data/cleanup02-anchors.v0.json';
+const APPEARANCE_VARIANTS_URL = './data/appearance-variants.v1.json';
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
 function sourceAssetUrl(ref,fallbackRevision){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${ref?.revision||fallbackRevision}/${ref?.path||''}`); }
 async function applyActorTextureOverride(figure,actor){
@@ -72,6 +73,7 @@ const state = {
   currentActor:null, currentActorId:null, currentActorByClass:{}, rosterFilter:'all', switching:false, loader:null,
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
   componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null, textureOverrideReport:null,
+  appearanceManifest:null, appearanceByActor:{},
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
@@ -92,6 +94,47 @@ function setLoading(show, detail=null) {
   el.hidden=!show;
   el.classList.toggle('is-hidden',!show);
   el.setAttribute('aria-hidden',show?'false':'true');
+}
+function appearanceFamily(actorId){ return actorId ? state.appearanceManifest?.families?.find((f)=>f.actorIds?.includes(actorId)) || null : null; }
+function appearanceSelection(actor){
+  const family=appearanceFamily(actor?.id); if(!family)return null;
+  if(Object.prototype.hasOwnProperty.call(state.appearanceByActor,actor.id)){
+    const stored=state.appearanceByActor[actor.id];
+    if(stored==='SOURCE'||family.variants?.some((v)=>v.variant===stored))return stored;
+  }
+  const actorDefault=actor?.textureOverride?.variant;
+  if(actorDefault&&family.variants?.some((v)=>v.variant===actorDefault))return actorDefault;
+  return 'SOURCE';
+}
+function effectiveActor(baseActor){
+  if(!baseActor)return null;
+  const family=appearanceFamily(baseActor.id); if(!family)return baseActor;
+  const selected=appearanceSelection(baseActor);
+  if(!family.runtimeSelectable||selected==='SOURCE')return {...baseActor,appearanceFamily:family.id,appearanceVariant:selected};
+  const variant=family.variants.find((v)=>v.variant===selected); if(!variant)return baseActor;
+  return {...baseActor,appearanceFamily:family.id,appearanceVariant:selected,textureOverride:{...(baseActor.textureOverride||{}),variant:variant.variant,path:variant.path,blob:variant.blob,revision:variant.revision||state.appearanceManifest?.source?.sourceRevision||baseActor.revision}};
+}
+function renderAppearanceControl(){
+  const select=$('#appearanceSelect'),hint=$('#appearanceHint'); if(!select||!hint)return;
+  const base=actorById(state.currentActorId),family=appearanceFamily(base?.id);
+  if(!base||!family){select.innerHTML='<option value="SOURCE">Source / embedded</option>';select.disabled=true;hint.textContent='No registered multi-texture source family for this actor.';return;}
+  const opts=[];
+  if(!base.textureOverride?.variant)opts.push('<option value="SOURCE">Source / embedded</option>');
+  for(const v of family.variants||[])opts.push(`<option value="${v.variant}">${v.variant}</option>`);
+  select.innerHTML=opts.join('');
+  const current=appearanceSelection(base); if([...select.options].some((o)=>o.value===current))select.value=current;
+  select.disabled=!family.runtimeSelectable;
+  hint.textContent=family.runtimeSelectable?`${family.label} · ${family.variants.length} verified source palettes · shared geometry EyeRig profile`:`${family.label} · variants registered, runtime switch source-gated: ${family.note}`;
+}
+async function setAppearanceVariant(variant){
+  const base=actorById(state.currentActorId),family=appearanceFamily(base?.id); if(!base||!family||!family.runtimeSelectable||state.switching)return false;
+  const allowed=variant==='SOURCE'||family.variants?.some((v)=>v.variant===variant); if(!allowed)return false;
+  state.appearanceByActor[base.id]=variant; save();
+  return loadActor(base.id,{preserve:true});
+}
+function wireAppearanceControl(){
+  const select=$('#appearanceSelect'); if(!select)return;
+  select.onchange=()=>setAppearanceVariant(select.value).catch((err)=>{console.error(err);log(`appearance switch failed · ${err.message}`);});
 }
 function cleanup02Issue(actorId){ return actorId ? state.cleanup02Review?.actorIssues?.[actorId] || null : null; }
 function sourceAnchorRecord(actorId){ return actorId ? state.cleanup02Anchors?.actors?.[actorId] || null : null; }
@@ -204,6 +247,7 @@ function save() {
     selectedByClass:Object.fromEntries(Object.entries(state.selectedByClass).map(([k,v])=>[k,[...v]])),
     currentRigClass:state.rigClass,
     currentActorByClass:state.currentActorByClass,
+    appearanceByActor:state.appearanceByActor,
     rosterFilter:state.rosterFilter
   }));
 }
@@ -352,6 +396,7 @@ function updateActorAudit() {
   $('#sourcePath').textContent=a.path.split('/').pop();
   const info=$('#actorTechHint');
   if(info) info.textContent=`${a.provenance} · ${a.path}${a.textureOverride?` · texture ${a.textureOverride.variant||a.textureOverride.path.split('/').pop()}`:''}`;
+  renderAppearanceControl();
   renderCleanup02Issue();
 }
 function storeCurrentProfile() {
@@ -769,7 +814,7 @@ function wireComponentDiagnostic(camera,controls) {
 }
 
 async function loadActor(actorId,{preserve=true}={}) {
-  const actor=actorById(actorId); if(!actor||state.switching)return false;
+  const baseActor=actorById(actorId),actor=effectiveActor(baseActor); if(!actor||state.switching)return false;
   state.switching=true;
   try{
     if(preserve) storeCurrentProfile();
@@ -917,7 +962,7 @@ function wireRuntimeControls(camera,controls,renderer) {
 }
 
 async function boot() {
-  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review,cleanup02Anchors]=await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,contract,cleanup02Review,cleanup02Anchors,appearanceManifest]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
@@ -926,7 +971,8 @@ async function boot() {
     fetch(CLASS_CONFIG.Rig_Large.reviewedUrl).then((r)=>{if(!r.ok)throw new Error(`large reviewed ${r.status}`);return r.json();}),
     fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();}),
     fetch(CLEANUP02_REVIEW_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 review ${r.status}`);return r.json();}),
-    fetch(CLEANUP02_ANCHORS_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 anchors ${r.status}`);return r.json();})
+    fetch(CLEANUP02_ANCHORS_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 anchors ${r.status}`);return r.json();}),
+    fetch(APPEARANCE_VARIANTS_URL).then((r)=>{if(!r.ok)throw new Error(`appearance variants ${r.status}`);return r.json();})
   ]);
   state.seed=seed;
   state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed};
@@ -934,6 +980,7 @@ async function boot() {
   window.__EYE_RIG_CONTRACT=contract;
   state.cleanup02Review=cleanup02Review;
   state.cleanup02Anchors=cleanup02Anchors;
+  state.appearanceManifest=appearanceManifest;
 
   const saved=readSaved();
   if(saved?.classDefault&&!saved?.classDefaults) state.classSeeds.Rig_Medium.authoringDefault=clone(saved.classDefault);
@@ -956,6 +1003,7 @@ async function boot() {
   };
   state.selectedActors=state.selectedByClass[state.rigClass];
   state.rosterFilter=saved?.rosterFilter||'all';
+  state.appearanceByActor=clone(saved?.appearanceByActor||{});
 
   state.savedLegacyDefault=isLegacyUntunedProfile(state.profiles.gothgirl);
   if(state.savedLegacyDefault){
@@ -968,12 +1016,12 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),appearance:{family:appearanceFamily(state.currentActorId)?.id||null,variant:appearanceSelection(actorById(state.currentActorId))},
       controlSemantics:{spacing:'x-only',height:'y-only',eyeSize:'size-only-centre-locked',inset:'depth-only',splay:'orientation-plus-surface-seat',lidFit:'lids-only',oval:'shape-only',pupilSize:'pupil-only',track:'gaze-amplitude-only',converge:'pupil-aim-only',gloss:'material-only'},
       eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
-  wireProfileIo();wireRuntimeControls(camera,controls,renderer);wireRoster();
+  wireProfileIo();wireAppearanceControl();wireRuntimeControls(camera,controls,renderer);wireRoster();
   updateClassUi();renderRoster();
   await loadMotion(state.loader);
 

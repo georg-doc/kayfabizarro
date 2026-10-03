@@ -177,6 +177,15 @@
       </div>
 
       <details open>
+        <summary>Appearance / source palette</summary>
+        <label class="select-label" for="appearanceSelect">Palette</label>
+        <select id="appearanceSelect" class="select-control" disabled>
+          <option value="SOURCE">Source / embedded</option>
+        </select>
+        <div id="appearanceHint" class="micro-status">Variant registry loading…</div>
+      </details>
+
+      <details open>
         <summary>Placement</summary>
         <div class="control-grid">
           <label>Spacing <output data-out="dx"></output><input data-param="dx" data-expand="true" type="range" min="-0.5" max="1.8" step="0.005"></label>
