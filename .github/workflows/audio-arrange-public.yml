@@ -1,0 +1,58 @@
+name: AUDIO-ARRANGE-01 public Stage proof
+
+on:
+  push:
+    branches:
+      - 'chatgpt-web/audio-arrange-01-donor-rebase-2026-10-03'
+    paths:
+      - '.github/workflows/audio-arrange-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/audio-arrange-01
+            .github/workflows/audio-arrange-public.yml
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Exercise exact Cloudflare Stage
+        env:
+          AUDIO_ARRANGE_URL: https://kayfabizarro.pages.dev/kfb-hub/stage/audio-arrange-01/
+          AUDIO_ARRANGE_PROOF: audio-arrange-public-proof
+        run: |
+          ok=0
+          for attempt in 1 2 3 4; do
+            echo "Public Stage attempt $attempt"
+            rm -rf "$AUDIO_ARRANGE_PROOF"
+            if node kfb-hub/stage/audio-arrange-01/qa.mjs; then
+              ok=1
+              break
+            fi
+            if [ "$attempt" -lt 4 ]; then sleep 30; fi
+          done
+          test "$ok" = 1
+
+      - name: Upload public proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-arrange-01-public-proof
+          path: audio-arrange-public-proof/
+          retention-days: 14
