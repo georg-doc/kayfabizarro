@@ -1,0 +1,37 @@
+name: AUDIO-STEM-BED-01 branch QA
+on:
+  push:
+    branches: ['chatgpt-web/audio-stem-bed-01-2026-10-03']
+    paths: ['kfb-hub/stage/audio-stem-bed-01/**','.github/workflows/audio-stem-bed-stage.yml']
+  pull_request:
+    paths: ['kfb-hub/stage/audio-stem-bed-01/**','.github/workflows/audio-stem-bed-stage.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/audio-stem-bed-01
+            media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth.mp3
+            media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)
+            .github/workflows/audio-stem-bed-stage.yml
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Validate exact donor files
+        run: node kfb-hub/stage/audio-stem-bed-01/validate.mjs
+      - name: Syntax check
+        run: node --check kfb-hub/stage/audio-stem-bed-01/stem-bed.js && node --check kfb-hub/stage/audio-stem-bed-01/qa.mjs
+      - name: Install Playwright
+        run: npm install --no-save playwright@1.51.1 && npx playwright install --with-deps chromium
+      - name: Start preview
+        run: python3 -m http.server 4173 >/tmp/stem-bed-http.log 2>&1 & sleep 2
+      - name: Browser QA
+        run: node kfb-hub/stage/audio-stem-bed-01/qa.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: {name: audio-stem-bed-01-proof, path: audio-stem-bed-proof/, retention-days: 14}
