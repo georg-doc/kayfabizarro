@@ -1,3 +1,19 @@
+## 2026-10-03 · VFX Consumer Fixture 01 · Site/Chat review
+
+Status: **LOOK_AT · LOCAL BROWSER VERIFIED · NO CLOUDFLARE**
+
+- Reused the existing `vfx-sfx` Hub lane; no duplicate lane or VFX owner.
+- Real consumer: KFB-Combat-Arena Draft PR #13, stacked on the source-proven KayKit 1H Sword consumer.
+- Tested head: `a8082d74bcf46965c412d83273e488dcd74fcd58`.
+- Existing swept contact + AttackLedger remain gameplay truth; TrailFx and SpriteFx remain renderer owners.
+- Semantic proof: confirmed target hit vs near miss.
+- Confirmed hit: exactly 1 DROP + 2 BALL + 5 CHIP = 8 clay pieces; peak 3 clay draw calls; 0 drops; cleanup returns alive/draw calls to 0.
+- Near miss: 0 damage, 0 impact VFX dispatch, 0 clay.
+- Repository/build: 116/116 PASS; portable build + re-home PASS.
+- Local Chromium review run: `37136362307` PASS; artifact `11278623676`.
+- Human review transport is KFB Production Control + current Chat HTML. No Stage/Cloudflare route exists for this gate.
+- Current question is only impact choreography PASS / TUNE / FAIL; final K2 clay material and productive Arena Sword promotion remain outside the gate.
+
 ## 2026-10-03 · VFX Language Skill v1 source sync
 
 Status: **SOURCE METADATA UPDATED · NO PUBLICATION CLAIM**
