@@ -1,6 +1,6 @@
 # AUDIO-STEM-BED-02 · START HERE
 
-**Status:** PUBLIC_VERIFIED · HUMAN LISTENING PENDING  
+**Status:** HUMAN FAIL · TECHNICAL DIAGNOSIS OPEN  
 **Date:** 2026-10-03  
 **Owner:** KFB Audio & Soundscape Baseline v1  
 **Repo:** `georg-doc/kayfabizarro`  
@@ -84,7 +84,29 @@ Current state: **PROMPT ONLY**. No signature-theme master/stems are promoted by 
 - No automatic merge or Live promotion.
 - Legacy `kfb-hub/index.html` source sync was abandoned after two failed boundary-repair attempts and rolled back; the current public Hub owner is `kfb-hub/stage/hub-ui-v2/index.html` on `cloudflare-live`, which is publicly verified.
 
-## Exactly one next gate
+## HUMAN LISTENING RESULT · FAIL · 2026-10-03
+
+Georg rejected AUDIO-STEM-BED-02 after listening to the public Stage.
+
+Observed failure:
+- **Buant Groove is not recognizably preserved**;
+- result sounds **slow/lame and buggy**;
+- audible output is dominated by **plopping / sparse transients**;
+- the original melody / musical identity is effectively missing.
+
+This overrides all previous `PUBLIC_VERIFIED · HUMAN LISTENING PENDING` product status. Automated 100/100 source and 18/18 browser checks proved execution only; they did **not** prove musical fidelity.
+
+Immediate technical suspicion to verify:
+- Buant Groove's Suno stem package contains `0 Lead Vocals.mp3` and `1 Backing Vocals.mp3` even though the donor is intended as instrumental;
+- those two residuals were excluded from the runtime pool;
+- Suno stem separation may have classified important lead/melodic instrumental content into those residual channels;
+- the runtime mix also attenuates several melodic/color stems strongly, so even a complete stem set may not reconstruct the master at the default weights.
+
+No consumer integration, merge or Live promotion is allowed from this candidate.
+
+**Exactly one next gate:** `AUDIO-STEM-BED-02-R1_MASTER_RECONSTRUCTION` — prove Buant Groove MASTER vs ALL-STEMS unity reconstruction vs current weighted mix and identify the missing musical content before any remix repair.
+
+## Previous gate (superseded)
 
 **GEORG_AUDIO_STEM_BED_02**
 

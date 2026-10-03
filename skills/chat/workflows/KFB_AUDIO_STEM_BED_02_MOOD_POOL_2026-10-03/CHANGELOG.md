@@ -27,3 +27,12 @@
 - optional legacy `kfb-hub/index.html` mirror reached two failed boundary-repair attempts (`257f9b45…`, `4700cefd…`);
 - stopped the repair loop, restored the legacy file to its pre-attempt valid state and exported full Git-native failure recovery;
 - AUDIO-STEM-BED-02 runtime/public candidate remains intact; human listening remains the next product gate.
+
+## 2026-10-03 · HUMAN FAIL · musical fidelity
+
+- Georg rejected the public mood-pool result after listening.
+- Buant Groove specifically is reported as lame/buggy, dominated by plopping, with essentially none of the original melody/identity audible.
+- Previous PUBLIC_VERIFIED status is retained only as technical browser/publication evidence, **not product acceptance**.
+- Immediate diagnosis target: compare donor master against complete Suno stem reconstruction including the two files labelled Lead Vocals / Backing Vocals, then against the current weighted runtime mix.
+- No merge, consumer integration or signature-theme follow-up before this is understood.
+- next gate: `AUDIO-STEM-BED-02-R1_MASTER_RECONSTRUCTION`.
