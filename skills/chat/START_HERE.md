@@ -27,6 +27,16 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
 
+## 2026-10-04 · Resident Atlas → playable MVP / WSA routing
+
+Current Resident-Atlas source package for MVP/WSA intake:
+`tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/`
+
+WSA/MVP integration brief:
+`skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
+
+Use this intake for Resident-set placement, 3D In-Place Editor reuse, Asset Librarian Resident search, Orc Band, Resident Disco and Wrestling/Show Ring planning. Atlas is a source/authoring tool; **WB2 PR #332 remains the receiving world owner**. Full Fight Sandbox/rope physics is not an MVP blocker. Exactly one current Resident integration gate is `WSA-RES-SET-01`.
+
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
 Binding policy:
