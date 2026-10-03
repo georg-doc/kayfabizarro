@@ -265,3 +265,18 @@ Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief u
 
 ### RACE REBRIEF
 The Hub briefing box now routes to `georg-doc/KFB-Stunt-Car-Race/_handover/RACE_HUB_3D_AUTORADIO_RESTART_BRIEF_2026-09-19.md`. R0 proves only the exact Tiny Treats radio with invisible hit targets and the existing Audio owner. HUD Rig v1 remains rejected and is never the restart baseline.
+
+## 2026-10-03 · EyeRig Batch · recovery + appearance variants
+
+### RECOVERY
+The newer 40-profile Medium browser export is preserved on the existing PR #104 owner. It extends the previous 33-profile export additively; **33/33** previous profile payloads remain unchanged and seven additional actor profiles resolve to current roster/source truth.
+
+### IMPLEMENTATION
+EyeRig Batch now consumes the Resident Variant SSOT from PR #330 for palette coverage instead of inventing a second variant catalog. **25 character texture families / 56 source appearances** map onto **31 existing EyeRig geometry actors**. Palette selection is separate from geometry profile ownership. Magical Girl has A/B/C/D; Driver BASE/B; Paladin King remains fixed B. Farmers A/B remain source-gated because exact texture-to-model mapping is not yet proven.
+
+### TESTED RESULT
+Focused readback contract **20/20 PASS**; variant source identity **56/56 exact path/blob/revision**. Same LocalStorage key, additive appearance persistence, and 55 Medium / 8 Large geometry catalogs remain unchanged.
+
+### STAGE / ROUTING
+Stage mirror `cloudflare-live@479c4e91967565b583c76ed0c6ea07433c5b28ce` contains the new selector/manifest and updated ToolBox card. Direct pages.dev verification is still OPEN because the current opener cannot access the route; no Live claim. One current human gate: `GEORG_EYERIG_CONTROL_R2_VARIANTS_VIS_01`. No merge/promotion.
+
