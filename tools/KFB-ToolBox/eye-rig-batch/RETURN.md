@@ -672,3 +672,29 @@ manual placement or leave unsupported.
 
 Only accepted/adjusted profiles become consumer-ready.
 
+## 2026-10-03 · UI CONTRAST REPAIR · HUMAN RECHECK
+
+Georg's screenshot showed a real Legacy-theme regression: dark text on dark header/cards/toolbar.
+
+Fixed without touching review runtime logic:
+- explicit light foregrounds on Legacy dark header;
+- explicit light foregrounds on dark roster cards;
+- explicit dark button backgrounds + light labels in Legacy toolbars;
+- explicit readable stage-label/loading colors;
+- right light review panel left unchanged.
+
+Source repair:
+`332b31631349eedd248032c6ac9f1b787f15cdf6`
+
+Focused checks:
+**8/8 PASS**
+
+Stage:
+`cloudflare-live@db823766370df932cc8134f21691036924a7d12c`
+
+Exact source/stage CSS blob:
+`9e9df8cd3fde85a72b111d21cd09a10e1916dd5e`
+
+Current gate remains:
+**KLR-EYE-VIS-01** after a hard reload of the direct Legacy review route.
+
