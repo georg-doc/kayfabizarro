@@ -1085,3 +1085,15 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - Stage `cloudflare-live@888a57cfe820890fa2ac3a86f991d05a58834ee3`;
 - current gate `GEORG_EYERIG_WHEEL_ZOOM_VIS_02`.
 
+## 2026-10-03 · Human acceptance · boot / wheel / Clay K1
+
+- Georg confirmed: **"das klappt alles"**;
+- boot/roster + Rig_Large switching accepted;
+- bounded wheel repair v2 accepted;
+- Neutral / Clay K1 view accepted for continuation;
+- accepted runtime app blob: `5635b28496af0e06cfe7f60a01b23e5612bad6e1`;
+- that exact app blob remains present at later concurrent `cloudflare-live@26bb3926bde5a2e1e519409d182a62b654cfba71`;
+- closed human gates: `GEORG_EYERIG_BOOT_REPAIR_VIS_01`, `GEORG_EYERIG_WHEEL_ZOOM_VIS_02`, `GEORG_EYERIG_VIEW_COMFORT_CLAY_VIS_01`;
+- next EyeRig slice: `EYE_RIG_PER_EYE_CONTROL_01`;
+- no merge / no Live promotion.
+
