@@ -1,0 +1,1930 @@
+{
+ "schema": "kfb.kaykit-native-baseline/0.1",
+ "id": "KAYKIT-NATIVE-BLENDER-BASELINE-01-REV",
+ "date": "2026-10-03",
+ "actor": {
+  "file": "media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Medium.glb",
+  "blob": "c15d93a623acde4c08862290f4465bb994506fd8",
+  "isolation": {
+   "objects": [
+    [
+     "Rig_Medium",
+     "ARMATURE",
+     [
+      1.001,
+      0.226,
+      1.294
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Mannequin_Medium_ArmLeft",
+     "MESH",
+     [
+      0.531,
+      0.366,
+      0.794
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Mannequin_Medium_ArmRight",
+     "MESH",
+     [
+      0.531,
+      0.342,
+      0.797
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Mannequin_Medium_Body",
+     "MESH",
+     [
+      0.738,
+      0.537,
+      0.867
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Mannequin_Medium_Head",
+     "MESH",
+     [
+      0.868,
+      1.005,
+      1.105
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Mannequin_Medium_LegLeft",
+     "MESH",
+     [
+      0.291,
+      0.398,
+      0.529
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Mannequin_Medium_LegRight",
+     "MESH",
+     [
+      0.274,
+      0.4,
+      0.523
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Plane",
+     "MESH",
+     [
+      40.0,
+      40.0,
+      0.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    [
+     "Icosphere",
+     "MESH",
+     [
+      1.902,
+      2.0,
+      2.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0
+     ]
+    ]
+   ],
+   "bones": 21,
+   "armature": "Rig_Medium",
+   "armatureData": "Rig_Medium",
+   "engine": "BLENDER_WORKBENCH"
+  }
+ },
+ "source": {
+  "pack": "KayKit Character Animations 1.1",
+  "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/",
+  "blobsChecked": {
+   "Rig_Medium_General.glb": "5d16cb68",
+   "Rig_Medium_MovementBasic.glb": "98e965e8",
+   "Rig_Medium_MovementAdvanced.glb": "f3ea3096"
+  },
+  "playbackRate": 1.0,
+  "fps": 30
+ },
+ "units": "speeds in rig units (m/s of the KayKit bake); all clips are in place: the game moves the root at naturalSpeedMs",
+ "method": "own glTF evaluator; in-place clips: naturalSpeed = median planted heel/toe speed (no-skate ground speed); slip = max creep of a planted joint at that speed, PASS <= 2 % of 2.204 m; armClearance = hand distance to the hips-chest axis / shoulder half-width (>1 = hand clear of the body)",
+ "inventory": {
+  "Rig_Medium": {
+   "Rig_Medium_CombatMelee.glb": [
+    {
+     "clip": "Melee_1H_Attack_Chop",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_1H_Attack_Jump_Chop",
+     "frames": 41,
+     "sec": 1.333
+    },
+    {
+     "clip": "Melee_1H_Attack_Slice_Diagonal",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Melee_1H_Attack_Slice_Horizontal",
+     "frames": 42,
+     "sec": 1.367
+    },
+    {
+     "clip": "Melee_1H_Attack_Stab",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Melee_2H_Attack_Chop",
+     "frames": 50,
+     "sec": 1.633
+    },
+    {
+     "clip": "Melee_2H_Attack_Slice",
+     "frames": 34,
+     "sec": 1.1
+    },
+    {
+     "clip": "Melee_2H_Attack_Spin",
+     "frames": 73,
+     "sec": 2.4
+    },
+    {
+     "clip": "Melee_2H_Attack_Spinning",
+     "frames": 21,
+     "sec": 0.667
+    },
+    {
+     "clip": "Melee_2H_Attack_Stab",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Melee_2H_Idle",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Block",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Block_Attack",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Block_Hit",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Blocking",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Dualwield_Attack_Chop",
+     "frames": 39,
+     "sec": 1.267
+    },
+    {
+     "clip": "Melee_Dualwield_Attack_Slice",
+     "frames": 36,
+     "sec": 1.167
+    },
+    {
+     "clip": "Melee_Dualwield_Attack_Stab",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Melee_Unarmed_Attack_Kick",
+     "frames": 29,
+     "sec": 0.933
+    },
+    {
+     "clip": "Melee_Unarmed_Attack_Punch_A",
+     "frames": 36,
+     "sec": 1.167
+    },
+    {
+     "clip": "Melee_Unarmed_Idle",
+     "frames": 33,
+     "sec": 1.067
+    }
+   ],
+   "Rig_Medium_CombatRanged.glb": [
+    {
+     "clip": "Ranged_1H_Aiming",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Ranged_1H_Reload",
+     "frames": 36,
+     "sec": 1.167
+    },
+    {
+     "clip": "Ranged_1H_Shoot",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Ranged_1H_Shooting",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Ranged_2H_Aiming",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Ranged_2H_Reload",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Ranged_2H_Shoot",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Ranged_2H_Shooting",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Ranged_Bow_Aiming_Idle",
+     "frames": 56,
+     "sec": 1.833
+    },
+    {
+     "clip": "Ranged_Bow_Draw",
+     "frames": 41,
+     "sec": 1.333
+    },
+    {
+     "clip": "Ranged_Bow_Draw_Up",
+     "frames": 41,
+     "sec": 1.333
+    },
+    {
+     "clip": "Ranged_Bow_Idle",
+     "frames": 48,
+     "sec": 1.567
+    },
+    {
+     "clip": "Ranged_Bow_Release",
+     "frames": 41,
+     "sec": 1.333
+    },
+    {
+     "clip": "Ranged_Bow_Release_Up",
+     "frames": 42,
+     "sec": 1.367
+    },
+    {
+     "clip": "Ranged_Magic_Raise",
+     "frames": 64,
+     "sec": 2.1
+    },
+    {
+     "clip": "Ranged_Magic_Shoot",
+     "frames": 29,
+     "sec": 0.933
+    },
+    {
+     "clip": "Ranged_Magic_Spellcasting",
+     "frames": 21,
+     "sec": 0.667
+    },
+    {
+     "clip": "Ranged_Magic_Spellcasting_Long",
+     "frames": 77,
+     "sec": 2.533
+    },
+    {
+     "clip": "Ranged_Magic_Summon",
+     "frames": 130,
+     "sec": 4.3
+    }
+   ],
+   "Rig_Medium_General.glb": [
+    {
+     "clip": "Death_A",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Death_A_Pose",
+     "frames": 1,
+     "sec": 0.0
+    },
+    {
+     "clip": "Death_B",
+     "frames": 80,
+     "sec": 2.633
+    },
+    {
+     "clip": "Death_B_Pose",
+     "frames": 1,
+     "sec": 0.0
+    },
+    {
+     "clip": "Hit_A",
+     "frames": 21,
+     "sec": 0.667
+    },
+    {
+     "clip": "Hit_B",
+     "frames": 27,
+     "sec": 0.867
+    },
+    {
+     "clip": "Idle_A",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Idle_B",
+     "frames": 65,
+     "sec": 2.133
+    },
+    {
+     "clip": "Interact",
+     "frames": 40,
+     "sec": 1.3
+    },
+    {
+     "clip": "PickUp",
+     "frames": 40,
+     "sec": 1.3
+    },
+    {
+     "clip": "Spawn_Air",
+     "frames": 40,
+     "sec": 1.3
+    },
+    {
+     "clip": "Spawn_Ground",
+     "frames": 40,
+     "sec": 1.3
+    },
+    {
+     "clip": "Throw",
+     "frames": 42,
+     "sec": 1.367
+    },
+    {
+     "clip": "Use_Item",
+     "frames": 49,
+     "sec": 1.6
+    }
+   ],
+   "Rig_Medium_MovementAdvanced.glb": [
+    {
+     "clip": "Crawling",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Crouching",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Dodge_Backward",
+     "frames": 13,
+     "sec": 0.4
+    },
+    {
+     "clip": "Dodge_Forward",
+     "frames": 13,
+     "sec": 0.4
+    },
+    {
+     "clip": "Dodge_Left",
+     "frames": 13,
+     "sec": 0.4
+    },
+    {
+     "clip": "Dodge_Right",
+     "frames": 13,
+     "sec": 0.4
+    },
+    {
+     "clip": "Running_HoldingBow",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Running_HoldingRifle",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Running_Strafe_Left",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Running_Strafe_Right",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Sneaking",
+     "frames": 65,
+     "sec": 2.133
+    },
+    {
+     "clip": "Walking_Backwards",
+     "frames": 33,
+     "sec": 1.067
+    }
+   ],
+   "Rig_Medium_MovementBasic.glb": [
+    {
+     "clip": "Jump_Full_Long",
+     "frames": 71,
+     "sec": 2.333
+    },
+    {
+     "clip": "Jump_Full_Short",
+     "frames": 36,
+     "sec": 1.167
+    },
+    {
+     "clip": "Jump_Idle",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Jump_Land",
+     "frames": 21,
+     "sec": 0.667
+    },
+    {
+     "clip": "Jump_Start",
+     "frames": 19,
+     "sec": 0.6
+    },
+    {
+     "clip": "Running_A",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Running_B",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Walking_A",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Walking_B",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Walking_C",
+     "frames": 49,
+     "sec": 1.6
+    }
+   ],
+   "Rig_Medium_Simulation.glb": [
+    {
+     "clip": "Cheering",
+     "frames": 51,
+     "sec": 1.667
+    },
+    {
+     "clip": "Lie_Down",
+     "frames": 91,
+     "sec": 3.0
+    },
+    {
+     "clip": "Lie_Idle",
+     "frames": 81,
+     "sec": 2.667
+    },
+    {
+     "clip": "Lie_StandUp",
+     "frames": 71,
+     "sec": 2.333
+    },
+    {
+     "clip": "Push_Ups",
+     "frames": 32,
+     "sec": 1.033
+    },
+    {
+     "clip": "Sit_Chair_Down",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Sit_Chair_Idle",
+     "frames": 109,
+     "sec": 3.6
+    },
+    {
+     "clip": "Sit_Chair_StandUp",
+     "frames": 25,
+     "sec": 0.8
+    },
+    {
+     "clip": "Sit_Floor_Down",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Sit_Floor_Idle",
+     "frames": 121,
+     "sec": 4.0
+    },
+    {
+     "clip": "Sit_Floor_StandUp",
+     "frames": 35,
+     "sec": 1.133
+    },
+    {
+     "clip": "Sit_Ups",
+     "frames": 53,
+     "sec": 1.733
+    },
+    {
+     "clip": "Waving",
+     "frames": 65,
+     "sec": 2.133
+    }
+   ],
+   "Rig_Medium_Special.glb": [
+    {
+     "clip": "EXPERIMENTAL_Medium_Transform",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Skeletons_Awaken_Floor",
+     "frames": 70,
+     "sec": 2.3
+    },
+    {
+     "clip": "Skeletons_Awaken_Floor_Long",
+     "frames": 116,
+     "sec": 3.833
+    },
+    {
+     "clip": "Skeletons_Awaken_Standing",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Skeletons_Death",
+     "frames": 61,
+     "sec": 2.0
+    },
+    {
+     "clip": "Skeletons_Death_Pose",
+     "frames": 1,
+     "sec": 0.0
+    },
+    {
+     "clip": "Skeletons_Death_Resurrect",
+     "frames": 82,
+     "sec": 2.7
+    },
+    {
+     "clip": "Skeletons_Idle",
+     "frames": 129,
+     "sec": 4.267
+    },
+    {
+     "clip": "Skeletons_Inactive_Floor_Pose",
+     "frames": 1,
+     "sec": 0.0
+    },
+    {
+     "clip": "Skeletons_Inactive_Standing_Pose",
+     "frames": 1,
+     "sec": 0.0
+    },
+    {
+     "clip": "Skeletons_Spawn_Ground",
+     "frames": 108,
+     "sec": 3.567
+    },
+    {
+     "clip": "Skeletons_Taunt",
+     "frames": 32,
+     "sec": 1.033
+    },
+    {
+     "clip": "Skeletons_Taunt_Longer",
+     "frames": 91,
+     "sec": 3.0
+    },
+    {
+     "clip": "Skeletons_Walking",
+     "frames": 49,
+     "sec": 1.6
+    }
+   ],
+   "Rig_Medium_Tools.glb": [
+    {
+     "clip": "Chop",
+     "frames": 131,
+     "sec": 4.333
+    },
+    {
+     "clip": "Chopping",
+     "frames": 41,
+     "sec": 1.333
+    },
+    {
+     "clip": "Dig",
+     "frames": 141,
+     "sec": 4.667
+    },
+    {
+     "clip": "Digging",
+     "frames": 43,
+     "sec": 1.4
+    },
+    {
+     "clip": "Fishing_Bite",
+     "frames": 68,
+     "sec": 2.233
+    },
+    {
+     "clip": "Fishing_Cast",
+     "frames": 59,
+     "sec": 1.933
+    },
+    {
+     "clip": "Fishing_Catch",
+     "frames": 98,
+     "sec": 3.233
+    },
+    {
+     "clip": "Fishing_Idle",
+     "frames": 71,
+     "sec": 2.333
+    },
+    {
+     "clip": "Fishing_Reeling",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Fishing_Struggling",
+     "frames": 104,
+     "sec": 3.433
+    },
+    {
+     "clip": "Fishing_Tug",
+     "frames": 58,
+     "sec": 1.9
+    },
+    {
+     "clip": "Hammer",
+     "frames": 131,
+     "sec": 4.333
+    },
+    {
+     "clip": "Hammering",
+     "frames": 81,
+     "sec": 2.667
+    },
+    {
+     "clip": "Holding_A",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Holding_B",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Holding_C",
+     "frames": 31,
+     "sec": 1.0
+    },
+    {
+     "clip": "Lockpick",
+     "frames": 91,
+     "sec": 3.0
+    },
+    {
+     "clip": "Lockpicking",
+     "frames": 71,
+     "sec": 2.333
+    },
+    {
+     "clip": "Pickaxe",
+     "frames": 182,
+     "sec": 6.033
+    },
+    {
+     "clip": "Pickaxing",
+     "frames": 113,
+     "sec": 3.733
+    },
+    {
+     "clip": "Saw",
+     "frames": 73,
+     "sec": 2.4
+    },
+    {
+     "clip": "Sawing",
+     "frames": 21,
+     "sec": 0.667
+    },
+    {
+     "clip": "Work_A",
+     "frames": 77,
+     "sec": 2.533
+    },
+    {
+     "clip": "Work_B",
+     "frames": 94,
+     "sec": 3.1
+    },
+    {
+     "clip": "Work_C",
+     "frames": 111,
+     "sec": 3.667
+    },
+    {
+     "clip": "Working_A",
+     "frames": 46,
+     "sec": 1.5
+    },
+    {
+     "clip": "Working_B",
+     "frames": 77,
+     "sec": 2.533
+    },
+    {
+     "clip": "Working_C",
+     "frames": 61,
+     "sec": 2.0
+    }
+   ]
+  },
+  "Rig_Large": {
+   "Rig_Large_CombatMelee.glb": [
+    {
+     "clip": "Melee_1H_Slash",
+     "frames": 48,
+     "sec": 1.567
+    },
+    {
+     "clip": "Melee_1H_Stab",
+     "frames": 43,
+     "sec": 1.4
+    },
+    {
+     "clip": "Melee_2H_Attack",
+     "frames": 41,
+     "sec": 1.333
+    },
+    {
+     "clip": "Melee_2H_Idle",
+     "frames": 48,
+     "sec": 1.567
+    },
+    {
+     "clip": "Melee_2H_Slam",
+     "frames": 86,
+     "sec": 2.833
+    },
+    {
+     "clip": "Melee_Block",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Block_Attack",
+     "frames": 32,
+     "sec": 1.033
+    },
+    {
+     "clip": "Melee_Block_Hit",
+     "frames": 21,
+     "sec": 0.667
+    },
+    {
+     "clip": "Melee_Blocking",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Dualwield_Slash",
+     "frames": 32,
+     "sec": 1.033
+    },
+    {
+     "clip": "Melee_Dualwield_SlashCombo",
+     "frames": 49,
+     "sec": 1.6
+    },
+    {
+     "clip": "Melee_Unarmed_Idle",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Melee_Unarmed_Kick",
+     "frames": 52,
+     "sec": 1.7
+    },
+    {
+     "clip": "Melee_Unarmed_Punch",
+     "frames": 38,
+     "sec": 1.233
+    },
+    {
+     "clip": "Melee_Unarmed_Smash",
+     "frames": 105,
+     "sec": 3.467
+    }
+   ],
+   "Rig_Large_General.glb": [
+    {
+     "clip": "Death_A",
+     "frames": 51,
+     "sec": 1.667
+    },
+    {
+     "clip": "Death_A_Pose",
+     "frames": 1,
+     "sec": 0.0
+    },
+    {
+     "clip": "Hit_A",
+     "frames": 22,
+     "sec": 0.7
+    },
+    {
+     "clip": "Idle_A",
+     "frames": 60,
+     "sec": 1.967
+    },
+    {
+     "clip": "Idle_B",
+     "frames": 181,
+     "sec": 6.0
+    }
+   ],
+   "Rig_Large_MovementAdvanced.glb": [
+    {
+     "clip": "Dodge_Backwards",
+     "frames": 11,
+     "sec": 0.333
+    },
+    {
+     "clip": "Dodge_Forward",
+     "frames": 11,
+     "sec": 0.333
+    },
+    {
+     "clip": "Dodge_Left",
+     "frames": 11,
+     "sec": 0.333
+    },
+    {
+     "clip": "Dodge_Right",
+     "frames": 11,
+     "sec": 0.333
+    }
+   ],
+   "Rig_Large_MovementBasic.glb": [
+    {
+     "clip": "Running_A",
+     "frames": 33,
+     "sec": 1.067
+    },
+    {
+     "clip": "Walking_A",
+     "frames": 33,
+     "sec": 1.067
+    }
+   ],
+   "Rig_Large_Simulation.glb": [
+    {
+     "clip": "Flexing",
+     "frames": 130,
+     "sec": 4.3
+    }
+   ],
+   "Rig_Large_Special.glb": [
+    {
+     "clip": "EXPERIMENTAL_Large_Transform",
+     "frames": 51,
+     "sec": 1.667
+    }
+   ]
+  }
+ },
+ "clips": [
+  {
+   "clip": "Idle_A",
+   "family": "idle",
+   "sourceGlb": "Rig_Medium_General.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.483,
+    "handToBodyAxisMeanM": 0.485,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.28
+   },
+   "hipsVerticalRangeM": 0.008,
+   "loopSeamDiffDegMax": 0.0,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Base idle; calm, clean loop."
+  },
+  {
+   "clip": "Idle_B",
+   "family": "idle",
+   "sourceGlb": "Rig_Medium_General.glb",
+   "frames": 65,
+   "sec": 2.133,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.552,
+    "handToBodyAxisMeanM": 0.558,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.6
+   },
+   "hipsVerticalRangeM": 0.058,
+   "loopSeamDiffDegMax": 0.0,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Longer idle variant (2.1 s); clean loop."
+  },
+  {
+   "clip": "Walking_A",
+   "family": "walk",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.557,
+    "handToBodyAxisMeanM": 0.587,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.63
+   },
+   "hipsVerticalRangeM": 0.054,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 1.067,
+   "cadenceStepsPerMin": 112.5,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 0.708,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 0.7554,
+   "contactsL": [
+    [
+     0,
+     14
+    ]
+   ],
+   "contactsR": [
+    [
+     16,
+     30
+    ]
+   ],
+   "leftFootDownPhase": 0.0,
+   "rightFootDownPhase": 0.5,
+   "plantedSlipCm": 1.77,
+   "plantedSlipPctHeight": 0.8,
+   "airborneFrac": 0.062,
+   "travelYawDegGltf": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Standard walk; clean loop, feet hold well.",
+   "speedJ14NativeMs": 0.6565,
+   "speedDiffPctVsJ14": 7.8
+  },
+  {
+   "clip": "Walking_B",
+   "family": "walk",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.533,
+    "handToBodyAxisMeanM": 0.562,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.51
+   },
+   "hipsVerticalRangeM": 0.054,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 1.067,
+   "cadenceStepsPerMin": 112.5,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 0.98,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 1.0453,
+   "contactsL": [
+    [
+     0,
+     13
+    ]
+   ],
+   "contactsR": [
+    [
+     16,
+     29
+    ]
+   ],
+   "leftFootDownPhase": 0.0,
+   "rightFootDownPhase": 0.5,
+   "plantedSlipCm": 0.45,
+   "plantedSlipPctHeight": 0.2,
+   "airborneFrac": 0.125,
+   "travelYawDegGltf": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Brisk walk: same rhythm as Walking_A, longer steps. Speed differs from the J14 value; see speedConflicts.",
+   "speedJ14NativeMs": 0.7208,
+   "speedDiffPctVsJ14": 36.0
+  },
+  {
+   "clip": "Walking_C",
+   "family": "walk",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 49,
+   "sec": 1.6,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.543,
+    "handToBodyAxisMeanM": 0.561,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.56
+   },
+   "hipsVerticalRangeM": 0.054,
+   "loopSeamDiffDegMax": 2.54,
+   "cycleSec": 1.6,
+   "cadenceStepsPerMin": 75.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 0.518,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 0.8288,
+   "contactsL": [
+    [
+     -1,
+     21
+    ]
+   ],
+   "contactsR": [
+    [
+     24,
+     44
+    ]
+   ],
+   "leftFootDownPhase": 0.9792,
+   "rightFootDownPhase": 0.5,
+   "plantedSlipCm": 2.25,
+   "plantedSlipPctHeight": 1.02,
+   "airborneFrac": 0.083,
+   "travelYawDegGltf": -0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Slow walk (slower rhythm); loop seam 2.5 deg, not visible at native rate."
+  },
+  {
+   "clip": "Walking_Backwards",
+   "family": "walk",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.57,
+    "handToBodyAxisMeanM": 0.603,
+    "shoulderHalfWidthM": 0.215,
+    "minRatio": 2.65
+   },
+   "hipsVerticalRangeM": 0.054,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 1.067,
+   "cadenceStepsPerMin": 112.5,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 0.76,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 0.8109,
+   "contactsL": [
+    [
+     -15,
+     1
+    ]
+   ],
+   "contactsR": [
+    [
+     2,
+     17
+    ]
+   ],
+   "leftFootDownPhase": 0.5312,
+   "rightFootDownPhase": 0.0625,
+   "plantedSlipCm": 0.94,
+   "plantedSlipPctHeight": 0.43,
+   "airborneFrac": 0.0,
+   "travelYawDegGltf": -180.0,
+   "status": "KEEP_NATIVE",
+   "note": "Backward walk; clean.",
+   "speedJ14NativeMs": 0.7256,
+   "speedDiffPctVsJ14": 4.7
+  },
+  {
+   "clip": "Running_A",
+   "family": "run",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 25,
+   "sec": 0.8,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.524,
+    "handToBodyAxisMeanM": 0.567,
+    "shoulderHalfWidthM": 0.199,
+    "minRatio": 2.63
+   },
+   "hipsVerticalRangeM": 0.103,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 0.8,
+   "cadenceStepsPerMin": 150.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 3.303,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 2.642,
+   "contactsL": [
+    [
+     2,
+     6
+    ]
+   ],
+   "contactsR": [
+    [
+     14,
+     18
+    ]
+   ],
+   "leftFootDownPhase": 0.0833,
+   "rightFootDownPhase": 0.5833,
+   "plantedSlipCm": 0.74,
+   "plantedSlipPctHeight": 0.34,
+   "airborneFrac": 0.583,
+   "travelYawDegGltf": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Run; cleanest clip of the set, clear flight phase.",
+   "speedJ14NativeMs": 3.1771,
+   "speedDiffPctVsJ14": 4.0
+  },
+  {
+   "clip": "Running_B",
+   "family": "run",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 25,
+   "sec": 0.8,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.421,
+    "handToBodyAxisMeanM": 0.543,
+    "shoulderHalfWidthM": 0.215,
+    "minRatio": 1.96
+   },
+   "hipsVerticalRangeM": 0.139,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 0.8,
+   "cadenceStepsPerMin": 150.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 5.255,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 4.2036,
+   "contactsL": [
+    [
+     3,
+     6
+    ]
+   ],
+   "contactsR": [
+    [
+     15,
+     18
+    ]
+   ],
+   "leftFootDownPhase": 0.125,
+   "rightFootDownPhase": 0.625,
+   "plantedSlipCm": 7.87,
+   "plantedSlipPctHeight": 3.57,
+   "airborneFrac": 0.667,
+   "travelYawDegGltf": 0.0,
+   "status": "HOLD_NATIVE",
+   "note": "Fast run with wide arm pumping. Feet roll through the contact, so no single ground speed keeps them still (slip 3.6 %). Sprint role only if Georg accepts the look.",
+   "speedJ14NativeMs": 3.8801,
+   "speedDiffPctVsJ14": 35.4
+  },
+  {
+   "clip": "Running_Strafe_Left",
+   "family": "strafe",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 25,
+   "sec": 0.8,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.515,
+    "handToBodyAxisMeanM": 0.583,
+    "shoulderHalfWidthM": 0.199,
+    "minRatio": 2.59
+   },
+   "hipsVerticalRangeM": 0.103,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 0.8,
+   "cadenceStepsPerMin": 150.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 3.437,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 2.7492,
+   "contactsL": [
+    [
+     3,
+     5
+    ]
+   ],
+   "contactsR": [
+    [
+     16,
+     17
+    ]
+   ],
+   "leftFootDownPhase": 0.125,
+   "rightFootDownPhase": 0.6667,
+   "plantedSlipCm": 0.94,
+   "plantedSlipPctHeight": 0.43,
+   "airborneFrac": 0.792,
+   "travelYawDegGltf": 60.1,
+   "status": "KEEP_NATIVE",
+   "note": "Side run; travels about 60 deg diagonal (forward-left), not pure sideways.",
+   "speedJ14NativeMs": 3.3064,
+   "speedDiffPctVsJ14": 3.9
+  },
+  {
+   "clip": "Running_Strafe_Right",
+   "family": "strafe",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 25,
+   "sec": 0.8,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.515,
+    "handToBodyAxisMeanM": 0.583,
+    "shoulderHalfWidthM": 0.199,
+    "minRatio": 2.59
+   },
+   "hipsVerticalRangeM": 0.103,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 0.8,
+   "cadenceStepsPerMin": 150.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 3.391,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 2.7129,
+   "contactsL": [
+    [
+     4,
+     5
+    ]
+   ],
+   "contactsR": [
+    [
+     15,
+     17
+    ]
+   ],
+   "leftFootDownPhase": 0.1667,
+   "rightFootDownPhase": 0.625,
+   "plantedSlipCm": 0.86,
+   "plantedSlipPctHeight": 0.39,
+   "airborneFrac": 0.792,
+   "travelYawDegGltf": -60.1,
+   "status": "KEEP_NATIVE",
+   "note": "Mirror of the left side run; 60 deg diagonal forward-right.",
+   "speedJ14NativeMs": 3.3541,
+   "speedDiffPctVsJ14": 1.1
+  },
+  {
+   "clip": "Sneaking",
+   "family": "stealth",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 65,
+   "sec": 2.133,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.561,
+    "handToBodyAxisMeanM": 0.637,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.65
+   },
+   "hipsVerticalRangeM": 0.03,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 2.133,
+   "cadenceStepsPerMin": 56.2,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 0.561,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 1.1977,
+   "contactsL": [
+    [
+     11,
+     40
+    ]
+   ],
+   "contactsR": [
+    [
+     -21,
+     8
+    ]
+   ],
+   "leftFootDownPhase": 0.1719,
+   "rightFootDownPhase": 0.6719,
+   "plantedSlipCm": 0.26,
+   "plantedSlipPctHeight": 0.12,
+   "airborneFrac": 0.062,
+   "travelYawDegGltf": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Long sneak steps, arms out; slow loop (2.1 s).",
+   "speedJ14NativeMs": 0.6389,
+   "speedDiffPctVsJ14": -12.2
+  },
+  {
+   "clip": "Crouching",
+   "family": "stealth",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.506,
+    "handToBodyAxisMeanM": 0.547,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.39
+   },
+   "hipsVerticalRangeM": 0.05,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 1.067,
+   "cadenceStepsPerMin": 112.5,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 1.154,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 1.2312,
+   "contactsL": [
+    [
+     6,
+     19
+    ]
+   ],
+   "contactsR": [
+    [
+     -11,
+     3
+    ]
+   ],
+   "leftFootDownPhase": 0.1875,
+   "rightFootDownPhase": 0.6562,
+   "plantedSlipCm": 0,
+   "plantedSlipPctHeight": 0.0,
+   "airborneFrac": 0.094,
+   "travelYawDegGltf": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Crouch walk; clean pose. Speed differs from J14; see speedConflicts.",
+   "speedJ14NativeMs": 0.649,
+   "speedDiffPctVsJ14": 77.8
+  },
+  {
+   "clip": "Crawling",
+   "family": "stealth",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.497,
+    "handToBodyAxisMeanM": 0.54,
+    "shoulderHalfWidthM": 0.211,
+    "minRatio": 2.35
+   },
+   "hipsVerticalRangeM": 0.062,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 1.067,
+   "cadenceStepsPerMin": 112.5,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 0.483,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 0.515,
+   "contactsL": [
+    [
+     -2,
+     17
+    ]
+   ],
+   "contactsR": [
+    [
+     -18,
+     1
+    ]
+   ],
+   "leftFootDownPhase": 0.9375,
+   "rightFootDownPhase": 0.4375,
+   "plantedSlipCm": 0,
+   "plantedSlipPctHeight": 0.0,
+   "airborneFrac": 0.0,
+   "travelYawDegGltf": -0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Crawl on all fours; clean loop.",
+   "speedJ14NativeMs": 0.4042,
+   "speedDiffPctVsJ14": 19.5
+  },
+  {
+   "clip": "Running_HoldingBow",
+   "family": "carry",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 25,
+   "sec": 0.8,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.318,
+    "handToBodyAxisMeanM": 0.475,
+    "shoulderHalfWidthM": 0.264,
+    "minRatio": 1.21
+   },
+   "hipsVerticalRangeM": 0.139,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 0.8,
+   "cadenceStepsPerMin": 150.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 5.255,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 4.2036,
+   "contactsL": [
+    [
+     3,
+     6
+    ]
+   ],
+   "contactsR": [
+    [
+     15,
+     18
+    ]
+   ],
+   "leftFootDownPhase": 0.125,
+   "rightFootDownPhase": 0.625,
+   "plantedSlipCm": 7.87,
+   "plantedSlipPctHeight": 3.57,
+   "airborneFrac": 0.667,
+   "travelYawDegGltf": 0.0,
+   "status": "HOLD_NATIVE",
+   "note": "Legs are identical to Running_B (same slip); bow arms correct. Needed later for bow work."
+  },
+  {
+   "clip": "Running_HoldingRifle",
+   "family": "carry",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 25,
+   "sec": 0.8,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.482,
+    "handToBodyAxisMeanM": 0.56,
+    "shoulderHalfWidthM": 0.208,
+    "minRatio": 2.32
+   },
+   "hipsVerticalRangeM": 0.139,
+   "loopSeamDiffDegMax": 0.0,
+   "cycleSec": 0.8,
+   "cadenceStepsPerMin": 150.0,
+   "rootMotion": "in-place",
+   "naturalSpeedMs": 5.255,
+   "speedSource": "stanceFeet",
+   "strideLengthM": 4.2036,
+   "contactsL": [
+    [
+     3,
+     6
+    ]
+   ],
+   "contactsR": [
+    [
+     15,
+     18
+    ]
+   ],
+   "leftFootDownPhase": 0.125,
+   "rightFootDownPhase": 0.625,
+   "plantedSlipCm": 7.87,
+   "plantedSlipPctHeight": 3.57,
+   "airborneFrac": 0.667,
+   "travelYawDegGltf": 0.0,
+   "status": "HOLD_NATIVE",
+   "note": "Legs identical to Running_B; rifle arms."
+  },
+  {
+   "clip": "Jump_Start",
+   "family": "jump",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 19,
+   "sec": 0.6,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.564,
+    "handToBodyAxisMeanM": 0.612,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.66
+   },
+   "hipsVerticalRangeM": 0.232,
+   "loopSeamDiffDegMax": 75.16,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.474,
+   "status": "KEEP_NATIVE",
+   "note": "Crouch and take-off; ends exactly in the air pose of Jump_Idle (0 deg)."
+  },
+  {
+   "clip": "Jump_Idle",
+   "family": "jump",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 33,
+   "sec": 1.067,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.685,
+    "handToBodyAxisMeanM": 0.696,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 3.23
+   },
+   "hipsVerticalRangeM": 0.065,
+   "loopSeamDiffDegMax": 0.0,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.406,
+   "status": "KEEP_NATIVE",
+   "note": "Air loop; joins Start and Land with 0 deg difference."
+  },
+  {
+   "clip": "Jump_Land",
+   "family": "jump",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 21,
+   "sec": 0.667,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.563,
+    "handToBodyAxisMeanM": 0.607,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.66
+   },
+   "hipsVerticalRangeM": 0.261,
+   "loopSeamDiffDegMax": 75.16,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.238,
+   "status": "KEEP_NATIVE",
+   "note": "Landing and settle; ends 23 deg from Idle_A, needs a short blend back."
+  },
+  {
+   "clip": "Jump_Full_Short",
+   "family": "jump",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 36,
+   "sec": 1.167,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.563,
+    "handToBodyAxisMeanM": 0.6,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.66
+   },
+   "hipsVerticalRangeM": 0.261,
+   "loopSeamDiffDegMax": 0.0,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.278,
+   "status": "KEEP_NATIVE",
+   "note": "Complete small jump in one clip (in place)."
+  },
+  {
+   "clip": "Jump_Full_Long",
+   "family": "jump",
+   "sourceGlb": "Rig_Medium_MovementBasic.glb",
+   "frames": 71,
+   "sec": 2.333,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.563,
+    "handToBodyAxisMeanM": 0.647,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.66
+   },
+   "hipsVerticalRangeM": 0.261,
+   "loopSeamDiffDegMax": 0.0,
+   "rootTravelM": 0.0,
+   "airborneFrac": 0.634,
+   "status": "KEEP_NATIVE",
+   "note": "Complete big jump in one clip (in place, 2.3 s)."
+  },
+  {
+   "clip": "Dodge_Forward",
+   "family": "dodge",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 13,
+   "sec": 0.4,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.557,
+    "handToBodyAxisMeanM": 0.616,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.63
+   },
+   "hipsVerticalRangeM": 0.073,
+   "loopSeamDiffDegMax": 88.96,
+   "rootTravelM": 0.25,
+   "airborneFrac": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "Fast one-shot (0.4 s); ends in the dodge pose and holds, needs a blend back."
+  },
+  {
+   "clip": "Dodge_Backward",
+   "family": "dodge",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 13,
+   "sec": 0.4,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.545,
+    "handToBodyAxisMeanM": 0.642,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.57
+   },
+   "hipsVerticalRangeM": 0.07,
+   "loopSeamDiffDegMax": 83.18,
+   "rootTravelM": 0.65,
+   "airborneFrac": 0.0,
+   "status": "KEEP_NATIVE",
+   "note": "As above; travels about 0.65 m."
+  },
+  {
+   "clip": "Dodge_Left",
+   "family": "dodge",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 13,
+   "sec": 0.4,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.557,
+    "handToBodyAxisMeanM": 0.623,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.63
+   },
+   "hipsVerticalRangeM": 0.039,
+   "loopSeamDiffDegMax": 73.43,
+   "rootTravelM": 0.5,
+   "airborneFrac": 0.769,
+   "status": "KEEP_NATIVE",
+   "note": "As above; small hop sideways."
+  },
+  {
+   "clip": "Dodge_Right",
+   "family": "dodge",
+   "sourceGlb": "Rig_Medium_MovementAdvanced.glb",
+   "frames": 13,
+   "sec": 0.4,
+   "fps": 30,
+   "armClearance": {
+    "handToBodyAxisMinM": 0.557,
+    "handToBodyAxisMeanM": 0.623,
+    "shoulderHalfWidthM": 0.212,
+    "minRatio": 2.63
+   },
+   "hipsVerticalRangeM": 0.039,
+   "loopSeamDiffDegMax": 64.18,
+   "rootTravelM": 0.5,
+   "airborneFrac": 0.769,
+   "status": "KEEP_NATIVE",
+   "note": "As above; small hop sideways."
+  }
+ ],
+ "jumpChain": {
+  "Jump_Start->Jump_Idle": 0.0,
+  "Jump_Idle->Jump_Land": 0.0,
+  "Jump_Land->Idle_A": 23.4,
+  "Idle_A->Jump_Start": 23.4,
+  "Idle_A->Walking_A": 71.3,
+  "Walking_B->Running_A": 44.0,
+  "hipsY": {
+   "Jump_Start@end": 0.506,
+   "Jump_Idle@start": 0.506,
+   "Jump_Idle@end": 0.506,
+   "Jump_Land@start": 0.506,
+   "Jump_Land@end": 0.392,
+   "Idle_A@start": 0.392
+  }
+ },
+ "speedConflicts": {
+  "note": "Coworker vs J14 (ActionFigure, Joyride J14) differ by >10 % on Walking_B (+36 %), Running_B (+35 %) and Crouching (+78 %). Not averaged. A third check (creep of the planted foot at each speed) favours the Coworker values for Walking_B and Crouching; Running_B is ambiguous (the feet roll). The review scene has one extra lane per conflict at the J14 speed so Georg can see which keeps the feet planted.",
+  "creepCheck": {
+   "Walking_A": {
+    "coworker": {
+     "speed": 0.708,
+     "maxPlantedCreepCm": 9.3
+    },
+    "J14": {
+     "speed": 0.6565,
+     "maxPlantedCreepCm": 10.2
+    }
+   },
+   "Walking_B": {
+    "coworker": {
+     "speed": 0.98,
+     "maxPlantedCreepCm": 9.5
+    },
+    "J14": {
+     "speed": 0.7208,
+     "maxPlantedCreepCm": 17.1
+    }
+   },
+   "Running_A": {
+    "coworker": {
+     "speed": 3.303,
+     "maxPlantedCreepCm": 2.8
+    },
+    "J14": {
+     "speed": 3.1771,
+     "maxPlantedCreepCm": 2.3
+    }
+   },
+   "Running_B": {
+    "coworker": {
+     "speed": 5.255,
+     "maxPlantedCreepCm": 12.7
+    },
+    "J14": {
+     "speed": 3.8801,
+     "maxPlantedCreepCm": 12.5
+    }
+   },
+   "Crouching": {
+    "coworker": {
+     "speed": 1.154,
+     "maxPlantedCreepCm": 22.0
+    },
+    "J14": {
+     "speed": 0.649,
+     "maxPlantedCreepCm": 32.1
+    }
+   },
+   "Sneaking": {
+    "coworker": {
+     "speed": 0.561,
+     "maxPlantedCreepCm": 18.0
+    },
+    "J14": {
+     "speed": 0.6389,
+     "maxPlantedCreepCm": 20.8
+    }
+   },
+   "Crawling": {
+    "coworker": {
+     "speed": 0.483,
+     "maxPlantedCreepCm": 11.4
+    },
+    "J14": {
+     "speed": 0.4042,
+     "maxPlantedCreepCm": 14.4
+    }
+   },
+   "Walking_Backwards": {
+    "coworker": {
+     "speed": 0.76,
+     "maxPlantedCreepCm": 8.3
+    },
+    "J14": {
+     "speed": 0.7256,
+     "maxPlantedCreepCm": 8.5
+    }
+   }
+  }
+ },
+ "gaps": {
+  "Rig_Medium": [
+   "jog (nothing between Walking_B 0.98 and Running_A 3.30 m/s, factor 3.4)",
+   "turn in place 90/180",
+   "strafe walk (only side runs, and those are 60 deg diagonal)",
+   "start / stop / pivot",
+   "sprint (unless Running_B is accepted)",
+   "run with bow/rifle at Running_A speed (only at Running_B speed)"
+  ],
+  "Rig_Large": [
+   "only Walking_A, Running_A, Idle_A/B, Dodge x4 for locomotion: no backward, strafe, stealth or jump clips"
+  ]
+ },
+ "recommendedFamily": {
+  "idle": [
+   "Idle_A",
+   "Idle_B"
+  ],
+  "walk": "Walking_A",
+  "walkSlow": "Walking_C",
+  "walkBrisk": "Walking_B",
+  "run": "Running_A",
+  "sprint": "Running_B (HOLD: look decision)",
+  "back": "Walking_Backwards",
+  "side": [
+   "Running_Strafe_Left",
+   "Running_Strafe_Right"
+  ],
+  "jump": [
+   "Jump_Start",
+   "Jump_Idle",
+   "Jump_Land"
+  ],
+  "jumpOneClip": [
+   "Jump_Full_Short",
+   "Jump_Full_Long"
+  ],
+  "stealth": [
+   "Sneaking",
+   "Crouching",
+   "Crawling"
+  ],
+  "evade": [
+   "Dodge_Forward",
+   "Dodge_Backward",
+   "Dodge_Left",
+   "Dodge_Right"
+  ]
+ },
+ "notInThisGate": [
+  "no Mixamo",
+  "no Motion Library",
+  "no controller",
+  "no transitions authored",
+  "no world"
+ ]
+}
