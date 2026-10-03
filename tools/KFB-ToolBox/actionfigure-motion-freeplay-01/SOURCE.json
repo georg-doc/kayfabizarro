@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.actionfigure-motion-freeplay-source/1",
+  "date": "2026-10-03",
+  "owner": "KFB ToolBox / Animation-Motion authoring",
+  "receivingPr": 333,
+  "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+  "centralOwnerPin": "2f76a5a38e3e692e6e1fc3b43bcca547e45a6c9e",
+  "sourceActor": {
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "blob": "4785276defdb929cb397954eb74b76aecb84486b",
+    "rule": "Use the authored ActionFigure source directly on neutral ground; no substitute actor."
+  },
+  "motion": {
+    "libraryVersion": "2026-10-03",
+    "catalogBlob": "7f333d0a1809ff5b299263a5e2ec21a29dba723c",
+    "ladderBlob": "59f49e9952b0d266c7cd435e85de601bd9da94f1",
+    "centralAdapter": "tools/KFB-ToolBox/kfb-lib/locomotion-ladder-profile.v1.js",
+    "centralStateOwner": "tools/KFB-ToolBox/kfb-lib/motion-state-machine.v1.js"
+  },
+  "controls": "WASD + Shift + Space",
+  "lookChoices": {
+    "jog": [
+      "kfb_locomotion_jog_forward_a",
+      "kfb_locomotion_jogging_a"
+    ],
+    "run": [
+      "kfb_locomotion_medium_run_a",
+      "kfb_locomotion_running_d"
+    ],
+    "sprint": [
+      "kfb_locomotion_sprint_a",
+      "kfb_locomotion_fast_run_a"
+    ]
+  },
+  "reviewSurface": {
+    "primary": "KFB Production Control Site artifact mirror",
+    "cloudflare": "DEFER_UNTIL_DURABLE_WORLD_OR_HUB_MILESTONE"
+  },
+  "userInstruction": "Open one Site link; move with WASD; hold Shift; press Space; choose Jog A/B, Run A/B, Sprint A/B. No GitHub or deployment action required from Georg."
+}

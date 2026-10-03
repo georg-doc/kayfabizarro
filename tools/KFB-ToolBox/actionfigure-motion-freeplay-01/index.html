@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KFB · ActionFigure Motion Freeplay</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#171816;color:#f1eee7}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#171816}
+#stage{position:fixed;inset:0}
+canvas{display:block;width:100%;height:100%}
+#hud{position:fixed;inset:0;pointer-events:none}
+.card{pointer-events:auto;background:#171816d9;border:1px solid #ffffff20;backdrop-filter:blur(12px);border-radius:12px;box-shadow:0 10px 32px #0006}
+#top{position:absolute;top:14px;left:14px;padding:11px 13px;min-width:220px}
+.eyebrow{font:700 10px/1.2 ui-monospace,monospace;letter-spacing:.12em;color:#a9a397;text-transform:uppercase}
+#state{font-size:24px;font-weight:850;letter-spacing:-.02em;margin-top:4px}
+#status{font:11px/1.45 ui-monospace,monospace;color:#bdb6aa;margin-top:4px}
+#choices{position:absolute;top:14px;right:14px;padding:10px;display:grid;gap:8px;width:min(330px,calc(100vw - 28px))}
+.choice{display:grid;grid-template-columns:62px 1fr 1fr;gap:6px;align-items:center}
+.choice b{font-size:11px}
+button{border:1px solid #ffffff24;background:#292b28;color:#dedad2;border-radius:8px;padding:7px 8px;font-weight:750;cursor:pointer}
+button.active{background:#eee7da;color:#1a1b18;border-color:#eee7da}
+#help{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);padding:10px 14px;text-align:center;white-space:nowrap;font-size:12px}
+kbd{display:inline-block;min-width:27px;padding:3px 6px;margin:0 2px;border:1px solid #ffffff2b;border-bottom-width:2px;border-radius:6px;background:#252724;font:700 11px ui-monospace,monospace}
+#only{margin-top:6px;color:#aaa397;font-size:10px}
+#error{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:18px;max-width:min(560px,90vw);color:#ffd1c5}
+@media(max-width:720px){
+ #choices{top:auto;bottom:76px;right:10px;left:10px;width:auto}
+ #top{top:10px;left:10px}
+ #help{bottom:10px;font-size:11px}
+ .choice{grid-template-columns:56px 1fr 1fr}
+}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<div id="stage" data-ready="0"></div>
+<div id="hud">
+  <div id="top" class="card">
+    <div class="eyebrow">ActionFigure · isolated source actor</div>
+    <div id="state">LOADING</div>
+    <div id="status">source → motion library → central owner</div>
+  </div>
+  <div id="choices" class="card" aria-label="Motion look choices">
+    <div class="choice"><b>Jog</b><button data-choice="jog" data-variant="a" class="active">A · direct</button><button data-choice="jog" data-variant="b">B · calmer</button></div>
+    <div class="choice"><b>Run</b><button data-choice="run" data-variant="a" class="active">A · medium</button><button data-choice="run" data-variant="b">B · alternate</button></div>
+    <div class="choice"><b>Sprint</b><button data-choice="sprint" data-variant="a" class="active">A · lean</button><button data-choice="sprint" data-variant="b">B · less lean</button></div>
+  </div>
+  <div id="help" class="card">
+    <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move / turn &nbsp; <kbd>Shift</kbd> sprint &nbsp; <kbd>Space</kbd> jump
+    <div id="only">Your job: play for a moment and tell me Jog A/B · Run A/B · Sprint A/B.</div>
+  </div>
+  <div id="error" class="card"></div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+
+const PIN='2f76a5a38e3e692e6e1fc3b43bcca547e45a6c9e';
+const ROOT='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+PIN+'/';
+const enc=p=>p.split('/').map(encodeURIComponent).join('/');
+const url=p=>ROOT+enc(p);
+const OWNER={
+  ladder:'tools/KFB-ToolBox/kaykit-motion-lab-v1/evidence/blender-ladder-02/LOCOMOTION_LADDER_02.json',
+  adapter:'tools/KFB-ToolBox/kfb-lib/locomotion-ladder-profile.v1.js',
+  state:'tools/KFB-ToolBox/kfb-lib/motion-state-machine.v1.js',
+  catalog:'media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json'
+};
+const ACTOR='media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb';
+const KAYKIT_PREFIX='media/3D_Assets/';
+const WORLD_SCALE=0.6806;
+
+const stage=document.getElementById('stage');
+const stateEl=document.getElementById('state');
+const statusEl=document.getElementById('status');
+const errorEl=document.getElementById('error');
+
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0xc7c0b3);
+scene.fog=new THREE.Fog(0xc7c0b3,15,34);
+const camera=new THREE.PerspectiveCamera(42,1,.03,80);
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+stage.appendChild(renderer.domElement);
+
+scene.add(new THREE.HemisphereLight(0xfff7e8,0x665e54,2.1));
+const sun=new THREE.DirectionalLight(0xfff0d1,2.6);
+sun.position.set(5,8,4);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);
+sun.shadow.camera.left=-8;sun.shadow.camera.right=8;sun.shadow.camera.top=8;sun.shadow.camera.bottom=-8;
+scene.add(sun);
+
+const floor=new THREE.Mesh(new THREE.CircleGeometry(13,64),new THREE.MeshStandardMaterial({color:0xa69f92,roughness:.96,metalness:0}));
+floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
+const ring=new THREE.GridHelper(24,24,0x857e73,0xb8b0a3);ring.position.y=.004;scene.add(ring);
+
+const loader=new GLTFLoader();
+const actorPivot=new THREE.Group();scene.add(actorPivot);
+let actor=null,mixer=null,currentAction=null,currentClip=null,currentState='idle';
+let motionMachine=null,profile=null,ladder=null,catalog=null;
+let yaw=0,speed=0,vy=0,jumpY=0,grounded=true,landLatch=0;
+let ready=false,lastTs=performance.now();
+const keys=new Set();
+const choices={jog:'a',run:'a',sprint:'a'};
+const clipMap=new Map();
+const libraryCache=new Map();
+const gaitStateSet=new Set(['walk','jog','run.easy','run','sprint','backward']);
+
+function resize(){
+  renderer.setSize(innerWidth,innerHeight,false);
+  camera.aspect=innerWidth/Math.max(1,innerHeight);camera.updateProjectionMatrix();
+}
+addEventListener('resize',resize);resize();
+
+function normalizeLibrary(p){
+  if(!p)return null;
+  return p.startsWith('media/')?p:KAYKIT_PREFIX+p;
+}
+function cleanClip(clip){
+  const tracks=[];
+  for(const src of clip.tracks||[]){
+    let parsed=null;try{parsed=THREE.PropertyBinding.parseTrackName(src.name)}catch{}
+    if(parsed?.propertyName==='position' && /^(root|hips)$/i.test(parsed.nodeName||''))continue;
+    tracks.push(src.clone());
+  }
+  return new THREE.AnimationClip(clip.name,clip.duration,tracks,clip.blendMode);
+}
+async function loadLibrary(path){
+  path=normalizeLibrary(path);
+  if(!path)return;
+  if(libraryCache.has(path))return libraryCache.get(path);
+  const task=loader.loadAsync(url(path)).then(g=>{
+    for(const c of g.animations||[])clipMap.set(c.name,cleanClip(c));
+    return g;
+  });
+  libraryCache.set(path,task);return task;
+}
+function catalogClip(id){return (catalog.clips||[]).find(x=>x.id===id)||null}
+function applyChoice(state,variant){
+  const rungName=state==='run'?'run':state;
+  const row=ladder.ladders.kfb_ladder_v2.Rig_Medium.rungs.find(r=>r.rung===rungName);
+  if(!row)return;
+  let clip=row.clip,speedWorld=row.naturalSpeedMs?.world;
+  if(variant==='b' && row.alternatives?.length){
+    const alt=row.alternatives[0];clip=alt.clip;speedWorld=alt.naturalSpeedMs?.world;
+  }
+  const info=catalogClip(clip);
+  if(!profile.states[state])return;
+  profile.states[state].clip=clip;
+  profile.states[state].library=info?.library?.Rig_Medium||row.library;
+  if(Number.isFinite(speedWorld))profile.states[state].referenceSpeed=speedWorld;
+  loadLibrary(profile.states[state].library).catch(showError);
+  choices[state]=variant;
+  if(currentState===state)currentState='__refresh__';
+}
+document.querySelectorAll('[data-choice]').forEach(btn=>btn.addEventListener('click',()=>{
+  const state=btn.dataset.choice,variant=btn.dataset.variant;
+  document.querySelectorAll('[data-choice="'+state+'"]').forEach(b=>b.classList.toggle('active',b===btn));
+  applyChoice(state,variant);
+}));
+
+function sourceProfileRow(state){
+  return profile?.states?.[state]||null;
+}
+function actionFor(state){
+  const row=sourceProfileRow(state);
+  const clip=row?.clip?clipMap.get(row.clip):null;
+  return clip?{row,clip}:null;
+}
+function switchAction(result,forceState=null){
+  const state=forceState||result.presentationState||result.semanticState;
+  const next=actionFor(state)||actionFor('idle');
+  if(!next)return;
+  const same=currentAction && currentClip?.name===next.clip.name;
+  if(!same){
+    const a=mixer.clipAction(next.clip,actor);
+    a.enabled=true;a.setEffectiveWeight(1);
+    const oneshot=next.row.kind==='oneshot'||next.row.loop===false;
+    a.setLoop(oneshot?THREE.LoopOnce:THREE.LoopRepeat,oneshot?1:Infinity);
+    a.clampWhenFinished=oneshot;
+    let phase=0;
+    if(currentAction&&currentClip?.duration&&Number.isFinite(result.transition?.phaseOffset)){
+      phase=((currentAction.time/currentClip.duration)+result.transition.phaseOffset)%1;
+    }
+    a.reset();a.time=phase*next.clip.duration;a.play();
+    if(currentAction)currentAction.crossFadeTo(a,.13,false);
+    currentAction=a;currentClip=next.clip;
+  }
+  const rate=(gaitStateSet.has(state)&&Number.isFinite(result.playback?.rate))?result.playback.rate:1;
+  currentAction.setEffectiveTimeScale(THREE.MathUtils.clamp(rate,.65,1.35));
+  currentState=state;
+}
+function labelState(s){
+  const m={'run.easy':'EASY RUN','jump.start':'JUMP','jump.air':'AIR','jump.land':'LAND','backward':'BACK'};
+  return m[s]||String(s||'idle').toUpperCase();
+}
+function showError(err){
+  console.error(err);
+  errorEl.style.display='block';errorEl.textContent='Prototype error: '+(err?.message||String(err));
+  stateEl.textContent='ERROR';stage.dataset.ready='error';
+}
+
+function forwardVector(){
+  return new THREE.Vector3(Math.sin(yaw),0,Math.cos(yaw));
+}
+function updateCamera(dt){
+  const f=forwardVector();
+  const target=actorPivot.position.clone().add(new THREE.Vector3(0,1.05,0));
+  const desired=target.clone().addScaledVector(f,-4.5).add(new THREE.Vector3(0,1.75,0));
+  const k=1-Math.exp(-dt*5.5);
+  camera.position.lerp(desired,k);
+  camera.lookAt(target);
+}
+
+async function init(){
+  const [{buildForwardProfileFromLadder},{createMotionStateMachine},ladderData,catalogData,actorGltf]=await Promise.all([
+    import(url(OWNER.adapter)),
+    import(url(OWNER.state)),
+    fetch(url(OWNER.ladder)).then(r=>{if(!r.ok)throw Error('ladder '+r.status);return r.json()}),
+    fetch(url(OWNER.catalog)).then(r=>{if(!r.ok)throw Error('catalog '+r.status);return r.json()}),
+    loader.loadAsync(url(ACTOR)
+  ]);
+  ladder=ladderData;catalog=catalogData;
+  profile=buildForwardProfileFromLadder(ladder,{rigFamily:'Rig_Medium',speedSpace:'world'});
+  motionMachine=createMotionStateMachine(profile);
+
+  actor=actorGltf.scene;
+  actor.scale.setScalar(WORLD_SCALE);
+  actor.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+  actorPivot.add(actor);
+  actor.updateMatrixWorld(true);
+  const box=new THREE.Box3().setFromObject(actor);
+  actor.position.y-=box.min.y;
+  actor.updateMatrixWorld(true);
+
+  const needed=new Set();
+  for(const s of ['idle','walk','jog','run.easy','run','sprint','backward','jump.start','jump.air','jump.land']){
+    if(profile.states[s]?.library)needed.add(profile.states[s].library);
+  }
+  for(const id of ['kfb_locomotion_jogging_a','kfb_locomotion_running_d','kfb_locomotion_fast_run_a']){
+    const c=catalogClip(id);if(c?.library?.Rig_Medium)needed.add(c.library.Rig_Medium);
+  }
+  await Promise.all([...needed].map(loadLibrary));
+  mixer=new THREE.AnimationMixer(actor);
+
+  const bindable=[...clipMap.values()].filter(c=>['kfb_idle_idle_f','kfb_locomotion_walking_c','kfb_locomotion_jog_forward_a','kfb_locomotion_slow_run_a','kfb_locomotion_medium_run_a','kfb_locomotion_sprint_a','kfb_locomotion_walk_backward_a','Jump_Start','Jump_Idle','Jump_Land'].includes(c.name));
+  if(bindable.length<10)throw Error('expected motion clips missing: '+bindable.length+'/10');
+
+  const first=motionMachine.update({actualSpeed:0,localForwardSpeed:0,localSideSpeed:0,grounded:true,sprintIntent:false});
+  switchAction(first,'idle');
+  statusEl.textContent='source actor ✓ · central motion owner ✓ · '+bindable.length+'/10 required clips ✓';
+  stateEl.textContent='IDLE';
+  ready=true;stage.dataset.ready='1';
+  window.__KFB_FREEPLAY__.ready=true;
+}
+
+addEventListener('keydown',e=>{
+  if(['KeyW','KeyA','KeyS','KeyD','ShiftLeft','ShiftRight','Space'].includes(e.code)){e.preventDefault();keys.add(e.code)}
+  if(e.code==='Space'&&ready&&grounded){grounded=false;vy=4.25;landLatch=0}
+});
+addEventListener('keyup',e=>keys.delete(e.code));
+addEventListener('blur',()=>keys.clear());
+
+function tick(ts){
+  requestAnimationFrame(tick);
+  const dt=Math.min(.05,Math.max(.001,(ts-lastTs)/1000));lastTs=ts;
+  if(!ready){renderer.render(scene,camera);return}
+
+  const turn=(keys.has('KeyA')?1:0)-(keys.has('KeyD')?1:0);
+  yaw+=turn*dt*2.15;actorPivot.rotation.y=yaw;
+
+  const fwd=(keys.has('KeyW')?1:0)-(keys.has('KeyS')?1:0);
+  const sprintIntent=fwd>0&&(keys.has('ShiftLeft')||keys.has('ShiftRight'));
+  const target=fwd>0?(sprintIntent?3.05:2.22):(fwd<0 ? .48 : 0);
+  const accel=target>speed?1.9:4.0;
+  speed=THREE.MathUtils.damp(speed,target,accel,dt);
+  if(target===0&&speed<.015)speed=0;
+
+  const dir=forwardVector();
+  if(fwd!==0)actorPivot.position.addScaledVector(dir,dt*speed*Math.sign(fwd));
+
+  const wasGrounded=grounded;
+  if(!grounded){
+    vy-=10.8*dt;jumpY+=vy*dt;
+    if(jumpY<=0&&vy<0){jumpY=0;vy=0;grounded=true;landLatch=.42}
+  }
+  actorPivot.position.y=jumpY;
+  if(landLatch>0)landLatch=Math.max(0,landLatch-dt);
+
+  const result=motionMachine.update({
+    actualSpeed:speed,
+    localForwardSpeed:fwd<0?-speed:(fwd>0?speed:0),
+    localSideSpeed:0,
+    grounded,
+    verticalVelocity:vy,
+    sprintIntent,
+    jumpPhase:!grounded?(vy>0?'start':'air'):null
+  });
+  let forced=null;
+  if(landLatch>0)forced='jump.land';
+  switchAction(result,forced);
+  mixer.update(dt);
+
+  const shown=forced||result.semanticState;
+  stateEl.textContent=labelState(shown);
+  statusEl.textContent=(fwd<0?'reverse · ':'')+speed.toFixed(2)+' m/s · '+(choices.jog.toUpperCase()+'/'+choices.run.toUpperCase()+'/'+choices.sprint.toUpperCase());
+  updateCamera(dt);
+  renderer.render(scene,camera);
+
+  window.__KFB_FREEPLAY__._snapshot={
+    ready,semanticState:result.semanticState,presentationState:forced||result.presentationState,
+    speed:+speed.toFixed(3),grounded,jumpY:+jumpY.toFixed(3),
+    choices:{...choices},clip:currentClip?.name||null,
+    actor:{source:ACTOR,pin:PIN},ownerPin:PIN
+  };
+}
+window.__KFB_FREEPLAY__={
+  ready:false,_snapshot:{ready:false},
+  snapshot(){return structuredClone(this._snapshot)},
+  choose(state,variant){applyChoice(state,variant)}
+};
+requestAnimationFrame(tick);
+init().catch(showError);
+</script>
+</body>
+</html>

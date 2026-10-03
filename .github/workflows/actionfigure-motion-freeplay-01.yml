@@ -1,0 +1,47 @@
+name: ActionFigure Motion Freeplay 01
+on:
+  push:
+    branches:
+      - chatgpt-web/motion-ssot-convergence-2026-10-03
+    paths:
+      - 'tools/KFB-ToolBox/actionfigure-motion-freeplay-01/**'
+      - '.github/workflows/actionfigure-motion-freeplay-01.yml'
+      - 'tools/KFB-ToolBox/kfb-lib/locomotion-ladder-profile.v1.js'
+      - 'tools/KFB-ToolBox/kfb-lib/motion-state-machine.v1.js'
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/actionfigure-motion-freeplay-01/**'
+      - '.github/workflows/actionfigure-motion-freeplay-01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Source contract
+        run: |
+          node -e "const x=require('./tools/KFB-ToolBox/actionfigure-motion-freeplay-01/SOURCE.json'); if(x.controls!=='WASD + Shift + Space'||x.receivingPr!==333) process.exit(1)"
+          grep -F "ActionFigure.glb" tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html
+          grep -F "central motion owner" tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html
+          ! grep -q "Travel Globe" tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html
+      - name: Browser tooling
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/kfb-freeplay-http.log 2>&1 &
+          echo $! >/tmp/kfb-freeplay-http.pid
+      - name: Chromium freeplay proof
+        run: node tools/KFB-ToolBox/actionfigure-motion-freeplay-01/browser-proof.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: actionfigure-motion-freeplay-01
+          path: |
+            actionfigure-freeplay.png
+            actionfigure-freeplay-proof.json
