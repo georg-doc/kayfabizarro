@@ -1,13 +1,17 @@
 {
   "schema": "kfb.procedural-test-world/1",
   "date": "2026-10-03",
-  "status": "CANDIDATE_R2D_BODY_WATER_NATURE_BROWSER_PASS_NO_LOCOMOTION",
+  "status": "CANDIDATE_R2D_BODY_WATER_NATURE_BUILDINGS_BROWSER_PASS_NO_LOCOMOTION",
   "owner": "KFB WorldBuilder",
   "baseMain": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
   "current": {
     "pr": 332,
     "branch": "chatgpt-web/procedural-test-world-01-2026-10-03",
-    "implementationHead": "0335ade26741cf1df4920a723045c25de4fa2a82"
+    "implementationHead": "a18846cf8128e3e1facb0b51be0e6aff873d1244",
+    "browserRun": 37092514335,
+    "browserJob": 111115656852,
+    "browserArtifact": 11263101899,
+    "browserArtifactSha256": "74ab7902535bb67aa64fcb5b3f728424c9ce4ba9a87d0ea63cb18176f4d4661b"
   },
   "provenWorldDonor": {
     "pr": 327,
@@ -34,7 +38,14 @@
     "legacyPlayerLoaded": false
   },
   "proceduralDesign": {
-    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain; presentation next",
+    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain",
+    "buildingMountStatus": "SOURCE_PROVEN_B1_FAMILY_ON_GENERATED_R2D_PADS_BROWSER_VERIFIED",
+    "buildingEvidence": {
+      "placed": 1,
+      "windows": 14,
+      "doors": 1,
+      "seed": 3
+    },
     "natureModules": [
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs"
@@ -57,11 +68,24 @@
     "rule": "attach only after neutral ActionFigure prototype + Georg visual PASS",
     "legacyWi1Play": "DISABLED_IN_THIS_ENTRY"
   },
+  "consumerDock": {
+    "worldOwner": "KFB WorldBuilder / WB2",
+    "facts": [
+      "spawn",
+      "baseHeightAt(x,z)",
+      "groundAt(x,z,terrainHeight)",
+      "solidAt(x,z)",
+      "buildingAt(x,z)",
+      "Track Core route/support"
+    ],
+    "rule": "future Motion/Drive/Combat consumers read these facts; they do not replace world/render ownership"
+  },
   "purpose": [
     "stable procedural-world development surface independent of Travel Globe",
     "future locomotion/Drive/Combat integration host after their owners are proven",
     "world design and Resident placement can evolve in parallel now"
   ],
+  "travelRegressionRule": "Travel is a later consumer/donor, not the neutral test host.",
   "r2d": {
     "sourceMain": "74f7a690fbec88cf98ce0936f31b72ad3f1148f5",
     "donorPath": "tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/KFB_R2D_v0/island.js",
@@ -69,7 +93,7 @@
     "seed": 3,
     "biome": "burg",
     "shape": "frei",
-    "integration": "source-derived plan/height/mask + visible body/water + P1/P2 nature + Track Core inside WB2; no R2D renderer/camera/loop",
+    "integration": "source-derived plan/height/mask + visible body/water + P1/P2 nature + B1/facade buildings + Track Core inside WB2; no R2D renderer/camera/loop",
     "presentation": {
       "depth": 25.4,
       "bodyVertices": 14400,
@@ -84,12 +108,18 @@
         "boulders": 3,
         "edgeRocks": 5,
         "p2Details": 4
+      },
+      "buildings": {
+        "placed": 1,
+        "windows": 14,
+        "doors": 1,
+        "facadeRule": "kfb-facade-rule-v1"
       }
     },
     "presentationDeferred": [
-      "current building-family/facade presentation",
       "final Clay/material adoption",
-      "waterfall droplets/secondary FX polish"
+      "waterfall droplets/secondary FX polish",
+      "multi-island corridor expansion"
     ]
   }
 }

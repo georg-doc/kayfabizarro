@@ -22,10 +22,24 @@
 - kept WB2 as sole renderer/world owner;
 - kept legacy player off;
 - updated future Motion dock from stacked #331 to clean current #333;
-- source suite 7/7 PASS;
+- initial body/water/nature browser proof PASS.
+
+### Building/facade integration
+- mounted exact B1 sibling donors through the existing `wd1-city.js` / `kfb-facade-rule-v1` owner;
+- no new building grammar or renderer introduced;
+- repair pass 1 supplied the empty `zone.conflicts` Set required by the existing city owner;
+- repair pass 2 corrected QA from a fixed two-building assumption to the actual procedural pad count;
+- seed 3 browser result: 1 placed building, 14 windows, 1 door;
+- exact runtime head `a18846cf8128e3e1facb0b51be0e6aff873d1244`: Chromium PASS, 0 console/page/QA errors;
 - Resource Registry PASS;
-- real Chromium PASS with 0 problems;
-- evidence artifact 11261420332.
+- source workflow on exact QA-only head remained stuck in checkout and is not claimed as a new PASS.
+
+### Travel regression conclusion
+- Travel main/default product line stayed stale while later features accumulated on stacked branches;
+- card PDF artwork was historically coupled to Flight/Sky lifecycle;
+- feature-specific tests did not prove every visible integrated card state;
+- relative document-root assumptions added further fragility;
+- Travel is now a later consumer/donor, not the neutral test world.
 
 ### Repository cleanup
 Closed donor/history PRs without deleting branches:

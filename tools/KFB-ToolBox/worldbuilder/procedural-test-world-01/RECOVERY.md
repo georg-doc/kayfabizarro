@@ -17,8 +17,8 @@ Draft PR:
 Branch:
 `chatgpt-web/procedural-test-world-01-2026-10-03`
 
-Latest tested implementation head:
-`0335ade26741cf1df4920a723045c25de4fa2a82`
+Latest tested runtime/browser head:
+`a18846cf8128e3e1facb0b51be0e6aff873d1244`
 
 ## Proven current state
 
@@ -29,18 +29,28 @@ Latest tested implementation head:
 - Track Core road;
 - pond, creek, waterfall;
 - P1/P2 source-proven procedural nature grouping;
+- existing WorldBuilder B1/facade family mounted on generated R2D building pads;
+- one seed-3 building placed with 14 windows / 1 door;
 - no legacy `wi1-play`;
 - no Travel Globe/card host;
 - one renderer/canvas;
-- source 7/7 PASS;
-- registry PASS;
 - real Chromium PASS;
+- Resource Registry PASS;
 - 0 console/page/QA errors.
 
 Browser evidence:
-- run 37087496103 / job 111100703199;
-- artifact 11261420332;
-- digest `sha256:9cef3575443ff99ca7b1144f9cc59e2c3af8ad5db238b81f93749b7ff9a8d9e0`.
+- workflow `37092514335`;
+- job `111115656852`;
+- artifact `11263101899`;
+- digest `sha256:74ab7902535bb67aa64fcb5b3f728424c9ce4ba9a87d0ea63cb18176f4d4661b`.
+
+## Source-test note
+
+Runtime/source suite was green on parent implementation head:
+`59cf97ae81bf3bf1ed549ac7ad2236728c611090`.
+
+The current head changed only QA semantics after that source PASS.
+Exact-head source workflow `37092514330` remained stuck in checkout; do not claim it as completed.
 
 ## Motion boundary
 
@@ -54,11 +64,32 @@ No Player is attached here until:
 
 Do not revive Travel-local locomotion.
 
+## Stable future consumer seam
+
+Use the current world provider, not a new host.
+
+Available world facts:
+- `spawn`
+- `baseHeightAt(x,z)`
+- `groundAt(x,z,terrainHeight)`
+- `solidAt(x,z)`
+- `buildingAt(x,z)`
+- Track Core road / support
+
+Future Motion/Drive/Combat consumers must consume these facts and keep WB2 as world owner.
+
 ## Travel regression rule
 
 Travel stays a later Flight/card consumer and historical donor.
 
 Do not use Travel as the default neutral locomotion test host again.
+
+Reason:
+- stale default branch + stacked recovery branches;
+- multi-purpose host lifecycle;
+- card artwork historically coupled to Flight/Sky updates;
+- visible integrated presentation not covered by every feature-specific test;
+- relative path/document-root coupling.
 
 ## GitHub routing
 
@@ -74,11 +105,13 @@ Closed PRs remain reachable donor/history evidence; closing did not delete branc
 
 ## Exactly one next world action
 
-Use the existing current WorldBuilder building/facade owner on the R2D building pads.
+Extend #332 into a small multi-island R2D/Track-Core corridor.
 
 Preserve:
-- R2D body/water;
-- Track Core;
-- P1/P2 nature;
+- current proven seed-3 island;
+- body/water/nature/buildings;
 - one WB2 owner;
-- no Player.
+- no Player;
+- no Travel/Card host.
+
+No merge or Live promotion.
