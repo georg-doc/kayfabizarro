@@ -114,7 +114,7 @@ First pin the actual current implementation SSOT/site and promote the router nod
 
 FrankenStein Studio decides/measures actor, look, rig and base/static pose. Animation Lab consumes that state for clip playback, audit and dynamic motion authoring.
 
-Load `skills/kfb-cartoon-animation_v2.md` for animation/motion work unless the registry supersedes it.
+Load `skills/kfb-cartoon-animation/SKILL.md` for animation/motion work unless the registry supersedes it.
 
 Card Surf base pose should be made geometrically sound in Studio first, then animated in Animation Lab.
 

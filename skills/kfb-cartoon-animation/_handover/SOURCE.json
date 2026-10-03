@@ -1,0 +1,49 @@
+{
+  "schema": "kfb.cartoon-animation-skill-source/1",
+  "date": "2026-10-03",
+  "owner": "KFB shared animation/motion method",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-cartoon-animation-skill-v3-2026-10-03",
+  "draftPr": 343,
+  "base": {
+    "branch": "main",
+    "head": "be9a2a8a8c96ab1bdb652709e3b65068399b103b"
+  },
+  "testedImplementationHead": "da1640db3849593c7e69206dc9babbd3b85fba2c",
+  "canonicalPath": "skills/kfb-cartoon-animation/SKILL.md",
+  "compatibilityPath": "skills/kfb-cartoon-animation_v2.md",
+  "legacyFullPath": "skills/kfb-cartoon-animation/references/legacy-v2-full.md",
+  "legacyV2Blob": "302c56489afe1a99a4157968222aa96615c96626",
+  "siteDraft": {
+    "version": "v0.1.1",
+    "skillFile": {
+      "id": "8b82cc7e-d406-4ca2-b41b-3bf767eca62b",
+      "sha256": "ffb4560b59f48eca9b9b1619d57cc9e4ac676e2c583fb31ac9c8a7d217449394"
+    },
+    "audit": {
+      "id": "3644d49a-b3b1-460c-948e-63f940d190bf",
+      "sha256": "34238e494e17531d568efc68254b0af5afb7d39cefd78424b9212bed41ad6260"
+    },
+    "eval": {
+      "id": "a6fee031-eaf7-402a-8bcc-d61b9b36c6cc",
+      "sha256": "072920701f496e7ff8177674977ac6e5b25ffcaff0290e10f11477affe88bf6d"
+    }
+  },
+  "currentRuntimeOwner": {
+    "repo": "georg-doc/kayfabizarro",
+    "draftPr": 333,
+    "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+    "observedHeadDuringDraft": "811855edc2a9aa1365cb3318bbd01d0c8f5b2d1e",
+    "actionFigureBrowserTestedHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+    "touchedByThisSlice": false
+  },
+  "stage": {
+    "required": false,
+    "published": false,
+    "reason": "documentation/method package; no new human-facing runtime surface"
+  },
+  "merge": {
+    "authorized": false,
+    "performed": false
+  }
+}
