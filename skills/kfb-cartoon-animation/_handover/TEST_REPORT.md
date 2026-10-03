@@ -49,3 +49,13 @@ No merge, Cloudflare Stage or Live promotion was performed.
 ## Known external metadata drift
 
 PR #333 `MOTION_STATE_CONTRACT.v1.json` still carries stale text that lists the neutral ActionFigure prototype as unresolved. Newer Recovery/Return proves the prototype browser PASS. This package records but does not repair that separate runtime-owner metadata drift.
+
+
+## Merge verification · 2026-10-03
+- PR #343 head before merge: `b0531a8ba54722cb0a8f3bc41f8c4bb9fc695f50`.
+- expected-head merge guard used: PASS.
+- merge commit: `818488a6b498b5710e593fdb185440e76707d6b7`.
+- PR state after merge: CLOSED / MERGED.
+- main immediately after merge: `818488a6b498b5710e593fdb185440e76707d6b7`.
+- canonical `SKILL.md`, START_HERE and KFB Hub canonical link readback on main: PASS.
+- no Motion runtime file changed by this skill merge.

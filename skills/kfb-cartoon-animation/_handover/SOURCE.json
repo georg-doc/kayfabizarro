@@ -3,7 +3,7 @@
   "date": "2026-10-03",
   "owner": "KFB shared animation/motion method",
   "repository": "georg-doc/kayfabizarro",
-  "branch": "chatgpt-web/kfb-cartoon-animation-skill-v3-2026-10-03",
+  "branch": "main",
   "draftPr": 343,
   "base": {
     "branch": "main",
@@ -43,7 +43,15 @@
     "reason": "documentation/method package; no new human-facing runtime surface"
   },
   "merge": {
-    "authorized": false,
-    "performed": false
-  }
+    "authorized": true,
+    "authorizedBy": "Georg",
+    "authorizedOn": "2026-10-03",
+    "performed": true,
+    "mergeCommit": "818488a6b498b5710e593fdb185440e76707d6b7"
+  },
+  "mergedPr": 343,
+  "mergedSkillRouterHead": "818488a6b498b5710e593fdb185440e76707d6b7",
+  "sourceBranch": "chatgpt-web/kfb-cartoon-animation-skill-v3-2026-10-03",
+  "sourceBranchFinalHead": "b0531a8ba54722cb0a8f3bc41f8c4bb9fc695f50",
+  "livePromoted": false
 }

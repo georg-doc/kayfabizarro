@@ -2119,3 +2119,16 @@ The shared animation/motion method has been repackaged from the single-file `ski
 - active router/registry/Animation Lab/2D Studio/Claude/Living Masterplan/Hub candidate routing points to the folder skill;
 - Motion PR #333 remains the separate runtime locomotion owner and was not modified;
 - no Stage/Live promotion or merge.
+
+
+## 2026-10-03 · KFB Cartoon Animation skill PR #343 merged
+
+### CURRENT_REFERENCE · MAIN
+Georg explicitly authorized merge of PR #343. The portable `skills/kfb-cartoon-animation/SKILL.md` package and its current router/Registry/Animation Lab/2D Studio/Claude/Living Masterplan/Hub routing are now on main at merge commit `818488a6b498b5710e593fdb185440e76707d6b7`.
+
+- former v2 content remains byte-identical under `references/legacy-v2-full.md`;
+- old `skills/kfb-cartoon-animation_v2.md` remains a compatibility entry;
+- Site eval 10/10 PASS; package static 8/8 PASS;
+- Motion PR #333 remains a separate runtime owner and was not modified;
+- no Stage/Live runtime promotion;
+- next use: load the canonical folder skill for the next bounded animation slice.

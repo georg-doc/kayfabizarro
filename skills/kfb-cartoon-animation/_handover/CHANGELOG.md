@@ -10,3 +10,12 @@
 - GitHub package static 8/8 PASS after test-counter-only repair.
 - Motion PR #333 untouched.
 - No Stage, Live or merge.
+
+## 2026-10-03 · PR #343 merged to main
+- Georg explicitly authorized merge.
+- Draft status was cleared only to execute the authorized merge.
+- PR #343 merged successfully at `818488a6b498b5710e593fdb185440e76707d6b7`.
+- Canonical skill/router/Registry/Hub state is now on main.
+- Motion PR #333 runtime files remain untouched.
+- No Stage or Live runtime promotion.
+- Next gate: `APPLY_CANONICAL_SKILL_ON_NEXT_BOUNDED_ANIMATION_SLICE`.
