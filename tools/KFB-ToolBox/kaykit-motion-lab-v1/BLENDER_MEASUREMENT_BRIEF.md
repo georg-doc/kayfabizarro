@@ -1,42 +1,54 @@
-# Blender MCP · Motion measurement handoff
+# Blender measurement route · LOCOMOTION-LADDER-01
 
-## Purpose
-Independently measure the exact KayKit Rig_Medium clips that feed the central KFB Animation/Motion SSOT.
+Status: **ROUTED TO COWORKER BLENDER BRIEF · DO NOT CREATE A SECOND MEASUREMENT CONTRACT**
 
-Do not invent semantic roles from filenames. Measure source facts.
+The earlier local template in this branch is retained only for compatibility/history.
+The active Blender measurement job is:
 
-## Source
-- repo: georg-doc/kayfabizarro
-- asset source commit: 378b209355b13304e3cff656ec0806ca5b89df28
-- actor: ActionFigure
-- rig family: Rig_Medium
-- animation root:
-  media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/
+- branch: `coworker/locomotion-ladder-01-brief-2026-10-03`
+- brief:
+  `skills/chat/workflows/LOCOMOTION_LADDER_01_2026-10-03/BRIEF_BLENDER_LOCOMOTION_LADDER_01.md`
+- exact brief blob:
+  `746cd98e7185907cc18a95112a235e4bfbbdfd8f`
 
-## Measure
-For every requested clip that actually exists:
-- exact duration
-- root/hip translation policy
-- stride/reference-speed candidate
-- foot contact phases/times
-- planted intervals
-- normalized foot slip
-- takeoff/touchdown when relevant
-- visible loop seam
-- any clearly defensible playback-rate range; otherwise leave null
-- source/Blender version and measurement method
+## Active Blender output
 
-Do not classify a clip as Walk/Jog/Run/Sprint purely from its filename.
-Do not change source animation files.
+The authoritative incoming measurement artifact is:
 
-## Output
-Fill:
-`BLENDER_MEASUREMENT_INTAKE.template.json`
+`LOCOMOTION_LADDER_01.json`
 
-against:
-`BLENDER_MEASUREMENT_INTAKE.schema.json`
+plus the additive Motion Library catalogue entry requested by that brief.
 
-Unknown stays null / FAILED_MEASUREMENT or UNAVAILABLE.
-No guessed numbers.
+Blender owns measurement only.
+It does not write:
+- the central state machine;
+- Travel/Combat/Resident runtime;
+- consumer movement/physics.
 
-The Web/ToolBox lane will reconcile these values with the existing Three.js/KCL measurements before prototype tuning.
+## Current central owner
+
+KFB ToolBox / Animation-Motion authoring:
+- `kfb-lib/motion-state-machine.v1.js`
+- `kfb-lib/MOTION_STATE_CONTRACT.v1.json`
+- `kfb-lib/motion-measurement-reconcile.v1.js`
+
+When `LOCOMOTION_LADDER_01.json` arrives on GitHub:
+1. inspect its actual schema;
+2. compare exact same-clip values against KCL/Three.js and Motion Library facts;
+3. preserve every contradiction;
+4. do not silently choose a winner;
+5. only then form the prototype candidate profile.
+
+## Independently verified Motion Library v6 facts
+
+Read directly from the connected Dropbox source on 2026-10-03:
+- `RETURN_INTAKE_06.md`: Motion Library v6, 2026-09-30;
+- catalogue schema: `kfb.motion-catalog.v1`;
+- catalogue version: `2026-09-30`;
+- **370 total clips**;
+- **148 clips in group `locomotion`**;
+- existing locomotion sets include `male_basic`, `female_basic`, `magic_caster`, `drunk`, `carry_box`, `carry_holding`, `wheelbarrow`.
+
+This resolves the apparent “148” wording: it means 148 locomotion-group clips inside a 370-clip library.
+
+The Dropbox catalogue itself is not copied into this public branch.
