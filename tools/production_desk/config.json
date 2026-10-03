@@ -339,14 +339,24 @@
     },
     {
       "id": "vfx-sfx",
-      "bucket": "RUNNING",
-      "title": "VFX-01 · lokaler Review-Export",
-      "what": "Der neue lokale VFX-Review-Slice liegt vor. Er wird erst als Quelle gesichert und anschließend als echte Prüfseite veröffentlicht; bis dahin entsteht kein zweiter Effekt-Owner.",
-      "provider": "Claude Design → WSA",
+      "bucket": "CAN_START",
+      "title": "VFX Language Skill v1 · READY → Consumer Fixture",
+      "what": "Der gemeinsame KFB-VFX-Skill v1 ist als provider-/engine-neutrale Semantik- und Authoring-Referenz fertig: Gameplay-Wahrheit → Event → Rezept → Hierarchie → Anker → Timing → Clay/Ribbon/Glyph/Screen-Primitive → vorhandener Renderer. Combat-, Travel/TinySkies- und Clay-Owner bleiben erhalten; es entsteht kein zweiter globaler VFX-Runtime-Owner.",
+      "provider": "ChatGPT Web · KFB shared VFX reference · Draft PR #347",
       "yourAction": "",
-      "waitingFor": "",
+      "waitingFor": "Nächster produktiver Schritt ist VFX-CONSUMER-FIXTURE-01: genau ein realer Combat- oder Racer-Consumer beweist den Vertrag mit seinem bestehenden Runtime-Owner, echten Pool/Draw-Call/Cleanup-Stats und Browserbild.",
       "questions": [],
-      "repo": "georg-doc/kayfabizarro"
+      "repo": "georg-doc/kayfabizarro",
+      "pr": 347,
+      "branch": "chatgpt-web/kfb-vfx-language-skill-01-2026-10-03",
+      "expectedHead": "f5fc6ac030fcbbaea3cef41a9da8b4b3a0855c94",
+      "brief": {
+        "label": "KFB VFX Language Skill · START HERE",
+        "path": "skills/chat/workflows/KFB_VFX_LANGUAGE_SKILL_2026-10-03/START_HERE.md",
+        "ref": "chatgpt-web/kfb-vfx-language-skill-01-2026-10-03",
+        "pasteReady": false
+      },
+      "review": null
     },
     {
       "id": "curtain",
