@@ -74,6 +74,7 @@ test('R2D building pads consume exact B1 donors through the existing facade owne
   assert.match(b,/b1\/ordinary-notched\/371401481-to-371401497/);
   assert.match(b,/b1\/large-complex\/371401488-to-371401495/);
   assert.match(b,/CITY\.buildCityLayer\(zone/);
+  assert.match(b,/conflicts:new Set\(\)/);
   assert.match(b,/kfb-facade-rule-v1/);
   assert.doesNotMatch(b,/new THREE\.BoxGeometry|new THREE\.ShapeGeometry|WebGLRenderer|requestAnimationFrame/);
   assert.match(adapterSource,/mountR2DBuildings/);
