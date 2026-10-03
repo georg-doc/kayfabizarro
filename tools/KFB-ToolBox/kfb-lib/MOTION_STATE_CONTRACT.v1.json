@@ -1,0 +1,152 @@
+{
+  "schema": "kfb.motion-state-contract/1",
+  "date": "2026-10-03",
+  "owner": "KFB ToolBox / Animation-Motion authoring",
+  "status": "FOUNDATION_IMPLEMENTATION_MEASUREMENT_OPEN",
+  "sourceLineage": {
+    "motionLab": {
+      "pr": 127,
+      "head": "7c8cc218ec46dabb20409c9e0b5368afcf5845c6",
+      "status": "PUBLIC_VERIFIED_87_87_HUMAN_OPEN"
+    },
+    "locomotionProfiles": {
+      "pr": 294,
+      "blob": "3db9fbd482e6a527c417e79af826138ff28efa33",
+      "status": "SOURCE_PASS_CANDIDATE"
+    },
+    "animMap": {
+      "pr": 294,
+      "blob": "7120f80e25e8a91106441039fb036c059a4d0e0d",
+      "status": "SOURCE_PASS_CANDIDATE"
+    },
+    "creatorResearch": {
+      "pr": 107,
+      "head": "fc49a336af57adb6317b74211b3318d004d96de5",
+      "blob": "78ecdbef75a220d589f546651318629a133af0b0"
+    },
+    "motionLabMeasurements": {
+      "blob": "f7a0675e1ed175a5895a15b7320c1fd5258a94e9"
+    },
+    "motionLibraryV6": {
+      "source": "Dropbox",
+      "path": "/CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/MOTION_LIB_v6/KFB_Motion_Library.catalog.json",
+      "version": "2026-09-30",
+      "schema": "kfb.motion-catalog.v1",
+      "totalClips": 370,
+      "locomotionGroupClips": 148,
+      "verifiedOn": "2026-10-03",
+      "note": "Private source reference only; catalogue bytes are not copied into this public branch."
+    },
+    "blenderLadder": {
+      "branch": "coworker/locomotion-ladder-01-brief-2026-10-03",
+      "briefPath": "skills/chat/workflows/LOCOMOTION_LADDER_01_2026-10-03/BRIEF_BLENDER_LOCOMOTION_LADDER_01.md",
+      "briefBlob": "746cd98e7185907cc18a95112a235e4bfbbdfd8f",
+      "output": "LOCOMOTION_LADDER_01.json",
+      "status": "MEASUREMENT_IN_PROGRESS_EXTERNAL_LANE"
+    }
+  },
+  "responsibility": {
+    "owns": [
+      "semantic animation state",
+      "clip role mapping",
+      "rig-family motion facts",
+      "foot/contact phases",
+      "playback-rate policy",
+      "phase-aware transition profile",
+      "animation-relative event markers",
+      "actor-specific motion review/override"
+    ],
+    "doesNotOwn": [
+      "input",
+      "world position",
+      "world velocity integration",
+      "acceleration physics",
+      "terrain/collision",
+      "camera",
+      "damage/ammo",
+      "jump trajectory"
+    ]
+  },
+  "consumerInput": [
+    "actualSpeed",
+    "localForwardSpeed",
+    "localSideSpeed",
+    "grounded",
+    "verticalVelocity",
+    "sprintIntent",
+    "jumpPhase"
+  ],
+  "ownerOutput": [
+    "semanticState",
+    "presentationState",
+    "role",
+    "clip",
+    "playbackRate",
+    "phase-aware transition metadata"
+  ],
+  "semanticStates": [
+    "idle",
+    "start",
+    "walk",
+    "walk.fast",
+    "run",
+    "sprint",
+    "stop",
+    "backward",
+    "strafe.left",
+    "strafe.right",
+    "turn",
+    "jump.start",
+    "jump.air",
+    "jump.land"
+  ],
+  "rules": [
+    "State is chosen from actual movement facts, never number keys or local consumer clip tables.",
+    "Playback rate is actualSpeed / measured referenceSpeed and is only valid inside an approved clip range.",
+    "Adjacent gait hysteresis derives from overlap in measured/approved speed windows; a gap remains explicitly flagged.",
+    "Walk/run/sprint transitions preserve gait phase/contact where source evidence exists.",
+    "Start/stop may be transition semantics without dedicated clips; no clip name is invented.",
+    "Missing measurements remain unresolved and block final prototype acceptance rather than being guessed.",
+    "Consumer runtimes may not fork clip maps or locomotion state graphs.",
+    "LOCOMOTION_LADDER_01.json is the active Blender measurement input; no second Blender measurement schema may silently become authoritative.",
+    "Motion Library v6 provides a broad candidate pool, but semantic gait selection remains unresolved until exact ladder measurement and Georg visual review."
+  ],
+  "currentRigMediumEvidence": {
+    "measurementStatus": "TECHNICAL_CANDIDATE_HUMAN_OPEN",
+    "walkingA": {
+      "duration": 1.0666667222976685,
+      "referenceSpeed": 0.610950956910957,
+      "slipBody": 0.013229703955890515
+    },
+    "runningA": {
+      "duration": 0.800000011920929,
+      "referenceSpeed": 2.480274167012876,
+      "slipBody": 0.06360108910820435
+    },
+    "technicalPlaybackRange": [
+      0.45,
+      1.8
+    ],
+    "measuredWalkRunGapApprox": 0.016,
+    "unresolved": [
+      "approved playback ranges",
+      "Walking_A/B/C semantic choice",
+      "jog/fast-walk accepted source",
+      "sprint accepted source/rate",
+      "backward/strafe Blender cross-check",
+      "jump Blender cross-check",
+      "turn policy",
+      "human visual acceptance"
+    ]
+  },
+  "prototypeGate": {
+    "actor": "ActionFigure / Rig_Medium",
+    "controls": "WASD + Shift + Space",
+    "environment": "neutral ground",
+    "ui": "normal play view; diagnostics hidden/internal",
+    "blockedUntil": [
+      "measurement intake reconciled",
+      "required semantic states have measured or explicitly transition-only evidence"
+    ]
+  }
+}

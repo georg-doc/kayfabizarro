@@ -1,0 +1,49 @@
+name: ToolBox Motion State Foundation
+on:
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/kfb-lib/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_*'
+      - 'tools/KFB-ToolBox/docs/MOTION_PROFILE_ROUTER.md'
+      - 'tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/**'
+      - '.github/workflows/toolbox-motion-state-foundation.yml'
+  push:
+    branches:
+      - chatgpt-web/kfb-animation-motion-ssot-2026-10-03
+    paths:
+      - 'tools/KFB-ToolBox/kfb-lib/**'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs'
+      - 'tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_*'
+      - 'tools/KFB-ToolBox/docs/MOTION_PROFILE_ROUTER.md'
+      - 'tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/**'
+      - '.github/workflows/toolbox-motion-state-foundation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: JavaScript syntax
+        run: |
+          node --check tools/KFB-ToolBox/kfb-lib/locomotion-profiles.v1.js
+          node --check tools/KFB-ToolBox/kfb-lib/anim-map.v1.js
+          node --check tools/KFB-ToolBox/kfb-lib/motion-state-machine.v1.js
+      - name: JSON contracts
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kfb-lib/MOTION_STATE_CONTRACT.v1.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kfb-lib/BLENDER_MEASUREMENT_INTAKE.schema.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('tools/KFB-ToolBox/kaykit-motion-lab-v1/BLENDER_MEASUREMENT_INTAKE.template.json','utf8'))"
+      - name: State machine tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-machine.test.mjs
+      - name: Measurement reconciliation tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/reconcile-measurements.test.mjs
+      - name: Motion Lab owner integration tests
+        run: node --test tools/KFB-ToolBox/kaykit-motion-lab-v1/state-owner-integration.test.mjs
