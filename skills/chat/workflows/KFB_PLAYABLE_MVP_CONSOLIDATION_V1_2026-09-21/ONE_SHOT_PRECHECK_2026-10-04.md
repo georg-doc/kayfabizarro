@@ -237,6 +237,171 @@ Before One-Shot:
 
 This can ride inside `WORLD-MULTI-ISLAND-CORRIDOR-01` / `DECK-WORLD-SEED-01`; it is not a separate runtime owner.
 
+## C2 · Additional preparation that removes One-Shot ambiguity
+
+These are not new runtime owners. They are cheap contracts/fixtures that make the final integration deterministic.
+
+### P1-7 · GOLDEN-FIXTURE-PACK-01
+
+Freeze one concrete, deterministic first-run content set before integration:
+- Town spawn / first safe anchor;
+- first Resident;
+- first canonical Card;
+- first song/discovery;
+- first vehicle;
+- first satellite destination;
+- first active performance encounter;
+- return anchor;
+- exact save/import checkpoint.
+
+The same fixture IDs feed world recipes, Resident/ChatterBox proof, Jukebox, Almanac and the final browser acceptance script.
+
+### P1-8 · MVP-ID-NAMESPACE-01
+
+Freeze stable ID conventions before data from several owners meet.
+
+At minimum:
+- world / world-recipe IDs;
+- anchor / route / transition IDs;
+- Resident / Resident-set / scenelet IDs;
+- deck / Card refs;
+- song / audio-context IDs;
+- event / thread / encounter IDs;
+- save / session / receipt IDs.
+
+Rule:
+human-facing names may change; persistent IDs must not casually change after the One-Shot begins.
+
+### P1-9 · MVP-SOURCE-MANIFEST-01
+
+Prepare one machine-readable source/owner manifest before the final integration lock.
+
+For every required MVP capability record:
+- owner;
+- exact repo / branch / head or source blob;
+- consumer;
+- status;
+- required vs optional;
+- current test/human evidence;
+- protected boundary;
+- fallback/quarantine rule.
+
+This should become the input to the later ONE-SHOT-INTEGRATION-LOCK rather than rediscovering sources during WSA execution.
+
+### P1-10 · MVP-INPUT-MODE-CONTRACT-01
+
+Freeze one input arbitration table for:
+- PLAY;
+- GROUND movement;
+- DRIVE;
+- interaction I;
+- jump SPACE;
+- God Mode OBJECT_EDIT;
+- TERRAIN_SCULPT;
+- camera/orbit;
+- side-chat/text focus.
+
+Goal:
+no key/pointer/wheel gesture has two simultaneous writers.
+The exact terrain/editor donor semantics remain protected.
+
+### P1-11 · MVP-QUARANTINE-FLAG-MATRIX-01
+
+Classify every integrated capability as:
+- REQUIRED_CORE;
+- REQUIRED_PRESENTATION;
+- OPTIONAL_QUARANTINABLE;
+- DEFERRED.
+
+For optional modules define:
+- default flag;
+- boot behavior if source/load fails;
+- whether save data ignores/preserves the missing module;
+- visible fallback or clean omission.
+
+Initial optional/quarantinable examples include Flight, full Combat/Bonk, Organ attractions, extra Residents/Cube Pets, extra vehicle and non-essential VFX polish.
+
+A failed optional module must not collapse the playable core.
+
+### P1-12 · MVP-ACCEPTANCE-FIXTURE-01
+
+Write the Golden Journey as machine-readable expected checkpoints before the runtime exists.
+
+The fixture should name:
+- deterministic world seed / recipe refs;
+- expected anchors;
+- expected Resident;
+- expected Card/provenance;
+- expected song/discovery;
+- Ground → Drive → Ground transition;
+- satellite entry/return;
+- save/export/import point;
+- post-import Almanac and NPC-continuity assertions.
+
+Later browser automation consumes the same fixture.
+Do not let the test invent a parallel game flow.
+
+### P1-13 · MVP-PERF-OBSERVABILITY-01
+
+Prepare measurement hooks before the four-island world is populated.
+
+Measure, do not guess:
+- frame time / FPS;
+- active animation mixers;
+- active EyeRig count;
+- loaded Resident/scenelet count;
+- draw calls / visible objects where available;
+- audio voices;
+- world/recipe load time;
+- save/import time.
+
+Use current distance/sleep/LOD donors only as mechanisms.
+Final budgets are set from the integrated target device/browser, not copied from an old prototype.
+
+### P1-14 · WORLD-BIOGRAPHY-FIXTURE-01
+
+Turn the current product question into a reusable data fixture:
+for Town, Dystopia, Utopia and Protopia write the compact six-beat history
+Origin → First Use → Settlement → Institution/Power → Accretion/Scars → Present Day.
+
+Each biography should reference its Deck/Card semantic sources where applicable and expose:
+- 1–3 visible historical scars/landmarks;
+- principal Resident roles;
+- current conflict/tension;
+- one reason to return later.
+
+This is authoring data, not exposition text forced on the player.
+
+### P1-15 · DECK-SEMANTIC-FIXTURE-01
+
+Before the world geometry integration, prepare a small reviewed semantic fixture for each future deck:
+- canonical deckId;
+- 3–6 representative Card refs;
+- derived concept/motif tags;
+- Resident affinity examples;
+- Billboard candidates;
+- biome/light/architecture/audio cues;
+- one neutral-event ChatterBox comparison.
+
+This is a derived cache/test fixture only.
+Canonical deck JSON + PDF remain provenance.
+
+## C3 · Do not over-prepare before the One-Shot
+
+Do not spend the preflight budget on:
+- full galaxy/planet runtime;
+- infinite streaming world;
+- one biome per Card;
+- open-ended LLM society simulation;
+- full Fight Sandbox / rope physics;
+- complete Combat;
+- all Resident EyeRig variants;
+- all Organ attractions;
+- Flight if Ground/Drive core is not yet green;
+- final polish of every building/prop family.
+
+Those remain later consumers of the proven MVP contracts.
+
 ## D · Useful donors to PIN, not “integrate everything”
 
 ### Resident social layer
