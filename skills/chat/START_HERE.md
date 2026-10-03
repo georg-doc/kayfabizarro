@@ -26,6 +26,24 @@ For meta-narrative/cross-module ideation, especially KFB Town, use the registry 
 
 If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` rather than asking Georg for a transcript reconstruction.
 
+## 2026-10-03 · CURRENT ACTIVE ROUTE · Motion + Procedural World + Residents
+
+For current KFB production routing, read:
+`skills/chat/CURRENT_ACTIVE_BRANCHES_2026-10-03.md`
+
+Current implementation entry points:
+- **Motion / Locomotion:** PR #333 · clean current-main convergence · KFB ToolBox Animation/Motion SSOT.
+- **World:** PR #332 · Procedural Test World · R2D in WB2 · current-main clean convergence.
+- **Residents:** PR #330 appearance variants + PR #315 EyeRig consumer prep + Coworker narrative recon branch.
+
+Travel Globe is legacy donor/consumer evidence, **not** the default neutral player test host.
+The Hex visible-world line is donor/asset evidence, not the current open-world runtime.
+
+Hard routing rule:
+after a short donor chain, cut a clean convergence branch from current `main`.
+Do not continue product work on arbitrary old stacked PRs merely because they contain a useful donor.
+
+
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
@@ -1386,3 +1404,15 @@ No new Stage is required for CAL-P00; GitHub is the source/evidence surface for 
 ## 2026-10-01 · WEB-COMBAT-FB-PLAYER-01 recovery
 
 Combat's new FB v5b + Ear Rig v5 player option is **not promoted**. The implementation is preserved in `georg-doc/KFB-Combat-Arena` Draft PR #11 at recovery head `4eb2d063af96d2e528f84a5bb20cc967f26f8fdb`. Exact source isolation, one-mixer ownership and Settings desktop/narrow behavior are proven; the browser acceptance stopped after two repair passes because the automated pointer probe produced zero shots and integrated screenshots timed out. Treat it as `ARCHIVED_FAILED_CANDIDATE`, not a current Combat player runtime. Public Combat remains the prior Driver-v4 C-MVP-A-R2 Stage. Next gate: `FB-V5-RANGED-INPUT-PROBE-01`.
+
+
+## 2026-10-03 · Current convergence map
+
+Read `CURRENT_ACTIVE_BRANCHES_2026-10-03.md` before starting new KFB Motion, World, Resident or Travel integration work.
+
+Current headline routing:
+- Motion/Locomotion SSOT candidate = PR #331.
+- Clean procedural test-world candidate = PR #332.
+- Travel Globe mobility recovery PRs are legacy/frozen test-host history, not the default future locomotion world.
+- Island World and Residents/EyeRig continue in parallel.
+- WSA/Work only when a concrete capability gap makes it worthwhile.
