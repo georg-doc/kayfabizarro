@@ -16,6 +16,8 @@ let delay=null;
 let delayFeedback=null;
 let delayWet=null;
 
+const MODE_GAINS={master:.68,reconstruct:.73,arrange:.90};
+
 const ARRANGE_GAINS={
   OPEN:{drums:.08,bass:.16,guitar:.04,keyboard:.26,percussion:.14,strings:.08,synth:.24,brass:.00,wet:.10},
   A:{drums:.72,bass:.80,guitar:.10,keyboard:.48,percussion:.20,strings:.03,synth:.12,brass:.00,wet:.08},
@@ -141,7 +143,7 @@ function playMaster(id){
   const buf=buffers.get('master:'+id);if(!buf)throw new Error('master not loaded '+id);
   currentMode='master:'+id;
   playStart=ctx.currentTime+.08;
-  setGain(masterBus.gain,.78,ctx.currentTime,.04);
+  setGain(masterBus.gain,MODE_GAINS.master,ctx.currentTime,.04);
   const src=mkSource(buf,masterBus,playStart,0);
   state.scheduledStarts=[playStart];
   state.activeSources=1;
@@ -175,7 +177,7 @@ function playStems(mode){
   stopAll();
   currentMode='stems:'+mode;
   playStart=ctx.currentTime+.10;
-  setGain(masterBus.gain,mode==='reconstruct'?.34:.56,ctx.currentTime,.04);
+  setGain(masterBus.gain,mode==='reconstruct'?MODE_GAINS.reconstruct:MODE_GAINS.arrange,ctx.currentTime,.04);
   if(mode==='reconstruct'){
     for(const stem of spec.stems)laneNodes.get(stem.id).gain.gain.setValueAtTime(1,playStart);
     delayWet.gain.setValueAtTime(.0001,playStart);
@@ -258,6 +260,8 @@ function snapshot(){
     stemDurationSpread:stemDur.length?+(Math.max(...stemDur)-Math.min(...stemDur)).toFixed(4):null,
     currentBar:state.currentBar,
     currentSection:state.currentSection,
+    modeGains:{...MODE_GAINS},
+    masterGain:masterBus?.gain?.value??null,
     arrangeGains:ARRANGE_GAINS,
     errors:[...state.errors]
   };

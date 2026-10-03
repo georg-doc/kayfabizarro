@@ -20,7 +20,7 @@ try{
   page.on('request',r=>{try{const u=new URL(r.url());if(!r.url().startsWith('data:')&&u.origin!==origin)result.external.push(r.url());}catch{}});
 
   await page.goto(base,{waitUntil:'networkidle',timeout:90000});
-  check('build marker',await page.evaluate(()=>document.documentElement.dataset.kfbBuild==='AUDIO-ARRANGE-01-DONOR-BENCH-v0.1'));
+  check('build marker',await page.evaluate(()=>document.documentElement.dataset.kfbBuild==='AUDIO-ARRANGE-01-DONOR-BENCH-v0.2'));
   check('runtime export',await page.evaluate(()=>!!window.__KFB_AUDIO_ARRANGE__));
 
   await page.locator('#load').click();
@@ -31,6 +31,7 @@ try{
   check('AudioContext running',s.contextState==='running',s.contextState);
   check('76 BPM',s.bpm===76,s.bpm);
   check('64 bar form',s.totalBars===64&&s.sections.length===8,{bars:s.totalBars,sections:s.sections.length});
+  check('A/B mode gains level calibrated',s.modeGains.master===.68&&s.modeGains.reconstruct===.73&&s.modeGains.arrange===.90,s.modeGains);
   check('bar duration',Math.abs(s.barSeconds-(240/76))<1e-9,s.barSeconds);
   check('eight stem decodes',Object.values(s.stemStats).filter(Boolean).length===8,s.stemStats);
   check('two master decodes',Object.values(s.masterStats).filter(Boolean).length===2,s.masterStats);
