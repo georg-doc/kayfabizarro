@@ -1213,3 +1213,107 @@ On the direct Stage:
 5. reload and confirm existing saved profiles remain.
 
 Stop before any profile promotion, per-eye feature work, Blender cleanup, merge or Live promotion.
+
+## 2026-10-03 · CURRENT RETURN · RECOVERY + SOURCE PALETTE VARIANTS
+
+Status: **SOURCE TESTED · STAGE MIRRORED · PUBLIC_VERIFIED OPEN · HUMAN VISUAL GATE OPEN**
+
+### Recovery baseline
+
+The newer browser export `eye-rig-medium.batch (2).json` is now durable on this same owner/branch:
+- intake commit `a346a219a54e53f690d1ff840363aff8d8729e58`;
+- **40 profiles / 40 selected**;
+- previous **33/33** profile payloads preserved unchanged in source / eye / blink / life / kinetics / review-state fields;
+- seven additive profiles: `paladin-king`, `mummy-a`, `mummy-b`, `survivalist`, `hoarder`, `space-ranger-flight`, `combat-mech`;
+- added roster/source resolution: **7/7 + 7/7 PASS**.
+
+### Appearance variants
+
+Resident variant truth is reused from PR #330 rather than re-audited or forked.
+
+Implementation:
+- source implementation: `d6c9d28d0861c1e29fa23f2a9cc6fc9094456c48`;
+- evidence head before this Return: `fa851af3478a338e174777a32d9f81e0c5400c68`;
+- new manifest: `data/appearance-variants.v1.json`;
+- **25** character texture families;
+- **56** exact source appearance textures;
+- **31** existing EyeRig geometry actors carry those families;
+- **24/25** families are runtime-selectable;
+- **1/25** is registered but source-gated: Farmers.
+
+Architecture:
+- one geometry actor keeps one EyeRig geometry profile;
+- palette selection is separate appearance state;
+- no duplicate skeleton/rig actors are invented for color variants;
+- existing `applyActorTextureOverride()` remains the texture owner;
+- LocalStorage key remains `kfb.toolbox.eye-rig-batch.v0`;
+- `appearanceByActor` is additive and does not reset `profiles`.
+
+Concrete coverage:
+- **Magical Girl: A / B / C / D** on the shared `magical-girl` geometry;
+- **Driver: BASE / B** on the shared `driver` geometry;
+- Paladin B / `paladin-king` remains the existing fixed precedent;
+- the other audited multi-texture families are represented by the same manifest;
+- Farmers A/B are visible in the registry but switching stays disabled until the exact texture A/B → Farmer_A/Farmer_B mapping is source-proven.
+
+### Tests
+
+Focused readback contract: **20/20 PASS**.
+
+Includes:
+- JavaScript syntax for runtime + static-check;
+- **25/25** families;
+- **56/56** exact path/blob/revision matches against the PR #330 variant SSOT;
+- all families mapped to current geometry;
+- all mapped actor ids present;
+- Magical Girl A/B/C/D;
+- Driver BASE/B;
+- Paladin King precedent retained;
+- Farmers source gate retained;
+- selector UI/runtime;
+- one shared geometry profile;
+- unchanged LocalStorage key;
+- additive appearance persistence;
+- catalogs remain **55 Medium / 8 Large**.
+
+No full historical static-suite or browser visual PASS is inferred from these focused checks.
+
+### Stage
+
+Cloudflare publication mirror:
+`cloudflare-live@479c4e91967565b583c76ed0c6ea07433c5b28ce`
+
+Exact mirrored file readback PASS:
+- `kfb-hub/stage/toolbox/eye-rig-batch/app.js`;
+- `.../index.html`;
+- `.../data/appearance-variants.v1.json`;
+- ToolBox Stage Hub card.
+
+Direct route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
+
+The current web opener still cannot access the `pages.dev` route and the Stage commit has no attached workflow/status contexts. Therefore **PUBLIC_VERIFIED remains OPEN** and no Live claim is made.
+
+### Unresolved
+
+- Farmers exact A/B texture → Farmer_A/Farmer_B mapping;
+- independent L/R eye placement;
+- per-eye visibility for Survivalist eyepatch;
+- separate FrankenStein/Pet Studio click-to-edit parity;
+- later Blender/NoEyes cleanup where still needed.
+
+### Exactly one current next gate
+
+**GEORG_EYERIG_CONTROL_R2_VARIANTS_VIS_01**
+
+On the direct Stage:
+1. Control R2: extreme Oval W/H + moving gaze keeps pupil fully visible and same size;
+2. strong positive Converge works;
+3. direct numeric entry works;
+4. Orc Raider source texture is correct;
+5. Magical Girl switches A → B → C → D without changing the EyeRig geometry profile;
+6. Driver switches BASE ↔ B;
+7. reload preserves both eye profiles and the chosen appearances.
+
+No profile promotion, Farmers mapping guess, per-eye feature work, merge or Live promotion before this gate.
+
