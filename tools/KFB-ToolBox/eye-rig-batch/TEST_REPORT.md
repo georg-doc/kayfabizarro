@@ -671,3 +671,39 @@ Front → ¾ L / ¾ R → optionally show source eyes → tune only if needed �
 
 Skull: manually tune or leave unsupported.
 
+## 2026-10-03 · KLR-EYE-VIS-01 UI CONTRAST REPAIR
+
+Human screenshot exposed a presentation regression:
+- Legacy header text nearly black on black;
+- roster card titles nearly black on dark cards;
+- toolbar button labels nearly black on dark controls;
+- right light review panel remained readable.
+
+Cause:
+`legacy/styles.css` used the shared light Batch EyeRig tokens (`--ink=#211b18`, `--panel=#fbf8f3`) on Legacy dark-shell surfaces. `--panel2` / `--ok` were also not dependable in the shared light theme.
+
+Repair commit:
+`332b31631349eedd248032c6ac9f1b787f15cdf6`
+
+CSS blob:
+`9e9df8cd3fde85a72b111d21cd09a10e1916dd5e`
+
+The repair scopes explicit colors only to:
+- Legacy top header;
+- dark roster cards;
+- Legacy toolbar;
+- stage labels/loading overlay.
+
+The right light review panel is deliberately not dark-overridden.
+
+Focused contrast/readback: **8/8 PASS**.
+Review runtime app and HTML remained byte-identical.
+
+Stage mirror:
+`cloudflare-live@db823766370df932cc8134f21691036924a7d12c`
+
+Stage CSS blob exactly matches source:
+`9e9df8cd3fde85a72b111d21cd09a10e1916dd5e`.
+
+Human visual re-check remains open.
+
