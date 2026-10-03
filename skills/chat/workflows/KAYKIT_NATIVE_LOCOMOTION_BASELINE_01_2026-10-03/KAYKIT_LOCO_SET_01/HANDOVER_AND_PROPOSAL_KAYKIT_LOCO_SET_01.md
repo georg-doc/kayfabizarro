@@ -131,3 +131,52 @@ Starting and stopping are the weak spots. Neither KayKit nor Quaternius has star
 | Rifle aim · walk/run (`Ranged_2H_Aiming`) | OK | The rifle points forward. The upper body rides on the hip sway of the walk; acceptable at walk speed, slightly wobbly at run speed. |
 
 Weapon orientation: all three models point their long axis along handslot +Z (sword along +Y). With identity attachment they are correct; checked in a straight side view, because a 3/4 view makes a forward-pointing barrel look like it points down.
+
+## 8. Update 02: Georg's review of the weapon video, and fixes (`KAYKIT_LOCO_WEAPONS_02.mp4`)
+
+Georg's verdict on video 01: **the sword works**. The blaster and rifle orientation was wrong.
+
+### Root cause 1: the aim clips are not loops
+
+`Ranged_1H_Aiming` and `Ranged_2H_Aiming` are one-shot "raise and aim" motions. The hand rises during the first ~0.35 s, then holds the aim pose. Video 01 looped them, so every ~1.07 s the arm dropped back to the hip and the weapon turned sideways before aiming again.
+
+**Rule:** play them once and clamp on the last frame. In Three.js this is `LoopOnce` + `clampWhenFinished = true`. The raise itself is the "draw" motion.
+
+### Root cause 2: a single grip cannot serve free-swinging arms
+
+The KayKit handslot convention (identity attachment) is correct only for the sword. Measured in the held aim pose, the handslot's forward axis points sideways-backward: 58° off for the pistol, 47° off for the rifle. With a free arm swing, the hand also rolls differently in walk and in run. So every weapon needs a **grip per mode**: a fixed local rotation of the weapon under `handslot.r`. It is solved from the clip so that the long axis stays on target across the whole cycle.
+
+| Carry grip (weapon node local rotation under `handslot.r`, glTF, quaternion x,y,z,w) | Target | Deviation over the cycle |
+|---|---|---|
+| Pistol · walk (Walking_B arms) `(-0.45652, 0.53669, 0.45830, 0.54177)` | barrel → running direction, top up | mean 4.6°, max 7.8° |
+| Pistol · run (Running_A arms) `(-0.18962, 0.77310, 0.27080, 0.54133)` | same | mean 4.8°, max 8.9° |
+| Rifle staff · walk `(-0.44898, -0.54364, -0.45429, 0.54451)` | muzzle forward-up, 70° from vertical; hand on the stock wrist (model origin) | mean 4.9°, max 7.7° |
+| Rifle staff · run `(0.71433, 0.28074, 0.50018, -0.40093)` | same | mean 4.8°, max 8.9° |
+| Rifle staff · sprint (Running_B arms) `(0.59965, 0.37473, 0.59965, -0.37473)` | same | **mean 28°, max 46°**: the Running_B arm pump swings the rifle; not clean |
+| Pistol · aim (`Ranged_1H_Aiming` hold pose) `(0.01303, 0.87145, 0.02287, 0.48978)` | barrel → running direction | mean 0.8°, max 2.6° (walk); max 4.0° (run, the same grip works) |
+| Rifle · aim (`Ranged_2H_Aiming` hold pose) `(0.02406, 0.36505, 0.01135, 0.93061)` | barrel → running direction | mean 0.6°, max 1.3° |
+
+- **A single grip for walk and run is 20–27° off.** Runtime rule: slerp the carry grip between the walk grip and the run grip with the same weight as the leg blend.
+- When aiming, the weapon uses its aim grip (table). One aim grip serves walk and run. During the 0.35 s raise the barrel swings into place; this is the draw motion.
+- **Rifle staff carry, why:** Georg's direction is to hold the rifle like a staff, by the stock wrist, not in a firing pose. This fits the Toy Soldier patrolling with a bayonet rifle. An upright staff (35° from vertical) passed through the large Mannequin head, so 70° forward was chosen: the minimum head clearance rises from 0.57 to 0.91 units in the run.
+- **Open:** a rifle sprint with this grip. Proposal: limit the rifle carry to walk and run, or reduce the right-arm swing in the sprint. Georg decides.
+- **Not in scope yet:** shooting while running (Georg: later, if a running-shot animation is needed).
+
+### What WSA must take over
+
+Per weapon, store these in `loco_set.json`:
+
+1. `carryGrip.walk` and `carryGrip.run`, as quaternions.
+2. `aimClip`, played once and clamped.
+3. `aimGrip`, as a quaternion (table).
+
+The weapon node sits under `handslot.r` (§4).
+
+## 9. Erratum (Coworker, 2026-10-03): frame-rate bug in my render scripts
+
+- **Bug.** My cloud render scripts set the scene to 30 fps *after* the glTF import. Blender's importer converts animation seconds to frames with the scene fps at import time (default 24). So the animation was laid out at 24 fps and then rendered as 30 fps video.
+- **Effect on the videos.** `KAYKIT_LOCO_RAMP_01_walk_run_sprint.mp4` and `KAYKIT_LOCO_WEAPONS_01.mp4` play the motion about **25 % too fast**. Their caption bars drift out of sync with the motion as the video goes on: label, speed and weapon visibility were keyed per output frame, the pose per 24-fps frame. The first version of weapons video 02 was hit as well (wrong grip per segment); it was never delivered.
+- **Not affected.** All measurements: speeds, slip, phases, grips and seams come from my own glTF evaluator in seconds. Also unaffected: the GLB files and the live review scene built by `blender_native_review.py`, which sets 30 fps before importing.
+- **Partly affected.** The contact sheets of the native baseline (`RETURN/sheets/`): poses were sampled at 1.25× the labelled frame number. Each sheet still shows the clip's own poses, but the "fN" labels are off.
+- **Fix.** `bpy.context.scene.render.fps = 30` before `import_scene.gltf`, and render frame f for time f/30. The corrected videos are `KAYKIT_LOCO_RAMP_02_walk_run_sprint.mp4` and `KAYKIT_LOCO_WEAPONS_02.mp4`; they replace 01 as the visual reference (01 is kept, additive).
+- **Rule for every runtime and tool.** Sample clips in seconds. Never assume a frame rate from the file.
