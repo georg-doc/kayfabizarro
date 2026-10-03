@@ -1,6 +1,6 @@
 # KFB Cartoon Brawl Skill · Return
 
-Status: **CONSUMER_PROVEN_DRAFT · FIRST CONSUMER PASS**
+Status: **MULTI_CONSUMER_PROVEN_DRAFT · TWO CONSUMERS PASS**
 Date: 2026-10-03
 Workflow: `KFB-CARTOON-BRAWL-SKILL-01`
 
@@ -124,28 +124,18 @@ The router/registry changes are present in Draft PR #342 only.
 
 ## Unresolved / deliberately deferred
 
-- no real Combat consumer has yet executed the skill end-to-end;
+- two real Combat consumers have executed the skill end-to-end: Sword and ordinary Brickfish Bonk;
 - no universal per-actor/per-weapon self-clearance claim;
 - no promotion of the existing CA2 Sword candidate;
-- no universal Brickfish-only decision;
-- no new Combat consequence wiring;
+- ordinary Brickfish is proven as one blunt/improvised profile; no universal Brickfish-only decision and no Heavy-variant proof yet;
+- Brickfish consequence wiring is proven only in the bounded stacked consumer; productive Arena runtime is not promoted;
 - no public/browser gameplay proof.
 
 ## Exactly one next gate
 
-**BRAWL-SKILL-CONSUMER-01**
+**BRAWL-BRICKFISH-HEAVY-01**
 
-Use one real Combat Arena melee consumer to validate the skill itself:
-
-1. exact source object / basis;
-2. neutral grip;
-3. full-clip self-clearance;
-4. active/swept hit + explicit miss;
-5. per-swing dedupe;
-6. one confirmed reaction + impact;
-7. clean recovery.
-
-Only after that consumer proof should the skill move from `canonical-draft` toward a stronger accepted/canonical status or expand broadly across weapon families.
+Use the proven Brickfish source/mount/contact architecture with native `Melee_1H_Attack_Jump_Chop`; independently measure its own deformation and consequences before any broader promotion.
 
 
 ## Consumer proof addendum · 2026-10-03
@@ -169,3 +159,26 @@ The consumer established that the Sword source is the primary KayKit Rig_Medium 
 Exactly one next productive gate:
 
 **BRAWL-CLUB-BRICKFISH-01**
+
+
+## Brickfish consumer addendum · 2026-10-03
+
+The second real consumer is complete.
+
+Combat source:
+
+- repo: `georg-doc/KFB-Combat-Arena`
+- stacked Draft PR: **#17**
+- branch: `chatgpt-web/brawl-club-brickfish-01-2026-10-03`
+- closure head: `e391536fb8307a11ccd09dd6f0b04a7e2110542d`
+- closure CI: `37148820462 / 111278193583` · **122/122 PASS** · build 244 · re-home 172/66/routes PASS
+- browser runtime head: `0da34fdac4d50a1b6e24f749b443515e271f081b`
+- browser run/job: `37148495692 / 111277236973` · PASS
+- artifact: `11282867552`
+- no production Brickfish promotion.
+
+The consumer validated a blunt/improvised weapon path with an exact KFB fish donor. Pure axial stretch was measured and rejected for the ordinary Chop because the path misses laterally; a bounded tail-pivot whip repaired the path without extra axial reach. Minimum-cost PASS: **30° whip / stretch 1.00**.
+
+Exactly one next productive gate:
+
+**BRAWL-BRICKFISH-HEAVY-01**
