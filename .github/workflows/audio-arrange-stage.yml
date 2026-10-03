@@ -25,7 +25,7 @@ jobs:
         with:
           sparse-checkout: |
             kfb-hub/stage/audio-arrange-01
-            media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2
+            media/3D_Assets/Sounds
             .github/workflows/audio-arrange-stage.yml
           sparse-checkout-cone-mode: false
 
