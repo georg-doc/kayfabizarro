@@ -654,3 +654,14 @@ No root Hub publication, no Cloudflare deployment, no PDF processing, no asset i
 - The expiring Site capability URL is intentionally not stored in Hub/GitHub; Georg receives it in chat.
 - Georg's only action: open the Site review and return Jog A/B · Run A/B · Sprint A/B plus any visible issue.
 - Cloudflare/root-Hub publication is deliberately deferred; this is SITE REVIEW, not PUBLIC STAGE.
+
+
+## Motion HUMAN FAIL → KayKit-native Blender reset · 2026-10-03
+- Mixed Ladder-02 ActionFigure browser candidate is archived after Georg's TOTAL FAIL.
+- PR #333 closed without merge; source/evidence retained.
+- New sole current Motion owner: Draft PR #344 / `coworker/kaykit-native-locomotion-baseline-01-2026-10-03` @ `956d49b27d99abadb23e750d4fb425c2b9e3eee9`.
+- Binding priority restored: original KayKit Character Animations 1.1 native Rig_Medium clips first; Mixamo/KFB Motion Library only as later proven gap-fill.
+- Hub lane moved from LOOK_AT Site review back to CAN_START Blender baseline.
+- Next executor is Coworker / Blender MCP.
+- Georg's only operational step, when continuing, is to open Coworker and tell it to execute the prepared PR #344 slice; no animation parameters need to be supplied manually.
+- No browser rebuild, Stage, merge or Live promotion.

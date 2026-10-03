@@ -15,21 +15,21 @@
   "lanes": [
     {
       "id": "motion-ssot-actionfigure-01",
-      "bucket": "LOOK_AT",
-      "title": "Motion SSOT · ActionFigure Freeplay · SITE REVIEW",
-      "what": "Der neutrale ActionFigure-Freeplay ist technisch fertig und im echten Chromium grün: WASD, Sprint, Rückwärts, Sprung und Jog/Run/Sprint A/B. Die exakte getestete HTML-Datei liegt als privater Review-Mirror auf der KFB Production Control Site. Cloudflare ist für diesen Gate bewusst nicht nötig.",
-      "provider": "ToolBox Animation/Motion · PR #333",
-      "yourAction": "Den privaten Site-Link aus dem Chat öffnen, kurz mit WASD / Shift / Space spielen und Jog A/B, Run A/B, Sprint A/B zurückmelden.",
-      "waitingFor": "Georgs reine Look-/Feel-Auswahl. Keine GitHub-, CI- oder Deployment-Arbeit durch Georg.",
+      "bucket": "CAN_START",
+      "title": "Motion SSOT · KayKit-native Blender Baseline · NEXT",
+      "what": "Der gemischte Ladder-02/Browser-Prototyp ist nach Georgs HUMAN FAIL archiviert. Neuer verbindlicher Weg: ActionFigure/Rig_Medium zuerst ausschließlich mit den originalen KayKit Character Animations 1.1 in Blender prüfen. Mixamo/KFB Motion Library erst später als Gap-Fill.",
+      "provider": "Coworker / Blender MCP · Draft PR #344",
+      "yourAction": "Coworker/Blender öffnen und nur den vorbereiteten Slice KAYKIT-NATIVE-BLENDER-BASELINE-01 aus PR #344 ausführen lassen. Keine technischen Parameter ergänzen.",
+      "waitingFor": "Blender-Reviewpaket mit KEEP_NATIVE / HOLD_NATIVE / REJECT_NATIVE für die originalen KayKit-Basics.",
       "questions": [],
       "repo": "georg-doc/kayfabizarro",
-      "pr": 333,
-      "branch": "chatgpt-web/motion-ssot-convergence-2026-10-03",
-      "expectedHead": "811855edc2a9aa1365cb3318bbd01d0c8f5b2d1e",
+      "pr": 344,
+      "branch": "coworker/kaykit-native-locomotion-baseline-01-2026-10-03",
+      "expectedHead": "956d49b27d99abadb23e750d4fb425c2b9e3eee9",
       "brief": {
-        "label": "ActionFigure Freeplay · Return",
-        "path": "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/RETURN.md",
-        "ref": "chatgpt-web/motion-ssot-convergence-2026-10-03",
+        "label": "KayKit-native Blender Baseline · START HERE",
+        "path": "skills/chat/workflows/KAYKIT_NATIVE_LOCOMOTION_BASELINE_01_2026-10-03/START_HERE.md",
+        "ref": "coworker/kaykit-native-locomotion-baseline-01-2026-10-03",
         "pasteReady": false
       },
       "review": null
