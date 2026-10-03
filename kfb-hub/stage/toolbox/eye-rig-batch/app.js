@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mountKayKitEyes, deriveSourceAnchorSeed } from './lib/kaykit-eye-adapter.v1.js';
 import { prepareMediumActorCleanup } from './lib/medium-source-eye-cleanup.v1.js';
 import { sampleActorFaceColor } from './lib/face-color-sampler.v1.js';
+import { makeK1 } from './lib/clay-k1.js';
 
 const DONOR_PIN = '5650b6c54d8789b20ea80abe857688173d506d3b';
 const DONOR_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${DONOR_PIN}/`;
@@ -34,6 +35,13 @@ const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/
 const CLEANUP02_REVIEW_URL = './data/cleanup02-review.v0.json';
 const CLEANUP02_ANCHORS_URL = './data/cleanup02-anchors.v0.json';
 const APPEARANCE_VARIANTS_URL = './data/appearance-variants.v1.json';
+const CLAY_SOURCE_PIN = '74f7a690fbec88cf98ce0936f31b72ad3f1148f5';
+const CLAY_ASSET_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${CLAY_SOURCE_PIN}/`;
+const CLAY_FLOOR = {
+  diffuse:'media/3D_Assets/Textures/clay_floor_001/clay_floor_001_diffuse.jpg',
+  normal:'media/3D_Assets/Textures/clay_floor_001/clay_floor_001_normal.jpg',
+  roughness:'media/3D_Assets/Textures/clay_floor_001/clay_floor_001_roughness.jpg'
+};
 function actorUrl(actor){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${actor.revision}/${actor.path}`); }
 function sourceAssetUrl(ref,fallbackRevision){ return encodeURI(`https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${ref?.revision||fallbackRevision}/${ref?.path||''}`); }
 async function applyActorTextureOverride(figure,actor){
@@ -74,6 +82,7 @@ const state = {
   figure:null, stageRoot:null, cleanup:null, eyes:null, mixer:null,
   componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null, textureOverrideReport:null,
   appearanceManifest:null, appearanceByActor:{},
+  stageLook:'neutral', clayK1:null, ground:null, neutralGroundMaterial:null, clayGroundMaterial:null, clayFloorLoad:null,
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
   clips:new Map(), currentAction:null, currentMotion:'bind', currentView:'front',
@@ -99,6 +108,55 @@ function setBootProgress(message,{loading=true,kind='pending'}={}) {
   const stats=$('#rosterStats'); if(stats)stats.textContent=message;
   if(loading)setLoading(true,message);
   const badge=$('#bootBadge'); if(badge)setBadge(badge,kind==='fail'?'FAIL':kind==='pass'?'READY':'BOOT',kind);
+}
+function markNoClay(root){
+  if(!root)return;
+  const mark=(o)=>{o.userData=o.userData||{};o.userData.noClay=true;};
+  if(root.traverse)root.traverse(mark);else mark(root);
+}
+function syncStageLookUi(){
+  $$('[data-stage-look]').forEach((b)=>b.classList.toggle('active',b.dataset.stageLook===state.stageLook));
+  const badge=$('#lookBadge'); if(badge)badge.textContent=state.stageLook==='clay'?'Clay K1':'Neutral';
+}
+function prepareClayTexture(texture,{srgb=false,repeat=3}={}){
+  texture.wrapS=texture.wrapT=THREE.RepeatWrapping;
+  texture.repeat.set(repeat,repeat);
+  if(srgb&&THREE.SRGBColorSpace)texture.colorSpace=THREE.SRGBColorSpace;
+  texture.needsUpdate=true;
+  return texture;
+}
+async function loadClayFloorMaps(material,renderer){
+  const loader=new THREE.TextureLoader();
+  const url=(p)=>encodeURI(CLAY_ASSET_CDN+p);
+  const [map,normalMap,roughnessMap]=await Promise.all([
+    loader.loadAsync(url(CLAY_FLOOR.diffuse)),
+    loader.loadAsync(url(CLAY_FLOOR.normal)),
+    loader.loadAsync(url(CLAY_FLOOR.roughness))
+  ]);
+  const anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy?.()||1);
+  for(const t of [map,normalMap,roughnessMap]){prepareClayTexture(t,{srgb:t===map});t.anisotropy=anisotropy;}
+  material.map=map;material.normalMap=normalMap;material.roughnessMap=roughnessMap;material.needsUpdate=true;
+  return {status:'OK',diffuse:CLAY_FLOOR.diffuse,normal:CLAY_FLOOR.normal,roughness:CLAY_FLOOR.roughness};
+}
+async function setStageLook(mode,{persist=true}={}){
+  mode=mode==='clay'?'clay':'neutral';
+  state.stageLook=mode;
+  state.clayK1?.revert?.();
+  if(state.ground)state.ground.material=mode==='clay'?(state.clayGroundMaterial||state.neutralGroundMaterial):state.neutralGroundMaterial;
+  if(mode==='clay'&&state.figure&&state.clayK1){
+    try{
+      const n=await state.clayK1.apply(state.figure);
+      const s=state.clayK1.state;
+      log(`Clay K1 view · ${n} meshes · +${Math.round(s.addedTris||0)} tris · ${Math.round(s.ms||0)} ms · AO off`);
+    }catch(err){
+      console.error(err); log(`Clay K1 view failed · ${err.message}`);
+      state.clayK1.revert?.();state.stageLook='neutral';
+      if(state.ground)state.ground.material=state.neutralGroundMaterial;
+    }
+  }
+  syncStageLookUi();
+  if(persist)save();
+  renderReport();
 }
 function appearanceFamily(actorId){ return actorId ? state.appearanceManifest?.families?.find((f)=>f.actorIds?.includes(actorId)) || null : null; }
 function appearanceSelection(actor){
@@ -253,6 +311,7 @@ function save() {
     currentRigClass:state.rigClass,
     currentActorByClass:state.currentActorByClass,
     appearanceByActor:state.appearanceByActor,
+    stageLook:state.stageLook,
     rosterFilter:state.rosterFilter
   }));
 }
@@ -703,12 +762,17 @@ function configureRenderer() {
   stage.prepend(renderer.domElement);
   const scene = new THREE.Scene(); scene.background = new THREE.Color(0xd8d2c8);
   const camera = new THREE.PerspectiveCamera(28, 1, .01, 100);
-  const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.dampingFactor=.08; controls.target.set(0,1.35,0);
+  const controls = new OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.dampingFactor=.08; controls.zoomSpeed=.28; controls.minDistance=.8; controls.maxDistance=14; controls.target.set(0,1.35,0);
   scene.add(new THREE.HemisphereLight(0xffffff,0x6c6973,2.1));
   const key = new THREE.DirectionalLight(0xffffff,2.5); key.position.set(3.4,5.8,4.2); key.castShadow=true; scene.add(key);
   const fill = new THREE.DirectionalLight(0xffdeda,1.2); fill.position.set(-4,2.6,2.2); scene.add(fill);
   const rim = new THREE.DirectionalLight(0xdde7ff,1.0); rim.position.set(1.5,3,-5); scene.add(rim);
-  const ground = new THREE.Mesh(new THREE.CircleGeometry(2.5,64), new THREE.ShadowMaterial({color:0x382f2a, opacity:.16, transparent:true})); ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; ground.position.y=.002; scene.add(ground);
+  const neutralGroundMaterial=new THREE.ShadowMaterial({color:0x382f2a,opacity:.16,transparent:true});
+  const clayGroundMaterial=new THREE.MeshStandardMaterial({color:0xb18a68,roughness:1,metalness:0});
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(2.5,64), neutralGroundMaterial); ground.rotation.x=-Math.PI/2; ground.receiveShadow=true; ground.position.y=.002; scene.add(ground);
+  state.ground=ground;state.neutralGroundMaterial=neutralGroundMaterial;state.clayGroundMaterial=clayGroundMaterial;
+  state.clayFloorLoad=loadClayFloorMaps(clayGroundMaterial,renderer).then((r)=>{log('clay_floor_001 ready · diffuse + normal + roughness');return r;}).catch((err)=>{console.error(err);log(`clay_floor_001 fallback color · ${err.message}`);return {status:'FALLBACK',error:err.message};});
+  state.clayK1=makeK1({renderer,scene,camera,hooks:{}},{figureH:2.65,perMeshTris:4000,maxLevels:2,budgetTris:160000});
   const stageRoot = new THREE.Group(); scene.add(stageRoot); state.stageRoot=stageRoot;
   const ro = new ResizeObserver(()=>{ const r=stage.getBoundingClientRect(); renderer.setSize(Math.max(1,r.width),Math.max(1,r.height),false); camera.aspect=Math.max(.1,r.width/Math.max(1,r.height)); camera.updateProjectionMatrix(); }); ro.observe(stage);
   return {renderer,scene,camera,controls,ro};
@@ -825,6 +889,7 @@ async function loadActor(actorId,{preserve=true}={}) {
     if(preserve) storeCurrentProfile();
     setLoading(true,`Loading ${actor.label}…`);
     state.currentAction?.stop?.(); state.currentAction=null;
+    state.clayK1?.revert?.();
     state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
     if(state.figure?.parent) state.figure.parent.remove(state.figure);
     state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null; state.sourceAnchorSeed=null; state.textureOverrideReport=null;
@@ -849,6 +914,7 @@ async function loadActor(actorId,{preserve=true}={}) {
     state.mixer=new THREE.AnimationMixer(figure);
     const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:window.__EYE_RIG_CONTRACT,camera:window.__EYE_RIG_BATCH.camera,log});
     state.eyes=eyes;
+    markNoClay(eyes.rig?.rig); markNoClay(eyes.faceHost?.box);
     const anchorRec=sourceAnchorRecord(actor.id);
     if(anchorRec?.anchors){
       state.sourceAnchorSeed=deriveSourceAnchorSeed({THREE,figure,faceHost:eyes.faceHost,anchors:anchorRec.anchors});
@@ -875,6 +941,7 @@ async function loadActor(actorId,{preserve=true}={}) {
     const measured=cleanup.measureOnFaceHost?.(eyes.faceHost); if(measured) recordMeasuredSuggestion(measured);
     state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame();
     gate('#gateHost',state.hostReady?'pass':'fail');gate('#gateEye',state.eyeReady?'pass':'fail');
+    await setStageLook(state.stageLook,{persist:false});
     figure.visible=true;
     if(state.profile.reviewState==='UNSUPPORTED' && /^load failed:/.test(state.profile.technicalNote||'')){
       state.profile.reviewState='UNREVIEWED';
@@ -922,6 +989,7 @@ async function captureQaContactSheet(renderer,camera,controls) {
 
 function wireRuntimeControls(camera,controls,renderer) {
   $$('.tool[data-view]').forEach((b)=> b.onclick=()=>setView(b.dataset.view,camera,controls));
+  $$('[data-stage-look]').forEach((b)=>b.onclick=()=>setStageLook(b.dataset.stageLook).catch((err)=>log(`stage look failed · ${err.message}`)));
   $$('.motion').forEach((b)=> b.onclick=()=>playMotion(b.dataset.motion));
   $('#cleanupToggle').onchange=(e)=>{ const on=state.cleanup.apply(e.target.checked); state.profile.sourceFace.status=on?'AUTO_CANDIDATE':'SOURCE_VISIBLE'; renderReport(); };
   $('#eyeRigToggle').onchange=(e)=>state.eyes.setVisible(e.target.checked);
@@ -1011,6 +1079,7 @@ async function boot() {
   state.selectedActors=state.selectedByClass[state.rigClass];
   state.rosterFilter=saved?.rosterFilter||'all';
   state.appearanceByActor=clone(saved?.appearanceByActor||{});
+  state.stageLook=saved?.stageLook==='clay'?'clay':'neutral';
 
   state.savedLegacyDefault=isLegacyUntunedProfile(state.profiles.gothgirl);
   if(state.savedLegacyDefault){
@@ -1024,7 +1093,7 @@ async function boot() {
   const {renderer,scene,camera,controls,ro}=configureRenderer();
   state.loader=new GLTFLoader();THREE.Cache.enabled=true;
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
-    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),appearance:{family:appearanceFamily(state.currentActorId)?.id||null,variant:appearanceSelection(actorById(state.currentActorId))},
+    report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),appearance:{family:appearanceFamily(state.currentActorId)?.id||null,variant:appearanceSelection(actorById(state.currentActorId))},stageLook:state.stageLook,clay:state.clayK1?.state||null,
       controlSemantics:{spacing:'x-only',height:'y-only',eyeSize:'size-only-centre-locked',inset:'depth-only',splay:'orientation-plus-surface-seat',lidFit:'lids-only',oval:'shape-only',pupilSize:'pupil-only',track:'gaze-amplitude-only',converge:'pupil-aim-only',gloss:'material-only'},
       eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };

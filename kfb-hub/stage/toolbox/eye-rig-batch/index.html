@@ -121,6 +121,10 @@
           <button type="button" data-view="side-right" class="tool">Side R</button>
           <button type="button" data-view="face" class="tool">Face</button>
         </div>
+        <div class="toolbar-group" aria-label="Stage look">
+          <button type="button" data-stage-look="neutral" class="tool active" title="Original source geometry and neutral shadow floor">Neutral</button>
+          <button type="button" data-stage-look="clay" class="tool" title="Resident Atlas K1/H0 clay form + clay_floor_001; AO off">Clay K1</button>
+        </div>
         <div class="toolbar-group">
           <button id="captureBtn" type="button" class="tool">Capture PNG</button>
           <button id="qaCaptureBtn" type="button" class="tool">QA 4-view</button>
@@ -136,6 +140,7 @@
         <div class="stage-note">
           <span id="motionBadge">Bind / T Pose</span>
           <span id="viewBadge">Front</span>
+          <span id="lookBadge">Neutral</span>
         </div>
       </div>
 
