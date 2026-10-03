@@ -1,43 +1,96 @@
 # ACTIONFIGURE-MOTION-FREEPLAY-01 · RETURN
 
-Status: IMPLEMENTATION CANDIDATE · SITE REVIEW MIRROR PLANNED
+Status: **BROWSER PASS · SITE REVIEW READY · HUMAN LOOK DECISION OPEN**
 Owner: KFB ToolBox / Animation-Motion authoring
-Receiving owner: PR #333
+Receiving owner: Draft PR #333
+Tested implementation head: `f1ce90d31a18973fa981bc982309c4bb01b204b8`
 
-## Why this exists
+## Für Georg: Was jetzt?
 
-Georg does not need another technical handoff. This is the concrete visual/freeplay surface.
+**Nächster Ausführender: Georg.**
 
-### Who does what
+**Deine Aufgabe:** Öffne den privaten Site-Link aus dem Chat und spiele kurz.
 
-**ChatGPT Web/GitHub**
-- builds the prototype;
-- runs source/static/browser checks;
-- saves the exact tested HTML to the KFB Production Control Site;
-- gives Georg one clickable review link.
+- **WASD** = bewegen / drehen
+- **Shift** = sprinten
+- **Space** = springen
+- rechts **Jog A/B**, **Run A/B**, **Sprint A/B** vergleichen
 
-**Georg**
-- opens that link;
-- uses WASD / Shift / Space;
-- compares Jog A/B, Run A/B and Sprint A/B;
-- replies with the preferred variants and anything that visibly feels wrong.
+Eine Rückmeldung wie
+`Jog B · Run A · Sprint B · Sprung passt`
+reicht vollständig.
 
-Georg does not inspect commits, branches, CI or deployment state for this gate.
+Du musst **keine** Commits, PRs, CI-Runs oder Deployment-Zustände prüfen.
 
-## Product surface
+**Danach übernimmt wieder ChatGPT Web/GitHub:** deine Auswahl wird im zentralen Motion-Owner festgehalten und derselbe Owner wird an Procedural World #332 angedockt. Travel Globe bleibt außen vor.
 
-- exact authored ActionFigure donor, isolated on neutral ground;
-- no Travel Globe;
-- no World #332 yet;
-- central Motion State owner only;
-- root/hips translation removed from presentation clips, as in the existing Motion Lab donor, so the controller remains the only world-position writer;
-- smooth gait changes consume the central measured ladder;
-- reverse uses the central source-backed `walkBack` rung;
-- jump uses central KayKit Jump_Start / Jump_Idle / Jump_Land roles;
-- A/B look choices modify only the candidate clip used by that central semantic state.
+## Browser proof
 
-## Publication rule
+Real Chromium:
+- idle: `kfb_idle_idle_f`
+- forward: Run at 2.132 m/s · `kfb_locomotion_medium_run_a`
+- sprint: 3.006 m/s · `kfb_locomotion_sprint_a`
+- reverse: `kfb_locomotion_walk_backward_a`
+- jump: `Jump_Start` · airborne · jumpY 0.615
+- Jog/Run/Sprint A/B controls all switched to B successfully
+- console errors: 0
+- page errors: 0
 
-For this gate, KFB Production Control Site is the primary human review transport. Cloudflare is deferred until a durable World/Hub milestone.
+Workflow:
+- run `37125874478`
+- job `111210930976`
+- result **SUCCESS**
+- artifact `11275251740`
+- digest `sha256:bc6b663622137cc08e0a7e73cf318f77d9b0bf75336da0bd5de657106adeb236`
 
-No Live promotion and no merge.
+Evidence artifact:
+- `actionfigure-freeplay.png`
+- `actionfigure-freeplay-proof.json`
+
+## Central-owner regression
+
+Same candidate head:
+- Motion State Foundation run `37125874493` · SUCCESS
+- state machine 9/9
+- reconciliation 6/6
+- Ladder 02 integration 7/7
+- Motion Lab owner integration 5/5
+- **27/27 total · 0 fail**
+- Resource Registry run `37125874476` · SUCCESS
+- Asset Registry Refresh run `37125874484` · SUCCESS
+
+## Site mirror
+
+Exact browser-PASS HTML copied byte-for-byte into the existing KFB Production Control Site inbox.
+
+- Site record: `c51be993-57e7-44c0-b821-1176dc965923`
+- Site file: `c3588833-b1c3-4392-8582-1f80a2c55eed`
+- file: `KFB_ActionFigure_Motion_Freeplay_01.html`
+- bytes: 15,451
+- SHA-256: `ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad`
+
+The private expiring capability URL is delivered only in chat and is not committed.
+
+Classification:
+**SITE REVIEW · NOT PUBLIC STAGE**
+
+Cloudflare is deferred until a later durable World/Hub milestone.
+
+## Source / ownership
+
+- exact authored ActionFigure donor:
+  `media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb`
+- source blob: `4785276defdb929cb397954eb74b76aecb84486b`
+- central Motion owner only
+- no Travel runtime
+- no World #332 runtime yet
+- no consumer-local gait state machine
+- no merge / no Live promotion
+
+## Repair history
+
+Named browser gate used exactly two repair passes:
+1. module-start syntax fix;
+2. Motion-Library shorthand-path resolver fix.
+
+Repair 2 passed. No Repair 3.

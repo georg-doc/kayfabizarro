@@ -88,5 +88,43 @@
   "currentPr": 333,
   "cleanBase": "main",
   "currentTestedHead": "aaf7f899caee381ede876a50276e0a3d2aaeb6c8",
-  "nextGate": "Neutral ActionFigure / Rig_Medium WASD+Shift+Space freeplay on central owner; Georg visual PASS; then procedural World #332."
+  "nextGate": "Georg opens private Site review and returns Jog A/B, Run A/B, Sprint A/B plus any visible motion issue; then ChatGPT persists choices and integrates the same owner into procedural World #332.",
+  "currentTestedImplementationHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+  "actionFigureFreeplay": {
+    "status": "BROWSER_PASS_SITE_REVIEW_READY_HUMAN_LOOK_OPEN",
+    "path": "tools/KFB-ToolBox/actionfigure-motion-freeplay-01/index.html",
+    "sourceActorPath": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+    "sourceActorBlob": "4785276defdb929cb397954eb74b76aecb84486b",
+    "testedHead": "f1ce90d31a18973fa981bc982309c4bb01b204b8",
+    "browserRun": 37125874478,
+    "browserJob": 111210930976,
+    "browserArtifact": 11275251740,
+    "browserArtifactDigest": "sha256:bc6b663622137cc08e0a7e73cf318f77d9b0bf75336da0bd5de657106adeb236",
+    "motionFoundationRun": 37125874493,
+    "nodeTests": {
+      "total": 27,
+      "pass": 27,
+      "fail": 0
+    },
+    "siteMirror": {
+      "classification": "SITE_REVIEW_NOT_PUBLIC_STAGE",
+      "recordId": "c51be993-57e7-44c0-b821-1176dc965923",
+      "fileId": "c3588833-b1c3-4392-8582-1f80a2c55eed",
+      "fileSha256": "ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad",
+      "urlPolicy": "expiring private URL delivered in chat only"
+    },
+    "controls": [
+      "W",
+      "A",
+      "S",
+      "D",
+      "Shift",
+      "Space"
+    ],
+    "humanDecision": [
+      "Jog A/B",
+      "Run A/B",
+      "Sprint A/B"
+    ]
+  }
 }

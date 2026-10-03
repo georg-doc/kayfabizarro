@@ -2116,3 +2116,13 @@ WSA / next slides: remove/combine technical human gates and show progress throug
 - No Stage, merge or Live promotion.
 - PR #336 becomes donor/history rather than a parallel current line.
 - Next gate: neutral ActionFigure WASD+Shift+Space freeplay; after Georg visual PASS, dock the same owner into procedural World #332, not Travel.
+
+
+## 2026-10-03 · ActionFigure freeplay Site review
+- Built the neutral ActionFigure Motion freeplay on current Motion PR #333.
+- Added source-backed reverse from Ladder 02; no consumer-local motion mapping.
+- Browser gate PASS on `f1ce90d31a18973fa981bc982309c4bb01b204b8`: WASD forward, Sprint, Backward, Jump, Jog/Run/Sprint A/B; 0 console/page errors.
+- Motion Foundation = 27/27 PASS; both registries PASS.
+- Exact tested HTML mirrored to KFB Production Control Site; private URL deliberately not committed.
+- Review classification = SITE REVIEW / NOT PUBLIC STAGE; Cloudflare deferred.
+- Human guidance contract is now binding: next executor + concrete action + Georg task + next delivered result must be stated plainly.

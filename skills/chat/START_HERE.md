@@ -1390,3 +1390,31 @@ Recovery:
 `tools/KFB-ToolBox/_handover/KFB_MOTION_STATE_FOUNDATION_2026-10-03/START_HERE.md`
 
 No Stage/Live publication belongs to this technical convergence checkpoint.
+
+
+## 2026-10-03 · Motion ActionFigure freeplay · SITE REVIEW READY
+
+Current Motion owner remains Draft PR #333.
+
+Tested implementation:
+`f1ce90d31a18973fa981bc982309c4bb01b204b8`
+
+Result:
+- original ActionFigure donor on neutral ground;
+- WASD / Shift / Space;
+- central Motion owner only;
+- Jog A/B, Run A/B, Sprint A/B;
+- real Chromium PASS;
+- Motion Foundation 27/27 PASS;
+- exact HTML mirrored to KFB Production Control Site.
+
+Human route for this gate is intentionally **private Site review**, not Cloudflare Stage.
+The expiring capability URL stays in chat only.
+
+### Who acts now?
+**Georg:** open the Site review, play briefly, return Jog A/B · Run A/B · Sprint A/B and any visible issue.
+
+### Who acts after that?
+**ChatGPT Web/GitHub:** persist Georg's selection and integrate the same Motion owner into procedural World #332.
+
+Do not send Georg back to Travel Globe or ask him to interpret PR/CI metadata.

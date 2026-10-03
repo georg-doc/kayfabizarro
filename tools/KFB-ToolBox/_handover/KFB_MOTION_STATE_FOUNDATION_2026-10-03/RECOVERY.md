@@ -177,3 +177,29 @@ Human visual choice remains open for jog/run/sprint. Directional gaps remain as 
 Build the neutral ActionFigure freeplay prototype on PR #333's central owner and use that real moving character to choose/accept the look.
 
 Do not return to Travel Globe as a test host. After Georg PASS, integrate the same owner into procedural World #332.
+
+
+## ActionFigure freeplay · CURRENT · 2026-10-03
+
+The neutral ActionFigure prototype is now implemented and browser-proven.
+
+Tested implementation head:
+`f1ce90d31a18973fa981bc982309c4bb01b204b8`
+
+Proof:
+- ActionFigure Freeplay run `37125874478` · SUCCESS;
+- Motion Foundation `37125874493` · 27/27 PASS;
+- Resource Registry + Asset Registry PASS;
+- exact tested Site mirror persisted as file `c3588833-b1c3-4392-8582-1f80a2c55eed`.
+
+Current next action is now a genuine human visual/freeplay decision, not another technical implementation gate.
+
+### Plain-language continuation
+
+**Next executor: Georg.**
+
+Open the private Site link delivered in chat and test WASD / Shift / Space plus Jog A/B, Run A/B, Sprint A/B.
+
+After Georg replies with the preferred variants, ChatGPT Web/GitHub acts next and records those choices before integrating the same Motion owner into procedural World #332.
+
+Cloudflare publication is deferred. Travel Globe remains excluded.

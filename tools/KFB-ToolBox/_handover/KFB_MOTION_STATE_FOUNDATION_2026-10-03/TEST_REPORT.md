@@ -153,3 +153,42 @@ Final accepted technical head is the repaired head above. No second repair was r
 - NEUTRAL_ACTIONFIGURE_PROTOTYPE = NEXT
 - WORLD #332 CONSUMER INTEGRATION = AFTER HUMAN PASS
 - TRAVEL HOST USE = FORBIDDEN FOR THIS PROTOTYPE
+
+
+## Checkpoint 4 · Neutral ActionFigure freeplay
+
+Tested implementation head:
+`f1ce90d31a18973fa981bc982309c4bb01b204b8`
+
+ActionFigure Motion Freeplay:
+- run `37125874478`
+- job `111210930976`
+- result **SUCCESS**
+- real Chromium
+- Run 2.132 m/s
+- Sprint 3.006 m/s
+- Backward 0.489 m/s
+- Jump Start airborne at jumpY 0.615
+- Jog/Run/Sprint A/B selector switch PASS
+- 0 console errors
+- 0 page errors
+- evidence artifact `11275251740`
+- digest `sha256:bc6b663622137cc08e0a7e73cf318f77d9b0bf75336da0bd5de657106adeb236`
+
+Motion State Foundation:
+- run `37125874493`
+- 9/9 state machine
+- 6/6 reconciliation
+- 7/7 Ladder 02 integration
+- 5/5 Motion Lab owner integration
+- **27/27 total PASS · 0 fail**
+
+Resource Registry run `37125874476`: SUCCESS.
+Asset Registry Refresh run `37125874484`: SUCCESS.
+
+Exact tested HTML Site mirror:
+- file `c3588833-b1c3-4392-8582-1f80a2c55eed`
+- SHA-256 `ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad`
+
+Status:
+**BROWSER PASS · SITE REVIEW READY · HUMAN LOOK OPEN**.

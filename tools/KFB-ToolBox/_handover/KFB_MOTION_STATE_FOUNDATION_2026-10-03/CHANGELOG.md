@@ -28,3 +28,15 @@
 - exact head `aaf7f899caee381ede876a50276e0a3d2aaeb6c8`: 26/26 Node tests + syntax/JSON/smoke PASS; Resource Registry + Asset Registry PASS;
 - no Stage, merge or Live promotion;
 - next gate = neutral ActionFigure WASD+Shift+Space freeplay, then procedural World #332.
+
+
+### ActionFigure freeplay + human-guidance correction
+- added source-backed `backward` mapping from Ladder 02 `walkBack`;
+- built neutral ActionFigure freeplay surface with WASD / Shift / Space and Jog/Run/Sprint A/B selectors;
+- exact source actor is ActionFigure.glb blob `4785276d...`;
+- browser gate consumed exactly two repair passes, then PASS on `f1ce90d31a18973fa981bc982309c4bb01b204b8`;
+- browser evidence: Run 2.132 m/s, Sprint 3.006 m/s, Backward 0.489 m/s, Jump Start airborne, 0 console/page errors;
+- Motion Foundation advanced to 27/27 PASS;
+- exact tested HTML mirrored to KFB Production Control Site, SHA-256 `ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad`;
+- review transport = SITE REVIEW, not public Cloudflare Stage;
+- mandatory human-guidance rule added: every Return names next executor, concrete action, Georg's task, and what he receives next.

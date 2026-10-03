@@ -102,3 +102,34 @@ No public Stage was created because this checkpoint has no meaningful human-faci
 Exactly one next gate:
 **ActionFigure / Rig_Medium neutral freeplay · WASD + Shift + Space → Georg visual/freeplay PASS.**
 After PASS, dock the same owner into procedural World #332. Travel remains a later consumer/donor, not the prototype host.
+
+
+## Checkpoint 6 · ActionFigure freeplay browser PASS / Site review ready
+
+### Für Georg
+- **Nächster Ausführender:** Georg.
+- **Was passiert jetzt:** neutralen ActionFigure-Freeplay kurz spielen.
+- **Deine Aufgabe:** Site-Link aus dem Chat öffnen; WASD / Shift / Space; Jog A/B, Run A/B, Sprint A/B auswählen.
+- **Danach bekommst du:** ChatGPT übernimmt die gewählten Varianten in den zentralen Motion-Owner und dockt ihn anschließend an Procedural World #332 an.
+
+Keine GitHub-/CI-/Deployment-Arbeit für Georg.
+
+### Proven
+Tested implementation head `f1ce90d31a18973fa981bc982309c4bb01b204b8`.
+
+ActionFigure Motion Freeplay run `37125874478` / job `111210930976`: **SUCCESS**.
+Real Chromium proved Idle, Run, Sprint, Backward, Jump and all three A/B selectors with 0 console and 0 page errors.
+
+Motion Foundation run `37125874493`: **27/27 PASS**.
+Resource Registry `37125874476` PASS.
+Asset Registry Refresh `37125874484` PASS.
+
+Exact tested HTML is mirrored in KFB Production Control Site file
+`c3588833-b1c3-4392-8582-1f80a2c55eed`
+with SHA-256
+`ebb861191bf68d1f46d71730ed6298b160fb18182bab46a322bd60402bf211ad`.
+
+Status:
+**SITE REVIEW · NOT PUBLIC STAGE · HUMAN LOOK DECISION OPEN**.
+
+Cloudflare is not required for this review. Travel Globe is not the host.

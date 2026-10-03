@@ -63,3 +63,22 @@ Build **one clean neutral ActionFigure / Rig_Medium freeplay prototype** using t
 The prototype is for Georg's visual/freeplay choice and acceptance. After that PASS, dock the same owner into procedural World **#332**, not Travel.
 
 No merge, Stage publication or Live promotion is authorized by this Return.
+
+
+## CURRENT · ActionFigure freeplay review
+
+The technical freeplay build is complete and browser-proven.
+
+**Nächster Ausführender: Georg.**
+
+**Deine Aufgabe:** Open the private KFB Production Control Site link delivered in chat, use WASD / Shift / Space, and choose Jog A/B, Run A/B, Sprint A/B.
+
+**Danach:** ChatGPT Web/GitHub persists the selected look and docks the same Motion owner into procedural World #332.
+
+You do not need to inspect GitHub, CI or deployment metadata.
+
+Tested implementation head:
+`f1ce90d31a18973fa981bc982309c4bb01b204b8`
+
+Review:
+**SITE REVIEW · NOT PUBLIC STAGE**
