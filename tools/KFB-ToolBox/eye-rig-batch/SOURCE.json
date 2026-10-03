@@ -372,17 +372,47 @@
     "nextGate": "KAYKIT_CHARACTER_AVAILABILITY_AUDIT_01"
   },
   "latestMediumBatch": {
-    "path": "tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (1).json",
-    "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
-    "blob": "0ed0a157389e469ce8b6623bd4542ee49cd31a28",
-    "profiles": 33,
-    "selected": 33,
+    "path": "tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (2).json",
+    "revision": "a346a219a54e53f690d1ff840363aff8d8729e58",
+    "blob": "9e6f10068160cd2c66ee33660f7b1d927273524b",
+    "profiles": 40,
+    "selected": 40,
     "reviewStates": {
-      "ADJUSTED": 30,
+      "ADJUSTED": 37,
       "ADJUSTED_APPROVED": 2,
       "UNREVIEWED": 1
     },
-    "exactCatalogResolution": "33/33"
+    "exactCatalogResolution": "40/40 cumulative (33/33 prior + 7/7 recovery additions)",
+    "previous": {
+      "path": "tools/KFB-ToolBox/_inbox/eye-rig-medium.batch (1).json",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "blob": "0ed0a157389e469ce8b6623bd4542ee49cd31a28",
+      "profiles": 33,
+      "selected": 33
+    },
+    "recoveryDelta": {
+      "preservedPreviousProfiles": "33/33 unchanged in source, eye, blink, life, kinetics and review/status fields",
+      "added": [
+        "paladin-king",
+        "mummy-b",
+        "mummy-a",
+        "survivalist",
+        "hoarder",
+        "space-ranger-flight",
+        "combat-mech"
+      ],
+      "addedRosterResolution": "7/7",
+      "addedSourcePathResolution": "7/7",
+      "addedSourceBlobs": {
+        "paladin-king": "9c6189759277fc999136f3759eac0d0e1b65ced1",
+        "mummy-b": "539552ecf8bade98f624bcaa18c5a420082f7c90",
+        "mummy-a": "f844b3da5d7a27e61f29a4d251b6140840f493cc",
+        "survivalist": "5105ebebab09e198df906827774aee43b7a9d4c4",
+        "hoarder": "9d8f4369933dbdb761bb33871bb3880975f93c29",
+        "space-ranger-flight": "f93bb54ac3a3242e0007d39b25aa6a6010a8be0a",
+        "combat-mech": "143381c33c0476631e9707f35466501c5de1f8fa"
+      }
+    }
   },
   "ovalPupilIsolation": {
     "status": "IMPLEMENTED_SHARED_OWNER_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
@@ -436,7 +466,7 @@
     },
     "currentFocusedChecks": "22/22 PASS",
     "ovalBehaviorChecks": "7/7 PASS",
-    "latestBatchMapping": "33/33 ids + 33/33 paths"
+    "latestBatchMapping": "40/40 cumulative ids + source paths (33 prior verified + 7 recovery verified)"
   },
   "controlR2": {
     "status": "SOURCE_TESTED_STAGE_MIRRORED_HUMAN_VERIFY_OPEN",
