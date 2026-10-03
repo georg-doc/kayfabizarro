@@ -74,7 +74,7 @@ Current persistence correction: source-backed movement/vehicle knowledge must ex
 ### Ground · current gate · 2026-10-04 correction
 - current Motion owner: Draft PR **#344** · `[CURRENT MOTION SSOT] KayKit-native locomotion Blender baseline`;
 - branch: `coworker/kaykit-native-locomotion-baseline-01-2026-10-03`;
-- current observed PR head: `15ec6142f5f892717440fa88bb2ed67ece508c16`;
+- current observed PR head: `779c68b2c71609e86710a8bd9fe05ffc6913014f`;
 - current branch Return still says **PREPARED FOR BLENDER · NOT RUN**;
 - next gate: **KAYKIT-NATIVE-BLENDER-BASELINE-01**;
 - exact actor: ActionFigure / Rig_Medium;
