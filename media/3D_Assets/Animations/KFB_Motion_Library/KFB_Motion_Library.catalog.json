@@ -1,7 +1,7 @@
 {
  "schema": "kfb.motion-catalog.v1",
- "version": "2026-09-30",
- "clipCount": 370,
+ "version": "2026-10-03",
+ "clipCount": 395,
  "fps": 30,
  "units": "metres, glTF Y-up",
  "rigs": [
@@ -497,6 +497,20 @@
    "bytes": 429936,
    "sha256": "5f6962dcfb2ad87837758e70ea813f8db6d1659da48070c93cfd0fd2a12aacca",
    "clipCount": 6
+  },
+  "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb": {
+   "rig": "Rig_Medium",
+   "group": "locomotion",
+   "bytes": 645468,
+   "sha256": "5ed8e511b375f103140135cb2cae0a533cd7f94ba0095095ee535868061aaaa2",
+   "clipCount": 25
+  },
+  "libs/Rig_Large/KFB_Motion_locomotion_i07.glb": {
+   "rig": "Rig_Large",
+   "group": "locomotion",
+   "bytes": 642476,
+   "sha256": "b3ad260d95571bad5710ab31ca65e3d444663a5fb229731ab23327a7d8558831",
+   "clipCount": 25
   }
  },
  "newOptionalFields": [
@@ -36847,6 +36861,2318 @@
    "notes": "",
    "forwardYawDeg": -88.7,
    "forwardYawMethod": "cycleMean"
+  },
+  {
+   "id": "kfb_locomotion_jogging_a",
+   "label_de": "Joggen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 78,
+   "durationSec": 2.6,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 3.453,
+    "Rig_Large": 8.863
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        15
+       ],
+       [
+        31,
+        41
+       ],
+       [
+        56,
+        66
+       ]
+      ],
+      "foot.r": [
+       [
+        5,
+        5
+       ],
+       [
+        18,
+        26
+       ],
+       [
+        43,
+        52
+       ],
+       [
+        70,
+        77
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        14
+       ],
+       [
+        31,
+        40
+       ],
+       [
+        56,
+        65
+       ]
+      ],
+      "foot.r": [
+       [
+        18,
+        26
+       ],
+       [
+        43,
+        52
+       ],
+       [
+        70,
+        77
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Jogging.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 4.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "jog",
+    "gait-ladder"
+   ],
+   "comment": "Relaxed jog, arms low, long 2.6 s cycle (1.35 m/s).",
+   "residentIdeas": "Slow jog rung between walk and jog; a resident jogging in the park.",
+   "notes": "",
+   "forwardYawDeg": -92.9,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_jog_forward_a",
+   "label_de": "Vorwärts joggen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 26,
+   "durationSec": 0.867,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.466,
+    "Rig_Large": 3.764
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        20,
+        26
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        20,
+        25
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Jog Forward.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 4.0,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "jog",
+    "gait-ladder"
+   ],
+   "comment": "Clean forward jog with a short flight phase (1.76 m/s, 0.83 s loop).",
+   "residentIdeas": "Jog rung of the gait ladder.",
+   "notes": "",
+   "forwardYawDeg": -87.9,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_jog_forward_diagonal_a",
+   "label_de": "Diagonal vorwärts joggen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 26,
+   "durationSec": 0.867,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.547,
+    "Rig_Large": 3.971
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1
+       ],
+       [
+        18,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        6,
+        14
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1
+       ],
+       [
+        19,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        7,
+        14
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Jog Forward Diagonal.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 12.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "jog",
+    "diagonal",
+    "gait-ladder"
+   ],
+   "comment": "Jog moving diagonally forward-left (about 45 deg) while facing forward (1.86 m/s).",
+   "residentIdeas": "Blend partner for diagonal input (8-way locomotion).",
+   "notes": "",
+   "forwardYawDeg": -72.2,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -44.6,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_slow_run_a",
+   "label_de": "Langsam rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 23,
+   "durationSec": 0.767,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.562,
+    "Rig_Large": 4.009
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        16,
+        23
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        13
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        15,
+        23
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Slow Run.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 2.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "gait-ladder"
+   ],
+   "comment": "Slow run, feet stay close to the ground (2.13 m/s, 0.73 s loop).",
+   "residentIdeas": "Easy-run rung between jog and run.",
+   "notes": "",
+   "forwardYawDeg": -90.2,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_medium_run_a",
+   "label_de": "Mittel schnell rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 18,
+   "durationSec": 0.6,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.802,
+    "Rig_Large": 4.625
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        10
+       ]
+      ],
+      "foot.r": [
+       [
+        4,
+        4
+       ],
+       [
+        14,
+        16
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        10
+       ]
+      ],
+      "foot.r": [
+       [
+        4,
+        4
+       ],
+       [
+        14,
+        16
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Medium Run.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -0.4,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "gait-ladder"
+   ],
+   "comment": "Medium run with a short flight phase (3.18 m/s, 0.57 s loop).",
+   "residentIdeas": "Run rung of the gait ladder.",
+   "notes": "",
+   "forwardYawDeg": -92.3,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_running_e",
+   "label_de": "Rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 20,
+   "durationSec": 0.667,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.551,
+    "Rig_Large": 6.548
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        9
+       ]
+      ],
+      "foot.r": [
+       [
+        16,
+        19
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        9
+       ]
+      ],
+      "foot.r": [
+       [
+        17,
+        19
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Running (3).fbx",
+   "sourcePack": null,
+   "facingYawDeg": 10.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "fast"
+   ],
+   "comment": "Fast athletic run, strong arm swing (4.03 m/s).",
+   "residentIdeas": "Sprint alternative.",
+   "notes": "",
+   "forwardYawDeg": -88.2,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_running_f",
+   "label_de": "Rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 25,
+   "durationSec": 0.833,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.523,
+    "Rig_Large": 3.91
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        20,
+        25
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        20,
+        25
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Running (4).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -0.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "jog"
+   ],
+   "comment": "Light jog-run with small steps (1.90 m/s).",
+   "residentIdeas": "Alternative jog / easy run.",
+   "notes": "",
+   "forwardYawDeg": -90.0,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_run_forward_c",
+   "label_de": "Vorwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 19,
+   "durationSec": 0.633,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.3,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.085,
+    "Rig_Large": 5.351
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        11
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        16,
+        19
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        10
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        16,
+        19
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Run Forward (2).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -10.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run"
+   ],
+   "comment": "Forward run, slightly turned shoulders (3.47 m/s).",
+   "residentIdeas": "Alternative run.",
+   "notes": "",
+   "forwardYawDeg": -97.5,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_fast_run_a",
+   "label_de": "Schnell rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 17,
+   "durationSec": 0.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.053,
+    "Rig_Large": 5.271
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        9
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        14,
+        17
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        9
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        14,
+        17
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Fast Run.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -2.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "fast",
+    "gait-ladder"
+   ],
+   "comment": "Fast run (3.85 m/s, 0.53 s loop).",
+   "residentIdeas": "Sprint alternative, less forward lean than sprint_a.",
+   "notes": "",
+   "forwardYawDeg": -92.3,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_sprint_a",
+   "label_de": "Sprinten",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 17,
+   "durationSec": 0.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.239,
+    "Rig_Large": 5.748
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        8
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        14,
+        17
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        8
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        14,
+        17
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Sprint.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -3.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "sprint",
+    "gait-ladder"
+   ],
+   "comment": "Full sprint with a strong forward lean (4.20 m/s, 0.53 s loop).",
+   "residentIdeas": "Sprint rung of the gait ladder; chases and escapes.",
+   "notes": "",
+   "forwardYawDeg": -94.1,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_idle_to_sprint_a",
+   "label_de": "Aus dem Stand in den Sprint",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 25,
+   "durationSec": 0.833,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 138.5,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.035,
+    "Rig_Large": 2.656
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        6
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        21,
+        25
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        4
+       ],
+       [
+        6,
+        7
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        21,
+        25
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Idle To Sprint.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -19.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "sprint",
+    "start",
+    "one-shot",
+    "gait-ladder"
+   ],
+   "comment": "Explosive start from standing into a sprint (0.8 s, one-shot, travels about 1 m).",
+   "residentIdeas": "Sprint start from idle.",
+   "notes": "",
+   "forwardYawDeg": -121.3,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -89.4,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_sprint_turn_a",
+   "label_de": "Sprint mit Wende",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 31,
+   "durationSec": 1.033,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 59.5,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 3.773,
+    "Rig_Large": 9.686
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        6,
+        11
+       ],
+       [
+        22,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        15,
+        18
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        29,
+        31
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        11
+       ],
+       [
+        22,
+        26
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        15,
+        18
+       ],
+       [
+        20,
+        20
+       ],
+       [
+        30,
+        31
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Sprint Turn.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -5.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "sprint",
+    "turn",
+    "one-shot"
+   ],
+   "comment": "Sprint that brakes and turns about 60 deg to the right (1.0 s, one-shot).",
+   "residentIdeas": "Sharp turn while sprinting.",
+   "notes": "",
+   "forwardYawDeg": -92.8,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -104.9,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_start_walking_a",
+   "label_de": "Losgehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 89,
+   "durationSec": 2.967,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 34.9,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.427,
+    "Rig_Large": 3.663
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        37
+       ],
+       [
+        51,
+        80
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        21
+       ],
+       [
+        30,
+        58
+       ],
+       [
+        72,
+        89
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        37
+       ],
+       [
+        51,
+        80
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        21
+       ],
+       [
+        30,
+        58
+       ],
+       [
+        72,
+        89
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Start Walking.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -3.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "walk",
+    "start",
+    "one-shot",
+    "gait-ladder"
+   ],
+   "comment": "From standing, starts walking forward (2.9 s, one-shot, travels about 1.4 m).",
+   "residentIdeas": "Walk start from idle.",
+   "notes": "",
+   "forwardYawDeg": -94.4,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -90.2,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_female_start_walking_a",
+   "label_de": "Losgehen (weiblich)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 57,
+   "durationSec": 1.9,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 29.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.19,
+    "Rig_Large": 3.054
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        30
+       ],
+       [
+        34,
+        35
+       ],
+       [
+        44,
+        57
+       ]
+      ],
+      "foot.r": [
+       [
+        29,
+        46
+       ],
+       [
+        51,
+        53
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        30
+       ],
+       [
+        34,
+        35
+       ],
+       [
+        46,
+        57
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        11
+       ],
+       [
+        29,
+        47
+       ],
+       [
+        51,
+        53
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Female Start Walking.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 2.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "walk",
+    "start",
+    "one-shot",
+    "female",
+    "gait-ladder"
+   ],
+   "comment": "Female-style walk start from standing (1.9 s, one-shot).",
+   "residentIdeas": "Shorter walk start; female ladder later.",
+   "notes": "",
+   "forwardYawDeg": -87.1,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -88.7,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_female_stop_walking_a",
+   "label_de": "Anhalten (weiblich)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 41,
+   "durationSec": 1.367,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 38.4,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.026,
+    "Rig_Large": 2.633
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        8
+       ],
+       [
+        11,
+        12
+       ],
+       [
+        18,
+        41
+       ]
+      ],
+      "foot.r": [
+       [
+        3,
+        24
+       ],
+       [
+        28,
+        28
+       ],
+       [
+        35,
+        41
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        8
+       ],
+       [
+        11,
+        12
+       ],
+       [
+        18,
+        20
+       ],
+       [
+        23,
+        41
+       ]
+      ],
+      "foot.r": [
+       [
+        3,
+        24
+       ],
+       [
+        28,
+        28
+       ],
+       [
+        35,
+        41
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Female Stop Walking.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -2.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "walk",
+    "stop",
+    "one-shot",
+    "female",
+    "gait-ladder"
+   ],
+   "comment": "Female-style stop from walking to standing (1.3 s, one-shot, no end turn).",
+   "residentIdeas": "Shorter walk stop than stop_walking_a.",
+   "notes": "",
+   "forwardYawDeg": -91.8,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -91.5,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_female_stop_and_start_walking_a",
+   "label_de": "Anhalten und weitergehen (weiblich)",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 113,
+   "durationSec": 3.767,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.251,
+    "Rig_Large": 5.777
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        9
+       ],
+       [
+        13,
+        14
+       ],
+       [
+        20,
+        85
+       ],
+       [
+        90,
+        91
+       ],
+       [
+        100,
+        113
+       ]
+      ],
+      "foot.r": [
+       [
+        4,
+        25
+       ],
+       [
+        32,
+        32
+       ],
+       [
+        41,
+        52
+       ],
+       [
+        86,
+        102
+       ],
+       [
+        107,
+        109
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        8
+       ],
+       [
+        13,
+        14
+       ],
+       [
+        21,
+        23
+       ],
+       [
+        27,
+        85
+       ],
+       [
+        90,
+        91
+       ],
+       [
+        103,
+        113
+       ]
+      ],
+      "foot.r": [
+       [
+        3,
+        26
+       ],
+       [
+        32,
+        32
+       ],
+       [
+        41,
+        66
+       ],
+       [
+        85,
+        103
+       ],
+       [
+        107,
+        109
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Female Stop And Start Walking.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -1.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "walk",
+    "female"
+   ],
+   "comment": "Female walk that stops, pauses and walks on (3.7 s, loops).",
+   "residentIdeas": "Window shopping, hesitating resident.",
+   "notes": "",
+   "forwardYawDeg": -90.9,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_walking_backwards_a",
+   "label_de": "Rückwärts gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 42,
+   "durationSec": 1.4,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.744,
+    "Rig_Large": 1.911
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        2
+       ],
+       [
+        11,
+        42
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        21
+       ],
+       [
+        33,
+        42
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        2
+       ],
+       [
+        11,
+        42
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        21
+       ],
+       [
+        33,
+        42
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walking Backwards.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 47.7,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "walk",
+    "backward",
+    "gait-ladder"
+   ],
+   "comment": "Plain backward walk (0.54 m/s, 1.4 s loop).",
+   "residentIdeas": "Alternative walkBack.",
+   "notes": "",
+   "forwardYawDeg": -50.6,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": 90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_slow_jog_backwards_a",
+   "label_de": "Langsam rückwärts joggen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 23,
+   "durationSec": 0.767,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.855,
+    "Rig_Large": 2.194
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        21
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        20,
+        23
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        21
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        20,
+        23
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Slow Jog Backwards.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -12.6,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "jog",
+    "backward",
+    "gait-ladder"
+   ],
+   "comment": "Slow backward jog; the root moves about twice as fast as the planted feet (1.17 vs 0.53 m/s) - check foot sliding.",
+   "residentIdeas": "Backward jog rung (HOLD until checked).",
+   "notes": "Root travel and foot speed disagree by 121 %; judge in the review scene.",
+   "forwardYawDeg": -108.1,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": 90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_running_backward_a",
+   "label_de": "Rückwärts rennen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 20,
+   "durationSec": 0.667,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.366,
+    "Rig_Large": 3.506
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        15
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        19,
+        20
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        10,
+        14
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        19,
+        20
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Running Backward.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 4.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "backward",
+    "gait-ladder"
+   ],
+   "comment": "Backward run (2.16 m/s, 0.63 s loop).",
+   "residentIdeas": "Run-back rung.",
+   "notes": "",
+   "forwardYawDeg": -85.5,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": 90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_strafe_a",
+   "label_de": "Seitwärts laufen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 20,
+   "durationSec": 0.667,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.1,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.666,
+    "Rig_Large": 4.278
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        2
+       ],
+       [
+        5,
+        6
+       ],
+       [
+        16,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        7,
+        11
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        2
+       ],
+       [
+        17,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        7,
+        11
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Strafe.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -44.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "strafe",
+    "gait-ladder"
+   ],
+   "comment": "Side run to the right, body facing forward (2.63 m/s, clean loop).",
+   "residentIdeas": "Strafe-run right; replaces right_strafe_a (not a clean loop).",
+   "notes": "",
+   "forwardYawDeg": -149.6,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -180.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_change_direction_a",
+   "label_de": "Richtung wechseln",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 76,
+   "durationSec": 2.533,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 176.2,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.753,
+    "Rig_Large": 1.932
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        10
+       ],
+       [
+        19,
+        46
+       ],
+       [
+        63,
+        68
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        13,
+        18
+       ],
+       [
+        25,
+        43
+       ],
+       [
+        55,
+        59
+       ],
+       [
+        72,
+        76
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        10
+       ],
+       [
+        19,
+        19
+       ],
+       [
+        24,
+        24
+       ],
+       [
+        27,
+        37
+       ],
+       [
+        63,
+        68
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        2
+       ],
+       [
+        13,
+        18
+       ],
+       [
+        25,
+        43
+       ],
+       [
+        56,
+        58
+       ],
+       [
+        73,
+        76
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Change Direction.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -7.3,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "turn",
+    "one-shot"
+   ],
+   "comment": "Runs, plants, turns about 180 deg and runs back (2.5 s, one-shot).",
+   "residentIdeas": "Turn-around while running.",
+   "notes": "",
+   "forwardYawDeg": -98.2,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -93.1,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_running_right_turn_a",
+   "label_de": "Rechtskurve im Lauf",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 24,
+   "durationSec": 0.8,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 35.7,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.226,
+    "Rig_Large": 5.715
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        8,
+        12
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        19,
+        24
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        9,
+        12
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        1
+       ],
+       [
+        19,
+        24
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Running Right Turn.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 1.2,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "run",
+    "turn",
+    "one-shot"
+   ],
+   "comment": "Run that curves about 36 deg to the right (0.77 s, one-shot).",
+   "residentIdeas": "Running turn.",
+   "notes": "",
+   "forwardYawDeg": -91.8,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -100.7,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_walking_p",
+   "label_de": "Gehen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 57,
+   "durationSec": 1.9,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 13.7,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 1.065,
+    "Rig_Large": 2.735
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        7
+       ],
+       [
+        16,
+        53
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        20
+       ],
+       [
+        32,
+        36
+       ],
+       [
+        52,
+        57
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        16,
+        50
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        20
+       ],
+       [
+        33,
+        36
+       ],
+       [
+        43,
+        43
+       ],
+       [
+        52,
+        57
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Walking (16).fbx",
+   "sourcePack": null,
+   "facingYawDeg": -9.9,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "walk"
+   ],
+   "comment": "Casual walk (0.57 m/s), not a clean loop (13.7 deg).",
+   "residentIdeas": "Slow stroll.",
+   "notes": "",
+   "forwardYawDeg": -91.7,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_jump_b",
+   "label_de": "Springen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 31,
+   "durationSec": 1.033,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.844,
+    "Rig_Large": 7.3
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1
+       ],
+       [
+        25,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        21,
+        23
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        1
+       ],
+       [
+        25,
+        31
+       ]
+      ],
+      "foot.r": [
+       [
+        21,
+        23
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Jump.fbx",
+   "sourcePack": null,
+   "facingYawDeg": 2.5,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "jump",
+    "airborne"
+   ],
+   "comment": "Big forward jump that repeats (lands and takes off again; hips rise about 0.7 m; 2.8 m per jump).",
+   "residentIdeas": "Leaping run, hopping over gaps.",
+   "notes": "",
+   "forwardYawDeg": -85.9,
+   "forwardYawMethod": "cycleMean",
+   "travelYawDeg": -90.0,
+   "travelYawMethod": "hipsTravel"
+  },
+  {
+   "id": "kfb_locomotion_jumping_a",
+   "label_de": "Springen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 37,
+   "durationSec": 1.233,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": 103.9,
+   "rootMotion": "travel",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 2.992,
+    "Rig_Large": 7.68
+   },
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        27,
+        32
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        4
+       ],
+       [
+        32,
+        37
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        28,
+        32
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        3
+       ],
+       [
+        32,
+        37
+       ]
+      ]
+     }
+    }
+   },
+   "bestVariant": null,
+   "sourceFbx": "Jumping.fbx",
+   "sourcePack": null,
+   "facingYawDeg": -4.8,
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_locomotion_i07.glb"
+   },
+   "intake": "07",
+   "tags": [
+    "jump",
+    "one-shot",
+    "gait-ladder"
+   ],
+   "comment": "Single jump from standing: crouch, jump forward about 3 m, land (1.2 s, one-shot).",
+   "residentIdeas": "Full jump for both rigs (Rig_Large has no split jump).",
+   "notes": "",
+   "forwardYawDeg": -94.8,
+   "forwardYawMethod": "firstFrame",
+   "travelYawDeg": -89.9,
+   "travelYawMethod": "hipsTravel"
   }
  ],
  "mergedFromV1": "bestVariant, ledgeHeightM, endsOnTop merged from the published v1 catalogue by Coworker 2026-09-25",
@@ -36857,7 +39183,8 @@
   "04": "59 clips (2026-09-29): walk styles, fights and reactions; supplement libraries *_i04.glb for locomotion, action, reaction, idle and interaction; all earlier files unchanged. Two exact duplicates of existing clips were not baked: Walk To Stop (1).fbx = kfb_locomotion_walk_to_stop_a, Wheelbarrow Walk (1).fbx = kfb_locomotion_wheelbarrow_walk_a",
   "AN-PERF-01": "3 clips authored in Blender (2026-09-29): gift give / receive, nutcracker march; libs/*/KFB_Motion_perf_an01.glb (folded in from KFB_Motion_Library.catalog.patch_an01.json).",
   "05": "79 clips (2026-09-29): single clips (stairs, old man, texting walks, tripping, door, phone pacing, bug swatting) and the Farming, Female Basic Locomotion, Magic Locomotion, Male Drunk, Locomotion and Free Test packs; supplement libraries *_i05.glb; all earlier files unchanged. 28 pack clips are exact duplicates of library clips and were not baked (see RETURN_INTAKE_05.md); not animations: Farming Pack/Survivalist, Free Test Pack/skinning test",
-  "06": "25 clips (2026-09-30): boxing (jab cross, body jab cross, dodges, footwork, surprise uppercut attacker, taunt), reactions (reacting, surprised, scared, hit by car), air and board (floating, flying, two skateboarding takes), car (driving, entering, exiting), writing, dice shaking and two card-playing takes; supplement libraries *_i06.glb; all earlier files unchanged. 5 files are (near) duplicates of library clips and were not baked: Running (2).fbx = kfb_locomotion_running_a (0.0 deg), Jogging With Box (1).fbx = kfb_locomotion_jogging_with_box_a (3.0 deg), Surprise Uppercut (2).fbx = kfb_reaction_surprise_uppercut_a (5.3 deg), Illegal Knee (1).fbx = kfb_action_illegal_knee_a (7.6 deg), Box Idle.fbx = kfb_idle_box_idle_a (7.3 deg)"
+  "06": "25 clips (2026-09-30): boxing (jab cross, body jab cross, dodges, footwork, surprise uppercut attacker, taunt), reactions (reacting, surprised, scared, hit by car), air and board (floating, flying, two skateboarding takes), car (driving, entering, exiting), writing, dice shaking and two card-playing takes; supplement libraries *_i06.glb; all earlier files unchanged. 5 files are (near) duplicates of library clips and were not baked: Running (2).fbx = kfb_locomotion_running_a (0.0 deg), Jogging With Box (1).fbx = kfb_locomotion_jogging_with_box_a (3.0 deg), Surprise Uppercut (2).fbx = kfb_reaction_surprise_uppercut_a (5.3 deg), Illegal Knee (1).fbx = kfb_action_illegal_knee_a (7.6 deg), Box Idle.fbx = kfb_idle_box_idle_a (7.3 deg)",
+  "07": "25 locomotion clips (2026-10-03) for the gait ladder: jogs, slow/medium/fast runs, sprint and sprint start, walk start/stop, backward jog and run, a clean right strafe run, running turns and two jumps; supplement libraries *_i07.glb; all earlier files unchanged. 16 files are (near) duplicates and were not baked: Standard Run.fbx = kfb_locomotion_standard_run_a (3.6 deg), Running (5).fbx = kfb_locomotion_running_d (2.4 deg), Run Forward (3).fbx = kfb_locomotion_run_forward_b (4.3 deg), Standing Sprint Forward.fbx = kfb_locomotion_magic_sprint_forward_a (2.3 deg), Stop Walking.fbx = kfb_locomotion_stop_walking_a (0.0 deg), Stop Walking (1).fbx = kfb_locomotion_stop_walking_a (2.0 deg), Female Stop And Start Walking (1).fbx = Female Stop And Start Walking.fbx (same intake) (2.1 deg), Left Strafe Walking (1).fbx = kfb_locomotion_left_strafe_walking_b (0.5 deg), Right Strafe Walking (1).fbx = kfb_locomotion_right_strafe_walking_b (0.4 deg), Right Strafe Walk.fbx = kfb_locomotion_female_right_strafe_walk_a (3.0 deg), Walking (13).fbx = kfb_locomotion_walking_j (0.0 deg), Walking (14).fbx = kfb_locomotion_walking_i (3.9 deg), Walking (15).fbx = kfb_locomotion_walking_a (2.7 deg), Running Jump (1).fbx = kfb_locomotion_running_jump_a (0.0 deg), Jog In Circle (1).fbx = kfb_locomotion_jog_in_circle_a (4.4 deg), Run Backward (1).fbx = Running Backward.fbx (same intake) (6.6 deg)"
  },
  "locomotionSets": {
   "male_basic": {
@@ -37228,6 +39555,376 @@
     }
    },
    "use": "Pick the member by state (idle, turn, jump) and by move direction/speed; blend neighbouring members by speed. Speeds are root travel per second, per rig."
+  },
+  "kfb_ladder_v1": {
+   "members": {
+    "idle": "kfb_idle_idle_f",
+    "walk": "kfb_locomotion_walking_c",
+    "jog": "kfb_locomotion_strike_foward_jog_a",
+    "runEasy": "kfb_locomotion_running_a",
+    "run": "kfb_locomotion_running_d",
+    "walkStop": "kfb_locomotion_stop_walking_a",
+    "runStop": "kfb_locomotion_run_to_stop_a",
+    "walkBack": "kfb_locomotion_walk_backward_a",
+    "runBack": "kfb_locomotion_run_backward_a",
+    "strafeWalkL": "kfb_locomotion_left_strafe_walking_a",
+    "strafeWalkR": "kfb_locomotion_right_strafe_walking_b",
+    "strafeRunL": "kfb_locomotion_left_strafe_a",
+    "strafeRunR": "kfb_locomotion_right_strafe_a",
+    "turnInPlaceL90": "kfb_locomotion_left_turn_90_a",
+    "turnInPlaceR90": "kfb_locomotion_right_turn_90_a",
+    "turnInPlaceL180": "kfb_locomotion_left_turn_b",
+    "turnInPlaceR180": "kfb_locomotion_right_turn_b",
+    "jumpStart": "kaykit:Rig_Medium_MovementBasic/Jump_Start",
+    "jumpAir": "kaykit:Rig_Medium_MovementBasic/Jump_Idle",
+    "jumpLand": "kaykit:Rig_Medium_MovementBasic/Jump_Land"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walk": {
+     "Rig_Medium": 1.135,
+     "Rig_Large": 2.915
+    },
+    "jog": {
+     "Rig_Medium": 1.633,
+     "Rig_Large": 4.191
+    },
+    "runEasy": {
+     "Rig_Medium": 2.029,
+     "Rig_Large": 5.209
+    },
+    "run": {
+     "Rig_Medium": 2.978,
+     "Rig_Large": 7.646
+    },
+    "walkStop": {
+     "Rig_Medium": 0.269,
+     "Rig_Large": 0.69
+    },
+    "runStop": {
+     "Rig_Medium": 0.668,
+     "Rig_Large": 1.714
+    },
+    "walkBack": {
+     "Rig_Medium": 0.557,
+     "Rig_Large": 1.431
+    },
+    "runBack": {
+     "Rig_Medium": 1.334,
+     "Rig_Large": 3.424
+    },
+    "strafeWalkL": {
+     "Rig_Medium": 1.178,
+     "Rig_Large": 3.025
+    },
+    "strafeWalkR": {
+     "Rig_Medium": 1.178,
+     "Rig_Large": 3.025
+    },
+    "strafeRunL": {
+     "Rig_Medium": 3.076,
+     "Rig_Large": 7.896
+    },
+    "strafeRunR": {
+     "Rig_Medium": 2.932,
+     "Rig_Large": 7.526
+    },
+    "turnInPlaceL90": {
+     "Rig_Medium": 0.013,
+     "Rig_Large": 0.075
+    },
+    "turnInPlaceR90": {
+     "Rig_Medium": 0.02,
+     "Rig_Large": 0.075
+    },
+    "turnInPlaceL180": {
+     "Rig_Medium": 0.013,
+     "Rig_Large": 0.136
+    },
+    "turnInPlaceR180": {
+     "Rig_Medium": 0.013,
+     "Rig_Large": 0.038
+    },
+    "jumpStart": {
+     "Rig_Medium": 0.003
+    },
+    "jumpAir": {
+     "Rig_Medium": 0.0
+    },
+    "jumpLand": {
+     "Rig_Medium": 0.0
+    }
+   },
+   "gaps": [
+    "walkStart",
+    "sprint",
+    "jogStrafeL/R",
+    "jogBack"
+   ],
+   "rigNotes": {
+    "Rig_Large": "jumpStart/jumpAir/jumpLand not available (KayKit split jump exists only for Rig_Medium)"
+   },
+   "ladderFile": "LOCOMOTION_LADDER_01.json",
+   "added": "2026-10-03 LOCOMOTION-LADDER-01 (candidate, Georg review open)",
+   "use": "One clip per gait rung. Pick by state and by real speed and direction; hand over at the band edges in LOCOMOTION_LADDER_01.json with the phase offset given there. Speeds: cycle = first to last key (see ladder file).",
+   "supersededBy": "kfb_ladder_v2 (2026-10-03: strike_foward_jog_a rejected as jog)"
+  },
+  "kfb_ladder_kaykit_v1": {
+   "members": {
+    "idle": "kaykit:Rig_Medium_General/Idle_A",
+    "walkSlow": "kaykit:Rig_Medium_MovementBasic/Walking_C",
+    "walk": "kaykit:Rig_Medium_MovementBasic/Walking_A",
+    "walkBrisk": "kaykit:Rig_Medium_MovementBasic/Walking_B",
+    "run": "kaykit:Rig_Medium_MovementBasic/Running_A",
+    "sprint": "kaykit:Rig_Medium_MovementBasic/Running_B",
+    "walkBack": "kaykit:Rig_Medium_MovementAdvanced/Walking_Backwards",
+    "strafeRunL": "kaykit:Rig_Medium_MovementAdvanced/Running_Strafe_Left",
+    "strafeRunR": "kaykit:Rig_Medium_MovementAdvanced/Running_Strafe_Right",
+    "jumpStart": "kaykit:Rig_Medium_MovementBasic/Jump_Start",
+    "jumpAir": "kaykit:Rig_Medium_MovementBasic/Jump_Idle",
+    "jumpLand": "kaykit:Rig_Medium_MovementBasic/Jump_Land"
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0
+    },
+    "walkSlow": {
+     "Rig_Medium": 0.518
+    },
+    "walk": {
+     "Rig_Medium": 0.708
+    },
+    "walkBrisk": {
+     "Rig_Medium": 0.98
+    },
+    "run": {
+     "Rig_Medium": 3.303
+    },
+    "sprint": {
+     "Rig_Medium": 5.255
+    },
+    "walkBack": {
+     "Rig_Medium": 0.76
+    },
+    "strafeRunL": {
+     "Rig_Medium": 3.437
+    },
+    "strafeRunR": {
+     "Rig_Medium": 3.391
+    },
+    "jumpStart": {
+     "Rig_Medium": 0.003
+    },
+    "jumpAir": {
+     "Rig_Medium": 0.0
+    },
+    "jumpLand": {
+     "Rig_Medium": 0.0
+    }
+   },
+   "gaps": [
+    "jog (0.98 -> 3.30 m/s)",
+    "walkStart",
+    "stops",
+    "turns",
+    "Rig_Large"
+   ],
+   "ladderFile": "LOCOMOTION_LADDER_01.json",
+   "added": "2026-10-03 LOCOMOTION-LADDER-01 (alternative, HOLD: no jog)",
+   "use": "KayKit look only. Not a full ladder: the walk/run gap needs 1.84x / 0.55x playback."
+  },
+  "kfb_ladder_v2": {
+   "members": {
+    "idle": "kfb_idle_idle_f",
+    "walkStart": "kfb_locomotion_start_walking_a",
+    "walk": "kfb_locomotion_walking_c",
+    "jog": "kfb_locomotion_jog_forward_a",
+    "runEasy": "kfb_locomotion_slow_run_a",
+    "run": "kfb_locomotion_medium_run_a",
+    "sprint": "kfb_locomotion_sprint_a",
+    "sprintStart": "kfb_locomotion_idle_to_sprint_a",
+    "walkStop": "kfb_locomotion_female_stop_walking_a",
+    "runStop": "kfb_locomotion_run_to_stop_a",
+    "walkBack": "kfb_locomotion_walk_backward_a",
+    "jogBack": "kfb_locomotion_slow_jog_backwards_a",
+    "runBack": "kfb_locomotion_running_backward_a",
+    "strafeWalkL": "kfb_locomotion_left_strafe_walking_a",
+    "strafeWalkR": "kfb_locomotion_right_strafe_walking_b",
+    "strafeRunL": "kfb_locomotion_left_strafe_a",
+    "strafeRunR": "kfb_locomotion_strafe_a",
+    "turnInPlaceL90": "kfb_locomotion_left_turn_90_a",
+    "turnInPlaceR90": "kfb_locomotion_right_turn_90_a",
+    "turnInPlaceL180": "kfb_locomotion_left_turn_b",
+    "turnInPlaceR180": "kfb_locomotion_right_turn_b",
+    "runTurnR": "kfb_locomotion_running_right_turn_a",
+    "sprintTurnR": "kfb_locomotion_sprint_turn_a",
+    "runTurn180": "kfb_locomotion_change_direction_a",
+    "jumpFull": "kfb_locomotion_jumping_a",
+    "jumpStart": "kaykit:Rig_Medium_MovementBasic/Jump_Start",
+    "jumpAir": "kaykit:Rig_Medium_MovementBasic/Jump_Idle",
+    "jumpLand": "kaykit:Rig_Medium_MovementBasic/Jump_Land"
+   },
+   "alternatives": {
+    "walkStart": [
+     "kfb_locomotion_female_start_walking_a"
+    ],
+    "jog": [
+     "kfb_locomotion_jogging_a",
+     "kfb_locomotion_running_f",
+     "kfb_locomotion_strike_foward_jog_a"
+    ],
+    "runEasy": [
+     "kfb_locomotion_running_a"
+    ],
+    "run": [
+     "kfb_locomotion_running_d",
+     "kfb_locomotion_run_forward_c"
+    ],
+    "sprint": [
+     "kfb_locomotion_fast_run_a",
+     "kfb_locomotion_running_e"
+    ],
+    "walkStop": [
+     "kfb_locomotion_stop_walking_a"
+    ],
+    "walkBack": [
+     "kfb_locomotion_walking_backwards_a"
+    ],
+    "runBack": [
+     "kfb_locomotion_run_backward_a"
+    ],
+    "strafeRunR": [
+     "kfb_locomotion_right_strafe_a"
+    ]
+   },
+   "speedMs": {
+    "idle": {
+     "Rig_Medium": 0.0,
+     "Rig_Large": 0.0
+    },
+    "walkStart": {
+     "Rig_Medium": 0.466,
+     "Rig_Large": 1.196
+    },
+    "walk": {
+     "Rig_Medium": 1.135,
+     "Rig_Large": 2.915
+    },
+    "jog": {
+     "Rig_Medium": 1.76,
+     "Rig_Large": 4.517
+    },
+    "runEasy": {
+     "Rig_Medium": 2.13,
+     "Rig_Large": 5.467
+    },
+    "run": {
+     "Rig_Medium": 3.179,
+     "Rig_Large": 8.161
+    },
+    "sprint": {
+     "Rig_Medium": 4.198,
+     "Rig_Large": 10.777
+    },
+    "sprintStart": {
+     "Rig_Medium": 1.293,
+     "Rig_Large": 3.32
+    },
+    "walkStop": {
+     "Rig_Medium": 0.769,
+     "Rig_Large": 1.975
+    },
+    "runStop": {
+     "Rig_Medium": 0.668,
+     "Rig_Large": 1.714
+    },
+    "walkBack": {
+     "Rig_Medium": 0.557,
+     "Rig_Large": 1.431
+    },
+    "jogBack": {
+     "Rig_Medium": 1.166,
+     "Rig_Large": 2.992
+    },
+    "runBack": {
+     "Rig_Medium": 2.156,
+     "Rig_Large": 5.536
+    },
+    "strafeWalkL": {
+     "Rig_Medium": 1.178,
+     "Rig_Large": 3.025
+    },
+    "strafeWalkR": {
+     "Rig_Medium": 1.178,
+     "Rig_Large": 3.025
+    },
+    "strafeRunL": {
+     "Rig_Medium": 3.076,
+     "Rig_Large": 7.896
+    },
+    "strafeRunR": {
+     "Rig_Medium": 2.631,
+     "Rig_Large": 6.754
+    },
+    "turnInPlaceL90": {
+     "Rig_Medium": 0.013,
+     "Rig_Large": 0.075
+    },
+    "turnInPlaceR90": {
+     "Rig_Medium": 0.02,
+     "Rig_Large": 0.075
+    },
+    "turnInPlaceL180": {
+     "Rig_Medium": 0.013,
+     "Rig_Large": 0.136
+    },
+    "turnInPlaceR180": {
+     "Rig_Medium": 0.013,
+     "Rig_Large": 0.038
+    },
+    "runTurnR": {
+     "Rig_Medium": 2.814,
+     "Rig_Large": 7.224
+    },
+    "sprintTurnR": {
+     "Rig_Medium": 3.713,
+     "Rig_Large": 9.532
+    },
+    "runTurn180": {
+     "Rig_Medium": 0.21,
+     "Rig_Large": 0.538
+    },
+    "jumpFull": {
+     "Rig_Medium": 2.471,
+     "Rig_Large": 6.343
+    },
+    "jumpStart": {
+     "Rig_Medium": 0.003
+    },
+    "jumpAir": {
+     "Rig_Medium": 0.0
+    },
+    "jumpLand": {
+     "Rig_Medium": 0.0
+    }
+   },
+   "gaps": [
+    "jogStrafeL/R",
+    "jogBack",
+    "strafeRunL",
+    "runTurnL / sprintTurnL",
+    "runStop (option)",
+    "jumpStart/Air/Land on Rig_Large"
+   ],
+   "rigNotes": {
+    "Rig_Large": "jumpStart/jumpAir/jumpLand not available, use jumpFull; strafe_a slips 3.0 % on Rig_Large (HOLD)."
+   },
+   "ladderFile": "LOCOMOTION_LADDER_02.json",
+   "added": "2026-10-03 LOCOMOTION-LADDER-02 (candidate, Georg review open)",
+   "use": "One clip per gait rung. Forward walk -> jog -> runEasy -> run -> sprint: every handoff within +-25 % playback. Hand over at the band edges in LOCOMOTION_LADDER_02.json with the phase offset given there."
   }
  },
  "flightLabSet": {
