@@ -122,7 +122,9 @@ addEventListener('resize',resize);resize();
 
 function normalizeLibrary(p){
   if(!p)return null;
-  return p.startsWith('media/')?p:KAYKIT_PREFIX+p;
+  if(p.startsWith('media/'))return p;
+  if(p.startsWith('libs/'))return 'media/3D_Assets/Animations/KFB_Motion_Library/'+p;
+  return KAYKIT_PREFIX+p;
 }
 function cleanClip(clip){
   const tracks=[];

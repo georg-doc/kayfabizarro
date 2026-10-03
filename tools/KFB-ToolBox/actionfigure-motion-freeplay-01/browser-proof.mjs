@@ -10,7 +10,9 @@ page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
 page.on('pageerror',e=>pageErrors.push(String(e)));
 await page.goto(target,{waitUntil:'domcontentloaded',timeout:60000});
 try{
-  await page.waitForFunction(()=>document.querySelector('#stage')?.dataset.ready==='1',null,{timeout:90000});
+  await page.waitForFunction(()=>['1','error'].includes(document.querySelector('#stage')?.dataset.ready||''),null,{timeout:45000});
+  const readyState=await page.locator('#stage').getAttribute('data-ready');
+  if(readyState!=='1')throw new Error('prototype entered error state');
 }catch(err){
   const diagnostic=await page.evaluate(()=>({
     ready:document.querySelector('#stage')?.dataset.ready||null,
