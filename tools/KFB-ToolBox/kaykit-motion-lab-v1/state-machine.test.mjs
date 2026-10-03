@@ -5,7 +5,7 @@ import {
   compileForwardBands,
   createMotionStateMachine,
   profileHealth,
-} from '../../kfb-lib/motion-state-machine.v1.js';
+} from '../kfb-lib/motion-state-machine.v1.js';
 
 const measuredMedium={
   preferredPhaseFoot:'left',
