@@ -42,14 +42,27 @@ function speedOf(row, rigFamily, speedSpace) {
   return finite(v) ? v : null;
 }
 
-function forwardPlaybackRanges(rig) {
+function forwardPlaybackRanges(rig, rows, rigFamily, speedSpace) {
   const ranges = Object.fromEntries(FORWARD_ORDER.map((s) => [s, [EDGE_MIN_RATE, EDGE_MAX_RATE]]));
   for (const band of rig.forwardBands || []) {
     const from = FORWARD_RUNG_STATE[band.from];
     const to = FORWARD_RUNG_STATE[band.to];
     if (!from || !to) continue;
-    if (finite(band.fromRateAtHandoff)) ranges[from][1] = band.fromRateAtHandoff;
-    if (finite(band.toRateAtHandoff)) ranges[to][0] = band.toRateAtHandoff;
+
+    const handoff = speedSpace === 'world'
+      ? band.handoffSpeedMs?.world
+      : band.handoffSpeedMs?.[rigFamily];
+    const fromSpeed = speedOf(rows.get(band.from), rigFamily, speedSpace);
+    const toSpeed = speedOf(rows.get(band.to), rigFamily, speedSpace);
+
+    // Prefer the measured handoff speed itself over the rounded rate fields in the
+    // donor JSON. This preserves one exact shared boundary instead of manufacturing
+    // sub-millimetre gaps from three-decimal rate rounding.
+    if (finite(handoff) && finite(fromSpeed) && fromSpeed > 0) ranges[from][1] = handoff / fromSpeed;
+    else if (finite(band.fromRateAtHandoff)) ranges[from][1] = band.fromRateAtHandoff;
+
+    if (finite(handoff) && finite(toSpeed) && toSpeed > 0) ranges[to][0] = handoff / toSpeed;
+    else if (finite(band.toRateAtHandoff)) ranges[to][0] = band.toRateAtHandoff;
   }
   return ranges;
 }
@@ -89,7 +102,7 @@ export function buildForwardProfileFromLadder(ladder, {
 } = {}) {
   const { id, rig } = ladderData(ladder, ladderId, rigFamily);
   const rows = selectedRungs(rig);
-  const ranges = forwardPlaybackRanges(rig);
+  const ranges = forwardPlaybackRanges(rig, rows, rigFamily, speedSpace);
   const states = {
     idle: stateFromRung(rows.get('idle'), 'idle', rigFamily, speedSpace, null),
     start: stateFromRung(rows.get('walkStart'), 'start', rigFamily, speedSpace, null),
