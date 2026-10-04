@@ -1,3 +1,20 @@
+## 2026-10-04 · PORTFOLIO MAP
+
+Cross-project current work map:
+`skills/chat/KFB_ACTIVE_WORK_MAP_2026-10-04.md`
+
+Use it before starting a new KFB production lane when the question is:
+- what is actually active;
+- which Site exists;
+- which PR is current owner vs donor/history;
+- what Georg should review next;
+- which work may run cheaply in parallel;
+- what must wait.
+
+Current portfolio rule:
+**World Studio + Card-Hex are the two P0 human product gates.**
+Research/data lanes may continue in normal Web Chat; Site publication is PUBLISH_ONLY; provider/model comparison remains HOLD.
+
 ## 2026-10-04 · COST FIREWALL · SITE PUBLISHING IS PUBLISH_ONLY
 
 Georg decision:
