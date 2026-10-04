@@ -48,10 +48,24 @@ Global rule:
 **PULL, DON'T GATE.**
 All islands are physically explorable; later state gates Card/reward handoffs rather than world access.
 
+## Motion dependency correction · 2026-10-04
+
+Motion PR #344 is complete.
+The accepted/decided Medium set is:
+Walking_B → Running_A → Running_B, with jog as speed/phase blend.
+
+Read exact Motion owner at PR #344 head `dfb6b8a15b3f04c52f49825252fcaf60f45df51c`:
+- `RETURN/KAYKIT_NATIVE_BASELINE_01_RETURN.md`
+- `KAYKIT_LOCO_SET_01/HANDOVER_AND_PROPOSAL_KAYKIT_LOCO_SET_01.md`
+- `KAYKIT_LOCO_SET_01/KFB_KAYKIT_LOCO_SET_01.v1.json`
+
 ## Exactly one next gate
 
-**KAYKIT-NATIVE-BLENDER-BASELINE-01** on Motion PR #344.
+**KFB-LOCO-WB2-PLAYER-01**
 
-After the native movement family is selected:
-attach the Player to these WB2 world facts.
-Then run **WSA-RES-SET-01** for Resident placement/Save/Reload.
+Executor: **WSA / Codex**.
+Receiving owner: this PR #348.
+Read: `KFB_LOCO_WB2_PLAYER_01_BRIEF.md`.
+
+After that PASS:
+**WSA-RES-SET-01** for Resident placement/Save/Reload.
