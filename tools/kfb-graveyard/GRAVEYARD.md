@@ -1,6 +1,6 @@
 # KFB Graveyard · Post-Mortem-Friedhof
 
-Stand: **v1.9.0 · 2026-10-04** · 59 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
+Stand: **v1.10.0 · 2026-10-04** · 60 Gräber · Daten: `postmortems.json` (Schema `kfb-postmortem-graveyard/v1`)
 
 ## Was das ist
 
@@ -72,6 +72,14 @@ Aus diesem Tag folgt: Der Coworker darf künftig Statusdaten aktualisieren, aber
 - Neue Bindung: GPT Site ist bei Site-capable KFB-Produkten die primäre Produkt-/Authoring-/Daily-Use-Oberfläche; Cloudflare ist nachgelagerter, begrenzter Kompatibilitäts-/KFB-Hub-Mirror, wenn benötigt. Fehlende Sites-Capability führt zum Sites-fähigen Handoff, nicht zum Host-Austausch.
 - Vollständiger Postmortem: `skills/chat/recovery/POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md`.
 - Root-Policy: `skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`.
+
+
+## Neu am 04.10.2026 — Publish-only / Kosten-Fail
+
+- *High Reasoning fürs Publish-Klicken* (Large · Process): Ein bereits gebauter/frozen Site-Kandidat sollte erneut über teure High-Reasoning-Kapazität laufen, nur weil dort die Sites-Capability verfügbar war. Georg stoppte die Eskalation.
+- Reißleine: **„Muss hier wirklich noch gedacht werden — oder nur publiziert?“**
+- Neue Bindung: `PUBLISH_ONLY` ist ein eigener Low-Cost-Modus. QA-grüne Kandidaten hinterlassen ein exaktes Publish-Paket; Site-Publishing geht an den günstigsten Sites-fähigen Executor. Capability-Lücke → warten/übergeben, nicht Reasoning-Tier hochschalten.
+- Contract: `skills/chat/SITES_PUBLISH_ONLY_CONTRACT_2026-10-04.md`.
 
 ## Pflegeregel
 
