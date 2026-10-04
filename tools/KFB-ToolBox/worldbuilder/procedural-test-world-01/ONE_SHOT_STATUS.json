@@ -14,7 +14,7 @@
     "live": "UNCHANGED"
   },
   "productOutcome": "PLAYABLE_SOURCE_CLEAN_WB2_WORLD_BUILDER_MVP1_ON_VERIFIED_CLOUDFLARE_STAGE",
-  "state": "MVP1_PRODUCT_RECOVERY_REBRIEF_READY",
+  "state": "MVP1_PRODUCT_SMOKE_PASS_PUBLICATION_PREPARATION",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -398,5 +398,59 @@
     "status": "SUPPLEMENTARY_HOLD",
     "goldenJourneyEndpointPlanner": "QUARANTINE_IF_UNRELIABLE",
     "rule": "Harness-only failure cannot freeze product without direct product reproduction."
+  },
+  "productRecovery": {
+    "authority": "WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md",
+    "receivingBase": "a4aef58ffc6ab252a4b53c018f4b482a7834d880",
+    "seams": [
+      {
+        "seam": "Loader/Enter",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Native loader 10/10 READY and actual Enter PLAYING on unchanged runtime."
+      },
+      {
+        "seam": "Player/Ground/camera",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Prior native browser10/10 preserved; current direct W/D taps move position without bot. Sustained freeplay remains Georg gate."
+      },
+      {
+        "seam": "Clown/Card",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Native I target Clown, actual bubble/BINGO response. Prior actual card receipt and persistence preserved."
+      },
+      {
+        "seam": "Studio Play/Build/source/edit/sculpt/save",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Native original well isolate/place/scale1.25/move[-12.05,.3873,5.1953],41objects2strokes exported; native saved reload shows2strokes."
+      },
+      {
+        "seam": "Fresh authoring import",
+        "classification": "PRODUCT WORKS",
+        "evidence": "Unchanged runtime prior actual separate-origin GUI import/reexport5/5 exact comparisons."
+      },
+      {
+        "seam": "Taxi/Drive",
+        "classification": "OPTIONAL",
+        "evidence": "Prior actual Ground Drive Ground6.077702mPASS; no current product defect reproduced."
+      },
+      {
+        "seam": "Long route planner/endpoint certification",
+        "classification": "HARNESS DEFECT",
+        "evidence": "Quarantined nonblocking bot arrival strategy; history retained. No further repairs in MVP1."
+      },
+      {
+        "seam": "Full concert/fourCardJourney/wholecritic",
+        "classification": "UNPROVEN",
+        "evidence": "Follow-up content/QA gates."
+      },
+      {
+        "seam": "Representative satellite visuals",
+        "classification": "UNPROVEN",
+        "evidence": "Source originals preserved; native integrated camera review still to capture."
+      }
+    ],
+    "productDefects": [],
+    "humanGate": "Georg freeplays actual MVP1",
+    "stage": "PREPARING_NOT_DEPLOYED"
   }
 }

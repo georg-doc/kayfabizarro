@@ -1,3 +1,7 @@
+
+## 2026-10-04 · MVP1 DIRECT PRODUCT RECOVERY CHECKPOINT
+
+Whole-product freeze superseded by current user/main rebrief. Long-route/endpoint automation is quarantined supplementary QA; no product defect is inferred from it. Runtime unchanged from433 source, current receiving basea4aef58. Native local smoke: loader10/10→EnterPLAYING; native I Clown conversation and saved Card retained; existing Play/Build; actual original KayKit green well isolate→place→scale1.25→move; actual secondRaise stroke; native save/export41objects2strokes; saved-scene reload2strokes. Prior same-runtime fresh-origin authoring import/re-export5/5 is KEEP. Prior Taxi6.077702mPASS is KEEP/optional; not re-certified on current head. Representative satellite camera audit and isolated Stage publication are next in this same assignment. No new runtime owner. Human gate remains Georg freeplay, no merge/Live.
 # RECOVERY · WB2 convergence + Golden corridor
 
 ## 2026-10-04 · MVP1 PRODUCT RECOVERY OVERRIDE
