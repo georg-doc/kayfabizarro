@@ -1,3 +1,30 @@
+## 2026-10-04 · COST FIREWALL · SITE PUBLISHING IS PUBLISH_ONLY
+
+Georg decision:
+
+> **Never spend premium/high-reasoning model credits merely to publish an already-built GPT Site candidate.**
+
+Binding:
+- `skills/chat/KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`
+- `skills/chat/SITES_PUBLISH_ONLY_CONTRACT_2026-10-04.md`
+
+If a candidate is already frozen/QA-green enough for human review and the remaining work is only Site publication/update:
+
+`executionMode = PUBLISH_ONLY`
+
+Use the **lowest-cost / lowest-reasoning Sites-capable executor**.
+
+If that executor lacks Sites capability:
+- preserve the exact publish packet;
+- record `SITES_PUBLISHER_REQUIRED`;
+- hand off/wait for a Sites-capable low-cost executor;
+- do **not** escalate automatically to a premium/high-reasoning model;
+- do **not** substitute Cloudflare.
+
+A premium/high-reasoning executor re-enters only when publication reveals a real engineering/code/architecture defect. Then the task is no longer PUBLISH_ONLY.
+
+Generic model recommendations may not reopen an explicit Georg model/cost decision.
+
 # KFB Chat Production Router
 
 Status: CURRENT ROUTER v0.4
