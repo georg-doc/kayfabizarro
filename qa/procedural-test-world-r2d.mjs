@@ -60,7 +60,7 @@ try{
   if(pageErrors.length)problems.push('pageErrors='+pageErrors.length);
   const unexpected=consoleErrors.filter(x=>!x.includes('favicon')&&!x.includes('404'));
   if(unexpected.length)problems.push('consoleErrors='+unexpected.length);
-  await page.locator('#drawerClose').click();
+  // Fresh QA context has no open drawer; preserve the actual owner UI state.
   await page.screenshot({path:outDir+'/player-town-idle.png'});
   await check('native bindings and one mixer',async()=>{
     const p=await readPlayer();requireTrue(Object.keys(p.bindings).length===4,'four clips');
