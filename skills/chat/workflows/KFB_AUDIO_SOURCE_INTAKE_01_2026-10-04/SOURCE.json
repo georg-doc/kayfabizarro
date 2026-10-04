@@ -5,12 +5,11 @@
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
   "parentSiteHead": "64037bc8e181c0796ddc2d505187074e98f04491",
-  "mainSourceRef": "main@2c31790078ff4b33ef8062b1d6a84e8fc33752e6",
+  "mainSourceRef": "main@26f67e3489411b13774ae6e239d97440210adedd",
   "counts": {
     "catalogTracks": 69,
     "roadTripV2Masters": 59,
-    "stemFamilies": 23,
-    "pendingStemFamilies": 6,
+    "stemFamilies": 29,
     "elevenLabsTests": 17
   },
   "rainTexture": {
@@ -22,7 +21,7 @@
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
-  "status": "QA_GREEN_CUSTOM_MODEL_EVALUATION_WAITING",
+  "status": "IMPLEMENTATION_UPDATED_QA_PENDING",
   "testedHead": "c98d1fe0826a5ec69b1a65c1a6cf0b4b54e985e6",
   "qa": {
     "run": 37183221284,
@@ -105,47 +104,53 @@
   "paletteExpansion": [
     {
       "title": "Soul / R&B Ambient Bed",
-      "bpmHint": "76–82",
-      "direction": "warm, human, relaxed",
+      "bpm": 72,
       "status": "HUMAN_POSITIVE_MASTER",
-      "stemStatus": "PENDING"
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 9
     },
     {
       "title": "Piano / Chamber Minimal Bed",
-      "bpmHint": "62–72",
-      "direction": "reflective, intelligent, intimate",
+      "bpm": 125,
       "status": "HUMAN_POSITIVE_MASTER",
-      "stemStatus": "PENDING"
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 10
     },
     {
       "title": "Cinematic / Epic-but-Playable Bed",
-      "bpmHint": "78–88",
-      "direction": "wonder, scale, adventure without trailer bombast",
+      "bpm": 80,
       "status": "HUMAN_POSITIVE_MASTER",
-      "stemStatus": "PENDING"
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 12
     },
     {
       "title": "Cartoon Chase / Capers Bed",
-      "bpmHint": "112–124",
-      "direction": "playful movement, not slapstick",
+      "bpm": 125,
       "status": "HUMAN_POSITIVE_MASTER",
-      "stemStatus": "PENDING"
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 12
     },
     {
       "title": "Folk / Acoustic / Storybook Bed",
-      "bpmHint": "78–90",
-      "direction": "warm, timeless, accessible",
+      "bpm": 79,
       "status": "HUMAN_POSITIVE_MASTER",
-      "stemStatus": "PENDING"
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 11
     },
     {
       "title": "Metaphysical / Cosmic Ambient Bed",
-      "bpmHint": "60–72",
-      "direction": "spacious, strange, contemplative",
+      "bpm": 72,
       "status": "HUMAN_POSITIVE_MASTER",
-      "stemStatus": "PENDING"
+      "stemStatus": "DOWNLOADED_UNREVIEWED",
+      "stemPolicy": "source-only",
+      "stemCount": 10
     }
   ],
   "promptConvention": "ONE_COPY_BLOCK_BPM_DIRECTION_STYLE",
-  "customModelStatus": "TRAINING_SUBMITTED_BY_GEORG"
+  "customModelStatus": "READY_FOR_EVALUATION"
 }

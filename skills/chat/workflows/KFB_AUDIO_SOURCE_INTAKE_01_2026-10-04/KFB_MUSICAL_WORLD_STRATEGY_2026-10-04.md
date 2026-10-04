@@ -220,3 +220,29 @@ When the trained model becomes available, test the same model with short prompts
 8. Quiet ambient biome
 
 If outputs retain clear differentiation while sharing production family resemblance, stop expanding the training pool. If one or more zones collapse toward the dominant funk/surf/groove language, correct that specific gap rather than adding random genres.
+
+
+## Custom Model ready · evaluation phase
+
+The broad custom model is trained and ready. Do not add more source genres before evaluation.
+
+Evaluate with a fixed matrix that tests:
+- quiet biome ambience;
+- humane soul warmth;
+- reflective piano/chamber;
+- cinematic wonder;
+- cartoon chase;
+- folk/storybook;
+- cosmic/metaphysical;
+- higher-motion road state.
+
+Use the same one-block prompt convention. Generate one Suno pair per test. The purpose is not to find six more catalog winners; it is to diagnose whether the model preserves stylistic differentiation while maintaining family resemblance.
+
+Score each pair on:
+1. style match;
+2. shared-world identity;
+3. unwanted funk/groove bias;
+4. long-listen fatigue;
+5. transition usefulness for the game.
+
+Only download/model-promote evaluation outputs that are genuinely useful beyond testing.

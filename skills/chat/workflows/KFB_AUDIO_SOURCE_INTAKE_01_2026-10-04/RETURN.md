@@ -176,3 +176,23 @@ Evaluation executor split:
 - Suno: complete training;
 - Georg: run the agreed multi-style test prompts;
 - ChatGPT / Audio Site: compare outputs for family resemblance vs genre collapse and recommend only targeted corrections.
+
+
+## Six palette stem families downloaded · 2026-10-04
+
+The six palette-expansion stem packages are now present on main and registered:
+
+- Soul / R&B Ambient Bed · **72 BPM** · 9 stems
+- Piano / Chamber Minimal Bed · **125 BPM** · 10 stems
+- Cinematic / Epic-but-Playable Bed · **80 BPM** · 12 stems
+- Cartoon Chase / Capers Bed · **125 BPM** · 12 stems
+- Folk / Acoustic / Storybook Bed · **79 BPM** · 11 stems
+- Metaphysical / Cosmic Ambient Bed · **72 BPM** · 10 stems
+
+All remain `source-only` until listening certification.
+
+The Cartoon Chase source folder is literally named `Cartoon Chase _ Capers Bed 3 min Stems (125` on main. Preserve that exact source path; do not silently rename it.
+
+Catalog state: **69 total / 59 RoadTrip-v2 / 29 stem families**.
+
+Custom Model status: **READY FOR EVALUATION**.
