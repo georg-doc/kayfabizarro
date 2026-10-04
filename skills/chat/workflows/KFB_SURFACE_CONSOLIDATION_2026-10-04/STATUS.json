@@ -31,12 +31,19 @@
     "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
     "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site"
   ],
-  "next": "WORK_RESOLVE_TOOLBOX_THEN_CONTROL_THEN_HUB_AND_VERIFY_ALL_THREE",
+  "next": "WORK_RESOLVE_TOOLBOX_THEN_CONTROL_THEN_HUB_AND_PROVE_DATA_AND_PRESENTATION_EDITS_WITHOUT_WORK",
   "forbidden": [
     "duplicate dashboards",
     "multiple current ToolBox front doors",
     "Cloudflare-first fallback",
     "specialist runtime duplication",
     "automatic merge"
-  ]
+  ],
+  "operatingRules": {
+    "routineCurrentStateWithoutWork": true,
+    "routineUiCssLayoutWithoutWork": true,
+    "normalWebChatPresentationEdits": true,
+    "lowCostPublishIfHostRequires": true,
+    "workReservedForEngineering": true
+  }
 }
