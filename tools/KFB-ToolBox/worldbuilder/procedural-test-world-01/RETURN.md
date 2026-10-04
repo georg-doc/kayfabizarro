@@ -103,3 +103,29 @@ Tested runtime/test head: `531fcc3f912d226254bab0e5e43a0a78750f001b`. Existing D
 **Limits:** no new WB2 centimetre foot-creep certification was made. The accepted Blender RAMP_02 remains the visual/measurement reference; original timing, phase, speeds and metre rig are preserved. Known start/stop/turn/strafe gaps remain as in that contract. No public Stage/deployment or human freeplay acceptance is claimed. Local In-App Browser visibly verified the integrated player; Chromium evidence is the repeatable runtime proof.
 
 **Next internal action:** continue the Resident/activity seam under the existing `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`, inside this same world/PR. This is an internal checkpoint, not a new Georg-facing approval gate. The explicitly requested Player checkpoint ends here; no Resident, Drive or Flight implementation was added in this turn.
+
+
+## 2026-10-04 · POST-WSA ONE-SHOT RECONCILIATION
+
+Status correction after Georg's visual review and the returned Player-only WSA run:
+
+- **Topology / WB2 ownership / Track graph / Golden anchors = PASS / KEEP.**
+- **Native Player/Motion = BROWSER PASS / KEEP.**
+- **Visible environment foundation = HUMAN VISUAL FAIL.**
+- Legacy Hürth/OSM-derived visible content is rejected for the current MVP foundation.
+- The previous phrase "existing building/facade family retained" must not be read as visible-content acceptance. Only source-clean, explicitly typed MECHANISM reuse may survive.
+- The returned WSA run stopped after an internal Player checkpoint. Under the binding ONE_SHOT mode, that is incomplete execution rather than project completion.
+- Residents, Drive, Golden Journey, Curtain, Almanac/Lean Memory, World Studio/Site Stage and final whole-game review remain part of the **same continuous assignment**, not separate Georg-facing jobs.
+
+Binding continuation:
+- `ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md`
+- `ONE_SHOT_STATUS.json`
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`
+
+Reserved final human Stage:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/`
+= **RESERVED · NOT DEPLOYED**.
+
+### Exactly one next action
+
+**WSA / Codex resumes this same PR and continues automatically through the full recovery/completion One-Shot. It must not return after Residents, Drive, Site, or any other green internal checkpoint.**
