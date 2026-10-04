@@ -64,7 +64,7 @@
       "optional": true,
       "contract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md",
       "desiredDefault": "player.frizzlebob-v5b",
-      "safeFallback": "player.actionfigure-medium",
+      "safeFallback": "player.mannequin-medium",
       "initialRoster": [
         {
           "id": "player.frizzlebob-v5b",
@@ -72,9 +72,9 @@
           "status": "SOURCE_PIN_RECONCILE"
         },
         {
-          "id": "player.actionfigure-medium",
+          "id": "player.mannequin-medium",
           "rigFamily": "Rig_Medium",
-          "status": "MOTION_BASELINE_OWNER_PR344"
+          "status": "NATIVE_BASELINE_COMPLETE"
         },
         {
           "id": "player.blackknight-large",
@@ -85,6 +85,11 @@
           "id": "player.gothgirl-medium",
           "rigFamily": "Rig_Medium",
           "status": "OPTIONAL_STAGE_QA"
+        },
+        {
+          "id": "player.actionfigure-medium",
+          "rigFamily": "Rig_Medium",
+          "status": "OPTIONAL_COMPATIBILITY_SMOKE_ONLY"
         }
       ],
       "pullDontGate": true
