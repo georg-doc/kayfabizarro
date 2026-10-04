@@ -9,6 +9,33 @@ Use this after `START_HERE.md`, `PRODUCTION_SOP.md` and `CHAT_GITHUB_KFB_STAGE_W
 
 All user-facing updates and handoffs also follow `PLAIN_LANGUAGE_HANDOFF_STANDARD.md`. Repository identifiers are evidence for executing chats, not Georg's operating instructions.
 
+## 0. Check execution mode before applying slice logic
+
+This protocol is for bounded slices, but every fresh chat must first inspect the current execution authority.
+
+Classify the current job as one of:
+
+- **ONE_SHOT** — one continuous integration assignment with internal checkpoints;
+- **BOUNDED_SLICE** — one named module/repair/POC;
+- **RECOVERY** — preserve/analyse a failed candidate and restore a valid route;
+- **RESEARCH** — read-only/source/options work.
+
+If the current owner/router says **ONE_SHOT**:
+
+- Section 2's “one bounded slice” describes an **internal checkpoint**, not the whole user assignment.
+- Do not stop after each green checkpoint.
+- Do not hand Georg another executor prompt after every internal success.
+- Persist implementation/evidence/Return crash-safely, verify the head, then continue automatically.
+- Use the final review packet only when the One-Shot product outcome is ready or a real stop condition is reached.
+- Internal “next gate” labels are agent routing pointers, not automatically user-facing gates.
+- Optional/quarantinable defects must not fragment the One-Shot.
+
+The named execution mode has higher precedence than the generic fresh-chat slice default.
+
+Current KFB MVP example:
+`ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`
+= ONE_SHOT.
+
 ## 1. Recover before changing anything
 
 1. Read `START_HERE.md`, `REGISTRY.json` and the relevant router changelog delta.
