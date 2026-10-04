@@ -1152,6 +1152,7 @@ new ResizeObserver(resize).observe(E('stage'));
 resize();
 renderer.setAnimationLoop(()=>{
   const dt=Math.min(clock.getDelta(),.05);
+  const behindCurtain=['LOADING','READY_BEHIND_CURTAIN'].includes(document.body.dataset.mvpPhase);
   if(currentMixer)currentMixer.update(dt);
   if(mode==='actor'&&previewRoot.children[0])groundModelLocal(previewRoot.children[0]);
   if(mode==='scene'){
@@ -1160,13 +1161,18 @@ renderer.setAnimationLoop(()=>{
       groundModelLocal(actorRoot.userData.model);
     }
   }
-  for(const root of sceneObjects.values()){const life=root.userData.lifecycle;if(life&&root.visible&&!root.userData.performanceSetId&&!root.userData.billboardWorldId){const near=!PLAY?.on||root.position.distanceTo(PLAY.position)<45;if(near)life.update(dt,(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)));}}
+  for(const root of sceneObjects.values()){const life=root.userData.lifecycle;if(!behindCurtain&&life&&root.visible&&!root.userData.performanceSetId&&!root.userData.billboardWorldId){const near=!PLAY?.on||root.position.distanceTo(PLAY.position)<45;if(near)life.update(dt,(x,z)=>WORLD.groundAt(x,z,terrainHeightAt(x,z)));}}
   window.__wb2d?.mvp?.update(dt);
   PRES.tick(clock.elapsedTime);
   if(PLAY&&mode==='scene')PLAY.update(dt);
   if(WORLD)WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera);
   EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on)&&controls.enabled)controls.update();
-  if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera);
+  if(behindCurtain){
+    // The existing opaque Curtain owns the loading view; defer invisible world drawing.
+    const hidden=scene.children.filter(o=>o!==camera&&!o.isLight&&o.visible);
+    for(const o of hidden)o.visible=false;
+    try{renderer.render(scene,camera)}finally{for(const o of hidden)o.visible=true}
+  }else if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera);
   window.__wb2d?.candidateEvidence?.sample();
 });
 

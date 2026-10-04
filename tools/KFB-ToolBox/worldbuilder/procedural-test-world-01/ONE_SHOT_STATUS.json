@@ -100,16 +100,17 @@
     "localMvpBoot": "READY_10_OF_10_CRITICAL_SOURCES_ACTUAL_ENTER_PLAYING",
     "localMvp": "Actual 10/10 loader; ENTER; 39 canonical objects (25 native buildings + 14 gameplay/source objects); canonical master blob PASS; one borrowed Travel Audio graph with wind/engine/water; native Clown Card; native Frizzle actor swap. Full Golden/browser persistence pending.",
     "latestIntegratedBrowserRun": {
-      "id": 37188477994,
-      "head": "c4fbc6a6c456730818f7f574b53de12db245ee61",
-      "result": "FAIL_COLD_LOAD_TIMEOUT_BEFORE_FIRST_GATE",
+      "id": 37189602458,
+      "receivingHead": "4e270c314e47ffb2b12c921ea748f410b4c385ce",
+      "testedMergeHead": "c6e6be3eb95aa0718783eea9e64ad3cfce764803",
+      "result": "FAIL_BOOT_TIMEOUT_PROGRESS_TO_FARMERS",
       "pageErrors": 0,
       "consoleErrors": 1,
-      "artifact": 11297662613,
-      "sha256": "012f7d03489c26821032a91a4e84c66b64a15ce229f3619350eb74ff2c530ece",
-      "runtime": "LOADING 2/10; Clown and Driver completed; waiting at dystopia.demon, scene object 27/39"
+      "artifact": 11299135235,
+      "sha256": "5b34f5104aee317ae873d90e7c3802303aebdc582d482c68d7266d5ea5ddb504",
+      "runtime": "Demon, Robots and Monstrosity completed; Farmers plot_d completed; 30/39 scene objects"
     },
-    "coldLoadRepair": "Repair 1 progressed from initial population to completed Clown and Driver. Repair 2 retains native Atlas owner and allows recipe-selected original animation sets; adds resident item and pending request diagnostics. Full Golden PASS remains unproven.",
+    "coldLoadRepair": "Repair 1 reached Clown/Driver; repair 2 reached Demon/Robots/Monstrosity/Farmers. Both progressed; no two consecutive non-improving repairs. Next candidate defers invisible world rendering and resident updates behind opaque native loading Curtain, keeping one renderer/scene/owner. Actual requestdiagnostics identify 404 as Librarian relative browse-filters.css; module-relative path fixed.",
     "criticRound2": {
       "dimension": "partial Town source fidelity",
       "score": 8,
@@ -120,7 +121,20 @@
         "Card subject subdialog respects native six-action limit"
       ]
     },
-    "localStudio": "Native Library search \u2192 actual original well isolate \u2192 same-scene placement \u2192 existing Edit scale-up visibly verified. Source path handoff omission repaired; no placeholder asset. Workspace fresh-session gauntlet still pending."
+    "localStudio": "Actual native well original isolate, placement, Edit scale1.25, downloaded 40-object workspace with pinned source reference, Save/reload40 and real Sculpt stroke verified. Fresh-session workspace import still pending.",
+    "criticRound3": {
+      "status": "PARTIAL_NO_WHOLE_GAME_PASS",
+      "improved": [
+        "grouped toolbar",
+        "native visible I hint",
+        "Billboard crop objection withdrawn against native kaleidoscope behavior"
+      ],
+      "open": [
+        "distant apparently floating Residents: diagnose source support and view",
+        "first frame castle/tavern crop and dominant road",
+        "Library technical filenames"
+      ]
+    }
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
