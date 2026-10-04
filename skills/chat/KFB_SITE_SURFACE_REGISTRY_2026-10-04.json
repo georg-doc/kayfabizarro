@@ -1,0 +1,84 @@
+{
+  "schema": "kfb.site-surfaces/1",
+  "date": "2026-10-04",
+  "defaultPrimary": "GPT_SITE",
+  "defaultSecondary": "CLOUDFLARE_KFB_HUB_MIRROR_WHEN_REQUIRED",
+  "rules": {
+    "noCloudflareSubstitutionWhenSitesUnavailable": true,
+    "updateExistingOwnerSite": true,
+    "noSecondProductiveSiteOwner": true,
+    "siteFirstForCurrentToolWorkbenchAuthoringMvp": true,
+    "cloudflareMirrorDoesNotBlockVerifiedSite": true
+  },
+  "sites": [
+    {
+      "id": "kfb-production-hub",
+      "owner": "KFB Production Hub / HUB-CTRL",
+      "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+      "status": "DEPLOYED_PRIVATE_MIRROR",
+      "source": "PR #217",
+      "humanStatus": "MOBILE_TUNE_OPEN",
+      "notes": "Native Sites deployment succeeded; historical independent Site visual proof remained open."
+    },
+    {
+      "id": "kfb-eyerig-workbench",
+      "owner": "KFB ToolBox / EyeRig",
+      "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/",
+      "status": "SITE_PRODUCTIVE",
+      "source": "PR #104",
+      "humanStatus": "HUMAN_ACCEPTED_FOR_CONTINUATION",
+      "notes": "Medium | Large | Legacy unified Site. Current issue is latest Medium profile data recovery."
+    },
+    {
+      "id": "kfb-asset-librarian",
+      "owner": "KFB Asset Registry / Librarian",
+      "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
+      "status": "SITE_DEPLOYED_PRIVATE",
+      "source": "PR #349",
+      "humanStatus": "GEORG_REVIEW_OPEN",
+      "notes": "WSA browser QA 8/8 PASS; zero console errors; Phase A real review surface."
+    },
+    {
+      "id": "kfb-audio",
+      "owner": "KFB Audio & Soundscape Baseline v1",
+      "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+      "status": "SITE_VERIFIED",
+      "source": "PR #350",
+      "humanStatus": "PRODUCT_CONTINUATION",
+      "notes": "Exact production URL visually verified at publication with zero captured warnings/errors; no Cloudflare route."
+    },
+    {
+      "id": "kfb-environment-atlas",
+      "owner": "tools/world_atlas",
+      "url": null,
+      "status": "SITE_PREPARED_NOT_PUBLISHED",
+      "source": "PR #353",
+      "humanStatus": "NOT_REVIEWED"
+    },
+    {
+      "id": "kfb-frankenstein-composer",
+      "owner": "KFB ToolBox",
+      "url": null,
+      "status": "SITE_PREPARED_NOT_PUBLISHED",
+      "source": "PR #355",
+      "humanStatus": "NOT_REVIEWED"
+    },
+    {
+      "id": "kfb-billboard-hypernorm-curator",
+      "owner": "KFB ToolBox / Billboard Media Residency",
+      "url": null,
+      "status": "SITE_PREPARED_NOT_PUBLISHED",
+      "source": "PR #354",
+      "humanStatus": "NOT_REVIEWED"
+    },
+    {
+      "id": "kfb-world-studio-mvp",
+      "owner": "KFB WorldBuilder / WB2",
+      "url": null,
+      "status": "PRIMARY_SITE_TARGET_NOT_YET_PUBLISHED",
+      "source": "PR #348",
+      "humanStatus": "NOT_REVIEWED",
+      "notes": "Exact GPT Site URL must come from Sites publication; Cloudflare is downstream mirror/formal acceptance surface when required."
+    }
+  ]
+}
