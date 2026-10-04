@@ -34,7 +34,10 @@ This is the content-authoring counterpart to the Hypernormalisation Curator patt
 10. PR #310 Resident ensemble data module
 11. PR #354 Hypernormalisation `QUOTE_POOL_SCHEMA.json` + current quote batches
 12. current ToolBox manifest from surface-consolidation branch
-13. current Claude Design speech/thought-bubble Return when it exists
+13. current Coworker review-stage donor at `coworker/coordination-plan-2026-10-04@b2ddd72346e3d804b53625f50addbba87be3c9a0`:
+   - `S1_RESIDENT_PREP_2026-10-04/KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html`
+   - `S1_RESIDENT_PREP_2026-10-04/BRIEF_WEBCHAT_TRIPLET_POOL_01.md`
+14. current Claude Design speech/thought-bubble Return when it exists
 
 GitHub state at execution time wins.
 
@@ -50,6 +53,25 @@ Do not create:
 - a new ToolBox front door.
 
 The Site is an **authoring and preview client** around existing owners.
+
+## Mandatory donor-first UI rule
+
+The Coworker review stage is now the first UI donor.
+
+Before redesigning anything:
+1. run/show `KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html` in isolation;
+2. prove its existing review flow and pair/Card stage;
+3. retain the useful interaction model;
+4. extend it rather than replacing it with generic admin cards.
+
+Known current coverage gaps from that donor are product input, not errors to hide:
+- Clown and Witch have no signature COLLISION;
+- Goth Girl has no signature CATEGORY_SHIFT;
+- Clown has no signature SYNERGY;
+- some BONGO/BOGGLE pair paths fall to silence because semantic material does not overlap;
+- current 20 entries are not Card-anchored.
+
+Normal Web Chat closes those content gaps through the existing `BRIEF_WEBCHAT_TRIPLET_POOL_01.md` loop. The Site makes that loop durable and pleasant; it does not move creative writing into a new runtime model.
 
 ## Product layout
 
