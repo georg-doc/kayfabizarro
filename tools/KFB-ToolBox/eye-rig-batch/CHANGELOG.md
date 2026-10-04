@@ -1125,3 +1125,15 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - Cloudflare demoted to recovery/regression only;
 - current gate: `EYE_RIG_UNIFIED_SITE_PUBLISH_01`.
 
+
+
+## 2026-10-04 · Unified EyeRig Site published
+
+- Work published the existing PR #104 unified source as one private ChatGPT Site: `https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`;
+- Site version `appgprj_6ac1b73620f48191ae6e7f101f4b0786~appgver_5717d8849ad48191b6e277502df17312`;
+- deployment `appgdep_6ac1b854cd3081919f783990f88039f4` succeeded;
+- publication source revision `4f8a82cbea7a0a8c82eafc917b7968b8e77d4e00`;
+- owner source remained PR #104 @ `ad26045e8a7b389afe0c8127e80bb66f3e9f2ac3`; no merge and no second Legacy surface;
+- Work smoke confirmed 55 Medium / 8 Large / 17 Legacy, Barbarian Legacy assembly, Skull `HUMAN_REQUIRED`, shared controls and Clay K1;
+- exact publication source static run: **187/191 PASS · 4 FAIL**, documented rather than promoted to CI PASS;
+- current gate is now `GEORG_EYERIG_UNIFIED_SITE_01`.
