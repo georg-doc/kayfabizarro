@@ -796,7 +796,7 @@ async function buildSceneObjects(token){
     root.add(model);
     root.userData.model=model;
     root.userData.registeredAssetId=rec.registeredAssetId||null;
-    if(rec.kind==='resident'&&!rec.residentSetId)groundModelLocal(model);
+    if(rec.kind==='resident'&&!rec.residentSetId&&!rec.performanceSetId)groundModelLocal(model);
     if(root.userData.needsInitialGround){dropRoot(root);root.userData.needsInitialGround=false;updateRecordFromRoot(root)}
     PRES.onObject(root);
   }
