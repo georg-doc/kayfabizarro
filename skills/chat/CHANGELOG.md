@@ -1,5 +1,3 @@
-## 2026-10-04 · Curtain Character Select / cross-rig QA contract
-
 ## 2026-10-04 · Asset Librarian GPT Site / shared picker WSA intake
 
 - Prepared fresh branch `chatgpt-web/asset-librarian-gpt-site-prep-2026-10-04` from current main without modifying Librarian runtime code.
@@ -11,6 +9,8 @@
 - Reuse only the green PR #304 donor subset at frozen implementation `545853924c4c177b6e26af588020b7a59307bb71`; its failed scrub/transport work stays quarantined.
 - No GPT Site, Cloudflare publication, Runtime PASS or merge is claimed by this preparation.
 - Exactly one next gate: **WSA-ASSET-LIBRARIAN-GPT-SITE-01**.
+
+## 2026-10-04 · Curtain Character Select / cross-rig QA contract
 
 
 ### MVP DECISION
