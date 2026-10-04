@@ -22,6 +22,11 @@ Current pre-One-Shot audit:
 Current deck-driven world / Resident / ChatterBox / Card pipeline contract:
 `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
 
+Current One-Shot execution lock:
+`ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`
+
+This supersedes treating Player / Residents / Site / Lean Memory as separate Georg-facing next gates. They are internal WSA/Codex checkpoints inside one continuous integration assignment.
+
 Current Golden Journey / acceptance fixture:
 `GOLDEN_JOURNEY_MVP_2026-10-04.md`
 Machine-readable fixture:
