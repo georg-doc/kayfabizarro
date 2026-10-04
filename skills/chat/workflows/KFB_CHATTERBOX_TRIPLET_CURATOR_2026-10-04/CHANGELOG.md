@@ -1,4 +1,4 @@
-# CHANGELOG · KFB ChatterBox / Triplet Curator
+# CHANGELOG · KFB ChatterBox
 
 ## 2026-10-04 · planning packet
 
@@ -35,3 +35,50 @@ Not started. No Site URL invented. No Stage/Live change.
 
 ### NEXT
 One Sites-capable implementation run builds the private ChatterBox / Triplet Curator v1.
+
+
+## 2026-10-05 · KFB ChatterBox umbrella + live Dialogue Lab
+
+### PRODUCT DECISION
+- Umbrella product name is **KFB ChatterBox**.
+- Triplet Curator is a module inside ChatterBox, not a separate Site/product.
+- Existing ToolBox slot `chatterbox-comic-vfx` remains the single receiving lane.
+
+### DIALOGUE LAB
+- Added bounded live LLM dialogue testing.
+- First topology is exactly two Residents.
+- First voice-distinctness comparison: deterministic baseline → L0 shared-agent → L1 same-model isolated Resident contexts.
+- L2 different-model/per-Resident model profiles remain optional until L0/L1 evidence shows a material need.
+- First acceptance pair: Goth Girl × Clown, 8–12 turns on the same scene seed.
+
+### PLAYER INTERACTION
+- Player may answer with a free Triplet.
+- Four explicit interaction calls are included: KayfaBINGO!, KayfaBONGO!, KayfaBOGGLE?, BLÖDSINN!.
+- Lab behavior of those calls is logged as experimental digital dialogue behavior, not silently promoted to global canon.
+
+### CRITIC / REPAIR
+- Added a second non-speaking LLM critic.
+- Critic checks Resident voice distinctness, repetition, Triplet integrity, causality, character clamps, Fluff-o-lect, comic economy and bold/italic emphasis.
+- Repairs preserve the original transcript and create a revision.
+- Strong generated material may be promoted to candidate Triplets/clusters; bad recurring patterns may become durable negative tests/guardrails.
+
+### PRESENTATION / REACTION
+- Added reaction/choreography lab for What the FLUFF?!, Stay fluffy! and four-call reactions.
+- Real Resident Atlas 3D actors remain mandatory; cutouts/sprites remain rejected.
+- EyeRig v6 remains integrated eye owner.
+- Added free Orbit camera + responsive viewport/bubble safe-area/occlusion tests.
+
+### AUDIO / TTS
+- Browser speechSynthesis is sufficient for first-pass Resident voice audition.
+- Existing KFB Audio owner remains authoritative.
+- Mixer owns ducking; ChatterBox does not create a second AudioContext.
+
+### SOURCE
+- Added `CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md`.
+- Updated START_HERE, Work One-Shot, Work MIN and Site implementation packet.
+
+### IMPLEMENTATION
+Still not started. No Site URL invented. No public Stage/Live claim.
+
+### NEXT
+One Sites-capable Work run implements **KFB ChatterBox v1** from the expanded packet and returns the private Site for Georg's editorial/dialogue-lab freeplay.
