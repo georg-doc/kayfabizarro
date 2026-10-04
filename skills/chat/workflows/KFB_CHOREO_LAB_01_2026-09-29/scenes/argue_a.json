@@ -1,0 +1,30 @@
+{
+ "schema": "kfb.choreo.v0",
+ "id": "argue_a",
+ "title": "Argument: both talk over each other, point, wave off, blow up",
+ "fps": 30,
+ "actors": {"A": {"rig": "Rig_Medium", "role": "speaker"}, "B": {"rig": "Rig_Medium", "role": "opponent"}},
+ "stage": {"A": {"pos": [0, 0], "face": "B"}, "B": {"pos": [1.9, 0], "face": "A"}},
+ "props": [],
+ "tracks": {
+  "A": [
+   {"start": 0, "base": "kfb_talk_arguing_a", "loop": true},
+   {"start": 240, "base": "kfb_gesture_pointing_a"},
+   {"start": 346, "base": "kfb_gesture_angry_gesture_a", "loop": true}
+  ],
+  "B": [
+   {"start": 0, "base": "kfb_talk_arguing_b", "in": 300, "loop": true},
+   {"start": 262, "base": "kfb_gesture_dismissing_gesture_a"},
+   {"start": 330, "base": "kfb_gesture_yelling_a", "loop": true}
+  ]
+ },
+ "events": [
+  {"t": 60, "type": "bubble", "actor": "A", "text": "!"},
+  {"t": 125, "type": "bubble", "actor": "B", "text": "?!"},
+  {"t": 255, "type": "bubble", "actor": "A", "text": "!!"},
+  {"t": 345, "type": "bubble", "actor": "B", "text": "#@%!"},
+  {"t": 380, "type": "bubble", "actor": "A", "text": "#@%!"}
+ ],
+ "shots": [60, 125, 255, 285, 345, 400],
+ "notes": "Standing talk clips only. Seated talk (talk_sitting, meeting, dice) can join through the upper-body graft (test A)."
+}

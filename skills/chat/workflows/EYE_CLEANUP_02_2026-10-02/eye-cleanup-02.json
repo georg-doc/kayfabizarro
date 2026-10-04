@@ -1,0 +1,3148 @@
+{
+ "schema": "kfb.eye-cleanup/0.1-candidate",
+ "date": "2026-10-02",
+ "job": "EYE-CLEANUP-02",
+ "lane": "Blender MCP / Coworker",
+ "tool": "Blender 5.0.1 (bpy) + three.js 0.160 GLTFLoader bind check",
+ "coordinates": "glTF / three.js, Y up, figure root space, bind pose",
+ "anchorAxes": "local +Z = outward normal, +Y = head up, scale = eye radius; three.js names eye_anchorl / eye_anchorr",
+ "counts": {
+  "done": 26,
+  "none": 5,
+  "blocked": 0
+ },
+ "figures": [
+  {
+   "id": "gothgirl",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/GothGirl_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "GothGirl_Head: 2 eye islands, 138 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f8d3be",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2055,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2055,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727,
+     "extent": [
+      0.16,
+      0.1308
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f8d3be",
+     "samples": 26,
+     "behind": "#f9d6c2"
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072,
+     "extent": [
+      0.1294,
+      0.1585
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f8d3be",
+     "samples": 26,
+     "behind": "#f9d6c2"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eyes = two dark 69-face caps (same cap as Witch, PASS in charge 01). Brows (72-face islands) and the face shell untouched. Texture B: island removal is mesh-only, so it holds for the B skin too."
+  },
+  {
+   "id": "clown",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Clown_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Clown_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#e8eced",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#e8eced",
+     "samples": 26,
+     "behind": "#76bbde"
+    },
+    "r": {
+     "pos": [
+      -0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#e8eced",
+     "samples": 26,
+     "behind": "#76bbde"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps only. Blue eyeshadow (88-face islands) and white face paint untouched. skin = white paint; behind the eye is the blue shadow (#76bbde)."
+  },
+  {
+   "id": "soldier",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ToySoldier_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "ToySoldier_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#edaea1",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#edaea1",
+     "samples": 26,
+     "behind": "#eeb4a8"
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#edaea1",
+     "samples": 26,
+     "behind": "#eeb4a8"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps only; rosy cheeks and moustache untouched."
+  },
+  {
+   "id": "farmer_a",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Farmer_A_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Farmer_A_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f6c19d",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f6c19d",
+     "samples": 26,
+     "behind": "#f6c19d"
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f6c19d",
+     "samples": 26,
+     "behind": "#f6c19e"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps only; brows and beard untouched."
+  },
+  {
+   "id": "farmer_b",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Farmer_B_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Farmer_B_Head: 2 eye islands, 138 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f6bf9b",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2056,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2056,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727,
+     "extent": [
+      0.16,
+      0.1308
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f6bf9b",
+     "samples": 26,
+     "behind": "#f6c09d"
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.612,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072,
+     "extent": [
+      0.1294,
+      0.1585
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f6bf9b",
+     "samples": 26,
+     "behind": "#f6c09d"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eyes = 69-face caps. The 108-face pair are brows, kept; freckle islands kept."
+  },
+  {
+   "id": "caveman",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Caveman_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Caveman_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#e1a385",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#e1a385",
+     "samples": 26,
+     "behind": "#f5be9b"
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#e1a385",
+     "samples": 26,
+     "behind": "#f5be9b"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps only; 108-face brows kept."
+  },
+  {
+   "id": "lorekeeper",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Lorekeeper_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Lorekeeper_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f5bc97",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2031,
+      1.6059,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2042,
+      1.6059,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2031,
+      1.6059,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f5bc97",
+     "samples": 26,
+     "behind": "#f5bd98"
+    },
+    "r": {
+     "pos": [
+      -0.2042,
+      1.6059,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f5bc97",
+     "samples": 26,
+     "behind": "#f5bd98"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps behind the glasses mesh; glasses kept (eye rig will be seen through the lenses)."
+  },
+  {
+   "id": "knight",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": null,
+   "status": "none",
+   "class": "none",
+   "removed": [],
+   "uvRect": null,
+   "skin": null,
+   "anchors": null,
+   "bones": 23,
+   "bindCheck": null,
+   "notes": "Closed visor helmet, no visible eyes, no eye islands in the head."
+  },
+  {
+   "id": "avian",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/AvianSwordsman_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "AvianSwordsman_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#2473b3",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2172,
+      1.6376,
+      0.326
+     ],
+     "normal": [
+      0.7978,
+      -0.2034,
+      0.5676
+     ],
+     "r": 0.0827
+    },
+    "r": {
+     "pos": [
+      -0.2172,
+      1.6376,
+      0.326
+     ],
+     "normal": [
+      -0.7978,
+      -0.2034,
+      0.5676
+     ],
+     "r": 0.0827
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2172,
+      1.6376,
+      0.326
+     ],
+     "normal": [
+      0.7978,
+      -0.2034,
+      0.5676
+     ],
+     "r": 0.0827,
+     "extent": [
+      0.1586,
+      0.1724
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#2473b3",
+     "samples": 26,
+     "behind": "#225da1"
+    },
+    "r": {
+     "pos": [
+      -0.2172,
+      1.6376,
+      0.326
+     ],
+     "normal": [
+      -0.7978,
+      -0.2034,
+      0.5676
+     ],
+     "r": 0.0827,
+     "extent": [
+      0.1586,
+      0.1724
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#2473b3",
+     "samples": 26,
+     "behind": "#225da1"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Bird eyes sit on the sides of the head: anchor normals point strongly sideways (L +Z = (0.80, -0.20, 0.57)). Not forced to mirror."
+  },
+  {
+   "id": "warrior",
+   "source": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Warrior.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Warrior_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Skeleton_Warrior_Eyes: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#d19d6b",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065
+    },
+    "r": {
+     "pos": [
+      -0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      -0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#d19d6b",
+     "samples": 26,
+     "behind": "#583d35"
+    },
+    "r": {
+     "pos": [
+      -0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      -0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#d3a373",
+     "samples": 26,
+     "behind": "#583d35"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [
+     "Skeleton_Warrior_Eyes"
+    ],
+    "meshExtra": [],
+    "materialSame": false,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Skeleton: the glowing eyes are a separate mesh Skeleton_Warrior_Eyes (2 islands, material Glow). Removing them empties that mesh, so the NoEyes file has no Skeleton_Warrior_Eyes mesh and no Glow material (the only list difference). Sockets now show the dark cavity (#583d35); skin = bone around the socket. Brief expected none; eyes were visible, so done. Georg decides."
+  },
+  {
+   "id": "rogue",
+   "source": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Rogue.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Rogue_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Skeleton_Rogue_Eyes: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#a77c57",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065
+    },
+    "r": {
+     "pos": [
+      -0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      -0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#a77c57",
+     "samples": 26,
+     "behind": "#583d35"
+    },
+    "r": {
+     "pos": [
+      -0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      -0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#b5875d",
+     "samples": 26,
+     "behind": "#553b34"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [
+     "Skeleton_Rogue_Eyes"
+    ],
+    "meshExtra": [],
+    "materialSame": false,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "As warrior (Skeleton_Rogue_Eyes + Glow removed)."
+  },
+  {
+   "id": "mage",
+   "source": "media/3D_Assets/KayKit_Skeletons/characters/gltf/Skeleton_Mage.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Skeleton_Mage_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Skeleton_Mage_Eyes: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#5c4138",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065
+    },
+    "r": {
+     "pos": [
+      -0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      -0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#5c4138",
+     "samples": 26,
+     "behind": "#684a3d"
+    },
+    "r": {
+     "pos": [
+      -0.1875,
+      1.6409,
+      0.292
+     ],
+     "normal": [
+      -0.2509,
+      -0.0003,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#5c4138",
+     "samples": 26,
+     "behind": "#684a3d"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [
+     "Skeleton_Mage_Eyes"
+    ],
+    "meshExtra": [],
+    "materialSame": false,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "As warrior (Skeleton_Mage_Eyes + Glow removed)."
+  },
+  {
+   "id": "demon",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/DemonLord_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "DemonLord_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#c43642",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1597,
+      3.5592,
+      0.6713
+     ],
+     "normal": [
+      0.4152,
+      -0.3489,
+      0.8402
+     ],
+     "r": 0.0633
+    },
+    "r": {
+     "pos": [
+      -0.1597,
+      3.5592,
+      0.6713
+     ],
+     "normal": [
+      -0.4152,
+      -0.3489,
+      0.8402
+     ],
+     "r": 0.0634
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1597,
+      3.5592,
+      0.6713
+     ],
+     "normal": [
+      0.4152,
+      -0.3489,
+      0.8402
+     ],
+     "r": 0.0633,
+     "extent": [
+      0.1252,
+      0.1279
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#c43642",
+     "samples": 28,
+     "behind": "#a52d42"
+    },
+    "r": {
+     "pos": [
+      -0.1597,
+      3.5592,
+      0.6713
+     ],
+     "normal": [
+      -0.4152,
+      -0.3489,
+      0.8402
+     ],
+     "r": 0.0634,
+     "extent": [
+      0.1278,
+      0.1259
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#c43742",
+     "samples": 28,
+     "behind": "#a52d42"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Large:Idle_A 52/52 (original 52/52)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Small eye caps above the snout; anchors tilt downward (normal y -0.35)."
+  },
+  {
+   "id": "monster",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Monstrosity_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Monstrosity_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#7da6a4",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1634,
+      3.5034,
+      0.6046
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.055
+    },
+    "r": {
+     "pos": [
+      -0.1634,
+      3.5034,
+      0.6046
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.055
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1634,
+      3.5034,
+      0.6046
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.055,
+     "extent": [
+      0.1095,
+      0.1106
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#7da6a4",
+     "samples": 26,
+     "behind": "#a0bcb1"
+    },
+    "r": {
+     "pos": [
+      -0.1634,
+      3.5034,
+      0.6046
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.055,
+     "extent": [
+      0.1095,
+      0.1106
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#c8bda9",
+     "samples": 26,
+     "behind": "#c6b9a3"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Large:Idle_A 52/52 (original 52/52)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps are mirrored exactly although the face is asymmetric; surround differs per side: L #7da6a4 (stitched patch), R #c8bda9."
+  },
+  {
+   "id": "orcA",
+   "source": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcA.gltf@10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/character_orcA_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "character_orcAHead: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#6db335",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.3011,
+      1.1209,
+      0.4492
+     ],
+     "normal": [
+      0.5709,
+      -0.0003,
+      0.821
+     ],
+     "r": 0.0719
+    },
+    "r": {
+     "pos": [
+      -0.3011,
+      1.1209,
+      0.4492
+     ],
+     "normal": [
+      -0.5713,
+      -0.0003,
+      0.8208
+     ],
+     "r": 0.0721
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.3011,
+      1.1209,
+      0.4492
+     ],
+     "normal": [
+      0.5709,
+      -0.0003,
+      0.821
+     ],
+     "r": 0.0719,
+     "extent": [
+      0.1441,
+      0.1433
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#b65d29",
+     "samples": 26,
+     "behind": "#ff061e"
+    },
+    "r": {
+     "pos": [
+      -0.3011,
+      1.1209,
+      0.4492
+     ],
+     "normal": [
+      -0.5713,
+      -0.0003,
+      0.8208
+     ],
+     "r": 0.0721,
+     "extent": [
+      0.1402,
+      0.1481
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#6db335",
+     "samples": 26,
+     "behind": "#6db335"
+    }
+   },
+   "anchorParent": "node:character_orcAHead",
+   "bones": 0,
+   "bindCheck": "n/a (no skin)",
+   "glbCompare": {
+    "joints": [
+     0,
+     0
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "character_orcAHead"
+     ],
+     [
+      "character_orcAHead"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Legacy, no skin/armature: anchors are children of node character_orcAHead. No separate _eyes node in this file version; eyes are 66-face islands in the head mesh. The left eye sits in the red war-paint stripe (L surround #b65d29); skin given = R side #6db335. Source only found at 10a7fdce, not at 891eadf."
+  },
+  {
+   "id": "orcB",
+   "source": "media/3D_Assets/KayKit Legacy/Orc Warband - legacy/characters/gltf/character_orcB.gltf@10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/character_orcB_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "character_orcBHead: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#6db335",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.3016,
+      1.1251,
+      0.4489
+     ],
+     "normal": [
+      0.5711,
+      -0.0003,
+      0.8209
+     ],
+     "r": 0.0697
+    },
+    "r": {
+     "pos": [
+      -0.3016,
+      1.1251,
+      0.4489
+     ],
+     "normal": [
+      -0.5714,
+      -0.0003,
+      0.8207
+     ],
+     "r": 0.0695
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.3016,
+      1.1251,
+      0.4489
+     ],
+     "normal": [
+      0.5711,
+      -0.0003,
+      0.8209
+     ],
+     "r": 0.0697,
+     "extent": [
+      0.1367,
+      0.1421
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#6db335",
+     "samples": 26,
+     "behind": "#6db335"
+    },
+    "r": {
+     "pos": [
+      -0.3016,
+      1.1251,
+      0.4489
+     ],
+     "normal": [
+      -0.5714,
+      -0.0003,
+      0.8207
+     ],
+     "r": 0.0695,
+     "extent": [
+      0.1391,
+      0.139
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#6db335",
+     "samples": 26,
+     "behind": "#6db335"
+    }
+   },
+   "anchorParent": "node:character_orcBHead",
+   "bones": 0,
+   "bindCheck": "n/a (no skin)",
+   "glbCompare": {
+    "joints": [
+     0,
+     0
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "character_orcBHead"
+     ],
+     [
+      "character_orcBHead"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "As orcA (node character_orcBHead)."
+  },
+  {
+   "id": "hero",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": null,
+   "status": "none",
+   "class": "none",
+   "removed": [],
+   "uvRect": null,
+   "skin": null,
+   "anchors": null,
+   "bones": 23,
+   "bindCheck": null,
+   "notes": "Visor helmet, no eyes."
+  },
+  {
+   "id": "cleric",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Cleric_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Cleric_Head: 2 eye islands, 138 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f6bf9b",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727,
+     "extent": [
+      0.16,
+      0.1308
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f6bf9b",
+     "samples": 26,
+     "behind": "#f6c09d"
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072,
+     "extent": [
+      0.1294,
+      0.1585
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f6bf9a",
+     "samples": 26,
+     "behind": "#f6c09d"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eyes = 69-face caps; 108-face brows kept. One file for cleric and cleric_dark."
+  },
+  {
+   "id": "creepy",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Animatronic_Creepy_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Animatronic_Creepy_Head: 2 eye islands, 142 faces"
+   ],
+   "uvRect": null,
+   "skin": "#65b767",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.222,
+      1.5026,
+      0.4467
+     ],
+     "normal": [
+      0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.0546
+    },
+    "r": {
+     "pos": [
+      -0.2105,
+      1.6052,
+      0.449
+     ],
+     "normal": [
+      -0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.065
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.222,
+      1.5026,
+      0.4467
+     ],
+     "normal": [
+      0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.0546,
+     "extent": [
+      0.1229,
+      0.0953
+     ],
+     "faces": 76,
+     "normalFromSurface": "mirrored from r",
+     "surround": "#65b767",
+     "samples": 28,
+     "behind": "#8cc75f"
+    },
+    "r": {
+     "pos": [
+      -0.2105,
+      1.6052,
+      0.449
+     ],
+     "normal": [
+      -0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#9b5a45",
+     "samples": 26,
+     "behind": "#9b5a45"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Asymmetric on purpose: R eye = 66-face cap in the socket; L eye = 76-face dangling eye about 10 cm lower and 7 cm forward. Both removed, anchors not mirrored. The L cap normal pointed backward, so the L anchor normal is mirrored from R. L surround = green damage patch (#65b767). The metal bolt next to the L eye is kept."
+  },
+  {
+   "id": "normal",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Animatronic_Normal_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Animatronic_Normal_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#9b5a45",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2105,
+      1.6052,
+      0.449
+     ],
+     "normal": [
+      0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.065
+    },
+    "r": {
+     "pos": [
+      -0.2105,
+      1.6052,
+      0.449
+     ],
+     "normal": [
+      -0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.065
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2105,
+      1.6052,
+      0.449
+     ],
+     "normal": [
+      0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1297,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#9b5a45",
+     "samples": 26,
+     "behind": "#9b5a45"
+    },
+    "r": {
+     "pos": [
+      -0.2105,
+      1.6052,
+      0.449
+     ],
+     "normal": [
+      -0.2509,
+      -0.0056,
+      0.968
+     ],
+     "r": 0.065,
+     "extent": [
+      0.1298,
+      0.1302
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#9b5a45",
+     "samples": 26,
+     "behind": "#9b5a45"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps only; brows kept."
+  },
+  {
+   "id": "figure",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ActionFigure_NoEyes.glb",
+   "status": "done",
+   "class": "texture",
+   "removed": [],
+   "uvRect": {
+    "l": [
+     0.310546875,
+     0.7255859375,
+     0.3515625,
+     0.7890625
+    ],
+    "r": [
+     0.1474609375,
+     0.7255859375,
+     0.1884765625,
+     0.7890625
+    ]
+   },
+   "skin": "#f2bb98",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1851,
+      1.6259,
+      0.4167
+     ],
+     "normal": [
+      0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.0655
+    },
+    "r": {
+     "pos": [
+      -0.1874,
+      1.6256,
+      0.4157
+     ],
+     "normal": [
+      -0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.0654
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1851,
+      1.6259,
+      0.4167
+     ],
+     "normal": [
+      0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.0655,
+     "uvRect": [
+      0.310546875,
+      0.7255859375,
+      0.3515625,
+      0.7890625
+     ],
+     "surround": "#f2bb98"
+    },
+    "r": {
+     "pos": [
+      -0.1874,
+      1.6256,
+      0.4157
+     ],
+     "normal": [
+      -0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.0654,
+     "uvRect": [
+      0.1474609375,
+      0.7255859375,
+      0.1884765625,
+      0.7890625
+     ],
+     "surround": "#f2bb98"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "TEXTURE: eyes are painted in actionfigure_faces.png (4-expression atlas). In a copy, the two open eyes of head A (top-left) and head B (top-right) were filled with the row median of the surrounding skin; brows, nose, mouth and the closed-eye/laugh expressions (bottom half) untouched. A faint outline of the old oval stays visible up close. Image name kept: actionfigure_faces."
+  },
+  {
+   "id": "figure_headB",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/assets/gltf/ActionFigure_Head_B.gltf@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/ActionFigure_Head_B_NoEyes.glb",
+   "status": "done",
+   "class": "texture",
+   "removed": [],
+   "uvRect": {
+    "l": [
+     0.81640625,
+     0.734375,
+     0.845703125,
+     0.7802734375
+    ],
+    "r": [
+     0.6533203125,
+     0.734375,
+     0.6826171875,
+     0.7802734375
+    ]
+   },
+   "skin": "#f3bc99",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.185,
+      0.41,
+      0.4167
+     ],
+     "normal": [
+      0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.048
+    },
+    "r": {
+     "pos": [
+      -0.1873,
+      0.41,
+      0.4158
+     ],
+     "normal": [
+      -0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.048
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.185,
+      0.41,
+      0.4167
+     ],
+     "normal": [
+      0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.048,
+     "uvRect": [
+      0.81640625,
+      0.734375,
+      0.845703125,
+      0.7802734375
+     ],
+     "surround": "#f3bc99"
+    },
+    "r": {
+     "pos": [
+      -0.1873,
+      0.41,
+      0.4158
+     ],
+     "normal": [
+      -0.3823,
+      0.0436,
+      0.923
+     ],
+     "r": 0.048,
+     "uvRect": [
+      0.6533203125,
+      0.734375,
+      0.6826171875,
+      0.7802734375
+     ],
+     "surround": "#f3bc99"
+    }
+   },
+   "anchorParent": "node:ActionFigure_Head_B",
+   "bones": 0,
+   "bindCheck": "n/a (no skin)",
+   "glbCompare": {
+    "joints": [
+     0,
+     0
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "ActionFigure_Head_B"
+     ],
+     [
+      "ActionFigure_Head_B"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Swap head ActionFigure_Head_B.gltf: same painted-texture copy. No skin; anchors are children of the root node ActionFigure_Head_B."
+  },
+  {
+   "id": "marksman",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2026 - Marksman/Marksman.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": null,
+   "status": "none",
+   "class": "none",
+   "removed": [],
+   "uvRect": null,
+   "skin": null,
+   "anchors": null,
+   "bones": 23,
+   "bindCheck": null,
+   "notes": "Eyes exist (66-face caps) but are fully covered by night-vision goggles and face net: not visible, so none, no file."
+  },
+  {
+   "id": "hoarder",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/Hoarder.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Hoarder_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Hoarder_Head: 2 eye islands, 138 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f6c19d",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727,
+     "extent": [
+      0.16,
+      0.1308
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#597a96",
+     "samples": 26,
+     "behind": "#f6c19d"
+    },
+    "r": {
+     "pos": [
+      -0.2056,
+      1.6115,
+      0.4308
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072,
+     "extent": [
+      0.1294,
+      0.1585
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#597a96",
+     "samples": 26,
+     "behind": "#f6c19d"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eyes = 69-face caps. The blue face mask sits right under the eyes (ring median #597a96); skin given = surface behind the eye #f6c19d."
+  },
+  {
+   "id": "plant",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/PlantWarrior.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/PlantWarrior_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "PlantWarrior_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#030505",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2095,
+      1.6052,
+      0.373
+     ],
+     "normal": [
+      0.318,
+      -0.0051,
+      0.9481
+     ],
+     "r": 0.0648
+    },
+    "r": {
+     "pos": [
+      -0.2095,
+      1.6052,
+      0.373
+     ],
+     "normal": [
+      -0.318,
+      -0.0051,
+      0.9481
+     ],
+     "r": 0.0648
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2095,
+      1.6052,
+      0.373
+     ],
+     "normal": [
+      0.318,
+      -0.0051,
+      0.9481
+     ],
+     "r": 0.0648,
+     "extent": [
+      0.1293,
+      0.1299
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#030505",
+     "samples": 26,
+     "behind": "#040505"
+    },
+    "r": {
+     "pos": [
+      -0.2095,
+      1.6052,
+      0.373
+     ],
+     "normal": [
+      -0.318,
+      -0.0051,
+      0.9481
+     ],
+     "r": 0.0648,
+     "extent": [
+      0.1292,
+      0.13
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#0a0d0e",
+     "samples": 26,
+     "behind": "#0c1011"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "White eye caps on a black face (like Mummy_A); skin = the black face."
+  },
+  {
+   "id": "gtn",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": null,
+   "status": "none",
+   "class": "none",
+   "removed": [],
+   "uvRect": null,
+   "skin": null,
+   "anchors": null,
+   "bones": 23,
+   "bindCheck": null,
+   "notes": "Robot with a lens/display, no eyes."
+  },
+  {
+   "id": "gtn_forgotten",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": null,
+   "status": "none",
+   "class": "none",
+   "removed": [],
+   "uvRect": null,
+   "skin": null,
+   "anchors": null,
+   "bones": 23,
+   "bindCheck": null,
+   "notes": "As gtn."
+  },
+  {
+   "id": "hiker",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Hiker_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Hiker_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f5b891",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f5b891",
+     "samples": 26,
+     "behind": "#f5b993"
+    },
+    "r": {
+     "pos": [
+      -0.2151,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f5b891",
+     "samples": 26,
+     "behind": "#f5b993"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps only."
+  },
+  {
+   "id": "prot_a",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Protagonist_A_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Protagonist_A_Head: 2 eye islands, 138 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f5bd98",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.1918,
+      1.612,
+      0.4411
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727
+    },
+    "r": {
+     "pos": [
+      -0.1918,
+      1.612,
+      0.4411
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.1918,
+      1.612,
+      0.4411
+     ],
+     "normal": [
+      0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.0727,
+     "extent": [
+      0.16,
+      0.1308
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f5bd98",
+     "samples": 26,
+     "behind": "#f6be9a"
+    },
+    "r": {
+     "pos": [
+      -0.1918,
+      1.612,
+      0.4411
+     ],
+     "normal": [
+      -0.4409,
+      0.0052,
+      0.8975
+     ],
+     "r": 0.072,
+     "extent": [
+      0.1294,
+      0.1585
+     ],
+     "faces": 69,
+     "normalFromSurface": false,
+     "surround": "#f5bd98",
+     "samples": 26,
+     "behind": "#f6be9a"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eyes = 69-face caps behind glasses; glasses kept."
+  },
+  {
+   "id": "prot_b",
+   "source": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_B.glb@891eadf01e218f5fc21387e64cea1fec8332c5b6",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Protagonist_B_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "Protagonist_B_Head: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#f6bf9b",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f6bf9b",
+     "samples": 26,
+     "behind": "#f6c09c"
+    },
+    "r": {
+     "pos": [
+      -0.2036,
+      1.6064,
+      0.435
+     ],
+     "normal": [
+      -0.4152,
+      -0.0003,
+      0.9097
+     ],
+     "r": 0.0649,
+     "extent": [
+      0.1292,
+      0.1305
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#f6bf9b",
+     "samples": 26,
+     "behind": "#f6c09c"
+    }
+   },
+   "anchorParent": "bone:head",
+   "bones": 23,
+   "bindCheck": "Rig_Medium:Idle_A 69/69 (original 69/69)",
+   "glbCompare": {
+    "joints": [
+     23,
+     23
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "head"
+     ],
+     [
+      "head"
+     ]
+    ],
+    "anims": [
+     0,
+     0
+    ]
+   },
+   "notes": "Eye caps; 94-face brows kept."
+  },
+  {
+   "id": "pete",
+   "source": "media/3D_Assets/KayKit Legacy/KayKit Character Animations 1.2 - legacy/Animations/gltf/KayKit_AnimatedCharacter_v1.2.glb@10a7fdce6b3a1ae22504ade71b7dbec5f25e0ff0",
+   "out": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/KayKit_AnimatedCharacter_v1.2_NoEyes.glb",
+   "status": "done",
+   "class": "island",
+   "removed": [
+    "PrototypePete: 2 eye islands, 132 faces"
+   ],
+   "uvRect": null,
+   "skin": "#ffa60a",
+   "anchors": {
+    "l": {
+     "pos": [
+      0.2923,
+      1.1102,
+      0.4502
+     ],
+     "normal": [
+      0.571,
+      -0.0003,
+      0.8209
+     ],
+     "r": 0.0738
+    },
+    "r": {
+     "pos": [
+      -0.2923,
+      1.1102,
+      0.4502
+     ],
+     "normal": [
+      -0.5713,
+      -0.0003,
+      0.8207
+     ],
+     "r": 0.0738
+    }
+   },
+   "anchorDetail": {
+    "l": {
+     "pos": [
+      0.2923,
+      1.1102,
+      0.4502
+     ],
+     "normal": [
+      0.571,
+      -0.0003,
+      0.8209
+     ],
+     "r": 0.0738,
+     "extent": [
+      0.1461,
+      0.1491
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#ffa60a",
+     "samples": 26,
+     "behind": "#ffa60a"
+    },
+    "r": {
+     "pos": [
+      -0.2923,
+      1.1102,
+      0.4502
+     ],
+     "normal": [
+      -0.5713,
+      -0.0003,
+      0.8207
+     ],
+     "r": 0.0738,
+     "extent": [
+      0.1461,
+      0.1491
+     ],
+     "faces": 66,
+     "normalFromSurface": false,
+     "surround": "#ffa60a",
+     "samples": 26,
+     "behind": "#ffa60a"
+    }
+   },
+   "anchorParent": "bone:Head",
+   "bones": 6,
+   "bindCheck": "own:Idle 16/16 (original 16/16)",
+   "glbCompare": {
+    "joints": [
+     6,
+     6
+    ],
+    "jointOrderSame": true,
+    "bindPoseDiff": [],
+    "meshMissing": [],
+    "meshExtra": [],
+    "materialSame": true,
+    "anchors": [
+     "eye_anchor.l",
+     "eye_anchor.r"
+    ],
+    "anchorParents": [
+     [
+      "Head"
+     ],
+     [
+      "Head"
+     ]
+    ],
+    "anims": [
+     30,
+     30
+    ]
+   },
+   "notes": "Prototype puppet: eyes are two raised 66-face bumps in body colour. Removed; anchors on bone Head (6-bone legacy rig). Bind check with its own Idle clip. Brief expected none; Georg decides."
+  }
+ ]
+}

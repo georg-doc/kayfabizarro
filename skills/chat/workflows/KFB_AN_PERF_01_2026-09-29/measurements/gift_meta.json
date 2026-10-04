@@ -1,0 +1,114 @@
+{
+ "Rig_Medium": {
+  "hipsHeight": 0.387,
+  "armLength": 0.67,
+  "boxHalfWidth": 0.28,
+  "offerPointFromHips": [
+   0.055,
+   -0.662,
+   1.007
+  ],
+  "contacts": {
+   "give": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.6,
+     "maxLiftCm": 0.2
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.5,
+     "maxLiftCm": 0.3
+    }
+   },
+   "receive": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.6,
+     "maxLiftCm": 0.2
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.5,
+     "maxLiftCm": 0.3
+    }
+   }
+  }
+ },
+ "Rig_Large": {
+  "hipsHeight": 0.993,
+  "armLength": 1.609,
+  "boxHalfWidth": 1.046,
+  "offerPointFromHips": [
+   0.137,
+   -1.597,
+   2.432
+  ],
+  "contacts": {
+   "give": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.3,
+     "maxLiftCm": 0.1
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.3,
+     "maxLiftCm": 0.0
+    }
+   },
+   "receive": {
+    "foot.l": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.3,
+     "maxLiftCm": 0.1
+    },
+    "foot.r": {
+     "planted": [
+      [
+       1,
+       90
+      ]
+     ],
+     "maxSlideInPlantCm": 0.3,
+     "maxLiftCm": 0.0
+    }
+   }
+  }
+ }
+}

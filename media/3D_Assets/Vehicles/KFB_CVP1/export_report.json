@@ -1,0 +1,205 @@
+{
+ "sedan": {
+  "bodyHex": "#2A1690",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "interior": 13,
+   "chrome": 12,
+   "body": 9,
+   "glass": 8,
+   "lamp": 4,
+   "rear": 4,
+   "tyre": 4
+  },
+  "bytes": 159232,
+  "openable": [
+   "DoorFL",
+   "DoorFR",
+   "DoorRL",
+   "DoorRR",
+   "Hood",
+   "Trunk",
+   "TrunkInter"
+  ]
+ },
+ "hatchback": {
+  "bodyHex": "#F5B928",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "interior": 13,
+   "chrome": 14,
+   "body": 5,
+   "rear": 2,
+   "lamp": 2,
+   "glass": 9,
+   "tyre": 4
+  },
+  "bytes": 133600,
+  "openable": [
+   "DoorL",
+   "DoorR",
+   "Hood",
+   "Trunk"
+  ]
+ },
+ "estate": {
+  "bodyHex": "#F8C24E",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "interior": 13,
+   "chrome": 18,
+   "body": 7,
+   "rear": 2,
+   "lamp": 2,
+   "glass": 10,
+   "tyre": 4
+  },
+  "bytes": 168092,
+  "openable": [
+   "DoorFL",
+   "DoorFR",
+   "DoorRL",
+   "DoorRR",
+   "Hood",
+   "Trunk"
+  ]
+ },
+ "cabrio": {
+  "bodyHex": "#D73800",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [
+   "C4D Animation Take"
+  ],
+  "parts": {
+   "interior": 13,
+   "chrome": 14,
+   "body": 4,
+   "glass": 7,
+   "rear": 2,
+   "lamp": 2,
+   "tyre": 4
+  },
+  "bytes": 147548,
+  "openable": [
+   "DoorL",
+   "DoorR",
+   "Hood"
+  ]
+ },
+ "sportster": {
+  "bodyHex": "#C8D432",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "interior": 13,
+   "body": 16,
+   "chrome": 7,
+   "glass": 7,
+   "lamp": 4,
+   "rear": 2,
+   "tyre": 4
+  },
+  "bytes": 154576,
+  "openable": [
+   "DoorL",
+   "DoorR",
+   "Hood"
+  ]
+ },
+ "pickup": {
+  "bodyHex": "#E64C00",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "body": 6,
+   "interior": 10,
+   "chrome": 12,
+   "rear": 2,
+   "lamp": 4,
+   "glass": 7,
+   "tyre": 4
+  },
+  "bytes": 119864,
+  "openable": [
+   "DoorL",
+   "DoorR",
+   "Hood"
+  ]
+ },
+ "transporter": {
+  "bodyHex": "#8A64A0",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "interior": 11,
+   "chrome": 17,
+   "body": 10,
+   "rear": 2,
+   "lamp": 2,
+   "glass": 7,
+   "tyre": 4
+  },
+  "bytes": 143416,
+  "openable": [
+   "DoorBackL",
+   "DoorBackR",
+   "DoorL",
+   "DoorR",
+   "Hood"
+  ]
+ },
+ "transporterWindow": {
+  "bodyHex": "#8A64A0",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "interior": 11,
+   "chrome": 17,
+   "body": 11,
+   "rear": 2,
+   "lamp": 2,
+   "glass": 8,
+   "tyre": 4
+  },
+  "bytes": 148236,
+  "openable": [
+   "DoorBackL",
+   "DoorBackR",
+   "DoorL",
+   "DoorR",
+   "Hood"
+  ]
+ },
+ "truck": {
+  "bodyHex": "#FF8A75",
+  "glassHex": "#8CCBF0",
+  "glassAlpha": 0.45,
+  "actions": [],
+  "parts": {
+   "body": 11,
+   "interior": 10,
+   "chrome": 11,
+   "body2": 5,
+   "glass": 5,
+   "lamp": 4,
+   "rear": 2,
+   "tyre": 4
+  },
+  "bytes": 157028,
+  "openable": [
+   "DoorL",
+   "DoorR"
+  ]
+ }
+}

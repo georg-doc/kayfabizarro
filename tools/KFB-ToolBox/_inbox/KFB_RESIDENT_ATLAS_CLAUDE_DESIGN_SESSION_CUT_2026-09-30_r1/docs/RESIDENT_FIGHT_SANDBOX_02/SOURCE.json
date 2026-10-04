@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "RESIDENT-FIGHT-SANDBOX-02",
+  "date": "2026-09-30",
+  "owner": "Resident Atlas / Resident Scenery Claude Design project",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "georg-doc-patch-3",
+  "brief": "skills/chat/workflows/RESIDENT_FIGHT_SANDBOX_02_2026-09-30/START_HERE.md",
+  "briefFiles": ["START_HERE.md", "RETURN.md", "SOURCE.json"],
+  "inputs": {
+    "fightData": { "path": "media/3D_Assets/Animations/KFB_Motion_Library/fight/KFB_Fight_Cartoon_Contact.json", "schema": "kfb.fight-cartoon-contact/0.2", "version": "2026-09-30", "bytes": 38868, "use": "only fight data source" },
+    "proofImage": "media/3D_Assets/Animations/KFB_Motion_Library/fight/proof_cartoon_contact.png",
+    "catalog": { "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json", "version": "2026-09-29b", "use": "clip -> GLB, facingYawDeg (dust cloud only)" },
+    "libs": "media/3D_Assets/Animations/KFB_Motion_Library/libs/{Rig_Medium,Rig_Large}/*.glb (raw @ georg-doc-patch-3)",
+    "actors": "Orc Raider / Orc Brute @ 891eadf0 (unchanged from 01)",
+    "prop": "KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/clown_hammer.gltf @ 891eadf0",
+    "notRead": "fight/KFB_Fight_Combos.json (0.1)"
+  },
+  "outputs": {
+    "page": "KFB_Resident_Atlas_S15.html#__fight",
+    "module": "lib/fight-sandbox-02.js",
+    "data": "data/fight-sandbox-02.json",
+    "return": "docs/RESIDENT_FIGHT_SANDBOX_02/RETURN.md",
+    "sessionCut": "docs/RESIDENT_FIGHT_SANDBOX_02/SESSION_CUT.md",
+    "screenshots": [
+      "screenshots/s15_fight02/s15_hitstop_headbutt_1_Raider-vs-Raider.png",
+      "screenshots/s15_fight02/s15_hitstop_headbutt_2_Raider-attacks-Brute.png",
+      "screenshots/s15_fight02/s15_hitstop_headbutt_3_Brute-attacks-Raider.png",
+      "screenshots/s15_fight02/s15_hitstop_headbutt_4_Brute-vs-Brute.png",
+      "screenshots/s15_fight02/s15_hitstop_sheet_v2.png"
+    ]
+  },
+  "counts": { "attacks": 17, "reactions": 9, "table": 68, "proofSet": 6, "clips": 33 },
+  "acceptance": { "1": "pass", "2": "pass 21/21", "3": "pass 16/16 after one repair (knockback lock); raw 0/16", "4": "pass 16/16", "5": "pass", "6": "pass" },
+  "unchanged": ["KFB_Resident_Atlas_S14.html", "KFB_Resident_Atlas_S13.html", "lib/fight-sandbox.js", "Motion Library files", "catalog"],
+  "libraryChanged": false,
+  "pinNote": "Pinned by branch ref; the commit sha was not resolved in this pass.",
+  "stage": null
+}

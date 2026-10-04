@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "RESIDENT-FIGHT-SANDBOX-03",
+  "date": "2026-09-30",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "georg-doc-patch-3",
+  "owner": "Resident Atlas / Resident Scenery Claude Design project",
+  "dataProducer": "Blender MCP chat (headless bpy 5.0.1)",
+  "predecessor": "skills/chat/workflows/RESIDENT_FIGHT_SANDBOX_02_2026-09-30/",
+  "inputs": {
+    "catalog": {"path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json", "version": "2026-09-29b"},
+    "fight02": "media/3D_Assets/Animations/KFB_Motion_Library/fight/KFB_Fight_Cartoon_Contact.json",
+    "prop": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/assets/gltf/clown_hammer.gltf",
+    "residentSessionCut": "KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1 (lib/fight-sandbox-02.js, docs/RESIDENT_FIGHT_SANDBOX_02/GEORG_FEEDBACK_2026-09-30.md)"
+  },
+  "outputs": {
+    "fightData": "media/3D_Assets/Animations/KFB_Motion_Library/fight/KFB_Fight_Cartoon_Contact_03.json",
+    "proofs": [
+      "media/3D_Assets/Animations/KFB_Motion_Library/fight/proof_facing_lift.png",
+      "media/3D_Assets/Animations/KFB_Motion_Library/fight/proof_prop_hit.png",
+      "media/3D_Assets/Animations/KFB_Motion_Library/fight/lying_options.png"
+    ],
+    "brief": "skills/chat/workflows/RESIDENT_FIGHT_SANDBOX_03_2026-09-30/START_HERE.md"
+  },
+  "libraryChanged": false,
+  "stage": null
+}

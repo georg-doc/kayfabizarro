@@ -1,0 +1,11 @@
+--- tunnel-clay.tc1.orig.js	2026-09-30 22:33:29.640260968 +0200
++++ tunnel-clay.tc1.fix1.js	2026-09-30 23:04:53.965666652 +0200
+@@ -100,7 +100,7 @@
+       // ---------- Röhre: Module mit leichtem Kissenbauch, Innenwand ----------
+       for (let m = 0; m < nMod; m++) {
+         const mi = ids.filter(i => modOf(i) === m || (modOf(i) === m + 1 && S[i].s - s0 <= (m + 1) * mLen + 4 * td.ds + 0.01)); if (mi.length < 2) continue;
+-        const rough = look === 'mine' ? 0.22 : 0.08, rows = mi.map(i => { const f = F(i), u = (S[i].s - s0 - m * mLen) / mLen, belly = 0.16 * Math.sin(Math.PI * Math.min(1, Math.max(0, u)));
++        const rough = look === 'mine' ? 0.22 : 0.08, rows = mi.map(i => { const f = F(i), belly = 0.16 * Math.abs(Math.sin(Math.PI * (S[i].s - s0) / mLen));   /* FIX (Coworker 30.09): belly as a continuous function of s; the per-module u gave the shared joint row two different offsets (step = slit at every joint) */
+           return O.P.map((p, j) => { const d = belly + rough * (0.5 + 0.5 * hn(p[0] * 0.6, p[1] * 0.6, S[i].s * 0.35)); /* nur nach außen: Wand weicht zwischen den Stößen zurück, nie in den Core-Ring */ return W(f, p[0] + O.N[j][0] * d, p[1] + O.N[j][1] * d); }); });
+         const wk = kit.interior === 'bands' ? mats.band[m % 2] : mats.wall;
+         if (m === 0) O.P.forEach((p, j) => { const d = sdHull(H, p[0], p[1]); if (d < clr) { clr = d; clrAt = 'Innenwand'; } });

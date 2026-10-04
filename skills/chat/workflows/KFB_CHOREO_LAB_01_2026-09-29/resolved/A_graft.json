@@ -1,0 +1,61 @@
+{
+ "metric": "torso lean in degrees: angle of the hips->head-base line from vertical, forward positive; mean, min, max over the clip (every 5th frame), Rig_Medium",
+ "values": {
+  "standing reference kfb_idle_breathing_a": [
+   -0.5,
+   -2.2,
+   1.4
+  ],
+  "kfb_talk_sitting_a": {
+   "seated original": [
+    2.5,
+    -3.9,
+    6.9
+   ],
+   "graft keep lean": [
+    11.2,
+    6.2,
+    16.9
+   ],
+   "graft upright": [
+    4.9,
+    -0.1,
+    10.6
+   ]
+  },
+  "kfb_talk_meeting_a": {
+   "seated original": [
+    -10.2,
+    -21.9,
+    19.2
+   ],
+   "graft keep lean": [
+    14.1,
+    10.1,
+    21.5
+   ],
+   "graft upright": [
+    6.2,
+    2.2,
+    13.6
+   ]
+  },
+  "kfb_throw_dice_a": {
+   "seated original": [
+    6.3,
+    3.3,
+    10.4
+   ],
+   "graft keep lean": [
+    3.9,
+    2.8,
+    5.5
+   ],
+   "graft upright": [
+    1.5,
+    0.4,
+    3.2
+   ]
+  }
+ }
+}

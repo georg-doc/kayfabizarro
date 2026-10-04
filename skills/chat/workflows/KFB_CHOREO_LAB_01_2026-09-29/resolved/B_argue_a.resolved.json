@@ -1,0 +1,122 @@
+{
+ "id": "argue_a",
+ "stage": {
+  "A": {
+   "pos": [
+    0,
+    0
+   ],
+   "yawDeg": 93.5,
+   "auto": null
+  },
+  "B": {
+   "pos": [
+    1.9,
+    0
+   ],
+   "yawDeg": 273.5,
+   "auto": null
+  }
+ },
+ "tracks": {
+  "A": [
+   {
+    "clip": "kfb_talk_arguing_a",
+    "start": 0,
+    "end": 240,
+    "loc": [
+     -0.009,
+     -0.003
+    ]
+   },
+   {
+    "clip": "kfb_gesture_pointing_a",
+    "start": 240,
+    "end": 346,
+    "loc": [
+     0.013,
+     0.0
+    ]
+   },
+   {
+    "clip": "kfb_gesture_angry_gesture_a",
+    "start": 346,
+    "end": 445,
+    "loc": [
+     -0.009,
+     -0.003
+    ]
+   }
+  ],
+  "B": [
+   {
+    "clip": "kfb_talk_arguing_b",
+    "start": 0,
+    "end": 262,
+    "loc": [
+     1.869,
+     -0.048
+    ]
+   },
+   {
+    "clip": "kfb_gesture_dismissing_gesture_a",
+    "start": 262,
+    "end": 330,
+    "loc": [
+     1.909,
+     0.003
+    ]
+   },
+   {
+    "clip": "kfb_gesture_yelling_a",
+    "start": 330,
+    "end": 573,
+    "loc": [
+     1.901,
+     -0.003
+    ]
+   }
+  ]
+ },
+ "events": [
+  {
+   "type": "bubble",
+   "actor": "A",
+   "_t": 60
+  },
+  {
+   "type": "bubble",
+   "actor": "B",
+   "_t": 125
+  },
+  {
+   "type": "bubble",
+   "actor": "A",
+   "_t": 255
+  },
+  {
+   "type": "bubble",
+   "actor": "B",
+   "_t": 345
+  },
+  {
+   "type": "bubble",
+   "actor": "A",
+   "_t": 380
+  }
+ ],
+ "shots": [
+  60,
+  125,
+  255,
+  285,
+  345,
+  400
+ ],
+ "stretch": [],
+ "spacing": [],
+ "segmentNotes": {
+  "A": {},
+  "B": {}
+ }
+}

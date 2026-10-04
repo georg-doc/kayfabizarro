@@ -1,0 +1,200 @@
+{
+ "schema": "kfb.choreo.v0",
+ "id": "brawl_a",
+ "title": "Cartoon brawl: jab series, hook back, uppercut knockout, taunt, get up, fume",
+ "fps": 30,
+ "actors": {
+  "A": {
+   "rig": "Rig_Medium",
+   "role": "fighter"
+  },
+  "B": {
+   "rig": "Rig_Medium",
+   "role": "fighter"
+  }
+ },
+ "stage": {
+  "A": {
+   "pos": [
+    0,
+    0
+   ],
+   "face": "B"
+  },
+  "B": {
+   "pos": [
+    "auto:reach",
+    0
+   ],
+   "face": "A",
+   "reachFrom": {
+    "actor": "A",
+    "segment": 1
+   }
+  }
+ },
+ "props": [],
+ "tracks": {
+  "A": [
+   {
+    "start": 0,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   },
+   {
+    "start": 40,
+    "base": "kfb_action_quad_punch_a"
+   },
+   {
+    "start": 106,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   },
+   {
+    "start": {
+     "event": "hit2",
+     "align": "reactHit"
+    },
+    "base": "kfb_reaction_taking_punch_a",
+    "out": "reactHit+30"
+   },
+   {
+    "start": 195,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   },
+   {
+    "start": 210,
+    "base": "kfb_action_punching_b"
+   },
+   {
+    "start": 247,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   },
+   {
+    "start": 300,
+    "base": "kfb_gesture_taunt_a",
+    "loop": true
+   },
+   {
+    "start": 480,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   }
+  ],
+  "B": [
+   {
+    "start": 0,
+    "base": "kfb_action_boxing_a",
+    "in": 20,
+    "loop": true
+   },
+   {
+    "start": {
+     "event": "hit1",
+     "align": "reactHit"
+    },
+    "base": "kfb_reaction_taking_punch_a",
+    "out": "reactHit+30"
+   },
+   {
+    "start": 110,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   },
+   {
+    "start": 130,
+    "base": "kfb_action_hook_punch_b"
+   },
+   {
+    "start": 196,
+    "base": "kfb_action_boxing_a",
+    "loop": true
+   },
+   {
+    "start": {
+     "event": "hit3",
+     "align": "reactHit"
+    },
+    "base": "kfb_reaction_surprise_uppercut_a",
+    "holdEnd": 70,
+    "in": 30
+   },
+   {
+    "start": "afterPrev",
+    "base": "kfb_reaction_getting_up_a",
+    "anchor": "continue"
+   },
+   {
+    "start": "afterPrev",
+    "base": "kfb_gesture_angry_gesture_a",
+    "loop": true,
+    "anchor": "continue"
+   }
+  ]
+ },
+ "events": [
+  {
+   "id": "hit1",
+   "type": "strike",
+   "actor": "A",
+   "segment": 1,
+   "at": "strike",
+   "fx": [
+    "hitstop:4",
+    "burst"
+   ]
+  },
+  {
+   "id": "hit2",
+   "type": "strike",
+   "actor": "B",
+   "segment": 3,
+   "at": "strike",
+   "fx": [
+    "hitstop:4",
+    "burst"
+   ]
+  },
+  {
+   "id": "hit3",
+   "type": "strike",
+   "actor": "A",
+   "segment": 5,
+   "at": "strike",
+   "fx": [
+    "hitstop:8",
+    "burst",
+    "shake"
+   ]
+  },
+  {
+   "after": "B.segment5.end",
+   "type": "stars",
+   "actor": "B",
+   "duration": 70
+  },
+  {
+   "t": 305,
+   "type": "bubble",
+   "actor": "A",
+   "text": "HA!"
+  },
+  {
+   "after": "B.segment7.start+20",
+   "type": "bubble",
+   "actor": "B",
+   "text": "#@%!"
+  }
+ ],
+ "shots": [
+  "hit1",
+  "hit2",
+  "hit3",
+  "B.segment5.end+20",
+  "B.segment6.start+110",
+  "B.segment7.start+25"
+ ],
+ "notes": "Reactions start so that their own impact frame lands on the attacker's strike frame. Distance comes from the attacker's reach at the strike frame."
+}

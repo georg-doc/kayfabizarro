@@ -1,0 +1,136 @@
+{
+ "model": "FB_TEMPLATE_LOOK_v5.glb",
+ "lidTilt": "level",
+ "units": "m, deg; R = eyeball radius",
+ "R": 0.12,
+ "U": 0.4707,
+ "anchor": {
+  "dx": 0.455,
+  "dy": 0.21,
+  "ring": 0.255,
+  "track": 0.1
+ },
+ "oval": {
+  "w": 1.06,
+  "h": 1.04,
+  "d": 0.98,
+  "tilt": -25
+ },
+ "dxSweep": [
+  {
+   "dx": 0.345,
+   "yawOutDeg": [
+    21.43,
+    21.42
+   ],
+   "pitchUpDeg": [
+    10.82,
+    10.83
+   ]
+  },
+  {
+   "dx": 0.4,
+   "yawOutDeg": [
+    25.16,
+    25.22
+   ],
+   "pitchUpDeg": [
+    11.1,
+    11.14
+   ]
+  },
+  {
+   "dx": 0.455,
+   "yawOutDeg": [
+    28.87,
+    28.78
+   ],
+   "pitchUpDeg": [
+    11.42,
+    11.48
+   ]
+  },
+  {
+   "dx": 0.52,
+   "yawOutDeg": [
+    33.37,
+    33.46
+   ],
+   "pitchUpDeg": [
+    11.84,
+    11.87
+   ]
+  }
+ ],
+ "turn": [
+  {
+   "turn": 0,
+   "yawOutDeg": [
+    28.87,
+    28.78
+   ]
+  },
+  {
+   "turn": 10,
+   "yawOutDeg": [
+    38.87,
+    38.78
+   ]
+  },
+  {
+   "turn": 20,
+   "yawOutDeg": [
+    48.87,
+    48.78
+   ]
+  }
+ ],
+ "combos": {
+  "hinge+round": {
+   "closedScleraPx": {
+    "front": 0,
+    "three_q": 0
+   },
+   "maxCornerGapR": 0.0,
+   "cornerSdistRangeM": [
+    -0.0128,
+    -0.01
+   ]
+  },
+  "hinge+cut": {
+   "closedScleraPx": {
+    "front": 0,
+    "three_q": 0
+   },
+   "maxCornerGapR": 0.0,
+   "cornerSdistRangeM": [
+    -0.0128,
+    -0.01
+   ]
+  },
+  "slide+round": {
+   "closedScleraPx": {
+    "front": 0,
+    "three_q": 0
+   },
+   "maxRimLatSpreadDeg": 5e-06,
+   "maxFrontRimYSpreadR": 0.02029,
+   "rimSideSdistRangeM": [
+    -0.0225,
+    -0.0093
+   ]
+  },
+  "slide+cut": {
+   "closedScleraPx": {
+    "front": 0,
+    "three_q": 0
+   },
+   "maxRimLatSpreadDeg": 5e-06,
+   "maxFrontRimYSpreadR": 0.02029,
+   "rimSideSdistRangeM": [
+    -0.0225,
+    -0.0093
+   ]
+  }
+ }
+}

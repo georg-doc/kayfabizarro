@@ -1,0 +1,31 @@
+{
+ "schema": "kfb.choreo.v0",
+ "id": "gift_a",
+ "title": "Gift handover: carry in, pass over, box pops, surreal object, puzzled look",
+ "fps": 30,
+ "actors": {"A": {"rig": "Rig_Medium", "role": "giver"}, "B": {"rig": "Rig_Medium", "role": "receiver"}},
+ "stage": {"A": {"pos": [0, 0], "face": "B"}, "B": {"pos": ["auto:handover", 0], "face": "A"}},
+ "props": [{"id": "gift", "kind": "giftBox", "sizeClass": "M", "dims": [0.42, 0.34, 0.30], "hold": "twoHands", "owner": "A", "contents": "surreal_01"}],
+ "tracks": {
+  "A": [
+   {"start": 0, "base": "kfb_locomotion_walk_to_stop_a", "arms": "kfb_locomotion_jogging_with_box_a", "armsLoop": true, "anchor": "endAtStage"},
+   {"start": 148, "base": "kfb_idle_breathing_a", "arms": "kfb_locomotion_jogging_with_box_a", "armsLoop": true, "loop": true},
+   {"start": 180, "base": "kfb_idle_happy_a", "loop": true},
+   {"start": 215, "base": "kfb_gesture_cheering_a", "loop": true}
+  ],
+  "B": [
+   {"start": 0, "base": "kfb_idle_breathing_a", "loop": true},
+   {"start": 178, "base": "kfb_idle_breathing_a", "arms": "kfb_locomotion_jogging_with_box_a", "armsLoop": true, "loop": true},
+   {"start": 215, "base": "kfb_idle_breathing_a", "upper": "kfb_gesture_thoughtful_head_shake_a", "upperBones": "torso", "arms": "kfb_locomotion_jogging_with_box_a", "armsLoop": true, "loop": true}
+  ]
+ },
+ "events": [
+  {"t": 178, "type": "handover", "prop": "gift", "from": "A", "to": "B", "fx": "squash"},
+  {"t": 198, "type": "open", "prop": "gift", "lid": "pop", "duration": 12},
+  {"t": 200, "type": "reveal", "prop": "gift", "item": "surreal_01", "rise": 0.7, "duration": 25},
+  {"t": 240, "type": "bubble", "actor": "B", "text": "?!"},
+  {"t": 262, "type": "bubble", "actor": "A", "text": "♥"}
+ ],
+ "shots": [40, 150, 179, 206, 245, 270],
+ "notes": "No give/receive clip exists yet; the handover is a hand-socket swap with a squash. Carry pose = arms layer from jogging_with_box on any legs."
+}

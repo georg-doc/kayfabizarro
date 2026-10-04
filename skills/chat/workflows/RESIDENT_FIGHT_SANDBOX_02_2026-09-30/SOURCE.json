@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "RESIDENT-FIGHT-SANDBOX-02",
+  "date": "2026-09-30",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "georg-doc-patch-3",
+  "owner": "Resident Atlas / Resident Scenery Claude Design project",
+  "dataProducer": "Blender MCP chat (headless bpy 5.0.1)",
+  "predecessor": "skills/chat/workflows/RESIDENT_FIGHT_SANDBOX_01_2026-09-29/",
+  "inputs": {
+    "catalog": {"path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json", "version": "2026-09-29b"},
+    "libs": "media/3D_Assets/Animations/KFB_Motion_Library/libs/{Rig_Medium,Rig_Large}/*.glb",
+    "fight01": "media/3D_Assets/Animations/KFB_Motion_Library/fight/KFB_Fight_Combos.json (reference only)"
+  },
+  "outputs": {
+    "fightData": "media/3D_Assets/Animations/KFB_Motion_Library/fight/KFB_Fight_Cartoon_Contact.json",
+    "proof": "media/3D_Assets/Animations/KFB_Motion_Library/fight/proof_cartoon_contact.png",
+    "brief": "skills/chat/workflows/RESIDENT_FIGHT_SANDBOX_02_2026-09-30/START_HERE.md"
+  },
+  "counts": {"attacks": 17, "reactions": 9, "table": 68, "proofSet": 6},
+  "libraryChanged": false,
+  "stage": null
+}

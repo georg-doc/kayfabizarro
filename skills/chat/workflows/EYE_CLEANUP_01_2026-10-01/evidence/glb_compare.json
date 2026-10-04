@@ -1,0 +1,106 @@
+{
+ "Mummy_A": {
+  "joints": 23,
+  "jointOrderSame": true,
+  "ibmMaxDelta": 8.344650268554688e-07,
+  "jointTRSMaxDelta": 1.095607876777649e-05,
+  "meshNamesSame": true,
+  "materialNamesSame": true,
+  "headChildren": [
+   "eye_anchor.l",
+   "eye_anchor.r"
+  ],
+  "tris": [
+   5214,
+   5082
+  ],
+  "skinName": "Rig_Medium",
+  "images": [
+   "mummy_texture"
+  ],
+  "rootNodes": [
+   "Rig_Medium"
+  ],
+  "rootNodes0": [
+   "Rig_Medium"
+  ]
+ },
+ "Mummy_B": {
+  "joints": 23,
+  "jointOrderSame": true,
+  "ibmMaxDelta": 8.344650268554688e-07,
+  "jointTRSMaxDelta": 1.095607876777649e-05,
+  "meshNamesSame": true,
+  "materialNamesSame": true,
+  "headChildren": [
+   "eye_anchor.l",
+   "eye_anchor.r"
+  ],
+  "tris": [
+   5716,
+   5584
+  ],
+  "skinName": "Rig_Medium",
+  "images": [
+   "mummy_texture"
+  ],
+  "rootNodes": [
+   "Rig_Medium"
+  ],
+  "rootNodes0": [
+   "Rig_Medium"
+  ]
+ },
+ "OrcBrute": {
+  "joints": 23,
+  "jointOrderSame": true,
+  "ibmMaxDelta": 1.430511474609375e-06,
+  "jointTRSMaxDelta": 1.8407097458839417,
+  "meshNamesSame": true,
+  "materialNamesSame": true,
+  "headChildren": [
+   "eye_anchor.l",
+   "eye_anchor.r"
+  ],
+  "tris": [
+   12314,
+   12182
+  ],
+  "skinName": "Rig_Large",
+  "images": [
+   "orcbrute_texture_A"
+  ],
+  "rootNodes": [
+   "Rig_Large"
+  ],
+  "rootNodes0": [
+   "Rig_Large"
+  ]
+ },
+ "Witch": {
+  "joints": 23,
+  "jointOrderSame": true,
+  "ibmMaxDelta": 8.344650268554688e-07,
+  "jointTRSMaxDelta": 1.0952353477478027e-05,
+  "meshNamesSame": true,
+  "materialNamesSame": true,
+  "headChildren": [
+   "eye_anchor.l",
+   "eye_anchor.r"
+  ],
+  "tris": [
+   6210,
+   6072
+  ],
+  "skinName": "Rig_Medium",
+  "images": [
+   "witch_texture_A"
+  ],
+  "rootNodes": [
+   "Rig_Medium"
+  ],
+  "rootNodes0": [
+   "Rig_Medium"
+  ]
+ }
+}
