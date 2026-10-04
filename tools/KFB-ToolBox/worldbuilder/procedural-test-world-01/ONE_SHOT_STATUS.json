@@ -21,8 +21,8 @@
     "siteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
     "cloudflareRole": "SECONDARY_MIRROR"
   },
-  "productOutcome": "FOUR_COMPLETE_SSOT_ISLANDS_WITH_JOYRIDE_TRACK_SIGNATURE_LIFETREES_AND_ZERO_BUILDING_TRACK_INTERSECTIONS",
-  "state": "FOUR_ISLAND_CANDIDATE_BROWSER_POLICY_BLOCKED",
+  "productOutcome": "PUBLISH_EXACT_FOUR_ISLAND_CANDIDATE_TO_EXISTING_GPT_SITE_FOR_HUMAN_FREEPLAY",
+  "state": "FOUR_ISLAND_CANDIDATE_SITE_PUBLICATION_REQUIRED",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -313,7 +313,7 @@
     "foundationRuntimeHead": "286b30163c1bd32e88823ea767dfbe451217443d",
     "journeySourceContracts": "13/13 PASS (4 Journey + 9 world)"
   },
-  "weakestRequiredDimension": "FOUR_ISLAND_VISUAL_WORLD_COMPOSITION",
+  "weakestRequiredDimension": "HUMAN_RUNTIME_VISUAL_AND_PLAYABILITY_REVIEW",
   "repairAttempts": {
     "sourceMaterial": 1,
     "DriverBrowserTraversalNonImproving": 0,
@@ -322,12 +322,8 @@
     "NativeInputTraversalEndpointArrivalNonImproving": 2
   },
   "openCoreBlockers": [
-    "All four existing islands must be visually rebuilt in SSOT style, not only Town",
-    "Joyride/T4 track presentation is missing",
-    "Buildings currently lack Track/bridge clearance validation and can intersect road geometry",
-    "Each island requires one unique central signature Claymation Life Tree tied to island/deck/zone",
-    "Each island body must read as excavated tree-earth with visible roots, not flat slab/generic rock",
-    "All world presentation must respect the island's exact R2C palette without erasing source identity"
+    "Actual runtime visual/playability of candidate is unreviewed because candidate is not yet published to the primary Site.",
+    "Automated browser QA remains blocked by external admin policy service; this is not a product blocker."
   ],
   "quarantinedDeferred": [
     "ActionFigure compatibility smoke",
@@ -339,7 +335,7 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "RESTORE_REGULAR_BROWSER_VERIFY_FOUR_ISLAND_CANDIDATE_THEN_UPDATE_EXISTING_GPT_SITE",
+  "nextInternalAction": "SITE_PUBLISH_EXACT_92_FILE_CANDIDATE_TO_EXISTING_WORLD_STUDIO_PROJECT_THEN_GEORG_FREEPLAY",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
@@ -406,7 +402,8 @@
   "qaHarness": {
     "status": "QUARANTINED_SUPPLEMENTARY_QA",
     "goldenJourneyEndpointPlanner": "QUARANTINED",
-    "rule": "Harness-only failure cannot freeze product without direct product reproduction."
+    "rule": "Do not infer product failure and do not block private Site publication from this tool blocker.",
+    "regularBrowser": "BLOCKED_EXTERNAL_ADMIN_POLICY_SERVICE"
   },
   "productRecovery": {
     "authority": "WSA_MVP1_RECOVERY_REBRIEF_2026-10-04.md",
@@ -615,5 +612,27 @@
       "Protopia"
     ],
     "nextGate": "Regular browser full integration/visual/gameplay check; then same-Site update"
+  },
+  "publicationGateCorrection": {
+    "date": "2026-10-04",
+    "previousGate": "RESTORE_REGULAR_BROWSER_BEFORE_SITE_PUBLICATION",
+    "correctedGate": "PUBLISH_EXACT_FROZEN_CANDIDATE_TO_EXISTING_PRIVATE_GPT_SITE_NOW_THEN_GEORG_FREEPLAY",
+    "reason": [
+      "Automated browser access is blocked by an external admin policy service before page load.",
+      "This does not demonstrate a product defect.",
+      "The prior World Studio GPT Site was successfully deployed while the same browser-play verification remained unavailable.",
+      "The current candidate is frozen as a complete 92-file runtime closure.",
+      "Human freeplay on the private Site is the meaningful product gate."
+    ],
+    "rule": "Automated browser verification is supplementary acceptance evidence here; it must not block publishing a private human-review candidate."
+  },
+  "site": {
+    "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/",
+    "project": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "currentPublishedVersion": "appgprj_6ac27631f74c8191b52e4819c1973668~appgver_fbd998f7923c81918f5c0096505e8495",
+    "currentCandidateSourceHead": "3d9aaf5f6623f9009d6e68dd3c042009a160b044",
+    "runtimeClosureFiles": 92,
+    "status": "OLD_VERSION_LIVE_NEW_CANDIDATE_READY_FOR_IN_PLACE_SITE_UPDATE",
+    "next": "UPDATE_EXISTING_SITE_IN_PLACE"
   }
 }
