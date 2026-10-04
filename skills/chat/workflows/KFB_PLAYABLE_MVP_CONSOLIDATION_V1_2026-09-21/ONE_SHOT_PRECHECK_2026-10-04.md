@@ -41,6 +41,26 @@ GitHub durable architecture:
 
 Production Control contains the full additive MVP ledger through v2.3; the world PASS checkpoint follows this source update.
 
+## ONE-SHOT EXECUTION OVERRIDE · 2026-10-04
+
+The earlier P0 list below was a **preflight checklist**, not permission to turn every item into a separate Georg-facing execution slice.
+
+Current interpretation:
+- World convergence + four-island corridor = PASS.
+- Motion native baseline = COMPLETE.
+- Remaining Player, Resident, Site and Lean-Memory items now run as **internal checkpoints inside one WSA/Codex One-Shot**, not as separate external gates.
+
+Current execution lock:
+`ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`.
+
+Exactly one current executor:
+**WSA / Codex**.
+
+Exactly one current product outcome:
+**integrated Golden Journey candidate on the Site/Stage surface**.
+
+Internal checkpoints still use small GitHub commits/tests for crash safety, but WSA continues automatically between them unless a real blocker or Georg-only product decision appears.
+
 ## B · HARD pre-One-Shot gates
 
 ### P0-1 · WORLD-CONVERGENCE-BASE-01 · PASS
@@ -136,7 +156,7 @@ Do not:
 
 Only after this PASS advance to Resident placement.
 
-### P0-4 · WSA-RES-SET-01
+### P0-4 · WSA-RES-SET-01 · INTERNAL ONE-SHOT CHECKPOINT
 
 Use current Resident Atlas S16.
 Prove:
@@ -152,7 +172,7 @@ Mummy + Combat Mech + Clown
 Why before One-Shot:
 Once this seam exists, principal Residents, Band, Disco and other Resident scenelets become data/module work rather than a new integration problem.
 
-### P0-5 · KFB-SITE-WORLD-PLATFORM-ARCH-01 / SITE-STAGE-01
+### P0-5 · KFB-SITE-WORLD-PLATFORM-ARCH-01 / SITE-STAGE-01 · INTERNAL ONE-SHOT CHECKPOINT
 
 Architecture is now persisted, implementation is not.
 
@@ -173,7 +193,7 @@ Also choose and pin the actual persistence backing owner/API.
 Why:
 Without this, the final One-Shot would have to invent deployment, editing and persistence while also integrating the game.
 
-### P0-6 · LEAN-MEMORY-SITE-PERSISTENCE-01
+### P0-6 · LEAN-MEMORY-SITE-PERSISTENCE-01 · INTERNAL ONE-SHOT CHECKPOINT
 
 Minimum executable proof:
 - meet one real Resident;
