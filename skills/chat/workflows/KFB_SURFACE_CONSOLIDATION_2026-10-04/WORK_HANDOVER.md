@@ -149,6 +149,65 @@ They may be linked under History/Legacy if useful, but never as current front do
 - duplicate Site/front-door work
 - historical ToolBox routers as current products
 
+## Binding operating rule after this consolidation · NO WORK FOR ROUTINE CURRENT-STATE UPDATES
+
+This run must not merely repaint today's status into three static Sites.
+
+It must establish a durable current-state path so that future routine updates to:
+- current briefings;
+- P0/P1/P2 status;
+- TODOs / human gates;
+- specialist-tool status;
+- current next actions;
+- HOLD / BLOCKED / DONE state
+
+can be written from normal Web Chat / KFB Production Control without requiring another Work engineering run or GPT Site republish.
+
+### Required ownership
+
+**KFB Production Control remains the durable current-state/data owner.**
+
+The Hub is a human-facing read/router surface over that current state.
+
+ToolBox owns its current tool catalog/status data.
+
+Do not create a second parallel status database just for the Hub.
+
+### Required implementation behavior
+
+Work must inspect the existing Site/runtime capabilities and implement the simplest durable data-driven path available.
+
+Preferred result:
+1. normal Web Chat writes/updates current records through KFB Production Control;
+2. Production Control Current view reflects them directly;
+3. Production Hub reads the same canonical current board/feed and renders it without a Site code republish;
+4. ToolBox current tool status is likewise data/manifest-driven rather than hard-coded into each release;
+5. historical records remain durable but do not leak into the default Current view.
+
+If direct runtime reading from the existing Control data source is not technically available to the Hub, implement the nearest equivalent low-cost refresh path that does **not** require Work reasoning:
+- one canonical machine-readable current-board artifact/feed owned by Production Control;
+- deterministic lightweight sync/publish action callable from normal Web Chat or the lowest-cost Sites-capable executor;
+- no product/design reasoning;
+- no manual rewriting of the Hub UI for every status change.
+
+### Acceptance criterion
+
+After this consolidation, changing a routine TODO/status/briefing must **not** require:
+- opening Work;
+- editing Site UI code;
+- rebuilding the Hub;
+- creating a new deployment architecture.
+
+Work is only required again when the **surface itself** changes: layout, navigation, schema, capability, new tool class, or real engineering defect.
+
+The Return must explicitly document:
+- canonical live data owner;
+- how normal Web Chat updates current state;
+- how Hub receives/reads it;
+- whether refresh is immediate or deterministic-sync;
+- exact command/action/tool used for a routine update;
+- proof by changing one test TODO/status after publication and showing it in the Current UI **without another Work implementation pass**.
+
 ## Required Work sequence
 
 ### Phase A · Resolve ToolBox first
