@@ -43,8 +43,8 @@ Repo: `georg-doc/kayfabizarro`
 
 Branch: `planning/chatterbox-triplet-curator-site-2026-10-04`
 
-Base:
-`coworker/coordination-plan-2026-10-04@422c48e2a82b13c8ae380da70f6c66619639d8aa`
+Base synced:
+`coworker/coordination-plan-2026-10-04@b2ddd72346e3d804b53625f50addbba87be3c9a0`
 
 Files:
 - `START_HERE.md`
@@ -56,6 +56,15 @@ Files:
 - `TEST_REPORT.md`
 - `CHANGELOG.md`
 - this `RETURN.md`
+
+## Existing Review Stage donor
+
+The current Coworker branch now already contains a useful review prototype:
+
+- `KFB_TRIPLET_POOL_REVIEW_STAGE_v1.html` · blob `2d4fa60931ae0f1f1815788bb801a5f1e156c1d6`
+- `BRIEF_WEBCHAT_TRIPLET_POOL_01.md` · blob `796a1236ab634ebf9385fdc8a070165d2b8a043f`
+
+The GPT Site must reuse this source/workflow first. It already proves the 20-item review flow, pair/Card fixtures, KEEP/CUT/CHANGE, import/export and exposes concrete semantic coverage gaps. The Site extends it with durable persistence, quote bridge, Lean Card lens and Bubble adapter instead of replacing it with generic admin UI.
 
 ## Seed
 
@@ -111,7 +120,7 @@ https://kfb-toolbox.frizzlebob.chatgpt.site
 
 ## Validation
 
-Planning/data validation: **12/12 PASS**.
+Planning/data + donor validation: **14/14 PASS**.
 
 Runtime/browser/Site tests: **not run by scope**.
 
