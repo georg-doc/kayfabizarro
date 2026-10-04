@@ -6,7 +6,7 @@ Runtime/Site/browser: NOT BUILT / NOT RUN
 
 ## Result
 
-**14/14 PASS**
+**34/34 PASS · 14 base/donor + 20 Site-readiness checks**
 
 1. Seed JSON parses.
 2. Seed keeps donor schema `kfb.semantic-triplet-pool/0.1-candidate`.
@@ -29,6 +29,22 @@ Runtime/Site/browser: NOT BUILT / NOT RUN
 - curator schema: `0c5c170e06d2cd8ee360d27604cdf6fa3fe78585`
 - source map: `73e3513ce16505e8d5126618da94635adbb3104f`
 - PR #310 donor data: `cf975a72637630d97fc626962ef591b356ce0bbf`
+
+## Site-readiness supplement · 20/20 PASS
+
+Validated after the initial 14 checks:
+- exact `kfb.triplet-pool-review/1` import schema + open/keep/cut/change decisions;
+- six real deck-level quote IDs from PR #354 available as editorial references;
+- no false claim of direct quote matches for S1 Cards #11 / #30 / #1;
+- Quote Pool owner/head remains pinned;
+- Review Stage blob and 26,833-byte identity pinned;
+- Dropbox same-name/same-byte-size donor check recorded;
+- PR #305 semantic owner remains external;
+- ToolBox `chatterbox-comic-vfx` slot reused;
+- Site URL remains unassigned and Stage remains NOT_DEPLOYED;
+- review migration maps keep/cut/change without loss;
+- cross-origin/sidebar migration requires explicit JSON export/import;
+- minimal Work prompt requires donor isolation first, stable quote IDs, no duplicate owners, no merge/Live.
 
 ## Not claimed
 
