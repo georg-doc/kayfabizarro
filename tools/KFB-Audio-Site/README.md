@@ -22,3 +22,7 @@ A lean working surface over existing KFB audio owners.
 The source is Site-ready, but this chat currently has no Sites MCP publish capability. Do not substitute Cloudflare.
 
 The intended hosted Site adds integrated Chat using `site-chat-context.json` and authenticated KFB Production Control artifact persistence. The standalone source remains useful for catalog/play/mix/intake review without pretending that local file drops are already persisted.
+
+## Prompt / chat donors
+
+The Site package includes the existing KFB prompt families under `prompts/` plus `SITE_CHAT_INSTRUCTIONS.md`. These are grounding/reference material for integrated GPT Site chat, not hardcoded generation templates.

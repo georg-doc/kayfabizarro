@@ -13,7 +13,8 @@
     "Treat uploaded songs/stems as intake artifacts first; never silently promote them into the canonical catalog.",
     "For new source assets record provenance, exact filename, BPM if known, family/variant relation and stem policy.",
     "Suggest transition, ducking and soundscape recipes while preserving the consumer runtime owner.",
-    "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries."
+    "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries.",
+    "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track."
   ],
   "promptRecipe": {
     "masterFirst": true,
@@ -35,5 +36,22 @@
     "siteInbox": "KFB Production Control / KFB-AUDIO-SITE",
     "maxArtifactNote": "Use authenticated Site persistence for uploads; GitHub promotion is a separate explicit step.",
     "noCloudflareForIteration": true
-  }
+  },
+  "promptReferences": [
+    {
+      "id": "mood-donors-v1",
+      "path": "tools/KFB-Audio-Site/prompts/SUNO_EMOTIONAL_RPG_DONORS_v1.md",
+      "use": "emotional / biome / event donor grammar"
+    },
+    {
+      "id": "signature-theme-v2",
+      "path": "tools/KFB-Audio-Site/prompts/KFB_SIGNATURE_THEME_SUNO_PROMPT_v2.md",
+      "use": "recognizable KFB hook / opener grammar"
+    },
+    {
+      "id": "roadtrip-v6-pack02",
+      "path": "tools/KFB-Audio-Site/prompts/SUNO_V6_PROMPTS_02_2026-09-19.md",
+      "use": "compact Suno v6 road/race prompt grammar"
+    }
+  ]
 }

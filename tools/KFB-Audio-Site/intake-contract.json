@@ -1,0 +1,24 @@
+{
+  "schema": "kfb.audio-site.intake/0.1",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "states": [
+    "INBOX_ONLY",
+    "CATALOG_CANDIDATE",
+    "HUMAN_SELECTED",
+    "PROMOTED"
+  ],
+  "defaultState": "INBOX_ONLY",
+  "rules": [
+    "A new master or stem upload is never canonical merely because it exists.",
+    "Capture exact filename, file hash, source/provenance, BPM when known, prompt/source relation, family/variant relation and whether a stem folder exists.",
+    "The complete master is Ground Truth.",
+    "New stems default to source-only until individually listening-certified.",
+    "Human-selected promotion updates the one canonical jukebox.json; do not create a parallel registry.",
+    "Site intake may persist privately through KFB Production Control. GitHub promotion is a separate explicit checkpoint."
+  ],
+  "naming": {
+    "master": "Keep human-authored filename stable once review begins.",
+    "stemDirectory": "<Master title> Stems (<BPM>BPM)",
+    "alternate": "Use family + variant metadata; do not overwrite a different render."
+  }
+}
