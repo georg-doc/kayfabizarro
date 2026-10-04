@@ -1,3 +1,18 @@
+## 2026-10-04 · Flight CARD_SURF Gate 2 rebrief
+
+- Blender Gate 1 SELF_FLIGHT / Combat Mech return is preserved on `georg-doc-patch-3`.
+- Added branch-local `CARD_SURF_GATE2_REBRIEF_2026-10-04.md` and routed the Gate-1 Return to it.
+- Corrected the Gate-2 donor: use current Travel `terrain-planets-v1/card-carrier.js` for geometry/deformation/seat behavior; do **not** use the old rigid flight-acceptance/rig-measurement card.
+- Blender builds only a source-faithful review/fit rig; Travel remains world-flight/card runtime owner.
+- Card face ink follows current `kfb-ink-canon.js` BAND/card SSOT, not the older custom Travel jitter-stroke.
+- Card side/thickness review target follows the Combat card fix: ink black `#1f1a14`, roughness 0.92, no pale/light slab sides or bright bevel strip.
+- Card must be isolated and visually proven before adding the Mannequin.
+- Required review hierarchy separates `CARD_WORLD_ROOT` (Travel-owned transform proxy), `CARD_VISUAL`, deforming `CARD_SURFACE`, surface-following `SEAT_FRAME` and separate `MANNEQUIN_ROOT`.
+- Barrel roll remains a whole-card root rotation; mesh deformation may not fake the roll.
+- No Superhero/Ultra Turbo Hero Man, Runtime, Stage, merge or Live promotion in Gate 2.
+- Current Blender branch head after routing: `efe572875b23bbc838a2b47772d269207affd051`.
+- This is a parallel Flight-authoring lane and does not replace Motion PR #344 as the MVP hard gate.
+
 ## 2026-10-04 · Curtain Character Select / cross-rig QA contract
 
 ### MVP DECISION
