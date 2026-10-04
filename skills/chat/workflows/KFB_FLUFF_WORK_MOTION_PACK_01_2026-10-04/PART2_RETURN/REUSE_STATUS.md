@@ -2,8 +2,9 @@
 
 Date: 2026-10-04. Part 1 matrix: `../PART1_RETURN/REUSE_MATRIX.md`.
 
-**Work-piece rule (Option A, Production Control `c948e155`):**
-- Rig_Large two-hand work and push use a chunk of radius ≈ 0.22 × body height.
+**Sizes:**
+- **Rolled balls follow the Fluff Mass Ladder (brief `cd69323`):** Medium r 0.477 m, Large r 0.689 m (3 Medium = 1 Large).
+- **The Large two-hand bench/ground work chunk follows Option A (Production Control `c948e155`):** r 0.22 × body height = 0.922 m.
 - This is presentation size only. Inventory, resource and pickup value, and the global Fluff ball size, stay runtime-owned.
 
 | Role | Part 1 decision | Part 2 result | Clip (both rigs unless noted) |
@@ -24,8 +25,19 @@ Date: 2026-10-04. Part 1 matrix: `../PART1_RETURN/REUSE_MATRIX.md`.
 | pickup_react_short | KEEP + FIT | unchanged; pickup stays walk-over + POP | trim of `kfb_locomotion_joyful_jump_a` |
 | ball_bounce_reference | prop reference | unchanged (Part 1) | `kfb_fluff_ball_bounce_reference.glb` |
 
-- **Remaining motion gaps:** none.
+**Optional rows added in `cd69323` (secondary, not run):**
+
+| Row | Status |
+|---|---|
+| coop_large_push | NOT_RUN |
+| foot_driven_roll | NOT_RUN |
+| ball_balance | NOT_RUN |
+| ball_dance | NOT_RUN |
+| ball_surf | NOT_RUN |
+
+- **Remaining motion gaps:** none in the core pack. The Large push needs a ball-size or posture decision (RETURN defect 0).
 - **NEW CLIP REQUIRED:** none.
-- **Open look decisions for Georg:**
+- **Open decisions for Georg:**
+  - Large push vs. Mass Ladder ball size;
   - forearm sink into the Large knead chunk;
   - chunk size for one-hand roles.

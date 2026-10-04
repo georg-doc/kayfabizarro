@@ -55,7 +55,81 @@
    "R": 0.19529999999999997
   }
  },
- "Rig_Large_OrcBrute_beforeShift": {
+ "Rig_Large_OrcBrute_final": {
+  "kfb_fluff_roll_push_a": {
+   "bodyPenetration": 0.367,
+   "frame": 4,
+   "part": "OrcBrute_LegLeft",
+   "R": 0.6885299448647567
+  },
+  "kfb_fluff_roll_push_heavy_a": {
+   "bodyPenetration": 0.266,
+   "frame": 22,
+   "part": "OrcBrute_LegRight",
+   "R": 0.6885299448647567
+  },
+  "kfb_fluff_steer_left_a": {
+   "bodyPenetration": 0.071,
+   "frame": 6,
+   "part": "OrcBrute_LegLeft",
+   "R": 0.6885299448647567
+  },
+  "kfb_fluff_steer_right_a": {
+   "bodyPenetration": 0.071,
+   "frame": 6,
+   "part": "OrcBrute_LegRight",
+   "R": 0.6885299448647567
+  },
+  "kfb_fluff_knead_press_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 0.9218000000000001
+  },
+  "kfb_fluff_collect_debris_a": {
+   "bodyPenetration": 0.006,
+   "frame": 8,
+   "part": "OrcBrute_Shoulderpad",
+   "R": 0.9218000000000001
+  },
+  "kfb_fluff_place_small_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 0.37710000000000005
+  },
+  "kfb_fluff_pack_flatten_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 0.37710000000000005
+  },
+  "kfb_fluff_patch_press_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 0.37710000000000005
+  }
+ },
+ "Rig_Large_G4_shiftFit": {
+  "kfb_fluff_knead_press_a": {
+   "shift": 0.387156,
+   "shiftOverH": 0.0924,
+   "bodyPen": -0.0025075662931842713,
+   "armGapMin": -0.2527708828669485,
+   "armGapMax": -0.08321045013604211,
+   "armGapMedian": -0.17462833973587677
+  },
+  "kfb_fluff_collect_debris_a": {
+   "shift": 0.36872000000000005,
+   "shiftOverH": 0.08800000000000001,
+   "bodyPen": 0.006368692703180301,
+   "armGapMin": -0.5777281875365363,
+   "armGapMax": 0.2639916423701977,
+   "armGapMedian": -0.11448909791487183
+  }
+ },
+ "Rig_Large_push_ballR0922_firstBuild": {
   "kfb_fluff_roll_push_a": {
    "bodyPenetration": 0.038,
    "frame": 4,
@@ -111,24 +185,6 @@
    "R": 0.37710000000000005
   }
  },
- "Rig_Large_shiftFit": {
-  "kfb_fluff_knead_press_a": {
-   "shift": 0.387156,
-   "shiftOverH": 0.0924,
-   "bodyPen": -0.0025075662931842713,
-   "armGapMin": -0.2527708828669485,
-   "armGapMax": -0.08321045013604211,
-   "armGapMedian": -0.17462833973587677
-  },
-  "kfb_fluff_collect_debris_a": {
-   "shift": 0.36872000000000005,
-   "shiftOverH": 0.08800000000000001,
-   "bodyPen": 0.006368692703180301,
-   "armGapMin": -0.5777281875365363,
-   "armGapMax": 0.2639916423701977,
-   "armGapMedian": -0.11448909791487183
-  }
- },
  "pair": {
   "Rig_Medium": {
    "D": 1.1488306917279139,
@@ -151,7 +207,7 @@
  },
  "contact": {
   "Rig_Medium:kfb_fluff_roll_push_a": {
-   "kind": "push (0.22 H, ground)",
+   "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator",
    "R": 0.477,
    "surfDist_l": [
     0.044,
@@ -163,7 +219,7 @@
    ]
   },
   "Rig_Medium:kfb_fluff_roll_push_heavy_a": {
-   "kind": "push (0.22 H, ground)",
+   "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator",
    "R": 0.477,
    "surfDist_l": [
     0.044,
@@ -175,7 +231,7 @@
    ]
   },
   "Rig_Medium:kfb_fluff_steer_left_a": {
-   "kind": "push (0.22 H, ground)",
+   "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator",
    "R": 0.477,
    "surfDist_l": [
     0.044,
@@ -187,7 +243,7 @@
    ]
   },
   "Rig_Medium:kfb_fluff_steer_right_a": {
-   "kind": "push (0.22 H, ground)",
+   "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator",
    "R": 0.477,
    "surfDist_l": [
     0.044,
@@ -259,11 +315,11 @@
    ]
   },
   "Rig_Large:kfb_fluff_roll_push_a": {
-   "kind": "push (0.22 H, ground)",
-   "R": 0.922,
+   "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 30 deg above equator",
+   "R": 0.689,
    "surfDist_l": [
     0.084,
-    0.086
+    0.085
    ],
    "surfDist_r": [
     0.084,
@@ -271,39 +327,39 @@
    ]
   },
   "Rig_Large:kfb_fluff_roll_push_heavy_a": {
-   "kind": "push (0.22 H, ground)",
-   "R": 0.922,
+   "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 25 deg above equator",
+   "R": 0.689,
    "surfDist_l": [
     0.084,
-    0.085
+    0.084
    ],
    "surfDist_r": [
     0.084,
-    0.085
+    0.084
    ]
   },
   "Rig_Large:kfb_fluff_steer_left_a": {
-   "kind": "push (0.22 H, ground)",
-   "R": 0.922,
+   "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 20 deg above equator",
+   "R": 0.689,
    "surfDist_l": [
-    0.085,
-    0.085
+    0.084,
+    0.084
    ],
    "surfDist_r": [
-    0.085,
-    0.085
+    0.084,
+    0.084
    ]
   },
   "Rig_Large:kfb_fluff_steer_right_a": {
-   "kind": "push (0.22 H, ground)",
-   "R": 0.922,
+   "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 20 deg above equator",
+   "R": 0.689,
    "surfDist_l": [
-    0.085,
-    0.085
+    0.084,
+    0.084
    ],
    "surfDist_r": [
-    0.085,
-    0.085
+    0.084,
+    0.084
    ]
   },
   "Rig_Large:kfb_fluff_knead_press_a": {
