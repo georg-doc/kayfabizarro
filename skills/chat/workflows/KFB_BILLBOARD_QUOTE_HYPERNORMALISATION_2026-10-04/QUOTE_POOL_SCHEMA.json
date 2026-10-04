@@ -1,0 +1,490 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kayfabizarro.example/schemas/kfb.quote-pool.v1.schema.json",
+  "title": "KFB Quote Pool v1",
+  "description": "Curated quote records for deterministic KFB Billboard Hypernormalisation playback. Card/deck/audio owners stay external; this schema stores stable references.",
+  "type": "object",
+  "required": [
+    "schema",
+    "generatedAt",
+    "quotes",
+    "deckProfiles"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.quote-pool.v1"
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "sourceDeckRegistry": {
+      "type": "object",
+      "required": [
+        "path",
+        "deckCount"
+      ],
+      "properties": {
+        "path": {
+          "const": "media/kfb/index.json"
+        },
+        "deckCount": {
+          "const": 130
+        },
+        "sourceRef": {
+          "type": "string"
+        }
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/quote"
+      }
+    },
+    "deckProfiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/deckProfile"
+      }
+    }
+  },
+  "$defs": {
+    "cardRef": {
+      "type": "object",
+      "required": [
+        "packId",
+        "cardNumber"
+      ],
+      "properties": {
+        "packId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cardNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "deckRef": {
+      "type": "object",
+      "required": [
+        "packId"
+      ],
+      "properties": {
+        "packId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "brainFood": {
+      "type": "object",
+      "required": [
+        "label",
+        "url",
+        "kind"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "kind": {
+          "enum": [
+            "PRIMARY_SOURCE",
+            "EDITION",
+            "ARCHIVE",
+            "ESSAY",
+            "AUTHOR",
+            "CONTEXT",
+            "OTHER"
+          ]
+        },
+        "verifiedAt": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "rights": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "DRAFT_RIGHTS_UNKNOWN",
+            "RESEARCHED_RESTRICTED",
+            "RESEARCHED_QUOTE_LIMIT_ONLY",
+            "CLEARED_PRIVATE_TEST",
+            "CLEARED_PUBLIC_RUNTIME",
+            "PUBLIC_DOMAIN_CONFIRMED"
+          ]
+        },
+        "jurisdictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "basis": {
+          "type": "string"
+        },
+        "evidenceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "checkedAt": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "verificationStatus"
+      ],
+      "properties": {
+        "verificationStatus": {
+          "enum": [
+            "UNVERIFIED",
+            "SECONDARY_ONLY",
+            "PRIMARY_OR_EDITION_VERIFIED",
+            "DOUBLE_CHECKED"
+          ]
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "edition": {
+          "type": "string"
+        },
+        "pageOrLocator": {
+          "type": "string"
+        },
+        "publicationYear": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "retrievedAt": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timingSegment": {
+      "type": "object",
+      "required": [
+        "id",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "startSec": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "endSec": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "emphasis": {
+          "enum": [
+            "LOW",
+            "NORMAL",
+            "HIGH",
+            "TURN"
+          ]
+        },
+        "visualCue": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "audioRecipe": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "NONE",
+            "REFERENCE",
+            "AUTO_BY_CONTEXT"
+          ]
+        },
+        "audioHandoffSchema": {
+          "const": "kfb.audio-visualizer-handoff.v1"
+        },
+        "trackRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "soundbedRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "VOICE",
+              "UI",
+              "PLAYER_CRITICAL",
+              "WORLD_SFX",
+              "DIEGETIC_MUSIC",
+              "SCORE",
+              "LOCAL_AMBIENCE",
+              "GLOBAL_BED"
+            ]
+          }
+        },
+        "voiceDuck": {
+          "type": "boolean"
+        },
+        "visualizerSyncDefault": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "quote": {
+      "type": "object",
+      "required": [
+        "id",
+        "text",
+        "author",
+        "work",
+        "language",
+        "status",
+        "provenance",
+        "rights",
+        "themes",
+        "deckRefs",
+        "frizzleQuestion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]+$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "work": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "RESEARCHED",
+            "CURATED",
+            "APPROVED_PRIVATE",
+            "APPROVED_PUBLIC",
+            "REJECTED",
+            "ARCHIVED"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "rights": {
+          "$ref": "#/$defs/rights"
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "antiClicheNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "biomeTags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deckRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/deckRef"
+          },
+          "minItems": 1
+        },
+        "cardRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cardRef"
+          }
+        },
+        "frizzleQuestion": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 240
+        },
+        "brainFood": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/brainFood"
+          }
+        },
+        "timingSegments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/timingSegment"
+          }
+        },
+        "audioRecipe": {
+          "$ref": "#/$defs/audioRecipe"
+        },
+        "curatorNotes": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "deckProfile": {
+      "type": "object",
+      "required": [
+        "packId",
+        "title",
+        "coverageStatus",
+        "themes",
+        "preferredResearchDomains",
+        "quoteIds"
+      ],
+      "properties": {
+        "packId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverageStatus": {
+          "enum": [
+            "EMPTY",
+            "SEEDED",
+            "RESEARCHING",
+            "CURATED",
+            "PUBLIC_READY"
+          ]
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferredResearchDomains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferredAuthors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoidPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "biomeAffinities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "quoteIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

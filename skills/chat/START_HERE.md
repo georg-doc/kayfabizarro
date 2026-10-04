@@ -8,6 +8,26 @@ This folder is the current LLM production routing layer for ChatGPT/Astra and Cl
 It does not replace project SSOTs, current tools, or canonical skills. It tells an agent what is current, what to read, and what not to trust without review.
 
 
+## 2026-10-04 · BILLBOARD QUOTE HYPERNORMALISATION · QUEUED PLANNING
+
+Georg has defined a future Billboard/curation capability, queued behind the current MVP1 playable-delivery gate.
+
+Planning SSOT:
+- `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/START_HERE.md`
+- `WORK_ONE_SHOT_BRIEF.md`
+- `QUOTE_POOL_SCHEMA.json`
+- `DECK_QUOTE_PROFILE_SEED.json` — verified 130/130 canonical deck profiles
+- `AUDIO_VISUALIZER_HANDOFF_SCHEMA.json`
+- `TEST_PLAN.md`
+
+Product outcome:
+Card/deck + biome/world seed selects a curated, source-verified quote; H13 presents it as timed read-along Hypernormalisation; attribution resolves to one FrizzleQuestion and optional Brain Food. Existing clay Billboard gets a tactile TV/full-screen control that preserves the same quote/music/visualizer timeline. A dedicated private curator/admin Site includes all 130 deck coverage plus a clean neutral 3D test stage. Existing Billboard, Card, WorldContext/palette and Audio owners remain authoritative; no second renderer, Card DB, palette mapper, AudioContext or mixer.
+
+Planned formal Stage route:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/billboard-hypernorm-curator/` · **NOT CREATED / NOT DEPLOYED**.
+
+Do not start this lane inside WB2 PR #348. First productive implementation is the single Work One-Shot after the current MVP1 human-review gate clears. No merge / no Live promotion.
+
 ## 2026-10-04 · CURRENT WB2 ONE-SHOT: MVP1 PRODUCT RECOVERY
 
 PR #348 remains the existing WB2 owner. The previous **FROZEN_FAILED_CANDIDATE** label is superseded as a whole-product classification.
