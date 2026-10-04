@@ -6,7 +6,7 @@ Runtime/Site/browser: NOT BUILT / NOT RUN
 
 ## Result
 
-**12/12 PASS**
+**14/14 PASS**
 
 1. Seed JSON parses.
 2. Seed keeps donor schema `kfb.semantic-triplet-pool/0.1-candidate`.
@@ -20,6 +20,8 @@ Runtime/Site/browser: NOT BUILT / NOT RUN
 10. Review states include Georg KEEP / TUNE / CUT.
 11. Hypernormalisation quote owner is pinned to PR #354 head `05d61058eaaa8f465b4e2add08cffbf70752fe8f`.
 12. ToolBox integration reuses the existing planned `chatterbox-comic-vfx` specialist slot.
+13. Coworker Triplet Review Stage is present at exact blob `2d4fa60931ae0f1f1815788bb801a5f1e156c1d6` and exposes KEEP/CUT/CHANGE + import/export.
+14. Coworker normal-Web-Chat brief is present at exact blob `796a1236ab634ebf9385fdc8a070165d2b8a043f`, keeps the lane content-only, caps a round at 24 new candidates and requires Card-anchored lines.
 
 ## Exact blobs
 
