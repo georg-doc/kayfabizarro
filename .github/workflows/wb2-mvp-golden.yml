@@ -20,17 +20,13 @@ on:
       - '.github/workflows/wb2-mvp-golden.yml'
   workflow_dispatch:
 
-concurrency:
-  group: wb2-golden-${{ github.head_ref || github.ref_name }}
-  cancel-in-progress: true
-
 permissions:
   contents: read
 
 jobs:
   browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

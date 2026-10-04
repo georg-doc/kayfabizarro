@@ -208,3 +208,12 @@ Next candidate restores established SwiftShader input raster .25 and visual capt
 Receiving e724374cdd92ec4e68c1ed23463d33dba9462275, tested PR merge d93e374112dace993eb5e66caaf57e1a485112fe, run37193102424: three browser gates PASS including actual Clown Card/quest handoff. Driver route FAILS at300s; native Player advanced from[-19,1] to[-12.244896,-12.842395]. Zero page/console errors. Artifact11299569133 SHA256664e6837a8fd6ae27e867fc6c05f4c3b1dfdccc0200da704273decbbd2f17de9.
 
 Next bounded navigation repair holds real native W to the planned waypoint and A/D toward the target heading, replacing many tiny sequential pulses. Native Ground, animation timestep, speed, collision and rendered world remain unchanged. Checkpoint records actual renderer frame metrics; capped telemetry ring writes every30frames as intended instead of everyframe after240. Full Journey, fresh imports and Whole Critic remain pending; Stage undeployed.
+
+
+## 2026-10-04 · Measured software frame cost / final bounded Driver harness repair
+
+Run37194162808 at receiving5a7f032cf720187e9395c713db408f67ba303111 / tested PR merge2cc4f735df6e19c92314ab5b6781d32cd6e145ea repeats three PASS gates, then Driver native turn times out15s. Actual heading progresses0→1.5275 before timeout. Software renderer240-frame median1260.5ms/p952318.9ms, raster.25,190drawcalls/344380triangles. This is not hardware performance evidence; actual local Town14.8/17.9ms remains a different environment/view. Artifact11300243495 SHA2567391bf6320853e94533a0042779c44ff3a239af412d9b76ba73a9e3fef9dc116; browser errors0.
+
+First non-improving repair at Driver traversal recorded. Final bounded repair uses real native unwrapped heading progress (the Ground owner keeps an unwrapped heading), turn60s, Wsegment120s, route900s and job60min. No simulation/speed/clock/collision or world rendering change. Semantic proof and performance are separate; next non-improving Driver gate failure means freeze/full Failure Recovery, no Stage. Full product not accepted yet.
+
+Measured software render cost and ~950m full route require explicit environment separation: input raster .125, canonical visual capture unchanged at.5 with two actual rendered frames; actual WebGL backend is recorded. Full scene, Ground timestep/speed/collision and native activities remain unchanged. No production-performance PASS is inferred. Isolated installed Chrome launch was unavailable under platform process EPERM even with execution escalation; personal browser profile untouched, no further retry.

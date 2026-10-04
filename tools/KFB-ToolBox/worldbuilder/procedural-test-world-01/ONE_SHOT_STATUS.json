@@ -82,7 +82,7 @@
       "pageErrors": 0,
       "consoleErrors": 0
     },
-    "qaEnvironment": "SwiftShader input pixelRatio .25, canonical visual captures .5 with two native rendered frames. Native simulation/physics/scene unchanged. No software-renderer performance PASS.",
+    "qaEnvironment": "SwiftShader input raster .125; canonical source/product captures .5 after two native rendered frames. Full scene and native simulation unchanged. No production performance PASS; actual GPU backend and frame metrics recorded.",
     "artifact": {
       "id": 11296770456,
       "sha256": "e0aaf0fc34a3d8228c40662a39ef49dd31266d8b838cdc6f7015813456541853"
@@ -157,23 +157,30 @@
     },
     "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected.",
     "integratedBrowserLatestCompleted": {
-      "receivingHead": "e724374cdd92ec4e68c1ed23463d33dba9462275",
-      "testedPRMergeHead": "d93e374112dace993eb5e66caaf57e1a485112fe",
-      "run": 37193102424,
-      "artifact": 11299569133,
-      "sha256": "664e6837a8fd6ae27e867fc6c05f4c3b1dfdccc0200da704273decbbd2f17de9",
+      "receivingHead": "5a7f032cf720187e9395c713db408f67ba303111",
+      "testedPRMergeHead": "2cc4f735df6e19c92314ab5b6781d32cd6e145ea",
+      "run": 37194162808,
+      "artifact": 11300243495,
+      "sha256": "7391bf6320853e94533a0042779c44ff3a239af412d9b76ba73a9e3fef9dc116",
       "passedGates": [
         "native required loader and one scene owner",
         "verified world master and shared physical ambience",
         "Clown real card handoff"
       ],
-      "failedGate": "Driver walking route deadline300s",
+      "failedGate": "Driver native turn timeout15s",
       "actualProgress": [
-        "Clown native card and quest receipt",
-        "Native Ground player moved from [-19,1] to [-12.244896,-12.842395]"
+        "Native heading changed0 to1.5275; full planned turn did not finish before15s"
       ],
       "pageConsoleErrors": 0,
-      "wholeGamePass": false
+      "wholeGamePass": false,
+      "softwareMetrics": {
+        "frames": 240,
+        "medianMs": 1260.5,
+        "p95Ms": 2318.9,
+        "pixelRatio": 0.25,
+        "drawCalls": 190,
+        "triangles": 344380
+      }
     },
     "heldInputRepair": {
       "status": "CANDIDATE_NOT_BROWSER_PROVEN",
@@ -195,7 +202,19 @@
     "continuousHeldInputCandidate": {
       "status": "NOT_BROWSER_PROVEN",
       "change": "Hold actual native key to measured waypoint progress / target heading, instead of tiny sequential key pulses. Native simulation and collisions unchanged. Include actual frame metrics in checkpoint. Fix capped telemetry ring cadence to every30frames."
-    }
+    },
+    "boundedSoftwareSemanticRepair": {
+      "status": "CANDIDATE_NOT_PROVEN",
+      "turnTimeoutSeconds": 60,
+      "segmentTimeoutSeconds": 120,
+      "routeTimeoutSeconds": 900,
+      "jobTimeoutMinutes": 60,
+      "performancePass": false,
+      "rule": "Native dt, speed, collision and full rendered scene unchanged; next non-improving Driver gate failure freezes candidate with complete failure recovery.",
+      "inputPixelRatio": 0.125,
+      "capturePixelRatio": 0.5
+    },
+    "localHeadlessHardware": "Unavailable: isolated installed Chrome launch terminated by platform EPERM even with execution escalation. Personal browser profile untouched; no further retry."
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -209,7 +228,8 @@
   },
   "weakestRequiredDimension": "FULL_GOLDEN_JOURNEY_AND_AUTHORING_FRESH_IMPORT_PROOF",
   "repairAttempts": {
-    "sourceMaterial": 1
+    "sourceMaterial": 1,
+    "DriverBrowserTraversalNonImproving": 1
   },
   "openCoreBlockers": [
     "Golden Journey full real-input browser proof pending",
