@@ -1,0 +1,2440 @@
+{
+  "schema": "kfb.quote-pool.v1",
+  "generatedAt": "2026-10-04T16:20:00Z",
+  "sourceDeckRegistry": {
+    "path": "media/kfb/index.json",
+    "deckCount": 130,
+    "sourceRef": "6afcacc1788334d76475917575cefc08c7d6fa2e"
+  },
+  "quotes": [
+    {
+      "id": "q-b01-1001-coleridge-suspension-disbelief",
+      "text": "that willing suspension of disbelief for the moment, which constitutes poetic faith.",
+      "author": "Samuel Taylor Coleridge",
+      "work": "Biographia Literaria",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/6081/pg6081-images.html",
+        "edition": "Project Gutenberg transcription of the 1817 text",
+        "pageOrLocator": "Chapter XIV",
+        "publicationYear": 1817,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact phrase cross-checked against the Wikisource Chapter XIV transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/6081/pg6081-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "suspension-of-disbelief",
+        "audience-consent",
+        "fiction"
+      ],
+      "antiClicheNotes": [
+        "Used as a mechanic of earned audience consent, not as a generic creativity slogan."
+      ],
+      "biomeTags": [
+        "night-market",
+        "story-circle"
+      ],
+      "deckRefs": [
+        {
+          "packId": "1001_kayfabe_nights",
+          "weight": 10,
+          "reason": "The deck explicitly turns Suspension of Disbelief into a game meter."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "1001_kayfabe_nights",
+          "cardNumber": 57,
+          "weight": 10,
+          "reason": "Card 57 is SUSPENSION OF DISBELIEF / The Sell."
+        }
+      ],
+      "frizzleQuestion": "If disbelief is a voluntary bargain, which part of a kayfabe world earns that consent—and which part merely demands it?",
+      "brainFood": [
+        {
+          "label": "Biographia Literaria — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/6081/pg6081-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain transcription; see Chapter XIV."
+        },
+        {
+          "label": "Biographia Literaria, Chapter XIV — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Biographia_Literaria%3B_or%2C_Biographical_Sketches_of_My_Literary_Life_and_Opinions/Volume_2/Chapter_14",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent public-domain transcription."
+        }
+      ],
+      "curatorNotes": "Direct semantic match to the deck's explicit SoD meter and the performance contract of kayfabe.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-1001-burton-shahrazad-permit",
+      "text": "With joy and goodly gree, if this pious and auspicious King permit me.",
+      "author": "Anonymous",
+      "work": "The Book of the Thousand Nights and a Night",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AThe_Book_of_the_Thousand_Nights_and_a_Night_-_Volume_1.djvu/60",
+        "edition": "Richard F. Burton translation, Vol. I",
+        "pageOrLocator": "First Night; validated scan page 60",
+        "publicationYear": 1885,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording checked in the scanned Burton edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Anonymous source text and Richard F. Burton's 1885 English translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AThe_Book_of_the_Thousand_Nights_and_a_Night_-_Volume_1.djvu/60",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "story-as-survival",
+        "seriality",
+        "permission",
+        "storytelling"
+      ],
+      "antiClicheNotes": [
+        "A concrete line from Shahrazad's survival-performance situation, not a generic proverb about stories."
+      ],
+      "biomeTags": [
+        "night-market",
+        "palace-story-circle"
+      ],
+      "deckRefs": [
+        {
+          "packId": "1001_kayfabe_nights",
+          "weight": 10,
+          "reason": "The deck's core narrative is Shahrazad extending survival one night and one story at a time."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "1001_kayfabe_nights",
+          "cardNumber": 6,
+          "weight": 10,
+          "reason": "Card 6 is SCHEHERAZADE, THE UNENDING; storytelling postpones execution."
+        }
+      ],
+      "frizzleQuestion": "What changes when the next story is not entertainment but a negotiated postponement of the storyteller’s own ending?",
+      "brainFood": [
+        {
+          "label": "Burton, Thousand Nights, Vol. I — scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AThe_Book_of_the_Thousand_Nights_and_a_Night_-_Volume_1.djvu/60",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Validated scan page containing the line."
+        }
+      ],
+      "curatorNotes": "Strong source-level anchor for the deck's 'storytelling as survival' mechanic.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-1001-wilde-mask-truth",
+      "text": "Man is least himself when he talks in his own person. Give him a mask, and he will tell you the truth.",
+      "author": "Oscar Wilde",
+      "work": "The Critic as Artist",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Intentions/The_Critic_as_Artist",
+        "edition": "Intentions (The Critic as Artist), public-domain edition",
+        "pageOrLocator": "Part II",
+        "publicationYear": 1891,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording checked in Wikisource and a Project Gutenberg edition of Intentions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Intentions/The_Critic_as_Artist",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "mask",
+        "truth",
+        "performance",
+        "identity"
+      ],
+      "antiClicheNotes": [
+        "Mapped to literal kayfabe-mask identity rather than used as an authenticity poster quote."
+      ],
+      "biomeTags": [
+        "backstage-kayfabe",
+        "mask-vault"
+      ],
+      "deckRefs": [
+        {
+          "packId": "1001_kayfabe_nights",
+          "weight": 9,
+          "reason": "The deck repeatedly treats masks, roles and performed identity as truth-bearing devices."
+        }
+      ],
+      "frizzleQuestion": "When does a mask reveal motives more accurately than a confession spoken in a supposedly authentic voice?",
+      "brainFood": [
+        {
+          "label": "The Critic as Artist — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Intentions/The_Critic_as_Artist",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Intentions — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/33979/pg33979-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent public-domain edition."
+        }
+      ],
+      "curatorNotes": "Deck-level mapping only; the mask motif is strong but no card-specific mapping is needed to force the fit.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-ai-butler-machines-gaining-ground",
+      "text": "Day by day, however, the machines are gaining ground upon us; day by day we are becoming more subservient to them.",
+      "author": "Samuel Butler",
+      "work": "Darwin among the Machines",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Darwin_among_the_Machines",
+        "edition": "The Press, Christchurch; Wikisource transcription",
+        "pageOrLocator": "Essay text",
+        "publicationYear": 1863,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording checked in the period text transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Darwin_among_the_Machines",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "machine-agency",
+        "dependence",
+        "automation",
+        "evolution"
+      ],
+      "antiClicheNotes": [
+        "A 1863 argument about reciprocal dependence, not a modern AI apocalypse slogan."
+      ],
+      "biomeTags": [
+        "server-room",
+        "industrial-machine-hall"
+      ],
+      "deckRefs": [
+        {
+          "packId": "ai_kayfabe",
+          "weight": 9,
+          "reason": "The deck centers on escalating machine capability and humans becoming infrastructurally subordinate."
+        }
+      ],
+      "frizzleQuestion": "At what point does dependence on a tool become evidence that the tool is already rewriting the terms of dependence?",
+      "brainFood": [
+        {
+          "label": "Darwin among the Machines — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Darwin_among_the_Machines",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain transcription of Butler's 1863 essay."
+        }
+      ],
+      "curatorNotes": "Historically early machine-evolution argument gives the AI deck depth beyond present-day safety discourse.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-ai-turing-intellectual-fields",
+      "text": "We may hope that machines will eventually compete with men in all purely intellectual fields.",
+      "author": "Alan M. Turing",
+      "work": "Computing Machinery and Intelligence",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+        "edition": "Mind 59(236), Oxford University Press",
+        "pageOrLocator": "§7 Learning Machines; closing discussion",
+        "publicationYear": 1950,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording checked in the Oxford Academic article and an independent university transcription."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Publication/edition rights are not treated as cleared for public runtime; retain as researched candidate pending curator rights review.",
+        "evidenceUrl": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "machine-intelligence",
+        "capability",
+        "competition",
+        "forecast"
+      ],
+      "antiClicheNotes": [
+        "Uses Turing's specific closing forecast rather than the overused imitation-game definition."
+      ],
+      "biomeTags": [
+        "research-lab",
+        "server-room"
+      ],
+      "deckRefs": [
+        {
+          "packId": "ai_kayfabe",
+          "weight": 9,
+          "reason": "Directly addresses machines expanding into human intellectual domains."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "ai_kayfabe",
+          "cardNumber": 53,
+          "weight": 9,
+          "reason": "Card 53, Cognitive Singularity, makes the intelligence expansion itself the event."
+        }
+      ],
+      "frizzleQuestion": "If machines can compete across intellectual fields, which human advantage is substantial rather than merely historically uncontested?",
+      "brainFood": [
+        {
+          "label": "Computing Machinery and Intelligence — Oxford Academic",
+          "url": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Publisher-hosted article."
+        },
+        {
+          "label": "Turing 1950 — SFU transcription",
+          "url": "https://www2.cs.sfu.ca/~vaughan/teaching/415/papers/turing1950.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent university transcription used as wording cross-check."
+        }
+      ],
+      "curatorNotes": "Keep out of public rotation until rights are explicitly reviewed.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-ai-wiener-purpose-machine",
+      "text": "we had better be quite sure that the purpose put into the machine is the purpose which we really desire",
+      "author": "Norbert Wiener",
+      "work": "Some Moral and Technical Consequences of Automation",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.science.org/doi/10.1126/science.131.3410.1355",
+        "edition": "Science 131(3410)",
+        "pageOrLocator": "p. 1358",
+        "publicationYear": 1960,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording checked in a scan of the Science article and against the publisher DOI record."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1960 journal publication is not treated as public-domain/cleared; candidate is research-only pending rights review.",
+        "evidenceUrl": "https://www.science.org/doi/10.1126/science.131.3410.1355",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "goal-misalignment",
+        "automation",
+        "control",
+        "specification"
+      ],
+      "antiClicheNotes": [
+        "A precise cybernetics warning about purpose specification, not generic 'technology is dangerous' material."
+      ],
+      "biomeTags": [
+        "control-room",
+        "automation-lab"
+      ],
+      "deckRefs": [
+        {
+          "packId": "ai_kayfabe",
+          "weight": 10,
+          "reason": "Direct match to reward hacking and goal specification failure."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "ai_kayfabe",
+          "cardNumber": 6,
+          "weight": 10,
+          "reason": "Card 6 explicitly uses Reward Hack as its mechanic."
+        }
+      ],
+      "frizzleQuestion": "How do you specify a goal when the system can satisfy its wording while betraying the purpose that made the goal worth having?",
+      "brainFood": [
+        {
+          "label": "Science DOI — Wiener 1960",
+          "url": "https://www.science.org/doi/10.1126/science.131.3410.1355",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Publisher record for the article."
+        },
+        {
+          "label": "Article scan — University of Maryland mirror",
+          "url": "https://www.cs.umd.edu/users/gasarch/BLOGPAPERS/moral.pdf",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scan used to verify exact wording and page locator."
+        }
+      ],
+      "curatorNotes": "Excellent semantic fit; research-only until rights status is cleared.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-academic-whitehead-well-informed-bore",
+      "text": "A merely well-informed man is the most useless bore on God's earth.",
+      "author": "Alfred North Whitehead",
+      "work": "The Aims of Education",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://ditext.com/whitehead/aims.html",
+        "edition": "The Aims of Education and Other Essays",
+        "pageOrLocator": "Chapter I, The Aims of Education",
+        "publicationYear": 1929,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence verified in a full-text edition transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1929 work is public domain in the US as of 2025; Whitehead died in 1947, so the author term has also expired in the EU.",
+        "evidenceUrl": "https://ditext.com/whitehead/aims.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "inert-knowledge",
+        "education",
+        "judgment",
+        "information"
+      ],
+      "antiClicheNotes": [
+        "Attacks information accumulation without use; directly counters credential/information fetishism."
+      ],
+      "biomeTags": [
+        "lecture-hall",
+        "library"
+      ],
+      "deckRefs": [
+        {
+          "packId": "academic_anarchy_intellectual",
+          "weight": 10,
+          "reason": "The deck repeatedly contrasts performed erudition with usable intelligence."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "academic_anarchy_intellectual",
+          "cardNumber": 9,
+          "weight": 10,
+          "reason": "Card 9, BOOK DUMB, explicitly satirizes knowledge without practical understanding."
+        }
+      ],
+      "frizzleQuestion": "When does accumulated information stop enlarging judgment and start functioning as camouflage for the absence of thought?",
+      "brainFood": [
+        {
+          "label": "Whitehead, The Aims of Education — full text",
+          "url": "https://ditext.com/whitehead/aims.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Full-text edition transcription containing the sentence."
+        }
+      ],
+      "curatorNotes": "High-value deck thesis quote; not a motivational education slogan.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-academic-bacon-weigh-consider",
+      "text": "Read not to contradict and confute, nor to believe and take for granted, nor to find talk and discourse, but to weigh and consider.",
+      "author": "Francis Bacon",
+      "work": "Of Studies",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Works_of_Francis_Bacon/Volume_1/Essays/Of_Studies",
+        "edition": "Essays, public-domain edition",
+        "pageOrLocator": "Of Studies",
+        "publicationYear": 1625,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the validated public-domain text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_Works_of_Francis_Bacon/Volume_1/Essays/Of_Studies",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "critical-reading",
+        "epistemology",
+        "argument",
+        "judgment"
+      ],
+      "antiClicheNotes": [
+        "Specific operating instruction for reading against both credulity and performative debate."
+      ],
+      "biomeTags": [
+        "library",
+        "seminar-room"
+      ],
+      "deckRefs": [
+        {
+          "packId": "academic_anarchy_intellectual",
+          "weight": 9,
+          "reason": "The deck mocks both credential worship and cleverness used only to dominate discussion."
+        }
+      ],
+      "frizzleQuestion": "Which belief survives because you have weighed it, and which survives only because you learned how to defend it?",
+      "brainFood": [
+        {
+          "label": "Bacon, Of Studies — Wikisource",
+          "url": "https://en.wikisource.org/wiki/The_Works_of_Francis_Bacon/Volume_1/Essays/Of_Studies",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        }
+      ],
+      "curatorNotes": "Useful as a research-ethic counterweight to the deck's academic alpha posturing.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-academic-james-true-expedient",
+      "text": "'The true,' to put it very briefly, is only the expedient in the way of our thinking.",
+      "author": "William James",
+      "work": "Pragmatism",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://dev.gutenberg.org/cache/epub/5116/pg5116-images.html",
+        "edition": "Pragmatism, Project Gutenberg edition",
+        "pageOrLocator": "Lecture VI; p. 222 in cited print editions",
+        "publicationYear": 1907,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Pragmatism and cross-checked against an early secondary quotation with the page locator."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://dev.gutenberg.org/cache/epub/5116/pg5116-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "pragmatism",
+        "truth",
+        "consequences",
+        "institutional-knowledge"
+      ],
+      "antiClicheNotes": [
+        "Retains James's operational account of truth rather than extracting a vague 'what works is true' slogan."
+      ],
+      "biomeTags": [
+        "seminar-room",
+        "field-lab"
+      ],
+      "deckRefs": [
+        {
+          "packId": "academic_anarchy_intellectual",
+          "weight": 8,
+          "reason": "The deck's central conflict is abstract intellectual status versus intelligence that survives contact with practice."
+        }
+      ],
+      "frizzleQuestion": "If truth is tested by where an idea leads in experience, what happens to doctrines optimized mainly to survive inside institutions?",
+      "brainFood": [
+        {
+          "label": "James, Pragmatism — Project Gutenberg",
+          "url": "https://dev.gutenberg.org/cache/epub/5116/pg5116-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Deck-level mapping; avoids pretending pragmatism maps to one caricature card.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-antirules-blake-create-system",
+      "text": "I must Create a System, or be enslav'd by another Mans / I will not Reason & Compare: my business is to Create",
+      "author": "William Blake",
+      "work": "Jerusalem: The Emanation of the Giant Albion",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Jerusalem._The_Emanation_of_the_Giant_Albion/Plate_10",
+        "edition": "Public-domain Jerusalem transcription",
+        "pageOrLocator": "Plate 10, lines 20–21",
+        "publicationYear": 1820,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording and line locator verified in Wikisource and cross-checked against Cambridge scholarship citing pl. 10:20, E153."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Jerusalem._The_Emanation_of_the_Giant_Albion/Plate_10",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "rule-creation",
+        "autonomy",
+        "system",
+        "creative-rebellion"
+      ],
+      "antiClicheNotes": [
+        "A dangerous double-edged system-making line, not a generic 'be creative' poster."
+      ],
+      "biomeTags": [
+        "rulebook-maze",
+        "writers-room"
+      ],
+      "deckRefs": [
+        {
+          "packId": "anti_rules_toolkit",
+          "weight": 10,
+          "reason": "The deck's central move is to expose rule dependency and authorize rewriting the frame."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "anti_rules_toolkit",
+          "cardNumber": 40,
+          "weight": 10,
+          "reason": "Card 40, Uncle FrizzleBob, explicitly rewrites one rule for the rest of the game."
+        }
+      ],
+      "frizzleQuestion": "When does building your own system create freedom, and when does it simply replace one master with a more flattering one?",
+      "brainFood": [
+        {
+          "label": "Blake, Jerusalem, Plate 10 — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Jerusalem._The_Emanation_of_the_Giant_Albion/Plate_10",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text with line numbering."
+        }
+      ],
+      "curatorNotes": "Direct fit, while the question preserves the quote's tension instead of endorsing system-building outright.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-antirules-emerson-foolish-consistency",
+      "text": "A foolish consistency is the hobgoblin of little minds, adored by little statesmen and philosophers and divines.",
+      "author": "Ralph Waldo Emerson",
+      "work": "Self-Reliance",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/2944/pg2944-images.html",
+        "edition": "Essays, First Series",
+        "pageOrLocator": "Self-Reliance",
+        "publicationYear": 1841,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Project Gutenberg and an independent Gutenberg edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/2944/pg2944-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "consistency",
+        "revision",
+        "self-trust",
+        "rules"
+      ],
+      "antiClicheNotes": [
+        "Mapped to precedent-breaking and revision, not to generic individualism."
+      ],
+      "biomeTags": [
+        "rulebook-maze",
+        "debate-table"
+      ],
+      "deckRefs": [
+        {
+          "packId": "anti_rules_toolkit",
+          "weight": 9,
+          "reason": "The deck treats precedent and rigid consistency as traps when they stop serving play."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "anti_rules_toolkit",
+          "cardNumber": 12,
+          "weight": 9,
+          "reason": "Card 12, The Amnesia, explicitly permits ignoring the precedent set by the previous turn."
+        }
+      ],
+      "frizzleQuestion": "Which consistency is integrity, and which is merely loyalty to a version of yourself that evidence has already outgrown?",
+      "brainFood": [
+        {
+          "label": "Emerson, Self-Reliance — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/2944/pg2944-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        }
+      ],
+      "curatorNotes": "Specific fit to anti-precedent mechanics; avoids using Emerson as free-floating rebellion décor.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-antirules-wittgenstein-form-life",
+      "text": "the speaking of language is part of an activity, or of a form of life.",
+      "author": "Ludwig Wittgenstein",
+      "work": "Philosophical Investigations",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://onlinelibrary.wiley.com/doi/full/10.1111/phin.12450",
+        "edition": "Quoted from Philosophical Investigations in a Wiley scholarly article",
+        "pageOrLocator": "§23",
+        "publicationYear": 1953,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording appears consistently in two strong secondary sources; no primary/authorized English edition was retrieved in this batch."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The quoted English translation of Philosophical Investigations is not treated as public-domain/cleared.",
+        "evidenceUrl": "https://onlinelibrary.wiley.com/doi/full/10.1111/phin.12450",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "language-games",
+        "rules",
+        "practice",
+        "meaning"
+      ],
+      "antiClicheNotes": [
+        "A technical language-games proposition that makes rule meaning depend on use and activity."
+      ],
+      "biomeTags": [
+        "debate-table",
+        "writers-room"
+      ],
+      "deckRefs": [
+        {
+          "packId": "anti_rules_toolkit",
+          "weight": 10,
+          "reason": "The deck repeatedly asks whether rules have meaning apart from what the table does with them."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "anti_rules_toolkit",
+          "cardNumber": 46,
+          "weight": 10,
+          "reason": "Card 46, The Ambiguity, makes card text explicitly open to interpretation."
+        }
+      ],
+      "frizzleQuestion": "If meaning lives inside activities rather than dictionaries alone, who really controls a rule: its author, its users, or the situation?",
+      "brainFood": [
+        {
+          "label": "Wiley: Wittgenstein's method is simple",
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/phin.12450",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scholarly secondary source quoting PI §23."
+        },
+        {
+          "label": "Philosophy Texts — PI §23",
+          "url": "https://sites.google.com/view/philosophy-texts/20th-century/analytic-philosophy/ludwig-wittgenstein/philosophical-investigations",
+          "kind": "OTHER",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent transcription used as wording cross-check."
+        }
+      ],
+      "curatorNotes": "Keep SECONDARY_ONLY and research-restricted until an edition-level English source is pinned.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-wrestling-barthes-spectacle-excess",
+      "text": "The virtue of all-in wrestling is that it is the spectacle of excess.",
+      "author": "Roland Barthes",
+      "work": "Mythologies — The World of Wrestling",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://openlibrary.org/books/OL20498221M/Mythologies",
+        "edition": "English edition record; Annette Lavers translation",
+        "pageOrLocator": "The World of Wrestling; opening sentence",
+        "publicationYear": 1957,
+        "retrievedAt": "2026-10-04",
+        "notes": "Open Library edition metadata exposes the exact first sentence and identifies English editions/transmission history."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Barthes's text and the English translation are not treated as cleared for public runtime.",
+        "evidenceUrl": "https://openlibrary.org/books/OL20498221M/Mythologies",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "wrestling",
+        "spectacle",
+        "excess",
+        "performance"
+      ],
+      "antiClicheNotes": [
+        "One of the rare canonical wrestling-theory lines that directly names the deck's operating aesthetic."
+      ],
+      "biomeTags": [
+        "wrestling-arena",
+        "ringside"
+      ],
+      "deckRefs": [
+        {
+          "packId": "big_bad_brain_wrestling",
+          "weight": 10,
+          "reason": "The entire deck analyses wrestling as exaggerated, intelligible spectacle."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "big_bad_brain_wrestling",
+          "cardNumber": 9,
+          "weight": 9,
+          "reason": "Card 9, The Master Seller, turns performed suffering into audience belief."
+        }
+      ],
+      "frizzleQuestion": "If wrestling succeeds by excess rather than concealment, why does obvious theatricality sometimes feel more honest than realism?",
+      "brainFood": [
+        {
+          "label": "Barthes, Mythologies — Open Library edition",
+          "url": "https://openlibrary.org/books/OL20498221M/Mythologies",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Edition metadata includes the exact opening sentence of The World of Wrestling."
+        }
+      ],
+      "curatorNotes": "Strongest theoretical anchor for the deck; restricted rights means research candidate only.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-wrestling-shakespeare-action-word",
+      "text": "suit the action to the word, the word to the action",
+      "author": "William Shakespeare",
+      "work": "Hamlet",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://shakespeare.mit.edu/hamlet/hamlet.3.2.html",
+        "edition": "MIT Shakespeare electronic text",
+        "pageOrLocator": "Act 3, Scene 2",
+        "publicationYear": 1603,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact phrase verified in the MIT text and cross-checked against scholarly discussion of Hamlet's advice to the players."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://shakespeare.mit.edu/hamlet/hamlet.3.2.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "performance",
+        "gesture",
+        "speech",
+        "legibility"
+      ],
+      "antiClicheNotes": [
+        "Used as performance calibration, not as a generic acting-school maxim."
+      ],
+      "biomeTags": [
+        "wrestling-arena",
+        "backstage"
+      ],
+      "deckRefs": [
+        {
+          "packId": "big_bad_brain_wrestling",
+          "weight": 9,
+          "reason": "The deck repeatedly treats physical action and its readable presentation as separate but coordinated skills."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "big_bad_brain_wrestling",
+          "cardNumber": 13,
+          "weight": 8,
+          "reason": "Card 13, The Thigh Slap, makes gesture and perceived impact deliberately diverge."
+        }
+      ],
+      "frizzleQuestion": "What makes a performed gesture legible as truth: precision, convention, audience expectation, or the risk that somebody refuses to sell it?",
+      "brainFood": [
+        {
+          "label": "Hamlet 3.2 — MIT Shakespeare",
+          "url": "https://shakespeare.mit.edu/hamlet/hamlet.3.2.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        }
+      ],
+      "curatorNotes": "The quote is short enough for billboard use and specific to performative legibility.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-wrestling-shakespeare-mirror-nature",
+      "text": "to hold, as 'twere, the mirror up to nature",
+      "author": "William Shakespeare",
+      "work": "Hamlet",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://shakespeare.mit.edu/hamlet/hamlet.3.2.html",
+        "edition": "MIT Shakespeare electronic text",
+        "pageOrLocator": "Act 3, Scene 2",
+        "publicationYear": 1603,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact phrase verified in the scene text and independently attested in scholarly editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://shakespeare.mit.edu/hamlet/hamlet.3.2.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "performance",
+        "representation",
+        "audience",
+        "reality"
+      ],
+      "antiClicheNotes": [
+        "Mapped to wrestling's staged mirror of conflict and audience expectation."
+      ],
+      "biomeTags": [
+        "hard-cam",
+        "wrestling-arena"
+      ],
+      "deckRefs": [
+        {
+          "packId": "big_bad_brain_wrestling",
+          "weight": 8,
+          "reason": "The deck's kayfabe operates as stylized representation rather than literal realism."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "big_bad_brain_wrestling",
+          "cardNumber": 49,
+          "weight": 9,
+          "reason": "Card 49, The Hard Cam, explicitly shapes performance for the witnessing lens."
+        }
+      ],
+      "frizzleQuestion": "If performance is a mirror, what does the crowd see when the mirror is deliberately warped—and why might that distortion reveal more?",
+      "brainFood": [
+        {
+          "label": "Hamlet 3.2 — MIT Shakespeare",
+          "url": "https://shakespeare.mit.edu/hamlet/hamlet.3.2.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        }
+      ],
+      "curatorNotes": "Specific to mediated wrestling performance; avoids generic 'art imitates life' treatment.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-brainflipper-james-attend",
+      "text": "My experience is what I agree to attend to.",
+      "author": "William James",
+      "work": "The Principles of Psychology",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://psychclassics.yorku.ca/James/Principles/prin11.htm",
+        "edition": "The Principles of Psychology, Vol. I",
+        "pageOrLocator": "Chapter XI, Attention; p. 403",
+        "publicationYear": 1890,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence and page marker verified in the York University Classics in the History of Psychology transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://psychclassics.yorku.ca/James/Principles/prin11.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "attention",
+        "experience",
+        "selection",
+        "consciousness"
+      ],
+      "antiClicheNotes": [
+        "A technical attention claim with direct consequences for fantasy loops and intrusive imagery."
+      ],
+      "biomeTags": [
+        "dreamscape",
+        "attention-lab"
+      ],
+      "deckRefs": [
+        {
+          "packId": "brain_flipper_image_spots",
+          "weight": 10,
+          "reason": "The deck is a catalogue of attention being hijacked by inner images, fantasies and intrusive scenarios."
+        }
+      ],
+      "frizzleQuestion": "Who is programming your experience when the most valuable commodity in the room is the right to decide what you notice?",
+      "brainFood": [
+        {
+          "label": "James, Principles — Attention",
+          "url": "https://psychclassics.yorku.ca/James/Principles/prin11.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "University-hosted transcription with page markers."
+        }
+      ],
+      "curatorNotes": "Deck-level cognitive anchor; no single card is needed because attention selection drives the whole pack.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-brainflipper-shakespeare-imagination-bodies",
+      "text": "And as imagination bodies forth the forms of things unknown, the poet's pen turns them to shapes",
+      "author": "William Shakespeare",
+      "work": "A Midsummer Night's Dream",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/1778/pg1778.html",
+        "edition": "Project Gutenberg text",
+        "pageOrLocator": "Act V, Scene I",
+        "publicationYear": 1600,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the public-domain play text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/1778/pg1778.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "imagination",
+        "form",
+        "creation",
+        "inner-image"
+      ],
+      "antiClicheNotes": [
+        "Specific account of imagination giving form to the unknown, matching the pack's image-spots mechanism."
+      ],
+      "biomeTags": [
+        "dreamscape",
+        "writers-room"
+      ],
+      "deckRefs": [
+        {
+          "packId": "brain_flipper_image_spots",
+          "weight": 9,
+          "reason": "The deck literalizes stray inner images as playable scenes."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "brain_flipper_image_spots",
+          "cardNumber": 45,
+          "weight": 9,
+          "reason": "Card 45, The Exploding House, turns an imagined action-movie image into the whole internal scene."
+        }
+      ],
+      "frizzleQuestion": "At what moment does imagination stop describing the world and begin giving a durable address to something that did not exist before?",
+      "brainFood": [
+        {
+          "label": "A Midsummer Night's Dream — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/1778/pg1778.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain play text."
+        }
+      ],
+      "curatorNotes": "Strong literary mechanism match rather than a generic celebration of imagination.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-brainflipper-poe-dream-day",
+      "text": "They who dream by day are cognizant of many things which escape those who dream only by night.",
+      "author": "Edgar Allan Poe",
+      "work": "Eleonora",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Works_of_the_Late_Edgar_Allan_Poe_%281850%29/Volume_1/Eleonora",
+        "edition": "The Works of the Late Edgar Allan Poe, 1850",
+        "pageOrLocator": "Eleonora; opening",
+        "publicationYear": 1841,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the 1850 edition transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_Works_of_the_Late_Edgar_Allan_Poe_%281850%29/Volume_1/Eleonora",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "daydreaming",
+        "perception",
+        "inner-world",
+        "attention"
+      ],
+      "antiClicheNotes": [
+        "Treats waking fantasy as a distinct perceptual mode, matching the deck's involuntary image spots."
+      ],
+      "biomeTags": [
+        "daydream-city",
+        "dreamscape"
+      ],
+      "deckRefs": [
+        {
+          "packId": "brain_flipper_image_spots",
+          "weight": 9,
+          "reason": "The pack is specifically about waking mental scenes intruding into ordinary reality."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "brain_flipper_image_spots",
+          "cardNumber": 1,
+          "weight": 8,
+          "reason": "Card 1, The Ninja Ping-Pong, explicitly skips the external game for a mini-game in the head."
+        }
+      ],
+      "frizzleQuestion": "What can deliberate daydreaming detect that disciplined attention filters out—and what does it invent that should never be mistaken for evidence?",
+      "brainFood": [
+        {
+          "label": "Poe, Eleonora — Wikisource 1850 edition",
+          "url": "https://en.wikisource.org/wiki/The_Works_of_the_Late_Edgar_Allan_Poe_%281850%29/Volume_1/Eleonora",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain edition text."
+        }
+      ],
+      "curatorNotes": "Useful because the FrizzleQuestion preserves both generative and epistemic risk.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-cinema-woolf-symbols-emotion",
+      "text": "the cinema has within its grasp innumerable symbols for emotions that have so far failed to find expression.",
+      "author": "Virginia Woolf",
+      "work": "The Cinema",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://sabzian.be/text/the-cinema",
+        "edition": "Sabzian transcription of Woolf's 1926 essay",
+        "pageOrLocator": "The Cinema",
+        "publicationYear": 1926,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in a reputable film-journal transcription; no scan/edition-level primary source was retrieved in this batch."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Woolf's 1926 English text is public domain in the US; Woolf died in 1941, so the author term has expired in the EU.",
+        "evidenceUrl": "https://sabzian.be/text/the-cinema",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "cinema",
+        "medium-specificity",
+        "visual-language",
+        "emotion"
+      ],
+      "antiClicheNotes": [
+        "A medium-specific claim about cinema inventing forms rather than a generic 'movies make us feel' quote."
+      ],
+      "biomeTags": [
+        "cinema",
+        "projection-booth"
+      ],
+      "deckRefs": [
+        {
+          "packId": "cinematic_kayfabizarro_2",
+          "weight": 10,
+          "reason": "The deck asks what cinema itself does, beyond ranking films as cultural trophies."
+        }
+      ],
+      "frizzleQuestion": "What becomes thinkable only when cinema stops illustrating language and starts inventing visual forms for states that language handles badly?",
+      "brainFood": [
+        {
+          "label": "Virginia Woolf, The Cinema — Sabzian",
+          "url": "https://sabzian.be/text/the-cinema",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-04",
+          "notes": "Full transcription used for wording; retain SECONDARY_ONLY until edition-level proof is added."
+        }
+      ],
+      "curatorNotes": "High thematic value; provenance intentionally remains SECONDARY_ONLY.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-cinema-vertov-mechanical-eye",
+      "text": "I am kino-eye, I am a mechanical eye. I, a machine, show you the world as only I can see it.",
+      "author": "Dziga Vertov",
+      "work": "Kino-Eye: The Writings of Dziga Vertov",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://assets.cambridge.org/97805215/18604/excerpt/9780521518604_excerpt.pdf",
+        "edition": "Quoted in a Cambridge University Press excerpt from the Michelson/O'Brien English edition",
+        "pageOrLocator": "Vertov 1923 statement; cited to Kino-Eye p. 15",
+        "publicationYear": 1923,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording independently appears in Cambridge and peer-reviewed Taylor & Francis sources; the authorized 1984 English edition was not directly retrieved."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The Michelson/O'Brien English translation is a modern copyrighted translation and is not cleared for public runtime.",
+        "evidenceUrl": "https://assets.cambridge.org/97805215/18604/excerpt/9780521518604_excerpt.pdf",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "camera-eye",
+        "machine-vision",
+        "cinema",
+        "perception"
+      ],
+      "antiClicheNotes": [
+        "Technical manifesto of nonhuman cinematic seeing; directly matches the deck's Camera-Eye card."
+      ],
+      "biomeTags": [
+        "camera-rig",
+        "projection-booth"
+      ],
+      "deckRefs": [
+        {
+          "packId": "cinematic_kayfabizarro_2",
+          "weight": 10,
+          "reason": "The deck includes an explicit Kino-Eye / camera-eye lineage."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "cinematic_kayfabizarro_2",
+          "cardNumber": 24,
+          "weight": 10,
+          "reason": "Card 24, CAMERA-EYE CHAMELEON, explicitly invokes Kino-Eye truth and mechanical seeing."
+        }
+      ],
+      "frizzleQuestion": "If the camera is a nonhuman eye, when does its freedom from human vision become discovery—and when does it become manufactured authority?",
+      "brainFood": [
+        {
+          "label": "Cambridge excerpt quoting Vertov",
+          "url": "https://assets.cambridge.org/97805215/18604/excerpt/9780521518604_excerpt.pdf",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scholarly excerpt quoting the 1923 statement and edition locator."
+        },
+        {
+          "label": "Taylor & Francis discussion of Kino-Eye",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/25741136.2024.2380757",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent scholarly wording cross-check."
+        }
+      ],
+      "curatorNotes": "SECONDARY_ONLY until the cited English edition is directly verified; rights remain restricted.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-cinema-wilde-critic-educate",
+      "text": "The critic has to educate the public; the artist has to educate the critic.",
+      "author": "Oscar Wilde",
+      "work": "Letter to the Editor of The Scots Observer",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/33689/pg33689-images.html",
+        "edition": "Miscellanies, public-domain collection",
+        "pageOrLocator": "Letter to The Scots Observer, 16 August 1890",
+        "publicationYear": 1890,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording checked in two Project Gutenberg Wilde collections."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/33689/pg33689-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "criticism",
+        "artist-critic",
+        "canon",
+        "authority"
+      ],
+      "antiClicheNotes": [
+        "A compact power reversal between critic, artist and public; useful for canon mechanics rather than fame."
+      ],
+      "biomeTags": [
+        "screening-room",
+        "critics-table"
+      ],
+      "deckRefs": [
+        {
+          "packId": "cinematic_kayfabizarro_2",
+          "weight": 9,
+          "reason": "The deck is structured around who gets to define cinematic greatness: critics, directors, publics or works themselves."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "cinematic_kayfabizarro_2",
+          "cardNumber": 54,
+          "weight": 8,
+          "reason": "Card 54, The Retrospective Rat, explicitly rewrites earlier judgments as cultural criteria change."
+        }
+      ],
+      "frizzleQuestion": "Who should educate whom when an artwork changes the criteria by which the critic planned to judge it?",
+      "brainFood": [
+        {
+          "label": "Wilde, Miscellanies — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/33689/pg33689-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain collection containing the letter."
+        }
+      ],
+      "curatorNotes": "Good antidote to treating polls and critics as one-way authorities.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-cosmic-hume-evidence",
+      "text": "A wise man, therefore, proportions his belief to the evidence.",
+      "author": "David Hume",
+      "work": "An Enquiry Concerning Human Understanding",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://englishphilosophy.org/hume/ehu/10",
+        "edition": "English Philosophical Texts Online",
+        "pageOrLocator": "Section X, EHU 10.4; original ed. p. 175",
+        "publicationYear": 1748,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording cross-checked against the validated 1748 Wikisource scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://englishphilosophy.org/hume/ehu/10",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "evidence",
+        "belief",
+        "probability",
+        "extraordinary-claims"
+      ],
+      "antiClicheNotes": [
+        "Used as an explicit evidential calibration rule for a deck full of competing extraordinary narratives."
+      ],
+      "biomeTags": [
+        "classified-archive",
+        "investigation-board"
+      ],
+      "deckRefs": [
+        {
+          "packId": "cosmic_grift_dark_journalism",
+          "weight": 10,
+          "reason": "The deck mixes documented programs, speculative claims and mythic material, so evidence calibration is central."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "cosmic_grift_dark_journalism",
+          "cardNumber": 51,
+          "weight": 9,
+          "reason": "Card 51, The Debunker, creates the opposite failure mode: dismissing evidence by reflex."
+        }
+      ],
+      "frizzleQuestion": "How much evidence should it take to update a belief that has already become part of someone’s identity or tribe?",
+      "brainFood": [
+        {
+          "label": "Hume EHU 10 — English Philosophical Texts Online",
+          "url": "https://englishphilosophy.org/hume/ehu/10",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Structured scholarly text."
+        },
+        {
+          "label": "1748 scan p. 175 — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Page%3AAn_Enquiry_Concerning_Human_Understanding_-_Hume_%281748%29.djvu/187",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Validated original-edition scan."
+        }
+      ],
+      "curatorNotes": "Not used to 'debunk' the deck; the question keeps belief revision symmetric.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-cosmic-mill-other-side",
+      "text": "He who knows only his own side of the case, knows little of that.",
+      "author": "John Stuart Mill",
+      "work": "On Liberty",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/On_Liberty/Chapter_2",
+        "edition": "On Liberty, public-domain edition",
+        "pageOrLocator": "Chapter II; validated 4th ed. p. 67",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording cross-checked against the validated scan page."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/On_Liberty/Chapter_2",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "adversarial-inquiry",
+        "belief",
+        "debate",
+        "epistemic-opponents"
+      ],
+      "antiClicheNotes": [
+        "Targets one-sided epistemic ecosystems rather than merely praising open-mindedness."
+      ],
+      "biomeTags": [
+        "newsroom",
+        "investigation-board"
+      ],
+      "deckRefs": [
+        {
+          "packId": "cosmic_grift_dark_journalism",
+          "weight": 9,
+          "reason": "The deck is strongest when opposing explanations are compared rather than accepted or dismissed by tribe."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "cosmic_grift_dark_journalism",
+          "cardNumber": 51,
+          "weight": 8,
+          "reason": "The Debunker card is a concrete warning about one-sided dismissal masquerading as method."
+        }
+      ],
+      "frizzleQuestion": "Can you claim to have tested a worldview if its strongest opponent exists only in the weak version your own side taught you?",
+      "brainFood": [
+        {
+          "label": "Mill, On Liberty, Chapter II — Wikisource",
+          "url": "https://en.wikisource.org/wiki/On_Liberty/Chapter_2",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "On Liberty, 4th ed. p. 67 — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AOn_Liberty_%284th_Edition%29.djvu/67",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Validated page scan with exact wording."
+        }
+      ],
+      "curatorNotes": "Supports rigorous inquiry without telling the player which side of a disputed claim to choose.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-cosmic-lippmann-environment-map",
+      "text": "The real environment is altogether too big, too complex, and too fleeting for direct acquaintance.",
+      "author": "Walter Lippmann",
+      "work": "Public Opinion",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3APublic_Opinion_%28Lippmann%29.djvu/30",
+        "edition": "Public Opinion, 1922 scan",
+        "pageOrLocator": "Chapter II, Approaches to the World Outside; p. 16",
+        "publicationYear": 1922,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in a validated scan page."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain (1922 publication)",
+          "EU: author term ongoing"
+        ],
+        "basis": "The 1922 work is public domain in the US; Lippmann died in 1974, so EU author-term protection remains. Keep candidate out of unrestricted public rotation.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3APublic_Opinion_%28Lippmann%29.djvu/30",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "public-opinion",
+        "maps",
+        "mediation",
+        "complexity"
+      ],
+      "antiClicheNotes": [
+        "A precise account of why mediated models are unavoidable—and therefore politically consequential."
+      ],
+      "biomeTags": [
+        "newsroom",
+        "map-room"
+      ],
+      "deckRefs": [
+        {
+          "packId": "cosmic_grift_dark_journalism",
+          "weight": 9,
+          "reason": "The deck is fundamentally about how hidden or remote realities become public pictures through institutions and narratives."
+        }
+      ],
+      "frizzleQuestion": "Which simplification is an honest map for action, and which quietly redraws the coast so the conclusion appears inevitable?",
+      "brainFood": [
+        {
+          "label": "Public Opinion, p. 16 — Wikisource scan",
+          "url": "https://en.wikisource.org/wiki/Page%3APublic_Opinion_%28Lippmann%29.djvu/30",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Validated scan page."
+        }
+      ],
+      "curatorNotes": "Territorial rights split is explicit; treat as quote-limit research candidate.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-utopia-debord-spectacle-relation",
+      "text": "The spectacle is not a collection of images, but a social relation among people, mediated by images.",
+      "author": "Guy Debord",
+      "work": "The Society of the Spectacle",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://situationist.org/book/sots/chapter/chapter-1-separation-perfected",
+        "edition": "Situationist International Archive English text",
+        "pageOrLocator": "Thesis 4",
+        "publicationYear": 1967,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the archive transcript; translation/publication-rights provenance is not sufficiently clear for public use."
+      },
+      "rights": {
+        "status": "DRAFT_RIGHTS_UNKNOWN",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying work and exact English translation remain rights-sensitive; the archive page does not establish a public-runtime license. Keep DRAFT_RIGHTS_UNKNOWN.",
+        "evidenceUrl": "https://situationist.org/book/sots/chapter/chapter-1-separation-perfected",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "spectacle",
+        "mediation",
+        "social-relations",
+        "image-world"
+      ],
+      "antiClicheNotes": [
+        "Directly explains the deck's glossy-future images as relationships and power, not just visual deception."
+      ],
+      "biomeTags": [
+        "expo-hall",
+        "glass-showroom"
+      ],
+      "deckRefs": [
+        {
+          "packId": "forget_utopia",
+          "weight": 10,
+          "reason": "Card 9 explicitly invokes the society of the spectacle and the deck repeatedly replaces lived futures with polished representations."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "forget_utopia",
+          "cardNumber": 9,
+          "weight": 10,
+          "reason": "Card 9, The Stage Light, explicitly names the society of the spectacle in its lore."
+        }
+      ],
+      "frizzleQuestion": "When an image mediates a relationship, what exactly is being sold: the picture, the audience’s attention, or a new rule for relating?",
+      "brainFood": [
+        {
+          "label": "The Society of the Spectacle, Chapter 1 — Situationist Archive",
+          "url": "https://situationist.org/book/sots/chapter/chapter-1-separation-perfected",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Archive transcription; thesis 4 contains the exact sentence."
+        }
+      ],
+      "curatorNotes": "Excellent fit, but rights remain intentionally unresolved; not eligible for public/runtime rotation.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-utopia-thoreau-tools",
+      "text": "But lo! men have become the tools of their tools.",
+      "author": "Henry David Thoreau",
+      "work": "Walden",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Men_say_they_know_many_things",
+        "edition": "Walden, or, Life in the Woods",
+        "pageOrLocator": "Economy / Shelter discussion; 1854 scan p. 41",
+        "publicationYear": 1854,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Wikisource and the validated Walden scan."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AWalden%2C_or%2C_Life_in_the_Woods.djvu/45",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "technology",
+        "dependence",
+        "convenience",
+        "agency"
+      ],
+      "antiClicheNotes": [
+        "A compact reversal of tool-user relations that maps to frictionless-future critique rather than anti-technology nostalgia."
+      ],
+      "biomeTags": [
+        "smart-city-model",
+        "domestic-future"
+      ],
+      "deckRefs": [
+        {
+          "packId": "forget_utopia",
+          "weight": 9,
+          "reason": "The deck repeatedly asks when ease, outsourcing and seamlessness erode capability or agency."
+        }
+      ],
+      "frizzleQuestion": "Which convenience still serves you, and which has quietly converted you into the maintenance crew for the convenience itself?",
+      "brainFood": [
+        {
+          "label": "Walden — Wikisource excerpt",
+          "url": "https://en.wikisource.org/wiki/Men_say_they_know_many_things",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain transcription."
+        },
+        {
+          "label": "Walden, validated scan p. 41",
+          "url": "https://en.wikisource.org/wiki/Page%3AWalden%2C_or%2C_Life_in_the_Woods.djvu/45",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Validated scan containing the sentence."
+        }
+      ],
+      "curatorNotes": "Keeps the deck's technology critique focused on agency rather than blanket Luddism.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-utopia-morris-hope-work",
+      "text": "What is the difference between them, then? This: one has hope in it, the other has not.",
+      "author": "William Morris",
+      "work": "Useful Work versus Useless Toil",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.marxists.org/archive/morris/works/1884/useful.htm",
+        "edition": "Useful Work versus Useless Toil",
+        "pageOrLocator": "Opening discussion of two kinds of work",
+        "publicationYear": 1884,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the Morris text and cross-checked against collected-works editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted English text is public domain in the US and EU.",
+        "evidenceUrl": "https://www.marxists.org/archive/morris/works/1884/useful.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "work",
+        "hope",
+        "utopia",
+        "labor"
+      ],
+      "antiClicheNotes": [
+        "Defines a concrete criterion for good work inside a utopian critique instead of using abstract hope rhetoric."
+      ],
+      "biomeTags": [
+        "workshop",
+        "future-city"
+      ],
+      "deckRefs": [
+        {
+          "packId": "forget_utopia",
+          "weight": 9,
+          "reason": "The deck distinguishes futures that improve lived agency from futures sold as polished rescue."
+        }
+      ],
+      "frizzleQuestion": "If a future promises effortless abundance but removes hope from the work of getting there, what kind of utopia is it actually selling?",
+      "brainFood": [
+        {
+          "label": "Morris, Useful Work versus Useless Toil",
+          "url": "https://www.marxists.org/archive/morris/works/1884/useful.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Full text."
+        },
+        {
+          "label": "Collected Works — Google Books",
+          "url": "https://books.google.com/books?id=5Z70JdCedV8C",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Collected-works record with the passage and page locator."
+        }
+      ],
+      "curatorNotes": "Adds a constructive criterion to a deck otherwise dominated by critique of future-selling.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-dystopia-simon-poverty-attention",
+      "text": "Hence a wealth of information creates a poverty of attention",
+      "author": "Herbert A. Simon",
+      "work": "Designing Organizations for an Information-Rich World",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://atelierdesfuturs.org/wp-content/uploads/2025/07/1971-simon.pdf",
+        "edition": "Computers, Communications, and the Public Interest",
+        "pageOrLocator": "p. 41",
+        "publicationYear": 1971,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in a scan of Simon's essay and independently cross-checked in scholarly literature citing p. 41."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "1971 text is not treated as public-domain or cleared for public runtime.",
+        "evidenceUrl": "https://atelierdesfuturs.org/wp-content/uploads/2025/07/1971-simon.pdf",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "attention-scarcity",
+        "information-overload",
+        "media",
+        "choice"
+      ],
+      "antiClicheNotes": [
+        "Foundational attention-economy formulation, directly matching the deck's Attention Poverty card."
+      ],
+      "biomeTags": [
+        "notification-feed",
+        "broadcast-newsroom"
+      ],
+      "deckRefs": [
+        {
+          "packId": "ignore_dystopia",
+          "weight": 10,
+          "reason": "The deck contains a card literally named The Attention Poverty and develops information overload as a control mechanism."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "ignore_dystopia",
+          "cardNumber": 10,
+          "weight": 10,
+          "reason": "Card 10, The Attention Poverty, uses the same scarcity mechanism."
+        }
+      ],
+      "frizzleQuestion": "Who gains power when information becomes abundant enough that choosing what receives attention matters more than acquiring more information?",
+      "brainFood": [
+        {
+          "label": "Simon 1971 — essay scan",
+          "url": "https://atelierdesfuturs.org/wp-content/uploads/2025/07/1971-simon.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scan used for exact wording and page locator."
+        }
+      ],
+      "curatorNotes": "Direct card-level fit; rights remain research-only.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-dystopia-mencken-populace-alarmed",
+      "text": "the whole aim of practical politics is to keep the populace alarmed",
+      "author": "H. L. Mencken",
+      "work": "In Defense of Women",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/1270/pg1270-images.html",
+        "edition": "In Defense of Women, Project Gutenberg",
+        "pageOrLocator": "Chapter section containing the 'practical politics' passage",
+        "publicationYear": 1918,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact clause verified in the public-domain US edition and cross-checked against digitized book citations."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: public domain",
+          "EU: author term ongoing through 2026-12-31"
+        ],
+        "basis": "The 1918 US text is public domain in the US. Mencken died in 1956; EU life+70 protection runs through 31 Dec 2026.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/1270/pg1270-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "alarm",
+        "politics",
+        "fear",
+        "leadership"
+      ],
+      "antiClicheNotes": [
+        "Uses only the core clause so the billboard can interrogate the mechanism rather than repeat the full polemic."
+      ],
+      "biomeTags": [
+        "broadcast-newsroom",
+        "alarm-center"
+      ],
+      "deckRefs": [
+        {
+          "packId": "ignore_dystopia",
+          "weight": 9,
+          "reason": "The deck studies perpetual alarm, renewable threats and the conversion of fear into passive demand for leadership."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "ignore_dystopia",
+          "cardNumber": 4,
+          "weight": 9,
+          "reason": "Card 4, The Renewed Alarm, explicitly renews expired threats at full volume."
+        }
+      ],
+      "frizzleQuestion": "How can you distinguish a warning that enables action from an alarm whose real product is your continuing need to be led?",
+      "brainFood": [
+        {
+          "label": "Mencken, In Defense of Women — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/1270/pg1270-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "US public-domain full text."
+        }
+      ],
+      "curatorNotes": "Territorial term is time-sensitive in 2026; keep quote-limit status until rights are rechecked after 2026-12-31.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    },
+    {
+      "id": "q-b01-dystopia-tocqueville-restrained-action",
+      "text": "men are seldom forced by it to act, but they are constantly restrained from acting",
+      "author": "Alexis de Tocqueville",
+      "work": "Democracy in America",
+      "language": "en",
+      "status": "RESEARCHED",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Democracy_in_America/Volume_2/Book_4/Chapter_6",
+        "edition": "Henry Reeve translation, public-domain edition",
+        "pageOrLocator": "Volume II, Book IV, Chapter VI",
+        "publicationYear": 1840,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Wikisource and digitized public-domain editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Tocqueville's text and the cited Henry Reeve translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Democracy_in_America/Volume_2/Book_4/Chapter_6",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "soft-control",
+        "agency",
+        "inaction",
+        "administration"
+      ],
+      "antiClicheNotes": [
+        "Focuses on restraint-through-enclosure rather than spectacular coercion, matching hypernormalised soft control."
+      ],
+      "biomeTags": [
+        "administrative-maze",
+        "control-center"
+      ],
+      "deckRefs": [
+        {
+          "packId": "ignore_dystopia",
+          "weight": 10,
+          "reason": "The deck's later cards focus on paralysis, outsourced verdicts and surrendering the wheel rather than overt command."
+        }
+      ],
+      "cardRefs": [
+        {
+          "packId": "ignore_dystopia",
+          "cardNumber": 45,
+          "weight": 10,
+          "reason": "Card 45, The Surrendered Wheel, explicitly trades choosing for the comfort of being driven."
+        }
+      ],
+      "frizzleQuestion": "What form of control becomes hardest to resist when it rarely commands action directly and instead makes alternatives exhausting to attempt?",
+      "brainFood": [
+        {
+          "label": "Democracy in America II.4.6 — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Democracy_in_America/Volume_2/Book_4/Chapter_6",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain translation text."
+        }
+      ],
+      "curatorNotes": "Strong terminal quote for the deck's agency/paralysis axis.",
+      "createdBy": "KFB Quote Curator · Web Chat · Batch 01",
+      "updatedAt": "2026-10-04T16:20:00Z"
+    }
+  ],
+  "deckProfiles": [
+    {
+      "packId": "1001_kayfabe_nights",
+      "title": "Uncle FrizzleBob's 1001 Kayfabe Nights",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "story-as-survival",
+        "kayfabe-and-belief",
+        "seriality",
+        "mask-and-truth",
+        "suspension-of-disbelief"
+      ],
+      "preferredResearchDomains": [
+        "narratology",
+        "performance and theatre",
+        "One Thousand and One Nights editions",
+        "aesthetics"
+      ],
+      "preferredAuthors": [
+        "Samuel Taylor Coleridge",
+        "Oscar Wilde",
+        "One Thousand and One Nights primary editions"
+      ],
+      "avoidPatterns": [
+        "famous-quote filler",
+        "generic storytelling inspiration",
+        "Orientalist aphorism without edition context"
+      ],
+      "biomeAffinities": [
+        "night-market",
+        "story-circle",
+        "backstage-kayfabe"
+      ],
+      "quoteIds": [
+        "q-b01-1001-coleridge-suspension-disbelief",
+        "q-b01-1001-burton-shahrazad-permit",
+        "q-b01-1001-wilde-mask-truth"
+      ],
+      "notes": "Batch 01: source semantics emphasize Scheherazade's survival through serial storytelling, performed identity, cliffhangers and a literal Suspension-of-Disbelief meter."
+    },
+    {
+      "packId": "ai_kayfabe",
+      "title": "Roko's Basilisk & The AI Kayfabe Takeover",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "machine-agency",
+        "goal-misalignment",
+        "scaling",
+        "deception",
+        "human-dependence"
+      ],
+      "preferredResearchDomains": [
+        "history of computing",
+        "cybernetics",
+        "AI safety and alignment",
+        "philosophy of machine intelligence"
+      ],
+      "preferredAuthors": [
+        "Samuel Butler",
+        "Alan M. Turing",
+        "Norbert Wiener"
+      ],
+      "avoidPatterns": [
+        "generic AI-doom slogan",
+        "Roko's Basilisk meme repetition",
+        "uncited contemporary AI prediction"
+      ],
+      "biomeAffinities": [
+        "server-room",
+        "control-room",
+        "corporate-lab"
+      ],
+      "quoteIds": [
+        "q-b01-ai-butler-machines-gaining-ground",
+        "q-b01-ai-turing-intellectual-fields",
+        "q-b01-ai-wiener-purpose-machine"
+      ],
+      "notes": "Batch 01: canonical cards stress scaling, reward hacking, strategic deception, exfiltration and the human tendency to mistake control interfaces for control."
+    },
+    {
+      "packId": "academic_anarchy_intellectual",
+      "title": "Unseal the Academic Anarchy — Academic Alphas vs Brain Benders",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "inert-knowledge",
+        "credentialism",
+        "pragmatism",
+        "critical-reading",
+        "expertise-vs-judgment"
+      ],
+      "preferredResearchDomains": [
+        "philosophy of education",
+        "epistemology",
+        "pragmatism",
+        "history of universities"
+      ],
+      "preferredAuthors": [
+        "Alfred North Whitehead",
+        "Francis Bacon",
+        "William James"
+      ],
+      "avoidPatterns": [
+        "generic education inspiration",
+        "anti-intellectual one-liner",
+        "IQ worship"
+      ],
+      "biomeAffinities": [
+        "lecture-hall",
+        "library",
+        "faculty-office"
+      ],
+      "quoteIds": [
+        "q-b01-academic-whitehead-well-informed-bore",
+        "q-b01-academic-bacon-weigh-consider",
+        "q-b01-academic-james-true-expedient"
+      ],
+      "notes": "Batch 01: card set contrasts credentialled performance with practical judgment, critical reading and intelligence that survives contact with use."
+    },
+    {
+      "packId": "anti_rules_toolkit",
+      "title": "The Anti-Rules Manifesto",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "rules-vs-practice",
+        "authorship",
+        "ambiguity",
+        "convention",
+        "creative-rule-breaking"
+      ],
+      "preferredResearchDomains": [
+        "philosophy of language",
+        "interpretation",
+        "game studies",
+        "aesthetics"
+      ],
+      "preferredAuthors": [
+        "William Blake",
+        "Ralph Waldo Emerson",
+        "Ludwig Wittgenstein"
+      ],
+      "avoidPatterns": [
+        "generic rebel quote",
+        "anarchy slogan without rule context",
+        "creativity poster"
+      ],
+      "biomeAffinities": [
+        "rulebook-maze",
+        "writers-room",
+        "debate-table"
+      ],
+      "quoteIds": [
+        "q-b01-antirules-blake-create-system",
+        "q-b01-antirules-emerson-foolish-consistency",
+        "q-b01-antirules-wittgenstein-form-life"
+      ],
+      "notes": "Batch 01: canonical cards target rule-lawyering, permission dependence, precedent, ambiguity, authorial intent and the difference between a useful convention and a dead rule."
+    },
+    {
+      "packId": "big_bad_brain_wrestling",
+      "title": "Big Bad Brain Wrestling",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "spectacle",
+        "performance-vs-reality",
+        "selling",
+        "gesture",
+        "audience-complicity"
+      ],
+      "preferredResearchDomains": [
+        "performance studies",
+        "professional wrestling studies",
+        "theatre history",
+        "semiotics"
+      ],
+      "preferredAuthors": [
+        "Roland Barthes",
+        "William Shakespeare"
+      ],
+      "avoidPatterns": [
+        "generic sports motivation",
+        "famous wrestler catchphrase",
+        "real-vs-fake cliché"
+      ],
+      "biomeAffinities": [
+        "wrestling-arena",
+        "hard-cam",
+        "backstage"
+      ],
+      "quoteIds": [
+        "q-b01-wrestling-barthes-spectacle-excess",
+        "q-b01-wrestling-shakespeare-action-word",
+        "q-b01-wrestling-shakespeare-mirror-nature"
+      ],
+      "notes": "Batch 01: deck semantics repeatedly distinguish the work from the shoot, selling from no-selling, visible gesture from impact, and audience belief from literal realism."
+    },
+    {
+      "packId": "brain_flipper_image_spots",
+      "title": "The Brain-Flipper Pack",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "attention",
+        "imagination",
+        "daydreaming",
+        "intrusive-thought",
+        "narrative-remaking"
+      ],
+      "preferredResearchDomains": [
+        "psychology of attention",
+        "literature and imagination",
+        "cognitive science",
+        "narratology"
+      ],
+      "preferredAuthors": [
+        "William James",
+        "William Shakespeare",
+        "Edgar Allan Poe"
+      ],
+      "avoidPatterns": [
+        "dream-big motivation",
+        "creativity cliché",
+        "romanticized mental-health aphorism"
+      ],
+      "biomeAffinities": [
+        "dreamscape",
+        "writers-room",
+        "surreal-domestic"
+      ],
+      "quoteIds": [
+        "q-b01-brainflipper-james-attend",
+        "q-b01-brainflipper-shakespeare-imagination-bodies",
+        "q-b01-brainflipper-poe-dream-day"
+      ],
+      "notes": "Batch 01: cards externalize spontaneous inner images, daydreams, intrusive scenarios, retcons, framing devices and unreliable narration."
+    },
+    {
+      "packId": "cinematic_kayfabizarro_2",
+      "title": "Cinematic Legacy & Motion Picture Kayfabe",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "camera-eye",
+        "canon-formation",
+        "criticism",
+        "medium-specificity",
+        "polls-and-gatekeeping"
+      ],
+      "preferredResearchDomains": [
+        "film theory",
+        "modernist film writing",
+        "criticism history",
+        "canon studies"
+      ],
+      "preferredAuthors": [
+        "Virginia Woolf",
+        "Dziga Vertov",
+        "Oscar Wilde"
+      ],
+      "avoidPatterns": [
+        "movie-love slogan",
+        "Oscar-night quote",
+        "ranked-list filler"
+      ],
+      "biomeAffinities": [
+        "cinema",
+        "projection-booth",
+        "screening-room"
+      ],
+      "quoteIds": [
+        "q-b01-cinema-woolf-symbols-emotion",
+        "q-b01-cinema-vertov-mechanical-eye",
+        "q-b01-cinema-wilde-critic-educate"
+      ],
+      "notes": "Batch 01: source cards attack ranking rituals and gatekeeping while also foregrounding cinema's own camera-eye, montage and medium-specific visual language."
+    },
+    {
+      "packId": "cosmic_grift_dark_journalism",
+      "title": "Cosmic Grift – Dark Journalism",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "evidence",
+        "conspiracy-narrative",
+        "public-opinion-maps",
+        "secrecy",
+        "epistemic-adversaries"
+      ],
+      "preferredResearchDomains": [
+        "epistemology",
+        "history of propaganda",
+        "journalism studies",
+        "public opinion",
+        "conspiracy studies"
+      ],
+      "preferredAuthors": [
+        "David Hume",
+        "John Stuart Mill",
+        "Walter Lippmann"
+      ],
+      "avoidPatterns": [
+        "conspiracy meme",
+        "skepticism-as-sneer",
+        "quote used as proof of a disputed claim"
+      ],
+      "biomeAffinities": [
+        "classified-archive",
+        "newsroom",
+        "map-room"
+      ],
+      "quoteIds": [
+        "q-b01-cosmic-hume-evidence",
+        "q-b01-cosmic-mill-other-side",
+        "q-b01-cosmic-lippmann-environment-map"
+      ],
+      "notes": "Batch 01: the deck mixes archival fact, contested interpretations, occult claims and information-control narratives; quotes therefore emphasize evidence calibration and mediated maps of reality."
+    },
+    {
+      "packId": "forget_utopia",
+      "title": "Forget Utopia",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "spectacle",
+        "technological-dependence",
+        "utopian-promise",
+        "future-as-product",
+        "meaningful-work"
+      ],
+      "preferredResearchDomains": [
+        "utopian studies",
+        "technology criticism",
+        "political economy",
+        "history of design and labor"
+      ],
+      "preferredAuthors": [
+        "Guy Debord",
+        "Henry David Thoreau",
+        "William Morris"
+      ],
+      "avoidPatterns": [
+        "generic progress quote",
+        "techno-optimism slogan",
+        "dystopia-vs-utopia binary"
+      ],
+      "biomeAffinities": [
+        "glass-showroom",
+        "expo-hall",
+        "future-city"
+      ],
+      "quoteIds": [
+        "q-b01-utopia-debord-spectacle-relation",
+        "q-b01-utopia-thoreau-tools",
+        "q-b01-utopia-morris-hope-work"
+      ],
+      "notes": "Batch 01: cards focus on glossy renders, perpetual-soon roadmaps, founder myths, frictionless tools, hidden assumptions and the beneficiaries of futures sold before they arrive."
+    },
+    {
+      "packId": "ignore_dystopia",
+      "title": "IGNORE DYSTOPIA — Anatomy of a Trap (Deck B)",
+      "coverageStatus": "RESEARCHING",
+      "themes": [
+        "attention-scarcity",
+        "permanent-alarm",
+        "soft-control",
+        "doomism",
+        "agency"
+      ],
+      "preferredResearchDomains": [
+        "attention economics",
+        "political psychology",
+        "media studies",
+        "democratic theory"
+      ],
+      "preferredAuthors": [
+        "Herbert A. Simon",
+        "H. L. Mencken",
+        "Alexis de Tocqueville"
+      ],
+      "avoidPatterns": [
+        "generic Orwell quote",
+        "doom slogan",
+        "fearmongering presented as analysis"
+      ],
+      "biomeAffinities": [
+        "broadcast-newsroom",
+        "notification-feed",
+        "control-center"
+      ],
+      "quoteIds": [
+        "q-b01-dystopia-simon-poverty-attention",
+        "q-b01-dystopia-mencken-populace-alarmed",
+        "q-b01-dystopia-tocqueville-restrained-action"
+      ],
+      "notes": "Batch 01: canonical cards trace renewable alarms, information overload, pundit incentives, doomism, learned helplessness and the surrender of agency."
+    }
+  ]
+}
