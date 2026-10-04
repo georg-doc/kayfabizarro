@@ -62,3 +62,16 @@
 - The reserve intentionally does not pretend to satisfy `QUOTE_POOL_SCHEMA.json`, because that runtime/pool schema requires a deck mapping. Candidates enter the mapped quote pool only after a later curator decision.
 - No H13, Billboard, Audio, 3D, Stage/runtime, main-router, Hub-runtime, merge or Live changes.
 
+## 2026-10-05 · Quote Research Reserve 02 · rotation depth
+
+- Georg explicitly asked to continue filling the pool so an island does not fall back to the same few quotations after longer play. This is a **PROCEED PASS for research expansion**, not approval of individual quotes for public runtime.
+- Added `QUOTE_RESEARCH_RESERVE_02.json` with **30 further quote + FrizzleQuestion candidates**.
+- Reserve 02 remains `UNMAPPED_BY_DESIGN`: no deck, Card, island/biome or Billboard mapping is invented during research.
+- Added research-only `rotationIntent`: later selection should diversify theme, author, era and tone, filter by rights eligibility, and suppress recent repeats. No runtime selector was changed.
+- Provenance: **30 VERIFIED**, **0 SECONDARY_ONLY**, **0 UNVERIFIED**.
+- Rights: **29 PUBLIC_DOMAIN_CONFIRMED**, **1 DRAFT_RIGHTS_UNKNOWN**. The open case is the anonymous/unresolved English translator term for Le Bon's 1896 `The Crowd` edition in EU context; the candidate remains out of public rotation until cleared.
+- Validation: **16/16 PASS**, including no ID/text collision with the prior 55-candidate inventory.
+- Combined researched inventory is now **85 candidates**: 30 mapped Batch-01 candidates + 55 deliberately unmapped reserve candidates.
+- This increases future rotation depth but does **not** claim that any specific island already has an approved 85-item pool; island/deck/Billboard mapping remains a later curator step.
+- No H13, Billboard runtime, Audio, 3D, Stage, main-router, Hub-runtime, merge or Live changes.
+
