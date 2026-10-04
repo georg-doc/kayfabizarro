@@ -1,8 +1,8 @@
 {
   "schema": "kfb.toolbox-onboarding/1",
-  "version": "1.0.0",
-  "updated": "2026-09-18",
-  "status": "ONBOARDING_IMPLEMENTED_RUNTIME_NOT_TESTED",
+  "version": "2.0.0",
+  "updated": "2026-10-04",
+  "status": "CANONICAL_FRONT_DOOR_CONSOLIDATION_REQUIRED",
   "repository": "georg-doc/kayfabizarro",
   "path": "tools/KFB-ToolBox",
   "router": "skills/chat/START_HERE.md",
@@ -187,5 +187,58 @@
       "neutral"
     ],
     "phaseB": "Repeat with first generic Rig_Medium EyeProfile after Batch approval"
+  },
+  "surfaceContract": "skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md",
+  "frontDoor": {
+    "role": "TOOLBOX_ROUTER",
+    "rule": "EXACTLY_ONE_CANONICAL_GPT_SITE",
+    "url": null,
+    "status": "RESOLVE_EXISTING_PROJECT_OR_CREATE_ONE",
+    "legacyStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/",
+    "legacyStageRole": "HISTORY_DONOR_NOT_CURRENT_FRONT_DOOR"
+  },
+  "specialistSites": [
+    {
+      "id": "eyerig",
+      "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/",
+      "status": "CURRENT_SPECIALIST_TOOL"
+    },
+    {
+      "id": "asset-librarian",
+      "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/",
+      "status": "CURRENT_SPECIALIST_TOOL"
+    },
+    {
+      "id": "audio",
+      "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+      "status": "CURRENT_SPECIALIST_TOOL"
+    },
+    {
+      "id": "frankenstein",
+      "url": "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site",
+      "status": "CURRENT_SPECIALIST_TOOL"
+    },
+    {
+      "id": "hypernormalisation-curator",
+      "url": "https://kfb-hypernormalisation-curator.frizzlebob.chatgpt.site",
+      "status": "CURRENT_SPECIALIST_TOOL"
+    },
+    {
+      "id": "environment-atlas",
+      "url": null,
+      "status": "PREPARED_NOT_PUBLISHED"
+    },
+    {
+      "id": "chatterbox-comic-vfx",
+      "url": null,
+      "status": "DESIGN_SITE_PLANNED"
+    }
+  ],
+  "legacyPolicy": {
+    "oldToolboxHome": true,
+    "oldCloudflareToolboxStage": true,
+    "oldStandaloneStudioRiggingAnimation": true,
+    "role": "HISTORY_DONOR_ONLY",
+    "mayNotCompeteAsCurrentFrontDoor": true
   }
 }
