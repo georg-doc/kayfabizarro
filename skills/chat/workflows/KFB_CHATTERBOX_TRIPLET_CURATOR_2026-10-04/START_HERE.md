@@ -186,7 +186,7 @@ Do not invent its final `.frizzlebob.chatgpt.site` URL before Sites returns it.
 
 Reserved formal Cloudflare review route, only when a public/browser acceptance mirror is actually required:
 
-`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/triplet-curator/`
+`https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/`
 
 No Stage exists yet. No Live promotion.
 
