@@ -15,7 +15,7 @@ New bounded authoring frontend: **KFB FrankenStein Composer**. It composes rever
 No GPT Site, Stage, browser runtime, motion playback or export round-trip has been created/tested in this planning slice. No second EyeRig/brow/motion owner. No placeholder Eraser. `kfb.pets/1` remains the primary actor contract.
 
 ### NEXT
-Implement the Composer frontend from `skills/chat/workflows/KFB_FRANKENSTEIN_COMPOSER_SITE_01_2026-10-04/START_HERE.md`; first visible proof must show every donor in isolation before the integrated composite.
+Georg authorized implementation. WSA / ChatGPT Work now owns one continuous implementation run from `skills/chat/workflows/KFB_FRANKENSTEIN_COMPOSER_SITE_01_2026-10-04/WSA_WORK_ONE_SHOT.md`. It must build through real Medium + Large + Pencil fixtures, save/import, GPT Site when available, exact Cloudflare Stage verification and final Return; no intermediate micro-handoff.
 
 ## 2026-09-21 · Fluid/Card/Voxel intake and Theatre Curtain route
 
