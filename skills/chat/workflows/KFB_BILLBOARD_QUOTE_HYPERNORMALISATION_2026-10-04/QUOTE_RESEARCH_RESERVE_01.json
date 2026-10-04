@@ -1,0 +1,1361 @@
+{
+  "schema": "kfb.quote-research-reserve.v1",
+  "generatedAt": "2026-10-04T18:58:00Z",
+  "purpose": "Unmapped, quality-first quote reserve for later curator mapping to canonical KFB decks, Cards, islands/biomes and Billboard placements.",
+  "sourcePolicy": "Research reserve only. Strong provenance and rights states are recorded now; no runtime eligibility is implied.",
+  "mappingPolicy": "UNMAPPED_BY_DESIGN. Do not invent deck/card/island/billboard mappings during collection.",
+  "candidates": [
+    {
+      "id": "qr-r01-bacon-certainties-doubts",
+      "text": "if a man will begin with certainties, he shall end in doubts",
+      "author": "Francis Bacon",
+      "work": "The Advancement of Learning",
+      "publicationYear": 1605,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/5500/5500-h/5500-h.htm",
+        "edition": "Project Gutenberg transcription",
+        "pageOrLocator": "Book I, V.8",
+        "publicationYear": 1605,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact clause verified in the public-domain text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/5500/5500-h/5500-h.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "doubt",
+        "certainty",
+        "inquiry",
+        "epistemic-humility"
+      ],
+      "semanticAxes": [
+        "certainty↔doubt",
+        "authority↔inquiry"
+      ],
+      "frizzleQuestion": "Which certainty in your worldview is most expensive to treat as a hypothesis?",
+      "brainFood": [
+        {
+          "label": "The Advancement of Learning — Project Gutenberg",
+          "url": "https://www.gutenberg.org/files/5500/5500-h/5500-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Compact epistemic opener; strong for any context about certainty, research or institutional confidence.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-darwin-ignorance-confidence",
+      "text": "ignorance more frequently begets confidence than does knowledge",
+      "author": "Charles Darwin",
+      "work": "The Descent of Man, and Selection in Relation to Sex",
+      "publicationYear": 1871,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://darwin-online.org.uk/content/frameset?itemID=F937.1&pageseq=1&viewtype=text",
+        "edition": "Darwin Online, 1871 first edition, Vol. I",
+        "pageOrLocator": "Introduction",
+        "publicationYear": 1871,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording visible in Darwin Online's first-edition text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://darwin-online.org.uk/content/frameset?itemID=F937.1&pageseq=1&viewtype=text",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "confidence",
+        "ignorance",
+        "expertise",
+        "epistemology"
+      ],
+      "semanticAxes": [
+        "knowledge↔confidence",
+        "expertise↔certainty"
+      ],
+      "frizzleQuestion": "When confidence rises faster than knowledge, what signal could tell you that you have crossed from conviction into ignorance?",
+      "brainFood": [
+        {
+          "label": "Darwin Online — The Descent of Man, Vol. I",
+          "url": "https://darwin-online.org.uk/content/frameset?itemID=F937.1&pageseq=1&viewtype=text",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "First-edition text hosted by Darwin Online."
+        }
+      ],
+      "curatorNotes": "Sharp anti-overconfidence line without motivational framing.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-huxley-scepticism-duty",
+      "text": "For him, scepticism is the highest of duties; blind faith the one unpardonable sin.",
+      "author": "Thomas Henry Huxley",
+      "work": "On the Advisableness of Improving Natural Knowledge",
+      "publicationYear": 1866,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/16729/pg16729-images.html",
+        "edition": "Lay Sermons, Addresses and Reviews, Macmillan 1870",
+        "pageOrLocator": "Essay I; Gutenberg text around lines 202–206",
+        "publicationYear": 1866,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Huxley's collected essay text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/16729/pg16729-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "scepticism",
+        "verification",
+        "authority",
+        "science"
+      ],
+      "semanticAxes": [
+        "faith↔verification",
+        "authority↔evidence"
+      ],
+      "frizzleQuestion": "When does healthy scepticism stop protecting inquiry and become a new form of faith that refuses to risk being persuaded?",
+      "brainFood": [
+        {
+          "label": "Huxley — Lay Sermons, Addresses and Reviews",
+          "url": "https://www.gutenberg.org/cache/epub/16729/pg16729-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain collected essay text."
+        }
+      ],
+      "curatorNotes": "Useful because the FrizzleQuestion turns Huxley's polemic back onto scepticism itself.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-poincare-facts-house",
+      "text": "A collection of facts is no more a science than a heap of stones is a house.",
+      "author": "Henri Poincaré",
+      "work": "Science and Hypothesis",
+      "publicationYear": 1902,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/39713/pg39713-images.html",
+        "edition": "The Foundations of Science, George Bruce Halsted translation",
+        "pageOrLocator": "Science and Hypothesis; p. 128 in scanned edition",
+        "publicationYear": 1902,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the public-domain English edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Poincaré's text and the cited early English translation are public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/39713/pg39713-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "facts",
+        "models",
+        "science",
+        "pattern"
+      ],
+      "semanticAxes": [
+        "data↔understanding",
+        "collection↔structure"
+      ],
+      "frizzleQuestion": "At what point does collecting more facts stop increasing understanding and start postponing the need for a model?",
+      "brainFood": [
+        {
+          "label": "Poincaré — The Foundations of Science",
+          "url": "https://www.gutenberg.org/cache/epub/39713/pg39713-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain English edition; passage at printed p. 128."
+        }
+      ],
+      "curatorNotes": "Excellent bridge from raw data to systems, pattern and explanation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-whitehead-automatic-operations",
+      "text": "Civilization advances by extending the number of important operations which we can perform without thinking about them.",
+      "author": "Alfred North Whitehead",
+      "work": "An Introduction to Mathematics",
+      "publicationYear": 1911,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/41568/41568-pdf.pdf",
+        "edition": "1911 edition reproduced by Project Gutenberg",
+        "pageOrLocator": "Chapter V, The Symbolism of Mathematics, p. 46",
+        "publicationYear": 1911,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the scanned public-domain edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/41568/41568-pdf.pdf",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "automation",
+        "civilization",
+        "cognitive-offloading",
+        "technology"
+      ],
+      "semanticAxes": [
+        "thinking↔automation",
+        "capability↔dependency"
+      ],
+      "frizzleQuestion": "Which things should become automatic—and which become dangerous precisely when nobody has to think about them anymore?",
+      "brainFood": [
+        {
+          "label": "Whitehead — An Introduction to Mathematics",
+          "url": "https://www.gutenberg.org/files/41568/41568-pdf.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Project Gutenberg PDF of the early edition."
+        }
+      ],
+      "curatorNotes": "Strong for AI, infrastructure, habit, automation and interface contexts.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-shelley-invention-chaos",
+      "text": "Invention, it must be humbly admitted, does not consist in creating out of void, but out of chaos",
+      "author": "Mary Shelley",
+      "work": "Frankenstein, 1831 Introduction",
+      "publicationYear": 1831,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3AFrankenstein%2C_or_the_Modern_Prometheus_%28Revised_Edition%2C_1831%29.djvu/15",
+        "edition": "1831 revised edition, validated scan",
+        "pageOrLocator": "Introduction, p. ix",
+        "publicationYear": 1831,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified on a validated scan and cross-checked against the Frankenstein Variorum."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3AFrankenstein%2C_or_the_Modern_Prometheus_%28Revised_Edition%2C_1831%29.djvu/15",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "invention",
+        "remix",
+        "authorship",
+        "creation"
+      ],
+      "semanticAxes": [
+        "originality↔recombination",
+        "void↔material"
+      ],
+      "frizzleQuestion": "If invention always reshapes prior material, where should originality be located: ingredients, selection, transformation, or purpose?",
+      "brainFood": [
+        {
+          "label": "Frankenstein 1831 — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3AFrankenstein%2C_or_the_Modern_Prometheus_%28Revised_Edition%2C_1831%29.djvu/15",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Validated scan page."
+        },
+        {
+          "label": "Frankenstein Variorum — 1831 text",
+          "url": "https://frankensteinvariorum.github.io/fv-collation/Frankenstein_1831.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent textual cross-check."
+        }
+      ],
+      "curatorNotes": "Especially strong for Frankenstein/remix/AI authoring without generic creativity language.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-smith-chessboard-motion",
+      "text": "in the great chess-board of human society, every single piece has a principle of motion of its own",
+      "author": "Adam Smith",
+      "work": "The Theory of Moral Sentiments",
+      "publicationYear": 1759,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Theory_of_Moral_Sentiments/Part_VI",
+        "edition": "Public-domain text",
+        "pageOrLocator": "Part VI, Section II, Chapter II, paragraph 17",
+        "publicationYear": 1759,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact clause verified in Wikisource and Adam Smith Works."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_Theory_of_Moral_Sentiments/Part_VI",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "planning",
+        "agency",
+        "systems",
+        "politics"
+      ],
+      "semanticAxes": [
+        "planner↔agent",
+        "design↔emergence"
+      ],
+      "frizzleQuestion": "What breaks first when a planner treats people as pieces whose motives can be assigned from above?",
+      "brainFood": [
+        {
+          "label": "The Theory of Moral Sentiments — Part VI",
+          "url": "https://en.wikisource.org/wiki/The_Theory_of_Moral_Sentiments/Part_VI",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Adam Smith Works — Man of System passage",
+          "url": "https://www.adamsmithworks.org/documents/chapter-ii-of-the-order-in-which-societies-are-by-nature-recommended-to-our-beneficence",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent scholarly presentation."
+        }
+      ],
+      "curatorNotes": "High-value systems quote: autonomy inside designed order.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-kropotkin-sociability-law",
+      "text": "Sociability is as much a law of nature as mutual struggle.",
+      "author": "Peter Kropotkin",
+      "work": "Mutual Aid: A Factor of Evolution",
+      "publicationYear": 1902,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.marxists.org/reference/archive/kropotkin-peter/1902/mutual-aid/ch01.htm",
+        "edition": "Full-text archive of Mutual Aid",
+        "pageOrLocator": "Chapter I",
+        "publicationYear": 1902,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence verified in the complete text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.marxists.org/reference/archive/kropotkin-peter/1902/mutual-aid/ch01.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "cooperation",
+        "evolution",
+        "competition",
+        "sociality"
+      ],
+      "semanticAxes": [
+        "mutual-aid↔struggle",
+        "competition↔cooperation"
+      ],
+      "frizzleQuestion": "If cooperation and struggle are both natural, why do political stories so often need one of them to pretend the other does not exist?",
+      "brainFood": [
+        {
+          "label": "Kropotkin — Mutual Aid, Chapter I",
+          "url": "https://www.marxists.org/reference/archive/kropotkin-peter/1902/mutual-aid/ch01.htm",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Complete public-domain work text."
+        }
+      ],
+      "curatorNotes": "Strong counterweight to one-dimensional social-Darwinist framings.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-veblen-conspicuous-consumption",
+      "text": "Conspicuous consumption of valuable goods is a means of reputability to the gentleman of leisure.",
+      "author": "Thorstein Veblen",
+      "work": "The Theory of the Leisure Class",
+      "publicationYear": 1899,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://sgahm.org/primary-sources/1899-veblen-conspicuous-consumption",
+        "edition": "Historical primary-source presentation",
+        "pageOrLocator": "Conspicuous Consumption; p. 73 in early editions",
+        "publicationYear": 1899,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence verified in a historical source and Google Books early editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://sgahm.org/primary-sources/1899-veblen-conspicuous-consumption",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "status",
+        "consumption",
+        "class",
+        "performance"
+      ],
+      "semanticAxes": [
+        "use↔display",
+        "wealth↔reputation"
+      ],
+      "frizzleQuestion": "When does ownership stop being about use and become a performance staged for people who are also performing?",
+      "brainFood": [
+        {
+          "label": "Veblen 1899 — Conspicuous Consumption",
+          "url": "https://sgahm.org/primary-sources/1899-veblen-conspicuous-consumption",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Historical source text."
+        },
+        {
+          "label": "The Theory of the Leisure Class — Google Books",
+          "url": "https://books.google.com/books/about/The_Theory_of_the_Leisure_Class.html?id=t7QJAAAAIAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Digitized early edition; passage at p. 73."
+        }
+      ],
+      "curatorNotes": "Excellent for status economies, luxury, branding and social display.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-laboetie-serve-no-more",
+      "text": "Resolve to serve no more, and you are at once freed.",
+      "author": "Étienne de La Boétie",
+      "work": "Discourse on Voluntary Servitude",
+      "publicationYear": 1576,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Discourse_on_Voluntary_Servitude",
+        "edition": "Harry Kurz English translation",
+        "pageOrLocator": "Core argument; translation first published 1942",
+        "publicationYear": 1576,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact English wording verified in Wikisource and David M. Hart's hosted Kurz text."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying French is public domain, but the quoted Harry Kurz English translation is treated as rights-restricted for public runtime.",
+        "evidenceUrl": "https://www.davidmhart.com/liberty/FrenchClassicalLiberals/LaBoetie/1975_Rothbard/Discourse_Kurz1942.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "obedience",
+        "power",
+        "noncooperation",
+        "tyranny"
+      ],
+      "semanticAxes": [
+        "command↔consent",
+        "power↔support"
+      ],
+      "frizzleQuestion": "How much power survives because it is enforced, and how much because ordinary people keep performing the routines that reproduce it?",
+      "brainFood": [
+        {
+          "label": "Discourse on Voluntary Servitude — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Discourse_on_Voluntary_Servitude",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Full English text."
+        },
+        {
+          "label": "Kurz translation — David M. Hart",
+          "url": "https://www.davidmhart.com/liberty/FrenchClassicalLiberals/LaBoetie/1975_Rothbard/Discourse_Kurz1942.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent hosted edition of the same translation."
+        }
+      ],
+      "curatorNotes": "Excellent KFB power/consent line; keep out of public rotation until translation rights are cleared.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-wollstonecraft-over-themselves",
+      "text": "I do not wish them to have power over men; but over themselves.",
+      "author": "Mary Wollstonecraft",
+      "work": "A Vindication of the Rights of Woman",
+      "publicationYear": 1792,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/3420/pg3420.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Chapter IV",
+        "publicationYear": 1792,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Gutenberg and cross-checked against digitized editions."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/3420/pg3420.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "freedom",
+        "self-mastery",
+        "equality",
+        "agency"
+      ],
+      "semanticAxes": [
+        "power-over↔power-within",
+        "domination↔autonomy"
+      ],
+      "frizzleQuestion": "What kind of freedom remains if empowerment means gaining leverage over others rather than authority over one’s own life?",
+      "brainFood": [
+        {
+          "label": "A Vindication of the Rights of Woman — Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/3420/pg3420.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain full text."
+        }
+      ],
+      "curatorNotes": "Clean agency line with broad use beyond gender-specific mapping.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-mill-plan-of-life",
+      "text": "He who lets the world, or his own portion of it, choose his plan of life for him, has no need of any other faculty",
+      "author": "John Stuart Mill",
+      "work": "On Liberty",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://dhspriory.org/kenny/PhilTexts/Mill/Liberty3.html",
+        "edition": "On Liberty full text",
+        "pageOrLocator": "Chapter III; p. 106 in early editions",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence segment verified in a full text and Google Books."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://dhspriory.org/kenny/PhilTexts/Mill/Liberty3.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "individuality",
+        "choice",
+        "conformity",
+        "agency"
+      ],
+      "semanticAxes": [
+        "self-authorship↔imitation",
+        "choice↔default"
+      ],
+      "frizzleQuestion": "How can a life look successful from outside while outsourcing nearly every important choice that made it yours?",
+      "brainFood": [
+        {
+          "label": "On Liberty, Chapter III",
+          "url": "https://dhspriory.org/kenny/PhilTexts/Mill/Liberty3.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Full text."
+        },
+        {
+          "label": "On Liberty — Google Books",
+          "url": "https://books.google.com/books/about/On_Liberty.html?hl=de&id=3xARAAAAYAAJ",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Digitized early edition; quoted sentence at p. 106."
+        }
+      ],
+      "curatorNotes": "Intentionally stops before Mill's 'ape-like imitation' punchline to keep the billboard line lean.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-machiavelli-appear-feel",
+      "text": "Everybody sees what you appear to be, few feel what you are",
+      "author": "Niccolò Machiavelli",
+      "work": "The Prince",
+      "publicationYear": 1532,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Prince_%28Ricci%29/Chapter_18",
+        "edition": "Luigi Ricci translation, public-domain edition",
+        "pageOrLocator": "Chapter XVIII",
+        "publicationYear": 1532,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact English wording verified in the scan-backed Ricci edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Machiavelli's text and the cited early Ricci translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/The_Prince_%28Ricci%29/Chapter_18",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "appearance",
+        "power",
+        "reputation",
+        "politics"
+      ],
+      "semanticAxes": [
+        "appearance↔experience",
+        "image↔reality"
+      ],
+      "frizzleQuestion": "When appearance is public and experience is private, who has the stronger political weapon: the actor, the witness, or the editor?",
+      "brainFood": [
+        {
+          "label": "The Prince, Chapter XVIII — Wikisource",
+          "url": "https://en.wikisource.org/wiki/The_Prince_%28Ricci%29/Chapter_18",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scan-backed public-domain Ricci translation."
+        }
+      ],
+      "curatorNotes": "Natural billboard quote: appearance is itself the contested medium.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-hobbes-covenants-sword",
+      "text": "Covenants, without the Sword, are but Words, and of no strength to secure a man at all.",
+      "author": "Thomas Hobbes",
+      "work": "Leviathan",
+      "publicationYear": 1651,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3ALeviathan%2C_or%2C_The_matter%2C_forme%2C_%26_power_of_a_common-wealth_ecclesiasticall_and_civill._%28IA_leviathanormatte00hobb_3%29.pdf/103",
+        "edition": "Leviathan scan",
+        "pageOrLocator": "Part II, Chapter XVII",
+        "publicationYear": 1651,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in the scan and a separate original-source transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3ALeviathan%2C_or%2C_The_matter%2C_forme%2C_%26_power_of_a_common-wealth_ecclesiasticall_and_civill._%28IA_leviathanormatte00hobb_3%29.pdf/103",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "contracts",
+        "enforcement",
+        "trust",
+        "state"
+      ],
+      "semanticAxes": [
+        "promise↔force",
+        "trust↔enforcement"
+      ],
+      "frizzleQuestion": "What turns a promise into a social fact: trust, reputation, shared interest, or the credible possibility of enforcement?",
+      "brainFood": [
+        {
+          "label": "Leviathan — scan page",
+          "url": "https://en.wikisource.org/wiki/Page%3ALeviathan%2C_or%2C_The_matter%2C_forme%2C_%26_power_of_a_common-wealth_ecclesiasticall_and_civill._%28IA_leviathanormatte00hobb_3%29.pdf/103",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scan-backed text."
+        },
+        {
+          "label": "Leviathan — Original Sources",
+          "url": "https://www.originalsources.com/Document.aspx?DocID=86HMA16X521PXMU",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent transcription."
+        }
+      ],
+      "curatorNotes": "Strong for rule systems, contracts and institutional power.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-bastiat-state-fiction",
+      "text": "The State is the great fiction by which everyone endeavors to live at the expense of everyone else.",
+      "author": "Frédéric Bastiat",
+      "work": "The State",
+      "publicationYear": 1848,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.davidmhart.com/liberty/FrenchClassicalLiberals/Bastiat/Books/1848-49-Etat/ComparativeEdition.html",
+        "edition": "Comparative French/English edition",
+        "pageOrLocator": "Definition of the State",
+        "publicationYear": 1848,
+        "retrievedAt": "2026-10-04",
+        "notes": "Original French and exact English rendering are displayed side by side."
+      },
+      "rights": {
+        "status": "RESEARCHED_RESTRICTED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying French is public domain; the quoted current English rendering is a modern translation and is treated as rights-restricted.",
+        "evidenceUrl": "https://www.davidmhart.com/liberty/FrenchClassicalLiberals/Bastiat/Books/1848-49-Etat/ComparativeEdition.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "state",
+        "redistribution",
+        "public-choice",
+        "fiction"
+      ],
+      "semanticAxes": [
+        "public-benefit↔private-benefit",
+        "institution↔incentive"
+      ],
+      "frizzleQuestion": "When everyone tries to route private benefit through a public mechanism, where does responsibility for the resulting extraction actually live?",
+      "brainFood": [
+        {
+          "label": "Bastiat — The State, comparative edition",
+          "url": "https://www.davidmhart.com/liberty/FrenchClassicalLiberals/Bastiat/Books/1848-49-Etat/ComparativeEdition.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "French original plus English comparative renderings."
+        }
+      ],
+      "curatorNotes": "Conceptually strong; do not public-approve this exact English rendering without translation-rights review.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-pascal-necessary-madness",
+      "text": "Men are so necessarily mad, that not to be mad would amount to another form of madness.",
+      "author": "Blaise Pascal",
+      "work": "Pensées",
+      "publicationYear": 1670,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Page%3ABlaise_Pascal_works.djvu/143",
+        "edition": "Public-domain English edition scan",
+        "pageOrLocator": "Fragment 414",
+        "publicationYear": 1670,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in a scan and CCEL transcription."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Pascal's text and the cited early English translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Page%3ABlaise_Pascal_works.djvu/143",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "madness",
+        "normality",
+        "society",
+        "reason"
+      ],
+      "semanticAxes": [
+        "normality↔madness",
+        "inside↔outside"
+      ],
+      "frizzleQuestion": "If some forms of madness are socially normal, what would a genuinely sane outsider look like from inside the system?",
+      "brainFood": [
+        {
+          "label": "Pascal, Pensées — validated scan",
+          "url": "https://en.wikisource.org/wiki/Page%3ABlaise_Pascal_works.djvu/143",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Scan page containing fragment 414."
+        },
+        {
+          "label": "Pensées — CCEL",
+          "url": "https://ccel.org/ccel/pascal/pensees/pensees.vii.html",
+          "kind": "ARCHIVE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent transcription."
+        }
+      ],
+      "curatorNotes": "Provocative but structurally useful for normality, consensus and systems.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-chesterton-everything-except-reason",
+      "text": "The madman is not the man who has lost his reason. The madman is the man who has lost everything except his reason.",
+      "author": "G. K. Chesterton",
+      "work": "Orthodoxy",
+      "publicationYear": 1908,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://ccel.org/ccel/chesterton/orthodoxy.all.html",
+        "edition": "Orthodoxy full text",
+        "pageOrLocator": "Chapter II, The Maniac",
+        "publicationYear": 1908,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in CCEL and a digitized book edition."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://ccel.org/ccel/chesterton/orthodoxy.all.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "reason",
+        "madness",
+        "closed-systems",
+        "conspiracy"
+      ],
+      "semanticAxes": [
+        "logic↔judgment",
+        "coherence↔reality"
+      ],
+      "frizzleQuestion": "Can a perfectly coherent explanation become less truthful because it has eliminated humor, ambiguity, compassion, and inconvenient experience?",
+      "brainFood": [
+        {
+          "label": "Chesterton — Orthodoxy",
+          "url": "https://ccel.org/ccel/chesterton/orthodoxy.all.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Full public-domain text."
+        },
+        {
+          "label": "Orthodoxy — Google Books",
+          "url": "https://books.google.com/books/about/Orthodoxy.html?id=PeiaPZOvU-oC",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Digitized edition cross-check."
+        }
+      ],
+      "curatorNotes": "Excellent antidote to equating internal coherence with reality.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-swift-falsehood-flies",
+      "text": "Falsehood flies, and Truth comes limping after it",
+      "author": "Jonathan Swift",
+      "work": "The Examiner, No. 14",
+      "publicationYear": 1710,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/13169/13169-h/13169-h.htm",
+        "edition": "The Prose Works of Jonathan Swift",
+        "pageOrLocator": "The Examiner, No. 14",
+        "publicationYear": 1710,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact clause verified in the public-domain collected text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/13169/13169-h/13169-h.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "misinformation",
+        "truth",
+        "speed",
+        "media"
+      ],
+      "semanticAxes": [
+        "speed↔accuracy",
+        "virality↔correction"
+      ],
+      "frizzleQuestion": "What should a truth system optimize for when correction is slower than the lie and arrives after the behavior has already changed?",
+      "brainFood": [
+        {
+          "label": "Swift — Prose Works / The Examiner",
+          "url": "https://www.gutenberg.org/files/13169/13169-h/13169-h.htm",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text containing the passage."
+        }
+      ],
+      "curatorNotes": "Short, visual and highly reusable without being a modern meme.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-shaw-unreasonable-progress",
+      "text": "The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself.",
+      "author": "George Bernard Shaw",
+      "work": "Maxims for Revolutionists",
+      "publicationYear": 1903,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Man_and_Superman/Maxims_for_Revolutionists",
+        "edition": "Man and Superman appendix",
+        "pageOrLocator": "Reason",
+        "publicationYear": 1903,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Wikisource and Project Gutenberg."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Man_and_Superman/Maxims_for_Revolutionists",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "progress",
+        "nonconformity",
+        "adaptation",
+        "agency"
+      ],
+      "semanticAxes": [
+        "adaptation↔transformation",
+        "reasonable↔unreasonable"
+      ],
+      "frizzleQuestion": "How do you distinguish the productive unreasonable person from the merely delusional one before the outcome is known?",
+      "brainFood": [
+        {
+          "label": "Maxims for Revolutionists — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Man_and_Superman/Maxims_for_Revolutionists",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text."
+        },
+        {
+          "label": "Maxims for Revolutionists — Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/26107/pg26107-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent public-domain transcription."
+        }
+      ],
+      "curatorNotes": "Famous but earns its place because the question attacks the usual heroic reading.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-wells-education-catastrophe",
+      "text": "Human history becomes more and more a race between education and catastrophe.",
+      "author": "H. G. Wells",
+      "work": "The Outline of History",
+      "publicationYear": 1920,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/45368/pg45368-images.html",
+        "edition": "The Outline of History, Vol. II",
+        "pageOrLocator": "Chapter XLI, §4; printed p. 594",
+        "publicationYear": 1920,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence located in Project Gutenberg and cross-checked against a sourced quotation record."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/45368/pg45368-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "education",
+        "catastrophe",
+        "history",
+        "civilization"
+      ],
+      "semanticAxes": [
+        "learning↔collapse",
+        "knowledge↔survival"
+      ],
+      "frizzleQuestion": "What knowledge would have to spread faster than catastrophe for education to count as more than commentary on events?",
+      "brainFood": [
+        {
+          "label": "The Outline of History — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/45368/pg45368-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Exact sentence at Chapter XLI, §4, printed p. 594."
+        }
+      ],
+      "curatorNotes": "Broad civilizational axis suitable for history, war, science and future decks.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-spinoza-meditation-life",
+      "text": "A free man thinks of death least of all things; and his wisdom is a meditation not of death but of life.",
+      "author": "Baruch Spinoza",
+      "work": "Ethics",
+      "publicationYear": 1677,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://en.wikisource.org/wiki/Ethics_%28Spinoza%29/Part_4",
+        "edition": "R. H. M. Elwes translation",
+        "pageOrLocator": "Part IV, Proposition LXVII",
+        "publicationYear": 1677,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording verified in Wikisource and a scanned Elwes translation."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Spinoza's text and Elwes's 19th-century translation are public domain.",
+        "evidenceUrl": "https://en.wikisource.org/wiki/Ethics_%28Spinoza%29/Part_4",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "freedom",
+        "mortality",
+        "reason",
+        "life"
+      ],
+      "semanticAxes": [
+        "fear↔freedom",
+        "death↔life"
+      ],
+      "frizzleQuestion": "Does freedom increase when death occupies less attention—or can refusing to think about mortality become another way of being ruled by it?",
+      "brainFood": [
+        {
+          "label": "Spinoza, Ethics Part IV — Wikisource",
+          "url": "https://en.wikisource.org/wiki/Ethics_%28Spinoza%29/Part_4",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain translation."
+        },
+        {
+          "label": "Spinoza Ethics — ETH Zürich scan",
+          "url": "https://www.files.ethz.ch/isn/125508/5035_Spinoza_The_Ethics.pdf",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent scan cross-check."
+        }
+      ],
+      "curatorNotes": "Good for mortality, freedom and existential decks without generic stoic framing.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-rochefoucauld-hypocrisy-homage",
+      "text": "Hypocrisy is the homage vice pays to virtue.",
+      "author": "François de La Rochefoucauld",
+      "work": "Reflections; or Sentences and Moral Maxims",
+      "publicationYear": 1678,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "DOUBLE_CHECKED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/9105/pg9105-images.html",
+        "edition": "Bund/Friswell translation, 1871",
+        "pageOrLocator": "Maxim 218",
+        "publicationYear": 1678,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact wording located in the public-domain translation and scan-derived text."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "The cited 1871 English translation is public domain.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/9105/pg9105-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "hypocrisy",
+        "virtue",
+        "norms",
+        "performance"
+      ],
+      "semanticAxes": [
+        "vice↔virtue",
+        "appearance↔norm"
+      ],
+      "frizzleQuestion": "If vice still needs to imitate virtue, does hypocrisy reveal moral weakness—or evidence that moral norms still exert real power?",
+      "brainFood": [
+        {
+          "label": "La Rochefoucauld — Project Gutenberg",
+          "url": "https://www.gutenberg.org/cache/epub/9105/pg9105-images.html",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "1871 Bund/Friswell translation; Maxim 218."
+        }
+      ],
+      "curatorNotes": "Small line, high semantic density; useful for kayfabe, masks and institutional virtue-signalling.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-peirce-real-living-doubt",
+      "text": "There must be a real and living doubt, and without all this discussion is idle.",
+      "author": "Charles S. Peirce",
+      "work": "The Fixation of Belief",
+      "publicationYear": 1877,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/files/65274/65274-h/65274-h.htm",
+        "edition": "Chance, Love, and Logic, 1923 collection",
+        "pageOrLocator": "The Fixation of Belief",
+        "publicationYear": 1877,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence verified in the public-domain collection of Peirce's essays."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/files/65274/65274-h/65274-h.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "doubt",
+        "inquiry",
+        "belief",
+        "method"
+      ],
+      "semanticAxes": [
+        "living-doubt↔performative-doubt",
+        "inquiry↔ritual"
+      ],
+      "frizzleQuestion": "Which belief are you protecting so carefully that the protection itself has become the main obstacle to learning whether it is true?",
+      "brainFood": [
+        {
+          "label": "Peirce — Chance, Love, and Logic",
+          "url": "https://www.gutenberg.org/files/65274/65274-h/65274-h.htm",
+          "kind": "EDITION",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain collection containing The Fixation of Belief."
+        }
+      ],
+      "curatorNotes": "More precise and less slogan-like than 'question everything': inquiry requires actual doubt, not theatrical doubt.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-nightingale-observation-purpose",
+      "text": "It is not for the sake of piling up miscellaneous information or curious facts, but for the sake of saving life.",
+      "author": "Florence Nightingale",
+      "work": "Notes on Nursing: What It Is, and What It Is Not",
+      "publicationYear": 1859,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "PRIMARY_OR_EDITION_VERIFIED",
+        "sourceUrl": "https://www.gutenberg.org/cache/epub/12439/pg12439-images.html",
+        "edition": "Project Gutenberg public-domain text",
+        "pageOrLocator": "Section: What observation is for",
+        "publicationYear": 1859,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact sentence segment verified in the full text around the 'What observation is for' section."
+      },
+      "rights": {
+        "status": "PUBLIC_DOMAIN_CONFIRMED",
+        "jurisdictions": [
+          "US",
+          "EU"
+        ],
+        "basis": "Underlying quoted text/edition is public domain in the US and EU.",
+        "evidenceUrl": "https://www.gutenberg.org/cache/epub/12439/pg12439-images.html",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "observation",
+        "medicine",
+        "data",
+        "purpose"
+      ],
+      "semanticAxes": [
+        "information↔action",
+        "observation↔care"
+      ],
+      "frizzleQuestion": "When does collecting more information improve care, and when does it become a substitute for deciding what the information is for?",
+      "brainFood": [
+        {
+          "label": "Nightingale — Notes on Nursing",
+          "url": "https://www.gutenberg.org/cache/epub/12439/pg12439-images.html",
+          "kind": "PRIMARY_SOURCE",
+          "verifiedAt": "2026-10-04",
+          "notes": "Public-domain text; section 'What observation is for'."
+        }
+      ],
+      "curatorNotes": "Strong medical/science bridge: data has a purpose beyond accumulation.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    },
+    {
+      "id": "qr-r01-bernard-fact-vs-theory",
+      "text": "When we meet a fact which contradicts a prevailing theory, we must accept the fact and abandon the theory",
+      "author": "Claude Bernard",
+      "work": "An Introduction to the Study of Experimental Medicine",
+      "publicationYear": 1865,
+      "language": "en",
+      "status": "RESEARCH_RESERVE",
+      "mappingStatus": "UNMAPPED_BY_DESIGN",
+      "provenance": {
+        "verificationStatus": "SECONDARY_ONLY",
+        "sourceUrl": "https://todayinsci.com/B/Bernard_Claude/BernardClaude-Fact-Quotations.htm",
+        "edition": "Henry Copley Greene English translation (1927/1957) as cited by secondary source",
+        "pageOrLocator": "Part III, Chapter I; English p. 164; French pp. 287–288",
+        "publicationYear": 1865,
+        "retrievedAt": "2026-10-04",
+        "notes": "Exact English wording and original French are given with locator by a specialist quotation source; the English edition itself was not directly retrieved in this batch."
+      },
+      "rights": {
+        "status": "RESEARCHED_QUOTE_LIMIT_ONLY",
+        "jurisdictions": [
+          "US: 1927 English edition public domain by publication date",
+          "EU: translator-term status not established"
+        ],
+        "basis": "Underlying French is public domain. Treat the specific English rendering as quote-limit only until translator-term status is resolved.",
+        "evidenceUrl": "https://todayinsci.com/B/Bernard_Claude/BernardClaude-Fact-Quotations.htm",
+        "checkedAt": "2026-10-04"
+      },
+      "themes": [
+        "experiment",
+        "theory",
+        "evidence",
+        "medicine"
+      ],
+      "semanticAxes": [
+        "theory↔fact",
+        "authority↔experiment"
+      ],
+      "frizzleQuestion": "What would you be willing to abandon if one reproducible fact contradicted the theory on which your professional identity depends?",
+      "brainFood": [
+        {
+          "label": "Claude Bernard — fact quotations with source locators",
+          "url": "https://todayinsci.com/B/Bernard_Claude/BernardClaude-Fact-Quotations.htm",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-04",
+          "notes": "Secondary source supplies exact English, original French and edition locator."
+        },
+        {
+          "label": "PMC discussion citing Bernard",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8239146/",
+          "kind": "ESSAY",
+          "verifiedAt": "2026-10-04",
+          "notes": "Independent scholarly cross-check."
+        }
+      ],
+      "curatorNotes": "High-value medicine/science candidate; wording is strong but keep SECONDARY_ONLY until the cited English edition is directly checked.",
+      "mappingNotes": "No deck/card/island/billboard mapping in this reserve. Map only in a later curator pass against canonical KFB context."
+    }
+  ]
+}
