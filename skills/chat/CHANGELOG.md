@@ -1,3 +1,15 @@
+## 2026-10-04 · Sites-first delivery root correction
+
+- Added `POSTMORTEM_WSA_CLOUDFLARE_FIRST_SITE_DELIVERY_DRIFT_2026-10-04.md` after WSA again prioritized Cloudflare during MVP1 until Georg explicitly redirected it to Sites.
+- Root cause: project-specific EyeRig/Audio/Asset-Librarian contracts were already Site-first, but `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md` still said Cloudflare-first / publish only to KFB Stage.
+- Added binding `KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md` and machine-readable `KFB_SITE_SURFACE_REGISTRY_2026-10-04.json`.
+- Current default for Site-capable KFB tools/workbenches/authoring/MVP products is GitHub → GPT Site → exact Site verification; Cloudflare becomes downstream compatibility/public-regression/formal KFB-Hub mirror when required.
+- Missing Sites publishing capability must hand off to a Sites-capable executor; it must not silently substitute Cloudflare.
+- Updated root START_HERE, Chat/GitHub delivery workflow, Fresh Chat protocol, KFB Hub workflow card, WSA MVP1 rebrief, Coworker MVP1 rebrief, and Site/God Mode architecture.
+- Current Site inventory records Production Hub, EyeRig Workbench, Asset Librarian and Audio as published Site lines; Environment Atlas, FrankenStein Composer, Billboard Curator and World Studio as Site-native/prepared next lines.
+- Graveyard bumped to v1.9.0 / 59 graves with `Cloudflare vor der Site`; trigger: `Was ist die vereinbarte primäre Produktoberfläche?`.
+- No PR #348 runtime code was changed by this control-plane correction.
+
 ## 2026-10-04 · Coworker Card-Hex Combat Ascent One-Shot authorized
 
 - Georg explicitly authorized exactly one parallel Claude Coworker implementation run for the Card-Hex platformer/combat concept; this does not reopen Sol/Astra/provider comparison.
