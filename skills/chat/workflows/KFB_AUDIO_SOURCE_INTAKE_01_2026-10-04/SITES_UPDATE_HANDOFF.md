@@ -159,3 +159,31 @@ This is not a claim that the SFX Library UI is already published.
 Continue to use **KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE**.
 
 Update the existing Site project `appgprj_6ac1c73dc28881919123106bd6d3e90e`; do not create a second Site. Verify the exact live `https://kfb-audio.frizzlebob.chatgpt.site/` revision after publication. No Cloudflare and no merge.
+
+
+## CURRENT OVERRIDE · Musical World Mixer
+
+Do **not** publish the current frozen head yet.
+
+Mixer core is proven green at:
+`471422243053ae695caf1578761aa3b3a45ed9aa`
+with run `37208076733` · **15/15 PASS**.
+
+Current branch head is frozen after the secondary SFX fold exposed one selector defect.
+
+Read:
+`skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/WORLD_MIXER_FAILURE_RECOVERY.md`
+
+After the exact one-line recovery and a green rerun, update the **existing** Site project only.
+
+Expected primary live UI after recovery:
+- World = default;
+- Journey / Moshpit;
+- compact scene strip;
+- large current track;
+- 4 / 8 / 16 transition timing;
+- World / Vehicle / Voice controls;
+- Library / Sources / Prompt secondary;
+- SFX Library collapsed under Sources.
+
+No second Site and no UI metadata wall.

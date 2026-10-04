@@ -1,0 +1,25 @@
+{
+  "schema": "kfb.audio-world-mixer-failure-recovery/1",
+  "date": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+  "greenMixerHead": "471422243053ae695caf1578761aa3b3a45ed9aa",
+  "greenMixerQa": {
+    "run": 37208076733,
+    "pass": 15,
+    "total": 15
+  },
+  "frozenHead": "2fe9701b0381c82f6defdbb745823664900fbc70",
+  "finalFailure": {
+    "run": 37208558394,
+    "artifact": 11305422393,
+    "digest": "sha256:a4e283f70c094abf5153708fbbc09a72032838c5e36105522e5557ab802301bf",
+    "failure": "setFadeSeconds uses single-element $ helper then .forEach on [data-world-fade]",
+    "successfulChecksBeforeFailure": 6
+  },
+  "stopPolicy": "TWO_REPAIR_PASSES_REACHED",
+  "smallestRecovery": "Replace the single-selector call in setFadeSeconds with document.querySelectorAll('[data-world-fade]'); rerun existing QA only.",
+  "liveSite": "https://kfb-audio.frizzlebob.chatgpt.site/",
+  "liveUpdated": false
+}

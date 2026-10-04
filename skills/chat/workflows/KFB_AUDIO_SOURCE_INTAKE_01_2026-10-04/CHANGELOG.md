@@ -65,3 +65,13 @@
 - removed the separate Deck A/B mixer from the main UX;
 - no new Site, AudioContext, catalog or game owner;
 - browser QA pending at implementation checkpoint.
+
+
+## 2026-10-04 · Musical World Mixer recovery
+
+- Mixer-only implementation at `471422243053ae695caf1578761aa3b3a45ed9aa` passed browser **15/15**;
+- later collapsed SFX Library augmentation retained the clean four-tab UI but exposed one selector-binding defect;
+- two repair passes on that combined browser gate consumed;
+- frozen at `2fe9701b0381c82f6defdbb745823664900fbc70`;
+- exact one-line recovery exported;
+- live Site unchanged.

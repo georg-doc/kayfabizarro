@@ -21,7 +21,7 @@
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
-  "status": "WORLD_MIXER_IMPLEMENTED_QA_PENDING",
+  "status": "WORLD_MIXER_CORE_GREEN_CURRENT_HEAD_FROZEN",
   "testedHead": "304bcca1bcf7be1b296b5428b58ef5313c155197",
   "qa": {
     "run": 37183974727,
@@ -164,6 +164,16 @@
     ],
     "journeyScenes": 8,
     "ui": "CLEAN_MINIMAL",
-    "status": "IMPLEMENTED_QA_PENDING"
+    "status": "IMPLEMENTED_QA_PENDING",
+    "greenMixerHead": "471422243053ae695caf1578761aa3b3a45ed9aa",
+    "greenQa": {
+      "run": 37208076733,
+      "pass": 15,
+      "total": 15
+    },
+    "frozenHead": "2fe9701b0381c82f6defdbb745823664900fbc70",
+    "currentQa": "FAIL_SELECTOR_BINDING_AFTER_SFX_AUGMENTATION",
+    "recovery": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/WORLD_MIXER_FAILURE_RECOVERY.md",
+    "liveUpdated": false
   }
 }

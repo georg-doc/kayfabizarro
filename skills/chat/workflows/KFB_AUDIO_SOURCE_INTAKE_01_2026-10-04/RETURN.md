@@ -287,3 +287,20 @@ UI rule from Georg:
 clean/minimal; no redundant button labels or metadata clutter. Technical metadata remains in source/context, not the Mixer face.
 
 Status: implementation written; browser QA pending.
+
+
+## Musical World Mixer · frozen recovery · 2026-10-04
+
+The requested **Mixer core is proven green** at `471422243053ae695caf1578761aa3b3a45ed9aa` with browser **15/15 PASS**.
+
+A later attempt to fold the already-indexed SFX Library into the secondary Sources area exposed one selector-binding defect. After two repair passes on that combined browser gate, the branch is frozen at `2fe9701b0381c82f6defdbb745823664900fbc70` per recovery policy.
+
+Exact remaining defect and one-line recovery:
+`skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/WORLD_MIXER_FAILURE_RECOVERY.md`
+
+Live Site is unchanged. No second Site was created.
+
+Product conclusion:
+- Mixer UX/design = KEEP;
+- Mixer core behavior = browser-proven;
+- current combined Mixer+SFX head = NOT publishable until the one selector recovery passes.
