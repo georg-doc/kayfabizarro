@@ -4,7 +4,7 @@ Status: **BLENDER PART 3 COMPLETE · RUNTIME CONSUMER PROOF NEXT**
 Date: 2026-10-04  
 Repo: `georg-doc/kayfabizarro`  
 Branch: `planning/fluff-blender-slice-01-2026-10-04`  
-Current head: `081023f51525b272d9d5197418fa9b25887b1737`  
+Current product head before current metadata updates: `081023f51525b272d9d5197418fa9b25887b1737`  
 Draft PR: **#356**  
 Merge / Live: **NO / UNCHANGED**
 
@@ -128,6 +128,21 @@ Blender does **not** own:
 - runtime actor selection.
 
 Those remain with the receiving KFB runtime/world owner.
+
+## Character eye presentation for the runtime consumer
+
+Georg decision, 2026-10-04:
+
+The motion GLBs remain skeleton/motion sources, but every **visible integrated worker character** in the runtime consumer proof uses the existing EyeRig owner by default.
+
+For Robot One, Robot Two, Skeleton Minion, Orc Brute and any other visible worker:
+- original eyes may appear in a labeled source-isolation proof only;
+- integrated/runtime views hide/replace stock/source eyes;
+- mount EyeRig v6 using an existing actor profile when available;
+- otherwise use the EyeRig source-derived fitting path and mark `PROFILE_TUNE`;
+- do not create local eye rigs in the Fluff runtime.
+
+This is presentation ownership only and does not change the motion clips.
 
 ## Exactly one next gate
 
