@@ -15,8 +15,8 @@ Make all current KFB authored music discoverable through the existing canonical 
 ## Source facts
 
 - main base: `bf1b20d33d44eebb3bf6f7217c3d26c59a633a13`;
-- RoadTrip-v2: 42 master MP3s;
-- paired stem families: 12;
+- RoadTrip-v2: 44 master MP3s;
+- paired stem families: 14;
 - Beetle-Wrestling Entrance 01 = 118 BPM / extended alternate;
 - Beetle-Wrestling Entrance = 119 BPM / signature family;
 - Surf Groove 3min = 100 BPM;
@@ -35,8 +35,8 @@ Make all current KFB authored music discoverable through the existing canonical 
 ## Done when
 
 1. existing canonical Jukebox remains backward-compatible;
-2. all 42 RoadTrip-v2 masters are registered;
-3. all 12 stem-family dirs are declared and resolve;
+2. all 44 RoadTrip-v2 masters are registered;
+3. all 14 stem-family dirs are declared and resolve;
 4. Audio Site source renders a compact catalog, transition desk, soundscape gaps, intake and prompt context;
 5. repository validator + browser QA pass;
 6. Site source and an authenticated Site/Production-Control preview artifact are persisted.

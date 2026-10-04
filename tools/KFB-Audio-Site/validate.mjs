@@ -5,7 +5,7 @@ const sound=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/soun
 const checks=[];const check=(n,o,d=null)=>{checks.push({name:n,ok:!!o,detail:d});if(!o)throw new Error(n+': '+JSON.stringify(d))};
 try{
  check('catalog version',catalog.version==='2.0.0',catalog.version);
- check('tracks >= 52',catalog.tracks.length>=52,catalog.tracks.length);
+ check('tracks >= 54',catalog.tracks.length>=54,catalog.tracks.length);
  const ids=new Set(),files=new Set();
  for(const t of catalog.tracks){
   check('id unique '+t.id,!ids.has(t.id),t.id);ids.add(t.id);
@@ -14,8 +14,8 @@ try{
   if(t.stems){const d=path.join(root,t.stems.dir);check('stem dir exists '+t.id,fs.existsSync(d),t.stems.dir);check('stem policy '+t.id,['source-only','certified'].includes(t.stems.policy),t.stems.policy)}
  }
  const road=catalog.tracks.filter(t=>t.collection==='roadtrip-v2');
- check('42 RoadTrip masters',road.length===42,road.length);
- check('12 stem families',road.filter(t=>t.stems).length===12,road.filter(t=>t.stems).length);
+ check('44 RoadTrip masters',road.length===44,road.length);
+ check('14 stem families',road.filter(t=>t.stems).length===14,road.filter(t=>t.stems).length);
  check('Cyclical certified',catalog.tracks.find(t=>t.title==='Cyclical Warmth')?.stems?.policy==='certified');
  check('Beetle sibling primary',catalog.tracks.find(t=>t.title==='Beetle-Wrestling Entrance')?.family==='beetle-wrestling-entrance');
  check('Beetle 01 alternate',catalog.tracks.find(t=>t.title==='Beetle-Wrestling Entrance 01')?.variantOf==='roadtrip-v2-beetle-wrestling-entrance');

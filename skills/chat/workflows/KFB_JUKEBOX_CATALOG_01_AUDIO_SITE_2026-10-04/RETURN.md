@@ -6,7 +6,7 @@
 
 ## Product result
 
-One canonical catalog now carries legacy KFB tracks plus every current RoadTrip-v2 master. A lean KFB Audio Site source uses that catalog for human browsing/playback while exposing transition, source-bank, intake and prompt-authoring workflows without becoming a second audio runtime.
+One canonical catalog now carries legacy KFB tracks plus every current RoadTrip-v2 master (44 at source snapshot). A lean KFB Audio Site source uses that catalog for human browsing/playback while exposing transition, source-bank, intake and prompt-authoring workflows without becoming a second audio runtime.
 
 ## Site UX
 
