@@ -75,6 +75,24 @@ Hard donor rule:
 **a donor may enter the product only in the dimensions for which it was accepted.**
 A mechanism donor is not automatically presentation/content/data authority.
 
+## 2026-10-04 · Environment Atlas Site · Hex + Buildings visual SSOT prep
+
+Current preparation workflow:
+`skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/`
+
+Execution branch / Draft PR:
+- `chatgpt-web/kfb-environment-atlas-site-prep-2026-10-04`
+- PR **#353**
+
+Owner rule:
+- existing `tools/world_atlas` remains Environment/Hex owner;
+- Registry + Asset Librarian remains asset truth;
+- current Clay Style SSOT remains visual/deformation truth;
+- the new Site is a projection/work surface, **not** a second World runtime, asset library or universal deformer.
+
+Reserved human Stage: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/` — **NOT DEPLOYED**.
+Work must continue the same branch/PR, create the actual ChatGPT Site without inventing its URL, then publish/verify this exact Cloudflare Stage before PUBLIC_VERIFIED. Legacy Hürth/OSM visible sources are default-denied by the current MVP source firewall. The source map records the current identity discrepancy: repository proof currently yields two KayKit hex-capable packs plus one Kenney Hexagon pack; do not fabricate a third KayKit pack.
+
 ## 2026-10-04 · KFB game bigger picture · global reference
 
 Current global product/context reference:
