@@ -1,3 +1,21 @@
+## 2026-10-04 · EyeRig global presentation default + recovery-aware Hub TODO
+
+### DECISION
+- Georg set EyeRig v6 as the default visible eye presentation for integrated KFB characters.
+- Original/source eyes remain valid only for labeled source-isolation/donor proof.
+- Integrated previews/runtime hide/replace source eyes through the existing cleanup/FaceHost owner and mount EyeRig v6.
+- Approved/recovered per-actor profile is preferred; otherwise use source-derived EyeRig candidate as `PROFILE_TUNE`; no stock-eye fallback and no second eye system.
+
+### RECOVERY / TODO
+- Unified EyeRig Site remains functional, but its Medium state is older than Georg's later old-Stage authoring session.
+- Dropbox re-search still found no newer durable export than the 40-profile payload; `EYE_RIG_PROFILE_RECOVERY_01` remains first.
+- Current Medium roster = 55; 15 identities are absent from that durable 40-profile export and are tracked as `RECOVERY_OR_PROFILE_TUNE`, not falsely called unrigged.
+- Large durable approved = Monstrosity, Black Knight, Demon Lord, Orc Brute; FrostGolem, 4GTN, 4GTN Forgotten and Clanker remain review/tune.
+- Legacy has 17/17 generated candidates; durable human review remains open and Skull is HUMAN_REQUIRED.
+- Exact list: `tools/KFB-ToolBox/eye-rig-batch/docs/EYERIG_CURRENT_TODO_2026-10-04.md`.
+- Production Hub CURRENT board advanced to `2026-10-04.3` with recovery, Medium and Large/Legacy EyeRig TODO cards.
+- Fluff Hub item was corrected from source audition to Part-3 runtime consumer proof.
+
 ## 2026-10-04 · KFB production surfaces consolidated
 
 - Published the existing Production Hub as the only human front door with a small data-driven CURRENT board and exact routes to products, one ToolBox and Control/history.
