@@ -1,7 +1,7 @@
 {
   "schema": "kfb.procedural-test-world/2",
   "date": "2026-10-04",
-  "status": "WORLD_MULTI_ISLAND_CORRIDOR_CANDIDATE",
+  "status": "WORLD_MULTI_ISLAND_CORRIDOR_PASS",
   "owner": "KFB WorldBuilder / WB2",
   "checkpoint": "WORLD-MULTI-ISLAND-CORRIDOR-01",
   "baseMain": "9a1f43b628126bb633ed95c99310288f0a5f1a7c",
@@ -101,24 +101,24 @@
       }
     }
   },
-  "next": "Run source + Chromium proof for the four-island corridor. No Motion/Player/Drive/Residents until PASS.",
+  "next": "KAYKIT-NATIVE-BLENDER-BASELINE-01 on Motion PR #344; only after native Motion selection attach Player. Resident WB2 seam follows as WSA-RES-SET-01.",
   "current": {
-    "head": "e1761c44159aaa81b26d243aadcc23cdd3b3836b",
+    "testedImplementationHead": "0841b89ae8274118687e946318458201b402c5b5",
     "source": {
-      "run": 37165910051,
-      "job": 111328623269,
+      "run": 37166355940,
+      "job": 111329943298,
       "result": "PASS_9_OF_9"
     },
     "browser": {
-      "run": 37165909990,
-      "job": 111328623037,
+      "run": 37166356027,
+      "job": 111329943523,
       "result": "PASS",
-      "artifact": 11289562726,
-      "digest": "sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d"
+      "artifact": 11289583486,
+      "digest": "sha256:c6a3da665ad0b113ac23a50c263fd36c7a3dc1478ef37f2f37a3508e013ad472"
     },
     "resourceRegistry": {
-      "run": 37165909954,
-      "job": 111328623053,
+      "run": 37166355944,
+      "job": 111329943425,
       "result": "PASS"
     }
   },

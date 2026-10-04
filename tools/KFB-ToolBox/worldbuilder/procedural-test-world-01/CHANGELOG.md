@@ -1,5 +1,18 @@
 # CHANGELOG · Procedural Test World 01
 
+## 2026-10-04 · WORLD-MULTI-ISLAND-CORRIDOR-01 PASS
+
+- four world nodes browser-proven: Town / Dystopia / Utopia / Protopia;
+- three inter-island `ROAD_BRIDGE` connections browser-proven through Track Core;
+- Golden-Journey spatial anchors and canonical deck/Card seed routing validated;
+- existing R2D body/presentation, P1/P2 nature and B1/facade owners retained;
+- source **9/9 PASS** · run 37166355940 / job 111329943298;
+- Chromium/WebGL **PASS** · run 37166356027 / job 111329943523;
+- artifact 11289583486 · sha256:c6a3da665ad0b113ac23a50c263fd36c7a3dc1478ef37f2f37a3508e013ad472;
+- Resource Registry **PASS** · run 37166355944 / job 111329943425;
+- no Player, Drive, Residents, Stage or Live;
+- exactly one next gate: KAYKIT-NATIVE-BLENDER-BASELINE-01.
+
 ## 2026-10-04 · four-island corridor candidate
 
 - added `WORLD_RECIPES.json`: Town / Dystopia / Utopia / Protopia as data-driven world recipes;
