@@ -24,6 +24,7 @@ Mandatory:
 - quote bridge = PR #354 stable quote IDs only, no copied quote canon;
 - **HUMAN FAIL correction:** the current Claude Design scene used cut-out character figures instead of the real 3D Resident models. Do not use those cutouts as character/scene donors.
 - Pair/Scene/Bubble preview must use the actual Resident Atlas 3D actors/sets/rigs already proven in PR #310.
+- **Eye presentation default:** after source isolation, hide/replace stock/source eyes and mount the existing EyeRig v6 owner on every shown Resident. Use persisted profiles where available; otherwise source-derived EyeRig + `PROFILE_TUNE`. No stock-eye fallback.
 - Claude Design may contribute only bubble/VFX/layout/timing ideas that can be isolated independently from the cut-out figures; prove that bubble source in isolation before integrating it;
 - Web Chat batch import/export must work without Work;
 - GitHub remains authoritative curated persistence.
