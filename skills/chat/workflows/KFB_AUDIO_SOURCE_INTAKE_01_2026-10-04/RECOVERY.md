@@ -54,3 +54,28 @@ Five newly added human-positive families:
 - Workshop machine pulse · Beetle / Maker Space · 119 BPM.
 
 All new stems remain `source-only`.
+
+
+## SFX Library Index 01 recovery checkpoint · 2026-10-04
+
+Resume from the exact current branch head. Do not rebuild the audio census from chat memory.
+
+Pinned asset source for this index:
+`main@ca4f953d0d5ca001b46f1d89b8908b80592a09c9`
+
+Read before SFX Site work:
+1. `SFX_LIBRARY_INDEX_01.md`
+2. `media/3D_Assets/CATALOG/audio-catalog.json`
+3. `tools/KFB-Audio-Site/sfx-library.snapshot.json`
+4. current `SITES_UPDATE_HANDOFF.md`
+
+Established facts:
+- canonical shared catalog: **2,084** audio files = Audio 1,704 + Sounds 380;
+- SFX discovery snapshot: **1,704** Audio files, source-locked and non-canonical;
+- exact aliases: root interface 100/100; Classic Arcade small pack 80/80;
+- S050 Dry/Wet: 84 same-name pairs, only 32 exact;
+- validator **45/45 PASS** + existing Site browser **14/14 PASS** on run `37185843367`;
+- no SFX Library UI has been published.
+
+Exactly one next gate:
+**KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE** — update the existing `kfb-audio` Site once, including the already-pending source-intake state plus SFX Library + Event Map. Do not create a sibling Site and do not use Cloudflare.
