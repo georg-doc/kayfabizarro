@@ -53,7 +53,7 @@ Playable-MVP architecture now also has durable GitHub contracts for the Site-nat
 - `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/GOLDEN_JOURNEY_MVP_2026-10-04.md`
 - `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/GOLDEN_JOURNEY_MVP_2026-10-04.json`
 
-The precheck is binding preparation guidance for the final One-Shot. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. Key correction: current WB2 PR #332 and current main are materially diverged, so the final WSA/Codex integration must first create a clean convergence base from then-current main rather than stacking directly on #332. Site-only planning is no longer the only copy of the v1.5–v1.7 architecture.
+The precheck is binding preparation guidance for the final One-Shot. The deck-world contract binds the three future decks to World Recipes, Resident world knowledge, the existing ChatterBox semantic Triplet grammar, Billboards and Fractal Almanac Card provenance without creating a second Card/dialogue/world owner. **World preflight is now PASS on Draft PR #348**: the current-main WB2/R2D convergence and the four-island Town/Dystopia/Utopia/Protopia corridor with three Track-Core connections, Golden-Journey anchors and canonical deck/Card seeds are browser-proven. PR #332 is donor/history only. The next hard gate is Motion PR #344 / `KAYKIT-NATIVE-BLENDER-BASELINE-01`. Site-only planning is no longer the only copy of the architecture.
 
 ## 2026-10-04 · Resident Atlas → playable MVP / WSA routing
 
@@ -63,7 +63,7 @@ Current Resident-Atlas source package for MVP/WSA intake:
 WSA/MVP integration brief:
 `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
 
-Use this intake for Resident-set placement, 3D In-Place Editor reuse, Asset Librarian Resident search, Orc Band, Resident Disco and Wrestling/Show Ring planning. Atlas is a source/authoring tool; **WB2 PR #332 remains the receiving world owner**. Full Fight Sandbox/rope physics is not an MVP blocker. Exactly one current Resident integration gate is `WSA-RES-SET-01`.
+Use this intake for Resident-set placement, 3D In-Place Editor reuse, Asset Librarian Resident search, Orc Band, Resident Disco and Wrestling/Show Ring planning. Atlas is a source/authoring tool; **the current receiving world candidate is WB2 Draft PR #348** (`chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`). PR #332 is source donor/history only. Full Fight Sandbox/rope physics is not an MVP blocker. Resident attachment waits until the current native Motion gate; its named seam remains `WSA-RES-SET-01`.
 
 ## 2026-09-27 · CURRENT WORKFLOW OVERRIDE · productive integration / no pseudo-human gates
 
