@@ -1,3 +1,22 @@
+## 2026-10-04 · Curtain Character Select / cross-rig QA contract
+
+### MVP DECISION
+- Added optional 3D Character Select to the Curtain start sequence.
+- Flow: BLÖDSINN! real-load plaque → optional Actor Select → selected Actor ready → clay Enter → Curtain opens → Town.
+- **Pull, don't gate:** a default Actor is already selected; no forced creator wizard.
+- Desired default: FrizzleBob v5b candidate after exact source-pin reconciliation + Ground proof.
+- Safe technical fallback: ActionFigure / Rig_Medium.
+- Cross-rig QA: Black Knight / Rig_Large; GothGirl / Rig_Medium optional Stage probe.
+- Large does not inherit Medium animation coverage. Semantic movement intents resolve per rig and remain HOLD/UNSUPPORTED when source clips are missing.
+- Rigid capes/accessories may use reversible Player-only presentation overrides; source assets are never destructively edited.
+- Current FrizzleBob v5b source references need reconciliation: ToolBox P06 records `23615cff`, Joyride J17 loads the same figure path from `93abbf22`.
+- No Player/Motion runtime integration was started; Motion PR #344 native Blender gate remains the hard dependency.
+
+### DURABLE CONTRACT
+`skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md`
+
+No Stage/Live promotion.
+
 ## 2026-10-04 · WB2 current-main convergence + four-island corridor PASS
 
 ### WORLD PREFLIGHT
