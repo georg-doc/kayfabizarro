@@ -1,3 +1,25 @@
+## 2026-10-04 · CURRENT SURFACE CONSOLIDATION
+
+Georg reports that Production Hub, Production Control and ToolBox routing are still not coherently current as a human system. Treat this as a **navigation/surface HUMAN FAIL** even when individual deployments are technically green.
+
+Binding contract:
+`skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md`
+
+Current Work branch:
+`chatgpt-web/surface-consolidation-2026-10-04`
+
+Work handover:
+`skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/WORK_HANDOVER.md`
+
+Human rule:
+- **Production Hub = one bookmark / one front door**
+- **Production Control = admin ledger/history**
+- **ToolBox = exactly one current tool router**
+- specialist Sites remain tools below ToolBox/Hub
+- World Studio/Combat remain products, not dashboards
+
+Do not start another dashboard or another ToolBox front door.
+
 ## 2026-10-04 · PORTFOLIO MAP
 
 Cross-project current work map:
