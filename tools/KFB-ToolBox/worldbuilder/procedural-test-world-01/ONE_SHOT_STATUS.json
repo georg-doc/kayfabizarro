@@ -21,19 +21,19 @@
     "trackGraph": "PASS_KEEP",
     "goldenAnchors": "PASS_KEEP",
     "playerMotion": "BROWSER_PASS_KEEP",
-    "visibleFoundation": "HUMAN_FAIL_PRESERVED_SOURCE_CLEAN_REPLACEMENT_REVIEW_PENDING",
-    "residentsActivities": "NOT_COMPLETE",
-    "driveTaxi": "NOT_COMPLETE",
-    "chatterCards": "NOT_COMPLETE",
-    "dystopiaPerformance": "NOT_COMPLETE",
-    "utopiaProtopia": "NOT_COMPLETE",
-    "curtainCharacterSelect": "NOT_COMPLETE",
-    "almanacLeanMemory": "NOT_COMPLETE",
-    "siteWorldStudio": "NOT_COMPLETE",
-    "goldenJourneyE2E": "NOT_COMPLETE",
+    "visibleFoundation": "SOURCE_FAMILY_TARGETED_REVIEW_PASS_WHOLE_GAME_REVIEW_PENDING",
+    "residentsActivities": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "driveTaxi": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "chatterCards": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "dystopiaPerformance": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "utopiaProtopia": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "curtainCharacterSelect": "NATIVE_LOADER_BROWSER_PASS_CHARACTER_SELECT_PENDING",
+    "almanacLeanMemory": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "siteWorldStudio": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "goldenJourneyE2E": "FAIL_AT_WALKING_INPUT_PROGRESS_REPAIR_CANDIDATE",
     "publicStage": "NOT_DEPLOYED",
     "humanAcceptance": "NOT_REVIEWED",
-    "audioMusicalWorldShowcase": "PREPARED_NOT_IMPLEMENTED"
+    "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING"
   },
   "visibleSourceFirewall": {
     "rejectVisible": [
@@ -155,7 +155,26 @@
         "scope": "one local Town view only"
       }
     },
-    "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected."
+    "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected.",
+    "integratedBrowserLatestCompleted": {
+      "receivingHead": "9bd1c7ddc54f1a998015f9c3732f64b5b1d5dbbf",
+      "run": 37191408467,
+      "artifact": 11298914555,
+      "sha256": "5f37f95c679371ca7391dc5b1e127b37d4e6b20a11bcb750cbc4fdce1286508b",
+      "passedGates": [
+        "native required loader and one scene owner",
+        "verified world master and shared physical ambience"
+      ],
+      "failedGate": "Clown walking deadline300s",
+      "wholeGamePass": false
+    },
+    "heldInputRepair": {
+      "status": "CANDIDATE_NOT_BROWSER_PROVEN",
+      "change": "Hold actual W/A/D keys until measured native position/heading progresses; bounded 15s per movement; cheap read-only native state polling",
+      "productControllerChanged": false,
+      "teleports": false,
+      "clockAcceleration": false
+    }
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
