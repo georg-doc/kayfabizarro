@@ -22,18 +22,18 @@
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
   "status": "QA_GREEN_SITE_UPDATE_PENDING",
-  "testedHead": "378d7af459d37627a4d5b2285115ecc92ccfc041",
+  "testedHead": "b01a4594574e28894ef2db2e5a084b1f03c0bcae",
   "qa": {
-    "run": 37175035753,
-    "job": 111355208659,
+    "run": 37176886034,
+    "job": 111360630704,
+    "validator": "PASS",
+    "syntax": "PASS",
     "browser": {
       "pass": 12,
       "total": 12,
-      "artifact": 11293330007,
-      "digest": "sha256:6a6c5c8cbe209915e8df7c5264fb9d89d0b88de6c721b3c3ce28fb4bbe632524"
-    },
-    "validator": "PASS",
-    "syntax": "PASS"
+      "artifact": 11293114042,
+      "digest": "sha256:9132d35e7fc34277a74e2c1c80b7a703bebc56026c18d969aba0781da71b1287"
+    }
   },
   "newSunoFamilies": [
     {
@@ -71,5 +71,6 @@
     "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
     "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
     "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
-  ]
+  ],
+  "ambientDirection": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/AMBIENT_BED_DIRECTION_2026-10-04.md"
 }
