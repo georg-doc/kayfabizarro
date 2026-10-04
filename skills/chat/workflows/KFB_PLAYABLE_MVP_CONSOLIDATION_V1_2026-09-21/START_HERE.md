@@ -26,6 +26,9 @@ Current Golden Journey / acceptance fixture:
 `GOLDEN_JOURNEY_MVP_2026-10-04.md`
 Machine-readable fixture:
 `GOLDEN_JOURNEY_MVP_2026-10-04.json`
+Current Curtain Character Select / cross-rig QA contract:
+`CURTAIN_CHARACTER_SELECT_MVP_2026-10-04.md`
+
 
 **Do not use PR #332 as the integration base.** Its proven WB2/R2D owner has been re-homed onto current-main PR #348, and the four-island corridor is browser-proven there. The final WSA/Codex One-Shot still waits for the remaining preflight gates and one frozen integration lock; PR #348 is the current world candidate, not an automatic merge/Live authorization.
 
