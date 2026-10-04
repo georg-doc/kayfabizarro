@@ -254,6 +254,6 @@ No merge, Live promotion or runtime deployment is authorized by this Return.
 
 ## Additive return · B / C / D · 2026-10-05
 
-The accepted baseline now has a proven authoring/adapter seam in the existing KFB Audio Site: B movement, C staying and D talking. It preserves one AudioContext, semantic buses and the accepted non-pausing TTS ducking path. GitHub QA is 303/303 static + 17/17 browser PASS at `18fb126701d2412f6b5a5701f08dc5615f4069a2`; private Sites deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded. No stems, World runtime integration, Cloudflare write, merge or Live promotion were performed.
+The accepted baseline now has a proven authoring/adapter seam in the existing KFB Audio Site: B movement, C staying and D talking. It preserves one AudioContext, semantic buses and the accepted non-pausing TTS ducking path. GitHub QA is 303/303 static + 17/17 browser PASS at `18fb126701d2412f6b5a5701f08dc5615f4069a2`; private Sites deployment `appgdep_6ac2e0e36dc48191bd0b49ecd828a500` succeeded. No stems or World runtime integration were performed; no Cloudflare substitution, merge or Live promotion occurred.
 
 Exactly one next gate: `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — integrate into one next World MVP and let Billboard/POI context request states without becoming an audio owner.

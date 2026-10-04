@@ -184,6 +184,6 @@ Site:
 - Sites deployment screenshot visibly shows `SITE SOURCE 0.2`, `ONE AUDIO CONTEXT` and catalog 54/44/14;
 - direct exact URL was opened; the automation browser reached the expected owner-private ChatGPT sign-in boundary, so interactive production behavior is evidenced by the same-source 17/17 browser artifact and deployment screenshot.
 
-No Cloudflare write, merge or Live promotion occurred.
+No Cloudflare substitution, merge or Live promotion occurred. The repository's existing PR-preview automation may still report its ordinary branch build; that is not the Audio Site deployment or an acceptance surface for this slice.
 
 **Exactly one next gate:** `WORLD_AUDIO_CONTEXT_BCD_ADAPTER_01` — integrate the adapter in one bounded next World MVP, including Billboard/POI context, without transferring mixer/runtime ownership to World.
