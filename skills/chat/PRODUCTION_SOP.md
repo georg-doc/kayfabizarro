@@ -49,3 +49,20 @@ Anything whose acceptance depends on look, timing, feel, readability or play mus
 A fresh chat may finish one clearly named slice without waiting for continuous lead supervision when the current owner, source state and success check are explicit. Apply `FRESH_CHAT_SLICE_PROTOCOL.md`. Do not use autonomy to broaden scope, replace another owner, merge an unreviewed visual direction or turn a POC into production truth.
 
 Its end product is not only code. It must leave an additive changelog entry and a compact review packet that another Work session can verify without replaying the chat.
+
+
+## 12. Type donor reuse before integration
+
+“Reuse before rebuild” is not permission to reuse every dimension of a donor.
+
+Classify the donor first:
+- mechanism;
+- presentation;
+- content;
+- data.
+
+Record which dimensions are allowed.
+A technically proven mechanism may be reused while its visible content is rejected.
+
+Before an integrated human candidate, audit the actual visible source families against the current product allowlist/denylist.
+
