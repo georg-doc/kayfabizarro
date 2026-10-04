@@ -1,3 +1,14 @@
+## 2026-10-04 · Playable MVP continuous One-Shot + independent Critic
+
+- Added binding `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`: deterministic screenshot/runtime evidence, independent no-code Critic, persisted scores/open issues, source-isolation proof, ranked repair loop and Whole-Game Critic.
+- Adapted the strong autonomous-game prompt pattern to KFB: existing SSOT architecture instead of rebuild-from-empty; KFB clay/living-toy target instead of photorealism; one integration writer; internal fan-out only.
+- Current PR #348 Player/Motion return is PASS/KEEP but not One-Shot completion.
+- Current visible Hürth/OSM foundation remains HUMAN VISUAL FAIL.
+- Updated project/root routing and KFB Hub source to the branch-local PR #348 Recovery + Completion brief and `ONE_SHOT_STATUS.json`.
+- Reserved final review route: `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` · NOT DEPLOYED.
+- Internal checkpoint PASS now explicitly means persist/verify/critic as applicable → continue automatically.
+- No runtime implementation, merge, Stage deployment or Live promotion in this control-plane checkpoint.
+
 ## 2026-10-04 · WSA One-Shot legacy-OSM contamination postmortem
 
 ### HUMAN VISUAL FAIL
