@@ -98,3 +98,16 @@ Tested runtime/test head: `531fcc3f912d226254bab0e5e43a0a78750f001b`. Existing D
 **Limits:** no new WB2 centimetre foot-creep certification was made. The accepted Blender RAMP_02 remains the visual/measurement reference; original timing, phase, speeds and metre rig are preserved. Known start/stop/turn/strafe gaps remain as in that contract. No public Stage/deployment or human freeplay acceptance is claimed. Local In-App Browser visibly verified the integrated player; Chromium evidence is the repeatable runtime proof.
 
 **Next internal action:** continue the Resident/activity seam under the existing `ONE_SHOT_INTEGRATION_LOCK_2026-10-04.md`, inside this same world/PR. This is an internal checkpoint, not a new Georg-facing approval gate. The explicitly requested Player checkpoint ends here; no Resident, Drive or Flight implementation was added in this turn.
+
+
+## 2026-10-04 · Post-WSA one-shot recovery/completion routing
+
+- Classified the returned Player/Motion checkpoint as **PASS / KEEP**, not product completion.
+- Persisted the current **HUMAN VISUAL FAIL** for legacy Hürth/OSM-derived visible environment content.
+- Added `ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md`.
+- Added machine-readable `ONE_SHOT_STATUS.json`.
+- Updated Return, Recovery and WORLD_PROFILE to route one continuous recovery/completion run.
+- Bound the main independent external-Critic contract: deterministic screenshot/runtime evidence, no-code critic, ranked repair loop, Whole-Game Critic before final Stage.
+- Reserved `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` for the final integrated human candidate; **not deployed**.
+- Explicitly invalidated "Player checkpoint complete → next internal step Residents" as a stop pattern.
+- No runtime source, merge, Stage deployment or Live promotion was performed by this routing checkpoint.
