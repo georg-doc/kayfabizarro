@@ -1,5 +1,29 @@
 # Changelog · KFB Asset Librarian
 
+## Style Reference Library proposal · 2026-10-05
+
+Status: **PROPOSAL · PLANNING ONLY · NO RUNTIME / SITE CHANGE**
+
+### Decision
+- Add a future **Style References** resource scope inside the existing Asset Librarian owner rather than creating a second Registry or productive Site.
+- Private drawing-reference PDFs/pages remain authenticated private source objects; GitHub and public Cloudflare Stage may contain metadata/IDs only, never private source pages.
+- Reuse existing Librarian Browse, Inspector, Saved Set and Intake seams.
+- Proposed machine contracts: `kfb.style-reference/1` and `kfb.style-reference-pack/1`.
+- Mandatory donor proof: resolve and show the exact source page/crop in isolation before claiming it informed a design.
+- ToolBox exposes the capability through the existing Librarian; no duplicate front door.
+
+### Prepared artifacts
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/STYLE_REFERENCE_LIBRARY_PROPOSAL_2026-10-05.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/STYLE_REFERENCE_SCHEMA_DRAFT_2026-10-05.json`
+
+### Surface boundary
+- Existing private product Site remains `https://kfb-asset-librarian.frizzlebob.chatgpt.site/`.
+- Reserved downstream formal mirror, if ever required: `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/style-reference-library/` = **NOT DEPLOYED**.
+- Current PR #349 Phase-A human-review gate remains unchanged; this proposal does not start Phase B/R1 implementation.
+
+### Next
+Exactly one proposal gate: Georg decides whether this concept should become a bounded R1 implementation after the current Librarian Phase-A review.
+
 ## GPT Site Phase A built · 2026-10-04
 
 Status: **BUILT · WSA BROWSER-QA 8/8 PASS · PRIVATELY PUBLISHED · GEORG REVIEW OPEN**
