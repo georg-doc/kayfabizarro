@@ -1346,3 +1346,182 @@ Check only:
 
 After PASS, resume the already-open Neutral ↔ Clay K1 visual review.
 
+## 2026-10-04 · EYE_RIG_UNIFIED_SITE_01
+
+Goal:
+replace the split Medium/Large + separate Legacy review surfaces with one productive EyeRig workbench and prepare that exact workbench for ChatGPT Site publication.
+
+### Owner / implementation
+
+Owner:
+- repo `georg-doc/kayfabizarro`
+- branch `toolbox/eye-rig-batch-2026-09-18`
+- Draft PR #104
+
+Implementation checkpoints:
+- Legacy donor/data intake: `4c34e076360b5e9ece502ff42c8d00130bb41f63`
+- three-class unified runtime: `847954178551952c9f5860cede3cae7fe57bf3ed`
+- static-contract extension: `9247d6b3832bdb73fac20d55bf76a766bc2d4453`
+- Site publishing contract: `5084600906fd4cf1b85c237adbbf63730ff1ce62`
+
+### Unified product surface
+
+Single entrypoint:
+`tools/KFB-ToolBox/eye-rig-batch/index.html`
+
+Single class switch:
+`Medium | Large | Legacy`
+
+Counts:
+- Rig_Medium: **55**
+- Rig_Large: **8**
+- Rig_Legacy: **17**
+- total geometry/head review identities: **80**
+
+Legacy is no longer intended to be worked through a separate productive UI.
+PR #162 remains source/evidence donor for the 17 Legacy profiles and their proven assembly path.
+
+### Legacy donor reuse
+
+Copied byte-identically from proven Legacy runtime revision `44d595bc60259f4a74da7043df13582f1b5ccd89`:
+
+- `lib/legacy/legacy-rig-adapter.v1.js`
+  blob `41ba111d264cb73f2b3fbd70370dbb0ba042c91d`
+- `lib/legacy/legacy-facehost.v1.js`
+  blob `186323777ff78a9e4f4a246ad10232dd8ef82bc9`
+
+Imported exact PR #162 data:
+- `data/rig-legacy-heads.v0.json` · 17 heads
+- `data/rig-legacy-default.v0.json`
+- `data/rig-legacy-auto.v1.json` · 17 persisted profiles
+
+Legacy profile truth retained:
+- **16 MEASURED_CANDIDATE**
+- **1 HUMAN_REQUIRED: Skull**
+- no shared Legacy class default
+- source GLTF/GLB unchanged
+
+Historical donor evidence remains historical:
+- automatic source-first: **24/24 static + 247/247 browser/WebGL PASS**
+- persisted-profile reconstruction: **30/30 static/profile + 215/215 browser/WebGL PASS**
+
+### Unified runtime seam
+
+Only actor construction is class-specific:
+
+Legacy exact source
+→ local byte-identical Legacy assembler
+→ local byte-identical LegacyFaceHost
+→ persisted PR #162 profile
+→ existing EyeRig v6
+→ common PR #104 controls/review/persistence.
+
+The Legacy Eye adapter was expanded only as a forwarding adapter to the existing EyeRig API:
+- expressions;
+- pointer/fixed gaze;
+- visibility;
+- anchor;
+- ring centre-lock compensation;
+- track;
+- eye material/shape;
+- life/kinetics;
+- blink.
+
+No second EyeRig implementation is introduced.
+
+Legacy motion comes from the assembled Rig_Legacy source clips and is aliased into the existing common Idle / Walk / Run buttons.
+
+### Persistence
+
+Storage key remains exactly:
+`kfb.toolbox.eye-rig-batch.v0`
+
+Legacy is additive:
+- `selectedByClass.Rig_Legacy`;
+- current Legacy actor;
+- Legacy profile edits/approvals use the same existing `profiles` / `approvedProfiles` containers.
+
+No `localStorage.clear()`, storage-key replacement or destructive migration was introduced.
+
+### Focused validation
+
+**33/33 PASS**
+
+Includes:
+- app syntax;
+- Legacy adapter syntax;
+- static-contract syntax;
+- three-class UI/config;
+- 17 Legacy catalog entries;
+- 17 persisted profiles;
+- 16 measured + Skull human-required;
+- no shared Legacy class default;
+- exact Legacy profile/source identity;
+- no actor-id collisions across 55 Medium + 8 Large + 17 Legacy;
+- exact local donor blobs;
+- Legacy source assembly / head replacement;
+- LegacyFaceHost cleanup owner;
+- full EyeRig control API parity;
+- expression contract;
+- Control R2 ring/inset invariant seam;
+- unchanged storage key;
+- generic three-class import validation;
+- assembled Legacy motion mapping;
+- safe HUMAN_REQUIRED cleanup behavior;
+- Medium 55 retained;
+- Large 8 retained;
+- appearance variants retained;
+- bounded wheel retained;
+- Clay K1 retained;
+- Control R2 retained;
+- inline numeric editing retained.
+
+Expanded repository static contract:
+**160 assertions persisted**.
+
+GitHub Actions runs on the tested source head:
+**none**.
+
+Therefore:
+- focused validation: **33/33 PASS**
+- 160-assertion suite: **PERSISTED · NOT_RUN**
+- no browser/public runtime PASS is claimed for the new unified runtime yet.
+
+### Site contract
+
+Manifest:
+`site.manifest.json`
+blob `1ad09c992708d845153374d1344dc3fc90afdddc`
+
+Publishing brief:
+`docs/EYE_RIG_UNIFIED_SITE_01.md`
+blob `be86d03f68428ebd055d98c30eabbbc12d762443`
+
+Publication target:
+**ChatGPT Site**
+
+Cloudflare is explicitly demoted to recovery/regression infrastructure; it is not the intended productive authoring surface for this unified workbench.
+
+Current Webchat tooling has no Site create/publish action, therefore publication itself is **PENDING WORK** rather than falsely claimed complete.
+
+### Next gates
+
+1. `EYE_RIG_UNIFIED_SITE_PUBLISH_01`
+   - Work publishes the existing source root as one Site;
+   - no redesign;
+   - no PR merge required.
+
+2. After Site URL exists:
+   `GEORG_EYERIG_UNIFIED_SITE_01`
+   - Medium saved state;
+   - Large switch;
+   - Legacy 17-head roster in same interface;
+   - Barbarian Default + one alternate profile;
+   - Skull manual status;
+   - numeric controls;
+   - wheel;
+   - Neutral/Clay K1;
+   - reload persistence.
+
+No auto-merge or Live promotion.
+
