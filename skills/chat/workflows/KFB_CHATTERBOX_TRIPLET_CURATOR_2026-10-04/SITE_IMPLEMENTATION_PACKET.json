@@ -1,6 +1,6 @@
 {
-  "schema": "kfb.triplet-curator-site-packet/1",
-  "date": "2026-10-04",
+  "schema": "kfb.chatterbox-site-packet/2",
+  "date": "2026-10-05",
   "status": "SITE_IMPLEMENTATION_READY",
   "repo": "georg-doc/kayfabizarro",
   "branch": "planning/chatterbox-triplet-curator-site-2026-10-04",
@@ -49,15 +49,19 @@
     "reviewExport": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_EXPORT_SCHEMA.json",
     "authoring": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/TRIPLET_CURATOR_SCHEMA.json",
     "quoteFixture": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/QUOTE_BRIDGE_FIXTURE.json",
-    "reviewMigration": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_MIGRATION.md"
+    "reviewMigration": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/REVIEW_MIGRATION.md",
+    "dialogLabExtension": "skills/chat/workflows/KFB_CHATTERBOX_TRIPLET_CURATOR_2026-10-04/CHATTERBOX_LLM_DIALOG_LAB_EXTENSION_V1.md"
   },
   "siteTabs": [
-    "Bühne / Pair Lab",
-    "Review / Pool",
+    "Bühne / Dialogue Lab",
+    "Review / Triplet Pool",
     "Bewohner / Lean Card Lens",
+    "Critic / Repair",
+    "Reactions",
     "Quotes",
-    "Bubble Preview",
-    "Import / Export / Diff"
+    "Bubble / 3D Stage",
+    "Audio / TTS",
+    "Import / Export / Diff / Sessions"
   ],
   "initialFixtures": {
     "A": "Goth Girl × Clown × forget_utopia#11",
@@ -75,7 +79,7 @@
   "publication": {
     "primary": "GPT_SITE",
     "siteUrl": "NOT_YET_ASSIGNED",
-    "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/triplet-curator/",
+    "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/chatterbox/",
     "stageStatus": "NOT_DEPLOYED",
     "live": "UNCHANGED"
   },
@@ -91,7 +95,15 @@
     "Resident pair deterministic preview works including SILENCE",
     "current accepted bubble source is shown in isolation before adapter integration",
     "desktop + narrow browser zero page errors",
-    "exact Site identity persisted and ToolBox slot updated"
+    "exact Site identity persisted and ToolBox slot updated",
+    "Goth Girl × Clown deterministic baseline + L0 + L1 can be run and compared on the same scene",
+    "one 8-12 turn L0 session and one same-scene L1 session are logged",
+    "player can intervene with a free Triplet and at least one four-call action",
+    "critic produces voice-distinctness/repetition/Triplet/formatting findings without joining the dialogue",
+    "repair creates a new revision and preserves the original transcript",
+    "real 3D Resident stage supports orbit/responsive bubble-readability checks",
+    "browser TTS drives voice activity and current Audio mixer ducking without a second AudioContext",
+    "strong generated Triplets can be promoted to candidate pool without automatic runtime approval"
   ],
   "claudeDesignCorrection": {
     "status": "HUMAN_REJECTED_CHARACTER_PRESENTATION",
@@ -114,5 +126,91 @@
     ],
     "stockEyeFallback": false,
     "owner": "KFB ToolBox EyeRig PR #104 / shared EyeRig v6"
+  },
+  "productName": "KFB ChatterBox",
+  "productModules": [
+    "Triplet Curator",
+    "Dialogue Lab",
+    "Critic / Repair Lab",
+    "Reaction / Choreography Lab",
+    "3D Bubble Stage",
+    "Audio / TTS Preview",
+    "Import / Export / Session Logs"
+  ],
+  "dialogueLab": {
+    "firstTopology": "TWO_RESIDENTS",
+    "firstPair": "Goth Girl × Clown",
+    "comparison": [
+      {
+        "id": "L0",
+        "label": "shared-agent baseline",
+        "modelPolicy": "same model, one shared context"
+      },
+      {
+        "id": "L1",
+        "label": "isolated Resident agents",
+        "modelPolicy": "same model, separate Resident contexts"
+      },
+      {
+        "id": "L2",
+        "label": "model-diverse Residents",
+        "modelPolicy": "optional; different model/profile only after L0/L1 evidence"
+      }
+    ],
+    "firstRunTurns": "8-12",
+    "playerInputs": [
+      "free Triplet",
+      "KayfaBINGO!",
+      "KayfaBONGO!",
+      "KayfaBOGGLE?",
+      "BLÖDSINN!"
+    ],
+    "critic": "second non-speaking LLM agent",
+    "outputs": [
+      "session log",
+      "turn provenance",
+      "critic report",
+      "repair revision",
+      "candidate Triplet/cluster promotion",
+      "negative semantic/guardrail candidates"
+    ]
+  },
+  "reactionLab": {
+    "phrases": [
+      "What the FLUFF?!",
+      "Stay fluffy!",
+      "KayfaBINGO!",
+      "KayfaBONGO!",
+      "KayfaBOGGLE?",
+      "BLÖDSINN!"
+    ],
+    "reuseOwners": [
+      "body animation",
+      "EyeRig v6",
+      "facial expression",
+      "brows/pupils/gaze",
+      "bubble presentation",
+      "SFX/VFX"
+    ]
+  },
+  "audioTts": {
+    "tts": "browser speechSynthesis first pass",
+    "audioOwner": "KFB Audio",
+    "duckingOwner": "mixer",
+    "secondAudioContext": false,
+    "musicTimelineContinuesWhileDucked": true
+  },
+  "stage3d": {
+    "residentSource": "Resident Atlas exact 3D actors/sets/rigs",
+    "orbitCamera": true,
+    "responsiveViewports": true,
+    "bubbleChecks": [
+      "face/body visibility",
+      "camera-facing readability",
+      "edge clamping",
+      "bubble collision",
+      "streaming growth",
+      "speaker/listener anchors"
+    ]
   }
 }
