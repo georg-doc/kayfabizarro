@@ -23,14 +23,14 @@
     "playerMotion": "BROWSER_PASS_KEEP",
     "visibleFoundation": "SOURCE_FAMILY_TARGETED_REVIEW_PASS_WHOLE_GAME_REVIEW_PENDING",
     "residentsActivities": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "driveTaxi": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
+    "driveTaxi": "ACTUAL_BROWSER_PASS_GROUND_DRIVE_GROUND_6_0777M",
     "chatterCards": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "dystopiaPerformance": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "utopiaProtopia": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "curtainCharacterSelect": "NATIVE_LOADER_BROWSER_PASS_CHARACTER_SELECT_PENDING",
     "almanacLeanMemory": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
     "siteWorldStudio": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING",
-    "goldenJourneyE2E": "FAIL_AT_WALKING_INPUT_PROGRESS_REPAIR_CANDIDATE",
+    "goldenJourneyE2E": "FAIL_NATIVE_ROAD_BRIDGEHEAD_SUPPORT_REPAIR_CANDIDATE",
     "publicStage": "NOT_DEPLOYED",
     "humanAcceptance": "NOT_REVIEWED",
     "audioMusicalWorldShowcase": "IMPLEMENTED_FULL_BROWSER_ACCEPTANCE_PENDING"
@@ -73,7 +73,7 @@
     "deterministicScreenshotHarness": "SOURCE_DETAIL_AND_INTEGRATED_WORLD_PRESETS_IMPLEMENTED",
     "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
     "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE",
-    "externalCritic": "independent_critic \u00b7 no production edits",
+    "externalCritic": "independent_critic · no production edits",
     "sourceInspection": "FOUR_BUILDING_FAMILIES_AND_CLOWN_FARMERS_LOREKEEPER_MONSTROSITY_DEMON_BUSH_ORIGINALS_VIEWED",
     "latestBrowserRun": {
       "id": 37185405987,
@@ -157,29 +157,27 @@
     },
     "harnessPlanner": "Read-only static geometry bounds snapshotted once for route planning, rather than repeating native solidAt building matrix serialization millions of times. Actual W/A/D movement continues through unchanged native Ground collision/height owner. Required step/probe sampling retained; no teleport or rewards injected.",
     "integratedBrowserLatestCompleted": {
-      "receivingHead": "5a7f032cf720187e9395c713db408f67ba303111",
-      "testedPRMergeHead": "2cc4f735df6e19c92314ab5b6781d32cd6e145ea",
-      "run": 37194162808,
-      "artifact": 11300243495,
-      "sha256": "7391bf6320853e94533a0042779c44ff3a239af412d9b76ba73a9e3fef9dc116",
+      "receivingHead": "8d3adeab5799babedbef372ac24180ac054f91d7",
+      "testedPRMergeHead": "be6143f25d15f5cdd0813fd35b010171596fb152",
+      "run": 37195086973,
+      "artifact": 11300991796,
+      "sha256": "6b1cdaf18ee43992f2cd7ee2bde6fd3ecbaf335cbcf1ce90f3cdabff2340dfd4",
       "passedGates": [
         "native required loader and one scene owner",
         "verified world master and shared physical ambience",
-        "Clown real card handoff"
+        "Clown real card handoff",
+        "Driver key and real Ground Drive Ground transition"
       ],
-      "failedGate": "Driver native turn timeout15s",
-      "actualProgress": [
-        "Native heading changed0 to1.5275; full planned turn did not finish before15s"
-      ],
+      "failedGate": "No source-supported walking path to Dystopia Band",
+      "driveDistanceM": 6.077702363804468,
       "pageConsoleErrors": 0,
       "wholeGamePass": false,
       "softwareMetrics": {
-        "frames": 240,
-        "medianMs": 1260.5,
-        "p95Ms": 2318.9,
-        "pixelRatio": 0.25,
-        "drawCalls": 190,
-        "triangles": 344380
+        "medianMs": 538.1,
+        "p95Ms": 1352.1,
+        "pixelRatio": 0.125,
+        "drawCalls": 388,
+        "triangles": 469757
       }
     },
     "heldInputRepair": {
@@ -214,7 +212,23 @@
       "inputPixelRatio": 0.125,
       "capturePixelRatio": 0.5
     },
-    "localHeadlessHardware": "Unavailable: isolated installed Chrome launch terminated by platform EPERM even with execution escalation. Personal browser profile untouched; no further retry."
+    "localHeadlessHardware": "Unavailable: isolated installed Chrome launch terminated by platform EPERM even with execution escalation. Personal browser profile untouched; no further retry.",
+    "nativeRoadSupportRepair": {
+      "status": "CANDIDATE_NOT_BROWSER_PROVEN",
+      "defect": "Visible native island roads extend beyond island SDF. Ground wrongly rejected authored bridgehead outside SDF, producing -44m void immediately after bridge cap.",
+      "change": "Existing archipelago groundAt supports all actual node roads, bridge priority unchanged. No added road/controller/teleport.",
+      "isolatedTopology": {
+        "allThreeRoutesConnected": true,
+        "maxNativeSampleStepsM": [
+          0.4591426,
+          0.6201449,
+          0.6434145
+        ],
+        "buildingCollisionIncluded": false
+      },
+      "sourceTests": "19/19 PASS",
+      "harness": "Actual start connects to grid only after continuous native support/solid probes; complete route grid saved as artifact"
+    }
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -229,7 +243,8 @@
   "weakestRequiredDimension": "FULL_GOLDEN_JOURNEY_AND_AUTHORING_FRESH_IMPORT_PROOF",
   "repairAttempts": {
     "sourceMaterial": 1,
-    "DriverBrowserTraversalNonImproving": 1
+    "DriverBrowserTraversalNonImproving": 0,
+    "DystopiaRoadSupportNonImproving": 0
   },
   "openCoreBlockers": [
     "Golden Journey full real-input browser proof pending",
@@ -291,7 +306,7 @@
         "stemFamilies": 29
       }
     },
-    "slice1": "Explore \u2192 movement/platformer lift \u2192 Drive \u2192 Dystopia party \u2192 Explore/world handoffs",
+    "slice1": "Explore → movement/platformer lift → Drive → Dystopia party → Explore/world handoffs",
     "slice2": "Hex/Babel platform bands + musical zones + safe Moshpit crossovers",
     "ownerRule": "WB2 movement/world owner + existing canonical Jukebox/audio transport; no duplicate movement/audio owner"
   }

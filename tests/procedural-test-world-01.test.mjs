@@ -62,3 +62,18 @@ test('global bigger-picture reference is routed into the world recipe fixture',(
   assert.equal(recipes.globalReference,'skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md');
   assert.equal(recipes.layout.pullDontGate,true);
 });
+
+// Execute the actual archipelago support reader without constructing a renderer.
+const archSupportBody=adapter.slice(adapter.indexOf('function archipelagoWorld')).match(/groundAt\(x,z,terrainHeight\)\{([\s\S]*?)\},\n    solidAt/)[1];
+const supportReader=new Function('arch','nearestBridge','insideNode','x','z','terrainHeight',archSupportBody);
+test('visible Track bridgehead remains supported beyond the island SDF',()=>{
+  const arch={nodes:[{plan:{hw:5,roadY:-8.4,roadDist:(x,z)=>Math.abs(x-73)}}]};
+  const absentIsland=()=>null,bridge=()=>null;
+  for(const z of [140.207,146,146.125,150])assert.equal(supportReader(arch,bridge,absentIsland,73,z,-44),-8.4);
+  assert.equal(supportReader(arch,bridge,absentIsland,80,146,-44),-44,'water outside the actual road remains unsupported');
+});
+test('bridge deck priority and sculpted island height remain owned by the same Ground reader',()=>{
+  const arch={nodes:[{plan:{hw:5,roadY:.6,roadDist:()=>0}}]};
+  assert.equal(supportReader(arch,()=>({d:0,q:{p:[0,4,0],prm:{width:10.8}}}),()=>null,0,0,-44),4);
+  assert.equal(supportReader(arch,()=>null,()=>null,0,0,1.2),1.2);
+});

@@ -104,7 +104,8 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
     get supportReport(){return aggregateSupport()},
     baseHeightAt,
     maskAt(x,z){const n=insideNode(x,z);return n?n.field.maskAt(x,z):'under'},
-    groundAt(x,z,terrainHeight){const b=nearestBridge(x,z);const width=(b?.q?.prm?.width||0)/2+.5;if(b&&b.d<=width)return b.q.p[1];const n=insideNode(x,z);if(n&&n.plan.roadDist(x,z)<=n.plan.hw+.2)return Math.max(terrainHeight,n.plan.roadY);return terrainHeight},
+    groundAt(x,z,terrainHeight){const b=nearestBridge(x,z);const width=(b?.q?.prm?.width||0)/2+.5;if(b&&b.d<=width)return b.q.p[1];// Track Core roads include their authored off-island bridgeheads. SDF only bounds terrain, not a rendered road's support.
+      const n=arch.nodes.find(n=>n.plan.roadDist(x,z)<=n.plan.hw+.2);if(n)return Math.max(terrainHeight,n.plan.roadY);return terrainHeight},
     solidAt(x,z){if(editedBuildings){for(const root of editedBuildings()){if(!root.visible)continue;root.updateWorldMatrix(true,false);const key=root.matrixWorld.elements.join(','),old=collisionBounds.get(root);let b=old?.bounds;if(!old||old.key!==key||old.model!==root.userData.model){b=new THREE.Box3().setFromObject(root);collisionBounds.set(root,{key,bounds:b,model:root.userData.model})}if(x>=b.min.x&&x<=b.max.x&&z>=b.min.z&&z<=b.max.z)return b.max.y-b.min.y}return 0}for(const b of buildingSets.values()){const q=b.at(x,z);if(q)return q.height||0}return 0},
     adoptBuildingObjects(provider){editedBuildings=provider;for(const b of buildingSets.values())b.root.visible=false;},
     buildingSceneRecords(){return [...buildingSets.values()].flatMap(b=>b.report.placed.map(p=>({id:p.id,name:p.assetId.split('/').pop(),kind:'prop',registeredAssetId:p.assetId,worldId:b.report.worldId,source:{...p.source,path:p.assetId},transform:{position:p.position,rotation:p.rotation,scale:[p.fitScale,p.fitScale,p.fitScale]}})))},
