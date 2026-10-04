@@ -151,3 +151,28 @@ New prompt convention accepted:
 
 Custom Model status:
 Georg has already submitted the broad current pool to Suno for training. Do not feed more styles into it by default. Evaluate the trained model first.
+
+
+## Six-zone palette QA · 2026-10-04
+
+Tested product head:
+`c98d1fe0826a5ec69b1a65c1a6cf0b4b54e985e6`
+
+- six new human-positive masters added;
+- catalog: **69 total / 59 RoadTrip-v2 / 23 current stem families**;
+- six palette-expansion stem packages: **PENDING**;
+- validator PASS;
+- JS syntax PASS;
+- browser **14/14 PASS**;
+- run `37183221284`;
+- job `111377855125`;
+- artifact `11296116173`;
+- digest `sha256:ce04449f53692c7dfc4eec7576437422f0656a01802a679d79e1aa78dd937f2c`.
+
+Current phase:
+**CUSTOM MODEL EVALUATION WAITING** — Georg already submitted the broad pool to Suno for training. Do not add more genres by default before testing the trained model.
+
+Evaluation executor split:
+- Suno: complete training;
+- Georg: run the agreed multi-style test prompts;
+- ChatGPT / Audio Site: compare outputs for family resemblance vs genre collapse and recommend only targeted corrections.

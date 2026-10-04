@@ -22,9 +22,9 @@ Candidate child source:
 ## Expected visible delta
 
 Catalog:
-- **63 total**
-- **53 RoadTrip-v2**
-- **20 current stem families + 3 pending Ambient Bed stem families**
+- **69 total**
+- **59 RoadTrip-v2**
+- **23 current stem families + 6 pending palette-expansion stem families**
 - new `Rain percussion · Beetle / Ring` card with 107 BPM, source-only stems, human-positive tag.
 
 New tab:
@@ -43,9 +43,9 @@ Chat grounding:
 
 ## Evidence
 
-Run `37176886034` / job `111360630704`: browser **12/12 PASS**.  
-Artifact `11293114042`.  
-Digest `sha256:9132d35e7fc34277a74e2c1c80b7a703bebc56026c18d969aba0781da71b1287`.
+Run `37183221284` / job `111377855125`: browser **12/12 PASS**.  
+Artifact `11296116173`.  
+Digest `sha256:ce04449f53692c7dfc4eec7576437422f0656a01802a679d79e1aa78dd937f2c`.
 
 ## Additional human-positive Suno families
 
@@ -74,11 +74,26 @@ All three are human-positive masters. Their stems are not yet in GitHub. Keep th
 
 Georg action outside the Site update: download the already-unlocked Suno stem packages while they remain available without another unlock.
 
+## Six-zone palette masters
+
+Also include these human-positive masters:
+- Soul / R&B Ambient Bed
+- Piano / Chamber Minimal Bed
+- Cinematic / Epic-but-Playable Bed
+- Cartoon Chase / Capers Bed
+- Folk / Acoustic / Storybook Bed
+- Metaphysical / Cosmic Ambient Bed
+
+Their stems are not yet present. Keep them as `PENDING`; do not infer exact BPM from the authoring range.
+
+Prompt Studio grounding now uses the one-block convention:
+`BPM/range + short direction + Style prompt`.
+
 ## Acceptance
 
 1. Update existing `kfb-audio` Site project — do not create a sibling Site.
 2. Open exact live URL.
-3. Verify 63 / 53 / 20 (+3 pending stems).
+3. Verify 69 / 59 / 23 (+6 pending stems).
 4. Verify Source Lab = 17.
 5. Verify Rain remains SOURCE_REQUIRED.
 6. Verify Rain percussion card and human-positive tag.
