@@ -178,7 +178,10 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - private standalone preview is persisted through KFB Production Control;
 - current candidate is **frozen after two browser repair passes**: source validator + syntax PASS; browser proves 54/44 then stops on stale test expectation 12 vs actual 14;
 - Sites MCP is unavailable in the current executor, so no real `.chatgpt.site` URL is claimed;
-- exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_01` — literal QA 12→14 only; if green, publish through Sites MCP.
+- recovery 01 corrected `12 → 14` and Prompt Studio navigation order; validator is 253/253 PASS and browser advances through five checks;
+- the remaining failure is a stale case-sensitive `Master` prompt assertion even though the grounded request visibly builds with mood + selected master reference;
+- two recovery repair passes are exhausted; no GPT Site was published and the SFX/Sound-Bed Prompt Bank remains deferred;
+- exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — prompt assertion only; publish through Sites only after full browser PASS.
 - no auto-merge.
 
 ## Hard rules

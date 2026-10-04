@@ -30,3 +30,13 @@
 - private standalone preview remains persisted in KFB Production Control;
 - real GPT Site publication remains blocked only by missing Sites MCP in this chat plus the one stale QA expectation;
 - next gate: `KFB_AUDIO_SITE_QA_RECOVERY_01`.
+
+## 2026-10-04 · QA recovery 01 stopped after two bounded repairs
+
+- corrected stale stem-filter QA count `12 → 14`;
+- corrected Prompt Studio test order so the view opens before the hidden mood field is filled;
+- local validator **253/253 PASS** and browser advanced through five passing checks;
+- Prompt Studio visibly generated the grounded request;
+- remaining harness mismatch is case-sensitive `Master` versus lowercase generated copy;
+- no Site publication and no SFX/Sound-Bed Prompt Bank expansion;
+- next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02`.

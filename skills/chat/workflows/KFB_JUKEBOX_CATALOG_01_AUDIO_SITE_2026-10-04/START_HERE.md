@@ -87,3 +87,17 @@ Hosting boundary:
 - therefore no `.chatgpt.site` live URL is claimed.
 
 **Exactly one next gate:** `KFB_AUDIO_SITE_QA_RECOVERY_01` — in a fresh/Sites-capable executor, change only the stale browser expectation from 12 to 14, rerun the existing QA unchanged otherwise; if green, immediately continue to GPT Site publication/connect integrated Site Chat from the already-prepared source package.
+
+## Current recovery state · 2026-10-04
+
+`KFB_AUDIO_SITE_QA_RECOVERY_01` advanced but did not reach full PASS.
+
+- `12 → 14` stem expectation corrected;
+- Prompt Studio navigation moved before mood-field fill;
+- validator: **253/253 PASS**;
+- browser: five checks PASS, then stale case-sensitive `Master` assertion fails although the generated request visibly contains the requested mood and selected master reference;
+- two recovery repair passes exhausted;
+- Site publication: **NOT RUN**;
+- SFX/Sound-Bed Prompt Bank: **DEFERRED**.
+
+Exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — prompt assertion only, then full browser rerun and Sites publication only on green.

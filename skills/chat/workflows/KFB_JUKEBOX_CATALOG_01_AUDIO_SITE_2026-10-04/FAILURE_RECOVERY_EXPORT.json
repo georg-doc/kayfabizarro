@@ -4,16 +4,16 @@
   "classification": "FROZEN_CANDIDATE_QA_EXPECTATION_MISMATCH",
   "repo": "georg-doc/kayfabizarro",
   "branch": "chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04",
-  "frozenHead": "070fdaee25dfcdc671a0a29946092086c0a50562",
+  "frozenHead": "cc0054d7b221a7a298ac2bbd41bcc230b3a409a3",
   "sourceLock": "main@ffeb161d7c09c64436fbdf1dc83ce2b71e8f8a74",
   "observed": {
     "catalogTracks": 54,
     "roadTripMasters": 44,
     "stemFamilies": 14,
-    "staticValidator": "PASS",
+    "staticValidator": "253/253 PASS",
     "syntax": "PASS",
-    "browserPassedBeforeFailure": 3,
-    "browserFailure": "test expected 12 stem-filter items; UI returned 14"
+    "browserPassedBeforeFailure": 5,
+    "browserFailure": "case-sensitive prompt assertion expected 'Master'; generated request correctly uses lowercase 'masters' / 'master'"
   },
   "run": {
     "id": 37168419769,
@@ -21,20 +21,21 @@
     "artifact": 11290582496,
     "digest": "sha256:ff8f155fe10a6fccffd951fdd6503df4fd53b4eeb36e52f17c60eee517f5e649"
   },
-  "repairPasses": [
-    "7b480454f0dfb771e1a51e5e34609b7f29bf8069",
-    "070fdaee25dfcdc671a0a29946092086c0a50562"
+  "recovery01RepairPasses": [
+    "stale stem-filter expectation 12 -> 14",
+    "Prompt Studio navigation moved before hidden mood-field fill"
   ],
   "salvage": [
     "media/3D_Assets/Sounds/jukebox.json",
     "tools/KFB-Audio-Site/",
     "skills/chat/workflows/KFB_JUKEBOX_CATALOG_01_AUDIO_SITE_2026-10-04/"
   ],
-  "smallestRecovery": "Change the one stale browser assertion from 12 to 14 and rerun unchanged QA.",
+  "smallestRecovery": "Change only the stale case-sensitive prompt-output assertion and rerun unchanged QA.",
   "host": {
     "target": "GPT Site / Sites MCP",
-    "sitesMcpAvailable": false,
+    "sitesMcpAvailable": true,
+    "publicationRun": false,
     "cloudflareUsed": false
   },
-  "nextGate": "KFB_AUDIO_SITE_QA_RECOVERY_01"
+  "nextGate": "KFB_AUDIO_SITE_QA_RECOVERY_02"
 }

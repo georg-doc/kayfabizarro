@@ -70,3 +70,18 @@ Hosting boundary:
 - therefore no `.chatgpt.site` live URL is claimed.
 
 **Exactly one next gate:** `KFB_AUDIO_SITE_QA_RECOVERY_01` — in a fresh/Sites-capable executor, change only the stale browser expectation from 12 to 14, rerun the existing QA unchanged otherwise; if green, immediately continue to GPT Site publication/connect integrated Site Chat from the already-prepared source package.
+
+## QA recovery 01 Return · 2026-10-04
+
+The intended one-line `12 → 14` recovery was completed and proved the 14-item stem filter. The existing browser flow then exposed two additional QA-harness mismatches in sequence.
+
+- Source validation: **253/253 PASS**.
+- Site marker, 54-track render, 44-master count, 14-stem filter and Mix view: PASS.
+- Prompt Studio: visibly builds a grounded request with the entered mood and selected master reference.
+- Remaining automated failure: case-sensitive `Master` expectation versus lowercase `masters` / `master` in the generated request.
+- Publication: **NOT RUN**; no `.chatgpt.site` URL or version exists for this Audio candidate.
+- Product source, catalog and prompt-bank follow-up scope remain unchanged.
+
+Two bounded recovery repairs are exhausted, so the candidate is frozen again without a third patch.
+
+Exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — fix only the final stale prompt assertion, rerun the full browser QA, then publish through Sites on green.

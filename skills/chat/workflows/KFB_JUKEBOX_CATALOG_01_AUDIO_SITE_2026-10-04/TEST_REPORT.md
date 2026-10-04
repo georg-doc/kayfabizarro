@@ -43,3 +43,25 @@ Two repair passes on the browser gate already advanced the candidate. Per KFB re
 ## Next gate
 
 `KFB_AUDIO_SITE_QA_RECOVERY_01`: change only the one stale 12→14 browser assertion and rerun. If it passes, proceed to GPT Site publication with Sites MCP.
+
+## QA recovery 01 result · 2026-10-04
+
+Local source checks on the exact recovery candidate:
+- catalog/source-lock validator: **253/253 PASS**;
+- JavaScript syntax: **PASS**;
+- validated counts remain **54 catalog / 44 RoadTrip-v2 / 14 stem families**.
+
+Browser recovery pass 1:
+- corrected only the stale stem-filter expectation `12 → 14`;
+- first five checks passed: Site marker, 54-track render, 44 RoadTrip-v2 stats, 14 stem-filter results, Mix view;
+- next previously hidden harness defect: the test tried to fill `#pMood` while Prompt Studio was still hidden.
+
+Browser recovery pass 2:
+- moved the existing Prompt Studio navigation before the existing mood-field fill;
+- first five checks remained PASS;
+- Prompt Studio visibly built a grounded request containing `rainy midnight melancholy` and the selected `Awe Before Drama` master reference;
+- the sixth assertion failed only because it case-sensitively expects `Master`, while the generated text correctly uses lowercase `masters` / `master`.
+
+This is a second newly exposed QA-harness expectation mismatch, not an observed Site/product failure. Two recovery repair passes are exhausted. No third patch and no Site publication are made in this slice.
+
+Exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — correct only the case-sensitive prompt-output expectation, rerun the same QA, and publish through Sites only if the full browser gate is green.

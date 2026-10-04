@@ -41,3 +41,17 @@ After green QA, publish via Sites MCP. Do not introduce Cloudflare.
 ## Host limitation
 
 This chat has no Sites MCP backend, so it cannot create/verify the real GPT Site URL. Plugin Creator documentation explicitly routes new cloud Sites through Sites MCP; no substitute host is used.
+
+## Recovery 01 stop · 2026-10-04
+
+The named recovery fixed the stale `12 → 14` assertion and reran the existing browser flow. That advanced the gate through the stem filter and Mix view.
+
+Two bounded recovery repairs then exposed two further harness-only problems:
+1. Prompt Studio was opened after the test tried to fill its hidden mood field; navigation now occurs first.
+2. The built request is visibly correct and includes the requested mood plus the selected master reference, but the assertion requires case-sensitive `Master` while the generated copy uses lowercase `masters` / `master`.
+
+Observed product state remains usable: Catalog, counts, stem filter, Mix and Prompt Studio all render and operate. The full automated browser gate is not green.
+
+Per the two-pass rule, stop here. Do not publish the GPT Site from this candidate yet, and do not start the planned SFX/Sound-Bed Prompt Bank.
+
+Exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_02` — change only the stale case-sensitive prompt assertion, rerun unchanged QA, then publish through Sites only on full PASS.
