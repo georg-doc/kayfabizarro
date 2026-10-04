@@ -1,0 +1,28 @@
+{
+  "schema": "kfb.slice-source/1",
+  "slice": "RESIDENT-FIGHT-SANDBOX-01",
+  "date": "2026-09-29",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "georg-doc-patch-3",
+  "owner": "Resident Atlas / Resident Scenery Claude Design project",
+  "dataProducer": "Blender MCP chat (headless bpy 5.0.1)",
+  "inputs": {
+    "catalog": {"path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json", "version": "2026-09-29b", "clips": 345},
+    "libs": "media/3D_Assets/Animations/KFB_Motion_Library/libs/{Rig_Medium,Rig_Large}/*.glb",
+    "choreoRules": "skills/chat/workflows/KFB_CHOREO_LAB_01_2026-09-29/CHOREO_LAB_01_RETURN.md",
+    "siteContractRebrief": "skills/chat/workflows/RESIDENT_SITE_CONTRACT_01_2026-09-29/START_HERE.md (PR #285)",
+    "toolboxPlan": "skills/chat/workflows/TOOLBOX_ANIMATION_PRODUCTION_06_2026-09-29/START_HERE.md (PR #286, G4 choreography on hold)"
+  },
+  "outputs": {
+    "fightData": "media/3D_Assets/Animations/KFB_Motion_Library/fight/KFB_Fight_Combos.json",
+    "proofs": [
+      "media/3D_Assets/Animations/KFB_Motion_Library/fight/proof_contact.png",
+      "media/3D_Assets/Animations/KFB_Motion_Library/fight/proof_shoulder_throw.png"
+    ],
+    "brief": "skills/chat/workflows/RESIDENT_FIGHT_SANDBOX_01_2026-09-29/START_HERE.md"
+  },
+  "counts": {"attacks": 16, "reactions": 9, "combos": 13, "pairedClips": 1, "pairMatrix": 576},
+  "excluded": {"kfb_action_hurricane_kick_a": "no body motion in library clip or source FBX"},
+  "libraryChanged": false,
+  "stage": null
+}

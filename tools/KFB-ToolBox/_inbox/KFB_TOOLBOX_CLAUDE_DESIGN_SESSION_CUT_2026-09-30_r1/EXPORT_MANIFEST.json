@@ -1,0 +1,298 @@
+{
+ "schema": "kfb.export-manifest/1",
+ "name": "KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1",
+ "createdAt": "2026-09-30T04:26:00Z",
+ "entry": "KFB ToolBox Production-06.dc.html",
+ "fileCount": 45,
+ "bytes": 4065711,
+ "inventory": {
+  "EXPORTED": "43 files (list) + EXPORT_MANIFEST.json + CHECKSUMS.sha256",
+  "PINNED_REMOTE": [
+   "jsDelivr / raw.githubusercontent georg-doc/kayfabizarro @ PIN 8922d4b1 (EyeRig v6, graft-mount, facehost, eyeoval, brow, nose, moustache, mouth, headzones, partrig …) · EAR 19088b14 (ear-dangle, FB_TEMPLATE_LOOK_v5.glb) · MAIN b64d7edc · ML 032c9d50 · ML3 4fa08271 · STOCK b97b5ac5 · LEG 10a7fdce · 891eadf0 · eabc8725 (hair-tufts FrizzleBob_Yellow.gltf)"
+  ],
+  "UNPINNED_REMOTE": [
+   "kfb-lib/pet-library.v6.js PET_BASE = raw.githubusercontent.com/georg-doc/kayfabizarro/main/ (Cube-pet GLBs · inherited, unchanged)"
+  ],
+  "CDN_EXTERNAL": [
+   "unpkg three@0.160.0 (+ examples/jsm)",
+   "Google Fonts: Space Grotesk, IBM Plex Mono"
+  ],
+  "LOCAL_NOT_EXPORTED": [
+   "kfb-lib/clay/Fingerprints01_3K.png (4 699 482 bytes > 2 MB) · source joebinns/clay@e8d2a792cc45 · load is try/catch → K2 without fingerprint layer",
+   "kfb-lib/clay/clay-toolmix.v1.js (not in the entry closure)",
+   "earlier ToolBox pages (Production-01…05, Stage-First *)"
+  ],
+  "REPLAY_DEPENDENCY_MISSING": [
+   "Fingerprint option of K2 clay needs Fingerprints01_3K.png next to kfb-lib/clay/ (see LOCAL_NOT_EXPORTED)"
+  ],
+  "RELATIVE_PATH_RISK": [
+   "file:// breaks ES module imports · serve over HTTP"
+  ]
+ },
+ "checks": {
+  "requiredMissing": [],
+  "filesOver2MB": [],
+  "secretHits": [],
+  "jsonParse": "PASS"
+ },
+ "files": [
+  {
+   "path": "CHANGELOG.md",
+   "bytes": 1077,
+   "sha256": "69511e4f44f815836614441148bbd5e3c6508772ce929e7c3e875a6772a3c9c1",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "CURRENT_STATE.md",
+   "bytes": 746,
+   "sha256": "b2460f41de3a1b5a9012ac852005f9d9becac574765f76e41b7a68f819312320",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "docs/github.md",
+   "bytes": 45410,
+   "sha256": "c32172211c6f2c4e296de3089493371d2d50b6c6cd61cbae76544f4a84140c3b",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "docs/LESSONS_SHADOWS.md",
+   "bytes": 5458,
+   "sha256": "a0402721285bb21eb90f9cc86fea9d4381ea9f7d20318dd4be5c1a6a76114fc5",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "docs/PROJECT_RULES.md",
+   "bytes": 863,
+   "sha256": "29b64875f8b5bb46a328a1a74f83fdafee1d669c1fcee20605f26cadf6ebce2b",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "docs/RETURN_TOOLBOX_PRODUCTION_06.md",
+   "bytes": 5255,
+   "sha256": "0a1257d29acbf8f6f662353b38b58567670a6d060335a18507aa2efb9175a8c6",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/00-georg-report-nose-shadow.png",
+   "bytes": 398308,
+   "sha256": "192e06e979b97e10687749f01e7da506ae836e9a59c2fefad877a6e65967e7ba",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/01-review-socket-before-after.png",
+   "bytes": 512727,
+   "sha256": "4d657772f16df9ff1ad1954283114c46bef61d6616446fba80f36ce2e94ecb98",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/02-review-hinge-lid-states.png",
+   "bytes": 1080577,
+   "sha256": "dbf3409562d7156ec47abf4b99c252b23c62ae50192d20980308fcc8e418d410",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/03-open-point-mouth-decal-alphatest-probe.jpg",
+   "bytes": 29609,
+   "sha256": "7523eaf55f45353a4100a5b1ad0ee804518722143290c614d7341cebde6c82de",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/04-rigging-eyes-loaded.jpg",
+   "bytes": 38340,
+   "sha256": "226af3494c0f517436c5287989435f4c67e0b962aa27b0b228142d7720dcc8c9",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/acceptance_1-7_frizzlebob-earrig-v5.json",
+   "bytes": 2240,
+   "sha256": "e5ae9d6f20e010f67277770004de8582d26d7d651ba06aae6168248a29c5c9c7",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/ref-blender-before_after.png",
+   "bytes": 552250,
+   "sha256": "1e70f46a53cc6acc5343dcaa9ec0955ab68021823c07b21e6c51bfecf5117b7f",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "evidence/ref-blender-lid_states.png",
+   "bytes": 508023,
+   "sha256": "1011959b8d7b3c7a8300634d71d61a1595fd9aae623b29dbf64ada34cf2adcad",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "HANDOVER.md",
+   "bytes": 950,
+   "sha256": "e438837c0440590f6a321227ed23e1b44cb2c5d6fca3900bf5aa1457577678f1",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "HOUSEKEEPING.md",
+   "bytes": 784,
+   "sha256": "2f808d97d653df415c050571cf28c989a3e6c68de9aeb47a5afc271faedd109d",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "KFB ToolBox Production-06.dc.html",
+   "bytes": 490908,
+   "sha256": "d996b864ba5b882eb27ebac6173f4dbcbec27f94ab3b78ed6934c09060f041d7",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/anim-library.v1.js",
+   "bytes": 16344,
+   "sha256": "46f4e5547399d65c0811544411c0b654fb4470d30291d34b7572f0ef979af0bc",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/anim-map.v1.js",
+   "bytes": 10914,
+   "sha256": "d4ac375b1e2b90faae5d22698d19dc4f99c29f5da76f707a3eda3cd9455483ce",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/body-shape.v1.js",
+   "bytes": 8779,
+   "sha256": "4f66a25024aa515435caa9c3420771833dd8f8026a8e5ca37721c7de9cde36cb",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/body-surface.v2.js",
+   "bytes": 18472,
+   "sha256": "4e4b90e27be586cb0fd65b36ab9d701bab41b39c00b130db601fe544e20d3c9a",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay-lids.v1.js",
+   "bytes": 27955,
+   "sha256": "53615ec765b596a107277c5c82e2182f64a33ef3284877f40aa3dcfc23839c78",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay/ASSET_REFS.md",
+   "bytes": 1560,
+   "sha256": "36f00592fb6329fd51ee1f16e9a5b4cab1511b2422e0451b54088466ee39ac75",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay/clay-material.v10.js",
+   "bytes": 35632,
+   "sha256": "4d070ce1f9e0a23acd53573271f40492ea5d69b3e03648086ecc1376c9d482a9",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay/clay-profiles.v2.js",
+   "bytes": 3546,
+   "sha256": "2eecc234ef24d9d6655fa14b5645837cc456f43672707a25914ab95b01f9cd79",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay/clay-relief.v2.js",
+   "bytes": 9988,
+   "sha256": "82798dc88c0003e451bcfd05160810a498f892b470ec820cc4ced04bff64d792",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/clay/clay-relief.v4.js",
+   "bytes": 10061,
+   "sha256": "584a8b611f7eedd33ac1956c17e8f259d2c0a591524d1ecaaf94f59aba4a96a3",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/contact-ao.v1.js",
+   "bytes": 12437,
+   "sha256": "2dfe6a94571be316555fb3888d3fe11dae63c3fa0a29fcaf23e93476a60e4361",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/ear-base.v1.js",
+   "bytes": 5463,
+   "sha256": "b95773049103ac44a6f616af4471254d7411932a9dabb6660589087ff006dd5c",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/face-mount.v1.js",
+   "bytes": 56478,
+   "sha256": "e005dce26edcc6de80d9be60c5bb7872d9fdee9acdb5d85c6b84ba79d6212baa",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/hair-tufts.v1.js",
+   "bytes": 9819,
+   "sha256": "7150dcf8b3710c60cc77539e105c372f448eafb5f4b4b9b526c079b575681fdd",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/librarian-motion-projection.v1.js",
+   "bytes": 2777,
+   "sha256": "02055a8eb919241c1ef30aacbeaf90552b8c3c5f440b4a00cb72cfa85fffa66c",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/lipsync-text.v1.js",
+   "bytes": 3631,
+   "sha256": "95bbdda93be9c8cec03f6616eb113a3bdb9426190ee9be2b7513894f8ba5b22d",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/locomotion-profiles.v1.js",
+   "bytes": 11712,
+   "sha256": "a36716a3e868e700ae2259e47f39fe296556ba35b91d378da4941a8ddf65ceae",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/pet-library.v6.js",
+   "bytes": 34954,
+   "sha256": "778534979c35b4a9ba267be5bb9ea63217c27af135897ee9054a9f80627617b7",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "kfb-lib/pose-rig.v1.js",
+   "bytes": 34451,
+   "sha256": "643831c63403a5dbe7b6e47edc629963c2172a1bf7d8d2c00fd982bf3c6a8350",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "NEXT_CHAT.md",
+   "bytes": 634,
+   "sha256": "f809812f51b7fcf0be386b0f20ff084689ecd90ab9730d3d5f52356ac8a86e84",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "RETURN.md",
+   "bytes": 2284,
+   "sha256": "f294bc93d98b3537806edc78a2f967c544f4424c7fcd3d064a5f746d67919a36",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "SOURCE.json",
+   "bytes": 1530,
+   "sha256": "2b594a2c64b6f6b468579e1b4adedcc2f85d782638c6f30c26ca6a6795cb9c8d",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "START_HERE.md",
+   "bytes": 840,
+   "sha256": "2e658f38ae6e22e99bdedbe4d6889027c893f59938794cfab4d1fafef01cb204",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "support.js",
+   "bytes": 69150,
+   "sha256": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "bytes": 1453,
+   "sha256": "4aea1b5218a9fcba2958c2a137af1aab9cab107198b3ae0f79ab3416df405b22",
+   "status": "EXPORTED"
+  },
+  {
+   "path": "zipcheck.py",
+   "bytes": 1322,
+   "sha256": "88b6b35941222e0d9264cf0bc2e7218462e9594220da04bcb2ee6922d2923406",
+   "status": "EXPORTED"
+  }
+ ]
+}

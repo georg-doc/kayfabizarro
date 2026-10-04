@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><script type="importmap">{"imports":{"three":"/nm/three/build/three.module.js","three/addons/":"/nm/three/examples/jsm/"}}</script></head><body><script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const L = new GLTFLoader(); const libs={};
+window.check = async (orig, out, rig) => {
+  let clip=null, src='';
+  if (rig==='own') { const g=await L.loadAsync(orig); clip=g.animations.find(a=>/idle/i.test(a.name))||g.animations[0]; src='own:'+(clip&&clip.name); }
+  else if (rig) { libs[rig]=libs[rig]||await L.loadAsync(`/src/${rig}_General.glb`); clip=libs[rig].animations.find(a=>a.name==='Idle_A'); src=rig+':Idle_A'; }
+  const res={clip:src};
+  for (const [k,url] of [['orig',orig],['noEyes',out]]) {
+    const g=await L.loadAsync(url); const root=g.scene; let bones=0; root.traverse(o=>{if(o.isBone)bones++;});
+    const r={bones};
+    if (clip) { let b=0; for (const t of clip.tracks){ const pb=THREE.PropertyBinding.create(root,t.name); pb.bind(); if(pb.node&&pb.targetObject) b++; } r.bound=b+'/'+clip.tracks.length; }
+    const al=root.getObjectByName('eye_anchorl'); if(al){ root.updateMatrixWorld(true); r.anchorParent=al.parent.name; r.zL=new THREE.Vector3(0,0,1).transformDirection(al.matrixWorld).toArray().map(v=>+v.toFixed(3)); r.posL=al.getWorldPosition(new THREE.Vector3()).toArray().map(v=>+v.toFixed(4)); }
+    res[k]=r;
+  }
+  return res;
+};
+window.__ready=true;
+</script></body></html>

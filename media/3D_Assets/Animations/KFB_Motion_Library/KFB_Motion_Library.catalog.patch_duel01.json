@@ -1,0 +1,360 @@
+{
+ "schema": "kfb.motion-catalog.v1/patch",
+ "batch": "BLENDER-DUEL-01",
+ "date": "2026-10-04",
+ "base": "KFB_Motion_Library.catalog.json (370 clips)",
+ "apply": "append clips[] to catalogue.clips and libraries{} to catalogue.libraries; clipCount 370 -> 380. Nothing existing changes.",
+ "libraries": {
+  "libs/Rig_Medium/KFB_Motion_ranged.glb": {
+   "rig": "Rig_Medium",
+   "group": "ranged (KayKit Ranged_1H/2H + authored minigun + KayKit Hit_A/B)",
+   "bytes": 316296,
+   "sha256": "9308b6d3e0a02ce8a131f8636da7cafbdfa87a2110bf6dd7463808abd5f86b4f",
+   "clipCount": 10
+  }
+ },
+ "rigLarge": "NOT_RUN: KayKit Character Animations 1.1 has no Ranged clips for Rig_Large (only Melee_Block_Hit, Hit_A, Death_A). A Large ranged set needs a retarget pass; not claimed.",
+ "clips": [
+  {
+   "id": "kfb_action_aim_blaster_a",
+   "label_de": "Blaster zielen",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 33,
+   "fps": 30,
+   "loop": false,
+   "loopNote": "one-shot raise, hold last frame (clamp)",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_1H_Aiming"
+   ],
+   "origin": "native copy",
+   "props": {
+    "hands": "right",
+    "prop": "blaster",
+    "attach": "handslot.r identity",
+    "weapon": "UltraTurboHeroMan_Blaster_KFB.glb (or any weapon whose socket_grip_r frame = handslot.r, barrel +X of handslot)"
+   },
+   "laneDevDeg": [
+    1.32,
+    1.51
+   ]
+  },
+  {
+   "id": "kfb_action_shoot_blaster_a",
+   "label_de": "Blaster Einzelschuss",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 13,
+   "fps": 30,
+   "loop": false,
+   "loopNote": "one-shot from hold, returns to hold",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_1H_Shooting"
+   ],
+   "origin": "native: one recoil cycle of Ranged_1H_Shooting",
+   "props": {
+    "hands": "right",
+    "prop": "blaster",
+    "attach": "handslot.r identity",
+    "weapon": "UltraTurboHeroMan_Blaster_KFB.glb (or any weapon whose socket_grip_r frame = handslot.r, barrel +X of handslot)"
+   },
+   "events": {
+    "fire": {
+     "frame": 2
+    }
+   },
+   "laneDevDeg": [
+    1.51,
+    17.59
+   ]
+  },
+  {
+   "id": "kfb_action_shooting_blaster_a",
+   "label_de": "Blaster Dauerfeuer",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 49,
+   "fps": 30,
+   "loop": true,
+   "loopNote": "loop",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_1H_Shooting"
+   ],
+   "origin": "native copy",
+   "props": {
+    "hands": "right",
+    "prop": "blaster",
+    "attach": "handslot.r identity",
+    "weapon": "UltraTurboHeroMan_Blaster_KFB.glb (or any weapon whose socket_grip_r frame = handslot.r, barrel +X of handslot)"
+   },
+   "events": {
+    "fire": {
+     "frame": 2,
+     "every": 12
+    }
+   },
+   "laneDevDeg": [
+    1.51,
+    17.59
+   ]
+  },
+  {
+   "id": "kfb_action_aim_rifle_a",
+   "label_de": "Gewehr zielen",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 49,
+   "fps": 30,
+   "loop": false,
+   "loopNote": "one-shot raise, hold last frame (clamp)",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_2H_Aiming"
+   ],
+   "origin": "native + root yaw + left-hand IK",
+   "props": {
+    "hands": "both",
+    "prop": "rifle",
+    "attach": "handslot.r identity",
+    "weapon": "ToySoldier_Rifle_KFB.glb"
+   },
+   "rootYawBakedDeg": -31.16,
+   "notes": "Root carries -31.2 deg yaw so the R->L hand line (rifle) points along the root forward lane; place the actor root facing the target.",
+   "laneDevDeg": [
+    0.1,
+    1.76
+   ],
+   "leftHandToSocketFH": 0.0
+  },
+  {
+   "id": "kfb_action_shoot_rifle_a",
+   "label_de": "Gewehr Einzelschuss",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 9,
+   "fps": 30,
+   "loop": false,
+   "loopNote": "one-shot from hold",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_2H_Shooting"
+   ],
+   "origin": "native cycle + root yaw + left-hand IK",
+   "props": {
+    "hands": "both",
+    "prop": "rifle",
+    "attach": "handslot.r identity",
+    "weapon": "ToySoldier_Rifle_KFB.glb"
+   },
+   "events": {
+    "fire": {
+     "frame": 0
+    }
+   },
+   "rootYawBakedDeg": -31.16,
+   "notes": "Root carries -31.2 deg yaw so the R->L hand line (rifle) points along the root forward lane; place the actor root facing the target.",
+   "laneDevDeg": [
+    1.57,
+    1.57
+   ],
+   "leftHandToSocketFH": 0.0
+  },
+  {
+   "id": "kfb_action_shooting_rifle_a",
+   "label_de": "Gewehr Dauerfeuer",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 33,
+   "fps": 30,
+   "loop": true,
+   "loopNote": "loop",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_2H_Shooting"
+   ],
+   "origin": "native + root yaw + left-hand IK",
+   "props": {
+    "hands": "both",
+    "prop": "rifle",
+    "attach": "handslot.r identity",
+    "weapon": "ToySoldier_Rifle_KFB.glb"
+   },
+   "events": {
+    "fire": {
+     "frame": 0,
+     "every": 8
+    }
+   },
+   "rootYawBakedDeg": -31.16,
+   "notes": "Root carries -31.2 deg yaw so the R->L hand line (rifle) points along the root forward lane; place the actor root facing the target.",
+   "laneDevDeg": [
+    1.57,
+    1.57
+   ],
+   "leftHandToSocketFH": 0.0
+  },
+  {
+   "id": "kfb_action_hold_minigun_a",
+   "label_de": "Minigun aus der Hüfte halten",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 33,
+   "fps": 30,
+   "loop": true,
+   "loopNote": "loop",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_2H_Shooting"
+   ],
+   "origin": "authored over Ranged_2H (KayKit gap)",
+   "props": {
+    "hands": "both",
+    "prop": "minigun",
+    "attach": "handslot.r identity",
+    "weapon": "CombatMech_Minigun_KFB.glb"
+   },
+   "rootYawBakedDeg": -18.7,
+   "laneDevDeg": [
+    0.43,
+    0.43
+   ],
+   "leftHandToSocketFH": 0.0
+  },
+  {
+   "id": "kfb_action_fire_minigun_a",
+   "label_de": "Minigun Feuerstoß",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 33,
+   "fps": 30,
+   "loop": true,
+   "loopNote": "loop, burst rhythm 0.11 s",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Ranged_2H_Shooting"
+   ],
+   "origin": "authored over Ranged_2H (KayKit gap)",
+   "props": {
+    "hands": "both",
+    "prop": "minigun",
+    "attach": "handslot.r identity",
+    "weapon": "CombatMech_Minigun_KFB.glb"
+   },
+   "events": {
+    "fire": {
+     "frame": 0,
+     "everySec": 0.11
+    }
+   },
+   "rootYawBakedDeg": -18.7,
+   "laneDevDeg": [
+    0.08,
+    1.31
+   ],
+   "leftHandToSocketFH": 0.0
+  },
+  {
+   "id": "kfb_reaction_hit_front_small_a",
+   "label_de": "Treffer von vorn, klein",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 21,
+   "fps": 30,
+   "loop": false,
+   "loopNote": "one-shot",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Hit_A"
+   ],
+   "origin": "native copy"
+  },
+  {
+   "id": "kfb_reaction_hit_front_big_a",
+   "label_de": "Treffer von vorn, groß",
+   "group": "action",
+   "rigs": [
+    "Rig_Medium"
+   ],
+   "frames": 27,
+   "fps": 30,
+   "loop": false,
+   "loopNote": "one-shot",
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_ranged.glb"
+   },
+   "sourcePack": "KayKit Character Animations 1.1 (CC0)",
+   "authoredFrom": [
+    "Hit_B"
+   ],
+   "origin": "native copy"
+  }
+ ]
+}

@@ -1,0 +1,261 @@
+{
+ "schema": "kfb.flight-family/0.1-candidate",
+ "gate": "FLIGHT-PRESENTATION-01 \u00b7 gate 1 (SELF_FLIGHT \u00b7 Combat Mech)",
+ "date": "2026-10-04",
+ "file": "KFB_FLIGHT_SELF_01_CombatMech_RigMedium.glb",
+ "actorSource": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb (Atlas pin 2c92dd13)",
+ "weapon": "CombatMech_Minigun.gltf on handslot.r, identity (Atlas convention for the HoldingRifle torso); barrel spin stays a separate prop animation (node CombatMech_Minigun_Barrel, not in these clips)",
+ "mixamo": "none used",
+ "scaleTracks": "none",
+ "fps": 30,
+ "clips": [
+  {
+   "clip": "flight_idle_hover",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "BASE LOOP",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "\u2014",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_cruise",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "BASE LOOP",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "\u2014",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_boost",
+   "frames": 32,
+   "fps": 30,
+   "loop": true,
+   "class": "ADDITIVE/OVERLAY (or short BASE while boost>0)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "arm counter-lean keeps the Minigun near level (fixed after first still check: gun pointed at the ground)",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_climb",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "ADDITIVE/OVERLAY (signed climb>0)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "\u2014",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_dive",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "ADDITIVE/OVERLAY (signed climb<0)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "same arm counter-lean fix",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_bank_left",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "ADDITIVE/OVERLAY blend pair (signed bank<0)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "\u2014",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_bank_right",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "ADDITIVE/OVERLAY blend pair (signed bank>0)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "\u2014",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_roll_reaction",
+   "frames": 30,
+   "fps": 30,
+   "loop": false,
+   "class": "ONE-SHOT (Travel rolls the root)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "HOLD",
+   "note": "tuck pitches the head ~60\u00b0 down; reads as ducking; Minigun points down during the tuck (arm counter-lean disabled while tucked). Georg look decision",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_brake_recover",
+   "frames": 36,
+   "fps": 30,
+   "loop": false,
+   "class": "TRANSITION cruise -> hover",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "\u2014",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_land_prepare",
+   "frames": 30,
+   "fps": 30,
+   "loop": false,
+   "class": "TRANSITION hover -> Jump_Land (holds last pose)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP",
+   "note": "ends in a held pose meant to hand over to native Jump_Land (not yet blended/tested)",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Running_HoldingRifle @0.25 s (Rig_Medium_MovementAdvanced.glb) \u2014 Minigun hold, frozen; same as the Atlas recipe",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  },
+  {
+   "clip": "flight_aim",
+   "frames": 64,
+   "fps": 30,
+   "loop": true,
+   "class": "ADDITIVE/OVERLAY upper body (aim hold)",
+   "rig": "Rig_Medium (23 joints, KayKit names)",
+   "actor": "Combat Mech (KayKit Mystery Jul 2024), texture A or alt",
+   "rootPolicy": "root untouched (no translation/rotation); hips carry only in-place bob \u22640.035 and body lean",
+   "verdict": "KEEP (optional)",
+   "note": "native aim hold over hover legs",
+   "sources": [
+    "Jump_Idle (KayKit Character Animations 1.1, Rig_Medium_MovementBasic.glb) \u2014 legs/hips base, looped",
+    "Ranged_2H_Aiming (Rig_Medium_CombatRanged.glb) \u2014 played once, held",
+    "Blender/Python-authored presentation offsets on hips, chest, head, upper/lower legs, feet, upper arms and the two wing nodes (source priority 5: no KayKit/Mixamo flight clip exists)"
+   ],
+   "mechOnlyTracks": [
+    "CombatMech_WingLeft.rotation",
+    "CombatMech_WingRight.rotation"
+   ]
+  }
+ ],
+ "runtimeInputs": {
+  "speed": "idle_hover \u2194 cruise weight",
+  "boost": "boost overlay weight",
+  "bank": "bank_left/right pair by sign",
+  "climb": "climb (+) / dive (\u2212) overlay by sign",
+  "rollIntent": "roll_reaction one-shot while Travel rolls the root",
+  "calm": "brake_recover then idle_hover",
+  "transitionAge": "land_prepare \u2192 Jump_Land"
+ },
+ "knownLimits": [
+  "all flight poses are authored offsets, not motion capture",
+  "bank/roll clips are body reactions only; Travel still banks/rolls the root",
+  "no thrust/flame geometry (not in the pack)",
+  "wing tracks only exist on the Combat Mech; other Rig_Medium actors ignore them",
+  "torso uses the Minigun hold; an unarmed self-flight torso is a later variant (Superhero)",
+  "Rig_Large: not tested, not claimed"
+ ]
+}

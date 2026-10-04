@@ -1,0 +1,464 @@
+{
+ "sedan": {
+  "DoorFL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.837,
+    0.947,
+    -0.088
+   ],
+   "travelAt60M": 0.57,
+   "opens": true
+  },
+  "DoorFR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.837,
+    0.947,
+    -0.088
+   ],
+   "travelAt60M": 0.57,
+   "opens": true
+  },
+  "DoorRL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.837,
+    -0.008,
+    -0.088
+   ],
+   "travelAt60M": 0.484,
+   "opens": true
+  },
+  "DoorRR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.837,
+    -0.008,
+    -0.088
+   ],
+   "travelAt60M": 0.484,
+   "opens": true
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.0,
+    1.054,
+    0.289
+   ],
+   "travelAt60M": 0.539,
+   "opens": true
+  },
+  "Trunk": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    -1.012,
+    0.336
+   ],
+   "travelAt60M": 0.44,
+   "opens": true
+  }
+ },
+ "hatchback": {
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.814,
+    0.547,
+    0.0
+   ],
+   "travelAt60M": 0.412,
+   "opens": true
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.814,
+    0.547,
+    0.0
+   ],
+   "travelAt60M": 0.412,
+   "opens": true
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.0,
+    0.66,
+    0.244
+   ],
+   "travelAt60M": 0.489,
+   "opens": true
+  },
+  "Trunk": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    -0.448,
+    1.369
+   ],
+   "travelAt60M": 0.781,
+   "opens": true
+  }
+ },
+ "estate": {
+  "DoorFL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.919,
+    1.046,
+    0.227
+   ],
+   "travelAt60M": 0.55,
+   "opens": true
+  },
+  "DoorFR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.919,
+    1.046,
+    0.227
+   ],
+   "travelAt60M": 0.55,
+   "opens": true
+  },
+  "DoorRL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.919,
+    0.122,
+    0.174
+   ],
+   "travelAt60M": 0.409,
+   "opens": true
+  },
+  "DoorRR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.919,
+    0.122,
+    0.174
+   ],
+   "travelAt60M": 0.409,
+   "opens": true
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    2.164,
+    0.274
+   ],
+   "travelAt60M": 0.52,
+   "opens": true
+  },
+  "Trunk": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    -0.976,
+    1.47
+   ],
+   "travelAt60M": 0.714,
+   "opens": true
+  }
+ },
+ "cabrio": {
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -1.002,
+    0.368,
+    0.24
+   ],
+   "travelAt60M": 0.492,
+   "opens": true
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    1.002,
+    0.368,
+    0.24
+   ],
+   "travelAt60M": 0.492,
+   "opens": true
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.0,
+    0.578,
+    0.222
+   ],
+   "travelAt60M": 0.425,
+   "opens": true
+  }
+ },
+ "sportster": {
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.637,
+    0.669,
+    0.0
+   ],
+   "travelAt60M": 0.548,
+   "opens": true
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.637,
+    0.669,
+    0.0
+   ],
+   "travelAt60M": 0.548,
+   "opens": true
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    2.049,
+    0.096
+   ],
+   "travelAt60M": 0.612,
+   "opens": true
+  }
+ },
+ "pickup": {
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -1.004,
+    -0.741,
+    0.0
+   ],
+   "travelAt60M": 0.404,
+   "opens": true
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    1.004,
+    -0.741,
+    0.0
+   ],
+   "travelAt60M": 0.403,
+   "opens": true
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.0,
+    -0.568,
+    0.298
+   ],
+   "travelAt60M": 0.46,
+   "opens": true
+  }
+ },
+ "transporter": {
+  "DoorBackL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.566,
+    -2.739,
+    0.631
+   ],
+   "travelAt60M": 0.363,
+   "opens": true
+  },
+  "DoorBackR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.566,
+    -2.739,
+    0.631
+   ],
+   "travelAt60M": 0.363,
+   "opens": true
+  },
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    0.151,
+    0.416
+   ],
+   "travelAt60M": 1.019,
+   "opens": false
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.0,
+    0.151,
+    0.416
+   ],
+   "travelAt60M": 1.019,
+   "opens": false
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    1.049,
+    0.196
+   ],
+   "travelAt60M": 0.136,
+   "opens": false
+  }
+ },
+ "truck": {
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -1.001,
+    0.959,
+    0.0
+   ],
+   "travelAt60M": 0.365,
+   "opens": true
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    1.001,
+    0.959,
+    0.0
+   ],
+   "travelAt60M": 0.367,
+   "opens": true
+  }
+ },
+ "transporterWindow": {
+  "DoorBackL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    -0.566,
+    -2.739,
+    0.631
+   ],
+   "travelAt60M": 0.363,
+   "opens": true
+  },
+  "DoorBackR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.566,
+    -2.739,
+    0.631
+   ],
+   "travelAt60M": 0.363,
+   "opens": true
+  },
+  "DoorL": {
+   "hinge": "up",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    0.151,
+    0.416
+   ],
+   "travelAt60M": 1.019,
+   "opens": false
+  },
+  "DoorR": {
+   "hinge": "up",
+   "openSignBlender": 1,
+   "openSignThree": 1,
+   "pivotBlender": [
+    0.0,
+    0.151,
+    0.416
+   ],
+   "travelAt60M": 1.019,
+   "opens": false
+  },
+  "Hood": {
+   "hinge": "side",
+   "openSignBlender": -1,
+   "openSignThree": -1,
+   "pivotBlender": [
+    0.0,
+    1.049,
+    0.196
+   ],
+   "travelAt60M": 0.136,
+   "opens": false
+  }
+ }
+}

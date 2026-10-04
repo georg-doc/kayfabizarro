@@ -1,0 +1,556 @@
+{
+ "id": "KFB_CARD_SURF_GATE2",
+ "date": "2026-10-04",
+ "executor": "Coworker (cloud bpy 5.0.1)",
+ "status": "review candidate, not merged, no runtime claim",
+ "brief": "skills/chat/workflows/KFB_FLIGHT_ANIMATION_FAMILY_01_2026-10-04/CARD_SURF_GATE2_REBRIEF_2026-10-04.md @ georg-doc-patch-3",
+ "sources": {
+  "card_owner": "travel/wip/travel_globe_wsa/terrain-planets-v1/card-carrier.js (kayfabizarro main copy; parity with private Travel 603f2a9 NOT verified, repo not readable)",
+  "backside_image": "media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png (800x447)",
+  "ink": "skills/kfb-ink-canon.js INK_CANON_VERSION 2, preset 'card' (family band, #1f1a14), seed 4242 (Travel card seed); executed unchanged in Node, rasterised 4x supersampled",
+  "ink_measure": {
+   "preset": "card",
+   "kind": "Band",
+   "for": "card",
+   "points": 45,
+   "pointsTotal": 140,
+   "featherPct": 1.38,
+   "featherMaxPct": 2.69,
+   "featherResolutionBound": false,
+   "measuredAt": 800,
+   "bowPct": 0.3,
+   "checked": [
+    "Familie",
+    "Bauchung",
+    "Feder"
+   ],
+   "ok": true,
+   "why": ""
+  },
+  "rider": "KayKit Mannequin_Medium (Rig_Medium, 21 skinned joints) from KAYKIT_NATIVE_BASELINE_01; donor clip Idle_A (KayKit Character Animations 1.1)",
+  "stance_comparison": "Quaternius UAL2 Standard Shield_Dash @45% and NinjaJump_Idle_Loop @30%, world-delta retarget, single held pose (CC0)"
+ },
+ "georg_decisions": {
+  "edge": "Option B: the 14 px paper margin outside the ink band is painted ink #1f1a14, band and side read as one edge (gutter rule: no extra line between panel and gutter). Deviation from Travel texture, which keeps cream paper outside the ink."
+ },
+ "dimensions": {
+  "width_x": 3.0,
+  "depth_z": 1.67625,
+  "thickness": 0.055,
+  "grid": "SEGX 10 (x) x SEGZ 14 (z)",
+  "texture": "800x447, margin 14"
+ },
+ "axes": {
+  "space": "Travel/three.js Y-up inside REVIEW_STAGE_YUP (+90 deg X to Blender Z-up)",
+  "x": "card width, +x = rider's right",
+  "y": "up",
+  "z": "+z = rear (trailing) edge, flight forward = -z",
+  "texture_top": "front edge (-z)"
+ },
+ "materials": {
+  "CARD_TOP_face_lit": "Principled, texture, roughness 0.9, specular 0.2",
+  "CARD_BOTTOM_back_unlit": "same texture as emission (Travel uses MeshBasic on the bottom; reads mirrored from below, as in Travel)",
+  "CARD_SIDE_ink_1f1a14": "Principled #1f1a14 roughness 0.92 specular 0.2 (Travel runtime still 0x2a2018/0.95)"
+ },
+ "hierarchy": [
+  "REVIEW_STAGE_YUP",
+  "CARD_WORLD_ROOT (review proxy of Travel world transform: root pitch, root bank, barrel roll about local Z)",
+  "CARD_VISUAL (= Travel `lean`: Euler XYZ pitch/yaw/roll springs + calm wind - lectern, y = hover bob)",
+  "CARD_SURFACE (one slab mesh, shape keys)",
+  "SEAT_FRAME (child of CARD_VISUAL)",
+  "MANNEQUIN_ROOT (yaw 180, faces flight forward)",
+  "MANNEQUIN_ARMATURE"
+ ],
+ "shape_keys": {
+  "SOURCE_NEUTRAL": "basis = exact flat source geometry",
+  "TRAVEL_WAVE_S/C": "travelling ripple sin(wavePhase + 3.4 z + 1.6 x)*amp*(0.35+|w|), split into sin/cos parts; value = amp*sin/cos(wavePhase)",
+  "TRAVEL_GUST_S/C": "calm wind sin(windPhase + 1.15 z + 0.6 x)*windAmp*(0.25+0.9|w|)",
+  "TRAVEL_CUP": "u^2*0.9 (side edges up), value = cup spring",
+  "TRAVEL_TAIL": "w>0: w^2, w<0: -0.5 w^2, *0.8 (rear rears, front dips), value = tail spring",
+  "TRAVEL_BANKTIP": "x*0.16, value = roll spring",
+  "note": "Travel's vertex deformation is linear in these 7 coefficients, so the keys reproduce it exactly; top and bottom vertices get the same dy (one slab, skirt follows). All values 0 = SOURCE_NEUTRAL."
+ },
+ "seat_rule": "SEAT_FRAME at (0, h, CD*0.12); h = mean of 5 surface samples (centre and +/-0.13 in x and z, bilinear on the deformed grid); rotation slerps toward the surface normal at rate dt*8 (as plantSeat). Mannequin feet planted at seat y=0 by lowering hips (lowest sole).",
+ "inputs_per_state": {
+  "SOURCE_NEUTRAL": {
+   "seconds": 2.0,
+   "speed": 0,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 0,
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": 0,
+   "frozen": 1
+  },
+  "CALM_LECTERN": {
+   "seconds": 3.5,
+   "speed": 0,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 1,
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": 0
+  },
+  "CRUISE": {
+   "seconds": 3.5,
+   "speed": 12,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 0,
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": 0
+  },
+  "BOOST": {
+   "seconds": 3.0,
+   "speed": 20,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 1,
+   "climbIn": 0,
+   "calm": 0,
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": 0
+  },
+  "BANK_LEFT": {
+   "seconds": 3.0,
+   "speed": 12,
+   "bank": 0.3,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 0,
+   "rootPitch": 0,
+   "rootBank": 10,
+   "roll": 0
+  },
+  "BANK_RIGHT": {
+   "seconds": 3.0,
+   "speed": 12,
+   "bank": -0.3,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 0,
+   "rootPitch": 0,
+   "rootBank": -10,
+   "roll": 0
+  },
+  "CLIMB": {
+   "seconds": 3.0,
+   "speed": 12,
+   "bank": 0,
+   "pitchTilt": 0.25,
+   "boosting": 0,
+   "climbIn": 0.15,
+   "calm": 0,
+   "rootPitch": 14,
+   "rootBank": 0,
+   "roll": 0
+  },
+  "DIVE": {
+   "seconds": 3.0,
+   "speed": 12,
+   "bank": 0,
+   "pitchTilt": -0.25,
+   "boosting": 0,
+   "climbIn": -0.15,
+   "calm": 0,
+   "rootPitch": -16,
+   "rootBank": 0,
+   "roll": 0
+  },
+  "BRAKE_RECOVER": {
+   "seconds": 3.0,
+   "speed": 0,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": "ramp",
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": 0
+  },
+  "BARREL_ROLL": {
+   "seconds": 3.6,
+   "speed": 12,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 0,
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": "ramp"
+  },
+  "LAND_HOVER_PREP": {
+   "seconds": 3.5,
+   "speed": 0,
+   "bank": 0,
+   "pitchTilt": 0,
+   "boosting": 0,
+   "climbIn": 0,
+   "calm": 1,
+   "rootPitch": 0,
+   "rootBank": 0,
+   "roll": 0
+  }
+ },
+ "timeline_frames_30fps": [
+  [
+   "SOURCE_NEUTRAL",
+   0,
+   60
+  ],
+  [
+   "CALM_LECTERN",
+   60,
+   165
+  ],
+  [
+   "CRUISE",
+   165,
+   270
+  ],
+  [
+   "BOOST",
+   270,
+   360
+  ],
+  [
+   "BANK_LEFT",
+   360,
+   450
+  ],
+  [
+   "BANK_RIGHT",
+   450,
+   540
+  ],
+  [
+   "CLIMB",
+   540,
+   630
+  ],
+  [
+   "DIVE",
+   630,
+   720
+  ],
+  [
+   "BRAKE_RECOVER",
+   720,
+   810
+  ],
+  [
+   "BARREL_ROLL",
+   810,
+   918
+  ],
+  [
+   "LAND_HOVER_PREP",
+   918,
+   1023
+  ]
+ ],
+ "rider_clips": [
+  {
+   "clip": "CARD_SURF_CALM_LECTERN",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 3,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 10,
+    "stag": 14,
+    "arm": 12,
+    "armF": 0,
+    "armIn": 0,
+    "head_x": -4,
+    "head_z": 0,
+    "chest_x": 0,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_CRUISE",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 12,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 30,
+    "stag": 24,
+    "arm": 36,
+    "armF": 8,
+    "armIn": 0,
+    "head_x": -10,
+    "head_z": 0,
+    "chest_x": 6,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_BOOST",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 22,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 44,
+    "stag": 26,
+    "arm": 26,
+    "armF": -22,
+    "armIn": 0,
+    "head_x": -18,
+    "head_z": 0,
+    "chest_x": 12,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_BANK_LEFT",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 10,
+    "roll": 10,
+    "yaw": 0,
+    "crouch": 34,
+    "stag": 24,
+    "arm": 42,
+    "armF": 0,
+    "armIn": 1,
+    "head_x": 0,
+    "head_z": -14,
+    "chest_x": 0,
+    "chest_z": -12,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_BANK_RIGHT",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 10,
+    "roll": -10,
+    "yaw": 0,
+    "crouch": 34,
+    "stag": 24,
+    "arm": 42,
+    "armF": 0,
+    "armIn": -1,
+    "head_x": 0,
+    "head_z": 14,
+    "chest_x": 0,
+    "chest_z": 12,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_CLIMB",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 20,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 32,
+    "stag": 24,
+    "arm": 30,
+    "armF": 0,
+    "armIn": 0,
+    "head_x": -18,
+    "head_z": 0,
+    "chest_x": 8,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_DIVE",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": -10,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 36,
+    "stag": 26,
+    "arm": 46,
+    "armF": 16,
+    "armIn": 0,
+    "head_x": 8,
+    "head_z": 0,
+    "chest_x": -6,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_BRAKE_RECOVER",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": -14,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 32,
+    "stag": 22,
+    "arm": 38,
+    "armF": 24,
+    "armIn": 0,
+    "head_x": 4,
+    "head_z": 0,
+    "chest_x": 0,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_BARREL_ROLL",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 16,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 52,
+    "stag": 24,
+    "arm": 64,
+    "armF": 0,
+    "armIn": 0,
+    "head_x": -12,
+    "head_z": 0,
+    "chest_x": 10,
+    "chest_z": 0,
+    "tuck": 1
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_LAND_HOVER_PREP",
+   "frames": 32,
+   "loop": true,
+   "params": {
+    "lean": 2,
+    "roll": 0,
+    "yaw": 0,
+    "crouch": 14,
+    "stag": 14,
+    "arm": 16,
+    "armF": 0,
+    "armIn": 0,
+    "head_x": -4,
+    "head_z": 0,
+    "chest_x": 0,
+    "chest_z": 0,
+    "tuck": 0
+   },
+   "donor": "KayKit Idle_A (breathing) + authored offsets"
+  },
+  {
+   "clip": "CARD_SURF_REVIEW",
+   "frames": 1023,
+   "loop": false,
+   "note": "whole review timeline, state params smoothed at rate 5/s"
+  },
+  {
+   "clip": "CARD_SURF_SHIELDDASH_STANCE",
+   "frames": 30,
+   "note": "comparison only"
+  },
+  {
+   "clip": "CARD_SURF_NINJAJUMP_STANCE",
+   "frames": 30,
+   "note": "comparison only"
+  }
+ ],
+ "verdicts": {
+  "SOURCE_NEUTRAL": "KEEP",
+  "CALM_LECTERN": "KEEP",
+  "CRUISE": "KEEP",
+  "BOOST": "KEEP",
+  "BANK_LEFT": "HOLD - Travel springs at review input bank 0.3 give ~30 deg visible bank plus a strong cup (edges +0.35); amount is Georg's call, input scale not Travel-verified",
+  "BANK_RIGHT": "HOLD - mirror of BANK_LEFT",
+  "CLIMB": "KEEP",
+  "DIVE": "KEEP",
+  "BRAKE_RECOVER": "KEEP",
+  "BARREL_ROLL": "KEEP - root only, surface untwisted, rider reaction pose",
+  "LAND_HOVER_PREP": "KEEP",
+  "rider_stance": "HOLD - Georg chooses: authored stance (A) vs Shield_Dash (B); NinjaJump (C) not recommended (too low, reads as crouch)"
+ },
+ "review_only": [
+  "CARD_WORLD_ROOT root pitch/bank values (Travel flight sim owns them)",
+  "state timeline and input values",
+  "calm ramp",
+  "seat x/z fixed at Travel default"
+ ],
+ "runtime_candidate": [
+  "shape-key mapping of Travel deformation terms (WSA decides)",
+  "CARD_SURF_* rider clips (authored offsets over Idle_A)",
+  "edge texture option B"
+ ],
+ "assumptions": [
+  "2.0x rider relation taken as Mannequin at native Rig_Medium height (2.204) on the 3.0 card; the absolute 'current' Travel rider size is not readable (private repo)",
+  "st.bank sign: positive = left edge down here; Travel sign not verified"
+ ],
+ "known_limits": [
+  "Feet are planted on the averaged seat plane, not per foot: under bend the surface deviates from the sole by up to 4.1 cm (BOOST), 3.8 (BANK_LEFT), 3.3 (CLIMB/DIVE), 1.2 (CRUISE); per-foot IK is a later runtime step",
+  "Review GLB exports one animation per object (Blender SCENE mode); the .blend is the reference",
+  "Videos use Workbench (fast); the 2A proof used EEVEE. Workbench does not show the 0.92 roughness response",
+  "BARREL_ROLL segment uses wider cameras (centre on card) so the inverted rider stays in frame"
+ ],
+ "foot_surface_deviation_cm": {
+  "CALM_LECTERN": 0.7,
+  "CRUISE": 1.2,
+  "BOOST": 4.1,
+  "BANK_LEFT": 3.8,
+  "BANK_RIGHT": 1.7,
+  "CLIMB": 3.3,
+  "DIVE": 3.3,
+  "BRAKE_RECOVER": 2.9,
+  "BARREL_ROLL": 1.2,
+  "LAND_HOVER_PREP": 0.7
+ },
+ "files": [
+  "KFB_CARD_SURF_GATE2_RETURN.md",
+  "CARD_SURF_SOURCE_PROOF.png",
+  "CARD_SURF_DEFORM_REVIEW.mp4",
+  "CARD_SURF_MANNEQUIN_REVIEW.mp4",
+  "CARD_SURF_STATES_SHEET.png",
+  "CARD_SURF_BARREL_ROLL.png",
+  "CARD_SURF_STANCE_COMPARE.png",
+  "KFB_CARD_SURF_REVIEW_RIG.blend",
+  "KFB_CARD_SURF_REVIEW_RIG.glb",
+  "KFB_CARD_SURF_RIDER_Mannequin.glb",
+  "KFB_CARD_BACKSIDE_INK_BAND_4242_optB_edge.png",
+  "KFB_CARD_SURF_GATE2_manifest.json",
+  "scripts: sim.py rider.py gate2b.py card2a.py tex.py dump.mjs"
+ ]
+}

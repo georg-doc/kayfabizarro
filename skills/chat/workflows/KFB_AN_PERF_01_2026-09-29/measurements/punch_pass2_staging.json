@@ -1,0 +1,74 @@
+{
+ "kfb_action_quad_punch_a": {
+  "Rig_Medium": {
+   "strikeFrame": 20,
+   "limb": "hand.r",
+   "result": "no side angle 0-88 deg keeps the heads apart",
+   "headRadius": 0.703,
+   "fistAheadOfHips": 1.14,
+   "headCentreAheadOfHips": 0.358
+  },
+  "Rig_Large": {
+   "strikeFrame": 20,
+   "limb": "hand.r",
+   "attackAxisDeg": -110.3,
+   "defenderOffAxisDeg": -20,
+   "defenderHipsFromAttackerHips": [
+    -1.099,
+    -2.146
+   ],
+   "hipsDistance": 2.411,
+   "headRadius": 0.646,
+   "headGapCm": 1.8,
+   "fistLandsOn": "torso front"
+  }
+ },
+ "kfb_action_hook_punch_b": {
+  "Rig_Medium": {
+   "strikeFrame": 29,
+   "limb": "hand.r",
+   "result": "no side angle 0-88 deg keeps the heads apart",
+   "headRadius": 0.665,
+   "fistAheadOfHips": 0.991,
+   "headCentreAheadOfHips": 0.571
+  },
+  "Rig_Large": {
+   "strikeFrame": 29,
+   "limb": "hand.r",
+   "attackAxisDeg": 176.7,
+   "defenderOffAxisDeg": 0,
+   "defenderHipsFromAttackerHips": [
+    -3.477,
+    0.201
+   ],
+   "hipsDistance": 3.483,
+   "headRadius": 0.647,
+   "headGapCm": 144.1,
+   "fistLandsOn": "torso front"
+  }
+ },
+ "kfb_action_punching_b": {
+  "Rig_Medium": {
+   "strikeFrame": 22,
+   "limb": "hand.l",
+   "result": "no side angle 0-88 deg keeps the heads apart",
+   "headRadius": 0.857,
+   "fistAheadOfHips": 1.205,
+   "headCentreAheadOfHips": 0.179
+  },
+  "Rig_Large": {
+   "strikeFrame": 22,
+   "limb": "hand.l",
+   "attackAxisDeg": -60.6,
+   "defenderOffAxisDeg": 0,
+   "defenderHipsFromAttackerHips": [
+    1.543,
+    -2.733
+   ],
+   "hipsDistance": 3.139,
+   "headRadius": 0.622,
+   "headGapCm": 144.6,
+   "fistLandsOn": "torso front"
+  }
+ }
+}
