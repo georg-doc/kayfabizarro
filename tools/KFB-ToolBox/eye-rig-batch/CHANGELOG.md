@@ -1109,3 +1109,19 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - current gate: `KLR-EYE-VIS-01` · Front + 3/4 review of all 17 heads;
 - per-eye/Survivalist work remains preserved but is `DEFERRED_DETAIL_AFTER_LEGACY`.
 
+## 2026-10-04 · Unified EyeRig Site source
+
+- PR #104 is now the single productive EyeRig UI/runtime owner;
+- added `Legacy` as third class beside Medium and Large;
+- imported exact PR #162 17-head catalog, seed and persisted profile batch;
+- imported exact proven Legacy assembler + LegacyFaceHost donors byte-identically;
+- Legacy Eye adapter now forwards the same EyeRig control API used by the common workbench;
+- Legacy actor construction is class-specific, review/tuning/persistence is shared;
+- class counts: 55 Medium / 8 Large / 17 Legacy = 80 identities;
+- storage key remains `kfb.toolbox.eye-rig-batch.v0`;
+- focused unified validation **33/33 PASS**;
+- static contract **160 assertions persisted · NOT_RUN** (no Actions run);
+- Site manifest + Work publishing brief added;
+- Cloudflare demoted to recovery/regression only;
+- current gate: `EYE_RIG_UNIFIED_SITE_PUBLISH_01`.
+
