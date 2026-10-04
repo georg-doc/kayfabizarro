@@ -1,3 +1,15 @@
+## 2026-10-04 · Production Site + Production Control portfolio refresh
+
+- Replaced the stale Production Hub Today list with the current portfolio board: World Studio + Card-Hex as P0 human gates; Environment Atlas / Asset Librarian / FrankenStein / Fluff as P1; Quote Pool + Audio as cheap/consumer-driven parallel lanes.
+- Replaced the stale current Briefings surface with Active Work Map, the two P0 human gates, Environment Atlas, Asset Librarian, FrankenStein, Fluff, Quote Pool and the PUBLISH_ONLY cost contract.
+- Updated KFB Production Hub quick links to World Studio, Card-Hex S3, Production Control, Asset Librarian and Audio.
+- Added direct Production Control link: `https://kfb-production-control.frizzlebob.chatgpt.site/`.
+- KFB Production Control workflow `KFB-PORTFOLIO-ROUTER-01` now contains the current board, two P0 TODOs, P1/parallel briefings, cheap research lane, provider-comparison HOLD and Production Hub PUBLISH_ONLY record.
+- Saved machine-readable Production Control artifact `KFB_PORTFOLIO_BOARD_2026-10-04.json`.
+- Site registry now includes Production Control as a productive data-driven Site.
+- Production Hub GitHub source is refreshed; the existing private GPT Site host still needs a deterministic low-cost in-place PUBLISH_ONLY update. Exact packet: `skills/chat/publish/PRODUCTION_HUB_CURRENT_BOARD_PUBLISH_ONLY_2026-10-04.md`.
+- No High-Reasoning Site publishing, no new Site, no Cloudflare substitution.
+
 ## 2026-10-04 · Cross-project active work map
 
 - Reconciled current Web Chat/work lanes, GPT Sites, active implementation slices, donor/history PRs and next iteration order into `KFB_ACTIVE_WORK_MAP_2026-10-04.md`.
