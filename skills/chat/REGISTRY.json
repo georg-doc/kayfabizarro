@@ -32,6 +32,46 @@
   ],
   "entries": [
     {
+      "id": "kfb-environment-atlas-site-01-2026-10-04",
+      "kind": "workflow",
+      "status": "READY_FOR_WORK",
+      "version": "1.0-prep",
+      "path": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/WORK_BRIEF.md",
+      "return": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/RETURN.md",
+      "sourceMap": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/SOURCE_MAP.json",
+      "evidence": "skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/PREP_EVIDENCE.md",
+      "repository": "georg-doc/kayfabizarro",
+      "branch": "chatgpt-web/kfb-environment-atlas-site-prep-2026-10-04",
+      "pullRequest": 353,
+      "reservedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/environment-atlas-site/",
+      "loadWhen": [
+        "Environment Atlas Site",
+        "Hex catalog",
+        "KayKit Hex",
+        "Kenney Hexagon",
+        "KayKit buildings",
+        "Kenney buildings",
+        "clay building deformation",
+        "Clay Golden Sample",
+        "Hex connectors",
+        "Data Generator",
+        "Daten Generator"
+      ],
+      "owns": [
+        "Work execution contract for the Environment Atlas Site",
+        "environment-specific catalog and visual-SSOT projection",
+        "Hex/building provenance and source-isolation presentation"
+      ],
+      "doesNotOwn": [
+        "Asset Registry or Asset Librarian",
+        "WorldBuilder or game runtime",
+        "Clay Style SSOT",
+        "Hex/Dungeon/Babel generator runtimes",
+        "automatic merge or Live promotion"
+      ],
+      "note": "Prepared after the 2026-10-04 legacy-OSM contamination failure. Current source proof yields two KayKit hex-capable packs plus one deduplicated Kenney Hexagon family; a third distinct KayKit Hex pack remains SOURCE_REQUIRED. Work continues PR #353 and must create the actual ChatGPT Site plus direct Cloudflare Stage without legacy fallback."
+    },
+    {
       "id": "session-zip-v1",
       "kind": "skill",
       "status": "CURRENT_REFERENCE",
