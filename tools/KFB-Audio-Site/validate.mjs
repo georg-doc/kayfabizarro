@@ -5,6 +5,7 @@ const snapshot=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/c
 const sound=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/soundscape-source.json'),'utf8'));
 const intake=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/source-intake.v1.json'),'utf8'));
 const lock=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/source-lock.json'),'utf8'));
+const sfxlib=JSON.parse(fs.readFileSync(path.join(root,'tools/KFB-Audio-Site/sfx-library.snapshot.json'),'utf8'));
 const checks=[];const check=(n,o,d=null)=>{checks.push({name:n,ok:!!o,detail:d});if(!o)throw new Error(n+': '+JSON.stringify(d))};
 try{
  check('catalog snapshot matches',JSON.stringify(catalog)===JSON.stringify(snapshot));
@@ -20,5 +21,15 @@ try{
  check('six palette masters human-positive',["Soul / R&B Ambient Bed","Piano / Chamber Minimal Bed","Cinematic / Epic-but-Playable Bed","Cartoon Chase / Capers Bed","Folk / Acoustic / Storybook Bed","Metaphysical / Cosmic Ambient Bed"].every(title=>catalog.tracks.find(t=>t.title===title)?.humanReview?.status==='positive'));
  check('six palette stems downloaded',["Soul / R&B Ambient Bed","Piano / Chamber Minimal Bed","Cinematic / Epic-but-Playable Bed","Cartoon Chase / Capers Bed","Folk / Acoustic / Storybook Bed","Metaphysical / Cosmic Ambient Bed"].every(title=>catalog.tracks.find(t=>t.title===title)?.stems?.policy==='source-only'));
  check('rain still source-required',sound.missing.some(x=>x.id==='rain-bank'&&x.status==='SOURCE_REQUIRED'));
+ check('SFX library schema',sfxlib.schema==='kfb.audio-sfx-library/1.0',sfxlib.schema);
+ check('SFX library source locked',/^main@[0-9a-f]{40}$/.test(sfxlib.source?.ref||''),sfxlib.source);
+ check('SFX library tree complete',sfxlib.source?.truncated===false,sfxlib.source);
+ check('SFX library 1704 audio files',sfxlib.assets.length===1704,sfxlib.assets.length);
+ check('SFX library total self-consistent',sfxlib.totals?.audioFiles===sfxlib.assets.length,sfxlib.totals);
+ check('SFX library unique paths',new Set(sfxlib.assets.map(x=>x.path)).size===sfxlib.assets.length);
+ check('SFX library role contract',["VOICE","UI","PLAYER_CRITICAL","WORLD_SFX","DIEGETIC_MUSIC","SCORE","LOCAL_AMBIENCE","GLOBAL_BED"].every(x=>sfxlib.taxonomy?.semanticRoles?.includes(x)),sfxlib.taxonomy?.semanticRoles);
+ check('SFX interface aliases 100/100',sfxlib.lineageChecks?.interfaceRootVsKenneyNested?.exactBlobAliases===100,sfxlib.lineageChecks?.interfaceRootVsKenneyNested);
+ check('SFX classic aliases 80/80',sfxlib.lineageChecks?.classicArcadeSmallVsComplete?.exactBlobAliases===80,sfxlib.lineageChecks?.classicArcadeSmallVsComplete);
+ check('SFX gaps preserved',["tyre-friction","rain-thunder","crowd-venue","city-traffic","workshop-machinery"].every(id=>sfxlib.knownGaps?.some(x=>x.id===id)),sfxlib.knownGaps);
  console.log(JSON.stringify({status:'PASS',checks:checks.length,tracks:catalog.tracks.length,roadTrip:road.length,stemFamilies:road.filter(t=>t.stems).length,elevenTests:intake.elevenLabs.length},null,2));
 }catch(e){console.error(JSON.stringify({status:'FAIL',checks,failure:String(e.stack||e)},null,2));process.exit(1)}
