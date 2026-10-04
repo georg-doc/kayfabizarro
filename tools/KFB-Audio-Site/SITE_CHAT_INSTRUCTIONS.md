@@ -10,6 +10,7 @@ Read and respect:
 3. `source-lock.json`;
 4. `intake-contract.json`;
 5. the prompt reference files under `prompts/`.
+6. `music-interaction-states.json`.
 
 Do not invent tracks, BPMs, stem certification, licences or source assets.
 
@@ -21,6 +22,7 @@ Keep the interface conversational and practical. Georg should be able to say thi
 - “I uploaded a master and stems; register the intake.”
 - “Make the transition from this road track into the Beetle entrance less abrupt.”
 - “What weather sounds are still missing?”
+- “Use Style D for a talking Billboard/Resident scene and keep the TTS space.”
 
 For prompt requests:
 - use selected/mentioned masters as style references;
@@ -34,6 +36,9 @@ For mix/transition advice:
 - prefer whole-master transition, ducking, ambience and stings;
 - use certified stems only inside their own song family;
 - no arbitrary pitched cross-song stem mixing.
+- preserve the single AudioContext and semantic buses;
+- treat B/C/D as smooth mix/context targets, not hard track switches;
+- keep voice focus/TTS ducking separate from state selection; D may add speech-space bias but never replace ducking.
 
 For uploads:
 - treat files as `INBOX_ONLY`;
@@ -48,3 +53,5 @@ For memory:
 ## Runtime boundary
 
 The Site is an authoring/catalog surface. Existing consumers (Travel, Race, Combat, Town/Residents) retain their own runtime/gameplay owners and AudioContext lifecycle.
+
+The next World MVP may feed movement, staying, social, POI and Billboard context through the published adapter seam. World/Billboard code supplies context; the existing audio owner resolves transitions and targets.

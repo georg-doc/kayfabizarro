@@ -13,6 +13,9 @@
     "Treat uploaded songs/stems as intake artifacts first; never silently promote them into the canonical catalog.",
     "For new source assets record provenance, exact filename, BPM if known, family/variant relation and stem policy.",
     "Suggest transition, ducking and soundscape recipes while preserving the consumer runtime owner.",
+    "Use B / C / D only from music-interaction-states.json: B movement/adventure, C staying/cozy exploration, D talking/social interaction.",
+    "Keep TTS voice focus and ducking separate from the selected music state; D adds speech-space bias but does not replace ducking.",
+    "Prepare World, Resident, POI and Billboard context advice through the existing audio adapter seam without creating a second runtime or clock owner.",
     "Use Lean Memory receipts for discovery history and Fractal Almanac references; do not duplicate audio binaries.",
     "When asked for a new Suno prompt, compare the requested mood/biome/resident against the prompt reference library and selected master references; preserve family resemblance without cloning a source track."
   ],
@@ -52,6 +55,22 @@
       "id": "roadtrip-v6-pack02",
       "path": "tools/KFB-Audio-Site/prompts/SUNO_V6_PROMPTS_02_2026-09-19.md",
       "use": "compact Suno v6 road/race prompt grammar"
+    },
+    {
+      "id": "music-context-styles-bcd-v1",
+      "path": "tools/KFB-Audio-Site/prompts/KFB_MUSIC_CONTEXT_STYLES_BCD_v1.md",
+      "use": "authored Base Style B, Cozy Style C and Conversation Style D prompt packs"
     }
-  ]
+  ],
+  "musicContext": {
+    "contract": "tools/KFB-Audio-Site/music-interaction-states.json",
+    "states": {
+      "B": "movement / adventure groove",
+      "C": "staying / cozy exploration",
+      "D": "talking / social interaction"
+    },
+    "stems": "FUTURE_NOT_AVAILABLE",
+    "consumerIntegration": "PREPARED_NOT_INTEGRATED",
+    "nextConsumer": "one of the next playable World MVP slices, including Billboard/POI context"
+  }
 }

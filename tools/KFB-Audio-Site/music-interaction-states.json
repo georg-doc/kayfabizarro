@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.audio.music-context/1.0",
+  "version": "1.0.0",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "runtimeBoundary": "Additive mix targets only. Existing consumer runtimes retain gameplay truth, track selection, semantic buses and the single AudioContext lifecycle.",
+  "defaultState": "C",
+  "semanticBuses": [
+    "VOICE",
+    "UI",
+    "PLAYER_CRITICAL",
+    "WORLD_SFX",
+    "DIEGETIC_MUSIC",
+    "SCORE",
+    "LOCAL_AMBIENCE",
+    "GLOBAL_BED"
+  ],
+  "ducking": {
+    "owner": "existing TTS / voice-focus mixer path",
+    "separateFromMusicContextState": true,
+    "baseMusicDuckDb": -8,
+    "baseAmbienceDuckDb": -4,
+    "attackSeconds": 0.12,
+    "releaseSeconds": 0.65,
+    "criticalSfxRemainReadable": true,
+    "musicTimelineContinues": true
+  },
+  "transitions": {
+    "clockOwner": "AudioContext.currentTime",
+    "mode": "continuous gain ramps / whole-master crossfade; layer-ready when certified stems arrive",
+    "matrixSeconds": {
+      "B>C": 8,
+      "B>D": 6,
+      "C>B": 8,
+      "C>D": 5,
+      "D>B": 6,
+      "D>C": 5
+    }
+  },
+  "stemContract": {
+    "availability": "FUTURE_NOT_AVAILABLE",
+    "audioFiles": [],
+    "slots": [
+      "bass",
+      "harmony",
+      "percussion",
+      "texture"
+    ],
+    "rule": "Targets are ready for later same-family certified stems. Empty audioFiles is intentional; never synthesize or map placeholder stems."
+  },
+  "states": {
+    "B": {
+      "id": "B",
+      "slug": "movement-adventure",
+      "label": "Movement / adventure groove",
+      "shortLabel": "MOVEMENT",
+      "intent": "Forward motion, readable adventure energy and a physical downtown groove without stealing gameplay cues.",
+      "targets": {
+        "energy": 0.82,
+        "density": 0.72,
+        "musicGainDb": -2.5,
+        "transientRestraint": 0.15,
+        "percussionRestraint": 0.12,
+        "speechSpaceBias": 0.2,
+        "speechDuckingBiasDb": -1,
+        "crossfadeSeconds": 4
+      },
+      "tempo": {
+        "bpmMin": 106,
+        "bpmMax": 118,
+        "preferredBpm": 112,
+        "subdivision": "straight-16th",
+        "tripletFriendly": false
+      },
+      "semanticBusGainDb": {
+        "SCORE": -2.5,
+        "DIEGETIC_MUSIC": -3,
+        "LOCAL_AMBIENCE": -7,
+        "GLOBAL_BED": -9
+      },
+      "futureStemTargets": {
+        "bass": 0.9,
+        "harmony": 0.72,
+        "percussion": 0.88,
+        "texture": 0.42
+      },
+      "promptReference": {
+        "label": "KFB Base Style B · Downtown Groove Ecology",
+        "path": "tools/KFB-Audio-Site/prompts/KFB_MUSIC_CONTEXT_STYLES_BCD_v1.md",
+        "anchor": "kfb-base-style-b-downtown-groove-ecology"
+      }
+    },
+    "C": {
+      "id": "C",
+      "slug": "staying-cozy-exploration",
+      "label": "Staying / cozy exploration",
+      "shortLabel": "STAYING",
+      "intent": "Warm, spacious and physically grounded exploration with low drum pressure and room for place, SFX and discovery.",
+      "targets": {
+        "energy": 0.38,
+        "density": 0.34,
+        "musicGainDb": -5.5,
+        "transientRestraint": 0.72,
+        "percussionRestraint": 0.78,
+        "speechSpaceBias": 0.45,
+        "speechDuckingBiasDb": -0.5,
+        "crossfadeSeconds": 8
+      },
+      "tempo": {
+        "bpmMin": 72,
+        "bpmMax": 82,
+        "preferredBpm": 80,
+        "subdivision": "loose-straight-or-light-swing",
+        "tripletFriendly": false
+      },
+      "semanticBusGainDb": {
+        "SCORE": -5.5,
+        "DIEGETIC_MUSIC": -6,
+        "LOCAL_AMBIENCE": -4.5,
+        "GLOBAL_BED": -7
+      },
+      "futureStemTargets": {
+        "bass": 0.76,
+        "harmony": 0.78,
+        "percussion": 0.3,
+        "texture": 0.68
+      },
+      "promptReference": {
+        "label": "KFB Cozy Style C",
+        "path": "tools/KFB-Audio-Site/prompts/KFB_MUSIC_CONTEXT_STYLES_BCD_v1.md",
+        "anchor": "kfb-cozy-style-c-base"
+      }
+    },
+    "D": {
+      "id": "D",
+      "slug": "talking-social-interaction",
+      "label": "Talking / social interaction",
+      "shortLabel": "TALKING",
+      "intent": "A discreet, talkative ambient pulse that supports cartoon triplet dialogue while leaving speech range and timing open.",
+      "targets": {
+        "energy": 0.46,
+        "density": 0.28,
+        "musicGainDb": -7,
+        "transientRestraint": 0.82,
+        "percussionRestraint": 0.8,
+        "speechSpaceBias": 0.92,
+        "speechDuckingBiasDb": -2,
+        "crossfadeSeconds": 6
+      },
+      "tempo": {
+        "bpmMin": 88,
+        "bpmMax": 96,
+        "preferredBpm": 94,
+        "subdivision": "soft-triplet-shuffle",
+        "tripletFriendly": true,
+        "dialogueFit": "statement / response / reframe"
+      },
+      "semanticBusGainDb": {
+        "SCORE": -7,
+        "DIEGETIC_MUSIC": -8,
+        "LOCAL_AMBIENCE": -6,
+        "GLOBAL_BED": -8
+      },
+      "futureStemTargets": {
+        "bass": 0.64,
+        "harmony": 0.55,
+        "percussion": 0.24,
+        "texture": 0.48
+      },
+      "promptReference": {
+        "label": "KFB Conversation Style D",
+        "path": "tools/KFB-Audio-Site/prompts/KFB_MUSIC_CONTEXT_STYLES_BCD_v1.md",
+        "anchor": "kfb-conversation-style-d-base"
+      }
+    }
+  },
+  "adapter": {
+    "manualControl": true,
+    "method": "window.KFBAudioSite.musicContext.setState(stateId, options)",
+    "snapshotMethod": "window.KFBAudioSite.musicContext.getSnapshot()",
+    "inboundEvent": "kfb:music-context",
+    "outboundEvent": "kfb:music-context-change",
+    "voiceFocusEvent": "kfb:voice-focus",
+    "payloadExample": {
+      "state": "D",
+      "source": "world-context-adapter",
+      "reason": "resident-dialogue",
+      "context": {
+        "residentId": "example-only-runtime-supplied",
+        "poiId": "example-only-runtime-supplied"
+      }
+    },
+    "priorityHint": [
+      "active addressed dialogue -> D",
+      "meaningful movement/adventure -> B",
+      "staying/exploration/POI linger -> C"
+    ]
+  },
+  "worldIntegration": {
+    "status": "PREPARED_NOT_INTEGRATED",
+    "nextConsumer": "one of the next playable World MVP slices",
+    "billboardHints": [
+      "drive-by or movement billboard context may remain B",
+      "POI / billboard linger may suggest C",
+      "talking billboard, Resident or ChatterBox exchange may suggest D"
+    ],
+    "rule": "World/Resident/Billboard owners emit context only. The existing audio owner resolves targets and transitions."
+  }
+}

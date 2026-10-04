@@ -5,12 +5,18 @@ const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-u
 try{
  const c=await browser.newContext({viewport:{width:1440,height:1000}});page=await c.newPage();page.on('pageerror',e=>result.errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')result.errors.push(m.text())});page.on('response',r=>{if(r.status()>=400&&!r.url().includes('raw.githubusercontent.com'))result.httpErrors.push({url:r.url(),status:r.status()})});
  await page.goto(base,{waitUntil:'networkidle',timeout:90000});
- check('site marker',await page.evaluate(()=>document.documentElement.dataset.kfbAudioSite==='0.1'));
+ check('site marker',await page.evaluate(()=>document.documentElement.dataset.kfbAudioSite==='0.2'));
  check('catalog renders >=54',await page.locator('.track').count()>=54,await page.locator('.track').count());
  check('stats says 44 RoadTrip',await page.locator('#stats').innerText().then(x=>x.includes('44 RoadTrip v2')));
  await page.selectOption('#stemFilter','stems');check('stem filter shows 14',await page.locator('.track').count()===14,await page.locator('.track').count());
  await page.click('[data-view="mix"]');check('mix visible',await page.locator('#mix').evaluate(e=>e.classList.contains('active')));
- await page.click('[data-view="prompt"]');await page.fill('#pMood','rainy midnight melancholy');await page.selectOption('#pRefs',{index:0});await page.click('#buildPrompt');check('prompt request built',await page.locator('#promptOut').inputValue().then(x=>x.includes('rainy midnight melancholy')&&x.toLowerCase().includes('master')));
+ check('B/C/D controls visible',await page.locator('[data-context]').count()===3,await page.locator('[data-context]').count());
+ check('default state C',await page.locator('[data-context="C"]').getAttribute('aria-pressed')==='true');
+ await page.click('[data-context="B"]');await page.click('[data-context="C"]');await page.click('[data-context="D"]');
+ const dBefore=await page.evaluate(()=>window.KFBAudioSite.musicContext.getSnapshot());check('manual B-C-D reaches D',dBefore.state==='D',dBefore);check('one AudioContext after transitions',dBefore.audioContextCount===1,dBefore.audioContextCount);
+ await page.click('#ttsToggle');const dDucked=await page.evaluate(()=>window.KFBAudioSite.musicContext.getSnapshot());check('D keeps separate TTS ducking',dDucked.state==='D'&&dDucked.voiceActive&&dDucked.effectiveBusGainDb.SCORE<dBefore.effectiveBusGainDb.SCORE,{before:dBefore.effectiveBusGainDb.SCORE,after:dDucked.effectiveBusGainDb.SCORE});check('TTS does not create second context',dDucked.audioContextCount===1,dDucked.audioContextCount);await page.click('#ttsToggle');
+ await page.evaluate(()=>window.dispatchEvent(new CustomEvent('kfb:music-context',{detail:{state:'B',source:'qa-world-adapter',reason:'movement'}})));const adapted=await page.evaluate(()=>window.KFBAudioSite.musicContext.getSnapshot());check('external World adapter seam',adapted.state==='B'&&adapted.audioContextCount===1,adapted);
+ await page.click('[data-view="prompt"]');check('Prompt Studio has B/C/D entries',await page.locator('#pStyle option').count()===3,await page.locator('#pStyle option').count());await page.selectOption('#pStyle','D');await page.fill('#pMood','rainy midnight melancholy');await page.selectOption('#pRefs',{index:0});await page.click('#buildPrompt');check('D prompt request grounded',await page.locator('#promptOut').inputValue().then(x=>x.includes('rainy midnight melancholy')&&x.includes('Conversation Style D')&&x.includes('KFB_MUSIC_CONTEXT_STYLES_BCD_v1.md')));
  await page.click('[data-view="soundscape"]');check('rain missing visible',await page.locator('#missingSources').innerText().then(x=>x.includes('Rain bank')&&x.includes('SOURCE_REQUIRED')));
  check('no page errors',result.errors.length===0,result.errors);check('no local HTTP errors',result.httpErrors.length===0,result.httpErrors);
  await page.screenshot({path:path.join(out,'desktop.png'),fullPage:true});result.status='PASS';
