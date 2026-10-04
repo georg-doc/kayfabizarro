@@ -72,6 +72,151 @@ They are material behaviours first.
 
 ---
 
+
+# 1A · Bigger picture · why this motion pack exists
+
+This Blender slice is a small donor package for a larger KFB world loop. Do not implement the whole loop here, but use it to judge whether a motion is reusable.
+
+## World loop
+
+Each island is a lived-in Fluff ecosystem:
+
+**Life Tree → Small Fluff → consolidation → Medium / Large Fluff → transport / dance / work → building / props / gifts → damage / dismantle → debris → recycling → Fluff again**
+
+Residents usually live outdoors in terrain-arranged habitats rather than conventional interiors. Furniture, tools, gifts and utility props are biome-specific and can be:
+
+- made from Fluff;
+- grown from Life Trees / EyeRig plants / shrubs;
+- harvested from biome resources;
+- combined with KayKit / Tiny Treats / Boardgame / RPG / Resource / Furniture bits;
+- repaired, dismantled and recycled back into Fluff.
+
+Fluff therefore needs motions that read as **physical material handling**, not abstract quest interaction.
+
+## Meta-narrative
+
+Fluff is also the bridge to the Hunky & Dory mythology:
+
+- Genesis = Fluff taking form;
+- the Fluff Incident = a foundational disturbance/manipulation of that world matter;
+- present-day building, harvesting, gifts, destruction and recycling are mundane echoes of the same principle.
+
+Do not encode lore into the clips. The clips only need to make the material feel tangible and reusable.
+
+---
+
+# 1B · FLUFF_MASS_LADDER_01 · basic building logic
+
+Use three discrete Fluff mass classes for the first system.
+
+## Small Fluff
+
+Source:
+- grows on island Life Trees;
+- falls as a colored Fluff sphere;
+- player/NPC collects by walk-over/proximity.
+
+Role:
+- harvest unit;
+- gift/trade unit;
+- ingredient for larger work masses.
+
+## Medium Fluff
+
+Default working mass for **one Rig_Medium** actor.
+
+Canonical conversion proposal for pass 01:
+
+**6 Small Fluff → 1 Medium Fluff**
+
+The six source colors may remain visibly marbled / kneaded together in the resulting ball.
+
+Role:
+- standard single-worker rolling ball;
+- building feedstock;
+- prop/furniture shaping;
+- repair material;
+- gift/production stock.
+
+## Large Fluff
+
+Default working mass for:
+- one Rig_Large actor; or
+- a cooperative team of **2–3 Rig_Medium** actors.
+
+Canonical conversion proposal for pass 01:
+
+**3 Medium Fluff → 1 Large Fluff**
+
+Therefore:
+
+**18 Small Fluff → 1 Large Fluff**
+
+Role:
+- Sisyphos-style heavy work;
+- large structure / dungeon / island construction;
+- cooperative placement;
+- major repair / rebuild volume.
+
+Keep the classes discrete in the first implementation. Do not author a continuum of arbitrary ball sizes.
+
+## Rig / ball matching
+
+Default visual relationship:
+
+- Small = pickup / hand-scale or below;
+- Medium = one Rig_Medium can roll it comfortably in front of the body;
+- Large = one Rig_Large or 2–3 Rig_Medium workers.
+
+Blender must measure and return a recommended radius range for Medium and Large rather than guessing one universal size.
+
+## Conversion look
+
+Conversion is a downstream runtime/world event, but Blender may provide visual reference:
+
+**Small cluster → squash/knead/compress → one marbled Medium ball**
+
+**Medium cluster → cooperative knead/compress → one marbled Large ball**
+
+The resulting ball should visibly preserve some mixed color identity instead of becoming a perfectly uniform material by default.
+
+---
+
+# 1C · Rolling, dancing and ball-riding vocabulary
+
+The normal work mode is still:
+
+**actor behind ball → two-hand push / steer / roll**
+
+But Fluff is also part of KFB's dance language.
+
+Optional style / celebration variants to audition or derive after the core work loop is proven:
+
+- **foot-driven roll** — actor walks/runs while propelling the ball with controlled foot taps;
+- **ball balance** — actor stands/balances on top of a rolling ball;
+- **ball dance** — short rhythmic dance on top of the ball while the ball rolls;
+- **ball surf** — stylized ride/celebration, not the default work locomotion;
+- **co-op large-ball push** — 2–3 Rig_Medium workers push one Large ball together.
+
+These are secondary variants, not reasons to delay the core pack.
+
+### Ownership rule
+
+If an actor stands/dances on a rolling ball:
+- Blender supplies pose/timing/contact reference;
+- runtime owns actual ball translation, rotation, gravity and trajectory.
+
+Do not bake world travel into the clip unless explicitly returned as a reference-only travel variant.
+
+### Safety / readability
+
+For ball-top actions:
+- keep feet visibly planted relative to the ball surface;
+- avoid head-first falls or deep crouches;
+- respect KayKit large-head proportions;
+- preserve readable silhouette from gameplay camera distance.
+
+
 # 2 · Owner boundaries
 
 ### Blender / Resident Atlas / Animation Lab owns
