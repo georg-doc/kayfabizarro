@@ -55,7 +55,7 @@ test('WB2 remains renderer/world owner and the KayKit entry bypasses legacy play
 });
 test('presentation and building owners are reused rather than rebuilt',()=>{
   assert.match(pres,/environment-family-p1\.mjs/);assert.match(pres,/environment-family-p2\.mjs/);
-  assert.match(buildings,/CITY\.buildCityLayer\(zone/);assert.match(buildings,/kfb-facade-rule-v1/);
+  assert.match(buildings,/loadRegistered\(record\)/);assert.match(buildings,/adaptRegistered\(model/);assert.doesNotMatch(buildings,/huerth-b1|osm-city-lab|elastic-grotesque/);
   assert.match(buildings,/plan\.worldId/);assert.doesNotMatch(buildings,/new THREE\.BoxGeometry|new THREE\.ShapeGeometry|WebGLRenderer|requestAnimationFrame/);
 });
 test('global bigger-picture reference is routed into the world recipe fixture',()=>{

@@ -57,5 +57,11 @@ export function createCandidateEvidence(A){
   }
   function release(){if(isolate)A.scene.remove(isolate);isolate=null;if(restore){restore.hidden.forEach(([o,v])=>o.visible=v);A.camera.position.copy(restore.camera);A.controls.target.copy(restore.target);A.controls.update();if(restore.play)A.setPlay(true);restore=null}document.body.dataset.candidateReady='WB2_READY'}
   document.body.dataset.candidateReady='WB2_READY';
-  return{sample,sourceAudit,inspect,release,manifest};
+  function frameWorld(worldId){
+    A.setPlay(false);const n=A.world.archipelago?.nodes.find(n=>n.id===worldId);if(!n)throw Error('world camera preset '+worldId);
+    const anchor=n.anchors.find(a=>a.locator.kind==='plaza')||n.anchors[0],p=anchor.position;
+    A.controls.target.set(p[0],p[1]+3,p[2]);A.camera.position.set(p[0]+30,p[1]+22,p[2]+36);A.controls.update();
+    document.body.dataset.candidateReady='WORLD_PRESET_READY';return{worldId,anchor:anchor.id,camera:A.camera.position.toArray(),target:A.controls.target.toArray()};
+  }
+  return{sample,sourceAudit,inspect,release,frameWorld,manifest};
 }

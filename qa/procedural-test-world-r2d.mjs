@@ -13,11 +13,14 @@ const readPlayer=()=>page.evaluate(()=>window.__wb2d.play.evidence());
 page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
 page.on('pageerror',e=>pageErrors.push(String(e)));
 await page.addInitScript(head=>window.__kfbBuild=head,process.env.GITHUB_SHA||'LOCAL_UNSEALED');
+page.setDefaultTimeout(120000);
 let state=null;const sourceInspection=[];
 try{
   await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
   await page.waitForFunction(()=>{const A=window.__wb2d,W=A?.world;return !!(A&&W&&W.id==='r2d4'&&A.terrain&&W.worldGraph?.nodes?.length===4&&A.play?.on);},null,{timeout:240000});
   await page.waitForFunction(()=>window.__wb2d?.candidateEvidence&&document.body.dataset.candidateReady==='WB2_READY',null,{timeout:120000});
+  // SwiftShader evidence uses half resolution; native hardware visuals are reviewed separately.
+  await page.evaluate(()=>window.__wb2d.renderer.setPixelRatio(.5));
   state=await page.evaluate(()=>{
     const A=window.__wb2d,W=A.world,resources=performance.getEntriesByType('resource').map(r=>r.name);
     const nodeIds=W.worldGraph.nodes.map(n=>n.id),connectionIds=W.worldGraph.connections.map(c=>c.id);
@@ -33,8 +36,9 @@ try{
       visible:{islandGroups,bridges},
       anchorIds,
       presentations:Object.keys(presentation),
-      buildings:Object.fromEntries(Object.entries(buildingReport).map(([k,v])=>[k,{facadeRule:v.facadeRule,placed:v.placed?.length||0,windows:v.stats?.windows||0,doors:v.stats?.doors||0}])),
+      buildings:Object.fromEntries(Object.entries(buildingReport).map(([k,v])=>[k,{sourceFamily:v.sourceFamily,placed:v.placed?.length||0,sourceStatus:v.sourceStatus}])),
       player:A.play?.evidence(),
+      evidenceRenderScale:.5,
       rendererCanvasCount:document.querySelectorAll('#wb2d canvas').length,
       loadedLegacy:{wi1Play:resources.some(x=>x.includes('/wi1-play.js')),travelGlobe:resources.some(x=>x.includes('travel')&&x.includes('globe')),cardStart:resources.some(x=>x.includes('card-start'))}
     };
@@ -50,8 +54,10 @@ try{
   if(state.visible.bridges.some(x=>!x))problems.push('bridge missing');
   if(state.presentations.length!==4)problems.push('presentation count '+state.presentations.length);
   if(Object.keys(state.buildings).length!==4)problems.push('building owner count '+Object.keys(state.buildings).length);
-  if(!Object.values(state.buildings).every(x=>x.facadeRule==='kfb-facade-rule-v1'))problems.push('facade owner mismatch');
-  if(!Object.values(state.buildings).some(x=>x.placed>0&&x.windows>0&&x.doors>0))problems.push('no source-proven building family');
+  if(!Object.values(state.buildings).every(x=>x.placed>0&&x.sourceFamily))problems.push('missing native registered building family');
+  const actualAudit=await page.evaluate(()=>window.__wb2d.candidateEvidence.sourceAudit());
+  if(actualAudit.banned.length)problems.push('visible-source firewall '+actualAudit.banned.join(', '));
+  await fs.writeFile(outDir+'/actual-loaded-source-audit.json',JSON.stringify(actualAudit,null,2));
   if(state.doc.format!=='kfb-worldbuilder-scene'||state.doc.version!==1)problems.push('scene owner changed');
   if(state.doc.world?.provider!=='kfb.r2d-worldbuilder-adapter/2')problems.push('provider '+state.doc.world?.provider);
   if(state.player?.actorProfileId!=='Mannequin_Medium'||state.player.mixerCount!==1)problems.push('native player missing');
@@ -69,9 +75,15 @@ try{
       await page.waitForTimeout(750);
       await page.screenshot({path:outDir+'/'+worldId+'.'+variant+'.png'});
       sourceInspection.push({...result,audit:await page.evaluate(()=>window.__wb2d.candidateEvidence.sourceAudit())});
+      await fs.writeFile(outDir+'/source-inspection.json',JSON.stringify(sourceInspection,null,2));
     }
   }
   await page.evaluate(()=>window.__wb2d.candidateEvidence.release());
+  for(const worldId of ['world.kfb-town','world.dystopia','world.utopia','world.protopia']){
+    await page.evaluate(id=>window.__wb2d.candidateEvidence.frameWorld(id),worldId);await page.waitForTimeout(750);
+    await page.screenshot({path:outDir+'/'+worldId+'.integrated.png'});
+  }
+  await page.evaluate(()=>{window.__wb2d.setPlay(true);document.body.dataset.candidateReady='WB2_READY'});
   await fs.writeFile(outDir+'/source-inspection.json',JSON.stringify(sourceInspection,null,2));
   await page.screenshot({path:outDir+'/player-town-idle.png'});
   await check('native bindings and one mixer',async()=>{

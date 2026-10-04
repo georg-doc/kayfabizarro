@@ -63,7 +63,7 @@ function singleWorld({id,Z,TC,ST,R2C,core}){
     patchDoc(doc){
       doc.id=W.docId;doc.terrain={seed:Z.seed,height:10,macroScale:3.2,detail:.55,tile:{...tile},sculpt:{version:1,strokes:[]}};doc.objects=[];
       doc.world={format:'kfb.r2d.world-ref/1',provider:PROVIDER,seed:Z.seed,biome:Z.biome,shape:Z.shape,source:zone.provenance,player:{position:[+spawn.x.toFixed(3),0,+spawn.z.toFixed(3)],heading:+spawn.heading.toFixed(5)}};
-      doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),buildings:'B1 sibling donors → wd1-city.js / kfb-facade-rule-v1'};return doc;
+      doc.sources.world={owner:'KFB WorldBuilder',sourceDonor:'R2D v0',terrain:'r2d-island-core.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),buildings:'Registry native building families → K2/v10'};return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=1800;camera.updateProjectionMatrix();controls.maxDistance=700;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=100;fog.far=650}},
     async mount({scene,renderer}){const mat=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,metalness:0});const road=ST.buildTrack(THREE,P.stream,mat);road.name='R2D Track Core road';road.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});group.add(road);buildings=await mountR2DBuildings({group,plan:P,field:F,renderer});scene.add(group)},
@@ -95,6 +95,7 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
   const W={
     id,zone,spawn,tile,log:[],docId:'kfb-mvp-archipelago-01',storageKey:'kfb-mvp-archipelago.01',
     SKY_MODES:[['day','Day']],skyMode:'day',landmarks:[],worldGraph:arch.worldGraph,
+    get archipelago(){return arch},
     get bridgeSupportSamples(){return arch.connections.map(c=>{const s=c.stream.samples,i=Math.floor(s.length/2);return {id:c.id,point:[...s[i].p],next:[...s[Math.min(i+1,s.length-1)].p]}})},
     get inkOn(){return false},get inkReport(){return null},get namesOn(){return false},
     get presentationReport(){return Object.fromEntries([...presentations].map(([k,v])=>[k,v.report]))},
@@ -111,7 +112,7 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
       doc.terrain={seed:3,height:10,macroScale:3.2,detail:.55,tile:{...tile},sculpt:{version:1,strokes:[]}};
       doc.objects=[];
       doc.world={format:'kfb.r2d.archipelago-ref/1',provider:PROVIDER,recipeSet:arch.recipeSet.id,source:zone.provenance,graph:arch.worldGraph,player:{anchor:'town.spawn.market',position:[spawn.x,0,spawn.z],heading:spawn.heading}};
-      doc.sources.world={owner:'KFB WorldBuilder / WB2',terrain:'r2d-island-core.v1.js + r2d-archipelago.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),buildings:'wd1-city.js / kfb-facade-rule-v1',goldenJourney:'GOLDEN_JOURNEY_MVP_2026-10-04.json'};
+      doc.sources.world={owner:'KFB WorldBuilder / WB2',terrain:'r2d-island-core.v1.js + r2d-archipelago.v1.js',track:'Track Core @ '+TRACK_PIN.slice(0,7),buildings:'Registry native RED / Industrial / Space Base / GREEN',goldenJourney:'GOLDEN_JOURNEY_MVP_2026-10-04.json'};
       return doc;
     },
     stage({camera,controls,fog}){camera.near=.1;camera.far=2400;camera.updateProjectionMatrix();controls.maxDistance=1100;controls.minDistance=.3;controls.maxPolarAngle=Math.PI;controls.minPolarAngle=0;if(fog){fog.near=260;fog.far=1150}},

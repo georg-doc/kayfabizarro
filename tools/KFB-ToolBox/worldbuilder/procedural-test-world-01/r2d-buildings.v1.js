@@ -1,170 +1,34 @@
-/* KFB Procedural Test World · R2D building-family adapter v1
- *
- * PURPOSE
- * Reuse the already-proven WorldBuilder building/facade owner on R2D building pads.
- *
- * This module does NOT generate a new building grammar.
- * It:
- *  1. reads the exact B1 sibling donor footprints already proven in the WorldBuilder fixture,
- *  2. translates / uniformly shrinks them only when required to fit an R2D pad,
- *  3. calls the existing wd1-city.js buildCityLayer() + kfb-facade-rule-v1,
- *  4. exposes the existing support records as logical building/collision facts.
- */
-export const SCHEMA='kfb.r2d-building-family-adapter/1';
-export const SOURCE=Object.freeze({
-  fixture:'fixtures/huerth-b1-siblings-v0.json',
-  fixtureBlob:'1452f44920239e870091b1803c0d2bd183679881',
-  cityOwner:'wd1-city.js',
-  cityOwnerBlob:'c11b6f7156eaee808fe4689ee406f9b3480b6f0b',
-  facadeRule:'kfb-facade-rule-v1',
-  b1Donors:[
-    'b1/compact-simple/371401529-to-371401477',
-    'b1/ordinary-notched/371401481-to-371401497',
-    'b1/large-complex/371401488-to-371401495'
-  ]
-});
+/* Source-clean WB2 building adapter. CONTENT comes only from existing Registry records.
+ * Seam: native meshes → authored island pads → existing WB2 ground/collision reader.
+ * Legacy fixture/data/presenter are never imported or fetched. */
+import * as THREE from 'three';
+import {manifest,loadRegistered,adaptRegistered} from './wb2-source-evidence.v1.js';
+export const SCHEMA='kfb.r2d-building-family-adapter/2';
+export const SOURCE=Object.freeze({owner:'Asset Librarian / Registry',manifest:'VISIBLE_SOURCE_MANIFEST.json',presentation:'K2 / clay-material.v10.js'});
 
-const ROOT=new URL('../../../../',import.meta.url).href;
-const FIXTURE=new URL('../../../../fixtures/huerth-b1-siblings-v0.json',import.meta.url).href;
-const CITY_URL=new URL('../../../../wd1-city.js',import.meta.url).href;
-const PIN='c049cae386e1';
-const CDN='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@'+PIN+'/';
-const CARTOON=CDN+'tools/osm-city-lab/src/style/cartoon-city.js';
-const STYLE=CDN+'tools/osm-city-lab/styles/kfb-city-v0.json';
-const ELASTIC='https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@0c59e92d9d8688f5a88cd309ae8891dcd174c2fc/tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs';
-
-async function imp(url){
-  try{return await import(url)}
-  catch(e1){
-    const res=await fetch(url);if(!res.ok)throw e1;
-    const txt=await res.text(),base=url.slice(0,url.lastIndexOf('/')+1);
-    const fixed=txt.replace(/(from\s+|import\s*\()(['"])(\.\.?\/[^'"]+)\2/g,(m,a,q,p)=>a+q+new URL(p,base).href+q);
-    return import(URL.createObjectURL(new Blob([fixed],{type:'text/javascript'})));
+export async function mountR2DBuildings({group,plan,field}){
+  const worldId=plan.worldId||'world.kfb-town',records=manifest.families[worldId];
+  if(!records?.length)throw Error('Missing registered visible family: '+worldId);
+  const root=new THREE.Group();root.name='Registered building family · '+worldId;group.add(root);
+  const centre=plan.plazas.find(p=>p.kind==='big')||{x:plan.c0[0],z:plan.c0[1]},placed=[];
+  for(let i=0;i<records.length;i++){
+    const record=records[i],model=await loadRegistered(record);
+    const sourceBox=new THREE.Box3().setFromObject(model),nativeSize=sourceBox.getSize(new THREE.Vector3());
+    // Scale is authored world composition, never a replacement mesh/palette. Preserve relative anatomy.
+    const pad=plan.pads[i]||null,a=(i-records.length*.15)*Math.PI*2/Math.max(4,records.length),ring=11;
+    const x=pad?pad.x:centre.x+Math.cos(a)*ring,z=pad?pad.z:centre.z+Math.sin(a)*ring;
+    const radius=Math.hypot(nativeSize.x,nativeSize.z)/2;
+    const scale=Math.min(4,pad?pad.r*.75/Math.max(radius,.01):4/Math.max(radius,.01));
+    model.scale.setScalar(scale);model.rotation.y=Math.atan2(centre.x-x,centre.z-z);
+    model.updateMatrixWorld(true);const b=new THREE.Box3().setFromObject(model);
+    const offsets=[[0,0],[b.min.x,b.min.z],[b.max.x,b.min.z],[b.min.x,b.max.z],[b.max.x,b.max.z]];
+    const heights=offsets.map(([dx,dz])=>field.heightAt(x+dx,z+dz)),base=Math.max(...heights);
+    model.position.set(x,base-b.min.y,z);await adaptRegistered(model,plan.seed*101+i);
+    model.name=worldId+' · '+record.assetId.split('/').pop();model.userData.sourceRecord=record;model.userData.worldId=worldId;
+    root.add(model);model.updateMatrixWorld(true);const bounds=new THREE.Box3().setFromObject(model);
+    placed.push({id:worldId+'/building/'+i,assetId:record.assetId,source:record.source,packId:record.packId,fitScale:scale,x,z,height:bounds.max.y-base,base,top:bounds.max.y,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()},nativeSize:nativeSize.toArray(),footprintSpan:Math.max(...heights)-Math.min(...heights)});
   }
-}
-
-const meanPoint=fp=>{
-  const pts=fp.map(([x,z])=>({x:+x,z:+z}));
-  const c=pts.reduce((a,p)=>({x:a.x+p.x,z:a.z+p.z}),{x:0,z:0});
-  c.x/=pts.length;c.z/=pts.length;
-  return{pts,c};
-};
-const radiusOf=(pts,c)=>Math.max(...pts.map(p=>Math.hypot(p.x-c.x,p.z-c.z)));
-
-function transformDonor(rec,pad,index,prefix='r2d'){
-  const {pts,c}=meanPoint(rec.fp),rad=radiusOf(pts,c);
-  if(!(rad>0))throw new Error('R2D building donor has zero footprint radius: '+rec.id);
-  // Preserve source scale when it already fits. Otherwise uniformly shrink just enough to fit the authored R2D pad.
-  const scale=Math.min(1,pad.r/rad);
-  const fp=pts.map(p=>({x:pad.x+(p.x-c.x)*scale,z:pad.z+(p.z-c.z)*scale}));
-  const id=prefix+'/b1/'+index+'/'+rec.b1.lane;
-  return{
-    id,h:+(rec.h*scale).toFixed(4),hs:'r2d-pad-from-'+rec.hs,kind:rec.kind,name:rec.name,
-    fp,roof:rec.roof,mc:rec.mc,minH:+((rec.minH||0)*scale).toFixed(4),
-    b1:{...rec.b1,sourceId:rec.id,fitScale:+scale.toFixed(5),pad:{x:pad.x,z:pad.z,r:pad.r,h:pad.h}}
-  };
-}
-
-function pip(x,z,poly){
-  let inside=false;
-  for(let i=0,j=poly.length-1;i<poly.length;j=i++){
-    const a=poly[i],b=poly[j];
-    if(((a.z>z)!==(b.z>z))&&(x<(b.x-a.x)*(z-a.z)/(b.z-a.z)+a.x))inside=!inside;
-  }
-  return inside;
-}
-
-async function loadB1Donors(){
-  const res=await fetch(FIXTURE);if(!res.ok)throw new Error('B1 fixture '+res.status);
-  const fixture=await res.json();
-  const byId=new Map((fixture.buildings||[]).map(b=>[b.id,b]));
-  const list=SOURCE.b1Donors.map(id=>byId.get(id));
-  const missing=SOURCE.b1Donors.filter((id,i)=>!list[i]);
-  if(missing.length)throw new Error('missing exact B1 donors: '+missing.join(', '));
-  return list;
-}
-
-function makeZone(plan,donors){
-  const prefix=plan.worldId||'r2d';
-  const buildings=(plan.pads||[]).slice(0,donors.length).map((pad,i)=>transformDonor(donors[i],pad,i,prefix));
-  const maxR=Math.max(...plan.edgeR)+10;
-  const roadLine=(plan.poly||[]).map(([x,z])=>({x,z}));
-  return{
-    id:(plan.worldId||'r2d')+'/b1-building-pads',
-    status:'SOURCE_DERIVED_B1_FAMILY_ON_R2D_PADS',
-    rectW:{minX:plan.c0[0]-maxR,maxX:plan.c0[0]+maxR,minZ:plan.c0[1]-maxR,maxZ:plan.c0[1]+maxR},
-    counts:{buildings:buildings.length,roads:roadLine.length?1:0,landuse:0},
-    buildings,
-    roads:roadLine.length?[{id:'r2d-track-core-facade-context',cls:'residential',w:6,drive:true,name:'R2D Track Core',bridge:null,tunnel:null,layer:0,area:false,line:roadLine}]:[],
-    landuse:[],water:[],waterLines:[],railways:[],landmark:null,heroes:null,hbf:null,
-    conflicts:new Set(),trackCorridorConflicts:[]
-  };
-}
-
-function stripNonBuildingPresentation(city){
-  let n=0;
-  for(const o of city.flatParts||[]){
-    if(!o)continue;
-    if(o.parent===city.group){city.group.remove(o);n++;}
-    // Release the duplicate 4k ground-map resources after the existing owner has built the building family.
-    if(o===city.plate){
-      try{o.material?.map?.dispose?.()}catch{}
-      try{o.material?.dispose?.()}catch{}
-      try{o.geometry?.dispose?.()}catch{}
-    }
-  }
-  return n;
-}
-
-export async function mountR2DBuildings({group,plan,field,renderer=null}){
-  const [donors,CITY,CC,EG,style]=await Promise.all([
-    loadB1Donors(),
-    import(CITY_URL),
-    imp(CARTOON),
-    imp(ELASTIC),
-    fetch(STYLE).then(r=>{if(!r.ok)throw new Error('city style '+r.status);return r.json()})
-  ]);
-  if(CITY.FACADE_RULE?.id!==SOURCE.facadeRule)throw new Error('unexpected facade owner '+CITY.FACADE_RULE?.id);
-
-  const zone=makeZone(plan,donors);
-  const city=CITY.buildCityLayer(zone,{mode:'elastic',style,CC,EG,ghosts:false,renderer,facade:'rule-v1'});
-  const Ly=CITY.layersFrom(style);
-  city.group.position.y=-Ly.plate;
-  const stripped=stripNonBuildingPresentation(city);
-  const support=city.support?.apply?.((x,z)=>field.heightAt(x,z))||null;
-  city.group.name='R2D B1 building family · '+(plan.worldId||'r2d')+' · '+CITY.FACADE_RULE.id;
-  group.add(city.group);
-
-  const placed=zone.buildings.map(b=>{
-    const base=city.support?.offsetOf?.(b.id)||0;
-    return{
-      id:b.id,donorId:b.b1.sourceId,lane:b.b1.lane,fitScale:b.b1.fitScale,
-      x:b.b1.pad.x,z:b.b1.pad.z,padRadius:b.b1.pad.r,height:b.h,base,top:base+b.h
-    };
-  });
-  const at=(x,z)=>{
-    const b=zone.buildings.find(q=>pip(x,z,q.fp));
-    if(!b)return null;
-    const base=city.support?.offsetOf?.(b.id)||0;
-    return{id:b.id,donorId:b.b1.sourceId,lane:b.b1.lane,base,height:b.h,top:base+b.h,fitScale:b.b1.fitScale};
-  };
-  const report={
-    schema:SCHEMA,
-    owner:'wd1-city.js/buildCityLayer',
-    facadeRule:CITY.FACADE_RULE.id,
-    fixtureBlob:SOURCE.fixtureBlob,
-    availableDonors:[...SOURCE.b1Donors],
-    placed,
-    unplacedDonors:SOURCE.b1Donors.filter(id=>!placed.some(p=>p.donorId===id)),
-    support,
-    strippedFlatParts:stripped,
-    stats:{
-      buildings:city.stats?.buildings||0,
-      windows:city.stats?.facade?.windows||0,
-      doors:city.stats?.facade?.doors||0,
-      bare:city.stats?.facade?.bare||0,
-      wallNormalsOnly:city.stats?.wallNormalsOnly||0
-    }
-  };
-  return{zone,city,at,report};
+  const at=(x,z)=>placed.find(p=>x>=p.bounds.min[0]&&x<=p.bounds.max[0]&&z>=p.bounds.min[2]&&z<=p.bounds.max[2])||null;
+  const report={schema:SCHEMA,owner:SOURCE.owner,presentation:SOURCE.presentation,worldId,sourceFamily:records[0].packId,placed,support:{moved:placed.length,maxOffsetM:Math.max(...placed.map(p=>Math.abs(p.base))),maxFootprintSpanM:Math.max(...placed.map(p=>p.footprintSpan))},stats:{buildings:placed.length},sourceStatus:'NATIVE_MESHES_SOURCE_PROVEN_ADAPTED_REVIEW_PENDING'};
+  return{root,city:null,at,report,zone:{buildings:placed}};
 }

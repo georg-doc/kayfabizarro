@@ -948,7 +948,7 @@ function refreshWorldFacts(){
     if(R.graft)h+='<br>graft · host head hidden '+R.graft.hiddenHostHeadTris+' tris + '+R.graft.hiddenExtras+' meshes · face: eyeRig '+R.face.eyeRig+' · mouth '+R.face.mouth+' · donor eyes stripped '+R.face.donorEyesStripped;
   }
   {const cs=WORLD.city&&WORLD.city.stats,sr=WORLD.supportReport;
-    if(cs)h+='<br><br><b>OSM presenter</b> (global rule) · '+cs.facade.rule+' · '+cs.facade.windows+' windows · '+cs.facade.doors+' doors · '+cs.facade.bare+' bare<br>roofs: orientEG · FrontSide / shadowSide Back · flat-roof routed '+cs.flatRoofRouted+' · wall normals from walls only '+(cs.wallNormalsOnly||0)+' · sunk wall feet '+(cs.sunkBases||0);
+    if(cs&&!HOST_PROPS.kaykitPlayer)h+='<br><br><b>OSM presenter</b> (global rule) · '+cs.facade.rule+' · '+cs.facade.windows+' windows · '+cs.facade.doors+' doors · '+cs.facade.bare+' bare<br>roofs: orientEG · FrontSide / shadowSide Back · flat-roof routed '+cs.flatRoofRouted+' · wall normals from walls only '+(cs.wallNormalsOnly||0)+' · sunk wall feet '+(cs.sunkBases||0);
     if(sr)h+='<br>host support · '+sr.moved+' buildings moved · max offset '+sr.maxOffsetM+' m · max footprint span '+sr.maxFootprintSpanM+' m · no plates';
     if(WORLD.landmarks.length)h+='<br>landmarks (protected) · '+WORLD.landmarks.map(l=>l.id+' Δ'+l.offsetM+' m · OSM base '+l.base).join(' · ');}
   E('wiZone').innerHTML=h;
