@@ -1,0 +1,58 @@
+{
+  "schema": "kfb.mvp-visible-source-firewall/1",
+  "date": "2026-10-04",
+  "status": "BINDING_CURRENT_OVERRIDE",
+  "appliesTo": [
+    "PR #348",
+    "WB2 MVP",
+    "Golden Journey",
+    "One-Shot integrated candidate"
+  ],
+  "principle": "A donor may enter the product only in the dimensions for which it was accepted.",
+  "donorScopeClasses": [
+    "MECHANISM",
+    "PRESENTATION",
+    "CONTENT",
+    "DATA"
+  ],
+  "currentHumanResult": {
+    "visualEnvironmentFoundation": "FAIL",
+    "reason": "Legacy Hürth/OSM-derived visible building/presentation content is active in the current WB2/WSA candidate."
+  },
+  "bannedVisibleByDefault": [
+    {
+      "pattern": "fixtures/huerth-b1-siblings-v0.json",
+      "reason": "technical Hürth/OSM fixture; not approved KFB Town/world content"
+    },
+    {
+      "pattern": "tools/osm-city-lab/",
+      "reason": "legacy OSM presentation family; may be used only for explicitly selected OSM use cases"
+    },
+    {
+      "pattern": "elastic-grotesque-clay-huerth01",
+      "reason": "Hürth visual donor; mechanism evidence does not authorize current MVP content"
+    }
+  ],
+  "allowedTechnicalReuse": [
+    "building support/contact logic",
+    "facade/window/door mechanism when decoupled from Hürth visible data",
+    "tests/measurement/provenance"
+  ],
+  "requiredVisibleProvenance": [
+    "WORLD_RECIPE explicit source family",
+    "Asset Librarian / Registry source",
+    "accepted KFB/KayKit/Tiny Treats source package",
+    "explicitly approved procedural grammar"
+  ],
+  "requiredStatuses": [
+    "TOPOLOGY_PASS",
+    "OWNER_PASS",
+    "BROWSER_RUNTIME_PASS",
+    "VISUAL_FOUNDATION_UNREVIEWED|HUMAN_VISUAL_PASS|HUMAN_VISUAL_FAIL"
+  ],
+  "recovery": {
+    "preserveCurrentWsaRun": true,
+    "nextMode": "ONE_INTEGRATED_RECOVERY_COMPLETION_PASS",
+    "forbidMicroSliceCascade": true
+  }
+}
