@@ -28,6 +28,29 @@ If this is a replacement/fresh chat after context loss, use `RECOVERY_PATH.md` r
 
 
 
+
+## 2026-10-04 · PR #348 RETURNED · CONTINUOUS ONE-SHOT + EXTERNAL CRITIC
+
+The WSA run has returned after the browser-green Player checkpoint instead of continuing through the full ONE_SHOT. Treat that Player work as **KEEP**, not as a new external gate.
+
+Current PR #348 branch-local continuation authority:
+- `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_RECOVERY_COMPLETION_BRIEF_2026-10-04.md`
+- `tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/ONE_SHOT_STATUS.json`
+
+Binding independent critic contract:
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`
+
+Current semantics:
+- topology / owner / Track / Golden anchors = PASS / KEEP;
+- Player/Motion = browser PASS / KEEP;
+- visible Hürth/OSM environment foundation = HUMAN VISUAL FAIL;
+- Residents / Drive / full Golden Journey / persistence / World Studio Site / final Stage = incomplete;
+- internal checkpoints must persist/verify and then **continue automatically**;
+- final review route reserved: `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` · NOT DEPLOYED;
+- Live unchanged.
+
+Do not route another Player, Resident, Drive, Site or Critic micro-slice as the whole assignment. Resume the same PR under the completion brief until the integrated candidate is ready or a real stop condition is hit.
+
 ## 2026-10-04 · CRITICAL CURRENT VISUAL RECOVERY · PR #348
 
 Georg's current WSA screenshot is a **HUMAN VISUAL FAIL**: legacy Hürth/OSM-derived building/presentation content is visibly active in the current WB2 candidate.
