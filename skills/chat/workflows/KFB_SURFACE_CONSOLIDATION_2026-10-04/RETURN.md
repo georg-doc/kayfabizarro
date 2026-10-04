@@ -85,3 +85,24 @@ Du:
 
 Danach:
 - Routine-Updates laufen ohne Work über Control + deterministischen Sync; technische Arbeit beginnt nur bei einem echten Engineering-Defekt.
+
+## 2026-10-04 · CURRENT UPDATE · EyeRig TODO / Fluff state
+
+Routine data update only; no UI/business-logic change.
+
+CURRENT board:
+- revision `2026-10-04.3`;
+- EyeRig profile recovery added as P1 `RECOVER FIRST`;
+- 15 Medium recovery/profile-tune identities listed;
+- Large remaining review/tune + Legacy human-review/Skull status listed;
+- EyeRig v6 recorded as integrated character presentation default;
+- Fluff corrected from Blender source audition to runtime consumer proof after Part 3.
+
+Production Control CURRENT record:
+`2ebf08e1-f8d1-4d50-b4f7-c0b651589046`.
+
+EyeRig durable TODO:
+`tools/KFB-ToolBox/eye-rig-batch/docs/EYERIG_CURRENT_TODO_2026-10-04.md`.
+
+Static Hub board publication still follows the existing low-cost `PUBLISH_ONLY` runbook. This chat changed only the deterministic data source and Control CURRENT record; it does not claim a new Site deployment.
+
