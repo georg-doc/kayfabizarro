@@ -1,3 +1,16 @@
+## 2026-10-04 · Combat Card-Hex Ascent provider benchmark prepared
+
+- Prepared a planning-only provider-neutral Combat benchmark in `georg-doc/KFB-Combat-Arena` Draft PR #18.
+- Planning branch `planning/card-hex-combat-ascent-benchmark-2026-10-04` @ `c75c943d41c3a691821df4855253423259302ce2`, stacked exactly on Combat PR #17 @ `e391536fb8307a11ccd09dd6f0b04a7e2110542d`.
+- Product fixture: real Card combat stages + three source-proven KayKit Hex families + Babel Chill&Fun traversal MECHANISM + S17 ranged-duel/Blender source + current Combat VFX/SFX/reward ownership.
+- Machine-readable `BENCHMARK_CONTRACT.json` freezes common source/owner/provider/scoring rules.
+- Provider lanes planned: Sol/Work, Astra/Work, Claude Coworker L5; Claude Design L5 separately as design-authoring benchmark.
+- No provider implementation starts until one common Blender Duel state is frozen.
+- Game Development Studio CLI was unavailable and recorded once; repository-native evidence is the valid fallback.
+- Reserved future comparison route: `https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-benchmark/` · NOT DEPLOYED.
+- Root router, Combat node and KFB Hub source now point to PR #18. Active WB2 PR #348 remains untouched by this planning lane.
+- No runtime implementation, merge, public deployment or Live promotion.
+
 ## 2026-10-04 · Playable MVP continuous One-Shot + independent Critic
 
 - Added binding `ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md`: deterministic screenshot/runtime evidence, independent no-code Critic, persisted scores/open issues, source-isolation proof, ranked repair loop and Whole-Game Critic.
