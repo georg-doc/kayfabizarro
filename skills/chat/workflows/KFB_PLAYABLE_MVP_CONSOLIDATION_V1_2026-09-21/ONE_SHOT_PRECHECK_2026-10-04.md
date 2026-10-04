@@ -39,50 +39,55 @@ GitHub durable architecture:
 - `WSA_RESIDENT_ATLAS_MVP_INTAKE_2026-10-04.md`
 - `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md`
 
-Production Control contains the full additive MVP ledger through v2.0.
+Production Control contains the full additive MVP ledger through v2.3; the world PASS checkpoint follows this source update.
 
 ## B · HARD pre-One-Shot gates
 
-### P0-1 · WORLD-CONVERGENCE-BASE-01
+### P0-1 · WORLD-CONVERGENCE-BASE-01 · PASS
 
-Current facts:
-- main: current planning/source line;
-- World candidate PR #332 head: `e58d0ea4b97debbf8d0053d710612033b7e52908`;
-- latest browser-proven WB2 runtime head: `a18846cf8128e3e1facb0b51be0e6aff873d1244`;
-- comparing #332 head to current main shows a real divergence:
-  - main side ahead by 54 commits at the 2026-10-04 recheck;
-  - #332 side carries 17 commits not in main;
-  - common merge base `74f7a690fbec88cf98ce0936f31b72ad3f1148f5`;
-  - comparison spans hundreds of changed files, including new audio/source work.
+Current world candidate:
+- Draft PR **#348**;
+- branch `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`;
+- fresh base: current main `9a1f43b628126bb633ed95c99310288f0a5f1a7c`;
+- PR #332 retained as donor/history only.
 
-Decision:
-**Do not use PR #332 itself as the final One-Shot branch.**
+Convergence evidence:
+- clean current-main source gate: **9/9 PASS** · run `37165910051` / job `111328623269`;
+- Chromium/WebGL: **PASS** · run `37165909990` / job `111328623037`;
+- artifact `11289562726` · `sha256:d80721a3ab9f1856c3bbe4d3c79257747eef69a057fd5b29b265720782e5777d`;
+- Resource Registry: **PASS** · run `37165909954` / job `111328623053`.
 
-Required preflight:
-- start one clean convergence branch from current main;
-- re-home the proven WB2/R2D world owner from #332 source-first;
-- preserve exact world/support facts and tests;
-- no Player/Drive/Residents yet;
-- run WB2 source/browser regression;
-- leave one current Recovery/Return.
+Result:
+the proven WB2/R2D owner is now re-homed on a fresh current-main line.
+No stale PR #332 Hub/router/Motion state was imported.
 
-This becomes the actual One-Shot receiving base.
+### P0-2 · WORLD-MULTI-ISLAND-CORRIDOR-01 · PASS
 
-### P0-2 · WORLD-MULTI-ISLAND-CORRIDOR-01
+Same owner/PR #348 now proves:
+- **4 stable world nodes**: Town, Dystopia, Utopia, Protopia;
+- **3 real Track-Core `ROAD_BRIDGE` connections**;
+- stable Golden-Journey world/anchor IDs;
+- data-driven World Recipe set `kfb.mvp.archipelago.01`;
+- Dystopia → `ignore_dystopia` with first seed `ignore_dystopia:1 · The Doomsday Clock`;
+- Utopia → `forget_utopia` with first seed `forget_utopia:1 · The Glossy Horizon`;
+- Protopia → `embrace_protopia` with first seed `embrace_protopia:1 · The Open Notebook`;
+- Town remains historical/current hub, not a fourth future deck;
+- `PULL, DON'T GATE`: all islands remain physically explorable; later state gates Card/reward handoffs instead of island access.
 
-After clean convergence:
-- prove Town + three connected satellite destination nodes as world data;
-- three real Track-Core ROAD_BRIDGE connections;
-- stable world IDs / anchor IDs;
-- four World Recipe fixtures;
-- Utopia/Dystopia/Protopia recipes resolve canonical `forget_utopia` / `ignore_dystopia` / `embrace_protopia` deck IDs;
-- one small reviewed Card seed set per satellite;
-- derived biome/Resident/media tags remain traceable to canonical Card refs;
-- validation report;
-- no Player/Drive yet.
+Corridor evidence on tested implementation head `0841b89ae8274118687e946318458201b402c5b5`:
+- source: **9/9 PASS** · run `37166355940` / job `111329943298`;
+- Chromium/WebGL: **PASS** · run `37166356027` / job `111329943523`;
+- artifact `11289583486` · `sha256:c6a3da665ad0b113ac23a50c263fd36c7a3dc1478ef37f2f37a3508e013ad472`;
+- Resource Registry: **PASS** · run `37166355944` / job `111329943425`.
 
-Why before One-Shot:
-The final integrator should attach gameplay to a proven world graph rather than debug world topology and player integration simultaneously.
+Current PR handoff head `08f8561ccfdb9ee0f7fd0d26a60eb54ee6865532` was independently revalidated:
+- source run `37166520876`: **PASS**;
+- Chromium/WebGL run `37166520872`: **PASS**;
+- Resource Registry run `37166520871`: **PASS**;
+- final browser artifact `11289449155` · `sha256:519b412eb8f7db865f69079d38ded586e4e92affc092e34ad17c2994ef5a104d`.
+
+No Player, Drive, Motion or Residents are mounted in this world gate.
+The world is now ready for the current native Motion attachment sequence.
 
 ### P0-3 · KAYKIT-NATIVE-BLENDER-BASELINE-01 / Motion #344
 
@@ -520,14 +525,14 @@ One fresh boot should prove:
 
 Do **not** start the full One-Shot yet.
 
-First close, in this order:
+World preflight is closed.
 
-1. WORLD-CONVERGENCE-BASE-01
-2. WORLD-MULTI-ISLAND-CORRIDOR-01
-3. KAYKIT-NATIVE-BLENDER-BASELINE-01
-4. WSA-RES-SET-01
-5. SITE-STAGE-01 + persistence backing choice
-6. LEAN-MEMORY-SITE-PERSISTENCE-01
+Next close, in this order:
+
+1. KAYKIT-NATIVE-BLENDER-BASELINE-01
+2. WSA-RES-SET-01
+3. SITE-STAGE-01 + persistence backing choice
+4. LEAN-MEMORY-SITE-PERSISTENCE-01
 
 In parallel / cheap:
 - KFB_JUKEBOX_CATALOG_01
