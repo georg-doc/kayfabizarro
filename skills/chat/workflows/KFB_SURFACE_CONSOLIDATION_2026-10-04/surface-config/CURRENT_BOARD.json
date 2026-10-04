@@ -1,29 +1,131 @@
 {
   "schema": "kfb.surface-board/1",
-  "revision": "2026-10-04.2",
-  "updatedAt": "2026-10-04T23:00:00+02:00",
+  "revision": "2026-10-04.3",
+  "updatedAt": "2026-10-04",
   "owner": "KFB Production Control",
   "syncMode": "DETERMINISTIC_SYNC",
-  "status": {"label":"CURRENT · zwei offene P0-Gates","note":"Control-Owner und deterministischer Hub-Sync sind verifiziert; der Teststand wurde vollständig zurückgesetzt."},
-  "surfaces": {"hub":"https://kfb-production-hub.frizzlebob.chatgpt.site","control":"https://kfb-production-control.frizzlebob.chatgpt.site/","toolbox":"https://kfb-toolbox.frizzlebob.chatgpt.site"},
+  "status": {
+    "label": "CURRENT · zwei offene P0-Gates · EyeRig Recovery/TODO ergänzt",
+    "note": "Control/Hub bleiben ein System. EyeRig ist ab jetzt integrierter Character-Default; der neuere Medium-Approval-Stand muss zuerst aus dem alten Stage-Origin recovered werden."
+  },
+  "surfaces": {
+    "hub": "https://kfb-production-hub.frizzlebob.chatgpt.site",
+    "control": "https://kfb-production-control.frizzlebob.chatgpt.site/",
+    "toolbox": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+  },
   "p0": [
-    {"id":"world-studio-freeplay","title":"World Studio · four-island freeplay","summary":"Town, Dystopia, Utopia und Protopia frei spielen. Life Trees, Joyride, Bauabstände, Paletten sowie Build/Edit/Save prüfen.","badge":"P0 · Freeplay","action":"World Studio öffnen","url":"https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/"},
-    {"id":"combat-s3-freeplay","title":"Card-Hex Combat · S3 freeplay","summary":"Von Card 0 bis Result spielen, R drücken und einen zweiten Run starten. Combat-Feel, Rifle-Lane und Boss-Skalierung prüfen.","badge":"P0 · Freeplay","action":"Combat S3 öffnen","url":"https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/"}
+    {
+      "id": "world-studio-freeplay",
+      "title": "World Studio · four-island freeplay",
+      "summary": "Town, Dystopia, Utopia und Protopia frei spielen. Life Trees, Joyride, Bauabstände, Paletten sowie Build/Edit/Save prüfen.",
+      "badge": "P0 · Freeplay",
+      "action": "World Studio öffnen",
+      "url": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site/"
+    },
+    {
+      "id": "combat-s3-freeplay",
+      "title": "Card-Hex Combat · S3 freeplay",
+      "summary": "Von Card 0 bis Result spielen, R drücken und einen zweiten Run starten. Combat-Feel, Rifle-Lane und Boss-Skalierung prüfen.",
+      "badge": "P0 · Freeplay",
+      "action": "Combat S3 öffnen",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-coworker/"
+    }
   ],
   "p1": [
-    {"id":"environment-atlas","title":"Environment Atlas","summary":"Echte fehlende Projektquellen wiederherstellen; danach als eigene Site veröffentlichen.","badge":"P1 · Source recovery"},
-    {"id":"asset-librarian","title":"Asset Librarian → placement seam","summary":"Phase A prüfen; danach genau einen Saved-Set- und WorldBuilder-Placement-Seam bauen.","badge":"P1 · Review","action":"Librarian öffnen","url":"https://kfb-asset-librarian.frizzlebob.chatgpt.site/"},
-    {"id":"frankenstein","title":"FrankenStein composite roundtrip","summary":"Rig_Medium, Rig_Large und Pencil mit bestehenden Ownern durch Save/Export/Import/Reload führen.","badge":"P1 · Integration","action":"Composer öffnen","url":"https://kfb-frankenstein-composer.frizzlebob.chatgpt.site"},
-    {"id":"fluff","title":"Fluff Worker source audition","summary":"Bestehende Blender-Clips gegen Robot One/Two und Skeleton Minion prüfen; echte Lücken erst danach benennen.","badge":"P1 · Audition"}
+    {
+      "id": "environment-atlas",
+      "title": "Environment Atlas",
+      "summary": "Echte fehlende Projektquellen wiederherstellen; danach als eigene Site veröffentlichen.",
+      "badge": "P1 · Source recovery"
+    },
+    {
+      "id": "asset-librarian",
+      "title": "Asset Librarian → placement seam",
+      "summary": "Phase A prüfen; danach genau einen Saved-Set- und WorldBuilder-Placement-Seam bauen.",
+      "badge": "P1 · Review",
+      "action": "Librarian öffnen",
+      "url": "https://kfb-asset-librarian.frizzlebob.chatgpt.site/"
+    },
+    {
+      "id": "frankenstein",
+      "title": "FrankenStein composite roundtrip",
+      "summary": "Rig_Medium, Rig_Large und Pencil mit bestehenden Ownern durch Save/Export/Import/Reload führen.",
+      "badge": "P1 · Integration",
+      "action": "Composer öffnen",
+      "url": "https://kfb-frankenstein-composer.frizzlebob.chatgpt.site"
+    },
+    {
+      "id": "fluff",
+      "title": "Fluff Worker · runtime consumer proof",
+      "summary": "Blender Part 3 ist fertig: Medium 17 / Large 13 Clips, Growing Ball, Coop Push, Ball-Rides/Play und 6→1 Merge. Nächster Schritt ist nur noch der reale Runtime Consumer Proof; Blender nicht erneut öffnen ohne Runtime-Defekt.",
+      "badge": "P1 · Runtime proof",
+      "action": "PR #356 öffnen",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/356"
+    },
+    {
+      "id": "eye-rig-recovery",
+      "title": "EyeRig · neuesten Georg-Profilstand recovern",
+      "summary": "Unified Site funktioniert, aber der letzte haltbare Medium-Export hat nur 40/55 Profile und ist älter als Georgs spätere Stage-Session. Zuerst im alten Stage-Origin 'Export Batch' ausführen; erst danach Approval-Status neu klassifizieren.",
+      "badge": "P1 · RECOVER FIRST",
+      "action": "Alten EyeRig Stage öffnen",
+      "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/"
+    },
+    {
+      "id": "eye-rig-medium-todo",
+      "title": "EyeRig TODO · Medium · 15 Recovery/Profile-Tune Fälle",
+      "summary": "Im haltbaren 40er-Export fehlen: Orc Raider · Paladin · Paladin Helmet · Marksman · Hiker · Robot One · Robot Two · Tiefling · Superhero · Monster Costume Alt · Werewolf Man · Plant Warrior · Helper A · Helper B · Space Ranger. Nach Recovery zuerst Robot One/Two prüfen.",
+      "badge": "P1 · 15 Medium",
+      "action": "EyeRig Workbench öffnen",
+      "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"
+    },
+    {
+      "id": "eye-rig-large-legacy-todo",
+      "title": "EyeRig TODO · Large + Legacy",
+      "summary": "Large dauerhaft approved: Monstrosity, Black Knight, Demon Lord, Orc Brute. Noch Review/Tune: FrostGolem · 4GTN · 4GTN Forgotten · Clanker. Legacy: 17/17 Kandidaten brauchen Human Review; Skull bleibt HUMAN_REQUIRED.",
+      "badge": "P1 · Large/Legacy",
+      "action": "EyeRig Workbench öffnen",
+      "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"
+    }
   ],
   "parallel": [
-    {"id":"quote-pool","title":"Quote Pool","summary":"Recherche und Datenarbeit bleiben im normalen Web Chat.","badge":"Web Chat"},
-    {"id":"audio","title":"Audio","summary":"Nur consumer-driven erweitern; kein eigenständiger Ausbau ohne Abnehmer.","badge":"Consumer-driven","action":"Audio öffnen","url":"https://kfb-audio.frizzlebob.chatgpt.site"},
-    {"id":"resident-eyerig","title":"Resident / EyeRig","summary":"Varianten und Cleanup nur bei echtem Consumer-Bedarf.","badge":"Consumer-driven","action":"EyeRig öffnen","url":"https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"}
+    {
+      "id": "quote-pool",
+      "title": "Quote Pool",
+      "summary": "Recherche und Datenarbeit bleiben im normalen Web Chat.",
+      "badge": "Web Chat"
+    },
+    {
+      "id": "audio",
+      "title": "Audio",
+      "summary": "Nur consumer-driven erweitern; kein eigenständiger Ausbau ohne Abnehmer.",
+      "badge": "Consumer-driven",
+      "action": "Audio öffnen",
+      "url": "https://kfb-audio.frizzlebob.chatgpt.site"
+    },
+    {
+      "id": "resident-eyerig",
+      "title": "Resident / EyeRig · integrated default",
+      "summary": "EyeRig v6 ist ab jetzt Default für sichtbare integrierte Characters. Originalaugen nur in Source-Isolation. Approval-Backlog siehe P1 EyeRig Recovery/TODO.",
+      "badge": "Default · EyeRig v6",
+      "action": "EyeRig öffnen",
+      "url": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/"
+    }
   ],
   "quickLinks": [
-    {"title":"ToolBox","summary":"Ein Router für alle aktuellen Spezialwerkzeuge.","url":"https://kfb-toolbox.frizzlebob.chatgpt.site"},
-    {"title":"Production Control","summary":"CURRENT Records, Returns und additive Historie.","url":"https://kfb-production-control.frizzlebob.chatgpt.site/"},
-    {"title":"Active Work Map","summary":"Verbindlicher GitHub-Stand für Routing und Übergaben.","url":"https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/KFB_ACTIVE_WORK_MAP_2026-10-04.md"}
+    {
+      "title": "ToolBox",
+      "summary": "Ein Router für alle aktuellen Spezialwerkzeuge.",
+      "url": "https://kfb-toolbox.frizzlebob.chatgpt.site"
+    },
+    {
+      "title": "Production Control",
+      "summary": "CURRENT Records, Returns und additive Historie.",
+      "url": "https://kfb-production-control.frizzlebob.chatgpt.site/"
+    },
+    {
+      "title": "Active Work Map",
+      "summary": "Verbindlicher GitHub-Stand für Routing und Übergaben.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/chatgpt-web/surface-consolidation-2026-10-04/skills/chat/KFB_ACTIVE_WORK_MAP_2026-10-04.md"
+    }
   ]
 }
