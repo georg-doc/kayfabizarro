@@ -22,18 +22,18 @@
   },
   "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
   "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
-  "status": "IMPLEMENTATION_UPDATED_QA_PENDING",
-  "testedHead": "b01a4594574e28894ef2db2e5a084b1f03c0bcae",
+  "status": "QA_GREEN_SITE_UPDATE_PENDING",
+  "testedHead": "0fa08a22e4e22bd24d5972e7e633a4e555184c26",
   "qa": {
-    "run": 37176886034,
-    "job": 111360630704,
+    "run": 37180109710,
+    "job": 111370782094,
     "validator": "PASS",
     "syntax": "PASS",
     "browser": {
-      "pass": 12,
-      "total": 12,
-      "artifact": 11293114042,
-      "digest": "sha256:9132d35e7fc34277a74e2c1c80b7a703bebc56026c18d969aba0781da71b1287"
+      "pass": 13,
+      "total": 13,
+      "artifact": 11295073455,
+      "digest": "sha256:92be0249368bfee04d47dd9a3c4242d6c2040063e9692d79d0121aa220df4188"
     }
   },
   "newSunoFamilies": [
