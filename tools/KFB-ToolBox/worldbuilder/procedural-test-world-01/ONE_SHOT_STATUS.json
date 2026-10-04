@@ -121,7 +121,20 @@
         "Card subject subdialog respects native six-action limit"
       ]
     },
-    "localStudio": "Actual native well original/place/Edit1.25/40object export +1 real Sculpt stroke. Fresh separate-origin session started empty39objects/0strokes; actual file chooser import PASS and visible1stroke restored. Full fresh-context Golden Studio acceptance remains pending.",
+    "localStudio": {
+      "status": "LOCAL_NATIVE_FRESH_SEPARATE_ORIGIN_IMPORT_EXPORT_5_OF_5_PASS",
+      "evidence": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/evidence/LOCAL_STUDIO_FRESH_IMPORT_2026-10-04.json",
+      "objects": 40,
+      "sculptStrokes": 1,
+      "checks": [
+        "schema",
+        "count40",
+        "sculptExact",
+        "editedObjectsExact",
+        "worldSourceExact"
+      ],
+      "wholeJourneyFreshContextPass": false
+    },
     "criticRound3": {
       "status": "PARTIAL_NO_WHOLE_GAME_PASS",
       "improved": [

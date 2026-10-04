@@ -253,3 +253,10 @@ Run37196264077 / receiving1876ba8746e3ddf836a22bb283a9720eaf23c4b0 / tested merg
 Final bounded input-harness repair retains whole straight grid runs instead of8m splits and records actual native before/after positions. After key release, a physically crossed waypoint within1.35m of its segment is accepted rather than requiring backward correction. Ground support/collision/speed/dt and rendered scene unchanged; no synthetic position/rewards/clock/owner edits. One non-improving Dystopia traversal pass counted. Another failure without completed-gate progress freezes the candidate with full failure-recovery export. Whole Journey/Whole Critic/Stage remain unpassed.
 
 Actual local authoring workspace export contains40objects and one native Raise stroke (3points). Fresh separate-origin browser session began at39objects/0strokes; actual file chooser import reports PASS and restores visible1stroke. This is supplementary source-backed browser evidence, not substitution for required fresh-context journey/resume acceptance.
+
+
+## 2026-10-04 — Actual native Studio fresh import: 5/5 PASS (CONTINUE)
+
+The native GUI exported the authored40-object workspace with green well scale1.25 and one three-point Raise stroke. A separate-origin localhost browser session began with39objects/0strokes, then imported that actual JSON via the native file chooser. DOM evidence: importPASS/PLAYING/40objects/1stroke/WB2Ground. Re-export through native Studio save compared exactly: schema,40count, full edited object/source/transform, full sculpt layer and world source all5/5PASS. Evidence: `evidence/LOCAL_STUDIO_FRESH_IMPORT_2026-10-04.json`.
+
+One imported Town authoring view measured median28.4ms/p9533.1ms atpixelRatio2,348drawcalls/402189triangles. This is supplementary local hardware evidence only, not full-game performance acceptance or whole Journey import/resumePASS. Golden runtime/test4334151 remains running independently. Metadata-only checkpoint does not change runtime or restart that costly browser run. Whole Journey/Whole Critic/Stage remain pending; continue.
