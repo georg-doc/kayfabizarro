@@ -132,3 +132,55 @@ Do not respond to a visible-source failure by fragmenting the project back into 
 
 Preserve valid integrated work, remove/quarantine the contaminated visible source, and continue in one integrated recovery/completion pass unless a real stop condition is reached.
 
+
+
+## 2026-10-04 · Execution-mode precedence / postmortem rule budget
+
+Before applying generic slice rules, resolve the current execution mode from the named owner/router:
+
+1. `ONE_SHOT`
+2. `BOUNDED_SLICE`
+3. `RECOVERY`
+4. `RESEARCH`
+
+The explicit current execution mode outranks generic fresh-chat defaults.
+
+### ONE_SHOT
+
+- one user assignment;
+- one product outcome;
+- internal crash-safe commits/tests/Returns;
+- continue automatically across successful internal checkpoints;
+- no new Georg-facing executor prompt after each checkpoint;
+- optional defects quarantine/defer;
+- stop only on a real owner/source contradiction, missing required source, genuine Georg-only decision or the two-repair stop rule.
+
+### BOUNDED_SLICE
+
+Use the normal fresh-chat slice return model.
+
+### RECOVERY
+
+Preserve candidate, diagnose, salvage, route one recovery outcome.
+
+### RESEARCH
+
+Do not mutate runtime/product state unless separately authorized.
+
+### Postmortem rule budget
+
+A postmortem should simplify future execution.
+
+Do not add a new independent blocking rule when an existing rule can be:
+- clarified;
+- narrowed;
+- superseded;
+- or given explicit precedence.
+
+Every new process rule must answer:
+- what old ambiguity it replaces;
+- where it sits in precedence;
+- how it reduces Georg's operational burden.
+
+More rules without precedence are control-plane debt.
+
