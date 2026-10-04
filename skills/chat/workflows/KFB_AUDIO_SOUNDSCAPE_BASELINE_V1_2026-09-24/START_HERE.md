@@ -204,3 +204,17 @@ Historical technical browser evidence: 8/8 PASS at `1adbdba8c17b7ef4f1f987197b48
 ## Stop condition
 
 Do not implement AUDIO-CAL-01 in this baseline slice. This slice closes when the audit, architecture, Recovery/Return, additive changelog and KFB Hub/router pointers are persisted on the branch and handed to WSA.
+
+## CURRENT FOLLOW-UP · KFB Audio Site / Jukebox Catalog 01 · 2026-10-04
+
+Site-first authoring is now the intended Audio workflow. Candidate source lives at `tools/KFB-Audio-Site/` on branch `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04`.
+
+- canonical candidate catalog: 54 tracks / 44 RoadTrip-v2 / 14 paired stem families;
+- no second runtime AudioContext/player;
+- no Cloudflare iteration path;
+- private standalone Site preview persisted via KFB Production Control;
+- source validator and syntax PASS;
+- browser proves candidate snapshot + 54/44 counts, then stops on stale test expectation 12 vs actual 14;
+- frozen after two repair passes;
+- next gate: `KFB_AUDIO_SITE_QA_RECOVERY_01`;
+- Sites MCP is required for final GPT Site publication.

@@ -856,6 +856,22 @@
       ],
       "nextGate": "LWP-EXT-F1 · extension-load observability: CONTENT_ENTRY → HOST_CREATED → FRAME_INSERTED → FRAME_LOADED|FRAME_ERROR → PET_READY",
       "note": "Web/Hub candidate is technically green but branch-only. Chrome extension build is source-valid; injection is unresolved and frozen after two attempts. No public Stage or canonical Hub mount."
+    },
+    {
+      "id": "kfb-jukebox-catalog-01-audio-site-2026-10-04",
+      "title": "KFB Audio Site · Jukebox Catalog 01",
+      "status": "FROZEN_CANDIDATE_QA_EXPECTATION_RECOVERY_REQUIRED",
+      "owner": "KFB Audio & Soundscape Baseline v1",
+      "branch": "chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04",
+      "source": "tools/KFB-Audio-Site/",
+      "catalog": "media/3D_Assets/Sounds/jukebox.json",
+      "counts": {
+        "catalogTracks": 54,
+        "roadTripV2Masters": 44,
+        "pairedStemFamilies": 14
+      },
+      "nextGate": "KFB_AUDIO_SITE_QA_RECOVERY_01",
+      "note": "Site-first; no Cloudflare. Source validator/syntax PASS; browser proves 54/44 and stops on stale 12→14 test expectation after two repair passes. Sites MCP unavailable in current chat."
     }
   ],
   "failureRecoveryTemplate": "skills/chat/templates/CLAUDE_DESIGN_FAILURE_RECOVERY_EXPORT.md"

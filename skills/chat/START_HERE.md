@@ -167,6 +167,20 @@ For KFB runtime facts, the skill remains a **method owner only**. Current projec
 
 Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing evals before GitHub packaging. The GitHub package static check passed 8/8 after a test-counter-only repair. No Runtime, Stage or Live promotion is implied by this skill packaging.
 
+## 2026-10-04 · KFB Audio Site / Jukebox Catalog 01
+
+- owner: KFB Audio & Soundscape Baseline v1;
+- branch: `chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04`;
+- canonical Jukebox candidate: **54 tracks = 10 legacy + 44 RoadTrip-v2**, with **14 paired stem families**;
+- lean Site source: `tools/KFB-Audio-Site/` — Catalog / master playback / A-B transitions / Soundscape gaps / Intake / Prompt Studio;
+- integrated Site-Chat grounding and intake contract are prepared;
+- Cloudflare is deliberately not used;
+- private standalone preview is persisted through KFB Production Control;
+- current candidate is **frozen after two browser repair passes**: source validator + syntax PASS; browser proves 54/44 then stops on stale test expectation 12 vs actual 14;
+- Sites MCP is unavailable in the current executor, so no real `.chatgpt.site` URL is claimed;
+- exactly one next gate: `KFB_AUDIO_SITE_QA_RECOVERY_01` — literal QA 12→14 only; if green, publish through Sites MCP.
+- no auto-merge.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.

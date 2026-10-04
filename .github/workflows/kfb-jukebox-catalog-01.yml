@@ -5,6 +5,9 @@ concurrency:
 on:
   push:
     branches: [chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04]
+    paths:
+      - 'media/3D_Assets/Sounds/jukebox.json'
+      - 'tools/KFB-Audio-Site/**'
   pull_request:
     paths:
       - 'media/3D_Assets/Sounds/jukebox.json'

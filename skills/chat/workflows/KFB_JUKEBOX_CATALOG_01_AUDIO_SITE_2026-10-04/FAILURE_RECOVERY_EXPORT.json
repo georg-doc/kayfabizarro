@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.failure-recovery/1",
+  "workflow": "KFB-JUKEBOX-CATALOG-01",
+  "classification": "FROZEN_CANDIDATE_QA_EXPECTATION_MISMATCH",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-jukebox-catalog-01-audio-site-2026-10-04",
+  "frozenHead": "070fdaee25dfcdc671a0a29946092086c0a50562",
+  "sourceLock": "main@ffeb161d7c09c64436fbdf1dc83ce2b71e8f8a74",
+  "observed": {
+    "catalogTracks": 54,
+    "roadTripMasters": 44,
+    "stemFamilies": 14,
+    "staticValidator": "PASS",
+    "syntax": "PASS",
+    "browserPassedBeforeFailure": 3,
+    "browserFailure": "test expected 12 stem-filter items; UI returned 14"
+  },
+  "run": {
+    "id": 37168419769,
+    "job": 111336177063,
+    "artifact": 11290582496,
+    "digest": "sha256:ff8f155fe10a6fccffd951fdd6503df4fd53b4eeb36e52f17c60eee517f5e649"
+  },
+  "repairPasses": [
+    "7b480454f0dfb771e1a51e5e34609b7f29bf8069",
+    "070fdaee25dfcdc671a0a29946092086c0a50562"
+  ],
+  "salvage": [
+    "media/3D_Assets/Sounds/jukebox.json",
+    "tools/KFB-Audio-Site/",
+    "skills/chat/workflows/KFB_JUKEBOX_CATALOG_01_AUDIO_SITE_2026-10-04/"
+  ],
+  "smallestRecovery": "Change the one stale browser assertion from 12 to 14 and rerun unchanged QA.",
+  "host": {
+    "target": "GPT Site / Sites MCP",
+    "sitesMcpAvailable": false,
+    "cloudflareUsed": false
+  },
+  "nextGate": "KFB_AUDIO_SITE_QA_RECOVERY_01"
+}

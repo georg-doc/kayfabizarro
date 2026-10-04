@@ -1,3 +1,13 @@
+# KFB Chat Router · CHANGELOG
+
+## 2026-10-04 · KFB Audio Site / Jukebox Catalog 01
+
+- created Site-first KFB Audio candidate and expanded canonical Jukebox to 54 tracks;
+- no Cloudflare iteration/publish path introduced;
+- source validator/syntax pass; browser candidate reaches correct 54/44 counts but QA still contains stale 12-vs-14 assertion;
+- froze after two repair passes; next gate KFB_AUDIO_SITE_QA_RECOVERY_01;
+- real GPT Site publication waits for Sites MCP.
+
 ## 2026-10-04 · WB2 current-main convergence + four-island corridor PASS
 
 ### WORLD PREFLIGHT

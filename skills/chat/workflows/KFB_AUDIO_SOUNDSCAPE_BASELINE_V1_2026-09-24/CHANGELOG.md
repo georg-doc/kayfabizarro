@@ -1,5 +1,13 @@
 # KFB Audio & Soundscape Baseline v1 · CHANGELOG
 
+## 2026-10-04 · KFB Audio Site / Jukebox Catalog 01
+
+- built Site-first Audio authoring candidate; canonical Jukebox candidate now 54 tracks;
+- exposed transition work, source-bank gaps, intake and prompt-authoring without a second runtime owner;
+- persisted private standalone preview through Production Control;
+- frozen after two browser repair passes on one remaining stale 12→14 QA expectation;
+- final GPT Site publish waits for Sites MCP.
+
 ## 2026-09-24 · Baseline audit
 
 - opened bounded documentation branch from `kayfabizarro@9431dcb8da0158a75d0988d52fc1e7a49aac21f1`;
