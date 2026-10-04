@@ -95,6 +95,7 @@ function archipelagoWorld({id,TC,ST,R2C,arch}){
   const W={
     id,zone,spawn,tile,log:[],docId:'kfb-mvp-archipelago-01',storageKey:'kfb-mvp-archipelago.01',
     SKY_MODES:[['day','Day']],skyMode:'day',landmarks:[],worldGraph:arch.worldGraph,
+    get bridgeSupportSamples(){return arch.connections.map(c=>{const s=c.stream.samples,i=Math.floor(s.length/2);return {id:c.id,point:[...s[i].p],next:[...s[Math.min(i+1,s.length-1)].p]}})},
     get inkOn(){return false},get inkReport(){return null},get namesOn(){return false},
     get presentationReport(){return Object.fromEntries([...presentations].map(([k,v])=>[k,v.report]))},
     get buildingReport(){return Object.fromEntries([...buildingSets].map(([k,v])=>[k,v.report]))},

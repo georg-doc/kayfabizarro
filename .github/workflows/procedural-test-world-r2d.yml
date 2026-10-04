@@ -7,6 +7,7 @@ on:
       - 'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/**'
       - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js'
       - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js'
+      - 'tools/KFB-ToolBox/lib/ground-planar.v1.js'
       - 'qa/procedural-test-world-r2d.mjs'
       - '.github/workflows/procedural-test-world-r2d.yml'
   pull_request:
@@ -14,6 +15,7 @@ on:
       - 'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/**'
       - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js'
       - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js'
+      - 'tools/KFB-ToolBox/lib/ground-planar.v1.js'
       - 'qa/procedural-test-world-r2d.mjs'
       - '.github/workflows/procedural-test-world-r2d.yml'
   workflow_dispatch:

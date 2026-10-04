@@ -34,4 +34,4 @@ jobs:
           node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js
           node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-archipelago.v1.js
       - name: Source tests
-        run: node --test tests/procedural-test-world-01.test.mjs
+        run: node --test tests/procedural-test-world-01.test.mjs tests/wb2-player.test.mjs
