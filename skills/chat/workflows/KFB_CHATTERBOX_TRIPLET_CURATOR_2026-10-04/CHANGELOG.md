@@ -17,6 +17,11 @@
 - PR #354 Quote Pool schema retained.
 - current ToolBox reserved specialist lane retained.
 
+### COWORKER DONOR ARRIVAL
+- Coordination head `b2ddd72346e3d804b53625f50addbba87be3c9a0` added a real Triplet Review Stage and a normal-Web-Chat pool brief.
+- The Site plan now reuses that stage as its first UI/workflow donor rather than rebuilding review controls.
+- Current measured content gaps (missing resident-specific relation coverage and Card anchors) are preserved as authoring targets, not hidden by UI.
+
 ### IMPLEMENTATION
 Not started. No Site URL invented. No Stage/Live change.
 
