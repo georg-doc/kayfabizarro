@@ -1,0 +1,191 @@
+{
+ "clips": [
+  {
+   "clip": "kfb_action_aim_blaster_a",
+   "source": "Ranged_1H_Aiming",
+   "frames": 33,
+   "loop": "one-shot raise, hold last frame (clamp)",
+   "rootMotion": "in-place",
+   "weapon": "blaster",
+   "origin": "native copy",
+   "lane_dev_deg": [
+    1.32,
+    1.51
+   ],
+   "left_hand_to_socket_fh": null
+  },
+  {
+   "clip": "kfb_action_shoot_blaster_a",
+   "source": "Ranged_1H_Shooting",
+   "frames": 13,
+   "loop": "one-shot from hold, returns to hold",
+   "rootMotion": "in-place",
+   "weapon": "blaster",
+   "origin": "native: one recoil cycle of Ranged_1H_Shooting",
+   "lane_dev_deg": [
+    1.51,
+    17.59
+   ],
+   "left_hand_to_socket_fh": null
+  },
+  {
+   "clip": "kfb_action_shooting_blaster_a",
+   "source": "Ranged_1H_Shooting",
+   "frames": 49,
+   "loop": "loop",
+   "rootMotion": "in-place",
+   "weapon": "blaster",
+   "origin": "native copy",
+   "lane_dev_deg": [
+    1.51,
+    17.59
+   ],
+   "left_hand_to_socket_fh": null
+  },
+  {
+   "clip": "kfb_action_aim_rifle_a",
+   "source": "Ranged_2H_Aiming",
+   "frames": 49,
+   "loop": "one-shot raise, hold last frame (clamp)",
+   "rootMotion": "in-place",
+   "weapon": "rifle",
+   "origin": "native + root yaw + left-hand IK",
+   "lane_dev_deg": [
+    0.1,
+    1.76
+   ],
+   "left_hand_to_socket_fh": 0.0
+  },
+  {
+   "clip": "kfb_action_shoot_rifle_a",
+   "source": "Ranged_2H_Shooting",
+   "frames": 9,
+   "loop": "one-shot from hold",
+   "rootMotion": "in-place",
+   "weapon": "rifle",
+   "origin": "native cycle + root yaw + left-hand IK",
+   "lane_dev_deg": [
+    1.57,
+    1.57
+   ],
+   "left_hand_to_socket_fh": 0.0
+  },
+  {
+   "clip": "kfb_action_shooting_rifle_a",
+   "source": "Ranged_2H_Shooting",
+   "frames": 33,
+   "loop": "loop",
+   "rootMotion": "in-place",
+   "weapon": "rifle",
+   "origin": "native + root yaw + left-hand IK",
+   "lane_dev_deg": [
+    1.57,
+    1.57
+   ],
+   "left_hand_to_socket_fh": 0.0
+  },
+  {
+   "clip": "kfb_action_hold_minigun_a",
+   "source": "Ranged_2H_Shooting",
+   "frames": 33,
+   "loop": "loop",
+   "rootMotion": "in-place",
+   "weapon": "minigun",
+   "origin": "authored over Ranged_2H (KayKit gap)",
+   "lane_dev_deg": [
+    0.43,
+    0.43
+   ],
+   "left_hand_to_socket_fh": 0.0
+  },
+  {
+   "clip": "kfb_action_fire_minigun_a",
+   "source": "Ranged_2H_Shooting",
+   "frames": 33,
+   "loop": "loop, burst rhythm 0.11 s",
+   "rootMotion": "in-place",
+   "weapon": "minigun",
+   "origin": "authored over Ranged_2H (KayKit gap)",
+   "lane_dev_deg": [
+    0.08,
+    1.31
+   ],
+   "left_hand_to_socket_fh": 0.0
+  },
+  {
+   "clip": "kfb_reaction_hit_front_small_a",
+   "source": "Hit_A",
+   "frames": 21,
+   "loop": "one-shot",
+   "rootMotion": "in-place",
+   "origin": "native copy"
+  },
+  {
+   "clip": "kfb_reaction_hit_front_big_a",
+   "source": "Hit_B",
+   "frames": 27,
+   "loop": "one-shot",
+   "rootMotion": "in-place",
+   "origin": "native copy"
+  }
+ ],
+ "grips": {
+  "G1": [
+   0.0,
+   0.7071067811865475,
+   0.0,
+   0.7071067811865476
+  ],
+  "G2": [
+   -0.015559859168743648,
+   0.8662331531896761,
+   0.0011704993805422947,
+   0.49939628055174823
+  ],
+  "G3": [
+   -0.23159107422933328,
+   0.8151642572177915,
+   -0.019657917593087167,
+   0.5305528949763381
+  ]
+ },
+ "sockets": {
+  "blaster": {
+   "grip_l": null,
+   "muzzle": [
+    0,
+    0.17,
+    0.76
+   ]
+  },
+  "rifle": {
+   "grip_l": [
+    0,
+    0.04,
+    0.6
+   ],
+   "muzzle": [
+    0,
+    0.2,
+    1.53
+   ],
+   "bayonet_tip": [
+    0,
+    0.03,
+    2.06
+   ]
+  },
+  "minigun": {
+   "grip_l": [
+    0,
+    0.19,
+    0.28
+   ],
+   "muzzle": [
+    0,
+    0,
+    0.77
+   ]
+  }
+ }
+}
