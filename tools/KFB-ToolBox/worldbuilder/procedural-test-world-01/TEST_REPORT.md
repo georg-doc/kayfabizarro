@@ -1,18 +1,39 @@
 # TEST REPORT · WORLD-CONVERGENCE-BASE-01
 
-Status: **PENDING AFTER IMPLEMENTATION CHECKPOINT**
+## Checkpoint `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8`
 
-Historical donor proof from PR #332 is recorded in `WORLD_PROFILE.json` and `RECOVERY.md`.
+### Browser
+Workflow: Procedural Test World R2D Browser
+Run: `37165723175`
+Job: `111328087611`
+Result: **PASS**
 
-Required current-branch evidence:
-1. JavaScript syntax / source contract.
-2. `node --test tests/procedural-test-world-01.test.mjs`.
-3. real Chromium/WebGL boot of the exact WB2 R2D entry.
-4. one WB2 canvas only.
-5. Track Core road present.
-6. continuous top + floating underside + pond + creek + waterfall + P1/P2 nature.
-7. B1/facade building owner present with support/building facts.
-8. no `wi1-play`, Travel Globe or card-start resources loaded.
-9. 0 unexpected page/console errors.
+The workflow completed:
+- static syntax;
+- Playwright/Chromium install;
+- exact local HTTP entry boot;
+- Browser proof;
+- evidence artifact upload.
 
-Do not call this gate PASS until the new branch has its own evidence.
+### Resource Registry
+Run: `37165723168`
+Result: **PASS**
+
+### Source contract
+Workflow: Procedural Test World 01
+Run: `37165723177`
+Job: `111328087463`
+Result: **FAIL**
+Syntax step: PASS
+Source tests: FAIL
+
+Known deterministic mismatch from committed inputs:
+`profile.proceduralDesign.natureMountStatus` did not match the source test's browser-verified status constant.
+The browser proof above now establishes that status on this branch.
+
+### Repair Pass 1
+Metadata/profile correction only.
+No runtime geometry, renderer, road, building or presentation code changes.
+
+Required next evidence:
+source PASS + browser PASS on the repair head.

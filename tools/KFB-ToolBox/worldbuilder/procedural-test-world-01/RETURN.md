@@ -1,35 +1,35 @@
 # RETURN · WB2 current-main convergence
 
-Status: **IMPLEMENTATION CHECKPOINT · CI/BROWSER PENDING**
+Status: **BROWSER PASS · SOURCE REPAIR 1 IN FLIGHT**
 
-## Product reality
+## What works
 
-The proven single-island WB2/R2D owner has been moved onto a fresh branch from current main.
-No stale PR #332 router/Hub/Motion state is imported.
-No Player, Drive or Resident runtime is active.
+Fresh current-main rehome of WB2/R2D booted successfully in Chromium/WebGL:
+- exact WB2 world owner;
+- continuous R2D island body + underside;
+- Track Core road;
+- pond / creek / waterfall;
+- source-proven P1/P2 nature;
+- B1 / kfb-facade-rule-v1 building family;
+- no legacy player / Travel/card host.
 
-## Reused owner modules
+Browser:
+run `37165723175` · job `111328087611` · PASS.
 
-- WB2 design/app + presentation
-- shared edit layer
-- terrain sculpt
-- pure R2D island core
-- R2D body/water/nature presentation
-- R2D B1/facade building adapter
-- P1/P2 procedural environment geometry
-- current Track-Core consumer adapter
-- exact B1 fixture + `wd1-city.js`
-- source + browser regression harness
+Resource Registry:
+run `37165723168` · PASS.
 
-## Deferred until convergence PASS
+## Repair Pass 1
 
-Town / Dystopia / Utopia / Protopia corridor,
-Golden-Journey anchors,
-deck seeds,
-Motion,
-Residents,
-Drive.
+Source run `37165723177` failed after syntax PASS.
+Committed test/profile inspection exposes a guaranteed stale metadata mismatch for the Nature mount status.
+Because the browser proof just established current-branch mounting, the profile is updated to the already-defined browser-verified status.
+No runtime/world source changes in this repair.
+
+## Protected
+
+Still no Player, Motion, Drive, Residents, Combat, Stage or Live.
 
 ## Next gate
 
-Current branch source tests + real Chromium WB2/R2D proof.
+Both current-branch source and browser workflows must be green.

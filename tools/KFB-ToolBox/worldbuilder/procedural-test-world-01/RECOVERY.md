@@ -1,34 +1,36 @@
 # RECOVERY · WB2 convergence + Golden corridor
 
-Status: **CURRENT CANDIDATE · WORLD-CONVERGENCE-BASE-01**
+Status: **WORLD-CONVERGENCE-BASE-01 · BROWSER PASS · SOURCE REPAIR 1**
 
 Owner: KFB WorldBuilder / WB2
 Branch: `chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04`
 Base main: `9a1f43b628126bb633ed95c99310288f0a5f1a7c`
+Current implementation checkpoint: `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8`
 
-## Why this branch exists
+## Product reality
 
-Old current-world PR #332 is materially diverged from main and is not a safe One-Shot base.
-This branch starts from current main and re-homes only the proven WB2/R2D owner files and their test harness.
+The proven WB2/R2D single-island owner is now re-homed on current main and has booted successfully in the real Chromium/WebGL proof.
+No Player, Drive, Residents or Travel host are active.
 
-Do not merge PR #332 into this branch.
-Do not copy its stale Hub/router/Motion metadata.
+## Current evidence
+
+At `74fae51ac6736f630f7f0e5ce0cc1f84540c66f8`:
+- Procedural Test World R2D Browser · run `37165723175` · job `111328087611` · **PASS**.
+- KFB Production Resource Registry R0.1 · run `37165723168` · **PASS**.
+- Procedural Test World 01 source · run `37165723177` · job `111328087463` · **FAIL**.
+
+The source test has one deterministic contract mismatch visible from the committed files:
+the test expects `SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED`, while the rehome profile still said donor-proof/rehome-pending.
+The browser run has now supplied that current-branch proof, so Repair Pass 1 updates only profile/evidence metadata and re-runs both gates.
+
+Do not broaden this repair into world geometry.
 
 ## Proven donor evidence
 
-PR #332:
-- donor head: `e58d0ea4b97debbf8d0053d710612033b7e52908`
-- latest browser-proven runtime: `a18846cf8128e3e1facb0b51be0e6aff873d1244`
-- browser workflow: `37092514335`
-- browser job: `111115656852`
-- artifact: `11263101899`
-- reported: 0 console errors · 0 page errors · 0 QA problems
-- seed 3 donor result: 1 B1/facade building · 14 windows · 1 door
+PR #332 remains historical source provenance only.
+Do not merge it or copy its stale Hub/router/Motion state.
 
-## Current checkpoint
+## Next
 
-The source files are re-homed onto current main.
-New-branch source/browser evidence is required before calling convergence PASS.
-
-Exactly one next gate:
-**run current-main source + real-browser regression.**
+Re-run source + browser after Repair Pass 1.
+If both pass: mark WORLD-CONVERGENCE-BASE-01 PASS and begin WORLD-MULTI-ISLAND-CORRIDOR-01.

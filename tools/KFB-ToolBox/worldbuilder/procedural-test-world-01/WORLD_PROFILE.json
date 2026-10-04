@@ -1,7 +1,7 @@
 {
   "schema": "kfb.procedural-test-world/2",
   "date": "2026-10-04",
-  "status": "WORLD_CONVERGENCE_BASE_CANDIDATE_NO_LOCOMOTION",
+  "status": "WORLD_CONVERGENCE_BASE_BROWSER_PASS_SOURCE_REPAIR_1",
   "owner": "KFB WorldBuilder / WB2",
   "checkpoint": "WORLD-CONVERGENCE-BASE-01",
   "baseMain": "9a1f43b628126bb633ed95c99310288f0a5f1a7c",
@@ -28,7 +28,7 @@
   },
   "proceduralDesign": {
     "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain",
-    "buildingMountStatus": "DONOR_BROWSER_PROVEN_REHOMED_FOR_CURRENT_MAIN_REGRESSION",
+    "buildingMountStatus": "SOURCE_PROVEN_B1_FAMILY_ON_GENERATED_R2D_PADS_BROWSER_VERIFIED",
     "buildingEvidence": {
       "placed": 1,
       "windows": 14,
@@ -39,7 +39,7 @@
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
       "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs"
     ],
-    "natureMountStatus": "DONOR_BROWSER_PROVEN_REHOMED_FOR_CURRENT_MAIN_REGRESSION",
+    "natureMountStatus": "SOURCE_PROVEN_P1_P2_GROUPING_MOUNTED_AND_BROWSER_VERIFIED",
     "materialDirection": {
       "primaryLightweightCandidate": "clay_floor_001",
       "heavyProceduralClay": "near/hero reference",
@@ -96,5 +96,17 @@
       }
     }
   },
-  "next": "Run current-main source + browser regression; only PASS advances to WORLD-MULTI-ISLAND-CORRIDOR-01."
+  "next": "Run current-main source + browser regression; only PASS advances to WORLD-MULTI-ISLAND-CORRIDOR-01.",
+  "current": {
+    "head": "74fae51ac6736f630f7f0e5ce0cc1f84540c66f8",
+    "browserRun": 37165723175,
+    "browserJob": 111328087611,
+    "browserResult": "PASS",
+    "resourceRegistryRun": 37165723168,
+    "resourceRegistryResult": "PASS",
+    "sourceRun": 37165723177,
+    "sourceJob": 111328087463,
+    "sourceResult": "FAIL_REPAIR_1_PENDING",
+    "sourceKnownMismatch": "profile.proceduralDesign.natureMountStatus differed from the explicit source-contract assertion; browser proof independently passed"
+  }
 }
