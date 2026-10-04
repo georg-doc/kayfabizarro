@@ -1997,3 +1997,57 @@ Old Stage route:
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
 
 No runtime change is made until the newest export is recovered.
+
+
+## 2026-10-04 · CURRENT DECISION · EYERIG DEFAULT + RECOVERY-AWARE TODO
+
+Georg decision:
+
+**Every integrated visible KFB character uses the existing EyeRig v6 owner by default.**
+
+Source-isolation remains the only normal place where untouched source eyes are shown. After donor proof:
+- hide/replace source eyes through the existing cleanup/FaceHost path;
+- mount EyeRig v6;
+- use the newest approved/recovered actor profile when available;
+- otherwise use the source-derived candidate and mark `PROFILE_TUNE`;
+- do not silently fall back to stock eyes in integrated screenshots/runtime.
+
+No second eye system.
+
+### Profile truth / recovery
+
+The unified Site remains human-accepted for continuation, but its Medium profile state is older than Georg's last remembered old-Stage session.
+
+Dropbox was re-searched on 2026-10-04. Newest durable Medium state remains the 40-profile `eye-rig-medium.batch (2).json` payload:
+- 40 profiles out of the current 55 Medium identities;
+- 2 ADJUSTED_APPROVED;
+- 37 ADJUSTED;
+- 1 UNREVIEWED: GothGirl.
+
+No newer durable export was found. The later Georg approval state is therefore still **RECOVERY REQUIRED** from the old Stage origin's LocalStorage.
+
+### Durable TODO source
+
+Current recovery-aware list:
+
+`docs/EYERIG_CURRENT_TODO_2026-10-04.md`
+
+It deliberately separates `RECOVER`, `PROFILE_TUNE`, `HUMAN_REVIEW`, `HUMAN_REQUIRED` and `APPROVED`.
+
+Current durable coverage gaps:
+- Medium: 15 identities absent from the durable 40-profile export;
+- Large: 4 of 8 outside the durable reviewed set;
+- Legacy: 17/17 generated candidates still require human review in the durable state; Skull remains HUMAN_REQUIRED.
+
+Active priority after Medium recovery:
+1. Robot One;
+2. Robot Two;
+3. current Residents/consumer actors whose later approval state must be reconciled.
+
+### Current gate
+
+**EYE_RIG_PROFILE_RECOVERY_01 remains first.**
+
+Open the old Stage in the same browser profile → Export Batch → compare against the durable 40-profile export → persist/import the newest proven state.
+
+Do not infer missing approvals from the older Site state.
