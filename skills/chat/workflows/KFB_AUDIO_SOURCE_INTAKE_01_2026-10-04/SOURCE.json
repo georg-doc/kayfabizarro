@@ -1,0 +1,76 @@
+{
+  "schema": "kfb.audio-source-intake-slice/1",
+  "date": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-audio-source-intake-01-2026-10-04",
+  "parentSiteHead": "64037bc8e181c0796ddc2d505187074e98f04491",
+  "mainSourceRef": "main@41d1db9f36015556cd5e4dc3931e94756079099d",
+  "counts": {
+    "catalogTracks": 60,
+    "roadTripV2Masters": 50,
+    "stemFamilies": 20,
+    "elevenLabsTests": 17
+  },
+  "rainTexture": {
+    "id": "roadtrip-v2-rain-percussion-beetle-ring",
+    "bpm": 107,
+    "masterSha": "561a6772c01c1d496bf7e60de65c986f18ead413",
+    "stemTreeSha": "33eb03aa5e16ede119a274c05b263f2d9a291850",
+    "status": "HUMAN_POSITIVE_STYLE_REFERENCE"
+  },
+  "elevenLabsPolicy": "audition-only; HUMAN_TUNE or UNREVIEWED; none accepted",
+  "nextGate": "KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE",
+  "status": "QA_GREEN_SITE_UPDATE_PENDING",
+  "testedHead": "b01a4594574e28894ef2db2e5a084b1f03c0bcae",
+  "qa": {
+    "run": 37176886034,
+    "job": 111360630704,
+    "validator": "PASS",
+    "syntax": "PASS",
+    "browser": {
+      "pass": 12,
+      "total": 12,
+      "artifact": 11293114042,
+      "digest": "sha256:9132d35e7fc34277a74e2c1c80b7a703bebc56026c18d969aba0781da71b1287"
+    }
+  },
+  "newSunoFamilies": [
+    {
+      "title": "Rainy Graveyard · small-room jazz experiment",
+      "bpm": 89,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Stormfront Ring · rockabilly electro-funk experiment",
+      "bpm": 120,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Wet Neon Road · cosmic surf experiment",
+      "bpm": 104,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Wet road rhythmic texture · Road radio",
+      "bpm": 105,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    },
+    {
+      "title": "Workshop machine pulse · Beetle _ Maker Space",
+      "bpm": 119,
+      "status": "HUMAN_POSITIVE",
+      "stemPolicy": "source-only"
+    }
+  ],
+  "deckAmbientSources": [
+    "media/kfb/Deck_A_UTOPIA_-_Forget_Utopia_web_H.pdf.json",
+    "media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+    "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json"
+  ],
+  "ambientDirection": "skills/chat/workflows/KFB_AUDIO_SOURCE_INTAKE_01_2026-10-04/AMBIENT_BED_DIRECTION_2026-10-04.md"
+}

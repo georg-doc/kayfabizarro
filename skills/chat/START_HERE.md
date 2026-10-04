@@ -209,6 +209,18 @@ Site Draft v0.1.1 passed the contradiction/gap audit and 10/10 document-routing 
 - exactly one next gate: `KFB_AUDIO_SFX_PROMPT_BANK_REBRIEF_01` — wait for Georg's rebrief.
 - no auto-merge.
 
+## 2026-10-04 · KFB Audio Source Intake 01
+
+- parent live Site: https://kfb-audio.frizzlebob.chatgpt.site/
+- child branch: `chatgpt-web/kfb-audio-source-intake-01-2026-10-04`
+- tested head: `378d7af459d37627a4d5b2285115ecc92ccfc041`
+- candidate catalog: **55 / 45 / 15**
+- new human-positive reference: Rain percussion · Beetle / Ring · 107 BPM · source-only stems
+- new Source Lab: 17 ElevenLabs test candidates; old prompt-bank-derived outputs = HUMAN_TUNE, separate DSGN tests = UNREVIEWED
+- Rain bank remains SOURCE_REQUIRED
+- QA: browser **12/12 PASS**
+- exactly one next gate: `KFB_AUDIO_SOURCE_INTAKE_01_SITE_UPDATE` — update existing Site project only; no second Site, no Cloudflare, no merge.
+
 ## Hard rules
 
 - GitHub state beats chat recollection when they conflict.
