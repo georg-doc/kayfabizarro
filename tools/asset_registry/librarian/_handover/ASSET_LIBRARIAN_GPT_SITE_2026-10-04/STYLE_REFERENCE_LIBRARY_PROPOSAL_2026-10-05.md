@@ -102,6 +102,31 @@ For purchased/private copyrighted references:
 
 If an individual source has explicit public-domain / redistribution rights, that status may be stored as provenance; never infer it from the filename or creator.
 
+## 5A · Preferred Etherington web source
+
+Canonical creator-hosted master source supplied by Georg:
+
+`https://theetheringtonbrothers.blogspot.com/p/every-how-to-think-when-you-draw.html`
+
+Classification:
+- `sourceClass: OFFICIAL_CREATOR_SOURCE`
+- `creator: The Etherington Brothers`
+- `collection: How to Think When You Draw`
+- `accessRole: CANONICAL_WEB_REFERENCE`
+- `permissionContext: USER_REPORTED_DIRECT_PERMISSION`
+
+Georg reports that the creators directly gave him this blog link so he could use the online samples instead of repeatedly handling the physical books. Treat that statement as permission context / provenance, not as a machine-inferred blanket redistribution license.
+
+Independent public-source evidence:
+- the Etherington blog's 2020 masterpost points to the same master collection and states that all 300 tutorials are gathered in one place;
+- later official tutorial posts repeatedly describe the tutorial encyclopedia as free for everyone, forever.
+
+Operational consequence:
+- prefer this official creator-hosted source over Pinterest/Tumblr/reposts whenever the same tutorial exists there;
+- Pinterest may remain a discovery pointer only;
+- no scan is needed when an official creator-hosted sample already covers the desired reference;
+- physical books and purchase evidence remain useful as ownership/provenance backup and for references not available online.
+
 ## 6 · Reference Card
 
 A Reference Card is the atomic design object.
