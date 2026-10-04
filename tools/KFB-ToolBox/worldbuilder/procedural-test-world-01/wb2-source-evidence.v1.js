@@ -1,0 +1,61 @@
+/* Internal evidence adapter: uses the actual WB2 renderer, never a second world. */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { makeClayRelief } from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-relief.v2.js';
+import { makeToolReliefs } from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-relief.v4.js';
+import { makeClayUniforms, makeClayMaterial, seedGeometry, PROFILES } from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-material.v10.js';
+import { TOOLMIX } from '../../_inbox/KFB Knet-Strecke T3 v2/KFB_CLAYMATION_K2_KNET_WERKZEUGE_2026-09-28/lab-clay/clay-toolmix.v1.js';
+
+const loader=new GLTFLoader(),cache=new Map();
+export const manifest=await fetch(new URL('./VISIBLE_SOURCE_MANIFEST.json',import.meta.url)).then(r=>{if(!r.ok)throw Error('source manifest '+r.status);return r.json()});
+let clayPromise;
+export async function clayContext(){
+  if(!clayPromise)clayPromise=(async()=>{
+    // K2 source boot, lines 37–43. Seam: share uniforms with WB2; no donor renderer.
+    const tex=d=>{const t=new THREE.DataTexture(d,1024,1024,THREE.RGBAFormat);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.generateMipmaps=true;t.needsUpdate=true;return t};
+    const relief=makeClayRelief({size:1024,seed:31}),tools=await makeToolReliefs({size:1024,seed:41});
+    const U=makeClayUniforms(THREE,tex(relief.data));
+    [U.uClayToolA.value,U.uClayToolB.value,U.uClayToolC.value]=tools.maps.map(tex);
+    U.uClayToolOn.value=1;U.uClayLegacyStroke.value=0;U.uClayMottle.value=.04;
+    U.uClayPrint.value=U.uClayRelief.value;U.uClayPrintOn.value=0;
+    // Preserve source-native asset colours. No palette replacement.
+    return U;
+  })();return clayPromise;
+}
+export async function loadRegistered(record){
+  const key=record.source.commit+'/'+record.assetId;
+  if(!cache.has(key))cache.set(key,loader.loadAsync(record.source.rawPinned));
+  const g=await cache.get(key);return g.scene.clone(true);
+}
+export async function adaptRegistered(root,seed=31){
+  const U=await clayContext(),QUIET={print:.3,dent:0,gouge:0,crack:0,stroke:1,facet:.9,crease:.5};
+  const profile={...PROFILES.house,...QUIET,legacy:0,tools:TOOLMIX.house};
+  root.traverse(o=>{if(o.isMesh){o.geometry=seedGeometry(THREE,o.geometry.clone(),seed++);o.material=(Array.isArray(o.material)?o.material:[o.material]).map(src=>makeClayMaterial(THREE,U,{src,profile,palMap:false}));if(o.material.length===1)o.material=o.material[0];o.castShadow=o.receiveShadow=true}});
+  return root;
+}
+export function createCandidateEvidence(A){
+  let isolate=null,restore=null,frameTimes=[],last=performance.now();
+  const sample=()=>{const now=performance.now();frameTimes.push(now-last);last=now;if(frameTimes.length>240)frameTimes.shift()};
+  const sourceAudit=()=>{
+    const rendered=new Map(),frustum=new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(A.camera.projectionMatrix,A.camera.matrixWorldInverse));
+    A.scene.traverseVisible(o=>{if(!o.isMesh)return;let q=o;while(q&&!q.userData?.sourceRecord)q=q.parent;const source=q?.userData?.sourceRecord;if(!source)return;const box=new THREE.Box3().setFromObject(o);if(frustum.intersectsBox(box)){const key=source.source.commit+'/'+source.assetId;const rec=rendered.get(key)||{assetId:source.assetId,packId:source.packId,commit:source.source.commit,blob:source.source.blobSha,meshCount:0};rec.meshCount++;rendered.set(key,rec)}});
+    const loaded=performance.getEntriesByType('resource').map(r=>r.name),banned=manifest.bannedVisible.filter(p=>loaded.some(url=>decodeURIComponent(url).includes(p)));
+    const sorted=[...frameTimes].sort((a,b)=>a-b),median=sorted[Math.floor(sorted.length/2)]||0;
+    return{schema:'kfb.actual-runtime-evidence/1',build:document.body.dataset.candidateRevision||'LOCAL_UNSEALED',ready:document.body.dataset.candidateReady,seed:3,camera:A.camera.position.toArray(),target:A.controls.target.toArray(),loaded,rendered:[...rendered.values()],banned,firewall:banned.length?'FAIL':'PASS',performance:{frames:frameTimes.length,medianMs:median,p95Ms:sorted[Math.floor(sorted.length*.95)]||0,drawCalls:A.renderer.info.render.calls,triangles:A.renderer.info.render.triangles},owners:{renderer:'WB2',ground:A.play?.constructor?.name,animationMixers:A.play?.evidence().mixerCount},player:A.play?.evidence()};
+  };
+  async function inspect(worldId,variant='original',index=0){
+    if(!restore){const hidden=A.scene.children.filter(o=>!o.isLight);restore={hidden:hidden.map(o=>[o,o.visible]),camera:A.camera.position.clone(),target:A.controls.target.clone(),play:A.play.on};A.setPlay(false);hidden.forEach(o=>o.visible=false)}
+    if(isolate)A.scene.remove(isolate);
+    const record=manifest.families[worldId][index],root=await loadRegistered(record);
+    if(variant!=='original')await adaptRegistered(root);
+    root.userData.sourceRecord=record;root.name='Registered source isolate · '+record.assetId;
+    isolate=root;A.scene.add(root);root.updateMatrixWorld(true);
+    const box=new THREE.Box3().setFromObject(root),centre=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),r=Math.max(size.x,size.y,size.z);
+    A.camera.position.copy(centre).add(new THREE.Vector3(r*.9,r*.55,r*1.05));A.controls.target.copy(centre);A.controls.update();
+    if(variant==='detail'){A.camera.position.copy(centre).add(new THREE.Vector3(r*.25,r*.12,r*.45));A.controls.target.copy(centre);A.controls.update()}
+    document.body.dataset.candidateReady='SOURCE_ISOLATE_READY';return{record,variant,bounds:{min:box.min.toArray(),max:box.max.toArray()},sourceMeshes:root.children.length};
+  }
+  function release(){if(isolate)A.scene.remove(isolate);isolate=null;if(restore){restore.hidden.forEach(([o,v])=>o.visible=v);A.camera.position.copy(restore.camera);A.controls.target.copy(restore.target);A.controls.update();if(restore.play)A.setPlay(true);restore=null}document.body.dataset.candidateReady='WB2_READY'}
+  document.body.dataset.candidateReady='WB2_READY';
+  return{sample,sourceAudit,inspect,release,manifest};
+}

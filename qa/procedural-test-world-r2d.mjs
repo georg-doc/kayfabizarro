@@ -12,7 +12,7 @@ const requireTrue=(value,message)=>{if(!value)throw Error(message);};
 const readPlayer=()=>page.evaluate(()=>window.__wb2d.play.evidence());
 page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
 page.on('pageerror',e=>pageErrors.push(String(e)));
-let state=null;
+let state=null;const sourceInspection=[];
 try{
   await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
   await page.waitForFunction(()=>{const A=window.__wb2d,W=A?.world;return !!(A&&W&&W.id==='r2d4'&&A.terrain&&W.worldGraph?.nodes?.length===4&&A.play?.on);},null,{timeout:240000});
@@ -61,6 +61,16 @@ try{
   const unexpected=consoleErrors.filter(x=>!x.includes('favicon')&&!x.includes('404'));
   if(unexpected.length)problems.push('consoleErrors='+unexpected.length);
   // Fresh QA context has no open drawer; preserve the actual owner UI state.
+  for(const worldId of ['world.kfb-town','world.dystopia','world.utopia','world.protopia']){
+    for(const variant of ['original','adapted','detail']){
+      const result=await page.evaluate(async ({worldId,variant})=>await window.__wb2d.candidateEvidence.inspect(worldId,variant),{worldId,variant});
+      await page.waitForTimeout(750);
+      await page.screenshot({path:outDir+'/'+worldId+'.'+variant+'.png'});
+      sourceInspection.push({...result,audit:await page.evaluate(()=>window.__wb2d.candidateEvidence.sourceAudit())});
+    }
+  }
+  await page.evaluate(()=>window.__wb2d.candidateEvidence.release());
+  await fs.writeFile(outDir+'/source-inspection.json',JSON.stringify(sourceInspection,null,2));
   await page.screenshot({path:outDir+'/player-town-idle.png'});
   await check('native bindings and one mixer',async()=>{
     const p=await readPlayer();requireTrue(Object.keys(p.bindings).length===4,'four clips');

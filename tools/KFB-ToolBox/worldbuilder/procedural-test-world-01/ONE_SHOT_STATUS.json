@@ -14,7 +14,7 @@
     "live": "UNCHANGED"
   },
   "productOutcome": "SOURCE_CLEAN_WB2_WORLD_STUDIO_PLUS_PLAYABLE_GOLDEN_JOURNEY",
-  "state": "POST_WSA_RECONCILE_READY",
+  "state": "POST_WSA_RECONCILED_SOURCE_INSPECTION",
   "checkpointStatus": {
     "topology": "PASS_KEEP",
     "worldOwnership": "PASS_KEEP",
@@ -69,9 +69,10 @@
   "verification": {
     "criticContract": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/ONE_SHOT_EXTERNAL_CRITIC_LOOP_2026-10-04.md",
     "criticContractMainHead": "b0696f7491450f03e0c6a1dce2a57ecfe21c0e74",
-    "deterministicScreenshotHarness": "REQUIRED_NEXT",
+    "deterministicScreenshotHarness": "IMPLEMENTING_SOURCE_INSPECTION",
     "actualLoadedSourceAudit": "REQUIRED_BEFORE_HUMAN_STAGE",
-    "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE"
+    "wholeGameCritic": "REQUIRED_BEFORE_HUMAN_STAGE",
+    "externalCritic": "independent_critic \u00b7 no production edits"
   },
   "lastProven": {
     "playerRuntimeHead": "531fcc3f912d226254bab0e5e43a0a78750f001b",
@@ -99,12 +100,32 @@
     "organ attractions",
     "general inventory economy"
   ],
-  "nextInternalAction": "POST_WSA_RECONCILE_THEN_CONTINUE_AUTOMATICALLY_THROUGH_FULL_ONE_SHOT",
+  "nextInternalAction": "INSPECT_REGISTERED_FAMILIES_THEN_REPLACE_REJECTED_PRESENTATION_AND_CONTINUE",
   "invalidStopMessages": [
     "Player checkpoint complete",
     "next internal step is Residents",
     "local preview ready",
     "module ready for integration",
     "next WSA task is"
-  ]
+  ],
+  "verifiedBaseHead": "3989ae8a6aa12f6c00004fcc39b884285ff51077",
+  "donorClassification": {
+    "KEEP": [
+      "WB2 owner",
+      "four-island topology",
+      "Track graph",
+      "Golden anchors",
+      "native Player/Motion"
+    ],
+    "REPLACE": [
+      "visible legacy building presenter"
+    ],
+    "QUARANTINE": [
+      "legacy OSM content/data/presentation",
+      "Quaternius SciFi until isolated proof"
+    ],
+    "REPAIR": [
+      "runtime source audit and deterministic screenshot evidence"
+    ]
+  }
 }

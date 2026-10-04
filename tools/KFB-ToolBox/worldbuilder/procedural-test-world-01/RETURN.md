@@ -129,3 +129,8 @@ Reserved final human Stage:
 ### Exactly one next action
 
 **WSA / Codex resumes this same PR and continues automatically through the full recovery/completion One-Shot. It must not return after Residents, Drive, Site, or any other green internal checkpoint.**
+
+
+## 2026-10-04 · Continuous One-Shot resumed / source firewall checkpoint
+
+Verified receiving base `3989ae8a6aa12f6c00004fcc39b884285ff51077`. Valid WB2 topology, Ground/native Motion and Track work are KEEP. Legacy visible city CONTENT/PRESENTATION/DATA are REJECT; its mechanism is HOLD until cleanly decoupled. `VISIBLE_SOURCE_MANIFEST.json` resolves the intended RED / Industrial / Space Base / GREEN roster directly from the existing Registry, including exact source commits, blobs and dependencies. Independent no-code Critic established; no visual PASS or deployment claimed. Next internal action: actual original/adapted/detail source captures in the existing renderer, then replace rejected visible presentation and continue the full One-Shot.

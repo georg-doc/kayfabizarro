@@ -1157,6 +1157,7 @@ renderer.setAnimationLoop(()=>{
   if(WORLD)WORLD.tick(PLAY&&PLAY.on?PLAY.position:controls.target,camera);
   EDIT.follow();updateSelRing();if(!(PLAY&&PLAY.on))controls.update();
   if(!(WORLD&&WORLD.render(clock.elapsedTime,renderer,scene,camera)))renderer.render(scene,camera);
+  window.__wb2d?.candidateEvidence?.sample();
 });
 
 function fail(err){
@@ -1259,7 +1260,7 @@ try{
     if(saved){try{const d=JSON.parse(saved);if(d.format==='kfb-worldbuilder-scene'&&d.id===DOC_ID){sceneDoc=d;ensureSculpt(sceneDoc.terrain);E('saveState').textContent='Loaded saved world · '+(d.savedAt||'no timestamp')}}catch(err){console.warn('saved world unreadable',err)}}
     actorSourceReady=propSourceReady=true;updateReviewUnlock();
     await showScene();
-    if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED)setPlay(true);
+    if(HOST_PROPS.kaykitPlayer&&PLAY_ENABLED){setPlay(true);const EVID=await import('../procedural-test-world-01/wb2-source-evidence.v1.js');window.__wb2d.candidateEvidence=EVID.createCandidateEvidence(window.__wb2d);}
     if(new URLSearchParams(location.search).get('selftest')==='wi1')await runWorldSelfTest();
   }else await showActor();
   if(!WORLD&&new URLSearchParams(location.search).get('selftest')==='1')await runSelfTest();

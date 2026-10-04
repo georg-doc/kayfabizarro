@@ -111,3 +111,8 @@ Tested runtime/test head: `531fcc3f912d226254bab0e5e43a0a78750f001b`. Existing D
 - Reserved `https://kayfabizarro.pages.dev/kfb-hub/stage/world-studio-mvp/` for the final integrated human candidate; **not deployed**.
 - Explicitly invalidated "Player checkpoint complete → next internal step Residents" as a stop pattern.
 - No runtime source, merge, Stage deployment or Live promotion was performed by this routing checkpoint.
+
+
+## 2026-10-04 · Continuous One-Shot resumed / source firewall checkpoint
+
+Verified receiving base `3989ae8a6aa12f6c00004fcc39b884285ff51077`. Valid WB2 topology, Ground/native Motion and Track work are KEEP. Legacy visible city CONTENT/PRESENTATION/DATA are REJECT; its mechanism is HOLD until cleanly decoupled. `VISIBLE_SOURCE_MANIFEST.json` resolves the intended RED / Industrial / Space Base / GREEN roster directly from the existing Registry, including exact source commits, blobs and dependencies. Independent no-code Critic established; no visual PASS or deployment claimed. Next internal action: actual original/adapted/detail source captures in the existing renderer, then replace rejected visible presentation and continue the full One-Shot.
