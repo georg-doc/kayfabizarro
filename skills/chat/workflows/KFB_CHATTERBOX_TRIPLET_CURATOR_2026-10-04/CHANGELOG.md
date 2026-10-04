@@ -22,6 +22,14 @@
 - The Site plan now reuses that stage as its first UI/workflow donor rather than rebuilding review controls.
 - Current measured content gaps (missing resident-specific relation coverage and Card anchors) are preserved as authoring targets, not hidden by UI.
 
+### SITE READINESS
+- Added explicit `kfb.triplet-pool-review/1` schema so Cowork/sidebar exports can enter the Site without re-review.
+- Added review migration: keep→GEORG_KEEP, cut→GEORG_CUT, change→GEORG_TUNE.
+- Added six real PR #354 quote IDs as editorial bridge fixtures while explicitly recording that S1 Cards #11/#30/#1 have no direct Batch-01 quote match.
+- Verified Dropbox review-stage copy has the same filename and exact 26,833-byte size as the GitHub donor.
+- Added machine-readable Site implementation packet and token-light Work prompt.
+- Cumulative planning/data/donor/site-readiness checks: 34/34 PASS.
+
 ### IMPLEMENTATION
 Not started. No Site URL invented. No Stage/Live change.
 
