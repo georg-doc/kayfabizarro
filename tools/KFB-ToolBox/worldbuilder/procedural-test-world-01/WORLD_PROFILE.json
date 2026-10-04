@@ -1,0 +1,100 @@
+{
+  "schema": "kfb.procedural-test-world/2",
+  "date": "2026-10-04",
+  "status": "WORLD_CONVERGENCE_BASE_CANDIDATE_NO_LOCOMOTION",
+  "owner": "KFB WorldBuilder / WB2",
+  "checkpoint": "WORLD-CONVERGENCE-BASE-01",
+  "baseMain": "9a1f43b628126bb633ed95c99310288f0a5f1a7c",
+  "branch": "chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04",
+  "sourceDonor": {
+    "pr": 332,
+    "head": "e58d0ea4b97debbf8d0053d710612033b7e52908",
+    "latestBrowserProvenRuntime": "a18846cf8128e3e1facb0b51be0e6aff873d1244",
+    "browserRun": 37092514335,
+    "browserJob": 111115656852,
+    "browserArtifact": 11263101899,
+    "browserArtifactSha256": "74ab7902535bb67aa64fcb5b3f728424c9ce4ba9a87d0ea63cb18176f4d4661b",
+    "rule": "source-first rehome only; stale router/Hub/Motion state from PR #332 is not imported"
+  },
+  "world": {
+    "entry": "tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/PROCEDURAL_TEST_WORLD_01_SOURCE.html",
+    "play": false,
+    "camera": "wide",
+    "cardSystem": false,
+    "travelHost": false,
+    "profile": "r2d3",
+    "rendererOwner": "WB2",
+    "legacyPlayerLoaded": false
+  },
+  "proceduralDesign": {
+    "buildings": "existing WorldBuilder / Elastic V2 / kfb-facade-rule-v1 chain",
+    "buildingMountStatus": "DONOR_BROWSER_PROVEN_REHOMED_FOR_CURRENT_MAIN_REGRESSION",
+    "buildingEvidence": {
+      "placed": 1,
+      "windows": 14,
+      "doors": 1,
+      "seed": 3
+    },
+    "natureModules": [
+      "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-props-local-proof/environment-family-p1.mjs",
+      "tools/KFB-ToolBox/worldbuilder/world-corridor-01/procedural-environment-p2/environment-family-p2.mjs"
+    ],
+    "natureMountStatus": "DONOR_BROWSER_PROVEN_REHOMED_FOR_CURRENT_MAIN_REGRESSION",
+    "materialDirection": {
+      "primaryLightweightCandidate": "clay_floor_001",
+      "heavyProceduralClay": "near/hero reference",
+      "finalRuntimeAdoption": "OPEN"
+    }
+  },
+  "futureMotionDock": {
+    "owner": "KFB ToolBox / KayKit-native locomotion baseline",
+    "pr": 344,
+    "observedHead": "779c68b2c71609e86710a8bd9fe05ffc6913014f",
+    "status": "PREPARED_FOR_BLENDER_NOT_RUN",
+    "rule": "attach only after the native Blender baseline is persisted; this world slice does not add locomotion",
+    "legacyWi1Play": "DISABLED_IN_THIS_ENTRY"
+  },
+  "consumerDock": {
+    "worldOwner": "KFB WorldBuilder / WB2",
+    "facts": [
+      "spawn",
+      "baseHeightAt(x,z)",
+      "groundAt(x,z,terrainHeight)",
+      "solidAt(x,z)",
+      "buildingAt(x,z)",
+      "Track Core route/support"
+    ],
+    "rule": "future Motion/Drive/Residents/Combat consume world facts; they do not replace world/render ownership"
+  },
+  "r2d": {
+    "donorPath": "tools/KFB-ToolBox/_inbox/KFB World Core R2D v0 Insel/kfb-r2d-session-2026-10-03/KFB_R2D_v0/island.js",
+    "donorBlob": "6952697d7d3c9cd159ac3fdd924f24fa333c904d",
+    "seed": 3,
+    "biome": "burg",
+    "shape": "frei",
+    "integration": "source-derived plan/height/mask + visible body/water + P1/P2 nature + B1/facade buildings + Track Core inside WB2; no R2D renderer/camera/loop",
+    "donorPresentationEvidence": {
+      "depth": 25.4,
+      "bodyVertices": 14400,
+      "underside": true,
+      "pond": true,
+      "creek": true,
+      "waterfall": true,
+      "nature": {
+        "centres": 3,
+        "trees": 6,
+        "bushes": 6,
+        "boulders": 3,
+        "edgeRocks": 5,
+        "p2Details": 4
+      },
+      "buildings": {
+        "placed": 1,
+        "windows": 14,
+        "doors": 1,
+        "facadeRule": "kfb-facade-rule-v1"
+      }
+    }
+  },
+  "next": "Run current-main source + browser regression; only PASS advances to WORLD-MULTI-ISLAND-CORRIDOR-01."
+}

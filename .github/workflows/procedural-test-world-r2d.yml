@@ -1,0 +1,56 @@
+name: Procedural Test World R2D Browser
+on:
+  push:
+    branches:
+      - chatgpt-web/wb2-convergence-golden-corridor-01-2026-10-04
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js'
+      - 'qa/procedural-test-world-r2d.mjs'
+      - '.github/workflows/procedural-test-world-r2d.yml'
+  pull_request:
+    paths:
+      - 'tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/**'
+      - 'tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js'
+      - 'tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js'
+      - 'qa/procedural-test-world-r2d.mjs'
+      - '.github/workflows/procedural-test-world-r2d.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax
+        run: |
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-island-core.v1.js
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-presentation.v1.js
+          node --check tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/r2d-buildings.v1.js
+          node --check tools/KFB-ToolBox/worldbuilder/world-integration-01/r2d-world.js
+          node --check tools/KFB-ToolBox/worldbuilder/wb2-design-01/wb2d-app.js
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Start server
+        run: |
+          python3 -m http.server 4173 >/tmp/kfb-r2d-world-http.log 2>&1 &
+          sleep 2
+          curl -f 'http://127.0.0.1:4173/tools/KFB-ToolBox/worldbuilder/procedural-test-world-01/PROCEDURAL_TEST_WORLD_01_SOURCE.html' >/dev/null
+      - name: Browser proof
+        run: node qa/procedural-test-world-r2d.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: procedural-test-world-r2d-evidence
+          path: procedural-test-world-r2d-evidence/
+          if-no-files-found: error
