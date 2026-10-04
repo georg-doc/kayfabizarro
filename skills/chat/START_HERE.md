@@ -135,3 +135,17 @@ All future visual/UI/asset-based briefs load `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.
 The KFB Production Hub now defaults to a lean `Heute` surface. Explanatory hero copy, giant focus tabs and the default link-card wall are removed from the first view. The Pocket Inbox/dropzone is open and visible; the first screen is limited to current P0 actions and four handoff briefs. Long project/reference lists remain available only through compact filters. Claude Design receives the separate three-viewport brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`.
 
 HUD Rig v1 remains rejected history. The current Race/Travel radio restart brief lives in `georg-doc/KFB-Stunt-Car-Race/_handover/RACE_HUB_3D_AUTORADIO_RESTART_BRIEF_2026-09-19.md` and starts with the isolated exact Tiny Treats radio donor, never the rejected presentation.
+
+
+## 2026-10-04 · EyeRig unified Site · current human gate
+
+The ToolBox EyeRig owner remains Draft PR #104 on `toolbox/eye-rig-batch-2026-09-18`.
+Its single productive workbench is now published as a private ChatGPT Site:
+`https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`
+
+The Site contains one `Medium | Large | Legacy` interface (55 + 8 + 17 identities) and retains storage key `kfb.toolbox.eye-rig-batch.v0`.
+PR #162 is Legacy donor/evidence only; do not restore its separate UI as a productive surface.
+Cloudflare is recovery/regression only for this tool.
+
+Current gate: **GEORG_EYERIG_UNIFIED_SITE_01** — review Medium → Large → Legacy in the same Site, Barbarian Default + one alternate, Skull manual status, controls, Clay K1, bounded wheel zoom and reload persistence.
+Per-eye/eyepatch remains deferred until this gate is accepted. No auto-merge or Live promotion.
