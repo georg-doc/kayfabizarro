@@ -114,3 +114,29 @@ Work must map Georg's intended “Daten Generator” to exact provenance before 
 continue this exact branch/PR, build the Site in one outcome, publish/verify the reserved direct Cloudflare Stage, create the actual ChatGPT Site, update Return/changelog/router/Hub, then hand Georg exactly one visual/catalog gate.
 
 No auto-merge. No Live promotion.
+
+
+## Final prep metadata checkpoint
+
+Central discovery metadata is included on this same branch:
+
+- `skills/chat/START_HERE.md` — current Environment Atlas Site routing note;
+- `skills/chat/REGISTRY.json` — `kfb-environment-atlas-site-01-2026-10-04` = `READY_FOR_WORK`;
+- `skills/chat/CHANGELOG.md` — additive 2026-10-04 prep entry;
+- `kfb-hub/index.html` — P0 Work/PREP card linked to this Work brief; no fake preview link.
+
+Changed-file set at handoff remains exactly 8 files:
+
+1. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/WORK_BRIEF.md`
+2. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/SOURCE_MAP.json`
+3. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/PREP_EVIDENCE.md`
+4. `skills/chat/workflows/KFB_ENVIRONMENT_ATLAS_SITE_01_2026-10-04/RETURN.md`
+5. `skills/chat/START_HERE.md`
+6. `skills/chat/REGISTRY.json`
+7. `skills/chat/CHANGELOG.md`
+8. `kfb-hub/index.html`
+
+Branch head immediately before this Return metadata update:
+`a3da9082da6bb4808541ed8a6c4fdc7adbd84962`.
+
+This Return update itself is the final Git file write of the preparation handoff; use its resulting commit as the exact execution head for Work/PR #353.
