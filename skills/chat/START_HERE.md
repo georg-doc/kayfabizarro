@@ -69,8 +69,11 @@ This lane does not write to WB2 PR #348 and does not alter Live.
 
 Parallel planning only; does **not** interrupt the current WB2 One-Shot.
 
-Current benchmark brief:
+Current central router:
 `skills/chat/workflows/KFB_COMBAT_PLATFORMER_BENCHMARK_2026-10-04/START_HERE.md`
+
+Canonical benchmark owner:
+`georg-doc/KFB-Combat-Arena` Draft PR **#18** · `planning/card-hex-combat-ascent-benchmark-2026-10-04`
 
 Purpose:
 - compare a full Sol/Work vs Astra Combat-Platformer One-Shot on one frozen source packet;
@@ -86,11 +89,13 @@ Product concept:
 - BLENDER-DUEL-01 is the remaining source gate before freezing the exact benchmark packet;
 - future Flight/Card-Surf is a later upper-layer seam, not benchmark scope.
 
-Reserved Stage root:
-`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/platformer-benchmark/`
+Reserved canonical Stage root:
+`https://kayfabizarro.pages.dev/kfb-hub/stage/combat/card-hex-ascent-benchmark/`
 = RESERVED · NOT DEPLOYED.
 
-Do not create model-specific branches until BLENDER-DUEL-01 returns and the identical source/acceptance packet is frozen.
+The alternate `/combat/platformer-benchmark/` route from the transient central draft is superseded and must not be published.
+
+Do not create model-specific branches until BLENDER-DUEL-01 returns and PR #18 freezes the identical source/acceptance packet. If the central router and Combat PR #18 ever differ, PR #18 wins.
 
 ## 2026-10-04 · PR #348 RETURNED · CONTINUOUS ONE-SHOT + EXTERNAL CRITIC
 
