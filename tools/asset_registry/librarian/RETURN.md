@@ -1,3 +1,76 @@
+# RETURN · Asset Librarian GPT Site Prep · 2026-10-04
+
+**Status:** READY FOR WSA WORKSHOP · SITE/UX PREPARATION ONLY · NO RUNTIME CHANGE  
+**Owner:** KFB Asset Registry / Asset Librarian  
+**Branch:** `chatgpt-web/asset-librarian-gpt-site-prep-2026-10-04`  
+**Verified source-package checkpoint:** `3927b8dc9a9db927bb3e84ec5a54ff7dbb8ef7ab`  
+**WSA workflow:** `WSA-ASSET-LIBRARIAN-GPT-SITE-01`
+
+## Product reality
+
+The current Asset Librarian remains the source-backed discovery/preview/handoff owner. A new GPT Site is now fully briefed as the future primary human working surface, while the existing Cloudflare Librarian remains unchanged as a compatibility/source surface during migration.
+
+The Site is not built in this preparation slice.
+
+## Prepared outcome
+
+- full Librarian and compact God Mode / WorldBuilder picker share one query/item identity model;
+- real Family → Pack → Collection facets reuse Registry facts;
+- daily workflow becomes **Find → Inspect → Collect → Use**;
+- user-facing **Saved Sets** replace manual JSON-first collection work while retaining `kfb.asset-handoff.v1` underneath;
+- Motion discovery may reuse the proven real-actor preview seam, but Animation Lab / ToolBox remains compatibility/authoring owner;
+- Dropbox/file upload is a later Intake adapter only and stays visibly `INTAKE / UNREGISTERED` until existing Registry ingestion accepts it;
+- WorldBuilder remains scene placement/persistence owner.
+
+## Source / donor pins
+
+Primary source: current `main` Librarian under `tools/asset_registry/librarian/`.
+
+Green donor subset only from frozen Draft PR #304 implementation `545853924c4c177b6e26af588020b7a59307bb71`:
+- Family → Pack → Collection browse;
+- KayKit family facet;
+- Motion → real preview actor → existing binding/playback path.
+
+Excluded:
+- PR #304 motion scrub / new transport bar;
+- any second Registry, asset taxonomy, scene runtime or animation owner.
+
+## Files prepared
+
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/START_HERE.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/UI_PICKER_CONTRACT.md`
+- `_handover/ASSET_LIBRARIAN_GPT_SITE_2026-10-04/SOURCE_EVIDENCE.md`
+
+The same three documents are persisted in KFB Production Control under `WSA-ASSET-LIBRARIAN-GPT-SITE-01`.
+
+## Tests / evidence
+
+No Librarian runtime code changed, so no new browser/WebGL or deployment test is claimed.
+
+Preparation evidence:
+- current main owner/code read;
+- current Librarian surface inspected;
+- frozen PR #304 recovery/donor read;
+- Dropbox searched read-only for newer authoritative source; none supersedes GitHub;
+- every preparation write was fetched back from the exact branch.
+
+## Publication
+
+Existing compatibility URL remains unchanged:
+`https://kayfabizarro.pages.dev/asset-librarian/`
+
+No GPT Site URL exists yet. No Cloudflare Stage/Live publication, retirement or replacement is claimed.
+
+## Exactly one next gate
+
+**WSA-ASSET-LIBRARIAN-GPT-SITE-01**
+
+WSA Workshop builds Phase A: Site-native live search + Family/Pack/Collection + gallery/list + preview inspector + minimum Saved Set seam, reusing current owner code and only the proven PR #304 donor subset. It returns one direct GPT Site review link.
+
+---
+
+## Previous Return · historical
+
 # RETURN · Asset Librarian v1.2 Core
 
 **Status:** TESTED BROWSER IMPLEMENTATION CANDIDATE · WSA Phase 1  
