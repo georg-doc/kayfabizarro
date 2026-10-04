@@ -92,6 +92,17 @@ The Curator stores only stable quote references plus a semantic role:
 
 Canonical quote text, rights, provenance, Brain Food and FrizzleQuestion remain in the Hypernormalisation owner.
 
+## Claude Design correction · HUMAN FAIL for character presentation
+
+Georg reports that the current Claude Design result **cut out figures instead of using the real 3D models**.
+
+Binding correction:
+- cut-out/sprite figures are **REJECTED** as Resident/scene presentation;
+- the Site's Pair/Scene/Bubble Lab must use the exact Resident Atlas 3D actors/sets/rigs already source-proven in PR #310;
+- do not substitute screenshots, cardboard cutouts, image planes or 2D character stand-ins;
+- Claude Design output may still be mined for bubble geometry, VFX, layout or timing only if those parts are shown independently from the rejected character cutouts and are actually reusable;
+- no Claude visual return becomes a donor merely because it loaded or looked approximately correct.
+
 ## Bubble seam
 
 Existing presentation donors remain external.
