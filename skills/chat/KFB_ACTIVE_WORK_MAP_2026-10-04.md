@@ -6,6 +6,30 @@ Purpose: one cross-project view of current Web Chats, Sites, implementation slic
 
 GitHub current state wins. This file is a portfolio map, not a replacement for project SSOTs.
 
+## 0A · Surface consolidation · CURRENT CONTROL-PLANE RECOVERY
+
+Georg reports that the Production Hub, Production Control and ToolBox surfaces are not coherently current from the human point of view.
+
+This overrides any earlier implication that a technically verified Site deployment equals a usable current production navigation system.
+
+Binding:
+`skills/chat/KFB_SURFACE_CONSOLIDATION_2026-10-04.md`
+
+Work branch:
+`chatgpt-web/surface-consolidation-2026-10-04`
+
+Work handover:
+`skills/chat/workflows/KFB_SURFACE_CONSOLIDATION_2026-10-04/WORK_HANDOVER.md`
+
+Canonical roles after the recovery:
+- Production Hub = one human front door;
+- Production Control = admin ledger/history;
+- ToolBox = exactly one current specialist-tool router;
+- specialist GPT Sites remain specialist tools;
+- products remain products.
+
+This control-plane recovery may run without mutating World Studio or Combat runtimes.
+
 ## 0 · Operating rules
 
 1. **One owner per runtime/system.**
