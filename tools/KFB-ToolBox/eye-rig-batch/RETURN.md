@@ -1730,3 +1730,146 @@ Use it later for asymmetric cases such as Survivalist eyepatch, but it is no lon
 
 No merge or Live promotion.
 
+## 2026-10-04 · CURRENT RETURN · UNIFIED EYERIG SITE SOURCE READY
+
+Status: **THREE-CLASS SOURCE IMPLEMENTED · 33/33 FOCUSED PASS · SITE PUBLICATION PENDING WORK**
+
+### Product correction completed
+
+The productive EyeRig workbench is now one interface:
+
+`Medium | Large | Legacy`
+
+PR #104 is the single productive UI/runtime owner.
+
+The separate Legacy UI from PR #162 is no longer the intended working surface. PR #162 remains donor/evidence for:
+- 17/17 persisted Legacy profiles;
+- 16 MEASURED_CANDIDATE;
+- Skull HUMAN_REQUIRED;
+- proven Legacy assembly / LegacyFaceHost;
+- historical browser evidence.
+
+### Exact implementation
+
+Donor/data intake:
+`4c34e076360b5e9ece502ff42c8d00130bb41f63`
+
+Unified runtime:
+`847954178551952c9f5860cede3cae7fe57bf3ed`
+
+Static contract:
+`9247d6b3832bdb73fac20d55bf76a766bc2d4453`
+
+Site contract:
+`5084600906fd4cf1b85c237adbbf63730ff1ce62`
+
+Evidence:
+`d70223e93ae8d8c81379a22c48f9f4b300d38034`
+
+Source truth:
+`cbfe676f8795bab786faf3881d9f1893b1393673`
+
+### Unified class inventory
+
+- Rig_Medium: **55**
+- Rig_Large: **8**
+- Rig_Legacy: **17**
+- total: **80 review identities**
+
+Legacy donor copies in the unified bundle:
+- rig adapter `41ba111d264cb73f2b3fbd70370dbb0ba042c91d`
+- LegacyFaceHost `186323777ff78a9e4f4a246ad10232dd8ef82bc9`
+
+Those two modules are byte-identical to the proven donor revision.
+
+Legacy data copied exactly:
+- `data/rig-legacy-heads.v0.json`
+- `data/rig-legacy-default.v0.json`
+- `data/rig-legacy-auto.v1.json`
+
+### Shared interface retained
+
+All three classes use the same:
+- roster;
+- review states;
+- Front / ¾ / Side / Face views;
+- bounded wheel zoom;
+- Neutral / Clay K1;
+- source-eye cleanup control;
+- Placement;
+- Oval;
+- Pupil / gaze;
+- expressions / blink;
+- direct numeric entry;
+- import/export;
+- Approve / Adjusted approve / Reject flow.
+
+Legacy is class-specific only at actor construction:
+exact Legacy source → proven modular assembly → LegacyFaceHost → persisted Legacy profile → existing EyeRig v6 → common controls.
+
+### Persistence
+
+Storage remains:
+`kfb.toolbox.eye-rig-batch.v0`
+
+Legacy is additive. No storage clear, reset, namespace replacement or destructive migration was introduced.
+
+### Evidence
+
+Focused unified readback:
+**33/33 PASS**
+
+Expanded static contract:
+**160 assertions persisted · NOT_RUN**
+
+No GitHub Actions run exists on the tested head, therefore the 160 assertions are not claimed as current CI PASS.
+
+Historical Legacy evidence remains:
+- **24/24 + 247/247 PASS** automatic source-first;
+- **30/30 + 215/215 PASS** persisted-profile reconstruction.
+
+Medium/Large baseline was human-accepted before this integration.
+
+### Site publication package
+
+Source root:
+`tools/KFB-ToolBox/eye-rig-batch/`
+
+Entrypoint:
+`index.html`
+
+Manifest:
+`site.manifest.json`
+
+Publishing brief:
+`docs/EYE_RIG_UNIFIED_SITE_01.md`
+
+Target:
+**ChatGPT Site**
+
+Cloudflare is now recovery/regression infrastructure only for this tool. This slice intentionally did **not** create another Cloudflare acceptance fork.
+
+The current Webchat toolset does not expose a Site create/publish action, so publication is not falsely claimed here.
+
+### Exactly one next gate
+
+**EYE_RIG_UNIFIED_SITE_PUBLISH_01**
+
+Work publishes the existing source root as one Site:
+- no redesign;
+- no Legacy iframe/embed;
+- preserve Medium | Large | Legacy;
+- preserve relative data/lib files;
+- preserve storage key;
+- no merge required.
+
+After a Site URL exists:
+
+**GEORG_EYERIG_UNIFIED_SITE_01**
+
+Check Medium, Large and Legacy in the same interface and reload persistence.
+
+Per-eye / eyepatch remains deferred until after Site acceptance.
+
+No auto-merge or Live promotion.
+
