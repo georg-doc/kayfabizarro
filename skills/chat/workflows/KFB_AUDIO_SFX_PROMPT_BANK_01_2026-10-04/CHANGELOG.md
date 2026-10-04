@@ -9,3 +9,10 @@
 - encoded free-running vs BPM-synced runtime strategy;
 - generated copy-ready HTML and machine-readable JSON for future Audio Site integration;
 - next gate: `KFB_AUDIO_SFX_INTAKE_01`.
+
+## 2026-10-04 · validation
+
+- workflow run `37171185733` / job `111344303905` **9/9 PASS**;
+- longest ElevenLabs prompt = 312 characters;
+- prompt-bank HTML + JSON structure validated;
+- next gate remains `KFB_AUDIO_SFX_INTAKE_01`.

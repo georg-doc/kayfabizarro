@@ -1,6 +1,6 @@
 # KFB AUDIO SFX PROMPT BANK 01 · RETURN
 
-**Status:** PROMPT_READY · VALIDATION PENDING  
+**Status:** PROMPT_READY · VALIDATED  
 **Owner:** KFB Audio & Soundscape Baseline v1
 
 ## Result
@@ -21,3 +21,17 @@ Generate individual layers, keep original outputs, audition before promotion, an
 ## Exactly one next gate
 
 `KFB_AUDIO_SFX_INTAKE_01`.
+
+## Validation
+
+GitHub Actions run `37171185733` / job `111344303905`:
+- **9/9 PASS**
+- 26 ElevenLabs prompts;
+- 6 Suno Sounds prompts;
+- 3 Suno v6 experiments;
+- all IDs unique;
+- all P0 gap families represented;
+- longest ElevenLabs prompt: **312 characters**;
+- HTML marker + copy controls present.
+
+No audio-generation result is claimed. This validates the prompt bank package only.
