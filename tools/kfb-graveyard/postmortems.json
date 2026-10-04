@@ -1,8 +1,8 @@
 {
  "$schema": "kfb-postmortem-graveyard/v1",
- "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290.",
- "version": "1.7.0",
- "updated": "2026-09-29",
+ "note": "Grabstein-Daten fuer die Camp-Hub-Graveyard-Zone. Jeder Eintrag = ein Grab. 'stone' = Inschrift auf dem Stein, 'hover' = Sprechblasen-Summary beim Hovern (FrizzleBob als Graveyard-Guide liest sie vor), 'lesson' = die Lehre, 'trigger' = die Echtzeit-Reissleine. Rendern mit Kenney graveyard set + Ghost-Char oder FB als Guide. · 1.6.0 (2026-09-24): Slice1 (34) und Camp-Hub-Diary (6 fehlende) zusammengeführt; 16 neue Gräber aus den Post-Mortems vom 24.09. (Hürth R2, Curtain v1, Billboard B0, VFX-01) und der Coworker-Session. · 1.7.0 (2026-09-29): neuer WSA-Lead-Fail zur fehlenden Canon-Promotion bereits abgenommener Shadow/Contact- und Clay-Fassaden-Regeln; Recovery PR #290. · 1.8.0 (2026-10-04): neuer One-Shot/WSA-Lead-Fail — technischer Hürth/OSM-Donor wurde trotz fehlender visueller Abnahme als aktuelle KFB-Weltgrundlage promoted; daraus folgen typed donor scope + visible-source firewall.",
+ "version": "1.8.0",
+ "updated": "2026-10-04",
  "graves": [
   {
    "id": "webgpu-foundation",
@@ -790,6 +790,25 @@
     "semantic-data-loss"
    ],
    "source": "skills/chat/recovery/POSTMORTEM_WSA_LEAD_CANON_PERSISTENCE_FAILURE_2026-09-29.md"
+  },
+  {
+   "id": "technical-donor-became-world",
+   "date": "2026-10-04",
+   "stone": "Hier ruht: der technische Donor, der zur Welt wurde",
+   "hover": "Hürth/OSM war als Gebäude-/Fassaden-Mechanik bewiesen. Der One-Shot deklarierte die WB2-Welt trotzdem als PASS und 'do not rebuild'. WSA integrierte folgerichtig den Player in genau diese sichtbare Legacy-Welt. Georg erkannte im Screenshot sofort wieder den alten OSM-Look.",
+   "lesson": "Reuse ist dimensionsgebunden: Mechanismus-PASS ist kein Presentation-, Content- oder Data-PASS. Vor autonomer Integration die tatsächlich sichtbaren Quellen allow-/denylisten und technische World-PASSes nie als visuelle Abnahme formulieren.",
+   "trigger": "welche sichtbaren quellen sind wirklich im frame?",
+   "who": "process/WSA Lead",
+   "size": "monument",
+   "tags": [
+    "one-shot",
+    "wsa-lead",
+    "donor-scope",
+    "legacy-osm",
+    "visual-foundation",
+    "false-green",
+    "integration"
+   ]
   }
  ]
 }
