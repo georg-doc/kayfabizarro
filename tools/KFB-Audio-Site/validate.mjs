@@ -18,7 +18,6 @@ try{
  check('old prompt feedback TUNE',intake.feedback.oldPromptBank==='HUMAN_TUNE',intake.feedback);
  check('ambient stem families downloaded',['Utopia Ambient Bed','Dystopia Ambient Bed','Protopia Ambient Bed'].every(title=>catalog.tracks.find(t=>t.title===title)?.stems?.policy==='source-only'));
  check('six palette masters human-positive',["Soul / R&B Ambient Bed","Piano / Chamber Minimal Bed","Cinematic / Epic-but-Playable Bed","Cartoon Chase / Capers Bed","Folk / Acoustic / Storybook Bed","Metaphysical / Cosmic Ambient Bed"].every(title=>catalog.tracks.find(t=>t.title===title)?.humanReview?.status==='positive'));
- check('six palette stems pending',(lock.pendingStemAcquisition||[]).filter(x=>["Soul / R&B Ambient Bed","Piano / Chamber Minimal Bed","Cinematic / Epic-but-Playable Bed","Cartoon Chase / Capers Bed","Folk / Acoustic / Storybook Bed","Metaphysical / Cosmic Ambient Bed"].includes(x.title)).length===6);
  check('six palette stems downloaded',["Soul / R&B Ambient Bed","Piano / Chamber Minimal Bed","Cinematic / Epic-but-Playable Bed","Cartoon Chase / Capers Bed","Folk / Acoustic / Storybook Bed","Metaphysical / Cosmic Ambient Bed"].every(title=>catalog.tracks.find(t=>t.title===title)?.stems?.policy==='source-only'));
  check('rain still source-required',sound.missing.some(x=>x.id==='rain-bank'&&x.status==='SOURCE_REQUIRED'));
  console.log(JSON.stringify({status:'PASS',checks:checks.length,tracks:catalog.tracks.length,roadTrip:road.length,stemFamilies:road.filter(t=>t.stems).length,elevenTests:intake.elevenLabs.length},null,2));
