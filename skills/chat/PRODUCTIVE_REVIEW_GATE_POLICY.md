@@ -160,3 +160,20 @@ Before creating a review artifact, ask:
 4. Is the real owner/product surface already available for the review?
 
 If #1 has no clear answer, do not create a human gate.
+
+
+## Visible foundation rule · 2026-10-04
+
+A technically integrated scene is not a valid product foundation merely because it boots and uses the correct owner.
+
+Before calling an integrated world/current scene product-ready:
+- inspect the actual visible source families;
+- distinguish mechanism reuse from visible content reuse;
+- reject technical fixtures that leak into the visible product;
+- treat a Georg screenshot showing the wrong visual donor as `HUMAN_VISUAL_FAIL` even when browser/runtime tests are green.
+
+This specifically prevents a proven OSM/Hürth building mechanism from becoming the visible KFB Town/world by accident.
+
+The correct response is not a new proxy page.
+Fix the real integrated product or preserve the candidate and perform one integrated recovery pass.
+
