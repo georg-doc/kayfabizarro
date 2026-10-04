@@ -15,13 +15,19 @@
       "id": "kfb-production-hub",
       "owner": "KFB Production Hub / HUB-CTRL",
       "url": "https://kfb-production-hub.frizzlebob.chatgpt.site",
-      "status": "DEPLOYED_PRIVATE_MIRROR_SOURCE_REFRESH_READY",
+      "status": "SITE_VERIFIED_CURRENT_BOARD",
       "source": "PR #217",
-      "humanStatus": "CURRENT_BOARD_SOURCE_READY_PUBLISH_ONLY",
-      "notes": "GitHub Production Hub source refreshed to current portfolio board (Today, Briefings, quick links, Production Control link). Existing GPT Site still needs a deterministic in-place PUBLISH_ONLY update from the frozen source packet; do not use High Reasoning or create a second Site.",
+      "humanStatus": "CURRENT_PORTFOLIO_VISIBLE",
+      "notes": "Existing Production Hub Site updated in place from the frozen current-board source. Exact URL opened; expected board 13/13. No product redesign, no new Site, no Cloudflare substitution.",
       "publishPacket": "skills/chat/publish/PRODUCTION_HUB_CURRENT_BOARD_PUBLISH_ONLY_2026-10-04.md",
       "publishSourceHead": "910864dd4cf5a112f5d6528d71436ecaa03e422f",
-      "hubSourceBlob": "1153d083ed778b90d29008fe1323d5fab863ab38"
+      "hubSourceBlob": "1153d083ed778b90d29008fe1323d5fab863ab38",
+      "siteProject": "appgprj_6ab7358322a8819183d2fa036b7b12f9",
+      "siteVersion": "appgprj_6ab7358322a8819183d2fa036b7b12f9~appgver_1639ce03a8d4819199b723290cb14b7a",
+      "siteDeployment": "appgdep_6ac2ab4199048191bff4eeb6e9403e73",
+      "publishedSourceHead": "3ca2be202c329c76f268517b13cfd1a5075a3c90",
+      "publishedSourceBlob": "1153d083ed778b90d29008fe1323d5fab863ab38",
+      "verification": "SITE_VERIFIED · deployment succeeded · HTTP 200 · expected board 13/13 · exact Site URL opened"
     },
     {
       "id": "kfb-eyerig-workbench",
@@ -99,5 +105,5 @@
       "notes": "Durable workflow/decision/return surface. Current portfolio records are refreshed from KFB_ACTIVE_WORK_MAP_2026-10-04; no separate runtime owner."
     }
   ],
-  "updatedAt": "2026-10-04T19:25:00+02:00"
+  "updatedAt": "2026-10-04T21:45:00+02:00"
 }
