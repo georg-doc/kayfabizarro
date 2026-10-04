@@ -1,0 +1,26 @@
+{
+ "radius": 0.5,
+ "units": "Blender m (glTF +Y up)",
+ "pivot": "ball centre",
+ "variants": {
+  "high": {
+   "lump": 0.06,
+   "lumpFreq": 1.6,
+   "sag": 1.0,
+   "facet": 0.14,
+   "dent": 0.35,
+   "sep": false,
+   "rough": 0.9
+  },
+  "low": {
+   "lump": 0.12,
+   "lumpFreq": 2.0,
+   "sag": 0.82,
+   "facet": 0.2,
+   "dent": 0.55,
+   "sep": true,
+   "rough": 0.94
+  }
+ },
+ "source": "K1 lab-clay clay-material.v8 (sheen 0.18 #fff1e0 rough 0.85, roughness 0.9, facet 0.14 size 0.65, print tile 4.5, oil 0.22, mottle 0.05), clay-soften.v1 (lump 0.06, freq 1.6), clay-profiles.v2 prop dent 0.35-0.4; fingerprints = cgbookcase Fingerprints01 (via joebinns/clay) 512 px from KFB lab-hud"
+}
