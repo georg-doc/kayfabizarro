@@ -1,0 +1,235 @@
+{
+  "schema": "kfb.mvp-golden-journey/0.1",
+  "id": "kfb.mvp.golden-journey.01",
+  "status": "planning-fixture",
+  "openWorld": true,
+  "runtimeOwner": "KFB WorldBuilder / WB2",
+  "worlds": {
+    "town": {
+      "id": "world.kfb-town",
+      "deckId": null
+    },
+    "dystopia": {
+      "id": "world.dystopia",
+      "deckId": "ignore_dystopia"
+    },
+    "utopia": {
+      "id": "world.utopia",
+      "deckId": "forget_utopia"
+    },
+    "protopia": {
+      "id": "world.protopia",
+      "deckId": "embrace_protopia"
+    }
+  },
+  "cards": {
+    "dystopia01": {
+      "ref": "ignore_dystopia:1",
+      "number": 1,
+      "title": "The Doomsday Clock"
+    },
+    "utopia01": {
+      "ref": "forget_utopia:1",
+      "number": 1,
+      "title": "The Glossy Horizon"
+    },
+    "protopia01": {
+      "ref": "embrace_protopia:1",
+      "number": 1,
+      "title": "The Open Notebook"
+    },
+    "antiRules01": {
+      "ref": "anti_rules_toolkit:1",
+      "number": 1,
+      "title": "The Rules Lawyer"
+    }
+  },
+  "anchors": {
+    "spawn": "town.spawn.market",
+    "clown": "town.resident.clown.onboarding",
+    "driver": "town.resident.driver.taxi",
+    "taxi": "town.vehicle.taxi.01",
+    "dystopiaParty": "dystopia.party.pentagram",
+    "orcSinger": "dystopia.party.orc-singer",
+    "utopiaCEO": "utopia.monstrosity.throne",
+    "protopiaFarm": "protopia.farm.social-core",
+    "lorekeeper": "protopia.lorekeeper.plateau"
+  },
+  "intro": {
+    "curtain": "theatre-curtain-v1-donor",
+    "loadingPlaque": "ui.clay.bloedsinn-loading",
+    "enterPlaque": "ui.clay.enter",
+    "progress": "real-critical-loader-progress"
+  },
+  "socialCalls": [
+    "bingo",
+    "bongo",
+    "boggle",
+    "bloedsinn"
+  ],
+  "journey": [
+    {
+      "beat": 1,
+      "id": "clown-onboarding",
+      "world": "world.kfb-town",
+      "interaction": "I",
+      "goldenChoice": "bingo",
+      "grant": "ignore_dystopia:1",
+      "opens": "quest.deliver.dystopia01.orc-band"
+    },
+    {
+      "beat": 2,
+      "id": "driver-key",
+      "world": "world.kfb-town",
+      "optionalForHuman": true,
+      "requiredForAcceptance": true,
+      "interaction": "I",
+      "goldenChoice": "bingo",
+      "grant": "item.taxi-key.01"
+    },
+    {
+      "beat": 3,
+      "id": "taxi-drive",
+      "world": "world.kfb-town",
+      "requires": [
+        "item.taxi-key.01"
+      ],
+      "interaction": "I",
+      "vehicle": {
+        "sourceCommit": "64cbf1031392029f25110dd613247b32148aae42",
+        "path": "media/3D_Assets/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_taxi.gltf",
+        "blob": "266c1113a22f85ee6851b5dab6a89fc51726f4f8"
+      }
+    },
+    {
+      "beat": 4,
+      "id": "dystopia-party",
+      "world": "world.dystopia",
+      "performance": [
+        "resident-disco-01",
+        "orc-band"
+      ],
+      "song": "demon-afro-strut",
+      "danceUnlock": "kfb_dance_hip_hop_a"
+    },
+    {
+      "beat": 5,
+      "id": "orc-handoff",
+      "world": "world.dystopia",
+      "interaction": "I",
+      "consumeQuest": "quest.deliver.dystopia01.orc-band",
+      "grant": "forget_utopia:1",
+      "opens": "quest.deliver.utopia01.ceo"
+    },
+    {
+      "beat": 6,
+      "id": "utopia-ceo",
+      "world": "world.utopia",
+      "interaction": "I",
+      "goldenChoice": "bongo",
+      "grant": "embrace_protopia:1",
+      "opens": "quest.deliver.protopia01.farmers"
+    },
+    {
+      "beat": 7,
+      "id": "protopia-farmers",
+      "world": "world.protopia",
+      "interaction": "I",
+      "goldenChoice": "bingo",
+      "grant": "anti_rules_toolkit:1",
+      "opens": "quest.deliver.antirules01.lorekeeper"
+    },
+    {
+      "beat": 8,
+      "id": "lorekeeper",
+      "world": "world.protopia",
+      "interaction": "I",
+      "optionalDeepChoice": "boggle",
+      "consumeQuest": "quest.deliver.antirules01.lorekeeper"
+    }
+  ],
+  "bag": {
+    "capacity": 20,
+    "requiredFunctionalItems": [
+      "item.taxi-key.01"
+    ],
+    "cardStorage": "fractal-almanac-not-bag",
+    "visualDonorStatus": "SOURCE_REQUIRED",
+    "candidateDonors": [
+      "Orc_Backpack.gltf.glb",
+      "Hoarder_Backpack.gltf"
+    ]
+  },
+  "track": {
+    "allRequiredRoutesWalkable": true,
+    "vehicleOptionalForHuman": true,
+    "footAssistZones": "optional-semantic-zones-track-owned-ground-applied"
+  },
+  "audio": {
+    "goldenSong": {
+      "id": "demon-afro-strut",
+      "title": "Demon Lord Afro-Strut 01",
+      "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Demon Lord Afro-Strut 01.mp3"
+    },
+    "completionUnlocks": [
+      "song:demon-afro-strut",
+      "dance:kfb_dance_hip_hop_a"
+    ]
+  },
+  "billboards": [
+    {
+      "id": "billboard.town",
+      "world": "world.kfb-town",
+      "startSurface": "kfb-standard-card-back",
+      "loop": "hypernormalisation",
+      "aspectProfile": "iphone-landscape"
+    },
+    {
+      "id": "billboard.dystopia",
+      "world": "world.dystopia",
+      "startSurface": "deck-cover:ignore_dystopia",
+      "loop": "hypernormalisation",
+      "aspectProfile": "iphone-landscape"
+    },
+    {
+      "id": "billboard.utopia",
+      "world": "world.utopia",
+      "startSurface": "deck-cover:forget_utopia",
+      "loop": "hypernormalisation",
+      "aspectProfile": "iphone-landscape"
+    },
+    {
+      "id": "billboard.protopia",
+      "world": "world.protopia",
+      "startSurface": "deck-cover:embrace_protopia",
+      "loop": "hypernormalisation",
+      "aspectProfile": "iphone-landscape"
+    }
+  ],
+  "persistenceAssertions": [
+    "clown-met",
+    "dystopia01-provenance",
+    "taxi-key-owned",
+    "driver-met",
+    "dystopia-party-visited",
+    "demon-afro-strut-complete",
+    "dance-kfb_dance_hip_hop_a-unlocked",
+    "orc-handoff-complete",
+    "utopia01-provenance",
+    "monstrosity-met",
+    "protopia01-provenance",
+    "farmers-met",
+    "anti-rules01-provenance",
+    "lorekeeper-met",
+    "valid-safe-resume-anchor",
+    "almanac-card-identity-continuity"
+  ],
+  "deferred": [
+    "full-combat",
+    "player-flight",
+    "general-inventory-economy",
+    "kayfabulation-minigame",
+    "opo-reputation-level",
+    "open-ended-llm-society"
+  ]
+}
