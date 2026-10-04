@@ -43,9 +43,11 @@ export function installHarness(ctx) {
       const dx = best.x - s0.x, dz = best.z - s0.z, l = Math.hypot(dx, dz);
       const p = graph.landingPoint(s0, s0.x + dx / l * 9, s0.z + dz / l * 9, 0.35); // 0.35 u inside the edge, facing the target
       c.reset({ x: p.x, y: s0.top, z: p.z }, Math.atan2(dx, dz)); follow.yaw = Math.atan2(dx, dz) + Math.PI; follow.snap();
-      ctx.input.synthetic = { x: 0, z: 1, jump: true }; // camera-forward intent + one Space press
+      const runUp = arguments[2]?.runUp ?? 0;
+      if (runUp) { const back = graph.landingPoint(s0, s0.x - dx / l * 9, s0.z - dz / l * 9, 0.4); c.reset({ x: back.x, y: s0.top, z: back.z }, Math.atan2(dx, dz)); follow.snap(); }
+      ctx.input.synthetic = { x: 0, z: 1, jump: !runUp, sprint: !!runUp }; // camera-forward intent + one Space press (after the run-up)
       let t = 0, landed = false;
-      for (; t < maxSec; t += dt) { ctx.step(dt); if (pauseAt != null && t >= pauseAt) break; if (c.grounded && c.lastJumpTrace && t > 0.2) { landed = true; if (t > 0.6) break; } }
+      for (; t < maxSec; t += dt) { if (runUp && !c.lastJumpTrace && c.grounded && c.state === 'MOVE' && (c.edgeHold || ((c.pos.x - s0.x) * dx + (c.pos.z - s0.z) * dz) / l > 0.45)) ctx.input.synthetic.jump = true; ctx.step(dt); if (pauseAt != null && t >= pauseAt) break; if (c.grounded && c.lastJumpTrace && t > 0.2) { landed = true; if (t > 0.6) break; } }
       ctx.input.synthetic = null; ctx.advance(0);
       return { from, to, t: +t.toFixed(2), landed, support: c.support?.id ?? null, traversal: c.state, jump: c.lastJumpTrace ? { ...c.lastJumpTrace, trace: (c.lastJumpTrace.trace || []).filter((_, i, a) => i % 6 === 0 || i === a.length - 1) } : null };
     },
@@ -63,7 +65,7 @@ export function installHarness(ctx) {
           await wait(400); const h = p.root.position; follow.override = { pos: new THREE.Vector3(h.x + 2.2, h.y + 1.9, h.z - 1.3), look: new THREE.Vector3(h.x, h.y + 1.4, h.z - 0.3) }; break;
         }
         case 'traversal-direct': return A.jumpTo('card0', 'A1');
-        case 'traversal-long': return A.jumpTo('B2.0', 'B3');
+        case 'traversal-long': return A.jumpTo('B2.0', 'B3', { runUp: true });
         case 'traversal-double': return A.jumpTo('B3.0', 'B4');
         case 'combat-blaster': case 'combat-rifle': case 'combat-minigun': {
           const id = { 'combat-blaster': 'card1', 'combat-rifle': 'card2', 'combat-minigun': 'card3' }[name]; if (!graph.get(id)) return { skipped: id + ' not in ' + INC };
@@ -96,6 +98,7 @@ export function installHarness(ctx) {
         if (enc) { // fight: face nearest alive enemy, alternate strafe / fire, dodge every few cycles
           const e = cb.enemiesOf(enc.card).filter(a => a.alive && a.weapon).sort((a, b) => a.root.position.distanceTo(ctx.player.root.position) - b.root.position.distanceTo(ctx.player.root.position))[0];
           if (e) face(e.root.position.x, e.root.position.z);
+          if (enc.card !== 'card1' && run.weapons.includes('rifle') && run.weapon !== 'rifle' && ctx.setWeapon) ctx.setWeapon('rifle'); // evidence for the player Rifle
           const cyc = (k++ % 150); ctx.input.synthetic = cyc < 40 ? { x: (Math.floor(k / 150) % 2 ? 1 : -1) * 0.8, z: 0 } : { x: 0, z: 0, fire: true, dodge: cyc === 41 && (k / 150 | 0) % 3 === 2 };
           t = step(t); continue;
         }

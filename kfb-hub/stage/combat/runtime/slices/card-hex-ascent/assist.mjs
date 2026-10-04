@@ -52,7 +52,7 @@ export function classifyJump(d, dy, J = JUMP) {
 // Pick the support the player intends to reach.
 // graph: SupportGraph; from: {x,y,z}; dir: unit intent vector {x,z} (input or facing); current: support id.
 export function chooseTarget(graph, from, dir, currentId, J = JUMP, routeHint = -1, speed = Infinity) {
-  let best = null;
+  let best = null, unearned = null;
   const dl = Math.hypot(dir.x, dir.z); if (dl < 1e-3) return null;
   const ux = dir.x / dl, uz = dir.z / dl;
   const cur = currentId ? graph.get(currentId) : null;
@@ -68,13 +68,17 @@ export function chooseTarget(graph, from, dir, currentId, J = JUMP, routeHint = 
     const ang = Math.acos(Math.max(-1, Math.min(1, (dx * ux + dz * uz) / d)));
     if (ang > J.cone) continue;
     const jump = classifyJump(d, dy, J); if (!jump) continue;
-    if (jump.kind === 'long' && speed < J.runSpeed * 0.45) continue; // long jumps are earned with a run-up
+    if (jump.kind === 'long' && speed < J.runSpeed * 0.45) { // long jumps are earned with a run-up
+      const sc = ang * 2.2 + d * 0.22; if (!unearned || sc < unearned.score) unearned = { support: s, point: p, d, dy, ang, score: sc, ...jump }; continue;
+    }
     // score: aligned, near, upward-route preference, prefer single over double
     let score = ang * 2.2 + d * 0.22 + (jump.kind === 'double' ? 0.7 : 0) + (jump.kind === 'long' ? 0.25 : 0);
     if (dy > 0.3) score -= 0.35;
     if (routeHint >= 0 && s.route >= 0) score += Math.abs(s.route - routeHint - 1) * 0.12;
     if (!best || score < best.score) best = { support: s, point: p, d, dy, ang, score, ...jump };
   }
+  // the intended (aligned) target is a long jump without run-up: do not silently pick a farther double
+  if (unearned && (!best || unearned.ang + 0.15 < best.ang)) return { ...unearned, needsRunUp: true };
   return best;
 }
 

@@ -49,6 +49,7 @@ export class PlayerController {
     if (this.mode === 'chill' && this.grounded && !this.locked) {
       const dir = mag > 0.2 ? { x: ix, z: iz } : { x: Math.sin(this.yaw), z: Math.cos(this.yaw) };
       this.preview = chooseTarget(this.graph, this.pos, dir, this.support?.id, J, this.support?.route ?? -1, this.speed);
+      if (this.preview?.needsRunUp || (this.seal && this.support?.id === this.seal)) this.preview = null;
     }
 
     if (this.state === 'RESCUE') { this.vel.x = this.vel.z = 0; if (this.stateT > 0.45) this.finishRescue(); return; }
@@ -151,6 +152,8 @@ export class PlayerController {
     if (this.mode === 'chill') {
       const dir = mag > 0.2 ? { x: ix, z: iz } : { x: Math.sin(this.yaw), z: Math.cos(this.yaw) };
       plan = chooseTarget(this.graph, this.pos, dir, this.support?.id, this.J, this.support?.route ?? -1, this.speed);
+      if (plan?.needsRunUp) { this.emit('needsRunUp', { target: plan.support.id }); plan = null; }
+      if (plan && this.seal && this.support?.id === this.seal) { this.emit('sealed', {}); plan = null; } // Card encounter in progress
       if (!plan && this.support) { // targetless jump returns to its own support (Babel: steer home)
         const hx = this.pos.x + dir.x * Math.min(1.2, this.speed * 0.6), hz = this.pos.z + dir.z * Math.min(1.2, this.speed * 0.6);
         const p = this.graph.landingPoint(this.support, hx, hz, 0.5); const d = Math.hypot(p.x - this.pos.x, p.z - this.pos.z);

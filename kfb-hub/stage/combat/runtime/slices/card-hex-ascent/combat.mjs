@@ -38,6 +38,7 @@ export class CombatDirector {
   startEncounter(card) {
     if (this.encounter?.card === card) return;
     const list = this.enemiesOf(card).filter(a => a.alive); if (!list.length) return;
+    if (this.encounter && !this.encounter.cleared) for (const a of this.enemiesOf(this.encounter.card)) { a.active = false; a.queued = null; a.state = 'IDLE'; a.anim.stop?.(null, 0.2); a.anim.spin = 0; }
     this.encounter = { card, t0: this.time, cleared: false };
     for (const a of list) { a.active = true; a.state = 'IDLE'; a.stateT = 0; a.cool = 0.9 + a.rng() * 0.8; }
     this.emit('encounterStart', { card, enemies: list.length });
@@ -96,10 +97,10 @@ export class CombatDirector {
       this.deviation.push({ actor: a.id, weapon: a.weapon, yawDeg: +yawDev.toFixed(2) }); if (this.deviation.length > 40) this.deviation.shift();
       // barrel yaw is the authored truth; pitch is solved toward the target so elevated targets are reachable
       aimDir.set(dir.x / hb * ht, toT.y, dir.z / hb * ht).normalize();
-      if (yawDev > 8) aimDir.copy(toT); // safety: never let a mid-blend pose spray sideways
+      if (yawDev > 8 || a.team === 'player') aimDir.copy(toT); // player: soft-lock lane is the target; enemies keep the authored barrel yaw
     }
-    if (a.weapon === 'minigun') aimDir.applyAxisAngle(new THREE.Vector3(0, 1, 0), (a.rng() - 0.5) * 0.12);
-    this.fx.muzzle(pos, dir, a.weapon);
+    if (a.weapon === 'minigun') aimDir.applyAxisAngle(new THREE.Vector3(0, 1, 0), (a.rng() - 0.5) * (a.team === 'player' ? 0.12 : 0.42));
+    this.fx.muzzle(pos, aimDir.clone().normalize(), a.weapon);
     this.audio.play(a.team === 'player' ? 'launch.acid' : 'launch.enemy', { at: pos });
     const speed = a.team === 'player' ? W.speed : W.enemySpeed;
     const m = this.pool.find(p => !p.visible); if (!m) return;
@@ -108,7 +109,8 @@ export class CombatDirector {
     const id = `${a.id}-${++this.shotSerial}`;
     const trail = this.fx.trail?.({ color: a.team === 'player' ? 0xffe2a0 : 0xff7a50, width: a.weapon === 'rifle' ? 0.06 : 0.09, life: 0.16 });
     this.projectiles.push({ id, mesh: m, trail, prev: pos.clone(), vel: aimDir.multiplyScalar(speed), owner: a, team: a.team, weapon: a.weapon, life: 2.4, ledger: new AttackLedger(id), dodgeChecked: new Set() });
-    this.ledgerTotals.shots++; this.emit('shot', { id, actor: a.id, weapon: a.weapon });
+    if (a.team === 'player') this.ledgerTotals.shots++; else this.ledgerTotals.enemyShots = (this.ledgerTotals.enemyShots || 0) + 1;
+    this.emit('shot', { id, actor: a.id, weapon: a.weapon });
   }
 
   // ---- projectiles: hit truth -------------------------------------------------------------
@@ -129,6 +131,7 @@ export class CombatDirector {
         }
         const q = closestSegmentSegment(a0, a1, capA, capB);
         if (q.distance > BODY_R + PROJ_R) continue;
+        if (t.team === 'player' && this.time - (t.lastHurt ?? -9) < 0.6) continue; // brief mercy window after a hit (no consequence, projectile passes)
         if (t.team === 'player' && t.invulnerable?.()) { p.ledger.confirm(t.id, null, { dodged: true }); this.ledgerTotals.dodges++; this.emit('dodge', { actor: t.id, shot: p.id }); continue; }
         const hit = p.ledger.confirm(t.id, q.pointA, { damageIntent: 1, weapon: p.weapon });
         if (!hit) continue;
@@ -153,7 +156,7 @@ export class CombatDirector {
     if (sfx) this.ledgerTotals.sfx++; else this.ledgerTotals.sfxDropped = (this.ledgerTotals.sfxDropped || 0) + 1;
     t.hp = Math.max(0, t.hp - dmg);
     const fromFront = (() => { const yaw = t.root.rotation.y; const f = new THREE.Vector3(Math.sin(yaw), 0, Math.cos(yaw)); return f.dot(p.vel.clone().setY(0).normalize()) < 0; })();
-    if (t.team === 'player') { this.ledgerTotals.playerHits++; this.emit('playerHit', { shot: p.id, hp: t.hp }); }
+    if (t.team === 'player') { t.lastHurt = this.time; this.ledgerTotals.playerHits++; this.emit('playerHit', { shot: p.id, hp: t.hp }); }
     else { this.ledgerTotals.hits++; this.emit('hit', { shot: p.id, target: t.id, hp: t.hp, weapon: p.weapon, point: [+point.x.toFixed(2), +point.y.toFixed(2), +point.z.toFixed(2)] }); }
     if (t.hp <= 0) this.defeat(t, fromFront, p.owner);
     else if (t.team === 'player' || (t.state !== 'ATTACK' && this.time - (t.lastStagger ?? -9) > (t.poise ?? 1.4))) { // armored while attacking
@@ -183,7 +186,7 @@ export class CombatDirector {
         t.dodgeT = 0.4; t.dodgeVel = d.multiplyScalar(1 / 0.4); t.lastDodge = this.time; t.queued = null;
         const local = (() => { const yaw = t.root.rotation.y; const r = new THREE.Vector3(Math.cos(yaw), 0, -Math.sin(yaw)); return r.dot(d) > 0 ? 'Dodge_Left' : 'Dodge_Right'; })();
         t.anim.play(local, { mode: 'once', fade: 0.06 });
-        this.ledgerTotals.dodges++; this.emit('enemyDodge', { actor: t.id, shot: p.id, clip: local }); return;
+        this.ledgerTotals.enemyDodges = (this.ledgerTotals.enemyDodges || 0) + 1; this.emit('enemyDodge', { actor: t.id, shot: p.id, clip: local }); return;
       }
     }
   }
@@ -209,7 +212,7 @@ export class CombatDirector {
       }
       case 'ATTACK':
         if (a.weapon === 'minigun') {
-          if (a.stateT < 1.4) { a.shotTarget = player; this.requestFire(a, player); }
+          if (a.stateT < 0.9) { a.shotTarget = player; this.requestFire(a, player); }
           else { a.state = 'IDLE'; a.stateT = 0; a.cool = 1.6 + a.rng() * 0.9; }
         } else {
           if (!a.queued && !a.anim.isPlaying(WEAPONS[a.weapon].shoot) && this.time - a.lastShot > 0.45) {
@@ -231,14 +234,17 @@ export class CombatDirector {
     }
     this.tickProjectiles(dt); this.tickCorpses(dt);
     if (this.encounter && !this.encounter.cleared && this.enemiesOf(this.encounter.card).every(e => !e.alive)) {
-      this.encounter.cleared = true; this.emit('encounterClear', { card: this.encounter.card, seconds: +(this.time - this.encounter.t0).toFixed(2) });
+      this.encounter.cleared = true;
+      for (const p of this.projectiles) if (p.team === 'enemy') { p.mesh.visible = false; p.dead = true; if (p.trail) this.fx.trails?.release(p.trail); }
+      this.projectiles = this.projectiles.filter(p => !p.dead);
+      this.emit('encounterClear', { card: this.encounter.card, seconds: +(this.time - this.encounter.t0).toFixed(2) });
     }
   }
   reset() {
     for (const p of this.projectiles) { p.mesh.visible = false; p.trail && this.fx.trails?.release?.(p.trail); } this.projectiles = []; this.encounter = null;
     for (const a of this.actors) if (a.team === 'enemy' && a.spawn) {
       Object.assign(a, { alive: true, active: false, hp: a.spawn.hp, hitT: 0, queued: null, state: 'IDLE', stateT: 0, deadAt: null, dodgeT: 0, lastStagger: -9, moveSpeed: 0, lastShot: -9 });
-      a.root.position.copy(a.spawn.pos); a.root.rotation.set(0, Math.PI, 0); a.root.visible = true; a.anim.stop?.(null, 0.01);
+      a.root.position.copy(a.spawn.pos); a.root.rotation.set(0, Math.PI, 0); a.root.visible = true; a.anim.stop?.(null, 0.01); a.anim.spin = 0;
     }
     for (const k of Object.keys(this.ledgerTotals)) this.ledgerTotals[k] = 0; this.deviation.length = 0;
   }

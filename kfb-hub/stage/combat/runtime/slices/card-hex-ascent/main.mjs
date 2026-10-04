@@ -92,14 +92,14 @@ function buildPlayer() {
   const c0 = CARDS[0];
   const a = makeActor(models.hero, 'blaster'); playerActor = a;
   ctrl = new PlayerController(graph, { spawn: { x: c0.x, y: c0.top, z: c0.z - 1.5 }, yaw: 0 });
-  player = combat.addActor({ id: 'player', team: 'player', root: a.root, anim: a.anim, weapon: 'blaster', hp: 6 });
+  player = combat.addActor({ id: 'player', team: 'player', root: a.root, anim: a.anim, weapon: 'blaster', hp: 8 });
   player.invulnerable = () => ctrl.dodgeT > 0.08;
   ctrl.obstacles = () => combat.actors.filter(a => a !== player && a.alive && a.root.visible).map(a => ({ x: a.root.position.x, z: a.root.position.z, y: a.root.position.y, r: a.kind === 'mech' ? 0.7 : 0.45 }));
   a.root.position.set(ctrl.pos.x, ctrl.pos.y, ctrl.pos.z);
   follow.yaw = Math.PI; follow.snap();
 }
 const ENCOUNTERS = {
-  card0: [{ kind: 'die', dx: 3.2, dz: 1.6, hp: 2 }],
+  card0: [{ kind: 'die', dx: 1.7, dz: 2.6, hp: 2 }],
   card1: [{ kind: 'soldier', weapon: 'blaster', dx: 1.5, dz: 2.9, hp: 11, dodge: 0.35 }],
   card2: [{ kind: 'soldier', weapon: 'rifle', dx: -4.5, dz: 2.6, hp: 6, dodge: 0.25 }, { kind: 'soldier', weapon: 'rifle', dx: 4.0, dz: 3.0, hp: 6, dodge: 0.25 },
     { kind: 'soldier', weapon: 'rifle', perch: 'P2.0', hp: 4, dodge: 0 }],
@@ -140,7 +140,7 @@ function restart() {
   for (const a of enemySpawns) if (a.kind === 'die') a.root.children[0]?.rotation.set(0, 0, 0);
   const c0 = CARDS[0]; ctrl.reset({ x: c0.x, y: c0.top, z: c0.z - 1.5 }, 0); ctrl.stats = { jumps: 0, assisted: 0, doubles: 0, longs: 0, landings: 0, rescues: 0 };
   player.hp = player.maxHp; player.alive = true; player.hitT = 0; player.anim.stop(null, 0.05);
-  run.time = 0; run.coins = 0; run.kos = 0; run.weapons = ['blaster']; setWeapon('blaster'); run.checkpoint = 'card0'; run.cleared = new Set(); run.result = null; run.finishing = false;
+  ctrl.seal = null; run.time = 0; run.coins = 0; run.kos = 0; run.weapons = ['blaster']; setWeapon('blaster'); run.checkpoint = 'card0'; run.cleared = new Set(); run.result = null; run.finishing = false;
   run.zoneLabel = 'Card 0 · Spawn'; run.objective = 'Shoot the practice die, then climb the Hex route';
   hud.hideResult(); run.state = 'PLAY'; follow.yaw = Math.PI; follow.snap(); run.restarts = (run.restarts || 0) + 1;
   hud.message('Restart · seed ' + SEED, 1.5);
@@ -154,7 +154,7 @@ function finish() {
   try { const prev = JSON.parse(localStorage.getItem(key) || '{}'); const best = prev.best && prev.best.seconds < run.result.seconds ? prev.best : run.result;
     localStorage.setItem(key, JSON.stringify({ seed: SEED, checkpoint: run.checkpoint, completion: INC, last: run.result, best, runs: (prev.runs || 0) + 1 })); } catch (e) { run.degraded.push('storage'); }
   hud.result([['Time', Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0')], ['Coins', run.coins], ['Enemies defeated', L.defeats], ['Shots / hits', `${L.shots} / ${L.hits} (${acc} %)`],
-    ['Dodges', L.dodges], ['Jumps (assisted / double / long)', `${ctrl.stats.jumps} (${ctrl.stats.assisted} / ${ctrl.stats.doubles} / ${ctrl.stats.longs})`], ['Rescues', ctrl.stats.rescues], ['Knock-outs', run.kos]],
+    ['Dodges (you / enemies)', `${L.dodges} / ${L.enemyDodges || 0}`], ['Jumps (assisted / double / long)', `${ctrl.stats.jumps} (${ctrl.stats.assisted} / ${ctrl.stats.doubles} / ${ctrl.stats.longs})`], ['Rescues', ctrl.stats.rescues], ['Knock-outs', run.kos]],
     INC === 'S3' ? 'Card-Hex Ascent complete' : `Increment ${INC} complete`);
   document.exitPointerLock?.();
 }
@@ -257,6 +257,8 @@ function onPlayerEvent(e) {
     case 'dodge': { const f = { x: Math.sin(ctrl.yaw), z: Math.cos(ctrl.yaw) }; const dot = f.x * e.dir.x + f.z * e.dir.z, cr = f.x * e.dir.z - f.z * e.dir.x;
       A.play(dot > 0.5 ? 'Dodge_Forward' : dot < -0.5 ? 'Dodge_Backward' : cr > 0 ? 'Dodge_Right' : 'Dodge_Left', { mode: 'once', fade: 0.05 }); break; }
     case 'rescueStart': hud.message('Rescue · back to the last safe platform', 1.4); break;
+    case 'needsRunUp': hud.message('Too far from a standstill · take a run-up for the long jump', 1.6); break;
+    case 'sealed': hud.message('Finish the Card fight first', 1.2); break;
     case 'rescued': A.stop(null, 0.1); follow.snap(); break;
   }
 }
@@ -266,7 +268,12 @@ function onSupport(id) {
     const c = CARDS.find(k => k.id === s.card); run.zoneLabel = c.label; run.checkpoint = c.id;
     const armed = combat.enemiesOf(c.id).some(e => e.alive && e.weapon);
     if (c.id === INCREMENTS[INC].finale && !armed && run.state === 'PLAY' && !run.finishing) { run.cleared.add(c.id); run.finishing = true; finishWhenRewarded(); } // never a dead end on the finale card
-    if (!run.cleared.has(c.id) && armed) { combat.startEncounter(c.id); run.objective = 'Defeat the Card duel'; hud.message(c.label + ' · fight!', 2); }
+    if (c.id !== 'card0' && c.id !== 'card1' && INC !== 'S1' && !run.weapons.includes('rifle')) { run.weapons.push('rifle'); hud.message('Rifle unlocked (press 2)', 2.5); } // fallback if the duel was skipped in Game mode
+    if (!run.cleared.has(c.id) && armed) {
+      combat.startEncounter(c.id); ctrl.seal = c.id;
+      run.objective = { card1: 'Win the Blaster duel', card2: 'Clear the Rifle squad (one is up on the pillar)', card3: 'Take down the Minigun mech' }[c.id] ?? 'Clear the Card';
+      hud.message(c.label + ' · fight!', 2);
+    }
     else if (c.id === 'card0') run.objective = 'Shoot the practice die, then climb the Hex route';
     else run.objective = 'Card clear · continue upward';
   } else {
@@ -278,12 +285,15 @@ function onCombatEvent(e) {
   switch (e.type) {
     case 'defeat': {
       const t = combat.actors.find(a => a.id === e.target);
-      if (t) spawnCoin(t.root.position.clone().add(new THREE.Vector3(0, 0.9, 0)), t.kind === 'mech' ? 5 : 1);
+      if (t) { const card = graph.get(t.card); let at = t.root.position.clone();
+        if (card && !graph.contains(card, at.x, at.z, 0.5)) { const lp = graph.landingPoint(card, at.x, at.z, 1.2); at = new THREE.Vector3(lp.x, card.top, lp.z); } // perch reward lands on the Card
+        spawnCoin(at.add(new THREE.Vector3(0, 0.9, 0)), t.kind === 'mech' ? 5 : 1); }
       if (t?.kind === 'die') { run.objective = 'Practice done · jump to the Hex route ahead'; hud.message('Nice shot · the Hex route is ahead', 2); }
       break;
     }
     case 'encounterClear': {
-      run.cleared.add(e.card);
+      run.cleared.add(e.card); if (ctrl.seal === e.card) ctrl.seal = null;
+      player.hp = player.maxHp; // refill after a won Card
       if (e.card === 'card1' && !run.weapons.includes('rifle') && INC !== 'S1') { run.weapons.push('rifle'); hud.message('Blaster Duel won · Rifle unlocked (press 2)', 3); }
       else hud.message('Card clear!', 2);
       run.objective = 'Card clear · continue upward';
