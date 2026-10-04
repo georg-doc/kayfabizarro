@@ -39,3 +39,16 @@
 - Georg has submitted the broad pool to Suno Custom Model training;
 - browser 14/14 PASS on `c98d1fe0826a5ec69b1a65c1a6cf0b4b54e985e6`;
 - next creative phase: `KFB_AUDIO_CUSTOM_MODEL_EVAL_01`, not more genre generation by default.
+
+
+## 2026-10-04 · SFX_LIBRARY_INDEX_01
+
+- audited current `main` Audio + Sounds trees at `ca4f953d0d5ca001b46f1d89b8908b80592a09c9`;
+- refreshed the existing canonical `media/3D_Assets/CATALOG/audio-catalog.json` to **2,084** audio files (Audio 1,704 + Sounds 380);
+- added derived Site discovery view `tools/KFB-Audio-Site/sfx-library.snapshot.json` for all 1,704 Audio files;
+- retained existing 8-role mix contract and added discovery tags for gameplay use-case, verb, temporal/spatial class, confidence/status and exact duplicate count;
+- proved root interface aliases **100/100 exact**, Classic Arcade small pack **80/80 exact**, S050 Dry/Wet 84 same-name pairs with 32 exact pairs;
+- preserved source gaps: tyre/friction, rain/thunder, crowd/venue, city/traffic, loopable workshop machinery;
+- validator **45/45 PASS** + browser **14/14 PASS** on run `37185843367`, artifact `11296249195`;
+- no Site UI/runtime/Cloudflare/merge change;
+- next gate remains one existing Site update, expanded with SFX Library + Event Map.
