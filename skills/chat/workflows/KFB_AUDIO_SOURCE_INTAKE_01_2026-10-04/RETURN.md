@@ -97,3 +97,35 @@ Next product phase after Site update: adaptive musical-world prototype `Explore 
 - all three remain `source-only` until listening certification;
 - separator labels such as Lead/Backing Vocals are not treated as semantic truth;
 - catalog target is now **63 total / 53 RoadTrip-v2 / 23 stem families**.
+
+
+## 63/53/23 stem validation · 2026-10-04
+
+The three Ambient Bed stem packages are now present on main:
+
+- Utopia Ambient Bed · 73 BPM · 11 stems
+- Protopia Ambient Bed · 78 BPM · 7 stems
+- Dystopia Ambient Bed · 98 BPM · 12 stems
+
+All three remain `source-only` until listening certification. Separator labels are not treated as semantic truth.
+
+Validation:
+- tested product head: `de3a3a81f04f92ff940ade546cdf2ffa934738bb`
+- validator PASS
+- JS syntax PASS
+- browser **13/13 PASS**
+- run `37181080683`
+- job `111372985084`
+- artifact `11294313615`
+- digest `sha256:2be41a40594f3a38d65688e9bae047b38a0feb9f3266010904b3e3606448114a`
+
+## Next creative phase
+
+**KFB_AUDIO_MUSICAL_PALETTE_EXPANSION_01**
+
+Executor split:
+- **ChatGPT / Audio Site:** define a balanced set of missing style zones and short external-generator briefs.
+- **Georg / Suno:** generate a small number of candidates per zone and select only strong winners.
+- **Then ChatGPT / Audio Site:** catalog winners, annotate transition metadata, and curate the eventual single KFB World Custom Model training set.
+
+Do not train the Custom Model before this palette expansion.
