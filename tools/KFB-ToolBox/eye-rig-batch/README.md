@@ -20,6 +20,20 @@ Stage target:
 
 `https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/eye-rig-batch/`
 
+## Global consumer default · 2026-10-04
+
+Georg decision: **EyeRig is the default visible eye presentation for integrated KFB characters.**
+
+Consumer contract:
+- source-isolation may show the untouched donor first;
+- integrated presentation hides/replaces the source eyes via the current cleanup/FaceHost adapter and mounts EyeRig v6;
+- use a persisted actor profile when available;
+- otherwise use the current source-derived measured candidate and mark `PROFILE_TUNE`;
+- do not silently fall back to stock/source eyes for ordinary integrated screenshots or runtime;
+- no second eye implementation.
+
+This changes the **consumer default**, not the original GLB/GLTF source.
+
 ## What this candidate does
 
 `exact actor source → verified source-eye cleanup → measured FaceHost → existing EyeRig v6 → review/tune → profile export`
