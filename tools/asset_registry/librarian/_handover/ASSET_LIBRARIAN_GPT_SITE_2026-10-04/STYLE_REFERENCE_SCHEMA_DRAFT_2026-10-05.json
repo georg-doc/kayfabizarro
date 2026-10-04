@@ -1,0 +1,128 @@
+{
+  "schema": "kfb.style-reference-schema-draft/1",
+  "status": "PROPOSAL_ONLY",
+  "date": "2026-10-05",
+  "workflow": "KFB-ASSET-LIBRARIAN-STYLE-REFERENCES-01",
+  "owner": "KFB Asset Registry / Asset Librarian",
+  "resourceSchema": {
+    "schema": "kfb.style-reference/1",
+    "referenceId": "style-ref:example:clouds:001",
+    "status": "ACTIVE",
+    "document": {
+      "documentId": "style-doc:example-book:vol-01",
+      "version": 1,
+      "privateFileRef": {
+        "provider": "PRIVATE_STORAGE_ADAPTER",
+        "id": "opaque-private-file-id"
+      },
+      "sha256": "REQUIRED_ON_INGEST",
+      "filename": "private-source.pdf",
+      "title": "Example private drawing reference",
+      "creator": "Example creator",
+      "edition": "optional",
+      "pageCount": 0,
+      "sourceClass": "PRIVATE_PURCHASE",
+      "rights": {
+        "visibility": "PRIVATE_INTERNAL",
+        "redistribution": "NO",
+        "publicPageExport": false,
+        "evidence": "USER_OWNED_COPY_OR_EXPLICIT_SOURCE_RECORD"
+      }
+    },
+    "locator": {
+      "page": 1,
+      "pageRange": [1, 1],
+      "cropNormalized": [0.0, 0.0, 1.0, 1.0],
+      "sectionTitle": "optional"
+    },
+    "taxonomy": {
+      "domain": ["comic-drawing"],
+      "subject": ["clouds"],
+      "technique": ["shape-language"],
+      "useCases": ["environment-design"],
+      "media": ["line-art"]
+    },
+    "guidance": {
+      "principles": [
+        "Concise human/agent-authored principle; do not reproduce source text."
+      ],
+      "avoid": [],
+      "notes": ""
+    },
+    "provenance": {
+      "createdBy": "georg-or-authorized-agent",
+      "createdAt": "ISO-8601",
+      "sourceInspectedInIsolation": false,
+      "sourceInspectionEvidence": null
+    },
+    "agentPolicy": {
+      "allowed": [
+        "SEARCH",
+        "PRIVATE_SOURCE_RESOLUTION",
+        "STYLE_PRINCIPLE_ANALYSIS",
+        "COMPARE",
+        "PACK_EXPORT"
+      ],
+      "forbidden": [
+        "PUBLIC_SOURCE_PAGE_REPUBLISH",
+        "CLAIM_INSPECTION_WITHOUT_RESOLUTION",
+        "INVENT_RIGHTS_FACTS",
+        "AUTO_PROMOTE_TO_KFB_CANON"
+      ]
+    }
+  },
+  "packSchema": {
+    "schema": "kfb.style-reference-pack/1",
+    "packId": "style-pack:example:kfb-clouds:001",
+    "title": "KFB Cartoon Clouds",
+    "designIntent": "Create a KFB-specific cloud language from selected construction principles.",
+    "consumer": "claude-design",
+    "references": [
+      {
+        "referenceId": "style-ref:example:clouds:001",
+        "documentId": "style-doc:example-book:vol-01",
+        "documentVersion": 1,
+        "page": 1,
+        "cropNormalized": [0.0, 0.0, 1.0, 1.0],
+        "principles": [
+          "Resolve the private source before use."
+        ],
+        "rightsVisibility": "PRIVATE_INTERNAL",
+        "requiresIsolationProof": true
+      }
+    ],
+    "privatePayloadPolicy": {
+      "embedPageImages": false,
+      "embedOriginalPdf": false,
+      "resolveAuthenticatedSourceAtUseTime": true
+    }
+  },
+  "documentVersioning": {
+    "stableLogicalDocumentId": true,
+    "newShaCreatesNewVersion": true,
+    "retainPriorVersionMetadata": true,
+    "reconcilePageLocatorsWhenPageCountChanges": true
+  },
+  "uiScopes": [
+    "Browse",
+    "PDF Viewer",
+    "Reference Sets",
+    "Compare",
+    "Intake / Admin"
+  ],
+  "futureReadOnlyActions": [
+    "search_style_references",
+    "get_style_reference",
+    "get_reference_document",
+    "get_reference_page",
+    "export_style_reference_pack"
+  ],
+  "protectedBoundaries": {
+    "productionAssetRegistryUnchanged": true,
+    "existingAssetLibrarianSiteOwner": true,
+    "oneToolboxRouter": true,
+    "privatePdfInGitHub": false,
+    "privatePdfOnPublicStage": false,
+    "newProductiveSite": false
+  }
+}
